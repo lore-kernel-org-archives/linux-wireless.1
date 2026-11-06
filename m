@@ -1,51 +1,51 @@
-Authentication-Results: smtp.subspace.kernel.org; arc=none smtp.remote-ip=91.218.175.174
+Authentication-Results: smtp.subspace.kernel.org; arc=none smtp.remote-ip=95.215.58.46
 ARC-Seal: i=1; d=subspace.kernel.org; s=arc20261015; a=rsa-sha256; cv=none;
-	t=1793986035;
-	b=xSetT9h/m/u70LTNBPUkutnedkUDadEAa5k+UO4Nh7ethCawJNgndYkwNXVxEZFgSu3U
-	 qa/xtPpNFuGq9D+HxvovvtEZL99dPONPAS7bbx4tR8hqB9x2WaUCcNxKyfUO1anPYKGTL
-	 koM26IngY3rUb4fkk8Fmo1zd4ke181z9Qs4yF3oJbGN2ZtPPLl5HwBUAH1wh/o1SxAz7a
-	 j3kAIV+AqWPb648HcYFO6SzqNSZuBxhlOKEC3dLxagZeIgxEme0MiVCEm/QIAwG5BzzBG
-	 Xr5sGvh4ebxillVxYg5H4kl+YsbYRroihHBVNjIZ8hS+aTwhHR9SqhueEgSZ4KIVe7A==
+	t=1793986448;
+	b=5fE/r7UsjvD1tuAzuXCgXCoY+G9Swz7uK4j9zvZK9pgwBOWSnin4CXTlNRQf1+LxKXT0
+	 uZGfobxM+js6HIDadQvAPgfeiCPURxOI45aJyXfG3wVjVQpFt2WU2hRCuckwAqaucsKi7
+	 MEIRNzsGhx5hLnwJfZuE01EiJCC3DJ+iv2KaCEwb44116Q19movgkR/tsyOl2wPZml1y9
+	 m7PG85XjUITjH0oWm5m3+xj/PYR7D+VAXPKlmjwND72RsZv4PDnHex8i4DE0smpZYsDsB
+	 BlD7iHQu1AFrN8psUKBXtzO3QZSvhQ706dJ90gA2iUcLbpBWSb9+9wvL8cp/towHC0g==
 ARC-Message-Signature: i=1; d=subspace.kernel.org; s=arc20261015;
-	a=rsa-sha256; c=relaxed/relaxed; t=1793986035;
+	a=rsa-sha256; c=relaxed/relaxed; t=1793986448;
 	h=DMARC-Filter:X-Envelope-To:DKIM-Signature:X-Envelope-To:Received:
 	 X-Mizu-Trace-ID:X-Migadu-Flow:MIME-Version:Date:Content-Type:
 	 Content-Transfer-Encoding:From:Message-ID:TLS-Required:Subject:To:Cc:
 	 In-Reply-To:References;
-	bh=Ph5YKB0KYtns94WSrNcsTtEuW7NVt+Gyk8TBrJACobE=;
-	b=DHUhyju0BOwn0wb+5ORrmdmFmhH46ODFKsaauMiMuzW5QTu05uPs6HGU3eElp7gIbnoo
-	 ZDDSjDwORrMPSQYFaK96QwtdxBvcgbTPl/G4HqimjWbDjUn96qnLhgUVrm/oQGFRP0TR1
-	 hPCsCzZOPqCSkGDuu5cQ2CkAehTZHszGAEaACbhkAUhZ/Icw7E9fTJr/m1zGlaU6jiYBs
-	 ZZZMBYdfxaLMx3kZ1Fjq7JKJnSU0KkqwQ3ylihO5oKXU8OiUmS/wgM3aAHX5ev16RsII4
-	 ST7ZnOIyONpiHSYr9vckiSFa+V7GzLQVVPWVxXo7+k75vmdeZJI+/QaxWhikamaqwVg==
+	bh=Y5a4KiBell1gJdJ+ZzYl70VI+o+NWiB0NJYxZVZEGa8=;
+	b=Lrfh4XtmEzJocCIBn++FLKKO/koTFjqufy+TknTv9TVTyJPtktU4VMbh3kCfXX+fh+vh
+	 Kmor0Vrn7fyal5vNqkRPFj5lLG2UuIAtphMEXf8+Jgfsl0BS0W882M9vLCAJu8WqeEnup
+	 75snQOnNoehOn0L1ZqkbW63EAPl6EhY29gF3dzYupZSYdkW44HcZDmLpENUy5MoV7YjOg
+	 emGlShxVPxbfzQLS0AJe6DvCXwJJB9SBMTuo+7B3LGH0RNYldnhDeRIhlrF6JKcNWlfX3
+	 lwj1stALrKUM24nvSRMjPOq/9+rnepEsOFPI2cEyo5NdxVBBQf1Y8MjlVZi1dtrBKzA==
 ARC-Authentication-Results: i=1; smtp.subspace.kernel.org; 
 	dmarc=pass header.from=linux.dev;
 	spf=pass smtp.mailfrom=linux.dev;
-	dkim=pass header.d=linux.dev header.i=@linux.dev header.a=rsa-sha256 header.s=key1 header.b=hgSVEB7r;
-	arc=none smtp.remote-ip=91.218.175.174
-Received: from mta0.migadu.com (out-174.mta0.migadu.com [91.218.175.174])
+	dkim=pass header.d=linux.dev header.i=@linux.dev header.a=rsa-sha256 header.s=key1 header.b=XfEPwt3c;
+	arc=none smtp.remote-ip=95.215.58.46
+Received: from mta1.migadu.com (out-46.mta1.migadu.com [95.215.58.46])
 	(using TLSv1.3 with cipher TLS_AES_128_GCM_SHA256 (128/128 bits)
 	 key-exchange X25519 server-signature ECDSA (prime256v1) server-digest SHA256)
 	(No client certificate requested)
-	by smtp.subspace.kernel.org (Postfix) with ESMTPS id 9586D606A329
-	for <linux-wireless@vger.kernel.org>; Fri,  6 Nov 2026 17:27:14 +0000 (UTC)
-DMARC-Filter: OpenDMARC Filter v1.4.2 smtp.subspace.kernel.org 9586D606A329
+	by smtp.subspace.kernel.org (Postfix) with ESMTPS id 9D8AE606A32C
+	for <linux-wireless@vger.kernel.org>; Fri,  6 Nov 2026 17:34:06 +0000 (UTC)
+DMARC-Filter: OpenDMARC Filter v1.4.2 smtp.subspace.kernel.org 9D8AE606A32C
 Authentication-Results: smtp.subspace.kernel.org; dmarc=pass (p=none dis=none) header.from=linux.dev
 Authentication-Results: smtp.subspace.kernel.org; spf=pass smtp.mailfrom=linux.dev
 Authentication-Results: smtp.subspace.kernel.org;
-	dkim=pass (1024-bit key, unprotected) header.d=linux.dev header.i=@linux.dev header.a=rsa-sha256 header.s=key1 header.b=hgSVEB7r
+	dkim=pass (1024-bit key, unprotected) header.d=linux.dev header.i=@linux.dev header.a=rsa-sha256 header.s=key1 header.b=XfEPwt3c
 X-Envelope-To: linux-wireless@vger.kernel.org
-DKIM-Signature: a=rsa-sha256; bh=U0fucB1f/JzZvNxYUiDjoItugCcDyDJ/lZcOOVQKZRg=;
+DKIM-Signature: a=rsa-sha256; bh=kOYWcf6tw9j/rKVpkt2X+0pBUiv6W/BN2LI41RapGXw=;
  c=simple/simple; d=linux.dev;
  h=from:to:subject:date:message-id:mime-version:content-type; s=key1;
- t=1793986032; v=1; x=1794590832;
- b=hgSVEB7rRJYAJOe33KgdU+0UI+mlhTCvb1qRN1ATMN0NyFo3L/5A/LrqQtEtGPocdf3Xd5cT
- MM5HarHWTM2zE17+P05VIEukMwc6XEjv8uI1z/g+dwkitqKoPNmPMOU65+rWOuqizk+rIIQnONe
- zhBem5bLPqA9YuRv59bFVp6Q=
+ t=1793986444; v=1; x=1794591244;
+ b=XfEPwt3c4PvSotfKM9uds1T2eoLMRts6xVctuwwFDWiJGYVcI3z9mXlmF0pfM1bZ+scYaXj1
+ 3X8nJcfE9AcdXvZ7dQOZpGDczQINyxqQtmai8rC8ZuBicNVBrgkMl8AGQcZVz2zrp+No1zEgya3
+ jDN4VY7XTRhqRDRNYe28uW1U=
 X-Envelope-To: linux-wireless@vger.kernel.org
-Received: by smtp.migadu.com with ESMTPS id 12b6b9dc5f411ab5;
-	Fri, 06 Nov 2026 17:27:12 +0000
-X-Mizu-Trace-ID: 12b6b9dc5f411ab5
+Received: by smtp.migadu.com with ESMTPS id 06be76154d12f8e4;
+	Fri, 06 Nov 2026 17:34:04 +0000
+X-Mizu-Trace-ID: 06be76154d12f8e4
 X-Migadu-Flow: FLOW_OUT
 X-Mailing-List: linux-wireless@vger.kernel.org
 List-Id: <linux-wireless.vger.kernel.org>
@@ -56,74 +56,133 @@ List-Unsubscribe: <mailto:linux-wireless+unsubscribe@vger.kernel.org>
 List-Owner: <mailto:linux-wireless+owner@vger.kernel.org>
 Precedence: list
 MIME-Version: 1.0
-Date: Fri, 06 Nov 2026 17:27:11 +0000
+Date: Fri, 06 Nov 2026 17:34:04 +0000
 Content-Type: text/plain; charset="utf-8"
 Content-Transfer-Encoding: quoted-printable
 From: "Luka Gejak" <luka.gejak@linux.dev>
-Message-ID: <2df200abb7d9b07abf8883fcc06f4a7b0d3591c5@linux.dev>
+Message-ID: <4ada79186cd882a6d3344c43579e5addc4d4e644@linux.dev>
 TLS-Required: No
-Subject: Re: [PATCH rtw-next v2 5/7] wifi: rtw88: 88xxa: correct
- carrier-frequency offset
+Subject: Re: [PATCH rtw-next v2 6/7] wifi: rtw88: 88xxa: adapt channel
+ sensing to receiver gain
 To: "Ho Jie Feng" <hjf3108@gmail.com>, "Ping-Ke Shih" <pkshih@realtek.com>
 Cc: linux-wireless@vger.kernel.org, "Ho Jie Feng" <hjf3108@gmail.com>,
- linux-kernel@vger.kernel.org
-In-Reply-To: <20261031070950.425176-6-hjf3108@gmail.com>
+ linux-kernel@vger.kernel.org, "Bitterblue Smith"
+ <rtl8821cerfe2@gmail.com>
+In-Reply-To: <20261031070950.425176-7-hjf3108@gmail.com>
 References: <20261031070950.425176-1-hjf3108@gmail.com>
- <20261031070950.425176-6-hjf3108@gmail.com>
+ <20261031070950.425176-7-hjf3108@gmail.com>
 
-Hi Jie Feng,
+Hi Jie Feng and Bitterblue,
 
-A few small comments below.
-
-October 31, 2026 at 8:09 AM, "Ho Jie Feng" <hjf3108@gmail.com> wrote:
+Thanks for fixing the scan latency. A few comments below.
 
 > diff --git a/drivers/net/wireless/realtek/rtw88/phy.c b/drivers/net/wir=
 eless/realtek/rtw88/phy.c
-> index d0c1fb65be9563c5fc29a7d18a1c9e8589730b10..69998c0d7c1f851bb30d270=
-2233d62e14b305bf0 100644
+> index 69998c0d7c1f851bb30d2702233d62e14b305bf0..7a04aec9a045f1e308a4c5d=
+331c900e013996bd5 100644
 > --- a/drivers/net/wireless/realtek/rtw88/phy.c
 > +++ b/drivers/net/wireless/realtek/rtw88/phy.c
-> @@ -687,13 +687,14 @@ static void rtw_phy_parsing_cfo_iter(void *data, =
-u8 *mac,
->       struct rtw_rx_pkt_stat *pkt_stat =3D iter_data->pkt_stat;
->       struct rtw_dm_info *dm_info =3D &rtwdev->dm_info;
->       struct rtw_cfo_track *cfo =3D &dm_info->cfo_track;
-> +     u8 path_num =3D min_t(u8, rtwdev->hal.rf_path_num, 2);
+> @@ -377,6 +377,10 @@ void rtw_phy_dig_set_max_coverage(struct rtw_dev *=
+rtwdev)
+>               DIG_CVRG_MIN);
+>
+>       rtw_phy_dig_write(rtwdev, DIG_CVRG_MIN);
+> +
+> +     /* EDCCA thresholds can be relative to the IGI */
+> +     if (!rtw_fw_feature_check(&rtwdev->fw, FW_FEATURE_ADAPTIVITY))
+> +             rtw_phy_adaptivity(rtwdev);
+>  }
 
-This and the same line in rtw_phy_cfo_xcap_track() are in core code that
-every chip uses. As far as I can see the limit is only there for 8814a,
-which has four paths but reports a CFO tail only for A and B. A short
-comment saying so would help, otherwise the 2 looks arbitrary.
-
-The commit message could mention this core change too, together with
-the CFO tracking for 8814a that this patch adds.
+This and the call in rtw_phy_dig_reset() also reach
+rtw8822b_adaptivity() and rtw8822c_adaptivity() when the firmware
+doesn't handle adaptivity. They use igi_history[0], so as far as I can
+see they just write the same thresholds again, but since this is core
+code it would be good to mention it in the commit message.
 
 [ ... ]
 
 > diff --git a/drivers/net/wireless/realtek/rtw88/rtw88xxa.c b/drivers/ne=
 t/wireless/realtek/rtw88/rtw88xxa.c
-> index 87253fffe78cd6f5b58a325eef42b58b968e2d46..851d198f76f3b10d5ba77c7=
-e07e4be9d7fd54e4b 100644
+> index 851d198f76f3b10d5ba77c7e07e4be9d7fd54e4b..ee72380757721dab7dc409a=
+abc24b2b825969465 100644
 > --- a/drivers/net/wireless/realtek/rtw88/rtw88xxa.c
 > +++ b/drivers/net/wireless/realtek/rtw88/rtw88xxa.c
-> @@ -279,6 +279,7 @@ int rtw88xxa_read_efuse(struct rtw_dev *rtwdev, u8 =
-*log_map)
->       efuse->crystal_cap =3D map->xtal_k;
->       if (efuse->crystal_cap =3D=3D 0xff)
->               efuse->crystal_cap =3D 0x20;
-> +     efuse->crystal_cap &=3D 0x3F;
 
 [ ... ]
 
-> +     rtw88xxa_set_crystal_cap(rtwdev, rtwdev->efuse.crystal_cap & 0x3F=
-);
+> +#define EDCCA_LB_START_88XXA         (EDCCA_L2H_H2L_DIFF - 30)
+> +#define EDCCA_LB_RETRY_88XXA         (EDCCA_LB_START_88XXA + 18)
 
-With the mask in rtw88xxa_read_efuse() the & 0x3F here isn't needed
-anymore.
+Maybe a short comment on where the 18 comes from. As far as I can see it
+is the vendor condition for searching a second time (IGI upper bound of
+0x26 or lower), worked out for an initial L2H of -17.
 
-The 6 bit limit now shows up as 0x3F or 0x3f in five places across
-rtw88xxa.c and rtw8814a.c. Maybe a define in rtw88xxa.h, which
-rtw8814a.c includes too, similar to XCAP_MASK in rtw8822c.h.
+[ ... ]
+
+> +     rtw_write32(rtwdev, REG_DBGSEL, 0);
+> +     for (i =3D 0; i < 3 &&
+> +          rtw_read32(rtwdev, REG_DBGRPT) & BIT_DBG_CCA_BUSY; i++)
+> +             usleep_range(3000, 3500);
+
+The register read in the loop condition is a bit hard to follow. Maybe
+read_poll_timeout() would read easier, like efuse.c uses it:
+
+        read_poll_timeout(rtw_read32, val, !(val & BIT_DBG_CCA_BUSY),
+                          3000, 9000, false, rtwdev, REG_DBGRPT);
+
+[ ... ]
+
+> +void rtw88xxa_adaptivity_init(struct rtw_dev *rtwdev)
+> +{
+> +     struct rtw_dm_info *dm_info =3D &rtwdev->dm_info;
+> +     u32 dbgsel =3D rtw_read32(rtwdev, REG_DBGSEL);
+> +     s8 l2h;
+> +
+> +     rtw_write32_clr(rtwdev, REG_TX_PTCL_CTRL, BIT_DIS_EDCCA);
+
+Bitterblue reported on that "firmware failed to leave lps state" shows
+up a lot more often with this patch and stops when EDCCA is disabled,
+and you replied that it only prints a line in dmesg. On rtw-next it is
+more than a message now. Since dc16902cad9c ("wifi: rtw88: ps: Trigger
+firmware recovery when failing to leave LPS state"), rtw_fw_leave_lps_che=
+ck()=20
+goes=20on to a firmware recovery after the warning:
+
+        rtw_warn(rtwdev, "firmware failed to leave lps state\n");
+        rtw_fw_dump_dbg_info(rtwdev);
+        rtw_fw_recovery(rtwdev);
+
+So a failed leave now ends in a firmware recovery, with a "firmware
+crash, start reset and recover" WARN and ieee80211_restart_hw(). With
+power saving on, rtw_watch_dog_work() calls rtw_leave_lps() every 2
+seconds before the dynamic mechanisms, so I think this needs to be
+solved before the patch can go in.
+
+About a longer timeout, according to the comment in
+__rtw_fw_leave_lps_check_reg() the firmware restores REG_TCR once the AP
+has acked its null frame, so I think it would mostly hide the problem.
+Leaving this patch out of v3 and sending it again once the cause is
+known sounds fine to me, then the rest of the series doesn't have to
+wait.
+
+Bitterblue, did you turn EDCCA off through the edcca_enable debugfs file?
+With this patch that only switches to RTW_EDCCA_NORMAL, and
+rtw88xxa_adaptivity() then keeps EDCCA on with the higher normal
+thresholds. If that is what made it stop, it would point at the
+thresholds used in adaptivity mode (ETSI and JP regions) rather than at
+EDCCA itself.
+
+Jie Feng, maybe comparing the IGI in the hardware when the leave fails
+with the IGI the thresholds were computed from would show more.
+
+[ ... ]
+
+> +     /* igi_history[0] keeps the pre-scan IGI while scanning */
+> +     u8 igi =3D rtw_read32_mask(rtwdev, REG_RXIGI_A, 0x7f);
+
+The comment sits on a line that doesn't use igi_history[0], so it reads
+a bit confusing. Maybe something like "read the IGI in use,
+igi_history[0] still holds the old value while scanning".
 
 Best regards,
 Luka Gejak
