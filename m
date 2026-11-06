@@ -1,110 +1,123 @@
-Authentication-Results: smtp.subspace.kernel.org; arc=none smtp.remote-ip=205.220.168.131
-ARC-Seal: i=1; d=subspace.kernel.org; s=arc20261015; a=rsa-sha256; cv=none;
-	t=1793990141;
-	b=ApXWR+hEOK6VY5vkp5ttNROIe4QXxUflM9qjk0o3RQqnJg2nS7CaYOMiWgfLGkQzsPeC
-	 +bQvIwomrIWRIK0al+qxm6bFn0X2Q2Ea39plXczavFkdABU9TN7HOHOz5if1LaTtmoDGt
-	 skimY/knj+KXTC4oxMYrN6M/fnSyOm5lTPwiLhVpdPY7abBIEgOtCpb+1So54jfce2BaU
-	 whl045uwEf26h3XHLrT9RnZwax1Qm0U3N6pw/0YV5CIFyP72ncx/JvXfjARinByTmZBfb
-	 lUE4RfqXQa3h0CS6R/f+EWmxOcmIWkmhnF16gGVKUbQM4YxujQuIbmRHOixKFJsPhGQ==
-ARC-Message-Signature: i=1; d=subspace.kernel.org; s=arc20261015;
-	a=rsa-sha256; c=relaxed/relaxed; t=1793990141;
+Authentication-Results: smtp.subspace.kernel.org; arc=pass header.oldest-pass=0 smtp.remote-ip=205.220.168.131
+ARC-Seal: i=2; d=subspace.kernel.org; s=arc20261015; a=rsa-sha256; cv=pass;
+	t=1793990498;
+	b=SKQ0hYqE2+DbH5rBVbJ5aehqWAaUOjPGBp08zhS5GfOqcmkp1P05/5IKqjfa9TB5ZUXe
+	 PLQ+sYt5gZqtvYw9n2N7KxxTWS3j8GFioE3qHCyfrcqZDyKdjNz7th7ul74DMPr9A8f1T
+	 jTFIAhKdM2CwO3CD3YElLbODhLlJi7XC1Osce+0Vl8vyyGK0p/FZLYnH71pDdQuhkz+oy
+	 dPfRtTSGEBQIWG1kcM+3sxy7ISJ6Rc7w2dZN7go+DqcdCLGQtpw/cZdVQy30R+TX0TeEr
+	 YuQ2WrB/DJCN9UuXuuaTi/ZFQJUAAzY4GB9+p8Bq9twuf4a6jXXgQfKqqmQ+8PRagEw==
+ARC-Message-Signature: i=2; d=subspace.kernel.org; s=arc20261015;
+	a=rsa-sha256; c=relaxed/relaxed; t=1793990498;
 	h=DMARC-Filter:Received:DKIM-Signature:Received:Received:
-	 DKIM-Signature:X-Google-DKIM-Signature:X-Gm-Message-State:X-Gm-Gg:
-	 X-Received:X-Received:Received:Message-ID:Date:MIME-Version:
-	 User-Agent:Subject:To:Cc:References:Content-Language:From:In-Reply-To:
-	 Content-Type:Content-Transfer-Encoding:X-Proofpoint-ORIG-GUID:
-	 X-Proofpoint-Spam-Details-Enc:X-Proofpoint-Spam-Info:
-	 X-Authority-Analysis:X-Proofpoint-GUID:X-Proofpoint-Virus-Version:
+	 DKIM-Signature:X-Google-DKIM-Signature:X-Forwarded-Encrypted:
+	 X-Gm-Message-State:X-Gm-Gg:X-Received:X-Received:MIME-Version:
+	 References:In-Reply-To:From:Date:X-Gm-Features:Message-ID:Subject:To:
+	 Cc:Content-Type:Content-Transfer-Encoding:X-Proofpoint-Spam-Info:
+	 X-Proofpoint-GUID:X-Authority-Analysis:X-Proofpoint-Spam-Details-Enc:
+	 X-Proofpoint-ORIG-GUID:X-Proofpoint-Virus-Version:
 	 X-Proofpoint-Spam-Details;
-	bh=v4xi9zjLk/JnFBwNsX03J7ooArpolpgt1TZbGipdHrs=;
-	b=sc8SXUvgBtSIH+E1RA1G5qdI5Jo55HJnMAoYJzR6slrxRREC6QMeuZswwZb0FW/dA19d
-	 PmP+TIu2CSibZ+JM22u+o/dxNZui2YrspoH2P6ws75vEtYrDEVeu1E7cP/55mTPxjvPn6
-	 awll/V4Z3rjWLF8l82aklbEKuvmxrmUUxXgQ0eUCA978r5TBAWkohhiwJTmESMNMSoglL
-	 NRNMKgY35FI8GHOvbPuEGdW+jIOpPYkZf90VYKrC+ZV2WbAfYME5iVRkESNr0aw32HKKS
-	 VpkYkewHx3Ot9UG9xA0Tcb5kDrvRtIoffMbxQjnCCtgziBv8mVD1SF43hwyRu1Mvu5g==
-ARC-Authentication-Results: i=1; smtp.subspace.kernel.org; 
+	bh=CUMcAVyOirUSnIO4z8+9Oid/43N5zWiqbL31INqDBvs=;
+	b=Tf6gVyi9sdSaquO7HynT5WLcY8NBVShSQ+M+VGw9sDGdxYBXAnzu1eWzsmjP3+Dvi4D2
+	 YX1u9uVMvn465B1vDSAbb6VMGXoJSSCFt58tldOaJ/9alf6uBTkFPjlzAIyIzsuiTFvFh
+	 Tkk/RBmzx+fEoD3B4PTean9Dwgr792wuaFV7Bam95UdbPr5ZASRG7rgDHW3vFPA+UaXcp
+	 LV1hSV0gu7YKqmUX4Q8OrPSF++Uu7CJlfzloaVUsUFNyfExwbqYDy0NU/YiZnzjKgSvti
+	 2F0/cqfqawO5vU3+aQ5ZvnY+cCPuTFso4ZxN7sp+BG1zxdnzO50YiWi/JOsh2nWPwsw==
+ARC-Authentication-Results: i=2; smtp.subspace.kernel.org; 
 	dmarc=pass header.from=oss.qualcomm.com;
 	spf=pass smtp.mailfrom=oss.qualcomm.com;
-	dkim=pass header.d=qualcomm.com header.i=@qualcomm.com header.a=rsa-sha256 header.s=qcppdkim1 header.b=P8K5NNlF;
-	dkim=pass header.d=oss.qualcomm.com header.i=@oss.qualcomm.com header.a=rsa-sha256 header.s=google header.b=cqR151tJ;
-	arc=none smtp.remote-ip=205.220.168.131
+	dkim=pass header.d=qualcomm.com header.i=@qualcomm.com header.a=rsa-sha256 header.s=qcppdkim1 header.b=c7OqdLX3;
+	dkim=pass header.d=oss.qualcomm.com header.i=@oss.qualcomm.com header.a=rsa-sha256 header.s=google header.b=f7DVpUc7;
+	arc=pass header.oldest-pass=0 smtp.remote-ip=205.220.168.131
 Received: from mx0a-0031df01.pphosted.com (mx0a-0031df01.pphosted.com [205.220.168.131])
 	(using TLSv1.3 with cipher TLS_AES_256_GCM_SHA384 (256/256 bits)
 	 key-exchange X25519 server-signature ECDSA (prime256v1) server-digest SHA256)
 	(No client certificate requested)
-	by smtp.subspace.kernel.org (Postfix) with ESMTPS id EE9FA606A329
-	for <linux-wireless@vger.kernel.org>; Fri,  6 Nov 2026 18:35:40 +0000 (UTC)
-DMARC-Filter: OpenDMARC Filter v1.4.2 smtp.subspace.kernel.org EE9FA606A329
+	by smtp.subspace.kernel.org (Postfix) with ESMTPS id B972B606A329
+	for <linux-wireless@vger.kernel.org>; Fri,  6 Nov 2026 18:41:37 +0000 (UTC)
+DMARC-Filter: OpenDMARC Filter v1.4.2 smtp.subspace.kernel.org B972B606A329
 Authentication-Results: smtp.subspace.kernel.org; dmarc=pass (p=none dis=none) header.from=oss.qualcomm.com
 Authentication-Results: smtp.subspace.kernel.org; spf=pass smtp.mailfrom=oss.qualcomm.com
 Authentication-Results: smtp.subspace.kernel.org;
-	dkim=pass (2048-bit key, unprotected) header.d=qualcomm.com header.i=@qualcomm.com header.a=rsa-sha256 header.s=qcppdkim1 header.b=P8K5NNlF;
-	dkim=pass (2048-bit key, unprotected) header.d=oss.qualcomm.com header.i=@oss.qualcomm.com header.a=rsa-sha256 header.s=google header.b=cqR151tJ
-Received: from pps.filterd (m0279866.ppops.net [127.0.0.1])
-	by mx0a-0031df01.pphosted.com (8.18.1.11/8.18.1.11) with ESMTP id 6A6HspSN3712134
-	for <linux-wireless@vger.kernel.org>; Fri, 6 Nov 2026 18:35:40 GMT
+	dkim=pass (2048-bit key, unprotected) header.d=qualcomm.com header.i=@qualcomm.com header.a=rsa-sha256 header.s=qcppdkim1 header.b=c7OqdLX3;
+	dkim=pass (2048-bit key, unprotected) header.d=oss.qualcomm.com header.i=@oss.qualcomm.com header.a=rsa-sha256 header.s=google header.b=f7DVpUc7
+Received: from pps.filterd (m0279867.ppops.net [127.0.0.1])
+	by mx0a-0031df01.pphosted.com (8.18.1.11/8.18.1.11) with ESMTP id 6A6IRYjj1512584
+	for <linux-wireless@vger.kernel.org>; Fri, 6 Nov 2026 18:41:37 GMT
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=qualcomm.com; h=
 	cc:content-transfer-encoding:content-type:date:from:in-reply-to
 	:message-id:mime-version:references:subject:to; s=qcppdkim1; bh=
-	v4xi9zjLk/JnFBwNsX03J7ooArpolpgt1TZbGipdHrs=; b=P8K5NNlFrrqItXqT
-	n2b3FmqBmj6ylC9Gr3Gt8NTQwaMlnX7fCC8bp8Sj1yOXonXgIE2PF5WlAVOv7HmW
-	IWG+C6zqEbbpHE7BjV39imBno+jh0rixVHexhC14kUiB689iu0y34vNW1rVWjCkA
-	UNsrHgBbRmgu+ocu+pnBymNw5w5+vBFbiR1ofhh18TNlu4rxRLJE/e8t+FBBtoMR
-	itEx4AAupsvsEfART7q93Bkaz8Cl6P/AsVtFgiqtsYGoNMt/dO9J9PTn3rm0U1pd
-	TjzZXvgOBsCzneB0bYvRci4+84zcfSd8gjJbW3Qa5imgOegHSihi2QV5wefEbeVm
-	Bt1eyA==
-Received: from mail-dy1-f198.google.com (mail-dy1-f198.google.com [74.125.82.198])
-	by mx0a-0031df01.pphosted.com (PPS) with ESMTPS id 4hs3p9c7r1-1
+	CUMcAVyOirUSnIO4z8+9Oid/43N5zWiqbL31INqDBvs=; b=c7OqdLX3Uj+TBpdC
+	oqL865Tb2uVszHJk3qkJYH6kLQvGw/yVPe6PI9eIRv15udAcLLqG6UR0v9x34VPd
+	rqOFHoWdX+ilvD3r5k7pEYe1VI5n7B3aAYZKqLOE6Up552R/UgXhV6aSMi9iR0yA
+	yXzoSy3dAHKYFyDGYsjF0bFbKFzX4bSWKc4hAqH+2ALaFsFQFLjcpV1DtQ72eo+9
+	qTjYx7a+EgbYBZorVurnW67Rzb+RnfTxqD2C91mr/i5oAQvuO5qVl3Xc774QSeV5
+	+Vgo10VEpHJG4XtK3CxlUVQaishxG9jh3seF7r1am1bVcchbbT5EwlshXAn8bfsy
+	ytBfMA==
+Received: from mail-pf1-f198.google.com (mail-pf1-f198.google.com [209.85.210.198])
+	by mx0a-0031df01.pphosted.com (PPS) with ESMTPS id 4hsm6m81w8-1
 	(version=TLSv1.3 cipher=TLS_AES_128_GCM_SHA256 bits=128 verify=NOT)
-	for <linux-wireless@vger.kernel.org>; Fri, 06 Nov 2026 18:35:40 +0000 (GMT)
-Received: by mail-dy1-f198.google.com with SMTP id 5a478bee46e88-36f26e6abe9so1640439eec.0
-        for <linux-wireless@vger.kernel.org>; Fri, 06 Nov 2026 10:35:40 -0800 (PST)
+	for <linux-wireless@vger.kernel.org>; Fri, 06 Nov 2026 18:41:36 +0000 (GMT)
+Received: by mail-pf1-f198.google.com with SMTP id d2e1a72fcca58-8b203b0c139so726493b3a.2
+        for <linux-wireless@vger.kernel.org>; Fri, 06 Nov 2026 10:41:36 -0800 (PST)
+ARC-Seal: i=1; a=rsa-sha256; t=1793990496; cv=none;
+        d=google.com; s=arc-20260327;
+        b=edKPc6bULWnmBQZQLk4ifadzeM3HY1tdUVro3JUqBLBR/6zNsRFEzm0vGAP+0626B8
+         o/SzkI+wJ5ioKcCPlpWw2Tu6zApC/hIFafp6b7WHc5/dp8nECCq9QJM6DgkaaD0TnIaq
+         guuPl3RW2d06Q0kXEnG6iFY9oQ397KhqaKIPlwUFG6YUe+xL786Vm0/3gEwpDaM8qPId
+         k2e+cIeTwZDN1XIPdPBz0v6l4Qdag/inLCJ4O90OXMOarx67/3dTWxDeC+sEzn4L8mhA
+         QP+PfI4gHo/rxS8Sj/GgcVfMIJHl58cLEoMjr+PDELtYxK6wnlgINmmfKv+r3Gy6PunQ
+         fAbg==
+ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=google.com; s=arc-20260327;
+        h=content-transfer-encoding:cc:to:subject:message-id:date:from
+         :in-reply-to:references:mime-version:dkim-signature;
+        bh=CUMcAVyOirUSnIO4z8+9Oid/43N5zWiqbL31INqDBvs=;
+        fh=X/NHBcBHWE6y4NNp99SotFHQT/0oYdNPeSywMIEilT0=;
+        b=nUHqdYOx6EK20IOstu+X/IhF35xwKWGS7rXLuC07hkFJbhg/6u0vr57gnXdofunX+1
+         Y5irQuMhzFdoG+bqWITppaqX0HAvEhjhifLH3Q4S6NM9LYCTJyqj2w5UlLD2pQyLh0pc
+         78HazVmb/XM9Lc10TB2BdG+eaY5IqeVMDcBAbSdTBjo2jY48Be2D39ub8hT4CW5iFrXe
+         zao/b7AK53+T/H9ANMItznk7Fie7tK1KfCFzhtarzWBxL+A30akL8ZTxLXp+xCJp8K9l
+         EMmn8KzeCW9YBrCBmvk7/xClnvrZQTWVs7MKJ8b2yiCQ4FO1cLQT3V3atMv/K77dTnoR
+         /EOQ==;
+        darn=vger.kernel.org
+ARC-Authentication-Results: i=1; mx.google.com; arc=none
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=oss.qualcomm.com; s=google; t=1793990140; x=1794594940; darn=vger.kernel.org;
-        h=content-transfer-encoding:content-type:in-reply-to:from
-         :content-language:references:cc:to:subject:user-agent:mime-version
-         :date:message-id:from:to:cc:subject:date:message-id:reply-to
-         :content-type;
-        bh=v4xi9zjLk/JnFBwNsX03J7ooArpolpgt1TZbGipdHrs=;
-        b=cqR151tJGCnB+2aarRrhi04f6XLjWTGFoe7ACkN0c5v3BIE0zJpLLSHgfqnnen0pbp
-         2s9fglZx0l7Z/csYEZpIZICvM0EuGF1GNZoSBO7+7N6b4CD85ybjxP54ogRu39mMQ7Z9
-         tWwJRrWTQLTsyfIz+ej+oLaXYdI/HG61RpAsVVh+s34wq6L7Cr5uCCJ5TbceXJnzXvfc
-         +nZNwaQiOCxMzWPw6Y03pqNka8mkxRcVouLr5yv0b5pbJ54Ics+XcIS/Nb+PiJ8DNjdb
-         M5l62/N5PxcQt3KrvXB6bTf54DgoXfP0Bzjj4J9cieRiaPBEzcVl3bYbQk6v7XYnfE7D
-         b/aw==
+        d=oss.qualcomm.com; s=google; t=1793990496; x=1794595296; darn=vger.kernel.org;
+        h=content-transfer-encoding:content-type:cc:to:subject:message-id
+         :date:from:in-reply-to:references:mime-version:from:to:cc:subject
+         :date:message-id:reply-to:content-type;
+        bh=CUMcAVyOirUSnIO4z8+9Oid/43N5zWiqbL31INqDBvs=;
+        b=f7DVpUc7TvmBk/GlEqTwwF5Fjd0F4WISWb4EdXmwCQ3SX5+AXNnFeMkj8RJ4/yPZ/M
+         I+v+Jzl2ngCP3dDtqTEHahs53ZsHjSlKehAizG8Mq7zaEa2nQYmJYrjg22Q5tRmxiqs3
+         +SVNV52HhmqFWTWFAkE3T6INy2CvS90tNzfemE3XP0p2UhhaQcoQjbzi0Y6yfAbGQ/El
+         +0BKjYm2pEPgG0u0J9394c7qY84rOVDrrpJ8/eat5vRrR4x/TcAqf38hD3s5idnK/VXy
+         PKFGjmzFBKCWO1FAW+0SfezAoWr+Lbj/yUAxak44wk1to3/WoJMd+r2MUHPB7ez4nRU3
+         RGOA==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=1e100.net; s=20260707; t=1793990140; x=1794594940;
-        h=content-transfer-encoding:content-type:in-reply-to:from
-         :content-language:references:cc:to:subject:user-agent:mime-version
-         :date:message-id:x-gm-gg:x-gm-message-state:from:to:cc:subject:date
-         :message-id:reply-to:content-type;
-        bh=v4xi9zjLk/JnFBwNsX03J7ooArpolpgt1TZbGipdHrs=;
-        b=pxVypoznTEfUStEwn5UZ6YMtURgc/uw8qc9yQonUedhRJ4Fe/cgkrciGnfhI/X2eVw
-         rJOrBkQMnvUYEHI5kPLVgMx53pO6ED2GyaO6XnTQGZHLBOI+2IW4O2iz/tWnKE/SICF0
-         0exo7Nu0oZ6yVhad2TzfikpUF2QPiHhhP4gtPRr/HehFV9ssviO6kFWeOdqCseYQEyzv
-         HBtMNTC7uEP04zg7w2MMsCgh4FawZH0n9TGOdPmbrYAS10NaNFsnClENw2kS2F38mZQw
-         fgIiWF+bkBKUYTi55giB2x5GjEG7zEJlJSbSRy+Ji838udjEwauN00vqaHLb1UNpH2AY
-         zvSQ==
-X-Gm-Message-State: APuU4Z9IjTPYZyg/xBuNV1p68h9OC+G4WbdLNl6e+nKkY/kGu4G9H2ip
-	CD0F2WC48jOH1FQY8EtvFn3OU3RbmCDxHFHcEtON8h7H7Gmbf75Bz1GvxHAGJsVQwJHjaCVt8/7
-	gBwq+oc99wxnnxtNyU2BpV1zW/xNVPD+VDcROsInUQXKu39kUApcCVBcmBixThRnvZLtFtQ==
-X-Gm-Gg: AYBFou1Xjr8EFp0vW65nqRbLuYPiPyuplA/JauuhMnBUWOQEkbXAzLwH/T2xhHNFmIK
-	VB7yKSPEwEp448x2gr+vbAy9H8sosIcGyRhgtSfKc/PqKlT6E2BPifk1oVaVgXb4UgHfhMLGKUD
-	LWB0zOQd3BLEBAIQoUwZ76a87JaTpxsVUqTqCDziNFHDHtKEZwfLbmiSgBh3N0MZpeLRzbA3xwv
-	2+FMmimobi0YtExBl7QvExWHDMLLnsa7mbCJfzGD9MpSb+mSR8JBnYn68yeMG9deZafpY+i0hrA
-	8swt7jcZRdwbqyh9Na+W9vuOG4Cql4lMIP9z7WbC5wKmko7lTXsCptQmn8gIaNTr+18QmeU+v4D
-	/rOqoNYafxRkZ5jFPR3y7z2G0rqMRt+Tm0GtdfgK5oXNE14idF3+0LkEGMJWaYEtg3l7K8CFW/C
-	arVQ/flbFDpp1bG+I=
-X-Received: by 2002:a05:7301:fd0a:b0:36a:31b2:8643 with SMTP id 5a478bee46e88-36f774f5c3fmr4397673eec.38.1793990139021;
-        Fri, 06 Nov 2026 10:35:39 -0800 (PST)
-X-Received: by 2002:a05:7301:fd0a:b0:36a:31b2:8643 with SMTP id 5a478bee46e88-36f774f5c3fmr4397636eec.38.1793990138362;
-        Fri, 06 Nov 2026 10:35:38 -0800 (PST)
-Received: from [192.168.0.3] ([49.205.82.39])
-        by smtp.gmail.com with ESMTPSA id 5a478bee46e88-36fa922c6c7sm10347444eec.10.2026.11.06.10.35.34
-        (version=TLS1_3 cipher=TLS_AES_128_GCM_SHA256 bits=128/128);
-        Fri, 06 Nov 2026 10:35:37 -0800 (PST)
-Message-ID: <1ad8a442-278b-4db3-97c7-82e0a77b201b@oss.qualcomm.com>
-Date: Sat, 7 Nov 2026 00:05:31 +0530
+        d=1e100.net; s=20260707; t=1793990496; x=1794595296;
+        h=content-transfer-encoding:content-type:cc:to:subject:message-id
+         :date:from:in-reply-to:references:mime-version:x-gm-gg
+         :x-gm-message-state:from:to:cc:subject:date:message-id:reply-to
+         :content-type;
+        bh=CUMcAVyOirUSnIO4z8+9Oid/43N5zWiqbL31INqDBvs=;
+        b=iHwLDDdrZUhCRGlVc01+4245w1mllg1TZYIebCf3l7iljIYSDzuEPcjtkeGswszNI7
+         BrLA2B+CfzJK9CdM1wcacj6YTHNJCTNDXQzprQtZOKTC/Luq7DVFIVfrmQA895T81S0H
+         h/mxjiV8Hpy0l4ZkhNILJb6fwScthcLR51bKUwnG9b+AKUzBc85c1pC9zKU7zxJjuxpV
+         pecB4qCV3un0FT8PI9sH79UTkg88SKHNvJZy6NoSV+81zwsk1IQH3MxbWuLLD2I+EuMH
+         xC/fQ9qA5Admt74efpAIVdSkyP17B7TNZXfPNak4I/GZo+EsmbeQuhHNYvQxM+NpO9AG
+         WsEg==
+X-Forwarded-Encrypted: i=1; AKwUvBzo+JKvTkRSMgyEFofi1X55Qtaf4MtSmHiqbFYmGlyoixgsRQgZyPsRbkBNmW/FHnWikzXWZdG/3LIiUZk7Xg==@vger.kernel.org
+X-Gm-Message-State: APuU4Z+1T9gg0F+lARuKTnwjVq3WrYt5VWQQQ/M0/kEB/4xOnCeA0m8r
+	H7b+C3YN+Y1odkIPG66Z27xCeomQGt5CWMk0HbS3sp47P8oVGtuEwBqZ3V3DUZsRrJVlCndqqZu
+	9tvKZpxn973+nYXVbdXPmIMZxTxqp3hgtHMRY9a3LXmojWt/PGbcxWcSkM2lwpUlqtO1qGEUKGd
+	0tOhZBl4pKKIvioXTv+YaMifJMpYiMwxk3cgEVRl/jnylS
+X-Gm-Gg: AYBFou3BOJI8WPZhSeW9lIGgOa8XQ9QgzpfARZDfXKm550y0/jATiIoOD2+jdoxFfuw
+	wL95h/6qWrwah/AWdNWu+PDzPGV6P6JAQTmfiEZGXL2RCiUbe9xkxyPSpIgbsoKxewjLaQw3gGM
+	0RLxihu8nyAeiDHPAql67XYEv68vOXpnwCSlu49A1+R9YA3jBWaFr7JOV+6g==
+X-Received: by 2002:a05:6a00:3d0b:b0:881:9f52:ca00 with SMTP id d2e1a72fcca58-8b37bd5461emr2936039b3a.42.1793990496168;
+        Fri, 06 Nov 2026 10:41:36 -0800 (PST)
+X-Received: by 2002:a05:6a00:3d0b:b0:881:9f52:ca00 with SMTP id
+ d2e1a72fcca58-8b37bd5461emr2935994b3a.42.1793990495661; Fri, 06 Nov 2026
+ 10:41:35 -0800 (PST)
 X-Mailing-List: linux-wireless@vger.kernel.org
 List-Id: <linux-wireless.vger.kernel.org>
 List-Post: <mailto:linux-wireless@vger.kernel.org>
@@ -114,141 +127,238 @@ List-Unsubscribe: <mailto:linux-wireless+unsubscribe@vger.kernel.org>
 List-Owner: <mailto:linux-wireless+owner@vger.kernel.org>
 Precedence: list
 MIME-Version: 1.0
-User-Agent: Mozilla Thunderbird
-Subject: Re: [PATCH ath-next v3 00/17] wifi: ath12k: Add support for QCN6432
-To: Aaradhana Sahu <aaradhana.sahu@oss.qualcomm.com>,
-        Johannes Berg <johannes@sipsolutions.net>,
-        Rob Herring <robh@kernel.org>,
+References: <20261102-block-as-nvmem-v12-0-f4a2a681087d@oss.qualcomm.com> <20261102-block-as-nvmem-v12-1-f4a2a681087d@oss.qualcomm.com>
+In-Reply-To: <20261102-block-as-nvmem-v12-1-f4a2a681087d@oss.qualcomm.com>
+From: Ulf Hansson <ulf.hansson@oss.qualcomm.com>
+Date: Fri, 6 Nov 2026 19:41:24 +0100
+X-Gm-Features: AclHuK9emUwSj3_sGAuhi1FbbmSEvMQZ92eVANQc1PZljiIDDYIawbYL0H56MVQ
+Message-ID: <CAPx+jO9Hwqn__vdZn_2yCAy9nuMHR2=8shjjQdWQ4S9JWUknQQ@mail.gmail.com>
+Subject: Re: [PATCH v12 1/2] block: partitions: of: Attach partition fwnode to
+ the block device
+To: Loic Poulain <loic.poulain@oss.qualcomm.com>
+Cc: Ulf Hansson <ulfh@kernel.org>, Rob Herring <robh@kernel.org>,
         Krzysztof Kozlowski <krzk+dt@kernel.org>,
-        Conor Dooley
- <conor+dt@kernel.org>,
-        Jeff Johnson <jjohnson@kernel.org>
-Cc: linux-wireless@vger.kernel.org, devicetree@vger.kernel.org,
-        linux-kernel@vger.kernel.org, ath12k@lists.infradead.org,
-        Sowmiya Sree Elavalagan <quic_ssreeela@quicinc.com>
-References: <20261023-mpp-bringup-v3-0-19f3fcbf7b5f@oss.qualcomm.com>
-Content-Language: en-US
-From: Vasanthakumar Thiagarajan <vasanthakumar.thiagarajan@oss.qualcomm.com>
-In-Reply-To: <20261023-mpp-bringup-v3-0-19f3fcbf7b5f@oss.qualcomm.com>
-Content-Type: text/plain; charset=UTF-8; format=flowed
-Content-Transfer-Encoding: 7bit
-X-Proofpoint-ORIG-GUID: _RXe-uKqo0wcbT7kCKG-QsOBfLZXrsp5
-X-Proofpoint-Spam-Details-Enc: AW1haW4tMjYxMTA2MDA3NCBTYWx0ZWRfX3mQXNY3ROs/t
- 5IAGBoBeABwFmd6e7tt2Qrf0qGYWLwCVV4mlpDnYxSmFK6PUJLxNjSClCqKgIxsZw8vVtWf6bvb
- rr7eaVL+G0ytH7k4Dk4oYkLxUXpNvsJyi+doeEa8qwj/FZyhNf7L8ZM0xeAICs6raeho83gCUrC
- msz79IoAHnM8St9dzdoeRwmAuc99h7Wy44RNfshRnz9AzUZZJQa6J4inMgTa4ktvMy+oDkqL3dm
- tXwdLDpqSHfNUaD/G/N67Qq2LPxxvj5wVVmVDNVEttUAAAGGAXhrwd+MJ8exBWLFh1ZkgvKcqB3
- b2asj2Ln92zqlplHT1xqR9it+dTdYutvRKH8iBnTpHHoNdm+UVrFhNoE59N8o0EfQdNw84K1KHA
- CpK8nu/WLLtOuETDeyg2PEQeNBGEvmpNJhMYts/8Wk7Hn5TUtj203smEkmPu0lMBQkTntVLJvMg
- hMbDzEizlUD6oBDzJjg==
-X-Proofpoint-Spam-Info: AW1haW4tMjYxMTA2MDA3NCBTYWx0ZWRfXyjQS3KuprZAy
- FMG2yBigydR6sRSzGDMPpe5EJr2zVYL3T4cffkVXH06SFhROYtSbWO9cZQBZ+mAcVvGMfaRBO46
- m4Dhkgzj+hDwRxfFUeqAmriksqTX8XA=
-X-Authority-Analysis: v=2.4 cv=WMzqzXsR c=1 sm=1 tr=0 ts=6aee1dfc cx=c_pps
- a=wEP8DlPgTf/vqF+yE6f9lg==:117 a=Yi4Dc0+RdECwe4ym5Eh06w==:17
- a=IkcTkHD0fZMA:10 a=zJRp6_cAMcgA:10 a=s4-Qcg_JpJYA:10
- a=VkNPw1HP01LnGYTKEx00:22 a=u7WPNUs3qKkmUXheDGA7:22 a=YMgV9FUhrdKAYTUUvYB2:22
- a=bC-a23v3AAAA:8 a=EUspDBNiAAAA:8 a=VwQbUJbxAAAA:8 a=Jrv9ZmiOdEm1SHuq7XcA:9
- a=QEXdDO2ut3YA:10 a=bBxd6f-gb0O0v-kibOvt:22 a=FO4_E8m0qiDe52t0p3_H:22
-X-Proofpoint-GUID: _RXe-uKqo0wcbT7kCKG-QsOBfLZXrsp5
+        Conor Dooley <conor+dt@kernel.org>,
+        Bjorn Andersson <andersson@kernel.org>,
+        Konrad Dybcio <konradybcio@kernel.org>, Jens Axboe <axboe@kernel.dk>,
+        Johannes Berg <johannes@sipsolutions.net>,
+        Jeff Johnson <jjohnson@kernel.org>,
+        Bartosz Golaszewski <brgl@kernel.org>,
+        Marcel Holtmann <marcel@holtmann.org>,
+        Luiz Augusto von Dentz <luiz.dentz@gmail.com>,
+        Balakrishna Godavarthi <quic_bgodavar@quicinc.com>,
+        Rocky Liao <quic_rjliao@quicinc.com>,
+        "David S. Miller" <davem@davemloft.net>,
+        Jakub Kicinski <kuba@kernel.org>, Paolo Abeni <pabeni@redhat.com>,
+        Simon Horman <horms@kernel.org>,
+        Srinivas Kandagatla <srini@kernel.org>, Andrew Lunn <andrew@lunn.ch>,
+        Heiner Kallweit <hkallweit1@gmail.com>,
+        Russell King <linux@armlinux.org.uk>,
+        Saravana Kannan <saravanak@kernel.org>,
+        Christian Marangi <ansuelsmth@gmail.com>,
+        Eric Dumazet <edumazet@kernel.org>, Abel Vesa <abelvesa@kernel.org>,
+        linux-mmc@vger.kernel.org, devicetree@vger.kernel.org,
+        linux-kernel@vger.kernel.org, linux-arm-msm@vger.kernel.org,
+        linux-block@vger.kernel.org, linux-wireless@vger.kernel.org,
+        ath10k@lists.infradead.org, linux-bluetooth@vger.kernel.org,
+        netdev@vger.kernel.org, daniel@makrotopia.org,
+        Bartosz Golaszewski <bartosz.golaszewski@oss.qualcomm.com>,
+        Christoph Hellwig <hch@lst.de>
+Content-Type: text/plain; charset="UTF-8"
+Content-Transfer-Encoding: quoted-printable
+X-Proofpoint-Spam-Info: AW1haW4tMjYxMTA2MDA3NCBTYWx0ZWRfX05zyvsWq+ehT
+ jiU+WyCgmM17imQ3qTqcYyLgRVAe/ASXZoDtN/5GjbZCid64Z46D3ZvznB3Y9BrmtHgvXHQwCiD
+ xVbteZnzeCHVgQizGysaT0na0CbdU60=
+X-Proofpoint-GUID: FYatnB6tKzzwGOs-L9kh0LpUr5VXOB16
+X-Authority-Analysis: v=2.4 cv=S7NMU4sP c=1 sm=1 tr=0 ts=6aee1f60 cx=c_pps
+ a=m5Vt/hrsBiPMCU0y4gIsQw==:117 a=IkcTkHD0fZMA:10 a=zJRp6_cAMcgA:10
+ a=s4-Qcg_JpJYA:10 a=VkNPw1HP01LnGYTKEx00:22 a=u7WPNUs3qKkmUXheDGA7:22
+ a=eoimf2acIAo5FJnRuUoq:22 a=EUspDBNiAAAA:8 a=VwQbUJbxAAAA:8
+ a=YqnSXwVskR_DcSjeyREA:9 a=QEXdDO2ut3YA:10 a=IoOABgeZipijB_acs4fv:22
+X-Proofpoint-Spam-Details-Enc: AW1haW4tMjYxMTA2MDA3NCBTYWx0ZWRfX2I9JbV5C1bed
+ 8IuYSy7DhfTvDmL3DTyqY/lek93f2Ki9I7BlfqJY/WhPUZJviVL9Oynj7ma3TrPq95uy4ZQ96PS
+ H7xJT5HwUA3ZtL6JI1cmsnpq3dkbDDEfEsQKFdn0kQLQxYfkm7agd0sP2jmL7ooPJydF2h0T0f5
+ ec2WooMV3oY6/XfvZCtgSs1zaz4aZdEIKzNZPDT3pmfuhd8is5FC5msisDhrGF4+nAm76614uhy
+ efWp2d1RGFE3XJ7EagtuF01QK/nMoIgG1wGJCjSaPLSI6hC36XA1ud7STq/SURFf8ocKyZFRsdZ
+ 91s4kCBKZ+jJVDB77ah74XwO8vqvjcbrDKEkqW8PACGiEFBps7gzL5SUX7xu+yAC5mQhA68dc9D
+ jKo8BrgIGb+y/kXJ8Y27BEWoYBeqP03RvM8eiqKt76OZflErBS12NARbIu4ICGNYsY3Vq1qItCk
+ +FooI52ITXVIiKfc3+Q==
+X-Proofpoint-ORIG-GUID: FYatnB6tKzzwGOs-L9kh0LpUr5VXOB16
 X-Proofpoint-Virus-Version: vendor=baseguard
  engine=ICAP:2.0.293,Aquarius:18.0.1176,Hydra:6.1.138,FMLib:17.12.100.49
  definitions=2026-11-06_06,2026-11-06_01,2025-10-01_01
 X-Proofpoint-Spam-Details: rule=outbound_notspam policy=outbound score=0
- adultscore=0 lowpriorityscore=0 phishscore=0 clxscore=1015 bulkscore=0
- priorityscore=1501 malwarescore=0 spamscore=0 suspectscore=0 impostorscore=0
- classifier=typeunknown authscore=0 authtc= authcc= route=outbound adjust=0
- reason=mlx scancount=1 engine=8.22.0-2611040001 definitions=main-2611060074
+ bulkscore=0 phishscore=0 spamscore=0 suspectscore=0 adultscore=0
+ lowpriorityscore=0 clxscore=1011 malwarescore=0 impostorscore=0
+ priorityscore=1501 classifier=typeunknown authscore=0 authtc= authcc=
+ route=outbound adjust=0 reason=mlx scancount=1 engine=8.22.0-2611040001
+ definitions=main-2611060074
 
+On Mon, Nov 2, 2026 at 5:27=E2=80=AFPM Loic Poulain
+<loic.poulain@oss.qualcomm.com> wrote:
+>
+> The OF partition parser reads offset, size and label from each
+> "fixed-partitions" child node but does not associate that node with the
+> resulting partition block device. As a result a partition has no
+> of_node, unlike the whole-disk device which gets its firmware node via
+> add_disk_fwnode().
+>
+> Carry the partition's device tree node through the parser and attach it
+> to the partition's block device with device_set_node(), mirroring the
+> whole-disk case. This lets consumers describe per-partition properties
+> in the device tree (for example an NVMEM layout on a partition node) and
+> look them up through the partition device.
+>
+> No functional change for existing users, partitions without a matching
+> device tree node simply get a NULL fwnode.
+>
+> Reviewed-by: Bartosz Golaszewski <bartosz.golaszewski@oss.qualcomm.com>
+> Reviewed-by: Christoph Hellwig <hch@lst.de>
+> Signed-off-by: Loic Poulain <loic.poulain@oss.qualcomm.com>
 
+Reviewed-by: Ulf Hansson <ulfh@kernel.org>
 
-On 23-10-2026 12:31, Aaradhana Sahu wrote:
-> QCN6432 is a PCIe-based device attached to the WCSS Q6 processor. It is
-> registered as a platform device (AHB), and remoteproc APIs are used to
-> boot and shut down the device, similar to other AHB-based devices such
-> as IPQ5332.
-> 
-> However, PCI APIs are used for device setup and register access. Since
-> QCN6432 requires both AHB and PCI APIs for its operation, a hybrid
-> AHB/PCI approach is implemented.
-> 
-> Overview:
->    - Patch [1/17] adds DT binding documentation for QCN6432.
->    - Patch [2/17] refactors PCI operations and MSI config structure to
->      support different MSI configurations.
->    - Patches [3,4,5/17] add hardware parameters, ring mask, and registers
->      for QCN6432.
->    - Patch [6/17] moves multi MSI vector flag to ath12k_dev_flags.
->    - Patches [7,8/17] add hybrid_bus_type and HIF operations support for
->      QCN6432.
->    - Patch [9/17] adds support for unified data-region memory allocation.
->    - Patch [10/17] moves MSI config to pcic for better abstraction.
->    - Patches [11,12/17] enable MSI interrupt support for CE and DP rings
->      specific to QCN6432.
->    - Patch [13/17] uses CMEM write for PPT on hybrid bus devices.
->    - Patch [14/17] stores and uses per CE DP MSI data for QCN6432.
->    - Patch [15/17] derives QMI service instance ID per protection domain.
->    - Patch [16/17] add userpd ID mapping per device.
->    - Patch [17/17] adds support for QCN6432 in the driver.
-> 
-> Changes in v3:
-> - patch 1/17: Update the commit subject and change the file name.
-> - patch 3/17: Initialize qmi_max_chunk_size for QCN6432.
-> - Link to v2: https://patch.msgid.link/20261016-mpp-bringup-v2-0-f510c33bfcf5@oss.qualcomm.com
-> 
-> Changes in v2:
-> - patch 1/17: Update the compatible string from qcom,qcn6432-wifi to qcom,qcn6432 and remove the | character.
-> - patch 11/17 and patch 12/17: Fix resource leaks on probe error paths.
-> - patch 16/17: Move the NULL check before the loop.
-> - Link to v1: https://lore.kernel.org/linux-wireless/20261008-mpp_bringup-v1-0-2c5797b5e4ac@oss.qualcomm.com/
-> 
+Kind regards
+Uffe
+
 > ---
-> Aaradhana Sahu (10):
->        dt-bindings: net: wireless: Add QCN6432
->        wifi: ath12k: Refactor PCI operations and MSI config structure
->        wifi: ath12k: move multi MSI vector flag to ath12k_dev_flags
->        wifi: ath12k: Add hybrid_bus_type in ath12k_hw_params
->        wifi: ath12k: add support for unified data-region memory allocation
->        wifi: ath12k: move MSI config to pci.c
->        wifi: ath12k: Add platform MSI support for CE
->        wifi: ath12k: use CMEM write for PPT on hybrid bus devices
->        wifi: ath12k: Resolve userPD ID per device
->        wifi: ath12k: Add QCN6432 AHB support
-> 
-> Sowmiya Sree Elavalagan (7):
->        wifi: ath12k: Add hardware parameter for QCN6432
->        wifi: ath12k: Add hardware ring mask for QCN6432
->        wifi: ath12k: add hardware registers for QCN6432
->        wifi: ath12k: Add hif operation support for QCN6432
->        wifi: ath12k: Enable MSI interrupt support for DP interrupt
->        wifi: ath12k: store and use MSI data per CE and DP interrupt group for QCN6432
->        wifi: ath12k: Derive QMI service instance ID per protection domain
->   
->   .../bindings/net/wireless/qcom,qcn6432.yaml        | 149 +++++++
->   drivers/net/wireless/ath/ath12k/Makefile           |   2 +-
->   drivers/net/wireless/ath/ath12k/ahb.c              |  54 ++-
->   drivers/net/wireless/ath/ath12k/ahb.h              |  10 +-
->   drivers/net/wireless/ath/ath12k/ce.c               |   7 +-
->   drivers/net/wireless/ath/ath12k/ce.h               |   6 +
->   drivers/net/wireless/ath/ath12k/core.c             |  10 +-
->   drivers/net/wireless/ath/ath12k/core.h             |  24 ++
->   drivers/net/wireless/ath/ath12k/dp.c               |  39 +-
->   drivers/net/wireless/ath/ath12k/dp.h               |   2 +-
->   drivers/net/wireless/ath/ath12k/hif.h              |  30 ++
->   drivers/net/wireless/ath/ath12k/hw.h               |   8 +-
->   drivers/net/wireless/ath/ath12k/mhi.c              |   4 +-
->   drivers/net/wireless/ath/ath12k/pci.c              | 111 +++---
->   drivers/net/wireless/ath/ath12k/pci.h              |  21 +-
->   drivers/net/wireless/ath/ath12k/pcic.c             | 435 +++++++++++++++++++++
->   drivers/net/wireless/ath/ath12k/pcic.h             |  24 ++
->   drivers/net/wireless/ath/ath12k/qmi.c              |  83 +++-
->   drivers/net/wireless/ath/ath12k/qmi.h              |   1 +
->   drivers/net/wireless/ath/ath12k/wifi7/ahb.c        |  45 ++-
->   drivers/net/wireless/ath/ath12k/wifi7/hal.c        |   7 +
->   .../net/wireless/ath/ath12k/wifi7/hal_qcn9274.c    |  85 ++++
->   .../net/wireless/ath/ath12k/wifi7/hal_qcn9274.h    |   1 +
->   drivers/net/wireless/ath/ath12k/wifi7/hw.c         | 143 +++++++
->   drivers/net/wireless/ath/ath12k/wifi7/pci.c        |  22 +-
->   25 files changed, 1214 insertions(+), 109 deletions(-)
-
-Reviewed-by: Vasanthakumar Thiagarajan <vasanthakumar.thiagarajan@oss.qualcomm.com>
+>  block/partitions/check.h |  1 +
+>  block/partitions/core.c  | 20 +++++++++++++++++---
+>  block/partitions/of.c    |  3 +++
+>  3 files changed, 21 insertions(+), 3 deletions(-)
+>
+> diff --git a/block/partitions/check.h b/block/partitions/check.h
+> index b0997467b61a54a8a621b9c155c8329289649460..326081499d9a6be730dbd659c=
+110449cfa06921f 100644
+> --- a/block/partitions/check.h
+> +++ b/block/partitions/check.h
+> @@ -17,6 +17,7 @@ struct parsed_partitions {
+>                 int flags;
+>                 bool has_info;
+>                 struct partition_meta_info info;
+> +               struct fwnode_handle *fwnode;
+>         } *parts;
+>         int next;
+>         int limit;
+> diff --git a/block/partitions/core.c b/block/partitions/core.c
+> index b5c59b79ca7cbb28d4d93478ee1c80908f76ee9f..eee954df1ac6ef7dd4f02ad5c=
+9d49aed778bf015 100644
+> --- a/block/partitions/core.c
+> +++ b/block/partitions/core.c
+> @@ -11,6 +11,7 @@
+>  #include <linux/sysfs.h>
+>  #include <linux/ctype.h>
+>  #include <linux/vmalloc.h>
+> +#include <linux/property.h>
+>  #include <linux/raid/detect.h>
+>  #include "check.h"
+>
+> @@ -110,8 +111,17 @@ static struct parsed_partitions *allocate_partitions=
+(struct gendisk *hd)
+>         return state;
+>  }
+>
+> +static void drop_partitions_fwnodes(struct parsed_partitions *state)
+> +{
+> +       for (int i =3D 0; i < state->limit; i++) {
+> +               fwnode_handle_put(state->parts[i].fwnode);
+> +               state->parts[i].fwnode =3D NULL;
+> +       }
+> +}
+> +
+>  static void free_partitions(struct parsed_partitions *state)
+>  {
+> +       drop_partitions_fwnodes(state);
+>         vfree(state->parts);
+>         kfree(state);
+>  }
+> @@ -139,6 +149,7 @@ static struct parsed_partitions *check_partition(stru=
+ct gendisk *hd)
+>
+>         i =3D res =3D err =3D 0;
+>         while (!res && check_part[i]) {
+> +               drop_partitions_fwnodes(state);
+>                 memset(state->parts, 0, state->limit * sizeof(state->part=
+s[0]));
+>                 res =3D check_part[i++](state);
+>                 if (res < 0) {
+> @@ -247,6 +258,7 @@ static const struct attribute_group *part_attr_groups=
+[] =3D {
+>
+>  static void part_release(struct device *dev)
+>  {
+> +       fwnode_handle_put(dev_fwnode(dev));
+>         put_disk(dev_to_bdev(dev)->bd_disk);
+>         bdev_drop(dev_to_bdev(dev));
+>  }
+> @@ -294,7 +306,8 @@ static const DEVICE_ATTR(whole_disk, 0444, whole_disk=
+_show, NULL);
+>   */
+>  static struct block_device *add_partition(struct gendisk *disk, int part=
+no,
+>                                 sector_t start, sector_t len, int flags,
+> -                               struct partition_meta_info *info)
+> +                               struct partition_meta_info *info,
+> +                               struct fwnode_handle *fwnode)
+>  {
+>         dev_t devt =3D MKDEV(0, 0);
+>         struct device *ddev =3D disk_to_dev(disk);
+> @@ -343,6 +356,7 @@ static struct block_device *add_partition(struct gend=
+isk *disk, int partno,
+>         pdev->class =3D &block_class;
+>         pdev->type =3D &part_type;
+>         pdev->parent =3D ddev;
+> +       device_set_node(pdev, fwnode_handle_get(fwnode));
+>
+>         /* in consecutive minor range? */
+>         if (bdev_partno(bdev) < disk->minors) {
+> @@ -449,7 +463,7 @@ int bdev_add_partition(struct gendisk *disk, int part=
+no, sector_t start,
+>         }
+>
+>         part =3D add_partition(disk, partno, start, length,
+> -                       ADDPART_FLAG_NONE, NULL);
+> +                       ADDPART_FLAG_NONE, NULL, NULL);
+>         ret =3D PTR_ERR_OR_ZERO(part);
+>  out:
+>         mutex_unlock(&disk->open_mutex);
+> @@ -564,7 +578,7 @@ static bool blk_add_partition(struct gendisk *disk,
+>         }
+>
+>         part =3D add_partition(disk, p, from, size, state->parts[p].flags=
+,
+> -                            &state->parts[p].info);
+> +                            &state->parts[p].info, state->parts[p].fwnod=
+e);
+>         if (IS_ERR(part)) {
+>                 if (PTR_ERR(part) !=3D -ENXIO) {
+>                         printk(KERN_ERR " %s: p%d could not be added: %pe=
+\n",
+> diff --git a/block/partitions/of.c b/block/partitions/of.c
+> index 53664ea06b6540e3d1155141adaafac7286f2d21..4fc7c80c407de42b2b31be2c8=
+2e0e6bc2a30c9e3 100644
+> --- a/block/partitions/of.c
+> +++ b/block/partitions/of.c
+> @@ -3,6 +3,7 @@
+>  #include <linux/blkdev.h>
+>  #include <linux/major.h>
+>  #include <linux/of.h>
+> +#include <linux/property.h>
+>  #include <linux/string.h>
+>  #include "check.h"
+>
+> @@ -62,6 +63,8 @@ static void add_of_partition(struct parsed_partitions *=
+state, int slot,
+>                 partname =3D of_get_property(np, "name", &len);
+>         strscpy(info->volname, partname, sizeof(info->volname));
+>
+> +       state->parts[slot].fwnode =3D fwnode_handle_get(of_fwnode_handle(=
+np));
+> +
+>         seq_buf_printf(&state->pp_buf, "(%s)", info->volname);
+>  }
+>
+>
+> --
+> 2.34.1
+>
