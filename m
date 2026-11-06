@@ -1,100 +1,64 @@
-Authentication-Results: smtp.subspace.kernel.org; arc=pass header.oldest-pass=0 smtp.remote-ip=209.85.208.47
-ARC-Seal: i=2; d=subspace.kernel.org; s=arc20261015; a=rsa-sha256; cv=pass;
-	t=1793987600;
-	b=Q7+oE3cz05Um7QqZdhN8l3XME3NOJjkk34dWgOWBY4kC4uUilOiusnaAeL7QzRGUzyQm
-	 h3q8g2dgBRSmXAHo0MLbt+3aRkcB4c43DiwGPaQVYfwN8mAgTN9BYsc61auVDYwNTBpYk
-	 hPKgFB8bJqFAx/iYngIzfHWvKvhiYVkPudmuPUTskSWXmWGCjE4ntTO4504whkWoOUvEh
-	 V7pSpRsP0LmZXsMcJ3Zq0C/DYf6Ov9+U5hOH+kRG0uRQ+sGOwB17sEkcBwnh863rM1bzP
-	 SuZTuJyZIiZbvfU7Y1Fcp/D5uNmS4k6llvv7iVVjvonShD9xHYhUV9CtRk7djHubJGw==
-ARC-Message-Signature: i=2; d=subspace.kernel.org; s=arc20261015;
-	a=rsa-sha256; c=relaxed/relaxed; t=1793987600;
-	h=DMARC-Filter:Received:DKIM-Signature:X-Google-DKIM-Signature:
-	 X-Forwarded-Encrypted:X-Gm-Message-State:X-Gm-Gg:X-Received:
-	 MIME-Version:References:In-Reply-To:From:Date:X-Gm-Features:
-	 Message-ID:Subject:To:Cc:Content-Type:Content-Transfer-Encoding;
-	bh=5pDupBwR2/7t1JImpr59IJwI8nCk2i1PzTMP7JDf060=;
-	b=CUCOqaYEyq3rnDlqe5Dmz6t17ubW7Od2GwT6NdcZwlB9AGJdXnuUEbRIUksVkOt+9SXm
-	 VpdEcKtralL4UQgfO+8NNP1XS7an90HrfeeFtnxFiuudgUpMr9tMePCYrk7q7zIZYyZB+
-	 CsQNnlA1JzMmDvQJKTAW4abzjn4q0b1DA2PByJesuudpF+m1eYnfxAhwdbIIyWVunsAcy
-	 mCt1GgJjRdGFb0rWpa62BHkVCDDXJN5tp+mJSoZdQ63/zgl65DYG0I/hjJYDbMFKbg4RK
-	 V3BWeImDbekSig+sIa+yFECAUngw2U1thi2zJU630lyya1iUsrLEqcD3j/HOccQBREA==
-ARC-Authentication-Results: i=2; smtp.subspace.kernel.org; 
-	dmarc=pass header.from=google.com;
-	spf=pass smtp.mailfrom=google.com;
-	dkim=pass header.d=google.com header.i=@google.com header.a=rsa-sha256 header.s=20260707 header.b=jlcDAy1q;
-	arc=pass header.oldest-pass=0 smtp.remote-ip=209.85.208.47
-Received: from mail-ed1-f47.google.com (mail-ed1-f47.google.com [209.85.208.47])
-	(using TLSv1.3 with cipher TLS_AES_128_GCM_SHA256 (128/128 bits)
+Authentication-Results: smtp.subspace.kernel.org; arc=none smtp.remote-ip=91.216.248.207
+ARC-Seal: i=1; d=subspace.kernel.org; s=arc20261015; a=rsa-sha256; cv=none;
+	t=1793989120;
+	b=wQPNzexV2cZwwJGdsCfVFKf9GJaUBl/eJfBVQNDv5w79uXtb7K6sdQ2cd84qzRw2N7an
+	 l2Ifq0rLDEHz7dUcgU8E6udPmJHSxNnXTyv3S+Axbf2E1qWYn2lPWvbOMhrB/hwXKPoJ/
+	 wNKON0PTXSW6Onh+39EY/1dXE2hfLGHsuow+IT9/O7mEY+mjuGVRynu79dhNY5SCGrPhT
+	 yqBWlM9e001hIfATUzepytVFxdhW3s9pjIx4G3tSI2gA6CKjNnZzFd+B3QlabiuxCYKX7
+	 kGm7b3XPYIJ6lshTZlmBH5iX93G9wL8kev7Afe76Gzm7Y3CVMpRP25TYoNrtbet+5Jw==
+ARC-Message-Signature: i=1; d=subspace.kernel.org; s=arc20261015;
+	a=rsa-sha256; c=relaxed/relaxed; t=1793989120;
+	h=DMARC-Filter:Date:X-Lima-ML-UUID:DKIM-Signature:From:To:Cc:Subject:
+	 Message-ID:In-Reply-To:References:Organization:X-Mailer:MIME-Version:
+	 Content-Type:Content-Transfer-Encoding;
+	bh=dyygcqcAN6zPeXsDXub4yWu3eaYgS8p+qfGLoA+tRmk=;
+	b=AcTfUqURb/B63DVU4G8JSxhD1j42VNY6seb+fhTcbGiztRRlON3SB0ui+nTR5OfCgU9s
+	 VVdXYVX1hWBBU8gM0EscW1Z9IEEPPlamFp6Yb6SUHJ08Q5VFh1Mp5D57sRfcVgRN7Rel/
+	 7v4XIiErGcGrhOn7P3SqBP9J7VQNz3z3Nj9whVGxnDwT+HbU4OfBfP5NHaXG6uFocZBqv
+	 ZKOQrbksBHvcx8n12MlenkYjTm9N1g89DAmDiNdQ5VMuEGQ1VNyE8anCD/UqrkVQLqtfE
+	 87NWdpaXaeBP6yfEYTcYLkj+Otv1PEdx8snq+iUkp6KxTsaCeWakfejWG7gpi5J/thw==
+ARC-Authentication-Results: i=1; smtp.subspace.kernel.org; 
+	dmarc=none header.from=deq.rocks;
+	spf=none smtp.mailfrom=deq.rocks;
+	arc=none smtp.remote-ip=91.216.248.207
+Received: from mx5.mail-out.lima-city.de (mx5.mail-out.lima-city.de [91.216.248.207])
+	(using TLSv1.3 with cipher TLS_AES_256_GCM_SHA384 (256/256 bits)
 	 key-exchange X25519 server-signature ECDSA (prime256v1) server-digest SHA256)
 	(No client certificate requested)
-	by smtp.subspace.kernel.org (Postfix) with ESMTPS id 895ED606A334
-	for <linux-wireless@vger.kernel.org>; Fri,  6 Nov 2026 17:53:20 +0000 (UTC)
-DMARC-Filter: OpenDMARC Filter v1.4.2 smtp.subspace.kernel.org 895ED606A334
-Authentication-Results: smtp.subspace.kernel.org; dmarc=pass (p=reject dis=none) header.from=google.com
-Authentication-Results: smtp.subspace.kernel.org; spf=pass smtp.mailfrom=google.com
-Authentication-Results: smtp.subspace.kernel.org;
-	dkim=pass (2048-bit key, unprotected) header.d=google.com header.i=@google.com header.a=rsa-sha256 header.s=20260707 header.b=jlcDAy1q
-Received: by mail-ed1-f47.google.com with SMTP id 4fb4d7f45d1cf-6b571a45a2aso4035a12.0
-        for <linux-wireless@vger.kernel.org>; Fri, 06 Nov 2026 09:53:20 -0800 (PST)
-ARC-Seal: i=1; a=rsa-sha256; t=1793987599; cv=none;
-        d=google.com; s=arc-20260327;
-        b=VkHVn0wA3N9nRhaSp6XcdO+daKjjEfwVNx+OJ/wVY3XhzUba63zu+WR6OYLPV9UjFb
-         thg0BQp420qdwq4oBHJff+CIuUXWm7fCZnmbE7Rn/F4SLtfcprssJKwjUV7Wau14xCHO
-         ZOEX3IP+jrInwS80MJp2KKbVVKzFQnn5t356Lawf9OsrX3eGC5V+7XN0R06TMzWUEyGB
-         6ggvjHODwxuQiVSH6u2oUvSDSbVFxXmGKWtpn1BFdpvZfGGhFaAtHURRG4KZFlu0zOx0
-         uBnMm66e92z26ju53r7gSjchwZoMzXBsz9ntVfhnHU/8KJbrzBmSn6TzlGDYZYyI8Qwj
-         3pBw==
-ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=google.com; s=arc-20260327;
-        h=content-transfer-encoding:cc:to:subject:message-id:date:from
-         :in-reply-to:references:mime-version:dkim-signature;
-        bh=5pDupBwR2/7t1JImpr59IJwI8nCk2i1PzTMP7JDf060=;
-        fh=XPc8+Mh+Xpi7jFumal16bIaZL6JIr/12Ax4pVOfm9Bk=;
-        b=DKh90pRfYEG8qlz2WjaUF+AXycUnMwQMy6oHfQmzAMkRcyFI0fTlMwAaBOPRdyOo/G
-         MPv9vNgFzZK8HFZkv6R0uIhLB1m48hriHN8wFbkpCY/KO/Boh1ZnuKYOIBjmgSn0kUiJ
-         AOG/CwhU34d9LNjQCRaefHS6kv9P6k2N6i0LmwSuxqvud8WPgp1Y0jX45dR3078oFGCh
-         2wNxn3UixAlo9clpxpuT26p4QQJCAi9lQmI864EHsAgcPoFh2KY06+fChncfAqA5bWaj
-         5BJd5NkIEIcUUIDtriYDioczFo2CARneFSpmwNcInE9U/tK26DMBCJa+mvtHc6JHXgAF
-         rvFw==;
-        darn=vger.kernel.org
-ARC-Authentication-Results: i=1; mx.google.com; arc=none
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=google.com; s=20260707; t=1793987599; x=1794592399; darn=vger.kernel.org;
-        h=content-transfer-encoding:content-type:cc:to:subject:message-id
-         :date:from:in-reply-to:references:mime-version:from:to:cc:subject
-         :date:message-id:reply-to:content-type;
-        bh=5pDupBwR2/7t1JImpr59IJwI8nCk2i1PzTMP7JDf060=;
-        b=jlcDAy1qwlP8CV/J8ziGOhM7zgiwe1Yqasgt18zZ9BLFfbdjvFbOPJHelnnlWn7/NF
-         Iv0y6BvcfswTFEAK+vaTKFWw4pm1SC9i7SkbSqJgyIWek4Oq+yCZaP0CXyGrm6BTXeAy
-         PMZhXc8r+FCA+Uan8Tn54ozp3MQPEOEFZdVxBH5ggJzVX08faCYPNZDo3xsJ3VF8tmEg
-         pX3urwYaX0msYCvMLpruaNTx6NxqPVTVZ/iC58DSiI1w9TNgPQSmlsdvsWkpbFzggva5
-         DeXnKd9qGJxbmFLWSsqwsQR8pJQE3NG/l6oFkjRU8+PfaF5R3/yJ38vi2guHN24z+b5U
-         +fdg==
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=1e100.net; s=20260707; t=1793987599; x=1794592399;
-        h=content-transfer-encoding:content-type:cc:to:subject:message-id
-         :date:from:in-reply-to:references:mime-version:x-gm-gg
-         :x-gm-message-state:from:to:cc:subject:date:message-id:reply-to
-         :content-type;
-        bh=5pDupBwR2/7t1JImpr59IJwI8nCk2i1PzTMP7JDf060=;
-        b=cKbObCtvPbb29yseK/YIuEERSPi6tqJDCRrNsW2sCAM/U7NTT7NT5b+C0/6tbmkKNG
-         OX/8p8JWQ7KI1EN7Xj5CHY2eTZ/H9yULNpw/RYj1sATf5t/FcPvPpg9YFqlWnBrJO++q
-         JsGCAcevhBJnWcuE1HSvu78dsT33Cfu7GzF2/SggKB+LHowRXYI7KxAA1Egf677xgOt4
-         CYciHilBasAm1JMsbYuvQKD06oMedaaGiKi15e90gSZw3Tgm53KEXpFvX93OPFZPFvx0
-         zEc8sWHHTuCt5dKlXMmxw70RmB/pQzUb6qIsgnmpxHiL3khWOzB+cmY+564rIUMWCSt7
-         n1ZQ==
-X-Forwarded-Encrypted: i=1; AL+hErFN4ZpnLahItaOGbtN22thHAfiO2nVEJAeplKaItRZovjKRcPlD2ik1HPC/Xw/sWkeKSH+/sgtCpJO+H3wuBg==@vger.kernel.org
-X-Gm-Message-State: APuU4Z+xqVa/4eq/cfjvbI4PdA8azGYO4Iu8wvoKK7pwu/rjvADDi3Jm
-	Xgf8LODBWTllCKMrNZYJjmbQzno8OUwUTsmucyetpjEpp6QSkxr8rgmz0Nh9fk2qvqPRShERNnx
-	TW6DPiFzBnFsi8c19aU8YomAbkyU1vf68hNRjhAkK
-X-Gm-Gg: AYBFou1ixnVBwngJlZwd3DmS6aGFsYQATrprg+XClCF7KjB5XAa9ezoeNu4buIFhVHr
-	jIb8ba0QVAqemt0OHGa1Uy7+oiwRq+muvyf/4BnGXyOBlvQ1EMJ7uZFjTNe4lPZHbKE1aDUohkD
-	i8CRLUNW0fDgqDsAiV2P07tlCXhu9YRs3CCvw5uAIh5FKHcbQr5UV57se7R/TQgnIe20PJs6pWa
-	9k1c2fn2aQhjYpzy+re9vk4deEGKydNKhGUsooo2S9CkwjlNXoLbXRoEHbVomgyCGASEQHdT8OY
-	LmIsPA51x+hZxF8UREuKlv3V4bgO8b3eZTB+1muMoSri8dX15tj5mIprzSK/BiSs7D+ifOHZg/O
-	gnUt3ezOwUhn/xoJOEGJAxFZcz2AeiK18B6E+y8D7oOTS69MeNWmrSkr/4/XEt0UnbOM=
-X-Received: by 2002:a05:6402:20d2:10b0:6af:97c0:ce51 with SMTP id
- 4fb4d7f45d1cf-6b6f84514ccmr6722a12.13.1793987598073; Fri, 06 Nov 2026
- 09:53:18 -0800 (PST)
+	by smtp.subspace.kernel.org (Postfix) with ESMTPS id BCC43606A32C;
+	Fri,  6 Nov 2026 18:18:32 +0000 (UTC)
+DMARC-Filter: OpenDMARC Filter v1.4.2 smtp.subspace.kernel.org BCC43606A32C
+Authentication-Results: smtp.subspace.kernel.org; dmarc=none (p=none dis=none) header.from=deq.rocks
+Authentication-Results: smtp.subspace.kernel.org; spf=none smtp.mailfrom=deq.rocks
+Date: Fri, 6 Nov 2026 19:18:26 +0100
+X-Lima-ML-UUID: 52e3c1d7-73c4-420c-837c-f7ae052149fb
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=deq.rocks;
+	s=securedbylima-20251205; t=1793989110;
+	bh=QKKFbfCa9dHm2YxFOGcOT17+76twgyOoEkQPZtq3Y0Y=;
+	h=Date:From:To:Cc:Subject:In-Reply-To:References:From;
+	b=Ft3ZTQYazgHJy+WiOicPJcdpdkn0Av1qnb5U8ypS+7+NwSnstj3u5W5OQ7i+LxZcv
+	 dqQv1FMGNoXEfpKUelayYiq5xLIAHld+EOG46Bdv9KCwyi4y2BbdD8K5VFM2MSCvqj
+	 NcMr3O1JWGDe11wiVU6xi+r9l7CYoUFND5rtTkJ+i5q1KyfpjX6/M1Ou6XVPeWNs0/
+	 g/+GYf3xTU9B4Z2Tfga6WhoIGJ+qEga6y3eA9BSB/uwIvF+6IRdpS9a0FA7KOanhpS
+	 7iAFFMX3K2cT/KOSR42AOTyuyruQPTGOa7mWvgU2z6TzFH+0W1+XxRwoR8tAvzbXIN
+	 flBdU7MnQin/Q==
+From: =?UTF-8?B?QW5kcsOp?= Eikmeyer <dev@deq.rocks>
+To: Arend van Spriel <arend.vanspriel@broadcom.com>
+Cc: <asahi@lists.linux.dev>, <brcm80211-dev-list.pdl@broadcom.com>,
+ <brcm80211@lists.linux.dev>, <dberlin@dberlin.org>, <frankyl@broadcom.com>,
+ <gustavoars@kernel.org>, <j@jannau.net>, <kees@kernel.org>,
+ <kvalo@kernel.org>, <linux-hardening@vger.kernel.org>,
+ <linux-kernel@vger.kernel.org>, <linux-wireless@vger.kernel.org>,
+ <marcan@marcan.st>, <meuleman@broadcom.com>, <michael.reeves077@gmail.com>,
+ <pieterpg@broadcom.com>, <vanhoefm@gmail.com>
+Subject: Re: [PATCH 05/13] wifi: brcmfmac: Negotiate PCIe mailbox transport
+ with firmware
+Message-ID: <20261106191826.4ddb997a@kait2en-mbp15-1>
+In-Reply-To: <1a1b1ef4b20.2873.9b12b7fc0a3841636cfb5e919b41b954@broadcom.com>
+References: <20261106153612.2aadef2a@kait2en-mbp15-1>
+	<1a1b1ef4b20.2873.9b12b7fc0a3841636cfb5e919b41b954@broadcom.com>
+Organization: KaiT2en
+X-Mailer: Claws Mail 4.4.0 (GTK 3.24.52; x86_64-redhat-linux-gnu)
 X-Mailing-List: linux-wireless@vger.kernel.org
 List-Id: <linux-wireless.vger.kernel.org>
 List-Post: <mailto:linux-wireless@vger.kernel.org>
@@ -104,120 +68,34 @@ List-Unsubscribe: <mailto:linux-wireless+unsubscribe@vger.kernel.org>
 List-Owner: <mailto:linux-wireless+owner@vger.kernel.org>
 Precedence: list
 MIME-Version: 1.0
-References: <20261103211424.127627-1-almasrymina@google.com> <cf2e3292-d591-42a4-bf6e-76f4567604c6@kernel.org>
-In-Reply-To: <cf2e3292-d591-42a4-bf6e-76f4567604c6@kernel.org>
-From: Mina Almasry <almasrymina@google.com>
-Date: Fri, 6 Nov 2026 09:53:06 -0800
-X-Gm-Features: AclHuK9NbTvBEPfZwCm6iqd7sXh-jqNYXp8FMPv7QJO9bGGBVmf4WllHJrUhzyo
-Message-ID: <CAHS8izO7QmD1qp=QfUsCq-R+p7OuOVUtqPJZh1k+u7H1J3KnoQ@mail.gmail.com>
-Subject: Re: [PATCH net-next v1 0/5] net: deprecate skb->pp_recycle and skb_mark_for_recycle()
-To: Jesper Dangaard Brouer <hawk@kernel.org>
-Cc: netdev@vger.kernel.org, linux-kernel@vger.kernel.org, 
-	virtualization@lists.linux.dev, linux-mm@kvack.org, bpf@vger.kernel.org, 
-	linux-wireless@vger.kernel.org, linux-doc@vger.kernel.org, 
-	bcm-kernel-feedback-list@broadcom.com, imx@lists.linux.dev, 
-	linux-rdma@vger.kernel.org, linux-hyperv@vger.kernel.org, 
-	linux-renesas-soc@vger.kernel.org, linux-omap@vger.kernel.org, 
-	"David S. Miller" <davem@davemloft.net>, Eric Dumazet <edumazet@kernel.org>, 
-	Jakub Kicinski <kuba@kernel.org>, Paolo Abeni <pabeni@redhat.com>, Simon Horman <horms@kernel.org>, 
-	Steffen Klassert <steffen.klassert@secunet.com>, Herbert Xu <herbert@gondor.apana.org.au>, 
-	Willem de Bruijn <willemb@google.com>, Stanislav Fomichev <sdf@fomichev.me>, 
-	Pavel Begunkov <asml.silence@gmail.com>, Bobby Eshleman <bobbyeshleman@meta.com>, 
-	Andrew Lunn <andrew+netdev@lunn.ch>, "Michael S. Tsirkin" <mst@redhat.com>, 
-	Jason Wang <jasowangio@gmail.com>, =?UTF-8?Q?Eugenio_P=C3=A9rez?= <eperezma@redhat.com>, 
-	Xuan Zhuo <xuanzhuo@linux.alibaba.com>, Andrew Morton <akpm@linux-foundation.org>, 
-	David Hildenbrand <david@kernel.org>, Lorenzo Stoakes <ljs@kernel.org>, 
-	"Liam R. Howlett" <liam@infradead.org>, Vlastimil Babka <vbabka@kernel.org>, Mike Rapoport <rppt@kernel.org>, 
-	Suren Baghdasaryan <surenb@google.com>, Michal Hocko <mhocko@suse.com>, 
-	Ilias Apalodimas <ilias.apalodimas@linaro.org>, Alexei Starovoitov <ast@kernel.org>, 
-	Daniel Borkmann <daniel@iogearbox.net>, John Fastabend <john.fastabend@gmail.com>, 
-	Sabrina Dubroca <sd@queasysnail.net>, Johannes Berg <johannes@sipsolutions.net>, 
-	Byungchul Park <byungchul@sk.com>, Jonathan Corbet <corbet@lwn.net>, 
-	Shuah Khan <skhan@linuxfoundation.org>, Randy Dunlap <rdunlap@infradead.org>, 
-	Lorenzo Bianconi <lorenzo@kernel.org>, Wen Gu <guwen@linux.alibaba.com>, 
-	Philo Lu <lulie@linux.alibaba.com>, Justin Chen <justin.chen@broadcom.com>, 
-	Florian Fainelli <florian.fainelli@broadcom.com>, Vikas Gupta <vikas.gupta@broadcom.com>, 
-	Michael Chan <michael.chan@broadcom.com>, Pavan Chebbi <pavan.chebbi@broadcom.com>, 
-	Doug Berger <opendmb@gmail.com>, Nicolai Buchwitz <nb@tipi-net.de>, Satish Kharat <satishkh@cisco.com>, 
-	Wei Fang <wei.fang@nxp.com>, Frank Li <frank.li@nxp.com>, Shenwei Wang <shenwei.wang@nxp.com>, 
-	Joshua Washington <joshwash@google.com>, Harshitha Ramamurthy <hramamurthy@google.com>, 
-	Jijie Shao <shaojijie@huawei.com>, Jian Shen <shenjian15@huawei.com>, 
-	Fan Gong <gongfan1@huawei.com>, Tony Nguyen <anthony.l.nguyen@intel.com>, 
-	Przemek Kitszel <przemyslaw.kitszel@intel.com>, Marcin Wojtas <marcin.s.wojtas@gmail.com>, 
-	Russell King <linux@armlinux.org.uk>, Sunil Goutham <sgoutham@marvell.com>, 
-	Geetha sowjanya <gakula@marvell.com>, Ratheesh Kannoth <rkannoth@marvell.com>, 
-	Subbaraya Sundeep <sbhatta@marvell.com>, Bharat Bhushan <bbhushan2@marvell.com>, 
-	Felix Fietkau <nbd@nbd.name>, Matthias Brugger <matthias.bgg@gmail.com>, 
-	AngeloGioacchino Del Regno <angelogioacchino.delregno@collabora.com>, Tariq Toukan <tariqt@nvidia.com>, 
-	Saeed Mahameed <saeedm@nvidia.com>, Mark Bloch <mbloch@nvidia.com>, Leon Romanovsky <leon@kernel.org>, 
-	Ido Schimmel <idosch@nvidia.com>, Petr Machata <petrm@nvidia.com>, 
-	Horatiu Vultur <horatiu.vultur@microchip.com>, UNGLinuxDriver@microchip.com, 
-	Daniel Machon <daniel.machon@microchip.com>, Steen Hegelund <Steen.Hegelund@microchip.com>, 
-	Haiyang Zhang <haiyangz@microsoft.com>, Wei Liu <wei.liu@kernel.org>, 
-	Dexuan Cui <decui@microsoft.com>, Yibo Dong <dong100@mucse.com>, 
-	Brett Creeley <brett.creeley@amd.com>, Justin Lai <justinlai0215@realtek.com>, 
-	Larry Chiu <larry.chiu@realtek.com>, 
-	=?UTF-8?Q?Niklas_S=C3=B6derlund?= <niklas.soderlund@ragnatech.se>, 
-	Paul Barker <paul@pbarker.dev>, Masahisa Kojima <kojima.masahisa@socionext.com>, 
-	Maxime Chevallier <maxime.chevallier@bootlin.com>, Maxime Coquelin <mcoquelin.stm32@gmail.com>, 
-	Alexandre Torgue <alexandre.torgue@foss.st.com>, FUJITA Tomonori <fujita.tomonori@gmail.com>, 
-	Siddharth Vadapalli <s-vadapalli@ti.com>, Roger Quadros <rogerq@kernel.org>, 
-	MD Danish Anwar <danishanwar@ti.com>, Jiawen Wu <jiawenwu@trustnetic.com>, 
-	Mengyuan Lou <mengyuanlou@net-swift.com>, Ronak Doshi <ronak.doshi@broadcom.com>, 
-	Ryder Lee <ryder.lee@mediatek.com>, Shayne Chen <shayne.chen@mediatek.com>, 
-	Sean Wang <sean.wang@mediatek.com>, Juergen Gross <jgross@suse.com>, 
-	Stefano Stabellini <sstabellini@kernel.org>, 
-	Oleksandr Tyshchenko <oleksandr_tyshchenko@epam.com>, Jordan Rhee <jordanrhee@google.com>, 
-	Ankit Garg <nktgrg@google.com>, Tim Hostetler <thostet@google.com>, 
-	Erni Sri Satya Vennela <ernis@linux.microsoft.com>, Eric Joyner <eric.joyner@amd.com>, 
-	Mohammad Heib <mheib@redhat.com>, Prabu Thayalan <prabu.ponrajthayalan@amd.com>, 
-	Chintan Vankar <c-vankar@ti.com>, Nora Schiffer <nora.schiffer@ew.tq-group.com>, 
-	Alexander Sverdlin <alex@sverdlin.org>, Kevin Hao <haokexin@gmail.com>, 
-	Karl Mehltretter <kmehltretter@gmail.com>, 
-	Aleksandr Loktionov <aleksandr.loktionov@intel.com>, Meghana Malladi <m-malladi@ti.com>, 
-	Jacob Keller <jacob.e.keller@intel.com>, StanleyYP Wang <StanleyYP.Wang@mediatek.com>
-Content-Type: text/plain; charset="UTF-8"
-Content-Transfer-Encoding: quoted-printable
+Content-Type: text/plain; charset=US-ASCII
+Content-Transfer-Encoding: 7bit
 
-On Thu, Nov 5, 2026 at 8:36=E2=80=AFAM Jesper Dangaard Brouer <hawk@kernel.=
-org> wrote:
->
->
->
-> On 11/3/26 22:14, Mina Almasry wrote:
-> > Remove the per-SKB skb->pp_recycle bitfield and skb_mark_for_recycle()
-> > helper, and reference-count netmems directly by their underlying type
-> > via netmem_is_pp() inside netmem_inc_ref() and netmem_dec_ref().
-> >
-> > This series simplifies SKB and netmem reference counting:
-> > - Reclaims 1 bit from struct sk_buff (skb->pp_recycle).
-> > - Unifies reference counting of SKB fragment netmems and regular netmem=
-s
-> >    under netmem_inc_ref() and netmem_dec_ref(), eliminating the separat=
-e
-> >    skb_netmem_ref(), skb_netmem_unref(), and skb_mark_for_recycle() API=
-s.
->
-> Part of the performance gain from page_pool was to completely avoid the
-> atomic refcnt operation, when we can see that page refcnt=3D=3D1.
-> Are you removing this?
->
+On Fri, 06 Nov 2026 18:36:52 +0100
+Arend van Spriel <arend.vanspriel@broadcom.com> wrote:
 
-I am not, and this is a very sharp observation, because retaining that
-optimization was one of the things I struggled with my LLM to come up
-with a way to retain that optimization without pp_recycle. Patch 4
-includes verification from pp-bench that the fast path remains just as
-fast:
+> Sorry, you lost me there. What is the relation between the patch in
+> this subject and D3 ack.
 
-   - no-softirq-page_pool01 (fast path): 37 cycles (18.7 ns) baseline
-vs      36-37 cycles (18.5 ns) patched.
-   - no-softirq-page_pool02 (ptr_ring): 77-78 cycles (38.9 ns)
-baseline vs      76-77 cycles (38.4 ns) patched.
+Hi Arend,
 
-But the sashiko comments indicates there is at least 1 race related to
-this we missed. It looks like a smp_rmb() after checking the page is
-exclusively owned may fix it. Let me see if that works.
+D3_INFORM and D3_ACK are mailbox messages, and 05 changes how they are
+exchanged. Without 05 brcmfmac writes D3_INFORM to the TCM mailbox
+and our cursed Apple 4377 firmware on the 9,1 doesn't read it.
 
---=20
-Thanks,
-Mina
+That is why I mentioned the D3 ACK timeout handling patch. I
+submitted that because I was sure the firmware wouldn't send it.
+But actually the transport was broken.
+
+https://lore.kernel.org/all/20261001085308.1688049-1-dev@deq.rocks/
+
+which was superseded by Sebastian's patch here:
+
+https://lore.kernel.org/linux-wireless/20260915-brcmfmac-bcm43752-suspend-fix-v2-1-1bd84914998b@collabora.com/
+
+So probably for addressing Sebastian's issue this needs to stay
+anyways. My memory served me wrong. I just read that his device is not
+an Apple product, but his patch incidentally worked around the same
+problem. Sorry if i was causing unneccessary noise. 
+
+Andre
