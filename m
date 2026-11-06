@@ -1,57 +1,49 @@
-Authentication-Results: smtp.subspace.kernel.org; arc=none smtp.remote-ip=62.149.156.87
+Authentication-Results: smtp.subspace.kernel.org; arc=none smtp.remote-ip=91.218.175.116
 ARC-Seal: i=1; d=subspace.kernel.org; s=arc20261015; a=rsa-sha256; cv=none;
-	t=1793982402;
-	b=WpIzMbk7vENAtzKgFpfqWq15Vn3Kh0XDJdTfArMvekgxAo19NsK/UaSa90qJtn5mpdNy
-	 rCysE/q5tzTtkF1eevVmcrVxVLqCyR00jm60QmK95YdsgSnHQo7a452DckL6M2VKIsGMH
-	 yJSbqVTsJOJs39U6fGrW/mKukI9Uc8pCf571vmn10AeHDpOcZurHCRWnsZbKlKuJkRycu
-	 dqrZetar9VNu8nHmkq6bDMWpGOmLLDMdSM6hhkMCuM5bL+7J7mRty11j6xLCGhDCRlOFp
-	 kDjIjQdRxtlj75jBRL+QDmWi6+S783/PVoV8zF9BeCRbC0yhl5Q36cmpOpEvhQsbeHg==
+	t=1793985669;
+	b=mCbK20FxTVxt9cu90TLv8L7aw2ZrTVgeAnDD30GR4B2RdNf+5pOB9zpNv1aWKxCfQZ+K
+	 zHTpYoDtkLWgFGJoJzsZ1LezsjeKRFsU9XP7xUemcRIHnInfgqUOQaU1RwgykUbSBZjfo
+	 oFnf67mDil5mDe161HJfktb94X//7KNRudVL8VK6yTFffurHnOLOQl8GmnPeniI5Nkqyi
+	 Pg7vpoKUYFuGPiX/lTXRPvToWuHBIrfnupMl1JVCSK6O9wqRU8lJbrO9dslrM6gs/g/tV
+	 pBJYt4uVSBml2m35lbTk2iEnHoxNE8/qLR/UxlzRR8iDMwUAmikDe+moECottAR3hMA==
 ARC-Message-Signature: i=1; d=subspace.kernel.org; s=arc20261015;
-	a=rsa-sha256; c=relaxed/relaxed; t=1793982402;
-	h=DMARC-Filter:Received:DKIM-Signature:Date:From:To:Cc:Subject:
-	 Message-ID:X-Mailer:MIME-Version:Content-Type:
-	 Content-Transfer-Encoding:X-CMAE-Envelope;
-	bh=alpusfvoRT6oGudZxQ935EuMdR0/lgYD2O3y7Q2/aOU=;
-	b=s9KlJeFb7cOaoLY/BMInZynWACcu5nngiY1nT5lqIC5BWxNJgtHfKdJVp4IaRt0V5ubE
-	 bqvJERJyQB7XMQZ3UGrpTjAwVRyQq9AFcTHyo/HPkYuehO0dElz+2CcdzfZt0cmEieWlS
-	 FQlgeru9ywSH2yyNIQhyt/j6zGEh4YdxxLEqWrT0Yj3hT8sLsm6ec391aiuglFkfeP2qy
-	 sWG0wLW88CuO8RyvSeulLvLvBxopz/mNGkZabL1Hg7PIKVLqC+Unh/Y44wbyfn6WtV4kd
-	 OEVkr9vSShXPMRAjAt09VkW2YhKYaJ/Pp2zde9vSoTxgE2zbnyzPUhjsAgNPJUmGiSA==
+	a=rsa-sha256; c=relaxed/relaxed; t=1793985669;
+	h=DMARC-Filter:X-Envelope-To:DKIM-Signature:X-Envelope-To:Received:
+	 X-Mizu-Trace-ID:X-Migadu-Flow:MIME-Version:Date:Content-Type:
+	 Content-Transfer-Encoding:From:Message-ID:TLS-Required:Subject:To:Cc:
+	 In-Reply-To:References;
+	bh=2uciuXx9t93tvdC10P6QxeWs86V1VIdY0xyTA3KoNZI=;
+	b=isTkcA4wg4QSFm1QsSc+GEE0LVp84ULBjtC8eJKQXEdZj4llHaDaG8dSuSD108WZ6cSW
+	 yIElS51ASVtgl2GLNuUaJJW/uI2pDTHIv5y8TNckS8jHYd9snIFuRNrLWFvSgzQ30kWM/
+	 KUFBbRSlamXfdGgmgr+U6lAkfXDr7u7nFJb6SY/3Iwe+lHIeqSgI6b51uWru1fllAVRtj
+	 4JLNpPckiRBErfdrRL0DAPly96m3CYrcPUTBcL4C5qVBHbdcW/kzV+t9Ccsfbu3uukC12
+	 ChIKs29Dq8mYoMaRVGtxtYHcvY4pblTm1cAnKJsNjg3qHpkrmdOMvUaMSOBCv5qW2mQ==
 ARC-Authentication-Results: i=1; smtp.subspace.kernel.org; 
-	dmarc=pass header.from=mythread.it;
-	spf=pass smtp.mailfrom=mythread.it;
-	dkim=pass header.d=mythread.it header.i=@mythread.it header.a=rsa-sha256 header.s=a1 header.b=GvkWpRNq;
-	arc=none smtp.remote-ip=62.149.156.87
-Received: from smtpcmd0987.aruba.it (smtpcmd0987.aruba.it [62.149.156.87])
-	(using TLSv1.3 with cipher TLS_AES_256_GCM_SHA384 (256/256 bits)
+	dmarc=pass header.from=linux.dev;
+	spf=pass smtp.mailfrom=linux.dev;
+	arc=none smtp.remote-ip=91.218.175.116
+Received: from mta0.migadu.com (out-116.mta0.migadu.com [91.218.175.116])
+	(using TLSv1.3 with cipher TLS_AES_128_GCM_SHA256 (128/128 bits)
 	 key-exchange X25519 server-signature ECDSA (prime256v1) server-digest SHA256)
 	(No client certificate requested)
-	by smtp.subspace.kernel.org (Postfix) with ESMTPS id 63ADF606A326
-	for <linux-wireless@vger.kernel.org>; Fri,  6 Nov 2026 16:26:39 +0000 (UTC)
-DMARC-Filter: OpenDMARC Filter v1.4.2 smtp.subspace.kernel.org 63ADF606A326
-Authentication-Results: smtp.subspace.kernel.org; dmarc=pass (p=none dis=none) header.from=mythread.it
-Authentication-Results: smtp.subspace.kernel.org; spf=pass smtp.mailfrom=mythread.it
-Authentication-Results: smtp.subspace.kernel.org;
-	dkim=pass (2048-bit key, unprotected) header.d=mythread.it header.i=@mythread.it header.a=rsa-sha256 header.s=a1 header.b=GvkWpRNq
-Received: from localhost ([87.16.49.252])
-	by Aruba SMTP with ESMTPSA
-	id PMlrxiLs36q8sPMlsxN6DK; Fri, 06 Nov 2026 17:26:32 +0100
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=mythread.it; s=a1;
-	t=1793982392; bh=sim4+jHEDkzlQynoThIqdD5EF4G+P38YL2QhJLOrfBE=;
-	h=Date:From:To:Subject:MIME-Version:Content-Type;
-	b=GvkWpRNqLmOg8IofCD2s9lZRWj/4k9cMomn1ts1tkJSDiFDXXWx2KZ8wy0QBGnuFL
-	 V3jScTjmFU98fQI7g9lxureRJ8ZAUmgMkhJUVgg3Bd9yhT5PHnhF8ZO6fG1drwbRog
-	 lZjW5+yCuEfFTpNRlA2a9l6Q6PnYTPoZym+o71Pq5NfBsgk8pwtJAdkok5b0Iafh4p
-	 3J/dBtpnIS8k6XsEiVpjcY/FKEv0eh6XFaST+bdZDjur0lwy3mAeyYqEEhprkSNFtc
-	 cpNJVhL71FpyW/SMGIQL7xUr8qyNi1BnAHppxAy6XE7WvSFDtplObFkQm4dmV/fwnK
-	 nQSIDXF5QufHw==
-Date: Fri, 6 Nov 2026 17:26:31 +0100
-From: Alessio Ferri <alessio.ferri@mythread.it>
-To: johannes@sipsolutions.net
-Cc: linux-wireless@vger.kernel.org
-Subject: Re: [ANN] I will stop applying driver patches
-Message-ID: <20261106172631.00002d25@mythread.it>
-X-Mailer: Claws Mail 3.21.0 (GTK+ 2.24.33; x86_64-w64-mingw32)
+	by smtp.subspace.kernel.org (Postfix) with ESMTPS id 85F40606A335
+	for <linux-wireless@vger.kernel.org>; Fri,  6 Nov 2026 17:21:07 +0000 (UTC)
+DMARC-Filter: OpenDMARC Filter v1.4.2 smtp.subspace.kernel.org 85F40606A335
+Authentication-Results: smtp.subspace.kernel.org; dmarc=pass (p=none dis=none) header.from=linux.dev
+Authentication-Results: smtp.subspace.kernel.org; spf=pass smtp.mailfrom=linux.dev
+X-Envelope-To: linux-wireless@vger.kernel.org
+DKIM-Signature: a=rsa-sha256; bh=U3KtjihvMw59KAoKlK0ibdUtLPoIyLmaO5dhG0+0RAE=;
+ c=simple/simple; d=linux.dev;
+ h=from:to:subject:date:message-id:mime-version:content-type; s=key1;
+ t=1793985665; v=1; x=1794590465;
+ b=uEe4r4FHE52+wuzICxpa3ub/8iFjzr9BuBBXEDInYG8xZTqpraqiumOnq/g/f0xdiQuKVrMb
+ 6ONl7E3zlHqoWLTBK5vaLjxYxErySew5ImJbb1enFj33nqX2YbcdhH6R9KPp8Eljh2WkIK0hulX
+ DilAHMf91qKAQ+JboCiCnUlw=
+X-Envelope-To: linux-wireless@vger.kernel.org
+Received: by smtp.migadu.com with ESMTPS id c0e5d4def3728738;
+	Fri, 06 Nov 2026 17:21:05 +0000
+X-Mizu-Trace-ID: c0e5d4def3728738
+X-Migadu-Flow: FLOW_OUT
 X-Mailing-List: linux-wireless@vger.kernel.org
 List-Id: <linux-wireless.vger.kernel.org>
 List-Post: <mailto:linux-wireless@vger.kernel.org>
@@ -61,37 +53,47 @@ List-Unsubscribe: <mailto:linux-wireless+unsubscribe@vger.kernel.org>
 List-Owner: <mailto:linux-wireless+owner@vger.kernel.org>
 Precedence: list
 MIME-Version: 1.0
-Content-Type: text/plain; charset=US-ASCII
-Content-Transfer-Encoding: 7bit
-X-CMAE-Envelope: MS4xfPmdhScLU8zXQ6KUh3GdY0jYotXfuhLuYqQi6R3fqwKtNZhyy4XkOfHgaUk36fLA8HIbAUd0Pk+cUg1IXNwau3LRjl6ltsQXqs3Pb+4y6nwzcYoeAHNO
- lwyvgt9x7a8qhxV09llkvWwVL9QdCngoNVYyS6QcoLjSJX5x5Zs4MvxqjUxd+D7iLItaoCg+ys2k5tciSLhNTcXdWGiQnXH32JUNN5LP1T3Xn+g45ROoACtH
- QwKKKOnoaC5rpK8901kGlA==
+Date: Fri, 06 Nov 2026 17:21:04 +0000
+Content-Type: text/plain; charset="utf-8"
+Content-Transfer-Encoding: quoted-printable
+From: "Luka Gejak" <luka.gejak@linux.dev>
+Message-ID: <c057826a90d64c801fd36ceabba48a504d784274@linux.dev>
+TLS-Required: No
+Subject: Re: [PATCH rtw-next v2 1/7] wifi: rtw88: 8812a, 8814a: enable STBC
+ for HT transmissions
+To: "Ho Jie Feng" <hjf3108@gmail.com>, "Ping-Ke Shih" <pkshih@realtek.com>
+Cc: linux-wireless@vger.kernel.org, "Ho Jie Feng" <hjf3108@gmail.com>,
+ linux-kernel@vger.kernel.org
+In-Reply-To: <20261031070950.425176-2-hjf3108@gmail.com>
+References: <20261031070950.425176-1-hjf3108@gmail.com>
+ <20261031070950.425176-2-hjf3108@gmail.com>
 
+Hi Jie Feng,
 
-Hi Johannes,
+One comment below.
 
-in defense of the people who "send patches to decades-old drivers":
-Those drivers are incomplete/buggy/a pain to deal with, usually because
-of the poor vendor support or totally missing documentation (no need to
-name names). 
-A lot of people (I am one of them) have had to deal with them for ages,
-with great suffering and little hope of ever fixing the situation,
-because of missing developers interested in fixing them / no
-documentation to start from / no time to reverse the whole thing.
-Finally today, with some assistance from an LLM, one could hope to have
-working hardware with Linux, or at least try to; it seems then natural
-to send patches upstream for review, instead of keeping them private.
+October 31, 2026 at 8:09 AM, "Ho Jie Feng" <hjf3108@gmail.com> wrote:
 
-Sometimes, even with an LLM helping, the work takes months.
-Sometimes, the contributor has no idea of what they are doing, and
-I get why this is a problem, after all maintainers are not review
-machines.
-But, there has to be a middle ground, maybe a small overall quota per
-merge window would push people to self-review their own work more
-carefully. That would avoid creating perverse incentives, like
-forcing people to give reviews, with the risk of having people give away
-random Reviewed-by tags just to reach the required number.
+> diff --git a/drivers/net/wireless/realtek/rtw88/main.c b/drivers/net/wi=
+reless/realtek/rtw88/main.c
+> index 0f23498b5c96e406581c06a524e9f270873866ae..f7d7b66844862ff01533b8b=
+640ed35738169673d 100644
+> --- a/drivers/net/wireless/realtek/rtw88/main.c
+> +++ b/drivers/net/wireless/realtek/rtw88/main.c
+> @@ -1585,7 +1585,7 @@ static void rtw_init_ht_cap(struct rtw_dev *rtwde=
+v,
+>
+>       if (rtw_chip_has_rx_ldpc(rtwdev))
+>               ht_cap->cap |=3D IEEE80211_HT_CAP_LDPC_CODING;
+> -     if (rtw_chip_has_tx_stbc(rtwdev))
+> +     if (rtw_chip_has_tx_stbc(rtwdev) && rtwdev->hal.rf_path_num > 1)
+>               ht_cap->cap |=3D IEEE80211_HT_CAP_TX_STBC;
 
-Best regards
-Alessio
+This also changes 8822c, which already had tx_stbc set. When its hw
+feature report says one antenna, rtw_hw_config_rf_ant_num() sets
+rf_path_num to 1 and it stops advertising HT TX STBC. That looks right
+to me, the VHT side already checks rf_path_num the same way, but it
+would be good to mention it in the commit message.
 
+Best regards,
+Luka Gejak
