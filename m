@@ -1,64 +1,73 @@
-Authentication-Results: smtp.subspace.kernel.org; arc=none smtp.remote-ip=91.216.248.207
+Authentication-Results: smtp.subspace.kernel.org; arc=none smtp.remote-ip=91.218.175.208
 ARC-Seal: i=1; d=subspace.kernel.org; s=arc20261015; a=rsa-sha256; cv=none;
-	t=1793989120;
-	b=wQPNzexV2cZwwJGdsCfVFKf9GJaUBl/eJfBVQNDv5w79uXtb7K6sdQ2cd84qzRw2N7an
-	 l2Ifq0rLDEHz7dUcgU8E6udPmJHSxNnXTyv3S+Axbf2E1qWYn2lPWvbOMhrB/hwXKPoJ/
-	 wNKON0PTXSW6Onh+39EY/1dXE2hfLGHsuow+IT9/O7mEY+mjuGVRynu79dhNY5SCGrPhT
-	 yqBWlM9e001hIfATUzepytVFxdhW3s9pjIx4G3tSI2gA6CKjNnZzFd+B3QlabiuxCYKX7
-	 kGm7b3XPYIJ6lshTZlmBH5iX93G9wL8kev7Afe76Gzm7Y3CVMpRP25TYoNrtbet+5Jw==
+	t=1793989821;
+	b=MTX4gix7zSPNI/bGbPf7NCxKH3Xq6r7YaVFLV9ElLaxPN6TdxVyV27XZ1VVw5ds3p1zV
+	 Og9msNUIuR7nKgVzb5wNT3kyPvB1FHOoQ8iMkVKfsy1uo9xDL83PDHZ31iPYbBSs3ow0g
+	 4OSRaktjO0y+Af4YLv86c6TstKEk1CJjHoME767EY0ajnsrBykBNq8r7RMwZHl3s2mRQY
+	 iGLADyflyIHsU7JwvxfV+h8r4mD/ipCU8C4XjyZAQN+Yl3/YPUr2ih88WhRiLehWdPpO+
+	 5VuCPBxagq8LZOHtpQATYeKDqDvaj0MIwZWi7TqUl9etsshXFDzlbTqCe0ISipdHkzw==
 ARC-Message-Signature: i=1; d=subspace.kernel.org; s=arc20261015;
-	a=rsa-sha256; c=relaxed/relaxed; t=1793989120;
-	h=DMARC-Filter:Date:X-Lima-ML-UUID:DKIM-Signature:From:To:Cc:Subject:
-	 Message-ID:In-Reply-To:References:Organization:X-Mailer:MIME-Version:
-	 Content-Type:Content-Transfer-Encoding;
-	bh=dyygcqcAN6zPeXsDXub4yWu3eaYgS8p+qfGLoA+tRmk=;
-	b=AcTfUqURb/B63DVU4G8JSxhD1j42VNY6seb+fhTcbGiztRRlON3SB0ui+nTR5OfCgU9s
-	 VVdXYVX1hWBBU8gM0EscW1Z9IEEPPlamFp6Yb6SUHJ08Q5VFh1Mp5D57sRfcVgRN7Rel/
-	 7v4XIiErGcGrhOn7P3SqBP9J7VQNz3z3Nj9whVGxnDwT+HbU4OfBfP5NHaXG6uFocZBqv
-	 ZKOQrbksBHvcx8n12MlenkYjTm9N1g89DAmDiNdQ5VMuEGQ1VNyE8anCD/UqrkVQLqtfE
-	 87NWdpaXaeBP6yfEYTcYLkj+Otv1PEdx8snq+iUkp6KxTsaCeWakfejWG7gpi5J/thw==
+	a=rsa-sha256; c=relaxed/relaxed; t=1793989821;
+	h=DMARC-Filter:X-Envelope-To:DKIM-Signature:X-Envelope-To:Received:
+	 X-Mizu-Trace-ID:X-Migadu-Flow:From:To:Cc:Subject:Date:Message-ID:
+	 X-Mailer:In-Reply-To:References:MIME-Version:Content-Type:
+	 Content-Transfer-Encoding;
+	bh=4zS1QWUHwSOBAkfOexvAjjcm+lZUFWgZmqWL0fBlrBg=;
+	b=2JvuxPJ05915ie12SxIyXrGgd20S88ZV2p4qlkGV6QJ9VKoqm/IlMQ+QZkCEIBNGJAbr
+	 Yzl5zlYWow2NWm6An7aCUS9fx3H13ART1kBqKXNYevljk8gIIPB3kE+L+zdJuEmnfac84
+	 slJmgGmCrRV62HUlm3B6MyOxNVbmA7OMcAqz4EIldMnLyyf5g1s48Yb9Xb1T0XRFfLeJI
+	 1J+74GmMdLovH1dXieHUD6mpd54kYH6Y5TXAAYz+Mauq0D6cOp8u3HNWIJqANlFq7Tmtd
+	 EqPFqvDcVLEv03kmm0beT/NC4oNBdXVrFfmfI7sTHJoLBIYniQC0MQdsPWIYJ7iluXw==
 ARC-Authentication-Results: i=1; smtp.subspace.kernel.org; 
-	dmarc=none header.from=deq.rocks;
-	spf=none smtp.mailfrom=deq.rocks;
-	arc=none smtp.remote-ip=91.216.248.207
-Received: from mx5.mail-out.lima-city.de (mx5.mail-out.lima-city.de [91.216.248.207])
-	(using TLSv1.3 with cipher TLS_AES_256_GCM_SHA384 (256/256 bits)
+	dmarc=pass header.from=justthetip.ca;
+	spf=pass smtp.mailfrom=justthetip.ca;
+	dkim=pass header.d=justthetip.ca header.i=@justthetip.ca header.a=rsa-sha256 header.s=key1 header.b=kiO+oavE;
+	arc=none smtp.remote-ip=91.218.175.208
+Received: from mta0.migadu.com (out-208.mta0.migadu.com [91.218.175.208])
+	(using TLSv1.3 with cipher TLS_AES_128_GCM_SHA256 (128/128 bits)
 	 key-exchange X25519 server-signature ECDSA (prime256v1) server-digest SHA256)
 	(No client certificate requested)
-	by smtp.subspace.kernel.org (Postfix) with ESMTPS id BCC43606A32C;
-	Fri,  6 Nov 2026 18:18:32 +0000 (UTC)
-DMARC-Filter: OpenDMARC Filter v1.4.2 smtp.subspace.kernel.org BCC43606A32C
-Authentication-Results: smtp.subspace.kernel.org; dmarc=none (p=none dis=none) header.from=deq.rocks
-Authentication-Results: smtp.subspace.kernel.org; spf=none smtp.mailfrom=deq.rocks
-Date: Fri, 6 Nov 2026 19:18:26 +0100
-X-Lima-ML-UUID: 52e3c1d7-73c4-420c-837c-f7ae052149fb
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=deq.rocks;
-	s=securedbylima-20251205; t=1793989110;
-	bh=QKKFbfCa9dHm2YxFOGcOT17+76twgyOoEkQPZtq3Y0Y=;
-	h=Date:From:To:Cc:Subject:In-Reply-To:References:From;
-	b=Ft3ZTQYazgHJy+WiOicPJcdpdkn0Av1qnb5U8ypS+7+NwSnstj3u5W5OQ7i+LxZcv
-	 dqQv1FMGNoXEfpKUelayYiq5xLIAHld+EOG46Bdv9KCwyi4y2BbdD8K5VFM2MSCvqj
-	 NcMr3O1JWGDe11wiVU6xi+r9l7CYoUFND5rtTkJ+i5q1KyfpjX6/M1Ou6XVPeWNs0/
-	 g/+GYf3xTU9B4Z2Tfga6WhoIGJ+qEga6y3eA9BSB/uwIvF+6IRdpS9a0FA7KOanhpS
-	 7iAFFMX3K2cT/KOSR42AOTyuyruQPTGOa7mWvgU2z6TzFH+0W1+XxRwoR8tAvzbXIN
-	 flBdU7MnQin/Q==
-From: =?UTF-8?B?QW5kcsOp?= Eikmeyer <dev@deq.rocks>
-To: Arend van Spriel <arend.vanspriel@broadcom.com>
-Cc: <asahi@lists.linux.dev>, <brcm80211-dev-list.pdl@broadcom.com>,
- <brcm80211@lists.linux.dev>, <dberlin@dberlin.org>, <frankyl@broadcom.com>,
- <gustavoars@kernel.org>, <j@jannau.net>, <kees@kernel.org>,
- <kvalo@kernel.org>, <linux-hardening@vger.kernel.org>,
- <linux-kernel@vger.kernel.org>, <linux-wireless@vger.kernel.org>,
- <marcan@marcan.st>, <meuleman@broadcom.com>, <michael.reeves077@gmail.com>,
- <pieterpg@broadcom.com>, <vanhoefm@gmail.com>
-Subject: Re: [PATCH 05/13] wifi: brcmfmac: Negotiate PCIe mailbox transport
- with firmware
-Message-ID: <20261106191826.4ddb997a@kait2en-mbp15-1>
-In-Reply-To: <1a1b1ef4b20.2873.9b12b7fc0a3841636cfb5e919b41b954@broadcom.com>
-References: <20261106153612.2aadef2a@kait2en-mbp15-1>
-	<1a1b1ef4b20.2873.9b12b7fc0a3841636cfb5e919b41b954@broadcom.com>
-Organization: KaiT2en
-X-Mailer: Claws Mail 4.4.0 (GTK 3.24.52; x86_64-redhat-linux-gnu)
+	by smtp.subspace.kernel.org (Postfix) with ESMTPS id 296C5606A326
+	for <linux-wireless@vger.kernel.org>; Fri,  6 Nov 2026 18:30:19 +0000 (UTC)
+DMARC-Filter: OpenDMARC Filter v1.4.2 smtp.subspace.kernel.org 296C5606A326
+Authentication-Results: smtp.subspace.kernel.org; dmarc=pass (p=quarantine dis=none) header.from=justthetip.ca
+Authentication-Results: smtp.subspace.kernel.org; spf=pass smtp.mailfrom=justthetip.ca
+Authentication-Results: smtp.subspace.kernel.org;
+	dkim=pass (2048-bit key, unprotected) header.d=justthetip.ca header.i=@justthetip.ca header.a=rsa-sha256 header.s=key1 header.b=kiO+oavE
+X-Envelope-To: linux-wireless@vger.kernel.org
+DKIM-Signature: a=rsa-sha256; bh=62/U3bQuxJc81dT7FTL+9I7s8M81bhkBluzi6hVHCNc=;
+ c=simple/simple; d=justthetip.ca;
+ h=from:to:subject:date:message-id:mime-version:content-type; s=key1;
+ t=1793989817; v=1; x=1794594617;
+ b=kiO+oavEVdEET1hgqT7nCr3puGyMAMugw2HCjVroHeph7L0urIfLDsIriH8oCvv3kYH88t7A
+ pZjP22++iA15LRwp9804q/rizynK7vVLekWwh+UHRt6wkk+26GzQV/lTcnzgUKLv0hX4a+4F7CA
+ wKr4CQSE2pNhbbkIWjuqwSy0//A6FVzTnxvYrR9td0CriPajbDS0ddORveIfEUuHvcvCzjrXtbl
+ AL+38QohHwAQuDQXPj2DXj2OY0E+Qt0xTtAv5RQJdCOvf/wNkSSfR2Pz3foQOfrt0neQR5PoBtS
+ 7vDYrpCTX/Wih5fSTZWxJ38PDHvkMAF7/VE5m5WVGlxIA==
+X-Envelope-To: linux-wireless@vger.kernel.org
+Received: by smtp.migadu.com with ESMTPS id 7e8b92ecf7e6c38e;
+	Fri, 06 Nov 2026 18:30:14 +0000
+X-Mizu-Trace-ID: 7e8b92ecf7e6c38e
+X-Migadu-Flow: FLOW_OUT
+From: Devin Wittmayer <lucid_duck@justthetip.ca>
+To: Sven Besser <sven.besser@sql-ag.de>
+Cc: Felix Fietkau <nbd@nbd.name>,
+	Lorenzo Bianconi <lorenzo@kernel.org>,
+	Ryder Lee <ryder.lee@mediatek.com>,
+	Deren Wu <deren.wu@mediatek.com>,
+	Sean Wang <sean.wang@mediatek.com>,
+	Shayne Chen <shayne.chen@mediatek.com>,
+	Ming Yen Hsieh <mingyen.hsieh@mediatek.com>,
+	James-LY Huang <james-ly.huang@mediatek.com>,
+	Jacobs Wu <jacobs.wu@mediatek.com>,
+	linux-wireless@vger.kernel.org,
+	linux-mediatek@lists.infradead.org
+Subject: Re: [PATCH wireless] wifi: mt76: mt7925: add the common scan IEs back to probe requests
+Date: Fri,  6 Nov 2026 11:30:06 -0700
+Message-ID: <20261106183006.12356-1-lucid_duck@justthetip.ca>
+X-Mailer: git-send-email 2.56.0
+In-Reply-To: <FRVP281MB5672F901E7D26533F6DBCBCBA0762@FRVP281MB5672.DEUP281.PROD.OUTLOOK.COM>
+References: <20261102190811.7498-1-lucid_duck@justthetip.ca> <FRVP281MB5672F901E7D26533F6DBCBCBA0762@FRVP281MB5672.DEUP281.PROD.OUTLOOK.COM>
 X-Mailing-List: linux-wireless@vger.kernel.org
 List-Id: <linux-wireless.vger.kernel.org>
 List-Post: <mailto:linux-wireless@vger.kernel.org>
@@ -68,34 +77,36 @@ List-Unsubscribe: <mailto:linux-wireless+unsubscribe@vger.kernel.org>
 List-Owner: <mailto:linux-wireless+owner@vger.kernel.org>
 Precedence: list
 MIME-Version: 1.0
-Content-Type: text/plain; charset=US-ASCII
-Content-Transfer-Encoding: 7bit
+Content-Type: text/plain; charset=UTF-8
+Content-Transfer-Encoding: 8bit
 
-On Fri, 06 Nov 2026 18:36:52 +0100
-Arend van Spriel <arend.vanspriel@broadcom.com> wrote:
+On Fri, Nov 06, 2026 at 08:19:33AM +0000, Sven Besser wrote:
+> Without the patch the adapter is never found. With it, it shows up within
+> seconds, GO negotiation, WPS and DHCP succeed, and screen mirroring works.
+>
+> Tested-by: Sven Besser <sven.besser@sql-ag.de>
 
-> Sorry, you lost me there. What is the relation between the patch in
-> this subject and D3 ack.
+Great news on the real sink, Sven, thanks for trying it.
 
-Hi Arend,
+Funny timing: a couple of hours later Felix picked up MediaTek's fix for the same bug, so mine's superseded. Theirs uses the separate IE set you'd wondered about:
 
-D3_INFORM and D3_ACK are mailbox messages, and 05 changes how they are
-exchanged. Without 05 brcmfmac writes D3_INFORM to the TCM mailbox
-and our cursed Apple 4377 firmware on the 9,1 doesn't read it.
+  https://lore.kernel.org/r/20261106083004.3156085-10-james-ly.huang@mediatek.com
 
-That is why I mentioned the D3 ACK timeout handling patch. I
-submitted that because I was sure the firmware wouldn't send it.
-But actually the transport was broken.
+I tried theirs on my MT7925U. It still finds my test peer, but WPS and P2P now land ahead of HT instead of at the end. No idea if any sink cares. Yours would tell us.
 
-https://lore.kernel.org/all/20261001085308.1688049-1-dev@deq.rocks/
+> while the station interface is associated to an AP on a channel the GO
+> can't use (5 GHz channel 100, DFS, or 2.4 GHz channel 13), we become GO
+> on another channel (5 GHz 36/40/44) and group formation fails.
 
-which was superseded by Sebastian's patch here:
+Their series also changes how the GO asks for its channel:
 
-https://lore.kernel.org/linux-wireless/20260915-brcmfmac-bcm43752-suspend-fix-v2-1-1bd84914998b@collabora.com/
+  https://lore.kernel.org/r/20261106083004.3156085-7-james-ly.huang@mediatek.com
 
-So probably for addressing Sebastian's issue this needs to stay
-anyways. My memory served me wrong. I just read that his device is not
-an Apple product, but his patch incidentally worked around the same
-problem. Sorry if i was causing unneccessary noise. 
+If you get a chance to try Felix's mt76 branch with your sink, it'd answer both. No rush.
 
-Andre
+Felix, Sven tracked this one down on 7 October, if you can still add him:
+
+  Reported-by: Sven Besser <sven.besser@sql-ag.de>
+  Closes: https://lore.kernel.org/linux-wireless/FRVP281MB5672AE5BBD61EF0802D42370A0942@FRVP281MB5672.DEUP281.PROD.OUTLOOK.COM/
+
+Devin
