@@ -1,73 +1,90 @@
-Authentication-Results: smtp.subspace.kernel.org; arc=none smtp.remote-ip=100.103.45.18
+Authentication-Results: smtp.subspace.kernel.org; arc=none smtp.remote-ip=209.85.210.176
 ARC-Seal: i=1; d=subspace.kernel.org; s=arc20261015; a=rsa-sha256; cv=none;
-	t=1794069981;
-	b=Nie5Jaiz2vF5EU94JEEw49+ibUMjrI0hqo0aal5cFEslqClMTSN7x8d/fP8OgIMEMniw
-	 3trOAnscRB49x5tqBLWrPdR0ijDPG5xIBK5+JqtfTDf0aZzGTrcMUnL6k2y54JGCgsFjJ
-	 fhoAc4lHKimO4sSldpsnEH7cRiSiBSh4qUs8EpZZlshiwzJLyoo7IXNuhUZKXiOO4asMl
-	 5bddzAZPeK+gp2ULPEcaKmPVCsTcQ2huYNnz6rOSi2NgKViG1xa0ewJRD/Qml/RmevPNd
-	 cBEOoPl/7D3jb6mLSLNqLI9Vu/SDQ0fgiv2FwPTniF05rKfF9lSpV1rebwrAKY28RZA==
+	t=1794076499;
+	b=ZRKrgK/syDHYI2oWspFQA9zr6pSUk4hVED0sn/Jey7rR5IXP50jr9Ak6nGI3H0V+x5tv
+	 Gdn+Sa/oDYVadt7A79HGlnFX53MURLR4zH8D/0wGMybo3N2IpG58HMIP6NrYsoHsyiaA8
+	 CCPa6VLZ5gCvV+WhZqKnUxhDRolsG0vt3Jpi3pgns+iOC+hEIw7Pu4wmO3/Nq1kI3WoC0
+	 0cKuslkZLL9S0+RSAZsQpwECuVpn/5ddeyP9iJageBWsLLvVYX+IHvtSqzfPU2zWnSC7N
+	 2Vsgq+Rdf/wjqLB3TVqNtw5bBVlTjEr8J3yenBshWPvRA2DL4zjUtNDpIS8Tg3ke7Ag==
 ARC-Message-Signature: i=1; d=subspace.kernel.org; s=arc20261015;
-	a=rsa-sha256; c=relaxed/relaxed; t=1794069981;
-	h=Received:DKIM-Signature:Received:Received:X-ME-Sender:
-	 X-ME-Proxy-Cause:X-ME-Proxy:Feedback-ID:Received:X-Mailer:
-	 MIME-Version:X-ThreadId:Date:From:To:Cc:Message-Id:In-Reply-To:
-	 References:Subject:Content-Type:Content-Transfer-Encoding;
-	bh=iQPFcguwJfJnGIUghj3vW2cnp0ZTKsyoI6OiYKG+trA=;
-	b=1QzdUxiv6HL0pzMTxMWoPlMQ9pgrWNiT/iX+zIIOUqJ55HlW9FY2hCOxEavwWAxT1Hh2
-	 5A/vRSnXfmflvHlY8vIMvkZJphXSksIIQYUa40PTZtLiET7oArienSpslDL1fOXuMimkQ
-	 TWh429iz7+L8GkZMPxwwqfHhos788Hm/bQP+W+YPJHx7eD+xCF9LCXRpkjG4za8eaJHtD
-	 SO1u3ll9Tndmp16jG6dDBEAk1PxSv/eprTVWG+oScy03OETaIln67GTE6vgu8mqh79L8h
-	 pGfvwGcutmS9+vJHrm3zDFOf81k8U8DRgmopMeV/EL3DQBNr8FFFL6F0wwnmP+WjQuA==
+	a=rsa-sha256; c=relaxed/relaxed; t=1794076499;
+	h=DMARC-Filter:Received:DKIM-Signature:X-Google-DKIM-Signature:
+	 X-Gm-Message-State:X-Gm-Gg:X-Received:Received:From:To:Cc:Subject:
+	 Date:Message-ID:X-Mailer:MIME-Version:Content-Transfer-Encoding;
+	bh=aE8fsj1NIaKRva+QOmPHFRmITtv9VE51RjmDOs+p9WA=;
+	b=lDh+PvDF4CWMNzOTjWz7I0fN/ZxFvq2WOK3VJKeffZ1P77yfWVz0r8RZNK/k3zFvI5DY
+	 V+jmE5ePj/LKEMo1iM4MXk3vc7HxV/CepNgM++aA0DiegO4/jk1sAMfWBldHYe4OJO2Rn
+	 4Y7u61e54OW44C0/v6WglTW0PLjJaDWnqg7f2dxq0JvrrKo0Krt1DENZgZlLEcp4E/tbr
+	 5Ps8kJpeJZdAfrg/1bjUKo/EFPNdiP5Nb+D33BbZgdhFazH55prjZ5jsr6Q95RDnH2Mr4
+	 UlQ5PVLyMdPD4i1Zuf4s+dSwWlKl1LBF8o1sbRYSTXiezYLGyqk1x81bgiw8LQ4j1gA==
 ARC-Authentication-Results: i=1; smtp.subspace.kernel.org; 
-	dkim=pass header.d=kernel.org header.i=@kernel.org header.a=rsa-sha256 header.s=k20260515 header.b=GdchM4JA;
-	arc=none smtp.remote-ip=100.103.45.18
-Received: from smtp.kernel.org (quasi.space.kernel.org [100.103.45.18])
-	(using TLSv1.3 with cipher TLS_AES_256_GCM_SHA384 (256/256 bits)
-	 key-exchange X25519 server-signature ECDSA (prime256v1))
+	dmarc=pass header.from=gmail.com;
+	spf=pass smtp.mailfrom=gmail.com;
+	dkim=pass header.d=gmail.com header.i=@gmail.com header.a=rsa-sha256 header.s=20260707 header.b=DB7IwkAb;
+	arc=none smtp.remote-ip=209.85.210.176
+Received: from mail-pf1-f176.google.com (mail-pf1-f176.google.com [209.85.210.176])
+	(using TLSv1.3 with cipher TLS_AES_128_GCM_SHA256 (128/128 bits)
+	 key-exchange X25519 server-signature ECDSA (prime256v1) server-digest SHA256)
 	(No client certificate requested)
-	by smtp.subspace.kernel.org (Postfix) with ESMTPS id B0487606A32D;
-	Sat,  7 Nov 2026 16:46:20 +0000 (UTC)
+	by smtp.subspace.kernel.org (Postfix) with ESMTPS id 406AD606A326
+	for <linux-wireless@vger.kernel.org>; Sat,  7 Nov 2026 18:34:59 +0000 (UTC)
+DMARC-Filter: OpenDMARC Filter v1.4.2 smtp.subspace.kernel.org 406AD606A326
+Authentication-Results: smtp.subspace.kernel.org; dmarc=pass (p=none dis=none) header.from=gmail.com
+Authentication-Results: smtp.subspace.kernel.org; spf=pass smtp.mailfrom=gmail.com
 Authentication-Results: smtp.subspace.kernel.org;
-	dkim=pass (2048-bit key) header.d=kernel.org header.i=@kernel.org header.a=rsa-sha256 header.s=k20260515 header.b=GdchM4JA
-Received: by smtp.kernel.org (Postfix) with ESMTPSA id 223251F008A1;
-	Sat,  7 Nov 2026 16:46:20 +0000 (UTC)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=kernel.org;
-	s=k20260515; t=1794069980;
-	bh=iQPFcguwJfJnGIUghj3vW2cnp0ZTKsyoI6OiYKG+trA=;
-	h=Date:From:To:Cc:In-Reply-To:References:Subject;
-	b=GdchM4JAcx1qo6towHdQHCgh2tMHo3zzg17T84D+E9tEQ4saStJy8zvHY9EwNQyxR
-	 oK8yaLgqNU37R0MQlKrJvaZTfioOKst375+EE3LbYI7gUQePChwprYDcMtej1nwiGU
-	 dsufOCJUs+IgboNeWUzJfOUvnLV/mLmPPAxP++XxBwWdSvsRbSF91P8JnlzSeymBlh
-	 lEzS0bCVLtim+6ouaGlrDE6fsFvc5qFqfvhCWl64VQwoWxGe8sefwAjw7/I+6jcZC+
-	 /WKSC7uAJb9FKzTFrIsSEdraVR2Eq0psBydCysFViOt9COyNjQJH1jVYaRzZxwoY3u
-	 vZLcyJogV9A/g==
-Received: from phl-compute-10.internal (phl-compute-10.internal [10.202.2.50])
-	by mailfauth.phl.internal (Postfix) with ESMTP id 770BBF40066;
-	Sat,  7 Nov 2026 11:46:19 -0500 (EST)
-Received: from phl-imap-15 ([10.202.2.104])
-  by phl-compute-10.internal (MEProxy); Sat, 07 Nov 2026 11:46:19 -0500
-X-ME-Sender: <xms:21XvaoI8xVkuzu2ggxmfT2VoL9otHZIhGkdP7sT7nnFaVj7_NCZbgw>
-    <xme:21Xvai9jvswL5aosPOj2sjBdsne--z2Vcw9CybSvH6cV4Z7_VedZPDAPFFm2w_uB1
-    OOHRpQdMcOvh9FQ9jewIohgBu8C0-FJ_t7pVgQmYakS7uvE0DqdnYj1>
-X-ME-Proxy-Cause: dmFkZTFtOlailLA7ZjiNgBTvvRwW+fQs0xcHo5AHr7fRtJrIuFWMuFVGu4oQuCeZ0pr0pC
-    lj/WCGWUBzDoQrKdmeOIOx622PB5FBwnR92PlS1DrVrA5uW0MnsNHEpSCCEISbjWcBNWpd
-    AJGAUrhAP2ixHqxr5ktjqtDZtDRxQ+wxwdXnbM6ymNuxLXWUu5re/DshCdypVN4RJVSYiI
-    pX6xC2OVQ0adGi3NIKU3V3E+k0PR9F5sS1Jrk8VpzWhAMrFUcs3GPG4cWRftcOZ2GaObQm
-    dtFuqB299Yev5WyoldQClGgN+jblV8xsVjLfVWhN2y4yGtMahzOezGLQ8LrNpUxR8dZfbu
-    lIypd5PasUVA/oQYiP1JJjnE0dbtceWFuNu/cXjVcI3peKzIbO94dNfJzf+KPUBbBj6OJs
-    xONTmDWVPcnavfLGnJ9Str1iCXWjLd8n8plei7GhfZ2Yct1Mb36p3Ftpqsy8HiFzlFB6JR
-    vCDf5AqtF24I+Ixh6htHYnxAa1boUFkUM/E/HKAo3rcBd+9kTud3Md2a4DQbfiDrY+cerB
-    BCLBcSU5xi/5AvO8RpQ0ihQUFVAFkvT394aMfNkcrcyvDmaq3pfLyB5Len7h2/bmpF+8sx
-    FrsAUEinhV76Ec3u6Qe9hQY0Pq0UexmL2UqEZd4qhrOC8BGG20S51iSoFmYA
-X-ME-Proxy: <xmx:21Xvatt0Wu0fKbN7TVc00SVx5cl4nBo0Q82lDLMniu-fjrCmVGavWQ>
-    <xmx:21XvauqT1roSxPVbJ__cvWOICXpZBt0Uy7t30skmPBgH4PUxXx1_Kg>
-    <xmx:21XvasX4cyeQOJfObf8n0k85OhQoglMXW2ST001O3cCOWy0j31aVlA>
-    <xmx:21Xvau1v9osh-1HQCt_nNNhBn8zDdcUV3_YpTMTutnfhDXcPKzQcmA>
-    <xmx:21XvapvZRqwLy9j4pgfhYCEDK1_0cwha-81FwJc9sq3a-mW19BlYyiSq>
-Feedback-ID: ifa6e4810:Fastmail
-Received: by mailuser.phl.internal (Postfix, from userid 501)
-	id 5E62D782738; Sat,  7 Nov 2026 11:46:19 -0500 (EST)
-X-Mailer: MessagingEngine.com Webmail Interface
+	dkim=pass (2048-bit key) header.d=gmail.com header.i=@gmail.com header.a=rsa-sha256 header.s=20260707 header.b=DB7IwkAb
+Received: by mail-pf1-f176.google.com with SMTP id d2e1a72fcca58-8b29b83fdf1so665550b3a.2
+        for <linux-wireless@vger.kernel.org>; Sat, 07 Nov 2026 10:34:59 -0800 (PST)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+        d=gmail.com; s=20260707; t=1794076498; x=1794681298; darn=vger.kernel.org;
+        h=content-transfer-encoding:mime-version:message-id:date:subject:cc
+         :to:from:from:to:cc:subject:date:message-id:reply-to:content-type;
+        bh=aE8fsj1NIaKRva+QOmPHFRmITtv9VE51RjmDOs+p9WA=;
+        b=DB7IwkAbSLfZxfGS4ZztULx3/JZIeEUqasUPi25MjwL5eoDu6c+HrgkNl61J78oRh+
+         k7vsBATDn53IivHvHS3Axgmer6TtAwTqHxwDU4frodvZm2ZplsI1bfwPBynWK/78C463
+         X0CmNJk8+ozBIDtqA7etSasHKEQmo+PQ/TlpoJClaC1yZUNwn0/JxZGK0xRs6bnRbUcr
+         Ztia9W9ZI+npNIuX4VAHc9FVLAqlR1gOY6uq7SD7zxm2Tg8MVJTFK62rtU+YvVO7As9j
+         CO9gJzgk25nvIKKBdwLa9HJOG+5xCq32bpUgd6DiJSjgvDpan+y/gt29y3t2w6SVpj/x
+         HkAg==
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+        d=1e100.net; s=20260707; t=1794076499; x=1794681299;
+        h=content-transfer-encoding:mime-version:message-id:date:subject:cc
+         :to:from:x-gm-gg:x-gm-message-state:from:to:cc:subject:date
+         :message-id:reply-to:content-type;
+        bh=aE8fsj1NIaKRva+QOmPHFRmITtv9VE51RjmDOs+p9WA=;
+        b=N4270NzJDA7SWrEuW1bCEAqepmZnnM3FdEL1NmPM8B5Yvz/fNiiVW3e5YgJS9PY8wM
+         d3mLlvOu5FLf06t8ArTyHTx6WIqbpStoNn+jFh8lGYu729rOKG69geAc/Gzl+3CJcSVX
+         /If8oY5wYBe+kfqwHuXyTYVzYkg0rB7iSR4cNnYOK/e0YgDuxKcDqFNUyd4VTyP+b17S
+         7CMKoHqJVVxmNZkRHCQC2/E6NC+iiyo4mjorJcriU0K4UcCkpVlKuO0/dgZJh3KyVGk7
+         e8bFHvhzI78aMfA2z3FZskUELG8Et02p0RK4qwr4dFCjG9f0BxxFlr5eXVyE9UTb4/iW
+         pRzQ==
+X-Gm-Message-State: APuU4Z/T4DXHQwxdz7c5yQMneBj0E6zNHGLNzPl5uOvvzEdzHDoj6IDt
+	0tBgmGXCZqvvuUbVOlWGHxIbccIrHEJz7OrUs9j0MTSxrGpAvjGMwi1cY2tDhfcI
+X-Gm-Gg: AYBFou2ll/2HRgQW3KvLqkF8gFGTbZ5p/6dIUvdjHtYisquwG+KgGxDUe43jZ8Ypvkj
+	IYoHiq5Ha/qtkY2NdwqnfCNEwzjG8IYQxawe8KT0Nrtz8raJ+ZEkDBJWWjKYYwhx7paXCaj765F
+	LuiVkugxYw5GfdUioR1d7NUJx0M3Ij1O3oUWd7y5omE4ycTWDcBf888PcAmzxk8LgN6/rlu/LWp
+	eDvbaDHP1KOAhqQE9daJp9EOZa98jYqam5RGwiaxoVkeKhDhxMefuFF6GjWkXOPsyl1wSkrW50t
+	b+pRnG756kzqyg5gueXwnDAEFs0Gt1j/U1C0NbtESaGt7UKvzFjKf/I7qz/gJM8XIx4eS3keshW
+	lzuPITquQUEnB4tjAbKgv1SHuagIngFL2BQpvudD4ocWRFZ5C2DnZwlS3NaF6aeb46w9PT2i4+d
+	3vFGPRCQeNXGLMVPqzjJCyggL7TQHSrv1EkB1q9EuYcP0HsbQKhIBsMvhvSk7hG/aLeYgl3JoWK
+	3wcRPSUL4OfuhTyIhmJ8FAaBxXPGPctCww+ijZMqBtgOd+o4+Qs/UTTiQ7dCysGa+MxzWhtpA5/
+	0IGGuO7ecRxgJN2UjFkFWhXMIxQOeLH6+AtfOHmewU71pnGMV1H48ZKMfPhMsl90r91B7XO6PKl
+	YvtzQ0bVFNODSEdJUEiFcJM248x8WWQ==
+X-Received: by 2002:a05:6a21:ed0d:b0:3e2:96a4:7b07 with SMTP id adf61e73a8af0-3ebb2acad51mr6073377637.87.1794076498442;
+        Sat, 07 Nov 2026 10:34:58 -0800 (PST)
+Received: from localhost.localdomain ([59.153.103.55])
+        by smtp.gmail.com with ESMTPSA id d2e1a72fcca58-8b35921db07sm1332019b3a.15.2026.11.07.10.34.56
+        (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
+        Sat, 07 Nov 2026 10:34:58 -0800 (PST)
+From: Zeshan Ahmed Nobin <zeshanahmednobin@gmail.com>
+To: linux-wireless@vger.kernel.org
+Cc: Ping-Ke Shih <pkshih@realtek.com>,
+	Luka Gejak <luka.gejak@linux.dev>,
+	Kalle Valo <kvalo@kernel.org>
+Subject: [PATCH rtw-next v2 0/2] wifi: rtw88: 8822c: check register values in cck_pd_set
+Date: Sun,  8 Nov 2026 00:34:01 +0600
+Message-ID: <20261107183403.50696-1-zeshanahmednobin@gmail.com>
+X-Mailer: git-send-email 2.43.0
 X-Mailing-List: linux-wireless@vger.kernel.org
 List-Id: <linux-wireless.vger.kernel.org>
 List-Post: <mailto:linux-wireless@vger.kernel.org>
@@ -77,67 +94,37 @@ List-Unsubscribe: <mailto:linux-wireless+unsubscribe@vger.kernel.org>
 List-Owner: <mailto:linux-wireless+owner@vger.kernel.org>
 Precedence: list
 MIME-Version: 1.0
-X-ThreadId: AjxZksNfZZQV
-Date: Sat, 07 Nov 2026 11:45:59 -0500
-From: "Chuck Lever" <cel@kernel.org>
-To: "Christian Brauner" <brauner@kernel.org>, linux-fsdevel@vger.kernel.org
-Cc: "Linus Torvalds" <torvalds@linux-foundation.org>,
- "Jann Horn" <jannh@google.com>, "Josef Bacik" <josef@toxicpanda.com>,
- "Chris Mason" <mason@kernel.org>, "Jeff Layton" <jlayton@kernel.org>,
- NeilBrown <neil@brown.name>, "Eric Dumazet" <edumazet@kernel.org>,
- "Thomas Gleixner" <tglx@kernel.org>,
- "Alexander Viro" <viro@zeniv.linux.org.uk>,
- "Jonathan Corbet" <corbet@lwn.net>, "Christoph Hellwig" <hch@lst.de>,
- "Greg Kroah-Hartman" <gregkh@suse.de>,
- "Joel Granados" <joel.granados@kernel.org>, "Kees Cook" <kees@kernel.org>,
- "Jan Kara" <jack@suse.cz>, "Jan Kara" <jack@suse.com>,
- linux-kernel@vger.kernel.org, linux-nfs@vger.kernel.org,
- linux-acpi@vger.kernel.org, linux-kselftest@vger.kernel.org,
- linux-s390@vger.kernel.org,
- "linux-scsi@vger.kernel.org" <linux-scsi@vger.kernel.org>,
- linux-um@lists.infradead.org, linux-wireless@vger.kernel.org,
- "Linuxppc Dev" <linuxppc-dev@lists.ozlabs.org>, netdev@vger.kernel.org,
- ntfs3@lists.linux.dev, platform-driver-x86@vger.kernel.org,
- coreteam@netfilter.org, kexec@lists.infradead.org, linux-pci@vger.kernel.org,
- linux-sound@vger.kernel.org, netfilter-devel@vger.kernel.org,
- dri-devel@lists.freedesktop.org, ibm-acpi-devel@lists.sourceforge.net,
- jfs-discussion@lists.sourceforge.net, linux-alpha@vger.kernel.org,
- linux-arm-kernel@lists.infradead.org, linux-cifs@vger.kernel.org,
- linux-fbdev@vger.kernel.org, linux-hwmon@vger.kernel.org, linux-mm@kvack.org,
- linux-sh@vger.kernel.org, linux-usb@vger.kernel.org,
- samba-technical@lists.samba.org, sparclinux@vger.kernel.org,
- linux-m68k@lists.linux-m68k.org, linux-doc@vger.kernel.org,
- linux-serial@vger.kernel.org, linux-atm-general@lists.sourceforge.net,
- "Takashi Iwai" <tiwai@suse.de>, linux-input@vger.kernel.org,
- linux-raid@vger.kernel.org, linux-ext4@vger.kernel.org,
- linux-modules@vger.kernel.org, linux-debuggers@vger.kernel.org
-Message-Id: <a1e2d05f-08c6-41ac-a8f9-6985ee00dc97@app.fastmail.com>
-In-Reply-To: <20261104-work-procfs-net-v2-10-221e2437fed1@kernel.org>
-References: <20261104-work-procfs-net-v2-0-221e2437fed1@kernel.org>
- <20261104-work-procfs-net-v2-10-221e2437fed1@kernel.org>
-Subject: Re: [PATCH RESEND v2 10/13] SUNRPC: let procfs own the wait queue of the
- procfs channel files
-Content-Type: text/plain
-Content-Transfer-Encoding: 7bit
+Content-Transfer-Encoding: 8bit
+
+rtw8822c_phy_cck_pd_set() indexes its tables with two values read from
+the chip, bw and nrx, without checking them first. When the chip stops
+responding, both can be out of range. Patch 1 handles bw, which goes out
+of range when an RTL8822CE drops off the PCIe bus. Patch 2 handles nrx,
+which Luka Gejak found while reviewing v1.
+
+v2:
+- Patch 1: move the test data below the --- line (Luka)
+- Patch 1: use the preferred multi-line comment style (Luka)
+- Patch 1: drop the nrx check, which can never be true (Luka)
+- Patch 2: new
+
+v1: https://lore.kernel.org/linux-wireless/20261105113415.73184-1-zeshanahmednobin@gmail.com/
+
+AI assistance: I asked an AI coding assistant to help find out why the
+RTL8822CE in my laptop keeps failing. It analyzed the kernel logs and
+found the bw bug (Luka found the nrx one), wrote both fixes, the
+debug-only changes used for testing, and the messages. I reviewed
+everything and ran the tests described in each patch before sending.
+
+Zeshan Ahmed Nobin (2):
+  wifi: rtw88: 8822c: fix out-of-bounds access in cck_pd_set
+  wifi: rtw88: 8822c: ignore nrx values without CCK PD registers
+
+ drivers/net/wireless/realtek/rtw88/rtw8822c.c | 15 +++++++++++++++
+ 1 file changed, 15 insertions(+)
 
 
-
-On Wed, Nov 4, 2026, at 4:13 PM, Christian Brauner wrote:
-> cache_poll() sleeps the poller on queue_wait, which went back to being
-> a static queue so that a poll() on a procfs channel file can't be left
-> on the queue of a cache_detail that its network namespace freed. procfs
-> owns the queue poll() uses now and it outlives the file, so the procfs
-> channel files leave the poll_wait() to procfs and an upcall wakes their
-> pollers through proc_poll_notify(). The channel entry is remembered in
-> the cache_detail for that and forgotten before the entries are removed.
-> The rpc_pipefs files keep sleeping on queue_wait, procfs has nothing to
-> do with them.
->
-> Signed-off-by: Christian Brauner (Amutable) <brauner@kernel.org>
-> ---
-
-Acked-by: Chuck Lever <cel@kernel.org>
-
-
+base-commit: dc16902cad9c6b08df9395a510c7be44fbab545d
 -- 
-Chuck Lever (Come to NFS bake-a-thon! https://nfsv4bat.org)
+2.43.0
+
