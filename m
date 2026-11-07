@@ -1,75 +1,93 @@
-Authentication-Results: smtp.subspace.kernel.org; arc=none smtp.remote-ip=119.15.109.137
+Authentication-Results: smtp.subspace.kernel.org; arc=none smtp.remote-ip=209.85.219.54
 ARC-Seal: i=1; d=subspace.kernel.org; s=arc20261015; a=rsa-sha256; cv=none;
-	t=1794023643;
-	b=3Q69FmARIFKyJdlJK5xCM52HxSRy8CP7Uk6kDoEUZ00wfa2U5raHbXIEK3instD8uUJa
-	 mug34Ch21xqP2Ikov6OTtEroGvJr0Dh0rh/fru/h+ZrJuW/0pg22WOWCGoD4BbSwK9UEG
-	 Qvw33EMsrbuaAdenRupR3Qj4iM1dRg3z+B0V+914Sm4OLXTNaC0fjhKR8pKg3i3xwxk3O
-	 aXFuYMfhtMo5KQ53Eiq9pgK/sF4WcWobLFgLp0v3uTeKEVzwrQngxyVGM33T1T5y//339
-	 rqL27BTSXP5UvqbnKZ6SGLUAiTPrJcMkl0ZFGWKDeA4zRHvA4LlYJFnGi19uFH+4+UQ==
+	t=1794023691;
+	b=ZeDeJIAXIy/jAvNMVyag0rz0bxMHjMyjYZl1ZUgetJzhUwDmHeo3TNrtK0gGyBzupJa+
+	 pqym2e4O1U4Ag36+BEygY9ACuePYq8Nv0f/l37WdX8YpXqUhlZOBeqDl98cUtzCrgiyLr
+	 ocktNEjye7eiegRHqFQfegBpCKiEnNmjByT6pccXdc4fq32QQGdfdOPQfXw9f/cWF0jpu
+	 hDsOeTWm3ty2aGTN57T8UMY/1T8RNKXyI0L89cug2CKZ3q5AsXDdJDJXkaArg9pH7lQ2d
+	 iyS5Id7TjkxmP9tDAaizPmATZY/tRV3kE2FoZC08F48vKunHCKjgPTumoSoaSvxKHWw==
 ARC-Message-Signature: i=1; d=subspace.kernel.org; s=arc20261015;
-	a=rsa-sha256; c=relaxed/relaxed; t=1794023643;
-	h=DMARC-Filter:Received:DKIM-Signature:X-GPT-Reason:From:To:Cc:Subject:
-	 Date:Message-ID:X-Mailer:In-Reply-To:References:MIME-Version:
-	 Content-Transfer-Encoding;
-	bh=Dl62qA8RPRg3DFAObvPL2Fn4f72QQhDJ3yuNQH7rz3s=;
-	b=h2TvHoHnIkmLpZss13Bh3mXRB99J2PDyx2jSVHINK6xV+uN/8vHZZ4q+uZ3v18NQZQZk
-	 NxkinBRJx4WvBITdnE8vpJN3+O69Lc40WMmzi1A1LvpFBOWIg7i8NkLau7suD8VnZDHfe
-	 HOjx/MG+PFwCYLIqGo4VYReNiUEKjLQ2epKcaXFQ5VFA5tqwutVzV/UnDV9/LsHcNxtDy
-	 PKd5feh99ixCA6dahSQanxQor7G5t2RlkRB2Uya+3QYKn+/PRmXqHvIC/a/aTasoW2+My
-	 FwN6e9DAn4LC2AGxQqsZ5cFUm1c5/HYu1gieNlJiYWTOEUUvcu5V/QYz8n5nEOZ/LTw==
+	a=rsa-sha256; c=relaxed/relaxed; t=1794023691;
+	h=DMARC-Filter:Received:DKIM-Signature:X-Google-DKIM-Signature:
+	 X-Forwarded-Encrypted:X-Gm-Message-State:X-Gm-Gg:X-Received:Received:
+	 From:To:Cc:Subject:Date:Message-ID:X-Mailer:In-Reply-To:References:
+	 MIME-Version:Content-Transfer-Encoding;
+	bh=tjIchs3yMAil7B1EpG8Bvz6BwYwvjTpx2u7hvOdCalE=;
+	b=E30rMZ/eqtWm1VzHsRBdJLW9choEvjvbuiZL6jkIaKWwThIGwYsFULX+ZY6dsNi3VqrA
+	 nKyKvcchxaPyw4Pg1AzdwpqBkP7C/kLLs+U4O4vR8Pkb5n0l0oxmtF4cdYbNwbwifbJoD
+	 ojuC0GrSPixCsMmkAVzJ6LKcWUzpxAgBQVuRNknXREoJcVlsdlqSDtQTiLg4Sq5tqRkEu
+	 y2ngzrw/EOIJ+UUH6H62w3jd/68FLcSt9N1pxbpwpgSi+SysHy6Q9QZqMQ7tAOlkqRl6B
+	 wJJbrzRc76xtC4hG0K+u/26T2qtkBRkz9giUMlIglzCUAOOpeSnOFaDU6Wak/KFqu5g==
 ARC-Authentication-Results: i=1; smtp.subspace.kernel.org; 
-	dmarc=pass header.from=d-silva.org;
-	spf=pass smtp.mailfrom=d-silva.org;
-	dkim=pass header.d=d-silva.org header.i=@d-silva.org header.a=rsa-sha256 header.s=2025a header.b=sEzQlWc5;
-	arc=none smtp.remote-ip=119.15.109.137
-Received: from www.nmnhosting.com (watt.d-silva.org [119.15.109.137])
-	(using TLSv1.3 with cipher TLS_AES_256_GCM_SHA384 (256/256 bits)
-	 key-exchange X25519 server-signature ECDSA (prime256v1))
+	dmarc=pass header.from=gmail.com;
+	spf=pass smtp.mailfrom=gmail.com;
+	dkim=pass header.d=gmail.com header.i=@gmail.com header.a=rsa-sha256 header.s=20260707 header.b="PalG54O/";
+	arc=none smtp.remote-ip=209.85.219.54
+Received: from mail-qv1-f54.google.com (mail-qv1-f54.google.com [209.85.219.54])
+	(using TLSv1.3 with cipher TLS_AES_128_GCM_SHA256 (128/128 bits)
+	 key-exchange X25519 server-signature ECDSA (prime256v1) server-digest SHA256)
 	(No client certificate requested)
-	by smtp.subspace.kernel.org (Postfix) with ESMTPS id 910F2606A326;
-	Sat,  7 Nov 2026 03:54:02 +0000 (UTC)
-DMARC-Filter: OpenDMARC Filter v1.4.2 smtp.subspace.kernel.org 910F2606A326
-Authentication-Results: smtp.subspace.kernel.org; dmarc=pass (p=reject dis=none) header.from=d-silva.org
-Authentication-Results: smtp.subspace.kernel.org; spf=pass smtp.mailfrom=d-silva.org
+	by smtp.subspace.kernel.org (Postfix) with ESMTPS id F074C606A32C
+	for <linux-wireless@vger.kernel.org>; Sat,  7 Nov 2026 03:54:50 +0000 (UTC)
+DMARC-Filter: OpenDMARC Filter v1.4.2 smtp.subspace.kernel.org F074C606A32C
+Authentication-Results: smtp.subspace.kernel.org; dmarc=pass (p=none dis=none) header.from=gmail.com
+Authentication-Results: smtp.subspace.kernel.org; spf=pass smtp.mailfrom=gmail.com
 Authentication-Results: smtp.subspace.kernel.org;
-	dkim=pass (2048-bit key) header.d=d-silva.org header.i=@d-silva.org header.a=rsa-sha256 header.s=2025a header.b=sEzQlWc5
-Received: from Hawking.lan (hawking.lan [10.0.1.4])
-	by www.nmnhosting.com (Postfix) with ESMTP id 40B3E41136;
-	Sat,  7 Nov 2026 14:53:50 +1100 (AEDT)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=d-silva.org; s=2025a;
-	t=1794023630;
-	h=from:from:reply-to:subject:subject:date:date:message-id:message-id:
-	 to:to:cc:cc:mime-version:mime-version:
-	 content-transfer-encoding:content-transfer-encoding:
-	 in-reply-to:in-reply-to:references:references;
-	bh=Dl62qA8RPRg3DFAObvPL2Fn4f72QQhDJ3yuNQH7rz3s=;
-	b=sEzQlWc5jx9xFzPkw9TNW40XVKd47EfW8m37UaU6jshfbfAPlE7aAcnB0xoHKq4/yj4pAg
-	MtfvGNLNKD7wLgP8MJ8EYjci3f5azF27MRpzB83VA41yGBdqvf58e9bW85RdaCzppOq+GC
-	CYzJ2Oy8z9vl0duH4HWCjSIyJQ8KlzwhNd5hf08Q1oVM5X+bW0f8pAvVFIWkOQFEReef/3
-	UvyR/UvKtozxMBjHYnOp+ujxHPC1P/DD+7L4YgC9lgheCYwcHgzvdaJYiHJag+ca6/Ayz7
-	EbOAWtg/qrPYOilPV/Ldh3tCZD716kRdw75xBySMQWl4VQlFZKrxZgY/D5olyw==
-X-GPT-Reason: legitimate; this is a technical software patch submission
-	(linux kernel style) that perfectly aligns with the sender's identity
-	(alastair@d-silva.org) and the recipient's identity; the message
-	contains specific technical refactoring details for "rtw88" drivers,
-	includes standard developer sign-offs (Acked-by, Reviewed-by), and
-	shows no signs of marketing, phishing, or urgency.
-From: Alastair D'Silva <alastair@d-silva.org>
-To: linux-wireless@vger.kernel.org,
-	Ping-Ke Shih <pkshih@realtek.com>,
-	Kalle Valo <kvalo@kernel.org>
-Cc: Luka Gejak <luka.gejak@linux.dev>,
-	Martin Blumenstingl <martin.blumenstingl@googlemail.com>,
-	Jernej Skrabec <jernej.skrabec@gmail.com>,
-	Ulf Hansson <ulfh@kernel.org>,
-	linux-kernel@vger.kernel.org,
-	Alastair D'Silva <alastair@d-silva.org>
-Subject: [PATCH rtw-next v9 4/4] wifi: rtw88: sdio: Split rtw_sdio_rx_isr into 8051 and 3081 variants
-Date: Sat,  7 Nov 2026 14:53:21 +1100
-Message-ID: <20261107035321.1210303-5-alastair@d-silva.org>
-X-Mailer: git-send-email 2.53.0
-In-Reply-To: <20261107035321.1210303-1-alastair@d-silva.org>
-References: <20261107035321.1210303-1-alastair@d-silva.org>
+	dkim=pass (2048-bit key, unprotected) header.d=gmail.com header.i=@gmail.com header.a=rsa-sha256 header.s=20260707 header.b=PalG54O/
+Received: by mail-qv1-f54.google.com with SMTP id 6a1803df08f44-91ec14f4369so202306d6.0
+        for <linux-wireless@vger.kernel.org>; Fri, 06 Nov 2026 19:54:50 -0800 (PST)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+        d=gmail.com; s=20260707; t=1794023690; x=1794628490; darn=vger.kernel.org;
+        h=content-transfer-encoding:mime-version:references:in-reply-to
+         :message-id:date:subject:cc:to:from:from:to:cc:subject:date
+         :message-id:reply-to:content-type;
+        bh=tjIchs3yMAil7B1EpG8Bvz6BwYwvjTpx2u7hvOdCalE=;
+        b=PalG54O/0mzQ82l3BAUxtKh2LWMpXEd6wTQFOC6TWXIswNFtYEV6IHdY91dwz8gui9
+         iqou/EidFcchCkxQUnwUUujS9MdXkyFSBCc8LYbPZIM6mr3wBhGpMr0BG1ybmdLg1Dnl
+         NUrzE5cbyGb6d5k2yEpbLqyjZskmndPzBKLqbLjj7S42tl6e6Zc/pvXDxTf05mM7peZN
+         r6/oBb7SlIl0Q32cpPTl18PJTnWYLFfjy2S7+8dBUbt60GU7O/AakDoUU1tl+/rmh/dQ
+         vD02WikPOhWfurWOucfpyqzMYwNlNDZ4YuK69mP5AIgZluVWeVvy4lq67+BS/jcxW9ow
+         uNOQ==
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+        d=1e100.net; s=20260707; t=1794023690; x=1794628490;
+        h=content-transfer-encoding:mime-version:references:in-reply-to
+         :message-id:date:subject:cc:to:from:x-gm-gg:x-gm-message-state:from
+         :to:cc:subject:date:message-id:reply-to:content-type;
+        bh=tjIchs3yMAil7B1EpG8Bvz6BwYwvjTpx2u7hvOdCalE=;
+        b=2Wqzw4i3zaICCxhsm29W5cVxfsmBPf4AWNTosgUP3EVzTNQmTp0pci/GlLUrXsFpap
+         uiIS9Iv+DJMkujY7ExQUdoVSOPsGP9CDvtX+pyk4jHGc3t8bjvoMHbzKmZE6EsmGNuo4
+         75UNVZu2TIeRsAcKWm9ngm1kUp+wLNBuBufuMeKEiIzWNTAtY8cD327MtHVw7L5b1++I
+         HyrOIO2BZxMli/7xAlrkuIyhpXZsc4Lb19HPwc0a1Qct2hHFUyiQjAvPSUDsKtKInFfy
+         6Ow5MyaidfGfad75yF98bsOfWGcQK32trMC18EDl5te9HPNj41P4sDc7Tj9NOzHob7DI
+         fHdA==
+X-Forwarded-Encrypted: i=1; AL+hErHnA3dogD8XartsQol9lA4cwtyDZxZbBfeI0VhrfsYS1y2qLini8iLHZruK3eM/Mblpsjih9J5q2sVGzvnNiQ==@vger.kernel.org
+X-Gm-Message-State: APuU4Z9QDwHUDgDTrEjZls0v64FcFJWsWIk7jMXsWTBDHJisXQVojI1f
+	d04wpcGvcNQRLlfAqlBzks9wTvkxZQNrW2QfQPbKz5mlVMXqjrfVAewmU8C8RA==
+X-Gm-Gg: AYBFou27+5qswSbRCgDvRl+5iencZVLV5HOh9HFiHMi1HPZucvolsfXFyMTbWlzWlx4
+	5p6GCRwOsCgqWUIKTBUp9vnqovQdDmEJvH0rZVi17RZIWYgpuiwojSiHWBKHDDt07MkLgEaDlxJ
+	6LG7LKzCUdvWc1IKZYIT++toFsRLWopwdsjXv0ZVS/ZGD52dotUsqrztce0hzuNOpOrsSJJkqge
+	1DsX5WmkzjAYknWtUJqLIHqbCMgC6AWBFtb30ku6eycHPB1Yse1JjeM8bhqjZwqTNnzeNDnmd71
+	1M1bY8DYwJt3I1axZv81OoEUINHtLCLWL31Phd9JQXWzi2XrdfzFLboHU+eSuXMcovdO3Rarbcv
+	NoDfZDTklirZKDKWMcJV00LuQjI5G3XKc/ku670xpcR+PzYsF7PCFW0pMeHtKY0EMbo6ImeIFOF
+	Tgscr5tuR8496aRVKsO7bhVJg+sAYgaugYyCoM4i+4m/xNCMkJGGw1vbgwadCK6h/4g2G9mfpi1
+	WSVLhnDiLoQkPGngQFQnAiU5Lk7UjGcLLViH7L33ct4RjUQQjHGuKBx4iWgSyL6ndoTunNadU0K
+	oSfOTfpMDfevHUH/d5Q83mrXpyl+qSHyFzz9Zb9M5bDcjvPrq6DLuEeXNuYlnA==
+X-Received: by 2002:a05:6214:c82:b0:91e:a124:d7a7 with SMTP id 6a1803df08f44-91ea927fc55mr68545316d6.4.1794023689726;
+        Fri, 06 Nov 2026 19:54:49 -0800 (PST)
+Received: from localhost.localdomain ([2600:4041:44c7:5c10:3958:f724:43b6:fd8])
+        by smtp.gmail.com with ESMTPSA id 6a1803df08f44-91ea6acceacsm35863996d6.43.2026.11.06.19.54.48
+        (version=TLS1_3 cipher=TLS_CHACHA20_POLY1305_SHA256 bits=256/256);
+        Fri, 06 Nov 2026 19:54:49 -0800 (PST)
+From: Christopher Hill <ch6574@gmail.com>
+To: Johannes Berg <johannes@sipsolutions.net>
+Cc: Christopher Hill <ch6574@gmail.com>,
+	linux-wireless@vger.kernel.org
+Subject: [PATCH wireless] wifi: mac80211: apply ap_isolate to AP_VLAN stations
+Date: Fri,  6 Nov 2026 22:52:18 -0500
+Message-ID: <20261107035220.50480-1-ch6574@gmail.com>
+X-Mailer: git-send-email 2.56.0
+In-Reply-To: <20E87267-920A-4FD9-9443-050AE7676E45@gmail.com>
+References: <20E87267-920A-4FD9-9443-050AE7676E45@gmail.com>
 X-Mailing-List: linux-wireless@vger.kernel.org
 List-Id: <linux-wireless.vger.kernel.org>
 List-Post: <mailto:linux-wireless@vger.kernel.org>
@@ -81,119 +99,124 @@ Precedence: list
 MIME-Version: 1.0
 Content-Transfer-Encoding: 8bit
 
-Split rtw_sdio_rx_isr() into separate 8051 and 3081 variants to be
-clear. The two differences between the architectures are:
-- Register size: REG_SDIO_RX0_REQ_LEN is 16-bit on 8051, 32-bit on 3081.
-- HISR behavior: 8051 re-reads REG_SDIO_HISR on each iteration, while
-  3081 drains based on rx_len without re-reading HISR.
+ap_isolate is set via nl80211 SET_BSS, which is only accepted on AP and
+P2P GO interfaces, so ieee80211_change_bss() stores it as
+IEEE80211_SDATA_DONT_BRIDGE_PACKETS on the AP sdata. AP_VLAN interfaces
+never inherit it, but the intra-BSS forwarding decisions in
+ieee80211_deliver_skb() and ieee80211_check_fast_rx() test the flag on
+the station's own sdata, which is the AP_VLAN for stations assigned to a
+VLAN (e.g. hostapd dynamic_vlan). As a result, mac80211 keeps forwarding
+frames between stations of the same AP_VLAN although ap_isolate is
+enabled, and client isolation is silently ineffective for them.
 
-This is a refactoring without any logic changes.
+Store the setting in struct ieee80211_if_ap, next to
+multicast_to_unicast, and read it via sdata->bss so that it applies to
+the AP and all of its AP_VLAN interfaces. The now unused
+IEEE80211_SDATA_DONT_BRIDGE_PACKETS flag is removed, as was done for
+IEEE80211_SDATA_OPERATING_GMODE in commit 39eac2de0098 ("wifi: mac80211:
+move IEEE80211_SDATA_OPERATING_GMODE to link").
+__ieee80211_check_fast_rx_iface() already re-evaluates the fast-rx state
+of AP_VLAN stations when ap_isolate changes.
 
-Assisted-by: LLM
-Acked-by: Ping-Ke Shih <pkshih@realtek.com>
-Reviewed-by: Luka Gejak <luka.gejak@linux.dev>
-Signed-off-by: Alastair D'Silva <alastair@d-silva.org>
+The issue was found and this change drafted with the help of an AI
+coding assistant (Kiro); it was reviewed, built and tested on hardware
+by the submitter.
+
+Fixes: 7b7b5e56d7bd ("mac80211: implement ap isolation support")
+Closes: https://lore.kernel.org/linux-wireless/20E87267-920A-4FD9-9443-050AE7676E45@gmail.com/
+Signed-off-by: Christopher Hill <ch6574@gmail.com>
 ---
- drivers/net/wireless/realtek/rtw88/sdio.c | 58 +++++++++++++----------
- 1 file changed, 33 insertions(+), 25 deletions(-)
+Tested on a Linksys E8450 (MT7622 + MT7915E, mt76), OpenWrt 25.12.6 with
+mac80211 from backports 6.18.55 (patch applied with line offsets only),
+hostapd dynamic_vlan=2, VLANs from wpa_psk_file, ap_isolate=1,
+multicast_to_unicast=1, two stations on the same radio and VLAN:
 
-diff --git a/drivers/net/wireless/realtek/rtw88/sdio.c b/drivers/net/wireless/realtek/rtw88/sdio.c
-index 6100e691a5ca4..c26ce1b6b38b2 100644
---- a/drivers/net/wireless/realtek/rtw88/sdio.c
-+++ b/drivers/net/wireless/realtek/rtw88/sdio.c
-@@ -1473,17 +1473,13 @@ static int rtw_sdio_rxfifo_recv(struct rtw_dev *rtwdev, u32 rx_len)
- 	return 0;
- }
- 
--static void rtw_sdio_rx_isr(struct rtw_dev *rtwdev)
-+static void rtw_sdio_rx_isr_8051(struct rtw_dev *rtwdev)
- {
- 	u32 rx_len, hisr, total_rx_bytes = 0;
- 	int ret;
- 
- 	do {
--		if (rtw_chip_wcpu_8051(rtwdev))
--			rx_len = rtw_read16(rtwdev, REG_SDIO_RX0_REQ_LEN);
--		else
--			rx_len = rtw_read32(rtwdev, REG_SDIO_RX0_REQ_LEN);
--
-+		rx_len = rtw_read16(rtwdev, REG_SDIO_RX0_REQ_LEN);
- 		if (!rx_len)
- 			break;
- 
-@@ -1493,33 +1489,45 @@ static void rtw_sdio_rx_isr(struct rtw_dev *rtwdev)
- 
- 		total_rx_bytes += rx_len;
- 
--		if (rtw_chip_wcpu_8051(rtwdev)) {
--			/* Stop if no more RX requests are pending, even if
--			 * rx_len could be greater than zero in the next
--			 * iteration. This is needed because the RX buffer may
--			 * already contain data while either HW or FW are not
--			 * done filling that buffer yet. Still reading the
--			 * buffer can result in packets where
--			 * rtw_rx_pkt_stat.pkt_len is zero or points beyond the
--			 * end of the buffer.
--			 */
--			hisr = rtw_read32(rtwdev, REG_SDIO_HISR);
--		} else {
--			/* RTW_WCPU_3081 chips have improved hardware or
--			 * firmware and can use rx_len unconditionally.
--			 */
--			hisr = REG_SDIO_HISR_RX_REQUEST;
--		}
-+		/*
-+		 * Stop if no more RX requests are pending, even if
-+		 * rx_len could be greater than zero in the next
-+		 * iteration. This is needed because the RX buffer may
-+		 * already contain data while either HW or FW are not
-+		 * done filling that buffer yet. Still reading the
-+		 * buffer can result in packets where
-+		 * rtw_rx_pkt_stat.pkt_len is zero or points beyond the
-+		 * end of the buffer.
-+		 */
-+		hisr = rtw_read32(rtwdev, REG_SDIO_HISR);
- 	} while (total_rx_bytes < SZ_64K && hisr & REG_SDIO_HISR_RX_REQUEST);
- }
- 
-+static void rtw_sdio_rx_isr_3081(struct rtw_dev *rtwdev)
-+{
-+	u32 rx_len, total_rx_bytes = 0;
-+	int ret;
-+
-+	do {
-+		rx_len = rtw_read32(rtwdev, REG_SDIO_RX0_REQ_LEN);
-+		if (!rx_len)
-+			break;
-+
-+		ret = rtw_sdio_rxfifo_recv(rtwdev, rx_len);
-+		if (ret)
-+			break;
-+
-+		total_rx_bytes += rx_len;
-+	} while (total_rx_bytes < SZ_64K);
-+}
-+
- static void rtw_sdio_handle_interrupt_8051(struct rtw_dev *rtwdev, u32 hisr)
- {
- 	if (hisr & REG_SDIO_HISR_TXERR)
- 		rtw_sdio_tx_err_isr(rtwdev);
- 	if (hisr & REG_SDIO_HISR_RX_REQUEST) {
- 		hisr &= ~REG_SDIO_HISR_RX_REQUEST;
--		rtw_sdio_rx_isr(rtwdev);
-+		rtw_sdio_rx_isr_8051(rtwdev);
+- AP_VLAN bridge port with hairpin on: stations reach each other via the
+  bridge, one copy per frame (before: every multicast frame duplicated).
+- hairpin off: no unicast or multicast replies between the stations
+  (before: replies received, i.e. isolation bypassed).
+
+Build-tested on wireless/main (c4328134f) with W=1 (net/wireless and
+net/mac80211, x86_64 defconfig + CFG80211/MAC80211=m): no new warnings;
+also applies to wireless-next/main. Not tested with mac80211_hwsim.
+
+The debugfs "flags" file no longer shows the isolation bit, as the flag
+is removed. An alternative that keeps the flag would be to evaluate the
+AP's flag for AP_VLAN interfaces in both rx.c places instead.
+
+ net/mac80211/cfg.c         | 5 +----
+ net/mac80211/ieee80211_i.h | 5 +----
+ net/mac80211/rx.c          | 4 ++--
+ 3 files changed, 4 insertions(+), 10 deletions(-)
+
+diff --git a/net/mac80211/cfg.c b/net/mac80211/cfg.c
+index 9608c07bce..cc9d2384d5 100644
+--- a/net/mac80211/cfg.c
++++ b/net/mac80211/cfg.c
+@@ -3706,10 +3706,7 @@ static int ieee80211_change_bss(struct wiphy *wiphy,
  	}
  
- 	/*
-@@ -1549,7 +1557,7 @@ static void rtw_sdio_handle_interrupt_3081(struct rtw_dev *rtwdev, u32 hisr)
- 	if (hisr & REG_SDIO_HISR_TXERR)
- 		rtw_sdio_tx_err_isr(rtwdev);
- 	if (hisr & REG_SDIO_HISR_RX_REQUEST)
--		rtw_sdio_rx_isr(rtwdev);
-+		rtw_sdio_rx_isr_3081(rtwdev);
+ 	if (params->ap_isolate >= 0) {
+-		if (params->ap_isolate)
+-			sdata->flags |= IEEE80211_SDATA_DONT_BRIDGE_PACKETS;
+-		else
+-			sdata->flags &= ~IEEE80211_SDATA_DONT_BRIDGE_PACKETS;
++		sdata->u.ap.isolate = params->ap_isolate;
+ 		ieee80211_check_fast_rx_iface(sdata);
+ 	}
  
- 	/*
- 	 * Unmasking HIMR re-asserts the IRQ line if new packets arrived or if
+diff --git a/net/mac80211/ieee80211_i.h b/net/mac80211/ieee80211_i.h
+index 1a6cbbb5a1..e74e30c070 100644
+--- a/net/mac80211/ieee80211_i.h
++++ b/net/mac80211/ieee80211_i.h
+@@ -344,6 +344,7 @@ struct ieee80211_if_ap {
+ 	atomic_t num_mcast_sta; /* number of stations receiving multicast */
+ 
+ 	bool multicast_to_unicast;
++	bool isolate;
+ 	bool active;
+ };
+ 
+@@ -871,9 +872,6 @@ struct ieee80211_if_mesh {
+  * enum ieee80211_sub_if_data_flags - virtual interface flags
+  *
+  * @IEEE80211_SDATA_ALLMULTI: interface wants all multicast packets
+- * @IEEE80211_SDATA_DONT_BRIDGE_PACKETS: bridge packets between
+- *	associated stations and deliver multicast frames both
+- *	back to wireless media and to the local net stack.
+  * @IEEE80211_SDATA_DISCONNECT_RESUME: Disconnect after resume.
+  * @IEEE80211_SDATA_IN_DRIVER: indicates interface was added to driver
+  * @IEEE80211_SDATA_DISCONNECT_HW_RESTART: Disconnect after hardware restart
+@@ -881,7 +879,6 @@ struct ieee80211_if_mesh {
+  */
+ enum ieee80211_sub_if_data_flags {
+ 	IEEE80211_SDATA_ALLMULTI		= BIT(0),
+-	IEEE80211_SDATA_DONT_BRIDGE_PACKETS	= BIT(3),
+ 	IEEE80211_SDATA_DISCONNECT_RESUME	= BIT(4),
+ 	IEEE80211_SDATA_IN_DRIVER		= BIT(5),
+ 	IEEE80211_SDATA_DISCONNECT_HW_RESTART	= BIT(6),
+diff --git a/net/mac80211/rx.c b/net/mac80211/rx.c
+index ecee9348c7..a36d0f64c6 100644
+--- a/net/mac80211/rx.c
++++ b/net/mac80211/rx.c
+@@ -2799,7 +2799,7 @@ ieee80211_deliver_skb(struct ieee80211_rx_data *rx)
+ 
+ 	if ((sdata->vif.type == NL80211_IFTYPE_AP ||
+ 	     sdata->vif.type == NL80211_IFTYPE_AP_VLAN) &&
+-	    !(sdata->flags & IEEE80211_SDATA_DONT_BRIDGE_PACKETS) &&
++	    !(sdata->bss && sdata->bss->isolate) &&
+ 	    ehdr->h_proto != rx->sdata->control_port_protocol &&
+ 	    (sdata->vif.type != NL80211_IFTYPE_AP_VLAN || !sdata->u.vlan.sta)) {
+ 		if (is_multicast_ether_addr(ehdr->h_dest) &&
+@@ -4826,7 +4826,7 @@ void ieee80211_check_fast_rx(struct sta_info *sta)
+ 		fastrx.expected_ds_bits = cpu_to_le16(IEEE80211_FCTL_TODS);
+ 
+ 		fastrx.internal_forward =
+-			!(sdata->flags & IEEE80211_SDATA_DONT_BRIDGE_PACKETS) &&
++			!(sdata->bss && sdata->bss->isolate) &&
+ 			(sdata->vif.type != NL80211_IFTYPE_AP_VLAN ||
+ 			 !sdata->u.vlan.sta);
+ 
 -- 
-2.53.0
+2.50.1
 
