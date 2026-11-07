@@ -1,62 +1,78 @@
-Authentication-Results: smtp.subspace.kernel.org; arc=none smtp.remote-ip=62.149.155.116
+Authentication-Results: smtp.subspace.kernel.org; arc=none smtp.remote-ip=119.15.109.137
 ARC-Seal: i=1; d=subspace.kernel.org; s=arc20261015; a=rsa-sha256; cv=none;
-	t=1794003135;
-	b=FNaS+/lvVy3CDFsHiJDj/JEZ+QKwYk20GiRCGwdw5NyZ1n3mjYYIa8wz8+rC/IlBM1+I
-	 kokNuaJxGpLty+JDlPOlJWkVBJkDv9poD3WGFRG1RIHXiZ7f8RlUb5EpxNUXNcmbuzUra
-	 pPDWxag89kD8oWaesrtKmiqtsceouKuGDxrTnN+GOgM75N6IWtSbZgUrL7tacyi3t5EyI
-	 Ju2v+gyIh3hr0SWq6tPvxIDZLosKCBUNsR6oQYjpS5whwnOgWFv6oXC1AqtZiYT6zzbmO
-	 jUPAi25UEjc6KuGgG15u3pM3j8Kz07AWzEBVi2GzuzoG3pPC4S5k62vNfXUPXBn8HJg==
+	t=1794023620;
+	b=RP1vnCpjxjNWIxnkj3KR0EnQrb9WX175lF9DgsA0U1q0MeK1X28eruze8zsHc6pLRjcH
+	 GkgiCsT81tiq6wtyPMDE96lutjwDcZXtxKZgtwovMvMT3olrNaMLimSNodJ11ILJj7WbT
+	 OTXgP8NCQuh42+kIbW8DKQhkfgPumSb6MMfH3uajeRoHTsPdvxUXBUKLPGfjsxap35JYL
+	 UtgbAH993fFIIKqvRtfSjkjv+oW4aW7v1fiMCz+3d45fBSDOtl7lkMaYhH0IeKgeUk3PV
+	 f28Dwtko+Tj2aqaFGS7Tl2c94hVIP4pXhCRwMfeP3F1k3OncwaKNziJjE+kikRoxsEw==
 ARC-Message-Signature: i=1; d=subspace.kernel.org; s=arc20261015;
-	a=rsa-sha256; c=relaxed/relaxed; t=1794003135;
-	h=DMARC-Filter:Received:DKIM-Signature:Date:From:To:Cc:Subject:
-	 Message-ID:In-Reply-To:References:X-Mailer:MIME-Version:Content-Type:
-	 Content-Transfer-Encoding:X-CMAE-Envelope;
-	bh=mJl+RwDvzq/PplYN8DwtJmtkz00zrmcGgZgazx8qzZ4=;
-	b=3iGNPqTRm6TarXMBJQa9MfnPtMAbBRIQWcEr1CYPIqS8aBbboP1ITy4FYN/KoUvIKavl
-	 ck2ctQrqik1CYVLYQr4rfT60aX1aELh+yyMtnq4I4/+W6UF9q3BHq/+9K65WrP9q61xVw
-	 WWE3qtFQPYpE1sLVOV4hDlc3irVXwyrPpzPw2zisYMi5p7/dEqNfDCV8pdqVIZ4X+MSPG
-	 TQ9HXUEPN4SXvCBsvu0vt3uqUBQiYZjgBxXH+Og9ph5Wr2Qr4n8EFvFXJ396QmAmWjw48
-	 lL2ZeBL4TbBC0GmDHXNizL//vf4L4X029zGTfNx6BPK7LEhGuFOZ0X32wLJS9RC2Euw==
+	a=rsa-sha256; c=relaxed/relaxed; t=1794023620;
+	h=DMARC-Filter:Received:DKIM-Signature:X-GPT-Reason:From:To:Cc:Subject:
+	 Date:Message-ID:X-Mailer:In-Reply-To:References:MIME-Version:
+	 Content-Transfer-Encoding;
+	bh=jq9t4i4p9xF2mSol4zZx3RitgWvrWh8XynSKXKryK9o=;
+	b=2ny4gXcm3GY/uEFkbwGrkjUav5ToBedzxwmEqVXjM3ur1fd+yqiTdKLIK8EjFfImxEZB
+	 OOughmh5X7pztOQ2Pn+0I1UysgAe3Vf93wUk1JVaCNQDfd0Ch++kI8z/2ZZVuJiBxqtem
+	 aClK/C9dIeexKm19DyxpTnBEZXxazz2yYtJvXDuwYjqhlurg/Mw+z54O/UtTwSiZBvd7g
+	 T0bzU1kal7664SgPadVKt4yhP1IpHBHc5srP6wxzXexSnYa9e6jGQTwJdizvkQ98vd/JI
+	 LUGJG31NTyzgH4HgrpH3HSH+xLi/vQkWP+sxfIJoypZ4dTpPhNR+m6K51htvPm1MDNA==
 ARC-Authentication-Results: i=1; smtp.subspace.kernel.org; 
-	dmarc=pass header.from=mythread.it;
-	spf=pass smtp.mailfrom=mythread.it;
-	dkim=pass header.d=mythread.it header.i=@mythread.it header.a=rsa-sha256 header.s=a1 header.b=b4fM4jZx;
-	arc=none smtp.remote-ip=62.149.155.116
-Received: from smtpdh17-1.aruba.it (smtpdh17-1.aruba.it [62.149.155.116])
+	dmarc=pass header.from=d-silva.org;
+	spf=pass smtp.mailfrom=d-silva.org;
+	dkim=pass header.d=d-silva.org header.i=@d-silva.org header.a=rsa-sha256 header.s=2025a header.b=a4YKOuVJ;
+	arc=none smtp.remote-ip=119.15.109.137
+Received: from www.nmnhosting.com (watt.d-silva.org [119.15.109.137])
 	(using TLSv1.3 with cipher TLS_AES_256_GCM_SHA384 (256/256 bits)
-	 key-exchange X25519 server-signature ECDSA (prime256v1) server-digest SHA256)
+	 key-exchange X25519 server-signature ECDSA (prime256v1))
 	(No client certificate requested)
-	by smtp.subspace.kernel.org (Postfix) with ESMTPS id 875D9606A32C
-	for <linux-wireless@vger.kernel.org>; Fri,  6 Nov 2026 22:12:11 +0000 (UTC)
-DMARC-Filter: OpenDMARC Filter v1.4.2 smtp.subspace.kernel.org 875D9606A32C
-Authentication-Results: smtp.subspace.kernel.org; dmarc=pass (p=none dis=none) header.from=mythread.it
-Authentication-Results: smtp.subspace.kernel.org; spf=pass smtp.mailfrom=mythread.it
+	by smtp.subspace.kernel.org (Postfix) with ESMTPS id 4E71E606A326;
+	Sat,  7 Nov 2026 03:53:39 +0000 (UTC)
+DMARC-Filter: OpenDMARC Filter v1.4.2 smtp.subspace.kernel.org 4E71E606A326
+Authentication-Results: smtp.subspace.kernel.org; dmarc=pass (p=reject dis=none) header.from=d-silva.org
+Authentication-Results: smtp.subspace.kernel.org; spf=pass smtp.mailfrom=d-silva.org
 Authentication-Results: smtp.subspace.kernel.org;
-	dkim=pass (2048-bit key, unprotected) header.d=mythread.it header.i=@mythread.it header.a=rsa-sha256 header.s=a1 header.b=b4fM4jZx
-Received: from localhost ([87.16.49.252])
-	by Aruba SMTP with ESMTPSA
-	id PSAFxplkKkeHhPSAFxTcEj; Fri, 06 Nov 2026 23:12:03 +0100
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=mythread.it; s=a1;
-	t=1794003123; bh=ZGt9E16nzykH9Ajz1azleSM2KOUHnN9gragopg2dc48=;
-	h=Date:From:To:Subject:MIME-Version:Content-Type;
-	b=b4fM4jZx+A/efqkwy3m4W7yXmO7VPj6iFpgE5yfAkjIsyHQ1RGp3bLEFs5eXkt7Wx
-	 F4zoejSXHRsvsUaBYQ6J3b5EB5Lx/1NasmaXywN0fBb7Xh8vL7iVSZqMlI5PfWT5T9
-	 t1V9wIIyBS9uUlWwPhPdDVayi8PDXNb9QURGspgAgWZCYhPC33qzLNvoZPW+2V8TID
-	 WVr9FzQwxp+P44xrZpmKqn9ruY18HwtvV9Q5gYOz5rEasZVER8l19dME9KFa/dR3Sq
-	 tzVo5k+++di1Vllz7VmvLPHIL+g6Xu2oSBTnn1h+Q3HOh5J4IRJ+Yu/MmHO2HiBA3W
-	 UqKR46w8Y+Tjg==
-Date: Fri, 6 Nov 2026 23:12:02 +0100
-From: Alessio Ferri <alessio.ferri@mythread.it>
-To: Luca Casati <luk00casati@gmail.com>
-Cc: linux-wireless@vger.kernel.org, johannes@sipsolutions.net,
- arend.vanspriel@broadcom.com, b43-dev@lists.infradead.org
-Subject: Re: [PATCH wireless-next v2 1/5] b43: N-PHY: fix the TX tone sample
- table
-Message-ID: <20261106231202.00004c8b@mythread.it>
-In-Reply-To: <20261106211516.273791-2-luk00casati@gmail.com>
-References: <20261106211516.273791-1-luk00casati@gmail.com>
-	<20261106211516.273791-2-luk00casati@gmail.com>
-X-Mailer: Claws Mail 3.21.0 (GTK+ 2.24.33; x86_64-w64-mingw32)
+	dkim=pass (2048-bit key) header.d=d-silva.org header.i=@d-silva.org header.a=rsa-sha256 header.s=2025a header.b=a4YKOuVJ
+Received: from Hawking.lan (hawking.lan [10.0.1.4])
+	by www.nmnhosting.com (Postfix) with ESMTP id 2424D401FC;
+	Sat,  7 Nov 2026 14:53:30 +1100 (AEDT)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=d-silva.org; s=2025a;
+	t=1794023610;
+	h=from:from:reply-to:subject:subject:date:date:message-id:message-id:
+	 to:to:cc:cc:mime-version:mime-version:
+	 content-transfer-encoding:content-transfer-encoding:
+	 in-reply-to:in-reply-to:references:references;
+	bh=jq9t4i4p9xF2mSol4zZx3RitgWvrWh8XynSKXKryK9o=;
+	b=a4YKOuVJK6k/Ai4OrSX0bLMIuSFFr0hVgUKJAAixhinb6a5/o2vKxTrgmrYqfU0/e+iNW3
+	PiCES9j/zvrhjn305UXR7eVJb9C+f+j9Fz1k5m4d2XBT9Hvd05aLoVOadl5mTiqFSTX6m5
+	xeYAkooiZw1Ftddn6uhmrXNjLKQ3gOE2aM9lBxlbCsSmARBAdNG9eAOWuO95Aq9uXHkKtx
+	kk7INJVU+RvOl+6nCXTZUXxvXMc4Ua2pC9Ok6aHEEsglwbtOw59r4GIQaS3Dca5DGxGFal
+	xr/DcTblyfXaUoU5wZmroagsiaXlawuiboVA14EuzLcMVAW+5jys48306gf+Wg==
+X-GPT-Reason: This email is classified as legitimate. The content
+	is a technical software patch description for a Linux kernel driver,
+	which is highly consistent with the personal/professional identity
+	of the sender (alastair@d-silva.org) and the recipient
+	(alastair@d-silva.org). There are no phishing indicators, urgency
+	tactics, or external links; the email contains standard developer
+	metadata such as "Fixes," "Cc," and "Signed-off-by," and the From
+	domain matches the local mailbox perfectly.
+From: Alastair D'Silva <alastair@d-silva.org>
+To: linux-wireless@vger.kernel.org,
+	Ping-Ke Shih <pkshih@realtek.com>,
+	Kalle Valo <kvalo@kernel.org>
+Cc: Luka Gejak <luka.gejak@linux.dev>,
+	Martin Blumenstingl <martin.blumenstingl@googlemail.com>,
+	Jernej Skrabec <jernej.skrabec@gmail.com>,
+	Ulf Hansson <ulfh@kernel.org>,
+	linux-kernel@vger.kernel.org,
+	Alastair D'Silva <alastair@d-silva.org>,
+	stable@vger.kernel.org
+Subject: [PATCH rtw-next v9 1/4] wifi: rtw88: sdio: Handle allocation and read errors in rtw_sdio_rxfifo_recv
+Date: Sat,  7 Nov 2026 14:53:18 +1100
+Message-ID: <20261107035321.1210303-2-alastair@d-silva.org>
+X-Mailer: git-send-email 2.53.0
+In-Reply-To: <20261107035321.1210303-1-alastair@d-silva.org>
+References: <20261107035321.1210303-1-alastair@d-silva.org>
 X-Mailing-List: linux-wireless@vger.kernel.org
 List-Id: <linux-wireless.vger.kernel.org>
 List-Post: <mailto:linux-wireless@vger.kernel.org>
@@ -66,89 +82,98 @@ List-Unsubscribe: <mailto:linux-wireless+unsubscribe@vger.kernel.org>
 List-Owner: <mailto:linux-wireless+owner@vger.kernel.org>
 Precedence: list
 MIME-Version: 1.0
-Content-Type: text/plain; charset=US-ASCII
-Content-Transfer-Encoding: 7bit
-X-CMAE-Envelope: MS4xfBi88QmP7VZAFmeKmyOG6wE2hjbZ7XwFngFelYV3CKcWoMyOno4/el0tga/zV3LFCWEajCIbm4rQlPv1JiaDTSBnJ3BSe8aHTkCkqeiVUx72/2Db3Sa9
- s9BrBjb2MuNsQTXu+q2l4fkMDiQ5oaXtfTHBIK16cPc5VVwV8ox0OtDD4D87M7Rj69PL9Ku/R7uez/gpMY3eR3sgu9UVE5F3WAl3UttFijRdEHw2sWUQufnS
- Hl/x/nomOeoS9SeTpTavqCiZx74UfKpf79UZSgcRNqqEHQGh9z1x3fRzb+QaUyuZO4f5PeGPvS5w8Rj+oUGZ1zjTEt+z4JltgL5ui4TexLoFGNGnoUNxHJQJ
- /+QUhC8Y
+Content-Transfer-Encoding: 8bit
 
-Il giorno Fri,  6 Nov 2026 22:15:12 +0100
-Luca Casati <luk00casati@gmail.com> ha scritto:
+When dev_alloc_skb() or rtw_sdio_read_port() fails, rtw_sdio_rxfifo_recv()
+returns without reading data. Because it returned void, the caller still
+counted rx_len against the loop budget while leaving data stranded in the
+FIFO.
 
-> b43_nphy_load_samples() masked with (0x3FF << 10) instead of shifting
-> the masked I value, and b43_nphy_gen_load_samples() fed
-> cordic_calc_iq() a 16.16 fixed-point angle (CORDIC_FIXED() of a value
-> already shifted by 16) held in a u16, while the function takes whole
-> degrees. Together the sample table ended up all zeros, so every
-> calibration that plays a test tone (TX IQ/LO, RX IQ) ran without a
-> signal.
-> 
-> Compute the rotation in whole degrees as brcmsmac does and fix the
-> precedence.
-> 
-> Tested on a BCM43228 (N-PHY rev 16, radio 2057 rev 9).
-> 
-> mmiotraces: https://github.com/Luca00casati/b43patch/blob/755c2d8/traces/excerpts/patch1-tone-table.txt
-> 
-> Found and fixed with the help of an AI coding assistant (Claude Opus
-> 5.5), by comparing mmiotraces of b43 and wl on the same card.
-> 
-> Signed-off-by: Luca Casati <luk00casati@gmail.com>
-> ---
->  drivers/net/wireless/broadcom/b43/phy_n.c | 9 +++++----
->  1 file changed, 5 insertions(+), 4 deletions(-)
-> 
-> diff --git a/drivers/net/wireless/broadcom/b43/phy_n.c
-> b/drivers/net/wireless/broadcom/b43/phy_n.c index
-> bbc30cbad..c4e6c1ac0 100644 ---
-> a/drivers/net/wireless/broadcom/b43/phy_n.c +++
-> b/drivers/net/wireless/broadcom/b43/phy_n.c @@ -1515,7 +1515,7 @@
-> static int b43_nphy_load_samples(struct b43_wldev *dev,
-> b43_nphy_stay_in_carrier_search(dev, 1); 
->  	for (i = 0; i < len; i++) {
-> -		data[i] = (samples[i].i & 0x3FF << 10);
-> +		data[i] = (samples[i].i & 0x3FF) << 10;
->  		data[i] |= samples[i].q & 0x3FF;
->  	}
+Return an error code from rtw_sdio_rxfifo_recv() on failure and break out
+of the receive loop in the caller immediately.
 
-True, this is a precedence mistake, the shift binds before the masking.
+Fixes: 65371a3f14e7 ("wifi: rtw88: sdio: Add HCI implementation for SDIO based chipsets")
+Cc: stable@vger.kernel.org
+Assisted-by: LLM
+Acked-by: Ping-Ke Shih <pkshih@realtek.com>
+Reviewed-by: Luka Gejak <luka.gejak@linux.dev>
+Signed-off-by: Alastair D'Silva <alastair@d-silva.org>
+---
+ drivers/net/wireless/realtek/rtw88/sdio.c | 17 +++++++++++------
+ 1 file changed, 11 insertions(+), 6 deletions(-)
 
->  	b43_ntab_write_bulk(dev, B43_NTAB32(17, 0), len, data);
-> @@ -1531,7 +1531,8 @@ static u16 b43_nphy_gen_load_samples(struct
-> b43_wldev *dev, u32 freq, u16 max, bool test)
->  {
->  	int i;
-> -	u16 bw, len, rot, angle;
-> +	u16 bw, len;
-> +	s32 rot, angle;
->  	struct cordic_iq *samples;
->  
->  	bw = b43_is_40mhz(dev) ? 40 : 20;
-> @@ -1554,11 +1555,11 @@ static u16 b43_nphy_gen_load_samples(struct
-> b43_wldev *dev, u32 freq, u16 max, b43err(dev->wl, "allocation for
-> samples generation failed\n"); return 0;
->  	}
-> -	rot = (((freq * 36) / bw) << 16) / 100;
-> +	rot = ((freq * 36) / bw) / 100;
->  	angle = 0;
->  
-
-Correct, although changing the type of rot is not strictly needed.
-
->  	for (i = 0; i < len; i++) {
-> -		samples[i] = cordic_calc_iq(CORDIC_FIXED(angle));
-> +		samples[i] = cordic_calc_iq(angle);
->  		angle += rot;
->  		samples[i].q = CORDIC_FLOAT(samples[i].q * max);
->  		samples[i].i = CORDIC_FLOAT(samples[i].i * max);
-
-cordic_calc_iq calls CORDIC_FIXED(theta) as the first operation, so in
-the original code that would be equivalent to CORDIC_FIXED(
-CORDIC_FIXED(angle) ), which is zero.
-
-Reviewed-by: Alessio Ferri <alessio.ferri@mythread.it>
-
-Regards
-Alessio
+diff --git a/drivers/net/wireless/realtek/rtw88/sdio.c b/drivers/net/wireless/realtek/rtw88/sdio.c
+index ecd4d751c05a5..172aa7ad4732a 100644
+--- a/drivers/net/wireless/realtek/rtw88/sdio.c
++++ b/drivers/net/wireless/realtek/rtw88/sdio.c
+@@ -1348,7 +1348,7 @@ static void rtw_sdio_rx_skb(struct rtw_dev *rtwdev, struct sk_buff *skb,
+ 	ieee80211_rx_irqsafe(rtwdev->hw, skb);
+ }
+ 
+-static void rtw_sdio_rxfifo_recv(struct rtw_dev *rtwdev, u32 rx_len)
++static int rtw_sdio_rxfifo_recv(struct rtw_dev *rtwdev, u32 rx_len)
+ {
+ 	struct rtw_sdio *rtwsdio = (struct rtw_sdio *)rtwdev->priv;
+ 	const struct rtw_chip_info *chip = rtwdev->chip;
+@@ -1365,12 +1365,12 @@ static void rtw_sdio_rxfifo_recv(struct rtw_dev *rtwdev, u32 rx_len)
+ 
+ 	skb = dev_alloc_skb(bufsz);
+ 	if (!skb)
+-		return;
++		return -ENOMEM;
+ 
+ 	ret = rtw_sdio_read_port(rtwdev, skb->data, bufsz);
+ 	if (ret) {
+ 		dev_kfree_skb_any(skb);
+-		return;
++		return ret;
+ 	}
+ 
+ 	while (true) {
+@@ -1379,7 +1379,7 @@ static void rtw_sdio_rxfifo_recv(struct rtw_dev *rtwdev, u32 rx_len)
+ 					   &pkt_stat, &rx_status);
+ 		if (ret) {
+ 			dev_kfree_skb_any(skb);
+-			return;
++			return ret;
+ 		}
+ 
+ 		pkt_offset = pkt_desc_sz + pkt_stat.drv_info_sz +
+@@ -1393,7 +1393,7 @@ static void rtw_sdio_rxfifo_recv(struct rtw_dev *rtwdev, u32 rx_len)
+ 				"oversized RX packet: %u, %u bytes left\n",
+ 				pkt_offset + pkt_stat.pkt_len, rx_len);
+ 			dev_kfree_skb_any(skb);
+-			return;
++			return -EINVAL;
+ 		}
+ 
+ 		if ((curr_pkt_len + pkt_desc_sz) >= rx_len) {
+@@ -1423,11 +1423,14 @@ static void rtw_sdio_rxfifo_recv(struct rtw_dev *rtwdev, u32 rx_len)
+ 		skb_reserve(skb, curr_pkt_len);
+ 		rx_len -= curr_pkt_len;
+ 	}
++
++	return 0;
+ }
+ 
+ static void rtw_sdio_rx_isr(struct rtw_dev *rtwdev)
+ {
+ 	u32 rx_len, hisr, total_rx_bytes = 0;
++	int ret;
+ 
+ 	do {
+ 		if (rtw_chip_wcpu_8051(rtwdev))
+@@ -1438,7 +1441,9 @@ static void rtw_sdio_rx_isr(struct rtw_dev *rtwdev)
+ 		if (!rx_len)
+ 			break;
+ 
+-		rtw_sdio_rxfifo_recv(rtwdev, rx_len);
++		ret = rtw_sdio_rxfifo_recv(rtwdev, rx_len);
++		if (ret)
++			break;
+ 
+ 		total_rx_bytes += rx_len;
+ 
+-- 
+2.53.0
 
