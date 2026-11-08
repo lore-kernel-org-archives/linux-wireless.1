@@ -1,99 +1,87 @@
-Authentication-Results: smtp.subspace.kernel.org; arc=none smtp.remote-ip=209.85.216.98
+Authentication-Results: smtp.subspace.kernel.org; arc=none smtp.remote-ip=209.85.128.52
 ARC-Seal: i=1; d=subspace.kernel.org; s=arc20261015; a=rsa-sha256; cv=none;
-	t=1794152509;
-	b=49TI7l4xkMtkhTA6sSh7FMzr8bDEmn2+EODtt81SgpfNeMGwYo+3qYRkyXsBDpufYViM
-	 tL/KWP273O47r26vlnP7hyRaMDXH7JmkJ4Fj5G+60KgHpY8nYqGAwNBlhZzSWGPiDs3Pz
-	 SNESyeIsWPHGhTg1qq2YlLSiK6R0Hv0UgyMy24oymlKDvAlr0A+5Mo9Zs40r5BXbW1PtY
-	 lstJq6MqC3bgeP1+/kClYGbyvOmfVrqKzIGTAhm4j6pen871ymJQFmEMHHA5yLSMY7Mxt
-	 zj+IClj056qF/PeC5Zhdz3zVj/PTMWE1d5rlaWIuDRIqF1AIZYWVxFy6Ba84TyaxJLg==
+	t=1794156462;
+	b=ZStBej+v/4llFu//D+h4NRp1dibCdnfmQRw918LGu0UsJSCxngYqvA2cA4tfzmzyACU6
+	 UQp+2Q3g9219kX4FyqNZyeSG1sHSd4TNgOiM6oFwVf6td46bW7wTQ/xXQIs9cmBw51586
+	 7/jnWtMJSR3VGzKsPo80ixggysCIK3G6586hdxRJQvNxFxd866kWF3PJKRw3USlEeq1oS
+	 rnNMwvZNag8b+cSMFphdj9tguToqV6z5w8P8Pm/bozz3tc5bnzzz0JG/pcdhEvFD5R2OZ
+	 DgeVXIWA+RB+4uHmM5UZtjrgTiDCWNr5sgC3VssZoqrNqIkGQ07DCuoR+qGOtrsCYQQ==
 ARC-Message-Signature: i=1; d=subspace.kernel.org; s=arc20261015;
-	a=rsa-sha256; c=relaxed/relaxed; t=1794152509;
-	h=DMARC-Filter:Received:X-Google-DKIM-Signature:X-Gm-Message-State:
-	 X-Gm-Gg:X-Received:Received:X-Relaying-Domain:X-CFilter-Loop:Received:
-	 DKIM-Signature:X-Received:X-Received:Received:Message-ID:Date:
-	 MIME-Version:User-Agent:Subject:To:Cc:References:Content-Language:
-	 From:In-Reply-To:Content-Type:Content-Transfer-Encoding:
-	 X-DetectorID-Processed;
-	bh=5yCu6EdDfR4gzCOuCd5mbFeaXjz0iD8JjCv3Au6Mdwg=;
-	b=gWDbJcF8DjEPT0dMXd1sJweQveQV0Byt4dhU3nph7G6/mjMhoBc8cnQUW09/7f0uEC19
-	 /tLBCDvawPWvB4ekZZ+Wb7FGJU0htvctevdqZD8QQ8c4JX+N0/+oSs5wU3bRvo7zQjHud
-	 H+36jNKmejwhrbP9MdA0hNtsCs0Blts1asUrjQbOn0qPA1+lhpers6g+aMAoOKe9fUc86
-	 ljrP5P5XuCrm/GVYgeb+OSbnEFyfTLjtVzkJpfxgvgcW6p47+7SvqZq6yEaEI5uabpa86
-	 /CHvxlFibqd2BiNdJWHU9ecsiES/u/DwDzbitT+x/Zk2a/zxKybbvu5Dy7Os2K8SRFg==
+	a=rsa-sha256; c=relaxed/relaxed; t=1794156462;
+	h=DMARC-Filter:Received:DKIM-Signature:X-Google-DKIM-Signature:
+	 X-Forwarded-Encrypted:X-Gm-Message-State:X-Gm-Gg:X-Received:Received:
+	 Message-ID:Date:MIME-Version:User-Agent:Subject:To:References:
+	 Content-Language:From:In-Reply-To:Content-Type:
+	 Content-Transfer-Encoding;
+	bh=2aD6oUNkXSxT5rZKZT1CyhDcaAMP2VqICQ6JeKfJjak=;
+	b=GO1p28Ikpzay8B8A2F3CO7BjwReeOmPgE7mvHtEz2b236InQXDADgXDVG9i5Bv33dt79
+	 LF8lrwjJfZw/vCufVey7YELpVzJQU8ODTQPgtHSjIOoHpaF6JMtPV6kbm4IoQQ5BOWiHX
+	 BfmQWvNj2yJVz2w7ipyuw/l23oF8HCUyB2RzAV0K8YESJgCehNx141wFRWo6od9i+YLTi
+	 ym7YWPMix/Y32OcpPWx1iSXTkvirKd6Y71mSZRHh02W6OVLndCanckkaDzIY3J62xyD2f
+	 AHYQxh4FyD3nU6q8ofClWr555xtKhLmPQu5rx0cdB0Qzs9w344yAHaNX8vR7oBD/BaQ==
 ARC-Authentication-Results: i=1; smtp.subspace.kernel.org; 
-	dmarc=pass header.from=broadcom.com;
-	spf=fail smtp.mailfrom=broadcom.com;
-	dkim=pass header.d=broadcom.com header.i=@broadcom.com header.a=rsa-sha256 header.s=google header.b=Xy1DDHgX;
-	arc=none smtp.remote-ip=209.85.216.98
-Received: from mail-pj1-f98.google.com (mail-pj1-f98.google.com [209.85.216.98])
+	dmarc=pass header.from=gmail.com;
+	spf=pass smtp.mailfrom=gmail.com;
+	dkim=pass header.d=gmail.com header.i=@gmail.com header.a=rsa-sha256 header.s=20260707 header.b=Aj7ON6pp;
+	arc=none smtp.remote-ip=209.85.128.52
+Received: from mail-wm1-f52.google.com (mail-wm1-f52.google.com [209.85.128.52])
 	(using TLSv1.3 with cipher TLS_AES_128_GCM_SHA256 (128/128 bits)
 	 key-exchange X25519 server-signature ECDSA (prime256v1) server-digest SHA256)
 	(No client certificate requested)
-	by smtp.subspace.kernel.org (Postfix) with ESMTPS id F3F6F606A321
-	for <linux-wireless@vger.kernel.org>; Sun,  8 Nov 2026 15:41:48 +0000 (UTC)
-DMARC-Filter: OpenDMARC Filter v1.4.2 smtp.subspace.kernel.org F3F6F606A321
-Authentication-Results: smtp.subspace.kernel.org; dmarc=pass (p=reject dis=none) header.from=broadcom.com
-Authentication-Results: smtp.subspace.kernel.org; spf=fail smtp.mailfrom=broadcom.com
+	by smtp.subspace.kernel.org (Postfix) with ESMTPS id 9A850606A31C
+	for <linux-wireless@vger.kernel.org>; Sun,  8 Nov 2026 16:47:41 +0000 (UTC)
+DMARC-Filter: OpenDMARC Filter v1.4.2 smtp.subspace.kernel.org 9A850606A31C
+Authentication-Results: smtp.subspace.kernel.org; dmarc=pass (p=none dis=none) header.from=gmail.com
+Authentication-Results: smtp.subspace.kernel.org; spf=pass smtp.mailfrom=gmail.com
 Authentication-Results: smtp.subspace.kernel.org;
-	dkim=pass (1024-bit key) header.d=broadcom.com header.i=@broadcom.com header.a=rsa-sha256 header.s=google header.b=Xy1DDHgX
-Received: by mail-pj1-f98.google.com with SMTP id 98e67ed59e1d1-3ada4c06b7bso58462a91.2
-        for <linux-wireless@vger.kernel.org>; Sun, 08 Nov 2026 07:41:48 -0800 (PST)
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=1e100.net; s=20260707; t=1794152508; x=1794757308;
-        h=content-transfer-encoding:content-type:in-reply-to:from
-         :content-language:references:cc:to:subject:user-agent:mime-version
-         :date:message-id:dkim-signature:x-gm-gg:x-gm-message-state:from:to
-         :cc:subject:date:message-id:reply-to:content-type;
-        bh=5yCu6EdDfR4gzCOuCd5mbFeaXjz0iD8JjCv3Au6Mdwg=;
-        b=cU/nakJRgMykhiDadByktOjAu3ttqZg2jWuHSIJ6zTVCiMauPVi2svIK4sFYy6uuPL
-         kFG+3qCj5ZHTU+Km+IkDOJz/GhZez2ToJ8m5lC9uxjbltM+97CW/AipRVmleWiPUPwVz
-         5XyxGSMbAnIZ9YmkX7kmJ3T4y9e/cFO4BTd5P47hJBEE3zDbJVsdFXCO4ZTqLh+rZ9Fh
-         8vwcM4EjvKKE6sWJsnBF7k1WpyDorTUP3QxBkE9ctn94BQSxBf3b9nvenluu1DXIGUDT
-         qp6qGWrPEW+BL68oE79iNKh0OT4274pheq5cByjYJiABnlQFV2eOeqEYbIkUSB6zCukD
-         iemw==
-X-Gm-Message-State: APuU4Z/dUh2UZDpl9TbKI5qPsHCb1go/YG4SXiPrqIV45OJegW3l2W8T
-	oNe2FrJpYjDJUkXG4fcRI8nCoINqM4m38BUe6O0jXVG3VJQw9V/Fa2mopIvYAMlMKJkKmSLD/YQ
-	gProLvsGF6RYMljEfgsfgDwGcNzb4QrliBffKu97ReCBjOdwFm30bPVFycRJHyACbAAaQ7J+GIt
-	qXQbWAHRdzjXu62iIdKdqSsVl2f9LwlEpjhleGZWIWQf0sDVF7HfduPVfR3AVXaiNLszhZI4deL
-	n/ejUbmEFJ6doKS6yZgwNKvfS+0
-X-Gm-Gg: AYBFou1eiI3RpfIQYHihv+LjOliab5UTKL51rc1L8U1VyXDxEQQGvcxG8iIhoPqUDuq
-	kqCk1Vk6TkjRHJMxhI4Ewjiv3C6T1XX9TXReEky+pA7GvruzqfLBwx1uTa6bUuqLjKjMno3NEDr
-	oYDuzgeKl+ouRatmzi93Mwo1zPyN2Kxkr++fbOyxRZC8kIdc0Aee69y5C88G/6CsvFCKZsdNSUh
-	yf7iY64VrUL+n/SoAedfv+FmKVhLcDzCFytSzMMfdiL8sWDEOPCFTnfqmOn0QmszJlQuzT55GLm
-	YlZ/T0leGJe+COqwrTY7G2uok7yApOu9RTehu2jxJfo75AhXEY//bMPybrNh+7s7LF33tHBj8l/
-	SwzbrFZAKEJACAosB5K05cD0ql2mQGLksA5oMtrzALgKQDurjNhVHR0Z+nypctLaLzSJ9NL2C0D
-	21+E5rs+HOyUlGa+8GHGK9xzilpb3gtcYGrxQqhgs=
-X-Received: by 2002:a17:90b:4a82:b0:3ad:50ef:f5ff with SMTP id 98e67ed59e1d1-3b12d3fc2a1mr1477646a91.37.1794152508253;
-        Sun, 08 Nov 2026 07:41:48 -0800 (PST)
-Received: from smtp-us-east1-p01-i01-si01.dlp.protect.broadcom.com (address-144-49-247-28.dlp.protect.broadcom.com. [144.49.247.28])
-        by smtp-relay.gmail.com with ESMTPS id 98e67ed59e1d1-3b103477cb3sm1787708a91.4.2026.11.08.07.41.47
-        for <linux-wireless@vger.kernel.org>
-        (version=TLS1_2 cipher=ECDHE-ECDSA-AES128-GCM-SHA256 bits=128/128);
-        Sun, 08 Nov 2026 07:41:48 -0800 (PST)
-X-Relaying-Domain: broadcom.com
-X-CFilter-Loop: Reflected
-Received: by mail-dl1-f69.google.com with SMTP id a92af1059eb24-1af203073e0so217202c88.1
-        for <linux-wireless@vger.kernel.org>; Sun, 08 Nov 2026 07:41:47 -0800 (PST)
+	dkim=pass (2048-bit key) header.d=gmail.com header.i=@gmail.com header.a=rsa-sha256 header.s=20260707 header.b=Aj7ON6pp
+Received: by mail-wm1-f52.google.com with SMTP id 5b1f17b1804b1-4b4571ff080so1611615e9.1
+        for <linux-wireless@vger.kernel.org>; Sun, 08 Nov 2026 08:47:41 -0800 (PST)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=broadcom.com; s=google; t=1794152506; x=1794757306; darn=vger.kernel.org;
+        d=gmail.com; s=20260707; t=1794156460; x=1794761260; darn=vger.kernel.org;
         h=content-transfer-encoding:content-type:in-reply-to:from
-         :content-language:references:cc:to:subject:user-agent:mime-version
-         :date:message-id:from:to:cc:subject:date:message-id:reply-to
-         :content-type;
-        bh=5yCu6EdDfR4gzCOuCd5mbFeaXjz0iD8JjCv3Au6Mdwg=;
-        b=Xy1DDHgXIqn+VULlq1ya1aelptGMf/FW+NmvpEh/fSKmsozeE1GEnEZ3yP+744OQeN
-         JbystK9DAifkGe8hJBLw+6OiGrjagjrUduTIlaqmm23llBbHqaHz7mYuTVdKm8/NipEp
-         ZZAUuhxjNdx1vU246trC2leXzRglqcefGJ30s=
-X-Received: by 2002:a05:701b:2802:b0:1b0:20:6444 with SMTP id a92af1059eb24-1b39feffbdfmr2453821c88.39.1794152505919;
-        Sun, 08 Nov 2026 07:41:45 -0800 (PST)
-X-Received: by 2002:a05:701b:2802:b0:1b0:20:6444 with SMTP id a92af1059eb24-1b39feffbdfmr2453786c88.39.1794152505155;
-        Sun, 08 Nov 2026 07:41:45 -0800 (PST)
-Received: from [192.168.178.26] (f215227.upc-f.chello.nl. [80.56.215.227])
-        by smtp.gmail.com with ESMTPSA id a92af1059eb24-1b3755e936bsm7469375c88.6.2026.11.08.07.41.42
+         :content-language:references:to:subject:user-agent:mime-version:date
+         :message-id:from:to:cc:subject:date:message-id:reply-to:content-type;
+        bh=2aD6oUNkXSxT5rZKZT1CyhDcaAMP2VqICQ6JeKfJjak=;
+        b=Aj7ON6pp1phddKG+HW9O6TiSAv7R3pVgY8nSpsc+Uq/PQp+UUqO/cFXJveY7tFV9li
+         ePjLVov/dRldpRHCQNxfJ/5xwi7JwI/GhjQGn7dQiUgtPuNVvaO/rKQpt8vxcRx9AfET
+         wTYKHs6XyXrMS4LtNnXbPbJeKETDSqRLtvVaChUl0EBxgXZMqqUBrEPXWvTnR10ikjhE
+         TYEZeZB1IU6ocQj1N/FubV7keDbokEKPjVNTuGhtWNJh6jombNl2qfKeH1HgTxBgXVhi
+         cw+V5HtiEj8FYRvrKlEtM5LwfkycpIFOVJIOgxI+o7f1Rcg/zHu94HDdChXF4ss74DrF
+         ZXDg==
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+        d=1e100.net; s=20260707; t=1794156460; x=1794761260;
+        h=content-transfer-encoding:content-type:in-reply-to:from
+         :content-language:references:to:subject:user-agent:mime-version:date
+         :message-id:x-gm-gg:x-gm-message-state:from:to:cc:subject:date
+         :message-id:reply-to:content-type;
+        bh=2aD6oUNkXSxT5rZKZT1CyhDcaAMP2VqICQ6JeKfJjak=;
+        b=LyA/f1HbjY80KyA4mKi96DFmKkQRNHIyaHrFn1l8xcS/IiMWLtMWBLFnPOUrhSMu2a
+         30uusJ+mf1DdhGHIijRbrW7En981Zhm0CmXUpRuQuBi+m1cpCZPCt0BELWfmqFXtKW11
+         f0kI25ORCY7nj4biwcaovzvBeeSQzd4V4UTf4PMPd8be9xlY4EezklRc90KO2fhPfADE
+         /QVenBk9M9/X64EhwbR0Ks02CnEkjpx8Ewz5s4yMd3dK+d9f0CcMSBd5wx79cSfGO7WT
+         haq2H4APUhsLIQSokEmpp4QzAjTZWSKvPLp23Yy3xmZg9il9JpjosuY6Nc1x4QYFrzas
+         5vQg==
+X-Forwarded-Encrypted: i=1; AL+hErG46zVt2w+dfVTCRaLAimK55+nnTDx1sqmBQ+PZoAGJc9yuBiquryt1qFE+3WQp2jwKbC9xAn+WJ1W/TYiQow==@vger.kernel.org
+X-Gm-Message-State: APuU4Z9eOXw6P8GSaRHlj/4M0HsNtl16iDS9EAsLWWLomuC8nrktYVgk
+	rGVEP+45SMjZDzf5Iwvel5NF5dD5HF0Lck5eb6eqAKmkazoGHXH3klKx
+X-Gm-Gg: AYBFou0JaHzAXLc2WEcPnIHncTm26whTAVdkifZHmeRiGr29IhspAwgT9ZNwNDy7sJC
+	0mCb/7DtKXtdhpN5i/9R4m+kUKWcvpJJCs/b3VrfwBj+NzP5kZac9K0GrsD8Lekrb22if4D/7H2
+	cAJemNQ/0WmU+DmMcfU9cYTONfpG3xhI2OsvQ+qAUlNO4rCEf2P01ObkHe5c9OO4EF3S3L1+Q99
+	dj2ss5Dmmg+dE2wZ54HTQpPmMSI7MCn4yLBamuNnVx4vFJ4XWvaIKaXhbsXDvTYq5mypaCycOi3
+	jJYVA107l2Oi0yBwuoKoHES3ekBCVy/m0+iOq9dDnbqh7CWMcT+EfbWyKQccs/+uE6M2olU8XD9
+	cU574QQepNCX3H7GWeUjhXGpxLYn1s+4B650qY4w3m3ZNumqk/QriibB5lF0XpSTEGAoxwDT14K
+	5pCrj1wlIGVJhSjRi8gpkDY3XBetJHMJWcfEwA3c+KaIERPZrzBX5os6GOgP09vYdNyZRUGn2Sm
+	s7k7Dk+pcmsrPWX7QR/Z7uQEKUwq8KloJKt5Kbmhk8EG+0zm3cOrZXtlwJ4zi4IwsPebq+wWSQN
+	sMP5Cy+XNBUU20RiWMyQWfGaR85YxBqLfsh9
+X-Received: by 2002:a05:600c:4e05:b0:4b8:4af2:88b3 with SMTP id 5b1f17b1804b1-4b963c6d91amr35334555e9.22.1794156459866;
+        Sun, 08 Nov 2026 08:47:39 -0800 (PST)
+Received: from [192.168.1.50] ([81.196.40.160])
+        by smtp.gmail.com with ESMTPSA id 5b1f17b1804b1-4b79502652csm111017315e9.4.2026.11.08.08.47.38
         (version=TLS1_3 cipher=TLS_AES_128_GCM_SHA256 bits=128/128);
-        Sun, 08 Nov 2026 07:41:44 -0800 (PST)
-Message-ID: <c93fa1b2-9d05-4536-9025-6c4d1e6e6b5f@broadcom.com>
-Date: Sun, 8 Nov 2026 16:41:37 +0100
+        Sun, 08 Nov 2026 08:47:39 -0800 (PST)
+Message-ID: <54efd6a5-36e6-429f-a9a6-5c5b22e2da2d@gmail.com>
+Date: Sun, 8 Nov 2026 18:47:37 +0200
 X-Mailing-List: linux-wireless@vger.kernel.org
 List-Id: <linux-wireless.vger.kernel.org>
 List-Post: <mailto:linux-wireless@vger.kernel.org>
@@ -104,95 +92,170 @@ List-Owner: <mailto:linux-wireless+owner@vger.kernel.org>
 Precedence: list
 MIME-Version: 1.0
 User-Agent: Mozilla Thunderbird
-Subject: Re: [PATCH 0/7] wifi: brcmfmac: AWDL for AirDrop on Apple T2 Macs
-To: Andre Eikmeyer <dev@deq.rocks>, Johannes Berg <johannes@sipsolutions.net>
-Cc: linux-wireless@vger.kernel.org, brcm80211@lists.linux.dev,
- brcm80211-dev-list.pdl@broadcom.com, linux-kernel@vger.kernel.org
-References: <20261104151547.70333-1-dev@deq.rocks>
+Subject: Re: rtw89: Did a8188bb7644f change the behaviour for MLO?
+To: Ping-Ke Shih <pkshih@realtek.com>,
+ "linux-wireless@vger.kernel.org" <linux-wireless@vger.kernel.org>
+References: <428324ed-59e2-4c7b-ac97-e3e431a17788@gmail.com>
+ <a3b3e72ebe7245edbcc632037b385e60@realtek.com>
 Content-Language: en-US
-From: Arend van Spriel <arend.vanspriel@broadcom.com>
-In-Reply-To: <20261104151547.70333-1-dev@deq.rocks>
-Content-Type: text/plain; charset=UTF-8; format=flowed
+From: Bitterblue Smith <rtl8821cerfe2@gmail.com>
+In-Reply-To: <a3b3e72ebe7245edbcc632037b385e60@realtek.com>
+Content-Type: text/plain; charset=UTF-8
 Content-Transfer-Encoding: 7bit
-X-DetectorID-Processed: b00c1d49-9d2e-4205-b15f-d015386d3d5e
 
-On 04/11/2026 16:15, Andre Eikmeyer wrote:
-> This series adds AWDL support to brcmfmac, so Linux on the Apple T2 Macs
-> can send and receive files over AirDrop with Macs, iPhones and iPads.
+On 08/11/2026 03:41, Ping-Ke Shih wrote:
+> Bitterblue Smith <rtl8821cerfe2@gmail.com> wrote:
+>> a8188bb7644f ("wifi: mac80211: change public RX API to use link stations")
+>> does this:
+>>
+>> diff --git a/drivers/net/wireless/realtek/rtw89/core.c b/drivers/net/wireless/realtek/rtw89/core.c
+>> index 397ebbfcac09af..454d876aeb8861 100644
+>> --- a/drivers/net/wireless/realtek/rtw89/core.c
+>> +++ b/drivers/net/wireless/realtek/rtw89/core.c
+>> @@ -3073,10 +3073,8 @@ static void rtw89_vif_rx_stats_iter(void *data, u8 *mac,
+>>         struct rtw89_vif *rtwvif = vif_to_rtwvif(vif);
+>>         struct rtw89_rx_desc_info *desc_info = iter_data->desc_info;
+>>         struct sk_buff *skb = iter_data->skb;
+>> -       struct ieee80211_rx_status *rx_status = IEEE80211_SKB_RXCB(skb);
+>>         struct ieee80211_hdr *hdr = (struct ieee80211_hdr *)skb->data;
+>>         struct rtw89_rx_phy_ppdu *phy_ppdu = iter_data->phy_ppdu;
+>> -       bool is_mld = ieee80211_vif_is_mld(vif);
+>>         struct ieee80211_bss_conf *bss_conf;
+>>         struct rtw89_vif_link *rtwvif_link;
+>>         const u8 *bssid = iter_data->bssid;
+>> @@ -3110,11 +3108,6 @@ static void rtw89_vif_rx_stats_iter(void *data, u8 *mac,
+>>         if (!ether_addr_equal(target_bssid, bssid))
+>>                 goto out;
+>>
+>> -       if (is_mld) {
+>> -               rx_status->link_valid = true;
+>> -               rx_status->link_id = rtwvif_link->link_id;
+>> -       }
+>> -
+>>         bb = rtw89_get_bb_ctx(rtwdev, rtwvif_link->phy_idx);
+>>         pkt_stat = &bb->cur_pkt_stat;
+>>
+>> diff --git a/include/net/mac80211.h b/include/net/mac80211.h
+>> index 7bb4618065b672..cba7cdf61ce8a5 100644
+>> --- a/include/net/mac80211.h
+>> +++ b/include/net/mac80211.h
+>> @@ -5389,14 +5389,18 @@ void ieee80211_restart_hw(struct ieee80211_hw *hw);
+>>   * mixed for a single hardware. Must not run concurrently with
+>>   * ieee80211_tx_status_skb() or ieee80211_tx_status_ni().
+>>   *
+>> + * For data frames, when hardware has done address translation, a link station
+>> + * has to be provided and the frequency information may be skipped.
+>> + *
+>>   * This function must be called with BHs disabled and RCU read lock
+>>   *
+>>   * @hw: the hardware this frame came in on
+>> - * @sta: the station the frame was received from, or %NULL
+>> + * @link_sta: the link station the data frame was received from, or %NULL
+>>   * @skb: the buffer to receive, owned by mac80211 after this call
+>>   * @list: the destination list
+>>   */
+>> -void ieee80211_rx_list(struct ieee80211_hw *hw, struct ieee80211_sta *sta,
+>> +void ieee80211_rx_list(struct ieee80211_hw *hw,
+>> +                      struct ieee80211_link_sta *link_sta,
+>>                        struct sk_buff *skb, struct list_head *list);
+>>
+>>  /**
+>> @@ -5414,14 +5418,18 @@ void ieee80211_rx_list(struct ieee80211_hw *hw, struct ieee80211_sta *sta,
+>>   * mixed for a single hardware. Must not run concurrently with
+>>   * ieee80211_tx_status_skb() or ieee80211_tx_status_ni().
+>>   *
+>> + * For data frames, when hardware has done address translation, a link station
+>> + * has to be provided and the frequency information may be skipped.
+>> + *
+>>   * This function must be called with BHs disabled.
+>>   *
+>>   * @hw: the hardware this frame came in on
+>> - * @sta: the station the frame was received from, or %NULL
+>> + * @link_sta: the link station the data frame was received from, or %NULL
+>>   * @skb: the buffer to receive, owned by mac80211 after this call
+>>   * @napi: the NAPI context
+>>   */
+>> -void ieee80211_rx_napi(struct ieee80211_hw *hw, struct ieee80211_sta *sta,
+>> +void ieee80211_rx_napi(struct ieee80211_hw *hw,
+>> +                      struct ieee80211_link_sta *link_sta,
+>>                        struct sk_buff *skb, struct napi_struct *napi);
+>>
+>>  /**
+>> diff --git a/net/mac80211/rx.c b/net/mac80211/rx.c
+>> index 31dc6f83781b1d..0ddd0b8ea12a05 100644
+>> --- a/net/mac80211/rx.c
+>> +++ b/net/mac80211/rx.c
+>> @@ -5556,7 +5556,8 @@ static void __ieee80211_rx_handle_packet(struct ieee80211_hw *hw,
+>>   * This is the receive path handler. It is called by a low level driver when an
+>>   * 802.11 MPDU is received from the hardware.
+>>   */
+>> -void ieee80211_rx_list(struct ieee80211_hw *hw, struct ieee80211_sta *pubsta,
+>> +void ieee80211_rx_list(struct ieee80211_hw *hw,
+>> +                      struct ieee80211_link_sta *link_pubsta,
+>>                        struct sk_buff *skb, struct list_head *list)
+>>  {
+>>         struct ieee80211_local *local = hw_to_local(hw);
+>> @@ -5564,6 +5565,7 @@ void ieee80211_rx_list(struct ieee80211_hw *hw, struct ieee80211_sta *pubsta,
+>>         struct ieee80211_supported_band *sband;
+>>         struct ieee80211_rx_status *status = IEEE80211_SKB_RXCB(skb);
+>>         struct ieee80211_hdr *hdr = (struct ieee80211_hdr *)skb->data;
+>> +       struct ieee80211_sta *pubsta;
+>>
+>>         WARN_ON_ONCE(softirq_count() == 0);
+>>
+>> @@ -5694,8 +5696,15 @@ void ieee80211_rx_list(struct ieee80211_hw *hw, struct ieee80211_sta *pubsta,
+>>                 }
+>>         }
+>>
+>> -       if (WARN_ON_ONCE(status->link_id >= IEEE80211_LINK_UNSPECIFIED))
+>> -               goto drop;
+>> +       /* FIXME: Emulate the old driver behaviour for now */
+>> +       if (link_pubsta) {
+>> +               status->link_valid = 1;
+>> +               status->link_id = link_pubsta->link_id;
+>> +               pubsta = link_pubsta->sta;
+>> +       } else {
+>> +               status->link_valid = 0;
+>> +               pubsta = NULL;
+>> +       }
+>>
+>>         status->rx_flags = 0;
+>>
+>> @@ -5727,7 +5736,8 @@ void ieee80211_rx_list(struct ieee80211_hw *hw, struct ieee80211_sta *pubsta,
+>>  }
+>>  EXPORT_SYMBOL(ieee80211_rx_list);
+>>
+>> -void ieee80211_rx_napi(struct ieee80211_hw *hw, struct ieee80211_sta *pubsta,
+>> +void ieee80211_rx_napi(struct ieee80211_hw *hw,
+>> +                      struct ieee80211_link_sta *link_pubsta,
+>>                        struct sk_buff *skb, struct napi_struct *napi)
+>>  {
+>>         struct sk_buff *tmp;
+>> @@ -5740,7 +5750,7 @@ void ieee80211_rx_napi(struct ieee80211_hw *hw, struct ieee80211_sta *pubsta,
+>>          * receive processing
+>>          */
+>>         rcu_read_lock();
+>> -       ieee80211_rx_list(hw, pubsta, skb, &list);
+>> +       ieee80211_rx_list(hw, link_pubsta, skb, &list);
+>>         rcu_read_unlock();
+>>
+>>         if (!napi) {
+>>
+>> rtw89_core_rx_to_mac80211() calls ieee80211_rx_napi() with link_sta = NULL,
+>> so it's not getting the emulated old behaviour in ieee80211_rx_list().
+>>
+>> Is this something that needs fixing?
 > 
-> AirDrop runs over Apple Wireless Direct Link (AWDL). On these Macs the
-> Apple firmware runs AWDL itself. The host creates an AWDL interface and
-> sets its parameters. From then on the firmware keeps the AWDL schedule,
-> sends the AWDL frames it gets from the host and carries data frames to
-> and from the peers. Election, peer discovery and AirDrop run in user
-> space.
+> By the comment of link_id field in struct ieee80211_rx_status:
 > 
-> The driver enables AWDL on any firmware that announces "awdl" in its
-> capabilities and supports interface_create version 3. The linux-firmware
-> image for the BCM4350 (7.35.180.133) on a pre-T2 MacBookPro14,1
-> announces "awdl" and answers interface_create with BCME_UNSUPPORTED, so
-> it stays without the feature. Other Apple chips, such as the BCM4355,
-> are untested.
+>  * @link_id: id of the link used to receive the packet. Set and used by
+>  *	mac80211 internally, it uses @freq set by the driver to identify the
+>  *	correct link per vif.
 > 
-> The KaiT2en community, about 280 members, runs this series with its
-> kernels. Users reported it working with the BCM4364 and BCM4377 on the
-> MacBookPro15,1, 15,2, 15,3, 15,4, 16,1, 16,4, MacBookAir9,1 and
-> iMac20,1, and nobody reported a regression. AirDrop transfers on the
-> MacBookPro16,1 and 16,4 are slower than on the other models, the cause
-> is still open.
-> 
->    1    match firmware capabilities as whole words
->    2    move the interface_create definitions to fwil_types.h
->    3    detect AWDL support of the firmware
->    4    create and remove the AWDL interface
->    5    add the AWDL data path
->    6    add vendor commands for AWDL
->    7    pass AWDL frames and role changes to user space
-> 
-> Patch 1 is a fix on its own and carries a Fixes tag. It is here because
-> patch 3 adds an entry next to the lines it changes.
-> 
-> The AWDL interface is a network device "awdl%d" outside cfg80211. User
-> space talks to the driver through typed vendor commands and events of
-> the Broadcom OUI: start, stop, frames, sync, peer add and remove, and
-> events for received frames and role changes. Creating the interface
-> needs RTNL and vendor commands run with the wiphy lock only, so
-> AWDL_START and AWDL_STOP run in a work item and report their result as
-> vendor events. The driver sets the firmware parameters itself.
-> 
-> The firmware interface was worked out by tracing. A dtrace script
-> recorded the iovar calls macOS 15.4.1 made to the firmware on a
-> MacBookAir9,1 (BCM4377) while AirDrop was opened and closed in Finder.
-> The other way round, the MacBookAir9,1 was traced as AWDL peer while a
-> MacBookPro15,1 (BCM4364) brought AWDL up under Linux, together with the
-> AWDL frames macOS received and the console and events of the BCM4364
-> firmware. The BCM4364 handling in patch 6 comes from these runs. The
-> iovars, their order, their values and the AWDL frames come from these
-> traces and from the frames the firmware passes up.
-> 
-> The user space side is t2-drop, part of KaiT2en-Fedora and published
-> under the GPL:
-> 
->    https://github.com/kaiT2en/KaiT2en-Fedora/tree/main/apps/t2-drop
-> 
-> With it, AirDrop works in both directions.
-> 
-> Comments on the vendor command interface are welcome in particular.
-> nl80211 has no AWDL interface type, and the AWDL schedule and frame
-> exchange run in the firmware here.
+> rtw89 can report proper freq to get link_id back. We tested 7.4-rc and
+> things are expected. Did you encounter problems?
 
-I really have no idea how to deal with this series. AWDL is not part of 
-the IEEE 802.11 so I can imagine the kernel wireless subsystem does not 
-care to support this. From driver perspective I am not keen on 
-supporting this upstream either. My limited understanding of AWDL was 
-that it was Apple's variant of TDLS (802.11z).
+No problems here. I can't test MLO, actually. I just noticed this change
+while importing the latest patches [1] and thought to ask.
 
-So what does AWDL provide to user-space and could the same be 
-accomplished by TDLS? From the explanation above it seems AWDL provides 
-more knobs to user-space, but not sure whether the awdl%d interface is 
-merely a control interface or actually passing data through it (patch 5 
-implies it does). If my memory does not fail me then adding vendor 
-commands is generally pushed back.
-
-Regards,
-Arend
+[1] https://github.com/morrownr/rtw89
