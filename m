@@ -1,52 +1,96 @@
-Authentication-Results: smtp.subspace.kernel.org; arc=none smtp.remote-ip=91.218.175.47
+Authentication-Results: smtp.subspace.kernel.org; arc=none smtp.remote-ip=74.125.82.54
 ARC-Seal: i=1; d=subspace.kernel.org; s=arc20261015; a=rsa-sha256; cv=none;
-	t=1794117965;
-	b=H4YsrAWYI38byAcFV2wbWl4eNvSvy2CAwt99cO+VC3ZyyJDyp8QnKDaWljOpFiBfAo64
-	 ihsS8LkkXuxNummvPS6EBr24OUlKnUH8pNPJPKxaNqMjfj8s9WOcezSA5KC6zDjj9wqQT
-	 QmmsORDlXyqeyanLrrpe/NVPWbiG+vhFjVzkV2KS0LjRIulILqBh+c2YpiX9CCviFCDyi
-	 Cd+yo0vThsEOn8yTpsrzy2A2i+V9WknRt89oWWObqRzpCclsqubu2E6K2WYCjQpAlSzKx
-	 YDITQFEtcwwzjJSfPee/QsNnU+MQuFaHpOk1XDx8D7gItSV4ZSIiKCpgBhUjEuLefDw==
+	t=1794122352;
+	b=zaM8mX0N8i6jzgM7YknsW+5tkqa6wydLojG5D5p/Sm9y9bPh1qhbp2okS3U22iMlExfI
+	 e7r1977+MVCmyczod6s6/Qiu1Wal0Sy39a8ngK+aoR8vBIMe2ccmjDgj4vwqR9j0rWIZ/
+	 NMn02SpxcKHHx2G0zytSEA97kPGYWPCoE6tzirabv1QAR77ojAyd+M2+Q0wP+S5odg24M
+	 E/gnx08sGhKWOJ7HrW7Jtve5NOrREpYY1IoY/uxE1viNtTD2RGMXaR+koisbiipGNj/7B
+	 JKaUytQT1fSIIQ82Gkl6w0PqALhP8qz2Tfn0RiLubQFQpWAgoU6RGgsztNCc2QzTOQQ==
 ARC-Message-Signature: i=1; d=subspace.kernel.org; s=arc20261015;
-	a=rsa-sha256; c=relaxed/relaxed; t=1794117965;
-	h=DMARC-Filter:X-Envelope-To:DKIM-Signature:X-Envelope-To:Received:
-	 X-Mizu-Trace-ID:X-Migadu-Flow:MIME-Version:Date:Content-Type:
-	 Content-Transfer-Encoding:From:Message-ID:TLS-Required:Subject:To:Cc:
-	 In-Reply-To:References;
-	bh=qX6RWh+r5fIz1Q9pt4v2d9+SdZF7rn0C/5Yi7I63gg8=;
-	b=MGRvQr6pjCmV57dM5FvIF+uNbvEC7Vtz1gUil6injlqHrK5DajPk2/gLINAALsJY7hPd
-	 maXmBwpq/OiK0z7nLGxONHxHp6UFJH7UFYmN14ao7Aadm412LdOY6RWIAWYXgdk8KIjZJ
-	 0yAB7qdqqZslxwi18M9maSUG819gcwgMs0Jy0OiH4SxTv7tgGaPaDJLUUIdOvmtCfEJdV
-	 cCf+bsboVOod27pgoOe30aD4HlIEGwvDpQzPzKOjD17RQ8WvN7Iy/SqSfoM+2+j9xtyTp
-	 3aG2eiF6OJRxHNkD4TgdVeSDro3oUTaLNndWi6VYpZLSUVWAchZiORimjpw01lk+ZFQ==
+	a=rsa-sha256; c=relaxed/relaxed; t=1794122352;
+	h=DMARC-Filter:Received:DKIM-Signature:X-Google-DKIM-Signature:
+	 X-Gm-Message-State:X-Gm-Gg:X-Received:Received:From:To:Cc:Subject:
+	 Date:Message-ID:X-Mailer:In-Reply-To:References:MIME-Version:
+	 Content-Transfer-Encoding;
+	bh=FVF9NClJHJGhfa8rb/zBRKRxBPdEmM7xBMkClhjxaOI=;
+	b=y97+1yToLcl/SZnPVvocLOpVCOHENHwqmKvue2aopn8n3/nTtcfJqF/I0Hd/Fac+r16K
+	 G78ojWwYs8QRJqBfoeMdQSoYoU7lchEJOwnxiI+jUYyQ4elzbzC4CvjpGfUYmuO/mEL4d
+	 EQFBqApV8/Em1Mh6LxC3hbaWC79icQtr1PAKTArmTIobsGgpaItlPRyndj46DTg/YI+vG
+	 sVg7gnZIZNpJzetBYqZl9HQnybXzh1n349Ec+QNiKqEw8D8NURfo7prp/Jw1qdZ/AiO9H
+	 RjDcqfxz7+1nibo3EGlTebEOv43ccfguW5Y531gymfbxZ2oOszCRkiVXA7yUtuEaepg==
 ARC-Authentication-Results: i=1; smtp.subspace.kernel.org; 
-	dmarc=pass header.from=linux.dev;
-	spf=pass smtp.mailfrom=linux.dev;
-	dkim=pass header.d=linux.dev header.i=@linux.dev header.a=rsa-sha256 header.s=key1 header.b=lgCjYag+;
-	arc=none smtp.remote-ip=91.218.175.47
-Received: from mta0.migadu.com (out-47.mta0.migadu.com [91.218.175.47])
+	dmarc=pass header.from=gmail.com;
+	spf=pass smtp.mailfrom=gmail.com;
+	dkim=pass header.d=gmail.com header.i=@gmail.com header.a=rsa-sha256 header.s=20260707 header.b=WnpJ0AOE;
+	arc=none smtp.remote-ip=74.125.82.54
+Received: from mail-dl1-f54.google.com (mail-dl1-f54.google.com [74.125.82.54])
 	(using TLSv1.3 with cipher TLS_AES_128_GCM_SHA256 (128/128 bits)
 	 key-exchange X25519 server-signature ECDSA (prime256v1) server-digest SHA256)
 	(No client certificate requested)
-	by smtp.subspace.kernel.org (Postfix) with ESMTPS id 438AB606A31C
-	for <linux-wireless@vger.kernel.org>; Sun,  8 Nov 2026 06:06:02 +0000 (UTC)
-DMARC-Filter: OpenDMARC Filter v1.4.2 smtp.subspace.kernel.org 438AB606A31C
-Authentication-Results: smtp.subspace.kernel.org; dmarc=pass (p=none dis=none) header.from=linux.dev
-Authentication-Results: smtp.subspace.kernel.org; spf=pass smtp.mailfrom=linux.dev
+	by smtp.subspace.kernel.org (Postfix) with ESMTPS id 39510606A320
+	for <linux-wireless@vger.kernel.org>; Sun,  8 Nov 2026 07:19:11 +0000 (UTC)
+DMARC-Filter: OpenDMARC Filter v1.4.2 smtp.subspace.kernel.org 39510606A320
+Authentication-Results: smtp.subspace.kernel.org; dmarc=pass (p=none dis=none) header.from=gmail.com
+Authentication-Results: smtp.subspace.kernel.org; spf=pass smtp.mailfrom=gmail.com
 Authentication-Results: smtp.subspace.kernel.org;
-	dkim=pass (1024-bit key, unprotected) header.d=linux.dev header.i=@linux.dev header.a=rsa-sha256 header.s=key1 header.b=lgCjYag+
-X-Envelope-To: linux-wireless@vger.kernel.org
-DKIM-Signature: a=rsa-sha256; bh=Q/O40flVM8Wp7LXnkoxKijf2YqAcnc+fE/DKekU+fGA=;
- c=simple/simple; d=linux.dev;
- h=from:to:subject:date:message-id:mime-version:content-type; s=key1;
- t=1794117960; v=1; x=1794722760;
- b=lgCjYag+p0Coxqe9LSsmXEGd2C5MvU9cjnIfnaiDfKnwOfL3F2ffR7sAxoVEKa5nza6G1JDS
- bdnoUn55unZ4L08lsLJ4v0yuFaUS48LdHw5Wfv6SfWKS/Id+tjMaM5GOcpJAKyoLwhDAA4piadm
- 0EL42eP8H+ax27FNoW+UIdOM=
-X-Envelope-To: linux-wireless@vger.kernel.org
-Received: by smtp.migadu.com with ESMTPS id 56e57e8d5f37b56e;
-	Sun, 08 Nov 2026 06:06:00 +0000
-X-Mizu-Trace-ID: 56e57e8d5f37b56e
-X-Migadu-Flow: FLOW_OUT
+	dkim=pass (2048-bit key) header.d=gmail.com header.i=@gmail.com header.a=rsa-sha256 header.s=20260707 header.b=WnpJ0AOE
+Received: by mail-dl1-f54.google.com with SMTP id a92af1059eb24-1b1ce85287aso74674c88.0
+        for <linux-wireless@vger.kernel.org>; Sat, 07 Nov 2026 23:19:11 -0800 (PST)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+        d=gmail.com; s=20260707; t=1794122350; x=1794727150; darn=vger.kernel.org;
+        h=content-transfer-encoding:mime-version:references:in-reply-to
+         :message-id:date:subject:cc:to:from:from:to:cc:subject:date
+         :message-id:reply-to:content-type;
+        bh=FVF9NClJHJGhfa8rb/zBRKRxBPdEmM7xBMkClhjxaOI=;
+        b=WnpJ0AOE7lggVyl003czQ+c3YZmY9hxvUVX86ifJtceYUnI9JhaSRdcbwbM9nwufjN
+         hk5QKRNWpK8UVS6DChnBBFovDnMAZaQhnbZLy2nWqmD1mCAxIdFOa1K14vo7GSR4qyK3
+         ++26acAeKq9lLCqsUCCA7/TKc5rI9aDPRQtJpFRlhcFPNFd5GMQMthNpJ/HU2mxnstvR
+         mSMoyOyRQRImQdOjV+MnPz5GN2E2JPvTYfeQEvg+pobx9ElJl8ijiRHXIQINDVgk+8Yg
+         P/2XHHQCCxHkIwqmdEw/KuWQhR0rju641gt3JAs6e2jq5GUCXvq7ToQ3SsoTqC3xd0ee
+         FEUg==
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+        d=1e100.net; s=20260707; t=1794122350; x=1794727150;
+        h=content-transfer-encoding:mime-version:references:in-reply-to
+         :message-id:date:subject:cc:to:from:x-gm-gg:x-gm-message-state:from
+         :to:cc:subject:date:message-id:reply-to:content-type;
+        bh=FVF9NClJHJGhfa8rb/zBRKRxBPdEmM7xBMkClhjxaOI=;
+        b=Jdyl64kdhOYVlYLbnaYWIS3qNQsIekURJfU4irSLMn/bFGN7BIQK7VicL0MdT2LGIp
+         IUF2VITEcmHDLR6qkHFeYf2vTlNgOPxfwadCAuZAAyPZ6ay4xJas48voacFMATAr4Qo/
+         A8eQITWXSzPBlyuLvcB1w75ZHWE0Ydk2p5QRlO+lIh67UO95UzTSWNJqf3EkbucwGReW
+         VGljG9O2RpJgStODCrEUrGj0kmfB3nxbs0g8cQ51sF2+9SKVfnP90T1lgZMlFo+ZfR2y
+         XFDnUHTYWz1NWXlid4yCrx1HxWn1v3uD4fC9BXsZoNROAwJLIPMomdnnLGlMqMWGGYjK
+         XkvA==
+X-Gm-Message-State: APuU4Z+6c3bJyx1csY03Jq2/QXB84PWcytjEwUkNNc5IdTq6Lz3LdZu/
+	EXCAiMPKmJKFIwU74+/OzUnmTBflssOkDPZw/g85mityr4rxSJ0rN0c5QUk6DH9R01A=
+X-Gm-Gg: AYBFou3e6s9SRQyTr3zeXUyBY/ZZG7MCEkkSozVsQ6bOcKKbvRVP2l2ymnzPUCZlafP
+	e8ox6J8I1zzTTTkUuNlmMdVoFXJtd9us9+KaJVLZ1xYBZ5Qkw9UNIXkLJcaVHcMhZHPmQQ894U1
+	wgeltVVX2AEypQy2c36lUZnlxXfxP0Fhzg/B4B3iT/z2gbqLc9FsK9IgRcGyK23ihkTJtBOTuiL
+	PcO9Jywe0VuQt2jWmMX+DNB672JxzfZGPFPSY73oiWW3jdgimoEUcaE0g8ktbrjVRVLYpseCHlm
+	+Z0o3ZJudS5IzY61XXoRxCSBhmKlfTahQlHo9E5xObsVe1KkQ3EVnRCIwtkVxD4UF9024mNmZEV
+	nXr/cKJ8UHmj7NtPPXMzCRFnEpD0qqiAyy3GFc7lp3WpCm4wWOpyZpqK1ojppSwaFOegZAcs6v9
+	EhKKR6Qdxw28rBKs9frY8JqenaGkxF/r/cXzHLe3+AWdwe2c0JlPFUgEz2aZKu4lO+k8J27EY93
+	+LWsmhwZni7RWCUr0R94BnEwetU4LpdneqWjf9z6NYU6xsyCBFGwK91WaQB6UGyc+FyQdM3y5jU
+	m+EgLPEpESkoJmtya3SJUhBwnURTvs2C5BSjpJrrKsYqsw==
+X-Received: by 2002:a05:7022:294:20b0:16f:c9db:c5af with SMTP id a92af1059eb24-1b39fe92ebbmr1311793c88.11.1794122349973;
+        Sat, 07 Nov 2026 23:19:09 -0800 (PST)
+Received: from cachyos-x8664.nitc.ac.in ([61.1.180.57])
+        by smtp.gmail.com with ESMTPSA id a92af1059eb24-1b3755e8911sm4207262c88.5.2026.11.07.23.19.06
+        (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
+        Sat, 07 Nov 2026 23:19:09 -0800 (PST)
+From: John Robin <johnrobin044@gmail.com>
+To: linux-wireless@vger.kernel.org
+Cc: kuba@kernel.org,
+	matthias.bgg@gmail.com,
+	angelogioacchino.delregno@collabora.com,
+	linux-kernel@vger.kernel.org,
+	linux-mediatek@lists.infradead.org,
+	John Robin <johnrobin044@gmail.com>
+Subject: [PATCH v2 0/4] wifi: mt7601u: add AP and Wi-Fi Direct support
+Date: Sun,  8 Nov 2026 12:47:42 +0530
+Message-ID: <20261108071820.35303-1-johnrobin044@gmail.com>
+X-Mailer: git-send-email 2.56.0
+In-Reply-To: <7ededd2f-98d0-41ac-91b4-2977963c4637@gmail.com>
+References: <7ededd2f-98d0-41ac-91b4-2977963c4637@gmail.com>
 X-Mailing-List: linux-wireless@vger.kernel.org
 List-Id: <linux-wireless.vger.kernel.org>
 List-Post: <mailto:linux-wireless@vger.kernel.org>
@@ -56,98 +100,45 @@ List-Unsubscribe: <mailto:linux-wireless+unsubscribe@vger.kernel.org>
 List-Owner: <mailto:linux-wireless+owner@vger.kernel.org>
 Precedence: list
 MIME-Version: 1.0
-Date: Sun, 08 Nov 2026 06:06:00 +0000
-Content-Type: text/plain; charset="utf-8"
-Content-Transfer-Encoding: quoted-printable
-From: "Luka Gejak" <luka.gejak@linux.dev>
-Message-ID: <162821b6cf0e6d17aa33c81d55a716b553e70579@linux.dev>
-TLS-Required: No
-Subject: Re: [PATCH rtw-next v9 0/4] wifi: rtw88: sdio: Fix unhandled RX
- request interrupt storm
-To: "Ping-Ke Shih" <pkshih@realtek.com>, "Alastair D'Silva"
- <alastair@d-silva.org>, linux-wireless@vger.kernel.org, "Kalle Valo"
- <kvalo@kernel.org>
-Cc: "Martin Blumenstingl" <martin.blumenstingl@googlemail.com>, "Jernej
- Skrabec" <jernej.skrabec@gmail.com>, "Ulf Hansson" <ulfh@kernel.org>,
- linux-kernel@vger.kernel.org, "Alastair  D'Silva" <alastair@d-silva.org>
-In-Reply-To: <f2784538533947a38e9d03af7bc7fce8@realtek.com>
-References: <20261107035321.1210303-1-alastair@d-silva.org>
- <ab3dcde64bb90809ae10627803315d7385d6708e@linux.dev>
- <f2784538533947a38e9d03af7bc7fce8@realtek.com>
+Content-Transfer-Encoding: 8bit
 
-Hi Ping-Ke,
+v2: Split the single large commit into a 4-patch series as requested.
 
-November 8, 2026 at 4:06 AM, "Ping-Ke Shih" <pkshih@realtek.com> wrote:
+This series enables Access Point (AP) and Wi-Fi Direct (P2P_GO/P2P_CLIENT)
+interface modes on the MT7601U device, allowing concurrent Station and AP
+operation. 
 
->=20
->=20Luka Gejak <luka.gejak@linux.dev> wrote:
->=20
->=20>=20
->=20> November 7, 2026 at 4:53 AM, "Alastair D'Silva" <alastair@d-silva.o=
-rg> wrote:
-> >=20=20
->=20>=20
->=20>  On 3081-based SDIO chips (observed on RTL8821CS; RTL8822BS and RTL=
-8822CS
-> >  are inferred to be affected as they share the 3081 architecture), cl=
-earing
-> >  REG_SDIO_HISR_RX_REQUEST requires both a software W1C acknowledge an=
-d an
-> >  empty RX FIFO. Masking this bit out before writing back to HISR prev=
-ents
-> >  the software acknowledge from happening, leaving the bit asserted ev=
-en
-> >  after the FIFO is drained and trapping the CPU core in an infinite
-> >  interrupt storm that locks up the system upon receiving network traf=
-fic.
-> >=20
->=20>  This series fixes the interrupt storm on 3081 chips and addresses
-> >  related SDIO lifecycle, locking, and error handling issues:
-> >=20
->=20>  - Patch 1 returns error codes from rtw_sdio_rxfifo_recv() on alloc=
-ation,
-> >  oversized packet, or read failures so the caller stops immediately
-> >  instead of burning through the loop budget.
-> >  - Patch 2 tracks operational state via rtwsdio->running protected by=
- an
-> >  irq_lock mutex (using a mutex as SDIO bus operations sleep), seriali=
-zes
-> >  start/stop state transitions under sdio_claim_host() and irq_lock,
-> >  cancels the TX worker synchronously on stop, drains rtwsdio->tx_queu=
-e[]
-> >  with locked skb_dequeue() and ieee80211_free_txskb() in rtw_sdio_sto=
-p()
-> >  and again in rtw_sdio_start(), and resets rtwsdio->tx_queue_stopped[=
-]
-> >  while waking stopped AC queues under tx_queue[].lock in rtw_sdio_sta=
-rt().
-> >  - Patch 3 fixes the interrupt storm by splitting
-> >  rtw_sdio_handle_interrupt() into 8051 and 3081 paths. On 3081,
-> >  interrupts are masked via HIMR, acknowledged via W1C writeback,
-> >  serviced, and re-enabled under irq_lock if still running.
-> >  - Patch 4 refactors rtw_sdio_rx_isr() into separate 8051 and 3081 va=
-riants
-> >  to clarify the differences in register width and HISR handling witho=
-ut
-> >  any logic changes.
-> >=20
->=20>=20=20
->=20>  Thanks for addressing those comments, v9 looks good to me,
-> >=20=20
->=20>  Reviewed-by: Luka Gejak <luka.gejak@linux.dev>
-> >=20
->=20I don't know why I can't see v10 in patchwork [1].
+The changes are split into the following patches:
 
-I suppose you mean v9.
+- Patch 1 fixes a potential out-of-bounds access in the rate index and
+  safely falls back to CCK rates.
+- Patch 2 registers the AP, P2P, and ADHOC modes, defines the interface 
+  combinations, and sets NEEDS_UNIQUE_STA_ADDR.
+- Patch 3 implements start_ap()/stop_ap() and adds beacon frame handling
+  along with appropriate SYNC modes.
+- Patch 4 optimizes queue management by routing management and injected
+  frames to the Voice (VO) queue to bypass firmware suspension.
 
-> Please take Luka's Reviewed-by for each patch, and send v10.
->=20
->=20[1] https://patchwork.kernel.org/project/linux-wireless/list/?series=
-=3D&submitter=3DAlastair&state=3D*&q=3D&archive=3D&delegate=3D
->
+All implemented modes were verified to be working. Tested AP mode and
+simultaneous STA+AP with iperf3 to verify stability.
 
-It might be the same issue lore is experiencing. Nothing newer than
-November 6th is appearing, maybe it's related?
+Sorry for the delay in getting back to this, and thanks for the review.
+Here is the split series as requested.
 
-Best regards,
-Luka Gejak
+John Robin (4):
+  wifi: mt7601u: fix out-of-bounds access in rate index
+  wifi: mt7601u: enable AP and Wi-Fi Direct interface modes
+  wifi: mt7601u: add AP operations and beacon handling
+  wifi: mt7601u: optimize management frame routing and queues
+
+ drivers/net/wireless/mediatek/mt7601u/init.c  | 31 ++++++-
+ drivers/net/wireless/mediatek/mt7601u/mac.c   | 91 +++++++++++++++----
+ drivers/net/wireless/mediatek/mt7601u/mac.h   |  3 +-
+ drivers/net/wireless/mediatek/mt7601u/main.c  | 56 +++++++++++-
+ .../net/wireless/mediatek/mt7601u/mt7601u.h   |  3 +-
+ drivers/net/wireless/mediatek/mt7601u/tx.c    | 19 +++-
+ 6 files changed, 175 insertions(+), 28 deletions(-)
+
+-- 
+2.56.0
+
