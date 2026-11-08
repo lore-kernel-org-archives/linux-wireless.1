@@ -1,75 +1,52 @@
-Authentication-Results: smtp.subspace.kernel.org; arc=none smtp.remote-ip=74.125.82.199
+Authentication-Results: smtp.subspace.kernel.org; arc=none smtp.remote-ip=91.218.175.47
 ARC-Seal: i=1; d=subspace.kernel.org; s=arc20261015; a=rsa-sha256; cv=none;
-	t=1794117623;
-	b=Ere6jA+FsqnQ2HgsmGLafMZN6h4J6Q4IRgQ2BxHYE231ynT8SrmYV2+TbnVyL7aRzlWO
-	 GLLlIEBA2MHhOeKdZXyD5NMbeacWO2vgFznuMJYprK0fXpWSvdJejuXm5Y9eIKrgEGnRZ
-	 XVo6OnFq0DuWXhCy4REYWY12epFA/5PF2HyxPcJVKCibyft+wTgdHnCaegKVDwriU3Ujj
-	 d/5s37G5TyTDTvcRMKDND3KiN/hMtgzlsc/4CXICJQCjbwF69oack49qp7GWaRzi06f7n
-	 3imGoMNmTf5wwO3do3fS07fDKQOoPnGSDS6BOGvouxkePF8NyuOpb6jlecQKHUZuaCA==
+	t=1794117965;
+	b=H4YsrAWYI38byAcFV2wbWl4eNvSvy2CAwt99cO+VC3ZyyJDyp8QnKDaWljOpFiBfAo64
+	 ihsS8LkkXuxNummvPS6EBr24OUlKnUH8pNPJPKxaNqMjfj8s9WOcezSA5KC6zDjj9wqQT
+	 QmmsORDlXyqeyanLrrpe/NVPWbiG+vhFjVzkV2KS0LjRIulILqBh+c2YpiX9CCviFCDyi
+	 Cd+yo0vThsEOn8yTpsrzy2A2i+V9WknRt89oWWObqRzpCclsqubu2E6K2WYCjQpAlSzKx
+	 YDITQFEtcwwzjJSfPee/QsNnU+MQuFaHpOk1XDx8D7gItSV4ZSIiKCpgBhUjEuLefDw==
 ARC-Message-Signature: i=1; d=subspace.kernel.org; s=arc20261015;
-	a=rsa-sha256; c=relaxed/relaxed; t=1794117623;
-	h=DMARC-Filter:Received:DKIM-Signature:X-Google-DKIM-Signature:
-	 X-Forwarded-Encrypted:X-Gm-Message-State:X-Received:Date:In-Reply-To:
-	 Mime-Version:References:X-Mailer:Message-ID:Subject:From:To:Cc:
-	 Content-Type;
-	bh=ls8Vsqz37bk9Lc/TUQk6BA8al47BcGIFX0n6D6YIHe4=;
-	b=pD2QYQt0NXnRBK4dZADqqK7w6odFl46wepn0viwPbg0jj6sQFlRgvKOBlM8BMX9LWhw3
-	 9xJr2AOyuBkCwHMsHARN+DbhnzHJRqd6c+whROHEmCCQ3LhSj0cqynlD0ICFQaWaUqLvG
-	 blmeHG6SU+ttbcsvrJ4CMZmEU1Ok1ODgBJfCLsF7YXBYNAMwaCa3uNCaCjk4yXi9C3z5U
-	 yzNRoRKAGW9SqiDICdk0KrSaEHvlvGDCnfyN+RmW/sxuP9mcWQ8hRWxy/r7FnXEzlCg9H
-	 c9N8Mo1G9eA2KDTx8XhopuuySAGTmblSkj2wIczKNYyeu5U1NYm3aJnUwnZ+FuDOr6g==
+	a=rsa-sha256; c=relaxed/relaxed; t=1794117965;
+	h=DMARC-Filter:X-Envelope-To:DKIM-Signature:X-Envelope-To:Received:
+	 X-Mizu-Trace-ID:X-Migadu-Flow:MIME-Version:Date:Content-Type:
+	 Content-Transfer-Encoding:From:Message-ID:TLS-Required:Subject:To:Cc:
+	 In-Reply-To:References;
+	bh=qX6RWh+r5fIz1Q9pt4v2d9+SdZF7rn0C/5Yi7I63gg8=;
+	b=MGRvQr6pjCmV57dM5FvIF+uNbvEC7Vtz1gUil6injlqHrK5DajPk2/gLINAALsJY7hPd
+	 maXmBwpq/OiK0z7nLGxONHxHp6UFJH7UFYmN14ao7Aadm412LdOY6RWIAWYXgdk8KIjZJ
+	 0yAB7qdqqZslxwi18M9maSUG819gcwgMs0Jy0OiH4SxTv7tgGaPaDJLUUIdOvmtCfEJdV
+	 cCf+bsboVOod27pgoOe30aD4HlIEGwvDpQzPzKOjD17RQ8WvN7Iy/SqSfoM+2+j9xtyTp
+	 3aG2eiF6OJRxHNkD4TgdVeSDro3oUTaLNndWi6VYpZLSUVWAchZiORimjpw01lk+ZFQ==
 ARC-Authentication-Results: i=1; smtp.subspace.kernel.org; 
-	dmarc=pass header.from=google.com;
-	spf=pass smtp.mailfrom=flex--almasrymina.bounces.google.com;
-	dkim=pass header.d=google.com header.i=@google.com header.a=rsa-sha256 header.s=20260707 header.b=iY0Ruttd;
-	arc=none smtp.remote-ip=74.125.82.199
-Received: from mail-dy1-f199.google.com (mail-dy1-f199.google.com [74.125.82.199])
+	dmarc=pass header.from=linux.dev;
+	spf=pass smtp.mailfrom=linux.dev;
+	dkim=pass header.d=linux.dev header.i=@linux.dev header.a=rsa-sha256 header.s=key1 header.b=lgCjYag+;
+	arc=none smtp.remote-ip=91.218.175.47
+Received: from mta0.migadu.com (out-47.mta0.migadu.com [91.218.175.47])
 	(using TLSv1.3 with cipher TLS_AES_128_GCM_SHA256 (128/128 bits)
 	 key-exchange X25519 server-signature ECDSA (prime256v1) server-digest SHA256)
 	(No client certificate requested)
-	by smtp.subspace.kernel.org (Postfix) with ESMTPS id 6B61E606EE89
-	for <linux-wireless@vger.kernel.org>; Sun,  8 Nov 2026 06:00:23 +0000 (UTC)
-DMARC-Filter: OpenDMARC Filter v1.4.2 smtp.subspace.kernel.org 6B61E606EE89
-Authentication-Results: smtp.subspace.kernel.org; dmarc=pass (p=reject dis=none) header.from=google.com
-Authentication-Results: smtp.subspace.kernel.org; spf=pass smtp.mailfrom=flex--almasrymina.bounces.google.com
+	by smtp.subspace.kernel.org (Postfix) with ESMTPS id 438AB606A31C
+	for <linux-wireless@vger.kernel.org>; Sun,  8 Nov 2026 06:06:02 +0000 (UTC)
+DMARC-Filter: OpenDMARC Filter v1.4.2 smtp.subspace.kernel.org 438AB606A31C
+Authentication-Results: smtp.subspace.kernel.org; dmarc=pass (p=none dis=none) header.from=linux.dev
+Authentication-Results: smtp.subspace.kernel.org; spf=pass smtp.mailfrom=linux.dev
 Authentication-Results: smtp.subspace.kernel.org;
-	dkim=pass (2048-bit key) header.d=google.com header.i=@google.com header.a=rsa-sha256 header.s=20260707 header.b=iY0Ruttd
-Received: by mail-dy1-f199.google.com with SMTP id 5a478bee46e88-30bcb065bfdso584144eec.0
-        for <linux-wireless@vger.kernel.org>; Sat, 07 Nov 2026 22:00:23 -0800 (PST)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=google.com; s=20260707; t=1794117623; x=1794722423; darn=vger.kernel.org;
-        h=content-type:cc:to:from:subject:message-id:references:mime-version
-         :in-reply-to:date:from:to:cc:subject:date:message-id:reply-to
-         :content-type;
-        bh=ls8Vsqz37bk9Lc/TUQk6BA8al47BcGIFX0n6D6YIHe4=;
-        b=iY0RuttdzNYL3L/hxvriJXgWLcv1kf3av/fkpSJxd4kxhvAgrYQTBku5t4hwm/GXA5
-         vYV62lUm79XaGdxX33bxC3JgPksIcsCGIAeTHdYQ0aqIcD7EgcT8FK5FMVk0LgQXF0Ax
-         oRH9Js1cz9Z2clrcZ+eLleMu8I7OojWjfVHiATzd6c0OY+/UR2Phx1RPkfV7cfbU5ccQ
-         7gxm8FT26Psc/qjdvWAnUX1cmFGSsHgtLVRR4QV7mZEiGpUc8a+L3ePc5EP49kfte19F
-         Pgc+Ejx5ftkPoDYYRHnhN5GPFNNEfkc/jQpRHdThYPozQxMmk2V59ZYzGipa7CbCAyQu
-         u6Xw==
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=1e100.net; s=20260707; t=1794117623; x=1794722423;
-        h=content-type:cc:to:from:subject:message-id:references:mime-version
-         :in-reply-to:date:x-gm-message-state:from:to:cc:subject:date
-         :message-id:reply-to:content-type;
-        bh=ls8Vsqz37bk9Lc/TUQk6BA8al47BcGIFX0n6D6YIHe4=;
-        b=Yb2qAv5635Yjg0fyCKqGYxglFvtuyEoPeMRK+u/aOa0HbMoiy5lUe6qpAt4XkTLuQY
-         mwksA0N0A9lDYSU6Uj18SX/nrPLl+r6G3nNmBofm/spN6R7+rb5BhJPf7SBRFI+4vicX
-         Lk/ggtBJUiSPPpC/Zqu6AzYsfz1a6Z5029Nb0ijK9mDDZUJm6tknq7Y/0nbI6133IpS+
-         +9cTQIXypTwGONZLq+dsBKdblpLpRfCbGjZV2ztBcqj0VgVr0HPdxOBmA7Um1Td3QQsp
-         40tlWJCAY6BB1Hv/WJ7Qk/yDE3rRicXDEyQAtrzX0cI+fZ/hUHIoZcu7ztOM7ZOD/Mwg
-         113Q==
-X-Forwarded-Encrypted: i=1; AKwUvBxV9wLMet40xQSovi/ez8WDoBLDl/1x1AHLu4kV1WXgSv9KGuosQ1v/N/q9MBDPsXj5EGJwMdV4tIh4XVvexg==@vger.kernel.org
-X-Gm-Message-State: APuU4Z/Dm6C9WGv9ImzrkwSirAK6qTgYp+2MWWcL/uHHsaL+wtpk6VyJ
-	eBnGMvvyw5usrGYnX5NHJv8i2sg1ha5ow6i4eII/36hWUx+M8AzQZ48wZ7m2/IGHUnlJqWXbqNX
-	VA5QutG9tCdM/qQaVl6/Qc4p4Rw==
-X-Received: from dycmb13-n2.prod.google.com ([2002:a05:693c:20cd:20b0:36a:17c6:6824])
- (user=almasrymina job=prod-delivery.src-stubby-dispatcher) by
- 2002:a05:693c:6390:20b0:36c:9bc6:3ec with SMTP id 5a478bee46e88-37252f3042emr1787652eec.3.1794117622089;
- Sat, 07 Nov 2026 22:00:22 -0800 (PST)
-Date: Sun,  8 Nov 2026 06:00:14 +0000
-In-Reply-To: <20261108060016.2131509-1-almasrymina@google.com>
+	dkim=pass (1024-bit key, unprotected) header.d=linux.dev header.i=@linux.dev header.a=rsa-sha256 header.s=key1 header.b=lgCjYag+
+X-Envelope-To: linux-wireless@vger.kernel.org
+DKIM-Signature: a=rsa-sha256; bh=Q/O40flVM8Wp7LXnkoxKijf2YqAcnc+fE/DKekU+fGA=;
+ c=simple/simple; d=linux.dev;
+ h=from:to:subject:date:message-id:mime-version:content-type; s=key1;
+ t=1794117960; v=1; x=1794722760;
+ b=lgCjYag+p0Coxqe9LSsmXEGd2C5MvU9cjnIfnaiDfKnwOfL3F2ffR7sAxoVEKa5nza6G1JDS
+ bdnoUn55unZ4L08lsLJ4v0yuFaUS48LdHw5Wfv6SfWKS/Id+tjMaM5GOcpJAKyoLwhDAA4piadm
+ 0EL42eP8H+ax27FNoW+UIdOM=
+X-Envelope-To: linux-wireless@vger.kernel.org
+Received: by smtp.migadu.com with ESMTPS id 56e57e8d5f37b56e;
+	Sun, 08 Nov 2026 06:06:00 +0000
+X-Mizu-Trace-ID: 56e57e8d5f37b56e
+X-Migadu-Flow: FLOW_OUT
 X-Mailing-List: linux-wireless@vger.kernel.org
 List-Id: <linux-wireless.vger.kernel.org>
 List-Post: <mailto:linux-wireless@vger.kernel.org>
@@ -78,247 +55,99 @@ List-Subscribe: <mailto:linux-wireless+subscribe@vger.kernel.org>
 List-Unsubscribe: <mailto:linux-wireless+unsubscribe@vger.kernel.org>
 List-Owner: <mailto:linux-wireless+owner@vger.kernel.org>
 Precedence: list
-Mime-Version: 1.0
-References: <20261108060016.2131509-1-almasrymina@google.com>
-X-Mailer: git-send-email 2.56.0.455.g6c5a503b38-goog
-Message-ID: <20261108060016.2131509-4-almasrymina@google.com>
-Subject: [PATCH net-next v2 3/5] tcp: detach page_pool pages before mapping in tcp_zerocopy_receive()
-From: Mina Almasry <almasrymina@google.com>
-To: netdev@vger.kernel.org
-Cc: Mina Almasry <almasrymina@google.com>, Jesper Dangaard Brouer <hawk@kernel.org>, 
-	Ilias Apalodimas <ilias.apalodimas@linaro.org>, "David S. Miller" <davem@davemloft.net>, 
-	Eric Dumazet <edumazet@kernel.org>, Jakub Kicinski <kuba@kernel.org>, Paolo Abeni <pabeni@redhat.com>, 
-	Simon Horman <horms@kernel.org>, Neal Cardwell <ncardwell@google.com>, 
-	Kuniyuki Iwashima <kuniyu@google.com>, Pavel Begunkov <asml.silence@gmail.com>, 
-	Bobby Eshleman <bobbyeshleman@meta.com>, Stanislav Fomichev <sdf@fomichev.me>, linux-kernel@vger.kernel.org, 
-	Steffen Klassert <steffen.klassert@secunet.com>, Herbert Xu <herbert@gondor.apana.org.au>, 
-	Willem de Bruijn <willemb@google.com>, John Fastabend <john.fastabend@gmail.com>, 
-	Sabrina Dubroca <sd@queasysnail.net>, Andrew Lunn <andrew+netdev@lunn.ch>, 
-	"Michael S. Tsirkin" <mst@redhat.com>, Jason Wang <jasowangio@gmail.com>, 
-	"=?UTF-8?q?Eugenio=20P=C3=A9rez?=" <eperezma@redhat.com>, Xuan Zhuo <xuanzhuo@linux.alibaba.com>, 
-	Andrew Morton <akpm@linux-foundation.org>, David Hildenbrand <david@kernel.org>, 
-	Lorenzo Stoakes <ljs@kernel.org>, "Liam R. Howlett" <liam@infradead.org>, Vlastimil Babka <vbabka@kernel.org>, 
-	Mike Rapoport <rppt@kernel.org>, Suren Baghdasaryan <surenb@google.com>, Michal Hocko <mhocko@suse.com>, 
-	Alexei Starovoitov <ast@kernel.org>, Daniel Borkmann <daniel@iogearbox.net>, 
-	Johannes Berg <johannes@sipsolutions.net>, Byungchul Park <byungchul@sk.com>, Zi Yan <ziy@nvidia.com>, 
-	virtualization@lists.linux.dev, linux-mm@kvack.org, bpf@vger.kernel.org, 
-	linux-wireless@vger.kernel.org, Jonathan Corbet <corbet@lwn.net>, 
-	Shuah Khan <skhan@linuxfoundation.org>, Randy Dunlap <rdunlap@infradead.org>, 
-	Lorenzo Bianconi <lorenzo@kernel.org>, Wen Gu <guwen@linux.alibaba.com>, 
-	Philo Lu <lulie@linux.alibaba.com>, Justin Chen <justin.chen@broadcom.com>, 
-	Florian Fainelli <florian.fainelli@broadcom.com>, Vikas Gupta <vikas.gupta@broadcom.com>, 
-	Michael Chan <michael.chan@broadcom.com>, Pavan Chebbi <pavan.chebbi@broadcom.com>, 
-	Doug Berger <opendmb@gmail.com>, Nicolai Buchwitz <nb@tipi-net.de>, 
-	Broadcom internal kernel review list <bcm-kernel-feedback-list@broadcom.com>, Satish Kharat <satishkh@cisco.com>, 
-	Wei Fang <wei.fang@nxp.com>, Frank Li <frank.li@nxp.com>, Shenwei Wang <shenwei.wang@nxp.com>, 
-	Joshua Washington <joshwash@google.com>, Harshitha Ramamurthy <hramamurthy@google.com>, 
-	Jijie Shao <shaojijie@huawei.com>, Jian Shen <shenjian15@huawei.com>, 
-	Fan Gong <gongfan1@huawei.com>, Tony Nguyen <anthony.l.nguyen@intel.com>, 
-	Przemek Kitszel <przemyslaw.kitszel@intel.com>, Marcin Wojtas <marcin.s.wojtas@gmail.com>, 
-	Russell King <linux@armlinux.org.uk>, Sunil Goutham <sgoutham@marvell.com>, 
-	Geetha sowjanya <gakula@marvell.com>, Ratheesh Kannoth <rkannoth@marvell.com>, 
-	Subbaraya Sundeep <sbhatta@marvell.com>, Bharat Bhushan <bbhushan2@marvell.com>, 
-	Felix Fietkau <nbd@nbd.name>, Matthias Brugger <matthias.bgg@gmail.com>, 
-	AngeloGioacchino Del Regno <angelogioacchino.delregno@collabora.com>, Tariq Toukan <tariqt@nvidia.com>, 
-	Saeed Mahameed <saeedm@nvidia.com>, Mark Bloch <mbloch@nvidia.com>, Leon Romanovsky <leon@kernel.org>, 
-	Ido Schimmel <idosch@nvidia.com>, Petr Machata <petrm@nvidia.com>, 
-	Horatiu Vultur <horatiu.vultur@microchip.com>, UNGLinuxDriver@microchip.com, 
-	Daniel Machon <daniel.machon@microchip.com>, Steen Hegelund <Steen.Hegelund@microchip.com>, 
-	Haiyang Zhang <haiyangz@microsoft.com>, Wei Liu <wei.liu@kernel.org>, 
-	Dexuan Cui <decui@microsoft.com>, Yibo Dong <dong100@mucse.com>, 
-	Brett Creeley <brett.creeley@amd.com>, Justin Lai <justinlai0215@realtek.com>, 
-	Larry Chiu <larry.chiu@realtek.com>, 
-	"=?UTF-8?q?Niklas=20S=C3=B6derlund?=" <niklas.soderlund@ragnatech.se>, Paul Barker <paul@pbarker.dev>, 
-	Masahisa Kojima <kojima.masahisa@socionext.com>, 
-	Maxime Chevallier <maxime.chevallier@bootlin.com>, Maxime Coquelin <mcoquelin.stm32@gmail.com>, 
-	Alexandre Torgue <alexandre.torgue@foss.st.com>, FUJITA Tomonori <fujita.tomonori@gmail.com>, 
-	Siddharth Vadapalli <s-vadapalli@ti.com>, Roger Quadros <rogerq@kernel.org>, 
-	MD Danish Anwar <danishanwar@ti.com>, Jiawen Wu <jiawenwu@trustnetic.com>, 
-	Mengyuan Lou <mengyuanlou@net-swift.com>, Ronak Doshi <ronak.doshi@broadcom.com>, 
-	Ryder Lee <ryder.lee@mediatek.com>, Shayne Chen <shayne.chen@mediatek.com>, 
-	Sean Wang <sean.wang@mediatek.com>, Juergen Gross <jgross@suse.com>, 
-	Stefano Stabellini <sstabellini@kernel.org>, 
-	Oleksandr Tyshchenko <oleksandr_tyshchenko@epam.com>, Jordan Rhee <jordanrhee@google.com>, 
-	Ankit Garg <nktgrg@google.com>, Tim Hostetler <thostet@google.com>, 
-	Eric Joyner <eric.joyner@amd.com>, Prabu Thayalan <prabu.ponrajthayalan@amd.com>, 
-	"Nikhil P. Rao" <nikhil.rao@amd.com>, Chintan Vankar <c-vankar@ti.com>, 
-	Nora Schiffer <nora.schiffer@ew.tq-group.com>, Alexander Sverdlin <alex@sverdlin.org>, 
-	Kevin Hao <haokexin@gmail.com>, Karl Mehltretter <kmehltretter@gmail.com>, 
-	Aleksandr Loktionov <aleksandr.loktionov@intel.com>, Meghana Malladi <m-malladi@ti.com>, 
-	Jacob Keller <jacob.e.keller@intel.com>, StanleyYP Wang <StanleyYP.Wang@mediatek.com>, 
-	linux-doc@vger.kernel.org, imx@lists.linux.dev, linux-rdma@vger.kernel.org, 
-	linux-hyperv@vger.kernel.org, linux-renesas-soc@vger.kernel.org, 
-	linux-omap@vger.kernel.org
-Content-Type: text/plain; charset="UTF-8"
+MIME-Version: 1.0
+Date: Sun, 08 Nov 2026 06:06:00 +0000
+Content-Type: text/plain; charset="utf-8"
+Content-Transfer-Encoding: quoted-printable
+From: "Luka Gejak" <luka.gejak@linux.dev>
+Message-ID: <162821b6cf0e6d17aa33c81d55a716b553e70579@linux.dev>
+TLS-Required: No
+Subject: Re: [PATCH rtw-next v9 0/4] wifi: rtw88: sdio: Fix unhandled RX
+ request interrupt storm
+To: "Ping-Ke Shih" <pkshih@realtek.com>, "Alastair D'Silva"
+ <alastair@d-silva.org>, linux-wireless@vger.kernel.org, "Kalle Valo"
+ <kvalo@kernel.org>
+Cc: "Martin Blumenstingl" <martin.blumenstingl@googlemail.com>, "Jernej
+ Skrabec" <jernej.skrabec@gmail.com>, "Ulf Hansson" <ulfh@kernel.org>,
+ linux-kernel@vger.kernel.org, "Alastair  D'Silva" <alastair@d-silva.org>
+In-Reply-To: <f2784538533947a38e9d03af7bc7fce8@realtek.com>
+References: <20261107035321.1210303-1-alastair@d-silva.org>
+ <ab3dcde64bb90809ae10627803315d7385d6708e@linux.dev>
+ <f2784538533947a38e9d03af7bc7fce8@realtek.com>
 
-Once tcp_zerocopy_receive() maps an order-0 RX fragment page into a
-userspace VMA via vm_insert_pages(), vm_insert_pages() increments
-page->_refcount, which prevents the page from being recycled back into
-its page_pool when the RX SKB is freed. However, while the RX SKB still
-holds its fragment reference, the page remains marked as a page_pool
-page (page_pool_page_is_pp(page) == true) inside the userspace VMA, so
-subsequent GUP callers such as sendmsg(MSG_ZEROCOPY) or vmsplice() can
-encounter a page_pool page while holding only a raw struct page
-reference.
+Hi Ping-Ke,
 
-Establish the invariant that pp_ref_count is only incremented by callers
-that already hold an active pp_ref_count (>= 1) on that netmem, and a
-raw page_ref_count is never converted into a pp_ref_count:
-- In can_map_frag(), require !skb_cloned(skb), page_pool_ref_count == 1,
-  and page_ref_count == 1 for page_pool pages so the fragment being
-  mapped holds the sole reference to the page; cloned SKBs or page_pool
-  pages with additional references (including drivers holding an
-  undrained fragment bias) fall back to copying.
-- In tcp_zerocopy_receive(), convert the fragment's sole pp_ref_count
-  into a regular page reference and detach the page from its page_pool
-  via get_page(page) + napi_pp_put_page(page_to_netmem(page)) before
-  queueing the page for vm_insert_pages(). If vm_insert_pages()
-  subsequently fails, the detached page remains referenced by the RX SKB
-  via its regular page reference and is freed back to the page allocator
-  when the SKB is consumed.
+November 8, 2026 at 4:06 AM, "Ping-Ke Shih" <pkshih@realtek.com> wrote:
 
-Signed-off-by: Mina Almasry <almasrymina@google.com>
----
- include/net/page_pool/helpers.h |  5 ++++
- net/core/datagram.c             |  2 ++
- net/ipv4/tcp.c                  | 44 ++++++++++++++++++++++++++++-----
- 3 files changed, 45 insertions(+), 6 deletions(-)
+>=20
+>=20Luka Gejak <luka.gejak@linux.dev> wrote:
+>=20
+>=20>=20
+>=20> November 7, 2026 at 4:53 AM, "Alastair D'Silva" <alastair@d-silva.o=
+rg> wrote:
+> >=20=20
+>=20>=20
+>=20>  On 3081-based SDIO chips (observed on RTL8821CS; RTL8822BS and RTL=
+8822CS
+> >  are inferred to be affected as they share the 3081 architecture), cl=
+earing
+> >  REG_SDIO_HISR_RX_REQUEST requires both a software W1C acknowledge an=
+d an
+> >  empty RX FIFO. Masking this bit out before writing back to HISR prev=
+ents
+> >  the software acknowledge from happening, leaving the bit asserted ev=
+en
+> >  after the FIFO is drained and trapping the CPU core in an infinite
+> >  interrupt storm that locks up the system upon receiving network traf=
+fic.
+> >=20
+>=20>  This series fixes the interrupt storm on 3081 chips and addresses
+> >  related SDIO lifecycle, locking, and error handling issues:
+> >=20
+>=20>  - Patch 1 returns error codes from rtw_sdio_rxfifo_recv() on alloc=
+ation,
+> >  oversized packet, or read failures so the caller stops immediately
+> >  instead of burning through the loop budget.
+> >  - Patch 2 tracks operational state via rtwsdio->running protected by=
+ an
+> >  irq_lock mutex (using a mutex as SDIO bus operations sleep), seriali=
+zes
+> >  start/stop state transitions under sdio_claim_host() and irq_lock,
+> >  cancels the TX worker synchronously on stop, drains rtwsdio->tx_queu=
+e[]
+> >  with locked skb_dequeue() and ieee80211_free_txskb() in rtw_sdio_sto=
+p()
+> >  and again in rtw_sdio_start(), and resets rtwsdio->tx_queue_stopped[=
+]
+> >  while waking stopped AC queues under tx_queue[].lock in rtw_sdio_sta=
+rt().
+> >  - Patch 3 fixes the interrupt storm by splitting
+> >  rtw_sdio_handle_interrupt() into 8051 and 3081 paths. On 3081,
+> >  interrupts are masked via HIMR, acknowledged via W1C writeback,
+> >  serviced, and re-enabled under irq_lock if still running.
+> >  - Patch 4 refactors rtw_sdio_rx_isr() into separate 8051 and 3081 va=
+riants
+> >  to clarify the differences in register width and HISR handling witho=
+ut
+> >  any logic changes.
+> >=20
+>=20>=20=20
+>=20>  Thanks for addressing those comments, v9 looks good to me,
+> >=20=20
+>=20>  Reviewed-by: Luka Gejak <luka.gejak@linux.dev>
+> >=20
+>=20I don't know why I can't see v10 in patchwork [1].
 
-diff --git a/include/net/page_pool/helpers.h b/include/net/page_pool/helpers.h
-index 28635ce9454e8..c814ce95282eb 100644
---- a/include/net/page_pool/helpers.h
-+++ b/include/net/page_pool/helpers.h
-@@ -242,6 +242,11 @@ page_pool_get_dma_dir(const struct page_pool *pool)
- 	return pool->p.dma_dir;
- }
- 
-+static inline long page_pool_ref_count(netmem_ref netmem)
-+{
-+	return atomic_long_read(netmem_get_pp_ref_count_ref(netmem));
-+}
-+
- static inline void page_pool_fragment_netmem(netmem_ref netmem, long nr)
- {
- 	atomic_long_set(netmem_get_pp_ref_count_ref(netmem), nr);
-diff --git a/net/core/datagram.c b/net/core/datagram.c
-index ecc30a6f83023..808eda4f7efb5 100644
---- a/net/core/datagram.c
-+++ b/net/core/datagram.c
-@@ -34,6 +34,7 @@
-  *
-  */
- 
-+#include <kunit/visibility.h>
- #include <linux/module.h>
- #include <linux/types.h>
- #include <linux/kernel.h>
-@@ -702,6 +703,7 @@ int zerocopy_fill_skb_from_iter(struct sk_buff *skb,
- 	}
- 	return 0;
- }
-+EXPORT_SYMBOL_IF_KUNIT(zerocopy_fill_skb_from_iter);
- 
- static int
- zerocopy_fill_skb_from_devmem(struct sk_buff *skb, struct iov_iter *from,
-diff --git a/net/ipv4/tcp.c b/net/ipv4/tcp.c
-index b9de7c302ba83..a984e7e93e4c9 100644
---- a/net/ipv4/tcp.c
-+++ b/net/ipv4/tcp.c
-@@ -286,6 +286,7 @@
- #include <asm/ioctls.h>
- #include <net/busy_poll.h>
- #include <net/hotdata.h>
-+#include <net/page_pool/helpers.h>
- #include <trace/events/tcp.h>
- #include <net/rps.h>
- 
-@@ -1921,7 +1922,7 @@ static skb_frag_t *skb_advance_to_frag(struct sk_buff *skb, u32 offset_skb,
- 	return frag;
- }
- 
--static bool can_map_frag(const skb_frag_t *frag)
-+static bool can_map_frag(const struct sk_buff *skb, const skb_frag_t *frag)
- {
- 	struct page *page;
- 
-@@ -1935,18 +1936,32 @@ static bool can_map_frag(const skb_frag_t *frag)
- 	if (PageCompound(page) || page->mapping)
- 		return false;
- 
-+	/* Before mapping a page_pool page into userspace,
-+	 * tcp_zerocopy_receive() converts this fragment's pp_ref_count into a
-+	 * regular page reference and detaches the page from its page_pool via
-+	 * napi_pp_put_page(). Require this skb_frag_t to hold the sole
-+	 * reference to the page so no other fragment or SKB clone expects
-+	 * pp_ref_count on it after detachment.
-+	 */
-+	if (page_pool_page_is_pp(page) &&
-+	    (skb_cloned(skb) ||
-+	     page_pool_ref_count(page_to_netmem(page)) != 1 ||
-+	     page_ref_count(page) != 1))
-+		return false;
-+
- 	return true;
- }
- 
--static int find_next_mappable_frag(const skb_frag_t *frag,
-+static int find_next_mappable_frag(const struct sk_buff *skb,
-+				   const skb_frag_t *frag,
- 				   int remaining_in_skb)
- {
- 	int offset = 0;
- 
--	if (likely(can_map_frag(frag)))
-+	if (likely(can_map_frag(skb, frag)))
- 		return 0;
- 
--	while (offset < remaining_in_skb && !can_map_frag(frag)) {
-+	while (offset < remaining_in_skb && !can_map_frag(skb, frag)) {
- 		offset += skb_frag_size(frag);
- 		++frag;
- 	}
-@@ -1986,7 +2001,8 @@ static void tcp_zerocopy_set_hint_for_skb(struct sock *sk,
- 	 * mappable_offset: Bytes till next mappable frag, *not* counting bytes
- 	 * in partial_frag_remainder.
- 	 */
--	mappable_offset = find_next_mappable_frag(frag, zc->recv_skip_hint);
-+	mappable_offset = find_next_mappable_frag(skb, frag,
-+						  zc->recv_skip_hint);
- 	zc->recv_skip_hint = mappable_offset + partial_frag_remainder;
- }
- 
-@@ -2290,7 +2306,7 @@ static int tcp_zerocopy_receive(struct sock *sk,
- 				break;
- 		}
- 
--		mappable_offset = find_next_mappable_frag(frags,
-+		mappable_offset = find_next_mappable_frag(skb, frags,
- 							  zc->recv_skip_hint);
- 		if (mappable_offset) {
- 			zc->recv_skip_hint = mappable_offset;
-@@ -2300,6 +2316,22 @@ static int tcp_zerocopy_receive(struct sock *sk,
- 		if (WARN_ON_ONCE(!page))
- 			break;
- 
-+		/* Convert this fragment's sole pp_ref_count into a regular
-+		 * page reference and detach the page from its page_pool before
-+		 * mapping it into userspace. Once vm_insert_pages() elevates
-+		 * page_ref_count the page cannot be recycled into the
-+		 * page_pool anyway (and if vm_insert_pages() fails, the
-+		 * detached page is freed to the page allocator when the skb is
-+		 * consumed); detaching it up front ensures that a page_pool
-+		 * page is never mapped into a userspace VMA (where GUP callers
-+		 * such as MSG_ZEROCOPY or vmsplice() would otherwise observe a
-+		 * page_pool page while holding only a raw page_ref_count).
-+		 */
-+		if (page_pool_page_is_pp(page)) {
-+			get_page(page);
-+			napi_pp_put_page(page_to_netmem(page));
-+		}
-+
- 		prefetchw(page);
- 		pages[pages_to_map++] = page;
- 		length += PAGE_SIZE;
--- 
-2.56.0.455.g6c5a503b38-goog
+I suppose you mean v9.
 
+> Please take Luka's Reviewed-by for each patch, and send v10.
+>=20
+>=20[1] https://patchwork.kernel.org/project/linux-wireless/list/?series=
+=3D&submitter=3DAlastair&state=3D*&q=3D&archive=3D&delegate=3D
+>
+
+It might be the same issue lore is experiencing. Nothing newer than
+November 6th is appearing, maybe it's related?
+
+Best regards,
+Luka Gejak
