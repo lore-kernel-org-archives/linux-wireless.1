@@ -1,79 +1,84 @@
 Authentication-Results: smtp.subspace.kernel.org; arc=none smtp.remote-ip=211.75.126.72
 ARC-Seal: i=1; d=subspace.kernel.org; s=arc20261015; a=rsa-sha256; cv=none;
-	t=1794102091;
-	b=Gkym9MdIEtG4GgJ78fU3AgLmCHdl+RZ6YfIhbA9wTJZuNzJs4HHfyPAEIXtJmKGu0rC0
-	 px3przjffPsBoQ64feRFWZlNmwFZUiBb15rkBsOTL8/+4sqIZzhygL+tRO2ajT3zkC0we
-	 9eftAA3Sp+UVKG93dxrv6RVWL13dEPVWt4M+cStKyAtA7dGMQHUv0YvZm3Ka6o+qpEP4P
-	 OhCL/EIj0KX+HJrTEs72Lt8ib5Tp1zeK6odX75kCkya9//vFbkZcatV2EI0NksaQghwAR
-	 wZukQjbEEWlYEzy+jZqzYE1Z0wEBwXfR2i3OCSze+hRN+jfwkKsfApQGOaq73H7PZiw==
+	t=1794105139;
+	b=zNJfripRWdGHtjfnJi3amBINlbEEx0qgH9zfm9RM72Q/Z1ub+l0OwweSNlWW5uXDZdIZ
+	 TSkdEwQ8DgZ30Hb7BK99w8Eo7lYCRL2ucYBWLrstTFEOwiNbytFQADSacwtBs1QKi6rSB
+	 ZgwwovOXstkhpgGHwYXPa2gOj7WIVjefbuCYuSGcU9Nd+lQrcQVnBX/2o2gvhEO0Ku8Hs
+	 WfaCG+wWQq/DxnktvH5OfiYM5us+nCjH9JRO2InAMD5ajDDXbU213G+M5l2Vg05Ng7XC2
+	 1pq1MkIo/ua9ebFOGxlz8/TcYSR6MDPBOqHGY7Zw8Hl74pmRTE7tM7i1bC1vmQQhEmw==
 ARC-Message-Signature: i=1; d=subspace.kernel.org; s=arc20261015;
-	a=rsa-sha256; c=relaxed/relaxed; t=1794102091;
+	a=rsa-sha256; c=relaxed/relaxed; t=1794105139;
 	h=DMARC-Filter:X-SpamFilter-By:DKIM-Signature:Received:Received:
-	 Received:Received:From:To:Subject:Thread-Topic:Thread-Index:Date:
+	 Received:Received:From:To:CC:Subject:Thread-Topic:Thread-Index:Date:
 	 Message-ID:References:In-Reply-To:Accept-Language:Content-Language:
 	 x-originating-ip:Content-Type:Content-Transfer-Encoding:MIME-Version;
-	bh=XWedwr4jkMCt3xvrfQSTXkyO5WnLETcXvGpcl3LjMXM=;
-	b=34I7hpX4Ir4bYcp0b74hKooRxXynOZrv/C+mtEaGGkKpmHhXN5o6xUQr1P1Oo1x6SZIU
-	 qtit2uILZNo955wTitfE/Qt8omsI0vp4xBN2VAOw8aDO6bqq847Xz5O6DuVuWC1ioZgLy
-	 hNp2mUxWNjyfQ0Qt6JRNHpMSIdDtkb1JQbbEw6sV4qqojDo2qdMG+TbRUjroHmTiDNlZ+
-	 Tx//9LdYVH7uD2+fyz2gi4nL7wqmrAvnpjIKITa7b63IAgzrhE+MxTIxordWXOLhtDSSW
-	 Ft2IRqZEL09UaGUajEBLVuvf2cxpD9hHqcq3qCbH3vpEQe34uVNHMrRKOOea8xgGkmg==
+	bh=zuc3+mslWhh4yWvyXnVvIgNvQ31XzcXQKgtRlH8B9ms=;
+	b=p94UIsQpfjSPQAJMvj4YYa9ZMy3bUxP/GqPFkLNmvzHg/VJUorNlb2FaGpiR0yeXlZVL
+	 +w7h074+Yplad2Ee/k+quhuULPRrQnOSlvNFK37ttjRkL83/dL7J25lho417+bd1e9kUH
+	 5ncvmEQyo/plZqx/btDIdY9/ZqVCrjP/w8oz48aIHRLsmRim0q1F8Ko1PyEvqLwcOLf0C
+	 LXbblI8NCMP4YhW1nUAKcyw3rDuh67ZnIuio0ABlumJDZCkM+xt+xHKNKWXm20hksVAQh
+	 xm5mOrudeRwHh19uRcTle2YRInGRvCE8/gYMllhvAXsmUcsD2CwtltOAUl/Hp+jCSKg==
 ARC-Authentication-Results: i=1; smtp.subspace.kernel.org; 
 	dmarc=pass header.from=realtek.com;
 	spf=pass smtp.mailfrom=realtek.com;
-	dkim=pass header.d=realtek.com header.i=@realtek.com header.a=rsa-sha256 header.s=dkim header.b=krVAhqsK;
+	dkim=pass header.d=realtek.com header.i=@realtek.com header.a=rsa-sha256 header.s=dkim header.b=ULKGHPE2;
 	arc=none smtp.remote-ip=211.75.126.72
 Received: from rtits2.realtek.com.tw (rtits2.realtek.com [211.75.126.72])
 	(using TLSv1.3 with cipher TLS_AES_256_GCM_SHA384 (256/256 bits)
 	 key-exchange X25519 server-signature ECDSA (prime256v1) server-digest SHA256)
 	(No client certificate requested)
-	by smtp.subspace.kernel.org (Postfix) with ESMTPS id D471E606A330
-	for <linux-wireless@vger.kernel.org>; Sun,  8 Nov 2026 01:41:29 +0000 (UTC)
-DMARC-Filter: OpenDMARC Filter v1.4.2 smtp.subspace.kernel.org D471E606A330
+	by smtp.subspace.kernel.org (Postfix) with ESMTPS id 0B74B606A31A;
+	Sun,  8 Nov 2026 02:32:17 +0000 (UTC)
+DMARC-Filter: OpenDMARC Filter v1.4.2 smtp.subspace.kernel.org 0B74B606A31A
 Authentication-Results: smtp.subspace.kernel.org; dmarc=pass (p=none dis=none) header.from=realtek.com
 Authentication-Results: smtp.subspace.kernel.org; spf=pass smtp.mailfrom=realtek.com
 Authentication-Results: smtp.subspace.kernel.org;
-	dkim=pass (2048-bit key, unprotected) header.d=realtek.com header.i=@realtek.com header.a=rsa-sha256 header.s=dkim header.b=krVAhqsK
-X-SpamFilter-By: ArmorX SpamTrap 5.80 with qID 6A81fK3O13063244, This message is accepted by code: ctloc85258
+	dkim=pass (2048-bit key) header.d=realtek.com header.i=@realtek.com header.a=rsa-sha256 header.s=dkim header.b=ULKGHPE2
+X-SpamFilter-By: ArmorX SpamTrap 5.80 with qID 6A82VxEzA3097986, This message is accepted by code: ctloc85258
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=realtek.com; s=dkim;
-	t=1794102080; bh=XWedwr4jkMCt3xvrfQSTXkyO5WnLETcXvGpcl3LjMXM=;
-	h=From:To:Subject:Date:Message-ID:References:In-Reply-To:
+	t=1794105119; bh=zuc3+mslWhh4yWvyXnVvIgNvQ31XzcXQKgtRlH8B9ms=;
+	h=From:To:CC:Subject:Date:Message-ID:References:In-Reply-To:
 	 Content-Type:Content-Transfer-Encoding:MIME-Version;
-	b=krVAhqsKmaKelxMOgVtVY/lZAuH9Utzbed0vI3P3eQNwrUpEMr9kuhqvQ9WYgFKW+
-	 TA+OErDKEhjh/GhcddJC0/LtZqMzEOkByNjpFnKWaWWWqZ6t8Ngwlcfau/NP40i5Ia
-	 aV7cASRlsXPnBZ/wj5Ddq/cdlTxt5ej0XgZ/LyUzVi2RVt8XHefIQjYbhSzP5FaBgu
-	 ACjgk6cJNr+2p406cg4MRXgBQ/L/DskuyT/KkDxcPcYXzNOM2GQGzNZaMoFp9UAIR8
-	 fDDUYb7SUyuU1Oekq39Xk8NZ5lqElyx+A/GXGS0xp1b+xvkDnsv2qkEdzwE7sQ/QpI
-	 rtBvD+cdqNkJA==
+	b=ULKGHPE2CeAvk4dfpuwlr+6KmHXiqgEtbbdgL8M/TIM08dfuZU8Xw8pecJJsjY4Ap
+	 Us4E4MQzI9j6LwrYOZtulIk38qn+GSssSjt73kStRDc4/9QPRtdk9rEzvxI/cBr306
+	 5jYbe9vq8FPmNKdF7EkgUl27e33GtlJ5jOTqjz4WQfOA3Y69LVqWdLwNIsqV4eWXRM
+	 JyQFfTaVknCxl21IdNBTU4V1yrrmMhOouJfu/Lxs7kSnVNxC7umCQ5x0cIocfjapGN
+	 P73NStH262qw0ReHDq0FVepSJYRP95HNda6LdNMfutH9UjUz0OcEb9SdEcFAKUu3sW
+	 1+/SRfdE42lgg==
 Received: from mail.realtek.com (rtkexhmbs03.realtek.com.tw[10.21.1.53])
-	by rtits2.realtek.com.tw (8.15.2/3.29/5.94) with ESMTPS id 6A81fK3O13063244
+	by rtits2.realtek.com.tw (8.15.2/3.29/5.94) with ESMTPS id 6A82VxEzA3097986
 	(version=TLSv1.2 cipher=ECDHE-RSA-AES256-GCM-SHA384 bits=256 verify=FAIL);
-	Sun, 8 Nov 2026 09:41:20 +0800
-Received: from RTKEXHMBS06.realtek.com.tw (10.21.1.56) by
+	Sun, 8 Nov 2026 10:31:59 +0800
+Received: from RTKEXHMBS01.realtek.com.tw (172.21.6.40) by
  RTKEXHMBS03.realtek.com.tw (10.21.1.53) with Microsoft SMTP Server
  (version=TLS1_2, cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id
- 15.2.2562.56; Sun, 8 Nov 2026 09:41:20 +0800
+ 15.2.2562.56; Sun, 8 Nov 2026 10:31:59 +0800
 Received: from RTKEXHMBS06.realtek.com.tw (10.21.1.56) by
- RTKEXHMBS06.realtek.com.tw (10.21.1.56) with Microsoft SMTP Server
+ RTKEXHMBS01.realtek.com.tw (172.21.6.40) with Microsoft SMTP Server
  (version=TLS1_2, cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id
- 15.2.2562.56; Sun, 8 Nov 2026 09:41:19 +0800
+ 15.2.2562.56; Sun, 8 Nov 2026 10:31:59 +0800
 Received: from RTKEXHMBS06.realtek.com.tw ([fe80::eeeb:c765:ca73:5eef]) by
  RTKEXHMBS06.realtek.com.tw ([fe80::eeeb:c765:ca73:5eef%10]) with mapi id
- 15.02.2562.056; Sun, 8 Nov 2026 09:41:19 +0800
+ 15.02.2562.056; Sun, 8 Nov 2026 10:31:59 +0800
 From: Ping-Ke Shih <pkshih@realtek.com>
-To: Bitterblue Smith <rtl8821cerfe2@gmail.com>,
-	"linux-wireless@vger.kernel.org" <linux-wireless@vger.kernel.org>
-Subject: RE: rtw89: Did a8188bb7644f change the behaviour for MLO?
-Thread-Topic: rtw89: Did a8188bb7644f change the behaviour for MLO?
-Thread-Index: AQHdbKV01jw0LnSjv0ac3u7WgLvusbcjahEA
-Date: Sun, 8 Nov 2026 01:41:19 +0000
-Message-ID: <a3b3e72ebe7245edbcc632037b385e60@realtek.com>
-References: <428324ed-59e2-4c7b-ac97-e3e431a17788@gmail.com>
-In-Reply-To: <428324ed-59e2-4c7b-ac97-e3e431a17788@gmail.com>
+To: Huihui Huang <hhhuang@smu.edu.sg>, "linux-wireless@vger.kernel.org"
+	<linux-wireless@vger.kernel.org>
+CC: Luka Gejak <luka.gejak@linux.dev>, "stable@vger.kernel.org"
+	<stable@vger.kernel.org>
+Subject: RE: [PATCH rtw-next v3 1/2] wifi: rtw88: drop C2H packets shorter
+ than the C2H header
+Thread-Topic: [PATCH rtw-next v3 1/2] wifi: rtw88: drop C2H packets shorter
+ than the C2H header
+Thread-Index: AQHdbShxv245XcRg/UWH2Gn2M9BVm7cjd5JQ
+Date: Sun, 8 Nov 2026 02:31:58 +0000
+Message-ID: <3b5749624a53468bad7b2c0b74c74d69@realtek.com>
+References: <20261105125958.3891196-1-hhhuang@smu.edu.sg>
+ <20261105125958.3891196-2-hhhuang@smu.edu.sg>
+In-Reply-To: <20261105125958.3891196-2-hhhuang@smu.edu.sg>
 Accept-Language: en-US, zh-TW
 Content-Language: zh-TW
-Content-Type: text/plain; charset="utf-8"
-Content-Transfer-Encoding: base64
+Content-Type: text/plain; charset="us-ascii"
+Content-Transfer-Encoding: quoted-printable
 X-Mailing-List: linux-wireless@vger.kernel.org
 List-Id: <linux-wireless.vger.kernel.org>
 List-Post: <mailto:linux-wireless@vger.kernel.org>
@@ -84,125 +89,45 @@ List-Owner: <mailto:linux-wireless+owner@vger.kernel.org>
 Precedence: list
 MIME-Version: 1.0
 
-Qml0dGVyYmx1ZSBTbWl0aCA8cnRsODgyMWNlcmZlMkBnbWFpbC5jb20+IHdyb3RlOg0KPiBhODE4
-OGJiNzY0NGYgKCJ3aWZpOiBtYWM4MDIxMTogY2hhbmdlIHB1YmxpYyBSWCBBUEkgdG8gdXNlIGxp
-bmsgc3RhdGlvbnMiKQ0KPiBkb2VzIHRoaXM6DQo+IA0KPiBkaWZmIC0tZ2l0IGEvZHJpdmVycy9u
-ZXQvd2lyZWxlc3MvcmVhbHRlay9ydHc4OS9jb3JlLmMgYi9kcml2ZXJzL25ldC93aXJlbGVzcy9y
-ZWFsdGVrL3J0dzg5L2NvcmUuYw0KPiBpbmRleCAzOTdlYmJmY2FjMDlhZi4uNDU0ZDg3NmFlYjg4
-NjEgMTAwNjQ0DQo+IC0tLSBhL2RyaXZlcnMvbmV0L3dpcmVsZXNzL3JlYWx0ZWsvcnR3ODkvY29y
-ZS5jDQo+ICsrKyBiL2RyaXZlcnMvbmV0L3dpcmVsZXNzL3JlYWx0ZWsvcnR3ODkvY29yZS5jDQo+
-IEBAIC0zMDczLDEwICszMDczLDggQEAgc3RhdGljIHZvaWQgcnR3ODlfdmlmX3J4X3N0YXRzX2l0
-ZXIodm9pZCAqZGF0YSwgdTggKm1hYywNCj4gICAgICAgICBzdHJ1Y3QgcnR3ODlfdmlmICpydHd2
-aWYgPSB2aWZfdG9fcnR3dmlmKHZpZik7DQo+ICAgICAgICAgc3RydWN0IHJ0dzg5X3J4X2Rlc2Nf
-aW5mbyAqZGVzY19pbmZvID0gaXRlcl9kYXRhLT5kZXNjX2luZm87DQo+ICAgICAgICAgc3RydWN0
-IHNrX2J1ZmYgKnNrYiA9IGl0ZXJfZGF0YS0+c2tiOw0KPiAtICAgICAgIHN0cnVjdCBpZWVlODAy
-MTFfcnhfc3RhdHVzICpyeF9zdGF0dXMgPSBJRUVFODAyMTFfU0tCX1JYQ0Ioc2tiKTsNCj4gICAg
-ICAgICBzdHJ1Y3QgaWVlZTgwMjExX2hkciAqaGRyID0gKHN0cnVjdCBpZWVlODAyMTFfaGRyICop
-c2tiLT5kYXRhOw0KPiAgICAgICAgIHN0cnVjdCBydHc4OV9yeF9waHlfcHBkdSAqcGh5X3BwZHUg
-PSBpdGVyX2RhdGEtPnBoeV9wcGR1Ow0KPiAtICAgICAgIGJvb2wgaXNfbWxkID0gaWVlZTgwMjEx
-X3ZpZl9pc19tbGQodmlmKTsNCj4gICAgICAgICBzdHJ1Y3QgaWVlZTgwMjExX2Jzc19jb25mICpi
-c3NfY29uZjsNCj4gICAgICAgICBzdHJ1Y3QgcnR3ODlfdmlmX2xpbmsgKnJ0d3ZpZl9saW5rOw0K
-PiAgICAgICAgIGNvbnN0IHU4ICpic3NpZCA9IGl0ZXJfZGF0YS0+YnNzaWQ7DQo+IEBAIC0zMTEw
-LDExICszMTA4LDYgQEAgc3RhdGljIHZvaWQgcnR3ODlfdmlmX3J4X3N0YXRzX2l0ZXIodm9pZCAq
-ZGF0YSwgdTggKm1hYywNCj4gICAgICAgICBpZiAoIWV0aGVyX2FkZHJfZXF1YWwodGFyZ2V0X2Jz
-c2lkLCBic3NpZCkpDQo+ICAgICAgICAgICAgICAgICBnb3RvIG91dDsNCj4gDQo+IC0gICAgICAg
-aWYgKGlzX21sZCkgew0KPiAtICAgICAgICAgICAgICAgcnhfc3RhdHVzLT5saW5rX3ZhbGlkID0g
-dHJ1ZTsNCj4gLSAgICAgICAgICAgICAgIHJ4X3N0YXR1cy0+bGlua19pZCA9IHJ0d3ZpZl9saW5r
-LT5saW5rX2lkOw0KPiAtICAgICAgIH0NCj4gLQ0KPiAgICAgICAgIGJiID0gcnR3ODlfZ2V0X2Ji
-X2N0eChydHdkZXYsIHJ0d3ZpZl9saW5rLT5waHlfaWR4KTsNCj4gICAgICAgICBwa3Rfc3RhdCA9
-ICZiYi0+Y3VyX3BrdF9zdGF0Ow0KPiANCj4gZGlmZiAtLWdpdCBhL2luY2x1ZGUvbmV0L21hYzgw
-MjExLmggYi9pbmNsdWRlL25ldC9tYWM4MDIxMS5oDQo+IGluZGV4IDdiYjQ2MTgwNjViNjcyLi5j
-YmE3Y2RmNjFjZThhNSAxMDA2NDQNCj4gLS0tIGEvaW5jbHVkZS9uZXQvbWFjODAyMTEuaA0KPiAr
-KysgYi9pbmNsdWRlL25ldC9tYWM4MDIxMS5oDQo+IEBAIC01Mzg5LDE0ICs1Mzg5LDE4IEBAIHZv
-aWQgaWVlZTgwMjExX3Jlc3RhcnRfaHcoc3RydWN0IGllZWU4MDIxMV9odyAqaHcpOw0KPiAgICog
-bWl4ZWQgZm9yIGEgc2luZ2xlIGhhcmR3YXJlLiBNdXN0IG5vdCBydW4gY29uY3VycmVudGx5IHdp
-dGgNCj4gICAqIGllZWU4MDIxMV90eF9zdGF0dXNfc2tiKCkgb3IgaWVlZTgwMjExX3R4X3N0YXR1
-c19uaSgpLg0KPiAgICoNCj4gKyAqIEZvciBkYXRhIGZyYW1lcywgd2hlbiBoYXJkd2FyZSBoYXMg
-ZG9uZSBhZGRyZXNzIHRyYW5zbGF0aW9uLCBhIGxpbmsgc3RhdGlvbg0KPiArICogaGFzIHRvIGJl
-IHByb3ZpZGVkIGFuZCB0aGUgZnJlcXVlbmN5IGluZm9ybWF0aW9uIG1heSBiZSBza2lwcGVkLg0K
-PiArICoNCj4gICAqIFRoaXMgZnVuY3Rpb24gbXVzdCBiZSBjYWxsZWQgd2l0aCBCSHMgZGlzYWJs
-ZWQgYW5kIFJDVSByZWFkIGxvY2sNCj4gICAqDQo+ICAgKiBAaHc6IHRoZSBoYXJkd2FyZSB0aGlz
-IGZyYW1lIGNhbWUgaW4gb24NCj4gLSAqIEBzdGE6IHRoZSBzdGF0aW9uIHRoZSBmcmFtZSB3YXMg
-cmVjZWl2ZWQgZnJvbSwgb3IgJU5VTEwNCj4gKyAqIEBsaW5rX3N0YTogdGhlIGxpbmsgc3RhdGlv
-biB0aGUgZGF0YSBmcmFtZSB3YXMgcmVjZWl2ZWQgZnJvbSwgb3IgJU5VTEwNCj4gICAqIEBza2I6
-IHRoZSBidWZmZXIgdG8gcmVjZWl2ZSwgb3duZWQgYnkgbWFjODAyMTEgYWZ0ZXIgdGhpcyBjYWxs
-DQo+ICAgKiBAbGlzdDogdGhlIGRlc3RpbmF0aW9uIGxpc3QNCj4gICAqLw0KPiAtdm9pZCBpZWVl
-ODAyMTFfcnhfbGlzdChzdHJ1Y3QgaWVlZTgwMjExX2h3ICpodywgc3RydWN0IGllZWU4MDIxMV9z
-dGEgKnN0YSwNCj4gK3ZvaWQgaWVlZTgwMjExX3J4X2xpc3Qoc3RydWN0IGllZWU4MDIxMV9odyAq
-aHcsDQo+ICsgICAgICAgICAgICAgICAgICAgICAgc3RydWN0IGllZWU4MDIxMV9saW5rX3N0YSAq
-bGlua19zdGEsDQo+ICAgICAgICAgICAgICAgICAgICAgICAgc3RydWN0IHNrX2J1ZmYgKnNrYiwg
-c3RydWN0IGxpc3RfaGVhZCAqbGlzdCk7DQo+IA0KPiAgLyoqDQo+IEBAIC01NDE0LDE0ICs1NDE4
-LDE4IEBAIHZvaWQgaWVlZTgwMjExX3J4X2xpc3Qoc3RydWN0IGllZWU4MDIxMV9odyAqaHcsIHN0
-cnVjdCBpZWVlODAyMTFfc3RhICpzdGEsDQo+ICAgKiBtaXhlZCBmb3IgYSBzaW5nbGUgaGFyZHdh
-cmUuIE11c3Qgbm90IHJ1biBjb25jdXJyZW50bHkgd2l0aA0KPiAgICogaWVlZTgwMjExX3R4X3N0
-YXR1c19za2IoKSBvciBpZWVlODAyMTFfdHhfc3RhdHVzX25pKCkuDQo+ICAgKg0KPiArICogRm9y
-IGRhdGEgZnJhbWVzLCB3aGVuIGhhcmR3YXJlIGhhcyBkb25lIGFkZHJlc3MgdHJhbnNsYXRpb24s
-IGEgbGluayBzdGF0aW9uDQo+ICsgKiBoYXMgdG8gYmUgcHJvdmlkZWQgYW5kIHRoZSBmcmVxdWVu
-Y3kgaW5mb3JtYXRpb24gbWF5IGJlIHNraXBwZWQuDQo+ICsgKg0KPiAgICogVGhpcyBmdW5jdGlv
-biBtdXN0IGJlIGNhbGxlZCB3aXRoIEJIcyBkaXNhYmxlZC4NCj4gICAqDQo+ICAgKiBAaHc6IHRo
-ZSBoYXJkd2FyZSB0aGlzIGZyYW1lIGNhbWUgaW4gb24NCj4gLSAqIEBzdGE6IHRoZSBzdGF0aW9u
-IHRoZSBmcmFtZSB3YXMgcmVjZWl2ZWQgZnJvbSwgb3IgJU5VTEwNCj4gKyAqIEBsaW5rX3N0YTog
-dGhlIGxpbmsgc3RhdGlvbiB0aGUgZGF0YSBmcmFtZSB3YXMgcmVjZWl2ZWQgZnJvbSwgb3IgJU5V
-TEwNCj4gICAqIEBza2I6IHRoZSBidWZmZXIgdG8gcmVjZWl2ZSwgb3duZWQgYnkgbWFjODAyMTEg
-YWZ0ZXIgdGhpcyBjYWxsDQo+ICAgKiBAbmFwaTogdGhlIE5BUEkgY29udGV4dA0KPiAgICovDQo+
-IC12b2lkIGllZWU4MDIxMV9yeF9uYXBpKHN0cnVjdCBpZWVlODAyMTFfaHcgKmh3LCBzdHJ1Y3Qg
-aWVlZTgwMjExX3N0YSAqc3RhLA0KPiArdm9pZCBpZWVlODAyMTFfcnhfbmFwaShzdHJ1Y3QgaWVl
-ZTgwMjExX2h3ICpodywNCj4gKyAgICAgICAgICAgICAgICAgICAgICBzdHJ1Y3QgaWVlZTgwMjEx
-X2xpbmtfc3RhICpsaW5rX3N0YSwNCj4gICAgICAgICAgICAgICAgICAgICAgICBzdHJ1Y3Qgc2tf
-YnVmZiAqc2tiLCBzdHJ1Y3QgbmFwaV9zdHJ1Y3QgKm5hcGkpOw0KPiANCj4gIC8qKg0KPiBkaWZm
-IC0tZ2l0IGEvbmV0L21hYzgwMjExL3J4LmMgYi9uZXQvbWFjODAyMTEvcnguYw0KPiBpbmRleCAz
-MWRjNmY4Mzc4MWIxZC4uMGRkZDBiOGVhMTJhMDUgMTAwNjQ0DQo+IC0tLSBhL25ldC9tYWM4MDIx
-MS9yeC5jDQo+ICsrKyBiL25ldC9tYWM4MDIxMS9yeC5jDQo+IEBAIC01NTU2LDcgKzU1NTYsOCBA
-QCBzdGF0aWMgdm9pZCBfX2llZWU4MDIxMV9yeF9oYW5kbGVfcGFja2V0KHN0cnVjdCBpZWVlODAy
-MTFfaHcgKmh3LA0KPiAgICogVGhpcyBpcyB0aGUgcmVjZWl2ZSBwYXRoIGhhbmRsZXIuIEl0IGlz
-IGNhbGxlZCBieSBhIGxvdyBsZXZlbCBkcml2ZXIgd2hlbiBhbg0KPiAgICogODAyLjExIE1QRFUg
-aXMgcmVjZWl2ZWQgZnJvbSB0aGUgaGFyZHdhcmUuDQo+ICAgKi8NCj4gLXZvaWQgaWVlZTgwMjEx
-X3J4X2xpc3Qoc3RydWN0IGllZWU4MDIxMV9odyAqaHcsIHN0cnVjdCBpZWVlODAyMTFfc3RhICpw
-dWJzdGEsDQo+ICt2b2lkIGllZWU4MDIxMV9yeF9saXN0KHN0cnVjdCBpZWVlODAyMTFfaHcgKmh3
-LA0KPiArICAgICAgICAgICAgICAgICAgICAgIHN0cnVjdCBpZWVlODAyMTFfbGlua19zdGEgKmxp
-bmtfcHVic3RhLA0KPiAgICAgICAgICAgICAgICAgICAgICAgIHN0cnVjdCBza19idWZmICpza2Is
-IHN0cnVjdCBsaXN0X2hlYWQgKmxpc3QpDQo+ICB7DQo+ICAgICAgICAgc3RydWN0IGllZWU4MDIx
-MV9sb2NhbCAqbG9jYWwgPSBod190b19sb2NhbChodyk7DQo+IEBAIC01NTY0LDYgKzU1NjUsNyBA
-QCB2b2lkIGllZWU4MDIxMV9yeF9saXN0KHN0cnVjdCBpZWVlODAyMTFfaHcgKmh3LCBzdHJ1Y3Qg
-aWVlZTgwMjExX3N0YSAqcHVic3RhLA0KPiAgICAgICAgIHN0cnVjdCBpZWVlODAyMTFfc3VwcG9y
-dGVkX2JhbmQgKnNiYW5kOw0KPiAgICAgICAgIHN0cnVjdCBpZWVlODAyMTFfcnhfc3RhdHVzICpz
-dGF0dXMgPSBJRUVFODAyMTFfU0tCX1JYQ0Ioc2tiKTsNCj4gICAgICAgICBzdHJ1Y3QgaWVlZTgw
-MjExX2hkciAqaGRyID0gKHN0cnVjdCBpZWVlODAyMTFfaGRyICopc2tiLT5kYXRhOw0KPiArICAg
-ICAgIHN0cnVjdCBpZWVlODAyMTFfc3RhICpwdWJzdGE7DQo+IA0KPiAgICAgICAgIFdBUk5fT05f
-T05DRShzb2Z0aXJxX2NvdW50KCkgPT0gMCk7DQo+IA0KPiBAQCAtNTY5NCw4ICs1Njk2LDE1IEBA
-IHZvaWQgaWVlZTgwMjExX3J4X2xpc3Qoc3RydWN0IGllZWU4MDIxMV9odyAqaHcsIHN0cnVjdCBp
-ZWVlODAyMTFfc3RhICpwdWJzdGEsDQo+ICAgICAgICAgICAgICAgICB9DQo+ICAgICAgICAgfQ0K
-PiANCj4gLSAgICAgICBpZiAoV0FSTl9PTl9PTkNFKHN0YXR1cy0+bGlua19pZCA+PSBJRUVFODAy
-MTFfTElOS19VTlNQRUNJRklFRCkpDQo+IC0gICAgICAgICAgICAgICBnb3RvIGRyb3A7DQo+ICsg
-ICAgICAgLyogRklYTUU6IEVtdWxhdGUgdGhlIG9sZCBkcml2ZXIgYmVoYXZpb3VyIGZvciBub3cg
-Ki8NCj4gKyAgICAgICBpZiAobGlua19wdWJzdGEpIHsNCj4gKyAgICAgICAgICAgICAgIHN0YXR1
-cy0+bGlua192YWxpZCA9IDE7DQo+ICsgICAgICAgICAgICAgICBzdGF0dXMtPmxpbmtfaWQgPSBs
-aW5rX3B1YnN0YS0+bGlua19pZDsNCj4gKyAgICAgICAgICAgICAgIHB1YnN0YSA9IGxpbmtfcHVi
-c3RhLT5zdGE7DQo+ICsgICAgICAgfSBlbHNlIHsNCj4gKyAgICAgICAgICAgICAgIHN0YXR1cy0+
-bGlua192YWxpZCA9IDA7DQo+ICsgICAgICAgICAgICAgICBwdWJzdGEgPSBOVUxMOw0KPiArICAg
-ICAgIH0NCj4gDQo+ICAgICAgICAgc3RhdHVzLT5yeF9mbGFncyA9IDA7DQo+IA0KPiBAQCAtNTcy
-Nyw3ICs1NzM2LDggQEAgdm9pZCBpZWVlODAyMTFfcnhfbGlzdChzdHJ1Y3QgaWVlZTgwMjExX2h3
-ICpodywgc3RydWN0IGllZWU4MDIxMV9zdGEgKnB1YnN0YSwNCj4gIH0NCj4gIEVYUE9SVF9TWU1C
-T0woaWVlZTgwMjExX3J4X2xpc3QpOw0KPiANCj4gLXZvaWQgaWVlZTgwMjExX3J4X25hcGkoc3Ry
-dWN0IGllZWU4MDIxMV9odyAqaHcsIHN0cnVjdCBpZWVlODAyMTFfc3RhICpwdWJzdGEsDQo+ICt2
-b2lkIGllZWU4MDIxMV9yeF9uYXBpKHN0cnVjdCBpZWVlODAyMTFfaHcgKmh3LA0KPiArICAgICAg
-ICAgICAgICAgICAgICAgIHN0cnVjdCBpZWVlODAyMTFfbGlua19zdGEgKmxpbmtfcHVic3RhLA0K
-PiAgICAgICAgICAgICAgICAgICAgICAgIHN0cnVjdCBza19idWZmICpza2IsIHN0cnVjdCBuYXBp
-X3N0cnVjdCAqbmFwaSkNCj4gIHsNCj4gICAgICAgICBzdHJ1Y3Qgc2tfYnVmZiAqdG1wOw0KPiBA
-QCAtNTc0MCw3ICs1NzUwLDcgQEAgdm9pZCBpZWVlODAyMTFfcnhfbmFwaShzdHJ1Y3QgaWVlZTgw
-MjExX2h3ICpodywgc3RydWN0IGllZWU4MDIxMV9zdGEgKnB1YnN0YSwNCj4gICAgICAgICAgKiBy
-ZWNlaXZlIHByb2Nlc3NpbmcNCj4gICAgICAgICAgKi8NCj4gICAgICAgICByY3VfcmVhZF9sb2Nr
-KCk7DQo+IC0gICAgICAgaWVlZTgwMjExX3J4X2xpc3QoaHcsIHB1YnN0YSwgc2tiLCAmbGlzdCk7
-DQo+ICsgICAgICAgaWVlZTgwMjExX3J4X2xpc3QoaHcsIGxpbmtfcHVic3RhLCBza2IsICZsaXN0
-KTsNCj4gICAgICAgICByY3VfcmVhZF91bmxvY2soKTsNCj4gDQo+ICAgICAgICAgaWYgKCFuYXBp
-KSB7DQo+IA0KPiBydHc4OV9jb3JlX3J4X3RvX21hYzgwMjExKCkgY2FsbHMgaWVlZTgwMjExX3J4
-X25hcGkoKSB3aXRoIGxpbmtfc3RhID0gTlVMTCwNCj4gc28gaXQncyBub3QgZ2V0dGluZyB0aGUg
-ZW11bGF0ZWQgb2xkIGJlaGF2aW91ciBpbiBpZWVlODAyMTFfcnhfbGlzdCgpLg0KPiANCj4gSXMg
-dGhpcyBzb21ldGhpbmcgdGhhdCBuZWVkcyBmaXhpbmc/DQoNCkJ5IHRoZSBjb21tZW50IG9mIGxp
-bmtfaWQgZmllbGQgaW4gc3RydWN0IGllZWU4MDIxMV9yeF9zdGF0dXM6DQoNCiAqIEBsaW5rX2lk
-OiBpZCBvZiB0aGUgbGluayB1c2VkIHRvIHJlY2VpdmUgdGhlIHBhY2tldC4gU2V0IGFuZCB1c2Vk
-IGJ5DQogKgltYWM4MDIxMSBpbnRlcm5hbGx5LCBpdCB1c2VzIEBmcmVxIHNldCBieSB0aGUgZHJp
-dmVyIHRvIGlkZW50aWZ5IHRoZQ0KICoJY29ycmVjdCBsaW5rIHBlciB2aWYuDQoNCnJ0dzg5IGNh
-biByZXBvcnQgcHJvcGVyIGZyZXEgdG8gZ2V0IGxpbmtfaWQgYmFjay4gV2UgdGVzdGVkIDcuNC1y
-YyBhbmQNCnRoaW5ncyBhcmUgZXhwZWN0ZWQuIERpZCB5b3UgZW5jb3VudGVyIHByb2JsZW1zPw0K
-DQoNCg==
+Huihui Huang <hhhuang@smu.edu.sg> wrote:
+> rtw_fw_c2h_cmd_rx_irqsafe() and rtw_fw_c2h_cmd_handle() compute the C2H
+> payload length as
+>=20
+>         len =3D skb->len - pkt_offset - 2;
+>=20
+> where len is a u8, without checking that the skb holds the 2-byte C2H
+> header (id and seq).
+>=20
+> If the header is incomplete, the C2H payload length underflows: zero
+> bytes after pkt_offset produce len =3D 254, and one byte produces
+> len =3D 255. With zero bytes, reading c2h->id also accesses data beyond
+> skb->len. The wrapped len defeats the minimum-length checks in
+> rtw_fw_ra_report_handle() and rtw_coex_wl_fwdbginfo_notify(), which then
+> read their fixed-size reports beyond the valid packet data.
+>=20
+> skb->len is pkt_offset plus pkt_len from the RX descriptor, and
+> rtw_rx_query_rx_desc() returns for C2H packets before its
+> "pkt_len <=3D FCS_LEN" check, so a short C2H packet is not rejected there=
+.
+>=20
+> Drop C2H packets that are too short to hold the C2H header. Since
+> rtw_fw_c2h_cmd_handle() only sees skbs queued by
+> rtw_fw_c2h_cmd_rx_irqsafe(), this covers both computations.
+
+No need much commit message. Just say that you are validating C2H packet
+length before reading.
+
+>=20
+> Fixes: e3037485c68e ("rtw88: new Realtek 802.11ac driver")
+> Cc: stable@vger.kernel.org
+> Assisted-by: LLM
+
+This tag is no long necessary.=20
+
+> Signed-off-by: Huihui Huang <hhhuang@smu.edu.sg>
+> Reviewed-by: Luka Gejak <luka.gejak@linux.dev>
+
+As I requested to reword commit message, you can still take Luka's reviewed=
+-by.
+
+
