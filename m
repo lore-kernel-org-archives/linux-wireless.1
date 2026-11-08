@@ -1,77 +1,73 @@
 Authentication-Results: smtp.subspace.kernel.org; arc=none smtp.remote-ip=211.75.126.72
 ARC-Seal: i=1; d=subspace.kernel.org; s=arc20261015; a=rsa-sha256; cv=none;
-	t=1794108082;
-	b=DwyQdzU5GyG8q30m0UDbAVlh9CO47gCYfMDWBv+vGk/12r/SG7vXIaQN783VvkcdbMG6
-	 I9LSfJww6GIMywMR3zG+altBcEfQ8TElv5A134bVn8fc0FMjcWbDPr9ySw6aQElGYcCKE
-	 He22XYAkci4Olzuf0cBFhRkl1Qg9NLH0UyUqbeDTPKAXEt3252lvmHV3yFS3p2l8mNexq
-	 gzA1XtVB1RdSdrYbTjy+dk9uYz0g8byj3S1+gLcyEva7NB95Knd0+SZi2nKusu7ALEJQG
-	 InLVnQXAwu93dyy279L6dsvAl2huQn3lYLvErQvsHZFkYIseVel2hdZ0ADRlD5x76zw==
+	t=1794108534;
+	b=CHQyWCvwku7BAYjYuFc4tTnDX/w/HgRFeih0Jw2jFyiwYGmBF6vF3I1GUOvhLQi2Wwa6
+	 2QD9NG+vi98lUs7WaHc5+ymn+RmZDT3wlx0EAiqX2EWDG42oxtum2teO4xfHs9mD2fTSe
+	 1Bg8BzykWwKFt8VbxXkGXJS1Kxo1v04djUKcOKCLMmKzSg5sakwdrxLgEo0M+oaGYyLK0
+	 WtNOMCmoKC0mJczp9Py0DP9vbYWxiZDiDVMgvSrz6EQLJx4SZ0CCcSuO+SB9uzhj9y5pK
+	 BfdWyec1bfyssO+B4Cxq/XJLO/KkT6/0CbBWrU+Zj0rsFE0yvKsSrj5PCsUXnvEmAcQ==
 ARC-Message-Signature: i=1; d=subspace.kernel.org; s=arc20261015;
-	a=rsa-sha256; c=relaxed/relaxed; t=1794108082;
+	a=rsa-sha256; c=relaxed/relaxed; t=1794108534;
 	h=DMARC-Filter:X-SpamFilter-By:DKIM-Signature:Received:Received:
 	 Received:From:To:CC:Subject:Thread-Topic:Thread-Index:Date:Message-ID:
 	 References:In-Reply-To:Accept-Language:Content-Language:
 	 x-originating-ip:Content-Type:Content-Transfer-Encoding:MIME-Version;
-	bh=lXinHBmuyNPYHQgHu8MP44sRILKJKhSDGGY78jn0tBU=;
-	b=M6AJ9d0178yE0qndFao/piB6OmUlCf/cbJpMvd3IeQX17j0QQmUfx7g2RwOPXhGUNVDF
-	 /AJ/V9U4Ii8DpJAquGomNCBdxmrB20pO3GLqOerupiaXUqwtrF/O2wYb6yZoMCEI/LSc+
-	 0ynarXcDoVvcIGZk6DOPVtuiYwQBB7yqtz/SXpWKcGd6CP/DZzSJtbtsDs8n7GYaXWegZ
-	 5q05NRh8FSp0z4zXxWZ9Tlb83LL2vylniaaeYoIIQFpgHoUT8/sXo2kGD9FE5aaiG3fMQ
-	 ClMNaN0h1tigcu4TCZL/7KMx7oOGbcflcqY0PSQSHceGyQOgg7i1hxaak7jmlTJmrmg==
+	bh=6LysHUSjdGg1F/eXUvqHmt7fH7/B1Z3M1UBlOePjA1M=;
+	b=3w3XIkmNz2w5E3k1LSD73qJ19CyLL695CTvRKjcKngJ9nuDAgVLpr/A6kYn29t/8Y7K+
+	 jSphrZmdQt0M8ohlWeGVZ19G8fD5rHW8WiEjrxS1DaQYyjzGPJqjNm7M9VcJljI4/TuF/
+	 KeNvbJkucYYlV+2gK7vDu+gFXdvBma0FWU0/aiZJjKTwi0rf0lpFWCcdw0wvECKZJnmqI
+	 KlitfdUHThRlFtUv5PE4FdMBrsjdk/jvFuX1v9g4NAuArDAnCu8TdgWwdDN2NJk6s3Vov
+	 fVjgjvbWpGuw/In5I54fHRBf6J8LwjXK+1d+75aCpTVyt2Qlsep019HNuDTOnnhbSEw==
 ARC-Authentication-Results: i=1; smtp.subspace.kernel.org; 
 	dmarc=pass header.from=realtek.com;
 	spf=pass smtp.mailfrom=realtek.com;
-	dkim=pass header.d=realtek.com header.i=@realtek.com header.a=rsa-sha256 header.s=dkim header.b=DD16R9pP;
+	dkim=pass header.d=realtek.com header.i=@realtek.com header.a=rsa-sha256 header.s=dkim header.b=KvCzqqEi;
 	arc=none smtp.remote-ip=211.75.126.72
 Received: from rtits2.realtek.com.tw (rtits2.realtek.com [211.75.126.72])
 	(using TLSv1.3 with cipher TLS_AES_256_GCM_SHA384 (256/256 bits)
 	 key-exchange X25519 server-signature ECDSA (prime256v1) server-digest SHA256)
 	(No client certificate requested)
-	by smtp.subspace.kernel.org (Postfix) with ESMTPS id DB67C606A31A;
-	Sun,  8 Nov 2026 03:21:21 +0000 (UTC)
-DMARC-Filter: OpenDMARC Filter v1.4.2 smtp.subspace.kernel.org DB67C606A31A
+	by smtp.subspace.kernel.org (Postfix) with ESMTPS id 77422606A31A
+	for <linux-wireless@vger.kernel.org>; Sun,  8 Nov 2026 03:28:53 +0000 (UTC)
+DMARC-Filter: OpenDMARC Filter v1.4.2 smtp.subspace.kernel.org 77422606A31A
 Authentication-Results: smtp.subspace.kernel.org; dmarc=pass (p=none dis=none) header.from=realtek.com
 Authentication-Results: smtp.subspace.kernel.org; spf=pass smtp.mailfrom=realtek.com
 Authentication-Results: smtp.subspace.kernel.org;
-	dkim=pass (2048-bit key) header.d=realtek.com header.i=@realtek.com header.a=rsa-sha256 header.s=dkim header.b=DD16R9pP
-X-SpamFilter-By: ArmorX SpamTrap 5.80 with qID 6A83L56b83112952, This message is accepted by code: ctloc85258
+	dkim=pass (2048-bit key) header.d=realtek.com header.i=@realtek.com header.a=rsa-sha256 header.s=dkim header.b=KvCzqqEi
+X-SpamFilter-By: ArmorX SpamTrap 5.80 with qID 6A83SmU823114881, This message is accepted by code: ctloc85258
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=realtek.com; s=dkim;
-	t=1794108066; bh=lXinHBmuyNPYHQgHu8MP44sRILKJKhSDGGY78jn0tBU=;
+	t=1794108528; bh=6LysHUSjdGg1F/eXUvqHmt7fH7/B1Z3M1UBlOePjA1M=;
 	h=From:To:CC:Subject:Date:Message-ID:References:In-Reply-To:
 	 Content-Type:Content-Transfer-Encoding:MIME-Version;
-	b=DD16R9pP+vrN1RSe1uBpnxJXo0OhyP/PaQ20lq+eithjycKxlF5V2MEBcnI/uSuiJ
-	 uMyhUIruwUmjRLelp4l3dZvAaHxPodtM/4rQC1GJUlrpwojwsjW1is/lJee70d3F7A
-	 Xj3lSarT7mY8ii+yy+6qiYxYuMj5M0sGHwBeqphdPQCpHQvqlijam7LQ7t9KYcz1rN
-	 4zv1tNQ41S+0XMpeOoy+MsfBmrhBoskzE6RlDwfevkAgcSmiV67hWE9aFLzqgURCw9
-	 odOGWjQ5ApQuUVf1syVRr/wPdmi6hux1FSyQgJXLMNpDHxEi1L1lf8pwZm6rMQ6VE7
-	 GS6U66lcPIf1Q==
+	b=KvCzqqEiEmuAH5NBasmnmucXmfqete13PXZ1s3m2j82nDUEsrm0+WIW/gHNLhvoVM
+	 bUlcnrqVdV4BwUr965/wPUkaAN/U4STWx1va2FAWGvxrmOzRTBikiM/Uwd/OXyxHbO
+	 XfvezHBSAO0K+4hvKjnrYk7GulutUL3vRiR9TD7ub49Txma+cCv7GJppFGWnixmXoo
+	 GmiUrhb0ymUWGvBhMgx+Q0zNbuaGpPSAmJjoCzMJNcYczk2WjQUYyhOQJ2l9KCHb4n
+	 N7EL55iaIFGIActaTU6Zf+4lGL6E0De/4fsN21c2QMLueM5RwpbTh0s462pOfFBfKt
+	 UaSuyZATcxorQ==
 Received: from mail.realtek.com (rtkexhmbs03.realtek.com.tw[10.21.1.53])
-	by rtits2.realtek.com.tw (8.15.2/3.29/5.94) with ESMTPS id 6A83L56b83112952
+	by rtits2.realtek.com.tw (8.15.2/3.29/5.94) with ESMTPS id 6A83SmU823114881
 	(version=TLSv1.2 cipher=ECDHE-RSA-AES256-GCM-SHA384 bits=256 verify=FAIL);
-	Sun, 8 Nov 2026 11:21:05 +0800
+	Sun, 8 Nov 2026 11:28:48 +0800
 Received: from RTKEXHMBS06.realtek.com.tw (10.21.1.56) by
  RTKEXHMBS03.realtek.com.tw (10.21.1.53) with Microsoft SMTP Server
  (version=TLS1_2, cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id
- 15.2.2562.56; Sun, 8 Nov 2026 11:21:06 +0800
+ 15.2.2562.56; Sun, 8 Nov 2026 11:28:49 +0800
 Received: from RTKEXHMBS06.realtek.com.tw ([fe80::eeeb:c765:ca73:5eef]) by
  RTKEXHMBS06.realtek.com.tw ([fe80::eeeb:c765:ca73:5eef%10]) with mapi id
- 15.02.2562.056; Sun, 8 Nov 2026 11:20:53 +0800
+ 15.02.2562.056; Sun, 8 Nov 2026 11:28:49 +0800
 From: Ping-Ke Shih <pkshih@realtek.com>
-To: Kalpesh Solanki <skalpesh942@gmail.com>, "luka.gejak@linux.dev"
-	<luka.gejak@linux.dev>
-CC: "kvalo@kernel.org" <kvalo@kernel.org>, "linux-wireless@vger.kernel.org"
-	<linux-wireless@vger.kernel.org>, "linux-kernel@vger.kernel.org"
-	<linux-kernel@vger.kernel.org>
-Subject: RE: [PATCH v2 2/2] wifi: rtw88: ps: Trigger firmware recovery when
- failing to leave LPS state
-Thread-Topic: [PATCH v2 2/2] wifi: rtw88: ps: Trigger firmware recovery when
- failing to leave LPS state
-Thread-Index: AQHdboGm5HJUjvdiV06CJvy/NMrA3bchtYCAgAAH3ICAAcXAIA==
-Date: Sun, 8 Nov 2026 03:20:53 +0000
-Message-ID: <0439e1c4edd541ada7f38e2e43785088@realtek.com>
-References: <d7e20cc5e8a0489b9b22f13a9fe8a1b423d2f8f1@linux.dev>
- <20261107081609.97212-1-skalpesh942@gmail.com>
-In-Reply-To: <20261107081609.97212-1-skalpesh942@gmail.com>
+To: Frederick Watkins <freddiewatkins6@gmail.com>
+CC: "linux-wireless@vger.kernel.org" <linux-wireless@vger.kernel.org>
+Subject: RE: [PATCH] wifi: rtw89: pci: disable D3cold on Lenovo Ideapad
+ LNVNB161216
+Thread-Topic: [PATCH] wifi: rtw89: pci: disable D3cold on Lenovo Ideapad
+ LNVNB161216
+Thread-Index: AQHdbxPuFTVH2CX4SkOw0x07uZnUxbcjg28A
+Date: Sun, 8 Nov 2026 03:28:49 +0000
+Message-ID: <20694cf6372343ea877a015a695fffbe@realtek.com>
+References: <20261107235819.19758-1-freddiewatkins6@gmail.com>
+In-Reply-To: <20261107235819.19758-1-freddiewatkins6@gmail.com>
 Accept-Language: en-US, zh-TW
 Content-Language: zh-TW
 Content-Type: text/plain; charset="us-ascii"
@@ -86,20 +82,21 @@ List-Owner: <mailto:linux-wireless+owner@vger.kernel.org>
 Precedence: list
 MIME-Version: 1.0
 
-Kalpesh Solanki <skalpesh942@gmail.com> wrote:
-> > For the counter, maybe it is cleaner to revert 2/2 (or rebase and drop
-> > it since it is currently the HEAD commit of rtw-next) and send a new
-> > patch, since it replaces that line anyway and keeps the current
-> > behavior out of the next pull. 1/2 is fine as it is. Ping-Ke, would
-> > that work for you, or do you prefer a follow up?
+Frederick Watkins <freddiewatkins6@gmail.com> wrote:
+> The Lenovo Ideapad LNVNB161216 is affected by the same PCIe link loss as
+> ASUS ExpertBook models after entering the L2 low power state associated
+> with D3cold.
 >=20
-> Either way works for me. If Ping-Ke prefers to drop 2/2 from rtw-next, I =
-can
-> send the updated patch with the consecutive counter directly. Otherwise I=
- can
-> send it as a follow-up on top.
+> Add the affected board number to the quirk table preventing entry into
+> D3cold.
+>=20
+> Closes: https://lore.kernel.org/linux-wireless/auyIxMg3r767ud7z@freddies-=
+laptop/
 
-I did force update to drop 2/2. Please respin your patches.=20
+Thanks for the fix before I read your report. :)
 
-Ping-Ke
+> Signed-off-by: Frederick Watkins <freddiewatkins6@gmail.com>
+
+Acked-by: Ping-Ke Shih <pkshih@realtek.com>
+
 
