@@ -1,72 +1,99 @@
-Authentication-Results: smtp.subspace.kernel.org; arc=none smtp.remote-ip=152.67.88.11
-ARC-Seal: i=1; d=subspace.kernel.org; s=arc20261015; a=rsa-sha256; cv=none;
-	t=1794098745;
-	b=2TxKOSH7uRSKx2WKRvrxAgsRGhiJZBofjwwYoUpw68+h2mZbbzlc7eQf6tz53ZvG+mPy
-	 nmFY56DymFU/9CTEBU6z3w921lzQz73Gnm1DdAwUGRsqdixNycXpExjKHWUpnh2d6pDqA
-	 0PYrTaWAQkC4u0OL3ThfkNHSEP852kfwnCP76j4n6ypsjfl8unYEZwGRSB6aH6SsddFCy
-	 70yijg8jnNISsTkBYO20y4eA9ABBVZgUEtLdP5m3Qzqh+fRFaFWVKLQNzSk0jwl+//gE0
-	 vltLQ8oP21FGmELE9qIfSjksrDE3H8R3khvEmczl1PTZZctQfYgv786712pnsmUlUTg==
-ARC-Message-Signature: i=1; d=subspace.kernel.org; s=arc20261015;
-	a=rsa-sha256; c=relaxed/relaxed; t=1794098745;
-	h=DMARC-Filter:DKIM-Signature:DKIM-Signature:Message-Instance:
-	 DKIM2-Signature:From:To:Cc:Subject:Date:Message-ID:X-Mailer:
-	 In-Reply-To:References:MIME-Version:Content-Transfer-Encoding;
-	bh=/R/Zm+QxroQvLAK1Fqfpt+hCcUE7nMMqtwRoKXNN4X8=;
-	b=viBaJWPt0M9CMuRP/5T58qnxaqkAZOyK+wklZjkoOpKw9Z5IswBd3jHw1nN/PDPB4iIz
-	 n8yLs10dXld0KVCw3SM9g5RD/rnaC49oZnB2F7WaPJypXHxfDBKU/1bVk3JrwYCFugM77
-	 6VQe9d0iCQtge8fPnrK5AfXciKe38lReZimpnTko0UZYZpHTxBMMfMSX0HMEN9K93+ul3
-	 KHK2UJzDYcmaF7p1HYx1dk4tRJoD0H6n0oNwray4AenahDFDMKnVX8jPUqHawv/CUxhny
-	 76TL6evgjC1FRt7m6f/awcUW9QB4P2WVamXtsRqZA1cb0aCWICpgSArCZS788ohLVnA==
-ARC-Authentication-Results: i=1; smtp.subspace.kernel.org; 
-	dmarc=pass header.from=cubiculum.net;
-	spf=pass smtp.mailfrom=cubiculum.net;
-	dkim=pass header.d=cubiculum.net header.i=@cubiculum.net header.a=ed25519-sha256 header.s=202501e header.b=SessLvNT;
-	dkim=pass header.d=cubiculum.net header.i=@cubiculum.net header.a=rsa-sha256 header.s=202501r header.b=NoMQQfE0;
-	arc=none smtp.remote-ip=152.67.88.11
-Received: from mail.cubiculum.net (mail.cubiculum.net [152.67.88.11])
-	(using TLSv1.3 with cipher TLS_AES_256_GCM_SHA384 (256/256 bits)
+Authentication-Results: smtp.subspace.kernel.org; arc=pass header.oldest-pass=0 smtp.remote-ip=209.85.217.41
+ARC-Seal: i=2; d=subspace.kernel.org; s=arc20261015; a=rsa-sha256; cv=pass;
+	t=1794099918;
+	b=fv0f86tkxzj2NiZN3HtZTWodbwYyQJmdpDM/eqg4JDgVkla52hTam195+tsX5jWmshgT
+	 uppG2WYLxTnGRYiK0/5ubXgkjpOXTcr5d7cOovxCkUmzeHMC2hkbNKqYnWQdFFXsNju7M
+	 FmbCzomeZa8u1ivU4RAG5l2rcUi0zGmGVOr3miwS5Km8GGSU1VW9x03mejuEBGX1U4oXv
+	 LRga6xf84sYOGhEjIsmK5OXitnY/ItgBdY7wMEahxoVXffIcYdtUTUFEgyyqqFDQB2tVV
+	 FX32b9Db4cnaQULzfBZf59yQjjKBbAMAzEmiUe2fKqWziiBBCD+n/vwRSCW+ZhRV/pg==
+ARC-Message-Signature: i=2; d=subspace.kernel.org; s=arc20261015;
+	a=rsa-sha256; c=relaxed/relaxed; t=1794099918;
+	h=DMARC-Filter:Received:DKIM-Signature:X-Google-DKIM-Signature:
+	 X-Gm-Message-State:X-Gm-Gg:X-Received:MIME-Version:References:
+	 In-Reply-To:From:Date:X-Gm-Features:Message-ID:Subject:To:Cc:
+	 Content-Type;
+	bh=1gDHVgeysvDkk0Op5CbmuTYEbWhhaugXlDTTytEHmTA=;
+	b=P8BClaCHxwYwtUzeMscCa9/loVpzyjDBPlC+eD3ocYgCvkywJbLX5hY2asRxZrJ9mDzZ
+	 r3xuHQgIH5eWsN5mILWaJIW8vqR503kyFy/4cMFaHOTULNGl2H5O9zRvIwPYh+XNUpVDq
+	 nglXiNnMPSB0sWxWPzDEHVTPZ7M1xZuxCjPXW6y5lvM9oSbP3Yh4S+8iROH1ctJDtT06p
+	 prMhBoILNnxoQG3ePcq/rhv2BrBaZlPzKmlkun80hn6iwNXYty68ttmgtyHCh9tSo6xRa
+	 YLMWgcelCj1WARNW8p9cBaPCX+jVyrsXWXukKJfntuUHoEe03yY8d2wIJEm6kNFy+ZA==
+ARC-Authentication-Results: i=2; smtp.subspace.kernel.org; 
+	dmarc=pass header.from=gmail.com;
+	spf=pass smtp.mailfrom=gmail.com;
+	dkim=pass header.d=gmail.com header.i=@gmail.com header.a=rsa-sha256 header.s=20260707 header.b=cxJaP07Z;
+	arc=pass header.oldest-pass=0 smtp.remote-ip=209.85.217.41
+Received: from mail-vs1-f41.google.com (mail-vs1-f41.google.com [209.85.217.41])
+	(using TLSv1.3 with cipher TLS_AES_128_GCM_SHA256 (128/128 bits)
 	 key-exchange X25519 server-signature ECDSA (prime256v1) server-digest SHA256)
 	(No client certificate requested)
-	by smtp.subspace.kernel.org (Postfix) with ESMTPS id 4CEF8606A326
-	for <linux-wireless@vger.kernel.org>; Sun,  8 Nov 2026 00:45:45 +0000 (UTC)
-DMARC-Filter: OpenDMARC Filter v1.4.2 smtp.subspace.kernel.org 4CEF8606A326
-Authentication-Results: smtp.subspace.kernel.org; dmarc=pass (p=reject dis=none) header.from=cubiculum.net
-Authentication-Results: smtp.subspace.kernel.org; spf=pass smtp.mailfrom=cubiculum.net
+	by smtp.subspace.kernel.org (Postfix) with ESMTPS id 76D01606A326
+	for <linux-wireless@vger.kernel.org>; Sun,  8 Nov 2026 01:05:18 +0000 (UTC)
+DMARC-Filter: OpenDMARC Filter v1.4.2 smtp.subspace.kernel.org 76D01606A326
+Authentication-Results: smtp.subspace.kernel.org; dmarc=pass (p=none dis=none) header.from=gmail.com
+Authentication-Results: smtp.subspace.kernel.org; spf=pass smtp.mailfrom=gmail.com
 Authentication-Results: smtp.subspace.kernel.org;
-	dkim=pass header.d=cubiculum.net header.i=@cubiculum.net header.a=ed25519-sha256 header.s=202501e header.b=SessLvNT;
-	dkim=pass (2048-bit key) header.d=cubiculum.net header.i=@cubiculum.net header.a=rsa-sha256 header.s=202501r header.b=NoMQQfE0
-DKIM-Signature: v=1; a=ed25519-sha256; s=202501e; d=cubiculum.net; c=relaxed/relaxed; r=y;
-	h=Message-ID:Date:Subject:To:From; t=1794098743; bh=/R/Zm+QxroQvLAK1Fqfpt+h
-	CcUE7nMMqtwRoKXNN4X8=; b=SessLvNTA17wmRAVkSI2Wnau/bT2Ujn2j/3JPvI5UPGiLAy6cS
-	8k7LVLcGj124xiUwNEYQ6m5n+zgCkTB0p1BQ==;
-DKIM-Signature: v=1; a=rsa-sha256; s=202501r; d=cubiculum.net; c=relaxed/relaxed; r=y;
-	h=Message-ID:Date:Subject:To:From; t=1794098743; bh=/R/Zm+QxroQvLAK1Fqfpt+h
-	CcUE7nMMqtwRoKXNN4X8=; b=NoMQQfE07FKoC8w8gsSNaNyOOzv0VHXWf2YxSBskSRTDRqzf8s
-	aFqg66EzGg2NEbzxv3fvOX8N4W0bV98Sr5qMhsMlHMUTh2RbGFFH35cua4XT/EF7KRpeC14EFVa
-	CwbUha2AJp6+zqTp6dIrKnd9XYZdJfdwbtdle+H5eHrQtws0y+wVTP5hNU5bBqtWA7WFx+NByXa
-	R8yFceFkQEh17iULkBUuHpVJq+uAEBpCSA+Rz+dItkHDcOhgzcKMcNFpkG2GBhfeDBkzeH7oKFg
-	p7Cc2UYEXg0eZQLntTV9ivryrAJbU6msq1UUMrWREkLXgce/SUTbMQ9GUUbiEs2ViPQ==;
-Message-Instance: m=1; h=sha256:SzxZBJottE2HEh/IXn9bS8ydZmCkWfTcN0dvxXqr
-	+aA=:/R/Zm+QxroQvLAK1Fqfpt+hCcUE7nMMqtwRoKXNN4X8=;
-DKIM2-Signature: i=1; m=1; t=1794098743; d=cubiculum.net; mf=PGtlcm5lbEBj
-	dWJpY3VsdW0ubmV0Pg==; rt=PGpvaGFubmVzQHNpcHNvbHV0aW9ucy5uZXQ+,PGxpbnV4LXdp
-	cmVsZXNzQHZnZXIua2VybmVsLm9yZz4=; s=v2-ed25519-20260926:ed25519-sha256:2ORe
-	Md0TUTddHb0okW9sWYvZhNB8FvKMJNbN6ek35lducc/lUul7KtKz8eP3E0HN0VZ2cesaONtk
-	Z1dmzU1EBQ==|v2-rsa-20260926:rsa-sha256:M475VRxjRrcuAbkjold0VhVeGJ/QqraT
-	BqjWwFKKP4hzQ1a6uNp/fivWl9Y4iiXDmyYWCwA9+vsi6EolTPsDRcbF2JXK+80n+8no4IH4
-	anNOSs1uPsvD4RH+bbJEjuPFXjrjHkGVmD+aoTnYMS1ZQatHCuvbOlcmh55Zfy2EV/WLkzvz
-	4wPYID0xjeaHeVPLS6kOM0Yt7AS+KG6rlGIR9p9k+FXT63AZZKwk7HOpfxDlBeXG4inbKAg+
-	KtCHgfAvmoua3hmImH87VX82gQxcbyJyGltiGiBBzlH9VV1Wn7RN+sKzvMea5uWX5+SdnHqc
-	Wv97fc2+DR77sUJSjw7FBg==;
-From: rcfa <kernel@cubiculum.net>
-To: Johannes Berg <johannes@sipsolutions.net>
-Cc: linux-wireless@vger.kernel.org
-Subject: Re: [PATCH wireless] wifi: mac80211: deauthenticate on stop if an association just completed
-Date: Sun,  8 Nov 2026 00:45:36 +0000
-Message-ID: <20261108004536.1897266-1-kernel@cubiculum.net>
-X-Mailer: git-send-email 2.53.0
-In-Reply-To: <20261101201251.1106968-1-kernel@cubiculum.net>
-References: <20261101201251.1106968-1-kernel@cubiculum.net>
+	dkim=pass (2048-bit key) header.d=gmail.com header.i=@gmail.com header.a=rsa-sha256 header.s=20260707 header.b=cxJaP07Z
+Received: by mail-vs1-f41.google.com with SMTP id ada2fe7eead31-7a6e560f580so101120137.1
+        for <linux-wireless@vger.kernel.org>; Sat, 07 Nov 2026 17:05:18 -0800 (PST)
+ARC-Seal: i=1; a=rsa-sha256; t=1794099917; cv=none;
+        d=google.com; s=arc-20260327;
+        b=pfspO1+EdeMxB3ANbSYzhHPDyF3KvlHDwpCF/fvoI1p1zJLfbxL5RXj8N6cqj0e16x
+         EgsWW2EynBhBe0FaIxdTZEeQz2Yn1CDSBe1TJydXdqRMYyFX5w4GGkO3OeNUTtsAaAoq
+         om15THpQy0oAiALG+kvE5Cz3NilO+Esljqz+prhkxETcurgV12AnH72mh5lhPP4pqTGe
+         MEA3oX9M5uJS1UanZHA318Sii+CHTmgb4aLlot7xv8d9z4kbYZkcYUh1apmvgRXgcmQ/
+         xsdDscLaLaBB6NF13cpbeMdTI6AsSo76fm5MDJHCNXP2VyRzh/ykykVut8GZ78wVXO3R
+         TNtQ==
+ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=google.com; s=arc-20260327;
+        h=cc:to:subject:message-id:date:from:in-reply-to:references
+         :mime-version:dkim-signature;
+        bh=1gDHVgeysvDkk0Op5CbmuTYEbWhhaugXlDTTytEHmTA=;
+        fh=8IAy5qup0a2EY8QRGpBSpKR+Jn4fWjWAV5x6xozgXOQ=;
+        b=ERMxXmdrGr1vsY+xfxqOae2G15lUyPPE3h8LYH5VlWdwWv8LMuZ397vHOw/FCXEgPX
+         5FCIkNn0deyRq2q3KA/WQfq7z0MFpYs+6VeHfeOngwDArDhUKe1ilc70OWMCecYThVTs
+         ZvtmyFlOry2TN3kByJQK34h8dfTgYVEA+le+Ny7RRNJQxJQvlbNsZ0a1G61kfuTJEX2Q
+         uCT4JhzEapZem0Ep/5J0zMh13DIVuYTGC219jZeUaS5fv6y+kL0cTfOcWwHB0KLRkPI1
+         kFMAYIZYvO/TlZ6Vauz8HQlyxAMKB64MfKkkpjoANcU9/oo7cFrVGE1DBN451WPB/EWK
+         AHzw==;
+        darn=vger.kernel.org
+ARC-Authentication-Results: i=1; mx.google.com; arc=none
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+        d=gmail.com; s=20260707; t=1794099917; x=1794704717; darn=vger.kernel.org;
+        h=content-type:cc:to:subject:message-id:date:from:in-reply-to
+         :references:mime-version:from:to:cc:subject:date:message-id:reply-to
+         :content-type;
+        bh=1gDHVgeysvDkk0Op5CbmuTYEbWhhaugXlDTTytEHmTA=;
+        b=cxJaP07ZBajHbLeCMPXcDYXFnO5H8F5+pbIMXuQjmDk4MeSaZuEfJZV2ZzPCYfppFw
+         FZmXHs62vcgJUwu66Yhlb5+DcBn+XldQntiwD+SlxaW6JDQb570Dtf9ZazqKYcj8kQ9E
+         D4g1Jo/sfww07HZ8ExlAkVSO3Eb6cfMZ8s2jDN/WpZRQ2/l2S88L6NBr4Fj8RjiVlIOx
+         z02w8Dgp/luWMiCILHa/0/02zWDyuIbk+bqVYBzSSMDRlZRfy1uFWNzPmlzp+a7YNIv/
+         O9UABHbWEcVPw7CCwF9V/oCFRlIAW+UGm3vXQnR5CagREcU6OUb7vzcHN9JFsSXsqCH5
+         CQVg==
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+        d=1e100.net; s=20260707; t=1794099917; x=1794704717;
+        h=content-type:cc:to:subject:message-id:date:from:in-reply-to
+         :references:mime-version:x-gm-gg:x-gm-message-state:from:to:cc
+         :subject:date:message-id:reply-to:content-type;
+        bh=1gDHVgeysvDkk0Op5CbmuTYEbWhhaugXlDTTytEHmTA=;
+        b=pruVbSrKy9F9TxAM9aEkse2JEiR9csJ/NpMd7wXN+nOch3qOatQ/oiqxnEreDULL/u
+         /9Y2JmOZ64/cZ37vzUkn5O5QpQDRpNB8f9tN3lvor1bYAO25OJbaeaH4Ueva1tgrGVRv
+         jlbxqoQO43MzTeWNjUvgxdt+jLW88oGNJA0+k7XeytmVEAHJt9Ht6jQ50p9p6SRPmOGU
+         j3kh1EEDOedV9gcnIHtVONukAYO7IVazlzt7ngl8Zwve6crcRionEXlcgYhlBGB+CMA3
+         nfw9dnmTQmYbPSJcTYWA+jk65B5II8IY3WnegCFa++rkBp2L8vZadJx/VnXkcbjQlYpt
+         SPng==
+X-Gm-Message-State: APuU4Z/zsH+inGobmWEAS8eOgt+cf6DYlQXhHCOfrkvobk7Oc+IIzWjz
+	d1KQ+OAD/7s4U2MelxLsOmMJufvkP1G2JE8Br+jUYuowVACojcT+lIAVMdp3YImelKcbeewrrlE
+	4Sih2ik8LNu5lDKV1ZEhq333pKfoLVvXBISV8x6Y=
+X-Gm-Gg: AYBFou0mXbyoS/HYgZ6DiaEA0eithcoRlmC71ZYErYJfDhvnmBmX1dHv6Ud1+AMTWHS
+	iL6J9LxksKgKzGOt8H8WcGacL/PTXcZB0m/uu6sTYO9esW6zeIimzUlbv5ZcpgRKmpdeQv1KSgi
+	YxaKqRNuvfmdj2pqCmHjcDPISJN1UBEjUqbFD6nJY4CcC1DOr984x44bpFTatsQb9Az46w+Y1BI
+	tYVF1JYAMJWoAMk6wagUbeBZAppTpwPggZE/sUOArdm9fnQagoN9RG1QK/o6k3X6+I2QkrVvaoT
+	x28SiC1n2S3P2mmJFtwe36mR2Qskpf4XIcEKdmj7NLADaZEyVZwRhu4QFyL0Yad3kXB3IY9opN5
+	Xn5inIgiC8AcKVIY7pTmnZ73lgV/aVFQDxmJWkfchk7509jnSGUQgJjU98A72oEqHO13fjEWdjA
+	1JmzhdnQ1VmUV0IhiZ
+X-Received: by 2002:a05:6102:914:b0:7cc:25bc:3b30 with SMTP id
+ ada2fe7eead31-7d2db10230dmr109887137.21.1794099917401; Sat, 07 Nov 2026
+ 17:05:17 -0800 (PST)
 X-Mailing-List: linux-wireless@vger.kernel.org
 List-Id: <linux-wireless.vger.kernel.org>
 List-Post: <mailto:linux-wireless@vger.kernel.org>
@@ -76,23 +103,41 @@ List-Unsubscribe: <mailto:linux-wireless+unsubscribe@vger.kernel.org>
 List-Owner: <mailto:linux-wireless+owner@vger.kernel.org>
 Precedence: list
 MIME-Version: 1.0
-Content-Transfer-Encoding: 8bit
+References: <20261028-b4-mac80211-tailroom-v1-1-f3cfbab9ef5f@gmail.com> <CAKobHXBw6Vb0UEuViBE+SvwHHSRL0csPgA4DvhJ9Dn4Snk3h1w@mail.gmail.com>
+In-Reply-To: <CAKobHXBw6Vb0UEuViBE+SvwHHSRL0csPgA4DvhJ9Dn4Snk3h1w@mail.gmail.com>
+From: Christopher Griffin <christophergriffin05@gmail.com>
+Date: Sat, 7 Nov 2026 19:05:05 -0600
+X-Gm-Features: AclHuK_6GVQ66_E7UYM3o2g7CODSKxMHnMvYY__--thhVTYDM9E4X1eUTiNTW2w
+Message-ID: <CAKobHXBE5b3huEiGOwFbvWmgm90wPxdeDaxRVkU6x1=xosq4Zw@mail.gmail.com>
+Subject: Re: [PATCH wireless-next] wifi: mac80211: flush TX for a new key only
+ if it needs tailroom
+To: Johannes Berg <johannes@sipsolutions.net>
+Cc: linux-wireless@vger.kernel.org, linux-kernel@vger.kernel.org
+Content-Type: text/plain; charset="UTF-8"
+
+(Resent as plain text; the lists dropped the first one.)
 
 Hi Johannes,
 
-I see this patch was marked Rejected in patchwork on 2 November, but
-I couldn't find a reply on the list or in my inbox. Could you say
-what's wrong with it, or how you'd rather see the race fixed? I'm
-glad to rework it.
+I see this is marked Rejected in patchwork, but I didn't find a reply
+on the list. Could you tell me what was wrong with it, or what you
+would want instead? I'd like to get the underlying problem fixed one
+way or another.
 
-I sent it for mac80211 rather than only for the driver because the
-end state is mac80211's own: without the change, my reproduction
-warned in ieee80211_do_stop() and then hit a NULL pointer dereference
-in ieee80211_rx_mgmt_beacon(), with the rtw89 fix already applied.
-The rtw89 side is posted separately:
-https://lore.kernel.org/linux-wireless/20261101201344.1107256-1-kernel@cubiculum.net/
+The problem, in short: ieee80211_key_link() counts every new key as
+needing tailroom before ieee80211_key_replace() uploads it to the
+driver, so whenever crypto_tx_tailroom_needed_cnt goes from 0 to 1 the
+key install waits in synchronize_net(). On an AP whose driver holds no
+other software key (no PMF, so no software BIP key keeping the count
+up), that is every pairwise key install at the end of a 4-way
+handshake: 30-65 ms at HZ=100, with hostapd blocked and serving no one
+meanwhile. We measured it on ath11k, ath10k and mt76 APs; with the
+patch the same installs took 0-2 ms.
+
+If the problem is the ordering (the count now goes up only after the
+upload, or only if the upload left the key in software), I can rework
+it. If it's the approach as a whole, a pointer to the direction you'd
+prefer would help.
 
 Thanks,
-rcfa
-
-(Drafted with Claude Code at my request.)
+Christopher Griffin <christophergriffin05@gmail.com>
