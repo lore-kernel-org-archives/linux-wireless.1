@@ -1,100 +1,98 @@
-Authentication-Results: smtp.subspace.kernel.org; arc=pass header.oldest-pass=0 smtp.remote-ip=209.85.161.41
+Authentication-Results: smtp.subspace.kernel.org; arc=pass header.oldest-pass=0 smtp.remote-ip=209.85.161.42
 ARC-Seal: i=2; d=subspace.kernel.org; s=arc20261015; a=rsa-sha256; cv=pass;
-	t=1794161484;
-	b=gtqhVgHEZuOauF0KER5agkvSRoYXsTW4YhQuvSVnAw9YAfDA1NrGTjcauxkO6EQ26xRh
-	 pXTM6Gn0vyE6HokFsiytYk84mcfuORAbnvkKI/B0s7PcPoPXQHK/mEFglv2DuXO2rX11L
-	 IKXCb6T8V1oMaMsuAg5FLF2DmfmzWKkF/8QGVtkB1vyf0J175Al6NG7BcAMLp28sEhwy7
-	 upTKHECIxNmHhLbanQq+vZhKqYQyxx6mAdTyhBJdlXPhPAOhyosg+C8Uf2hC0oHwCN+SI
-	 xm6O90v/cX4tPftu8eDis75PLiTqGsbpSw3Y6WPDEHflYuimzbRqrzNH/bnwifhyIVA==
+	t=1794161538;
+	b=ZPr1LRxJBM4S71dWaTuGnbtdQaMUvfN50Dy5CN/YJHSPt0UJnzpXipbRulu6l00Jp+L0
+	 l7si1xY0zMi3DQXpnNFkhbiQkBTsQgumbNCXByXYGHZriXWXSqo7rnr8nH6EfWsiMVg+H
+	 VdMdtbDL/s0K/H/ZPc0ISA1ghyxnB9urirG8ryTNwbD/3a8eH966toZZzclPu1U3WkYyL
+	 PM8DcJHifMp/Oq0jBp+5kLprqodajQ4uGnqEpWibZr8euJFo3pgO6nP1uUp8fgyo4DGFP
+	 VPpLUb3idAgvbyVqmfzvV9xrWw06hWw3iQK8l3cKdDwYLAKo1z7qSgXkmnKzM5rMDLA==
 ARC-Message-Signature: i=2; d=subspace.kernel.org; s=arc20261015;
-	a=rsa-sha256; c=relaxed/relaxed; t=1794161484;
+	a=rsa-sha256; c=relaxed/relaxed; t=1794161538;
 	h=DMARC-Filter:Received:DKIM-Signature:X-Google-DKIM-Signature:
-	 X-Forwarded-Encrypted:X-Gm-Message-State:X-Gm-Gg:X-Received:
-	 MIME-Version:References:In-Reply-To:From:Date:X-Gm-Features:
-	 Message-ID:Subject:To:Cc:Content-Type;
-	bh=nWtMd7mcJlj3esorVLjhuJFxVg0H8dLuVjouOf85zm8=;
-	b=tnp4/JxbkcLCgrGRZhDR8qCxMoDsHAHbyZv4FiD1fheMZZ4eMKNSXVJBOTSjtAVRu9nZ
-	 UVvBoV3ZCXTV1QXymQe55x11nbgk+z+B6MCRgjjlxEnpVI9pElnudXFNarirN66VEkEq9
-	 gkHeInuLCWnnAgvrRQpH3gqZN7Nyk7PWL/8iPTW+ATtU4rs0aKQHUeuXtCUsb8PSDgZbk
-	 TNSTBRTP8gXkZRv+hBxXFO3ctVZD3RDzQ2Aulli8/QRdryEhNX8ZHFXH4HCdKy7dO3goa
-	 jvJ/7pPzRHCQamzH+DRvWtwX5P366ZFHKAb2HL9eA+vU5FCdynf2oC327qFdkNl0SYQ==
+	 X-Gm-Message-State:X-Gm-Gg:X-Received:MIME-Version:References:
+	 In-Reply-To:From:Date:X-Gm-Features:Message-ID:Subject:To:Cc:
+	 Content-Type;
+	bh=mf6qS54xT/o4qhvSdAqVzjNkyCPGUffKHoXAyP7av4Q=;
+	b=WRbJ09gT5QDLkZVYrsrFPa5G0tde79xUcivVatWtX7r466KxD35xW0IUxeGGk8tyF3Hl
+	 YN333TDLyCzl6ic74Zj+p6k3M+3/wph4s0KJmpeaV0byi/xc50Be/7JZV8iNoIX7VZEim
+	 9650AkCSK9EJ5/ljMD1mr5H75MG2dQPdq91+d0T4LBK+Ysi5pKiWsPd257GtA8Uo5euw7
+	 dYMlWmMX/D8LCJeQWzIasCkCxQmgCDZtz843psdDGnmazhiZWF7F/uc19zRNMJ9j3KXhx
+	 TLyit7BC8ZfTrIzVVGUCXuzklBI3WIj5O9t07OEmQm/30A3o6kKZhCqYEOqSjoaKEkg==
 ARC-Authentication-Results: i=2; smtp.subspace.kernel.org; 
 	dmarc=pass header.from=gmail.com;
 	spf=pass smtp.mailfrom=gmail.com;
-	dkim=pass header.d=gmail.com header.i=@gmail.com header.a=rsa-sha256 header.s=20260707 header.b=Ghd4CTkt;
-	arc=pass header.oldest-pass=0 smtp.remote-ip=209.85.161.41
-Received: from mail-oo1-f41.google.com (mail-oo1-f41.google.com [209.85.161.41])
+	dkim=pass header.d=gmail.com header.i=@gmail.com header.a=rsa-sha256 header.s=20260707 header.b=U3KV6yZu;
+	arc=pass header.oldest-pass=0 smtp.remote-ip=209.85.161.42
+Received: from mail-oo1-f42.google.com (mail-oo1-f42.google.com [209.85.161.42])
 	(using TLSv1.3 with cipher TLS_AES_128_GCM_SHA256 (128/128 bits)
 	 key-exchange X25519 server-signature ECDSA (prime256v1) server-digest SHA256)
 	(No client certificate requested)
-	by smtp.subspace.kernel.org (Postfix) with ESMTPS id AAD4B606A31C
-	for <linux-wireless@vger.kernel.org>; Sun,  8 Nov 2026 18:11:23 +0000 (UTC)
-DMARC-Filter: OpenDMARC Filter v1.4.2 smtp.subspace.kernel.org AAD4B606A31C
+	by smtp.subspace.kernel.org (Postfix) with ESMTPS id F1AAD606A320
+	for <linux-wireless@vger.kernel.org>; Sun,  8 Nov 2026 18:12:17 +0000 (UTC)
+DMARC-Filter: OpenDMARC Filter v1.4.2 smtp.subspace.kernel.org F1AAD606A320
 Authentication-Results: smtp.subspace.kernel.org; dmarc=pass (p=none dis=none) header.from=gmail.com
 Authentication-Results: smtp.subspace.kernel.org; spf=pass smtp.mailfrom=gmail.com
 Authentication-Results: smtp.subspace.kernel.org;
-	dkim=pass (2048-bit key) header.d=gmail.com header.i=@gmail.com header.a=rsa-sha256 header.s=20260707 header.b=Ghd4CTkt
-Received: by mail-oo1-f41.google.com with SMTP id 006d021491bc7-6e560e00a86so113578eaf.1
-        for <linux-wireless@vger.kernel.org>; Sun, 08 Nov 2026 10:11:23 -0800 (PST)
-ARC-Seal: i=1; a=rsa-sha256; t=1794161482; cv=none;
+	dkim=pass (2048-bit key) header.d=gmail.com header.i=@gmail.com header.a=rsa-sha256 header.s=20260707 header.b=U3KV6yZu
+Received: by mail-oo1-f42.google.com with SMTP id 006d021491bc7-6f5a0893610so132318eaf.1
+        for <linux-wireless@vger.kernel.org>; Sun, 08 Nov 2026 10:12:17 -0800 (PST)
+ARC-Seal: i=1; a=rsa-sha256; t=1794161537; cv=none;
         d=google.com; s=arc-20260327;
-        b=PcUQaZxpPGFzKh8yVcJqx5/fGycr7CZjaOWIYop8WgcrKmP/dm3DauyLHbJG0Ekb3T
-         EE4buiDh5VFq0z6j0osvnxSQ5pPco6kiu9quGzksb4vZkkswDt66DPJBWf1E/PAs9Tjm
-         8odsNVC8Jcd+LbiPW5Ih891zdW/enHenKd/Gy+OnnFk01cb6zRAvCcrz7+WQovsc5v/f
-         /cwqTOJHs8haSYVg8JXf/6ILkKIHO/hETTZgXc6zv2mn5We5YE/Jbvqh02PIvuRm3r36
-         sfubbmkuruWuCnWWBOsiZayOcOD7ljg4FuDkXHXHBuZXWE3N0kK1+0iD8vec/hovzRyV
-         WE5g==
+        b=dzLGioLjYdgfhN6lxsxAlDzOhQD3SectkONih321M6CGKwSquhJ7rSqEpTgw17aD/R
+         q6AJcCbItBFsBd/+GPEEs3nHpqDOgNUXkT3Gss9mjWole5SDb3yNipO+MJr2iiYAs3pw
+         h1Ul9zx1yw8BRaWQd8iWNDPJuWkppKEVSqSAhBqerhaASCl36c6Oc8PzxJH4r9UC6MNu
+         QmpFsc1I6fJmXb/p7KXCHPXwX8vcILmVEa0XpDZreMXKOgr105OVDZmb7IfIB4KmbVug
+         8suUrV+I5Qmomsh+qe9vVOzQJsfL3tOgV/0X0Q9BaouM/7qnNLUND8ORN8XcIIR70stG
+         3YpQ==
 ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=google.com; s=arc-20260327;
         h=cc:to:subject:message-id:date:from:in-reply-to:references
          :mime-version:dkim-signature;
-        bh=nWtMd7mcJlj3esorVLjhuJFxVg0H8dLuVjouOf85zm8=;
-        fh=T4xa96obkP8z+g6gl3RVX2IrUhgGYFbs1eLdMFjlMSk=;
-        b=D+wqyvfllzeA44xMzS3NSfk1QFZi1pVa8532bqzl6432XZbRo67sl/B+dBlmHlZfpO
-         +kn9xj/QIb+y871Swq3hAchcmifrkcZOz25z9IpAL71l6iJAz/9qqR5e+nkX22NL5vtl
-         WY4RK4VrZ5wjCnH5ts1ZYJwD0AkWjRiP+mGQyg7wGQEOBjKC+yr3TK2NrIdcXZKPMf88
-         5kbPhs36H82AKKRoTXCCVkRpNoN3x/0yt7ju4UF8oO08blahcOHm5OR8j5dvYorjp96X
-         rKhCxXQCKhhayCZNp7bJMyeEiH3SBz4FDDeRw6ei0DjzlrwSLg7itkVRVVO4Wqdi6aW+
-         WvpQ==;
+        bh=mf6qS54xT/o4qhvSdAqVzjNkyCPGUffKHoXAyP7av4Q=;
+        fh=9SKooS7Xh0GP2ZXb44mApRJQgiMw5tYrdvl4iuXS9XY=;
+        b=SfKOt68vk9v467BUbFq6wsMXDO/XgqnDM/2P96XxuS9RyIyBsRQZFI49vzo+hMmYIq
+         wd5oHKmtnydLsTGh2CdTxQqH99St0RIXaoq3OxkeY8U83FuG4m/P4Xk7pJsR6AyBz9VA
+         GgN4nsW1KCM1AsL8XR9iexlDqSRKicOmRKTBNVCfHF3dA8soDLKX2RolHb2w4Z5OuazJ
+         t24wGHr+zys0OzD5gKhpJrquqtH+SuYY6H3ca2WggSn5Df6OPYmb1MQKxv59w9XC6fsc
+         jPAFpqODRCO28oFn4LbrBm5Q4u55jnpCqyaMXd/5IWPG17MmDzxCkZVR6GkOKp2jKEdB
+         yTyQ==;
         darn=vger.kernel.org
 ARC-Authentication-Results: i=1; mx.google.com; arc=none
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=gmail.com; s=20260707; t=1794161482; x=1794766282; darn=vger.kernel.org;
+        d=gmail.com; s=20260707; t=1794161537; x=1794766337; darn=vger.kernel.org;
         h=content-type:cc:to:subject:message-id:date:from:in-reply-to
          :references:mime-version:from:to:cc:subject:date:message-id:reply-to
          :content-type;
-        bh=nWtMd7mcJlj3esorVLjhuJFxVg0H8dLuVjouOf85zm8=;
-        b=Ghd4CTkt6FjFysQd/Oqs57sigUVlFG9/t9npRvA+kQQ2ocoL6rHRVyBb+Y6tYyS5lI
-         BJMWbcBQyISzIpNL3H1MTPxJcIumycQXGiIrPM4XfiWUQXjR0S5iFPFBDXFgngUSTypV
-         VZpsMuZdBYHhk0UNeyLk5DZqeXn5C96bwImjNktcK8upNxa4zuCehgToMBEp7THqTmEF
-         AsXeEs2GFw9ufthguUgmKTacK06CC8VK4q8DoVFGYfI2Yx2fhtEs9Mnq4GwvIpqKojtp
-         /RR4ZmgLRgD4KOCD3jyFhAqovVQosg4MJaCRGprYgYXgydMOM5aIhw2p5vQonX7jB9E3
-         VkdA==
+        bh=mf6qS54xT/o4qhvSdAqVzjNkyCPGUffKHoXAyP7av4Q=;
+        b=U3KV6yZuvrfhplGszqQWOjzBAQln51W1zwD09sz38Ti7j90ly73KGAy8soO0Ua1PvN
+         ucL2DFySM+uyRnuxLsB2r0GzIum825XpUhfeOS/jSa0qvJJbc3CUmZGgkontj3IJhvA0
+         HJC4NSAd5MyCvDIUOnfhygA9XyGLd+fd4GgylK9Vr0z6PUkJmI6+CjojJ3Iz8sWC25tY
+         dkKFHMONmdAP39BmsOH5P4o7vvMDJCWPIL7k3EMOkJNvGdbBZbHc2eAt9nGc94DOv+7r
+         iUuH8Uh/jFpIcY5PtdMS22krb+RfM0xLckEvdKjEwjQZKzhklyGxlPL6lqqdSCA6hck2
+         VfAQ==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=1e100.net; s=20260707; t=1794161482; x=1794766282;
+        d=1e100.net; s=20260707; t=1794161537; x=1794766337;
         h=content-type:cc:to:subject:message-id:date:from:in-reply-to
          :references:mime-version:x-gm-gg:x-gm-message-state:from:to:cc
          :subject:date:message-id:reply-to:content-type;
-        bh=nWtMd7mcJlj3esorVLjhuJFxVg0H8dLuVjouOf85zm8=;
-        b=BZQZZ5HIVBFJxN33WjwlBfX6hGiQmdM8nQVniLT1uWzJU8K2nbtZ8yTtvLSWiDtl9M
-         Aacn/vzOH5M9ISuglM/WKCSXMti8T4dj/0KKPXUraRaLGqDsnOQINSEuwDqD0Otr6FjI
-         AB/eCcYAuIuhAWwIV6B1OkmNcRdjpFxXqcnF1GfjrBzXP0c8L5HoEVGgjYOx9HPm7bF1
-         qekKvsdc9hr9OjrRJD/QhIO5mpQtQQyRs/AldQQpBM5QHiMguxlrt4+eCc89agHLYB2Y
-         nd3NJXfPppZ0NIIn+q0RO3bY0tkkRJUPPFcvUQcFpkKYCEFCKYe8UJqAlhea0/tA80mq
-         Qskw==
-X-Forwarded-Encrypted: i=1; AL+hErGvCOCEtPeWMq6FNznq3/qA8+0TpHdiYV4NBA7cB3b7kAzV5FW0oWRQtxJ2e6x3lXH9HnU4piAhHUCDt6sNBw==@vger.kernel.org
-X-Gm-Message-State: APuU4Z/6XE/fOXJoLPEgazRKn2120z5nll2Zbm8GXaYtSUiU8QmrH/V2
-	F/JnZ8HkhWMhkpjPRgdA90K5k8f33dorhW0cQM6TIRlNQU+uyOAT4wk2ih/6QIea/iI5BQGF1YJ
-	BNHYMHnkIzyuItUXcpW+fHiX0ciWLK3RkyTDYyvI=
-X-Gm-Gg: AYBFou0U3iAdho4loD3B6myqHWZfzUR+DTVzM6aB/u4+SryvaqjuwxpKepdLCxNgAVD
-	ud3jCxDAhI6q0KgsYlDYO+CiP3verymJHbmoUjpS8diJSg8r3XkHmXVAdPnqMfTLC+QqQTqu/FL
-	cbK6c/wgWTU0nHRLh7R5fXunOBP0h/Qslfc0jytvxT8PxC/qi84rGADgVNyArc0y2idVGgIe+K1
-	U/7uoEfRbd2O7S91QZ9J5506qMs1hu4qbrTPqxtuvMwt+pJ+WT11FuVqb05AkT+IkFNCnSJksP6
-	Mns8x/P0eiyHJ9wCP+ZfjZ2KHxvMVNncQbls8r+C1ZXBWkyATAxRq1fNbrmWQbOHn8z/nBMJ95O
-	FOBw9H7DgWbCUKedYBy7tjb9ITegP5G5aOxuFfx1lCLdo9mDvn2emNgpy6Tc1iLQJ86208PObQt
-	ojAd7bDxYKGW8MKg==
-X-Received: by 2002:a05:6820:811:b0:6f8:22d8:6549 with SMTP id
- 006d021491bc7-7170f1cefeamr961861eaf.9.1794161482472; Sun, 08 Nov 2026
- 10:11:22 -0800 (PST)
+        bh=mf6qS54xT/o4qhvSdAqVzjNkyCPGUffKHoXAyP7av4Q=;
+        b=WMEUJb4/Gy7i8neKJhLaOy2VLOqckCKB4dLTaxaeR3Mnse4nm6uhMmwY626zlKdxY+
+         5cBUDgT488qAdzmz008ZtTqjfEsWnCy6PkBZ/coG1ffHaVqPYHhS7U4b4TgSGzebcdYv
+         EJgwSVxUSLeHoll8FOz8os3NshLeamnwXldUo1hPLPydTL7Y6y/3z0Eukm0RAanCqvY1
+         rJ+d8SnLLtxQUqaOmXruqHhZ9DbwdDYFF3dkuV28h3/WL9tF1HdsKPk4rg3ErKRcCDiu
+         d02FO6sC/05dRwokb797yZh20XHPVh4eT1XC2Ij/wCEbuPlf5tx47H8V8f1d9jsnfbej
+         LtwQ==
+X-Gm-Message-State: APuU4Z/FA0dA80rK4Kg+iwBltj2eUGMtKircTscpyrsR9QXiqOMzkPVV
+	W1JpgvMY/UAEo5c+bGQ2Df5Zzxtc5cPSlpHgAAvHs9+fkbow1i0gAue3NWSGekRXTo4MscDGlwa
+	56Xx2loCByyd5+3nRCCUl0TrbmO/aZNE=
+X-Gm-Gg: AYBFou2DhokK2lofwrT3arGebsjOMUUgmpkWrazmscvw71vqX/z1cFVGdBdM8jCB8CF
+	vpQY0w7kGhVYZA1QjDhR9aLIB3bEoZE1rK9i7ogKroly84oYhJMZ5jm3xiUiFCpAwhWyIuUr4M7
+	6NlYkB6M1a+cWpNJd0YeI+nR3dV0BsC5oJEoVA7ebtTepNGOkrnqt3mFBwn4r1j2bA3pl1DivD1
+	mBl3XJmTgsMoimi+gK+tH76OeOJrxzlsntX2V2rTAYMPhvcmF67Y79/XkfY5ahXs6ambLASSUk7
+	acsasVAGPsEqw3bVikYHL12htxuJko6Y7eJPG4pOFzOfT3kiRP5A51OAsI1/Qf+gyyLKsBrs5na
+	gXMwrY9S8FM3JUsPll8HiTajOLC+ClcncoF604WHDUYqsr+OUexmA3BjaT7HqmQnUxpdq
+X-Received: by 2002:a05:6820:619:b0:717:866:abef with SMTP id
+ 006d021491bc7-7170f278d4bmr1136117eaf.34.1794161536841; Sun, 08 Nov 2026
+ 10:12:16 -0800 (PST)
 X-Mailing-List: linux-wireless@vger.kernel.org
 List-Id: <linux-wireless.vger.kernel.org>
 List-Post: <mailto:linux-wireless@vger.kernel.org>
@@ -104,54 +102,37 @@ List-Unsubscribe: <mailto:linux-wireless+unsubscribe@vger.kernel.org>
 List-Owner: <mailto:linux-wireless+owner@vger.kernel.org>
 Precedence: list
 MIME-Version: 1.0
-References: <20261031070950.425176-1-hjf3108@gmail.com> <cf3ac5de969de93866dc9221521443608bae307d@linux.dev>
-In-Reply-To: <cf3ac5de969de93866dc9221521443608bae307d@linux.dev>
+References: <20261103095256.949327-1-hjf3108@gmail.com> <20261103095256.949327-2-hjf3108@gmail.com>
+ <e4895ae4df0e4de6a5dc45bc276cb1d1@realtek.com>
+In-Reply-To: <e4895ae4df0e4de6a5dc45bc276cb1d1@realtek.com>
 From: Jie Feng <hjf3108@gmail.com>
-Date: Mon, 9 Nov 2026 01:10:45 +0700
-X-Gm-Features: AclHuK-8YlRIu2lSQEVspCPQ_elPI20g7UVHnRu6hroDfWb_bH6Aa0YpVjpQxlo
-Message-ID: <CABOQOSVYK6-70z-qOj1y22f5TO4rkg82cWpqU5vzAirBfqX4hw@mail.gmail.com>
-Subject: Re: [PATCH rtw-next v2 0/7] wifi: rtw88: extend 88xxA support
-To: Luka Gejak <luka.gejak@linux.dev>
-Cc: Ping-Ke Shih <pkshih@realtek.com>, linux-wireless@vger.kernel.org
+Date: Mon, 9 Nov 2026 01:11:39 +0700
+X-Gm-Features: AclHuK_9BKwFyW47YiDHeQyFozoiiX3cmNycuz7EuLCuXtAhC-TUMK7iBw7jXso
+Message-ID: <CABOQOSWgd5hyvZj4tcSwYHD2_n3Su1hBGkBRo3AYvvRmPijeYw@mail.gmail.com>
+Subject: Re: [PATCH rtw-next 1/5] wifi: rtlwifi: rc: start no BA session for
+ QoS null frames
+To: Ping-Ke Shih <pkshih@realtek.com>
+Cc: "linux-wireless@vger.kernel.org" <linux-wireless@vger.kernel.org>, 
+	Bitterblue Smith <rtl8821cerfe2@gmail.com>, 
+	"linux-kernel@vger.kernel.org" <linux-kernel@vger.kernel.org>
 Content-Type: text/plain; charset="UTF-8"
 
-On Sat, 7 Nov 2026 at 00:44, Luka Gejak <luka.gejak@linux.dev> wrote:
+On Sun, 8 Nov 2026 at 11:08, Ping-Ke Shih <pkshih@realtek.com> wrote:
 >
-> Hi Jie Feng,
+> Ho Jie Feng <hjf3108@gmail.com> wrote:
+> > Only start BA sessions for frames that carry data.
 >
-> Thanks for the v2. I have a couple of comments for cover letter.
->
-> October 31, 2026 at 8:09 AM, "Ho Jie Feng" <hjf3108@gmail.com> wrote:
->
-> > This series enables HT STBC transmission, VHT SU beamformed reception,
-> > carrier-frequency-offset correction and adaptivity on supported
-> > 88xxA devices.
->
-> There is no changelog since v1. Could you add one to the cover letter
-> in v3, with what changed in new version and a link to the previous
-> one? It makes it easier for reviewers to quickly regain context and
-> makes it easier to track changes across versions.
->
-> > Tested on RTL8812AU together with the driver-frame series.
-> > TX went from 136.0 to 144.2.
-> > RX went from 215.5 to 249.2.
->
-> If the series you tested with is the one that became 62e69ef45567
-> ("wifi: rtw88: usb: don't report the aggregation buffer as a frame"),
-> it is in rtw-next now, so for v3 testing on plain rtw-next should be
-> enough.
-The driver frame fix did not impact throughput at all, so it should be
-fine to keep these numbers.
+> I can't understand why building a BA session for null frames cause lower
+> throughput? Please explain why.
+I included the throughput numbers as a regression test, to show that it does not
+cause any speed regressions. It should not affect throughput.
 
-> [ ... ]
+> >
+> > Test results (2.4 GHz):
+> >    before after
+> > TX 7.0    6.1
+> > RX 28.3   29.1
+> >
+> > Signed-off-by: Ho Jie Feng <hjf3108@gmail.com>
 >
-> > base-commit: 9b0be45d4d52fd223994e151f169743a97abd290
 >
-> v2 no longer applies to rtw-next. ec2baa4c9317 ("wifi: rtw88: Pass the
-> physical map to the read_efuse chip op") went in after you posted it and
-> changed the rtw88xxa_read_efuse() line next to the new code in patch 2,
-> so v3 needs a rebase. After fixing that one conflict the rest applied
-> for me.
->
-> Best regards,
-> Luka Gejak
