@@ -1,125 +1,91 @@
-Authentication-Results: smtp.subspace.kernel.org; arc=none smtp.remote-ip=209.85.219.51
+Authentication-Results: smtp.subspace.kernel.org; arc=none smtp.remote-ip=209.85.128.181
 ARC-Seal: i=1; d=subspace.kernel.org; s=arc20261015; a=rsa-sha256; cv=none;
-	t=1794157159;
-	b=YqfGmK1UTCKFgUJPSxsLkSfaoO4SFTxGXduFaAhTfwIN/CgWw+iLeNUS/dXJIdpAUgFU
-	 FtWuuctYKLec/kdjeDrNf1l2kpVRRsVRwoKwK9o768Vg2Nn+Y/qEOsDAzaC8xvL4wx3Z0
-	 XoTguQlvrzklmM+xOTbCz4qI0/raD5pl519ytEXZoRx0QYcIWJt9wuS4I+fv1BTo2YdRM
-	 szJK9JPg7UN3he8dSLxzWIHCRhllNYXis5IwwZjZEzPKnT3WwQunJ4rOrstaap5YZVm1o
-	 mvzeNGxWcEEJKwOC9eoGMdSzvDKtMZ7zABc/mWiRPEI9xIFmyeZKuaWHKLf58N4V7bQ==
+	t=1794157516;
+	b=MndaaxAS8+e70U5BzCZhXevwSY0Xb52n/o8R9G4o7dX4J+flsqNS5d5mX6msBovSFHvI
+	 VIhDm8h5kFcXdUMfcewgho9C1dXCvH4cnRfHJK4ij+uHDs9wadwqxAHZl1hOLodzH8Psy
+	 s2gumKPj2LGdAm+LWLTGn/GtkE9QYhfZCmgnzGiPMV7cPzAr53Vl9J0Ds2QhQci3d4Xi4
+	 No3a1By0Sy5bp6LU3YMg3Mnw6ACpjGyQ9W/u/cGTxUrtUk4u0scTnmDUJ2iENoVDEbym1
+	 TKLT+TN69bcj7+uVLp8jmmFiw+fwn0X2MqWGnZ1MsLqBspPypgA112O0yQd7VLXrhXw==
 ARC-Message-Signature: i=1; d=subspace.kernel.org; s=arc20261015;
-	a=rsa-sha256; c=relaxed/relaxed; t=1794157159;
+	a=rsa-sha256; c=relaxed/relaxed; t=1794157516;
 	h=DMARC-Filter:Received:DKIM-Signature:X-Google-DKIM-Signature:
-	 X-Forwarded-Encrypted:X-Gm-Message-State:X-Gm-Gg:X-Received:Received:
-	 Date:From:To:Cc:Subject:Message-ID:References:MIME-Version:
-	 Content-Type:Content-Disposition:In-Reply-To;
-	bh=lmwJQdwiPgvUanu0gwsKytij+Ict3+h8IPwu4vyFkUU=;
-	b=wYcAczlGNGPsTm5yLGJZxI/agiqS+7331QRWlYgvQL3qosW9vALGCgClZBGlemZOgbvx
-	 keueAggFn5P5FCM2F+e28TfoNpGfPeZ16LNcMjbfN0nalkQO1taD78MFQ1vuYTC+ssATu
-	 IOlzqHiUmxW30zK33ZOjJrhcs1wfRYVOSE1EOknHJfxQR7dyMjhqkhXOM007zrQAsS3eN
-	 /B/nTfIWWhV+dKcSDtMyn5ip5hNxbay1SBdYS6QHCaCBAdti+SJS//BpwpTWb3xA194zQ
-	 LkCgkbiF3H63Ai/XPPaCXmS1h3yUrxIA+6jS7ZIE8FW06HSoXHSheeF/NUr060qz48Q==
+	 X-Gm-Message-State:X-Gm-Gg:X-Received:Received:Sender:From:To:Cc:
+	 Subject:Date:Message-ID:X-Mailer:MIME-Version:Content-Type:
+	 Content-Transfer-Encoding;
+	bh=WtePlfKcf5Q5W8BQO3OBbxtLaEpMB2CPy+t2kWYGmdQ=;
+	b=whBoBenD07X/AUjVBvKTqx26i4nKrHII752LtD39JgmpQ6riHzqwytLmYN4rR0gIKMyo
+	 tA4klGsRSmXwJ49sGXKdvlFePHEeDSm9AxQ+FUs7kIfFSW9hJr2oqCPl5MrhBFbCwWCkl
+	 QBQuanp9qwhgHVRz7qs5kYVK27FgwgkZwnCFHk8zDLpvg29JqWPo638b6njDW1Ivo4bWO
+	 L4d8NC/W5+Cnud0s9fQ4WnA7u4B37qbQTraQ+tMx4PGuTiXTXamQn/TmvkPUGQ9KWIzoq
+	 9vDmAtvqBqmDfxfTV+Pk4PKMGbaDZXGcMiEdSV6KVTRxKVAdoNE/PWhAsVFxn/QtlXQ==
 ARC-Authentication-Results: i=1; smtp.subspace.kernel.org; 
-	dmarc=fail header.from=rowland.harvard.edu;
-	spf=fail smtp.mailfrom=g.harvard.edu;
-	arc=none smtp.remote-ip=209.85.219.51
-Received: from mail-qv1-f51.google.com (mail-qv1-f51.google.com [209.85.219.51])
+	dmarc=pass header.from=gmail.com;
+	spf=pass smtp.mailfrom=gmail.com;
+	dkim=pass header.d=gmail.com header.i=@gmail.com header.a=rsa-sha256 header.s=20260707 header.b=ToML1uvw;
+	arc=none smtp.remote-ip=209.85.128.181
+Received: from mail-yw1-f181.google.com (mail-yw1-f181.google.com [209.85.128.181])
 	(using TLSv1.3 with cipher TLS_AES_128_GCM_SHA256 (128/128 bits)
 	 key-exchange X25519 server-signature ECDSA (prime256v1) server-digest SHA256)
 	(No client certificate requested)
-	by smtp.subspace.kernel.org (Postfix) with ESMTPS id F3296606A326
-	for <linux-wireless@vger.kernel.org>; Sun,  8 Nov 2026 16:59:18 +0000 (UTC)
-DMARC-Filter: OpenDMARC Filter v1.4.2 smtp.subspace.kernel.org F3296606A326
-Authentication-Results: smtp.subspace.kernel.org; dmarc=fail (p=none dis=none) header.from=rowland.harvard.edu
-Authentication-Results: smtp.subspace.kernel.org; spf=fail smtp.mailfrom=g.harvard.edu
-Received: by mail-qv1-f51.google.com with SMTP id 6a1803df08f44-91ec2d42231so2161916d6.2
-        for <linux-wireless@vger.kernel.org>; Sun, 08 Nov 2026 08:59:18 -0800 (PST)
+	by smtp.subspace.kernel.org (Postfix) with ESMTPS id CDFC0606A31C
+	for <linux-wireless@vger.kernel.org>; Sun,  8 Nov 2026 17:05:15 +0000 (UTC)
+DMARC-Filter: OpenDMARC Filter v1.4.2 smtp.subspace.kernel.org CDFC0606A31C
+Authentication-Results: smtp.subspace.kernel.org; dmarc=pass (p=none dis=none) header.from=gmail.com
+Authentication-Results: smtp.subspace.kernel.org; spf=pass smtp.mailfrom=gmail.com
+Authentication-Results: smtp.subspace.kernel.org;
+	dkim=pass (2048-bit key) header.d=gmail.com header.i=@gmail.com header.a=rsa-sha256 header.s=20260707 header.b=ToML1uvw
+Received: by mail-yw1-f181.google.com with SMTP id 00721157ae682-8b0cf2c0785so1065037b3.3
+        for <linux-wireless@vger.kernel.org>; Sun, 08 Nov 2026 09:05:15 -0800 (PST)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=rowland.harvard.edu; s=google; t=1794157158; x=1794761958; darn=vger.kernel.org;
-        h=in-reply-to:content-disposition:content-type:mime-version
-         :references:message-id:subject:cc:to:from:date:from:to:cc:subject
-         :date:message-id:reply-to:content-type;
-        bh=lmwJQdwiPgvUanu0gwsKytij+Ict3+h8IPwu4vyFkUU=;
-        b=vVWQLNs+Rnn6NOsMpjKSpUM9H3gRT4E/HZTt53PMAZ2SXIz+Low080hQm0r2oKAsG+
-         HZ5TLknOMUGXKR3KUCz20FyQXU1Y7n4k67s/O97MTY2HciAv7W5/XWWVJI3wnxiYTpJN
-         gDPuohXn6LbvsrECp0/Ji6cvN5My5wm8EgfEsTmjv66hd/4pZ3HhjPBADrWO+gshRLZX
-         1w4cJtE0RQlZSB1u8qCDumnVcL5w0oR/W9xf8l09re306PAWvYklsReVbujjFSq7ckfb
-         ysHxLPgUuyjzLYLRPYb0BIszOUV4j3JsJcseKz7sg4xVYz+KH4V8tOVQekOfo5kBRIRc
-         SzLQ==
+        d=gmail.com; s=20260707; t=1794157515; x=1794762315; darn=vger.kernel.org;
+        h=content-transfer-encoding:content-type:mime-version:message-id:date
+         :subject:cc:to:from:sender:from:to:cc:subject:date:message-id
+         :reply-to:content-type;
+        bh=WtePlfKcf5Q5W8BQO3OBbxtLaEpMB2CPy+t2kWYGmdQ=;
+        b=ToML1uvw2CuXaCIJWc1WWdJLOAfSnx9Rr47ToaQqwBNp6hIJ96xyTJ68sGIqCWHlLt
+         ZUMP7lLWh4Vk2/3WdqNCoAu9Joqcvd7RH4If6zizutyoL4jhLhGKCdvsI2D2voSj7k5Q
+         ZBSBS/PuRwM9zFdUUETzjR9iMMg/kRxD+gBmYvTlCbV2QObRJiH8iYGjuoo+wy35o4uS
+         G6+prKgvcW+qDisNGgwdEZIVesSPzUlusBzzDizAcNFAodUmLuJB3netXxthJe8/R9Ym
+         6fMh94wTW3/W6RWuiMk/Tzmcf2GEgcSRkdR2ZSsf/elqO8QiRmX91YPS9lzWTeygW+Zn
+         ylIg==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=1e100.net; s=20260707; t=1794157158; x=1794761958;
-        h=in-reply-to:content-disposition:content-type:mime-version
-         :references:message-id:subject:cc:to:from:date:x-gm-gg
-         :x-gm-message-state:from:to:cc:subject:date:message-id:reply-to
-         :content-type;
-        bh=lmwJQdwiPgvUanu0gwsKytij+Ict3+h8IPwu4vyFkUU=;
-        b=SKkTP8xpVnUXQPYP/PFpzUjEaxNltKSmNm2l75BKG/tf11Xwvkc87qn+sWbf4GV+go
-         hHEUYGVVInMY1KlDB6zs1j8mSR+n6PbMXTRE/lHtcwMIc5DA2lNIyo8x3DN3CxQTJ0xP
-         ykySV2f9BgQ7HqgLAH6RUGPfoDy/tXwYB2EsrlM8V/fNPtzOObY4B6jxEnQzoomSoRU6
-         KLXbJLvl9gV4pHugnpGYzSSJpXjhv1AWdLnRbzFJRsw+nIHw9B7kKMJZ7NJu2N1gBR28
-         qVCHgn0OR6XOqJfFZ4yssdKvjyy4eo0b6jsxd224QNjePGMrK3y2JZ0DXZgz92S/NWk6
-         +jmw==
-X-Forwarded-Encrypted: i=1; AL+hErFIrv7HTnix4vhbl0I1tzevv5mHAqSyc2N2Ahc7FUrJuTyf6GvZfIF6sfO+K8jC2esEs2am67iy1olGq1wNsw==@vger.kernel.org
-X-Gm-Message-State: APuU4Z+sl0fKqsfQusI99PnFB8FpGi/7LtMhu1hA66jVNvEFEs1myStS
-	NWsCUTre/a8OVOQs76tBEDwumR3lbl6eNpm/VUiuX0mweo8iojc2x+zUB73ZC2LnAw==
-X-Gm-Gg: AYBFou00TiwKif5SrhT90onsz3r0MbwXlwLVvXj5KQN7MbhL+iuztsPAMYzkfikHGcm
-	jV/dqFk5LpZihh5jbKJc4DGXB/acm11t9JBlYfKKi7pKwRAe8Mxh78j7EMUVJmQ+PM+oQfgIYu1
-	IWtDfK/7Y3xXFplfg5spT6oXpwjJPQ+wAcm5/KFLAmG2g2NhUrVWN7OWPbLW7fvEX+2yxyOi/3u
-	r4Xy22L/e8RDbzpa3BZPPjUPnxUaEkAJ9wxx4wKzCpEF2LVIP3yR7Mj5Z4/DrzBUXziBlr7rCzg
-	GtJShVl7LxbMpkNu3PHYp5HPGt+xF7ttV8nEjE0FoqQrVbbyplwjxrEeEafiFgBuSc3Sny6Qt19
-	97xDcgenGYBk051P5Kgll4LDG0gGr6j4YyraOYt8pUQqLY8NAUFfL1rBI+7LXWMs1ztSDzrISJ6
-	+vXzgjrm1nMEd9ajJwKoyCcvrpfQKbc5n8t2y+ggdWnFn59YqN+Jwz/AkeMBJKY6TgQZQDnuJv/
-	MeyrLfgg4IOn64mCOAI1/2DGO9oRe5icuvReCYsXDI/iow+PbJPZYaiNlaXRFXaOyiCQJl0fsIf
-	6/WkdqvKpWohyRqDqYSMf2TlPTZd
-X-Received: by 2002:ad4:5d62:0:b0:91e:9d64:3294 with SMTP id 6a1803df08f44-91ed240d34dmr24616736d6.30.1794157157397;
-        Sun, 08 Nov 2026 08:59:17 -0800 (PST)
-Received: from rowland.harvard.edu ([2601:19b:d01:d210::66b0])
-        by smtp.gmail.com with ESMTPSA id 6a1803df08f44-91ecedbefb2sm22431036d6.17.2026.11.08.08.59.13
+        d=1e100.net; s=20260707; t=1794157515; x=1794762315;
+        h=content-transfer-encoding:content-type:mime-version:message-id:date
+         :subject:cc:to:from:sender:x-gm-gg:x-gm-message-state:from:to:cc
+         :subject:date:message-id:reply-to:content-type;
+        bh=WtePlfKcf5Q5W8BQO3OBbxtLaEpMB2CPy+t2kWYGmdQ=;
+        b=n9Xsdm/B1Nr3iewkir9F70YJwr5Y3a1XdX7uuMYfrEm4bJOH0SbC2A1x49Niyam7Au
+         AmDww7+AeWowj1bhj81bOTu+0BqKm9hJEByWG0aOUzuhFqfBF5uYqG3fP377/gtGIG+U
+         0vB2wp3D1ipO6fyO62FP/Q4KgK1hBoXr413k+dmIij8kGKBaUvd4JE/mBVqRE3coU9+e
+         jKWuvfZ95GnOdPkon4W4uGGTwYKlRNZqKpxRTFQIcY+tMswhaP6+P1FMmQQaZLvYNvJs
+         KPgr+L+x9lZO4HgBclWtVnz0Ou9F8kAQ+L9qpY8U+1AqvHHz31YmrnYnhBxq4u7mVQCL
+         hekw==
+X-Gm-Message-State: APuU4Z9tcqBLcTd72Vof8zYM2u82KaQZ8W3xmA1E3szY9vByUZmyZ5Wf
+	27pqWMvokmTLyIm+emszJn+xWrQd9OVbDcOjdS+5lSW9CvqqwnrpMrRRjPJ4
+X-Gm-Gg: AYBFou3SBM5Jej9pKh1+cOkAXRJtpev5bqqn3dPz2z3CDbxXESfnfKzUkBRGQVTxqXs
+	9SlqGGw+mksskb1WKNCWsolzL+ix+GZuC550YeuNUlgGVuj/UCsABhjdKHDjfDrp2gJIVFcFK0C
+	ZJK1qFH5U9LWdY03z+aBtzs4HuzlTlTnCuiJWwvD1oHkaaD/CrAkZxsu3MSRxNWBUnRqVteAyug
+	F6HopnfN6U4cSXofcXbwOuI+VUEF6Yidho0c69jQMXoRQ5FESbWjwJcLIlibV2lK6mjlHaL8Jgl
+	89kk2NhPISem6UHW7pCgfpmBqhHyvQ4bEQnj1D2zHx8oLBoHEspExJ3iKR6fHDwvTxMVSoP6CBh
+	kxfvHdGSbevmAfe4Xep1XtB6XrHrfesi0bEbN4ITH+kBw4EjGY5dRePNTqzRQ41SLP8goXJhlPP
+	j01QV4SlkUeTwoXFObL3ToTaegi40rDlt666xI+YINtz17g4b+UIuoplwEZGIvgFuIwuBRTLMSi
+	IsI1+n/RAZjYY0ORRrR9Y/Omf29heA6NMlW7sNu/0dTehGoUAlOfbcAIPoFWyX+eO1HQKtE5RtZ
+	BbnJIOfGn7QsiAmGFClxOIL77f0eZVml397TcviL/dm2rAycJHh4LzD5z91GTRTaOk39JrBjncg
+	Fz2b39YZWMg3w6SlPn5Qm9gZMkQ6t3/IComoQWpaR9Hv+
+X-Received: by 2002:a05:690c:800e:20b0:8b3:4a7a:599d with SMTP id 00721157ae682-8b36cbab0f2mr6790477b3.86.1794157514630;
+        Sun, 08 Nov 2026 09:05:14 -0800 (PST)
+Received: from nn ([2001:1ab8:1003:0:5454:f357:ba89:4e22])
+        by smtp.gmail.com with ESMTPSA id 00721157ae682-8b36b6349f6sm17346687b3.1.2026.11.08.09.05.13
         (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
-        Sun, 08 Nov 2026 08:59:16 -0800 (PST)
-Date: Sun, 8 Nov 2026 11:59:11 -0500
-From: Alan Stern <stern@rowland.harvard.edu>
-To: Leon Romanovsky <leon@kernel.org>
-Cc: Greg Kroah-Hartman <gregkh@linuxfoundation.org>,
-	"Rafael J. Wysocki" <rafael@kernel.org>,
-	Danilo Krummrich <dakr@kernel.org>,
-	Dmitry Torokhov <dmitry.torokhov@gmail.com>,
-	Andrew Lunn <andrew@lunn.ch>,
-	Heiner Kallweit <hkallweit1@gmail.com>,
-	Russell King <linux@armlinux.org.uk>,
-	"David S. Miller" <davem@davemloft.net>,
-	Jakub Kicinski <kuba@kernel.org>, Paolo Abeni <pabeni@redhat.com>,
-	Johannes Berg <johannes@sipsolutions.net>,
-	Jonathan Corbet <corbet@lwn.net>,
-	Shuah Khan <skhan@linuxfoundation.org>,
-	Randy Dunlap <rdunlap@infradead.org>,
-	Bjorn Helgaas <bhelgaas@google.com>,
-	"Joerg Roedel (AMD)" <joro@8bytes.org>,
-	Suravee Suthikulpanit <suravee.suthikulpanit@amd.com>,
-	Vasant Hegde <vasant.hegde@amd.com>, Will Deacon <will@kernel.org>,
-	Robin Murphy <robin.murphy@arm.com>,
-	David Woodhouse <dwmw2@infradead.org>,
-	Lu Baolu <baolu.lu@linux.intel.com>,
-	Johan Hovold <johan@kernel.org>, Eric Dumazet <edumazet@kernel.org>,
-	Marcel Holtmann <marcel@holtmann.org>,
-	Luiz Augusto von Dentz <luiz.dentz@gmail.com>,
-	Nipun Gupta <nipun.gupta@amd.com>,
-	Nikhil Agarwal <nikhil.agarwal@amd.com>,
-	Pieter Jansen van Vuuren <pieter.jansen-van-vuuren@amd.com>,
-	linux-kernel@vger.kernel.org, driver-core@lists.linux.dev,
-	linux-input@vger.kernel.org, netdev@vger.kernel.org,
-	linux-wireless@vger.kernel.org, linux-usb@vger.kernel.org,
-	linux-bluetooth@vger.kernel.org, linux-acpi@vger.kernel.org,
-	linux-doc@vger.kernel.org, linux-pci@vger.kernel.org,
-	iommu@lists.linux.dev, Jason Gunthorpe <jgg@ziepe.ca>
-Subject: Re: [PATCH 05/17] USB: Lock registered interfaces during manual
- driver binding
-Message-ID: <647f3199-909d-425f-b485-b598a18844d1@rowland.harvard.edu>
-References: <20261105-device-trust-core-v1-0-1e536825b4eb@nvidia.com>
- <20261105-device-trust-core-v1-5-1e536825b4eb@nvidia.com>
- <bb83fe3c-cebb-4bc8-bfc9-24df1cf72b0b@rowland.harvard.edu>
- <20261105184442.GF8298@unreal>
- <bf756e50-c77e-40f2-916d-e88887426806@rowland.harvard.edu>
- <20261108110909.GA8635@unreal>
+        Sun, 08 Nov 2026 09:05:14 -0800 (PST)
+Sender: N B <gen.benner@gmail.com>
+From: =?UTF-8?q?Nerijus=20Bend=C5=BEi=C5=ABnas?= <nerijus.bendziunas@gmail.com>
+To: johannes@sipsolutions.net
+Cc: linux-wireless@vger.kernel.org
+Subject: [PATCH v3] wifi: mac80211: change the monitor channel in place under chanctx emulation
+Date: Sun,  8 Nov 2026 19:04:57 +0200
+Message-ID: <20261108170457.931324-1-nerijus.bendziunas@gmail.com>
+X-Mailer: git-send-email 2.56.0
 X-Mailing-List: linux-wireless@vger.kernel.org
 List-Id: <linux-wireless.vger.kernel.org>
 List-Post: <mailto:linux-wireless@vger.kernel.org>
@@ -129,48 +95,151 @@ List-Unsubscribe: <mailto:linux-wireless+unsubscribe@vger.kernel.org>
 List-Owner: <mailto:linux-wireless+owner@vger.kernel.org>
 Precedence: list
 MIME-Version: 1.0
-Content-Type: text/plain; charset=us-ascii
-Content-Disposition: inline
-In-Reply-To: <20261108110909.GA8635@unreal>
+Content-Type: text/plain; charset=UTF-8
+Content-Transfer-Encoding: 8bit
 
-On Sun, Nov 08, 2026 at 01:09:09PM +0200, Leon Romanovsky wrote:
-> On Thu, Nov 05, 2026 at 03:04:18PM -0500, Alan Stern wrote:
-> > >  it ensures that the lock is
-> > > acquired when the driver is bound.
-> > 
-> > That may have been your intention when the patch was created, but if you 
-> > read the patch you'll see that it includes a whole bunch of material 
-> > not related to locking during binding.  Namely, this part:
-> 
-> Once I added `device_lock()` to `bind`, I had to add it to `unbind` as well.
+Under channel context emulation a monitor retune releases the old
+context, which configures the driver to the default channel, and then
+adds a new one, which configures it again. On a device where every
+channel change is a full chip reset, such as the AR9271 over USB, each
+retune costs two resets.
 
-Obviously I'm not making my points clear.  Let me try again.
+When the monitor link is the sole user of its emulated context, replace
+the context with one for the new channel and configure the driver once.
+Removing the last context is unchanged, so the device still returns to
+the default channel when the monitor goes away, and drivers with real
+channel contexts keep their current sequence.
 
-The entire patch description, as you wrote it, is this:
+Signed-off-by: Nerijus Bendžiūnas <nerijus.bendziunas@gmail.com>
+---
+Changes since v2: the last-context removal is left untouched; the
+retune replaces the monitor's own context with one for the new channel
+and configures the driver once. The in-code comment is gone.
 
-> Interface claims hold the USB device lock, but device_bind_driver()
-> requires the target interface lock. Without it, trust-policy writes  can
-> race admission.
+Tested on an AR9271 pair (ath9k_htc) with a 13-channel hop loop, 500
+hops per arm, the same driver in both arms:
 
-This says nothing about holding the interface lock during unbinding.  In 
-other words, it isn't a complete description of the patch.  It implies 
-that the patch changes nothing outside the device_bind_driver() 
-function, which isn't true.
+                   drv_config per hop   median hop   frame delivery
+  stock mac80211         2.00            133.4 ms        97.1 %
+  patched                1.00             92.6 ms        98.0 %
 
-Furthermore, the patch does not change any of the code in 
-usb_driver_release_interface(), which is where unbinding takes place, 
-because that routine already takes the interface lock.  So to say that 
-you had to add device_lock() to `unbind` is not accurate.
+A regulatory domain change while the monitor sits on a channel the new
+domain forbids (idle, right after a retune, and in the middle of a hop
+loop) produces the same driver calls and the same final interface state
+with and without the patch. 300 channel changes under a 500 frame/s
+injection load on the retuned interface: no failures, no kernel
+warnings.
 
-Instead the patch adds a new usb_driver_release_refused_claim() routine, 
-plus code in usb_set_configuration() to call the new routine.  The patch 
-description says nothing about either of these things.  Not to mention 
-the fact that your other changes make it now possible for the driver 
-core to delete an interface claim when the interface is registered, 
-something which was not possible before.  This is another inadequacy in 
-the patch description.
+On an Intel iwlwifi card, which has real channel contexts, a monitor hop
+produces the same driver calls with and without the patch (200 hops
+traced, identical sequence).
 
-I'm not saying that any of the code is wrong.  But the description does 
-a very bad job of explaining the new code.
+The patch was written with the help of an LLM coding assistant (Claude);
+the author reviewed the code and ran the tests above.
 
-Alan Stern
+ net/mac80211/cfg.c         |  7 +++++
+ net/mac80211/chan.c        | 54 ++++++++++++++++++++++++++++++++++++++
+ net/mac80211/ieee80211_i.h |  3 +++
+ 3 files changed, 64 insertions(+)
+
+diff --git a/net/mac80211/cfg.c b/net/mac80211/cfg.c
+index 08ee5ae64939..ed313298161f 100644
+--- a/net/mac80211/cfg.c
++++ b/net/mac80211/cfg.c
+@@ -1104,7 +1104,14 @@ static int ieee80211_set_monitor_channel(struct wiphy *wiphy,
+ 				       &chanreq.oper))
+ 		return 0;
+ 
++	ret = ieee80211_link_retune_chanctx(&sdata->deflink, &chanreq);
++	if (!ret)
++		goto done;
++
+ 	ieee80211_link_release_channel(&sdata->deflink);
++	if (ret < 0)
++		return ret;
++
+ 	ret = ieee80211_link_use_channel(&sdata->deflink, &chanreq,
+ 					 IEEE80211_CHANCTX_SHARED);
+ 	if (ret)
+diff --git a/net/mac80211/chan.c b/net/mac80211/chan.c
+index 9cba79507767..12cd850814bf 100644
+--- a/net/mac80211/chan.c
++++ b/net/mac80211/chan.c
+@@ -2513,6 +2513,60 @@ int ieee80211_link_change_chanreq(struct ieee80211_link_data *link,
+ 	return 0;
+ }
+ 
++int ieee80211_link_retune_chanctx(struct ieee80211_link_data *link,
++				  const struct ieee80211_chan_req *chanreq)
++{
++	struct ieee80211_local *local = link->sdata->local;
++	struct ieee80211_chanctx_user_iter iter;
++	struct ieee80211_chanctx *old_ctx, *new_ctx;
++	int ret;
++
++	lockdep_assert_wiphy(local->hw.wiphy);
++
++	if (!local->emulate_chanctx)
++		return 1;
++
++	old_ctx = ieee80211_link_get_chanctx(link);
++	if (!old_ctx)
++		return 1;
++
++	if (old_ctx->replace_state != IEEE80211_CHANCTX_REPLACE_NONE ||
++	    old_ctx->will_be_used)
++		return 1;
++
++	for_each_chanctx_user_all(local, old_ctx, &iter) {
++		if (iter.link != link || iter.reserved)
++			return 1;
++	}
++
++	new_ctx = ieee80211_alloc_chanctx(local, chanreq, old_ctx->mode,
++					  old_ctx->conf.radio_idx);
++	if (!new_ctx)
++		return -ENOMEM;
++
++	new_ctx->conf.rx_chains_static = old_ctx->conf.rx_chains_static;
++	new_ctx->conf.rx_chains_dynamic = old_ctx->conf.rx_chains_dynamic;
++
++	ret = drv_add_chanctx(local, new_ctx);
++	if (ret) {
++		kfree(new_ctx);
++		return ret;
++	}
++
++	list_replace_rcu(&old_ctx->list, &new_ctx->list);
++	rcu_assign_pointer(link->conf->chanctx_conf, &new_ctx->conf);
++	ieee80211_link_update_chanreq(link, chanreq);
++	old_ctx->driver_present = false;
++
++	ieee80211_remove_wbrf(local, &old_ctx->conf.def);
++	ieee80211_add_wbrf(local, &new_ctx->conf.def);
++	ieee80211_recalc_chanctx_min_def(local, new_ctx);
++	ieee80211_recalc_txpower(link, false);
++	kfree_rcu(old_ctx, rcu_head);
++
++	return 0;
++}
++
+ void ieee80211_link_release_channel(struct ieee80211_link_data *link)
+ {
+ 	struct ieee80211_sub_if_data *sdata = link->sdata;
+diff --git a/net/mac80211/ieee80211_i.h b/net/mac80211/ieee80211_i.h
+index d186d1274303..74b08320e692 100644
+--- a/net/mac80211/ieee80211_i.h
++++ b/net/mac80211/ieee80211_i.h
+@@ -2877,6 +2877,9 @@ int __must_check
+ ieee80211_link_change_chanreq(struct ieee80211_link_data *link,
+ 			      const struct ieee80211_chan_req *req,
+ 			      u64 *changed);
++int __must_check
++ieee80211_link_retune_chanctx(struct ieee80211_link_data *link,
++			      const struct ieee80211_chan_req *chanreq);
+ void __ieee80211_link_release_channel(struct ieee80211_link_data *link,
+ 				      bool skip_idle_recalc);
+ void ieee80211_link_release_channel(struct ieee80211_link_data *link);
+-- 
+2.56.0
+
