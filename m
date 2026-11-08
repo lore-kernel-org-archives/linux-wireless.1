@@ -1,90 +1,73 @@
-Authentication-Results: smtp.subspace.kernel.org; arc=none smtp.remote-ip=209.85.210.170
+Authentication-Results: smtp.subspace.kernel.org; arc=none smtp.remote-ip=178.21.23.139
 ARC-Seal: i=1; d=subspace.kernel.org; s=arc20261015; a=rsa-sha256; cv=none;
-	t=1794170460;
-	b=JtLAHStHU6fpHDmBNhRxlf3BsOd+Kb/i38sVXfDi6ZPlKTKAemxuQFhsPyfg2mC2mtoT
-	 PjG6p8/6zaWzh3ACkHazQo/auWAz4DVmaKL2jterl9WqFFSNPKPo2jbnUvMJV3lHwjPjX
-	 LgOFG4zLhK19X3dVNYzLOB90+wQ+eyDWhZUH2i67Ch0qxyuejLUs5LPZk4KVlfj//UZr8
-	 L3X6+pTUkJoqfLTAzFIYt0MC+pFCqsXITURXBLbGWZwdaGQRTGtrLrrDWT53xyvV8cb6V
-	 R/+yA731aDzS1qVZ2ohrYGOiUvkn3rh/uooJ7CRrOZPDzN3gs3IeNaKyMfbVpuU6HGA==
+	t=1794171281;
+	b=w6D9XKOIRI47dNUBzGYb4EuBpv395C3kIxxgQLhZVIubTEZMKj0R0MA+e27+j3X2fWuH
+	 TnnJ2MFsVWlFGHrVOJwmbJTQZ5PM8AF/4DO8EgBA8E8gW2iGoF/4ubzC1/TJ9Q7CyJVgU
+	 deLD6WbxVw9hr1C4t7fP4SpPhJ23Kk5/UapeyPH/udtd9Ix9v2H1K1UrO1E0FXeK/bVnp
+	 b5g8jU+Ecpe2M3eJA2IZgIAv5oPerEgHIGKShOfTbYbrr8MTxpqJHXHtCCT4ShrJB44TK
+	 ZAmPAYOSyP5SfIIQqjTQWvfhaQDVPESn67BP1Tn9sU3qejUoHoPs9N9MtwbDBot7FAw==
 ARC-Message-Signature: i=1; d=subspace.kernel.org; s=arc20261015;
-	a=rsa-sha256; c=relaxed/relaxed; t=1794170460;
-	h=DMARC-Filter:Received:DKIM-Signature:X-Google-DKIM-Signature:
-	 X-Gm-Message-State:X-Gm-Gg:X-Received:Received:From:To:Cc:Subject:
-	 Date:Message-ID:X-Mailer:MIME-Version:Content-Transfer-Encoding;
-	bh=rjSae3E97J5ckxR6B6iOy6NGSmANAKoIHhSgD5Soi7g=;
-	b=IVejT2wzlKORbUju2zi5NJielCptVdi6Lg+PYp116otClT4unOqL/MsJ3ZGoFvFSd5ZH
-	 mvH5b/zf7izNIVO2A4ebLCkuxpIVKBlWHzMCki8XGK3MCVbAMX5At0qU1fIQo8susHO0/
-	 wub5EDFPsgeSht8mszK3+gj1rZ0bIYt3ql/VtrdrI5Mbhsgs5ytjl65dheOyzz+BewZh4
-	 4w7JS71wCdEWWCmlV88mcpPOQ0OC2hZbQ1pPnDVGBlqkNCSCCZoCAqyFpVwedgX0qbgt1
-	 raqL5yCWM9oKB9mGnxR5zJVVmg7/C/VPQeVU3O4ADjTeOwwFghkUfpR8Wj2FuXBGGJQ==
+	a=rsa-sha256; c=relaxed/relaxed; t=1794171281;
+	h=DMARC-Filter:Received:X-Virus-Scanned:Received:DKIM-Signature:From:
+	 To:Cc:Subject:Date:Message-ID:In-Reply-To:References:MIME-Version:
+	 Content-Transfer-Encoding;
+	bh=AGFdlabeqEb35qWp8FLEWRPggysLe3Q3O4790UcL76Q=;
+	b=orphgcXWTnKrBPMsssOWUI2VemRP4uVsK1FIsLkQeUkcupbOBLSfdp+YsG/JQOUKPBfA
+	 05eJEiWg+tAaxH1Daz66xE2CXx2dIOgS9NDay5+BbJD8p4su/hgNB4sx7gPKXbgyF9Rpc
+	 swFPrdKkPKY+gcYRvbQu0QvesPFDrQ75rslHp3bpPhxRAEkNhTELzgFMmLom4eqg/yApL
+	 okQCixHgsGz/2yosEhnKp1/1pAHIPkhni4ejLb0sSkQU2UTTOW4+k45rhMWaB6SvxbFDh
+	 G/AEGmbpfBdC9fSl1jkxByqWBJ37SRBom/luP1loTyzw1LzGC4uhh9jAxtuKm1yDysw==
 ARC-Authentication-Results: i=1; smtp.subspace.kernel.org; 
-	dmarc=pass header.from=gmail.com;
-	spf=pass smtp.mailfrom=gmail.com;
-	dkim=pass header.d=gmail.com header.i=@gmail.com header.a=rsa-sha256 header.s=20260707 header.b=MmYYY60E;
-	arc=none smtp.remote-ip=209.85.210.170
-Received: from mail-pf1-f170.google.com (mail-pf1-f170.google.com [209.85.210.170])
-	(using TLSv1.3 with cipher TLS_AES_128_GCM_SHA256 (128/128 bits)
+	dmarc=pass header.from=disroot.org;
+	spf=pass smtp.mailfrom=disroot.org;
+	dkim=pass header.d=disroot.org header.i=@disroot.org header.a=rsa-sha256 header.s=mail header.b=Vn3pYSmQ;
+	arc=none smtp.remote-ip=178.21.23.139
+Received: from layka.disroot.org (layka.disroot.org [178.21.23.139])
+	(using TLSv1.3 with cipher TLS_AES_256_GCM_SHA384 (256/256 bits)
 	 key-exchange X25519 server-signature ECDSA (prime256v1) server-digest SHA256)
 	(No client certificate requested)
-	by smtp.subspace.kernel.org (Postfix) with ESMTPS id 47262606A31C
-	for <linux-wireless@vger.kernel.org>; Sun,  8 Nov 2026 20:41:00 +0000 (UTC)
-DMARC-Filter: OpenDMARC Filter v1.4.2 smtp.subspace.kernel.org 47262606A31C
-Authentication-Results: smtp.subspace.kernel.org; dmarc=pass (p=none dis=none) header.from=gmail.com
-Authentication-Results: smtp.subspace.kernel.org; spf=pass smtp.mailfrom=gmail.com
+	by smtp.subspace.kernel.org (Postfix) with ESMTPS id DA20E606A31C;
+	Sun,  8 Nov 2026 20:54:39 +0000 (UTC)
+DMARC-Filter: OpenDMARC Filter v1.4.2 smtp.subspace.kernel.org DA20E606A31C
+Authentication-Results: smtp.subspace.kernel.org; dmarc=pass (p=reject dis=none) header.from=disroot.org
+Authentication-Results: smtp.subspace.kernel.org; spf=pass smtp.mailfrom=disroot.org
 Authentication-Results: smtp.subspace.kernel.org;
-	dkim=pass (2048-bit key) header.d=gmail.com header.i=@gmail.com header.a=rsa-sha256 header.s=20260707 header.b=MmYYY60E
-Received: by mail-pf1-f170.google.com with SMTP id d2e1a72fcca58-8b5a6f2f27fso60528b3a.3
-        for <linux-wireless@vger.kernel.org>; Sun, 08 Nov 2026 12:41:00 -0800 (PST)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=gmail.com; s=20260707; t=1794170460; x=1794775260; darn=vger.kernel.org;
-        h=content-transfer-encoding:mime-version:message-id:date:subject:cc
-         :to:from:from:to:cc:subject:date:message-id:reply-to:content-type;
-        bh=rjSae3E97J5ckxR6B6iOy6NGSmANAKoIHhSgD5Soi7g=;
-        b=MmYYY60E7BCg3MiLWXr7/JvLLcCqdNswRYahd6AEa47+ItVcVLh7GlXcPLvoqoNo1f
-         QLVbOoc0x2xMUWpDNwlU9keLfJt9cmA9Uz3nm3FbySIMkH6uVkJJ0ZOfRorIEsnrCJJ2
-         F+9d/Ga5XyAghZ2RUYFiOILgPMXQVbx4CFZbgL69NIjXmtBR5QCUVA9YXGo4vCsKe1PD
-         wnam+cTWMS+YYeRtsBwfPEM6qm+75PujoS7IdlTLdz1MVYU2sa7mndAQNtfcPTo3UWRf
-         5MXHZE8gcfvZAs1F4jtsDkv2QLGepW08QCd57NaDi6XK2QwSjEqA5GZtXhDmVOKiRK/j
-         DzjA==
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=1e100.net; s=20260707; t=1794170460; x=1794775260;
-        h=content-transfer-encoding:mime-version:message-id:date:subject:cc
-         :to:from:x-gm-gg:x-gm-message-state:from:to:cc:subject:date
-         :message-id:reply-to:content-type;
-        bh=rjSae3E97J5ckxR6B6iOy6NGSmANAKoIHhSgD5Soi7g=;
-        b=2fRO1GEOEGdeOSaKzUZV26MpX4pCSxDOWkOzkGUmmmm7R+J6GtW9c1X7oyg+FSL5u3
-         HkAt6+Ky/saldRi+nW1Z3NgvrPJ5GAfynJcLxe5p3fCPNz+XDIRBB3kvT1YabWDRHalN
-         26slRZAq8JJBn26dEkwjvMffesLfwdyFqVyTsQ5QgIicl2VATg6KzRhjsQrW3yyvv8dC
-         K3wswitCApwx+EIg1gHhU7eYMtw5Fj8fH+j/yidN8XJVQqxB8N0LVPWHZRqhnOdv5RTA
-         cqDHTPmgzpzq6l8muXBVJe4UzUhRSH6CLwbkWHP832PkiztO5RQemXoFGjXH68jTAeuP
-         1ZUg==
-X-Gm-Message-State: APuU4Z9Azr2bbvtAyRVwqiK1zI5QAagcN3X5wxq2ihwDNp5TvgrTC/lL
-	a1hPc6ltne6iYYsDP2T6n19igk8orew5J2WCkZDimp6ygEhjhR9k7QwIQvRAmg==
-X-Gm-Gg: AYBFou0/hi8ByLz648WU83JgkJftm5VverIkO9KcgkPxFuJJ1Z1OW0/MUV4zkL/J5IF
-	UsDIDPxO5mTWRM+thO2U9liKFlvQMazHHy853y/u5ft+uZ4TJpcQEzz4qEnGR0bvR9qdHMHjZyt
-	AgDRV/5cVengBzedJcCzBCKUOEzxBE2XLM4jrsjR1FMQKaCt5M54197hXKlH2AH3Eh8cembMtTk
-	t6qYU6sz/y+VK4mB/FJLZOmUbVUNGWxfltEpkVSja6EegqY+G7GChRfcODdrie5ArORmGzSaWXU
-	bhetVRvRaZkfcLwwOvHk2l/QkhXAK0wV68Hs3xetZ70RjRjMKT4rV8V6Gud6ocFFFFsuENHcB6L
-	Rv0jmACvAdxTOVVFfgT2jigtMxhCz6UlBlCuTCMyuOJuP+MaEaSh2I/jzSZzNk7Xxx3qrx3jyWA
-	zK81e6pMSz9vVvu+fizwdOIrjRasqfRvW0QrAVBt03ktYG9r0fqsFmHLkRY6Q9mXC11D5ZPxpzp
-	Xdw25Luvz//9bBi4frRDRiey5B2jAUljKgnyGrBaDowDsb7x/2CszqCkatERX6HQvLYWXW1S34M
-	z+JU+pEYXsvGQSqtQp5WMvNtCMSZhsQIe6f5FE/qd8897lA5Z1+KrFQrd8PjMejbzuXcqRoeP1R
-	hw8W73JLYdt8s3bMlQmK5aE0PY7zkCUKDc6UJNcPx2bHvLAGswp59wVbGHWJ+Kdt/m4sgNiBthM
-	aK8A==
-X-Received: by 2002:a05:6a00:189b:b0:89e:cfbb:e8a2 with SMTP id d2e1a72fcca58-8b66c3b368amr1764637b3a.4.1794170459589;
-        Sun, 08 Nov 2026 12:40:59 -0800 (PST)
-Received: from ryzen.lan ([2601:644:8000:37f::e34])
-        by smtp.gmail.com with ESMTPSA id d2e1a72fcca58-8b649821c57sm690773b3a.37.2026.11.08.12.40.57
-        (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
-        Sun, 08 Nov 2026 12:40:59 -0800 (PST)
-From: Rosen Penev <rosenp@gmail.com>
-To: linux-wireless@vger.kernel.org
-Cc: Ping-Ke Shih <pkshih@realtek.com>,
-	linux-kernel@vger.kernel.org (open list)
-Subject: [PATCH rtw-next v3] wifi: rtw89: acpi: check for _DSM function support before evaluating it
-Date: Sun,  8 Nov 2026 12:40:56 -0800
-Message-ID: <20261108204056.28049-1-rosenp@gmail.com>
-X-Mailer: git-send-email 2.56.0
+	dkim=pass (2048-bit key, unprotected) header.d=disroot.org header.i=@disroot.org header.a=rsa-sha256 header.s=mail header.b=Vn3pYSmQ
+Received: from mail01.layka.lan (localhost [127.0.0.1])
+	by disroot.org (Postfix) with ESMTP id 5961380A2A;
+	Sun, 08 Nov 2026 21:54:32 +0100 (CET)
+X-Virus-Scanned: SPAM Filter at disroot.org
+Received: from layka.disroot.org ([127.0.0.1])
+ by localhost (disroot.org [127.0.0.1]) (amavis, port 10024) with ESMTP
+ id cvJPPhnADycg; Sun,  8 Nov 2026 21:54:31 +0100 (CET)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=disroot.org; s=mail;
+	t=1794171271; bh=InPWc+RU9xrIYZPwWZph+YHnci8PesbBzJmr4nqrB88=;
+	h=From:To:Cc:Subject:Date:In-Reply-To:References;
+	b=Vn3pYSmQqEceRkJZKJj1Zo+LO6hy43qE3j4/jglkyH619+BHAdg40gyz7ds5O9HDW
+	 EhRFI44zAkB5p4GRzMrCV8I7JHl+RyePjPkZ+O9uRojHoH9nsX+fRI5H/hR9QTQ/Wc
+	 9jAC/lp3VSx3yDd2wuXhC5s3j3ORjBgzifSgmCHqXQAzH2KQvAYKN6C/DpM62eUCZs
+	 jDRx0cPPsa0YrnC87jc2iBYWvNUI2/BXCm79T7p/zVU8ADJwvVviqvFhIy8yhkl1/Y
+	 AoYT59awzvh8dB8PAydkEjKXo1uZxlOF5DGQJnWZDkb7p5H2ZWP0ntyZzJhS/r4yFl
+	 hV/czRNTYQHIQ==
+From: Florian Maurer <fmaurer@disroot.org>
+To: Lorenzo Bianconi <lorenzo@kernel.org>
+Cc: Florian Maurer <fmaurer@disroot.org>,
+	Felix Fietkau <nbd@nbd.name>,
+	Ryder Lee <ryder.lee@mediatek.com>,
+	Shayne Chen <shayne.chen@mediatek.com>,
+	Sean Wang <sean.wang@mediatek.com>,
+	Matthias Brugger <matthias.bgg@gmail.com>,
+	AngeloGioacchino Del Regno <angelogioacchino.delregno@collabora.com>,
+	linux-wireless@vger.kernel.org,
+	linux-kernel@vger.kernel.org,
+	linux-arm-kernel@lists.infradead.org,
+	linux-mediatek@lists.infradead.org,
+	stable@vger.kernel.org
+Subject: Re: [PATCH wireless 1/2] wifi: mt76: npu: return rx slots to the NPU only after refilling them
+Date: Sun,  8 Nov 2026 20:53:48 +0000
+Message-ID: <20261108205350.2956138-1-fmaurer@disroot.org>
+In-Reply-To: <au3igPTxdz3i64SO@lore-desk>
+References: <cover.1793927986.git.fmaurer@disroot.org> <d6314f34e0965464207656d38a145490b6437aa5.1793927986.git.fmaurer@disroot.org> <au3igPTxdz3i64SO@lore-desk>
 X-Mailing-List: linux-wireless@vger.kernel.org
 List-Id: <linux-wireless.vger.kernel.org>
 List-Post: <mailto:linux-wireless@vger.kernel.org>
@@ -96,51 +79,113 @@ Precedence: list
 MIME-Version: 1.0
 Content-Transfer-Encoding: 8bit
 
-When the WiFi device has no ACPI companion, or the firmware does not
-implement a given rtw89 _DSM function, rtw89_acpi_evaluate_dsm() calls
-acpi_evaluate_dsm() anyway. ACPI core then warns on every probe:
+On Fri, Nov 06, 2026 at 03:21:52PM +0100, Lorenzo Bianconi wrote:
+>> +	Q_WRITE(q, dma_idx, (q->head + 1) % q->ndesc);
+>
+> why are you writing q->head here?
 
-  ACPI: \: failed to evaluate _DSM e8c3a8d2-694b-004f-82bd-fe8607803aa7 rev:0 func:10 (0x1001)
-  ACPI: \: failed to evaluate _DSM e8c3a8d2-694b-004f-82bd-fe8607803aa7 rev:0 func:6 (0x1001)
+Once the ring is full, (q->head + 1) % q->ndesc == q->tail, so the
+value is the same as today. Only the timing changes: the slots go back
+to the NPU after they have a new buffer, not before.
 
-Here the handle is NULL, and acpi_evaluate_object() returns
-AE_BAD_PARAMETER. All callers already treat failure as "no policy
-provided by the platform", so this is only noise.
+The +1 assumes the NPU completes slots only up to dma_idx - 2. Every
+slot it can still complete then lies between its own position and
+q->head - 1. The host has not consumed those yet, so they still have a
+buffer. If the refill fails, the same value is written again and the
+ring stalls instead of handing back an empty slot. A debug patch that
+cleared DONE after each consumed slot saw no slot completed early in
+60 minutes of rx load, though I can't tell how often the NPU reached
+that slot. Can you confirm this is how the NPU treats dma_idx?
 
-Bail out early when there is no ACPI handle,
+>> +	if (nframes > q->queued)
+>> +		return NULL;
+>
+> can this really occur?
 
-Seen on an RTL8852BE in a desktop PCIe slot.
+I have not seen it. The slot at q->head is never cleared while the ring
+is full: it is the one kept free, consumed in the previous round, so it
+still has DONE set. If the NPU has completed the first slots of a frame
+up to q->head - 1, the count reaches past q->queued and the next DONE
+check finds that stale bit. A page pool failure makes the stale region
+larger.
 
-Signed-off-by: Rosen Penev <rosenp@gmail.com>
----
- v3: remove acpi_check_dsm()
- v2: check handle separately. Remove Fixes.
- drivers/net/wireless/realtek/rtw89/acpi.c | 9 +++++++--
- 1 file changed, 7 insertions(+), 2 deletions(-)
+> I got your time, and I agree this is an issue we need to fix but I guess we
+> should avoid a double loop. What about the patch below? (just compiled and not
+> tested).
 
-diff --git a/drivers/net/wireless/realtek/rtw89/acpi.c b/drivers/net/wireless/realtek/rtw89/acpi.c
-index ebb6cf555747..d8cf8eb2527b 100644
---- a/drivers/net/wireless/realtek/rtw89/acpi.c
-+++ b/drivers/net/wireless/realtek/rtw89/acpi.c
-@@ -372,11 +372,16 @@ int rtw89_acpi_evaluate_dsm(struct rtw89_dev *rtwdev,
- 			    enum rtw89_acpi_dsm_func func,
- 			    struct rtw89_acpi_dsm_result *res)
- {
-+	acpi_handle handle = ACPI_HANDLE(rtwdev->dev);
- 	union acpi_object *obj;
- 	int ret;
- 
--	obj = acpi_evaluate_dsm(ACPI_HANDLE(rtwdev->dev), &rtw89_guid,
--				0, func, NULL);
-+	if (!handle) {
-+		rtw89_debug(rtwdev, RTW89_DBG_ACPI, "acpi dsm no handle\n");
-+		return -ENODEV;
-+	}
-+
-+	obj = acpi_evaluate_dsm(handle, &rtw89_guid, 0, func, NULL);
- 	if (!obj) {
- 		rtw89_debug(rtwdev, RTW89_DBG_ACPI,
- 			    "acpi dsm fail to evaluate func: %d\n", func);
--- 
-2.56.0
+Keeping the partial frame in q->rx_head is nicer, and it lets the slots
+of a half-received frame be refilled early. Comments inline.
 
+> +	if (!nframes) {
+> +		nframes = FIELD_GET(NPU_RX_DMA_PKT_COUNT_MASK,
+> +				    desc[q->tail].info);
+> +		nframes = max_t(int, nframes, 1);
+> +	}
+
+PKT_COUNT is read before DONE of this slot, see my reply to 2/2. Once
+q->pending keeps the count across polls, a stale count of 1 would
+stick. On top of your patch, something like (not compiled):
+
+	if (!nframes) {
+		u32 ctrl = READ_ONCE(desc[q->tail].ctrl);
+
+		if (!q->queued || !FIELD_GET(NPU_RX_DMA_DESC_DONE_MASK, ctrl))
+			return -EBUSY;
+
+		/* PKT_COUNT is only valid once the first slot is complete */
+		dma_rmb();
+		nframes = FIELD_GET(NPU_RX_DMA_PKT_COUNT_MASK,
+				    desc[q->tail].info);
+		nframes = max_t(int, nframes, 1);
+	}
+
+> +	while (nframes > 0) {
+> +		struct mt76_queue_entry *e = &q->entry[q->tail];
+>  		int len = FIELD_GET(NPU_RX_DMA_DESC_CUR_LEN_MASK,
+> -				    desc[index].ctrl);
+> +				    desc[q->tail].ctrl);
+[...]
+> +		if (!FIELD_GET(NPU_RX_DMA_DESC_DONE_MASK, desc[q->tail].ctrl))
+> +			return -EBUSY;
+
+Three things here:
+
+- ctrl is loaded twice, so len can come from before the slot was
+  completed.
+- Nothing stops the loop at q->queued == 0, so it can take the stale
+  slot at q->head, whose buffer already belongs to an skb, and
+  q->queued goes negative.
+- q->pending is never set, so after -EBUSY the next poll reads
+  PKT_COUNT from desc[q->tail].info, which is now a later slot of the
+  same frame.
+
+So:
+
+		u32 ctrl = READ_ONCE(desc[q->tail].ctrl);
+		int len;
+
+		if (!q->queued || !FIELD_GET(NPU_RX_DMA_DESC_DONE_MASK, ctrl)) {
+			q->pending = nframes;
+			return -EBUSY;
+		}
+
+		dma_rmb();
+		len = FIELD_GET(NPU_RX_DMA_DESC_CUR_LEN_MASK, ctrl);
+
+[...]
+>  	Q_WRITE(q, dma_idx, q->tail);
+
+This still hands the slots back before mt76_npu_fill_rx_queue() refills
+them, so the oops is still there. It needs to stay at the end of the
+refill as in my patch. With your structure that also lets a frame that
+runs into the free slot finish, since the NPU gets new slots after
+every poll.
+
+I can fold this into a v2, test it on the W1700K for 60 minutes under
+rx load, this time with a counter for misframed frames, and send it
+with the results. Since the structure is yours, I'd add
+Co-developed-by and your Signed-off-by if that's fine with you. If
+you'd rather post it yourself, I'll test yours instead.
+
+Thanks,
+Florian
