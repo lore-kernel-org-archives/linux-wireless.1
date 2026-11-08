@@ -1,62 +1,91 @@
-Authentication-Results: smtp.subspace.kernel.org; arc=none smtp.remote-ip=91.216.248.207
+Authentication-Results: smtp.subspace.kernel.org; arc=none smtp.remote-ip=209.85.215.172
 ARC-Seal: i=1; d=subspace.kernel.org; s=arc20261015; a=rsa-sha256; cv=none;
-	t=1794162012;
-	b=R+xMvyxAXx9VC+asLzN8dMlRx29uMfF93Q1XtAs+IQkwgMhKr5Ch1RmyBGPG5XzDF7sA
-	 YrKiysGNStIdfsgbeuJCms1dppOVzV/icuTbLYGWeJDAsB5T+gGhiSkpYDwWU90gthdYb
-	 Z2tIeK+SEo4AvsW6C/ai8pe9SGFVyNLL0kJGE5q7h6PeDN/cQPfzvjMLZSpuxQ3E5HjoW
-	 NCPMBOgBYeoaoGGn+N7L+xUsjbHbzRRexIOQDUKHuqQtA/VmSPbnBxVXhnkoFCsr/a5He
-	 pLlv95Maqhr8m7oh0uMnXRlLKy0Es63i8x/LEnv5UAs5PGqeaoAs95tLk/CcNedMrJQ==
+	t=1794162542;
+	b=nLXvq32B3vFpkQifp0k3/bxuTRuqfUY0cugJ7V/4QKopu5HrF4SU/AuZEnaMez27d5n9
+	 UCVDh4xCa4x9F4N4NRFbLnbSbuY48b4ZosvVAyXNA1r+gVuCry9R3l8kCxapJIw+LMEMo
+	 UoYJvETjKlVCaaH0SjpSy0P1UkJwOmvPz1knUNE1dI50BNHR1VxKN2Hmuvj0bk9t8O1Ps
+	 ICl7BKEfZzJHE/hwHqukOESXVuCH/1ymOGaf5s4ur4vZR1aeNAascwCiZrPR46E2V+5fv
+	 6tlPZ4AwV8Cn3uUk5+EpSJW4XHbs5GGRhE+dPFopp4wrENq83C/U1LicvDYpKvZr0pA==
 ARC-Message-Signature: i=1; d=subspace.kernel.org; s=arc20261015;
-	a=rsa-sha256; c=relaxed/relaxed; t=1794162012;
-	h=DMARC-Filter:Date:X-Lima-ML-UUID:DKIM-Signature:From:To:Cc:Subject:
-	 Message-ID:In-Reply-To:References:Organization:X-Mailer:MIME-Version:
-	 Content-Type:Content-Transfer-Encoding;
-	bh=I1oaPtMYd1CpuNQ+9RV9pHUSZcdWTLTk3KLAz0I7Ch0=;
-	b=Icd6y0A+B7F4nhIiJKfE7OxMiNZz7NBkTt/Vb50pS1Pby3tnDlCV4AQ1FewBICQDGKuy
-	 RW7TDbjBGBvJjm+pQonagpCjVdsj4LjZs/4oZf+JWXRhagpm/npHoxoh+xGHvoR1s4gPh
-	 WX2DqjNqOVRC0UnRLXX/tFlJzcQ9//oUh187GDr1c31gJukjS8y5z0YqLtWlEXFK4T34/
-	 qb2DRiFaRnwkpo7xljJpTpVxSAXMKq6J+m0b4fOXUn0JqtzlY+rMN4jHKvOjLZqs27gS2
-	 1nqUyaZ9PLsBv0NQEnf6JFCF7tBnNkuWz8BPbJv/MRwLjMkdHnTvfzGRGfIfPY/0krQ==
+	a=rsa-sha256; c=relaxed/relaxed; t=1794162542;
+	h=DMARC-Filter:Received:DKIM-Signature:X-Google-DKIM-Signature:
+	 X-Gm-Message-State:X-Gm-Gg:X-Received:Received:From:To:Cc:Subject:
+	 Date:Message-ID:X-Mailer:MIME-Version:Content-Transfer-Encoding;
+	bh=aE8fsj1NIaKRva+QOmPHFRmITtv9VE51RjmDOs+p9WA=;
+	b=zBUKzxuwUuMawOzy6zafQa4oERyUfDZv72rdMD3DgjJfLsYb0EWvr9XDDavU+Rqr8l9c
+	 D7Kj/EX4Z8vdmP8Wn1bw2YVBYp+YswNKHz1Ogw8CcA7NMOWhIuoUMpb6MaKGxpewXRAuZ
+	 4tqhWEGETr7/2FHUIjzbRXvD4KWl+avAJblQX7kef/2d+zVEyzRykHPejykqf/AxojARU
+	 EPBhYayqAn4YbD/60TWxwDGkfxn0D4dY0t82fVoMbgurj0dQGbTlgaKseK5Wf/G0YJToS
+	 kkqpauZVH4S+uFTkmGdjdRFbb59vwqpqQ0AvGO3lFInSj2hS9PxMAPFUVymqZRLFw8Q==
 ARC-Authentication-Results: i=1; smtp.subspace.kernel.org; 
-	dmarc=none header.from=deq.rocks;
-	spf=none smtp.mailfrom=deq.rocks;
-	dkim=pass header.d=deq.rocks header.i=@deq.rocks header.a=rsa-sha256 header.s=securedbylima-20251205 header.b=hGCaEe0V;
-	arc=none smtp.remote-ip=91.216.248.207
-Received: from mx5.mail-out.lima-city.de (mx5.mail-out.lima-city.de [91.216.248.207])
-	(using TLSv1.3 with cipher TLS_AES_256_GCM_SHA384 (256/256 bits)
+	dmarc=pass header.from=gmail.com;
+	spf=pass smtp.mailfrom=gmail.com;
+	dkim=pass header.d=gmail.com header.i=@gmail.com header.a=rsa-sha256 header.s=20260707 header.b="j3B/Ou3N";
+	arc=none smtp.remote-ip=209.85.215.172
+Received: from mail-pg1-f172.google.com (mail-pg1-f172.google.com [209.85.215.172])
+	(using TLSv1.3 with cipher TLS_AES_128_GCM_SHA256 (128/128 bits)
 	 key-exchange X25519 server-signature ECDSA (prime256v1) server-digest SHA256)
 	(No client certificate requested)
-	by smtp.subspace.kernel.org (Postfix) with ESMTPS id DD430606A31C;
-	Sun,  8 Nov 2026 18:20:10 +0000 (UTC)
-DMARC-Filter: OpenDMARC Filter v1.4.2 smtp.subspace.kernel.org DD430606A31C
-Authentication-Results: smtp.subspace.kernel.org; dmarc=none (p=none dis=none) header.from=deq.rocks
-Authentication-Results: smtp.subspace.kernel.org; spf=none smtp.mailfrom=deq.rocks
+	by smtp.subspace.kernel.org (Postfix) with ESMTPS id 2806E606A31C
+	for <linux-wireless@vger.kernel.org>; Sun,  8 Nov 2026 18:29:01 +0000 (UTC)
+DMARC-Filter: OpenDMARC Filter v1.4.2 smtp.subspace.kernel.org 2806E606A31C
+Authentication-Results: smtp.subspace.kernel.org; dmarc=pass (p=none dis=none) header.from=gmail.com
+Authentication-Results: smtp.subspace.kernel.org; spf=pass smtp.mailfrom=gmail.com
 Authentication-Results: smtp.subspace.kernel.org;
-	dkim=pass (2048-bit key) header.d=deq.rocks header.i=@deq.rocks header.a=rsa-sha256 header.s=securedbylima-20251205 header.b=hGCaEe0V
-Date: Sun, 8 Nov 2026 19:20:00 +0100
-X-Lima-ML-UUID: 31c93440-a169-4383-9b5a-bcdeee7649e1
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=deq.rocks;
-	s=securedbylima-20251205; t=1794162002;
-	bh=I1oaPtMYd1CpuNQ+9RV9pHUSZcdWTLTk3KLAz0I7Ch0=;
-	h=Date:From:To:Cc:Subject:In-Reply-To:References:From;
-	b=hGCaEe0VjzEMBXn7xs/UKaj1ZXlPeFL9R85SWBzQWXZEqnlcmPlLUECB3jMrK0aGq
-	 g3SiWWoonspu2pemV+70VeFWpbKD09snI2l6LkXyLgLahuj8CL6WrTpUDto+JaARYl
-	 23LvzYg/g/zHwfDFXCdLo84bji7SIn8lePgfyX4IKXEKxFwWKhFILeCq3kLVPtEY06
-	 ZDR6cMkOkLgbFJOIOk4/SKqd7+ud2avndL/4/KDSRRa4TIa/4S+oiDQlQ7aBsurehU
-	 eHT51WlWEknjeKNCQD2v5vcfkHvJ97qfabt9alAcZu9ju8Ex31VJTLm1k56ZBjVVXI
-	 xKXYZfBjPEOuA==
-From: =?UTF-8?B?QW5kcsOp?= Eikmeyer <dev@deq.rocks>
-To: Arend van Spriel <arend.vanspriel@broadcom.com>
-Cc: Johannes Berg <johannes@sipsolutions.net>,
- linux-wireless@vger.kernel.org, brcm80211@lists.linux.dev,
- brcm80211-dev-list.pdl@broadcom.com, linux-kernel@vger.kernel.org
-Subject: Re: [PATCH 0/7] wifi: brcmfmac: AWDL for AirDrop on Apple T2 Macs
-Message-ID: <20261108192000.2a1d416e@kait2en-mbp15-1>
-In-Reply-To: <c93fa1b2-9d05-4536-9025-6c4d1e6e6b5f@broadcom.com>
-References: <20261104151547.70333-1-dev@deq.rocks>
-	<c93fa1b2-9d05-4536-9025-6c4d1e6e6b5f@broadcom.com>
-Organization: KaiT2en
-X-Mailer: Claws Mail 4.4.0 (GTK 3.24.52; x86_64-redhat-linux-gnu)
+	dkim=pass (2048-bit key) header.d=gmail.com header.i=@gmail.com header.a=rsa-sha256 header.s=20260707 header.b=j3B/Ou3N
+Received: by mail-pg1-f172.google.com with SMTP id 41be03b00d2f7-cd69954c755so111756a12.3
+        for <linux-wireless@vger.kernel.org>; Sun, 08 Nov 2026 10:29:01 -0800 (PST)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+        d=gmail.com; s=20260707; t=1794162541; x=1794767341; darn=vger.kernel.org;
+        h=content-transfer-encoding:mime-version:message-id:date:subject:cc
+         :to:from:from:to:cc:subject:date:message-id:reply-to:content-type;
+        bh=aE8fsj1NIaKRva+QOmPHFRmITtv9VE51RjmDOs+p9WA=;
+        b=j3B/Ou3NGC3oovPaAENOTC40CRU9zYt1RQilGxXqeMdF2vcZeZqdARzdvf3wrjYqLn
+         1k9QSImG0K4GqKkxiGUmM5zrIFEclrqCpuKkLCjypvktUTLjSdYPPupirHZ9URvc1uLx
+         qSWqJxEEH4/CHkCi04YwBmMW1JcbrqnHUWoJ8wy/G0gSaF27hEeUEdiQCMs15B/BgTfo
+         3lmzKbJpqPKftvYXI/gCbo/ekYrN6fMQ+hhAIQg/0QOidXmOU4KpbJ9E6npG2d+7H5Ei
+         m/T7K1TMTSbSBiNVABX0B+bby35Qrtc45UfZJvCEG5Pbo57JL4PxmulpsoRCCMKxTXfV
+         anrg==
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+        d=1e100.net; s=20260707; t=1794162541; x=1794767341;
+        h=content-transfer-encoding:mime-version:message-id:date:subject:cc
+         :to:from:x-gm-gg:x-gm-message-state:from:to:cc:subject:date
+         :message-id:reply-to:content-type;
+        bh=aE8fsj1NIaKRva+QOmPHFRmITtv9VE51RjmDOs+p9WA=;
+        b=b2uflzPslA5+izc11pfvRcaaLySp85mP+G9xhB3xnevrZ8SvNj/LyMQ8cd/vApRWck
+         MarL80BWlnggO9PXcTPgTPAo1O4bEVqiTarPynv4wsABYJB80Lti+L+sInI0pmxW25AZ
+         v4UWJTjpeDb3GUTPUoCg5ATOZhmQMEBsSfT54io0bIAGZihAp6Gvng+5zx0WZRtmJ0Fz
+         Fz/VEDH8C/lHJizLr1hczIyiCfnW4kJ6bLQHMZ5aVNPVn5a1ep+VVqN7seteWySqYwKe
+         AmYPSYqBs6ufetbHJsgJw282tJwpQKlMj/yNL2FBLI+Mgos2WomD5dyR/9dytLohypGn
+         Z7iw==
+X-Gm-Message-State: APuU4Z9YNGwo0v//A8wQeJnz3GI2m1CDDPPU0QdPGvTLirlKUitrkW7j
+	tORhOdwm8Nt9mZGAaTRPYaWeyY/msFIoLjNfQb9xkAwDcsFy/hY2iwJ5B6AApAzR
+X-Gm-Gg: AYBFou0w7ulctleUHh2dh7BHDdnh4tcHnT8V6rO8rs3KgPK0zHb7VMt5KYPifkbT0/L
+	gomKs2Yp7vYzx8OwQCIhAxdXQypxn7kKVhYoFAsfp6LlLam7xLIdzjb+G3o/NKc/Qv+G4KE5ePu
+	APzLmTQLCOUuToBSw09XL2rNsA9LqmBSCMJ3GYXHojz6K37FPw3AjL38Xxqb2FSehmVY66wXwta
+	F5toWLvzb4v4Ko6vCdzonqgTKQD66GPe5FInliFZXXCX0t05d1v/icF59ix0U3f5tbv9qvAOWU0
+	DovVPoTTR7Kweg4iPuGIrAYlr2k/A/rftwbvfQ47lFNGOtD1m/SWVdIZpK8cTvyTQqOxAgnG7oW
+	8ZFotwCDI99hR5DF3XdFLfWzsZfF0syQ6LlALkt1YCZuIVUPanOhG27WUDVL07dAPSvjFJrTBQV
+	1rGtPKQJYOzRaeB9tCGjsd0P73YannQLSo/WCJx7/mRPDtOCw6k0/NlAF+1CuWr3coQhk10vcge
+	AdkQoZ6UJdsI6hlmazEfpcMbNHOSwR1lWi+y7bFwJdXnKmMgU32L5CAZHyfsicB8EVkVkpJBvlM
+	DNmKPAPlaYdxKJQEtfPyEw6hThwlapD0OV76qUbClV9mCZumfeUHT+DRoZTg81Nn+7nfTV59TbZ
+	OM/SxpxXhr1YtiWj3kRjnfHAyxWYYRQ==
+X-Received: by 2002:a05:6a21:3d83:b0:3e2:8f64:e4ff with SMTP id adf61e73a8af0-3eed3c67fb9mr1458487637.31.1794162541173;
+        Sun, 08 Nov 2026 10:29:01 -0800 (PST)
+Received: from localhost.localdomain ([2401:f40:1397:9:5496:ab84:534b:ad67])
+        by smtp.gmail.com with ESMTPSA id d2e1a72fcca58-8b6498209a5sm692938b3a.36.2026.11.08.10.28.58
+        (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
+        Sun, 08 Nov 2026 10:29:00 -0800 (PST)
+From: Zeshan Ahmed Nobin <zeshanahmednobin@gmail.com>
+To: linux-wireless@vger.kernel.org
+Cc: linux-kernel@vger.kernel.org,
+	Ping-Ke Shih <pkshih@realtek.com>,
+	Luka Gejak <luka.gejak@linux.dev>,
+	Kalle Valo <kvalo@kernel.org>
+Subject: [PATCH RESEND rtw-next v2 0/2] wifi: rtw88: 8822c: check register values in cck_pd_set
+Date: Mon,  9 Nov 2026 00:28:35 +0600
+Message-ID: <20261108182837.682661-1-zeshanahmednobin@gmail.com>
+X-Mailer: git-send-email 2.43.0
 X-Mailing-List: linux-wireless@vger.kernel.org
 List-Id: <linux-wireless.vger.kernel.org>
 List-Post: <mailto:linux-wireless@vger.kernel.org>
@@ -66,69 +95,37 @@ List-Unsubscribe: <mailto:linux-wireless+unsubscribe@vger.kernel.org>
 List-Owner: <mailto:linux-wireless+owner@vger.kernel.org>
 Precedence: list
 MIME-Version: 1.0
-Content-Type: text/plain; charset=US-ASCII
-Content-Transfer-Encoding: 7bit
+Content-Transfer-Encoding: 8bit
 
-On Sun, 8 Nov 2026 16:41:37 +0100
-Arend van Spriel <arend.vanspriel@broadcom.com> wrote:
+rtw8822c_phy_cck_pd_set() indexes its tables with two values read from
+the chip, bw and nrx, without checking them first. When the chip stops
+responding, both can be out of range. Patch 1 handles bw, which goes out
+of range when an RTL8822CE drops off the PCIe bus. Patch 2 handles nrx,
+which Luka Gejak found while reviewing v1.
 
-> I really have no idea how to deal with this series. AWDL is not part
-> of the IEEE 802.11 so I can imagine the kernel wireless subsystem
-> does not care to support this. From driver perspective I am not keen
-> on supporting this upstream either. My limited understanding of AWDL
-> was that it was Apple's variant of TDLS (802.11z).
->
-> So what does AWDL provide to user-space and could the same be
-> accomplished by TDLS?
+v2:
+- Patch 1: move the test data below the --- line (Luka)
+- Patch 1: use the preferred multi-line comment style (Luka)
+- Patch 1: drop the nrx check, which can never be true (Luka)
+- Patch 2: new
 
-Hi Arend,
+v1: https://lore.kernel.org/linux-wireless/20261105113415.73184-1-zeshanahmednobin@gmail.com/
 
-I think I can be direct here. My submission is a long shot. If I were in
-your place I wouldn't be keen on it either...
+AI assistance: I asked an AI coding assistant to help find out why the
+RTL8822CE in my laptop keeps failing. It analyzed the kernel logs and
+found the bw bug (Luka found the nrx one), wrote both fixes, the
+debug-only changes used for testing, and the messages. I reviewed
+everything and ran the tests described in each patch before sending.
 
-But! AirDrop is the feature people miss most when they move from macOS
-to Linux. Also you may have noticed Google reversed AirDrop in early
-2026 and newer Pixel and Samsung devices ship with it. So there is a
-huge demand. Especially for former macOS users. Those often have a
-complete Airdrop "ecosystem" at home. Personally, I don't use it. But
-that is what I was told by our community members.
+Zeshan Ahmed Nobin (2):
+  wifi: rtw88: 8822c: fix out-of-bounds access in cck_pd_set
+  wifi: rtw88: 8822c: ignore nrx values without CCK PD registers
 
-However, on our Macs the firmware already implements AWDL, the driver is
-the only missing piece. And it will work on T2 and Apple Silicon Macs
-alike. Maybe even on some pre-T2 Macs. So we would give a huge ammount
-of users big grins on their faces.
-
---
-
-Re TDLS: to my understanding, TDLS needs both peers associated to the
-same AP. AWDL needs no AP at all. The peers agree on availability
-windows and a channel schedule among themselves, so two devices
-exchange data while they are on different networks or on no network at
-all. Like on a train or at a customer site. That is what AirDrop
-depends on, and it is why it can't be built on TDLS.
-
-IIRC the closest standard is Wi-Fi Aware (NAN), not TDLS. But... to be
-perfectly honest with you. If we can't get awdl into the kernel, I am
-not keen on changing it to NAN. Then let one of those kernel modifying
-distros pick it up and let them do what they want.
-
-> From the explanation above it seems AWDL provides more knobs to
-> user-space, but not sure whether the awdl%d interface is merely a
-> control interface or actually passing data through it (patch 5
-> implies it does).
-
-It passes data. awdl%d is the data interface, AirDrop runs over IPv6
-link-local on it. The vendor commands only carry the AWDL action
-frames and the peer setup, the schedule itself runs in the firmware.
-
-> If my memory does not fail me then adding vendor commands is
-> generally pushed back.
-
-Agreed. They wont like it. Hence "long shot". But worth a try maybe.
-nl80211 has no AWDL interface type, which is why I went with vendor
-commands. If there is any interface you and Johannes would rather see,
-let me know.
+ drivers/net/wireless/realtek/rtw88/rtw8822c.c | 15 +++++++++++++++
+ 1 file changed, 15 insertions(+)
 
 
-Best,
-Andre
+base-commit: dc16902cad9c6b08df9395a510c7be44fbab545d
+-- 
+2.43.0
+
