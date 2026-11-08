@@ -1,73 +1,57 @@
-Authentication-Results: smtp.subspace.kernel.org; arc=none smtp.remote-ip=178.21.23.139
+Authentication-Results: smtp.subspace.kernel.org; arc=none smtp.remote-ip=109.224.244.123
 ARC-Seal: i=1; d=subspace.kernel.org; s=arc20261015; a=rsa-sha256; cv=none;
-	t=1794172909;
-	b=b3XvCF5OKUkom/X7eevvTxYpm/iLCenxxbBSv+4cwkB2AbDqSkqG7HW950LjcF8S0jBI
-	 nz/G2qoBPpW5Xo5HfdjMa229zt4WQxb4XmOD5paiNp6AHeO0pzwyAHCu3SwXPWCXYjUi9
-	 7ZiGfOxUwRHa3EdGFiHmCrAo4wtIQP/bbiUK+DQfrqLkASWxfpf6GvH7NGL2KF0dKAnMB
-	 Jk+33VdzRUWtOH08584wvyjvdY2h+dP5LguA9N+pSzm5fJbV9so3CuYGcvEtrooInz/nH
-	 al/hD2RIiKT5cNXk99bBFmamqfnnZB/E37BC1Vu3Xq+DHs7/iSQZsiqpUHbLELThe1g==
+	t=1794174919;
+	b=Sgi5q2xEXdeiALhS3ODSTXevv183uvtxmoKYCvkxAndzdEh6kYF6bSa50Vk//ji55bpy
+	 Bisfa29XVnQBTDv4vZ2F5eLPckbYEMGsn75GIiveyplfeOQ8HTXCqx4HHSk/ks+5G8igk
+	 B8YhI5OjRxpfNAmYs5/EC6fEn++5eJ37uzOHhuq3lK0rVSQKMnnAeuw331MBOf/CcZyLH
+	 /C6hv7/td84wDjja7LUZuQ38r4xrQjTwaYYtB4k/GgwI9lqLR03VQ0ofC0IT0mAVH1bge
+	 kfYRHkLPf2gj06n3pqPofrqOoIEzaTSe/5UBnnmEPONvEOvPzXTpzQqKFj0bIbDsLuw==
 ARC-Message-Signature: i=1; d=subspace.kernel.org; s=arc20261015;
-	a=rsa-sha256; c=relaxed/relaxed; t=1794172909;
-	h=DMARC-Filter:Received:X-Virus-Scanned:Received:DKIM-Signature:From:
-	 To:Cc:Subject:Date:Message-ID:In-Reply-To:References:MIME-Version:
+	a=rsa-sha256; c=relaxed/relaxed; t=1794174919;
+	h=DMARC-Filter:DKIM-Signature:Date:To:From:Cc:Subject:Message-ID:
+	 Feedback-ID:X-Pm-Message-ID:MIME-Version:Content-Type:
 	 Content-Transfer-Encoding;
-	bh=Dy1FrLRP5sHlIb/uR6GwETHa25cqzjt6QkibR1Iv5QM=;
-	b=DCOLX5rLMaRbnei1fAfkdWQ8y+A1O1jRVJ8cVXlbmvnGIXqQLF6QndF42chuYYz6Sr/g
-	 kp3DotLN/ScuWNfaEXsQ89/S+h4aHftM+lQG6e8DYL67nHZ+KpJS0Vl0e5tjYs2iDcP2J
-	 lxFJGcL6wVRQ356PSw1EuLJalSmkm+bK0OK6w5uQTRrxO9i40fDk8BhO6TYMQ3eiv8q9s
-	 cQMJSZSg3kh+8+jhyR6NDjBvXlJUeGzGs2EEg/UFiNI3eybMo2d4AHCZgPxbFQOS/Gvlu
-	 8/LuarqeuWcTaC2Ht/8XH/OH//e7pZNta5Em77le703T62Qm8jN7lW5hyEeDMMJnsOQ==
+	bh=p/3wfQGZ3MYS3ucEGRSJg5ubjFtczwohZ7bLXkPBJnw=;
+	b=lxHlrdyZhvIpmqBZIKWg9wgJPnIQ/JemVMs0O2XwSkTj/gps14rR3sScBfSjV0OMHBGz
+	 spe2t2XxVgxWNNgDAiq7LnFNowzmu1bY/meTuQPVL4KCGhMlUAlshs44xqZHjijb7tzpU
+	 UZ6udk8dvX9Gq0VX984XvMYaQiVmHuC+xbEuSUKleUYAl7pOQ3jqotZIiBcVyGLe6v5D3
+	 dMTrEZs5AfkdGZQohrFvEy1V3ZYpFYdwqat+KE7sokhZOAl6ofIlZhFjNevNymQyYU/LK
+	 fGOp7hCuK74DGnvx3d0OEsxwW+sP/MHrr0ZwlOHmsDPebXkAnM+aVudM+3JGGGnwwjA==
 ARC-Authentication-Results: i=1; smtp.subspace.kernel.org; 
-	dmarc=pass header.from=disroot.org;
-	spf=pass smtp.mailfrom=disroot.org;
-	dkim=pass header.d=disroot.org header.i=@disroot.org header.a=rsa-sha256 header.s=mail header.b=OhfDEB0y;
-	arc=none smtp.remote-ip=178.21.23.139
-Received: from layka.disroot.org (layka.disroot.org [178.21.23.139])
+	dmarc=pass header.from=proton.me;
+	spf=pass smtp.mailfrom=proton.me;
+	dkim=pass header.d=proton.me header.i=@proton.me header.a=rsa-sha256 header.s=protonmail2 header.b="D+mz//4P";
+	arc=none smtp.remote-ip=109.224.244.123
+Received: from mail-244123.protonmail.ch (mail-244123.protonmail.ch [109.224.244.123])
 	(using TLSv1.3 with cipher TLS_AES_256_GCM_SHA384 (256/256 bits)
-	 key-exchange X25519 server-signature ECDSA (prime256v1))
+	 key-exchange X25519 server-signature ECDSA (prime256v1) server-digest SHA256)
 	(No client certificate requested)
-	by smtp.subspace.kernel.org (Postfix) with ESMTPS id 8441A606A31C;
-	Sun,  8 Nov 2026 21:21:48 +0000 (UTC)
-DMARC-Filter: OpenDMARC Filter v1.4.2 smtp.subspace.kernel.org 8441A606A31C
-Authentication-Results: smtp.subspace.kernel.org; dmarc=pass (p=reject dis=none) header.from=disroot.org
-Authentication-Results: smtp.subspace.kernel.org; spf=pass smtp.mailfrom=disroot.org
+	by smtp.subspace.kernel.org (Postfix) with ESMTPS id 9C34D606A321
+	for <linux-wireless@vger.kernel.org>; Sun,  8 Nov 2026 21:55:18 +0000 (UTC)
+DMARC-Filter: OpenDMARC Filter v1.4.2 smtp.subspace.kernel.org 9C34D606A321
+Authentication-Results: smtp.subspace.kernel.org; dmarc=pass (p=quarantine dis=none) header.from=proton.me
+Authentication-Results: smtp.subspace.kernel.org; spf=pass smtp.mailfrom=proton.me
 Authentication-Results: smtp.subspace.kernel.org;
-	dkim=pass (2048-bit key) header.d=disroot.org header.i=@disroot.org header.a=rsa-sha256 header.s=mail header.b=OhfDEB0y
-Received: from mail01.layka.lan (localhost [127.0.0.1])
-	by disroot.org (Postfix) with ESMTP id 228CA80792;
-	Sun, 08 Nov 2026 22:21:46 +0100 (CET)
-X-Virus-Scanned: SPAM Filter at disroot.org
-Received: from layka.disroot.org ([127.0.0.1])
- by localhost (disroot.org [127.0.0.1]) (amavis, port 10024) with ESMTP
- id XMlTVqmvejJs; Sun,  8 Nov 2026 22:21:45 +0100 (CET)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=disroot.org; s=mail;
-	t=1794172905; bh=Dy1FrLRP5sHlIb/uR6GwETHa25cqzjt6QkibR1Iv5QM=;
-	h=From:To:Cc:Subject:Date:In-Reply-To:References;
-	b=OhfDEB0yUJDK5+n7O16lNXc668YG5pqs+r5A/f1JNDqBD4UmQbrIN06xKVTtQ6rn8
-	 HylnYr2PetuxHS2wlDNJvhvMHmMpTwUV0jrtUslPItzGLSPcr9AAqeS3PglYwrFGd5
-	 GepyeDYwir+ttnEqPkveKenJ6dNBC+OxGT2kYqx7dOWuc9Rgee/LQYs1NjRj6okkjL
-	 LcA0wF94j39WrVqruzyuyMO0V1u/YI4ea39G5IUTrWNQ1q/grZ6PUCks/eab52oIw9
-	 tkMP3ZfdgAhpwYRNHQ9ITQYwwLaRDhicMPZEqMBX3yfbUH0N35Dkl7cLCnA00bevBF
-	 L7fDktzz6NKWA==
-From: Florian Maurer <fmaurer@disroot.org>
-To: Lorenzo Bianconi <lorenzo@kernel.org>
-Cc: Florian Maurer <fmaurer@disroot.org>,
-	Felix Fietkau <nbd@nbd.name>,
-	Ryder Lee <ryder.lee@mediatek.com>,
-	Shayne Chen <shayne.chen@mediatek.com>,
-	Sean Wang <sean.wang@mediatek.com>,
-	Matthias Brugger <matthias.bgg@gmail.com>,
-	AngeloGioacchino Del Regno <angelogioacchino.delregno@collabora.com>,
-	linux-wireless@vger.kernel.org,
-	linux-kernel@vger.kernel.org,
-	linux-arm-kernel@lists.infradead.org,
-	linux-mediatek@lists.infradead.org,
-	stable@vger.kernel.org
-Subject: Re: [PATCH wireless 2/2] wifi: mt76: npu: read the rx slot count after the first slot is complete
-Date: Sun,  8 Nov 2026 21:21:29 +0000
-Message-ID: <20261108212130.3028297-1-fmaurer@disroot.org>
-In-Reply-To: <au3jnOD5ZOJR0mvb@lore-desk>
-References: <cover.1793927986.git.fmaurer@disroot.org> <653d93b3c35975cd13dd6b33d76ea6517b55be91.1793927986.git.fmaurer@disroot.org> <au3jnOD5ZOJR0mvb@lore-desk>
+	dkim=pass (2048-bit key, unprotected) header.d=proton.me header.i=@proton.me header.a=rsa-sha256 header.s=protonmail2 header.b=D+mz//4P
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=proton.me;
+	s=protonmail2; t=1794174916; x=1794434116;
+	bh=p/3wfQGZ3MYS3ucEGRSJg5ubjFtczwohZ7bLXkPBJnw=;
+	h=Date:To:From:Cc:Subject:Message-ID:Feedback-ID:From:To:Cc:Date:
+	 Subject:Reply-To:Feedback-ID:Message-ID:BIMI-Selector;
+	b=D+mz//4Poc2sfKlt23LsS3GoLETAQcHpK6Zh/1Rrp3xRAckR+PO/MLmnm/mFj9gFZ
+	 8HmI+4Cgl/gEWKViqySvdXOUDjxE4Ozaer4fYHxsMTLUOgJss3pUBNglGCjbyI6Nin
+	 YE2zDCFzXtkHgE/2iddUQ8pDdnxW1WV/a4lRiKraKqvu+dmKU03kX2qceQFfz2eB2T
+	 2wu3tLsrwb6YX/Vo6OLGl/EmdkU6b45EwKzEEECvESvfvXU7TH6qVCzCvAkFLju9b6
+	 J8dKqxqzlHvHKgzDgqNhVqt87g1Y3+cv3Vl7QxtVf1fwUT+sjM9xT+W17SOg6jGXVV
+	 /zF/+SSP6AJOQ==
+Date: Sun, 08 Nov 2026 21:55:13 +0000
+To: "johannes@sipsolutions.net" <johannes@sipsolutions.net>
+From: Noah Weinberger <NoahWeinberger2003@proton.me>
+Cc: "linux-wireless@vger.kernel.org" <linux-wireless@vger.kernel.org>, "netdev@vger.kernel.org" <netdev@vger.kernel.org>, "linux-kernel@vger.kernel.org" <linux-kernel@vger.kernel.org>, "security@kernel.org" <security@kernel.org>
+Subject: [PATCH] wifi: mac80211: use frame link_id when adjusting link_sta on reorder release
+Message-ID: <Sq80dyNRnQWE5H_yZYIwxaQiwgvIrIlET6kND66_K0UpnKQZruHroWDq6hlYKDM0y9e2vXW2UBlBmnjw3bCLKk1Acrp7F49_jk883tbCqxk=@proton.me>
+Feedback-ID: 186545857:user:proton
+X-Pm-Message-ID: bb8ae6812a85f3b79d59340257cc7d96353ef54a
 X-Mailing-List: linux-wireless@vger.kernel.org
 List-Id: <linux-wireless.vger.kernel.org>
 List-Post: <mailto:linux-wireless@vger.kernel.org>
@@ -77,35 +61,71 @@ List-Unsubscribe: <mailto:linux-wireless+unsubscribe@vger.kernel.org>
 List-Owner: <mailto:linux-wireless+owner@vger.kernel.org>
 Precedence: list
 MIME-Version: 1.0
-Content-Transfer-Encoding: 8bit
+Content-Type: text/plain; charset=utf-8
+Content-Transfer-Encoding: quoted-printable
 
-On Fri, Nov 06, 2026 at 03:26:36PM +0100, Lorenzo Bianconi wrote:
-> Relying on the patch I shared for 1/2, I guess this is no more a problem since
-> we will just delay the skb allocation. Agree or am I missing something?
+Hello,
 
-I think the race is still there. It is in the order of the two
-descriptor reads, not in the skb allocation: your version still reads
-PKT_COUNT from desc[q->tail].info first and checks DONE of that slot
-afterwards. If the NPU completes the slot between the two reads, the
-count is the 0 left by the memset in the refill, max_t() turns it into
-1, and the DONE check then passes. A two-slot frame is delivered as one
-slot, and its second slot is taken as the start of the next frame.
+In ieee80211_rx_handlers(), when frames are released from the BA reorder
+buffer on timeout, rx->link_sta is re-fetched using the *previous*
+rx->link_id instead of the frame's own status->link_id. For a legacy
+(non-MLO) client on an MLO access point,
+ieee80211_release_reorder_timeout() passes link_id =3D -1 and
+ieee80211_rx_data_set_sta() never updates rx->link_id, so the adjust
+block evaluates rcu_dereference(rx->sta->link[-1]).
 
-That matches what I saw on the W1700K: with patch 1 alone, 2-4 bogus
-tx-free events per 30 minutes, each 2792 bytes over two slots
-(1000 + 1792), i.e. the last slot of one frame plus the first slot of
-the next. With patch 2, the same debug counter saw none in 60 minutes.
+link[-1] aliases deflink.pub, the last member of the struct embedded
+directly before link[] in struct sta_info, which is always non-NULL - so
+the existing NULL fallback cannot fire and rx->link_sta becomes a
+struct ieee80211_link_sta * that the RX handlers then treat as a
+struct link_sta_info *.
 
-It gets worse once q->pending keeps the count across polls, as long as
-the count is still read before DONE: a poll nearly always ends on a
-first slot that is not done yet, so the frame that starts the next poll
-would usually be stored with a count of 1. Checking DONE of the first
-slot, then dma_rmb(), then reading PKT_COUNT avoids both. I sketched
-it in my reply to 1/2:
+ieee80211_rx_h_sta_process() subsequently writes statistics through that
+type-confused pointer (a fragments counter, a u64 byte counter fed with
+the attacker-controlled frame length, signal EWMAs and chain-signal
+values) at fixed offsets inside struct ieee80211_sta around deflink. The
+corruption is intra-object and therefore invisible to KASAN; depending
+on the exact layout it can reach the link[] pointer array, nmi,
+nan_sched and the driver-private area that follow deflink. At minimum
+this is a remotely triggered crash on MLO APs serving legacy clients;
+worse outcomes are layout-dependent.
 
-https://lore.kernel.org/linux-wireless/20261108205350.2956138-1-fmaurer@disroot.org/
+The one-word fix below uses the frame's own status->link_id, which also
+restores the intended behaviour for MLD peers interleaving frames from
+two links inside one reorder window (the current code fetches the link
+STA of the *previous* frame's link).
 
-and v2 would carry it as one patch on top of your structure.
+Affected version/commit: mainline fa4ad798f6f681031775266044ba1b0cf3c670bd =
+(v7.4-rc1, 2026-11-07), net/mac80211/rx.c:4243-4255 (adjust block), rx.c:43=
+75-4404 (ieee80211_rx_data_set_sta), rx.c:4410-4426 (ieee80211_release_reor=
+der_timeout).
+Introduced in the v7.4 merge window (regression vs v7.3).
 
-Thanks,
-Florian
+This was found during an assisted (AI-supported) static source review of
+mainline fa4ad798f6f681031775266044ba1b0cf3c670bd (v7.4-rc1, 2026-11-07); e=
+very code path cited below was re-verified by the
+reporter against that tree. The patch below has NOT been compiled and has
+NOT been runtime tested, and no reproducer was produced - the triggering
+conditions are described above instead. Please treat this as a report for
+verification rather than a battle-tested fix.
+
+Fixes: [fill in before sending - on a full clone run:
+  git log -S 'rcu_dereference(rx->sta->link[rx->link_id])' --oneline -- net=
+/mac80211/rx.c]
+Reported-by: [your name and email]
+---
+diff --git a/net/mac80211/rx.c b/net/mac80211/rx.c
+index ecee934..836d571 100644
+--- a/net/mac80211/rx.c
++++ b/net/mac80211/rx.c
+@@ -4244,7 +4244,7 @@ static void ieee80211_rx_handlers(struct ieee80211_rx=
+_data *rx,
+ =09=09    unlikely(rx->link_id !=3D status->link_id)) {
+ =09=09=09if (rx->sta) {
+ =09=09=09=09rx->link_sta =3D
+-=09=09=09=09=09rcu_dereference(rx->sta->link[rx->link_id]);
++=09=09=09=09=09rcu_dereference(rx->sta->link[status->link_id]);
+=20
+ =09=09=09=09/* Link got disabled, just use deflink */
+ =09=09=09=09if (!rx->link_sta)
+
