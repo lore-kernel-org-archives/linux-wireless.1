@@ -1,88 +1,72 @@
-Authentication-Results: smtp.subspace.kernel.org; arc=none smtp.remote-ip=119.15.109.137
+Authentication-Results: smtp.subspace.kernel.org; arc=none smtp.remote-ip=74.125.82.199
 ARC-Seal: i=1; d=subspace.kernel.org; s=arc20261015; a=rsa-sha256; cv=none;
-	t=1794114885;
-	b=blUc78kLdaWb7tcJifaUZ0dkgW0NksltIHO+cwNHPDWCuAyhZW3Clnd7LNKAmY/Xjfmf
-	 qlwajGW3Ca6d6i0lJ/idAQhF8NTpShju/G/73f09qth/XvxZJMYPk+oLYw+t395vV8cFW
-	 4zNqer8x3KSIlP+3jpcY8osJwIATgg+oCzi2c+iIK2LLflQH2Rgf3GpmYuQpuS/MiZm+K
-	 EHsUZQbWA1ImSzREU+poru/ESOT4SFMgxA7fwJ/2aVRkQMv0XnJwIARfJtR/QC6E+AWhq
-	 fidPdhq3aylX8t0EyUTbnE5gnrtBu9dQxEowg5EkeEV56pde6ERrabjz7f7WVOscSrg==
+	t=1794117620;
+	b=oA1ERg9DWDGiV8ng/y+WzW2CfZOYsD9J7nl7OW49iVm0Q8dn83vmfzeuZkL0Nc0Gq7nH
+	 M2wIeTUwV/Id0euy+OpiS5m3eo5UW/4mj/YHJF5gOKXd8iCEkB90pZ85JKY46eZNFn4+S
+	 9tn1fwg28h/P8Osz9WS18XvC2vV6nnwKLDK2TJaw0eDdzTXNQtkVIYZlbGKfAtOy5n1bG
+	 t8kFyVScjvMvT8u7f6DvIldxlbrU8SiuUNd4mheCe2G0MUnd0XlzzHcySsbx8bSIiCJBl
+	 8GvJfIvDyiDdu1bJRcqpexjO82RNID8/D8d9PPZJLMw5m3VDg+KTHjDj6llavDDAQ4w==
 ARC-Message-Signature: i=1; d=subspace.kernel.org; s=arc20261015;
-	a=rsa-sha256; c=relaxed/relaxed; t=1794114885;
-	h=DMARC-Filter:Received:DKIM-Signature:Message-ID:Subject:From:To:Date:
-	 In-Reply-To:References:Autocrypt:Content-Type:
-	 Content-Transfer-Encoding:User-Agent:MIME-Version;
-	bh=bTG+jYNk4qm7A/lZQ0O5Rx4J/W5a+BuKxCiBRuMchoI=;
-	b=R4yafmUIDK+R/8ZdXOPcEHM0oDUPC0RuVUpXa6gLZzLrgZzWkXgp8l3KZ00hd0187g6N
-	 att1kmlL/MdmpR54nVSjH98Tmr9KdlSZlLiI5B9cL5sHiTCY/gNYINuVyCChB73FU8GQb
-	 3FDGFtIq+M4X9rltTNjKtb5g5wA8P8vM042Kkg1zhBcMNsVlo3dQPzc/vGFhFx4c9qQbS
-	 cmdSgpytPWyTNlBkrdSdsiFDDxqLZ4WrbuEVPbYHCcPKVIp0a7D1v3I9biCjdiMxu9Upl
-	 lXsg8Ycb8Yf5xVc2T1hBRqoGYDJC4TugKAZr6v/LspthO8Dt+cfazF7kHYNiiEqynlw==
+	a=rsa-sha256; c=relaxed/relaxed; t=1794117620;
+	h=DMARC-Filter:Received:DKIM-Signature:X-Google-DKIM-Signature:
+	 X-Forwarded-Encrypted:X-Gm-Message-State:X-Received:Date:Mime-Version:
+	 X-Mailer:Message-ID:Subject:From:To:Cc:Content-Type;
+	bh=v2y1yaggoH6p1mGRTKD+i49Hl5+O8T2kFeVCtW/lYKQ=;
+	b=UxGp2xudaiWKYdgavZdqZmlKc/C4EgOw7q+sDF6PoUb/+md0sM7K1RhmMKsGQHbSYcxi
+	 bYnYzSZd6DG4ocXOGP+YDa/qLxeHl226jJ82ajgMB1/pZWEzkzzGEeRdvgoMv/N/4slBY
+	 3bm2mkvL696CdsHj/ust3jGsI01/0VhJrRmWUujBXTczeie5HLkb4PgGBNySMvYe4iO3P
+	 5xGmduoYbdHq7bMPLGzr3G1h5jfoE0z+Mjwivwh28RjY6qu5qzlC06RnszBdktC9brN0L
+	 zjUbwpbTEgRYeB8CytvD4RnsPtGUDzBkDquWrv6SfY6cxcDwTEeg4/Y8uzn5Rk2Gy8w==
 ARC-Authentication-Results: i=1; smtp.subspace.kernel.org; 
-	dmarc=pass header.from=d-silva.org;
-	spf=pass smtp.mailfrom=d-silva.org;
-	dkim=pass header.d=d-silva.org header.i=@d-silva.org header.a=rsa-sha256 header.s=2025a header.b=v8gQG94p;
-	arc=none smtp.remote-ip=119.15.109.137
-Received: from www.nmnhosting.com (watt.d-silva.org [119.15.109.137])
-	(using TLSv1.3 with cipher TLS_AES_256_GCM_SHA384 (256/256 bits)
+	dmarc=pass header.from=google.com;
+	spf=pass smtp.mailfrom=flex--almasrymina.bounces.google.com;
+	dkim=pass header.d=google.com header.i=@google.com header.a=rsa-sha256 header.s=20260707 header.b=JaedZWQS;
+	arc=none smtp.remote-ip=74.125.82.199
+Received: from mail-dy1-f199.google.com (mail-dy1-f199.google.com [74.125.82.199])
+	(using TLSv1.3 with cipher TLS_AES_128_GCM_SHA256 (128/128 bits)
 	 key-exchange X25519 server-signature ECDSA (prime256v1) server-digest SHA256)
 	(No client certificate requested)
-	by smtp.subspace.kernel.org (Postfix) with ESMTPS id 3C6FA606A31A
-	for <linux-wireless@vger.kernel.org>; Sun,  8 Nov 2026 05:14:43 +0000 (UTC)
-DMARC-Filter: OpenDMARC Filter v1.4.2 smtp.subspace.kernel.org 3C6FA606A31A
-Authentication-Results: smtp.subspace.kernel.org; dmarc=pass (p=reject dis=none) header.from=d-silva.org
-Authentication-Results: smtp.subspace.kernel.org; spf=pass smtp.mailfrom=d-silva.org
+	by smtp.subspace.kernel.org (Postfix) with ESMTPS id 9621D606A31A
+	for <linux-wireless@vger.kernel.org>; Sun,  8 Nov 2026 06:00:19 +0000 (UTC)
+DMARC-Filter: OpenDMARC Filter v1.4.2 smtp.subspace.kernel.org 9621D606A31A
+Authentication-Results: smtp.subspace.kernel.org; dmarc=pass (p=reject dis=none) header.from=google.com
+Authentication-Results: smtp.subspace.kernel.org; spf=pass smtp.mailfrom=flex--almasrymina.bounces.google.com
 Authentication-Results: smtp.subspace.kernel.org;
-	dkim=pass (2048-bit key, unprotected) header.d=d-silva.org header.i=@d-silva.org header.a=rsa-sha256 header.s=2025a header.b=v8gQG94p
-Received: from hawking.lan (ntp.lan [10.0.1.1])
-	by www.nmnhosting.com (Postfix) with ESMTPSA id 55A76401FC
-	for <linux-wireless@vger.kernel.org>; Sun,  8 Nov 2026 16:14:32 +1100 (AEDT)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=d-silva.org; s=2025a;
-	t=1794114872;
-	h=from:from:reply-to:subject:subject:date:date:message-id:message-id:
-	 to:to:cc:mime-version:mime-version:content-type:content-type:
-	 content-transfer-encoding:content-transfer-encoding:
-	 in-reply-to:in-reply-to:references:references:autocrypt:autocrypt;
-	bh=bTG+jYNk4qm7A/lZQ0O5Rx4J/W5a+BuKxCiBRuMchoI=;
-	b=v8gQG94pDrEge4N04kxw0iJBaV/KlZ1x+ywzZA/BiSQtxR6lpa+cilugpbzwBP3fblqj5p
-	4Z/21AvtwTI8JN8wCjBMTblAfUnRGdmOsS+ybHsqVPnEZSNnlww9MjzTtqINb6UqLhP5Dk
-	/mHTjZavZRH8MHqQHaBQ6yYxoRMTYFUhqLjJ6GZ+XPFXL81ikxLc6+mddwXGPyXsTPZoCO
-	veOzRlfN8SPb4fAPYgihc5okPa3b/bWkkncXi41lJU8scIX2NFUNbo2yBwzCmUfzjMP69E
-	VWCXSegh0Sb/lftd85n7jFEhgGXPcYz7JwZ0ULU9QryxJHoEPNjCb0IPATufWQ==
-Message-ID: <b1ef13e1514032032577c520d3c926ae26ccef0c.camel@d-silva.org>
-Subject: Re: [PATCH rtw-next v9 0/4] wifi: rtw88: sdio: Fix unhandled RX
- request interrupt storm
-From: Alastair D'Silva <alastair@d-silva.org>
-To: linux-wireless@vger.kernel.org
-Date: Sun, 08 Nov 2026 16:14:32 +1100
-In-Reply-To: <f2784538533947a38e9d03af7bc7fce8@realtek.com>
-References: <20261107035321.1210303-1-alastair@d-silva.org>
-	 <ab3dcde64bb90809ae10627803315d7385d6708e@linux.dev>
-	 <f2784538533947a38e9d03af7bc7fce8@realtek.com>
-Autocrypt: addr=alastair@d-silva.org; prefer-encrypt=mutual;
- keydata=mQINBGactvoBEADBFM2HqfQUUM4j40ZQPyYzmnM8S6zrycO0ipDDPMs7nZMzyzGzOdqfS
- VB/tuYvZOOKVWzJuWJ5aT/YyHx54r3L+D5hTkEG0sXPVJky3yTS9sbHEMSLBHb8TVVuhPVPuieV4g
- Nkqg5POMTidk8xAw50WpV++tUlewXVSciehnuCQPXhXMP7FcCh4uO8LdN7E8m7ir1LafKTFfoWPah
- KVT8NGG9r+ucrFcN5F+VnHxTDaI68yRPkNdtUWmp22wIX1KwDCtKFrndYO4p5Hv2hlDKomsuIIHHn
- muQGRwuh0xpf0nVJNF8ETZHMzxQLfo3e/HvxBFOTkwY9w7CuuQFZchbhS0I3PfmGT0+jiNcdfqjDC
- fPPB5uhy+DkR6wO72vuwFYUrpU2mdliDSdKEtWBHulnXMJjpBOXetfIwhI8G2dTVg59lN5i9DvJZc
- 7y1Sp+qfZQ4P9qpYZyQEKR4GNDOdnm6F2LW2cZkcyAU/Ii765zdDMTQMIzZNSxT/FcDd0K1voTNRl
- QHbQw+kmIMhzSv2JefcC9oNbE0XYzcBDNP5T3O/4itOQ90GCKQEPAbIPeBjlQif7kkyvo/H6yv4s9
- duuK7zbJD9AID/+KGLkpU3p68VDB/C2ZSb9rQz3p1CJNSfsX/CPk7sPqA7RKZ4a2B0hSJ2pJCncNZ
- KXtMlkkm/FmewARAQABtCdBbGFzdGFpciBEJ1NpbHZhIDxhbGFzdGFpckBkLXNpbHZhLm9yZz6JAl
- EEEwEKADsWIQTQGemDFwqYyU/dBWv75AdnjVo60gUCZpy2+gIbAwULCQgHAgIiAgYVCgkICwIEFgI
- DAQIeBwIXgAAKCRD75AdnjVo60qHZEACJnLfpS71Hk8bX0CLCNJ5wgqdZD3pBHEdbv9Ux9kRlZp4a
- ZFwlg9ltwBjl2dZP3PLtD9xQdsdYKVippKd5a7ZZC2y81oDaHjeC9LnPYn8+ce3mGE/+gRyoNfToY
- N06DeUNJKSlZ9t11UIqZCgfp12u16/Yrigy8C4ihEeHXlLhNX6JkeJR5gsHXJnC7vSuMZY+Qz2R72
- ZidWg+cd2WDMGop5sbTvc+55q94A7vTMlWzaix5HdbEUA3sd2U0dMBju5QodRGGhDQMcCu64TydRD
- MtMzzOk9ThJ036ze3HASWGOppyQmaw58k+XNzbHlr9Sc1LsFUNF7zpWXac2rzlywbyRAdFIT/TC76
- hy9zOkwIo2nwA/tdIwLx1j0UZPpAMQmcDUvJqZh6sE+fv6HN0yMPr+sSYJmriMt8Z6leCEHQXOHVI
- SI5z5FvV3coMmHYRq6aXpfs/8SLiYgkV3B0HE/E18Y3j1OkeLYoqIH1VfzQZeCSL/S77NYvk60/MV
- 1HFSyqLdUR3uWZI4uZzoEcMoB0GX33uCTp2Ntc00+wSntwekCUQLCMLUb7dZrbpVuobHoWWtkiD2I
- uE5kAiaVwwwzM0BUwiM6VzVoKbeECz93rdsNtwoDqM0NtzoISC46H/BKVQ9mRNXDO4ThEBpJ4H2Tn
- mPNRYYcR0u2mNy1EJII04w==
-Content-Type: text/markdown; charset="UTF-8"
-Content-Transfer-Encoding: quoted-printable
-User-Agent: Evolution 3.56.2-9 
+	dkim=pass (2048-bit key) header.d=google.com header.i=@google.com header.a=rsa-sha256 header.s=20260707 header.b=JaedZWQS
+Received: by mail-dy1-f199.google.com with SMTP id 5a478bee46e88-3425098ae4bso1805795eec.0
+        for <linux-wireless@vger.kernel.org>; Sat, 07 Nov 2026 22:00:19 -0800 (PST)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+        d=google.com; s=20260707; t=1794117619; x=1794722419; darn=vger.kernel.org;
+        h=content-type:cc:to:from:subject:message-id:mime-version:date:from
+         :to:cc:subject:date:message-id:reply-to:content-type;
+        bh=v2y1yaggoH6p1mGRTKD+i49Hl5+O8T2kFeVCtW/lYKQ=;
+        b=JaedZWQS1EeJw8FeqScgaXmtwMvvsvJb6WhcLeuKfTBF/RPC1CE6Ooh6Xa/qYlDeBv
+         J+RPxMeV+5jz3nPQNGxkjnNhGTX0NGHLbFVb0F7PcRnd3Ruj9wYIw0m32ecCpBYEaCVn
+         93RjjHdLjR0gyEgxRZTfZkcU80a/lt1XoCoQ4DA0MG+PNkjOWROyl1o9JabZ//BXy6bQ
+         toVb+adpF7hRTd5lcYm2v/U2lx54vduPdKr5Schw4JKXwCGMTM8dKDUp6DAY92mTCUxP
+         y+v3MWshK/bzSm6HcU2eL6qK5HH/oXLcuZdcBKQfE2cG5SpNNASiS3EQDgN/dDuZephu
+         Wd/Q==
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+        d=1e100.net; s=20260707; t=1794117619; x=1794722419;
+        h=content-type:cc:to:from:subject:message-id:mime-version:date
+         :x-gm-message-state:from:to:cc:subject:date:message-id:reply-to
+         :content-type;
+        bh=v2y1yaggoH6p1mGRTKD+i49Hl5+O8T2kFeVCtW/lYKQ=;
+        b=xL7HQ8lvF6fRYBfPm+TN2jF5PGUC6uFhG4BdIR8B8V+Y89kklyMPvV/iuhbVfB04i+
+         KNQD7evloG8iIDrGWFF0fUrOt/9aJAJZA4GBWe5GdVdFjPcrKxSGN2o4vDg8y3YCOCfg
+         /M1TypnYqcgboGc6jVi5v97LumCiB6McaXzh8Shq/wLnvz28nfXPW+eERWVmm8ZMQ7o6
+         rqS2KjjXIwizUsoGWlPZQOOjufTKYc/FR8pQSVmetqTp4qALD0ILtMOyaE7yEhH5N3VR
+         fdMrpAwEqODcZFSGfQmFVQFrJYx5MVp7SVnzmmkFHZC8sMETFwC95mhoFaxKX0vzmEUv
+         jE4Q==
+X-Forwarded-Encrypted: i=1; AKwUvBxVNWqjAmwis0jB96w5FwzzZT4Oq1HusfAkaEwUccKcs4eFW4V4QyEj6lP73iAei8DqhtYEzWgYU0t2WKzMIw==@vger.kernel.org
+X-Gm-Message-State: APuU4Z9vCRkgotxfxne22tK48VMmxCR17el5BGdy/eEmRnVBlczDpKH3
+	Y2PAPlxA0YVC4V4UOoTM7cTzt1hvOWnd8lsWbFubvhTr0yZbyTcxagzIFmza8Oxo7ot0+lH2mbg
+	P3uAmIPmHqSAzodPByIwJxzsc0A==
+X-Received: from dycoy13.prod.google.com ([2002:a05:7301:fc0d:b0:35c:eb2a:8c31])
+ (user=almasrymina job=prod-delivery.src-stubby-dispatcher) by
+ 2002:a05:7022:264b:b0:13c:f65c:d5b5 with SMTP id a92af1059eb24-1b269a6631dmr4891275c88.3.1794117617306;
+ Sat, 07 Nov 2026 22:00:17 -0800 (PST)
+Date: Sun,  8 Nov 2026 06:00:11 +0000
 X-Mailing-List: linux-wireless@vger.kernel.org
 List-Id: <linux-wireless.vger.kernel.org>
 List-Post: <mailto:linux-wireless@vger.kernel.org>
@@ -91,26 +75,233 @@ List-Subscribe: <mailto:linux-wireless+subscribe@vger.kernel.org>
 List-Unsubscribe: <mailto:linux-wireless+unsubscribe@vger.kernel.org>
 List-Owner: <mailto:linux-wireless+owner@vger.kernel.org>
 Precedence: list
-MIME-Version: 1.0
+Mime-Version: 1.0
+X-Mailer: git-send-email 2.56.0.455.g6c5a503b38-goog
+Message-ID: <20261108060016.2131509-1-almasrymina@google.com>
+Subject: [PATCH net-next v2 0/5] net: deprecate skb->pp_recycle and skb_mark_for_recycle()
+From: Mina Almasry <almasrymina@google.com>
+To: netdev@vger.kernel.org
+Cc: Mina Almasry <almasrymina@google.com>, Jesper Dangaard Brouer <hawk@kernel.org>, 
+	Ilias Apalodimas <ilias.apalodimas@linaro.org>, "David S. Miller" <davem@davemloft.net>, 
+	Eric Dumazet <edumazet@kernel.org>, Jakub Kicinski <kuba@kernel.org>, Paolo Abeni <pabeni@redhat.com>, 
+	Simon Horman <horms@kernel.org>, Neal Cardwell <ncardwell@google.com>, 
+	Kuniyuki Iwashima <kuniyu@google.com>, Pavel Begunkov <asml.silence@gmail.com>, 
+	Bobby Eshleman <bobbyeshleman@meta.com>, Stanislav Fomichev <sdf@fomichev.me>, linux-kernel@vger.kernel.org, 
+	Steffen Klassert <steffen.klassert@secunet.com>, Herbert Xu <herbert@gondor.apana.org.au>, 
+	Willem de Bruijn <willemb@google.com>, John Fastabend <john.fastabend@gmail.com>, 
+	Sabrina Dubroca <sd@queasysnail.net>, Andrew Lunn <andrew+netdev@lunn.ch>, 
+	"Michael S. Tsirkin" <mst@redhat.com>, Jason Wang <jasowangio@gmail.com>, 
+	"=?UTF-8?q?Eugenio=20P=C3=A9rez?=" <eperezma@redhat.com>, Xuan Zhuo <xuanzhuo@linux.alibaba.com>, 
+	Andrew Morton <akpm@linux-foundation.org>, David Hildenbrand <david@kernel.org>, 
+	Lorenzo Stoakes <ljs@kernel.org>, "Liam R. Howlett" <liam@infradead.org>, Vlastimil Babka <vbabka@kernel.org>, 
+	Mike Rapoport <rppt@kernel.org>, Suren Baghdasaryan <surenb@google.com>, Michal Hocko <mhocko@suse.com>, 
+	Alexei Starovoitov <ast@kernel.org>, Daniel Borkmann <daniel@iogearbox.net>, 
+	Johannes Berg <johannes@sipsolutions.net>, Byungchul Park <byungchul@sk.com>, Zi Yan <ziy@nvidia.com>, 
+	virtualization@lists.linux.dev, linux-mm@kvack.org, bpf@vger.kernel.org, 
+	linux-wireless@vger.kernel.org, Jonathan Corbet <corbet@lwn.net>, 
+	Shuah Khan <skhan@linuxfoundation.org>, Randy Dunlap <rdunlap@infradead.org>, 
+	Lorenzo Bianconi <lorenzo@kernel.org>, Wen Gu <guwen@linux.alibaba.com>, 
+	Philo Lu <lulie@linux.alibaba.com>, Justin Chen <justin.chen@broadcom.com>, 
+	Florian Fainelli <florian.fainelli@broadcom.com>, Vikas Gupta <vikas.gupta@broadcom.com>, 
+	Michael Chan <michael.chan@broadcom.com>, Pavan Chebbi <pavan.chebbi@broadcom.com>, 
+	Doug Berger <opendmb@gmail.com>, Nicolai Buchwitz <nb@tipi-net.de>, 
+	Broadcom internal kernel review list <bcm-kernel-feedback-list@broadcom.com>, Satish Kharat <satishkh@cisco.com>, 
+	Wei Fang <wei.fang@nxp.com>, Frank Li <frank.li@nxp.com>, Shenwei Wang <shenwei.wang@nxp.com>, 
+	Joshua Washington <joshwash@google.com>, Harshitha Ramamurthy <hramamurthy@google.com>, 
+	Jijie Shao <shaojijie@huawei.com>, Jian Shen <shenjian15@huawei.com>, 
+	Fan Gong <gongfan1@huawei.com>, Tony Nguyen <anthony.l.nguyen@intel.com>, 
+	Przemek Kitszel <przemyslaw.kitszel@intel.com>, Marcin Wojtas <marcin.s.wojtas@gmail.com>, 
+	Russell King <linux@armlinux.org.uk>, Sunil Goutham <sgoutham@marvell.com>, 
+	Geetha sowjanya <gakula@marvell.com>, Ratheesh Kannoth <rkannoth@marvell.com>, 
+	Subbaraya Sundeep <sbhatta@marvell.com>, Bharat Bhushan <bbhushan2@marvell.com>, 
+	Felix Fietkau <nbd@nbd.name>, Matthias Brugger <matthias.bgg@gmail.com>, 
+	AngeloGioacchino Del Regno <angelogioacchino.delregno@collabora.com>, Tariq Toukan <tariqt@nvidia.com>, 
+	Saeed Mahameed <saeedm@nvidia.com>, Mark Bloch <mbloch@nvidia.com>, Leon Romanovsky <leon@kernel.org>, 
+	Ido Schimmel <idosch@nvidia.com>, Petr Machata <petrm@nvidia.com>, 
+	Horatiu Vultur <horatiu.vultur@microchip.com>, UNGLinuxDriver@microchip.com, 
+	Daniel Machon <daniel.machon@microchip.com>, Steen Hegelund <Steen.Hegelund@microchip.com>, 
+	Haiyang Zhang <haiyangz@microsoft.com>, Wei Liu <wei.liu@kernel.org>, 
+	Dexuan Cui <decui@microsoft.com>, Yibo Dong <dong100@mucse.com>, 
+	Brett Creeley <brett.creeley@amd.com>, Justin Lai <justinlai0215@realtek.com>, 
+	Larry Chiu <larry.chiu@realtek.com>, 
+	"=?UTF-8?q?Niklas=20S=C3=B6derlund?=" <niklas.soderlund@ragnatech.se>, Paul Barker <paul@pbarker.dev>, 
+	Masahisa Kojima <kojima.masahisa@socionext.com>, 
+	Maxime Chevallier <maxime.chevallier@bootlin.com>, Maxime Coquelin <mcoquelin.stm32@gmail.com>, 
+	Alexandre Torgue <alexandre.torgue@foss.st.com>, FUJITA Tomonori <fujita.tomonori@gmail.com>, 
+	Siddharth Vadapalli <s-vadapalli@ti.com>, Roger Quadros <rogerq@kernel.org>, 
+	MD Danish Anwar <danishanwar@ti.com>, Jiawen Wu <jiawenwu@trustnetic.com>, 
+	Mengyuan Lou <mengyuanlou@net-swift.com>, Ronak Doshi <ronak.doshi@broadcom.com>, 
+	Ryder Lee <ryder.lee@mediatek.com>, Shayne Chen <shayne.chen@mediatek.com>, 
+	Sean Wang <sean.wang@mediatek.com>, Juergen Gross <jgross@suse.com>, 
+	Stefano Stabellini <sstabellini@kernel.org>, 
+	Oleksandr Tyshchenko <oleksandr_tyshchenko@epam.com>, Jordan Rhee <jordanrhee@google.com>, 
+	Ankit Garg <nktgrg@google.com>, Tim Hostetler <thostet@google.com>, 
+	Eric Joyner <eric.joyner@amd.com>, Prabu Thayalan <prabu.ponrajthayalan@amd.com>, 
+	"Nikhil P. Rao" <nikhil.rao@amd.com>, Chintan Vankar <c-vankar@ti.com>, 
+	Nora Schiffer <nora.schiffer@ew.tq-group.com>, Alexander Sverdlin <alex@sverdlin.org>, 
+	Kevin Hao <haokexin@gmail.com>, Karl Mehltretter <kmehltretter@gmail.com>, 
+	Aleksandr Loktionov <aleksandr.loktionov@intel.com>, Meghana Malladi <m-malladi@ti.com>, 
+	Jacob Keller <jacob.e.keller@intel.com>, StanleyYP Wang <StanleyYP.Wang@mediatek.com>, 
+	linux-doc@vger.kernel.org, imx@lists.linux.dev, linux-rdma@vger.kernel.org, 
+	linux-hyperv@vger.kernel.org, linux-renesas-soc@vger.kernel.org, 
+	linux-omap@vger.kernel.org
+Content-Type: text/plain; charset="UTF-8"
 
-On Sun, 2026-11-08 at 03:06 +0000, Ping-Ke Shih wrote:
+Remove the per-SKB skb->pp_recycle bitfield and skb_mark_for_recycle()
+helper, and reference-count netmems directly by their underlying type
+via netmem_is_pp() inside netmem_inc_ref() and netmem_dec_ref().
 
-> Luka Gejak <luka.gejak@linux.dev> wrote:
->=20
-> > November 7, 2026 at 4:53 AM, "Alastair D'Silva" <alastair@d-silva.org> =
-wrote:
->
-<snip>
-> > Thanks for addressing those comments, v9 looks good to me,
-> >=20
-> > Reviewed-by: Luka Gejak <luka.gejak@linux.dev>
->=20
->=20
-> I don't know why I can't see v10 in patchwork [1].
-> Please take Luka's Reviewed-by for each patch, and send v10.
->=20
-> [1] https://patchwork.kernel.org/project/linux-wireless/list/?series=3D&s=
-ubmitter=3DAlastair&state=3D*&q=3D&archive=3D&delegate=3D
->
+Establish the invariant that pp_ref_count is only incremented by callers
+that already hold an active pp_ref_count (>= 1) on that netmem, and a
+raw page_ref_count is never converted into a pp_ref_count:
+- Detach page_pool pages in tcp_zerocopy_receive() before mapping them
+  into userspace via vm_insert_pages(), so userspace VMAs and subsequent
+  GUP callers (such as MSG_ZEROCOPY or vmsplice()) never observe an
+  active page_pool page.
+- Fall back to copying in tls_push_data() when MSG_SPLICE_PAGES
+  encounters a page_pool page, since kTLS device offload record->frags[]
+  tracks pages via raw struct page references.
+- Keep page_pool_unref_netmem(), napi_pp_get_page(), napi_pp_put_page(),
+  and __page_pool_put_page() free of 0 -> 1 pp_ref_count conversion
+  workarounds or extra barriers, preserving the non-atomic
+  page_pool_unref_netmem() fast path unchanged.
 
-There isn't a V10, V9 is the latest :)
+bench_page_pool_simple results (5-iteration interleaved UML runs):
+- no-softirq-page_pool01 (fast-path cache recycle): 40 cycles (20.3 ns)
+  baseline vs 30-31 cycles (15.3 ns) patched (~9-10 cycles / -24.7%
+  improvement over baseline: using __netmem_to_page() in
+  page_pool_netmem_is_exclusively_owned() and
+  __page_pool_page_can_be_recycled() after checking netmem_is_net_iov()
+  eliminates two redundant WARN_ON_ONCE() expansions and out-of-line
+  netmem_to_page() calls per recycle).
+- no-softirq-page_pool02 (ptr_ring recycle): 81 cycles (40.7 ns)
+  baseline vs 74 cycles (37.2 ns) patched (~7 cycles / -8.6%
+  improvement over baseline).
+- no-softirq-page_pool03 (slow page-allocator path with elevated
+  page_ref_count): 458-461 cycles (230.0 ns) baseline vs 454-455 cycles
+  (227.6 ns) patched (~5 cycles / -1.0% improvement over baseline).
+
+This series simplifies SKB and netmem reference counting:
+- Reclaims 1 bit from struct sk_buff (skb->pp_recycle).
+- Unifies reference counting of SKB fragment netmems and regular netmems
+  under netmem_inc_ref() and netmem_dec_ref(), eliminating the separate
+  skb_netmem_ref(), skb_netmem_unref(), and skb_mark_for_recycle() APIs.
+- Removes 95 net lines across 65 files (339 insertions, 434 deletions).
+
+1/5: net: skbuff: skip managed zerocopy frags in skb_frag_ref()
+2/5: net: skbuff: refcount spliced page_pool frags via skb_pipe_buf_ops
+3/5: tcp: detach page_pool pages before mapping in tcp_zerocopy_receive()
+4/5: net: remove skb->pp_recycle and consolidate netmem refcounting
+5/5: net: remove skb_mark_for_recycle()
+
+v1 -> v2:
+- Patch 2/5: Check page_ref_count(compound_head(buf->page)) <= 0 with
+  WARN_ON_ONCE() in skb_pipe_buf_get() to guard against refcount
+  overflow, and fall back to copying in tls_push_data() when
+  MSG_SPLICE_PAGES encounters a page_pool page so kTLS device offload
+  never converts a raw page_ref_count into a pp_ref_count.
+- Patch 3/5: Replace zerocopy_fill_skb_from_iter() refcount conversion
+  with detaching page_pool pages up front in tcp_zerocopy_receive()
+  before vm_insert_pages().
+- Patch 4/5: Keep net/tls/ record->frags[] and fallback scatterlists on
+  get_page()/put_page() to match mlx5 tx_sync_info_get(), and restore
+  page_pool_unref_netmem(), napi_pp_get_page(), napi_pp_put_page(), and
+  __page_pool_put_page() to their clean baseline non-RMW fast paths.
+- v1:
+  https://lore.kernel.org/netdev/20261103211424.127627-1-almasrymina@google.com/
+
+Notes on Medium/Low Sashiko findings intentionally skipped:
+- Patch 1/5 (Low): iptfs_output_queued() skb_zcopy_managed() check does
+  not carry a separate Fixes: tag as it is part of this net-next
+  refactoring series.
+- Patch 3/5 (Medium): can_map_frag() requires page_pool_ref_count == 1,
+  so drivers holding an undrained fragment bias (e.g. mlx5 mpwqe, fbnic)
+  fall back to copying in tcp_zerocopy_receive() (documented in commit
+  message; detaching requires holding the sole pp_ref_count).
+- Patch 3/5 (Low): page_pool_ref_count() naming kept to mirror
+  page_ref_count().
+- Patch 4/5 (Medium): skb_irq_freeable() in netpoll_zap_completion_queue()
+  does not check netmem_is_pp() (pre-existing for forwarded pp_recycle=1
+  RX SKBs; documented in commit message Caveats).
+- Patch 4/5 (Low): napi_pp_get_page() and napi_pp_put_page() remain
+  out-of-line exported functions in net/core/skbuff.c.
+
+Mina Almasry (5):
+  net: skbuff: skip managed zerocopy frags in skb_frag_ref()
+  net: skbuff: refcount spliced page_pool frags via skb_pipe_buf_ops
+  tcp: detach page_pool pages before mapping in tcp_zerocopy_receive()
+  net: remove skb->pp_recycle and consolidate netmem refcounting
+  net: remove skb_mark_for_recycle()
+
+ Documentation/networking/page_pool.rst        |   1 -
+ drivers/net/ethernet/airoha/airoha_eth.c      |   1 -
+ drivers/net/ethernet/alibaba/eea/eea_rx.c     |   3 -
+ .../net/ethernet/broadcom/asp2/bcmasp_intf.c  |   1 -
+ .../net/ethernet/broadcom/bnge/bnge_txrx.c    |   5 -
+ drivers/net/ethernet/broadcom/bnxt/bnxt.c     |   8 -
+ .../net/ethernet/broadcom/genet/bcmgenet.c    |   2 -
+ drivers/net/ethernet/cisco/enic/enic_rq.c     |   1 -
+ drivers/net/ethernet/engleder/tsnep_main.c    |   2 -
+ drivers/net/ethernet/freescale/fec_main.c     |   1 -
+ drivers/net/ethernet/google/gve/gve_rx_dqo.c  |   9 -
+ .../net/ethernet/hisilicon/hibmcge/hbg_txrx.c |   1 -
+ .../net/ethernet/hisilicon/hns3/hns3_enet.c   |   6 -
+ .../net/ethernet/huawei/hinic3/hinic3_rx.c    |   1 -
+ drivers/net/ethernet/intel/iavf/iavf_txrx.c   |   2 -
+ drivers/net/ethernet/marvell/mvneta.c         |   2 -
+ .../net/ethernet/marvell/mvpp2/mvpp2_main.c   |   2 -
+ .../marvell/octeontx2/nic/otx2_txrx.c         |   1 -
+ drivers/net/ethernet/mediatek/mtk_eth_soc.c   |   1 -
+ drivers/net/ethernet/mellanox/mlx4/en_rx.c    |   1 -
+ .../net/ethernet/mellanox/mlx5/core/en_rx.c   |   8 -
+ drivers/net/ethernet/mellanox/mlxsw/pci.c     |   2 -
+ .../ethernet/microchip/lan966x/lan966x_fdma.c |   2 -
+ .../microchip/sparx5/lan969x/lan969x_fdma.c   |   1 -
+ drivers/net/ethernet/microsoft/mana/mana_en.c |   3 -
+ .../net/ethernet/mucse/rnpgbe/rnpgbe_lib.c    |   1 -
+ .../net/ethernet/pensando/ionic/ionic_txrx.c  |   2 -
+ .../net/ethernet/realtek/rtase/rtase_main.c   |   1 -
+ drivers/net/ethernet/renesas/ravb_main.c      |   2 -
+ drivers/net/ethernet/socionext/netsec.c       |   1 -
+ .../net/ethernet/stmicro/stmmac/stmmac_main.c |   1 -
+ drivers/net/ethernet/tehuti/tn40.c            |   1 -
+ drivers/net/ethernet/ti/am65-cpsw-nuss.c      |   1 -
+ drivers/net/ethernet/ti/cpsw.c                |   2 -
+ drivers/net/ethernet/ti/cpsw_new.c            |   2 -
+ drivers/net/ethernet/ti/icssg/icssg_common.c  |   1 -
+ drivers/net/ethernet/wangxun/libwx/wx_lib.c   |   2 -
+ drivers/net/veth.c                            |   3 +-
+ drivers/net/virtio_net.c                      |  16 +-
+ drivers/net/vmxnet3/vmxnet3_xdp.c             |   1 -
+ drivers/net/wireless/mediatek/mt76/dma.c      |   1 -
+ .../net/wireless/mediatek/mt76/mt7996/mac.c   |   1 -
+ drivers/net/wireless/mediatek/mt76/npu.c      |   1 -
+ drivers/net/wireless/mediatek/mt76/usb.c      |   1 -
+ drivers/net/xen-netfront.c                    |   1 -
+ include/linux/mm.h                            |   2 +-
+ include/linux/skbuff.h                        |  12 +-
+ include/linux/skbuff_ref.h                    |  60 +---
+ include/net/netmem.h                          |  37 ++-
+ include/net/page_pool/helpers.h               |  25 +-
+ net/core/datagram.c                           |   2 +
+ net/core/gro.c                                |   9 -
+ net/core/net_test.c                           | 274 ++++++++----------
+ net/core/netmem_priv.h                        |  21 +-
+ net/core/page_pool.c                          |   6 +-
+ net/core/skbuff.c                             |  74 ++---
+ net/core/xdp.c                                |  13 +-
+ net/ipv4/esp4.c                               |  11 +-
+ net/ipv4/tcp.c                                |  44 ++-
+ net/ipv6/esp6.c                               |  11 +-
+ net/tls/tls_device.c                          |   8 +-
+ net/tls/tls_device_fallback.c                 |   2 +-
+ net/wireless/util.c                           |  31 +-
+ net/xfrm/trace_iptfs.h                        |   6 +-
+ net/xfrm/xfrm_iptfs.c                         |  16 +-
+ 65 files changed, 339 insertions(+), 434 deletions(-)
+
+
+base-commit: 7b6ab4dbc156e2f96419715130b3d5738a306c93
+-- 
+2.56.0.455.g6c5a503b38-goog
+
