@@ -1,81 +1,91 @@
-Authentication-Results: smtp.subspace.kernel.org; arc=none smtp.remote-ip=211.75.126.72
+Authentication-Results: smtp.subspace.kernel.org; arc=none smtp.remote-ip=209.85.217.50
 ARC-Seal: i=1; d=subspace.kernel.org; s=arc20261015; a=rsa-sha256; cv=none;
-	t=1794196411;
-	b=iLYdaHLZq2CIr/92ZqMg3NlUbSUjKZzB07+IurKZLuC7qplLOy8+zQpQhnLP8ZGAU27b
-	 huLJfcEjIuUHop8T4RiPYfeyRTTkrlMx4d2lOU0ReZJVZwQopPoJhvx7CMUriG0Gjs2Rs
-	 H3skrBO67i2YQNc11XapfxLxsz5oc472cd1aVESi9QvE50lnL1nZEEVGWRMTuqNNTy/BE
-	 AKnGAZSNP89ROhcrryvtjVSSoEJ2PF8cidN2+tFAVyGye9221Tu3W6+NpeOQPoy/gfr01
-	 qsJAPul56XOEPkvD/wnLS/dDuAa07edWAKfJLugSZBiw1ePuwC8ipF5rWtfcXovGCcg==
+	t=1794197786;
+	b=TuNzTuw5IeGGeTnfv3ywJ8FM5QU1ezARYG7lqhu4Nk4A0K/bJ+/zwK1n0jbehkr8iItx
+	 RaA3JA/2qBiv/bsv8R4Z7HrX+4LIsw9+XjxoKtNfkuaivA3rQ6Wmiq5xCbyRBhVjL9NvT
+	 aEzRphYgTOH9koQJI6DrWpt61R5x8jzL62q/EqEzY8TgRl2OggTh6Htw5orPpPHkD/6b3
+	 /nGY1G7hPL9XVbKdzD57W/KgCmcLq/5Wr0KP0q09LTHvBHr8YSaXx4yy6v2JxdGOSRJhr
+	 OZjbYiZA1uhgQycMnTFvQP284j8wKVCWHUB4enLf93WWMhcpZb7vBX4oGXTF2+yZq6A==
 ARC-Message-Signature: i=1; d=subspace.kernel.org; s=arc20261015;
-	a=rsa-sha256; c=relaxed/relaxed; t=1794196411;
-	h=DMARC-Filter:X-SpamFilter-By:DKIM-Signature:Received:Received:
-	 Received:Received:From:To:Subject:Thread-Topic:Thread-Index:Date:
-	 Message-ID:References:In-Reply-To:Accept-Language:Content-Language:
-	 x-originating-ip:Content-Type:Content-Transfer-Encoding:MIME-Version;
-	bh=1roUKFm9HQ3G8hfvlTu0U+/zmL1WicoISxzziLR612k=;
-	b=Nu7e42FHUXdp/RFBbORrPCHWjmwqtFpyGS83G9rs/sAlj+R0AWvKtgAkLoBJz60Zwf1L
-	 jzPcCY6NsIisq59qdd7w3gU4vo9Dmm9xMQv4Btra1n709OeF3AiNhuEcdXgG/PqqYFlbX
-	 HUnLofTaUfPVagLWgwkkbgtLtm85YqKvoUTFR5MZyB2YwK0b58jJqA7CWwOIoNWmzY1MM
-	 65cRfWK9JNAp9Dk3IUDtU+TGlF/zamrQxnlY+csnoNSUFlbreLtXOfN00ly1+OpSey50b
-	 BkBMBRlFu0ISdF9H7qw8hsGwMc9ylqUW9G3RiTJ2U7RWioaNYFa7YzqQJXKiLw9hniQ==
+	a=rsa-sha256; c=relaxed/relaxed; t=1794197786;
+	h=DMARC-Filter:Received:DKIM-Signature:X-Google-DKIM-Signature:
+	 X-Gm-Message-State:X-Gm-Gg:X-Received:Received:From:To:Cc:Subject:
+	 Date:Message-ID:X-Mailer:MIME-Version:Content-Transfer-Encoding;
+	bh=JvfaFT4Om4gkclqm7bHhNIPAat6qqBZepmmEugF7IMg=;
+	b=xWsWpATEYl0ZppjYaIQ0jhCHRP4PMiU6JnNC+57D2X1AEf0dMjS8ZM3TuOP6TA1tb4Z/
+	 iCayhlqlpQv1Ivtet5gii7Fr4nTdgJI9wwPHPC6GXbUfV4tFGDlNfcCgVZIOa+6fRBr5v
+	 lXgVGSPJfAcxi67dA+7Qk2iG++7yxKImJNouohmAMgnuPkQY9kG8OkybyAJNRodR+4RA/
+	 H4nBtTTeDvlG2QKwR0HA/QYj7aa2q3393N0X0TdGRBPwM9TTU6WCMW5HDonGjbscO/34G
+	 AzWZdSZ0PUMG07AVDOykIkvy31DZJkIyPyA2Jt45f06BoGnFWXXHzR9pwGK0wgj/vWQ==
 ARC-Authentication-Results: i=1; smtp.subspace.kernel.org; 
-	dmarc=pass header.from=realtek.com;
-	spf=pass smtp.mailfrom=realtek.com;
-	dkim=pass header.d=realtek.com header.i=@realtek.com header.a=rsa-sha256 header.s=dkim header.b=Lnz7sfjK;
-	arc=none smtp.remote-ip=211.75.126.72
-Received: from rtits2.realtek.com.tw (rtits2.realtek.com [211.75.126.72])
-	(using TLSv1.3 with cipher TLS_AES_256_GCM_SHA384 (256/256 bits)
+	dmarc=pass header.from=gmail.com;
+	spf=pass smtp.mailfrom=gmail.com;
+	dkim=pass header.d=gmail.com header.i=@gmail.com header.a=rsa-sha256 header.s=20260707 header.b="I6UC/hnx";
+	arc=none smtp.remote-ip=209.85.217.50
+Received: from mail-vs1-f50.google.com (mail-vs1-f50.google.com [209.85.217.50])
+	(using TLSv1.3 with cipher TLS_AES_128_GCM_SHA256 (128/128 bits)
 	 key-exchange X25519 server-signature ECDSA (prime256v1) server-digest SHA256)
 	(No client certificate requested)
-	by smtp.subspace.kernel.org (Postfix) with ESMTPS id 3E1A8606A326
-	for <linux-wireless@vger.kernel.org>; Mon,  9 Nov 2026 03:53:29 +0000 (UTC)
-DMARC-Filter: OpenDMARC Filter v1.4.2 smtp.subspace.kernel.org 3E1A8606A326
-Authentication-Results: smtp.subspace.kernel.org; dmarc=pass (p=none dis=none) header.from=realtek.com
-Authentication-Results: smtp.subspace.kernel.org; spf=pass smtp.mailfrom=realtek.com
+	by smtp.subspace.kernel.org (Postfix) with ESMTPS id 9B8C0606A31C
+	for <linux-wireless@vger.kernel.org>; Mon,  9 Nov 2026 04:16:25 +0000 (UTC)
+DMARC-Filter: OpenDMARC Filter v1.4.2 smtp.subspace.kernel.org 9B8C0606A31C
+Authentication-Results: smtp.subspace.kernel.org; dmarc=pass (p=none dis=none) header.from=gmail.com
+Authentication-Results: smtp.subspace.kernel.org; spf=pass smtp.mailfrom=gmail.com
 Authentication-Results: smtp.subspace.kernel.org;
-	dkim=pass (2048-bit key, unprotected) header.d=realtek.com header.i=@realtek.com header.a=rsa-sha256 header.s=dkim header.b=Lnz7sfjK
-X-SpamFilter-By: ArmorX SpamTrap 5.80 with qID 6A93rE9v94004623, This message is accepted by code: ctloc85258
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=realtek.com; s=dkim;
-	t=1794196394; bh=1roUKFm9HQ3G8hfvlTu0U+/zmL1WicoISxzziLR612k=;
-	h=From:To:Subject:Date:Message-ID:References:In-Reply-To:
-	 Content-Type:Content-Transfer-Encoding:MIME-Version;
-	b=Lnz7sfjKhlM8gEkVEiVhERuHCDi70wGsh0fQlIcX1RP8XJRVArJS0AakM7QfdthY3
-	 zqPc4gJ3R/nzGmMZtwPNLsUzIWQFOA13JcW54ap22dJ0066YYmmBkkWjybhwujRehi
-	 bdSYL1DodzZAOf3VQFtRtSJugQ+7vCLbN7EiGPsL+hGTj6GM73Gt2pX29jRo8Gj1aF
-	 J5YGxAPC61oCS6t5YXikRxxhSad2YrGO8sJ3sYouHm5FRnaa7lVlviVG2PEoqjMXFC
-	 1NPBEPqPDtD++28s2h1SlGbP4K4cFPqSjgef6whoKDNzu9usqDvZxhjigLcVfDIoZx
-	 IcqSmjCpO4TGA==
-Received: from mail.realtek.com (rtkexhmbs03.realtek.com.tw[10.21.1.53])
-	by rtits2.realtek.com.tw (8.15.2/3.29/5.94) with ESMTPS id 6A93rE9v94004623
-	(version=TLSv1.2 cipher=ECDHE-RSA-AES256-GCM-SHA384 bits=256 verify=FAIL);
-	Mon, 9 Nov 2026 11:53:14 +0800
-Received: from RTKEXHMBS05.realtek.com.tw (10.21.1.55) by
- RTKEXHMBS03.realtek.com.tw (10.21.1.53) with Microsoft SMTP Server
- (version=TLS1_2, cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id
- 15.2.2562.56; Mon, 9 Nov 2026 11:53:15 +0800
-Received: from RTKEXHMBS06.realtek.com.tw (10.21.1.56) by
- RTKEXHMBS05.realtek.com.tw (10.21.1.55) with Microsoft SMTP Server
- (version=TLS1_2, cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id
- 15.2.2562.56; Mon, 9 Nov 2026 11:53:14 +0800
-Received: from RTKEXHMBS06.realtek.com.tw ([fe80::eeeb:c765:ca73:5eef]) by
- RTKEXHMBS06.realtek.com.tw ([fe80::eeeb:c765:ca73:5eef%10]) with mapi id
- 15.02.2562.056; Mon, 9 Nov 2026 11:53:14 +0800
-From: Ping-Ke Shih <pkshih@realtek.com>
-To: Shalok Shalom <shalokshalom@protonmail.ch>,
-	"linux-wireless@vger.kernel.org" <linux-wireless@vger.kernel.org>
-Subject: RE: [Bug report] rtw89_8852ae: WoWLAN resume fails with "c2h reg
- timeout" and "failed to resume for wow -110" on s2idle
-Thread-Topic: [Bug report] rtw89_8852ae: WoWLAN resume fails with "c2h reg
- timeout" and "failed to resume for wow -110" on s2idle
-Thread-Index: AQHdYgJYOT/yKLNJnUCGKj74QS1/DrclNsXw
-Date: Mon, 9 Nov 2026 03:53:14 +0000
-Message-ID: <79a2803d1fa943729cdd086fd5f4e84b@realtek.com>
-References: <zvVKbBQduN7iovmmy-oy6UZgR0AOBhnGgl9YuUrYtH48IGxvXoTr-iRZbEp-XyQgxq7LNuQxwRJ16cjQziq2sUKpe4b8UeSr6cNS46TBJQM=@protonmail.ch>
-In-Reply-To: <zvVKbBQduN7iovmmy-oy6UZgR0AOBhnGgl9YuUrYtH48IGxvXoTr-iRZbEp-XyQgxq7LNuQxwRJ16cjQziq2sUKpe4b8UeSr6cNS46TBJQM=@protonmail.ch>
-Accept-Language: en-US, zh-TW
-Content-Language: zh-TW
-Content-Type: text/plain; charset="utf-8"
-Content-Transfer-Encoding: base64
+	dkim=pass (2048-bit key) header.d=gmail.com header.i=@gmail.com header.a=rsa-sha256 header.s=20260707 header.b=I6UC/hnx
+Received: by mail-vs1-f50.google.com with SMTP id ada2fe7eead31-7cc0e865dd1so140776137.1
+        for <linux-wireless@vger.kernel.org>; Sun, 08 Nov 2026 20:16:25 -0800 (PST)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+        d=gmail.com; s=20260707; t=1794197784; x=1794802584; darn=vger.kernel.org;
+        h=content-transfer-encoding:mime-version:message-id:date:subject:cc
+         :to:from:from:to:cc:subject:date:message-id:reply-to:content-type;
+        bh=JvfaFT4Om4gkclqm7bHhNIPAat6qqBZepmmEugF7IMg=;
+        b=I6UC/hnxBPoL8vHRLN2gWLdQE1GAU/lMFd0BmWiAJYsKDi1UtHcUBT79VBB4j3DqM7
+         GrCwTJmNAH7CCdM60WT+YO1eGISBZyKm8gMGicMe3jlSSwhsboleqLQWjmUmQbEMls6Z
+         HY9vzExvUSIqVX+foKSG4cyBzyrabd348h9OWlkis5cKdgb69BTwZ5BsGyz2ul/SQzk8
+         ZajXZN/B7dL6uCNRjzhJW6as9gXTxDpqpNQQeAdZiWJUCt4byH+wthKQ6stZzkEdP2Qf
+         a1cFTab07g1IMjhQBB8qUWklDIrfbif8Q9GwfBqGE14Ed9Pc8sHI3bYtUjY5vvPcncLZ
+         G8bQ==
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+        d=1e100.net; s=20260707; t=1794197784; x=1794802584;
+        h=content-transfer-encoding:mime-version:message-id:date:subject:cc
+         :to:from:x-gm-gg:x-gm-message-state:from:to:cc:subject:date
+         :message-id:reply-to:content-type;
+        bh=JvfaFT4Om4gkclqm7bHhNIPAat6qqBZepmmEugF7IMg=;
+        b=wNYvPP1aEGEKu8a5i0TxMQXKwzgzYALFwpuLPhMnGLQgUjB0GJ5FyfqgmG5gwO1+nU
+         8Ix1HUfrswAwjenmy3TYMr626boeu+LOwu2qX+eiQcp6yra9Sko4SAsPu75nXOyuTI8p
+         zbrNsia+tz7ZksXnX+ttl+weqcWAtGhvoNt2djIH9Rk3ii8MdzFnUcCGpCLf3jtuwL0h
+         YvHobreX8mMOy9b75dWCixFcz5KkPjg6xVTPgfRlnobCZSxhPAIMp2/psOMP+rE4WUwF
+         mjiRcRVUXpErfwjY75pk6Aqwa0M2toZfDF2MUCjke4oka/zui5UsIyHRyO5/SBVi54yO
+         uvjw==
+X-Gm-Message-State: APuU4Z866ENwcoB5xwQ99pZGZnKfV3+roSsAd9IT6DAIaOStDUB8CzdY
+	wbdL4iNdxltSC2uu6tQ+yqBoM8r/uifcCXlSbDWK+mJ0jN3VB+yO80vfYGD2WYnbJ+XSnw==
+X-Gm-Gg: AYBFou1E6l/pmC3EjnRqnmdRE5jQg2UM0vNM5RYH2aHiUNwc+vdS5n6lIIZPZeneCYG
+	rq1Suw7DIUfBG/rnH5Fuk5BLsLU+W8yExocXIdDgXiLs8kgIA/PMBi8DRuSHk1q47+KV156hOXQ
+	h4PqXXoGDTk+ed9GDm5pPElPb6OK93XvcJwSJdJbcDSIbVWEmWagkbphcY3foMLEWFtXcOhJ7Gt
+	/g6HZfqeesM91r46olN+QCjDSMdYm0mkGOUsP86T76bw61THXnk4HrMnNXQm9pyvthdjw5FpPUh
+	nmk4eF8+MHIMphhqb/MwwyFh3hqF5Udy3RlWZULFgTKGXb/toa8yyVkc5Y3MirWVnGV5eSqsEvi
+	7V+EreAcommDwoHqe8dO7CjXQhN/eGX2/YmNKaYYxfcRwpTu2n9vuLwOjCj7FpYcfSPftqC52pB
+	/nC7j5zZVvte7l6qVFk+E6DhhvmIsfeLzMpxhm6IMQFJ/9q+Gl0jNK2UxdyOFiXahnM0pSctZmI
+	v/9jOHm1cXMzJff2U31iRtDsPHnPb5KPiDQC2N4LhQ1ciThXuuVSyoeS9Wp7BcXFRqiMEw7SinE
+	kqS9jXylP3jutk6g90JotBcj6x07sWbuCCk9tAa7sKnEKnrAc4qdYBD35eoqXdYnLyJOzdZnHap
+	EWA==
+X-Received: by 2002:a05:6102:4243:b0:7cc:285d:4df8 with SMTP id ada2fe7eead31-7d2db05a2c1mr596407137.12.1794197784561;
+        Sun, 08 Nov 2026 20:16:24 -0800 (PST)
+Received: from localhost.localdomain ([2804:7f0:b501:17fd:d57b:9398:22dd:ad3])
+        by smtp.gmail.com with ESMTPSA id ada2fe7eead31-7d2db578e09sm3191867137.4.2026.11.08.20.16.21
+        (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
+        Sun, 08 Nov 2026 20:16:23 -0800 (PST)
+From: Phillipe Gustavo <phillipe.gustavo@gmail.com>
+To: linux-wireless@vger.kernel.org
+Cc: Phillipe Gustavo <phillipe.gustavo@gmail.com>,
+	Johannes Berg <johannes@sipsolutions.net>,
+	Lorenzo Bianconi <lorenzo@kernel.org>,
+	Felix Fietkau <nbd@nbd.name>
+Subject: [PATCH wireless] wifi: mac80211: parse the TWT Flow field of received TWT Teardown frames
+Date: Mon,  9 Nov 2026 01:16:06 -0300
+Message-ID: <20261109041606.399-1-phillipe.gustavo@gmail.com>
+X-Mailer: git-send-email 2.44.0.windows.1
 X-Mailing-List: linux-wireless@vger.kernel.org
 List-Id: <linux-wireless.vger.kernel.org>
 List-Post: <mailto:linux-wireless@vger.kernel.org>
@@ -85,61 +95,87 @@ List-Unsubscribe: <mailto:linux-wireless+unsubscribe@vger.kernel.org>
 List-Owner: <mailto:linux-wireless+owner@vger.kernel.org>
 Precedence: list
 MIME-Version: 1.0
+Content-Transfer-Encoding: 8bit
 
-U2hhbG9rIFNoYWxvbSA8c2hhbG9rc2hhbG9tQHByb3Rvbm1haWwuY2g+IHdyb3RlOg0KPiBIaSwN
-Cj4gDQo+IEkgYW0gcmVwb3J0aW5nIGEgcmVwcm9kdWNpYmxlIGZhaWx1cmUgaW4gdGhlIGBydHc4
-OWAgZHJpdmVyIGZvciB0aGUgUmVhbHRlayBSVEw4ODUyQUUgKFBDSWUpIHdoZW4gdXNpbmcNCj4g
-V2FrZS1vbi1XTEFOIChXb1dMQU4pIHdpdGggYHMyaWRsZWAgc3VzcGVuZC4gVGhpcyBkb2VzIG5v
-dCBoYXBwZW4gYWx3YXlzLCBidXQgZnJlcXVlbnRseS4NCj4gVGhlIHN5c3RlbSBmYWlscyB0byBy
-ZXN1bWUgZnJvbSBzdXNwZW5kIHdoZW4gYSBtYWdpYyBwYWNrZXQgaXMgcmVjZWl2ZWQsIGFuZCB0
-aGUga2VybmVsIGxvZyBzaG93cyBhDQo+IGZpcm13YXJlIGNvbW11bmljYXRpb24gdGltZW91dCBm
-b2xsb3dlZCBieSBhIGZhaWx1cmUgdG8gc3dhcCBiYWNrIHRvIG5vcm1hbCBmaXJtd2FyZS4NCj4g
-DQo+IFRoZSBmYWlsdXJlIGJlZ2lucyBhdCBgcnR3ODlfZndfcmVhZF9jMmhfcmVnKClgICh0aGUg
-QzJIIHRpbWVvdXQpLCB3aGljaCBjYXNjYWRlcyBpbnRvIHRoZSBBT0FDIHJlYWQNCj4gZmFpbHVy
-ZSBhbmQgdGhlIGZpcm13YXJlIHN3YXAgZmFpbHVyZSAoYC0xMTBgKS4gVGhlIGRyaXZlcidzIHJl
-Y292ZXJ5IHBhdGggaGFzIGJlZW4gaGFyZGVuZWQgYWdhaW5zdA0KPiBhIHN1YnNlcXVlbnQgY3Jh
-c2ggKENWRS0yMDI1LTIxNzMwKSwgYnV0IHRoZSBpbml0aWFsIHRpbWVvdXQgb24gdGhlIFBDSWUg
-aW50ZXJmYWNlIGR1cmluZyBgczJpZGxlYCByZXN1bWUNCj4gaXMgbm90IHJlc29sdmVkIGJ5IGFu
-eSBwYXRjaCBJIGNvdWxkIGlkZW50aWZ5IGluIHRoZSBjdXJyZW50IHNvdXJjZSB0cmVlLg0KPiAN
-Cj4gDQo+IEhhcmR3YXJlIGFuZCBTb2Z0d2FyZSBFbnZpcm9ubWVudA0KPiANCj4gLSAgIExhcHRv
-cDogTGVub3ZvIFlvZ2EgNyBDYXJib24gMTRBQ042DQo+IA0KPiAtICAgV2ktRmk6IFJlYWx0ZWsg
-UlRMODg1MkFFIChQQ0llKQ0KPiANCj4gLSAgIEtlcm5lbDogNy4yLjExLXplbjEtMS16ZW4gKFpl
-biBicmFuY2gpIGFuZCA2LjE4LjU3LTIgKExUUyBicmFuY2gpDQo+IA0KPiAtICAgRmlybXdhcmU6
-IHJ0dzg4NTJhX2Z3LTEuYmluLCB2ZXJzaW9uIDAuMTMuMzYuMg0KPiANCj4gLSAgIFNsZWVwIHN0
-YXRlOiBzMmlkbGUgKFMzIGlzIG5vdCBleHBvc2VkIGJ5IHRoZSBmaXJtd2FyZTsgY29uZmlybWVk
-IHZpYSBgY2F0IC9zeXMvcG93ZXIvbWVtX3NsZWVwYCkNCj4gDQo+IC0gICBXb1dMQU4gdHJpZ2dl
-cjogbWFnaWMtcGFja2V0IG9ubHkgKGBpdyBwaHkwIHdvd2xhbiBlbmFibGUgbWFnaWMtcGFja2V0
-YCkNCj4gDQo+IA0KPiANCj4gDQo+IFN0ZXBzIHRvIFJlcHJvZHVjZQ0KPiANCj4gMS4gIEVuYWJs
-ZSBXb1dMQU46IGBzdWRvIGl3IHBoeTAgd293bGFuIGVuYWJsZSBtYWdpYy1wYWNrZXRgDQoNClBs
-ZWFzZSB0cnkgdG8gZGlzYWJsZSBkM2NvbGQgYmVmb3JlIGVudGVyaW5nIHN1c3BlbmQuDQoNCmVj
-aG8gMCA+IC9zeXMvYnVzL3BjaS9kZXZpY2VzLzxkZXZpY2VfYWRkcmVzcz4vZDNjb2xkX2FsbG93
-ZWQNCg0KVXNlICdsc3BjaScgdG8gY2hlY2sgdGhlIDxkZXZpY2VfYWRkcmVzcz4uDQoNCj4gDQo+
-IDIuICBTdXNwZW5kOiBgc3lzdGVtY3RsIHN1c3BlbmRgDQo+IA0KPiAzLiAgU2VuZCBhIFdvTCBt
-YWdpYyBwYWNrZXQgdG8gdGhlIGxhcHRvcCdzIFdpLUZpIE1BQyBhZGRyZXNzIGZyb20gYW5vdGhl
-ciBkZXZpY2Ugb24gdGhlIHNhbWUgbmV0d29yay4NCj4gKFZpYSBPcGVuV09MIGZyb20gQW5kcm9p
-ZCkNCj4gDQo+IDQuICBPYnNlcnZlOiB0aGUgbGFwdG9wIGRvZXMgbm90IHdha2UuDQo+IA0KPiAN
-Cj4gDQo+IE91dHB1dCBvZiBsc3BjaSAtbm5rDQo+IA0KPiAwMTowMC4wIE5ldHdvcmsgY29udHJv
-bGxlciBbMDI4MF06IFJlYWx0ZWsgU2VtaWNvbmR1Y3RvciBDby4sIEx0ZC4gUlRMODg1MkFFIDgw
-Mi4xMWF4IFBDSWUgV2lyZWxlc3MNCj4gTmV0d29yayBBZGFwdGVyIFsxMGVjOjg4NTJdDQo+IFN1
-YnN5c3RlbTogTGVub3ZvIERldmljZSBbMTdhYTo0ODUyXQ0KPiBLZXJuZWwgZHJpdmVyIGluIHVz
-ZTogcnR3ODlfODg1MmFlDQo+IEtlcm5lbCBtb2R1bGVzOiBydHc4OV84ODUyYWUNCj4gDQo+IEFj
-dHVhbCBCZWhhdmlvcg0KPiANCj4gVGhlIHN5c3RlbSBmYWlscyB0byByZXN1bWUgZnJvbSBgczJp
-ZGxlYC4gVGhlIGZvbGxvd2luZyBgZG1lc2dgIHNlcXVlbmNlIGlzIGNhcHR1cmVkIGFmdGVyIGEg
-ZmFpbGVkDQo+IHdha2UgYXR0ZW1wdDoNCj4gDQo+IFsgMjM1OS41NDM1NTldIHJ0dzg5Xzg4NTJh
-ZSAwMDAwOjAxOjAwLjA6IGMyaCByZWcgdGltZW91dFsgMjM1OS41NDM1NjNdIHJ0dzg5Xzg4NTJh
-ZSAwMDAwOjAxOjAwLjA6IHdvdzoNCj4gZmFpbGVkIHRvIGdldCBhb2FjIHJwdCBieSByZWcNCj4g
-WyAyMzU5LjY0NDgwMl0gcnR3ODlfODg1MmFlIDAwMDA6MDE6MDAuMDogd293OiBmYWlsZWQgdG8g
-Z2V0IGFvYWMgcnB0IGJ5IHBrdA0KPiBbIDIzNjAuMzA1MjcwXSBydHc4OV84ODUyYWUgMDAwMDow
-MTowMC4wOiBmYWlsZWQgdG8gY2hlY2sgd293IHN0YXR1cyBkaXNhYmxlZA0KPiBbIDIzNjAuMzA1
-Mjc4XSBydHc4OV84ODUyYWUgMDAwMDowMTowMC4wOiB3b3c6IGZhaWxlZCB0byBjaGVjayBkaXNh
-YmxlIGZ3IHJlYWR5DQo+IFsgMjM2MC4zMDUyODBdIHJ0dzg5Xzg4NTJhZSAwMDAwOjAxOjAwLjA6
-IHdvdzogZmFpbGVkIHRvIHN3YXAgdG8gbm9ybWFsIGZ3DQo+IFsgMjM2MC4zMDUyODJdIHJ0dzg5
-Xzg4NTJhZSAwMDAwOjAxOjAwLjA6IGZhaWxlZCB0byBkaXNhYmxlIHdvdw0KPiBbIDIzNjAuMzA1
-Mjg1XSBydHc4OV84ODUyYWUgMDAwMDowMTowMC4wOiBmYWlsZWQgdG8gcmVzdW1lIGZvciB3b3cg
-LTExMA0KPiBbIDIzNjEuOTE2NjU3XSBydHc4OV84ODUyYWUgMDAwMDowMTowMC4wOiBydHc4OV9o
-d19zY2FuX29mZmxvYWQgZmFpbGVkIHJldCAtMTEwDQo+IFsgMjM2MS45MjE0NzVdIHJ0dzg5Xzg4
-NTJhZSAwMDAwOjAxOjAwLjA6IGZhaWxlZCB0byBzZXQgd2FrZXVwIGV2ZW50DQo+IFsgMjM2MS45
-MjE0ODNdIHJ0dzg5Xzg4NTJhZSAwMDAwOjAxOjAwLjA6IGZhaWxlZCB0byBzdXNwZW5kIGZvciB3
-b3cgLTENCg0KU2luY2UgeW91IGRpZG4ndCBzaGFyZSB0aGUgbG9nIGJlZm9yZSB0aGVzZSBlcnJv
-cnMsIEkganVzdCBndWVzcyB0aGUgZGV2aWNlIGdvdCBsb3N0DQpmcm9tIGQzY29sZCByZXN1bWUu
-IFBsZWFzZSB0cnkgdGhlIGNvbW1hbmQgYWJvdmUuDQoNCg0KDQo=
+ieee80211_s1g_rx_twt_teardown() passes the whole TWT Flow octet of a
+received TWT Teardown frame to the driver as the flow identifier. That
+octet is not just a flow id: bits 0-2 carry the TWT Flow Identifier,
+bits 5-6 the Negotiation Type and bit 7 is "Teardown All TWT".
+
+When a station sets "Teardown All TWT", the driver is asked to tear down
+flow 128. mt7915 ignores such a flowid in mt7915_mac_twt_teardown_flow()
+(flowid >= MT7915_MAX_STA_TWT_AGRT), so the agreement stays installed in
+the firmware. The station no longer follows the TWT schedule while the AP
+keeps restricting delivery to the service periods, so downlink frames are
+sent while the station is dozing.
+
+Seen with a Samsung Galaxy S26 Ultra on an MT7981 AP (Xiaomi AX3000T,
+OpenWrt 25.12.6). The station sets up an individual agreement and tears
+it down about 200 ms later:
+
+  STA -> AP  TWT Setup     req_type 0x0023 (Suggest, implicit, announced)
+  AP  -> STA TWT Setup     req_type 0x0028 (Accept)
+  STA -> AP  TWT Teardown  TWT Flow 0x80 (Teardown All TWT, flow id 0)
+
+mt76 twt_stats still lists the agreement afterwards, the station sees
+thousands of "tx failed" per minute and downlink drops from ~450 Mbit/s
+to 5-10 Mbit/s until it reassociates.
+
+Decode the field: tear down every flow id when "Teardown All TWT" is set,
+otherwise pass only the flow identifier, and ignore teardowns of
+broadcast agreements since only individual agreements can be set up.
+
+With this change the agreement is removed after each teardown and
+downlink stays at 300-420 Mbit/s with the TWT responder enabled.
+
+Fixes: f5a4c24e689f ("mac80211: introduce individual TWT support in AP mode")
+Cc: stable@vger.kernel.org
+Signed-off-by: Phillipe Gustavo <phillipe.gustavo@gmail.com>
+---
+ net/mac80211/s1g.c | 24 +++++++++++++++++++++++-
+ 1 file changed, 23 insertions(+), 1 deletion(-)
+
+diff --git a/net/mac80211/s1g.c b/net/mac80211/s1g.c
+index 4b70afa..96b9beb 100644
+--- a/net/mac80211/s1g.c
++++ b/net/mac80211/s1g.c
+@@ -9,6 +9,11 @@
+ #include "ieee80211_i.h"
+ #include "driver-ops.h"
+ 
++/* TWT Flow field of the TWT Teardown frame */
++#define IEEE80211_TWT_TEARDOWN_FLOWID		GENMASK(2, 0)
++#define IEEE80211_TWT_TEARDOWN_NEG_TYPE		GENMASK(6, 5)
++#define IEEE80211_TWT_TEARDOWN_ALL		BIT(7)
++
+ bool ieee80211_s1g_is_twt_setup(struct sk_buff *skb)
+ {
+ 	struct ieee80211_mgmt *mgmt = (struct ieee80211_mgmt *)skb->data;
+@@ -122,9 +127,26 @@ ieee80211_s1g_rx_twt_teardown(struct ieee80211_sub_if_data *sdata,
+ 			      struct sta_info *sta, struct sk_buff *skb)
+ {
+ 	struct ieee80211_mgmt *mgmt = (struct ieee80211_mgmt *)skb->data;
++	u8 flow = mgmt->u.action.s1g.variable[0];
++	u8 flowid;
++
++	if (flow & IEEE80211_TWT_TEARDOWN_ALL) {
++		for (flowid = 0; flowid <= IEEE80211_TWT_TEARDOWN_FLOWID;
++		     flowid++)
++			drv_twt_teardown_request(sdata->local, sdata,
++						 &sta->sta, flowid);
++		return;
++	}
++
++	/* only individual TWT agreements can be set up, see
++	 * ieee80211_s1g_rx_twt_setup()
++	 */
++	if (u8_get_bits(flow, IEEE80211_TWT_TEARDOWN_NEG_TYPE))
++		return;
+ 
++	flowid = u8_get_bits(flow, IEEE80211_TWT_TEARDOWN_FLOWID);
+ 	drv_twt_teardown_request(sdata->local, sdata, &sta->sta,
+-				 mgmt->u.action.s1g.variable[0]);
++				 flowid);
+ }
+ 
+ static void
