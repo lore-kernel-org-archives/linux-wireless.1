@@ -1,63 +1,62 @@
-Authentication-Results: smtp.subspace.kernel.org; arc=none smtp.remote-ip=91.218.175.2
+Authentication-Results: smtp.subspace.kernel.org; arc=none smtp.remote-ip=91.218.175.135
 ARC-Seal: i=1; d=subspace.kernel.org; s=arc20261015; a=rsa-sha256; cv=none;
-	t=1794206585;
-	b=I0+bbBXkDRiqdAqqXpsbX1UipeUirKNP/RP43CQU4vaqFl1IBYYQq0r8+aJ193HkpNYM
-	 26QSD+cIbcgNvNgxnbmLAwT42LJfNOvQIPJfDTUnkc/2I4WTZTTVowMdopX2JpFsOrXT4
-	 4YD4EzFIpB9VcShl+ENJYNAjtfvjnLFUdyWur6uP8V5s5/1uFbo0rKWtwEbfsxXNvJRG4
-	 JW0NHCuOX/+hM0f+NTzre6FLcXn6ZWKAfAS1+Vhg/XZ7/G3snKSuqncPyHcD4IVVU8Ltz
-	 lhoTkJ7lLXDCuuaFGD7z3WoAd0azkLzXTwC4FEIhJQ5o7hxq2pkuBG506JIHW8RxeWw==
+	t=1794207957;
+	b=hb0BMw9Zt1qwnT6cnGtJyD+qqtgIEJH0sVJbdTkXCHys5pVScIwmJBoB1Glqbse8EmGd
+	 I1g0UAo0xhADuFMfapGtEggT8unPE8kWPvtCzq7Kym0w0nMfNm8viwbEVQbAlZ/2BWtLf
+	 4u6DcZWUxGYLdB+w5t+NzVcol0j2b/zw84LpISN+o5vNhTe2GkVw1pnBDaBlskdHvG76i
+	 U750dlaeTTBKss04o2rKSn25nCImjxS8OmDfQZ+yt4wyQkICIakFer9hwzcFyIPvCsnsL
+	 oOK/F7H52YovnUnI+rehj4S7MM9MTNUajCXF2OiEWCFGfRAMCzWy9NF6lYyUu94TmVA==
 ARC-Message-Signature: i=1; d=subspace.kernel.org; s=arc20261015;
-	a=rsa-sha256; c=relaxed/relaxed; t=1794206585;
+	a=rsa-sha256; c=relaxed/relaxed; t=1794207957;
 	h=DMARC-Filter:X-Envelope-To:DKIM-Signature:X-Envelope-To:Received:
 	 X-Mizu-Trace-ID:X-Migadu-Flow:Date:From:To:CC:Subject:In-Reply-To:
 	 References:Message-ID:MIME-Version:Content-Type:
 	 Content-Transfer-Encoding;
-	bh=ebhEmtFiUyEh4cVX2pYWagxjHX97HdZXhWF4H/DoKjc=;
-	b=rWdTUP006N4c/HWbh9NuhrbcY9xjB2zVEVlqdND3XBfP/UbAZAE+PpixgJvdAHnvDjpL
-	 /pBx0YAz7Bq1st1a6AE7YJxmswwBHLknPTpkWwsb1vi+XwOY5J/RY44sE6SOrQpUM6i+X
-	 PIhS8Z9FU1nzWGzXCW63Quj/TDq/f6URAUaEK0+ePS03jGKkBDprxrdr/5de1x5RQe0mj
-	 jqcpX0plXzQHeArtpg9cV1Bt5GoU+Y4fL57m5p27pS3BAxehJea2NV1KYVRbgI80Vcc6h
-	 kjGwNu4al1PTUEeeDmmptZ5CKC5uOPC5dPIS1G1I8jJglPPRNxYidjSx8ymTcZLviMQ==
+	bh=OKfqZDRl0RoDQBoecXTPx+ATvrtGl86vakqk0+6hBNk=;
+	b=VLyf/Cd9puQDyVMBxH+/1nxvSqqqxv5tHS4be0DcbON4XHsEaxF5ugh9ddyAT8/4gjxh
+	 05ly3XgRXtfuNrIF7CQWeBs5iEbivMCxrM1I5/2pJR/Ppc9hes7SB4MtkbJ3ZfpLS63lp
+	 dzP276o9n5nOIhQfcEl/l02EoBqJkdNoRtUSarNUVf6uQe8MQ0/NlLZy7MNXN/x5iAShz
+	 xjI29VQTIOpWAYLgmS9pq45hh4j79sRQTOel09qTNPpXSJGtoC1h5atKbUcTdZkwa0Ztk
+	 QFQu0xThARoIyWOKxSuEwV8EZpRUnKHRbKp+7tx83R6u2tSoZcb9OMIm2vrAYw0f3zQ==
 ARC-Authentication-Results: i=1; smtp.subspace.kernel.org; 
 	dmarc=pass header.from=linux.dev;
 	spf=pass smtp.mailfrom=linux.dev;
-	dkim=pass header.d=linux.dev header.i=@linux.dev header.a=rsa-sha256 header.s=key1 header.b=Yotv9l8c;
-	arc=none smtp.remote-ip=91.218.175.2
-Received: from mta0.migadu.com (out-2.mta0.migadu.com [91.218.175.2])
+	dkim=pass header.d=linux.dev header.i=@linux.dev header.a=rsa-sha256 header.s=key1 header.b=WJB9BMq+;
+	arc=none smtp.remote-ip=91.218.175.135
+Received: from mta0.migadu.com (out-135.mta0.migadu.com [91.218.175.135])
 	(using TLSv1.3 with cipher TLS_AES_128_GCM_SHA256 (128/128 bits)
 	 key-exchange X25519 server-signature ECDSA (prime256v1) server-digest SHA256)
 	(No client certificate requested)
-	by smtp.subspace.kernel.org (Postfix) with ESMTPS id 1BF02606A322
-	for <linux-wireless@vger.kernel.org>; Mon,  9 Nov 2026 06:43:03 +0000 (UTC)
-DMARC-Filter: OpenDMARC Filter v1.4.2 smtp.subspace.kernel.org 1BF02606A322
+	by smtp.subspace.kernel.org (Postfix) with ESMTPS id C9689606A322
+	for <linux-wireless@vger.kernel.org>; Mon,  9 Nov 2026 07:05:53 +0000 (UTC)
+DMARC-Filter: OpenDMARC Filter v1.4.2 smtp.subspace.kernel.org C9689606A322
 Authentication-Results: smtp.subspace.kernel.org; dmarc=pass (p=none dis=none) header.from=linux.dev
 Authentication-Results: smtp.subspace.kernel.org; spf=pass smtp.mailfrom=linux.dev
 Authentication-Results: smtp.subspace.kernel.org;
-	dkim=pass (1024-bit key, unprotected) header.d=linux.dev header.i=@linux.dev header.a=rsa-sha256 header.s=key1 header.b=Yotv9l8c
+	dkim=pass (1024-bit key, unprotected) header.d=linux.dev header.i=@linux.dev header.a=rsa-sha256 header.s=key1 header.b=WJB9BMq+
 X-Envelope-To: linux-wireless@vger.kernel.org
-DKIM-Signature: a=rsa-sha256; bh=ebhEmtFiUyEh4cVX2pYWagxjHX97HdZXhWF4H/DoKjc=;
+DKIM-Signature: a=rsa-sha256; bh=OKfqZDRl0RoDQBoecXTPx+ATvrtGl86vakqk0+6hBNk=;
  c=simple/simple; d=linux.dev;
  h=from:to:subject:date:message-id:mime-version:content-type; s=key1;
- t=1794206582; v=1; x=1794811382;
- b=Yotv9l8c2RPenS6Q2Y3ubHJTNGrhHhL0KqXUB3FsjGLv9H+z4EwTKUr5x1lHauIQXR8SJxYp
- /RoSfgqYAHjbm6QqniwD8d9CSsNI4GpQHdqfYd87LT+FdU1xLAOQNg/5SO9MyGwc9CyNps+Tvu/
- fnpcOVNvtniGJniKlb+9ma18=
+ t=1794207952; v=1; x=1794812752;
+ b=WJB9BMq+fFhU13B3Sq0B4aMa4tfkj9SriMLLJ9oGbdbyajq5NvOEkpzysKSpI23zh/t4DzKn
+ wjGbuVN0bZQ+wmVPANnnpDpVYkUwNba8AjXmhtLyLOGw9U0bP8bjP//dcyMYGuO/AEIewGUf9YH
+ 2UNbpgd6Fte8Kufe78KBFt88=
 X-Envelope-To: linux-wireless@vger.kernel.org
-Received: by smtp.migadu.com with ESMTPS id 1563ae8dbb63b098;
-	Mon, 09 Nov 2026 06:43:02 +0000
-X-Mizu-Trace-ID: 1563ae8dbb63b098
+Received: by smtp.migadu.com with ESMTPS id dde931c2e3d2607a;
+	Mon, 09 Nov 2026 07:05:52 +0000
+X-Mizu-Trace-ID: dde931c2e3d2607a
 X-Migadu-Flow: FLOW_OUT
-Date: Mon, 09 Nov 2026 07:43:00 +0100
+Date: Mon, 09 Nov 2026 08:05:48 +0100
 From: Luka Gejak <luka.gejak@linux.dev>
-To: Zeshan Ahmed Nobin <zeshanahmednobin@gmail.com>,
- linux-wireless@vger.kernel.org
-CC: linux-kernel@vger.kernel.org, Ping-Ke Shih <pkshih@realtek.com>,
- Kalle Valo <kvalo@kernel.org>
-Subject: =?US-ASCII?Q?Re=3A_=5BPATCH_RESEND_rtw-next_v2_2/2=5D_wifi=3A_rtw88=3A_?=
- =?US-ASCII?Q?8822c=3A_ignore_nrx_values_without_CCK_PD_registers?=
-In-Reply-To: <20261108182837.682661-3-zeshanahmednobin@gmail.com>
-References: <20261108182837.682661-1-zeshanahmednobin@gmail.com> <20261108182837.682661-3-zeshanahmednobin@gmail.com>
-Message-ID: <2C4EC68D-1844-4124-A40D-FD0BA0627A44@linux.dev>
+To: Kalpesh Solanki <skalpesh942@gmail.com>, pkshih@realtek.com
+CC: kvalo@kernel.org, linux-wireless@vger.kernel.org,
+ linux-kernel@vger.kernel.org, stable@vger.kernel.org
+Subject: =?US-ASCII?Q?Re=3A_=5BPATCH_v4_1/3=5D_wifi=3A_rtw88=3A_clear_RTW?=
+ =?US-ASCII?Q?=5FFLAG=5FRESTARTING_on_stop_and_start_failure?=
+In-Reply-To: <20261108142708.489067-2-skalpesh942@gmail.com>
+References: <20261108142708.489067-1-skalpesh942@gmail.com> <20261108142708.489067-2-skalpesh942@gmail.com>
+Message-ID: <CEF516A5-5E4B-42E2-BBEE-6FFD89BC5B90@linux.dev>
 X-Mailing-List: linux-wireless@vger.kernel.org
 List-Id: <linux-wireless.vger.kernel.org>
 List-Post: <mailto:linux-wireless@vger.kernel.org>
@@ -71,40 +70,32 @@ Content-Type: text/plain;
  charset=utf-8
 Content-Transfer-Encoding: 8bit
 
-On November 8, 2026 7:28:37 PM GMT+01:00, Zeshan Ahmed Nobin
-<zeshanahmednobin@gmail.com> wrote:
->rtw8822c_phy_cck_pd_set() reads nrx, the number of CCK RX paths minus
->one, from a 2-bit register field. The driver only ever sets it to 0 or
->1, for one or two RX paths (see rtw8822c_config_cck_rx_path()), and
->rtw8822c_cck_pd_reg[] only has registers for those two values; its
->entries for nrx 2 and 3 are all zero.
+On November 8, 2026 3:27:05 PM GMT+01:00, Kalpesh Solanki
+<skalpesh942@gmail.com> wrote:
+>When mac80211 stops or suspends the device without WoWLAN,
+>drv_reconfig_complete() is never invoked with
+>IEEE80211_RECONFIG_TYPE_RESTART. If firmware recovery was in flight
+>during this transition, RTW_FLAG_RESTARTING remains set permanently,
+>blocking all subsequent firmware recoveries until the module is reloaded.
 >
->A device that stops responding can return any value. On USB, a failed
->read returns whatever an earlier read left in the buffer, so bw can be
->0 or 1 while nrx is 2 or 3. When the level then changes,
->rtw8822c_phy_cck_pd_set_reg() gets past its WARN_ON(), which only
->checks nrx against RTW_RF_PATH_MAX, and calls rtw_read32_mask() and
->rtw_write32_mask() on register 0x0 with a zero mask. Both compute
->__ffs(0), which is undefined, and the write puts back whatever was read
->from register 0x0.
+>Similarly, if rtw_core_start() fails during drv_start() in a recovery
+>restart, local->started remains false. When mac80211 cleans up via
+>cfg80211_shutdown_all_interfaces(), drv_stop() returns early without
+>calling rtw_ops_stop(), leaving RTW_FLAG_RESTARTING set permanently on
+>hardware that failed to recover.
 >
->Return early when rtw8822c_cck_pd_reg[] has no registers for nrx; bw
->has already been checked at that point.
+>Clear RTW_FLAG_RESTARTING in rtw_ops_stop(), as well as in
+>rtw_ops_start() when rtw_core_start() returns an error, ensuring the
+>driver always exits the restarting state on error or teardown.
 >
->The fix and this message were drafted with an AI coding assistant
->(Claude Opus 5.5 by Anthropic), then reviewed and tested by the
->submitter.
->
->Reported-by: Luka Gejak <luka.gejak@linux.dev>
->Closes: https://lore.kernel.org/linux-wireless/f6a7d3272fe7635c6a83698dfab5d85500437ca6@linux.dev/
->Fixes: 479c4ee931a6 ("rtw88: add dynamic cck pd mechanism")
->Signed-off-by: Zeshan Ahmed Nobin <zeshanahmednobin@gmail.com>
+>Fixes: 5c831644e1f4 ("rtw88: handle and recover when firmware crash")
+>Cc: stable@vger.kernel.org
+>Signed-off-by: Kalpesh Solanki <skalpesh942@gmail.com>
 >---
 
 Looks good to me,
 
 Reviewed-by: Luka Gejak <luka.gejak@linux.dev>
-
 
 Best regards,
 Luka Gejak
