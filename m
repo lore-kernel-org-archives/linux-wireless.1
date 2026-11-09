@@ -1,63 +1,63 @@
-Authentication-Results: smtp.subspace.kernel.org; arc=none smtp.remote-ip=95.215.58.242
+Authentication-Results: smtp.subspace.kernel.org; arc=none smtp.remote-ip=91.218.175.2
 ARC-Seal: i=1; d=subspace.kernel.org; s=arc20261015; a=rsa-sha256; cv=none;
-	t=1794206514;
-	b=AtwWMObctUo92Mq+xZhbOpxjovSNrCz6kqVwz4SjRtDy1hABLcxIuyZZIF0Gf4zWulH5
-	 wY+Zp+pyGysHUtlSh89WLK/Fj6SVXyIPFOzbt/Q7XlD7GpjrHD64kzXBYGXLWJZ+C1/uB
-	 vWqUf0KAd1iWWBOtDBD2iu1s/v1iPtheu+ykv+nmRDT0G6OEm5obwsNT65CTyOtxZFIQc
-	 tlIeB5EbDXgEA6EX+oxQD6NtMNWJjm+a1Fdm4QRoe50BAAhuFyjlNIeAwX3xkX0epiWqe
-	 5Hrlzr3Y6R4rfmlJhlwQ1+pswhGibj3SPmajSB/HFL4HCxlXeGRfK78V+HQm2HnUJdg==
+	t=1794206585;
+	b=I0+bbBXkDRiqdAqqXpsbX1UipeUirKNP/RP43CQU4vaqFl1IBYYQq0r8+aJ193HkpNYM
+	 26QSD+cIbcgNvNgxnbmLAwT42LJfNOvQIPJfDTUnkc/2I4WTZTTVowMdopX2JpFsOrXT4
+	 4YD4EzFIpB9VcShl+ENJYNAjtfvjnLFUdyWur6uP8V5s5/1uFbo0rKWtwEbfsxXNvJRG4
+	 JW0NHCuOX/+hM0f+NTzre6FLcXn6ZWKAfAS1+Vhg/XZ7/G3snKSuqncPyHcD4IVVU8Ltz
+	 lhoTkJ7lLXDCuuaFGD7z3WoAd0azkLzXTwC4FEIhJQ5o7hxq2pkuBG506JIHW8RxeWw==
 ARC-Message-Signature: i=1; d=subspace.kernel.org; s=arc20261015;
-	a=rsa-sha256; c=relaxed/relaxed; t=1794206514;
+	a=rsa-sha256; c=relaxed/relaxed; t=1794206585;
 	h=DMARC-Filter:X-Envelope-To:DKIM-Signature:X-Envelope-To:Received:
 	 X-Mizu-Trace-ID:X-Migadu-Flow:Date:From:To:CC:Subject:In-Reply-To:
 	 References:Message-ID:MIME-Version:Content-Type:
 	 Content-Transfer-Encoding;
-	bh=ZzG+B6v080Z5FbgsRfwns3KQJ2PJp7hPF1hqKQeiP0I=;
-	b=r7FwmH9LtPOHQck9D7hgbUwBh0FISIcajcftFNhNb5m3xS+7Wk6Xx6ctCdRnUjUhwh5k
-	 zA+Na8R/q5nslPuUjQ/1bap8WV8yQOxfcrscHotZrV/pA91WZCU7K6xqRsm5dxL6+DYco
-	 KcsLVsX3B96TskbnM0xMkaMSFMCRZ8waCEpJezW9E/POEVoEH6YuR01QxOfVahsNO7d+e
-	 wjdqXB63a31pMHmierQrjV0OK3h4ijpmoYMNtlaD8pvKKEQVYzzU6P/+Xy3Oc6NqaLlp9
-	 ztYEYDDUXoc3Kc6wPeS74bJVAYByPK0mBADL4j6NSPlAlQgD9lr2ft9g47iBK3KKa2Q==
+	bh=ebhEmtFiUyEh4cVX2pYWagxjHX97HdZXhWF4H/DoKjc=;
+	b=rWdTUP006N4c/HWbh9NuhrbcY9xjB2zVEVlqdND3XBfP/UbAZAE+PpixgJvdAHnvDjpL
+	 /pBx0YAz7Bq1st1a6AE7YJxmswwBHLknPTpkWwsb1vi+XwOY5J/RY44sE6SOrQpUM6i+X
+	 PIhS8Z9FU1nzWGzXCW63Quj/TDq/f6URAUaEK0+ePS03jGKkBDprxrdr/5de1x5RQe0mj
+	 jqcpX0plXzQHeArtpg9cV1Bt5GoU+Y4fL57m5p27pS3BAxehJea2NV1KYVRbgI80Vcc6h
+	 kjGwNu4al1PTUEeeDmmptZ5CKC5uOPC5dPIS1G1I8jJglPPRNxYidjSx8ymTcZLviMQ==
 ARC-Authentication-Results: i=1; smtp.subspace.kernel.org; 
 	dmarc=pass header.from=linux.dev;
 	spf=pass smtp.mailfrom=linux.dev;
-	dkim=pass header.d=linux.dev header.i=@linux.dev header.a=rsa-sha256 header.s=key1 header.b=v7F+PgyF;
-	arc=none smtp.remote-ip=95.215.58.242
-Received: from mta1.migadu.com (out-242.mta1.migadu.com [95.215.58.242])
+	dkim=pass header.d=linux.dev header.i=@linux.dev header.a=rsa-sha256 header.s=key1 header.b=Yotv9l8c;
+	arc=none smtp.remote-ip=91.218.175.2
+Received: from mta0.migadu.com (out-2.mta0.migadu.com [91.218.175.2])
 	(using TLSv1.3 with cipher TLS_AES_128_GCM_SHA256 (128/128 bits)
 	 key-exchange X25519 server-signature ECDSA (prime256v1) server-digest SHA256)
 	(No client certificate requested)
-	by smtp.subspace.kernel.org (Postfix) with ESMTPS id 0CADA606A32A
-	for <linux-wireless@vger.kernel.org>; Mon,  9 Nov 2026 06:41:52 +0000 (UTC)
-DMARC-Filter: OpenDMARC Filter v1.4.2 smtp.subspace.kernel.org 0CADA606A32A
+	by smtp.subspace.kernel.org (Postfix) with ESMTPS id 1BF02606A322
+	for <linux-wireless@vger.kernel.org>; Mon,  9 Nov 2026 06:43:03 +0000 (UTC)
+DMARC-Filter: OpenDMARC Filter v1.4.2 smtp.subspace.kernel.org 1BF02606A322
 Authentication-Results: smtp.subspace.kernel.org; dmarc=pass (p=none dis=none) header.from=linux.dev
 Authentication-Results: smtp.subspace.kernel.org; spf=pass smtp.mailfrom=linux.dev
 Authentication-Results: smtp.subspace.kernel.org;
-	dkim=pass (1024-bit key, unprotected) header.d=linux.dev header.i=@linux.dev header.a=rsa-sha256 header.s=key1 header.b=v7F+PgyF
+	dkim=pass (1024-bit key, unprotected) header.d=linux.dev header.i=@linux.dev header.a=rsa-sha256 header.s=key1 header.b=Yotv9l8c
 X-Envelope-To: linux-wireless@vger.kernel.org
-DKIM-Signature: a=rsa-sha256; bh=nox8bTJLykF11nD4yonwkiNc7pDMafIXe+7tPzIa2gA=;
+DKIM-Signature: a=rsa-sha256; bh=ebhEmtFiUyEh4cVX2pYWagxjHX97HdZXhWF4H/DoKjc=;
  c=simple/simple; d=linux.dev;
  h=from:to:subject:date:message-id:mime-version:content-type; s=key1;
- t=1794206511; v=1; x=1794811311;
- b=v7F+PgyFV/RlIoNzZkTNW/LpuHk+gaaL8XmTOU2rbR7vYbYWxjVgo75l4TUdZKiyvxMmCznH
- N5tsw4GpOwRaDjJ9u9Kv5RaMwwyYqfH9aktHAV/tLPlpzisRb/yqP0yMQ6b9KmMqJQ6ykDGPRSk
- L8dJrMtP8XueB+Z18vLDCVlA=
+ t=1794206582; v=1; x=1794811382;
+ b=Yotv9l8c2RPenS6Q2Y3ubHJTNGrhHhL0KqXUB3FsjGLv9H+z4EwTKUr5x1lHauIQXR8SJxYp
+ /RoSfgqYAHjbm6QqniwD8d9CSsNI4GpQHdqfYd87LT+FdU1xLAOQNg/5SO9MyGwc9CyNps+Tvu/
+ fnpcOVNvtniGJniKlb+9ma18=
 X-Envelope-To: linux-wireless@vger.kernel.org
-Received: by smtp.migadu.com with ESMTPS id 2938fe24122b836d;
-	Mon, 09 Nov 2026 06:41:51 +0000
-X-Mizu-Trace-ID: 2938fe24122b836d
+Received: by smtp.migadu.com with ESMTPS id 1563ae8dbb63b098;
+	Mon, 09 Nov 2026 06:43:02 +0000
+X-Mizu-Trace-ID: 1563ae8dbb63b098
 X-Migadu-Flow: FLOW_OUT
-Date: Mon, 09 Nov 2026 07:41:46 +0100
+Date: Mon, 09 Nov 2026 07:43:00 +0100
 From: Luka Gejak <luka.gejak@linux.dev>
 To: Zeshan Ahmed Nobin <zeshanahmednobin@gmail.com>,
  linux-wireless@vger.kernel.org
 CC: linux-kernel@vger.kernel.org, Ping-Ke Shih <pkshih@realtek.com>,
  Kalle Valo <kvalo@kernel.org>
-Subject: =?US-ASCII?Q?Re=3A_=5BPATCH_RESEND_rtw-next_v2_1/2=5D_wifi=3A_rtw88?=
- =?US-ASCII?Q?=3A_8822c=3A_fix_out-of-bounds_access_in_cck=5Fpd=5Fset?=
-In-Reply-To: <20261108182837.682661-2-zeshanahmednobin@gmail.com>
-References: <20261108182837.682661-1-zeshanahmednobin@gmail.com> <20261108182837.682661-2-zeshanahmednobin@gmail.com>
-Message-ID: <0FD97102-7E9C-47DA-9B52-7F7A837E2924@linux.dev>
+Subject: =?US-ASCII?Q?Re=3A_=5BPATCH_RESEND_rtw-next_v2_2/2=5D_wifi=3A_rtw88=3A_?=
+ =?US-ASCII?Q?8822c=3A_ignore_nrx_values_without_CCK_PD_registers?=
+In-Reply-To: <20261108182837.682661-3-zeshanahmednobin@gmail.com>
+References: <20261108182837.682661-1-zeshanahmednobin@gmail.com> <20261108182837.682661-3-zeshanahmednobin@gmail.com>
+Message-ID: <2C4EC68D-1844-4124-A40D-FD0BA0627A44@linux.dev>
 X-Mailing-List: linux-wireless@vger.kernel.org
 List-Id: <linux-wireless.vger.kernel.org>
 List-Post: <mailto:linux-wireless@vger.kernel.org>
@@ -71,37 +71,39 @@ Content-Type: text/plain;
  charset=utf-8
 Content-Transfer-Encoding: 8bit
 
-Hi Zeshan,
-
-Thanks for the v2. One minor thing.
-
-On November 8, 2026 7:28:36 PM GMT+01:00, Zeshan Ahmed Nobin
+On November 8, 2026 7:28:37 PM GMT+01:00, Zeshan Ahmed Nobin
 <zeshanahmednobin@gmail.com> wrote:
-
-> diff --git a/drivers/net/wireless/realtek/rtw88/rtw8822c.c b/drivers/net/wireless/realtek/rtw88/rtw8822c.c
-> index 09315d23e2c4..6343568285bc 100644
-> --- a/drivers/net/wireless/realtek/rtw88/rtw8822c.c
-> +++ b/drivers/net/wireless/realtek/rtw88/rtw8822c.c
-> @@ -4406,6 +4406,13 @@ static void rtw8822c_phy_cck_pd_set(struct rtw_dev *rtwdev, u8 new_lvl)
->       nrx = (u8)rtw_read32_mask(rtwdev, 0x1a2c, 0x60000);
->       bw = (u8)rtw_read32_mask(rtwdev, 0x9b0, 0xc);
+>rtw8822c_phy_cck_pd_set() reads nrx, the number of CCK RX paths minus
+>one, from a 2-bit register field. The driver only ever sets it to 0 or
+>1, for one or two RX paths (see rtw8822c_config_cck_rx_path()), and
+>rtw8822c_cck_pd_reg[] only has registers for those two values; its
+>entries for nrx 2 and 3 are all zero.
 >
-> +     /*
-> +      * cck_pd_lv[] only has entries for 20 and 40 MHz. A chip that stops
-> +      * responding on the PCIe bus reads back as all ones, giving bw = 3.
-> +      */
-> +     if (bw >= ARRAY_SIZE(dm_info->cck_pd_lv))
-> +             return;
+>A device that stops responding can return any value. On USB, a failed
+>read returns whatever an earlier read left in the buffer, so bw can be
+>0 or 1 while nrx is 2 or 3. When the level then changes,
+>rtw8822c_phy_cck_pd_set_reg() gets past its WARN_ON(), which only
+>checks nrx against RTW_RF_PATH_MAX, and calls rtw_read32_mask() and
+>rtw_write32_mask() on register 0x0 with a zero mask. Both compute
+>__ffs(0), which is undefined, and the write puts back whatever was read
+>from register 0x0.
+>
+>Return early when rtw8822c_cck_pd_reg[] has no registers for nrx; bw
+>has already been checked at that point.
+>
+>The fix and this message were drafted with an AI coding assistant
+>(Claude Opus 5.5 by Anthropic), then reviewed and tested by the
+>submitter.
+>
+>Reported-by: Luka Gejak <luka.gejak@linux.dev>
+>Closes: https://lore.kernel.org/linux-wireless/f6a7d3272fe7635c6a83698dfab5d85500437ca6@linux.dev/
+>Fixes: 479c4ee931a6 ("rtw88: add dynamic cck pd mechanism")
+>Signed-off-by: Zeshan Ahmed Nobin <zeshanahmednobin@gmail.com>
+>---
 
-As far as I can see bw doesn't have to come from the chip here, since
-rtw_set_channel() programs the same value it stores in hal. So maybe
-this could just be
+Looks good to me,
 
-        bw = rtwdev->hal.current_band_width;
-
-CCK PD only runs on 2.4 GHz, so that seems to always be 20 or 40 MHz and
-the check could go. Or is there a reason to read it from the chip that I
-missed?
+Reviewed-by: Luka Gejak <luka.gejak@linux.dev>
 
 
 Best regards,
