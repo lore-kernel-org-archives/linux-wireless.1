@@ -1,63 +1,63 @@
-Authentication-Results: smtp.subspace.kernel.org; arc=none smtp.remote-ip=91.218.175.129
+Authentication-Results: smtp.subspace.kernel.org; arc=none smtp.remote-ip=95.215.58.242
 ARC-Seal: i=1; d=subspace.kernel.org; s=arc20261015; a=rsa-sha256; cv=none;
-	t=1794206177;
-	b=DI7px7BsmVJK4fd/rGiksVGXxYwf/RpzcZw8dAfPvNFODMKLYyYd56MdlDHDWfHhBsOW
-	 Gi9gZVCspx0zpxQiacQoSSW3G3tM0Ee87LN01oBltuOwtA4zuz4qV79b0bjEPXr87h4bm
-	 Y4pHuR62rWpPlyTVGCgYOOCmTx3DPhFD/nMtaqrSWgHecKxG5UrKK+56/2WPSfA9hyHlp
-	 w1629BSJT6ZOEcrkMGKdqUPU7GDaVU5uyPo2C8EaBu+6dYCkvsghLw21BCJO5gkGAgJz0
-	 58o7t6nr3yI8itpvboyJfjo0t0i4CL/hbeVULjXRNdEJwyO11RFAe3CObNxDr28FwKA==
+	t=1794206514;
+	b=AtwWMObctUo92Mq+xZhbOpxjovSNrCz6kqVwz4SjRtDy1hABLcxIuyZZIF0Gf4zWulH5
+	 wY+Zp+pyGysHUtlSh89WLK/Fj6SVXyIPFOzbt/Q7XlD7GpjrHD64kzXBYGXLWJZ+C1/uB
+	 vWqUf0KAd1iWWBOtDBD2iu1s/v1iPtheu+ykv+nmRDT0G6OEm5obwsNT65CTyOtxZFIQc
+	 tlIeB5EbDXgEA6EX+oxQD6NtMNWJjm+a1Fdm4QRoe50BAAhuFyjlNIeAwX3xkX0epiWqe
+	 5Hrlzr3Y6R4rfmlJhlwQ1+pswhGibj3SPmajSB/HFL4HCxlXeGRfK78V+HQm2HnUJdg==
 ARC-Message-Signature: i=1; d=subspace.kernel.org; s=arc20261015;
-	a=rsa-sha256; c=relaxed/relaxed; t=1794206177;
+	a=rsa-sha256; c=relaxed/relaxed; t=1794206514;
 	h=DMARC-Filter:X-Envelope-To:DKIM-Signature:X-Envelope-To:Received:
 	 X-Mizu-Trace-ID:X-Migadu-Flow:Date:From:To:CC:Subject:In-Reply-To:
 	 References:Message-ID:MIME-Version:Content-Type:
 	 Content-Transfer-Encoding;
-	bh=ubVAfROa20NibdINJspeiownyQQhZxWkDLzw1XkPqbw=;
-	b=nJS8o/dZC9107l+Jgp1Dn2PhfxIen57uXoF7KtfGgcZxm2Pxnh226WzKTIJT+yTh5dzR
-	 guqBsLOQU7zGcG2ZWWLh6C4jMcNvYwo8r5Bl67j6tWSv9gdzI1LOkQwtPMREizEIVBpRw
-	 f4rRx3AWTzSzZPQxFka0oN/vRZKSsSXOUFwtLAHDBqpAlLy8+CdmU5iXCVrQa9fl3FDhu
-	 vQsyWf/tlIPy8Xmb91J3XsmW3TO1PkVGb/TgF2lVKnCrhbX/DAK5z0OIKZmtsRIIyqjEb
-	 z5Pu26nOUhcbefhd22cseYJNmkCg97YfjV1VHn527Rz8DApH6tCXMcDOGrFU3N74vrA==
+	bh=ZzG+B6v080Z5FbgsRfwns3KQJ2PJp7hPF1hqKQeiP0I=;
+	b=r7FwmH9LtPOHQck9D7hgbUwBh0FISIcajcftFNhNb5m3xS+7Wk6Xx6ctCdRnUjUhwh5k
+	 zA+Na8R/q5nslPuUjQ/1bap8WV8yQOxfcrscHotZrV/pA91WZCU7K6xqRsm5dxL6+DYco
+	 KcsLVsX3B96TskbnM0xMkaMSFMCRZ8waCEpJezW9E/POEVoEH6YuR01QxOfVahsNO7d+e
+	 wjdqXB63a31pMHmierQrjV0OK3h4ijpmoYMNtlaD8pvKKEQVYzzU6P/+Xy3Oc6NqaLlp9
+	 ztYEYDDUXoc3Kc6wPeS74bJVAYByPK0mBADL4j6NSPlAlQgD9lr2ft9g47iBK3KKa2Q==
 ARC-Authentication-Results: i=1; smtp.subspace.kernel.org; 
 	dmarc=pass header.from=linux.dev;
 	spf=pass smtp.mailfrom=linux.dev;
-	dkim=pass header.d=linux.dev header.i=@linux.dev header.a=rsa-sha256 header.s=key1 header.b=QdpOdgjt;
-	arc=none smtp.remote-ip=91.218.175.129
-Received: from mta0.migadu.com (out-129.mta0.migadu.com [91.218.175.129])
+	dkim=pass header.d=linux.dev header.i=@linux.dev header.a=rsa-sha256 header.s=key1 header.b=v7F+PgyF;
+	arc=none smtp.remote-ip=95.215.58.242
+Received: from mta1.migadu.com (out-242.mta1.migadu.com [95.215.58.242])
 	(using TLSv1.3 with cipher TLS_AES_128_GCM_SHA256 (128/128 bits)
 	 key-exchange X25519 server-signature ECDSA (prime256v1) server-digest SHA256)
 	(No client certificate requested)
-	by smtp.subspace.kernel.org (Postfix) with ESMTPS id 3B2D7606A31C
-	for <linux-wireless@vger.kernel.org>; Mon,  9 Nov 2026 06:36:15 +0000 (UTC)
-DMARC-Filter: OpenDMARC Filter v1.4.2 smtp.subspace.kernel.org 3B2D7606A31C
+	by smtp.subspace.kernel.org (Postfix) with ESMTPS id 0CADA606A32A
+	for <linux-wireless@vger.kernel.org>; Mon,  9 Nov 2026 06:41:52 +0000 (UTC)
+DMARC-Filter: OpenDMARC Filter v1.4.2 smtp.subspace.kernel.org 0CADA606A32A
 Authentication-Results: smtp.subspace.kernel.org; dmarc=pass (p=none dis=none) header.from=linux.dev
 Authentication-Results: smtp.subspace.kernel.org; spf=pass smtp.mailfrom=linux.dev
 Authentication-Results: smtp.subspace.kernel.org;
-	dkim=pass (1024-bit key, unprotected) header.d=linux.dev header.i=@linux.dev header.a=rsa-sha256 header.s=key1 header.b=QdpOdgjt
+	dkim=pass (1024-bit key, unprotected) header.d=linux.dev header.i=@linux.dev header.a=rsa-sha256 header.s=key1 header.b=v7F+PgyF
 X-Envelope-To: linux-wireless@vger.kernel.org
-DKIM-Signature: a=rsa-sha256; bh=nED5IjRRVS9zufEnMoKY+EwjY9VykfLJN7/PFD533sk=;
+DKIM-Signature: a=rsa-sha256; bh=nox8bTJLykF11nD4yonwkiNc7pDMafIXe+7tPzIa2gA=;
  c=simple/simple; d=linux.dev;
  h=from:to:subject:date:message-id:mime-version:content-type; s=key1;
- t=1794206174; v=1; x=1794810974;
- b=QdpOdgjtixd+BcIyK5mIaHhCDj9c/ugMSlX1jNERO8LlPu/V4HArcZCYA7T+6Ykl1kNR26Dn
- hZsduDFXMVasRteUT6mWP33Wxo9y6EW9SjOr6fCTCgR7RxsCyCyVk7w+xstHC7WQe5q9663Iu5e
- Nw0wHL0a2/D9DLHE6BeKxUXo=
+ t=1794206511; v=1; x=1794811311;
+ b=v7F+PgyFV/RlIoNzZkTNW/LpuHk+gaaL8XmTOU2rbR7vYbYWxjVgo75l4TUdZKiyvxMmCznH
+ N5tsw4GpOwRaDjJ9u9Kv5RaMwwyYqfH9aktHAV/tLPlpzisRb/yqP0yMQ6b9KmMqJQ6ykDGPRSk
+ L8dJrMtP8XueB+Z18vLDCVlA=
 X-Envelope-To: linux-wireless@vger.kernel.org
-Received: by smtp.migadu.com with ESMTPS id 30777b2291c593d7;
-	Mon, 09 Nov 2026 06:36:13 +0000
-X-Mizu-Trace-ID: 30777b2291c593d7
+Received: by smtp.migadu.com with ESMTPS id 2938fe24122b836d;
+	Mon, 09 Nov 2026 06:41:51 +0000
+X-Mizu-Trace-ID: 2938fe24122b836d
 X-Migadu-Flow: FLOW_OUT
-Date: Mon, 09 Nov 2026 07:36:08 +0100
+Date: Mon, 09 Nov 2026 07:41:46 +0100
 From: Luka Gejak <luka.gejak@linux.dev>
-To: Ping-Ke Shih <pkshih@realtek.com>, Kalpesh Solanki <skalpesh942@gmail.com>
-CC: "kvalo@kernel.org" <kvalo@kernel.org>,
- "linux-wireless@vger.kernel.org" <linux-wireless@vger.kernel.org>,
- "linux-kernel@vger.kernel.org" <linux-kernel@vger.kernel.org>
-Subject: =?US-ASCII?Q?RE=3A_=5BPATCH_v3_0/2=5D_wifi=3A_rtw88=3A_firmwa?=
- =?US-ASCII?Q?re_recovery_fixes_and_LPS_hang_handling?=
-In-Reply-To: <39750c895e3b4dfa8ef98a28503f25fd@realtek.com>
-References: <20261108085126.331784-1-skalpesh942@gmail.com> <9fd1c42c5df94629a21c41dd08645b96@realtek.com> <27E9A60D-26F6-41D6-B74F-7DEF998C8498@linux.dev> <86803b2c13a74ada92ab73e79f38164d@realtek.com> <B1CD522C-2CC2-4913-8175-05F0D25CF65F@linux.dev> <39750c895e3b4dfa8ef98a28503f25fd@realtek.com>
-Message-ID: <1AF1A633-859B-42BA-9B2E-4B8081BF09C7@linux.dev>
+To: Zeshan Ahmed Nobin <zeshanahmednobin@gmail.com>,
+ linux-wireless@vger.kernel.org
+CC: linux-kernel@vger.kernel.org, Ping-Ke Shih <pkshih@realtek.com>,
+ Kalle Valo <kvalo@kernel.org>
+Subject: =?US-ASCII?Q?Re=3A_=5BPATCH_RESEND_rtw-next_v2_1/2=5D_wifi=3A_rtw88?=
+ =?US-ASCII?Q?=3A_8822c=3A_fix_out-of-bounds_access_in_cck=5Fpd=5Fset?=
+In-Reply-To: <20261108182837.682661-2-zeshanahmednobin@gmail.com>
+References: <20261108182837.682661-1-zeshanahmednobin@gmail.com> <20261108182837.682661-2-zeshanahmednobin@gmail.com>
+Message-ID: <0FD97102-7E9C-47DA-9B52-7F7A837E2924@linux.dev>
 X-Mailing-List: linux-wireless@vger.kernel.org
 List-Id: <linux-wireless.vger.kernel.org>
 List-Post: <mailto:linux-wireless@vger.kernel.org>
@@ -71,60 +71,37 @@ Content-Type: text/plain;
  charset=utf-8
 Content-Transfer-Encoding: 8bit
 
-On November 9, 2026 7:30:52 AM GMT+01:00, Ping-Ke Shih <pkshih@realtek.com>
-wrote:
->Luka Gejak <luka.gejak@linux.dev> wrote:
->> On November 9, 2026 7:12:52 AM GMT+01:00, Ping-Ke Shih
-><pkshih@realtek.com>
->> wrote:
->> >Luka Gejak <luka.gejak@linux.dev> wrote:
->> >> On November 9, 2026 3:30:58 AM GMT+01:00, Ping-Ke Shih
->> ><pkshih@realtek.com>
->> >> wrote:
->> >> >Kalpesh Solanki <skalpesh942@gmail.com> wrote:
->> >> >> Changes in v3:
->> >> >> - Note: v2 patch 1/2 (DMI quirk) is already applied in rtw-next.
->> >> >> - Add patch 1/2 to clear RTW_FLAG_RESTARTING in rtw_ops_stop()
->> >> >>   with Fixes tag.
->> >> >> - In patch 2/2:
->> >> >>   - Count consecutive failures before triggering recovery
->> >> >>     (RTW_PS_HANG_MAX_CNT = 3).
->> >> >>   - Reset ps_hang_cnt on successful LPS leave and in
->> >rtw_core_start().
->> >> >>   - Suppress raw register dump on transient failures to avoid log
->> >spam.
->> >> >
->> >> >The patchset doesn't present in [1] nor [2]. Please wait a while to
->> >send
->> >> >newer version after it recovered.
->> >> >
->> >> >[1] https://patchwork.kernel.org/project/linux-wireless/list/
->> >> >[2] https://lore.kernel.org/linux-wireless/
->> >> >
->> >> >
->> >>
->> >> Hi Ping-Ke,
->> >>
->> >> The linux-wireless list is bugged and nothing is appearing on it
->since
->> >> 2026-11-06 15:46 UTC. Aren't patches accessible due to
->> >> linux-kernel@vger.kernel.org being CC'ed?
->> >
->> >I think not. I sent patches to linux-wireless, not including
->linux-kernel,
->> >before, and the lore and patchwork of linux-wireless can capture the
->> >patches.
->> >
->> >
->> 
->> We are having this conversation on linux-wireless, aren't we? I don't
->see
->> it and my lei isn't picking it up.
->
->I think the mailing list still works, but lore/patchwork got wrong.
->
+Hi Zeshan,
 
-Possibly, now sure why lei is affected though(I am not sure how lei works).
+Thanks for the v2. One minor thing.
+
+On November 8, 2026 7:28:36 PM GMT+01:00, Zeshan Ahmed Nobin
+<zeshanahmednobin@gmail.com> wrote:
+
+> diff --git a/drivers/net/wireless/realtek/rtw88/rtw8822c.c b/drivers/net/wireless/realtek/rtw88/rtw8822c.c
+> index 09315d23e2c4..6343568285bc 100644
+> --- a/drivers/net/wireless/realtek/rtw88/rtw8822c.c
+> +++ b/drivers/net/wireless/realtek/rtw88/rtw8822c.c
+> @@ -4406,6 +4406,13 @@ static void rtw8822c_phy_cck_pd_set(struct rtw_dev *rtwdev, u8 new_lvl)
+>       nrx = (u8)rtw_read32_mask(rtwdev, 0x1a2c, 0x60000);
+>       bw = (u8)rtw_read32_mask(rtwdev, 0x9b0, 0xc);
+>
+> +     /*
+> +      * cck_pd_lv[] only has entries for 20 and 40 MHz. A chip that stops
+> +      * responding on the PCIe bus reads back as all ones, giving bw = 3.
+> +      */
+> +     if (bw >= ARRAY_SIZE(dm_info->cck_pd_lv))
+> +             return;
+
+As far as I can see bw doesn't have to come from the chip here, since
+rtw_set_channel() programs the same value it stores in hal. So maybe
+this could just be
+
+        bw = rtwdev->hal.current_band_width;
+
+CCK PD only runs on 2.4 GHz, so that seems to always be 20 or 40 MHz and
+the check could go. Or is there a reason to read it from the chip that I
+missed?
 
 
 Best regards,
