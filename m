@@ -1,110 +1,110 @@
 Authentication-Results: smtp.subspace.kernel.org; arc=none smtp.remote-ip=205.220.168.131
 ARC-Seal: i=1; d=subspace.kernel.org; s=arc20261015; a=rsa-sha256; cv=none;
-	t=1794202369;
-	b=j52bBezdkORW/LvtEq8CnMMw6McaI9eIRLN9kcKADp1lmVJ7uArfQ6wpujItOqRCWjpW
-	 rYGxs/xwVy6Hq1ve7U3YtFgA4/jSQapM6kzRdVx1b8p+pP01c/x6UWFI7fkLhkQEHcVoz
-	 05Skdkf3CxDe/OW0G44uvkhd1xBkHuEWTH2xJlj8ves6hsdzoV7jPq2/RpH1/cjro/yBn
-	 L3JZoknZ+gzeV6T1KWNI5jZ4n3Q3H3FGtP2gjHdA6AGI1b6lc8SAwNDB/PWGYe/7pgrHm
-	 ZIbgI7B1opxS7Ws6eRGhRrxrU+Q4tzraSf6uAWtvrGK+5DffJw01pvgj3UsPSqpSS9A==
+	t=1794202376;
+	b=KIfN3WUykChP8Ky+Cf7h+tSWiw86oFHJKRjlZeTT/JspmV6qPt6Ze9C9dEHLuYT75A9e
+	 e1FKFOZ+igrqMlkMI98IHMRL44BSznSdGjDmSaMXG3zd6oTLRPlLyI0/rQlbN/xwk+MxP
+	 6kpGTJrZ/kIuBZIFbnGaHuLqLaGTVBGb/EtzgaM5/nsvX2iHmI1UlExlCTcXd8ulJXf9K
+	 BrER2j+WilrKOCn3WbxdgkijqUmCOFqntHc/e0pIYh1D4Hby1Rj1M1LeL8Uo5zij3iOaE
+	 t9PPYO9nUwN5UFFQHSziuCPq9AEJdnRKIX5ccunn8UVBCjJEOFHlboceoLob7DnS4EA==
 ARC-Message-Signature: i=1; d=subspace.kernel.org; s=arc20261015;
-	a=rsa-sha256; c=relaxed/relaxed; t=1794202369;
+	a=rsa-sha256; c=relaxed/relaxed; t=1794202376;
 	h=DMARC-Filter:Received:DKIM-Signature:Received:Received:
 	 DKIM-Signature:X-Google-DKIM-Signature:X-Forwarded-Encrypted:
 	 X-Gm-Message-State:X-Gm-Gg:X-Received:X-Received:Received:Message-ID:
 	 Date:MIME-Version:User-Agent:Subject:To:Cc:References:From:
 	 Content-Language:In-Reply-To:Content-Type:Content-Transfer-Encoding:
-	 X-Proofpoint-Spam-Details-Enc:X-Proofpoint-ORIG-GUID:
-	 X-Authority-Analysis:X-Proofpoint-Spam-Info:X-Proofpoint-GUID:
+	 X-Proofpoint-Spam-Info:X-Authority-Analysis:X-Proofpoint-GUID:
+	 X-Proofpoint-ORIG-GUID:X-Proofpoint-Spam-Details-Enc:
 	 X-Proofpoint-Virus-Version:X-Proofpoint-Spam-Details;
-	bh=zmqHuPAzZn1DNiHHKILm13x0Y5axH8HFFYvD/AHS9iI=;
-	b=bK/ZlBWuVT9cWE3R4Q4z1C7lV0+w6lLnfojUOePr/pritk3QmI/mFN+cLzq/9U5nEQBo
-	 a6XPXrkXhDMivVNaWXVhUoEVQgYSna0d84bep2afuxz7DiVywyC4XZ1yuVZTgoo5bb6QQ
-	 i3d+goI4ITjAs03LHbzuKVt5OS0X65RChgEFJ8xfDjj2qHLPe/ZNvuOKrAyxltmYhRX+b
-	 IGgmeh0jjUiUMBNsoLXxwOM5CefSyhjdglf4GA589xV/NTBdSqgX+Emp+1/lnImt2APPi
-	 y5smfa4dKiIImGOWS6kG3qipvrRpJ7Iab75T6ufHkPdhJ2mMf71x7uFqv29bNMZJiiQ==
+	bh=g7RRgfA21WlV7i8D7fmlmt9kQAOg5FueD4hA6+UfHgE=;
+	b=lBeuCf97nERMhbh82Imq1tR8LmkdT3DQr2OWAbCHVK+iD+VFJnwfHx7rfEfhaYIaTt0b
+	 C2fEuTsw6ST6rWyL3B8GyXHMyer//ENz0aC6ajl2YjE8bwo0MeT24sRdoErvZSWMX0mAe
+	 M9RWxupEfnt2f5sNoXt9Ogbq7wZYwGHkzJIAItLmE41XtB3a4gyrdTA33+h4cIztkEW1z
+	 JVCayHcaMdlniIfq28AfZJDQbYS4dzhGfgHWMyLMvbAKZ9ItQvVlvtoAcT8GmWpHEAurZ
+	 mQPWBkJ51UD+wvDbJxfP2Vl8XKgtQ+1lYG59FWxR6OY9T7EoopnIjYmPMYiVkUXCQHA==
 ARC-Authentication-Results: i=1; smtp.subspace.kernel.org; 
 	dmarc=pass header.from=oss.qualcomm.com;
 	spf=pass smtp.mailfrom=oss.qualcomm.com;
-	dkim=pass header.d=qualcomm.com header.i=@qualcomm.com header.a=rsa-sha256 header.s=qcppdkim1 header.b="LoC0ao/2";
-	dkim=pass header.d=oss.qualcomm.com header.i=@oss.qualcomm.com header.a=rsa-sha256 header.s=google header.b=IVBZzdxG;
+	dkim=pass header.d=qualcomm.com header.i=@qualcomm.com header.a=rsa-sha256 header.s=qcppdkim1 header.b=nPDMlJYS;
+	dkim=pass header.d=oss.qualcomm.com header.i=@oss.qualcomm.com header.a=rsa-sha256 header.s=google header.b=VAg2ByrU;
 	arc=none smtp.remote-ip=205.220.168.131
 Received: from mx0a-0031df01.pphosted.com (mx0a-0031df01.pphosted.com [205.220.168.131])
 	(using TLSv1.3 with cipher TLS_AES_256_GCM_SHA384 (256/256 bits)
 	 key-exchange X25519 server-signature ECDSA (prime256v1) server-digest SHA256)
 	(No client certificate requested)
-	by smtp.subspace.kernel.org (Postfix) with ESMTPS id 93A2D606A323
-	for <linux-wireless@vger.kernel.org>; Mon,  9 Nov 2026 05:32:48 +0000 (UTC)
-DMARC-Filter: OpenDMARC Filter v1.4.2 smtp.subspace.kernel.org 93A2D606A323
+	by smtp.subspace.kernel.org (Postfix) with ESMTPS id 173EB606A333
+	for <linux-wireless@vger.kernel.org>; Mon,  9 Nov 2026 05:32:56 +0000 (UTC)
+DMARC-Filter: OpenDMARC Filter v1.4.2 smtp.subspace.kernel.org 173EB606A333
 Authentication-Results: smtp.subspace.kernel.org; dmarc=pass (p=none dis=none) header.from=oss.qualcomm.com
 Authentication-Results: smtp.subspace.kernel.org; spf=pass smtp.mailfrom=oss.qualcomm.com
 Authentication-Results: smtp.subspace.kernel.org;
-	dkim=pass (2048-bit key) header.d=qualcomm.com header.i=@qualcomm.com header.a=rsa-sha256 header.s=qcppdkim1 header.b=LoC0ao/2;
-	dkim=pass (2048-bit key) header.d=oss.qualcomm.com header.i=@oss.qualcomm.com header.a=rsa-sha256 header.s=google header.b=IVBZzdxG
-Received: from pps.filterd (m0279863.ppops.net [127.0.0.1])
-	by mx0a-0031df01.pphosted.com (8.18.1.11/8.18.1.11) with ESMTP id 6A93K4kT3222719
-	for <linux-wireless@vger.kernel.org>; Mon, 9 Nov 2026 05:32:48 GMT
+	dkim=pass (2048-bit key) header.d=qualcomm.com header.i=@qualcomm.com header.a=rsa-sha256 header.s=qcppdkim1 header.b=nPDMlJYS;
+	dkim=pass (2048-bit key) header.d=oss.qualcomm.com header.i=@oss.qualcomm.com header.a=rsa-sha256 header.s=google header.b=VAg2ByrU
+Received: from pps.filterd (m0279867.ppops.net [127.0.0.1])
+	by mx0a-0031df01.pphosted.com (8.18.1.11/8.18.1.11) with ESMTP id 6A93Jv4p042058
+	for <linux-wireless@vger.kernel.org>; Mon, 9 Nov 2026 05:32:55 GMT
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=qualcomm.com; h=
 	cc:content-transfer-encoding:content-type:date:from:in-reply-to
 	:message-id:mime-version:references:subject:to; s=qcppdkim1; bh=
-	zmqHuPAzZn1DNiHHKILm13x0Y5axH8HFFYvD/AHS9iI=; b=LoC0ao/2P49Zffqq
-	7MlqpXsryEyjvqrTu0UWpyNLuXwh5xrMvkTE6J0cyw0Jn/Phswp9NBq9BAJ2NNQs
-	HI305aXlXqQtK4vDvjYenYT1nX02wKnJX0m27UIT+EvBXVAn3BoMRwc8wDlUnjMS
-	NIH5aAcce26i6JeoSDf/ZbjmEe+OFt7IamN5trJ1zdcgjJEYybZyR0dGls9AR/j/
-	xabF6kzUJydgoEtox/DVVK2OhD33hwQWsN81e4/3h80UTg2AYhfOFv6fdWO6jVWY
-	Rf2nwSpCj9l0Oh9sW9sDVg3IMMsV0HOXJ5dVLXRwLuoHY0uiY/S0Pygc1m7kKfu0
-	Fa6Uag==
+	g7RRgfA21WlV7i8D7fmlmt9kQAOg5FueD4hA6+UfHgE=; b=nPDMlJYSrPzrtjMg
+	ZKcDjQ7BK/zqx0h+4G2JZ4BMluWz3Z70q18ZhWx+QvzFZkIk5NNdQLnLE9T0a9Qe
+	sFDwNsoLLh9nI6BVVCBzmZDb2BaKsXhBm7qBm/PK+UghJeTJ8Vkjzd3s5Puu7/HL
+	qY+l06rROO9RmshsI9QhUkl6Ikml/Y389uKVnMCkINU6tPVAzzsool6PGU6gUf6o
+	IbYMYnpfpu2xTdkeob5ZAB685OSmu/Spb6Vrbdn5a809TNuyyYEGYH2SF7XNeWBn
+	M7QScER98AMfHF5Wh3tCPlAQK7yUj6EClTeuj79aLGhYgtmCO7JZBRuG4wdH20jw
+	UnNA0A==
 Received: from mail-pj1-f70.google.com (mail-pj1-f70.google.com [209.85.216.70])
-	by mx0a-0031df01.pphosted.com (PPS) with ESMTPS id 4hsv734r29-1
+	by mx0a-0031df01.pphosted.com (PPS) with ESMTPS id 4hsspf54c7-1
 	(version=TLSv1.3 cipher=TLS_AES_128_GCM_SHA256 bits=128 verify=NOT)
-	for <linux-wireless@vger.kernel.org>; Mon, 09 Nov 2026 05:32:47 +0000 (GMT)
-Received: by mail-pj1-f70.google.com with SMTP id 98e67ed59e1d1-3ad704d4760so618550a91.3
-        for <linux-wireless@vger.kernel.org>; Sun, 08 Nov 2026 21:32:47 -0800 (PST)
+	for <linux-wireless@vger.kernel.org>; Mon, 09 Nov 2026 05:32:55 +0000 (GMT)
+Received: by mail-pj1-f70.google.com with SMTP id 98e67ed59e1d1-3b0c7ab2427so463504a91.1
+        for <linux-wireless@vger.kernel.org>; Sun, 08 Nov 2026 21:32:55 -0800 (PST)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=oss.qualcomm.com; s=google; t=1794202367; x=1794807167; darn=vger.kernel.org;
+        d=oss.qualcomm.com; s=google; t=1794202375; x=1794807175; darn=vger.kernel.org;
         h=content-transfer-encoding:content-type:in-reply-to:content-language
          :from:references:cc:to:subject:user-agent:mime-version:date
          :message-id:from:to:cc:subject:date:message-id:reply-to:content-type;
-        bh=zmqHuPAzZn1DNiHHKILm13x0Y5axH8HFFYvD/AHS9iI=;
-        b=IVBZzdxGkgcd0GXQbiSo9gdyzJfJtwDBz1lbqIpQgH7phQcAyqOYGHthRbit83Jc8D
-         zSvc2fQKOC03K7s5qPAAZXIUy2cWipmEFPmvgVJcYCrSCZthbuBhZhWM0wopkzkCL0am
-         KGncs55AEffKhLpm5FXL7TMDvZzf3Tdu5TuTk4IGnCMR8wQsU12C3scQoD/QIXl9siLb
-         k4lucjamOqfAJo7lmTHTZog7LGChNvt/mNOmhJ7TjktkelLhJr5i3BpCA4ElNG05S6k4
-         QTAdxTUyh9PoAmyJhWBMr4nNlxLGJjkrEEXOHbO7lHw5gO9Jj7Thar2yhIbhg+Tpennx
-         9V4A==
+        bh=g7RRgfA21WlV7i8D7fmlmt9kQAOg5FueD4hA6+UfHgE=;
+        b=VAg2ByrU/5NWbpUmMc6UU5gcEhZgiTT1EY3M9NTokB9SkuozdZwSDKG0nVAMAyPJGu
+         a1K1oGR2C346GX8HPYKv/LlMaZqHrlgcrOGnIrLIXE2NUX9KXuVm6oNfEyZpFkaApulg
+         xv6+o7F4fmv1axTSiLEeMV7xCZNTfyEXzWPJVkEDsP313Q5UcLFaWTA6GP94f89/KVqY
+         WbTgAEqJqsQci4dyTyYGdKCVk8EUqvlpt/HSP4Jp77uoR9Gdt+oE6Hhnaa640FH4E641
+         Y7A9tCHo2v1L487vHAqssliFR9yJs+8fpvHwI0FTn7eElbeQB0cmKGAJW39PnbMxqFwr
+         EoPA==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=1e100.net; s=20260707; t=1794202367; x=1794807167;
+        d=1e100.net; s=20260707; t=1794202375; x=1794807175;
         h=content-transfer-encoding:content-type:in-reply-to:content-language
          :from:references:cc:to:subject:user-agent:mime-version:date
          :message-id:x-gm-gg:x-gm-message-state:from:to:cc:subject:date
          :message-id:reply-to:content-type;
-        bh=zmqHuPAzZn1DNiHHKILm13x0Y5axH8HFFYvD/AHS9iI=;
-        b=uJk+ONz7wAx8scMm1+Nafzsfc9HMAdwArLC6CjTFpruJ+fg2hG2s1DK1LqaUM98UCJ
-         4GIh/U7nW1JVqTzj1JI6DrR93MsaXueAIVWxceXYPp8a2k5L4pk9lMBmLCjFwWQ1zBHe
-         i06jKi5iBzuSdYRXLhVfUtOhW4oZRpWYe6xXlqVzo7YHM5ttLT3CtlrQqv4xRnNlVQS/
-         ZeMznK0m29aRINvcSyUEE9ebfBVbhlHR8c5drBXta30L6QwxfKSum2lqtkaSD1lvlseV
-         oWETUALEFQRxGvdXsqiQa9+6USe1DLHNKawqAUkH38u8VKaqaHnVQLGm8LVu0gmvzFpv
-         8jGw==
-X-Forwarded-Encrypted: i=1; AL+hErGn+2BzJLKA8tD8b2NPc2pEeP9MJM7chsJuskrckrk3p9sJ+a4arw5k7VOxeR3fzvKkdU1XwHnzB4OtPpEGCw==@vger.kernel.org
-X-Gm-Message-State: APuU4Z9Uv9Jn7xIw7meh4iwtymw8W02LPbnveTcgn+GgflJZyBbrB9fN
-	2mNQ4m5j0x4vzg85RxRv83tTRBInpBcjNxnmr0mkPv1NciAf+AimMT1s6HjzKbNljm2nvYasitA
-	JIi4oKaHlARE0fcUYaAloiARyUu8fwmYw/OeNmVT3XFwuLlqqoke1BWkZMXVllH8FDyBENA==
-X-Gm-Gg: AYBFou3m/L+/ciWjrAQiDSHnnxABKJzex3pyfVs+5xmxifqwlDLfJ2e/dw+lWkV3EcA
-	VWlijee8XqxvikMVSNgIvfC/7614o213IYUq+IeAIPHlEiNZOMzs8uav9MpDqH8NFfaL/WXQ91v
-	H8MhN8bWxpS5pkUCbXhaFNUC6j1N9ER81M+hf990FvObeqkFgIlW+6b4Kky7fwK2dBfmMkpv8HZ
-	Aim+hy6+FBQSRHLeKYtFoavHToB0ALM44FSqbz7KV7OfzqVPadTzRSXmSjq0M/QTjZshR92ffJJ
-	QES7YbHPjj5ZMqth3mAkzd4Aga7Hg4luBwwEksnLbqVS2MZy0p4U6tWme0+ZTtu3vY3tALkDsFO
-	FG/AWL8+qdphJC9Z2Z4eNDUiJbCZy8oFdqKDRpGMzERn0CAUsJCKbhnzPd04dceX2pmFBftK92Q
-	IikFEmkOC9dXntFHp7OSvQR2xf5UsqV2RHrLi9SZRXEDRRcQ==
-X-Received: by 2002:a17:90b:4410:b0:3b0:a37a:230a with SMTP id 98e67ed59e1d1-3b12d329650mr2967590a91.25.1794202366967;
-        Sun, 08 Nov 2026 21:32:46 -0800 (PST)
-X-Received: by 2002:a17:90b:4410:b0:3b0:a37a:230a with SMTP id 98e67ed59e1d1-3b12d329650mr2967572a91.25.1794202366429;
-        Sun, 08 Nov 2026 21:32:46 -0800 (PST)
+        bh=g7RRgfA21WlV7i8D7fmlmt9kQAOg5FueD4hA6+UfHgE=;
+        b=t+ughTAfhQr/euBIQe4e+FIRMB/sgNf2SZC02Crr8M/RARd+zijhv0jBPbf/18ylo1
+         b/ZjpUdmXMk41lHq0OCel8daEq5M+6XI/EJqYDxWR2QQReTd+uUNieAufuP5O8HaMNu5
+         AEewAhe/fIXz8sK5rKKE21fjW4UmUReOUkMWDXAF9ObjxIdDQg39do8IBSXELFMVMAZY
+         TDYtfFPqzlnM9RbFl+CJmq4sB0Y11JmR/K387sW1f2Wd7KaHpWTiN0ppiTAyEYDlnxjh
+         nS9SutP/tJauSlco/NmfrT8FSFo2IelRBafTDlKx9IA3EiLYRnMKeP9PuRn2CiZSYy/g
+         iKxA==
+X-Forwarded-Encrypted: i=1; AL+hErF+qF1a4HDMsPhcwyOH/sXptrpaBz4NU74DyLcwnYKBInTvs5CO9DeDdcbACRYz+Uplo5jsqMX+fDGFRUdyzw==@vger.kernel.org
+X-Gm-Message-State: APuU4Z+dOOevw441iJEMoPT7U27asc+YOgsyTm4sJOrbNzWc//EKF7/P
+	+GzpXShujBt520hKbKA5iel0EoJ2pWp7XGAy8tJL69wju5V3h3RpQL++YzUwRJyCFRfayu/eoyA
+	OMM1zNqAuTPhtBTfeXMcmLEtf4SjGqlxsKTD3byJnXtI6nvgpQr3pnyPUFTjiSUT9G9PovA==
+X-Gm-Gg: AYBFou3rQ/GntDUy7vHLH/2QXtEwM5Us2axe2lsbcJkHfMx/519XVoyOKU7cTAAr0+e
+	2vU4x2EFeFsUjpskg99foP4CfmfZg2lYXuYG7Ye1pLfjKyr5Px0fKkq6WFEnt1186Fb1tlVTDaa
+	nc23+40EgMJo+N95v3wrUAz3yAAdcPXtllp/O7y7WXvX1Q93uX7NMYmKMpmW/SlTizLDwEaOKev
+	wzBTJwKQpa4gbpa9ncTazMNzXd+EPWNAWm9SoVlSol2z2AwsZECC8soiRbaFxcHrcp5wTH0A/YO
+	hELksDR9muZuq5MVVdmbdONfGIe/ZO3M2aQGSWPbOuR8HpShDdn8VVfaCq79BqHMmZAnwv+d2er
+	vjkJwjHrIYrTeAgPnj+TVVO+LtT8jDrBui7tZ+9dPVpArr+rni31dQX20ZrNsairKCMhUrVq0Sj
+	wmzqLfHEDTl0xicScscuwgf4gbOll5uFPgmpnOeQqUCI9JFg==
+X-Received: by 2002:a17:90b:164c:b0:3b0:9882:9e5e with SMTP id 98e67ed59e1d1-3b12d41927dmr3188502a91.18.1794202374505;
+        Sun, 08 Nov 2026 21:32:54 -0800 (PST)
+X-Received: by 2002:a17:90b:164c:b0:3b0:9882:9e5e with SMTP id 98e67ed59e1d1-3b12d41927dmr3188478a91.18.1794202373940;
+        Sun, 08 Nov 2026 21:32:53 -0800 (PST)
 Received: from [10.133.33.180] (tpe-colo-wan-fw-bordernet.qualcomm.com. [103.229.16.4])
-        by smtp.gmail.com with ESMTPSA id 98e67ed59e1d1-3b139d0a166sm3096629a91.3.2026.11.08.21.32.43
+        by smtp.gmail.com with ESMTPSA id 98e67ed59e1d1-3b139d0a166sm3096629a91.3.2026.11.08.21.32.51
         (version=TLS1_3 cipher=TLS_AES_128_GCM_SHA256 bits=128/128);
-        Sun, 08 Nov 2026 21:32:46 -0800 (PST)
-Message-ID: <f927dd05-ccb5-4eee-b32a-a1f03aecae4c@oss.qualcomm.com>
-Date: Mon, 9 Nov 2026 13:32:41 +0800
+        Sun, 08 Nov 2026 21:32:53 -0800 (PST)
+Message-ID: <4ae460ec-fe87-44e4-a6d2-e1d7f6391fba@oss.qualcomm.com>
+Date: Mon, 9 Nov 2026 13:32:50 +0800
 X-Mailing-List: linux-wireless@vger.kernel.org
 List-Id: <linux-wireless.vger.kernel.org>
 List-Post: <mailto:linux-wireless@vger.kernel.org>
@@ -115,8 +115,8 @@ List-Owner: <mailto:linux-wireless+owner@vger.kernel.org>
 Precedence: list
 MIME-Version: 1.0
 User-Agent: Mozilla Thunderbird
-Subject: Re: [PATCH ath-next 2/3] wifi: ath12k: rely on pskb_trim() to trim
- the received skb
+Subject: Re: [PATCH ath-next 1/3] wifi: ath12k: validate RX frame length
+ before undecapsulation
 To: Lorenzo Bianconi <lorenzo.bianconi@oss.qualcomm.com>,
         Jeff Johnson <jjohnson@kernel.org>,
         Carl Huang <quic_cjhuang@quicinc.com>,
@@ -129,144 +129,109 @@ Cc: Wen Gong <quic_wgong@quicinc.com>, P Praneesh
         Kalle Valo <kvalo@kernel.org>, linux-wireless@vger.kernel.org,
         ath12k@lists.infradead.org
 References: <20261016-ath12k-rx-avoid-realloc-v1-0-0ce6cd99dd5f@oss.qualcomm.com>
- <20261016-ath12k-rx-avoid-realloc-v1-2-0ce6cd99dd5f@oss.qualcomm.com>
+ <20261016-ath12k-rx-avoid-realloc-v1-1-0ce6cd99dd5f@oss.qualcomm.com>
 From: Baochen Qiang <baochen.qiang@oss.qualcomm.com>
 Content-Language: en-US
-In-Reply-To: <20261016-ath12k-rx-avoid-realloc-v1-2-0ce6cd99dd5f@oss.qualcomm.com>
+In-Reply-To: <20261016-ath12k-rx-avoid-realloc-v1-1-0ce6cd99dd5f@oss.qualcomm.com>
 Content-Type: text/plain; charset=UTF-8
 Content-Transfer-Encoding: 7bit
-X-Proofpoint-Spam-Details-Enc: AW1haW4tMjYxMTA5MDAyMSBTYWx0ZWRfX65BF0tv1LpbC
- FrI1hrwxnD2SsvQlnV5nwh9AyVsxpHhIAs65Rf+zC2XmrquS3NSVMvbJsVqWSPwT9ATRqBAs47X
- ePnxKNL5LDlisW7YPaigVEY7vkBW9SfayaZMKo1i/RjPyjYg/J0Oyc8xC9hFKqC2LA1At/CqHuF
- 81gvh/hlVP4j/H/5zp1OxT5Nc4naTGxtYKqLVeWqXi1UuqKn7cs/m9ZCglLPLszd5fGUOSwMqhU
- s18Y7vTYHTEiIrTaplsZrC+HF6I/Tnsdj/7CYnmDHEaVZupwH0ERWib10ZaJHrZc3gX/DV00oFj
- YS+DT7vrwQAejtvEXF5g5EARNPrplAd3zTCj4WxbN4egNCmoaPv19klhw7OT0gZFJqMvms8oYlE
- 4KG12qZclw+0Ylc93KRcWdQXFN1Xv/mgbrpeHH+gsEzvASe672rubeL5luk7o1AeuckBCMWteTR
- yrJe+qR6cVr5hKfu6qA==
-X-Proofpoint-ORIG-GUID: XBPbVN5Ak4qPkbC4LrD_bVZrDkI0yoBf
-X-Authority-Analysis: v=2.4 cv=bcb+w+PB c=1 sm=1 tr=0 ts=6af15aff cx=c_pps
+X-Proofpoint-Spam-Info: AW1haW4tMjYxMTA5MDAyMSBTYWx0ZWRfX5vRUEAJgXxHf
+ v0hezWELWxBal1YMhZ+M/Xcl3xvzBOlIBNtxmxoKAVuNmFpnRuaywxgkw29QwKr6GAVARTfHqcd
+ /Aw/I4emgcSxWrtIWURVl2fgeTMPHxM=
+X-Authority-Analysis: v=2.4 cv=LJzz05W9 c=1 sm=1 tr=0 ts=6af15b07 cx=c_pps
  a=0uOsjrqzRL749jD1oC5vDA==:117 a=nuhDOHQX5FNHPW3J6Bj6AA==:17
  a=IkcTkHD0fZMA:10 a=zJRp6_cAMcgA:10 a=s4-Qcg_JpJYA:10
- a=VkNPw1HP01LnGYTKEx00:22 a=u7WPNUs3qKkmUXheDGA7:22 a=yOCtJkima9RkubShWh1s:22
- a=EUspDBNiAAAA:8 a=GHdboaX_DFjh2CRH6W4A:9 a=QEXdDO2ut3YA:10
+ a=VkNPw1HP01LnGYTKEx00:22 a=u7WPNUs3qKkmUXheDGA7:22 a=eoimf2acIAo5FJnRuUoq:22
+ a=EUspDBNiAAAA:8 a=7h9L7HgKJt0xFB7aMYkA:9 a=QEXdDO2ut3YA:10
  a=mQ_c8vxmzFEMiUWkPHU9:22
-X-Proofpoint-Spam-Info: AW1haW4tMjYxMTA5MDAyMSBTYWx0ZWRfX985iVgEsQeIS
- kgYqOX0sHQ9LJw4eniRxb4PjM2D3TZKHVWGah+55jFAFE+iZhjj2Z4jNLCK8G7MWi2NNg/NIQtc
- q78GsRIoDgxwY2VGUYEznDXf+3kagYE=
-X-Proofpoint-GUID: XBPbVN5Ak4qPkbC4LrD_bVZrDkI0yoBf
+X-Proofpoint-GUID: 2qw4oBROZ0ekXh3tNOptZ4uQw5HXF5l6
+X-Proofpoint-ORIG-GUID: 2qw4oBROZ0ekXh3tNOptZ4uQw5HXF5l6
+X-Proofpoint-Spam-Details-Enc: AW1haW4tMjYxMTA5MDAyMSBTYWx0ZWRfXyeI8VwN6Vz9l
+ LvTHSpX7BC3iKdMugrGlkPJWu+wKTbTZG+vmVXfUb8t6eZ2gE0MrpE0sKA6B51SwKWi7BWWGA51
+ pZkBpFDUKjkYSIfWmyaHIcVANa9qhanWJiK7V8aRg1ujdkWNSQ6Thw9gly1CY+D2WvIZydez8Or
+ 9IsyJRrpMDXpiyrCibUpY2lHV/9MM+Ggs1nnaFd8h7KC0gvzF40EZ+4fbe9Y5v5akMpQyALieT8
+ ZMjg0BAPYaaE27cNcjRE+BUkd3BjQ+Aij5CDM+zEotqYPApUtAyWlcZO7qs1pqi2v++ojtNmfNP
+ TysJ/rZawuJoCqOV64V3iKciy9N9jbDyOyu8d7QdZEX56CcT5hBbZojluI4j4e2zDfiZvddrIEH
+ 2eTP3ciBBAfmOaR3uIlVby/lRQITDfvFhxq47SmiL8KCR3ZJHxTSO7ySKVFI8cvclmXErTHvX+9
+ ZsXA5K4cXb/6eOomugw==
 X-Proofpoint-Virus-Version: vendor=baseguard
  engine=ICAP:2.0.293,Aquarius:18.0.1176,Hydra:6.1.138,FMLib:17.12.100.49
  definitions=2026-11-09_02,2026-11-06_01,2025-10-01_01
 X-Proofpoint-Spam-Details: rule=outbound_notspam policy=outbound score=0
- impostorscore=0 malwarescore=0 suspectscore=0 spamscore=0 clxscore=1015
- phishscore=0 lowpriorityscore=0 bulkscore=0 adultscore=0 priorityscore=1501
- classifier=typeunknown authscore=0 authtc= authcc= route=outbound adjust=0
- reason=mlx scancount=1 engine=8.22.0-2611040001 definitions=main-2611090021
+ malwarescore=0 spamscore=0 lowpriorityscore=0 clxscore=1015
+ priorityscore=1501 phishscore=0 bulkscore=0 suspectscore=0 impostorscore=0
+ adultscore=0 classifier=typeunknown authscore=0 authtc= authcc=
+ route=outbound adjust=0 reason=mlx scancount=1 engine=8.22.0-2611040001
+ definitions=main-2611090021
 
 
 
 On 10/16/2026 11:16 PM, Lorenzo Bianconi wrote:
-> Prepare the RX path for handling non-linear SKBs introduced by the
-> following RX batching change.
+> Reject truncated raw frames before removing the FCS trailer. Without this
+> check, subtracting FCS_LEN from a shorter skb underflows and leaves the
+
+skb_trim() has the check itself, so there will be no underflow?
+
+> FCS untrimmed.
 > 
-> pskb_trim() can fail when trimming shared fragments, so propagate errors
-> from ath12k_dp_rx_h_undecap() and drop the affected frame instead of
-> delivering it with an untrimmed FCS, MIC, or ICV trailer.
+> Also verify that the frame contains enough data for the 802.11 header and
+> the crypto header before moving the header to make room for the crypto
+> parameters.
 > 
 > Tested-on: WCN7850 hw2.0 PCI WLAN.HMT.1.1.c7-00108-QCAHMTSWPL_V1.0_V2.0_SILICONZ_UPSTREAM-3
 > 
+> Fixes: d889913205cf ("wifi: ath12k: driver for Qualcomm Wi-Fi 7 devices")
 > Signed-off-by: Lorenzo Bianconi <lorenzo.bianconi@oss.qualcomm.com>
 > ---
->  drivers/net/wireless/ath/ath12k/dp_rx.c | 48 ++++++++++++++++++++++++---------
->  1 file changed, 35 insertions(+), 13 deletions(-)
+>  drivers/net/wireless/ath/ath12k/dp_rx.c       | 46 ++++++++++++++++++---------
+>  drivers/net/wireless/ath/ath12k/dp_rx.h       | 10 +++---
+>  drivers/net/wireless/ath/ath12k/wifi7/dp_rx.c | 22 +++++++++----
+>  3 files changed, 51 insertions(+), 27 deletions(-)
 > 
 > diff --git a/drivers/net/wireless/ath/ath12k/dp_rx.c b/drivers/net/wireless/ath/ath12k/dp_rx.c
-> index 40b8da34268f..4f37ef12e40f 100644
+> index 36be543b7c50..40b8da34268f 100644
 > --- a/drivers/net/wireless/ath/ath12k/dp_rx.c
 > +++ b/drivers/net/wireless/ath/ath12k/dp_rx.c
-> @@ -1010,6 +1010,7 @@ static int ath12k_dp_rx_h_undecap_raw(struct ath12k_pdev_dp *dp_pdev,
->  	struct ieee80211_hdr *hdr;
->  	size_t hdr_len;
->  	size_t crypto_len;
-> +	int err;
+> @@ -999,11 +999,11 @@ static void ath12k_dp_rx_h_undecap_nwifi(struct ath12k_pdev_dp *dp_pdev,
+>  	memcpy(skb_push(msdu, hdr_len), decap_hdr, hdr_len);
+>  }
 >  
+> -static void ath12k_dp_rx_h_undecap_raw(struct ath12k_pdev_dp *dp_pdev,
+> -				       struct sk_buff *msdu,
+> -				       enum hal_encrypt_type enctype,
+> -				       struct ieee80211_rx_status *status,
+> -				       bool decrypted)
+> +static int ath12k_dp_rx_h_undecap_raw(struct ath12k_pdev_dp *dp_pdev,
+> +				      struct sk_buff *msdu,
+> +				      enum hal_encrypt_type enctype,
+> +				      struct ieee80211_rx_status *status,
+> +				      bool decrypted)
+>  {
+>  	struct ath12k_dp *dp = dp_pdev->dp;
+>  	struct ath12k_skb_rxcb *rxcb = ATH12K_SKB_RXCB(msdu);
+> @@ -1014,13 +1014,16 @@ static void ath12k_dp_rx_h_undecap_raw(struct ath12k_pdev_dp *dp_pdev,
 >  	if (!rxcb->is_first_msdu ||
 >  	    !(rxcb->is_first_msdu && rxcb->is_last_msdu)) {
-> @@ -1020,7 +1021,9 @@ static int ath12k_dp_rx_h_undecap_raw(struct ath12k_pdev_dp *dp_pdev,
->  	if (msdu->len < FCS_LEN)
->  		return -EINVAL;
->  
-> -	skb_trim(msdu, msdu->len - FCS_LEN);
-> +	err = pskb_trim(msdu, msdu->len - FCS_LEN);
-> +	if (err)
-> +		return err;
->  
->  	if (!decrypted)
->  		return 0;
-> @@ -1029,28 +1032,47 @@ static int ath12k_dp_rx_h_undecap_raw(struct ath12k_pdev_dp *dp_pdev,
->  
->  	/* Tail */
->  	if (status->flag & RX_FLAG_IV_STRIPPED) {
-> -		skb_trim(msdu, msdu->len -
-> -			 ath12k_dp_rx_crypto_mic_len(dp, enctype));
-> +		err = pskb_trim(msdu,
-> +				msdu->len -
-> +				ath12k_dp_rx_crypto_mic_len(dp, enctype));
-> +		if (err)
-> +			return err;
->  
-> -		skb_trim(msdu, msdu->len -
-> -			 ath12k_dp_rx_crypto_icv_len(dp_pdev, enctype));
-> +		err = pskb_trim(msdu,
-> +				msdu->len -
-> +				ath12k_dp_rx_crypto_icv_len(dp_pdev, enctype));
-> +		if (err)
-> +			return err;
->  	} else {
->  		/* MIC */
-> -		if (status->flag & RX_FLAG_MIC_STRIPPED)
-> -			skb_trim(msdu, msdu->len -
-> -				 ath12k_dp_rx_crypto_mic_len(dp, enctype));
-> +		if (status->flag & RX_FLAG_MIC_STRIPPED) {
-> +			err = pskb_trim(msdu,
-> +					msdu->len -
-> +					ath12k_dp_rx_crypto_mic_len(dp,
-> +								    enctype));
-> +			if (err)
-> +				return err;
-> +		}
->  
->  		/* ICV */
-> -		if (status->flag & RX_FLAG_ICV_STRIPPED)
-> -			skb_trim(msdu, msdu->len -
-> -				 ath12k_dp_rx_crypto_icv_len(dp_pdev, enctype));
-> +		if (status->flag & RX_FLAG_ICV_STRIPPED) {
-> +			err = pskb_trim(msdu,
-> +					msdu->len -
-> +					ath12k_dp_rx_crypto_icv_len(dp_pdev,
-> +								    enctype));
-> +			if (err)
-> +				return err;
-> +		}
+>  		WARN_ON_ONCE(1);
+> -		return;
+> +		return 0;
 >  	}
 >  
->  	/* MMIC */
->  	if ((status->flag & RX_FLAG_MMIC_STRIPPED) &&
->  	    !ieee80211_has_morefrags(hdr->frame_control) &&
-> -	    enctype == HAL_ENCRYPT_TYPE_TKIP_MIC)
-> -		skb_trim(msdu, msdu->len - IEEE80211_CCMP_MIC_LEN);
-> +	    enctype == HAL_ENCRYPT_TYPE_TKIP_MIC) {
-> +		err = pskb_trim(msdu, msdu->len - MICHAEL_MIC_LEN);
+> +	if (msdu->len < FCS_LEN)
+> +		return -EINVAL;
+> +
 
-Both IEEE80211_CCMP_MIC_LEN and MICHAEL_MIC_LEN are 8, and MICHAEL_MIC_LEN seems the right
-name here, but it is unrelated to the pskb_trim() conversion. Better to mention it in the
-commit log or move it to a separate patch?
+every later trim in this function has the same problem: msdu->len minus the MIC, ICV or
+MMIC length is not checked either. should we add check for them as well?
 
-> +		if (err)
-> +			return err;
-> +	}
+>  	skb_trim(msdu, msdu->len - FCS_LEN);
 >  
->  	/* Head */
->  	if (status->flag & RX_FLAG_IV_STRIPPED) {
-> 
+>  	if (!decrypted)
+> -		return;
+> +		return 0;
+>  
+>  	hdr = (void *)msdu->data;
+>  
+
+[...]
 
