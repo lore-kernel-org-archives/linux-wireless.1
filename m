@@ -1,54 +1,54 @@
-Authentication-Results: smtp.subspace.kernel.org; arc=none smtp.remote-ip=62.149.156.116
+Authentication-Results: smtp.subspace.kernel.org; arc=none smtp.remote-ip=62.149.156.121
 ARC-Seal: i=1; d=subspace.kernel.org; s=arc20261015; a=rsa-sha256; cv=none;
-	t=1794187083;
-	b=X4xoXoVYaYmc29gjytBWkesEqWuUwWKPgG5QaAX1Gc8rLjoXNH3aNdorXTGmzvWxf3CF
-	 jAtDkdhmsV24bWdPoPvw1u7wbxp/Ztfjd3CkZI7n2bS610gJSVCkq8kFGq6dj+9FCAWGO
-	 a80A/OO6eRnI46++U/vQOILhx3pV3WI+1NT03oRKIB2Ua10HB9pC6ExL8Lf14Z4u/kjkS
-	 g3+i1nqWMNunTiD9jp+kg8+L2LG5nnuyTf6MT6+Je6VPAGF2JSzLQPDzDfwZ3qzZtdgYL
-	 IVKjCNqU7+5tnZ5vGmfVcKD9PtgRroqdWcuVKTY9Ex81hCI4cysy9Y+vlXCiC4TaXxA==
+	t=1794187085;
+	b=tpH40H5KgKw9EOfmYpGBM8pC5yVrj6Bp/0XKvtRkiqnzd/L1Yhl+blZ6/RpEmR9K+il5
+	 uoEvIOw2yUQfAt72txD5OlFqLiNlIEAX+WXlT1YAsq3h9rRsUT5KrOiWknlDNP+ipAPjz
+	 OxxbIE4ANO6e1rGLNbrU0yRZGU2VWtHBnYvZU+P6VVLhvukDxK7tgUrvG6F0RieEcIq6r
+	 jjHFNY3WziMQEEnEHlywpxcicpu39nU4mdv+G+zSflvyiuss/hHGVa1enKJUcFUawYivj
+	 OxHg+o2me89ZgGMus7zW8q4vbh3SlpKPgmbKabErkbyn0AZJjF52ikNUzA3U3uIP54A==
 ARC-Message-Signature: i=1; d=subspace.kernel.org; s=arc20261015;
-	a=rsa-sha256; c=relaxed/relaxed; t=1794187083;
+	a=rsa-sha256; c=relaxed/relaxed; t=1794187085;
 	h=DMARC-Filter:Received:DKIM-Signature:From:Date:Subject:MIME-Version:
 	 Content-Type:Content-Transfer-Encoding:Message-Id:References:
 	 In-Reply-To:To:Cc:X-Mailer:X-CMAE-Envelope;
-	bh=WvG0kClh0TtoSxBVHbwJqxA9jzJi1q8SGW5f3Mvk2Ls=;
-	b=fAubZqzgmG/PTecT4H1bWvgPjfygQ5IzoWDQhFJ3j8mOdE8UHaSMQf4uTI00fIuw/42t
-	 knzgYCuLowMMWRiLbo5xGFlJ6HB1zE6U1/Ldd5svYz54T544HCbJJ9HlFWSMz0Ugo5WVu
-	 UPyDwtOIxlmJxhky4MddBV/uUKTWn3pF1EUnbznSeOA+/HeClbG0qUMy/uOW+GmFya5N0
-	 RjRcbuYab5pmOZNQ0QXx/u3sLLYr2HuZuAffESyhr4oqaf5cXaLiZ4f0pg5t00lDYmh/m
-	 5OSYdsh4Uqlr/T8pqyxbYNQPjbngSB9KMLx7BYYQmeCh2LSS5+AHOSIlN3RPy3YUx9g==
+	bh=YEqc13wt2HALjaz89i8UrNv1S77qlq72ni9CSRUHi90=;
+	b=VBv+4UUXOtwoX4Jc2coguGuJUbqX1MsK4i0OXyjyXMk5V22TIO8G9fbk5QTUdJ0aGbZy
+	 Yu3xl/VcEtMx7/C2RwS3cLCxASE2aOHltuFqBi07vUegL5uTCq3PCTa/o0F73FZigEWnM
+	 sXErtytIRTy2jA/9hQTGvpH+t3c7NJs9YfUre5kCs1waIeL8OPbTl4IMGNZkbvBCs9rjt
+	 w7Oqh3HsWLsa7/bCN9uoufXGIjc5t8nxHwF7aFtVcyOCC1kSFM2rZe07n2hqaeHSZjkkh
+	 pY+lQK+EoL9sGO5Z2XqzWyWr1mWBVgFIpQlYsPUnaKCJno59FgLhWoXQMzxvyUEeThA==
 ARC-Authentication-Results: i=1; smtp.subspace.kernel.org; 
 	dmarc=pass header.from=mythread.it;
 	spf=pass smtp.mailfrom=mythread.it;
-	dkim=pass header.d=mythread.it header.i=@mythread.it header.a=rsa-sha256 header.s=a1 header.b=dYBvY+T0;
-	arc=none smtp.remote-ip=62.149.156.116
-Received: from smtpcmd11116.aruba.it (smtpcmd11116.aruba.it [62.149.156.116])
+	dkim=pass header.d=mythread.it header.i=@mythread.it header.a=rsa-sha256 header.s=a1 header.b=MGj3YinP;
+	arc=none smtp.remote-ip=62.149.156.121
+Received: from smtpcmd11121.aruba.it (smtpcmd11121.aruba.it [62.149.156.121])
 	(using TLSv1.3 with cipher TLS_AES_256_GCM_SHA384 (256/256 bits)
 	 key-exchange X25519 server-signature ECDSA (prime256v1) server-digest SHA256)
 	(No client certificate requested)
-	by smtp.subspace.kernel.org (Postfix) with ESMTPS id 768BA606A331
-	for <linux-wireless@vger.kernel.org>; Mon,  9 Nov 2026 01:18:01 +0000 (UTC)
-DMARC-Filter: OpenDMARC Filter v1.4.2 smtp.subspace.kernel.org 768BA606A331
+	by smtp.subspace.kernel.org (Postfix) with ESMTPS id 0E135606D81F
+	for <linux-wireless@vger.kernel.org>; Mon,  9 Nov 2026 01:18:03 +0000 (UTC)
+DMARC-Filter: OpenDMARC Filter v1.4.2 smtp.subspace.kernel.org 0E135606D81F
 Authentication-Results: smtp.subspace.kernel.org; dmarc=pass (p=none dis=none) header.from=mythread.it
 Authentication-Results: smtp.subspace.kernel.org; spf=pass smtp.mailfrom=mythread.it
 Authentication-Results: smtp.subspace.kernel.org;
-	dkim=pass (2048-bit key) header.d=mythread.it header.i=@mythread.it header.a=rsa-sha256 header.s=a1 header.b=dYBvY+T0
+	dkim=pass (2048-bit key) header.d=mythread.it header.i=@mythread.it header.a=rsa-sha256 header.s=a1 header.b=MGj3YinP
 Received: from [127.0.0.1] ([87.16.49.252])
 	by Aruba SMTP with ESMTPSA
-	id QE1AxMsH06VShQE1CxPovl; Mon, 09 Nov 2026 02:17:54 +0100
+	id QE1AxMsH06VShQE1DxPoxW; Mon, 09 Nov 2026 02:17:55 +0100
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=mythread.it; s=a1;
-	t=1794187074; bh=oLRFKUwHbKhCHiC98MhkOwsf0J/5kYlXvF/Sbi45IsU=;
+	t=1794187075; bh=G+hd6qQfLeLELGBJdeMNPTRelD4TD1iZ3wlVeFjzB6o=;
 	h=From:Date:Subject:MIME-Version:Content-Type:To;
-	b=dYBvY+T0Ccw0OUXRpirWIhT71Cq7XFsrJ7ZowC7wHvN2dWQ81F/K/28uhz0A2QUNX
-	 52140I5pdGEIZYaK9jQ5JAyObqiHkEI9zvEaMzMgaFnvWwtQqUYbKy46dq0r5etAxk
-	 n/Ic/KkM2HAVD/TG6SHOS2S7sqVqfYHsUV2TuwPMyrxfO7k2SZQuah7lqPX30eeSZy
-	 xHq2f4r3f7NSIvfm6W3XS4ynA1wl4xBI6MSr28VXVANp90ILyD46UfORr63xWYkVhU
-	 vZWWBM5GFemWu230RiY8liX6CMxNiIXtrlj+17QOmQ7n5iPBXmKrBp8/GV4j2MfVZg
-	 XBNmYMSr3TAYA==
+	b=MGj3YinPn/xrHtVaZe04poPoBv+hyb6uozi8u0+qHNS3zccwlPIBuasbiWlZKOOlX
+	 03G6iiS/vJjiFIlfyLv1PnT4QW+tbM9ht87/NjOK3e1UYOQeKEp72Wt28CRLAjBpl4
+	 lTRH2tVJmSx6suP0ybpmQSEbdoXlPUyiNkHL+meZE0piHHAwny9wa/RxiesD1MIEGX
+	 qiiz2EwgfZQeZjgntmst8azqkQTBAzO3raQ48PXiU9JOof+fXR6brFdRKEdYklyQ4V
+	 +iautpIMDT5BqHpKDeCSy/Lhm6H2mL2JC5e7KiOA80MUXIYZky0sSLfYAzx0+VgJtt
+	 A1vWC70gyis0g==
 From: Alessio Ferri <alessio.ferri@mythread.it>
-Date: Mon, 09 Nov 2026 02:17:53 +0100
-Subject: [PATCH wireless-next v4 03/10] bcma: pcie2: request HT on
- BCM4352/BCM4360
+Date: Mon, 09 Nov 2026 02:17:58 +0100
+Subject: [PATCH wireless-next v4 08/10] firmware: bcm47xx_sprom: read
+ boardflags3 from NVRAM over the SPROM
 X-Mailing-List: linux-wireless@vger.kernel.org
 List-Id: <linux-wireless.vger.kernel.org>
 List-Post: <mailto:linux-wireless@vger.kernel.org>
@@ -60,7 +60,7 @@ Precedence: list
 MIME-Version: 1.0
 Content-Type: text/plain; charset="utf-8"
 Content-Transfer-Encoding: 7bit
-Message-Id: <20261109-bcma-ac-rev1-v4-3-de1262c18b54@mythread.it>
+Message-Id: <20261109-bcma-ac-rev1-v4-8-de1262c18b54@mythread.it>
 References: <20261109-bcma-ac-rev1-v4-0-de1262c18b54@mythread.it>
 In-Reply-To: <20261109-bcma-ac-rev1-v4-0-de1262c18b54@mythread.it>
 To: =?utf-8?q?Rafa=C5=82_Mi=C5=82ecki?= <zajec5@gmail.com>, 
@@ -70,34 +70,34 @@ Cc: vit9696 <vit9696@protonmail.com>, ville+git@takio.fi, egc112@msn.com,
  linux-mips@vger.kernel.org, Alessio Ferri <alessio.ferri@mythread.it>, 
  b43-dev@lists.infradead.org
 X-Mailer: b4 0.15.2
-X-CMAE-Envelope: MS4xfA0SHnp7/o1kd6yqNJOwxQ9vhGBL4ANMkZqJ/MlRU6NcbLTLJG6wQLJXR978HuYWEYipWWphXGxbozZm8p1w++CcEwuVs3pTkD1lBJ20cKs7x66LY7ZO
- lPPxLcppsYWEvc99HGnRnIC1KkYsC01OvWhZjoF/A16my8XfcvPZtQinQ6hyBPO/54IZ57QV5xdcM4Cs2fG7IUipQQ3UyGsuZ/zSXSby5FILX0qafbbGO0s2
- lJyGypyqM5VPyry4Ig6v819AhE5kzGniuKo+kLbJqeAtozKB6ffkUgvuCRTaLm7+Q7V+5QN4gE2pGL0AGwffg9h0/VoBw3JAKiZjd3Ipe0WVfCgxB1BOh69R
- MRv+wSUc4/Ab1VnwNi7LQ57g0F53Qbmbk2v4s0EvLv29tM00yMnMLi6zhSQy0jWpm9SrVS847vMEtoc9SHjv6a/bgJBL8cz4NnEs/D2REzNpbRwn1oyKCn3F
- ylYWEYsSklBQcXBVXSj93DAHrMOimmP33IBBzA==
+X-CMAE-Envelope: MS4xfKWjnE3rgRu097RkoPrMJ4MPxysVPF64nqsRxaRlKnggHbOPYLVd9XcCNuAFVy9R604y+t/IyBHWnzCfKnncv95fMU6FS+5VKHSFDHBS0O9kwJWX7Lob
+ ptCXaBN4ntFR1EvmyXE0jcPR0A2DQfSOgHtcNN/jCGYjqI583VyMGDRHbVxFBvyTJMkVeiPZv2ZtzMqTD7EOfi8adXMs69O8ZZqIl3u22OU/KSKmhu0Glcpe
+ hE6zliytsMNeeBCmC+RtEX2KU5UBmCYYTbw49Uh5g/nwskGuQFJkzxysfnCo5R7Ni/QRd89kUShaeRo4W/KHTBtWvUnEUQVVayt9aoU6yN04gTgYz1aMe4Sn
+ DufaRe1wDty1nADLf8tXEqOahMLSYV1YJF9wLdV2R9/U85BpXXksINsklc4WzW+/FLWh3RMphnSy7VaxpJ1NksgtqGdhFanaKQWHOKbCK4pJBFFrOQ8do7rs
+ rqjVWvn6/UzNk/Ib2UlJb2oubVW0lE/unCfMJQ==
 
-Set HAVEHTREQ in the PCIe2 core's clock control on chip revs before 4,
-as Broadcom's driver does.
+Read boardflags3 along with ledbh4..ledbh15, so that a value in NVRAM
+replaces the word of a SPROM read from the device.
 
 Signed-off-by: Alessio Ferri <alessio.ferri@mythread.it>
 ---
- drivers/bcma/driver_pcie2.c | 3 +++
+ drivers/firmware/broadcom/bcm47xx_sprom.c | 3 +++
  1 file changed, 3 insertions(+)
 
-diff --git a/drivers/bcma/driver_pcie2.c b/drivers/bcma/driver_pcie2.c
-index cf889fc62..54daeaa43 100644
---- a/drivers/bcma/driver_pcie2.c
-+++ b/drivers/bcma/driver_pcie2.c
-@@ -170,6 +170,9 @@ void bcma_core_pcie2_init(struct bcma_drv_pcie2 *pcie2)
- 	case BCMA_CHIP_ID_BCM4360:
- 	case BCMA_CHIP_ID_BCM4352:
- 		pcie2->reqsize = 1024;
-+		if (ci->rev < 4)
-+			pcie2_set32(pcie2, BCMA_CLKCTLST,
-+				    BCMA_CLKCTLST_HAVEHTREQ);
- 		break;
- 	default:
- 		pcie2->reqsize = 128;
+diff --git a/drivers/firmware/broadcom/bcm47xx_sprom.c b/drivers/firmware/broadcom/bcm47xx_sprom.c
+index e2c4e3307..7425526c4 100644
+--- a/drivers/firmware/broadcom/bcm47xx_sprom.c
++++ b/drivers/firmware/broadcom/bcm47xx_sprom.c
+@@ -217,6 +217,9 @@ static void bcm47xx_sprom_fill_nvram_only(struct ssb_sprom *sprom,
+ 		nvram_read_u8(prefix, NULL, name, &sprom->gpio_ext[i], 0xff,
+ 			      fallback);
+ 	}
++
++	nvram_read_u32(prefix, NULL, "boardflags3", &sprom->boardflags3, 0,
++		       fallback);
+ }
+ 
+ /* This is one-function-only macro, it uses local "sprom" variable! */
 
 -- 
 2.34.1
