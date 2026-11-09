@@ -1,83 +1,98 @@
-Authentication-Results: smtp.subspace.kernel.org; arc=none smtp.remote-ip=211.75.126.72
-ARC-Seal: i=1; d=subspace.kernel.org; s=arc20261015; a=rsa-sha256; cv=none;
-	t=1794192011;
-	b=ZEsqqPa+fe1CNjAwWDbcyAm5fodQrHghIOQ9mIAnSM4EUwtULrUAbNtQ1/fI5VXQ5/G4
-	 xRgDNN7DzFcF1fTridQX+N0VvOyKwFmRLWqRjj5gh9KV1olj+R3vn/aO3Nr5sucnmv10R
-	 XwtRVc5j1xquQcD+NoA5+j6cbd0N9TH63l9T083qSJ/6quAtvB+Z3T+G8KU3XjaKUdQvJ
-	 xVJl2tOJTCXzq0JCz+ikQKxOqH9mNQBsiLMmb3Mt03ytFByx01eHe9kUnpHce4dVClB4N
-	 GyP0ihkaWJqyTYxuxRu99m0LAbOemvkGjQxbw6EYgbssDRRXOZr7HevrhTLWJAOCJrw==
-ARC-Message-Signature: i=1; d=subspace.kernel.org; s=arc20261015;
-	a=rsa-sha256; c=relaxed/relaxed; t=1794192011;
-	h=DMARC-Filter:X-SpamFilter-By:DKIM-Signature:Received:Received:
-	 Received:Received:From:To:CC:Subject:Thread-Topic:Thread-Index:Date:
-	 Message-ID:References:In-Reply-To:Accept-Language:Content-Language:
-	 x-originating-ip:Content-Type:Content-Transfer-Encoding:MIME-Version;
-	bh=Hi9RC1SCwpP32bwZWIHIaIOTtbCrh8s2e3ENdUtR2mw=;
-	b=zOnJFDFQ5gGDoxkLKVSWblpZjL1UFC/GGbdDevJp6fR1vVOvzPbRsaE2tQLU8rtHngFs
-	 VLzGvdpO7vCcuIAdHzsKa5XtLEklWDUk1IH0LnjHTHAmKND3OLlGG//NhIvQTBn7u9dUc
-	 kQc3iTEfRjO6a0SV1MaI8RK4GPL15lak4RoTOVNA/p4ox3Ix/JtWJme//LhE0jyk82MPV
-	 9/9rI+O3tm/uRFkUAkqJ4du5rAO6I6uFITI9KiQKVo62v9NJRoLecNozd0LaYqfYvpgeV
-	 Z2dDs4VwBtq9qqzldVTuyc4K7ozZCbcs0sCgaNh3BCQZAs6sjC2m9gtv9UsGrdQ2nZQ==
-ARC-Authentication-Results: i=1; smtp.subspace.kernel.org; 
-	dmarc=pass header.from=realtek.com;
-	spf=pass smtp.mailfrom=realtek.com;
-	dkim=pass header.d=realtek.com header.i=@realtek.com header.a=rsa-sha256 header.s=dkim header.b=nSZYWAb8;
-	arc=none smtp.remote-ip=211.75.126.72
-Received: from rtits2.realtek.com.tw (rtits2.realtek.com [211.75.126.72])
-	(using TLSv1.3 with cipher TLS_AES_256_GCM_SHA384 (256/256 bits)
+Authentication-Results: smtp.subspace.kernel.org; arc=pass header.oldest-pass=0 smtp.remote-ip=209.85.161.46
+ARC-Seal: i=2; d=subspace.kernel.org; s=arc20261015; a=rsa-sha256; cv=pass;
+	t=1794192299;
+	b=ztpCgTI1+uf6z0BqJoheI5TOtSztl1kNSETLQea/g+41c6R+gQO9GsTcGmIpsNDC9ySH
+	 un6SXKf6OQdGqFdEAIGx1UtcVWR/Z/H4BXNWTMQDJPWXkYDdhwCqwhCqa7/+zDSiMhkFz
+	 LKqsBElhbwHJ93JIFjM4i2cmIFguaLM4aDr3+MeLAJyxz1TGb+Np+WYM1fKQp+uKeymYB
+	 jPt7zHEWQrLcGTEKzGmzeR4J8HT+dGYB4P9D6Q9YwWbrvltaCzky0QlIsOjNmLi662LBI
+	 hWJdfd1xQ1I7iG8GHfjh16UcqLRkmcknZJJ4MPksUg9yt4xXIxptm2TMiMh+YbDQ8pA==
+ARC-Message-Signature: i=2; d=subspace.kernel.org; s=arc20261015;
+	a=rsa-sha256; c=relaxed/relaxed; t=1794192299;
+	h=DMARC-Filter:Received:DKIM-Signature:X-Google-DKIM-Signature:
+	 X-Gm-Message-State:X-Gm-Gg:X-Received:MIME-Version:References:
+	 In-Reply-To:From:Date:X-Gm-Features:Message-ID:Subject:To:Cc:
+	 Content-Type;
+	bh=sM4ei3W2aqsjg/uQoN1lXIUJxYqbL4iaDT4uiaKbXMs=;
+	b=O6qyE6I3OkiBS56/G3yu2YAyP9zIS+Had5c7UkuIovChBN71c/ISmbrKpd2XQVJrkX30
+	 FkcENIMObFwaUIqaqEiD3XyYfc0Oik2NuAbfuPw/QLxtlTIGQJZtyapr2u5Fmyk5KhkGL
+	 d89+LJ7LufN83OOPU8fithraBXuTN94H+Pmfbdx8i0u81ddyAJ1og2Vo3P2qkPh3BJXJ5
+	 wxUHtWsxJommYMr0emqD6dr/k6ssOL6cNfmp98ouK4MGfwcCzV6FG/9D4tD7ZbB3tdMGl
+	 mL89QQgwenT30baszZxwg79ufIEJW+vlAKMIqxCpj2JcVillEPuKrWcl8rGDr4y8Sgg==
+ARC-Authentication-Results: i=2; smtp.subspace.kernel.org; 
+	dmarc=pass header.from=gmail.com;
+	spf=pass smtp.mailfrom=gmail.com;
+	dkim=pass header.d=gmail.com header.i=@gmail.com header.a=rsa-sha256 header.s=20260707 header.b=Ja9zjxov;
+	arc=pass header.oldest-pass=0 smtp.remote-ip=209.85.161.46
+Received: from mail-oo1-f46.google.com (mail-oo1-f46.google.com [209.85.161.46])
+	(using TLSv1.3 with cipher TLS_AES_128_GCM_SHA256 (128/128 bits)
 	 key-exchange X25519 server-signature ECDSA (prime256v1) server-digest SHA256)
 	(No client certificate requested)
-	by smtp.subspace.kernel.org (Postfix) with ESMTPS id 44641606A33E
-	for <linux-wireless@vger.kernel.org>; Mon,  9 Nov 2026 02:40:10 +0000 (UTC)
-DMARC-Filter: OpenDMARC Filter v1.4.2 smtp.subspace.kernel.org 44641606A33E
-Authentication-Results: smtp.subspace.kernel.org; dmarc=pass (p=none dis=none) header.from=realtek.com
-Authentication-Results: smtp.subspace.kernel.org; spf=pass smtp.mailfrom=realtek.com
+	by smtp.subspace.kernel.org (Postfix) with ESMTPS id A06E0606A31C
+	for <linux-wireless@vger.kernel.org>; Mon,  9 Nov 2026 02:44:58 +0000 (UTC)
+DMARC-Filter: OpenDMARC Filter v1.4.2 smtp.subspace.kernel.org A06E0606A31C
+Authentication-Results: smtp.subspace.kernel.org; dmarc=pass (p=none dis=none) header.from=gmail.com
+Authentication-Results: smtp.subspace.kernel.org; spf=pass smtp.mailfrom=gmail.com
 Authentication-Results: smtp.subspace.kernel.org;
-	dkim=pass (2048-bit key) header.d=realtek.com header.i=@realtek.com header.a=rsa-sha256 header.s=dkim header.b=nSZYWAb8
-X-SpamFilter-By: ArmorX SpamTrap 5.80 with qID 6A92e6J413949331, This message is accepted by code: ctloc85258
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=realtek.com; s=dkim;
-	t=1794192006; bh=Hi9RC1SCwpP32bwZWIHIaIOTtbCrh8s2e3ENdUtR2mw=;
-	h=From:To:CC:Subject:Date:Message-ID:References:In-Reply-To:
-	 Content-Type:Content-Transfer-Encoding:MIME-Version;
-	b=nSZYWAb8JcKPAAlio6e2khed2+5IO9GpxkxrmLvXcKbYbvrmGPMV1oHh2QxtgaW30
-	 AQ81IprOEKtdcPdv2f7Ho36Gdop4b7mOW4RBTA+xvL0NzIN5SzfrmWJXEGzTzD+BXJ
-	 7ItiuzSQ5sHFjVrUytll+a563kIVqvkVw09SzT7gRn4qvoduTSMBTeeU31le8MMhOS
-	 FKV9MSxP0Pbhcd9WXv9KbhJrews36oqcq1qXlcsERzjQA8+1OFdXL8HZOu8TTSJ0E3
-	 J2g9CGPjB+vc3dl8WzFTYdYnjEyD5ufpvMAeOD/81dzNSeWRYOJ1yc0er05QqKjgIk
-	 DNHt7B2bsmVeg==
-Received: from mail.realtek.com (rtkexhmbs02.realtek.com.tw[172.21.6.41])
-	by rtits2.realtek.com.tw (8.15.2/3.29/5.94) with ESMTPS id 6A92e6J413949331
-	(version=TLSv1.2 cipher=ECDHE-RSA-AES256-GCM-SHA384 bits=256 verify=FAIL);
-	Mon, 9 Nov 2026 10:40:06 +0800
-Received: from RTKEXHMBS01.realtek.com.tw (172.21.6.40) by
- RTKEXHMBS02.realtek.com.tw (172.21.6.41) with Microsoft SMTP Server
- (version=TLS1_2, cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id
- 15.2.2562.56; Mon, 9 Nov 2026 10:40:06 +0800
-Received: from RTKEXHMBS06.realtek.com.tw (10.21.1.56) by
- RTKEXHMBS01.realtek.com.tw (172.21.6.40) with Microsoft SMTP Server
- (version=TLS1_2, cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id
- 15.2.2562.56; Mon, 9 Nov 2026 10:40:05 +0800
-Received: from RTKEXHMBS06.realtek.com.tw ([fe80::eeeb:c765:ca73:5eef]) by
- RTKEXHMBS06.realtek.com.tw ([fe80::eeeb:c765:ca73:5eef%10]) with mapi id
- 15.02.2562.056; Mon, 9 Nov 2026 10:40:05 +0800
-From: Ping-Ke Shih <pkshih@realtek.com>
-To: Bitterblue Smith <rtl8821cerfe2@gmail.com>, "lnwgorou@gmail.com"
-	<lnwgorou@gmail.com>, Jes Sorensen <Jes.Sorensen@gmail.com>
-CC: "linux-wireless@vger.kernel.org" <linux-wireless@vger.kernel.org>
-Subject: RE: [PATCH rtw-next] wifi: rtl8xxxu: Allocate the USB control buffer
- separately
-Thread-Topic: [PATCH rtw-next] wifi: rtl8xxxu: Allocate the USB control buffer
- separately
-Thread-Index: AQHdb2WH5y0xbQYjckG+BDXzizYHibcjyLkAgAE/aQA=
-Date: Mon, 9 Nov 2026 02:40:05 +0000
-Message-ID: <0bf816c620d74dd7ac4bebdc2b466c6d@realtek.com>
-References: <20261108-b4-rtl8xxxu-usb-buf-v1-1-ed021a85a2b9@gmail.com>
- <72fc9599-3f63-4da9-bc18-aeb09d0f757f@gmail.com>
-In-Reply-To: <72fc9599-3f63-4da9-bc18-aeb09d0f757f@gmail.com>
-Accept-Language: en-US, zh-TW
-Content-Language: zh-TW
-Content-Type: text/plain; charset="utf-8"
-Content-Transfer-Encoding: base64
+	dkim=pass (2048-bit key) header.d=gmail.com header.i=@gmail.com header.a=rsa-sha256 header.s=20260707 header.b=Ja9zjxov
+Received: by mail-oo1-f46.google.com with SMTP id 006d021491bc7-70b875f6f1fso308646eaf.2
+        for <linux-wireless@vger.kernel.org>; Sun, 08 Nov 2026 18:44:58 -0800 (PST)
+ARC-Seal: i=1; a=rsa-sha256; t=1794192297; cv=none;
+        d=google.com; s=arc-20260327;
+        b=W8NYdZwf/j43EZSxxYTdXmBwIP2yMu3Z75QRKSICoJceycHvNYiGANeSwkGMTCEKe2
+         uL2rSk03lRqQ/4fttKC5/KYJ4U9qcTuGLymdfqsIz0nmu0uOubqqyhpRzPqUUxQBakAH
+         i1kgPAazuUPulalzuLzzBv/2mhSpXEtvQpjQvVlTAwO23eW60o8QGFWvoSwNwozU5n/E
+         MZ6HvHgl/DfI7100zeunGiimhdpvbFlH3ztGFRg9ILD1X3ZSFzdWISTO1cKggvNTv4Z/
+         G0hldil21S7PMY9YN/qSpibBpQAHU7GBDt70xE+6W92pUG5qL3o6oCfdLqGKj5RxD7zL
+         fMJQ==
+ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=google.com; s=arc-20260327;
+        h=cc:to:subject:message-id:date:from:in-reply-to:references
+         :mime-version:dkim-signature;
+        bh=sM4ei3W2aqsjg/uQoN1lXIUJxYqbL4iaDT4uiaKbXMs=;
+        fh=9SKooS7Xh0GP2ZXb44mApRJQgiMw5tYrdvl4iuXS9XY=;
+        b=TOacSMwb9xzLSUtk1mLfYH+FTdWrg1aW1XY/nRa69yV1LGWr1odupXgltiwtR8cHjS
+         IU7sClLMDTO9c1DK6SnADqn0KNDEaQzw4lzukKqYfqy1+fbYxVUrycGR4wfa7ene7U10
+         QxDRZ45YsA72GhWwpa4/ja0SIvVAqr6HwanKIG9DFQzCvaIQVU3N80CMTeY3Kljir2c9
+         t37qmc8ZjEv2CwS9bnRlfb/qwhCR+ylbrhq98Q8iSoHcVovUng2EJxYmo5dKx+3+ynFi
+         aUF7l2z+B14F/62wGbm2ELftTinCzGXHhlevqj21LNajmjRCoyCPegmAtP5CgfV9rjn+
+         96rg==;
+        darn=vger.kernel.org
+ARC-Authentication-Results: i=1; mx.google.com; arc=none
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+        d=gmail.com; s=20260707; t=1794192297; x=1794797097; darn=vger.kernel.org;
+        h=content-type:cc:to:subject:message-id:date:from:in-reply-to
+         :references:mime-version:from:to:cc:subject:date:message-id:reply-to
+         :content-type;
+        bh=sM4ei3W2aqsjg/uQoN1lXIUJxYqbL4iaDT4uiaKbXMs=;
+        b=Ja9zjxov9lnZx50vVsHsgBa709LcSze4diLb+Xvc96qVi5N4M6dIdkmOP7wFrRAOJR
+         jPRnS6BnA57LI0n4/AzyFmcieHVK91lKhr0GJaLL3RF9nJTETLaopDX50azV2Bm02c4s
+         1giBZzLW+X2neWi1poGDe3F4sucnxFRYaRvp8yHqpb3PTyhxnsBN66mMwcefq7n3RfCL
+         OlFC0pHeav0oaOvJfc3aU+41YUwNlymNKk8eFzA5Xu8UhJQugssHHFg8RihQdYSPBZTn
+         mqRdUZoLkjqKOmIjIsikona5sEPTI5Lkm2R14y/vscEJEplAMZwkVc0V1Pe6jUItclA3
+         wfRA==
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+        d=1e100.net; s=20260707; t=1794192297; x=1794797097;
+        h=content-type:cc:to:subject:message-id:date:from:in-reply-to
+         :references:mime-version:x-gm-gg:x-gm-message-state:from:to:cc
+         :subject:date:message-id:reply-to:content-type;
+        bh=sM4ei3W2aqsjg/uQoN1lXIUJxYqbL4iaDT4uiaKbXMs=;
+        b=BvnnBua1YLaKe4q/ingFH9b0nv5400P1AS/xHc39sYs4H6dwiw9qfcUUfNgz6Ux+07
+         qN55gcwiQhGKaEZuyIPc/ldavPFfJxc4QAB1VCs0VZ2YUte6sCHPL8pyIc4vOrSDDxEW
+         OjyV5xZvdfVhYJCkRp5zj4u3bAIrLE8DGIqmGMkUZOpXy1/Oigqtcd6+dB9xzmBdE4KQ
+         p4MzvCrX6+WK7uxu9nn5+0v/SzHQIimDdEdp/28ftJI9WZ5dsdP623BiYO+r1FiLZP3s
+         G2l/8hhpdh1vX/rHmLWCuXYXfSdjLeSTrjRcaVmR7JBaBbsOo04JBWRodeWQZYk4JLOo
+         AFLw==
+X-Gm-Message-State: APuU4Z9ogiAk8RzjNiXLpN/FAd59NYB3nclndL/yFrz4M37EpJawW4mj
+	loaevBY9zZsVEbf8KHsriIVMVTIopDYDIalzt6Fyn5YGwo/94bJLAlSaGPlkWmaBF1Sxzqrbk/0
+	NSD0ha3XRVU1D7wIjcRTQ1fFtGBhV8/o=
+X-Gm-Gg: AYBFou1OxT4k3B+iTZJh1KC23BkN2L/KxBWDxz9kppCB7hT1mK7E8N9MJyhigeyeBow
+	x1mE8R9wgDJW1wXnEhWFX2QlOVmorP0rCR0JOmpK3zDLtN4H+T4MIw5wWgnHAbu5Do7SoS8ifm+
+	CmJ4D+zYyR86cyx8VEnllUNeS5SXXZmFUU+090VTnQRQhFuVGuDt/K5w/UWjErqTcTUBjbpEVLT
+	JeO08iprge+9Ae+8Eu9g+NytymbEmkqr6ag2njOmMPYB0HOnqgL3mgRQ2PpACaRzaeneu/nJJlU
+	FqxsS2uoVyUkOArebXEauJI0xX8jlPTGbFBSNFTsMSeg10PRlvaY5Pjlr90CHxw13xhwmU9UshO
+	WenKOg8cOGfazXHqd+oEPivTcef1QBDR6SRH3E+CGWNVhuWb8IsSij7V/X9TD6epKiBKd
+X-Received: by 2002:a05:6820:5711:20b0:702:efc4:807d with SMTP id
+ 006d021491bc7-7170f2f48c0mr963288eaf.49.1794192297616; Sun, 08 Nov 2026
+ 18:44:57 -0800 (PST)
 X-Mailing-List: linux-wireless@vger.kernel.org
 List-Id: <linux-wireless.vger.kernel.org>
 List-Post: <mailto:linux-wireless@vger.kernel.org>
@@ -87,53 +102,85 @@ List-Unsubscribe: <mailto:linux-wireless+unsubscribe@vger.kernel.org>
 List-Owner: <mailto:linux-wireless+owner@vger.kernel.org>
 Precedence: list
 MIME-Version: 1.0
+References: <20261103095256.949327-1-hjf3108@gmail.com> <20261103095256.949327-6-hjf3108@gmail.com>
+ <8fbf3fbba7d94b55b7510a57ff376e8d@realtek.com>
+In-Reply-To: <8fbf3fbba7d94b55b7510a57ff376e8d@realtek.com>
+From: Jie Feng <hjf3108@gmail.com>
+Date: Mon, 9 Nov 2026 09:44:21 +0700
+X-Gm-Features: AclHuK8bKOtdBlghNCWobQHbMdIwtiOlN7hof4nDKn4NvNui8UWphWLdfR8rlFs
+Message-ID: <CABOQOSWLNQC3SHj1AUEQ8SmUAig-8xHGm=GO6w8EN-nSzy-7=Q@mail.gmail.com>
+Subject: Re: [PATCH rtw-next 5/5] wifi: rtlwifi: rtl8192d: let the firmware
+ use all rates
+To: Ping-Ke Shih <pkshih@realtek.com>
+Cc: "linux-wireless@vger.kernel.org" <linux-wireless@vger.kernel.org>, 
+	Bitterblue Smith <rtl8821cerfe2@gmail.com>, 
+	"linux-kernel@vger.kernel.org" <linux-kernel@vger.kernel.org>
+Content-Type: text/plain; charset="UTF-8"
 
-DQpCaXR0ZXJibHVlIFNtaXRoIDxydGw4ODIxY2VyZmUyQGdtYWlsLmNvbT4gd3JvdGU6DQo+IE9u
-IDA4LzExLzIwMjYgMTE6NDIsIFRhcHBhcml0IFJ1a3RoYXdvcm53b25nIHZpYSBCNCBSZWxheSB3
-cm90ZToNCj4gPiBGcm9tOiBUYXBwYXJpdCBSdWt0aGF3b3Jud29uZyA8bG53Z29yb3VAZ21haWwu
-Y29tPg0KPiA+DQo+ID4gcHJpdi0+dXNiX2J1ZiByZWNlaXZlcyB0aGUgZGF0YSBvZiBldmVyeSBj
-b250cm9sLUlOIHRyYW5zZmVyIHVzZWQgZm9yDQo+ID4gcmVnaXN0ZXIgcmVhZHMsIGJ1dCBpdCBp
-cyBlbWJlZGRlZCBpbiBzdHJ1Y3QgcnRsOHh4eHVfcHJpdiBkaXJlY3RseQ0KPiA+IGFmdGVyIHVz
-Yl9idWZfbXV0ZXguIE9uIENQVXMgd2l0aCBETUEtaW5jb2hlcmVudCBjYWNoZXMgdGhlIHR3byBz
-aGFyZSBhDQo+ID4gY2FjaGUgbGluZSwgd2hpY2ggRG9jdW1lbnRhdGlvbi9jb3JlLWFwaS9kbWEt
-YXBpLWhvd3RvLnJzdCBzYXlzIGNhbg0KPiA+IGNvcnJ1cHQgZGF0YS4NCj4gPg0KPiA+IFRoaXMg
-aGFwcGVucyBpbiBwcmFjdGljZS4gV2hlbiBhbm90aGVyIHRhc2sgY29udGVuZHMgZm9yIHVzYl9i
-dWZfbXV0ZXgNCj4gPiB3aGlsZSBhIHJlYWQgaXMgaW4gZmxpZ2h0LCB0aGUgQ1BVIHdyaXRlcyB0
-byB0aGF0IGNhY2hlIGxpbmUsIGFuZCB0aGUNCj4gPiBkZXZpY2UncyBkYXRhIGNhbiBiZSBsb3N0
-IHdoZW4gdGhlIGJ1ZmZlciBpcyB1bm1hcHBlZC4gdXNiX2NvbnRyb2xfbXNnKCkNCj4gPiBzdGls
-bCByZXR1cm5zIHRoZSBmdWxsIGxlbmd0aCwgYnV0IHRoZSByZWFkIHJldHVybnMgc3RhbGUgYnVm
-ZmVyDQo+ID4gY29udGVudHMsIHR5cGljYWxseSB0aGUgdmFsdWUgb2YgdGhlIHByZXZpb3VzIHJl
-Z2lzdGVyIHdyaXRlLiBUaGUgZHJpdmVyDQo+ID4gdGhlbiB3cml0ZXMgdGhhdCB2YWx1ZSBiYWNr
-IGluIGEgcmVhZC1tb2RpZnktd3JpdGUuDQo+ID4NCj4gPiBPbiBhbiBSVEw4MTkyRVUsIGEgc3Rh
-bGUgcmVhZCBvZiBSRUdfRlBHQTBfWEFfSFNTSV9QQVJNMiAoMHg4MjQpIGR1cmluZyBhDQo+ID4g
-c2NhbiBpcyB3cml0dGVuIGJhY2ssIGFmdGVyIHdoaWNoIHRoZSBjaGlwIHN0b3BzIHJlY2Vpdmlu
-ZyBhbmQgZG9lcyBub3QNCj4gPiByZWNvdmVyIG9uIGl0cyBvd24uIFJFR19GUEdBMF9QT1dFUl9T
-QVZFICgweDgxOCkgYWxzbyBkcmlmdHMgYXdheSBmcm9tDQo+ID4gaXRzIGluaXQgdmFsdWUgd2l0
-aG91dCBvYnZpb3VzIHN5bXB0b21zLg0KPiA+DQo+ID4gQWxpZ25pbmcgdGhlIGZpZWxkIGluc2lk
-ZSB0aGUgc3RydWN0IGlzIG5vdCBlbm91Z2g6IHRoZSBzdHJ1Y3QgbGl2ZXMgaW4NCj4gPiB0aGUg
-bWFjODAyMTEgcHJpdmF0ZSBhcmVhLCB3aGljaCBpcyBvbmx5IE5FVERFVl9BTElHTiAoMzIgYnl0
-ZSkgYWxpZ25lZC4NCj4gPiBkZXZtX2t6YWxsb2MoKSByZXR1cm5zIEFSQ0hfRE1BX01JTkFMSUdO
-IGFsaWduZWQgbWVtb3J5LCBzbyBhbGxvY2F0ZSB0aGUNCj4gPiBidWZmZXIgc2VwYXJhdGVseS4N
-Cj4gPg0KPiA+IFRlc3RlZCBvbiBhIFJhc3BiZXJyeSBQaSAyIChCQ00yODM2LCBkd2Nfb3RnLCAz
-Mi1iaXQsIDYuMTguNTAgd2l0aCB0aGlzDQo+ID4gY2hhbmdlIGJhY2twb3J0ZWQpIHdpdGggYSBU
-UC1MaW5rIFRMLVdOODIzTiB2MiAoUlRMODE5MkVVKSwgdHJpZ2dlcmluZyBhDQo+ID4gc2NhbiBl
-dmVyeSAxNSBzZWNvbmRzOg0KPiA+DQo+ID4gICB1bnBhdGNoZWQ6ICA1OTkgc2NhbnMsIDkgcmVj
-ZWl2ZSBoYW5ncyB3aXRoIDB4ODI0IGNvcnJ1cHRlZCwgcGx1cw0KPiA+ICAgICAgICAgICAgICAg
-MiBvdGhlciBjb25uZWN0aW9uIGZhaWx1cmVzIHdpdGggMHg4MjQgaW50YWN0DQo+ID4gICBwYXRj
-aGVkOiAgIDEyMDAgc2NhbnMsIG5vIGZhaWx1cmVzLCAweDgxOCBhbmQgMHg4MjQgY29ycmVjdCBh
-dA0KPiA+ICAgICAgICAgICAgICAgZXZlcnkgY2hlY2sNCj4gPg0KPiA+IFRvIGxvb2sgYXQgdGhl
-IHJlYWRzIGRpcmVjdGx5LCBhIHRlc3QgYnVpbGQgcHV0IGEgc2VudGluZWwgaW4gdGhlIGJ1ZmZl
-cg0KPiA+IGJlZm9yZSBlYWNoIHJlYWQgYW5kIHJlLXJlYWQgd2hlbiBpdCBjYW1lIGJhY2sgdW5j
-aGFuZ2VkLiAzMDAgc2NhbnMgcGVyDQo+ID4gbGF5b3V0Og0KPiA+DQo+ID4gICBidWZmZXIgbmV4
-dCB0byB0aGUgbXV0ZXggKGN1cnJlbnQpOiAgNzIgb2YgMTkzIGNvbnRlbmRlZCByZWFkcyBzdGFs
-ZSwNCj4gPiAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAwIG9mIH4yNjAw
-MDAgdW5jb250ZW5kZWQgcmVhZHMNCj4gPiAgIGJ1ZmZlciBpbiBpdHMgb3duIGNhY2hlIGxpbmU6
-ICAgICAgICAwIG9mIDIxNCBjb250ZW5kZWQgcmVhZHMgc3RhbGUNCj4gPiAgIGJ1ZmZlciBmcm9t
-IGRldm1fa3phbGxvYygpOiAgICAgICAgICAwIG9mIDI3MCBjb250ZW5kZWQgcmVhZHMgc3RhbGUN
-Cj4gPg0KPiA+IFRoZSByZS1yZWFkIGFsd2F5cyByZXR1cm5lZCB0aGUgZXhwZWN0ZWQgdmFsdWUs
-IHNvIHRoZSBkZXZpY2UgYW5zd2VyZWQNCj4gPiBjb3JyZWN0bHkgYW5kIG9ubHkgdGhlIGhvc3Qt
-c2lkZSBidWZmZXIgd2FzIHN0YWxlLg0KPiA+DQo+ID4gU2lnbmVkLW9mZi1ieTogVGFwcGFyaXQg
-UnVrdGhhd29ybndvbmcgPGxud2dvcm91QGdtYWlsLmNvbT4NCj4gDQo+IEEgc2ltaWxhciBwYXRj
-aCB3YXMgYXBwbGllZCBqdXN0IGZpdmUgZGF5cyBhZ28uDQoNCkZvciB0aGUgcmVjb3JkOg0KDQpo
-dHRwczovL3BhdGNoLm1zZ2lkLmxpbmsvMjAyNjEwMTAtcnRsOHh4eHUtdXNiLWRtYS12MS0xLWU2
-NzBkOWMwOGZkZkBraHUuYWMua3INCg0KDQo=
+On Mon, 9 Nov 2026 at 08:56, Ping-Ke Shih <pkshih@realtek.com> wrote:
+>
+> Ho Jie Feng <hjf3108@gmail.com> wrote:
+> > The rate mask is chosen based on rssi_level, however rssi_level
+> > is always 0,
+>
+> Should we fix it ?
+The vendor driver for rtl8192du also doesn't do the rssi_level update
+It is not compiled due to the #if 0
+https://github.com/lwfinger/rtl8192du/blob/master/hal/rtl8192d_dm.c#L2624
+Therefore, I'm not sure if it is okay to port it over.
+
+> > since:
+> > - for rtl8192de, call to rtl92d_dm_refresh_rate_adaptive_mask is
+> >   commented out and function is not implemented
+> > - for rtl8192du, it is also not called.
+> >
+> > This makes the branch always choose less than optimal allowed MCS rates.
+> > Enable all the rates.
+> >
+> > Test results (2.4 GHz):
+> >    before after
+> > TX 6.4    12.6
+>
+> How about the rate before/after? I think the highest rate will be similar
+> or the same?
+Highest rate will be similar, but I saw it using more intermediate rates.
+
+> > RX 32.0   39.1
+>
+> You change many rate masks for different wireless modes, so please provide
+> more experiments. Especially you need tests for a clean & noisy environments.
+So this patch by itself is more of an RFC, and I might drop it in v2
+if it changes
+behaviour too much in different circumstances.
+
+> >
+> > Signed-off-by: Ho Jie Feng <hjf3108@gmail.com>
+> > ---
+> >  .../wireless/realtek/rtlwifi/rtl8192d/hw_common.c    | 12 ++++++------
+> >  1 file changed, 6 insertions(+), 6 deletions(-)
+> >
+> > diff --git a/drivers/net/wireless/realtek/rtlwifi/rtl8192d/hw_common.c
+> > b/drivers/net/wireless/realtek/rtlwifi/rtl8192d/hw_common.c
+> > index cfefbe86380fbc..0c921c049b5178 100644
+> > --- a/drivers/net/wireless/realtek/rtlwifi/rtl8192d/hw_common.c
+> > +++ b/drivers/net/wireless/realtek/rtlwifi/rtl8192d/hw_common.c
+> > @@ -903,7 +903,7 @@ static void rtl92d_update_hal_rate_mask(struct ieee80211_hw *hw,
+> >                 else if (rssi_level == 2)
+> >                         ratr_bitmap &= 0x00000ff0;
+> >                 else
+> > -                       ratr_bitmap &= 0x00000ff5;
+> > +                       ratr_bitmap &= 0x00000fff;
+>
+> This mask means all 12 OFDM rates. I guess original design wants to select
+> higher rate quickly.
+> ...
+> For N mode, it wants to jump to MCS rate quickly I guess.
+That makes sense, I will leave it out for v2.
+
+> >                 } else {
+> >                         if (rtlphy->rf_type == RF_1T2R ||
+> >                             rtlphy->rf_type == RF_1T1R) {
+>
+> [...]
+>
+>
