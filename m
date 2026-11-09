@@ -1,61 +1,82 @@
-Authentication-Results: smtp.subspace.kernel.org; arc=none smtp.remote-ip=178.21.23.139
+Authentication-Results: smtp.subspace.kernel.org; arc=none smtp.remote-ip=211.75.126.72
 ARC-Seal: i=1; d=subspace.kernel.org; s=arc20261015; a=rsa-sha256; cv=none;
-	t=1794184286;
-	b=V6BBMF6HPn2cqop/y8uLEftzEUwEoJs/KNWOZxXpO6wmhKfScRvrBdbPvxyTOdOJZIgK
-	 +0aro9hLfCLFB+CD16fjuuGj5uPltROP12UT3eIK8dXzEnERXyDjSLLkfTGMC1h5ZD0/z
-	 0gEsmRjZ6ZoH5Epug9hxiL5YdsvXnwNaKC3qe9Zdy4UEvMju/VCklbCaKZJ/fVKcp+N/M
-	 YW/JJlj+zTEMFJuOxPzZ+kl2OGI4Ahyb8MwiKCmgcp+2cfnibwMKFvFh6vftaBZ7lYSBX
-	 3XwjvafxK+v/a3s7t+JWakxTm8UVY2smR03KpRt253/ix9lEUPC7VMWhrRt97R4lw1g==
+	t=1794184826;
+	b=KZ/DjfQ5BHPmKOX6MoKTcFNObIfQEKlAogPTSP0Py0sxvKJ4vtcFImwuU7cIeTBgTrOa
+	 I7IJuqwLjDfNk+o6DyzyK+vW2W/9tP2slF1MJQcT3wuSmWzJ8/ig3Z/XA85iXgwG0cpRA
+	 GewRxeuxWq7ordioDDRZmZ/uAI6WU5Yr6XHO2tuRvv2sULjszqkXB40uAeuFIdbneCwhw
+	 OoEokGR4asn8L2pME1TRWmjFwNQ41JLb6dW0MIHXjITeh74X5CmtrqFD9SyQ2tcxsIHk4
+	 Ulzs1cEzL3kM1B7KmLwopBhiiqC4zv/EFj/vwh+JioasptDi33fLBqUb3ja7KwPAjnA==
 ARC-Message-Signature: i=1; d=subspace.kernel.org; s=arc20261015;
-	a=rsa-sha256; c=relaxed/relaxed; t=1794184286;
-	h=DMARC-Filter:Received:X-Virus-Scanned:Received:DKIM-Signature:From:
-	 To:Cc:Subject:Date:Message-ID:MIME-Version:Content-Transfer-Encoding;
-	bh=FAu3bJU16zVGEe6ATAznKEdcW/0je1mo3cX5A98w6yk=;
-	b=Q7RwD953OIQbI6ztFpifGoRuCMwEyFQQLzsqZLThnZjmskd16gdEnuAA20E/HHLLj6PH
-	 /jra6kPW3ihqM40cX5CB03m2ZvsbXAF4VU6H7KihnPrFyh7Fdze6CaY3Xu+5/fdSEH6h5
-	 FHi2pFtuTuDawt1RaQZpDFw9+MPCK994SoAmkd7CNueuI9V+Vn3OvHTUIjdGUKmzEhmc1
-	 uHuqG7XqBY3NKVgcJIQlITc6Bgjb+vjesLyNnOmH4jZKu38+sLHtOAjcema1psM8K/1ZF
-	 FppAPxSmiA/3NNuYowSrFnIwpd0q6o1zpaGld1jMmeZ6qP6jYJASkfhzX4e3rIzFRXw==
+	a=rsa-sha256; c=relaxed/relaxed; t=1794184826;
+	h=DMARC-Filter:X-SpamFilter-By:DKIM-Signature:Received:Received:
+	 Received:Received:From:To:CC:Subject:Thread-Topic:Thread-Index:Date:
+	 Message-ID:References:In-Reply-To:Accept-Language:Content-Language:
+	 x-originating-ip:Content-Type:Content-Transfer-Encoding:MIME-Version;
+	bh=Z5410FcRl90lti0FF+4on2X3OCr6eStq5XnIeOt7CdY=;
+	b=Q2pLXO2t5A6dV7VsRd8J76LJaXDwdTn7cGqwHuAznRNCn0nHdhALLCphgX5K18TRqMW/
+	 4wB+9dV72QzlsHMp5ZsWy6Jo8C58+8pj1YR6I96QUfLTie6+/wqBQ04vWOzOR91Vk1yA8
+	 UkytRNt3DaP1BAHRr/RuBnC+yMvzrBGGgO6bjQ1RqBWJ4AFzxTra06j3sZq+jfUMPCk53
+	 QbVECdji+9waUznKUBLDmYOrsceL5tPQYy3Y+1jOH0qJoqqHMEbhnLViOu/xpLKkg3UUQ
+	 vVnqWj/EQ9b4yVxRb3mYXd9yMGP7ATYVtllrmgQOhRPHUaq4Xc+mS/6rE5y5HUErmnA==
 ARC-Authentication-Results: i=1; smtp.subspace.kernel.org; 
-	dmarc=pass header.from=disroot.org;
-	spf=pass smtp.mailfrom=disroot.org;
-	dkim=pass header.d=disroot.org header.i=@disroot.org header.a=rsa-sha256 header.s=mail header.b=c3bgAfNN;
-	arc=none smtp.remote-ip=178.21.23.139
-Received: from layka.disroot.org (layka.disroot.org [178.21.23.139])
+	dmarc=pass header.from=realtek.com;
+	spf=pass smtp.mailfrom=realtek.com;
+	dkim=pass header.d=realtek.com header.i=@realtek.com header.a=rsa-sha256 header.s=dkim header.b=PWxocnDr;
+	arc=none smtp.remote-ip=211.75.126.72
+Received: from rtits2.realtek.com.tw (rtits2.realtek.com [211.75.126.72])
 	(using TLSv1.3 with cipher TLS_AES_256_GCM_SHA384 (256/256 bits)
-	 key-exchange X25519 server-signature ECDSA (prime256v1))
+	 key-exchange X25519 server-signature ECDSA (prime256v1) server-digest SHA256)
 	(No client certificate requested)
-	by smtp.subspace.kernel.org (Postfix) with ESMTPS id A3995606A31C
-	for <linux-wireless@vger.kernel.org>; Mon,  9 Nov 2026 00:31:25 +0000 (UTC)
-DMARC-Filter: OpenDMARC Filter v1.4.2 smtp.subspace.kernel.org A3995606A31C
-Authentication-Results: smtp.subspace.kernel.org; dmarc=pass (p=reject dis=none) header.from=disroot.org
-Authentication-Results: smtp.subspace.kernel.org; spf=pass smtp.mailfrom=disroot.org
+	by smtp.subspace.kernel.org (Postfix) with ESMTPS id 76E95606A320;
+	Mon,  9 Nov 2026 00:40:25 +0000 (UTC)
+DMARC-Filter: OpenDMARC Filter v1.4.2 smtp.subspace.kernel.org 76E95606A320
+Authentication-Results: smtp.subspace.kernel.org; dmarc=pass (p=none dis=none) header.from=realtek.com
+Authentication-Results: smtp.subspace.kernel.org; spf=pass smtp.mailfrom=realtek.com
 Authentication-Results: smtp.subspace.kernel.org;
-	dkim=pass (2048-bit key) header.d=disroot.org header.i=@disroot.org header.a=rsa-sha256 header.s=mail header.b=c3bgAfNN
-Received: from mail01.layka.lan (localhost [127.0.0.1])
-	by disroot.org (Postfix) with ESMTP id A581D80489;
-	Mon, 09 Nov 2026 01:31:23 +0100 (CET)
-X-Virus-Scanned: SPAM Filter at disroot.org
-Received: from layka.disroot.org ([127.0.0.1])
- by localhost (disroot.org [127.0.0.1]) (amavis, port 10024) with ESMTP
- id LxAYgGdismVw; Mon,  9 Nov 2026 01:31:22 +0100 (CET)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=disroot.org; s=mail;
-	t=1794184282; bh=BJMMuXmGJnl5ckM2ekGCnT0bU5WA/JILtvszOtKRv7s=;
-	h=From:To:Cc:Subject:Date;
-	b=c3bgAfNNzNqYettoAVyCu0/mm+l30zAdD0HFhd13wpRCZ7vOO6HKdYQTfE7MSYF0Y
-	 LgeHj/z7XHTZnbFEN8jdqCaPyo7rEBNVg2Y+9gn5+QDVEt1s4eyOesA/+xPNCngQX9
-	 qB1WEngMsawcueLCBNyzGdWlw8s5OTH+L3dPYpa3ay/3j4WXQRzrHoAvN3iTxN/3R2
-	 mcKwJj7UXYXOIiMDSmyAowoK6QaYskXf+6dn2t7c+/KvCm7mUWO0w1W1s9hmCgyr1X
-	 GdKdVBdcKJU/cb23DnpYpu+oYUEZLXoB2ZbUMQ9l0GCFFz3UqGw79Ybif5wWbK3x/E
-	 p1AXIyPizMDBg==
-From: Florian Maurer <fmaurer@disroot.org>
-To: Johannes Berg <johannes@sipsolutions.net>
-Cc: Florian Maurer <fmaurer@disroot.org>,
-	linux-wireless@vger.kernel.org,
-	Simon Schippers <simon.schippers@tu-dortmund.de>
-Subject: [PATCH wireless-next] wifi: mac80211: mesh: tear down BA sessions when the peer link goes down
-Date: Mon,  9 Nov 2026 00:30:46 +0000
-Message-ID: <20261109003048.3580346-1-fmaurer@disroot.org>
+	dkim=pass (2048-bit key, unprotected) header.d=realtek.com header.i=@realtek.com header.a=rsa-sha256 header.s=dkim header.b=PWxocnDr
+X-SpamFilter-By: ArmorX SpamTrap 5.80 with qID 6A90eJ4H13825802, This message is accepted by code: ctloc85258
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=realtek.com; s=dkim;
+	t=1794184819; bh=Z5410FcRl90lti0FF+4on2X3OCr6eStq5XnIeOt7CdY=;
+	h=From:To:CC:Subject:Date:Message-ID:References:In-Reply-To:
+	 Content-Type:Content-Transfer-Encoding:MIME-Version;
+	b=PWxocnDr6zUOTCadttfhv4dgZtFnMz5aDjJ0OtHUd3ug0N2Btmm6C63bDsYXVX9ms
+	 iHI+G0k1II0z4UMTkzgAo9QpFb+8NcqjuoBlcIdrlPIqbjEoadiXTJhBZIuh72uYPp
+	 X77Q3k64wdlorH6/Waf7VW8J85uy0GopC30N7bYCEYctNwelDPZgnkqyl3hnG1G1W6
+	 E4x4AkXVeD4achqfCeOKREFaprU4dacNJjX/JH3WmpKmawUaP17R1vZJxh68P30hrP
+	 rwazbxiuZB5LZr/c9DwheZbFSjMfh2oJEEMwNi4FmebxEePSwIdj/fix2z9vQMQRHm
+	 60SOpUVqTKmCg==
+Received: from mail.realtek.com (rtkexhmbs03.realtek.com.tw[10.21.1.53])
+	by rtits2.realtek.com.tw (8.15.2/3.29/5.94) with ESMTPS id 6A90eJ4H13825802
+	(version=TLSv1.2 cipher=ECDHE-RSA-AES256-GCM-SHA384 bits=256 verify=FAIL);
+	Mon, 9 Nov 2026 08:40:19 +0800
+Received: from RTKEXHMBS05.realtek.com.tw (10.21.1.55) by
+ RTKEXHMBS03.realtek.com.tw (10.21.1.53) with Microsoft SMTP Server
+ (version=TLS1_2, cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id
+ 15.2.2562.56; Mon, 9 Nov 2026 08:40:20 +0800
+Received: from RTKEXHMBS06.realtek.com.tw (10.21.1.56) by
+ RTKEXHMBS05.realtek.com.tw (10.21.1.55) with Microsoft SMTP Server
+ (version=TLS1_2, cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id
+ 15.2.2562.56; Mon, 9 Nov 2026 08:40:19 +0800
+Received: from RTKEXHMBS06.realtek.com.tw ([fe80::eeeb:c765:ca73:5eef]) by
+ RTKEXHMBS06.realtek.com.tw ([fe80::eeeb:c765:ca73:5eef%10]) with mapi id
+ 15.02.2562.056; Mon, 9 Nov 2026 08:40:19 +0800
+From: Ping-Ke Shih <pkshih@realtek.com>
+To: Ho Jie Feng <hjf3108@gmail.com>, "linux-wireless@vger.kernel.org"
+	<linux-wireless@vger.kernel.org>
+CC: Bitterblue Smith <rtl8821cerfe2@gmail.com>, "linux-kernel@vger.kernel.org"
+	<linux-kernel@vger.kernel.org>
+Subject: RE: [PATCH rtw-next 3/5] wifi: rtlwifi: usb: unify the RX code path
+Thread-Topic: [PATCH rtw-next 3/5] wifi: rtlwifi: usb: unify the RX code path
+Thread-Index: AQHda3lJQ5elRG4B+EepDSbwCkWrv7ck7r7Q
+Date: Mon, 9 Nov 2026 00:40:19 +0000
+Message-ID: <5371f205934a4dfd86cae13ffeebcf7c@realtek.com>
+References: <20261103095256.949327-1-hjf3108@gmail.com>
+ <20261103095256.949327-4-hjf3108@gmail.com>
+In-Reply-To: <20261103095256.949327-4-hjf3108@gmail.com>
+Accept-Language: en-US, zh-TW
+Content-Language: zh-TW
+Content-Type: text/plain; charset="us-ascii"
+Content-Transfer-Encoding: quoted-printable
 X-Mailing-List: linux-wireless@vger.kernel.org
 List-Id: <linux-wireless.vger.kernel.org>
 List-Post: <mailto:linux-wireless@vger.kernel.org>
@@ -65,139 +86,16 @@ List-Unsubscribe: <mailto:linux-wireless+unsubscribe@vger.kernel.org>
 List-Owner: <mailto:linux-wireless+owner@vger.kernel.org>
 Precedence: list
 MIME-Version: 1.0
-Content-Transfer-Encoding: 8bit
 
-When a mesh peer link leaves ESTAB, only the plink state changes. The
-station entry and its block ack sessions stay until the station expires
-after mesh_plink_timeout (default 30 minutes). If the peer sets up the
-link again from scratch in the meantime, e.g. because it rejoined the
-mesh or restarted, its sequence numbers start from 0 again, but the old
-RX reorder session is still there, with its window head ahead of them.
-Frames on that TID are dropped as old until the peer's sequence numbers
-pass the old head, up to 2047 frames.
 
-A restarted peer does not need to close the link first: its OPENs carry
-a new link ID and are ignored (OPN_IGNR) until it gives up after
-dot11MeshMaxRetries and sends a CLOSE, which is accepted in ESTAB.
+Ho Jie Feng <hjf3108@gmail.com> wrote:
+> _rtl_usb_rx_process_agg is a copy of _rtl_usb_rx_process_noagg
+> except without the tail end. The noagg function can be used for
+> aggregated frames, so drop it and rename _rtl_usb_rx_process_noagg
+> to _rtl_usb_rx_process to unify the code path.
+>=20
+> Signed-off-by: Ho Jie Feng <hjf3108@gmail.com>
 
-A new ADDBA from the peer does not help: the first session of a new
-station uses dialog token 1 again, so it is taken as an update of the
-old session ("updated AddBA Req") and the reorder state is kept, and a
-peer that rejoins without HT sends no ADDBA at all. The TX sessions for
-the peer go stale the same way.
+Acked-by: Ping-Ke Shih <pkshih@realtek.com>
 
-Seen with mac80211_hwsim and on hardware with ath11k and mt7915 on the
-node that kept the station (the keeper below). After a neighbour
-rebooted, an ath11k node dropped its frames on one TID for 4.5 to over
-20 minutes. Deleting the station on the keeper restores traffic at
-once.
-
-Tear down the BA sessions of the peer whenever its plink leaves ESTAB,
-as is done when the station is destroyed:
- - in mesh_process_plink_frame() when the kernel MPM FSM left ESTAB,
-   without DELBA since the peer has closed the link, and outside of the
-   RCU section since this can sleep (the wiphy mutex keeps sta alive),
- - in mesh_plink_block() and in sta_apply_mesh_params() when user space
-   moves the plink out of ESTAB, with DELBA since the peer may still be
-   in ESTAB. These keep the sessions consistent with the plink state;
-   no failure was observed on these paths.
-
-ath11k keeps the old window head in its REO queue on RX_STOP and needs
-"wifi: ath11k: invalidate the REO queue SSN when RX aggregation stops"
-as well.
-
-Fixes: ae2772b313b9 ("mac80211: allow frame aggregation for mesh")
-Signed-off-by: Florian Maurer <fmaurer@disroot.org>
----
-Tested with mac80211_hwsim (KASAN, lockdep) on wireless-next
-b8e5b0ae8ff4: two radios, open mesh, kernel MPM, ping both ways after
-every re-peering. Leave and rejoin, restart while out of range, rejoin
-without HT and station expiry while isolated: >5% loss in 81 of 83
-cycles before (mean 78-100%), in none after, with and without mlo=1.
-Block/open: 1 of 20 cycles before, none after. SAE (wpa_supplicant):
-no loss before or after. No lockdep/KASAN splats; the mlo=1 pass has
-the same hwsim rate WARNs with and without this patch. A short
-stand-alone reproducer (hwsim, leave and rejoin, a minute or two): [2]
-
-Hardware (OpenWrt, 6.12 kernel, open 802.11s mesh):
- - mt7915 keeper: >= 40 s outage in 5/6 runs before, 0/7 after.
- - ath11k keeper: still dropped in the REO queue with this patch alone
-   (0/50 replies in the first 50 s); with the ath11k patch 48-49/50,
-   and the reboot stall gone (3/3 reboots before, 0/2 after).
- - ath10k-ct keeper: the firmware handled the ADDBAs, no outage to fix.
-
-This might also be what Simon saw with ath10k after a link came back
-into range [1], if one side's station had expired meanwhile.
-
-[1] https://lore.kernel.org/linux-wireless/20260202133532.814017-1-simon.schippers@tu-dortmund.de/
-[2] https://gist.github.com/maurerle/fb8f26aed07b587cd653adcd1ba0a67e
-
- net/mac80211/cfg.c        |  5 ++++-
- net/mac80211/mesh_plink.c | 13 +++++++++++++
- 2 files changed, 17 insertions(+), 1 deletion(-)
-
-diff --git a/net/mac80211/cfg.c b/net/mac80211/cfg.c
-index 6e466f8e1653..1ef96a668d46 100644
---- a/net/mac80211/cfg.c
-+++ b/net/mac80211/cfg.c
-@@ -2469,8 +2469,11 @@ static void sta_apply_mesh_params(struct ieee80211_local *local,
- 		case NL80211_PLINK_OPN_RCVD:
- 		case NL80211_PLINK_CNF_RCVD:
- 		case NL80211_PLINK_HOLDING:
--			if (sta->mesh->plink_state == NL80211_PLINK_ESTAB)
-+			if (sta->mesh->plink_state == NL80211_PLINK_ESTAB) {
- 				changed = mesh_plink_dec_estab_count(sdata);
-+				ieee80211_sta_tear_down_BA_sessions(sta,
-+								    AGG_STOP_LOCAL_REQUEST);
-+			}
- 			sta->mesh->plink_state = params->plink_state;
- 
- 			ieee80211_mps_sta_status_update(sta);
-diff --git a/net/mac80211/mesh_plink.c b/net/mac80211/mesh_plink.c
-index 6ce3ae3fb39b..80993f31f239 100644
---- a/net/mac80211/mesh_plink.c
-+++ b/net/mac80211/mesh_plink.c
-@@ -825,6 +825,7 @@ u64 mesh_plink_block(struct sta_info *sta)
- 	sta->mesh->plink_state = NL80211_PLINK_BLOCKED;
- 	spin_unlock_bh(&sta->mesh->plink_lock);
- 	mesh_path_flush_by_nexthop(sta);
-+	ieee80211_sta_tear_down_BA_sessions(sta, AGG_STOP_LOCAL_REQUEST);
- 
- 	return changed;
- }
-@@ -1131,6 +1132,7 @@ mesh_process_plink_frame(struct ieee80211_sub_if_data *sdata,
- 	u64 changed = 0;
- 	u8 ie_len = elems->peering_len;
- 	u16 plid, llid = 0;
-+	bool was_estab, teardown_ba = false;
- 
- 	if (!elems->peering) {
- 		mpl_dbg(sdata,
-@@ -1211,11 +1213,22 @@ mesh_process_plink_frame(struct ieee80211_sub_if_data *sdata,
- 		sta->mesh->aid = get_unaligned_le16(PLINK_CNF_AID(mgmt));
- 	}
- 
-+	was_estab = sta->mesh->plink_state == NL80211_PLINK_ESTAB;
- 	changed |= mesh_plink_fsm(sdata, sta, event);
-+	teardown_ba = was_estab &&
-+		      sta->mesh->plink_state != NL80211_PLINK_ESTAB;
- 
- unlock_rcu:
- 	rcu_read_unlock();
- 
-+	/* The peer link is gone and will be set up from scratch, so must
-+	 * the BA sessions: the peer has typically lost its side of them,
-+	 * e.g. when it restarted. This can sleep, so do it outside the RCU
-+	 * section, the wiphy mutex keeps sta alive.
-+	 */
-+	if (teardown_ba)
-+		ieee80211_sta_tear_down_BA_sessions(sta, AGG_STOP_PEER_REQUEST);
-+
- 	if (changed)
- 		ieee80211_mbss_info_change_notify(sdata, changed);
- }
-
-base-commit: b8e5b0ae8ff47240366d38e5d12c65f878724316
--- 
-2.47.3
 
