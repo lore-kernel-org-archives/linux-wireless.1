@@ -1,83 +1,63 @@
-Authentication-Results: smtp.subspace.kernel.org; arc=none smtp.remote-ip=211.75.126.72
+Authentication-Results: smtp.subspace.kernel.org; arc=none smtp.remote-ip=91.218.175.225
 ARC-Seal: i=1; d=subspace.kernel.org; s=arc20261015; a=rsa-sha256; cv=none;
-	t=1794204883;
-	b=VkNFjYqWYwaMo55g4FS5g6xO73hNc7XPFouoYyqokVGojJxcnaOugsKqagoyJtT6CqNr
-	 USPA4E1k1BwS+Gw7RZg1hjeXSkORiVgnAMgphL7kDO1VBjbRI0inmW20DnYDYHIxsjA5d
-	 fBh8q/SwhogyuEjNobXf8/YBndUbOv7oNTbrnYmc78+UlJoZFI1pAuTkQ3a8k3FjXMr6q
-	 OMd3/prl01bibuiI6xM3LgfAKiiebPzdL9bmC8ggze/uicLVe6kiw8PRMWcrkaT47DaDj
-	 HdzbDl6QmiBdR7doEaoirsAfCHC+n/Moc32TKVU0NXsXacV5CgoxX5rO30EMWHokcNw==
+	t=1794205315;
+	b=aLABsrF9I5GSorGetk2YMYXDtHQLVxYsVu1vJoJkzgzlW3AWkwxl/FRMkeljbJsMGoJZ
+	 WRRtFKBvm25bi+sxYq70LV4hLJKxIkaHYkhJMre53MXaDY4GWT+OSUNGvLh2CFkwx+R2E
+	 7MGLrFXATxGZsJp7CSL+vEAi4UMHUt+0VKmLeSb9dMm0iwGBR8C5kKjyudAc5ZaPz8QIw
+	 mC3rLPeTKaaoWkOnnJX3p0GwQ0CGNETix1mdYnr/Xt8cF94K6ChqFcji39utColPgbzTD
+	 HWikhdwix1ecgJwM8ZeBVRjmDLy/E8No/CJSy7NOfy/UlZk2kFy+Kcv7v2cdsf1pJ7w==
 ARC-Message-Signature: i=1; d=subspace.kernel.org; s=arc20261015;
-	a=rsa-sha256; c=relaxed/relaxed; t=1794204883;
-	h=DMARC-Filter:X-SpamFilter-By:DKIM-Signature:Received:Received:
-	 Received:From:To:CC:Subject:Thread-Topic:Thread-Index:Date:Message-ID:
-	 References:In-Reply-To:Accept-Language:Content-Language:
-	 x-originating-ip:Content-Type:Content-Transfer-Encoding:MIME-Version;
-	bh=7SE27M7/nKlqHU4dW8cV7hQmRY+kZPB6hzPIzbKWDhQ=;
-	b=Xr6A389ohxfl/41av9430hVAuHW3KMMIi2CI9cL2L/cvAOwDfqi4NtwIH0n84fitxY3a
-	 9+oJ28mzMgG4ws0m3ZmAFpjavcmwKjJHrzsU88NkSjAIP9sVSH+y4Yj92B34hC5SiMRKm
-	 a96rA6me5aGHJmMz1gerhdi0UecZ/FdYAltIKuMwqZhYkzRCPB5+NyYqaX9hh+GAP7mSO
-	 0MAQv3BQE1lM4C6v0p1mMCS2vKtw5lgs5iSK99udRi1+YG2FKmDnPPTMCkdDe2W2Mmr80
-	 QOnzqAilX1G5akRfyNT1Z9A9UM0qiyZesEOcJuje8PhMkCmmqpnTTPOe1/RBYpz7tUQ==
+	a=rsa-sha256; c=relaxed/relaxed; t=1794205315;
+	h=DMARC-Filter:X-Envelope-To:DKIM-Signature:X-Envelope-To:Received:
+	 X-Mizu-Trace-ID:X-Migadu-Flow:Date:From:To:CC:Subject:In-Reply-To:
+	 References:Message-ID:MIME-Version:Content-Type:
+	 Content-Transfer-Encoding;
+	bh=X4oPqQzUTCF258jLwJeEbnqRkkLBozRE8pL/5tusbYg=;
+	b=Y+VHxrKLdX6rwLZwYJRIUc8DTc9p1KAMAFTkQWFooVIpPwG0wNTKCYzAZmMw+6lRJicy
+	 R7+4kOtExIyyDZmk7Eh1BjhjpCUfqwgZnCveF+ZBJdEiOUPHKdwaxzFofGu96oPAl3k+M
+	 m8PiIMTlm8bLFvpvMf3jyGAX7D9wjlnWu/Hg5nEB+B8/hFaLFinV20cqLoBvFDxh3oXV4
+	 m2Imvk0notES1/E3TCCu7ls0g8cOCv6zHEzMPBBvRRJRAYEYQylfsiI3r8gounq+qfTKi
+	 svnV3KKot8V/Wc4QboA6gcFUCxS7V35v9jf6JdIhuCIpHPqVfTZvF6idOAy1YrtrcPA==
 ARC-Authentication-Results: i=1; smtp.subspace.kernel.org; 
-	dmarc=pass header.from=realtek.com;
-	spf=pass smtp.mailfrom=realtek.com;
-	dkim=pass header.d=realtek.com header.i=@realtek.com header.a=rsa-sha256 header.s=dkim header.b=RPoFhTmP;
-	arc=none smtp.remote-ip=211.75.126.72
-Received: from rtits2.realtek.com.tw (rtits2.realtek.com [211.75.126.72])
-	(using TLSv1.3 with cipher TLS_AES_256_GCM_SHA384 (256/256 bits)
+	dmarc=pass header.from=linux.dev;
+	spf=pass smtp.mailfrom=linux.dev;
+	dkim=pass header.d=linux.dev header.i=@linux.dev header.a=rsa-sha256 header.s=key1 header.b=GoiJvpCp;
+	arc=none smtp.remote-ip=91.218.175.225
+Received: from mta0.migadu.com (out-225.mta0.migadu.com [91.218.175.225])
+	(using TLSv1.3 with cipher TLS_AES_128_GCM_SHA256 (128/128 bits)
 	 key-exchange X25519 server-signature ECDSA (prime256v1) server-digest SHA256)
 	(No client certificate requested)
-	by smtp.subspace.kernel.org (Postfix) with ESMTPS id 16186606A322
-	for <linux-wireless@vger.kernel.org>; Mon,  9 Nov 2026 06:14:41 +0000 (UTC)
-DMARC-Filter: OpenDMARC Filter v1.4.2 smtp.subspace.kernel.org 16186606A322
-Authentication-Results: smtp.subspace.kernel.org; dmarc=pass (p=none dis=none) header.from=realtek.com
-Authentication-Results: smtp.subspace.kernel.org; spf=pass smtp.mailfrom=realtek.com
+	by smtp.subspace.kernel.org (Postfix) with ESMTPS id 16169606A321
+	for <linux-wireless@vger.kernel.org>; Mon,  9 Nov 2026 06:21:54 +0000 (UTC)
+DMARC-Filter: OpenDMARC Filter v1.4.2 smtp.subspace.kernel.org 16169606A321
+Authentication-Results: smtp.subspace.kernel.org; dmarc=pass (p=none dis=none) header.from=linux.dev
+Authentication-Results: smtp.subspace.kernel.org; spf=pass smtp.mailfrom=linux.dev
 Authentication-Results: smtp.subspace.kernel.org;
-	dkim=pass (2048-bit key) header.d=realtek.com header.i=@realtek.com header.a=rsa-sha256 header.s=dkim header.b=RPoFhTmP
-X-SpamFilter-By: ArmorX SpamTrap 5.80 with qID 6A96EUUt84103788, This message is accepted by code: ctloc85258
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=realtek.com; s=dkim;
-	t=1794204870; bh=7SE27M7/nKlqHU4dW8cV7hQmRY+kZPB6hzPIzbKWDhQ=;
-	h=From:To:CC:Subject:Date:Message-ID:References:In-Reply-To:
-	 Content-Type:Content-Transfer-Encoding:MIME-Version;
-	b=RPoFhTmPewdSYtzFx2G8RMde2umPb+xorIYjZmWgSN4eQY9qzm4u6jIbIeAw532KZ
-	 t/BMcXt7jiMx+nKfZAEpIvoobi3aeoAKbYfUhRJ3oXmy1gpFFtvB00MFgSyVF4lMlH
-	 puAj01YZbp3Uga2/5gaYK0BsvPIPYxQCIJZe8TSsgmfT/huxx2V5GKt1HbnAY5x8cR
-	 1zaRdFlIhVUEJBddOcYMjUvP7z2NANpVDJjpN60N7E+RkMl0lmnp7kSnjkteG+9OIW
-	 cdpmEYuCbut4wwGFh6bKanhWUeN3fvhV2GNJKj5X3T3eDA5VFuOw0Tdtt7C1uO6/7T
-	 zuHLfOPUTW4CQ==
-Received: from mail.realtek.com (rtkexhmbs03.realtek.com.tw[10.21.1.53])
-	by rtits2.realtek.com.tw (8.15.2/3.29/5.94) with ESMTPS id 6A96EUUt84103788
-	(version=TLSv1.2 cipher=ECDHE-RSA-AES256-GCM-SHA384 bits=256 verify=FAIL);
-	Mon, 9 Nov 2026 14:14:30 +0800
-Received: from RTKEXHMBS06.realtek.com.tw (10.21.1.56) by
- RTKEXHMBS03.realtek.com.tw (10.21.1.53) with Microsoft SMTP Server
- (version=TLS1_2, cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id
- 15.2.2562.56; Mon, 9 Nov 2026 14:14:29 +0800
-Received: from RTKEXHMBS06.realtek.com.tw ([fe80::eeeb:c765:ca73:5eef]) by
- RTKEXHMBS06.realtek.com.tw ([fe80::eeeb:c765:ca73:5eef%10]) with mapi id
- 15.02.2562.056; Mon, 9 Nov 2026 14:14:29 +0800
-From: Ping-Ke Shih <pkshih@realtek.com>
-To: Luka Gejak <luka.gejak@linux.dev>, Zeshan Ahmed Nobin
-	<zeshanahmednobin@gmail.com>, "linux-wireless@vger.kernel.org"
-	<linux-wireless@vger.kernel.org>
-CC: Kalle Valo <kvalo@kernel.org>
-Subject: RE: [PATCH rtw-next v2 0/2] wifi: rtw88: 8822c: check register values
- in cck_pd_set
-Thread-Topic: [PATCH rtw-next v2 0/2] wifi: rtw88: 8822c: check register
- values in cck_pd_set
-Thread-Index: AQHdbuazUOaT5QdG1kKmKm0xSXDCtbcjQrSAgAAAdACAAb2B8P//vFGAgACICoA=
-Date: Mon, 9 Nov 2026 06:14:28 +0000
-Message-ID: <87ae80f9477f43559d01e851f2ef2e8a@realtek.com>
-References: <20261107183403.50696-1-zeshanahmednobin@gmail.com>
- <cec3629205b2535d73f5285caddec290e7bda1c4@linux.dev>
- <4f3b37d5e7bdc710a54e46b4f28879b4f51ff15e@linux.dev>
- <b91cf87116d04aa7b3d1758ff58fab1f@realtek.com>
- <32B31B48-2A08-4A09-8D19-39FF49FE7306@linux.dev>
-In-Reply-To: <32B31B48-2A08-4A09-8D19-39FF49FE7306@linux.dev>
-Accept-Language: en-US, zh-TW
-Content-Language: zh-TW
-Content-Type: text/plain; charset="utf-8"
-Content-Transfer-Encoding: base64
+	dkim=pass (1024-bit key, unprotected) header.d=linux.dev header.i=@linux.dev header.a=rsa-sha256 header.s=key1 header.b=GoiJvpCp
+X-Envelope-To: linux-wireless@vger.kernel.org
+DKIM-Signature: a=rsa-sha256; bh=MsYBkJeOLSfLNgzVOHX6M1aMi6+tZkDhL2lyZNSd2Y8=;
+ c=simple/simple; d=linux.dev;
+ h=from:to:subject:date:message-id:mime-version:content-type; s=key1;
+ t=1794205313; v=1; x=1794810113;
+ b=GoiJvpCpgiAfmSVZlipl4wwZc2ZlBoOjRbb5Xa6TfSjFh9iVnnzFb8HDG1vZ/BmIwubONSyx
+ 9NQPdS15fZtT9GN4+ZqUJUt4UYdqfnM+Y6QCmjcDn/8hWY/MObP2CXTnc+6w0slhjdMy1K3dMa9
+ AAifiaNTWSJg7gsFUYE4kkw4=
+X-Envelope-To: linux-wireless@vger.kernel.org
+Received: by smtp.migadu.com with ESMTPS id 1a5b9ee4d79ad13a;
+	Mon, 09 Nov 2026 06:21:53 +0000
+X-Mizu-Trace-ID: 1a5b9ee4d79ad13a
+X-Migadu-Flow: FLOW_OUT
+Date: Mon, 09 Nov 2026 07:21:48 +0100
+From: Luka Gejak <luka.gejak@linux.dev>
+To: Ping-Ke Shih <pkshih@realtek.com>, Kalpesh Solanki <skalpesh942@gmail.com>
+CC: "kvalo@kernel.org" <kvalo@kernel.org>,
+ "linux-wireless@vger.kernel.org" <linux-wireless@vger.kernel.org>,
+ "linux-kernel@vger.kernel.org" <linux-kernel@vger.kernel.org>
+Subject: =?US-ASCII?Q?RE=3A_=5BPATCH_v3_0/2=5D_wifi=3A_rtw88=3A_firmwa?=
+ =?US-ASCII?Q?re_recovery_fixes_and_LPS_hang_handling?=
+In-Reply-To: <86803b2c13a74ada92ab73e79f38164d@realtek.com>
+References: <20261108085126.331784-1-skalpesh942@gmail.com> <9fd1c42c5df94629a21c41dd08645b96@realtek.com> <27E9A60D-26F6-41D6-B74F-7DEF998C8498@linux.dev> <86803b2c13a74ada92ab73e79f38164d@realtek.com>
+Message-ID: <B1CD522C-2CC2-4913-8175-05F0D25CF65F@linux.dev>
 X-Mailing-List: linux-wireless@vger.kernel.org
 List-Id: <linux-wireless.vger.kernel.org>
 List-Post: <mailto:linux-wireless@vger.kernel.org>
@@ -87,17 +67,53 @@ List-Unsubscribe: <mailto:linux-wireless+unsubscribe@vger.kernel.org>
 List-Owner: <mailto:linux-wireless+owner@vger.kernel.org>
 Precedence: list
 MIME-Version: 1.0
+Content-Type: text/plain;
+ charset=utf-8
+Content-Transfer-Encoding: 8bit
 
-THVrYSBHZWphayA8bHVrYS5nZWpha0BsaW51eC5kZXY+IHdyb3RlOg0KPiBPbiBOb3ZlbWJlciA5
-LCAyMDI2IDM6MTA6MTAgQU0gR01UKzAxOjAwLCBQaW5nLUtlIFNoaWggPHBrc2hpaEByZWFsdGVr
-LmNvbT4NCj4gd3JvdGU6DQo+ID4NCj4gPg0KPiA+THVrYSBHZWphayA8bHVrYS5nZWpha0BsaW51
-eC5kZXY+IHdyb3RlOg0KPiA+PiBOb3ZlbWJlciA4LCAyMDI2IGF0IDg6MzIgQU0sICJMdWthIEdl
-amFrIiA8bHVrYS5nZWpha0BsaW51eC5kZXY+IHdyb3RlOg0KPiA+Pg0KPiA+PiBUeXBvOg0KPiA+
-PiA+IERvIHlvdSBtaW5kIHJlc2VuZGluZyB0aGlzIHNlcmllcyBhbmQgcHV0dGluZw0KPiA+bGlu
-dXgta2VybmVsLnZnZXIua2VybmVsLm9yZw0KPiA+PiA+IGluIHRoZSBDQyBhcyB3ZWxsLg0KPiA+
-Pg0KPiA+PiBsaW51eC1rZXJuZWxAdmdlci5rZXJuZWwub3JnDQo+ID4NCj4gPldoeSBpcyBpdCBy
-ZXF1aXJlZCBmb3Igd2lyZWxlc3MgcGF0Y2hlcz8NCj4gPg0KPiA+DQo+IFdpcmVsZXNzIGxpc3Qg
-aXMgYnVnZ2VkIG91dCBhbmQgbm90aGluZyBuZXdlciB0aGFuIDIwMjYtMTEtMDYgMTU6NDYNCj4g
-VVRDIGlzIGFwcGVhcmluZyBvbiBpdC4NCg0KTXkgd29yayBmbG93IGlzIHRvIGFwcGx5IHBhdGNo
-ZXMgZnJvbSBwYXRjaHdvcmsgb2YgbGludXgtd2lyZWxlc3MuDQpDYyBsaW51eC1rZXJuZWwgZG9l
-c24ndCBoZWxwLiANCg0KDQo=
+On November 9, 2026 7:12:52 AM GMT+01:00, Ping-Ke Shih <pkshih@realtek.com>
+wrote:
+>Luka Gejak <luka.gejak@linux.dev> wrote:
+>> On November 9, 2026 3:30:58 AM GMT+01:00, Ping-Ke Shih
+><pkshih@realtek.com>
+>> wrote:
+>> >Kalpesh Solanki <skalpesh942@gmail.com> wrote:
+>> >> Changes in v3:
+>> >> - Note: v2 patch 1/2 (DMI quirk) is already applied in rtw-next.
+>> >> - Add patch 1/2 to clear RTW_FLAG_RESTARTING in rtw_ops_stop()
+>> >>   with Fixes tag.
+>> >> - In patch 2/2:
+>> >>   - Count consecutive failures before triggering recovery
+>> >>     (RTW_PS_HANG_MAX_CNT = 3).
+>> >>   - Reset ps_hang_cnt on successful LPS leave and in
+>rtw_core_start().
+>> >>   - Suppress raw register dump on transient failures to avoid log
+>spam.
+>> >
+>> >The patchset doesn't present in [1] nor [2]. Please wait a while to
+>send
+>> >newer version after it recovered.
+>> >
+>> >[1] https://patchwork.kernel.org/project/linux-wireless/list/
+>> >[2] https://lore.kernel.org/linux-wireless/
+>> >
+>> >
+>> 
+>> Hi Ping-Ke,
+>> 
+>> The linux-wireless list is bugged and nothing is appearing on it since
+>> 2026-11-06 15:46 UTC. Aren't patches accessible due to
+>> linux-kernel@vger.kernel.org being CC'ed?
+>
+>I think not. I sent patches to linux-wireless, not including linux-kernel,
+>before, and the lore and patchwork of linux-wireless can capture the
+>patches. 
+>
+>
+
+We are having this conversation on linux-wireless, aren't we? I don't see
+it and my lei isn't picking it up.
+
+
+Best regards,
+Luka Gejak
