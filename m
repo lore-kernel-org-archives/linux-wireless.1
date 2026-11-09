@@ -1,63 +1,89 @@
-Authentication-Results: smtp.subspace.kernel.org; arc=none smtp.remote-ip=91.218.175.129
+Authentication-Results: smtp.subspace.kernel.org; arc=none smtp.remote-ip=100.103.45.18
 ARC-Seal: i=1; d=subspace.kernel.org; s=arc20261015; a=rsa-sha256; cv=none;
-	t=1794213776;
-	b=jzaWu6d8m8TyYJn3K1/YCQIZw4zIQeU/ubQsfB24T9XMULujGEcz/Hu/K9uT6g2GWOJe
-	 rCMx27hRYviKkFvP7HLskiZw6iJkpmzSHbYnEsX17lCVEj68iOwl16Kn+xs0Em2Y7fZ2b
-	 HfYEiRHn58epsQ4VbnkJBXdBRx6mwliLuDSt+Q44rkzZ0kXjVrROj8bSKNtBTEUzSAM0c
-	 0ldpr3C3NXZtJmeMfTNjMMCPdFcTrhe3c2QwcJ4zgyez0hyK9k9RPluPnaCr63tgM5ifa
-	 dDzHm0NOHkuyjBmq1GtNYgBHt6uSu2nUgBiOsbVLnI8cpsYc+ZxPQ4tiQfYvzIZ2Feg==
+	t=1794216189;
+	b=gwne/rXXPA7GS5EQd4T9sm1FKdCSVT+kUJp+lW27nIFJt+aTT7nYLzX0IL4h2834ERLP
+	 LkLxjzLr9z4l+KFX0pnBcainOs4FfNvPlOcNLdqFz28KVvXgQSn//hZRFIiOsylsEBQ4A
+	 f6bHuy8TpvaXW6F5N826efAWs38IWB7xvtV9SfVXvzhyEyyLQihUO3l+Quz7vmBvvr3Qh
+	 ayoMvV7iaw1AWm+zt4nxCmB2xHwZP9riiQktcIngaROR3ga4mVmrCbAAwmgGPf3z3GcMH
+	 Kxo3vmHLdOr/ZyhqYH6qCEJb1739opxgkj8YpptcKGxNQzg05STpvXKtLXLD6GNdj2A==
 ARC-Message-Signature: i=1; d=subspace.kernel.org; s=arc20261015;
-	a=rsa-sha256; c=relaxed/relaxed; t=1794213776;
-	h=DMARC-Filter:X-Envelope-To:DKIM-Signature:X-Envelope-To:Received:
-	 X-Mizu-Trace-ID:X-Migadu-Flow:Date:From:To:CC:Subject:In-Reply-To:
-	 References:Message-ID:MIME-Version:Content-Type:
-	 Content-Transfer-Encoding;
-	bh=LtdyX8DPqa/hf4d5KaJuhHuaYLQ673pZgSExYeG5UMw=;
-	b=YkyyQgQ9aRvmGWb3Hsw4ihg/6zK4YobZ7Z+0T7gV6UHqfgif63d9RQzVKaSq4UUg/hF4
-	 aNj7jjl/rLuY5xTqXkhRgDadzxw0RVzDZjsSin5oOo4q6KgCcwr+xfj0anjDblMwVHG2q
-	 7WNJ9czj0eaJ35LBL0IQeMk3qmSWe4Ekh3CjqmJpF40E9fAEpV8sbW2kyjV4Imykb2DTe
-	 emp/LOil6ixX3+TmYCj/QT8w1vns8EkbNkM3wUr2b8dKb326TAYPhx6HSFOHoze6aXo/l
-	 mqd8eQHGPJXkd1mhWRvw8ZqGEOgJATWSnTZ1crOPMphyQjVCWfmLLdkU1gvMeaWAoRQ==
+	a=rsa-sha256; c=relaxed/relaxed; t=1794216189;
+	h=Received:DKIM-Signature:Date:From:To:Cc:Subject:Message-ID:
+	 References:MIME-Version:Content-Type:Content-Disposition:In-Reply-To;
+	bh=3a6/w1xWJzr0AfOc6H7D9LndxRKnZcP9ByrmJVJZKlg=;
+	b=4b4GDCF1BWf7T+XQ2osb3z4KXHZNEOmqh3P4f24YGzd0AXuECnlZQBS+y311ic2WUSqr
+	 1u/E/4/0TTMgjORVRUD7+L7X1docHDUp1cQu42SjFoFXpHTKmWmM2WcLQgJg9UyDRCOvS
+	 /qQ1AZDEtb3FVW3F1WHa7f3ulxKwMPS0CeChsbqqNVLfNOniVaZCKmgT+j0cN/L2oADrO
+	 hOJ0DGvpP9crDLiCklYgbL0IT2UYtBxdNNIEfTbrrQc18QkKXm27/NQY/cAYZXwdT5jYK
+	 1yl+XGBBlvDNEU3Y3xDBY5QBWYiwBCPN0iNZSnyxY6fYGqBDB9U7UQDGdWuLgE0MLsQ==
 ARC-Authentication-Results: i=1; smtp.subspace.kernel.org; 
-	dmarc=pass header.from=linux.dev;
-	spf=pass smtp.mailfrom=linux.dev;
-	dkim=pass header.d=linux.dev header.i=@linux.dev header.a=rsa-sha256 header.s=key1 header.b=nmikw6dT;
-	arc=none smtp.remote-ip=91.218.175.129
-Received: from mta0.migadu.com (out-129.mta0.migadu.com [91.218.175.129])
-	(using TLSv1.3 with cipher TLS_AES_128_GCM_SHA256 (128/128 bits)
-	 key-exchange X25519 server-signature ECDSA (prime256v1) server-digest SHA256)
+	dkim=pass header.d=kernel.org header.i=@kernel.org header.a=rsa-sha256 header.s=k20260515 header.b=jPerqchO;
+	arc=none smtp.remote-ip=100.103.45.18
+Received: from smtp.kernel.org (quasi.space.kernel.org [100.103.45.18])
+	(using TLSv1.3 with cipher TLS_AES_256_GCM_SHA384 (256/256 bits)
+	 key-exchange X25519 server-signature ECDSA (prime256v1))
 	(No client certificate requested)
-	by smtp.subspace.kernel.org (Postfix) with ESMTPS id 8708F606A31C
-	for <linux-wireless@vger.kernel.org>; Mon,  9 Nov 2026 08:42:55 +0000 (UTC)
-DMARC-Filter: OpenDMARC Filter v1.4.2 smtp.subspace.kernel.org 8708F606A31C
-Authentication-Results: smtp.subspace.kernel.org; dmarc=pass (p=none dis=none) header.from=linux.dev
-Authentication-Results: smtp.subspace.kernel.org; spf=pass smtp.mailfrom=linux.dev
+	by smtp.subspace.kernel.org (Postfix) with ESMTPS id 65012606EEA1;
+	Mon,  9 Nov 2026 09:23:09 +0000 (UTC)
 Authentication-Results: smtp.subspace.kernel.org;
-	dkim=pass (1024-bit key, unprotected) header.d=linux.dev header.i=@linux.dev header.a=rsa-sha256 header.s=key1 header.b=nmikw6dT
-X-Envelope-To: linux-wireless@vger.kernel.org
-DKIM-Signature: a=rsa-sha256; bh=LtdyX8DPqa/hf4d5KaJuhHuaYLQ673pZgSExYeG5UMw=;
- c=simple/simple; d=linux.dev;
- h=from:to:subject:date:message-id:mime-version:content-type; s=key1;
- t=1794213773; v=1; x=1794818573;
- b=nmikw6dTxxCg+N2++pAkytUTJcWM6yFbByxJY9nL94bxrTkKHDh3gnGOlC2zKojDHjpjGyue
- HptwaQYKMMqNC/6go7PPV0wR96nOVsSb68EMTA/hoKC6NatDbhVI1L6HUVO++cbOwsvESQudMUf
- fQwFM5ugAWdQmj+RtKy/8Sis=
-X-Envelope-To: linux-wireless@vger.kernel.org
-Received: by smtp.migadu.com with ESMTPS id b2eee2c38fa356b9;
-	Mon, 09 Nov 2026 08:42:53 +0000
-X-Mizu-Trace-ID: b2eee2c38fa356b9
-X-Migadu-Flow: FLOW_OUT
-Date: Mon, 09 Nov 2026 09:42:49 +0100
-From: Luka Gejak <luka.gejak@linux.dev>
-To: KALPESH SOLANKI <skalpesh942@gmail.com>
-CC: pkshih@realtek.com, kvalo@kernel.org, linux-wireless@vger.kernel.org,
- linux-kernel@vger.kernel.org
-Subject: =?US-ASCII?Q?Re=3A_=5BPATCH_v4_3/3=5D_wifi=3A_rt?=
- =?US-ASCII?Q?w88=3A_ps=3A_trigger_firmware_re?=
- =?US-ASCII?Q?covery_only_after_consecutive_LPS_leave_failures_on_PCI?=
-In-Reply-To: <CADYuhkpGHNq_B-2qKqjD7R4fAnaVBM2emwySyq4E4u==wLBOFg@mail.gmail.com>
-References: <20261108142708.489067-1-skalpesh942@gmail.com> <20261108142708.489067-4-skalpesh942@gmail.com> <84AB3D74-F70D-452F-B621-B5487951B719@linux.dev> <CADYuhkqCNQxevZih3D+Zu-HcuyOao99iF31+Y6kDP0iM_Rr1kQ@mail.gmail.com> <CADYuhkpGHNq_B-2qKqjD7R4fAnaVBM2emwySyq4E4u==wLBOFg@mail.gmail.com>
-Message-ID: <565AB9C4-8C29-4885-A830-919AEAF63CF3@linux.dev>
+	dkim=pass (2048-bit key) header.d=kernel.org header.i=@kernel.org header.a=rsa-sha256 header.s=k20260515 header.b=jPerqchO
+Received: by smtp.kernel.org (Postfix) with ESMTPSA id 2C70D1F0089F;
+	Mon,  9 Nov 2026 09:23:08 +0000 (UTC)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=kernel.org;
+	s=k20260515; t=1794216189;
+	bh=3a6/w1xWJzr0AfOc6H7D9LndxRKnZcP9ByrmJVJZKlg=;
+	h=Date:From:To:Cc:Subject:References:In-Reply-To;
+	b=jPerqchOgRaBjw8X4fE92dxajm9AqaZxq/CWymw4Q92RQ0WDcbFVO1k/1PNDbaxcI
+	 hGT2oMS+lRCX8Zhan8FgyX3B2GyGobWKynYHS/ynXoApxjg+DTgow/J3R6Jf6EN4uN
+	 /dWDbNcHJUTRN2JieRsY+YReAOL/18x838383G1sdN/cfFv4qcUu/eSWCjlVfJ3VeD
+	 n2DWeW81faiyxdDwq/o7AhuCqzQFbH4a1/fxSxT9FBJLVQBqSK9BYPkasSXMg9hQ1g
+	 AHBaXva0eMOPfkUu4wYtOVUyc1s/KgOuS0Kr0ybeBztodfszj/JpEpJ+oegaxOvTRW
+	 PyG1J9kzrpLCA==
+Date: Mon, 9 Nov 2026 11:23:04 +0200
+From: Leon Romanovsky <leon@kernel.org>
+To: Alan Stern <stern@rowland.harvard.edu>
+Cc: Greg Kroah-Hartman <gregkh@linuxfoundation.org>,
+	"Rafael J. Wysocki" <rafael@kernel.org>,
+	Danilo Krummrich <dakr@kernel.org>,
+	Dmitry Torokhov <dmitry.torokhov@gmail.com>,
+	Andrew Lunn <andrew@lunn.ch>,
+	Heiner Kallweit <hkallweit1@gmail.com>,
+	Russell King <linux@armlinux.org.uk>,
+	"David S. Miller" <davem@davemloft.net>,
+	Jakub Kicinski <kuba@kernel.org>, Paolo Abeni <pabeni@redhat.com>,
+	Johannes Berg <johannes@sipsolutions.net>,
+	Jonathan Corbet <corbet@lwn.net>,
+	Shuah Khan <skhan@linuxfoundation.org>,
+	Randy Dunlap <rdunlap@infradead.org>,
+	Bjorn Helgaas <bhelgaas@google.com>,
+	"Joerg Roedel (AMD)" <joro@8bytes.org>,
+	Suravee Suthikulpanit <suravee.suthikulpanit@amd.com>,
+	Vasant Hegde <vasant.hegde@amd.com>, Will Deacon <will@kernel.org>,
+	Robin Murphy <robin.murphy@arm.com>,
+	David Woodhouse <dwmw2@infradead.org>,
+	Lu Baolu <baolu.lu@linux.intel.com>,
+	Johan Hovold <johan@kernel.org>, Eric Dumazet <edumazet@kernel.org>,
+	Marcel Holtmann <marcel@holtmann.org>,
+	Luiz Augusto von Dentz <luiz.dentz@gmail.com>,
+	Nipun Gupta <nipun.gupta@amd.com>,
+	Nikhil Agarwal <nikhil.agarwal@amd.com>,
+	Pieter Jansen van Vuuren <pieter.jansen-van-vuuren@amd.com>,
+	linux-kernel@vger.kernel.org, driver-core@lists.linux.dev,
+	linux-input@vger.kernel.org, netdev@vger.kernel.org,
+	linux-wireless@vger.kernel.org, linux-usb@vger.kernel.org,
+	linux-bluetooth@vger.kernel.org, linux-acpi@vger.kernel.org,
+	linux-doc@vger.kernel.org, linux-pci@vger.kernel.org,
+	iommu@lists.linux.dev, Jason Gunthorpe <jgg@ziepe.ca>
+Subject: Re: [PATCH 05/17] USB: Lock registered interfaces during manual
+ driver binding
+Message-ID: <20261109092304.GC8635@unreal>
+References: <20261105-device-trust-core-v1-0-1e536825b4eb@nvidia.com>
+ <20261105-device-trust-core-v1-5-1e536825b4eb@nvidia.com>
+ <bb83fe3c-cebb-4bc8-bfc9-24df1cf72b0b@rowland.harvard.edu>
+ <20261105184442.GF8298@unreal>
+ <bf756e50-c77e-40f2-916d-e88887426806@rowland.harvard.edu>
+ <20261108110909.GA8635@unreal>
+ <647f3199-909d-425f-b485-b598a18844d1@rowland.harvard.edu>
 X-Mailing-List: linux-wireless@vger.kernel.org
 List-Id: <linux-wireless.vger.kernel.org>
 List-Post: <mailto:linux-wireless@vger.kernel.org>
@@ -67,26 +93,55 @@ List-Unsubscribe: <mailto:linux-wireless+unsubscribe@vger.kernel.org>
 List-Owner: <mailto:linux-wireless+owner@vger.kernel.org>
 Precedence: list
 MIME-Version: 1.0
-Content-Type: text/plain;
- charset=utf-8
-Content-Transfer-Encoding: 8bit
+Content-Type: text/plain; charset=us-ascii
+Content-Disposition: inline
+In-Reply-To: <647f3199-909d-425f-b485-b598a18844d1@rowland.harvard.edu>
 
-On November 9, 2026 9:32:09 AM GMT+01:00, KALPESH SOLANKI
-<skalpesh942@gmail.com> wrote:
->Hi Luka, Ping-Ke,
->
->Thank you for the reviews and feedback. I have had a bereavement in
->the family yesterday and will be away for a few days.
->
->I have noted the comments and will follow up with v5 once I am back
->and after lore/patchwork is operational.
->
->Best regards,
->Kalpesh
->
->
+On Sun, Nov 08, 2026 at 11:59:11AM -0500, Alan Stern wrote:
+> On Sun, Nov 08, 2026 at 01:09:09PM +0200, Leon Romanovsky wrote:
+> > On Thu, Nov 05, 2026 at 03:04:18PM -0500, Alan Stern wrote:
+> > > >  it ensures that the lock is
+> > > > acquired when the driver is bound.
+> > > 
+> > > That may have been your intention when the patch was created, but if you 
+> > > read the patch you'll see that it includes a whole bunch of material 
+> > > not related to locking during binding.  Namely, this part:
+> > 
+> > Once I added `device_lock()` to `bind`, I had to add it to `unbind` as well.
+> 
+> Obviously I'm not making my points clear.  Let me try again.
+> 
+> The entire patch description, as you wrote it, is this:
+> 
+> > Interface claims hold the USB device lock, but device_bind_driver()
+> > requires the target interface lock. Without it, trust-policy writes  can
+> > race admission.
+> 
+> This says nothing about holding the interface lock during unbinding.  In 
+> other words, it isn't a complete description of the patch.  It implies 
+> that the patch changes nothing outside the device_bind_driver() 
+> function, which isn't true.
+> 
+> Furthermore, the patch does not change any of the code in 
+> usb_driver_release_interface(), which is where unbinding takes place, 
+> because that routine already takes the interface lock.  So to say that 
+> you had to add device_lock() to `unbind` is not accurate.
+> 
+> Instead the patch adds a new usb_driver_release_refused_claim() routine, 
+> plus code in usb_set_configuration() to call the new routine.  The patch 
+> description says nothing about either of these things.  Not to mention 
+> the fact that your other changes make it now possible for the driver 
+> core to delete an interface claim when the interface is registered, 
+> something which was not possible before.  This is another inadequacy in 
+> the patch description.
+> 
+> I'm not saying that any of the code is wrong.  But the description does 
+> a very bad job of explaining the new code.
 
-Of course, take your time, no rush.
+I hope v2 explains this better. I also split the USB patch further.
 
-Best regards,
-Luka Gejak
+Thanks
+
+> 
+> Alan Stern
+> 
