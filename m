@@ -1,82 +1,55 @@
-Authentication-Results: smtp.subspace.kernel.org; arc=none smtp.remote-ip=211.75.126.72
+Authentication-Results: smtp.subspace.kernel.org; arc=none smtp.remote-ip=62.149.156.116
 ARC-Seal: i=1; d=subspace.kernel.org; s=arc20261015; a=rsa-sha256; cv=none;
-	t=1794184826;
-	b=KZ/DjfQ5BHPmKOX6MoKTcFNObIfQEKlAogPTSP0Py0sxvKJ4vtcFImwuU7cIeTBgTrOa
-	 I7IJuqwLjDfNk+o6DyzyK+vW2W/9tP2slF1MJQcT3wuSmWzJ8/ig3Z/XA85iXgwG0cpRA
-	 GewRxeuxWq7ordioDDRZmZ/uAI6WU5Yr6XHO2tuRvv2sULjszqkXB40uAeuFIdbneCwhw
-	 OoEokGR4asn8L2pME1TRWmjFwNQ41JLb6dW0MIHXjITeh74X5CmtrqFD9SyQ2tcxsIHk4
-	 Ulzs1cEzL3kM1B7KmLwopBhiiqC4zv/EFj/vwh+JioasptDi33fLBqUb3ja7KwPAjnA==
+	t=1794187083;
+	b=pnpb3flElrEpUokkdz3tXt8Fyj/2CzgvJpvZC3IYqbN8jSLFONvIXbMadQLoFGhAz8/B
+	 sQZhEJq/Hik1A57zrPW6tkSX9cSI/9JnN/ppVbpy8/9qCac5MFgL1XOvGzueSOXp5qqOc
+	 nooHafZ3iobRSyL4xs1yb23cjFVZm9RVFu6vnw/U1wYHeGGTDrpdY062JUlGRr10DtOj1
+	 t8JAfKz2Ct9dCOFkWLiONyW5UxKst3UKYHLoBEWOx9LAJzjaOfc2iBRxNFbPImJBCvf9p
+	 eT5vzdKktMnJ4wmGpX1vKenUAFKlaGmBxRgooXzwOablMDjOp8kFWYz3eZRlxhqikxw==
 ARC-Message-Signature: i=1; d=subspace.kernel.org; s=arc20261015;
-	a=rsa-sha256; c=relaxed/relaxed; t=1794184826;
-	h=DMARC-Filter:X-SpamFilter-By:DKIM-Signature:Received:Received:
-	 Received:Received:From:To:CC:Subject:Thread-Topic:Thread-Index:Date:
-	 Message-ID:References:In-Reply-To:Accept-Language:Content-Language:
-	 x-originating-ip:Content-Type:Content-Transfer-Encoding:MIME-Version;
-	bh=Z5410FcRl90lti0FF+4on2X3OCr6eStq5XnIeOt7CdY=;
-	b=Q2pLXO2t5A6dV7VsRd8J76LJaXDwdTn7cGqwHuAznRNCn0nHdhALLCphgX5K18TRqMW/
-	 4wB+9dV72QzlsHMp5ZsWy6Jo8C58+8pj1YR6I96QUfLTie6+/wqBQ04vWOzOR91Vk1yA8
-	 UkytRNt3DaP1BAHRr/RuBnC+yMvzrBGGgO6bjQ1RqBWJ4AFzxTra06j3sZq+jfUMPCk53
-	 QbVECdji+9waUznKUBLDmYOrsceL5tPQYy3Y+1jOH0qJoqqHMEbhnLViOu/xpLKkg3UUQ
-	 vVnqWj/EQ9b4yVxRb3mYXd9yMGP7ATYVtllrmgQOhRPHUaq4Xc+mS/6rE5y5HUErmnA==
+	a=rsa-sha256; c=relaxed/relaxed; t=1794187083;
+	h=DMARC-Filter:Received:DKIM-Signature:From:Subject:Date:Message-Id:
+	 MIME-Version:Content-Type:Content-Transfer-Encoding:X-B4-Tracking:
+	 X-Change-ID:To:Cc:X-Mailer:X-CMAE-Envelope;
+	bh=slZxuBR5Ylf16jTMuBMAPIg1IYxJMk2ifndH1hoqYJo=;
+	b=BdmGmYjvvcZ91S41fuP7KKOhU8IBVUx0zVREd0uJdul+Vd5VY4SE8D+KykUQmfnQvHAB
+	 6f+Jg1cc+8TgOstRken26ul1A6JTUPs64hNbuUXcQZyNnoG64eaoP/MLiG2k8oN/0X4NW
+	 8f6zCLjHG3ysb+toL5wAera68SMWWr8BWAvRuKHNatmzRhgK4+0QKlYuhwSnPdyJeS9Ym
+	 yS+wfBDBD7EyZHKSfRe9u1mvSxlTNc00MXmBNdwzqA++GhhLxAkgDpDwl3oNei1syqo3D
+	 15LZGTWYO9Fki9LO78adRxekq8JcfVD4pMLnLbv94qQAvUz8Hcj7549iRBtJZBd9+Zw==
 ARC-Authentication-Results: i=1; smtp.subspace.kernel.org; 
-	dmarc=pass header.from=realtek.com;
-	spf=pass smtp.mailfrom=realtek.com;
-	dkim=pass header.d=realtek.com header.i=@realtek.com header.a=rsa-sha256 header.s=dkim header.b=PWxocnDr;
-	arc=none smtp.remote-ip=211.75.126.72
-Received: from rtits2.realtek.com.tw (rtits2.realtek.com [211.75.126.72])
+	dmarc=pass header.from=mythread.it;
+	spf=pass smtp.mailfrom=mythread.it;
+	dkim=pass header.d=mythread.it header.i=@mythread.it header.a=rsa-sha256 header.s=a1 header.b=fKRvzmdy;
+	arc=none smtp.remote-ip=62.149.156.116
+Received: from smtpcmd11116.aruba.it (smtpcmd11116.aruba.it [62.149.156.116])
 	(using TLSv1.3 with cipher TLS_AES_256_GCM_SHA384 (256/256 bits)
 	 key-exchange X25519 server-signature ECDSA (prime256v1) server-digest SHA256)
 	(No client certificate requested)
-	by smtp.subspace.kernel.org (Postfix) with ESMTPS id 76E95606A320;
-	Mon,  9 Nov 2026 00:40:25 +0000 (UTC)
-DMARC-Filter: OpenDMARC Filter v1.4.2 smtp.subspace.kernel.org 76E95606A320
-Authentication-Results: smtp.subspace.kernel.org; dmarc=pass (p=none dis=none) header.from=realtek.com
-Authentication-Results: smtp.subspace.kernel.org; spf=pass smtp.mailfrom=realtek.com
+	by smtp.subspace.kernel.org (Postfix) with ESMTPS id 23180606A31C
+	for <linux-wireless@vger.kernel.org>; Mon,  9 Nov 2026 01:18:00 +0000 (UTC)
+DMARC-Filter: OpenDMARC Filter v1.4.2 smtp.subspace.kernel.org 23180606A31C
+Authentication-Results: smtp.subspace.kernel.org; dmarc=pass (p=none dis=none) header.from=mythread.it
+Authentication-Results: smtp.subspace.kernel.org; spf=pass smtp.mailfrom=mythread.it
 Authentication-Results: smtp.subspace.kernel.org;
-	dkim=pass (2048-bit key, unprotected) header.d=realtek.com header.i=@realtek.com header.a=rsa-sha256 header.s=dkim header.b=PWxocnDr
-X-SpamFilter-By: ArmorX SpamTrap 5.80 with qID 6A90eJ4H13825802, This message is accepted by code: ctloc85258
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=realtek.com; s=dkim;
-	t=1794184819; bh=Z5410FcRl90lti0FF+4on2X3OCr6eStq5XnIeOt7CdY=;
-	h=From:To:CC:Subject:Date:Message-ID:References:In-Reply-To:
-	 Content-Type:Content-Transfer-Encoding:MIME-Version;
-	b=PWxocnDr6zUOTCadttfhv4dgZtFnMz5aDjJ0OtHUd3ug0N2Btmm6C63bDsYXVX9ms
-	 iHI+G0k1II0z4UMTkzgAo9QpFb+8NcqjuoBlcIdrlPIqbjEoadiXTJhBZIuh72uYPp
-	 X77Q3k64wdlorH6/Waf7VW8J85uy0GopC30N7bYCEYctNwelDPZgnkqyl3hnG1G1W6
-	 E4x4AkXVeD4achqfCeOKREFaprU4dacNJjX/JH3WmpKmawUaP17R1vZJxh68P30hrP
-	 rwazbxiuZB5LZr/c9DwheZbFSjMfh2oJEEMwNi4FmebxEePSwIdj/fix2z9vQMQRHm
-	 60SOpUVqTKmCg==
-Received: from mail.realtek.com (rtkexhmbs03.realtek.com.tw[10.21.1.53])
-	by rtits2.realtek.com.tw (8.15.2/3.29/5.94) with ESMTPS id 6A90eJ4H13825802
-	(version=TLSv1.2 cipher=ECDHE-RSA-AES256-GCM-SHA384 bits=256 verify=FAIL);
-	Mon, 9 Nov 2026 08:40:19 +0800
-Received: from RTKEXHMBS05.realtek.com.tw (10.21.1.55) by
- RTKEXHMBS03.realtek.com.tw (10.21.1.53) with Microsoft SMTP Server
- (version=TLS1_2, cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id
- 15.2.2562.56; Mon, 9 Nov 2026 08:40:20 +0800
-Received: from RTKEXHMBS06.realtek.com.tw (10.21.1.56) by
- RTKEXHMBS05.realtek.com.tw (10.21.1.55) with Microsoft SMTP Server
- (version=TLS1_2, cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id
- 15.2.2562.56; Mon, 9 Nov 2026 08:40:19 +0800
-Received: from RTKEXHMBS06.realtek.com.tw ([fe80::eeeb:c765:ca73:5eef]) by
- RTKEXHMBS06.realtek.com.tw ([fe80::eeeb:c765:ca73:5eef%10]) with mapi id
- 15.02.2562.056; Mon, 9 Nov 2026 08:40:19 +0800
-From: Ping-Ke Shih <pkshih@realtek.com>
-To: Ho Jie Feng <hjf3108@gmail.com>, "linux-wireless@vger.kernel.org"
-	<linux-wireless@vger.kernel.org>
-CC: Bitterblue Smith <rtl8821cerfe2@gmail.com>, "linux-kernel@vger.kernel.org"
-	<linux-kernel@vger.kernel.org>
-Subject: RE: [PATCH rtw-next 3/5] wifi: rtlwifi: usb: unify the RX code path
-Thread-Topic: [PATCH rtw-next 3/5] wifi: rtlwifi: usb: unify the RX code path
-Thread-Index: AQHda3lJQ5elRG4B+EepDSbwCkWrv7ck7r7Q
-Date: Mon, 9 Nov 2026 00:40:19 +0000
-Message-ID: <5371f205934a4dfd86cae13ffeebcf7c@realtek.com>
-References: <20261103095256.949327-1-hjf3108@gmail.com>
- <20261103095256.949327-4-hjf3108@gmail.com>
-In-Reply-To: <20261103095256.949327-4-hjf3108@gmail.com>
-Accept-Language: en-US, zh-TW
-Content-Language: zh-TW
-Content-Type: text/plain; charset="us-ascii"
-Content-Transfer-Encoding: quoted-printable
+	dkim=pass (2048-bit key) header.d=mythread.it header.i=@mythread.it header.a=rsa-sha256 header.s=a1 header.b=fKRvzmdy
+Received: from [127.0.0.1] ([87.16.49.252])
+	by Aruba SMTP with ESMTPSA
+	id QE1AxMsH06VShQE1BxPoug; Mon, 09 Nov 2026 02:17:53 +0100
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=mythread.it; s=a1;
+	t=1794187073; bh=BoLHLvKmDPgG+mZ0H4J9N9IHuLDr3SiWMohhnh53hq4=;
+	h=From:Subject:Date:MIME-Version:Content-Type:To;
+	b=fKRvzmdyzC8jyj6MrcjcoSoG/ufNBPIYlagoNWL/aqwH5qg2ICjP0nr0yRKqKlM0C
+	 SXaJWWUhQN6I8VtdPQ8nweW8O3K2bAdrMrLKFJZ0Dwb4RHwLWM3mGWntMYuGVG7Kqm
+	 9dI2UTHOpktAzWvZbCP65KXyrGshXRywOn2pxuz2ruJq6XoR7cpQ9fbAMpvIxP2aMr
+	 jSFpo9z8jEkcCTx9ZIQnSayB6xWN3Z/cT0o/iP2yeFz+kVtIxyL4t/bwPhn6cEYySq
+	 YwYJf6ZIwu0DSXk6RiUCKXbLVf/a3cSaK9KPoGo3s7AcW01bEDPZ/Nb27Sn2myAieI
+	 5FxhDw4mF784Q==
+From: Alessio Ferri <alessio.ferri@mythread.it>
+Subject: [PATCH wireless-next v4 00/10] bcma-ac-rev1: support 4352/4360
+ rev3 chips
+Date: Mon, 09 Nov 2026 02:17:50 +0100
+Message-Id: <20261109-bcma-ac-rev1-v4-0-de1262c18b54@mythread.it>
 X-Mailing-List: linux-wireless@vger.kernel.org
 List-Id: <linux-wireless.vger.kernel.org>
 List-Post: <mailto:linux-wireless@vger.kernel.org>
@@ -86,16 +59,107 @@ List-Unsubscribe: <mailto:linux-wireless+unsubscribe@vger.kernel.org>
 List-Owner: <mailto:linux-wireless+owner@vger.kernel.org>
 Precedence: list
 MIME-Version: 1.0
+Content-Type: text/plain; charset="utf-8"
+Content-Transfer-Encoding: 8bit
+X-B4-Tracking: v=1; b=H4sIAD4f8WoC/23NQQ6CMBAF0KuQrq3ptAjUlfcwLtoySI2CaREhh
+ LtbYINoMpufmfdnIB6dRU+O0UActtbbugoh3kXElKq6IrV5yIQzngCDmGrzUFQZGo6B5iqTMcQ
+ 8lawggTwdFrab687kbR3e0XtaYdeQy7L2L31D00yVEyitb2rXz+9bmNn/T2EY1QnLUMpcFIfk9
+ Oib0qHK93Ypb/mK83TD+cylTsAIkJz9crHiAjZcBA6FRpFhBqnU33wcxw9FheEKSQEAAA==
+X-Change-ID: 20261014-bcma-ac-rev1-da894142790f
+To: =?utf-8?q?Rafa=C5=82_Mi=C5=82ecki?= <zajec5@gmail.com>, 
+ Michael Buesch <m@bues.ch>
+Cc: vit9696 <vit9696@protonmail.com>, ville+git@takio.fi, egc112@msn.com, 
+ linux-wireless@vger.kernel.org, linux-kernel@vger.kernel.org, 
+ linux-mips@vger.kernel.org, Alessio Ferri <alessio.ferri@mythread.it>, 
+ b43-dev@lists.infradead.org
+X-Mailer: b4 0.15.2
+X-CMAE-Envelope: MS4xfEdioDTGY1z/u4GjVMe1mHbLmWpT+rI4H8Xls66NQln3AiF++CcMvxSaaGmsBXk3x4g8Dib6BHu6BK7TnmTEOyW7ehauJEouv8SmkiWXnR8yDAh0bB+l
+ EloZ/IAJiS+pl1kaopHIob50iIHTC/gQWIgjGsi2LETExhRM+4Iw4SCq/wC0LddyDFKmHZ1+cC9a7yW1HZgGp/1yMl5U8vhOCUJNDyGRBZVhLbHUNeFzuHa5
+ El4XezI2nRw/fKrMcWh6jLOdHOlPh61DGekcC/bMC7HU+xVzJxUEkJhFHncDdWUYTu9ZDKdKoVTiCfIGDOjT4RrpaXx0JVGSUZ4h5ElM/Icp1mpuzk8xrtoL
+ lqrk58HMIeGgZOleaDyOXw1A8zY//V541UoWSHJa05W6otiIa2vqQ47zRVXM8GFp6e8/iRuanRLI5ji6BUU/0BWNimWWZaL78D4YfdbOLmR7Op+ESZdUK2Rx
+ +AtcAd9UX0hdJ+tOJ0A1x3quhZXaT7BEcnQH7A==
 
+Preparatory work in the bring up of AC family rev1 chips, in particular,
+the bcm4352 rev3 and bcm4360 rev3. When public sources were found, the 
+same gates applied for operations were ported in this code.
 
-Ho Jie Feng <hjf3108@gmail.com> wrote:
-> _rtl_usb_rx_process_agg is a copy of _rtl_usb_rx_process_noagg
-> except without the tail end. The noagg function can be used for
-> aggregated frames, so drop it and rename _rtl_usb_rx_process_noagg
-> to _rtl_usb_rx_process to unify the code path.
->=20
-> Signed-off-by: Ho Jie Feng <hjf3108@gmail.com>
+Initialize the PMU, the PCIe2 core and chipcommon of the BCM4352/BCM4360
+family on chip based on the open source version of broadcom driver, parse 
+SPROM revision 11, read the NVRAM variables set on top of the SPROM, and 
+bind bcma-pci-bridge to the BCM4352. Finally, add the missing ids to b43.
 
-Acked-by: Ping-Ke Shih <pkshih@realtek.com>
+Most of the series was tested by Erik Conijin and Ville Takio, both are 
+cc-ed, but i don't know if i can put their tested by directly in the 
+commit myself or if it is a very suspicious thing to do.
 
+Concerning the risk of applying the series: 
+- FORCEHT may change the behaviour of brcmsmac too (can i ask Arend?)
+- i do not expect regression from rev11 parsing, especially since no one 
+  use it yet.
+- The rest of the series has code mostly gated with the same criteria 
+  used by public code released by Broadcom, so i guess that it is safe. 
+- b43 marks the ac part BROKEN, so there is very little to preserve.
+
+Signed-off-by: Alessio Ferri <alessio.ferri@mythread.it>
+---
+Changes in v4:
+- Readded the missing signed off
+- Added pdoffset2g40ma and pdoffset2g40mvalid to the series, work of 
+  Ville Takio, mostly.
+- Link to v3: https://patch.msgid.link/20261031-bcma-ac-rev1-v3-0-1fbe38e8179b@mythread.it
+
+Changes in v3:
+- regated most of the checks on the proper version/flag present
+  instead of forcing everything to be rev3 only, as Vitaly suggested
+- Added nvram parsing for all params found in a real northstar router
+- Removed AvVmid parsing from nvram, as it doesn't seems to be useful
+- Added missing pci ids for 4352/4360 variants
+- Link to v2: https://patch.msgid.link/20261027-bcma-ac-rev1-v2-0-b69b61c31920@mythread.it
+
+Changes in v2:
+- gated chipcommon behaviour on its own revision instead of chip rev as
+  pointed out by Vitaly
+- Link to v1: https://patch.msgid.link/20261014-bcma-ac-rev1-v1-0-b608e99d3f56@mythread.it
+
+To: Rafał Miłecki <zajec5@gmail.com>
+To: Michael Buesch <m@bues.ch>
+To: vit9696 <vit9696@protonmail.com>
+Cc: linux-wireless@vger.kernel.org
+Cc: linux-kernel@vger.kernel.org
+Cc: linux-mips@vger.kernel.org
+Cc: b43-dev@lists.infradead.org
+
+---
+Alessio Ferri (10):
+      bcma: core: clear only FORCEHT for BCMA_CLKMODE_DYNAMIC
+      bcma: pmu: init PLL and resources on BCM4352/BCM4360
+      bcma: pcie2: request HT on BCM4352/BCM4360
+      bcma: chipcommon: enable asynchronous GPIO interrupts
+      bcma: extract SPROM revision 11
+      firmware: bcm47xx_sprom: read the SPROM revision 11 fields from NVRAM
+      firmware: bcm47xx_sprom: read ledbh4..ledbh15 from NVRAM
+      firmware: bcm47xx_sprom: read boardflags3 from NVRAM over the SPROM
+      bcma: add the single-band BCM4352/BCM4360 PCI IDs
+      wifi: b43: add the 2.4 GHz BCM4352/BCM4360 to the supported bands
+
+ drivers/bcma/core.c                         |   2 +-
+ drivers/bcma/driver_chipcommon.c            |   3 +
+ drivers/bcma/driver_chipcommon_pmu.c        |  81 +++++++++
+ drivers/bcma/driver_pcie2.c                 |   3 +
+ drivers/bcma/host_pci.c                     |   8 +-
+ drivers/bcma/sprom.c                        | 210 ++++++++++++++++++++++-
+ drivers/firmware/broadcom/bcm47xx_sprom.c   | 257 +++++++++++++++++++++++++---
+ drivers/net/wireless/broadcom/b43/main.c    |   6 +
+ include/linux/bcm47xx_sprom.h               |  15 ++
+ include/linux/bcma/bcma_driver_chipcommon.h |  15 ++
+ include/linux/ssb/ssb.h                     |  72 ++++++++
+ include/linux/ssb/ssb_regs.h                | 103 +++++++++++
+ 12 files changed, 747 insertions(+), 28 deletions(-)
+---
+base-commit: 6628e7d4c6b25c8d18f1345e3a20d21829aae7e4
+change-id: 20261014-bcma-ac-rev1-da894142790f
+
+Best regards,
+--  
+Alessio Ferri <alessio.ferri@mythread.it>
 
