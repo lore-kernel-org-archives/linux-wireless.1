@@ -1,120 +1,90 @@
-Authentication-Results: smtp.subspace.kernel.org; arc=pass header.oldest-pass=0 smtp.remote-ip=52.101.66.19
-ARC-Seal: i=2; d=subspace.kernel.org; s=arc20261015; a=rsa-sha256; cv=pass;
-	t=1794243851;
-	b=ByeeXfCyK90tA2bFOYavO+Z51sOtYhjzKu1z9Qqi9rDHRaHWv4qcxdu+l33ZrpoiasQO
-	 6i+PkefsGyK1AvH7s6LMh+lmHrLQCKnSBQ8rH2nJZzcOZ+4h3sn/CY7E0kk4lpmUYCQXa
-	 GHcO0by0vjpBvZodhMpa2onwVLoa30D7sDXd6Zgqk4DlHCaRXMD8wBtX1K34mHQQGPk67
-	 laKbEpvB85Xbf10xEcG0ELoHqhtxcSXT0jv/QEQZCX40EQP6l3oOCGI7HSGMzMQrLx1qv
-	 bLE9JpCOdnFHTCB1iAXJwzSoGVrtLCtQdKaVqUFlQ3xr1X4DamwbMBNNr5HfuwNiPRg==
-ARC-Message-Signature: i=2; d=subspace.kernel.org; s=arc20261015;
-	a=rsa-sha256; c=relaxed/relaxed; t=1794243851;
-	h=DMARC-Filter:DKIM-Signature:Received:Received:
-	 X-MS-Exchange-Authentication-Results:Received-SPF:Received:Received:
-	 Received:X-CLAM-Verdict:X-CLAM-Score:X-CLAM-Description:Received:
-	 Received:From:To:Cc:Subject:Date:Message-ID:X-Mailer:MIME-Version:
-	 Content-Transfer-Encoding:X-EOPAttributedMessage:
-	 X-MS-PublicTrafficType:X-MS-TrafficTypeDiagnostic:Content-Type:
-	 X-MS-Office365-Filtering-Correlation-Id:X-MS-Exchange-SenderADCheck:
-	 X-MS-Exchange-AntiSpam-Relay:X-Microsoft-Antispam:
-	 X-Microsoft-Antispam-Message-Info:X-Forefront-Antispam-Report:
-	 X-MS-Exchange-AntiSpam-MessageData-ChunkCount:
-	 X-MS-Exchange-AntiSpam-MessageData-0:X-OriginatorOrg:
-	 X-MS-Exchange-CrossTenant-OriginalArrivalTime:
-	 X-MS-Exchange-CrossTenant-Network-Message-Id:
-	 X-MS-Exchange-CrossTenant-Id:
-	 X-MS-Exchange-CrossTenant-OriginalAttributedTenantConnectingIp:
-	 X-MS-Exchange-CrossTenant-AuthSource:X-MS-Exchange-CrossTenant-AuthAs:
-	 X-MS-Exchange-CrossTenant-FromEntityHeader:
-	 X-MS-Exchange-Transport-CrossTenantHeadersStamped;
-	bh=0OSVyRMwkTFhe/VYzUqR8sfmJ7deCG6+6TxSKqSqZKE=;
-	b=5hoTaNNTlo28To88sXWtX59EXxUyzrKVX1br4Yu7RpkOcVm+748J0N3o12lMMDua45OJ
-	 DbFwFIbB+DNEpvvsdskByajV+bZ+mPWqalbAqLXHq52CWf9QHt4jPh+oy3skXIvj45pI9
-	 JG90MRAZ5mTJ6gmgRt5Xtl0e/zQEGjDVx+/H0Sxu+Ml3swySiUtOCIj+ON8hyeSXwpC8n
-	 aLgAgcUHNcvF+pgGNBTjuxTxRCuw4yaug7KHFBS3y7ut3NEj56BELfu/HNfd/h24vmlWE
-	 LeYLHLDEoykRj4uapXJUFTyVAehhjxGHr3P3XJ4SaBfopkdYT9iTNLTZrEPZZDKMeZg==
-ARC-Authentication-Results: i=2; smtp.subspace.kernel.org; 
-	dmarc=pass header.from=philips.com;
-	spf=pass smtp.mailfrom=bbl.ms.philips.com;
-	dkim=pass header.d=philips.com header.i=@philips.com header.a=rsa-sha256 header.s=selector1 header.b=W+8uT3Wm;
-	arc=pass header.oldest-pass=0 smtp.remote-ip=52.101.66.19
-Received: from DUZPR83CU001.outbound.protection.outlook.com (mail-northeuropeazon11012019.outbound.protection.outlook.com [52.101.66.19])
-	(using TLSv1.3 with cipher TLS_AES_256_GCM_SHA384 (256/256 bits)
-	 key-exchange ECDHE (secp384r1) server-signature ECDSA (prime256v1) server-digest SHA256)
+Authentication-Results: smtp.subspace.kernel.org; arc=none smtp.remote-ip=209.85.208.50
+ARC-Seal: i=1; d=subspace.kernel.org; s=arc20261015; a=rsa-sha256; cv=none;
+	t=1794246273;
+	b=rew30Zbh6dNlt4vOmPd8DiWHyn5iRTF6rcX0RgQ7vbbnkzeQFcIUXfX+oAq1Q6aS5fxy
+	 8L3yXDT+IzLfBh2ByPM9mM3CyBiQBUbyxlInm+intgf53pd7JbmIJBtVEYpU/4OtDYbB1
+	 zd+U/gdBzfECcw4TedxkfEamH8lWGSB0BEKv+LuYmP82SRKFalCXWZyr2DrJiwZAdnLSm
+	 WUi3RYQltJXVejKguM6/22/B45xTaLmSwWQNlnO0i8gbZ9tLszAG8/IcMyPuKxqREVxok
+	 hbZHrUYMG3VBVqwpyxHEgEbJzJXCGEjT6c2BpeXY3TyipwXA8vv/GgwP/ke74+aA8ZA==
+ARC-Message-Signature: i=1; d=subspace.kernel.org; s=arc20261015;
+	a=rsa-sha256; c=relaxed/relaxed; t=1794246273;
+	h=DMARC-Filter:Received:DKIM-Signature:X-Google-DKIM-Signature:
+	 X-Gm-Message-State:X-Gm-Gg:X-Received:Received:From:To:Cc:Subject:
+	 Date:Message-ID:X-Mailer:MIME-Version:Content-Transfer-Encoding;
+	bh=ZIgtguijiaaTJtLuFGmVkx5hp310kRchRojrdQdcBGo=;
+	b=hseXP9uXbir6O6/kdbOC72N4aKvhbOOQF+8cbayQ4bMZSHUixcdfI2reDkYgdrlWv/Sf
+	 56IWTtbvgxLZpBzsCdmTwIKbnTqDbhyvKIlLo3Fib7i6z51Y0Ve562peGiNHYgLLcfW/l
+	 GWERF7Fm98aR2luU/6SDcw/Sfx1Ua3ey0Y7rwn1C8LYcNrUrCFmBnNbtQpkKer0zdAUuW
+	 5DlCPgIedIaUyJp2GiKPlfHp/lAqrxdArfMU774Q5xOWItQjb+n5cJ8gSdCYXpr652+tZ
+	 QqUt3KKUyips7f5FPmGQTyNieGPVYPAykprweK+0AFIDbrj8cjZ+tPDWb5EWAeYjKJQ==
+ARC-Authentication-Results: i=1; smtp.subspace.kernel.org; 
+	dmarc=pass header.from=gmail.com;
+	spf=pass smtp.mailfrom=gmail.com;
+	dkim=pass header.d=gmail.com header.i=@gmail.com header.a=rsa-sha256 header.s=20260707 header.b=GvtZLdGd;
+	arc=none smtp.remote-ip=209.85.208.50
+Received: from mail-ed1-f50.google.com (mail-ed1-f50.google.com [209.85.208.50])
+	(using TLSv1.3 with cipher TLS_AES_128_GCM_SHA256 (128/128 bits)
+	 key-exchange X25519 server-signature ECDSA (prime256v1) server-digest SHA256)
 	(No client certificate requested)
-	by smtp.subspace.kernel.org (Postfix) with ESMTPS id D49E3606A321
-	for <linux-wireless@vger.kernel.org>; Mon,  9 Nov 2026 17:04:10 +0000 (UTC)
-DMARC-Filter: OpenDMARC Filter v1.4.2 smtp.subspace.kernel.org D49E3606A321
-Authentication-Results: smtp.subspace.kernel.org; dmarc=pass (p=reject dis=none) header.from=philips.com
-Authentication-Results: smtp.subspace.kernel.org; spf=pass smtp.mailfrom=bbl.ms.philips.com
+	by smtp.subspace.kernel.org (Postfix) with ESMTPS id D249A606A331
+	for <linux-wireless@vger.kernel.org>; Mon,  9 Nov 2026 17:44:32 +0000 (UTC)
+DMARC-Filter: OpenDMARC Filter v1.4.2 smtp.subspace.kernel.org D249A606A331
+Authentication-Results: smtp.subspace.kernel.org; dmarc=pass (p=none dis=none) header.from=gmail.com
+Authentication-Results: smtp.subspace.kernel.org; spf=pass smtp.mailfrom=gmail.com
 Authentication-Results: smtp.subspace.kernel.org;
-	dkim=pass (1024-bit key, unprotected) header.d=philips.com header.i=@philips.com header.a=rsa-sha256 header.s=selector1 header.b=W+8uT3Wm
-ARC-Seal: i=1; a=rsa-sha256; s=arcselector10001; d=microsoft.com; cv=none;
- b=oKn1XXO0R0oBTziwavwPQcDa9yjmFeithmf0Nl62BMt6J3c97RBqUl6738Dkl5bzwp27qH/xaZXONtiD6eMqZdPW700+7+AhRfn5ouzGn6QMsvpjzozsXPauucssOF0gDj9NJtOXAWt24wtlf4gY5VLHl4LB4zRBardSbjPyJ9shT0BlrZXxjNKADRO6jTQFbDMe0n50Hbuc6WULzH6P5eqFldDKLuNmbybLmuGZnkKCXvwUqm+xWA6VfX2yJBLHKMvCREaIgkF8hzM6hb0fuqs8haOfhL6w6ovXqJBNw+81D+lTLnQz7SYqMuJR6JDNKN+29JHHZ7n3KcfDi2RhsQ==
-ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=microsoft.com;
- s=arcselector10001;
- h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-AntiSpam-MessageData-ChunkCount:X-MS-Exchange-AntiSpam-MessageData-0:X-MS-Exchange-AntiSpam-MessageData-1;
- bh=0OSVyRMwkTFhe/VYzUqR8sfmJ7deCG6+6TxSKqSqZKE=;
- b=Og2f4WNDqPGWpUukfyQGHbwO2RVLjS/Ykt3c14GUaOqbBhkRdE1nqhWGQCyq0uYAVyQ3IEk9p4xxzgT0mR/dp0CDjkmPEPXM9T3loRtKRZAYvZDE5y9E3ZKx6iH68NbYkVA6MG0jNv7tLFYI7/+uWrUlA9A29/FUqrR0+RXPe5NUU93uOAXxioPDMBX3LmbQAvfm9K91+7+OenxPD4zsxm+CqkIIrXb6jCaRGoN1MhqBlF1PkbWiaPvIz7DRcbvZ/aPO4y16o+jxDVT5AbxgsAfY0eRpkvtgsQN9gcdvZpqckblK3kiB4zkXAs8l4N5uwtIkfLgnvaTNT3fuulLRxw==
-ARC-Authentication-Results: i=1; mx.microsoft.com 1; spf=pass (sender ip is
- 3.248.88.141) smtp.rcpttodomain=vger.kernel.org
- smtp.mailfrom=bbl.ms.philips.com; dmarc=pass (p=reject sp=reject pct=100)
- action=none header.from=philips.com; dkim=none (message not signed); arc=none
- (0)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=philips.com;
- s=selector1;
- h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
- bh=0OSVyRMwkTFhe/VYzUqR8sfmJ7deCG6+6TxSKqSqZKE=;
- b=W+8uT3WmK+FwB4wct+hU3ar1x5kEzsXt5yapqTzoJrEJMesq6POwotguYgFLRTHCBhKjpq2DzggkyI7vrFu0ZoEPnUZoaxYByBkysEG8bouE+8mr3BaYm9taVXO/whpD4dZo3xjRNBsItDpkt6foAE0KUP0DA7bVuYjbOPQJJR4=
-Received: from DB9PR02CA0023.eurprd02.prod.outlook.com (2603:10a6:10:1d9::28)
- by VI1PR10MB3566.EURPRD10.PROD.OUTLOOK.COM (2603:10a6:800:131::16) with
- Microsoft SMTP Server (version=TLS1_2,
- cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id 15.21.615.7; Mon, 9 Nov 2026
- 17:04:05 +0000
-Received: from DU2PEPF00028D10.eurprd03.prod.outlook.com
- (2603:10a6:10:1d9:cafe::72) by DB9PR02CA0023.outlook.office365.com
- (2603:10a6:10:1d9::28) with Microsoft SMTP Server (version=TLS1_3,
- cipher=TLS_AES_256_GCM_SHA384) id 15.21.592.13 via Frontend Transport; Mon, 9
- Nov 2026 17:04:05 +0000
-X-MS-Exchange-Authentication-Results: mx.microsoft.com 1; spf=pass (sender IP
- is 3.248.88.141) smtp.mailfrom=bbl.ms.philips.com; dkim=none (message not
- signed) header.d=none;dmarc=pass action=none header.from=philips.com;
-Received-SPF: Pass (protection.outlook.com: domain of bbl.ms.philips.com
- designates 3.248.88.141 as permitted sender) receiver=protection.outlook.com;
- client-ip=3.248.88.141; helo=ext-eur1.smtp.philips.com; pr=C
-Received: from ext-eur1.smtp.philips.com (3.248.88.141) by
- DU2PEPF00028D10.mail.protection.outlook.com (10.167.242.24) with Microsoft
- SMTP Server (version=TLS1_2, cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id
- 15.21.615.4 via Frontend Transport; Mon, 9 Nov 2026 17:04:04 +0000
-Received: from smtprelay-eur1.philips.com ([130.138.84.184])
-	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 256/256 bits)
-	(Client did not present a certificate)
-	by ext-eur1.smtp.philips.com with ESMTPS
-	id QIYAxcdK2f0UDQSmqxPFHL; Mon, 09 Nov 2026 18:04:04 +0100
-Received: from mail.bbl.ms.philips.com ([130.143.87.230])
-	by smtprelay-eur1.philips.com with ESMTP
-	id QSmqxGYbKbtn9QSmqxKnzw; Mon, 09 Nov 2026 18:04:04 +0100
-X-CLAM-Verdict: legit
-X-CLAM-Score: ??
-X-CLAM-Description: ??
-Received: from bbl2xvg1.bbl.ms.philips.com (bbl2xvg1.bbl.ms.philips.com [130.143.220.100])
-	by mail.bbl.ms.philips.com (Postfix) with ESMTP id 2C5BB18015C;
-	Mon,  9 Nov 2026 18:04:04 +0100 (CET)
-Received: by bbl2xvg1.bbl.ms.philips.com (Postfix, from userid 2884)
-	id 23A00FE023B; Mon,  9 Nov 2026 18:04:04 +0100 (CET)
-From: Vishal Gupta <vishal.gupta_1@philips.com>
+	dkim=pass (2048-bit key) header.d=gmail.com header.i=@gmail.com header.a=rsa-sha256 header.s=20260707 header.b=GvtZLdGd
+Received: by mail-ed1-f50.google.com with SMTP id 4fb4d7f45d1cf-6afbc363efeso1649232a12.3
+        for <linux-wireless@vger.kernel.org>; Mon, 09 Nov 2026 09:44:32 -0800 (PST)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+        d=gmail.com; s=20260707; t=1794246271; x=1794851071; darn=vger.kernel.org;
+        h=content-transfer-encoding:mime-version:message-id:date:subject:cc
+         :to:from:from:to:cc:subject:date:message-id:reply-to:content-type;
+        bh=ZIgtguijiaaTJtLuFGmVkx5hp310kRchRojrdQdcBGo=;
+        b=GvtZLdGdMA/+Wz3RMcQQ24XuloJXS3yOcdE4/lR/9y6C6dOfk5+VNBNaZjTYB4GRNN
+         GFQ+NIB8yI7xrR1fW4sFwnO9+Bfn1eYD0Uaewe36a1ujkSLskQ9nuHeC/1x9OkL5Xv7P
+         higM68vobBFKo2c0CZ0gjE+NaSJbG1dDSBmXDjr63dev0i9Yw+U4MqcP5wFmZV8IwVQa
+         mmL9tR9PHSnAJTSxWeor87zif+AH9zr0NmoCav51sH+dlALJh0K7/evEUoXcpFAFxbEE
+         k6vJPKhMfWM8XD0+zcxRoELEKjeNET0WszjPLjpZosRTY0t7yU8L1Yid+17j6QPv/UXU
+         G+SQ==
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+        d=1e100.net; s=20260707; t=1794246271; x=1794851071;
+        h=content-transfer-encoding:mime-version:message-id:date:subject:cc
+         :to:from:x-gm-gg:x-gm-message-state:from:to:cc:subject:date
+         :message-id:reply-to:content-type;
+        bh=ZIgtguijiaaTJtLuFGmVkx5hp310kRchRojrdQdcBGo=;
+        b=qFDiwMAbmnmMpPPc+moWBM6BBra7rrnQSnXyqT/6/SufpVJCTXDobjeHVdXGrIDMbt
+         puYz+xQ2+7iScaCVXTtEn2Vi3HGwzn95O18L3pd3OTe8cW25H5Fdoffh7qwLsj9xuLoV
+         WXjqAAZqqcZAreKJlyzIgr/lnbJokRLeudkZaeIFWjxgj6/zM/kPfiBFkzp5GlmT0bO3
+         fIwoc7GYSkO7Orjyp2yZRrJwR0d5f7LmWM8pgPBsGxRKXwFW1jhIFdGSOrK++VTAdStd
+         I6eL8uO64pENzS/ld3UaCaakfdP6dxjrm7l5OZX1vhsTZk99S+UM3VxebjrnFZznyE8p
+         QEuA==
+X-Gm-Message-State: APuU4Z+Iv+TkEa9pEOWI0KE+IEAG0PdZfeWa6Is4t+J/VNNBlAWDq0fi
+	1iLEDxTfeSjjxcV+p/LxmFEa3EV1w8kZecLlW+/HdGd9IYnFKfg/u6TQ3xQwBauq
+X-Gm-Gg: AYBFou3ELnXboIOoV8wZFzsEKD/2qmZYT0z/0SXYNNGTahvfnJ/8Vn0iexJEL033ho1
+	gHQAH9QmUXR/tOYW+aDIorF6BL98AxFDAWMZ1KF0bI2zsp1fDuGZfc12IEOsaxdFdnB0F/qW0dI
+	Jr+ccPyJu9Ry+tj1Izpi892b9AKwIlZzNP2n3INLd+yDZxZ238i0UlHJWIi/ubFVs20lq0Qp9LD
+	iqI0xy5c3UcDMDV45awB0qIBdx/3znp/vTtT0iyOKTCRjALgwkgd3Xiw3FnwJbiVjhMlTfKXgZC
+	rHD+oAu9o5BSBTZmCFVRmRXtMdg8ZMTENdqPj78UgT0GA4LxYortF0y9E5YelSnXIjZK2W976rx
+	I/asgQS8pu8yy5YzsB4p0AaY0nr95AqAVCD2eFq2lxMjeNL3k7z77PxmhcWmWtYLo5k6Lp5ShxH
+	lbIqiiT00NvWXnlj5Dvpk+LKq/S/3HazC3KxM9Oj21IPPJSiBK8wCHtnidZ9PfOVWS9QrHQRqv+
+	lSJRjByhZNmrh2ohpN15z0zLv89eayfnboehl5m7J4HJ9Q/S3847PCCI0j1EjQkAMPNAYFQzygc
+	tXIk0yTYgkT5cJ0ebNXokVmKon3TnlvCe0vbg6XjrJi/mHm0WvXkZQDHm4TspByWNHWapw==
+X-Received: by 2002:a05:6402:360f:b0:6b1:ce0f:eb6b with SMTP id 4fb4d7f45d1cf-6b756aea03fmr291538a12.31.1794246271039;
+        Mon, 09 Nov 2026 09:44:31 -0800 (PST)
+Received: from localhost.localdomain ([80.248.138.39])
+        by smtp.gmail.com with ESMTPSA id 4fb4d7f45d1cf-6b721e3c8bfsm1902499a12.3.2026.11.09.09.44.30
+        (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
+        Mon, 09 Nov 2026 09:44:30 -0800 (PST)
+From: "Kordian Chmielewski (mlody1212)" <kudzo51@gmail.com>
 To: linux-wireless@vger.kernel.org
-Cc: jeff.chen_1@nxp.com,
-	francesco@dolcini.it,
-	johannes@sipsolutions.net,
-	lilinmao@kylinos.cn,
-	kees+treewide@kernel.org,
-	elb12345@hotmail.co.uk,
-	linux-kernel@vger.kernel.org,
-	Vishal Gupta <vishal.gupta_1@philips.com>
-Subject: [PATCH 1/1] wifi: nxpwifi: fix race on scan_processing in nxpwifi_scan_networks()
-Date: Mon,  9 Nov 2026 18:04:00 +0100
-Message-ID: <20261109170400.1316239-1-vishal.gupta_1@philips.com>
-X-Mailer: git-send-email 2.43.0
+Cc: arend.vanspriel@broadcom.com,
+	brcm80211@lists.linux.dev,
+	brcm80211-dev-list.pdl@broadcom.com,
+	"Kordian Chmielewski (mlody1212)" <kudzo51@gmail.com>
+Subject: [PATCH wireless-next] wifi: brcmfmac: delete the flowrings of an AP that stops or goes down
+Date: Mon,  9 Nov 2026 18:44:10 +0100
+Message-ID: <20261109174410.1530720-1-kudzo51@gmail.com>
+X-Mailer: git-send-email 2.56.0
 X-Mailing-List: linux-wireless@vger.kernel.org
 List-Id: <linux-wireless.vger.kernel.org>
 List-Post: <mailto:linux-wireless@vger.kernel.org>
@@ -125,90 +95,82 @@ List-Owner: <mailto:linux-wireless+owner@vger.kernel.org>
 Precedence: list
 MIME-Version: 1.0
 Content-Transfer-Encoding: 8bit
-X-EOPAttributedMessage: 0
-X-MS-PublicTrafficType: Email
-X-MS-TrafficTypeDiagnostic: DU2PEPF00028D10:EE_|VI1PR10MB3566:EE_
-Content-Type: text/plain
-X-MS-Office365-Filtering-Correlation-Id: 8b41df70-9172-4386-8ad1-08df3e8375b7
-X-MS-Exchange-SenderADCheck: 1
-X-MS-Exchange-AntiSpam-Relay: 0
-X-Microsoft-Antispam:
-	BCL:0;ARA:13230040|376014|23010399003|36860700016|1800799024|82310400026|5023799004|11063799006|56012099006|261021123027099003|261021121427099003|261022105027099003|261022075727099003|261009223027099003|261028144727099003|261026140227099003|261102123227099003|261026121527099003|10067099003|18002099003|3023799007;
-X-Microsoft-Antispam-Message-Info:
-	RGqpsqvVn8lpoktMHPdggV2Wi74AM0ZgDCgWH5odBYIJB3K5RPxwumWAw7r13VHWqx2crph6pRddZ8owoaJcET/6eIANpkb0rhJnADLmTF/Z6ZW/cwvx+G4JCNOCFDDC59C46lg2zDwmICWXau4Q8zfU78EIycsspVBqJZ5Q760J76n+wYM9yJdSIY88gCBby01qIwl5G+5QIN6pKiEzXqsrFa5g7W7I1KvB8wJXN4pu6TXUKEh1a8EiGROXB+7I/8AFPRlUB4lNMgjVxUT11wIXM1/JD7hHv2mhLIyTScXAKyLP9H0XaPwNzpa2SEReZckwpemrtqc8R5CH5AaQJOjqwTPsDaQBlXlEfjCN34W51dGLSWbW1KYbRNvw1bb3cAZX0eRS04NH8LnbvIAu8s55/vv7Tu5h2L/nZrD42viAHAiWwtNanHuj3Hhd2CRiVrcbKrlSYTWFaPOvpNyeGRCjk64rRndWGbbCTWCflT3Pu53Ngf9ClApIasZziNVSJAVRP806mgtaDNx+1Rq1vmgKyFHJ/ky54adn/DukNxiJrY4qPvnATS5/KO5Rna8uNd7GuuZDPWB5kIEjHgm8JCd8ccXkNdKkn6r87E28HU1DWUjt1wRnJvfF3SgTE5FwCfCHWw09Ag7r+xVMESGjP81cGUfp5ftWKv8nVQKnb9EdDE+mlWj8ph3WLfSe+PABrh4zHaIXB1D4ST9rtcMXWg==
-X-Forefront-Antispam-Report:
-	CIP:3.248.88.141;CTRY:IE;LANG:en;SCL:1;SRV:;IPV:NLI;SFV:NSPM;H:ext-eur1.smtp.philips.com;PTR:ext-eur1.smtp.philips.com;CAT:NONE;SFS:(13230040)(376014)(23010399003)(36860700016)(1800799024)(82310400026)(5023799004)(11063799006)(56012099006)(261021123027099003)(261021121427099003)(261022105027099003)(261022075727099003)(261009223027099003)(261028144727099003)(261026140227099003)(261102123227099003)(261026121527099003)(10067099003)(18002099003)(3023799007);DIR:OUT;SFP:1101;
-X-MS-Exchange-AntiSpam-MessageData-ChunkCount: 1
-X-MS-Exchange-AntiSpam-MessageData-0:
-	cXTh25mstFL9K2l24ToT6jpQNh91MTtVW5PxBb9XUmKfw4RM97MiyU8lJ2SUO9f2Vt+7fO75Y6HoxaowYxx/FxwNtFKzfF1WqcAKB7LqE3TE/VbYvhDNuHXqMok/lV6eNi7r4m41jgtRQ8k32eSdZv3K2RS6c0DmW7tgE1fWOk8yiilRtE9Ntq7vcmeGmcaf1nogQtsK5IRw99YGdsok2RBKARPkgt8BQOkqXVQlK3sQ+MS4Exyi8LaaqDbCpIPGIU5jDP3uUrNviaZCcZgOB/m2AhfGBTd0XZD3XU8WIuZjdliwCYhhLo5JSJAOvH6M4RUxqq+pKSLa6CDaqn0Y3J8ugoSJPPff0isE272SWfy05Pq3JUgvDaD0ICCbPcJNa/Rzh1Z8faMjTDA4O/0Xi1hdPlYHdNYoJCEe/BGr9Q7euIiPDk6JorpMmOxvxKYf
-X-OriginatorOrg: philips.com
-X-MS-Exchange-CrossTenant-OriginalArrivalTime: 09 Nov 2026 17:04:04.6452
- (UTC)
-X-MS-Exchange-CrossTenant-Network-Message-Id: 8b41df70-9172-4386-8ad1-08df3e8375b7
-X-MS-Exchange-CrossTenant-Id: 1a407a2d-7675-4d17-8692-b3ac285306e4
-X-MS-Exchange-CrossTenant-OriginalAttributedTenantConnectingIp: TenantId=1a407a2d-7675-4d17-8692-b3ac285306e4;Ip=[3.248.88.141];Helo=[ext-eur1.smtp.philips.com]
-X-MS-Exchange-CrossTenant-AuthSource:
-	DU2PEPF00028D10.eurprd03.prod.outlook.com
-X-MS-Exchange-CrossTenant-AuthAs: Anonymous
-X-MS-Exchange-CrossTenant-FromEntityHeader: HybridOnPrem
-X-MS-Exchange-Transport-CrossTenantHeadersStamped: VI1PR10MB3566
 
-nxpwifi_scan_networks() tests adapter->scan_processing without holding
-any lock and only sets it later under nxpwifi_cmd_lock. The test and the
-set are not atomic, so two callers can both observe the flag clear and
-both start a scan.
+An access point has a flowring per destination: one for each station
+and one for its broadcast and multicast frames. The ring of a station is
+deleted when the station leaves, by brcmf_proto_delete_peer() with its
+address, but nothing deletes the broadcast ring, nor any ring of an AP
+that stops: brcmf_cfg80211_stop_ap() deletes none, and on the link-down
+event of an AP delete_peer gets the address of the event, which names no
+station. A new start of the same interface then keeps the old rings.
 
-This is reachable because the function has two callers in different
-contexts: nxpwifi_cfg80211_scan() runs under the wiphy mutex, while
-nxpwifi_active_scan_req_for_passive_chan() runs from the driver's main
-work via nxpwifi_check_next_scan_command(), which is not serialized
-against cfg80211 ops.
+Seen with a BCM43684 whose AP OpenWrt starts twice at boot, 1.2 s apart:
+the firmware never read again the broadcast ring opened as the first
+start ended. ARP and every other broadcast of that BSS were lost, and
+once the ring was full flow control stopped the interface for all of
+its stations, until the ring was deleted hours later by a change of the
+interface type; the firmware then served new rings normally. The vendor
+driver deletes all the rings of an interface on a link-down event.
 
-After the last scan command completes, nxpwifi_check_next_scan_command()
-clears scan_processing and then starts the follow-up hidden SSID scan;
-a scan request from user space arriving in that window passes the unlocked
-check as well. Both scans then queue commands on scan_pending_q and share
-priv->scan_request, so one can clear scan_processing or call
-cfg80211_scan_done() while the other is still running.
+Do the same, and when the AP stops: brcmf_flowring_delete_peer() without
+a peer now deletes every ring of the interface.
 
-Move the scan_processing check under nxpwifi_cmd_lock, in the same
-critical section that sets it, so that test and set are atomic.
-
-Signed-off-by: Vishal Gupta <vishal.gupta_1@philips.com>
+Fixes: 9a1bb60250d2 ("brcmfmac: Adding msgbuf protocol.")
+Signed-off-by: Kordian Chmielewski (mlody1212) <kudzo51@gmail.com>
 ---
- drivers/net/wireless/nxp/nxpwifi/scan.c | 12 ++++++------
- 1 file changed, 6 insertions(+), 6 deletions(-)
+ .../broadcom/brcm80211/brcmfmac/cfg80211.c         | 14 +++++++++++++-
+ .../broadcom/brcm80211/brcmfmac/flowring.c         |  5 +++--
+ 2 files changed, 16 insertions(+), 3 deletions(-)
 
-diff --git a/drivers/net/wireless/nxp/nxpwifi/scan.c b/drivers/net/wireless/nxp/nxpwifi/scan.c
-index f3becafb9c23c..548c257a2e3c3 100644
---- a/drivers/net/wireless/nxp/nxpwifi/scan.c
-+++ b/drivers/net/wireless/nxp/nxpwifi/scan.c
-@@ -1336,12 +1336,6 @@ int nxpwifi_scan_networks(struct nxpwifi_private *priv,
- 	u8 scan_current_chan_only;
- 	u8 max_chan_per_scan;
+diff --git a/drivers/net/wireless/broadcom/brcm80211/brcmfmac/cfg80211.c b/drivers/net/wireless/broadcom/brcm80211/brcmfmac/cfg80211.c
+index b0eaf9641..91184bdcf 100644
+--- a/drivers/net/wireless/broadcom/brcm80211/brcmfmac/cfg80211.c
++++ b/drivers/net/wireless/broadcom/brcm80211/brcmfmac/cfg80211.c
+@@ -5480,6 +5480,11 @@ static int brcmf_cfg80211_stop_ap(struct wiphy *wiphy, struct net_device *ndev,
+ 		/* first to make sure they get processed by fw. */
+ 		msleep(400);
  
--	if (adapter->scan_processing) {
--		nxpwifi_dbg(adapter, WARN,
--			    "cmd: Scan already in process...\n");
--		return -EBUSY;
--	}
--
- 	if (priv->scan_block) {
- 		nxpwifi_dbg(adapter, WARN,
- 			    "cmd: Scan is blocked during association...\n");
-@@ -1356,6 +1350,12 @@ int nxpwifi_scan_networks(struct nxpwifi_private *priv,
++		/* the BSS goes away and its rings with it: nothing else
++		 * deletes the one for broadcast and multicast frames
++		 */
++		brcmf_proto_delete_peer(ifp->drvr, ifp->ifidx, NULL);
++
+ 		if (profile->use_fwauth != BIT(BRCMF_PROFILE_FWAUTH_NONE)) {
+ 			struct cfg80211_crypto_settings crypto = {};
+ 
+@@ -6750,7 +6755,14 @@ brcmf_notify_connect_status(struct brcmf_if *ifp,
+ 	    (e->event_code == BRCMF_E_DEAUTH_IND) ||
+ 	    (e->event_code == BRCMF_E_DISASSOC_IND) ||
+ 	    ((e->event_code == BRCMF_E_LINK) && (!e->flags))) {
+-		brcmf_proto_delete_peer(ifp->drvr, ifp->ifidx, (u8 *)e->addr);
++		/* the address of a link event of an AP names no station:
++		 * the BSS is down, and so are all of its rings
++		 */
++		if (e->event_code == BRCMF_E_LINK && brcmf_is_apmode(ifp->vif))
++			brcmf_proto_delete_peer(ifp->drvr, ifp->ifidx, NULL);
++		else
++			brcmf_proto_delete_peer(ifp->drvr, ifp->ifidx,
++						(u8 *)e->addr);
  	}
  
- 	spin_lock_bh(&adapter->nxpwifi_cmd_lock);
-+	if (adapter->scan_processing) {
-+		spin_unlock_bh(&adapter->nxpwifi_cmd_lock);
-+		nxpwifi_dbg(adapter, WARN,
-+			    "cmd: Scan already in process...\n");
-+		return -EBUSY;
-+	}
- 	adapter->scan_processing = true;
- 	spin_unlock_bh(&adapter->nxpwifi_cmd_lock);
+ 	if (brcmf_is_apmode(ifp->vif)) {
+diff --git a/drivers/net/wireless/broadcom/brcm80211/brcmfmac/flowring.c b/drivers/net/wireless/broadcom/brcm80211/brcmfmac/flowring.c
+index 35cbcea0a..b9570d638 100644
+--- a/drivers/net/wireless/broadcom/brcm80211/brcmfmac/flowring.c
++++ b/drivers/net/wireless/broadcom/brcm80211/brcmfmac/flowring.c
+@@ -432,9 +432,10 @@ void brcmf_flowring_delete_peer(struct brcmf_flowring *flow, int ifidx,
+ 	u16 flowid;
+ 	bool sta;
  
+-	sta = (flow->addr_mode[ifidx] == ADDR_INDIRECT);
++	/* without a peer: every ring of the interface */
++	sta = (flow->addr_mode[ifidx] == ADDR_INDIRECT) || !peer;
+ 
+-	search = flow->tdls_entry;
++	search = peer ? flow->tdls_entry : NULL;
+ 	prev = NULL;
+ 	while (search) {
+ 		if (memcmp(search->mac, peer, ETH_ALEN) == 0) {
 -- 
-2.43.0
+2.56.0
 
