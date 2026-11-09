@@ -1,63 +1,110 @@
-Authentication-Results: smtp.subspace.kernel.org; arc=none smtp.remote-ip=31.44.14.16
+Authentication-Results: smtp.subspace.kernel.org; arc=none smtp.remote-ip=205.220.168.131
 ARC-Seal: i=1; d=subspace.kernel.org; s=arc20261015; a=rsa-sha256; cv=none;
-	t=1794233844;
-	b=1vHUOJL3GABttgHAW7YfGnna8mafjDlRPCzDqCR9YiWEsqaO/gSOHp0V7XzDV3kWgWjT
-	 FoYXkP4SzrruTKKN1oUIMpPKwUCpu6hmZjtT6oyladxj64Ebi8KCCs35ncUCwgvkoC45O
-	 qpPJccmqfkqv1I3oF52Q7fEVyCGPAeGgsZSwwCzGPRX8H9CYy363meb+FwgxYBNiWA4c2
-	 0k5UEEJSb/LUfcFRJ9A/wSlQ8eynGfqYQrXe8z4/29KIP2IjOaXVYCxkjkeSEv5UeOQzN
-	 EG/YWgtUrvOZsgFho3i9aUIOngvJ0L7RLMm0gn9IeueG5SSSuYIbxEa++9PqoPjhKKw==
+	t=1794236441;
+	b=A7xip3vab5bOh9QhYyTKH4WpgcIqrTAxQJKSmamU4YW8GD3xYo07Hmd+bO3Q4kK0ukMT
+	 e+Pnw0kz03kbOjH9B1ChXE8DC1spxoTnJ5mR6+adH2+5IJ8jmkNnOwoib98zF1mxS7u0m
+	 TScyTv/3Xh2q2Az+ECzIYwBfDegl9kjDSDNpuNkPhrlErXYw62eas4JpO0rv/6zv+8+03
+	 O0YIYP0CqTwxrPFxsuIM5Oe8g4emyMiNaE6w/U8z9VKGSxTN6lLkNoYTa2bFdHjhXt4Ea
+	 +vw6xarskyrhPcRAqWu0gtiaqEVTScngZ3ObRxyWi6LKW6tqX8kkdpV80TcAhNV/mHw==
 ARC-Message-Signature: i=1; d=subspace.kernel.org; s=arc20261015;
-	a=rsa-sha256; c=relaxed/relaxed; t=1794233844;
-	h=DMARC-Filter:Received:Received:X-Yandex-Fwd:DKIM-Signature:Received:
-	 From:To:Cc:In-Reply-To:References:Subject:MIME-Version:X-Mailer:Date:
-	 Message-Id:Content-Transfer-Encoding:Content-Type;
-	bh=6Cc6btvaFSiQLVCWvXGv6R3b5//OwzX3r5axgusNC6Q=;
-	b=hYYnPpnY6HvdaIIFt+grN4aFZ7Sw2mb5QSyDp0uoH31mgMZQqiDdp/5pornghUMMeNjL
-	 WWUKVYwKkxoDQmv5ezV385rYW9oyveKIe3yueKrLdhZC5S3Q7I1MDzDmNhDJ3EwyoAFAY
-	 MO644v+xagNcq/04aB6DZrblwr5AbhNjCLBm5yJra9NN6Z/fHw4iut12wBE9+K0noxoyc
-	 F4S1WRPrKubk7KPsZdaPfQgv+W1DD7MJ7YAKHE24lgPLEFiO2oGrc+nLFyLOJPDmsrEIa
-	 duBMtW0INOsIpxBCVOuGNWlYnsGuIAqfL3Yf3jboAjciKYSG8E/IWhm1z8iab2l6snQ==
+	a=rsa-sha256; c=relaxed/relaxed; t=1794236441;
+	h=DMARC-Filter:Received:DKIM-Signature:Received:Received:
+	 DKIM-Signature:X-Google-DKIM-Signature:X-Gm-Message-State:X-Gm-Gg:
+	 X-Received:X-Received:Received:Message-ID:Date:MIME-Version:
+	 User-Agent:Subject:To:Cc:References:Content-Language:From:In-Reply-To:
+	 Content-Type:Content-Transfer-Encoding:X-Proofpoint-Spam-Info:
+	 X-Proofpoint-Spam-Details-Enc:X-Authority-Analysis:
+	 X-Proofpoint-ORIG-GUID:X-Proofpoint-GUID:X-Proofpoint-Virus-Version:
+	 X-Proofpoint-Spam-Details;
+	bh=yk/7s1DGK2LaMZgRPwzZnMgeWvDZ0DPNeBQ+fDXOGmo=;
+	b=pPPjjoKUfpFx0nYcFeviWSvtu6iY+jfqggNSXkG76CX5Qu6m1mXtgUhKD3MIgR1jSBCc
+	 udiNh0xPbRqq45qEUPMKaowGTf0RLWitsRsTu0CdzFXshKNm+xG9AkOv2vRh10JSmE/sw
+	 Sfhaz+AC6l7Ww37/e5lw9TfgacZrOiTlqaFJ8M8YMvt/BC9+brkYPKRvUIQfrhEc7uCcB
+	 01MCk2IcPfFvb6eFIwJJrrtt5e5qAarYer3HXqqr7PyV7jFbDtj3KzU7YwF61WQGvbYl0
+	 tHNypxY6C5gBVzPuqr9Q5uqf+7OpThhZpxBl0GA/ohm5EJQILHo6TliIsvVHoTKqOig==
 ARC-Authentication-Results: i=1; smtp.subspace.kernel.org; 
-	dmarc=pass header.from=0upti.me;
-	spf=pass smtp.mailfrom=0upti.me;
-	dkim=pass header.d=0upti.me header.i=@0upti.me header.a=rsa-sha256 header.s=mail header.b="SkAM/Qs4";
-	arc=none smtp.remote-ip=31.44.14.16
-Received: from forward500d.mail.yandex.net (forward500d.mail.yandex.net [31.44.14.16])
+	dmarc=pass header.from=oss.qualcomm.com;
+	spf=pass smtp.mailfrom=oss.qualcomm.com;
+	dkim=pass header.d=qualcomm.com header.i=@qualcomm.com header.a=rsa-sha256 header.s=qcppdkim1 header.b=NctNdtZc;
+	dkim=pass header.d=oss.qualcomm.com header.i=@oss.qualcomm.com header.a=rsa-sha256 header.s=google header.b=UF1Seq3E;
+	arc=none smtp.remote-ip=205.220.168.131
+Received: from mx0a-0031df01.pphosted.com (mx0a-0031df01.pphosted.com [205.220.168.131])
 	(using TLSv1.3 with cipher TLS_AES_256_GCM_SHA384 (256/256 bits)
 	 key-exchange X25519 server-signature ECDSA (prime256v1) server-digest SHA256)
 	(No client certificate requested)
-	by smtp.subspace.kernel.org (Postfix) with ESMTPS id 8C8A9606A31C;
-	Mon,  9 Nov 2026 14:17:21 +0000 (UTC)
-DMARC-Filter: OpenDMARC Filter v1.4.2 smtp.subspace.kernel.org 8C8A9606A31C
-Authentication-Results: smtp.subspace.kernel.org; dmarc=pass (p=quarantine dis=none) header.from=0upti.me
-Authentication-Results: smtp.subspace.kernel.org; spf=pass smtp.mailfrom=0upti.me
+	by smtp.subspace.kernel.org (Postfix) with ESMTPS id AA7A7606A31C
+	for <linux-wireless@vger.kernel.org>; Mon,  9 Nov 2026 15:00:40 +0000 (UTC)
+DMARC-Filter: OpenDMARC Filter v1.4.2 smtp.subspace.kernel.org AA7A7606A31C
+Authentication-Results: smtp.subspace.kernel.org; dmarc=pass (p=none dis=none) header.from=oss.qualcomm.com
+Authentication-Results: smtp.subspace.kernel.org; spf=pass smtp.mailfrom=oss.qualcomm.com
 Authentication-Results: smtp.subspace.kernel.org;
-	dkim=pass (1024-bit key, unprotected) header.d=0upti.me header.i=@0upti.me header.a=rsa-sha256 header.s=mail header.b=SkAM/Qs4
-Received: from mail-nwsmtp-mxback-production-main-33 (mail-nwsmtp-mxback-production-main-33.yp-c.yandex.net)
-	by forward500d.mail.yandex.net (postfix) with ESMTPS id 2C6FF81282;
-	Mon, 09 Nov 2026 17:17:13 +0300 (MSK)
-Received: from mail.yandex.ru
-	by mail-nwsmtp-mxback-production-main-33 with HTTPS id 5HSrZ90Zua60-LVUykiD7;
-	Mon, 09 Nov 2026 17:17:12 +0300
-X-Yandex-Fwd: 1
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=0upti.me; s=mail;
-	t=1794233832; bh=6Cc6btvaFSiQLVCWvXGv6R3b5//OwzX3r5axgusNC6Q=;
-	h=Message-Id:References:Date:Cc:Subject:In-Reply-To:To:From;
-	b=SkAM/Qs42vKQqU5Yn7s/VS2m6RPENicoJdSnhFjeA7bHVwRkZ8pCDEiyVvscqJQBr
-	 7Dyc2nZQg5M9wPyr+JJT4fnJo45NTFeCj/xil4BfBmRR98c94+gOucSVhquD+N7C3c
-	 2tAE5W6ot2wLS1+z+lx8NYJp9olXgEHQG15oc3pM=
-Authentication-Results: mail-nwsmtp-mxback-production-main-33; dkim=pass header.i=@0upti.me
-Received: by mail-sendbernar-production-main-38 with HTTPS id f31c56bbefb1cac15fb6585d3fc447df;
-	Mon, 09 Nov 2026 17:17:12 +0300
-From: Ilya K <me@0upti.me>
-To: Ben Greear <greearb@candelatech.com>
-Cc: linux-wireless@vger.kernel.org,
-	netdev@vger.kernel.org,
-	linux-mediatek@lists.infradead.org
-In-Reply-To: <93881792559683@cb540089-648e-4f63-be25-5737cfc54c1c>
-References: <1767631788532094@64c4e675-cd08-4a74-816f-886742f9bfcd> <529a79bc-dab7-aa41-00bd-c47ecbefaa00@candelatech.com> <471221788538289@323ca970-5bd2-4c6b-b52d-2b863a718615> <3acf531c-bcc7-412b-b3bb-665069260e46@candelatech.com> <2028561788553569@f088f4ec-f441-47a1-b7e4-75a1052aa4df> <2418461788691106@84aa39c5-f501-4e64-8418-6a8b6eb88e21> <eb405366-6574-4e4c-a89d-363751ed848b@candelatech.com> <4175721788798939@f00554c7-d809-471c-9bcf-78e5d8eceab4> <1556871789207706@7dc9deb3-4292-4932-8568-de9b411208d8> <1443771789748846@4a8ec5ae-80ed-44bc-b7d3-6bc660c90136> <211851789913261@df1900ea-d467-4ed7-a7f1-de68a4c3e6dd> <143991791036721@40be7595-980b-4665-ba66-1601e10a0899> <c4286904-2a9a-41fd-93ce-be57964909f6@candelatech.com> <221941791052355@558b3e58-c2b1-4e14-91fe-beb5649d18f6>
-	<5955851791966910@d362902e-9931-4ad0-8e86-72401cc67703> <04b8b928-b671-4236-a792-1141cd81a34b@candelatech.com> <93881792559683@cb540089-648e-4f63-be25-5737cfc54c1c>
-Subject: Re:[bug] Triple whammy of mt7996e bugs on 7.2+
+	dkim=pass (2048-bit key) header.d=qualcomm.com header.i=@qualcomm.com header.a=rsa-sha256 header.s=qcppdkim1 header.b=NctNdtZc;
+	dkim=pass (2048-bit key) header.d=oss.qualcomm.com header.i=@oss.qualcomm.com header.a=rsa-sha256 header.s=google header.b=UF1Seq3E
+Received: from pps.filterd (m0279865.ppops.net [127.0.0.1])
+	by mx0a-0031df01.pphosted.com (8.18.1.11/8.18.1.11) with ESMTP id 6A9DEs0E336367
+	for <linux-wireless@vger.kernel.org>; Mon, 9 Nov 2026 15:00:28 GMT
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=qualcomm.com; h=
+	cc:content-transfer-encoding:content-type:date:from:in-reply-to
+	:message-id:mime-version:references:subject:to; s=qcppdkim1; bh=
+	yk/7s1DGK2LaMZgRPwzZnMgeWvDZ0DPNeBQ+fDXOGmo=; b=NctNdtZcMYdvTKdT
+	/9OUZD/qmpDdrtC/gm7Dhj1O5TpiNZw9NlN9CRpWh3eB7qlyBIIHgLN+sV1rX8zV
+	MJzpTe48JkfeUiRyNCyeteqMHnGAAmhCVGAcYKVhen+Of+oCYTinBibwY2M9FPft
+	ijncgMxHX//+t5JRbYO0jkXtW0w5IsTGj1KhEDkQyuqaI7dZquDM/lOU1itfcVsw
+	T/GB8ImYwPcIAiES1xdoHvcwF3faS24kVpURJinjg2emlZdk91+COykXUDXO7vQk
+	r26J9x2Xpz+2YLx+kpeEdVFQy01oaWh95rIFUMdp3VLt8BJaS/mbouLk2o8GnBXT
+	B1y2FA==
+Received: from mail-pg1-f200.google.com (mail-pg1-f200.google.com [209.85.215.200])
+	by mx0a-0031df01.pphosted.com (PPS) with ESMTPS id 4hucr5rtba-1
+	(version=TLSv1.3 cipher=TLS_AES_128_GCM_SHA256 bits=128 verify=NOT)
+	for <linux-wireless@vger.kernel.org>; Mon, 09 Nov 2026 15:00:28 +0000 (GMT)
+Received: by mail-pg1-f200.google.com with SMTP id 41be03b00d2f7-cdb8931aeeaso535762a12.1
+        for <linux-wireless@vger.kernel.org>; Mon, 09 Nov 2026 07:00:28 -0800 (PST)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+        d=oss.qualcomm.com; s=google; t=1794236428; x=1794841228; darn=vger.kernel.org;
+        h=content-transfer-encoding:content-type:in-reply-to:from
+         :content-language:references:cc:to:subject:user-agent:mime-version
+         :date:message-id:from:to:cc:subject:date:message-id:reply-to
+         :content-type;
+        bh=yk/7s1DGK2LaMZgRPwzZnMgeWvDZ0DPNeBQ+fDXOGmo=;
+        b=UF1Seq3EcUn8nFb7fvChEz0YBuWONDZO9NkUySnJiOUkPMAIlcI9vLuuqMB3iq6dm1
+         lvIFkwYAuw4pBfenTFR4GEawPPwK4KjlgiqId2HxrHNF4Z0KslUSETBMjIlns3/PHrdV
+         dwNoRSrW5vfi8b2BaJRSmQFLfp+ILOtHlZef0OuY3OSzMaxYTCETZ+QWsFYhKEfQEi8M
+         XrciqyDdoIk6WubXseeb+JN3vCGyKO7Qlb512bwna5PXmAlA+sR4pbpyuVZXkquYyp6k
+         z9k3E9kd62dUpJHjnRm2M/3y+RD1E1UzdWgshhvR4vEUdnHm1or1lp8syV6gQmpZJk9v
+         Slpg==
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+        d=1e100.net; s=20260707; t=1794236428; x=1794841228;
+        h=content-transfer-encoding:content-type:in-reply-to:from
+         :content-language:references:cc:to:subject:user-agent:mime-version
+         :date:message-id:x-gm-gg:x-gm-message-state:from:to:cc:subject:date
+         :message-id:reply-to:content-type;
+        bh=yk/7s1DGK2LaMZgRPwzZnMgeWvDZ0DPNeBQ+fDXOGmo=;
+        b=joCz36jVtqbiGcrCFE+rZwqCt/zQ0K4e9wZgFRBX922K+I6IYrRG/lpAE0edPXF9Hv
+         RrgAnXmylX3TJ/stsOZNIcsbg1UVlYGpg0euMi8n8EclJ8qx3Ps+NWQy7xqNIxST2yjz
+         rG55ZMQpIkGCG1rMXAbDtpb4Qc/77Rtp+23gV9EI9he7bL+2FwMFjP5b1udb28T1efCj
+         J7+15xddhz4/v0j27yVK1oF/FaNaR8+/Kqui24n/7TYBW4kNdG8Leac0WwvGOO/APrzd
+         bJ1YYUcZaQdlnKDbw4OHzW4eYKI3QKi9lgi/Npiqg5VNUiD4TpjOfU1jv2LDD8P3QEBP
+         z/4A==
+X-Gm-Message-State: APuU4Z+CC+8/cA9DVhArhwM5gi1zDrhjjjXfqxZLWbQVJhOS0Q5tv80y
+	c7jj+1JuozX/bwWP+9EiCFRiuu2I2zEfVWi+kKBNCwmkp0LCFZdCowyRouoNK/t6vhIN3n6OQlT
+	yYwsdLCdM/rXqqa/1vRLb3x7eOB+Ig3lnl13Vg+C1wCkVjso4yr8nxMzBjwSOLwfEqKytxw==
+X-Gm-Gg: AYBFou1F9dPEMyLFlajRQ4PP6nGGk1kXslmSiAd77/fQLQK9RZsMELlQpAhkznsD4Zy
+	u5p0mIROJDc3rjGbE3LcN4Z3Z6ythA4J5i2EHcyWo4SMcplY+0mhcqP13/prDsxDNUhzupXiBbK
+	L8ANPWAzc6ok61OxIdvkEuRWakNiUPobsl2XDlfkmhyCdmzMGIk/qP2DH8VCXvJV6DpF0I1d7aR
+	AK7y9BHXvRksF5YVoWdF4AZMBsBZiwjCd5ZSNZVh0ec1tRaBVyfppYneEXPnbZPFIquhbuHoV14
+	gO16d5mxkd6jkzCEQ+K9v5xQc3nDVEkl8RidZmtjPdlS0fECU1dg8YBF5/gnCwg+ManPntpPh/1
+	Nz0YGW+daIOX8VNvs1E1N96+nbNQYwTjPkHwqKL/8FF99a8atLfmeGdVS99PpHMU78sMphFdHFZ
+	D9+9QCI2t4NOL5af/7Cbd9r+bKpwkFjhg=
+X-Received: by 2002:a17:903:19ec:b0:2ed:3f47:9691 with SMTP id d9443c01a7336-2ed8378c6cfmr48200775ad.42.1794236427769;
+        Mon, 09 Nov 2026 07:00:27 -0800 (PST)
+X-Received: by 2002:a17:903:19ec:b0:2ed:3f47:9691 with SMTP id d9443c01a7336-2ed8378c6cfmr48197085ad.42.1794236424114;
+        Mon, 09 Nov 2026 07:00:24 -0800 (PST)
+Received: from [10.227.105.111] (i-global254.qualcomm.com. [199.106.103.254])
+        by smtp.gmail.com with ESMTPSA id d9443c01a7336-2ed8173a8b2sm12837335ad.67.2026.11.09.07.00.22
+        (version=TLS1_3 cipher=TLS_AES_128_GCM_SHA256 bits=128/128);
+        Mon, 09 Nov 2026 07:00:23 -0800 (PST)
+Message-ID: <a39b1918-5d04-452b-8b5a-0703963f4587@oss.qualcomm.com>
+Date: Mon, 9 Nov 2026 07:00:21 -0800
 X-Mailing-List: linux-wireless@vger.kernel.org
 List-Id: <linux-wireless.vger.kernel.org>
 List-Post: <mailto:linux-wireless@vger.kernel.org>
@@ -67,20 +114,73 @@ List-Unsubscribe: <mailto:linux-wireless+unsubscribe@vger.kernel.org>
 List-Owner: <mailto:linux-wireless+owner@vger.kernel.org>
 Precedence: list
 MIME-Version: 1.0
-X-Mailer: Yamail [ http://yandex.ru ] 5.0
-Date: Mon, 09 Nov 2026 17:17:12 +0300
-Message-Id: <463591794233832@bdca924a-ebf7-49c8-bd40-0c3aa4d8de31>
+User-Agent: Mozilla Thunderbird
+Subject: Re: [PATCH RESEND] wifi: ath11k: release the rproc reference on
+ teardown
+To: Wentao Liang <vulab@iscas.ac.cn>, Jeff Johnson <jjohnson@kernel.org>
+Cc: linux-wireless@vger.kernel.org, ath11k@lists.infradead.org,
+        linux-kernel@vger.kernel.org, stable@vger.kernel.org,
+        workflows@vger.kernel.org
+References: <20261103102915.1341148-1-vulab@iscas.ac.cn>
+Content-Language: en-US
+From: Jeff Johnson <jeff.johnson@oss.qualcomm.com>
+In-Reply-To: <20261103102915.1341148-1-vulab@iscas.ac.cn>
+Content-Type: text/plain; charset=UTF-8
 Content-Transfer-Encoding: 7bit
-Content-Type: text/plain
+X-Proofpoint-Spam-Info: AW1haW4tMjYxMTA5MDA1OSBTYWx0ZWRfX4+tRIPxAovCI
+ trPmjHfVdZmYsnXuOrOAXHgZFfeZpxJHEY8BVd6/i47fiZ5K5yR7fmXe8f7bNyZ8QPFQygx3dSS
+ lmNLCrT3YiHcmms582YFOWDT/S8ddiU=
+X-Proofpoint-Spam-Details-Enc: AW1haW4tMjYxMTA5MDA1OSBTYWx0ZWRfX5Rhqfyg32DoO
+ ooAUPsGtpS0E0o+0GLLGQgudHpWfskERTYHV2ecdA33ZcM8rPUfOXBDoXCb1NzqWMz0B8zJYDLK
+ 1lIRyyeBKr+tCPnsDpfYSgLI0SeH3HuZdQfaxJgk4bMei1gotk82VLf54Dyf95iVJpj/iDKQ6M6
+ oHn9LpIvd/vDnsrTY12NIrIkTzqcrFZr915WTNgMOIGPe+asnUohn0AZyJD3R/yyjs2xfiTFnqU
+ klpmyLlG+FbkviWtG33FKLnCBeQ82qbD2oeb8gx5fyZhuJfqIUR8BTyU/11EsarioHiYx/Dm7Ra
+ TbmWjJfIuPk3i6Zp6gO6Zy1w4OANcWE5lwVgzam/nwMpSs8bkgAb8XPBA0n5BlFUopEpzU088HV
+ fHK1BxHmePP8wJ4/SoQTas0r1fN6N1OLnkgrj2Ly5B/jscOF+0OcOhwOv5cqnMBRnuu+pD55cI4
+ x3kCrJNoHJMp8EV6C5A==
+X-Authority-Analysis: v=2.4 cv=ErlHPicA c=1 sm=1 tr=0 ts=6af1e00c cx=c_pps
+ a=oF/VQ+ItUULfLr/lQ2/icg==:117 a=JYp8KDb2vCoCEuGobkYCKw==:17
+ a=IkcTkHD0fZMA:10 a=zJRp6_cAMcgA:10 a=s4-Qcg_JpJYA:10
+ a=VkNPw1HP01LnGYTKEx00:22 a=u7WPNUs3qKkmUXheDGA7:22 a=Um2Pa8k9VHT-vaBCBUpS:22
+ a=VwQbUJbxAAAA:8 a=mvyCH3EIRwqJGMeifaAA:9 a=QEXdDO2ut3YA:10
+ a=3WC7DwWrALyhR5TkjVHa:22
+X-Proofpoint-ORIG-GUID: SUdZ4rjy-JbNgGItx_BwwjYW5RJKGbCu
+X-Proofpoint-GUID: SUdZ4rjy-JbNgGItx_BwwjYW5RJKGbCu
+X-Proofpoint-Virus-Version: vendor=baseguard
+ engine=ICAP:2.0.293,Aquarius:18.0.1176,Hydra:6.1.138,FMLib:17.12.100.49
+ definitions=2026-11-09_05,2026-11-06_01,2025-10-01_01
+X-Proofpoint-Spam-Details: rule=outbound_notspam policy=outbound score=0
+ clxscore=1015 phishscore=0 malwarescore=0 spamscore=0 bulkscore=0
+ priorityscore=1501 suspectscore=0 impostorscore=0 lowpriorityscore=0
+ adultscore=0 classifier=typeunknown authscore=0 authtc= authcc=
+ route=outbound adjust=0 reason=mlx scancount=1 engine=8.22.0-2611040001
+ definitions=main-2611090059
 
-OK, so this fell off my radar for a bit, but here's some more testing results:
-- somewhere between 7.2.12 and 7.2.15 something is causing the system to spend way more time in IRQ handlers, this looks like it's not actually wifi related, but it does make the whole thing very slow and annoying to deal with
-- 7.3.3 + board specific patches that don't touch mt76 at all still crashes
-- tip of Felix's mt76 tree + same patches also crashes
-- rebasing my previously-working 7.2 frankentree on 7.3.3 also crashes
+On 11/3/2026 2:29 AM, Wentao Liang wrote:
+> ath11k_core_get_rproc() looks up the target remoteproc with
+> rproc_get_by_phandle(), which takes a device reference and a reference on
+> the remoteproc driver's module.  The resulting pointer is stored in
+> ab_ahb->tgt_rproc and never released: ath11k_ahb_free_resources() only
+> tears down the firmware resources, and the probe error paths after the
+> lookup jump to err_core_free without dropping the reference either.
+> rproc_shutdown() does not release it, it only drops the power reference.
+> 
+> Release the reference when the AHB resources are freed and on the probe
+> error path, so that repeated bind/unbind cycles no longer accumulate
+> remoteproc references and the remoteproc module can be unloaded again.
+> 
+> Fixes: ba929d6fe31a ("ath11k: Remove rproc references from common core layer")
+> Cc: stable@vger.kernel.org
+> Assisted-by: DeepSeek-V4.1-Flash and OpenAI Codex
+> Signed-off-by: Wentao Liang <vulab@iscas.ac.cn>
 
-That last one got me some potentially useful logs though: https://gist.github.com/K900/0f4be7064903880f0c409adc168cb59e
++workflows
 
-The tree itself is here: https://github.com/K900/linux/tree/bpi-r4-73-ct
+I am no longer accepting patches from this e-mail address.
 
-I really need to filter it down to whatever fixes it on 7.2...
+Go away or use a separate e-mail address per person working on this project,
+with that person actually responding to review feedback and adhering to the
+Linux kernel etiquette.
+
+/jeff
+
