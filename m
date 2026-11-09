@@ -1,79 +1,120 @@
-Authentication-Results: smtp.subspace.kernel.org; arc=pass header.oldest-pass=0 smtp.remote-ip=100.103.45.18
+Authentication-Results: smtp.subspace.kernel.org; arc=pass header.oldest-pass=0 smtp.remote-ip=52.101.66.19
 ARC-Seal: i=2; d=subspace.kernel.org; s=arc20261015; a=rsa-sha256; cv=pass;
-	t=1794242671;
-	b=Nz3yD8cMkamkSGafRxQ8EP8hh6gmi8yIfGYpFdlY6o5JMzB0EPy667vRDccgkXHRtJdN
-	 L4BomkasyX3e7J6XJR9W6x5jinrdJfIY5RcSe7MtsbY675mx87iU1xwcvTqeIB+GHpLbB
-	 Ds8bYABDJqO6bnJlEvUOFN4lrQ6BrsMnuKGQudpGNmfwNhAmmaiwMi0Ya2GBHvqLtr+4S
-	 R58Sx987HTa6w74ggmfJT/L1NTlsJPSaclXnZ1ALI2+Dybl/BFQ/vJXz9VrykseHW/GyJ
-	 WnUIedinRttohrUEg5tgUCZD0AEY4Dd5/DUYvuzK9+z6LRjs4nZINAzkYIgLqTLmDBg==
+	t=1794243851;
+	b=ByeeXfCyK90tA2bFOYavO+Z51sOtYhjzKu1z9Qqi9rDHRaHWv4qcxdu+l33ZrpoiasQO
+	 6i+PkefsGyK1AvH7s6LMh+lmHrLQCKnSBQ8rH2nJZzcOZ+4h3sn/CY7E0kk4lpmUYCQXa
+	 GHcO0by0vjpBvZodhMpa2onwVLoa30D7sDXd6Zgqk4DlHCaRXMD8wBtX1K34mHQQGPk67
+	 laKbEpvB85Xbf10xEcG0ELoHqhtxcSXT0jv/QEQZCX40EQP6l3oOCGI7HSGMzMQrLx1qv
+	 bLE9JpCOdnFHTCB1iAXJwzSoGVrtLCtQdKaVqUFlQ3xr1X4DamwbMBNNr5HfuwNiPRg==
 ARC-Message-Signature: i=2; d=subspace.kernel.org; s=arc20261015;
-	a=rsa-sha256; c=relaxed/relaxed; t=1794242671;
-	h=Received:DKIM-Signature:Received:From:Date:Subject:MIME-Version:
-	 Content-Type:Message-Id:X-B4-Tracking:X-Change-ID:To:Cc:X-Mailer:
-	 X-Developer-Signature:X-Developer-Key:X-Endpoint-Received:
-	 X-Original-From:Reply-To:Content-Transfer-Encoding;
-	bh=FaQpaw1ViqVEtbZKMtrSqTL8JaUridnUO54SRbvqDw8=;
-	b=nTIg/mrq3kvZZl6ysxkeNRbNmhoji41ikEGl9DvVfKyhytu4si9vGh7vvM4y6652HHQ+
-	 3ZWYfVEi4p7KIZdDHD/zr+s29FbWJSWlKIKiUShFXTR6lL8YpViq+oCU8SPCDh20iPGw3
-	 bF98YMPkdi/XKseBEQeUV/ljQZe6arZEm9J+Qrekl6pcL+Hd16V0+sldu9qbk6E6urOzk
-	 YoMJqaa7t3Joo4SEaUnVLWGy8o5tCWaiwRYeBvK/uJoZI+Jxy7jvCanJKFqets2so4sS+
-	 1OrMf3HMMiCHo2hghAMyTOuo3/kRfpnl0qT27DGFHbUb9FkLCWKMoQaB8/5QKN2aVsg==
+	a=rsa-sha256; c=relaxed/relaxed; t=1794243851;
+	h=DMARC-Filter:DKIM-Signature:Received:Received:
+	 X-MS-Exchange-Authentication-Results:Received-SPF:Received:Received:
+	 Received:X-CLAM-Verdict:X-CLAM-Score:X-CLAM-Description:Received:
+	 Received:From:To:Cc:Subject:Date:Message-ID:X-Mailer:MIME-Version:
+	 Content-Transfer-Encoding:X-EOPAttributedMessage:
+	 X-MS-PublicTrafficType:X-MS-TrafficTypeDiagnostic:Content-Type:
+	 X-MS-Office365-Filtering-Correlation-Id:X-MS-Exchange-SenderADCheck:
+	 X-MS-Exchange-AntiSpam-Relay:X-Microsoft-Antispam:
+	 X-Microsoft-Antispam-Message-Info:X-Forefront-Antispam-Report:
+	 X-MS-Exchange-AntiSpam-MessageData-ChunkCount:
+	 X-MS-Exchange-AntiSpam-MessageData-0:X-OriginatorOrg:
+	 X-MS-Exchange-CrossTenant-OriginalArrivalTime:
+	 X-MS-Exchange-CrossTenant-Network-Message-Id:
+	 X-MS-Exchange-CrossTenant-Id:
+	 X-MS-Exchange-CrossTenant-OriginalAttributedTenantConnectingIp:
+	 X-MS-Exchange-CrossTenant-AuthSource:X-MS-Exchange-CrossTenant-AuthAs:
+	 X-MS-Exchange-CrossTenant-FromEntityHeader:
+	 X-MS-Exchange-Transport-CrossTenantHeadersStamped;
+	bh=0OSVyRMwkTFhe/VYzUqR8sfmJ7deCG6+6TxSKqSqZKE=;
+	b=5hoTaNNTlo28To88sXWtX59EXxUyzrKVX1br4Yu7RpkOcVm+748J0N3o12lMMDua45OJ
+	 DbFwFIbB+DNEpvvsdskByajV+bZ+mPWqalbAqLXHq52CWf9QHt4jPh+oy3skXIvj45pI9
+	 JG90MRAZ5mTJ6gmgRt5Xtl0e/zQEGjDVx+/H0Sxu+Ml3swySiUtOCIj+ON8hyeSXwpC8n
+	 aLgAgcUHNcvF+pgGNBTjuxTxRCuw4yaug7KHFBS3y7ut3NEj56BELfu/HNfd/h24vmlWE
+	 LeYLHLDEoykRj4uapXJUFTyVAehhjxGHr3P3XJ4SaBfopkdYT9iTNLTZrEPZZDKMeZg==
 ARC-Authentication-Results: i=2; smtp.subspace.kernel.org; 
-	dkim=pass header.d=kernel.org header.i=@kernel.org header.a=rsa-sha256 header.s=k20260515 header.b=LS4Klp2x;
-	arc=pass header.oldest-pass=0 smtp.remote-ip=100.103.45.18
-Received: from smtp.kernel.org (quasi.space.kernel.org [100.103.45.18])
+	dmarc=pass header.from=philips.com;
+	spf=pass smtp.mailfrom=bbl.ms.philips.com;
+	dkim=pass header.d=philips.com header.i=@philips.com header.a=rsa-sha256 header.s=selector1 header.b=W+8uT3Wm;
+	arc=pass header.oldest-pass=0 smtp.remote-ip=52.101.66.19
+Received: from DUZPR83CU001.outbound.protection.outlook.com (mail-northeuropeazon11012019.outbound.protection.outlook.com [52.101.66.19])
 	(using TLSv1.3 with cipher TLS_AES_256_GCM_SHA384 (256/256 bits)
-	 key-exchange X25519 server-signature ECDSA (prime256v1))
+	 key-exchange ECDHE (secp384r1) server-signature ECDSA (prime256v1) server-digest SHA256)
 	(No client certificate requested)
-	by smtp.subspace.kernel.org (Postfix) with ESMTPS id 6663D606A334;
-	Mon,  9 Nov 2026 16:44:31 +0000 (UTC)
+	by smtp.subspace.kernel.org (Postfix) with ESMTPS id D49E3606A321
+	for <linux-wireless@vger.kernel.org>; Mon,  9 Nov 2026 17:04:10 +0000 (UTC)
+DMARC-Filter: OpenDMARC Filter v1.4.2 smtp.subspace.kernel.org D49E3606A321
+Authentication-Results: smtp.subspace.kernel.org; dmarc=pass (p=reject dis=none) header.from=philips.com
+Authentication-Results: smtp.subspace.kernel.org; spf=pass smtp.mailfrom=bbl.ms.philips.com
 Authentication-Results: smtp.subspace.kernel.org;
-	dkim=pass (2048-bit key) header.d=kernel.org header.i=@kernel.org header.a=rsa-sha256 header.s=k20260515 header.b=LS4Klp2x
-Authentication-Results: smtp.kernel.org; arc=none smtp.remote-ip=100.80.115.77
-ARC-Seal: i=1; d=kernel.org; s=arc20260519; a=rsa-sha256; cv=none;
-	t=1794242671;
-	b=yywKRDYANNMDUXf2ef035KaF0qI9YstKzJrZbXsiNbV5IlNO3jYYe1B4WFjGfSYBIzk7
-	 Ds4xuudhNuKFQcoOWjHs2rr1Wj9w2rLiphueZaBlJdGbkJN5m0yEpzz+1TS/cmcnOjEAl
-	 HtHTkY/4EVZkhzD2yW9WljQmke0VxCdP59cLMbpoeBxUFAV7f8Ji46JZIC8br7qfjStkY
-	 HjF8fXyn8xPLQxsfXWEx/ttW8r8Y6+GDb9UNk/RuSymcXgK61Jt8dCxLy4Ahc01jh3BYR
-	 P1NLfC04KDdwqG9Xal872M7ydlEIZXczTGkOB5QncBVN0KCltOrTWmJ7s0WFuaImH6Q==
-ARC-Message-Signature: i=1; d=kernel.org; s=arc20260519; a=rsa-sha256;
-	c=relaxed/relaxed; t=1794242671;
-	h=DKIM-Signature:Received:From:Date:Subject:MIME-Version:Content-Type:
-	 Message-Id:X-B4-Tracking:X-Change-ID:To:Cc:X-Mailer:
-	 X-Developer-Signature:X-Developer-Key:X-Endpoint-Received:
-	 X-Original-From:Reply-To:Content-Transfer-Encoding;
-	bh=FaQpaw1ViqVEtbZKMtrSqTL8JaUridnUO54SRbvqDw8=;
-	b=MtyoUPtqC4wnPVfVbwegnDLxJbFSdxkeQA1Ia/xi+LH9hxWAgmyNt1Gxjtn5rmr0/tUf
-	 IE0jTthl2e2JxPf9EJnqeEG+M6THftGgeGIDsxiqoM0nl+nJc8PAupSZpIbXWJHM4PB2z
-	 0OvFdlByu/pCBObFO0sts9DipxNEPo10fwJcX7nsoAVWvVqunpOCpxgzhiPte4JxCxGHg
-	 5AekflJJ3OizYge4tD67Wx8kRr8bKpH9X1gpwx5J9UQROpZ31Mnj3PYA/agFAKy3rkwfI
-	 +pl6Hs1KvsYMvXNu5UBAHRNEYXoJElkMgiD6aHIB2tm061iVwJNkW8pbooqm0tq1lxw==
-ARC-Authentication-Results: i=1; smtp.kernel.org; 
-	arc=none smtp.remote-ip=100.80.115.77
-Received: from lkml.kernel.org (nexus.subspace.kernel.org [100.80.115.77])
-	(using TLSv1.3 with cipher TLS_AES_256_GCM_SHA384 (256/256 bits)
-	 key-exchange X25519 server-signature ECDSA (prime256v1) server-digest SHA256)
-	(No client certificate requested)
-	by smtp.kernel.org (Postfix) with ESMTPS id 900C41F008A2;
-	Mon,  9 Nov 2026 16:44:30 +0000 (UTC)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=kernel.org;
-	s=k20260515; t=1794242671;
-	bh=FaQpaw1ViqVEtbZKMtrSqTL8JaUridnUO54SRbvqDw8=;
-	h=From:Date:Subject:To:Cc:Reply-To;
-	b=LS4Klp2xqmwkt8CvMsztAShscuqRoRT5GId7f0IDRmqc98uBIUkHqJDvC2RC8u3rJ
-	 iWfxKIH77wt2NVcrFhyOaqn8WX464TBJv/hBfebuQp+9hEwWt8ZbFahUc4354vPK9e
-	 4k7lUP9HGjVgMHQDB5ZMp7n9lrIDWUyfULVTJa3VV0ftv/MIEQtA4UJ3zmW2MO79vW
-	 xNyDLyj3bI0wOy6iKYlK1aSE06Aq842fg7NzVuc4qk9pv4kX3Kr44qH9uyuwJfktZT
-	 mUyUlALT6vGNUJqn8e6+o2uBMp80rtr+HfCAntpXD+0ySlgPguvLPmrcd7p/nm/odn
-	 PfA5L881m43RA==
-Received: from nexus.subspace.kernel.org (localhost [IPv6:::1])
-	by lkml.kernel.org (Postfix) with ESMTP id 0F5C44853F;
-	Mon,  9 Nov 2026 16:44:30 +0000 (UTC)
-From: Lukas Hahn via B4 Relay <devnull+lukas.hahn.codewrights.de@kernel.org>
-Date: Mon, 09 Nov 2026 17:43:37 +0100
-Subject: [PATCH wireless-next] wifi: wilc1000: skip RSSI query in
- dump_station() before firmware load
+	dkim=pass (1024-bit key, unprotected) header.d=philips.com header.i=@philips.com header.a=rsa-sha256 header.s=selector1 header.b=W+8uT3Wm
+ARC-Seal: i=1; a=rsa-sha256; s=arcselector10001; d=microsoft.com; cv=none;
+ b=oKn1XXO0R0oBTziwavwPQcDa9yjmFeithmf0Nl62BMt6J3c97RBqUl6738Dkl5bzwp27qH/xaZXONtiD6eMqZdPW700+7+AhRfn5ouzGn6QMsvpjzozsXPauucssOF0gDj9NJtOXAWt24wtlf4gY5VLHl4LB4zRBardSbjPyJ9shT0BlrZXxjNKADRO6jTQFbDMe0n50Hbuc6WULzH6P5eqFldDKLuNmbybLmuGZnkKCXvwUqm+xWA6VfX2yJBLHKMvCREaIgkF8hzM6hb0fuqs8haOfhL6w6ovXqJBNw+81D+lTLnQz7SYqMuJR6JDNKN+29JHHZ7n3KcfDi2RhsQ==
+ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=microsoft.com;
+ s=arcselector10001;
+ h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-AntiSpam-MessageData-ChunkCount:X-MS-Exchange-AntiSpam-MessageData-0:X-MS-Exchange-AntiSpam-MessageData-1;
+ bh=0OSVyRMwkTFhe/VYzUqR8sfmJ7deCG6+6TxSKqSqZKE=;
+ b=Og2f4WNDqPGWpUukfyQGHbwO2RVLjS/Ykt3c14GUaOqbBhkRdE1nqhWGQCyq0uYAVyQ3IEk9p4xxzgT0mR/dp0CDjkmPEPXM9T3loRtKRZAYvZDE5y9E3ZKx6iH68NbYkVA6MG0jNv7tLFYI7/+uWrUlA9A29/FUqrR0+RXPe5NUU93uOAXxioPDMBX3LmbQAvfm9K91+7+OenxPD4zsxm+CqkIIrXb6jCaRGoN1MhqBlF1PkbWiaPvIz7DRcbvZ/aPO4y16o+jxDVT5AbxgsAfY0eRpkvtgsQN9gcdvZpqckblK3kiB4zkXAs8l4N5uwtIkfLgnvaTNT3fuulLRxw==
+ARC-Authentication-Results: i=1; mx.microsoft.com 1; spf=pass (sender ip is
+ 3.248.88.141) smtp.rcpttodomain=vger.kernel.org
+ smtp.mailfrom=bbl.ms.philips.com; dmarc=pass (p=reject sp=reject pct=100)
+ action=none header.from=philips.com; dkim=none (message not signed); arc=none
+ (0)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=philips.com;
+ s=selector1;
+ h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
+ bh=0OSVyRMwkTFhe/VYzUqR8sfmJ7deCG6+6TxSKqSqZKE=;
+ b=W+8uT3WmK+FwB4wct+hU3ar1x5kEzsXt5yapqTzoJrEJMesq6POwotguYgFLRTHCBhKjpq2DzggkyI7vrFu0ZoEPnUZoaxYByBkysEG8bouE+8mr3BaYm9taVXO/whpD4dZo3xjRNBsItDpkt6foAE0KUP0DA7bVuYjbOPQJJR4=
+Received: from DB9PR02CA0023.eurprd02.prod.outlook.com (2603:10a6:10:1d9::28)
+ by VI1PR10MB3566.EURPRD10.PROD.OUTLOOK.COM (2603:10a6:800:131::16) with
+ Microsoft SMTP Server (version=TLS1_2,
+ cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id 15.21.615.7; Mon, 9 Nov 2026
+ 17:04:05 +0000
+Received: from DU2PEPF00028D10.eurprd03.prod.outlook.com
+ (2603:10a6:10:1d9:cafe::72) by DB9PR02CA0023.outlook.office365.com
+ (2603:10a6:10:1d9::28) with Microsoft SMTP Server (version=TLS1_3,
+ cipher=TLS_AES_256_GCM_SHA384) id 15.21.592.13 via Frontend Transport; Mon, 9
+ Nov 2026 17:04:05 +0000
+X-MS-Exchange-Authentication-Results: mx.microsoft.com 1; spf=pass (sender IP
+ is 3.248.88.141) smtp.mailfrom=bbl.ms.philips.com; dkim=none (message not
+ signed) header.d=none;dmarc=pass action=none header.from=philips.com;
+Received-SPF: Pass (protection.outlook.com: domain of bbl.ms.philips.com
+ designates 3.248.88.141 as permitted sender) receiver=protection.outlook.com;
+ client-ip=3.248.88.141; helo=ext-eur1.smtp.philips.com; pr=C
+Received: from ext-eur1.smtp.philips.com (3.248.88.141) by
+ DU2PEPF00028D10.mail.protection.outlook.com (10.167.242.24) with Microsoft
+ SMTP Server (version=TLS1_2, cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id
+ 15.21.615.4 via Frontend Transport; Mon, 9 Nov 2026 17:04:04 +0000
+Received: from smtprelay-eur1.philips.com ([130.138.84.184])
+	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 256/256 bits)
+	(Client did not present a certificate)
+	by ext-eur1.smtp.philips.com with ESMTPS
+	id QIYAxcdK2f0UDQSmqxPFHL; Mon, 09 Nov 2026 18:04:04 +0100
+Received: from mail.bbl.ms.philips.com ([130.143.87.230])
+	by smtprelay-eur1.philips.com with ESMTP
+	id QSmqxGYbKbtn9QSmqxKnzw; Mon, 09 Nov 2026 18:04:04 +0100
+X-CLAM-Verdict: legit
+X-CLAM-Score: ??
+X-CLAM-Description: ??
+Received: from bbl2xvg1.bbl.ms.philips.com (bbl2xvg1.bbl.ms.philips.com [130.143.220.100])
+	by mail.bbl.ms.philips.com (Postfix) with ESMTP id 2C5BB18015C;
+	Mon,  9 Nov 2026 18:04:04 +0100 (CET)
+Received: by bbl2xvg1.bbl.ms.philips.com (Postfix, from userid 2884)
+	id 23A00FE023B; Mon,  9 Nov 2026 18:04:04 +0100 (CET)
+From: Vishal Gupta <vishal.gupta_1@philips.com>
+To: linux-wireless@vger.kernel.org
+Cc: jeff.chen_1@nxp.com,
+	francesco@dolcini.it,
+	johannes@sipsolutions.net,
+	lilinmao@kylinos.cn,
+	kees+treewide@kernel.org,
+	elb12345@hotmail.co.uk,
+	linux-kernel@vger.kernel.org,
+	Vishal Gupta <vishal.gupta_1@philips.com>
+Subject: [PATCH 1/1] wifi: nxpwifi: fix race on scan_processing in nxpwifi_scan_networks()
+Date: Mon,  9 Nov 2026 18:04:00 +0100
+Message-ID: <20261109170400.1316239-1-vishal.gupta_1@philips.com>
+X-Mailer: git-send-email 2.43.0
 X-Mailing-List: linux-wireless@vger.kernel.org
 List-Id: <linux-wireless.vger.kernel.org>
 List-Post: <mailto:linux-wireless@vger.kernel.org>
@@ -83,94 +124,91 @@ List-Unsubscribe: <mailto:linux-wireless+unsubscribe@vger.kernel.org>
 List-Owner: <mailto:linux-wireless+owner@vger.kernel.org>
 Precedence: list
 MIME-Version: 1.0
-Content-Type: text/plain; charset="utf-8"
-Message-Id: <20261109-wilc1000-dump-station-v1-1-501094b8e786@codewrights.de>
-X-B4-Tracking: v=1; b=H4sIAAAAAAAC/yWMywrCMBAAf6Xs2YVNCy3xV8RDm111pcaSTR9Q+
- u9GPQ7DzA4mScXgXO2QZFHTdyzgThWERx/vgsqFoaa6dY48rjoGR0TI82tCy30uBXLXeN813Ia
- BobRTkptuv+8FVk0yihlG2TJc/9rm4Skhf99wHB+LGxSniAAAAA==
-X-Change-ID: 20261109-wilc1000-dump-station-d739973d6cbd
-To: Ajay Singh <ajay.kathat@microchip.com>, 
- Claudiu Beznea <claudiu.beznea@tuxon.dev>
-Cc: linux-wireless@vger.kernel.org, linux-kernel@vger.kernel.org, 
- Lukas Hahn <lukas.hahn@codewrights.de>
-X-Mailer: b4 0.16.0
-X-Developer-Signature: v=1; a=ed25519-sha256; t=1794242618; l=2855;
- i=lukas.hahn@codewrights.de; s=20261109; h=from:subject:message-id;
- bh=w74s3Tm5Fitkvt7/EPKLuvfTmHfa4AYDV30NGcrNsQg=;
- b=gTuaQjBKrkzC6ldqTIGCi0Z1yIy3wJ5LPWrwqEai6jiyBSXAQFYTQp4IlCKm7jwJZc016MHR4
- Ow3XgSNbL7ED9gFXFVlT8WpWZWfnkdHUndj6Z9tFthxkjjgham2V2Ee
-X-Developer-Key: i=lukas.hahn@codewrights.de; a=ed25519;
- pk=Mg1ixrNH7vyHiaMBzg5Dc0STeZSinfuImTLfUFEjR5s=
-X-Endpoint-Received: by B4 Relay for lukas.hahn@codewrights.de/20261109
- with auth_id=1462
-X-Original-From: Lukas Hahn <lukas.hahn@codewrights.de>
-Reply-To: lukas.hahn@codewrights.de
-Content-Transfer-Encoding: 7bit
+Content-Transfer-Encoding: 8bit
+X-EOPAttributedMessage: 0
+X-MS-PublicTrafficType: Email
+X-MS-TrafficTypeDiagnostic: DU2PEPF00028D10:EE_|VI1PR10MB3566:EE_
+Content-Type: text/plain
+X-MS-Office365-Filtering-Correlation-Id: 8b41df70-9172-4386-8ad1-08df3e8375b7
+X-MS-Exchange-SenderADCheck: 1
+X-MS-Exchange-AntiSpam-Relay: 0
+X-Microsoft-Antispam:
+	BCL:0;ARA:13230040|376014|23010399003|36860700016|1800799024|82310400026|5023799004|11063799006|56012099006|261021123027099003|261021121427099003|261022105027099003|261022075727099003|261009223027099003|261028144727099003|261026140227099003|261102123227099003|261026121527099003|10067099003|18002099003|3023799007;
+X-Microsoft-Antispam-Message-Info:
+	RGqpsqvVn8lpoktMHPdggV2Wi74AM0ZgDCgWH5odBYIJB3K5RPxwumWAw7r13VHWqx2crph6pRddZ8owoaJcET/6eIANpkb0rhJnADLmTF/Z6ZW/cwvx+G4JCNOCFDDC59C46lg2zDwmICWXau4Q8zfU78EIycsspVBqJZ5Q760J76n+wYM9yJdSIY88gCBby01qIwl5G+5QIN6pKiEzXqsrFa5g7W7I1KvB8wJXN4pu6TXUKEh1a8EiGROXB+7I/8AFPRlUB4lNMgjVxUT11wIXM1/JD7hHv2mhLIyTScXAKyLP9H0XaPwNzpa2SEReZckwpemrtqc8R5CH5AaQJOjqwTPsDaQBlXlEfjCN34W51dGLSWbW1KYbRNvw1bb3cAZX0eRS04NH8LnbvIAu8s55/vv7Tu5h2L/nZrD42viAHAiWwtNanHuj3Hhd2CRiVrcbKrlSYTWFaPOvpNyeGRCjk64rRndWGbbCTWCflT3Pu53Ngf9ClApIasZziNVSJAVRP806mgtaDNx+1Rq1vmgKyFHJ/ky54adn/DukNxiJrY4qPvnATS5/KO5Rna8uNd7GuuZDPWB5kIEjHgm8JCd8ccXkNdKkn6r87E28HU1DWUjt1wRnJvfF3SgTE5FwCfCHWw09Ag7r+xVMESGjP81cGUfp5ftWKv8nVQKnb9EdDE+mlWj8ph3WLfSe+PABrh4zHaIXB1D4ST9rtcMXWg==
+X-Forefront-Antispam-Report:
+	CIP:3.248.88.141;CTRY:IE;LANG:en;SCL:1;SRV:;IPV:NLI;SFV:NSPM;H:ext-eur1.smtp.philips.com;PTR:ext-eur1.smtp.philips.com;CAT:NONE;SFS:(13230040)(376014)(23010399003)(36860700016)(1800799024)(82310400026)(5023799004)(11063799006)(56012099006)(261021123027099003)(261021121427099003)(261022105027099003)(261022075727099003)(261009223027099003)(261028144727099003)(261026140227099003)(261102123227099003)(261026121527099003)(10067099003)(18002099003)(3023799007);DIR:OUT;SFP:1101;
+X-MS-Exchange-AntiSpam-MessageData-ChunkCount: 1
+X-MS-Exchange-AntiSpam-MessageData-0:
+	cXTh25mstFL9K2l24ToT6jpQNh91MTtVW5PxBb9XUmKfw4RM97MiyU8lJ2SUO9f2Vt+7fO75Y6HoxaowYxx/FxwNtFKzfF1WqcAKB7LqE3TE/VbYvhDNuHXqMok/lV6eNi7r4m41jgtRQ8k32eSdZv3K2RS6c0DmW7tgE1fWOk8yiilRtE9Ntq7vcmeGmcaf1nogQtsK5IRw99YGdsok2RBKARPkgt8BQOkqXVQlK3sQ+MS4Exyi8LaaqDbCpIPGIU5jDP3uUrNviaZCcZgOB/m2AhfGBTd0XZD3XU8WIuZjdliwCYhhLo5JSJAOvH6M4RUxqq+pKSLa6CDaqn0Y3J8ugoSJPPff0isE272SWfy05Pq3JUgvDaD0ICCbPcJNa/Rzh1Z8faMjTDA4O/0Xi1hdPlYHdNYoJCEe/BGr9Q7euIiPDk6JorpMmOxvxKYf
+X-OriginatorOrg: philips.com
+X-MS-Exchange-CrossTenant-OriginalArrivalTime: 09 Nov 2026 17:04:04.6452
+ (UTC)
+X-MS-Exchange-CrossTenant-Network-Message-Id: 8b41df70-9172-4386-8ad1-08df3e8375b7
+X-MS-Exchange-CrossTenant-Id: 1a407a2d-7675-4d17-8692-b3ac285306e4
+X-MS-Exchange-CrossTenant-OriginalAttributedTenantConnectingIp: TenantId=1a407a2d-7675-4d17-8692-b3ac285306e4;Ip=[3.248.88.141];Helo=[ext-eur1.smtp.philips.com]
+X-MS-Exchange-CrossTenant-AuthSource:
+	DU2PEPF00028D10.eurprd03.prod.outlook.com
+X-MS-Exchange-CrossTenant-AuthAs: Anonymous
+X-MS-Exchange-CrossTenant-FromEntityHeader: HybridOnPrem
+X-MS-Exchange-Transport-CrossTenantHeadersStamped: VI1PR10MB3566
 
-From: Lukas Hahn <lukas.hahn@codewrights.de>
+nxpwifi_scan_networks() tests adapter->scan_processing without holding
+any lock and only sets it later under nxpwifi_cmd_lock. The test and the
+set are not atomic, so two callers can both observe the flag clear and
+both start a scan.
 
-The firmware is only downloaded and started when the first interface is
-brought up (wilc_wlan_initialize()), which then sets wilc->initialized.
-dump_station() does not check this and always sends a WID_RSSI query to
-the chip. Before the interface has been opened for the first time,
-nothing processes the queued config packet, so wilc_get_rssi() only
-returns after WILC_CFG_PKTS_TIMEOUT (3 s), logs "Failed to get RSSI
-value" and the station dump fails with -ETIMEDOUT.
+This is reachable because the function has two callers in different
+contexts: nxpwifi_cfg80211_scan() runs under the wiphy mutex, while
+nxpwifi_active_scan_req_for_passive_chan() runs from the driver's main
+work via nxpwifi_check_next_scan_command(), which is not serialized
+against cfg80211 ops.
 
-systemd-networkd hits exactly this window: while enumerating links at
-start-up it sends an NL80211_CMD_GET_STATION dump request for every
-interface in station mode, typically before wpa_supplicant has opened
-the interface. This was observed on an STM32MP157 board with a WILC1000
-on SDIO, running Microchip's vendor driver, which has the same
-dump_station() implementation: systemd-networkd, and every unit ordered
-after it, was delayed by about 3 s on each boot.
+After the last scan command completes, nxpwifi_check_next_scan_command()
+clears scan_processing and then starts the follow-up hidden SSID scan;
+a scan request from user space arriving in that window passes the unlocked
+check as well. Both scans then queue commands on scan_pending_q and share
+priv->scan_request, so one can clear scan_processing or call
+cfg80211_scan_done() while the other is still running.
 
-get_station() already returns early in station mode while the firmware
-is not initialized. Do the same in dump_station(): without running
-firmware there can't be an association, so end the dump with -ENOENT,
-which nl80211 reports to user space as an empty station list.
+Move the scan_processing check under nxpwifi_cmd_lock, in the same
+critical section that sets it, so that test and set are atomic.
 
-The problem was analysed and this patch was prepared with the help of
-an AI coding assistant (Claude, Anthropic).
-
-Fixes: 5625f965d764 ("wilc1000: move wilc driver out of staging")
-Signed-off-by: Lukas Hahn <lukas.hahn@codewrights.de>
+Signed-off-by: Vishal Gupta <vishal.gupta_1@philips.com>
 ---
-Build-tested on wireless-next: ARCH=arm multi_v7_defconfig (gcc 15.3)
-and x86_64_defconfig (gcc 12.2) with WILC1000_SDIO=m and
-WILC1000_SPI=m, both with W=1, no new warnings.
+ drivers/net/wireless/nxp/nxpwifi/scan.c | 12 ++++++------
+ 1 file changed, 6 insertions(+), 6 deletions(-)
 
-Runtime-tested with the equivalent change on Microchip's linux-6.6-mchp
-vendor driver on an STM32MP157 board (WILC1000 on SDIO): "Failed to get
-RSSI value" no longer appears at boot and the boot is about 3 s faster.
-The mainline driver itself has not been runtime-tested, as the board
-runs the vendor driver.
----
- drivers/net/wireless/microchip/wilc1000/cfg80211.c | 4 ++++
- 1 file changed, 4 insertions(+)
-
-diff --git a/drivers/net/wireless/microchip/wilc1000/cfg80211.c b/drivers/net/wireless/microchip/wilc1000/cfg80211.c
-index 3db290875..7fd165241 100644
---- a/drivers/net/wireless/microchip/wilc1000/cfg80211.c
-+++ b/drivers/net/wireless/microchip/wilc1000/cfg80211.c
-@@ -1335,6 +1335,10 @@ static int dump_station(struct wiphy *wiphy, struct wireless_dev *wdev,
- 	if (idx != 0)
- 		return -ENOENT;
+diff --git a/drivers/net/wireless/nxp/nxpwifi/scan.c b/drivers/net/wireless/nxp/nxpwifi/scan.c
+index f3becafb9c23c..548c257a2e3c3 100644
+--- a/drivers/net/wireless/nxp/nxpwifi/scan.c
++++ b/drivers/net/wireless/nxp/nxpwifi/scan.c
+@@ -1336,12 +1336,6 @@ int nxpwifi_scan_networks(struct nxpwifi_private *priv,
+ 	u8 scan_current_chan_only;
+ 	u8 max_chan_per_scan;
  
-+	/* Firmware is not running yet, so there can't be an association */
-+	if (!vif->wilc->initialized)
-+		return -ENOENT;
-+
- 	ret = wilc_get_rssi(vif, &sinfo->signal);
- 	if (ret)
- 		return ret;
-
----
-base-commit: b8e5b0ae8ff47240366d38e5d12c65f878724316
-change-id: 20261109-wilc1000-dump-station-d739973d6cbd
-
-Best regards,
---  
-Lukas Hahn <lukas.hahn@codewrights.de>
-
+-	if (adapter->scan_processing) {
+-		nxpwifi_dbg(adapter, WARN,
+-			    "cmd: Scan already in process...\n");
+-		return -EBUSY;
+-	}
+-
+ 	if (priv->scan_block) {
+ 		nxpwifi_dbg(adapter, WARN,
+ 			    "cmd: Scan is blocked during association...\n");
+@@ -1356,6 +1350,12 @@ int nxpwifi_scan_networks(struct nxpwifi_private *priv,
+ 	}
+ 
+ 	spin_lock_bh(&adapter->nxpwifi_cmd_lock);
++	if (adapter->scan_processing) {
++		spin_unlock_bh(&adapter->nxpwifi_cmd_lock);
++		nxpwifi_dbg(adapter, WARN,
++			    "cmd: Scan already in process...\n");
++		return -EBUSY;
++	}
+ 	adapter->scan_processing = true;
+ 	spin_unlock_bh(&adapter->nxpwifi_cmd_lock);
+ 
+-- 
+2.43.0
 
