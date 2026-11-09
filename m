@@ -1,90 +1,95 @@
-Authentication-Results: smtp.subspace.kernel.org; arc=none smtp.remote-ip=209.85.208.50
+Authentication-Results: smtp.subspace.kernel.org; arc=none smtp.remote-ip=209.85.216.42
 ARC-Seal: i=1; d=subspace.kernel.org; s=arc20261015; a=rsa-sha256; cv=none;
-	t=1794246273;
-	b=rew30Zbh6dNlt4vOmPd8DiWHyn5iRTF6rcX0RgQ7vbbnkzeQFcIUXfX+oAq1Q6aS5fxy
-	 8L3yXDT+IzLfBh2ByPM9mM3CyBiQBUbyxlInm+intgf53pd7JbmIJBtVEYpU/4OtDYbB1
-	 zd+U/gdBzfECcw4TedxkfEamH8lWGSB0BEKv+LuYmP82SRKFalCXWZyr2DrJiwZAdnLSm
-	 WUi3RYQltJXVejKguM6/22/B45xTaLmSwWQNlnO0i8gbZ9tLszAG8/IcMyPuKxqREVxok
-	 hbZHrUYMG3VBVqwpyxHEgEbJzJXCGEjT6c2BpeXY3TyipwXA8vv/GgwP/ke74+aA8ZA==
+	t=1794248420;
+	b=IRUpw1AphsOvP/Sj19S+Zf1rK8aLaHhMcj42LY9iVH9pL2wYSgoDwpKk+2RBgHQNuWoa
+	 P365Hrxe+CiUDs2mcH53LJiDRWuHZT5FfHZw24jFAZw3TCiQIkI+dxtvPyQlZWKDCtYI5
+	 wFlwEW0RHNQdWdNJy/DsIEuhJ4V8NXii1NnGicvz+qdKS5tAe3pd1+IbM4b/HClZDM9iN
+	 /0y1AjtlVtYjWjdvChFuVOVCWYU3uMcmlYNRf5sFlb3TKevmIyGo4nN+33Htvh8kkXhtO
+	 Mi23vyU2LJZ66Tl5qdZV5CzmksEr5Z38YzSCVSZSPCYP6IU0/Q9g6Uuv4/TP2ZS/s5w==
 ARC-Message-Signature: i=1; d=subspace.kernel.org; s=arc20261015;
-	a=rsa-sha256; c=relaxed/relaxed; t=1794246273;
+	a=rsa-sha256; c=relaxed/relaxed; t=1794248420;
 	h=DMARC-Filter:Received:DKIM-Signature:X-Google-DKIM-Signature:
 	 X-Gm-Message-State:X-Gm-Gg:X-Received:Received:From:To:Cc:Subject:
-	 Date:Message-ID:X-Mailer:MIME-Version:Content-Transfer-Encoding;
-	bh=ZIgtguijiaaTJtLuFGmVkx5hp310kRchRojrdQdcBGo=;
-	b=hseXP9uXbir6O6/kdbOC72N4aKvhbOOQF+8cbayQ4bMZSHUixcdfI2reDkYgdrlWv/Sf
-	 56IWTtbvgxLZpBzsCdmTwIKbnTqDbhyvKIlLo3Fib7i6z51Y0Ve562peGiNHYgLLcfW/l
-	 GWERF7Fm98aR2luU/6SDcw/Sfx1Ua3ey0Y7rwn1C8LYcNrUrCFmBnNbtQpkKer0zdAUuW
-	 5DlCPgIedIaUyJp2GiKPlfHp/lAqrxdArfMU774Q5xOWItQjb+n5cJ8gSdCYXpr652+tZ
-	 QqUt3KKUyips7f5FPmGQTyNieGPVYPAykprweK+0AFIDbrj8cjZ+tPDWb5EWAeYjKJQ==
+	 Date:Message-ID:X-Mailer:In-Reply-To:References:MIME-Version:
+	 Content-Transfer-Encoding;
+	bh=vrKuO2D1JP4mdnml9ASPpTlclUAIMoHvROGX7/k5V0k=;
+	b=D2I1GStfzjfbmZmHvliyAfFZMuytqErvloyHvASqa4NtLmyMzpCR+gF28HzJlzpfsjXF
+	 937ORuARl69Ei2EIpuRWmmRVAFAQAW/+VCRj0hH+hTOTXeMLujkVWDj/8SKmSHuZI1i3J
+	 0dgk2ZiGHypuHXGAQT7jiVJ6W9xmwmClNDEmV0rrOEwH29arz3nQNPUXGU2iVLDN1Qhcz
+	 BFTJWqvtPvTgF/kbfteS0qRn9OoF/N8pCYPTNZ0/yv59jliFCzo26VrH/of3m5aqO4m98
+	 8HOPIezf7GkCVALumxRBp942nrVaUva2VAOHwpbGHhNY3eMHWSSOaozWrZIFjmg7N/A==
 ARC-Authentication-Results: i=1; smtp.subspace.kernel.org; 
 	dmarc=pass header.from=gmail.com;
 	spf=pass smtp.mailfrom=gmail.com;
-	dkim=pass header.d=gmail.com header.i=@gmail.com header.a=rsa-sha256 header.s=20260707 header.b=GvtZLdGd;
-	arc=none smtp.remote-ip=209.85.208.50
-Received: from mail-ed1-f50.google.com (mail-ed1-f50.google.com [209.85.208.50])
+	dkim=pass header.d=gmail.com header.i=@gmail.com header.a=rsa-sha256 header.s=20260707 header.b=BwKtwE6x;
+	arc=none smtp.remote-ip=209.85.216.42
+Received: from mail-pj1-f42.google.com (mail-pj1-f42.google.com [209.85.216.42])
 	(using TLSv1.3 with cipher TLS_AES_128_GCM_SHA256 (128/128 bits)
 	 key-exchange X25519 server-signature ECDSA (prime256v1) server-digest SHA256)
 	(No client certificate requested)
-	by smtp.subspace.kernel.org (Postfix) with ESMTPS id D249A606A331
-	for <linux-wireless@vger.kernel.org>; Mon,  9 Nov 2026 17:44:32 +0000 (UTC)
-DMARC-Filter: OpenDMARC Filter v1.4.2 smtp.subspace.kernel.org D249A606A331
+	by smtp.subspace.kernel.org (Postfix) with ESMTPS id 9AAA8606A31C
+	for <linux-wireless@vger.kernel.org>; Mon,  9 Nov 2026 18:20:19 +0000 (UTC)
+DMARC-Filter: OpenDMARC Filter v1.4.2 smtp.subspace.kernel.org 9AAA8606A31C
 Authentication-Results: smtp.subspace.kernel.org; dmarc=pass (p=none dis=none) header.from=gmail.com
 Authentication-Results: smtp.subspace.kernel.org; spf=pass smtp.mailfrom=gmail.com
 Authentication-Results: smtp.subspace.kernel.org;
-	dkim=pass (2048-bit key) header.d=gmail.com header.i=@gmail.com header.a=rsa-sha256 header.s=20260707 header.b=GvtZLdGd
-Received: by mail-ed1-f50.google.com with SMTP id 4fb4d7f45d1cf-6afbc363efeso1649232a12.3
-        for <linux-wireless@vger.kernel.org>; Mon, 09 Nov 2026 09:44:32 -0800 (PST)
+	dkim=pass (2048-bit key) header.d=gmail.com header.i=@gmail.com header.a=rsa-sha256 header.s=20260707 header.b=BwKtwE6x
+Received: by mail-pj1-f42.google.com with SMTP id 98e67ed59e1d1-3ad2b3b1c02so778836a91.1
+        for <linux-wireless@vger.kernel.org>; Mon, 09 Nov 2026 10:20:19 -0800 (PST)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=gmail.com; s=20260707; t=1794246271; x=1794851071; darn=vger.kernel.org;
-        h=content-transfer-encoding:mime-version:message-id:date:subject:cc
-         :to:from:from:to:cc:subject:date:message-id:reply-to:content-type;
-        bh=ZIgtguijiaaTJtLuFGmVkx5hp310kRchRojrdQdcBGo=;
-        b=GvtZLdGdMA/+Wz3RMcQQ24XuloJXS3yOcdE4/lR/9y6C6dOfk5+VNBNaZjTYB4GRNN
-         GFQ+NIB8yI7xrR1fW4sFwnO9+Bfn1eYD0Uaewe36a1ujkSLskQ9nuHeC/1x9OkL5Xv7P
-         higM68vobBFKo2c0CZ0gjE+NaSJbG1dDSBmXDjr63dev0i9Yw+U4MqcP5wFmZV8IwVQa
-         mmL9tR9PHSnAJTSxWeor87zif+AH9zr0NmoCav51sH+dlALJh0K7/evEUoXcpFAFxbEE
-         k6vJPKhMfWM8XD0+zcxRoELEKjeNET0WszjPLjpZosRTY0t7yU8L1Yid+17j6QPv/UXU
-         G+SQ==
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=1e100.net; s=20260707; t=1794246271; x=1794851071;
-        h=content-transfer-encoding:mime-version:message-id:date:subject:cc
-         :to:from:x-gm-gg:x-gm-message-state:from:to:cc:subject:date
+        d=gmail.com; s=20260707; t=1794248419; x=1794853219; darn=vger.kernel.org;
+        h=content-transfer-encoding:mime-version:references:in-reply-to
+         :message-id:date:subject:cc:to:from:from:to:cc:subject:date
          :message-id:reply-to:content-type;
-        bh=ZIgtguijiaaTJtLuFGmVkx5hp310kRchRojrdQdcBGo=;
-        b=qFDiwMAbmnmMpPPc+moWBM6BBra7rrnQSnXyqT/6/SufpVJCTXDobjeHVdXGrIDMbt
-         puYz+xQ2+7iScaCVXTtEn2Vi3HGwzn95O18L3pd3OTe8cW25H5Fdoffh7qwLsj9xuLoV
-         WXjqAAZqqcZAreKJlyzIgr/lnbJokRLeudkZaeIFWjxgj6/zM/kPfiBFkzp5GlmT0bO3
-         fIwoc7GYSkO7Orjyp2yZRrJwR0d5f7LmWM8pgPBsGxRKXwFW1jhIFdGSOrK++VTAdStd
-         I6eL8uO64pENzS/ld3UaCaakfdP6dxjrm7l5OZX1vhsTZk99S+UM3VxebjrnFZznyE8p
-         QEuA==
-X-Gm-Message-State: APuU4Z+Iv+TkEa9pEOWI0KE+IEAG0PdZfeWa6Is4t+J/VNNBlAWDq0fi
-	1iLEDxTfeSjjxcV+p/LxmFEa3EV1w8kZecLlW+/HdGd9IYnFKfg/u6TQ3xQwBauq
-X-Gm-Gg: AYBFou3ELnXboIOoV8wZFzsEKD/2qmZYT0z/0SXYNNGTahvfnJ/8Vn0iexJEL033ho1
-	gHQAH9QmUXR/tOYW+aDIorF6BL98AxFDAWMZ1KF0bI2zsp1fDuGZfc12IEOsaxdFdnB0F/qW0dI
-	Jr+ccPyJu9Ry+tj1Izpi892b9AKwIlZzNP2n3INLd+yDZxZ238i0UlHJWIi/ubFVs20lq0Qp9LD
-	iqI0xy5c3UcDMDV45awB0qIBdx/3znp/vTtT0iyOKTCRjALgwkgd3Xiw3FnwJbiVjhMlTfKXgZC
-	rHD+oAu9o5BSBTZmCFVRmRXtMdg8ZMTENdqPj78UgT0GA4LxYortF0y9E5YelSnXIjZK2W976rx
-	I/asgQS8pu8yy5YzsB4p0AaY0nr95AqAVCD2eFq2lxMjeNL3k7z77PxmhcWmWtYLo5k6Lp5ShxH
-	lbIqiiT00NvWXnlj5Dvpk+LKq/S/3HazC3KxM9Oj21IPPJSiBK8wCHtnidZ9PfOVWS9QrHQRqv+
-	lSJRjByhZNmrh2ohpN15z0zLv89eayfnboehl5m7J4HJ9Q/S3847PCCI0j1EjQkAMPNAYFQzygc
-	tXIk0yTYgkT5cJ0ebNXokVmKon3TnlvCe0vbg6XjrJi/mHm0WvXkZQDHm4TspByWNHWapw==
-X-Received: by 2002:a05:6402:360f:b0:6b1:ce0f:eb6b with SMTP id 4fb4d7f45d1cf-6b756aea03fmr291538a12.31.1794246271039;
-        Mon, 09 Nov 2026 09:44:31 -0800 (PST)
-Received: from localhost.localdomain ([80.248.138.39])
-        by smtp.gmail.com with ESMTPSA id 4fb4d7f45d1cf-6b721e3c8bfsm1902499a12.3.2026.11.09.09.44.30
+        bh=vrKuO2D1JP4mdnml9ASPpTlclUAIMoHvROGX7/k5V0k=;
+        b=BwKtwE6xchZs54QWCq084EsXrBLCEuzQGQFzO4Gx/s8yzwYQUzbBYjDFo6ac2B65/Q
+         /pFAeWu/UFBMv9WjMK3PXo724ViUxMEcVqFsyjZF9l3+U08wQONUZ5Q5z4OqthyVZoSr
+         cV2QMAKnDePYI2ahCWr7Mk5p304Y4vWQStVNeAIbNT43gtXXJ2x1rx5qXkPPTY4+5vB2
+         LSfGRR3ALAD3qXc/LSPfzVtDgGdTwmmA0tkdOGB0DxnVFsG0QfNxUi/YSrMhlCpw0Pu7
+         rUTjWGSLJ2BIJKJQDXrAA3T2HNL/fkFwbOb3rylq/rRrEJ3zjtTh0URabPJZsmQiDwAR
+         8X8w==
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+        d=1e100.net; s=20260707; t=1794248419; x=1794853219;
+        h=content-transfer-encoding:mime-version:references:in-reply-to
+         :message-id:date:subject:cc:to:from:x-gm-gg:x-gm-message-state:from
+         :to:cc:subject:date:message-id:reply-to:content-type;
+        bh=vrKuO2D1JP4mdnml9ASPpTlclUAIMoHvROGX7/k5V0k=;
+        b=W4cvxzjKco9W+fqcDUyVbyaH2G73cgrZam4eepPpP/1u8S5zWps28VTGZ++uXpFf39
+         kTWu2+OrDdxOLvB6uUgnSEv3UyLLLDqwrNoVIvuCULC1cAAJX2WC1iRb1j9r9gVE40mX
+         uRWUpOfheeRu4I/h/WLM/DYnbzzEao/g9VJLza+7diN9vadMo3UBEy1ACJOXiHQglJL0
+         LXDYaWQv0ry5uq8ttv5bH2ZwUn5XJq3GSRpFhyP1p29HZsBaDE1aXs3cYFLe+CbaDM3d
+         w11V60cN+AIxuQKayLPvDjhiQrMhFtRpXyXFb0pe397dsi/1mVxSEBX1Tz1wUdo3ercD
+         4jEA==
+X-Gm-Message-State: APuU4Z/pxxpHov1IPpf33kj9uQq+FSxZPPgTI8cpIce789iZC4/+YgDa
+	fe9JcQC7oLpPFD/YVmSretpOQtKYGRHas1kwwCVllGA1m+iP+mI2JLJH
+X-Gm-Gg: AYBFou3M+JxYn9gmVhHX6HNKlX/xPSKDUN9eALu5YAMnQVU191GavMaURQNvzSmUb+g
+	uXLysuX79ZAcuCLdDDSaxAZgHNNGhwr2hDChQmSGiJlz7Wsz7Rw0wmy/5zmeookuEXGOkeHYkn4
+	oeBy2F29FIRAnEwiH5jQ1Yzcs7mLdGSjhukeeDyomWkFHKkxTB2b3qd3MY/J3o20WMjJzkBC5mP
+	TKl4XLslvHQgP5qK2CfRfrYZshGF/HXZuM6PMt6VqDgZ/w2x4G57WZmY7d/ej4w1BrQIuqppOJO
+	ZHB1cvnn9TIpHEVRriFiK7ea7tM3ER8sxKENoSNv99bqW6Enjx0v3x1wO6MDE5Y673BXlUJKasR
+	9eWwm4qRnB0qLHRnWoJ1J7Cn2u2fKCdSdKfTHMa1Tw2YUn3vm/mrIz2lNE704NfLgVHQv/LgkoO
+	UJ9NGJefr+OfmE/E01h3Ivg3ftvZ5K8ElqM378TY8r1X7/pZsuNdDPApUqMivwck0Aedo9tfoAL
+	93AOnOpir0fkglHyh8VJqbs6KLHCeVGFbWgKrpSGz8xEAdwO2WmMXaRKvS3sDwX0yYCGkYSCAN9
+	R1DN2/8VK9XcFJUSwsTEyuNOov4Hmr2WgCO8dS60Qi9BhFULZFg6U9efO06ChgUytAKS6wcx+pW
+	uOAz6FXC5TRqdzyF9XT7K79YHbol0fg==
+X-Received: by 2002:a17:90b:4a0f:b0:3ab:1b19:78f0 with SMTP id 98e67ed59e1d1-3b166cc8442mr517367a91.41.1794248418870;
+        Mon, 09 Nov 2026 10:20:18 -0800 (PST)
+Received: from localhost.localdomain ([59.153.103.50])
+        by smtp.gmail.com with ESMTPSA id 98e67ed59e1d1-3b16792aabfsm423189a91.12.2026.11.09.10.20.16
         (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
-        Mon, 09 Nov 2026 09:44:30 -0800 (PST)
-From: "Kordian Chmielewski (mlody1212)" <kudzo51@gmail.com>
-To: linux-wireless@vger.kernel.org
-Cc: arend.vanspriel@broadcom.com,
-	brcm80211@lists.linux.dev,
-	brcm80211-dev-list.pdl@broadcom.com,
-	"Kordian Chmielewski (mlody1212)" <kudzo51@gmail.com>
-Subject: [PATCH wireless-next] wifi: brcmfmac: delete the flowrings of an AP that stops or goes down
-Date: Mon,  9 Nov 2026 18:44:10 +0100
-Message-ID: <20261109174410.1530720-1-kudzo51@gmail.com>
-X-Mailer: git-send-email 2.56.0
+        Mon, 09 Nov 2026 10:20:18 -0800 (PST)
+From: Zeshan Ahmed Nobin <zeshanahmednobin@gmail.com>
+To: Luka Gejak <luka.gejak@linux.dev>
+Cc: linux-wireless@vger.kernel.org,
+	linux-kernel@vger.kernel.org,
+	Ping-Ke Shih <pkshih@realtek.com>,
+	Kalle Valo <kvalo@kernel.org>
+Subject: Re: [PATCH RESEND rtw-next v2 1/2] wifi: rtw88: 8822c: fix out-of-bounds access in cck_pd_set
+Date: Tue, 10 Nov 2026 00:20:01 +0600
+Message-ID: <20261109182001.29076-1-zeshanahmednobin@gmail.com>
+X-Mailer: git-send-email 2.43.0
+In-Reply-To: <0FD97102-7E9C-47DA-9B52-7F7A837E2924@linux.dev>
+References: <20261108182837.682661-1-zeshanahmednobin@gmail.com> <20261108182837.682661-2-zeshanahmednobin@gmail.com> <0FD97102-7E9C-47DA-9B52-7F7A837E2924@linux.dev>
 X-Mailing-List: linux-wireless@vger.kernel.org
 List-Id: <linux-wireless.vger.kernel.org>
 List-Post: <mailto:linux-wireless@vger.kernel.org>
@@ -96,81 +101,34 @@ Precedence: list
 MIME-Version: 1.0
 Content-Transfer-Encoding: 8bit
 
-An access point has a flowring per destination: one for each station
-and one for its broadcast and multicast frames. The ring of a station is
-deleted when the station leaves, by brcmf_proto_delete_peer() with its
-address, but nothing deletes the broadcast ring, nor any ring of an AP
-that stops: brcmf_cfg80211_stop_ap() deletes none, and on the link-down
-event of an AP delete_peer gets the address of the event, which names no
-station. A new start of the same interface then keeps the old rings.
+Hi Luka,
 
-Seen with a BCM43684 whose AP OpenWrt starts twice at boot, 1.2 s apart:
-the firmware never read again the broadcast ring opened as the first
-start ended. ARP and every other broadcast of that BSS were lost, and
-once the ring was full flow control stopped the interface for all of
-its stations, until the ring was deleted hours later by a change of the
-interface type; the firmware then served new rings normally. The vendor
-driver deletes all the rings of an interface on a link-down event.
+On Mon, Nov 09, 2026 at 07:41:46 +0100, Luka Gejak wrote:
+> As far as I can see bw doesn't have to come from the chip here, since
+> rtw_set_channel() programs the same value it stores in hal. So maybe
+> this could just be
+>
+>         bw = rtwdev->hal.current_band_width;
+>
+> CCK PD only runs on 2.4 GHz, so that seems to always be 20 or 40 MHz and
+> the check could go. Or is there a reason to read it from the chip that I
+> missed?
 
-Do the same, and when the AP stops: brcmf_flowring_delete_peer() without
-a peer now deletes every ring of the interface.
+I couldn't find one. Apart from the BB init table, bits 3:2 of 0x9b0
+are only written by rtw8822c_set_channel_bb(), with the bandwidth that
+rtw_set_channel() also stores in hal. I also checked it on my
+RTL8822CE with Ubuntu's 6.8 kernel. Its firmware does hardware scans,
+and at 40 MHz on 2.4 GHz, hal and the register matched at every
+cck_pd_set call, across 10 scans and a reconnect. So v3 will take bw
+from hal and drop the check.
 
-Fixes: 9a1bb60250d2 ("brcmfmac: Adding msgbuf protocol.")
-Signed-off-by: Kordian Chmielewski (mlody1212) <kudzo51@gmail.com>
----
- .../broadcom/brcm80211/brcmfmac/cfg80211.c         | 14 +++++++++++++-
- .../broadcom/brcm80211/brcmfmac/flowring.c         |  5 +++--
- 2 files changed, 16 insertions(+), 3 deletions(-)
+One consequence: a chip that drops off the PCIe bus still reads nrx
+back as 3. When the level then changes, rtw8822c_phy_cck_pd_set_reg()
+gets past its WARN_ON(), since bw is now valid, and does the zero-mask
+access to register 0x0; forcing nrx to 3 confirmed it. So on PCIe,
+patch 2 is then what handles a dead chip. In v3 I'll update its
+message for that and add Cc: stable to it as well. Its code doesn't
+change; is it fine to keep your Reviewed-by on it?
 
-diff --git a/drivers/net/wireless/broadcom/brcm80211/brcmfmac/cfg80211.c b/drivers/net/wireless/broadcom/brcm80211/brcmfmac/cfg80211.c
-index b0eaf9641..91184bdcf 100644
---- a/drivers/net/wireless/broadcom/brcm80211/brcmfmac/cfg80211.c
-+++ b/drivers/net/wireless/broadcom/brcm80211/brcmfmac/cfg80211.c
-@@ -5480,6 +5480,11 @@ static int brcmf_cfg80211_stop_ap(struct wiphy *wiphy, struct net_device *ndev,
- 		/* first to make sure they get processed by fw. */
- 		msleep(400);
- 
-+		/* the BSS goes away and its rings with it: nothing else
-+		 * deletes the one for broadcast and multicast frames
-+		 */
-+		brcmf_proto_delete_peer(ifp->drvr, ifp->ifidx, NULL);
-+
- 		if (profile->use_fwauth != BIT(BRCMF_PROFILE_FWAUTH_NONE)) {
- 			struct cfg80211_crypto_settings crypto = {};
- 
-@@ -6750,7 +6755,14 @@ brcmf_notify_connect_status(struct brcmf_if *ifp,
- 	    (e->event_code == BRCMF_E_DEAUTH_IND) ||
- 	    (e->event_code == BRCMF_E_DISASSOC_IND) ||
- 	    ((e->event_code == BRCMF_E_LINK) && (!e->flags))) {
--		brcmf_proto_delete_peer(ifp->drvr, ifp->ifidx, (u8 *)e->addr);
-+		/* the address of a link event of an AP names no station:
-+		 * the BSS is down, and so are all of its rings
-+		 */
-+		if (e->event_code == BRCMF_E_LINK && brcmf_is_apmode(ifp->vif))
-+			brcmf_proto_delete_peer(ifp->drvr, ifp->ifidx, NULL);
-+		else
-+			brcmf_proto_delete_peer(ifp->drvr, ifp->ifidx,
-+						(u8 *)e->addr);
- 	}
- 
- 	if (brcmf_is_apmode(ifp->vif)) {
-diff --git a/drivers/net/wireless/broadcom/brcm80211/brcmfmac/flowring.c b/drivers/net/wireless/broadcom/brcm80211/brcmfmac/flowring.c
-index 35cbcea0a..b9570d638 100644
---- a/drivers/net/wireless/broadcom/brcm80211/brcmfmac/flowring.c
-+++ b/drivers/net/wireless/broadcom/brcm80211/brcmfmac/flowring.c
-@@ -432,9 +432,10 @@ void brcmf_flowring_delete_peer(struct brcmf_flowring *flow, int ifidx,
- 	u16 flowid;
- 	bool sta;
- 
--	sta = (flow->addr_mode[ifidx] == ADDR_INDIRECT);
-+	/* without a peer: every ring of the interface */
-+	sta = (flow->addr_mode[ifidx] == ADDR_INDIRECT) || !peer;
- 
--	search = flow->tdls_entry;
-+	search = peer ? flow->tdls_entry : NULL;
- 	prev = NULL;
- 	while (search) {
- 		if (memcmp(search->mac, peer, ETH_ALEN) == 0) {
--- 
-2.56.0
-
+Thanks,
+Zeshan Ahmed Nobin
