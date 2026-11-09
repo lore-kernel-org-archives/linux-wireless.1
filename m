@@ -1,59 +1,76 @@
-Authentication-Results: smtp.subspace.kernel.org; arc=none smtp.remote-ip=51.159.59.229
+Authentication-Results: smtp.subspace.kernel.org; arc=none smtp.remote-ip=78.133.224.34
 ARC-Seal: i=1; d=subspace.kernel.org; s=arc20261015; a=rsa-sha256; cv=none;
-	t=1794199308;
-	b=N0mByEnLRiNLZGJG6T1bC/5CusZZTuEkHxZX/XLRqkz1pvpoXPGWqM1Of3lXTSCD+/rW
-	 pQMtdm6CrUcrv183R8nZt7Z565jaqXgxR1t8y42KV7/11oWJN3O+KEtJOhLpvXYlFuNfa
-	 1Ztvfwv57ax3kFQLjcgNamZr371IV4tRCMoBuwWaMSydKZgMGhHsUnwarUiMLQdOAdJ70
-	 0wkrksJojr6dl1hD0bj19WiWwIWnyAa+0E3LQgwC1o7bw32z60MBeHAakgeN0SJxWTxoQ
-	 ELgBxvAYG0siGR/En5Wl1W3o3Hey5knOVvdlErVdnslSGocNKZdYorUbhbCy/fPhC4Q==
+	t=1794200762;
+	b=LrG+DEEu60gJ62vzns+suZGrmEKRK0YtqaHn5WXr5tf1yY7yw2FGKosUn4N+BWIWmOzs
+	 8YH/Z6kAKOq4DRdwxOIEF0uum3MNQ6sCiYT0Fw65sBfM4bp/fX8HEACI+pycPrG3ANgmF
+	 0e10FM85Y90n9GEZcqj87xUzIjkfQ/2fgrRTTZEIXUQNyHeEJpNXiahk1rg7KYhStQ9op
+	 YLCUgBffpmj2YMNgfPSXl3fGEOwwhzwTt0uQ206cqbDieW5ZiklOrT9pcbyG39aXWuNZx
+	 VvAsG/FBocSTQw9IdspRDLu10fZf/+qpupZfv4YzTLCI7UtjDMFiAtdlH9J7SNs3TFw==
 ARC-Message-Signature: i=1; d=subspace.kernel.org; s=arc20261015;
-	a=rsa-sha256; c=relaxed/relaxed; t=1794199308;
-	h=DMARC-Filter:DKIM-Signature:Received:Date:From:To:Cc:Subject:
-	 Message-ID:References:MIME-Version:Content-Type:Content-Disposition:
-	 In-Reply-To;
-	bh=mrLMe/G/LdjTbr8iEkfGFK9QD4NyMpRXAKvb2Ug6hN0=;
-	b=Q3yhK620gFUTL7IxsjqwU2H+3MriL5Ki/o6UNLo7ZeyPtWB+TJPgzM8WR3iFiwpBecEe
-	 8BrDaqQFFr/GvlrXL6vXr05CMPFQHHD0Dax7xfkGea0mDLf/OckY/CaP3RZKDkfexK2Ta
-	 ZRxcYgLrSdAodytoaaupjvcFAZBYZwCHnGGG9Ql33odNFV8Kb4muGKjyLLf8aeV+D/nXE
-	 WOu4fHKcZrvrezbjpjGQc0FA9n6xSqWX8lCWUMlOEy/Od3R7kyzA7mdCg87MLl4vmfK1S
-	 tIMsVCzyRNejmiN1NLu/vZn+1y3rJru1cLLzRLwBBGd8GhxCaWMa6HG03y7G+XMt8Yw==
+	a=rsa-sha256; c=relaxed/relaxed; t=1794200762;
+	h=DMARC-Filter:Received:Received:Date:From:To:cc:Subject:In-Reply-To:
+	 Message-ID:References:User-Agent:MIME-Version:Content-Type;
+	bh=+UmCB5muc9jAh5/NVu2M6h8Lcfrpgge2sRUuegusfl0=;
+	b=0OuLEIAgKXU7KAvFozkBBa3f1Mv708ZV/mV7AuEqlv+uNv4RQQ6oxLuRg70CaAlrcQda
+	 kU+/oTwNmCk/zqSL6WGacdL2KhGdhRBP6iAjFnQhUyBufPVmyVo9NSydGNXPPqZidzbqi
+	 rRT5RxlkRrYqJHI5/17JfeD3gW4i53LeqT0Re6P4C2VxMjHeIXqA+pU6csayT4bFkvyt4
+	 s5t29sErJRBTR2rzX/A9fzsDpt6mOW6cR2LBeiVOQFpMyu9K53GhNNVYS7dh5dhlWNz11
+	 w9LLnBMkuA51LXElSj1oFDY8oQxhCWOlue9fVSB2NQO3QDlefZUvazzMdeLxRtRqsDw==
 ARC-Authentication-Results: i=1; smtp.subspace.kernel.org; 
-	dmarc=pass header.from=1wt.eu;
-	spf=pass smtp.mailfrom=1wt.eu;
-	dkim=pass header.d=1wt.eu header.i=@1wt.eu header.a=rsa-sha256 header.s=mail header.b=aBTmdyBu;
-	arc=none smtp.remote-ip=51.159.59.229
-Received: from mta1.formilux.org (mta1.formilux.org [51.159.59.229])
-	(using TLSv1.3 with cipher TLS_AES_256_GCM_SHA384 (256/256 bits)
-	 key-exchange X25519 server-signature ECDSA (prime256v1) server-digest SHA256)
-	(No client certificate requested)
-	by smtp.subspace.kernel.org (Postfix) with ESMTPS id E6D80606A31C;
-	Mon,  9 Nov 2026 04:41:46 +0000 (UTC)
-DMARC-Filter: OpenDMARC Filter v1.4.2 smtp.subspace.kernel.org E6D80606A31C
-Authentication-Results: smtp.subspace.kernel.org; dmarc=pass (p=none dis=none) header.from=1wt.eu
-Authentication-Results: smtp.subspace.kernel.org; spf=pass smtp.mailfrom=1wt.eu
-Authentication-Results: smtp.subspace.kernel.org;
-	dkim=pass (1024-bit key) header.d=1wt.eu header.i=@1wt.eu header.a=rsa-sha256 header.s=mail header.b=aBTmdyBu
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=1wt.eu; s=mail;
-	t=1794199298; bh=mrLMe/G/LdjTbr8iEkfGFK9QD4NyMpRXAKvb2Ug6hN0=;
-	h=From:Message-ID:From;
-	b=aBTmdyBuv2yw1IoSREkt3NsNU95NiF9/6WhQaeMyobooowb+zooQEa8Wl3PWwC9o+
-	 Y9lKVZNrfblWmUQtN3NXtvUEBuiUe1Stw62DoB7n7e96La3vaSosZ+05g1xO7gCVAo
-	 2O9/RBd87cheaJCOlcvhOFgWKRNKVMc32UVQIVxc=
-Received: from 1wt.eu (ded1.1wt.eu [163.172.96.212])
-	by mta1.formilux.org (Postfix) with ESMTP id 0E739C0954;
-	Mon, 09 Nov 2026 05:41:38 +0100 (CET)
-Date: Mon, 9 Nov 2026 05:41:37 +0100
-From: Willy Tarreau <w@1wt.eu>
-To: Noah Weinberger <NoahWeinberger2003@proton.me>
-Cc: "johannes@sipsolutions.net" <johannes@sipsolutions.net>,
-        "linux-wireless@vger.kernel.org" <linux-wireless@vger.kernel.org>,
-        "netdev@vger.kernel.org" <netdev@vger.kernel.org>,
-        "linux-kernel@vger.kernel.org" <linux-kernel@vger.kernel.org>,
-        "security@kernel.org" <security@kernel.org>
-Subject: Re: [PATCH] wifi: mac80211: use frame link_id when adjusting
- link_sta on reorder release
-Message-ID: <avFPAfirXzsNWOc_@1wt.eu>
-References: <dYfRhWjvPLvnRlGAXf1svcifESfUexTeJbDV20GUaTUimkPONN3lwAZPHogH48gXZluH9txGQ4eJaswHEsWGshWlJxYvRlUPh0172G3W64Q=@proton.me>
+	dmarc=none header.from=orcam.me.uk;
+	spf=none smtp.mailfrom=orcam.me.uk;
+	arc=none smtp.remote-ip=78.133.224.34
+Received: from angie.orcam.me.uk (angie.orcam.me.uk [78.133.224.34])
+	by smtp.subspace.kernel.org (Postfix) with ESMTP id 187C9606A322;
+	Mon,  9 Nov 2026 05:05:59 +0000 (UTC)
+DMARC-Filter: OpenDMARC Filter v1.4.2 smtp.subspace.kernel.org 187C9606A322
+Authentication-Results: smtp.subspace.kernel.org; dmarc=none (p=none dis=none) header.from=orcam.me.uk
+Authentication-Results: smtp.subspace.kernel.org; spf=none smtp.mailfrom=orcam.me.uk
+Received: by angie.orcam.me.uk (Postfix, from userid 500)
+	id B42DD92009C; Mon,  9 Nov 2026 06:05:57 +0100 (CET)
+Received: from localhost (localhost [127.0.0.1])
+	by angie.orcam.me.uk (Postfix) with ESMTP id B0D2992009B;
+	Mon,  9 Nov 2026 05:05:57 +0000 (GMT)
+Date: Mon, 9 Nov 2026 05:05:57 +0000 (GMT)
+From: "Maciej W. Rozycki" <macro@orcam.me.uk>
+To: David Laight <david.laight.linux@gmail.com>
+cc: Christian Brauner <brauner@kernel.org>, 
+    Geert Uytterhoeven <geert@linux-m68k.org>, linux-fsdevel@vger.kernel.org, 
+    Linus Torvalds <torvalds@linux-foundation.org>, 
+    Jann Horn <jannh@google.com>, Josef Bacik <josef@toxicpanda.com>, 
+    Chris Mason <mason@kernel.org>, Jeff Layton <jlayton@kernel.org>, 
+    NeilBrown <neil@brown.name>, Eric Dumazet <edumazet@kernel.org>, 
+    Thomas Gleixner <tglx@kernel.org>, Al Viro <viro@zeniv.linux.org.uk>, 
+    Jonathan Corbet <corbet@lwn.net>, Christoph Hellwig <hch@lst.de>, 
+    Greg Kroah-Hartman <gregkh@suse.de>, 
+    Joel Granados <joel.granados@kernel.org>, Kees Cook <kees@kernel.org>, 
+    Jan Kara <jack@suse.cz>, Jan Kara <jack@suse.com>, 
+    linux-kernel@vger.kernel.org, linux-nfs@vger.kernel.org, 
+    linux-acpi@vger.kernel.org, linux-kselftest@vger.kernel.org, 
+    linux-s390@vger.kernel.org, linux-scsi@vger.kernel.org, 
+    linux-um@lists.infradead.org, linux-wireless@vger.kernel.org, 
+    linuxppc-dev@lists.ozlabs.org, netdev@vger.kernel.org, 
+    ntfs3@lists.linux.dev, platform-driver-x86@vger.kernel.org, 
+    coreteam@netfilter.org, kexec@lists.infradead.org, 
+    linux-pci@vger.kernel.org, linux-sound@vger.kernel.org, 
+    netfilter-devel@vger.kernel.org, dri-devel@lists.freedesktop.org, 
+    ibm-acpi-devel@lists.sourceforge.net, jfs-discussion@lists.sourceforge.net, 
+    linux-alpha@vger.kernel.org, linux-arm-kernel@lists.infradead.org, 
+    linux-cifs@vger.kernel.org, linux-fbdev@vger.kernel.org, 
+    linux-hwmon@vger.kernel.org, linux-mm@kvack.org, linux-sh@vger.kernel.org, 
+    linux-usb@vger.kernel.org, samba-technical@lists.samba.org, 
+    sparclinux@vger.kernel.org, linux-m68k@lists.linux-m68k.org, 
+    linux-doc@vger.kernel.org, linux-serial@vger.kernel.org, 
+    linux-atm-general@lists.sourceforge.net, Takashi Iwai <tiwai@suse.de>, 
+    linux-input@vger.kernel.org, linux-raid@vger.kernel.org, 
+    linux-ext4@vger.kernel.org, linux-modules@vger.kernel.org, 
+    linux-debuggers@vger.kernel.org, Chuck Lever <cel@kernel.org>
+Subject: Re: [PATCH RESEND v2 14/23] proc: let procfs copy in writes before
+ pinning the entry
+In-Reply-To: <20261108185953.28054fb3@pumpkin>
+Message-ID: <alpine.DEB.2.21.2611090504170.17804@angie.orcam.me.uk>
+References: <20261104-work-procfs-core-v2-14-76ace653a773@kernel.org> <CAMuHMdVfakapgBK6TBhO1iWX8qzvLDk8jzRS=t2MVa5G=MCUeg@mail.gmail.com> <20261107-akteur-gemieden-eckdaten-21304d085e35@brauner> <20261108185953.28054fb3@pumpkin>
+User-Agent: Alpine 2.21 (DEB 202 2017-01-01)
 X-Mailing-List: linux-wireless@vger.kernel.org
 List-Id: <linux-wireless.vger.kernel.org>
 List-Post: <mailto:linux-wireless@vger.kernel.org>
@@ -63,26 +80,20 @@ List-Unsubscribe: <mailto:linux-wireless+unsubscribe@vger.kernel.org>
 List-Owner: <mailto:linux-wireless+owner@vger.kernel.org>
 Precedence: list
 MIME-Version: 1.0
-Content-Type: text/plain; charset=us-ascii
-Content-Disposition: inline
-In-Reply-To: <dYfRhWjvPLvnRlGAXf1svcifESfUexTeJbDV20GUaTUimkPONN3lwAZPHogH48gXZluH9txGQ4eJaswHEsWGshWlJxYvRlUPh0172G3W64Q=@proton.me>
+Content-Type: text/plain; charset=US-ASCII
 
-Hello,
+On Sun, 8 Nov 2026, David Laight wrote:
 
-On Sun, Nov 08, 2026 at 09:35:44PM +0000, Noah Weinberger wrote:
-> Hello,
+> > > While at it, I think it would be good to use this conversion as an
+> > > opportunity to replace "char *" by "void *", which will probably let
+> > > you drop several casts from users.  
+> > 
+> > So I tried that too. The thing is it drops exactly one u8 * cast in
+> > ntfs3's label write. 
 > 
-> In ieee80211_rx_handlers(), when frames are released from the BA reorder
-> buffer on timeout, rx->link_sta is re-fetched using the *previous*
-> rx->link_id instead of the frame's own status->link_id. For a legacy
-> (non-MLO) client on an MLO access point,
-> ieee80211_release_reorder_timeout() passes link_id = -1 and
-> ieee80211_rx_data_set_sta() never updates rx->link_id, so the adjust
-> block evaluates rcu_dereference(rx->sta->link[-1]).
-(...)
+> Since char is now unsigned that one isn't even needed...
 
-Note, in the future please do not Cc security@ once public lists are
-already in Cc, as there is no need for private coordination anymore.
+ Please excuse me missing the context, but what circumstances does your 
+claim refer to?
 
-thanks,
-Willy
+  Maciej
