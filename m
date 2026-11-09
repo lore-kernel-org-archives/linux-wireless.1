@@ -1,53 +1,93 @@
-Authentication-Results: smtp.subspace.kernel.org; arc=none smtp.remote-ip=100.103.45.18
+Authentication-Results: smtp.subspace.kernel.org; arc=none smtp.remote-ip=119.15.109.137
 ARC-Seal: i=1; d=subspace.kernel.org; s=arc20261015; a=rsa-sha256; cv=none;
-	t=1794256157;
-	b=QAPtLoHXXbGpSovuNBrOPxGQhi+3WsTKh+glf904TWEgcn4X1YN3YVoP8ctXELOxlYe7
-	 Ckx9rOUsZzFF7yq33lR6AtgLTYTh3/ckWvi4sgRWi0VPd+DAwyQjE8qwpzROZyLyYqt5O
-	 TUt58DSOB1vW3zsuhQc+eF/kFu3UiypHJuOidxngbf+iYYUCmpk7WkhbUWQ5rWgYaMrps
-	 LyHggQH/Q/e6X3khp1cUN58RA0QmWDdyybCgLjeVrZ6WYSvpBfmA77mMUNYQrrNCItww9
-	 HXaIs42TIFupxN6F5MYV7r5V4O/yDcTyDis/ehG6DLpB7H+mlARTgCEf5au3XSva1Xw==
+	t=1794256192;
+	b=qtqn8zEMtCO+yDCGcnGDPRsqpkgRnuEBrEGaKSSsm6rns/4uHeGg29G4ok+DrCQ+XZyv
+	 Wr6o57N9wt7dAIbrWcKSiWyjkHQuTQDrRtSZbOYUhnv0dyMXCPobhgUCr8wkZjQdnbo8E
+	 k1UDN3EtFiVZCF8BQZnS5Dd/HoxKH41XmtCgAHqfv/ems/EBhvimnl+rRyKR4xMMa3zT4
+	 eb1+DTvvAk5wHFVUq/G2YHXodbmipqd7IireNjtFU907hjUw22EYc2IMBnBMKRSMf6yGp
+	 TnrCXhexKsFnuEk8nWcr5PrPsf9Sx1ydrt0r9qrYWd/YdrMihE8AGOJoRDElYdgFnrQ==
 ARC-Message-Signature: i=1; d=subspace.kernel.org; s=arc20261015;
-	a=rsa-sha256; c=relaxed/relaxed; t=1794256157;
-	h=Received:DKIM-Signature:Date:From:To:Cc:Subject:Message-ID:
-	 References:MIME-Version:Content-Type:Content-Disposition:In-Reply-To;
-	bh=RJXpVdEQQ4k4fP/MJ0YE0BzV6lM556s8EF58JGKSn74=;
-	b=bPnj72VMuI9T2KoA5kXo0qEL3uGOq+RZ4ICEO4UeirfRMDPnr7kWk76wLiDoUlVA0HaR
-	 /iuT5YeAFMxDuUda8GjO9JdR7F0ge2uAPLOrVbtRd/AasKgbB+1HAOcbdH9ig2UiTEYDe
-	 PequDu+0qK6qMh6Mby8CoYc+zyJfQaTkBk3a1Wd5rgVwWOaBTRrg9Df8B+C0rkhY5Mh3M
-	 sDp6xiz4f887LUHZaswbt52bxH45Zx5yjLettQc1w2FVyMlcARS4UsZlR2feiO9RBPinl
-	 kKBjt9/xbxVh/8wcM6SgviWNwbJaMxGh0dleNLU5dSmZJx6a0NVx3cw7mYShb8tMO1A==
+	a=rsa-sha256; c=relaxed/relaxed; t=1794256192;
+	h=DMARC-Filter:Received:DKIM-Signature:Message-ID:Subject:From:To:Cc:
+	 Date:In-Reply-To:References:Autocrypt:Content-Type:
+	 Content-Transfer-Encoding:User-Agent:MIME-Version;
+	bh=iJ8ghNK6rfbISz12CEB99651jKjNR6sV3+bHiNah96I=;
+	b=wHXP7rWuKYgOpEGTJvToCzBx3GpbIi6LrAp2T15GAMdkZDzOw6RsZHKSZtgrcop3Vhea
+	 7cG2k9fI9weKzgQxwmzX4eLkwnwBhIysgmgTEo9mKle3qzpd8Kjugyr7LgRkR9Ba21Lw9
+	 YhHZ5iI3+6s452e2k7B4qh5sIv2BqD6vvyBt96xQGQxFEj8iVQ5fM0wBfcdEbGOoUi/nz
+	 FRxKL+vsYzj6MoFlQvOOYNkYIN0r9Q7sBh+dkXKeDb8aWY/mtZBcHlEBAcV4Q2ewUQBPI
+	 h24k420UNWQLDUvIFT/SQY8qQMfW2UPiwe788ZT/a0o0oq/y+oaNXpNtp7xCHpLlzzA==
 ARC-Authentication-Results: i=1; smtp.subspace.kernel.org; 
-	dkim=pass header.d=linuxfoundation.org header.i=@linuxfoundation.org header.a=rsa-sha256 header.s=korg header.b=jPtiJpkU;
-	arc=none smtp.remote-ip=100.103.45.18
-Received: from smtp.kernel.org (quasi.space.kernel.org [100.103.45.18])
+	dmarc=pass header.from=d-silva.org;
+	spf=pass smtp.mailfrom=d-silva.org;
+	dkim=pass header.d=d-silva.org header.i=@d-silva.org header.a=rsa-sha256 header.s=2025a header.b=Wd2recMf;
+	arc=none smtp.remote-ip=119.15.109.137
+Received: from www.nmnhosting.com (watt.d-silva.org [119.15.109.137])
 	(using TLSv1.3 with cipher TLS_AES_256_GCM_SHA384 (256/256 bits)
-	 key-exchange X25519 server-signature ECDSA (prime256v1))
+	 key-exchange X25519 server-signature ECDSA (prime256v1) server-digest SHA256)
 	(No client certificate requested)
-	by smtp.subspace.kernel.org (Postfix) with ESMTPS id 042E6606A333;
-	Mon,  9 Nov 2026 20:29:16 +0000 (UTC)
+	by smtp.subspace.kernel.org (Postfix) with ESMTPS id 7FB56606A321;
+	Mon,  9 Nov 2026 20:29:50 +0000 (UTC)
+DMARC-Filter: OpenDMARC Filter v1.4.2 smtp.subspace.kernel.org 7FB56606A321
+Authentication-Results: smtp.subspace.kernel.org; dmarc=pass (p=reject dis=none) header.from=d-silva.org
+Authentication-Results: smtp.subspace.kernel.org; spf=pass smtp.mailfrom=d-silva.org
 Authentication-Results: smtp.subspace.kernel.org;
-	dkim=pass (1024-bit key, unprotected) header.d=linuxfoundation.org header.i=@linuxfoundation.org header.a=rsa-sha256 header.s=korg header.b=jPtiJpkU
-Received: by smtp.kernel.org (Postfix) with ESMTPSA id 384B21F0089F;
-	Mon,  9 Nov 2026 20:29:16 +0000 (UTC)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=linuxfoundation.org;
-	s=korg; t=1794256156;
-	bh=RJXpVdEQQ4k4fP/MJ0YE0BzV6lM556s8EF58JGKSn74=;
-	h=Date:From:To:Cc:Subject:References:In-Reply-To;
-	b=jPtiJpkUnwmbTrw3uDWTqdZKfAzJA7qCw2SsFjA+wc5UpvWwtFwVOz5JbGNu0cBon
-	 +pmCRCzP9IbGRqlxuZ3pl8N2b09yw0a8fV9eDAYaRR56XdvQjqVCSwTtLwHkltDfF5
-	 cJUtwjSkjKnAgWbG8msbkf592oo0XvK6Tq1MCjro=
-Date: Mon, 9 Nov 2026 15:29:12 -0500
-From: Greg KH <gregkh@linuxfoundation.org>
-To: Noah Weinberger <NoahWeinberger2003@proton.me>
-Cc: "johannes@sipsolutions.net" <johannes@sipsolutions.net>,
-	"linux-wireless@vger.kernel.org" <linux-wireless@vger.kernel.org>,
-	"netdev@vger.kernel.org" <netdev@vger.kernel.org>,
-	"linux-kernel@vger.kernel.org" <linux-kernel@vger.kernel.org>,
-	"security@kernel.org" <security@kernel.org>
-Subject: Re: [PATCH] wifi: nl80211: clear wdev before erroring out of station
- dump
-Message-ID: <2026110952-litter-haziness-bc23@gregkh>
-References: <ltwfLZuSH-PEFdqMECEU8rHwZCjSL5--7RG-qrW8a-Fwezdgpb1QYiDm-8aCRNIgwY-laqSmHJWAqV4uI092NLEudhWEABdd3B5iGsV4jJ8=@proton.me>
+	dkim=pass (2048-bit key, unprotected) header.d=d-silva.org header.i=@d-silva.org header.a=rsa-sha256 header.s=2025a header.b=Wd2recMf
+Received: from hawking.lan (ntp.lan [10.0.1.1])
+	by www.nmnhosting.com (Postfix) with ESMTPSA id A779A401D8;
+	Tue, 10 Nov 2026 07:29:38 +1100 (AEDT)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=d-silva.org; s=2025a;
+	t=1794256178;
+	h=from:from:reply-to:subject:subject:date:date:message-id:message-id:
+	 to:to:cc:cc:mime-version:mime-version:content-type:content-type:
+	 content-transfer-encoding:content-transfer-encoding:
+	 in-reply-to:in-reply-to:references:references:autocrypt:autocrypt;
+	bh=iJ8ghNK6rfbISz12CEB99651jKjNR6sV3+bHiNah96I=;
+	b=Wd2recMfFtJsQluNogI8eFJRVvi90kxls6hSB98Ij8OJDE8NIi3Qn0HDvn2Ycp689T8JoY
+	TmevMAdqijNyVaLPCsNgNZddRiwbIf+13YldQ3YdJYOMpWlo7bvTVOB/OvbgMcouluo7WW
+	cXOzjbniujIPjJQzF32pxBI9dyJqp58xvaRplD4JPSQyWbyJosojswN5UBbJyqiihoGDhH
+	p+neuD4TjLk8VA0PI2H+ZdQXk4aXcT5kqfdF6FW9GhRA4ED06csaujDiPNIDyWrLcXhkDd
+	PVY0GDtlO5nBl6cAATsf+G/cuLlSu9DLegIc0Tte2Rc2lASvxHCxwCoBiZRjkw==
+Message-ID: <23518740c620e5575d5ca5f46aa99f1dbb7e1172.camel@d-silva.org>
+Subject: Re: [PATCH rtw-next v9 0/4] wifi: rtw88: sdio: Fix unhandled RX
+ request interrupt storm
+From: Alastair D'Silva <alastair@d-silva.org>
+To: Luka Gejak <luka.gejak@linux.dev>, Ping-Ke Shih <pkshih@realtek.com>, 
+	linux-wireless@vger.kernel.org, Kalle Valo <kvalo@kernel.org>
+Cc: Martin Blumenstingl <martin.blumenstingl@googlemail.com>, Jernej Skrabec
+	 <jernej.skrabec@gmail.com>, Ulf Hansson <ulfh@kernel.org>, 
+	linux-kernel@vger.kernel.org
+Date: Tue, 10 Nov 2026 07:29:38 +1100
+In-Reply-To: <162821b6cf0e6d17aa33c81d55a716b553e70579@linux.dev>
+References: <20261107035321.1210303-1-alastair@d-silva.org>
+	 <ab3dcde64bb90809ae10627803315d7385d6708e@linux.dev>
+	 <f2784538533947a38e9d03af7bc7fce8@realtek.com>
+	 <162821b6cf0e6d17aa33c81d55a716b553e70579@linux.dev>
+Autocrypt: addr=alastair@d-silva.org; prefer-encrypt=mutual;
+ keydata=mQINBGactvoBEADBFM2HqfQUUM4j40ZQPyYzmnM8S6zrycO0ipDDPMs7nZMzyzGzOdqfS
+ VB/tuYvZOOKVWzJuWJ5aT/YyHx54r3L+D5hTkEG0sXPVJky3yTS9sbHEMSLBHb8TVVuhPVPuieV4g
+ Nkqg5POMTidk8xAw50WpV++tUlewXVSciehnuCQPXhXMP7FcCh4uO8LdN7E8m7ir1LafKTFfoWPah
+ KVT8NGG9r+ucrFcN5F+VnHxTDaI68yRPkNdtUWmp22wIX1KwDCtKFrndYO4p5Hv2hlDKomsuIIHHn
+ muQGRwuh0xpf0nVJNF8ETZHMzxQLfo3e/HvxBFOTkwY9w7CuuQFZchbhS0I3PfmGT0+jiNcdfqjDC
+ fPPB5uhy+DkR6wO72vuwFYUrpU2mdliDSdKEtWBHulnXMJjpBOXetfIwhI8G2dTVg59lN5i9DvJZc
+ 7y1Sp+qfZQ4P9qpYZyQEKR4GNDOdnm6F2LW2cZkcyAU/Ii765zdDMTQMIzZNSxT/FcDd0K1voTNRl
+ QHbQw+kmIMhzSv2JefcC9oNbE0XYzcBDNP5T3O/4itOQ90GCKQEPAbIPeBjlQif7kkyvo/H6yv4s9
+ duuK7zbJD9AID/+KGLkpU3p68VDB/C2ZSb9rQz3p1CJNSfsX/CPk7sPqA7RKZ4a2B0hSJ2pJCncNZ
+ KXtMlkkm/FmewARAQABtCdBbGFzdGFpciBEJ1NpbHZhIDxhbGFzdGFpckBkLXNpbHZhLm9yZz6JAl
+ EEEwEKADsWIQTQGemDFwqYyU/dBWv75AdnjVo60gUCZpy2+gIbAwULCQgHAgIiAgYVCgkICwIEFgI
+ DAQIeBwIXgAAKCRD75AdnjVo60qHZEACJnLfpS71Hk8bX0CLCNJ5wgqdZD3pBHEdbv9Ux9kRlZp4a
+ ZFwlg9ltwBjl2dZP3PLtD9xQdsdYKVippKd5a7ZZC2y81oDaHjeC9LnPYn8+ce3mGE/+gRyoNfToY
+ N06DeUNJKSlZ9t11UIqZCgfp12u16/Yrigy8C4ihEeHXlLhNX6JkeJR5gsHXJnC7vSuMZY+Qz2R72
+ ZidWg+cd2WDMGop5sbTvc+55q94A7vTMlWzaix5HdbEUA3sd2U0dMBju5QodRGGhDQMcCu64TydRD
+ MtMzzOk9ThJ036ze3HASWGOppyQmaw58k+XNzbHlr9Sc1LsFUNF7zpWXac2rzlywbyRAdFIT/TC76
+ hy9zOkwIo2nwA/tdIwLx1j0UZPpAMQmcDUvJqZh6sE+fv6HN0yMPr+sSYJmriMt8Z6leCEHQXOHVI
+ SI5z5FvV3coMmHYRq6aXpfs/8SLiYgkV3B0HE/E18Y3j1OkeLYoqIH1VfzQZeCSL/S77NYvk60/MV
+ 1HFSyqLdUR3uWZI4uZzoEcMoB0GX33uCTp2Ntc00+wSntwekCUQLCMLUb7dZrbpVuobHoWWtkiD2I
+ uE5kAiaVwwwzM0BUwiM6VzVoKbeECz93rdsNtwoDqM0NtzoISC46H/BKVQ9mRNXDO4ThEBpJ4H2Tn
+ mPNRYYcR0u2mNy1EJII04w==
+Content-Type: text/plain; charset="UTF-8"
+Content-Transfer-Encoding: quoted-printable
+User-Agent: Evolution 3.56.2-9 
 X-Mailing-List: linux-wireless@vger.kernel.org
 List-Id: <linux-wireless.vger.kernel.org>
 List-Post: <mailto:linux-wireless@vger.kernel.org>
@@ -57,48 +97,25 @@ List-Unsubscribe: <mailto:linux-wireless+unsubscribe@vger.kernel.org>
 List-Owner: <mailto:linux-wireless+owner@vger.kernel.org>
 Precedence: list
 MIME-Version: 1.0
-Content-Type: text/plain; charset=us-ascii
-Content-Disposition: inline
-In-Reply-To: <ltwfLZuSH-PEFdqMECEU8rHwZCjSL5--7RG-qrW8a-Fwezdgpb1QYiDm-8aCRNIgwY-laqSmHJWAqV4uI092NLEudhWEABdd3B5iGsV4jJ8=@proton.me>
 
-On Sun, Nov 08, 2026 at 09:57:39PM +0000, Noah Weinberger wrote:
-> Hello,
-> 
-> In nl80211_dump_station(), the new -EAGAIN retry path calls
-> __nl80211_lock_held_wdev(), which drops the reference we hold and then
-> re-looks up the wdev under the wiphy mutex. If the wdev is being
-> removed, that lookup returns ERR_PTR(-ENODEV).
-> 
-> The IS_ERR branch jumps to out_err with 'wdev' still set to the error
-> pointer, and out_err then does:
-> 
->     else if (wdev)
->             wdev_put(wdev);
-> 
-> i.e. wdev_put() is called on ERR_PTR(-ENODEV), dereferencing an
-> unmapped kernel address (~0xd). The station dump requires no
-> capabilities, so any local user can reach the trigger while a
-> concurrent interface removal (admin action or unplug) closes the race.
-> The result is a kernel oops in the dumping task, or a full panic with
-> panic_on_oops.
-> 
-> The sibling handlers nl80211_get_station() and nl80211_tx_mgmt() never
-> put the error pointer; the dump path is the only one that does. Clear
-> wdev before jumping to the error label.
-> 
-> Affected version/commit: mainline fa4ad798f6f681031775266044ba1b0cf3c670bd (v7.4-rc1, 2026-11-07), net/wireless/nl80211.c:9023-9035 (EAGAIN path), nl80211.c:296-306 (__nl80211_lock_held_wdev), nl80211.c:9133-9137 (out_err).
-> Introduced in the v7.4 merge window (unlocked station-dump rework).
-> 
-> This was found during an assisted (AI-supported) static source review of
-> mainline fa4ad798f6f681031775266044ba1b0cf3c670bd (v7.4-rc1, 2026-11-07); every code path cited below was re-verified by the
-> reporter against that tree. The patch below has NOT been compiled and has
-> NOT been runtime tested, and no reproducer was produced - the triggering
-> conditions are described above instead. Please treat this as a report for
-> verification rather than a battle-tested fix.
-> 
-> Fixes: [fill in before sending - on a full clone run:
->   git log -S '__nl80211_lock_held_wdev' --oneline -- net/wireless/nl80211.c]
-> Reported-by: [your name and email]
 
-I think you forgot to read the patch your LLM spit out :(
+On Sun, 2026-11-08 at 06:06 +0000, Luka Gejak wrote:
+>=20
+> > Please take Luka's Reviewed-by for each patch, and send v10.
+> >=20
+> > [1] https://patchwork.kernel.org/project/linux-
+> > wireless/list/?series=3D&submitter=3DAlastair&state=3D*&q=3D&archive=3D=
+&delegate=3D
+> >=20
+>=20
+> It might be the same issue lore is experiencing. Nothing newer than
+> November 6th is appearing, maybe it's related?
+>=20
+>=20
 
+Looks like it's still stuck on 6th of November - is there someone we can po=
+ke?
+
+--=20
+Alastair D'Silva
+0493 18 5566
