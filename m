@@ -1,94 +1,76 @@
-Authentication-Results: smtp.subspace.kernel.org; arc=none smtp.remote-ip=74.125.82.42
+Authentication-Results: smtp.subspace.kernel.org; arc=none smtp.remote-ip=210.61.82.184
 ARC-Seal: i=1; d=subspace.kernel.org; s=arc20261015; a=rsa-sha256; cv=none;
-	t=1794280355;
-	b=rXzQftovKrqmjMSNgbo+ZPhEDhRUpKHG1R/shN7cPMwlbh9ngsjMlPiEy7vg6td4CPWP
-	 WsvZVl3IEh3FXduwGBYU8dOMgIaTpkNCrAI1dRFgglgp9SUjOOUcFwmU+ammuDqAeMdk3
-	 DxMX57Dco0Lt98qjI5in5HZKCnrmgo3sNyU3omN5V5aPIyl/sQi30h1hCAwT1IQp1z3up
-	 /up7rjU2jFzZFXPa+yShTYDxHxS/juEJHwMZPaEPGQD4K/+UaZ6DbFNyctceIKE0cpMTK
-	 7Esll5Br2qQjkIHuqhWn2bs2nelKHmVG3At+sK+fF8F9Kx4lK+aC6UmMPv5NVVlSNWg==
+	t=1794280392;
+	b=t4lcr9jhstFah7pOTCUEBqhycZsMg1LHYmdqUC9lAitldiIywN4SnisR5rfqzAKlBsqB
+	 ANF/d+2oNM1BChA+9vOIdV+SuPJmMYxT/wV7qO8ReHGMzAmVVQdV0V4q6PPDsjDhWJejx
+	 U9ZgFAYizyGNB2dWROkzM4LDOMNL9u5zFAA7lZneqc25foTWEEb+2VVZlAI8bFdu/NP3v
+	 2p5kqFF5WodDxSiJcjJhkRjs+DuRAHeVLTXNicGjyLVCzYgQIWSu+pEr8/wUbpyfvexwy
+	 twctNgnH9h+rgnXIoEWumalBA90vsq10wIPChOGdOigpXA0GYz4vz54C+z0FOz+s8/g==
 ARC-Message-Signature: i=1; d=subspace.kernel.org; s=arc20261015;
-	a=rsa-sha256; c=relaxed/relaxed; t=1794280355;
-	h=DMARC-Filter:Received:DKIM-Signature:X-Google-DKIM-Signature:
-	 X-Gm-Message-State:X-Gm-Gg:X-Received:Received:Date:From:To:Cc:
-	 Subject:Message-ID:References:MIME-Version:Content-Type:
-	 Content-Disposition:In-Reply-To;
-	bh=rDM6x7XRc95I3mGTLkYrN/qxWaVNHBCaXNGEhzTwFik=;
-	b=EGicCxUvaKatX3ZzybKvzVGxu2WZOGz5ETyBR7i5LZ1HIQ9MHnXyPpU6M3k9ctuHARZH
-	 uKl9rNTQge46fp9nioG+eS3MYPXv6CVxVrl7gszsmS2qO6fbhlSx5a3WtTWsd/d7WoAN/
-	 hh3OodKKcN7AK3lBVbD4JXkU4eEZ4BtJdKPWFQEWpd+yVqGDxLPSKmKeIfHVetZEVkpJ6
-	 Oyfa6t1+UzzF9fcmFFAIg3MfJ6htxaOB8I3O2IQilmGyJidH/O3/NX5QhAETqRUZJWga4
-	 m3cn/EYvBNLj/1/evXcx/F+I7oiFYdh2KcduYveEgfif+8E4DxhEJSgJOuzn6vwvOXA==
+	a=rsa-sha256; c=relaxed/relaxed; t=1794280392;
+	h=DMARC-Filter:X-UUID:DKIM-Signature:X-CID-P-RULE:X-CID-O-INFO:
+	 X-CID-META:X-CID-BVR:X-CID-BAS:X-CID-FACTOR:X-CID-RHF:X-UUID:Received:
+	 Received:Received:From:To:CC:Subject:Date:Message-ID:X-Mailer:
+	 MIME-Version:Content-Transfer-Encoding:Content-Type:X-MTK;
+	bh=b6mO35zQsUgdCke45nS1F0bWlUCIY7+zrG0PT6o+9Is=;
+	b=zqPOtR8OHImZFVUxWNDBqS6P7FLtWiTDrMvJjvLEC/FFW70fOoIX4OTpZpnHD1s9HIaA
+	 RCKeUmwwXdDZNCAWVene5ROC9oxx/ChG1uC4byGsBu3Dh+D8OUYeSyui0JU4jaKr5Ocx2
+	 giHtIJyTXRqQHXtPQBOK/9FEr7yCedV4Y1atpNnDIo1hntrg8k3bQBKHDnTviq3SLZ6Xo
+	 h9K+esOWyBx3FLSP2XZ8Y8ih8a3s9Pp2HzDDtFcvgkr5+Qw/5YDacbtGKNEuyH5N0xZlF
+	 UmFR5FJsGxgVIFcRCNibxXhRaRlQFX6GvpUjkIwA+rlCLhXaexnuJV/3sG6/IBPPG6A==
 ARC-Authentication-Results: i=1; smtp.subspace.kernel.org; 
-	dmarc=pass header.from=morsemicro.com;
-	spf=pass smtp.mailfrom=morsemicro.com;
-	dkim=pass header.d=morsemicro-com.20260707.gappssmtp.com header.i=@morsemicro-com.20260707.gappssmtp.com header.a=rsa-sha256 header.s=20260707 header.b=lERNHzN2;
-	arc=none smtp.remote-ip=74.125.82.42
-Received: from mail-dl1-f42.google.com (mail-dl1-f42.google.com [74.125.82.42])
-	(using TLSv1.3 with cipher TLS_AES_128_GCM_SHA256 (128/128 bits)
+	dmarc=pass header.from=mediatek.com;
+	spf=pass smtp.mailfrom=mediatek.com;
+	dkim=pass header.d=mediatek.com header.i=@mediatek.com header.a=rsa-sha256 header.s=dk header.b=XsGx8rs7;
+	arc=none smtp.remote-ip=210.61.82.184
+Received: from mailgw02.mediatek.com (unknown [210.61.82.184])
+	(using TLSv1.3 with cipher TLS_AES_256_GCM_SHA384 (256/256 bits)
 	 key-exchange X25519 server-signature ECDSA (prime256v1) server-digest SHA256)
 	(No client certificate requested)
-	by smtp.subspace.kernel.org (Postfix) with ESMTPS id 62F4B606A31C
-	for <linux-wireless@vger.kernel.org>; Tue, 10 Nov 2026 03:12:35 +0000 (UTC)
-DMARC-Filter: OpenDMARC Filter v1.4.2 smtp.subspace.kernel.org 62F4B606A31C
-Authentication-Results: smtp.subspace.kernel.org; dmarc=pass (p=none dis=none) header.from=morsemicro.com
-Authentication-Results: smtp.subspace.kernel.org; spf=pass smtp.mailfrom=morsemicro.com
+	by smtp.subspace.kernel.org (Postfix) with ESMTPS id EA4FF606A321
+	for <linux-wireless@vger.kernel.org>; Tue, 10 Nov 2026 03:13:10 +0000 (UTC)
+DMARC-Filter: OpenDMARC Filter v1.4.2 smtp.subspace.kernel.org EA4FF606A321
+Authentication-Results: smtp.subspace.kernel.org; dmarc=pass (p=quarantine dis=none) header.from=mediatek.com
+Authentication-Results: smtp.subspace.kernel.org; spf=pass smtp.mailfrom=mediatek.com
 Authentication-Results: smtp.subspace.kernel.org;
-	dkim=pass (2048-bit key) header.d=morsemicro-com.20260707.gappssmtp.com header.i=@morsemicro-com.20260707.gappssmtp.com header.a=rsa-sha256 header.s=20260707 header.b=lERNHzN2
-Received: by mail-dl1-f42.google.com with SMTP id a92af1059eb24-1a2761c69fbso2062340c88.0
-        for <linux-wireless@vger.kernel.org>; Mon, 09 Nov 2026 19:12:35 -0800 (PST)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=morsemicro-com.20260707.gappssmtp.com; s=20260707; t=1794280354; x=1794885154; darn=vger.kernel.org;
-        h=in-reply-to:content-disposition:content-type:mime-version
-         :references:message-id:subject:cc:to:from:date:from:to:cc:subject
-         :date:message-id:reply-to:content-type;
-        bh=rDM6x7XRc95I3mGTLkYrN/qxWaVNHBCaXNGEhzTwFik=;
-        b=lERNHzN2PlgoxjFpOUSZJXNvgYUi4F2qPOEedr0c+7BiYngb2iJtOTDek4zcSphV/D
-         cloVn2wAArz/dBqWxk9NZjUfHb6G0JCgoJlYXEjw4IMVB+DQ57iVQfpb6/5PFt62lhmd
-         BuQk9/32ra6sR5DltWGPR1lAHkp7poFKw0TJ8D+TW/LODlALwnUysZ5K00J96CNcuqop
-         Hg+taw2BpXxzta5/bbfrgeQOJAxdbMo0x+QechfevCTARpqTG/ssU6q04FmXYjGU0AqV
-         ciVkRQAtUUcffXNCiRTcqV2NXmgN95qdrQCaJ332UkmF3Elq3nd5+Tf/wOjgr2JCA39X
-         wWyw==
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=1e100.net; s=20260707; t=1794280354; x=1794885154;
-        h=in-reply-to:content-disposition:content-type:mime-version
-         :references:message-id:subject:cc:to:from:date:x-gm-gg
-         :x-gm-message-state:from:to:cc:subject:date:message-id:reply-to
-         :content-type;
-        bh=rDM6x7XRc95I3mGTLkYrN/qxWaVNHBCaXNGEhzTwFik=;
-        b=Uo3ekE7kU6VHsEob0NU418yA4mzjiOwde8fxPrEGcbeWTozDSfRGI5fA3ifSHNA/N6
-         mbwu2jq0cqKR9VtpMC6Y//G2CSTE5VSBnc2/5ILVTrqRjjsLr6Vy4HcXzkUCzbK9lw6F
-         r0be9/MO2ac0mVDv3qLF0MqIBXT4lsDeEngaS+l0Q+7VV7Uo1AMRbBM0COEznFIBfQB8
-         N2SVSetWmO6mCkpZsS3GMXxAwzExjHEfLJhWYXdmWhxLtMFYS71ou4nBC6alw4xGZxWc
-         l6+ZZ5lp/lZHBZbyP//VMT6xwrzodslEld8rcJ4JVZkRA24g2VnqhNt3jKlxJqIfyBF/
-         Ubiw==
-X-Gm-Message-State: APuU4Z/m+SUI4oyk9DiqfCDmJnQjVdK49QwrT40lhlDQewHZPNB0x/9K
-	4nmbMuDZmARoGudsU29qAm2ouDU7n7ATZ1K2Nlhc0Aw/NgfNGCPvKDRfV1HX8r7zk3Nv8OkokH6
-	eqSSQ/ZM=
-X-Gm-Gg: AYBFou0Zzbml25dUIgeCj5SRymvQLkDP7Ng8Z+PzZN5kaD+yXlUD94tj44Sc1RsGylA
-	nu8FfGQW+FPTJpvASuI7esET59SSobl2fyBXy1sYAuMQaaVVOfBPMEoB0EU2uxM/ZB9JQzPpG2F
-	jnAwMQmENpZlDIAXW8DyqQhlG5++EVbJDTbJZiv5JW+s4OlDjb1p96pgeyRQWkgcXLWFLeyiYr6
-	yDHLMDynk36s5/N8qY5osTSA5V0nqUxPVbpd2pHJd7YJjkQ+QS99BVMWZ4HpWB9dXxKfwOJgRtJ
-	WhHtKu30WvQR+nB/fk8f3jFZfasGJSy6L1DT1zMrMEnkaZJZDgUjJLDvZx+bx76qWaKoKNevlg3
-	9wzKDyqF6QWi47vJ09Y/3lEnY6CTJz46h18bsAff+FNVowk9+oU8tl9PSiW4xpvKod7e5FOp3ON
-	KG/VXKtQpHGloMvT5GAOGdf8u6M2IYsPW9i/r6ua9SFRButX83Nq0apX0gJxVZ4cEG58wBFwEsJ
-	4QZIPOm8WdPv37laC+g1XcNh15S9WD79QBqFudPDgu7Vfjw8qXWfT6Ffnz/4YAnC5edd0Z8Uafq
-	laJBTXxksoHRliLztgi3YzKUb/fRmFOxcVYJtPrHk3PG0IldPMA+57Pmm2ZgjRYLUSuQ
-X-Received: by 2002:a05:7022:3709:b0:187:7514:47f4 with SMTP id a92af1059eb24-1b3b6198c74mr1928005c88.46.1794280354211;
-        Mon, 09 Nov 2026 19:12:34 -0800 (PST)
-Received: from localhost ([60.227.235.15])
-        by smtp.gmail.com with ESMTPSA id a92af1059eb24-1b3b56c4e88sm2970998c88.0.2026.11.09.19.12.33
-        (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
-        Mon, 09 Nov 2026 19:12:33 -0800 (PST)
-Date: Tue, 10 Nov 2026 14:12:31 +1100
-From: Lachlan Hodges <lachlan.hodges@morsemicro.com>
-To: Johannes Berg <johannes@sipsolutions.net>
-Cc: linux-wireless@vger.kernel.org, 
-	Johannes Berg <johannes.berg@intel.com>
-Subject: Re: [PATCH wireless-next 7/7] wifi: mac80211: destroy AP stations
- asynchronously
-Message-ID: <mqlyphap56ct4ffa7v4ebpvvw4fuof2mezmx337zbtspozxhiw@deo6hs6xu3us>
-References: <20261102235603.1181883-9-johannes@sipsolutions.net>
- <20261102235603.1181883-16-johannes@sipsolutions.net>
+	dkim=pass (1024-bit key, unprotected) header.d=mediatek.com header.i=@mediatek.com header.a=rsa-sha256 header.s=dk header.b=XsGx8rs7
+X-UUID: a3ee822adcb411f18dc8c9802ae25ab1-20261110
+DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed; d=mediatek.com; s=dk;
+	h=Content-Type:Content-Transfer-Encoding:MIME-Version:Message-ID:Date:Subject:CC:To:From; bh=b6mO35zQsUgdCke45nS1F0bWlUCIY7+zrG0PT6o+9Is=;
+	b=XsGx8rs7qiNe4rwoJ3H1dj+NpNCbvFMAxbIrvfbVv8b/KEIeIzNbISmb3D62n9aXITpeAvYimFhJsZukBZ5NXo2ycgDf6TrBNhs8nU0AYZoaS9jCeb8IQoqg7sScZMDV/wnH5meCjFCHWelfXoBXPPwJzTimar/J+9/kESdmdvg=;
+X-CID-P-RULE: Release_Ham
+X-CID-O-INFO: VERSION:1.3.21,REQID:9dc22d0a-77f8-42b3-8576-b28f12455f8d,IP:0,U
+	RL:0,TC:0,Content:0,EDM:0,RT:0,SF:0,FILE:0,BULK:0,RULE:Release_Ham,ACTION:
+	release,TS:0
+X-CID-META: VersionHash:b0318ac,CLOUDID:20290f57-a87d-42b7-8ffd-9e23ca174329,B
+	ulkID:nil,BulkQuantity:0,SF:102|136|836|865|888|898,TC:-5,Content:0|15|50|
+	99,EDM:-3|-100,IP:nil,URL:0,File:130,RT:0,Bulk:nil,QS:nil,BEC:nil,COL:0,OS
+	I:0,OSA:0,AV:0,LES:1,SPR:NO,DKR:0,DKP:0,BRR:0,BRE:0,ARC:0
+X-CID-BVR: 2,SSN|SDN
+X-CID-BAS: 2,SSN|SDN,0,_
+X-CID-FACTOR: TF_CID_SPAM_SNR
+X-CID-RHF: D41D8CD98F00B204E9800998ECF8427E
+X-UUID: a3ee822adcb411f18dc8c9802ae25ab1-20261110
+Received: from mtkmbs10n2.mediatek.inc [(172.21.101.183)] by mailgw02.mediatek.com
+	(envelope-from <emery.hsin@mediatek.com>)
+	(Generic MTA with TLSv1.2 ECDHE-RSA-AES256-GCM-SHA384 256/256)
+	with ESMTP id 1007493954; Tue, 10 Nov 2026 11:13:02 +0800
+Received: from mtkmbs13n2.mediatek.inc (172.21.101.108) by
+ MTKMBS09N1.mediatek.inc (172.21.101.35) with Microsoft SMTP Server
+ (version=TLS1_2, cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id
+ 15.2.2562.29; Tue, 10 Nov 2026 11:13:01 +0800
+Received: from mtksitap99.mediatek.inc (10.233.130.16) by
+ mtkmbs13n2.mediatek.inc (172.21.101.73) with Microsoft SMTP Server id
+ 15.2.2562.29 via Frontend Transport; Tue, 10 Nov 2026 11:13:01 +0800
+From: Emery Hsin <emery.hsin@mediatek.com>
+To: <nbd@nbd.name>, <lorenzo@kernel.org>
+CC: <Sean.Wang@mediatek.com>, <jb.tsai@mediatek.com>,
+	<Quan.Zhou@mediatek.com>, <linux-wireless@vger.kernel.org>,
+	<linux-mediatek@lists.infradead.org>, Emery Hsin <emery.hsin@mediatek.com>
+Subject: [PATCH 00/28] wifi: mt76: mt7925: add MLO hybrid and EMLSR support
+Date: Tue, 10 Nov 2026 11:12:16 +0800
+Message-ID: <20261110031244.369014-1-emery.hsin@mediatek.com>
+X-Mailer: git-send-email 2.45.2
 X-Mailing-List: linux-wireless@vger.kernel.org
 List-Id: <linux-wireless.vger.kernel.org>
 List-Post: <mailto:linux-wireless@vger.kernel.org>
@@ -98,26 +80,96 @@ List-Unsubscribe: <mailto:linux-wireless+unsubscribe@vger.kernel.org>
 List-Owner: <mailto:linux-wireless+owner@vger.kernel.org>
 Precedence: list
 MIME-Version: 1.0
-Content-Type: text/plain; charset=us-ascii
-Content-Disposition: inline
-In-Reply-To: <20261102235603.1181883-16-johannes@sipsolutions.net>
+Content-Transfer-Encoding: 8bit
+Content-Type: text/plain
+X-MTK: N
 
-On Tue, Nov 03, 2026 at 12:54:04AM +0100, Johannes Berg wrote:
-> From: Johannes Berg <johannes.berg@intel.com>
-> 
-> When hostapd removes a station, the station destruction
-> needs to wait for an RCU grace period, all while holding
-> the wiphy mutex and blocking hostapd.
-> 
-> For AP stations, use a wiphy_rcu_work to finish the
-> cleanup after an RCU grace period, without holding the
-> wiphy mutex while waiting.
-> 
-> To avoid confusion in drivers, destroy stations that are
-> waiting for destruction synchronously before adding new
-> (link) stations, as well as suspend/restart.
-> 
-> Assisted-by: LLM
-> Signed-off-by: Johannes Berg <johannes.berg@intel.com>
+This series adds station-mode multi-link operation to the mt7925 driver:
+three-link hybrid MLO (one link per band) and EMLSR for APs on a vendor
+OUI allowlist. Hybrid MLO and EMLSR are gated by the chip capabilities
+the firmware reports.
 
-Reviewed-by: Lachlan Hodges <lachlan.hodges@morsemicro.com>
+Patches 1-8 fix the basic rate sent in the STA phy TLV and a sub-link
+memory leak on disconnect, both with Fixes tags, then prepare the series
+with no functional change: named constants for chip_cap, the DBDC band
+and the HT secondary channel offset, a link STA wcid unwind helper, and
+a gated mt792x_mcu_set_dev_active() also used by mt7921.
+
+Patches 9-10 deactivate the DEV and BSS on disconnect and reactivate the
+DEV before a reconnect, scan or off-channel operation. This covers the
+MLO to legacy switch fixed by commit 8f9e5807671e ("wifi: mt76: mt7925:
+restore the legacy BSS after MLO teardown") and replaces its BSS re-add.
+
+Patches 11-19 add the firmware interfaces the link setup needs (the
+third-link band limit, the EMLSR OUI allowlist and a multi-link
+remain-on-channel) and keep the MLD consistent as links are added.
+Patch 14 replaces the pending link parameter of commit dd3f17ef69ed
+("wifi: mt76: mt7925: keep MLD membership consistent during link add").
+
+Patches 20-28 bring up all links at authorization with one MLO ROC,
+install the existing keys on the added links, apply the link state the
+firmware reports, remap hybrid MLO TX to the primary link OMAC, and add
+a hm_alg_ctrl debugfs file to override the firmware link plan.
+
+The series is based on mt76 commit 8739e5b44b23 ("wifi: mt76: connac:
+bound the scan IEs in mt76_connac_mcu_hw_scan()").
+
+Emery Hsin (28):
+  wifi: mt76: mt7925: fix the basic rate sent in the STA phy TLV
+  wifi: mt76: mt7925: fix MLO sub-link memory leak on disconnect
+  wifi: mt76: mt792x: turn chip_cap bits into an enum of bit positions
+  wifi: mt76: mt792x: use named constants for the DBDC band
+  wifi: mt76: use named constants for the HT secondary channel offset
+  wifi: mt76: mt7925: factor out mt7925_mac_link_sta_free_wcid()
+  wifi: mt76: mt792x: add a gated mt792x_mcu_set_dev_active() helper
+  wifi: mt76: mt792x: route DEV (de)activation through
+    mt792x_mcu_set_dev_active()
+  wifi: mt76: mt7925: deactivate the DEV and BSS on disconnect
+  wifi: mt76: mt7925: reactivate the DEV before (re)connect, scan and
+    off-channel
+  wifi: mt76: mt7925: parse the FW hybrid-MLO third-link band limit
+  wifi: mt76: mt7925: gate EMLSR by AP vendor OUI allowlist
+  wifi: mt76: mt7925: support multi-link hybrid/EMLSR remain-on-channel
+  wifi: mt76: mt7925: describe the whole MLD in the STA/BSS MLD TLVs
+  wifi: mt76: mt7925: assign a per-MLD firmware link index
+  wifi: mt76: mt7925: share the primary OMAC across MLO links
+  wifi: mt76: mt7925: carry the STA decap offload to later links
+  wifi: mt76: mt7925: split link sta add into alloc and commit phases
+  wifi: mt76: mt7925: publish every link before sending any STA_REC
+  wifi: mt76: mt7925: add mt7925_mcu_add_bss_sec() helper
+  wifi: mt76: mt7925: only refresh the SEC tag when setting the first
+    key
+  wifi: mt76: mt7925: add mt7925_set_links_key_iter() helper
+  wifi: mt76: mt7925: bring up all MLO links on authorization
+  wifi: mt76: mt7925: skip re-adding the primary MLD BSS_INFO in chanctx
+    ops
+  wifi: mt76: mt7925: apply FW-reported MLO link state
+  wifi: mt76: mt7925: remap hybrid-MLO TX to the primary link OMAC
+  wifi: mt76: mt7925: clear the MLD BSS tag on deactivate
+  wifi: mt76: mt7925: add hm_alg_ctrl debugfs to override the MLO link
+    plan
+
+ .../wireless/mediatek/mt76/mt76_connac_mcu.c  |   4 +-
+ .../wireless/mediatek/mt76/mt76_connac_mcu.h  |   2 +
+ .../net/wireless/mediatek/mt76/mt7921/mac.c   |   7 +-
+ .../net/wireless/mediatek/mt76/mt7921/main.c  |   9 +-
+ .../net/wireless/mediatek/mt76/mt7921/mcu.c   |  14 +-
+ .../net/wireless/mediatek/mt76/mt7921/pci.c   |   2 +-
+ .../net/wireless/mediatek/mt76/mt7921/regd.c  |   4 +-
+ .../net/wireless/mediatek/mt76/mt7921/regd.h  |   2 +-
+ .../wireless/mediatek/mt76/mt7925/debugfs.c   |  41 +
+ .../net/wireless/mediatek/mt76/mt7925/mac.c   |  23 +-
+ .../net/wireless/mediatek/mt76/mt7925/main.c  | 843 +++++++++++++-----
+ .../net/wireless/mediatek/mt76/mt7925/mcu.c   | 628 +++++++++----
+ .../net/wireless/mediatek/mt76/mt7925/mcu.h   |  26 +-
+ .../wireless/mediatek/mt76/mt7925/mt7925.h    |  33 +-
+ .../net/wireless/mediatek/mt76/mt7925/pci.c   |   4 +-
+ .../net/wireless/mediatek/mt76/mt7925/regd.c  |   4 +-
+ .../net/wireless/mediatek/mt76/mt7925/regd.h  |   2 +-
+ drivers/net/wireless/mediatek/mt76/mt792x.h   |  56 +-
+ .../net/wireless/mediatek/mt76/mt792x_core.c  |  23 +-
+ 19 files changed, 1251 insertions(+), 476 deletions(-)
+
+-- 
+2.45.2
+
