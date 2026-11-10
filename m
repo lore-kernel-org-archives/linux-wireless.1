@@ -1,91 +1,91 @@
-Authentication-Results: smtp.subspace.kernel.org; arc=none smtp.remote-ip=209.85.161.51
+Authentication-Results: smtp.subspace.kernel.org; arc=none smtp.remote-ip=209.85.161.50
 ARC-Seal: i=1; d=subspace.kernel.org; s=arc20261015; a=rsa-sha256; cv=none;
-	t=1794336257;
-	b=pL3OeWzdVprfKBjgPf6LASuKSsW1TXjr0YVbEZRhgcXzpf32N4ZBLHr+ea4JYXZAquOn
-	 k36FmZjQlSPEyLXemogW4XZ7k1kY6CSDEVuu1oFTVUIx+EjEVVaYlllCgPYELwpFvexIm
-	 88piGMKe2gFjX3GRGi7wQvz3pqN9YddoUvCzxBsu9d3zNeGIA6KEvIAaobpFGCsqCfVkN
-	 aRFH9DuL4iQ6O0hAB/pYfYoJi8C2/PKFbI2yt+Y4aqzTv+TimgHKHOJJkX1NwrJCQSK5L
-	 iakdRYmINdF1lB7T+xPwPA6FalhxTGQEERh/fmy1uj+u40vqb9I9yoZeJt/Ff0PG21w==
+	t=1794336259;
+	b=2VVOmehN2UCM8693tMJloLAGmrnvn5yjbPKKKMNibG4lbeuQBsIvM7K+omTxFOMqYYmR
+	 23CRjZse2xvTzsEY46tyvmsz9CWrby9vgfqXnggN4mau3Xbkftj3bzypwUADza2GQ+u/D
+	 +zn2kTHlcAktNbM4HWnj3npep3pNEBW+gwkHCSaNtdezv5QKCdzCcbdC97i2eUFNJHGIr
+	 xmskrpDf3e6at3gaPcS1o2p8CV0hMnixh9OQyn9ltF9LQhNfIiFylAj+crIlTbpk3kK8m
+	 8gcpqFAb3DqmqvaxrnEa/Zvt4f6s7q66ZcAlKP3XpUzZ5S2dO78XYwD5CB8JqBRDZpQ==
 ARC-Message-Signature: i=1; d=subspace.kernel.org; s=arc20261015;
-	a=rsa-sha256; c=relaxed/relaxed; t=1794336257;
+	a=rsa-sha256; c=relaxed/relaxed; t=1794336259;
 	h=DMARC-Filter:Received:DKIM-Signature:X-Google-DKIM-Signature:
 	 X-Gm-Message-State:X-Gm-Gg:X-Received:Received:From:
 	 X-Google-Original-From:To:Cc:Subject:Date:Message-ID:X-Mailer:
 	 In-Reply-To:References:MIME-Version:Content-Transfer-Encoding;
-	bh=w2wu38ysdtrd97F6AMOyDK4UQjaEdHbNL2Dl/OkwiJ4=;
-	b=M+ILl2Nn+MCL67p8EzPHrWwgBO04xkpoXHIrpCueCjtmRB3zGv25FnTT2SoHhKWEbF85
-	 eR1gD13uUcDi58h2wqyk9iYS8gRTL5E6rDnzibLjzTFADMhTsqAtoYmGTwUrtppDL+dZe
-	 Px3QmfkPGVmiOIWbAk5l9f2QzVf5hXjS4odGmINVKv+deNxeEXvlhQ5+eKhEQmXY0o8wY
-	 mQwrIZbLUv7A8ML8to7oTeGTHx5TEjRMPpn0cXHDvXoFwxva/ExRQ07yPRh8ZTTPFG4qs
-	 xUytiNxWm3srtG28qHoidbdltGi9elu02TdLk54NLJ4r4NbLyrVy0oThBRTqc6NSP0A==
+	bh=4DDwnKu6rYRHQfo6CNzHsjTmYdeML/TrBGtrikCBhO8=;
+	b=G+LlrSguWj+X5KJUAkZ5FPnBAUghmZdf++ZHFSNyAe99lPmO4lvOw7Ze9x//cyBLukeE
+	 OXOCHG+1wZWCkYPNsBtXs/FdYWAjV/6bJ7W2QWolkZKklVhXNVdVaP3qVsi4orqsiCRgK
+	 m++pTBhSEFTcwtZ2wKSVuzNXDkxSqL6pg5+C3SEWE5t9K83DMtOTlvo/6B/87zVt+qtDJ
+	 TOq7AtufFvN8iuuhsMkvRHkW/TsAaiUzl18L2tMYpm/Wehkr8Fxp4SD8JR+/KesBJCmBt
+	 SdNUPQxEGEb2G5p19dGjdG7Yos5JEyj3YZLwcFiEWjM4+m/Ip4XTBZYMuXQSc60RRAA==
 ARC-Authentication-Results: i=1; smtp.subspace.kernel.org; 
 	dmarc=pass header.from=gmail.com;
 	spf=pass smtp.mailfrom=gmail.com;
-	dkim=pass header.d=gmail.com header.i=@gmail.com header.a=rsa-sha256 header.s=20260707 header.b=fanXBjdd;
-	arc=none smtp.remote-ip=209.85.161.51
-Received: from mail-oo1-f51.google.com (mail-oo1-f51.google.com [209.85.161.51])
+	dkim=pass header.d=gmail.com header.i=@gmail.com header.a=rsa-sha256 header.s=20260707 header.b="ZjGM/NKK";
+	arc=none smtp.remote-ip=209.85.161.50
+Received: from mail-oo1-f50.google.com (mail-oo1-f50.google.com [209.85.161.50])
 	(using TLSv1.3 with cipher TLS_AES_128_GCM_SHA256 (128/128 bits)
 	 key-exchange X25519 server-signature ECDSA (prime256v1) server-digest SHA256)
 	(No client certificate requested)
-	by smtp.subspace.kernel.org (Postfix) with ESMTPS id A5BA2606B5A8
-	for <linux-wireless@vger.kernel.org>; Tue, 10 Nov 2026 18:44:16 +0000 (UTC)
-DMARC-Filter: OpenDMARC Filter v1.4.2 smtp.subspace.kernel.org A5BA2606B5A8
+	by smtp.subspace.kernel.org (Postfix) with ESMTPS id 5B29160A2630
+	for <linux-wireless@vger.kernel.org>; Tue, 10 Nov 2026 18:44:19 +0000 (UTC)
+DMARC-Filter: OpenDMARC Filter v1.4.2 smtp.subspace.kernel.org 5B29160A2630
 Authentication-Results: smtp.subspace.kernel.org; dmarc=pass (p=none dis=none) header.from=gmail.com
 Authentication-Results: smtp.subspace.kernel.org; spf=pass smtp.mailfrom=gmail.com
 Authentication-Results: smtp.subspace.kernel.org;
-	dkim=pass (2048-bit key) header.d=gmail.com header.i=@gmail.com header.a=rsa-sha256 header.s=20260707 header.b=fanXBjdd
-Received: by mail-oo1-f51.google.com with SMTP id 006d021491bc7-702fd86d674so1152958eaf.2
-        for <linux-wireless@vger.kernel.org>; Tue, 10 Nov 2026 10:44:16 -0800 (PST)
+	dkim=pass (2048-bit key) header.d=gmail.com header.i=@gmail.com header.a=rsa-sha256 header.s=20260707 header.b=ZjGM/NKK
+Received: by mail-oo1-f50.google.com with SMTP id 006d021491bc7-70059e4dab6so1310247eaf.3
+        for <linux-wireless@vger.kernel.org>; Tue, 10 Nov 2026 10:44:19 -0800 (PST)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=gmail.com; s=20260707; t=1794336256; x=1794941056; darn=vger.kernel.org;
+        d=gmail.com; s=20260707; t=1794336258; x=1794941058; darn=vger.kernel.org;
         h=content-transfer-encoding:mime-version:references:in-reply-to
          :message-id:date:subject:cc:to:from:from:to:cc:subject:date
          :message-id:reply-to:content-type;
-        bh=w2wu38ysdtrd97F6AMOyDK4UQjaEdHbNL2Dl/OkwiJ4=;
-        b=fanXBjddPNz1sRdILWcKLbXrA6LgQADpL5xMD0cLRIQcX0dr7zVN7jr+N9V3HHEwsi
-         S946WB7VzXT2tvdLuMPa46vLyTl+9Ynq+tJv8A5SuFtxte5v6WuJSfucSdPaOfT2Qf3U
-         4My8ovkVa3HFCidhbLcfgk54eZQFvpIVsSsvJQwdaV5EShj2fPr9LO3a2wypO52tao/j
-         ULfikoIrGV2fzOrNb997aJy3VG4yeoEFLqXQSR7j9GlepvvAlR3+ASnfpF9jb0/2bPSr
-         RIJ/8UKaEWg7VxfkZupw8k1rkIuAkCR/ritKdv5z31YdR2a75J4bPfKn377tjv37bzWD
-         9VRQ==
+        bh=4DDwnKu6rYRHQfo6CNzHsjTmYdeML/TrBGtrikCBhO8=;
+        b=ZjGM/NKKIahyCdeAEugfhBaswvi4jQuac0fGU9sb1F/Fg2H5FLlQ5hEV1IU0zCIIUi
+         8QbV6WhvFJsrCemnCgMd6siOe0bNfQP7exJ+T8zYW6OdnYjV31fORtQsFYkuDpoYgQBR
+         ipAagzkoopuDdmDHjo4OBM8RHhxzD0beMQwyelV3V38dyQto/5XouRc2FPdZopS1rMMW
+         Nb5wLcAVFyOFs/SFUB1so3ioDJ6558g2Bg5vfhnjYV+SM2JjykEei7nIJvV429DJGNmw
+         twLD9Vb7csxdwF61YyMHPhux7ZFti3HU4sdpF+d7k//0RVlDp5MAc2gMxKhq9fTxsMhV
+         JsiA==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=1e100.net; s=20260707; t=1794336256; x=1794941056;
+        d=1e100.net; s=20260707; t=1794336258; x=1794941058;
         h=content-transfer-encoding:mime-version:references:in-reply-to
          :message-id:date:subject:cc:to:from:x-gm-gg:x-gm-message-state:from
          :to:cc:subject:date:message-id:reply-to:content-type;
-        bh=w2wu38ysdtrd97F6AMOyDK4UQjaEdHbNL2Dl/OkwiJ4=;
-        b=e/El0UXHw6XXMdQXNiSyyWdJtxnMsQZ3hIRvdXk8humTBdNT9YMNot+GnM6jC0hHPn
-         LxNXiuzYo2+4MCpqHVTA1yY/cszBroI6DpoMkH0Yld7cwh8MLFqpEX+hn9DtxR7ZUuTd
-         t/ZBY8YTJEUOzDNaQBI3rZtmAs7QiP9d7UHqu32l4QsPcqjUFL8Mix52LaT2m9iqplHJ
-         ZfxeomVsiKCHmND6n/nd3fekEHuvCSPbZQi8ZB8pawbqSrYZdc5ar0ZVehi1bBKvpQMc
-         MdIAQFIPEi7gucN96grgydhjAQzAZXHEjkZuUlA5ArYoIlZfHmijMpqrTw8wkMURkYgo
-         xutQ==
-X-Gm-Message-State: APuU4Z9Nkli7wWIKdTvHNGSd0NUp+v3EWfYlDXrabKN9t+jgbTVxfkA4
-	79cXbJLK8O92rlpWyEzkcXBuKBYc1scxqBTyWvPmWWRz0u/K66gpIUqk
-X-Gm-Gg: AYBFou0NHgon/epGELAu5BjudXgRvMtJa5XCj9d7y1XVlcqn4d+tFXODH/o07vPU8i7
-	nFgqeA1eG4dkaJwr0FZsjEN0Fl7HLSn/7mM0XZnK9r6G8ir5AxMxG3QrRYN2qBaunq1TazK/5Tk
-	Rl+AJkrT+0PKySSArcIjbql8c9lBDXX2D9+78gCCIisdIyP9QCI4G4lVb3AtP4N16QMfE5lrN62
-	lt3yDQmG2CP9fIwik6ELvVMM/wt2jycLzQLj9DL+UpJCZYO23a/CMgqLeVYrVrJaBROnWHBs40u
-	7ovzW+vYNtHGoUewnm3wR2xCu610KwpX8sSVfaQZVYMPWy21t4YbflYmn7Sz9Ef01cTTh3QPV3v
-	a5FISViJ/xrSSd7dTxioTMbfVhJ4w6Ik3VpLbvoUvP7dGHkpdV8oaI/rnRJg9u48TXrHK2y9aug
-	llbkXzKe8K4upHNJKOggVY2vCiJV8wmQMN+BdQQVwxct4+6jI0Kyo7fSDFhVIOA+pvvPZTqU81S
-	O5+QJxfrDxOsyygVlnz5Rpq/Zt3k14oO9vdx9HFaCb3by0VXEVAg+UDnB/+rMi1Hx6C35XeItJT
-	rdyANhBhJKKFY7F0SxKpKI2UBiGgiWHrdQ==
-X-Received: by 2002:a05:6820:508b:b0:6c3:19de:d1ef with SMTP id 006d021491bc7-718a5a583a8mr1411991eaf.20.1794336255585;
-        Tue, 10 Nov 2026 10:44:15 -0800 (PST)
+        bh=4DDwnKu6rYRHQfo6CNzHsjTmYdeML/TrBGtrikCBhO8=;
+        b=IazIqWhc5/0BEyZPBKgPBvO7phu1CCdh/XI1DlxpSp1FqISuybobkaur5i3+TN7+qR
+         3bK+iSD41erovlazHvz3Ln73p1LH7XbqE8ZRZipGXYooFXrrE38Feh+b9moTngQt+nVD
+         aY5p9vmyOrHp8F1WSasSOK159RyBanczF6m8/8XE7BbwFw/Wwru1Ia1OjU7uJdFaWW2g
+         xDMcXKD7SM8Eqt8HBXZi9FNy4jGNqYSR2Xj5tM4k9nnKvIa9xJ03J5AhvgBMeyL+8aIV
+         HGjHAwS9v+I0TIC3UAqe/7mF9oxBizDWH3u8PKPEXqIexC7fqg+bHbDQPOd+pUilIba0
+         DVQQ==
+X-Gm-Message-State: APuU4Z9Ss/AOxo+pNtqtcdPlwyky1SlIvGr/FAS7cUQJvX8RAp+pu3Xo
+	p2hApgDtwEb3YEl5WZeMXxYpKhZhQ1xcer6S96kA8UnelV13iHJhnbEa
+X-Gm-Gg: AYBFou3rK10yZ7yWo41Xyej2sRYEW2Eo7bQes+rj/0eF1HIwL2cfxDETcriuowg9sxS
+	ArZyHMYhs0nAlSnNucQxuWgzgDJ0zK+8MDFJojrXhS9jypFaZITf5rejTYwmamIZQNJnuYVnUGT
+	48OrcA1jKx+rMEcW3B7tbPylM5OnLTC6Fva3BNsQ39Vaf6sYzM9c8Ao2cG7a8mB7nkXpuBUd3js
+	7d9UcUgfjPFsPd+cJQct8/CUsZdLGmslJIutzpfIiY/bZPDfSBdcJcAQSgCRU52xqsOh9+YjTrD
+	vUoQ8Syxo0g3G/kDLqC2L9DLyPe2Q6W1k6pdQQZ9vtzAx5jS9EGwY7ASuo7h+8BivYbZk8c4Lk4
+	BSIgEcZEBTlhfihElWuk9M3/IvA1wca4uagR+gOgPK2ryjq16kIFlE5lfbEhnX/v3Apc1rRAY+e
+	s3Vh2gBG7prP8Sn2gB4EdhquEhU/YWQiBQJLxhlXRDYFBde4Xd8edw3Gb1AMIFh4olfJ+0tuGJi
+	G+/dFm/GEKcMQ1ntekxjpQGjXXIAFYvlf8W4XgT8grvAHW6W5NlAw59yukWjeWxdd/2bkiaOP38
+	x4YfOo2PRcgbZYOJBX9vJ397dXVb0+WDiw==
+X-Received: by 2002:a05:6820:c0d4:20b0:6da:9dae:a2b with SMTP id 006d021491bc7-718a576b1e8mr1386827eaf.18.1794336258196;
+        Tue, 10 Nov 2026 10:44:18 -0800 (PST)
 Received: from pop-os.. ([24.32.17.59])
-        by smtp.gmail.com with ESMTPSA id 006d021491bc7-718a8f660b2sm2225776eaf.4.2026.11.10.10.44.14
+        by smtp.gmail.com with ESMTPSA id 006d021491bc7-718a8f660b2sm2225776eaf.4.2026.11.10.10.44.16
         (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
-        Tue, 10 Nov 2026 10:44:15 -0800 (PST)
+        Tue, 10 Nov 2026 10:44:16 -0800 (PST)
 From: Rishik Yechuri <epicrishik@gmail.com>
 X-Google-Original-From: Rishik Yechuri <rishik.yechuri.code@gmail.com>
 To: Ping-Ke Shih <pkshih@realtek.com>
 Cc: linux-wireless@vger.kernel.org,
 	linux-kernel@vger.kernel.org,
 	Rishik Yechuri <rishik.yechuri.code@gmail.com>
-Subject: [PATCH rtw-next 4/6] wifi: rtlwifi: rtl8192se: use ALIGN() for the H2C command length
-Date: Tue, 10 Nov 2026 12:44:07 -0600
-Message-ID: <20261110184409.42205-5-rishik.yechuri.code@gmail.com>
+Subject: [PATCH rtw-next 6/6] wifi: rtlwifi: remove byte(), packet_get_type() and FILL_OCTET_STRING()
+Date: Tue, 10 Nov 2026 12:44:09 -0600
+Message-ID: <20261110184409.42205-7-rishik.yechuri.code@gmail.com>
 X-Mailer: git-send-email 2.43.0
 In-Reply-To: <20261110184409.42205-1-rishik.yechuri.code@gmail.com>
 References: <20261110184409.42205-1-rishik.yechuri.code@gmail.com>
@@ -100,70 +100,63 @@ Precedence: list
 MIME-Version: 1.0
 Content-Transfer-Encoding: 8bit
 
-_rtl92s_fill_h2c_cmd() and _rtl92s_get_h2c_cmdlen() round each command
-length up to a multiple of 8 with N_BYTE_ALIGMENT() from wifi.h. The
-macro spells out the rounding by hand and special cases an alignment
-of 1. ALIGN() from <linux/align.h> gives the same result for a power
-of two.
+byte() in wifi.h has a single user. rtl8192se takes the low byte of the
+firmware header version with it, which is just a mask. Open code that
+as & 0xff.
 
-Use ALIGN() at both sites and remove the macro together with the
-comment block around it, which no longer has anything in it.
+packet_get_type() and FILL_OCTET_STRING() have no users at all.
+packet_get_type() also refers to EF1BYTE(), which no longer exists in
+the driver, so it could not be used even if someone wanted to.
+
+Remove the three macros.
 
 No functional change intended.
 
 Signed-off-by: Rishik Yechuri <rishik.yechuri.code@gmail.com>
 Assisted-by: Claude:claude-fable-5-1
 ---
- drivers/net/wireless/realtek/rtlwifi/rtl8192se/fw.c |  4 ++--
- drivers/net/wireless/realtek/rtlwifi/wifi.h         | 13 -------------
- 2 files changed, 2 insertions(+), 15 deletions(-)
+ drivers/net/wireless/realtek/rtlwifi/rtl8192se/fw.c | 2 +-
+ drivers/net/wireless/realtek/rtlwifi/wifi.h         | 7 -------
+ 2 files changed, 1 insertion(+), 8 deletions(-)
 
 diff --git a/drivers/net/wireless/realtek/rtlwifi/rtl8192se/fw.c b/drivers/net/wireless/realtek/rtlwifi/rtl8192se/fw.c
-index 579b1789d6d1..0719d0bb2cac 100644
+index 0719d0bb2cac..c18d5fffb0a1 100644
 --- a/drivers/net/wireless/realtek/rtlwifi/rtl8192se/fw.c
 +++ b/drivers/net/wireless/realtek/rtlwifi/rtl8192se/fw.c
-@@ -431,7 +431,7 @@ static u32 _rtl92s_fill_h2c_cmd(struct sk_buff *skb, u32 h2cbufferlen,
+@@ -334,7 +334,7 @@ int rtl92s_download_fw(struct ieee80211_hw *hw)
+ 	/* 1. Retrieve FW header. */
+ 	firmware->pfwheader = (struct fw_hdr *) puc_mappedfile;
+ 	pfwheader = firmware->pfwheader;
+-	firmware->firmwareversion =  byte(pfwheader->version, 0);
++	firmware->firmwareversion = pfwheader->version & 0xff;
+ 	firmware->pfwheader->fwpriv.hci_sel = 1;/* pcie */
  
- 	do {
- 		/* 8 - Byte alignment */
--		len = H2C_TX_CMD_HDR_LEN + N_BYTE_ALIGMENT(pcmd_len[i], 8);
-+		len = H2C_TX_CMD_HDR_LEN + ALIGN(pcmd_len[i], 8);
- 
- 		/* Buffer length is not enough */
- 		if (h2cbufferlen < totallen + len + tx_desclen)
-@@ -484,7 +484,7 @@ static u32 _rtl92s_get_h2c_cmdlen(u32 h2cbufferlen, u32 cmd_num, u32 *pcmd_len)
- 
- 	do {
- 		/* 8 - Byte alignment */
--		len = H2C_TX_CMD_HDR_LEN + N_BYTE_ALIGMENT(pcmd_len[i], 8);
-+		len = H2C_TX_CMD_HDR_LEN + ALIGN(pcmd_len[i], 8);
- 
- 		/* Buffer length is not enough */
- 		if (h2cbufferlen < totallen + len + tx_desclen)
+ 	rtl_dbg(rtlpriv, COMP_INIT, DBG_LOUD,
 diff --git a/drivers/net/wireless/realtek/rtlwifi/wifi.h b/drivers/net/wireless/realtek/rtlwifi/wifi.h
-index 21a294b80c5b..24c6db867421 100644
+index e289a88e9666..98b685754e8a 100644
 --- a/drivers/net/wireless/realtek/rtlwifi/wifi.h
 +++ b/drivers/net/wireless/realtek/rtlwifi/wifi.h
-@@ -2806,19 +2806,6 @@ enum bt_radio_shared {
+@@ -2806,9 +2806,6 @@ enum bt_radio_shared {
  	BT_RADIO_INDIVIDUAL = 1,
  };
  
--/****************************************
-- *	mem access macro define start
-- *	Call endian free function when
-- *	1. Read/write packet content.
-- *	2. Before write integer to IO.
-- *	3. After read integer from IO.
-- ****************************************/
+-#define byte(x, n) ((x >> (8 * n)) & 0xff)
 -
--#define	N_BYTE_ALIGMENT(__value, __aligment) ((__aligment == 1) ? \
--	(__value) : (((__value + __aligment - 1) / __aligment) * __aligment))
--
--/* mem access macro define end */
--
- #define byte(x, n) ((x >> (8 * n)) & 0xff)
+-#define packet_get_type(_packet) (EF1BYTE((_packet).octet[0]) & 0xFC)
+ #define RTL_WATCH_DOG_TIME	2000
+ #define rtl_dm(rtlpriv)		(&((rtlpriv)->dm))
  
- #define packet_get_type(_packet) (EF1BYTE((_packet).octet[0]) & 0xFC)
+@@ -2833,10 +2830,6 @@ enum bt_radio_shared {
+ #define	RT_SET_PS_LEVEL(ppsc, _ps_flg)		\
+ 	(ppsc->cur_ps_level |= _ps_flg)
+ 
+-#define FILL_OCTET_STRING(_os, _octet, _len)	\
+-		(_os).octet = (u8 *)(_octet);		\
+-		(_os).length = (_len);
+-
+ #define	LDPC_HT_ENABLE_RX			BIT(0)
+ #define	LDPC_HT_ENABLE_TX			BIT(1)
+ #define	LDPC_HT_TEST_TX_ENABLE			BIT(2)
 -- 
 2.43.0
 
