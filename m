@@ -1,65 +1,56 @@
-Authentication-Results: smtp.subspace.kernel.org; arc=none smtp.remote-ip=168.119.38.16
+Authentication-Results: smtp.subspace.kernel.org; arc=none smtp.remote-ip=100.103.45.18
 ARC-Seal: i=1; d=subspace.kernel.org; s=arc20261015; a=rsa-sha256; cv=none;
-	t=1794336341;
-	b=uw+UHrDqa91dsDWfxCyTv647pbhg3MXwNf7B1nS5namMcBh4czurykZ6S74zh4Krf75S
-	 eIvCZLMLe6EIw1YklU214Rj5GoYnL6C3oLL5Crej0ApEsqhbVHm8IbQsY8+1qNS/fE/8Y
-	 qMHi72MyxbJheLujTBrgA9Yi5y3KFQ2ZLG7gf/MF+4knV/SozB/grDCTvLz2Qx3hRQcc2
-	 F/A9sMbFU+W/k6Plsg+8blFis8PE39E4DILUl/zkoVq+Wmrbe8op5LyHpA66Bj610OP2c
-	 7cvPF9MTPqLTYBLJ37/NYSG6Yq9GGPJEumqgT8zoNuHRS4Cxs+9L1AzuDz+L5naG0rQ==
+	t=1794336659;
+	b=GwjD5bOffcQoohmzOzXCUtbneFp6dcZ9A1HpXMf6KVMxmHkK9sN6pcTjxw5710OzVceY
+	 h1nq9GOQiuuNIIipyQPsXsTtBVGyCiw6nWb8duCKB3Xu2GU8d3OyAVe7On6P7E6TNiW0p
+	 jB5nLAMlw6M/EbiS2jUzbxVF4npZpP4oyFggucSl2gKqqX+3jSZa5SgRHFEUU8v91jP6h
+	 0wGUnu9HkCGnWcDzRQB+kTUbsVHnVO9F15pGgNnlS/tYDNz4g4JNxZSTGD60g3ZBpY5xu
+	 iE6Ct0ClUfr2qxoBoa1/JP5mgEMRuEvJsk0GXeSsfhwSKpzX+BabPR+4X9RR+3pVyaw==
 ARC-Message-Signature: i=1; d=subspace.kernel.org; s=arc20261015;
-	a=rsa-sha256; c=relaxed/relaxed; t=1794336341;
-	h=DKIM-Signature:Received:Message-ID:Subject:From:To:Cc:Date:
-	 In-Reply-To:References:Content-Type:Content-Transfer-Encoding:
-	 User-Agent:MIME-Version:X-malware-bazaar;
-	bh=cpJJtLOFz3P0sUNXeBfXN7xq2D+YajosRJqT3OCqsuc=;
-	b=UThdqB2fPcY01UyN9nECaSUxHYCC6CKnytbv48IqvXnSYimU5j0iUvDFw6+22TX7uzUo
-	 6IM6V6l9R6zfhu6Dx1Yevks+01eW4/OmbhtqJ6U2evfyuoE6DmfkDh+TDyk+VNyntINIy
-	 L3zRrj0CiDJC1a0J6eEYqJYQ1WRcx+N8jVpHZAmYcurhpBPa1iDStR/bYEuSY+0tTQnCS
-	 ow9GIcMZWjypZv57MRBiltOD/r0Yul8+x+6hcAJ6p61AJxAqaqlchiGH2VfKU84KlR/t4
-	 7Iu5qrzmDMr4wsFuUEsPaWLyQM4LIFkOn7QNvAxKh5dar9cdzfYpJsnfXrj+dEkJz6A==
+	a=rsa-sha256; c=relaxed/relaxed; t=1794336659;
+	h=Received:DKIM-Signature:Date:From:To:Cc:Subject:Message-ID:
+	 References:MIME-Version:Content-Type:Content-Disposition:In-Reply-To;
+	bh=lw5R+03CbcJOauGhuqqyB5KrNrCBNCqxs2tnPrtkBQw=;
+	b=41z61EWEJIj5pgbn/OJKZD2UJoitlVQVcoDCjw0hIdyJdwGLku/y9I0DjJRqlJlal9xM
+	 1qlFVEPf1IGB5hRfnMsrnDMJpAn0+gx9gU3bF8LCw37rreBG5MGLYOWlLPzNoEQ+VHOBT
+	 +/W5ZtMUMTDYt69L31uW/Ux59h8/SKncKBB4qnP35VLwJvjwmRtDITDx8/LtkOCzlchNW
+	 2raLT+herhooMUcKSzPrPUtSAdpWeVd88gR9Ropiw/SrJbf3LVqQNjCk66kcec9rS1SJT
+	 QsC4ezMXjTL8j0AP47etVJoIjMZ4PQm/qHdrMXrpILbIq6pDB6NS2FsSzfUMWN5zi2A==
 ARC-Authentication-Results: i=1; smtp.subspace.kernel.org; 
-	dmarc=permerror header.from=sipsolutions.net;
-	spf=pass smtp.mailfrom=sipsolutions.net;
-	dkim=pass header.d=sipsolutions.net header.i=@sipsolutions.net header.a=rsa-sha256 header.s=mail header.b=Slj3uqmI;
-	arc=none smtp.remote-ip=168.119.38.16
-Received: from sipsolutions.net (s3.sipsolutions.net [168.119.38.16])
+	dkim=pass header.d=kernel.org header.i=@kernel.org header.a=rsa-sha256 header.s=k20260515 header.b=JqWUJALF;
+	arc=none smtp.remote-ip=100.103.45.18
+Received: from smtp.kernel.org (quasi.space.kernel.org [100.103.45.18])
 	(using TLSv1.3 with cipher TLS_AES_256_GCM_SHA384 (256/256 bits)
-	 key-exchange ECDHE (prime256v1) server-signature ECDSA (prime256v1) server-digest SHA256)
+	 key-exchange X25519 server-signature ECDSA (prime256v1))
 	(No client certificate requested)
-	by smtp.subspace.kernel.org (Postfix) with ESMTPS id 61BAA606B59C;
-	Tue, 10 Nov 2026 18:45:41 +0000 (UTC)
-Authentication-Results: smtp.subspace.kernel.org; dmarc=permerror header.from=sipsolutions.net
-Authentication-Results: smtp.subspace.kernel.org; spf=pass smtp.mailfrom=sipsolutions.net
+	by smtp.subspace.kernel.org (Postfix) with ESMTPS id 618F6606A321;
+	Tue, 10 Nov 2026 18:50:59 +0000 (UTC)
 Authentication-Results: smtp.subspace.kernel.org;
-	dkim=pass (2048-bit key) header.d=sipsolutions.net header.i=@sipsolutions.net header.a=rsa-sha256 header.s=mail header.b=Slj3uqmI
-DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=sipsolutions.net; s=mail; h=MIME-Version:Content-Transfer-Encoding:
-	Content-Type:References:In-Reply-To:Date:Cc:To:From:Subject:Message-ID:Sender
-	:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:Resent-To:
-	Resent-Cc:Resent-Message-ID; bh=cpJJtLOFz3P0sUNXeBfXN7xq2D+YajosRJqT3OCqsuc=;
-	t=1794336341; x=1795545941; b=Slj3uqmIAbTI4eSiagxFmExG6UKKW+10G0QrwTNayHlvNu9
-	phrTJcMdDwBQKlWhWxLSjWOKKNA9DbioT6lvpQO64vUSB8TMxIhbgN/ntyez0DZjm8b7N1/Y/TwwP
-	FunE6UXqXAYaqQekzb0uLMMgANtZ6mHB/w+IemabRg47kRGPPoInO2qLMFrH8Lo1hNvgi0y36PMHQ
-	zjOuMVbiKqs1lUMJ6jVUy9x603ONIcZxqqK/8k74DzellA4/3HYr/T5UAoPg26l8/UitxU4Y1kNM4
-	4OlPEZiZPBRIo2Qx/FuzsMY9jBWrBB7M+lJK2k44EUiqmuv94Q1AMP75kDF1U8mg==;
-Received: by sipsolutions.net with esmtpsa (TLS1.3:ECDHE_X25519__ECDSA_SECP256R1_SHA256__AES_256_GCM:256)
-	(Exim 4.98.2)
-	(envelope-from <johannes@sipsolutions.net>)
-	id 1xQqqf-00000002AOi-2Fue;
-	Tue, 10 Nov 2026 19:45:38 +0100
-Message-ID: <554491de8880420965217a37a7748d48622f1187.camel@sipsolutions.net>
-Subject: Re: [PATCH wireless-next v4 05/21] wifi: nl80211: define interfaces
- for SMD BSS Transition context transfer
-From: Johannes Berg <johannes@sipsolutions.net>
-To: Pooventhiran G <pooventhiran.g@oss.qualcomm.com>
-Cc: linux-wireless@vger.kernel.org, linux-kernel@vger.kernel.org
-Date: Tue, 10 Nov 2026 19:45:36 +0100
-In-Reply-To: <20261106-smd-v4-5-62e39487f51a@oss.qualcomm.com>
-References: <20261106-smd-v4-0-62e39487f51a@oss.qualcomm.com>
-	 <20261106-smd-v4-5-62e39487f51a@oss.qualcomm.com>
-Content-Type: text/plain; charset="UTF-8"
-Content-Transfer-Encoding: quoted-printable
-User-Agent: Evolution 3.60.2 (3.60.2-3.fc44) 
+	dkim=pass (2048-bit key) header.d=kernel.org header.i=@kernel.org header.a=rsa-sha256 header.s=k20260515 header.b=JqWUJALF
+Received: by smtp.kernel.org (Postfix) with ESMTPSA id 77CD11F008A7;
+	Tue, 10 Nov 2026 18:50:57 +0000 (UTC)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=kernel.org;
+	s=k20260515; t=1794336659;
+	bh=lw5R+03CbcJOauGhuqqyB5KrNrCBNCqxs2tnPrtkBQw=;
+	h=Date:From:To:Cc:Subject:References:In-Reply-To;
+	b=JqWUJALFbq4GQTW0TDwQn+AcB9wpH2ZkJ5ed2nNxVceaHrDnqKDd+ltQqhmq9qPfK
+	 eVSs01rTw3OmzwgCFfHvXI35nlkno4ibamI3Xgbi07nMDc8P0uZHy/41kfPCT7dqBZ
+	 tCBojIc0lg4Z6Oeb5xHEedTfS2k1kSJ+WeMTEWI1O+hbeoU4J5J3g++zyLTh5o3J6v
+	 lSiTEyC6L5UgDrhWqO0nzZGFlgpy+DUsZp+TAd2NGAsOluA/R2xQAGvMfZJEMhUVZd
+	 SPYJbZznNcsMJ0cIncGa23G6VH5cvfKqecn/px8kHY91ZOP4PJtwHilqC4uSKzKMQq
+	 Y/N+GahASFbNg==
+Date: Tue, 10 Nov 2026 18:50:55 +0000
+From: Conor Dooley <conor@kernel.org>
+To: Linus Walleij <linusw@kernel.org>
+Cc: Johannes Berg <johannes@sipsolutions.net>,
+	Rob Herring <robh@kernel.org>,
+	Krzysztof Kozlowski <krzk+dt@kernel.org>,
+	Conor Dooley <conor+dt@kernel.org>, van Spriel <arend@broadcom.com>,
+	linux-wireless@vger.kernel.org, devicetree@vger.kernel.org
+Subject: Re: [PATCH] dt-bindings: net: wireless: brcm,bcm4329-fmac: Describe
+ the MAC address
+Message-ID: <20261110-comfy-traverse-f4a2749f34ba@spud>
+References: <20261110-brcm-fmac-mac-v1-1-df9e6264b056@kernel.org>
 X-Mailing-List: linux-wireless@vger.kernel.org
 List-Id: <linux-wireless.vger.kernel.org>
 List-Post: <mailto:linux-wireless@vger.kernel.org>
@@ -69,68 +60,26 @@ List-Unsubscribe: <mailto:linux-wireless+unsubscribe@vger.kernel.org>
 List-Owner: <mailto:linux-wireless+owner@vger.kernel.org>
 Precedence: list
 MIME-Version: 1.0
-X-malware-bazaar: not-scanned
+Content-Type: multipart/signed; micalg=pgp-sha512;
+	protocol="application/pgp-signature"; boundary="udU847c1Gm7zZV4Y"
+Content-Disposition: inline
+In-Reply-To: <20261110-brcm-fmac-mac-v1-1-df9e6264b056@kernel.org>
 
-On Fri, 2026-11-06 at 13:28 +0530, Pooventhiran G wrote:
->=20
-> +/**
-> + * enum nl80211_smd_ctx_type - SMD Request Type values
+--udU847c1Gm7zZV4Y
+Content-Type: text/plain; charset=us-ascii
+Content-Disposition: inline
 
-This is more "ST request type" or something.
+Acked-by: Conor Dooley <conor.dooley@microchip.com>
 
-You're conflating "SMD" with "SMD transition" throughout, and the "BSS"
-in the subject isn't really supposed to be there
+--udU847c1Gm7zZV4Y
+Content-Type: application/pgp-signature; name=signature.asc
 
-> + * Used with %NL80211_ATTR_SMD_CTX_TYPE.
-> + *
-> + * @NL80211_SMD_CTX_TYPE_PREP: SMD BSS Transition (ST) Preparation.
+-----BEGIN PGP SIGNATURE-----
 
-(as here)
+iHUEABYKAB0WIQRh246EGq/8RLhDjO14tDGHoIJi0gUCavNnjwAKCRB4tDGHoIJi
+0jBmAQCD36ZytGuKw+f2d+RIxLcD+mwHwO622R52owDqF5/m9QD+PEZCaDeu2cUp
+fbudI+tiId+GLa5O81lJVq5nPSihpgI=
+=SfOD
+-----END PGP SIGNATURE-----
 
-> + * @NL80211_SMD_CTX_TYPE_EXEC: ST Execution.
-> + * @NUM_SMD_CTX_TYPES: internal.
-> + * @NL80211_SMD_CTX_TYPE_MAX: Max type of ST context.
-> + */
-> +enum nl80211_smd_ctx_type {
-> +	NL80211_SMD_CTX_TYPE_PREP,
-> +	NL80211_SMD_CTX_TYPE_EXEC,
-> +
-> +	NUM_SMD_CTX_TYPES,
-> +	NL80211_SMD_CTX_TYPE_MAX =3D NUM_SMD_CTX_TYPES - 1,
-> +};
-> +
-> +/**
-> + * enum nl80211_smd_ctx_ba_param - SMD Block Ack Context attributes
-> + *
-> + * @__NL80211_SMD_CTX_BA_ATTR_INVALID: Invalid attribute.
-> + * @NL80211_SMD_CTX_BA_ATTR_BUFF_SIZE: Required (u16) BA buffer size.
-> + * @NL80211_SMD_CTX_BA_ATTR_POLICY: Required (u8) BA policy.
-> + * @NL80211_SMD_CTX_BA_ATTR_AMSDU_SUPPORT: Flag attribute to indicate
-> + *	AMSDU support.
-> + * @NL80211_SMD_CTX_BA_ATTR_TIMEOUT: Required (u16) Block Ack timeout.
-> + * @NL80211_SMD_CTX_BA_ATTR_EXT_NO_FRAG: Flag attribute to indicate
-> + *	fragmentation support.
-> + * @NL80211_SMD_CTX_BA_ATTR_EXT_FRAG_LEVEL: Required (u8) HE fragmentati=
-on
-> + *	level.
-> + * @NL80211_SMD_CTX_BA_ATTR_EXT_BUFF_SIZE: Required (u16) extended buffe=
-r size.
-
-Same here as in the other patch - splitting the buffer size into two
-variables or attributes seems ridiculous.
-
-> + * @NL80211_SMD_CTX_DL_ATTR_VALID_TID_BITMAP: Optional (u8) TIDs include=
-d.
-
-That doesn't really make sense, it just introduces a place where things
-can drift - the per TID nested values below already implicitly say which
-TIDs are valid.
-
-> +/**
-> + * enum nl80211_smd_ctx_ul - SMD Dynamic Context - UL direction
-
-Right now I don't see a lot of value in splitting UL/DL attributes when
-they're basically mostly the same - we can probably unify that into one
-space and maybe have a few that are one direction or the other only?
-
-johannes
+--udU847c1Gm7zZV4Y--
