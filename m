@@ -1,59 +1,62 @@
 Authentication-Results: smtp.subspace.kernel.org; arc=none smtp.remote-ip=46.4.11.11
 ARC-Seal: i=1; d=subspace.kernel.org; s=arc20261015; a=rsa-sha256; cv=none;
 	t=1794336880;
-	b=x+7b2KDOGdOp1VT10pBnT5eCWtR6vJW8qxW4mvj6+2M0UlPEEXy8NpLc3IC39ICUue0f
-	 HOdC0rawW6v0x7Y7Dfv53aWOHyFdxa2Rl60GsQXbeGlTQD5PkxeVGWH6TDUC88LLATJ3l
-	 Gz5GiLrCo8Esj//j/pkAHoTUC0lgQhgx5TvdnphUffnbFB19VdDsjX7NOQrBq4wAvDq2h
-	 aZxrcWN0mdXJdxqo7nntn1/fH86r/fH/7mzFPnvoYIPtY+Ob5YLUJcKjolbW3zzb5OtJP
-	 3tv0p0BHX6k8YVRqRvs4bd5EAC5wVGs3qWqT0doqjlHkHrwBk2taDWIwNlmHg5IpvRw==
+	b=bQyqb+xBmZiSF82c1C8c4AC0bwj0Kf1Nh44BaHocQfAg2NMTGl9EbXsJfvFgwq9gNXTf
+	 NIMxpvOJTiSJc8wYU9NSrpSZjQZwwDARA2Ibrhmb07rRtrWJB0o+4v7GzaRK/mr/qFb+5
+	 RF5OUdJ53z6j7O4UBE/caECVjY4gRszu8MfP6Wo5frU96uu4OAL+UL0+UxEnWzlH2YaSW
+	 bDiUae66CCaAxuFpnZ9sYkgFObxxRH7FmOn9HfY26jIbTXfQs60ASydfqlaSxOF9uml4E
+	 RdAJvQf4Rie0hqF/J0iAWmxa8isi4XtYKsAjGRBwHh4mjJ9iLAfXf66iVh0PSmk1Ong==
 ARC-Message-Signature: i=1; d=subspace.kernel.org; s=arc20261015;
 	a=rsa-sha256; c=relaxed/relaxed; t=1794336880;
 	h=DMARC-Filter:DKIM-Signature:Received:From:To:Cc:Subject:Date:
-	 Message-ID:X-Mailer:MIME-Version:Content-Transfer-Encoding;
-	bh=0AuXyZ0EApoqk7ejJrVnGO6U1qQ3LpmkSeCvkCyqwAk=;
-	b=Tnagl1uS+X5VqW4dvB/SD94hQB9xE9e+gf8eAx4RjSWVy25XsRVm9i4Ah5E/4lpaYYsN
-	 TFQPR0gEuiZSWG9zu3wnp8Cxk3KJXpoAwcFm3VxHMvXKrEKSxHjFGnNWMjkGf5HIbW+OT
-	 pkboAUyzkHYEI5usKCboKv0kDYRIIJiS8CsVOUZ8og+VwAbbh0rFCAr4cnGDgLSqsoygy
-	 0qwcb/yxoCbKsGUO+dBttNbpWRNBDUwjQ33W+RsNdoNMDYB3zA1PZN7ZzMFmqQPzAJpNi
-	 gn4T/0DRhYMcv3xxqhr8S2D4euMbP8qgwGwhMu5HbBFv3PttayXw0WxY7E8WUSDN8eQ==
+	 Message-ID:X-Mailer:In-Reply-To:References:MIME-Version:
+	 Content-Transfer-Encoding;
+	bh=L5b38H9pugWwDCQmS4R+fRpV9gamA4YhUQvX0fkzwdk=;
+	b=EM0iuJ66xKQJx499+8kPWKDuDkBsRs53alLC6xuLjMjoHq6wfrXysPNWqNvN47BF99So
+	 PH3liQ1+NVV2Nlg5/tVtvo33TSsheDfS+ZRz+WqpN2TGNQI1XNmvyJpgFpMuAKdDRPhDB
+	 32V95AbLg8iMrKu080FAibByPvIW4rwfNkKbJuYDnogmFUz5eV2wMvAQpDxtvW8RYDMR0
+	 rz/vBekFotH6GwqVgv7XEe7L9EZCY/7Fg2WTSAMrA7wPv1m25z9g7NOunawA4RUAVK6yT
+	 hGDSzk1GaHm4U1WeTb1wG2XxSfnaM3EVXZtiKU2u8LWvgYGGJXvFmnURh1xifCXAhEg==
 ARC-Authentication-Results: i=1; smtp.subspace.kernel.org; 
 	dmarc=pass header.from=nbd.name;
 	spf=pass smtp.mailfrom=nbd.name;
-	dkim=pass header.d=nbd.name header.i=@nbd.name header.a=rsa-sha256 header.s=20160729 header.b=AV2z1pqi;
+	dkim=pass header.d=nbd.name header.i=@nbd.name header.a=rsa-sha256 header.s=20160729 header.b=nn2thALy;
 	arc=none smtp.remote-ip=46.4.11.11
 Received: from nbd.name (nbd.name [46.4.11.11])
 	(using TLSv1.3 with cipher TLS_AES_256_GCM_SHA384 (256/256 bits)
 	 key-exchange ECDHE (prime256v1) server-signature ECDSA (prime256v1) server-digest SHA256)
 	(No client certificate requested)
-	by smtp.subspace.kernel.org (Postfix) with ESMTPS id BABB5606A323
-	for <linux-wireless@vger.kernel.org>; Tue, 10 Nov 2026 18:54:39 +0000 (UTC)
-DMARC-Filter: OpenDMARC Filter v1.4.2 smtp.subspace.kernel.org BABB5606A323
+	by smtp.subspace.kernel.org (Postfix) with ESMTPS id 14F51606A33D
+	for <linux-wireless@vger.kernel.org>; Tue, 10 Nov 2026 18:54:40 +0000 (UTC)
+DMARC-Filter: OpenDMARC Filter v1.4.2 smtp.subspace.kernel.org 14F51606A33D
 Authentication-Results: smtp.subspace.kernel.org; dmarc=pass (p=none dis=none) header.from=nbd.name
 Authentication-Results: smtp.subspace.kernel.org; spf=pass smtp.mailfrom=nbd.name
 Authentication-Results: smtp.subspace.kernel.org;
-	dkim=pass (1024-bit key, unprotected) header.d=nbd.name header.i=@nbd.name header.a=rsa-sha256 header.s=20160729 header.b=AV2z1pqi
+	dkim=pass (1024-bit key) header.d=nbd.name header.i=@nbd.name header.a=rsa-sha256 header.s=20160729 header.b=nn2thALy
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed; d=nbd.name;
-	s=20160729; h=Content-Transfer-Encoding:MIME-Version:Message-ID:Date:Subject:
-	Cc:To:From:Sender:Reply-To:Content-Type:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	In-Reply-To:References:List-Id:List-Help:List-Unsubscribe:List-Subscribe:
+	s=20160729; h=Content-Transfer-Encoding:MIME-Version:References:In-Reply-To:
+	Message-ID:Date:Subject:Cc:To:From:Sender:Reply-To:Content-Type:Content-ID:
+	Content-Description:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc
+	:Resent-Message-ID:List-Id:List-Help:List-Unsubscribe:List-Subscribe:
 	List-Post:List-Owner:List-Archive;
-	bh=0AuXyZ0EApoqk7ejJrVnGO6U1qQ3LpmkSeCvkCyqwAk=; b=AV2z1pqilUSREvWdQbqNKc0ZFL
-	fq+LVk3THc/3btDH+FiUh8Lqtw0vP8UB5CUsEUJ7CDCiF5D/yrFc7NG+RlHkTFSkC64ZFQSt094bT
-	ndo+JtDAZhOY9VreZ58X8pxYjeiEfjfey03K1Mj6pxuZcDmJtdJ2dUU3P98m3NL/aoug=;
+	bh=L5b38H9pugWwDCQmS4R+fRpV9gamA4YhUQvX0fkzwdk=; b=nn2thALywDJf/XxRUwRGHoNSL+
+	gIafXhw+33CoPXiM9C4KTDH5KYYFRf4HDVyLnpyjGeS69YqvHyVfzImox9mJq2rU60y1PWWtEaI3V
+	0NIAzu912FFZ/C501nk1hbzuPJJeOsxD+XRm4EHWVzTPUQTvuag7pWrTBNhUp2VmaglA=;
 Received: from p200300cadf12920000000000000005bb.dip0.t-ipconnect.de ([2003:ca:df12:9200::5bb] helo=localhost.localdomain)
 	by ds12 with esmtpsa  (TLS1.3) tls TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384
 	(Exim 4.96)
 	(envelope-from <nbd@nbd.name>)
-	id 1xQqzO-001EEc-0D;
+	id 1xQqzO-001EEc-1v;
 	Tue, 10 Nov 2026 19:54:38 +0100
 From: Felix Fietkau <nbd@nbd.name>
 To: linux-wireless@vger.kernel.org
 Cc: johannes@sipsolutions.net
-Subject: [PATCH wireless v2 1/4] wifi: mac80211: keep the monitor chanreq empty without a channel
-Date: Tue, 10 Nov 2026 19:54:33 +0100
-Message-ID: <20261110185436.2015505-1-nbd@nbd.name>
+Subject: [PATCH wireless v2 4/4] wifi: mac80211: reject a monitor channel without a running interface
+Date: Tue, 10 Nov 2026 19:54:36 +0100
+Message-ID: <20261110185436.2015505-4-nbd@nbd.name>
 X-Mailer: git-send-email 2.47.3
+In-Reply-To: <20261110185436.2015505-1-nbd@nbd.name>
+References: <20261110185436.2015505-1-nbd@nbd.name>
 X-Mailing-List: linux-wireless@vger.kernel.org
 List-Id: <linux-wireless.vger.kernel.org>
 List-Post: <mailto:linux-wireless@vger.kernel.org>
@@ -65,52 +68,36 @@ Precedence: list
 MIME-Version: 1.0
 Content-Transfer-Encoding: 8bit
 
-ieee80211_do_stop() releases the channel of a monitor, but leaves its
-chanreq filled. When the monitor comes back up it has no channel, yet
-the RX path still filters on the old chanreq and drops all frames
-received on other frequencies.
+With NO_VIRTUAL_MONITOR, ieee80211_set_monitor_channel() applies the
+channel to the interface of the request. While a monitor is running,
+nl80211_set_wiphy() can send a request without an interface, and sdata
+is then invalid. A request for another monitor that is down triggers
+the warning in check_sdata_in_driver().
 
-Only keep the chanreq filled while a channel is set on the monitor.
+Reject both requests, since the channel can only be applied to a
+running monitor.
 
-Fixes: f92e0cf19ae0 ("wifi: mac80211: filter on monitor interfaces based on configured channel")
+Fixes: 9d40f7e32774 ("wifi: mac80211: add flag to opt out of virtual monitor support")
 Signed-off-by: Felix Fietkau <nbd@nbd.name>
 ---
-v2: drop unnecessary condition for memset
-
- net/mac80211/cfg.c   | 5 ++++-
- net/mac80211/iface.c | 2 ++
- 2 files changed, 6 insertions(+), 1 deletion(-)
+ net/mac80211/cfg.c | 4 ++++
+ 1 file changed, 4 insertions(+)
 
 diff --git a/net/mac80211/cfg.c b/net/mac80211/cfg.c
-index 9608c07bcea7..64e2bd0cf124 100644
+index 64e2bd0cf124..62f8cf88f8f4 100644
 --- a/net/mac80211/cfg.c
 +++ b/net/mac80211/cfg.c
-@@ -1165,8 +1165,11 @@ static int ieee80211_set_monitor_channel(struct wiphy *wiphy,
- 	ieee80211_link_release_channel(&sdata->deflink);
- 	ret = ieee80211_link_use_channel(&sdata->deflink, &chanreq,
- 					 IEEE80211_CHANCTX_SHARED);
--	if (ret)
-+	if (ret) {
-+		memset(&sdata->vif.bss_conf.chanreq, 0,
-+		       sizeof(sdata->vif.bss_conf.chanreq));
- 		return ret;
-+	}
- done:
- 	local->monitor_chanreq = chanreq;
- 	return 0;
-diff --git a/net/mac80211/iface.c b/net/mac80211/iface.c
-index 63a371c79183..79739b142398 100644
---- a/net/mac80211/iface.c
-+++ b/net/mac80211/iface.c
-@@ -758,6 +758,8 @@ static void ieee80211_do_stop(struct ieee80211_sub_if_data *sdata, bool going_do
- 			break;
+@@ -1155,6 +1155,10 @@ static int ieee80211_set_monitor_channel(struct wiphy *wiphy,
+ 		sdata = wiphy_dereference(wiphy, local->monitor_sdata);
+ 		if (!sdata)
+ 			goto done;
++	} else if (!dev) {
++		return -EOPNOTSUPP;
++	} else if (!ieee80211_sdata_running(sdata)) {
++		return -ENETDOWN;
+ 	}
  
- 		ieee80211_link_release_channel(&sdata->deflink);
-+		memset(&sdata->vif.bss_conf.chanreq, 0,
-+		       sizeof(sdata->vif.bss_conf.chanreq));
- 		fallthrough;
- 	default:
- 		if (!going_down)
+ 	if (rcu_access_pointer(sdata->deflink.conf->chanctx_conf) &&
 -- 
 2.47.3
 
