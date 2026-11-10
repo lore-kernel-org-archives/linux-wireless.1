@@ -1,56 +1,50 @@
-Authentication-Results: smtp.subspace.kernel.org; arc=none smtp.remote-ip=185.142.180.65
+Authentication-Results: smtp.subspace.kernel.org; arc=none smtp.remote-ip=159.226.251.25
 ARC-Seal: i=1; d=subspace.kernel.org; s=arc20261015; a=rsa-sha256; cv=none;
-	t=1794306112;
-	b=tZeMEfkaH1LUIYXX4VPy/shfRIhR9hXWk+6qPaECSm6N6wvE81A5QmJrjuJEmB04DgKH
-	 //ojqjglgxJYQdRLxEuIUmzSwNIlL0WL41ZZ7gWRLAdLBQGPONLnzez1+fXNy4FP6WJYA
-	 TVCTue8NVvMR2ODedBLd7iELzUnRIAhu5Q3Cy8T53D8oKoNf6YvPK2hYjk0SdXXaJHSus
-	 egod9pgvpN/MwyFhBE8xx1R3vgFLM8ruDGJHry6l/s84Mb9A+XVQ7VC/o+H9QusViVV7k
-	 xByx4YCS1a4Vz2qnU9nkJMXbflxBhRfXlQtDa8K3LLlGhl8CkCmkzWWGUObEIu4JVBg==
+	t=1794306855;
+	b=Zfb6Vpm0yG0U2Ui6VawzrKEnj6u1E3+U1SUH0Py6urs2gGSdJSVtzXZ4wWR93Tph0M+Y
+	 41ns8kaPyTNrm6BMMBPQ7y1LlLh4HQK8ne8eVvrTTUAphQ7XyGsuLZt6p0/XGf/3WzocT
+	 tGD0G54xp1taX8UhBaThlpTokycrdlmhoTGimqwYVx4+wNt//Rd6bPGhZEiZ1DWm65HKv
+	 S6LFActzD+u5Au0En//WcPQrG6Z96lGJyuICGG0adcfe2D1CtCGNgLUGd4EafCVApWlBt
+	 FxycM/0VJXpSIHoXRv2vtb+wnvAmXhQ7/T6CLAO8qZ6AXzGsxKVohBXBN+nbQiBACBg==
 ARC-Message-Signature: i=1; d=subspace.kernel.org; s=arc20261015;
-	a=rsa-sha256; c=relaxed/relaxed; t=1794306112;
-	h=DMARC-Filter:Received:Date:From:To:Subject:Message-ID:References:
-	 MIME-Version:Content-Type:Content-Disposition:In-Reply-To;
-	bh=4RjiHFSGtFGI5JfcAYv07qfSKq6xK83qO3wQQHxqTEI=;
-	b=im0YogZ5EPTBucKBCDfWnMRrKQb0F8zH2TauCaVUXsHbaF3VtazKY4po5g7ztZRWSaM3
-	 D536pgt0V17RGzlIcOcKGTlWWhJvyIujiKO6z7MFvdkaHeyxljmkY2uJ3bgpd6ivWVews
-	 xw/+Fq3bggN18CpS4kB/9ZkNhOgItbeYX56fFgcjm9RfEQzgXhRz6+/PmV0yWXkAPlaKW
-	 RJLDX8wBo0navA2/2BoMtq9rHkknLW8fhV3Yn9wvNyT3wm9JlT/8qaWp7ZUZjBouWQ2Fy
-	 Vd38rMBcYPNfiSxfDU3J15fT18fpxqIlHXqwyliZidytVBUyPqkRqA661DwZZaJ73pw==
+	a=rsa-sha256; c=relaxed/relaxed; t=1794306855;
+	h=DMARC-Filter:Received:From:To:Cc:Subject:In-Reply-To:References:
+	 Content-Type:Content-Transfer-Encoding:MIME-Version:Date:Message-ID:
+	 X-CM-TRANSID:X-Coremail-Antispam:X-Originating-IP:X-CM-SenderInfo;
+	bh=uMsKrHrfZchhh/m6IXY34VKZHA3ZjPvsm6XnygmGsDE=;
+	b=gKbAg9UGQvWGviEuADqoHFCjVfiWae/JliRb48NCN9rZelT92Gw99CFu3y1TKeJnwHxh
+	 qF97AT+/t3DpOmJ3OANy79J25PnE873tLyaArDtZiEsAMgeFd6zxNyLQ4VoTaKSSgQMl5
+	 IfRCJEZiOMXI+fSzLhE8GsUavZutLxKu+f/LWCqzx3JaLM4MuWvEKzc+x2vr7wfcDWXeS
+	 t1eYBfEYbVHoMfAD9KtL60iVKxWG89gYG7VT57AIIYDEwCeEu68qq5ZrTkiaF20ZwYYzs
+	 Okma4IBglEuNu5E645g24Nk/+wDxLvbn2laD13PUXxbIVT5BPXWt4dKvJ4LVqMn8Itg==
 ARC-Authentication-Results: i=1; smtp.subspace.kernel.org; 
-	dmarc=none header.from=makrotopia.org;
-	spf=pass smtp.mailfrom=makrotopia.org;
-	arc=none smtp.remote-ip=185.142.180.65
-Received: from pidgin.makrotopia.org (pidgin.makrotopia.org [185.142.180.65])
+	dmarc=none header.from=iscas.ac.cn;
+	spf=pass smtp.mailfrom=iscas.ac.cn;
+	arc=none smtp.remote-ip=159.226.251.25
+Received: from cstnet.cn (smtp25.cstnet.cn [159.226.251.25])
 	(using TLSv1.3 with cipher TLS_AES_256_GCM_SHA384 (256/256 bits)
 	 key-exchange X25519 server-signature ECDSA (prime256v1) server-digest SHA256)
 	(No client certificate requested)
-	by smtp.subspace.kernel.org (Postfix) with ESMTPS id 55E33606DE29;
-	Tue, 10 Nov 2026 10:21:52 +0000 (UTC)
-DMARC-Filter: OpenDMARC Filter v1.4.2 smtp.subspace.kernel.org 55E33606DE29
-Authentication-Results: smtp.subspace.kernel.org; dmarc=none (p=none dis=none) header.from=makrotopia.org
-Authentication-Results: smtp.subspace.kernel.org; spf=pass smtp.mailfrom=makrotopia.org
-Received: from local
-	by pidgin.makrotopia.org with esmtpsa (TLS1.3:TLS_AES_256_GCM_SHA384:256:X25519MLKEM768)
-	 (Exim 4.100.1)
-	(envelope-from <daniel@makrotopia.org>)
-	id 1xQimM-000000006so-27Tz;
-	Tue, 10 Nov 2026 10:21:42 +0000
-Date: Tue, 10 Nov 2026 10:21:35 +0000
-From: Daniel Golle <daniel@makrotopia.org>
-To: Greg Kroah-Hartman <gregkh@linuxfoundation.org>,
-	"Rafael J. Wysocki" <rafael@kernel.org>,
-	Danilo Krummrich <dakr@kernel.org>,
-	Marcel Holtmann <marcel@holtmann.org>,
-	Luiz Augusto von Dentz <luiz.dentz@gmail.com>,
-	Miri Korenblit <miriam.rachel.korenblit@intel.com>,
-	Emmanuel Grumbach <emmanuel.grumbach@intel.com>,
-	Hans de Goede <hansg@kernel.org>, driver-core@lists.linux.dev,
-	linux-kernel@vger.kernel.org, linux-bluetooth@vger.kernel.org,
-	linux-wireless@vger.kernel.org
-Subject: Re: [PATCH v4 0/4] device_schedule_reprobe(): core helper and
- conversions
-Message-ID: <avLv6TwefQu-GPWp@makrotopia.org>
-References: <cover.1792203271.git.daniel@makrotopia.org>
+	by smtp.subspace.kernel.org (Postfix) with ESMTPS id 3EBA5606A31C;
+	Tue, 10 Nov 2026 10:34:12 +0000 (UTC)
+DMARC-Filter: OpenDMARC Filter v1.4.2 smtp.subspace.kernel.org 3EBA5606A31C
+Authentication-Results: smtp.subspace.kernel.org; dmarc=none (p=none dis=none) header.from=iscas.ac.cn
+Authentication-Results: smtp.subspace.kernel.org; spf=pass smtp.mailfrom=iscas.ac.cn
+Received: from [172.100.0.8] (unknown [36.110.52.2])
+	by APP-05 (Coremail) with SMTP id zQCowADnf7US8_Jqc87HAA--.1727S2;
+	Tue, 10 Nov 2026 18:33:54 +0800 (CST)
+From: Wentao Liang <vulab@iscas.ac.cn>
+To: Jeff Johnson <jeff.johnson@oss.qualcomm.com>
+Cc: Jeff Johnson <jjohnson@kernel.org>, linux-wireless@vger.kernel.org,
+ ath11k@lists.infradead.org, linux-kernel@vger.kernel.org,
+ workflows@vger.kernel.org
+Subject:
+ Re: [PATCH RESEND] wifi: ath11k: release the rproc reference on teardown
+In-Reply-To: <a39b1918-5d04-452b-8b5a-0703963f4587@oss.qualcomm.com>
+References: <20261103102915.1341148-1-vulab@iscas.ac.cn>
+ <a39b1918-5d04-452b-8b5a-0703963f4587@oss.qualcomm.com>
+Content-Type: text/plain; charset="utf-8"
+Content-Transfer-Encoding: 7bit
 X-Mailing-List: linux-wireless@vger.kernel.org
 List-Id: <linux-wireless.vger.kernel.org>
 List-Post: <mailto:linux-wireless@vger.kernel.org>
@@ -60,37 +54,40 @@ List-Unsubscribe: <mailto:linux-wireless+unsubscribe@vger.kernel.org>
 List-Owner: <mailto:linux-wireless+owner@vger.kernel.org>
 Precedence: list
 MIME-Version: 1.0
-Content-Type: text/plain; charset=us-ascii
-Content-Disposition: inline
-In-Reply-To: <cover.1792203271.git.daniel@makrotopia.org>
+Date: Tue, 10 Nov 2026 10:34:05 -0000
+Message-ID: <179430684554.3011466.3431045638041318447@iscas.ac.cn>
+X-CM-TRANSID:zQCowADnf7US8_Jqc87HAA--.1727S2
+X-Coremail-Antispam: 1UD129KBjDUn29KB7ZKAUJUUUUU529EdanIXcx71UUUUU7v73
+	VFW2AGmfu7bjvjm3AaLaJ3UjIYCTnIWjp_UUUYs7k0a2IF6F4UM7kC6x804xWl1xkIjI8I
+	6I8E6xAIw20EY4v20xvaj40_Wr0E3s1l1IIY67AEw4v_Jr0_Jr4l8cAvFVAK0II2c7xJM2
+	8CjxkF64kEwVA0rcxSw2x7M28EF7xvwVC0I7IYx2IY67AKxVW8JVW5JwA2z4x0Y4vE2Ix0
+	cI8IcVCY1x0267AKxVW8JVWxJwA2z4x0Y4vEx4A2jsIE14v26rxl6s0DM28EF7xvwVC2z2
+	80aVCY1x0267AKxVW0oVCq3wAS0I0E0xvYzxvE52x082IY62kv0487Mc02F40EFcxC0VAK
+	zVAqx4xG6I80ewAv7VC0I7IYx2IY67AKxVWUAVWUtwAv7VC2z280aVAFwI0_Cr1j6rxdMc
+	vjeVCFs4IE7xkEbVWUJVW8JwACjcxG0xvEwIxGrwCF04k20xvY0x0EwIxGrwCF04k20xvE
+	74AGY7Cv6cx26r48ZrWUJr1UMxAqzxv26xkF7I0En4kS14v26r126r1DMxC20s026xCaFV
+	Cjc4AY6r1j6r4UMI8I3I0E5I8CrVAFwI0_Jr0_Jr4lx2IqxVCjr7xvwVAFwI0_JrI_JrWl
+	x4CE17CEb7AF67AKxVWUAVWUtwCIc40Y0x0EwIxGrwCI42IY6xIIjxv20xvE14v26r1j6r
+	1xMIIF0xvE2Ix0cI8IcVCY1x0267AKxVWUJVW8JwCI42IY6xAIw20EY4v20xvaj40_Jr0_
+	JF4lIxAIcVC2z280aVAFwI0_Jr0_Gr1lIxAIcVC2z280aVCY1x0267AKxVW8JVW8JrUvcS
+	sGvfC2KfnxnUUI43ZEXa7IUb_-PUUUUUU==
+X-CM-SenderInfo: pyxotu46lvutnvoduhdfq/1tbiCRIHA2ry1-1guAAAs1
 
-Hi Greg,
+Hi Jeff,
 
-On Sat, Oct 17, 2026 at 09:55:17AM +0100, Daniel Golle wrote:
-> iwlwifi and hci_h5 re-probe their own device from a work item in module
-> text ending in module_put(THIS_MODULE), which a concurrent rmmod can
-> race, and nothing ties the re-probe to the binding that asked for it.
-> btintel_pcie re-probes synchronously from its own reset work. This
-> series adds device_schedule_reprobe() to the driver core and converts
-> all three.
-> 
-> Tested on an Intel AX101 with patches 1 to 3, PROVE_LOCKING and
-> DEBUG_OBJECTS_WORK: a re-probe, and an unbind, rmmod, PCI removal,
-> suspend and reboot with one pending. The unbind and the removals
-> cancelled it, and it ran after resume. The stock iwlwifi code undid
-> the unbind, and rmmod with its work held just past module_put() oopsed
-> in lockdep. Patches 3 and 4 are untested for lack of hardware.
+I'm sorry for taking so long to reply and for the confusion and extra
+work caused by sending patches from a shared address and failing to
+follow up on review feedback.
 
-Now that the most hardcore merge-window ever is over and v7.4-rc1 is
-out, can you take a look at this?
+To keep the existing discussions clear, I'll continue to reply from
+vulab@iscas.ac.cn under my own name in the threads for patches I
+submitted. I will not send any new patches or revisions.
 
-The series has received positive feedback and was tested by some more
-of the bluetooth folks by now, and is immediately useful to address
-currently buggy behavior of existing popular driver, and prevent the
-same wrong pattern from being duplicated into new drivers.
+For context on this submission, static analysis flagged the candidate,
+and we used DeepSeek and GPT-6.1 Sol to assist with reviewing it and
+preparing the fix.
 
+Again, I'm sorry for the confusion and the extra work this caused.
 
-Cheers
+Wentao
 
-
-Daniel
