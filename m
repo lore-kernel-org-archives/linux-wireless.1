@@ -1,62 +1,65 @@
-Authentication-Results: smtp.subspace.kernel.org; arc=none smtp.remote-ip=46.4.11.11
+Authentication-Results: smtp.subspace.kernel.org; arc=none smtp.remote-ip=168.119.38.16
 ARC-Seal: i=1; d=subspace.kernel.org; s=arc20261015; a=rsa-sha256; cv=none;
-	t=1794336880;
-	b=bQyqb+xBmZiSF82c1C8c4AC0bwj0Kf1Nh44BaHocQfAg2NMTGl9EbXsJfvFgwq9gNXTf
-	 NIMxpvOJTiSJc8wYU9NSrpSZjQZwwDARA2Ibrhmb07rRtrWJB0o+4v7GzaRK/mr/qFb+5
-	 RF5OUdJ53z6j7O4UBE/caECVjY4gRszu8MfP6Wo5frU96uu4OAL+UL0+UxEnWzlH2YaSW
-	 bDiUae66CCaAxuFpnZ9sYkgFObxxRH7FmOn9HfY26jIbTXfQs60ASydfqlaSxOF9uml4E
-	 RdAJvQf4Rie0hqF/J0iAWmxa8isi4XtYKsAjGRBwHh4mjJ9iLAfXf66iVh0PSmk1Ong==
+	t=1794336946;
+	b=5lP1IAdk5+fMFA/zXbrRSZ6MOS+bVQMY6HAN/2EsTf3UQ9ODUavcQ8gUzEus+sljRmze
+	 ZVymUEXUnMkdBPOro7XQLS2cqdOBHmlPuv5GKPUurd58txZYQocsyi+HXIpSp2/sP5kAz
+	 /XQQLMGZf2wwYgkolrMVtOFP+Hc8TEQtNMd/BEHvXjIGKc7GY0k7ueL/bH7VXSvcR4Evx
+	 hyjtrirfvsYnIbUnTcVGHFRcv1uMT1kCen58i1H06xb47OkNQunPD0I14tDgJVQ/Lwsrr
+	 T8bSBZrwSqBBc5BYK8k/Th+ENB/gxlqKEMnQtM2wsnUF1Thr2bPv9xZRt26NGgWhHnA==
 ARC-Message-Signature: i=1; d=subspace.kernel.org; s=arc20261015;
-	a=rsa-sha256; c=relaxed/relaxed; t=1794336880;
-	h=DMARC-Filter:DKIM-Signature:Received:From:To:Cc:Subject:Date:
-	 Message-ID:X-Mailer:In-Reply-To:References:MIME-Version:
-	 Content-Transfer-Encoding;
-	bh=L5b38H9pugWwDCQmS4R+fRpV9gamA4YhUQvX0fkzwdk=;
-	b=EM0iuJ66xKQJx499+8kPWKDuDkBsRs53alLC6xuLjMjoHq6wfrXysPNWqNvN47BF99So
-	 PH3liQ1+NVV2Nlg5/tVtvo33TSsheDfS+ZRz+WqpN2TGNQI1XNmvyJpgFpMuAKdDRPhDB
-	 32V95AbLg8iMrKu080FAibByPvIW4rwfNkKbJuYDnogmFUz5eV2wMvAQpDxtvW8RYDMR0
-	 rz/vBekFotH6GwqVgv7XEe7L9EZCY/7Fg2WTSAMrA7wPv1m25z9g7NOunawA4RUAVK6yT
-	 hGDSzk1GaHm4U1WeTb1wG2XxSfnaM3EVXZtiKU2u8LWvgYGGJXvFmnURh1xifCXAhEg==
+	a=rsa-sha256; c=relaxed/relaxed; t=1794336946;
+	h=DKIM-Signature:Received:Message-ID:Subject:From:To:Cc:Date:
+	 In-Reply-To:References:Content-Type:Content-Transfer-Encoding:
+	 User-Agent:MIME-Version:X-malware-bazaar;
+	bh=IzfYoPQXoRB3qOZZvQLmzwqUCwQZzYFyjEAkUcvztHE=;
+	b=MPf3dps3w+W1yhV9C4P9SHjBA5kIC5qqa6v2FCPNqBQJrJYmMZ3klGL8cmud+pyuxwOj
+	 R3MmhivR6J0MwOSKFU52+cwfzJ9moO0defe5sGcJa9iNygR+uSJuVpCbRtGcCQ05F8eXZ
+	 kbQQSxzOrcWHt9yh7OXOmt1LJV7te5pYfh44aJSYKX4zS/vsNv/u+uoLzlCMrwxHzx11g
+	 CrN1t9sjs5MZI/XYkHwAh2UPICuR5OHc/uIm0lrj9te5jTPmK2VtpyWoh90osEnVvDJpo
+	 vjIBm9lLoct+8i6ZTk9BlHuirfGNoJwQ1bNJqb9w7nHW1IWmVnrIVGAzDnQQsOl+qEw==
 ARC-Authentication-Results: i=1; smtp.subspace.kernel.org; 
-	dmarc=pass header.from=nbd.name;
-	spf=pass smtp.mailfrom=nbd.name;
-	dkim=pass header.d=nbd.name header.i=@nbd.name header.a=rsa-sha256 header.s=20160729 header.b=nn2thALy;
-	arc=none smtp.remote-ip=46.4.11.11
-Received: from nbd.name (nbd.name [46.4.11.11])
+	dmarc=permerror header.from=sipsolutions.net;
+	spf=pass smtp.mailfrom=sipsolutions.net;
+	dkim=pass header.d=sipsolutions.net header.i=@sipsolutions.net header.a=rsa-sha256 header.s=mail header.b=JIbPtDR1;
+	arc=none smtp.remote-ip=168.119.38.16
+Received: from sipsolutions.net (s3.sipsolutions.net [168.119.38.16])
 	(using TLSv1.3 with cipher TLS_AES_256_GCM_SHA384 (256/256 bits)
 	 key-exchange ECDHE (prime256v1) server-signature ECDSA (prime256v1) server-digest SHA256)
 	(No client certificate requested)
-	by smtp.subspace.kernel.org (Postfix) with ESMTPS id 14F51606A33D
-	for <linux-wireless@vger.kernel.org>; Tue, 10 Nov 2026 18:54:40 +0000 (UTC)
-DMARC-Filter: OpenDMARC Filter v1.4.2 smtp.subspace.kernel.org 14F51606A33D
-Authentication-Results: smtp.subspace.kernel.org; dmarc=pass (p=none dis=none) header.from=nbd.name
-Authentication-Results: smtp.subspace.kernel.org; spf=pass smtp.mailfrom=nbd.name
+	by smtp.subspace.kernel.org (Postfix) with ESMTPS id C7B1B606A326;
+	Tue, 10 Nov 2026 18:55:45 +0000 (UTC)
+Authentication-Results: smtp.subspace.kernel.org; dmarc=permerror header.from=sipsolutions.net
+Authentication-Results: smtp.subspace.kernel.org; spf=pass smtp.mailfrom=sipsolutions.net
 Authentication-Results: smtp.subspace.kernel.org;
-	dkim=pass (1024-bit key) header.d=nbd.name header.i=@nbd.name header.a=rsa-sha256 header.s=20160729 header.b=nn2thALy
-DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed; d=nbd.name;
-	s=20160729; h=Content-Transfer-Encoding:MIME-Version:References:In-Reply-To:
-	Message-ID:Date:Subject:Cc:To:From:Sender:Reply-To:Content-Type:Content-ID:
-	Content-Description:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc
-	:Resent-Message-ID:List-Id:List-Help:List-Unsubscribe:List-Subscribe:
-	List-Post:List-Owner:List-Archive;
-	bh=L5b38H9pugWwDCQmS4R+fRpV9gamA4YhUQvX0fkzwdk=; b=nn2thALywDJf/XxRUwRGHoNSL+
-	gIafXhw+33CoPXiM9C4KTDH5KYYFRf4HDVyLnpyjGeS69YqvHyVfzImox9mJq2rU60y1PWWtEaI3V
-	0NIAzu912FFZ/C501nk1hbzuPJJeOsxD+XRm4EHWVzTPUQTvuag7pWrTBNhUp2VmaglA=;
-Received: from p200300cadf12920000000000000005bb.dip0.t-ipconnect.de ([2003:ca:df12:9200::5bb] helo=localhost.localdomain)
-	by ds12 with esmtpsa  (TLS1.3) tls TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384
-	(Exim 4.96)
-	(envelope-from <nbd@nbd.name>)
-	id 1xQqzO-001EEc-1v;
-	Tue, 10 Nov 2026 19:54:38 +0100
-From: Felix Fietkau <nbd@nbd.name>
-To: linux-wireless@vger.kernel.org
-Cc: johannes@sipsolutions.net
-Subject: [PATCH wireless v2 4/4] wifi: mac80211: reject a monitor channel without a running interface
-Date: Tue, 10 Nov 2026 19:54:36 +0100
-Message-ID: <20261110185436.2015505-4-nbd@nbd.name>
-X-Mailer: git-send-email 2.47.3
-In-Reply-To: <20261110185436.2015505-1-nbd@nbd.name>
-References: <20261110185436.2015505-1-nbd@nbd.name>
+	dkim=pass (2048-bit key) header.d=sipsolutions.net header.i=@sipsolutions.net header.a=rsa-sha256 header.s=mail header.b=JIbPtDR1
+DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
+	d=sipsolutions.net; s=mail; h=MIME-Version:Content-Transfer-Encoding:
+	Content-Type:References:In-Reply-To:Date:Cc:To:From:Subject:Message-ID:Sender
+	:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:Resent-To:
+	Resent-Cc:Resent-Message-ID; bh=IzfYoPQXoRB3qOZZvQLmzwqUCwQZzYFyjEAkUcvztHE=;
+	t=1794336945; x=1795546545; b=JIbPtDR1L2obaS6rr5bxvBpgsYDuHUvx99TyX6dcQqobyEk
+	lHhxT/RUxfgnXURTOyCFGkEMfsOD3ckUXdtICd/7W0Q53EUa03O6NgkBU21OXsPdvYX9JPer/b5d7
+	bXfvIZTgUlH0bVBgIrohKpMZMAExH37E6/cGU3avRpnvQ17ma3hZZC+Lvi8XFJMOmrJXrrKJU09pA
+	TARTKCnBDSo3pman+K7JeJD4Pmwkq8sHMomlrCCMMlZAsg4JmDZcgU+NGYvDZ62CdVGMfjfegjPTB
+	ieTF7wdNyXyga3gcv2/hk5KSQRVYsjxrhbkQje35ajXuqtdsQwH+gNodAPcOXtXQ==;
+Received: by sipsolutions.net with esmtpsa (TLS1.3:ECDHE_X25519__ECDSA_SECP256R1_SHA256__AES_256_GCM:256)
+	(Exim 4.98.2)
+	(envelope-from <johannes@sipsolutions.net>)
+	id 1xQr0Q-00000002BEf-0Zi5;
+	Tue, 10 Nov 2026 19:55:42 +0100
+Message-ID: <7e6a6640fe034af160eec0dda532259b499153ad.camel@sipsolutions.net>
+Subject: Re: [PATCH wireless-next v4 09/21] wifi: nl80211/cfg80211: add
+ support for SMD context programming
+From: Johannes Berg <johannes@sipsolutions.net>
+To: Pooventhiran G <pooventhiran.g@oss.qualcomm.com>
+Cc: linux-wireless@vger.kernel.org, linux-kernel@vger.kernel.org
+Date: Tue, 10 Nov 2026 19:55:41 +0100
+In-Reply-To: <20261106-smd-v4-9-62e39487f51a@oss.qualcomm.com>
+References: <20261106-smd-v4-0-62e39487f51a@oss.qualcomm.com>
+	 <20261106-smd-v4-9-62e39487f51a@oss.qualcomm.com>
+Content-Type: text/plain; charset="UTF-8"
+Content-Transfer-Encoding: quoted-printable
+User-Agent: Evolution 3.60.2 (3.60.2-3.fc44) 
 X-Mailing-List: linux-wireless@vger.kernel.org
 List-Id: <linux-wireless.vger.kernel.org>
 List-Post: <mailto:linux-wireless@vger.kernel.org>
@@ -66,38 +69,64 @@ List-Unsubscribe: <mailto:linux-wireless+unsubscribe@vger.kernel.org>
 List-Owner: <mailto:linux-wireless+owner@vger.kernel.org>
 Precedence: list
 MIME-Version: 1.0
-Content-Transfer-Encoding: 8bit
+X-malware-bazaar: not-scanned
 
-With NO_VIRTUAL_MONITOR, ieee80211_set_monitor_channel() applies the
-channel to the interface of the request. While a monitor is running,
-nl80211_set_wiphy() can send a request without an interface, and sdata
-is then invalid. A request for another monitor that is down triggers
-the warning in check_sdata_in_driver().
+On Fri, 2026-11-06 at 13:28 +0530, Pooventhiran G wrote:
+>=20
+> +static int
+> +nl80211_parse_smd_ctx_ba_params(struct nlattr *tb,
+> +				struct ieee80211_smd_ctx_ba *ba_tids)
+> +{
+> +	struct nlattr *ba_tb[NL80211_SMD_CTX_BA_ATTR_MAX + 1];
+> +	struct ieee80211_smd_ctx_ba *ba;
+> +	struct nlattr *ba_attr;
+> +	int n_tids =3D 0;
+> +	int rem, tid;
+> +
+> +	nla_for_each_nested(ba_attr, tb, rem) {
+> +		tid =3D nla_type(ba_attr) - 1;
+> +		if (tid < 0 || tid >=3D IEEE80211_SMD_CTX_NUM_TIDS)
+> +			return -EINVAL;
+> +
+> +		if (nla_parse_nested(ba_tb, NL80211_SMD_CTX_BA_ATTR_MAX,
+> +				     ba_attr, nl80211_smd_ctx_ba_policy,
+> +				     NULL))
 
-Reject both requests, since the channel can only be applied to a
-running monitor.
+if you set up the policies correctly (and you should, but I didn't go
+back to check now) then you don't need the policy here
 
-Fixes: 9d40f7e32774 ("wifi: mac80211: add flag to opt out of virtual monitor support")
-Signed-off-by: Felix Fietkau <nbd@nbd.name>
----
- net/mac80211/cfg.c | 4 ++++
- 1 file changed, 4 insertions(+)
+> +		ba->amsdu_supported =3D
+> +			!!ba_tb[NL80211_SMD_CTX_BA_ATTR_AMSDU_SUPPORT];
 
-diff --git a/net/mac80211/cfg.c b/net/mac80211/cfg.c
-index 64e2bd0cf124..62f8cf88f8f4 100644
---- a/net/mac80211/cfg.c
-+++ b/net/mac80211/cfg.c
-@@ -1155,6 +1155,10 @@ static int ieee80211_set_monitor_channel(struct wiphy *wiphy,
- 		sdata = wiphy_dereference(wiphy, local->monitor_sdata);
- 		if (!sdata)
- 			goto done;
-+	} else if (!dev) {
-+		return -EOPNOTSUPP;
-+	} else if (!ieee80211_sdata_running(sdata)) {
-+		return -ENETDOWN;
- 	}
- 
- 	if (rcu_access_pointer(sdata->deflink.conf->chanctx_conf) &&
--- 
-2.47.3
+it's not super useful to use !! to assign to a bool, and if you wanted
+to be fancy you'd use nla_flag(), right? ;)
 
+> +		if (nla_parse_nested(dl_tb, NL80211_SMD_CTX_DL_ATTR_MAX,
+> +				     tb[NL80211_SMD_CTX_ATTR_DL],
+> +				     nl80211_smd_ctx_dl_policy, NULL)) {
+
+same here, and then it kind of cannot fail, I think
+
+> +			nla_for_each_nested(sn_attr,
+> +					    dl_tb[NL80211_SMD_CTX_DL_ATTR_SN],
+> +					    rem) {
+> +				tid =3D nla_type(sn_attr) - 1;
+> +				if (tid < 0 ||
+> +				    tid >=3D IEEE80211_SMD_CTX_NUM_TIDS) {
+> +					GENL_SET_ERR_MSG(info,
+> +							 "invalid DL SN tid");
+> +					goto err_free_ctx;
+> +				}
+> +
+> +				if (nla_len(sn_attr) !=3D sizeof(u16)) {
+> +					GENL_SET_ERR_MSG(info,
+> +							 "invalid DL SN len");
+> +					goto err_free_ctx;
+> +				}
+
+You've got to be _kidding_ me, why do I even have to get see such
+obviously redundant code?
+
+Please read your own code.
+
+johannes
