@@ -1,65 +1,62 @@
-Authentication-Results: smtp.subspace.kernel.org; arc=none smtp.remote-ip=168.119.38.16
+Authentication-Results: smtp.subspace.kernel.org; arc=none smtp.remote-ip=46.4.11.11
 ARC-Seal: i=1; d=subspace.kernel.org; s=arc20261015; a=rsa-sha256; cv=none;
-	t=1794336721;
-	b=BSTNpNr0T/NspRPe6z4coQ9TLaSCQ2wMzaHKgwGGdQCPaiczF0a8TwqHt6UREjlzr8qE
-	 7NAzyPlBDS8wQnJiMRqTLLsYn851WR6U/tx60fGv9495atBD/Lwn6eB+A+ZK+jtQXJNjN
-	 PGfTlF99ZvcfKcR9XIXmZXLgQ4XaQ27I2kj4ufdbPl7KgyxsmAKcIQW+2611f/I1g3QEB
-	 wyuW4TdycX2yFkk+SmvTrG+qrbbimb0Dk1nhQRQlQVvk8msMEGIJgRqv9UGRHRtntshaK
-	 IURqbVJ4+xU7NTQ/Kx5n6EPvLJvkI7PCYbK6hsZqiUK+KISt7m3++EiEsq3F0YGPb/A==
+	t=1794336881;
+	b=gJC1G6aPgDbV5e3v10XX+7+1l2AsF1pI4LJn17oEq457TUl+n7EQrrMiF48MQbLsy7gc
+	 W1GSNFXSCtVQilC2i2HsvW2TJBteJtB20nAJmQbNCWA5QEfJ5Sgis07VzCXcTwdbFkIpQ
+	 oLCnGvFcOh+diNcptwo8sCroKxSz1gZeu0JfepGz9aMThhnwNNSV8/75pK6gat3j5ApdT
+	 Ok2kJYcFNS01C6ha/LZB0nsIEfKtakSjDoeRRmCzogGlaDI8WqiQHD1y6j/mvX/qhq792
+	 gInUwNC0o06ZkjQV1cmPpis52bJjRdiHhrKJbwcg9jd8i0qzO1sEfizVFL4qGwU84vg==
 ARC-Message-Signature: i=1; d=subspace.kernel.org; s=arc20261015;
-	a=rsa-sha256; c=relaxed/relaxed; t=1794336721;
-	h=DKIM-Signature:Received:Message-ID:Subject:From:To:Cc:Date:
-	 In-Reply-To:References:Content-Type:Content-Transfer-Encoding:
-	 User-Agent:MIME-Version:X-malware-bazaar;
-	bh=FJhCO8KljoIPpc6Zj3JtJwQyirJf6h7Glr5VpdrX2ng=;
-	b=LDyY/RvYMIWrkaGbuDIcyEdpEWKvdrelWmznB0E5qnrsdlExm6xh2LwmgUiv3arRecJ2
-	 6jnGBVovd+ygz18iBvPcNSnCLVNdmV6sGREwYzeWq2RFuV0N5PlYxJkB+TIsCF5v7va4/
-	 RANVv4BvfHR8YpHChtmSf0tdk0iZ80HNPm4oc0+8/GqNxbEcVaB9qF7ZH4PSIytXDVoUu
-	 V+wsKvu/Xn88D0cBgiI7JRUr/o0fCAsW7+cUj9t3W1n4G13m8jt1JEtiH+6VR2Mx/N7a+
-	 dvfWZVeFuOgJiUjHfrs46k/zitZyQCcvw95KKwahVeFB0u2abvlqM95vCT1VzPePt7w==
+	a=rsa-sha256; c=relaxed/relaxed; t=1794336881;
+	h=DMARC-Filter:DKIM-Signature:Received:From:To:Cc:Subject:Date:
+	 Message-ID:X-Mailer:In-Reply-To:References:MIME-Version:
+	 Content-Transfer-Encoding;
+	bh=hoPbrOMkwsTh2laEr85ChD0yFiynEO2KIqeuH56eifI=;
+	b=4iLZyikP4L/I/WHAdE7cRupzvujjthjRUtjIBbSls+fe50YBW6DAoX2iwbOuR7CwwYg0
+	 tJVweAZagNmZKrqNJsbG/7yoK0GWwABbveWBIYgzMj56dNECArKDyLsT11sqFevkVK9gL
+	 F2NPV1L1QDnIJVKaBnpR2MT3DtAoq/GOLpO8/lgjCTHMimOhQQQ2/1srigHSFdeXgVFso
+	 KiMPYcRzyXXvCj5zvvPLf+hBYaYa278JLxBCi7pvwh65U01ZE35WNcRXlzC0FDPkE9G1z
+	 KJhJTlpeLnFK+dW9+SzJ6fPts8SU7PMku3xUbBdkP2xBUKX4H8FXvZibYhQG4FB6k5Q==
 ARC-Authentication-Results: i=1; smtp.subspace.kernel.org; 
-	dmarc=permerror header.from=sipsolutions.net;
-	spf=pass smtp.mailfrom=sipsolutions.net;
-	dkim=pass header.d=sipsolutions.net header.i=@sipsolutions.net header.a=rsa-sha256 header.s=mail header.b=aHTpABXf;
-	arc=none smtp.remote-ip=168.119.38.16
-Received: from sipsolutions.net (s3.sipsolutions.net [168.119.38.16])
+	dmarc=pass header.from=nbd.name;
+	spf=pass smtp.mailfrom=nbd.name;
+	dkim=pass header.d=nbd.name header.i=@nbd.name header.a=rsa-sha256 header.s=20160729 header.b=StyGOOgj;
+	arc=none smtp.remote-ip=46.4.11.11
+Received: from nbd.name (nbd.name [46.4.11.11])
 	(using TLSv1.3 with cipher TLS_AES_256_GCM_SHA384 (256/256 bits)
 	 key-exchange ECDHE (prime256v1) server-signature ECDSA (prime256v1) server-digest SHA256)
 	(No client certificate requested)
-	by smtp.subspace.kernel.org (Postfix) with ESMTPS id 0AB45606A330;
-	Tue, 10 Nov 2026 18:52:00 +0000 (UTC)
-Authentication-Results: smtp.subspace.kernel.org; dmarc=permerror header.from=sipsolutions.net
-Authentication-Results: smtp.subspace.kernel.org; spf=pass smtp.mailfrom=sipsolutions.net
+	by smtp.subspace.kernel.org (Postfix) with ESMTPS id BACB1606A33B
+	for <linux-wireless@vger.kernel.org>; Tue, 10 Nov 2026 18:54:39 +0000 (UTC)
+DMARC-Filter: OpenDMARC Filter v1.4.2 smtp.subspace.kernel.org BACB1606A33B
+Authentication-Results: smtp.subspace.kernel.org; dmarc=pass (p=none dis=none) header.from=nbd.name
+Authentication-Results: smtp.subspace.kernel.org; spf=pass smtp.mailfrom=nbd.name
 Authentication-Results: smtp.subspace.kernel.org;
-	dkim=pass (2048-bit key) header.d=sipsolutions.net header.i=@sipsolutions.net header.a=rsa-sha256 header.s=mail header.b=aHTpABXf
-DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=sipsolutions.net; s=mail; h=MIME-Version:Content-Transfer-Encoding:
-	Content-Type:References:In-Reply-To:Date:Cc:To:From:Subject:Message-ID:Sender
-	:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:Resent-To:
-	Resent-Cc:Resent-Message-ID; bh=FJhCO8KljoIPpc6Zj3JtJwQyirJf6h7Glr5VpdrX2ng=;
-	t=1794336720; x=1795546320; b=aHTpABXf7TWrbzVl/sbC5Ye1PEKHMPiIj8RMVi1WWVcER9m
-	gTU3WRJwIKuhvGakSv0jx5Zz+464V2xqjD5sUAMJ1wkhcxMeX7HpRASXPilPlrKh1zBvuQhEoL2uT
-	/6qP8SkR6E8ESDqpVTdZPgVdQE/bmAXu44+RelkuwIQ7Z1GivjRCfcOg6kY/xVMcUZlJh1Z4nUiLF
-	7naxmYeLESKR+pBmvykQFENz97c3PW8fY4PlYVZEtJOinw/5Nsd37CjDJ6XGB20BIbb65mJ8FH+QK
-	Y8mQ1MRVGzIR5ZqvtKq+FeywKMLTE6oFE//fLPTKKgfGKYL3fpUp9Rs/exhjlg4A==;
-Received: by sipsolutions.net with esmtpsa (TLS1.3:ECDHE_X25519__ECDSA_SECP256R1_SHA256__AES_256_GCM:256)
-	(Exim 4.98.2)
-	(envelope-from <johannes@sipsolutions.net>)
-	id 1xQqwn-00000002At6-2ADl;
-	Tue, 10 Nov 2026 19:51:57 +0100
-Message-ID: <db523e851beda07c6f52f3c094b5ea2bf718af03.camel@sipsolutions.net>
-Subject: Re: [PATCH wireless-next v4 08/21] wifi: nl80211/cfg80211: pack SMD
- dynamic context along with frame
-From: Johannes Berg <johannes@sipsolutions.net>
-To: Pooventhiran G <pooventhiran.g@oss.qualcomm.com>
-Cc: linux-wireless@vger.kernel.org, linux-kernel@vger.kernel.org
-Date: Tue, 10 Nov 2026 19:51:55 +0100
-In-Reply-To: <20261106-smd-v4-8-62e39487f51a@oss.qualcomm.com>
-References: <20261106-smd-v4-0-62e39487f51a@oss.qualcomm.com>
-	 <20261106-smd-v4-8-62e39487f51a@oss.qualcomm.com>
-Content-Type: text/plain; charset="UTF-8"
-Content-Transfer-Encoding: quoted-printable
-User-Agent: Evolution 3.60.2 (3.60.2-3.fc44) 
+	dkim=pass (1024-bit key) header.d=nbd.name header.i=@nbd.name header.a=rsa-sha256 header.s=20160729 header.b=StyGOOgj
+DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed; d=nbd.name;
+	s=20160729; h=Content-Transfer-Encoding:MIME-Version:References:In-Reply-To:
+	Message-ID:Date:Subject:Cc:To:From:Sender:Reply-To:Content-Type:Content-ID:
+	Content-Description:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc
+	:Resent-Message-ID:List-Id:List-Help:List-Unsubscribe:List-Subscribe:
+	List-Post:List-Owner:List-Archive;
+	bh=hoPbrOMkwsTh2laEr85ChD0yFiynEO2KIqeuH56eifI=; b=StyGOOgj2Ry7cSnDQR7TaLQ9fR
+	vgRRV8vfOsKFl19w1x1KDX/2CE7/ueltogw7NHQkQxKlezz9R+cN9+3zxVAZzELDUymp34Ghwe6ih
+	xuN1hJ1TkybAoDGMrPXl872hKXqrQ7VcE6u7CISgY3bPHaP7WKyAWUYUkBYtS3VREn5o=;
+Received: from p200300cadf12920000000000000005bb.dip0.t-ipconnect.de ([2003:ca:df12:9200::5bb] helo=localhost.localdomain)
+	by ds12 with esmtpsa  (TLS1.3) tls TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384
+	(Exim 4.96)
+	(envelope-from <nbd@nbd.name>)
+	id 1xQqzO-001EEc-0n;
+	Tue, 10 Nov 2026 19:54:38 +0100
+From: Felix Fietkau <nbd@nbd.name>
+To: linux-wireless@vger.kernel.org
+Cc: johannes@sipsolutions.net
+Subject: [PATCH wireless v2 2/4] wifi: mac80211: release monitor channels on suspend
+Date: Tue, 10 Nov 2026 19:54:34 +0100
+Message-ID: <20261110185436.2015505-2-nbd@nbd.name>
+X-Mailer: git-send-email 2.47.3
+In-Reply-To: <20261110185436.2015505-1-nbd@nbd.name>
+References: <20261110185436.2015505-1-nbd@nbd.name>
 X-Mailing-List: linux-wireless@vger.kernel.org
 List-Id: <linux-wireless.vger.kernel.org>
 List-Post: <mailto:linux-wireless@vger.kernel.org>
@@ -69,153 +66,80 @@ List-Unsubscribe: <mailto:linux-wireless+unsubscribe@vger.kernel.org>
 List-Owner: <mailto:linux-wireless+owner@vger.kernel.org>
 Precedence: list
 MIME-Version: 1.0
-X-malware-bazaar: not-scanned
+Content-Transfer-Encoding: 8bit
 
-On Fri, 2026-11-06 at 13:28 +0530, Pooventhiran G wrote:
->=20
-> +static size_t _nl80211_smd_ctx_nl_ba_param_size(u8 n_tids, bool dl)
-> +{
-> +	size_t n =3D 0;
-> +
-> +	n +=3D nla_total_size(0); /* ba_params nest header */
-> +	n +=3D n_tids * (nla_total_size(0) + /* tid nest header */
-> +		       nla_total_size(sizeof(u16)) + /* buff_size */
-> +		       nla_total_size(sizeof(u8)) + /* policy */
-> +		       nla_total_size(0) + /* amsdu_support */
-> +		       nla_total_size(sizeof(u16)) + /* timeout */
-> +		       nla_total_size(0) + /* ext_no_frag */
-> +		       nla_total_size(sizeof(u8)) + /* ext_frag_lvl */
-> +		       nla_total_size(sizeof(u16))); /* ext_buff_size */
-> +
-> +	if (dl)
-> +		n +=3D n_tids * nla_total_size(sizeof(u16)); /* winstarto */
-> +
-> +	return n;
-> +}
-> +
-> +static size_t
-> +nl80211_smd_ctx_nl_size(struct cfg80211_smd_transition_info *st_info)
-> +{
-> +	const struct ieee80211_smd_ctx *ctx =3D st_info->ctx;
-> +	int n_dl_tids =3D 0, n_ul_tids =3D 0;
-> +	u8 pn_len =3D ctx->pn_len;
-> +	size_t n =3D 0;
-> +
-> +	/* count valid TIDs */
-> +	n_dl_tids =3D hweight8(ctx->dl.valid_tid_bmap);
-> +	n_ul_tids =3D hweight8(ctx->ul.valid_tid_bmap);
-> +
-> +	n +=3D nla_total_size(sizeof(u8)); /* ST type */
-> +
-> +	/* outer NL80211_ATTR_SMD_CTX nest */
-> +	n +=3D nla_total_size(0); /* nest header */
-> +
-> +	/* DL nest */
-> +	n +=3D nla_total_size(0); /* DL nest header */
-> +
-> +	n +=3D nla_total_size(sizeof(u8)); /* valid_tid_bitmap */
-> +
-> +	if (ctx->dl_sn_valid) {
-> +		n +=3D nla_total_size(0); /* DL SN nest header */
-> +		n +=3D n_dl_tids * nla_total_size(sizeof(u16)); /* DL SN */
-> +		if (ctx->mgmt_tid_valid)
-> +			n +=3D nla_total_size(sizeof(u16)); /* DL mgmt_sn */
-> +	}
-> +
-> +	if (ctx->pn_valid)
-> +		n +=3D nla_total_size(pn_len); /* DL PN */
-> +
-> +	if (ctx->ba_params_valid)
-> +		n +=3D _nl80211_smd_ctx_nl_ba_param_size(n_dl_tids, true); /* DL BA */
-> +
-> +	/* UL nest */
-> +	n +=3D nla_total_size(0); /* UL nest header */
-> +
-> +	n +=3D nla_total_size(sizeof(u8)); /* valid_tid_bitmap */
-> +
-> +	if (ctx->ul_sn_valid) {
-> +		n +=3D nla_total_size(0); /* UL SN nest header */
-> +		n +=3D n_ul_tids * nla_total_size(sizeof(u16)); /* UL SN */
-> +		if (ctx->mgmt_tid_valid)
-> +			n +=3D nla_total_size(sizeof(u16)); /* UL mgmt_sn */
-> +	}
-> +
-> +	if (ctx->pn_valid) {
-> +		n +=3D nla_total_size(0); /* UL PN nest header */
-> +		n +=3D n_ul_tids * nla_total_size(pn_len); /* UL PN */
-> +		if (ctx->mgmt_tid_valid)
-> +			n +=3D nla_total_size(pn_len); /* UL mgmt_pn */
-> +	}
-> +
-> +	if (ctx->ba_params_valid)
-> +		n +=3D _nl80211_smd_ctx_nl_ba_param_size(n_ul_tids, false); /* UL BA *=
-/
-> +
-> +	return n;
-> +}
+A monitor with its own channel keeps its channel context across
+suspend, which triggers the warning in __ieee80211_suspend() about
+remaining channel contexts.
 
-This kind of code is just crazy LLM output ... we can just have a sane
-upper bound and make that a single line of code? Nobody will really care
-about the precise size of the allocation.
+Release the channel on suspend and acquire it again on resume, like for
+the virtual monitor.
 
-> +static int
-> +nl80211_put_smd_ctx_ba_params(struct sk_buff *msg,
-> +			      const unsigned long *tid_bmap,
-> +			      const struct ieee80211_smd_ctx_ba *ba_tids,
-> +			      bool dl)
-> +{
-> +	u32 ba_params_attr =3D NL80211_SMD_CTX_DL_ATTR_BA_PARAMS;
-> +	struct nlattr *dl_ul_ba =3D NULL, *tid_ba =3D NULL;
+Fixes: 9d40f7e32774 ("wifi: mac80211: add flag to opt out of virtual monitor support")
+Signed-off-by: Felix Fietkau <nbd@nbd.name>
+---
+ net/mac80211/pm.c   |  2 ++
+ net/mac80211/util.c | 26 ++++++++++++++++++++++++++
+ 2 files changed, 28 insertions(+)
 
-nope.
+diff --git a/net/mac80211/pm.c b/net/mac80211/pm.c
+index f63676c44853..de0d7b093520 100644
+--- a/net/mac80211/pm.c
++++ b/net/mac80211/pm.c
+@@ -151,7 +151,9 @@ int __ieee80211_suspend(struct ieee80211_hw *hw, struct cfg80211_wowlan *wowlan,
+ 			continue;
+ 		switch (sdata->vif.type) {
+ 		case NL80211_IFTYPE_AP_VLAN:
++			continue;
+ 		case NL80211_IFTYPE_MONITOR:
++			ieee80211_link_release_channel(&sdata->deflink);
+ 			continue;
+ 		case NL80211_IFTYPE_STATION:
+ 			ieee80211_mgd_quiesce(sdata);
+diff --git a/net/mac80211/util.c b/net/mac80211/util.c
+index 44feb80274c6..34402200baec 100644
+--- a/net/mac80211/util.c
++++ b/net/mac80211/util.c
+@@ -1748,6 +1748,30 @@ static void ieee80211_assign_chanctx(struct ieee80211_local *local,
+ 	}
+ }
+ 
++static void ieee80211_reconfig_monitors(struct ieee80211_local *local)
++{
++	struct ieee80211_sub_if_data *sdata;
++
++	lockdep_assert_wiphy(local->hw.wiphy);
++
++	list_for_each_entry(sdata, &local->interfaces, list) {
++		struct ieee80211_chan_req chanreq = sdata->vif.bss_conf.chanreq;
++
++		if (sdata->vif.type != NL80211_IFTYPE_MONITOR ||
++		    !chanreq.oper.chan ||
++		    rcu_access_pointer(sdata->deflink.conf->chanctx_conf))
++			continue;
++
++		if (!ieee80211_link_use_channel(&sdata->deflink, &chanreq,
++						IEEE80211_CHANCTX_SHARED))
++			continue;
++
++		sdata_info(sdata, "failed to restore monitor channel\n");
++		memset(&sdata->vif.bss_conf.chanreq, 0,
++		       sizeof(sdata->vif.bss_conf.chanreq));
++	}
++}
++
+ static void ieee80211_reconfig_stations(struct ieee80211_sub_if_data *sdata)
+ {
+ 	struct ieee80211_local *local = sdata->local;
+@@ -2382,6 +2406,8 @@ int ieee80211_reconfig(struct ieee80211_local *local)
+ 	    local->virt_monitors == local->open_count)
+ 		ieee80211_add_virtual_monitor(local, NULL);
+ 
++	ieee80211_reconfig_monitors(local);
++
+ 	if (!suspended)
+ 		return 0;
+ 
+-- 
+2.47.3
 
-> +	u8 tid;
-> +
-> +	if (!dl)
-> +		ba_params_attr =3D NL80211_SMD_CTX_UL_ATTR_BA_PARAMS;
-> +
-> +	dl_ul_ba =3D nla_nest_start(msg, ba_params_attr);
-> +	if (!dl_ul_ba)
-> +		return -ENOBUFS;
-> +
-> +	for_each_set_bit(tid, tid_bmap, IEEE80211_SMD_CTX_NUM_TIDS) {
-> +		const struct ieee80211_smd_ctx_ba *ba =3D &ba_tids[tid];
-> +
-> +		tid_ba =3D nla_nest_start(msg, tid + 1);
-
-that can also be declared in the loop
-
-> +static int nl80211_put_smd_ctx(struct sk_buff *msg,
-> +			       struct cfg80211_smd_transition_info *st_info)
-> +{
-> +	struct nlattr *dl_sn =3D NULL, *ul_sn =3D NULL, *ul_pn =3D NULL;
-> +	struct nlattr *smd_ctx =3D NULL, *dl =3D NULL, *ul =3D NULL;
-> +	const struct ieee80211_smd_ctx *ctx;
-> +	unsigned long dl_tid_bmap =3D 0, ul_tid_bmap =3D 0;
-
-same here, what's with all the pointless =3D0/=3DNULL?
-
-and move variables into the inner code blocks too
-
-> +	pn_valid =3D (ctx->pn_len && ctx->pn_len <=3D IEEE80211_SMD_CTX_MAX_PN_=
-LEN &&
-> +		    ctx->pn_valid);
-
-useless parentheses, but anyway you don't need pn_len or the max, or the
-pn_valid even since it's always transferred ...
-
-> +nla_fail_ul:
-> +	nla_nest_cancel(msg, ul);
-> +
-> +nla_fail_dl:
-> +	nla_nest_cancel(msg, dl);
-> +
-> +nla_fail:
-> +	nla_nest_cancel(msg, smd_ctx);
-> +	return -EINVAL;
-
-crazy LLMs again? You obviously don't need to have nested cancel to get
-rid of the whole thing ... probably don't need it at all because you're
-just going to free the skb.
-
-johannes
