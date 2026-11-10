@@ -1,97 +1,93 @@
-Authentication-Results: smtp.subspace.kernel.org; arc=none smtp.remote-ip=209.85.221.54
+Authentication-Results: smtp.subspace.kernel.org; arc=none smtp.remote-ip=209.85.128.43
 ARC-Seal: i=1; d=subspace.kernel.org; s=arc20261015; a=rsa-sha256; cv=none;
-	t=1794270083;
-	b=kFog8U8QCrGib+Jw1Qwt4kCdtkxnLIhaVPRF2QkMNj7pNb/uWnBzSA2zkdGt2WFXTfOe
-	 kg/ACKZ9x5VUxdUFyljrFNHi/6PHN5A89kF26U7hKP1rmRAKwpXTlGDuVXcfRc7GpQdQq
-	 RI0r5yyFnH2LAlHe3edumfsTYSDyZ+EGdvwODy2g1u0YbjHLfLkkcvxrJ3x7cEHznqL+t
-	 VEqhsT+4FUSzsvV1qoJHYAOylXzPm8aPvOup84UIHi0c1c5PyNzaEmPp3GjEBLnciGDDO
-	 3pYy75FPAB8IPtvhbjBjLUNaqbrvFI6/q3Ya6/rCZV2Gl2st1H2x5bjRxA6w2A2gt5w==
+	t=1794270093;
+	b=wihgPyQkcE0QWP0KvsBB8+4yc4spnotJT2sPR6I/tOJwM+FE9UsTAFZkxjlkqU4g48Fz
+	 czcLjuSD9Ro4lUQTVyWKoDyMMJdwJ7nv0CnlBQ9TuoPmGNiytJjox82rRjgtXdrcY4+uh
+	 ujLrAJZVjzxOWofj2ZwRp+jw7GdisjmO1Xio5u4yNbXSR5n/RyQ2eM/o16oHvwwYT+w+B
+	 3ZCm0W/t61xTCa0Hd9MiqI6wzVEygBO2o/nVrcWx333P9RcONCb6iMywcKlM7bxK8cgw8
+	 btn+ZhKCqyTkwUCDtBUyfZiJNuAxexVk2fRzjArlh7Pmo1sf8n+yTJzNrjW6Kht2dqw==
 ARC-Message-Signature: i=1; d=subspace.kernel.org; s=arc20261015;
-	a=rsa-sha256; c=relaxed/relaxed; t=1794270083;
+	a=rsa-sha256; c=relaxed/relaxed; t=1794270093;
 	h=DMARC-Filter:Received:DKIM-Signature:X-Google-DKIM-Signature:
 	 X-Gm-Message-State:X-Gm-Gg:X-Received:Received:From:To:Cc:Subject:
-	 Date:Message-ID:X-Mailer:In-Reply-To:References:MIME-Version:
-	 Content-Transfer-Encoding;
-	bh=xA56nrFXsLTThwhE2Z1xybRqLpx3f2aoxrwJe8s5KRk=;
-	b=iM1ly5pRfz0NqUHxWHPehWdd2EkZm/1EPp1pe4Uhz2ij1bHMhUk1QOBYlcMJeQoxbCwB
-	 A/KVMrbxGI3U0X026Y7HDhhd71TucS6EnmAf9Cko6IH9t+s/v5qNu/by9FWdfitRDapfu
-	 yyDM9VXh1rJm2uPLIvU1aOQA2s0TgBTo4F0lc3aEX/bdhSR9AnX1DqFX/n+rVATAbqBbT
-	 4ogPKJ0FpIW1k8nIa0IO8ILDTffrEWjeNWYRunhftvuPQaEHtZ3GRZYWwOW/T8/eff3m9
-	 cVazy9LJoNCOqS4m3GEJHi3KfpO55lXgzmtKa/t6uM5ExcdqqPN/jedvS6Blfg0wW4w==
+	 Date:Message-ID:X-Mailer:MIME-Version:Content-Transfer-Encoding;
+	bh=accdJuryFxUi1qakKS5LSbXbrHZsB3mH/lXDrzc/Vh8=;
+	b=Zc/lsGu5wqYZTuturNcxkfYD0gXhzQaljrNiJ6oyVq3ukuOuHp01Myidi4GR7oXgK7iy
+	 0O3bq5NdiE03+wRcW92K7w6Y9vxDdYIO4rBHCJci+grIMFMb/ZLoDqGNDxOJGr2Jd9xrg
+	 vZii+twUtjQkAUOTeCnM4dUCcE+RNuO0vEOv5UclsvKnSmZ4kwLtDoagiwzfKUeo7HtuA
+	 4nITHNstrjL6Kwinwv0iVZVF2DTUOI1FoyWJgSA5Y2oL9TmTRfX0gn7nVMXvSMxq94H/r
+	 GmKjHJn5o+24fPMpwswCg37lb4Sk8IBAVVWExaHSbG0j/lPm1SGMQwlMC8UHd0joqmw==
 ARC-Authentication-Results: i=1; smtp.subspace.kernel.org; 
 	dmarc=pass header.from=gmail.com;
 	spf=pass smtp.mailfrom=gmail.com;
-	dkim=pass header.d=gmail.com header.i=@gmail.com header.a=rsa-sha256 header.s=20260707 header.b=UiUfxT9k;
-	arc=none smtp.remote-ip=209.85.221.54
-Received: from mail-wr1-f54.google.com (mail-wr1-f54.google.com [209.85.221.54])
+	dkim=pass header.d=gmail.com header.i=@gmail.com header.a=rsa-sha256 header.s=20260707 header.b=q7qWuPVm;
+	arc=none smtp.remote-ip=209.85.128.43
+Received: from mail-wm1-f43.google.com (mail-wm1-f43.google.com [209.85.128.43])
 	(using TLSv1.3 with cipher TLS_AES_128_GCM_SHA256 (128/128 bits)
 	 key-exchange X25519 server-signature ECDSA (prime256v1) server-digest SHA256)
 	(No client certificate requested)
-	by smtp.subspace.kernel.org (Postfix) with ESMTPS id 13FE0606A321
-	for <linux-wireless@vger.kernel.org>; Tue, 10 Nov 2026 00:21:22 +0000 (UTC)
-DMARC-Filter: OpenDMARC Filter v1.4.2 smtp.subspace.kernel.org 13FE0606A321
+	by smtp.subspace.kernel.org (Postfix) with ESMTPS id 100DB606A321
+	for <linux-wireless@vger.kernel.org>; Tue, 10 Nov 2026 00:21:32 +0000 (UTC)
+DMARC-Filter: OpenDMARC Filter v1.4.2 smtp.subspace.kernel.org 100DB606A321
 Authentication-Results: smtp.subspace.kernel.org; dmarc=pass (p=none dis=none) header.from=gmail.com
 Authentication-Results: smtp.subspace.kernel.org; spf=pass smtp.mailfrom=gmail.com
 Authentication-Results: smtp.subspace.kernel.org;
-	dkim=pass (2048-bit key) header.d=gmail.com header.i=@gmail.com header.a=rsa-sha256 header.s=20260707 header.b=UiUfxT9k
-Received: by mail-wr1-f54.google.com with SMTP id ffacd0b85a97d-4919a880834so918421f8f.0
-        for <linux-wireless@vger.kernel.org>; Mon, 09 Nov 2026 16:21:22 -0800 (PST)
+	dkim=pass (2048-bit key) header.d=gmail.com header.i=@gmail.com header.a=rsa-sha256 header.s=20260707 header.b=q7qWuPVm
+Received: by mail-wm1-f43.google.com with SMTP id 5b1f17b1804b1-4a5177d78c7so12130585e9.2
+        for <linux-wireless@vger.kernel.org>; Mon, 09 Nov 2026 16:21:32 -0800 (PST)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=gmail.com; s=20260707; t=1794270081; x=1794874881; darn=vger.kernel.org;
-        h=content-transfer-encoding:mime-version:references:in-reply-to
-         :message-id:date:subject:cc:to:from:from:to:cc:subject:date
-         :message-id:reply-to:content-type;
-        bh=xA56nrFXsLTThwhE2Z1xybRqLpx3f2aoxrwJe8s5KRk=;
-        b=UiUfxT9kBW+iTJDzeVM8ptaT1sYqjZVGvEcPiZWBcXfMOHDQqFslE9tqGP6x2uSAx0
-         R7yOCVB7tnWM0R+A9UEr/r3i4SWXe/ex7ckM3ec34wAQYy9C2csujB5N5h5O9HUE7VR2
-         D7sazpMbiNp9KnTi4850QBHag6ARBKPmVoU2jT87jIEcYasinuCY5ozJfKnLg1ITxnxL
-         v62oKGQTE5TwDZOONzux5te5oCnfc32pJ2Wk3N35KfEY2BalpnoWwevJu1zErIbB0qdV
-         inxEFOQejYR37iBwvnLXawvDV8D1KOgL2sLgzS81ZCUlYf0UjPZMQZ/KgId1e5B7u44A
-         +eGw==
+        d=gmail.com; s=20260707; t=1794270091; x=1794874891; darn=vger.kernel.org;
+        h=content-transfer-encoding:mime-version:message-id:date:subject:cc
+         :to:from:from:to:cc:subject:date:message-id:reply-to:content-type;
+        bh=accdJuryFxUi1qakKS5LSbXbrHZsB3mH/lXDrzc/Vh8=;
+        b=q7qWuPVmbQzoIrN93dX5MW7S4du33xxt/lkFUY3jVbdvhWnnSHyxrJIPDUVyc7A4RV
+         tQ+N0j2vXdVRlu+gP5XAU3v5M0Exa18rZungDqVoJi2bwi3GiNQEq/OxVL3g7Bxy6G3Z
+         1uSU4iyo6C8f/nvHdvqqPMQO00ItW6YPUqdfmwZ8MZkj+2sQHluz/Y33muTmXdykkpJD
+         5qMm2oCjMvEztBUlHDRU2hfsu4ZveoKBd9jM4O6zo89Wlkf+78BQthSpbqN9OkvWQwQN
+         btE827OSoWfaTyWngTIl6hqTuAM0tHl3eampCQOYHM5MbLIeKtwC1OM/HRknQbZSckHm
+         NhkA==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=1e100.net; s=20260707; t=1794270081; x=1794874881;
-        h=content-transfer-encoding:mime-version:references:in-reply-to
-         :message-id:date:subject:cc:to:from:x-gm-gg:x-gm-message-state:from
-         :to:cc:subject:date:message-id:reply-to:content-type;
-        bh=xA56nrFXsLTThwhE2Z1xybRqLpx3f2aoxrwJe8s5KRk=;
-        b=dRxIj+8ugXSiQn0DsDMIBYJ9r5fw6tuIzDaCCS9/FMSgloPhjGw8kf46UYhhr2wDLA
-         dQy+ZlHmH2nOZIybVVnx6L07Neyi2LI2VRa8Ig8o1BVMprf6lPp6KC8odvaxPdNU8UEO
-         UEdLV1LHNDhiuNaNaI9dc4x1OZw9aNWE7Nj/f9H5kQHh9+dUNr7h6M1s3/nVcs7YO3En
-         vr+QeKQqwpqm6ybE6YoBnSnPg/PBDSpMxrvxTy9OMjzVoBMUVcdLdp0yCFaMKfAUk9tv
-         srzx4RF3fXw9QDfrF4m8VrW3oeJgue0HUTpvVs2Eqhul2SwimoopZdJiDN9JIqHqcZne
-         pY9Q==
-X-Gm-Message-State: APuU4Z/rCGcCqMrD6vDJLFWM0cqXI0XyBDh+kZqUCucQ4v3BNL1sut8N
-	9tondyVAiJH20uenzirsUGYpCQnrR5iwb+L3cCo9WeZ2uS7UIjJpbcsq
-X-Gm-Gg: AYBFou31XgksNamBx5XvoNMqyiZ0pnOImrXEa8YCCvpVHKquMc1zFRAjXEizoFFn7VS
-	kPRntbOqmL/pX8IE9609l5kWEXik2VbsnyT+++oWoLhrviYxvl7leemAmrztKi8Xvf4u3s25ZWK
-	Ng0F0TUX9K7IJstEVNjibBSDsFddijx6/wxF9xU3eoBzUflDtVWksBdhoYHgojKuoprQiqdZaf0
-	+yd4Wwru+bpTplpytaK3uYI7ADiHOSOVOeft18ccN0IMJ7LjTm9lWgFXacCAaMMYdUYFN7hZfO4
-	nOD8hcBf3bYv4c9DSL+YHqF7CR0uNv1rP5Dsttq28s6zkn1nNiqbUSkNoyuXw89rQljYZrVtOuD
-	96f6vo1AdHl8UScbxwadCqB+UnTwhho0wzvjL2xUiQSD4tU8NaRneSe71CLDJVe5FSehOFcWRe6
-	8dMDGvlhZFyd4/9Qj9tDw7Dgo0HImnExRP93I6uCAmp+1LNqT/5dKZJYRL47cOgKaZIsOywrL7Y
-	aLn8vPUXy2Y+QMisUfBgcaHQ4IKP0QURQMTaF6EQgLYXc+oungqRT2gUfiMIwKHOYfWAQP1eP7C
-	qRffOWqBYc08/9q74N1CBUIsEI1w1EKIhmk/179nHIdHcLvAoRJXZSbvmcfthNjQIQPn3LN6eUT
-	3So3mPXRiztBzRPodw4EI1bXFwgOu8kOZKGELRyymfE6sFvvP32cwlZPLEapmEsXi58XmMiJNq/
-	MG2qZXMIvHHY48F5TSAmSamC21SLMDmhSOcDlYpfKHCdg/vw==
-X-Received: by 2002:adf:e001:0:10b0:48d:ee0d:8b3d with SMTP id ffacd0b85a97d-4982f594b83mr1089641f8f.28.1794270081225;
-        Mon, 09 Nov 2026 16:21:21 -0800 (PST)
+        d=1e100.net; s=20260707; t=1794270091; x=1794874891;
+        h=content-transfer-encoding:mime-version:message-id:date:subject:cc
+         :to:from:x-gm-gg:x-gm-message-state:from:to:cc:subject:date
+         :message-id:reply-to:content-type;
+        bh=accdJuryFxUi1qakKS5LSbXbrHZsB3mH/lXDrzc/Vh8=;
+        b=AuB8PTidO4Q9uxvrrXnwBZDRySW+UhScFb7jG21o8nxJgKJzOVxJgxiMLlIcId4OAZ
+         kiv1wIShKUSBrFk0b7gOBF2K/aRflA9kJoZTzlUGzbsFKEDkQCDPep9ewRmU7NLKZsmT
+         0i6iOavI2zX4QgyB9DsT2+f2/QFH2itmozCGrNB+KNMMwMU6gjayjy/L4S3J8wLdnTTf
+         620a3qccpZWtab9IyXi8/ng1rUVhxpb48jUCx7EmBtKnQQjcxgjkd3rJoxIN2HVi6zQI
+         9vnNllhvnrg3eiD8ilpcpwAy84Ed7mhIAzfBi+OEoW6JPr3uDh9haGhXkaqqCAE5pUsM
+         OSnA==
+X-Gm-Message-State: APuU4Z9Txr4B0SOvJDHnm+4EBZjMQ3MD9NPsvKbvclLk/1otakgPmqcH
+	bBdAcrz+Mgzdhrkt8ouE1LdbOlduE29GcHzr4R0RUbYSKCXGbfYijYwV
+X-Gm-Gg: AYBFou2gcWmpkyNlYQ3NxQ14bNq15ReIXbDD88FxYawWUIZq/EXXXyWzHjvaDJ1RDMS
+	N8FIlnHAgik+aMmHiIwvLns/iPoIUXehMjxSytzd9pNAXp2tTgo6h/UUBrPoolmMJQuD7v7cHw/
+	wScGb3c/M+ZRiBvmE7+dXJd7hBA8IV38d+XFYhcNG4ERJw6gcQI3LJapJAvfT16Z+zKSuuKBAq6
+	0Kf9yL/rjCwAshqsfeJQdRme2oYvCg2oZg805yl8HzFLVGnL2k17muebbx12v20NmeH9U6H9uVQ
+	NEdHQvxKSmRqq7lwZR8uO4Jp43mf8fDra+MEWbNfHcEQd4lctX9y4A7YFzDBd0hSAWOK9XX7ROz
+	6htgEF47zyzzS1oI5WmAHimim0Fd6zA2nrQ7WRtYsTrn6tzcpeNG9tQ5JsrIyLX+BtfDdEcgN/r
+	m7V1u00Zry1O0z3ERQE+OI5T0UDQwMEqo/sIggdrFk9u3hm9X/ORMbufZn99lFrNnjYPzW3XeCd
+	tzvGldxW/Oigg7IT7WJxKygQiKxAzFV0hZZKNCYunu28rMe5LdcPcVnRWpYpjCPg41+agIi53mh
+	f4ZSikeedSdxwlK9aYnC95S+n75RskGQ3WfQ9lOvWxZYCySjETGkdSOB8cgA1i+SWHIiL49zBAg
+	SG6AJMjz1gQS9FPE8ByBUcxtubDbhCLk0caklAH95KoPXzhd7dZtjyqs38gxHoly/BExaZIp3sU
+	HRNGeEq8j+uatTyjQiQj3EbFU=
+X-Received: by 2002:a05:600c:4f86:b0:4a1:e672:5721 with SMTP id 5b1f17b1804b1-4ba02340fefmr12950385e9.13.1794270091356;
+        Mon, 09 Nov 2026 16:21:31 -0800 (PST)
 Received: from ADM-D9YH122JTV.home.lan (141-136-138-190.dsl.iskon.hr. [141.136.138.190])
-        by smtp.gmail.com with ESMTPSA id ffacd0b85a97d-4983284c9b1sm1665099f8f.6.2026.11.09.16.21.18
+        by smtp.gmail.com with ESMTPSA id 5b1f17b1804b1-4ba01fea9eesm40106255e9.11.2026.11.09.16.21.30
         (version=TLS1_3 cipher=TLS_CHACHA20_POLY1305_SHA256 bits=256/256);
-        Mon, 09 Nov 2026 16:21:20 -0800 (PST)
+        Mon, 09 Nov 2026 16:21:30 -0800 (PST)
 From: Goran Sustek <gsustek@gmail.com>
-To: Rameshkumar Sundaram <rameshkumar.sundaram@oss.qualcomm.com>,
-	Jeff Johnson <jjohnson@kernel.org>
+To: Jeff Johnson <jjohnson@kernel.org>
 Cc: linux-wireless@vger.kernel.org,
 	ath12k@lists.infradead.org,
 	linux-kernel@vger.kernel.org,
+	Rameshkumar Sundaram <rameshkumar.sundaram@oss.qualcomm.com>,
 	Nazar Mokrynskyi <nazar@mokrynskyi.com>
-Subject: Re: [PATCH ath-next v2 1/2] wifi: ath12k: report no AFC memory region to firmware
-Date: Tue, 10 Nov 2026 01:21:07 +0100
-Message-ID: <20261110002108.89933-1-gsustek@gmail.com>
+Subject: [PATCH ath-next v3 0/2] wifi: ath12k: accept what newer QCN9274 firmware requests at boot
+Date: Tue, 10 Nov 2026 01:21:19 +0100
+Message-ID: <20261110002121.90167-1-gsustek@gmail.com>
 X-Mailer: git-send-email 2.56.0
-In-Reply-To: <8a301454-a8b8-427a-883f-cddcf31a4879@oss.qualcomm.com>
-References: <20261102200235.48973-1-gsustek@gmail.com> <20261102200235.48973-2-gsustek@gmail.com> <8a301454-a8b8-427a-883f-cddcf31a4879@oss.qualcomm.com>
 X-Mailing-List: linux-wireless@vger.kernel.org
 List-Id: <linux-wireless.vger.kernel.org>
 List-Post: <mailto:linux-wireless@vger.kernel.org>
@@ -103,31 +99,40 @@ Precedence: list
 MIME-Version: 1.0
 Content-Transfer-Encoding: 8bit
 
-On 11/3/2026 6:17 AM, Rameshkumar Sundaram wrote:
-> What do you mean by "bus address" here? Do you mean the DMA address
-> provided in chunk->paddr?
+QCN9274 firmware WLAN.WBE.1.6-01243 requests two things at boot that
+ath12k does not implement: a target memory segment of type 0xa (AFC)
+and direct buffer rings for module IDs 2 and 3. Neither is needed for
+operation. Today the first gets a wrong answer and the second aborts
+the parse of the service ready ext event.
 
-Yes, the DMA address in chunk->paddr. v3 says that.
+Patch 1 answers every unsupported memory type with size 0. Patch 2
+skips unknown ring module IDs instead of failing the parse. Both keep
+a warning, so the gap between firmware and driver stays visible.
 
-> Also, the paragraph below makes it sound like without this change the
-> firmware doesn't send the memory ready indication and the radios don't
-> come up, which isn't the case. There is no visible functional issue
-> being fixed here. Please update the commit message to precisely describe
-> what changes with this patch.
+v3:
+- 1/2: clear the size in the default case, no AFC case; keep the
+  warning; describe only the response change (Rameshkumar Sundaram).
+- 2/2: warn for a skipped entry instead of a debug message.
+- Rebased on ath-next.
 
-Agreed, there is none. v3 states that the firmware comes up with or
-without the change, and describes only what changes in the response:
-size 0 instead of the requested size for a segment the host does not
-provide.
+v2:
+- 1/2: do not allocate the region, answer with size 0 (Rameshkumar
+  Sundaram); former 3/3 dropped.
+- 2/2: commit message and comment reworded.
 
-> I'd rather move chunk->size = 0 to the default: case. That way, all
-> unsupported memory region types are consistently reported with size 0.
+v2: https://lore.kernel.org/r/20261102200235.48973-1-gsustek@gmail.com
+v1: https://lore.kernel.org/r/20261030220836.14164-1-gsustek@gmail.com
 
-Done in v3: one line in the default case, no AFC case and no new enum
-value. I also restored the existing warning. v2 had moved it to debug
-level, which hides a request the driver does not implement; that was
-wrong.
+Goran Sustek (2):
+  wifi: ath12k: report size 0 for unsupported target memory types
+  wifi: ath12k: skip unknown direct buffer ring module IDs
 
-Thanks for the review.
+ drivers/net/wireless/ath/ath12k/qmi.c |  1 +
+ drivers/net/wireless/ath/ath12k/wmi.c | 43 +++++++++++++++++----------
+ 2 files changed, 29 insertions(+), 15 deletions(-)
 
-Goran
+
+base-commit: d0fbb39d65dc9dcb4175fa6b23e473dec3670f4d
+-- 
+2.56.0
+
