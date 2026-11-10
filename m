@@ -1,61 +1,65 @@
-Authentication-Results: smtp.subspace.kernel.org; arc=none smtp.remote-ip=91.218.175.238
+Authentication-Results: smtp.subspace.kernel.org; arc=none smtp.remote-ip=31.44.14.19
 ARC-Seal: i=1; d=subspace.kernel.org; s=arc20261015; a=rsa-sha256; cv=none;
-	t=1794297816;
-	b=uGos3WLeulT6RWZ8wW66MFpctB7oCdLQeFESwlLJlz/PkZaNseYc3LKENuEd9ydmYA19
-	 /2AsiTjieQ2yLgb0abAZCKBPy0PMf7m1PfuAkvOaltQlr+HFNQbYNiYtzkSq3wTJuqFNk
-	 MGXTEZi3s3qzZrE2BD2phrPtJd3Cc0jJ5elMHnHMrq2/rgUiN/V4eyxYs0EKAzg2y3F+/
-	 7xVtXcDu/90jBz5E8ah3IH2Ok3aqI5gL1G2tFCchsanfS3FNgiQ8+w/eleC81FxwHJOCS
-	 NM6TXYvltI8BGPsB2jkmie/Sg6sQeZ3J6xsHf3YLUhOddqmHWbNsMxNNTVuGpfsL9fw==
+	t=1794299331;
+	b=qoTfBdqF1aU/X8nol/4+nQEF9oKC2ODQ1xYlLu2hYfJDUkQatO4DOazUiOq4Rn+vdyTN
+	 pLvhqQf7Y6JoI3ZVtJjhFwBE6AQHREzbJVz8qw9t5z79No4uX9pfJno+pVWOW0H4DzBUS
+	 QcuKvapHFmpIh28ZhZgChjV+4oEyrmTivNMOcOERx71qKDSw7qNE2xrHyyT8QRkm+/eSN
+	 hNTMzcNeV+SgPIRBPyjZvIurctE3fXgTyRoieiy5GwXtgwecAQWDNjBl6RlFezs+DOWXv
+	 h9P/877RPrL96ZL6krJU5adkSN2r8vZ7FbdKjpRc4QwRi3wZFvzTAJKKrYknc5QjTJw==
 ARC-Message-Signature: i=1; d=subspace.kernel.org; s=arc20261015;
-	a=rsa-sha256; c=relaxed/relaxed; t=1794297816;
-	h=DMARC-Filter:X-Envelope-To:DKIM-Signature:X-Envelope-To:Received:
-	 X-Mizu-Trace-ID:X-Migadu-Flow:Date:From:To:CC:Subject:In-Reply-To:
-	 References:Message-ID:MIME-Version:Content-Type:
-	 Content-Transfer-Encoding;
-	bh=NrbrkTC2383GltJ1/xG4oH1O553yahkSqfqhr2B0KUg=;
-	b=drjzZQxGBOdG4vCrhVz1WhC6+632IJFgxOho40ZDc/S7X7ZdyYS1CozKsKukyIcvgrxS
-	 vARLywIRuNeuWpYZeQgPMOxNtqGHnEGbiXpWKQiEaD0eyghEAJ9B9ZI/k2U3XDP2+cT7S
-	 xg+hraNls4hfjc6ssDMusyJLlw2seidTjE+sRCybrK0bUEw4wDCQvGFisB44TPaSNAA4U
-	 /3GE/eR+KnwZy2tfIA3x0ZAzYOpkn70Q1WROA0ybyRSAdH5p6khB0rgBSMKmWYhbGWDID
-	 X9ajD5R/k9T+kGq9+MghYeQECC2ocxj4bw5J9llVHDfQtYvFrWbFEMPGWLIPhEBGYwQ==
+	a=rsa-sha256; c=relaxed/relaxed; t=1794299331;
+	h=DMARC-Filter:Received:Received:X-Yandex-Fwd:DKIM-Signature:From:To:
+	 Cc:Subject:Date:Message-ID:X-Mailer:In-Reply-To:References:
+	 MIME-Version:Content-Transfer-Encoding;
+	bh=KiHYL98shVArdwp1a7ybI+gKcZyGmNWsa7R+aE+cRU4=;
+	b=ExFb4U2EeWnlU/9wHoHvwS12jsW8nbEP1Nsouc/peF3kr91gSdVzn7nivs7sKJFIaWiF
+	 iw9hcd9IXwDIcwZzMYkEjlN3Nnjl7vtRdwViprrD2sJZ6QvZZont/jsjqxKL6sqvPg0y+
+	 liYQTIBghnFnsjnc3OjLgWyi3E/jFZ5WBmBSVBxwnGed+2SsWL9tfQ2vumktH19/5o6Hx
+	 HIWVg3CYgKw13UHDmUIRco91NK8gk6wsOm4dRQxCJwfXChFhjFt+n/WoetZVw6vbk1g2T
+	 VbDMReNq1wahbqirENQFwmPLbAYvaiB9LnqGx58/inCw0PMVyYSl2w21PlUv79pNtBw==
 ARC-Authentication-Results: i=1; smtp.subspace.kernel.org; 
-	dmarc=pass header.from=linux.dev;
-	spf=pass smtp.mailfrom=linux.dev;
-	dkim=pass header.d=linux.dev header.i=@linux.dev header.a=rsa-sha256 header.s=key1 header.b=n02yaWlh;
-	arc=none smtp.remote-ip=91.218.175.238
-Received: from mta0.migadu.com (out-238.mta0.migadu.com [91.218.175.238])
-	(using TLSv1.3 with cipher TLS_AES_128_GCM_SHA256 (128/128 bits)
+	dmarc=pass header.from=yandex.ru;
+	spf=pass smtp.mailfrom=yandex.ru;
+	dkim=pass header.d=yandex.ru header.i=@yandex.ru header.a=rsa-sha256 header.s=mail header.b=GF9u0pw4;
+	arc=none smtp.remote-ip=31.44.14.19
+Received: from forward503d.mail.yandex.net (forward503d.mail.yandex.net [31.44.14.19])
+	(using TLSv1.3 with cipher TLS_AES_256_GCM_SHA384 (256/256 bits)
 	 key-exchange X25519 server-signature ECDSA (prime256v1) server-digest SHA256)
 	(No client certificate requested)
-	by smtp.subspace.kernel.org (Postfix) with ESMTPS id 9B392606A31C
-	for <linux-wireless@vger.kernel.org>; Tue, 10 Nov 2026 08:03:35 +0000 (UTC)
-DMARC-Filter: OpenDMARC Filter v1.4.2 smtp.subspace.kernel.org 9B392606A31C
-Authentication-Results: smtp.subspace.kernel.org; dmarc=pass (p=none dis=none) header.from=linux.dev
-Authentication-Results: smtp.subspace.kernel.org; spf=pass smtp.mailfrom=linux.dev
+	by smtp.subspace.kernel.org (Postfix) with ESMTPS id B07DF606A33C
+	for <linux-wireless@vger.kernel.org>; Tue, 10 Nov 2026 08:28:47 +0000 (UTC)
+DMARC-Filter: OpenDMARC Filter v1.4.2 smtp.subspace.kernel.org B07DF606A33C
+Authentication-Results: smtp.subspace.kernel.org; dmarc=pass (p=none dis=none) header.from=yandex.ru
+Authentication-Results: smtp.subspace.kernel.org; spf=pass smtp.mailfrom=yandex.ru
 Authentication-Results: smtp.subspace.kernel.org;
-	dkim=pass (1024-bit key, unprotected) header.d=linux.dev header.i=@linux.dev header.a=rsa-sha256 header.s=key1 header.b=n02yaWlh
-X-Envelope-To: linux-wireless@vger.kernel.org
-DKIM-Signature: a=rsa-sha256; bh=4PqXM7l4Ikpi6si9gMQ2qVSYh50Pe5p7W8oNd9axTUQ=;
- c=simple/simple; d=linux.dev;
- h=from:to:subject:date:message-id:mime-version:content-type; s=key1;
- t=1794297813; v=1; x=1794902613;
- b=n02yaWlhADnGFdmjnc8VO1hrse+03PJhsc2JgLneyCO+yqNua9bjueaomm5+fuQnxo9vAvTh
- 1w1E55MxhoTPAewhDIPXlUDS12wRuLMYAC94PBMdIWJEvrDibjVE+c2WPesa333QYyeUvkS9qSt
- CZvP3evbcvetLqcd/EkaKMp0=
-X-Envelope-To: linux-wireless@vger.kernel.org
-Received: by smtp.migadu.com with ESMTPS id 3eac155489b98e25;
-	Tue, 10 Nov 2026 08:03:33 +0000
-X-Mizu-Trace-ID: 3eac155489b98e25
-X-Migadu-Flow: FLOW_OUT
-Date: Tue, 10 Nov 2026 09:03:30 +0100
-From: Luka Gejak <luka.gejak@linux.dev>
-To: Ho Jie Feng <hjf3108@gmail.com>, Bitterblue Smith <rtl8821cerfe2@gmail.com>
-CC: Ping-Ke Shih <pkshih@realtek.com>, linux-wireless@vger.kernel.org
-Subject: =?US-ASCII?Q?Re=3A_=5BPATCH_rtw-next_v2_5/7=5D_wifi=3A_rtw88=3A?=
- =?US-ASCII?Q?_88xxa=3A_correct_carrier-frequency_offset?=
-In-Reply-To: <20261109134046.953116-1-hjf3108@gmail.com>
-References: <05823fa0-08a8-4805-86c8-8f74af8f1a95@gmail.com> <20261109134046.953116-1-hjf3108@gmail.com>
-Message-ID: <8B293150-B4BF-429A-B9E4-831E38D28572@linux.dev>
+	dkim=pass (1024-bit key, unprotected) header.d=yandex.ru header.i=@yandex.ru header.a=rsa-sha256 header.s=mail header.b=GF9u0pw4
+Received: from mail-nwsmtp-smtp-production-main-62 (mail-nwsmtp-smtp-production-main-62.yp-c.yandex.net)
+	by forward503d.mail.yandex.net (postfix) with ESMTPS id 1375910004C;
+	Tue, 10 Nov 2026 11:28:40 +0300 (MSK)
+Received: by mail-nwsmtp-smtp-production-main-62 with ESMTPSA id SSNIAJAfjeA0-bvtFO9i2;
+	Tue, 10 Nov 2026 11:28:39 +0300
+X-Yandex-Fwd: 1
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=yandex.ru; s=mail;
+	t=1794299319; bh=KiHYL98shVArdwp1a7ybI+gKcZyGmNWsa7R+aE+cRU4=;
+	h=Message-ID:Date:In-Reply-To:Cc:Subject:References:To:From;
+	b=GF9u0pw4QYfWSDp47wuLQzX4V38jpQsK57Zcf4g6liAmAW83GVyb6Yq+naST1b1HW
+	 +GcOgKTAeKrCwO+e+qlfmxCIN/eYWXTR36PbU2WW0X6UJl6mMzPT5R8z5RakwZtobc
+	 wcCqvCXHqCK3v7csT8qpqXpJ7Kqz/e6l3uiwncpk=
+Authentication-Results: mail-nwsmtp-smtp-production-main-62; dkim=pass header.i=@yandex.ru
+From: Sergey Armodin <dolph-in@yandex.ru>
+To: Arend van Spriel <arend.vanspriel@broadcom.com>,
+	linux-wireless@vger.kernel.org
+Cc: brcm80211@lists.linux.dev,
+	brcm80211-dev-list.pdl@broadcom.com,
+	Angel Lindo <angellindo@gmail.com>,
+	BJ Hinkle <bjhinkle@gmail.com>,
+	Alex McCubbin <alex@mccubbin.info>
+Subject: Re: [PATCH wireless-next v3] wifi: brcmfmac: pcie: restore FEM control pin mode on Apple BCM43602
+Date: Tue, 10 Nov 2026 15:28:28 +0700
+Message-ID: <20261110082828.1427041-1-dolph-in@yandex.ru>
+X-Mailer: git-send-email 2.56.0
+In-Reply-To: <20261101172011.1591620-1-dolph-in@yandex.ru>
+References: <20261101172011.1591620-1-dolph-in@yandex.ru>
 X-Mailing-List: linux-wireless@vger.kernel.org
 List-Id: <linux-wireless.vger.kernel.org>
 List-Post: <mailto:linux-wireless@vger.kernel.org>
@@ -65,35 +69,28 @@ List-Unsubscribe: <mailto:linux-wireless+unsubscribe@vger.kernel.org>
 List-Owner: <mailto:linux-wireless+owner@vger.kernel.org>
 Precedence: list
 MIME-Version: 1.0
-Content-Type: text/plain;
- charset=utf-8
 Content-Transfer-Encoding: 8bit
 
-On November 9, 2026 2:39:16 PM GMT+01:00, Ho Jie Feng <hjf3108@gmail.com>
-wrote:
->On Fri, Nov 06, 2026 at 07:59:44PM +0000, Bitterblue Smith wrote:
->> On 06/11/2026 19:27, Luka Gejak wrote:
->>> The 6 bit limit now shows up as 0x3F or 0x3f in five places across
->>> rtw88xxa.c and rtw8814a.c. Maybe a define in rtw88xxa.h, which
->>> rtw8814a.c includes too, similar to XCAP_MASK in rtw8822c.h.
->>>
->>
->> This is the limit for every supported chip except RTL8822C. It can
->> go somewhere in the core files.
->
->Since this patch is 88xxa focused, I feel that it could be placed
->within rtw88xxa.h for the time being. Since the cfo chip helpers
->will be promoted to core for this series and I have a 8723bs, 
->I can move the define to the core files in another patch series
->to add cfo support to 8723bs if Luka isn't already working on it.
->
+Alex McCubbin tested this patch on a MacBookPro13,3 (subsystem
+106b:015a, the ID v3 adds) and posted the results on GitHub, as he
+can't easily reply to the list:
 
-I don't mind either approach, but why not move it to core file now, since
-you plan to move it anyway and what seems more logical, doesn't it?
+https://github.com/omacom/omarchy/pull/11570#issuecomment-6745365111
 
-Also CFO suppost isn't in my plan right now, so if you want to implement
-it, go ahead and I will be happy to assist you or co develop it(and review
-it of course).
+All of his tests used S3:
 
-Best regards,
-Luka Gejak
+- On battery, three sleeps with a sleep hook that unloads brcmfmac
+  before suspend, reloads it after, and only reads chipcontrol:
+  chipcontrol read back as 0 after each, and the patch set the FEM bit
+  again. 5 GHz rejoined cleanly twice; the third time was on a weak
+  access point and inconclusive.
+- The same on the charger, one sleep of about an hour: the bit was
+  kept (0x01000010), the patch wrote nothing, and 5 GHz rejoined
+  cleanly.
+- brcmfmac left loaded across suspend, on battery, three of three: each
+  resume re-probed, the patch's debug message ("setting discrete FEM
+  control mode") appeared, and 5 GHz was back in 4 s with no status 16.
+
+He gave this tag there (Cc'd so he can confirm it):
+
+Tested-by: Alex McCubbin <alex@mccubbin.info> # MacBookPro13,3
