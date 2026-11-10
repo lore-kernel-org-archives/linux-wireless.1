@@ -1,91 +1,91 @@
-Authentication-Results: smtp.subspace.kernel.org; arc=none smtp.remote-ip=209.85.161.49
+Authentication-Results: smtp.subspace.kernel.org; arc=none smtp.remote-ip=209.85.161.51
 ARC-Seal: i=1; d=subspace.kernel.org; s=arc20261015; a=rsa-sha256; cv=none;
 	t=1794336256;
-	b=2C1HetHxUZIf/YhfNE/LdmaOHH0eGtxBZN6jmYfIOFN/uEX0uThV6G2kYbIFdYmfMmCK
-	 JLb3120FMQXIpRpIZLWTFGAfzkShsemqEY8dJXDunltGNd3fP7lWvzqfoSt0bD9riU/cx
-	 gjSg5jRABYyYbJg+EkCFk5+20V/MrYtWA+TFa8o+8vQvNQdkTKS37IRK3y7dyMMUucDFe
-	 AZ9RC7PJKvSFiWtvcdqjdqxWZBIEcPPTUql9nSAeGG2LmRdSjxZxKu8fUEHflhdjuEq16
-	 6cGiyqVTckQb68rX06sFtpqCHpco6Ou2lpoinNg7rgdu8eSBGQ9ovIoYvzqzYuT7QEg==
+	b=lwl5VlmddKdkh/obOgipTZ3QHC/WzXQ4eeJH1c7VOwywDFP+KhPiTVnpHI7L6Ah6+DV0
+	 MBfxOucwpkglHVCAVVa3QnzKRLFQaz1bfDIKGygKadJGGBPnJYh21+rYEd0zh5D/BOulh
+	 2QiV8VRtwpHGabHu8NIb21bQGiWT/L5bTKJIvzGl8yjEoAP/jKOJgtnRLhjqyVsDoBLfM
+	 Ov8YT0mdO/4YfCZa9CDw/qxr/xYa9hxRhCgsdjV2maNKrW5f1Aep6dkCcVZGPFItf0c+X
+	 LTN2MKQ+6eWvNgYEEn3xAZ+MXWekxqpwNmpJFiwN0/v9Afufw+8qk/kuuOHK7H9RV9Q==
 ARC-Message-Signature: i=1; d=subspace.kernel.org; s=arc20261015;
 	a=rsa-sha256; c=relaxed/relaxed; t=1794336256;
 	h=DMARC-Filter:Received:DKIM-Signature:X-Google-DKIM-Signature:
 	 X-Gm-Message-State:X-Gm-Gg:X-Received:Received:From:
 	 X-Google-Original-From:To:Cc:Subject:Date:Message-ID:X-Mailer:
 	 In-Reply-To:References:MIME-Version:Content-Transfer-Encoding;
-	bh=c7iQPNEuFokge8g/4lPCQ9+aiu7f01rkcFqUuPZEyWA=;
-	b=0ugzKuSr/eZZyD312YU/DRzCnUGwuOJK1XLyzCff3GayNCMSu1it+u46BTdDk80SrUen
-	 Qfs4qPGhBvzeWcUtvzy7dCxgEgLr6nW1f4ejoiCS2rmu0tD39PIcIMV/j0j22ihMeUJlM
-	 FXSPnCCRD74DS8ycyTVkwfU90X1xKh4io2v/P8/whcFJf/JFN4fpLcLfHV7s0Fzrts4lY
-	 ectvZl85UBAoFUZ5tCheG17VpINpU4FswljC88aO9AVUVhSIaxPkQMOzvY6FxmXnl5Kqa
-	 e11fClbeDNhQHLLWJWSrgEMo2hP9Ipk1WUfs5JtmZUqGjLntmyaybmv5aL5YxxEnefQ==
+	bh=k2qjXhHYTbRY5ib4rbEZychaxcMtUcY53KQAmXfPyFw=;
+	b=QJVqEQ0kZoYeyM3qb295NpEV+LQOx3b0bgBR4w7DMPIFBiPPZ+ZG1ZVk+ufIokvmQ1jL
+	 fW3WWJ2opYNPPtQRUeN6EOgJ1v+rhVkslQ90ZYvHs0BeQOpdmqJpL+Ut7KGRJPf5OJwgG
+	 G7z0nGet8WnasKaZb4Aa2G9HZU+eHUrM0/jtQFB5R8fvL0b6xgLXJv4tvjxy0ZYVV3/7b
+	 UCLIM2GxWGY2L2hMlTjx/l86dmHbUEqUu1XroFPzF0tjhIAMmmli6Ebvdc3FYyfAuDpbY
+	 qRkRTeWEtVJ8H4rCm+8uqrCoY/xidHKjQ2Z3/3tm3MmettHr7Dmasf0w4k+1m7zQlZw==
 ARC-Authentication-Results: i=1; smtp.subspace.kernel.org; 
 	dmarc=pass header.from=gmail.com;
 	spf=pass smtp.mailfrom=gmail.com;
-	dkim=pass header.d=gmail.com header.i=@gmail.com header.a=rsa-sha256 header.s=20260707 header.b=UZGd3Lml;
-	arc=none smtp.remote-ip=209.85.161.49
-Received: from mail-oo1-f49.google.com (mail-oo1-f49.google.com [209.85.161.49])
+	dkim=pass header.d=gmail.com header.i=@gmail.com header.a=rsa-sha256 header.s=20260707 header.b=jxe7OFmI;
+	arc=none smtp.remote-ip=209.85.161.51
+Received: from mail-oo1-f51.google.com (mail-oo1-f51.google.com [209.85.161.51])
 	(using TLSv1.3 with cipher TLS_AES_128_GCM_SHA256 (128/128 bits)
 	 key-exchange X25519 server-signature ECDSA (prime256v1) server-digest SHA256)
 	(No client certificate requested)
-	by smtp.subspace.kernel.org (Postfix) with ESMTPS id 6980A606A33F
+	by smtp.subspace.kernel.org (Postfix) with ESMTPS id E7D88606B58C
 	for <linux-wireless@vger.kernel.org>; Tue, 10 Nov 2026 18:44:15 +0000 (UTC)
-DMARC-Filter: OpenDMARC Filter v1.4.2 smtp.subspace.kernel.org 6980A606A33F
+DMARC-Filter: OpenDMARC Filter v1.4.2 smtp.subspace.kernel.org E7D88606B58C
 Authentication-Results: smtp.subspace.kernel.org; dmarc=pass (p=none dis=none) header.from=gmail.com
 Authentication-Results: smtp.subspace.kernel.org; spf=pass smtp.mailfrom=gmail.com
 Authentication-Results: smtp.subspace.kernel.org;
-	dkim=pass (2048-bit key) header.d=gmail.com header.i=@gmail.com header.a=rsa-sha256 header.s=20260707 header.b=UZGd3Lml
-Received: by mail-oo1-f49.google.com with SMTP id 006d021491bc7-6df7f544919so1260133eaf.1
+	dkim=pass (2048-bit key) header.d=gmail.com header.i=@gmail.com header.a=rsa-sha256 header.s=20260707 header.b=jxe7OFmI
+Received: by mail-oo1-f51.google.com with SMTP id 006d021491bc7-716d052dc23so1051601eaf.1
         for <linux-wireless@vger.kernel.org>; Tue, 10 Nov 2026 10:44:15 -0800 (PST)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=gmail.com; s=20260707; t=1794336254; x=1794941054; darn=vger.kernel.org;
+        d=gmail.com; s=20260707; t=1794336255; x=1794941055; darn=vger.kernel.org;
         h=content-transfer-encoding:mime-version:references:in-reply-to
          :message-id:date:subject:cc:to:from:from:to:cc:subject:date
          :message-id:reply-to:content-type;
-        bh=c7iQPNEuFokge8g/4lPCQ9+aiu7f01rkcFqUuPZEyWA=;
-        b=UZGd3Lmlxn3E+8+ZEm40YQmUNrqrDl4QjBHsn60c4BDcs81s3Sn/QukqpU884C9D7Q
-         w7ofgcCOG8v0dM/6p9ZJrafq5FYAn99LSuqgNxk8qhr1FJzbXh7n86kZeAT+s+YtrL3Y
-         xhITxjSs9EAjMvC+OVn7qTBQvYo8cGHRG+2yM+WVEJTn0D+hzxcI8a9KCwf4IMrB5I1x
-         2SZnA5sp8IEwQnCkE/9vW1aU2g7wWsuW3o3mvavivwbdhCyqvK1c4wynfB0Ke3AMAE3s
-         gXcbZpmbniTyWa+F1T2GovLlUiXFFiy86WYYuO7SsAKKI/lbyNoCplAduCZuOM12CKhN
-         IFYA==
+        bh=k2qjXhHYTbRY5ib4rbEZychaxcMtUcY53KQAmXfPyFw=;
+        b=jxe7OFmIA/rfWVCdSEw2zUNQIz7lGVlXmGGiWrL3Sfg94UrSj8PGwHucv7KHB+V/0c
+         MzOYDjQDC2QE/c2RdwGZZtsFnAWIX6zxJmlsBI/lF9kSD5kU5dZqScTKq6zvE2DxGVn5
+         1V+J0DcqMkO66G7dQf5UbBYF+C9B0G9F/kiX75rE/XFgZJSUVPkvXmJYRtE29jPLFHOr
+         QmLBHn+xn1yO0rDkPkUaTXMZh3Zus5YjMyWDgjdLGivFb2k3GTkuWPBCy7KnjSr/0A3I
+         k07hmAgThUQnvoycOUMIkDOxHsK7JaMepuxSLSaTw3OjjWTyLOIDfzp5jGvY12dj0D7L
+         /0Cw==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=1e100.net; s=20260707; t=1794336254; x=1794941054;
+        d=1e100.net; s=20260707; t=1794336255; x=1794941055;
         h=content-transfer-encoding:mime-version:references:in-reply-to
          :message-id:date:subject:cc:to:from:x-gm-gg:x-gm-message-state:from
          :to:cc:subject:date:message-id:reply-to:content-type;
-        bh=c7iQPNEuFokge8g/4lPCQ9+aiu7f01rkcFqUuPZEyWA=;
-        b=yNZF5ll4RG1NVLVWoOWnoRnZU4uvyDT5B+qT/sTiWRPE1BUQ92QG28zsfTXM77fARR
-         cKKXpob/p1Z14hS86yXVUcfeyw2OakVOCD+o/00btxUaRRoxJIx5ZnPuavHP5qezalVW
-         QLeHcGkj70TC+29nGNTE88W4/PQY06+ysoA2nFoVCL6FZOZjvesDork3VKuLQAOgBCNT
-         Y0Ip8Bf/b9otXipVz0cIr1LMqfbjhjx//RNPwzRRrq2RGjfW0qkqjmkqA0rMoSP9JDRf
-         3dJ0sYCe2ppapQrCq7ZxZ8+ficpNIuC85G/MuB1qaDLe89msrSQ1fqna8qGGLFBGpJGy
-         LMEg==
-X-Gm-Message-State: APuU4Z8E1616dUXai+BSHg1YNn8YyCvxr5EdsQGMEbDlAoSXsFl7bH+0
-	jME5RtMcdnKdr5Ie7gcBubN6n5WdQvMKOMK1KZ3GHXWxAfr9D8cKnY92
-X-Gm-Gg: AYBFou0eDNxRGwZIjWPfasTz/tstBt7m7uxG7m9h8V3Itgu+GaLroMEN4c/XlQtno3h
-	6i8hmyzO3wQWrQSvjCVWsZ+5bbUlrsZdHgoWPC7iUicQ0V3CBgwRMLbZ2zMUMQ61NUDgI7rhRZ4
-	uaAmopFc4zY1s/vmr5YiEOh3EXR+npaYOMwMQy+2gsXV1NDJhavRgy/MoUmSbaDU/GVzi/HL5eF
-	LSM4GPVAVI6Mc6KfZ59EVcqlyp9L/yDe+YCHL7AyQs0+Qx0ttqSq3CZkHGnGkb8I+ITyOr5SqYm
-	Ib10FA5tAqqArBKAVoPNtkpfoZXPcMkX149xG1ccUk5dZAuUD4vPhzMfquM5B4ceWWVl/7gWO3q
-	NtSdDydH89Y13HHBYeBBLxqhodRd1Sw4l9QoEJK8PgRKSwC8vst9dbyve86m8tkpb2qlcR4GRv2
-	KMhqYslMQreI2plUvoJadHU76Gm1MtC1rAA8AGs9hB36e60UdSItKRMiyRETCa4UPz3deCRptow
-	OYpf3gIfJHglTz4nC67Ga4dHxysOxnEn5+tAP2najFBgfUtPLDFzI/vAfkz3GsIMyI3hFzeybSy
-	gXcGRGRXLa/mdvpGSTEYz+ZOSD850SwU48ZlPH+eX7E+cR3+VQsViW1q
-X-Received: by 2002:a05:6820:c0d4:20b0:717:10a2:89a6 with SMTP id 006d021491bc7-718a721abdfmr1253559eaf.80.1794336254069;
+        bh=k2qjXhHYTbRY5ib4rbEZychaxcMtUcY53KQAmXfPyFw=;
+        b=Y/mPe9dE8nl5hy93QrfA/5PeGWTvZT7FL4Q0srRePVL3I59z/EYmMJab1aWCwIFQot
+         lYlfmGN2K0N57s3yTpQffZEwCS+DbzfFnAZ70o6kMXxKBerr9sAyEte05rslq7/KCgx6
+         XD9gbztpFUsy38xgbSq320e1YsvqGgt/xkhg7ibsoDzvJvu9V0Cl9wgEtupZkYC/4/Ug
+         a9y3PBPgYaoJ/WZk853JOHGIiiLJN87dxDwIBrvmJD0x9jDhHWCaUV6IoaB4FCvq098Z
+         +ErNrtjDccaTxf+e2QP7YQujamuCDDa5LbGW8eY8xTx9oFaoT/pNSEyvNK7dYm8rAlxy
+         zigg==
+X-Gm-Message-State: APuU4Z9IDTnx2erwgMvuMCkx3RUtVDJG+yb31L6UvfGBmAWNe1Zf3oJF
+	6FjDKQ8XtYPk7WncArg8uSNAc9AQ4cfO79YtfJ+yR4y29gXKGOZaLsLy
+X-Gm-Gg: AYBFou0GTlPn/cHXdxfg0g4Eo7RUy2g73fq1U5EtiYqm2YqXYOzCMz/0fPUkhoHtXt6
+	QiuNdcyEqBm/0knV3iz5p0UGWUnpOadiEZShTQdeOIC5PpToFArtfmA+akTcxX3OwU/txe9+7L5
+	saws2GRYuzZQusl4BVKzPk3nbsFPleVf7Edgvg5U6FnKc8QRI6iK3djf0Emz4gz/+9gvrOncLvT
+	yUsT63txTBKXguNlatS8lzNVoFhCHv1UrLZ+8ziOcpypCCY/g3+innVBDAy7vC3eWVMdtxo4s2R
+	ZqYre6qwdv2IjSY2mCNyv3EN4W/qOaWajTn9w1OmLmKL2Zv9h9XQYI3Qtml/KZmAidugXnwD6ht
+	eKk4nvySN6gXo9t9nVZkhkvbQtcbBYpMh3mpqrFZX6kVCoV+uPbhdrwWe9XqNR7fRo0BMrocV49
+	VifDplCaL+OBURZC5uevNLhTPAWPyWZuWtSam+rAKjh6S8HrPQvLsxnuoWHPmwEOdHsedvoPPu1
+	DbB9vHWbUdFRJO3RnnLlxjPtt8xZnUs4ZwqZ7bUlLH0heHIu+hgoPMQJFtO0w34SRTyZSr+D+3a
+	yPgXF1V0nBkRg7trBPteyK3DIBheo9jVLg==
+X-Received: by 2002:a05:6820:3393:10b0:716:bbec:d2db with SMTP id 006d021491bc7-718a5a58c5cmr1165398eaf.19.1794336254826;
         Tue, 10 Nov 2026 10:44:14 -0800 (PST)
 Received: from pop-os.. ([24.32.17.59])
-        by smtp.gmail.com with ESMTPSA id 006d021491bc7-718a8f660b2sm2225776eaf.4.2026.11.10.10.44.13
+        by smtp.gmail.com with ESMTPSA id 006d021491bc7-718a8f660b2sm2225776eaf.4.2026.11.10.10.44.14
         (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
-        Tue, 10 Nov 2026 10:44:13 -0800 (PST)
+        Tue, 10 Nov 2026 10:44:14 -0800 (PST)
 From: Rishik Yechuri <epicrishik@gmail.com>
 X-Google-Original-From: Rishik Yechuri <rishik.yechuri.code@gmail.com>
 To: Ping-Ke Shih <pkshih@realtek.com>
 Cc: linux-wireless@vger.kernel.org,
 	linux-kernel@vger.kernel.org,
 	Rishik Yechuri <rishik.yechuri.code@gmail.com>
-Subject: [PATCH rtw-next 2/6] wifi: rtlwifi: use struct ieee80211_hdr for the reserved page headers
-Date: Tue, 10 Nov 2026 12:44:05 -0600
-Message-ID: <20261110184409.42205-3-rishik.yechuri.code@gmail.com>
+Subject: [PATCH rtw-next 3/6] wifi: rtlwifi: call msecs_to_jiffies() directly
+Date: Tue, 10 Nov 2026 12:44:06 -0600
+Message-ID: <20261110184409.42205-4-rishik.yechuri.code@gmail.com>
 X-Mailer: git-send-email 2.43.0
 In-Reply-To: <20261110184409.42205-1-rishik.yechuri.code@gmail.com>
 References: <20261110184409.42205-1-rishik.yechuri.code@gmail.com>
@@ -100,672 +100,231 @@ Precedence: list
 MIME-Version: 1.0
 Content-Transfer-Encoding: 8bit
 
-The reserved page builders also patch the addresses of the beacon, null
-data, probe response, QoS null data, BT QoS null data and ARP response
-templates with SET_80211_HDR_ADDRESS1(), SET_80211_HDR_ADDRESS2() and
-SET_80211_HDR_ADDRESS3() from base.h. These add a hard coded byte
-offset to a u8 pointer and copy the six bytes one at a time through
-the CP_MACADDR() macro in wifi.h.
-
-struct ieee80211_hdr from <linux/ieee80211.h> has the addr1, addr2 and
-addr3 members at the same offsets. Point at each template with that
-struct and copy the addresses with ether_addr_copy() on the members.
-Then remove the three macros, CP_MACADDR() and the FRAME_OFFSET_*
-constants, which have no other users.
+MSECS() in wifi.h is a plain alias for msecs_to_jiffies(). Call
+msecs_to_jiffies() at the 18 sites that used it and remove the macro.
 
 No functional change intended.
 
 Signed-off-by: Rishik Yechuri <rishik.yechuri.code@gmail.com>
 Assisted-by: Claude:claude-fable-5-1
 ---
- drivers/net/wireless/realtek/rtlwifi/base.h   | 14 ---
- .../wireless/realtek/rtlwifi/rtl8188ee/fw.c   | 28 +++---
- .../realtek/rtlwifi/rtl8192c/fw_common.c      | 28 +++---
- .../wireless/realtek/rtlwifi/rtl8192de/fw.c   | 28 +++---
- .../wireless/realtek/rtlwifi/rtl8192ee/fw.c   | 48 +++++-----
- .../wireless/realtek/rtlwifi/rtl8723ae/fw.c   | 28 +++---
- .../wireless/realtek/rtlwifi/rtl8723be/fw.c   | 48 +++++-----
- .../wireless/realtek/rtlwifi/rtl8821ae/fw.c   | 96 +++++++++----------
- drivers/net/wireless/realtek/rtlwifi/wifi.h   |  5 -
- 9 files changed, 152 insertions(+), 171 deletions(-)
+ drivers/net/wireless/realtek/rtlwifi/base.c         | 2 +-
+ drivers/net/wireless/realtek/rtlwifi/core.c         | 2 +-
+ drivers/net/wireless/realtek/rtlwifi/ps.c           | 6 +++---
+ drivers/net/wireless/realtek/rtlwifi/rtl8188ee/dm.c | 2 +-
+ drivers/net/wireless/realtek/rtlwifi/rtl8188ee/hw.c | 6 +++---
+ drivers/net/wireless/realtek/rtlwifi/rtl8192ee/hw.c | 6 +++---
+ drivers/net/wireless/realtek/rtlwifi/rtl8723be/hw.c | 6 +++---
+ drivers/net/wireless/realtek/rtlwifi/rtl8821ae/hw.c | 6 +++---
+ drivers/net/wireless/realtek/rtlwifi/wifi.h         | 1 -
+ 9 files changed, 18 insertions(+), 19 deletions(-)
 
-diff --git a/drivers/net/wireless/realtek/rtlwifi/base.h b/drivers/net/wireless/realtek/rtlwifi/base.h
-index 870ca1dff3ee..e23e6934d1a3 100644
---- a/drivers/net/wireless/realtek/rtlwifi/base.h
-+++ b/drivers/net/wireless/realtek/rtlwifi/base.h
-@@ -36,23 +36,9 @@ enum ap_peer {
- #define MAX_BIT_RATE_LONG_GI_1NSS_80MHZ_MCS9	390	/* Mbps */
- #define MAX_BIT_RATE_LONG_GI_1NSS_80MHZ_MCS7	293	/* Mbps */
+diff --git a/drivers/net/wireless/realtek/rtlwifi/base.c b/drivers/net/wireless/realtek/rtlwifi/base.c
+index b6dcdd03535a..d0eda75f99d9 100644
+--- a/drivers/net/wireless/realtek/rtlwifi/base.c
++++ b/drivers/net/wireless/realtek/rtlwifi/base.c
+@@ -2230,7 +2230,7 @@ void rtl_watch_dog_timer_callback(struct timer_list *t)
+ 			   &rtlpriv->works.watchdog_wq, 0);
  
--#define FRAME_OFFSET_FRAME_CONTROL	0
--#define FRAME_OFFSET_DURATION		2
--#define FRAME_OFFSET_ADDRESS1		4
--#define FRAME_OFFSET_ADDRESS2		10
--#define FRAME_OFFSET_ADDRESS3		16
--#define FRAME_OFFSET_SEQUENCE		22
--#define FRAME_OFFSET_ADDRESS4		24
- #define MAX_LISTEN_INTERVAL		10
- #define MAX_RATE_TRIES			4
+ 	mod_timer(&rtlpriv->works.watchdog_timer,
+-		  jiffies + MSECS(RTL_WATCH_DOG_TIME));
++		  jiffies + msecs_to_jiffies(RTL_WATCH_DOG_TIME));
+ }
  
--#define SET_80211_HDR_ADDRESS1(_hdr, _val)	\
--	CP_MACADDR((u8 *)(_hdr)+FRAME_OFFSET_ADDRESS1, (u8 *)(_val))
--#define SET_80211_HDR_ADDRESS2(_hdr, _val)	\
--	CP_MACADDR((u8 *)(_hdr)+FRAME_OFFSET_ADDRESS2, (u8 *)(_val))
--#define SET_80211_HDR_ADDRESS3(_hdr, _val)	\
--	CP_MACADDR((u8 *)(_hdr)+FRAME_OFFSET_ADDRESS3, (u8 *)(_val))
--
- #define SET_TX_DESC_SPE_RPT(__pdesc, __val)			\
- 	le32p_replace_bits((__le32 *)(__pdesc + 8), __val, BIT(19))
- #define SET_TX_DESC_SW_DEFINE(__pdesc, __val)	\
-diff --git a/drivers/net/wireless/realtek/rtlwifi/rtl8188ee/fw.c b/drivers/net/wireless/realtek/rtlwifi/rtl8188ee/fw.c
-index cda9388388ab..da9ef7cab2fb 100644
---- a/drivers/net/wireless/realtek/rtlwifi/rtl8188ee/fw.c
-+++ b/drivers/net/wireless/realtek/rtlwifi/rtl8188ee/fw.c
-@@ -544,18 +544,18 @@ void rtl88e_set_fw_rsvdpagepkt(struct ieee80211_hw *hw, bool b_dl_finished)
- 	bool rtstatus;
- 	u8 u1rsvdpageloc[5] = { 0 };
- 	bool b_dlok = false;
--	u8 *beacon;
-+	struct ieee80211_hdr *beacon;
- 	struct ieee80211_pspoll *p_pspoll;
--	u8 *nullfunc;
--	u8 *p_probersp;
-+	struct ieee80211_hdr *nullfunc;
-+	struct ieee80211_hdr *p_probersp;
- 
- 	/*---------------------------------------------------------
- 	 *			(1) beacon
- 	 *---------------------------------------------------------
+ static void rtl_fwevt_wq_callback(struct work_struct *work)
+diff --git a/drivers/net/wireless/realtek/rtlwifi/core.c b/drivers/net/wireless/realtek/rtlwifi/core.c
+index e971132fee14..cc715b491ff7 100644
+--- a/drivers/net/wireless/realtek/rtlwifi/core.c
++++ b/drivers/net/wireless/realtek/rtlwifi/core.c
+@@ -615,7 +615,7 @@ static int rtl_op_config(struct ieee80211_hw *hw, int radio_idx, u32 changed)
+ 			if (!rtlpriv->psc.multi_buffered)
+ 				queue_delayed_work(rtlpriv->works.rtl_wq,
+ 						   &rtlpriv->works.ps_work,
+-						   MSECS(5));
++						   msecs_to_jiffies(5));
+ 		} else {
+ 			rtl_swlps_rf_awake(hw);
+ 			rtlpriv->psc.sw_ps_enabled = false;
+diff --git a/drivers/net/wireless/realtek/rtlwifi/ps.c b/drivers/net/wireless/realtek/rtlwifi/ps.c
+index bcab12c3b4c1..ba100c2cb525 100644
+--- a/drivers/net/wireless/realtek/rtlwifi/ps.c
++++ b/drivers/net/wireless/realtek/rtlwifi/ps.c
+@@ -254,7 +254,7 @@ void rtl_ips_nic_off(struct ieee80211_hw *hw)
+ 	 * this will cause link failed, so we delay 100ms here
  	 */
--	beacon = &reserved_page_packet[BEACON_PG * 128];
--	SET_80211_HDR_ADDRESS2(beacon, mac->mac_addr);
--	SET_80211_HDR_ADDRESS3(beacon, mac->bssid);
-+	beacon = (struct ieee80211_hdr *)&reserved_page_packet[BEACON_PG * 128];
-+	ether_addr_copy(beacon->addr2, mac->mac_addr);
-+	ether_addr_copy(beacon->addr3, mac->bssid);
+ 	queue_delayed_work(rtlpriv->works.rtl_wq,
+-			   &rtlpriv->works.ips_nic_off_wq, MSECS(100));
++			   &rtlpriv->works.ips_nic_off_wq, msecs_to_jiffies(100));
+ }
  
- 	/*-------------------------------------------------------
- 	 *			(2) ps-poll
-@@ -572,10 +572,10 @@ void rtl88e_set_fw_rsvdpagepkt(struct ieee80211_hw *hw, bool b_dl_finished)
- 	 *			(3) null data
- 	 *---------------------------------------------------------
- 	 */
--	nullfunc = &reserved_page_packet[NULL_PG * 128];
--	SET_80211_HDR_ADDRESS1(nullfunc, mac->bssid);
--	SET_80211_HDR_ADDRESS2(nullfunc, mac->mac_addr);
--	SET_80211_HDR_ADDRESS3(nullfunc, mac->bssid);
-+	nullfunc = (struct ieee80211_hdr *)&reserved_page_packet[NULL_PG * 128];
-+	ether_addr_copy(nullfunc->addr1, mac->bssid);
-+	ether_addr_copy(nullfunc->addr2, mac->mac_addr);
-+	ether_addr_copy(nullfunc->addr3, mac->bssid);
+ /* NOTICE: any opmode should exc nic_on, or disable without
+@@ -532,7 +532,7 @@ void rtl_swlps_beacon(struct ieee80211_hw *hw, void *data, unsigned int len)
+ 		/* back to low-power land. and delay is
+ 		 * prevent null power save frame tx fail */
+ 		queue_delayed_work(rtlpriv->works.rtl_wq,
+-				   &rtlpriv->works.ps_work, MSECS(5));
++				   &rtlpriv->works.ps_work, msecs_to_jiffies(5));
+ 	} else {
+ 		rtl_dbg(rtlpriv, COMP_POWER, DBG_DMESG,
+ 			"u_bufferd: %x, m_buffered: %x\n", u_buffed, m_buffed);
+@@ -636,7 +636,7 @@ void rtl_swlps_rf_sleep(struct ieee80211_hw *hw)
  
- 	SET_H2CCMD_RSVDPAGE_LOC_NULL_DATA(u1rsvdpageloc, NULL_PG);
+ 	/* we tested that 40ms is enough for sw & hw sw delay */
+ 	queue_delayed_work(rtlpriv->works.rtl_wq, &rtlpriv->works.ps_rfon_wq,
+-			MSECS(sleep_intv * mac->vif->bss_conf.beacon_int - 40));
++			msecs_to_jiffies(sleep_intv * mac->vif->bss_conf.beacon_int - 40));
+ }
  
-@@ -583,10 +583,10 @@ void rtl88e_set_fw_rsvdpagepkt(struct ieee80211_hw *hw, bool b_dl_finished)
- 	 *			(4) probe response
- 	 *----------------------------------------------------------
- 	 */
--	p_probersp = &reserved_page_packet[PROBERSP_PG * 128];
--	SET_80211_HDR_ADDRESS1(p_probersp, mac->bssid);
--	SET_80211_HDR_ADDRESS2(p_probersp, mac->mac_addr);
--	SET_80211_HDR_ADDRESS3(p_probersp, mac->bssid);
-+	p_probersp = (struct ieee80211_hdr *)&reserved_page_packet[PROBERSP_PG * 128];
-+	ether_addr_copy(p_probersp->addr1, mac->bssid);
-+	ether_addr_copy(p_probersp->addr2, mac->mac_addr);
-+	ether_addr_copy(p_probersp->addr3, mac->bssid);
+ void rtl_lps_change_work_callback(struct work_struct *work)
+diff --git a/drivers/net/wireless/realtek/rtlwifi/rtl8188ee/dm.c b/drivers/net/wireless/realtek/rtlwifi/rtl8188ee/dm.c
+index d9132d90feb1..f1a3a0c29b98 100644
+--- a/drivers/net/wireless/realtek/rtlwifi/rtl8188ee/dm.c
++++ b/drivers/net/wireless/realtek/rtlwifi/rtl8188ee/dm.c
+@@ -1677,7 +1677,7 @@ static void rtl88e_dm_fast_ant_training(struct ieee80211_hw *hw)
+ 		rtl_set_bbreg(hw, DM_REG_IGI_A_11N, BIT(7), 1);
  
- 	SET_H2CCMD_RSVDPAGE_LOC_PROBE_RSP(u1rsvdpageloc, PROBERSP_PG);
+ 		mod_timer(&rtlpriv->works.fast_antenna_training_timer,
+-			  jiffies + MSECS(RTL_WATCH_DOG_TIME));
++			  jiffies + msecs_to_jiffies(RTL_WATCH_DOG_TIME));
+ 	}
+ }
  
-diff --git a/drivers/net/wireless/realtek/rtlwifi/rtl8192c/fw_common.c b/drivers/net/wireless/realtek/rtlwifi/rtl8192c/fw_common.c
-index 3e8befbcf865..9570e8608d8c 100644
---- a/drivers/net/wireless/realtek/rtlwifi/rtl8192c/fw_common.c
-+++ b/drivers/net/wireless/realtek/rtlwifi/rtl8192c/fw_common.c
-@@ -572,16 +572,16 @@ void rtl92c_set_fw_rsvdpagepkt(struct ieee80211_hw *hw,
- 	u8 u1rsvdpageloc[3] = { 0 };
- 	bool b_dlok = false;
+diff --git a/drivers/net/wireless/realtek/rtlwifi/rtl8188ee/hw.c b/drivers/net/wireless/realtek/rtlwifi/rtl8188ee/hw.c
+index 0dbe92188bb1..bc89d9f2370a 100644
+--- a/drivers/net/wireless/realtek/rtlwifi/rtl8188ee/hw.c
++++ b/drivers/net/wireless/realtek/rtlwifi/rtl8188ee/hw.c
+@@ -154,7 +154,7 @@ static void _rtl88ee_set_fw_clock_on(struct ieee80211_hw *hw,
+ 		spin_unlock_bh(&rtlpriv->locks.fw_ps_lock);
+ 		if (schedule_timer) {
+ 			mod_timer(&rtlpriv->works.fw_clockoff_timer,
+-				  jiffies + MSECS(10));
++				  jiffies + msecs_to_jiffies(10));
+ 		}
  
--	u8 *beacon;
-+	struct ieee80211_hdr *beacon;
- 	struct ieee80211_pspoll *p_pspoll;
--	u8 *nullfunc;
--	u8 *p_probersp;
-+	struct ieee80211_hdr *nullfunc;
-+	struct ieee80211_hdr *p_probersp;
- 	/*---------------------------------------------------------
- 				(1) beacon
- 	---------------------------------------------------------*/
--	beacon = &reserved_page_packet[BEACON_PG * 128];
--	SET_80211_HDR_ADDRESS2(beacon, mac->mac_addr);
--	SET_80211_HDR_ADDRESS3(beacon, mac->bssid);
-+	beacon = (struct ieee80211_hdr *)&reserved_page_packet[BEACON_PG * 128];
-+	ether_addr_copy(beacon->addr2, mac->mac_addr);
-+	ether_addr_copy(beacon->addr3, mac->bssid);
+ 	} else  {
+@@ -195,7 +195,7 @@ static void _rtl88ee_set_fw_clock_off(struct ieee80211_hw *hw,
  
- 	/*-------------------------------------------------------
- 				(2) ps-poll
-@@ -596,20 +596,20 @@ void rtl92c_set_fw_rsvdpagepkt(struct ieee80211_hw *hw,
- 	/*--------------------------------------------------------
- 				(3) null data
- 	---------------------------------------------------------*/
--	nullfunc = &reserved_page_packet[NULL_PG * 128];
--	SET_80211_HDR_ADDRESS1(nullfunc, mac->bssid);
--	SET_80211_HDR_ADDRESS2(nullfunc, mac->mac_addr);
--	SET_80211_HDR_ADDRESS3(nullfunc, mac->bssid);
-+	nullfunc = (struct ieee80211_hdr *)&reserved_page_packet[NULL_PG * 128];
-+	ether_addr_copy(nullfunc->addr1, mac->bssid);
-+	ether_addr_copy(nullfunc->addr2, mac->mac_addr);
-+	ether_addr_copy(nullfunc->addr3, mac->bssid);
+ 	if (schedule_timer) {
+ 		mod_timer(&rtlpriv->works.fw_clockoff_timer,
+-			  jiffies + MSECS(10));
++			  jiffies + msecs_to_jiffies(10));
+ 		return;
+ 	}
  
- 	SET_H2CCMD_RSVDPAGE_LOC_NULL_DATA(u1rsvdpageloc, NULL_PG);
+@@ -215,7 +215,7 @@ static void _rtl88ee_set_fw_clock_off(struct ieee80211_hw *hw,
+ 		} else {
+ 			spin_unlock_bh(&rtlpriv->locks.fw_ps_lock);
+ 			mod_timer(&rtlpriv->works.fw_clockoff_timer,
+-				  jiffies + MSECS(10));
++				  jiffies + msecs_to_jiffies(10));
+ 		}
+ 	}
+ }
+diff --git a/drivers/net/wireless/realtek/rtlwifi/rtl8192ee/hw.c b/drivers/net/wireless/realtek/rtlwifi/rtl8192ee/hw.c
+index 00048912900c..a8f88d53e97b 100644
+--- a/drivers/net/wireless/realtek/rtlwifi/rtl8192ee/hw.c
++++ b/drivers/net/wireless/realtek/rtlwifi/rtl8192ee/hw.c
+@@ -130,7 +130,7 @@ static void _rtl92ee_set_fw_clock_on(struct ieee80211_hw *hw,
+ 		spin_unlock_bh(&rtlpriv->locks.fw_ps_lock);
+ 		if (b_schedule_timer) {
+ 			mod_timer(&rtlpriv->works.fw_clockoff_timer,
+-				  jiffies + MSECS(10));
++				  jiffies + msecs_to_jiffies(10));
+ 		}
+ 	} else  {
+ 		spin_lock_bh(&rtlpriv->locks.fw_ps_lock);
+@@ -170,7 +170,7 @@ static void _rtl92ee_set_fw_clock_off(struct ieee80211_hw *hw, u8 rpwm_val)
  
- 	/*---------------------------------------------------------
- 				(4) probe response
- 	----------------------------------------------------------*/
--	p_probersp = &reserved_page_packet[PROBERSP_PG * 128];
--	SET_80211_HDR_ADDRESS1(p_probersp, mac->bssid);
--	SET_80211_HDR_ADDRESS2(p_probersp, mac->mac_addr);
--	SET_80211_HDR_ADDRESS3(p_probersp, mac->bssid);
-+	p_probersp = (struct ieee80211_hdr *)&reserved_page_packet[PROBERSP_PG * 128];
-+	ether_addr_copy(p_probersp->addr1, mac->bssid);
-+	ether_addr_copy(p_probersp->addr2, mac->mac_addr);
-+	ether_addr_copy(p_probersp->addr3, mac->bssid);
+ 	if (b_schedule_timer) {
+ 		mod_timer(&rtlpriv->works.fw_clockoff_timer,
+-			  jiffies + MSECS(10));
++			  jiffies + msecs_to_jiffies(10));
+ 		return;
+ 	}
  
- 	SET_H2CCMD_RSVDPAGE_LOC_PROBE_RSP(u1rsvdpageloc, PROBERSP_PG);
+@@ -189,7 +189,7 @@ static void _rtl92ee_set_fw_clock_off(struct ieee80211_hw *hw, u8 rpwm_val)
+ 		} else {
+ 			spin_unlock_bh(&rtlpriv->locks.fw_ps_lock);
+ 			mod_timer(&rtlpriv->works.fw_clockoff_timer,
+-				  jiffies + MSECS(10));
++				  jiffies + msecs_to_jiffies(10));
+ 		}
+ 	}
+ }
+diff --git a/drivers/net/wireless/realtek/rtlwifi/rtl8723be/hw.c b/drivers/net/wireless/realtek/rtlwifi/rtl8723be/hw.c
+index bf7b5a32adaa..f93970fefb3b 100644
+--- a/drivers/net/wireless/realtek/rtlwifi/rtl8723be/hw.c
++++ b/drivers/net/wireless/realtek/rtlwifi/rtl8723be/hw.c
+@@ -160,7 +160,7 @@ static void _rtl8723be_set_fw_clock_on(struct ieee80211_hw *hw, u8 rpwm_val,
+ 		spin_unlock_bh(&rtlpriv->locks.fw_ps_lock);
+ 		if (b_schedule_timer)
+ 			mod_timer(&rtlpriv->works.fw_clockoff_timer,
+-				  jiffies + MSECS(10));
++				  jiffies + msecs_to_jiffies(10));
+ 	} else  {
+ 		spin_lock_bh(&rtlpriv->locks.fw_ps_lock);
+ 		rtlhal->fw_clk_change_in_progress = false;
+@@ -198,7 +198,7 @@ static void _rtl8723be_set_fw_clock_off(struct ieee80211_hw *hw, u8 rpwm_val)
  
-diff --git a/drivers/net/wireless/realtek/rtlwifi/rtl8192de/fw.c b/drivers/net/wireless/realtek/rtlwifi/rtl8192de/fw.c
-index 23c7b088e8cd..019a64bf1a47 100644
---- a/drivers/net/wireless/realtek/rtlwifi/rtl8192de/fw.c
-+++ b/drivers/net/wireless/realtek/rtlwifi/rtl8192de/fw.c
-@@ -259,16 +259,16 @@ void rtl92d_set_fw_rsvdpagepkt(struct ieee80211_hw *hw, bool dl_finished)
- 	bool rtstatus;
- 	u8 u1rsvdpageloc[3] = { PROBERSP_PG, PSPOLL_PG, NULL_PG };
- 	bool dlok = false;
--	u8 *beacon;
-+	struct ieee80211_hdr *beacon;
- 	struct ieee80211_pspoll *p_pspoll;
--	u8 *nullfunc;
--	u8 *p_probersp;
-+	struct ieee80211_hdr *nullfunc;
-+	struct ieee80211_hdr *p_probersp;
- 	/*---------------------------------------------------------
- 						(1) beacon
- 	---------------------------------------------------------*/
--	beacon = &reserved_page_packet[BEACON_PG * 128];
--	SET_80211_HDR_ADDRESS2(beacon, mac->mac_addr);
--	SET_80211_HDR_ADDRESS3(beacon, mac->bssid);
-+	beacon = (struct ieee80211_hdr *)&reserved_page_packet[BEACON_PG * 128];
-+	ether_addr_copy(beacon->addr2, mac->mac_addr);
-+	ether_addr_copy(beacon->addr3, mac->bssid);
- 	/*-------------------------------------------------------
- 						(2) ps-poll
- 	--------------------------------------------------------*/
-@@ -279,17 +279,17 @@ void rtl92d_set_fw_rsvdpagepkt(struct ieee80211_hw *hw, bool dl_finished)
- 	/*--------------------------------------------------------
- 						(3) null data
- 	---------------------------------------------------------*/
--	nullfunc = &reserved_page_packet[NULL_PG * 128];
--	SET_80211_HDR_ADDRESS1(nullfunc, mac->bssid);
--	SET_80211_HDR_ADDRESS2(nullfunc, mac->mac_addr);
--	SET_80211_HDR_ADDRESS3(nullfunc, mac->bssid);
-+	nullfunc = (struct ieee80211_hdr *)&reserved_page_packet[NULL_PG * 128];
-+	ether_addr_copy(nullfunc->addr1, mac->bssid);
-+	ether_addr_copy(nullfunc->addr2, mac->mac_addr);
-+	ether_addr_copy(nullfunc->addr3, mac->bssid);
- 	/*---------------------------------------------------------
- 						(4) probe response
- 	----------------------------------------------------------*/
--	p_probersp = &reserved_page_packet[PROBERSP_PG * 128];
--	SET_80211_HDR_ADDRESS1(p_probersp, mac->bssid);
--	SET_80211_HDR_ADDRESS2(p_probersp, mac->mac_addr);
--	SET_80211_HDR_ADDRESS3(p_probersp, mac->bssid);
-+	p_probersp = (struct ieee80211_hdr *)&reserved_page_packet[PROBERSP_PG * 128];
-+	ether_addr_copy(p_probersp->addr1, mac->bssid);
-+	ether_addr_copy(p_probersp->addr2, mac->mac_addr);
-+	ether_addr_copy(p_probersp->addr3, mac->bssid);
- 	totalpacketlen = TOTAL_RESERVED_PKT_LEN;
- 	RT_PRINT_DATA(rtlpriv, COMP_CMD, DBG_LOUD,
- 		      "rtl92d_set_fw_rsvdpagepkt(): HW_VAR_SET_TX_CMD: ALL",
-diff --git a/drivers/net/wireless/realtek/rtlwifi/rtl8192ee/fw.c b/drivers/net/wireless/realtek/rtlwifi/rtl8192ee/fw.c
-index e50db134682f..cbbda64e7ce2 100644
---- a/drivers/net/wireless/realtek/rtlwifi/rtl8192ee/fw.c
-+++ b/drivers/net/wireless/realtek/rtlwifi/rtl8192ee/fw.c
-@@ -662,19 +662,19 @@ void rtl92ee_set_fw_rsvdpagepkt(struct ieee80211_hw *hw, bool b_dl_finished)
- 	u8 u1rsvdpageloc[5] = { 0 };
- 	bool b_dlok = false;
+ 	if (b_schedule_timer) {
+ 		mod_timer(&rtlpriv->works.fw_clockoff_timer,
+-			  jiffies + MSECS(10));
++			  jiffies + msecs_to_jiffies(10));
+ 		return;
+ 	}
  
--	u8 *beacon;
-+	struct ieee80211_hdr *beacon;
- 	struct ieee80211_pspoll *p_pspoll;
--	u8 *nullfunc;
--	u8 *p_probersp;
--	u8 *qosnull;
--	u8 *btqosnull;
-+	struct ieee80211_hdr *nullfunc;
-+	struct ieee80211_hdr *p_probersp;
-+	struct ieee80211_hdr *qosnull;
-+	struct ieee80211_hdr *btqosnull;
- 	/*---------------------------------------------------------
- 	 *			(1) beacon
- 	 *---------------------------------------------------------
- 	 */
--	beacon = &reserved_page_packet[BEACON_PG * 128];
--	SET_80211_HDR_ADDRESS2(beacon, mac->mac_addr);
--	SET_80211_HDR_ADDRESS3(beacon, mac->bssid);
-+	beacon = (struct ieee80211_hdr *)&reserved_page_packet[BEACON_PG * 128];
-+	ether_addr_copy(beacon->addr2, mac->mac_addr);
-+	ether_addr_copy(beacon->addr3, mac->bssid);
+@@ -217,7 +217,7 @@ static void _rtl8723be_set_fw_clock_off(struct ieee80211_hw *hw, u8 rpwm_val)
+ 		} else {
+ 			spin_unlock_bh(&rtlpriv->locks.fw_ps_lock);
+ 			mod_timer(&rtlpriv->works.fw_clockoff_timer,
+-				  jiffies + MSECS(10));
++				  jiffies + msecs_to_jiffies(10));
+ 		}
+ 	}
  
- 	/*-------------------------------------------------------
- 	 *			(2) ps-poll
-@@ -691,10 +691,10 @@ void rtl92ee_set_fw_rsvdpagepkt(struct ieee80211_hw *hw, bool b_dl_finished)
- 	 *			(3) null data
- 	 *---------------------------------------------------------
- 	 */
--	nullfunc = &reserved_page_packet[NULL_PG * 128];
--	SET_80211_HDR_ADDRESS1(nullfunc, mac->bssid);
--	SET_80211_HDR_ADDRESS2(nullfunc, mac->mac_addr);
--	SET_80211_HDR_ADDRESS3(nullfunc, mac->bssid);
-+	nullfunc = (struct ieee80211_hdr *)&reserved_page_packet[NULL_PG * 128];
-+	ether_addr_copy(nullfunc->addr1, mac->bssid);
-+	ether_addr_copy(nullfunc->addr2, mac->mac_addr);
-+	ether_addr_copy(nullfunc->addr3, mac->bssid);
+diff --git a/drivers/net/wireless/realtek/rtlwifi/rtl8821ae/hw.c b/drivers/net/wireless/realtek/rtlwifi/rtl8821ae/hw.c
+index fb893ed8b802..14f2d35c9b62 100644
+--- a/drivers/net/wireless/realtek/rtlwifi/rtl8821ae/hw.c
++++ b/drivers/net/wireless/realtek/rtlwifi/rtl8821ae/hw.c
+@@ -157,7 +157,7 @@ static void _rtl8821ae_set_fw_clock_on(struct ieee80211_hw *hw,
+ 		spin_unlock_bh(&rtlpriv->locks.fw_ps_lock);
+ 		if (b_schedule_timer)
+ 			mod_timer(&rtlpriv->works.fw_clockoff_timer,
+-				  jiffies + MSECS(10));
++				  jiffies + msecs_to_jiffies(10));
+ 	} else  {
+ 		spin_lock_bh(&rtlpriv->locks.fw_ps_lock);
+ 		rtlhal->fw_clk_change_in_progress = false;
+@@ -196,7 +196,7 @@ static void _rtl8821ae_set_fw_clock_off(struct ieee80211_hw *hw,
  
- 	SET_H2CCMD_RSVDPAGE_LOC_NULL_DATA(u1rsvdpageloc, NULL_PG);
+ 	if (b_schedule_timer) {
+ 		mod_timer(&rtlpriv->works.fw_clockoff_timer,
+-			  jiffies + MSECS(10));
++			  jiffies + msecs_to_jiffies(10));
+ 		return;
+ 	}
  
-@@ -702,10 +702,10 @@ void rtl92ee_set_fw_rsvdpagepkt(struct ieee80211_hw *hw, bool b_dl_finished)
- 	 *			(4) probe response
- 	 *----------------------------------------------------------
- 	 */
--	p_probersp = &reserved_page_packet[PROBERSP_PG * 128];
--	SET_80211_HDR_ADDRESS1(p_probersp, mac->bssid);
--	SET_80211_HDR_ADDRESS2(p_probersp, mac->mac_addr);
--	SET_80211_HDR_ADDRESS3(p_probersp, mac->bssid);
-+	p_probersp = (struct ieee80211_hdr *)&reserved_page_packet[PROBERSP_PG * 128];
-+	ether_addr_copy(p_probersp->addr1, mac->bssid);
-+	ether_addr_copy(p_probersp->addr2, mac->mac_addr);
-+	ether_addr_copy(p_probersp->addr3, mac->bssid);
- 
- 	SET_H2CCMD_RSVDPAGE_LOC_PROBE_RSP(u1rsvdpageloc, PROBERSP_PG);
- 
-@@ -713,10 +713,10 @@ void rtl92ee_set_fw_rsvdpagepkt(struct ieee80211_hw *hw, bool b_dl_finished)
- 	 *			(5) QoS null data
- 	 *----------------------------------------------------------
- 	 */
--	qosnull = &reserved_page_packet[QOS_NULL_PG * 128];
--	SET_80211_HDR_ADDRESS1(qosnull, mac->bssid);
--	SET_80211_HDR_ADDRESS2(qosnull, mac->mac_addr);
--	SET_80211_HDR_ADDRESS3(qosnull, mac->bssid);
-+	qosnull = (struct ieee80211_hdr *)&reserved_page_packet[QOS_NULL_PG * 128];
-+	ether_addr_copy(qosnull->addr1, mac->bssid);
-+	ether_addr_copy(qosnull->addr2, mac->mac_addr);
-+	ether_addr_copy(qosnull->addr3, mac->bssid);
- 
- 	SET_H2CCMD_RSVDPAGE_LOC_QOS_NULL_DATA(u1rsvdpageloc, QOS_NULL_PG);
- 
-@@ -724,10 +724,10 @@ void rtl92ee_set_fw_rsvdpagepkt(struct ieee80211_hw *hw, bool b_dl_finished)
- 	 *			(6) BT QoS null data
- 	 *----------------------------------------------------------
- 	 */
--	btqosnull = &reserved_page_packet[BT_QOS_NULL_PG * 128];
--	SET_80211_HDR_ADDRESS1(btqosnull, mac->bssid);
--	SET_80211_HDR_ADDRESS2(btqosnull, mac->mac_addr);
--	SET_80211_HDR_ADDRESS3(btqosnull, mac->bssid);
-+	btqosnull = (struct ieee80211_hdr *)&reserved_page_packet[BT_QOS_NULL_PG * 128];
-+	ether_addr_copy(btqosnull->addr1, mac->bssid);
-+	ether_addr_copy(btqosnull->addr2, mac->mac_addr);
-+	ether_addr_copy(btqosnull->addr3, mac->bssid);
- 
- 	SET_H2CCMD_RSVDPAGE_LOC_BT_QOS_NULL_DATA(u1rsvdpageloc, BT_QOS_NULL_PG);
- 
-diff --git a/drivers/net/wireless/realtek/rtlwifi/rtl8723ae/fw.c b/drivers/net/wireless/realtek/rtlwifi/rtl8723ae/fw.c
-index 63c55dae2aab..14f9402dba8a 100644
---- a/drivers/net/wireless/realtek/rtlwifi/rtl8723ae/fw.c
-+++ b/drivers/net/wireless/realtek/rtlwifi/rtl8723ae/fw.c
-@@ -392,18 +392,18 @@ void rtl8723e_set_fw_rsvdpagepkt(struct ieee80211_hw *hw, bool b_dl_finished)
- 	bool rtstatus;
- 	u8 u1rsvdpageloc[3] = { 0 };
- 	bool b_dlok = false;
--	u8 *beacon;
-+	struct ieee80211_hdr *beacon;
- 	struct ieee80211_pspoll *p_pspoll;
--	u8 *nullfunc;
--	u8 *p_probersp;
-+	struct ieee80211_hdr *nullfunc;
-+	struct ieee80211_hdr *p_probersp;
- 
- 	/*---------------------------------------------------------
- 	 *			(1) beacon
- 	 *---------------------------------------------------------
- 	 */
--	beacon = &reserved_page_packet[BEACON_PG * 128];
--	SET_80211_HDR_ADDRESS2(beacon, mac->mac_addr);
--	SET_80211_HDR_ADDRESS3(beacon, mac->bssid);
-+	beacon = (struct ieee80211_hdr *)&reserved_page_packet[BEACON_PG * 128];
-+	ether_addr_copy(beacon->addr2, mac->mac_addr);
-+	ether_addr_copy(beacon->addr3, mac->bssid);
- 
- 	/*-------------------------------------------------------
- 	 *			(2) ps-poll
-@@ -420,10 +420,10 @@ void rtl8723e_set_fw_rsvdpagepkt(struct ieee80211_hw *hw, bool b_dl_finished)
- 	 *			(3) null data
- 	 *---------------------------------------------------------
- 	 */
--	nullfunc = &reserved_page_packet[NULL_PG * 128];
--	SET_80211_HDR_ADDRESS1(nullfunc, mac->bssid);
--	SET_80211_HDR_ADDRESS2(nullfunc, mac->mac_addr);
--	SET_80211_HDR_ADDRESS3(nullfunc, mac->bssid);
-+	nullfunc = (struct ieee80211_hdr *)&reserved_page_packet[NULL_PG * 128];
-+	ether_addr_copy(nullfunc->addr1, mac->bssid);
-+	ether_addr_copy(nullfunc->addr2, mac->mac_addr);
-+	ether_addr_copy(nullfunc->addr3, mac->bssid);
- 
- 	SET_H2CCMD_RSVDPAGE_LOC_NULL_DATA(u1rsvdpageloc, NULL_PG);
- 
-@@ -431,10 +431,10 @@ void rtl8723e_set_fw_rsvdpagepkt(struct ieee80211_hw *hw, bool b_dl_finished)
- 	 *			(4) probe response
- 	 *----------------------------------------------------------
- 	 */
--	p_probersp = &reserved_page_packet[PROBERSP_PG * 128];
--	SET_80211_HDR_ADDRESS1(p_probersp, mac->bssid);
--	SET_80211_HDR_ADDRESS2(p_probersp, mac->mac_addr);
--	SET_80211_HDR_ADDRESS3(p_probersp, mac->bssid);
-+	p_probersp = (struct ieee80211_hdr *)&reserved_page_packet[PROBERSP_PG * 128];
-+	ether_addr_copy(p_probersp->addr1, mac->bssid);
-+	ether_addr_copy(p_probersp->addr2, mac->mac_addr);
-+	ether_addr_copy(p_probersp->addr3, mac->bssid);
- 
- 	SET_H2CCMD_RSVDPAGE_LOC_PROBE_RSP(u1rsvdpageloc, PROBERSP_PG);
- 
-diff --git a/drivers/net/wireless/realtek/rtlwifi/rtl8723be/fw.c b/drivers/net/wireless/realtek/rtlwifi/rtl8723be/fw.c
-index 33c8fb0c49ed..a9e8a58f4287 100644
---- a/drivers/net/wireless/realtek/rtlwifi/rtl8723be/fw.c
-+++ b/drivers/net/wireless/realtek/rtlwifi/rtl8723be/fw.c
-@@ -483,19 +483,19 @@ void rtl8723be_set_fw_rsvdpagepkt(struct ieee80211_hw *hw,
- 	u8 u1rsvdpageloc[5] = { 0 };
- 	bool b_dlok = false;
- 
--	u8 *beacon;
-+	struct ieee80211_hdr *beacon;
- 	struct ieee80211_pspoll *p_pspoll;
--	u8 *nullfunc;
--	u8 *p_probersp;
--	u8 *qosnull;
--	u8 *btqosnull;
-+	struct ieee80211_hdr *nullfunc;
-+	struct ieee80211_hdr *p_probersp;
-+	struct ieee80211_hdr *qosnull;
-+	struct ieee80211_hdr *btqosnull;
- 	/*---------------------------------------------------------
- 	 *			(1) beacon
- 	 *---------------------------------------------------------
- 	 */
--	beacon = &reserved_page_packet[BEACON_PG * 128];
--	SET_80211_HDR_ADDRESS2(beacon, mac->mac_addr);
--	SET_80211_HDR_ADDRESS3(beacon, mac->bssid);
-+	beacon = (struct ieee80211_hdr *)&reserved_page_packet[BEACON_PG * 128];
-+	ether_addr_copy(beacon->addr2, mac->mac_addr);
-+	ether_addr_copy(beacon->addr3, mac->bssid);
- 
- 	/*-------------------------------------------------------
- 	 *			(2) ps-poll
-@@ -512,10 +512,10 @@ void rtl8723be_set_fw_rsvdpagepkt(struct ieee80211_hw *hw,
- 	 *			(3) null data
- 	 *--------------------------------------------------------
- 	 */
--	nullfunc = &reserved_page_packet[NULL_PG * 128];
--	SET_80211_HDR_ADDRESS1(nullfunc, mac->bssid);
--	SET_80211_HDR_ADDRESS2(nullfunc, mac->mac_addr);
--	SET_80211_HDR_ADDRESS3(nullfunc, mac->bssid);
-+	nullfunc = (struct ieee80211_hdr *)&reserved_page_packet[NULL_PG * 128];
-+	ether_addr_copy(nullfunc->addr1, mac->bssid);
-+	ether_addr_copy(nullfunc->addr2, mac->mac_addr);
-+	ether_addr_copy(nullfunc->addr3, mac->bssid);
- 
- 	SET_H2CCMD_RSVDPAGE_LOC_NULL_DATA(u1rsvdpageloc, NULL_PG);
- 
-@@ -523,10 +523,10 @@ void rtl8723be_set_fw_rsvdpagepkt(struct ieee80211_hw *hw,
- 	 *			(4) probe response
- 	 *---------------------------------------------------------
- 	 */
--	p_probersp = &reserved_page_packet[PROBERSP_PG * 128];
--	SET_80211_HDR_ADDRESS1(p_probersp, mac->bssid);
--	SET_80211_HDR_ADDRESS2(p_probersp, mac->mac_addr);
--	SET_80211_HDR_ADDRESS3(p_probersp, mac->bssid);
-+	p_probersp = (struct ieee80211_hdr *)&reserved_page_packet[PROBERSP_PG * 128];
-+	ether_addr_copy(p_probersp->addr1, mac->bssid);
-+	ether_addr_copy(p_probersp->addr2, mac->mac_addr);
-+	ether_addr_copy(p_probersp->addr3, mac->bssid);
- 
- 	SET_H2CCMD_RSVDPAGE_LOC_PROBE_RSP(u1rsvdpageloc, PROBERSP_PG);
- 
-@@ -534,10 +534,10 @@ void rtl8723be_set_fw_rsvdpagepkt(struct ieee80211_hw *hw,
- 	 *			(5) QoS Null
- 	 *---------------------------------------------------------
- 	 */
--	qosnull = &reserved_page_packet[QOS_NULL_PG * 128];
--	SET_80211_HDR_ADDRESS1(qosnull, mac->bssid);
--	SET_80211_HDR_ADDRESS2(qosnull, mac->mac_addr);
--	SET_80211_HDR_ADDRESS3(qosnull, mac->bssid);
-+	qosnull = (struct ieee80211_hdr *)&reserved_page_packet[QOS_NULL_PG * 128];
-+	ether_addr_copy(qosnull->addr1, mac->bssid);
-+	ether_addr_copy(qosnull->addr2, mac->mac_addr);
-+	ether_addr_copy(qosnull->addr3, mac->bssid);
- 
- 	SET_H2CCMD_RSVDPAGE_LOC_QOS_NULL_DATA(u1rsvdpageloc, QOS_NULL_PG);
- 
-@@ -545,10 +545,10 @@ void rtl8723be_set_fw_rsvdpagepkt(struct ieee80211_hw *hw,
- 	 *			(5) QoS Null
- 	 *---------------------------------------------------------
- 	 */
--	btqosnull = &reserved_page_packet[BT_QOS_NULL_PG * 128];
--	SET_80211_HDR_ADDRESS1(btqosnull, mac->bssid);
--	SET_80211_HDR_ADDRESS2(btqosnull, mac->mac_addr);
--	SET_80211_HDR_ADDRESS3(btqosnull, mac->bssid);
-+	btqosnull = (struct ieee80211_hdr *)&reserved_page_packet[BT_QOS_NULL_PG * 128];
-+	ether_addr_copy(btqosnull->addr1, mac->bssid);
-+	ether_addr_copy(btqosnull->addr2, mac->mac_addr);
-+	ether_addr_copy(btqosnull->addr3, mac->bssid);
- 
- 	SET_H2CCMD_RSVDPAGE_LOC_BT_QOS_NULL_DATA(u1rsvdpageloc, BT_QOS_NULL_PG);
- 
-diff --git a/drivers/net/wireless/realtek/rtlwifi/rtl8821ae/fw.c b/drivers/net/wireless/realtek/rtlwifi/rtl8821ae/fw.c
-index ddae3a14f79e..00176bd64e84 100644
---- a/drivers/net/wireless/realtek/rtlwifi/rtl8821ae/fw.c
-+++ b/drivers/net/wireless/realtek/rtlwifi/rtl8821ae/fw.c
-@@ -1524,20 +1524,20 @@ void rtl8812ae_set_fw_rsvdpagepkt(struct ieee80211_hw *hw,
- 	u8 u1rsvdpageloc[5] = { 0 };
- 	u8 u1rsvdpageloc2[7] = { 0 };
- 	bool b_dlok = false;
--	u8 *beacon;
-+	struct ieee80211_hdr *beacon;
- 	struct ieee80211_pspoll *p_pspoll;
--	u8 *nullfunc;
--	u8 *qosnull;
--	u8 *btqosnull;
--	u8 *arpresp;
-+	struct ieee80211_hdr *nullfunc;
-+	struct ieee80211_hdr *qosnull;
-+	struct ieee80211_hdr *btqosnull;
-+	struct ieee80211_hdr *arpresp;
- 
- 	/*---------------------------------------------------------
- 	 *			(1) beacon
- 	 *---------------------------------------------------------
- 	 */
--	beacon = &reserved_page_packet_8812[BEACON_PG * 512];
--	SET_80211_HDR_ADDRESS2(beacon, mac->mac_addr);
--	SET_80211_HDR_ADDRESS3(beacon, mac->bssid);
-+	beacon = (struct ieee80211_hdr *)&reserved_page_packet_8812[BEACON_PG * 512];
-+	ether_addr_copy(beacon->addr2, mac->mac_addr);
-+	ether_addr_copy(beacon->addr3, mac->bssid);
- 
- 	if (b_dl_finished) {
- 		totalpacketlen = 512 - 40;
-@@ -1558,10 +1558,10 @@ void rtl8812ae_set_fw_rsvdpagepkt(struct ieee80211_hw *hw,
- 	 *			(3) null data
- 	 *---------------------------------------------------------
- 	 */
--	nullfunc = &reserved_page_packet_8812[NULL_PG * 512];
--	SET_80211_HDR_ADDRESS1(nullfunc, mac->bssid);
--	SET_80211_HDR_ADDRESS2(nullfunc, mac->mac_addr);
--	SET_80211_HDR_ADDRESS3(nullfunc, mac->bssid);
-+	nullfunc = (struct ieee80211_hdr *)&reserved_page_packet_8812[NULL_PG * 512];
-+	ether_addr_copy(nullfunc->addr1, mac->bssid);
-+	ether_addr_copy(nullfunc->addr2, mac->mac_addr);
-+	ether_addr_copy(nullfunc->addr3, mac->bssid);
- 
- 	SET_H2CCMD_RSVDPAGE_LOC_NULL_DATA(u1rsvdpageloc, NULL_PG);
- 
-@@ -1569,10 +1569,10 @@ void rtl8812ae_set_fw_rsvdpagepkt(struct ieee80211_hw *hw,
- 	 *			(4) Qos null data
- 	 *----------------------------------------------------------
- 	 */
--	qosnull = &reserved_page_packet_8812[QOSNULL_PG * 512];
--	SET_80211_HDR_ADDRESS1(qosnull, mac->bssid);
--	SET_80211_HDR_ADDRESS2(qosnull, mac->mac_addr);
--	SET_80211_HDR_ADDRESS3(qosnull, mac->bssid);
-+	qosnull = (struct ieee80211_hdr *)&reserved_page_packet_8812[QOSNULL_PG * 512];
-+	ether_addr_copy(qosnull->addr1, mac->bssid);
-+	ether_addr_copy(qosnull->addr2, mac->mac_addr);
-+	ether_addr_copy(qosnull->addr3, mac->bssid);
- 
- 	SET_H2CCMD_RSVDPAGE_LOC_QOS_NULL_DATA(u1rsvdpageloc, QOSNULL_PG);
- 
-@@ -1580,10 +1580,10 @@ void rtl8812ae_set_fw_rsvdpagepkt(struct ieee80211_hw *hw,
- 	 *			(5) BT Qos null data
- 	 *----------------------------------------------------------
- 	 */
--	btqosnull = &reserved_page_packet_8812[BT_QOSNULL_PG * 512];
--	SET_80211_HDR_ADDRESS1(btqosnull, mac->bssid);
--	SET_80211_HDR_ADDRESS2(btqosnull, mac->mac_addr);
--	SET_80211_HDR_ADDRESS3(btqosnull, mac->bssid);
-+	btqosnull = (struct ieee80211_hdr *)&reserved_page_packet_8812[BT_QOSNULL_PG * 512];
-+	ether_addr_copy(btqosnull->addr1, mac->bssid);
-+	ether_addr_copy(btqosnull->addr2, mac->mac_addr);
-+	ether_addr_copy(btqosnull->addr3, mac->bssid);
- 
- 	SET_H2CCMD_RSVDPAGE_LOC_BT_QOS_NULL_DATA(u1rsvdpageloc, BT_QOSNULL_PG);
- 
-@@ -1595,10 +1595,10 @@ void rtl8812ae_set_fw_rsvdpagepkt(struct ieee80211_hw *hw,
- 	 *			(6) ARP Resp
- 	 *----------------------------------------------------------
- 	 */
--	arpresp = &reserved_page_packet_8812[ARPRESP_PG * 512];
--	SET_80211_HDR_ADDRESS1(arpresp, mac->bssid);
--	SET_80211_HDR_ADDRESS2(arpresp, mac->mac_addr);
--	SET_80211_HDR_ADDRESS3(arpresp, mac->bssid);
-+	arpresp = (struct ieee80211_hdr *)&reserved_page_packet_8812[ARPRESP_PG * 512];
-+	ether_addr_copy(arpresp->addr1, mac->bssid);
-+	ether_addr_copy(arpresp->addr2, mac->mac_addr);
-+	ether_addr_copy(arpresp->addr3, mac->bssid);
- 
- 	SET_8821AE_H2CCMD_AOAC_RSVDPAGE_LOC_ARP_RSP(u1rsvdpageloc2, ARPRESP_PG);
- 
-@@ -1661,20 +1661,20 @@ void rtl8821ae_set_fw_rsvdpagepkt(struct ieee80211_hw *hw,
- 	u8 u1rsvdpageloc[5] = { 0 };
- 	u8 u1rsvdpageloc2[7] = { 0 };
- 	bool b_dlok = false;
--	u8 *beacon;
-+	struct ieee80211_hdr *beacon;
- 	struct ieee80211_pspoll *p_pspoll;
--	u8 *nullfunc;
--	u8 *qosnull;
--	u8 *btqosnull;
--	u8 *arpresp;
-+	struct ieee80211_hdr *nullfunc;
-+	struct ieee80211_hdr *qosnull;
-+	struct ieee80211_hdr *btqosnull;
-+	struct ieee80211_hdr *arpresp;
- 
- 	/*---------------------------------------------------------
- 	 *			(1) beacon
- 	 *---------------------------------------------------------
- 	 */
--	beacon = &reserved_page_packet_8821[BEACON_PG * 256];
--	SET_80211_HDR_ADDRESS2(beacon, mac->mac_addr);
--	SET_80211_HDR_ADDRESS3(beacon, mac->bssid);
-+	beacon = (struct ieee80211_hdr *)&reserved_page_packet_8821[BEACON_PG * 256];
-+	ether_addr_copy(beacon->addr2, mac->mac_addr);
-+	ether_addr_copy(beacon->addr3, mac->bssid);
- 
- 	if (b_dl_finished) {
- 		totalpacketlen = 256 - 40;
-@@ -1695,10 +1695,10 @@ void rtl8821ae_set_fw_rsvdpagepkt(struct ieee80211_hw *hw,
- 	 *			(3) null data
- 	 *---------------------------------------------------------i
- 	 */
--	nullfunc = &reserved_page_packet_8821[NULL_PG * 256];
--	SET_80211_HDR_ADDRESS1(nullfunc, mac->bssid);
--	SET_80211_HDR_ADDRESS2(nullfunc, mac->mac_addr);
--	SET_80211_HDR_ADDRESS3(nullfunc, mac->bssid);
-+	nullfunc = (struct ieee80211_hdr *)&reserved_page_packet_8821[NULL_PG * 256];
-+	ether_addr_copy(nullfunc->addr1, mac->bssid);
-+	ether_addr_copy(nullfunc->addr2, mac->mac_addr);
-+	ether_addr_copy(nullfunc->addr3, mac->bssid);
- 
- 	SET_H2CCMD_RSVDPAGE_LOC_NULL_DATA(u1rsvdpageloc, NULL_PG);
- 
-@@ -1706,10 +1706,10 @@ void rtl8821ae_set_fw_rsvdpagepkt(struct ieee80211_hw *hw,
- 	 *			(4) Qos null data
- 	 *----------------------------------------------------------
- 	 */
--	qosnull = &reserved_page_packet_8821[QOSNULL_PG * 256];
--	SET_80211_HDR_ADDRESS1(qosnull, mac->bssid);
--	SET_80211_HDR_ADDRESS2(qosnull, mac->mac_addr);
--	SET_80211_HDR_ADDRESS3(qosnull, mac->bssid);
-+	qosnull = (struct ieee80211_hdr *)&reserved_page_packet_8821[QOSNULL_PG * 256];
-+	ether_addr_copy(qosnull->addr1, mac->bssid);
-+	ether_addr_copy(qosnull->addr2, mac->mac_addr);
-+	ether_addr_copy(qosnull->addr3, mac->bssid);
- 
- 	SET_H2CCMD_RSVDPAGE_LOC_QOS_NULL_DATA(u1rsvdpageloc, QOSNULL_PG);
- 
-@@ -1717,10 +1717,10 @@ void rtl8821ae_set_fw_rsvdpagepkt(struct ieee80211_hw *hw,
- 	 *			(5) Qos null data
- 	 *----------------------------------------------------------
- 	 */
--	btqosnull = &reserved_page_packet_8821[BT_QOSNULL_PG * 256];
--	SET_80211_HDR_ADDRESS1(btqosnull, mac->bssid);
--	SET_80211_HDR_ADDRESS2(btqosnull, mac->mac_addr);
--	SET_80211_HDR_ADDRESS3(btqosnull, mac->bssid);
-+	btqosnull = (struct ieee80211_hdr *)&reserved_page_packet_8821[BT_QOSNULL_PG * 256];
-+	ether_addr_copy(btqosnull->addr1, mac->bssid);
-+	ether_addr_copy(btqosnull->addr2, mac->mac_addr);
-+	ether_addr_copy(btqosnull->addr3, mac->bssid);
- 
- 	SET_H2CCMD_RSVDPAGE_LOC_BT_QOS_NULL_DATA(u1rsvdpageloc, BT_QOSNULL_PG);
- 
-@@ -1732,10 +1732,10 @@ void rtl8821ae_set_fw_rsvdpagepkt(struct ieee80211_hw *hw,
- 	 *			(6) ARP Resp
- 	 *----------------------------------------------------------
- 	 */
--	arpresp = &reserved_page_packet_8821[ARPRESP_PG * 256];
--	SET_80211_HDR_ADDRESS1(arpresp, mac->bssid);
--	SET_80211_HDR_ADDRESS2(arpresp, mac->mac_addr);
--	SET_80211_HDR_ADDRESS3(arpresp, mac->bssid);
-+	arpresp = (struct ieee80211_hdr *)&reserved_page_packet_8821[ARPRESP_PG * 256];
-+	ether_addr_copy(arpresp->addr1, mac->bssid);
-+	ether_addr_copy(arpresp->addr2, mac->mac_addr);
-+	ether_addr_copy(arpresp->addr3, mac->bssid);
- 
- 	SET_8821AE_H2CCMD_AOAC_RSVDPAGE_LOC_ARP_RSP(u1rsvdpageloc2, ARPRESP_PG);
- 
+@@ -216,7 +216,7 @@ static void _rtl8821ae_set_fw_clock_off(struct ieee80211_hw *hw,
+ 		} else {
+ 			spin_unlock_bh(&rtlpriv->locks.fw_ps_lock);
+ 			mod_timer(&rtlpriv->works.fw_clockoff_timer,
+-				  jiffies + MSECS(10));
++				  jiffies + msecs_to_jiffies(10));
+ 		}
+ 	}
+ }
 diff --git a/drivers/net/wireless/realtek/rtlwifi/wifi.h b/drivers/net/wireless/realtek/rtlwifi/wifi.h
-index 23697704ffee..347255b798c9 100644
+index 347255b798c9..21a294b80c5b 100644
 --- a/drivers/net/wireless/realtek/rtlwifi/wifi.h
 +++ b/drivers/net/wireless/realtek/rtlwifi/wifi.h
-@@ -2855,11 +2855,6 @@ enum bt_radio_shared {
- 		(_os).octet = (u8 *)(_octet);		\
- 		(_os).length = (_len);
+@@ -2823,7 +2823,6 @@ enum bt_radio_shared {
  
--#define CP_MACADDR(des, src)	\
--	((des)[0] = (src)[0], (des)[1] = (src)[1],\
--	(des)[2] = (src)[2], (des)[3] = (src)[3],\
--	(des)[4] = (src)[4], (des)[5] = (src)[5])
--
- #define	LDPC_HT_ENABLE_RX			BIT(0)
- #define	LDPC_HT_ENABLE_TX			BIT(1)
- #define	LDPC_HT_TEST_TX_ENABLE			BIT(2)
+ #define packet_get_type(_packet) (EF1BYTE((_packet).octet[0]) & 0xFC)
+ #define RTL_WATCH_DOG_TIME	2000
+-#define MSECS(t)		msecs_to_jiffies(t)
+ #define WLAN_FC_GET_VERS(fc)	(le16_to_cpu(fc) & IEEE80211_FCTL_VERS)
+ #define WLAN_FC_GET_TYPE(fc)	(le16_to_cpu(fc) & IEEE80211_FCTL_FTYPE)
+ #define WLAN_FC_GET_STYPE(fc)	(le16_to_cpu(fc) & IEEE80211_FCTL_STYPE)
 -- 
 2.43.0
 
