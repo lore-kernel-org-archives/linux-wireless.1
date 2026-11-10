@@ -1,65 +1,59 @@
-Authentication-Results: smtp.subspace.kernel.org; arc=none smtp.remote-ip=31.44.14.19
+Authentication-Results: smtp.subspace.kernel.org; arc=none smtp.remote-ip=95.215.58.77
 ARC-Seal: i=1; d=subspace.kernel.org; s=arc20261015; a=rsa-sha256; cv=none;
-	t=1794299331;
-	b=qoTfBdqF1aU/X8nol/4+nQEF9oKC2ODQ1xYlLu2hYfJDUkQatO4DOazUiOq4Rn+vdyTN
-	 pLvhqQf7Y6JoI3ZVtJjhFwBE6AQHREzbJVz8qw9t5z79No4uX9pfJno+pVWOW0H4DzBUS
-	 QcuKvapHFmpIh28ZhZgChjV+4oEyrmTivNMOcOERx71qKDSw7qNE2xrHyyT8QRkm+/eSN
-	 hNTMzcNeV+SgPIRBPyjZvIurctE3fXgTyRoieiy5GwXtgwecAQWDNjBl6RlFezs+DOWXv
-	 h9P/877RPrL96ZL6krJU5adkSN2r8vZ7FbdKjpRc4QwRi3wZFvzTAJKKrYknc5QjTJw==
+	t=1794300130;
+	b=Oiz+GkePpA2qGvoiC/tn6It4dVl81nP8i8oljjXZAGgAABwR4ZFtlBGm2c08uhtoDPwe
+	 MM8OYyCSU64ONo3J8MUn4wGJGAW3ZEMaXj8oDps7h3Zoy6oVPGx5a2nRDR9duaVcnWRyq
+	 2fDhKOaVdsKR+mi76Q/QFTVR2rqtTt+qHIqPRbFy2CmjrHRzbV+MQjiIYSB/Vv55Yupep
+	 nUejX9va0DadQ4JgDPZVPDg72uGMk1pNN8qqTn/U+VTax7keVmMICtwAmyxYFQkDIcmgw
+	 yYZP2S/1h4YwmqIQtDMi3o99rlYHQkrv+cTFiqL+3LWoBNwpGIIOOwlkffwpQzR0eeA==
 ARC-Message-Signature: i=1; d=subspace.kernel.org; s=arc20261015;
-	a=rsa-sha256; c=relaxed/relaxed; t=1794299331;
-	h=DMARC-Filter:Received:Received:X-Yandex-Fwd:DKIM-Signature:From:To:
-	 Cc:Subject:Date:Message-ID:X-Mailer:In-Reply-To:References:
-	 MIME-Version:Content-Transfer-Encoding;
-	bh=KiHYL98shVArdwp1a7ybI+gKcZyGmNWsa7R+aE+cRU4=;
-	b=ExFb4U2EeWnlU/9wHoHvwS12jsW8nbEP1Nsouc/peF3kr91gSdVzn7nivs7sKJFIaWiF
-	 iw9hcd9IXwDIcwZzMYkEjlN3Nnjl7vtRdwViprrD2sJZ6QvZZont/jsjqxKL6sqvPg0y+
-	 liYQTIBghnFnsjnc3OjLgWyi3E/jFZ5WBmBSVBxwnGed+2SsWL9tfQ2vumktH19/5o6Hx
-	 HIWVg3CYgKw13UHDmUIRco91NK8gk6wsOm4dRQxCJwfXChFhjFt+n/WoetZVw6vbk1g2T
-	 VbDMReNq1wahbqirENQFwmPLbAYvaiB9LnqGx58/inCw0PMVyYSl2w21PlUv79pNtBw==
+	a=rsa-sha256; c=relaxed/relaxed; t=1794300130;
+	h=DMARC-Filter:X-Envelope-To:DKIM-Signature:X-Envelope-To:Received:
+	 X-Mizu-Trace-ID:X-Migadu-Flow:Date:From:To:Subject:In-Reply-To:
+	 References:Message-ID:MIME-Version:Content-Type:
+	 Content-Transfer-Encoding;
+	bh=145TK+Lob1c0UyTImABgiwVFQjHyTBF+330NJmUEAyM=;
+	b=ln7NWXoFn8dIiD2IWKCFDU5fHdTTtmr73slStNSOmZ85wf0JMoC7DHTJJCKMVooC1+Al
+	 Tv6meeWt8QF0aJaVOTidkFgEG5P8CLVN3XBG2jXw7foVdl3rlIUNYGvyde3Pak0BZ6zmv
+	 BpmzUV34IPXPKa9T2dwkTSqLLTbSa4ZlIw01ZcrccdUAadmLVMb5aVlGaM5SH9bKqaaLN
+	 xIG7ktyR3K8xvcYF7j0lyLv8IKbr51w+W6jd4kwCtOYFLZGquqZCFv2BPgGERK8iSY/Ji
+	 rUVRo1QLxW49q60iG179mnbuK6jjwjgFbux0WfBpQ+7ndXOwd8bJbIVGBJeFp2qv5EQ==
 ARC-Authentication-Results: i=1; smtp.subspace.kernel.org; 
-	dmarc=pass header.from=yandex.ru;
-	spf=pass smtp.mailfrom=yandex.ru;
-	dkim=pass header.d=yandex.ru header.i=@yandex.ru header.a=rsa-sha256 header.s=mail header.b=GF9u0pw4;
-	arc=none smtp.remote-ip=31.44.14.19
-Received: from forward503d.mail.yandex.net (forward503d.mail.yandex.net [31.44.14.19])
-	(using TLSv1.3 with cipher TLS_AES_256_GCM_SHA384 (256/256 bits)
+	dmarc=pass header.from=linux.dev;
+	spf=pass smtp.mailfrom=linux.dev;
+	dkim=pass header.d=linux.dev header.i=@linux.dev header.a=rsa-sha256 header.s=key1 header.b=Ij2zog0B;
+	arc=none smtp.remote-ip=95.215.58.77
+Received: from mta1.migadu.com (out-77.mta1.migadu.com [95.215.58.77])
+	(using TLSv1.3 with cipher TLS_AES_128_GCM_SHA256 (128/128 bits)
 	 key-exchange X25519 server-signature ECDSA (prime256v1) server-digest SHA256)
 	(No client certificate requested)
-	by smtp.subspace.kernel.org (Postfix) with ESMTPS id B07DF606A33C
-	for <linux-wireless@vger.kernel.org>; Tue, 10 Nov 2026 08:28:47 +0000 (UTC)
-DMARC-Filter: OpenDMARC Filter v1.4.2 smtp.subspace.kernel.org B07DF606A33C
-Authentication-Results: smtp.subspace.kernel.org; dmarc=pass (p=none dis=none) header.from=yandex.ru
-Authentication-Results: smtp.subspace.kernel.org; spf=pass smtp.mailfrom=yandex.ru
+	by smtp.subspace.kernel.org (Postfix) with ESMTPS id C87B7606A330
+	for <linux-wireless@vger.kernel.org>; Tue, 10 Nov 2026 08:42:09 +0000 (UTC)
+DMARC-Filter: OpenDMARC Filter v1.4.2 smtp.subspace.kernel.org C87B7606A330
+Authentication-Results: smtp.subspace.kernel.org; dmarc=pass (p=none dis=none) header.from=linux.dev
+Authentication-Results: smtp.subspace.kernel.org; spf=pass smtp.mailfrom=linux.dev
 Authentication-Results: smtp.subspace.kernel.org;
-	dkim=pass (1024-bit key, unprotected) header.d=yandex.ru header.i=@yandex.ru header.a=rsa-sha256 header.s=mail header.b=GF9u0pw4
-Received: from mail-nwsmtp-smtp-production-main-62 (mail-nwsmtp-smtp-production-main-62.yp-c.yandex.net)
-	by forward503d.mail.yandex.net (postfix) with ESMTPS id 1375910004C;
-	Tue, 10 Nov 2026 11:28:40 +0300 (MSK)
-Received: by mail-nwsmtp-smtp-production-main-62 with ESMTPSA id SSNIAJAfjeA0-bvtFO9i2;
-	Tue, 10 Nov 2026 11:28:39 +0300
-X-Yandex-Fwd: 1
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=yandex.ru; s=mail;
-	t=1794299319; bh=KiHYL98shVArdwp1a7ybI+gKcZyGmNWsa7R+aE+cRU4=;
-	h=Message-ID:Date:In-Reply-To:Cc:Subject:References:To:From;
-	b=GF9u0pw4QYfWSDp47wuLQzX4V38jpQsK57Zcf4g6liAmAW83GVyb6Yq+naST1b1HW
-	 +GcOgKTAeKrCwO+e+qlfmxCIN/eYWXTR36PbU2WW0X6UJl6mMzPT5R8z5RakwZtobc
-	 wcCqvCXHqCK3v7csT8qpqXpJ7Kqz/e6l3uiwncpk=
-Authentication-Results: mail-nwsmtp-smtp-production-main-62; dkim=pass header.i=@yandex.ru
-From: Sergey Armodin <dolph-in@yandex.ru>
-To: Arend van Spriel <arend.vanspriel@broadcom.com>,
-	linux-wireless@vger.kernel.org
-Cc: brcm80211@lists.linux.dev,
-	brcm80211-dev-list.pdl@broadcom.com,
-	Angel Lindo <angellindo@gmail.com>,
-	BJ Hinkle <bjhinkle@gmail.com>,
-	Alex McCubbin <alex@mccubbin.info>
-Subject: Re: [PATCH wireless-next v3] wifi: brcmfmac: pcie: restore FEM control pin mode on Apple BCM43602
-Date: Tue, 10 Nov 2026 15:28:28 +0700
-Message-ID: <20261110082828.1427041-1-dolph-in@yandex.ru>
-X-Mailer: git-send-email 2.56.0
-In-Reply-To: <20261101172011.1591620-1-dolph-in@yandex.ru>
-References: <20261101172011.1591620-1-dolph-in@yandex.ru>
+	dkim=pass (1024-bit key, unprotected) header.d=linux.dev header.i=@linux.dev header.a=rsa-sha256 header.s=key1 header.b=Ij2zog0B
+X-Envelope-To: linux-wireless@vger.kernel.org
+DKIM-Signature: a=rsa-sha256; bh=145TK+Lob1c0UyTImABgiwVFQjHyTBF+330NJmUEAyM=;
+ c=simple/simple; d=linux.dev;
+ h=from:to:subject:date:message-id:mime-version:content-type; s=key1;
+ t=1794300128; v=1; x=1794904928;
+ b=Ij2zog0BELciP7p5MMa2Am/WPPRQ+Y06gIfodPPZO1rpEUFVw7OzBM5xGBaYPmQy0ujKuYAf
+ GcBH1e13VgMKeiT9vfK+ttvGehAIc6BJs3XF3Z3ZeBSgAG1f81clKp26oOIsFVLu8kFRmXVH8OQ
+ fPqwJHWxGYiha0fNHMsjPx40=
+X-Envelope-To: linux-wireless@vger.kernel.org
+Received: by smtp.migadu.com with ESMTPS id 94093172365bc7a8;
+	Tue, 10 Nov 2026 08:42:08 +0000
+X-Mizu-Trace-ID: 94093172365bc7a8
+X-Migadu-Flow: FLOW_OUT
+Date: Tue, 10 Nov 2026 09:42:05 +0100
+From: Luka Gejak <luka.gejak@linux.dev>
+To: linux-wireless@vger.kernel.org, igor@listopad.email
+Subject: Re: [RFC] Adding RTL8189ES SDIO support to rtw88
+In-Reply-To: <A11FF135-696D-4107-B5FC-BBBB05303926@listopad.email>
+References: <A11FF135-696D-4107-B5FC-BBBB05303926@listopad.email>
+Message-ID: <977DC5C2-4EB7-45BD-9663-69E4094EE596@linux.dev>
 X-Mailing-List: linux-wireless@vger.kernel.org
 List-Id: <linux-wireless.vger.kernel.org>
 List-Post: <mailto:linux-wireless@vger.kernel.org>
@@ -69,28 +63,84 @@ List-Unsubscribe: <mailto:linux-wireless+unsubscribe@vger.kernel.org>
 List-Owner: <mailto:linux-wireless+owner@vger.kernel.org>
 Precedence: list
 MIME-Version: 1.0
+Content-Type: text/plain;
+ charset=utf-8
 Content-Transfer-Encoding: 8bit
 
-Alex McCubbin tested this patch on a MacBookPro13,3 (subsystem
-106b:015a, the ID v3 adds) and posted the results on GitHub, as he
-can't easily reply to the list:
+Hi Igor,
 
-https://github.com/omacom/omarchy/pull/11570#issuecomment-6745365111
+Thanks for asking before sending it. Ping-Ke has the
+final word on this, so this is only my view after adding RTL8723BS to the
+rtw88.
 
-All of his tests used S3:
+On November 10, 2026 5:50:38 AM GMT+01:00, igor@listopad.email wrote:
 
-- On battery, three sleeps with a sleep hook that unloads brcmfmac
-  before suspend, reloads it after, and only reads chipcontrol:
-  chipcontrol read back as 0 after each, and the patch set the FEM bit
-  again. 5 GHz rejoined cleanly twice; the third time was on a weak
-  access point and inconclusive.
-- The same on the charger, one sleep of about an hour: the bit was
-  kept (0x01000010), the patch wrote nothing, and 5 GHz rejoined
-  cleanly.
-- brcmfmac left loaded across suspend, on battery, three of three: each
-  resume re-probed, the patch's debug message ("setting discrete FEM
-  control mode") appeared, and 5 GHz was back in 4 s with no status 16.
+> Would support for RTL8189ES SDIO devices, based on the RTL8188E T-series
+> (SDIO ID 024c:8179), be welcome in rtw88?
 
-He gave this tag there (Cc'd so he can confirm it):
+I think so. As far as I can see nothing in the kernel binds this SDIO ID
+today. rtlwifi has RTL8188EE on PCIe and rtl8xxxu has RTL8188EU on USB,
+while rtw88 already has the SDIO code and other 8051 based 802.11n chips
+like RTL8703B and RTL8723B.
 
-Tested-by: Alex McCubbin <alex@mccubbin.info> # MacBookPro13,3
+On my RTL8723BS series Ping-Ke said it isn't so good to maintain three
+interfaces in the tree drivers, but he kept the existing ones and took the
+new one. So I would expect the same split to be acceptable here.
+
+Refusing cut I seems fine too. rtl8xxxu does the same for RTL8188EU.
+
+[ ... ]
+
+> The implementation adds chip operations, register tables, firmware,
+> and an SDIO binding.
+
+The firmware in the PR is byte for byte the same as
+rtlwifi/rtl8188eufw.bin, which is already in the firmware repository and
+which rtl8xxxu uses. So I don't think you need a new blob. You could
+request that name, or add a Link: in WHENCE if Ping-Ke prefers an rtw88
+path.
+
+[ ... ]
+
+> Would this be an acceptable direction for rtw88? Are there architectural
+> concerns or requirements that should be addressed before submitting
+> the series for review?
+
+From my quick skim of the PR, I think the direction is fine. What I would
+worry about is how much it changes the shared code. It needs an additional
+20 callbacks in rtw_chip_ops and more than 20 checks for this chip in the
+core and SDIO code. On my series Ping-Ke asked why the existing logic
+didn't work for special cases like these, so I would expect each one to
+need a reason.
+
+A few examples:
+
+rtw8188e.c casts rtwdev->priv to struct rtw_sdio, and nothing outside
+sdio.c uses that struct today. Maybe those parts can become hci ops.
+
+rtw_sdio_tx_handler() reads host->sdio_irq_pending, which as far as I can
+see only the mmc core uses today. TX keeping the IRQ worker away from the
+host also doesn't sound specific to this chip, so I think that wants a
+fix in the common SDIO TX path.
+
+rtw8188e_efuse_grant() and rtw8188e_false_alarm_statistics() look the same
+as the rtw8723x.c helpers that RTL8723B uses. Maybe those can be shared
+instead of copied.
+
+A more thorough review will follow once the series is posted.
+
+For the actual series, please base it on rtw-next instead of the lwfinger
+tree. Several of the core files don't apply there, and the
+LINUX_VERSION_CODE checks have to go. It also needs the Kconfig and
+Makefile entries, the device ID in sdio_ids.h, and the fixes from your
+later commits squashed into the patches they fix. The sign off should use
+a real address instead of the GitHub noreply one.
+
+You can also take a look at how the RTL8723B series went upstream for
+reference, from the RFC to the version that was applied:
+
+https://lore.kernel.org/linux-wireless/cover.1784047561.git.luka.gejak@linux.dev/
+https://lore.kernel.org/linux-wireless/20261006130701.120460-1-luka.gejak@linux.dev/
+
+Best regards,
+Luka Gejak
