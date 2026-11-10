@@ -1,81 +1,99 @@
-Authentication-Results: smtp.subspace.kernel.org; arc=none smtp.remote-ip=211.75.126.72
-ARC-Seal: i=1; d=subspace.kernel.org; s=arc20261015; a=rsa-sha256; cv=none;
-	t=1794274910;
-	b=26KEYJ/SEeje2QmM7poyuGoFCK1Rmxu2CPwbfR2xzWPzEwseWu0IGEzRKC1EFRZXtJBA
-	 XPojgsTUTS4YqSQN8fJnJqTsPZ+eT+pg08zy61vMUCKkhAIIym8q3424VA1a2ji7ACBlp
-	 9BfN+1g6RCWxE2eyKo2ub58mZfJxuZp6cS1pFS5E8P9j6YwX44MJl78+OXONDJfwoN49v
-	 xuxk/crLoGGieIZQdNrsCvYGBlu6daca2aigTERhSad7Od52db1uW7ttzTKl+MQXdYO8h
-	 hycIMUUKZCXEE+k7d51nVmV0eO8qdOpP7j+aVXagRvBXL1GA7CZWtFc+CoEpoPxHfVw==
-ARC-Message-Signature: i=1; d=subspace.kernel.org; s=arc20261015;
-	a=rsa-sha256; c=relaxed/relaxed; t=1794274910;
-	h=DMARC-Filter:X-SpamFilter-By:DKIM-Signature:Received:Received:
-	 Received:Received:From:To:Subject:Thread-Topic:Thread-Index:Date:
-	 Message-ID:References:In-Reply-To:Accept-Language:Content-Language:
-	 x-originating-ip:Content-Type:Content-Transfer-Encoding:MIME-Version;
-	bh=JCU8FnNkXA4/OJK6PGGzEHY7gj5iunwBW/tsM9Z6Cv4=;
-	b=miQ3i9Kc5PdmV9rMqSztq8Zrr4e1whnQsjdMdStpF5WdITt38O62wKYk5MqjaYbK+cB8
-	 KDn/fAmL//9wavVOcj1LXNjdNh8KMMpiDW4GW0TNwQsCxb7TrV6uQIviM+QNCRCd/+5gN
-	 qt1vs1c9OCidQxr1WyPzcqumShbOOXnmsVNs/fMH0yvpyWV4tSprMJ2gqfSCqiNp/OE4+
-	 nhFMtQeSlTfwCUENu4C82pYhw04HQgPVtG/g9Sz6mOS7j6gzmyv05XR+OV1z/yj60YMBr
-	 Nif1shhIAlO1LIHo7rJhuCGBBsqIjLyI6C9PJgdfBbMWOBJdBgOtl+im0SQ7CJhVzgQ==
-ARC-Authentication-Results: i=1; smtp.subspace.kernel.org; 
-	dmarc=pass header.from=realtek.com;
-	spf=pass smtp.mailfrom=realtek.com;
-	dkim=pass header.d=realtek.com header.i=@realtek.com header.a=rsa-sha256 header.s=dkim header.b=B9y+TgGs;
-	arc=none smtp.remote-ip=211.75.126.72
-Received: from rtits2.realtek.com.tw (rtits2.realtek.com [211.75.126.72])
-	(using TLSv1.3 with cipher TLS_AES_256_GCM_SHA384 (256/256 bits)
+Authentication-Results: smtp.subspace.kernel.org; arc=pass header.oldest-pass=0 smtp.remote-ip=209.85.221.174
+ARC-Seal: i=2; d=subspace.kernel.org; s=arc20261015; a=rsa-sha256; cv=pass;
+	t=1794277106;
+	b=RGVRLhb6WQFyMysDkvtOvIbm6CDewNyUi6LTUhmV4Dm+7d16oeqfZSe1TxoPf1TAyHZo
+	 Rr061EoKrZdlUJtHmJCQCuPaVMaOEU+nsr220jP63VVvVwF5pJ6QXMjy2/Jtb7vewq7Oo
+	 q2JSg1EuDtqYfwilvqgK3XuYm3x7Kx4h88fOfRX0evZCDi3+yF13S8ppgw5vr8njD1B0f
+	 7SBw8xWVn2GVJNqiE0xjXDNC6LjrIv5vh+qELBMUYM6fjHM1zZDSOBZ5OnS9+m5O7emJs
+	 LkqvJV+Jv0we1QejIkPF9UIoTY99tWmNEV/S5iXgV0lhR5l8pIuxOXS4g+fnqWl68CA==
+ARC-Message-Signature: i=2; d=subspace.kernel.org; s=arc20261015;
+	a=rsa-sha256; c=relaxed/relaxed; t=1794277106;
+	h=DMARC-Filter:Received:DKIM-Signature:X-Google-DKIM-Signature:
+	 X-Gm-Message-State:X-Gm-Gg:X-Received:MIME-Version:References:
+	 In-Reply-To:From:Date:X-Gm-Features:Message-ID:Subject:To:Cc:
+	 Content-Type;
+	bh=hhX/taozD8h2sfx0V2EzqRbzxnyILAwgPgnGX8OF0yo=;
+	b=ckP8cWWRWmR7HJ9vlsay7bt/BGIFBxrLCNTPi6opZ8z1/j1CXWxb4zcjNTiovoEFqFXR
+	 SC0Q+ySIlwALzK06w3F+09Gdp28b4llRbRQQzWk/3+EkhLvFOzBtSbyt1wEtmp+4rTXXv
+	 n/tIQbwhzoeBb2sZ50IvxrJlL83RbOdXnl+wBUrzt1P//lFRbVXmrC/iYZ2qwoY4ClNmy
+	 kYOMKmjR23is+JVB4G3QOFuj9nWhOyuULqXrAaOBn+ETTwKSRZnQL9CDvypRibjlJdVkJ
+	 CnTv82txZlKqb/KMRjyupMYopJiHefAeVrqKqVPfEu6HUwxv74Xc1+xPOMPeWxenfXw==
+ARC-Authentication-Results: i=2; smtp.subspace.kernel.org; 
+	dmarc=pass header.from=gmail.com;
+	spf=pass smtp.mailfrom=gmail.com;
+	dkim=pass header.d=gmail.com header.i=@gmail.com header.a=rsa-sha256 header.s=20260707 header.b=QeEUt7xp;
+	arc=pass header.oldest-pass=0 smtp.remote-ip=209.85.221.174
+Received: from mail-vk1-f174.google.com (mail-vk1-f174.google.com [209.85.221.174])
+	(using TLSv1.3 with cipher TLS_AES_128_GCM_SHA256 (128/128 bits)
 	 key-exchange X25519 server-signature ECDSA (prime256v1) server-digest SHA256)
 	(No client certificate requested)
-	by smtp.subspace.kernel.org (Postfix) with ESMTPS id 57FFB606A325
-	for <linux-wireless@vger.kernel.org>; Tue, 10 Nov 2026 01:41:48 +0000 (UTC)
-DMARC-Filter: OpenDMARC Filter v1.4.2 smtp.subspace.kernel.org 57FFB606A325
-Authentication-Results: smtp.subspace.kernel.org; dmarc=pass (p=none dis=none) header.from=realtek.com
-Authentication-Results: smtp.subspace.kernel.org; spf=pass smtp.mailfrom=realtek.com
+	by smtp.subspace.kernel.org (Postfix) with ESMTPS id 4D210606A321
+	for <linux-wireless@vger.kernel.org>; Tue, 10 Nov 2026 02:18:26 +0000 (UTC)
+DMARC-Filter: OpenDMARC Filter v1.4.2 smtp.subspace.kernel.org 4D210606A321
+Authentication-Results: smtp.subspace.kernel.org; dmarc=pass (p=none dis=none) header.from=gmail.com
+Authentication-Results: smtp.subspace.kernel.org; spf=pass smtp.mailfrom=gmail.com
 Authentication-Results: smtp.subspace.kernel.org;
-	dkim=pass (2048-bit key, unprotected) header.d=realtek.com header.i=@realtek.com header.a=rsa-sha256 header.s=dkim header.b=B9y+TgGs
-X-SpamFilter-By: ArmorX SpamTrap 5.80 with qID 6AA1fixE7776598, This message is accepted by code: ctloc85258
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=realtek.com; s=dkim;
-	t=1794274904; bh=JCU8FnNkXA4/OJK6PGGzEHY7gj5iunwBW/tsM9Z6Cv4=;
-	h=From:To:Subject:Date:Message-ID:References:In-Reply-To:
-	 Content-Type:Content-Transfer-Encoding:MIME-Version;
-	b=B9y+TgGs6j0EOKsUdvccC1GEvoHjyACtFytrJVZJivBaV1OBb8k9Nl3Cc4pZpNWQ2
-	 Jjz2PoLnAJenPaBNx3uqiZbMiAAUvP0GFaAqFruw5ZrfnO8iIQmwpz1k+1DY4H4evr
-	 p9BajsGAgFP36oUj/c/MMbsgeHsxVD1e8x53xS2rErZDv+ICpsbuIaUT4lxJsW9JbC
-	 phE4dyRixnBahGXvqWo/TMeyj5UYkkfBZD62YX/kggeyXWsLyqjdpH8bmv5Ma+WaUq
-	 Gh/J5oEpDY5WfFPgpccZ9hlxG8MfHAvNB/IvuQqFurz5PAeeDrnPktipcH4w3EneI8
-	 RIoo4/Zmw4C2Q==
-Received: from mail.realtek.com (rtkexhmbs02.realtek.com.tw[172.21.6.41])
-	by rtits2.realtek.com.tw (8.15.2/3.29/5.94) with ESMTPS id 6AA1fixE7776598
-	(version=TLSv1.2 cipher=ECDHE-RSA-AES256-GCM-SHA384 bits=256 verify=FAIL);
-	Tue, 10 Nov 2026 09:41:44 +0800
-Received: from RTKEXHMBS06.realtek.com.tw (10.21.1.56) by
- RTKEXHMBS02.realtek.com.tw (172.21.6.41) with Microsoft SMTP Server
- (version=TLS1_2, cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id
- 15.2.2562.56; Tue, 10 Nov 2026 09:41:45 +0800
-Received: from RTKEXHMBS06.realtek.com.tw (10.21.1.56) by
- RTKEXHMBS06.realtek.com.tw (10.21.1.56) with Microsoft SMTP Server
- (version=TLS1_2, cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id
- 15.2.2562.56; Tue, 10 Nov 2026 09:41:38 +0800
-Received: from RTKEXHMBS06.realtek.com.tw ([fe80::eeeb:c765:ca73:5eef]) by
- RTKEXHMBS06.realtek.com.tw ([fe80::eeeb:c765:ca73:5eef%10]) with mapi id
- 15.02.2562.056; Tue, 10 Nov 2026 09:41:38 +0800
-From: Ping-Ke Shih <pkshih@realtek.com>
-To: Tan Hao <guwolf@guwolf.com>, "linux-wireless@vger.kernel.org"
-	<linux-wireless@vger.kernel.org>
-Subject: RE: RTL8851BE: 5 GHz 80 MHz/HE beacon loss then auth timeout since
- 7.3
-Thread-Topic: RTL8851BE: 5 GHz 80 MHz/HE beacon loss then auth timeout since
- 7.3
-Thread-Index: AQHdcDpt8NFp7qQSw0+Qs+gU1DZt97cmhLmw
-Date: Tue, 10 Nov 2026 01:41:38 +0000
-Message-ID: <340ed206ff6a4680a46806e3bea5dbc5@realtek.com>
-References: <0A58E3B7800E469B+179421939016.46230.883154851683340495@guwolf.com>
-In-Reply-To: <0A58E3B7800E469B+179421939016.46230.883154851683340495@guwolf.com>
-Accept-Language: en-US, zh-TW
-Content-Language: zh-TW
-Content-Type: text/plain; charset="utf-8"
-Content-Transfer-Encoding: base64
+	dkim=pass (2048-bit key) header.d=gmail.com header.i=@gmail.com header.a=rsa-sha256 header.s=20260707 header.b=QeEUt7xp
+Received: by mail-vk1-f174.google.com with SMTP id 71dfb90a1353d-5ecd9a400cbso839101e0c.0
+        for <linux-wireless@vger.kernel.org>; Mon, 09 Nov 2026 18:18:26 -0800 (PST)
+ARC-Seal: i=1; a=rsa-sha256; t=1794277105; cv=none;
+        d=google.com; s=arc-20260327;
+        b=jEj4Q64ZzY8pAdYjNZ9VMhHu2apLZiQkaSGXzrqP8s3sHG0GFqrNECoPZoW7J2W6Qs
+         ve6svPkNYN9qr4vz9PwENwUxIQAF0LgI6g+AeI+ESkVi+h6CTewvedGMQ6USanMEPqa7
+         FMGZk1zG79rzMdigdBd/+bzscsTolZhzwrwi6wKSQHlb7qcqGR/244sk8+6q0kba2vOw
+         6o2ZBmD5yKlKdcxL1YgnKs/qa5+lxyqmh5FzxwgkIrNtEBurNWXk9QO2XnwPMb7kIH6e
+         UU8IW9DuqaUWPbRgYM9JyDLjr/HgqYhJwFwX0CWnqn7zjzIiit8G1wZZDKZgeoQZOqOB
+         U/vw==
+ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=google.com; s=arc-20260327;
+        h=cc:to:subject:message-id:date:from:in-reply-to:references
+         :mime-version:dkim-signature;
+        bh=hhX/taozD8h2sfx0V2EzqRbzxnyILAwgPgnGX8OF0yo=;
+        fh=2ReaoeL9OXsVbxMCIcayAkfXExiSj1w0iyF6TIS5CIg=;
+        b=o7QA69KaSc0avZe5rxlNmN2yqFOhELGIyBa6TfLFM+WKQFpWZ0V7JPGNgE7cHyrwGL
+         JG3MMfTru1kehbnnBCs8Hyf2eDtUXAGH9uVNzkz66gbmMYkwRys6BU5kusG9x+R6jS97
+         iBN5CViat/xt0oDPA6UCngGUrbAJ0AJUUPjAb1k0KJWsyW1JphXQmFN+e1t5mgqulEjR
+         32+cFGkMBPCjFL2w+BqifduIFomEql3YXRNWlg8RcOxauPvi7GyIOuoNmnIBSxhzYMyk
+         1kNqZF6F3vQ7vs163eEc63MJfa5I36SBAn95d+inJwp1gU8QtwhrgvLLcx5OUuu3xNix
+         HbIA==;
+        darn=vger.kernel.org
+ARC-Authentication-Results: i=1; mx.google.com; arc=none
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+        d=gmail.com; s=20260707; t=1794277105; x=1794881905; darn=vger.kernel.org;
+        h=content-type:cc:to:subject:message-id:date:from:in-reply-to
+         :references:mime-version:from:to:cc:subject:date:message-id:reply-to
+         :content-type;
+        bh=hhX/taozD8h2sfx0V2EzqRbzxnyILAwgPgnGX8OF0yo=;
+        b=QeEUt7xpf7VR/rxl/W9pU84ueuL4wvvRMzAD1Zz2Q+mpdBFJs5e1AqIitt/AUdLT9j
+         tus7ZsU93P8DSj/zAsD3VrumRs2wiiAPKuF35Q5o2BowVVenUmyJMWkaVTrNlDZuv7/K
+         aIaiwxo5wo62AEGXUKLt9cMZ50KX8ZziQLBE8potmgjCPwnNmxVvtkPEcyTFReCnrUhZ
+         DA7roTmlxOVFT9AXAXjJSYNm6st4nUySWx3OMzcqeTeLSwQ4/CXX65vjyQZ4EHj84yDs
+         nGbMk6Oe+Mx4CXUsLMOgLq7r4aFHMO7TujBeyo3ZG7qaAx075tkmBGIYw0sTzn+LbegE
+         Z3eg==
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+        d=1e100.net; s=20260707; t=1794277105; x=1794881905;
+        h=content-type:cc:to:subject:message-id:date:from:in-reply-to
+         :references:mime-version:x-gm-gg:x-gm-message-state:from:to:cc
+         :subject:date:message-id:reply-to:content-type;
+        bh=hhX/taozD8h2sfx0V2EzqRbzxnyILAwgPgnGX8OF0yo=;
+        b=D27GMSiapDtiJDfRejyoDgGUKThtzdazfzVEvovZY2qSPRaR1JXhRq1FaPLgRbTA7a
+         aKQc4Vp3ZOM4d5Saemvy2yyHPuo7hwx6ybAaxOnykaeC5+QYDuVZ5L1MO75Xduij6PRs
+         zQl/BNgD9cCAqUmATYrjUjXA3oh5ns+aFNK9bfvsDJIkcaxDWIfgdt18ZexhsOO1ugXI
+         HQwWTz6axFzA5X8NGi8ky9+VFWX4hDOO2FuIyov619F4iwlL2o1nzXflWs3adSDrNXr0
+         y89unnjETZH7Y4eORmuBEUPuznKed80biJHSiqLZs9SL47z+cGru5qtHRgIkkLTyD4Qq
+         Kg5A==
+X-Gm-Message-State: APuU4Z98rf0qYi/bzYfKZCmENLEbJcgBDIm+ORMjKIH70PFh0eFkeBHc
+	7Itp8c8UI6wTZIwWYAxEMmv8GeficIJ4CHN0+/iybuj3oxiBxJ4thGimPewxJzmncu90qWNpXQn
+	vvWYlrwsJ+RXhXRwaRocfRgUOvQByOO7TDG9+
+X-Gm-Gg: AYBFou2/mOcfQYXdUttdXo2tV/+5XLG4Pd0canhgIAIaavS1aJTJ9rTJ70SIV1KDJIV
+	4iT964OfJz9WBrDFoihdV+CiQodgpAbyv8hQiEUnGmUF8KxVsAOZeLNibfcsYn8S/Jbw9GI4mZ8
+	9kv6W9kF/8ZYX6+2sx0iB+ZlkekwYbT1q+rRasgi9wCpSi8q2KNjTSchcbNjnw/SItb4Skv61N7
+	idGtUfC0uLQWJnqu56tDMpeYW+5qVKFsETtgVEFEJjuTUmaTM/o6dJKT7Taz76wlMTFBo7WPCn5
+	sXk4vYRjEbwIQjupBF/NBhT8fZ/MC4DJX/7wvcNS27xrFlhE9ks06rHl8n+jmRD+V5bUpcanlyD
+	0uEwwAiT9Qs3noMKys3uj866hiCxBIas4x39ip7+ohGm+z63UOnqBE/orfgPaZKGGVe2D/BkZih
+	b6SJBWkBehMFR7xNxn
+X-Received: by 2002:a05:6122:469a:b0:5ea:f399:781d with SMTP id
+ 71dfb90a1353d-5ee0d1d05c8mr384452e0c.23.1794277105142; Mon, 09 Nov 2026
+ 18:18:25 -0800 (PST)
 X-Mailing-List: linux-wireless@vger.kernel.org
 List-Id: <linux-wireless.vger.kernel.org>
 List-Post: <mailto:linux-wireless@vger.kernel.org>
@@ -85,36 +103,29 @@ List-Unsubscribe: <mailto:linux-wireless+unsubscribe@vger.kernel.org>
 List-Owner: <mailto:linux-wireless+owner@vger.kernel.org>
 Precedence: list
 MIME-Version: 1.0
+References: <20261108-ath11k-tx-airtime-v1-0-f1a02b2372d4@gmail.com>
+In-Reply-To: <20261108-ath11k-tx-airtime-v1-0-f1a02b2372d4@gmail.com>
+From: Christopher Griffin <christophergriffin05@gmail.com>
+Date: Mon, 9 Nov 2026 20:18:13 -0600
+X-Gm-Features: AclHuK9uu4Zt4AmknOEeRBG3AMABDQ7pzydp1LGIC-VkddAQ1RAQ1A1MKWWaYa8
+Message-ID: <CAKobHXA5QnH+1APCD6rL-yS4LvSO5y90wEjk6Sz_uYhmfv2wmQ@mail.gmail.com>
+Subject: Re: [PATCH 0/2] wifi: ath11k: feed mac80211's airtime fairness
+To: jjohnson@kernel.org
+Cc: linux-wireless@vger.kernel.org, ath11k@lists.infradead.org, 
+	linux-kernel@vger.kernel.org, julius@bairaktaris.de
+Content-Type: text/plain; charset="UTF-8"
 
-VGFuIEhhbyA8Z3V3b2xmQGd1d29sZi5jb20+IHdyb3RlOg0KPiBIaSwNCj4gDQo+IE9uIFJUTDg4
-NTFCRSwgNSBHSHogODAgTUh6L0hFIGFzc29jaWF0aW9uIHN1Y2NlZWRzLCB0aGVuIHRoZSBTVEEN
-Cj4gbG9zZXMgYmVhY29ucyB3aXRoaW4gYWJvdXQgb25lIHNlY29uZC4gQWZ0ZXIgdGhhdCwgZXZl
-cnkgNSBHSHoNCj4gYXV0aGVudGljYXRpb24gdGltZXMgb3V0IHVudGlsIHJ0dzg5Xzg4NTFiZSBp
-cyB1bmxvYWRlZC4gMi40IEdIeg0KPiBhbmQgNSBHSHogSFQyMC9IVDQwIHN0YXkgdXAuIFRoaXMg
-c3RhcnRlZCBpbiA3LjMuMDsgNy4yLjExIGlzIGZpbmUNCj4gd2l0aCB0aGUgc2FtZSBmaXJtd2Fy
-ZSBmaWxlLg0KDQpUaGUgY2hhbmdlcyBiZXR3ZWVuIDcuMy4wIGFuZCA3LjIuMTEgcmVsYXRlZCB0
-byBSVEw4ODUxQkUgYXJlIG1vc3RseQ0KQlQtY29leGlzdGVuY2UgcGF0Y2hlcyAoaWYgSSByZWFk
-IGNvcnJlY3RseSksIHNvIHlvdSBjYW4gcXVpY2tseQ0KY2hlY2sgaWYgaXQgd29ya3Mgd2VsbCB3
-aXRoIEJUIGRpc2FibGVkLg0KDQo+IA0KPiBJIGFtIHN0aWxsIGJpc2VjdGluZy4gVGhpcyBpcyBh
-IHJlcG9ydCBvbmx5LCBubyBwYXRjaCB5ZXQuDQoNClRoYW5rcy4gUGxlYXNlIGJpc2VjdCB0aGUg
-Y2F1c2UuIA0KDQo+IFJlcHJvZHVjZXINCj4gDQo+ICAgMS4gQm9vdCA3LjMueCB3aXRoIHRoZSBz
-dG9jayBydHc4OSBkcml2ZXIgKGRvIG5vdCBtYXNrIEhFL1ZIVCkuDQo+ICAgMi4gQ29ubmVjdCB0
-byBlaXRoZXIgNSBHSHogQlNTSUQgYWJvdmUgKFNBRSBvciBQU0ssIHNhbWUgcmVzdWx0KS4NCj4g
-ICAzLiBBc3NvY2lhdGlvbiBjb21wbGV0ZXM7IGJlYWNvbnMgYXJlIGxvc3QgfjFzIGxhdGVyLg0K
-PiAgIDQuIFJlLWF1dGggdG8gYW55IDUgR0h6IEFQIHRpbWVzIG91dC4gMi40IEdIeiBzdGlsbCB3
-b3Jrcy4NCg0KRm9yIHRoaXMgcG9pbnQsIEJUIG1pZ2h0IGJlIG5vdCByZWxhdGVkIGJlY2F1c2Ug
-aXQgd29ya3Mgb24gMi40R0h6IGJhbmQsIGJ1dA0KaWYgaXQgaXMgbm90IHRvbyBoYXJkLCBwbGVh
-c2UgdHJ5IHRvIGRpc2FibGUgQlQuDQoNCj4gICA1LiBSZWNvdmVyeTogbW9kcHJvYmUgLXIgcnR3
-ODlfODg1MWJlIHJ0dzg5Xzg4NTFiIHJ0dzg5X3BjaSBydHc4OV9jb3JlDQo+ICAgICAgJiYgbW9k
-cHJvYmUgcnR3ODlfODg1MWJlDQo+ICAgICAgVGhlIG5leHQgNSBHSHogYXR0ZW1wdCBjYW4gYXNz
-b2NpYXRlIG9uY2UsIHRoZW4gdGhlIHNhbWUgbG9zcw0KPiAgICAgIHJlcGVhdHMuDQoNClRoaXMg
-aXMgYSBsaXR0bGUgd2VpcmQgdG8gbWUuIFJUTDg4NTFCRSBiZWNvbWVzIGlkbGUgKHBvd2VyIG9m
-ZikgYWZ0ZXINCmRpc2Nvbm5lY3Rpb24uIEl0IGlzIHZlcnkgbGlrZSByZWxvYWQgbW9kdWxlcy4g
-Tm90IHN1cmUgd2hhdCB0aGV5IGFyZQ0KZGlmZmVyZW50Pw0KDQo+IA0KPiAgIFVJTlRfTUFYIChX
-UEEyLVBTSykgaXMgdGhlIHNhbWUgcGF0dGVybjsgb25lIHJ1biBhc3NvY2lhdGVkLCB0aGVuOg0K
-DQpXaGF0IGRvZXMgVUlOVF9NQVggbWVhbj8NCg0KPiBXaGF0IGRvZXMgd29yayBvbiB0aGUgc2Ft
-ZSA3LjMuMyBrZXJuZWwNCj4gDQo+ICAgRm9yY2luZyBIVC1vbmx5ICh3cGFfc3VwcGxpY2FudCBk
-aXNhYmxlX2hlPTEgZGlzYWJsZV92aHQ9MSksIHNvIHRoZQ0KPiAgIEFQIGZhbGxzIGJhY2sgdG8g
-SFQyMC9IVDQwIG9uIDU3NDUgTUh6Og0KDQpEb2VzIGl0IHdvcmsgaWYgbm90IGRpc2FibGVfdmh0
-PyAoVG8gY2xhcmlmeSBpZiBSVEw4ODUxQkUgbWlzYmVoYXZpb3INCm9uIGJhbmR3aWR0aCA4ME1I
-ei4pDQoNCg0KDQo=
+Jeff,
+
+Please drop this series. Julius Bairaktaris posted the same two
+changes three weeks earlier, as patches 1 and 4 of "wifi: ath11k:
+airtime queue limits, airtime fairness and a driver TXQ scheduler"
+v5:
+
+https://lore.kernel.org/all/20261018174904.1757161-1-julius@bairaktaris.de/
+
+I missed it when I searched before sending; sorry for the noise. I've
+tested his series on IPQ8074 and QCN9074 and replied to it with the
+numbers.
+
+Christopher
