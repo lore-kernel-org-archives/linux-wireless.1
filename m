@@ -1,83 +1,61 @@
-Authentication-Results: smtp.subspace.kernel.org; arc=none smtp.remote-ip=100.103.45.18
+Authentication-Results: smtp.subspace.kernel.org; arc=none smtp.remote-ip=213.167.242.64
 ARC-Seal: i=1; d=subspace.kernel.org; s=arc20261015; a=rsa-sha256; cv=none;
-	t=1794313362;
-	b=Zi6sJdV+RPeq9ZpXLd7plq0v0gAOLZqj/Px69Rx8CFX3wnw9xiWNq0DPXEpIdP8VYMig
-	 EvWxiB2+4qIXbq33APJGOJnnoo/UDLmmxHjsWGoOzp8dFXQ67U0AjUKLT0SWNjgTyG+sT
-	 97j3AUMdlp9SwHHHrjtRr5HFFG+rXfqPNyJxQ4FMYVL13kTMy1BNpYw5BsAbNns47ka2s
-	 I/sw9aBbF+WSwB7oXPOcgHbMgjiwkYgNJEHSvppOBQUenqKgLNInt1xwLNWKxKQWcHAgL
-	 g7W4I9uGDDV34ZSFiVFTYqp+y+7gyXoD1rnFZFyEPunJHbT0NERibt0J1MUyql6rQpA==
+	t=1794313638;
+	b=Q68WDPceQqaLQJdXKYeYl69l1XvUAia0m1YwJUzr8aP+fFcVqUde1Zk6jkcIa2pd+lUX
+	 OmvKyMQW69rIjsM0u0jZkohPhLbF7Kg1qKsQL8zYI4K0zi5Wx6nhcT1wyxy+7gsLUZYJ6
+	 ZqVMFgRnbPuazRI8IOViX8CmwWLaf3CZSibPv6pBF8iXfk1nJlDtE0fc9OioGjN7eQaAp
+	 a+5TJzl++S1uUP1mK04uGcswjP1BU5PBNr2tZbUyeuVeFza1c4lMc332/VDzPjQlIiZO+
+	 yt5ofKdh75ECvBfij8dnqHGs9DpX7y0yYcqAIUPkHFoM7PQFpydbb17wBeGxOYxydzQ==
 ARC-Message-Signature: i=1; d=subspace.kernel.org; s=arc20261015;
-	a=rsa-sha256; c=relaxed/relaxed; t=1794313362;
-	h=Received:DKIM-Signature:Date:From:To:Cc:Subject:Message-ID:
-	 References:MIME-Version:Content-Type:Content-Disposition:In-Reply-To;
-	bh=hGl7nmxQkT5vba1RqxCfKXkqe6DTt+rPNJp2pMu6m5k=;
-	b=EM0v49TgYhp9txmwtx9N2pjgEVJHiIk8hEnfHUBCHafLyS1TnVH1HCslXkPnV4aRqI+A
-	 DsP1fp/J8l0YlQJMYet5CzYMHZmI+lMTtK8y1C/xrbOALyuDSc4JFWJsRM1NKTuIJbKaT
-	 SFzSAT35JDhrcbS92Ntk8hL+MQ3cv6L+cMK34MOPvE28JvXPPESTPD8s/vUzOvAHMYPni
-	 7D3P/jw4Ky46O645609ESN0JFqVbDfZXycsuyGQ7G8qVwZb0T2PZ7GXm5zfYmpHOLfGgj
-	 4M0yA19Hkf4P9FPQ395YCOWTyGiDlBxSbQNKtmd1ZceEjV+hfBo2WmMejC73wJ2o8mw==
+	a=rsa-sha256; c=relaxed/relaxed; t=1794313638;
+	h=DMARC-Filter:Received:DKIM-Signature:Date:From:To:Cc:Subject:
+	 Message-ID:References:MIME-Version:Content-Type:Content-Disposition:
+	 In-Reply-To;
+	bh=P1TOwjSBpVmzlTpkye1A7TaQqrxpcgA/ZVUQvzoOveg=;
+	b=YIUmAm02dFSxkX83i2ccXxYmodZFNjqVqOlLk9OdsvGhNaqcqXOhr4nBXoqyBgP1FYdm
+	 qVphkFuNZbIDx/zRfc7E8xKjz57rAcW0V30k8SZQkd+fKaXdNtQpvFZQdRgdEZOJIG1JA
+	 6XqINk8o3YSfPgAdykHIgSBybEJrtpWXJtnvpPBNbsPSzZYLjrAlyhPUsBGO/JGWby9hS
+	 2LBiN0vFNfNdF1+DyHJxbxNr53oWKWgRGo9OzgFpkZtWlsmf89nakZ4CCQfdqsHEGN4ez
+	 j7bISSD/FzJiQMc1Hpu2aAmGIVVKmWZ7WjL23Pol93OxQlDHIH16J0vu2ezy1Gcc30g==
 ARC-Authentication-Results: i=1; smtp.subspace.kernel.org; 
-	dkim=pass header.d=kernel.org header.i=@kernel.org header.a=rsa-sha256 header.s=k20260515 header.b="k/co0YoI";
-	arc=none smtp.remote-ip=100.103.45.18
-Received: from smtp.kernel.org (quasi.space.kernel.org [100.103.45.18])
+	dmarc=pass header.from=ideasonboard.com;
+	spf=pass smtp.mailfrom=ideasonboard.com;
+	dkim=pass header.d=ideasonboard.com header.i=@ideasonboard.com header.a=rsa-sha256 header.s=mail header.b=gWyhvU4i;
+	arc=none smtp.remote-ip=213.167.242.64
+Received: from perceval.ideasonboard.com (perceval.ideasonboard.com [213.167.242.64])
 	(using TLSv1.3 with cipher TLS_AES_256_GCM_SHA384 (256/256 bits)
 	 key-exchange X25519 server-signature ECDSA (prime256v1))
 	(No client certificate requested)
-	by smtp.subspace.kernel.org (Postfix) with ESMTPS id 0CE6F606A330;
-	Tue, 10 Nov 2026 12:22:42 +0000 (UTC)
+	by smtp.subspace.kernel.org (Postfix) with ESMTPS id 17FCA606A321;
+	Tue, 10 Nov 2026 12:27:17 +0000 (UTC)
+DMARC-Filter: OpenDMARC Filter v1.4.2 smtp.subspace.kernel.org 17FCA606A321
+Authentication-Results: smtp.subspace.kernel.org; dmarc=pass (p=none dis=none) header.from=ideasonboard.com
+Authentication-Results: smtp.subspace.kernel.org; spf=pass smtp.mailfrom=ideasonboard.com
 Authentication-Results: smtp.subspace.kernel.org;
-	dkim=pass (2048-bit key) header.d=kernel.org header.i=@kernel.org header.a=rsa-sha256 header.s=k20260515 header.b=k/co0YoI
-Received: by smtp.kernel.org (Postfix) with ESMTPSA id F06431F008A3;
-	Tue, 10 Nov 2026 12:22:40 +0000 (UTC)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=kernel.org;
-	s=k20260515; t=1794313361;
-	bh=hGl7nmxQkT5vba1RqxCfKXkqe6DTt+rPNJp2pMu6m5k=;
-	h=Date:From:To:Cc:Subject:References:In-Reply-To;
-	b=k/co0YoIuiKLXr7WyXUtAA3pWaow2/ThCpywVER/G9aHTuINfpPRlsNOpNeL6eA3/
-	 D5sZv/XI4weWMAEFMkPnaDXkHY2UHv8Cdj7T/MIPQB22hzafVwXl2t+9X4IMEyPgpr
-	 F0ULBbRJhBETzW0sC9499EvstL1a01e1JBff+474UeAj3qIpzZreFtMDiNmPvYB/v0
-	 DQ6uDL9B11Sn02jp3cV2DD6qnO+2jQITqeM+wfh8YW38tXvXhBbJX3qjL6QtqUpij7
-	 siAlaQEibl/CLeXTc5YbwPyy9yrA2KiEY8qTX0k5buBizyNTN0MjlMDpBRy18qmjhy
-	 RbXwSrQ5cyugw==
-Date: Tue, 10 Nov 2026 14:22:37 +0200
-From: Leon Romanovsky <leon@kernel.org>
-To: Robin Murphy <robin.murphy@arm.com>
-Cc: Greg Kroah-Hartman <gregkh@linuxfoundation.org>,
-	"Rafael J. Wysocki" <rafael@kernel.org>,
-	Danilo Krummrich <dakr@kernel.org>,
-	Dmitry Torokhov <dmitry.torokhov@gmail.com>,
-	Andrew Lunn <andrew@lunn.ch>,
-	Heiner Kallweit <hkallweit1@gmail.com>,
-	Russell King <linux@armlinux.org.uk>,
-	"David S. Miller" <davem@davemloft.net>,
-	Jakub Kicinski <kuba@kernel.org>, Paolo Abeni <pabeni@redhat.com>,
-	Johannes Berg <johannes@sipsolutions.net>,
-	Jonathan Corbet <corbet@lwn.net>,
-	Shuah Khan <skhan@linuxfoundation.org>,
-	Randy Dunlap <rdunlap@infradead.org>,
-	Bjorn Helgaas <bhelgaas@google.com>,
-	"Joerg Roedel (AMD)" <joro@8bytes.org>,
-	Suravee Suthikulpanit <suravee.suthikulpanit@amd.com>,
-	Vasant Hegde <vasant.hegde@amd.com>, Will Deacon <will@kernel.org>,
-	David Woodhouse <dwmw2@infradead.org>,
-	Lu Baolu <baolu.lu@linux.intel.com>,
-	Johan Hovold <johan@kernel.org>, Eric Dumazet <edumazet@kernel.org>,
-	Marcel Holtmann <marcel@holtmann.org>,
-	Luiz Augusto von Dentz <luiz.dentz@gmail.com>,
-	Nipun Gupta <nipun.gupta@amd.com>,
-	Nikhil Agarwal <nikhil.agarwal@amd.com>,
-	Pieter Jansen van Vuuren <pieter.jansen-van-vuuren@amd.com>,
-	linux-kernel@vger.kernel.org, driver-core@lists.linux.dev,
-	linux-input@vger.kernel.org, netdev@vger.kernel.org,
-	linux-wireless@vger.kernel.org, linux-usb@vger.kernel.org,
-	linux-bluetooth@vger.kernel.org, linux-acpi@vger.kernel.org,
-	linux-doc@vger.kernel.org, linux-pci@vger.kernel.org,
-	iommu@lists.linux.dev, Jason Gunthorpe <jgg@ziepe.ca>
-Subject: Re: [PATCH v2 18/19] PCI: Replace untrusted state with device trust
-Message-ID: <20261110122237.GG8635@unreal>
-References: <20261109-device-trust-core-v2-0-3b12d9a9f861@nvidia.com>
- <20261109-device-trust-core-v2-18-3b12d9a9f861@nvidia.com>
- <d0999161-3b27-4c3b-9d66-1d117c4836fd@arm.com>
+	dkim=pass (1024-bit key) header.d=ideasonboard.com header.i=@ideasonboard.com header.a=rsa-sha256 header.s=mail header.b=gWyhvU4i
+Received: from killaraus.ideasonboard.com (2001-14ba-7086-3000--a06.rev.dnainternet.fi [IPv6:2001:14ba:7086:3000::a06])
+	by perceval.ideasonboard.com (Postfix) with ESMTPSA id 9C16B1F8;
+	Tue, 10 Nov 2026 13:24:53 +0100 (CET)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=ideasonboard.com;
+	s=mail; t=1794313493;
+	bh=Q/ns5vfPB5rYk/V3wlThFVH2cm+bdatbrKGfy+X0PNA=;
+	h=Date:From:To:Cc:Subject:References:In-Reply-To:From;
+	b=gWyhvU4i8ZaMmE1PcuBmx2DLRuRjkFyzrDm8qlkQwbjnYOcowt0A6hVCf8K7yPyO+
+	 PmGaq/RcEcqJBp6q/HBCwRVXezPl7xcEK7eOd74MS5JN4texxd9OUY3f6B0GZt7p9h
+	 OMryMC/bJYlDgYkBSNCE4/Lxrwf3Manearl3b4QY=
+Date: Tue, 10 Nov 2026 14:27:14 +0200
+From: Laurent Pinchart <laurent.pinchart@ideasonboard.com>
+To: Wentao Liang <vulab@iscas.ac.cn>
+Cc: Jeff Johnson <jeff.johnson@oss.qualcomm.com>,
+	Jeff Johnson <jjohnson@kernel.org>, linux-wireless@vger.kernel.org,
+	ath11k@lists.infradead.org, linux-kernel@vger.kernel.org,
+	workflows@vger.kernel.org
+Subject: Re: [PATCH RESEND] wifi: ath11k: release the rproc reference on
+ teardown
+Message-ID: <20261110122714.GA3809@killaraus.ideasonboard.com>
+References: <20261103102915.1341148-1-vulab@iscas.ac.cn>
+ <a39b1918-5d04-452b-8b5a-0703963f4587@oss.qualcomm.com>
+ <179430684554.3011466.3431045638041318447@iscas.ac.cn>
 X-Mailing-List: linux-wireless@vger.kernel.org
 List-Id: <linux-wireless.vger.kernel.org>
 List-Post: <mailto:linux-wireless@vger.kernel.org>
@@ -87,139 +65,35 @@ List-Unsubscribe: <mailto:linux-wireless+unsubscribe@vger.kernel.org>
 List-Owner: <mailto:linux-wireless+owner@vger.kernel.org>
 Precedence: list
 MIME-Version: 1.0
-Content-Type: text/plain; charset=us-ascii
+Content-Type: text/plain; charset=utf-8
 Content-Disposition: inline
-In-Reply-To: <d0999161-3b27-4c3b-9d66-1d117c4836fd@arm.com>
+In-Reply-To: <179430684554.3011466.3431045638041318447@iscas.ac.cn>
 
-On Mon, Nov 09, 2026 at 01:53:02PM +0000, Robin Murphy wrote:
-> On 09/11/2026 7:33 am, Leon Romanovsky wrote:
-> [...]
-> > diff --git a/drivers/iommu/iommu.c b/drivers/iommu/iommu.c
-> > index b486b8bbd1fcd..8be2a246d4903 100644
-> > --- a/drivers/iommu/iommu.c
-> > +++ b/drivers/iommu/iommu.c
-> > @@ -1879,7 +1879,7 @@ static int iommu_get_def_domain_type(struct iommu_group *group,
-> >   static int iommu_get_default_domain_type(struct iommu_group *group,
-> >   					 int target_type)
-> >   {
-> > -	struct device *untrusted = NULL;
-> > +	struct device *restricted = NULL;
-> >   	struct group_device *gdev;
-> >   	int driver_type = 0;
-> > @@ -1901,14 +1901,15 @@ static int iommu_get_default_domain_type(struct iommu_group *group,
-> >   		driver_type = iommu_get_def_domain_type(group, gdev->dev,
-> >   							driver_type);
-> > -		if (dev_is_pci(gdev->dev) && to_pci_dev(gdev->dev)->untrusted) {
-> > +		if (dev_is_pci(gdev->dev) &&
-> > +		    pci_dev_default_is_restricted(to_pci_dev(gdev->dev))) {
+On Tue, Nov 10, 2026 at 10:34:05AM -0000, Wentao Liang wrote:
+> Hi Jeff,
 > 
-> I think this should be the generic device_is_adversarial(gdev->dev) now - in
-> fact probably all the dev_is_pci()/to_pci_dev() stanzas aren't conceptually
-> PCI-specific, just an artefact of the current "untrusted" flag being so.
-
-I wanted to do the same, but iommu_get_default_domain_type() may be called
-before the PCI device's trust level has been set. At that point, we are
-still in "disabled" mode, whereas device_is_adversarial() checks for
-"adversarial" mode.
-
-The below is from AI, I asked to present me the path for that:
---------------------------------------------------------------------------------
-For a newly discovered PCI device with an available IOMMU and a new IOMMU group:
-pci_scan_single_device()
-  pci_device_add()
-    device_add()
-      bus_notify(dev, BUS_NOTIFY_ADD_DEVICE)
-        blocking_notifier_call_chain()
-          notifier_call_chain()
-            iommu_bus_notifier()
-              iommu_probe_device(dev)
-                __iommu_probe_device(dev, NULL)
-                  iommu_setup_default_domain(group, 0)
-                    iommu_get_default_domain_type(group, 0)
-
-For a device whose initial policy is adversary, its state during that call is:
-dev->trust_policy          = DEVICE_TRUST_POLICY_ADVERSARY
-dev->trust_level           = DEVICE_TRUST_DISABLED
-dev->trust_committed_level = DEVICE_TRUST_DISABLED
-dev->driver               = NULL
-
-device_is_adversarial(dev) = false
-
-The active level changes later, during binding:
-really_probe()
-  device_trust_prepare()
-    __device_trust_prepare()
-      WRITE_ONCE(dev->trust_level, DEVICE_TRUST_ADVERSARY)
-  dev->bus->dma_configure()
-  call_driver_probe()
-
+> I'm sorry for taking so long to reply and for the confusion and extra
+> work caused by sending patches from a shared address and failing to
+> follow up on review feedback.
 > 
-> >   			/*
-> > -			 * No ARM32 using systems will set untrusted, it cannot
-> > -			 * work.
-> > +			 * No ARM32 using systems select a restricted trust
-> > +			 * policy; it cannot work.
-> >   			 */
-> >   			if (WARN_ON(IS_ENABLED(CONFIG_ARM_DMA_USE_IOMMU)))
-> >   				return -1;
-> > -			untrusted = gdev->dev;
-> > +			restricted = gdev->dev;
-> >   		}
-> >   	}
-> [...]
-> > @@ -616,6 +608,28 @@ static inline struct pci_dev *to_pci_dev(const struct device *dev)
-> >   {
-> >   	return container_of(dev, struct pci_dev, dev);
-> >   }
-> > +
-> > +static inline bool
-> > +pci_dev_default_is_restricted(const struct pci_dev *pdev)
-> > +{
-> > +	enum device_trust_policy policy = READ_ONCE(pdev->dev.trust_policy);
-> > +
-> > +	return policy == DEVICE_TRUST_POLICY_DISABLED ||
-> > +	       policy == DEVICE_TRUST_POLICY_ADVERSARY;
-> > +}
+> To keep the existing discussions clear, I'll continue to reply from
+> vulab@iscas.ac.cn under my own name in the threads for patches I
+> submitted. I will not send any new patches or revisions.
 > 
-> Unless I've wildly misunderstood, I'm not sure this is right - if the user
-> has set DEVICE_TRUST_POLICY_DISABLED to explicitly override the bus-default
-> behaviour, but that leads to the IOMMU layer special-casing all PCI devices
-> as adversarial and thus force-*enabling* all their trust-model restrictions,
-> isn't that pretty much the complete opposite of what was asked for?
+> For context on this submission, static analysis flagged the candidate,
+> and we used DeepSeek and GPT-6.1 Sol to assist with reviewing it and
+> preparing the fix.
 
-We have two levels: policy - that describes the default of all devices
-for that bus. level - actual decision on how that device is going to be
-operated.
+What is your core motivation for doing this ? I understand how someone
+would start contributing to the kernel to fix issues they experience, or
+to learn about operating systems, or for the fun of tinkering, but none
+of that seems to apply to this flood of patches. What's your reason ?
 
-"Disabled" prevents driver probing until the device is authorized,
-"Adversary" permits probing and requests the available protections
-for operating an untrusted device.
-
-Both need conservative initial IOMMU setup: a disabled device may later
-be authorized as adversary, and authorization does not rebuild its IOMMU
-domain.
-
-Thanks
-
+> Again, I'm sorry for the confusion and the extra work this caused.
 > 
-> Thanks,
-> Robin.
-> 
-> > +
-> > +static inline bool pci_dev_ats_permitted(const struct pci_dev *pdev)
-> > +{
-> > +	enum device_trust_level level = device_get_trust_level(&pdev->dev);
-> > +	enum device_trust_policy policy = READ_ONCE(pdev->dev.trust_policy);
-> > +
-> > +	if (level == DEVICE_TRUST_DISABLED)
-> > +		return policy != DEVICE_TRUST_POLICY_ADVERSARY &&
-> > +		       policy != DEVICE_TRUST_POLICY_DISABLED;
-> > +
-> > +	return level == DEVICE_TRUST_FULL;
-> > +}
-> > +
-> >   #define for_each_pci_dev(d) while ((d = pci_get_device(PCI_ANY_ID, PCI_ANY_ID, d)) != NULL)
-> >   #define for_each_pci_dev_reverse(d) \
-> >   	while ((d = pci_get_device_reverse(PCI_ANY_ID, PCI_ANY_ID, d)) != NULL)
-> > 
-> 
+> Wentao
+
+-- 
+Regards,
+
+Laurent Pinchart
