@@ -1,62 +1,65 @@
-Authentication-Results: smtp.subspace.kernel.org; arc=none smtp.remote-ip=95.215.58.202
+Authentication-Results: smtp.subspace.kernel.org; arc=none smtp.remote-ip=168.119.38.16
 ARC-Seal: i=1; d=subspace.kernel.org; s=arc20261015; a=rsa-sha256; cv=none;
-	t=1794340661;
-	b=I3Mci4R7xgyDj7bXP5ynEA8T1itO88zkQ0eY0+mV5wFgOnHEri3S8DlKGgsH6oBSLpRG
-	 Ysfh9ABSgKR6cjvSMphrUfq7nHPtOsWSPrr7XFl3Kd1uhjQasNY5u+eVnqtjnfrf2WUUa
-	 GHnVGvu2yl3BbxdjsSaX4jNhb+SHBXBcwb+AO8k4QG9Gwp1Pfw018NCJR/ydrlY3iErNF
-	 OGdhmga0OgjIWwyqmAjXkeueubQrLqvfwBbCjTxB3zWoaT+hwNWSykFt5L2DvrsIROpHl
-	 vfSR297ZxuUtY2FvyeakV0ezycaFvl5EHb4Ww6xHncumY+CDybjbmdOIviaR4UF3AwQ==
+	t=1794342574;
+	b=wFJT5rBmB5QptPNw1LxoRCBbyv4MqCwlstKG+i9jZ1xnNil5xIDBYGvSF84ajzGZZFd2
+	 tlTk8uklo6F9qB44hNFjab41vKm0uLmt0W8y1BAJos4VF72R2NyEUINkWl2Yewj/83sL6
+	 s5vzRqRcP1EfbOd77sUPoEEAFkEj98ODAU1iMqjuAkSbF2eRDmlA/4Ezljo+LL3k4CUKy
+	 Xp2DWzNnIQCL3TuC33EsafLcq+NW23F2cH86guvJE9wPnVAGxq3P+JO/dVBsrtisSCmh+
+	 YZVJ/l9G+DJPhnB6i9UwFWaUIxb2OL0xnYGhOBj954ixHDTTwABtdrvC1Eq2rL003Gg==
 ARC-Message-Signature: i=1; d=subspace.kernel.org; s=arc20261015;
-	a=rsa-sha256; c=relaxed/relaxed; t=1794340661;
-	h=DMARC-Filter:X-Envelope-To:DKIM-Signature:X-Envelope-To:Received:
-	 X-Mizu-Trace-ID:X-Migadu-Flow:Date:From:To:CC:Subject:In-Reply-To:
-	 References:Message-ID:MIME-Version:Content-Type:
-	 Content-Transfer-Encoding;
-	bh=lMR0kUfdjZMJR+0oWa9sSX/UZwt66TqDj+0eyBoDUXY=;
-	b=dP7eNglGC2o2Yp7sNxOfHWSq6mKjb6k2m5ThVip1rvDDXICOg5u+JkAwJ0dugKehW8PF
-	 RuCMpH2Ehwo3UZC/vgcDRhNCKEysBT6mvjYy6xrXqQFxf51+W488KQyoAyJaMphdqvpun
-	 9DvKuyxksgJx1+2NQ2h8xp8ocg9IQxGCSlOkvoXsuEO3h3lF5gFjrwZ+lZ7hH0IfPOW1q
-	 M+G0vwRD7UAAoeCvnoiNgcFqQM1hapUYRruPcpeLSp3F2ctI0BRSM1xEswCmivF33cBxD
-	 eSKZ2T2dIshbOn9wlmw2k8Nc/qmnB/7hFvI1pe6hzNFPr1auo1PCwZ0S7Duhf4JWedA==
+	a=rsa-sha256; c=relaxed/relaxed; t=1794342574;
+	h=DKIM-Signature:Received:Message-ID:Subject:From:To:Cc:Date:
+	 In-Reply-To:References:Content-Type:Content-Transfer-Encoding:
+	 User-Agent:MIME-Version:X-malware-bazaar;
+	bh=Fk8LXHs8N79M/Gb/tHOLTac2s+kdfo9IKr/YpYoWCAM=;
+	b=rCWXnVtfw9rBeKxTqTplk4BpMAqYiJALFp2u+YpGWYmFRpLFlusWN3qeLTomqM4BXwNe
+	 FR4JOiKYvmGfRUvemAFoUCZ3BV/Rs0hYBLoHgnVQCb6eKzEoombW7+NsRfUYkEpFjEUN0
+	 OIFePkJ9KdyD/oMdJ9krVePDznteyN39xmzia5ik3AvWY4moPEI/ztZCjxSyq4qE65+Gy
+	 TEIxjBuNx3VpGVStCFI+sF66Zw3s4I/Az5cfwx9dJMU9GTQDu/wrYDbjxpqrFZgx9xEaC
+	 79ADXti/wvjPCRGceRUzXZQqnAyPJ/iQW9MHXgzeU1lIaAp7Yx6RWhDDEj88mrGnVpQ==
 ARC-Authentication-Results: i=1; smtp.subspace.kernel.org; 
-	dmarc=pass header.from=linux.dev;
-	spf=pass smtp.mailfrom=linux.dev;
-	dkim=pass header.d=linux.dev header.i=@linux.dev header.a=rsa-sha256 header.s=key1 header.b=IDKIMGnu;
-	arc=none smtp.remote-ip=95.215.58.202
-Received: from mta1.migadu.com (out-202.mta1.migadu.com [95.215.58.202])
-	(using TLSv1.3 with cipher TLS_AES_128_GCM_SHA256 (128/128 bits)
-	 key-exchange X25519 server-signature ECDSA (prime256v1) server-digest SHA256)
+	dmarc=permerror header.from=sipsolutions.net;
+	spf=pass smtp.mailfrom=sipsolutions.net;
+	dkim=pass header.d=sipsolutions.net header.i=@sipsolutions.net header.a=rsa-sha256 header.s=mail header.b=ifjBbS6T;
+	arc=none smtp.remote-ip=168.119.38.16
+Received: from sipsolutions.net (s3.sipsolutions.net [168.119.38.16])
+	(using TLSv1.3 with cipher TLS_AES_256_GCM_SHA384 (256/256 bits)
+	 key-exchange ECDHE (prime256v1) server-signature ECDSA (prime256v1) server-digest SHA256)
 	(No client certificate requested)
-	by smtp.subspace.kernel.org (Postfix) with ESMTPS id 9AD00606A31C
-	for <linux-wireless@vger.kernel.org>; Tue, 10 Nov 2026 19:57:39 +0000 (UTC)
-DMARC-Filter: OpenDMARC Filter v1.4.2 smtp.subspace.kernel.org 9AD00606A31C
-Authentication-Results: smtp.subspace.kernel.org; dmarc=pass (p=none dis=none) header.from=linux.dev
-Authentication-Results: smtp.subspace.kernel.org; spf=pass smtp.mailfrom=linux.dev
+	by smtp.subspace.kernel.org (Postfix) with ESMTPS id 1D948606A31C;
+	Tue, 10 Nov 2026 20:29:33 +0000 (UTC)
+Authentication-Results: smtp.subspace.kernel.org; dmarc=permerror header.from=sipsolutions.net
+Authentication-Results: smtp.subspace.kernel.org; spf=pass smtp.mailfrom=sipsolutions.net
 Authentication-Results: smtp.subspace.kernel.org;
-	dkim=pass (1024-bit key, unprotected) header.d=linux.dev header.i=@linux.dev header.a=rsa-sha256 header.s=key1 header.b=IDKIMGnu
-X-Envelope-To: linux-wireless@vger.kernel.org
-DKIM-Signature: a=rsa-sha256; bh=taf5xIdsLawaO6DyBudM+ObdMWnrDPJhCJJ72C3rWS4=;
- c=simple/simple; d=linux.dev;
- h=from:to:subject:date:message-id:mime-version:content-type; s=key1;
- t=1794340657; v=1; x=1794945457;
- b=IDKIMGnuQxplsYHIq7Bg32as0bnD7Nk7iW2TxaAcH0gNT5BqsKYTr2I07Ar5PX9qA8T0Xc6r
- MzJoI9FKynBUAF0j5XfsO93IGIrhWiav4E/hO9FTtfXIA+YX2pjK3F4CEblmuhAlz0Rgpjlza7J
- 9LbHx/3Jn9G8nyyMb7LOIdw0=
-X-Envelope-To: linux-wireless@vger.kernel.org
-Received: by smtp.migadu.com with ESMTPS id 13475ae9d2aa94b6;
-	Tue, 10 Nov 2026 19:57:37 +0000
-X-Mizu-Trace-ID: 13475ae9d2aa94b6
-X-Migadu-Flow: FLOW_OUT
-Date: Tue, 10 Nov 2026 20:57:32 +0100
-From: Luka Gejak <luka.gejak@linux.dev>
-To: Bitterblue Smith <rtl8821cerfe2@gmail.com>, Ho Jie Feng <hjf3108@gmail.com>,
- Ping-Ke Shih <pkshih@realtek.com>
-CC: linux-wireless@vger.kernel.org, linux-kernel@vger.kernel.org
-Subject: =?US-ASCII?Q?Re=3A_=5BPATCH_rtw-next_v2_6/7=5D_wifi=3A_rtw88=3A_88?=
- =?US-ASCII?Q?xxa=3A_adapt_channel_sensing_to_receiver_gain?=
-In-Reply-To: <45407e4f-9009-4f0b-a9a8-58b7052d25a1@gmail.com>
-References: <20261031070950.425176-1-hjf3108@gmail.com> <20261031070950.425176-7-hjf3108@gmail.com> <4ada79186cd882a6d3344c43579e5addc4d4e644@linux.dev> <3bd7d396-bb54-41bc-890a-bfeab90dca3a@gmail.com> <1d7fe388a84ba7a078efbf1972869d63cb8234ea@linux.dev> <45407e4f-9009-4f0b-a9a8-58b7052d25a1@gmail.com>
-Message-ID: <C4DC98F9-B999-478E-B7AA-7DAA15D6C996@linux.dev>
+	dkim=pass (2048-bit key) header.d=sipsolutions.net header.i=@sipsolutions.net header.a=rsa-sha256 header.s=mail header.b=ifjBbS6T
+DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
+	d=sipsolutions.net; s=mail; h=MIME-Version:Content-Transfer-Encoding:
+	Content-Type:References:In-Reply-To:Date:Cc:To:From:Subject:Message-ID:Sender
+	:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:Resent-To:
+	Resent-Cc:Resent-Message-ID; bh=Fk8LXHs8N79M/Gb/tHOLTac2s+kdfo9IKr/YpYoWCAM=;
+	t=1794342573; x=1795552173; b=ifjBbS6T0LKTwJsTTmdUKVCoCMejBifaDxuHs16CwJLWq71
+	d7qgrt0fmiFYFMXC/7QgRHz1O4wqb2rt4vrUBsoMVtAVxIVFwDP/jGmMoqdcfJd1GIRst2Mau2PnQ
+	aiy2f85x6r0S3G9qvg9r6WOXvmJWq6f4QfrnJd2lFLMjvHWwWsm1r9ueuc6YCOEpedIFqRO4OEfNH
+	7S11/sfr1Z+vUyurTMouW7DKWbpGYyePoSW8Cql5c1dm1MWLSBifcOfXt2pxJ+td9PBdS8yrpjqhF
+	zONtDydMh/CPtppJ/6uR+gBDDBPokW1WdTrffk9Fxi1yEx2BGohIWgTVmovTz1bA==;
+Received: by sipsolutions.net with esmtpsa (TLS1.3:ECDHE_X25519__ECDSA_SECP256R1_SHA256__AES_256_GCM:256)
+	(Exim 4.98.2)
+	(envelope-from <johannes@sipsolutions.net>)
+	id 1xQsTC-00000002IwI-2Cdq;
+	Tue, 10 Nov 2026 21:29:30 +0100
+Message-ID: <f4164ec832b8dab5da90ddccc527ddcae74a44c3.camel@sipsolutions.net>
+Subject: Re: [PATCH wireless-next v4 13/21] wifi: mac80211: apply SMD BSS
+ Transition STA sub-states
+From: Johannes Berg <johannes@sipsolutions.net>
+To: Pooventhiran G <pooventhiran.g@oss.qualcomm.com>
+Cc: linux-wireless@vger.kernel.org, linux-kernel@vger.kernel.org
+Date: Tue, 10 Nov 2026 21:29:29 +0100
+In-Reply-To: <20261106-smd-v4-13-62e39487f51a@oss.qualcomm.com>
+References: <20261106-smd-v4-0-62e39487f51a@oss.qualcomm.com>
+	 <20261106-smd-v4-13-62e39487f51a@oss.qualcomm.com>
+Content-Type: text/plain; charset="UTF-8"
+Content-Transfer-Encoding: quoted-printable
+User-Agent: Evolution 3.60.2 (3.60.2-3.fc44) 
 X-Mailing-List: linux-wireless@vger.kernel.org
 List-Id: <linux-wireless.vger.kernel.org>
 List-Post: <mailto:linux-wireless@vger.kernel.org>
@@ -66,41 +69,62 @@ List-Unsubscribe: <mailto:linux-wireless+unsubscribe@vger.kernel.org>
 List-Owner: <mailto:linux-wireless+owner@vger.kernel.org>
 Precedence: list
 MIME-Version: 1.0
-Content-Type: text/plain;
- charset=utf-8
-Content-Transfer-Encoding: 8bit
+X-malware-bazaar: not-scanned
 
-Hi Bitterblue and Jie Feng,
+On Fri, 2026-11-06 at 13:28 +0530, Pooventhiran G wrote:
+>=20
+> +static int sta_apply_smd_state_flags(struct sta_info *sta,
+> +				     u32 mask, u32 set)
+> +{
+> +	bool smd_prep_target, smd_exec_current, smd_dl_drain;
+> +	u32 expected_mask =3D BIT(NL80211_STA_FLAG_SMD_PREP_TARGET) |
+> +			    BIT(NL80211_STA_FLAG_SMD_EXEC_CURRENT) |
+> +			    BIT(NL80211_STA_FLAG_SMD_DL_DRAIN);
+> +	u32 smd_flags;
+> +
+> +	if (!(mask & expected_mask))
+> +		return 0;
 
-On November 10, 2026 3:36:35 PM GMT+01:00, Bitterblue Smith
-<rtl8821cerfe2@gmail.com> wrote:
->On 06/11/2026 22:27, Luka Gejak wrote:
->> November 6, 2026 at 8:46 PM, "Bitterblue Smith"
-><rtl8821cerfe2@gmail.com> wrote:
->> 
->> JP. Bitterblue, is the adapter on a USB 3 port, and do you see the LPS
->> failures on 5 GHz as well?
->
-> It's in a USB 2 port. I am seeing the LPS failures on 5 GHz too.
-> Channel 100, 80 MHz wide.
+Not sure I'd call that "expected", it's more like "relevant" (for this
+function)?
 
-Thanks, that rules out the USB 3 idea.
+> +	smd_flags =3D mask & expected_mask & set;
+> +	if (WARN_ON(hweight32(smd_flags) > 1))
+> +		return -EINVAL;
 
-My next guess is the lower bound. Under ETSI the L2H starts 37 dB below
-normal mode and is then raised to at least dm_info->l2h_th_lb, which is
-only 2 above a floor measured once at power on, on 2.4 GHz at 20 MHz
-with the LNA off. At 80 MHz that may be close to the noise, and with H2L
-7 lower EDCCA may stay busy. In LPS the firmware can switch the RF off,
-and in the watchdog the ADC mask toggle only runs after rtw_leave_lps(),
-so a busy EDCCA from sleep would still block the null frame.
+WARN? Isn't that potentially reachable from userspace?
 
-Bitterblue, could you try debug_mask=0x8000 to see whether L2H sits at
-that bound (printed as "EDCCA L2H floor") when it fails, and maybe
-EDCCA_DC_BACKOFF_88XXA raised from 2 to 8?
+> +	smd_prep_target =3D
+> +		!!(smd_flags & BIT(NL80211_STA_FLAG_SMD_PREP_TARGET));
+> +	smd_exec_current =3D
+> +		!!(smd_flags & BIT(NL80211_STA_FLAG_SMD_EXEC_CURRENT));
+> +	smd_dl_drain =3D
+> +		!!(smd_flags & BIT(NL80211_STA_FLAG_SMD_DL_DRAIN));
 
-Jie Feng, until this is figured out, keeping 88xxa on the normal thresholds
-like the vendor driver does by default, or leaving this patch
-out of v3, seems to be the safest option.
+bool, so you don't need the !!
 
-Best regards,
-Luka Gejak
+> +
+> +	if (!test_sta_flag(sta, WLAN_STA_AUTHORIZED) &&
+> +	    (smd_exec_current || smd_dl_drain))
+> +		return -EINVAL;
+> +
+> +	if (smd_prep_target) {
+> +		clear_sta_flag(sta, WLAN_STA_SMD_EXEC_CURRENT);
+> +		clear_sta_flag(sta, WLAN_STA_SMD_DL_DRAIN);
+> +		set_sta_flag(sta, WLAN_STA_SMD_PREP_TARGET);
+
+might be better to set then clear?
+
+> +	/*
+> +	 * SMD BSS Transition sub-states (IEEE P802.11bn/D2.0, Aug 2026,
+> +	 * subclause 11.3.1).
+> +	 * Only meaningful for SMD-capable stations (WLAN_STA_SMD set).
+> +	 */
+> +	if (test_sta_flag(sta, WLAN_STA_SMD)) {
+> +		ret =3D sta_apply_smd_state_flags(sta, mask, set);
+
+Sounds more like an LLM invention than a useful comment ...
+
+It'd be good to know why any of this was needed I guess.
+
+johannes
