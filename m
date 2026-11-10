@@ -1,63 +1,56 @@
-Authentication-Results: smtp.subspace.kernel.org; arc=none smtp.remote-ip=168.119.38.16
+Authentication-Results: smtp.subspace.kernel.org; arc=none smtp.remote-ip=185.142.180.65
 ARC-Seal: i=1; d=subspace.kernel.org; s=arc20261015; a=rsa-sha256; cv=none;
-	t=1794304668;
-	b=XrK7NZ8GWCpIzKmjpfOv4v6hCVAd1N6cTxF3j0iPBpGawlyfaEbPcp0+3p5WDoUBZnu7
-	 jLvFzOPbLAL+q743rr4CRj/P3dZ/GCxhYpcEWKKDSXGNnVPbrbxqkO0/twN+LZVhLbvTZ
-	 Ar8DJDe9oys36RwKBVGNlEhbXM6mtadR53oJAvClKVikOWDDwOzR0G0i9MV4wms1+aKET
-	 /beLl/aH4D82NXT4Mbs98+S72+WMUwOvc4t7fkNElHgJRQOafkd4nlBh5Rld8voHVSj7J
-	 Y+CBm2zDIoDNzC3IMjvA4dBwAOMME/QMiNMfBeTO+8/vdlw4Dzc0rwq9VkEMrOBbVWg==
+	t=1794306112;
+	b=tZeMEfkaH1LUIYXX4VPy/shfRIhR9hXWk+6qPaECSm6N6wvE81A5QmJrjuJEmB04DgKH
+	 //ojqjglgxJYQdRLxEuIUmzSwNIlL0WL41ZZ7gWRLAdLBQGPONLnzez1+fXNy4FP6WJYA
+	 TVCTue8NVvMR2ODedBLd7iELzUnRIAhu5Q3Cy8T53D8oKoNf6YvPK2hYjk0SdXXaJHSus
+	 egod9pgvpN/MwyFhBE8xx1R3vgFLM8ruDGJHry6l/s84Mb9A+XVQ7VC/o+H9QusViVV7k
+	 xByx4YCS1a4Vz2qnU9nkJMXbflxBhRfXlQtDa8K3LLlGhl8CkCmkzWWGUObEIu4JVBg==
 ARC-Message-Signature: i=1; d=subspace.kernel.org; s=arc20261015;
-	a=rsa-sha256; c=relaxed/relaxed; t=1794304668;
-	h=DKIM-Signature:Received:Message-ID:Subject:From:To:Date:In-Reply-To:
-	 References:Content-Type:Content-Transfer-Encoding:User-Agent:
-	 MIME-Version:X-malware-bazaar;
-	bh=pUfBgVGShCloFr9i2sxfNE5NDepbraEnQ4yKIpd+bVE=;
-	b=looZnQ3qztTXsIMTSZLnjGJveIKvMiFTqklNsJoSQ8rPAxIbz3O0xpD2qdRPI47t7IAH
-	 SbkymcObAcRZT0YhynJz0+MXhFC6nPU8SiaPOJAcr6ww6baEeYjHxEZA+AQwyRBdIbn1s
-	 KnZzBjf7ghWjHcIYXlfnrcFzSV1eJ/rUBVUGQEo2Y4o0KV38494jYWCZgps2oZ33/l9Xv
-	 D7xStiSN4LFSWKwia1G5yhwyFT0WtgtcGpcYnLKc3eqL31IdEOaNLoqhgVBeyzqzw5W2d
-	 sXkVVpf0YCuQUlh+Yl/SgEgYVFkPWJiSArfBXsSjBySF93PW+KG8XZ4ZySRIdjIOLXA==
+	a=rsa-sha256; c=relaxed/relaxed; t=1794306112;
+	h=DMARC-Filter:Received:Date:From:To:Subject:Message-ID:References:
+	 MIME-Version:Content-Type:Content-Disposition:In-Reply-To;
+	bh=4RjiHFSGtFGI5JfcAYv07qfSKq6xK83qO3wQQHxqTEI=;
+	b=im0YogZ5EPTBucKBCDfWnMRrKQb0F8zH2TauCaVUXsHbaF3VtazKY4po5g7ztZRWSaM3
+	 D536pgt0V17RGzlIcOcKGTlWWhJvyIujiKO6z7MFvdkaHeyxljmkY2uJ3bgpd6ivWVews
+	 xw/+Fq3bggN18CpS4kB/9ZkNhOgItbeYX56fFgcjm9RfEQzgXhRz6+/PmV0yWXkAPlaKW
+	 RJLDX8wBo0navA2/2BoMtq9rHkknLW8fhV3Yn9wvNyT3wm9JlT/8qaWp7ZUZjBouWQ2Fy
+	 Vd38rMBcYPNfiSxfDU3J15fT18fpxqIlHXqwyliZidytVBUyPqkRqA661DwZZaJ73pw==
 ARC-Authentication-Results: i=1; smtp.subspace.kernel.org; 
-	dmarc=permerror header.from=sipsolutions.net;
-	spf=pass smtp.mailfrom=sipsolutions.net;
-	dkim=pass header.d=sipsolutions.net header.i=@sipsolutions.net header.a=rsa-sha256 header.s=mail header.b=GQtW+6UC;
-	arc=none smtp.remote-ip=168.119.38.16
-Received: from sipsolutions.net (s3.sipsolutions.net [168.119.38.16])
+	dmarc=none header.from=makrotopia.org;
+	spf=pass smtp.mailfrom=makrotopia.org;
+	arc=none smtp.remote-ip=185.142.180.65
+Received: from pidgin.makrotopia.org (pidgin.makrotopia.org [185.142.180.65])
 	(using TLSv1.3 with cipher TLS_AES_256_GCM_SHA384 (256/256 bits)
-	 key-exchange ECDHE (prime256v1) server-signature ECDSA (prime256v1) server-digest SHA256)
+	 key-exchange X25519 server-signature ECDSA (prime256v1) server-digest SHA256)
 	(No client certificate requested)
-	by smtp.subspace.kernel.org (Postfix) with ESMTPS id 10B55606A33F
-	for <linux-wireless@vger.kernel.org>; Tue, 10 Nov 2026 09:57:46 +0000 (UTC)
-Authentication-Results: smtp.subspace.kernel.org; dmarc=permerror header.from=sipsolutions.net
-Authentication-Results: smtp.subspace.kernel.org; spf=pass smtp.mailfrom=sipsolutions.net
-Authentication-Results: smtp.subspace.kernel.org;
-	dkim=pass (2048-bit key) header.d=sipsolutions.net header.i=@sipsolutions.net header.a=rsa-sha256 header.s=mail header.b=GQtW+6UC
-DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=sipsolutions.net; s=mail; h=MIME-Version:Content-Transfer-Encoding:
-	Content-Type:References:In-Reply-To:Date:To:From:Subject:Message-ID:Sender:
-	Reply-To:Cc:Content-ID:Content-Description:Resent-Date:Resent-From:Resent-To:
-	Resent-Cc:Resent-Message-ID; bh=pUfBgVGShCloFr9i2sxfNE5NDepbraEnQ4yKIpd+bVE=;
-	t=1794304666; x=1795514266; b=GQtW+6UC/5fv82o+VAh+cTGsRcyquGyfhxG6ETMVhoWQn7e
-	eDs9A7Ht07hD1O24F44A2rqHds46maSAQ7JrwW+TMI1FvKT8S3l2kdOVAHZD9QIMvR10PrGs0zOmc
-	2hVE+6JKurqXqs5jAX9HnrZ1pkiZdcFFXcjjjoEjKG2TQPwneljg7uwB8hdDfFjMuqXKiVKPeOn8T
-	6SGeXiy+UVZPeHDws5zLL4iDPOrQC0eKaIwE2cIiPZcoXYrMFYKdhDaop0i8F7x45YLvxY+3id8K+
-	jMKZnvpjgKulP29y7eLSkr0A7UxJVxDKGjxnTUAWFv7TO4/9fATPvFAwvGaFDEiA==;
-Received: by sipsolutions.net with esmtpsa (TLS1.3:ECDHE_X25519__ECDSA_SECP256R1_SHA256__AES_256_GCM:256)
-	(Exim 4.98.2)
-	(envelope-from <johannes@sipsolutions.net>)
-	id 1xQibo-00000001Q7m-1bHN;
-	Tue, 10 Nov 2026 10:57:44 +0100
-Message-ID: <12bec15dfdd9152ee450076a45c00679b9cd5d08.camel@sipsolutions.net>
-Subject: Re: [PATCH wireless 1/4] wifi: mac80211: keep the monitor chanreq
- empty without a channel
-From: Johannes Berg <johannes@sipsolutions.net>
-To: Felix Fietkau <nbd@nbd.name>, linux-wireless@vger.kernel.org
-Date: Tue, 10 Nov 2026 10:57:43 +0100
-In-Reply-To: <20261106154648.1228594-1-nbd@nbd.name>
-References: <20261106154648.1228594-1-nbd@nbd.name>
-Content-Type: text/plain; charset="UTF-8"
-Content-Transfer-Encoding: quoted-printable
-User-Agent: Evolution 3.60.2 (3.60.2-3.fc44) 
+	by smtp.subspace.kernel.org (Postfix) with ESMTPS id 55E33606DE29;
+	Tue, 10 Nov 2026 10:21:52 +0000 (UTC)
+DMARC-Filter: OpenDMARC Filter v1.4.2 smtp.subspace.kernel.org 55E33606DE29
+Authentication-Results: smtp.subspace.kernel.org; dmarc=none (p=none dis=none) header.from=makrotopia.org
+Authentication-Results: smtp.subspace.kernel.org; spf=pass smtp.mailfrom=makrotopia.org
+Received: from local
+	by pidgin.makrotopia.org with esmtpsa (TLS1.3:TLS_AES_256_GCM_SHA384:256:X25519MLKEM768)
+	 (Exim 4.100.1)
+	(envelope-from <daniel@makrotopia.org>)
+	id 1xQimM-000000006so-27Tz;
+	Tue, 10 Nov 2026 10:21:42 +0000
+Date: Tue, 10 Nov 2026 10:21:35 +0000
+From: Daniel Golle <daniel@makrotopia.org>
+To: Greg Kroah-Hartman <gregkh@linuxfoundation.org>,
+	"Rafael J. Wysocki" <rafael@kernel.org>,
+	Danilo Krummrich <dakr@kernel.org>,
+	Marcel Holtmann <marcel@holtmann.org>,
+	Luiz Augusto von Dentz <luiz.dentz@gmail.com>,
+	Miri Korenblit <miriam.rachel.korenblit@intel.com>,
+	Emmanuel Grumbach <emmanuel.grumbach@intel.com>,
+	Hans de Goede <hansg@kernel.org>, driver-core@lists.linux.dev,
+	linux-kernel@vger.kernel.org, linux-bluetooth@vger.kernel.org,
+	linux-wireless@vger.kernel.org
+Subject: Re: [PATCH v4 0/4] device_schedule_reprobe(): core helper and
+ conversions
+Message-ID: <avLv6TwefQu-GPWp@makrotopia.org>
+References: <cover.1792203271.git.daniel@makrotopia.org>
 X-Mailing-List: linux-wireless@vger.kernel.org
 List-Id: <linux-wireless.vger.kernel.org>
 List-Post: <mailto:linux-wireless@vger.kernel.org>
@@ -67,23 +60,37 @@ List-Unsubscribe: <mailto:linux-wireless+unsubscribe@vger.kernel.org>
 List-Owner: <mailto:linux-wireless+owner@vger.kernel.org>
 Precedence: list
 MIME-Version: 1.0
-X-malware-bazaar: not-scanned
+Content-Type: text/plain; charset=us-ascii
+Content-Disposition: inline
+In-Reply-To: <cover.1792203271.git.daniel@makrotopia.org>
 
-On Fri, 2026-11-06 at 16:46 +0100, Felix Fietkau wrote:
-> +++ b/net/mac80211/cfg.c
-> @@ -1165,8 +1165,12 @@ static int ieee80211_set_monitor_channel(struct wi=
-phy *wiphy,
->  	ieee80211_link_release_channel(&sdata->deflink);
->  	ret =3D ieee80211_link_use_channel(&sdata->deflink, &chanreq,
->  					 IEEE80211_CHANCTX_SHARED);
-> -	if (ret)
-> +	if (ret) {
-> +		if (ieee80211_hw_check(&local->hw, NO_VIRTUAL_MONITOR))
-> +			memset(&sdata->vif.bss_conf.chanreq, 0,
-> +			       sizeof(sdata->vif.bss_conf.chanreq));
->  		return ret;
+Hi Greg,
 
-I don't think I see why this is conditional, and other places not? We
-_did_ release the channel after all.
+On Sat, Oct 17, 2026 at 09:55:17AM +0100, Daniel Golle wrote:
+> iwlwifi and hci_h5 re-probe their own device from a work item in module
+> text ending in module_put(THIS_MODULE), which a concurrent rmmod can
+> race, and nothing ties the re-probe to the binding that asked for it.
+> btintel_pcie re-probes synchronously from its own reset work. This
+> series adds device_schedule_reprobe() to the driver core and converts
+> all three.
+> 
+> Tested on an Intel AX101 with patches 1 to 3, PROVE_LOCKING and
+> DEBUG_OBJECTS_WORK: a re-probe, and an unbind, rmmod, PCI removal,
+> suspend and reboot with one pending. The unbind and the removals
+> cancelled it, and it ran after resume. The stock iwlwifi code undid
+> the unbind, and rmmod with its work held just past module_put() oopsed
+> in lockdep. Patches 3 and 4 are untested for lack of hardware.
 
-johannes
+Now that the most hardcore merge-window ever is over and v7.4-rc1 is
+out, can you take a look at this?
+
+The series has received positive feedback and was tested by some more
+of the bluetooth folks by now, and is immediately useful to address
+currently buggy behavior of existing popular driver, and prevent the
+same wrong pattern from being duplicated into new drivers.
+
+
+Cheers
+
+
+Daniel
