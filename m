@@ -1,69 +1,55 @@
-Authentication-Results: smtp.subspace.kernel.org; arc=none smtp.remote-ip=168.119.38.16
+Authentication-Results: smtp.subspace.kernel.org; arc=none smtp.remote-ip=46.4.11.11
 ARC-Seal: i=1; d=subspace.kernel.org; s=arc20261015; a=rsa-sha256; cv=none;
-	t=1794308066;
-	b=wwPMcVOzKyQLj9sfg123g/6uPgJ5U7QMlV/ZbB1sPgcnFt799EEUjK36R7N3HaUjq05z
-	 SivoZG0WRXIwOUaspvIZVjOaDI9h9qn+f/aowcS/X/iGLWHlIs/uR0QmBtiaHAoQuEjjD
-	 S/qa5cdzZc1IpfqgAPp0gTqQDLPuFiG+LV3RYxdKB8a6BkYNObrCsftDgtZeIo2JsBuA/
-	 yIRzwwl7gsD3+GPBKNB5HKwO1g34Xs0OtgxqTct46GEZcsa1bUvHffc62/s9r10Ga05a7
-	 5YMHR7r9bPynOzlkYmBUZcxzzcXippPYc+gCbosEmaTVd5ENjrsXHfucNhWVKJ8EM6Q==
+	t=1794308335;
+	b=iZ7wt/+57UaVJoACK+V/rHWy9S/EV7eBhEpPEdGKlrtHoieqZEaIxwjpcUHqwoI9C3GR
+	 0pn1h+Ctc7r/YXYJAwh/KSfhuVZkISe37wxi4VaUNKH06JTFMS89w9JgfLsM93JvydTrg
+	 oTr6law4ptf83WNB1KI2nineiZ8UbGS9Pp19y1X9zX86RvAXaeMjJp9wzrmo+DyDN3Wg1
+	 9jeHqJoqOwY3gRjngwB8qeadAUt5Feu0ByHDd6yucWTc6OENwwBJQbGc/nwqGqCfV5Uy8
+	 Za5M85t7hgXjQvyo7UHphe/ElTZch35uEqG3k/YU33ZYswGo4icXCitQUuV/sRLSW6Q==
 ARC-Message-Signature: i=1; d=subspace.kernel.org; s=arc20261015;
-	a=rsa-sha256; c=relaxed/relaxed; t=1794308066;
-	h=DKIM-Signature:Received:Message-ID:Subject:From:To:Cc:Date:
-	 In-Reply-To:References:Content-Type:Content-Transfer-Encoding:
-	 User-Agent:MIME-Version:X-malware-bazaar;
-	bh=j4KLqGxuWpXG9O78us8mIzIwRiygY7y78UqRO7IA57U=;
-	b=yReE8lL5Ig+X056mKQz4vrW6WbTPkGqU1sExdp+XBm3+dGucUth9wTeMKICMId5XIm1h
-	 Ac7fLBqXNLARPliK0q5X+b2WRTkAB7WpzCscsWcPpzyhhoQ2rqCm9QS8gYrI10K1dnsuj
-	 Yb8FksPE1skePwcwn6a9ecw9V7Eppp1aLyiWpMASYvkCCIaPAS8B6p8XdCUkb3EYiznBz
-	 vRp5tOeC5d8/4rgpHqXvqwI4O4s3VQ12Q4+pIS0LJUCnpB6Qycmu0PPzq0Ud7BAz4cD8a
-	 cSBATe826VkSx4Wh56W9uSaucbP8D90lK8LJAtx8TPdEaT9+kpe6oAd/xZ774v3u6GA==
+	a=rsa-sha256; c=relaxed/relaxed; t=1794308335;
+	h=DMARC-Filter:DKIM-Signature:Received:Message-ID:Date:MIME-Version:
+	 User-Agent:Subject:To:References:Content-Language:From:Autocrypt:
+	 In-Reply-To:Content-Type:Content-Transfer-Encoding;
+	bh=9+cfnD1cvx4mvbaOEKJUoBpDP5xW8TDSkQR3+VWyZUw=;
+	b=ECQaVn9LzZDdwBPkFL+6gvN8JVUdiUj6Nuo1v1iwRLu50n4L9hcH5K0B4VRqOkQRkEDb
+	 CWHtZVukWdEIJeBOtoNpSFvMcbOn+5lWIjk5rXkOhSVdeV7dYexd41n1FrRxXuPlLR6kY
+	 Wx6H7FQH9a1wPkd2Jx/grA4HH8fwRlgBNG9wvBmWt5BG095CESGjgcxYFiSU3QLG5yC5x
+	 8DAVS1z/3dEn97rgKwLXd4uiXlnCUAcmYbEQQCrTeJdHJtaMwJeMMSIO1PpXp/fVyzsiJ
+	 QLmN+S546zVVz/OoaDPQARg77mupwxpQudpLP/t1HleaivNTTAFo/V65pWJUBQ/8WaQ==
 ARC-Authentication-Results: i=1; smtp.subspace.kernel.org; 
-	dmarc=permerror header.from=sipsolutions.net;
-	spf=pass smtp.mailfrom=sipsolutions.net;
-	dkim=pass header.d=sipsolutions.net header.i=@sipsolutions.net header.a=rsa-sha256 header.s=mail header.b=BtOeV4R5;
-	arc=none smtp.remote-ip=168.119.38.16
-Received: from sipsolutions.net (s3.sipsolutions.net [168.119.38.16])
+	dmarc=pass header.from=nbd.name;
+	spf=pass smtp.mailfrom=nbd.name;
+	dkim=pass header.d=nbd.name header.i=@nbd.name header.a=rsa-sha256 header.s=20160729 header.b="W/PCDVKI";
+	arc=none smtp.remote-ip=46.4.11.11
+Received: from nbd.name (nbd.name [46.4.11.11])
 	(using TLSv1.3 with cipher TLS_AES_256_GCM_SHA384 (256/256 bits)
 	 key-exchange ECDHE (prime256v1) server-signature ECDSA (prime256v1) server-digest SHA256)
 	(No client certificate requested)
-	by smtp.subspace.kernel.org (Postfix) with ESMTPS id 08814606A325;
-	Tue, 10 Nov 2026 10:54:25 +0000 (UTC)
-Authentication-Results: smtp.subspace.kernel.org; dmarc=permerror header.from=sipsolutions.net
-Authentication-Results: smtp.subspace.kernel.org; spf=pass smtp.mailfrom=sipsolutions.net
+	by smtp.subspace.kernel.org (Postfix) with ESMTPS id B6B6C606A321
+	for <linux-wireless@vger.kernel.org>; Tue, 10 Nov 2026 10:58:54 +0000 (UTC)
+DMARC-Filter: OpenDMARC Filter v1.4.2 smtp.subspace.kernel.org B6B6C606A321
+Authentication-Results: smtp.subspace.kernel.org; dmarc=pass (p=none dis=none) header.from=nbd.name
+Authentication-Results: smtp.subspace.kernel.org; spf=pass smtp.mailfrom=nbd.name
 Authentication-Results: smtp.subspace.kernel.org;
-	dkim=pass (2048-bit key) header.d=sipsolutions.net header.i=@sipsolutions.net header.a=rsa-sha256 header.s=mail header.b=BtOeV4R5
-DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=sipsolutions.net; s=mail; h=MIME-Version:Content-Transfer-Encoding:
-	Content-Type:References:In-Reply-To:Date:Cc:To:From:Subject:Message-ID:Sender
-	:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:Resent-To:
-	Resent-Cc:Resent-Message-ID; bh=j4KLqGxuWpXG9O78us8mIzIwRiygY7y78UqRO7IA57U=;
-	t=1794308065; x=1795517665; b=BtOeV4R5zXkyFvUeQvqvVMbT3v2msjcPcEXWVx7aPulo7f/
-	qShQIe2LzGE4Mp13mkE3h5KyTUSUpo5mcLHY1uV3TBWGChlLwkeVO5zcQZ9Q2YNxdkTE7d9zmSwJg
-	ztVdtsC9qy4co2Wj0VThdjTLXtXpJKcYo91lGcYSg+Zjb7YSYrsPnbuCTy+d84AdUNwJ44tJ3K9v0
-	Iu9WxGBT/XZSogVuP7gYVgfx3IpStlkqwmrgpvzIZ5eU3Nr/5S/c6jArspVSOTSjcxOf+f42mrNcZ
-	UIxVtMHxEIez5tWm7RLFgRDAYO+gRb+5eO6r1ocAxiCJhJW50jhknYsgqIiOYnBw==;
-Received: by sipsolutions.net with esmtpsa (TLS1.3:ECDHE_X25519__ECDSA_SECP256R1_SHA256__AES_256_GCM:256)
-	(Exim 4.98.2)
-	(envelope-from <johannes@sipsolutions.net>)
-	id 1xQjUc-00000001V8r-08yP;
-	Tue, 10 Nov 2026 11:54:22 +0100
-Message-ID: <76bc126fb977cac0f0a124fc80eae9fdb803264d.camel@sipsolutions.net>
-Subject: Re: [PATCH 2/2] wifi: mac80211_hwsim: serialize radio removal with
- frame commands
-From: Johannes Berg <johannes@sipsolutions.net>
-To: Zhao Li <enderaoelyther@gmail.com>
-Cc: "John W. Linville" <linville@tuxdriver.com>, Javier Lopez
- <jlopex@gmail.com>,  Jukka Rissanen <jukka.rissanen@linux.intel.com>,
- linux-wireless@vger.kernel.org, linux-kernel@vger.kernel.org, 
-	stable@vger.kernel.org
-Date: Tue, 10 Nov 2026 11:54:21 +0100
-In-Reply-To: <20261028141751.6728-3-enderaoelyther@gmail.com> (sfid-20261028_151822_083722_A5EF7A18)
-References: <20261028141751.6728-1-enderaoelyther@gmail.com>
-	 <20261028141751.6728-3-enderaoelyther@gmail.com>
-	 (sfid-20261028_151822_083722_A5EF7A18)
-Content-Type: text/plain; charset="UTF-8"
-Content-Transfer-Encoding: quoted-printable
-User-Agent: Evolution 3.60.2 (3.60.2-3.fc44) 
+	dkim=pass (1024-bit key, unprotected) header.d=nbd.name header.i=@nbd.name header.a=rsa-sha256 header.s=20160729 header.b=W/PCDVKI
+DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed; d=nbd.name;
+	s=20160729; h=Content-Transfer-Encoding:Content-Type:In-Reply-To:From:
+	References:To:Subject:MIME-Version:Date:Message-ID:Sender:Reply-To:Cc:
+	Content-ID:Content-Description:Resent-Date:Resent-From:Resent-Sender:
+	Resent-To:Resent-Cc:Resent-Message-ID:List-Id:List-Help:List-Unsubscribe:
+	List-Subscribe:List-Post:List-Owner:List-Archive;
+	bh=9+cfnD1cvx4mvbaOEKJUoBpDP5xW8TDSkQR3+VWyZUw=; b=W/PCDVKIQXe7y2JowS8e5VW56x
+	pCv/eXMy7IHpWOk02+ZU57nI2QxQ8dV0K46VxLj2ZH/doVOMD72z/XFLDTbKkqQH/qVBF+Z0VPMRM
+	93Le944iFYYSfzkQQdoAiM7HLibU46TXBcw6ct65D1dwRSJr9ef6Rzol3mSSip5t0U2Q=;
+Received: from p200300cadf129200f82573686eda1935.dip0.t-ipconnect.de ([2003:ca:df12:9200:f825:7368:6eda:1935] helo=nf.local)
+	by ds12 with esmtpsa  (TLS1.3) tls TLS_ECDHE_RSA_WITH_AES_128_GCM_SHA256
+	(Exim 4.96)
+	(envelope-from <nbd@nbd.name>)
+	id 1xQjYt-0014cL-0v;
+	Tue, 10 Nov 2026 11:58:47 +0100
+Message-ID: <f0c94aed-3218-46d6-a918-19879348c2b4@nbd.name>
+Date: Tue, 10 Nov 2026 11:58:46 +0100
 X-Mailing-List: linux-wireless@vger.kernel.org
 List-Id: <linux-wireless.vger.kernel.org>
 List-Post: <mailto:linux-wireless@vger.kernel.org>
@@ -73,16 +59,58 @@ List-Unsubscribe: <mailto:linux-wireless+unsubscribe@vger.kernel.org>
 List-Owner: <mailto:linux-wireless+owner@vger.kernel.org>
 Precedence: list
 MIME-Version: 1.0
-X-malware-bazaar: not-scanned
+User-Agent: Mozilla Thunderbird
+Subject: Re: [PATCH wireless 1/4] wifi: mac80211: keep the monitor chanreq
+ empty without a channel
+To: Johannes Berg <johannes@sipsolutions.net>, linux-wireless@vger.kernel.org
+References: <20261106154648.1228594-1-nbd@nbd.name>
+ <12bec15dfdd9152ee450076a45c00679b9cd5d08.camel@sipsolutions.net>
+Content-Language: en-US
+From: Felix Fietkau <nbd@nbd.name>
+Autocrypt: addr=nbd@nbd.name; keydata=
+ xsDiBEah5CcRBADIY7pu4LIv3jBlyQ/2u87iIZGe6f0f8pyB4UjzfJNXhJb8JylYYRzIOSxh
+ ExKsdLCnJqsG1PY1mqTtoG8sONpwsHr2oJ4itjcGHfn5NJSUGTbtbbxLro13tHkGFCoCr4Z5
+ Pv+XRgiANSpYlIigiMbOkide6wbggQK32tC20QxUIwCg4k6dtV/4kwEeiOUfErq00TVqIiEE
+ AKcUi4taOuh/PQWx/Ujjl/P1LfJXqLKRPa8PwD4j2yjoc9l+7LptSxJThL9KSu6gtXQjcoR2
+ vCK0OeYJhgO4kYMI78h1TSaxmtImEAnjFPYJYVsxrhay92jisYc7z5R/76AaELfF6RCjjGeP
+ wdalulG+erWju710Bif7E1yjYVWeA/9Wd1lsOmx6uwwYgNqoFtcAunDaMKi9xVQW18FsUusM
+ TdRvTZLBpoUAy+MajAL+R73TwLq3LnKpIcCwftyQXK5pEDKq57OhxJVv1Q8XkA9Dn1SBOjNB
+ l25vJDFAT9ntp9THeDD2fv15yk4EKpWhu4H00/YX8KkhFsrtUs69+vZQwc0cRmVsaXggRmll
+ dGthdSA8bmJkQG5iZC5uYW1lPsJgBBMRAgAgBQJGoeQnAhsjBgsJCAcDAgQVAggDBBYCAwEC
+ HgECF4AACgkQ130UHQKnbvXsvgCgjsAIIOsY7xZ8VcSm7NABpi91yTMAniMMmH7FRenEAYMa
+ VrwYTIThkTlQzsFNBEah5FQQCACMIep/hTzgPZ9HbCTKm9xN4bZX0JjrqjFem1Nxf3MBM5vN
+ CYGBn8F4sGIzPmLhl4xFeq3k5irVg/YvxSDbQN6NJv8o+tP6zsMeWX2JjtV0P4aDIN1pK2/w
+ VxcicArw0VYdv2ZCarccFBgH2a6GjswqlCqVM3gNIMI8ikzenKcso8YErGGiKYeMEZLwHaxE
+ Y7mTPuOTrWL8uWWRL5mVjhZEVvDez6em/OYvzBwbkhImrryF29e3Po2cfY2n7EKjjr3/141K
+ DHBBdgXlPNfDwROnA5ugjjEBjwkwBQqPpDA7AYPvpHh5vLbZnVGu5CwG7NAsrb2isRmjYoqk
+ wu++3117AAMFB/9S0Sj7qFFQcD4laADVsabTpNNpaV4wAgVTRHKV/kC9luItzwDnUcsZUPdQ
+ f3MueRJ3jIHU0UmRBG3uQftqbZJj3ikhnfvyLmkCNe+/hXhPu9sGvXyi2D4vszICvc1KL4RD
+ aLSrOsROx22eZ26KqcW4ny7+va2FnvjsZgI8h4sDmaLzKczVRIiLITiMpLFEU/VoSv0m1F4B
+ FtRgoiyjFzigWG0MsTdAN6FJzGh4mWWGIlE7o5JraNhnTd+yTUIPtw3ym6l8P+gbvfoZida0
+ TspgwBWLnXQvP5EDvlZnNaKa/3oBes6z0QdaSOwZCRA3QSLHBwtgUsrT6RxRSweLrcabwkkE
+ GBECAAkFAkah5FQCGwwACgkQ130UHQKnbvW2GgCeMncXpbbWNT2AtoAYICrKyX5R3iMAoMhw
+ cL98efvrjdstUfTCP2pfetyN
+In-Reply-To: <12bec15dfdd9152ee450076a45c00679b9cd5d08.camel@sipsolutions.net>
+Content-Type: text/plain; charset=UTF-8; format=flowed
+Content-Transfer-Encoding: 7bit
 
-On Wed, 2026-10-28 at 22:17 +0800, Zhao Li wrote:
-> Destroying a radio while a frame, TX status, or PMSR command is in
-> progress can make the command access the radio after it has been freed.
->=20
->  DEFINE_SPINLOCK(hwsim_radio_lock);
-> +static DEFINE_MUTEX(hwsim_radio_mutex);
+On 10.11.26 10:57, Johannes Berg wrote:
+> On Fri, 2026-11-06 at 16:46 +0100, Felix Fietkau wrote:
+>> +++ b/net/mac80211/cfg.c
+>> @@ -1165,8 +1165,12 @@ static int ieee80211_set_monitor_channel(struct wiphy *wiphy,
+>>  	ieee80211_link_release_channel(&sdata->deflink);
+>>  	ret = ieee80211_link_use_channel(&sdata->deflink, &chanreq,
+>>  					 IEEE80211_CHANCTX_SHARED);
+>> -	if (ret)
+>> +	if (ret) {
+>> +		if (ieee80211_hw_check(&local->hw, NO_VIRTUAL_MONITOR))
+>> +			memset(&sdata->vif.bss_conf.chanreq, 0,
+>> +			       sizeof(sdata->vif.bss_conf.chanreq));
+>>  		return ret;
+> 
+> I don't think I see why this is conditional, and other places not? We
+> _did_ release the channel after all.
+Right. I had both conditional before, decided to drop the condition and 
+accidentally lost the second part of the change. Will send v2.
 
-That, with significant work done under the mutex, seems like too big a
-hammer, can't it really not be done in any other way?
-
-johannes
+- Felix
