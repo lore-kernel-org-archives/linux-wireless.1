@@ -1,50 +1,49 @@
-Authentication-Results: smtp.subspace.kernel.org; arc=none smtp.remote-ip=159.226.251.25
+Authentication-Results: smtp.subspace.kernel.org; arc=none smtp.remote-ip=100.103.45.18
 ARC-Seal: i=1; d=subspace.kernel.org; s=arc20261015; a=rsa-sha256; cv=none;
-	t=1794306855;
-	b=Zfb6Vpm0yG0U2Ui6VawzrKEnj6u1E3+U1SUH0Py6urs2gGSdJSVtzXZ4wWR93Tph0M+Y
-	 41ns8kaPyTNrm6BMMBPQ7y1LlLh4HQK8ne8eVvrTTUAphQ7XyGsuLZt6p0/XGf/3WzocT
-	 tGD0G54xp1taX8UhBaThlpTokycrdlmhoTGimqwYVx4+wNt//Rd6bPGhZEiZ1DWm65HKv
-	 S6LFActzD+u5Au0En//WcPQrG6Z96lGJyuICGG0adcfe2D1CtCGNgLUGd4EafCVApWlBt
-	 FxycM/0VJXpSIHoXRv2vtb+wnvAmXhQ7/T6CLAO8qZ6AXzGsxKVohBXBN+nbQiBACBg==
+	t=1794307445;
+	b=J6oMLlR81ERNZQsjbPUdP6foi8HpRztMdofRlLLX5mXjl+iuVaaG2BPdwEoR8V0NOfQe
+	 fjIg/3up0CH7CmZyDZvniS0HoHSCJz/8pVfw2KLAEx9ekduvMjH4zb99SXhJsH9jHCrIX
+	 ERX/8egCTYvqaXX3YeDOa1dFYw7FDyPSBuFNS1bmhDG6p0lCelOmBkBJ0ec/P9wLOMeBO
+	 90n9ZGzzSrvd+JAE7db8yXQBHCb30RumT3fKeoKu0AtcvwI7UayU/Epa2HX5pWbaJsl7A
+	 Q2zf6GEtYt5elfGj9500u3ETZfVILiEB2HLhiRPk1H5Uy8NfHv1WhlyH/hWmi6DgVIg==
 ARC-Message-Signature: i=1; d=subspace.kernel.org; s=arc20261015;
-	a=rsa-sha256; c=relaxed/relaxed; t=1794306855;
-	h=DMARC-Filter:Received:From:To:Cc:Subject:In-Reply-To:References:
-	 Content-Type:Content-Transfer-Encoding:MIME-Version:Date:Message-ID:
-	 X-CM-TRANSID:X-Coremail-Antispam:X-Originating-IP:X-CM-SenderInfo;
-	bh=uMsKrHrfZchhh/m6IXY34VKZHA3ZjPvsm6XnygmGsDE=;
-	b=gKbAg9UGQvWGviEuADqoHFCjVfiWae/JliRb48NCN9rZelT92Gw99CFu3y1TKeJnwHxh
-	 qF97AT+/t3DpOmJ3OANy79J25PnE873tLyaArDtZiEsAMgeFd6zxNyLQ4VoTaKSSgQMl5
-	 IfRCJEZiOMXI+fSzLhE8GsUavZutLxKu+f/LWCqzx3JaLM4MuWvEKzc+x2vr7wfcDWXeS
-	 t1eYBfEYbVHoMfAD9KtL60iVKxWG89gYG7VT57AIIYDEwCeEu68qq5ZrTkiaF20ZwYYzs
-	 Okma4IBglEuNu5E645g24Nk/+wDxLvbn2laD13PUXxbIVT5BPXWt4dKvJ4LVqMn8Itg==
+	a=rsa-sha256; c=relaxed/relaxed; t=1794307445;
+	h=Received:DKIM-Signature:From:Date:Subject:MIME-Version:Content-Type:
+	 Content-Transfer-Encoding:Message-Id:X-B4-Tracking:X-Change-ID:To:Cc:
+	 X-Mailer;
+	bh=+gUYLE9inULQdAdJ9bS6kOu3zld0piruK95rFsfT6B0=;
+	b=z2U4aFmUjhk10MAcW2YHBHt9TD7GHreGY8q2Mdr5S9TxNQe9fuoHERBcbfgrFAFVW9uj
+	 bz/3s8BAew46/+xTfWMLPHcC8Mmsnw1Bo4vnyfDjL9irSrzwNmAqeqFJPJLRq6og7mD5A
+	 yl4hn+uOmo7qcpE+dJ0H9frSFVJVeaVqQLHRwrNY0xij80bwo+eOkJXNwl1ARqOl+w5Yv
+	 L412CPjGtZHuUe7NovO4+tATqZnHuTE+hnd9fIudGF9Txk6MrfY2FUEVh2kdE5Ondwpm3
+	 ue/CPcHWZOP7I9Y0xqkHRq2R6fzvsVo3hQh4ddMwtZbBsbakMthi2/o2qI7+eqJqgZA==
 ARC-Authentication-Results: i=1; smtp.subspace.kernel.org; 
-	dmarc=none header.from=iscas.ac.cn;
-	spf=pass smtp.mailfrom=iscas.ac.cn;
-	arc=none smtp.remote-ip=159.226.251.25
-Received: from cstnet.cn (smtp25.cstnet.cn [159.226.251.25])
+	dkim=pass header.d=kernel.org header.i=@kernel.org header.a=rsa-sha256 header.s=k20260515 header.b=mg9mxldi;
+	arc=none smtp.remote-ip=100.103.45.18
+Received: from smtp.kernel.org (quasi.space.kernel.org [100.103.45.18])
 	(using TLSv1.3 with cipher TLS_AES_256_GCM_SHA384 (256/256 bits)
-	 key-exchange X25519 server-signature ECDSA (prime256v1) server-digest SHA256)
+	 key-exchange X25519 server-signature ECDSA (prime256v1))
 	(No client certificate requested)
-	by smtp.subspace.kernel.org (Postfix) with ESMTPS id 3EBA5606A31C;
-	Tue, 10 Nov 2026 10:34:12 +0000 (UTC)
-DMARC-Filter: OpenDMARC Filter v1.4.2 smtp.subspace.kernel.org 3EBA5606A31C
-Authentication-Results: smtp.subspace.kernel.org; dmarc=none (p=none dis=none) header.from=iscas.ac.cn
-Authentication-Results: smtp.subspace.kernel.org; spf=pass smtp.mailfrom=iscas.ac.cn
-Received: from [172.100.0.8] (unknown [36.110.52.2])
-	by APP-05 (Coremail) with SMTP id zQCowADnf7US8_Jqc87HAA--.1727S2;
-	Tue, 10 Nov 2026 18:33:54 +0800 (CST)
-From: Wentao Liang <vulab@iscas.ac.cn>
-To: Jeff Johnson <jeff.johnson@oss.qualcomm.com>
-Cc: Jeff Johnson <jjohnson@kernel.org>, linux-wireless@vger.kernel.org,
- ath11k@lists.infradead.org, linux-kernel@vger.kernel.org,
- workflows@vger.kernel.org
-Subject:
- Re: [PATCH RESEND] wifi: ath11k: release the rproc reference on teardown
-In-Reply-To: <a39b1918-5d04-452b-8b5a-0703963f4587@oss.qualcomm.com>
-References: <20261103102915.1341148-1-vulab@iscas.ac.cn>
- <a39b1918-5d04-452b-8b5a-0703963f4587@oss.qualcomm.com>
-Content-Type: text/plain; charset="utf-8"
-Content-Transfer-Encoding: 7bit
+	by smtp.subspace.kernel.org (Postfix) with ESMTPS id A6635606A332;
+	Tue, 10 Nov 2026 10:44:05 +0000 (UTC)
+Authentication-Results: smtp.subspace.kernel.org;
+	dkim=pass (2048-bit key) header.d=kernel.org header.i=@kernel.org header.a=rsa-sha256 header.s=k20260515 header.b=mg9mxldi
+Received: by smtp.kernel.org (Postfix) with ESMTPSA id B40011F008A1;
+	Tue, 10 Nov 2026 10:44:03 +0000 (UTC)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=kernel.org;
+	s=k20260515; t=1794307445;
+	bh=+gUYLE9inULQdAdJ9bS6kOu3zld0piruK95rFsfT6B0=;
+	h=From:Date:Subject:To:Cc;
+	b=mg9mxldiafUf1x8tlMkXVLxJz/4snxL0VcVAImqvEDKlTxuLrnII4OMH0pcAWaT/V
+	 R9TPd11azz+B8oUKrhl8zrt6CMlY7xLXSTBWP4Y9IVnb1ij+Lr0aMemdcaJBdlGREC
+	 Iq7IWMgdcLnroFuy57RAcoFbgdOK3wOKXhhZdc4vAhwiPQK2qdhT4eHT54igoXrUYs
+	 yLr8RqUq4EF4nj1dRIgaAX5pNqCR7k/tBQki0ERM3CgCrX0KY8mNQBPyHcVW2a8aOE
+	 0IpJl8Xsv381DD1Q5SQmCPsq/95E76ApjqKBJt4acOWW353TEU+294L/72cpDwMFLQ
+	 TM76k3Nu2fY8g==
+From: Linus Walleij <linusw@kernel.org>
+Date: Tue, 10 Nov 2026 11:44:02 +0100
+Subject: [PATCH] dt-bindings: net: wireless: brcm,bcm4329-fmac: Describe
+ the MAC address
 X-Mailing-List: linux-wireless@vger.kernel.org
 List-Id: <linux-wireless.vger.kernel.org>
 List-Post: <mailto:linux-wireless@vger.kernel.org>
@@ -54,40 +53,65 @@ List-Unsubscribe: <mailto:linux-wireless+unsubscribe@vger.kernel.org>
 List-Owner: <mailto:linux-wireless+owner@vger.kernel.org>
 Precedence: list
 MIME-Version: 1.0
-Date: Tue, 10 Nov 2026 10:34:05 -0000
-Message-ID: <179430684554.3011466.3431045638041318447@iscas.ac.cn>
-X-CM-TRANSID:zQCowADnf7US8_Jqc87HAA--.1727S2
-X-Coremail-Antispam: 1UD129KBjDUn29KB7ZKAUJUUUUU529EdanIXcx71UUUUU7v73
-	VFW2AGmfu7bjvjm3AaLaJ3UjIYCTnIWjp_UUUYs7k0a2IF6F4UM7kC6x804xWl1xkIjI8I
-	6I8E6xAIw20EY4v20xvaj40_Wr0E3s1l1IIY67AEw4v_Jr0_Jr4l8cAvFVAK0II2c7xJM2
-	8CjxkF64kEwVA0rcxSw2x7M28EF7xvwVC0I7IYx2IY67AKxVW8JVW5JwA2z4x0Y4vE2Ix0
-	cI8IcVCY1x0267AKxVW8JVWxJwA2z4x0Y4vEx4A2jsIE14v26rxl6s0DM28EF7xvwVC2z2
-	80aVCY1x0267AKxVW0oVCq3wAS0I0E0xvYzxvE52x082IY62kv0487Mc02F40EFcxC0VAK
-	zVAqx4xG6I80ewAv7VC0I7IYx2IY67AKxVWUAVWUtwAv7VC2z280aVAFwI0_Cr1j6rxdMc
-	vjeVCFs4IE7xkEbVWUJVW8JwACjcxG0xvEwIxGrwCF04k20xvY0x0EwIxGrwCF04k20xvE
-	74AGY7Cv6cx26r48ZrWUJr1UMxAqzxv26xkF7I0En4kS14v26r126r1DMxC20s026xCaFV
-	Cjc4AY6r1j6r4UMI8I3I0E5I8CrVAFwI0_Jr0_Jr4lx2IqxVCjr7xvwVAFwI0_JrI_JrWl
-	x4CE17CEb7AF67AKxVWUAVWUtwCIc40Y0x0EwIxGrwCI42IY6xIIjxv20xvE14v26r1j6r
-	1xMIIF0xvE2Ix0cI8IcVCY1x0267AKxVWUJVW8JwCI42IY6xAIw20EY4v20xvaj40_Jr0_
-	JF4lIxAIcVC2z280aVAFwI0_Jr0_Gr1lIxAIcVC2z280aVCY1x0267AKxVW8JVW8JrUvcS
-	sGvfC2KfnxnUUI43ZEXa7IUb_-PUUUUUU==
-X-CM-SenderInfo: pyxotu46lvutnvoduhdfq/1tbiCRIHA2ry1-1guAAAs1
+Content-Type: text/plain; charset="utf-8"
+Content-Transfer-Encoding: 7bit
+Message-Id: <20261110-brcm-fmac-mac-v1-1-df9e6264b056@kernel.org>
+X-B4-Tracking: v=1; b=H4sIAAAAAAAA/x3MTQqAIBAG0KsM3zpBLSO8SrQwG2sW/aAQQXT3q
+ MXbvhuFs3CBpxuZTymyb/BkKkJcwjazkgmeYLVtjTFajTmuKq0hqk8TOufqiYOtNSrCkTnJ9X/
+ 98DwvBtKapl8AAAA=
+X-Change-ID: 20261110-brcm-fmac-mac-4a8553dea230
+To: Johannes Berg <johannes@sipsolutions.net>, 
+ Rob Herring <robh@kernel.org>, Krzysztof Kozlowski <krzk+dt@kernel.org>, 
+ Conor Dooley <conor+dt@kernel.org>, van Spriel <arend@broadcom.com>
+Cc: linux-wireless@vger.kernel.org, devicetree@vger.kernel.org, 
+ Linus Walleij <linusw@kernel.org>
+X-Mailer: b4 0.16.0
 
-Hi Jeff,
+Samsung Ux500 phones with BCM4334 store the unique Wi-Fi MAC address in
+persistent EFS storage rather than the distributed NVRAM template. The
+bootloader can recover that address and supply it in the device tree.
 
-I'm sorry for taking so long to reply and for the confusion and extra
-work caused by sending patches from a shared address and failing to
-follow up on review feedback.
+Signed-off-by: Linus Walleij <linusw@kernel.org>
+---
+Describe local-mac-address and illustrate it on BCM4334.
 
-To keep the existing discussions clear, I'll continue to reply from
-vulab@iscas.ac.cn under my own name in the threads for patches I
-submitted. I will not send any new patches or revisions.
+Developed with LLM assistance.
+---
+ .../devicetree/bindings/net/wireless/brcm,bcm4329-fmac.yaml       | 8 ++++++++
+ 1 file changed, 8 insertions(+)
 
-For context on this submission, static analysis flagged the candidate,
-and we used DeepSeek and GPT-6.1 Sol to assist with reviewing it and
-preparing the fix.
+diff --git a/Documentation/devicetree/bindings/net/wireless/brcm,bcm4329-fmac.yaml b/Documentation/devicetree/bindings/net/wireless/brcm,bcm4329-fmac.yaml
+index 81fd3e37452a..0f99c6261a56 100644
+--- a/Documentation/devicetree/bindings/net/wireless/brcm,bcm4329-fmac.yaml
++++ b/Documentation/devicetree/bindings/net/wireless/brcm,bcm4329-fmac.yaml
+@@ -61,6 +61,13 @@ properties:
+     description: SDIO function number for the device (for most cases
+       this will be 1) or PCI device identifier.
+ 
++  local-mac-address:
++    description:
++      The factory-assigned MAC address, as six bytes in network byte order.
++      The bootloader may supply this from persistent board data when the
++      address is not programmed into the chip or the NVRAM configuration
++      contains a shared template address.
++
+   interrupts:
+     maxItems: 1
+     description: Out-of-band (OOB) IRQ line for waking up the host
+@@ -157,6 +164,7 @@ examples:
+       wifi@1 {
+         compatible = "brcm,bcm4334-fmac", "brcm,bcm4329-fmac";
+         reg = <1>;
++        local-mac-address = [00 11 22 33 44 55];
+         interrupt-parent = <&gpio>;
+         interrupts = <24 IRQ_TYPE_EDGE_FALLING>;
+         interrupt-names = "host-wake";
 
-Again, I'm sorry for the confusion and the extra work this caused.
+---
+base-commit: 6628e7d4c6b25c8d18f1345e3a20d21829aae7e4
+change-id: 20261110-brcm-fmac-mac-4a8553dea230
 
-Wentao
+Best regards,
+--  
+Linus Walleij <linusw@kernel.org>
 
