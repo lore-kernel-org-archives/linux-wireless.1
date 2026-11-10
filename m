@@ -1,99 +1,76 @@
-Authentication-Results: smtp.subspace.kernel.org; arc=pass header.oldest-pass=0 smtp.remote-ip=209.85.221.174
-ARC-Seal: i=2; d=subspace.kernel.org; s=arc20261015; a=rsa-sha256; cv=pass;
-	t=1794277106;
-	b=RGVRLhb6WQFyMysDkvtOvIbm6CDewNyUi6LTUhmV4Dm+7d16oeqfZSe1TxoPf1TAyHZo
-	 Rr061EoKrZdlUJtHmJCQCuPaVMaOEU+nsr220jP63VVvVwF5pJ6QXMjy2/Jtb7vewq7Oo
-	 q2JSg1EuDtqYfwilvqgK3XuYm3x7Kx4h88fOfRX0evZCDi3+yF13S8ppgw5vr8njD1B0f
-	 7SBw8xWVn2GVJNqiE0xjXDNC6LjrIv5vh+qELBMUYM6fjHM1zZDSOBZ5OnS9+m5O7emJs
-	 LkqvJV+Jv0we1QejIkPF9UIoTY99tWmNEV/S5iXgV0lhR5l8pIuxOXS4g+fnqWl68CA==
-ARC-Message-Signature: i=2; d=subspace.kernel.org; s=arc20261015;
-	a=rsa-sha256; c=relaxed/relaxed; t=1794277106;
-	h=DMARC-Filter:Received:DKIM-Signature:X-Google-DKIM-Signature:
-	 X-Gm-Message-State:X-Gm-Gg:X-Received:MIME-Version:References:
-	 In-Reply-To:From:Date:X-Gm-Features:Message-ID:Subject:To:Cc:
-	 Content-Type;
-	bh=hhX/taozD8h2sfx0V2EzqRbzxnyILAwgPgnGX8OF0yo=;
-	b=ckP8cWWRWmR7HJ9vlsay7bt/BGIFBxrLCNTPi6opZ8z1/j1CXWxb4zcjNTiovoEFqFXR
-	 SC0Q+ySIlwALzK06w3F+09Gdp28b4llRbRQQzWk/3+EkhLvFOzBtSbyt1wEtmp+4rTXXv
-	 n/tIQbwhzoeBb2sZ50IvxrJlL83RbOdXnl+wBUrzt1P//lFRbVXmrC/iYZ2qwoY4ClNmy
-	 kYOMKmjR23is+JVB4G3QOFuj9nWhOyuULqXrAaOBn+ETTwKSRZnQL9CDvypRibjlJdVkJ
-	 CnTv82txZlKqb/KMRjyupMYopJiHefAeVrqKqVPfEu6HUwxv74Xc1+xPOMPeWxenfXw==
-ARC-Authentication-Results: i=2; smtp.subspace.kernel.org; 
-	dmarc=pass header.from=gmail.com;
-	spf=pass smtp.mailfrom=gmail.com;
-	dkim=pass header.d=gmail.com header.i=@gmail.com header.a=rsa-sha256 header.s=20260707 header.b=QeEUt7xp;
-	arc=pass header.oldest-pass=0 smtp.remote-ip=209.85.221.174
-Received: from mail-vk1-f174.google.com (mail-vk1-f174.google.com [209.85.221.174])
-	(using TLSv1.3 with cipher TLS_AES_128_GCM_SHA256 (128/128 bits)
+Authentication-Results: smtp.subspace.kernel.org; arc=none smtp.remote-ip=60.244.123.138
+ARC-Seal: i=1; d=subspace.kernel.org; s=arc20261015; a=rsa-sha256; cv=none;
+	t=1794280071;
+	b=FCF3Gh2E+odGVAIjglVrYDJ32JC6lQgX7oPmsdnlfB/pSJT6afo5H8dR6MYU0a5KNoC2
+	 o0vivsfHHafilWVn2im2IvACZkNqF7tDMRzgBVHnVn3/0XSa7ZA/SRYRpBDIQ0HZdIoij
+	 paBUmLRaUTUBEUyCS2dh2tdgk5/LwMetU+6jXrYA7+niYtBW/BYRUFrRFYNEBPItcuA4Z
+	 W0oFVbd2LR6KIWHGVJ81gJndC8M7H8WkTb4dSloa1IvMIrIo1psQG9kBoIDKZu2ERqdzR
+	 q7zODLygwf+GQ2m4EoM3zd7+FlqiOc799kae6WJJ1UjMfo2UrZNHMS3532SyfW+3fgA==
+ARC-Message-Signature: i=1; d=subspace.kernel.org; s=arc20261015;
+	a=rsa-sha256; c=relaxed/relaxed; t=1794280071;
+	h=DMARC-Filter:X-UUID:DKIM-Signature:X-CID-P-RULE:X-CID-O-INFO:
+	 X-CID-META:X-CID-BVR:X-CID-BAS:X-CID-FACTOR:X-CID-RHF:X-UUID:Received:
+	 Received:Received:From:To:CC:Subject:Date:Message-ID:X-Mailer:
+	 MIME-Version:Content-Transfer-Encoding:Content-Type:X-MTK;
+	bh=w/eXjAMoSt68fyDM2nHRizh1dd533oPQwuSg5wzA7sQ=;
+	b=sw+WKXzEz4O++LK1LuMjgwyYkT6R2eQkJPPMcKZ58gfFdL6vIMLdyQkdCPIgR0aBpa37
+	 Wg00PV6DufGcRHTpzdSJXUTMLxdsEmbhQwj/SexG7wake000Om+6gSQ0u+XuMzjw2IWKV
+	 NApvkX7DPxWczQxEdEA3X7SVstChlRsuiz5F4q1A+ofsCdwjBnUALyot2bN/fk1SfvxoA
+	 xkwjcSLICP1sZWZf+Q1Xv/kdmLxkeX4BzvGqG1kU90eziXASuzMwAi2zckAiP8m2pvL4S
+	 eOeVp3ssLth5j/19qEcJ4kV/vUQo3NG3AB/31L5lvU8tt8H20QuNqJVlAUrS9hdGz0Q==
+ARC-Authentication-Results: i=1; smtp.subspace.kernel.org; 
+	dmarc=pass header.from=mediatek.com;
+	spf=pass smtp.mailfrom=mediatek.com;
+	dkim=pass header.d=mediatek.com header.i=@mediatek.com header.a=rsa-sha256 header.s=dk header.b=gORRkX6f;
+	arc=none smtp.remote-ip=60.244.123.138
+Received: from mailgw01.mediatek.com (unknown [60.244.123.138])
+	(using TLSv1.3 with cipher TLS_AES_256_GCM_SHA384 (256/256 bits)
 	 key-exchange X25519 server-signature ECDSA (prime256v1) server-digest SHA256)
 	(No client certificate requested)
-	by smtp.subspace.kernel.org (Postfix) with ESMTPS id 4D210606A321
-	for <linux-wireless@vger.kernel.org>; Tue, 10 Nov 2026 02:18:26 +0000 (UTC)
-DMARC-Filter: OpenDMARC Filter v1.4.2 smtp.subspace.kernel.org 4D210606A321
-Authentication-Results: smtp.subspace.kernel.org; dmarc=pass (p=none dis=none) header.from=gmail.com
-Authentication-Results: smtp.subspace.kernel.org; spf=pass smtp.mailfrom=gmail.com
+	by smtp.subspace.kernel.org (Postfix) with ESMTPS id 2EF10606A325
+	for <linux-wireless@vger.kernel.org>; Tue, 10 Nov 2026 03:07:49 +0000 (UTC)
+DMARC-Filter: OpenDMARC Filter v1.4.2 smtp.subspace.kernel.org 2EF10606A325
+Authentication-Results: smtp.subspace.kernel.org; dmarc=pass (p=quarantine dis=none) header.from=mediatek.com
+Authentication-Results: smtp.subspace.kernel.org; spf=pass smtp.mailfrom=mediatek.com
 Authentication-Results: smtp.subspace.kernel.org;
-	dkim=pass (2048-bit key) header.d=gmail.com header.i=@gmail.com header.a=rsa-sha256 header.s=20260707 header.b=QeEUt7xp
-Received: by mail-vk1-f174.google.com with SMTP id 71dfb90a1353d-5ecd9a400cbso839101e0c.0
-        for <linux-wireless@vger.kernel.org>; Mon, 09 Nov 2026 18:18:26 -0800 (PST)
-ARC-Seal: i=1; a=rsa-sha256; t=1794277105; cv=none;
-        d=google.com; s=arc-20260327;
-        b=jEj4Q64ZzY8pAdYjNZ9VMhHu2apLZiQkaSGXzrqP8s3sHG0GFqrNECoPZoW7J2W6Qs
-         ve6svPkNYN9qr4vz9PwENwUxIQAF0LgI6g+AeI+ESkVi+h6CTewvedGMQ6USanMEPqa7
-         FMGZk1zG79rzMdigdBd/+bzscsTolZhzwrwi6wKSQHlb7qcqGR/244sk8+6q0kba2vOw
-         6o2ZBmD5yKlKdcxL1YgnKs/qa5+lxyqmh5FzxwgkIrNtEBurNWXk9QO2XnwPMb7kIH6e
-         UU8IW9DuqaUWPbRgYM9JyDLjr/HgqYhJwFwX0CWnqn7zjzIiit8G1wZZDKZgeoQZOqOB
-         U/vw==
-ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=google.com; s=arc-20260327;
-        h=cc:to:subject:message-id:date:from:in-reply-to:references
-         :mime-version:dkim-signature;
-        bh=hhX/taozD8h2sfx0V2EzqRbzxnyILAwgPgnGX8OF0yo=;
-        fh=2ReaoeL9OXsVbxMCIcayAkfXExiSj1w0iyF6TIS5CIg=;
-        b=o7QA69KaSc0avZe5rxlNmN2yqFOhELGIyBa6TfLFM+WKQFpWZ0V7JPGNgE7cHyrwGL
-         JG3MMfTru1kehbnnBCs8Hyf2eDtUXAGH9uVNzkz66gbmMYkwRys6BU5kusG9x+R6jS97
-         iBN5CViat/xt0oDPA6UCngGUrbAJ0AJUUPjAb1k0KJWsyW1JphXQmFN+e1t5mgqulEjR
-         32+cFGkMBPCjFL2w+BqifduIFomEql3YXRNWlg8RcOxauPvi7GyIOuoNmnIBSxhzYMyk
-         1kNqZF6F3vQ7vs163eEc63MJfa5I36SBAn95d+inJwp1gU8QtwhrgvLLcx5OUuu3xNix
-         HbIA==;
-        darn=vger.kernel.org
-ARC-Authentication-Results: i=1; mx.google.com; arc=none
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=gmail.com; s=20260707; t=1794277105; x=1794881905; darn=vger.kernel.org;
-        h=content-type:cc:to:subject:message-id:date:from:in-reply-to
-         :references:mime-version:from:to:cc:subject:date:message-id:reply-to
-         :content-type;
-        bh=hhX/taozD8h2sfx0V2EzqRbzxnyILAwgPgnGX8OF0yo=;
-        b=QeEUt7xpf7VR/rxl/W9pU84ueuL4wvvRMzAD1Zz2Q+mpdBFJs5e1AqIitt/AUdLT9j
-         tus7ZsU93P8DSj/zAsD3VrumRs2wiiAPKuF35Q5o2BowVVenUmyJMWkaVTrNlDZuv7/K
-         aIaiwxo5wo62AEGXUKLt9cMZ50KX8ZziQLBE8potmgjCPwnNmxVvtkPEcyTFReCnrUhZ
-         DA7roTmlxOVFT9AXAXjJSYNm6st4nUySWx3OMzcqeTeLSwQ4/CXX65vjyQZ4EHj84yDs
-         nGbMk6Oe+Mx4CXUsLMOgLq7r4aFHMO7TujBeyo3ZG7qaAx075tkmBGIYw0sTzn+LbegE
-         Z3eg==
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=1e100.net; s=20260707; t=1794277105; x=1794881905;
-        h=content-type:cc:to:subject:message-id:date:from:in-reply-to
-         :references:mime-version:x-gm-gg:x-gm-message-state:from:to:cc
-         :subject:date:message-id:reply-to:content-type;
-        bh=hhX/taozD8h2sfx0V2EzqRbzxnyILAwgPgnGX8OF0yo=;
-        b=D27GMSiapDtiJDfRejyoDgGUKThtzdazfzVEvovZY2qSPRaR1JXhRq1FaPLgRbTA7a
-         aKQc4Vp3ZOM4d5Saemvy2yyHPuo7hwx6ybAaxOnykaeC5+QYDuVZ5L1MO75Xduij6PRs
-         zQl/BNgD9cCAqUmATYrjUjXA3oh5ns+aFNK9bfvsDJIkcaxDWIfgdt18ZexhsOO1ugXI
-         HQwWTz6axFzA5X8NGi8ky9+VFWX4hDOO2FuIyov619F4iwlL2o1nzXflWs3adSDrNXr0
-         y89unnjETZH7Y4eORmuBEUPuznKed80biJHSiqLZs9SL47z+cGru5qtHRgIkkLTyD4Qq
-         Kg5A==
-X-Gm-Message-State: APuU4Z98rf0qYi/bzYfKZCmENLEbJcgBDIm+ORMjKIH70PFh0eFkeBHc
-	7Itp8c8UI6wTZIwWYAxEMmv8GeficIJ4CHN0+/iybuj3oxiBxJ4thGimPewxJzmncu90qWNpXQn
-	vvWYlrwsJ+RXhXRwaRocfRgUOvQByOO7TDG9+
-X-Gm-Gg: AYBFou2/mOcfQYXdUttdXo2tV/+5XLG4Pd0canhgIAIaavS1aJTJ9rTJ70SIV1KDJIV
-	4iT964OfJz9WBrDFoihdV+CiQodgpAbyv8hQiEUnGmUF8KxVsAOZeLNibfcsYn8S/Jbw9GI4mZ8
-	9kv6W9kF/8ZYX6+2sx0iB+ZlkekwYbT1q+rRasgi9wCpSi8q2KNjTSchcbNjnw/SItb4Skv61N7
-	idGtUfC0uLQWJnqu56tDMpeYW+5qVKFsETtgVEFEJjuTUmaTM/o6dJKT7Taz76wlMTFBo7WPCn5
-	sXk4vYRjEbwIQjupBF/NBhT8fZ/MC4DJX/7wvcNS27xrFlhE9ks06rHl8n+jmRD+V5bUpcanlyD
-	0uEwwAiT9Qs3noMKys3uj866hiCxBIas4x39ip7+ohGm+z63UOnqBE/orfgPaZKGGVe2D/BkZih
-	b6SJBWkBehMFR7xNxn
-X-Received: by 2002:a05:6122:469a:b0:5ea:f399:781d with SMTP id
- 71dfb90a1353d-5ee0d1d05c8mr384452e0c.23.1794277105142; Mon, 09 Nov 2026
- 18:18:25 -0800 (PST)
+	dkim=pass (1024-bit key, unprotected) header.d=mediatek.com header.i=@mediatek.com header.a=rsa-sha256 header.s=dk header.b=gORRkX6f
+X-UUID: e674ab0cdcb311f1b1788b6acf885367-20261110
+DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed; d=mediatek.com; s=dk;
+	h=Content-Type:Content-Transfer-Encoding:MIME-Version:Message-ID:Date:Subject:CC:To:From; bh=w/eXjAMoSt68fyDM2nHRizh1dd533oPQwuSg5wzA7sQ=;
+	b=gORRkX6f23ehHYYkQlykwmw0UDF/iQoM8sVxEGsXW9bRg0Jmf7NSgRaaOuP1hcAU4JvqvQtd3IUFdJpcMDbK30qQD0PMJ4W8UG4Rkol9KPeZuJN/Vu+gvfiHlRWUv3YvAafB71wPQW6gYjmSNWyDNnbffLYk8julMkML0UknOaE=;
+X-CID-P-RULE: Release_Ham
+X-CID-O-INFO: VERSION:1.3.21,REQID:b63580be-0d7c-4da6-9118-48c4af4bf2ee,IP:0,U
+	RL:0,TC:0,Content:0,EDM:0,RT:0,SF:0,FILE:0,BULK:0,RULE:Release_Ham,ACTION:
+	release,TS:0
+X-CID-META: VersionHash:b0318ac,CLOUDID:13180f57-a87d-42b7-8ffd-9e23ca174329,B
+	ulkID:nil,BulkQuantity:0,SF:102|836|865|888|898,TC:-5,Content:0|15|50|99,E
+	DM:-3,IP:nil,URL:0,File:130,RT:0,Bulk:nil,QS:nil,BEC:nil,COL:0,OSI:0,OSA:0
+	,AV:0,LES:1,SPR:NO,DKR:0,DKP:0,BRR:0,BRE:0,ARC:0
+X-CID-BVR: 2,SSN|SDN
+X-CID-BAS: 2,SSN|SDN,0,_
+X-CID-FACTOR: TF_CID_SPAM_SNR
+X-CID-RHF: D41D8CD98F00B204E9800998ECF8427E
+X-UUID: e674ab0cdcb311f1b1788b6acf885367-20261110
+Received: from mtkmbs10n1.mediatek.inc [(172.21.101.34)] by mailgw01.mediatek.com
+	(envelope-from <emery.hsin@mediatek.com>)
+	(Generic MTA with TLSv1.2 ECDHE-RSA-AES256-GCM-SHA384 256/256)
+	with ESMTP id 397241363; Tue, 10 Nov 2026 11:07:44 +0800
+Received: from mtkmbs13n2.mediatek.inc (172.21.101.108) by
+ MTKMBS14N1.mediatek.inc (172.21.101.75) with Microsoft SMTP Server
+ (version=TLS1_2, cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id
+ 15.2.2562.29; Tue, 10 Nov 2026 11:07:43 +0800
+Received: from mtksitap99.mediatek.inc (10.233.130.16) by
+ mtkmbs13n2.mediatek.inc (172.21.101.73) with Microsoft SMTP Server id
+ 15.2.2562.29 via Frontend Transport; Tue, 10 Nov 2026 11:07:43 +0800
+From: Emery Hsin <emery.hsin@mediatek.com>
+To: <nbd@nbd.name>, <lorenzo@kernel.org>
+CC: <Sean.Wang@mediatek.com>, <jb.tsai@mediatek.com>,
+	<Quan.Zhou@mediatek.com>, <linux-wireless@vger.kernel.org>,
+	<linux-mediatek@lists.infradead.org>, Emery Hsin <emery.hsin@mediatek.com>
+Subject: [PATCH] wifi: mt76: mt792x: drop redundant MCU restart before firmware download
+Date: Tue, 10 Nov 2026 11:07:37 +0800
+Message-ID: <20261110030737.367177-1-emery.hsin@mediatek.com>
+X-Mailer: git-send-email 2.45.2
 X-Mailing-List: linux-wireless@vger.kernel.org
 List-Id: <linux-wireless.vger.kernel.org>
 List-Post: <mailto:linux-wireless@vger.kernel.org>
@@ -103,29 +80,38 @@ List-Unsubscribe: <mailto:linux-wireless+unsubscribe@vger.kernel.org>
 List-Owner: <mailto:linux-wireless+owner@vger.kernel.org>
 Precedence: list
 MIME-Version: 1.0
-References: <20261108-ath11k-tx-airtime-v1-0-f1a02b2372d4@gmail.com>
-In-Reply-To: <20261108-ath11k-tx-airtime-v1-0-f1a02b2372d4@gmail.com>
-From: Christopher Griffin <christophergriffin05@gmail.com>
-Date: Mon, 9 Nov 2026 20:18:13 -0600
-X-Gm-Features: AclHuK9uu4Zt4AmknOEeRBG3AMABDQ7pzydp1LGIC-VkddAQ1RAQ1A1MKWWaYa8
-Message-ID: <CAKobHXA5QnH+1APCD6rL-yS4LvSO5y90wEjk6Sz_uYhmfv2wmQ@mail.gmail.com>
-Subject: Re: [PATCH 0/2] wifi: ath11k: feed mac80211's airtime fairness
-To: jjohnson@kernel.org
-Cc: linux-wireless@vger.kernel.org, ath11k@lists.infradead.org, 
-	linux-kernel@vger.kernel.org, julius@bairaktaris.de
-Content-Type: text/plain; charset="UTF-8"
+Content-Transfer-Encoding: 8bit
+Content-Type: text/plain
+X-MTK: N
 
-Jeff,
+Resetting the MCU state before firmware download is the legacy approach
+and causes problems on MT7928. The wfsys reset at probe already leaves
+the chip in a clean state, so drop the MCU restart and FW_PWR_ON poll.
 
-Please drop this series. Julius Bairaktaris posted the same two
-changes three weeks earlier, as patches 1 and 4 of "wifi: ath11k:
-airtime queue limits, airtime fairness and a driver TXQ scheduler"
-v5:
+Fixes: 9eef868b86db ("wifi: mt76: mt792x: ensure MCU ready before ROM patch download")
+Signed-off-by: Emery Hsin <emery.hsin@mediatek.com>
+---
+ drivers/net/wireless/mediatek/mt76/mt792x_core.c | 7 -------
+ 1 file changed, 7 deletions(-)
 
-https://lore.kernel.org/all/20261018174904.1757161-1-julius@bairaktaris.de/
+diff --git a/drivers/net/wireless/mediatek/mt76/mt792x_core.c b/drivers/net/wireless/mediatek/mt76/mt792x_core.c
+index 80756aa8d99d..1965e9de7099 100644
+--- a/drivers/net/wireless/mediatek/mt76/mt792x_core.c
++++ b/drivers/net/wireless/mediatek/mt76/mt792x_core.c
+@@ -1135,13 +1135,6 @@ int mt792x_load_firmware(struct mt792x_dev *dev)
+ {
+ 	int ret;
+ 
+-	mt76_connac_mcu_restart(&dev->mt76);
+-
+-	if (!mt76_poll_msec(dev, MT_CONN_ON_MISC, MT_TOP_MISC_FW_STATE,
+-			    MT_TOP_MISC2_FW_PWR_ON, 1000))
+-		dev_warn(dev->mt76.dev,
+-			 "MCU is not ready for firmware download\n");
+-
+ 	if (is_mt7928(&dev->mt76)) {
+ 		dev_info(dev->mt76.dev, "Loading CB firmware patch: %s\n",
+ 			 mt792x_cb_patch_name(dev));
+-- 
+2.45.2
 
-I missed it when I searched before sending; sorry for the noise. I've
-tested his series on IPQ8074 and QCN9074 and replied to it with the
-numbers.
-
-Christopher
