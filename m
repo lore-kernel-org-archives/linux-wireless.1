@@ -1,59 +1,63 @@
 Authentication-Results: smtp.subspace.kernel.org; arc=none smtp.remote-ip=168.119.38.16
 ARC-Seal: i=1; d=subspace.kernel.org; s=arc20261015; a=rsa-sha256; cv=none;
-	t=1794303127;
-	b=NPguFab/m6e/O6UMJ4aSlLM5lihJB/TxvkkVh97sqeZOfmrY48cVFsdFdksGlHCGIp/S
-	 nF4xkxSsazrRB62Vvvl/Um0A6C0sw/uhCCD/8tCML1SJb/FnKuEKXrNWukqidxQ3d8+Gf
-	 200YmNOkgtJl50CZ5jRe+7Bp7+DTCqZuVFig3rNyMIJ6fR4AdrwkC/Q/51PCbv3WpBt7u
-	 WSxKxY8iDxPLuRFrdcMVW6w4CqdBt89u89XwDm/1Mgb4yrZlPwNRyDzjVOITm7zh2yL4O
-	 vrfzUBsSBT1tSwZ25Jr0kl8U2V067bx2c43imqWApMDx7HmOeB++P5cNkVVWVQRJ43g==
+	t=1794304313;
+	b=PDR+H294pIejllyw0w77qAt9rahjYVoK5qbBcoPq+EdsuXWhS4/nCgALB9cGniDsiGrK
+	 iGrgqGD8FFO7BF1TV4OiCK8km8GDvh/MytNpRVISjPWl9/tCrjuurQgUAVNPTj/d423sP
+	 9+tysv6Ow015NW6IBeTsj2yOBZK1GfXFt8w0dXRFKVfl43FpjNJuLgbkJnPMO9D8b3pAy
+	 wpob3CKETW3qUvnF9j3DmqsUyTnLDRC/6ShZuP3dl2I0cniXOtQ+9HukKtzuPt7Q0wfD6
+	 M7jDS8ZYr4J5QVJOmW6P6W2am7GTrKmPj9N5+p+lIDHsVK0IYxid1+KbllVzlIID9iw==
 ARC-Message-Signature: i=1; d=subspace.kernel.org; s=arc20261015;
-	a=rsa-sha256; c=relaxed/relaxed; t=1794303127;
-	h=DKIM-Signature:Received:Message-ID:Subject:From:To:Date:In-Reply-To:
-	 References:Content-Type:Content-Transfer-Encoding:User-Agent:
-	 MIME-Version:X-malware-bazaar;
-	bh=/cGNwRQhw2h3JzPtyA5P1rMbxBdzaDgGD6+2pL7TUp4=;
-	b=u3kS/5gqTDhJ75tJXJp7BNeXTWlOboC/7ktEzUSFdDOEqcfxidLqUU6qCdUkVMkjo7ml
-	 4HMml9kKeA0YKHbmDK3fmtMDMPUn73bCqOdhV+Xnk0hljar2n1774ZpbFndtTo/aft+5Q
-	 GmLNWuXjIHRWAEBBfnPMmPv9I+LQMsZOh6lUaeMb1YmedKSbMKeXuuFGjnrnBnWVeBEGe
-	 5Cw34/38G93pBhi6aZm/6JzLb2xlTOykpHYg5PLIRbA4O0/7XqirzWrx8WWiywevOIDaj
-	 QfvQ2tOOtUc5ASX8nmURYUbb6/w5+bJWvtQhVam9xN6SuoTyQu9/QOxmRSkkgWLvZcQ==
+	a=rsa-sha256; c=relaxed/relaxed; t=1794304313;
+	h=DKIM-Signature:Received:Message-ID:Subject:From:To:Cc:Date:
+	 In-Reply-To:References:Content-Type:Content-Transfer-Encoding:
+	 User-Agent:MIME-Version:X-malware-bazaar;
+	bh=BSUyMZbUn8O+QiO2CeUKN2Iz1br7Q9gZAitcRCrCAMA=;
+	b=zbvvxfWXvjuYeHSIQmwZLDJYdV6Pyz9S1vhHAYt5oQmsk9/LyP0lRWPvSA3PsPK7O78z
+	 /ZSPA8IYbMhXuXX8Xky6md4h3Bzp5p53ooyAUnf6U7nhbEVx2dxr8iVbwHzayfMuNSHhX
+	 nL8aF5kNud8+oWMsJyP2VlUGmMYIdO0yH4lfH9uRymGtX0Vs4DX1pRSxNM/aPX0HIgsvG
+	 tOS2l8f8mvDp4NHAFRQHhZY1WXlEA1nlmN7rKGqnYTIEoXF3p+9A3YP9tV6krnlsHbF/9
+	 d+CpYAhKIlgQz/aPCJqt9RyaVEVKewWYwG40MXI9LhxRZjykCgHAV8vAioTngb1zORw==
 ARC-Authentication-Results: i=1; smtp.subspace.kernel.org; 
 	dmarc=permerror header.from=sipsolutions.net;
 	spf=pass smtp.mailfrom=sipsolutions.net;
-	dkim=pass header.d=sipsolutions.net header.i=@sipsolutions.net header.a=rsa-sha256 header.s=mail header.b=Cu0hLc7s;
+	dkim=pass header.d=sipsolutions.net header.i=@sipsolutions.net header.a=rsa-sha256 header.s=mail header.b=sYZKaZjF;
 	arc=none smtp.remote-ip=168.119.38.16
 Received: from sipsolutions.net (s3.sipsolutions.net [168.119.38.16])
 	(using TLSv1.3 with cipher TLS_AES_256_GCM_SHA384 (256/256 bits)
 	 key-exchange ECDHE (prime256v1) server-signature ECDSA (prime256v1) server-digest SHA256)
 	(No client certificate requested)
-	by smtp.subspace.kernel.org (Postfix) with ESMTPS id 1A4BE606C677
-	for <linux-wireless@vger.kernel.org>; Tue, 10 Nov 2026 09:32:05 +0000 (UTC)
+	by smtp.subspace.kernel.org (Postfix) with ESMTPS id ECE97606A330
+	for <linux-wireless@vger.kernel.org>; Tue, 10 Nov 2026 09:51:52 +0000 (UTC)
 Authentication-Results: smtp.subspace.kernel.org; dmarc=permerror header.from=sipsolutions.net
 Authentication-Results: smtp.subspace.kernel.org; spf=pass smtp.mailfrom=sipsolutions.net
 Authentication-Results: smtp.subspace.kernel.org;
-	dkim=pass (2048-bit key) header.d=sipsolutions.net header.i=@sipsolutions.net header.a=rsa-sha256 header.s=mail header.b=Cu0hLc7s
+	dkim=pass (2048-bit key) header.d=sipsolutions.net header.i=@sipsolutions.net header.a=rsa-sha256 header.s=mail header.b=sYZKaZjF
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=sipsolutions.net; s=mail; h=MIME-Version:Content-Transfer-Encoding:
-	Content-Type:References:In-Reply-To:Date:To:From:Subject:Message-ID:Sender:
-	Reply-To:Cc:Content-ID:Content-Description:Resent-Date:Resent-From:Resent-To:
-	Resent-Cc:Resent-Message-ID; bh=/cGNwRQhw2h3JzPtyA5P1rMbxBdzaDgGD6+2pL7TUp4=;
-	t=1794303125; x=1795512725; b=Cu0hLc7scWAaupUs4m/t+2COvR8PXUt0+KoSkyzzqFT9PjV
-	/6GG52AxABSABBZFEN/sKpGT92AeUrvQgKOXPMjoKsMi3MdOFgiKXjm4isePFIJbp8RSl3JrjjL32
-	6BbeyGuxxgnPscRWJ+oOhGo/KsscnLJMmmzv3yR9k8ZC0Wa9EkJbBLHpdrLQT+LWKHmD74exUTBKc
-	MelBTLGZscK03FMPvlBuH6IfmmfM0W9Oy47q3xB2Ei8zRQg1E57tz6dHcwdRCCWd0xGzc6jiJe0P5
-	ecwb7p97lmciNOTX0AsigoDENTsuWfmoD3xx3BWQWyMAml4R+WTWaR0LgFKceEZg==;
+	Content-Type:References:In-Reply-To:Date:Cc:To:From:Subject:Message-ID:Sender
+	:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:Resent-To:
+	Resent-Cc:Resent-Message-ID; bh=BSUyMZbUn8O+QiO2CeUKN2Iz1br7Q9gZAitcRCrCAMA=;
+	t=1794304312; x=1795513912; b=sYZKaZjF4tTtBZKOO6+hZsCrPPbM9yB6tzvb62vHO947EgI
+	vHz4NSmaadcJhfawsJeN+Gb3aqe/UTU9CuuZUnjrPgP8HD0e0hfVmrdy8x+2muBeUwVbQW5w5JimA
+	o3GEmQjQ+n36zYObGsYrX1PBXzePAWN4GVAddgO5GwcKAWPp0MmDaOdNBAsw9xKh7kjcrW7qG+1AW
+	scYmeuqz0+wRvs3CW8p5SqhhVr9Zhzmdx3G3DvRDKQpgUi1gLgHCjI9wi64Eano7wRX+3jiyeEPnr
+	GNAm2NpKbmbssOud2KCwYPXLRMjMYkmST6u2qQng4GoSH1XbeJH3tAhKw6RWs4zw==;
 Received: by sipsolutions.net with esmtpsa (TLS1.3:ECDHE_X25519__ECDSA_SECP256R1_SHA256__AES_256_GCM:256)
 	(Exim 4.98.2)
 	(envelope-from <johannes@sipsolutions.net>)
-	id 1xQiCw-00000001NrB-2ude;
-	Tue, 10 Nov 2026 10:32:02 +0100
-Message-ID: <789111f04835447d7324b1fbc6ef3c5b14c0640f.camel@sipsolutions.net>
-Subject: Re: pull-request: nxpwifi-fixes-20261103
+	id 1xQiW3-00000001Pdg-3l89;
+	Tue, 10 Nov 2026 10:51:48 +0100
+Message-ID: <72bf69b140827263fc4dec20f757d54d85f4cc65.camel@sipsolutions.net>
+Subject: Re: [PATCH 1/1] wifi: mac80211: don't coalesce a new ROC onto an
+ expired one
 From: Johannes Berg <johannes@sipsolutions.net>
-To: jeff.chen_1@oss.nxp.com, linux-wireless@vger.kernel.org
-Date: Tue, 10 Nov 2026 10:32:02 +0100
-In-Reply-To: <20261103072022.3955633-1-jeff.chen_1@oss.nxp.com>
-References: <20261103072022.3955633-1-jeff.chen_1@oss.nxp.com>
+To: JB Tsai <jb.tsai@mediatek.com>
+Cc: nbd@nbd.name, lorenzo@kernel.org, linux-wireless@vger.kernel.org, 
+	linux-mediatek@lists.infradead.org, Sean.Wang@mediatek.com, 
+	James-LY.Huang@mediatek.com
+Date: Tue, 10 Nov 2026 10:51:46 +0100
+In-Reply-To: <20261104092050.1930716-1-jb.tsai@mediatek.com>
+References: <20261104092050.1930716-1-jb.tsai@mediatek.com>
 Content-Type: text/plain; charset="UTF-8"
 Content-Transfer-Encoding: quoted-printable
 User-Agent: Evolution 3.60.2 (3.60.2-3.fc44) 
@@ -68,25 +72,31 @@ Precedence: list
 MIME-Version: 1.0
 X-malware-bazaar: not-scanned
 
-On Tue, 2026-11-03 at 15:20 +0800, jeff.chen_1@oss.nxp.com wrote:
-> Hi Johannes,
+On Wed, 2026-11-04 at 17:20 +0800, JB Tsai wrote:
+> From: james-ly huang <james-ly.huang@mediatek.com>
 >=20
-> Please pull the following nxpwifi changes for Linux 7.4.
+> ieee80211_coalesce_hw_started_roc() computed the remaining time of the
+> running ROC as
 >=20
-> Thanks,
-> Jeff
+> 	remaining =3D cur_roc->start_time +
+> 		    msecs_to_jiffies(cur_roc->duration) - now;
 >=20
+> and merged the new request into it when the new duration fits. When the
+> running ROC is already over, that subtraction wraps around (unsigned),
+> the "fits" check passes, and the new request gets added behind a ROC
+> that will never produce another on_channel or expired event.
 >=20
-> The following changes since commit c3e67bd82b9b9b1a5118f09a429ccefe2aab07=
-41:
+> The expired-but-still-listed state is not rare at all: the driver's
+> ieee80211_remain_on_channel_expired() only queues the hw_roc_done work,
+> so until that work runs - the driver's UNI_ROC_ABORT round trip can
+> take tens of ms - every ROC on the list whose time is up stays listed
+> with started=3Dtrue. A remain-on-channel / mgmt-TX request arriving in
+> that window hits exactly this path.
 >=20
->   ipv6: reject wrapped temporary address preferred lifetimes (2026-11-02 =
-22:31:32 +0100)
->=20
-> are available in the Git repository at:
->=20
->   https://github.com/nxp-upstream/nxpwifi-next.git=20
+> Check the ROC's end time explicitly with time_after_eq() and refuse to
+> coalesce once it has passed; compute the (now guaranteed positive)
+> remaining window from the same end time.
 
-I suspect you meant to include a tag here?
+Please rewrite this with a useful commit message and comment.
 
 johannes
