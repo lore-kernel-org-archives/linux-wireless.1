@@ -1,93 +1,92 @@
-Authentication-Results: smtp.subspace.kernel.org; arc=none smtp.remote-ip=209.85.128.45
+Authentication-Results: smtp.subspace.kernel.org; arc=none smtp.remote-ip=209.85.221.51
 ARC-Seal: i=1; d=subspace.kernel.org; s=arc20261015; a=rsa-sha256; cv=none;
-	t=1794346491;
-	b=BO4e+QufBOgmHHudUtc8xwKbHF1MUBP4r6mJibVKeO8GmosHOPhN/CIwTzns9UN8+m/C
-	 z1stjon8ry26dw+3vym7iCnrRWeBcVIUENe+eZVv9S4RXT5KE6dds8keOyLlMQ18CdD93
-	 RqLU4ZBnNRtxrUuwETKnGTXGaRS80VBWpi2IColm3qReciUeTuBNXZKoZ2Q81I6kTVYq1
-	 8+9QpBFjieAGL7rAd3vDMsrbI9I6DL0APLOZOqQlinjg/sEeRhBefpiLfMC28bWe/PUb9
-	 GSj+E3b5HEDV8SXzcMQJ5CQVhcaPlDHBxZtpJHWLDQHmXvsn2xqzEl7Pi9XTgIn4w2Q==
+	t=1794347790;
+	b=f7E/svzVIWMpcaqL9w5IKOfZCOZnik9CildFXhr4nzLMapwmBDUbrEwdDXLp2RJBjX1F
+	 uRGPlXAwCVKjiqcOD0Ig87xw+VW4U46yYWk2YHaLhxEEvgcy2emfKA5aVmho9NMffYpVB
+	 N+53kURBInU6Ev5nNHLrc6Z1eogew3OXW54C7/CQSFBzjDCWLcD8J45o/evohLYwY2pH7
+	 4XfHJjfikhbvUO5W321GKSaLDcp62wE7lRL+j9pZjwEWi6y0bKpqDKx1GYNlf78L1GUFp
+	 26wZ1u3hCzVX9u9gcsHjl8S+t4mT4nAt9gC39O7hgrcShOOoMiBj5YHe0783ihj89rQ==
 ARC-Message-Signature: i=1; d=subspace.kernel.org; s=arc20261015;
-	a=rsa-sha256; c=relaxed/relaxed; t=1794346491;
+	a=rsa-sha256; c=relaxed/relaxed; t=1794347790;
 	h=DMARC-Filter:Received:DKIM-Signature:X-Google-DKIM-Signature:
 	 X-Forwarded-Encrypted:X-Gm-Message-State:X-Gm-Gg:X-Received:Received:
-	 From:To:Cc:Subject:Date:Message-ID:X-Mailer:MIME-Version:
+	 From:To:Cc:Subject:Date:Message-ID:X-Mailer:MIME-Version:Content-Type:
 	 Content-Transfer-Encoding;
-	bh=kn3iaBA+TWk0hHS2rgVYu4JsxeOy72hg1sbB0FgdpYA=;
-	b=LI5/ZIDOOAfy8TTOgCp1HSx50MnQSdxp1mVzJCCkbtW3Kh/ga6nFBSzkz0DEyuETLz2j
-	 zHLEDsuHjLUIwrMq+8IIjVA5cBI7VMvRXJbhyJhKB/q5p4bSlWdkGjTxzYi17RDnGX72e
-	 pESVjrpARzlV5MkeybsgU92pmoscf318B4Ht3je993FULv/QBSyi8FA9jaBpVg1GZAkDx
-	 XzcDBbKghxRkBdt3uTo0i9nZ7Dzb92RPXhLfklFZacC3WC2mKGWI1k0lTMBDdaYNpYDFK
-	 oIU9vq1yQCFY1A5uFrSfihOhY4/LFkRaJDoBTppIQJRElD9OjGv7/zAe73LHbl148Cg==
+	bh=ra3QtoJe+wCuwUEfgDTPeqd7lp/+YO3cFy9zYknvbsM=;
+	b=leIjliCfGErEc57HIqwJmNdsVAelm/kqPQeN1T2Kfm6kBP02bJrqOeJQitOVn7qU/iEp
+	 pyTQ48Z/G0Q6O3IVURMhEJmSxjW4N6YL1QF5GrfTIqntarW/GcyuEZBkfh/oCXHN1tyGy
+	 LJD74r7mrqrT2MVUyXg4iKqiuzCclZYBmDtgWNP29RBTRKGZhOgpNqSXi6RD0+Y/G05Dt
+	 3QzsGr2S4FT9vPh9fBglmwqml+f/2qOaVLpmeyZWHsa/ez235ACaOIWK2o3ds9q9dEtJ1
+	 InTXEZJz7ZNLiL0Mgm5LmD/6Hpqrqpcndvmenpm4DkT3egPolYUENLBVj+ewR4ENqYg==
 ARC-Authentication-Results: i=1; smtp.subspace.kernel.org; 
 	dmarc=pass header.from=gmail.com;
 	spf=pass smtp.mailfrom=gmail.com;
-	dkim=pass header.d=gmail.com header.i=@gmail.com header.a=rsa-sha256 header.s=20260707 header.b=jzWkRBz7;
-	arc=none smtp.remote-ip=209.85.128.45
-Received: from mail-wm1-f45.google.com (mail-wm1-f45.google.com [209.85.128.45])
+	dkim=pass header.d=gmail.com header.i=@gmail.com header.a=rsa-sha256 header.s=20260707 header.b=Lo3MmjzD;
+	arc=none smtp.remote-ip=209.85.221.51
+Received: from mail-wr1-f51.google.com (mail-wr1-f51.google.com [209.85.221.51])
 	(using TLSv1.3 with cipher TLS_AES_128_GCM_SHA256 (128/128 bits)
 	 key-exchange X25519 server-signature ECDSA (prime256v1) server-digest SHA256)
 	(No client certificate requested)
-	by smtp.subspace.kernel.org (Postfix) with ESMTPS id 3B43F606A32E
-	for <linux-wireless@vger.kernel.org>; Tue, 10 Nov 2026 21:34:51 +0000 (UTC)
-DMARC-Filter: OpenDMARC Filter v1.4.2 smtp.subspace.kernel.org 3B43F606A32E
+	by smtp.subspace.kernel.org (Postfix) with ESMTPS id 41DA0606C996
+	for <linux-wireless@vger.kernel.org>; Tue, 10 Nov 2026 21:56:30 +0000 (UTC)
+DMARC-Filter: OpenDMARC Filter v1.4.2 smtp.subspace.kernel.org 41DA0606C996
 Authentication-Results: smtp.subspace.kernel.org; dmarc=pass (p=none dis=none) header.from=gmail.com
 Authentication-Results: smtp.subspace.kernel.org; spf=pass smtp.mailfrom=gmail.com
 Authentication-Results: smtp.subspace.kernel.org;
-	dkim=pass (2048-bit key) header.d=gmail.com header.i=@gmail.com header.a=rsa-sha256 header.s=20260707 header.b=jzWkRBz7
-Received: by mail-wm1-f45.google.com with SMTP id 5b1f17b1804b1-4a3517554f7so27021295e9.2
-        for <linux-wireless@vger.kernel.org>; Tue, 10 Nov 2026 13:34:50 -0800 (PST)
+	dkim=pass (2048-bit key) header.d=gmail.com header.i=@gmail.com header.a=rsa-sha256 header.s=20260707 header.b=Lo3MmjzD
+Received: by mail-wr1-f51.google.com with SMTP id ffacd0b85a97d-4922523d1afso1562112f8f.0
+        for <linux-wireless@vger.kernel.org>; Tue, 10 Nov 2026 13:56:30 -0800 (PST)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=gmail.com; s=20260707; t=1794346489; x=1794951289; darn=vger.kernel.org;
-        h=content-transfer-encoding:mime-version:message-id:date:subject:cc
-         :to:from:from:to:cc:subject:date:message-id:reply-to:content-type;
-        bh=kn3iaBA+TWk0hHS2rgVYu4JsxeOy72hg1sbB0FgdpYA=;
-        b=jzWkRBz7Z8TXM7SyMnfS9c3MJyimsi6L3sBOh1730BnM0zcNLqFMigxC9bRyl9FskN
-         /nxo3WFjawFMTw4vTLA9UQHlYc/BlDT1TZSXUDP+bDxbVaMf8Heak2ijEcwkrXC6CY5v
-         MO/OV7S6Q0HPSvw6aSWBzqxyq2IYujA1qMe8urFA8d9ZbuwJkGp+GHry9gHqq1gw/nF2
-         1yFOYIoSTBV8Vz9XCOQmXPgBAWWKohbSmIzeXqYMlT+sVWw9BO3/DKipElmBeaL5g/2V
-         BMsZB8rYDNrsnu6GeTHMiY2H60YuG8gWQQfVYco20FyPZjtlDTTIReI252ifP9iDDBw7
-         RlWA==
+        d=gmail.com; s=20260707; t=1794347788; x=1794952588; darn=vger.kernel.org;
+        h=content-transfer-encoding:content-type:mime-version:message-id:date
+         :subject:cc:to:from:from:to:cc:subject:date:message-id:reply-to
+         :content-type;
+        bh=ra3QtoJe+wCuwUEfgDTPeqd7lp/+YO3cFy9zYknvbsM=;
+        b=Lo3MmjzD66xIMCjGFcAGJ5+d8S2RjC3BmJp5rNdyYHSxnlCbGgcHfa2ALiNjxfGiei
+         oR0U/eXV+jZXK+8lACQiknvMzXQALqXZoO5VITTOZGQ2ZU/7DxgqPwwGRcr4xGv6IwDc
+         ah6dloCteuJhuC3cH4aevOtGmenjGl4Q3FGaWpVJ/8WB+iisQ7CS8mS9LBPpyYyyvEd6
+         Ohdt7sbBS55p13esU5pAm1KaF57n9PLDMvNc53iKX1c78XslXnLg0c+x+NdtZj8zcv9z
+         BlyPRF+CDmhlp5xE/4wuhWCt9F02kasBmhajDC4z7bifupMcWClnRbkUDqNzSEKoWk/D
+         gxhA==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=1e100.net; s=20260707; t=1794346489; x=1794951289;
-        h=content-transfer-encoding:mime-version:message-id:date:subject:cc
-         :to:from:x-gm-gg:x-gm-message-state:from:to:cc:subject:date
-         :message-id:reply-to:content-type;
-        bh=kn3iaBA+TWk0hHS2rgVYu4JsxeOy72hg1sbB0FgdpYA=;
-        b=V9Ka69c9Rc6Jy5UgPqwK5HKJrynYmW97CxUuldW69wpb+slWPVF9pSHqD0V7Sd2xu7
-         SKUF/Um49lGyUdMpNb1h+CXhhZrdlfWeHodxQh4reW9aXQCTbYBWSUAjDAJJoweOO9wM
-         IV0YcpzqpCHKEHG8qj1mdtxM1x5aLA+SaYJOabGy9zqn8/EM8l9hNNdp65m7Le0CZbvg
-         zDr2O0kVpXzKE+A4pDk9atZ77T4wDC24eSNoAwvmaNW5hRhTCgWl+mqEPio4aJoFzCmM
-         54SuGbRJnp7P33xedJSthGur15LEvgJ0ySX9pwFTjfzO7IZlUYBBLSb+Gd5D7Qnq42Oq
-         N1qg==
-X-Forwarded-Encrypted: i=1; AL+hErHdbS4npT9YuIt5FRIxaO4o5XikoWg/Vckj2EULE++j1TCmi0lK3Fu8GdAkWPePEVelkfqzwxZhGlU5nGXynQ==@vger.kernel.org
-X-Gm-Message-State: APuU4Z8wL4arFY7qPpbxIMecZKIyPEJjoHb0B2VIfLd/zkv7dd+kWDFk
-	b75enODumigvHI6o/sSGf7tEz/QQKHNbeP+/lyFD1N4VjjICgPwjwAYE
-X-Gm-Gg: AYBFou0/75fOq5TlzgG9m4jhFInlPSh3oJx4A3yyBFGRjSeg1OptkxXE+WMsMGmy96w
-	gkZbd1h5Uu9YEspoAPjlUQK6Aul7GoRG8qYdH0vIXbO24AX4R5pLqC3xc9XkyZCoJCyErDVjoBs
-	Tfqivlr6F9+fL0X/o6ub5DC/v/9ptteywj/GLI4mFojV8/6/GsSNHzZfTH3FXtL4arjt9HDt62o
-	VhkJ173RnA0SvA/swR1UCseG9esWiHpooaANQbKZyB5ogBFgNTQ+aLzLPyxZ+V19Mn0SmrBuP9y
-	o9EQcd61GsL80hA1ixyQRptvQn+Zn0n66pazMF9ezzLyVC/B9IXUGP9+Xx6B37ABbakK0MruZb1
-	HgmSwU3N6tQ0tFuQ5861fx003iFkyUbjdhiHwVZ1owFmSk20GEpy8mn2oI2SOAkpyHk5/dytUV3
-	F5/jInx8Zo0HkSWgx7kyi7+NypqpVg5gBNF1Chfpxmttos0U5sa9q+Dlypy3hQqPq6hhasx9GlA
-	8doe4oKMu5w6Zz3VtMKCILl+P/nzvQCg+lKn330FOEAhtbIr4lLzI1JUQz2LzJoRFwY4+KjZTA+
-	2qYVDWDRaYzavJskWqYcQKMVUTO2JfDA1MxQYGGPAieOIwL4jhYH0Uzy
-X-Received: by 2002:a05:600d:82e3:b0:4a2:1867:10e8 with SMTP id 5b1f17b1804b1-4ba093953c6mr5795205e9.25.1794346489304;
-        Tue, 10 Nov 2026 13:34:49 -0800 (PST)
-Received: from localhost.localdomain ([188.190.249.216])
-        by smtp.gmail.com with ESMTPSA id 5b1f17b1804b1-4ba01fef1d0sm87113475e9.13.2026.11.10.13.34.48
+        d=1e100.net; s=20260707; t=1794347788; x=1794952588;
+        h=content-transfer-encoding:content-type:mime-version:message-id:date
+         :subject:cc:to:from:x-gm-gg:x-gm-message-state:from:to:cc:subject
+         :date:message-id:reply-to:content-type;
+        bh=ra3QtoJe+wCuwUEfgDTPeqd7lp/+YO3cFy9zYknvbsM=;
+        b=ykUNt+Bw+fyh9H7Wubb3H22fmwQw8S8YznHc4+si8Ksjqh9nS9HBU70D9v8lmRpUh0
+         mVrBR7W5mJ0zRCoCcmvXst6Lye2BM9d9eEavSC4HV8oRjIoKVZs9VyIokoaFYYF5WPnM
+         uOgefQHAj3hhg74OUTp/APBI70Z0ftYOsHtE7VoBAXEuzqLF+JcPVBZKIoPPWW5gJAaH
+         7mN3IWVPH4B/J8Bhe16bV6P6tAC99CEC7ApG3l8jGMst4U5J3gvu5hrLShOEEXXyy9Eg
+         ChyyKDglE8x2dSVE71QrTU+NCgtEKgBIx3xdbkn3QUgTTj8sFE0BM27MiVsOXsvGKR3h
+         tL1Q==
+X-Forwarded-Encrypted: i=1; AL+hErGFsNcMolc/JEo+p+1vKEnYTZC0xB4Z4P/r1/p+Zuz75/NlXGttqFCm1Yk/my/3MptzcoZCaCs6P6x4qLkNZQ==@vger.kernel.org
+X-Gm-Message-State: APuU4Z9g+hFlX9c3LdKfxMrVu57xklOEDTQkThJ/hUoEMyzWZke0i0aZ
+	7/7HgT0LEpQttQilMEKcmmm1JkC3D/dQmsy1zut7nUsoulX3lferOrnE
+X-Gm-Gg: AYBFou2I2dxF/QNnqF6iyHrk52ia4ryKdaoHy/AqiKeYwanTpce0567lEfKJqMICDht
+	zaGm9sgLUT6x01ducrtdX5EEbfYtD4Qa8yXilKMWxWDNmCuh+O6vX1kC+cPTRN0DrDrd+tS/dMM
+	d9KHNHZM0PU3zzJTzKUR7nyAuCesd8oWFGRSsIs8g31naa7wzr2fgwEX3iJ2NCQN41jUDA+7r33
+	SLfpHz8g92b4KR7NVtGzPa2tONGzOl4tZ8SkMAKVMu8h573CgyQ6p70VIQTI5AxqjFq7MiZjdcw
+	Kk0BTEbiAuCpuXIOhO48k2OKdZHzIFasAXYvQmkPkR9O3/MhWxcHhrxqc/iynwoUq6A9Xjtdi78
+	HlqWF/b5+Zwi+j0c/b6M+UxLTTuUViDf6+jUeMcUZslxf1QF6UGm4VJ07AKRXFPMDuwG8A7HssP
+	i5iZYU2nY5MT05sJrNRaKfWa5DwSAVJjGeOy4D/pOBA/R0/wIVZvyR3PBVXu7UodyK6GUG1xwyL
+	RxJSgtZlYUq7ToWyq4BHdTD98QA1RG/xs3A14Dt+WJnVoF4RNyuelonwgU8lcHjqls9ozEXgOnO
+	HstN8oZBmSoO+L75gvrYHzvQe/7f7RRsyX86wOHGi929WIuQ
+X-Received: by 2002:a5d:584d:0:b0:487:6f2:1a4c with SMTP id ffacd0b85a97d-499c7a25644mr419632f8f.25.1794347788659;
+        Tue, 10 Nov 2026 13:56:28 -0800 (PST)
+Received: from localhost ([5.83.201.131])
+        by smtp.gmail.com with ESMTPSA id ffacd0b85a97d-498366c4e07sm6762009f8f.49.2026.11.10.13.56.28
         (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
-        Tue, 10 Nov 2026 13:34:49 -0800 (PST)
-From: Vladyslav Tymoshchuk <tvlad744@gmail.com>
-To: Jeff Johnson <jjohnson@kernel.org>
-Cc: Aditya Kumar Singh <aditya.kumar.singh@oss.qualcomm.com>,
-	linux-wireless@vger.kernel.org,
-	ath12k@lists.infradead.org,
-	linux-kernel@vger.kernel.org,
-	Vladyslav Tymoshchuk <tvlad744@gmail.com>
-Subject: [PATCH] wifi: ath12k: report an aborted scan before cancel_hw_scan returns
-Date: Tue, 10 Nov 2026 23:34:38 +0200
-Message-ID: <20261110213438.342-1-tvlad744@gmail.com>
-X-Mailer: git-send-email 2.45.1.windows.1
+        Tue, 10 Nov 2026 13:56:28 -0800 (PST)
+From: Colin Ian King <colin.i.king@gmail.com>
+To: Johannes Berg <johannes@sipsolutions.net>,
+	linux-wireless@vger.kernel.org
+Cc: kernel-janitors@vger.kernel.org,
+	linux-kernel@vger.kernel.org
+Subject: [PATCH][next] wifi: mac80211_hwsim: remove extra trailing semicolon from a statements
+Date: Tue, 10 Nov 2026 21:56:27 +0000
+Message-ID: <20261110215627.947448-1-colin.i.king@gmail.com>
+X-Mailer: git-send-email 2.55.0
 X-Mailing-List: linux-wireless@vger.kernel.org
 List-Id: <linux-wireless.vger.kernel.org>
 List-Post: <mailto:linux-wireless@vger.kernel.org>
@@ -97,71 +96,30 @@ List-Unsubscribe: <mailto:linux-wireless+unsubscribe@vger.kernel.org>
 List-Owner: <mailto:linux-wireless+owner@vger.kernel.org>
 Precedence: list
 MIME-Version: 1.0
+Content-Type: text/plain; charset="utf-8"
 Content-Transfer-Encoding: 8bit
 
-Suspending while a hardware scan is running makes mac80211 warn on
-resume:
+There is a statement that is terminated with ;; - fix this by removing
+the extra redundant semicolon.
 
-  phy0: resume with hardware scan still in progress
-  WARNING: net/mac80211/ieee80211_i.h:2444 at ieee80211_resume+0x60/0x6c [mac80211]
-  Call trace:
-   ieee80211_resume+0x60/0x6c [mac80211] (P)
-   wiphy_resume+0x84/0xdc [cfg80211]
-   dpm_run_callback+0x40/0x124
-   device_resume+0x154/0x1f8
-
-__ieee80211_suspend() cancels the scan with ieee80211_scan_cancel(),
-which for a hardware scan only calls the cancel_hw_scan() callback and
-leaves it to the driver to call ieee80211_scan_completed().
-ath12k_mac_op_cancel_hw_scan() waits for the firmware to stop the scan,
-but ieee80211_scan_completed() is called from scan.vdev_clean_wk. That
-is a wiphy work, and wiphy_suspend() has already run the pending wiphy
-works before calling into mac80211, so the work only runs after the
-resume and mac80211 finds the scan neither completed nor aborted.
-
-Flush the work in ath12k_mac_op_cancel_hw_scan(), as
-ath12k_mac_op_cancel_remain_on_channel() already does.
-
-Tested-on: WCN7850 hw2.0 PCI WLAN.GNG.1.0-03342-QCAGNGSWPL_V1.0_V2.0_SILICONZ-1.81206.153
-
-Fixes: 3863f014ad23 ("wifi: ath12k: symmetrize scan vdev creation and deletion during HW scan")
-Signed-off-by: Vladyslav Tymoshchuk <tvlad744@gmail.com>
+Signed-off-by: Colin Ian King <colin.i.king@gmail.com>
 ---
-Reproduced with "iw dev wlp1s0 scan trigger" followed 0.3 s, 1 s and
-2.5 s later by "rtcwake -m freeze -s 20" on a OnePlus Pad 3 (SM8750,
-WCN7880 hw2.0), associated to an AP:
+ drivers/net/wireless/virtual/mac80211_hwsim_nan.c | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
 
-  without the patch    3/3 suspends warn
-  with the patch       0/3
-
-After the runs with the patch the interface is still associated and a
-new scan returns results.
-
-I tested on a 7.3-rc5 based tree with out-of-tree patches for this
-device. The function is the same in ath-next; I applied the patch there
-but did not build or run that tree.
-
-I used an AI assistant (Claude) for the analysis and to draft this
-patch and its description; I reviewed the result and ran the tests on
-my device.
-
- drivers/net/wireless/ath/ath12k/mac.c | 1 +
- 1 file changed, 1 insertion(+)
-
-diff --git a/drivers/net/wireless/ath/ath12k/mac.c b/drivers/net/wireless/ath/ath12k/mac.c
-index 9fd3841f71b7..d4c1f7cd7040 100644
---- a/drivers/net/wireless/ath/ath12k/mac.c
-+++ b/drivers/net/wireless/ath/ath12k/mac.c
-@@ -5875,6 +5875,7 @@ void ath12k_mac_op_cancel_hw_scan(struct ieee80211_hw *hw,
- 		ath12k_scan_abort(ar);
+diff --git a/drivers/net/wireless/virtual/mac80211_hwsim_nan.c b/drivers/net/wireless/virtual/mac80211_hwsim_nan.c
+index 6f90856099e8..21330850754d 100644
+--- a/drivers/net/wireless/virtual/mac80211_hwsim_nan.c
++++ b/drivers/net/wireless/virtual/mac80211_hwsim_nan.c
+@@ -278,7 +278,7 @@ void mac80211_hwsim_nan_rx(struct ieee80211_hw *hw,
  
- 		cancel_delayed_work_sync(&ar->scan.timeout);
-+		wiphy_work_flush(hw->wiphy, &ar->scan.vdev_clean_wk);
- 	}
- }
- EXPORT_SYMBOL(ath12k_mac_op_cancel_hw_scan);
-
-base-commit: d0fbb39d65dc9dcb4175fa6b23e473dec3670f4d
+ 	/* And deal with the lack of mac time stamp */
+ 	if ((rx_status.flag & RX_FLAG_MACTIME) != RX_FLAG_MACTIME_START) {
+-		u64 tsf = mac80211_hwsim_get_tsf(hw, data->nan.device_vif);;
++		u64 tsf = mac80211_hwsim_get_tsf(hw, data->nan.device_vif);
+ 
+ 		/* In that case there should be no timestamp */
+ 		WARN_ON_ONCE(rx_status.flag & RX_FLAG_MACTIME);
 -- 
-2.43.0
+2.55.0
 
