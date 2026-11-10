@@ -1,76 +1,76 @@
-Authentication-Results: smtp.subspace.kernel.org; arc=none smtp.remote-ip=60.244.123.138
+Authentication-Results: smtp.subspace.kernel.org; arc=none smtp.remote-ip=210.61.82.184
 ARC-Seal: i=1; d=subspace.kernel.org; s=arc20261015; a=rsa-sha256; cv=none;
-	t=1794280422;
-	b=b7PLETzsS0UKdzmj76JGxfDdvMmEZlUSMbz96uAgSmoKlm5kTbgKAlOCaAU7vIKxTnoO
-	 Dxn60nUOM4S7KOMw/G56AtZ19xFaKYUutsvWQ9UwBtz+WsYa9xIQpzfbdUmn40AVmA8On
-	 BUqPvhtaRyP0QzufZouta29HbuR1KnvKBykYfHfLQh2/UoVAQLd0KMXCvTQrr30JeWkk/
-	 8vN8ID8Fb8bLd13h0o6UUVcv3nhmZJ8PbZpfdkKgDGAKUdJJoIpXZnQgPKTr+ioZrO9nG
-	 9uslLedYT6gX/z5YFuQrJjZjD2KltBoPp+jtX86WaiRVpbC5O/Huv94ctuB5Z2oLD2Q==
+	t=1794280423;
+	b=3KimqMZnOOwg8cPQ+ox44DJVqtJNLyfrl3l+jAsbQCu0NH3wrxfZ7/6ZnFWjQPKPcIl2
+	 3iOKnwwe/LQyFLBnEyQlHa0hOWnsP6CKxYWlH/gvC0vDJ6ps6eM7WOaO4LiVzrxUvGKJe
+	 12h932Sk1lvfzWoeLUaAYsbWpfL+qEL/ohSRZ36GmHQ99f41wRxkbP5sOWE+/L02s0F6f
+	 JmoAyKJSnMOmnXqcq0dXBfdpGsRxbtPb6Om11KU+SaqGDAjUVa0habXOiQpy89Jy5MKVb
+	 FUv+/Tth5dEPpzKvilwRfNRZM9G9+REPPcqWIgFBlq2cIRKMNcfssD9D7PPC+XeDVSQ==
 ARC-Message-Signature: i=1; d=subspace.kernel.org; s=arc20261015;
-	a=rsa-sha256; c=relaxed/relaxed; t=1794280422;
+	a=rsa-sha256; c=relaxed/relaxed; t=1794280423;
 	h=DMARC-Filter:X-UUID:DKIM-Signature:X-CID-P-RULE:X-CID-O-INFO:
 	 X-CID-META:X-CID-BVR:X-CID-BAS:X-CID-FACTOR:X-CID-RHF:X-UUID:Received:
 	 Received:Received:From:To:CC:Subject:Date:Message-ID:X-Mailer:
 	 In-Reply-To:References:MIME-Version:Content-Transfer-Encoding:
 	 Content-Type:X-MTK;
-	bh=hGlaYzw+shYeBVv7YF+UseNrEEYGqB5adTNhGNtKdWM=;
-	b=JTtX83i/CiXej9vKt7DIHgH52pfeRG+kLvP0+2SdacHx+ae2lF9oqrPD7Z4yL1h000aS
-	 3a1+Zc+nze3T5UKgR/iTdJf9OP4dOiC7W/8nU4RBduVJAaNPwFkF3aIAI1OR+1N9fLMSY
-	 HaJfGidi5xqqdAfJx4ViCL60BJUIkPVMKoOEoq2b7hr3ch/NpdKnuH9S0FCf9Rodc/CDz
-	 f0lRkLx7uddUl8yd3jLaaDW/OLHsZHybvaRUIqptWht7W9RS/orNih/5MD7tzWaLJRauM
-	 U5Vriu5Vp4ZdfGHZcrUvFScBUGZYQK6kjfpZb6d7V/Ne47piq6HXrS9tq/nBnEWJibg==
+	bh=z4meNRwPR0gTIqxKvnxR0qV693IFvMZkroR4/E2fqMk=;
+	b=OLBe5Ym27StX/3xGxykNDJwr0Kv1S8CqB6GTI2qjQkiZr6DT9JxLxIXNHObU69eq38QM
+	 ut0am8svRQANysfIc68xfBGA/p+EclXyYUA0Hd9Wd6b6y1CxTnM0frr5iBzN8nW2+ve53
+	 6LCQLNb3dLh3AoeJ4e7O252VeQ7nzyf359NNIMNnhmP788umxTyFLZhE9s3ANpTR0PDOA
+	 zaUm9DqlWa20kFXcTkaHSwcLAcs4AG4kDuploqcgXD9F5WwrNj/OrdH27x6bSrPzfLX2V
+	 +GKMtU5X9b0TPfb3LBrjBY3g6h++3YCNPTUKZ/jSGndWLNIXLmab3EqAvENQnJbClFA==
 ARC-Authentication-Results: i=1; smtp.subspace.kernel.org; 
 	dmarc=pass header.from=mediatek.com;
 	spf=pass smtp.mailfrom=mediatek.com;
-	dkim=pass header.d=mediatek.com header.i=@mediatek.com header.a=rsa-sha256 header.s=dk header.b=FYFhM1zh;
-	arc=none smtp.remote-ip=60.244.123.138
-Received: from mailgw01.mediatek.com (unknown [60.244.123.138])
+	dkim=pass header.d=mediatek.com header.i=@mediatek.com header.a=rsa-sha256 header.s=dk header.b=MujpjhV5;
+	arc=none smtp.remote-ip=210.61.82.184
+Received: from mailgw02.mediatek.com (unknown [210.61.82.184])
 	(using TLSv1.3 with cipher TLS_AES_256_GCM_SHA384 (256/256 bits)
 	 key-exchange X25519 server-signature ECDSA (prime256v1) server-digest SHA256)
 	(No client certificate requested)
-	by smtp.subspace.kernel.org (Postfix) with ESMTPS id A817F606E610
-	for <linux-wireless@vger.kernel.org>; Tue, 10 Nov 2026 03:13:41 +0000 (UTC)
-DMARC-Filter: OpenDMARC Filter v1.4.2 smtp.subspace.kernel.org A817F606E610
+	by smtp.subspace.kernel.org (Postfix) with ESMTPS id E5BC2606E631
+	for <linux-wireless@vger.kernel.org>; Tue, 10 Nov 2026 03:13:42 +0000 (UTC)
+DMARC-Filter: OpenDMARC Filter v1.4.2 smtp.subspace.kernel.org E5BC2606E631
 Authentication-Results: smtp.subspace.kernel.org; dmarc=pass (p=quarantine dis=none) header.from=mediatek.com
 Authentication-Results: smtp.subspace.kernel.org; spf=pass smtp.mailfrom=mediatek.com
 Authentication-Results: smtp.subspace.kernel.org;
-	dkim=pass (1024-bit key) header.d=mediatek.com header.i=@mediatek.com header.a=rsa-sha256 header.s=dk header.b=FYFhM1zh
-X-UUID: b798e4aadcb411f1b1788b6acf885367-20261110
+	dkim=pass (1024-bit key) header.d=mediatek.com header.i=@mediatek.com header.a=rsa-sha256 header.s=dk header.b=MujpjhV5
+X-UUID: b7b72f14dcb411f18dc8c9802ae25ab1-20261110
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed; d=mediatek.com; s=dk;
-	h=Content-Type:Content-Transfer-Encoding:MIME-Version:References:In-Reply-To:Message-ID:Date:Subject:CC:To:From; bh=hGlaYzw+shYeBVv7YF+UseNrEEYGqB5adTNhGNtKdWM=;
-	b=FYFhM1zhRW66eGfF89D/9W2dOJOEwiYkN7NHLXbkOXceP2iRphB+4TEYjl9VChxf58e1E+isXfDPObXQ+8JAoTolrQ9+Iug1QKsqcMoXOeK9KVrZN6QLaXEA20wC1srlkXHGzVtymXusWwz9Jw9MPWwX/cPe9rJFdYTBnXN9Kj4=;
+	h=Content-Type:Content-Transfer-Encoding:MIME-Version:References:In-Reply-To:Message-ID:Date:Subject:CC:To:From; bh=z4meNRwPR0gTIqxKvnxR0qV693IFvMZkroR4/E2fqMk=;
+	b=MujpjhV5/lxN1FsadIm+N1ZYp+kb+NkbzwrU5lAzMY0XgmtBjC/ud8XAnJqGNKGK/7SJl7JCGnTHTsWvaKLAIjxUgcKuKwiWOD1Mp9/G3l9hbP6ZTZleT/ruoFoN9OJiZSRbGxsQiiD3TrvlAs6thz+Man2eUV0jZ8NlaVqrntc=;
 X-CID-P-RULE: Release_Ham
-X-CID-O-INFO: VERSION:1.3.21,REQID:37ef871c-8ae4-4c90-b3f3-590dd88b98f4,IP:0,U
+X-CID-O-INFO: VERSION:1.3.21,REQID:7a49a30a-f160-420a-9c76-6ea89ad5cf45,IP:0,U
 	RL:0,TC:0,Content:0,EDM:0,RT:0,SF:0,FILE:0,BULK:0,RULE:Release_Ham,ACTION:
 	release,TS:0
-X-CID-META: VersionHash:b0318ac,CLOUDID:1b941366-4b51-4c95-bb1b-80ac6aad9c96,B
-	ulkID:nil,BulkQuantity:0,SF:81|82|102|136|836|865|888|898,TC:-5,Content:0|
-	15|50|99,EDM:-3|-100,IP:nil,URL:0,File:130,RT:0,Bulk:nil,QS:nil,BEC:nil,CO
-	L:0,OSI:0,OSA:0,AV:0,LES:1,SPR:NO,DKR:0,DKP:0,BRR:0,BRE:0,ARC:0
+X-CID-META: VersionHash:b0318ac,CLOUDID:232b0f57-a87d-42b7-8ffd-9e23ca174329,B
+	ulkID:nil,BulkQuantity:0,SF:81|82|102|836|865|888|898,TC:-5,Content:0|15|5
+	0|99,EDM:-3,IP:nil,URL:0,File:130,RT:0,Bulk:nil,QS:nil,BEC:nil,COL:0,OSI:0
+	,OSA:0,AV:0,LES:1,SPR:NO,DKR:0,DKP:0,BRR:0,BRE:0,ARC:0
 X-CID-BVR: 2,SSN|SDN
 X-CID-BAS: 2,SSN|SDN,0,_
 X-CID-FACTOR: TF_CID_SPAM_SNR
 X-CID-RHF: D41D8CD98F00B204E9800998ECF8427E
-X-UUID: b798e4aadcb411f1b1788b6acf885367-20261110
-Received: from mtkmbs09n2.mediatek.inc [(172.21.101.94)] by mailgw01.mediatek.com
+X-UUID: b7b72f14dcb411f18dc8c9802ae25ab1-20261110
+Received: from mtkmbs10n1.mediatek.inc [(172.21.101.34)] by mailgw02.mediatek.com
 	(envelope-from <emery.hsin@mediatek.com>)
 	(Generic MTA with TLSv1.2 ECDHE-RSA-AES256-GCM-SHA384 256/256)
-	with ESMTP id 1842265381; Tue, 10 Nov 2026 11:13:35 +0800
+	with ESMTP id 1770056206; Tue, 10 Nov 2026 11:13:35 +0800
 Received: from mtkmbs13n2.mediatek.inc (172.21.101.108) by
- mtkmbs11n2.mediatek.inc (172.21.101.187) with Microsoft SMTP Server
+ mtkmbs10n2.mediatek.inc (172.21.101.183) with Microsoft SMTP Server
  (version=TLS1_2, cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id
- 15.2.2562.29; Tue, 10 Nov 2026 11:13:34 +0800
+ 15.2.2562.29; Tue, 10 Nov 2026 11:13:35 +0800
 Received: from mtksitap99.mediatek.inc (10.233.130.16) by
  mtkmbs13n2.mediatek.inc (172.21.101.73) with Microsoft SMTP Server id
- 15.2.2562.29 via Frontend Transport; Tue, 10 Nov 2026 11:13:34 +0800
+ 15.2.2562.29 via Frontend Transport; Tue, 10 Nov 2026 11:13:35 +0800
 From: Emery Hsin <emery.hsin@mediatek.com>
 To: <nbd@nbd.name>, <lorenzo@kernel.org>
 CC: <Sean.Wang@mediatek.com>, <jb.tsai@mediatek.com>,
 	<Quan.Zhou@mediatek.com>, <linux-wireless@vger.kernel.org>,
 	<linux-mediatek@lists.infradead.org>, Emery Hsin <emery.hsin@mediatek.com>
-Subject: [PATCH 16/28] wifi: mt76: mt7925: share the primary OMAC across MLO links
-Date: Tue, 10 Nov 2026 11:12:32 +0800
-Message-ID: <20261110031244.369014-17-emery.hsin@mediatek.com>
+Subject: [PATCH 19/28] wifi: mt76: mt7925: publish every link before sending any STA_REC
+Date: Tue, 10 Nov 2026 11:12:35 +0800
+Message-ID: <20261110031244.369014-20-emery.hsin@mediatek.com>
 X-Mailer: git-send-email 2.45.2
 In-Reply-To: <20261110031244.369014-1-emery.hsin@mediatek.com>
 References: <20261110031244.369014-1-emery.hsin@mediatek.com>
@@ -87,64 +87,113 @@ Content-Transfer-Encoding: 8bit
 Content-Type: text/plain
 X-MTK: N
 
-Previously every MLD link used OMAC 0, which can clash with another
-interface. Make each link reuse the primary link OMAC instead; only a
-3-link hybrid MLD gives every link its own OMAC so each band's own MAC
-is programmed independently.
+The MLD setup TLV is built from msta->link[], so a STA_REC sent while
+later links are missing carries a partial MLD. Publish every link first,
+then program them primary first. A single link to MLD upgrade re-adds the
+primary with a new wcid on the reused deflink storage.
 
 Signed-off-by: Emery Hsin <emery.hsin@mediatek.com>
 ---
- drivers/net/wireless/mediatek/mt76/mt7925/main.c | 16 +++++++++++-----
- 1 file changed, 11 insertions(+), 5 deletions(-)
+ .../net/wireless/mediatek/mt76/mt7925/main.c  | 60 +++++++++++++++++--
+ 1 file changed, 56 insertions(+), 4 deletions(-)
 
 diff --git a/drivers/net/wireless/mediatek/mt76/mt7925/main.c b/drivers/net/wireless/mediatek/mt76/mt7925/main.c
-index f191b9e7d3f5..01d7526dbfa9 100644
+index b497e904d4b5..a93df77da269 100644
 --- a/drivers/net/wireless/mediatek/mt76/mt7925/main.c
 +++ b/drivers/net/wireless/mediatek/mt76/mt7925/main.c
-@@ -379,7 +379,7 @@ static int mt7925_start(struct ieee80211_hw *hw)
- static int mt7925_mac_link_bss_add(struct mt792x_dev *dev,
- 				   struct ieee80211_bss_conf *link_conf,
- 				   struct mt792x_link_sta *mlink,
--				   u8 link_idx)
-+				   bool share_omac, u8 link_idx)
- {
- 	struct mt792x_bss_conf *mconf = mt792x_link_conf_to_mconf(link_conf);
- 	struct ieee80211_vif *vif = link_conf->vif;
-@@ -398,8 +398,11 @@ static int mt7925_mac_link_bss_add(struct mt792x_dev *dev,
+@@ -1212,6 +1212,9 @@ mt7925_mac_sta_add_links(struct mt792x_dev *dev, struct ieee80211_vif *vif,
+ 	unsigned int link_id;
+ 	int err = 0;
+ 
++	/* Publish every link before sending any STAREC, so the MLD setup TLV
++	 * describes the whole MLD.
++	 */
+ 	for_each_set_bit(link_id, &new_links, IEEE80211_MLD_MAX_NUM_LINKS) {
+ 		struct ieee80211_link_sta *link_sta;
+ 		struct mt792x_link_sta *mlink;
+@@ -1220,6 +1223,26 @@ mt7925_mac_sta_add_links(struct mt792x_dev *dev, struct ieee80211_vif *vif,
+ 		if (msta->deflink_id == IEEE80211_LINK_UNSPECIFIED) {
+ 			mlink = &msta->deflink;
+ 			is_deflink = true;
++		} else if (link_id == msta->deflink_id &&
++			   rcu_access_pointer(msta->link[link_id]) ==
++			   &msta->deflink) {
++			/* Single link to MLD upgrade: re-add the primary with
++			 * a new wcid so it binds to the granted band. This runs
++			 * from the AUTHORIZE transition before mac80211 sets
++			 * WLAN_STA_AUTHORIZED, so no data is being sent on this
++			 * sta and reusing the deflink storage is safe.
++			 */
++			link_sta = mt792x_sta_to_link_sta(vif, sta, link_id);
++			if (mt7925_mcu_sta_update(dev, link_sta, vif,
++						  &msta->deflink, false,
++						  MT76_STA_INFO_STATE_NONE))
++				dev_dbg(dev->mt76.dev,
++					"failed to tear down the old STA_REC\n");
++			mt7925_mac_link_sta_free_wcid(&dev->mt76,
++						      &msta->deflink);
++			synchronize_rcu();
++			mlink = &msta->deflink;
++			is_deflink = true;
+ 		} else {
+ 			mlink = kzalloc_obj(*mlink);
+ 			if (!mlink) {
+@@ -1236,8 +1259,17 @@ mt7925_mac_sta_add_links(struct mt792x_dev *dev, struct ieee80211_vif *vif,
+ 		err = mt7925_mac_link_sta_alloc(&dev->mt76, vif, link_sta,
+ 						mlink);
+ 		if (err) {
+-			if (!is_deflink)
++			if (!is_deflink) {
+ 				kfree(mlink);
++			} else if (link_id == msta->deflink_id) {
++				/* the upgrade path above already freed the
++				 * deflink wcid, so unpublish it here instead
++				 * of freeing the shared wcid a second time
++				 */
++				rcu_assign_pointer(msta->link[link_id], NULL);
++				msta->valid_links &= ~BIT(link_id);
++				msta->deflink_id = IEEE80211_LINK_UNSPECIFIED;
++			}
+ 			break;
  		}
+ 
+@@ -1246,13 +1278,33 @@ mt7925_mac_sta_add_links(struct mt792x_dev *dev, struct ieee80211_vif *vif,
+ 		if (is_deflink)
+ 			msta->deflink_id = link_id;
+ 
+-		/* published into msta->link[]; let the unwind path free it */
+ 		added_links |= BIT(link_id);
++	}
++
++	/* Configure the primary link first, it anchors the MLD. */
++	if (!err && msta->deflink_id != IEEE80211_LINK_UNSPECIFIED &&
++	    (added_links & BIT(msta->deflink_id))) {
++		struct mt792x_link_sta *mlink =
++			mt792x_sta_to_link(msta, msta->deflink_id);
++		struct ieee80211_link_sta *link_sta =
++			mt792x_sta_to_link_sta(vif, sta, msta->deflink_id);
++
++		err = mt7925_mac_link_sta_add(&dev->mt76, vif, link_sta, mlink);
++	}
++	for_each_set_bit(link_id, &added_links,
++			 IEEE80211_MLD_MAX_NUM_LINKS) {
++		struct ieee80211_link_sta *link_sta;
++		struct mt792x_link_sta *mlink;
+ 
+-		err = mt7925_mac_link_sta_add(&dev->mt76, vif, link_sta,
+-					      mlink);
+ 		if (err)
+ 			break;
++		if (link_id == msta->deflink_id)
++			continue;
++
++		mlink = mt792x_sta_to_link(msta, link_id);
++		link_sta = mt792x_sta_to_link_sta(vif, sta, link_id);
++		err = mt7925_mac_link_sta_add(&dev->mt76, vif, link_sta,
++					      mlink);
  	}
  
--	mconf->mt76.omac_idx = ieee80211_vif_is_mld(vif) ?
--			       0 : mconf->mt76.idx;
-+	/* Links share the primary OMAC except in 3-link hybrid mode. */
-+	if (share_omac)
-+		mconf->mt76.omac_idx = mvif->bss_conf.mt76.idx;
-+	else
-+		mconf->mt76.omac_idx = mconf->mt76.idx;
- 	mconf->mt76.band_idx = MT792x_BAND_AUTO;
- 
- 	mconf->absent = false;
-@@ -482,7 +485,8 @@ mt7925_add_interface(struct ieee80211_hw *hw, struct ieee80211_vif *vif)
- 	mvif->deflink_id = IEEE80211_LINK_UNSPECIFIED;
- 	mvif->mlo_pm_state = MT792x_MLO_LINK_DISASSOC;
- 
--	ret = mt7925_mac_link_bss_add(dev, &vif->bss_conf, &mvif->sta.deflink, 0);
-+	ret = mt7925_mac_link_bss_add(dev, &vif->bss_conf, &mvif->sta.deflink,
-+				      true, 0);
- 	if (ret < 0)
- 		goto out;
- 
-@@ -2516,7 +2520,9 @@ mt7925_change_vif_links(struct ieee80211_hw *hw, struct ieee80211_vif *vif,
- 		rcu_assign_pointer(mvif->link_conf[link_id], mconf);
- 		rcu_assign_pointer(mvif->sta.link[link_id], mlink);
- 
--		err = mt7925_mac_link_bss_add(dev, link_conf, mlink, link_idx++);
-+		err = mt7925_mac_link_bss_add(dev, link_conf, mlink,
-+					      hweight16(new_links) != 3,
-+					      link_idx++);
- 		if (err < 0)
- 			goto free;
- 
+ 	if (err && added_links)
 -- 
 2.45.2
 
