@@ -1,86 +1,85 @@
-Authentication-Results: smtp.subspace.kernel.org; arc=none smtp.remote-ip=77.238.176.206
+Authentication-Results: smtp.subspace.kernel.org; arc=none smtp.remote-ip=209.85.221.54
 ARC-Seal: i=1; d=subspace.kernel.org; s=arc20261015; a=rsa-sha256; cv=none;
-	t=1794330402;
-	b=zmfy0TzaO+NmHM/getTBI9gGWNFJStzP1eobwgqUBG/tzYZZPn126iwpi66wpPVKCWZV
-	 v4SSPxNdFX/pXb73FR1nl0omAgr7x+L50W2upPMiX1kpdOIXNJnaFI6LNCNekU+JgRWo7
-	 lg0yFFmAD4fp7Xsz9hGETWdjAbd47Hev5590EndsNJW/dhI07aV3a2EsqdmgCRv9ile6g
-	 Rvc9b4V0H6pzCkYERH8dcxDj0XV/RCnUxuDdZmdd8XnARGa040MX77ylRDMn/WSQoOMzB
-	 xv64/EaRfW16FjtDQqBsB0gx3MuB7QxosmLZcauqHG0ZfZqrFjoPN1vllMht/kEsMbA==
+	t=1794331231;
+	b=Fs7oNrXh6xQScWqN6GB12PoTVTcaPRdOOunNL/mxpO8Dvb0WeH9ScJUvBs4REgJksAG6
+	 QZ5WK4y/6NBcB2fAChDGCZ49EMV2iZshfCiUgAaNcAE5WntRQyMcKPhUMTPRej2a4wdIQ
+	 0a3chpJ8EdXdif1Qp2ncPvQFinkL1K1s35OQfqikKmnUMG+0ff1LofGJLVoSVovyNOlf4
+	 3qa/TR0Og/0RB4rSA+8bN3VIWgzJMMs/Qv7oYiT92mxI2EvMbh3McyX/IC75LWblIj9cT
+	 2boXed8Df1OYgG05kleZGUYGJscef0cRy05n2iXtiL8KAfl5SUaEu4LjHaqx1TCBBiQ==
 ARC-Message-Signature: i=1; d=subspace.kernel.org; s=arc20261015;
-	a=rsa-sha256; c=relaxed/relaxed; t=1794330402;
-	h=DMARC-Filter:DKIM-Signature:X-SONIC-DKIM-SIGN:X-YMail-OSG:X-Sonic-MF:
-	 X-Sonic-ID:Received:Received:From:To:Cc:Subject:Date:Message-ID:
-	 X-Mailer:MIME-Version:Content-Transfer-Encoding:References;
-	bh=NvWpvicabKlZLfiRwbSRPWozusNH6QpWm219PpurJyw=;
-	b=TtFpFbKXXCpcvQyNp8A2S4RbO7sRlZsNZUu1aXxLeJJ75ZQClN0g+wFJ36vjauHVHssY
-	 bvaIdD087/2sN7WR2gxGo4YFjI2P53J/FgKpm+R+t/cuTOICPaMXmXFRogr7baICTXV8H
-	 GWsmDs758NJgsuh9oQ6Sl6qgyGsS1EqevkLSXZa3o7BGHAJpax5OD4Tp8j7ZwxqxyDGbT
-	 Y3TSB9cJ4gFCxVR1U4KtlXTBig+C2vMzYve0XNzes13Z/sU7NTSCKn/IrlJgEApgfrRGA
-	 IvH3XPjR9cJCM8dzh82qQWIPmECliKF/ao0Yn5v4h3RIHEJyX1npLmRRJuGhKX/uqRQ==
+	a=rsa-sha256; c=relaxed/relaxed; t=1794331231;
+	h=DMARC-Filter:Received:DKIM-Signature:X-Google-DKIM-Signature:
+	 X-Forwarded-Encrypted:X-Gm-Message-State:X-Gm-Gg:X-Received:Received:
+	 Mime-Version:Content-Transfer-Encoding:Content-Type:Date:Message-Id:
+	 From:To:Cc:Subject:X-Mailer:References:In-Reply-To;
+	bh=uBV58YhPDOaC3nU5moWQwXL3FPvHNqE225/vb5rTGtE=;
+	b=NPFNUlml5w0u4UPlm6Wgwp36/8H7Tv5zR7rKw1fbsvKRQRbKjrZ6hFwLC3/B2lVuQgyd
+	 mSlzkTfyxiRBXiMzEmWqfu7ED1sKfx2fC73CnPUGjpxHNYfbCPTAHGG0/o0t0vj/JUowN
+	 bpatIi50V5Q3jdLlMT0oTU3NlSoAv7fzH2yykU0sBPcSOCtVGjx4Srp0KhO8jLUYXVOly
+	 H/yW9ndhMOY6dt4RhOkqbhAORIbGD93WoMOTlE2aNS1nZ3fHL24kkkfDI7g/pI7GFpnfT
+	 0IKDzTrslstLDAl2CUZftCmXBE3rHUZqfR7hEr7ORPdguqAJobtF4YImOiqfIsQGf7g==
 ARC-Authentication-Results: i=1; smtp.subspace.kernel.org; 
-	dmarc=pass header.from=ymail.com;
-	spf=pass smtp.mailfrom=ymail.com;
-	dkim=pass header.d=ymail.com header.i=@ymail.com header.a=rsa-sha256 header.s=s2048 header.b=TmkL7kDh;
-	arc=none smtp.remote-ip=77.238.176.206
-Received: from sonic306-20.consmr.mail.ir2.yahoo.com (sonic306-20.consmr.mail.ir2.yahoo.com [77.238.176.206])
+	dmarc=pass header.from=gmail.com;
+	spf=pass smtp.mailfrom=gmail.com;
+	dkim=pass header.d=gmail.com header.i=@gmail.com header.a=rsa-sha256 header.s=20260707 header.b=fq4RDCNR;
+	arc=none smtp.remote-ip=209.85.221.54
+Received: from mail-wr1-f54.google.com (mail-wr1-f54.google.com [209.85.221.54])
 	(using TLSv1.3 with cipher TLS_AES_128_GCM_SHA256 (128/128 bits)
 	 key-exchange X25519 server-signature ECDSA (prime256v1) server-digest SHA256)
 	(No client certificate requested)
-	by smtp.subspace.kernel.org (Postfix) with ESMTPS id F12EC606A31C
-	for <linux-wireless@vger.kernel.org>; Tue, 10 Nov 2026 17:06:41 +0000 (UTC)
-DMARC-Filter: OpenDMARC Filter v1.4.2 smtp.subspace.kernel.org F12EC606A31C
-Authentication-Results: smtp.subspace.kernel.org; dmarc=pass (p=reject dis=none) header.from=ymail.com
-Authentication-Results: smtp.subspace.kernel.org; spf=pass smtp.mailfrom=ymail.com
+	by smtp.subspace.kernel.org (Postfix) with ESMTPS id D1180606A32E
+	for <linux-wireless@vger.kernel.org>; Tue, 10 Nov 2026 17:20:30 +0000 (UTC)
+DMARC-Filter: OpenDMARC Filter v1.4.2 smtp.subspace.kernel.org D1180606A32E
+Authentication-Results: smtp.subspace.kernel.org; dmarc=pass (p=none dis=none) header.from=gmail.com
+Authentication-Results: smtp.subspace.kernel.org; spf=pass smtp.mailfrom=gmail.com
 Authentication-Results: smtp.subspace.kernel.org;
-	dkim=pass (2048-bit key, unprotected) header.d=ymail.com header.i=@ymail.com header.a=rsa-sha256 header.s=s2048 header.b=TmkL7kDh
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=ymail.com; s=s2048; t=1794330400; bh=NvWpvicabKlZLfiRwbSRPWozusNH6QpWm219PpurJyw=; h=From:To:Cc:Subject:Date:References:From:Subject:Reply-To; b=TmkL7kDhDxSD6TLzer3zNysH7oj+RCmx9VyRW9C0sXKtAV0NYGstfQ3VwFX33hV46/gGvZ4KUAPDgS/7Qjg/ClQdidxJPbS0GMkXmgTPTl38cCxs/jWf5Q4fB9r1Mmdt67ucpc55Z9dnm/Xf4dRRARMcCUcmB7qv1wlReNk+1Asz3y5bmCE7BeTitsgf2R2oLbNZjI5B/28qvICgq6uoUCx9D+wiN+VZV/s8YZHOVKVHVOKN7yQKhREVt0twmmwnWoBAVkO6mGaVZpWxfyw5TjrwGdmbTrrUiIKI2j4R5VuYtiFCBGwB488TX0QBQHr22hRI1eJzo7TohaqdMgVaNA==
-X-SONIC-DKIM-SIGN: v=1; a=rsa-sha256; c=relaxed/relaxed; d=yahoo.com; s=s2048; t=1794330400; bh=7wi68EwuwehhM71nwgOuZVXVKdB8qrX/xdmzFhWDxgH=; h=X-Sonic-MF:From:To:Subject:Date:From:Subject; b=KvYgPaRMcqB6o6UMsQaJXkLUTBcxjjQlM59pcMoAn+jyk7ezI+RPE7drXpuWgfjL6hgF0NY1iNZlJWrL/31ZteEo77N4VJ/deQQtybYd8RhKJlv/rw3hi6dnSvbgy02hyCA1O6reIu14oQD3Gd//1KZizx2qG1PeMt+9WZMDpb0ezeYm65nDIzoOBgpLEyMlNdElTvwhjzcCTw4dYBVYW1KOIir73drt8hG5HvA+i77vs7+T/4DFiV3a1FQK4X/Of685kle9ICScsiqlDuh+H04PFk8nU8E/MvWxGH8fDx1/NY7SMS+VstR9+IMMMnEDjqqjSmxk8BGjt7FK0m9Pgg==
-X-YMail-OSG: HdnUYZwVM1mXQXJoZKvpLTQdXO83tVOLChqVBwi_t3P84g_i.G9lrKH9oOMMLC0
- dHqaMU_tLyu.4Sgd_o8lnanuxhbeimRlW4T2QiV2G2R2nAFdnfeBInDGLjgaMMWPdu2Cm3dzN9vw
- GFU3oFzXJOrTb3Hi9dehOjaCHEEC0nGaH5RCptMhBxmiV3UP3uVe7fYQ.skz5o54gPMmBhQAxVsa
- zLohhXa9NDieBxDubKIq24IVQm.69JNA_1b_fgWx2SF.EzxmUW4WRQ6ivVq1JGws8NSAd9w8otCR
- HtQSNW9k3kAetgOWUKznXteBrMH6v7fXF2QNMIGMVFE_Mxlv51UsXmvtzrJu3pKZb0TdnflpMrZA
- cnJye3vlR0Sq8wygQ7F7X0tRBACmHOJDdXGYx5EzDmINucd3U3TIghDIrIRDXoFcG8P2DWbDvVTR
- Jjbj0E3ErHiK0eL0y_hl1nptwACmV.cByrNC_Az3fbLInxumEoCZbBk1ieE2AsrFJiKbVCsg0YG3
- 9EWy0tS6nbIJFE9D7O5dNFuwfRD1F1ikEp50PtGUp4xhTWa43a92_DNeVPZS12qVgb3nwWrSfaGi
- pyfH.mle.djdOZ2QPkXlIibIag3Mdj4F3iq.O2_JKobpupnnjtblg4TOT6qrpt6HBaB_e.t7qkrm
- vvZx1DDJ9uguT7l68S1bCMNrpVuu5FAtdwUwLxwzMBe01pCCDnGRrP4WnXlfu5F.Fhs7jLe1APWk
- GijTU9seqDLtZ7l8gukWfWrZj4aocS.JTO6UX6WJ6w47wa4zO7QGoOGmQ_knC8zBbCyfz95BHL5u
- 6eDTqklLeMkSfFQE7LU361TDBx7apoqo94n_r.zNL4Nfp7BoHKCIDsJMRnR.F5vtTAg1CZb4coug
- W79juaqLpbkN1fbWVpHQoV6QivjwFMF5pZSn.RXPavofe2N_yF55gfGrZzWIPAEAA2jPG7mWh3gi
- eWon5REE0EGvz2yvCW2vXdxImukIgkpwd6AtTAqGIyAvqZKMSPa_SuXX0SYk5CcEfqcExmOFcnmV
- CtW.9xJClQdL92qu.dMgSXnJEgkO6aM2sOa2yj9nmYZ86tLUZMqNR9bjsEApzvHxSj0kkWc2ZHSh
- mS.VsFamqOigCTLwvx_4FfjMidFQT5zRcQyYogYUImPzM452ZaRLFLSZSqlziQde27KQkex1khG.
- czfdzal8Nla2af2G3IC.UCxFiU.e5TdyBKXbjp_jUyddMX6ts11fz.5wNS_vq4HPxsPEbHfkCcFS
- pbv1fzVwnm9QN2j1aKZqM.mbBZaGQBuvMDjFtH7wdBvW8t77lGdCB4iqGiWNUn0jPnq5rGnwD0yo
- 4stF.rHNlsbG0XkByvtFa1Abb0XImWvALnXD8sZ8q23K9T_DQguuZojOuFzgecwnXibcQ4Aqi92z
- nKs7BClq4H8sGMANzC4qtr9NSkCV4xA77i7pnhfuYil7YN4lbKk.hAEXQURsb1CHKkhO6TGglax3
- HHs5bkS.G2FD_6svedHtHRXgDhqOCLB11zebwgwNN.2tTBHi246ln8dBgKzzSwtA9aQted9hHeFA
- YbLYv65syw6tFxEhh.Bl_fhmrd_AFlrefNYZbCorhxS2RDCDR9KqHWb3ELc3Sy3pkRvmyn1QqzjD
- DRh1Fx2jl5nWR6a5vlXbIh05sS8CDBIKAqVLVC6GBc2.kPAoR330NL68KJUKCSKMC9TsgkM10dZo
- sPdlGLfuv3TbBo0pFpX6qeYdY6e3bj1hodpVap61Zm1xuzpfyg2kvGYvqf.4pN70IKyH7x4TX8wY
- HowtJz9DGhe.UjfzF.F1foHjHu8ZPcWHtr3w8HXKJV5mnAoa4nNtqpr1UEyL7blmYdT7fYn4TVIf
- Dxobp3N4.ykM0GxpLzs9R_Me0PZkPMZGtRNBYg0tPOf_tI619qVU5m2WILgi8_Hjn98qNakSk91b
- 4P7_a2eMMOq2aBbUXi0TMfAW2C.BFmZ9_9LsyDlrhLLaG5WcMtpejbVAoX2vKi8oCM5xANVa7oHH
- 0Tsu4Z.MSzafcjHVee74nniHPkVMuDt9nLCw4tVfySIGYtoCRyxzzChwlbPYwrh6woGtDfybkInJ
- y7b9QwdhS3BhusAIzgDGXIyUM.8GMfZeIweQiISYFhS0BzRqt98bkIVZakNCLihJF6iSzKl9u3t6
- i.sS7cF8CloEpdmQkXCDusPITxhuINAZ3dt.7BqIjBawcyZyqqcA8GT8pYDPnIFNHhPKXosJ6GLG
- B.iFq2Cj8LtDPy0iqR0NjzeGm1L5uinDeru3gbWHNh2NPGw23UbFPFu5LMjU3J3EwDrk_1.eI15Q
- 1yuXs1jJjrA--
-X-Sonic-MF: <dominikengelhardt@ymail.com>
-X-Sonic-ID: 1ab11be0-6188-45b6-b460-87bd9e639eb8
-Received: from sonic.gate.mail.ne1.yahoo.com by sonic306.consmr.mail.ir2.yahoo.com with HTTP; Tue, 10 Nov 2026 17:06:40 +0000
-Received: by hermes--production-ir2-5dd9bf4598-9c455 (Yahoo Inc. Hermes SMTP Server) with ESMTPA ID 73cd908788e04c84a33f61bac000e531;
-          Tue, 10 Nov 2026 17:06:35 +0000 (UTC)
-From: Dominik Engelhardt <dominikengelhardt@ymail.com>
-To: =?UTF-8?q?Toke=20H=C3=B8iland-J=C3=B8rgensen?= <toke@toke.dk>
-Cc: linux-wireless@vger.kernel.org,
-	Felix Fietkau <nbd@nbd.name>,
-	Dominik Engelhardt <dominikengelhardt@ymail.com>
-Subject: [PATCH ath-next] wifi: ath9k: let mac80211 handle filtered non-aggregated frames
-Date: Tue, 10 Nov 2026 18:04:59 +0100
-Message-ID: <20261110170459.31857-1-dominikengelhardt@ymail.com>
-X-Mailer: git-send-email 2.54.0
+	dkim=pass (2048-bit key) header.d=gmail.com header.i=@gmail.com header.a=rsa-sha256 header.s=20260707 header.b=fq4RDCNR
+Received: by mail-wr1-f54.google.com with SMTP id ffacd0b85a97d-498f5fa5103so433847f8f.2
+        for <linux-wireless@vger.kernel.org>; Tue, 10 Nov 2026 09:20:30 -0800 (PST)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+        d=gmail.com; s=20260707; t=1794331229; x=1794936029; darn=vger.kernel.org;
+        h=in-reply-to:references:subject:cc:to:from:message-id:date
+         :content-type:content-transfer-encoding:mime-version:from:to:cc
+         :subject:date:message-id:reply-to:content-type;
+        bh=uBV58YhPDOaC3nU5moWQwXL3FPvHNqE225/vb5rTGtE=;
+        b=fq4RDCNRm/e6DSM4AE0Sheb5en493vzQxP1ZfjnRmZAnrOZx3up+liWrHxHbnpA1Cs
+         SQqXyT2i4nuEdrl8OBq6hEpNOuKbGXIAtvjfFeg8k+FIXLbYJXkvvRRQXlpYFvGByaQt
+         M5kTCL6ZTUIUwn6brZUTYS7NsME1VSO341ncTSO6Y3k3AR+9E2OjBtsQmregFNwP5mBT
+         FbAWagCfjSkpQajtN9OdIRVvdmcyq+pPg5yDO4m719qElFC5DLrpcqAXvnIjTm99RqFL
+         9WsCDAE1YtITpabD50EXUBuN9ZYeGhw+y1mIz7SuNY+tErOlWvY9GIf+k8HZGqiIOSfC
+         5Kyw==
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+        d=1e100.net; s=20260707; t=1794331229; x=1794936029;
+        h=in-reply-to:references:subject:cc:to:from:message-id:date
+         :content-type:content-transfer-encoding:mime-version:x-gm-gg
+         :x-gm-message-state:from:to:cc:subject:date:message-id:reply-to
+         :content-type;
+        bh=uBV58YhPDOaC3nU5moWQwXL3FPvHNqE225/vb5rTGtE=;
+        b=Aes4/fAbWfoSGTGAoUq34cWNxmBleWl4MSZaVVJWbIUq9u0A4rWa3a4rhLJnP3arge
+         XYxTsI3+pBpnJhtWLi/6lVc3B/k5vBoFP54NhaIUNSjk/+R46/KB+b6HhrUrsy1TSSbv
+         MwLG7eU9WOrPg3ctUmZZ4D6ZPaMbsayOeis29IkFvVWzEN/HVsSVqGry7utpumnZKOeq
+         KJDN0Vnsvj6YoRhUul5ihM5JeTQZmVOij3pueidbHJSSjjMJhFh0n7+zqkPxA8lY++SE
+         OEopooWT4bWplORxu0acwz4TdyXHapQFA6Qa+Jx1ldcL6/2azkArVRIP198WcbWBvDXE
+         Ov3A==
+X-Forwarded-Encrypted: i=1; AL+hErE3X0eD0I/lVkPDqcfDSbvFahwiMB9onYI92VCP7cJm8QI7Cpplaa7WpGtgFtIy4i7DN/vu2cAypstVcJ6Vvg==@vger.kernel.org
+X-Gm-Message-State: APuU4Z/GOLKs7cjZaZnLOC4HbFwuQyNXagTwdojZWZXvLvnLjOyQjws0
+	EVWMfKS2FgJGU0t5mFKu1nxcr7b21rUbB2YanGW/6y0HLy3RpJ0gUHRB
+X-Gm-Gg: AYBFou0pRvHolmrPSvJPg8NeW3Gm6473+SPXt90Z2A1F1uYogLJvgEk0nJz2Ek4pSY5
+	olR2pdwj/4KpMxnF2Cy2UMteO7hd39w+XJH3FwXWpOV4XnBh8EvM57u1/cLdAXUMTuIxeIzAGzM
+	xvL/EuIAImYc/ruQbXpFsW7NQSjubb5eCdUInzjnHAMUCVEy0BwHUHaMwSxQ6830n84spvl/2cH
+	s6pj4qnKg6PhaIHIwc+T7hbiZLigkTs00Lvhi/1s4irqQAnEeKPB53/MO6SjbBf2SnAAQER/fjo
+	S0XxXBGdMGEGSzdBrLKapsBnydl6nlCxxeuQuIqQxJYpUxcH0XkRPgcxSTw+Xjir0HKSlC0/IfY
+	e78HCAHE6yFrb5LUfSiS6sG/ZVLHRoW4KuNq9WCjJPJPB9vn2tOJicf2Vkxvc05ZPxPgWRJtU0S
+	+Sduljau76CcHcuTC99yfMN6bWIsuzGBeQcuZ8rubzG1IGiEfI+mZ4Q66uStNuuQ8dW53q10Juj
+	4i7aZJgS/tbOuWWOkCwfGo60bSdNLb9gZUWZxgWNrdArQbjsgOkSTGAJU1lzp+rCAauSY/RY+hd
+	pN/R4a5WqFMUVBQA9nx84XlS5udKwaukl7kMnSilFhg+Dox18dZb0ADqKQ0M6vD04wNYl9/flGj
+	cRfNjviNgNkf9+0y4aBFvZf9vXZle/J3kfvEmA+X76KTees0=
+X-Received: by 2002:a05:600c:c0c2:b0:4b0:9803:dc8a with SMTP id 5b1f17b1804b1-4ba02bd1ae9mr41720335e9.26.1794331228675;
+        Tue, 10 Nov 2026 09:20:28 -0800 (PST)
+Received: from localhost (freebox.vlq16.iliad.fr. [213.36.7.13])
+        by smtp.gmail.com with ESMTPSA id 5b1f17b1804b1-4ba02005762sm77853145e9.2.2026.11.10.09.20.28
+        (version=TLS1_3 cipher=TLS_AES_128_GCM_SHA256 bits=128/128);
+        Tue, 10 Nov 2026 09:20:28 -0800 (PST)
 X-Mailing-List: linux-wireless@vger.kernel.org
 List-Id: <linux-wireless.vger.kernel.org>
 List-Post: <mailto:linux-wireless@vger.kernel.org>
@@ -89,123 +88,71 @@ List-Subscribe: <mailto:linux-wireless+subscribe@vger.kernel.org>
 List-Unsubscribe: <mailto:linux-wireless+unsubscribe@vger.kernel.org>
 List-Owner: <mailto:linux-wireless+owner@vger.kernel.org>
 Precedence: list
-MIME-Version: 1.0
-Content-Transfer-Encoding: 8bit
-References: <20261110170459.31857-1-dominikengelhardt.ref@ymail.com>
+Mime-Version: 1.0
+Content-Transfer-Encoding: quoted-printable
+Content-Type: text/plain; charset=UTF-8
+Date: Tue, 10 Nov 2026 18:20:27 +0100
+Message-Id: <DMRPC2GCD51O.S4DMHZFDKRFG@gmail.com>
+From: "Nicolas Escande" <nico.escande@gmail.com>
+To: "Filippo Falezza" <effeffe99@gmail.com>
+Cc: "Loic Poulain" <loic.poulain@oss.qualcomm.com>, "Jeff Johnson"
+ <jjohnson@kernel.org>, <linux-wireless@vger.kernel.org>,
+ <ath10k@lists.infradead.org>
+Subject: Re: [PATCH v2] wifi: ath10k: Stop unanswered temperature reads
+X-Mailer: aerc 0.22.0-0-gc2f86b7abde3
+References: <20261027-ath10k-temperature-v2-1-0793e80d73bc@gmail.com>
+In-Reply-To: <20261027-ath10k-temperature-v2-1-0793e80d73bc@gmail.com>
 
-When the hardware returns a frame with ATH9K_TXERR_FILT, ath9k retries
-it internally only if it was sent as part of an A-MPDU. All other frames
-are completed with IEEE80211_TX_STAT_TX_FILTERED set and left to
-mac80211, which buffers them if the station is asleep and retries them
-once if it is awake (ieee80211_handle_filtered_frame()).
+On Tue Oct 27, 2026 at 2:56 AM CET, Filippo Falezza wrote:
+> Reading the ath10k hwmon temperature sends WMI_PDEV_GET_TEMPERATURE and
+> waits up to 5 s (ATH10K_THERMAL_SYNC_TIMEOUT_HZ) for the reply event,
+> holding conf_mutex. Not all firmware answers: the WCN3990 firmware
+> WLAN.HL.3.3.1-00694-QCAHLSWMTPLZ-1 on a Motorola Moto G 5G Plus
+> codename nairo (SM7250) never sends the event, so every read of
+> temp1_input stalls for 5 s, logs
+>
+>   ath10k_snoc 18800000.wifi: failed to synchronize thermal read
+>
+> and returns -ETIMEDOUT. Tools that read all hwmon sensors, such as
+> lm-sensors, hang for 5 s on every run, and configuration changes of the
+> interface wait for conf_mutex in the meantime.
+>
+> Whether the firmware answers cannot be told from the chip: firmware that
+> answers and firmware that does not both advertise
+> WMI_SERVICE_THERM_THROT, and WCN3990 firmware differs between devices.
+> Instead, remember that the running firmware did not answer, and return
+> -EOPNOTSUPP right away on later reads. Forget it when the firmware
+> starts, so that a restarted or updated firmware is asked again.
+>
+> The first read after each firmware start still takes 5 s when the
+> firmware does not answer. Reads on firmware that answers are unchanged.
+>
+[...]
 
-Since commit d94a461d7a7d ("ath9k: use ieee80211_tx_status_noskb where
-possible") this no longer happens. Unless the frame requested a TX
-status, ath_tx_status() reports it with ieee80211_tx_status_noskb() and
-frees the skb, so mac80211 has nothing to buffer or retry and every
-filtered non-aggregated frame is lost.
+Hello,
 
-The filter does not only hit sleeping stations. On AR9561, programming
-the TX filter for one sleeping station (ath9k_hw_set_tx_filter()) also
-filters the next frame of every other station whose key cache index is
-in the same block of eight. An awake station without HT, whose frames
-are never aggregated, then loses that frame. On an AP with a few
-power-saving clients this caused 45% loss of pings sent once per second
-to an 802.11g-only client and TCP connections that stalled for minutes.
-HT clients did not suffer because ath9k retries their frames itself.
+I've just now seen this and it will break some setups. It seems that some a=
+th10k
+devices that usually respond to the thermal WMI messages sometimes do not.
+This is from a QCA9888 that does not have your patch yet:
 
-Report filtered frames with the skb again. mac80211 re-queues such a
-frame, so also remove the header padding from it, as is already done
-for frames that request a TX status.
+[431710.509443] ath10k_pci 0000:01:00.0: failed to synchronize thermal read
+[433385.529449] ath10k_pci 0000:01:00.0: failed to synchronize thermal read
+[434755.541438] ath10k_pci 0000:01:00.0: failed to synchronize thermal read
+[435385.549438] ath10k_pci 0000:01:00.0: failed to synchronize thermal read
 
-Tested on an AR9561 AP (TP-Link Archer C7 v5, OpenWrt 25.12.6, wireless
-backports 6.18.55 on kernel 6.12.112) with a client that associates
-without HT. Programming the TX filter for an unused key cache index in
-the client's block before each ping lost 20 of 20 pings before this
-change and 0 of 50 with it, and mac80211's tx_filtered counter now
-increases once per filtered frame.
+Like you I have a daemon that reads the sensor periodically and it seldom
+fails to read the sensor value for whatever reason. Most of the time it wor=
+ks.
+With your patch once I've hit this, I will never have a valid reading anymo=
+re.
 
-Fixes: d94a461d7a7d ("ath9k: use ieee80211_tx_status_noskb where possible")
-Assisted-by: Claude:claude-fable-5-2
-Signed-off-by: Dominik Engelhardt <dominikengelhardt@ymail.com>
----
-Notes (not part of the commit message):
+So how about I post a new patch that only fully disable sending when we hav=
+e
+like 3 consecutive read fails, and in the mean time I can also lower
+ATH10K_THERMAL_SYNC_TIMEOUT_HZ to 1s or so so it doesn't lock up for too lo=
+ng ?
 
-Test setup: TP-Link Archer C7 v5 as AP (QCA9563 SoC, AR9561 2.4 GHz
-radio), OpenWrt 25.12.6, i.e. kernel 6.12.112 with wireless backports
-6.18.55. I have not run this on a mainline kernel. It is compile-tested
-on ath-next (x86_64, W=1, no new warnings). The OpenWrt SDK build with
-only this change reproduces the release ath9k_hw.ko and ath9k_common.ko
-bit for bit, so ath9k.ko differs from the release only by this patch.
+Jeff / Loic is that ok or do you have any other suggestion ?
 
-Reproducer, no second sleeping station needed: write the same values
-ath9k_hw_set_tx_filter() writes to AR_D_TXBLK_BASE (0x1038) through the
-debugfs regidx/regval files, for an unused key cache index that shares
-a block of eight with the target station's index (hw_key_idx in the
-mac80211 keys debugfs), then send one frame to the station. I can send
-the script.
-
-Results with the filter programmed before every ping:
-  non-HT client, before: 0 of 20 pings answered, "TXERR Filtered" +20,
-                         mac80211 tx_filtered +0
-  non-HT client, after:  50 of 50 answered (56 and 1400 byte payload),
-                         "TXERR Filtered" +50, tx_filtered +50
-  HT client, before and after: 20 of 20 answered, handled by the
-                         existing A-MPDU software retry
-With a filter event every 0.5 s during 9000 pings at 10 ms intervals
-(1400 byte payload) to the awake non-HT client: no loss, no corrupted
-payload, no kernel warnings, memory stable.
-
-What this does not fix: with a client that really is in power save
-under sustained traffic (a ping every 20 ms), the filtered frames now
-reach mac80211's tx_filtered queue instead of being freed, but loss in
-that test was not clearly better (0 to 7.7% per run, against 1.5 to 2.5%
-before; the client's sleep pattern varied a lot between runs). I suspect
-the re-queued frames end up behind newer frames in the TXQ and are then
-dropped by the client's CCMP replay check. If you would rather have
-ath9k requeue filtered non-aggregated frames itself, as it does for
-A-MPDU subframes, I can look into that.
-
-The AR9561 filter granularity (a block of eight key cache indices
-instead of one) looks like a separate issue in ath9k_hw_set_tx_filter()
-or the hardware. After writing the filter for one index, reading
-0x1038/0x1078/0x10b8/0x10f8 shows all eight bits of its block set. I
-have only this one chip to test with and no register documentation, so
-I have left it alone.
-
-An LLM (Claude) was used to analyse the problem, write the reproducer
-and draft this patch and text. I ran the tests on my own hardware and
-have reviewed the change.
-
- drivers/net/wireless/ath/ath9k/xmit.c | 6 ++++--
- 1 file changed, 4 insertions(+), 2 deletions(-)
-
-diff --git a/drivers/net/wireless/ath/ath9k/xmit.c b/drivers/net/wireless/ath/ath9k/xmit.c
-index 3413bb490..c8b9ef6dd 100644
---- a/drivers/net/wireless/ath/ath9k/xmit.c
-+++ b/drivers/net/wireless/ath/ath9k/xmit.c
-@@ -92,7 +92,8 @@ static void ath_tx_status(struct ieee80211_hw *hw, struct sk_buff *skb)
- 	struct ieee80211_sta *sta = info->status.status_driver_data[0];
- 
- 	if (info->flags & (IEEE80211_TX_CTL_REQ_TX_STATUS |
--			   IEEE80211_TX_STATUS_EOSP)) {
-+			   IEEE80211_TX_STATUS_EOSP |
-+			   IEEE80211_TX_STAT_TX_FILTERED)) {
- 		ieee80211_tx_status_skb(hw, skb);
- 		return;
- 	}
-@@ -2474,7 +2475,8 @@ static void ath_tx_complete(struct ath_softc *sc, struct sk_buff *skb,
- 			tx_info->flags |= IEEE80211_TX_STAT_ACK;
- 	}
- 
--	if (tx_info->flags & IEEE80211_TX_CTL_REQ_TX_STATUS) {
-+	if (tx_info->flags & (IEEE80211_TX_CTL_REQ_TX_STATUS |
-+			      IEEE80211_TX_STAT_TX_FILTERED)) {
- 		padpos = ieee80211_hdrlen(hdr->frame_control);
- 		padsize = padpos & 3;
- 		if (padsize && skb->len>padpos+padsize) {
-
-base-commit: d0fbb39d65dc9dcb4175fa6b23e473dec3670f4d
--- 
-2.47.3
-
+Thanks
