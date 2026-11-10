@@ -1,65 +1,74 @@
-Authentication-Results: smtp.subspace.kernel.org; arc=none smtp.remote-ip=168.119.38.16
+Authentication-Results: smtp.subspace.kernel.org; arc=none smtp.remote-ip=91.218.175.36
 ARC-Seal: i=1; d=subspace.kernel.org; s=arc20261015; a=rsa-sha256; cv=none;
-	t=1794336946;
-	b=5lP1IAdk5+fMFA/zXbrRSZ6MOS+bVQMY6HAN/2EsTf3UQ9ODUavcQ8gUzEus+sljRmze
-	 ZVymUEXUnMkdBPOro7XQLS2cqdOBHmlPuv5GKPUurd58txZYQocsyi+HXIpSp2/sP5kAz
-	 /XQQLMGZf2wwYgkolrMVtOFP+Hc8TEQtNMd/BEHvXjIGKc7GY0k7ueL/bH7VXSvcR4Evx
-	 hyjtrirfvsYnIbUnTcVGHFRcv1uMT1kCen58i1H06xb47OkNQunPD0I14tDgJVQ/Lwsrr
-	 T8bSBZrwSqBBc5BYK8k/Th+ENB/gxlqKEMnQtM2wsnUF1Thr2bPv9xZRt26NGgWhHnA==
+	t=1794337007;
+	b=x513PfukRR3uK5tr7H1a9EoO7UnTlqmOcaIaLAYsgwQH2shx91FuEHKrLcxrPQJbD3Yn
+	 fXaMsLAtN9nCWdot5vkT8Svz4OUMVxrJUzDKhysvQiZa+spAZNrpJWJWMNG8Q5gaaQUgF
+	 NuS2bWmuRpTCXkGri6yXpNy7k+/4C8uShfnGZthrxyU+MSSCetW1vxyYQ+3X3US2wdyzu
+	 IkFl+y7ugfsEZsIviWoOHbMP0/ZeWM9ITELLQb9ZxMZdy2n4fgdbMvQEv3p1U+ENiWGUH
+	 2qhbwXoa3GnHZ7pyOlihlu5C8sHjiDtNcrTSXSS/St8iAAo1QjkTrVo3ZYXSPh1qSSA==
 ARC-Message-Signature: i=1; d=subspace.kernel.org; s=arc20261015;
-	a=rsa-sha256; c=relaxed/relaxed; t=1794336946;
-	h=DKIM-Signature:Received:Message-ID:Subject:From:To:Cc:Date:
-	 In-Reply-To:References:Content-Type:Content-Transfer-Encoding:
-	 User-Agent:MIME-Version:X-malware-bazaar;
-	bh=IzfYoPQXoRB3qOZZvQLmzwqUCwQZzYFyjEAkUcvztHE=;
-	b=MPf3dps3w+W1yhV9C4P9SHjBA5kIC5qqa6v2FCPNqBQJrJYmMZ3klGL8cmud+pyuxwOj
-	 R3MmhivR6J0MwOSKFU52+cwfzJ9moO0defe5sGcJa9iNygR+uSJuVpCbRtGcCQ05F8eXZ
-	 kbQQSxzOrcWHt9yh7OXOmt1LJV7te5pYfh44aJSYKX4zS/vsNv/u+uoLzlCMrwxHzx11g
-	 CrN1t9sjs5MZI/XYkHwAh2UPICuR5OHc/uIm0lrj9te5jTPmK2VtpyWoh90osEnVvDJpo
-	 vjIBm9lLoct+8i6ZTk9BlHuirfGNoJwQ1bNJqb9w7nHW1IWmVnrIVGAzDnQQsOl+qEw==
+	a=rsa-sha256; c=relaxed/relaxed; t=1794337007;
+	h=DMARC-Filter:X-Envelope-To:DKIM-Signature:X-Envelope-To:Received:
+	 X-Mizu-Trace-ID:X-Migadu-Flow:From:To:Cc:Subject:Date:Message-ID:
+	 X-Mailer:In-Reply-To:References:MIME-Version:
+	 Content-Transfer-Encoding;
+	bh=kQSjpRkLhJ3MmjhWRGrwwqa6QqXZ8qzNkGmLYEakllQ=;
+	b=PSzzlLg6LiqqcpDhN1IRANriQIeXShdEM9TgHGqB/BVL6+6Az9Ap610ptcCb+GMG0056
+	 WBSGQXw2CGHC9Z4LUp4WxVasb9UFnBQP+f6S9ttaOoq4gjjYIf9Zqr9pbeVLmDwsV3+VL
+	 Kmib3N/q3hc4tb8LpM4HKdBKuEgcaroUeztT2f8tW2qfex1gK8EbZXYjsZCysVhQBiakK
+	 0sNraXnzX3gF+iIAPfUj6LgZNw4/jXB+DkIyxkt/htaqAnr/tjlmWLyf+Awa+Xjt08FOH
+	 JAaqKT8WLEnMTCTMsWycYDWDwnoEnfC0zRkjopjCrqd1LqqQvS+zEbFm2VKZL3SylSg==
 ARC-Authentication-Results: i=1; smtp.subspace.kernel.org; 
-	dmarc=permerror header.from=sipsolutions.net;
-	spf=pass smtp.mailfrom=sipsolutions.net;
-	dkim=pass header.d=sipsolutions.net header.i=@sipsolutions.net header.a=rsa-sha256 header.s=mail header.b=JIbPtDR1;
-	arc=none smtp.remote-ip=168.119.38.16
-Received: from sipsolutions.net (s3.sipsolutions.net [168.119.38.16])
-	(using TLSv1.3 with cipher TLS_AES_256_GCM_SHA384 (256/256 bits)
-	 key-exchange ECDHE (prime256v1) server-signature ECDSA (prime256v1) server-digest SHA256)
+	dmarc=pass header.from=justthetip.ca;
+	spf=pass smtp.mailfrom=justthetip.ca;
+	dkim=pass header.d=justthetip.ca header.i=@justthetip.ca header.a=rsa-sha256 header.s=key1 header.b=ovaMj8qW;
+	arc=none smtp.remote-ip=91.218.175.36
+Received: from mta0.migadu.com (out-36.mta0.migadu.com [91.218.175.36])
+	(using TLSv1.3 with cipher TLS_AES_128_GCM_SHA256 (128/128 bits)
+	 key-exchange X25519 server-signature ECDSA (prime256v1) server-digest SHA256)
 	(No client certificate requested)
-	by smtp.subspace.kernel.org (Postfix) with ESMTPS id C7B1B606A326;
-	Tue, 10 Nov 2026 18:55:45 +0000 (UTC)
-Authentication-Results: smtp.subspace.kernel.org; dmarc=permerror header.from=sipsolutions.net
-Authentication-Results: smtp.subspace.kernel.org; spf=pass smtp.mailfrom=sipsolutions.net
+	by smtp.subspace.kernel.org (Postfix) with ESMTPS id B4864606A31C
+	for <linux-wireless@vger.kernel.org>; Tue, 10 Nov 2026 18:56:45 +0000 (UTC)
+DMARC-Filter: OpenDMARC Filter v1.4.2 smtp.subspace.kernel.org B4864606A31C
+Authentication-Results: smtp.subspace.kernel.org; dmarc=pass (p=quarantine dis=none) header.from=justthetip.ca
+Authentication-Results: smtp.subspace.kernel.org; spf=pass smtp.mailfrom=justthetip.ca
 Authentication-Results: smtp.subspace.kernel.org;
-	dkim=pass (2048-bit key) header.d=sipsolutions.net header.i=@sipsolutions.net header.a=rsa-sha256 header.s=mail header.b=JIbPtDR1
-DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=sipsolutions.net; s=mail; h=MIME-Version:Content-Transfer-Encoding:
-	Content-Type:References:In-Reply-To:Date:Cc:To:From:Subject:Message-ID:Sender
-	:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:Resent-To:
-	Resent-Cc:Resent-Message-ID; bh=IzfYoPQXoRB3qOZZvQLmzwqUCwQZzYFyjEAkUcvztHE=;
-	t=1794336945; x=1795546545; b=JIbPtDR1L2obaS6rr5bxvBpgsYDuHUvx99TyX6dcQqobyEk
-	lHhxT/RUxfgnXURTOyCFGkEMfsOD3ckUXdtICd/7W0Q53EUa03O6NgkBU21OXsPdvYX9JPer/b5d7
-	bXfvIZTgUlH0bVBgIrohKpMZMAExH37E6/cGU3avRpnvQ17ma3hZZC+Lvi8XFJMOmrJXrrKJU09pA
-	TARTKCnBDSo3pman+K7JeJD4Pmwkq8sHMomlrCCMMlZAsg4JmDZcgU+NGYvDZ62CdVGMfjfegjPTB
-	ieTF7wdNyXyga3gcv2/hk5KSQRVYsjxrhbkQje35ajXuqtdsQwH+gNodAPcOXtXQ==;
-Received: by sipsolutions.net with esmtpsa (TLS1.3:ECDHE_X25519__ECDSA_SECP256R1_SHA256__AES_256_GCM:256)
-	(Exim 4.98.2)
-	(envelope-from <johannes@sipsolutions.net>)
-	id 1xQr0Q-00000002BEf-0Zi5;
-	Tue, 10 Nov 2026 19:55:42 +0100
-Message-ID: <7e6a6640fe034af160eec0dda532259b499153ad.camel@sipsolutions.net>
-Subject: Re: [PATCH wireless-next v4 09/21] wifi: nl80211/cfg80211: add
- support for SMD context programming
-From: Johannes Berg <johannes@sipsolutions.net>
-To: Pooventhiran G <pooventhiran.g@oss.qualcomm.com>
-Cc: linux-wireless@vger.kernel.org, linux-kernel@vger.kernel.org
-Date: Tue, 10 Nov 2026 19:55:41 +0100
-In-Reply-To: <20261106-smd-v4-9-62e39487f51a@oss.qualcomm.com>
-References: <20261106-smd-v4-0-62e39487f51a@oss.qualcomm.com>
-	 <20261106-smd-v4-9-62e39487f51a@oss.qualcomm.com>
-Content-Type: text/plain; charset="UTF-8"
-Content-Transfer-Encoding: quoted-printable
-User-Agent: Evolution 3.60.2 (3.60.2-3.fc44) 
+	dkim=pass (2048-bit key, unprotected) header.d=justthetip.ca header.i=@justthetip.ca header.a=rsa-sha256 header.s=key1 header.b=ovaMj8qW
+X-Envelope-To: linux-wireless@vger.kernel.org
+DKIM-Signature: a=rsa-sha256; bh=2DL3rl+rMQtbPHNfe/VkSh1vOHFeZi6JunlnhjAs+Gw=;
+ c=simple/simple; d=justthetip.ca;
+ h=from:to:subject:date:message-id:mime-version:content-type; s=key1;
+ t=1794337003; v=1; x=1794941803;
+ b=ovaMj8qW6D6q5ugifWnb1Sl8MCktDkmt2V7e0KeUoq3nnM0MTLHc6aZqH3JJNxMc/FgBgxN4
+ riumrtRuOsAOju5LVQ27+eLqAIpWaROhxUa+7vdNCvy8oLQLjpbHfwS6TUcyXd+PYtCEC3uq91w
+ ti74ljVPQRoJghRe0ojRSBs/axmR3+xiz+hPpedaBXjA0w9fyBjB7pYLpcIcWd8Y7uYvX/u2u0b
+ oVMPcQGQsOXOZur/OwmaJGhNaswiBVWo8t/HNsZUxNpUNmQ+7HWp4ms74Pg+34XuObgcCm+Rm1Z
+ mjKQJQiHdGBNL7p/gEZnCjBJHp3yQq6hjMuyXyzMF2Cbg==
+X-Envelope-To: linux-wireless@vger.kernel.org
+Received: by smtp.migadu.com with ESMTPS id 40fe415b35cf92f9;
+	Tue, 10 Nov 2026 18:56:43 +0000
+X-Mizu-Trace-ID: 40fe415b35cf92f9
+X-Migadu-Flow: FLOW_OUT
+From: Devin Wittmayer <lucid_duck@justthetip.ca>
+To: kernel test robot <lkp@intel.com>
+Cc: Felix Fietkau <nbd@nbd.name>,
+	Lorenzo Bianconi <lorenzo@kernel.org>,
+	Ryder Lee <ryder.lee@mediatek.com>,
+	oe-kbuild-all@lists.linux.dev,
+	Deren Wu <deren.wu@mediatek.com>,
+	Sean Wang <sean.wang@mediatek.com>,
+	Shayne Chen <shayne.chen@mediatek.com>,
+	Quan Zhou <quan.zhou@mediatek.com>,
+	Michael Lo <michael.lo@mediatek.com>,
+	James-LY Huang <james-ly.huang@mediatek.com>,
+	linux-wireless@vger.kernel.org,
+	linux-mediatek@lists.infradead.org
+Subject: Re: [PATCH v2] wifi: mt76: mt792x: tell mac80211 when a disconnect cancels its ROC
+Date: Tue, 10 Nov 2026 11:56:37 -0700
+Message-ID: <20261110185637.13126-1-lucid_duck@justthetip.ca>
+X-Mailer: git-send-email 2.56.0
+In-Reply-To: <202611101719.St87Ty1E-lkp@intel.com>
+References: <20261110005846.38432-1-lucid_duck@justthetip.ca> <202611101719.St87Ty1E-lkp@intel.com>
 X-Mailing-List: linux-wireless@vger.kernel.org
 List-Id: <linux-wireless.vger.kernel.org>
 List-Post: <mailto:linux-wireless@vger.kernel.org>
@@ -69,64 +78,21 @@ List-Unsubscribe: <mailto:linux-wireless+unsubscribe@vger.kernel.org>
 List-Owner: <mailto:linux-wireless+owner@vger.kernel.org>
 Precedence: list
 MIME-Version: 1.0
-X-malware-bazaar: not-scanned
+Content-Transfer-Encoding: 8bit
 
-On Fri, 2026-11-06 at 13:28 +0530, Pooventhiran G wrote:
->=20
-> +static int
-> +nl80211_parse_smd_ctx_ba_params(struct nlattr *tb,
-> +				struct ieee80211_smd_ctx_ba *ba_tids)
-> +{
-> +	struct nlattr *ba_tb[NL80211_SMD_CTX_BA_ATTR_MAX + 1];
-> +	struct ieee80211_smd_ctx_ba *ba;
-> +	struct nlattr *ba_attr;
-> +	int n_tids =3D 0;
-> +	int rem, tid;
-> +
-> +	nla_for_each_nested(ba_attr, tb, rem) {
-> +		tid =3D nla_type(ba_attr) - 1;
-> +		if (tid < 0 || tid >=3D IEEE80211_SMD_CTX_NUM_TIDS)
-> +			return -EINVAL;
-> +
-> +		if (nla_parse_nested(ba_tb, NL80211_SMD_CTX_BA_ATTR_MAX,
-> +				     ba_attr, nl80211_smd_ctx_ba_policy,
-> +				     NULL))
+On Tue, Nov 10, 2026 at 05:27:20PM +0800, kernel test robot wrote:
+> [auto build test ERROR on wireless-next/main]
+> [also build test ERROR on wireless/main linus/master v7.4-rc2 next-20261109]
+> [If your patch is applied to the wrong git tree, kindly drop us a note.
 
-if you set up the policies correctly (and you should, but I didn't go
-back to check now) then you don't need the policy here
+Wrong tree. v2 is for Felix's mt76 branch:
 
-> +		ba->amsdu_supported =3D
-> +			!!ba_tb[NL80211_SMD_CTX_BA_ATTR_AMSDU_SUPPORT];
+  https://github.com/nbd168/wireless.git mt76
+  base-commit: 8739e5b44b23
 
-it's not super useful to use !! to assign to a bool, and if you wanted
-to be fancy you'd use nla_flag(), right? ;)
+> >> drivers/net/wireless/mediatek/mt76/mt7921/main.c:385:16: error: 'struct mt792x_phy' has no member named 'roc_notify'
 
-> +		if (nla_parse_nested(dl_tb, NL80211_SMD_CTX_DL_ATTR_MAX,
-> +				     tb[NL80211_SMD_CTX_ATTR_DL],
-> +				     nl80211_smd_ctx_dl_policy, NULL)) {
+That flag comes from 2466ffac172d, which is in that branch and has not
+reached wireless-next yet. The clang report is the same thing.
 
-same here, and then it kind of cannot fail, I think
-
-> +			nla_for_each_nested(sn_attr,
-> +					    dl_tb[NL80211_SMD_CTX_DL_ATTR_SN],
-> +					    rem) {
-> +				tid =3D nla_type(sn_attr) - 1;
-> +				if (tid < 0 ||
-> +				    tid >=3D IEEE80211_SMD_CTX_NUM_TIDS) {
-> +					GENL_SET_ERR_MSG(info,
-> +							 "invalid DL SN tid");
-> +					goto err_free_ctx;
-> +				}
-> +
-> +				if (nla_len(sn_attr) !=3D sizeof(u16)) {
-> +					GENL_SET_ERR_MSG(info,
-> +							 "invalid DL SN len");
-> +					goto err_free_ctx;
-> +				}
-
-You've got to be _kidding_ me, why do I even have to get see such
-obviously redundant code?
-
-Please read your own code.
-
-johannes
+Devin
