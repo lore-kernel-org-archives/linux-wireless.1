@@ -1,79 +1,79 @@
 Authentication-Results: smtp.subspace.kernel.org; arc=pass header.oldest-pass=0 smtp.remote-ip=100.103.45.18
 ARC-Seal: i=2; d=subspace.kernel.org; s=arc20261015; a=rsa-sha256; cv=pass;
-	t=1794321475;
-	b=3E0AETCBD6vR1j4AAs/ek1Wo9mWGVS7r8ZDqrTtGlXeu9NZBhxNcAJi4ownbuZi/3piM
-	 sybwXNmCQDBBXd04+nl6i9jnjYNXgy7fBxy9YJ3BuY8v8vTM/H9hregef//uIm9qoo9h+
-	 aJh5TVqsbMbE5L5MSkRjSIl1LaGtfjnMIsDfZyAZ5JbjOENubPU40ATYEEB4bhw561ei7
-	 ALRez5WsG6NJrbFvWEW4aLzaWOPojiUy3H+5aNKeAnGEAPlWBAqifiwzkwGGAgrUo2T7j
-	 1NoYYydnXDX943xi+opz6uf/ta2v921+cLGaRkGJ2wRCoOLyQkcdbiJyqSUnN43IAtg==
+	t=1794321474;
+	b=OVNXLrF2mMdFkKG//DurJ6Y5JihqlqGXo5ZvFMESdRReFDQzIZR1Q7xJPhfalzCqV1dm
+	 K/6O2XAjFPBCYcaY4+npOxouK5CZtGfC2G7uBMgHQbXuOk70bM16LteorDxVmgBl8AdW/
+	 wIuupACV6TenJx+ZKAjl/ghfpT+G4XmChq6QC7nUSAdXbpbJjr7tsRT8Qsb5eyV54/iin
+	 lZkl98q8C6yCO+DzvKW6j4zG/O3euYioXf2COmzhXsG29f8nTm2lmXWpsh0geUlMTX5xX
+	 vm4ohdSpoYX+CygKVLrbwPuBXLTYBcg3f31o/xKB5HXoDXqwLHLeVUiYwoL/V0IuXRA==
 ARC-Message-Signature: i=2; d=subspace.kernel.org; s=arc20261015;
-	a=rsa-sha256; c=relaxed/relaxed; t=1794321475;
-	h=Received:DKIM-Signature:Received:From:Date:Subject:MIME-Version:
-	 Content-Type:Message-Id:References:In-Reply-To:To:Cc:X-Mailer:
-	 X-Developer-Signature:X-Developer-Key:X-Endpoint-Received:
-	 X-Original-From:Reply-To:Content-Transfer-Encoding;
-	bh=TH0RhbJ4444L2PfImVqZG0ogOGpAWT0oGQI0lbwLlys=;
-	b=zbsxuNaZIg+uT6dEU3b6TcXVFPDXryAT9wfOOwlAMzrMt5noR4D35laUWquzyGfWFM8t
-	 Mxl0DfsBpHTmHUkqBtBUihqxXBJZf9xl9PzxG9svcNWcewVpZFeninolFAQ6yBthFq50D
-	 5VAfyIzY0Ml4xMJYASM91i349f4Ig0TiP+KR7L0iea32ALC/6L5ffRCX1G+tyLQZrKKKE
-	 Im82szjMhSZJrwXiQcOh8p3LQex7fSh87/cy2szsdWKxtbkgdNwd73lHyMuy2Du6YqEHC
-	 l4qnQJPzd1yvacHDa3YTxn5RmKUI/rKX5hZLUy5F2GE6dSDob6eEMFxPiBBJRthIlYQ==
+	a=rsa-sha256; c=relaxed/relaxed; t=1794321474;
+	h=Received:DKIM-Signature:Received:From:Subject:Date:Message-Id:
+	 MIME-Version:Content-Type:Content-Transfer-Encoding:X-B4-Tracking:
+	 X-Change-ID:To:Cc:X-Mailer:X-Developer-Signature:X-Developer-Key:
+	 X-Endpoint-Received:X-Original-From:Reply-To;
+	bh=LUyE9s5YGUuhok8CXE4hPDmnkZbLFVYYtzl2hlt1myw=;
+	b=h3D12hCK26JO2kkxl2GU/q8pQE8ZTfEVOxHUvMF/u3JqyRUArBj2X9B/XInqeJT6suoN
+	 tFs32CuhkLGjEjn0cIiIzBN5H10tUVt/6Wsl64wvlzkalpSdOoBxV3dMiNulZxRmsOvTe
+	 KxhDpCo7kQ0jOPWtZKBzbAtmcBiJxBRfSXWETwL34GRNp8QFK9HPBLkhIq4f+QBOuq2Kp
+	 4yGCgj0civy7UnVeEWTupnzFSnL8bAr+PSe2LvVrXQB6lyPPiGp1SwmRzbYtnFzPaCCUr
+	 DT72w0A75v/Pue6abloJLJJvqUe4Xh6VTR0y1tS4W/qwsBpSosTfV90EMt813Vcbw4w==
 ARC-Authentication-Results: i=2; smtp.subspace.kernel.org; 
-	dkim=pass header.d=kernel.org header.i=@kernel.org header.a=rsa-sha256 header.s=k20260515 header.b=TzT62Hy9;
+	dkim=pass header.d=kernel.org header.i=@kernel.org header.a=rsa-sha256 header.s=k20260515 header.b=TBna0z1d;
 	arc=pass header.oldest-pass=0 smtp.remote-ip=100.103.45.18
 Received: from smtp.kernel.org (quasi.space.kernel.org [100.103.45.18])
 	(using TLSv1.3 with cipher TLS_AES_256_GCM_SHA384 (256/256 bits)
 	 key-exchange X25519 server-signature ECDSA (prime256v1))
 	(No client certificate requested)
-	by smtp.subspace.kernel.org (Postfix) with ESMTPS id B73A7606A325;
+	by smtp.subspace.kernel.org (Postfix) with ESMTPS id 56513606A31C;
 	Tue, 10 Nov 2026 14:37:54 +0000 (UTC)
 Authentication-Results: smtp.subspace.kernel.org;
-	dkim=pass (2048-bit key) header.d=kernel.org header.i=@kernel.org header.a=rsa-sha256 header.s=k20260515 header.b=TzT62Hy9
+	dkim=pass (2048-bit key) header.d=kernel.org header.i=@kernel.org header.a=rsa-sha256 header.s=k20260515 header.b=TBna0z1d
 Authentication-Results: smtp.kernel.org; arc=none smtp.remote-ip=100.80.115.77
 ARC-Seal: i=1; d=kernel.org; s=arc20260519; a=rsa-sha256; cv=none;
-	t=1794321474;
-	b=Zs3dnLJjauRbws8/ITbmi0WZLIYeRYBCAFTjCNq/QCJj60OcV9WT0CoKRRUFyZSWDlbs
-	 pa5oW6RF4Vcbk+znw0jfytyBZUUp1JYZJs/i37w/P6bKbFSfUOrfyiFsQJ79nbXo0Zx+a
-	 BfKNnhFOe4oYuYRYOe6Ltdf/7eqknb7SPAiQuh5EVD+WR0KvBXox03pi380P8OwxqdvwG
-	 XNW1SDK6ihU8w0F1fexCsrDX7L7nyW9OR9NKAUDfW6MZPynDlmu5RQqCZH7Yu5eh97bcN
-	 ce9hqg6BC2DxLRPP53Ndp+Cq0RiCt8Q8axBUcYpybLBOkzGyUKBOo8eVAyjhRi2NWMQ==
+	t=1794321473;
+	b=E9XaPrSO/1mv8puQOSv+qOCKEQVzikcqnTs17sKU7pul91rl6eTlbv1Mjo9cUwbogDXS
+	 rgTg67Yq1mmShPhB8x+WpmDi4EhAvRiJ+SZ9aXXXEUf9CDxq7z/xKPT3aDAjuAhFbWubD
+	 1/9sSmvS/m3ltnzGoMSNGZ5XajjRV7Dpptr8MHjU1tCA+8PS1C8cey9/qmArKWPD/a8Nx
+	 BG79ih0JVoex73ws3GiX8bQTKMVL/GD89Df9KckpHujwsxhinpVREfJgjISANfkxb8m+G
+	 xpBbbT6tfQwozpgyTtkV7b9pFWT0K91Sd7/meELzmRquAgUSKoy+dhEPTkrbe6b6thg==
 ARC-Message-Signature: i=1; d=kernel.org; s=arc20260519; a=rsa-sha256;
-	c=relaxed/relaxed; t=1794321474;
-	h=DKIM-Signature:Received:From:Date:Subject:MIME-Version:Content-Type:
-	 Message-Id:References:In-Reply-To:To:Cc:X-Mailer:
-	 X-Developer-Signature:X-Developer-Key:X-Endpoint-Received:
-	 X-Original-From:Reply-To:Content-Transfer-Encoding;
-	bh=TH0RhbJ4444L2PfImVqZG0ogOGpAWT0oGQI0lbwLlys=;
-	b=wI8/Wm5k0ZsQl7hqrYaOVHzwW+3Qzfzp5fRuqA2g2ABKYIo+0Im/Yrh/h62xKaDJGDNp
-	 N/E/dN2T8FNofunwm8Oe0/zxNmT/Li2YxXxC3DFwR9JusBCLh9dR1kIye5fpzyxdb3xSW
-	 o2ujYmtDufcszHfgOyKmDTQoWL3cOdqUpaNon0wtTwXx4FAYHx2mEAV7j575bTDaCQ2F0
-	 +BAdmzbuVr6VrsYTpEbDJcqm96GSSAvERYcqGGWe0vNJkfVv8hhsNVZWydnmmC1N2aQC9
-	 oOC5+u1zlxCK+vjVvQvqHjXyeR4YTWWS0IuLLbDm3/9uwchZY5EvUGi2Hd0UMcHIBBg==
+	c=relaxed/relaxed; t=1794321473;
+	h=DKIM-Signature:Received:From:Subject:Date:Message-Id:MIME-Version:
+	 Content-Type:Content-Transfer-Encoding:X-B4-Tracking:X-Change-ID:To:
+	 Cc:X-Mailer:X-Developer-Signature:X-Developer-Key:X-Endpoint-Received:
+	 X-Original-From:Reply-To;
+	bh=LUyE9s5YGUuhok8CXE4hPDmnkZbLFVYYtzl2hlt1myw=;
+	b=W8lnubpx4Fd8NKo+1K6eW8SY8dco/+ixfoSXvIBzwHbuOqFjszKEIe2c1t4yYM/n0Dgj
+	 y0n95B3GPOYLecp1R+LlZtCDXryg2Rc0y7ZedtuSwtW05ALRRqjOlOwg/St2cdrCUBWbw
+	 d0IaF+i9NPWLc3TuLGIcqKGzzkcpesG8YFT58zUyHt9i4aY+cSDXaylvPIVS7fZOfQC+c
+	 92am+/w+dxkVgpnFMKHkdckFjBejKnxZUI3oI16snMp79YFWgSpYpXRFeu/vU10v8ihRi
+	 12IOzsEz6nMgmD7CH/c9lapFnSksk0YHsv2Qo7KgrSNMVE84ZzeB0ksUIr5Owxvaggw==
 ARC-Authentication-Results: i=1; smtp.kernel.org; 
 	arc=none smtp.remote-ip=100.80.115.77
 Received: from lkml.kernel.org (nexus.subspace.kernel.org [100.80.115.77])
 	(using TLSv1.3 with cipher TLS_AES_256_GCM_SHA384 (256/256 bits)
 	 key-exchange X25519 server-signature ECDSA (prime256v1) server-digest SHA256)
 	(No client certificate requested)
-	by smtp.kernel.org (Postfix) with ESMTPS id 52A531F008A1;
+	by smtp.kernel.org (Postfix) with ESMTPS id 527FA1F0089F;
 	Tue, 10 Nov 2026 14:37:53 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=kernel.org;
-	s=k20260515; t=1794321474;
-	bh=TH0RhbJ4444L2PfImVqZG0ogOGpAWT0oGQI0lbwLlys=;
-	h=From:Date:Subject:References:In-Reply-To:To:Cc:Reply-To;
-	b=TzT62Hy9N4yY0kJRuyflN2z2mecgmq5BuXoTRI+V6TxanGvJopkhwSCun0kCwxHyv
-	 2mEivQSQBKZKYg5tmWBA06WgSHOvAy8eWk9UG+G5wr9rjkri3w+Eq7lX4hy6ctPK9f
-	 pm9UznGpXX+U1xj5pCigZ7MbF+I4YV4Wu+mC9NqKKWc0q8KB3RNMXSvcCfPwoQbg75
-	 069JFhLp3m0CcmIqEXCPlZ8nCWJPO+epXCrscypMfrGceh1x4QdXCsDfNUb/3PySYI
-	 ZI4/febIuWsLWX4iND7KdIqLNnY/zfTGm1DTFUutdMg7rn9vmctkXjwNWOw6HSp8GG
-	 6oCj93VgS5Tmw==
+	s=k20260515; t=1794321473;
+	bh=LUyE9s5YGUuhok8CXE4hPDmnkZbLFVYYtzl2hlt1myw=;
+	h=From:Subject:Date:To:Cc:Reply-To;
+	b=TBna0z1dMKDVwNi07HmT1iRwej4M0NSICGeGQMbWG8jjJlJkTk4lfaC4b0GzkBV1N
+	 cGb9q5ffegn2lYLgztzKU6xtOBSZimYPmfE6vpOQZi8lnnJkLX6Sy0YhqgTfbm1LbP
+	 Mw1Asz4APQ+j3Wk0piKesUaMPoazIwH2jEvy2U3ww/1NF6CPhnPVvZedzOJnhqBN0e
+	 9NW0iD0dQyQDFtUT455eJSipbVSdz+iAYnsaT0j2EGB2XxIPJ6jsHj/LU6rjqpvlLX
+	 /9vQInf2HZ00gx52XYvwLmXcwnOyXrfjpFEvsRfs/Kbl/x9Ytg4t8C/Cf2ni6VxOBO
+	 VbsB/V5XSG6Mg==
 Received: from nexus.subspace.kernel.org (localhost [IPv6:::1])
-	by lkml.kernel.org (Postfix) with ESMTP id C0EBC48B8B;
+	by lkml.kernel.org (Postfix) with ESMTP id ACA6148B98;
 	Tue, 10 Nov 2026 14:37:52 +0000 (UTC)
 From: Christopher Griffin via B4 Relay <devnull+christophergriffin05.gmail.com@kernel.org>
-Date: Tue, 10 Nov 2026 08:37:52 -0600
-Subject: [PATCH v2 1/2] wifi: ath11k: simplify copying a peer's PPE
- thresholds
+Subject: [PATCH v2 0/2] wifi: ath: simplify copying a peer's PPE thresholds
+Date: Tue, 10 Nov 2026 08:37:51 -0600
+Message-Id: <20261110-ath-peer-ppe-thres-loop-v2-0-fced87507920@gmail.com>
 X-Mailing-List: linux-wireless@vger.kernel.org
 List-Id: <linux-wireless.vger.kernel.org>
 List-Post: <mailto:linux-wireless@vger.kernel.org>
@@ -84,9 +84,12 @@ List-Owner: <mailto:linux-wireless+owner@vger.kernel.org>
 Precedence: list
 MIME-Version: 1.0
 Content-Type: text/plain; charset="utf-8"
-Message-Id: <20261110-ath-peer-ppe-thres-loop-v2-1-fced87507920@gmail.com>
-References: <20261110-ath-peer-ppe-thres-loop-v2-0-fced87507920@gmail.com>
-In-Reply-To: <20261110-ath-peer-ppe-thres-loop-v2-0-fced87507920@gmail.com>
+Content-Transfer-Encoding: 7bit
+X-B4-Tracking: v=1; b=H4sIAEAs82oC/4WNQQ6CMBBFr0Jm7RhaQ6OuvIdhQeuUjgHatJVoS
+ O8u4AFcvuT99xdIFJkSXKsFIs2c2E8ryEMFxnVTT8iPlUHWUglRK+yyw0AUMQTC7CIlHLwPaKg
+ xUktSZxKwrkMky++9fG9/nF76SSZvuc1wnLKPn/16Fpv3/2UWWKNVWjeWLtbq060fOx6Oxo/Ql
+ lK+7y0Yc9AAAAA=
+X-Change-ID: 20261106-ath-peer-ppe-thres-loop-ce5c2b2e68e1
 To: Jeff Johnson <jjohnson@kernel.org>
 Cc: Rameshkumar Sundaram <rameshkumar.sundaram@oss.qualcomm.com>, 
  Baochen Qiang <baochen.qiang@oss.qualcomm.com>, 
@@ -95,56 +98,57 @@ Cc: Rameshkumar Sundaram <rameshkumar.sundaram@oss.qualcomm.com>,
  Jeff Johnson <jeff.johnson@oss.qualcomm.com>, 
  Christopher Griffin <christophergriffin05@gmail.com>
 X-Mailer: b4 0.16.0
-X-Developer-Signature: v=1; a=ed25519-sha256; t=1794321472; l=1371;
+X-Developer-Signature: v=1; a=ed25519-sha256; t=1794321472; l=1569;
  i=christophergriffin05@gmail.com; s=20261024; h=from:subject:message-id;
- bh=+v0/mtei21f+uWsVMg5ZCRb77EqWbxbixU5qhwUbCuI=;
- b=T4WDyBltYopDh9pNqvEwmGuyvOV4RHN47HxHiexGgQTrBn6RmOIBzBRPZdqVwztDMwGny8RtK
- HIc+nHYU2v8AVtVXU0y+hawhSJ9xXlLLJ+PAKhqJYa/zEn92c0MlGc/
+ bh=vBZaf4TEYAxqUGlg0dDE1mpIQ9acO6vuybyJLRWS5LY=;
+ b=K3soglbfb5eqqDMtq403mFJS21XB1PNr0p0+UHvGArEQGIwyy5Q0ExUHlR90T7sYQW/hT+d0v
+ cEM9AiHHq3yCORTiPfc/yPhD+4WLjFX3VRYXP7sbvfUr8IkHKCoSkeq
 X-Developer-Key: i=christophergriffin05@gmail.com; a=ed25519;
  pk=oa9tkTNpiGoFWdGvpDHXLSobApmsh9BfrJRJrRJAvWA=
 X-Endpoint-Received: by B4 Relay for
  christophergriffin05@gmail.com/20261024 with auth_id=1309
 X-Original-From: Christopher Griffin <christophergriffin05@gmail.com>
 Reply-To: christophergriffin05@gmail.com
-Content-Transfer-Encoding: 7bit
 
-From: Christopher Griffin <christophergriffin05@gmail.com>
+Rameshkumar suggested this while reviewing the PPE threshold bit-order
+fix [1]: the loop that copies a peer's PPE thresholds into the WMI
+layout shifts each bit in from the top, where it can put it in place.
+ath11k and ath12k carry the same loop, so one patch each. No functional
+change; the patches don't depend on the bit-order series.
 
-ath11k_peer_assoc_h_he() copies each 6-bit PPE threshold of a peer's HE
-capabilities into the WMI layout one bit at a time, shifting it in from
-the top: val >>= 1, then the new bit at bit 5, six times over. After the
-sixth bit, bit i of the field sits at bit i of val, so put it there
-directly.
+Compile tested only (W=1, both drivers). A userspace copy of the old
+and the new loop gives the same output for every 6-bit value in every
+RU slot.
 
-No functional change.
+The patches, this letter and that test were written with Claude, an AI
+coding assistant.
 
-This change and its message were written with Claude, an AI coding
-assistant.
+[1] https://lore.kernel.org/all/b60c4c56-483b-406e-92ab-643b0fdf2dc8@oss.qualcomm.com/
 
-Suggested-by: Rameshkumar Sundaram <rameshkumar.sundaram@oss.qualcomm.com>
-Link: https://lore.kernel.org/all/b60c4c56-483b-406e-92ab-643b0fdf2dc8@oss.qualcomm.com/
-Signed-off-by: Christopher Griffin <christophergriffin05@gmail.com>
 ---
+Changes in v2:
+- Dropped the paragraph about the equivalence test from both changelogs
+  (Rameshkumar).
+- Kept the one-line note on AI use in the changelogs:
+  Documentation/process/generated-content.rst asks for it in changelogs
+  and cover letters.
+- Rebased on ath-next.
+- Link to v1: https://patch.msgid.link/20261106-ath-peer-ppe-thres-loop-v1-0-f6bb5fe9ffb3@gmail.com
+
+---
+Christopher Griffin (2):
+      wifi: ath11k: simplify copying a peer's PPE thresholds
+      wifi: ath12k: simplify copying a peer's PPE thresholds
+
  drivers/net/wireless/ath/ath11k/mac.c | 3 +--
- 1 file changed, 1 insertion(+), 2 deletions(-)
+ drivers/net/wireless/ath/ath12k/mac.c | 3 +--
+ 2 files changed, 2 insertions(+), 4 deletions(-)
+---
+base-commit: d0fbb39d65dc9dcb4175fa6b23e473dec3670f4d
+change-id: 20261106-ath-peer-ppe-thres-loop-ce5c2b2e68e1
 
-diff --git a/drivers/net/wireless/ath/ath11k/mac.c b/drivers/net/wireless/ath/ath11k/mac.c
-index 1a237adaa37d1..d7ae9e8747233 100644
---- a/drivers/net/wireless/ath/ath11k/mac.c
-+++ b/drivers/net/wireless/ath/ath11k/mac.c
-@@ -2496,9 +2496,8 @@ static void ath11k_peer_assoc_h_he(struct ath11k *ar,
- 				if ((arg->peer_ppet.ru_bit_mask & BIT(ru)) == 0)
- 					continue;
- 				for (i = 0; i < 6; i++) {
--					val >>= 1;
- 					val |= ((he_cap->ppe_thres[bit / 8] >>
--						 (bit % 8)) & 0x1) << 5;
-+						 (bit % 8)) & 0x1) << i;
- 					bit++;
- 				}
- 				arg->peer_ppet.ppet16_ppet8_ru3_ru0[nss] |=
-
--- 
-2.43.0
+Best regards,
+--  
+Christopher Griffin <christophergriffin05@gmail.com>
 
 
