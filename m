@@ -1,56 +1,65 @@
-Authentication-Results: smtp.subspace.kernel.org; arc=none smtp.remote-ip=100.103.45.18
+Authentication-Results: smtp.subspace.kernel.org; arc=none smtp.remote-ip=168.119.38.16
 ARC-Seal: i=1; d=subspace.kernel.org; s=arc20261015; a=rsa-sha256; cv=none;
-	t=1794336659;
-	b=GwjD5bOffcQoohmzOzXCUtbneFp6dcZ9A1HpXMf6KVMxmHkK9sN6pcTjxw5710OzVceY
-	 h1nq9GOQiuuNIIipyQPsXsTtBVGyCiw6nWb8duCKB3Xu2GU8d3OyAVe7On6P7E6TNiW0p
-	 jB5nLAMlw6M/EbiS2jUzbxVF4npZpP4oyFggucSl2gKqqX+3jSZa5SgRHFEUU8v91jP6h
-	 0wGUnu9HkCGnWcDzRQB+kTUbsVHnVO9F15pGgNnlS/tYDNz4g4JNxZSTGD60g3ZBpY5xu
-	 iE6Ct0ClUfr2qxoBoa1/JP5mgEMRuEvJsk0GXeSsfhwSKpzX+BabPR+4X9RR+3pVyaw==
+	t=1794336721;
+	b=BSTNpNr0T/NspRPe6z4coQ9TLaSCQ2wMzaHKgwGGdQCPaiczF0a8TwqHt6UREjlzr8qE
+	 7NAzyPlBDS8wQnJiMRqTLLsYn851WR6U/tx60fGv9495atBD/Lwn6eB+A+ZK+jtQXJNjN
+	 PGfTlF99ZvcfKcR9XIXmZXLgQ4XaQ27I2kj4ufdbPl7KgyxsmAKcIQW+2611f/I1g3QEB
+	 wyuW4TdycX2yFkk+SmvTrG+qrbbimb0Dk1nhQRQlQVvk8msMEGIJgRqv9UGRHRtntshaK
+	 IURqbVJ4+xU7NTQ/Kx5n6EPvLJvkI7PCYbK6hsZqiUK+KISt7m3++EiEsq3F0YGPb/A==
 ARC-Message-Signature: i=1; d=subspace.kernel.org; s=arc20261015;
-	a=rsa-sha256; c=relaxed/relaxed; t=1794336659;
-	h=Received:DKIM-Signature:Date:From:To:Cc:Subject:Message-ID:
-	 References:MIME-Version:Content-Type:Content-Disposition:In-Reply-To;
-	bh=lw5R+03CbcJOauGhuqqyB5KrNrCBNCqxs2tnPrtkBQw=;
-	b=41z61EWEJIj5pgbn/OJKZD2UJoitlVQVcoDCjw0hIdyJdwGLku/y9I0DjJRqlJlal9xM
-	 1qlFVEPf1IGB5hRfnMsrnDMJpAn0+gx9gU3bF8LCw37rreBG5MGLYOWlLPzNoEQ+VHOBT
-	 +/W5ZtMUMTDYt69L31uW/Ux59h8/SKncKBB4qnP35VLwJvjwmRtDITDx8/LtkOCzlchNW
-	 2raLT+herhooMUcKSzPrPUtSAdpWeVd88gR9Ropiw/SrJbf3LVqQNjCk66kcec9rS1SJT
-	 QsC4ezMXjTL8j0AP47etVJoIjMZ4PQm/qHdrMXrpILbIq6pDB6NS2FsSzfUMWN5zi2A==
+	a=rsa-sha256; c=relaxed/relaxed; t=1794336721;
+	h=DKIM-Signature:Received:Message-ID:Subject:From:To:Cc:Date:
+	 In-Reply-To:References:Content-Type:Content-Transfer-Encoding:
+	 User-Agent:MIME-Version:X-malware-bazaar;
+	bh=FJhCO8KljoIPpc6Zj3JtJwQyirJf6h7Glr5VpdrX2ng=;
+	b=LDyY/RvYMIWrkaGbuDIcyEdpEWKvdrelWmznB0E5qnrsdlExm6xh2LwmgUiv3arRecJ2
+	 6jnGBVovd+ygz18iBvPcNSnCLVNdmV6sGREwYzeWq2RFuV0N5PlYxJkB+TIsCF5v7va4/
+	 RANVv4BvfHR8YpHChtmSf0tdk0iZ80HNPm4oc0+8/GqNxbEcVaB9qF7ZH4PSIytXDVoUu
+	 V+wsKvu/Xn88D0cBgiI7JRUr/o0fCAsW7+cUj9t3W1n4G13m8jt1JEtiH+6VR2Mx/N7a+
+	 dvfWZVeFuOgJiUjHfrs46k/zitZyQCcvw95KKwahVeFB0u2abvlqM95vCT1VzPePt7w==
 ARC-Authentication-Results: i=1; smtp.subspace.kernel.org; 
-	dkim=pass header.d=kernel.org header.i=@kernel.org header.a=rsa-sha256 header.s=k20260515 header.b=JqWUJALF;
-	arc=none smtp.remote-ip=100.103.45.18
-Received: from smtp.kernel.org (quasi.space.kernel.org [100.103.45.18])
+	dmarc=permerror header.from=sipsolutions.net;
+	spf=pass smtp.mailfrom=sipsolutions.net;
+	dkim=pass header.d=sipsolutions.net header.i=@sipsolutions.net header.a=rsa-sha256 header.s=mail header.b=aHTpABXf;
+	arc=none smtp.remote-ip=168.119.38.16
+Received: from sipsolutions.net (s3.sipsolutions.net [168.119.38.16])
 	(using TLSv1.3 with cipher TLS_AES_256_GCM_SHA384 (256/256 bits)
-	 key-exchange X25519 server-signature ECDSA (prime256v1))
+	 key-exchange ECDHE (prime256v1) server-signature ECDSA (prime256v1) server-digest SHA256)
 	(No client certificate requested)
-	by smtp.subspace.kernel.org (Postfix) with ESMTPS id 618F6606A321;
-	Tue, 10 Nov 2026 18:50:59 +0000 (UTC)
+	by smtp.subspace.kernel.org (Postfix) with ESMTPS id 0AB45606A330;
+	Tue, 10 Nov 2026 18:52:00 +0000 (UTC)
+Authentication-Results: smtp.subspace.kernel.org; dmarc=permerror header.from=sipsolutions.net
+Authentication-Results: smtp.subspace.kernel.org; spf=pass smtp.mailfrom=sipsolutions.net
 Authentication-Results: smtp.subspace.kernel.org;
-	dkim=pass (2048-bit key) header.d=kernel.org header.i=@kernel.org header.a=rsa-sha256 header.s=k20260515 header.b=JqWUJALF
-Received: by smtp.kernel.org (Postfix) with ESMTPSA id 77CD11F008A7;
-	Tue, 10 Nov 2026 18:50:57 +0000 (UTC)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=kernel.org;
-	s=k20260515; t=1794336659;
-	bh=lw5R+03CbcJOauGhuqqyB5KrNrCBNCqxs2tnPrtkBQw=;
-	h=Date:From:To:Cc:Subject:References:In-Reply-To;
-	b=JqWUJALFbq4GQTW0TDwQn+AcB9wpH2ZkJ5ed2nNxVceaHrDnqKDd+ltQqhmq9qPfK
-	 eVSs01rTw3OmzwgCFfHvXI35nlkno4ibamI3Xgbi07nMDc8P0uZHy/41kfPCT7dqBZ
-	 tCBojIc0lg4Z6Oeb5xHEedTfS2k1kSJ+WeMTEWI1O+hbeoU4J5J3g++zyLTh5o3J6v
-	 lSiTEyC6L5UgDrhWqO0nzZGFlgpy+DUsZp+TAd2NGAsOluA/R2xQAGvMfZJEMhUVZd
-	 SPYJbZznNcsMJ0cIncGa23G6VH5cvfKqecn/px8kHY91ZOP4PJtwHilqC4uSKzKMQq
-	 Y/N+GahASFbNg==
-Date: Tue, 10 Nov 2026 18:50:55 +0000
-From: Conor Dooley <conor@kernel.org>
-To: Linus Walleij <linusw@kernel.org>
-Cc: Johannes Berg <johannes@sipsolutions.net>,
-	Rob Herring <robh@kernel.org>,
-	Krzysztof Kozlowski <krzk+dt@kernel.org>,
-	Conor Dooley <conor+dt@kernel.org>, van Spriel <arend@broadcom.com>,
-	linux-wireless@vger.kernel.org, devicetree@vger.kernel.org
-Subject: Re: [PATCH] dt-bindings: net: wireless: brcm,bcm4329-fmac: Describe
- the MAC address
-Message-ID: <20261110-comfy-traverse-f4a2749f34ba@spud>
-References: <20261110-brcm-fmac-mac-v1-1-df9e6264b056@kernel.org>
+	dkim=pass (2048-bit key) header.d=sipsolutions.net header.i=@sipsolutions.net header.a=rsa-sha256 header.s=mail header.b=aHTpABXf
+DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
+	d=sipsolutions.net; s=mail; h=MIME-Version:Content-Transfer-Encoding:
+	Content-Type:References:In-Reply-To:Date:Cc:To:From:Subject:Message-ID:Sender
+	:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:Resent-To:
+	Resent-Cc:Resent-Message-ID; bh=FJhCO8KljoIPpc6Zj3JtJwQyirJf6h7Glr5VpdrX2ng=;
+	t=1794336720; x=1795546320; b=aHTpABXf7TWrbzVl/sbC5Ye1PEKHMPiIj8RMVi1WWVcER9m
+	gTU3WRJwIKuhvGakSv0jx5Zz+464V2xqjD5sUAMJ1wkhcxMeX7HpRASXPilPlrKh1zBvuQhEoL2uT
+	/6qP8SkR6E8ESDqpVTdZPgVdQE/bmAXu44+RelkuwIQ7Z1GivjRCfcOg6kY/xVMcUZlJh1Z4nUiLF
+	7naxmYeLESKR+pBmvykQFENz97c3PW8fY4PlYVZEtJOinw/5Nsd37CjDJ6XGB20BIbb65mJ8FH+QK
+	Y8mQ1MRVGzIR5ZqvtKq+FeywKMLTE6oFE//fLPTKKgfGKYL3fpUp9Rs/exhjlg4A==;
+Received: by sipsolutions.net with esmtpsa (TLS1.3:ECDHE_X25519__ECDSA_SECP256R1_SHA256__AES_256_GCM:256)
+	(Exim 4.98.2)
+	(envelope-from <johannes@sipsolutions.net>)
+	id 1xQqwn-00000002At6-2ADl;
+	Tue, 10 Nov 2026 19:51:57 +0100
+Message-ID: <db523e851beda07c6f52f3c094b5ea2bf718af03.camel@sipsolutions.net>
+Subject: Re: [PATCH wireless-next v4 08/21] wifi: nl80211/cfg80211: pack SMD
+ dynamic context along with frame
+From: Johannes Berg <johannes@sipsolutions.net>
+To: Pooventhiran G <pooventhiran.g@oss.qualcomm.com>
+Cc: linux-wireless@vger.kernel.org, linux-kernel@vger.kernel.org
+Date: Tue, 10 Nov 2026 19:51:55 +0100
+In-Reply-To: <20261106-smd-v4-8-62e39487f51a@oss.qualcomm.com>
+References: <20261106-smd-v4-0-62e39487f51a@oss.qualcomm.com>
+	 <20261106-smd-v4-8-62e39487f51a@oss.qualcomm.com>
+Content-Type: text/plain; charset="UTF-8"
+Content-Transfer-Encoding: quoted-printable
+User-Agent: Evolution 3.60.2 (3.60.2-3.fc44) 
 X-Mailing-List: linux-wireless@vger.kernel.org
 List-Id: <linux-wireless.vger.kernel.org>
 List-Post: <mailto:linux-wireless@vger.kernel.org>
@@ -60,26 +69,153 @@ List-Unsubscribe: <mailto:linux-wireless+unsubscribe@vger.kernel.org>
 List-Owner: <mailto:linux-wireless+owner@vger.kernel.org>
 Precedence: list
 MIME-Version: 1.0
-Content-Type: multipart/signed; micalg=pgp-sha512;
-	protocol="application/pgp-signature"; boundary="udU847c1Gm7zZV4Y"
-Content-Disposition: inline
-In-Reply-To: <20261110-brcm-fmac-mac-v1-1-df9e6264b056@kernel.org>
+X-malware-bazaar: not-scanned
 
---udU847c1Gm7zZV4Y
-Content-Type: text/plain; charset=us-ascii
-Content-Disposition: inline
+On Fri, 2026-11-06 at 13:28 +0530, Pooventhiran G wrote:
+>=20
+> +static size_t _nl80211_smd_ctx_nl_ba_param_size(u8 n_tids, bool dl)
+> +{
+> +	size_t n =3D 0;
+> +
+> +	n +=3D nla_total_size(0); /* ba_params nest header */
+> +	n +=3D n_tids * (nla_total_size(0) + /* tid nest header */
+> +		       nla_total_size(sizeof(u16)) + /* buff_size */
+> +		       nla_total_size(sizeof(u8)) + /* policy */
+> +		       nla_total_size(0) + /* amsdu_support */
+> +		       nla_total_size(sizeof(u16)) + /* timeout */
+> +		       nla_total_size(0) + /* ext_no_frag */
+> +		       nla_total_size(sizeof(u8)) + /* ext_frag_lvl */
+> +		       nla_total_size(sizeof(u16))); /* ext_buff_size */
+> +
+> +	if (dl)
+> +		n +=3D n_tids * nla_total_size(sizeof(u16)); /* winstarto */
+> +
+> +	return n;
+> +}
+> +
+> +static size_t
+> +nl80211_smd_ctx_nl_size(struct cfg80211_smd_transition_info *st_info)
+> +{
+> +	const struct ieee80211_smd_ctx *ctx =3D st_info->ctx;
+> +	int n_dl_tids =3D 0, n_ul_tids =3D 0;
+> +	u8 pn_len =3D ctx->pn_len;
+> +	size_t n =3D 0;
+> +
+> +	/* count valid TIDs */
+> +	n_dl_tids =3D hweight8(ctx->dl.valid_tid_bmap);
+> +	n_ul_tids =3D hweight8(ctx->ul.valid_tid_bmap);
+> +
+> +	n +=3D nla_total_size(sizeof(u8)); /* ST type */
+> +
+> +	/* outer NL80211_ATTR_SMD_CTX nest */
+> +	n +=3D nla_total_size(0); /* nest header */
+> +
+> +	/* DL nest */
+> +	n +=3D nla_total_size(0); /* DL nest header */
+> +
+> +	n +=3D nla_total_size(sizeof(u8)); /* valid_tid_bitmap */
+> +
+> +	if (ctx->dl_sn_valid) {
+> +		n +=3D nla_total_size(0); /* DL SN nest header */
+> +		n +=3D n_dl_tids * nla_total_size(sizeof(u16)); /* DL SN */
+> +		if (ctx->mgmt_tid_valid)
+> +			n +=3D nla_total_size(sizeof(u16)); /* DL mgmt_sn */
+> +	}
+> +
+> +	if (ctx->pn_valid)
+> +		n +=3D nla_total_size(pn_len); /* DL PN */
+> +
+> +	if (ctx->ba_params_valid)
+> +		n +=3D _nl80211_smd_ctx_nl_ba_param_size(n_dl_tids, true); /* DL BA */
+> +
+> +	/* UL nest */
+> +	n +=3D nla_total_size(0); /* UL nest header */
+> +
+> +	n +=3D nla_total_size(sizeof(u8)); /* valid_tid_bitmap */
+> +
+> +	if (ctx->ul_sn_valid) {
+> +		n +=3D nla_total_size(0); /* UL SN nest header */
+> +		n +=3D n_ul_tids * nla_total_size(sizeof(u16)); /* UL SN */
+> +		if (ctx->mgmt_tid_valid)
+> +			n +=3D nla_total_size(sizeof(u16)); /* UL mgmt_sn */
+> +	}
+> +
+> +	if (ctx->pn_valid) {
+> +		n +=3D nla_total_size(0); /* UL PN nest header */
+> +		n +=3D n_ul_tids * nla_total_size(pn_len); /* UL PN */
+> +		if (ctx->mgmt_tid_valid)
+> +			n +=3D nla_total_size(pn_len); /* UL mgmt_pn */
+> +	}
+> +
+> +	if (ctx->ba_params_valid)
+> +		n +=3D _nl80211_smd_ctx_nl_ba_param_size(n_ul_tids, false); /* UL BA *=
+/
+> +
+> +	return n;
+> +}
 
-Acked-by: Conor Dooley <conor.dooley@microchip.com>
+This kind of code is just crazy LLM output ... we can just have a sane
+upper bound and make that a single line of code? Nobody will really care
+about the precise size of the allocation.
 
---udU847c1Gm7zZV4Y
-Content-Type: application/pgp-signature; name=signature.asc
+> +static int
+> +nl80211_put_smd_ctx_ba_params(struct sk_buff *msg,
+> +			      const unsigned long *tid_bmap,
+> +			      const struct ieee80211_smd_ctx_ba *ba_tids,
+> +			      bool dl)
+> +{
+> +	u32 ba_params_attr =3D NL80211_SMD_CTX_DL_ATTR_BA_PARAMS;
+> +	struct nlattr *dl_ul_ba =3D NULL, *tid_ba =3D NULL;
 
------BEGIN PGP SIGNATURE-----
+nope.
 
-iHUEABYKAB0WIQRh246EGq/8RLhDjO14tDGHoIJi0gUCavNnjwAKCRB4tDGHoIJi
-0jBmAQCD36ZytGuKw+f2d+RIxLcD+mwHwO622R52owDqF5/m9QD+PEZCaDeu2cUp
-fbudI+tiId+GLa5O81lJVq5nPSihpgI=
-=SfOD
------END PGP SIGNATURE-----
+> +	u8 tid;
+> +
+> +	if (!dl)
+> +		ba_params_attr =3D NL80211_SMD_CTX_UL_ATTR_BA_PARAMS;
+> +
+> +	dl_ul_ba =3D nla_nest_start(msg, ba_params_attr);
+> +	if (!dl_ul_ba)
+> +		return -ENOBUFS;
+> +
+> +	for_each_set_bit(tid, tid_bmap, IEEE80211_SMD_CTX_NUM_TIDS) {
+> +		const struct ieee80211_smd_ctx_ba *ba =3D &ba_tids[tid];
+> +
+> +		tid_ba =3D nla_nest_start(msg, tid + 1);
 
---udU847c1Gm7zZV4Y--
+that can also be declared in the loop
+
+> +static int nl80211_put_smd_ctx(struct sk_buff *msg,
+> +			       struct cfg80211_smd_transition_info *st_info)
+> +{
+> +	struct nlattr *dl_sn =3D NULL, *ul_sn =3D NULL, *ul_pn =3D NULL;
+> +	struct nlattr *smd_ctx =3D NULL, *dl =3D NULL, *ul =3D NULL;
+> +	const struct ieee80211_smd_ctx *ctx;
+> +	unsigned long dl_tid_bmap =3D 0, ul_tid_bmap =3D 0;
+
+same here, what's with all the pointless =3D0/=3DNULL?
+
+and move variables into the inner code blocks too
+
+> +	pn_valid =3D (ctx->pn_len && ctx->pn_len <=3D IEEE80211_SMD_CTX_MAX_PN_=
+LEN &&
+> +		    ctx->pn_valid);
+
+useless parentheses, but anyway you don't need pn_len or the max, or the
+pn_valid even since it's always transferred ...
+
+> +nla_fail_ul:
+> +	nla_nest_cancel(msg, ul);
+> +
+> +nla_fail_dl:
+> +	nla_nest_cancel(msg, dl);
+> +
+> +nla_fail:
+> +	nla_nest_cancel(msg, smd_ctx);
+> +	return -EINVAL;
+
+crazy LLMs again? You obviously don't need to have nested cancel to get
+rid of the whole thing ... probably don't need it at all because you're
+just going to free the skb.
+
+johannes
