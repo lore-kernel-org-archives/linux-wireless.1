@@ -1,59 +1,81 @@
-Authentication-Results: smtp.subspace.kernel.org; arc=none smtp.remote-ip=95.215.58.77
+Authentication-Results: smtp.subspace.kernel.org; arc=none smtp.remote-ip=211.75.126.72
 ARC-Seal: i=1; d=subspace.kernel.org; s=arc20261015; a=rsa-sha256; cv=none;
-	t=1794300130;
-	b=Oiz+GkePpA2qGvoiC/tn6It4dVl81nP8i8oljjXZAGgAABwR4ZFtlBGm2c08uhtoDPwe
-	 MM8OYyCSU64ONo3J8MUn4wGJGAW3ZEMaXj8oDps7h3Zoy6oVPGx5a2nRDR9duaVcnWRyq
-	 2fDhKOaVdsKR+mi76Q/QFTVR2rqtTt+qHIqPRbFy2CmjrHRzbV+MQjiIYSB/Vv55Yupep
-	 nUejX9va0DadQ4JgDPZVPDg72uGMk1pNN8qqTn/U+VTax7keVmMICtwAmyxYFQkDIcmgw
-	 yYZP2S/1h4YwmqIQtDMi3o99rlYHQkrv+cTFiqL+3LWoBNwpGIIOOwlkffwpQzR0eeA==
+	t=1794301883;
+	b=255o0HLkDpSsf8UZU8bX8EXpgFEwEvbvnYvJCW5/TyO5RHCd+vKElPZXubZnpvnz8h9D
+	 e+PiPECp479QFpgcfWNsMqr+MUzeaLhXeuaynamCDfv40EDcjQjW69LLAklB8cRd4GfMs
+	 8K2bL2MO8FTK6vx+39JMPM33swEigDyVPv0J5jsZjb1Ml0+C7+eRskSX5I3nACfdtvoeD
+	 cwE1DG5JvwSBzR+eyIl2I9vQkXzp0au97aG2AgsZMhLSfDOxT2Ix0girn5SiNaIB7a3lh
+	 d8dvbH9NtDDAfEjYIa/0Jdxcrr0qgs1vKyiN7jzr5ujAg5mGLB0u/wnZ+kFBTLv97cw==
 ARC-Message-Signature: i=1; d=subspace.kernel.org; s=arc20261015;
-	a=rsa-sha256; c=relaxed/relaxed; t=1794300130;
-	h=DMARC-Filter:X-Envelope-To:DKIM-Signature:X-Envelope-To:Received:
-	 X-Mizu-Trace-ID:X-Migadu-Flow:Date:From:To:Subject:In-Reply-To:
-	 References:Message-ID:MIME-Version:Content-Type:
-	 Content-Transfer-Encoding;
-	bh=145TK+Lob1c0UyTImABgiwVFQjHyTBF+330NJmUEAyM=;
-	b=ln7NWXoFn8dIiD2IWKCFDU5fHdTTtmr73slStNSOmZ85wf0JMoC7DHTJJCKMVooC1+Al
-	 Tv6meeWt8QF0aJaVOTidkFgEG5P8CLVN3XBG2jXw7foVdl3rlIUNYGvyde3Pak0BZ6zmv
-	 BpmzUV34IPXPKa9T2dwkTSqLLTbSa4ZlIw01ZcrccdUAadmLVMb5aVlGaM5SH9bKqaaLN
-	 xIG7ktyR3K8xvcYF7j0lyLv8IKbr51w+W6jd4kwCtOYFLZGquqZCFv2BPgGERK8iSY/Ji
-	 rUVRo1QLxW49q60iG179mnbuK6jjwjgFbux0WfBpQ+7ndXOwd8bJbIVGBJeFp2qv5EQ==
+	a=rsa-sha256; c=relaxed/relaxed; t=1794301883;
+	h=DMARC-Filter:X-SpamFilter-By:DKIM-Signature:Received:Received:
+	 Received:Received:From:To:CC:Subject:Thread-Topic:Thread-Index:Date:
+	 Message-ID:References:In-Reply-To:Accept-Language:Content-Language:
+	 x-originating-ip:Content-Type:Content-Transfer-Encoding:MIME-Version;
+	bh=8/x/JjulVcCFt8Bl0KlPQQYsmAF1dc5N/Sx+9vpjo+c=;
+	b=XX8Fqir3rXEYjGszub53U/o6g+QASkUWhBm264c2okuPRjCYBFLoeOwvE8dubFeE9est
+	 csfBw8JTLVckPmDTZWnw2TO3z+Plk9GfdypxmP0Q+qcdUCxEEbiw6VNitjY7hYrr/pY/n
+	 hH/X4/npOhBtfp6xaywxaBj46I7xpb3lEwCm3h4TIY7VfkUq7mnCXpvjhH2/WyEmO26hV
+	 clWsa4dZDVD9YpvBJobDVykB9JGRcV9i3CrAOUC46f6zxu8sfuwXNSTlMqfOLzrYxLzaw
+	 9XQZC+HSGfTslb2qZTsck8KJr32EF5oxeRKp8WmllCIR4VXUKMCtt6iREKnnaD9rwjA==
 ARC-Authentication-Results: i=1; smtp.subspace.kernel.org; 
-	dmarc=pass header.from=linux.dev;
-	spf=pass smtp.mailfrom=linux.dev;
-	dkim=pass header.d=linux.dev header.i=@linux.dev header.a=rsa-sha256 header.s=key1 header.b=Ij2zog0B;
-	arc=none smtp.remote-ip=95.215.58.77
-Received: from mta1.migadu.com (out-77.mta1.migadu.com [95.215.58.77])
-	(using TLSv1.3 with cipher TLS_AES_128_GCM_SHA256 (128/128 bits)
+	dmarc=pass header.from=realtek.com;
+	spf=pass smtp.mailfrom=realtek.com;
+	dkim=pass header.d=realtek.com header.i=@realtek.com header.a=rsa-sha256 header.s=dkim header.b=RNYNe1sF;
+	arc=none smtp.remote-ip=211.75.126.72
+Received: from rtits2.realtek.com.tw (rtits2.realtek.com [211.75.126.72])
+	(using TLSv1.3 with cipher TLS_AES_256_GCM_SHA384 (256/256 bits)
 	 key-exchange X25519 server-signature ECDSA (prime256v1) server-digest SHA256)
 	(No client certificate requested)
-	by smtp.subspace.kernel.org (Postfix) with ESMTPS id C87B7606A330
-	for <linux-wireless@vger.kernel.org>; Tue, 10 Nov 2026 08:42:09 +0000 (UTC)
-DMARC-Filter: OpenDMARC Filter v1.4.2 smtp.subspace.kernel.org C87B7606A330
-Authentication-Results: smtp.subspace.kernel.org; dmarc=pass (p=none dis=none) header.from=linux.dev
-Authentication-Results: smtp.subspace.kernel.org; spf=pass smtp.mailfrom=linux.dev
+	by smtp.subspace.kernel.org (Postfix) with ESMTPS id BDC68606A31C
+	for <linux-wireless@vger.kernel.org>; Tue, 10 Nov 2026 09:11:22 +0000 (UTC)
+DMARC-Filter: OpenDMARC Filter v1.4.2 smtp.subspace.kernel.org BDC68606A31C
+Authentication-Results: smtp.subspace.kernel.org; dmarc=pass (p=none dis=none) header.from=realtek.com
+Authentication-Results: smtp.subspace.kernel.org; spf=pass smtp.mailfrom=realtek.com
 Authentication-Results: smtp.subspace.kernel.org;
-	dkim=pass (1024-bit key, unprotected) header.d=linux.dev header.i=@linux.dev header.a=rsa-sha256 header.s=key1 header.b=Ij2zog0B
-X-Envelope-To: linux-wireless@vger.kernel.org
-DKIM-Signature: a=rsa-sha256; bh=145TK+Lob1c0UyTImABgiwVFQjHyTBF+330NJmUEAyM=;
- c=simple/simple; d=linux.dev;
- h=from:to:subject:date:message-id:mime-version:content-type; s=key1;
- t=1794300128; v=1; x=1794904928;
- b=Ij2zog0BELciP7p5MMa2Am/WPPRQ+Y06gIfodPPZO1rpEUFVw7OzBM5xGBaYPmQy0ujKuYAf
- GcBH1e13VgMKeiT9vfK+ttvGehAIc6BJs3XF3Z3ZeBSgAG1f81clKp26oOIsFVLu8kFRmXVH8OQ
- fPqwJHWxGYiha0fNHMsjPx40=
-X-Envelope-To: linux-wireless@vger.kernel.org
-Received: by smtp.migadu.com with ESMTPS id 94093172365bc7a8;
-	Tue, 10 Nov 2026 08:42:08 +0000
-X-Mizu-Trace-ID: 94093172365bc7a8
-X-Migadu-Flow: FLOW_OUT
-Date: Tue, 10 Nov 2026 09:42:05 +0100
-From: Luka Gejak <luka.gejak@linux.dev>
-To: linux-wireless@vger.kernel.org, igor@listopad.email
-Subject: Re: [RFC] Adding RTL8189ES SDIO support to rtw88
-In-Reply-To: <A11FF135-696D-4107-B5FC-BBBB05303926@listopad.email>
-References: <A11FF135-696D-4107-B5FC-BBBB05303926@listopad.email>
-Message-ID: <977DC5C2-4EB7-45BD-9663-69E4094EE596@linux.dev>
+	dkim=pass (2048-bit key, unprotected) header.d=realtek.com header.i=@realtek.com header.a=rsa-sha256 header.s=dkim header.b=RNYNe1sF
+X-SpamFilter-By: ArmorX SpamTrap 5.80 with qID 6AA9BI6F01174902, This message is accepted by code: ctloc85258
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=realtek.com; s=dkim;
+	t=1794301878; bh=8/x/JjulVcCFt8Bl0KlPQQYsmAF1dc5N/Sx+9vpjo+c=;
+	h=From:To:CC:Subject:Date:Message-ID:References:In-Reply-To:
+	 Content-Type:Content-Transfer-Encoding:MIME-Version;
+	b=RNYNe1sF0NjJ1JjUXrDvvzunjjHbktPABzNuEwMUeolyRpjrDCMEvtuBNdwc5O6sW
+	 upjKqXleYMYPbmsci4Ul5yubntrE/oM3t9v9iaGPp7Da4xMyDhyRJEhYNQE7UfeQAL
+	 LDrVLy2EXE9fp2hSuJbYAO2x8sGey8vUn4Iw1r74y+L5fWxjUjTmRDlqwCmnKxNk/4
+	 5/ICo7aOqgZcVd8dQfQ1F433+Jo2bJsf8yDoCnfbTChu9vfSj97CZzjI213oDnvLor
+	 YFYpCrI/wkDRWOfxeKZE9Q60cNoqk9yRuHIa1ZZ2W89Gd4vjFvWZNOASBitz5/DFWu
+	 x1pCT+TNeDSVw==
+Received: from mail.realtek.com (rtkexhmbs03.realtek.com.tw[10.21.1.53])
+	by rtits2.realtek.com.tw (8.15.2/3.29/5.94) with ESMTPS id 6AA9BI6F01174902
+	(version=TLSv1.2 cipher=ECDHE-RSA-AES256-GCM-SHA384 bits=256 verify=FAIL);
+	Tue, 10 Nov 2026 17:11:18 +0800
+Received: from RTKEXHMBS06.realtek.com.tw (10.21.1.56) by
+ RTKEXHMBS03.realtek.com.tw (10.21.1.53) with Microsoft SMTP Server
+ (version=TLS1_2, cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id
+ 15.2.2562.56; Tue, 10 Nov 2026 17:11:18 +0800
+Received: from RTKEXHMBS06.realtek.com.tw (10.21.1.56) by
+ RTKEXHMBS06.realtek.com.tw (10.21.1.56) with Microsoft SMTP Server
+ (version=TLS1_2, cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id
+ 15.2.2562.56; Tue, 10 Nov 2026 17:01:16 +0800
+Received: from RTKEXHMBS06.realtek.com.tw ([fe80::eeeb:c765:ca73:5eef]) by
+ RTKEXHMBS06.realtek.com.tw ([fe80::eeeb:c765:ca73:5eef%10]) with mapi id
+ 15.02.2562.056; Tue, 10 Nov 2026 17:01:16 +0800
+From: Ping-Ke Shih <pkshih@realtek.com>
+To: BrNcO BrNkO <brnco925@gmail.com>
+CC: "linux-wireless@vger.kernel.org" <linux-wireless@vger.kernel.org>
+Subject: RE: rtw89: 8852cu: no data TX under firmware RA at 6 GHz 160 MHz
+ (fixed rate works)
+Thread-Topic: rtw89: 8852cu: no data TX under firmware RA at 6 GHz 160 MHz
+ (fixed rate works)
+Thread-Index: AQHdb3TbjoYAYqpEDEKDYQv9wQ0F0Lcm3vfA
+Date: Tue, 10 Nov 2026 09:01:16 +0000
+Message-ID: <0b15ba0a644c4c82bfd3c92a93b647e9@realtek.com>
+References: <CAD8w8XJuPc0mDtLnOb3MfwKJeC9t9UU0dsNoHVH=azzbKxBWyg@mail.gmail.com>
+In-Reply-To: <CAD8w8XJuPc0mDtLnOb3MfwKJeC9t9UU0dsNoHVH=azzbKxBWyg@mail.gmail.com>
+Accept-Language: en-US, zh-TW
+Content-Language: zh-TW
+Content-Type: text/plain; charset="utf-8"
+Content-Transfer-Encoding: base64
 X-Mailing-List: linux-wireless@vger.kernel.org
 List-Id: <linux-wireless.vger.kernel.org>
 List-Post: <mailto:linux-wireless@vger.kernel.org>
@@ -63,84 +85,39 @@ List-Unsubscribe: <mailto:linux-wireless+unsubscribe@vger.kernel.org>
 List-Owner: <mailto:linux-wireless+owner@vger.kernel.org>
 Precedence: list
 MIME-Version: 1.0
-Content-Type: text/plain;
- charset=utf-8
-Content-Transfer-Encoding: 8bit
 
-Hi Igor,
-
-Thanks for asking before sending it. Ping-Ke has the
-final word on this, so this is only my view after adding RTL8723BS to the
-rtw88.
-
-On November 10, 2026 5:50:38 AM GMT+01:00, igor@listopad.email wrote:
-
-> Would support for RTL8189ES SDIO devices, based on the RTL8188E T-series
-> (SDIO ID 024c:8179), be welcome in rtw88?
-
-I think so. As far as I can see nothing in the kernel binds this SDIO ID
-today. rtlwifi has RTL8188EE on PCIe and rtl8xxxu has RTL8188EU on USB,
-while rtw88 already has the SDIO code and other 8051 based 802.11n chips
-like RTL8703B and RTL8723B.
-
-On my RTL8723BS series Ping-Ke said it isn't so good to maintain three
-interfaces in the tree drivers, but he kept the existing ones and took the
-new one. So I would expect the same split to be acceptable here.
-
-Refusing cut I seems fine too. rtl8xxxu does the same for RTL8188EU.
-
-[ ... ]
-
-> The implementation adds chip operations, register tables, firmware,
-> and an SDIO binding.
-
-The firmware in the PR is byte for byte the same as
-rtlwifi/rtl8188eufw.bin, which is already in the firmware repository and
-which rtl8xxxu uses. So I don't think you need a new blob. You could
-request that name, or add a Link: in WHENCE if Ping-Ke prefers an rtw88
-path.
-
-[ ... ]
-
-> Would this be an acceptable direction for rtw88? Are there architectural
-> concerns or requirements that should be addressed before submitting
-> the series for review?
-
-From my quick skim of the PR, I think the direction is fine. What I would
-worry about is how much it changes the shared code. It needs an additional
-20 callbacks in rtw_chip_ops and more than 20 checks for this chip in the
-core and SDIO code. On my series Ping-Ke asked why the existing logic
-didn't work for special cases like these, so I would expect each one to
-need a reason.
-
-A few examples:
-
-rtw8188e.c casts rtwdev->priv to struct rtw_sdio, and nothing outside
-sdio.c uses that struct today. Maybe those parts can become hci ops.
-
-rtw_sdio_tx_handler() reads host->sdio_irq_pending, which as far as I can
-see only the mmc core uses today. TX keeping the IRQ worker away from the
-host also doesn't sound specific to this chip, so I think that wants a
-fix in the common SDIO TX path.
-
-rtw8188e_efuse_grant() and rtw8188e_false_alarm_statistics() look the same
-as the rtw8723x.c helpers that RTL8723B uses. Maybe those can be shared
-instead of copied.
-
-A more thorough review will follow once the series is posted.
-
-For the actual series, please base it on rtw-next instead of the lwfinger
-tree. Several of the core files don't apply there, and the
-LINUX_VERSION_CODE checks have to go. It also needs the Kconfig and
-Makefile entries, the device ID in sdio_ids.h, and the fixes from your
-later commits squashed into the patches they fix. The sign off should use
-a real address instead of the GitHub noreply one.
-
-You can also take a look at how the RTL8723B series went upstream for
-reference, from the RFC to the version that was applied:
-
-https://lore.kernel.org/linux-wireless/cover.1784047561.git.luka.gejak@linux.dev/
-https://lore.kernel.org/linux-wireless/20261006130701.120460-1-luka.gejak@linux.dev/
-
-Best regards,
-Luka Gejak
+QnJOY08gQnJOa08gPGJybmNvOTI1QGdtYWlsLmNvbT4gd3JvdGU6DQo+IElzb2xhdGlvbiAob25l
+IGNoYW5nZSBwZXIgdGVzdCkNCj4gLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLQ0KPiAx
+LiA2IEdIeiBCU1MgYXQgODAgTUh6IChBUCBzd2l0Y2hlZCB3aXRoIGNoYW5fc3dpdGNoLCBvciBT
+VEEgd2l0aG91dA0KPiAgICBIRTE2MCBjYXBhYmlsaXR5KTogd29ya3MuDQo+IDIuIDUgR0h6IEJT
+UyBhdCAxNjAgTUh6IHdpdGggdGhlIHNhbWUgYWRhcHRlcjogd29ya3MuDQo+IDMuIDYgR0h6IDE2
+MCBNSHogd2l0aCBhIGZpeGVkIHJhdGUgaW4gdGhlIFRYIGRlc2NyaXB0b3IgKHVzZV9yYXRlPTEs
+DQo+ICAgIGRpc19kYXRhX2ZiPTEpOiB3b3JrcyBmb3IgT0ZETTYvMjAsIEhFIE5TUzEgTUNTMCBh
+dCAyMC80MC84MC8xNjAsDQo+ICAgIEhFIE5TUzIgTUNTMCBhdCA4MC8xNjAsIGFuZCBIRSBOU1My
+IE1DUzIvTUNTNCBhdCAxNjAuIFRoZSBoYW5kc2hha2UNCj4gICAgY29tcGxldGVzIGFuZCBwaW5n
+IHRvIHRoZSBBUCB3b3Jrcy4gTUNTNyBhbmQgYWJvdmUgYXQgMTYwLCBhbmQNCj4gICAgTUNTOSBh
+dCA4MCwgYXJlIG5vdCBkZWNvZGVkIGJ5IHRoaXMgQVAuIEkgYmVsaWV2ZSB0aGF0IGlzIGxpbmsN
+Cj4gICAgYnVkZ2V0OyBXaW5kb3dzIGFsc28gdG9wcyBvdXQgYXJvdW5kIEhFMTYwIE1DUzYgaGVy
+ZS4NCg0KRGlkIHlvdSBtb2RpZnkgZHJpdmVyIHRvIHNldCB1c2VfcmF0ZT0xPyBOb3QgdXNlIGl3
+IHNldCBiaXRyYXRlcywgcmlnaHQ/DQpBY3R1YWxseSAnaXcgc2V0IGJpdHJhdGVzJyBpcyB0byB1
+c2UgUkEgdG8gY29udHJvbCByYXRlLiBJZiBpdCBjYW4gd29yaw0KZm9yIGNlcnRhaW4gY29uZGl0
+aW9ucywgaXQnZCBiZSBlYXNpZXIgdG8gYWRkcmVzcyBjYXVzZXMuDQoNCj4gNC4gNiBHSHogMTYw
+IE1IeiB3aXRoIGZpcm13YXJlIFJBOiBmYWlscyBpbiBldmVyeSB2YXJpYW50IEkgdHJpZWQuDQo+
+ICAgIFRoZSBIMkMgUkEgTUFDSURfQ0ZHIGlzIGlkZW50aWNhbCB0byB0aGUgd29ya2luZyA4MCBN
+SHogY2FzZQ0KPiAgICBleGNlcHQgYndfY2FwIDMgaW5zdGVhZCBvZiAyLg0KPiAgICAtIHJhX21h
+c2sgbGltaXRlZCB0byBIRSBOU1MxIE1DUzAtNDogZmFpbHMuDQo+ICAgIC0gcmFfbWFzayB3aXRo
+IEhFIE5TUzEgTUNTMCBvbmx5OiB0aGUgaGFuZHNoYWtlIHNvbWV0aW1lcyBwYXNzZXMsDQo+ICAg
+ICAgdGhlbiBwaW5nIGZhaWxzLg0KPiAgICAtIHNzX251bSAwLCBlcl9jYXAgMCwgZGNtX2NhcCAw
+LCBmaXhfZ2lsdGZfZW4gMCwgaW5pdF9yYXRlX2x2IDEuLjMsDQo+ICAgICAgQ1NJIGVuYWJsZWQ6
+IGFsbCBmYWlsLg0KPiAgICAtIENNQUMgRElTREFUQUZCPTAsIERJU1JUU0ZCPTAsIFJUU19FTj0x
+LCBIV19SVFNfRU49MTogYWxsIGZhaWwuDQo+ICAgICAgRXZlbiB3aXRoIFJUUyBlbmFibGVkLCBu
+byBSVFMgYXBwZWFycyBvbiBhaXIuDQoNCkRpZCB5b3UgbW9kaWZ5IFJUUyB0aHJlc2hvbGQgc2V0
+dGluZyBpbiBfX3J0dzg5X21hY191cGRhdGVfcnRzX3RocmVzaG9sZCgpID8NCg0KPiAgICAtIHJh
+X21hc2sgd2l0aCBPRkRNIG9ubHkgKDB4ZmYwKSBhdCBid19jYXAgMzogd29ya3MuDQo+ICAgIC0g
+YndfY2FwIGZvcmNlZCB0byAyIHdoaWxlIHRoZSBjaGFubmVsIHN0YXlzIGF0IDE2MCBNSHo6IHdv
+cmtzLg0KDQpDYW4geW91IGFsc28gdHJ5IGxkcGNfY2FwIDAsIHN0YmNfY2FwIDA/DQoNCg0KSW4g
+b3VyIHNpZGUsIHdlIGNhbiBjb25uZWN0IGFuIEFQIHdpdGggYmVsb3cgY2hhbm5lbDoNCiAgIGNo
+YW5uZWwgMzcgKDYxMzUgTUh6KSwgd2lkdGg6IDE2MCBNSHosIGNlbnRlcjE6IDYxODUgTUh6DQoN
+CkFsc28sIHdlIHVzZSBob3N0YXBkIHRvIHN0YXJ0IEFQIG1vZGUsIHdoaWNoIGl0IHdvcmtzIGFz
+IHdlbGwuDQoNCkNhbiB5b3UgdHJ5IGFub3RoZXIgQVAgdG8gc2VlIGlmIGFueXRoaW5nIGRpZmZl
+cmVudD8NCg0KUGluZy1LZQ0KDQo=
