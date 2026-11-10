@@ -1,57 +1,109 @@
-Authentication-Results: smtp.subspace.kernel.org; arc=none smtp.remote-ip=54.204.34.130
+Authentication-Results: smtp.subspace.kernel.org; arc=none smtp.remote-ip=205.220.180.131
 ARC-Seal: i=1; d=subspace.kernel.org; s=arc20261015; a=rsa-sha256; cv=none;
-	t=1794292465;
-	b=tlrhHlAEfQcY6J2Kk/BkYYkk1Kt08E5XLT41+12/rLbIi4Tj8SyO6rhpxUa/h+9aB6sq
-	 TCWpG+ACfUgqP+4npZIex2FrR0RYVNYG1fSKx3aeoXg8ntW4/k750BUiuO8UM/e4Y8MPr
-	 ZdwAslHZ8YKkCV0kxInRBN3UaPvbmqwJWhvRBMxMlMdzAYwhzE9ZDiH6QCfHSh9XEAFBv
-	 JXgA17dSmyIYpw+mWDxZraybZqYAeOLF93yNhP2Mk2AXpPPtSe+1PA+vXN18iNwGPmntm
-	 ww1doCevjqsAKWFpPJiiOfuREcdifGQZCMMPcak19csPiXQkz14Iid8fSIla0/YWwBA==
+	t=1794292603;
+	b=sbLS40e/CBd1Ru8fTuxjAp+wU+bB3gV91z5IYkviIpBYObs0sSogn/omSacOFdwdJLSA
+	 eMydl8sjy7iPRHn7ZUvg7LzyWS6uBP19c6Ev0Bf+erlqBf9dQ2P7hV3iwoxh4jlBapcXf
+	 fWuz3HCDvral5qAi5Sk8ECA/KiJGtiYrmQ+Ar9NJalhbxw30wsT7+vGR41G1OVYuKHQDf
+	 bvFABaukhx0WnvK0pUbcDagqWy0xDM8woJfY0pauytI7jJJ8FezyAMJekG9fU7w0sjzUq
+	 8bEoxcFj532slUUSWgJU3FyRSODaSc3oYVaeMrgJHnpc82Uv7H2U6jBcQK7rQvuCosg==
 ARC-Message-Signature: i=1; d=subspace.kernel.org; s=arc20261015;
-	a=rsa-sha256; c=relaxed/relaxed; t=1794292465;
-	h=DMARC-Filter:X-QQ-mid:X-QQ-Originating-IP:Received:X-QQ-SSF:
-	 X-QQ-GoodBg:X-BIZMAIL-ID:From:To:Cc:Subject:Date:Message-ID:
-	 In-Reply-To:References:Content-Type:Content-Transfer-Encoding:
-	 MIME-Version:X-QQ-SENDSIZE:Feedback-ID:X-QQ-XMAILINFO:X-QQ-XMRINFO:
-	 X-QQ-RECHKSPAM;
-	bh=Bm/C7lotkynqC44+eXclXpFeP3C403t89cIv8d6OaKA=;
-	b=0lUNfSB5jL7ZE0OPlGtte3zPqEd5Tx6RWM0toJu9tlGZts62o+i8EUKzqPXRGnI2ncYr
-	 igT3G7+lJvnaTBGhD/TqxLeBzq0tTKF1+iSzv2TalURjoUpRDKG9khOOgJU1ZQH7p/kHa
-	 Yb54ReRW9mM6yYnBCZBbHcxribsRam0M+q+5XZ3APIg8fDk+uAdTZO6rY+75jkur7u0eq
-	 qc3cdsTBpxUIQPuy3j7t5dGD6DpcUguqSSkKQz+Ms0yIl0eQ422vVJ47i8kSQdgwZvaNT
-	 eimm/vsRYBgT89mh/Vh8pSXBmihG04lEy0zWmN23ZXJ7OvWdaYEVmCCK4uLdvzmBYZQ==
+	a=rsa-sha256; c=relaxed/relaxed; t=1794292603;
+	h=DMARC-Filter:Received:DKIM-Signature:Received:Received:
+	 DKIM-Signature:X-Google-DKIM-Signature:X-Gm-Message-State:X-Gm-Gg:
+	 X-Received:X-Received:Received:Message-ID:Date:MIME-Version:
+	 User-Agent:Subject:To:Cc:References:From:Content-Language:In-Reply-To:
+	 Content-Type:Content-Transfer-Encoding:X-Proofpoint-Spam-Info:
+	 X-Proofpoint-GUID:X-Proofpoint-ORIG-GUID:
+	 X-Proofpoint-Spam-Details-Enc:X-Authority-Analysis:
+	 X-Proofpoint-Virus-Version:X-Proofpoint-Spam-Details;
+	bh=cnAFPAsLP3mQnmHLN/evzK6z0gz3a9aN1Zrlr7RDLyQ=;
+	b=iOcs3+b6G22tzEUVtXue790aDxmvnCNXVsZ7QZZVnNado+wtj/pRBGy1Bl8QBkODSah+
+	 Fm6JSmfX/fcbhKjEe/NOLA8zS2DcqCeDUbjKfBTEN3VYnMuADNECin2CaqXtQHRRH8tKI
+	 /aWMFCAXB8JnaAniJS7mVMktxxkyAmjohm3QAJOStam9AlSx54I3wmjN+1hEMB1RMEIb0
+	 lQJ9jgXPZiyjKlINdnIkiUW0FQfICjw0xAbC+XfB9USIN9auaU4UWsgwvM4xWIMG3SvwO
+	 +86CB2CzfQ8NGFkIPtrZcTRL/CeOlBHe3IEhFsjNhYVvD7jLzH94Cqf6f8MjJgqiOEw==
 ARC-Authentication-Results: i=1; smtp.subspace.kernel.org; 
-	dmarc=none header.from=guwolf.com;
-	spf=pass smtp.mailfrom=guwolf.com;
-	arc=none smtp.remote-ip=54.204.34.130
-Received: from smtpbguseast2.qq.com (smtpbguseast2.qq.com [54.204.34.130])
-	(using TLSv1.2 with cipher ECDHE-ECDSA-AES256-GCM-SHA384 (256/256 bits))
+	dmarc=pass header.from=oss.qualcomm.com;
+	spf=pass smtp.mailfrom=oss.qualcomm.com;
+	dkim=pass header.d=qualcomm.com header.i=@qualcomm.com header.a=rsa-sha256 header.s=qcppdkim1 header.b=Cd5kwCXV;
+	dkim=pass header.d=oss.qualcomm.com header.i=@oss.qualcomm.com header.a=rsa-sha256 header.s=google header.b=Ly7yBG62;
+	arc=none smtp.remote-ip=205.220.180.131
+Received: from mx0b-0031df01.pphosted.com (mx0b-0031df01.pphosted.com [205.220.180.131])
+	(using TLSv1.3 with cipher TLS_AES_256_GCM_SHA384 (256/256 bits)
+	 key-exchange X25519 server-signature ECDSA (prime256v1) server-digest SHA256)
 	(No client certificate requested)
-	by smtp.subspace.kernel.org (Postfix) with ESMTPS id 57F81606A31C
-	for <linux-wireless@vger.kernel.org>; Tue, 10 Nov 2026 06:34:21 +0000 (UTC)
-DMARC-Filter: OpenDMARC Filter v1.4.2 smtp.subspace.kernel.org 57F81606A31C
-Authentication-Results: smtp.subspace.kernel.org; dmarc=none (p=none dis=none) header.from=guwolf.com
-Authentication-Results: smtp.subspace.kernel.org; spf=pass smtp.mailfrom=guwolf.com
-X-QQ-mid: zesmtpip3t1794292434t7d55d038
-X-QQ-Originating-IP: MzC8s+QIhxeyhbRIKXE5VpWQzZn24VAB3LWIUuXBFyA=
-Received: from [127.0.1.1] ( [localhost])
-	by bizesmtp.qq.com (ESMTP) with 
-	id ; Tue, 10 Nov 2026 14:33:52 +0800 (CST)
-X-QQ-SSF: 0000000000000000000000000000000
-X-QQ-GoodBg: 0
-X-BIZMAIL-ID: 15739772513078757284
-From: Hao Tan <guwolf@guwolf.com>
-To: Ping-Ke Shih <pkshih@realtek.com>
-Cc: linux-wireless@vger.kernel.org
-Subject:
- Re: RTL8851BE: 5 GHz 80 MHz/HE beacon loss then auth timeout since 7.3
-Date: Tue, 10 Nov 2026 14:33:52 +0800
-Message-ID: <06F216C4AE1262C6+179429243268.102150.10348649522717765093@guwolf.com>
-In-Reply-To: <340ed206ff6a4680a46806e3bea5dbc5@realtek.com>
-References:
- <0A58E3B7800E469B+179421939016.46230.883154851683340495@guwolf.com>
- <340ed206ff6a4680a46806e3bea5dbc5@realtek.com>
-Content-Type: text/plain; charset="utf-8"
-Content-Transfer-Encoding: quoted-printable
+	by smtp.subspace.kernel.org (Postfix) with ESMTPS id B338D606A325
+	for <linux-wireless@vger.kernel.org>; Tue, 10 Nov 2026 06:36:42 +0000 (UTC)
+DMARC-Filter: OpenDMARC Filter v1.4.2 smtp.subspace.kernel.org B338D606A325
+Authentication-Results: smtp.subspace.kernel.org; dmarc=pass (p=none dis=none) header.from=oss.qualcomm.com
+Authentication-Results: smtp.subspace.kernel.org; spf=pass smtp.mailfrom=oss.qualcomm.com
+Authentication-Results: smtp.subspace.kernel.org;
+	dkim=pass (2048-bit key) header.d=qualcomm.com header.i=@qualcomm.com header.a=rsa-sha256 header.s=qcppdkim1 header.b=Cd5kwCXV;
+	dkim=pass (2048-bit key) header.d=oss.qualcomm.com header.i=@oss.qualcomm.com header.a=rsa-sha256 header.s=google header.b=Ly7yBG62
+Received: from pps.filterd (m0279868.ppops.net [127.0.0.1])
+	by mx0a-0031df01.pphosted.com (8.18.1.11/8.18.1.11) with ESMTP id 6AA4AjKM1958917
+	for <linux-wireless@vger.kernel.org>; Tue, 10 Nov 2026 06:36:41 GMT
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=qualcomm.com; h=
+	cc:content-transfer-encoding:content-type:date:from:in-reply-to
+	:message-id:mime-version:references:subject:to; s=qcppdkim1; bh=
+	cnAFPAsLP3mQnmHLN/evzK6z0gz3a9aN1Zrlr7RDLyQ=; b=Cd5kwCXVhFHyBTHq
+	lBSX4nmQ/vIMNz/H9KCcNE12FbablzeYvKawjFkq1BOmKl1CcIFo9EF6FyHe3TeH
+	ItN0c/B0MJYC4c9xWyDZvhi6FC5Vj5M8dxtd0lqj68X+2hJKFXIXDrwba6nXSkc1
+	4i0uP+uu+ztMMBaa9FL0RzdehwKslS37VZNxk9vqYlsTX7Lof0XVX1kb5Iy6RUbY
+	hy027AjCeWa3Xvk2OaGIKPzyC9PknDGrTBv8wF8PkZBWxgtFFRjRGhapaFM5qzTa
+	Iv6DliTTRDY83kCgmIiyiCGS5vDz6V4rFMwmQbLj01ciaNbnGSBSRG67V3CPQ2r/
+	/Cr5bA==
+Received: from mail-pj1-f72.google.com (mail-pj1-f72.google.com [209.85.216.72])
+	by mx0a-0031df01.pphosted.com (PPS) with ESMTPS id 4hucydm21e-1
+	(version=TLSv1.3 cipher=TLS_AES_128_GCM_SHA256 bits=128 verify=NOT)
+	for <linux-wireless@vger.kernel.org>; Tue, 10 Nov 2026 06:36:41 +0000 (GMT)
+Received: by mail-pj1-f72.google.com with SMTP id 98e67ed59e1d1-3ae7faf4ff7so2288100a91.3
+        for <linux-wireless@vger.kernel.org>; Mon, 09 Nov 2026 22:36:41 -0800 (PST)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+        d=oss.qualcomm.com; s=google; t=1794292600; x=1794897400; darn=vger.kernel.org;
+        h=content-transfer-encoding:content-type:in-reply-to:content-language
+         :from:references:cc:to:subject:user-agent:mime-version:date
+         :message-id:from:to:cc:subject:date:message-id:reply-to:content-type;
+        bh=cnAFPAsLP3mQnmHLN/evzK6z0gz3a9aN1Zrlr7RDLyQ=;
+        b=Ly7yBG62bfqsck5xrckF36SnE8UdQ3545lGNI70721mobCPJPlROhAaVSCd7pue13a
+         7qNNsg+gR1RsHPOiIc/hVbjR5yB11az3EYsgIj+RfKZGKObUQhGwiiKDnb0jZhGXQfuk
+         VUFbjTYRQoBO+6hRfNAs1T3CmeMCT92joFpq8B+rcJtOySiaJ7Ny22flGO5aoH2sTNRR
+         R1vW6JC0SP2wXqKlXI1CquwLbMdnIfEB98IyBzO18N4bv5NUPQXsiDtuHM+zqTbmxs9l
+         1tUv8FS0hexkB/owSigKURllm0yQDBZ0aqj/tidgOMOgOIw2FXaZX0AWzLQld77RtTcB
+         pKAA==
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+        d=1e100.net; s=20260707; t=1794292600; x=1794897400;
+        h=content-transfer-encoding:content-type:in-reply-to:content-language
+         :from:references:cc:to:subject:user-agent:mime-version:date
+         :message-id:x-gm-gg:x-gm-message-state:from:to:cc:subject:date
+         :message-id:reply-to:content-type;
+        bh=cnAFPAsLP3mQnmHLN/evzK6z0gz3a9aN1Zrlr7RDLyQ=;
+        b=gq/GXxCIaNgQ1P99SXo/2AE+BEMT/MQ16j8qXtnlaDw7q3cMkLfnhMUf9vfbW8ZDso
+         ovMpTrAPph9BOaFku092QFI/adEAAZ93zZ05tdZTj2RPRe/xDDTy5ReF9iGjZSSoHZUo
+         +th1wSLencLcH64cK7V4H7nmRE+1Jup9V09zCtSKw7toz4yYRwDk/eXdqJdxeCSHC7iO
+         7r2I3Bnqaxj5bFhBHitQV8p4zFZbzyO1RcvcmowOffB/WA+0vGGTtvW/hzQYXsrkQhBK
+         ZJyFYWKCEER/UE4eyRnaUwgkrL7PLlfa+AeQNT9ke65kJIIj4Qos6c/BVbjUMkscVDe+
+         hMyw==
+X-Gm-Message-State: APuU4Z9ZRLlfUBDUpNEOWzINRpF+fkctIGOzyil9UVJWF5TKd6w6uekn
+	YqKJfTNpA2iNwLzparMkS4jhGg5X7ms7jBxcQPW2S2sa7KaqS1RKGwDCZbtYLX6n0Zoe0uTexif
+	8jS8oFUpKL7AxRXyFlTYEXbHpWbHdOpX5cis+E/eL4ITBaw4Mvtetk/bnFYbKwNb9u0Rxwg==
+X-Gm-Gg: AYBFou0E4/4Irc1cL5xpv/aJnU3JUL1tBS2Cr6Nh7neJ6N1NnP1/qfI5zRzwr/kvc1I
+	V3OeXne0WVfbmc/A0ymXHJN2fwV0mmPIhUT+RAZVWBSqYmW5CbsH1pD1cQ0FK1bb1TTSMCVpTW3
+	PUo9EhkNH+XEh7qRcqwLutin3FSORI+1Rjganex8gnsPZaPoT3fFuUH6sUri0StT1MZWkGAQamM
+	pmBK85FdD2o1oXCjCIDSWbgEaYVXCN2/rXX9Da1MAovKjqS3tQeWvQTcFLkQlYg6nPQxrjNW2C/
+	NBKQneuduJlpmSJKjXSVY2XxlUyvCHow+dse4ytdmYCIatxvTiN1AdCb5fder5vEfRidH6vExYu
+	gFN8grRFxfE6vh3tEWacc2sRHMCFw13NxG7Sr2id9h9SIuM4xYNnb8yParVL5WXUAISD34NFBZ3
+	8k/7f7AhZRyezK1Bl8evg7D+j7Ilm1cSYlQKVnvmN2pehExQ==
+X-Received: by 2002:a17:90b:4e86:b0:3ad:b7d1:8631 with SMTP id 98e67ed59e1d1-3b166cc02a0mr1865034a91.17.1794292600478;
+        Mon, 09 Nov 2026 22:36:40 -0800 (PST)
+X-Received: by 2002:a17:90b:4e86:b0:3ad:b7d1:8631 with SMTP id 98e67ed59e1d1-3b166cc02a0mr1865014a91.17.1794292599958;
+        Mon, 09 Nov 2026 22:36:39 -0800 (PST)
+Received: from [10.133.33.180] (tpe-colo-wan-fw-bordernet.qualcomm.com. [103.229.16.4])
+        by smtp.gmail.com with ESMTPSA id 98e67ed59e1d1-3b16790ff7esm2546598a91.9.2026.11.09.22.36.38
+        (version=TLS1_3 cipher=TLS_AES_128_GCM_SHA256 bits=128/128);
+        Mon, 09 Nov 2026 22:36:39 -0800 (PST)
+Message-ID: <c78e9194-ba3c-47ea-8876-9bf6bba4d7ef@oss.qualcomm.com>
+Date: Tue, 10 Nov 2026 14:36:36 +0800
 X-Mailing-List: linux-wireless@vger.kernel.org
 List-Id: <linux-wireless.vger.kernel.org>
 List-Post: <mailto:linux-wireless@vger.kernel.org>
@@ -61,120 +113,72 @@ List-Unsubscribe: <mailto:linux-wireless+unsubscribe@vger.kernel.org>
 List-Owner: <mailto:linux-wireless+owner@vger.kernel.org>
 Precedence: list
 MIME-Version: 1.0
-X-QQ-SENDSIZE: 520
-Feedback-ID: zesmtpip:guwolf.com:qybglogicsvrsz:qybglogicsvrsz3b-0
-X-QQ-XMAILINFO: MYha8DeKTomkj/6LGQtONIxOS6t1Ugti7gyHgT+tUQzhUS/pXVcCKbQh
-	egkfd4TqlvmhUKqdAfWUNTYJ+l4DsUj3p/glFX+Q081jKLj5ig0y7xsBKgPmA5Xd8rTmvFF
-	r4J3YzZkjlwhFG+30SXjPaosds/j54AkYIb8H7WEl3ZAjTi2a0ZZoBWNMhEFViYRBVI+sIj
-	wVDeLuNlkxlKRLuHCcRoz8r/9HN32myuzNOa96hzQJJpImqA//Yg/ansdgf3TD/yQQMH15m
-	fR/1AkzlHlWY9KgFamsD4sORVI3hINaZSUxFezrYSMUm/blANMFdydtxH7mHAICVSQOuUZ0
-	9K8IEW4mleHCY+FccchDXpm1q/O8RLlPwjxL3G4ChkwAMr8Uzo9h7SC5dRWnzyistFwyvF+
-	2+mbTP0oJ7zGyTkZx0zIyL7nlu00CE+ba2oDKUahwvQ0wGUFewaRoV/mCuTILRE/IakRjQL
-	h+HdugM6MSzAmO6UGuzfks0JFt33Ek0zZrht1ovN058iKQNvWuAAUJ4Jtm1hg8SEEHvivfX
-	gJlUu3F785hQS8S7tERyTqSEGsA0XTklorf63e8iOnHuQgJ1K6hIFFblBIqyzgslG97oBbb
-	Ij0SVdrLwXDBEubmIomoEAlxV3OP/P7uQoMALSH+NC7RIKkDveyrNZK3RR4gLFlniGzGY4b
-	f7TRe8Ou05gSQb0Y/31Rz7FUKDjDEKAXr99Gizm1MvVvxoMconY80PcBVHOivkdGhobjlB4
-	6QTlKcWAKIy0t4WiT1GXCId/dQTBOrdkxzVVvQWmmFjHSFgg6fGI82m97QZsQbZgG5Jv+7r
-	mRZxzISYJt8V9QFs0n+EX0X6tQOEfrlzxu7ixAStltReZZpY1e8hftCcardpJs8XIvFDLb+
-	We5ZHak6Q/Ga9VP+QOIpTav7k1WrsbH/zwlF69yu2VjGEpYy06s0BdeeojmpcVA/zEyOHen
-	6TB2RE4qZGn3GiEn8SEm2/TeT6CSC5qv9MCuHdrphhkay+w==
-X-QQ-XMRINFO: OD9hHCdaPRBwH5bRRRw8tsiH4UAatJqXfg==
-X-QQ-RECHKSPAM: 0
+User-Agent: Mozilla Thunderbird
+Subject: Re: [PATCH ath-next v4 11/11] wifi: ath12k: use link_id_map to
+ resolve RX link id for all devices
+To: Rameshkumar Sundaram <rameshkumar.sundaram@oss.qualcomm.com>,
+        Jeff Johnson <jjohnson@kernel.org>
+Cc: linux-wireless@vger.kernel.org, ath12k@lists.infradead.org
+References: <20261102-ath12k-logical-link-id-v4-0-f4c7807c299b@oss.qualcomm.com>
+ <20261102-ath12k-logical-link-id-v4-11-f4c7807c299b@oss.qualcomm.com>
+ <1107c457-74ab-48b6-b45b-afe4a868a55d@oss.qualcomm.com>
+From: Baochen Qiang <baochen.qiang@oss.qualcomm.com>
+Content-Language: en-US
+In-Reply-To: <1107c457-74ab-48b6-b45b-afe4a868a55d@oss.qualcomm.com>
+Content-Type: text/plain; charset=UTF-8
+Content-Transfer-Encoding: 7bit
+X-Proofpoint-Spam-Info: AW1haW4tMjYxMTEwMDAyNiBTYWx0ZWRfX+I73aVzfIz3e
+ 6OGPnnggrbvfX2yOcLaYcOwGzuZbYb0It1vqsBxA0ojIN2ahMqHTOr4C2IRGS6623VAnVHa5Iw6
+ Uf+mXmo3h3TuUpDWFDFYKJ5HcyYkVDo=
+X-Proofpoint-GUID: dMqDtg-hsbZAts2aD5ZlFu-w4IFA0koz
+X-Proofpoint-ORIG-GUID: dMqDtg-hsbZAts2aD5ZlFu-w4IFA0koz
+X-Proofpoint-Spam-Details-Enc: AW1haW4tMjYxMTEwMDAyNiBTYWx0ZWRfXw00PNb8EmgAj
+ 9j0iPl0Bx09QIQlBG3/SKcNyukZ2MCPwYeMcGKxLuLNGnIPxtR2Rh83CL9tVA1flFlysvMtutwY
+ Io6iP4KowhfoTP/K3lQbC90s0JD6EKm3LbAdphIjdyUvD25zw2BxcmAcsJ6OHZOi12MNYU2/O9j
+ Kzw5GXs7s/aG2S9m41ITwQrKsIm3g5spHzRANTHyz95kgQ2A4Lw1CFKiak0mXr49X4hlvHr2122
+ J0+3dFC0Cm4UliDNIPxC6isCiHPKAnrPNWqKqNjixzRwtIqZfSBr2raOM9rfpqCJ6q+rSaKte9N
+ qhlnEu9AOleVUPB1eSlfznKMXt3iTduYY4pZWv+os+/X406oENuFjGyvZqQzRCipGlmzC1ocr2r
+ u/eYOjaB6vGvPdhrEUJHEBqbRmCFvfYPa6X9tcehal3+wny+oSAr821MbLRySi5S/FxQexC4yrQ
+ Kjq5mIX+xXJ0tiFR5Gw==
+X-Authority-Analysis: v=2.4 cv=XuRvqlF9 c=1 sm=1 tr=0 ts=6af2bb79 cx=c_pps
+ a=RP+M6JBNLl+fLTcSJhASfg==:117 a=nuhDOHQX5FNHPW3J6Bj6AA==:17
+ a=IkcTkHD0fZMA:10 a=zJRp6_cAMcgA:10 a=s4-Qcg_JpJYA:10
+ a=VkNPw1HP01LnGYTKEx00:22 a=u7WPNUs3qKkmUXheDGA7:22 a=ZpdpYltYx_vBUK5n70dp:22
+ a=p20JRixKrNupFYNNBvwA:9 a=QEXdDO2ut3YA:10 a=iS9zxrgQBfv6-_F4QbHw:22
+X-Proofpoint-Virus-Version: vendor=baseguard
+ engine=ICAP:2.0.293,Aquarius:18.0.1176,Hydra:6.1.138,FMLib:17.12.100.49
+ definitions=2026-11-10_02,2026-11-06_01,2025-10-01_01
+X-Proofpoint-Spam-Details: rule=outbound_notspam policy=outbound score=0
+ phishscore=0 lowpriorityscore=0 bulkscore=0 spamscore=0 adultscore=0
+ suspectscore=0 impostorscore=0 malwarescore=0 clxscore=1015
+ priorityscore=1501 classifier=typeunknown authscore=0 authtc= authcc=
+ route=outbound adjust=0 reason=mlx scancount=1 engine=8.22.0-2611040001
+ definitions=main-2611100026
 
-Hi Ping-Ke,
 
-Thanks for the comments.
 
-> The changes between 7.3.0 and 7.2.11 related to RTL8851BE are mostly
-> BT-coexistence patches (if I read correctly), so you can quickly
-> check if it works well with BT disabled.
+On 11/10/2026 2:07 PM, Rameshkumar Sundaram wrote:
+> On 11/2/2026 12:08 PM, Baochen Qiang wrote:
+>> Commit a2fe9dc70f3b ("wifi: ath12k: Fix low MLO RX throughput on
+>> WCN7850") added a set_rx_link_id() op so that each device could resolve
+>> the RX link id in its own way: QCN9274/IPQ5332 index
+>> dp_peer->link_id_map[] with the hw_link_id, while WCN7850/QCC2072 walk
+>> dp_peer->link_peers[] and match by peer_id, tracked with a link_peers_map
+>> bitmap.
+>>
+>> Now that ath12k_skb_rxcb::drv_link_id carries the driver link id for all
+>> devices (the hw_link_id on QCN9274/IPQ5332 and the logical link id on
+>> WCN7850/QCC2072) and ath12k_dp_peer::link_id_map maps it to the IEEE80211
+>> link id, the RX path can resolve the link id uniformly.
+>>
+>> Revert the set_rx_link_id() machinery and the link_peers_map bitmap, and
+>> derive the link id directly from link_id_map[drv_link_id] in
+>> ath12k_dp_rx_deliver_msdu() for all devices. The NULL dp_peer guard added
+>> to ath12k_mac_peer_cleanup_all() is kept as it is an independent fix.
+>>
+> 
+> Fixes: a2fe9dc70f3b ("wifi: ath12k: Fix low MLO RX throughput on WCN7850") ??
 
-This is a regression in v7.3. v7.2 is good and v7.3 is bad with the same
-rtw8851b_fw-1.bin 0.29.41.5. I started from the v7.2 rtw89 driver and
-applied the v7.3 rtw89 changes in order on one test kernel. The step that
-changes the result is:
+hmm, not sure here, since it would need to backport the whole series which is too large
+for a stable backport.
 
-  86f763e37248 ("wifi: rtw89: coex: Rearrange _ntfy_role_info info") is good.
-
-  a76501e1d148 ("wifi: rtw89: coex: Separate _ntfy_role_info into two functio=
-n")
-  is bad.
-
-The rebuilt series differs from v7.3 by six files at the tail. Those
-commits are after this step. Both endpoints were tested as unmodified
-mainline, and the good/bad pair above differs by only a76501e1d148.
-
-> if it is not too hard, please try to disable BT.
-
-On unmodified v7.3, with the AP SSID "GuWolf" (BSSID 1e:40:e8:12:08:63):
-
-  - Bluetooth controller powered off: VHT80 stayed up for 60 seconds,
-    with no beacon loss. With the controller powered off,
-    _set_wl_preagc_ctrl() already disables pre-AGC. pre_agc stayed 0
-    for that run. The separate Bluetooth-on run reproduced the failure.
-  - Bluetooth powered on: I used a temporary wpa_supplicant network and
-    explicitly set disable_he=3D1 and disable_vht=3D0 before association.
-    Both values remained set while it associated at VHT80; about three
-    seconds later it disconnected with reason 4 (locally generated), and
-    subsequent 5 GHz authentication timed out.
-
-The beacon has HT and VHT IEs and no HE IE. VHT operation is 80 MHz
-(channel 149, center 155). Forcing both disable_he=3D1 and disable_vht=3D1
-falls back to HT20/HT40, which stays up.
-
-> This is a little weird to me. RTL8851BE becomes idle (power off) after
-> disconnection. It is very like reload modules. Not sure what they are
-> different?
-
-On unmodified v7.3 they are not the same. After the beacon loss I
-disconnected and associated again without unloading the driver.
-Association completed, but pre_agc was still 1, and beacons were lost
-again after about one second. Reloading rtw89_8851be, rtw89_8851b,
-rtw89_pci and rtw89_core clears that coex state and pre_agc returns to 0,
-so one more association can complete before the same failure. RF idle
-after disconnect does not clear it.
-
-> What does UINT_MAX mean?
-
-It is only the SSID of a second AP in the same room (BSSID
-4e:69:b1:c6:62:64). It is 5 GHz only, WPA2-PSK, channel 149, and fails
-the same way.
-
-> Does it work if not disable_vht? (To clarify if RTL8851BE misbehavior
-> on bandwidth 80MHz.)
-
-No. With Bluetooth on, disable_he=3D1 and VHT still enabled, the VHT80
-link still failed and disconnected with reason 4. See the second bullet
-above.
-
-a76501e1d148 also changes the role-notify flow, so I did not assume the
-new STA value was the whole fix. This firmware uses role info v2
-(fwlrole 2). Keeping the STA role and the new notify flow, but sending
-link_mode_v0 in the role v2 H2C, still failed. Keeping the STA role, the
-notify flow and the original H2C, and disabling pre-AGC when the link is
-out of band, restored VHT80.
-
-_set_wl_preagc_ctrl() disables pre-AGC when the TDD binding is 5 GHz, or
-when the role is still NOLINK. Wi-Fi on 5 GHz and Bluetooth on 2.4 GHz
-do not share a band, so tdd_bind is empty and out_of_band is already set.
-After a76501e1d148 the NOLINK fallback no longer matches. The change is:
-
-  } else if (dm->out_of_band ||
-             dm->tdd_bind.rf_band =3D=3D BIT(RTW89_BAND_5G)) {
-          is_preagc =3D BTC_PREAGC_DISABLE;
-
-Overlapping TDD/FDD bindings are unchanged. I have tested this only on
-RTL8851BE with 5 GHz Wi-Fi and 2.4 GHz Bluetooth.
-
-On v7.3 the change passed 600 seconds at VHT80 with no beacon loss, then
-five reconnects without unloading the module. Six 50 MB downloads and
-three 10 MB uploads completed. The same change on rtw-next
-04c9984187228904f222681661c50db3f0c50b71 passed that VHT80 test and a
-separate 2.4 GHz association and traffic test.
-
-I am not claiming continuous Bluetooth HID or PAN coexistence. The
-keyboard did not reconnect after a controller toggle, and the PAN test
-saw a transient disconnect. I will follow up with the change as a
-separate [PATCH] in this thread.
-
-Hao Tan
