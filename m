@@ -1,79 +1,129 @@
-Authentication-Results: smtp.subspace.kernel.org; arc=pass header.oldest-pass=0 smtp.remote-ip=100.103.45.18
-ARC-Seal: i=2; d=subspace.kernel.org; s=arc20261015; a=rsa-sha256; cv=pass;
-	t=1794321474;
-	b=rehwpq8j+EsvAT9KC38mcK9zBFDe7xZYmvbXQM6QoORtv+D1zKo38sO5dEJzcmviQNK4
-	 FztbWlK+sB9h2x4ykPB8jNRP4LrP4xjXeQ919/lNyHhgRITG5L2yJwoWY5RPSeC1zGAFE
-	 DKcAwdwy5pylBH3R8BtO8ZCDuaFwkSLvSVgFgnAMTGhJPvaVWjse9X/jaDbK2YtK6iZU0
-	 /Sr8D8G4fBYezStBS5ziSCSN5VfjS2OEBXLhqz/Q+L+jcy0tWtExyuxBU4xFV6ZtxjSve
-	 Uup5Sgp3couTigQEkt7coWC/iHMpHHWlIWLPpgehu/mNLq+12OrEDbs33l7491VPw7g==
-ARC-Message-Signature: i=2; d=subspace.kernel.org; s=arc20261015;
-	a=rsa-sha256; c=relaxed/relaxed; t=1794321474;
-	h=Received:DKIM-Signature:Received:From:Date:Subject:MIME-Version:
-	 Content-Type:Message-Id:References:In-Reply-To:To:Cc:X-Mailer:
-	 X-Developer-Signature:X-Developer-Key:X-Endpoint-Received:
-	 X-Original-From:Reply-To:Content-Transfer-Encoding;
-	bh=tN3vdZ9ng1Mhk2Xe8ShvoPdE+C0i1qFRsvoRSok7RE0=;
-	b=u+i3DQr7mi8T9mQ4oIhmOSTYowpWotxzHD9uF10oPeYQpFf7F3kYSiZ5FeKMlV+ThfWT
-	 S4tybe5CPRSNs56cXooX0JBKGnmwecpT4/WzJxVV1vj9/tVzzZ0F448uKduu+F6VUWwUC
-	 wCDeAaPqoTZR/RdvybviwBNO6lDYCdScoRaHgIVUCYE7/gxZ4EJL49HWMBQTTqUFpV3UV
-	 zzhQoQnJtO70YbbDxpB5L9Oy+TuKUBPro3jbi+caYpZHMV1C62S053oMXYtdeooCocw1K
-	 oWtXRQ5wLjpb7y5niiXYkij+NMDDkQZJ4PqYRHQNV6sDl98Du4bnxXwg7Qzzby7+nTQ==
-ARC-Authentication-Results: i=2; smtp.subspace.kernel.org; 
-	dkim=pass header.d=kernel.org header.i=@kernel.org header.a=rsa-sha256 header.s=k20260515 header.b=jHTAXu6q;
-	arc=pass header.oldest-pass=0 smtp.remote-ip=100.103.45.18
-Received: from smtp.kernel.org (quasi.space.kernel.org [100.103.45.18])
-	(using TLSv1.3 with cipher TLS_AES_256_GCM_SHA384 (256/256 bits)
-	 key-exchange X25519 server-signature ECDSA (prime256v1))
-	(No client certificate requested)
-	by smtp.subspace.kernel.org (Postfix) with ESMTPS id 76678606A321;
-	Tue, 10 Nov 2026 14:37:54 +0000 (UTC)
-Authentication-Results: smtp.subspace.kernel.org;
-	dkim=pass (2048-bit key) header.d=kernel.org header.i=@kernel.org header.a=rsa-sha256 header.s=k20260515 header.b=jHTAXu6q
-Authentication-Results: smtp.kernel.org; arc=none smtp.remote-ip=100.80.115.77
-ARC-Seal: i=1; d=kernel.org; s=arc20260519; a=rsa-sha256; cv=none;
-	t=1794321474;
-	b=W/dEAKXDKQEL38AVbaPMArPp6n0tFfMdgcl9mwvxOtklqu2DfSCW8uzA7s+k8O1h7HAQ
-	 vclBQLRsB+DI1x9S9s4ORg5gbXxhPzTHHLLmRakXsyDo6crQzBYB7g3NLdeP3vuZ7CKPl
-	 hnTs+ybXGBaRVcCLHKz09iU/4AwsSS32PCCxsSwBfJINbTrgzaW6KVI7BJ4jnj3udZ7x/
-	 DpBFagXGToJjAAYEZnXDzi6gT9kZgFlcvPByXnp260ofJeu1vRP2u4A9inYeF9T0P5UZQ
-	 XZh9xHPVrclkRa7Z65zTT5seg2YWuiV3+GxuAod4dUfZ3bcVoUcaK8TJZARxkGCOz7g==
-ARC-Message-Signature: i=1; d=kernel.org; s=arc20260519; a=rsa-sha256;
-	c=relaxed/relaxed; t=1794321474;
-	h=DKIM-Signature:Received:From:Date:Subject:MIME-Version:Content-Type:
-	 Message-Id:References:In-Reply-To:To:Cc:X-Mailer:
-	 X-Developer-Signature:X-Developer-Key:X-Endpoint-Received:
-	 X-Original-From:Reply-To:Content-Transfer-Encoding;
-	bh=tN3vdZ9ng1Mhk2Xe8ShvoPdE+C0i1qFRsvoRSok7RE0=;
-	b=jrCCv8oGK7/obn4jD3QWMWZqeKBZ7o8s/i0Fr7+thRDRPFJshku32aCdyyslMTLyglLk
-	 kBHbztYo/cRV9DNSg5qOXeYHPK07EMO/gusIfSQyKYsdnz4WGzUrYvcOHVlkr/YRHLqPd
-	 2ui/+mK9an4ga5e/6/Z/g/+Pk+nWk+/2iH/HR0ipCato6zRc9T2+O0UXH4uR4Ggb7MRZ+
-	 XwTuQeKS93sitymHJ5bP5tIO5AOIs5gA0dHU54OcmXRdhZPcJCqaAQXhA/vpgr47u2++P
-	 mOAOB6xgBBQOSwAmloCdagXNUnWW8tgXJ2ajvSxjyl5qJrMC3JAc2PfbIr6GT1iTpKw==
-ARC-Authentication-Results: i=1; smtp.kernel.org; 
-	arc=none smtp.remote-ip=100.80.115.77
-Received: from lkml.kernel.org (nexus.subspace.kernel.org [100.80.115.77])
+Authentication-Results: smtp.subspace.kernel.org; arc=none smtp.remote-ip=195.135.223.131
+ARC-Seal: i=1; d=subspace.kernel.org; s=arc20261015; a=rsa-sha256; cv=none;
+	t=1794321503;
+	b=XojXzzQHszjHqYisVDGU+TnEewbdgus2Wf5E+t1/wzv/Qr7ykOS+HoZhOK4VziX1RkfR
+	 nyq5/gY+AsxoWhvlEiWjhBAY88JFqDBI+mwwnjINpsrPlgNBL1y4WXSDRQntXDm3LvOyr
+	 ELRa/0TYR97Im4K3s8jPa7ElrdeIjKEseWpEZNWmys5McaVB5MZ630mQRV/8PxpnA7iS1
+	 6xUtwDs6voTHgEQHoHryrAejdCtF+9VjUYm7iO396jw4twWmsJOLFMCszPevp4rxnxRO+
+	 MGVEJK/GzQUSv5xsqNCN+pLxxfA/53WqzeW0VeoiGgBHGGDPw5bJyljRTtiw72HER4A==
+ARC-Message-Signature: i=1; d=subspace.kernel.org; s=arc20261015;
+	a=rsa-sha256; c=relaxed/relaxed; t=1794321503;
+	h=DMARC-Filter:Received:DKIM-Signature:DKIM-Signature:DKIM-Signature:
+	 DKIM-Signature:Received:Received:Received:Date:From:To:Cc:Subject:
+	 Message-ID:References:MIME-Version:Content-Type:Content-Disposition:
+	 In-Reply-To:X-Spamd-Result:X-Rspamd-Server:X-Rspamd-Action:
+	 X-Spam-Flag:X-Spam-Score:X-Spam-Level:X-Rspamd-Queue-Id;
+	bh=Fh5qOtVM6KsLzFpIRsYYHC+bSYz/O+LnqFiFi3TOwW4=;
+	b=Ek6y6WjsOPj8b/KK7ffE1rMlX32sDIpMSs1tvROAUjkM77OFen1R4l4kARA9sbUp6Hiz
+	 eWdSkNYqzq3AWJ29wegImDlVsnEjumZrHEX1ViSqTXgUs9ePERvChd3GkaFqLker2ZGk2
+	 MGcIeFjHOc58PIFc1C1Zn7latxCN3jEMm51SsoNLMxdgeXTDUjH+1V4btusIz97OqLzvJ
+	 6YGjwU0Vmj8z+BKewh1xvADYxSeeU4pl0NJ1VX/mR+OCOv/aiTO3uHFi0A7UurxO5lD5P
+	 797pEXC3m/1my3+jFoSumpFXe/rDfDaCB1swnhzjIT4DV5sLGCjeFh5NIr7Vz+J7qtA==
+ARC-Authentication-Results: i=1; smtp.subspace.kernel.org; 
+	dmarc=none header.from=suse.cz;
+	spf=pass smtp.mailfrom=suse.cz;
+	dkim=pass header.d=suse.cz header.i=@suse.cz header.a=rsa-sha256 header.s=susede2_rsa header.b=MUVsr+ph;
+	dkim=pass header.d=suse.cz header.i=@suse.cz header.a=ed25519-sha256 header.s=susede2_ed25519 header.b=zZopj+90;
+	dkim=pass header.d=suse.cz header.i=@suse.cz header.a=rsa-sha256 header.s=susede2_rsa header.b=MUVsr+ph;
+	dkim=neutral header.d=suse.cz header.i=@suse.cz header.a=ed25519-sha256 header.s=susede2_ed25519 header.b=zZopj+90;
+	arc=none smtp.remote-ip=195.135.223.131
+Received: from smtp-out2.suse.de (smtp-out2.suse.de [195.135.223.131])
 	(using TLSv1.3 with cipher TLS_AES_256_GCM_SHA384 (256/256 bits)
 	 key-exchange X25519 server-signature ECDSA (prime256v1) server-digest SHA256)
 	(No client certificate requested)
-	by smtp.kernel.org (Postfix) with ESMTPS id 52B971F008A2;
-	Tue, 10 Nov 2026 14:37:53 +0000 (UTC)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=kernel.org;
-	s=k20260515; t=1794321474;
-	bh=tN3vdZ9ng1Mhk2Xe8ShvoPdE+C0i1qFRsvoRSok7RE0=;
-	h=From:Date:Subject:References:In-Reply-To:To:Cc:Reply-To;
-	b=jHTAXu6q7nLlpVJ5O27p6BB+S5hGeZgZWtjJkqDnNWhlOeUapHnMtzwg2RM2Xb66/
-	 VC1owfcDtexVHZFr2w0W+8i9zBGztFfDUZRl8ZsWZtiK5/YAN94x1dxrmlHnBi5AGX
-	 UllWxx8IoYyI42xtIvLOiN8H50YrOUL9Sxu6Cq6KBv/b9VYeliVES7/zrbYGpmmMIl
-	 q+dcBbMFwOzefY4AgGakpdddus3/r2zL2oe21tJqhUPIrLa5XX7ussVOjidcLKHI8x
-	 CfXT+vIWOR1nNzXDIXvemOWNvzbP7OZiymZsd0yyXHSi5p8GtB3uXzwos3LQ2K0umb
-	 4kuExd9htNSzQ==
-Received: from nexus.subspace.kernel.org (localhost [IPv6:::1])
-	by lkml.kernel.org (Postfix) with ESMTP id D24D648B9D;
-	Tue, 10 Nov 2026 14:37:52 +0000 (UTC)
-From: Christopher Griffin via B4 Relay <devnull+christophergriffin05.gmail.com@kernel.org>
-Date: Tue, 10 Nov 2026 08:37:53 -0600
-Subject: [PATCH v2 2/2] wifi: ath12k: simplify copying a peer's PPE
- thresholds
+	by smtp.subspace.kernel.org (Postfix) with ESMTPS id 3FB22606A33D;
+	Tue, 10 Nov 2026 14:38:22 +0000 (UTC)
+DMARC-Filter: OpenDMARC Filter v1.4.2 smtp.subspace.kernel.org 3FB22606A33D
+Authentication-Results: smtp.subspace.kernel.org; dmarc=none (p=none dis=none) header.from=suse.cz
+Authentication-Results: smtp.subspace.kernel.org; spf=pass smtp.mailfrom=suse.cz
+Authentication-Results: smtp.subspace.kernel.org;
+	dkim=pass (1024-bit key) header.d=suse.cz header.i=@suse.cz header.a=rsa-sha256 header.s=susede2_rsa header.b=MUVsr+ph;
+	dkim=pass header.d=suse.cz header.i=@suse.cz header.a=ed25519-sha256 header.s=susede2_ed25519 header.b=zZopj+90;
+	dkim=pass (1024-bit key) header.d=suse.cz header.i=@suse.cz header.a=rsa-sha256 header.s=susede2_rsa header.b=MUVsr+ph;
+	dkim=neutral header.d=suse.cz header.i=@suse.cz header.a=ed25519-sha256 header.s=susede2_ed25519 header.b=zZopj+90
+Received: from imap1.dmz-prg2.suse.org (imap1.dmz-prg2.suse.org [IPv6:2a07:de40:b281:104:10:150:64:97])
+	(using TLSv1.3 with cipher TLS_AES_256_GCM_SHA384 (256/256 bits)
+	 key-exchange X25519 server-signature RSA-PSS (4096 bits) server-digest SHA256)
+	(No client certificate requested)
+	by smtp-out2.suse.de (Postfix) with ESMTPS id 6B7421F769;
+	Tue, 10 Nov 2026 14:38:20 +0000 (UTC)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=suse.cz; s=susede2_rsa;
+	t=1794321500; h=from:from:reply-to:date:date:message-id:message-id:to:to:cc:cc:
+	 mime-version:mime-version:content-type:content-type:
+	 in-reply-to:in-reply-to:references:references;
+	bh=Fh5qOtVM6KsLzFpIRsYYHC+bSYz/O+LnqFiFi3TOwW4=;
+	b=MUVsr+phhfZbFW8xjR4b3N1UtGCeg+l0uYLOI5bLig6ZTedYwIElDXlSxhCLTjeiSHCd6k
+	bg+NDUgRn4V4Cz63o4lwC/9gvtBeJXiSrYK+hYpxXqxLvSnhU0GeyZW39zoyzRQ0nyBJQY
+	pyMpVSkOGDsd5a+gix4rvbt7CSWAcbw=
+DKIM-Signature: v=1; a=ed25519-sha256; c=relaxed/relaxed; d=suse.cz;
+	s=susede2_ed25519; t=1794321500;
+	h=from:from:reply-to:date:date:message-id:message-id:to:to:cc:cc:
+	 mime-version:mime-version:content-type:content-type:
+	 in-reply-to:in-reply-to:references:references;
+	bh=Fh5qOtVM6KsLzFpIRsYYHC+bSYz/O+LnqFiFi3TOwW4=;
+	b=zZopj+90aGJKBJGWq3ccQNKWjno338Dvu06+ctjiTjzqDLlDaVJHiPN7g0hSfMYZ4HR0wM
+	fsnCVhe8MldfL9AQ==
+Authentication-Results: smtp-out2.suse.de;
+	dkim=pass header.d=suse.cz header.s=susede2_rsa header.b=MUVsr+ph;
+	dkim=pass header.d=suse.cz header.s=susede2_ed25519 header.b=zZopj+90
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=suse.cz; s=susede2_rsa;
+	t=1794321500; h=from:from:reply-to:date:date:message-id:message-id:to:to:cc:cc:
+	 mime-version:mime-version:content-type:content-type:
+	 in-reply-to:in-reply-to:references:references;
+	bh=Fh5qOtVM6KsLzFpIRsYYHC+bSYz/O+LnqFiFi3TOwW4=;
+	b=MUVsr+phhfZbFW8xjR4b3N1UtGCeg+l0uYLOI5bLig6ZTedYwIElDXlSxhCLTjeiSHCd6k
+	bg+NDUgRn4V4Cz63o4lwC/9gvtBeJXiSrYK+hYpxXqxLvSnhU0GeyZW39zoyzRQ0nyBJQY
+	pyMpVSkOGDsd5a+gix4rvbt7CSWAcbw=
+DKIM-Signature: v=1; a=ed25519-sha256; c=relaxed/relaxed; d=suse.cz;
+	s=susede2_ed25519; t=1794321500;
+	h=from:from:reply-to:date:date:message-id:message-id:to:to:cc:cc:
+	 mime-version:mime-version:content-type:content-type:
+	 in-reply-to:in-reply-to:references:references;
+	bh=Fh5qOtVM6KsLzFpIRsYYHC+bSYz/O+LnqFiFi3TOwW4=;
+	b=zZopj+90aGJKBJGWq3ccQNKWjno338Dvu06+ctjiTjzqDLlDaVJHiPN7g0hSfMYZ4HR0wM
+	fsnCVhe8MldfL9AQ==
+Received: from imap1.dmz-prg2.suse.org (localhost [127.0.0.1])
+	(using TLSv1.3 with cipher TLS_AES_256_GCM_SHA384 (256/256 bits)
+	 key-exchange X25519 server-signature RSA-PSS (4096 bits) server-digest SHA256)
+	(No client certificate requested)
+	by imap1.dmz-prg2.suse.org (Postfix) with ESMTPS id 329C9134F4;
+	Tue, 10 Nov 2026 14:38:20 +0000 (UTC)
+Received: from dovecot-director2.suse.de ([2a07:de40:b281:106:10:150:64:167])
+	by imap1.dmz-prg2.suse.org with ESMTPSA
+	id XpbVAVws82qdLgAAD6G6ig
+	(envelope-from <jack@suse.cz>); Tue, 10 Nov 2026 14:38:20 +0000
+Received: by quack.suse.cz (Postfix, from userid 1000)
+	id 7F6FA22545; Tue, 10 Nov 2026 15:38:15 +0100 (CET)
+Date: Tue, 10 Nov 2026 15:38:15 +0100
+From: Jan Kara <jack@suse.cz>
+To: Christian Brauner <brauner@kernel.org>
+Cc: linux-fsdevel@vger.kernel.org, 
+	Linus Torvalds <torvalds@linux-foundation.org>, Jann Horn <jannh@google.com>, Josef Bacik <josef@toxicpanda.com>, 
+	Chris Mason <mason@kernel.org>, Jeff Layton <jlayton@kernel.org>, NeilBrown <neil@brown.name>, 
+	Eric Dumazet <edumazet@kernel.org>, Thomas Gleixner <tglx@kernel.org>, 
+	Al Viro <viro@zeniv.linux.org.uk>, Jonathan Corbet <corbet@lwn.net>, Christoph Hellwig <hch@lst.de>, 
+	Greg Kroah-Hartman <gregkh@suse.de>, Joel Granados <joel.granados@kernel.org>, 
+	Kees Cook <kees@kernel.org>, Jan Kara <jack@suse.cz>, Jan Kara <jack@suse.com>, 
+	linux-kernel@vger.kernel.org, linux-nfs@vger.kernel.org, linux-acpi@vger.kernel.org, 
+	linux-kselftest@vger.kernel.org, linux-s390@vger.kernel.org, linux-scsi@vger.kernel.org, 
+	linux-um@lists.infradead.org, linux-wireless@vger.kernel.org, linuxppc-dev@lists.ozlabs.org, 
+	netdev@vger.kernel.org, ntfs3@lists.linux.dev, platform-driver-x86@vger.kernel.org, 
+	coreteam@netfilter.org, kexec@lists.infradead.org, linux-pci@vger.kernel.org, 
+	linux-sound@vger.kernel.org, netfilter-devel@vger.kernel.org, dri-devel@lists.freedesktop.org, 
+	ibm-acpi-devel@lists.sourceforge.net, jfs-discussion@lists.sourceforge.net, 
+	linux-alpha@vger.kernel.org, linux-arm-kernel@lists.infradead.org, linux-cifs@vger.kernel.org, 
+	linux-fbdev@vger.kernel.org, linux-hwmon@vger.kernel.org, linux-mm@kvack.org, 
+	linux-sh@vger.kernel.org, linux-usb@vger.kernel.org, samba-technical@lists.samba.org, 
+	sparclinux@vger.kernel.org, linux-m68k@lists.linux-m68k.org, linux-doc@vger.kernel.org, 
+	linux-serial@vger.kernel.org, linux-atm-general@lists.sourceforge.net, 
+	Takashi Iwai <tiwai@suse.de>, linux-input@vger.kernel.org, linux-raid@vger.kernel.org, 
+	linux-ext4@vger.kernel.org, linux-modules@vger.kernel.org, linux-debuggers@vger.kernel.org, 
+	Chuck Lever <cel@kernel.org>
+Subject: Re: [PATCH v2 34/51] proc: let proc_remove() remove the entry it was
+ given
+Message-ID: <gb7ibchjlghrlulokvwae7khr6w3uxutfbfq6kuvypmhiinha6@4557bv2sr4im>
+References: <20261104-work-procfs-bugfixes-v2-0-bbf7d5546809@kernel.org>
+ <20261104-work-procfs-bugfixes-v2-34-bbf7d5546809@kernel.org>
 X-Mailing-List: linux-wireless@vger.kernel.org
 List-Id: <linux-wireless.vger.kernel.org>
 List-Post: <mailto:linux-wireless@vger.kernel.org>
@@ -83,68 +133,184 @@ List-Unsubscribe: <mailto:linux-wireless+unsubscribe@vger.kernel.org>
 List-Owner: <mailto:linux-wireless+owner@vger.kernel.org>
 Precedence: list
 MIME-Version: 1.0
-Content-Type: text/plain; charset="utf-8"
-Message-Id: <20261110-ath-peer-ppe-thres-loop-v2-2-fced87507920@gmail.com>
-References: <20261110-ath-peer-ppe-thres-loop-v2-0-fced87507920@gmail.com>
-In-Reply-To: <20261110-ath-peer-ppe-thres-loop-v2-0-fced87507920@gmail.com>
-To: Jeff Johnson <jjohnson@kernel.org>
-Cc: Rameshkumar Sundaram <rameshkumar.sundaram@oss.qualcomm.com>, 
- Baochen Qiang <baochen.qiang@oss.qualcomm.com>, 
- linux-wireless@vger.kernel.org, ath11k@lists.infradead.org, 
- ath12k@lists.infradead.org, linux-kernel@vger.kernel.org, 
- Jeff Johnson <jeff.johnson@oss.qualcomm.com>, 
- Christopher Griffin <christophergriffin05@gmail.com>
-X-Mailer: b4 0.16.0
-X-Developer-Signature: v=1; a=ed25519-sha256; t=1794321472; l=1371;
- i=christophergriffin05@gmail.com; s=20261024; h=from:subject:message-id;
- bh=S3RGt5CprtIcKimatDNBeUJCBEBiBnLLAOmHNGumSF4=;
- b=BmEpdxPl6CdaE5UhPvQdnBUSM+EL4w8eQzXAI++AGbmzFyawZBji8QU8DePhVwjpAQn+yBbsY
- qaD4IMT/okDAt28ox/31Y/GuFOttamdcK4jy9SR6+SRqsjPblaR4+Pe
-X-Developer-Key: i=christophergriffin05@gmail.com; a=ed25519;
- pk=oa9tkTNpiGoFWdGvpDHXLSobApmsh9BfrJRJrRJAvWA=
-X-Endpoint-Received: by B4 Relay for
- christophergriffin05@gmail.com/20261024 with auth_id=1309
-X-Original-From: Christopher Griffin <christophergriffin05@gmail.com>
-Reply-To: christophergriffin05@gmail.com
-Content-Transfer-Encoding: 7bit
+Content-Type: text/plain; charset=us-ascii
+Content-Disposition: inline
+In-Reply-To: <20261104-work-procfs-bugfixes-v2-34-bbf7d5546809@kernel.org>
+X-Spamd-Result: default: False [-11.51 / 50.00];
+	SUSE_INTERNAL_BYPASS(-9.00)[];
+	BAYES_HAM(-3.00)[100.00%];
+	SUSPICIOUS_RECIPS(1.50)[];
+	NEURAL_HAM_LONG(-1.00)[-1.000];
+	MID_RHS_NOT_FQDN(0.50)[];
+	R_DKIM_ALLOW(-0.20)[suse.cz:s=susede2_rsa,suse.cz:s=susede2_ed25519];
+	NEURAL_HAM_SHORT(-0.20)[-1.000];
+	MIME_GOOD(-0.10)[text/plain];
+	MX_GOOD(-0.01)[];
+	RBL_SPAMHAUS_BLOCKED_OPENRESOLVER(0.00)[2a07:de40:b281:104:10:150:64:97:from];
+	ARC_NA(0.00)[];
+	MISSING_XM_UA(0.00)[];
+	RCVD_VIA_SMTP_AUTH(0.00)[];
+	MIME_TRACE(0.00)[0:+];
+	DBL_BLOCKED_OPENRESOLVER(0.00)[suse.com:email,imap1.dmz-prg2.suse.org:rdns,imap1.dmz-prg2.suse.org:helo,suse.cz:email,suse.cz:dkim];
+	RCVD_COUNT_THREE(0.00)[3];
+	TO_DN_SOME(0.00)[];
+	FROM_EQ_ENVFROM(0.00)[];
+	FROM_HAS_DN(0.00)[];
+	RECEIVED_SPAMHAUS_BLOCKED_OPENRESOLVER(0.00)[2a07:de40:b281:106:10:150:64:167:received];
+	TO_MATCH_ENVRCPT_SOME(0.00)[];
+	RCPT_COUNT_GT_50(0.00)[59];
+	RCVD_TLS_LAST(0.00)[];
+	DKIM_SIGNED(0.00)[suse.cz:s=susede2_rsa,suse.cz:s=susede2_ed25519];
+	DKIM_TRACE(0.00)[suse.cz:+]
+X-Rspamd-Server: rspamd1.dmz-prg2.suse.org
+X-Rspamd-Action: no action
+X-Spam-Flag: NO
+X-Spam-Score: -11.51
+X-Spam-Level: 
+X-Rspamd-Queue-Id: 6B7421F769
 
-From: Christopher Griffin <christophergriffin05@gmail.com>
+On Wed 04-11-26 18:47:20, Christian Brauner wrote:
+> proc_remove() looks the entry up by its name in its parent and removes
+> whatever it finds there:
+> 
+>   remove_proc_subtree(de->name, de->parent);
+> 
+> If the entry was removed already, say along with its parent, that is
+> either nothing or a different entry that got the same name in the
+> meantime, and de->parent may well be gone. Two removals of the same
+> entry are a bug in the caller, but going by the name turns it into
+> removing an entry that belongs to somebody else.
+> 
+> Since commit 895b4c0c79b0 ("fs/proc: fix uaf in proc_readdir_de()")
+> an entry that was unlinked has an empty rb node. So check for that
+> under proc_subdir_lock and otherwise remove the entry itself, with the
+> loop of remove_proc_subtree() moved into a helper both of them use.
+> Nothing can help a caller that passes an entry that has been freed
+> already.
+> 
+> Reported-by: Chris Mason <mason@kernel.org>
+> Fixes: a8ca16ea7b0a ("proc: Supply a function to remove a proc entry by PDE")
+> Signed-off-by: Christian Brauner (Amutable) <brauner@kernel.org>
 
-ath12k_peer_assoc_h_he() copies each 6-bit PPE threshold of a peer's HE
-capabilities into the WMI layout one bit at a time, shifting it in from
-the top: val >>= 1, then the new bit at bit 5, six times over. After the
-sixth bit, bit i of the field sits at bit i of val, so put it there
-directly.
+Looks good. Feel free to add:
 
-No functional change.
+Reviewed-by: Jan Kara <jack@suse.cz>
 
-This change and its message were written with Claude, an AI coding
-assistant.
+								Honza
 
-Suggested-by: Rameshkumar Sundaram <rameshkumar.sundaram@oss.qualcomm.com>
-Link: https://lore.kernel.org/all/b60c4c56-483b-406e-92ab-643b0fdf2dc8@oss.qualcomm.com/
-Signed-off-by: Christopher Griffin <christophergriffin05@gmail.com>
----
- drivers/net/wireless/ath/ath12k/mac.c | 3 +--
- 1 file changed, 1 insertion(+), 2 deletions(-)
-
-diff --git a/drivers/net/wireless/ath/ath12k/mac.c b/drivers/net/wireless/ath/ath12k/mac.c
-index 9fd3841f71b71..12dfac1d3b42c 100644
---- a/drivers/net/wireless/ath/ath12k/mac.c
-+++ b/drivers/net/wireless/ath/ath12k/mac.c
-@@ -2731,9 +2731,8 @@ static void ath12k_peer_assoc_h_he(struct ath12k *ar,
- 				if ((arg->peer_ppet.ru_bit_mask & BIT(ru)) == 0)
- 					continue;
- 				for (i = 0; i < 6; i++) {
--					val >>= 1;
- 					val |= ((he_cap->ppe_thres[bit / 8] >>
--						 (bit % 8)) & 0x1) << 5;
-+						 (bit % 8)) & 0x1) << i;
- 					bit++;
- 				}
- 				arg->peer_ppet.ppet16_ppet8_ru3_ru0[nss] |=
-
+> ---
+>  fs/proc/generic.c | 78 ++++++++++++++++++++++++++++++++++++-------------------
+>  1 file changed, 51 insertions(+), 27 deletions(-)
+> 
+> diff --git a/fs/proc/generic.c b/fs/proc/generic.c
+> index 588999058e66..9a0a2fcac7c7 100644
+> --- a/fs/proc/generic.c
+> +++ b/fs/proc/generic.c
+> @@ -818,33 +818,14 @@ void remove_proc_entry(const char *name, struct proc_dir_entry *parent)
+>  }
+>  EXPORT_SYMBOL(remove_proc_entry);
+>  
+> -int remove_proc_subtree(const char *name, struct proc_dir_entry *parent)
+> +/*
+> + * Remove @root, already erased from its parent, and everything below it.
+> + * Called with proc_subdir_lock held for writing, returns with it dropped.
+> + */
+> +static int __remove_proc_subtree(struct proc_dir_entry *root)
+>  {
+> -	struct proc_dir_entry *root = NULL, *de, *next;
+> -	const char *fn = name;
+> -	unsigned int len;
+> -
+> -	write_lock(&proc_subdir_lock);
+> -	if (__xlate_proc_name(name, &parent, &fn) != 0) {
+> -		write_unlock(&proc_subdir_lock);
+> -		return -ENOENT;
+> -	}
+> -	len = strlen(fn);
+> +	struct proc_dir_entry *de = root, *next;
+>  
+> -	root = pde_subdir_find(parent, fn, len);
+> -	if (!root) {
+> -		write_unlock(&proc_subdir_lock);
+> -		return -ENOENT;
+> -	}
+> -	if (unlikely(pde_is_permanent(root))) {
+> -		write_unlock(&proc_subdir_lock);
+> -		WARN(1, "removing permanent /proc entry '%s/%s'",
+> -			root->parent->name, root->name);
+> -		return -EINVAL;
+> -	}
+> -	pde_erase(root, parent);
+> -
+> -	de = root;
+>  	while (1) {
+>  		next = pde_subdir_first(de);
+>  		if (next) {
+> @@ -872,6 +853,34 @@ int remove_proc_subtree(const char *name, struct proc_dir_entry *parent)
+>  	pde_put(root);
+>  	return 0;
+>  }
+> +
+> +int remove_proc_subtree(const char *name, struct proc_dir_entry *parent)
+> +{
+> +	struct proc_dir_entry *root = NULL;
+> +	const char *fn = name;
+> +	unsigned int len;
+> +
+> +	write_lock(&proc_subdir_lock);
+> +	if (__xlate_proc_name(name, &parent, &fn) != 0) {
+> +		write_unlock(&proc_subdir_lock);
+> +		return -ENOENT;
+> +	}
+> +	len = strlen(fn);
+> +
+> +	root = pde_subdir_find(parent, fn, len);
+> +	if (!root) {
+> +		write_unlock(&proc_subdir_lock);
+> +		return -ENOENT;
+> +	}
+> +	if (unlikely(pde_is_permanent(root))) {
+> +		write_unlock(&proc_subdir_lock);
+> +		WARN(1, "removing permanent /proc entry '%s/%s'",
+> +			root->parent->name, root->name);
+> +		return -EINVAL;
+> +	}
+> +	pde_erase(root, parent);
+> +	return __remove_proc_subtree(root);
+> +}
+>  EXPORT_SYMBOL(remove_proc_subtree);
+>  
+>  void *proc_get_parent_data(const struct inode *inode)
+> @@ -883,8 +892,23 @@ EXPORT_SYMBOL_GPL(proc_get_parent_data);
+>  
+>  void proc_remove(struct proc_dir_entry *de)
+>  {
+> -	if (de)
+> -		remove_proc_subtree(de->name, de->parent);
+> +	if (!de)
+> +		return;
+> +
+> +	write_lock(&proc_subdir_lock);
+> +	/* Removed already, maybe along with its parent. */
+> +	if (RB_EMPTY_NODE(&de->subdir_node)) {
+> +		write_unlock(&proc_subdir_lock);
+> +		return;
+> +	}
+> +	if (unlikely(pde_is_permanent(de))) {
+> +		write_unlock(&proc_subdir_lock);
+> +		WARN(1, "removing permanent /proc entry '%s/%s'",
+> +		     de->parent->name, de->name);
+> +		return;
+> +	}
+> +	pde_erase(de, de->parent);
+> +	__remove_proc_subtree(de);
+>  }
+>  EXPORT_SYMBOL(proc_remove);
+>  
+> 
+> -- 
+> 2.53.0
+> 
 -- 
-2.43.0
-
-
+Jan Kara <jack@suse.com>
+SUSE Labs, CR
