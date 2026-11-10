@@ -1,91 +1,94 @@
-Authentication-Results: smtp.subspace.kernel.org; arc=none smtp.remote-ip=74.125.82.41
+Authentication-Results: smtp.subspace.kernel.org; arc=none smtp.remote-ip=74.125.82.42
 ARC-Seal: i=1; d=subspace.kernel.org; s=arc20261015; a=rsa-sha256; cv=none;
-	t=1794280196;
-	b=U5y4x8gAA0Rl4rJlC0oImiU8XVkFCwCa4kuZW2VNHscNh3kcP9AjjHDXqzpl2NV7zKgt
-	 yw1XG2V70loDXHoQGE2DepsDGacrhMFUFP0b82XjHA4IG3irqdHuRoTqYhl4w4ghKmqLA
-	 bSNyYZnQ4z4zI72J8R3pTAq3xxtBY4exoQB2QrasbqgnVwdU+RPjciKNt2cR7Os+aN9aQ
-	 Gg3GNJXsZsjjbavQIajv8sILZ33rmiTZgdrAOWI/cqzSL4DFiuT1RZMTyHxIyLtDHD5Wo
-	 nqT6sHJtv0WH3D9U57qTC7uhzkJJk4W5S07QzhKcRpp4SnRkiHe0buALiI3z/Qo55Sw==
+	t=1794280355;
+	b=rXzQftovKrqmjMSNgbo+ZPhEDhRUpKHG1R/shN7cPMwlbh9ngsjMlPiEy7vg6td4CPWP
+	 WsvZVl3IEh3FXduwGBYU8dOMgIaTpkNCrAI1dRFgglgp9SUjOOUcFwmU+ammuDqAeMdk3
+	 DxMX57Dco0Lt98qjI5in5HZKCnrmgo3sNyU3omN5V5aPIyl/sQi30h1hCAwT1IQp1z3up
+	 /up7rjU2jFzZFXPa+yShTYDxHxS/juEJHwMZPaEPGQD4K/+UaZ6DbFNyctceIKE0cpMTK
+	 7Esll5Br2qQjkIHuqhWn2bs2nelKHmVG3At+sK+fF8F9Kx4lK+aC6UmMPv5NVVlSNWg==
 ARC-Message-Signature: i=1; d=subspace.kernel.org; s=arc20261015;
-	a=rsa-sha256; c=relaxed/relaxed; t=1794280196;
+	a=rsa-sha256; c=relaxed/relaxed; t=1794280355;
 	h=DMARC-Filter:Received:DKIM-Signature:X-Google-DKIM-Signature:
 	 X-Gm-Message-State:X-Gm-Gg:X-Received:Received:Date:From:To:Cc:
 	 Subject:Message-ID:References:MIME-Version:Content-Type:
 	 Content-Disposition:In-Reply-To;
-	bh=P8yH4vKM/bxg1XRcWlOR7scRqqaMzH1r7Qdxunx+hdQ=;
-	b=hrOq68Ncv8KJFCu8WSq4RVObWF1b38nZl1Hj6CVDzhfDp7Wl0pPhCGjtxIZAc/VJyeAS
-	 o+2QGMs4hFVXtOPwXkxzvg7zpMsJkJ/RSUE0Ra0oZTBc+J5V/WYaUWIyXL/45LzVxiaPp
-	 eIkE4Y5vJ3msHBgRnmm/mPtwtQR+hdL86X4QGR28YmR4vctStUX2/v9sRuxbBU6wftNd1
-	 okRukMYhaY8FkkXDKqp1AkaOl2x8HkLCY0owtgxyMoh49ySRDZf0BRAazard7oV0tqd6o
-	 AcHwb8ZgRTy00Nbwj4qJ8rrzJJCzWxdd9/xsOvuuSNmGVqdqkDSwXyX8rfNOJbW0yOw==
+	bh=rDM6x7XRc95I3mGTLkYrN/qxWaVNHBCaXNGEhzTwFik=;
+	b=EGicCxUvaKatX3ZzybKvzVGxu2WZOGz5ETyBR7i5LZ1HIQ9MHnXyPpU6M3k9ctuHARZH
+	 uKl9rNTQge46fp9nioG+eS3MYPXv6CVxVrl7gszsmS2qO6fbhlSx5a3WtTWsd/d7WoAN/
+	 hh3OodKKcN7AK3lBVbD4JXkU4eEZ4BtJdKPWFQEWpd+yVqGDxLPSKmKeIfHVetZEVkpJ6
+	 Oyfa6t1+UzzF9fcmFFAIg3MfJ6htxaOB8I3O2IQilmGyJidH/O3/NX5QhAETqRUZJWga4
+	 m3cn/EYvBNLj/1/evXcx/F+I7oiFYdh2KcduYveEgfif+8E4DxhEJSgJOuzn6vwvOXA==
 ARC-Authentication-Results: i=1; smtp.subspace.kernel.org; 
 	dmarc=pass header.from=morsemicro.com;
 	spf=pass smtp.mailfrom=morsemicro.com;
-	dkim=pass header.d=morsemicro-com.20260707.gappssmtp.com header.i=@morsemicro-com.20260707.gappssmtp.com header.a=rsa-sha256 header.s=20260707 header.b="pGm5wKZ/";
-	arc=none smtp.remote-ip=74.125.82.41
-Received: from mail-dl1-f41.google.com (mail-dl1-f41.google.com [74.125.82.41])
+	dkim=pass header.d=morsemicro-com.20260707.gappssmtp.com header.i=@morsemicro-com.20260707.gappssmtp.com header.a=rsa-sha256 header.s=20260707 header.b=lERNHzN2;
+	arc=none smtp.remote-ip=74.125.82.42
+Received: from mail-dl1-f42.google.com (mail-dl1-f42.google.com [74.125.82.42])
 	(using TLSv1.3 with cipher TLS_AES_128_GCM_SHA256 (128/128 bits)
 	 key-exchange X25519 server-signature ECDSA (prime256v1) server-digest SHA256)
 	(No client certificate requested)
-	by smtp.subspace.kernel.org (Postfix) with ESMTPS id 6D3B3606A326
-	for <linux-wireless@vger.kernel.org>; Tue, 10 Nov 2026 03:09:55 +0000 (UTC)
-DMARC-Filter: OpenDMARC Filter v1.4.2 smtp.subspace.kernel.org 6D3B3606A326
+	by smtp.subspace.kernel.org (Postfix) with ESMTPS id 62F4B606A31C
+	for <linux-wireless@vger.kernel.org>; Tue, 10 Nov 2026 03:12:35 +0000 (UTC)
+DMARC-Filter: OpenDMARC Filter v1.4.2 smtp.subspace.kernel.org 62F4B606A31C
 Authentication-Results: smtp.subspace.kernel.org; dmarc=pass (p=none dis=none) header.from=morsemicro.com
 Authentication-Results: smtp.subspace.kernel.org; spf=pass smtp.mailfrom=morsemicro.com
 Authentication-Results: smtp.subspace.kernel.org;
-	dkim=pass (2048-bit key, unprotected) header.d=morsemicro-com.20260707.gappssmtp.com header.i=@morsemicro-com.20260707.gappssmtp.com header.a=rsa-sha256 header.s=20260707 header.b=pGm5wKZ/
-Received: by mail-dl1-f41.google.com with SMTP id a92af1059eb24-1b244fb7fffso1974493c88.1
-        for <linux-wireless@vger.kernel.org>; Mon, 09 Nov 2026 19:09:55 -0800 (PST)
+	dkim=pass (2048-bit key) header.d=morsemicro-com.20260707.gappssmtp.com header.i=@morsemicro-com.20260707.gappssmtp.com header.a=rsa-sha256 header.s=20260707 header.b=lERNHzN2
+Received: by mail-dl1-f42.google.com with SMTP id a92af1059eb24-1a2761c69fbso2062340c88.0
+        for <linux-wireless@vger.kernel.org>; Mon, 09 Nov 2026 19:12:35 -0800 (PST)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=morsemicro-com.20260707.gappssmtp.com; s=20260707; t=1794280194; x=1794884994; darn=vger.kernel.org;
+        d=morsemicro-com.20260707.gappssmtp.com; s=20260707; t=1794280354; x=1794885154; darn=vger.kernel.org;
         h=in-reply-to:content-disposition:content-type:mime-version
          :references:message-id:subject:cc:to:from:date:from:to:cc:subject
          :date:message-id:reply-to:content-type;
-        bh=P8yH4vKM/bxg1XRcWlOR7scRqqaMzH1r7Qdxunx+hdQ=;
-        b=pGm5wKZ//WZRltRaTw1tmvTuMZJln5CqY0VWf8SH/etDNY/3qP/8R5wxTw7nj3AyXh
-         5+RYDOtSvck4TemSQcmjjZVccAEzqAjQagEdHJaSOzNVBGvEqIQXEEyARgtw+ZrdGYC5
-         L0NhHmkJe+zN27WHsnVTFHku69XCn2fQ5V06gt7x7vFIFnEu8z/H4bnN2qN22q27g6GZ
-         dw+cZ+9E9YQ68c/22fccYQeOa16zok40G+afvLXooG8xU4QrKeeRzZ114qiWDdiXWkTU
-         sCi6iJHGNxJuJdssnX9FeLcBZ691/je1CNkSpSK8Gbfpgc5VsfG9/X+c4/ucEq7aMSgN
-         n/Aw==
+        bh=rDM6x7XRc95I3mGTLkYrN/qxWaVNHBCaXNGEhzTwFik=;
+        b=lERNHzN2PlgoxjFpOUSZJXNvgYUi4F2qPOEedr0c+7BiYngb2iJtOTDek4zcSphV/D
+         cloVn2wAArz/dBqWxk9NZjUfHb6G0JCgoJlYXEjw4IMVB+DQ57iVQfpb6/5PFt62lhmd
+         BuQk9/32ra6sR5DltWGPR1lAHkp7poFKw0TJ8D+TW/LODlALwnUysZ5K00J96CNcuqop
+         Hg+taw2BpXxzta5/bbfrgeQOJAxdbMo0x+QechfevCTARpqTG/ssU6q04FmXYjGU0AqV
+         ciVkRQAtUUcffXNCiRTcqV2NXmgN95qdrQCaJ332UkmF3Elq3nd5+Tf/wOjgr2JCA39X
+         wWyw==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=1e100.net; s=20260707; t=1794280194; x=1794884994;
+        d=1e100.net; s=20260707; t=1794280354; x=1794885154;
         h=in-reply-to:content-disposition:content-type:mime-version
          :references:message-id:subject:cc:to:from:date:x-gm-gg
          :x-gm-message-state:from:to:cc:subject:date:message-id:reply-to
          :content-type;
-        bh=P8yH4vKM/bxg1XRcWlOR7scRqqaMzH1r7Qdxunx+hdQ=;
-        b=XgEwf6blMif2bqlUvQqu0x5ZyvYgR/irvPj/ibKQ764kY2ccffxdTtu0z2xQ7p8Ufe
-         ZR7V3VoG8oGK7hi8Ye6WMIyYA9WAPoG4OjulinmMWs8h43y48s3EMqpwYuIDZxaIcmXS
-         WVVEczkN3lbZTgjJK/spYrtT2sJoL8FsXVXjGTW45mNcpKJPh3vKWq+4TWQBF1DbZ/mr
-         fhmxayYeqW4lTUQnNZiU1MNVF5b6G4lt64k6KMxP3WPuMIiy8NDuJNdystkHPOcxbn5i
-         JxzeU3EofnkQDQ9FPCZzZht44h6b46Z7BFlFjWohWjHYBs0VQrn1LYKXktTiCglxYJl+
-         LVaw==
-X-Gm-Message-State: APuU4Z9tGgmL5GFml2tNsLYwAEV71YRlwV85fmfG6UKYG3OymPfVFVg4
-	F/IUTKeRyEW2oOum0LHm8/HwIO3bUbzvqPdQ26fDwiIJZyhuC6v04N2TYxPPSP64UURJ6C3/Cg9
-	TAEmco5M=
-X-Gm-Gg: AYBFou0a7TwWS63w1gXzrlEtMvoWE9DO1sDrGbVmN475fR2oHj0zCWcYjejI/Zcgtii
-	EESkxlW4ZjgH5pzT2dYF9tm2s3hZbCUUgx5DyKB6BlqlFQpSVwwsOKEQm78Uzjwv6zWkFJUCvR8
-	/Ow4THZM7drC6P9SE7XL6lgZ5jp5SbuMfcDi9HD1AVD7HDvNIOIxwIMdlY7WWUW6aYB0eFDGeW1
-	cuJo3Ar0GXI8R4K8j0e9z07wo63QNjytfFz16u7PaxHlR13rz/VpBfKecPuwQxcn1TuVo8t4fhw
-	zfwE4NPBkrsvsdPRDnWLBylzD/UpQVrF7F21IoU22U8BByUljaelhWMDHja1vDf4gyLvsdkRUD3
-	/lR3kYXHCwt17dKkfm2ERLlDJ3AxfOEGpVuWvWQ0hILp2gEveb+flYB++uxgW97kf1qVJYEpCxW
-	xV205j47waJw7Jutr6WZmM3l86Q+TMvsDWYXbBGGkqPe0wypvUJ0lh90vwWIO7JYp3fm4X/Z0XT
-	r2XWEj2bNoHfc+WGHIAnjT+4kXM12TX3qC07VemzBf+MXpSwUkec/MacLhHywvJpFk1bRQrHoul
-	Zma/5zcgKINARd6o/dOV9gaA7aCwy6tMjzSDYNdDrfEWPTth7+qTirqeuM1yZnE4A54a
-X-Received: by 2002:a05:701b:2905:b0:19a:8e3e:530e with SMTP id a92af1059eb24-1b3b5fd2228mr1743196c88.8.1794280194280;
-        Mon, 09 Nov 2026 19:09:54 -0800 (PST)
+        bh=rDM6x7XRc95I3mGTLkYrN/qxWaVNHBCaXNGEhzTwFik=;
+        b=Uo3ekE7kU6VHsEob0NU418yA4mzjiOwde8fxPrEGcbeWTozDSfRGI5fA3ifSHNA/N6
+         mbwu2jq0cqKR9VtpMC6Y//G2CSTE5VSBnc2/5ILVTrqRjjsLr6Vy4HcXzkUCzbK9lw6F
+         r0be9/MO2ac0mVDv3qLF0MqIBXT4lsDeEngaS+l0Q+7VV7Uo1AMRbBM0COEznFIBfQB8
+         N2SVSetWmO6mCkpZsS3GMXxAwzExjHEfLJhWYXdmWhxLtMFYS71ou4nBC6alw4xGZxWc
+         l6+ZZ5lp/lZHBZbyP//VMT6xwrzodslEld8rcJ4JVZkRA24g2VnqhNt3jKlxJqIfyBF/
+         Ubiw==
+X-Gm-Message-State: APuU4Z/m+SUI4oyk9DiqfCDmJnQjVdK49QwrT40lhlDQewHZPNB0x/9K
+	4nmbMuDZmARoGudsU29qAm2ouDU7n7ATZ1K2Nlhc0Aw/NgfNGCPvKDRfV1HX8r7zk3Nv8OkokH6
+	eqSSQ/ZM=
+X-Gm-Gg: AYBFou0Zzbml25dUIgeCj5SRymvQLkDP7Ng8Z+PzZN5kaD+yXlUD94tj44Sc1RsGylA
+	nu8FfGQW+FPTJpvASuI7esET59SSobl2fyBXy1sYAuMQaaVVOfBPMEoB0EU2uxM/ZB9JQzPpG2F
+	jnAwMQmENpZlDIAXW8DyqQhlG5++EVbJDTbJZiv5JW+s4OlDjb1p96pgeyRQWkgcXLWFLeyiYr6
+	yDHLMDynk36s5/N8qY5osTSA5V0nqUxPVbpd2pHJd7YJjkQ+QS99BVMWZ4HpWB9dXxKfwOJgRtJ
+	WhHtKu30WvQR+nB/fk8f3jFZfasGJSy6L1DT1zMrMEnkaZJZDgUjJLDvZx+bx76qWaKoKNevlg3
+	9wzKDyqF6QWi47vJ09Y/3lEnY6CTJz46h18bsAff+FNVowk9+oU8tl9PSiW4xpvKod7e5FOp3ON
+	KG/VXKtQpHGloMvT5GAOGdf8u6M2IYsPW9i/r6ua9SFRButX83Nq0apX0gJxVZ4cEG58wBFwEsJ
+	4QZIPOm8WdPv37laC+g1XcNh15S9WD79QBqFudPDgu7Vfjw8qXWfT6Ffnz/4YAnC5edd0Z8Uafq
+	laJBTXxksoHRliLztgi3YzKUb/fRmFOxcVYJtPrHk3PG0IldPMA+57Pmm2ZgjRYLUSuQ
+X-Received: by 2002:a05:7022:3709:b0:187:7514:47f4 with SMTP id a92af1059eb24-1b3b6198c74mr1928005c88.46.1794280354211;
+        Mon, 09 Nov 2026 19:12:34 -0800 (PST)
 Received: from localhost ([60.227.235.15])
-        by smtp.gmail.com with ESMTPSA id a92af1059eb24-1b3b5b4eef8sm3373549c88.16.2026.11.09.19.09.53
+        by smtp.gmail.com with ESMTPSA id a92af1059eb24-1b3b56c4e88sm2970998c88.0.2026.11.09.19.12.33
         (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
-        Mon, 09 Nov 2026 19:09:53 -0800 (PST)
-Date: Tue, 10 Nov 2026 14:09:50 +1100
+        Mon, 09 Nov 2026 19:12:33 -0800 (PST)
+Date: Tue, 10 Nov 2026 14:12:31 +1100
 From: Lachlan Hodges <lachlan.hodges@morsemicro.com>
 To: Johannes Berg <johannes@sipsolutions.net>
-Cc: linux-wireless@vger.kernel.org
-Subject: Re: [PATCH wireless-next 0/7] wifi: further RCU optimisations
-Message-ID: <bld4b42amzq2heiwqnhoyg4rwclrhmetjtllnwnf4bflkhkr32@i2hxopwobpfq>
+Cc: linux-wireless@vger.kernel.org, 
+	Johannes Berg <johannes.berg@intel.com>
+Subject: Re: [PATCH wireless-next 7/7] wifi: mac80211: destroy AP stations
+ asynchronously
+Message-ID: <mqlyphap56ct4ffa7v4ebpvvw4fuof2mezmx337zbtspozxhiw@deo6hs6xu3us>
 References: <20261102235603.1181883-9-johannes@sipsolutions.net>
+ <20261102235603.1181883-16-johannes@sipsolutions.net>
 X-Mailing-List: linux-wireless@vger.kernel.org
 List-Id: <linux-wireless.vger.kernel.org>
 List-Post: <mailto:linux-wireless@vger.kernel.org>
@@ -97,18 +100,24 @@ Precedence: list
 MIME-Version: 1.0
 Content-Type: text/plain; charset=us-ascii
 Content-Disposition: inline
-In-Reply-To: <20261102235603.1181883-9-johannes@sipsolutions.net>
+In-Reply-To: <20261102235603.1181883-16-johannes@sipsolutions.net>
 
-On Tue, Nov 03, 2026 at 12:53:57AM +0100, Johannes Berg wrote:
-> I'd done this earlier when working on the update-beacon ideas etc.
-> but now more work has landed so maybe time to post this.
+On Tue, Nov 03, 2026 at 12:54:04AM +0100, Johannes Berg wrote:
+> From: Johannes Berg <johannes.berg@intel.com>
 > 
-> It'll probably conflict to some extent with the queueing rework,
-> but that seems manageable.
+> When hostapd removes a station, the station destruction
+> needs to wait for an RCU grace period, all while holding
+> the wiphy mutex and blocking hostapd.
 > 
-> Basically, this gets rid of a few more causes of latency due to
-> RCU synchronization on scan, aggregation, and STA removal.
+> For AP stations, use a wiphy_rcu_work to finish the
+> cleanup after an RCU grace period, without holding the
+> wiphy mutex while waiting.
+> 
+> To avoid confusion in drivers, destroy stations that are
+> waiting for destruction synchronously before adding new
+> (link) stations, as well as suspend/restart.
+> 
+> Assisted-by: LLM
+> Signed-off-by: Johannes Berg <johannes.berg@intel.com>
 
-For the series:
-
-Tested-by: Lachlan Hodges <lachlan.hodges@morsemicro.com>
+Reviewed-by: Lachlan Hodges <lachlan.hodges@morsemicro.com>
