@@ -1,81 +1,86 @@
-Authentication-Results: smtp.subspace.kernel.org; arc=none smtp.remote-ip=211.75.126.72
+Authentication-Results: smtp.subspace.kernel.org; arc=none smtp.remote-ip=192.198.163.11
 ARC-Seal: i=1; d=subspace.kernel.org; s=arc20261015; a=rsa-sha256; cv=none;
-	t=1794301883;
-	b=255o0HLkDpSsf8UZU8bX8EXpgFEwEvbvnYvJCW5/TyO5RHCd+vKElPZXubZnpvnz8h9D
-	 e+PiPECp479QFpgcfWNsMqr+MUzeaLhXeuaynamCDfv40EDcjQjW69LLAklB8cRd4GfMs
-	 8K2bL2MO8FTK6vx+39JMPM33swEigDyVPv0J5jsZjb1Ml0+C7+eRskSX5I3nACfdtvoeD
-	 cwE1DG5JvwSBzR+eyIl2I9vQkXzp0au97aG2AgsZMhLSfDOxT2Ix0girn5SiNaIB7a3lh
-	 d8dvbH9NtDDAfEjYIa/0Jdxcrr0qgs1vKyiN7jzr5ujAg5mGLB0u/wnZ+kFBTLv97cw==
+	t=1794302855;
+	b=VqwuJgVDG+2ELltUDy8L87zvRu07Uk5RbFR0xl9DAlRIyBwkWs/I2UaYSaKR/TQLQZH0
+	 uJ5jt0SAxqdELI3UD0dz+9pCnYcr3KnlpZzTJxdYPbHQw+99l4nIHIlXPK7sLUTVQ1dfU
+	 9S3Y/hzy/ZArl+cbRJjA+xwdVb0Ow6/ohb/zzhwhLaOhnJY0d06OwazSPvO6wgqnVc++Y
+	 +7qcFWpCKcC0DUzQGxoqcxGGq8oYVThIP1+Zt3ug0a0xyb0DtaIahb1wTWiW9cBwPclMa
+	 vV8+p2mYfoa3wAgK5Ze0PvnDYquSJvnNOyk7SNtRXebkF6/la08s7GdlWydDnAddRYg==
 ARC-Message-Signature: i=1; d=subspace.kernel.org; s=arc20261015;
-	a=rsa-sha256; c=relaxed/relaxed; t=1794301883;
-	h=DMARC-Filter:X-SpamFilter-By:DKIM-Signature:Received:Received:
-	 Received:Received:From:To:CC:Subject:Thread-Topic:Thread-Index:Date:
-	 Message-ID:References:In-Reply-To:Accept-Language:Content-Language:
-	 x-originating-ip:Content-Type:Content-Transfer-Encoding:MIME-Version;
-	bh=8/x/JjulVcCFt8Bl0KlPQQYsmAF1dc5N/Sx+9vpjo+c=;
-	b=XX8Fqir3rXEYjGszub53U/o6g+QASkUWhBm264c2okuPRjCYBFLoeOwvE8dubFeE9est
-	 csfBw8JTLVckPmDTZWnw2TO3z+Plk9GfdypxmP0Q+qcdUCxEEbiw6VNitjY7hYrr/pY/n
-	 hH/X4/npOhBtfp6xaywxaBj46I7xpb3lEwCm3h4TIY7VfkUq7mnCXpvjhH2/WyEmO26hV
-	 clWsa4dZDVD9YpvBJobDVykB9JGRcV9i3CrAOUC46f6zxu8sfuwXNSTlMqfOLzrYxLzaw
-	 9XQZC+HSGfTslb2qZTsck8KJr32EF5oxeRKp8WmllCIR4VXUKMCtt6iREKnnaD9rwjA==
+	a=rsa-sha256; c=relaxed/relaxed; t=1794302855;
+	h=DMARC-Filter:DKIM-Signature:X-CSE-ConnectionGUID:X-CSE-MsgGUID:
+	 X-IronPort-AV:X-IronPort-AV:Received:X-CSE-ConnectionGUID:
+	 X-CSE-MsgGUID:X-ExtLoop1:X-IronPort-AV:Received:Received:Date:From:To:
+	 Cc:Subject:Message-ID:References:MIME-Version:Content-Type:
+	 Content-Disposition:In-Reply-To;
+	bh=r03d0V0DO1R17kWu7oT0cLArgA7R8LkZOYGpTn1uF64=;
+	b=ngwr+jf5uquXp8IMi+w+o27RnHQjuur8DUHu/KZnksScw1nEN7p11S3WdlIRCc61Lyqd
+	 Qcmx4AFgBHH73xRdk+vrCi0AqyXtIppaWp2tYWyokbiYGIfGcSJe2/ALOvCTI4ALfQYkt
+	 3Jy0wy1lT0IIao7m3LvXR7+1+ys7OcaP4zmzEHUMnr+5LOlX8MNHkqW12PscRB7yycRie
+	 oiqzp713G+rirdduCuAhoz6Ihnour5fQr5ZvqyBqDV91yTTPBV5+qwd760QlK+uWG8zIA
+	 MX2ICFhsYkchdkqYsnqk7F1TN0cw4adrw0z90FezUz7tFjQFugxhS0O06ToaRYBYUZg==
 ARC-Authentication-Results: i=1; smtp.subspace.kernel.org; 
-	dmarc=pass header.from=realtek.com;
-	spf=pass smtp.mailfrom=realtek.com;
-	dkim=pass header.d=realtek.com header.i=@realtek.com header.a=rsa-sha256 header.s=dkim header.b=RNYNe1sF;
-	arc=none smtp.remote-ip=211.75.126.72
-Received: from rtits2.realtek.com.tw (rtits2.realtek.com [211.75.126.72])
-	(using TLSv1.3 with cipher TLS_AES_256_GCM_SHA384 (256/256 bits)
-	 key-exchange X25519 server-signature ECDSA (prime256v1) server-digest SHA256)
+	dmarc=pass header.from=intel.com;
+	spf=pass smtp.mailfrom=intel.com;
+	dkim=pass header.d=intel.com header.i=@intel.com header.a=rsa-sha256 header.s=Intel header.b=EjCj1Rfd;
+	arc=none smtp.remote-ip=192.198.163.11
+Received: from mgamail.intel.com (mgamail.intel.com [192.198.163.11])
+	(using TLSv1.2 with cipher ECDHE-ECDSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.subspace.kernel.org (Postfix) with ESMTPS id BDC68606A31C
-	for <linux-wireless@vger.kernel.org>; Tue, 10 Nov 2026 09:11:22 +0000 (UTC)
-DMARC-Filter: OpenDMARC Filter v1.4.2 smtp.subspace.kernel.org BDC68606A31C
-Authentication-Results: smtp.subspace.kernel.org; dmarc=pass (p=none dis=none) header.from=realtek.com
-Authentication-Results: smtp.subspace.kernel.org; spf=pass smtp.mailfrom=realtek.com
+	by smtp.subspace.kernel.org (Postfix) with ESMTPS id A7C44606A33D
+	for <linux-wireless@vger.kernel.org>; Tue, 10 Nov 2026 09:27:33 +0000 (UTC)
+DMARC-Filter: OpenDMARC Filter v1.4.2 smtp.subspace.kernel.org A7C44606A33D
+Authentication-Results: smtp.subspace.kernel.org; dmarc=pass (p=none dis=none) header.from=intel.com
+Authentication-Results: smtp.subspace.kernel.org; spf=pass smtp.mailfrom=intel.com
 Authentication-Results: smtp.subspace.kernel.org;
-	dkim=pass (2048-bit key, unprotected) header.d=realtek.com header.i=@realtek.com header.a=rsa-sha256 header.s=dkim header.b=RNYNe1sF
-X-SpamFilter-By: ArmorX SpamTrap 5.80 with qID 6AA9BI6F01174902, This message is accepted by code: ctloc85258
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=realtek.com; s=dkim;
-	t=1794301878; bh=8/x/JjulVcCFt8Bl0KlPQQYsmAF1dc5N/Sx+9vpjo+c=;
-	h=From:To:CC:Subject:Date:Message-ID:References:In-Reply-To:
-	 Content-Type:Content-Transfer-Encoding:MIME-Version;
-	b=RNYNe1sF0NjJ1JjUXrDvvzunjjHbktPABzNuEwMUeolyRpjrDCMEvtuBNdwc5O6sW
-	 upjKqXleYMYPbmsci4Ul5yubntrE/oM3t9v9iaGPp7Da4xMyDhyRJEhYNQE7UfeQAL
-	 LDrVLy2EXE9fp2hSuJbYAO2x8sGey8vUn4Iw1r74y+L5fWxjUjTmRDlqwCmnKxNk/4
-	 5/ICo7aOqgZcVd8dQfQ1F433+Jo2bJsf8yDoCnfbTChu9vfSj97CZzjI213oDnvLor
-	 YFYpCrI/wkDRWOfxeKZE9Q60cNoqk9yRuHIa1ZZ2W89Gd4vjFvWZNOASBitz5/DFWu
-	 x1pCT+TNeDSVw==
-Received: from mail.realtek.com (rtkexhmbs03.realtek.com.tw[10.21.1.53])
-	by rtits2.realtek.com.tw (8.15.2/3.29/5.94) with ESMTPS id 6AA9BI6F01174902
-	(version=TLSv1.2 cipher=ECDHE-RSA-AES256-GCM-SHA384 bits=256 verify=FAIL);
-	Tue, 10 Nov 2026 17:11:18 +0800
-Received: from RTKEXHMBS06.realtek.com.tw (10.21.1.56) by
- RTKEXHMBS03.realtek.com.tw (10.21.1.53) with Microsoft SMTP Server
- (version=TLS1_2, cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id
- 15.2.2562.56; Tue, 10 Nov 2026 17:11:18 +0800
-Received: from RTKEXHMBS06.realtek.com.tw (10.21.1.56) by
- RTKEXHMBS06.realtek.com.tw (10.21.1.56) with Microsoft SMTP Server
- (version=TLS1_2, cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id
- 15.2.2562.56; Tue, 10 Nov 2026 17:01:16 +0800
-Received: from RTKEXHMBS06.realtek.com.tw ([fe80::eeeb:c765:ca73:5eef]) by
- RTKEXHMBS06.realtek.com.tw ([fe80::eeeb:c765:ca73:5eef%10]) with mapi id
- 15.02.2562.056; Tue, 10 Nov 2026 17:01:16 +0800
-From: Ping-Ke Shih <pkshih@realtek.com>
-To: BrNcO BrNkO <brnco925@gmail.com>
-CC: "linux-wireless@vger.kernel.org" <linux-wireless@vger.kernel.org>
-Subject: RE: rtw89: 8852cu: no data TX under firmware RA at 6 GHz 160 MHz
- (fixed rate works)
-Thread-Topic: rtw89: 8852cu: no data TX under firmware RA at 6 GHz 160 MHz
- (fixed rate works)
-Thread-Index: AQHdb3TbjoYAYqpEDEKDYQv9wQ0F0Lcm3vfA
-Date: Tue, 10 Nov 2026 09:01:16 +0000
-Message-ID: <0b15ba0a644c4c82bfd3c92a93b647e9@realtek.com>
-References: <CAD8w8XJuPc0mDtLnOb3MfwKJeC9t9UU0dsNoHVH=azzbKxBWyg@mail.gmail.com>
-In-Reply-To: <CAD8w8XJuPc0mDtLnOb3MfwKJeC9t9UU0dsNoHVH=azzbKxBWyg@mail.gmail.com>
-Accept-Language: en-US, zh-TW
-Content-Language: zh-TW
-Content-Type: text/plain; charset="utf-8"
-Content-Transfer-Encoding: base64
+	dkim=pass (2048-bit key, unprotected) header.d=intel.com header.i=@intel.com header.a=rsa-sha256 header.s=Intel header.b=EjCj1Rfd
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple;
+  d=intel.com; i=@intel.com; q=dns/txt; s=Intel;
+  t=1794302854; x=1825838854;
+  h=date:from:to:cc:subject:message-id:references:
+   mime-version:in-reply-to;
+  bh=+pQBzYtlIqsK3OMZ/FLrdsiSf33OGp8rBpCJeMXTzSA=;
+  b=EjCj1RfdSKY/thA9foIvqy1KkeEANrPBqZpTV50hdLQmnwHSRRaBs8LO
+   3UbofMhRG4mxWUmvG5+I+PoiudOf7LE2ZGI4LhdeE2gWDxGekrfTDxAKw
+   t7Y6l9R5o4159B1fRmrSU7mM+YGKDYkwmDFVOkHNAIMi0lEYYSFAHjsF+
+   HywDJXrcPjiLlBAELSW6otJdlQjt+10wrhfMzTCHnUX4vGRsrOgfy4C8z
+   f9dVUOHExz6G1VcxnVlBsykWf/drVtzA7gD4tux7wTSq9PTQ5Hpe0p68c
+   om/QUf29mObKQQ2OAWpLF2jn4qqDUDu/e8jw/PBipTNA4yxc6kzWnPQau
+   Q==;
+X-CSE-ConnectionGUID: E+c067LoSluwcqJIkYAKPw==
+X-CSE-MsgGUID: tUx3uRjFQwKMIgLk0cGrmQ==
+X-IronPort-AV: E=McAfee;i="6800,10657,11961"; a="2960837"
+X-IronPort-AV: E=Sophos;i="6.27,205,1787036400"; 
+   d="scan'208";a="2960837"
+Received: from orviesa005.jf.intel.com ([10.64.159.145])
+  by fmvoesa105.fm.intel.com with ESMTP/TLS/ECDHE-RSA-AES256-GCM-SHA384; 10 Nov 2026 01:27:33 -0800
+X-CSE-ConnectionGUID: GBkYys5QRW6XYH9zhk09Gw==
+X-CSE-MsgGUID: PI3ayCMNQwqsUe1JjUfdTA==
+X-ExtLoop1: 1
+X-IronPort-AV: E=Sophos;i="6.27,205,1787036400"; 
+   d="scan'208";a="7977292"
+Received: from lkp-server01.sh.intel.com (HELO 0caa9d2d175c) ([10.239.97.150])
+  by orviesa005.jf.intel.com with ESMTP; 10 Nov 2026 01:27:30 -0800
+Received: from kbuild by 0caa9d2d175c with local (Exim 4.98.2)
+	(envelope-from <lkp@intel.com>)
+	id 1xQi8V-00000000wWV-2YhF;
+	Tue, 10 Nov 2026 09:27:27 +0000
+Date: Tue, 10 Nov 2026 17:27:20 +0800
+From: kernel test robot <lkp@intel.com>
+To: Devin Wittmayer <lucid_duck@justthetip.ca>,
+	Felix Fietkau <nbd@nbd.name>, Lorenzo Bianconi <lorenzo@kernel.org>,
+	Ryder Lee <ryder.lee@mediatek.com>
+Cc: oe-kbuild-all@lists.linux.dev, Deren Wu <deren.wu@mediatek.com>,
+	Sean Wang <sean.wang@mediatek.com>,
+	Shayne Chen <shayne.chen@mediatek.com>,
+	Quan Zhou <quan.zhou@mediatek.com>,
+	Michael Lo <michael.lo@mediatek.com>,
+	James-LY Huang <james-ly.huang@mediatek.com>,
+	linux-wireless@vger.kernel.org, linux-mediatek@lists.infradead.org
+Subject: Re: [PATCH v2] wifi: mt76: mt792x: tell mac80211 when a disconnect
+ cancels its ROC
+Message-ID: <202611101719.St87Ty1E-lkp@intel.com>
+References: <20261110005846.38432-1-lucid_duck@justthetip.ca>
 X-Mailing-List: linux-wireless@vger.kernel.org
 List-Id: <linux-wireless.vger.kernel.org>
 List-Post: <mailto:linux-wireless@vger.kernel.org>
@@ -85,39 +90,90 @@ List-Unsubscribe: <mailto:linux-wireless+unsubscribe@vger.kernel.org>
 List-Owner: <mailto:linux-wireless+owner@vger.kernel.org>
 Precedence: list
 MIME-Version: 1.0
+Content-Type: text/plain; charset=us-ascii
+Content-Disposition: inline
+In-Reply-To: <20261110005846.38432-1-lucid_duck@justthetip.ca>
 
-QnJOY08gQnJOa08gPGJybmNvOTI1QGdtYWlsLmNvbT4gd3JvdGU6DQo+IElzb2xhdGlvbiAob25l
-IGNoYW5nZSBwZXIgdGVzdCkNCj4gLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLQ0KPiAx
-LiA2IEdIeiBCU1MgYXQgODAgTUh6IChBUCBzd2l0Y2hlZCB3aXRoIGNoYW5fc3dpdGNoLCBvciBT
-VEEgd2l0aG91dA0KPiAgICBIRTE2MCBjYXBhYmlsaXR5KTogd29ya3MuDQo+IDIuIDUgR0h6IEJT
-UyBhdCAxNjAgTUh6IHdpdGggdGhlIHNhbWUgYWRhcHRlcjogd29ya3MuDQo+IDMuIDYgR0h6IDE2
-MCBNSHogd2l0aCBhIGZpeGVkIHJhdGUgaW4gdGhlIFRYIGRlc2NyaXB0b3IgKHVzZV9yYXRlPTEs
-DQo+ICAgIGRpc19kYXRhX2ZiPTEpOiB3b3JrcyBmb3IgT0ZETTYvMjAsIEhFIE5TUzEgTUNTMCBh
-dCAyMC80MC84MC8xNjAsDQo+ICAgIEhFIE5TUzIgTUNTMCBhdCA4MC8xNjAsIGFuZCBIRSBOU1My
-IE1DUzIvTUNTNCBhdCAxNjAuIFRoZSBoYW5kc2hha2UNCj4gICAgY29tcGxldGVzIGFuZCBwaW5n
-IHRvIHRoZSBBUCB3b3Jrcy4gTUNTNyBhbmQgYWJvdmUgYXQgMTYwLCBhbmQNCj4gICAgTUNTOSBh
-dCA4MCwgYXJlIG5vdCBkZWNvZGVkIGJ5IHRoaXMgQVAuIEkgYmVsaWV2ZSB0aGF0IGlzIGxpbmsN
-Cj4gICAgYnVkZ2V0OyBXaW5kb3dzIGFsc28gdG9wcyBvdXQgYXJvdW5kIEhFMTYwIE1DUzYgaGVy
-ZS4NCg0KRGlkIHlvdSBtb2RpZnkgZHJpdmVyIHRvIHNldCB1c2VfcmF0ZT0xPyBOb3QgdXNlIGl3
-IHNldCBiaXRyYXRlcywgcmlnaHQ/DQpBY3R1YWxseSAnaXcgc2V0IGJpdHJhdGVzJyBpcyB0byB1
-c2UgUkEgdG8gY29udHJvbCByYXRlLiBJZiBpdCBjYW4gd29yaw0KZm9yIGNlcnRhaW4gY29uZGl0
-aW9ucywgaXQnZCBiZSBlYXNpZXIgdG8gYWRkcmVzcyBjYXVzZXMuDQoNCj4gNC4gNiBHSHogMTYw
-IE1IeiB3aXRoIGZpcm13YXJlIFJBOiBmYWlscyBpbiBldmVyeSB2YXJpYW50IEkgdHJpZWQuDQo+
-ICAgIFRoZSBIMkMgUkEgTUFDSURfQ0ZHIGlzIGlkZW50aWNhbCB0byB0aGUgd29ya2luZyA4MCBN
-SHogY2FzZQ0KPiAgICBleGNlcHQgYndfY2FwIDMgaW5zdGVhZCBvZiAyLg0KPiAgICAtIHJhX21h
-c2sgbGltaXRlZCB0byBIRSBOU1MxIE1DUzAtNDogZmFpbHMuDQo+ICAgIC0gcmFfbWFzayB3aXRo
-IEhFIE5TUzEgTUNTMCBvbmx5OiB0aGUgaGFuZHNoYWtlIHNvbWV0aW1lcyBwYXNzZXMsDQo+ICAg
-ICAgdGhlbiBwaW5nIGZhaWxzLg0KPiAgICAtIHNzX251bSAwLCBlcl9jYXAgMCwgZGNtX2NhcCAw
-LCBmaXhfZ2lsdGZfZW4gMCwgaW5pdF9yYXRlX2x2IDEuLjMsDQo+ICAgICAgQ1NJIGVuYWJsZWQ6
-IGFsbCBmYWlsLg0KPiAgICAtIENNQUMgRElTREFUQUZCPTAsIERJU1JUU0ZCPTAsIFJUU19FTj0x
-LCBIV19SVFNfRU49MTogYWxsIGZhaWwuDQo+ICAgICAgRXZlbiB3aXRoIFJUUyBlbmFibGVkLCBu
-byBSVFMgYXBwZWFycyBvbiBhaXIuDQoNCkRpZCB5b3UgbW9kaWZ5IFJUUyB0aHJlc2hvbGQgc2V0
-dGluZyBpbiBfX3J0dzg5X21hY191cGRhdGVfcnRzX3RocmVzaG9sZCgpID8NCg0KPiAgICAtIHJh
-X21hc2sgd2l0aCBPRkRNIG9ubHkgKDB4ZmYwKSBhdCBid19jYXAgMzogd29ya3MuDQo+ICAgIC0g
-YndfY2FwIGZvcmNlZCB0byAyIHdoaWxlIHRoZSBjaGFubmVsIHN0YXlzIGF0IDE2MCBNSHo6IHdv
-cmtzLg0KDQpDYW4geW91IGFsc28gdHJ5IGxkcGNfY2FwIDAsIHN0YmNfY2FwIDA/DQoNCg0KSW4g
-b3VyIHNpZGUsIHdlIGNhbiBjb25uZWN0IGFuIEFQIHdpdGggYmVsb3cgY2hhbm5lbDoNCiAgIGNo
-YW5uZWwgMzcgKDYxMzUgTUh6KSwgd2lkdGg6IDE2MCBNSHosIGNlbnRlcjE6IDYxODUgTUh6DQoN
-CkFsc28sIHdlIHVzZSBob3N0YXBkIHRvIHN0YXJ0IEFQIG1vZGUsIHdoaWNoIGl0IHdvcmtzIGFz
-IHdlbGwuDQoNCkNhbiB5b3UgdHJ5IGFub3RoZXIgQVAgdG8gc2VlIGlmIGFueXRoaW5nIGRpZmZl
-cmVudD8NCg0KUGluZy1LZQ0KDQo=
+Hi Devin,
+
+kernel test robot noticed the following build errors:
+
+[auto build test ERROR on wireless-next/main]
+[also build test ERROR on wireless/main linus/master v7.4-rc2 next-20261109]
+[cannot apply to linux-review/Devin-Wittmayer/wifi-mt76-mt792x-tell-mac80211-when-a-disconnect-cancels-its-ROC/20261022-184827]
+[If your patch is applied to the wrong git tree, kindly drop us a note.
+And when submitting patch, we suggest to use '--base' as documented in
+https://git-scm.com/docs/git-format-patch#_base_tree_information]
+
+url:    https://github.com/intel-lab-lkp/linux/commits/Devin-Wittmayer/wifi-mt76-mt792x-tell-mac80211-when-a-disconnect-cancels-its-ROC/20261109-175846
+base:   https://git.kernel.org/pub/scm/linux/kernel/git/wireless/wireless-next.git main
+patch link:    https://lore.kernel.org/r/20261110005846.38432-1-lucid_duck%40justthetip.ca
+patch subject: [PATCH v2] wifi: mt76: mt792x: tell mac80211 when a disconnect cancels its ROC
+config: x86_64-rhel-9.4 (https://download.01.org/0day-ci/archive/20261110/202611101719.St87Ty1E-lkp@intel.com/config)
+compiler: gcc-14 (Debian 14.2.0-19) 14.2.0
+reproduce (this is a W=1 build): (https://download.01.org/0day-ci/archive/20261110/202611101719.St87Ty1E-lkp@intel.com/reproduce)
+
+If you fix the issue in a separate patch/commit (i.e. not just a new version of
+the same patch/commit), kindly add following tags
+| Reported-by: kernel test robot <lkp@intel.com>
+| Closes: https://lore.kernel.org/oe-kbuild-all/202611101719.St87Ty1E-lkp@intel.com/
+
+All errors (new ones prefixed by >>):
+
+   drivers/net/wireless/mediatek/mt76/mt7921/main.c: In function 'mt7921_roc_abort_sync':
+>> drivers/net/wireless/mediatek/mt76/mt7921/main.c:385:16: error: 'struct mt792x_phy' has no member named 'roc_notify'
+     385 |         if (phy->roc_notify)
+         |                ^~
+   drivers/net/wireless/mediatek/mt76/mt7921/main.c: In function 'mt7921_abort_roc':
+   drivers/net/wireless/mediatek/mt76/mt7921/main.c:423:27: error: 'struct mt792x_phy' has no member named 'roc_notify'
+     423 |         if (aborted && phy->roc_notify)
+         |                           ^~
+   drivers/net/wireless/mediatek/mt76/mt7921/main.c: In function 'mt7921_set_roc':
+   drivers/net/wireless/mediatek/mt76/mt7921/main.c:441:12: error: 'struct mt792x_phy' has no member named 'roc_notify'
+     441 |         phy->roc_notify = type == MT7921_ROC_REQ_ROC;
+         |            ^~
+   drivers/net/wireless/mediatek/mt76/mt7921/main.c: In function 'mt7921_cancel_remain_on_channel':
+   drivers/net/wireless/mediatek/mt76/mt7921/main.c:484:12: error: 'struct mt792x_phy' has no member named 'roc_notify'
+     484 |         phy->roc_notify = false;
+         |            ^~
+--
+   drivers/net/wireless/mediatek/mt76/mt7925/main.c: In function 'mt7925_roc_abort_sync':
+>> drivers/net/wireless/mediatek/mt76/mt7925/main.c:531:16: error: 'struct mt792x_phy' has no member named 'roc_notify'
+     531 |         if (phy->roc_notify)
+         |                ^~
+   drivers/net/wireless/mediatek/mt76/mt7925/main.c: In function 'mt7925_abort_roc':
+   drivers/net/wireless/mediatek/mt76/mt7925/main.c:569:27: error: 'struct mt792x_phy' has no member named 'roc_notify'
+     569 |         if (aborted && phy->roc_notify)
+         |                           ^~
+   drivers/net/wireless/mediatek/mt76/mt7925/main.c: In function 'mt7925_cancel_remain_on_channel':
+   drivers/net/wireless/mediatek/mt76/mt7925/main.c:657:12: error: 'struct mt792x_phy' has no member named 'roc_notify'
+     657 |         phy->roc_notify = false;
+         |            ^~
+
+
+vim +385 drivers/net/wireless/mediatek/mt76/mt7921/main.c
+
+   370	
+   371	void mt7921_roc_abort_sync(struct mt792x_dev *dev)
+   372	{
+   373		struct mt792x_phy *phy = &dev->phy;
+   374	
+   375		if (!test_and_clear_bit(MT76_STATE_ROC, &phy->mt76->state))
+   376			return;
+   377	
+   378		timer_delete_sync(&phy->roc_timer);
+   379		cancel_work(&phy->roc_work);
+   380	
+   381		ieee80211_iterate_interfaces(mt76_hw(dev),
+   382					     IEEE80211_IFACE_ITER_RESUME_ALL,
+   383					     mt7921_roc_iter, (void *)phy);
+   384	
+ > 385		if (phy->roc_notify)
+   386			ieee80211_remain_on_channel_expired(mt76_hw(dev));
+   387	}
+   388	EXPORT_SYMBOL_GPL(mt7921_roc_abort_sync);
+   389	
+
+--
+0-DAY CI Kernel Test Service
+https://github.com/intel/lkp-tests/wiki
