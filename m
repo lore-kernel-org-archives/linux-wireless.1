@@ -1,59 +1,65 @@
-Authentication-Results: smtp.subspace.kernel.org; arc=none smtp.remote-ip=100.103.45.18
+Authentication-Results: smtp.subspace.kernel.org; arc=none smtp.remote-ip=168.119.38.16
 ARC-Seal: i=1; d=subspace.kernel.org; s=arc20261015; a=rsa-sha256; cv=none;
-	t=1794335905;
-	b=N1aPTjcDYLjVMWVy9lbi2uzWPah6QdqG97xLwVs9sgyySFmPuf+2xh7m34aXyWR03hHs
-	 CzeWSbaNWktmzu00Zb2AkCZu8KAtvBn85JEaM53JnOmF06oOyDN+tQbjs8umwOlv21hky
-	 fOu+bTRUJec4PP/VXqxxUiQQIJnLkjFoV1F/WWm07G3C1mse8gPl1eTQydwbWuFNIbY6j
-	 Xn+GoFzr8mfid9EcZ9s+vcLVaA3Qu1YK9cqNA2G92/iWcB9l5r+mojs+WNtsluC/7kUFs
-	 5SHIYEjsL+SE8FsZ7YPgzcmAe7mqTqj0dM/OtScK83EY3ErVz31naTA8tAAGExCWdKw==
+	t=1794335967;
+	b=v0zI+HVyF+Md1TT7bq1Z5HdgsiqEw41uOxqVb/xqunbQSpQZJvlN5J9bZGu0SJoBXTMo
+	 W7gkuI2JDUy35C/VMV7ZtSXgq8g2efrR8Z9QPuozQ53GGyGi9Tq+incaF18KCiDeZWW+H
+	 BG/D4uGiKt1eS42TI3ie2Kk+WRSbNSU/YGs3OkjR5z7lHE4tHgwVhd3iZsitGZogsYBvO
+	 dJdaeBK4D9oayqYBHk6KPSWDpofujsgIIGyFWmoQ1mDkmJ+g4bcF5qjRjV/+pZ15Ih0Vl
+	 8CmbqPoPF4+Ct2bJW1+QZZFSx1kJA2V2m1WCLihxlLggmLcLqeVPI14hZ1EFX9c4mhg==
 ARC-Message-Signature: i=1; d=subspace.kernel.org; s=arc20261015;
-	a=rsa-sha256; c=relaxed/relaxed; t=1794335905;
-	h=Received:DKIM-Signature:Date:From:To:Cc:Subject:Message-ID:
-	 Mail-Followup-To:MIME-Version:Content-Type:Content-Disposition;
-	bh=mKdOvaOn4HSWA9Ds2Oo+Efh7wRd4xkw0x8BsJCaM+C4=;
-	b=ikzGcOH/DeRE32hjj09LX8YEWeOpHk60RSZcZNq+GWv1uLcT3nDRGp+8pF2J6od20kcn
-	 dSrnv6tcgOUIfE42xxVqZ4LI3O6X82tpvMxcRJwnOFcrhfSsKqlGNIllfBWY1a6YI0uBc
-	 1DDkxiX1SsS/awSmNS5poLbGvYIShsNklQ/Jvt7rL+1kDiEoePa1Irp7kyNinXnHbc9lG
-	 lR2Zft4TUPlrbzWdm1HY8fioboIIbKuBtD+pkGTKl9qq6fMbsVEaAzJ+zz6TtSxmdmUYW
-	 nFKeZnYX9yqzEVS1l4EVfVvj5q05xWrBl9aMMA+WHNw7y0CECiuMdYQ2OClAqqLLeEA==
+	a=rsa-sha256; c=relaxed/relaxed; t=1794335967;
+	h=DKIM-Signature:Received:Message-ID:Subject:From:To:Cc:Date:
+	 In-Reply-To:References:Content-Type:Content-Transfer-Encoding:
+	 User-Agent:MIME-Version:X-malware-bazaar;
+	bh=647AawH17dD8ZgyosaWekR0DoPBBVQDgeOqFGwPqGcg=;
+	b=A2FX1JrG76ixDrImubfgu4j8P3jtNdfAlyyfhW7D86Mwvur1q2IZUHXj4iPwPtLW2gg1
+	 mQR+NrzU8hgWcy95c6cp2DjM+v7m8cxjIJ65hc8JbyWS5xxlW1Usvsy4qGyt3c4OU3Nfy
+	 CwTri/dRj7TkvQWFjhAH+HrovbKwLRQgizsJShJG0Hc3Q9EAb1tH2cYsJ7pTnsJxWS0jK
+	 Rc6e09c7IWGsFW//cOLyJpTMKYT4npY+mMykoMQpx7qqh1Jmf5i6OQqSqcLEyvbFrpUQ0
+	 tyCuxki65P+GhA8uY8rCE1tsCPT5o6xJaCqDR4DnmQsiu7DwyP8GAO687VM6Knx572g==
 ARC-Authentication-Results: i=1; smtp.subspace.kernel.org; 
-	dkim=pass header.d=kernel.org header.i=@kernel.org header.a=rsa-sha256 header.s=k20260515 header.b=aiYUVWFJ;
-	arc=none smtp.remote-ip=100.103.45.18
-Received: from smtp.kernel.org (quasi.space.kernel.org [100.103.45.18])
+	dmarc=permerror header.from=sipsolutions.net;
+	spf=pass smtp.mailfrom=sipsolutions.net;
+	dkim=pass header.d=sipsolutions.net header.i=@sipsolutions.net header.a=rsa-sha256 header.s=mail header.b=EyDDsxtH;
+	arc=none smtp.remote-ip=168.119.38.16
+Received: from sipsolutions.net (s3.sipsolutions.net [168.119.38.16])
 	(using TLSv1.3 with cipher TLS_AES_256_GCM_SHA384 (256/256 bits)
-	 key-exchange X25519 server-signature ECDSA (prime256v1))
+	 key-exchange ECDHE (prime256v1) server-signature ECDSA (prime256v1) server-digest SHA256)
 	(No client certificate requested)
-	by smtp.subspace.kernel.org (Postfix) with ESMTPS id 07569606A32A;
-	Tue, 10 Nov 2026 18:38:24 +0000 (UTC)
+	by smtp.subspace.kernel.org (Postfix) with ESMTPS id A4FEF606A32A;
+	Tue, 10 Nov 2026 18:39:26 +0000 (UTC)
+Authentication-Results: smtp.subspace.kernel.org; dmarc=permerror header.from=sipsolutions.net
+Authentication-Results: smtp.subspace.kernel.org; spf=pass smtp.mailfrom=sipsolutions.net
 Authentication-Results: smtp.subspace.kernel.org;
-	dkim=pass (2048-bit key) header.d=kernel.org header.i=@kernel.org header.a=rsa-sha256 header.s=k20260515 header.b=aiYUVWFJ
-Received: by smtp.kernel.org (Postfix) with ESMTPSA id 5CF831F0089F;
-	Tue, 10 Nov 2026 18:38:23 +0000 (UTC)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=kernel.org;
-	s=k20260515; t=1794335904;
-	bh=mKdOvaOn4HSWA9Ds2Oo+Efh7wRd4xkw0x8BsJCaM+C4=;
-	h=Date:From:To:Cc:Subject;
-	b=aiYUVWFJWKeG3tH3E+k37w82TGrQarjmZz+VOsM7wOZ3yi4F5tnyWuFX5azofG/h2
-	 QGVlLprJTr7tFZkM2BEwO6sr5npagG+FTpSg4oec15bdAfw7A5G8WjvGItILwL5OB5
-	 rjsj5OT1mK6lMRd05sQ3AGzEp3sgI5wFYKUh709DusP3YSswgw3bWKWmLNRaNnF7Pw
-	 rKvCXeoXslZNkF/96Ehx73rxANPEdSUzGPZh0A7TD047OFUUYLntVCOK8TVHSy0KdV
-	 aUjYNEOSaX7lQCRdsyMFmp2h9AR330Y9Ix1eEvqXjCnQBKc7Tlg/psvC+78vdPylVQ
-	 WgitzpvGpzzsQ==
-Date: Tue, 10 Nov 2026 18:38:20 +0000
-From: Mark Brown <broonie@kernel.org>
-To: Johannes Berg <johannes@sipsolutions.net>,
-	Wireless <linux-wireless@vger.kernel.org>
-Cc: Johannes Berg <johannes.berg@intel.com>,
-	Linux Kernel Mailing List <linux-kernel@vger.kernel.org>,
-	Linux Next Mailing List <linux-next@vger.kernel.org>
-Subject: linux-next: manual merge of the wireless-next tree with the wireless
- tree
-Message-ID: <avNknAkxmfCcf4Ra@sirena.org.uk>
-Mail-Followup-To: Johannes Berg <johannes@sipsolutions.net>,
-	Wireless <linux-wireless@vger.kernel.org>,
-	Johannes Berg <johannes.berg@intel.com>,
-	Linux Kernel Mailing List <linux-kernel@vger.kernel.org>,
-	Linux Next Mailing List <linux-next@vger.kernel.org>
+	dkim=pass (2048-bit key) header.d=sipsolutions.net header.i=@sipsolutions.net header.a=rsa-sha256 header.s=mail header.b=EyDDsxtH
+DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
+	d=sipsolutions.net; s=mail; h=MIME-Version:Content-Transfer-Encoding:
+	Content-Type:References:In-Reply-To:Date:Cc:To:From:Subject:Message-ID:Sender
+	:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:Resent-To:
+	Resent-Cc:Resent-Message-ID; bh=647AawH17dD8ZgyosaWekR0DoPBBVQDgeOqFGwPqGcg=;
+	t=1794335966; x=1795545566; b=EyDDsxtHh5m/+rCoFnXYJOGrb9wPrx29DdplyK7pbOSEhpX
+	zruoh76qYphVyfQxYKMXCYUjm33yYEQkB6NI15eCGO4vhex2xAh1bgx7mprWWdUqEponlJ/ht2Ykf
+	UrXU9kGe7BIys97WLqwDNx7T6zULAFEceohrdxlF6wOCuhjuhL3+48/kyRRm6eoA+nIHsbzR/1ZRD
+	OLudFJgNORcSEYic7OIbZXWW/ocknB7ccw8SpiwQWCGeVfYOdQKcLopvX6EonHmBQ1V7wVZlys0x6
+	gti5qvfRBQNQ+xQlQWNRx78ptrZkX5Ty7lHVtQvoFrC4rSn8jiP9t/ra/1AT0v1Q==;
+Received: by sipsolutions.net with esmtpsa (TLS1.3:ECDHE_X25519__ECDSA_SECP256R1_SHA256__AES_256_GCM:256)
+	(Exim 4.98.2)
+	(envelope-from <johannes@sipsolutions.net>)
+	id 1xQqkd-000000029sV-2ZGi;
+	Tue, 10 Nov 2026 19:39:23 +0100
+Message-ID: <39ec29d79ce96b04fdbb2830b679add118bdf19d.camel@sipsolutions.net>
+Subject: Re: [PATCH wireless-next v4 04/21] wifi: cfg80211: define layouts
+ for SMD BSS Transition context
+From: Johannes Berg <johannes@sipsolutions.net>
+To: Pooventhiran G <pooventhiran.g@oss.qualcomm.com>
+Cc: linux-wireless@vger.kernel.org, linux-kernel@vger.kernel.org
+Date: Tue, 10 Nov 2026 19:39:22 +0100
+In-Reply-To: <20261106-smd-v4-4-62e39487f51a@oss.qualcomm.com>
+References: <20261106-smd-v4-0-62e39487f51a@oss.qualcomm.com>
+	 <20261106-smd-v4-4-62e39487f51a@oss.qualcomm.com>
+Content-Type: text/plain; charset="UTF-8"
+Content-Transfer-Encoding: quoted-printable
+User-Agent: Evolution 3.60.2 (3.60.2-3.fc44) 
 X-Mailing-List: linux-wireless@vger.kernel.org
 List-Id: <linux-wireless.vger.kernel.org>
 List-Post: <mailto:linux-wireless@vger.kernel.org>
@@ -63,73 +69,51 @@ List-Unsubscribe: <mailto:linux-wireless+unsubscribe@vger.kernel.org>
 List-Owner: <mailto:linux-wireless+owner@vger.kernel.org>
 Precedence: list
 MIME-Version: 1.0
-Content-Type: multipart/signed; micalg=pgp-sha512;
-	protocol="application/pgp-signature"; boundary="13qAi4U3V0gvNGsk"
-Content-Disposition: inline
+X-malware-bazaar: not-scanned
 
+On Fri, 2026-11-06 at 13:28 +0530, Pooventhiran G wrote:
+> IEEE P802.11bn/D2.0
+>=20
 
---13qAi4U3V0gvNGsk
-Content-Type: text/plain; charset=us-ascii
-Content-Disposition: inline
-Content-Transfer-Encoding: quoted-printable
+It probably didn't change here, but there's D2.1 :)
 
-Hi all,
+> +#define IEEE80211_SMD_CTX_MAX_PN_LEN 16
 
-Today's linux-next merge of the wireless-next tree got a conflict in:
+Huh?
 
-  net/mac80211/mlme.c
+> +/**
+> + * struct ieee80211_smd_ctx_ba - BlockAck parameters for DL and UL
+> + *
+> + * @amsdu_supported: Peer's capability to support A-MSDU within A-MPDU.
+> + * @ba_policy: BlockAck policy (0 =3D delayed BlockAck, 1 =3D immediate =
+BlockAck)
+> + * @buffer_size: Reorder buffer size from ADDBA Request (10-bit, max 102=
+3)
 
-between commit:
+It's probably literally in this spec this way, but I see absolutely no
+reason to split it up like that (with ext_buffer_size) in what's
+effectively an internal API?!
 
-  4af2b71495a3f ("wifi: mac80211: fix use-after-free on TTLM disconnect")
+> +/**
+> + * struct ieee80211_smd_ctx - IEEE 802.11bn SMD Roaming Context (refer
+> + *	IEEE P802.11bn/D2.0, Aug 2026, subclause 37.16.9)
+> + *
+> + * @dl_sn_valid: if downlink (DL) SN Transfer is requested or not
+> + * @ul_sn_valid: if uplink (UL) SN Transfer is requested or not
 
-=66rom the wireless tree and commit:
+Hmm. It might make more sense to invert that like in the frames?
 
-  1d8b10787a3d3 ("wifi: mac80211: mlme: partially handle UHR updates")
+> + * @pn_valid: if PN is transferred or not
 
-=66rom the wireless-next tree.
+This being false is not a thing (any more)?
 
-I fixed it up (see below) and can carry the fix as necessary. This
-is now fixed as far as linux-next is concerned, but any non trivial
-conflicts should be mentioned to your upstream maintainer when your tree
-is submitted for merging.  You may also want to consider cooperating
-with the maintainer of the conflicting tree to minimise any particularly
-complex conflicts.
+> + * @ba_params_valid: if BlockAck parameters are transferred or not
+> + * @mgmt_tid_valid: if management information is transferred or not.
+> + *	@{d,u}l.mgmt_sn and @ul.mgmt_pn are still bounded by @{d,u}l_sn_valid
+> + *	and @pn_valid fields.
+> + * @pn_len: Length of PN in bytes; varies by cipher type
+> + *	(e.g. CCMP (6), GCMP-256 (16))
 
-diff --cc net/mac80211/mlme.c
-index b5efc6ccc9853,456b289bb072b..0000000000000
---- a/net/mac80211/mlme.c
-+++ b/net/mac80211/mlme.c
-@@@ -8488,9 -8983,12 +8985,13 @@@ static void ieee80211_rx_mgmt_beacon(st
-  					       elems->cisco_dtpc_elem);
- =20
-  	ieee80211_ml_reconfiguration(sdata, elems);
- -	ieee80211_process_adv_ttlm(sdata, elems,
- -				      le64_to_cpu(mgmt->u.beacon.timestamp));
- +	if (!ieee80211_process_adv_ttlm(sdata, elems,
- +					le64_to_cpu(mgmt->u.beacon.timestamp)))
- +		goto free;
-+ 	if (!ieee80211_rx_mgmt_beacon_uhr_param_upd(local, link, link_sta, elems,
-+ 						    config_bw_out.ap_non_dbe_width,
-+ 						    dbe_enabled_before))
-+ 		goto free;
- =20
-  apply:
-  	ieee80211_link_info_change_notify(sdata, link, changed);
+??
 
---13qAi4U3V0gvNGsk
-Content-Type: application/pgp-signature; name="signature.asc"
-
------BEGIN PGP SIGNATURE-----
-
-iQEzBAABCgAdFiEEreZoqmdXGLWf4p/qJNaLcl1Uh9AFAmrzZJwACgkQJNaLcl1U
-h9BjAwf/ew+L+dUwmMO18voeptA+nJNY8kpCO/ji9x+Saf3ajXjdurRSbsZNjLzz
-zJm9K+BDLJL11C0JfPhIet0QdUSTg4KSwjy/+BKoZput+kkjcKFLSdZZzpYqT9DN
-8RyHLkRDANi+edBB2mnfToUbYGtCXw4C62F73jbtGAf5ZLG+tMD/1ZDQ+j75A671
-mlfWV23G0HHxOdc+sM293yfi3wfDDFca0ILgC+aJuSaFNb6daXL9XNAoEkqa58Sk
-5pSLkDNb6UVjF1+u3X8ZHSafsqypSiovaH9d6REaD/WHnXGiHFBWRfQY30N9vFDJ
-yKWmMk7fJoXFF5zBHhHBp4DdZrzVXg==
-=MqN3
------END PGP SIGNATURE-----
-
---13qAi4U3V0gvNGsk--
+johannes
