@@ -1,87 +1,83 @@
-Authentication-Results: smtp.subspace.kernel.org; arc=none smtp.remote-ip=192.198.163.18
+Authentication-Results: smtp.subspace.kernel.org; arc=none smtp.remote-ip=100.103.45.18
 ARC-Seal: i=1; d=subspace.kernel.org; s=arc20261015; a=rsa-sha256; cv=none;
-	t=1794311716;
-	b=ee4OTKPoZfrQNWxgloGw5lLAkOSn8HHJ6PqkwxLkPRPFPtwPOGYfOB4bR7I93O+JpeAm
-	 M33JRd0Zs9sJ+nudsuYF52qDiqREYkrsjrCQGAcN35I2hjCJo7zKMth1EpVkONXLBvdXw
-	 dn6gfTCSnit+tp2nQsLcXTH0Vr+KE25ae9sUiBfL2tVu0R985HxwuemENexg5PqhS7SWX
-	 vp9qTPKcGlnLm3dzVWJpPrvmh4HK5+M4PF6m2hdGCE+nqLLgTFdJyTm2H54Guw1DACnsy
-	 yFWUi4Wdu5x8flphFG0zost9+obw+wisUwV1QjKuIH1wxXwBLhJTzw+36OV5SFIx2lQ==
+	t=1794313362;
+	b=Zi6sJdV+RPeq9ZpXLd7plq0v0gAOLZqj/Px69Rx8CFX3wnw9xiWNq0DPXEpIdP8VYMig
+	 EvWxiB2+4qIXbq33APJGOJnnoo/UDLmmxHjsWGoOzp8dFXQ67U0AjUKLT0SWNjgTyG+sT
+	 97j3AUMdlp9SwHHHrjtRr5HFFG+rXfqPNyJxQ4FMYVL13kTMy1BNpYw5BsAbNns47ka2s
+	 I/sw9aBbF+WSwB7oXPOcgHbMgjiwkYgNJEHSvppOBQUenqKgLNInt1xwLNWKxKQWcHAgL
+	 g7W4I9uGDDV34ZSFiVFTYqp+y+7gyXoD1rnFZFyEPunJHbT0NERibt0J1MUyql6rQpA==
 ARC-Message-Signature: i=1; d=subspace.kernel.org; s=arc20261015;
-	a=rsa-sha256; c=relaxed/relaxed; t=1794311716;
-	h=DMARC-Filter:DKIM-Signature:X-CSE-ConnectionGUID:X-CSE-MsgGUID:
-	 X-IronPort-AV:X-IronPort-AV:Received:X-CSE-ConnectionGUID:
-	 X-CSE-MsgGUID:X-ExtLoop1:X-IronPort-AV:Received:Received:Date:From:To:
-	 Cc:Subject:Message-ID:References:MIME-Version:Content-Type:
-	 Content-Disposition:In-Reply-To;
-	bh=Kt1SdcCjffIWXMIQm5IGLvK7jU+eDRRMBhPemFkwyIk=;
-	b=3geC4xqYHrth1zwE2x3aTCR2eSwbuvtllZxGInr+yxt5VRes/Vqf0T16YdWOsi3naPWA
-	 +RGQAyKCbqzRSlJ/vapn6DHKie7SMbhm0UhFxdQuuT1MrAh74LJovTf/E1MN0sr5wkkMn
-	 GAa3imzOjZ64w+OKtdP9TOy2rqKmOTWTVWH7k9YHg2qik3kjhsByYENWIAnUve1Btu0W2
-	 X4jI2YciEM59EFfKkqY3xyV6nPb5p/pyIldXY+C169vemHwODTu6Bf0q1e9NuLhnkFHFW
-	 9wzlOeJ7010jOeLN96A1/vEM0Zoe5pntCFB3K1YT02elDMcTzsaaY+4DXGig32hn01g==
+	a=rsa-sha256; c=relaxed/relaxed; t=1794313362;
+	h=Received:DKIM-Signature:Date:From:To:Cc:Subject:Message-ID:
+	 References:MIME-Version:Content-Type:Content-Disposition:In-Reply-To;
+	bh=hGl7nmxQkT5vba1RqxCfKXkqe6DTt+rPNJp2pMu6m5k=;
+	b=EM0v49TgYhp9txmwtx9N2pjgEVJHiIk8hEnfHUBCHafLyS1TnVH1HCslXkPnV4aRqI+A
+	 DsP1fp/J8l0YlQJMYet5CzYMHZmI+lMTtK8y1C/xrbOALyuDSc4JFWJsRM1NKTuIJbKaT
+	 SFzSAT35JDhrcbS92Ntk8hL+MQ3cv6L+cMK34MOPvE28JvXPPESTPD8s/vUzOvAHMYPni
+	 7D3P/jw4Ky46O645609ESN0JFqVbDfZXycsuyGQ7G8qVwZb0T2PZ7GXm5zfYmpHOLfGgj
+	 4M0yA19Hkf4P9FPQ395YCOWTyGiDlBxSbQNKtmd1ZceEjV+hfBo2WmMejC73wJ2o8mw==
 ARC-Authentication-Results: i=1; smtp.subspace.kernel.org; 
-	dmarc=pass header.from=intel.com;
-	spf=pass smtp.mailfrom=intel.com;
-	dkim=pass header.d=intel.com header.i=@intel.com header.a=rsa-sha256 header.s=Intel header.b=NVOLCicd;
-	arc=none smtp.remote-ip=192.198.163.18
-Received: from mgamail.intel.com (mgamail.intel.com [192.198.163.18])
-	(using TLSv1.2 with cipher ECDHE-ECDSA-AES256-GCM-SHA384 (256/256 bits))
+	dkim=pass header.d=kernel.org header.i=@kernel.org header.a=rsa-sha256 header.s=k20260515 header.b="k/co0YoI";
+	arc=none smtp.remote-ip=100.103.45.18
+Received: from smtp.kernel.org (quasi.space.kernel.org [100.103.45.18])
+	(using TLSv1.3 with cipher TLS_AES_256_GCM_SHA384 (256/256 bits)
+	 key-exchange X25519 server-signature ECDSA (prime256v1))
 	(No client certificate requested)
-	by smtp.subspace.kernel.org (Postfix) with ESMTPS id D2029606A32A
-	for <linux-wireless@vger.kernel.org>; Tue, 10 Nov 2026 11:55:14 +0000 (UTC)
-DMARC-Filter: OpenDMARC Filter v1.4.2 smtp.subspace.kernel.org D2029606A32A
-Authentication-Results: smtp.subspace.kernel.org; dmarc=pass (p=none dis=none) header.from=intel.com
-Authentication-Results: smtp.subspace.kernel.org; spf=pass smtp.mailfrom=intel.com
+	by smtp.subspace.kernel.org (Postfix) with ESMTPS id 0CE6F606A330;
+	Tue, 10 Nov 2026 12:22:42 +0000 (UTC)
 Authentication-Results: smtp.subspace.kernel.org;
-	dkim=pass (2048-bit key) header.d=intel.com header.i=@intel.com header.a=rsa-sha256 header.s=Intel header.b=NVOLCicd
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple;
-  d=intel.com; i=@intel.com; q=dns/txt; s=Intel;
-  t=1794311715; x=1825847715;
-  h=date:from:to:cc:subject:message-id:references:
-   mime-version:in-reply-to;
-  bh=xLC+Kp82pZhBULyTbznvfCirX6FuTOGlXW/eTvQqYlc=;
-  b=NVOLCicdqV6APy+6/b/pZh2EUP0OHivabPa8V9d8cO/ZQbIrfcYwVw1+
-   HHCCzsByxyZ8FODOnOrPemE3/yQ7Q94nIBHGUlzRBfkqf+sqoRyFaA5uN
-   b8jpDkNMsg7zje252shMTcX0lUsP9dwjxDNVKIldAv76H0Ryw/rA/NEj0
-   LJszUHFDSP8wIoHsUH+Gc0H8FeLoiuIsKfqNiPfiOl+s7phpIM45AoTVc
-   1P/3QFRA/n9osurZConJrp68oHG4L270xUJnzLRPBKWlBMepuYuBa0OOX
-   mLfSwTLPc1S0dxczrenYlzVHygvaWL7FDvscWCEkwa+57SSWrllSQGmFX
-   Q==;
-X-CSE-ConnectionGUID: lSBjry1pTuWknH1VRAvptA==
-X-CSE-MsgGUID: v4S/4m7tTiGaCe5OJSPnPA==
-X-IronPort-AV: E=McAfee;i="6800,10657,11961"; a="3089586"
-X-IronPort-AV: E=Sophos;i="6.27,205,1787036400"; 
-   d="scan'208";a="3089586"
-Received: from fmviesa013.fm.intel.com ([10.60.135.153])
-  by fmvoesa112.fm.intel.com with ESMTP/TLS/ECDHE-RSA-AES256-GCM-SHA384; 10 Nov 2026 03:54:58 -0800
-X-CSE-ConnectionGUID: 5YMhyP92TbKKx+LivObr5w==
-X-CSE-MsgGUID: soXjYcdHSc6iOzg9sreG/Q==
-X-ExtLoop1: 1
-X-IronPort-AV: E=Sophos;i="6.27,205,1787036400"; 
-   d="scan'208";a="10000802"
-Received: from lkp-server01.sh.intel.com (HELO 0caa9d2d175c) ([10.239.97.150])
-  by fmviesa013.fm.intel.com with ESMTP; 10 Nov 2026 03:54:54 -0800
-Received: from kbuild by 0caa9d2d175c with local (Exim 4.98.2)
-	(envelope-from <lkp@intel.com>)
-	id 1xQkR9-00000000wlT-0yc6;
-	Tue, 10 Nov 2026 11:54:51 +0000
-Date: Tue, 10 Nov 2026 19:54:37 +0800
-From: kernel test robot <lkp@intel.com>
-To: Devin Wittmayer <lucid_duck@justthetip.ca>,
-	Felix Fietkau <nbd@nbd.name>, Lorenzo Bianconi <lorenzo@kernel.org>,
-	Ryder Lee <ryder.lee@mediatek.com>
-Cc: llvm@lists.linux.dev, oe-kbuild-all@lists.linux.dev,
-	Deren Wu <deren.wu@mediatek.com>,
-	Sean Wang <sean.wang@mediatek.com>,
-	Shayne Chen <shayne.chen@mediatek.com>,
-	Quan Zhou <quan.zhou@mediatek.com>,
-	Michael Lo <michael.lo@mediatek.com>,
-	James-LY Huang <james-ly.huang@mediatek.com>,
-	linux-wireless@vger.kernel.org, linux-mediatek@lists.infradead.org
-Subject: Re: [PATCH v2] wifi: mt76: mt792x: tell mac80211 when a disconnect
- cancels its ROC
-Message-ID: <202611101937.hzmTxgbR-lkp@intel.com>
-References: <20261110005846.38432-1-lucid_duck@justthetip.ca>
+	dkim=pass (2048-bit key) header.d=kernel.org header.i=@kernel.org header.a=rsa-sha256 header.s=k20260515 header.b=k/co0YoI
+Received: by smtp.kernel.org (Postfix) with ESMTPSA id F06431F008A3;
+	Tue, 10 Nov 2026 12:22:40 +0000 (UTC)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=kernel.org;
+	s=k20260515; t=1794313361;
+	bh=hGl7nmxQkT5vba1RqxCfKXkqe6DTt+rPNJp2pMu6m5k=;
+	h=Date:From:To:Cc:Subject:References:In-Reply-To;
+	b=k/co0YoIuiKLXr7WyXUtAA3pWaow2/ThCpywVER/G9aHTuINfpPRlsNOpNeL6eA3/
+	 D5sZv/XI4weWMAEFMkPnaDXkHY2UHv8Cdj7T/MIPQB22hzafVwXl2t+9X4IMEyPgpr
+	 F0ULBbRJhBETzW0sC9499EvstL1a01e1JBff+474UeAj3qIpzZreFtMDiNmPvYB/v0
+	 DQ6uDL9B11Sn02jp3cV2DD6qnO+2jQITqeM+wfh8YW38tXvXhBbJX3qjL6QtqUpij7
+	 siAlaQEibl/CLeXTc5YbwPyy9yrA2KiEY8qTX0k5buBizyNTN0MjlMDpBRy18qmjhy
+	 RbXwSrQ5cyugw==
+Date: Tue, 10 Nov 2026 14:22:37 +0200
+From: Leon Romanovsky <leon@kernel.org>
+To: Robin Murphy <robin.murphy@arm.com>
+Cc: Greg Kroah-Hartman <gregkh@linuxfoundation.org>,
+	"Rafael J. Wysocki" <rafael@kernel.org>,
+	Danilo Krummrich <dakr@kernel.org>,
+	Dmitry Torokhov <dmitry.torokhov@gmail.com>,
+	Andrew Lunn <andrew@lunn.ch>,
+	Heiner Kallweit <hkallweit1@gmail.com>,
+	Russell King <linux@armlinux.org.uk>,
+	"David S. Miller" <davem@davemloft.net>,
+	Jakub Kicinski <kuba@kernel.org>, Paolo Abeni <pabeni@redhat.com>,
+	Johannes Berg <johannes@sipsolutions.net>,
+	Jonathan Corbet <corbet@lwn.net>,
+	Shuah Khan <skhan@linuxfoundation.org>,
+	Randy Dunlap <rdunlap@infradead.org>,
+	Bjorn Helgaas <bhelgaas@google.com>,
+	"Joerg Roedel (AMD)" <joro@8bytes.org>,
+	Suravee Suthikulpanit <suravee.suthikulpanit@amd.com>,
+	Vasant Hegde <vasant.hegde@amd.com>, Will Deacon <will@kernel.org>,
+	David Woodhouse <dwmw2@infradead.org>,
+	Lu Baolu <baolu.lu@linux.intel.com>,
+	Johan Hovold <johan@kernel.org>, Eric Dumazet <edumazet@kernel.org>,
+	Marcel Holtmann <marcel@holtmann.org>,
+	Luiz Augusto von Dentz <luiz.dentz@gmail.com>,
+	Nipun Gupta <nipun.gupta@amd.com>,
+	Nikhil Agarwal <nikhil.agarwal@amd.com>,
+	Pieter Jansen van Vuuren <pieter.jansen-van-vuuren@amd.com>,
+	linux-kernel@vger.kernel.org, driver-core@lists.linux.dev,
+	linux-input@vger.kernel.org, netdev@vger.kernel.org,
+	linux-wireless@vger.kernel.org, linux-usb@vger.kernel.org,
+	linux-bluetooth@vger.kernel.org, linux-acpi@vger.kernel.org,
+	linux-doc@vger.kernel.org, linux-pci@vger.kernel.org,
+	iommu@lists.linux.dev, Jason Gunthorpe <jgg@ziepe.ca>
+Subject: Re: [PATCH v2 18/19] PCI: Replace untrusted state with device trust
+Message-ID: <20261110122237.GG8635@unreal>
+References: <20261109-device-trust-core-v2-0-3b12d9a9f861@nvidia.com>
+ <20261109-device-trust-core-v2-18-3b12d9a9f861@nvidia.com>
+ <d0999161-3b27-4c3b-9d66-1d117c4836fd@arm.com>
 X-Mailing-List: linux-wireless@vger.kernel.org
 List-Id: <linux-wireless.vger.kernel.org>
 List-Post: <mailto:linux-wireless@vger.kernel.org>
@@ -93,83 +89,137 @@ Precedence: list
 MIME-Version: 1.0
 Content-Type: text/plain; charset=us-ascii
 Content-Disposition: inline
-In-Reply-To: <20261110005846.38432-1-lucid_duck@justthetip.ca>
+In-Reply-To: <d0999161-3b27-4c3b-9d66-1d117c4836fd@arm.com>
 
-Hi Devin,
+On Mon, Nov 09, 2026 at 01:53:02PM +0000, Robin Murphy wrote:
+> On 09/11/2026 7:33 am, Leon Romanovsky wrote:
+> [...]
+> > diff --git a/drivers/iommu/iommu.c b/drivers/iommu/iommu.c
+> > index b486b8bbd1fcd..8be2a246d4903 100644
+> > --- a/drivers/iommu/iommu.c
+> > +++ b/drivers/iommu/iommu.c
+> > @@ -1879,7 +1879,7 @@ static int iommu_get_def_domain_type(struct iommu_group *group,
+> >   static int iommu_get_default_domain_type(struct iommu_group *group,
+> >   					 int target_type)
+> >   {
+> > -	struct device *untrusted = NULL;
+> > +	struct device *restricted = NULL;
+> >   	struct group_device *gdev;
+> >   	int driver_type = 0;
+> > @@ -1901,14 +1901,15 @@ static int iommu_get_default_domain_type(struct iommu_group *group,
+> >   		driver_type = iommu_get_def_domain_type(group, gdev->dev,
+> >   							driver_type);
+> > -		if (dev_is_pci(gdev->dev) && to_pci_dev(gdev->dev)->untrusted) {
+> > +		if (dev_is_pci(gdev->dev) &&
+> > +		    pci_dev_default_is_restricted(to_pci_dev(gdev->dev))) {
+> 
+> I think this should be the generic device_is_adversarial(gdev->dev) now - in
+> fact probably all the dev_is_pci()/to_pci_dev() stanzas aren't conceptually
+> PCI-specific, just an artefact of the current "untrusted" flag being so.
 
-kernel test robot noticed the following build errors:
+I wanted to do the same, but iommu_get_default_domain_type() may be called
+before the PCI device's trust level has been set. At that point, we are
+still in "disabled" mode, whereas device_is_adversarial() checks for
+"adversarial" mode.
 
-[auto build test ERROR on wireless-next/main]
-[also build test ERROR on wireless/main linus/master v7.4-rc2 next-20261109]
-[cannot apply to linux-review/Devin-Wittmayer/wifi-mt76-mt792x-tell-mac80211-when-a-disconnect-cancels-its-ROC/20261022-184827]
-[If your patch is applied to the wrong git tree, kindly drop us a note.
-And when submitting patch, we suggest to use '--base' as documented in
-https://git-scm.com/docs/git-format-patch#_base_tree_information]
+The below is from AI, I asked to present me the path for that:
+--------------------------------------------------------------------------------
+For a newly discovered PCI device with an available IOMMU and a new IOMMU group:
+pci_scan_single_device()
+  pci_device_add()
+    device_add()
+      bus_notify(dev, BUS_NOTIFY_ADD_DEVICE)
+        blocking_notifier_call_chain()
+          notifier_call_chain()
+            iommu_bus_notifier()
+              iommu_probe_device(dev)
+                __iommu_probe_device(dev, NULL)
+                  iommu_setup_default_domain(group, 0)
+                    iommu_get_default_domain_type(group, 0)
 
-url:    https://github.com/intel-lab-lkp/linux/commits/Devin-Wittmayer/wifi-mt76-mt792x-tell-mac80211-when-a-disconnect-cancels-its-ROC/20261109-175846
-base:   https://git.kernel.org/pub/scm/linux/kernel/git/wireless/wireless-next.git main
-patch link:    https://lore.kernel.org/r/20261110005846.38432-1-lucid_duck%40justthetip.ca
-patch subject: [PATCH v2] wifi: mt76: mt792x: tell mac80211 when a disconnect cancels its ROC
-config: hexagon-allmodconfig (https://download.01.org/0day-ci/archive/20261110/202611101937.hzmTxgbR-lkp@intel.com/config)
-compiler: clang version 24.0.0git (https://github.com/llvm/llvm-project b3e2466a7ef2bbc97d31230c3bf39a6fa50a608a)
-reproduce (this is a W=1 build): (https://download.01.org/0day-ci/archive/20261110/202611101937.hzmTxgbR-lkp@intel.com/reproduce)
+For a device whose initial policy is adversary, its state during that call is:
+dev->trust_policy          = DEVICE_TRUST_POLICY_ADVERSARY
+dev->trust_level           = DEVICE_TRUST_DISABLED
+dev->trust_committed_level = DEVICE_TRUST_DISABLED
+dev->driver               = NULL
 
-If you fix the issue in a separate patch/commit (i.e. not just a new version of
-the same patch/commit), kindly add following tags
-| Reported-by: kernel test robot <lkp@intel.com>
-| Closes: https://lore.kernel.org/oe-kbuild-all/202611101937.hzmTxgbR-lkp@intel.com/
+device_is_adversarial(dev) = false
 
-All errors (new ones prefixed by >>):
+The active level changes later, during binding:
+really_probe()
+  device_trust_prepare()
+    __device_trust_prepare()
+      WRITE_ONCE(dev->trust_level, DEVICE_TRUST_ADVERSARY)
+  dev->bus->dma_configure()
+  call_driver_probe()
 
->> drivers/net/wireless/mediatek/mt76/mt7921/main.c:385:11: error: no member named 'roc_notify' in 'struct mt792x_phy'
-     385 |         if (phy->roc_notify)
-         |             ~~~  ^
-   drivers/net/wireless/mediatek/mt76/mt7921/main.c:423:22: error: no member named 'roc_notify' in 'struct mt792x_phy'
-     423 |         if (aborted && phy->roc_notify)
-         |                        ~~~  ^
-   drivers/net/wireless/mediatek/mt76/mt7921/main.c:441:7: error: no member named 'roc_notify' in 'struct mt792x_phy'
-     441 |         phy->roc_notify = type == MT7921_ROC_REQ_ROC;
-         |         ~~~  ^
-   drivers/net/wireless/mediatek/mt76/mt7921/main.c:484:7: error: no member named 'roc_notify' in 'struct mt792x_phy'
-     484 |         phy->roc_notify = false;
-         |         ~~~  ^
-   4 errors generated.
---
->> drivers/net/wireless/mediatek/mt76/mt7925/main.c:531:11: error: no member named 'roc_notify' in 'struct mt792x_phy'
-     531 |         if (phy->roc_notify)
-         |             ~~~  ^
-   drivers/net/wireless/mediatek/mt76/mt7925/main.c:569:22: error: no member named 'roc_notify' in 'struct mt792x_phy'
-     569 |         if (aborted && phy->roc_notify)
-         |                        ~~~  ^
-   drivers/net/wireless/mediatek/mt76/mt7925/main.c:657:7: error: no member named 'roc_notify' in 'struct mt792x_phy'
-     657 |         phy->roc_notify = false;
-         |         ~~~  ^
-   3 errors generated.
+> 
+> >   			/*
+> > -			 * No ARM32 using systems will set untrusted, it cannot
+> > -			 * work.
+> > +			 * No ARM32 using systems select a restricted trust
+> > +			 * policy; it cannot work.
+> >   			 */
+> >   			if (WARN_ON(IS_ENABLED(CONFIG_ARM_DMA_USE_IOMMU)))
+> >   				return -1;
+> > -			untrusted = gdev->dev;
+> > +			restricted = gdev->dev;
+> >   		}
+> >   	}
+> [...]
+> > @@ -616,6 +608,28 @@ static inline struct pci_dev *to_pci_dev(const struct device *dev)
+> >   {
+> >   	return container_of(dev, struct pci_dev, dev);
+> >   }
+> > +
+> > +static inline bool
+> > +pci_dev_default_is_restricted(const struct pci_dev *pdev)
+> > +{
+> > +	enum device_trust_policy policy = READ_ONCE(pdev->dev.trust_policy);
+> > +
+> > +	return policy == DEVICE_TRUST_POLICY_DISABLED ||
+> > +	       policy == DEVICE_TRUST_POLICY_ADVERSARY;
+> > +}
+> 
+> Unless I've wildly misunderstood, I'm not sure this is right - if the user
+> has set DEVICE_TRUST_POLICY_DISABLED to explicitly override the bus-default
+> behaviour, but that leads to the IOMMU layer special-casing all PCI devices
+> as adversarial and thus force-*enabling* all their trust-model restrictions,
+> isn't that pretty much the complete opposite of what was asked for?
 
+We have two levels: policy - that describes the default of all devices
+for that bus. level - actual decision on how that device is going to be
+operated.
 
-vim +385 drivers/net/wireless/mediatek/mt76/mt7921/main.c
+"Disabled" prevents driver probing until the device is authorized,
+"Adversary" permits probing and requests the available protections
+for operating an untrusted device.
 
-   370	
-   371	void mt7921_roc_abort_sync(struct mt792x_dev *dev)
-   372	{
-   373		struct mt792x_phy *phy = &dev->phy;
-   374	
-   375		if (!test_and_clear_bit(MT76_STATE_ROC, &phy->mt76->state))
-   376			return;
-   377	
-   378		timer_delete_sync(&phy->roc_timer);
-   379		cancel_work(&phy->roc_work);
-   380	
-   381		ieee80211_iterate_interfaces(mt76_hw(dev),
-   382					     IEEE80211_IFACE_ITER_RESUME_ALL,
-   383					     mt7921_roc_iter, (void *)phy);
-   384	
- > 385		if (phy->roc_notify)
-   386			ieee80211_remain_on_channel_expired(mt76_hw(dev));
-   387	}
-   388	EXPORT_SYMBOL_GPL(mt7921_roc_abort_sync);
-   389	
+Both need conservative initial IOMMU setup: a disabled device may later
+be authorized as adversary, and authorization does not rebuild its IOMMU
+domain.
 
---
-0-DAY CI Kernel Test Service
-https://github.com/intel/lkp-tests/wiki
+Thanks
+
+> 
+> Thanks,
+> Robin.
+> 
+> > +
+> > +static inline bool pci_dev_ats_permitted(const struct pci_dev *pdev)
+> > +{
+> > +	enum device_trust_level level = device_get_trust_level(&pdev->dev);
+> > +	enum device_trust_policy policy = READ_ONCE(pdev->dev.trust_policy);
+> > +
+> > +	if (level == DEVICE_TRUST_DISABLED)
+> > +		return policy != DEVICE_TRUST_POLICY_ADVERSARY &&
+> > +		       policy != DEVICE_TRUST_POLICY_DISABLED;
+> > +
+> > +	return level == DEVICE_TRUST_FULL;
+> > +}
+> > +
+> >   #define for_each_pci_dev(d) while ((d = pci_get_device(PCI_ANY_ID, PCI_ANY_ID, d)) != NULL)
+> >   #define for_each_pci_dev_reverse(d) \
+> >   	while ((d = pci_get_device_reverse(PCI_ANY_ID, PCI_ANY_ID, d)) != NULL)
+> > 
+> 
