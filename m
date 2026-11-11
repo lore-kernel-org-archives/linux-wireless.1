@@ -1,52 +1,67 @@
-Authentication-Results: smtp.subspace.kernel.org; arc=none smtp.remote-ip=57.103.72.23
+Authentication-Results: smtp.subspace.kernel.org; arc=none smtp.remote-ip=111.22.67.135
 ARC-Seal: i=1; d=subspace.kernel.org; s=arc20261015; a=rsa-sha256; cv=none;
-	t=1794385269;
-	b=UyBjuEhfENYtsaXOGdkv3MC0DVEZLv8eN1tYdznDNrov7eBgLivqaHr3n33i3PJWFJP2
-	 sXb/EyAWM6n274APSUUi9dBoqSEH5oM7p0QWqScTsv6zkLWfTdgtHDDC0ajPr2G+zLG1P
-	 CUt1vy8CmXq41angHcVL/uINXNgNZlTu2UcqbFBnA2AdrsEJPclH4BubS3jQnkV37IuH+
-	 PBkasuW9/itJpxZxPzQoGEgoxPgKkN5p8RpBaXladDMYO4yREtBO2Ahg/GdamzesxXMzD
-	 pzFPcfY3OCTO19NslCebFTsEtgaJZ6OdxmkzMF3NoS0DLl4qJSzDuU1FMotQ2H+4yNA==
+	t=1794387857;
+	b=1yKfAxevjR/Q0HpKHefgVpLJGRPOyKWz9V5lHxE8PSDGhhlDAdoh0X7wR6WVJ7L4MKnR
+	 V35JgU+jHc1RMHHinqHkRfy/yewng3fLIvMfXybNwes5onJMwHh+4KWibofFaLGvJpU0P
+	 M2za/PJ6aF85sOs+Aswzf/qDPmIMtDj6Wenm5WL3NQy0jyYzEXX7KGf+hhjy/aTCSf6Yr
+	 LG2tS4S5ObfW4ubDxqr0c/eCqfkZh7wbEfMOF3c12ofeQltesW+1RCABavNdXtJO/NqGM
+	 Cp7nD2Dp2XFuGCkbHiMohNHMkM2yAXhfH84FnRpXbtOoenGyN8HXBSLQddPTsh88UHw==
 ARC-Message-Signature: i=1; d=subspace.kernel.org; s=arc20261015;
-	a=rsa-sha256; c=relaxed/relaxed; t=1794385269;
-	h=DMARC-Filter:Received:X-ICL-RepId:Dkim-Signature:
-	 mail-alias-created-date:Received:Content-Type:Mime-Version:Subject:
-	 From:In-Reply-To:Date:Cc:Content-Transfer-Encoding:Message-Id:
-	 References:To:X-Mailer:X-Authority-Info-Out:
-	 X-Proofpoint-Spam-Details-Enc:X-Proofpoint-ORIG-GUID:
-	 X-Proofpoint-GUID:X-JNJ;
-	bh=58HWnz0p8sV7syBh1H3xNmw51kSIOKEcvzUwBr153Y4=;
-	b=D6vf8DBy/Q/RPRmO8UhWXCHjAmhf8JkRhZtLF+0+pg9qzSRqVwKtEzVPUsl0VuJNI9Lm
-	 U8tqWd+BxorgUDItFYrM+QpOS0obixL2zPB6Q+whyEkcyjLRNblJ0OJ7pRbIvYu79NRLd
-	 p5NVXJ3PDB2mnKMohaiqlvnvZ7HrUUExFNkZbhwgW7gLKm/oiOaoCCMElvdxCs3GLpZCu
-	 4yhDbxJJyV6Vk0QOBVG9sE6TR0F+ThZsdFSnFCc/G++UqQIAUCi2fzjrCPZcn82XRIdWM
-	 O4kSPGS4LUPt3pmBrILdXSA147XyzP2lYH9eajRUis1xJ21F0e7wnDHwWgL18mgLDjQ==
+	a=rsa-sha256; c=relaxed/relaxed; t=1794387857;
+	h=DMARC-Filter:DKIM-Signature:X-RM-TagInfo:X-RM-SPAM-FLAG:Received:
+	 X-RM-TRANSID:X-RM-TagInfo:X-RM-SPAM-FLAG:Received:X-RM-TRANSID:From:
+	 To:Cc:Subject:Date:Message-ID:X-Mailer:MIME-Version:
+	 Content-Transfer-Encoding;
+	bh=cngTStRSbCTlPKjELIo0XWShwxU2pjKN6j7stn5DOCg=;
+	b=u4+MbJCDgj1dtZ6Z6q2OQx/B1vpAVwFAUiCAQTPduXhZT1LEJQ/6gyWYvDP49MAfCVIW
+	 tjKiz0GNzFqLFGwWC47cC2dskatSvqrGjEzjsZCs4cIXeOju2iz9WQsCmIXtEofCNDCPJ
+	 sv6+cSa44WnGZxaWaqCa0dzXvPbijOd9q9+/ZmZ4evhuJ0v1zJrkELQAod8C7C7z2UcVU
+	 mN+r8GluQ0wNiLZUDLB07tUrZGv0YutkhRHsaJoWS0XPqiS1b6fDNht//GP3Vbdxbmp80
+	 eab7ITg1KVvirhHEhxX9ABn2v3aTZqtNU+JSFOlKYrM98iGcJGyKNhHj0mHeuFScNfQ==
 ARC-Authentication-Results: i=1; smtp.subspace.kernel.org; 
-	dmarc=none header.from=listopad.email;
-	spf=pass smtp.mailfrom=listopad.email;
-	dkim=pass header.d=listopad.email header.i=@listopad.email header.a=rsa-sha256 header.s=sig1 header.b=R5azrWHX;
-	arc=none smtp.remote-ip=57.103.72.23
-Received: from outbound.ms.icloud.com (ms-2005h-snip4-11.eps.apple.com [57.103.72.23])
-	(using TLSv1.3 with cipher TLS_AES_256_GCM_SHA384 (256/256 bits)
-	 key-exchange X25519 server-signature ECDSA (prime256v1) server-digest SHA256)
-	(No client certificate requested)
-	by smtp.subspace.kernel.org (Postfix) with ESMTPS id 0DB44606A320
-	for <linux-wireless@vger.kernel.org>; Wed, 11 Nov 2026 08:21:08 +0000 (UTC)
-DMARC-Filter: OpenDMARC Filter v1.4.2 smtp.subspace.kernel.org 0DB44606A320
-Authentication-Results: smtp.subspace.kernel.org; dmarc=none (p=none dis=none) header.from=listopad.email
-Authentication-Results: smtp.subspace.kernel.org; spf=pass smtp.mailfrom=listopad.email
+	dmarc=pass header.from=cmss.chinamobile.com;
+	spf=pass smtp.mailfrom=cmss.chinamobile.com;
+	dkim=pass header.d=cmss.chinamobile.com header.i=@cmss.chinamobile.com header.a=rsa-sha256 header.s=default header.b=PFnnl6XS;
+	arc=none smtp.remote-ip=111.22.67.135
+Received: from cmccmta2.chinamobile.com (cmccmta2.chinamobile.com [111.22.67.135])
+	by smtp.subspace.kernel.org (Postfix) with ESMTP id 4E3D6606A31C;
+	Wed, 11 Nov 2026 09:04:15 +0000 (UTC)
+DMARC-Filter: OpenDMARC Filter v1.4.2 smtp.subspace.kernel.org 4E3D6606A31C
+Authentication-Results: smtp.subspace.kernel.org; dmarc=pass (p=none dis=none) header.from=cmss.chinamobile.com
+Authentication-Results: smtp.subspace.kernel.org; spf=pass smtp.mailfrom=cmss.chinamobile.com
 Authentication-Results: smtp.subspace.kernel.org;
-	dkim=pass (2048-bit key, unprotected) header.d=listopad.email header.i=@listopad.email header.a=rsa-sha256 header.s=sig1 header.b=R5azrWHX
-Received: from outbound.ms.icloud.com (unknown [127.0.0.2])
-	by p00-icloudmta-asmtp-us-west-3a-60-percent-2 (Postfix) with ESMTPS id 41B0F1800128;
-	Wed, 11 Nov 2026 08:21:06 +0000 (UTC)
-X-ICL-RepId: 01a1c9b2-45e3-7f92-b86b-583752067290
-Dkim-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=listopad.email; s=sig1; t=1794385268; x=1825921268; bh=58HWnz0p8sV7syBh1H3xNmw51kSIOKEcvzUwBr153Y4=; h=Content-Type:Mime-Version:Subject:From:Date:Message-Id:To:x-icloud-hme; b=R5azrWHX6b0eTNL67PlDs117ER7CBZv1x4OZfOVVKeFRT0TH8uaRWd2PZYcYd63zbeLHH9w7NuAZg3x8pZS+iLOIZKK3n294mXWi1EJQTkTd/BtwxS9mGjwYSfkUWQSkzJctFmGepw7vzDvcnZVPLlUQ8rrMrx5KF4XMpM8Xlj3DeG2mUKJm9Ggk4i2QggC0poqM9B578FAfhtVN6nstPaKEQAjOIGUvK/sLx+5w0FEgc1lRztSD0kaQbcAwnvOOI+D7xA87SmtndHUEdSAyqqiBCRqWmVBPqvIYvQ30uiPy4aFt9gWKrEHgWVwS5a76XLs/r8bOPyahglAtikk14g==
-mail-alias-created-date: 1648896822394
-Received: from smtpclient.apple (unknown [17.156.208.39])
-	by p00-icloudmta-asmtp-us-west-3a-60-percent-2 (Postfix) with ESMTPSA id EEB8B1800124;
-	Wed, 11 Nov 2026 08:21:04 +0000 (UTC)
-Content-Type: text/plain;
-	charset=utf-8
+	dkim=pass (1024-bit key) header.d=cmss.chinamobile.com header.i=@cmss.chinamobile.com header.a=rsa-sha256 header.s=default header.b=PFnnl6XS
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+	d=cmss.chinamobile.com; s=default; l=0;
+	h=from:subject:message-id:to:cc:mime-version;
+	bh=47DEQpj8HBSa+/TImW+5JCeuQeRkm5NMpJWZG3hSuFU=;
+	b=PFnnl6XSCosrOI5fNjI1M91BJk18RDKOx2Hrjn0TuCwAyWmH8ZQGtuE089EOX6vr5ktJYOcr2STIM
+	 3K+qgpPyryf+IqQIujWP0Uqqynn3I4rEGw42I8VvoZjN/n1PlsYd5Xb60+G91hyuzrhx2rckhs8djK
+	 39vC/PkXpQm/Qpt0=
+X-RM-TagInfo: emlType=0                                       
+X-RM-SPAM-FLAG:00000000
+Received:from spf.mail.chinamobile.com (unknown[10.188.0.87])
+	by rmmx-syy-dmz-app03-12003 (RichMail) with SMTP id 2ee36af42f8dc60-a351e;
+	Wed, 11 Nov 2026 17:04:13 +0800 (CST)
+X-RM-TRANSID:2ee36af42f8dc60-a351e
+X-RM-TagInfo: emlType=0                                       
+X-RM-SPAM-FLAG:00000000
+Received:from localhost.localdomain (unknown[223.112.32.189])
+	by rmsmtp-syy-appsvr04-12004 (RichMail) with SMTP id 2ee46af42f8b6ae-d67ed;
+	Wed, 11 Nov 2026 17:04:13 +0800 (CST)
+X-RM-TRANSID:2ee46af42f8b6ae-d67ed
+From: guohongyu <guohongyu@cmss.chinamobile.com>
+To: jeff.chen_1@nxp.com,
+	francesco@dolcini.it,
+	johannes@sipsolutions.net
+Cc: linux-wireless@vger.kernel.org,
+	linux-kernel@vger.kernel.org,
+	stable@vger.kernel.org,
+	13057616121@163.com
+Subject: [PATCH] wifi: nxpwifi: fix tid and reorder-window bounds checks in RX reorder
+Date: Wed, 11 Nov 2026 16:57:00 +0800
+Message-ID: <20261111085700.109141-1-guohongyu@cmss.chinamobile.com>
+X-Mailer: git-send-email 2.43.0
 X-Mailing-List: linux-wireless@vger.kernel.org
 List-Id: <linux-wireless.vger.kernel.org>
 List-Post: <mailto:linux-wireless@vger.kernel.org>
@@ -55,180 +70,108 @@ List-Subscribe: <mailto:linux-wireless+subscribe@vger.kernel.org>
 List-Unsubscribe: <mailto:linux-wireless+unsubscribe@vger.kernel.org>
 List-Owner: <mailto:linux-wireless+owner@vger.kernel.org>
 Precedence: list
-Mime-Version: 1.0 (Mac OS X Mail 16.0 \(3901.200.71.1.16\))
-Subject: Re: [RFC] Adding RTL8189ES SDIO support to rtw88
-From: igor@listopad.email
-In-Reply-To: <d34cd45d652f4b88a02c4795b0e1aaf2@realtek.com>
-Date: Wed, 11 Nov 2026 11:20:52 +0300
-Cc: Luka Gejak <luka.gejak@linux.dev>,
- "linux-wireless@vger.kernel.org" <linux-wireless@vger.kernel.org>
-Content-Transfer-Encoding: quoted-printable
-Message-Id: <E729C6A0-A35A-4E66-A32B-C741DE173F91@listopad.email>
-References: <A11FF135-696D-4107-B5FC-BBBB05303926@listopad.email>
- <977DC5C2-4EB7-45BD-9663-69E4094EE596@linux.dev>
- <d34cd45d652f4b88a02c4795b0e1aaf2@realtek.com>
-To: Ping-Ke Shih <pkshih@realtek.com>
-X-Mailer: Apple Mail (2.3901.200.71.1.16)
-X-Authority-Info-Out: v=2.4 cv=UuJu9uwB c=1 sm=1 tr=0 ts=6af42572
- cx=c_apl:c_pps:t_out a=kRaGL2Q7qLiahLf3O6OaIA==:117
- a=kRaGL2Q7qLiahLf3O6OaIA==:17 a=IkcTkHD0fZMA:10 a=MKtGQD3n3ToA:10
- a=1oJP67jkp3AA:10 a=zJRp6_cAMcgA:10 a=VkNPw1HP01LnGYTKEx00:22
- a=VwQbUJbxAAAA:8 a=n9Sqmae0AAAA:8 a=BrvVWhmvLCXlDLVeFqYA:9 a=QEXdDO2ut3YA:10
- a=UmAUUZEt6-oIqEbegvw9:22
-X-Proofpoint-Spam-Details-Enc: AW1haW4tMjYxMTExMDAzMyBTYWx0ZWRfXyZ8XG46uThJE
- +an6jMESUaqTw9RShRnvDN+z41Xoz1tAAebbA2Wq3cK43BERxWsfDTgLLNnTdMP6kvKlaSeKHiV
- M4dUr2mQSS21eLRObm4bCpXnP6qerSGylbsQ94+ov4cD6lKaX5utYeuvA7Nwi4Ku6PvCM40p8Km
- Q1KcGDsIn0dI/1jbEjus/ZCbWHfyYfkxxbgVwke6Evpvg8vAvyBgTZROu4PIs4N58B60v3sL8AV
- U7JEi7RDuBi3fl5AgX9FslLUXMo/gu6Upbq668orK2DsriogZOxoR2JM56vPRsHOEWNJBglWFkw
- 85fpbR2xUaxSfn++IPA6KwqTzOWhoF9ncMbcpnVdBUq8mR2lxsGUcG8xInGLfM=
-X-Proofpoint-ORIG-GUID: WbELnREmuxmjG-OlzsBU_ogX6rLa-YCU
-X-Proofpoint-GUID: WbELnREmuxmjG-OlzsBU_ogX6rLa-YCU
-X-JNJ: AAAAAAABNMn4n4y5BKvfmsywZqWLoMcZFd5KEz85go+9LAeESu8dfhCf4Ix0+O5tqIHssB
- A2DXb+KaEuo9cuLarsyxkbix8xFF+Pi/v8IpkvIfLdgblpYIT+kV4cHVTEMdOhCLvdwFLD
- x52k7qdigZr5hXexPwufW5HMWiBnktP82LDctzBhJtwAFP1No4N5vxxkOMPUYhaceb1Eos
- 8uER9R661uuzybu5voI5SLD6Bapxt7uxoILO/4206f+8qN1Mzif4BY0Trcq0C5gkSYClFl
- VfYmTvr26X38+gF1or7qF0rergZYzjnUPnnW9n/hIMrhtPuwXAB3hjbmhiAGx7qhqhgrlk
- URiNYwySD+l7om6FzO3ZSyf67qVm7twCXGUl+Dxgn4MeCTuWshHFMS7+FlTrjEhy9w9P+k
- Dzx6af7ytfYyXMyZNVvJ7elZ4JBG84y2lPyGVOJJnhouwQv1PEyRB9eCE7WJNq//ccZ8Uq
- sV0h5X7xbTCSnOKPOj0O6bCF62pResLYcTlIqevQvdOrX4LtL/mmz1+X93Vez4M3U2l6A7
- q9onw4pWsHrW/IK+yF+G6B9+DdEaweSDcFVQSZ1+OOJcEA7Bsb80ADqBJvAaJam48g3Pjk
- Xf6k6wHYUURCGxiFdW/hNVO4KS1UjelZ+ZoIEKqPCpGDB8F9/yd4cxd456IUCjBf1Jlw4z
- DDSvRWt7X5SpuB0QGhrlPBO59+nGRcU8js4Geu3Yynb/pDKyyBAnKA3K7Ip751qiNHPI9G
- YJCYJfMv4dAvKzZIoLEkNsTv5YMLiCSRxEdXzV2E8C5PGW0yZbI5x3SkgkpP9dez/jZy01
- wNANzQeWqHBO2SsWktlxWhOSXYJTIn9SOIO60/g7Tr0hj7g4XnJlhKULYb6kulDpIUNP9+
- nes+FhW+wAurhP4m3EP0927Rj0rUBmU2H8nAB7spaw08nOmnGrdnL1j/1Hu/gPBUflQCn3
- uEP7f415MTQFI+lpbZFyndQAhe54JBwfbht0oNWxEMTLDemElEJIES9Ymc1hhic3LYvB0f
- OWy102p1g8ZnLtXYdwABgY662Hk2fuQyDsBSVfb0fz0pbb4rMJJLO1aa3mQd10g6l1EPv0
- Dvjb5Wo0yrWg8GhAYJfPEK1ZhrFGTYa7JtjzSOchJIBMl9BrKNZpOhG+zjnkiS/rQZR0hw
- JWQZf9aLqspFGbfvRwo1j+5Coy2SImnDTBmGkLpsHi0Eicnda5ty8RF6MDcRusNiTZ9R5c
- p+91i2IdGRIf+Wb/mn2HznEf6dqfA4AJIZTXfaME+No3tkrXlxPeGa+5lQfUmiucfcIEFi
- n1qg==
+MIME-Version: 1.0
+Content-Transfer-Encoding: 8bit
 
-Hi Ping-Ke,
+The nxpwifi RX reorder code indexes several MAX_NUM_TID-sized arrays
+(struct nxpwifi_private::rx_reorder_tbl_ptr[8] and
+rx_reorder_tbl_lock[8], main.h:548/550) with a tid that is neither
+validated at the callers nor at the function entry, and accesses a
+win_size-sized flex array (tbl->rx_reorder_ptr[]) with a pkt_index that
+can exceed win_size.  Both are remote-reachable through a received
+802.11 frame.
 
-Thank you and Luka for the feedback. I am reworking the RTL8189ES =
-support on top of rtw-next, taking your comments into account. I will =
-send the patch series to linux-wireless when it is ready.
+Bug 1 - tid used as array index without bounds check
 
-Best regards,
-Igor
+  nxpwifi_11n_rx_reorder_pkt() and nxpwifi_11n_create_rx_reorder_tbl()
+  take a tid parameter that flows directly into:
 
-> 11 =D0=BD=D0=BE=D1=8F=D0=B1. 2026=E2=80=AF=D0=B3., =D0=B2 08:22, =
-Ping-Ke Shih <pkshih@realtek.com> =D0=BD=D0=B0=D0=BF=D0=B8=D1=81=D0=B0=D0=BB=
-(=D0=B0):
->=20
-> Luka Gejak <luka.gejak@linux.dev> wrote:
->> Hi Igor,
->>=20
->> Thanks for asking before sending it. Ping-Ke has the
->> final word on this, so this is only my view after adding RTL8723BS to =
-the
->> rtw88.
->>=20
->> On November 10, 2026 5:50:38 AM GMT+01:00, igor@listopad.email wrote:
->>=20
->>> Would support for RTL8189ES SDIO devices, based on the RTL8188E =
-T-series
->>> (SDIO ID 024c:8179), be welcome in rtw88?
->>=20
->> I think so. As far as I can see nothing in the kernel binds this SDIO =
-ID
->> today. rtlwifi has RTL8188EE on PCIe and rtl8xxxu has RTL8188EU on =
-USB,
->> while rtw88 already has the SDIO code and other 8051 based 802.11n =
-chips
->> like RTL8703B and RTL8723B.
->=20
-> Maybe one day people can move RTL8188EE to rtw88 as well. For now,
-> rtw88 is only one driver supporting Realtek WiFi SDIO, so let's add
-> RTL8189ES to rtw88.=20
->=20
->>=20
->> On my RTL8723BS series Ping-Ke said it isn't so good to maintain =
-three
->> interfaces in the tree drivers, but he kept the existing ones and =
-took the
->> new one. So I would expect the same split to be acceptable here.
->>=20
->> Refusing cut I seems fine too. rtl8xxxu does the same for RTL8188EU.
->>=20
->> [ ... ]
->>=20
->>> The implementation adds chip operations, register tables, firmware,
->>> and an SDIO binding.
->>=20
->> The firmware in the PR is byte for byte the same as
->> rtlwifi/rtl8188eufw.bin, which is already in the firmware repository =
-and
->> which rtl8xxxu uses. So I don't think you need a new blob. You could
->> request that name, or add a Link: in WHENCE if Ping-Ke prefers an =
-rtw88
->> path.
->=20
-> I prefer a Link. One day rtw88 can support RTL8188EE, and remove =
-RTL8188EE
-> from rtlwifi. It'd be easier to move firmware from rtlwifi/ to rtw88/
->=20
->>=20
->> [ ... ]
->>=20
->>> Would this be an acceptable direction for rtw88? Are there =
-architectural
->>> concerns or requirements that should be addressed before submitting
->>> the series for review?
->>=20
->> =46rom my quick skim of the PR, I think the direction is fine. What I =
-would
->> worry about is how much it changes the shared code. It needs an =
-additional
->> 20 callbacks in rtw_chip_ops and more than 20 checks for this chip in =
-the
->> core and SDIO code. On my series Ping-Ke asked why the existing logic
->> didn't work for special cases like these, so I would expect each one =
-to
->> need a reason.
->>=20
->> A few examples:
->>=20
->> rtw8188e.c casts rtwdev->priv to struct rtw_sdio, and nothing outside
->> sdio.c uses that struct today. Maybe those parts can become hci ops.
->>=20
->> rtw_sdio_tx_handler() reads host->sdio_irq_pending, which as far as I =
-can
->> see only the mmc core uses today. TX keeping the IRQ worker away from =
-the
->> host also doesn't sound specific to this chip, so I think that wants =
-a
->> fix in the common SDIO TX path.
->>=20
->> rtw8188e_efuse_grant() and rtw8188e_false_alarm_statistics() look the =
-same
->> as the rtw8723x.c helpers that RTL8723B uses. Maybe those can be =
-shared
->> instead of copied.
->>=20
->> A more thorough review will follow once the series is posted.
->>=20
->> For the actual series, please base it on rtw-next instead of the =
-lwfinger
->> tree. Several of the core files don't apply there, and the
->> LINUX_VERSION_CODE checks have to go. It also needs the Kconfig and
->> Makefile entries, the device ID in sdio_ids.h, and the fixes from =
-your
->> later commits squashed into the patches they fix. The sign off should =
-use
->> a real address instead of the GitHub noreply one.
->>=20
->> You can also take a look at how the RTL8723B series went upstream for
->> reference, from the RFC to the version that was applied:
->>=20
->> =
-https://lore.kernel.org/linux-wireless/cover.1784047561.git.luka.gejak@lin=
-ux.dev/
->> =
-https://lore.kernel.org/linux-wireless/20261006130701.120460-1-luka.gejak@=
-linux.dev/
->=20
-> Agree. Luka, Thanks for sharing these experiences.
+    list_for_each_entry_rcu(tbl, &priv->rx_reorder_tbl_ptr[tid], list)   (11n_rxreorder.c:187)
+    spin_lock_bh(&priv->rx_reorder_tbl_lock[tid]);                       (11n_rxreorder.c:324)
+    list_add_tail_rcu(&new_node->list, &priv->rx_reorder_tbl_ptr[tid]);  (11n_rxreorder.c:325)
+
+  These arrays have MAX_NUM_TID (8) entries.  The tid comes from
+  local_rx_pd->priority in the receive path (sta_rx.c:232, uap_txrx.c:405)
+  - a u8 filled by firmware from the received frame's rxpd, range 0-255 -
+  or from the 4-bit TID field of an ADDBA request (11n_rxreorder.c:379,
+  range 0-15).  Neither path checks tid < MAX_NUM_TID before calling into
+  the reorder code; sta_rx.c:224-226 does gate the rx_seq[] write on
+  priority < MAX_NUM_TID, but the subsequent nxpwifi_11n_rx_reorder_pkt()
+  call at sta_rx.c:232 drops the same check.  A tid >= 8 reads
+  rx_reorder_tbl_ptr[] out of bounds, takes a spinlock on a garbage
+  address, and writes an out-of-bounds list_head.
+
+  Fix: validate tid < MAX_NUM_TID at the entry of both
+  nxpwifi_11n_rx_reorder_pkt() and nxpwifi_11n_create_rx_reorder_tbl(),
+  covering all callers.
+
+Bug 2 - pkt_index not bounded by win_size
+
+  tbl->rx_reorder_ptr is allocated with win_size entries
+  (11n_rxreorder.c:280, kzalloc_flex).  In nxpwifi_11n_rx_reorder_pkt()
+  the out-of-window drop check (11n_rxreorder.c:459-470) uses TWOPOW11
+  (2048) rather than win_size, so a seq_num within [start_win,
+  start_win + 2048) passes the drop check regardless of win_size.
+  pkt_index is then computed as seq_num - start_win (11n_rxreorder.c:491)
+  and can reach 0..2047, but the write
+
+    tbl->rx_reorder_ptr[pkt_index] = payload;   (11n_rxreorder.c:500)
+
+  only has win_size slots.  With win_size = 1 (allowed: create_rx_reorder_tbl
+  only rejects win_size <= 0 at 11n_rxreorder.c:276) any pkt_index > 0 is a
+  heap out-of-bounds write of up to ~2048 pointer slots.
+
+  Fix: bound pkt_index against tbl->win_size before the rx_reorder_ptr[]
+  access.
+
+Together these close an out-of-bounds read + spinlock-on-garbage and an
+out-of-bounds heap write, both reachable from a received frame.
+
+Fixes: 73b01e57ed3e ("wifi: nxp: add nxpwifi driver for IW61x")
+Cc: stable@vger.kernel.org
+Signed-off-by: guohongyu <guohongyu@cmss.chinamobile.com>
+---
+ drivers/net/wireless/nxp/nxpwifi/11n_rxreorder.c | 11 +++++++++++
+ 1 file changed, 11 insertions(+)
+
+diff --git a/drivers/net/wireless/nxp/nxpwifi/11n_rxreorder.c b/drivers/net/wireless/nxp/nxpwifi/11n_rxreorder.c
+index 87cf2ec85991..111225594144 100644
+--- a/drivers/net/wireless/nxp/nxpwifi/11n_rxreorder.c
++++ b/drivers/net/wireless/nxp/nxpwifi/11n_rxreorder.c
+@@ -266,6 +266,9 @@ nxpwifi_11n_create_rx_reorder_tbl(struct nxpwifi_private *priv, u8 *ta,
+ 	u16 last_seq = 0;
+ 	struct nxpwifi_sta_node *node;
+ 
++	if (tid >= MAX_NUM_TID)
++		return;
++
+ 	/* Existing TID/TA: flush and move window to SSN. */
+ 	tbl = nxpwifi_11n_get_rx_reorder_tbl(priv, tid, ta);
+ 	if (tbl) {
+@@ -421,6 +424,9 @@ int nxpwifi_11n_rx_reorder_pkt(struct nxpwifi_private *priv,
+ 	bool init_window_shift = false;
+ 	int ret = 0;
+ 
++	if (tid >= MAX_NUM_TID)
++		return -EINVAL;
++
+ 	tbl = nxpwifi_11n_get_rx_reorder_tbl(priv, tid, ta);
+ 	if (!tbl) {
+ 		if (pkt_type != PKT_TYPE_BAR)
+@@ -492,6 +498,11 @@ int nxpwifi_11n_rx_reorder_pkt(struct nxpwifi_private *priv,
+ 		else
+ 			pkt_index = (seq_num + MAX_TID_VALUE) - start_win;
+ 
++		if (pkt_index >= tbl->win_size) {
++			ret = -EINVAL;
++			goto done;
++		}
++
+ 		if (tbl->rx_reorder_ptr[pkt_index]) {
+ 			ret = -EINVAL;
+ 			goto done;
+-- 
+2.43.0
+
 
 
