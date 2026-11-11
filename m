@@ -1,76 +1,77 @@
 Authentication-Results: smtp.subspace.kernel.org; arc=none smtp.remote-ip=211.75.126.72
 ARC-Seal: i=1; d=subspace.kernel.org; s=arc20261015; a=rsa-sha256; cv=none;
-	t=1794366567;
-	b=mJn0/R/5vggwFT0wN9IVU5Ajjz6xV2L4iCcGVE35U9Tn85LRIB/gpaDcALXUBpFV2PgA
-	 vXimGIxUjzb3e9IgcmrOgLHLlnQ0CDCwGkUunLXlDSL352KRbCiVCS1Xd5Uq2b3nY4qcp
-	 zx5lf6CIunM1BOE0yYYh3cpWqFJeDPLG7NSEvrS1BaAd6aUqQLmNsQJPaSnwrrmnfHk5c
-	 c/az7nznIaft7Zm/JQ14Q+yeMtH3p96tSoFN00ydtKQJ5nNtfBirabMrbR34B/Ji+br2y
-	 Ak8pRxnV4bjg2XABIborquR3GfllrkT5YCfyfuF6A97MMxpSaAvYz6Smyl0lEdWzWpw==
+	t=1794367367;
+	b=AsPyT+V+7howV8YZAgLJiRt117PO5BG6K8Q9Sy7GNDrKmTf4lpkEmDPeNdc5owxhfbMa
+	 TwX/eSUyvKR4442BZGMdPVw5YzK7RJ4PCzyDjrTe0XjFA+lLaKx9BxC94lM8TB7I9Kq5a
+	 R9dRjpJMrdf4CpS5JPdVO+veaasuU94H8pSo+YHOEZkS2JjfjHlsFWyJ65yefQIzcmCie
+	 iNezQdNgfS4N+ciGNgT2GXo4p88oap9sUk8tdxzSEX4zIeWXoNXIMNs5HStJOoBeMsBvb
+	 qIMsl4aA8kmx85w8a8yvK4ieoZ/5LSj5gQN7AjJaC7Q0cZus6GlxWWTvU6XhHRWxsYg==
 ARC-Message-Signature: i=1; d=subspace.kernel.org; s=arc20261015;
-	a=rsa-sha256; c=relaxed/relaxed; t=1794366567;
+	a=rsa-sha256; c=relaxed/relaxed; t=1794367367;
 	h=DMARC-Filter:X-SpamFilter-By:DKIM-Signature:Received:Received:
 	 Received:Received:From:To:CC:Subject:Thread-Topic:Thread-Index:Date:
 	 Message-ID:References:In-Reply-To:Accept-Language:Content-Language:
 	 x-originating-ip:Content-Type:Content-Transfer-Encoding:MIME-Version;
-	bh=chAQ7KDVujLb4P6mjnQP2U2dbTDPBZxKP8pq5A+58yI=;
-	b=lL4g64GxuCmUgKOPzM+3wjoM2sJqwDd5lsQex3g2xB1+XK9YZXSZoD/g686EWAlPXCnn
-	 z9JrB3TEbsT6jVy3/3ZsCVaUR+K4iXFXBy2/E6mFxWQvENMDoHVO61uT0Xh6sh4sEl7wK
-	 l8epE6wFHuErnqwmWn7mYaF3oP2Y3pZdLOQglJyUY57Kxx40p12MK2aORvq6XofxE1fWs
-	 oyLQD3GOBCt/qNajOBlbHlwGzf1vVgINJhegCPKdgsQIoNM/roi/q6IgUXOhvoRLvwXzj
-	 s4lLT/9eGlkzVEXhNHHH72jnsbcj0mIubHvFop9E/4FvP0AwGY4nJDIbTUsxU2uMvDw==
+	bh=UX2JzbbuXC4wBQWZYp/vc1RUTM+u+sADy0nG3uO1sRg=;
+	b=OSKdOAVH0hcc5KgoJUQs265p+KbeHrbe4QK2FlgeMjuNzN9TCwzdtaA5gdo5kwwvzsDA
+	 KV1/KDeBdVixolxqgsTxqi/D7ZU9dQtB0ES+r5++4lytahkW/ofznZ5kanOnNI15NTeKo
+	 hPXyNDs6EAkR29gWrONk52l11ZznWhNSvMdj3rV/QQ7DkE/Rmc+kGdVOVA00kXBhNQ+sH
+	 BCbbtdxTRMyht8WkKOt39XacwdTL1f/10cklo5Zx7NNL2PpAEWXxKeov5QbM1ygMK71G0
+	 viEbnvTSBrMkcRbuw/FlGc8nXO2UwGELI/vkmweq8ibiHpg57HSM7Wo2yDcQJo9dFmg==
 ARC-Authentication-Results: i=1; smtp.subspace.kernel.org; 
 	dmarc=pass header.from=realtek.com;
 	spf=pass smtp.mailfrom=realtek.com;
-	dkim=pass header.d=realtek.com header.i=@realtek.com header.a=rsa-sha256 header.s=dkim header.b=oBltf1+w;
+	dkim=pass header.d=realtek.com header.i=@realtek.com header.a=rsa-sha256 header.s=dkim header.b=JWTciNmt;
 	arc=none smtp.remote-ip=211.75.126.72
 Received: from rtits2.realtek.com.tw (rtits2.realtek.com [211.75.126.72])
 	(using TLSv1.3 with cipher TLS_AES_256_GCM_SHA384 (256/256 bits)
 	 key-exchange X25519 server-signature ECDSA (prime256v1) server-digest SHA256)
 	(No client certificate requested)
-	by smtp.subspace.kernel.org (Postfix) with ESMTPS id AF867606A31C
-	for <linux-wireless@vger.kernel.org>; Wed, 11 Nov 2026 03:09:26 +0000 (UTC)
-DMARC-Filter: OpenDMARC Filter v1.4.2 smtp.subspace.kernel.org AF867606A31C
+	by smtp.subspace.kernel.org (Postfix) with ESMTPS id 4180E606A31C
+	for <linux-wireless@vger.kernel.org>; Wed, 11 Nov 2026 03:22:46 +0000 (UTC)
+DMARC-Filter: OpenDMARC Filter v1.4.2 smtp.subspace.kernel.org 4180E606A31C
 Authentication-Results: smtp.subspace.kernel.org; dmarc=pass (p=none dis=none) header.from=realtek.com
 Authentication-Results: smtp.subspace.kernel.org; spf=pass smtp.mailfrom=realtek.com
 Authentication-Results: smtp.subspace.kernel.org;
-	dkim=pass (2048-bit key) header.d=realtek.com header.i=@realtek.com header.a=rsa-sha256 header.s=dkim header.b=oBltf1+w
-X-SpamFilter-By: ArmorX SpamTrap 5.80 with qID 6AB395a642000909, This message is accepted by code: ctloc85258
+	dkim=pass (2048-bit key) header.d=realtek.com header.i=@realtek.com header.a=rsa-sha256 header.s=dkim header.b=JWTciNmt
+X-SpamFilter-By: ArmorX SpamTrap 5.80 with qID 6AB3MezQ62010195, This message is accepted by code: ctloc85258
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=realtek.com; s=dkim;
-	t=1794366545; bh=chAQ7KDVujLb4P6mjnQP2U2dbTDPBZxKP8pq5A+58yI=;
+	t=1794367360; bh=UX2JzbbuXC4wBQWZYp/vc1RUTM+u+sADy0nG3uO1sRg=;
 	h=From:To:CC:Subject:Date:Message-ID:References:In-Reply-To:
 	 Content-Type:Content-Transfer-Encoding:MIME-Version;
-	b=oBltf1+woSStJooGkqxH7okTMW8eUGuPpdx6cIYW08ywzj5z/K5rztizPyIHbcb21
-	 If3r9jSbKqSIkXrnWRsIhBqyayXBsQaFKmpzmn088l/J0bUsn95dSFpm9/rrD9U9ai
-	 pHroaerlQbvMW/FRaAHilHARgkrNcdYPilWPcFD8bzq1fY9C12RePtiai15t09izg0
-	 hQsuuOYNE2ix94ATa5E6BK/LXkKiIi8OcxrWg2Sc9UxLCdQ3OnrlFLA9opZRI0yTw0
-	 otnQGbU8heSTXsya0pclCK2VRLinhjDu4R5ccvIMsF03ELtQacYNu9RkZH+z8H1KxH
-	 FoKnioCEhURYQ==
-Received: from mail.realtek.com (rtkexhmbs02.realtek.com.tw[172.21.6.41])
-	by rtits2.realtek.com.tw (8.15.2/3.29/5.94) with ESMTPS id 6AB395a642000909
+	b=JWTciNmtNktChqkBfYr//wiyQkmAPq1ondEvKY88B72yrfPNnUegE+nxfQ8f6UJOX
+	 Bwja6kp0ixKk/z8+/KnmY+SKdEFj3gC8dJ9eOXUagT1bcn8M06BcKgdcKWE5SkhEk9
+	 NiLzb1o4YwvMOSAmB0at8MgVYJo8IeBYvmi/fm2fruLnPU9HbPIgseWWRksTfRhqq8
+	 P/YYnCX7ekSMEBOMK3mji0K/3TDkKfuo4aXEYLYdYReJU83fzyfo86PkOtm9O80j/I
+	 VSWOF34sNEkbel6Vsu3X1a0kjrW1T4lmV0FcPkKcpipYDyYG3uMCt44D/VL0mcJstY
+	 lE0PKvFD2RfJA==
+Received: from mail.realtek.com (rtkexhmbs03.realtek.com.tw[10.21.1.53])
+	by rtits2.realtek.com.tw (8.15.2/3.29/5.94) with ESMTPS id 6AB3MezQ62010195
 	(version=TLSv1.2 cipher=ECDHE-RSA-AES256-GCM-SHA384 bits=256 verify=FAIL);
-	Wed, 11 Nov 2026 11:09:05 +0800
-Received: from RTKEXHMBS05.realtek.com.tw (10.21.1.55) by
- RTKEXHMBS02.realtek.com.tw (172.21.6.41) with Microsoft SMTP Server
+	Wed, 11 Nov 2026 11:22:40 +0800
+Received: from RTKEXHMBS01.realtek.com.tw (172.21.6.40) by
+ RTKEXHMBS03.realtek.com.tw (10.21.1.53) with Microsoft SMTP Server
  (version=TLS1_2, cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id
- 15.2.2562.56; Wed, 11 Nov 2026 11:09:05 +0800
+ 15.2.2562.56; Wed, 11 Nov 2026 11:22:41 +0800
 Received: from RTKEXHMBS06.realtek.com.tw (10.21.1.56) by
- RTKEXHMBS05.realtek.com.tw (10.21.1.55) with Microsoft SMTP Server
+ RTKEXHMBS01.realtek.com.tw (172.21.6.40) with Microsoft SMTP Server
  (version=TLS1_2, cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id
- 15.2.2562.56; Wed, 11 Nov 2026 11:09:05 +0800
+ 15.2.2562.56; Wed, 11 Nov 2026 11:22:40 +0800
 Received: from RTKEXHMBS06.realtek.com.tw ([fe80::eeeb:c765:ca73:5eef]) by
  RTKEXHMBS06.realtek.com.tw ([fe80::eeeb:c765:ca73:5eef%10]) with mapi id
- 15.02.2562.056; Wed, 11 Nov 2026 11:09:05 +0800
+ 15.02.2562.056; Wed, 11 Nov 2026 11:22:40 +0800
 From: Ping-Ke Shih <pkshih@realtek.com>
-To: rcfa <kernel@cubiculum.net>
-CC: "linux-wireless@vger.kernel.org" <linux-wireless@vger.kernel.org>,
-	Zong-Zhe Yang <kevin_yang@realtek.com>
-Subject: RE: [PATCH rtw-next] wifi: rtw89: allocate rfe_data with kvzalloc
-Thread-Topic: [PATCH rtw-next] wifi: rtw89: allocate rfe_data with kvzalloc
-Thread-Index: AQHdbxPPkkifAkcs7kW4bShPS0bOircoNRrw
-Date: Wed, 11 Nov 2026 03:09:05 +0000
-Message-ID: <ec14ad0998374fbe983ca8a53afb064e@realtek.com>
-References: <20261107230713.3675421-1-kernel@cubiculum.net>
-In-Reply-To: <20261107230713.3675421-1-kernel@cubiculum.net>
+To: acio <spam@acio.nl>
+CC: "linux-wireless@vger.kernel.org" <linux-wireless@vger.kernel.org>
+Subject: RE: [PATCH rtw-next] wifi: rtw89: do RA association again when the
+ station RSSI is known
+Thread-Topic: [PATCH rtw-next] wifi: rtw89: do RA association again when the
+ station RSSI is known
+Thread-Index: AQHdb4ORAbG0ONTG/E6BOmOw6vldwLcoNwoQ
+Date: Wed, 11 Nov 2026 03:22:40 +0000
+Message-ID: <d1d88bf5d1ef461dbb55988f906892b5@realtek.com>
+References: <20261108131723.206533-1-spam@acio.nl>
+In-Reply-To: <20261108131723.206533-1-spam@acio.nl>
 Accept-Language: en-US, zh-TW
 Content-Language: zh-TW
 Content-Type: text/plain; charset="us-ascii"
@@ -85,46 +86,100 @@ List-Owner: <mailto:linux-wireless+owner@vger.kernel.org>
 Precedence: list
 MIME-Version: 1.0
 
-
-rcfa <kernel@cubiculum.net> wrote:
-> struct rtw89_rfe_data holds the TX power tables from the firmware
-> file's elements and is 1190784 bytes, so kzalloc() asks for an order-9
-> (2 MiB) contiguous block. On a host that has been up for a while there
-> may be none, and probing a USB adapter that is plugged in then fails:
+acio <spam@acio.nl> wrote:
+> From: Vincent Schurink <spam@acio.nl>
 >=20
->   kworker/12:1: page allocation failure: order:9, mode:0x40dc0(GFP_KERNEL=
-|__GFP_ZERO|__GFP_COMP)
->   ...
->   failed to recognize firmware elements
->   failed to setup chip information
->   probe with driver rtw89_8922au_git failed with error -12
-
-Below commit messages are not necessary except to=20
-"Tested on an RTL8922AU (a USB 2 adapter)"
-
+> When a station associates to an AP, the AP does not know the RSSI of
+> the station yet. Thus, rtw89_phy_ra_assoc() sends init_rate_lv 0 to the
+> firmware. With this value, the firmware RA of RTL8922A uses 20 MHz and
+> VHT-MCS 2 for the station. The firmware RA does not try a higher rate,
+> also when the PER is 0. On an 80 MHz AP, the TCP throughput to the
+> station stays at approximately 35 Mbit/s.
 >=20
-> Only the CPU reads the tables, so allocate them with kvzalloc() and
-> free them with kvfree().
+> Set a flag when the RSSI is not known at the RA association. When the
+> RSSI is known, the periodic RA update does the RA association again.
 >=20
-> Tested on an RTL8922AU (a USB 2 adapter) with the out-of-tree copy of
-> this driver (morrownr/rtw89, which carries rtw-next as of 2026-11-05;
-> hence the module name above), kernel 7.2.15. The failure came from
-> replugging the adapter after 16 hours of uptime, when the Normal zone
-> had no free block of order 8 or above. With this change the driver
-> probes, connects and unloads cleanly. A test build that always used
-> vzalloc() for rfe_data, to exercise the fallback path, put the tables in
-> vmalloc space (1196032 bytes in /proc/vmallocinfo), showed the same
-> debugfs txpwr_table as the unchanged driver on the same association,
-> passed traffic and unloaded without warnings.
+> Tested on RTL8912AU (RTL8922A, USB) in AP mode with hostapd 2.10 and
+> VHT 80 MHz. The client is an Intel Meteor Lake CNVi (iwlwifi) at
+> -45 dBm.
+> Before: TX rate VHT-MCS 2 at 20 MHz, TCP 35 Mbit/s.
+> After: TX rate VHT-MCS 7 to 9 at 80 MHz, TCP 186 to 320 Mbit/s.
 >=20
-> The problem was found with Claude Code (Claude Opus 5.5) while testing
-> the driver, and this change and changelog were written in the same
-> session.
+> Signed-off-by: Vincent Schurink <spam@acio.nl>
+> ---
+>  drivers/net/wireless/realtek/rtw89/core.h |  1 +
+>  drivers/net/wireless/realtek/rtw89/phy.c  | 14 ++++++++++++++
+>  2 files changed, 15 insertions(+)
 >=20
-> Fixes: 5ee7b2ea07cc ("wifi: rtw89: load TX power related tables from FW e=
-lements")
-> Signed-off-by: rcfa <kernel@cubiculum.net>
+> diff --git a/drivers/net/wireless/realtek/rtw89/core.h b/drivers/net/wire=
+less/realtek/rtw89/core.h
+> index 0d893b992a4..ca5f2aced33 100644
+> --- a/drivers/net/wireless/realtek/rtw89/core.h
+> +++ b/drivers/net/wireless/realtek/rtw89/core.h
+> @@ -4711,6 +4711,7 @@ struct rtw89_sta_link {
+>         struct rtw89_vif_link *rtwvif_link;
+>         struct rtw89_ra_info ra;
+>         struct rtw89_ra_report ra_report;
+> +       bool ra_rssi_unknown;
+>         int max_agg_wait;
+>         u8 prev_rssi;
+>         struct ewma_rssi avg_rssi;
+> diff --git a/drivers/net/wireless/realtek/rtw89/phy.c b/drivers/net/wirel=
+ess/realtek/rtw89/phy.c
+> index 795920b899d..96660b781a5 100644
+> --- a/drivers/net/wireless/realtek/rtw89/phy.c
+> +++ b/drivers/net/wireless/realtek/rtw89/phy.c
+> @@ -717,6 +717,19 @@ void rtw89_phy_rate_pattern_vif(struct rtw89_dev *rt=
+wdev,
+>  static void rtw89_phy_ra_update_sta_iter(void *data, struct ieee80211_st=
+a *sta)
+>  {
+>         struct rtw89_dev *rtwdev =3D (struct rtw89_dev *)data;
+> +       struct rtw89_sta *rtwsta =3D sta_to_rtwsta(sta);
+> +       struct rtw89_sta_link *rtwsta_link;
+> +       unsigned int link_id;
+> +       u8 rssi;
+> +
+> +       rtw89_sta_for_each_link(rtwsta, rtwsta_link, link_id) {
+> +               if (!rtwsta_link->ra_rssi_unknown)
+> +                       continue;
+> +
+> +               rssi =3D ewma_rssi_read(&rtwsta_link->avg_rssi) >> RSSI_F=
+ACTOR;
+> +               if (rssi > 1)
+> +                       rtw89_phy_ra_assoc(rtwdev, rtwsta_link);
 
-Use your real name.
+Can we move rssi logic to an individual function and call it to update
+ra->init_rate_lv?
 
+	if (rssi > 40)
+		ra->init_rate_lv =3D 1;
+	else if (rssi > 20)
+		ra->init_rate_lv =3D 2;
+	else if (rssi > 1)
+		ra->init_rate_lv =3D 3;
+	else
+		ra->init_rate_lv =3D 0;
+
+The rtw89_phy_ra_update_sta() will call rtw89_fw_h2c_ra() to send H2C comma=
+nd.
+
+
+> +       }
+>=20
+>         rtw89_phy_ra_update_sta(rtwdev, sta, IEEE80211_RC_SUPP_RATES_CHAN=
+GED);
+>  }
+> @@ -755,6 +768,7 @@ void rtw89_phy_ra_assoc(struct rtw89_dev *rtwdev, str=
+uct rtw89_sta_link *rtwsta_
+>                 ra->init_rate_lv =3D 3;
+>         else
+>                 ra->init_rate_lv =3D 0;
+> +       rtwsta_link->ra_rssi_unknown =3D rssi <=3D 1;
+>         ra->upd_all =3D 1;
+>         rtw89_debug(rtwdev, RTW89_DBG_RA,
+>                     "ra assoc: macid =3D %d, mode =3D %d, bw =3D %d, nss =
+=3D %d, lv =3D %d",
+> --
+> 2.53.0
 
