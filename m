@@ -1,82 +1,129 @@
-Authentication-Results: smtp.subspace.kernel.org; arc=none smtp.remote-ip=211.75.126.72
+Authentication-Results: smtp.subspace.kernel.org; arc=none smtp.remote-ip=100.103.45.18
 ARC-Seal: i=1; d=subspace.kernel.org; s=arc20261015; a=rsa-sha256; cv=none;
-	t=1794358640;
-	b=WeauzKCXNDxlWCGrp4po0laRFLMh3Kzts55A4a7I+sSIXhf3Zn1iaeUMkQxZYDByDj5a
-	 6iRedhbqUNb1iQXD6B82Os2ta7zmQlmCwy1xtrKtdCiY3MwkcdVUKJH6rWsAiuu5/DI/D
-	 elPR8ktz6TUqwdyFyRMky4SwUy8ZN7Q/tSPjldg7ZWmE0qBkxJS31IOSYQi7tbc+sRZZQ
-	 53YFpS2prFod7mKjlkjoDx04nedBN6YvP/EtGOvFm2Lam/RYLv3XDhnH2zi4jxJIMpARM
-	 Ur82SRNCj0WeyNFfPgl1ZscCSziXN84cf8AthlJe14tl8PL64FbrBnzzX50cAGwbTiw==
+	t=1794359611;
+	b=Csb11CpuTncsW+6K+pba9pE+S7MSa5S+UOE8VbNkfwWscgZtp1nTNZxE2Ny3dTXG3vnP
+	 W+Jo0Hpsp59cPisxecOKfVcL/nvjZ0TsoqAN9tEnCtbNIYzBsyqHNC9kWbxIcrnDp2E1s
+	 7Sz3/qViVGAjMEzGxRS2pGdUYxt7qOPLgUNFWs7uSFZFbwOJsx3f3Ca1kymKZXJilg+9r
+	 bn2xZNETo5FPcM2abavCmLq5luTCr+k28Afj6GMIQtOHJt2Dpm0ucTbUuCwfGjn/7H94V
+	 w7VC9upkGTZh1mHTNaPdjOApmvfqV2iWAoTjZDFL0uXqppzEC5Cp8vSJzaDWCFZLUbw==
 ARC-Message-Signature: i=1; d=subspace.kernel.org; s=arc20261015;
-	a=rsa-sha256; c=relaxed/relaxed; t=1794358640;
-	h=DMARC-Filter:X-SpamFilter-By:DKIM-Signature:Received:Received:
-	 Received:From:To:Subject:Thread-Topic:Thread-Index:Date:Message-ID:
-	 References:In-Reply-To:Accept-Language:Content-Language:
-	 x-originating-ip:Content-Type:Content-Transfer-Encoding:MIME-Version;
-	bh=eXbrtToIVj+B9iqcwd0hLVYnzc8QE/O+CveJCcBaLhg=;
-	b=XEsmuNFrft4FVOx0McWIiparWRUTOoYCi/IG/jEG1QCV+cHrJuSaKYjuTs+mU3Fvata0
-	 WeNHmE8TKKHUTJySSNSn4XIi54vDmgYvfIaOPeoaICuPeBqIxauugVEep/n2ug37YsT+1
-	 LXVCNaeDCUZ2Ei8x44NtLoWsn8B0yxBV8J2RY+vdbFSjlfy2QBkVxLXpzao3ooIWyQ+c3
-	 VB3XBgCzbWmVUrgJtDTTrv6hNB+10OrOtnpRPgrXrfWSIM3T5p8TT6eMfWvLRZMCQJTox
-	 YChjSrbFTUCBaAXUMMPVmn5qAbvcvEwsLuUaZManufziDatO7VWAIuPTPYSZAQo7quA==
+	a=rsa-sha256; c=relaxed/relaxed; t=1794359611;
+	h=Received:DKIM-Signature:Date:From:To:Cc:Subject:Message-ID:
+	 In-Reply-To:References:MIME-Version:Content-Type:
+	 Content-Transfer-Encoding;
+	bh=eAy59HGc3h2qnYXka7qm4BQesIQWi6V+JejjBFhpSZ0=;
+	b=hpjpBqNkbIrZ9oPlwjxeykpnKVPfiQErtoqXGrJ0bikaV9xlN5WTriYJrPw+fm+fKXH7
+	 tV8/3NvMLTDuDu/fL9Pw6F/YXkI3KDY+wvW/2Gsd0lC6kOmOMDqVgFK2SD67DxvUIVikN
+	 Az608cxzkb3rsCADdgLS9dvanR2TY6zyb31OtKHLKjQ7wYT/gquC7xFe9oU90adiaO44u
+	 4Li9P6eVCC3tBBglOuhX4etCidTtM0i5YYad9ZRhst2DQeOgdC7mDaAL0/Pbn9TuF29CC
+	 5+ZmXvZcTasisfucq+FEXktctTEBhWbEp4DZ+mIITMSqkUzFHldbeva5CPepp+0DCeg==
 ARC-Authentication-Results: i=1; smtp.subspace.kernel.org; 
-	dmarc=pass header.from=realtek.com;
-	spf=pass smtp.mailfrom=realtek.com;
-	dkim=pass header.d=realtek.com header.i=@realtek.com header.a=rsa-sha256 header.s=dkim header.b=smCZvC+S;
-	arc=none smtp.remote-ip=211.75.126.72
-Received: from rtits2.realtek.com.tw (rtits2.realtek.com [211.75.126.72])
+	dkim=pass header.d=kernel.org header.i=@kernel.org header.a=rsa-sha256 header.s=k20260515 header.b=Lu0OyRGM;
+	arc=none smtp.remote-ip=100.103.45.18
+Received: from smtp.kernel.org (quasi.space.kernel.org [100.103.45.18])
 	(using TLSv1.3 with cipher TLS_AES_256_GCM_SHA384 (256/256 bits)
-	 key-exchange X25519 server-signature ECDSA (prime256v1) server-digest SHA256)
+	 key-exchange X25519 server-signature ECDSA (prime256v1))
 	(No client certificate requested)
-	by smtp.subspace.kernel.org (Postfix) with ESMTPS id 90A3B606A330
-	for <linux-wireless@vger.kernel.org>; Wed, 11 Nov 2026 00:57:19 +0000 (UTC)
-DMARC-Filter: OpenDMARC Filter v1.4.2 smtp.subspace.kernel.org 90A3B606A330
-Authentication-Results: smtp.subspace.kernel.org; dmarc=pass (p=none dis=none) header.from=realtek.com
-Authentication-Results: smtp.subspace.kernel.org; spf=pass smtp.mailfrom=realtek.com
+	by smtp.subspace.kernel.org (Postfix) with ESMTPS id 300E3606A320;
+	Wed, 11 Nov 2026 01:13:30 +0000 (UTC)
 Authentication-Results: smtp.subspace.kernel.org;
-	dkim=pass (2048-bit key, unprotected) header.d=realtek.com header.i=@realtek.com header.a=rsa-sha256 header.s=dkim header.b=smCZvC+S
-X-SpamFilter-By: ArmorX SpamTrap 5.80 with qID 6AB0vEcbD1860153, This message is accepted by code: ctloc85258
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=realtek.com; s=dkim;
-	t=1794358634; bh=eXbrtToIVj+B9iqcwd0hLVYnzc8QE/O+CveJCcBaLhg=;
-	h=From:To:Subject:Date:Message-ID:References:In-Reply-To:
-	 Content-Type:Content-Transfer-Encoding:MIME-Version;
-	b=smCZvC+SeLqSMWbGShfyhQVLPQlqECkqlBKTGF1Vbr68dVJG3au1wh6DhN+d1qhmd
-	 45yZfcu6oKQeKjHvAGliVBeDzL5Rj5O/GalPtfT5dm+n64kx3I659BDjiEpm13eeK/
-	 55a+qnpUYV7lun1H61+MoORrjS7C5ZJNR96GkjRVooupSZBBs2hDOim9vvnyB3QUxJ
-	 TCBCrf7mfP+J3r80CV4nYHF+9a33cvM7mF+srEQLJmqQv3ydAUPB3OmCPFhnJltmv6
-	 OMu9ooYLaa+p6Rng+ybJldI4UWocrxl2C+0z9LS+cG1qIDqfvqxB1qFgTCfLOTLSJB
-	 ef9OZntDZAS3g==
-Received: from mail.realtek.com (rtkexhmbs02.realtek.com.tw[172.21.6.41])
-	by rtits2.realtek.com.tw (8.15.2/3.29/5.94) with ESMTPS id 6AB0vEcbD1860153
-	(version=TLSv1.2 cipher=ECDHE-RSA-AES256-GCM-SHA384 bits=256 verify=FAIL);
-	Wed, 11 Nov 2026 08:57:14 +0800
-Received: from RTKEXHMBS06.realtek.com.tw (10.21.1.56) by
- RTKEXHMBS02.realtek.com.tw (172.21.6.41) with Microsoft SMTP Server
- (version=TLS1_2, cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id
- 15.2.2562.56; Wed, 11 Nov 2026 08:57:15 +0800
-Received: from RTKEXHMBS06.realtek.com.tw ([fe80::eeeb:c765:ca73:5eef]) by
- RTKEXHMBS06.realtek.com.tw ([fe80::eeeb:c765:ca73:5eef%10]) with mapi id
- 15.02.2562.056; Wed, 11 Nov 2026 08:57:15 +0800
-From: Ping-Ke Shih <pkshih@realtek.com>
-To: Bitterblue Smith <rtl8821cerfe2@gmail.com>, Chris Vitalos
-	<cvitalos@gmail.com>, "linux-wireless@vger.kernel.org"
-	<linux-wireless@vger.kernel.org>
-Subject: RE: rtw89_8852bte (RTL8852BE-VT): recurring SER
- 0x1000/0x4000/0x1001/0x1002 on fw 0.29.122.1/.2; question on
- rtw8852bt_fw-1.bin
-Thread-Topic: rtw89_8852bte (RTL8852BE-VT): recurring SER
- 0x1000/0x4000/0x1001/0x1002 on fw 0.29.122.1/.2; question on
- rtw8852bt_fw-1.bin
-Thread-Index: AQHdaZogezorIXmrF0q/5jdQlxC1rrcZ84FwgAzsMQCAATugkA==
-Date: Wed, 11 Nov 2026 00:57:14 +0000
-Message-ID: <b8df608ab1e141388d663734fc631a02@realtek.com>
-References: <CADp4rm+GmTjCoFXvT8WpiLNohnREqfR9z78PfH1m2rxs00jMUQ@mail.gmail.com>
- <703ebc52e1d544e590874df041b4d979@realtek.com>
- <ef843858-be07-49b3-9505-3ce08dbd28d2@gmail.com>
-In-Reply-To: <ef843858-be07-49b3-9505-3ce08dbd28d2@gmail.com>
-Accept-Language: en-US, zh-TW
-Content-Language: zh-TW
-Content-Type: text/plain; charset="utf-8"
-Content-Transfer-Encoding: base64
+	dkim=pass (2048-bit key) header.d=kernel.org header.i=@kernel.org header.a=rsa-sha256 header.s=k20260515 header.b=Lu0OyRGM
+Received: by smtp.kernel.org (Postfix) with ESMTPSA id E67E91F0093C;
+	Wed, 11 Nov 2026 01:13:26 +0000 (UTC)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=kernel.org;
+	s=k20260515; t=1794359610;
+	bh=eAy59HGc3h2qnYXka7qm4BQesIQWi6V+JejjBFhpSZ0=;
+	h=Date:From:To:Cc:Subject:In-Reply-To:References;
+	b=Lu0OyRGMAhxtwJ5taq70H4M5SCJMSqmxnPH4g9e6YGcbalyFKJoxQ6E48p7YVBvlt
+	 Suhmur7cZafjMQWQiUd5XKI9Kij9EFIkpRUZhhse9BYGvYGoKV79KN+ux9rV85zAAe
+	 3AXoKuvvUDma5q0/78UDxhILHSqouMX30ryLqWpK3q7MPpHgJud2NaTBJ8MzWiaC75
+	 7DzWoajuEqcuGckVyvDN1BsF/G9IO3t7OsMQOYqRooBBeE7yvFOxRn56GmNfcnhOlp
+	 sks4I+nisHShcV4eUvAEoSNFTVe5ZFqeclp7qDLeFG9IEgoTwIRl62XdSRqFLZ3V/H
+	 iul7mj2cMEmVw==
+Date: Tue, 10 Nov 2026 17:13:25 -0800
+From: Jakub Kicinski <kuba@kernel.org>
+To: Mina Almasry <almasrymina@google.com>
+Cc: netdev@vger.kernel.org, Jesper Dangaard Brouer <hawk@kernel.org>, Ilias
+ Apalodimas <ilias.apalodimas@linaro.org>, "David S. Miller"
+ <davem@davemloft.net>, Eric Dumazet <edumazet@kernel.org>, Paolo Abeni
+ <pabeni@redhat.com>, Simon Horman <horms@kernel.org>, Neal Cardwell
+ <ncardwell@google.com>, Kuniyuki Iwashima <kuniyu@google.com>, Pavel
+ Begunkov <asml.silence@gmail.com>, Bobby Eshleman <bobbyeshleman@meta.com>,
+ Stanislav Fomichev <sdf@fomichev.me>, linux-kernel@vger.kernel.org, Steffen
+ Klassert <steffen.klassert@secunet.com>, Herbert Xu
+ <herbert@gondor.apana.org.au>, Willem de Bruijn <willemb@google.com>, John
+ Fastabend <john.fastabend@gmail.com>, Sabrina Dubroca <sd@queasysnail.net>,
+ Andrew Lunn <andrew+netdev@lunn.ch>, "Michael S. Tsirkin" <mst@redhat.com>,
+ Jason Wang <jasowangio@gmail.com>, "Eugenio =?UTF-8?B?UMOpcmV6?="
+ <eperezma@redhat.com>, Xuan Zhuo <xuanzhuo@linux.alibaba.com>, Andrew
+ Morton <akpm@linux-foundation.org>, David Hildenbrand <david@kernel.org>,
+ Lorenzo Stoakes <ljs@kernel.org>, "Liam R. Howlett" <liam@infradead.org>,
+ Vlastimil Babka <vbabka@kernel.org>, Mike Rapoport <rppt@kernel.org>, Suren
+ Baghdasaryan <surenb@google.com>, Michal Hocko <mhocko@suse.com>, Alexei
+ Starovoitov <ast@kernel.org>, Daniel Borkmann <daniel@iogearbox.net>,
+ Johannes Berg <johannes@sipsolutions.net>, Byungchul Park
+ <byungchul@sk.com>, Zi Yan <ziy@nvidia.com>,
+ virtualization@lists.linux.dev, linux-mm@kvack.org, bpf@vger.kernel.org,
+ linux-wireless@vger.kernel.org, Jonathan Corbet <corbet@lwn.net>, Shuah
+ Khan <skhan@linuxfoundation.org>, Randy Dunlap <rdunlap@infradead.org>,
+ Lorenzo Bianconi <lorenzo@kernel.org>, Wen Gu <guwen@linux.alibaba.com>,
+ Philo Lu <lulie@linux.alibaba.com>, Justin Chen <justin.chen@broadcom.com>,
+ Florian Fainelli <florian.fainelli@broadcom.com>, Vikas Gupta
+ <vikas.gupta@broadcom.com>, Michael Chan <michael.chan@broadcom.com>, Pavan
+ Chebbi <pavan.chebbi@broadcom.com>, Doug Berger <opendmb@gmail.com>,
+ Nicolai Buchwitz <nb@tipi-net.de>, Broadcom internal kernel review list
+ <bcm-kernel-feedback-list@broadcom.com>, Satish Kharat
+ <satishkh@cisco.com>, Wei Fang <wei.fang@nxp.com>, Frank Li
+ <frank.li@nxp.com>, Shenwei Wang <shenwei.wang@nxp.com>, Joshua Washington
+ <joshwash@google.com>, Harshitha Ramamurthy <hramamurthy@google.com>, Jijie
+ Shao <shaojijie@huawei.com>, Jian Shen <shenjian15@huawei.com>, Fan Gong
+ <gongfan1@huawei.com>, Tony Nguyen <anthony.l.nguyen@intel.com>, Przemek
+ Kitszel <przemyslaw.kitszel@intel.com>, Marcin Wojtas
+ <marcin.s.wojtas@gmail.com>, Russell King <linux@armlinux.org.uk>, Sunil
+ Goutham <sgoutham@marvell.com>, Geetha sowjanya <gakula@marvell.com>,
+ Ratheesh Kannoth <rkannoth@marvell.com>, Subbaraya Sundeep
+ <sbhatta@marvell.com>, Bharat Bhushan <bbhushan2@marvell.com>, Felix
+ Fietkau <nbd@nbd.name>, Matthias Brugger <matthias.bgg@gmail.com>,
+ AngeloGioacchino Del Regno <angelogioacchino.delregno@collabora.com>, Tariq
+ Toukan <tariqt@nvidia.com>, Saeed Mahameed <saeedm@nvidia.com>, Mark Bloch
+ <mbloch@nvidia.com>, Leon Romanovsky <leon@kernel.org>, Ido Schimmel
+ <idosch@nvidia.com>, Petr Machata <petrm@nvidia.com>, Horatiu Vultur
+ <horatiu.vultur@microchip.com>, UNGLinuxDriver@microchip.com, Daniel Machon
+ <daniel.machon@microchip.com>, Steen Hegelund
+ <Steen.Hegelund@microchip.com>, Haiyang Zhang <haiyangz@microsoft.com>, Wei
+ Liu <wei.liu@kernel.org>, Dexuan Cui <decui@microsoft.com>, Yibo Dong
+ <dong100@mucse.com>, Brett Creeley <brett.creeley@amd.com>, Justin Lai
+ <justinlai0215@realtek.com>, Larry Chiu <larry.chiu@realtek.com>, "Niklas
+ =?UTF-8?B?U8O2ZGVybHVuZA==?=" <niklas.soderlund@ragnatech.se>, Paul Barker
+ <paul@pbarker.dev>, Masahisa Kojima <kojima.masahisa@socionext.com>, Maxime
+ Chevallier <maxime.chevallier@bootlin.com>, Maxime Coquelin
+ <mcoquelin.stm32@gmail.com>, Alexandre Torgue
+ <alexandre.torgue@foss.st.com>, FUJITA Tomonori
+ <fujita.tomonori@gmail.com>, Siddharth Vadapalli <s-vadapalli@ti.com>,
+ Roger Quadros <rogerq@kernel.org>, MD Danish Anwar <danishanwar@ti.com>,
+ Jiawen Wu <jiawenwu@trustnetic.com>, Mengyuan Lou
+ <mengyuanlou@net-swift.com>, Ronak Doshi <ronak.doshi@broadcom.com>, Ryder
+ Lee <ryder.lee@mediatek.com>, Shayne Chen <shayne.chen@mediatek.com>, Sean
+ Wang <sean.wang@mediatek.com>, Juergen Gross <jgross@suse.com>, Stefano
+ Stabellini <sstabellini@kernel.org>, Oleksandr Tyshchenko
+ <oleksandr_tyshchenko@epam.com>, Jordan Rhee <jordanrhee@google.com>, Ankit
+ Garg <nktgrg@google.com>, Tim Hostetler <thostet@google.com>, Eric Joyner
+ <eric.joyner@amd.com>, Prabu Thayalan <prabu.ponrajthayalan@amd.com>,
+ "Nikhil P. Rao" <nikhil.rao@amd.com>, Chintan Vankar <c-vankar@ti.com>,
+ Nora Schiffer <nora.schiffer@ew.tq-group.com>, Alexander Sverdlin
+ <alex@sverdlin.org>, Kevin Hao <haokexin@gmail.com>, Karl Mehltretter
+ <kmehltretter@gmail.com>, Aleksandr Loktionov
+ <aleksandr.loktionov@intel.com>, Meghana Malladi <m-malladi@ti.com>, Jacob
+ Keller <jacob.e.keller@intel.com>, StanleyYP Wang
+ <StanleyYP.Wang@mediatek.com>, linux-doc@vger.kernel.org,
+ imx@lists.linux.dev, linux-rdma@vger.kernel.org,
+ linux-hyperv@vger.kernel.org, linux-renesas-soc@vger.kernel.org,
+ linux-omap@vger.kernel.org
+Subject: Re: [PATCH net-next v2 0/5] net: deprecate skb->pp_recycle and
+ skb_mark_for_recycle()
+Message-ID: <20261110171325.49624e2e@kernel.org>
+In-Reply-To: <20261108060016.2131509-1-almasrymina@google.com>
+References: <20261108060016.2131509-1-almasrymina@google.com>
 X-Mailing-List: linux-wireless@vger.kernel.org
 List-Id: <linux-wireless.vger.kernel.org>
 List-Post: <mailto:linux-wireless@vger.kernel.org>
@@ -86,9 +133,15 @@ List-Unsubscribe: <mailto:linux-wireless+unsubscribe@vger.kernel.org>
 List-Owner: <mailto:linux-wireless+owner@vger.kernel.org>
 Precedence: list
 MIME-Version: 1.0
+Content-Type: text/plain; charset=US-ASCII
+Content-Transfer-Encoding: 7bit
 
-DQpCaXR0ZXJibHVlIFNtaXRoIDxydGw4ODIxY2VyZmUyQGdtYWlsLmNvbT4gd3JvdGU6DQo+IFNv
-bWVvbmUgZWxzZSByYW4gaW50byB0aGUgc2FtZSBwcm9ibGVtIChJIHRoaW5rKSBhbmQgY2FwdHVy
-ZWQgZm91cg0KPiBjcmFzaGVzIHdpdGggeW91ciBwYXRjaC4gZG1lc2cgb3V0cHV0IGlzIGF0dGFj
-aGVkLiANCg0KSSdkIGxpa2UgdG8gY29uZmlybSB0aGUgcHJvYmxlbSB5b3UgZW5jb3VudGVyZWQg
-d2FzIGFsc28gY29ubmVjdGlvbg0KYmVjb21lcyBub3QgdXNhYmxlPyANCg0KDQo=
+On Sun,  8 Nov 2026 06:00:11 +0000 Mina Almasry wrote:
+> Remove the per-SKB skb->pp_recycle bitfield and skb_mark_for_recycle()
+> helper, and reference-count netmems directly by their underlying type
+> via netmem_is_pp() inside netmem_inc_ref() and netmem_dec_ref().
+
+Series does not apply. I think there's too many fixes in this area
+in flight to be entertaining this sort of cleanups right now.
+-- 
+pw-bot: reject
