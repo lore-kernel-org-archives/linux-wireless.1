@@ -1,79 +1,95 @@
-Authentication-Results: smtp.subspace.kernel.org; arc=pass header.oldest-pass=0 smtp.remote-ip=100.103.45.18
+Authentication-Results: smtp.subspace.kernel.org; arc=pass header.oldest-pass=0 smtp.remote-ip=74.125.224.43
 ARC-Seal: i=2; d=subspace.kernel.org; s=arc20261015; a=rsa-sha256; cv=pass;
-	t=1794419640;
-	b=ffsMA5a3rBrNgZP1kzMp+HpOvwRoKOmMVPT5Gb1ZCnMERg0WK2FtRCqPuNQcSgx64fPi
-	 zeQSVDDyBtx79y0ygZX5YE/qM629j5Laabk109yyHRnsDes+u0MNwiTkzfeYIdkCjRsaz
-	 MmddeyPSCxRmwB+J3CQF7u5sFwFKS3x4Be/2XUuXora+njOq/cl8sQ6Y5DavxoIUymtZN
-	 vIk2+QLqP3QkfM62s871nn3rVhww6WFVXLMPzwT4mhbKCxRT2QyInA2nvpyawK0PEILX8
-	 5yjJXpFFFODzN5dMbnmyp1DdV9alLipZ1pCqQceUTujAbV4DUj6eyBU+OxV8cMZqjwQ==
+	t=1794423111;
+	b=pffb4U5R1PGoaICNWjs05moGmR26xGivKi7EUS+Ymoknsdbxpj78wLb9rHgB4R9MQxqn
+	 uyHfYMJrZbZ0cg9AbFQhLfcszCRO8evJEikojzhM/3Okk7l76IKwaUUb1aEpBWrjF5bO/
+	 6wI/YPt6a206G+uFc7b2JrWLxms+RW/3VJDqBodsq4JqTpddvMf9dXGo8Qymkr5zqyO1X
+	 SJzJmt8s4T6lefjUEPSFwvpaqG2lp8hNW1eYer8N4OstF2xf6fBdwLXVLDWCLaOA5B8Px
+	 ydd5wb8p8yP63fxHe3NS2e/J5vC/AhLgin/eJDsf5P4kxiu+3R6ZpxBGd6p2v/H0dLg==
 ARC-Message-Signature: i=2; d=subspace.kernel.org; s=arc20261015;
-	a=rsa-sha256; c=relaxed/relaxed; t=1794419640;
-	h=Received:DKIM-Signature:Received:From:Date:Subject:MIME-Version:
-	 Content-Type:Message-Id:X-B4-Tracking:X-Change-ID:To:Cc:X-Mailer:
-	 X-Developer-Signature:X-Developer-Key:X-Endpoint-Received:
-	 X-Original-From:Reply-To:Content-Transfer-Encoding;
-	bh=uq1Gorfc4ciPJpLem2ymwbvMgrQlRjuouNWvatl3268=;
-	b=WZRcRqvOQcLxv+3BvKOin8xp2Y3O7yN4wxVdnRCM+gX+WasACsu4Y1t51JzFe1OAXryn
-	 xgeC/lfqD10BiMJRliaks4wTRnLFWk+wtvsfBDMn1cMLq20Bc1khK6wFfpNOlDFTq3obw
-	 hv7QXq7TKaJF3SB+NGTRrp1MhEwMZ07jIOV1KxVPWoAqucvBvN+GLHwEaSERFzxB1hcxd
-	 RetL93CDNEWYdqmR6ElZ0bBq0FyH+muqXPssMP474Q1BNZrUcYrmcjOsRId9QpafiZA4p
-	 rnLTLqyJCtYYWYFjQFLsqOMKxdPFFdhqkKfL271snqq1cUk2YnSbzaDWZuOHdRc0UgQ==
+	a=rsa-sha256; c=relaxed/relaxed; t=1794423111;
+	h=DMARC-Filter:Received:DKIM-Signature:X-Google-DKIM-Signature:
+	 X-Gm-Message-State:X-Gm-Gg:X-Received:MIME-Version:From:Date:
+	 X-Gm-Features:Message-ID:Subject:To:Cc:Content-Type;
+	bh=Kxeu0KQoBvmpLRouEZIjBFskam4zbU7LQPE+XYGjDNY=;
+	b=VdX7QL+qCTj4+inIZE3tCz2CCQvJQanlmHIyGNzlWGg5MUmKvX5lucCj8jlqCe/674Oc
+	 eS1J+qgjiYGJ5xNekmB2orpj9F5/t2Y2IIRTxzv3e6mM63XZ5aB7t3RMUX/JxNDCpnYrT
+	 DpNOORFUqlR0PMx755HH8w0+mVulTBv+PQy6ag1wfB5SBusNnkVRUi1hrugw34SQ2CCDj
+	 lzkuRjjgrwlZv1/aX2aS9Dc1stDFNtS3oOSA9NED93yu95lL+bhilu//zQ3KXLPdEnO3M
+	 UIbAGQtvS5qFZTehMDI2s/OcwnpjEken4DLJh618Ha6QYYXXcsMbwcIbx7Y2IFx7r+w==
 ARC-Authentication-Results: i=2; smtp.subspace.kernel.org; 
-	dkim=pass header.d=kernel.org header.i=@kernel.org header.a=rsa-sha256 header.s=k20260515 header.b=COvsspfp;
-	arc=pass header.oldest-pass=0 smtp.remote-ip=100.103.45.18
-Received: from smtp.kernel.org (quasi.space.kernel.org [100.103.45.18])
-	(using TLSv1.3 with cipher TLS_AES_256_GCM_SHA384 (256/256 bits)
-	 key-exchange X25519 server-signature ECDSA (prime256v1))
-	(No client certificate requested)
-	by smtp.subspace.kernel.org (Postfix) with ESMTPS id EDAB2606A321
-	for <linux-wireless@vger.kernel.org>; Wed, 11 Nov 2026 17:53:59 +0000 (UTC)
-Authentication-Results: smtp.subspace.kernel.org;
-	dkim=pass (2048-bit key) header.d=kernel.org header.i=@kernel.org header.a=rsa-sha256 header.s=k20260515 header.b=COvsspfp
-Authentication-Results: smtp.kernel.org; arc=none smtp.remote-ip=100.80.115.77
-ARC-Seal: i=1; d=kernel.org; s=arc20260519; a=rsa-sha256; cv=none;
-	t=1794419639;
-	b=Iwn6WMUlbCPXhWY4pwRsOSxo+27vLktt7Y6Li19WhZylcQxR/DqAY4y2esFtq4oavF4V
-	 QvXlOhrF8Kt7Da3yQ8tjnf0wDJAxF4B6lsTSg2Q8TyMofbYlZA5oy5UXGc0PMccQ+UsCQ
-	 3QLu9tKlMvqT6sTPdXFwkXOZFCFz9wLRqNqsdg1/nkXtu6rUOSPqv2RpbKTz1OWaIykt1
-	 LrdrsoNcotvvUA8jlspNIRNfXjyNOXEyUICT7VQQlIhsAJFDoiHvIzAI+5QzUFIYBxPxD
-	 PVLdt2/V5MC669mmnkhu7hCiyYUIwtBRRqKsteRfUE5hi3dBWqx3JaJNOEEVRFJEdlQ==
-ARC-Message-Signature: i=1; d=kernel.org; s=arc20260519; a=rsa-sha256;
-	c=relaxed/relaxed; t=1794419639;
-	h=DKIM-Signature:Received:From:Date:Subject:MIME-Version:Content-Type:
-	 Message-Id:X-B4-Tracking:X-Change-ID:To:Cc:X-Mailer:
-	 X-Developer-Signature:X-Developer-Key:X-Endpoint-Received:
-	 X-Original-From:Reply-To:Content-Transfer-Encoding;
-	bh=uq1Gorfc4ciPJpLem2ymwbvMgrQlRjuouNWvatl3268=;
-	b=MDUpoGNuc7avlKzDVqZuWd/jZpDC0FnxOpvskrvJ+WMKx5iyttlOcwW2cRkc+IgykXaD
-	 mAdhMqodrJ+aJO33jAUDyw78/aAM3ZRR5xP1ihGfNib4NrmMcIvcOKgC+ayrdJR/HCB5A
-	 nL2RD43V1eat9h0jUhM81vlE3lcUS/6fwnnV2a1jsnmisyNevdWVSMaPFhsAz3azgTkBR
-	 IHjF0wNnSd9h8K4lprfF35RcYnx/Ri2IpPes6Wd54CGiocpsemmag0tF+2Dt3+FVrpXRN
-	 5Aruw6BVYOqeslpRVo73BVfbqWvNBYcerrqZxUF4430aR20hAiq1l59QkqRDxNeUCCQ==
-ARC-Authentication-Results: i=1; smtp.kernel.org; 
-	arc=none smtp.remote-ip=100.80.115.77
-Received: from lkml.kernel.org (nexus.subspace.kernel.org [100.80.115.77])
-	(using TLSv1.3 with cipher TLS_AES_256_GCM_SHA384 (256/256 bits)
+	dmarc=pass header.from=gmail.com;
+	spf=pass smtp.mailfrom=gmail.com;
+	dkim=pass header.d=gmail.com header.i=@gmail.com header.a=rsa-sha256 header.s=20260707 header.b=hIIS1+a2;
+	arc=pass header.oldest-pass=0 smtp.remote-ip=74.125.224.43
+Received: from mail-yx1-f43.google.com (mail-yx1-f43.google.com [74.125.224.43])
+	(using TLSv1.3 with cipher TLS_AES_128_GCM_SHA256 (128/128 bits)
 	 key-exchange X25519 server-signature ECDSA (prime256v1) server-digest SHA256)
 	(No client certificate requested)
-	by smtp.kernel.org (Postfix) with ESMTPS id E25A31F00A05;
-	Wed, 11 Nov 2026 17:53:58 +0000 (UTC)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=kernel.org;
-	s=k20260515; t=1794419639;
-	bh=uq1Gorfc4ciPJpLem2ymwbvMgrQlRjuouNWvatl3268=;
-	h=From:Date:Subject:To:Cc:Reply-To;
-	b=COvsspfpZ5mNOFlFi96trZQGWQJvTV/iSE9P2kLr8em7UlrIrxsLvdpnWCuxBUpZ8
-	 J92sZ3AGQLSSbNzM4/fCKRsBoe2iPGdUYm4vqiCnc7k/OmmJO1DJeKd9Cv3WKzm88M
-	 KBCZzkMFxgNcWRKC3RmFusUx0IIP9CKeOZa91cU1vBf4we1UEHB4CHLisbmDdPjwxi
-	 gJ0Nijq0gg+MwnUkLUiLlvlr7zODkLrcP3k1J6OIxXqbulGbaubPI0MEvMnNtdYK+v
-	 /IRXcMS5lemNq+ZedT0ycx5iX6CleHDTBXgYOH/QoMCSN/sY/PgsMUt1gSQ37sPyAv
-	 VluRik+4mERPA==
-Received: from nexus.subspace.kernel.org (localhost [IPv6:::1])
-	by lkml.kernel.org (Postfix) with ESMTP id 39FC04901D;
-	Wed, 11 Nov 2026 17:53:58 +0000 (UTC)
-From: Christopher Griffin via B4 Relay <devnull+christophergriffin05.gmail.com@kernel.org>
-Date: Wed, 11 Nov 2026 11:53:58 -0600
-Subject: [PATCH ath-next] wifi: ath12k: stop a running station vdev before
- starting it again
+	by smtp.subspace.kernel.org (Postfix) with ESMTPS id A9067606A31C
+	for <linux-wireless@vger.kernel.org>; Wed, 11 Nov 2026 18:51:50 +0000 (UTC)
+DMARC-Filter: OpenDMARC Filter v1.4.2 smtp.subspace.kernel.org A9067606A31C
+Authentication-Results: smtp.subspace.kernel.org; dmarc=pass (p=none dis=none) header.from=gmail.com
+Authentication-Results: smtp.subspace.kernel.org; spf=pass smtp.mailfrom=gmail.com
+Authentication-Results: smtp.subspace.kernel.org;
+	dkim=pass (2048-bit key) header.d=gmail.com header.i=@gmail.com header.a=rsa-sha256 header.s=20260707 header.b=hIIS1+a2
+Received: by mail-yx1-f43.google.com with SMTP id 956f58d0204a3-67be1e468a8so2795322d50.0
+        for <linux-wireless@vger.kernel.org>; Wed, 11 Nov 2026 10:51:50 -0800 (PST)
+ARC-Seal: i=1; a=rsa-sha256; t=1794423110; cv=none;
+        d=google.com; s=arc-20260327;
+        b=pIfcYchpN5sR6haUdgiD3hLsXMNFgxCwZJUVvFBX+t2FaSj8r381cRo7mfE6zBn+jA
+         ls7dEUVa8RKu0loFL2fwFFpAWHPnu3Xn7otCISmIn7SCQGPoVXsntUCHaKE51fjxLHse
+         C2PwNm9giVE5N4EXf1TLGiq7hb3rYbCMB2nhURNET7jjlIUPUFUtCbWylovd+c9f58cn
+         Bz9j79ehGzap13ir4OxzVPGMi8CFjEt4eUvrZZ3bjKS0+0FoepWMr4YxLLDDiSs4AA9s
+         NJAWPVIsEblJ4Afd/wU5fMdQH630kV3MqLK1k1+XQbOFL7yVFKfi0dAsmNypE1/c9t6C
+         jZMg==
+ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=google.com; s=arc-20260327;
+        h=cc:to:subject:message-id:date:from:mime-version:dkim-signature;
+        bh=Kxeu0KQoBvmpLRouEZIjBFskam4zbU7LQPE+XYGjDNY=;
+        fh=5wOCSfHC+MjrWRFIcFhuLCxZ+oXRK4wNfqgik8o8yx4=;
+        b=Qj9aTVOfHkzGD7mut76s1Pt1yUzT15FgNHEwiPyfWEbPIV+vjbYKkGXYwghJOet1s1
+         F8OQgQGRLz9/Kd6zzegG0D4JNB2f2AvusPqnw5IO0fJPvLbMiEOGZV/1cdYPyD1clq/T
+         EAKObzBCLUBbkVefjF3QKIecykpJmGp094c95zvndQbAH0nwjv3JoJ9S56iPSroN67rB
+         tR7at1LkEeOghOiDQ58Pcv9xzXj59qmPjwa/Tz355WIZOO1dSil9/dhYraadbfyItvDS
+         GOAY8nAWXxUl65gIqJWxiwOPahxvpGQJuLpDaOzl9jtIWqdGIncmG1YH5RzsHCkqblaI
+         6tDA==;
+        darn=vger.kernel.org
+ARC-Authentication-Results: i=1; mx.google.com; arc=none
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+        d=gmail.com; s=20260707; t=1794423110; x=1795027910; darn=vger.kernel.org;
+        h=content-type:cc:to:subject:message-id:date:from:mime-version:from
+         :to:cc:subject:date:message-id:reply-to:content-type;
+        bh=Kxeu0KQoBvmpLRouEZIjBFskam4zbU7LQPE+XYGjDNY=;
+        b=hIIS1+a2UUvtq+EhF7GdPYdQeH5jmrhck+dmpePtDbpdD3reSuoPD50E8rDRBDSeqT
+         xjwZsv6SppMUcqsF1CrRq//9Mq6pSed71Tcxved7Ti2S1IX1x3V3Va4zeTcJr4CDDyBL
+         kWCOBfS5fOkIHb8QgKBIfIiSYOa+9ir2bdvlL6n9csLkZGUhOKjkD9uTJVaOxAz/tDr7
+         Qfau0v20ewXmsoPcj4IVOFwns6leFyRMj3mKoBTLig07uad0aHVvk3ICxsqFk6GCkh6w
+         AowYr9tLxBw4JI7Osm95z7nWM2+P3i7VDe7Oizd8XF6FidlFXPZl4p7WBYBszKt1Yh0C
+         ymOw==
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+        d=1e100.net; s=20260707; t=1794423110; x=1795027910;
+        h=content-type:cc:to:subject:message-id:date:from:mime-version
+         :x-gm-gg:x-gm-message-state:from:to:cc:subject:date:message-id
+         :reply-to:content-type;
+        bh=Kxeu0KQoBvmpLRouEZIjBFskam4zbU7LQPE+XYGjDNY=;
+        b=cezV7CGFBVf07voTcbvBjExcStfY+UM07+6HpRCNhaUfs8Sv/G4UlVW1y4/2iVWALW
+         gJTnMY6kfU6uhhkH4Rhum9Hwwu8jVOyn5JwYbuM+txpQ2aBfsqAIKRWV2g549qmSDeSo
+         RTICmHEHR2exxqQVflZIrE77qTf/d9RrvoDkGF3w11xpHWNb32kJDei7vLdRamOpCle5
+         6aNtutKHfZzmImGC7eC4475TD9SxjsIA6/xRwXziL425+3wKeucYY1UzxYlfIBxt4GUo
+         tfj/KmklnFN/pbHnYLKrkxHVVcKqk6t4jUcdnIst4Uvjdw4VV4a+7GM6PflglVd1AvVp
+         LndQ==
+X-Gm-Message-State: APuU4Z9P+aapY2kBmfcDrH/F4/38QXUTfwFj5MGgekhCAjmfcboXDl+m
+	y/3O3fMQC0CU0WlsOqkZaGS0wCT5tuCKT/imROEnI1IwqY85aeUh2UWmS3Xj4TZO5LO1DJffDNx
+	SlhigcKG1FZTkeqkCbZSCN0Nt+mnyEf+sFXPq
+X-Gm-Gg: AYBFou3gdsam2zneWYG2Rbbst/O27lCsWILYdPBHq5rYAtUylTa8oPqMKfsxH0CkJJC
+	qiynfopD+vQoiX5AdBGQWMQRzp0rvAJdwuBSYi5nPpDMJCsKUABdmzuaVkqllo3jK/rhvg4I/9K
+	woNalXEkbu2vXeBzqQis7rbRQsGCJHVEq6Y/paFpZPBsfNqgugfW3665T69k6iF0CxTTdiYGie4
+	SQdVCRLg9XAly/e4Vg52NF0cV6nmwy19J0eme8Lyv4R6AMk8dkfrZgdMEbowdPq2KErKlMf4yzm
+	1BoZI0P2wAsrRNlBVzqiYdZ86pGcMUicQhap3a784DVZhiHtS3LewGYrJFtSfjUlfGsSWUq88YB
+	UjFI+iJ3zqUNUko+X1TPaKRFCcCXiCfQVWFfr5w==
+X-Received: by 2002:a05:690e:1385:b0:67c:c1d:e5ff with SMTP id
+ 956f58d0204a3-67c67a44ec8mr2651052d50.0.1794423109391; Wed, 11 Nov 2026
+ 10:51:49 -0800 (PST)
 X-Mailing-List: linux-wireless@vger.kernel.org
 List-Id: <linux-wireless.vger.kernel.org>
 List-Post: <mailto:linux-wireless@vger.kernel.org>
@@ -83,207 +99,118 @@ List-Unsubscribe: <mailto:linux-wireless+unsubscribe@vger.kernel.org>
 List-Owner: <mailto:linux-wireless+owner@vger.kernel.org>
 Precedence: list
 MIME-Version: 1.0
-Content-Type: text/plain; charset="utf-8"
-Message-Id: <20261111-ath12k-sta-vdev-start-once-v1-1-a01ed78d5460@gmail.com>
-X-B4-Tracking: v=1; b=H4sIALWr9GoC/yWMwQqDMBBEf0X23IUkNCL9ldJDGjd1W4gl2QZB/
- PeuOqd5DPNWqFSYKty6FQo1rjxnBXvpIE4hvwh5VAZnXG81GGSy7oNVAraR2l6K4Jwjoe8Hk4x
- P/jokUMG3UOLlkN9Bf5hpEXicS/093xRld8O2/QFG75JjiAAAAA==
-X-Change-ID: 20261111-ath12k-sta-vdev-start-once-5680f05f548f
-To: Jeff Johnson <jjohnson@kernel.org>, ath12k@lists.infradead.org
-Cc: linux-wireless@vger.kernel.org, 
- Baochen Qiang <baochen.qiang@oss.qualcomm.com>, 
- Kang Yang <kang.yang@oss.qualcomm.com>, Birk Skyum <birk.skyum@pm.me>, 
- Christopher Griffin <christophergriffin05@gmail.com>
-X-Mailer: b4 0.16.0
-X-Developer-Signature: v=1; a=ed25519-sha256; t=1794419637; l=7666;
- i=christophergriffin05@gmail.com; s=20261024; h=from:subject:message-id;
- bh=l2LS9+T8qV8NYnA/lIgTTemFYDi2ceLGxFaTVuPBUcw=;
- b=cFc035yZthsCIT/0FQxznEnY8NvaWI3Ocs7j2puvt6/R4RtIzJkmvrW8Xa8hR3hRPX7ZsFqqm
- YJHjdu0cUBQCdIdjOvNL4BBUeVUaRvap6lFS0+y91iQPCKEt6WT18Q9
-X-Developer-Key: i=christophergriffin05@gmail.com; a=ed25519;
- pk=oa9tkTNpiGoFWdGvpDHXLSobApmsh9BfrJRJrRJAvWA=
-X-Endpoint-Received: by B4 Relay for
- christophergriffin05@gmail.com/20261024 with auth_id=1309
-X-Original-From: Christopher Griffin <christophergriffin05@gmail.com>
-Reply-To: christophergriffin05@gmail.com
-Content-Transfer-Encoding: 7bit
+From: Colin C <ccharm480@gmail.com>
+Date: Wed, 11 Nov 2026 12:51:38 -0600
+X-Gm-Features: AclHuK_8HGtlGC5_tkNn91ABpmkm4Qnopf5PO5ai9P-hAuAXxuL1IerzjAdosxY
+Message-ID: <CAOy1aSioNmBOPjLTsR3q_A8z2qF=7AC13TSvr=mig_XrgbVXKw@mail.gmail.com>
+Subject: [REGRESSION] rtw89_8851be: 5 GHz link drops after association and
+ re-auth times out on 7.3.0-4 and 7.3.3-1 (7.2.11 works)
+To: pkshih@realtek.com
+Cc: linux-wireless@vger.kernel.org, regressions@lists.linux.dev
+Content-Type: text/plain; charset="UTF-8"
 
-From: Christopher Griffin <christophergriffin05@gmail.com>
+Hardware: Realtek RTL8851BE (PCI 0000:04:00.0, 10ec:b851,
+rtw89_8851be); Bluetooth
+          is the same module (rtl8851bu firmware loaded by btusb)
+Distro/kernel: CachyOS (clang build)
+  linux-cachyos 7.2.11-1  = GOOD
+  linux-cachyos 7.3.0-4   = BAD
+  linux-cachyos 7.3.3-1   = BAD (re-tested 2026-11-11)
+Firmware: rtw89/rtw8851b_fw-1.bin, version 0.29.41.5 (4bd6ebac) on all
+three kernels
+linux-firmware-realtek: 1:20261019-1 on all three (firmware is not the variable)
+AP: UniFi U6 Extender (Wi-Fi 6, 802.11ax), WPA2 CCMP, 5 GHz ch153/80 MHz,
+    several BSSIDs of one SSID, -43 dBm. On 7.2.11 the link ran at
+600/540 Mbit/s;
+    I did not capture HE vs VHT on the 5 GHz link during the failing boots (the
+    2.4 GHz fallback link, a GL.iNet router, negotiates HE-MCS 10 on 7.3.3-1).
+Taint: /proc/sys/kernel/tainted = 4096 (O, out-of-tree module: nvidia-open).
+    The WLAN problem is independent of the GPU driver as far as I can tell.
 
-A station vdev is not stopped when mac80211 unassigns its channel
-context. Since commit c9e4e41e71ff ("wifi: ath12k: move peer delete
-after vdev stop of station for WCN7850") it is stopped when the BSS
-peer is removed instead, so that firmware gets the vdev stop before
-the peer delete. ath12k_mac_op_unassign_vif_chanctx() still clears
-is_started for it, and nothing else records that the vdev is running
-in firmware.
+Summary
+The adapter has worked on every earlier kernel (7.2.x and before).On
+7.3.0-4 and again on 7.3.3-1, 5 GHz association is either dropped
+shortly
+after the 4-way handshake or never gets going again: every authentication
+attempt then times out ("send auth (try 3/3)", "authentication with <bssid>
+timed out"), across several BSSIDs, until the card falls back to a 2.4 GHz
+network. Booting 7.2.11-1 with identical firmware and userspace restores normal
+operation (one boot of ~7.7 h on 5 GHz at 600/540 Mbit/s; a single AP-initiated
+reason=34 disassoc, reconnected in 4 s).
 
-mac80211 can move a station to another channel context while the BSS
-peer exists. It does so between authentication and association when
-it associates with a narrower width than it authenticated with, for
-example when a station with EHT disabled (wpa_supplicant disable_eht=1)
-connects to an AP operating EHT at 320 MHz: authentication runs on a
-320 MHz channel context, association on a 160 MHz one. The vdev was
-started for the first context (by ath12k_mac_op_assign_vif_chanctx(),
-or when the peer was created on hardware with vdev_start_delay), and
-ath12k_mac_op_assign_vif_chanctx() starts it again for the second one.
-Firmware gets a second vdev start with no stop in between, and
-ar->num_started_vdevs counts the vdev twice. The stop on disconnect
-takes only one of the two back.
+Failing boots on 7.3.0-4, 2026-10-26:
+  07:48:30 wpa_supplicant: Key negotiation completed with ba:8b:a9:d1:28:25
+  07:49:04 CTRL-EVENT-DISCONNECTED reason=4 locally_generated=1
+  07:49:08-07:50:35 kernel: "authenticate with <bssid>" / "send auth
+(try 1/3..3/3)"
+                     / "authentication with <bssid> timed out", for three
+                     different BSSIDs, repeated; SSID-TEMP-DISABLED CONN_FAILED
+  12:28:29 Key negotiation completed; 12:28:50 DISCONNECTED reason=4
+locally_generated=1
+           then the same auth-timeout loop until ~12:31
 
-Since commit 18ae7d0cdd76 ("wifi: ath12k: Avoid CPU busy-wait by
-handling VDEV_STAT and BCN_STAT"), ath12k_wmi_fw_stats_process()
-completes a WMI_REQUEST_VDEV_STAT request only after one stats event
-for each started vdev. With the count too high that never happens:
-from then on every station statistics request that needs the beacon
-RSSI waits the full 3 seconds in ath12k_mac_get_fw_stats() with the
-wiphy lock held, logs "time out while waiting for fw stats done" and
-reports no signal, until the driver is reloaded.
+Failing boot on 7.3.3-1, 2026-11-11 (boot 12:12):
+  12:13:00 associated with ba:8b:a9:d1:28:25 (5 GHz), aid=3
+  12:13:07 onwards: auth to 2a:e8:29:52:c6:9c, ba:8b:a9:d1:28:25 and
+           9e:05:d6:d1:6d:d4 all time out (3/3 tries each), repeated until the
+           card gave up and joined a 2.4 GHz network (GL-MT3000, ch7).
+  A manual `nmcli con up` for the 5 GHz SSID later failed with "The Wi-Fi
+  network could not be found" although the BSSes are listed at full signal.
+No rtw89 error lines appear in dmesg around the drops (only the wlan0 auth
+timeouts above).
 
-Record in each link vif whether its vdev is running in firmware.
-ath12k_mac_vdev_start() now stops a vdev that is still running before
-it starts it, as ath12k_mac_update_vif_chan() already does for a vdev
-that is not up, and ath12k_mac_vdev_stop() takes a vdev out of
-num_started_vdevs only if it was running. Firmware then sees start,
-stop and start for such a connection, and the vdev is counted once.
-AP vdevs are still stopped on unassign, so in practice only station
-vdevs take the new stop.
+Caveat on the 7.2.11 baseline: it is not perfectly clean. Over the 10-day
+7.2.11 boot (2026-11-01 to 11-11) the journal has 8 wlan0 authentication
+timeouts and 36 "rtw89_8851be 0000:04:00.0: timed out to flush queues"
+messages (Nov 4-10). Some auth timeouts overlap with a hidden-SSID issue on
+my side that I fixed on Nov 9. In all cases on 7.2.11 the link stayed up or
+recovered by itself; it never got stuck in the endless auth-timeout loop seen
+on 7.3.0-4 and 7.3.3-1. Filtered logs (UFW lines removed) are available for
+both boots.
 
-This was found by tracing ath12k_mac_vdev_start_restart(),
-ath12k_mac_vdev_stop() and the mac80211 channel context and station
-state trace events on a WCN7850 station: the first HE connection
-(disable_eht=1) to an EHT 320 MHz AP after the driver was loaded
-started the vdev twice, and the timeouts began right after it.
+Bluetooth coexistence lead (7.3.3-1, one run each, so not conclusive):
+  With Bluetooth blocked (rfkill block bluetooth): `nmcli con up` joined the
+  5 GHz BSS ba:8b:a9:d1:28:25 (5765 MHz) on the first try, auth/assoc clean.
+  After rfkill unblock, the link was on 2.4 GHz again at the next check (about
+  3 minutes later; I did not see when it dropped), and a repeat `nmcli con up`
+  for the 5 GHz SSID failed as above.
+  The card shares the module with Bluetooth, and an LE keyboard and an LE mouse
+  were connected during the failing cases. I am not claiming a cause: the
+  Wi-Fi/Bluetooth coexistence code is shared and has been changing (e.g. the
+  July 2026 rtw-next coex patches for the 8922D, which are not in 7.3.x), so
+  it seemed worth mentioning. The first 7.3.3-1 boot did associate once on
+  5 GHz with Bluetooth active, so timing may also matter. A repeat of each
+  case (3+) is still to do.
 
-The change and this message were written with Claude, an AI coding
-assistant.
+Things tried that did not help on 7.3.0-4:
+  - /etc/modprobe.d/rtw89.conf, exact options (still active, and confirmed
+    in /sys/module/rtw89_pci/parameters/ on 7.3.3-1, so the 7.3.3-1 failure
+    above happened with them set):
+      options rtw89_pci disable_aspm_l1=Y disable_aspm_l1ss=Y disable_clkreq=Y
+      options rtw89_core disable_ps_mode=Y
+  - reloading rtw89 modules (briefly restores 2.4 GHz only)
+  - firmware 20261019-1 vs earlier (ruled out: 7.2.11 works with 20261019-1)
+Also not the cause: the SSID is no longer hidden and the extender BSSes are
+visible at full signal; ch153 worked on 7.2.11.
 
-Tested-on: WCN7850 hw2.0 PCI WLAN.HMT.1.1.c7-00108-QCAHMTSWPL_V1.0_V2.0_SILICONZ_UPSTREAM-3
+Package history (pacman.log): linux-cachyos 7.2.11-1 -> 7.3.0-4 on 2026-10-24
+23:41; first failure observed the next boot. Updated to 7.3.3-1 on 2026-11-11;
+same failure.
 
-Fixes: c9e4e41e71ff ("wifi: ath12k: move peer delete after vdev stop of station for WCN7850")
-Signed-off-by: Christopher Griffin <christophergriffin05@gmail.com>
----
-There are two ways ar->num_started_vdevs ends up too high. The other
-one, counting a vdev restart as a start, is the one Baochen diagnosed
-in Mike Garuccio's report [1] and that Birk Skyum's pending patch [2]
-fixes. This patch fixes only the station case described above and does
-not touch the line [2] changes, so it applies to ath-next with or
-without [2].
+Searched lore.kernel.org (all lists) for "8851BE" on 2026-11-11: no report of
+this problem. Possibly related, not read in full: "[PATCH] Bluetooth: Add
+HCI_QUIRK_NO_SCAN_WHILE_CONNECTED for combo chips" (April 2026). The symbol is
+not present in the installed 7.2.11-1 or 7.3.3-1 headers, so it cannot explain
+the difference between those two kernels.
 
-How it was tested. The station was a Quectel NCM865 (WCN7850) on
-Ubuntu's 7.3.0-1004-oem kernel, with ath12k built from that kernel's
-source, connecting on 6 GHz to a RUCKUS R670 that runs EHT at 320 MHz.
-Without the change, the first connection with disable_eht=1 started
-the timeouts, one every 3 seconds, until the module was reloaded. With
-the change, six cycles of EHT, HE and EHT connections (13 in all) and
-20 more EHT reconnects gave no timeout, and every station query
-returned a signal value in about 10 ms. Tracing showed start, stop and
-start for each HE connection, one start for each EHT connection, and
-one stop for each disconnect.
+Related, not duplicates (found by web search):
+  - [regression] rtw89_8852be: silent RX stalls since v7.1; reverting
+    bda294ed0ed0 appears to fix it (https://lkml.iu.edu/2607.2/04572.html)
+  - RTL8852BE can't connect on high 5Ghz channels
+    (https://bugs.launchpad.net/bugs/2059170)
 
-The build tested on hardware was one change for both cases: this
-station part, written slightly differently, plus a restart part with
-the same effect as [2]. With [2] and this patch applied, the code
-behaves the same way. On ath-next this exact patch is compile-tested
-only (x86_64, W=1, with and without [2]).
-
-[1] https://lore.kernel.org/all/f9d0a06d-b7b0-4e51-8173-c53104c2a096@oss.qualcomm.com/
-[2] https://lore.kernel.org/all/20261020213505.31624-1-birk.skyum@pm.me/
-
-The change and this message were written, and the tests run, with
-Claude, an AI coding assistant.
----
- drivers/net/wireless/ath/ath12k/core.h |  2 ++
- drivers/net/wireless/ath/ath12k/mac.c  | 34 +++++++++++++++++++++++++++++++---
- 2 files changed, 33 insertions(+), 3 deletions(-)
-
-diff --git a/drivers/net/wireless/ath/ath12k/core.h b/drivers/net/wireless/ath/ath12k/core.h
-index 3a92a4b033599..1c0cdf75a22bb 100644
---- a/drivers/net/wireless/ath/ath12k/core.h
-+++ b/drivers/net/wireless/ath/ath12k/core.h
-@@ -330,6 +330,8 @@ struct ath12k_link_vif {
- 
- 	bool is_created;
- 	bool is_started;
-+	/* vdev is running in firmware and counted in ar->num_started_vdevs */
-+	bool vdev_started;
- 	bool is_up;
- 	u8 bssid[ETH_ALEN];
- 	struct cfg80211_bitrate_mask bitrate_mask;
-diff --git a/drivers/net/wireless/ath/ath12k/mac.c b/drivers/net/wireless/ath/ath12k/mac.c
-index 4cb41b8b1d3be..65486383ea9f1 100644
---- a/drivers/net/wireless/ath/ath12k/mac.c
-+++ b/drivers/net/wireless/ath/ath12k/mac.c
-@@ -1565,9 +1565,12 @@ int ath12k_mac_vdev_stop(struct ath12k_link_vif *arvif)
- 		goto err;
- 	}
- 
--	WARN_ON(ar->num_started_vdevs == 0);
-+	if (arvif->vdev_started) {
-+		arvif->vdev_started = false;
-+		WARN_ON(ar->num_started_vdevs == 0);
-+		ar->num_started_vdevs--;
-+	}
- 
--	ar->num_started_vdevs--;
- 	ath12k_dbg(ar->ab, ATH12K_DBG_MAC, "vdev %pM stopped, vdev_id %d\n",
- 		   ahvif->vif->addr, arvif->vdev_id);
- 
-@@ -10722,6 +10725,7 @@ int ath12k_mac_vdev_create(struct ath12k *ar, struct ath12k_link_vif *arvif)
- 
- err:
- 	arvif->is_created = false;
-+	arvif->vdev_started = false;
- 	arvif->ar = NULL;
- 	return ret;
- }
-@@ -11032,6 +11036,7 @@ static int ath12k_mac_vdev_delete(struct ath12k *ar, struct ath12k_link_vif *arv
- 
- 	/* TODO: recal traffic pause state based on the available vdevs */
- 	arvif->is_created = false;
-+	arvif->vdev_started = false;
- 	arvif->ar = NULL;
- 
- 	return ret;
-@@ -11544,7 +11549,30 @@ ath12k_mac_vdev_start_restart(struct ath12k_link_vif *arvif,
- static int ath12k_mac_vdev_start(struct ath12k_link_vif *arvif,
- 				 struct ieee80211_chanctx_conf *ctx)
- {
--	return ath12k_mac_vdev_start_restart(arvif, ctx, false);
-+	int ret;
-+
-+	/* A station vdev is stopped when its BSS peer is removed, not when
-+	 * its channel context is unassigned. If mac80211 moves the station
-+	 * to another channel context while the peer exists, the vdev is
-+	 * still running here: stop it before starting it again, so that
-+	 * firmware does not get a second start and the vdev is counted once.
-+	 */
-+	if (arvif->vdev_started) {
-+		ath12k_dbg(arvif->ar->ab, ATH12K_DBG_MAC,
-+			   "vdev %d still running, stopping it before start\n",
-+			   arvif->vdev_id);
-+		ret = ath12k_mac_vdev_stop(arvif);
-+		if (ret)
-+			return ret;
-+	}
-+
-+	ret = ath12k_mac_vdev_start_restart(arvif, ctx, false);
-+	if (ret)
-+		return ret;
-+
-+	arvif->vdev_started = true;
-+
-+	return 0;
- }
- 
- static int ath12k_mac_vdev_restart(struct ath12k_link_vif *arvif,
-
----
-base-commit: ff4c7359e310744a7abe53cf66d921fa2969eb19
-change-id: 20261111-ath12k-sta-vdev-start-once-5680f05f548f
-
-Best regards,
---  
-Christopher Griffin <christophergriffin05@gmail.com>
-
-
+Expected: link stays up on 5 GHz as on 7.2.11.
+Not tested: vanilla mainline (CachyOS patches may be a factor); a bisect; a
+boot with nvidia-open not loaded (to rule the taint out completely).
+Happy to test patches or bisect between v7.2.11 and v7.3.0 if pointed
+at a range.
