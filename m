@@ -1,96 +1,76 @@
-Authentication-Results: smtp.subspace.kernel.org; arc=none smtp.remote-ip=209.85.216.52
+Authentication-Results: smtp.subspace.kernel.org; arc=none smtp.remote-ip=211.75.126.72
 ARC-Seal: i=1; d=subspace.kernel.org; s=arc20261015; a=rsa-sha256; cv=none;
-	t=1794371177;
-	b=YPSZIo1OX9LCndQHPDRL00QBwbgWWEQ/oVDkqeeOq0/ICEhQdaOIET2jM6ItWe8X99xG
-	 QiQMEWOgN2JsuFBYq8IAVsCwxzkW2eVnT//4U8R8jEZdbf9w9JIxtJy4+qFpnaXfTSAtx
-	 kzudVCoLQcIajPMqyTg0Gb7BLzcaMIVa+o4RvW/1um1/I8BaxvGAEGfCSoJKkOHbgzpGx
-	 ZjDMPiIIqsXbNuUF7NvzSrHckZvQDA3DUkI54FGjOyB7lODrM1s4jpleoE+4h+07Wyfo2
-	 Ut+vkIewFz1Tzojr6AoMWJ2fs3qpvPJ59dvwPUN9GojtsEgcl7RRyWk9ZUmAvJ4xh7A==
+	t=1794374563;
+	b=4N9sydJuSyo2B9En3IEc9TR3ttcI5w6BxyouoV8URjoNXLuhwHYhq7wldZ3I8Dbu3pS+
+	 y0JcvcfrtvLE0bvk+qMnc1BSr3n+aJLrOP0kZjQdmb0RPFpXNIkL4IQNkKmAEO7Jk3uNn
+	 3hOuWhVOSuqPYkqR+jTZAoQ23Hrl87DUY5PXycwciy5fo3B6OlsuXhKW2WIslqyxEeJgk
+	 CcAwaai1ifrY11LZnhDD7LUF6+D1/qT9hW9yvPM6cqshpbmwi8lQ0SNY8GX48a7EaeJ05
+	 e3Jmb9/rD5KMmo6WGtKiVM7su/ZL6AOIWHGOkAUH+c1IxnCrzVrFx0JVQm/3c70dZLQ==
 ARC-Message-Signature: i=1; d=subspace.kernel.org; s=arc20261015;
-	a=rsa-sha256; c=relaxed/relaxed; t=1794371177;
-	h=DMARC-Filter:Received:DKIM-Signature:X-Google-DKIM-Signature:
-	 X-Gm-Message-State:X-Gm-Gg:X-Received:Received:From:To:Cc:Subject:
-	 Date:Message-ID:X-Mailer:In-Reply-To:References:MIME-Version:
-	 Content-Transfer-Encoding;
-	bh=5fVFyYp3e9+uqEfX9h8TpIz4lzT5VdcXQx7G7TjI+E4=;
-	b=MzE0yKdsJMOCzt8QYsgwjANBJPXgnFM10tnnrY726kDRXbl0bVlJg77kCqi7L7tWzDU8
-	 rM4nCED1krEXwmH0vwXkctJNEhlfrOD5KiyGO2FwLBlCwJtA6U8Icem3v8PMQOGMKSeQI
-	 1GNYdZwxeANYdR1zCgXSjw5k5zBREVclgSQOQG1empIApo3d8nA0sscW/O34UQsTfn7Zt
-	 akTw7m6hyHnygHOCQKr4ynRo4N3oNawj9C7Nt2QkiifRbx3+Q4fYuNoDS8pbeOkZBsd9g
-	 fyp3YUMAInP3O8+iH1xnsr1jn/WoTsLyJjDyP78zMGofAJmTPZ9WYU85PAhBsfgUnBw==
+	a=rsa-sha256; c=relaxed/relaxed; t=1794374563;
+	h=DMARC-Filter:X-SpamFilter-By:DKIM-Signature:Received:Received:
+	 Received:From:To:Subject:Thread-Topic:Thread-Index:Date:Message-ID:
+	 References:In-Reply-To:Accept-Language:Content-Language:
+	 x-originating-ip:Content-Type:Content-Transfer-Encoding:MIME-Version;
+	bh=olULrCy8N410ix5hyNXR6Ni0eo6KArvvPjHxonm34m0=;
+	b=DlrQ29t5iD+yUqlTJAyvoBI/a7opgzd2PgT7iU0PsXRfgIuynB4LPBSI3vEjCuZG+8AM
+	 ETEW+CktTes4vpsj4uAtdi+9WKGMdc6/4yh6hL4jUtvRq/5tX0pKxLxUNdGcg14qvmpZ/
+	 vTYeUnRTYjUfzEGYCIpP+CHN5F3bRPqJsBO82unv3ba0cNJTEtkAQF7Lms+1MUai/Mm3H
+	 HtP1CKjduWhkq/kDmxE8aJONpq9A93owwyH0WYgTNolPUhMmXlwgvWQQ8FwrK/PoqKM0P
+	 zX/f0fotPeC8diwR/Kh6TjfytHnVrMFKDVVQwIDnVB1qgUhQ2og5XSwrhPV0rP3nSKA==
 ARC-Authentication-Results: i=1; smtp.subspace.kernel.org; 
-	dmarc=pass header.from=gmail.com;
-	spf=pass smtp.mailfrom=gmail.com;
-	dkim=pass header.d=gmail.com header.i=@gmail.com header.a=rsa-sha256 header.s=20260707 header.b=c1KPIeC1;
-	arc=none smtp.remote-ip=209.85.216.52
-Received: from mail-pj1-f52.google.com (mail-pj1-f52.google.com [209.85.216.52])
-	(using TLSv1.3 with cipher TLS_AES_128_GCM_SHA256 (128/128 bits)
+	dmarc=pass header.from=realtek.com;
+	spf=pass smtp.mailfrom=realtek.com;
+	dkim=pass header.d=realtek.com header.i=@realtek.com header.a=rsa-sha256 header.s=dkim header.b=XBEgrX8h;
+	arc=none smtp.remote-ip=211.75.126.72
+Received: from rtits2.realtek.com.tw (rtits2.realtek.com [211.75.126.72])
+	(using TLSv1.3 with cipher TLS_AES_256_GCM_SHA384 (256/256 bits)
 	 key-exchange X25519 server-signature ECDSA (prime256v1) server-digest SHA256)
 	(No client certificate requested)
-	by smtp.subspace.kernel.org (Postfix) with ESMTPS id 00AD660A3808
-	for <linux-wireless@vger.kernel.org>; Wed, 11 Nov 2026 04:26:17 +0000 (UTC)
-DMARC-Filter: OpenDMARC Filter v1.4.2 smtp.subspace.kernel.org 00AD660A3808
-Authentication-Results: smtp.subspace.kernel.org; dmarc=pass (p=none dis=none) header.from=gmail.com
-Authentication-Results: smtp.subspace.kernel.org; spf=pass smtp.mailfrom=gmail.com
+	by smtp.subspace.kernel.org (Postfix) with ESMTPS id EA096606A31C
+	for <linux-wireless@vger.kernel.org>; Wed, 11 Nov 2026 05:22:41 +0000 (UTC)
+DMARC-Filter: OpenDMARC Filter v1.4.2 smtp.subspace.kernel.org EA096606A31C
+Authentication-Results: smtp.subspace.kernel.org; dmarc=pass (p=none dis=none) header.from=realtek.com
+Authentication-Results: smtp.subspace.kernel.org; spf=pass smtp.mailfrom=realtek.com
 Authentication-Results: smtp.subspace.kernel.org;
-	dkim=pass (2048-bit key) header.d=gmail.com header.i=@gmail.com header.a=rsa-sha256 header.s=20260707 header.b=c1KPIeC1
-Received: by mail-pj1-f52.google.com with SMTP id 98e67ed59e1d1-3ae691283ecso1541437a91.0
-        for <linux-wireless@vger.kernel.org>; Tue, 10 Nov 2026 20:26:16 -0800 (PST)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=gmail.com; s=20260707; t=1794371176; x=1794975976; darn=vger.kernel.org;
-        h=content-transfer-encoding:mime-version:references:in-reply-to
-         :message-id:date:subject:cc:to:from:from:to:cc:subject:date
-         :message-id:reply-to:content-type;
-        bh=5fVFyYp3e9+uqEfX9h8TpIz4lzT5VdcXQx7G7TjI+E4=;
-        b=c1KPIeC13Tdd2tYSxW6i5zgkQI/DV0auPMR6gJdC0jN4iDiD6lknFhSo10bdQZjVfD
-         zjtjXKQvObuOBVG0MK0sm827wJY+MLyfhojFxvhJ8zJgkCBvibSfO5pom0xX1Ncjkdjw
-         /SX+IIQTuZ6qhPh1nZvERnUnFLZQoDYnBKIkpCRNhkbkatcc6Yd7oJEnD2v8JS7BGfCE
-         KTuPw/qUKnNA3TQTNXSEWR0DhlRWe2RagVw5k/VAXZjBD4twZk2NMyuJeK6obuQnzV5y
-         Uku8uUWOsN49NfGNZtE683f32ROIzMVMV9gIY/sviJKuSwzmE23Mr/4N1YOtyJcteM33
-         C6SA==
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=1e100.net; s=20260707; t=1794371176; x=1794975976;
-        h=content-transfer-encoding:mime-version:references:in-reply-to
-         :message-id:date:subject:cc:to:from:x-gm-gg:x-gm-message-state:from
-         :to:cc:subject:date:message-id:reply-to:content-type;
-        bh=5fVFyYp3e9+uqEfX9h8TpIz4lzT5VdcXQx7G7TjI+E4=;
-        b=pjhrSnUuj+T6hovU5xvQIOZ4M3MawR0aymAfA32Ql/0Lz34EvlYmq8/+o/vq5NWStt
-         0je6/PMuoM2luz8S/P/lche17G6462HAYl3PnEbYgJU7EW5k0zmdqwhq0zGelcw2fjYl
-         OdBSU0r4GtVSOS0NQZu5NUbUwfeBcOtlBmE4JDIH2LfY3gGTuo8Ze61e33nNOyZCFq64
-         9o5g0cZe0Fu9KfV8771y92DFGX3gJ4+JmEmyJPnJWj39jrU57w6jk9Afl1+2RuBOjxXC
-         +z6TZIGVVKRkVVePFvtOpCJfRdd2Go8USiQZ9+RdkN+H9UkKOlQWrvKJxNPKmCakSeLL
-         bnGA==
-X-Gm-Message-State: APuU4Z/d38WPFZtSDqt8Uc8yjCbulrLKzAfLwv1K6O2IoKqcep25qcMf
-	yn5hq/zJSMO3f6DBDP7mXiy5nm7LoL8zEqUrP+14ryHLHH3zNFaOUF90
-X-Gm-Gg: AYBFou3ILhLVYmfmCw60jIXW/dlh8zKSggOtmpH5rArFrkJlQIiNcArg3sqIP5S/O0x
-	D4YTCZwBE5fSpU5HpEyRufXxCr4jqDX5O+3oS5bXPasFAOyjECoZhP5LB6cnJhf3+Zie8NPCLZc
-	ggAVNOdhhlRsaA/wwIZgt3WgGOEr2/v5pfeUiS2480SKSKag5itFP9cwN3YM2H3BlxGoqKR9hlv
-	OoguHQJqhXvdKey34PFnCpwmFAbsrEd+2XdgX3vc5l4YPjKnrbgsLynZ2QaHx6XabQRru+acmaF
-	mVuKxmPXsgI2yS41qFGlRQIGbPvAOOli2Cq6oiFrgtiOor1Ea1CanOolB1gfxOmdRPLzdlWFjk+
-	N17pyjnlrfdP0lxSM/eCTPsRNh3vqjgDbDW0bt8I8CDReRkmIRXyZLrWBJaHl3EpZU+JBzTYTug
-	Fsy5LsZvrug1smWQnmTR4w8k+JmoMGFdpdU12r7B/DHK2ZuN2UWg1hvQlLxJohKiVVHE0EumzQG
-	nqEjBHKjLvHkNlSW1kQKVAWbbe0qY+s+37Taz4cQaaZq8Wvm/QsjokGFLIAVoeBiP/Y54TZMshJ
-	XWEWvop1HmKsAX+AWkF5SY6tIkAmMGPwj1pgFdvDkDGWuTjNexG6akJXMSG25xb5zZzYIjiTDdw
-	Obs4rtBVkRz/BAW7dIkfI4nu8oHykOD0oiNuf44t/CBDIRSY/Ohway2TOhFs5b3zBLHIW7S0DJ3
-	pcS3A=
-X-Received: by 2002:a17:90a:da83:b0:3ac:860e:1af9 with SMTP id 98e67ed59e1d1-3b182fb013fmr942201a91.41.1794371176404;
-        Tue, 10 Nov 2026 20:26:16 -0800 (PST)
-Received: from ryzen.lan ([2601:644:8000:37f::e34])
-        by smtp.gmail.com with ESMTPSA id 98e67ed59e1d1-3b17db7df7csm2473927a91.11.2026.11.10.20.26.15
-        (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
-        Tue, 10 Nov 2026 20:26:15 -0800 (PST)
-From: Rosen Penev <rosenp@gmail.com>
-To: Arend van Spriel <arend.vanspriel@broadcom.com>
-Cc: linux-wireless@vger.kernel.org,
-	brcm80211@lists.linux.dev,
-	brcm80211-dev-list.pdl@broadcom.com,
-	linux-kernel@vger.kernel.org
-Subject: [PATCH wireless-next 4/7] wifi: brcmsmac: embed default_bss in brcms_c_info
-Date: Tue, 10 Nov 2026 20:25:51 -0800
-Message-ID: <20261111042554.232998-5-rosenp@gmail.com>
-X-Mailer: git-send-email 2.56.0
-In-Reply-To: <20261111042554.232998-1-rosenp@gmail.com>
-References: <20261111042554.232998-1-rosenp@gmail.com>
+	dkim=pass (2048-bit key, unprotected) header.d=realtek.com header.i=@realtek.com header.a=rsa-sha256 header.s=dkim header.b=XBEgrX8h
+X-SpamFilter-By: ArmorX SpamTrap 5.80 with qID 6AB5MPR902097213, This message is accepted by code: ctloc85258
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=realtek.com; s=dkim;
+	t=1794374545; bh=olULrCy8N410ix5hyNXR6Ni0eo6KArvvPjHxonm34m0=;
+	h=From:To:Subject:Date:Message-ID:References:In-Reply-To:
+	 Content-Type:Content-Transfer-Encoding:MIME-Version;
+	b=XBEgrX8hriU4GR3l08FLlb23uhY1e/q9id0pPQPrKfdVwi+ZVZnjldTKnLwqwi753
+	 bveCQg9EMwHcNOLXJFmK3VeH4LmXIJHsQbqZbpx+sqKgsa8Hv55cGiA7EzT6sz7C+r
+	 yLpVqGOJWxY+bE/vck7IOeKcECnOdANzwi1Wl/uO2XaAw5+sxZXu/DT5upSx4qGBST
+	 +s/NhKnIYue7atWcuC7NyOXric697Cncn9gR5uTvic2tcRrSFo6KbcTGdD6AAKlHmy
+	 ovv4481AKH3Rz1n3WcRexzc9DnBFYIifE9t8Qhrz9pOcESaeXSOLlPu0L9g13RjoOR
+	 r14ourcqq+CTw==
+Received: from mail.realtek.com (rtkexhmbs03.realtek.com.tw[10.21.1.53])
+	by rtits2.realtek.com.tw (8.15.2/3.29/5.94) with ESMTPS id 6AB5MPR902097213
+	(version=TLSv1.2 cipher=ECDHE-RSA-AES256-GCM-SHA384 bits=256 verify=FAIL);
+	Wed, 11 Nov 2026 13:22:25 +0800
+Received: from RTKEXHMBS06.realtek.com.tw (10.21.1.56) by
+ RTKEXHMBS03.realtek.com.tw (10.21.1.53) with Microsoft SMTP Server
+ (version=TLS1_2, cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id
+ 15.2.2562.56; Wed, 11 Nov 2026 13:22:24 +0800
+Received: from RTKEXHMBS06.realtek.com.tw ([fe80::eeeb:c765:ca73:5eef]) by
+ RTKEXHMBS06.realtek.com.tw ([fe80::eeeb:c765:ca73:5eef%10]) with mapi id
+ 15.02.2562.056; Wed, 11 Nov 2026 13:22:24 +0800
+From: Ping-Ke Shih <pkshih@realtek.com>
+To: Luka Gejak <luka.gejak@linux.dev>, "linux-wireless@vger.kernel.org"
+	<linux-wireless@vger.kernel.org>, "igor@listopad.email" <igor@listopad.email>
+Subject: RE: [RFC] Adding RTL8189ES SDIO support to rtw88
+Thread-Topic: [RFC] Adding RTL8189ES SDIO support to rtw88
+Thread-Index: AQHdcNYdZsJj5Khlj02TxSdgu8UcxrcmdvGAgAHELUA=
+Date: Wed, 11 Nov 2026 05:22:23 +0000
+Message-ID: <d34cd45d652f4b88a02c4795b0e1aaf2@realtek.com>
+References: <A11FF135-696D-4107-B5FC-BBBB05303926@listopad.email>
+ <977DC5C2-4EB7-45BD-9663-69E4094EE596@linux.dev>
+In-Reply-To: <977DC5C2-4EB7-45BD-9663-69E4094EE596@linux.dev>
+Accept-Language: en-US, zh-TW
+Content-Language: zh-TW
+Content-Type: text/plain; charset="utf-8"
+Content-Transfer-Encoding: base64
 X-Mailing-List: linux-wireless@vger.kernel.org
 List-Id: <linux-wireless.vger.kernel.org>
 List-Post: <mailto:linux-wireless@vger.kernel.org>
@@ -100,172 +80,71 @@ List-Unsubscribe: <mailto:linux-wireless+unsubscribe@vger.kernel.org>
 List-Owner: <mailto:linux-wireless+owner@vger.kernel.org>
 Precedence: list
 MIME-Version: 1.0
-Content-Transfer-Encoding: 8bit
 
-Replace the separately allocated default_bss pointer with a
-directly embedded struct brcms_bss_info in brcms_c_info,
-removing one kzalloc()/kfree() pair and its OOM error path.
-
-Signed-off-by: Rosen Penev <rosenp@gmail.com>
----
- .../broadcom/brcm80211/brcmsmac/ampdu.c       |  2 +-
- .../broadcom/brcm80211/brcmsmac/main.c        | 35 ++++++++-----------
- .../broadcom/brcm80211/brcmsmac/main.h        |  2 +-
- 3 files changed, 16 insertions(+), 23 deletions(-)
-
-diff --git a/drivers/net/wireless/broadcom/brcm80211/brcmsmac/ampdu.c b/drivers/net/wireless/broadcom/brcm80211/brcmsmac/ampdu.c
-index fc7a5dd2e5d8..b40761e571c2 100644
---- a/drivers/net/wireless/broadcom/brcm80211/brcmsmac/ampdu.c
-+++ b/drivers/net/wireless/broadcom/brcm80211/brcmsmac/ampdu.c
-@@ -862,7 +862,7 @@ brcms_c_ampdu_dotxstatus_complete(struct ampdu_info *ampdu, struct scb *scb,
- 				brcms_dbg_ht(wlc->hw->d11core,
- 					  "%s: Pkt tx suppressed, illegal channel possibly %d\n",
- 					  __func__, CHSPEC_CHANNEL(
--					  wlc->default_bss->chanspec));
-+					  wlc->default_bss.chanspec));
- 			} else {
- 				if (supr_status != TX_STATUS_SUPR_FRAG)
- 					brcms_err(wlc->hw->d11core,
-diff --git a/drivers/net/wireless/broadcom/brcm80211/brcmsmac/main.c b/drivers/net/wireless/broadcom/brcm80211/brcmsmac/main.c
-index d000e2a70870..2140feb86964 100644
---- a/drivers/net/wireless/broadcom/brcm80211/brcmsmac/main.c
-+++ b/drivers/net/wireless/broadcom/brcm80211/brcmsmac/main.c
-@@ -420,7 +420,6 @@ static void brcms_c_detach_mfree(struct brcms_c_info *wlc)
- 
- 	kfree(wlc->bsscfg);
- 	kfree(wlc->pub);
--	kfree(wlc->default_bss);
- 	kfree(wlc->protection);
- 	kfree(wlc->stf);
- 	kfree(wlc->corestate);
-@@ -461,12 +460,6 @@ brcms_c_attach_malloc(uint unit, uint *err, uint devid)
- 	}
- 	wlc->hw->wlc = wlc;
- 
--	wlc->default_bss = kzalloc_obj(*wlc->default_bss, GFP_ATOMIC);
--	if (wlc->default_bss == NULL) {
--		*err = 1010;
--		goto fail;
--	}
--
- 	wlc->bsscfg = kzalloc_obj(*wlc->bsscfg, GFP_ATOMIC);
- 	if (wlc->bsscfg == NULL) {
- 		*err = 1011;
-@@ -822,7 +815,7 @@ brcms_c_dotxstatus(struct brcms_c_info *wlc, struct tx_status *txs)
- 		brcms_dbg_tx(wlc->hw->d11core,
- 			     "Pkt tx suppressed, dest chan %u, current %d\n",
- 			     (xfts >> XFTS_CHANNEL_SHIFT) & 0xff,
--			     CHSPEC_CHANNEL(wlc->default_bss->chanspec));
-+			     CHSPEC_CHANNEL(wlc->default_bss.chanspec));
- 	}
- 
- 	tx_frame_count =
-@@ -3311,7 +3304,7 @@ brcms_default_rateset(struct brcms_c_info *wlc, struct brcms_c_rateset *rs)
- 	brcms_c_rateset_default(rs, NULL, wlc->band->phytype,
- 		wlc->band->bandtype, false, BRCMS_RATE_MASK_FULL,
- 		(bool) (wlc->pub->_n_enab & SUPPORT_11N),
--		brcms_chspec_bw(wlc->default_bss->chanspec),
-+		brcms_chspec_bw(wlc->default_bss.chanspec),
- 		wlc->stf->txstreams);
- }
- 
-@@ -4639,7 +4632,7 @@ static void brcms_c_bss_default_init(struct brcms_c_info *wlc)
- {
- 	u16 chanspec;
- 	struct brcms_band *band;
--	struct brcms_bss_info *bi = wlc->default_bss;
-+	struct brcms_bss_info *bi = &wlc->default_bss;
- 
- 	/* init default and target BSS with some sane initial values */
- 	memset(bi, 0, sizeof(*bi));
-@@ -5198,9 +5191,9 @@ int brcms_c_set_gmode(struct brcms_c_info *wlc, u8 gmode, bool config)
- 	}
- 
- 	/* Set default bss rateset */
--	wlc->default_bss->rateset.count = rs.count;
--	memcpy(wlc->default_bss->rateset.rates, rs.rates,
--	       sizeof(wlc->default_bss->rateset.rates));
-+	wlc->default_bss.rateset.count = rs.count;
-+	memcpy(wlc->default_bss.rateset.rates, rs.rates,
-+	       sizeof(wlc->default_bss.rateset.rates));
- 
- 	return ret;
- }
-@@ -5221,13 +5214,13 @@ int brcms_c_set_nmode(struct brcms_c_info *wlc)
- 		wlc->pub->_n_enab = SUPPORT_HT;
- 	else
- 		wlc->pub->_n_enab = SUPPORT_11N;
--	wlc->default_bss->flags |= BRCMS_BSS_HT;
-+	wlc->default_bss.flags |= BRCMS_BSS_HT;
- 	/* add the mcs rates to the default and hw ratesets */
--	brcms_c_rateset_mcs_build(&wlc->default_bss->rateset,
-+	brcms_c_rateset_mcs_build(&wlc->default_bss.rateset,
- 			      wlc->stf->txstreams);
- 	for (i = 0; i < wlc->pub->_nbands; i++)
- 		memcpy(wlc->bandstate[i].hw_rateset.mcs,
--		       wlc->default_bss->rateset.mcs, MCSSET_LEN);
-+		       wlc->default_bss.rateset.mcs, MCSSET_LEN);
- 
- 	return 0;
- }
-@@ -5269,7 +5262,7 @@ brcms_c_set_internal_rateset(struct brcms_c_info *wlc,
- 
-  good:
- 	/* apply new rateset */
--	memcpy(&wlc->default_bss->rateset, &new,
-+	memcpy(&wlc->default_bss.rateset, &new,
- 	       sizeof(struct brcms_c_rateset));
- 	memcpy(&wlc->bandstate[bandunit].defrateset, &new,
- 	       sizeof(struct brcms_c_rateset));
-@@ -5299,7 +5292,7 @@ int brcms_c_set_channel(struct brcms_c_info *wlc, u16 channel)
- 			wlc->bandinit_pending = false;
- 	}
- 
--	wlc->default_bss->chanspec = chspec;
-+	wlc->default_bss.chanspec = chspec;
- 	/* brcms_c_BSSinit() will sanitize the rateset before
- 	 * using it.. */
- 	if (wlc->pub->up && (wlc_phy_chanspec_get(wlc->band->pi) != chspec)) {
-@@ -5343,7 +5336,7 @@ void brcms_c_get_current_rateset(struct brcms_c_info *wlc,
- 	if (wlc->pub->associated)
- 		rs = &wlc->bsscfg->current_bss.rateset;
- 	else
--		rs = &wlc->default_bss->rateset;
-+		rs = &wlc->default_bss.rateset;
- 
- 	/* Copy only legacy rateset section */
- 	currs->count = rs->count;
-@@ -5370,7 +5363,7 @@ int brcms_c_set_rateset(struct brcms_c_info *wlc, struct brcm_rateset *rs)
- 		if (wlc->pub->associated)
- 			mcsset_bss = &wlc->bsscfg->current_bss;
- 		else
--			mcsset_bss = wlc->default_bss;
-+			mcsset_bss = &wlc->default_bss;
- 		memcpy(internal_rs.mcs, &mcsset_bss->rateset.mcs[0],
- 		       MCSSET_LEN);
- 	}
-@@ -5403,7 +5396,7 @@ int brcms_c_set_beacon_period(struct brcms_c_info *wlc, u16 period)
- 	if (period == 0)
- 		return -EINVAL;
- 
--	wlc->default_bss->beacon_period = period;
-+	wlc->default_bss.beacon_period = period;
- 
- 	bcnint_us = period << 10;
- 	brcms_c_time_lock(wlc);
-diff --git a/drivers/net/wireless/broadcom/brcm80211/brcmsmac/main.h b/drivers/net/wireless/broadcom/brcm80211/brcmsmac/main.h
-index 0e6a5edc74c8..94966418b069 100644
---- a/drivers/net/wireless/broadcom/brcm80211/brcmsmac/main.h
-+++ b/drivers/net/wireless/broadcom/brcm80211/brcmsmac/main.h
-@@ -524,7 +524,7 @@ struct brcms_c_info {
- 	s8 ofdm_40txbw;
- 	s8 mimo_40txbw;
- 
--	struct brcms_bss_info *default_bss;
-+	struct brcms_bss_info default_bss;
- 
- 	u16 mc_fid_counter;
- 
--- 
-2.56.0
-
+THVrYSBHZWphayA8bHVrYS5nZWpha0BsaW51eC5kZXY+IHdyb3RlOg0KPiBIaSBJZ29yLA0KPiAN
+Cj4gVGhhbmtzIGZvciBhc2tpbmcgYmVmb3JlIHNlbmRpbmcgaXQuIFBpbmctS2UgaGFzIHRoZQ0K
+PiBmaW5hbCB3b3JkIG9uIHRoaXMsIHNvIHRoaXMgaXMgb25seSBteSB2aWV3IGFmdGVyIGFkZGlu
+ZyBSVEw4NzIzQlMgdG8gdGhlDQo+IHJ0dzg4Lg0KPiANCj4gT24gTm92ZW1iZXIgMTAsIDIwMjYg
+NTo1MDozOCBBTSBHTVQrMDE6MDAsIGlnb3JAbGlzdG9wYWQuZW1haWwgd3JvdGU6DQo+IA0KPiA+
+IFdvdWxkIHN1cHBvcnQgZm9yIFJUTDgxODlFUyBTRElPIGRldmljZXMsIGJhc2VkIG9uIHRoZSBS
+VEw4MTg4RSBULXNlcmllcw0KPiA+IChTRElPIElEIDAyNGM6ODE3OSksIGJlIHdlbGNvbWUgaW4g
+cnR3ODg/DQo+IA0KPiBJIHRoaW5rIHNvLiBBcyBmYXIgYXMgSSBjYW4gc2VlIG5vdGhpbmcgaW4g
+dGhlIGtlcm5lbCBiaW5kcyB0aGlzIFNESU8gSUQNCj4gdG9kYXkuIHJ0bHdpZmkgaGFzIFJUTDgx
+ODhFRSBvbiBQQ0llIGFuZCBydGw4eHh4dSBoYXMgUlRMODE4OEVVIG9uIFVTQiwNCj4gd2hpbGUg
+cnR3ODggYWxyZWFkeSBoYXMgdGhlIFNESU8gY29kZSBhbmQgb3RoZXIgODA1MSBiYXNlZCA4MDIu
+MTFuIGNoaXBzDQo+IGxpa2UgUlRMODcwM0IgYW5kIFJUTDg3MjNCLg0KDQpNYXliZSBvbmUgZGF5
+IHBlb3BsZSBjYW4gbW92ZSBSVEw4MTg4RUUgdG8gcnR3ODggYXMgd2VsbC4gRm9yIG5vdywNCnJ0
+dzg4IGlzIG9ubHkgb25lIGRyaXZlciBzdXBwb3J0aW5nIFJlYWx0ZWsgV2lGaSBTRElPLCBzbyBs
+ZXQncyBhZGQNClJUTDgxODlFUyB0byBydHc4OC4gDQoNCj4gDQo+IE9uIG15IFJUTDg3MjNCUyBz
+ZXJpZXMgUGluZy1LZSBzYWlkIGl0IGlzbid0IHNvIGdvb2QgdG8gbWFpbnRhaW4gdGhyZWUNCj4g
+aW50ZXJmYWNlcyBpbiB0aGUgdHJlZSBkcml2ZXJzLCBidXQgaGUga2VwdCB0aGUgZXhpc3Rpbmcg
+b25lcyBhbmQgdG9vayB0aGUNCj4gbmV3IG9uZS4gU28gSSB3b3VsZCBleHBlY3QgdGhlIHNhbWUg
+c3BsaXQgdG8gYmUgYWNjZXB0YWJsZSBoZXJlLg0KPiANCj4gUmVmdXNpbmcgY3V0IEkgc2VlbXMg
+ZmluZSB0b28uIHJ0bDh4eHh1IGRvZXMgdGhlIHNhbWUgZm9yIFJUTDgxODhFVS4NCj4gDQo+IFsg
+Li4uIF0NCj4gDQo+ID4gVGhlIGltcGxlbWVudGF0aW9uIGFkZHMgY2hpcCBvcGVyYXRpb25zLCBy
+ZWdpc3RlciB0YWJsZXMsIGZpcm13YXJlLA0KPiA+IGFuZCBhbiBTRElPIGJpbmRpbmcuDQo+IA0K
+PiBUaGUgZmlybXdhcmUgaW4gdGhlIFBSIGlzIGJ5dGUgZm9yIGJ5dGUgdGhlIHNhbWUgYXMNCj4g
+cnRsd2lmaS9ydGw4MTg4ZXVmdy5iaW4sIHdoaWNoIGlzIGFscmVhZHkgaW4gdGhlIGZpcm13YXJl
+IHJlcG9zaXRvcnkgYW5kDQo+IHdoaWNoIHJ0bDh4eHh1IHVzZXMuIFNvIEkgZG9uJ3QgdGhpbmsg
+eW91IG5lZWQgYSBuZXcgYmxvYi4gWW91IGNvdWxkDQo+IHJlcXVlc3QgdGhhdCBuYW1lLCBvciBh
+ZGQgYSBMaW5rOiBpbiBXSEVOQ0UgaWYgUGluZy1LZSBwcmVmZXJzIGFuIHJ0dzg4DQo+IHBhdGgu
+DQoNCkkgcHJlZmVyIGEgTGluay4gT25lIGRheSBydHc4OCBjYW4gc3VwcG9ydCBSVEw4MTg4RUUs
+IGFuZCByZW1vdmUgUlRMODE4OEVFDQpmcm9tIHJ0bHdpZmkuIEl0J2QgYmUgZWFzaWVyIHRvIG1v
+dmUgZmlybXdhcmUgZnJvbSBydGx3aWZpLyB0byBydHc4OC8NCg0KPiANCj4gWyAuLi4gXQ0KPiAN
+Cj4gPiBXb3VsZCB0aGlzIGJlIGFuIGFjY2VwdGFibGUgZGlyZWN0aW9uIGZvciBydHc4OD8gQXJl
+IHRoZXJlIGFyY2hpdGVjdHVyYWwNCj4gPiBjb25jZXJucyBvciByZXF1aXJlbWVudHMgdGhhdCBz
+aG91bGQgYmUgYWRkcmVzc2VkIGJlZm9yZSBzdWJtaXR0aW5nDQo+ID4gdGhlIHNlcmllcyBmb3Ig
+cmV2aWV3Pw0KPiANCj4gRnJvbSBteSBxdWljayBza2ltIG9mIHRoZSBQUiwgSSB0aGluayB0aGUg
+ZGlyZWN0aW9uIGlzIGZpbmUuIFdoYXQgSSB3b3VsZA0KPiB3b3JyeSBhYm91dCBpcyBob3cgbXVj
+aCBpdCBjaGFuZ2VzIHRoZSBzaGFyZWQgY29kZS4gSXQgbmVlZHMgYW4gYWRkaXRpb25hbA0KPiAy
+MCBjYWxsYmFja3MgaW4gcnR3X2NoaXBfb3BzIGFuZCBtb3JlIHRoYW4gMjAgY2hlY2tzIGZvciB0
+aGlzIGNoaXAgaW4gdGhlDQo+IGNvcmUgYW5kIFNESU8gY29kZS4gT24gbXkgc2VyaWVzIFBpbmct
+S2UgYXNrZWQgd2h5IHRoZSBleGlzdGluZyBsb2dpYw0KPiBkaWRuJ3Qgd29yayBmb3Igc3BlY2lh
+bCBjYXNlcyBsaWtlIHRoZXNlLCBzbyBJIHdvdWxkIGV4cGVjdCBlYWNoIG9uZSB0bw0KPiBuZWVk
+IGEgcmVhc29uLg0KPiANCj4gQSBmZXcgZXhhbXBsZXM6DQo+IA0KPiBydHc4MTg4ZS5jIGNhc3Rz
+IHJ0d2Rldi0+cHJpdiB0byBzdHJ1Y3QgcnR3X3NkaW8sIGFuZCBub3RoaW5nIG91dHNpZGUNCj4g
+c2Rpby5jIHVzZXMgdGhhdCBzdHJ1Y3QgdG9kYXkuIE1heWJlIHRob3NlIHBhcnRzIGNhbiBiZWNv
+bWUgaGNpIG9wcy4NCj4gDQo+IHJ0d19zZGlvX3R4X2hhbmRsZXIoKSByZWFkcyBob3N0LT5zZGlv
+X2lycV9wZW5kaW5nLCB3aGljaCBhcyBmYXIgYXMgSSBjYW4NCj4gc2VlIG9ubHkgdGhlIG1tYyBj
+b3JlIHVzZXMgdG9kYXkuIFRYIGtlZXBpbmcgdGhlIElSUSB3b3JrZXIgYXdheSBmcm9tIHRoZQ0K
+PiBob3N0IGFsc28gZG9lc24ndCBzb3VuZCBzcGVjaWZpYyB0byB0aGlzIGNoaXAsIHNvIEkgdGhp
+bmsgdGhhdCB3YW50cyBhDQo+IGZpeCBpbiB0aGUgY29tbW9uIFNESU8gVFggcGF0aC4NCj4gDQo+
+IHJ0dzgxODhlX2VmdXNlX2dyYW50KCkgYW5kIHJ0dzgxODhlX2ZhbHNlX2FsYXJtX3N0YXRpc3Rp
+Y3MoKSBsb29rIHRoZSBzYW1lDQo+IGFzIHRoZSBydHc4NzIzeC5jIGhlbHBlcnMgdGhhdCBSVEw4
+NzIzQiB1c2VzLiBNYXliZSB0aG9zZSBjYW4gYmUgc2hhcmVkDQo+IGluc3RlYWQgb2YgY29waWVk
+Lg0KPiANCj4gQSBtb3JlIHRob3JvdWdoIHJldmlldyB3aWxsIGZvbGxvdyBvbmNlIHRoZSBzZXJp
+ZXMgaXMgcG9zdGVkLg0KPiANCj4gRm9yIHRoZSBhY3R1YWwgc2VyaWVzLCBwbGVhc2UgYmFzZSBp
+dCBvbiBydHctbmV4dCBpbnN0ZWFkIG9mIHRoZSBsd2Zpbmdlcg0KPiB0cmVlLiBTZXZlcmFsIG9m
+IHRoZSBjb3JlIGZpbGVzIGRvbid0IGFwcGx5IHRoZXJlLCBhbmQgdGhlDQo+IExJTlVYX1ZFUlNJ
+T05fQ09ERSBjaGVja3MgaGF2ZSB0byBnby4gSXQgYWxzbyBuZWVkcyB0aGUgS2NvbmZpZyBhbmQN
+Cj4gTWFrZWZpbGUgZW50cmllcywgdGhlIGRldmljZSBJRCBpbiBzZGlvX2lkcy5oLCBhbmQgdGhl
+IGZpeGVzIGZyb20geW91cg0KPiBsYXRlciBjb21taXRzIHNxdWFzaGVkIGludG8gdGhlIHBhdGNo
+ZXMgdGhleSBmaXguIFRoZSBzaWduIG9mZiBzaG91bGQgdXNlDQo+IGEgcmVhbCBhZGRyZXNzIGlu
+c3RlYWQgb2YgdGhlIEdpdEh1YiBub3JlcGx5IG9uZS4NCj4gDQo+IFlvdSBjYW4gYWxzbyB0YWtl
+IGEgbG9vayBhdCBob3cgdGhlIFJUTDg3MjNCIHNlcmllcyB3ZW50IHVwc3RyZWFtIGZvcg0KPiBy
+ZWZlcmVuY2UsIGZyb20gdGhlIFJGQyB0byB0aGUgdmVyc2lvbiB0aGF0IHdhcyBhcHBsaWVkOg0K
+PiANCj4gaHR0cHM6Ly9sb3JlLmtlcm5lbC5vcmcvbGludXgtd2lyZWxlc3MvY292ZXIuMTc4NDA0
+NzU2MS5naXQubHVrYS5nZWpha0BsaW51eC5kZXYvDQo+IGh0dHBzOi8vbG9yZS5rZXJuZWwub3Jn
+L2xpbnV4LXdpcmVsZXNzLzIwMjYxMDA2MTMwNzAxLjEyMDQ2MC0xLWx1a2EuZ2VqYWtAbGludXgu
+ZGV2Lw0KDQpBZ3JlZS4gTHVrYSwgVGhhbmtzIGZvciBzaGFyaW5nIHRoZXNlIGV4cGVyaWVuY2Vz
+Lg0KDQoNCg==
