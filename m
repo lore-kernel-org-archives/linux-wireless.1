@@ -1,55 +1,97 @@
-Authentication-Results: smtp.subspace.kernel.org; arc=none smtp.remote-ip=159.226.251.25
+Authentication-Results: smtp.subspace.kernel.org; arc=none smtp.remote-ip=209.85.161.45
 ARC-Seal: i=1; d=subspace.kernel.org; s=arc20261015; a=rsa-sha256; cv=none;
-	t=1794368396;
-	b=zvq8CBCqRG+Hg05pqM8LIQlsqyC6yW/tx+uFnIztOvRzrShtj3QhM2JPv6Y7xqQFpKCp
-	 qxErJV6bT8ML47q7YVkdGISIHf6er81hAPyLPuNZrTAnwIn04oyVLlKI8XCQrn13fx0UP
-	 PPce4Zm51aa8IGMop7oMy6KMjz4RW6TqALW7YhMOeLhGYljoCLPm6ozLnIFsiAIwm2GoY
-	 r1ozdMHVi0qkd5SItpYyDnH6hQM1jDDdh17VCaZw0iEE0/qdgx/n7TwKTBo8kxRxrZhv9
-	 6FmDrP5Yp/bE7ih/FcVFDKw858qgH+wjobdRWRhKclYuqdLqYL0sO2GW8MG9JeIIhaA==
+	t=1794368665;
+	b=qK+5DByVaCF9FlcOxX/6YL9x7v1en6cfsKkiQ/uugBtucoyUZcoSU0cKg5swESCle5Q6
+	 SkDlYjO0UaKfWF0vGGntZJA1eUjopGXrProzk2Wjci1LM07/eBM81EEEw/aR5Qjq1xD+R
+	 mWEqjGUX9oFBafuWRu0kWAg/86p+4U2cW48Wz21T5BbFkzooTN5lS23oTsHzyG4doaiBM
+	 8xKmA2UGwwTntU4IXoe22NmABocJe15owpMb4KGjz0G1bQzfnlAChH7ghqUPUD1UMpCEi
+	 77t8FbqejQAspeMsBuBs18KHWlLrQekWVa++j5bnVYT0jfTnejbWJdKIhBaAtiPMgmw==
 ARC-Message-Signature: i=1; d=subspace.kernel.org; s=arc20261015;
-	a=rsa-sha256; c=relaxed/relaxed; t=1794368396;
-	h=DMARC-Filter:Received:From:To:Cc:Subject:In-Reply-To:References:Date:
-	 Message-ID:Content-Type:Content-Transfer-Encoding:MIME-Version:
-	 X-CM-TRANSID:X-Coremail-Antispam:X-Originating-IP:X-CM-SenderInfo;
-	bh=k8pe3tOEsqNneCAZxFljqZ7LcXG/k88tOXHdLWz/vDc=;
-	b=Mcv1xgw5G6ywwkwNtK2yF6nAmnvo+EWm1pEjmlkkO9d8pIJR/Ul8AseGx6BzZAgVEu3r
-	 qcYSUpIo9II/2f8gc1JSiLBJwV2C8Dx7aACmzr2k2uL4ib3iYK7dhAWy8xmeZ/5sEVdSH
-	 bogs1q6H8g6UC2HWCBrcqbDVrLySL8nZjziBc0LA2MougBULA9EXcy1H1/JzISIy2IX6D
-	 IT8FFTyo1P05rl3rSk1bj5MwPxtHZ4JnSyoctG7/K47xjEnj+FmeliI0GDvPQNcyyvl2K
-	 SDfNESSMbYQt1B2gECWC/HZcFpzH7d/GKjCse2xeU0nuNhxMmcsDkYVjuu1rep3dWMA==
+	a=rsa-sha256; c=relaxed/relaxed; t=1794368665;
+	h=DMARC-Filter:Received:DKIM-Signature:X-Google-DKIM-Signature:
+	 X-Gm-Message-State:X-Gm-Gg:X-Received:Received:From:To:Cc:Subject:
+	 Date:Message-ID:X-Mailer:MIME-Version:Content-Transfer-Encoding;
+	bh=rc+P9eOpmSqibWOjblOYo4mq9VjvGRRzJUsMEztZL+k=;
+	b=LWllEs76fZqi/CJOGMAM6IEUNGt+DK/e2DYYvM7LrExHmet65PBk0ykw9VW/U38bfuaW
+	 FRMJqfuXA8NmCQbffhuOd+m1JlRXLdpuEbzpoLzKCnqsft22TsF902xDJBOZS4yONKBQI
+	 PZl613gozsFMSJJ6Q3Tqpfb/iPVE650F8//nKgJbW/Z061M7vEWbaZOF5hih+PqnkQRxN
+	 pN9mRoCeRHfs7+aVl58+3svqO/Tx2a+0U6Ef2GndsB8Re1oZjDvUwMWMvypTh7eRp0Cpy
+	 iTvHHuKTL5HbfIsVZ6fSzDDjJP3Hnqob/PCHOLiye1zKxGcWujU2QKHnw3viy1eWhow==
 ARC-Authentication-Results: i=1; smtp.subspace.kernel.org; 
-	dmarc=none header.from=iscas.ac.cn;
-	spf=pass smtp.mailfrom=iscas.ac.cn;
-	arc=none smtp.remote-ip=159.226.251.25
-Received: from cstnet.cn (smtp25.cstnet.cn [159.226.251.25])
-	(using TLSv1.3 with cipher TLS_AES_256_GCM_SHA384 (256/256 bits)
+	dmarc=pass header.from=gmail.com;
+	spf=pass smtp.mailfrom=gmail.com;
+	dkim=pass header.d=gmail.com header.i=@gmail.com header.a=rsa-sha256 header.s=20260707 header.b=lcjSgRpm;
+	arc=none smtp.remote-ip=209.85.161.45
+Received: from mail-oo1-f45.google.com (mail-oo1-f45.google.com [209.85.161.45])
+	(using TLSv1.3 with cipher TLS_AES_128_GCM_SHA256 (128/128 bits)
 	 key-exchange X25519 server-signature ECDSA (prime256v1) server-digest SHA256)
 	(No client certificate requested)
-	by smtp.subspace.kernel.org (Postfix) with ESMTPS id 773CC606A31C;
-	Wed, 11 Nov 2026 03:39:53 +0000 (UTC)
-DMARC-Filter: OpenDMARC Filter v1.4.2 smtp.subspace.kernel.org 773CC606A31C
-Authentication-Results: smtp.subspace.kernel.org; dmarc=none (p=none dis=none) header.from=iscas.ac.cn
-Authentication-Results: smtp.subspace.kernel.org; spf=pass smtp.mailfrom=iscas.ac.cn
-Received: from [172.100.0.8] (unknown [36.110.52.2])
-	by APP-05 (Coremail) with SMTP id zQCowAB3DrSB4_NqwzzZAA--.16282S2;
-	Wed, 11 Nov 2026 11:39:46 +0800 (CST)
-From: Wentao Liang <vulab@iscas.ac.cn>
-To: Laurent Pinchart <laurent.pinchart@ideasonboard.com>
-Cc: Jeff Johnson <jeff.johnson@oss.qualcomm.com>,
- Jeff Johnson <jjohnson@kernel.org>, linux-wireless@vger.kernel.org,
- ath11k@lists.infradead.org, linux-kernel@vger.kernel.org,
- workflows@vger.kernel.org
-Subject:
- Re: [PATCH RESEND] wifi: ath11k: release the rproc reference on teardown
-In-Reply-To: <20261110122714.GA3809@killaraus.ideasonboard.com>
-References: <20261103102915.1341148-1-vulab@iscas.ac.cn>
- <a39b1918-5d04-452b-8b5a-0703963f4587@oss.qualcomm.com>
- <179430684554.3011466.3431045638041318447@iscas.ac.cn>
- <20261110122714.GA3809@killaraus.ideasonboard.com>
-Date: Wed, 11 Nov 2026 03:39:57 -0000
-Message-ID: <179436839700.3055208.16759622808608708086@iscas.ac.cn>
-Content-Type: text/plain; charset="utf-8"
-Content-Transfer-Encoding: 7bit
+	by smtp.subspace.kernel.org (Postfix) with ESMTPS id 55736606A324
+	for <linux-wireless@vger.kernel.org>; Wed, 11 Nov 2026 03:44:24 +0000 (UTC)
+DMARC-Filter: OpenDMARC Filter v1.4.2 smtp.subspace.kernel.org 55736606A324
+Authentication-Results: smtp.subspace.kernel.org; dmarc=pass (p=none dis=none) header.from=gmail.com
+Authentication-Results: smtp.subspace.kernel.org; spf=pass smtp.mailfrom=gmail.com
+Authentication-Results: smtp.subspace.kernel.org;
+	dkim=pass (2048-bit key) header.d=gmail.com header.i=@gmail.com header.a=rsa-sha256 header.s=20260707 header.b=lcjSgRpm
+Received: by mail-oo1-f45.google.com with SMTP id 006d021491bc7-702fd86d674so1364526eaf.2
+        for <linux-wireless@vger.kernel.org>; Tue, 10 Nov 2026 19:44:24 -0800 (PST)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+        d=gmail.com; s=20260707; t=1794368663; x=1794973463; darn=vger.kernel.org;
+        h=content-transfer-encoding:mime-version:message-id:date:subject:cc
+         :to:from:from:to:cc:subject:date:message-id:reply-to:content-type;
+        bh=rc+P9eOpmSqibWOjblOYo4mq9VjvGRRzJUsMEztZL+k=;
+        b=lcjSgRpmHuggSjhLdMHCnVvH/bPQWR68Mb5S3pirIshxAAOFAwuzdPIoiY5Q2wL+Vw
+         Yhug/XMF8ZDHULfO0FYBg/LLd9IWrLa6mRdEdGUkB/SFbtHo4kvjkBzjgrByaod8g8tk
+         Dx5FsYsmhLSdCykojfTNjD2NEFALj2A4moqJFlH9hwJ/6WFbv9VFd0TOO9MT8p57cfzE
+         O5Ndz5TSFcodXjsbtvIKSfi2Hh6Ss6+zpqwtcXuEdbtuO2XK8iYaNGq4xMUPXnFZbJPG
+         MdqRETmoGSnW2R+vTmyW44vjbrCQOyxFD31eS7RDt3UB4iy71huiaM4AlzOcZ/3kRJj2
+         2Niw==
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+        d=1e100.net; s=20260707; t=1794368663; x=1794973463;
+        h=content-transfer-encoding:mime-version:message-id:date:subject:cc
+         :to:from:x-gm-gg:x-gm-message-state:from:to:cc:subject:date
+         :message-id:reply-to:content-type;
+        bh=rc+P9eOpmSqibWOjblOYo4mq9VjvGRRzJUsMEztZL+k=;
+        b=AErek/FWEGNNj31EZdousy/eM9YP/kACKJKshOxRo7s9lk33FzsnkXiGTi/xJBY4nM
+         BrHUVCgK59vmhqp4+cOa4apnQnRks+xjxfDYQ5x+XvuBOjWCKTWPCgOdMXvHJefDKhMj
+         APlKWtbcn9X+mrI81Y1MVsqyzmT8iXOv7LZEm5vi4c6PAAsmj5i0pn9BFVFCU/pF4jh1
+         kMXq/i8FQFoUjiFoKu5unHj7aHFb6kc56JsWvCw/qFHUiwk5MNJU2IVKNKpQXxgIM77E
+         DsMrjzAnugdTLUJ8LGsAgEBjUuV3yVTlhFcbbuIuQl1Mt/niCbeBYr6IVa35sarwX/Uh
+         AO+Q==
+X-Gm-Message-State: APuU4Z/gMweui7YMpDBNaqHSgB/dr/yHTmALcjNc+yipEOOnalFP8CK+
+	VDeXvFjAvDTyV26C6KTl/rpViC4VCYmINhZ9gPCLG/JHRTVX2MuQCTv8
+X-Gm-Gg: AYBFou3vX3LQKjqDyddTPy9iQlVter/7PpgHXSPtRQ8x5jd8GsiHSw41pa5RaV2hCZD
+	6ZUgmPtHzF6h5mUlJqy7Pg1lhaewzRW6WKLfAbza49zKAjl/p2RJJflHMRoTijvcHvYATmxfM9j
+	HTEe326/Qm8luvbyocK3MbER/1yfz3meekGFPM2iukCSR26G6zVQPscoAoNWRL9787dWvCc/4yp
+	j8EOHwVJEFoajSX9xIjbI/10xIlhGXeShaVkDw/OGaxikaD65vhq+hCg8yp86P24aiJMajA8SAI
+	EXKJG44hmLTJh513b87b1fnGZ3bNi3o4aoLGsxufuOuyUqkpbKI/jd7sLTlM29THXtd9XnFR4MT
+	FFvHQmAKZbCyTSlb2/hxiTXUT5CdH7iDwaeFKHwncXzxB0UzoEHx9jahy2oQyflcZL33wff0sUE
+	Smrb3fCF+akGbDWHltBx7IkiS+0U58klA7XCz52px582vU1loyoxkEcJsZdK1FHnJqnU1pQPra7
+	jAQL9dScyNmV2D53LQCz16uNLp2f8nbg22IjD3EhOyyBjkHu4QCc4FHkdcSVYAL3mvxKGRJEcEu
+	M3uGhHFZxzTAGVWvUS47TubEPJh6y0uDtGKaXRJE2StYqm0BSK6u3JCsFYJTc+4F//kGRXqpu+z
+	csu62HAQwJwqbgL71kP0S4FafvUipnig8w0yK/Qv//n24hOOTATvEV27dUORTzJkfJXXn2Hfbiz
+	AMnw==
+X-Received: by 2002:a05:6820:1ca4:b0:6f6:1e3a:6fc with SMTP id 006d021491bc7-7191795fda6mr882755eaf.79.1794368663202;
+        Tue, 10 Nov 2026 19:44:23 -0800 (PST)
+Received: from ryzen.lan ([2601:644:8000:37f::e34])
+        by smtp.gmail.com with ESMTPSA id 586e51a60fabf-4ae23031a4dsm2487525fac.14.2026.11.10.19.44.20
+        (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
+        Tue, 10 Nov 2026 19:44:22 -0800 (PST)
+From: Rosen Penev <rosenp@gmail.com>
+To: Johannes Berg <johannes@sipsolutions.net>,
+	Rob Herring <robh@kernel.org>,
+	Krzysztof Kozlowski <krzk+dt@kernel.org>,
+	Conor Dooley <conor+dt@kernel.org>,
+	Jeff Johnson <jjohnson@kernel.org>,
+	Loic Poulain <loic.poulain@oss.qualcomm.com>
+Cc: linux-wireless@vger.kernel.org,
+	devicetree@vger.kernel.org,
+	ath10k@lists.infradead.org,
+	linux-kernel@vger.kernel.org
+Subject: [PATCH] dt-bindings: net: wireless: qcom,ath10k: add PCI devices
+Date: Tue, 10 Nov 2026 19:44:18 -0800
+Message-ID: <20261111034418.194610-1-rosenp@gmail.com>
+X-Mailer: git-send-email 2.56.0
 X-Mailing-List: linux-wireless@vger.kernel.org
 List-Id: <linux-wireless.vger.kernel.org>
 List-Post: <mailto:linux-wireless@vger.kernel.org>
@@ -59,50 +101,43 @@ List-Unsubscribe: <mailto:linux-wireless+unsubscribe@vger.kernel.org>
 List-Owner: <mailto:linux-wireless+owner@vger.kernel.org>
 Precedence: list
 MIME-Version: 1.0
-X-CM-TRANSID:zQCowAB3DrSB4_NqwzzZAA--.16282S2
-X-Coremail-Antispam: 1UD129KBjvdXoWruw18Zw47JFWxGryfurW3Wrg_yoWkXFbEka
-	4qvFykKw1UXFZF9a1Sqr43Zrs29FW2v34UJ34Fqa1kZ345GF47XF4akFnxAr1SyrZ0kF43
-	Wr13Gw4Fyw1xujkaLaAFLSUrUUUUjb8apTn2vfkv8UJUUUU8Yxn0WfASr-VFAUDa7-sFnT
-	9fnUUIcSsGvfJTRUUUbxAYjsxI4VWkKwAYFVCjjxCrM7CY07I20VC2zVCF04k26cxKx2IY
-	s7xG6rWj6s0DM7CIcVAFz4kK6r1j6r18M28lY4IEw2IIxxk0rwA2F7IY1VAKz4vEj48ve4
-	kI8wA2z4x0Y4vE2Ix0cI8IcVAFwI0_Xr0_Ar1l84ACjcxK6xIIjxv20xvEc7CjxVAFwI0_
-	Gr0_Cr1l84ACjcxK6I8E87Iv67AKxVW8Jr0_Cr1UM28EF7xvwVC2z280aVCY1x0267AKxV
-	WxJr0_GcWle2I262IYc4CY6c8Ij28IcVAaY2xG8wAqx4xG64xvF2IEw4CE5I8CrVC2j2Wl
-	Yx0E2Ix0cI8IcVAFwI0_Jw0_WrylYx0Ex4A2jsIE14v26r4UJVWxJr1lOx8S6xCaFVCjc4
-	AY6r1j6r4UM4x0Y48IcVAKI48JMxkF7I0En4kS14v26r126r1DMxAIw28IcxkI7VAKI48J
-	MxAIw28IcVCjz48v1sIEY20_Gr43Wr1UJr1l4I8I3I0E4IkC6x0Yz7v_Jr0_Gr1lx2IqxV
-	Aqx4xG67AKxVWUJVWUGwC20s026x8GjcxK67AKxVWUGVWUWwC2zVAF1VAY17CE14v26r12
-	6r1DMIIYrxkI7VAKI48JMIIF0xvE2Ix0cI8IcVAFwI0_Jr0_JF4lIxAIcVC0I7IYx2IY6x
-	kF7I0E14v26r1j6r4UMIIF0xvE42xK8VAvwI8IcIk0rVWUJVWUCwCI42IY6I8E87Iv67AK
-	xVWUJVW8JwCI42IY6I8E87Iv6xkF7I0E14v26r1j6r4UYxBIdaVFxhVjvjDU0xZFpf9x07
-	b5lk3UUUUU=
-X-CM-SenderInfo: pyxotu46lvutnvoduhdfq/1tbiDAIIA2rzsLXizwAAs0
+Content-Transfer-Encoding: 8bit
 
-Hi Laurent,
+ath10k PCI devices can be described as children of their PCI host
+bridge, for example to supply the MAC address and calibration data
+through nvmem cells. The only compatible for that was "qcom,ath10k",
+but the generic PCI device schema requires a node under a PCI bus to
+carry a "pciVVVV,DDDD" or "pciclass,..." compatible, so such nodes fail
+validation.
 
-My main goal is to study how to find bugs in the Linux kernel. When
-that work finds a bug, I also want to help fix it and contribute to
-the kernel.
+Add the PCI vendor/device IDs handled by the ath10k PCI driver, as the
+ath9k and ath11k PCI bindings already do.
 
-Static analysis flagged possible bugs, and we reviewed them by hand
-with help from DeepSeek and GPT-6.1 Sol. Even after that review, many
-of them still seemed worth looking into. I got excited about the
-findings and sent more patches than I could follow up on. I regretted
-that decision soon afterward. I should have sent fewer patches and
-replied sooner. I'm sorry for the extra work this caused.
+Signed-off-by: Rosen Penev <rosenp@gmail.com>
+---
+ .../devicetree/bindings/net/wireless/qcom,ath10k.yaml    | 9 +++++++++
+ 1 file changed, 9 insertions(+)
 
-I'll use this shared address only to reply to feedback I haven't yet
-answered on patches I've already sent. I'll go through that feedback
-one message at a time and respect the decisions maintainers have
-already made. If any of the remaining patches are still worth
-considering, I'd be grateful for the chance to answer questions
-about them.
-
-I still hope to contribute to the kernel in the future. If I have
-the chance to do so, I'll use my own email address, respect the
-maintainers' requests, and send only as many patches as I can
-follow up on promptly.
-
-Thanks,
-Wentao
+diff --git a/Documentation/devicetree/bindings/net/wireless/qcom,ath10k.yaml b/Documentation/devicetree/bindings/net/wireless/qcom,ath10k.yaml
+index 0cb065265df4..992926ce5c5e 100644
+--- a/Documentation/devicetree/bindings/net/wireless/qcom,ath10k.yaml
++++ b/Documentation/devicetree/bindings/net/wireless/qcom,ath10k.yaml
+@@ -15,6 +15,15 @@ description:
+ properties:
+   compatible:
+     enum:
++      - pci0777,11ac  # QCA988X (Ubiquiti branded)
++      - pci168c,003c  # QCA988X
++      - pci168c,003e  # QCA6174
++      - pci168c,0040  # QCA99X0
++      - pci168c,0041  # QCA6164
++      - pci168c,0042  # QCA9377
++      - pci168c,0046  # QCA9984
++      - pci168c,0050  # QCA9887
++      - pci168c,0056  # QCA9888
+       - qcom,ath10k # SDIO-based devices
+       - qcom,ipq4019-wifi
+       - qcom,wcn3990-wifi # SNoC-based devices
+-- 
+2.56.0
 
