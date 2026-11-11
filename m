@@ -1,65 +1,101 @@
-Authentication-Results: smtp.subspace.kernel.org; arc=none smtp.remote-ip=91.216.248.212
-ARC-Seal: i=1; d=subspace.kernel.org; s=arc20261015; a=rsa-sha256; cv=none;
-	t=1794424042;
-	b=R2SQ8VrsTXCQ1yrfnTJZ46WpGrYAYhYBSkunNcqxFxESZAS9SNbw+PddocJgOF3s8Fth
-	 Q5Mnj9jNcwAEPzrSwt2g4WoefvdZYbIE5BfWW7PeNRP6sdKtHf0Tr0TPU0+p37CZp97h5
-	 ggpS7339SGACJ2FC1+udvYLIX8lBg4cyIy3mt6SKXZmBfYUKkY3JTD9upvkoQ/Udk28E8
-	 AQbsipuKpr2BVJN4ggmPKql2bK1nZJqC1HydfLb00Fp3s8/CW33Nldrrge1ZUPwo1v33P
-	 8fwMw7uYufR+TN2zzfZffUhQ3gwsTU2s2UQsh3CF5CWPEHzhZ2H66iewuwhRD3d8b8w==
-ARC-Message-Signature: i=1; d=subspace.kernel.org; s=arc20261015;
-	a=rsa-sha256; c=relaxed/relaxed; t=1794424042;
-	h=DMARC-Filter:Date:X-Lima-ML-UUID:DKIM-Signature:From:To:Cc:Subject:
-	 Message-ID:In-Reply-To:References:Organization:X-Mailer:MIME-Version:
-	 Content-Type:Content-Transfer-Encoding;
-	bh=kEMhpSnyUJcN6zPpGuUAXkRpvTYHPvaXByMhUhh7emE=;
-	b=xshszLPXmlTQm//u7aNA9cNmHHf95HvcBNDoZH/1+VMLPazwNE7sxWHvGiKnyY0k5G2/
-	 OwXVX3qt4IC68E9Uj90qS+9vIOkMs9WH2t92IE7doTARNvQHcgA7oFhzWpO8MX1zpGZID
-	 td1KUwge8ySr+FAEFugRic71VuA1HGQvt6tpUFjg2vF9hHf2CRR6V2XgyviWkauEz07oG
-	 /+aWXgzv4ycsO1HIcF1Z08Uem8SeU+ojyys+CGDcLgldjiz+1PmziG63xD6IiDp/kqV/g
-	 +0CuwgSJJbQlEkyS6pZXqw7rZbbclYyN3fcSu9H5nCxk179i+Ev9oOMbIYGh78Oqr+A==
-ARC-Authentication-Results: i=1; smtp.subspace.kernel.org; 
-	dmarc=none header.from=deq.rocks;
-	spf=none smtp.mailfrom=deq.rocks;
-	dkim=pass header.d=deq.rocks header.i=@deq.rocks header.a=rsa-sha256 header.s=securedbylima-20251205 header.b=icDzLyLN;
-	arc=none smtp.remote-ip=91.216.248.212
-Received: from bulk0.mail-out.lima-city.de (bulk0.mail-out.lima-city.de [91.216.248.212])
-	(using TLSv1.3 with cipher TLS_AES_256_GCM_SHA384 (256/256 bits)
+Authentication-Results: smtp.subspace.kernel.org; arc=pass header.oldest-pass=0 smtp.remote-ip=209.85.217.41
+ARC-Seal: i=2; d=subspace.kernel.org; s=arc20261015; a=rsa-sha256; cv=pass;
+	t=1794426345;
+	b=upfB2dRdiO6WFZBPFqIL02QMg6uLsY0Aff0dM1yxV7zKV0y3uI7qHnZXWwEOuCVJ6doT
+	 aYaoLU4Vccf4jwp5Mtj73jY6nJTIcDde3fAMbGLBj0LuU2J/DH8nNmd+PToJy0cyGCYEj
+	 lw+rceUa9dvZLrvnPL38oEdidbx6BEKKzmNgn3Own8w27VbX3+jI9BxdukLK5cnYITQqv
+	 JVyruY0wVyE02t1IE1+GIbfxxDMsAoftEcpk+yyak68Vs5IetunpG2qkQv9y8nnDtIm5g
+	 QmZtzf/aKfH3PhwJO7wQYtCaAMJODqAdFkCjhCyv6ICzuESFGU1O96S7zcUEzD0l2PQ==
+ARC-Message-Signature: i=2; d=subspace.kernel.org; s=arc20261015;
+	a=rsa-sha256; c=relaxed/relaxed; t=1794426345;
+	h=DMARC-Filter:Received:DKIM-Signature:X-Google-DKIM-Signature:
+	 X-Forwarded-Encrypted:X-Gm-Message-State:X-Gm-Gg:X-Received:Received:
+	 MIME-Version:From:In-Reply-To:References:Date:X-Gm-Features:
+	 Message-ID:Subject:To:Cc:Content-Type;
+	bh=lILIcv7ALfl3mdwxNQu1XBlIGEZnSF9o3ZCOxCy8fhQ=;
+	b=sqX0mpRKqb0hupCXOQ94wo9rJ05le8/SKPrTsxUSfokKhFiPAxrLH6yw+I/25LqrIsie
+	 PWgaS4zaEoIiGcv4TT3z9B4aFjvuRBvO78NLD9pBQoJ3+N4Egh/aqeBIPBHbwGFpJevZj
+	 9SQiYSLccQ77uJVuvd2qdbGCZ8cuad0r3tdj2uhUDxa6hahyeP93+PLDlegbYBp7tb2bX
+	 p6GTKH/hR9DPAqvCu7S4S4z2G6ytUPu4jhcbNpiZOCF7/t5AkwUC0gtO/YLaooGYJ78rq
+	 M5t9J62n0gBXfYbfqE3FCrJJSaM4PYwDWCXbToSLsiOat2fn/c8z2BYLVSLTwDIVneA==
+ARC-Authentication-Results: i=2; smtp.subspace.kernel.org; 
+	dmarc=pass header.from=gmail.com;
+	spf=pass smtp.mailfrom=gmail.com;
+	dkim=pass header.d=gmail.com header.i=@gmail.com header.a=rsa-sha256 header.s=20260707 header.b=s2SQADY4;
+	arc=pass header.oldest-pass=0 smtp.remote-ip=209.85.217.41
+Received: from mail-vs1-f41.google.com (mail-vs1-f41.google.com [209.85.217.41])
+	(using TLSv1.3 with cipher TLS_AES_128_GCM_SHA256 (128/128 bits)
 	 key-exchange X25519 server-signature ECDSA (prime256v1) server-digest SHA256)
 	(No client certificate requested)
-	by smtp.subspace.kernel.org (Postfix) with ESMTPS id 679CA606A326;
-	Wed, 11 Nov 2026 19:07:19 +0000 (UTC)
-DMARC-Filter: OpenDMARC Filter v1.4.2 smtp.subspace.kernel.org 679CA606A326
-Authentication-Results: smtp.subspace.kernel.org; dmarc=none (p=none dis=none) header.from=deq.rocks
-Authentication-Results: smtp.subspace.kernel.org; spf=none smtp.mailfrom=deq.rocks
+	by smtp.subspace.kernel.org (Postfix) with ESMTPS id D6E5E606A324
+	for <linux-wireless@vger.kernel.org>; Wed, 11 Nov 2026 19:45:44 +0000 (UTC)
+DMARC-Filter: OpenDMARC Filter v1.4.2 smtp.subspace.kernel.org D6E5E606A324
+Authentication-Results: smtp.subspace.kernel.org; dmarc=pass (p=none dis=none) header.from=gmail.com
+Authentication-Results: smtp.subspace.kernel.org; spf=pass smtp.mailfrom=gmail.com
 Authentication-Results: smtp.subspace.kernel.org;
-	dkim=pass (2048-bit key, unprotected) header.d=deq.rocks header.i=@deq.rocks header.a=rsa-sha256 header.s=securedbylima-20251205 header.b=icDzLyLN
-Date: Wed, 11 Nov 2026 20:07:14 +0100
-X-Lima-ML-UUID: c7202bc6-b325-4afe-8b21-39fb8ebf3832
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=deq.rocks;
-	s=securedbylima-20251205; t=1794424037;
-	bh=o0OX3SHkKhAUq23lk9BnJx+Lgm52SOLeCweYfFxZi1E=;
-	h=Date:From:To:Cc:Subject:In-Reply-To:References:From;
-	b=icDzLyLNc83NAtorSOw3Et5eebXCGlipuA873U0S2gnCvHu0I/ppzZ4CXCwhBfpXn
-	 Y8JkGzKOR/PXd/KN6GCkTgmKJb31KaeOrZ/kifT07Wcb2a3QrBHdIJtjl9hWyb9XJh
-	 icZp0BzIhIvKIEm/duQSJcfEk3GOLwlmrvJTTukUCQFE6bRfVLIMKBNhvFmgV9099G
-	 qPyA102hHx05eQ3NJil1vP3hwT8/cx9Afilg4BnfLh6hTwWZ5Lk3ujLRktGsza2W+/
-	 bjj8VuXhtxQyIinphGIN1xvdUa9ul3l2/SCFKxWMb0HCoOP1eDTxbYJThlxQegzUSx
-	 FzzOnLSFJf6ag==
-From: =?UTF-8?B?QW5kcsOp?= Eikmeyer <dev@deq.rocks>
-To: "Kordian Chmielewski (mlody1212)" <kudzo51@gmail.com>
-Cc: arend.vanspriel@broadcom.com, asahi@lists.linux.dev,
- brcm80211-dev-list.pdl@broadcom.com, brcm80211@lists.linux.dev,
- j@jannau.net, linux-kernel@vger.kernel.org, linux-wireless@vger.kernel.org,
- marcan@marcan.st, michael.reeves077@gmail.com,
- sebastian.reichel@collabora.com
-Subject: Re: [PATCH 4/4] wifi: brcmfmac: msgbuf: send the flowring delete
- without waiting for tx status
-Message-ID: <20261111200714.7897345f@kait2en-mbp15-1>
-In-Reply-To: <20261110231248.206892-1-kudzo51@gmail.com>
-References: <20261107154810.89780-5-dev@deq.rocks>
-	<20261110231248.206892-1-kudzo51@gmail.com>
-Organization: KaiT2en
-X-Mailer: Claws Mail 4.4.0 (GTK 3.24.52; x86_64-redhat-linux-gnu)
+	dkim=pass (2048-bit key) header.d=gmail.com header.i=@gmail.com header.a=rsa-sha256 header.s=20260707 header.b=s2SQADY4
+Received: by mail-vs1-f41.google.com with SMTP id ada2fe7eead31-7d2db1b9bf2so1135852137.2
+        for <linux-wireless@vger.kernel.org>; Wed, 11 Nov 2026 11:45:44 -0800 (PST)
+ARC-Seal: i=1; a=rsa-sha256; t=1794426344; cv=none;
+        d=google.com; s=arc-20260327;
+        b=JMe3h3QrCjMgA0TPaU5N1dZ6a8bEBTuG5PSowaC7QC5MIt/h4Ei7RxtWUu5ftjqNsQ
+         eX6qsCTtdHH+ar4dTO4g986ElhuookzqbS3Me7I3zv4TUfmU2+umA8t6NtAziFmuZ+G7
+         d32RoozUnH2mpAVQGQYwRq8JfLqknSRZ/bw+DgNvgd9hFt35EuSHeRU4I1XT8CroqDkB
+         ygJOn5wDcmxd+5zdlFCrUUS3BN/75UFQMO8lwEvLT+Vx5LSYfF6TXZht6IledopPYo4j
+         BKJtwoc1stxSw7aSomnpASIlrXXgEL3S+mrRQXj7/US5ZiQFQRYZu5htx0Pp2dJn41NG
+         5krg==
+ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=google.com; s=arc-20260327;
+        h=cc:to:subject:message-id:date:references:in-reply-to:from
+         :mime-version:dkim-signature;
+        bh=lILIcv7ALfl3mdwxNQu1XBlIGEZnSF9o3ZCOxCy8fhQ=;
+        fh=HOTZnejzXPwwI9MqhEU9gSe9I0ONxmlKU972PgavKJQ=;
+        b=aJNoyegAiZiPfCnPTgqFQYK6ulzBFcM/YGowb5C1BaQ7laKrbFlmIa/mSmlJD/g4cx
+         xLX3MK20+jPuKOFTVHwNE4jIw2aDNlL8nDuK5+igx6mJqFSAL4UF7TUmcqdYx2yVPQwG
+         fL0NZF3OY5Mw/GdYzXTASuGeKY1O9lHL3pDLd1XP5BKKaVDZqcZAsXw7Uul98uy/8I2P
+         62BJeVj8LuwJLZiZ/dCy64w8SgwLdUuQ71wPY4DoYhBFmFZ0YmNtIKq9tu3M1/gGkZrE
+         PR1bhXPR21aSj5GqJFMozdeFN+seqgugFjuGHWEF4nZAzdVAnVvrIK9Yu9CRrHmtk0Eg
+         RqHw==;
+        darn=vger.kernel.org
+ARC-Authentication-Results: i=1; mx.google.com; arc=none
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+        d=gmail.com; s=20260707; t=1794426344; x=1795031144; darn=vger.kernel.org;
+        h=content-type:cc:to:subject:message-id:date:references:in-reply-to
+         :from:mime-version:from:to:cc:subject:date:message-id:reply-to
+         :content-type;
+        bh=lILIcv7ALfl3mdwxNQu1XBlIGEZnSF9o3ZCOxCy8fhQ=;
+        b=s2SQADY4LOfmdJHfDSvArtdrTeHBAS6GOBpELjwBCpCNvpH6naC/dcKs4byB7lwQih
+         lqdEQaMgswjGDNm9o7gStKrqov+X6daowptmi4STP/SO6ZLjO2Xwkeyq6XzIt3wpYfb/
+         wX3edTaXNQ9PNhBqJGHuCGjUAV86DVgmu7OZv+X2HmWUAj5RerEMECumzxt+nXodVZLR
+         /R0o8YKbe+ZDRwLG4eyQOFITNBoppYUFD5LTuA1U4+NJAuQ7dvpTp7y1IdVZis1JJNRE
+         ITSHVzog8tbzHuGtrcQeocPXCbHMkj7nsYn2zuTdzWnUwjW5mjrwVHU56tNwiGpy4Qec
+         Hj/A==
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+        d=1e100.net; s=20260707; t=1794426344; x=1795031144;
+        h=content-type:cc:to:subject:message-id:date:references:in-reply-to
+         :from:mime-version:x-gm-gg:x-gm-message-state:from:to:cc:subject
+         :date:message-id:reply-to:content-type;
+        bh=lILIcv7ALfl3mdwxNQu1XBlIGEZnSF9o3ZCOxCy8fhQ=;
+        b=pbUBQJJ1px2rJIqfKy8rBu6C3Tx09sHZdTtHptLPwfK/WfozrjHH2wHBxe3DkK3rB9
+         +bE/akI0VgNwFGauevkQ+e/hzbQYk6jSS/7XfBhGiIabtnagjpqMOCAOnp/snyOzyyGq
+         DygKx9FU2mKG4vobnkM3dw2RnnKuyDFV+Q6Xb3iNQTj0JzR3uQUH6zBdVMdh6ttcjO0l
+         XRlujY6vw9gyyI2fMgygqTpYIejmYxoXrQ2funRkAniOgF4RclqA6ouwBoDfOj83Rw5/
+         7Kq9GIui5aVNiaHiCET/T/t3vAhLwMa9BCdZm+0Osp+UmPM9foXbiuQUpGwYXUeojfdP
+         IEAw==
+X-Forwarded-Encrypted: i=1; AL+hErFl/ipHQpVVTIBU32uLsCIpuBzWT4YxIR7GZejtrqPfPOA0Y3EovdDcL4vI2w9ehyQ40MRlwzAXGiUoOcZ4hQ==@vger.kernel.org
+X-Gm-Message-State: APuU4Z856lEWWprzHVzdQC3OiUze0qNeRQThC+8JWqEf3qiDRuS+z2Xm
+	dxEjrhg+o0bgMEzOGIRpfO6LfftCHwVGcuDtZ0RD2blCG7WGMWJBQqjVxOpf9ps87Tq9fPSQfPQ
+	KA8zfBCz3Iofg1xemk0OObJDIaGQI2/U=
+X-Gm-Gg: AYBFou29MtzMc7KpeNcJFGdl0sYJwwaJu08VeKT8o9PVWL1xxxKQqQ2srROpGqVLrtf
+	unQwOcVlE1H5NE8PAGi7A+wAZ1YTGBkj2wWHIG360/Yq0vaLmmk00uQ59Jo2qmnhEzAlxGRukNa
+	JTUc1j2IZBQzczddHT8F2sLCtqdDoSws34GY5LZ748aGzzEjXEOQ3oqtjbnLzEFNrFFLYzGAcU0
+	iEZNAbguSs6Jk8VZIrRrD92Z2epybUq+smi3v++S/8NmXbcC29IMDrUWjTstJhaxjnCByBXh6t/
+	iXDihqNlqJP94kdJaMRt35CuFpTpnubJDw61wg53sZmanPmPEAdJ7SxYgxoQLOKom+XuiFAKZ0n
+	pSvr/ViFXEtJWLqXl4XBdBEqIJnb+rSL2MktO
+X-Received: by 2002:a05:6102:a4f:b0:7cc:9d82:ae17 with SMTP id
+ ada2fe7eead31-7d4fb2d9f20mr1247064137.11.1794426343023; Wed, 11 Nov 2026
+ 11:45:43 -0800 (PST)
+Received: from 77377267392 named unknown by gmailapi.google.com with HTTPREST;
+ Wed, 11 Nov 2026 14:45:42 -0500
 X-Mailing-List: linux-wireless@vger.kernel.org
 List-Id: <linux-wireless.vger.kernel.org>
 List-Post: <mailto:linux-wireless@vger.kernel.org>
@@ -69,26 +105,61 @@ List-Unsubscribe: <mailto:linux-wireless+unsubscribe@vger.kernel.org>
 List-Owner: <mailto:linux-wireless+owner@vger.kernel.org>
 Precedence: list
 MIME-Version: 1.0
-Content-Type: text/plain; charset=US-ASCII
-Content-Transfer-Encoding: 7bit
+From: enderaoelyther@gmail.com
+In-Reply-To: <76bc126fb977cac0f0a124fc80eae9fdb803264d.camel@sipsolutions.net>
+References: <20261028141751.6728-1-enderaoelyther@gmail.com>
+	 <20261028141751.6728-3-enderaoelyther@gmail.com>	 (sfid-20261028_151822_083722_A5EF7A18)
+ <76bc126fb977cac0f0a124fc80eae9fdb803264d.camel@sipsolutions.net>
+Date: Wed, 11 Nov 2026 14:45:42 -0500
+X-Gm-Features: AclHuK_498F9mVKuehZNiursTJcACe2DxghGvso4T8Fz6hgolPYVL93yCmoCmV8
+Message-ID: <CACHPgzw-JeorCAX-b5jjd6d5=L0oYpPdGtstUSaz5sPKZE2HsQ@mail.gmail.com>
+Subject: Re: [PATCH 2/2] wifi: mac80211_hwsim: serialize radio removal with
+ frame commands
+To: Johannes Berg <johannes@sipsolutions.net>
+Cc: "John W. Linville" <linville@tuxdriver.com>, Javier Lopez <jlopex@gmail.com>, 
+	Jukka Rissanen <jukka.rissanen@linux.intel.com>, linux-wireless@vger.kernel.org, 
+	linux-kernel@vger.kernel.org, stable@vger.kernel.org
+Content-Type: text/plain; charset="UTF-8"
 
-On Wed, 11 Nov 2026 00:12:47 +0100
-"Kordian Chmielewski (mlody1212)" <kudzo51@gmail.com> wrote:
+> That, with significant work done under the mutex, seems like too big a
+> hammer, can't it really not be done in any other way?
 
->  Do you know how the
-> firmware orders them? In my tree each tx pktid keeps the generation of
-> its flowring for that case; I can send it on top of your patch if it
-> turns out to be needed.
+Yes, you are right. The global mutex is way too broad, and I am dropping
+that approach entirely.
 
-Hi Kordian, 
+The underlying problem is per-radio object lifetime, not command
+serialization. get_hwsim_data_ref_from_addr() returns a radio pointer
+after rhashtable_lookup_fast() has already ended its RCU read-side
+protection. A concurrent deletion can then unpublish and free that radio
+while a frame, TX-status, or PMSR command is still using the pointer.
 
-On the BCM4377 I have a trace of a disconnect with debug output. The
-status messages are processed before both delete responses. But they
-come on the complete ring and the responses on the control complete
-ring. And brcmf_proto_msgbuf_rx_trigger() always drains the tx complete
-ring first. So that only shows the order within one interrupt.
+I reworked the fix around a per-radio reference count. Address lookups
+acquire a reference while holding hwsim_radio_lock, which is already used
+when removing a radio from the hash table. Deletion first unpublishes the
+radio under hwsim_radio_lock, releases that lock, drops the initial
+reference, and waits only for in-flight lookups on that specific radio to
+finish before calling ieee80211_unregister_hw().
 
-Please send your generation patch on top. That should close it
-independent of firmware ordering.
+This keeps the expensive ieee80211_unregister_hw() path outside
+hwsim_radio_lock. It introduces no new lock and does not serialize command
+handlers or the teardown of unrelated radios.
 
-Andre
+Since patch 1/2 is already applied, I will send the replacement as a
+standalone v2.
+
+Thanks,
+Zhao
+
+On Tue, 10 Nov 2026 11:54:21 +0100, Johannes Berg
+<johannes@sipsolutions.net> wrote:
+> On Wed, 2026-10-28 at 22:17 +0800, Zhao Li wrote:
+> > Destroying a radio while a frame, TX status, or PMSR command is in
+> > progress can make the command access the radio after it has been freed.
+> >
+> >  DEFINE_SPINLOCK(hwsim_radio_lock);
+> > +static DEFINE_MUTEX(hwsim_radio_mutex);
+>
+> That, with significant work done under the mutex, seems like too big a
+> hammer, can't it really not be done in any other way?
+>
+> johannes
