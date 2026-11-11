@@ -1,67 +1,85 @@
-Authentication-Results: smtp.subspace.kernel.org; arc=none smtp.remote-ip=111.22.67.135
+Authentication-Results: smtp.subspace.kernel.org; arc=none smtp.remote-ip=210.61.82.184
 ARC-Seal: i=1; d=subspace.kernel.org; s=arc20261015; a=rsa-sha256; cv=none;
-	t=1794387857;
-	b=1yKfAxevjR/Q0HpKHefgVpLJGRPOyKWz9V5lHxE8PSDGhhlDAdoh0X7wR6WVJ7L4MKnR
-	 V35JgU+jHc1RMHHinqHkRfy/yewng3fLIvMfXybNwes5onJMwHh+4KWibofFaLGvJpU0P
-	 M2za/PJ6aF85sOs+Aswzf/qDPmIMtDj6Wenm5WL3NQy0jyYzEXX7KGf+hhjy/aTCSf6Yr
-	 LG2tS4S5ObfW4ubDxqr0c/eCqfkZh7wbEfMOF3c12ofeQltesW+1RCABavNdXtJO/NqGM
-	 Cp7nD2Dp2XFuGCkbHiMohNHMkM2yAXhfH84FnRpXbtOoenGyN8HXBSLQddPTsh88UHw==
+	t=1794388497;
+	b=upgK+IsFSkETXuhoVWqrK7UCXg+1sYFp51pPjFGTJ6xBIt5owv/B60aES4AaMAnHm5OY
+	 J5gLcYVs5PikJQqFTgLnlyo/ZA2udsWw8pHcoX4vviksmbNkyPU/Duyu/vqCxLe70uZPt
+	 M48zs9LVDAz4dAIU9BD8Bs8uViCwPzm25NyuRColxc0i14l9Z4o9GhFZ2q40EhhHDv9If
+	 6VEjMqz4rOzBj+XXpoNd291ZSGlK1XtnTSXRLIQVKkUsCslLo2tmVtAm44X/0+5Sqxl+o
+	 9GL2vDhfOt0T21NLtbn22u2chnaSGFA/om1BvBjc239je6g7tEdLRvqusVmvnYnftfQ==
 ARC-Message-Signature: i=1; d=subspace.kernel.org; s=arc20261015;
-	a=rsa-sha256; c=relaxed/relaxed; t=1794387857;
-	h=DMARC-Filter:DKIM-Signature:X-RM-TagInfo:X-RM-SPAM-FLAG:Received:
-	 X-RM-TRANSID:X-RM-TagInfo:X-RM-SPAM-FLAG:Received:X-RM-TRANSID:From:
-	 To:Cc:Subject:Date:Message-ID:X-Mailer:MIME-Version:
-	 Content-Transfer-Encoding;
-	bh=cngTStRSbCTlPKjELIo0XWShwxU2pjKN6j7stn5DOCg=;
-	b=u4+MbJCDgj1dtZ6Z6q2OQx/B1vpAVwFAUiCAQTPduXhZT1LEJQ/6gyWYvDP49MAfCVIW
-	 tjKiz0GNzFqLFGwWC47cC2dskatSvqrGjEzjsZCs4cIXeOju2iz9WQsCmIXtEofCNDCPJ
-	 sv6+cSa44WnGZxaWaqCa0dzXvPbijOd9q9+/ZmZ4evhuJ0v1zJrkELQAod8C7C7z2UcVU
-	 mN+r8GluQ0wNiLZUDLB07tUrZGv0YutkhRHsaJoWS0XPqiS1b6fDNht//GP3Vbdxbmp80
-	 eab7ITg1KVvirhHEhxX9ABn2v3aTZqtNU+JSFOlKYrM98iGcJGyKNhHj0mHeuFScNfQ==
+	a=rsa-sha256; c=relaxed/relaxed; t=1794388497;
+	h=DMARC-Filter:X-UUID:DKIM-Signature:X-CID-P-RULE:X-CID-O-INFO:
+	 X-CID-META:X-CID-BVR:X-CID-BAS:X-CID-FACTOR:X-CID-RHF:X-UUID:Received:
+	 Received:Received:Message-ID:Subject:From:To:CC:Date:In-Reply-To:
+	 References:Content-Type:Content-Transfer-Encoding:User-Agent:
+	 MIME-Version:X-MTK;
+	bh=zvaUldV391V5uNeMjr+9WAAbMevw73xdsml0k5INe88=;
+	b=tn7sG6MVGdnIXeVTXUbMg712+P4cTkOXKgQDtElLYF/8dx1AECNATI6Y7oQPg7+TZ5JN
+	 guM/7JcLAYGQrA+0dSj13+j0cxIlwPOlP9t2KK0yydMq/ZiLNgo5r50eBMQudLZCbvnBa
+	 VQVSX3ra//a3p6FeoUwrtsNAe1piezhXjiRI7GOHjtTN4sU2/nRfKxgvzTIYJV2VT1wvh
+	 uZAjQzULeWX8bTkkhtTO6tMXr8uchcCK2JGIyGrtErxlM9kJdTvrKc7Ig0E9GEFrfJQcV
+	 MTvems+e3D1JmrntRXCN5nAtCRQ1vbvcRV2BMKGqaZXJkuMD2Abf8mbWa0aBtqXty/A==
 ARC-Authentication-Results: i=1; smtp.subspace.kernel.org; 
-	dmarc=pass header.from=cmss.chinamobile.com;
-	spf=pass smtp.mailfrom=cmss.chinamobile.com;
-	dkim=pass header.d=cmss.chinamobile.com header.i=@cmss.chinamobile.com header.a=rsa-sha256 header.s=default header.b=PFnnl6XS;
-	arc=none smtp.remote-ip=111.22.67.135
-Received: from cmccmta2.chinamobile.com (cmccmta2.chinamobile.com [111.22.67.135])
-	by smtp.subspace.kernel.org (Postfix) with ESMTP id 4E3D6606A31C;
-	Wed, 11 Nov 2026 09:04:15 +0000 (UTC)
-DMARC-Filter: OpenDMARC Filter v1.4.2 smtp.subspace.kernel.org 4E3D6606A31C
-Authentication-Results: smtp.subspace.kernel.org; dmarc=pass (p=none dis=none) header.from=cmss.chinamobile.com
-Authentication-Results: smtp.subspace.kernel.org; spf=pass smtp.mailfrom=cmss.chinamobile.com
+	dmarc=pass header.from=mediatek.com;
+	spf=pass smtp.mailfrom=mediatek.com;
+	dkim=pass header.d=mediatek.com header.i=@mediatek.com header.a=rsa-sha256 header.s=dk header.b=Iu1mFkUN;
+	arc=none smtp.remote-ip=210.61.82.184
+Received: from mailgw02.mediatek.com (unknown [210.61.82.184])
+	(using TLSv1.3 with cipher TLS_AES_256_GCM_SHA384 (256/256 bits)
+	 key-exchange X25519 server-signature ECDSA (prime256v1) server-digest SHA256)
+	(No client certificate requested)
+	by smtp.subspace.kernel.org (Postfix) with ESMTPS id 69D37606A331;
+	Wed, 11 Nov 2026 09:14:56 +0000 (UTC)
+DMARC-Filter: OpenDMARC Filter v1.4.2 smtp.subspace.kernel.org 69D37606A331
+Authentication-Results: smtp.subspace.kernel.org; dmarc=pass (p=quarantine dis=none) header.from=mediatek.com
+Authentication-Results: smtp.subspace.kernel.org; spf=pass smtp.mailfrom=mediatek.com
 Authentication-Results: smtp.subspace.kernel.org;
-	dkim=pass (1024-bit key) header.d=cmss.chinamobile.com header.i=@cmss.chinamobile.com header.a=rsa-sha256 header.s=default header.b=PFnnl6XS
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-	d=cmss.chinamobile.com; s=default; l=0;
-	h=from:subject:message-id:to:cc:mime-version;
-	bh=47DEQpj8HBSa+/TImW+5JCeuQeRkm5NMpJWZG3hSuFU=;
-	b=PFnnl6XSCosrOI5fNjI1M91BJk18RDKOx2Hrjn0TuCwAyWmH8ZQGtuE089EOX6vr5ktJYOcr2STIM
-	 3K+qgpPyryf+IqQIujWP0Uqqynn3I4rEGw42I8VvoZjN/n1PlsYd5Xb60+G91hyuzrhx2rckhs8djK
-	 39vC/PkXpQm/Qpt0=
-X-RM-TagInfo: emlType=0                                       
-X-RM-SPAM-FLAG:00000000
-Received:from spf.mail.chinamobile.com (unknown[10.188.0.87])
-	by rmmx-syy-dmz-app03-12003 (RichMail) with SMTP id 2ee36af42f8dc60-a351e;
-	Wed, 11 Nov 2026 17:04:13 +0800 (CST)
-X-RM-TRANSID:2ee36af42f8dc60-a351e
-X-RM-TagInfo: emlType=0                                       
-X-RM-SPAM-FLAG:00000000
-Received:from localhost.localdomain (unknown[223.112.32.189])
-	by rmsmtp-syy-appsvr04-12004 (RichMail) with SMTP id 2ee46af42f8b6ae-d67ed;
-	Wed, 11 Nov 2026 17:04:13 +0800 (CST)
-X-RM-TRANSID:2ee46af42f8b6ae-d67ed
-From: guohongyu <guohongyu@cmss.chinamobile.com>
-To: jeff.chen_1@nxp.com,
-	francesco@dolcini.it,
-	johannes@sipsolutions.net
-Cc: linux-wireless@vger.kernel.org,
-	linux-kernel@vger.kernel.org,
-	stable@vger.kernel.org,
-	13057616121@163.com
-Subject: [PATCH] wifi: nxpwifi: fix tid and reorder-window bounds checks in RX reorder
-Date: Wed, 11 Nov 2026 16:57:00 +0800
-Message-ID: <20261111085700.109141-1-guohongyu@cmss.chinamobile.com>
-X-Mailer: git-send-email 2.43.0
+	dkim=pass (1024-bit key, unprotected) header.d=mediatek.com header.i=@mediatek.com header.a=rsa-sha256 header.s=dk header.b=Iu1mFkUN
+X-UUID: 58f00800ddb011f18dc8c9802ae25ab1-20261111
+DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed; d=mediatek.com; s=dk;
+	h=MIME-Version:Content-Transfer-Encoding:Content-Type:References:In-Reply-To:Date:CC:To:From:Subject:Message-ID; bh=zvaUldV391V5uNeMjr+9WAAbMevw73xdsml0k5INe88=;
+	b=Iu1mFkUN1qfFbTxDATBi4zHufWjXAqMgTLKFyL/eIu5Ooy+mGSzChu1cz08wsGC3n5Vj+Y9lJTWrIwEakw6H61+59TRNgyQvhQFK+5i3iJ2t1ajo2MeZS5EFJJFsMc6CM3iCTXt2oss1FgFuUiKXu7r9JK6IkM8yAaOx9Wo3Vkg=;
+X-CID-P-RULE: Release_Ham
+X-CID-O-INFO: VERSION:1.3.21,REQID:38b42ae4-17b2-4cf1-9617-9a7929c9fad8,IP:0,U
+	RL:0,TC:0,Content:0,EDM:-25,RT:0,SF:0,FILE:0,BULK:0,RULE:Release_Ham,ACTIO
+	N:release,TS:-25
+X-CID-META: VersionHash:b0318ac,CLOUDID:22c8bdd2-e65c-440c-82e1-af2977a3d424,B
+	ulkID:nil,BulkQuantity:0,SF:81|82|83|102|836|865|888|898,TC:-5,Content:0|1
+	5|50|99,EDM:2,IP:nil,URL:0,File:130,RT:0,Bulk:nil,QS:nil,BEC:nil,COL:0,OSI
+	:0,OSA:0,AV:0,LES:1,SPR:NO,DKR:0,DKP:0,BRR:0,BRE:0,ARC:0
+X-CID-BVR: 2,SSN|SDN
+X-CID-BAS: 2,SSN|SDN,0,_
+X-CID-FACTOR: TF_CID_SPAM_SNR
+X-CID-RHF: D41D8CD98F00B204E9800998ECF8427E
+X-UUID: 58f00800ddb011f18dc8c9802ae25ab1-20261111
+Received: from mtkmbs10n1.mediatek.inc [(172.21.101.34)] by mailgw02.mediatek.com
+	(envelope-from <allen.ye@mediatek.com>)
+	(Generic MTA with TLSv1.2 ECDHE-RSA-AES256-GCM-SHA384 256/256)
+	with ESMTP id 2135581844; Wed, 11 Nov 2026 17:14:50 +0800
+Received: from mtkmbs13n2.mediatek.inc (172.21.101.108) by
+ MTKMBS14N2.mediatek.inc (172.21.101.76) with Microsoft SMTP Server
+ (version=TLS1_2, cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id
+ 15.2.2562.29; Wed, 11 Nov 2026 17:14:48 +0800
+Received: from [10.233.130.16] (10.233.130.16) by mtkmbs13n2.mediatek.inc
+ (172.21.101.73) with Microsoft SMTP Server id 15.2.2562.29 via Frontend
+ Transport; Wed, 11 Nov 2026 17:14:48 +0800
+Message-ID: <ea313f0127e2cfa72a3572f1893e59c6e2c22cd1.camel@mediatek.com>
+Subject: Re: [PATCH wireless-next v4 08/21] wifi: nl80211/cfg80211: pack SMD
+ dynamic context along with frame
+From: Allen Ye <Allen.Ye@mediatek.com>
+To: Pooventhiran G <pooventhiran.g@oss.qualcomm.com>
+CC: Johannes Berg <johannes@sipsolutions.net>,
+	"linux-wireless@vger.kernel.org" <linux-wireless@vger.kernel.org>,
+	"linux-kernel@vger.kernel.org" <linux-kernel@vger.kernel.org>, "Jouni
+ Malinen" <jouni.malinen@oss.qualcomm.com>, Aditya Sathish
+	<asathish@qti.qualcomm.com>
+Date: Wed, 11 Nov 2026 17:14:48 +0800
+In-Reply-To: <20261106-smd-v4-8-62e39487f51a@oss.qualcomm.com>
+References: <20261106-smd-v4-0-62e39487f51a@oss.qualcomm.com>
+	 <20261106-smd-v4-8-62e39487f51a@oss.qualcomm.com>
+Content-Type: text/plain; charset="UTF-8"
+Content-Transfer-Encoding: quoted-printable
+User-Agent: Evolution 3.52.3-0ubuntu1.1 
 X-Mailing-List: linux-wireless@vger.kernel.org
 List-Id: <linux-wireless.vger.kernel.org>
 List-Post: <mailto:linux-wireless@vger.kernel.org>
@@ -71,107 +89,37 @@ List-Unsubscribe: <mailto:linux-wireless+unsubscribe@vger.kernel.org>
 List-Owner: <mailto:linux-wireless+owner@vger.kernel.org>
 Precedence: list
 MIME-Version: 1.0
-Content-Transfer-Encoding: 8bit
+X-MTK: N
 
-The nxpwifi RX reorder code indexes several MAX_NUM_TID-sized arrays
-(struct nxpwifi_private::rx_reorder_tbl_ptr[8] and
-rx_reorder_tbl_lock[8], main.h:548/550) with a tid that is neither
-validated at the callers nor at the function entry, and accesses a
-win_size-sized flex array (tbl->rx_reorder_ptr[]) with a pkt_index that
-can exceed win_size.  Both are remote-reachable through a received
-802.11 frame.
+On Fri, 2026-11-06 at 13:28 +0530, Pooventhiran G wrote:
 
-Bug 1 - tid used as array index without bounds check
+Hi Pooventhiran,
 
-  nxpwifi_11n_rx_reorder_pkt() and nxpwifi_11n_create_rx_reorder_tbl()
-  take a tid parameter that flows directly into:
+A question on how the context is collected here.
 
-    list_for_each_entry_rcu(tbl, &priv->rx_reorder_tbl_ptr[tid], list)   (11n_rxreorder.c:187)
-    spin_lock_bh(&priv->rx_reorder_tbl_lock[tid]);                       (11n_rxreorder.c:324)
-    list_add_tail_rcu(&new_node->list, &priv->rx_reorder_tbl_ptr[tid]);  (11n_rxreorder.c:325)
+> While packing the received management frame in nl80211_send_mgmt() to
+> send to userspace, nest the SMD dynamic context along with the frame
+> message.
 
-  These arrays have MAX_NUM_TID (8) entries.  The tid comes from
-  local_rx_pd->priority in the receive path (sta_rx.c:232, uap_txrx.c:405)
-  - a u8 filled by firmware from the received frame's rxpd, range 0-255 -
-  or from the 4-bit TID field of an ADDBA request (11n_rxreorder.c:379,
-  range 0-15).  Neither path checks tid < MAX_NUM_TID before calling into
-  the reorder code; sta_rx.c:224-226 does gate the rx_seq[] write on
-  priority < MAX_NUM_TID, but the subsequent nxpwifi_11n_rx_reorder_pkt()
-  call at sta_rx.c:232 drops the same check.  A tid >= 8 reads
-  rx_reorder_tbl_ptr[] out of bounds, takes a spinlock on a garbage
-  address, and writes an out-of-bounds list_head.
+On MediaTek chipsets (mt76), the dynamic context is kept in FW/HW, so
+the driver has to fetch it from the firmware with an MCU command. This
+means the driver has to hold the ST request frame until the firmware
+replies with an event, and only then pass the frame up. Holding RX
+frames in the driver is the problematic part: the frame has to be kept
+outside the normal RX path, kept in order with the frames that follow
+it, and handled if the firmware reply is delayed or never arrives.
 
-  Fix: validate tid < MAX_NUM_TID at the entry of both
-  nxpwifi_11n_rx_reorder_pkt() and nxpwifi_11n_create_rx_reorder_tbl(),
-  covering all callers.
+1. With the context attached to the frame, how it gets collected
+depends on each vendor driver's own implementation (on mt76, this may
+mean holding the frame in the driver as described above). If userspace
+instead queried it via GET_SMD_CTX / SMD_CTX_EVENT for ST preparation
+and ST execution via the current AP MLD, as it already does for ST
+execution via the target AP MLD, the flow would be the same for every
+driver, regardless of where the context is kept. Would that be
+acceptable?
 
-Bug 2 - pkt_index not bounded by win_size
+2. If not, could the frame-attached context be optional (e.g. behind a
+capability flag), with userspace falling back to GET_SMD_CTX?
 
-  tbl->rx_reorder_ptr is allocated with win_size entries
-  (11n_rxreorder.c:280, kzalloc_flex).  In nxpwifi_11n_rx_reorder_pkt()
-  the out-of-window drop check (11n_rxreorder.c:459-470) uses TWOPOW11
-  (2048) rather than win_size, so a seq_num within [start_win,
-  start_win + 2048) passes the drop check regardless of win_size.
-  pkt_index is then computed as seq_num - start_win (11n_rxreorder.c:491)
-  and can reach 0..2047, but the write
-
-    tbl->rx_reorder_ptr[pkt_index] = payload;   (11n_rxreorder.c:500)
-
-  only has win_size slots.  With win_size = 1 (allowed: create_rx_reorder_tbl
-  only rejects win_size <= 0 at 11n_rxreorder.c:276) any pkt_index > 0 is a
-  heap out-of-bounds write of up to ~2048 pointer slots.
-
-  Fix: bound pkt_index against tbl->win_size before the rx_reorder_ptr[]
-  access.
-
-Together these close an out-of-bounds read + spinlock-on-garbage and an
-out-of-bounds heap write, both reachable from a received frame.
-
-Fixes: 73b01e57ed3e ("wifi: nxp: add nxpwifi driver for IW61x")
-Cc: stable@vger.kernel.org
-Signed-off-by: guohongyu <guohongyu@cmss.chinamobile.com>
----
- drivers/net/wireless/nxp/nxpwifi/11n_rxreorder.c | 11 +++++++++++
- 1 file changed, 11 insertions(+)
-
-diff --git a/drivers/net/wireless/nxp/nxpwifi/11n_rxreorder.c b/drivers/net/wireless/nxp/nxpwifi/11n_rxreorder.c
-index 87cf2ec85991..111225594144 100644
---- a/drivers/net/wireless/nxp/nxpwifi/11n_rxreorder.c
-+++ b/drivers/net/wireless/nxp/nxpwifi/11n_rxreorder.c
-@@ -266,6 +266,9 @@ nxpwifi_11n_create_rx_reorder_tbl(struct nxpwifi_private *priv, u8 *ta,
- 	u16 last_seq = 0;
- 	struct nxpwifi_sta_node *node;
- 
-+	if (tid >= MAX_NUM_TID)
-+		return;
-+
- 	/* Existing TID/TA: flush and move window to SSN. */
- 	tbl = nxpwifi_11n_get_rx_reorder_tbl(priv, tid, ta);
- 	if (tbl) {
-@@ -421,6 +424,9 @@ int nxpwifi_11n_rx_reorder_pkt(struct nxpwifi_private *priv,
- 	bool init_window_shift = false;
- 	int ret = 0;
- 
-+	if (tid >= MAX_NUM_TID)
-+		return -EINVAL;
-+
- 	tbl = nxpwifi_11n_get_rx_reorder_tbl(priv, tid, ta);
- 	if (!tbl) {
- 		if (pkt_type != PKT_TYPE_BAR)
-@@ -492,6 +498,11 @@ int nxpwifi_11n_rx_reorder_pkt(struct nxpwifi_private *priv,
- 		else
- 			pkt_index = (seq_num + MAX_TID_VALUE) - start_win;
- 
-+		if (pkt_index >= tbl->win_size) {
-+			ret = -EINVAL;
-+			goto done;
-+		}
-+
- 		if (tbl->rx_reorder_ptr[pkt_index]) {
- 			ret = -EINVAL;
- 			goto done;
--- 
-2.43.0
-
-
-
+Thanks,
+Allen
