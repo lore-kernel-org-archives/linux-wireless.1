@@ -1,63 +1,63 @@
-Authentication-Results: smtp.subspace.kernel.org; arc=none smtp.remote-ip=95.215.58.231
+Authentication-Results: smtp.subspace.kernel.org; arc=none smtp.remote-ip=213.167.242.64
 ARC-Seal: i=1; d=subspace.kernel.org; s=arc20261015; a=rsa-sha256; cv=none;
-	t=1794378518;
-	b=Wa49NHemRPK2B0Xa63UqkvijoepwsKSANMFSb92lfkcdwGjMzcKmwhhdK+K6o6YE1/6z
-	 9BmcYyw2vO69Q3hknXFk+eoun9PAfoUUi26ywGkcG1Ugipk+erWOqBK/T6oGyn4Chcfja
-	 XkI+rIBmZVoDAh0iLaaQpjqRvdE5Ysov/303yhS8AIhW1g1KLRg+zn7A0ruLJApxYHoy8
-	 gRDAaErQkkODPOKcCFxMLeuCEarshkHjGb894f5pYgoXzygBsjhID5oWob6Nefd66z/ZQ
-	 9a7sSeBoOK4KlsiRIKnOxHgVoebchfwewIA2vAVYQDntfyhfUvg4XOZCdBmTnYy5Yyw==
+	t=1794379386;
+	b=Mvwpu508FCWLQU41C3jzdw/3J4tAf/lvnLN08KuEsDu0bJu05k3YigwYxDQFWG5YqdLN
+	 lUPV2DMa9piQ0SScmeWpEjW5ON5Ic3r+hFaodL3/40yj5H5c7MMAJYf1Ank+MluCwXIoi
+	 NGE5Atp0ZX7rzHXQ0Wjurnqu5Py103EN6hywayIk/50rLMf952+LBqNvx2y872H5XS7Fo
+	 oZuhULCJp4tjIyz1eZ6ZGyql0m6zzSsAvGOIJWGWKINQH3U3THvERbGCvigpzs/M6YZLL
+	 e3ohcDiDI38K8mgHb4A9mGt2U8589YAQZjAQW+wl4mF+502Ga0XhYVkCbQumotrrjyQ==
 ARC-Message-Signature: i=1; d=subspace.kernel.org; s=arc20261015;
-	a=rsa-sha256; c=relaxed/relaxed; t=1794378518;
-	h=DMARC-Filter:X-Envelope-To:DKIM-Signature:X-Envelope-To:Received:
-	 X-Mizu-Trace-ID:X-Migadu-Flow:Date:From:To:CC:Subject:In-Reply-To:
-	 References:Message-ID:MIME-Version:Content-Type:
-	 Content-Transfer-Encoding;
-	bh=QBLR9XH6XThUbhGQIxGDHNv6K9NcvEAlLUNRJvnhuEQ=;
-	b=yJ6KJt2c3mhx+ED/D5wjRzVBsLZVRMUFWIU/5VGRVqIQ7cTve4bcWHu8pRdIUcqXYvAp
-	 8NhJkW3R4F470iYtc5uIi/GSSgZzrtd6APLmdbBGRJivAz0J7AZV7ksbHqnPy2iTBZiIn
-	 d8ORhqeXwcekPHaW2NiVR9mzqWWV2gRjdNZZU2Z8F+VWaaSa3/cF2uOzg59yVZdxsNBIJ
-	 W5Ov9T9BoF0sad1Rp5gVJPVGl2e7eLyE8JHDiCWYZqxWD90hfBwRHJdix4maNOvMF5uUc
-	 MnXTpnJgt7gpaboI3QPFQwGVqPXDxBtnzPXb2mLQ/LBa8MY/3qX6J4rhmhyfm/7/Srg==
+	a=rsa-sha256; c=relaxed/relaxed; t=1794379386;
+	h=DMARC-Filter:Received:DKIM-Signature:Date:From:To:Cc:Subject:
+	 Message-ID:References:MIME-Version:Content-Type:Content-Disposition:
+	 In-Reply-To;
+	bh=PLttY8nE+sGyh5SIhXQOOD815EzYHKLgvNSQzefiAEE=;
+	b=XRfL81xOi8f2V+Yzkr7twwaFvR/Q6snlPk8B7lV5FxR0neWI4bvNMI7QS+zH7X0GNhFM
+	 Jg5Gw0BUHM3YoxYLzC3N5wucXIxH46QJ0Uq0ALR6/Ey/JptAYDpeM9YBhPMUQTBn+oWXf
+	 M5rFOyo9WuFRvqmcPxOqvRKbAlXzqFCqWOSQ9kkM83wJaf7sQcaTE6UyCP7mT/bTQwIgQ
+	 cnLYuL7d4jxsX3H4esaSFB8Alc5LNQFaUy5O0ro9XuZSsXuGISjkHiluVuS5bRL5OOzRa
+	 3ZgEx73LzzL51I9tx4XtEk3z31Zm9B9jodEdnLr8ynDPBKl0PEk6gd6rdppQAxk7b2A==
 ARC-Authentication-Results: i=1; smtp.subspace.kernel.org; 
-	dmarc=pass header.from=linux.dev;
-	spf=pass smtp.mailfrom=linux.dev;
-	dkim=pass header.d=linux.dev header.i=@linux.dev header.a=rsa-sha256 header.s=key1 header.b=ADBcKkEa;
-	arc=none smtp.remote-ip=95.215.58.231
-Received: from mta1.migadu.com (out-231.mta1.migadu.com [95.215.58.231])
-	(using TLSv1.3 with cipher TLS_AES_128_GCM_SHA256 (128/128 bits)
+	dmarc=pass header.from=ideasonboard.com;
+	spf=pass smtp.mailfrom=ideasonboard.com;
+	dkim=pass header.d=ideasonboard.com header.i=@ideasonboard.com header.a=rsa-sha256 header.s=mail header.b=amS6LCoE;
+	arc=none smtp.remote-ip=213.167.242.64
+Received: from perceval.ideasonboard.com (perceval.ideasonboard.com [213.167.242.64])
+	(using TLSv1.3 with cipher TLS_AES_256_GCM_SHA384 (256/256 bits)
 	 key-exchange X25519 server-signature ECDSA (prime256v1) server-digest SHA256)
 	(No client certificate requested)
-	by smtp.subspace.kernel.org (Postfix) with ESMTPS id E871C606A324
-	for <linux-wireless@vger.kernel.org>; Wed, 11 Nov 2026 06:28:36 +0000 (UTC)
-DMARC-Filter: OpenDMARC Filter v1.4.2 smtp.subspace.kernel.org E871C606A324
-Authentication-Results: smtp.subspace.kernel.org; dmarc=pass (p=none dis=none) header.from=linux.dev
-Authentication-Results: smtp.subspace.kernel.org; spf=pass smtp.mailfrom=linux.dev
+	by smtp.subspace.kernel.org (Postfix) with ESMTPS id 79050606A31C;
+	Wed, 11 Nov 2026 06:43:05 +0000 (UTC)
+DMARC-Filter: OpenDMARC Filter v1.4.2 smtp.subspace.kernel.org 79050606A31C
+Authentication-Results: smtp.subspace.kernel.org; dmarc=pass (p=none dis=none) header.from=ideasonboard.com
+Authentication-Results: smtp.subspace.kernel.org; spf=pass smtp.mailfrom=ideasonboard.com
 Authentication-Results: smtp.subspace.kernel.org;
-	dkim=pass (1024-bit key, unprotected) header.d=linux.dev header.i=@linux.dev header.a=rsa-sha256 header.s=key1 header.b=ADBcKkEa
-X-Envelope-To: linux-wireless@vger.kernel.org
-DKIM-Signature: a=rsa-sha256; bh=BYbsrt73utANP6mJklczqOlZOZawKJyWNF3cXm6ASNQ=;
- c=simple/simple; d=linux.dev;
- h=from:to:subject:date:message-id:mime-version:content-type; s=key1;
- t=1794378514; v=1; x=1794983314;
- b=ADBcKkEa5QyorHa+Ceev5wxwZMVzdoXqLZpy+vw9WQRNRDA8KOz5jh+FI0TtEr1a6sunBPez
- T+jPXRAQT+bhJLKomksP2IdhO9pU+PARJqVHki7HZj1VkGh+F5045v/zGZioo38Ikm+qQjhQwuB
- XanT99FVDShNWYjC7cDpV4rc=
-X-Envelope-To: linux-wireless@vger.kernel.org
-Received: by smtp.migadu.com with ESMTPS id 2fb7476acf35cca4;
-	Wed, 11 Nov 2026 06:28:34 +0000
-X-Mizu-Trace-ID: 2fb7476acf35cca4
-X-Migadu-Flow: FLOW_OUT
-Date: Wed, 11 Nov 2026 07:28:28 +0100
-From: Luka Gejak <luka.gejak@linux.dev>
-To: Ping-Ke Shih <pkshih@realtek.com>, Kalpesh Solanki <skalpesh942@gmail.com>
-CC: "kvalo@kernel.org" <kvalo@kernel.org>,
- "linux-wireless@vger.kernel.org" <linux-wireless@vger.kernel.org>,
- "linux-kernel@vger.kernel.org" <linux-kernel@vger.kernel.org>
-Subject: =?US-ASCII?Q?RE=3A_=5BPATCH_v4_0/3=5D_wifi=3A_rtw88=3A_firmwa?=
- =?US-ASCII?Q?re_recovery_fixes_and_LPS_hang_handling?=
-In-Reply-To: <3fa52468b46142639eb6800cb52b146c@realtek.com>
-References: <20261108142708.489067-1-skalpesh942@gmail.com> <3fa52468b46142639eb6800cb52b146c@realtek.com>
-Message-ID: <7243D84A-CB81-477E-9A87-05AA4B3D0892@linux.dev>
+	dkim=pass (1024-bit key) header.d=ideasonboard.com header.i=@ideasonboard.com header.a=rsa-sha256 header.s=mail header.b=amS6LCoE
+Received: from killaraus.ideasonboard.com (2001-14ba-7086-3000--a06.rev.dnainternet.fi [IPv6:2001:14ba:7086:3000::a06])
+	by perceval.ideasonboard.com (Postfix) with ESMTPSA id 4C7EADA8;
+	Wed, 11 Nov 2026 07:40:40 +0100 (CET)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=ideasonboard.com;
+	s=mail; t=1794379240;
+	bh=Ihyx9K3Xp75id2X2o2rP6Zvt+CPGhW6/P9+os5jl4fg=;
+	h=Date:From:To:Cc:Subject:References:In-Reply-To:From;
+	b=amS6LCoEqNOkpsJNIpQ7PhsMSH3g2QVmxPz3G6gv/49uKnuzjqLINDWtuzx//uOdi
+	 PheykHoi6Q0AWxuGiTGsexpzx7GcqPRZiRyKlrLt/QBFyPXGj0ijMT8Bf4/lrwMQS3
+	 OqjSLK1WZqusKZR4tgf2IQ4NXdXTnmliRZsj2WcA=
+Date: Wed, 11 Nov 2026 08:43:01 +0200
+From: Laurent Pinchart <laurent.pinchart@ideasonboard.com>
+To: Wentao Liang <vulab@iscas.ac.cn>
+Cc: Jeff Johnson <jeff.johnson@oss.qualcomm.com>,
+	Jeff Johnson <jjohnson@kernel.org>, linux-wireless@vger.kernel.org,
+	ath11k@lists.infradead.org, linux-kernel@vger.kernel.org,
+	workflows@vger.kernel.org
+Subject: Re: [PATCH RESEND] wifi: ath11k: release the rproc reference on
+ teardown
+Message-ID: <20261111064301.GC86558@killaraus.ideasonboard.com>
+References: <20261103102915.1341148-1-vulab@iscas.ac.cn>
+ <a39b1918-5d04-452b-8b5a-0703963f4587@oss.qualcomm.com>
+ <179430684554.3011466.3431045638041318447@iscas.ac.cn>
+ <20261110122714.GA3809@killaraus.ideasonboard.com>
+ <179436839700.3055208.16759622808608708086@iscas.ac.cn>
 X-Mailing-List: linux-wireless@vger.kernel.org
 List-Id: <linux-wireless.vger.kernel.org>
 List-Post: <mailto:linux-wireless@vger.kernel.org>
@@ -67,31 +67,44 @@ List-Unsubscribe: <mailto:linux-wireless+unsubscribe@vger.kernel.org>
 List-Owner: <mailto:linux-wireless+owner@vger.kernel.org>
 Precedence: list
 MIME-Version: 1.0
-Content-Type: text/plain;
- charset=utf-8
-Content-Transfer-Encoding: 8bit
+Content-Type: text/plain; charset=utf-8
+Content-Disposition: inline
+In-Reply-To: <179436839700.3055208.16759622808608708086@iscas.ac.cn>
 
-On November 11, 2026 4:37:18 AM GMT+01:00, Ping-Ke Shih
-<pkshih@realtek.com> wrote:
->Kalpesh Solanki <skalpesh942@gmail.com> wrote:
->> Changes in v4:
->> - In patch 1/3: Also clear RTW_FLAG_RESTARTING in rtw_ops_start() if
->>   rtw_core_start() fails.
->> - Add patch 2/3: Prevent double free and sta_cnt underflow in
->>   rtw_sta_remove() when recovery races with station disconnect.
->> - In patch 3/3:
->>   - Keep rtw_fw_dump_dbg_info() in place on first failure.
->>   - Restrict firmware recovery invocation to PCIe devices to prevent
->>     scheduling while atomic panic on USB and SDIO.
->>   - Explicitly check rtw_hci_type() in rtw_fw_recovery().
->
->I can't see v4 in lore nor patchwork. Please send v5 (identical to v4).
->
->
+On Wed, Nov 11, 2026 at 03:39:57AM -0000, Wentao Liang wrote:
+> Hi Laurent,
+> 
+> My main goal is to study how to find bugs in the Linux kernel.
 
-Shouldn't Kalpesh address the review comments before pushing v5 so we don't
-waste a version cycle? He mentioned he'd follow up in a few days with v5 to
-address the v4 feedback.
+Why ?
 
-Best regards,
-Luka Gejak
+> When
+> that work finds a bug, I also want to help fix it and contribute to
+> the kernel.
+> 
+> Static analysis flagged possible bugs, and we reviewed them by hand
+> with help from DeepSeek and GPT-6.1 Sol. Even after that review, many
+> of them still seemed worth looking into. I got excited about the
+> findings and sent more patches than I could follow up on. I regretted
+> that decision soon afterward. I should have sent fewer patches and
+> replied sooner. I'm sorry for the extra work this caused.
+> 
+> I'll use this shared address only to reply to feedback I haven't yet
+> answered on patches I've already sent. I'll go through that feedback
+> one message at a time and respect the decisions maintainers have
+> already made. If any of the remaining patches are still worth
+> considering, I'd be grateful for the chance to answer questions
+> about them.
+> 
+> I still hope to contribute to the kernel in the future. If I have
+> the chance to do so, I'll use my own email address, respect the
+> maintainers' requests, and send only as many patches as I can
+> follow up on promptly.
+> 
+> Thanks,
+> Wentao
+
+-- 
+Regards,
+
+Laurent Pinchart
