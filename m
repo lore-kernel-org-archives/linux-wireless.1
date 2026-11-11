@@ -1,48 +1,48 @@
-Authentication-Results: smtp.subspace.kernel.org; arc=none smtp.remote-ip=60.244.123.138
+Authentication-Results: smtp.subspace.kernel.org; arc=none smtp.remote-ip=210.61.82.184
 ARC-Seal: i=1; d=subspace.kernel.org; s=arc20261015; a=rsa-sha256; cv=none;
-	t=1794381236;
-	b=07jGrU319HmaIEFttUbpw8zMa8BqZRFf1en1FK4GJtsC6Qcx5mex6UzsmiRNWXKPum/o
-	 XB8adnxC27aKXRi+jAP9h1qqiUoAzZZGJg8AJlfel2x9324frmljdLFvgpXENbnmzcfte
-	 6rctZBXsugWAtKb5esktqZFolQPVvguS1kGrvgaxZ6qEQN83/ePW+uBG6nsjPyA1rx/qx
-	 HmGXohZ5a5B6hrXwpxC41k1h1AOzqay+PQTEJLgVX1RqjnUD1deF1Gu5iL+seeVSu8dNH
-	 R3ubosNZiCQh3mWwoU96WCGRlbWtOgxkw2oM+KoaZGmGZ3jMsktqv0g8fT/ne1qq70A==
+	t=1794381253;
+	b=E88px37zqEJJjrku0mc95CopILG3VAKkvOseAf/MshKMBgkaHXmYMRkppTEmMNt8Ldy5
+	 1b10vVBzq0w+yyHeeAjGdwSR8Xle2ZD/l/sWwNr7ZVuQYtFT2WyebGpKsu1WJqu79xC+9
+	 Edwvio+xJ7xOPGWED6l6gbrPiAUOljWH4mYAfz/p5+U3Q68SzKab3C/av0iS7w5+/D6gt
+	 pUPDH3kE/mGrcHV1rY7PQgLUU8kyLGTkbblNYq3HTUXMWMKTyzxJrXI7x2S0g+6Tg5qVL
+	 WX3tX5QNnHw1DXQSVz9ytQeO/zeVcFp9E1lkC7gmHPuY9G/uFeVT5FBc3etC56XgAvw==
 ARC-Message-Signature: i=1; d=subspace.kernel.org; s=arc20261015;
-	a=rsa-sha256; c=relaxed/relaxed; t=1794381236;
+	a=rsa-sha256; c=relaxed/relaxed; t=1794381253;
 	h=DMARC-Filter:X-UUID:DKIM-Signature:X-CID-P-RULE:X-CID-O-INFO:
 	 X-CID-META:X-CID-BVR:X-CID-BAS:X-CID-FACTOR:X-CID-RHF:X-UUID:Received:
 	 Received:Received:From:To:CC:Subject:Date:Message-ID:X-Mailer:
 	 MIME-Version:Content-Transfer-Encoding:Content-Type:X-MTK;
 	bh=mwx0jmF9JokkiaHJT8NbtY7bR3paMEp+A7PPF7e2LHE=;
-	b=WGp0GNBoYoueIR6engqVSYub8eX6mie/7sHpyYUkUPF6Cye60aD8zcQu2C5eJbj4IHML
-	 cdf59MeCxnba9PJh9q6yOFlnUUzzymyR7PASdrha6a8IBvO2LjcZTRJjpgsHJyaQ6udQz
-	 /3w9+3w+SVl7WhxlocxRD02SJQGjPLwuNCypibOlGHv7lxFzUU6eqeMcO0h/EjKNGZZ4R
-	 ryB1DPaszhyFZg465FBOLEX2KNl7zt8BF2zg9k55vNy8kCV7fUgntVA40qNL9H39N0t9m
-	 LbRbRL//0oeR0kRNnsOQ5wdzpp11kvsTU85jY+7rovfmhC7m5W6WNTM6U9TzR9el0Dg==
+	b=vzQOsV5QRn+519WJpEe9Z+6fhOTA4AI1QPbkKds59vTCxtpbEwCQ+TFy2of7eLdgMd+g
+	 87lQituvsTg1QPzXLjoULfgkK8J9JdDCYXNkwoL/9x7EpS1LXX7EskI6JZ15kDzUUsRL+
+	 9nIrorYK7E3HoZI1FFC0HpxcyiZIWKS5VcCs/3Vm0PpkA0tXL1ce/V8CATPV/FWH+dM9d
+	 j2wGAu0tYgjr5EzWJvK6qetctZyG4i2UNMYrG9Nx/ZT5XGMlriBd+YU8JaK9i1BYo4Hs6
+	 I7s/hdLNxa8g58+XgA/JyZO9WARl/fmAJVLSZg0VjXGzO1vlE6aUVpP+FeN8ynQkyiw==
 ARC-Authentication-Results: i=1; smtp.subspace.kernel.org; 
 	dmarc=pass header.from=mediatek.com;
 	spf=pass smtp.mailfrom=mediatek.com;
-	dkim=pass header.d=mediatek.com header.i=@mediatek.com header.a=rsa-sha256 header.s=dk header.b=apIf+QDL;
-	arc=none smtp.remote-ip=60.244.123.138
-Received: from mailgw01.mediatek.com (unknown [60.244.123.138])
+	dkim=pass header.d=mediatek.com header.i=@mediatek.com header.a=rsa-sha256 header.s=dk header.b=dikBCYvG;
+	arc=none smtp.remote-ip=210.61.82.184
+Received: from mailgw02.mediatek.com (unknown [210.61.82.184])
 	(using TLSv1.3 with cipher TLS_AES_256_GCM_SHA384 (256/256 bits)
 	 key-exchange X25519 server-signature ECDSA (prime256v1) server-digest SHA256)
 	(No client certificate requested)
-	by smtp.subspace.kernel.org (Postfix) with ESMTPS id C28AA606A320
-	for <linux-wireless@vger.kernel.org>; Wed, 11 Nov 2026 07:13:54 +0000 (UTC)
-DMARC-Filter: OpenDMARC Filter v1.4.2 smtp.subspace.kernel.org C28AA606A320
+	by smtp.subspace.kernel.org (Postfix) with ESMTPS id 0EDEA606A327
+	for <linux-wireless@vger.kernel.org>; Wed, 11 Nov 2026 07:14:11 +0000 (UTC)
+DMARC-Filter: OpenDMARC Filter v1.4.2 smtp.subspace.kernel.org 0EDEA606A327
 Authentication-Results: smtp.subspace.kernel.org; dmarc=pass (p=quarantine dis=none) header.from=mediatek.com
 Authentication-Results: smtp.subspace.kernel.org; spf=pass smtp.mailfrom=mediatek.com
 Authentication-Results: smtp.subspace.kernel.org;
-	dkim=pass (1024-bit key, unprotected) header.d=mediatek.com header.i=@mediatek.com header.a=rsa-sha256 header.s=dk header.b=apIf+QDL
-X-UUID: 714b128edd9f11f1b1788b6acf885367-20261111
+	dkim=pass (1024-bit key) header.d=mediatek.com header.i=@mediatek.com header.a=rsa-sha256 header.s=dk header.b=dikBCYvG
+X-UUID: 79e957e8dd9f11f18dc8c9802ae25ab1-20261111
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed; d=mediatek.com; s=dk;
 	h=Content-Type:Content-Transfer-Encoding:MIME-Version:Message-ID:Date:Subject:CC:To:From; bh=mwx0jmF9JokkiaHJT8NbtY7bR3paMEp+A7PPF7e2LHE=;
-	b=apIf+QDLafmmRtUSAIkvmiZi6Zb9vUR2KeEj/1cZp/0mxAxLrgf89muChnHDHyZbPts0XO8z5qn5ZbK0DwKr3D6kwKU11JliSyl7o1eyJfn7o3ULY9BAdccyBBxTVTlYpjURiYli0zdYwyhQRotezdjCcMRapVXnbn4/K9oi0VE=;
+	b=dikBCYvGxMdwSkhhiDmlL1wI0ez041pmorNZZ0YKbagiGyguL8G8WLSval3XAsr0IhUgDf2A3lXKskOFkG4czti82ITrKnT3x8BBCFw/YQRCiNQAMMeewdiZpyjetS2DIDKrILtY/WEsud5T76fPOervc3kqjGwlV3cPVmW4I/c=;
 X-CID-P-RULE: Release_Ham
-X-CID-O-INFO: VERSION:1.3.21,REQID:12269801-9f51-422f-aa98-ed828c939e6c,IP:0,U
+X-CID-O-INFO: VERSION:1.3.21,REQID:481132d9-8d84-4135-ab56-8634d09392d4,IP:0,U
 	RL:0,TC:0,Content:0,EDM:0,RT:0,SF:0,FILE:0,BULK:0,RULE:Release_Ham,ACTION:
 	release,TS:0
-X-CID-META: VersionHash:b0318ac,CLOUDID:7776978d-b3e7-4795-ae33-b1b4d51e21d7,B
+X-CID-META: VersionHash:b0318ac,CLOUDID:3377978d-b3e7-4795-ae33-b1b4d51e21d7,B
 	ulkID:nil,BulkQuantity:0,SF:102|836|865|888|898,TC:-5,Content:0|15|50|99,E
 	DM:-3,IP:nil,URL:0,File:130,RT:0,Bulk:nil,QS:nil,BEC:nil,COL:0,OSI:0,OSA:0
 	,AV:0,LES:1,SPR:NO,DKR:0,DKP:0,BRR:0,BRE:0,ARC:0
@@ -50,18 +50,18 @@ X-CID-BVR: 2,SSN|SDN
 X-CID-BAS: 2,SSN|SDN,0,_
 X-CID-FACTOR: TF_CID_SPAM_SNR
 X-CID-RHF: D41D8CD98F00B204E9800998ECF8427E
-X-UUID: 714b128edd9f11f1b1788b6acf885367-20261111
-Received: from mtkmbs14n1.mediatek.inc [(172.21.101.75)] by mailgw01.mediatek.com
+X-UUID: 79e957e8dd9f11f18dc8c9802ae25ab1-20261111
+Received: from mtkmbs09n1.mediatek.inc [(172.21.101.35)] by mailgw02.mediatek.com
 	(envelope-from <michael.shih@mediatek.com>)
 	(Generic MTA with TLSv1.2 ECDHE-RSA-AES256-GCM-SHA384 256/256)
-	with ESMTP id 2035574125; Wed, 11 Nov 2026 15:13:49 +0800
+	with ESMTP id 1553538107; Wed, 11 Nov 2026 15:14:04 +0800
 Received: from mtkmbs13n2.mediatek.inc (172.21.101.108) by
  mtkmbs11n2.mediatek.inc (172.21.101.187) with Microsoft SMTP Server
  (version=TLS1_2, cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id
- 15.2.2562.29; Wed, 11 Nov 2026 15:13:48 +0800
+ 15.2.2562.29; Wed, 11 Nov 2026 15:14:02 +0800
 Received: from mtksitap99.mediatek.inc (10.233.130.16) by
  mtkmbs13n2.mediatek.inc (172.21.101.73) with Microsoft SMTP Server id
- 15.2.2562.29 via Frontend Transport; Wed, 11 Nov 2026 15:13:47 +0800
+ 15.2.2562.29 via Frontend Transport; Wed, 11 Nov 2026 15:14:02 +0800
 From: Michael Shih <michael.shih@mediatek.com>
 To: <nbd@nbd.name>, <lorenzo@kernel.org>
 CC: <linux-wireless@vger.kernel.org>, <linux-mediatek@lists.infradead.org>,
@@ -70,8 +70,8 @@ CC: <linux-wireless@vger.kernel.org>, <linux-mediatek@lists.infradead.org>,
 	<litien.chang@mediatek.com>, <jb.tsai@mediatek.com>, Michael Shih
 	<michael.shih@mediatek.com>
 Subject: [PATCH v1] wifi: mt76: mt7925: support per-channel survey dump during scan
-Date: Wed, 11 Nov 2026 15:13:47 +0800
-Message-ID: <20261111071347.875266-1-michael.shih@mediatek.com>
+Date: Wed, 11 Nov 2026 15:13:58 +0800
+Message-ID: <20261111071358.875331-1-michael.shih@mediatek.com>
 X-Mailer: git-send-email 2.45.2
 X-Mailing-List: linux-wireless@vger.kernel.org
 List-Id: <linux-wireless.vger.kernel.org>
