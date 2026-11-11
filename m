@@ -1,63 +1,85 @@
-Authentication-Results: smtp.subspace.kernel.org; arc=none smtp.remote-ip=213.167.242.64
+Authentication-Results: smtp.subspace.kernel.org; arc=none smtp.remote-ip=211.75.126.72
 ARC-Seal: i=1; d=subspace.kernel.org; s=arc20261015; a=rsa-sha256; cv=none;
-	t=1794379386;
-	b=Mvwpu508FCWLQU41C3jzdw/3J4tAf/lvnLN08KuEsDu0bJu05k3YigwYxDQFWG5YqdLN
-	 lUPV2DMa9piQ0SScmeWpEjW5ON5Ic3r+hFaodL3/40yj5H5c7MMAJYf1Ank+MluCwXIoi
-	 NGE5Atp0ZX7rzHXQ0Wjurnqu5Py103EN6hywayIk/50rLMf952+LBqNvx2y872H5XS7Fo
-	 oZuhULCJp4tjIyz1eZ6ZGyql0m6zzSsAvGOIJWGWKINQH3U3THvERbGCvigpzs/M6YZLL
-	 e3ohcDiDI38K8mgHb4A9mGt2U8589YAQZjAQW+wl4mF+502Ga0XhYVkCbQumotrrjyQ==
+	t=1794379488;
+	b=d5BLKP0uW35AHsZRg05rXUrWqCwmbIsqCMwGDLyhWsUMEpiVXzJ5BtpPFGru2TdizQ7n
+	 FKw8R62BtgeqQVkKnXW++XasIqkjLZCHhNUlbYBhnmBFXh/7pAaRRC/pnFUi80Fxtdlee
+	 G+OIgsYnUJsnnCbL8GgPEHDZ9gHTcLDxvhtMFnJq91dWHNbJHk4pZXFG218qyl3pljQs3
+	 xBNNP+o0bUc5X0TXZYKk/30f2G9Ldt84ta6nzQN+O6toNSdlYHV2y/okwF7QnqiDMARIb
+	 B0iMPf9gpv3mNYCI47gCXUErquH6+92RkKK8VhHjdxllIdZ4vDSJpm+H5wqD+NG6aYg==
 ARC-Message-Signature: i=1; d=subspace.kernel.org; s=arc20261015;
-	a=rsa-sha256; c=relaxed/relaxed; t=1794379386;
-	h=DMARC-Filter:Received:DKIM-Signature:Date:From:To:Cc:Subject:
-	 Message-ID:References:MIME-Version:Content-Type:Content-Disposition:
-	 In-Reply-To;
-	bh=PLttY8nE+sGyh5SIhXQOOD815EzYHKLgvNSQzefiAEE=;
-	b=XRfL81xOi8f2V+Yzkr7twwaFvR/Q6snlPk8B7lV5FxR0neWI4bvNMI7QS+zH7X0GNhFM
-	 Jg5Gw0BUHM3YoxYLzC3N5wucXIxH46QJ0Uq0ALR6/Ey/JptAYDpeM9YBhPMUQTBn+oWXf
-	 M5rFOyo9WuFRvqmcPxOqvRKbAlXzqFCqWOSQ9kkM83wJaf7sQcaTE6UyCP7mT/bTQwIgQ
-	 cnLYuL7d4jxsX3H4esaSFB8Alc5LNQFaUy5O0ro9XuZSsXuGISjkHiluVuS5bRL5OOzRa
-	 3ZgEx73LzzL51I9tx4XtEk3z31Zm9B9jodEdnLr8ynDPBKl0PEk6gd6rdppQAxk7b2A==
+	a=rsa-sha256; c=relaxed/relaxed; t=1794379488;
+	h=DMARC-Filter:X-SpamFilter-By:DKIM-Signature:Received:Received:
+	 Received:Received:From:To:CC:Subject:Thread-Topic:Thread-Index:Date:
+	 Message-ID:References:In-Reply-To:Accept-Language:Content-Language:
+	 x-originating-ip:Content-Type:Content-Transfer-Encoding:MIME-Version;
+	bh=zExPux9rD59uZO1jLE/eqb5aN7jV2MIkvRdrLJvZscs=;
+	b=WYN5eE8FsF7I+kVJaHvDhU/qhyYMlIx7Wei2npxCqgf+khx6FRQrPDOS3ZvQ0uKjE9Ex
+	 TFbE8+TjZ8OmMmnv2C6QgzLIY0bIOr67Vyp7Uckw11LixXg9UDlz3U83amrp8VuHx5BGL
+	 i1zRbC2JejuwgTP2qI4QH+3eIvfWokfz0ibPRcn9om34p0JDlbu6UFa69netgIHIvIo3d
+	 e2bPYYqAzWhPshxpy01DWeu/6Xg0mYufLdmDt4jId8lf0oYCg7h25xGvKZhC9T4MBpEwR
+	 1ATw9emJ7eW/AYCa7W87BUrGy8v8lrMHT47Ih1V5HERrI2RWCfG0wXydDdkU5BKm+Zg==
 ARC-Authentication-Results: i=1; smtp.subspace.kernel.org; 
-	dmarc=pass header.from=ideasonboard.com;
-	spf=pass smtp.mailfrom=ideasonboard.com;
-	dkim=pass header.d=ideasonboard.com header.i=@ideasonboard.com header.a=rsa-sha256 header.s=mail header.b=amS6LCoE;
-	arc=none smtp.remote-ip=213.167.242.64
-Received: from perceval.ideasonboard.com (perceval.ideasonboard.com [213.167.242.64])
+	dmarc=pass header.from=realtek.com;
+	spf=pass smtp.mailfrom=realtek.com;
+	dkim=pass header.d=realtek.com header.i=@realtek.com header.a=rsa-sha256 header.s=dkim header.b=F7fZL4yn;
+	arc=none smtp.remote-ip=211.75.126.72
+Received: from rtits2.realtek.com.tw (rtits2.realtek.com [211.75.126.72])
 	(using TLSv1.3 with cipher TLS_AES_256_GCM_SHA384 (256/256 bits)
 	 key-exchange X25519 server-signature ECDSA (prime256v1) server-digest SHA256)
 	(No client certificate requested)
-	by smtp.subspace.kernel.org (Postfix) with ESMTPS id 79050606A31C;
-	Wed, 11 Nov 2026 06:43:05 +0000 (UTC)
-DMARC-Filter: OpenDMARC Filter v1.4.2 smtp.subspace.kernel.org 79050606A31C
-Authentication-Results: smtp.subspace.kernel.org; dmarc=pass (p=none dis=none) header.from=ideasonboard.com
-Authentication-Results: smtp.subspace.kernel.org; spf=pass smtp.mailfrom=ideasonboard.com
+	by smtp.subspace.kernel.org (Postfix) with ESMTPS id DE99F60A2602;
+	Wed, 11 Nov 2026 06:44:47 +0000 (UTC)
+DMARC-Filter: OpenDMARC Filter v1.4.2 smtp.subspace.kernel.org DE99F60A2602
+Authentication-Results: smtp.subspace.kernel.org; dmarc=pass (p=none dis=none) header.from=realtek.com
+Authentication-Results: smtp.subspace.kernel.org; spf=pass smtp.mailfrom=realtek.com
 Authentication-Results: smtp.subspace.kernel.org;
-	dkim=pass (1024-bit key) header.d=ideasonboard.com header.i=@ideasonboard.com header.a=rsa-sha256 header.s=mail header.b=amS6LCoE
-Received: from killaraus.ideasonboard.com (2001-14ba-7086-3000--a06.rev.dnainternet.fi [IPv6:2001:14ba:7086:3000::a06])
-	by perceval.ideasonboard.com (Postfix) with ESMTPSA id 4C7EADA8;
-	Wed, 11 Nov 2026 07:40:40 +0100 (CET)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=ideasonboard.com;
-	s=mail; t=1794379240;
-	bh=Ihyx9K3Xp75id2X2o2rP6Zvt+CPGhW6/P9+os5jl4fg=;
-	h=Date:From:To:Cc:Subject:References:In-Reply-To:From;
-	b=amS6LCoEqNOkpsJNIpQ7PhsMSH3g2QVmxPz3G6gv/49uKnuzjqLINDWtuzx//uOdi
-	 PheykHoi6Q0AWxuGiTGsexpzx7GcqPRZiRyKlrLt/QBFyPXGj0ijMT8Bf4/lrwMQS3
-	 OqjSLK1WZqusKZR4tgf2IQ4NXdXTnmliRZsj2WcA=
-Date: Wed, 11 Nov 2026 08:43:01 +0200
-From: Laurent Pinchart <laurent.pinchart@ideasonboard.com>
-To: Wentao Liang <vulab@iscas.ac.cn>
-Cc: Jeff Johnson <jeff.johnson@oss.qualcomm.com>,
-	Jeff Johnson <jjohnson@kernel.org>, linux-wireless@vger.kernel.org,
-	ath11k@lists.infradead.org, linux-kernel@vger.kernel.org,
-	workflows@vger.kernel.org
-Subject: Re: [PATCH RESEND] wifi: ath11k: release the rproc reference on
- teardown
-Message-ID: <20261111064301.GC86558@killaraus.ideasonboard.com>
-References: <20261103102915.1341148-1-vulab@iscas.ac.cn>
- <a39b1918-5d04-452b-8b5a-0703963f4587@oss.qualcomm.com>
- <179430684554.3011466.3431045638041318447@iscas.ac.cn>
- <20261110122714.GA3809@killaraus.ideasonboard.com>
- <179436839700.3055208.16759622808608708086@iscas.ac.cn>
+	dkim=pass (2048-bit key, unprotected) header.d=realtek.com header.i=@realtek.com header.a=rsa-sha256 header.s=dkim header.b=F7fZL4yn
+X-SpamFilter-By: ArmorX SpamTrap 5.80 with qID 6AB6iX0u92171343, This message is accepted by code: ctloc85258
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=realtek.com; s=dkim;
+	t=1794379473; bh=zExPux9rD59uZO1jLE/eqb5aN7jV2MIkvRdrLJvZscs=;
+	h=From:To:CC:Subject:Date:Message-ID:References:In-Reply-To:
+	 Content-Type:Content-Transfer-Encoding:MIME-Version;
+	b=F7fZL4yn1aWr+apUAjtNDY4DLOWqXMqfQmuYGtuW06UGgpZdMNnHOOagZL12cxKKw
+	 cOQ10hUrmgI+5/60hs1Tm6ty7CD8N7kUItYzId9q7Hk1F22mF/lRtadzYTJprDeiDE
+	 6gq941QPSDlC6IGzcHBjkmWEYbpPvINBmhcI/LbzGVO5aV2RjZxdX1hcFCJGSsn4TJ
+	 5EjHRkBGuxiWyzTWe3mbW8GhQ/JCBTJ+i1vQjmXqYeCe+0+tw1d5yGrrtcp9rcdh4v
+	 LbILsFyzV3tgm7qETnNjN6/ZAJc5+fJQqKcZD41ES8n7tjBaVDie0JqV+lcIBxiwy2
+	 I2K3o3I/FqEng==
+Received: from mail.realtek.com (rtkexhmbs03.realtek.com.tw[10.21.1.53])
+	by rtits2.realtek.com.tw (8.15.2/3.29/5.94) with ESMTPS id 6AB6iX0u92171343
+	(version=TLSv1.2 cipher=ECDHE-RSA-AES256-GCM-SHA384 bits=256 verify=FAIL);
+	Wed, 11 Nov 2026 14:44:33 +0800
+Received: from RTKEXHMBS01.realtek.com.tw (172.21.6.40) by
+ RTKEXHMBS03.realtek.com.tw (10.21.1.53) with Microsoft SMTP Server
+ (version=TLS1_2, cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id
+ 15.2.2562.56; Wed, 11 Nov 2026 14:44:34 +0800
+Received: from RTKEXHMBS06.realtek.com.tw (10.21.1.56) by
+ RTKEXHMBS01.realtek.com.tw (172.21.6.40) with Microsoft SMTP Server
+ (version=TLS1_2, cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id
+ 15.2.2562.56; Wed, 11 Nov 2026 14:44:33 +0800
+Received: from RTKEXHMBS06.realtek.com.tw ([fe80::eeeb:c765:ca73:5eef]) by
+ RTKEXHMBS06.realtek.com.tw ([fe80::eeeb:c765:ca73:5eef%10]) with mapi id
+ 15.02.2562.056; Wed, 11 Nov 2026 14:44:33 +0800
+From: Ping-Ke Shih <pkshih@realtek.com>
+To: Luka Gejak <luka.gejak@linux.dev>, Kalpesh Solanki <skalpesh942@gmail.com>
+CC: "kvalo@kernel.org" <kvalo@kernel.org>, "linux-wireless@vger.kernel.org"
+	<linux-wireless@vger.kernel.org>, "linux-kernel@vger.kernel.org"
+	<linux-kernel@vger.kernel.org>
+Subject: RE: [PATCH v4 0/3] wifi: rtw88: firmware recovery fixes and LPS hang
+ handling
+Thread-Topic: [PATCH v4 0/3] wifi: rtw88: firmware recovery fixes and LPS hang
+ handling
+Thread-Index: AQHdb41QSnErllZH10GRoAb+TdNRY7coPI/g//+p8wCAAIpfwA==
+Date: Wed, 11 Nov 2026 06:44:33 +0000
+Message-ID: <ed7480720b82467b881bb3f23da8017b@realtek.com>
+References: <20261108142708.489067-1-skalpesh942@gmail.com>
+ <3fa52468b46142639eb6800cb52b146c@realtek.com>
+ <7243D84A-CB81-477E-9A87-05AA4B3D0892@linux.dev>
+In-Reply-To: <7243D84A-CB81-477E-9A87-05AA4B3D0892@linux.dev>
+Accept-Language: en-US, zh-TW
+Content-Language: zh-TW
+Content-Type: text/plain; charset="utf-8"
+Content-Transfer-Encoding: base64
 X-Mailing-List: linux-wireless@vger.kernel.org
 List-Id: <linux-wireless.vger.kernel.org>
 List-Post: <mailto:linux-wireless@vger.kernel.org>
@@ -67,44 +89,23 @@ List-Unsubscribe: <mailto:linux-wireless+unsubscribe@vger.kernel.org>
 List-Owner: <mailto:linux-wireless+owner@vger.kernel.org>
 Precedence: list
 MIME-Version: 1.0
-Content-Type: text/plain; charset=utf-8
-Content-Disposition: inline
-In-Reply-To: <179436839700.3055208.16759622808608708086@iscas.ac.cn>
 
-On Wed, Nov 11, 2026 at 03:39:57AM -0000, Wentao Liang wrote:
-> Hi Laurent,
-> 
-> My main goal is to study how to find bugs in the Linux kernel.
-
-Why ?
-
-> When
-> that work finds a bug, I also want to help fix it and contribute to
-> the kernel.
-> 
-> Static analysis flagged possible bugs, and we reviewed them by hand
-> with help from DeepSeek and GPT-6.1 Sol. Even after that review, many
-> of them still seemed worth looking into. I got excited about the
-> findings and sent more patches than I could follow up on. I regretted
-> that decision soon afterward. I should have sent fewer patches and
-> replied sooner. I'm sorry for the extra work this caused.
-> 
-> I'll use this shared address only to reply to feedback I haven't yet
-> answered on patches I've already sent. I'll go through that feedback
-> one message at a time and respect the decisions maintainers have
-> already made. If any of the remaining patches are still worth
-> considering, I'd be grateful for the chance to answer questions
-> about them.
-> 
-> I still hope to contribute to the kernel in the future. If I have
-> the chance to do so, I'll use my own email address, respect the
-> maintainers' requests, and send only as many patches as I can
-> follow up on promptly.
-> 
-> Thanks,
-> Wentao
-
--- 
-Regards,
-
-Laurent Pinchart
+THVrYSBHZWphayA8bHVrYS5nZWpha0BsaW51eC5kZXY+IHdyb3RlOg0KPiBPbiBOb3ZlbWJlciAx
+MSwgMjAyNiA0OjM3OjE4IEFNIEdNVCswMTowMCwgUGluZy1LZSBTaGloDQo+IDxwa3NoaWhAcmVh
+bHRlay5jb20+IHdyb3RlOg0KPiA+S2FscGVzaCBTb2xhbmtpIDxza2FscGVzaDk0MkBnbWFpbC5j
+b20+IHdyb3RlOg0KPiA+PiBDaGFuZ2VzIGluIHY0Og0KPiA+PiAtIEluIHBhdGNoIDEvMzogQWxz
+byBjbGVhciBSVFdfRkxBR19SRVNUQVJUSU5HIGluIHJ0d19vcHNfc3RhcnQoKSBpZg0KPiA+PiAg
+IHJ0d19jb3JlX3N0YXJ0KCkgZmFpbHMuDQo+ID4+IC0gQWRkIHBhdGNoIDIvMzogUHJldmVudCBk
+b3VibGUgZnJlZSBhbmQgc3RhX2NudCB1bmRlcmZsb3cgaW4NCj4gPj4gICBydHdfc3RhX3JlbW92
+ZSgpIHdoZW4gcmVjb3ZlcnkgcmFjZXMgd2l0aCBzdGF0aW9uIGRpc2Nvbm5lY3QuDQo+ID4+IC0g
+SW4gcGF0Y2ggMy8zOg0KPiA+PiAgIC0gS2VlcCBydHdfZndfZHVtcF9kYmdfaW5mbygpIGluIHBs
+YWNlIG9uIGZpcnN0IGZhaWx1cmUuDQo+ID4+ICAgLSBSZXN0cmljdCBmaXJtd2FyZSByZWNvdmVy
+eSBpbnZvY2F0aW9uIHRvIFBDSWUgZGV2aWNlcyB0byBwcmV2ZW50DQo+ID4+ICAgICBzY2hlZHVs
+aW5nIHdoaWxlIGF0b21pYyBwYW5pYyBvbiBVU0IgYW5kIFNESU8uDQo+ID4+ICAgLSBFeHBsaWNp
+dGx5IGNoZWNrIHJ0d19oY2lfdHlwZSgpIGluIHJ0d19md19yZWNvdmVyeSgpLg0KPiA+DQo+ID5J
+IGNhbid0IHNlZSB2NCBpbiBsb3JlIG5vciBwYXRjaHdvcmsuIFBsZWFzZSBzZW5kIHY1IChpZGVu
+dGljYWwgdG8gdjQpLg0KPiA+DQo+ID4NCj4gDQo+IFNob3VsZG4ndCBLYWxwZXNoIGFkZHJlc3Mg
+dGhlIHJldmlldyBjb21tZW50cyBiZWZvcmUgcHVzaGluZyB2NSBzbyB3ZSBkb24ndA0KPiB3YXN0
+ZSBhIHZlcnNpb24gY3ljbGU/IEhlIG1lbnRpb25lZCBoZSdkIGZvbGxvdyB1cCBpbiBhIGZldyBk
+YXlzIHdpdGggdjUgdG8NCj4gYWRkcmVzcyB0aGUgdjQgZmVlZGJhY2suDQoNCk9rLiBJIGp1c3Qg
+bm90ZWQgdGhhdCB2NCB3YXMgbWlzc2luZy4gDQoNCg0K
