@@ -1,78 +1,102 @@
-Authentication-Results: smtp.subspace.kernel.org; arc=none smtp.remote-ip=211.75.126.72
+Authentication-Results: smtp.subspace.kernel.org; arc=none smtp.remote-ip=209.85.215.225
 ARC-Seal: i=1; d=subspace.kernel.org; s=arc20261015; a=rsa-sha256; cv=none;
-	t=1794448463;
-	b=OYvxaj8uEgWpjKG3bUDZodvdlkRprnW/4+L+aPXAvBvZ8SNdvUa46wz3L/gQiQ9mji53
-	 9F85TQNiJ2XYfFqiAvQLioZGHCpV154CJ9xRBFJRlXsmhP/soBWbA9oc9vx5rJXVXheIQ
-	 e/iO/sJBHFm7w0tmFy08FwVNpW+zS0JMBh9jEyW2arGiEynENL+Lj62/Sirxpzq0zHcsB
-	 8ZGuCeIqA4sTGxnN4XFbCXEzusfvleYsIZRCD+38J5EQk2vpv+jr/4DDaOzcd2Z8gL99s
-	 x+iOuZTqb+JtJGZorXkzYZh/wGFHBDUnU6BBjTP/71ADHzyBSuJC6ccb7GePqWFTzOg==
+	t=1794452009;
+	b=lXHhGbJCqWe7DWfdo8v5QTT8O6zLVWz4kgnhHq+ApUDHVNfZF8JDR8rlEcdsSD0ZRQfA
+	 XoCXNYC2ZCue6rv3yaygK/qffo4xND2LcXlcrUU7M0xjBCB4QShlSlJOzARQubBvgaV33
+	 WfXV3Dofw5kb9nVlFDLhRBRbZSXdAYKUK6hH1dtcKWqQRYDEjXlwhpPuNpuqfeWTdQUA7
+	 B2aeJDeb8BxxcXs9IhT88QnXM38sAj361vL5PHZQGg9IaxEXGfyn4YlfnIpd7yt/p/Ha6
+	 6EJXzLHtsMXD3gDwZXvHhAIpfl0mOW/51sThmBpSn+24fjE7PcTw10qTAlJKrg8C+uQ==
 ARC-Message-Signature: i=1; d=subspace.kernel.org; s=arc20261015;
-	a=rsa-sha256; c=relaxed/relaxed; t=1794448463;
-	h=DMARC-Filter:X-SpamFilter-By:DKIM-Signature:Received:Received:
-	 Received:From:To:CC:Subject:Thread-Topic:Thread-Index:Date:Message-ID:
-	 References:In-Reply-To:Accept-Language:Content-Language:
-	 x-originating-ip:Content-Type:Content-Transfer-Encoding:MIME-Version;
-	bh=pDOIr/MHUGMOxHHD78tYrzDdA4LJA3h1lraeh7AxfhM=;
-	b=tN1aZln6hFTto2uJ3EgT80DKxUlzE+3ZzJ+BLgp+6a7tIOT5ZbKex2Hc2qtLAuB6J68t
-	 xwIvvCHQQczOEd0ZNcL4GGAU57D+Ohmxe4XBx7U3SVSP+1Dtn6sgJO8ZE30qtGxROQVbM
-	 dj+LzPBg7/aLGEhoScn+8CH+S7Ybj98ogJ3h0qkRiXvY/NOM+lZ7X9RVxbYmb0g70tUXc
-	 CJqk4lomxx44fB1g5a7oT1/v8MV93kNBwBN+sITEsTHlDD1pSr+b6sPWKxL/Cw/d0Ly18
-	 cQo4LmHqBovUtah2GvhQTqE0JXoTIoMpj19DuD3Q7XfbDCAegQTNMDrkpZ5NpYpQihg==
+	a=rsa-sha256; c=relaxed/relaxed; t=1794452009;
+	h=DMARC-Filter:Received:DKIM-Signature:X-Google-DKIM-Signature:
+	 X-Forwarded-Encrypted:X-Gm-Message-State:X-Gm-Gg:X-Received:Received:
+	 X-Relaying-Domain:From:To:Cc:Subject:Date:Message-ID:X-Mailer:
+	 MIME-Version:Content-Transfer-Encoding;
+	bh=Nc4XLNPToEMaydN4Y5LPmHECaS4FBVXGXKRGT4Pu6v8=;
+	b=gQwY2E6BpeC8FR+O/NZ0B+gn2+YcbUfsH/UmZFUC0ROpoVveLzcSAeeNU2JU3WjzyXjH
+	 Yvrp2eG7UlntoKkZmfwiWme2R6Rm2cw7LR/hr/txQGFzii7p+YHeW9GfwQadkYJIPcoEO
+	 h+MWS0v71zXrswOE4o60Qm0NnJ4cP+bMU/w2/Xz9DgEFUycQ3S1+CAfV24XFajFkC1nLw
+	 wHdjrcI3OjlOUaLDl7BTU1BBGfieMqDVavwJfSQ9Wg6wtVEgcITBOduQ+nBsYkRK//7Kt
+	 dAgDjgigTjgFGEkaas0z+L4NZxreykz4ODt2uI0PuYwjsB2pg5eiFFZ0N16By6lzcEQ==
 ARC-Authentication-Results: i=1; smtp.subspace.kernel.org; 
-	dmarc=pass header.from=realtek.com;
-	spf=pass smtp.mailfrom=realtek.com;
-	dkim=pass header.d=realtek.com header.i=@realtek.com header.a=rsa-sha256 header.s=dkim header.b=FNy3UiTP;
-	arc=none smtp.remote-ip=211.75.126.72
-Received: from rtits2.realtek.com.tw (rtits2.realtek.com [211.75.126.72])
-	(using TLSv1.3 with cipher TLS_AES_256_GCM_SHA384 (256/256 bits)
+	dmarc=pass header.from=ausil.us;
+	spf=pass smtp.mailfrom=ausil.us;
+	dkim=pass header.d=ausil.us header.i=@ausil.us header.a=rsa-sha256 header.s=google header.b=akEjgfZW;
+	arc=none smtp.remote-ip=209.85.215.225
+Received: from mail-pg1-f225.google.com (mail-pg1-f225.google.com [209.85.215.225])
+	(using TLSv1.3 with cipher TLS_AES_128_GCM_SHA256 (128/128 bits)
 	 key-exchange X25519 server-signature ECDSA (prime256v1) server-digest SHA256)
 	(No client certificate requested)
-	by smtp.subspace.kernel.org (Postfix) with ESMTPS id 6F54E606A31C
-	for <linux-wireless@vger.kernel.org>; Thu, 12 Nov 2026 01:54:22 +0000 (UTC)
-DMARC-Filter: OpenDMARC Filter v1.4.2 smtp.subspace.kernel.org 6F54E606A31C
-Authentication-Results: smtp.subspace.kernel.org; dmarc=pass (p=none dis=none) header.from=realtek.com
-Authentication-Results: smtp.subspace.kernel.org; spf=pass smtp.mailfrom=realtek.com
+	by smtp.subspace.kernel.org (Postfix) with ESMTPS id D1634606A324
+	for <linux-wireless@vger.kernel.org>; Thu, 12 Nov 2026 02:53:28 +0000 (UTC)
+DMARC-Filter: OpenDMARC Filter v1.4.2 smtp.subspace.kernel.org D1634606A324
+Authentication-Results: smtp.subspace.kernel.org; dmarc=pass (p=quarantine dis=none) header.from=ausil.us
+Authentication-Results: smtp.subspace.kernel.org; spf=pass smtp.mailfrom=ausil.us
 Authentication-Results: smtp.subspace.kernel.org;
-	dkim=pass (2048-bit key, unprotected) header.d=realtek.com header.i=@realtek.com header.a=rsa-sha256 header.s=dkim header.b=FNy3UiTP
-X-SpamFilter-By: ArmorX SpamTrap 5.80 with qID 6AC1sIl253289883, This message is accepted by code: ctloc85258
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=realtek.com; s=dkim;
-	t=1794448458; bh=pDOIr/MHUGMOxHHD78tYrzDdA4LJA3h1lraeh7AxfhM=;
-	h=From:To:CC:Subject:Date:Message-ID:References:In-Reply-To:
-	 Content-Type:Content-Transfer-Encoding:MIME-Version;
-	b=FNy3UiTPrSt57mDYIcpCcJWCiE0zQlntcOLPwRARls+YgBahgUhl+MS69a3zYEyET
-	 VufUwSToRhG65sWdLLAqQGlQpamxrmF+TsVBIN2Lmv53BeDj8WG5qJMXfnIqkONFK9
-	 gnO+rO3HrwhKDYGQJJE5AVZv0uQ+GSPphhgv+ND/N8OkTcUmdTjY+uZ3OvJxd6ngin
-	 SdKLpwpwdKQysZykBBybX7mzELILrDNwxGuB3/w7V8z6pOp73fSJbqmxxkdvH2u627
-	 er4ukt45QfDil3IYG+y/WpV8lhjNwiSYwcsYBU43SLxpc9n2r2ScZHXAAOOpBbjuEH
-	 UvZt+lMJuJvdw==
-Received: from mail.realtek.com (rtkexhmbs03.realtek.com.tw[10.21.1.53])
-	by rtits2.realtek.com.tw (8.15.2/3.29/5.94) with ESMTPS id 6AC1sIl253289883
-	(version=TLSv1.2 cipher=ECDHE-RSA-AES256-GCM-SHA384 bits=256 verify=FAIL);
-	Thu, 12 Nov 2026 09:54:18 +0800
-Received: from RTKEXHMBS06.realtek.com.tw (10.21.1.56) by
- RTKEXHMBS03.realtek.com.tw (10.21.1.53) with Microsoft SMTP Server
- (version=TLS1_2, cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id
- 15.2.2562.56; Thu, 12 Nov 2026 09:54:18 +0800
-Received: from RTKEXHMBS06.realtek.com.tw ([fe80::eeeb:c765:ca73:5eef]) by
- RTKEXHMBS06.realtek.com.tw ([fe80::eeeb:c765:ca73:5eef%10]) with mapi id
- 15.02.2562.056; Thu, 12 Nov 2026 09:54:18 +0800
-From: Ping-Ke Shih <pkshih@realtek.com>
-To: Hao Tan <guwolf@guwolf.com>
-CC: "linux-wireless@vger.kernel.org" <linux-wireless@vger.kernel.org>
-Subject: RE: [PATCH] wifi: rtw89: coex: Disable pre-AGC for out-of-band links
-Thread-Topic: [PATCH] wifi: rtw89: coex: Disable pre-AGC for out-of-band links
-Thread-Index: AQHdcOHiXcQkzqwOvU2lQfVQ+JOe/7cprt6Q
-Date: Thu, 12 Nov 2026 01:54:18 +0000
-Message-ID: <6bcdf08684564b05b63ee446b42af5de@realtek.com>
-References: <0A58E3B7800E469B+179421939016.46230.883154851683340495@guwolf.com>
- <340ed206ff6a4680a46806e3bea5dbc5@realtek.com>
- <06F216C4AE1262C6+179429243268.102150.10348649522717765093@guwolf.com>
- <E6568F470624C07E+179429427543.116514.14355630958613033614@guwolf.com>
-In-Reply-To: <E6568F470624C07E+179429427543.116514.14355630958613033614@guwolf.com>
-Accept-Language: en-US, zh-TW
-Content-Language: zh-TW
-Content-Type: text/plain; charset="utf-8"
-Content-Transfer-Encoding: base64
+	dkim=pass (2048-bit key) header.d=ausil.us header.i=@ausil.us header.a=rsa-sha256 header.s=google header.b=akEjgfZW
+Received: by mail-pg1-f225.google.com with SMTP id 41be03b00d2f7-cdd9d0c9bbdso1144750a12.1
+        for <linux-wireless@vger.kernel.org>; Wed, 11 Nov 2026 18:53:28 -0800 (PST)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+        d=ausil.us; s=google; t=1794452008; x=1795056808; darn=vger.kernel.org;
+        h=content-transfer-encoding:mime-version:message-id:date:subject:cc
+         :to:from:from:to:cc:subject:date:message-id:reply-to:content-type;
+        bh=Nc4XLNPToEMaydN4Y5LPmHECaS4FBVXGXKRGT4Pu6v8=;
+        b=akEjgfZW2c9l/EHMTj/y8UJnf+VdnqxXROFLwwnOpgzYiaNGygiB1U1QeTFjG6S2Xo
+         wpcBhe3O0zcUjSOBL1aRk7UhVwVaDEqLifEJmjCtDYAlbZXSxKUSouFA6gTXOxaHP/8Y
+         22sbMMh5kr4mw2em4P75pXVFJx9MiFfXqZOlSCX/qD/aJWinzPygNUnLg7daruJADX2p
+         WEa2vGDwelccNRzRpDe79u7EIsn88utl2Q0je09uBSB5ykH1Q9uj82S6TO5JVK7yCWiP
+         2qD1lR7HrgJ+7D22rqNT10s5vr0/O5aiveqgPC3VSnxOHai4yEtQ+Q0SryW3R/LwM/Df
+         DD8Q==
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+        d=1e100.net; s=20260707; t=1794452008; x=1795056808;
+        h=content-transfer-encoding:mime-version:message-id:date:subject:cc
+         :to:from:x-gm-gg:x-gm-message-state:from:to:cc:subject:date
+         :message-id:reply-to:content-type;
+        bh=Nc4XLNPToEMaydN4Y5LPmHECaS4FBVXGXKRGT4Pu6v8=;
+        b=AHf3PBpUUxhV28/6x2bMLihjJsvyoBrJPSTvfxFvKBR3eakG+fMH+7JY0KnhGoUntt
+         Se+zvB6fxaOcW29l/WmAPILzQ+ipQjJS4Sv3Ai7Db719xfWL4z3ZE2ArtNmSrYIkeLnx
+         cE9k8csIV2d2MyGWB/nvwRPqUMkp4KjKKHnuof/eV+HH6RIU9BqG5cKP+OFs52CmHZUL
+         07xzqncWcV/cOYrnuchlXGyN8v48bg+Cyw4tcE7mwUvI0UF9g35ssoTVTzkwVtC1fl3z
+         k9sxZxANvJAMfvRjX0eO0ZqbTpX/QQc3k5cjNJWlafbXFD2ScwrTShdyZnETHXqF9+tB
+         RT3Q==
+X-Forwarded-Encrypted: i=1; AL+hErEyTwHBzM3L+rwFQ1ki7AKYRk5d7HBeXxSJod4N+LptVFIjdmi+c5QZ1kbFB1jpUBXTbVJQDHEcXE7U3JsQGw==@vger.kernel.org
+X-Gm-Message-State: APuU4Z+OggrwCylt4TByYGFnsMciK0GZwyXPrkXTmw3Hm7xP6OyJ+gRt
+	6xnV4pTMBJJ840Yw/MHrmpdArJhvWCbslOHvLr8mK+HaoR4fcOyFg4FK8LfFfOfMZMGJoB62AdK
+	2KZM7hlESQ9BD+9GgPUqSEgAI2fZiQQk8hqt3
+X-Gm-Gg: AYBFou1SgMtl3YoGcVscbDyNBip5UlSUI6dHwbN+C7Db03o/g3CVa0/0ki+VTwDtqnp
+	66cu24yVgvHEaKngiBcrM5vnJFB4oFIo10KoUM4rnT1FYo+fugOwcMfY8sQeAR4XfdhhM1IFJdH
+	WVlNr2rDCCKqHPb+w0mYXqhF6VZOeIB7we3EJFG/2IXI7RvNrbFufdUwJR0Tjm5piX/HU2YPj6N
+	FB5LwiHZ6QihoyBOS/5SYvHL+mrpxHzdRAgZMHf7jBJ4OR1ixrPuMznFdWdWQHe0as3H2G4A57m
+	0vMAu5jIy8oFT1ZFhZDtMHpoIPMHAyEjeUlbuD0AmDccLsjett0lJYOo++eG8mSOYPiLKy45//H
+	YYANHlrtlD5NSW8mYwkb2g/M=
+X-Received: by 2002:a17:90b:590f:b0:3ab:2c2b:1026 with SMTP id 98e67ed59e1d1-3b182eec413mr4274267a91.34.1794452007867;
+        Wed, 11 Nov 2026 18:53:27 -0800 (PST)
+Received: from thor.ausil.us (207-179-239-100.mtco.net. [207.179.239.100])
+        by smtp-relay.gmail.com with ESMTPS id 98e67ed59e1d1-3b181c053cdsm1542175a91.0.2026.11.11.18.53.26
+        (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
+        Wed, 11 Nov 2026 18:53:27 -0800 (PST)
+X-Relaying-Domain: ausil.us
+From: Dennis Gilmore <dennis@ausil.us>
+To: broonie@kernel.org,
+	lgirdwood@gmail.com
+Cc: perex@perex.cz,
+	tiwai@suse.com,
+	kees@kernel.org,
+	gustavoars@kernel.org,
+	linux-sound@vger.kernel.org,
+	linux-hardening@vger.kernel.org,
+	linux-kernel@vger.kernel.org,
+	michael.hennerich@analog.com,
+	nuno.sa@analog.com,
+	dlechner@baylibre.com,
+	linux-spi@vger.kernel.org,
+	miriam.rachel.korenblit@intel.com,
+	linux-wireless@vger.kernel.org,
+	Dennis Gilmore <dennis@ausil.us>
+Subject: [PATCH] ASoC: soc-core: start rtd->num_components at zero
+Date: Wed, 11 Nov 2026 20:52:51 -0600
+Message-ID: <20261112025252.71375-1-dennis@ausil.us>
+X-Mailer: git-send-email 2.56.0
 X-Mailing-List: linux-wireless@vger.kernel.org
 List-Id: <linux-wireless.vger.kernel.org>
 List-Post: <mailto:linux-wireless@vger.kernel.org>
@@ -82,30 +106,104 @@ List-Unsubscribe: <mailto:linux-wireless+unsubscribe@vger.kernel.org>
 List-Owner: <mailto:linux-wireless+owner@vger.kernel.org>
 Precedence: list
 MIME-Version: 1.0
+Content-Transfer-Encoding: 8bit
 
-SGFvIFRhbiA8Z3V3b2xmQGd1d29sZi5jb20+IHdyb3RlOg0KPiBXaGVuIFdpLUZpIGFuZCBCbHVl
-dG9vdGggYXJlIG9uIGRpZmZlcmVudCBSRiBiYW5kcywgbmVpdGhlciB0aGUgVEREIG5vcg0KPiB0
-aGUgRkREIGJpbmRpbmcgaGFzIGEgYmFuZC4gX3VwZGF0ZV9jb2V4X2JpbmQoKSByZWNvcmRzIHRo
-YXQgYXMNCj4gZG0tPm91dF9vZl9iYW5kLg0KPiANCj4gX3NldF93bF9wcmVhZ2NfY3RybCgpIGRp
-c2FibGVzIHByZS1BR0Mgd2hlbiB0aGUgVEREIGJpbmRpbmcgaXMgNSBHSHosIG9yDQo+IHdoZW4g
-dGhlIHJvbGUgaXMgc3RpbGwgTk9MSU5LLiBBZnRlciBjb21taXQgYTc2NTAxZTFkMTQ4ICgid2lm
-aTogcnR3ODk6DQo+IGNvZXg6IFNlcGFyYXRlIF9udGZ5X3JvbGVfaW5mbyBpbnRvIHR3byBmdW5j
-dGlvbiIpLCBhIDUgR0h6LW9ubHkgU1RBIGlzDQo+IG5vIGxvbmdlciBOT0xJTksuIFdpdGggV2kt
-Rmkgb24gNSBHSHogYW5kIEJsdWV0b290aCBvbiAyLjQgR0h6LCB0ZGRfYmluZA0KPiBpcyBlbXB0
-eSwgc28gcHJlLUFHQyBzdGF5cyBlbmFibGVkLiBPbiBSVEw4ODUxQiB0aGlzIHByb2dyYW1zIHRo
-ZQ0KPiBwcmUtQUdDIHRhYmxlLCBhbmQgYSBWSFQ4MCBsaW5rIGRyb3BzIHNob3J0bHkgYWZ0ZXIg
-YXNzb2NpYXRpb24uDQo+IA0KPiBBbHNvIGRpc2FibGUgcHJlLUFHQyB3aGVuIGRtLT5vdXRfb2Zf
-YmFuZCBpcyBzZXQuIE92ZXJsYXBwaW5nIFRERCBhbmQNCj4gRkREIGJpbmRpbmdzIGFyZSB1bmNo
-YW5nZWQuDQo+IA0KPiBUZXN0ZWQgb24gUlRMODg1MUJFIChSRkUgNSwgcnR3ODg1MWJfZnctMS5i
-aW4gMC4yOS40MS41KSB3aXRoIDUgR0h6DQo+IFdpLUZpIGFuZCAyLjQgR0h6IEJsdWV0b290aC4N
-Cg0KSSdsbCBrZWVwIGFib3ZlIGNvbW1pdCBtZXNzYWdlLCBidXQgcmVtb3ZlIGJlbG93IHZlcnNp
-b24gaW5mbyB3aGlsZQ0KY29tbWl0dGluZy4gDQoNCj4gV2l0aCB0aGlzIGNoYW5nZSwgVkhUODAg
-c3RheWVkIHVwIGZvciA2MDANCj4gc2Vjb25kcyBvbiB2Ny4zIGFuZCBvbiBydHctbmV4dCAwNGM5
-OTg0MTg3MjIuIFdpdGhvdXQgaXQsIHY3LjMgZHJvcHMgdGhlDQo+IGxpbmsgc2hvcnRseSBhZnRl
-ciBhc3NvY2lhdGlvbi4NCg0KPiANCj4gRml4ZXM6IGE3NjUwMWUxZDE0OCAoIndpZmk6IHJ0dzg5
-OiBjb2V4OiBTZXBhcmF0ZSBfbnRmeV9yb2xlX2luZm8gaW50byB0d28gZnVuY3Rpb24iKQ0KPiBD
-Yzogc3RhYmxlQHZnZXIua2VybmVsLm9yZw0KPiBMaW5rOiBodHRwczovL2xvcmUua2VybmVsLm9y
-Zy9saW51eC13aXJlbGVzcy8zNDBlZDIwNmZmNmE0NjgwYTQ2ODA2ZTNiZWE1ZGJjNUByZWFsdGVr
-LmNvbS8NCj4gU2lnbmVkLW9mZi1ieTogSGFvIFRhbiA8Z3V3b2xmQGd1d29sZi5jb20+DQoNCkkn
-bGwgcGljayB0aGlzIHRvIHJ0dyBicmFuY2ggZm9yIC1yYyBjeWNsZS4NCg0KQWNrZWQtYnk6IFBp
-bmctS2UgU2hpaCA8cGtzaGloQHJlYWx0ZWsuY29tPg0KDQoNCg==
+Since the conversion to devm_kzalloc_flex(), the allocator sets the
+__counted_by() counter num_components to the allocated length
+(num_cpus + num_codecs + num_platforms). This only happens when the
+compiler supports __builtin_counted_by_ref() (GCC 16 here). With
+older compilers the counter stays zero, as before.
+
+snd_soc_rtd_add_component() treats num_components as the number of
+components added so far: it increments the counter and stores the
+new component at num_components - 1. Starting from the preset
+length, every component is written past the end of the allocation.
+On a link with one CPU, one codec and one platform, entries 3 to 5
+of a 3-entry array are written, and components[0] stays NULL.
+
+for_each_rtd_components() stops at that NULL entry, so
+soc_probe_link_components() probes no component, and
+component->card stays NULL for every component on the card. The
+first DAI .probe callback that uses its component's card then
+dereferences NULL. On an HP OmniBook X 14 (MediaTek MT8901
+SoundWire with CS42L43 and CS35L56 codecs) binding the card
+crashes in cs42l43_dai_probe():
+
+  Unable to handle kernel NULL pointer dereference at virtual address 0000000000000038
+  Internal error: Oops: 0000000096000004 [#1]  SMP
+  pc : snd_soc_card_get_kcontrol+0x18/0x40 [snd_soc_core]
+  lr : snd_soc_component_get_kcontrol+0x6c/0xc0 [snd_soc_core]
+  Call trace:
+   snd_soc_card_get_kcontrol+0x18/0x40 [snd_soc_core] (P)
+   snd_soc_component_get_kcontrol+0x6c/0xc0 [snd_soc_core]
+   cs42l43_dai_probe+0xb0/0x148 [snd_soc_cs42l43]
+   snd_soc_pcm_dai_probe+0x70/0xf8 [snd_soc_core]
+   snd_soc_bind_card+0x4d4/0x8c0 [snd_soc_core]
+   call_soc_bind_card+0x70/0xf0 [snd_soc_core]
+   snd_soc_register_card+0xd8/0x110 [snd_soc_core]
+   devm_snd_soc_register_card+0x20/0x38 [snd_soc_core]
+   mt8901_card_probe+0x258/0x5c8 [mt8901_acp_sdw_legacy_mach]
+   platform_probe+0x88/0xc0
+
+Reset the counter after allocation, so components are added from
+index 0 again as they were before the conversion.
+
+The bug was found, and this fix written, with the help of an AI
+coding assistant (Claude). Tested on the HP OmniBook X 14: the card
+binds and playback and capture work.
+
+Fixes: 4dd10fbbeb9c ("treewide: Convert devm_kmalloc() family to the devm_kmalloc_obj() family")
+Signed-off-by: Dennis Gilmore <dennis@ausil.us>
+---
+An alternative fix would be to keep num_components as the array size
+and have snd_soc_rtd_add_component() fill the first NULL slot. The
+counter would still need to be set explicitly, because the preset does
+not happen on compilers without __builtin_counted_by_ref(). Resetting it
+keeps the original design and the tighter __counted_by() bounds.
+
+Kees, the same pattern (a *_flex() allocation followed by code that uses
+the counter as a fill index starting from zero) looks to be present in
+two places converted by 69050f8d6d07 ("treewide: Replace kmalloc with
+kmalloc_obj for non-scalar types"). I have only read the code for these.
+I have no hardware for either and have not reproduced them, so please
+treat them as possible issues rather than confirmed bugs:
+
+ - drivers/spi/spi-axi-spi-engine.c: spi_engine_optimize_message()
+   allocates p with kzalloc_flex(*p, instructions, p_dry.length + 1),
+   which presets p->length, and spi_engine_compile_message() then
+   appends with p->length++ through spi_engine_program_add_cmd().
+
+ - drivers/net/wireless/intel/iwlwifi/mld/d3.c:
+   iwl_mld_process_netdetect_res() allocates netdetect_info with
+   kzalloc_flex(..., matches, n_matches), presetting n_matches, and
+   iwl_mld_set_netdetect_info() stores at matches[n_matches] and then
+   increments it. The per-match kzalloc_flex(..., channels, n_channels)
+   has the same issue with match->n_channels.
+
+If they are real, the fix would be the same as here. I'm happy to send
+patches. It may also be worth a Coccinelle check for this pattern.
+
+ sound/soc/soc-core.c | 7 +++++++
+ 1 file changed, 7 insertions(+)
+
+diff --git a/sound/soc/soc-core.c b/sound/soc/soc-core.c
+index 68b54e509b65..e4d911577c5f 100644
+--- a/sound/soc/soc-core.c
++++ b/sound/soc/soc-core.c
+@@ -388,6 +388,13 @@ static struct snd_soc_pcm_runtime *soc_new_pcm_runtime(
+ 		return NULL;
+ 	}
+ 
++	/*
++	 * devm_kzalloc_flex() presets the __counted_by() counter to the
++	 * allocated size, but snd_soc_rtd_add_component() uses
++	 * num_components as the number of components added so far.
++	 */
++	rtd->num_components = 0;
++
+ 	rtd->dev = dev;
+ 	INIT_LIST_HEAD(&rtd->list);
+ 	for_each_pcm_streams(stream) {
+-- 
+2.56.0
+
