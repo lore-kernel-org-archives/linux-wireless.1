@@ -1,76 +1,65 @@
-Authentication-Results: smtp.subspace.kernel.org; arc=none smtp.remote-ip=211.75.126.72
+Authentication-Results: smtp.subspace.kernel.org; arc=none smtp.remote-ip=111.22.67.135
 ARC-Seal: i=1; d=subspace.kernel.org; s=arc20261015; a=rsa-sha256; cv=none;
-	t=1794463637;
-	b=rFQ/D+QqGmdVTagO8vpgXUOawr0R512o9d7AbXCODZuIEE7LaQF6DmzRFRxIciob/Jpn
-	 UAEqf1bJDXScCsUUTZ3ewXy/4eU2gGv82er81KOYnNwSQqaGWtOr7siZ57notBUTb20xW
-	 TF7wxGdmkRJNlj7ShicPS/HdGeCjCzmaSnBHSgVCwk6pJlhoRVCvAacLxI0bSR7t0A2yT
-	 nWqDSSUzpuaUSckDM64422DrBGNzr9pt6153bAUJR8RYNjbOZSwNZcmQ9y5jQavt0zWi0
-	 fiLxjs3/ZZRPUmZxQLLKE2BSV0Luz1twn/BgXc1RqTPvXwuaLq/W9no3AxPJyLQ2Cqg==
+	t=1794467899;
+	b=oGkyMDIMEirDiu5A2XqGt7I/QXxLSVVwsDmCDS1HSyg/8Qxjs/Kmp4GCPy3BQ9XLVTuF
+	 azoqkHzgT3iq4M+TzP5V6LBnwZ+R43SiMjpGxwvTwAxqSSKqVHAvDKo8m1JEwIgOifgo/
+	 wv237ygC7iLxYncT8TlI34A4bgfJ36Ljiqqlix5L/EISWzT5VKFbYb0OMV9v3YYIebddh
+	 vzqJuCsFSlZ1dZj4AZDpohzJJBsiYFRQA9L3OI3KEjDOzh90DXdzXHQjeN8w4gbKQveQh
+	 95tLGo8DHU3InxtjoggCmhogwzvLRYkPwqEA6RDWs/jJS5DTlqvUH/yblAselHELv9w==
 ARC-Message-Signature: i=1; d=subspace.kernel.org; s=arc20261015;
-	a=rsa-sha256; c=relaxed/relaxed; t=1794463637;
-	h=DMARC-Filter:X-SpamFilter-By:DKIM-Signature:Received:Received:
-	 Received:Received:From:To:CC:Subject:Date:Message-ID:X-Mailer:
-	 In-Reply-To:References:MIME-Version:Content-Transfer-Encoding:
-	 Content-Type;
-	bh=5ltdhjdYCrEILG6p4iJLs3C3WwtMxs1hymsNwrm7ROQ=;
-	b=hwM8XMfkNN20bGbun15OZNpcvm/JnRi964ufj1UIJysmhDoppqz6yLHpbuW5E8e/GBlh
-	 ZTtDCg9IjP1Y5bvyqjO5NGdZcl9k1qlNUO55ko+RRLUfSBqF+63s2UTpqZNbuQ5qgeRqr
-	 POPpaS0+DaR8Stv/XSZWy3mWwN6WqXvs9Xf19HvON9m27X969kKOgpV5Caib6xmcf/w61
-	 cqdR7oYrSdS0+CdxHaNxVaOdo9xHecKSsghfgvF1p90KevgbQoTTT6UbKdIfJBnLj1lGq
-	 254KtLU/kSrfe80Plt7LqQe4Gd+4PXdAl9z/k0j8iZAj42VQ+Jl9u+z0YJXY0/ePdPw==
+	a=rsa-sha256; c=relaxed/relaxed; t=1794467899;
+	h=DMARC-Filter:DKIM-Signature:X-RM-TagInfo:X-RM-SPAM-FLAG:Received:
+	 X-RM-TRANSID:X-RM-TagInfo:X-RM-SPAM-FLAG:Received:X-RM-TRANSID:From:
+	 To:Cc:Subject:Date:Message-ID:X-Mailer:MIME-Version:
+	 Content-Transfer-Encoding;
+	bh=H3E+mWHbu+cguQWMunb6sV0QWqoncJc4BDKUdNfiQcY=;
+	b=nk5TOzyTh3sD3TP3nMLLMixy1vJ46Esz2kjU/YF7Pxk9dX0tv0Y2/Prq7FQkg9acD1Td
+	 fD35OWc+3ktC3ceCbGXomiQXUnQm4V1ZqpD3lMQtouwRsMZxkIXoMIuISyqouZuYYVEcp
+	 /yRLF9Rc3VsfeqsS8dL1VKFWFVIiRRrdAuSfxoFWgFT2JQDW27pRg2mvlWJLKmO4FItQB
+	 C1CU0QQDylC08k6Ea9LJMXkQln4F5kwu2uLLuiJ+8tJZhqPkiyfoUQIba/qDsRFpop/my
+	 BI1vMF+d6q5YG8dTxEX5Pm0tH+RCOhOkmXf+ZjjSfOSMHOEGcpxZbNutcGAIivMChsA==
 ARC-Authentication-Results: i=1; smtp.subspace.kernel.org; 
-	dmarc=pass header.from=realtek.com;
-	spf=pass smtp.mailfrom=realtek.com;
-	dkim=pass header.d=realtek.com header.i=@realtek.com header.a=rsa-sha256 header.s=dkim header.b=Bv6bcc8K;
-	arc=none smtp.remote-ip=211.75.126.72
-Received: from rtits2.realtek.com.tw (rtits2.realtek.com [211.75.126.72])
-	(using TLSv1.3 with cipher TLS_AES_256_GCM_SHA384 (256/256 bits)
-	 key-exchange X25519 server-signature ECDSA (prime256v1) server-digest SHA256)
-	(No client certificate requested)
-	by smtp.subspace.kernel.org (Postfix) with ESMTPS id BDF9E606A327
-	for <linux-wireless@vger.kernel.org>; Thu, 12 Nov 2026 06:07:16 +0000 (UTC)
-DMARC-Filter: OpenDMARC Filter v1.4.2 smtp.subspace.kernel.org BDF9E606A327
-Authentication-Results: smtp.subspace.kernel.org; dmarc=pass (p=none dis=none) header.from=realtek.com
-Authentication-Results: smtp.subspace.kernel.org; spf=pass smtp.mailfrom=realtek.com
+	dmarc=pass header.from=cmss.chinamobile.com;
+	spf=pass smtp.mailfrom=cmss.chinamobile.com;
+	dkim=pass header.d=cmss.chinamobile.com header.i=@cmss.chinamobile.com header.a=rsa-sha256 header.s=default header.b=eRIipwcp;
+	arc=none smtp.remote-ip=111.22.67.135
+Received: from cmccmta2.chinamobile.com (cmccmta2.chinamobile.com [111.22.67.135])
+	by smtp.subspace.kernel.org (Postfix) with ESMTP id 6DBA9606A887;
+	Thu, 12 Nov 2026 07:18:18 +0000 (UTC)
+DMARC-Filter: OpenDMARC Filter v1.4.2 smtp.subspace.kernel.org 6DBA9606A887
+Authentication-Results: smtp.subspace.kernel.org; dmarc=pass (p=none dis=none) header.from=cmss.chinamobile.com
+Authentication-Results: smtp.subspace.kernel.org; spf=pass smtp.mailfrom=cmss.chinamobile.com
 Authentication-Results: smtp.subspace.kernel.org;
-	dkim=pass (2048-bit key) header.d=realtek.com header.i=@realtek.com header.a=rsa-sha256 header.s=dkim header.b=Bv6bcc8K
-X-SpamFilter-By: ArmorX SpamTrap 5.80 with qID 6AC67ErA43489990, This message is accepted by code: ctloc85258
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=realtek.com; s=dkim;
-	t=1794463634; bh=5ltdhjdYCrEILG6p4iJLs3C3WwtMxs1hymsNwrm7ROQ=;
-	h=From:To:CC:Subject:Date:Message-ID:In-Reply-To:References:
-	 MIME-Version:Content-Transfer-Encoding:Content-Type;
-	b=Bv6bcc8KVYZsOU0owWL0E3WePkXX1PbrVaGhEgU58tKVRPU1dVEiAsZbHzM9yU16q
-	 g5AuL2P4afImabXRamxGnzMbhxsvA5R5ucB+tcY7efYXekvsY0hfSCYdyDc3YjsI8S
-	 8vceFSmXqgNOdJgl0sMvF4t1E/eQzcNMK7zcEpDUUUc64PX+E3Br0p4Aht66InU9R5
-	 2LYX37xAu2FcfNhrqDPI4CTzxaj/lQ8mizqpqHlkzpLwUc0rad01uEJi+tFkwOPGTk
-	 WMBESASvw4+04ONTkJFEkx/xn+c9JrkjJT6Mk6ZhnpI7+sUe69ukXd4Qqjd1ftAr3w
-	 JtWdFJ6R5ryHg==
-Received: from mail.realtek.com (rtkexhmbs03.realtek.com.tw[10.21.1.53])
-	by rtits2.realtek.com.tw (8.15.2/3.29/5.94) with ESMTPS id 6AC67ErA43489990
-	(version=TLSv1.2 cipher=ECDHE-RSA-AES256-GCM-SHA384 bits=256 verify=FAIL)
-	for <linux-wireless@vger.kernel.org>; Thu, 12 Nov 2026 14:07:14 +0800
-Received: from RTKEXHMBS05.realtek.com.tw (10.21.1.55) by
- RTKEXHMBS03.realtek.com.tw (10.21.1.53) with Microsoft SMTP Server
- (version=TLS1_2, cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id
- 15.2.2562.56; Thu, 12 Nov 2026 14:07:10 +0800
-Received: from RTKEXHMBS06.realtek.com.tw (10.21.1.56) by
- RTKEXHMBS05.realtek.com.tw (10.21.1.55) with Microsoft SMTP Server
- (version=TLS1_2, cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id
- 15.2.2562.56; Thu, 12 Nov 2026 14:07:09 +0800
-Received: from [127.0.1.1] (172.21.40.75) by RTKEXHMBS06.realtek.com.tw
- (10.21.1.56) with Microsoft SMTP Server (version=TLS1_2,
- cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id 15.2.2562.56 via Frontend
- Transport; Thu, 12 Nov 2026 14:07:09 +0800
-From: Ping-Ke Shih <pkshih@realtek.com>
-To: <linux-wireless@vger.kernel.org>
-CC: <ku920601@realtek.com>, <damon.chen@realtek.com>, <phhuang@realtek.com>,
-	<kevin_yang@realtek.com>
-Subject: [PATCH rtw-next 11/11] wifi: rtw89: phy: fix antenna gain unit in debug output
-Date: Thu, 12 Nov 2026 14:06:00 +0800
-Message-ID: <20261112060600.71784-12-pkshih@realtek.com>
-X-Mailer: git-send-email 2.53.0
-In-Reply-To: <20261112060600.71784-1-pkshih@realtek.com>
-References: <20261112060600.71784-1-pkshih@realtek.com>
+	dkim=pass (1024-bit key) header.d=cmss.chinamobile.com header.i=@cmss.chinamobile.com header.a=rsa-sha256 header.s=default header.b=eRIipwcp
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+	d=cmss.chinamobile.com; s=default; l=0;
+	h=from:subject:message-id:to:cc:mime-version;
+	bh=47DEQpj8HBSa+/TImW+5JCeuQeRkm5NMpJWZG3hSuFU=;
+	b=eRIipwcp+KKq3hAZcJ1+Hq6/BdrV9Q4N0cfEatJ9onszC/349kU2YDHgjlsyhLlaOO8FX9J+c6M2Z
+	 0RcVOjl8q1/P47Oy5zlW/DXAIudBLg9ZS4QvG3RHv5iICJC7g7zPZUIPmxb6LgyMbb4KK/YCI4GxES
+	 xTIBti8OsseHW7d0=
+X-RM-TagInfo: emlType=0                                       
+X-RM-SPAM-FLAG:00000000
+Received:from spf.mail.chinamobile.com (unknown[10.188.0.87])
+	by rmmx-syy-dmz-app03-12003 (RichMail) with SMTP id 2ee36af56812a9e-ab441;
+	Thu, 12 Nov 2026 15:17:38 +0800 (CST)
+X-RM-TRANSID:2ee36af56812a9e-ab441
+X-RM-TagInfo: emlType=0                                       
+X-RM-SPAM-FLAG:00000000
+Received:from devin-VMware-Virtual-Platform.localdomain (unknown[10.55.1.72])
+	by rmsmtp-syy-appsvr07-12007 (RichMail) with SMTP id 2ee76af56810924-f6d4f;
+	Thu, 12 Nov 2026 15:17:38 +0800 (CST)
+X-RM-TRANSID:2ee76af56810924-f6d4f
+From: Zhu Jun <zhujun2@cmss.chinamobile.com>
+To: briannorris@chromium.org
+Cc: francesco@dolcini.it,
+	linux-wireless@vger.kernel.org,
+	linux-kernel@vger.kernel.org,
+	Zhu Jun <zhujun2@cmss.chinamobile.com>
+Subject: [PATCH] wifi: mwifiex: Report register write errors through debugfs
+Date: Thu, 12 Nov 2026 15:17:37 +0800
+Message-ID: <20261112071737.154599-1-zhujun2@cmss.chinamobile.com>
+X-Mailer: git-send-email 2.51.0
 X-Mailing-List: linux-wireless@vger.kernel.org
 List-Id: <linux-wireless.vger.kernel.org>
 List-Post: <mailto:linux-wireless@vger.kernel.org>
@@ -81,42 +70,36 @@ List-Owner: <mailto:linux-wireless+owner@vger.kernel.org>
 Precedence: list
 MIME-Version: 1.0
 Content-Transfer-Encoding: 8bit
-Content-Type: text/plain
 
-From: Kuan-Chung Chen <damon.chen@realtek.com>
+mwifiex_regrdwr_read() can issue a register write for a debugfs
+request. It overwrites the write result with the buffer-copy result,
+so userspace receives a normal response even if the firmware command
+failed.
 
-The antenna gain offset is in RF TX power precision, so shift
-right by txpwr_factor_rf before printing it.
+Return through the existing buffer cleanup path on a write error,
+before copying a success response or advancing the file position.
 
-Signed-off-by: Kuan-Chung Chen <damon.chen@realtek.com>
-Signed-off-by: Ping-Ke Shih <pkshih@realtek.com>
+Fixes: 5e6e3a92b9a4 ("wireless: mwifiex: initial commit for Marvell mwifiex driver")
+Signed-off-by: Zhu Jun <zhujun2@cmss.chinamobile.com>
 ---
- drivers/net/wireless/realtek/rtw89/phy.c | 5 +++--
- 1 file changed, 3 insertions(+), 2 deletions(-)
+ drivers/net/wireless/marvell/mwifiex/debugfs.c | 2 ++
+ 1 file changed, 2 insertions(+)
 
-diff --git a/drivers/net/wireless/realtek/rtw89/phy.c b/drivers/net/wireless/realtek/rtw89/phy.c
-index 795920b899d9..bbbe43e1ea04 100644
---- a/drivers/net/wireless/realtek/rtw89/phy.c
-+++ b/drivers/net/wireless/realtek/rtw89/phy.c
-@@ -2391,6 +2391,7 @@ EXPORT_SYMBOL(rtw89_phy_ant_gain_pwr_offset);
- int rtw89_print_ant_gain(struct rtw89_dev *rtwdev, char *buf, size_t bufsz,
- 			 const struct rtw89_chan *chan)
- {
-+	u8 factor = rtwdev->chip->txpwr_factor_rf;
- 	char *p = buf, *end = buf + bufsz;
- 	s8 offset_patha, offset_pathb;
+diff --git a/drivers/net/wireless/marvell/mwifiex/debugfs.c b/drivers/net/wireless/marvell/mwifiex/debugfs.c
+index 573768b6ad91..6cb3cf5706c0 100644
+--- a/drivers/net/wireless/marvell/mwifiex/debugfs.c
++++ b/drivers/net/wireless/marvell/mwifiex/debugfs.c
+@@ -470,6 +470,8 @@ mwifiex_regrdwr_read(struct file *file, char __user *ubuf,
+ 	if (saved_reg_value != UINT_MAX) {
+ 		ret = mwifiex_reg_write(priv, saved_reg_type, saved_reg_offset,
+ 					saved_reg_value);
++		if (ret)
++			goto done;
  
-@@ -2402,8 +2403,8 @@ int rtw89_print_ant_gain(struct rtw89_dev *rtwdev, char *buf, size_t bufsz,
- 	offset_patha = rtw89_phy_ant_gain_query(rtwdev, RF_PATH_A, chan->freq);
- 	offset_pathb = rtw89_phy_ant_gain_query(rtwdev, RF_PATH_B, chan->freq);
- 
--	p += scnprintf(p, end - p, "ChainA offset: %d dBm\n", offset_patha);
--	p += scnprintf(p, end - p, "ChainB offset: %d dBm\n", offset_pathb);
-+	p += scnprintf(p, end - p, "ChainA offset: %d dBm\n", offset_patha >> factor);
-+	p += scnprintf(p, end - p, "ChainB offset: %d dBm\n", offset_pathb >> factor);
- 
- out:
- 	return p - buf;
+ 		pos += snprintf(buf, PAGE_SIZE, "%u 0x%x 0x%x\n",
+ 				saved_reg_type, saved_reg_offset,
 -- 
-2.53.0
+2.51.0
+
+
 
