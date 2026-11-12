@@ -1,92 +1,93 @@
-Authentication-Results: smtp.subspace.kernel.org; arc=none smtp.remote-ip=209.85.221.54
+Authentication-Results: smtp.subspace.kernel.org; arc=none smtp.remote-ip=209.85.128.41
 ARC-Seal: i=1; d=subspace.kernel.org; s=arc20261015; a=rsa-sha256; cv=none;
-	t=1794481256;
-	b=Os5CHNh/W7beuWILuA/subhNOLpuKi+5rpM3IqNOypuciTUA+yImrOCh2NLGBYZdJk1J
-	 NB5Af8zC4zhXgO/h2MiRVj+jfkIk8qFkbiSMDA1oSWKvYjfXNklc4iJjq9zEJn98X/XTC
-	 xISQWvMDKgG+emUuMyywiroDuG1RTHJmpBfPklJUs/oWW7UNB2gfK8dgd9ALteggzh7c0
-	 X+XWGBHHslLFWR9PeaT4Z2i8OEUJzPEXa/ptYBdkuDUIcRgb5G87y3C4BRXXpYU1tf2KF
-	 EWxDpsI1A91te1dgk/Vb9qBDJxvuBOh0RzSWQ076XWqp227W07ZPcfE7w71ucirdI5Q==
+	t=1794481288;
+	b=oPkrU+3SUmfe0cAumEUcBxJvnNb1O4Qu9CC0EoYHu4/M5T+hAV9K3dFs3wzmrUxp3O1Y
+	 sevJVX4PLq+Qi6uJNC9iP9r9CHY0ROnyYg+L3bSOranc0C+ts0Y+SIGJ9gVjPHl5H+hZb
+	 IXLW8bEGAqhS3bPn10iL+plEHILipSrFPXyWV9lhsWbWF3LdF1TaAYyuixM9oFXHE7e1C
+	 2pAOxung8tKIkHFnv84nj7ia9QY7lRoD47GnXFjLU9CMXvjP6P2J74JfmilKgvrFXSsja
+	 jKJepbLr1jJbp2E286LrA9fMl4j+yovlzj4MyBjBr/h0IV7HzGSOHCmbP2ZgpPGljJg==
 ARC-Message-Signature: i=1; d=subspace.kernel.org; s=arc20261015;
-	a=rsa-sha256; c=relaxed/relaxed; t=1794481256;
+	a=rsa-sha256; c=relaxed/relaxed; t=1794481288;
 	h=DMARC-Filter:Received:DKIM-Signature:X-Google-DKIM-Signature:
 	 X-Forwarded-Encrypted:X-Gm-Message-State:X-Gm-Gg:X-Received:Received:
 	 From:To:Cc:Subject:Date:Message-ID:X-Mailer:In-Reply-To:References:
 	 MIME-Version:Content-Transfer-Encoding;
-	bh=kxR2EBq9n9MMl+IaJG5vLkugwr4h5iXfkxMLdL3JqDs=;
-	b=vFmP7sn04zjNXi0UtX+Zir9sc5TtROLvCOh+ebQr8ZuowPL6VKZaGVJ+6xIFLlu8JZv4
-	 H6HavjwpmtXCpuALDe/OG4QJraSBaxl/W7PgYqpA4q5vlFSUPeHaROxoDTHg0aQCRVqhu
-	 Ga7UZ98lWVs5SfnKCtc8qD+CZDorp+Jc1PCEzSW+QvbntKk3SIQuJyIgxFaBfD7sHpDDq
-	 kGe7IxpuI2kDUzIuWfaVCGIjyluJ6QgOlv7GpYVfAATuU5/5MD74qkj5FjoDTb1WJX4Kn
-	 BMDb9AgJRvt8ik7fsSJtuHu6Act55G5r/6XeZl3ch3LzdtqkzEO59edme1ts1fOsz8A==
+	bh=POVXBINIjtay3B3IQVKcen/EZ7XVUhcPPfdW9Ywiirg=;
+	b=3/unntdZ+m7uHV8F5/kL5rAKG0jq1OaF+/gczHM5SGCPVGHfaaajUdSulUp/6hEFzDrw
+	 BLDnynkg2IkiKhSRjgsTtmW35jFGEG7H+5LrCTfB9AUOstMlv3Hu9I4gFDev/5HpmFDzP
+	 yYrZAl5jGHLhC/F/7OVYJGQRqyapKB5bIatX0EviHhgNt/LwhUtnZPV71bC8qG0ZqTRzY
+	 JeQ7uqqHn3YTS+dTDnG4VdX7sNm5o9OKJFgQIjfipbcDp6STf4n+HtntEG6LGPy5wvDeS
+	 rDCpyLpukRRhOhmkJIR303yoYHQcSDGmS7eIVF1s5AnqTM1gR6354JsIjt5d0ivpCnw==
 ARC-Authentication-Results: i=1; smtp.subspace.kernel.org; 
 	dmarc=pass header.from=gmail.com;
 	spf=pass smtp.mailfrom=gmail.com;
-	dkim=pass header.d=gmail.com header.i=@gmail.com header.a=rsa-sha256 header.s=20260707 header.b=NdhJ9fGj;
-	arc=none smtp.remote-ip=209.85.221.54
-Received: from mail-wr1-f54.google.com (mail-wr1-f54.google.com [209.85.221.54])
+	dkim=pass header.d=gmail.com header.i=@gmail.com header.a=rsa-sha256 header.s=20260707 header.b=Nao+oSKD;
+	arc=none smtp.remote-ip=209.85.128.41
+Received: from mail-wm1-f41.google.com (mail-wm1-f41.google.com [209.85.128.41])
 	(using TLSv1.3 with cipher TLS_AES_128_GCM_SHA256 (128/128 bits)
 	 key-exchange X25519 server-signature ECDSA (prime256v1) server-digest SHA256)
 	(No client certificate requested)
-	by smtp.subspace.kernel.org (Postfix) with ESMTPS id D7F03606A323
-	for <linux-wireless@vger.kernel.org>; Thu, 12 Nov 2026 11:00:55 +0000 (UTC)
-DMARC-Filter: OpenDMARC Filter v1.4.2 smtp.subspace.kernel.org D7F03606A323
+	by smtp.subspace.kernel.org (Postfix) with ESMTPS id C7B6A606A321
+	for <linux-wireless@vger.kernel.org>; Thu, 12 Nov 2026 11:01:27 +0000 (UTC)
+DMARC-Filter: OpenDMARC Filter v1.4.2 smtp.subspace.kernel.org C7B6A606A321
 Authentication-Results: smtp.subspace.kernel.org; dmarc=pass (p=none dis=none) header.from=gmail.com
 Authentication-Results: smtp.subspace.kernel.org; spf=pass smtp.mailfrom=gmail.com
 Authentication-Results: smtp.subspace.kernel.org;
-	dkim=pass (2048-bit key) header.d=gmail.com header.i=@gmail.com header.a=rsa-sha256 header.s=20260707 header.b=NdhJ9fGj
-Received: by mail-wr1-f54.google.com with SMTP id ffacd0b85a97d-49412eb1474so2487107f8f.3
-        for <linux-wireless@vger.kernel.org>; Thu, 12 Nov 2026 03:00:55 -0800 (PST)
+	dkim=pass (2048-bit key) header.d=gmail.com header.i=@gmail.com header.a=rsa-sha256 header.s=20260707 header.b=Nao+oSKD
+Received: by mail-wm1-f41.google.com with SMTP id 5b1f17b1804b1-4ba013938d7so28311375e9.2
+        for <linux-wireless@vger.kernel.org>; Thu, 12 Nov 2026 03:01:27 -0800 (PST)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=gmail.com; s=20260707; t=1794481254; x=1795086054; darn=vger.kernel.org;
+        d=gmail.com; s=20260707; t=1794481286; x=1795086086; darn=vger.kernel.org;
         h=content-transfer-encoding:mime-version:references:in-reply-to
          :message-id:date:subject:cc:to:from:from:to:cc:subject:date
          :message-id:reply-to:content-type;
-        bh=kxR2EBq9n9MMl+IaJG5vLkugwr4h5iXfkxMLdL3JqDs=;
-        b=NdhJ9fGjjWuPw5JCs1r/oejGbZ+48guIbj3iM1cXzfO1FBxNy79Qpadu88znt2na57
-         V6XPIUY06/H5QzbGEmPkL1DUrcNXNc/Y2yucfPvuGHutInK6TDGftWz3UMnPDiNmpRcR
-         F7tpYNqFC7KshAm6zpTPOpeB1SvBS/9TjnI0YpIWDAM2SvfGshqw2GCWDPRUCemU4weL
-         qY+FeDonC/qBSaFr7omXLZVGWReOIAfiOVBF/kmTNMu6u7YKdOXXlllgE+vdUMYv0PQ1
-         tFBFsTdVaAb91uK1iVhRN8+8sy0C8o/UtQpejG0LVSO0pi8rv5BUeVzXUHr2juJzDRHG
-         ndZw==
+        bh=POVXBINIjtay3B3IQVKcen/EZ7XVUhcPPfdW9Ywiirg=;
+        b=Nao+oSKDv4eVOjcowbDzZDBW54xMogqN84QOYYLSuvIHO7jw99hIzeybnZENMt3amq
+         taJANTQ7tudipdYp9f+7JUfWdxkfqPvDhcJ3RnZSe/nSQ8y8WkEKFON4SAgXOQ+lgp6j
+         4GF7Pmcj4xmF6CezGdvYSU/rk3QA/OZJuyXobNPL1gPZK6+cdiiPsPjtJV0BQYXZ8NS7
+         JAthdlWewyQpTvcHrSfOHGdi/4Ib0vXu6iKt7AB+FlAdxp7uzCGHl14A0nue0XdjuJ9N
+         GEPa4FLD/idzzt0O3CLJRHKA/TvdGUMiH0HmLTGf8pBAzSXUR+417CAJM6k49YDPwfbg
+         C1nQ==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=1e100.net; s=20260707; t=1794481254; x=1795086054;
+        d=1e100.net; s=20260707; t=1794481286; x=1795086086;
         h=content-transfer-encoding:mime-version:references:in-reply-to
          :message-id:date:subject:cc:to:from:x-gm-gg:x-gm-message-state:from
          :to:cc:subject:date:message-id:reply-to:content-type;
-        bh=kxR2EBq9n9MMl+IaJG5vLkugwr4h5iXfkxMLdL3JqDs=;
-        b=pNU5AXIyjcKK0fevH4rz9RijWaKTvnFN0PR0sTVL1pl8O3q3/8GbVofdqAMN9zf8RO
-         Q26cSOLjXcVhtp9+nnBDkbZCkHy4ozsqbmqhZKv9fNscXGxShbVtT9RK7Wnn+8Emr7+q
-         xO7WJZz2+W0q1P123KiALbfjAsixDur759dHS4TIeJQ4KijXrFU2I2GnQ3SH8sKko1CQ
-         ukY4kZHehm9+WNqCQmg0RpS+l3Yj1iNDvWElsQ8Btd8/1gTM5lwd2QGeYvphSwE/slUs
-         GjNz0DRMbTHhm7mlh+hVzbFaOdskFpXNtjG4GKwPS1ELoCQLVxBabeiQCUzuXN6qXuUc
-         7hkQ==
-X-Forwarded-Encrypted: i=1; AL+hErE1d8Qr9ap/GxwuF04kuvPOynLQG1B+EAZOnqFM3zLGn84l/qefQq3Yr8hLZkqc+H/Sk8NGzzckCEsAIMftCw==@vger.kernel.org
-X-Gm-Message-State: APuU4Z/09VUru/AfyskQVPa0NIohU92WY94gURpUEaaZE6AwPXgrO6Ot
-	DcBS+uoSjfBz5u4EZPk5rDu0rCwJg+5FYTMtMTNtpMTHscqAAKxAhYMr
-X-Gm-Gg: AYBFou2fUhRyVTXsikaUZqgIPVeiJVnzIFse4UA0xkaFVOLPLP2ZEdAGYrlaSy36uH6
-	L6FMwMmK9oGgCg2vb4MXrRwjY2oJH5C6dz45VlAgtM0Z3C7lBu+tRXG5juc8dkFa+RqX6FailnA
-	49kH1Ycpc3ivEBUrBrLkly4VnJZCAq0UXG2GYYDlv2pQTKy8VJ6R0oSiScpTU15v27MkEOqiZY2
-	cnpsbD++Jhh+cIB550ZoRgWQont7x90Mq1B86HxbZIBNgi7Q0UQWmyN638ub3X2E+6XiGQ4xfv0
-	HAVxRkk8DNJj83b6LrS3oqjFrOtW858lGuAMaIPnVYWjJi+v82IhSqGvSfJC/CPrjcTmkiSozwA
-	82c3na0hDskrs/EME9Rpa0GCIPF0AWG9sqrofRCGfraxx09qJQlaNyHX9Umne75W3mw3jzS6IPt
-	PzwtclCtPzaDosHh9Z/YQjgJsvwMO7Hepyur6HkWbLUyfWNUn91rr5dnPAVdalGI13hUaZ9XDG1
-	rXGucGBEymNj2J7P0YSMkEpmqHep6zSURX/0hlxa85AjlngqAqVePdtrRsajYbudnsWVSdzEMaI
-	FvcEWYdl8/dZ9YMT/unvGvzJia0AJAWqblXOrmz8Cw1UrAhICNaJxzRi
-X-Received: by 2002:a05:6000:4011:b0:492:e1a6:90f9 with SMTP id ffacd0b85a97d-499c72712e8mr9950467f8f.18.1794481254158;
-        Thu, 12 Nov 2026 03:00:54 -0800 (PST)
+        bh=POVXBINIjtay3B3IQVKcen/EZ7XVUhcPPfdW9Ywiirg=;
+        b=h41anCisl8UbcXfJCawXkwBueMvkafSsqOesVRlGK1dBvlKygxfaIbxNvVUpCRJK6I
+         ww3zySJPvbSUdSbUiFqlx6eIqnohhzy+HFFeeuAC6DaBIIx2/A5VeZTAlfQi4o2G+v6M
+         uIdbnon8ScrCFXURf2f0pGWMJ0c6zAuB0Kthm9AIkyqrWAR1YwLGb4heyQcv8ytet+F4
+         nSarRc58I8Koge2Of0lAAR8q2LvKOJgsqXeCmNhJn9hL2nyCuCbPPS145V1L8ejaFuRC
+         0phwsssVkM+QN+A5UhfrhNFevan5MPLFuwd6DwM3vyCxX1RRPZKpyuSrPu2mXZDC+rz0
+         59IQ==
+X-Forwarded-Encrypted: i=1; AL+hErET4sQ6x1KsxdYvgY/7HN55CbgglSfxi+BRt6x6myzePvpl+6feX4+G82eyqasRpyCA4f/s3YqkpDFHQdVwMg==@vger.kernel.org
+X-Gm-Message-State: APuU4Z8VXVKUad2xHyhvz8bd2CLSHh6wD+WN3nG7hRdOhyRzuoowrPdV
+	tg8UpXoc2aRGZd1VvK7pGBhHmfrysqpHhxqsNcFXm9qE2nb7phW4IvwB
+X-Gm-Gg: AYBFou36kesofbZLiv9ho/o1MQNMLZFZv3sf7mKKF44iaGdXDg9CdzaSLPwaKNmghT6
+	C3M7m32uNgd1uzcFMux0Q06l83t0BvTH1BzFv7mLvvZ70x5Cc8G6SeEZa/2dHZIOX+7rfILJ9wM
+	3dQwnwmWrChTonHVWFkQUkzwoVBvYNR3lpHnAucTcQRdBPnUuQkRSVGmOP4i6MNDwDYzj2lJm3A
+	KObkJJvslyT657ncKBtX+5ei4jG2LcboyvBXi8b5/aEtAYoGXOwVRR3gOS0cGO0WZScf1PgVhTV
+	SRUBp+Os7ZoMxP5c+7JcSMNsGcKKWosH8NQwh2tPI8WoOfixjo9WUaR5ZDWxHKSjAepaZp4CyS+
+	KPSBB6o/YSovBinyx8yuUNBI7z2I1KEraXfMTmqOO9LxP6iLw0hwFTVP7ZEE28KeMDqv5CwOfFR
+	G3DhiVLG3fsJ9KRsBLTOOBpOLN4IHv8k+685lYKGVG4OOSZS2OX9MOZFvvRL2mscEYWYj9ezsPz
+	/uNhYwqNy4qiPzUXWChk67PuauAtapKCOPYwwpBa0/Rk5xT5qqlrvTCh+Y4sEd1tDDcnUUQJlHk
+	D3Pw8Z3B6bCH+T+3DSo3gxcqwxhlCY/BNNmA6afgpeOlmJvG+OJ9zIbkoIw2dLFzL45QnTaTKFs
+	EKw==
+X-Received: by 2002:a05:600d:82e4:b0:4a1:da58:1ee with SMTP id 5b1f17b1804b1-4ba093cd6d3mr118257905e9.31.1794481286017;
+        Thu, 12 Nov 2026 03:01:26 -0800 (PST)
 Received: from localhost.localdomain ([188.190.249.216])
-        by smtp.gmail.com with ESMTPSA id ffacd0b85a97d-49835f1772dsm16217812f8f.31.2026.11.12.03.00.53
+        by smtp.gmail.com with ESMTPSA id 5b1f17b1804b1-4bb4e2acf81sm58546125e9.14.2026.11.12.03.01.25
         (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
-        Thu, 12 Nov 2026 03:00:53 -0800 (PST)
+        Thu, 12 Nov 2026 03:01:25 -0800 (PST)
 From: Vladyslav Tymoshchuk <tvlad744@gmail.com>
 To: Jeff Johnson <jjohnson@kernel.org>
 Cc: Baochen Qiang <baochen.qiang@oss.qualcomm.com>,
 	linux-wireless@vger.kernel.org,
 	ath12k@lists.infradead.org,
 	linux-kernel@vger.kernel.org
-Subject: [PATCH 1/4] wifi: ath12k: disable and enable the CE interrupts only once
-Date: Thu, 12 Nov 2026 13:00:05 +0200
-Message-ID: <20261112110008.1229-2-tvlad744@gmail.com>
+Subject: [PATCH 2/4] wifi: ath12k: do not wait in resume for a reset that cannot finish there
+Date: Thu, 12 Nov 2026 13:00:06 +0200
+Message-ID: <20261112110008.1229-3-tvlad744@gmail.com>
 X-Mailer: git-send-email 2.45.1.windows.1
 In-Reply-To: <20261112110008.1229-1-tvlad744@gmail.com>
 References: <20261112110008.1229-1-tvlad744@gmail.com>
@@ -101,57 +102,77 @@ Precedence: list
 MIME-Version: 1.0
 Content-Transfer-Encoding: 8bit
 
-ath12k_pci_ce_irqs_disable() calls disable_irq_nosync() each time it is
-called, and ath12k_pci_ce_irqs_enable() calls enable_irq() once, from
-ath12k_pci_start().
+ath12k_core_resume() waits up to 20 s for restart_completed. When the
+firmware crashes during the cold boot started by
+ath12k_core_resume_early(), ath12k_core_reset() powers MHI down, which
+destroys the MHI channel devices, and up again. The driver core does
+not probe the new devices before the system resume is over
+(device_block_probing()), so QMI cannot come up and the restart cannot
+complete while ath12k_core_resume() is waiting for it:
 
-Without WoWLAN, ath12k_core_suspend_late() disables the CE interrupts
-and powers the device down, and ath12k_core_resume_early() boots the
-firmware again. If the firmware crashes during that boot, before
-ath12k_pci_start(), ath12k_core_reset() disables the interrupts a
-second time. The start that follows the reset enables them once, they
-stay masked and the HTC control response is never seen:
+  mhi mhi0: Wait for device to enter SBL or Mission mode
+  ath12k_wifi7_pci 0000:01:00.0: timeout while waiting for restart complete
+  ath12k_wifi7_pci 0000:01:00.0: failed to resume core: -110
+  ath12k_wifi7_pci 0000:01:00.0: PM: dpm_run_callback(): pci_pm_resume returns -110
+  PM: suspend exit
+  ath12k_wifi7_pci 0000:01:00.0: fw_version 0x10097fff ...
 
-  ath12k_wifi7_pci 0000:01:00.0: Service connect timeout
-  ath12k_wifi7_pci 0000:01:00.0: failed to connect to HTT: -110
-  ath12k_wifi7_pci 0000:01:00.0: failed to start core: -110
-  ath12k_wifi7_pci 0000:01:00.0: failed to reconfigure driver on crash recovery
+The resume takes 20 s longer and fails.
 
-The device is dead until a reboot.
-
-Make ATH12K_FLAG_CE_IRQ_ENABLED guard both functions, as
-ATH12K_FLAG_EXT_IRQ_ENABLED does for the ext interrupts.
+Let ath12k_core_resume() go on as soon as a reset starts during the
+resume. The restart then completes after the resume, as it does for a
+crash at any other time.
 
 Fixes: 8d5f4da8d70b ("wifi: ath12k: support suspend/resume")
 Signed-off-by: Vladyslav Tymoshchuk <tvlad744@gmail.com>
 ---
- drivers/net/wireless/ath/ath12k/pci.c | 6 ++++--
- 1 file changed, 4 insertions(+), 2 deletions(-)
+ drivers/net/wireless/ath/ath12k/core.c | 6 ++++++
+ drivers/net/wireless/ath/ath12k/core.h | 1 +
+ 2 files changed, 7 insertions(+)
 
-diff --git a/drivers/net/wireless/ath/ath12k/pci.c b/drivers/net/wireless/ath/ath12k/pci.c
-index 4bb14a95aec9..c92821153706 100644
---- a/drivers/net/wireless/ath/ath12k/pci.c
-+++ b/drivers/net/wireless/ath/ath12k/pci.c
-@@ -398,7 +398,8 @@ static void ath12k_pci_ce_irqs_disable(struct ath12k_base *ab)
- {
- 	int i;
+diff --git a/drivers/net/wireless/ath/ath12k/core.c b/drivers/net/wireless/ath/ath12k/core.c
+index 42a9cd28c652..b1d1247a0dc6 100644
+--- a/drivers/net/wireless/ath/ath12k/core.c
++++ b/drivers/net/wireless/ath/ath12k/core.c
+@@ -224,6 +224,7 @@ int ath12k_core_resume_early(struct ath12k_base *ab)
+ 		return ret;
  
--	clear_bit(ATH12K_FLAG_CE_IRQ_ENABLED, &ab->dev_flags);
-+	if (!test_and_clear_bit(ATH12K_FLAG_CE_IRQ_ENABLED, &ab->dev_flags))
-+		return;
+ 	reinit_completion(&ab->restart_completed);
++	WRITE_ONCE(ab->resuming, true);
+ 	ret = ath12k_hif_power_up(ab);
+ 	if (ret)
+ 		ath12k_warn(ab, "failed to power up hif during resume: %d\n", ret);
+@@ -243,6 +244,7 @@ int ath12k_core_resume(struct ath12k_base *ab)
  
- 	for (i = 0; i < ab->hw_params->ce_count; i++) {
- 		if (ath12k_ce_get_attr_flags(ab, i) & CE_ATTR_DIS_INTR)
-@@ -739,7 +740,8 @@ void ath12k_pci_ce_irqs_enable(struct ath12k_base *ab)
- {
- 	int i;
+ 	time_left = wait_for_completion_timeout(&ab->restart_completed,
+ 						ATH12K_RESET_TIMEOUT_HZ);
++	WRITE_ONCE(ab->resuming, false);
+ 	if (time_left == 0) {
+ 		ath12k_warn(ab, "timeout while waiting for restart complete");
+ 		return -ETIMEDOUT;
+@@ -1727,6 +1729,10 @@ static void ath12k_core_reset(struct work_struct *work)
+ 	int reset_count, fail_cont_count, i;
+ 	long time_left;
  
--	set_bit(ATH12K_FLAG_CE_IRQ_ENABLED, &ab->dev_flags);
-+	if (test_and_set_bit(ATH12K_FLAG_CE_IRQ_ENABLED, &ab->dev_flags))
-+		return;
- 
- 	for (i = 0; i < ab->hw_params->ce_count; i++) {
- 		if (ath12k_ce_get_attr_flags(ab, i) & CE_ATTR_DIS_INTR)
++	/* The new MHI devices are probed only after the system resume */
++	if (READ_ONCE(ab->resuming))
++		complete(&ab->restart_completed);
++
+ 	if (!(test_bit(ATH12K_FLAG_QMI_FW_READY_COMPLETE, &ab->dev_flags))) {
+ 		ath12k_warn(ab, "ignore reset dev flags 0x%lx\n", ab->dev_flags);
+ 		return;
+diff --git a/drivers/net/wireless/ath/ath12k/core.h b/drivers/net/wireless/ath/ath12k/core.h
+index 3a92a4b03359..2d8d91afb66f 100644
+--- a/drivers/net/wireless/ath/ath12k/core.h
++++ b/drivers/net/wireless/ath/ath12k/core.h
+@@ -1072,6 +1072,7 @@ struct ath12k_base {
+ 	atomic_t reset_count;
+ 	atomic_t recovery_count;
+ 	bool is_reset;
++	bool resuming;
+ 	struct completion reset_complete;
+ 	/* continuous recovery fail count */
+ 	atomic_t fail_cont_count;
 -- 
 2.43.0
 
