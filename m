@@ -1,110 +1,99 @@
-Authentication-Results: smtp.subspace.kernel.org; arc=none smtp.remote-ip=205.220.168.131
-ARC-Seal: i=1; d=subspace.kernel.org; s=arc20261015; a=rsa-sha256; cv=none;
-	t=1794442377;
-	b=XqZPjlcrmOYze5LbawF2gV88k8N0OSCvUjYT7UBeYpQarHqnW6XJ7KjDmjOQbnZNAVJa
-	 60V3ZxuhIPfelyDG4qHuwCdhPWjR2l9ErmYvlxagqYcIIOJbyYZtqAd474ZUcCqF43sh6
-	 8cSpYZVtgcgCn9sW43RlQqunO9FSStF60NBgjODFUCm5iDxSstmuylgVHLcb9haLMgOjy
-	 2IHxvy7E3Nb2bhdh9GZhhl6eA/GwVNvZ/MmTe544jBLnFB4qBzpn4NZizC3kXKtWviehH
-	 Jt3F/zB1c047tUD0EgYuFc7cTI0CXAjBjDvm/blxZJfaMGi0aWPhI6ha90ri2UAPj8Q==
-ARC-Message-Signature: i=1; d=subspace.kernel.org; s=arc20261015;
-	a=rsa-sha256; c=relaxed/relaxed; t=1794442377;
-	h=DMARC-Filter:Received:DKIM-Signature:Received:Received:
-	 DKIM-Signature:X-Google-DKIM-Signature:X-Forwarded-Encrypted:
-	 X-Gm-Message-State:X-Gm-Gg:X-Received:X-Received:Received:Message-ID:
-	 Date:MIME-Version:User-Agent:Subject:To:Cc:References:From:
-	 Content-Language:In-Reply-To:Content-Type:Content-Transfer-Encoding:
-	 X-Proofpoint-Spam-Info:X-Proofpoint-Spam-Details-Enc:
-	 X-Proofpoint-GUID:X-Proofpoint-ORIG-GUID:X-Authority-Analysis:
-	 X-Proofpoint-Virus-Version:X-Proofpoint-Spam-Details;
-	bh=50cUKcBwzzIYqHfbpzEyJG3oIfn7RAkW9U+HNZUhwdM=;
-	b=G+HdSWBJ0a4CPrhTEOkIdzrXvl7NpbFeNvk8oaZISRNmYZSGl14Nw+cBbtCp2x7tloyf
-	 NP5u/7Ss7nd828YMhf9lPJATVSrcjBaN8VfRO6j/BRq1TTd+2pXtENq9qRcFDaKTmZnaJ
-	 73PvBIXuHuMmP4h07C8mAZ/7EFB4fEEyHKmXhw326Qw3DRvML+IhOmH/v8R9j7RKK+cP7
-	 S4RA/B8Kd14AEVwVXbZO/zCNBWUywNYigQF/mn4YSUdqDIGcP/Qv0MafrMTDFw53c6j01
-	 Gg4sUAhB15uE2mZjWRTuunNWkNXT9n75mDYsYmHn++J1YG8p4JLToRb2+ccR3+ooIeg==
-ARC-Authentication-Results: i=1; smtp.subspace.kernel.org; 
-	dmarc=pass header.from=oss.qualcomm.com;
-	spf=pass smtp.mailfrom=oss.qualcomm.com;
-	dkim=pass header.d=qualcomm.com header.i=@qualcomm.com header.a=rsa-sha256 header.s=qcppdkim1 header.b=UcvPpPlO;
-	dkim=pass header.d=oss.qualcomm.com header.i=@oss.qualcomm.com header.a=rsa-sha256 header.s=google header.b=eKFjhdWJ;
-	arc=none smtp.remote-ip=205.220.168.131
-Received: from mx0a-0031df01.pphosted.com (mx0a-0031df01.pphosted.com [205.220.168.131])
-	(using TLSv1.3 with cipher TLS_AES_256_GCM_SHA384 (256/256 bits)
+Authentication-Results: smtp.subspace.kernel.org; arc=pass header.oldest-pass=0 smtp.remote-ip=209.85.222.45
+ARC-Seal: i=2; d=subspace.kernel.org; s=arc20261015; a=rsa-sha256; cv=pass;
+	t=1794442929;
+	b=3rZzy430pt+NRnM19mCod2MCQmVlrWcsu+7Y6gEWTg4uXVg3idC961qBV6kldHuFQbjL
+	 NQtDfgYIXTlObmtx6KMT4VUKGPONO8ex83n3HyhP5SS4ffkPRl03zijj+/xkFSxxr63QN
+	 hDW6KnrH6gdkCjAY/wBkP6nHXC/hCvXvPYeyimx959EJGGUdbGRhB1FU90/Yqwor0i6pY
+	 Y9mvQk8FN3wl77idKFLzeuQO+0AaW8CssBVMSPOH/cM8eBqprE7q7Iqdklohwo0Rc/DOx
+	 c7izQ1nXzxi2HJROUQM3BbJ7dUywIGovawLjVn22FdUZDJiRw2fvyvd7fYDvtTsxG5Q==
+ARC-Message-Signature: i=2; d=subspace.kernel.org; s=arc20261015;
+	a=rsa-sha256; c=relaxed/relaxed; t=1794442929;
+	h=DMARC-Filter:Received:DKIM-Signature:X-Google-DKIM-Signature:
+	 X-Gm-Message-State:X-Gm-Gg:X-Received:MIME-Version:References:
+	 In-Reply-To:From:Date:X-Gm-Features:Message-ID:Subject:To:Cc:
+	 Content-Type;
+	bh=Ozi/jJGilFFBpMvx3kOD/uL7Gb1XLAv7dVXo80M+VSY=;
+	b=sKO7kJ0Q4CNlB7RVk8t77qRxhsGYKdN8WI/RD9bZpL6ybY0uOk6Zlti660S6AYzFBRAl
+	 03RYDDZXQsr/Jw6qLHwDgT4uoFsF4VOkQON9vqIkY0e7I6ggwUAqR2+r2ZYOhlShfCgyM
+	 NMjD7VepJ94xohvylgGhVSVGkKW3B19Pu9VYecNRTkVhX4DnhieZZYerGlTuRyIepYMJo
+	 GYEEszvdiIwFzk5Co3Qxs0Zv+13uilJUYq2IrwSeR1m51UyZOBX1DLTc1KVayALDjgUKA
+	 g7g66WEQUc0eycmgIXYxOcADF46Yex+Ztnu7dNRDKLjEDYCJgaqhVbTzc3su0hQa31g==
+ARC-Authentication-Results: i=2; smtp.subspace.kernel.org; 
+	dmarc=pass header.from=gmail.com;
+	spf=pass smtp.mailfrom=gmail.com;
+	dkim=pass header.d=gmail.com header.i=@gmail.com header.a=rsa-sha256 header.s=20260707 header.b=TNA3rNBl;
+	arc=pass header.oldest-pass=0 smtp.remote-ip=209.85.222.45
+Received: from mail-ua1-f45.google.com (mail-ua1-f45.google.com [209.85.222.45])
+	(using TLSv1.3 with cipher TLS_AES_128_GCM_SHA256 (128/128 bits)
 	 key-exchange X25519 server-signature ECDSA (prime256v1) server-digest SHA256)
 	(No client certificate requested)
-	by smtp.subspace.kernel.org (Postfix) with ESMTPS id 08494606A31C
-	for <linux-wireless@vger.kernel.org>; Thu, 12 Nov 2026 00:12:56 +0000 (UTC)
-DMARC-Filter: OpenDMARC Filter v1.4.2 smtp.subspace.kernel.org 08494606A31C
-Authentication-Results: smtp.subspace.kernel.org; dmarc=pass (p=none dis=none) header.from=oss.qualcomm.com
-Authentication-Results: smtp.subspace.kernel.org; spf=pass smtp.mailfrom=oss.qualcomm.com
+	by smtp.subspace.kernel.org (Postfix) with ESMTPS id A6B9C606A31C
+	for <linux-wireless@vger.kernel.org>; Thu, 12 Nov 2026 00:22:08 +0000 (UTC)
+DMARC-Filter: OpenDMARC Filter v1.4.2 smtp.subspace.kernel.org A6B9C606A31C
+Authentication-Results: smtp.subspace.kernel.org; dmarc=pass (p=none dis=none) header.from=gmail.com
+Authentication-Results: smtp.subspace.kernel.org; spf=pass smtp.mailfrom=gmail.com
 Authentication-Results: smtp.subspace.kernel.org;
-	dkim=pass (2048-bit key) header.d=qualcomm.com header.i=@qualcomm.com header.a=rsa-sha256 header.s=qcppdkim1 header.b=UcvPpPlO;
-	dkim=pass (2048-bit key) header.d=oss.qualcomm.com header.i=@oss.qualcomm.com header.a=rsa-sha256 header.s=google header.b=eKFjhdWJ
-Received: from pps.filterd (m0279866.ppops.net [127.0.0.1])
-	by mx0a-0031df01.pphosted.com (8.18.1.11/8.18.1.11) with ESMTP id 6ABMaSon2651495
-	for <linux-wireless@vger.kernel.org>; Thu, 12 Nov 2026 00:12:56 GMT
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=qualcomm.com; h=
-	cc:content-transfer-encoding:content-type:date:from:in-reply-to
-	:message-id:mime-version:references:subject:to; s=qcppdkim1; bh=
-	50cUKcBwzzIYqHfbpzEyJG3oIfn7RAkW9U+HNZUhwdM=; b=UcvPpPlO9M/ol0+T
-	kncthZ3En4oLcc2+0p0AYm6rI81Q2JHmoRB+xAtAaDzmf89euB3TeNGu7/fftvex
-	FnHZJPpl5O8wrAMJsbjdeWtSQUfyWvfFlNjAEy6kRd684Pq8zOg1i64vCSrWLd8k
-	uApbF3dwbShM7d1knLGTMJecQik7JUqPzcqbs/sDP+49IUWpDz3k9hhJrfZxzVrK
-	qitkdz74unzR5GSsceckRNV/jKEnqEeYEgi5UaVBgbw12PDMmwu05cFef/jY9txI
-	D4jR0wXX6kpGnbG66AzFzkGJa0gnB/mGlNwzn5KiusWSCPytHm5OB82kZM4VsoyT
-	2fsMvA==
-Received: from mail-dy1-f198.google.com (mail-dy1-f198.google.com [74.125.82.198])
-	by mx0a-0031df01.pphosted.com (PPS) with ESMTPS id 4hvk7pur9g-1
-	(version=TLSv1.3 cipher=TLS_AES_128_GCM_SHA256 bits=128 verify=NOT)
-	for <linux-wireless@vger.kernel.org>; Thu, 12 Nov 2026 00:12:56 +0000 (GMT)
-Received: by mail-dy1-f198.google.com with SMTP id 5a478bee46e88-30c0d568830so7407749eec.1
-        for <linux-wireless@vger.kernel.org>; Wed, 11 Nov 2026 16:12:56 -0800 (PST)
+	dkim=pass (2048-bit key) header.d=gmail.com header.i=@gmail.com header.a=rsa-sha256 header.s=20260707 header.b=TNA3rNBl
+Received: by mail-ua1-f45.google.com with SMTP id a1e0cc1a2514c-99c0c1d07feso1712342241.1
+        for <linux-wireless@vger.kernel.org>; Wed, 11 Nov 2026 16:22:08 -0800 (PST)
+ARC-Seal: i=1; a=rsa-sha256; t=1794442927; cv=none;
+        d=google.com; s=arc-20260327;
+        b=CxqMV+MPNYQ8XN16R+32fhDaOJcgPqWscekXuNdZY5kJHtIu07UhB1j12DMbMOu7AT
+         lNBTXdrJ2/o3sdZLg0UuNmgUUzImJvHlnrZqLt9jJb+UBMByaeWHJeLxzdo1A+YBWgUG
+         LJsHJEJTSZYc9S0P5paTweS4bbaHW+s4a6F6MA7WwP5YqNzI5Ju4hQlE5ZClSSIj/55V
+         uFx9l5s4BfQnjoYB4kZ+/TnWk+s8eBZ4/8lFGPCN4+7plTYSLGRi+e96X0N72V3iyxQN
+         WLpjszF8ntgM5xsxL8MmjuNBdgQtcRfBL2x0lvm+Ozwtl3ILHCtc2IoLPcEfLD8MY2R3
+         Z/0w==
+ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=google.com; s=arc-20260327;
+        h=cc:to:subject:message-id:date:from:in-reply-to:references
+         :mime-version:dkim-signature;
+        bh=Ozi/jJGilFFBpMvx3kOD/uL7Gb1XLAv7dVXo80M+VSY=;
+        fh=WW/2C15mmnhLTJAJsCF/3JqQ+zvt4VqNZSI5Cgf0fZI=;
+        b=gcQy7PaYHoqIWxvJHbB/5YYVIYNamz/aF1JQJybSK5gC/Ntn5F1cTQyfMpatlRrYEE
+         p0o6+8Pkt+EsKL3j39CadLXbB4CalqGJkJJ7d0Vz1nRUwo5oPcVhU9h4GH6L9kl+bFel
+         Onb0ltm0gxqD8LD4naJIrW9foVhCctWZjvLqkGgeh+5cxIeOpim4U/inS2JH7EhPc2LC
+         HMU3IbLuU0rTr3O8iI7q+YKCzmnv9tkgI7Kfd1uSjPyjSSBfTY4hQ7tTvjepzIB4mSBc
+         nLdIcD582NB/XmcCx96nshm3YQ0u4HR1I1eqo3vIMibiMZTeObX31Gy+3igbV9dAztsn
+         bOWg==;
+        darn=vger.kernel.org
+ARC-Authentication-Results: i=1; mx.google.com; arc=none
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=oss.qualcomm.com; s=google; t=1794442375; x=1795047175; darn=vger.kernel.org;
-        h=content-transfer-encoding:content-type:in-reply-to:content-language
-         :from:references:cc:to:subject:user-agent:mime-version:date
-         :message-id:from:to:cc:subject:date:message-id:reply-to:content-type;
-        bh=50cUKcBwzzIYqHfbpzEyJG3oIfn7RAkW9U+HNZUhwdM=;
-        b=eKFjhdWJeveXfGiyaHvod6QKG7q/Pfh0ABogHq4u+tV0IMpYtAoCFWwOe1yETLCpAW
-         F7pBaQgScG11aDxj1YBNOvx9J89d8ddRa7m/PlBvrEliT/gvqcKNeBxM0WHCQIjvBndM
-         fVe4LAMVOathdUusEwAF8zc5NuAhCmBJDP7AFPeEITA+4Be6BLGUJYKFz7qi+yzHsyuT
-         8lAOlG5XHc+hSLp08/jbZbV0s+rczyMaggCcDoUMo/wBjBTZfH4zhCaYG2KHpHsQt8wb
-         2BxQOEkNfgS7na0ScEGqd4t+mx/fGIt80q1YvMDu6ucSXkp6ama9yoPD0hc8TFJBdloB
-         EJaA==
+        d=gmail.com; s=20260707; t=1794442927; x=1795047727; darn=vger.kernel.org;
+        h=content-type:cc:to:subject:message-id:date:from:in-reply-to
+         :references:mime-version:from:to:cc:subject:date:message-id:reply-to
+         :content-type;
+        bh=Ozi/jJGilFFBpMvx3kOD/uL7Gb1XLAv7dVXo80M+VSY=;
+        b=TNA3rNBl0tFaL7kHNFmXxBEH2Ygg8edHMxuX2HTKd1kQDr5cBw79mz3IEtNyw00lv4
+         59pNjIILXPw3w0j4IR832Syg8eA2dc9i9WVtHuVtId/oRrT9btbayihQr4ODfefgPgY4
+         g8c4IMHLv9kbqaSdIoLp1NGti47vp0ZgSZOnLt2DN85yCeEqFDMj8aKBL+sQhMpg3Ux4
+         bZvn9zCCzLUNjjvPZrDDkUwhP7aJy4zxQd02UA/oiwdNworirWPkfEyltWfbgMpRH0e5
+         iRnFdVs9aEdEe82Kp3dS7PLv1k4u+/x/fWaK2vdfEsPkwzVNGvoKlW4WUOV/lRTL1r2y
+         3SHA==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=1e100.net; s=20260707; t=1794442375; x=1795047175;
-        h=content-transfer-encoding:content-type:in-reply-to:content-language
-         :from:references:cc:to:subject:user-agent:mime-version:date
-         :message-id:x-gm-gg:x-gm-message-state:from:to:cc:subject:date
-         :message-id:reply-to:content-type;
-        bh=50cUKcBwzzIYqHfbpzEyJG3oIfn7RAkW9U+HNZUhwdM=;
-        b=PCqCydpUayVmS2R3NbG2g8IEEJvr2IPFhIjyVNH0li0dQUfS6pvGsq/cGwu3CGYlYt
-         QtNmd6t8z4A7TyZbE0lPybOXHBjvyJpNSOdaLFENfNxfTeUNg8P6I48UL7QQ5qrqSgbn
-         3jGFHQDDuz++bb/Iy8PXP7+VAc1r7sVri+bw+HQqaYEaxwTYCzbvmCq5Z9sObDpQWLdr
-         3924j6LE102tJFfgfHl0oD3pgtmzszBo+eD8Drs4GJ9Nn9VKTv+nu7BqGdC/upkt6W9g
-         9xv9wMRc4dAjWubLCCl1zWo65DsPAwl1i/kwlPjbpHmbiBV1PVBJwIxHHbOPil125Tr0
-         09uA==
-X-Forwarded-Encrypted: i=1; AL+hErFh39Y7OfFtkgyiZw0snGbsaO+c7Wm+s6CtTpGASka7+3j4qHF+o/EW1Q1piD/b8HRvG22ijZLntVu+2KyfUw==@vger.kernel.org
-X-Gm-Message-State: APuU4Z8kN9d2Xuy1RwLIF5gftAUTSKUFotJHePPZ+krdbx2paVokBg4o
-	KG3yMj3+kMRyVMFeRxV4SyLWjkx1m0WEA8zLEppWb0L927x7IuCG//j5plXAaWHOGJxm30hHa+t
-	5TugKr9vR/lXBicqchcj8lnGuRq8Utxi42fgDZD4eyNuL1IuAJ2BO7xlZ3fBg3yvnEzrd3w==
-X-Gm-Gg: AYBFou29QC13lktXPTgEj8Z+4eqd6hs5fHxapUo6+SZT7UMvlTVW5N3Dn3hXlnl+96W
-	4yMyZFjnCwVKvBI8gqdWZUhXXcQJpnN6akjpLzarZdmM4PsipW9/npxtD6MRBx45E5b3x3bpt08
-	LcXozdRn+8wkgMyoQvSnWNtJ35JqzQDjaocJpOfsxDs+5U7N92EAH17LbkAdOCze5St9g//FR8u
-	naLX2Dyb4Y2rXf5Dzc643KeeB0YfVHJRPCihhcAlaJqkOKy9VlK7G/x+Dav3F6lPmAcM+DHg5De
-	EARQ/qgxRsSghBbS/bohUlH0qDeGLxONalAtzYkB0oqba+ZePdSnUSD6o5RK8WYzeGSqQnBJuax
-	UebxqQwY2J12s/rBSgLLEaO2U9Aumky5gSlulQ0Ud5pXzYgHBGnb7za66hddL9C4A0i8SEsL0Bd
-	ZnmcxeEk0KZD8cCgMe1NNVEtqRjIVG
-X-Received: by 2002:a05:7022:5f05:b0:1b2:558a:d777 with SMTP id a92af1059eb24-1b3c024f962mr3088784c88.2.1794442375234;
-        Wed, 11 Nov 2026 16:12:55 -0800 (PST)
-X-Received: by 2002:a05:7022:5f05:b0:1b2:558a:d777 with SMTP id a92af1059eb24-1b3c024f962mr3088768c88.2.1794442374490;
-        Wed, 11 Nov 2026 16:12:54 -0800 (PST)
-Received: from [192.168.1.20] (39.sub-97-215-59.myvzw.com. [97.215.59.39])
-        by smtp.gmail.com with ESMTPSA id a92af1059eb24-1b3b56c4e88sm18282294c88.0.2026.11.11.16.12.53
-        (version=TLS1_3 cipher=TLS_AES_128_GCM_SHA256 bits=128/128);
-        Wed, 11 Nov 2026 16:12:53 -0800 (PST)
-Message-ID: <547f063d-0ce7-4a7e-9e1d-5fd587421cbb@oss.qualcomm.com>
-Date: Wed, 11 Nov 2026 16:12:52 -0800
+        d=1e100.net; s=20260707; t=1794442927; x=1795047727;
+        h=content-type:cc:to:subject:message-id:date:from:in-reply-to
+         :references:mime-version:x-gm-gg:x-gm-message-state:from:to:cc
+         :subject:date:message-id:reply-to:content-type;
+        bh=Ozi/jJGilFFBpMvx3kOD/uL7Gb1XLAv7dVXo80M+VSY=;
+        b=FM5j5E690UYzym4p3trIgoq9E0jyDyT2wqmzc4VbTAHcYN//VnLiPlGHqusJhamJLj
+         mKvYLoWsUucFGgPHMaUTreLargTBKVK32ZKwQhQVj7UD97cJxUoc9+zjT85+Mn3QJv/w
+         bXfQIgmokYavyWBubbKAwh8hPcK9Fg5JURyuXYVw4hnaQOq22LhKrQa9WrAJJ49ncRri
+         0a3aEFR6vGR8DHftOMkCTmL6sciyysEFQ+LtjI97tP7XdrHsjtDaFuWRmEGjifIH4qhC
+         mQNXW6w+q9kDpY5E8eHplPyKsvl1R8lpHmtQZmMuYrQmVTyO+Q4tY9GkjBVGI6RuiPXC
+         NoeQ==
+X-Gm-Message-State: APuU4Z/KlfIhDMYlqZkAQZlvfMdGjRRyLDSCADwGVfdbHLC62tiycRLN
+	L2r1/feDrVtd++NdgIIL/RzwmxhhzeTG4Vky8J+2FU1+B2vl9DRyzg2ywFI5uwsxZzITZeLU2tZ
+	SdB5X7yT7s1jU5oWlBWDA0xtIvGx/tdd+N6NY
+X-Gm-Gg: AYBFou2Ek+ek7TpWCye3vvYnDoI5EbIyqdczxQ9QiWKpSDkFBsLlpA+FwEJ2rmRV691
+	ui/W5XW/0rdHbh0FaWwpUHbaqtQQtHHa6P7dkpAXjyOfjCw8OGm05Z0XmHXXJvp6ZCKYQaUZcZJ
+	EcypNXF71ZaTSDGX+LOtgefteNLrtQULhnsCPMi9KlfEHHmSU8U8AkQyrQSSNqyQ2jSgtYBH368
+	dmr5I7xi57SLm6h1ksA+wQ9Y+FYnil3ggAmZu28G4WSl4MP/6mjfuWzqTRzf09g5LhkplxoooDl
+	dLN9G9nATSJIT2jOI+D8kkCZ+BFP67wpauk38rex6WOtNxdou4GQ+UXpMmj23ACPYciiJZkYxyE
+	xH53Urbz1EWkHftgXRJiC+78KEcnKU4sCzzj33/OgRm1/mxMLzusniRTxXtl2eG25wJjrEiDI+W
+	AYayGmUUIE0FcI6V3Q
+X-Received: by 2002:a05:6102:6052:b0:7c1:62d2:e18a with SMTP id
+ ada2fe7eead31-7d4fb2b00b5mr1487732137.16.1794442927584; Wed, 11 Nov 2026
+ 16:22:07 -0800 (PST)
 X-Mailing-List: linux-wireless@vger.kernel.org
 List-Id: <linux-wireless.vger.kernel.org>
 List-Post: <mailto:linux-wireless@vger.kernel.org>
@@ -114,98 +103,38 @@ List-Unsubscribe: <mailto:linux-wireless+unsubscribe@vger.kernel.org>
 List-Owner: <mailto:linux-wireless+owner@vger.kernel.org>
 Precedence: list
 MIME-Version: 1.0
-User-Agent: Mozilla Thunderbird
-Subject: Re: [PATCH v2] wifi: ath10k: Stop unanswered temperature reads
-To: Nicolas Escande <nico.escande@gmail.com>,
-        Filippo Falezza <effeffe99@gmail.com>
-Cc: Loic Poulain <loic.poulain@oss.qualcomm.com>,
-        Jeff Johnson <jjohnson@kernel.org>, linux-wireless@vger.kernel.org,
-        ath10k@lists.infradead.org
-References: <20261027-ath10k-temperature-v2-1-0793e80d73bc@gmail.com>
- <DMRPC2GCD51O.S4DMHZFDKRFG@gmail.com>
-From: Jeff Johnson <jeff.johnson@oss.qualcomm.com>
-Content-Language: en-US
-In-Reply-To: <DMRPC2GCD51O.S4DMHZFDKRFG@gmail.com>
-Content-Type: text/plain; charset=UTF-8
-Content-Transfer-Encoding: 7bit
-X-Proofpoint-Spam-Info: AW1haW4tMjYxMTEyMDAwMCBTYWx0ZWRfX7Dvcybu2gH+i
- ITwwu/w2dfuHHrc4TDUIW6ExwGV2/enC0+2Abm3SOyvEWYbNWfLiMUzb40po7KyVUr90cBv+igy
- dPu/BZyByAamRFdt7UQ6vxuEmRjzTrc=
-X-Proofpoint-Spam-Details-Enc: AW1haW4tMjYxMTEyMDAwMCBTYWx0ZWRfX3239m3Oex9ra
- 3gaK+oNiITg18yEIs29sJKvKffoxJiksey2LiY7S4LD2g3QeKpYZsc4kPnDh58Ejwi0FDz86Qfn
- SSPf3pBbgyGH81efqyda4/B3fOVdWV+8YmL5OjneVtXdgI+VI/YClFFL5KKimgJ7qTceTF5Qx7M
- fX/wwiOgfTC1yS48STzapJG16xBuWvG11NdCOIKZyPTU1TwOwt1wD5EuyX1AJaiq0uDc94U7V9H
- 628+oqeWddh4xIGf/+bFBDWsLr3FBK+PSZ0ggLvsKzcjMYZnNSUdZEW9PTKbRozWjMhUoDZie46
- VWtU8+zb0XKlYbPpOwCFlxkGpyGVwktpnJeM6PFfN58zbBtg91QQ6uUP+V+cuQMFHe/7NAgwSEH
- 1RmzJaBar/au4qGuNKL4ibyEXXDASwn8SHLKs/T1r4UVee49uWba9J3rP7RUWibO5q6kX4vJ+lc
- 8Sacwzkw444UvmYBoig==
-X-Proofpoint-GUID: ARF-dg2E6FykUZTHpaBrFnyhV-VWbeYS
-X-Proofpoint-ORIG-GUID: ARF-dg2E6FykUZTHpaBrFnyhV-VWbeYS
-X-Authority-Analysis: v=2.4 cv=BpcIUoX5 c=1 sm=1 tr=0 ts=6af50488 cx=c_pps
- a=wEP8DlPgTf/vqF+yE6f9lg==:117 a=7UwXyAtrHAWG9Tdc5CO1EQ==:17
- a=IkcTkHD0fZMA:10 a=zJRp6_cAMcgA:10 a=s4-Qcg_JpJYA:10
- a=VkNPw1HP01LnGYTKEx00:22 a=u7WPNUs3qKkmUXheDGA7:22 a=YMgV9FUhrdKAYTUUvYB2:22
- a=C5z_tJQPRfujv5IdwTUA:9 a=QEXdDO2ut3YA:10 a=bBxd6f-gb0O0v-kibOvt:22
-X-Proofpoint-Virus-Version: vendor=baseguard
- engine=ICAP:2.0.293,Aquarius:18.0.1176,Hydra:6.1.138,FMLib:17.12.100.49
- definitions=2026-11-11_06,2026-11-11_03,2025-10-01_01
-X-Proofpoint-Spam-Details: rule=outbound_notspam policy=outbound score=0
- impostorscore=0 clxscore=1015 spamscore=0 lowpriorityscore=0 adultscore=0
- priorityscore=1501 phishscore=0 malwarescore=0 suspectscore=0 bulkscore=0
- classifier=typeunknown authscore=0 authtc= authcc= route=outbound adjust=0
- reason=mlx scancount=1 engine=8.22.0-2611040001 definitions=main-2611120000
+References: <20261111-ath12k-sta-vdev-start-once-v1-1-a01ed78d5460@gmail.com>
+In-Reply-To: <20261111-ath12k-sta-vdev-start-once-v1-1-a01ed78d5460@gmail.com>
+From: Christopher Griffin <christophergriffin05@gmail.com>
+Date: Wed, 11 Nov 2026 18:21:56 -0600
+X-Gm-Features: AclHuK9XczOR4dhNeekHBYBO-ZYIGUvSQou0O_2Aj7mVpoHb3t7HKJ4KtEblBJc
+Message-ID: <CAKobHXBJ68qUT5vSPmY3stt1Cfc=toMvGyWUBW7mwfAbfVBTgA@mail.gmail.com>
+Subject: Re: [PATCH ath-next] wifi: ath12k: stop a running station vdev before
+ starting it again
+To: jjohnson@kernel.org, ath12k@lists.infradead.org
+Cc: linux-wireless@vger.kernel.org, 
+	Baochen Qiang <baochen.qiang@oss.qualcomm.com>, Kang Yang <kang.yang@oss.qualcomm.com>, 
+	Birk Skyum <birk.skyum@pm.me>
+Content-Type: text/plain; charset="UTF-8"
 
-On 11/10/2026 9:20 AM, Nicolas Escande wrote:
-> On Tue Oct 27, 2026 at 2:56 AM CET, Filippo Falezza wrote:
->> Reading the ath10k hwmon temperature sends WMI_PDEV_GET_TEMPERATURE and
->> waits up to 5 s (ATH10K_THERMAL_SYNC_TIMEOUT_HZ) for the reply event,
->> holding conf_mutex. Not all firmware answers: the WCN3990 firmware
->> WLAN.HL.3.3.1-00694-QCAHLSWMTPLZ-1 on a Motorola Moto G 5G Plus
->> codename nairo (SM7250) never sends the event, so every read of
->> temp1_input stalls for 5 s, logs
->>
->>   ath10k_snoc 18800000.wifi: failed to synchronize thermal read
->>
->> and returns -ETIMEDOUT. Tools that read all hwmon sensors, such as
->> lm-sensors, hang for 5 s on every run, and configuration changes of the
->> interface wait for conf_mutex in the meantime.
->>
->> Whether the firmware answers cannot be told from the chip: firmware that
->> answers and firmware that does not both advertise
->> WMI_SERVICE_THERM_THROT, and WCN3990 firmware differs between devices.
->> Instead, remember that the running firmware did not answer, and return
->> -EOPNOTSUPP right away on later reads. Forget it when the firmware
->> starts, so that a restarted or updated firmware is asked again.
->>
->> The first read after each firmware start still takes 5 s when the
->> firmware does not answer. Reads on firmware that answers are unchanged.
->>
-> [...]
-> 
-> Hello,
-> 
-> I've just now seen this and it will break some setups. It seems that some ath10k
-> devices that usually respond to the thermal WMI messages sometimes do not.
-> This is from a QCA9888 that does not have your patch yet:
-> 
-> [431710.509443] ath10k_pci 0000:01:00.0: failed to synchronize thermal read
-> [433385.529449] ath10k_pci 0000:01:00.0: failed to synchronize thermal read
-> [434755.541438] ath10k_pci 0000:01:00.0: failed to synchronize thermal read
-> [435385.549438] ath10k_pci 0000:01:00.0: failed to synchronize thermal read
-> 
-> Like you I have a daemon that reads the sensor periodically and it seldom
-> fails to read the sensor value for whatever reason. Most of the time it works.
-> With your patch once I've hit this, I will never have a valid reading anymore.
-> 
-> So how about I post a new patch that only fully disable sending when we have
-> like 3 consecutive read fails, and in the mean time I can also lower
-> ATH10K_THERMAL_SYNC_TIMEOUT_HZ to 1s or so so it doesn't lock up for too long ?
-> 
-> Jeff / Loic is that ok or do you have any other suggestion ?
-My thinking is that based upon your logs we should never disable the logic if
-the firmware ever replied.
+On Wed, Nov 11, 2026 at 11:53 AM Christopher Griffin wrote:
+> On ath-next this exact patch is compile-tested
+> only (x86_64, W=1, with and without [2]).
 
-I'm also in favor of tuning the timeout based upon whatever empirical data is
-available.
+Since sending, the exact pair, [2] and then this patch, has run on the
+same station: the ath12k source of Ubuntu's 7.3.0-1004-oem kernel with
+both applied (offsets only), WCN7850 with WLAN.HMT.1.1.c7-00108,
+against the same EHT 320 MHz AP.
 
-/jeff
+The test was 13 connections alternating between EHT and HE
+(disable_eht=1), then 20 EHT reconnects. With the unpatched driver the
+13 connections alone gave 34 timeouts, each station query then taking
+3 seconds and reporting no signal. With the two patches there was no
+timeout, every station query returned a signal value in about 10 ms,
+and the kernel log had no warnings. Tracing showed start, stop and
+start for each HE connection, the stop coming from the new path in
+ath12k_mac_vdev_start(), one start for each EHT connection, no
+restarts, and one stop for each disconnect.
+
+This test and note were run and written with Claude, an AI coding
+assistant.
