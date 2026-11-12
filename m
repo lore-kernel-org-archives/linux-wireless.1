@@ -1,54 +1,122 @@
-Authentication-Results: smtp.subspace.kernel.org; arc=none smtp.remote-ip=185.70.43.96
-ARC-Seal: i=1; d=subspace.kernel.org; s=arc20261015; a=rsa-sha256; cv=none;
-	t=1794485790;
-	b=omaYhzuQoS/cndXkTebhQ8yuQhdyPQWML85Dya3xwcu1tSj9t7Sukp0KJbP3bjudaRb1
-	 XNZTUi54C0uzFlSfiMIVIf/v9AQ510Zsgnikdjb8m9YqPT4ipLbzxrF8NhZeSE1S1pJWH
-	 ILpmNQh88r6qg4HUUIFsw1LMklQY3PCbESrEZjxTCh83WujT9i2wAGbGeVSL5lgTG4B3p
-	 MPfwmE69VPyZtNXoHQZnd1H6tOUN4rkyKddqcLe9ManabrfhSwnVKmAhMsDmFT/mIe2p4
-	 8eFIpvf8PO9IxcMi0jsj4R3NFfR4W+uWxu/L1swD7unZtYrLMXcjmpjGb95xugpf1jw==
-ARC-Message-Signature: i=1; d=subspace.kernel.org; s=arc20261015;
-	a=rsa-sha256; c=relaxed/relaxed; t=1794485790;
-	h=DMARC-Filter:DKIM-Signature:Date:To:From:Cc:Subject:Message-ID:
-	 Feedback-ID:X-Pm-Message-ID:MIME-Version:Content-Type:
-	 Content-Transfer-Encoding;
-	bh=DCibk3esbM9aP9RQ7ZoKH3SlkoeG0DaznIMSZGChnao=;
-	b=b3fIUn+Po6+G2TMUiy83ZuxN/08Zl6KiyYHleXLSwHkaM/nLE8/QYTGGBJDQtTwJzw1V
-	 HPFfnUC57ZTbsmjBj1aBjkiDeL3AQBnO1H3i6JgPHDKpITtgeCwTQEZdZU4jhQCUUmagV
-	 BnlvkUaezd1Cgn2dNzVCn6x5cN25yNk+Gmu3ClkeeHpGXebttMmpQ08BX2syPLx/NF3jj
-	 P98SHmv5dQ22WtL6gK9gEHUZQ2uZrvF5qFx4WC9YZSZo1wUMXZrRd7lHVTYfL2QUJFmR9
-	 tdNp+R/Asa816ZrK9NnPvFmdpFPQLhpWV2+EiX8h3twkhE24eileMQfU1IFHVp7LcvQ==
-ARC-Authentication-Results: i=1; smtp.subspace.kernel.org; 
-	dmarc=pass header.from=becholey.ch;
-	spf=pass smtp.mailfrom=becholey.ch;
-	arc=none smtp.remote-ip=185.70.43.96
-Received: from mail-4396.protonmail.ch (mail-4396.protonmail.ch [185.70.43.96])
+Authentication-Results: smtp.subspace.kernel.org; arc=pass header.oldest-pass=0 smtp.remote-ip=52.101.66.44
+ARC-Seal: i=2; d=subspace.kernel.org; s=arc20261015; a=rsa-sha256; cv=pass;
+	t=1794486485;
+	b=ZeLMvumwkGZMbf0I1wltVRt/dzLdMmimXHEy9aMDo1k1L+JdL4fAUKQXjg7jX1kLgTwU
+	 Aru24ITWRR9l9JmhNKvY/qwVL73agHkHkCaHYfZe6KuHImYAId42aUPjkaR9K1J8OaRbu
+	 ubBUnkKyMin0anfA6sBGzOOXnMDEEBbzeRIr6cEWHUHgKiFQmHOzIfvUytfQkmfObnT1l
+	 K8GRhm3628lT4RFk1biuvBggJrXjk8t+hMi76AUOp+JrfHNnYJoBsbScdBX3EidlGhSX7
+	 1vAChXtTN27eC1RzVNfgrLhtpXsaArIRclj7GS8kSexBwP/IF802YfGYceghdPWWxwA==
+ARC-Message-Signature: i=2; d=subspace.kernel.org; s=arc20261015;
+	a=rsa-sha256; c=relaxed/relaxed; t=1794486485;
+	h=DMARC-Filter:DKIM-Signature:Received:Received:
+	 X-MS-Exchange-Authentication-Results:Received-SPF:Received:Received:
+	 Received:X-CLAM-Verdict:X-CLAM-Score:X-CLAM-Description:Received:
+	 Received:From:To:Cc:Subject:Date:Message-ID:X-Mailer:In-Reply-To:
+	 References:MIME-Version:Content-Type:Content-Transfer-Encoding:
+	 X-EOPAttributedMessage:X-MS-PublicTrafficType:
+	 X-MS-TrafficTypeDiagnostic:X-MS-Office365-Filtering-Correlation-Id:
+	 X-MS-Exchange-SenderADCheck:X-MS-Exchange-AntiSpam-Relay:
+	 X-Microsoft-Antispam:X-Microsoft-Antispam-Message-Info:
+	 X-Forefront-Antispam-Report:
+	 X-MS-Exchange-AntiSpam-MessageData-ChunkCount:
+	 X-MS-Exchange-AntiSpam-MessageData-0:X-OriginatorOrg:
+	 X-MS-Exchange-CrossTenant-OriginalArrivalTime:
+	 X-MS-Exchange-CrossTenant-Network-Message-Id:
+	 X-MS-Exchange-CrossTenant-Id:
+	 X-MS-Exchange-CrossTenant-OriginalAttributedTenantConnectingIp:
+	 X-MS-Exchange-CrossTenant-AuthSource:X-MS-Exchange-CrossTenant-AuthAs:
+	 X-MS-Exchange-CrossTenant-FromEntityHeader:
+	 X-MS-Exchange-Transport-CrossTenantHeadersStamped;
+	bh=dUWK25Zxj2RdQC2TG/5l3DQZ9LGVS3MPG6T9CpM8oTA=;
+	b=3C67OWChDapbmlna2x+QGhYWhKwtrr3sHhw6KdItptfdkniLenfMmFkCH9O80q/LWnPE
+	 B6OixVECsmHiWKQ7ma8bxblx8PKR03FB0rhUI9JxwIsyf5evdvH999zzeD9GUE+bLmtjQ
+	 dFbqCJUQHVq6LpqmJevnv3tp63mUjFUTxsEF8vOcs54goZl8k4x2J7tIi+e2oJ3nMZHQB
+	 szuqFR0pthrFobOpwJ1SLC8yH6R+OhXLs2PplXp84UWkaxmdjCFC3BiBWEaP7aWakvdMf
+	 TlwH5OFXIo5UhyHyZ3/LRA7SR46DAtlbPlOc6QZdVW/OLiHkSqcEz/JttVBJyte++9g==
+ARC-Authentication-Results: i=2; smtp.subspace.kernel.org; 
+	dmarc=pass header.from=philips.com;
+	spf=pass smtp.mailfrom=bbl.ms.philips.com;
+	dkim=pass header.d=philips.com header.i=@philips.com header.a=rsa-sha256 header.s=selector1 header.b=lQ7B55dH;
+	arc=pass header.oldest-pass=0 smtp.remote-ip=52.101.66.44
+Received: from DUZPR83CU001.outbound.protection.outlook.com (mail-northeuropeazon11012044.outbound.protection.outlook.com [52.101.66.44])
 	(using TLSv1.3 with cipher TLS_AES_256_GCM_SHA384 (256/256 bits)
-	 key-exchange X25519 server-signature ECDSA (prime256v1) server-digest SHA256)
+	 key-exchange ECDHE (secp384r1) server-signature ECDSA (prime256v1) server-digest SHA256)
 	(No client certificate requested)
-	by smtp.subspace.kernel.org (Postfix) with ESMTPS id 99D68606A32A
-	for <linux-wireless@vger.kernel.org>; Thu, 12 Nov 2026 12:16:28 +0000 (UTC)
-DMARC-Filter: OpenDMARC Filter v1.4.2 smtp.subspace.kernel.org 99D68606A32A
-Authentication-Results: smtp.subspace.kernel.org; dmarc=pass (p=quarantine dis=none) header.from=becholey.ch
-Authentication-Results: smtp.subspace.kernel.org; spf=pass smtp.mailfrom=becholey.ch
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=becholey.ch;
-	s=protonmail; t=1794485786; x=1794744986;
-	bh=DCibk3esbM9aP9RQ7ZoKH3SlkoeG0DaznIMSZGChnao=;
-	h=Date:To:From:Cc:Subject:Message-ID:Feedback-ID:From:To:Cc:Date:
-	 Subject:Reply-To:Feedback-ID:Message-ID:BIMI-Selector;
-	b=mCaQ3qoSm+rFH/KLRwA7LURfaWqUZwGE7CtopOUZiRHMYuNNGGU3ZWEwdcxoPksOs
-	 uAKDusQph1BkDvTn5OmO2Gyx3GVqIwgH6WC9FWr72GMTqZTWgZ5PtbAtsuSI1E4hNI
-	 oDa15dHlXYBEAVy2/sNl+fFO8w8NiZlRRyuQ5lHqBuZS7EikEj4CLoKMyKXsNqoObE
-	 1tv3EIrQQ39ikBaMOTbtOQmHubeAv3kBdcIohygsj64nq3b2iwlbdzrWcRr/07NWxT
-	 ONC6zKX4uKYHQynwTki8xie6x1lMPR/cHuuFX//pVywr7Fk9g50kWplUQohvpTTkAa
-	 Znc67iY3BZF4w==
-Date: Thu, 12 Nov 2026 12:16:20 +0000
-To: johannes@sipsolutions.net
-From: Alexandre Becholey <alex@becholey.ch>
-Cc: linux-wireless@vger.kernel.org, linux-kernel@vger.kernel.org, Alexandre Becholey <alex@becholey.ch>, stable@vger.kernel.org
-Subject: [PATCH] wifi: rsi: fix use-after-free of in-flight USB rx buffer
-Message-ID: <20261112121524.96610-1-alex@becholey.ch>
-Feedback-ID: 60743817:user:proton
-X-Pm-Message-ID: af1b45cd88e1635e254e5e2ad6feabbfdd8f2597
+	by smtp.subspace.kernel.org (Postfix) with ESMTPS id 968DB606A884
+	for <linux-wireless@vger.kernel.org>; Thu, 12 Nov 2026 12:28:04 +0000 (UTC)
+DMARC-Filter: OpenDMARC Filter v1.4.2 smtp.subspace.kernel.org 968DB606A884
+Authentication-Results: smtp.subspace.kernel.org; dmarc=pass (p=reject dis=none) header.from=philips.com
+Authentication-Results: smtp.subspace.kernel.org; spf=pass smtp.mailfrom=bbl.ms.philips.com
+Authentication-Results: smtp.subspace.kernel.org;
+	dkim=pass (1024-bit key, unprotected) header.d=philips.com header.i=@philips.com header.a=rsa-sha256 header.s=selector1 header.b=lQ7B55dH
+ARC-Seal: i=1; a=rsa-sha256; s=arcselector10001; d=microsoft.com; cv=none;
+ b=tl3EswARyZXHHOQsI6VZL3CYvjIdEcsEasJzLyfWO6/ZOhSIgkuGD6BNue78Ws9qbyDnPvrx7P9UC5dTh3Vze+sEYOdVCca5jTvQKoYh4GVqDQEXYlFEdLOk6TCK1ZiWf6zw0chVMqwNHFxcPfEo7ln5QNMPtFIwUe9chGrRm6f8FDC0uPwXjGFxy57+1rTHq2YwWUQFkZl8b7hPNFhln3tuj62IPWQ1m16xkO5XM6UCcznXMq7s5mrUorKHHICOD4chK6ABrz+8KbPIqoXb4IPyQ6zcJA6WlrLim+msTin6BFX3Py0X4ECNyR4WLl2m7xaqM63Do3Ik9u4Ct7ebMA==
+ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=microsoft.com;
+ s=arcselector10001;
+ h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-AntiSpam-MessageData-ChunkCount:X-MS-Exchange-AntiSpam-MessageData-0:X-MS-Exchange-AntiSpam-MessageData-1;
+ bh=dUWK25Zxj2RdQC2TG/5l3DQZ9LGVS3MPG6T9CpM8oTA=;
+ b=mqwYZRFRNywPUzEVBUlRvW+/ESfjl6TIP3dHxlriMhbOXl65ncRunWcJuoKL1pwXiDyMx1+GBw9JmPXWAsROd4qwINx81RcNXZlFcY6rac4BndNrQ2DIKlwTM/ox3dNEvN+dABeNHHF85iiRZBQuR7RXoimwcgcIvBy7JWGOHpEBRGrHHDruH7w3UrdgdqfD3K20azDz/NmrYT683ixJCeeD2OvkbPsQeRFLa5ZGoYXKXwaZVIFr+ODAXmu1yWnkpI9jUeoC4OjuwZCQlPhS8rsZaUxnzgOZRl8LlcJ8qCdT9xyArnJm97YAgBhgv/Ci3YF4QppwowgjuuI5MoJ2YQ==
+ARC-Authentication-Results: i=1; mx.microsoft.com 1; spf=pass (sender ip is
+ 3.248.88.141) smtp.rcpttodomain=vger.kernel.org
+ smtp.mailfrom=bbl.ms.philips.com; dmarc=pass (p=reject sp=reject pct=100)
+ action=none header.from=philips.com; dkim=none (message not signed); arc=none
+ (0)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=philips.com;
+ s=selector1;
+ h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
+ bh=dUWK25Zxj2RdQC2TG/5l3DQZ9LGVS3MPG6T9CpM8oTA=;
+ b=lQ7B55dHFK+N1MKfG+d2uVyfOwljwK83RydQ3f4aD1JGUs8ybiUr51SlW7pGx0RCHkM9xTcF19lWYl48tfYNTDFUjnw5l/tKTUwd/SJcfETvKeydJU5RQvT+HMcxoh8uL5ffhwghIx8BNKMNxd06ogwzjzPpLtzzLFOUytd/52k=
+Received: from DUZPR01CA0081.eurprd01.prod.exchangelabs.com
+ (2603:10a6:10:46a::6) by VI0PR10MB9498.EURPRD10.PROD.OUTLOOK.COM
+ (2603:10a6:800:30b::6) with Microsoft SMTP Server (version=TLS1_2,
+ cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id 15.21.615.8; Thu, 12 Nov
+ 2026 12:28:00 +0000
+Received: from MI3PEPF00008495.eurprd03.prod.outlook.com
+ (2603:10a6:10:46a:cafe::2) by DUZPR01CA0081.outlook.office365.com
+ (2603:10a6:10:46a::6) with Microsoft SMTP Server (version=TLS1_3,
+ cipher=TLS_AES_256_GCM_SHA384) id 15.21.615.9 via Frontend Transport; Thu, 12
+ Nov 2026 12:28:00 +0000
+X-MS-Exchange-Authentication-Results: mx.microsoft.com 1; spf=pass (sender IP
+ is 3.248.88.141) smtp.mailfrom=bbl.ms.philips.com; dkim=none (message not
+ signed) header.d=none;dmarc=pass action=none header.from=philips.com;
+Received-SPF: Pass (protection.outlook.com: domain of bbl.ms.philips.com
+ designates 3.248.88.141 as permitted sender) receiver=protection.outlook.com;
+ client-ip=3.248.88.141; helo=ext-eur1.smtp.philips.com; pr=C
+Received: from ext-eur1.smtp.philips.com (3.248.88.141) by
+ MI3PEPF00008495.mail.protection.outlook.com (10.167.240.180) with Microsoft
+ SMTP Server (version=TLS1_2, cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id
+ 15.21.615.4 via Frontend Transport; Thu, 12 Nov 2026 12:27:59 +0000
+Received: from smtprelay-eur1.philips.com ([130.138.84.184])
+	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 256/256 bits)
+	(Client did not present a certificate)
+	by ext-eur1.smtp.philips.com with ESMTPS
+	id RRyHxfzSLf0UDRTuJxbDvQ; Thu, 12 Nov 2026 13:27:59 +0100
+Received: from mail.bbl.ms.philips.com ([130.143.87.230])
+	by smtprelay-eur1.philips.com with ESMTP
+	id RTuJxJvkAbtn9RTuJxUxdC; Thu, 12 Nov 2026 13:27:59 +0100
+X-CLAM-Verdict: legit
+X-CLAM-Score: ??
+X-CLAM-Description: ??
+Received: from bbl2xvg1.bbl.ms.philips.com (bbl2xvg1.bbl.ms.philips.com [130.143.220.100])
+	by mail.bbl.ms.philips.com (Postfix) with ESMTP id 13B69180398;
+	Thu, 12 Nov 2026 13:27:59 +0100 (CET)
+Received: by bbl2xvg1.bbl.ms.philips.com (Postfix, from userid 2884)
+	id 0E0F0FE023B; Thu, 12 Nov 2026 13:27:59 +0100 (CET)
+From: Vishal Gupta <vishal.gupta_1@philips.com>
+To: linux-wireless@vger.kernel.org
+Cc: elb12345@hotmail.co.uk,
+	francesco@dolcini.it,
+	jeff.chen_1@nxp.com,
+	johannes@sipsolutions.net,
+	kees+treewide@kernel.org,
+	lilinmao@kylinos.cn,
+	linux-kernel@vger.kernel.org
+Subject: Re: [PATCH 1/1] wifi: nxpwifi: fix race on scan_processing in nxpwifi_scan_networks()
+Date: Thu, 12 Nov 2026 13:27:53 +0100
+Message-ID: <20261112122755.183585-1-vishal.gupta_1@philips.com>
+X-Mailer: git-send-email 2.43.0
+In-Reply-To: <20261109170400.1316239-1-vishal.gupta_1@philips.com>
+References: <20261109170400.1316239-1-vishal.gupta_1@philips.com>
 X-Mailing-List: linux-wireless@vger.kernel.org
 List-Id: <linux-wireless.vger.kernel.org>
 List-Post: <mailto:linux-wireless@vger.kernel.org>
@@ -58,135 +126,36 @@ List-Unsubscribe: <mailto:linux-wireless+unsubscribe@vger.kernel.org>
 List-Owner: <mailto:linux-wireless+owner@vger.kernel.org>
 Precedence: list
 MIME-Version: 1.0
-Content-Type: text/plain; charset=utf-8
-Content-Transfer-Encoding: quoted-printable
+Content-Type: text/plain; charset=UTF-8
+Content-Transfer-Encoding: 8bit
+X-EOPAttributedMessage: 0
+X-MS-PublicTrafficType: Email
+X-MS-TrafficTypeDiagnostic: MI3PEPF00008495:EE_|VI0PR10MB9498:EE_
+X-MS-Office365-Filtering-Correlation-Id: b02d06a1-4cad-4375-20c2-08df40b8636f
+X-MS-Exchange-SenderADCheck: 1
+X-MS-Exchange-AntiSpam-Relay: 0
+X-Microsoft-Antispam:
+	BCL:0;ARA:13230040|82310400026|1800799024|36860700016|376014|23010399003|22082099003|18002099003|261102123227099003|11063799006|10067099003|56012099006|261021121427099003|261026121527099003;
+X-Microsoft-Antispam-Message-Info:
+	eekiO2dxX0ExlqDXmclQGp/XOfF+EuioZqwKvfwZrNjhm8tp4t1+3pem/4JpGl0s1AGYazRQqf6I4zg5Fn4cqQKeRxt3kq5yuIUe8Zw4U7sYSEeJs4w02KotUFBl313tIz1Ybls9YzFSOM7IWYdL/ME6rdfp1xS1jjUPqpyurreeQitjFzS7kj+WJXygdPY8VWmex0AIn8ibOx9MRq3knWtxQijEHDJE2En5VDuj92ncfZyGuu981q/3DTUeX2bmTRGDcfvO+cW4rrX2rgoBbmnVkhZYYSJ/xKYErb3ibvjVzhKQCQMyiMKkZOKVUSh0GdI7Nl8qw/6X/Xsbx4SldDQL8wO6xYi+rlEYdRFYBQXyoCM1tX8+vHGz+9k+nJaKHiQe1/J1lw7niFHpEsAVhYTe8P0vFADESrvhes6NXDgCODOoTdHj9mjx4gPEmQa3v7CK63wBYscrtcb4tmkk7MWUkNZZUYkhy/Xxy76AlL4PsBZC+PJrYVIPbwzgdRyY0l10YDvqDvvVnrI0IH8Cjks38siMO7/0Ts8fCPU8P/5ZooZDZhWn23UjCZbIMM9UqzNpAEAQv7FQy0ie4Dkz47+QQIPuhysFVDU/pCjAo1gjvra5LIx11/ynAZRnyHcz+kfF2j5qnLdlxKXegl3vLxGdvnxcxuyyx23U/sYVIwGb8KYuLpLne9sZm1Mn5JnijejN3JQOOqVhRX6+0hLrtg==
+X-Forefront-Antispam-Report:
+	CIP:3.248.88.141;CTRY:IE;LANG:en;SCL:1;SRV:;IPV:NLI;SFV:NSPM;H:ext-eur1.smtp.philips.com;PTR:ext-eur1.smtp.philips.com;CAT:NONE;SFS:(13230040)(82310400026)(1800799024)(36860700016)(376014)(23010399003)(22082099003)(18002099003)(261102123227099003)(11063799006)(10067099003)(56012099006)(261021121427099003)(261026121527099003);DIR:OUT;SFP:1101;
+X-MS-Exchange-AntiSpam-MessageData-ChunkCount: 1
+X-MS-Exchange-AntiSpam-MessageData-0:
+	ys4rzVSRLkZtCaQRCqDn080+LLhT4abpZMRf9TMZR5EbrOEp/n5L5QD6OFJ3Lyn6CAvjzcVrYmSssKAPDVYt5EkQdW6BCprJnqvsEkhKYdRodmtgAu9F28lHnpjjpX3hdFJxBsOrZwwJSQx/xbFJrgs5ZYGyXfGiWs9vSn85J4UTEcNGU8tMyT7Zq1gBQlLiHo+eAJszicFYV3j3fB7IaK2f4kcyXsEY5jz2sougczJ4wfvOpO6TQ7KWjIG/hq8xWnArgQpXA2SLcn2OP0lntm2E429CBWTSLIMIO0KzysMY9UwsqqdgpJpmU3KrW0zKnDV30ni1pu4/1BxOvJdwLHguqiGuBvQ+4KQBDzv1ZHCmWxPP7KulSsSp/kyf01Hbmg+3EyGguV4DRa9Idgpvd0RhCajXjSYODoqqvz7+RUKhEjY/gWrPks4WKb2AtzRZ
+X-OriginatorOrg: philips.com
+X-MS-Exchange-CrossTenant-OriginalArrivalTime: 12 Nov 2026 12:27:59.5339
+ (UTC)
+X-MS-Exchange-CrossTenant-Network-Message-Id: b02d06a1-4cad-4375-20c2-08df40b8636f
+X-MS-Exchange-CrossTenant-Id: 1a407a2d-7675-4d17-8692-b3ac285306e4
+X-MS-Exchange-CrossTenant-OriginalAttributedTenantConnectingIp: TenantId=1a407a2d-7675-4d17-8692-b3ac285306e4;Ip=[3.248.88.141];Helo=[ext-eur1.smtp.philips.com]
+X-MS-Exchange-CrossTenant-AuthSource:
+	MI3PEPF00008495.eurprd03.prod.outlook.com
+X-MS-Exchange-CrossTenant-AuthAs: Anonymous
+X-MS-Exchange-CrossTenant-FromEntityHeader: HybridOnPrem
+X-MS-Exchange-Transport-CrossTenantHeadersStamped: VI0PR10MB9498
 
-When an rx URB completes successfully but the packet is rejected
-(actual_length is 0 or larger than the skb, or the rx queue already
-holds RSI_MAX_RX_PKTS skbs), rsi_rx_done_handler() jumps to the out
-label with status still set to -EINVAL. There it first calls
-rsi_rx_urb_submit(), which allocates a new skb, stores it in
-rx_cb->rx_skb and resubmits the URB with that skb as transfer buffer,
-and only then frees rx_cb->rx_skb because status is non-zero.
+My patch sent on November 9 is visible in the lore archive, but I can’t find it in Patchwork. so do i need to resend?
 
-At that point rx_cb->rx_skb is the buffer of the URB that was just
-submitted. The in-flight buffer is freed, the next packet received on
-that endpoint is written into freed memory, and the skb of the
-completed URB is leaked. A USB device bound to rsi_91x can trigger this
-by sending a zero-length packet on a bulk IN endpoint right after
-probe, followed by a normal packet. With dummy_hcd and KASAN on current
-master this shows up as:
-
-  BUG: KASAN: use-after-free in dummy_timer+0x95f/0x3360
-  Write of size 2560 at addr ffff88800f5add40 by task swapper/1/0
-
-The device chooses the contents and length of the data (up to about
-2.9 KiB per packet in our tests) that end up in freed memory. In one
-run the freed page had been reused for a kmalloc-4k slab and the write
-went into a live object. Each zero-length packet also leaks one skb.
-
-Commit b07e3c6ebc0c ("rsi: Fix use-after-free in rsi_rx_done_handler()")
-made the handler bail out on the next completion, but the in-flight
-buffer was still freed.
-
-Free the skb of the completed URB before resubmitting, so that the
-buffer of the newly submitted URB is left alone.
-
-The bug was found by AI agents (Claude Mythos and Claude Opus models). The
-analysis and the patch were reviewed by a human, who also reproduced the
-bug on x86_64 and aarch64 with current master.
-
-Fixes: a1854fae1414 ("rsi: improve RX packet handling in USB interface")
-Cc: stable@vger.kernel.org
-Signed-off-by: Alexandre Becholey <alex@becholey.ch>
----
-Notes for reviewers (not part of the commit message):
-
-Trigger: an emulated USB device (raw-gadget + dummy_hcd under QEMU)
-with ID 1618:9113 that reports the firmware as already running
-(FW_STATUS_REG bit 0), so no firmware file is needed. Right after
-probe it sends a zero-length packet on bulk IN 0x81 and then a
-2900-byte packet on the same endpoint. No action on the host is
-needed. The reproducer is available to maintainers on request.
-
-Trace from torvalds/master 067c5c24cef2 (x86_64, QEMU q35, KASAN):
-
-  BUG: KASAN: use-after-free in dummy_timer (drivers/usb/gadget/udc/dummy_h=
-cd.c:1411 (discriminator 18) drivers/usb/gadget/udc/dummy_hcd.c:1514 (discr=
-iminator 18) drivers/usb/gadget/udc/dummy_hcd.c:2035 (discriminator 18))
-  Write of size 2560 at addr ffff88800f5add40 by task swapper/1/0
- =20
-  CPU: 1 UID: 0 PID: 0 Comm: swapper/1 Not tainted 7.4.0-rc2-00092-g067c5c2=
-4cef2 #1 PREEMPT(lazy)
-  Hardware name: QEMU Standard PC (Q35 + ICH9, 2009), BIOS Arch Linux 1.17.=
-0-2-2 04/01/2014
-  Call Trace:
-   <IRQ>
-   dump_stack_lvl (lib/dump_stack.c:94 lib/dump_stack.c:120)
-   print_report (mm/kasan/report.c:378 mm/kasan/report.c:482)
-   kasan_report (mm/kasan/report.c:595)
-   kasan_check_range (mm/kasan/generic.c:186 mm/kasan/generic.c:200)
-   __asan_memcpy (mm/kasan/shadow.c:106 (discriminator 1))
-   dummy_timer (drivers/usb/gadget/udc/dummy_hcd.c:1411 (discriminator 18) =
-drivers/usb/gadget/udc/dummy_hcd.c:1514 (discriminator 18) drivers/usb/gadg=
-et/udc/dummy_hcd.c:2035 (discriminator 18))
-   __hrtimer_run_queues (kernel/time/hrtimer.c:2079 kernel/time/hrtimer.c:2=
-136)
-   hrtimer_run_softirq (kernel/time/hrtimer.c:2153)
-   handle_softirqs (kernel/softirq.c:669)
-   __irq_exit_rcu (kernel/softirq.c:703 kernel/softirq.c:542 kernel/softirq=
-.c:786)
-   irq_exit_rcu (kernel/softirq.c:809)
-   sysvec_apic_timer_interrupt (arch/x86/kernel/apic/apic.c:1062 (discrimin=
-ator 37) arch/x86/kernel/apic/apic.c:1062 (discriminator 37))
-   </IRQ>
- =20
-  The buggy address belongs to the physical page:
-  page: refcount:0 mapcount:0 mapping:0000000000000000 index:0x0 pfn:0xf5a
-
-dummy_hcd is the emulated host controller copying the received packet
-into the URB buffer that rsi_rx_done_handler() freed.
-
-The same report reproduces on arm64 (QEMU virt), and on v7.3.1 as well
-as master; rsi_91x_usb.c is identical in v7.3.1, v7.3.4 and 067c5c24cef2.
-
-Testing on v7.3.1: with the patch the reproducer runs clean (10/10),
-without it KASAN reports the use-after-free (2/2), and rx keeps working
-after zero-length packets.
-Testing on master 067c5c24cef2: with the patch clean (10/10 with
-dummy_hcd), without it KASAN (3/3); rx keeps working after zero-length
-packets (15/15 plugs), also on an emulated xHCI host (no KASAN report
-there either way: the controller writes the freed buffer by DMA).
-
-Thanks,
-Alexandre Becholey
-
- drivers/net/wireless/rsi/rsi_91x_usb.c | 6 +++---
- 1 file changed, 3 insertions(+), 3 deletions(-)
-
-diff --git a/drivers/net/wireless/rsi/rsi_91x_usb.c b/drivers/net/wireless/=
-rsi/rsi_91x_usb.c
-index 8765cac6f875..bd049ca72919 100644
---- a/drivers/net/wireless/rsi/rsi_91x_usb.c
-+++ b/drivers/net/wireless/rsi/rsi_91x_usb.c
-@@ -295,13 +295,13 @@ static void rsi_rx_done_handler(struct urb *urb)
- =09status =3D 0;
-=20
- out:
--=09if (rsi_rx_urb_submit(dev->priv, rx_cb->ep_num, GFP_ATOMIC))
--=09=09rsi_dbg(ERR_ZONE, "%s: Failed in urb submission", __func__);
--
- =09if (status) {
- =09=09dev_kfree_skb(rx_cb->rx_skb);
- =09=09rx_cb->rx_skb =3D NULL;
- =09}
-+
-+=09if (rsi_rx_urb_submit(dev->priv, rx_cb->ep_num, GFP_ATOMIC))
-+=09=09rsi_dbg(ERR_ZONE, "%s: Failed in urb submission", __func__);
- }
-=20
- static void rsi_rx_urb_kill(struct rsi_hw *adapter, u8 ep_num)
---=20
-2.53.0
-
-
+Regards,
+Vishal
