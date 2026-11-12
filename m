@@ -1,101 +1,103 @@
-Authentication-Results: smtp.subspace.kernel.org; arc=pass header.oldest-pass=0 smtp.remote-ip=52.101.69.64
-ARC-Seal: i=2; d=subspace.kernel.org; s=arc20261015; a=rsa-sha256; cv=pass;
-	t=1794503008;
-	b=oADcfZnIIlLXwUTX5uIQuSpRvnYOGCnvaSH79d86gBXmJ/DMciUiM7144vITWyjKGyVG
-	 cXFmpGrVA4VzrK8TewjXTDrmxi4lFjUHtl7FWEwteaGsLvgMW3DGXL0DU5ateahVCvnXm
-	 yeeLakLLZuYlSo0a4w1XkojgLDa/pRCuj5ZpXJN8PdK0cEkziYhj0eyf1QDSFiwxpiV8Y
-	 FUQBJ9jdhpmUwZj6nnsfplclm0Iaz5rLHqsKQ+ck8vKb45AvcmDBfu1Z22db18zHg19sL
-	 kQoc+g6OlICwEH6FaIIbtW7/+TH3Hx0/u37h/KwP22nIZpBT+pibSN4i5R0Vwm7gaUw==
-ARC-Message-Signature: i=2; d=subspace.kernel.org; s=arc20261015;
-	a=rsa-sha256; c=relaxed/relaxed; t=1794503008;
-	h=DMARC-Filter:DKIM-Signature:Received:Received:From:To:Cc:Subject:
-	 Date:Message-Id:X-Mailer:In-Reply-To:References:Content-Type:
-	 Content-Disposition:Content-Transfer-Encoding:X-ClientProxiedBy:
-	 MIME-Version:X-MS-PublicTrafficType:X-MS-TrafficTypeDiagnostic:
-	 X-MS-Office365-Filtering-Correlation-Id:X-MS-Exchange-SenderADCheck:
-	 X-MS-Exchange-AntiSpam-Relay:X-Microsoft-Antispam:
-	 X-Microsoft-Antispam-Message-Info:X-Forefront-Antispam-Report:
-	 X-MS-Exchange-AntiSpam-MessageData-ChunkCount:
-	 X-MS-Exchange-AntiSpam-MessageData-0:X-OriginatorOrg:
-	 X-MS-Exchange-CrossTenant-Network-Message-Id:
-	 X-MS-Exchange-CrossTenant-AuthSource:X-MS-Exchange-CrossTenant-AuthAs:
-	 X-MS-Exchange-CrossTenant-OriginalArrivalTime:
-	 X-MS-Exchange-CrossTenant-FromEntityHeader:
-	 X-MS-Exchange-CrossTenant-Id:X-MS-Exchange-CrossTenant-MailboxType:
-	 X-MS-Exchange-CrossTenant-UserPrincipalName:
-	 X-MS-Exchange-Transport-CrossTenantHeadersStamped;
-	bh=URVU7Jsent/YW7fpA2yzvEW3DbqGfLOBDR3JHF2pibk=;
-	b=ObRte0yNyE957Qa93FY/+IJP321ynbUue47V3MgzAzw8f38t2yp7c2pXVUP5KEXJpaxj
-	 AbIlurikBY3jQ+OfOr4me2O4GDWrp69b1SO+JjHkm11lnsg+0gblF8mr8iqvicK2AqCgQ
-	 XZvjqtZCbiwGB3IYqZ3Z00Chjlu1ubUEyRX+y28CQOufcplt8OjYhfFUdbmMTXnGOq2y2
-	 38MilzU+0ZSkezL4j638dfN96zTPqDXUhKguqi7Nps4YUwcptidYLFlQYISBFo3H/HLOO
-	 r3PVjUaXlmFnUwo+C/yMPoNrXn4Ep9LiQTXnpIyImQOZX37ZElYE0xi8vCpwh3+cVIA==
-ARC-Authentication-Results: i=2; smtp.subspace.kernel.org; 
-	dmarc=pass header.from=oss.nxp.com;
-	spf=pass smtp.mailfrom=oss.nxp.com;
-	dkim=pass header.d=NXP1.onmicrosoft.com header.i=@NXP1.onmicrosoft.com header.a=rsa-sha256 header.s=selector1-NXP1-onmicrosoft-com header.b=L12H0xS4;
-	arc=pass header.oldest-pass=0 smtp.remote-ip=52.101.69.64
-Received: from AM0PR83CU005.outbound.protection.outlook.com (mail-westeuropeazon11010064.outbound.protection.outlook.com [52.101.69.64])
+Authentication-Results: smtp.subspace.kernel.org; arc=none smtp.remote-ip=100.103.45.18
+ARC-Seal: i=1; d=subspace.kernel.org; s=arc20261015; a=rsa-sha256; cv=none;
+	t=1794503876;
+	b=mUqnESIeq/ymsAmp8Q4KAGKk07Bmpd6Z6c9p9p8EN7IBF4ObEBZzP83DhzeHfaHCyx/D
+	 ce5HqslU5MDrJnCm71C6sfElkLD9ZgNnelNCTVb+7iLZMWaRKhE+Pugb1KTAD1V+SwWPL
+	 jf+tNW7yZkB69RvijNtWqc795etdUa3p4AiaflBNf/7a4l4HtCcNZ91EWbtyzb5MDqTdK
+	 L6g75FSwo6PUBOuKcvXHrVL9Ce/LmPNUF5eyBaT8wmQ0NNy1k2cmySvFGiC2MWBOBUwis
+	 PhzxLqkfTWL2nCBcZLFxCjHmaSvFoWXRdHw6c3WJlsRMgMuzyxSpqPWXa4iICvlg4uQ==
+ARC-Message-Signature: i=1; d=subspace.kernel.org; s=arc20261015;
+	a=rsa-sha256; c=relaxed/relaxed; t=1794503876;
+	h=Received:DKIM-Signature:Date:From:To:Cc:Subject:Message-ID:
+	 References:MIME-Version:Content-Type:Content-Disposition:
+	 Content-Transfer-Encoding:In-Reply-To;
+	bh=VMi+hIkLWXT7siLEN9ATyCll+A1V4GrHFAEeCBcDPio=;
+	b=25EheIKy2mCkG8KJlAlZepDJWxlqrKr+5BN9JIO/HMNByML0t0lLkBu4Zaf+7kH51Lny
+	 DYkTXFwlZAsxwcsi6YduH5D+XS8Cwdq0kv1PlDhwN855MVJSaJKkXLjBdPgdRQJLN2vBG
+	 r8eaGZpfhZWDUlNj50PVceX+1SYrhFq0+W6oaO2XHMr7+IvXMfoNo9xTuD67DEyKFI4cc
+	 t/hPuGPnNt48OnmjFSR//Min+O/yId5ZzT7zdZc3v+1wT8ayhWQ4tKB0h70EOEV/tvaj5
+	 B5kL53GbKUfL5e3XjxkJAlyDyBkN5VKE1prug4a3OFXHrhXPTY941KK7co0zesIKq3g==
+ARC-Authentication-Results: i=1; smtp.subspace.kernel.org; 
+	dkim=pass header.d=kernel.org header.i=@kernel.org header.a=rsa-sha256 header.s=k20260515 header.b=Xi1M0Wrq;
+	arc=none smtp.remote-ip=100.103.45.18
+Received: from smtp.kernel.org (quasi.space.kernel.org [100.103.45.18])
 	(using TLSv1.3 with cipher TLS_AES_256_GCM_SHA384 (256/256 bits)
-	 key-exchange ECDHE (secp384r1) server-signature ECDSA (prime256v1) server-digest SHA256)
+	 key-exchange X25519 server-signature ECDSA (prime256v1))
 	(No client certificate requested)
-	by smtp.subspace.kernel.org (Postfix) with ESMTPS id B81A2606A32D
-	for <linux-wireless@vger.kernel.org>; Thu, 12 Nov 2026 17:03:27 +0000 (UTC)
-DMARC-Filter: OpenDMARC Filter v1.4.2 smtp.subspace.kernel.org B81A2606A32D
-Authentication-Results: smtp.subspace.kernel.org; dmarc=pass (p=none dis=none) header.from=oss.nxp.com
-Authentication-Results: smtp.subspace.kernel.org; spf=pass smtp.mailfrom=oss.nxp.com
+	by smtp.subspace.kernel.org (Postfix) with ESMTPS id 82F8A606A321;
+	Thu, 12 Nov 2026 17:17:56 +0000 (UTC)
 Authentication-Results: smtp.subspace.kernel.org;
-	dkim=pass (2048-bit key) header.d=NXP1.onmicrosoft.com header.i=@NXP1.onmicrosoft.com header.a=rsa-sha256 header.s=selector1-NXP1-onmicrosoft-com header.b=L12H0xS4
-ARC-Seal: i=1; a=rsa-sha256; s=arcselector10001; d=microsoft.com; cv=none;
- b=rdtcmzp+H+MNvEaYHcRUEFZ1Mmeu+LJmzEq1J8hzkXyKDg91hzAFPmtiLd83S87kWSAMY1+tEJ7VP0f1Y8pxhRXAKS8huNpIpaNl3jMIKihEbxbWhdUlWOL4pHpYGcZliO8FfFQ746iGkxadCEJJJlMkDtSQlPQXaUwDlIc46YpM1xe6df4pbTalJYv815j4En9Evdgvdn3AqG7SPs0dSQsslcXUiFYru/hFbLA4JQNBNsFc1TCfcJUhlKpkF/M54E+K2T0GJeigOEM+g9VaT4ZvANrZ/rNQ/GG4phZZT98ydMz8AeNovW26Tl8t+7+znwIhwaMsOeI+WUzmcPfKxw==
-ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=microsoft.com;
- s=arcselector10001;
- h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-AntiSpam-MessageData-ChunkCount:X-MS-Exchange-AntiSpam-MessageData-0:X-MS-Exchange-AntiSpam-MessageData-1;
- bh=URVU7Jsent/YW7fpA2yzvEW3DbqGfLOBDR3JHF2pibk=;
- b=Ryx+3ZhGpRjn/1YNrrUvgP32XkGVYMgcm9UjDFNImo0FYt2sfQWzL3VlBoj7di1SQDj6+JiWO0Ym47F1A/Nvib2fl0ZW974c9cK1TCUZkKMHt9Uxc1aZjjjd0qiRcvhZT+ywAN9e/ctDARQdTpzdDADaeSTr1mQCvdjh07kL0JWhy/sQ0VIi9WVTEUNVJR/3/vlEiabBa8+4dRTaDycW2fz68vwUZrqVH/cGvJ5Z2IJd2euA2s4fYmfP+hbldPnifO825a2RPcSdodqkRIi+9MBUkrN9zcdPk0Nvk89WYsbpRwtF1ot/ZcmajjHHpwRx/a1ww2e2MPO199cSSvp9tQ==
-ARC-Authentication-Results: i=1; mx.microsoft.com 1; spf=pass
- smtp.mailfrom=oss.nxp.com; dmarc=pass action=none header.from=oss.nxp.com;
- dkim=pass header.d=oss.nxp.com; arc=none
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=NXP1.onmicrosoft.com;
- s=selector1-NXP1-onmicrosoft-com;
- h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
- bh=URVU7Jsent/YW7fpA2yzvEW3DbqGfLOBDR3JHF2pibk=;
- b=L12H0xS4mOMhvEtqxVFqusrVL6lF/nR8fY/bHwZKGEtLPJvs0HoQGy/7EQUcR8XkGG29wrvdUBylKwBf93Spuct+73HXfxgIalRbWwaKYAPM73PMELmBtNmqsWSFpGSs+huyRfEQ1YAWHgo7BPekEmwNcIC1fOngayav+oUxfoR3wyUU59jAB9wbb+hO8FGX2nYnUxuYEmg+pfe1ZYc2DCgAi6cE1XtySZhf08AEWOYiX0mLJSvjt/f3nLrGQ+oTZz8j00a7GP+uA0qztaC7gDd/+Rnno1FAjZpdflFbIYWNlsxmFEYdHnM7nV5y4as3GS8fVWPDW3XXAeY8tvI1Fg==
-Authentication-Results: mx.microsoft.com 1; dkim=none (message not signed)
- header.d=none;dmarc=none action=none header.from=oss.nxp.com;
-Received: from VE1PR04MB7280.eurprd04.prod.outlook.com (2603:10a6:800:1af::22)
- by VI1PR04MB6783.eurprd04.prod.outlook.com (2603:10a6:803:130::9) with
- Microsoft SMTP Server (version=TLS1_2,
- cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id 15.21.615.10; Thu, 12 Nov
- 2026 17:03:24 +0000
-Received: from VE1PR04MB7280.eurprd04.prod.outlook.com
- ([fe80::92fd:f75a:a302:f859]) by VE1PR04MB7280.eurprd04.prod.outlook.com
- ([fe80::92fd:f75a:a302:f859%4]) with mapi id 15.21.0615.009; Thu, 12 Nov 2026
- 17:03:24 +0000
-From: jeff.chen_1@oss.nxp.com
-To: Zhao Li <enderaoelyther@gmail.com>
-Cc: Jeff Chen <jeff.chen_1@oss.nxp.com>,
-	Jeff Chen <jeff.chen_1@nxp.com>,
-	Francesco Dolcini <francesco@dolcini.it>,
+	dkim=pass (2048-bit key) header.d=kernel.org header.i=@kernel.org header.a=rsa-sha256 header.s=k20260515 header.b=Xi1M0Wrq
+Received: by smtp.kernel.org (Postfix) with ESMTPSA id 1B9171F000C5;
+	Thu, 12 Nov 2026 17:17:56 +0000 (UTC)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=kernel.org;
+	s=k20260515; t=1794503876;
+	bh=VMi+hIkLWXT7siLEN9ATyCll+A1V4GrHFAEeCBcDPio=;
+	h=Date:From:To:Cc:Subject:References:In-Reply-To;
+	b=Xi1M0WrqH5bMvx0n0pi4w5v7a8qJzrxjW4xzgjyJBTk4w5Ha9LDFHd8Q2SIO4bI0/
+	 R1AH44wKcxNJXbaWLeAun1BY623lBE7mWeM8MlocaX0VT4oGCtm1o/G3AsbPIXS1Ln
+	 HAfe4Gi1tJJQuDHDrzTAcmJcvP7xkP9KNg6uFt8kIbAQS0k0mQOiMe1zrTRcGbMEAP
+	 QjV4y8GkI+IFa+IR6J9g75IGth5ijUGZ2Wd4tjx81In8/mDCI0Hl19n37GOo0mpyES
+	 RMm1owYYSjXmybNXysJzMRsSMwbMIAEWBzrarLAWP33yYlnJBqzwDlRjfOGVF8svjx
+	 eUQ0ymv8EqhZg==
+Date: Thu, 12 Nov 2026 09:17:55 -0800
+From: Kees Cook <kees@kernel.org>
+To: Bence Csokas <bence.csokas@arm.com>
+Cc: "Gustavo A. R. Silva" <gustavoars@kernel.org>,
+	Marcel Holtmann <marcel@holtmann.org>,
+	Luiz Augusto von Dentz <luiz.dentz@gmail.com>,
+	Sumit Semwal <sumit.semwal@linaro.org>,
+	Christian =?iso-8859-1?Q?K=F6nig?= <christian.koenig@amd.com>,
+	Philipp Stanner <phasta@kernel.org>,
+	Sudeep Holla <sudeep.holla@kernel.org>,
+	Cristian Marussi <cristian.marussi@arm.com>,
+	Maarten Lankhorst <maarten.lankhorst@linux.intel.com>,
+	Maxime Ripard <mripard@kernel.org>,
+	Thomas Zimmermann <tzimmermann@suse.de>,
+	David Airlie <airlied@gmail.com>, Simona Vetter <simona@ffwll.ch>,
+	Jani Nikula <jani.nikula@linux.intel.com>,
+	Joonas Lahtinen <joonas.lahtinen@linux.intel.com>,
+	Rodrigo Vivi <rodrigo.vivi@intel.com>,
+	Tvrtko Ursulin <tursulin@ursulin.net>,
+	Lyude Paul <lyude@redhat.com>, Danilo Krummrich <dakr@kernel.org>,
+	Zack Rusin <zack.rusin@broadcom.com>,
+	Broadcom internal kernel review list <bcm-kernel-feedback-list@broadcom.com>,
+	Selvin Xavier <selvin.xavier@broadcom.com>,
+	Kalesh AP <kalesh-anakkur.purayil@broadcom.com>,
+	Jason Gunthorpe <jgg@ziepe.ca>, Leon Romanovsky <leon@kernel.org>,
+	Chengchang Tang <tangchengchang@huawei.com>,
+	Junxian Huang <huangjunxian6@hisilicon.com>,
+	Laurent Pinchart <laurent.pinchart@ideasonboard.com>,
+	Hans de Goede <hansg@kernel.org>,
+	Mauro Carvalho Chehab <mchehab@kernel.org>,
+	Haiyang Zhang <haiyangz@microsoft.com>,
+	Wei Liu <wei.liu@kernel.org>, Dexuan Cui <decui@microsoft.com>,
+	Andrew Lunn <andrew+netdev@lunn.ch>,
+	"David S. Miller" <davem@davemloft.net>,
+	Eric Dumazet <edumazet@kernel.org>,
+	Jakub Kicinski <kuba@kernel.org>, Paolo Abeni <pabeni@redhat.com>,
+	Miri Korenblit <miriam.rachel.korenblit@intel.com>,
+	Jes Sorensen <Jes.Sorensen@gmail.com>,
+	Ping-Ke Shih <pkshih@realtek.com>,
 	Johannes Berg <johannes@sipsolutions.net>,
-	Arend van Spriel <arend.vanspriel@broadcom.com>,
-	Jiangshan Yi <yijiangshan@kylinos.cn>,
-	Linmao Li <lilinmao@kylinos.cn>,
-	Kees Cook <kees+treewide@kernel.org>,
-	Rosen Penev <rosenp@gmail.com>,
-	linux-wireless@vger.kernel.org
-Subject: Re: [PATCH 1/4] wifi: nxpwifi: cancel channel switch work on teardown
-Date: Fri, 13 Nov 2026 01:02:37 +0800
-Message-Id: <20261112170237.343497-1-jeff.chen_1@oss.nxp.com>
-X-Mailer: git-send-email 2.34.1
-In-Reply-To: <20261028141819.7556-2-enderaoelyther@gmail.com>
-References: <20261028141819.7556-1-enderaoelyther@gmail.com> <20261028141819.7556-2-enderaoelyther@gmail.com>
-Content-Type: text/plain; charset=us-ascii
-Content-Disposition: inline
-Content-Transfer-Encoding: 8bit
-X-ClientProxiedBy: AS4P250CA0025.EURP250.PROD.OUTLOOK.COM
- (2603:10a6:20b:5e3::15) To VE1PR04MB7280.eurprd04.prod.outlook.com
- (2603:10a6:800:1af::22)
+	Benson Leung <bleung@chromium.org>,
+	Tzung-Bi Shih <tzungbi@kernel.org>,
+	Guenter Roeck <groeck@chromium.org>,
+	Nilesh Javali <njavali@marvell.com>,
+	GR-QLogic-Storage-Upstream@marvell.com,
+	"James E.J. Bottomley" <James.Bottomley@hansenpartnership.com>,
+	"Martin K. Petersen" <mkp@kernel.org>,
+	linux-hardening@vger.kernel.org, linux-kernel@vger.kernel.org,
+	linux-bluetooth@vger.kernel.org, linux-media@vger.kernel.org,
+	dri-devel@lists.freedesktop.org, linaro-mm-sig@lists.linaro.org,
+	arm-scmi@vger.kernel.org, linux-arm-kernel@lists.infradead.org,
+	intel-gfx@lists.freedesktop.org, nouveau@lists.freedesktop.org,
+	linux-rdma@vger.kernel.org, linux-hyperv@vger.kernel.org,
+	netdev@vger.kernel.org, linux-wireless@vger.kernel.org,
+	chrome-platform@lists.linux.dev, linux-scsi@vger.kernel.org
+Subject: Re: [PATCH v2 0/2] Add struct_offsetofend() for pointer arithmetic
+Message-ID: <202611120916.3619B95@keescook>
+References: <20261112-offsetof-v2-0-276ede839967@arm.com>
 X-Mailing-List: linux-wireless@vger.kernel.org
 List-Id: <linux-wireless.vger.kernel.org>
 List-Post: <mailto:linux-wireless@vger.kernel.org>
@@ -105,81 +107,150 @@ List-Unsubscribe: <mailto:linux-wireless+unsubscribe@vger.kernel.org>
 List-Owner: <mailto:linux-wireless+owner@vger.kernel.org>
 Precedence: list
 MIME-Version: 1.0
-X-MS-PublicTrafficType: Email
-X-MS-TrafficTypeDiagnostic: VE1PR04MB7280:EE_|VI1PR04MB6783:EE_
-X-MS-Office365-Filtering-Correlation-Id: 2499889e-84de-45bd-20d3-08df40dedc6e
-X-MS-Exchange-SenderADCheck: 1
-X-MS-Exchange-AntiSpam-Relay: 0
-X-Microsoft-Antispam:
-	BCL:0;ARA:13230040|376014|1800799024|23010399003|366016|19092799006|10067099003|11063799006|4143699003|56012099006|261021123027099003|18002099003|22082099003;
-X-Microsoft-Antispam-Message-Info:
-	OLlO9sE2NGqbxyVgUI+9M5KvPPktO3JQcz6/LwbGd2pE9S9wJTu8NPbWbrIMMeYVQw9z0h73Do9N/gBvp3iq9qZT1mBuEADVVI5yc29wxHanBp4TroF5qreJ0ZZLBIIDuunu8b7R8XtuRgN0iryVC4IzplSRJ/cgoBTslU536Ks+3AIg07JQfbraR5qcgFhy0ApGerA87+QuGeEycDxcnF/hJKuYqphZHZVU6n/rARNrhE+5n/xeYyAUG1j2SpFN2R120Ts4b4uwbgpVjQMTy/t0S6IfxKIYKcfL1JXD/MfY9zkp9sOkyWIMJUNmy2Mnb6L08PYExK0pZkiMM1Y7bgkEHbm1SO6jvv+0oqB4CV/7tFZUcTua1xqcyALRxkvFXuerIaukUT9/M8Cw+zeao3dvIV7186X3/U5TtiMuqxsbQ2kDURQuJKHPOz03PpNhLICaxUzZ12e2GLyJmnMn1l8umXbKaCi+gzOMTv6lUiUVroXDSGi6lsjfIMyEWbw1e1vVPYx4ZEhNZXMyDuBwMrF86oCIuCpYk24yq+8MdNHkRq5CzmJ1Ir20crGwlzICMW7vDPRedq7OqoAjmF+laoXJfIYtS6WVG/N4MS+XRN6LB1Zn+BDcJ12s4WeTW8bFFxQeYq0KFQpozAQTYavGiLM3cZ49K4FISGE4vhfzg7Q=
-X-Forefront-Antispam-Report:
-	CIP:255.255.255.255;CTRY:;LANG:en;SCL:1;SRV:;IPV:NLI;SFV:NSPM;H:VE1PR04MB7280.eurprd04.prod.outlook.com;PTR:;CAT:NONE;SFS:(13230040)(376014)(1800799024)(23010399003)(366016)(19092799006)(10067099003)(11063799006)(4143699003)(56012099006)(261021123027099003)(18002099003)(22082099003);DIR:OUT;SFP:1101;
-X-MS-Exchange-AntiSpam-MessageData-ChunkCount: 1
-X-MS-Exchange-AntiSpam-MessageData-0:
-	=?us-ascii?Q?uRGQFjCCEeiQ6PTMEeqGV8mpmTY3FbnoyNE6odOfNX8iqbux95NPsDuE9E0t?=
- =?us-ascii?Q?hlYSC/NFp80CNP/mHVdNlvF+eoYPXQvG5m7sHfFn0WMO1sbc5jXpsRy5mwoP?=
- =?us-ascii?Q?F2bvQwRRp0tgIIlpCdL6JwD7Qwf60lyw6l4FRqOgK++NpEKAgzblmDPxrv9s?=
- =?us-ascii?Q?bKRIQ4bEonUPx0nO6dfa5SBxNQHGeFh1XeS2o861nIDGSg/JOcvfYJi1Icjy?=
- =?us-ascii?Q?23l7FSTf2LOm/vtNIMgO5UfCf+E7AVkTpWX2BfUxpuy4g6adJFhfSLrcrT76?=
- =?us-ascii?Q?Cv+pxQjfmZsAEki60Zv1q9YTBPr/A5GWDSMNZiQFt8eyIvvZieR893k/knuB?=
- =?us-ascii?Q?vrhZxjZ7Ox6gfgBkajaBFmuR16LVbh6O5nfgYL2ea2/M9xp5DGmVojq20222?=
- =?us-ascii?Q?moML9djB9a+2Whd3cjGzc0E/rQyLcKGRtyF3mFQjYNGTbb5WmvUvHse6rU1H?=
- =?us-ascii?Q?uaNP6tioBzsf6AQZDZ91MR4dfwAPyNc3jqg9u7y3l9wBjErcrCF0RMa+HCZf?=
- =?us-ascii?Q?q4TnyNWqeUksSD/BOSpEHO8kRUd0Mt+pfuvAXSxHkij2y/f1srzQenyzpB+l?=
- =?us-ascii?Q?dt1TLdrWNOl7CMc5y3sLHW9mEHiLEooYJG29jtJvprluiyOZJtxhqmSGOB+N?=
- =?us-ascii?Q?vO2P5Hb9ZNN2e07+z8NUZAHj3m06rUcN9SK2haE4j6faLUmcNW8059JYak3o?=
- =?us-ascii?Q?KRsn9uGRdsyla9rQWRXoTNvYZVJBiPWwz5M6FlAzGNkNCIceBlmzTCmKfGOP?=
- =?us-ascii?Q?15f1Wc9OVoVp1ANPNSK9N1xUSWunYrYZbcE6CLtpPFEM7Iil0pK5mOFjYk31?=
- =?us-ascii?Q?e2xID9j0gZHZVs8vzumE31cr+uUTg7QsyS/GPlDlnVLoHHKP4St2cmOIegXj?=
- =?us-ascii?Q?8/gecgH7s/tfz9oCXj/ty7Ciemwbt9YKifrEi2MBIcpB+VgXtesivQW8ELGI?=
- =?us-ascii?Q?SCVlHDoTM8wudB+G91rG+jcyf2qtTmXkEffUwajedYHMTQZ7FZ1w7hK0Ft76?=
- =?us-ascii?Q?UzksK2LBtlFqgqd93fmdBpzVML8JGLo6aTrXKUD0B7lAZ858NDFDOlLwx6TF?=
- =?us-ascii?Q?ipS31PIF/xBGDiggYlxBonhJMsuzNNtlUOOGjdfWkS8YN2Cqh6XVYza+TjSo?=
- =?us-ascii?Q?iBe+dcGaAwAiAB+XCJmYx1vdz1F5OtnlJg9w1qmyycykP8K4EQi1zoREq2JM?=
- =?us-ascii?Q?JhPp+IxuFBxS7+n/LLsX/Y9hTsWV1/kmsXvhENpSvb5rZghR5NKAEfDXPlYG?=
- =?us-ascii?Q?Okd6AJJ39SWHuk0bRCW38q47X++pp7Qn52DHYRfWPelrKnBggR5rbKB5rDBJ?=
- =?us-ascii?Q?y6XeKDXl0BcheNtyoZej75YhYwxhcTRdRZ0x+SYFkp7XpZMpA3N1TU9w7R1j?=
- =?us-ascii?Q?qZNij8nU1+G5/u0T3UbhX1oMgRvAcHzRQU4BOx3KxvQ6ELc0VRS7WD0dO3zu?=
- =?us-ascii?Q?vUh0S7gB/SqFi/X6kdiuz0HOHxZGv8kmn9w905C4mYD8GGbAcIniz51nUrph?=
- =?us-ascii?Q?SpUxpk85iVHrrTBtAaQXCXe8xV+vgc4zbb2nWjjmJ4GZsCT6zWkl0OXlw0E2?=
- =?us-ascii?Q?iGI4Hrk2yMG8RDCBkVPHXYA0MiDcqyrRtMbYm2/BNIJGzs9MBUh9rMzV1Q0x?=
- =?us-ascii?Q?0ZDY/yIs4y3yPw7aELkXIQc3VQET3NKyDh6bI8vVEq0JsdqlV2LHXrukKh4T?=
- =?us-ascii?Q?bmII08xa8M8xbgDiRQvqSfuWSMj9tGpzWWVeNEhec0XJdtiatIQ/mQGIX3ys?=
- =?us-ascii?Q?aD9uw3n32RfSVLIG4UHRgQXcxDj+a7pnN/jJROeUhSgCRnK6PxP2?=
-X-OriginatorOrg: oss.nxp.com
-X-MS-Exchange-CrossTenant-Network-Message-Id: 2499889e-84de-45bd-20d3-08df40dedc6e
-X-MS-Exchange-CrossTenant-AuthSource: VE1PR04MB7280.eurprd04.prod.outlook.com
-X-MS-Exchange-CrossTenant-AuthAs: Internal
-X-MS-Exchange-CrossTenant-OriginalArrivalTime: 12 Nov 2026 17:03:24.1281
- (UTC)
-X-MS-Exchange-CrossTenant-FromEntityHeader: Hosted
-X-MS-Exchange-CrossTenant-Id: 686ea1d3-bc2b-4c6f-a92c-d99c5c301635
-X-MS-Exchange-CrossTenant-MailboxType: HOSTED
-X-MS-Exchange-CrossTenant-UserPrincipalName: v1A+zcb+OnFT7cysD+rASvh7y61X9y0NcF0Ni9Y/MoH2j31i6ULRcpy6GNQvuPB5ST/+FwwmEYBBqAF8sWTQ7u4tNdsxxwtz0dZF2NCdJUls+sacH+Yu+VTowpzioP67
-X-MS-Exchange-Transport-CrossTenantHeadersStamped: VI1PR04MB6783
+Content-Type: text/plain; charset=iso-8859-1
+Content-Disposition: inline
+Content-Transfer-Encoding: 8bit
+In-Reply-To: <20261112-offsetof-v2-0-276ede839967@arm.com>
 
-From: Jeff Chen <jeff.chen_1@oss.nxp.com>
-
-On Wed, Oct 28, 2026 at 10:18:16 PM +0800, Zhao Li wrote:
-> Stopping an AP while channel-switch work is pending leaves the delayed
-> work armed. After driver removal, the callback runs on freed driver
-> state. If the AP is restarted first, the callback switches it to the old
-> target channel. Reusing the interface slot can also reinitialize the
-> work while it is still pending.
+On Thu, Nov 12, 2026 at 10:29:32AM +0100, Bence Csokas wrote:
+> A common usage pattern for offsetof() is the following:
 > 
-> Cancel the work when the AP stops. Interface deletion, type changes and
-> driver removal all stop a running AP first.
+>   offsetof(typeof(*ptr), member)
 > 
-> LLM assistance was used to find the bug and review.
+> This is exactly the definition of struct_offset(). Some call sites use
+> offsetofend() instead of offsetof(). Add this variant, then replace all
+> call sites with the corresponding macros.
 
-Applied, thanks.
+Yeah, I think this is reasonable. I'd prefer to see the Coccinelle
+script explicitly added to tools/coccinelle/api/ though, so it can be
+trivially re-run as needed.
 
-For future submissions, please consider keeping the changelog more
-concise and focused on the bug and fix. The discussion of possible
-consequences feels longer than necessary for a patch of this size.
+Also, while Alejandro is right about the needless outer parens, I think
+I'd like to keep them just to match the other define, and they do no
+harm.
 
-Also, there's probably no need to mention LLM assistance in the
-changelog.
+-Kees
 
+> 
+> Signed-off-by: Bence Csokas <bence.csokas@arm.com>
+> ---
+> Changes in v2:
+> - Use struct_offset() instead of reinventing it
+> - Rename offsetofendp() to struct_offsetofend()
+> - Merge the two treewide patches
+> - Link to v1: https://patch.msgid.link/20261105-offsetof-v1-0-4153f5c10edc@arm.com
+> 
+> To: Kees Cook <kees@kernel.org>
+> To: "Gustavo A. R. Silva" <gustavoars@kernel.org>
+> To: Marcel Holtmann <marcel@holtmann.org>
+> To: Luiz Augusto von Dentz <luiz.dentz@gmail.com>
+> To: Sumit Semwal <sumit.semwal@linaro.org>
+> To: Christian König <christian.koenig@amd.com>
+> To: Philipp Stanner <phasta@kernel.org>
+> To: Sudeep Holla <sudeep.holla@kernel.org>
+> To: Cristian Marussi <cristian.marussi@arm.com>
+> To: Maarten Lankhorst <maarten.lankhorst@linux.intel.com>
+> To: Maxime Ripard <mripard@kernel.org>
+> To: Thomas Zimmermann <tzimmermann@suse.de>
+> To: David Airlie <airlied@gmail.com>
+> To: Simona Vetter <simona@ffwll.ch>
+> To: Jani Nikula <jani.nikula@linux.intel.com>
+> To: Joonas Lahtinen <joonas.lahtinen@linux.intel.com>
+> To: Rodrigo Vivi <rodrigo.vivi@intel.com>
+> To: Tvrtko Ursulin <tursulin@ursulin.net>
+> To: Lyude Paul <lyude@redhat.com>
+> To: Danilo Krummrich <dakr@kernel.org>
+> To: Zack Rusin <zack.rusin@broadcom.com>
+> To: Broadcom internal kernel review list <bcm-kernel-feedback-list@broadcom.com>
+> To: Selvin Xavier <selvin.xavier@broadcom.com>
+> To: Kalesh AP <kalesh-anakkur.purayil@broadcom.com>
+> To: Jason Gunthorpe <jgg@ziepe.ca>
+> To: Leon Romanovsky <leon@kernel.org>
+> To: Chengchang Tang <tangchengchang@huawei.com>
+> To: Junxian Huang <huangjunxian6@hisilicon.com>
+> To: Laurent Pinchart <laurent.pinchart@ideasonboard.com>
+> To: Hans de Goede <hansg@kernel.org>
+> To: Mauro Carvalho Chehab <mchehab@kernel.org>
+> To: Haiyang Zhang <haiyangz@microsoft.com>
+> To: Wei Liu <wei.liu@kernel.org>
+> To: Dexuan Cui <decui@microsoft.com>
+> To: Andrew Lunn <andrew+netdev@lunn.ch>
+> To: "David S. Miller" <davem@davemloft.net>
+> To: Eric Dumazet <edumazet@kernel.org>
+> To: Jakub Kicinski <kuba@kernel.org>
+> To: Paolo Abeni <pabeni@redhat.com>
+> To: Miri Korenblit <miriam.rachel.korenblit@intel.com>
+> To: Jes Sorensen <Jes.Sorensen@gmail.com>
+> To: Ping-Ke Shih <pkshih@realtek.com>
+> To: Johannes Berg <johannes@sipsolutions.net>
+> To: Benson Leung <bleung@chromium.org>
+> To: Tzung-Bi Shih <tzungbi@kernel.org>
+> To: Guenter Roeck <groeck@chromium.org>
+> To: Nilesh Javali <njavali@marvell.com>
+> To: GR-QLogic-Storage-Upstream@marvell.com
+> To: "James E.J. Bottomley" <James.Bottomley@HansenPartnership.com>
+> To: "Martin K. Petersen" <mkp@kernel.org>
+> Cc: linux-hardening@vger.kernel.org
+> Cc: linux-kernel@vger.kernel.org
+> Cc: linux-bluetooth@vger.kernel.org
+> Cc: linux-media@vger.kernel.org
+> Cc: dri-devel@lists.freedesktop.org
+> Cc: linaro-mm-sig@lists.linaro.org
+> Cc: arm-scmi@vger.kernel.org
+> Cc: linux-arm-kernel@lists.infradead.org
+> Cc: intel-gfx@lists.freedesktop.org
+> Cc: nouveau@lists.freedesktop.org
+> Cc: linux-rdma@vger.kernel.org
+> Cc: linux-hyperv@vger.kernel.org
+> Cc: netdev@vger.kernel.org
+> Cc: linux-wireless@vger.kernel.org
+> Cc: chrome-platform@lists.linux.dev
+> Cc: linux-scsi@vger.kernel.org
+> 
+> ---
+> Bence Csokas (2):
+>       stddef: Add offsetofend() variant of struct_offset()
+>       treewide: Use struct_offset()
+> 
+>  drivers/bluetooth/btmrvl_main.c                    | 12 +++++-----
+>  drivers/dma-buf/dma-resv.c                         |  2 +-
+>  drivers/firmware/arm_scmi/base.c                   |  2 +-
+>  drivers/gpu/drm/drm_edid.c                         | 26 +++++++++++-----------
+>  drivers/gpu/drm/i915/gem/i915_gem_object.c         |  4 ++--
+>  drivers/gpu/drm/i915/i915_active.c                 |  2 +-
+>  drivers/gpu/drm/i915/i915_sw_fence_work.c          |  2 +-
+>  .../gpu/drm/nouveau/nvkm/subdev/gsp/rm/r535/gsp.c  |  2 +-
+>  drivers/gpu/drm/vmwgfx/vmwgfx_execbuf.c            | 12 +++++-----
+>  drivers/infiniband/hw/bnxt_re/qplib_fp.c           |  2 +-
+>  drivers/infiniband/hw/hns/hns_roce_cq.c            |  4 ++--
+>  drivers/infiniband/hw/hns/hns_roce_qp.c            |  6 ++---
+>  drivers/media/usb/uvc/uvc_v4l2.c                   |  4 ++--
+>  drivers/net/hyperv/rndis_filter.c                  |  2 +-
+>  drivers/net/wireless/intel/iwlwifi/iwl-drv.c       |  2 +-
+>  drivers/net/wireless/intel/iwlwifi/mvm/rs-fw.c     |  2 +-
+>  drivers/net/wireless/intel/iwlwifi/mvm/rs.c        |  2 +-
+>  .../net/wireless/intel/iwlwifi/pcie/ctxt-info-v2.c |  5 ++---
+>  drivers/net/wireless/realtek/rtl8xxxu/core.c       |  2 +-
+>  drivers/net/wireless/realtek/rtw88/fw.c            |  2 +-
+>  drivers/net/wireless/realtek/rtw89/core.c          |  2 +-
+>  drivers/net/wireless/realtek/rtw89/fw.c            |  8 +++----
+>  drivers/net/wireless/virtual/mac80211_hwsim_main.c |  4 ++--
+>  drivers/platform/chrome/cros_ec_lightbar.c         |  4 ++--
+>  drivers/scsi/qla2xxx/qla_gs.c                      |  2 +-
+>  drivers/scsi/qla2xxx/qla_mbx.c                     |  2 +-
+>  drivers/scsi/qla2xxx/qla_os.c                      |  2 +-
+>  drivers/scsi/qla2xxx/qla_tmpl.c                    |  4 ++--
+>  drivers/scsi/scsi_transport_fc.c                   |  2 +-
+>  include/linux/overflow.h                           | 12 ++++++++++
+>  30 files changed, 75 insertions(+), 64 deletions(-)
+> ---
+> base-commit: 9d66f26fefacebfeed15de31c1123451a17ff119
+> change-id: 20261105-offsetof-f62aa6348f0d
+> 
+> Best regards,
+> --  
+> Bence Csokas <bence.csokas@arm.com>
+> 
+
+-- 
+Kees Cook
