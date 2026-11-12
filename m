@@ -1,77 +1,73 @@
 Authentication-Results: smtp.subspace.kernel.org; arc=none smtp.remote-ip=211.75.126.72
 ARC-Seal: i=1; d=subspace.kernel.org; s=arc20261015; a=rsa-sha256; cv=none;
-	t=1794453493;
-	b=ZgqBcEnBU0Ep3B7xOg2JoHhXJIFGubGQ/kzVLeg/fzrChw534ZoApp6fQ/Qif/ofa43M
-	 DyfEUtVN4D5MoH/1O+rYyKO5Pg13mlsRdO6e/BrMFjRLRQyRcgwb7Doysc3RUUNfjO+wA
-	 rgARpt9yU1I+m4dX7nhQkk+fo/cQUj8JVW/nUOyjIzk+yi/mqrs/yxOxC+EQ+R3of2nvY
-	 fkYxSh0+cvj5m7MiNwbx25an3q3VdMFGwovvuGuj2r4cbi9lujMI4qOndaKEVx2cnpdVc
-	 P364MYOBuENKzieEqWptY837gPE4dNfOMjfDnTvAcHK5nEJFxk2hdNjjtmLMonMyaKQ==
+	t=1794458393;
+	b=C/JguIuupH5mL6Ffqr56WcusjhJh20ja3lJSl+HlBqd/sBM7jl5iVQ/+MovK7OV675Dt
+	 uhyy+9JeSUV35y33nMkg+bd9xef/cC7JHgDbPmyJO631U8S8s97qt4a92D4lakLdnotJ8
+	 qTDAkhhQAIcUkMgA+OwTh0DS1D3Dt78rW2BBylvfvuMlTwyWY1PQPCDOCir26Y1GAbpZF
+	 qCvma6Ppv1KnPDSSW39OSvQNmqcq+CtgToNw7FVZzGd9unszc7GOl8x9xUvfY1Kdps8d/
+	 Jqf0E6shuWYAuRIPQRr0oDcu1PTtjMUqYoMLekEYv76jYcTCguR94ImaXtnQSv3V08w==
 ARC-Message-Signature: i=1; d=subspace.kernel.org; s=arc20261015;
-	a=rsa-sha256; c=relaxed/relaxed; t=1794453493;
+	a=rsa-sha256; c=relaxed/relaxed; t=1794458393;
 	h=DMARC-Filter:X-SpamFilter-By:DKIM-Signature:Received:Received:
 	 Received:Received:From:To:CC:Subject:In-Reply-To:References:
 	 Message-ID:Date:MIME-Version:Content-Type;
-	bh=lbIs4tprYVpNM+bPoaJ4jGZRUpTsv4P/N73o1CTqSLg=;
-	b=wp8FuUKCy2F+b2cgYN/3xtfhIJU2rSPRi30V4Rx/BixgiRXWhpb9UNeE2EIfBeVUwVDo
-	 BsQDSn714jxI1AXFYydeubzgBo616M/KwKSuS86VLspLnZe0CxuZNzMb75U2LY9I9r54d
-	 wkQWXWbnG97c9k3EQGswVJtmxJPjcpZHsVWTvA7EszEoVhkXq2ZY0jNlwBhbeFU8GSC/f
-	 k5EgTuKtHseqBpS+GrJh80Kc9XawuGTxJklLeq7EJ7uSqptKsR7RVmMqD4/H16nMSNlb9
-	 Vk8ZUe8ElQkJSQJioyMNfKZ1tnwgdb6tZIS0CpOFsihX9kqch6WkUuLZ+fNA4YFz66w==
+	bh=rIm43z3CtyqLAyh9pcHbAH2xyaZFFcoPENS7Uj+7x2s=;
+	b=FiXKuCeGZ3XXuO3DIrS3Gs3xknb3FDzyiUZsrOcmXvvcqH7J9MPSBVAsC7tvEOQDYaTT
+	 L/uu+jQnbXcGAenA3JeY0vWZsi3iPPSJziS7PTJyqMNmYt6spv9sYdY3l76MRsmmflX6/
+	 HI59RoAdKlDdQFoMZ8f1N2pGI1dd+Sqoq5bxj4DevAQIJtLOb6LFPUcfJyeEZMD5v3N6q
+	 GRiCUfXMpx19DOK8jt7oSfFd9xirUaExXWB6OGMcCrf8oCTUpWIGeKJwZMyata0WG+ORn
+	 PPh5j7ZT6VWPbIBbMqaJGeLPf8fWCsufMYaR7GGnoLfY6Y8kgv+kHX9pY5Nn/vEA8Jg==
 ARC-Authentication-Results: i=1; smtp.subspace.kernel.org; 
 	dmarc=pass header.from=realtek.com;
 	spf=pass smtp.mailfrom=realtek.com;
-	dkim=pass header.d=realtek.com header.i=@realtek.com header.a=rsa-sha256 header.s=dkim header.b="DKyk/Hjz";
+	dkim=pass header.d=realtek.com header.i=@realtek.com header.a=rsa-sha256 header.s=dkim header.b=EDSa5Iyl;
 	arc=none smtp.remote-ip=211.75.126.72
 Received: from rtits2.realtek.com.tw (rtits2.realtek.com [211.75.126.72])
 	(using TLSv1.3 with cipher TLS_AES_256_GCM_SHA384 (256/256 bits)
 	 key-exchange X25519 server-signature ECDSA (prime256v1) server-digest SHA256)
 	(No client certificate requested)
-	by smtp.subspace.kernel.org (Postfix) with ESMTPS id 9C9C8606A31C;
-	Thu, 12 Nov 2026 03:18:12 +0000 (UTC)
-DMARC-Filter: OpenDMARC Filter v1.4.2 smtp.subspace.kernel.org 9C9C8606A31C
+	by smtp.subspace.kernel.org (Postfix) with ESMTPS id 8339F606A898
+	for <linux-wireless@vger.kernel.org>; Thu, 12 Nov 2026 04:39:52 +0000 (UTC)
+DMARC-Filter: OpenDMARC Filter v1.4.2 smtp.subspace.kernel.org 8339F606A898
 Authentication-Results: smtp.subspace.kernel.org; dmarc=pass (p=none dis=none) header.from=realtek.com
 Authentication-Results: smtp.subspace.kernel.org; spf=pass smtp.mailfrom=realtek.com
 Authentication-Results: smtp.subspace.kernel.org;
-	dkim=pass (2048-bit key, unprotected) header.d=realtek.com header.i=@realtek.com header.a=rsa-sha256 header.s=dkim header.b=DKyk/Hjz
-X-SpamFilter-By: ArmorX SpamTrap 5.80 with qID 6AC3HYAV03373523, This message is accepted by code: ctloc85258
+	dkim=pass (2048-bit key, unprotected) header.d=realtek.com header.i=@realtek.com header.a=rsa-sha256 header.s=dkim header.b=EDSa5Iyl
+X-SpamFilter-By: ArmorX SpamTrap 5.80 with qID 6AC4dhaE73415698, This message is accepted by code: ctloc85258
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=realtek.com; s=dkim;
-	t=1794453454; bh=lbIs4tprYVpNM+bPoaJ4jGZRUpTsv4P/N73o1CTqSLg=;
+	t=1794458384; bh=rIm43z3CtyqLAyh9pcHbAH2xyaZFFcoPENS7Uj+7x2s=;
 	h=From:To:CC:Subject:In-Reply-To:References:Message-ID:Date:
 	 MIME-Version:Content-Type;
-	b=DKyk/HjzL1Uh12CMRgXu4gIeGk6UTrTX7RnYTM7Wz1YKcjARb929Dc8J/wxqvecfQ
-	 TMr9m4xA+bA7UjcrG91Ieg19dW1GT6mmCkMrAHOqGth/2gvCLugIdID0/KIRprekj4
-	 8nygY8kuZJr1dxnSzXaNJwj8lPQshp7ogK4/hFar/Xqokr/m8ZoamYDB732S/Zj+kP
-	 pgyVVo/ieIlLa/p/jhdADEgfAySS5Upnet7UZuQzqgDmdI3b88tlAxHgRyJ5bmkzpS
-	 jS0e4awNktTotpIOMop1j6l9P8r4Sq+iRrm0OHroZBzbnGpeVLy9GqoUBxyLr/SjMf
-	 5JKXSWsOVMZ2A==
-Received: from mail.realtek.com (rtkexhmbs03.realtek.com.tw[10.21.1.53])
-	by rtits2.realtek.com.tw (8.15.2/3.29/5.94) with ESMTPS id 6AC3HYAV03373523
-	(version=TLSv1.2 cipher=ECDHE-RSA-AES256-GCM-SHA384 bits=256 verify=FAIL);
-	Thu, 12 Nov 2026 11:17:34 +0800
+	b=EDSa5IylqOWHPx/SkMkMRq3UayzfyffpvJaBXkXkik+6JaTX6CF4rtuInpLzTtil+
+	 xXetoMVUeZB8UltQ53/CXvVhfnmTuD4gsk7Zh+UB8UeJI8I/BPTB1QZmHsBxKd0w2W
+	 RjbeILWPrWe6URqjf1lPLEc5Khlkt5An89qfVDMB/Fmm8jtO6wagPOOGAmcgtUryeD
+	 xdhPzSa5+DfmkqAydw/ludODl4mry7gifglE4A0s9lrPNxOT2eu2Vre/COsIUCD6RF
+	 M9CYv4bzCO3HdJLozPlhiNce4NS1SMRf2/s/CaYAImnIIo7GqlSqQr475PkXmvieuF
+	 H4POuXGOWpq7Q==
+Received: from mail.realtek.com (rtkexhmbs02.realtek.com.tw[172.21.6.41])
+	by rtits2.realtek.com.tw (8.15.2/3.29/5.94) with ESMTPS id 6AC4dhaE73415698
+	(version=TLSv1.2 cipher=ECDHE-RSA-AES256-GCM-SHA384 bits=256 verify=FAIL)
+	for <linux-wireless@vger.kernel.org>; Thu, 12 Nov 2026 12:39:43 +0800
 Received: from RTKEXHMBS05.realtek.com.tw (10.21.1.55) by
- RTKEXHMBS03.realtek.com.tw (10.21.1.53) with Microsoft SMTP Server
+ RTKEXHMBS02.realtek.com.tw (172.21.6.41) with Microsoft SMTP Server
  (version=TLS1_2, cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id
- 15.2.2562.56; Thu, 12 Nov 2026 11:17:34 +0800
-Received: from RTKEXHMBS05.realtek.com.tw (10.21.1.55) by
+ 15.2.2562.56; Thu, 12 Nov 2026 12:39:44 +0800
+Received: from RTKEXHMBS06.realtek.com.tw (10.21.1.56) by
  RTKEXHMBS05.realtek.com.tw (10.21.1.55) with Microsoft SMTP Server
  (version=TLS1_2, cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id
- 15.2.2562.56; Thu, 12 Nov 2026 11:17:33 +0800
-Received: from [127.0.1.1] (172.21.40.75) by RTKEXHMBS05.realtek.com.tw
- (10.21.1.55) with Microsoft SMTP Server (version=TLS1_2,
+ 15.2.2562.56; Thu, 12 Nov 2026 12:39:44 +0800
+Received: from [127.0.1.1] (172.21.40.75) by RTKEXHMBS06.realtek.com.tw
+ (10.21.1.56) with Microsoft SMTP Server (version=TLS1_2,
  cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id 15.2.2562.56 via Frontend
- Transport; Thu, 12 Nov 2026 11:17:33 +0800
+ Transport; Thu, 12 Nov 2026 12:39:44 +0800
 From: Ping-Ke Shih <pkshih@realtek.com>
-To: Zhao Li <enderaoelyther@gmail.com>, Ping-Ke Shih <pkshih@realtek.com>
-CC: Luka Gejak <luka.gejak@linux.dev>, neo_jou <neo_jou@realtek.com>, "Sascha
- Hauer" <s.hauer@pengutronix.de>, Kalle Valo <kvalo@kernel.org>, "Hans Ulli
- Kroll" <linux@ulli-kroll.de>, Bitterblue Smith <rtl8821cerfe2@gmail.com>,
-	<linux-wireless@vger.kernel.org>, <linux-kernel@vger.kernel.org>,
-	<stable@vger.kernel.org>
-Subject: Re: [PATCH v2] wifi: rtw88: usb: stop RX work before unregistering hardware
-In-Reply-To: <20261101134314.39340-2-enderaoelyther@gmail.com>
-References: <20261101134314.39340-2-enderaoelyther@gmail.com>
-Message-ID: <92d3d8d3-656e-4669-8782-f64bd2ecc1ed@RTKEXHMBS05.realtek.com.tw>
-Date: Thu, 12 Nov 2026 11:17:33 +0800
+To: Ping-Ke Shih <pkshih@realtek.com>, <linux-wireless@vger.kernel.org>
+CC: <timlee@realtek.com>
+Subject: Re: [PATCH rtw-next 1/2] wifi: rtw89: enable low-latency power-save optimization for RTL8852B/RTL8852BT
+In-Reply-To: <20261103075255.56487-2-pkshih@realtek.com>
+References: <20261103075255.56487-1-pkshih@realtek.com> <20261103075255.56487-2-pkshih@realtek.com>
+Message-ID: <9e4e9aa2-86a7-485f-90db-05edef7b0096@RTKEXHMBS06.realtek.com.tw>
+Date: Thu, 12 Nov 2026 12:39:44 +0800
 X-Mailing-List: linux-wireless@vger.kernel.org
 List-Id: <linux-wireless.vger.kernel.org>
 List-Post: <mailto:linux-wireless@vger.kernel.org>
@@ -83,31 +79,28 @@ Precedence: list
 MIME-Version: 1.0
 Content-Type: text/plain
 
-Zhao Li <enderaoelyther@gmail.com> wrote:
+Ping-Ke Shih <pkshih@realtek.com> wrote:
 
-> Disconnecting an rtw88 USB device while RX traffic is active can leave
-> the RX worker running after mac80211 hardware is unregistered. A firmware
-> event can then queue C2H work onto a destroyed workqueue.
+> From: Chin-Yen Lee <timlee@realtek.com>
 > 
-> rtw_usb_disconnect() kills the RX URBs but does not cancel rx_work,
-> which their completions may already have queued. rxwq is destroyed only
-> after rtw_unregister_hw().
+> The low-latency power-save optimization (LPS) was originally
+> introduced specifically for RTL8852A to improve interactive
+> application performance by exiting power-save during packet
+> bursts.
 > 
-> Cancel rx_work synchronously after killing the RX URBs. Only a
-> successful RX completion queues rx_work, and no RX URB can be
-> resubmitted at this point: rtw88 does not set soft_unbind, so the USB
-> core disables the endpoints before it calls rtw_usb_disconnect().
+> To extend this feature to RTL8852B and RTL8852BT, introduce
+> a new flag "support_low_latency_lps" in chip info instead of
+> hardcoding chip ID checks. Enable this capability for RTL8852A,
+> RTL8852B, and RTL8852BT while explicitly disabling it for other
+> supported chips.
 > 
-> LLM assistance was used to find the bug and review.
-> 
-> Fixes: a82dfd33d123 ("wifi: rtw88: Add common USB chip support")
-> Cc: stable@vger.kernel.org
-> Signed-off-by: Zhao Li <enderaoelyther@gmail.com>
-> Reviewed-by: Luka Gejak <luka.gejak@linux.dev>
+> Signed-off-by: Chin-Yen Lee <timlee@realtek.com>
+> Signed-off-by: Ping-Ke Shih <pkshih@realtek.com>
 
-1 patch(es) applied to rtw-next branch of rtw.git, thanks.
+2 patch(es) applied to rtw-next branch of rtw.git, thanks.
 
-85ef46b9f514 wifi: rtw88: usb: stop RX work before unregistering hardware
+e1744a3a4e21 wifi: rtw89: enable low-latency power-save optimization for RTL8852B/RTL8852BT
+e25702b57659 wifi: rtw89: avoid premature power save entry for buffered traffic
 
 ---
 https://github.com/pkshih/rtw.git
