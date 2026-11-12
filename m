@@ -1,59 +1,62 @@
-Authentication-Results: smtp.subspace.kernel.org; arc=none smtp.remote-ip=100.103.45.18
+Authentication-Results: smtp.subspace.kernel.org; arc=none smtp.remote-ip=91.218.175.158
 ARC-Seal: i=1; d=subspace.kernel.org; s=arc20261015; a=rsa-sha256; cv=none;
-	t=1794516349;
-	b=3eFdxuf4A8p6Je9DgCa/gBFAumj0DoT83wHCOXzi3DCBcgJm9UW+wYj7szA/rkU55M8E
-	 Sx6mHZ+5apu7nsyovfpHnliKopfNr/haTRaOsgwgyjsKU1f8XX3saPhXSoWNjn0v9kja2
-	 LJ5UX121/EaCwvjfRpQGNNSqPj17HoO85eKskPjCN8fL9IuVWwIDw0TMxsqjxyZs8A4rO
-	 D+22Ab672tXedK3XvUV2viseHZZqeq2KjQIa+2nocRyIepCTMP4PLyVy8Cu2MDoT+A5P8
-	 SZQ/W6G8W6LNsvCLQOmRsN9EZu4EISz/qqV5JUoWMTIFfneQpRRaJ9VAGCNVXvez3Yw==
+	t=1794518936;
+	b=Pbxb9TZ3et8Gh+usCJHGby0DU8tZrymZhZCv8rVEGetZwT+WsdWSzU/OTKRGomJVv2pt
+	 kpopmgiz45KDFRV26hW6ELWERPvshnuZHg3BqhtFLMwf9I5xI0CUaqLE+GhFM/SDqnQ7y
+	 zjNXnwVq7Q/U7UwYHjZNlhyt4KDXPxcbgEYUtZ6Q1zAOrP6VXhEor7Y9tUP6Cv3n+/pUI
+	 DsGp4RaZx4eaBPnyFRJD6cWlfCVUplNjQBYv3z4gTKllQXXvZlp5fUs9iGCkWYEul/lSX
+	 j4WmzzyQecIlypRHTVF9IooXUyW+cDBO1Q2g9RW6iD4sjOXj9yVarpV68Wrfja3aUVQ==
 ARC-Message-Signature: i=1; d=subspace.kernel.org; s=arc20261015;
-	a=rsa-sha256; c=relaxed/relaxed; t=1794516349;
-	h=Received:DKIM-Signature:Date:From:To:Cc:Subject:Message-ID:
-	 References:MIME-Version:Content-Type:Content-Disposition:In-Reply-To;
-	bh=vExIF6BLPxilcEzmeQ44C3+EI0WD/Najy1w9BlH7ZrA=;
-	b=yXUnJY7rbpSrIkxvAFcAScLDAiK1QE3e+HbnCGjVcFmT+AfxtZlXZ8gaf9KNZdz28SmX
-	 g/gUiCXApmfBqAa75aq4rw4okfk3XDsGFqbFxoQlpmPd6y1szA69bw27H76OC3x3U/Ljp
-	 5zYOBojFgW/KHdAa6ZT43t2bIinS1DIwyx4QoorfeEOy5ayE25J4QnijUDmrFwZdrXwYg
-	 i2RREFj2ruNxaxQwS9EAXMM5o8DzCDK0Pv5uxxyRaElMM+X70zWd1nOGHrHC7g4Xs/itg
-	 epqZOf1R7Q6YPEm656tlKPnO3ssNpN/Gatnb8ABfV1B6EiO6VDWNfHUga4at1LB4QxQ==
+	a=rsa-sha256; c=relaxed/relaxed; t=1794518936;
+	h=DMARC-Filter:X-Envelope-To:DKIM-Signature:X-Envelope-To:Received:
+	 X-Mizu-Trace-ID:X-Migadu-Flow:Date:From:To:CC:Subject:In-Reply-To:
+	 References:Message-ID:MIME-Version:Content-Type:
+	 Content-Transfer-Encoding;
+	bh=pzlq5o6tDF2OByZqSgFIlv+mTgpxtocxWTJ+jzA91r0=;
+	b=a0R7fkDDabL0dakJmO29zeWJVExEEjaAcxg2Ik8Dfwi6afDfpfkEFGX08dJhLCDGDiIE
+	 PGPcu+VWEF85EH/ntHMkmAbXdm8W3hfQuRGTMbh5z/AJvZo7Pv/ZwW83glL5LcyqH8pC7
+	 +3XXkvocAS3TI5LExLuOTtAC3rds4KM2JZC3qI98TKWsL/q+Qep6UEwDkIxxU/mh25LM5
+	 723s1aGeptwrX3Bg4dENfznmOGGpx0yT5M9ZGOjCl7pmOe3z7DMyWTve79ykxn3sXocQ/
+	 wTiVn/RUBqY6zyI5ZWxxAvhQ5N/8a3E3O2AnbhjJBbK34UYX8OG0UXlgxE6KIxxU6yQ==
 ARC-Authentication-Results: i=1; smtp.subspace.kernel.org; 
-	dkim=pass header.d=kernel.org header.i=@kernel.org header.a=rsa-sha256 header.s=k20260515 header.b=bnTlgR2z;
-	arc=none smtp.remote-ip=100.103.45.18
-Received: from smtp.kernel.org (quasi.space.kernel.org [100.103.45.18])
-	(using TLSv1.3 with cipher TLS_AES_256_GCM_SHA384 (256/256 bits)
-	 key-exchange X25519 server-signature ECDSA (prime256v1))
+	dmarc=pass header.from=linux.dev;
+	spf=pass smtp.mailfrom=linux.dev;
+	dkim=pass header.d=linux.dev header.i=@linux.dev header.a=rsa-sha256 header.s=key1 header.b=wpIBTzt+;
+	arc=none smtp.remote-ip=91.218.175.158
+Received: from mta0.migadu.com (out-158.mta0.migadu.com [91.218.175.158])
+	(using TLSv1.3 with cipher TLS_AES_128_GCM_SHA256 (128/128 bits)
+	 key-exchange X25519 server-signature ECDSA (prime256v1) server-digest SHA256)
 	(No client certificate requested)
-	by smtp.subspace.kernel.org (Postfix) with ESMTPS id D779660A2622;
-	Thu, 12 Nov 2026 20:45:49 +0000 (UTC)
+	by smtp.subspace.kernel.org (Postfix) with ESMTPS id 2DCB4606A323
+	for <linux-wireless@vger.kernel.org>; Thu, 12 Nov 2026 21:28:54 +0000 (UTC)
+DMARC-Filter: OpenDMARC Filter v1.4.2 smtp.subspace.kernel.org 2DCB4606A323
+Authentication-Results: smtp.subspace.kernel.org; dmarc=pass (p=none dis=none) header.from=linux.dev
+Authentication-Results: smtp.subspace.kernel.org; spf=pass smtp.mailfrom=linux.dev
 Authentication-Results: smtp.subspace.kernel.org;
-	dkim=pass (2048-bit key) header.d=kernel.org header.i=@kernel.org header.a=rsa-sha256 header.s=k20260515 header.b=bnTlgR2z
-Received: by smtp.kernel.org (Postfix) with ESMTPSA id 75F951F000C5;
-	Thu, 12 Nov 2026 20:45:49 +0000 (UTC)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=kernel.org;
-	s=k20260515; t=1794516349;
-	bh=vExIF6BLPxilcEzmeQ44C3+EI0WD/Najy1w9BlH7ZrA=;
-	h=Date:From:To:Cc:Subject:References:In-Reply-To;
-	b=bnTlgR2zNej1/jMfIJfET7Ftvcp5O+JbEvwTIwChPZ7SkRsHdUJD58A3YopMYrBR5
-	 3RmSFO7z9CLI/6CVeJasToJu2h0SYlnwUiHxwTq3pG17mSvsTcBw69kzs+EdqippEF
-	 qPgrYDTbUlic/c4NWH45S05EPBgVslRBBN9JBfa4iABnBtHQ5kMR6HbdkCp8j5FHPb
-	 ryKntZW2dO2BE5fyp5NexcrghC/k12C+XV1K3FWOUg+CwdZJMUcSu+Z/siXVOAIv0e
-	 3W3gOdiHREXzjNBqXIcJjB3tDoNjpBbFQaBhqaJQEppmuZGD9ZVcIoJAlMxYoKZpC5
-	 WmHSWNDLxlDCw==
-Date: Thu, 12 Nov 2026 12:45:49 -0800
-From: Kees Cook <kees@kernel.org>
-To: Hans de Goede <johannes.goede@oss.qualcomm.com>
-Cc: Mark Brown <broonie@kernel.org>, Dennis Gilmore <dennis@ausil.us>,
-	lgirdwood@gmail.com, perex@perex.cz, tiwai@suse.com,
-	gustavoars@kernel.org, linux-sound@vger.kernel.org,
-	linux-hardening@vger.kernel.org, linux-kernel@vger.kernel.org,
-	michael.hennerich@analog.com, nuno.sa@analog.com,
-	dlechner@baylibre.com, linux-spi@vger.kernel.org,
-	miriam.rachel.korenblit@intel.com, linux-wireless@vger.kernel.org
-Subject: Re: [PATCH] ASoC: soc-core: start rtd->num_components at zero
-Message-ID: <202611121234.8619E8D182@keescook>
-References: <20261112025252.71375-1-dennis@ausil.us>
- <179448342405.66517.5463730214277229760.b4-review@b4>
- <f55dddf1-d745-471a-8001-8f9e5768d97d@oss.qualcomm.com>
+	dkim=pass (1024-bit key, unprotected) header.d=linux.dev header.i=@linux.dev header.a=rsa-sha256 header.s=key1 header.b=wpIBTzt+
+X-Envelope-To: linux-wireless@vger.kernel.org
+DKIM-Signature: a=rsa-sha256; bh=pzlq5o6tDF2OByZqSgFIlv+mTgpxtocxWTJ+jzA91r0=;
+ c=simple/simple; d=linux.dev;
+ h=from:to:subject:date:message-id:mime-version:content-type; s=key1;
+ t=1794518932; v=1; x=1795123732;
+ b=wpIBTzt+/agFJSMfi1Wl6b52GfMYBiiIVzafDOjtpBsXi+i7v2W+q2Ioj/P9N6700TVRIRhY
+ 37ZN8un4qdKzHKhDBl+exwhgwxKN/lutVj+qs7Cm6ImhyE2DB2SsF3XG6lX84PUMzM7O4Kbn26C
+ v93Yax4dSza97aTKxDI+QPGI=
+X-Envelope-To: linux-wireless@vger.kernel.org
+Received: by smtp.migadu.com with ESMTPS id 831542d396af7fc5;
+	Thu, 12 Nov 2026 21:28:52 +0000
+X-Mizu-Trace-ID: 831542d396af7fc5
+X-Migadu-Flow: FLOW_OUT
+Date: Thu, 12 Nov 2026 22:28:50 +0100
+From: Luka Gejak <luka.gejak@linux.dev>
+To: Kalpesh Solanki <skalpesh942@gmail.com>, pkshih@realtek.com
+CC: kvalo@kernel.org, linux-wireless@vger.kernel.org,
+ linux-kernel@vger.kernel.org, stable@vger.kernel.org
+Subject: =?US-ASCII?Q?Re=3A_=5BPATCH_v5_1/3=5D_wifi=3A_rtw88=3A_clear_RTW?=
+ =?US-ASCII?Q?=5FFLAG=5FRESTARTING_on_stop_and_start_failure?=
+In-Reply-To: <20261112131401.236433-2-skalpesh942@gmail.com>
+References: <20261112131401.236433-1-skalpesh942@gmail.com> <20261112131401.236433-2-skalpesh942@gmail.com>
+Message-ID: <24B0555C-4ED8-4403-BBD1-0E82611F0BFE@linux.dev>
 X-Mailing-List: linux-wireless@vger.kernel.org
 List-Id: <linux-wireless.vger.kernel.org>
 List-Post: <mailto:linux-wireless@vger.kernel.org>
@@ -63,45 +66,36 @@ List-Unsubscribe: <mailto:linux-wireless+unsubscribe@vger.kernel.org>
 List-Owner: <mailto:linux-wireless+owner@vger.kernel.org>
 Precedence: list
 MIME-Version: 1.0
-Content-Type: text/plain; charset=us-ascii
-Content-Disposition: inline
-In-Reply-To: <f55dddf1-d745-471a-8001-8f9e5768d97d@oss.qualcomm.com>
+Content-Type: text/plain;
+ charset=utf-8
+Content-Transfer-Encoding: 8bit
 
-On Thu, Nov 12, 2026 at 02:34:17PM +0100, Hans de Goede wrote:
-> @Kees, have you seen Dennis' remark about the same problem with
-> devm_kzalloc_flex() changing the semantics with the num-components
-> counter now no longer being initialized to zero in at least 2 other
-> places? :
+On November 12, 2026 2:13:59 PM GMT+01:00, Kalpesh Solanki
+<skalpesh942@gmail.com> wrote:
+>When mac80211 stops or suspends the device without WoWLAN,
+>drv_reconfig_complete() is never invoked with
+>IEEE80211_RECONFIG_TYPE_RESTART. If firmware recovery was in flight
+>during this transition, RTW_FLAG_RESTARTING remains set permanently,
+>blocking all subsequent firmware recoveries until the module is reloaded.
+>
+>Similarly, if rtw_core_start() fails during drv_start() in a recovery
+>restart, local->started remains false. When mac80211 cleans up via
+>cfg80211_shutdown_all_interfaces(), drv_stop() returns early without
+>calling rtw_ops_stop(), leaving RTW_FLAG_RESTARTING set permanently on
+>hardware that failed to recover.
+>
+>Clear RTW_FLAG_RESTARTING in rtw_ops_stop(), as well as in
+>rtw_ops_start() when rtw_core_start() returns an error, ensuring the
+>driver always exits the restarting state on error or teardown.
+>
+>Fixes: 5c831644e1f4 ("rtw88: handle and recover when firmware crash")
+>Cc: stable@vger.kernel.org
+>Signed-off-by: Kalpesh Solanki <skalpesh942@gmail.com>
+>---
 
-Eek, thank you. I will go look at these!
+You seem to have missed it in v4 so please pick up this tag in v6.
 
-> 
-> """
-> Kees, the same pattern (a *_flex() allocation followed by code that uses
-> the counter as a fill index starting from zero) looks to be present in
-> two places converted by 69050f8d6d07 ("treewide: Replace kmalloc with
-> kmalloc_obj for non-scalar types"). I have only read the code for these.
-> I have no hardware for either and have not reproduced them, so please
-> treat them as possible issues rather than confirmed bugs:
-> 
->  - drivers/spi/spi-axi-spi-engine.c: spi_engine_optimize_message()
->    allocates p with kzalloc_flex(*p, instructions, p_dry.length + 1),
->    which presets p->length, and spi_engine_compile_message() then
->    appends with p->length++ through spi_engine_program_add_cmd().
+Reviewed-by: Luka Gejak <luka.gejak@linux.dev>
 
-Oh, this was from before:
-69050f8d6d07 ("treewide: Replace kmalloc with kmalloc_obj for non-scalar types")
-
->  - drivers/net/wireless/intel/iwlwifi/mld/d3.c:
->    iwl_mld_process_netdetect_res() allocates netdetect_info with
->    kzalloc_flex(..., matches, n_matches), presetting n_matches, and
->    iwl_mld_set_netdetect_info() stores at matches[n_matches] and then
->    increments it. The per-match kzalloc_flex(..., channels, n_channels)
->    has the same issue with match->n_channels.
-
-Same.
-
-I'll send fixes.
-
--- 
-Kees Cook
+Best regards,
+Luka Gejak
