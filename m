@@ -1,65 +1,76 @@
-Authentication-Results: smtp.subspace.kernel.org; arc=none smtp.remote-ip=111.22.67.135
+Authentication-Results: smtp.subspace.kernel.org; arc=none smtp.remote-ip=60.244.123.138
 ARC-Seal: i=1; d=subspace.kernel.org; s=arc20261015; a=rsa-sha256; cv=none;
-	t=1794467899;
-	b=oGkyMDIMEirDiu5A2XqGt7I/QXxLSVVwsDmCDS1HSyg/8Qxjs/Kmp4GCPy3BQ9XLVTuF
-	 azoqkHzgT3iq4M+TzP5V6LBnwZ+R43SiMjpGxwvTwAxqSSKqVHAvDKo8m1JEwIgOifgo/
-	 wv237ygC7iLxYncT8TlI34A4bgfJ36Ljiqqlix5L/EISWzT5VKFbYb0OMV9v3YYIebddh
-	 vzqJuCsFSlZ1dZj4AZDpohzJJBsiYFRQA9L3OI3KEjDOzh90DXdzXHQjeN8w4gbKQveQh
-	 95tLGo8DHU3InxtjoggCmhogwzvLRYkPwqEA6RDWs/jJS5DTlqvUH/yblAselHELv9w==
+	t=1794468516;
+	b=AmHS4vGPMruaIAe/ihEL2RbJokcnp1FQrt9d8sQlodQ0APVmidUUXsXyA7hP1Isa+qvb
+	 1nGwF2zaUQYGFJBa3KowL6VtSBD+Deqc1xt+lBbZC/VQ+cs4cin2wuRxcEFmgsYA9dFjB
+	 yph/qLF/fvaJOzBOYAH4z2iXIl8UxlHrFMelCLXH5/a9PqvrAAM4w6zkNh8ulVDT4X1a6
+	 LBBatTbn+/DxmmZbw0nbhp6frCQ6OyIpoJAGwWczbx2kdTt492oZCyJMHof+JRg++98I8
+	 +7CDl+Rg55dEkCl9Gfcg1VPtEQ+tQfogvoPIR1oGtWw/ZyUXdxgafteYMK4w6AtKESg==
 ARC-Message-Signature: i=1; d=subspace.kernel.org; s=arc20261015;
-	a=rsa-sha256; c=relaxed/relaxed; t=1794467899;
-	h=DMARC-Filter:DKIM-Signature:X-RM-TagInfo:X-RM-SPAM-FLAG:Received:
-	 X-RM-TRANSID:X-RM-TagInfo:X-RM-SPAM-FLAG:Received:X-RM-TRANSID:From:
-	 To:Cc:Subject:Date:Message-ID:X-Mailer:MIME-Version:
-	 Content-Transfer-Encoding;
-	bh=H3E+mWHbu+cguQWMunb6sV0QWqoncJc4BDKUdNfiQcY=;
-	b=nk5TOzyTh3sD3TP3nMLLMixy1vJ46Esz2kjU/YF7Pxk9dX0tv0Y2/Prq7FQkg9acD1Td
-	 fD35OWc+3ktC3ceCbGXomiQXUnQm4V1ZqpD3lMQtouwRsMZxkIXoMIuISyqouZuYYVEcp
-	 /yRLF9Rc3VsfeqsS8dL1VKFWFVIiRRrdAuSfxoFWgFT2JQDW27pRg2mvlWJLKmO4FItQB
-	 C1CU0QQDylC08k6Ea9LJMXkQln4F5kwu2uLLuiJ+8tJZhqPkiyfoUQIba/qDsRFpop/my
-	 BI1vMF+d6q5YG8dTxEX5Pm0tH+RCOhOkmXf+ZjjSfOSMHOEGcpxZbNutcGAIivMChsA==
+	a=rsa-sha256; c=relaxed/relaxed; t=1794468516;
+	h=DMARC-Filter:X-UUID:DKIM-Signature:X-CID-P-RULE:X-CID-O-INFO:
+	 X-CID-META:X-CID-BVR:X-CID-BAS:X-CID-FACTOR:X-CID-RHF:X-UUID:Received:
+	 Received:Received:From:To:CC:Subject:Date:Message-ID:X-Mailer:
+	 MIME-Version:Content-Transfer-Encoding:Content-Type:X-MTK;
+	bh=WdFoLiUWlTSVaiTOte0hyThXncwNQVvnR/LdJEYOr80=;
+	b=cuYObNi3b/JIgnrcRI40FcUUKPsMJRehMhdFpCK2TfcjMFt8+wD62T/imNKhhdNG2gb1
+	 Rq5wZhcCfB5ZdGWPQUpnh2k5dXI1WR6f3/4l62/yRPfvC/D/Ul+le5T8F4JKKp9ohBgFI
+	 2tN7oohziKzB0pK07TFd97XD1T0It9t1L76KKCbDHijj0pTyFvr0KBElRK7nN4Cqk7IIf
+	 hu6Fvl2Py2vUL6j3Pz6oWEgNbEjieCdPkyMRE1wSAE+SXSsh7Y+9/2QzuQbHH3ve3YU/4
+	 6bGNB5kKBQb8W2Xu9otc4/5WTjEC6zs/7qnz7eJEA1ZwpP081yXwVSmv3D3RVETLSQg==
 ARC-Authentication-Results: i=1; smtp.subspace.kernel.org; 
-	dmarc=pass header.from=cmss.chinamobile.com;
-	spf=pass smtp.mailfrom=cmss.chinamobile.com;
-	dkim=pass header.d=cmss.chinamobile.com header.i=@cmss.chinamobile.com header.a=rsa-sha256 header.s=default header.b=eRIipwcp;
-	arc=none smtp.remote-ip=111.22.67.135
-Received: from cmccmta2.chinamobile.com (cmccmta2.chinamobile.com [111.22.67.135])
-	by smtp.subspace.kernel.org (Postfix) with ESMTP id 6DBA9606A887;
-	Thu, 12 Nov 2026 07:18:18 +0000 (UTC)
-DMARC-Filter: OpenDMARC Filter v1.4.2 smtp.subspace.kernel.org 6DBA9606A887
-Authentication-Results: smtp.subspace.kernel.org; dmarc=pass (p=none dis=none) header.from=cmss.chinamobile.com
-Authentication-Results: smtp.subspace.kernel.org; spf=pass smtp.mailfrom=cmss.chinamobile.com
+	dmarc=pass header.from=mediatek.com;
+	spf=pass smtp.mailfrom=mediatek.com;
+	dkim=pass header.d=mediatek.com header.i=@mediatek.com header.a=rsa-sha256 header.s=dk header.b=trf0V4PT;
+	arc=none smtp.remote-ip=60.244.123.138
+Received: from mailgw01.mediatek.com (unknown [60.244.123.138])
+	(using TLSv1.3 with cipher TLS_AES_256_GCM_SHA384 (256/256 bits)
+	 key-exchange X25519 server-signature ECDSA (prime256v1) server-digest SHA256)
+	(No client certificate requested)
+	by smtp.subspace.kernel.org (Postfix) with ESMTPS id 7DB5D606A321
+	for <linux-wireless@vger.kernel.org>; Thu, 12 Nov 2026 07:28:35 +0000 (UTC)
+DMARC-Filter: OpenDMARC Filter v1.4.2 smtp.subspace.kernel.org 7DB5D606A321
+Authentication-Results: smtp.subspace.kernel.org; dmarc=pass (p=quarantine dis=none) header.from=mediatek.com
+Authentication-Results: smtp.subspace.kernel.org; spf=pass smtp.mailfrom=mediatek.com
 Authentication-Results: smtp.subspace.kernel.org;
-	dkim=pass (1024-bit key) header.d=cmss.chinamobile.com header.i=@cmss.chinamobile.com header.a=rsa-sha256 header.s=default header.b=eRIipwcp
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-	d=cmss.chinamobile.com; s=default; l=0;
-	h=from:subject:message-id:to:cc:mime-version;
-	bh=47DEQpj8HBSa+/TImW+5JCeuQeRkm5NMpJWZG3hSuFU=;
-	b=eRIipwcp+KKq3hAZcJ1+Hq6/BdrV9Q4N0cfEatJ9onszC/349kU2YDHgjlsyhLlaOO8FX9J+c6M2Z
-	 0RcVOjl8q1/P47Oy5zlW/DXAIudBLg9ZS4QvG3RHv5iICJC7g7zPZUIPmxb6LgyMbb4KK/YCI4GxES
-	 xTIBti8OsseHW7d0=
-X-RM-TagInfo: emlType=0                                       
-X-RM-SPAM-FLAG:00000000
-Received:from spf.mail.chinamobile.com (unknown[10.188.0.87])
-	by rmmx-syy-dmz-app03-12003 (RichMail) with SMTP id 2ee36af56812a9e-ab441;
-	Thu, 12 Nov 2026 15:17:38 +0800 (CST)
-X-RM-TRANSID:2ee36af56812a9e-ab441
-X-RM-TagInfo: emlType=0                                       
-X-RM-SPAM-FLAG:00000000
-Received:from devin-VMware-Virtual-Platform.localdomain (unknown[10.55.1.72])
-	by rmsmtp-syy-appsvr07-12007 (RichMail) with SMTP id 2ee76af56810924-f6d4f;
-	Thu, 12 Nov 2026 15:17:38 +0800 (CST)
-X-RM-TRANSID:2ee76af56810924-f6d4f
-From: Zhu Jun <zhujun2@cmss.chinamobile.com>
-To: briannorris@chromium.org
-Cc: francesco@dolcini.it,
-	linux-wireless@vger.kernel.org,
-	linux-kernel@vger.kernel.org,
-	Zhu Jun <zhujun2@cmss.chinamobile.com>
-Subject: [PATCH] wifi: mwifiex: Report register write errors through debugfs
-Date: Thu, 12 Nov 2026 15:17:37 +0800
-Message-ID: <20261112071737.154599-1-zhujun2@cmss.chinamobile.com>
-X-Mailer: git-send-email 2.51.0
+	dkim=pass (1024-bit key) header.d=mediatek.com header.i=@mediatek.com header.a=rsa-sha256 header.s=dk header.b=trf0V4PT
+X-UUID: a9a7e924de6a11f1b1788b6acf885367-20261112
+DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed; d=mediatek.com; s=dk;
+	h=Content-Type:Content-Transfer-Encoding:MIME-Version:Message-ID:Date:Subject:CC:To:From; bh=WdFoLiUWlTSVaiTOte0hyThXncwNQVvnR/LdJEYOr80=;
+	b=trf0V4PTmL6866MEfje0Qdy58Nydjs7sE2L6ARymzJi9YZTTQsW2K2lxqoLMpiqKsYvBW/kXUtlOKA3jHz4Ev+g1MRjTQzF/TPwb7mQX+sfS/WNVsdlrlvHcUuU2higK4/TiB5PlP/qEa1kFnXTxDHIvAd2jSY3UNrT6szGftsI=;
+X-CID-P-RULE: Release_Ham
+X-CID-O-INFO: VERSION:1.3.21,REQID:307d03ae-b4b2-4cbc-8cab-3ed8a1932ea7,IP:0,U
+	RL:0,TC:0,Content:0,EDM:0,RT:0,SF:0,FILE:0,BULK:0,RULE:Release_Ham,ACTION:
+	release,TS:0
+X-CID-META: VersionHash:b0318ac,CLOUDID:97e2a48d-b3e7-4795-ae33-b1b4d51e21d7,B
+	ulkID:nil,BulkQuantity:0,SF:102|836|865|888|898,TC:-5,Content:0|15|50|99,E
+	DM:-3,IP:nil,URL:0,File:130,RT:0,Bulk:nil,QS:nil,BEC:nil,COL:0,OSI:0,OSA:0
+	,AV:0,LES:1,SPR:NO,DKR:0,DKP:0,BRR:0,BRE:0,ARC:0
+X-CID-BVR: 2,SSN|SDN
+X-CID-BAS: 2,SSN|SDN,0,_
+X-CID-FACTOR: TF_CID_SPAM_SNR
+X-CID-RHF: D41D8CD98F00B204E9800998ECF8427E
+X-UUID: a9a7e924de6a11f1b1788b6acf885367-20261112
+Received: from mtkmbs13n2.mediatek.inc [(172.21.101.108)] by mailgw01.mediatek.com
+	(envelope-from <jb.tsai@mediatek.com>)
+	(Generic MTA with TLSv1.2 ECDHE-RSA-AES256-GCM-SHA384 256/256)
+	with ESMTP id 498370896; Thu, 12 Nov 2026 15:28:31 +0800
+Received: from mtkmbs13n2.mediatek.inc (172.21.101.108) by
+ mtkmbs10n1.mediatek.inc (172.21.101.34) with Microsoft SMTP Server
+ (version=TLS1_2, cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id
+ 15.2.2562.29; Thu, 12 Nov 2026 15:28:30 +0800
+Received: from mtksitap99.mediatek.inc (10.233.130.16) by
+ mtkmbs13n2.mediatek.inc (172.21.101.73) with Microsoft SMTP Server id
+ 15.2.2562.29 via Frontend Transport; Thu, 12 Nov 2026 15:28:30 +0800
+From: JB Tsai <jb.tsai@mediatek.com>
+To: <nbd@nbd.name>, <lorenzo@kernel.org>
+CC: <linux-wireless@vger.kernel.org>, <linux-mediatek@lists.infradead.org>,
+	<Sean.Wang@mediatek.com>, <Charlie-cy.Wu@mediatek.com>,
+	<jb.tsai@mediatek.com>
+Subject: [PATCH 1/2] wifi: mt76: fix skb leak on SDIO bus hang in MCU send
+Date: Thu, 12 Nov 2026 15:28:26 +0800
+Message-ID: <20261112072827.1796829-1-jb.tsai@mediatek.com>
+X-Mailer: git-send-email 2.45.2
 X-Mailing-List: linux-wireless@vger.kernel.org
 List-Id: <linux-wireless.vger.kernel.org>
 List-Post: <mailto:linux-wireless@vger.kernel.org>
@@ -70,36 +81,38 @@ List-Owner: <mailto:linux-wireless+owner@vger.kernel.org>
 Precedence: list
 MIME-Version: 1.0
 Content-Transfer-Encoding: 8bit
+Content-Type: text/plain
+X-MTK: N
 
-mwifiex_regrdwr_read() can issue a register write for a debugfs
-request. It overwrites the write result with the buffer-copy result,
-so userspace receives a normal response even if the firmware command
-failed.
+From: Charlie-cy Wu <Charlie-cy.Wu@mediatek.com>
 
-Return through the existing buffer cleanup path on a write error,
-before copying a success response or advancing the file position.
+mt76_mcu_skb_send_and_get_msg() takes ownership of the skb, but on
+SDIO it returns -EIO when MT76_RESET is set and the bus is hung without
+freeing it, leaking one skb per MCU command.
 
-Fixes: 5e6e3a92b9a4 ("wireless: mwifiex: initial commit for Marvell mwifiex driver")
-Signed-off-by: Zhu Jun <zhujun2@cmss.chinamobile.com>
+Free the skb before returning -EIO.
+
+Signed-off-by: Charlie-cy Wu <Charlie-cy.Wu@mediatek.com>
 ---
- drivers/net/wireless/marvell/mwifiex/debugfs.c | 2 ++
- 1 file changed, 2 insertions(+)
+ drivers/net/wireless/mediatek/mt76/mcu.c | 4 +++-
+ 1 file changed, 3 insertions(+), 1 deletion(-)
 
-diff --git a/drivers/net/wireless/marvell/mwifiex/debugfs.c b/drivers/net/wireless/marvell/mwifiex/debugfs.c
-index 573768b6ad91..6cb3cf5706c0 100644
---- a/drivers/net/wireless/marvell/mwifiex/debugfs.c
-+++ b/drivers/net/wireless/marvell/mwifiex/debugfs.c
-@@ -470,6 +470,8 @@ mwifiex_regrdwr_read(struct file *file, char __user *ubuf,
- 	if (saved_reg_value != UINT_MAX) {
- 		ret = mwifiex_reg_write(priv, saved_reg_type, saved_reg_offset,
- 					saved_reg_value);
-+		if (ret)
-+			goto done;
+diff --git a/drivers/net/wireless/mediatek/mt76/mcu.c b/drivers/net/wireless/mediatek/mt76/mcu.c
+index cbfb3bbec503..54b2ef2d5916 100644
+--- a/drivers/net/wireless/mediatek/mt76/mcu.c
++++ b/drivers/net/wireless/mediatek/mt76/mcu.c
+@@ -79,8 +79,10 @@ int mt76_mcu_skb_send_and_get_msg(struct mt76_dev *dev, struct sk_buff *skb,
+ 	int ret, seq;
  
- 		pos += snprintf(buf, PAGE_SIZE, "%u 0x%x 0x%x\n",
- 				saved_reg_type, saved_reg_offset,
+ 	if (mt76_is_sdio(dev))
+-		if (test_bit(MT76_RESET, &dev->phy.state) && atomic_read(&dev->bus_hung))
++		if (test_bit(MT76_RESET, &dev->phy.state) && atomic_read(&dev->bus_hung)) {
++			dev_kfree_skb(skb);
+ 			return -EIO;
++		}
+ 
+ 	if (ret_skb)
+ 		*ret_skb = NULL;
 -- 
-2.51.0
-
-
+2.18.0
 
