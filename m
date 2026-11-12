@@ -1,84 +1,84 @@
-Authentication-Results: smtp.subspace.kernel.org; arc=none smtp.remote-ip=209.85.221.43
+Authentication-Results: smtp.subspace.kernel.org; arc=none smtp.remote-ip=209.85.128.50
 ARC-Seal: i=1; d=subspace.kernel.org; s=arc20261015; a=rsa-sha256; cv=none;
-	t=1794506205;
-	b=dmhohHqeOq5lF818xJQaMcXvBbjEEUT04Us3Axx7GP4sSMv5UhPdyIIIoVCMUKxbdNMw
-	 cb8AL01/i2wa/GuHZIfzK8AswtwVe4BsS4UeawMGpNiKimedC+sHiZVVHUDEtql0iFV4G
-	 6Pz/NJ3FCVFoMYZP6PWYOwBZbNAVeMSYhBLs/u7weJuKqubJehU9Autt8zyDthcrjXGxB
-	 Uov9FvhnOdLPSTg++/oHTa305O9Dajw2eNfdLMx5tOs2Z2II2S4n7BEqOCDJlUQXQrH6K
-	 r49KoY9tfMHJ98WnYcdXp67CfqKSLQyrpJldTF53UxJlVBImMmWQzrveFETZXjLQiXg==
+	t=1794506206;
+	b=tgGuhuPP1/gHFJJ/mqKA3l9B7kn1PUBz5SHwF/VY7WvMEOvIRtOh4pTPC+ustbgQ1t4h
+	 muRTV63sxbj6YNgcTON9pxvMlhVeCVoleFyzXgJOPAdvINx6pgyeZHUW8kro+6EpxbBs6
+	 YyuCk6eY1RRCcWu3EViAq6lv4z5eQJhv3whECap5BcjRkVACuzP4jPVnH3Mp8n5BxZcr2
+	 cprJHG1V7XnMJsCJdIycv1momw8Ln86K6GfyC+AvUQO1LOntSO3eJNwmDZuhCoQnQ+67I
+	 5az993df3kek4rc5sImJBilnlCntUaINXXHPpiCcgUTMfbiJdtLbWYa74jx+dQ94jjg==
 ARC-Message-Signature: i=1; d=subspace.kernel.org; s=arc20261015;
-	a=rsa-sha256; c=relaxed/relaxed; t=1794506205;
+	a=rsa-sha256; c=relaxed/relaxed; t=1794506206;
 	h=DMARC-Filter:Received:DKIM-Signature:X-Google-DKIM-Signature:
 	 X-Gm-Message-State:X-Gm-Gg:X-Received:Received:From:To:Cc:Subject:
 	 Date:Message-ID:X-Mailer:In-Reply-To:References:MIME-Version:
 	 Content-Transfer-Encoding;
-	bh=bVukesRVZXuCwNfxWw9b9XoFHDuzUlJG4NqmqHbHpsU=;
-	b=M9nsQ0a7LxZ1D/RDuwFQJXf9WI95kFaQvvLL/dKbA+ifnqDmRwTFRiO1FT5jkeNXtglR
-	 GUh9n+nw1UbvP4DyzrwKvJK/pWUolMHEE04iQHvVYvYfWDZkfHFzZAIRo3Mcwx9cnZAeF
-	 REr4vIzgvGYUBMV8cRkqJHNaUy+YhcdImFza88y3mT9vrSRJhhp2SAv6f+Qi3Nfdz4vHq
-	 SnclwsNGlzBFOOavwTW6OtJLNJGIvzzCX3xilsrYR4v1TyMFU1AojfMNGp3DINcjDkTC5
-	 0rpF2/Ok6dh9uUy+GR562y6vaR1Y4+fIdALQSr6kkLNUzCrRRiJhYYlCd8EoyhLitgg==
+	bh=HVf+U3hxUblRExsvvhERdHcHREEMt0I1/4RW7w8TQjA=;
+	b=AnZFiJwR83bKydZ+hYbAZmwlBwEOC/duiqNErzNKYnLqz9idqvNoZYQjnZK7QLvaJyf/
+	 IKqhwwg3Vi8BkBsRMFxgFhIIaUHxGSfE3pGsaS77ciWUPjOPjtu0fjq0y2JL/rGoQk04P
+	 6rwAy9+hO1buGFRB1++nSn/OC+DLN4DO8UI4qROSwpdQKVzxbw0YUrTpa5skPsOFFqlYA
+	 OEYZpdLMd+yQ+glpUBir/ZVR0l4eYr9H2DqYq0VoCyUsRUH2ENM/sd3pW6fzWEbhKPTms
+	 4ZqfGNW6AfrVB84Lj9EAowz6crg+LZxtByM0GgMc3YX5PUGLg6wqlNTUv2EZKQOeeWg==
 ARC-Authentication-Results: i=1; smtp.subspace.kernel.org; 
 	dmarc=pass header.from=gmail.com;
 	spf=pass smtp.mailfrom=gmail.com;
-	dkim=pass header.d=gmail.com header.i=@gmail.com header.a=rsa-sha256 header.s=20260707 header.b=DNhznkaJ;
-	arc=none smtp.remote-ip=209.85.221.43
-Received: from mail-wr1-f43.google.com (mail-wr1-f43.google.com [209.85.221.43])
+	dkim=pass header.d=gmail.com header.i=@gmail.com header.a=rsa-sha256 header.s=20260707 header.b=bs0tI4Lc;
+	arc=none smtp.remote-ip=209.85.128.50
+Received: from mail-wm1-f50.google.com (mail-wm1-f50.google.com [209.85.128.50])
 	(using TLSv1.3 with cipher TLS_AES_128_GCM_SHA256 (128/128 bits)
 	 key-exchange X25519 server-signature ECDSA (prime256v1) server-digest SHA256)
 	(No client certificate requested)
-	by smtp.subspace.kernel.org (Postfix) with ESMTPS id 1FC59606A88C
-	for <linux-wireless@vger.kernel.org>; Thu, 12 Nov 2026 17:56:44 +0000 (UTC)
-DMARC-Filter: OpenDMARC Filter v1.4.2 smtp.subspace.kernel.org 1FC59606A88C
+	by smtp.subspace.kernel.org (Postfix) with ESMTPS id 06F8E60A2623
+	for <linux-wireless@vger.kernel.org>; Thu, 12 Nov 2026 17:56:45 +0000 (UTC)
+DMARC-Filter: OpenDMARC Filter v1.4.2 smtp.subspace.kernel.org 06F8E60A2623
 Authentication-Results: smtp.subspace.kernel.org; dmarc=pass (p=none dis=none) header.from=gmail.com
 Authentication-Results: smtp.subspace.kernel.org; spf=pass smtp.mailfrom=gmail.com
 Authentication-Results: smtp.subspace.kernel.org;
-	dkim=pass (2048-bit key) header.d=gmail.com header.i=@gmail.com header.a=rsa-sha256 header.s=20260707 header.b=DNhznkaJ
-Received: by mail-wr1-f43.google.com with SMTP id ffacd0b85a97d-48dfc0421d9so33289f8f.1
-        for <linux-wireless@vger.kernel.org>; Thu, 12 Nov 2026 09:56:44 -0800 (PST)
+	dkim=pass (2048-bit key) header.d=gmail.com header.i=@gmail.com header.a=rsa-sha256 header.s=20260707 header.b=bs0tI4Lc
+Received: by mail-wm1-f50.google.com with SMTP id 5b1f17b1804b1-4a35ac4475dso495065e9.2
+        for <linux-wireless@vger.kernel.org>; Thu, 12 Nov 2026 09:56:45 -0800 (PST)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=gmail.com; s=20260707; t=1794506203; x=1795111003; darn=vger.kernel.org;
+        d=gmail.com; s=20260707; t=1794506204; x=1795111004; darn=vger.kernel.org;
         h=content-transfer-encoding:mime-version:references:in-reply-to
          :message-id:date:subject:cc:to:from:from:to:cc:subject:date
          :message-id:reply-to:content-type;
-        bh=bVukesRVZXuCwNfxWw9b9XoFHDuzUlJG4NqmqHbHpsU=;
-        b=DNhznkaJ7zNMnvcw6AjzPAyKEmfn/mVFmumdzGHftPMpKwHVvLxpVCKemf74ZwriZA
-         rE8U6eTNtP7H+eVD3LrBRY7+v78iRu+kQImaWQLDUZNnV2kdiL6FNb7J8eak2szh9BLH
-         iTsdq00Ndt1GsmGIA8K2QcTz/QUj8mrrS8koLwMpROTv1rCMCctahmy13WERe8AgV59Z
-         98xN+vGkU2sDL6YcjxRvmK/v4z7enJXgcyIREhdndSAPb5/McZdSquMKFHkD7SVwsSUu
-         Ugg8UIzoNGGaWGB2mcgrBlRV7Y3kdSPUCwhPbT1weyclnFidqgVHHMSv+81V6Zy9Vo+p
-         nKmg==
+        bh=HVf+U3hxUblRExsvvhERdHcHREEMt0I1/4RW7w8TQjA=;
+        b=bs0tI4Lchd2DkyHnjMoqg78rp6BUgfsi4omjEdhf/U/mHtF5+E/C8MwaVag1EmrtHq
+         S5nThcoqLvtH4NUxqFR+Ysxj3tzK2CEwzRQGp++qiyu7//siMmRDhnWqI5r+Otdba8Ur
+         FPS1WMT1l0ZeSkXmvQlOl3529LnOQAkmD7jcZQttN9ZT3v2rF9MiTbcnXPXIbW+fQw0L
+         7jXhKjrB1WmOm0AIoLeW7BfyjYK79Oqr5qG2Bu7A4OAgmD9MJa3D/vJ+O+o8ZZ4xKHKr
+         CH2XZqTEpUnJcsDKySi9+UdKkAgiHI2tjMgkXnww0ynTsu100jPhKpmIXsyD41tI88dA
+         kWXA==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=1e100.net; s=20260707; t=1794506203; x=1795111003;
+        d=1e100.net; s=20260707; t=1794506204; x=1795111004;
         h=content-transfer-encoding:mime-version:references:in-reply-to
          :message-id:date:subject:cc:to:from:x-gm-gg:x-gm-message-state:from
          :to:cc:subject:date:message-id:reply-to:content-type;
-        bh=bVukesRVZXuCwNfxWw9b9XoFHDuzUlJG4NqmqHbHpsU=;
-        b=bcX4KX7LHPpwm/drudSbnKbRmU5BDWkgCFBRjYf2YeFsSSgEmRNFJUs9dGPBPt3PH/
-         P8ME24UMoPWCSJ77R6b4jerCkbywb90qY2xB67RkLp4QHyUvAhlJGF9dx628MQIuCemQ
-         QuprdXIFspOyovh1qHNdeSewVXU2ZdULzSKo/5cfHD7vLSnsGxPq6gKcGC7IRjDJGWVT
-         ADlVMkDmTN/CZxZ3DJw2jKCpAEluCDVffZfDFW2qaKnhgvd82r2ZfgIZv6S2zRPXhuTP
-         0SarCKy9em3eXOnfltRWkQCaKKoSHjkmU2Q1MK0MiR+pKI01E2vLmauLruz86gJ+l2kN
-         tAeA==
-X-Gm-Message-State: APuU4Z/Dbr4PR07UBOQmXunUbkOUUchMP6e3x4a+OfVJ7eRis9hCsEFo
-	XfqPp7J0PkJNr19xEx1XyE69bMlyHdZ6U/k6nz0G0dC3/nYAL+Fs1E76gIr25e8r8Sc=
-X-Gm-Gg: AYBFou1jQY1T+Z/cc0KBFNkrlh14UZD4SvJxOuI8afNADxE1NEdDIDghM2l0sPJ8FE9
-	BLqVbnzSHeteDvRQ+D73atgsV0CUPk5AwPHJzIOokLbd/EMb0+MIaQXNzCfyqm0o8lP/x3sTZJS
-	CC3PlDYlwrsjrO8jIiqi4TDmBfmL9ISymHbdGSX6ryCVQAU75kpfvrhZfiL8L5IJUxvHx0p4x3G
-	CUxeXfXAvLv34Gvj1ES/SlNEsM3I1dMm2VDp9CmsWPmTvveQejyXgZQWAAae7V4Hn2Cqe5vd2Oj
-	xxUVaViJQa8ZBu+n9dOIgM6EIPtXh9n8oWENPG2QDoVM5AAKV+8d0u5zr0zUwYLs7utdcCU/RMr
-	Kls8yFv9TWGKJ6r2nKF8TLEW3ssaZGGDaVRoVInNNVxQ05B3DzXETLqLpWkBnSbInadJMt+VZKs
-	NXRMafPf+HjHPdc9jd+lAFV1TfF2llQzv4vC3ui/nhDSRwjnRlY0ebIEeq/vX2raffMukyUWCD4
-	HpOTHkx7QR5IlUHUG6qtrCL10zmhzTl9QrH4dEKBwqXOb0V91xCAIytsAagbYC7CeJqf4QLMbw4
-	3Fo4A//OUVIc9OAUKfXsOj0dIVSfZ7UqRAj8DQp56mPgxn6OFXlfTmWmG6jMpc+LQvQX3IXtSyK
-	meQb3OxsN2Ph21WL9z723ujF2mc+3zuSj7BojG0j0A9Hxzb0DUqt0Oqcq3PdBEFZm56pphNFhby
-	mC+lO60qwqysNdz3kkHPFMXPze6YXj0e9Ei2aXtiVYzxY/kJMe90VcU+0PDSBJx9I=
-X-Received: by 2002:a05:6000:2411:b0:48d:df08:307c with SMTP id ffacd0b85a97d-49c726da6a6mr271994f8f.44.1794506203353;
-        Thu, 12 Nov 2026 09:56:43 -0800 (PST)
+        bh=HVf+U3hxUblRExsvvhERdHcHREEMt0I1/4RW7w8TQjA=;
+        b=b+uJGGWvzP4exMSJwmA0b3OZ2kMmXNqmIWqWajfdYguTU94t3uUFzWyWPgG6FJ3z5/
+         tb/RblJ2eP6uumXFlKIUmFu7skxbHdpGw3/K2+mbo01UALkY9tgDJMhCfw1l7u5ayF9P
+         uEsjTalEsAnA0MebL5aFTsswkimYEFogQJPNWZ8muNssofHMuhVde4g8NmYOGhTwudNy
+         nhHDhDtP0i61ZuXrVCVVbSs6mnwQu31zqYZ7gV9fWIsFPqMehSfCuIftB29errCCfQ64
+         8AvZv7a+gfGybSyxlgVQ8dNlzhewb8CbHRXWyJtTRv8c7BouM0TemlPFwE9mnKm8voMq
+         zZpw==
+X-Gm-Message-State: APuU4Z9ov2nRKmbw9EWXA6xvxYAYTyL5CugJSR4ZdYRBl45ODwCPQSYW
+	GyBO9o41Rkm6C6GTmqRlmKO/LyFQg5Y2QJuRyQbybCrpUxrouZqEYlAmKZVqRb1YDQE=
+X-Gm-Gg: AYBFou0dJocFW/5NkXWC5LXQ1gl9R7tOR5nAyPwFNLjP5eZhCVw0ELs/1Pb+Qgwrsqg
+	pu0pVHp/qoYeDfxMJIgyUeJCsOTl7/PZ5XjM9Skl1nabzQfXD4CadnE8yUB7JlUVmb75LM6q7c0
+	piQ+aQ6NRJFD6UzOkCYILqSIFTCljmgBA/tZlsiHSOBqTQBNdYe7f9m3xbO9dMl/uiI4UNoFvHx
+	EOozd5zGI6vYL1agd3tK/l6dlmoXluBCbdmqXnQk+B3GlDQmWAsV3RvYmIhhnv212ojSn6JoYAz
+	urJtPqAREQ67a+gCZg3e8atmByShFYNyqAZ5fbKDRRXoLgoMqYIGWf6eNixQ+8Ub8g8RJWbjVbK
+	GgGmI0J3+kRrimlJmgAHHSsMYPsFR77gkHeEQXWfVox+gYiP2YXeU/eKxK2Z02WHlTsH5LEUh6S
+	OBrZZ5MY2sY5h/hhUjYcJiE6LiJagqe2yuMwFz/nZY1YoUM42Gq+dtwp8CP9f6V+xPryoplJd86
+	4F5AV2mOkn3Eiv+WvdNYNlQqTtHeEhjYfomdVyBIGxlRRXK++L/4sv9BtVFjH0gdsANtvLkUSfw
+	L+7HPi03mQxOFCu1Bo98e10E2FdG71omWyEIQ+W0aCpgcqllIexxAhN5WyOD7cEbrrc0Berrfd9
+	cOjE2LdJfcFxszkvhywGCffKL5C2sNksu91JCUZrhJwpK+kpvt85wKfAkI6Q62iJmwL49wtydZb
+	kAp7Axux48lkAb7oj+bCXeo0YIl8ZJKNQPipsO9OTLdg==
+X-Received: by 2002:a5d:5f51:0:b0:495:5c83:51bc with SMTP id ffacd0b85a97d-49c6fc9e6efmr339741f8f.5.1794506204392;
+        Thu, 12 Nov 2026 09:56:44 -0800 (PST)
 Received: from zitrone.tail45b538.ts.net ([2a02:810d:a1:6000:900:be5c:7a9c:c176])
-        by smtp.gmail.com with ESMTPSA id ffacd0b85a97d-49c5f1c193fsm547430f8f.13.2026.11.12.09.56.42
+        by smtp.gmail.com with ESMTPSA id ffacd0b85a97d-49c5f1c193fsm547430f8f.13.2026.11.12.09.56.43
         (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
-        Thu, 12 Nov 2026 09:56:42 -0800 (PST)
+        Thu, 12 Nov 2026 09:56:43 -0800 (PST)
 From: Andreas Wendleder <gonsolo@gmail.com>
 To: linux-wireless@vger.kernel.org
 Cc: Johannes Berg <johannes@sipsolutions.net>,
@@ -90,9 +90,9 @@ Cc: Johannes Berg <johannes@sipsolutions.net>,
 	jpeisach@ubuntu.com,
 	rosenp@gmail.com,
 	linux-kernel@vger.kernel.org
-Subject: [PATCH RFC wireless-next 1/4] wifi: b43: 11ac chanspec for the AC microcode
-Date: Thu, 12 Nov 2026 18:56:37 +0100
-Message-ID: <20261112175640.40603-2-gonsolo@gmail.com>
+Subject: [PATCH RFC wireless-next 2/4] wifi: b43: TX descriptor and TX status for the AC microcode
+Date: Thu, 12 Nov 2026 18:56:38 +0100
+Message-ID: <20261112175640.40603-3-gonsolo@gmail.com>
 X-Mailer: git-send-email 2.54.0
 In-Reply-To: <20261112175640.40603-1-gonsolo@gmail.com>
 References: <20261112175640.40603-1-gonsolo@gmail.com>
@@ -107,65 +107,424 @@ Precedence: list
 MIME-Version: 1.0
 Content-Transfer-Encoding: 8bit
 
-The AC microcode keeps an 11ac chanspec of the current channel in SHM
-(where older microcode keeps the channel cookie) and takes one in every
-TX descriptor and puts one in every RX header: the channel, 0x1000 for
-20 MHz and 0xc000 on 5 GHz.
+The AC microcode takes a 4 byte passthrough prefix and a 124 byte
+descriptor with four 20 byte rate entries. Add the descriptor builder:
+legacy CCK and OFDM rates, HT rates with the PLCP laid out as brcmsmac
+does, VHT rate blocks (frame type 3, with the width and the subband of the
+primary channel in the first two words and the VHT-SIG-A fields), and the
+cache info that session frames carry (the microcode builds the A-MPDU
+from them). The cache info must not carry a cipher: mac80211 has encrypted
+the frame already.
 
-Add b43_ac_chanspec() and use it for the channel cookie in
-b43_switch_channel(). The TX and RX header patches that follow use it too.
+The TX status comes as two 4 word records. The attempt count is the low
+byte of word 2, not the sum of its bytes, and a record with more than one
+MPDU carries a block ack bitmap for the consecutive cookies; the cookies
+are advanced with the new b43_dma_cookie_advance().
+
+Only microcode revision 832 has been tested.
+
+Co-developed-by: Alessio Ferri <alessio.ferri@mythread.it>
+Signed-off-by: Alessio Ferri <alessio.ferri@mythread.it>
 Signed-off-by: Andreas Wendleder <gonsolo@gmail.com>
 ---
- drivers/net/wireless/broadcom/b43/phy_common.c | 13 +++++++++++++
- drivers/net/wireless/broadcom/b43/phy_common.h |  7 +++++++
- 2 files changed, 20 insertions(+)
+ drivers/net/wireless/broadcom/b43/dma.c  |  13 ++
+ drivers/net/wireless/broadcom/b43/dma.h  |   1 +
+ drivers/net/wireless/broadcom/b43/main.c |  76 ++++++++
+ drivers/net/wireless/broadcom/b43/xmit.c | 214 +++++++++++++++++++++++
+ drivers/net/wireless/broadcom/b43/xmit.h |  11 ++
+ 5 files changed, 315 insertions(+)
 
-diff --git a/drivers/net/wireless/broadcom/b43/phy_common.c b/drivers/net/wireless/broadcom/b43/phy_common.c
-index 285490f..cfc14c1 100644
---- a/drivers/net/wireless/broadcom/b43/phy_common.c
-+++ b/drivers/net/wireless/broadcom/b43/phy_common.c
-@@ -413,6 +413,17 @@ void b43_phy_take_out_of_reset(struct b43_wldev *dev)
+diff --git a/drivers/net/wireless/broadcom/b43/dma.c b/drivers/net/wireless/broadcom/b43/dma.c
+index 5f968b0..404f75f 100644
+--- a/drivers/net/wireless/broadcom/b43/dma.c
++++ b/drivers/net/wireless/broadcom/b43/dma.c
+@@ -1444,6 +1444,19 @@ out:
+ 	return err;
+ }
+ 
++/* The cookie of the frame @n frames after @cookie on the same ring. */
++u16 b43_dma_cookie_advance(struct b43_wldev *dev, u16 cookie, unsigned int n)
++{
++	struct b43_dmaring *ring;
++	int slot;
++
++	ring = parse_cookie(dev, cookie, &slot);
++	if (!ring)
++		return cookie;
++	return generate_cookie(ring, (slot + n * TX_SLOTS_PER_FRAME) %
++					     ring->nr_slots);
++}
++
+ void b43_dma_handle_txstatus(struct b43_wldev *dev,
+ 			     const struct b43_txstatus *status)
+ {
+diff --git a/drivers/net/wireless/broadcom/b43/dma.h b/drivers/net/wireless/broadcom/b43/dma.h
+index 14de4cb..5c84b1f 100644
+--- a/drivers/net/wireless/broadcom/b43/dma.h
++++ b/drivers/net/wireless/broadcom/b43/dma.h
+@@ -298,6 +298,7 @@ void b43_dma_tx_resume(struct b43_wldev *dev);
+ 
+ int b43_dma_tx(struct b43_wldev *dev,
+ 	       struct sk_buff *skb);
++u16 b43_dma_cookie_advance(struct b43_wldev *dev, u16 cookie, unsigned int n);
+ void b43_dma_handle_txstatus(struct b43_wldev *dev,
+ 			     const struct b43_txstatus *status);
+ 
+diff --git a/drivers/net/wireless/broadcom/b43/main.c b/drivers/net/wireless/broadcom/b43/main.c
+index da7e420..5830acb 100644
+--- a/drivers/net/wireless/broadcom/b43/main.c
++++ b/drivers/net/wireless/broadcom/b43/main.c
+@@ -1414,6 +1414,74 @@ static void handle_irq_transmit_status(struct b43_wldev *dev)
+ 			break;
+ 		v1 = b43_read32(dev, B43_MMIO_XMITSTAT_1);
+ 
++		if (b43_ucode_is_ac(dev)) {
++			/* rev 40+ ucode: two 4-word records per frame */
++			u32 v2 = b43_read32(dev, B43_MMIO_XMITSTAT_0 + 8);
++			u32 v3 = b43_read32(dev, B43_MMIO_XMITSTAT_0 + 12);
++			unsigned int n;
++
++			/*
++			 * second package: words 1 and 2 are the block ack
++			 * bitmap
++			 */
++			u32 w0 = b43_read32(dev, B43_MMIO_XMITSTAT_0);
++			u32 w1 = b43_read32(dev, B43_MMIO_XMITSTAT_1);
++			u32 w2 = b43_read32(dev, B43_MMIO_XMITSTAT_0 + 8);
++			u32 w3 = b43_read32(dev, B43_MMIO_XMITSTAT_0 + 12);
++			unsigned int mpdus = (v0 >> 8) & 0x7f, i;
++			u64 bitmap = ((u64)w2 << 32) | w1;
++
++			memset(&stat, 0, sizeof(stat));
++			stat.cookie = v0 >> 16;
++			stat.seq = v1 & 0xffff;
++			stat.phy_stat = (v1 >> 16) & 0xff;
++			stat.intermediate = !!(v0 & 0x0004);
++			stat.pm_indicated = !!(v0 & 0x0008);
++			stat.supp_reason = (v0 & 0x00f0) >> 4;
++			stat.acked = !!(v0 & 0x8000);
++			/*
++			 * : the attempt count is the LOW BYTE of word 2 only.
++			 * Bits 16-23 hold a constant 1 on every acknowledged
++			 * frame (0 on suppressed ones), not a second attempt
++			 * counter: summing it made every frame look like it
++			 * needed a retry, so minstrel saw ~50 % failures at
++			 * every rate and TX stayed at 1-6 Mbit/s (1.2 "retries"
++			 * per frame regardless of rate or TX power).
++			 */
++			n = v2 & 0xff;
++			stat.frame_count = min(n, 15u);
++			stat.fb_count = min((v2 >> 16) & 0xff, 15u);
++			b43dbg(dev->wl,
++			       "AC txstatus %08x %08x %08x %08x / %08x %08x %08x %08x\n",
++			       v0, v1, v2, v3, w0, w1, w2, w3);
++			if (mpdus > 1) {
++				/*
++				 * A-MPDU: one status for @mpdus frames with
++				 * consecutive cookies
++				 */
++				u16 cookie = stat.cookie;
++
++				/*
++				 * the attempt count covers the whole aggregate
++				 */
++				stat.frame_count =
++					min(DIV_ROUND_UP(n, mpdus), 15u);
++				stat.fb_count =
++					min(DIV_ROUND_UP((v2 >> 16) & 0xff,
++							 mpdus), 15u);
++				for (i = 0; i < mpdus; i++) {
++					stat.cookie = cookie;
++					stat.acked = !!(bitmap & (1ULL << i));
++					b43_handle_txstatus(dev, &stat);
++					cookie = b43_dma_cookie_advance(
++						dev, cookie, 1);
++				}
++				continue;
++			}
++			b43_handle_txstatus(dev, &stat);
++			continue;
++		}
++
+ 		stat.cookie = (v0 >> 16);
+ 		stat.seq = (v1 & 0x0000FFFF);
+ 		stat.phy_stat = ((v1 & 0x00FF0000) >> 16);
+@@ -1444,6 +1512,14 @@ static void drain_txstatus_queue(struct b43_wldev *dev)
+ 		if (!(dummy & 0x00000001))
+ 			break;
+ 		dummy = b43_read32(dev, B43_MMIO_XMITSTAT_1);
++		if (b43_ucode_is_ac(dev)) {
++			int i;
++
++			b43_read32(dev, B43_MMIO_XMITSTAT_0 + 8);
++			b43_read32(dev, B43_MMIO_XMITSTAT_0 + 12);
++			for (i = 0; i < 4; i++)
++				b43_read32(dev, B43_MMIO_XMITSTAT_0 + 4 * i);
++		}
  	}
  }
  
+diff --git a/drivers/net/wireless/broadcom/b43/xmit.c b/drivers/net/wireless/broadcom/b43/xmit.c
+index f0b0825..cf9e7a5 100644
+--- a/drivers/net/wireless/broadcom/b43/xmit.c
++++ b/drivers/net/wireless/broadcom/b43/xmit.c
+@@ -231,6 +231,216 @@ static u8 b43_calc_fallback_rate(u8 bitrate, int gmode)
+ 	return 0;
+ }
+ 
 +/*
-+ * The 11ac chanspec of a primary channel as the AC microcode takes it in
-+ * SHM and in the TX and RX headers: channel, 0x1000 for 20 MHz, 0xc000 on
-+ * 5 GHz.
++ * One VHT rate block (frame type 3), as the stock driver lays it out and
++ * Alessio Ferri's driver builds it: the width in word 0 bits 15:14, the
++ * subband of the primary within that width in word 1, MCS and NSS - 1 in
++ * word 2, VHT-SIG-A1/A2 in the PLCP bytes (group ID 63, both reserved bits
++ * set), FBW 0x0300 and the rate in 500 kbit/s.
 + */
-+u16 b43_ac_chanspec(struct b43_wldev *dev, unsigned int channel)
++static void b43_txhdr_ac_vht_block(u8 *ri, const struct ieee80211_tx_rate *t,
++				   u16 chanspec)
 +{
-+	return channel | 0x1000 |
-+	       (b43_current_band(dev->wl) == NL80211_BAND_5GHZ ? 0xc000 : 0);
++	static const u8 rate_bw[] = {
++		RATE_INFO_BW_20, RATE_INFO_BW_40, RATE_INFO_BW_80,
++	};
++	u8 mcs = ieee80211_rate_get_vht_mcs(t);
++	u8 nss = ieee80211_rate_get_vht_nss(t);
++	unsigned int bw = 0;
++	struct rate_info rinfo = { .flags = RATE_INFO_FLAGS_VHT_MCS };
++	u16 sb = 0;
++	u32 a1, a2;
++
++	/* wider than 20 MHz only inside the 80 MHz channel */
++	if ((chanspec & 0x3800) == 0x2000) {
++		if (t->flags & IEEE80211_TX_RC_80_MHZ_WIDTH)
++			bw = 2;
++		else if (t->flags & IEEE80211_TX_RC_40_MHZ_WIDTH)
++			bw = 1;
++		sb = ((chanspec >> 8) & 0x7) >> bw;
++	}
++	rinfo.mcs = mcs;
++	rinfo.nss = nss;
++	rinfo.bw = rate_bw[bw];
++
++	put_unaligned_le16(3 | 0x0004 |
++			   ((nss > 1 ? 3 : 1) << 6) |
++			   (bw << 14), ri + 0x00);
++	put_unaligned_le16(sb, ri + 0x02);
++	put_unaligned_le16((mcs & 0xf) | ((nss - 1) << 4), ri + 0x04);
++	a1 = bw | BIT(2) | (63 << 4) | ((nss - 1) << 10) | BIT(23);
++	a2 = (mcs << 4) | BIT(9);
++	ri[0x06] = a1;
++	ri[0x07] = a1 >> 8;
++	ri[0x08] = a1 >> 16;
++	ri[0x09] = a2;
++	ri[0x0a] = a2 >> 8;
++	ri[0x0b] = a2 >> 16;
++	put_unaligned_le16(0x0300, ri + 0x0c);
++	put_unaligned_le16(cfg80211_calculate_bitrate(&rinfo) / 5, ri + 0x0e);
 +}
 +
- int b43_switch_channel(struct b43_wldev *dev, unsigned int new_channel)
- {
- 	struct b43_phy *phy = &(dev->phy);
-@@ -428,6 +439,8 @@ int b43_switch_channel(struct b43_wldev *dev, unsigned int new_channel)
- 	/* FIXME: set 40Mhz flag if required */
- 	if (0)
- 		channelcookie |= B43_SHM_SH_CHAN_40MHZ;
-+	if (b43_ucode_is_ac(dev))
-+		channelcookie = b43_ac_chanspec(dev, new_channel);
- 	savedcookie = b43_shm_read16(dev, B43_SHM_SHARED, B43_SHM_SH_CHAN);
- 	b43_shm_write16(dev, B43_SHM_SHARED, B43_SHM_SH_CHAN, channelcookie);
++static int b43_generate_txhdr_ac(struct b43_wldev *dev, u8 *h,
++				 struct sk_buff *skb,
++				 struct ieee80211_tx_info *info, u16 cookie)
++{
++	static const u8 cck[] = { B43_CCK_RATE_1MB, B43_CCK_RATE_2MB,
++				  B43_CCK_RATE_5MB, B43_CCK_RATE_11MB };
++	static const u8 ofdm[] = { B43_OFDM_RATE_6MB, B43_OFDM_RATE_9MB,
++				   B43_OFDM_RATE_12MB, B43_OFDM_RATE_18MB,
++				   B43_OFDM_RATE_24MB, B43_OFDM_RATE_36MB,
++				   B43_OFDM_RATE_48MB, B43_OFDM_RATE_54MB };
++	const struct ieee80211_hdr *wlhdr = (const void *)skb->data;
++	struct ieee80211_rate *txrate =
++		ieee80211_get_tx_rate(dev->wl->hw, info);
++	u8 rate = txrate ? txrate->hw_value : B43_CCK_RATE_1MB;
++	bool is_ofdm = b43_is_ofdm_rate(rate);
++	unsigned int len = skb->len + FCS_LEN;
++	u8 *ri = h + B43_TXH_AC_RATE(0);
++	u16 mac_lo = 0, phy0, idx = 0, chanspec, subband;
++	int ht_mcs = -1;
++	/* Only HT rates go out as session frames: a legacy probe frame with the
++	 * aggregate header fails at every attempt.
++	 */
++	bool vht = info->control.rates[0].flags & IEEE80211_TX_RC_VHT_MCS;
++	bool agg = (info->flags & IEEE80211_TX_CTL_AMPDU) &&
++		   (info->control.rates[0].flags &
++		    (IEEE80211_TX_RC_MCS | IEEE80211_TX_RC_VHT_MCS));
++	const u8 *tbl = is_ofdm ? ofdm : cck;
++	unsigned int n = is_ofdm ? ARRAY_SIZE(ofdm) : ARRAY_SIZE(cck);
++
++	/* Hardware crypto needs the AC key fields; load with nohwcrypt=1. */
++	if (info->control.hw_key)
++		return -EOPNOTSUPP;
++
++	memset(h, 0, B43_TXH_AC_LEN);
++	h[0] = 0x02;	/* passthrough prefix, as wl sends it */
++	h[2] = 0x02;
++	h += B43_TXH_AC_PREFIX;
++	ri = h + B43_TXH_AC_RATE(0);
++	while (idx < n && tbl[idx] != rate)
++		idx++;
++	if (idx == n)
++		idx = 0;
++
++	if (!is_multicast_ether_addr(wlhdr->addr1) &&
++	    !(info->flags & IEEE80211_TX_CTL_NO_ACK))
++		mac_lo |= 0x0080;	/* expect immediate ACK */
++	if (!(le16_to_cpu(wlhdr->seq_ctrl) & IEEE80211_SCTL_FRAG))
++		mac_lo |= 0x4000;	/* start of MSDU */
++	if (ieee80211_is_beacon(wlhdr->frame_control))
++		mac_lo |= 0x0200;	/* ignore PMQ */
++
++	chanspec = b43_ac_chanspec(dev, dev->phy.channel);
++	/* A 20 MHz frame inside an 80 MHz channel names its subband (word 1) */
++	subband = (chanspec & 0x3800) == 0x2000 ? (chanspec >> 8) & 0x7 : 0;
++
++	if (agg) {
++		/* MPDU of a block ack session, as the stock driver posts it
++		 * (rxtx-1s-ht20-40-80.zip): MAC control 0x45c0, no fixed rate,
++		 * the sequence number, and the cache info at +0x64: no cipher
++		 * (we encrypt in software; the stock 50 04 makes the microcode
++		 * encrypt again), MPDUs per aggregate at the primary and the
++		 * fallback rate, duration 5414 us, window 63, max length 0x14.
++		 * Without the cache info the AP deauthenticates us.
++		 */
++		static const u8 cache[8] = { 0x00, 0x00, 0x04, 0x04,
++					     0x26, 0x15, 0x3f, 0x14 };
++
++		mac_lo = 0x45c0;
++		memcpy(h + 0x64, cache, sizeof(cache));
++	}
++	put_unaligned_le16(mac_lo, h + 0x02);
++	put_unaligned_le16(agg ? 0 : 0x0002, h + 0x04);	/* fixed rate */
++	put_unaligned_le16(chanspec, h + 0x06);
++	h[0x08] = ieee80211_hdrlen(wlhdr->frame_control);
++	put_unaligned_le16(len, h + 0x0a);
++	put_unaligned_le16(cookie, h + 0x0c);
++	if (agg)
++		put_unaligned_le16(le16_to_cpu(wlhdr->seq_ctrl), h + 0x0e);
++
++	/* Rate entry 0: frame type, always-set bit 2, TX core 0 mask. */
++	phy0 = (is_ofdm ? 1 : 0) | 0x0004 | (1 << 6);
++	if (!is_ofdm && rate != B43_CCK_RATE_1MB &&
++	    (info->control.rates[0].flags & IEEE80211_TX_RC_USE_SHORT_PREAMBLE))
++		phy0 |= 0x0010;
++	if (info->control.rates[0].flags & IEEE80211_TX_RC_MCS) {
++		ht_mcs = info->control.rates[0].idx;
++	} else if (vht && !agg) {
++		/*
++		 * A VHT frame always goes out as an A-MPDU; outside a session
++		 * send the HT20 rate of the same stream count instead.
++		 */
++		const struct ieee80211_tx_rate *r = &info->control.rates[0];
++
++		ht_mcs = min_t(int, ieee80211_rate_get_vht_mcs(r), 7) +
++			 8 * (ieee80211_rate_get_vht_nss(r) - 1);
++	}
++
++	if (vht && agg) {
++		b43_txhdr_ac_vht_block(ri, &info->control.rates[0], chanspec);
++	} else if (ht_mcs >= 0 && ht_mcs <= 15) {
++		/*
++		 * HT20: frame type 2, PLCP as brcmsmac lays it out, rate
++		 * index = MCS
++		 */
++		static const u8 ht20_500k[8] = { 13, 26,  39,  52,
++						 78, 104, 117, 130 };
++		u8 mcs = ht_mcs;
++		u8 *plcp = ri + 0x06;
++
++		phy0 = 2 | 0x0004 | ((mcs > 7 ? 3 : 1) << 6);
++		put_unaligned_le16(phy0, ri + 0x00);
++		put_unaligned_le16(subband, ri + 0x02);
++		put_unaligned_le16(mcs, ri + 0x04);
++		plcp[0] = mcs;
++		plcp[1] = len & 0xff;
++		plcp[2] = len >> 8;
++		/* smoothing, not sounding, reserved (brcmsmac) */
++		plcp[3] = 0x07;
++		plcp[4] = 0;
++		plcp[5] = 0;
++		put_unaligned_le16(ht20_500k[mcs & 7] * (mcs > 7 ? 2 : 1),
++				   ri + 0x0e);
++	} else {
++		put_unaligned_le16(phy0, ri + 0x00);
++		put_unaligned_le16(subband, ri + 0x02);
++		put_unaligned_le16(idx, ri + 0x04);
++		b43_generate_plcp_hdr((struct b43_plcp_hdr4 *)(ri + 0x06),
++				      len, rate);
++		put_unaligned_le16(rate, ri + 0x0e);	/* 500 kbit/s units */
++	}
++	if (vht && agg && info->control.rates[1].idx >= 0 &&
++	    (info->control.rates[1].flags & IEEE80211_TX_RC_VHT_MCS)) {
++		put_unaligned_le16(0, ri + 0x10);
++		ri += 0x14;
++		b43_txhdr_ac_vht_block(ri, &info->control.rates[1], chanspec);
++	} else if (agg && !vht && info->control.rates[1].idx >= 0 &&
++	    info->control.rates[1].idx <= 15 &&
++	    (info->control.rates[1].flags & IEEE80211_TX_RC_MCS)) {
++		/* Second rate block: the fallback rate of the session frame */
++		static const u8 ht20_500k[8] = { 13, 26,  39,  52,
++						 78, 104, 117, 130 };
++		u8 mcs = info->control.rates[1].idx;
++
++		put_unaligned_le16(0, ri + 0x10);
++		ri += 0x14;
++		put_unaligned_le16(2 | 0x0004 | ((mcs > 7 ? 3 : 1) << 6),
++				   ri + 0x00);
++		put_unaligned_le16(subband, ri + 0x02);
++		put_unaligned_le16(mcs, ri + 0x04);
++		ri[0x06] = mcs;
++		ri[0x07] = len & 0xff;
++		ri[0x08] = len >> 8;
++		ri[0x09] = 0x07;
++		put_unaligned_le16(ht20_500k[mcs & 7] * (mcs > 7 ? 2 : 1),
++				   ri + 0x0e);
++	}
++	put_unaligned_le16(0x0020, ri + 0x10);	/* last rate entry */
++
++	return 0;
++}
++
+ /* Generate a TX data header. */
+ int b43_generate_txhdr(struct b43_wldev *dev,
+ 		       u8 *_txhdr,
+@@ -259,6 +469,10 @@ int b43_generate_txhdr(struct b43_wldev *dev,
+ 	struct ieee80211_rate *txrate;
+ 	struct ieee80211_tx_rate *rates;
  
-diff --git a/drivers/net/wireless/broadcom/b43/phy_common.h b/drivers/net/wireless/broadcom/b43/phy_common.h
-index 5ec5233..c20a20e 100644
---- a/drivers/net/wireless/broadcom/b43/phy_common.h
-+++ b/drivers/net/wireless/broadcom/b43/phy_common.h
-@@ -390,6 +390,13 @@ void b43_phy_take_out_of_reset(struct b43_wldev *dev);
-  */
- int b43_switch_channel(struct b43_wldev *dev, unsigned int new_channel);
++	if (b43_ucode_is_ac(dev))
++		return b43_generate_txhdr_ac(dev, _txhdr, skb_frag, info,
++					     cookie);
++
+ 	memset(txhdr, 0, sizeof(*txhdr));
+ 
+ 	txrate = ieee80211_get_tx_rate(dev->wl->hw, info);
+diff --git a/drivers/net/wireless/broadcom/b43/xmit.h b/drivers/net/wireless/broadcom/b43/xmit.h
+index 6524a75..d403a28 100644
+--- a/drivers/net/wireless/broadcom/b43/xmit.h
++++ b/drivers/net/wireless/broadcom/b43/xmit.h
+@@ -188,9 +188,19 @@ struct b43_tx_legacy_rate_phy_ctl_entry {
+ #define  B43_TXH_PHY1_MODUL_QAM256	0x2000 /* QAM256 */
+ 
  
 +/*
-+ * 11ac chanspec of the AC microcode, and the centre channel of the 80 MHz block
-+ * of a 5 GHz primary (0: none)
++ * rev 40+ (AC) TX buffer: 4-byte TX offload passthrough prefix, then the
++ * 124-byte descriptor (packet info + 4 rate entries + cache).
 + */
-+u16 b43_ac_chanspec(struct b43_wldev *dev, unsigned int channel);
-+unsigned int b43_ac_80mhz_centre(unsigned int channel);
++#define B43_TXH_AC_PREFIX		4
++#define B43_TXH_AC_LEN			(B43_TXH_AC_PREFIX + 124)
++#define B43_TXH_AC_RATE(i)		(0x14 + (i) * 0x14)
 +
- /**
-  * b43_software_rfkill - Turn the radio ON or OFF in software.
-  */
+ static inline
+ size_t b43_txhdr_size(struct b43_wldev *dev)
+ {
++	if (b43_ucode_is_ac(dev))
++		return B43_TXH_AC_LEN;
+ 	switch (dev->fw.hdr_format) {
+ 	case B43_FW_HDR_598:
+ 		return 112 + sizeof(struct b43_plcp_hdr6);
+@@ -214,6 +224,7 @@ struct b43_txstatus {
+ 	u16 seq;		/* Sequence number */
+ 	u8 phy_stat;		/* PHY TX status */
+ 	u8 frame_count;		/* Frame transmit count */
++	u8 fb_count;		/* AC: attempts at the fallback rate */
+ 	u8 rts_count;		/* RTS transmit count */
+ 	u8 supp_reason;		/* Suppression reason */
+ 	/* flags */
