@@ -1,91 +1,91 @@
-Authentication-Results: smtp.subspace.kernel.org; arc=none smtp.remote-ip=74.125.82.179
+Authentication-Results: smtp.subspace.kernel.org; arc=none smtp.remote-ip=74.125.82.46
 ARC-Seal: i=1; d=subspace.kernel.org; s=arc20261015; a=rsa-sha256; cv=none;
-	t=1794501970;
-	b=q5+JqS3sFIaFWcstHEIRFFvP+CJVtM0eRZLs3p+81De8sr722Ip5g2y8/wUtO8fG6dsV
-	 gYFFFOF8ocMt9OsTpdwa4JlS66CaZqTG7wP00BFRZzEQM33M3oMpreq7uk9atHS9+dvec
-	 pLL3Ui/Lfjw4R3wL7R21C2yOU1fuCVwJr4D73fQ6hljs/NbBaSl/ityrYW5iFky03Jhya
-	 xjYBQtJzATFcA8p8pEslH1/bQdBONosmwUCjKZo69E2hYluyw/KPxO2zT7IJE9gHGbtnj
-	 zJIoZW8jb25McWAIDFannKtsqABIK5SllAH129C/uQBiAcffi8SpiVgBrvzd2bVog4g==
+	t=1794501974;
+	b=GXa6lAV64/F4R1rYohrXFGtZcR1f2r/JS3G16sjm302jHljF6VFXTYAh05T/Jh14Kci/
+	 8KtZVccqIVL9T0yOih43PEacFX+TGtSRjERT3HnePXmtNOncfvUz1aDRVej+zmIRVDQ5p
+	 erdsFzr9m/+Y4C87vxUo2KPCqunbRWSK8bBNy4M9c8LTIVvX63fh4T7tcxv1FP+/S2RxA
+	 QPq//tbYg41GZiHMFLBmXTsirTf0jkapOOhI3b+wdLnXqHmV3yRWEHQYqeePsa9wdd1/y
+	 lTQ6nL6pRnmcv/zC9qYkeL9qEeAvCuO5QgsYfrg+zzOOT0CdDfzIjAQxJ8wTqv9JwgQ==
 ARC-Message-Signature: i=1; d=subspace.kernel.org; s=arc20261015;
-	a=rsa-sha256; c=relaxed/relaxed; t=1794501970;
+	a=rsa-sha256; c=relaxed/relaxed; t=1794501974;
 	h=DMARC-Filter:Received:DKIM-Signature:X-Google-DKIM-Signature:
 	 X-Gm-Message-State:X-Gm-Gg:X-Received:Received:From:To:Cc:Subject:
 	 Date:Message-ID:X-Mailer:In-Reply-To:References:MIME-Version:
 	 Content-Transfer-Encoding;
-	bh=yhQBP+6CMdb9Wj5EapIjlvPpI2vkMSvK5yEcWmZpYJA=;
-	b=2QUl33jOvsrjVhNatki9U31tLET0G8+EEArWc1oytQ3h7OfQ6CcDr6dFAQ0xC4xwgzVl
-	 uRXrDwX8+XOY07nqP/vMpko3pm+FoHODiIc3YG2b9lOJ5wZOuCjXq+NPImtvVQ6kJ0aI+
-	 YtPKhC2FnoC1HNj6KX2Fc1oPsOC65gxizv/2HEMM2g6oKVjNLxa25rF0QJU1k8Pc4td2q
-	 3PLgf0XzbwxzKTEPlhAD+oUCbWhSxQOp1CEbXKgj1wdUnVPF/JgKjUVKx9FmOurnPhYrX
-	 HgI5sb2WoXlKMdyK/IMsTcMwkfZQSR2r9Hd4i60E3VvD3QKGXX+M+6CUNtAThMDrMiA==
+	bh=OvjFjzQy5pi0I95xeSxsh2Lc4QfBGMaxpE6Y6WVG9Sc=;
+	b=pT+IjaXRnU9XJfJPK7KOiNzsyVwf6ElvPRPY5E4UiyqcLvcLKEl1qSEJIVGd1J2tVjSl
+	 ph6FxWSHONS8nGo7J/MEPM5Wzj46f9HR8/5Mqz1PGth2GhXquKdZ7pRjAYUJmYiEHVp32
+	 q0gLoLwgb0pO9Ik4wvtCm0CXgpvkG6PVpGwhKjDU7f91al3G8ud7J5PbPsfDSkxwhN3BB
+	 +O3VrE3bO47DHYy59PMVjDne/7o5dr3ARTt/F+J7eB6rG/K/qw2lzPqHvQ3pE6zzC6vOy
+	 d2X8CHTxx3hiDTDVLjy6Y6nMjRFmQlUiHP11TxDp3Q2Z9IwX1losD4C+hN73vjDlsuA==
 ARC-Authentication-Results: i=1; smtp.subspace.kernel.org; 
 	dmarc=pass header.from=gmail.com;
 	spf=pass smtp.mailfrom=gmail.com;
-	dkim=pass header.d=gmail.com header.i=@gmail.com header.a=rsa-sha256 header.s=20260707 header.b=oikBrh3D;
-	arc=none smtp.remote-ip=74.125.82.179
-Received: from mail-dy1-f179.google.com (mail-dy1-f179.google.com [74.125.82.179])
+	dkim=pass header.d=gmail.com header.i=@gmail.com header.a=rsa-sha256 header.s=20260707 header.b=MA4mM4eV;
+	arc=none smtp.remote-ip=74.125.82.46
+Received: from mail-dl1-f46.google.com (mail-dl1-f46.google.com [74.125.82.46])
 	(using TLSv1.3 with cipher TLS_AES_128_GCM_SHA256 (128/128 bits)
 	 key-exchange X25519 server-signature ECDSA (prime256v1) server-digest SHA256)
 	(No client certificate requested)
-	by smtp.subspace.kernel.org (Postfix) with ESMTPS id 55810606A32D
-	for <linux-wireless@vger.kernel.org>; Thu, 12 Nov 2026 16:46:10 +0000 (UTC)
-DMARC-Filter: OpenDMARC Filter v1.4.2 smtp.subspace.kernel.org 55810606A32D
+	by smtp.subspace.kernel.org (Postfix) with ESMTPS id 622BE606A334
+	for <linux-wireless@vger.kernel.org>; Thu, 12 Nov 2026 16:46:14 +0000 (UTC)
+DMARC-Filter: OpenDMARC Filter v1.4.2 smtp.subspace.kernel.org 622BE606A334
 Authentication-Results: smtp.subspace.kernel.org; dmarc=pass (p=none dis=none) header.from=gmail.com
 Authentication-Results: smtp.subspace.kernel.org; spf=pass smtp.mailfrom=gmail.com
 Authentication-Results: smtp.subspace.kernel.org;
-	dkim=pass (2048-bit key) header.d=gmail.com header.i=@gmail.com header.a=rsa-sha256 header.s=20260707 header.b=oikBrh3D
-Received: by mail-dy1-f179.google.com with SMTP id 5a478bee46e88-33bf40b0c8bso194265eec.0
-        for <linux-wireless@vger.kernel.org>; Thu, 12 Nov 2026 08:46:10 -0800 (PST)
+	dkim=pass (2048-bit key) header.d=gmail.com header.i=@gmail.com header.a=rsa-sha256 header.s=20260707 header.b=MA4mM4eV
+Received: by mail-dl1-f46.google.com with SMTP id a92af1059eb24-1b3acec6677so6722352c88.1
+        for <linux-wireless@vger.kernel.org>; Thu, 12 Nov 2026 08:46:14 -0800 (PST)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=gmail.com; s=20260707; t=1794501969; x=1795106769; darn=vger.kernel.org;
+        d=gmail.com; s=20260707; t=1794501974; x=1795106774; darn=vger.kernel.org;
         h=content-transfer-encoding:mime-version:references:in-reply-to
          :message-id:date:subject:cc:to:from:from:to:cc:subject:date
          :message-id:reply-to:content-type;
-        bh=yhQBP+6CMdb9Wj5EapIjlvPpI2vkMSvK5yEcWmZpYJA=;
-        b=oikBrh3DDBEvzfKdV6/bIVo/GToFgXf60OtSMB//nPGJfNUxVYF6twGnSDk8Jw+p4Y
-         N4UWe//VCevNUdVxGiWOCDq7PyVkmV6YZ1EFMYmAej1TNr2hYMVdAWZaAeFCyuOdwEtK
-         zw6E/HfCYHFhMts/U2U/sPVZ4iciyt3U/jXkc+yZ9TzQOV8WQ7cSbBuL98CoQUpoIiSw
-         lzcPkv05JY5uBlmQLmGS/bhczlLtXjts4DUH8wCJ29qUI7tqJkgl2Zh01gJze+jWeT0L
-         CoD7uQnsNzrVnaU7zH7RHecqk3PeLgjcfrQGVpllxmRzAxiVlNqkY1MEX0o1pBt+EXjm
-         msOQ==
+        bh=OvjFjzQy5pi0I95xeSxsh2Lc4QfBGMaxpE6Y6WVG9Sc=;
+        b=MA4mM4eVg23KN6RRkqeSgOPbeLQKGJ2hVcq6oXZnbKPatPVy1t+WUCfFHOYABGp7O9
+         jM9I8hR7KxH9KNqA2Kng8aXHq+zBffgzoVX3TIllAPyxiibKIhsCPfxSNKrWW0Zh7unh
+         QY6qUX7DYipCwPxdie9hj5yFlJgpiAwHYRYLM8BVO5kDsdsVnss/NJD7vY0BAIZrpxi8
+         TM+ajbYRujc7RMzi8alJVwQrcLQ/12JnV8huYlbpOja1wtVeIgBV+MaKm/l1JktM4m/D
+         wcP8z8iy9wgqnw5KhvpZmYNFlyOa1gH0DU+4W8stATmuufKvSeM3wAWRH3R8vkn1rLwi
+         QUIQ==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=1e100.net; s=20260707; t=1794501969; x=1795106769;
+        d=1e100.net; s=20260707; t=1794501974; x=1795106774;
         h=content-transfer-encoding:mime-version:references:in-reply-to
          :message-id:date:subject:cc:to:from:x-gm-gg:x-gm-message-state:from
          :to:cc:subject:date:message-id:reply-to:content-type;
-        bh=yhQBP+6CMdb9Wj5EapIjlvPpI2vkMSvK5yEcWmZpYJA=;
-        b=n3eqfwBBU8R9G5bwOZT+PKWBuGGhyWzw2knYCkZS/4GP1G7jyH4HKp6Q9G9JPkO2QD
-         /kRsS9QTbOdQazJlYEiyaB7e6bcfLFAzS+uGYh/XUe5yqgQRgirZWp4IGeBm403+r8Dt
-         OBucTOSJl0OfD9G/3/sGstU9jt2DenBr1bhoL8FSESoNtYzJMi5O+DXehlaxUNy3uvtL
-         TFG7rN32rqtzNyFdbcKtySdRNP2cyKSNafOidDJxZV27jEfnCfVrINivoIMhrrSsoltZ
-         4gPCpzYlwl9zFESmZyxVl6lgg3fEfBdtGJM1wEsZuhypOq0Z0y7b1SZ8DO2MCx/Aj9QX
-         KiYg==
-X-Gm-Message-State: APuU4Z/rlSoWWjyzOssP3ldiaSuPyye25iPyJPHOabBt5it9A/6We8dL
-	muoaqYB9he+XLeqVg7IVNTGLT44v9j/ZHmGLrlckhaYeLCpAFJi9D6ZHRn2cuBX3
-X-Gm-Gg: AYBFou1Y1YVavu6jiI9AMi2X3s1TpwEfTQ2QLIHYv/VaVJrnII3ALD1kP6g/Vd2owOp
-	bws8ERPjHwHi5toMaqaWo36clvvAafiDAkm5wXLvVRlr3SMme+3c9r1Lu68ivR2j2xYsC7yVSJB
-	/IDsh22rDwR2I0mzRzEj9IDsABxh8HqksACb5Zb4b79KmwBly4BOB7ySTFtXW38BxDM1reuT818
-	4pM0aUOyTRKt24nJuLzT0THcWHz3v7Pyq5UDrS9Igf3ClxUf6MJFf9VTiNsueZsk6sx0B4bWLMk
-	fL2ZxIfbhBS13wUBhV5XTIlFF38o+xNOAZui3xmMX7CyKSaigRoWxQUepZSmdqUGCt7E5AObWe3
-	/8rlFkf6oZD+/hz4aLDNRpHEzXeaDmljZbnAgugRne4waJQngLS+PAZ4xDiyo6ZxHAopVAepwKK
-	+ljrhqM5hWav5UT4L7TfckWi3MTGvQSFfsmsEopDfC2RxYFW1/UmZmG6/U9YZ0A+/djrazJRYDW
-	ovnFU0PKDg4H+7A/hL9yHQ72XTbJo4yt67kCJPpJ0Ujfog44GWuQNLLac6lEA/D7TUu0IglmoB6
-	rxY3A1kHCvMX9LH3fCbkDQpaP1a8oomjy3a/38tO4Qq/ZQcXsaExMT2RBlDM9JKa87txvQnx2P4
-	JUXKm78e4CrzQid+d/h23zR+VOxTN1ixAtd91J7G2IzDb
-X-Received: by 2002:a05:7022:2513:b0:1ab:faad:cc9 with SMTP id a92af1059eb24-1b503115806mr156032c88.11.1794501969159;
-        Thu, 12 Nov 2026 08:46:09 -0800 (PST)
+        bh=OvjFjzQy5pi0I95xeSxsh2Lc4QfBGMaxpE6Y6WVG9Sc=;
+        b=FdvX095yziXYUKLKhVlqDvxGy9L/CWFHcfY5LS72OtUbSp3h43s0MU4m1VuNY20dog
+         tDwZLdyavftK3naCu+wF6P7/v2BvRl4M7DlCvwPenN3iuWQ33Kz2hbhelQuTI6ZRr3MC
+         VVpk2hqHjJFTov0BttZCXZroMphyQN8CYPxE54xWCmWzJGMt0cJeU+5fchl2dRyUD9gN
+         f7hsgmp7mg/rKIBDY6DsFhMMYENSL4tKkrxD4NDXyH9IRnzd348aGfSSPdLhUGVEgFRv
+         nu0xz5dLuEpkZoes0wUMKyh3FDPphMU22rHW16mPqVo7BKsaq3eTVuWCiXmTj+LS1hwf
+         oozQ==
+X-Gm-Message-State: APuU4Z+/cDTRYACMKNh08/4GSl1vTjq6jSDMDWxSG7ydG0pltQ4245EK
+	DVuMg7wYG5xisU1a3jybc6jgBA8Fmd4Neo6pmcy3iG0kWRw+sTiKJOSA
+X-Gm-Gg: AYBFou3rSeZxjJ5b++O4GRZIj2Y94lZQ2nDX4R4m+8I8VKNNNOYzflJHrHt8OB7VTm1
+	AmY9dlUcDFB1lw8CFNZH9X2AmAH3ND31k+f//5EvwaqHXz+Xkp2fVEAK/fnN8F9wGunh68IRxIg
+	jkdlzFMiQaIVBlmcOpfCH5jOg89bbvZMXx/WSi+UN0dyjEsu6WOI2LKL+qRBI7j0M5S9Doz7roe
+	P4zkt4r4n0CZuqc1nNoHL67+vcIbnoiKfVOqTkU1OLdrHz07Wn4K4ytJ9Zh9HmaCkU3BR4lfZki
+	FxvswQvK61a5sHbMjAQ3Av82dBDg3569r//mHl8CxhN2JsEviRO2QYJO+9kPLErW5yRV2MC5TLh
+	jCM4MKnBNQYGm18kz0Dg30aTSl7y82ttIW5oAbRpd0TL/zy8aWg7q/llTTZx3fEIrKeFVL1LLyL
+	+2u87aqR+glIU1yQGSrdvNgTcFPdCCsKYdc85W8lYSMvLqy6rZxW0H3JGHhYowKa5LFERoGK43Y
+	j+OyGMTutmXyiRWQSWmwRFb2eU9H8MjUG0XJ+FVLoku+8fVaCVKwaQWaMLgYaQwEN5FzJHiwbMt
+	UP/1Py50ALJOPZAMbfcMwZ1GItMWrYVIoevjwhF65ZzU0F8NqttDU9bMpl2Yy8pfoFp0GCyAqh2
+	NxgOnzUrOb4UQKkq1BrwOP7qk21/8N1zrNDfPBM1o6OUuK7B1T0IH
+X-Received: by 2002:a05:7022:3704:b0:189:d6bf:7eaa with SMTP id a92af1059eb24-1b5030d404cmr111454c88.16.1794501973136;
+        Thu, 12 Nov 2026 08:46:13 -0800 (PST)
 Received: from acemagic-m1.tail4fb79.ts.net ([2401:7400:c804:b668:2c54:4647:b67e:c94c])
-        by smtp.gmail.com with ESMTPSA id a92af1059eb24-1b50300e5dcsm287090c88.0.2026.11.12.08.46.06
+        by smtp.gmail.com with ESMTPSA id a92af1059eb24-1b50300e5dcsm287090c88.0.2026.11.12.08.46.11
         (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
-        Thu, 12 Nov 2026 08:46:08 -0800 (PST)
+        Thu, 12 Nov 2026 08:46:12 -0800 (PST)
 From: Ho Jie Feng <hjf3108@gmail.com>
 To: Stanislaw Gruszka <stf_xl@wp.pl>
 Cc: linux-wireless@vger.kernel.org,
 	linux-kernel@vger.kernel.org,
 	Ho Jie Feng <hjf3108@gmail.com>
-Subject: [PATCH wireless-next v3 1/7] wifi: rt2x00: start the link tuner when an interface is added
-Date: Fri, 13 Nov 2026 00:45:35 +0800
-Message-ID: <20261112164544.3176458-2-hjf3108@gmail.com>
+Subject: [PATCH wireless-next v3 2/7] wifi: rt2800: calibrate the crystal of RT3593 with the beacons
+Date: Fri, 13 Nov 2026 00:45:36 +0800
+Message-ID: <20261112164544.3176458-3-hjf3108@gmail.com>
 X-Mailer: git-send-email 2.53.0
 In-Reply-To: <20261112164544.3176458-1-hjf3108@gmail.com>
 References: <20261112164544.3176458-1-hjf3108@gmail.com>
@@ -100,51 +100,329 @@ Precedence: list
 MIME-Version: 1.0
 Content-Transfer-Encoding: 8bit
 
-rt2x00lib_start() enables the radio before mac80211 adds the first
-interface, so rt2x00link_start_tuner(), called from
-rt2x00lib_enable_radio(), finds no station or AP interface and returns.
+On a Netgear WNDA4100 (RT3593), as the adapter warms up, the
+frequency offset drifts enough to affect the link quality.
+In certain cases it can cause the link speed to drop
+to 1Mbit/s or below.
 
-Start the link tuner again when the first interface is added, and stop
-it when the last interface is removed.
+Add a frequency calibration step function to RT3593 to use
+the frequency offset obtained from the beacon frames of the AP
+for tuning.
 
-Fixes: d96324703ffa ("rt2x00: merge agc and vco works with link tuner")
+Test results:
+   before after
+TX 27.7   28.5
+RX 31.6   69.7
+
 Signed-off-by: Ho Jie Feng <hjf3108@gmail.com>
-Acked-by: Stanislaw Gruszka <stf_xl@wp.pl>
 ---
- drivers/net/wireless/ralink/rt2x00/rt2x00mac.c | 13 +++++++++++++
- 1 file changed, 13 insertions(+)
+ drivers/net/wireless/ralink/rt2x00/rt2800.h   |  1 +
+ .../net/wireless/ralink/rt2x00/rt2800lib.c    | 77 +++++++++++++++++++
+ .../net/wireless/ralink/rt2x00/rt2800lib.h    |  1 +
+ .../net/wireless/ralink/rt2x00/rt2800usb.c    |  1 +
+ drivers/net/wireless/ralink/rt2x00/rt2x00.h   | 13 ++++
+ .../net/wireless/ralink/rt2x00/rt2x00dev.c    | 24 ++++++
+ .../net/wireless/ralink/rt2x00/rt2x00lib.h    |  2 +
+ .../net/wireless/ralink/rt2x00/rt2x00link.c   | 10 +++
+ .../net/wireless/ralink/rt2x00/rt2x00queue.h  |  5 ++
+ 9 files changed, 134 insertions(+)
 
-diff --git a/drivers/net/wireless/ralink/rt2x00/rt2x00mac.c b/drivers/net/wireless/ralink/rt2x00/rt2x00mac.c
-index 3bc0c1c906..86547ce81c 100644
---- a/drivers/net/wireless/ralink/rt2x00/rt2x00mac.c
-+++ b/drivers/net/wireless/ralink/rt2x00/rt2x00mac.c
-@@ -264,6 +264,13 @@ int rt2x00mac_add_interface(struct ieee80211_hw *hw,
+diff --git a/drivers/net/wireless/ralink/rt2x00/rt2800.h b/drivers/net/wireless/ralink/rt2x00/rt2800.h
+index 8930589b49..b9f6de3a46 100644
+--- a/drivers/net/wireless/ralink/rt2x00/rt2800.h
++++ b/drivers/net/wireless/ralink/rt2x00/rt2800.h
+@@ -3163,6 +3163,7 @@ enum rt2800_eeprom_word {
+  */
+ #define RXWI_W3_SNR0			FIELD32(0x000000ff)
+ #define RXWI_W3_SNR1			FIELD32(0x0000ff00)
++#define RXWI_W3_FOFFSET			FIELD32(0xff000000)
+ 
+ /*
+  * Macros for converting txpower from EEPROM to mac80211 value
+diff --git a/drivers/net/wireless/ralink/rt2x00/rt2800lib.c b/drivers/net/wireless/ralink/rt2x00/rt2800lib.c
+index 4f7beca668..371b293bac 100644
+--- a/drivers/net/wireless/ralink/rt2x00/rt2800lib.c
++++ b/drivers/net/wireless/ralink/rt2x00/rt2800lib.c
+@@ -935,6 +935,16 @@ void rt2800_process_rxwi(struct queue_entry *entry,
+ 	 * Convert descriptor AGC value to RSSI value.
  	 */
- 	rt2x00dev->packet_filter = 0;
- 
-+	/*
-+	 * Start the link tuner again if the radio is enabled before the
-+	 * first interface is added.
-+	 */
-+	if (rt2x00dev->intf_ap_count + rt2x00dev->intf_sta_count == 1)
-+		rt2x00link_start_tuner(rt2x00dev);
+ 	rxdesc->rssi = rt2800_agc_to_rssi(entry->queue->rt2x00dev, word);
 +
- 	return 0;
- }
- EXPORT_SYMBOL_GPL(rt2x00mac_add_interface);
-@@ -289,6 +296,12 @@ void rt2x00mac_remove_interface(struct ieee80211_hw *hw,
- 	else
- 		rt2x00dev->intf_sta_count--;
- 
 +	/*
-+	 * Stop the link tuner when the last interface is removed.
++	 * The frequency offset is used for the frequency calibration.
 +	 */
-+	if (!rt2x00dev->intf_ap_count && !rt2x00dev->intf_sta_count)
-+		rt2x00link_stop_tuner(rt2x00dev);
++	if (rt2x00_rt(entry->queue->rt2x00dev, RT3593)) {
++		word = rt2x00_desc_read(rxwi, 3);
++		rxdesc->freq_offset = rt2x00_get_field32(word, RXWI_W3_FOFFSET);
++		rxdesc->dev_flags |= RXDONE_FREQ_OFFSET;
++	}
 +
  	/*
- 	 * Release beacon entry so it is available for
- 	 * new interfaces again.
+ 	 * Remove RXWI descriptor from start of the buffer.
+ 	 */
+@@ -2441,6 +2451,7 @@ static inline bool rt2800_clk_is_20mhz(struct rt2x00_dev *rt2x00dev)
+ }
+ 
+ #define FREQ_OFFSET_BOUND	0x5f
++#define FREQ_OFFSET_INVALID	-128
+ 
+ static void rt2800_freq_cal_mode1(struct rt2x00_dev *rt2x00dev)
+ {
+@@ -5631,6 +5642,72 @@ void rt2800_vco_calibration(struct rt2x00_dev *rt2x00dev)
+ }
+ EXPORT_SYMBOL_GPL(rt2800_vco_calibration);
+ 
++void rt2800_freq_calibration(struct rt2x00_dev *rt2x00dev)
++{
++	struct link *link = &rt2x00dev->link;
++	u8 activate_threshold, deactivate_threshold;
++	u8 freq_offset, rate_mode;
++	u16 eeprom;
++	s8 offset;
++
++	if (!rt2x00_rt(rt2x00dev, RT3593))
++		return;
++
++	if (!rt2x00dev->intf_associated) {
++		eeprom = rt2800_eeprom_read(rt2x00dev, EEPROM_FREQ);
++		rt2x00dev->freq_offset = rt2x00_get_field16(eeprom,
++							    EEPROM_FREQ_OFFSET);
++		link->freq_cal_adjusting = false;
++		return;
++	}
++
++	spin_lock_bh(&link->bcn_lock);
++	offset = link->bcn_freq_offset;
++	rate_mode = link->bcn_rate_mode;
++	link->bcn_freq_offset = FREQ_OFFSET_INVALID;
++	spin_unlock_bh(&link->bcn_lock);
++
++	/* No beacons received */
++	if (offset == FREQ_OFFSET_INVALID)
++		return;
++
++	if (rate_mode == RATE_MODE_CCK) {
++		activate_threshold = 4;
++		deactivate_threshold = 2;
++	} else {
++		activate_threshold = 20;
++		deactivate_threshold = 10;
++	}
++
++	/* Hysteresis */
++	if (abs(offset) >= activate_threshold)
++		link->freq_cal_adjusting = true;
++	else if (abs(offset) <= deactivate_threshold)
++		link->freq_cal_adjusting = false;
++
++	if (!link->freq_cal_adjusting)
++		return;
++
++	freq_offset = rt2x00_get_field8(rt2x00dev->freq_offset, RFCSR17_CODE);
++	freq_offset = min_t(u8, freq_offset, FREQ_OFFSET_BOUND);
++
++	if (offset > 0) {
++		if (freq_offset > 0)
++			freq_offset--;
++		else
++			link->freq_cal_adjusting = false;
++	} else {
++		if (freq_offset < FREQ_OFFSET_BOUND)
++			freq_offset++;
++		else
++			link->freq_cal_adjusting = false;
++	}
++
++	rt2x00dev->freq_offset = freq_offset;
++	rt2800_freq_cal_mode1(rt2x00dev);
++}
++EXPORT_SYMBOL_GPL(rt2800_freq_calibration);
++
+ static void rt2800_config_retry_limit(struct rt2x00_dev *rt2x00dev,
+ 				      struct rt2x00lib_conf *libconf)
+ {
+diff --git a/drivers/net/wireless/ralink/rt2x00/rt2800lib.h b/drivers/net/wireless/ralink/rt2x00/rt2800lib.h
+index a3c3a751f5..1e31a61e95 100644
+--- a/drivers/net/wireless/ralink/rt2x00/rt2800lib.h
++++ b/drivers/net/wireless/ralink/rt2x00/rt2800lib.h
+@@ -241,6 +241,7 @@ void rt2800_link_tuner(struct rt2x00_dev *rt2x00dev, struct link_qual *qual,
+ 		       const u32 count);
+ void rt2800_gain_calibration(struct rt2x00_dev *rt2x00dev);
+ void rt2800_vco_calibration(struct rt2x00_dev *rt2x00dev);
++void rt2800_freq_calibration(struct rt2x00_dev *rt2x00dev);
+ 
+ int rt2800_enable_radio(struct rt2x00_dev *rt2x00dev);
+ void rt2800_disable_radio(struct rt2x00_dev *rt2x00dev);
+diff --git a/drivers/net/wireless/ralink/rt2x00/rt2800usb.c b/drivers/net/wireless/ralink/rt2x00/rt2800usb.c
+index 15de3db124..387c07e225 100644
+--- a/drivers/net/wireless/ralink/rt2x00/rt2800usb.c
++++ b/drivers/net/wireless/ralink/rt2x00/rt2800usb.c
+@@ -693,6 +693,7 @@ static const struct rt2x00lib_ops rt2800usb_rt2x00_ops = {
+ 	.link_tuner		= rt2800_link_tuner,
+ 	.gain_calibration	= rt2800_gain_calibration,
+ 	.vco_calibration	= rt2800_vco_calibration,
++	.freq_calibration	= rt2800_freq_calibration,
+ 	.watchdog		= rt2800_watchdog,
+ 	.start_queue		= rt2800usb_start_queue,
+ 	.kick_queue		= rt2x00usb_kick_queue,
+diff --git a/drivers/net/wireless/ralink/rt2x00/rt2x00.h b/drivers/net/wireless/ralink/rt2x00/rt2x00.h
+index 7d313e86d3..415ff253cb 100644
+--- a/drivers/net/wireless/ralink/rt2x00/rt2x00.h
++++ b/drivers/net/wireless/ralink/rt2x00/rt2x00.h
+@@ -319,6 +319,18 @@ struct link {
+ 	 */
+ 	struct ewma_rssi avg_rssi;
+ 
++	/*
++	 * Controls interval of frequency calibration
++	 */
++	bool freq_cal_adjusting;
++
++	/*
++	 * Frequency offset and rate mode of the last beacon from the AP
++	 */
++	spinlock_t bcn_lock; /* protects bcn_freq_offset, bcn_rate_mode */
++	s8 bcn_freq_offset;
++	u8 bcn_rate_mode;
++
+ 	/*
+ 	 * Work structure for scheduling periodic link tuning.
+ 	 */
+@@ -559,6 +571,7 @@ struct rt2x00lib_ops {
+ 			    struct link_qual *qual, const u32 count);
+ 	void (*gain_calibration) (struct rt2x00_dev *rt2x00dev);
+ 	void (*vco_calibration) (struct rt2x00_dev *rt2x00dev);
++	void (*freq_calibration) (struct rt2x00_dev *rt2x00dev);
+ 
+ 	/*
+ 	 * Data queue handlers.
+diff --git a/drivers/net/wireless/ralink/rt2x00/rt2x00dev.c b/drivers/net/wireless/ralink/rt2x00/rt2x00dev.c
+index 4d94b7062f..7b23da0678 100644
+--- a/drivers/net/wireless/ralink/rt2x00/rt2x00dev.c
++++ b/drivers/net/wireless/ralink/rt2x00/rt2x00dev.c
+@@ -688,6 +688,25 @@ static void rt2x00lib_rxdone_check_ps(struct rt2x00_dev *rt2x00dev,
+ 		queue_work(rt2x00dev->workqueue, &rt2x00dev->sleep_work);
+ }
+ 
++static void rt2x00lib_rxdone_freq_offset(struct rt2x00_dev *rt2x00dev,
++					 struct sk_buff *skb,
++					 struct rxdone_entry_desc *rxdesc)
++{
++	struct ieee80211_hdr *hdr = (void *)skb->data;
++	struct link *link = &rt2x00dev->link;
++
++	if (!(rxdesc->dev_flags & RXDONE_FREQ_OFFSET) ||
++	    !(rxdesc->dev_flags & RXDONE_MY_BSS) ||
++	    (rxdesc->flags & RX_FLAG_FAILED_FCS_CRC) ||
++	    !ieee80211_is_beacon(hdr->frame_control))
++		return;
++
++	spin_lock_bh(&link->bcn_lock);
++	link->bcn_freq_offset = rxdesc->freq_offset;
++	link->bcn_rate_mode = rxdesc->rate_mode;
++	spin_unlock_bh(&link->bcn_lock);
++}
++
+ static int rt2x00lib_rxdone_read_signal(struct rt2x00_dev *rt2x00dev,
+ 					struct rxdone_entry_desc *rxdesc)
+ {
+@@ -825,6 +844,11 @@ void rt2x00lib_rxdone(struct queue_entry *entry, gfp_t gfp)
+ 	 */
+ 	rt2x00lib_rxdone_check_ba(rt2x00dev, entry->skb, &rxdesc);
+ 
++	/*
++	 * Store frequency offset of the beacons for frequency calibration.
++	 */
++	rt2x00lib_rxdone_freq_offset(rt2x00dev, entry->skb, &rxdesc);
++
+ 	/*
+ 	 * Update extra components
+ 	 */
+diff --git a/drivers/net/wireless/ralink/rt2x00/rt2x00lib.h b/drivers/net/wireless/ralink/rt2x00/rt2x00lib.h
+index 2f1385baa7..a6f516ebdb 100644
+--- a/drivers/net/wireless/ralink/rt2x00/rt2x00lib.h
++++ b/drivers/net/wireless/ralink/rt2x00/rt2x00lib.h
+@@ -22,6 +22,8 @@
+ #define LINK_TUNE_INTERVAL	round_jiffies_relative(LINK_TUNE_SECONDS * HZ)
+ #define AGC_SECONDS		4
+ #define VCO_SECONDS		10
++#define FREQ_SECONDS		10
++#define FREQ_ADJUST_SECONDS	1
+ 
+ /*
+  * rt2x00_rate: Per rate device information
+diff --git a/drivers/net/wireless/ralink/rt2x00/rt2x00link.c b/drivers/net/wireless/ralink/rt2x00/rt2x00link.c
+index fb23d409fb..d44a55b14f 100644
+--- a/drivers/net/wireless/ralink/rt2x00/rt2x00link.c
++++ b/drivers/net/wireless/ralink/rt2x00/rt2x00link.c
+@@ -343,6 +343,7 @@ static void rt2x00link_tuner(struct work_struct *work)
+ 	struct rt2x00_dev *rt2x00dev =
+ 	    container_of(work, struct rt2x00_dev, link.work.work);
+ 	struct link *link = &rt2x00dev->link;
++	unsigned int freq_interval;
+ 
+ 	/*
+ 	 * When the radio is shutting down we should
+@@ -362,6 +363,14 @@ static void rt2x00link_tuner(struct work_struct *work)
+ 	    (link->count % (AGC_SECONDS / LINK_TUNE_SECONDS)) == 0)
+ 		rt2x00dev->ops->lib->gain_calibration(rt2x00dev);
+ 
++	freq_interval = link->freq_cal_adjusting ?
++			FREQ_ADJUST_SECONDS : FREQ_SECONDS;
++
++	/* VCO calibration should be done after frequency calibration */
++	if (rt2x00dev->ops->lib->freq_calibration &&
++	    (link->count % (freq_interval / LINK_TUNE_SECONDS)) == 0)
++		rt2x00dev->ops->lib->freq_calibration(rt2x00dev);
++
+ 	if (rt2x00dev->ops->lib->vco_calibration &&
+ 	    rt2x00_has_cap_vco_recalibration(rt2x00dev) &&
+ 	    (link->count % (VCO_SECONDS / LINK_TUNE_SECONDS)) == 0)
+@@ -422,6 +431,7 @@ void rt2x00link_register(struct rt2x00_dev *rt2x00dev)
+ 
+ 	INIT_DELAYED_WORK(&link->work, rt2x00link_tuner);
+ 	INIT_DELAYED_WORK(&link->watchdog_work, rt2x00link_watchdog);
++	spin_lock_init(&link->bcn_lock);
+ 
+ 	if (link->watchdog_interval == 0)
+ 		link->watchdog_interval = WATCHDOG_INTERVAL;
+diff --git a/drivers/net/wireless/ralink/rt2x00/rt2x00queue.h b/drivers/net/wireless/ralink/rt2x00/rt2x00queue.h
+index 23739dd0bc..4caf9261a5 100644
+--- a/drivers/net/wireless/ralink/rt2x00/rt2x00queue.h
++++ b/drivers/net/wireless/ralink/rt2x00/rt2x00queue.h
+@@ -129,6 +129,7 @@ static inline struct skb_frame_desc* get_skb_frame_desc(struct sk_buff *skb)
+  * @RXDONE_CRYPTO_IV: Driver provided IV/EIV data.
+  * @RXDONE_CRYPTO_ICV: Driver provided ICV data.
+  * @RXDONE_L2PAD: 802.11 payload has been padded to 4-byte boundary.
++ * @RXDONE_FREQ_OFFSET: Driver provided the frequency offset.
+  */
+ enum rxdone_entry_desc_flags {
+ 	RXDONE_SIGNAL_PLCP = BIT(0),
+@@ -138,6 +139,7 @@ enum rxdone_entry_desc_flags {
+ 	RXDONE_CRYPTO_IV = BIT(4),
+ 	RXDONE_CRYPTO_ICV = BIT(5),
+ 	RXDONE_L2PAD = BIT(6),
++	RXDONE_FREQ_OFFSET = BIT(7),
+ };
+ 
+ /**
+@@ -164,6 +166,7 @@ enum rxdone_entry_desc_flags {
+  * @cipher_status: Decryption status.
+  * @iv: IV/EIV data used during decryption.
+  * @icv: ICV data used during decryption.
++ * @freq_offset: Frequency offset of the received frame.
+  */
+ struct rxdone_entry_desc {
+ 	u64 timestamp;
+@@ -181,6 +184,8 @@ struct rxdone_entry_desc {
+ 
+ 	__le32 iv[2];
+ 	__le32 icv;
++
++	s8 freq_offset;
+ };
+ 
+ /**
 -- 
 2.53.0
 
