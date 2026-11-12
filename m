@@ -1,91 +1,91 @@
-Authentication-Results: smtp.subspace.kernel.org; arc=none smtp.remote-ip=74.125.82.52
+Authentication-Results: smtp.subspace.kernel.org; arc=none smtp.remote-ip=74.125.82.54
 ARC-Seal: i=1; d=subspace.kernel.org; s=arc20261015; a=rsa-sha256; cv=none;
-	t=1794501977;
-	b=kWLr9dcW5sU7pxRuTshjNxD+YQ4f67vSmDHlXQkfh3/8GBSuBZAWPXB7mDfhAIl2XZgb
-	 LG5bKrQKPNK+iztC+uyiraaYGxB3R5KY/86qkyq4FGHrMYsG36gRhbe/YOGwg9KZTiabc
-	 UkdFH131uh+/XwPPvaKOeKGtwAL3R5UB6PJMS7Z/owE1ezWubB1TuWB2Vm8BzWkd68Hk9
-	 VRnieuphyHaPH88fjHwkZle6gtpYk+a65rtFh7OqosJnj6hFs54T02pi9JgwbpSdxinFo
-	 e7utlngU6f9T9jcFX53O5g9c4ooJ31nMYl1LbfXTrIxuNeaEw7+lWVJ2ANCbEb1OU1A==
+	t=1794501987;
+	b=SUskohZuPvTMdHLc4dmDdPyiKIQHomHV7ZO5On+GgYT5+c3M+Sbtmw/Ht0h0f3kZIMuq
+	 BggE7av9ws8mgDVXdWJXuL76tJfvU2z3pno0WFqCO5Ah9jcSI6vCbDbWO6efiLLeL1kW2
+	 uvtKm4XGyS6faSWRFijcjIH7Z/AAbsq0HkCk4nwmbvIf7bIi8krre5YJcDZNz1aI1QK+r
+	 P3V1io2YfNgrT0Vrwn9iGIR7Ng3CN7JN29OiN9+r1WqOZyCvYKKcSac7IFNJVXWei3v1u
+	 QGSew6jxtBQyiOc+KPYhuyUj6OlvtAo2ZPyoA7eB0rZmp4DuJ+zQ5sDovb5cKDZdqBA==
 ARC-Message-Signature: i=1; d=subspace.kernel.org; s=arc20261015;
-	a=rsa-sha256; c=relaxed/relaxed; t=1794501977;
+	a=rsa-sha256; c=relaxed/relaxed; t=1794501987;
 	h=DMARC-Filter:Received:DKIM-Signature:X-Google-DKIM-Signature:
 	 X-Gm-Message-State:X-Gm-Gg:X-Received:Received:From:To:Cc:Subject:
 	 Date:Message-ID:X-Mailer:In-Reply-To:References:MIME-Version:
 	 Content-Transfer-Encoding;
-	bh=vjquRUStcAkxhtcMG98uyTm8S+FU38EvYx9GS3qKCBo=;
-	b=EsxSQh/sawJ5NBlSpPcaP82hp4RbgJac2lY5rOmT1AiNy++wd4+17dGjUhSRNFK7e2gY
-	 YyC1ZlyhgW4lLnwnowXLbRXSxl7+i7JOPAJmsOYc459Etd9pz6vw0cLbSBhdHyxGbfl3q
-	 uu27YGAjdZ2GQJAeJlMNGPuOCYw2vPKH9x2yacgJL8CTNShkE0NHZM8dO0MDbj7yQNAQg
-	 tcw8biuGGFg/sXu9zEVDQfCANrIxDhrcfKBDqZgcyr3zB3Ys82yoDZ70DC5yMmMH4mWT4
-	 vHfcmQyd0IIfxRkNhUAACRP3b1aVp88WeBGTSwCUWpD2d/C93JtsKI0iAOWD7480xnw==
+	bh=RdSxJgtfR49+qc7gDQuzOS5wpt0GubDI8jUNJzdvF5k=;
+	b=3ZSFWRaKL+oNjpugiE9pcmrCkO3DxSPYyfCWKmJ7520no5BP2v9xxFHpLDIOHa1xNGYR
+	 69HaBtold3q2UT4fspZRYVwJdcKVfGw5nmSGQ8RHrbSZn2qWMbJ655aFVWKq+hI+Hti3R
+	 RBFelBWpwee2ms8o0YMUhwZnu0nrSzCAv0RoeZGFZ0/rmg9gNDD9Bt2fZsYc9cKaWZ9Jk
+	 t+8u0rtXUFBpf3hbtM/VCdA9JMynN5ehq1flylchtGrKPsDJfAEnu80fnGUhbOV/R0dP1
+	 9UA1UCs3wX4jRfnArznUdoDgQaRFz5hOsGAZEXrwVZprxUGPJHNRKGt68Mt0ec8EFHA==
 ARC-Authentication-Results: i=1; smtp.subspace.kernel.org; 
 	dmarc=pass header.from=gmail.com;
 	spf=pass smtp.mailfrom=gmail.com;
-	dkim=pass header.d=gmail.com header.i=@gmail.com header.a=rsa-sha256 header.s=20260707 header.b=vHJGo6Ft;
-	arc=none smtp.remote-ip=74.125.82.52
-Received: from mail-dl1-f52.google.com (mail-dl1-f52.google.com [74.125.82.52])
+	dkim=pass header.d=gmail.com header.i=@gmail.com header.a=rsa-sha256 header.s=20260707 header.b=NGl4awbP;
+	arc=none smtp.remote-ip=74.125.82.54
+Received: from mail-dl1-f54.google.com (mail-dl1-f54.google.com [74.125.82.54])
 	(using TLSv1.3 with cipher TLS_AES_128_GCM_SHA256 (128/128 bits)
 	 key-exchange X25519 server-signature ECDSA (prime256v1) server-digest SHA256)
 	(No client certificate requested)
-	by smtp.subspace.kernel.org (Postfix) with ESMTPS id 4A171606A8A4
-	for <linux-wireless@vger.kernel.org>; Thu, 12 Nov 2026 16:46:17 +0000 (UTC)
-DMARC-Filter: OpenDMARC Filter v1.4.2 smtp.subspace.kernel.org 4A171606A8A4
+	by smtp.subspace.kernel.org (Postfix) with ESMTPS id 025E5606A897
+	for <linux-wireless@vger.kernel.org>; Thu, 12 Nov 2026 16:46:26 +0000 (UTC)
+DMARC-Filter: OpenDMARC Filter v1.4.2 smtp.subspace.kernel.org 025E5606A897
 Authentication-Results: smtp.subspace.kernel.org; dmarc=pass (p=none dis=none) header.from=gmail.com
 Authentication-Results: smtp.subspace.kernel.org; spf=pass smtp.mailfrom=gmail.com
 Authentication-Results: smtp.subspace.kernel.org;
-	dkim=pass (2048-bit key) header.d=gmail.com header.i=@gmail.com header.a=rsa-sha256 header.s=20260707 header.b=vHJGo6Ft
-Received: by mail-dl1-f52.google.com with SMTP id a92af1059eb24-1a2761c69fbso8021652c88.0
-        for <linux-wireless@vger.kernel.org>; Thu, 12 Nov 2026 08:46:17 -0800 (PST)
+	dkim=pass (2048-bit key) header.d=gmail.com header.i=@gmail.com header.a=rsa-sha256 header.s=20260707 header.b=NGl4awbP
+Received: by mail-dl1-f54.google.com with SMTP id a92af1059eb24-1931ff67a29so8742651c88.1
+        for <linux-wireless@vger.kernel.org>; Thu, 12 Nov 2026 08:46:26 -0800 (PST)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=gmail.com; s=20260707; t=1794501976; x=1795106776; darn=vger.kernel.org;
+        d=gmail.com; s=20260707; t=1794501986; x=1795106786; darn=vger.kernel.org;
         h=content-transfer-encoding:mime-version:references:in-reply-to
          :message-id:date:subject:cc:to:from:from:to:cc:subject:date
          :message-id:reply-to:content-type;
-        bh=vjquRUStcAkxhtcMG98uyTm8S+FU38EvYx9GS3qKCBo=;
-        b=vHJGo6FtygGgQvmAC+B6SrUGtWT9A6nHzMZjN966gxygIC2z9CFUZR7gDyjuni3EjG
-         GPMUhtn0d4LvE0zR4M63N3KXcwnAYFmQQV3wS0UM51F4+hJ9k8llxzsmJYFo6cVCAx10
-         Lc5FZzRdlU136uvCWrA78/K3ZK3furCPMVkTimO0qBehA3/hfmXG0cZ8BU5cHWFpd4va
-         ZJAlRnE36bsW4++NAKBD8/LybgefewN5VxgaogjrUba5S7hfTrINRCuY4/dBSm9BUOD8
-         PF8CesdNVbastLFuxvi+wMd2+GU+qKTQxZ+yb3KqtVsJeQn9nITlBXk76nY16AEipR6v
-         jJ4A==
+        bh=RdSxJgtfR49+qc7gDQuzOS5wpt0GubDI8jUNJzdvF5k=;
+        b=NGl4awbP4cxTosV01JpmMZ2pxoPvY5ylLrYz3BD5sEVHfMIFQ2Rb20viJfa1dIzRRL
+         wRzxqhp+BHSMriiljAKqlRwAlia14qtse9bPlXOZU/h1QVtONNgPy6mwzRfU3yzJn65A
+         KfYVYpOcCP7IvaU/eQrBC+diaYAp6i2KiSEA/7biVeQ7U4g/+jb4A1TH0jgpfNP6q9gY
+         mqSbUCVQr2FTFPi0yR1OtcwaBxDsMMtDYyyMw9LKwyne9faB3GfO299ztGIkPKM3wYqO
+         J4Wg6bsjrfqUM3RyH8bAvto+YnjT7Hp2tY4I9/wEOdVp44aO3mAEGD8cK1UxseBHXneZ
+         Qhug==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=1e100.net; s=20260707; t=1794501976; x=1795106776;
+        d=1e100.net; s=20260707; t=1794501986; x=1795106786;
         h=content-transfer-encoding:mime-version:references:in-reply-to
          :message-id:date:subject:cc:to:from:x-gm-gg:x-gm-message-state:from
          :to:cc:subject:date:message-id:reply-to:content-type;
-        bh=vjquRUStcAkxhtcMG98uyTm8S+FU38EvYx9GS3qKCBo=;
-        b=UHJoAwJTjyq2tp2UCjZ333mHIGL732PjsqMW/RkZnWW96I8vGQyMxqH1E4AC97q/h8
-         b3NMhMT/S1+nJ+dmE16t6isnub5we2Goi91xqZYjFH6pn5f9Q/TJlkHU6n+KOg8WeX7N
-         dRdKb4KGLcfZRjSuqtefNbCjGt5p43078QwOcIobi02IPXDEq6NcJLzFFWJ2QqtNpweM
-         u+E5wc3kNu6aonqjtcTa+e282fx7YEMinqc0LyMVrTGRaYmgI9RJ5VE5Qz33emn5xtEo
-         SaPypeHvCJVjMx1k3cCVZfiK2FDvBtEUv16P6n/UWfmH5iR90xov9LdRlRIoRB6tSQHj
-         oGJw==
-X-Gm-Message-State: APuU4Z9dVhRhOnuKpfriupsscHqDRDgJJEobQiT76YzMs4HtryFG/GCj
-	kMb1Dch5yUFVOX4a7BIiNJ4FiBqaFPOqNYtFZdYlFxcjHXfM+CjNtUgk
-X-Gm-Gg: AYBFou2uXloYNPY9fXLdo4Zlq+t6bK5MLTcn4NfNJL1h3XB298P+elVaRNqzVO7EkoM
-	e6Iz9Lp5gAv9ffcVJBUtMB68noRvLkilxlHQTM5Mqgtszn5oQiDSAF/peqykJXQPDUwjooO3P/k
-	Q//Pf8DKixSmu/ObMEsv9fwKPl52RqjTfVwuMEsFEDm7QA172aWfPlZtSByBVAS3enlNX+YbiNg
-	n+6Ic6aGsKygGfxwEENu7T8sAgz02n9xxQO8/+5ygSXp/NGghbuUSaYEqJiDdc3WZwRz84thrAT
-	mmprgpYO98legc3aqyp+2/XpnJvqPe69Bd20ru2xkxQvLkC1suohMSvNfMJo9z2+v8N/49pbRu7
-	tyPeie4m2F55DdqSeTL5Vmc4lBXTEAtmf5Cj0tikmfUR7fXhSuPr19PdqNgncE4pxvhH2/H9AOx
-	0bG0Xz4h57wjyd2RBioTDfF8m4/J6nucKSPNbKRMR6M0kLOfLI1AsrsJ+NchIeAeEU0eh51v6OT
-	/qfsl3Nfo7Jai0nEqLJpL9D1s+E0RvzT9oFo5E/Gm7tfkKTFC0Aa+63SdsBP/8TcJV1idYMqV1z
-	LsmkrddK5ttB2lDkK7MA4bwAOd9av8Fu0EGupbUhMWYtqTZwSKlFXvpKX66x+V0AxdkZgN9ZwoZ
-	scdv2iZwUf7CFfP00gMMJzDoZI5gHV5dgyz3iu9jzpJXi
-X-Received: by 2002:a05:7022:3c01:b0:1b2:48db:23dd with SMTP id a92af1059eb24-1b50314c097mr94688c88.16.1794501976193;
-        Thu, 12 Nov 2026 08:46:16 -0800 (PST)
+        bh=RdSxJgtfR49+qc7gDQuzOS5wpt0GubDI8jUNJzdvF5k=;
+        b=DOKHCjNMFP9qIt8+uZft+I2943DJ3L/JUXhiBS5t/3LiEMDgEUIuHxhUXBBtnINnIg
+         +TqpIx1YBxHEgtM6Z4NNZUa4ij8MRHosPamWuYyGDYBvImI7T9ZRJ60kYK1HVanXvIOE
+         5/Rkt4S6zl96zFHu0KZYpRsKH7i43Vwyu3xswFVxQaOuv4eJ07mDHS+NzSYadGIUugSu
+         oRpZ84O2yTbtjfptoKq935cmN5RAyzl9Ox8R8ysXgLF6eYP2ILVjlpNUIDP1tMKrCBfs
+         Ho9bfFyHTBd4kp0ZLA/ox0/WYC/0zejf4lGszyFsp5Xa9VLIbpZ9iWKH5dKdj+CqtqZI
+         WCPA==
+X-Gm-Message-State: APuU4Z/WofVov6oE5flTgtuiDcGUXo3ElpKTYPxjyOKWcT+6IXP/CF7a
+	D78AJHzo5+5N0QE1hT0a9dQHMpE78ApyK+Z2L0tkKHjHpXnts5MAduia
+X-Gm-Gg: AYBFou2xc88O7R+2AGvrBZKo4T4tZHyhph7ot12EKPBczFNuNAA/4fw89Tt3EsyYeD/
+	HwgzrYMYCQmf+vpbMt1PyMrOKieFfbk1fbD/syw6he4p6yXRIBz/EQDXrl4lqoOB60K1D52VE9z
+	1/b/UghXeg6K93sRM48Fn4J1vg3szUss3Nd4lZQGBdWOJZIcjmj+9zOinIfvTOLzVw8PX+aL+jy
+	xOWpTYVUYDRvXrybpI5BbQ5oQ7lYzcG4ZUISnTq/fAzmMvO3mec9ZUR/gv8RalPP6V39HIyp6un
+	HMRLkTffM75eDlYF4/haaZP1F1nkcxO5E7XlIsS7LfTsauebxigB51kk5+uMiTo21DsM4EETzG/
+	irc5uXIoEeSAl0rl6M1Sl/TaenhrAL7GfYQJklIG5mAO9vUctQt7XaqgyyfvIaGYSQfdoj6LBZ/
+	2kvtV+OdRE3UOjw6fxLu8MvHieF2RZNUu5XnlOxuSCNPRmHJ8eHkDfgU1NECJIOMGD9bu1yKHAo
+	MElP0smKv1MG37HaO0d0/LVeeldchO5noeMLxZBNTMxqLIbL2cdfAm0a9dJWMvl3nvyh+3NoyUh
+	bmpGe7ur+URp5FTQrwNdTVIwikQlwJRj/epvnAjdmrR9I9qp5TxckvxZJK2MnO7Z657Cj4e/vZz
+	8Sq3U3FHRQgbEbwKKf0ItJZs4bl30vY911aGBbb9cLfFI
+X-Received: by 2002:a05:7022:3b81:b0:1b2:610b:878 with SMTP id a92af1059eb24-1b50306917dmr113343c88.6.1794501986126;
+        Thu, 12 Nov 2026 08:46:26 -0800 (PST)
 Received: from acemagic-m1.tail4fb79.ts.net ([2401:7400:c804:b668:2c54:4647:b67e:c94c])
-        by smtp.gmail.com with ESMTPSA id a92af1059eb24-1b50300e5dcsm287090c88.0.2026.11.12.08.46.14
+        by smtp.gmail.com with ESMTPSA id a92af1059eb24-1b50300e5dcsm287090c88.0.2026.11.12.08.46.24
         (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
-        Thu, 12 Nov 2026 08:46:15 -0800 (PST)
+        Thu, 12 Nov 2026 08:46:25 -0800 (PST)
 From: Ho Jie Feng <hjf3108@gmail.com>
 To: Stanislaw Gruszka <stf_xl@wp.pl>
 Cc: linux-wireless@vger.kernel.org,
 	linux-kernel@vger.kernel.org,
 	Ho Jie Feng <hjf3108@gmail.com>
-Subject: [PATCH wireless-next v3 3/7] wifi: rt2800: make MCS 16 fall back to MCS 8 on devices with 3 TX chains
-Date: Fri, 13 Nov 2026 00:45:37 +0800
-Message-ID: <20261112164544.3176458-4-hjf3108@gmail.com>
+Subject: [PATCH wireless-next v3 4/7] wifi: rt2800: don't report an A-MPDU length to minstrel_ht
+Date: Fri, 13 Nov 2026 00:45:38 +0800
+Message-ID: <20261112164544.3176458-5-hjf3108@gmail.com>
 X-Mailer: git-send-email 2.53.0
 In-Reply-To: <20261112164544.3176458-1-hjf3108@gmail.com>
 References: <20261112164544.3176458-1-hjf3108@gmail.com>
@@ -100,109 +100,42 @@ Precedence: list
 MIME-Version: 1.0
 Content-Transfer-Encoding: 8bit
 
-MCS 15 has worse reliability than MCS 16, since 16 and above
-are 3 stream rates, and 15 is the top of the 2 stream rates.
-Falling back from MCS 16 to MCS 15 does not make sense, so
-make the fallback to MCS 8 on all devices with 3 TX chains,
-like the Ralink driver does.
-
-The retry chain is now MCS 16 to MCS 8, skipping 7 MCS rates
-in between. Reflect that in the retry calculation code. This
-also fixes the retry count on RT3883, which already used this
-fallback.
-
-Test results:
-   before after
-TX 28.2   29.1
-RX 70.4   70.2
+Set IEEE80211_HW_TX_STATUS_NO_AMPDU_LEN, which was added for drivers
+that can't report the proper AMPDU length and record this workaround
+below the TODO comment.
 
 Signed-off-by: Ho Jie Feng <hjf3108@gmail.com>
+Acked-by: Stanislaw Gruszka <stf_xl@wp.pl>
 ---
- drivers/net/wireless/ralink/rt2x00/rt2800lib.c | 10 +++++++++-
- drivers/net/wireless/ralink/rt2x00/rt2x00.h    |  5 +++++
- drivers/net/wireless/ralink/rt2x00/rt2x00dev.c | 14 ++++++++++++--
- 3 files changed, 26 insertions(+), 3 deletions(-)
+ drivers/net/wireless/ralink/rt2x00/rt2800lib.c | 1 +
+ drivers/net/wireless/ralink/rt2x00/rt2x00dev.c | 2 ++
+ 2 files changed, 3 insertions(+)
 
 diff --git a/drivers/net/wireless/ralink/rt2x00/rt2800lib.c b/drivers/net/wireless/ralink/rt2x00/rt2800lib.c
-index 371b293bac..3be4f4cbde 100644
+index 3be4f4cbde..269d621f51 100644
 --- a/drivers/net/wireless/ralink/rt2x00/rt2800lib.c
 +++ b/drivers/net/wireless/ralink/rt2x00/rt2800lib.c
-@@ -1096,6 +1096,14 @@ void rt2800_txdone_entry(struct queue_entry *entry, u32 status, __le32 *txwi,
- 		 */
- 		__set_bit(TXDONE_SUCCESS, &txdesc.flags);
- 		txdesc.retry = ((mcs > real_mcs) ? mcs - real_mcs : 0);
-+
-+		/*
-+		 * On devices with 3 TX chains MCS16 falls back to MCS8, so a
-+		 * frame that was sent below MCS16 after a three stream rate
-+		 * skipped MCS9 to MCS15.
-+		 */
-+		if (rt2x00_is_3t(rt2x00dev) && mcs >= 16 && real_mcs <= 8)
-+			txdesc.retry -= 7;
- 	} else {
- 		/*
- 		 * Transmission failed. The number of retries is
-@@ -6280,7 +6288,7 @@ static int rt2800_init_registers(struct rt2x00_dev *rt2x00dev)
- 	reg = rt2x00_rt(rt2x00dev, RT5592) ? 0x00000082 : 0x00000002;
- 	rt2800_register_write(rt2x00dev, TXOP_HLDR_ET, reg);
+@@ -11837,6 +11837,7 @@ static int rt2800_probe_hw_mode(struct rt2x00_dev *rt2x00dev)
+ 	ieee80211_hw_set(rt2x00dev->hw, PS_NULLFUNC_STACK);
+ 	ieee80211_hw_set(rt2x00dev->hw, SIGNAL_DBM);
+ 	ieee80211_hw_set(rt2x00dev->hw, SUPPORTS_PS);
++	ieee80211_hw_set(rt2x00dev->hw, TX_STATUS_NO_AMPDU_LEN);
  
--	if (rt2x00_rt(rt2x00dev, RT3883)) {
-+	if (rt2x00_is_3t(rt2x00dev)) {
- 		rt2800_register_write(rt2x00dev, TX_FBK_CFG_3S_0, 0x12111008);
- 		rt2800_register_write(rt2x00dev, TX_FBK_CFG_3S_1, 0x16151413);
- 	}
-diff --git a/drivers/net/wireless/ralink/rt2x00/rt2x00.h b/drivers/net/wireless/ralink/rt2x00/rt2x00.h
-index 415ff253cb..ace06ba73d 100644
---- a/drivers/net/wireless/ralink/rt2x00/rt2x00.h
-+++ b/drivers/net/wireless/ralink/rt2x00/rt2x00.h
-@@ -1200,6 +1200,11 @@ static inline bool rt2x00_is_soc(struct rt2x00_dev *rt2x00dev)
- 	return rt2x00_intf(rt2x00dev, RT2X00_CHIP_INTF_SOC);
- }
- 
-+static inline bool rt2x00_is_3t(struct rt2x00_dev *rt2x00dev)
-+{
-+	return rt2x00dev->default_ant.tx_chain_num == 3;
-+}
-+
- /* Helpers for capability flags */
- 
- static inline bool
+ 	/*
+ 	 * Don't set IEEE80211_HW_HOST_BROADCAST_PS_BUFFERING for USB devices
 diff --git a/drivers/net/wireless/ralink/rt2x00/rt2x00dev.c b/drivers/net/wireless/ralink/rt2x00/rt2x00dev.c
-index 7b23da0678..7c03fd07bc 100644
+index 7c03fd07bc..baf5d039bc 100644
 --- a/drivers/net/wireless/ralink/rt2x00/rt2x00dev.c
 +++ b/drivers/net/wireless/ralink/rt2x00/rt2x00dev.c
-@@ -329,10 +329,10 @@ static void rt2x00lib_fill_tx_status(struct rt2x00_dev *rt2x00dev,
- 	 * lowest rate was used.
+@@ -374,6 +374,8 @@ static void rt2x00lib_fill_tx_status(struct rt2x00_dev *rt2x00dev,
+ 	 * by the hw we could provide the real ampdu_len to mac80211
+ 	 * which would allow the rc algorithm to better decide on
+ 	 * which rates are suitable.
++	 *
++	 * Currently, we work around this by setting TX_STATUS_NO_AMPDU_LEN.
  	 */
- 	for (i = 0; i < retry_rates && i < IEEE80211_TX_MAX_RATES; i++) {
--		tx_info->status.rates[i].idx = rate_idx - i;
-+		tx_info->status.rates[i].idx = rate_idx;
- 		tx_info->status.rates[i].flags = rate_flags;
- 
--		if (rate_idx - i == 0) {
-+		if (rate_idx == 0) {
- 			/*
- 			 * The lowest rate (index 0) was used until the
- 			 * number of max retries was reached.
-@@ -340,8 +340,18 @@ static void rt2x00lib_fill_tx_status(struct rt2x00_dev *rt2x00dev,
- 			tx_info->status.rates[i].count = retry_rates - i;
- 			i++;
- 			break;
-+		} else if (rate_idx == 16) {
-+			/*
-+			 * TX_FBK_CFG_3S_0 makes MCS16 fall back to MCS8 on
-+			 * devices with 3 TX chains, the decrement below shifts
-+			 * it back to 8.
-+			 */
-+			if (rt2x00_is_3t(rt2x00dev) &&
-+			    (rate_flags & IEEE80211_TX_RC_MCS))
-+				rate_idx = 9;
- 		}
- 		tx_info->status.rates[i].count = 1;
-+		rate_idx--;
- 	}
- 	if (i < (IEEE80211_TX_MAX_RATES - 1))
- 		tx_info->status.rates[i].idx = -1; /* terminate */
+ 	if (test_bit(TXDONE_AMPDU, &txdesc->flags) ||
+ 	    tx_info->flags & IEEE80211_TX_CTL_AMPDU) {
 -- 
 2.53.0
 
