@@ -1,50 +1,50 @@
 Authentication-Results: smtp.subspace.kernel.org; arc=none smtp.remote-ip=46.102.156.145
 ARC-Seal: i=1; d=subspace.kernel.org; s=arc20261015; a=rsa-sha256; cv=none;
 	t=1794491549;
-	b=PSFMLuFFqpCp5Epfyyks4X6bfEPP+E1KZ0fUZ+KcjXKIm5A6VDNQpPi8o9S1q6xhfVCc
-	 yoNugzISvzvMOAlHv0ANl/u/HCKp3+H0UNIQDyiypkpuVZSI/9cDlRGaSpfqhmqEUvuSC
-	 /NpH+6fPYtWmq/OfC8nvmn60oA2b9mWurEabG8toFZjF9C62Da2Ay/RshNVvZrdgotdpC
-	 xN/twYB1j8vDFc6XebuF7TgSNyBNyG5xPFG7fkztgJq/txbwkfsnNIuZITNcBrs2vRjNE
-	 l8Arq8wFsvpqNwlSXxZtCPn3U/XPk92PrYZ6bBr9VJBuet5lewzlZP+grhQLOltiD1g==
+	b=tNShPBDxLrefnUFdYIL8at/tGRK8PGW+WSphEAbtz/CkdeHD/hIlR5qmmm0euoQ33JXk
+	 /uQyE5IrwI/v1oRcS2L60ow/1dDMFcYZm5bfQiWZs1P+zFm63XRm8vCNnStUrTkpdqaAM
+	 KdaFQ2k9EG+72qGK5b+geMgirjeYJxc8v3muCoKbjHujPXxjgWFh9p2Yz94qKWndiEk0p
+	 50TS+mFUC2jdv69rjwMowlFI1yB3F5Oml3Fcn+dhAYq1YeAAF0Nr45Uxc9YbhUcDePI+P
+	 h0roTPcFSGnsNG2xldaUcFjpOtjwWEFYkbJDdmGjWujCTYZ8I02x4KtiHvsgxkELTow==
 ARC-Message-Signature: i=1; d=subspace.kernel.org; s=arc20261015;
 	a=rsa-sha256; c=relaxed/relaxed; t=1794491549;
 	h=DMARC-Filter:DKIM-Signature:Received:From:To:Cc:Subject:User-Agent:
 	 Date:Message-ID:MIME-Version:Content-Type;
 	bh=FQEToc/tllkwE/usKVnhOlAx/N0Rs4tX+3kATA9NrBg=;
-	b=3vTEgzmMSqJkR5wvesg61MmOe2jo7XnBa7KldOLKD4cIYB5ztQNaSGmg9CK0KtR7lPvD
-	 dTCp0yWTyKx9RluQ8ULdXrqXLCucOeYHj2Bl5Q9HH2VkGWbcgD/LQbwMUmK2GHkv3cBJB
-	 1OjwxMokkfjhLSKnljmicUmoA1gt9kHmH1QhSJRGrmi7NA/E4tDq65Y19xvFa58TB0aE+
-	 GsP/arBGkhFpy18vVlPdyT0B4UVgp3xVwgsYooJ+D3O/NqJUcsj8ly1k0VB3ANseDeuKM
-	 Mo2BY4Y6nQuY8zgHW8QjyEjkdC6ZmMSDGxqu6cQz9DENikwK2pGPghC0jW3OT1mzKIg==
+	b=Ii9WYSXS47fyPGITVb9xk4TZLoGueANj24igXe09WlJE/mTvblFslLIoaTrZP/kpPpwH
+	 26hqpmpuDfc9WET7I+bcwu6KbOzk0AhR0n0EnQMAIBP7O0OpkvOptiWeDX/3hMGDAdsUM
+	 YrY7t95UEWpL7v9HFHYfPj2A1agTQQ+7uKH+QdhPbQyF8usL7QVwkRyNyoIruuz+eAEFC
+	 64+fhopbvMVcSqnE8zDfcZVX0znJ8uV1Xp4mh+hdpriMigFypvWQTr44PMDLwE+towBUA
+	 345Go8dMaP0bQQnzngkudZulapV22ECDfUdqb6Hig40zyn9RdOx+jcfXlCnAg9X06Iw==
 ARC-Authentication-Results: i=1; smtp.subspace.kernel.org; 
 	dmarc=pass header.from=thregr.org;
 	spf=pass smtp.mailfrom=thregr.org;
-	dkim=pass header.d=thregr.org header.i=@thregr.org header.a=rsa-sha256 header.s=v1 header.b=t6MT0ktN;
+	dkim=pass header.d=thregr.org header.i=@thregr.org header.a=rsa-sha256 header.s=v1 header.b=D4kRu29O;
 	arc=none smtp.remote-ip=46.102.156.145
 Received: from erc.corrupted.graphics (erc.corrupted.graphics [46.102.156.145])
 	(using TLSv1.3 with cipher TLS_AES_256_GCM_SHA384 (256/256 bits)
 	 key-exchange ECDHE (prime256v1) server-signature ECDSA (prime256v1) server-digest SHA256)
 	(No client certificate requested)
-	by smtp.subspace.kernel.org (Postfix) with ESMTPS id 422A5606A321
+	by smtp.subspace.kernel.org (Postfix) with ESMTPS id 42181606A31C
 	for <linux-wireless@vger.kernel.org>; Thu, 12 Nov 2026 13:52:28 +0000 (UTC)
-DMARC-Filter: OpenDMARC Filter v1.4.2 smtp.subspace.kernel.org 422A5606A321
+DMARC-Filter: OpenDMARC Filter v1.4.2 smtp.subspace.kernel.org 42181606A31C
 Authentication-Results: smtp.subspace.kernel.org; dmarc=pass (p=reject dis=none) header.from=thregr.org
 Authentication-Results: smtp.subspace.kernel.org; spf=pass smtp.mailfrom=thregr.org
 Authentication-Results: smtp.subspace.kernel.org;
-	dkim=pass (2048-bit key, unprotected) header.d=thregr.org header.i=@thregr.org header.a=rsa-sha256 header.s=v1 header.b=t6MT0ktN
+	dkim=pass (2048-bit key) header.d=thregr.org header.i=@thregr.org header.a=rsa-sha256 header.s=v1 header.b=D4kRu29O
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed; d=thregr.org;
 	s=v1; h=Content-Type:MIME-Version:Message-ID:Date:Subject:Cc:To:From:Reply-To
 	:Content-Transfer-Encoding:Content-ID:Content-Description:Resent-Date:
-	In-Reply-To:References; bh=FQEToc/tllkwE/usKVnhOlAx/N0Rs4tX+3kATA9NrBg=; b=t6
-	MT0ktNgsaefXAJFNNX6ger94HQZcOCpKz+2oDCmjK3qvopSRlTJJtJkfTVoI6q7oLWMso+jZJEMRm
-	EjfUUyKzgaErZSoqvXMHD1qScHYjKy8B+T+OqCMIS1MkOyi/K5dMmy57D+VHiOJE+YmWOFKQ4HLhA
-	/ED7BMUUgAXk7jSuGk/ZkGx2dT8Fd3KzXTByOD9nDNboaJw2exmU24sSU+jbEPa/a8XUsY49mb2uy
-	yXCLG8l7W/am9ikyQ6v93DlkeU+A8mcWfbMxIAY1J/OomNSML7ps6nPXND9z2TWIoPk/wGpFenq3N
-	chZMijAxPqsHaxQHZa5ywZiKGWRAe4TA==;
+	In-Reply-To:References; bh=FQEToc/tllkwE/usKVnhOlAx/N0Rs4tX+3kATA9NrBg=; b=D4
+	kRu29O30nTECC5LmTvTWsDx4JUKUycz8dJgYWoujzhtzkwE+ZjdA72hEsh5NOpT4WGKVXbEEvzIOA
+	rU89YQcFSWufak38uTi0NxTCb778gooTUJZxtLytRtXbCYvy+SQJXIaycxv8vQRvzV3HciEqkpPtf
+	euPuo5iH7Mb+u1jX7loAa1gYaO91qBeClx5o7uvJ+5npYZvOQuDtyOqM0JANVRNjA2+WlVG6aCFYt
+	WMhvTQNIrQHgvxVmsiIrPXCkPDKhn6CtV+G9swZLWwsKTwDt+cNRglqUizrGQmDjp7z4oh8xKr+Mb
+	6Dt/SObMyG8TYLVmdO0kFyzLWSv8EsJg==;
 Received: from 78-213-86-123.subs.proxad.net ([78.213.86.123] helo=localhost)
 	by erc.corrupted.graphics with esmtpsa (TLS1.3:ECDHE_SECP256R1__RSA_PSS_RSAE_SHA256__AES_256_GCM:256:SECP256R1)
-	id 1xRVE7-00000000ASv-2SOc (envelope-from <wavexx@thregr.org>);
-	Thu, 12 Nov 2026 14:52:31 +0100
+	id 1xRVDx-00000000ASf-4B8d (envelope-from <wavexx@thregr.org>);
+	Thu, 12 Nov 2026 14:52:22 +0100
 From: Yuri D'Elia <wavexx@thregr.org>
 To: linux-wireless@vger.kernel.org
 Cc: Felix Fietkau <nbd@nbd.name>, Lorenzo Bianconi <lorenzo@kernel.org>,
@@ -55,8 +55,8 @@ Cc: Felix Fietkau <nbd@nbd.name>, Lorenzo Bianconi <lorenzo@kernel.org>,
     linux-mediatek@lists.infradead.org
 Subject: mt7925e: TX throughput collapses without RX traffic
 User-Agent: mu4e 1.14.5-pre1; emacs 32.0.50
-Date: Thu, 12 Nov 2026 14:52:26 +0100
-Message-ID: <871p8q2m3p.fsf@wavexx.thregr.org>
+Date: Thu, 12 Nov 2026 14:52:16 +0100
+Message-ID: <874idm2m3z.fsf@wavexx.thregr.org>
 X-Mailing-List: linux-wireless@vger.kernel.org
 List-Id: <linux-wireless.vger.kernel.org>
 List-Post: <mailto:linux-wireless@vger.kernel.org>
