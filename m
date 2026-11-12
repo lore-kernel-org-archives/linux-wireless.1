@@ -1,45 +1,62 @@
-Authentication-Results: smtp.subspace.kernel.org; arc=none smtp.remote-ip=100.103.45.18
+Authentication-Results: smtp.subspace.kernel.org; arc=none smtp.remote-ip=91.218.175.151
 ARC-Seal: i=1; d=subspace.kernel.org; s=arc20261015; a=rsa-sha256; cv=none;
-	t=1794483430;
-	b=UUoguaWlv5B+E/eNS6tmkMgG6AB8bTUY18WpyUnsVakcmACkNKYdE9sFozHQ+2k17d5t
-	 B0WX5D7qK/uTszDQT1fJFCSUAfsis5vXLZS3tFzxzRf5evsWzi55GisWJafvnzjkHz3S/
-	 DreJexJZdkh0aaAtzSTvbCZ4/x8AcopJJ4J/JS2IL0U0pbJ/YzVqPyppEalNO4WLAzGlD
-	 FBgnr3rftdF4az0W36a1SnCaj7ksDGv/HKmFmTNeYySe3uwcdrhlDXeURy6rvWTzwgFwk
-	 6L4K4lUUGDKyOTugZ5cJCz3cNnZDyAOH4c6yIinsECdHW1j+RHZboiDxN6MJzxfcJfw==
+	t=1794484006;
+	b=pyn0wjQ0dE3ANjTC8H0wOOIbphidz75X+REN6V/PAaO85XmPt9luhE/9ZuHyr40M/AtJ
+	 XzVsyJ/0xp30R72eQfiLxXU6pZdXOeXLCMX8rFrJYM4+6l0NpO2ZPCCaxZL9e6UPh7dtP
+	 hnqKXIpl4+FGBH7X0bLMLhRnpSWXuBjlX1ChIYqwAgZ6h2FM/rQBoWFcxKbnO0Bl8IBSH
+	 t8P3qbMzgZdOwrU4yHkj3KjNzCnjtUj+MnfBl1WmKAFCovy/rqwB2qQLvwVdTZB4rn8dm
+	 MnziQpzKdm+bSSN+FtHc7S00j1MQf+aF1Ee2WcYyci0touGPlx7WxAE4evhMBaabSgA==
 ARC-Message-Signature: i=1; d=subspace.kernel.org; s=arc20261015;
-	a=rsa-sha256; c=relaxed/relaxed; t=1794483430;
-	h=Received:DKIM-Signature:MIME-Version:Content-Type:
-	 Content-Transfer-Encoding:Subject:From:To:Cc:In-Reply-To:References:
-	 Date:Message-Id:X-Mailer:X-Developer-Signature:X-Developer-Key;
-	bh=QHhfXSlF7EGQRQSXuS0ww8XO98LQNxgF1We+5dGehjg=;
-	b=C1HMZNz35CNNAp4NRRCzHcJB8JQLmUpb+k3al1hBnFBzVAXBZnfD5zzSc9oG7/iKlJE1
-	 jM4GftsO5SNYtc90+eae7+S+mowuxjDF7kwI9CuZ/azn7DHh4Yr1J1PwkQmEQvBtKS+V4
-	 c1rr9VAGJGwmWZ/jc12BrGRpoy6xkY/VN+FT+FYYYh7OX+Cmkd6qKclg+1fgxvSP+njZi
-	 Y/eLZjclR1gSXGoQyrlaJFhHx0mrd6XOsMi17aAwfLKFjYLcrCrWa8sqDf72kvrb7O+7z
-	 nrDDdp7R40cZl+/Dfd282E5dsb/P74OzbO8w9coNISNTlMV/cLVkRWOKoLAVlTIzNZQ==
+	a=rsa-sha256; c=relaxed/relaxed; t=1794484006;
+	h=DMARC-Filter:X-Envelope-To:DKIM-Signature:X-Envelope-To:Received:
+	 X-Mizu-Trace-ID:X-Migadu-Flow:Date:From:To:CC:Subject:In-Reply-To:
+	 References:Message-ID:MIME-Version:Content-Type:
+	 Content-Transfer-Encoding;
+	bh=96B1aoUOIGHnE7djBvHarqc+Lm2Nf+DJ9a9DH1Eo88M=;
+	b=jYHzY/3h97WQou4gckUAkJmyNniZ05eX3gcCSVQNWDvNfoxETCkNd0nPKTuQtJm2Rohy
+	 LMIUxWoTOIAxX1KtDjMXEywKCPlSYcQ9VTK+0BR+esJm+Z14t/uHp+O2TACOBq9RaHlK9
+	 yJzPfMZ4jDC6+3wQUS8ZGwvlSMJebaHwz1Z55Ne02AHjJXg5LmbTNFXJhLH0m9LPpvbHN
+	 nBPvKxfcWiWKlN4hIn+uIIRe9a7iaZB5O78f2epzp0gt0DQ5MsKJAlL+BjxkO6lnR0MOr
+	 08oYz89cIC+aATJx9yXrKYQjWNb8qJJR06JJMFGaGhXn5r84lInSWeBrTgIcoBpo45g==
 ARC-Authentication-Results: i=1; smtp.subspace.kernel.org; 
-	dkim=pass header.d=kernel.org header.i=@kernel.org header.a=rsa-sha256 header.s=k20260515 header.b=bETNJTMG;
-	arc=none smtp.remote-ip=100.103.45.18
-Received: from smtp.kernel.org (quasi.space.kernel.org [100.103.45.18])
-	(using TLSv1.3 with cipher TLS_AES_256_GCM_SHA384 (256/256 bits)
-	 key-exchange X25519 server-signature ECDSA (prime256v1))
+	dmarc=pass header.from=linux.dev;
+	spf=pass smtp.mailfrom=linux.dev;
+	dkim=pass header.d=linux.dev header.i=@linux.dev header.a=rsa-sha256 header.s=key1 header.b=sFwoYwPN;
+	arc=none smtp.remote-ip=91.218.175.151
+Received: from mta0.migadu.com (out-151.mta0.migadu.com [91.218.175.151])
+	(using TLSv1.3 with cipher TLS_AES_128_GCM_SHA256 (128/128 bits)
+	 key-exchange X25519 server-signature ECDSA (prime256v1) server-digest SHA256)
 	(No client certificate requested)
-	by smtp.subspace.kernel.org (Postfix) with ESMTPS id A54C6606A31C;
-	Thu, 12 Nov 2026 11:37:10 +0000 (UTC)
+	by smtp.subspace.kernel.org (Postfix) with ESMTPS id BFFEB606A31C
+	for <linux-wireless@vger.kernel.org>; Thu, 12 Nov 2026 11:46:44 +0000 (UTC)
+DMARC-Filter: OpenDMARC Filter v1.4.2 smtp.subspace.kernel.org BFFEB606A31C
+Authentication-Results: smtp.subspace.kernel.org; dmarc=pass (p=none dis=none) header.from=linux.dev
+Authentication-Results: smtp.subspace.kernel.org; spf=pass smtp.mailfrom=linux.dev
 Authentication-Results: smtp.subspace.kernel.org;
-	dkim=pass (2048-bit key) header.d=kernel.org header.i=@kernel.org header.a=rsa-sha256 header.s=k20260515 header.b=bETNJTMG
-Received: by smtp.kernel.org (Postfix) with ESMTPSA id BB3D21F00A06;
-	Thu, 12 Nov 2026 11:37:06 +0000 (UTC)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=kernel.org;
-	s=k20260515; t=1794483430;
-	bh=QHhfXSlF7EGQRQSXuS0ww8XO98LQNxgF1We+5dGehjg=;
-	h=Subject:From:To:Cc:In-Reply-To:References:Date;
-	b=bETNJTMG1PTUEzCwKt7sysGMDLLp/rkJdLIfLcjF1eoFNNdo0JwA17QSLZjDI5FvI
-	 dvYxBtVcZr+qzqvIoP/0WXV1d6297l/L9IEXzdqijLLBUZ4Cf/7voQ2L8uvfeWRAI+
-	 Z5lHrdxgKhmJv/AksP0yNvuMPJJYXgQLdQQjILClr+53XzeM+hdfotFjxxh/a8l2q4
-	 +/zrFAhTfDZ/OA6DNa0DLJBOxOLqA5FCz8RRkLZgWq7SyxFYIpUdJYbEdSOnxiap/E
-	 XalH9ic57bRH6MbDeZ+okI6JH6uCYSsvUxO6P80dFn1Iykk/nVh7Gyp04CkgopWnMZ
-	 fVMYS+yEMuVDA==
+	dkim=pass (1024-bit key, unprotected) header.d=linux.dev header.i=@linux.dev header.a=rsa-sha256 header.s=key1 header.b=sFwoYwPN
+X-Envelope-To: linux-wireless@vger.kernel.org
+DKIM-Signature: a=rsa-sha256; bh=ZQ7JHupEs5ZJXUtjdROehyBc6MRz+EliNGYfLnFlSq8=;
+ c=simple/simple; d=linux.dev;
+ h=from:to:subject:date:message-id:mime-version:content-type; s=key1;
+ t=1794484002; v=1; x=1795088802;
+ b=sFwoYwPNt0kv98ueZexib9aPjCHFphoSWzEa4k8En/s6G2anpQQQfvasGVJhJf/a3J6Dw8nz
+ Gy+5RAWBPFppRLampuxNyodDK2SXZnxS39pZVGTCQCjgeFqnAt56nq8exznTB84w4jW8vITqOZB
+ jPregJQYiDzyUaTvgZ2690vE=
+X-Envelope-To: linux-wireless@vger.kernel.org
+Received: by smtp.migadu.com with ESMTPS id 7e426e4f5600eeba;
+	Thu, 12 Nov 2026 11:46:42 +0000
+X-Mizu-Trace-ID: 7e426e4f5600eeba
+X-Migadu-Flow: FLOW_OUT
+Date: Thu, 12 Nov 2026 12:46:39 +0100
+From: Luka Gejak <luka.gejak@linux.dev>
+To: Mehmet Fide <mehmet.fide@gmail.com>, Ping-Ke Shih <pkshih@realtek.com>
+CC: Bitterblue Smith <rtl8821cerfe2@gmail.com>, linux-wireless@vger.kernel.org,
+ linux-kernel@vger.kernel.org, mehmet.fide@screeningeagle.com
+Subject: =?US-ASCII?Q?Re=3A_=5BPATCH_rtw-next_v10_2/3=5D_wifi=3A_rt?=
+ =?US-ASCII?Q?w88=3A_support_channel_switch_in_AP_mode?=
+In-Reply-To: <20261111121525.358041-3-mehmet.fide@gmail.com>
+References: <20261111121525.358041-1-mehmet.fide@gmail.com> <20261111121525.358041-3-mehmet.fide@gmail.com>
+Message-ID: <F9A94BCB-D3DD-4ACB-AEA5-118611FCBE08@linux.dev>
 X-Mailing-List: linux-wireless@vger.kernel.org
 List-Id: <linux-wireless.vger.kernel.org>
 List-Post: <mailto:linux-wireless@vger.kernel.org>
@@ -49,39 +66,68 @@ List-Unsubscribe: <mailto:linux-wireless+unsubscribe@vger.kernel.org>
 List-Owner: <mailto:linux-wireless+owner@vger.kernel.org>
 Precedence: list
 MIME-Version: 1.0
-Content-Type: text/plain; charset="utf-8"
-Content-Transfer-Encoding: 7bit
-Subject: Re: [PATCH] ASoC: soc-core: start rtd->num_components at zero
-From: Mark Brown <broonie@kernel.org>
-To: Dennis Gilmore <dennis@ausil.us>
-Cc: broonie@kernel.org, lgirdwood@gmail.com, perex@perex.cz, tiwai@suse.com, 
- kees@kernel.org, gustavoars@kernel.org, linux-sound@vger.kernel.org, 
- linux-hardening@vger.kernel.org, linux-kernel@vger.kernel.org, 
- michael.hennerich@analog.com, nuno.sa@analog.com, dlechner@baylibre.com, 
- linux-spi@vger.kernel.org, miriam.rachel.korenblit@intel.com, 
- linux-wireless@vger.kernel.org
-In-Reply-To: <20261112025252.71375-1-dennis@ausil.us>
-References: <20261112025252.71375-1-dennis@ausil.us>
-Date: Thu, 12 Nov 2026 11:37:04 +0000
-Message-Id: <179448342405.66517.5463730214277229760.b4-review@b4>
-X-Mailer: b4 0.17-dev
-X-Developer-Signature: v=1; a=openpgp-sha256; l=510; i=broonie@kernel.org;
- h=from:subject:message-id; bh=qeN8OdTaE3iAI/xHQWyAjn96Rkec7rUqsQT9NgQks+o=;
- b=owGbwMvMwCWm/754w+YLFp2Mp9WSGLK+LnkQ9GJW09qtNmw5z80v/X10PbLw/ZI3Uov3OraHr
- s45+lliW0cpC4MYF4OsmCJLXBb3y/qS12v4Di5sg5nDygQyhIGLUwAm0hLKyLBB6eKxJIZPwfcu
- lG3N03lz82jDt3xfv3u8s3IcXcynX1rGyHAiKDQigW0dR/jVmCNrTDPfcbpkPzSRuSWQZFjVGh5
- fyAgA
-X-Developer-Key: i=broonie@kernel.org; a=openpgp;
- fpr=3F2568AAC26998F9E813A1C5C3F436CA30F5D8EB
+Content-Type: text/plain;
+ charset=utf-8
+Content-Transfer-Encoding: 8bit
 
-> Since the conversion to devm_kzalloc_flex(), the allocator sets the
-> __counted_by() counter num_components to the allocated length
-> (num_cpus + num_codecs + num_platforms). This only happens when the
-> compiler supports __builtin_counted_by_ref() (GCC 16 here). With
-> older compilers the counter stays zero, as before.
+Hi Mehmet,
 
-This doesn't apply against current code, I think this is an issue that
-was already fixed.  Please check and resend if it's still needed.
+Thanks for the v10, the rtw_core_stop() change looks good to me. I just
+have one comment below.
 
--- 
-Mark Brown <broonie@kernel.org>
+On November 11, 2026 1:15:24 PM GMT+01:00, Mehmet Fide
+<mehmet.fide@gmail.com> wrote:
+
+> diff --git a/drivers/net/wireless/realtek/rtw88/mac80211.c b/drivers/net/wireless/realtek/rtw88/mac80211.c
+> index 5e40cf06a9e3..e6c9866fd599 100644
+> --- a/drivers/net/wireless/realtek/rtw88/mac80211.c
+> +++ b/drivers/net/wireless/realtek/rtw88/mac80211.c
+
+[ ... ]
+
+> @@ -438,6 +443,11 @@ static void rtw_ops_bss_info_changed(struct ieee80211_hw *hw,
+>               rtw_set_dtim_period(rtwdev, conf->dtim_period);
+>               rtw_fw_download_rsvd_page(rtwdev);
+>               rtw_send_rsvd_page_h2c(rtwdev);
+> +             /* restart replay resumes it, a beacon without CSA ends it */
+> +             if (conf->csa_active)
+> +                     rtw_fw_csa_start(rtwdev, vif);
+> +             else
+> +                     rtw_fw_csa_stop(rtwdev, vif);
+>       }
+
+[ ... ]
+
+> +static void rtw_ops_channel_switch_beacon(struct ieee80211_hw *hw,
+> +                                       struct ieee80211_vif *vif,
+> +                                       struct cfg80211_chan_def *chandef)
+> +{
+> +     struct rtw_dev *rtwdev = hw->priv;
+> +
+> +     mutex_lock(&rtwdev->mutex);
+> +     rtw_fw_csa_start(rtwdev, vif);
+> +     mutex_unlock(&rtwdev->mutex);
+> +}
+
+As far as I can see this op normally has nothing left to do.
+__ieee80211_channel_switch() sets csa_active and sends the beacon change
+before it calls the op:
+
+        link_conf->csa_active = true;
+        ...
+        if (changed) {
+                ieee80211_link_info_change_notify(sdata, link_data, changed);
+                drv_channel_switch_beacon(sdata, &link_data->csa.chanreq.oper);
+        }
+
+For rtw88 changed is only set there when there is a CSA beacon, so it
+always carries BSS_CHANGED_BEACON. The path above then starts every
+countdown, not only the one after a restart, and in the normal flow
+rtw_fw_csa_start() in the op returns early because csa_vif already
+matches.
+
+Maybe drop the op and say in the comment above that this path starts
+the countdown? Or is it kept on purpose?
+
+Best regards,
+Luka Gejak
