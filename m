@@ -1,88 +1,99 @@
-Authentication-Results: smtp.subspace.kernel.org; arc=none smtp.remote-ip=209.85.218.53
-ARC-Seal: i=1; d=subspace.kernel.org; s=arc20261015; a=rsa-sha256; cv=none;
-	t=1794470188;
-	b=4bEopzmw71G8Vevj4F+ny5J/GfqgnR2K7OkIcMqEJf47jEOcJWQ9DFn54kgfkCobpLPX
-	 e7KUbh4PfEPdzllr34c2UFI0TInRPNSKHfK/1Fjt1383MpCoD3FCyi1zdl5kzB/sgBk5g
-	 8/udKZqurxiIHGum4N0mFk9SN/zHB2ka4Lzn6usUp2/LtOUWvvn581+AxCdfXVqXBItQB
-	 3dJl1MVjer+L+f1ovtQHGtbp6SnV/iao+IXFVGbsigur8rwpjbKne7UmN6yREKkiN2thP
-	 fhl/iayTl1E9qttutt2RdoMur1+g/VKjUc3RW1mff7NwTlQZ6bxj8ywNp4c0jC0q8Kg==
-ARC-Message-Signature: i=1; d=subspace.kernel.org; s=arc20261015;
-	a=rsa-sha256; c=relaxed/relaxed; t=1794470188;
+Authentication-Results: smtp.subspace.kernel.org; arc=pass header.oldest-pass=0 smtp.remote-ip=209.85.218.45
+ARC-Seal: i=2; d=subspace.kernel.org; s=arc20261015; a=rsa-sha256; cv=pass;
+	t=1794470340;
+	b=bkTVWrEaznwTjeJIiLLYmtKwKLMgr6blOBSXcizeUunl75swp1ETEQ+PCy7bIc9ajKWH
+	 66zFM5TrP8bUNIGUsfrCy/btJbVJE/uGG+/1vHgSSI8ffJbI+PXmwwN0kShlm0UEHyl6n
+	 /Ty6yew9sW02GsbEibTCq8BqUPrQZnaUzLEABJEXmDIRs95O9f9HWKDg/NXNgDMxSar4P
+	 YnLdwZM7UwFioS5Ks5LvJ0ct4egAoBIdt4qXWRd6xbVBfnKMehaqjdRUR0S4nMlLsPOxc
+	 EYq1mT5imo+mKI9Ogve28ICyGH97luhFS9zVU0/w0Ktv+R22+FZ6g+JqXa/oUSRhZvg==
+ARC-Message-Signature: i=2; d=subspace.kernel.org; s=arc20261015;
+	a=rsa-sha256; c=relaxed/relaxed; t=1794470340;
 	h=DMARC-Filter:Received:DKIM-Signature:X-Google-DKIM-Signature:
-	 X-Gm-Message-State:X-Gm-Gg:X-Received:Received:From:To:Cc:Subject:
-	 Date:Message-ID:X-Mailer:MIME-Version:Content-Transfer-Encoding;
-	bh=BkAGiA/FGNFDh9nyzZQmLOkMkXw2X8gldLBWKYocwzk=;
-	b=3gyx6/GQ5kwIoKvTFV+XAL75B+sWzx/QM/JLKpozn/FP31ntY6FPdKYi2a0fSq/ee1fh
-	 f/LXbjppMQBpftN9IFTm4IDavFq5rNP14Yns4/A9XSuhZPuPB12COAbZr75V5ojLjaDb7
-	 zk9j9t6CN3L4qLqWtSRf5+xcMjb1QVaE/DzJyf2IGc1i9zqsSf9qTgNpGmdi08MW2Nm3I
-	 DgzEzQT3QBKMxOrWz9VRPR1rrkGMjn4LNSELcf9JB6y4lDnI1xqZAF/DZYwOZgHk95iQA
-	 uzLrlrlAXgbWsDdVzBFntU6LQh66srhQm9net2v4wux0y5TUgjgImCN3VkVplExBEXA==
-ARC-Authentication-Results: i=1; smtp.subspace.kernel.org; 
+	 X-Gm-Message-State:X-Gm-Gg:X-Received:MIME-Version:References:
+	 In-Reply-To:From:Date:X-Gm-Features:Message-ID:Subject:To:Cc:
+	 Content-Type:Content-Transfer-Encoding;
+	bh=DjO1xCtGqLcO9z2ZXququdx3x2Rqg4uwGboEOk41Znc=;
+	b=RTedWkaSDOYI3913E7rnSOGVbw8FQAC01McC6K1UHTK3nM7io1v3ParWuA+PtGJk0hLF
+	 R4L8Ff7wMMg1Sm5O1k8z7qJWK/JgT4KnlzEvMurqkdxsZBuPRudatYS+NZdUZEesgqD6+
+	 FaXtpTK9W/InI31CcWFM2VOtAaff+AZyJla7DUwxKI6b+jJ2TFPKCbZj9s60GJIszUs9I
+	 kw+/ptbRSaEgpLOnXRQodABy2jTI2z3QDc4WaY7tNWr3J5bk5AN9OoNvkIw93UEtZM6hC
+	 GWNcZMG5abafSnAl72OoOBmgaKCc1m3XYL/b2h5UL3WFWqmHP0P5SQgP8U4P0VNzsmA==
+ARC-Authentication-Results: i=2; smtp.subspace.kernel.org; 
 	dmarc=none header.from=acio.nl;
 	spf=none smtp.mailfrom=acio.nl;
-	dkim=pass header.d=acio-nl.20260707.gappssmtp.com header.i=@acio-nl.20260707.gappssmtp.com header.a=rsa-sha256 header.s=20260707 header.b=eNZSRIPx;
-	arc=none smtp.remote-ip=209.85.218.53
-Received: from mail-ej1-f53.google.com (mail-ej1-f53.google.com [209.85.218.53])
+	dkim=pass header.d=acio-nl.20260707.gappssmtp.com header.i=@acio-nl.20260707.gappssmtp.com header.a=rsa-sha256 header.s=20260707 header.b=FLTIOaX7;
+	arc=pass header.oldest-pass=0 smtp.remote-ip=209.85.218.45
+Received: from mail-ej1-f45.google.com (mail-ej1-f45.google.com [209.85.218.45])
 	(using TLSv1.3 with cipher TLS_AES_128_GCM_SHA256 (128/128 bits)
 	 key-exchange X25519 server-signature ECDSA (prime256v1) server-digest SHA256)
 	(No client certificate requested)
-	by smtp.subspace.kernel.org (Postfix) with ESMTPS id 4B754606A321
-	for <linux-wireless@vger.kernel.org>; Thu, 12 Nov 2026 07:56:26 +0000 (UTC)
-DMARC-Filter: OpenDMARC Filter v1.4.2 smtp.subspace.kernel.org 4B754606A321
+	by smtp.subspace.kernel.org (Postfix) with ESMTPS id D11DA606A321
+	for <linux-wireless@vger.kernel.org>; Thu, 12 Nov 2026 07:58:59 +0000 (UTC)
+DMARC-Filter: OpenDMARC Filter v1.4.2 smtp.subspace.kernel.org D11DA606A321
 Authentication-Results: smtp.subspace.kernel.org; dmarc=none (p=none dis=none) header.from=acio.nl
 Authentication-Results: smtp.subspace.kernel.org; spf=none smtp.mailfrom=acio.nl
 Authentication-Results: smtp.subspace.kernel.org;
-	dkim=pass (2048-bit key, unprotected) header.d=acio-nl.20260707.gappssmtp.com header.i=@acio-nl.20260707.gappssmtp.com header.a=rsa-sha256 header.s=20260707 header.b=eNZSRIPx
-Received: by mail-ej1-f53.google.com with SMTP id a640c23a62f3a-c4395d31228so531285066b.1
-        for <linux-wireless@vger.kernel.org>; Wed, 11 Nov 2026 23:56:26 -0800 (PST)
+	dkim=pass (2048-bit key) header.d=acio-nl.20260707.gappssmtp.com header.i=@acio-nl.20260707.gappssmtp.com header.a=rsa-sha256 header.s=20260707 header.b=FLTIOaX7
+Received: by mail-ej1-f45.google.com with SMTP id a640c23a62f3a-c4d581da0aaso440544066b.2
+        for <linux-wireless@vger.kernel.org>; Wed, 11 Nov 2026 23:58:59 -0800 (PST)
+ARC-Seal: i=1; a=rsa-sha256; t=1794470338; cv=none;
+        d=google.com; s=arc-20260327;
+        b=s4P+XyspCigAOU4R2+dVMdGLVnXvKUGuw+pmBX7gF9xPDBFgPa1rGlm4X5rd6U/bty
+         vxTwT+xaxe7tN2tCayMhZoGRrOCPARlt3G3al/WPsDoaJRDT1i1m5/mcnL049FdWUoHk
+         B0eKAw/FwU36uDfHQ0kpOX+O6ixU9onWlr2K6V0kcALKDoSbCR86F3ErQB9xQk8Xc2i4
+         26pe9WMW5/bkmLqBbHumMhyhI3JaUuJ/sK53bMaiEjDvUyeGzo4t9MOj1zTC83Sue/Vy
+         HnZVCL7eGJXF7jZM3M6ge9FhKyCQLXBJO+HR3W9tpiyxF6AKX6QhSVjYUVepzBNuVEN0
+         D9Jw==
+ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=google.com; s=arc-20260327;
+        h=content-transfer-encoding:cc:to:subject:message-id:date:from
+         :in-reply-to:references:mime-version:dkim-signature;
+        bh=DjO1xCtGqLcO9z2ZXququdx3x2Rqg4uwGboEOk41Znc=;
+        fh=zFCB9yj6tbPtiNOgT9n/qK9LnQKfgtX1AWhCxXtoerY=;
+        b=Hvj+QUTeVc+IWF5p80mkZBCwsLDAS08wZ+j8ROyLlypcxUR3r7XKgmryyF4/Tgo0E0
+         8+ZKf0kRj3ELcTMmr01nJVRlDhWn2CHqltuG/nYZHGqvH8SSYZ7CDAd7aLZo1jsvCDbf
+         V1yYbNqLz0hWgS6xs6/wKDQcLOispo+cY7/4YJL942MR9hvs1jiNeZUEa4Ql63ZHgZ97
+         BamEtZmYqdDCWOGLsgEdK03ISCdRum4fYTVEi3jHFCK23ZmTq8Uw3N3K5hpvrTUlVAFd
+         mQCqV60q5+IxYYBlgIRSZBSwJIlgUlRybailHqBLFnVCawXMGMkhgwi6YZGT1Ea+21D+
+         z6+w==;
+        darn=vger.kernel.org
+ARC-Authentication-Results: i=1; mx.google.com; arc=none
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=acio-nl.20260707.gappssmtp.com; s=20260707; t=1794470185; x=1795074985; darn=vger.kernel.org;
-        h=content-transfer-encoding:mime-version:message-id:date:subject:cc
-         :to:from:from:to:cc:subject:date:message-id:reply-to:content-type;
-        bh=BkAGiA/FGNFDh9nyzZQmLOkMkXw2X8gldLBWKYocwzk=;
-        b=eNZSRIPx5tgWPblFBYgIKymiQBCC4rIxPs79ZjocHX72XeUcjfZCj11kyNs4PQQbUz
-         EK/mpNGakGc5QwI/i7cAJSJMui7SSVOn94NE5HxdtoU2xcsbzVI/r+nFveqJiiSG4R3/
-         ox0qVZeDNK9Glz/mq1B90/IZ4Qph+ZPo7NIN5zw5sPGIVil6QmYmZ9Cc1UYJ1X3r4atn
-         lFiYuW9aKFHpB4YiTXtqmz4l6kHpdtOCoOdSR7qNwHFLNb3XZza0ll9mw51duMI5JGb1
-         aCJhdrboBjrBxFh73BtlabfwH30rgZJC7djrSdp0ukRMHj6W4QfzFNlB0S/zRZgTG3qq
-         NRdQ==
+        d=acio-nl.20260707.gappssmtp.com; s=20260707; t=1794470338; x=1795075138; darn=vger.kernel.org;
+        h=content-transfer-encoding:content-type:cc:to:subject:message-id
+         :date:from:in-reply-to:references:mime-version:from:to:cc:subject
+         :date:message-id:reply-to:content-type;
+        bh=DjO1xCtGqLcO9z2ZXququdx3x2Rqg4uwGboEOk41Znc=;
+        b=FLTIOaX76AB/oAyMwVRHKolKEoPLt3qPr5OJ8Q0reFkDxAM33Sn7Ae/FL80DTeXZjF
+         cY/WKv1Yva2Tz9D8sNiGbBXlJ7krepn3JC3nbW6rDmOg1N3mFgI1PiIrijM5QhvEiDIr
+         WQM3i2Y/1hxumhSc4mVBQ4rE0C0oN+5knk9Yd6CvFKwBpkzWNFYZ5yJQL/y1K6thonuh
+         UYfAg1TN3O87tti4DZ1scy3aAFDQcx9Zsk/kW9QdaMPC4Ia6ssZAH5Y0y9htgdXhghSZ
+         u4DJtDj7HZfSZ+yFroQT1T/QgAvBOKvcb2c2cLCDqwSjhRS3h4p3mTQ74s7rp68Lzlx8
+         Hu2g==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=1e100.net; s=20260707; t=1794470185; x=1795074985;
-        h=content-transfer-encoding:mime-version:message-id:date:subject:cc
-         :to:from:x-gm-gg:x-gm-message-state:from:to:cc:subject:date
-         :message-id:reply-to:content-type;
-        bh=BkAGiA/FGNFDh9nyzZQmLOkMkXw2X8gldLBWKYocwzk=;
-        b=d/Ved8WQ+eRhgnm78xyfH2knNuE/DO+pX2ajAj6hwVRE5z73kSxFTTbA83xHV8tvaw
-         8bke1WOvL570wulvf0sdR4vvyY+1vR9gWYxbKMiddShiLMkvy54Cg+IV2UGv55F6rEhf
-         qCWLg2LDbwdgcEacHNGSqmvKaYwVGXDE2bWl0DLUwHQvmz4f12StyfHMEUuNA7TY8kVv
-         JsreZjTJZmkYEgHtkNRh2xv/z05XIuRQvynBbG2yEY8A376vOhsS74v6ySRG3CXGqXzg
-         qhUOFfW+djOnCMzIE9cc7yhZL7yKzpboddi6A2sEiw25lY2tj5J6pNv7lVSxXptHx6Lk
-         F6ig==
-X-Gm-Message-State: APuU4Z/jIQZNiP8Iei0gWu0hyTN9sLCi3DR8aAzMKk6oiutmzL6k/JuI
-	0oQUJrVpi0DpZb+qbZBsCxaRBNKh3+ZLs7llpWoEZcGS/PsUfnezVI2bESQ/X5we8g==
-X-Gm-Gg: AYBFou2Z39aJXeqc8WaLYB8+s2wvieOS8uptmGEmwi9rDCiflxh3e7Q/xM18z59P6Zj
-	+GqMDJWpLiwuIAONn6QV/RkbXyrUi1etqWOi/e5rkuEZO7ISGeaFqzwyQCC0zobN+ZWS8nHxjOE
-	0siVvvwwc1bzjwv5p4yv8cMhnkPUt4V+cFHqUPMzEs6BM1GOGpFmXOx8FPfWn990XpnyS9gHHO/
-	XdtwnaXMHlEk9RWYNZmj28GLr6uQa6rQmcTeICamy+KCZDeq9VhnvKVfp4YTkc7RtMcXk+owA4C
-	BznjkUhPlZ2A/pERxmzt+P9znMJmyFsoMD3IilnGDDt4UYK7uro0rUZeM3jrso+KATfdp7/Yuup
-	gdXQhKThahFRBY/fXkOpTlO+CSr2uqUPbJXHY+YsbXonmqVFNRyNN5U8C5aLv0mWsU3A0vaa+fV
-	KAdhUWz+sdjRn483S8Nx2mlexFFy1vAcuyTwG5tqkAly83h5sqN6FrjUFQysxrkgUVj5g5E2EwM
-	5Qfvhj/+qoh1vgH8yzX45QkhXIEur8Uizbj6KDcti4g9S46LPswZxBNWYo2IZGjr9YXHLe2auy0
-	IHRLnay55kbpFXYZoCw20vZBi5ue7ULhryxp
-X-Received: by 2002:a17:907:2d27:b0:c2e:4a61:d436 with SMTP id a640c23a62f3a-c5066d3bd65mr436097366b.36.1794470185313;
-        Wed, 11 Nov 2026 23:56:25 -0800 (PST)
-Received: from vschurink-Latitude-5550 ([178.224.169.188])
-        by smtp.gmail.com with ESMTPSA id a640c23a62f3a-c504a67ab93sm308262366b.77.2026.11.11.23.56.24
-        (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
-        Wed, 11 Nov 2026 23:56:24 -0800 (PST)
-From: Vincent Schurink <spam@acio.nl>
-To: Ping-Ke Shih <pkshih@realtek.com>
-Cc: linux-wireless@vger.kernel.org,
-	Vincent Schurink <spam@acio.nl>
-Subject: [PATCH rtw-next v2] wifi: rtw89: set RA init rate level from RSSI in RA update
-Date: Thu, 12 Nov 2026 08:56:22 +0100
-Message-ID: <20261112075622.32785-1-spam@acio.nl>
-X-Mailer: git-send-email 2.53.0
+        d=1e100.net; s=20260707; t=1794470338; x=1795075138;
+        h=content-transfer-encoding:content-type:cc:to:subject:message-id
+         :date:from:in-reply-to:references:mime-version:x-gm-gg
+         :x-gm-message-state:from:to:cc:subject:date:message-id:reply-to
+         :content-type;
+        bh=DjO1xCtGqLcO9z2ZXququdx3x2Rqg4uwGboEOk41Znc=;
+        b=skPGcsCgNRNHLS4o9CR4dZl/Swif7uil4z5+30cF51adARJrNCvA65I57YCyApxJXS
+         HlE+JNTc4tX4CbX/dEYhIfS3fI2JWUwi0XyzqoXnDjTdDcJWPP65nlZgsuK3b9EBFncS
+         jgHKTbnhal8vR3jXZXQRHW30iQilLmcG+ip2d+9EWUFug8YVf6jnljoT/8vnzsHRIxVP
+         ZMzWyU/C1OMulSl4iGtjzDFmCwLf9SJ+vuQ65wnp/CWfUOYpqCRrYCO5Zy1Ipzcr3i+M
+         zf+uk0//kvS2oHqhgbBtuMBMcxlZ0YOy13jmqI33Vro5iDNDrrYw5J8BLUFORPc+FxlU
+         P0gA==
+X-Gm-Message-State: APuU4Z+IhvpDRwHBd1uqN8YUJCKb4KJywHlLHN/kh9+/4XVCSS0vV4/E
+	Iy/Q2x8D9P8obP8fGBbYStVWE396vVqhBWH45ToLDTZ+zH6bTMVpzhkcFSvUj9E3Q8sNioxeCPn
+	G505u485L0gVyBcvoXsFphb22MY7hjbwFHM4kSAEVaifJ7mhUEWGZtPfF
+X-Gm-Gg: AYBFou3eHcucVfmBQR9yxhYUf52PZRrtxqCjwWQvEoTCMkcZspiK/OSCkkdFVEQZ7+F
+	3/W0ZcjrIZXKUxHqSCj60lcUYJxgAUzXe0JKbjAIYgLDn/78N583Ier1pcYkhjS9hU8kNmalaSy
+	gCgGiZKNkFfmMlXK63s0Q1ZwIhdbMiZ2VdhAh0E+CYZIMuShqrXbrChdQasCVaxXxz9p+N81Jd/
+	NSZd/tS3mkrkrDT4m89C2TImzVUPIFJfey0OZcKl3+xkHyWwpH8UMdzaFH6FoxXy/bTGqNFP5Ya
+	nO9y8LKm27syYMDmTbHp3ourXg+i7LcgIpdmY3p263aptpawe5QGm+JXddOeX2Pgq3/NqEVoEN1
+	H0KNTeBSOmeJteMmowKWw07IIzoIaxF0u6QrrLQ/b
+X-Received: by 2002:a17:907:3fa2:b0:c4c:999e:e6f1 with SMTP id
+ a640c23a62f3a-c5066d986f1mr308946866b.46.1794470338177; Wed, 11 Nov 2026
+ 23:58:58 -0800 (PST)
 X-Mailing-List: linux-wireless@vger.kernel.org
 List-Id: <linux-wireless.vger.kernel.org>
 List-Post: <mailto:linux-wireless@vger.kernel.org>
@@ -92,114 +103,125 @@ List-Unsubscribe: <mailto:linux-wireless+unsubscribe@vger.kernel.org>
 List-Owner: <mailto:linux-wireless+owner@vger.kernel.org>
 Precedence: list
 MIME-Version: 1.0
-Content-Transfer-Encoding: 8bit
+References: <20261108131723.206533-1-spam@acio.nl> <d1d88bf5d1ef461dbb55988f906892b5@realtek.com>
+In-Reply-To: <d1d88bf5d1ef461dbb55988f906892b5@realtek.com>
+From: "V. S." <spam@acio.nl>
+Date: Thu, 12 Nov 2026 08:58:47 +0100
+X-Gm-Features: AclHuK-vu5vCPqcQNQ4zlV3CBPi5PRK_nrQM2nr_g8nVcHUSEhW62-nFSSm4dG4
+Message-ID: <CAJKtVVb1kXLProWk1gNjcTNLFx-Q-79XQmyf8FhKnJKPozEL5Q@mail.gmail.com>
+Subject: Re: [PATCH rtw-next] wifi: rtw89: do RA association again when the
+ station RSSI is known
+To: Ping-Ke Shih <pkshih@realtek.com>
+Cc: "linux-wireless@vger.kernel.org" <linux-wireless@vger.kernel.org>
+Content-Type: text/plain; charset="UTF-8"
+Content-Transfer-Encoding: quoted-printable
 
-When a station associates to an AP, the AP does not know the RSSI of
-the station yet. Thus, rtw89_phy_ra_assoc() sends init_rate_lv 0 to the
-firmware. With this value, the firmware RA of RTL8922A uses 20 MHz and
-VHT-MCS 2 for the station. The firmware RA does not try a higher rate,
-also when the PER is 0. On an 80 MHz AP, the TCP throughput to the
-station stays at approximately 35 Mbit/s.
+Thank you. I tested this on RTL8912AU in AP mode. With init_rate_lv in
+the RA update only, the rate stays at VHT-MCS 2 and 20 MHz. The
+firmware uses init_rate_lv only together with upd_all. Thus, v2 also
+sets upd_all one time, when the level changes from 0 to a known level.
+Then the rate goes to VHT-MCS 5 to 9 at 80 MHz.
 
-Move the mapping from RSSI to init_rate_lv to a function, and use it in
-the RA association and in the RA update. The firmware uses
-init_rate_lv only together with upd_all. Thus, the RA update also sets
-upd_all one time, when the level changes from 0 to a known level.
+v2: https://lore.kernel.org/linux-wireless/20261112075622.32785-1-spam@acio=
+.nl/
 
-Tested on RTL8912AU (RTL8922A, USB) in AP mode with hostapd 2.10 and
-VHT 80 MHz. The client is an Intel Meteor Lake CNVi (iwlwifi) at
--48 dBm. Each test reconnects the client, then sends TCP from the AP
-for 3 x 20 s.
-Before: TX rate VHT-MCS 2 at 20 MHz, TCP 34 Mbit/s.
-With init_rate_lv in the RA update but without upd_all: no change,
-TCP 34 Mbit/s.
-After: TX rate VHT-MCS 5 to 9 at 80 MHz, TCP 323 to 380 Mbit/s.
-
-Signed-off-by: Vincent Schurink <spam@acio.nl>
----
-v2:
-- Add rtw89_phy_ra_get_init_rate_lv() and use it in the RA association
-  and in the RA update, as suggested by Ping-Ke. Remove the
-  ra_rssi_unknown flag and the second rtw89_phy_ra_assoc() call.
-- Set upd_all when the level changes from 0 to a known level. The test
-  shows that init_rate_lv in the RA update without upd_all has no
-  effect: the rate stays at VHT-MCS 2, 20 MHz.
-- For AX chips, an RA update with upd_all has no CSI fields, because
-  the RA update calls rtw89_fw_h2c_ra() with csi false. I could not
-  test AX chips.
-
-v1: https://lore.kernel.org/linux-wireless/20261108131723.206533-1-spam@acio.nl/
-
- drivers/net/wireless/realtek/rtw89/phy.c | 28 ++++++++++++++++--------
- 1 file changed, 19 insertions(+), 9 deletions(-)
-
-diff --git a/drivers/net/wireless/realtek/rtw89/phy.c b/drivers/net/wireless/realtek/rtw89/phy.c
-index 795920b899d..b6057465c87 100644
---- a/drivers/net/wireless/realtek/rtw89/phy.c
-+++ b/drivers/net/wireless/realtek/rtw89/phy.c
-@@ -502,6 +502,20 @@ static void rtw89_phy_ra_sta_update(struct rtw89_dev *rtwdev,
- 	ra->csi_mode = csi_mode;
- }
- 
-+static u8 rtw89_phy_ra_get_init_rate_lv(struct rtw89_sta_link *rtwsta_link)
-+{
-+	u8 rssi = ewma_rssi_read(&rtwsta_link->avg_rssi) >> RSSI_FACTOR;
-+
-+	if (rssi > 40)
-+		return 1;
-+	if (rssi > 20)
-+		return 2;
-+	if (rssi > 1)
-+		return 3;
-+
-+	return 0;
-+}
-+
- void rtw89_phy_ra_update_sta_link(struct rtw89_dev *rtwdev,
- 				  struct rtw89_sta_link *rtwsta_link,
- 				  u32 changed)
-@@ -509,6 +523,7 @@ void rtw89_phy_ra_update_sta_link(struct rtw89_dev *rtwdev,
- 	struct rtw89_vif_link *rtwvif_link = rtwsta_link->rtwvif_link;
- 	struct ieee80211_vif *vif = rtwvif_link_to_vif(rtwvif_link);
- 	struct rtw89_ra_info *ra = &rtwsta_link->ra;
-+	u8 prev_lv = ra->init_rate_lv;
- 	struct ieee80211_link_sta *link_sta;
- 
- 	rcu_read_lock();
-@@ -519,6 +534,9 @@ void rtw89_phy_ra_update_sta_link(struct rtw89_dev *rtwdev,
- 
- 	rcu_read_unlock();
- 
-+	ra->init_rate_lv = rtw89_phy_ra_get_init_rate_lv(rtwsta_link);
-+	if (!prev_lv && ra->init_rate_lv)
-+		ra->upd_all = 1;
- 	if (changed & IEEE80211_RC_SUPP_RATES_CHANGED)
- 		ra->upd_mask = 1;
- 	if (changed & (IEEE80211_RC_BW_CHANGED | IEEE80211_RC_NSS_CHANGED))
-@@ -733,7 +751,6 @@ void rtw89_phy_ra_assoc(struct rtw89_dev *rtwdev, struct rtw89_sta_link *rtwsta_
- 	struct rtw89_vif_link *rtwvif_link = rtwsta_link->rtwvif_link;
- 	struct ieee80211_vif *vif = rtwvif_link_to_vif(rtwvif_link);
- 	struct rtw89_ra_info *ra = &rtwsta_link->ra;
--	u8 rssi = ewma_rssi_read(&rtwsta_link->avg_rssi) >> RSSI_FACTOR;
- 	struct ieee80211_link_sta *link_sta;
- 	bool csi;
- 
-@@ -747,14 +764,7 @@ void rtw89_phy_ra_assoc(struct rtw89_dev *rtwdev, struct rtw89_sta_link *rtwsta_
- 
- 	rcu_read_unlock();
- 
--	if (rssi > 40)
--		ra->init_rate_lv = 1;
--	else if (rssi > 20)
--		ra->init_rate_lv = 2;
--	else if (rssi > 1)
--		ra->init_rate_lv = 3;
--	else
--		ra->init_rate_lv = 0;
-+	ra->init_rate_lv = rtw89_phy_ra_get_init_rate_lv(rtwsta_link);
- 	ra->upd_all = 1;
- 	rtw89_debug(rtwdev, RTW89_DBG_RA,
- 		    "ra assoc: macid = %d, mode = %d, bw = %d, nss = %d, lv = %d",
--- 
-2.53.0
-
+On Wed, Nov 11, 2026 at 4:22=E2=80=AFAM Ping-Ke Shih <pkshih@realtek.com> w=
+rote:
+>
+> acio <spam@acio.nl> wrote:
+> > From: Vincent Schurink <spam@acio.nl>
+> >
+> > When a station associates to an AP, the AP does not know the RSSI of
+> > the station yet. Thus, rtw89_phy_ra_assoc() sends init_rate_lv 0 to the
+> > firmware. With this value, the firmware RA of RTL8922A uses 20 MHz and
+> > VHT-MCS 2 for the station. The firmware RA does not try a higher rate,
+> > also when the PER is 0. On an 80 MHz AP, the TCP throughput to the
+> > station stays at approximately 35 Mbit/s.
+> >
+> > Set a flag when the RSSI is not known at the RA association. When the
+> > RSSI is known, the periodic RA update does the RA association again.
+> >
+> > Tested on RTL8912AU (RTL8922A, USB) in AP mode with hostapd 2.10 and
+> > VHT 80 MHz. The client is an Intel Meteor Lake CNVi (iwlwifi) at
+> > -45 dBm.
+> > Before: TX rate VHT-MCS 2 at 20 MHz, TCP 35 Mbit/s.
+> > After: TX rate VHT-MCS 7 to 9 at 80 MHz, TCP 186 to 320 Mbit/s.
+> >
+> > Signed-off-by: Vincent Schurink <spam@acio.nl>
+> > ---
+> >  drivers/net/wireless/realtek/rtw89/core.h |  1 +
+> >  drivers/net/wireless/realtek/rtw89/phy.c  | 14 ++++++++++++++
+> >  2 files changed, 15 insertions(+)
+> >
+> > diff --git a/drivers/net/wireless/realtek/rtw89/core.h b/drivers/net/wi=
+reless/realtek/rtw89/core.h
+> > index 0d893b992a4..ca5f2aced33 100644
+> > --- a/drivers/net/wireless/realtek/rtw89/core.h
+> > +++ b/drivers/net/wireless/realtek/rtw89/core.h
+> > @@ -4711,6 +4711,7 @@ struct rtw89_sta_link {
+> >         struct rtw89_vif_link *rtwvif_link;
+> >         struct rtw89_ra_info ra;
+> >         struct rtw89_ra_report ra_report;
+> > +       bool ra_rssi_unknown;
+> >         int max_agg_wait;
+> >         u8 prev_rssi;
+> >         struct ewma_rssi avg_rssi;
+> > diff --git a/drivers/net/wireless/realtek/rtw89/phy.c b/drivers/net/wir=
+eless/realtek/rtw89/phy.c
+> > index 795920b899d..96660b781a5 100644
+> > --- a/drivers/net/wireless/realtek/rtw89/phy.c
+> > +++ b/drivers/net/wireless/realtek/rtw89/phy.c
+> > @@ -717,6 +717,19 @@ void rtw89_phy_rate_pattern_vif(struct rtw89_dev *=
+rtwdev,
+> >  static void rtw89_phy_ra_update_sta_iter(void *data, struct ieee80211_=
+sta *sta)
+> >  {
+> >         struct rtw89_dev *rtwdev =3D (struct rtw89_dev *)data;
+> > +       struct rtw89_sta *rtwsta =3D sta_to_rtwsta(sta);
+> > +       struct rtw89_sta_link *rtwsta_link;
+> > +       unsigned int link_id;
+> > +       u8 rssi;
+> > +
+> > +       rtw89_sta_for_each_link(rtwsta, rtwsta_link, link_id) {
+> > +               if (!rtwsta_link->ra_rssi_unknown)
+> > +                       continue;
+> > +
+> > +               rssi =3D ewma_rssi_read(&rtwsta_link->avg_rssi) >> RSSI=
+_FACTOR;
+> > +               if (rssi > 1)
+> > +                       rtw89_phy_ra_assoc(rtwdev, rtwsta_link);
+>
+> Can we move rssi logic to an individual function and call it to update
+> ra->init_rate_lv?
+>
+>         if (rssi > 40)
+>                 ra->init_rate_lv =3D 1;
+>         else if (rssi > 20)
+>                 ra->init_rate_lv =3D 2;
+>         else if (rssi > 1)
+>                 ra->init_rate_lv =3D 3;
+>         else
+>                 ra->init_rate_lv =3D 0;
+>
+> The rtw89_phy_ra_update_sta() will call rtw89_fw_h2c_ra() to send H2C com=
+mand.
+>
+>
+> > +       }
+> >
+> >         rtw89_phy_ra_update_sta(rtwdev, sta, IEEE80211_RC_SUPP_RATES_CH=
+ANGED);
+> >  }
+> > @@ -755,6 +768,7 @@ void rtw89_phy_ra_assoc(struct rtw89_dev *rtwdev, s=
+truct rtw89_sta_link *rtwsta_
+> >                 ra->init_rate_lv =3D 3;
+> >         else
+> >                 ra->init_rate_lv =3D 0;
+> > +       rtwsta_link->ra_rssi_unknown =3D rssi <=3D 1;
+> >         ra->upd_all =3D 1;
+> >         rtw89_debug(rtwdev, RTW89_DBG_RA,
+> >                     "ra assoc: macid =3D %d, mode =3D %d, bw =3D %d, ns=
+s =3D %d, lv =3D %d",
+> > --
+> > 2.53.0
+>
