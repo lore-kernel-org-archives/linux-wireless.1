@@ -1,96 +1,97 @@
-Authentication-Results: smtp.subspace.kernel.org; arc=none smtp.remote-ip=209.85.215.170
+Authentication-Results: smtp.subspace.kernel.org; arc=none smtp.remote-ip=209.85.221.54
 ARC-Seal: i=1; d=subspace.kernel.org; s=arc20261015; a=rsa-sha256; cv=none;
-	t=1794504799;
-	b=mgH5rxgLYWGCiK60JQV6Ze6VLdzZaC7wDjQ2OArPUpZpnGn51+Coq2DDwzuBKX0ajJ31
-	 Px+WjPfU3Kt/QQjTdbFl54m1l46WKg3Jx9BEGaXo0Qg2tPaCvPLKjkRiHPKQOiqWMVZWE
-	 Q4HePpC57tSMlZdw7LCbNHOTISwAndSmqNGF9MMx/M+NGDrV6fPJoNq6V93VtdXJpecw7
-	 zaWpw8h9+RFtVpSlh+ycjnHlKRd7iDhtTDj+9gXiZs1hKSekPpAdZgPdjvXPGF9QTkaNP
-	 H5pD8fbXkRnxX+5lZlDTb/VjO2wW8EVSbzdDZDrkLfnDEmiVyLLqv7yCjugbd2n/+oQ==
+	t=1794506189;
+	b=aWuWtHGf+OOW4OegRZCLgNnoJ8OEhDLu8AG2viV2P1SRKyGQcv0jbOP4MfHVzpfWHMrS
+	 edaldCqHHx1QCTYG2IClFt9M0iltDNCPCznyw9YD1CicBPVj1nr1rbZqqJ2H3GM7Wh7Rx
+	 XphnKSRtJ/0NV7dN2VOUafT2N73uhcPL8IM940pwjJ1ZyaanJ6a63kSEZDqRYxAnWrslB
+	 TKfXlfxuKewfvcSNjjZP2otoz+tE5z5pEjzCNpt0wXNHVdL1vA6SMyrvb/tn0WIaliWLQ
+	 NZv3tJzhZk+ahoz2sTOFygZo/wkQvxL6EkOVYpAig6V64V1+Fti9biGjyE75yCgMBmg==
 ARC-Message-Signature: i=1; d=subspace.kernel.org; s=arc20261015;
-	a=rsa-sha256; c=relaxed/relaxed; t=1794504799;
+	a=rsa-sha256; c=relaxed/relaxed; t=1794506189;
 	h=DMARC-Filter:Received:DKIM-Signature:X-Google-DKIM-Signature:
 	 X-Gm-Message-State:X-Gm-Gg:X-Received:Received:From:To:Cc:Subject:
-	 Date:Message-ID:X-Mailer:In-Reply-To:References:MIME-Version:
-	 Content-Transfer-Encoding;
-	bh=lP+qoc9O0R6uSwoM2iPaMaGse/6oonGEJ6oTW9GIAvM=;
-	b=tj6MJ/APY+QqPtqROi+IY7TcPgG0FrggafI4KPadEwzcw545GXRqR5Q2NQ52elKZ4h7Q
-	 EhdwlEXGkIohgHCz5PmpRZWN3rmOL7e54n5l7WNiWLw3BLeAgFc/okrCuYORLUjn2hnJ/
-	 hLSMKBgPoQTrq9JMQQZOUbRfeDc6ztLEalpemnpOB0pVtI8yLag23iS2jUK+VgOTVBBxv
-	 wwpVb/NuAZILzBZ6K30hveV/NHCCb+OnlMKqHC9PisuWNZuank3ijVqjbDM0yaO8mKzc4
-	 58CT/G+5NhcDHbLVw9fQ0VB/fNmqnqpopqO9shBo/TY0oO3NfNygAPQww9JL3MJR7EA==
+	 Date:Message-ID:X-Mailer:MIME-Version:Content-Transfer-Encoding;
+	bh=kmnLdMmjUsJ8mDUaHUl0eMypkCr4ZnV84joT0wzngzk=;
+	b=jkl31b7P/DBLI9QYK6b7gCAGvO+m/bcW7cPYRQjKlQJsgX2FDzKi8alu/wdNeKONLrBU
+	 FGlWa+OTHBYjA4ub93QZnV0Shdn9nGBx6zcvOybci5V8eoKaC6g/uUSyI0S/djnviNX3E
+	 oNgwBqejcul0okNahx5e6NgE/eV8Ws8D8ymszI3hYh0rrYdSnf2e+Yq+xgJIjUc+ouSyV
+	 mUF56LRIqm58MhGxWnWB2xIlm7TQM9RRas4XArp5eqcKKs1tU4Kd+e/oW8GVMMh1OY5cv
+	 Az+5XFRuBoiaKuu4bvTvy0yvA/7rrE8c2DrHHsMDdardTgL7qnKMq/5hi62QUypHJsw==
 ARC-Authentication-Results: i=1; smtp.subspace.kernel.org; 
 	dmarc=pass header.from=gmail.com;
 	spf=pass smtp.mailfrom=gmail.com;
-	dkim=pass header.d=gmail.com header.i=@gmail.com header.a=rsa-sha256 header.s=20260707 header.b=x1vZoe5B;
-	arc=none smtp.remote-ip=209.85.215.170
-Received: from mail-pg1-f170.google.com (mail-pg1-f170.google.com [209.85.215.170])
+	dkim=pass header.d=gmail.com header.i=@gmail.com header.a=rsa-sha256 header.s=20260707 header.b="HC/WBXuF";
+	arc=none smtp.remote-ip=209.85.221.54
+Received: from mail-wr1-f54.google.com (mail-wr1-f54.google.com [209.85.221.54])
 	(using TLSv1.3 with cipher TLS_AES_128_GCM_SHA256 (128/128 bits)
 	 key-exchange X25519 server-signature ECDSA (prime256v1) server-digest SHA256)
 	(No client certificate requested)
-	by smtp.subspace.kernel.org (Postfix) with ESMTPS id 205A260A383D
-	for <linux-wireless@vger.kernel.org>; Thu, 12 Nov 2026 17:33:19 +0000 (UTC)
-DMARC-Filter: OpenDMARC Filter v1.4.2 smtp.subspace.kernel.org 205A260A383D
+	by smtp.subspace.kernel.org (Postfix) with ESMTPS id DBA29606A337
+	for <linux-wireless@vger.kernel.org>; Thu, 12 Nov 2026 17:56:28 +0000 (UTC)
+DMARC-Filter: OpenDMARC Filter v1.4.2 smtp.subspace.kernel.org DBA29606A337
 Authentication-Results: smtp.subspace.kernel.org; dmarc=pass (p=none dis=none) header.from=gmail.com
 Authentication-Results: smtp.subspace.kernel.org; spf=pass smtp.mailfrom=gmail.com
 Authentication-Results: smtp.subspace.kernel.org;
-	dkim=pass (2048-bit key) header.d=gmail.com header.i=@gmail.com header.a=rsa-sha256 header.s=20260707 header.b=x1vZoe5B
-Received: by mail-pg1-f170.google.com with SMTP id 41be03b00d2f7-cdb9f760337so636922a12.0
-        for <linux-wireless@vger.kernel.org>; Thu, 12 Nov 2026 09:33:19 -0800 (PST)
+	dkim=pass (2048-bit key) header.d=gmail.com header.i=@gmail.com header.a=rsa-sha256 header.s=20260707 header.b=HC/WBXuF
+Received: by mail-wr1-f54.google.com with SMTP id ffacd0b85a97d-48dee593f18so24114f8f.3
+        for <linux-wireless@vger.kernel.org>; Thu, 12 Nov 2026 09:56:28 -0800 (PST)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=gmail.com; s=20260707; t=1794504798; x=1795109598; darn=vger.kernel.org;
-        h=content-transfer-encoding:mime-version:references:in-reply-to
-         :message-id:date:subject:cc:to:from:from:to:cc:subject:date
-         :message-id:reply-to:content-type;
-        bh=lP+qoc9O0R6uSwoM2iPaMaGse/6oonGEJ6oTW9GIAvM=;
-        b=x1vZoe5BGYRuFpBLOPhCdQU5gaILZzJUx+nRkt8AFoyK8kmvscUCWl31wyuMeezn03
-         gkrX2XlXFOvTOeSnFPVbZhF7+hkEtQdEmh0tOH8rm5HkrHRZF2SMu4fE3lVutMhvezbP
-         0fLgGJxfIG8WIAfnc321rvtIq5PEAkNfTXXDaUlHPj45hKM6x9sfhK4ql8OT8270ro8o
-         eu9RjRmuMUncOMIw3ZIPlyMgGpYHvYzp+pmTrrYu/1/gjeignl8B8O+BqsVO4LwgBUXv
-         BLEnDTC6+qoXFy/1jf8fYL+grywzlbn0hBrfbDNKzyWtOcR9PoZTxAoN5cs4Qst3SIk9
-         3oaA==
+        d=gmail.com; s=20260707; t=1794506187; x=1795110987; darn=vger.kernel.org;
+        h=content-transfer-encoding:mime-version:message-id:date:subject:cc
+         :to:from:from:to:cc:subject:date:message-id:reply-to:content-type;
+        bh=kmnLdMmjUsJ8mDUaHUl0eMypkCr4ZnV84joT0wzngzk=;
+        b=HC/WBXuFGpWtE6AfYCAizOd65Jyt52yYL0N36JVe4HG+aAMg5yOybFVJncravhLoqf
+         bl1yylnzEasU2K+Lsq6Xun1KawWylds8oqcPJ+YszYnsCvKdy+R/nVuyk3moPqpzJbjD
+         OK+4A8cTDDHdKSeVzmvM3yuRGxFo3nY55tTV8/duFYzHXs5NvXIIqRU3yxOH1kPbdLsT
+         LWfRbMyc+214jCRR+4b24WKUMRVpOCndpBd8QVLEKUgMwZaarXg1eBnRRpwqlU89Kdnq
+         y+B9BGy9FAoFkLCc306emUzz0I+6OSWun15+FFiRLYQ/W6o+UnjhV5BF9wGHZ9/OSDo8
+         Jixw==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=1e100.net; s=20260707; t=1794504798; x=1795109598;
-        h=content-transfer-encoding:mime-version:references:in-reply-to
-         :message-id:date:subject:cc:to:from:x-gm-gg:x-gm-message-state:from
-         :to:cc:subject:date:message-id:reply-to:content-type;
-        bh=lP+qoc9O0R6uSwoM2iPaMaGse/6oonGEJ6oTW9GIAvM=;
-        b=Mg4colCgCtQCPB6+m8WoWpD4p/qeXcidFTH4HexfM6EwTjO8L4r084Q5yrpxpi6o6R
-         QB9nEf4u4i8vkAN00FM75Mr3Bw46bGy6WNtRYIUTviBy1F7ifh/3QTa3HJxGDkgnqeJZ
-         OTRjah/Si3cewuPVJXSCPvhC1dWgzr5NV2Fg/payWXKxEa2JWvbz9BxMakTpDB2XFkAn
-         Qt8hQfjqnB7GZvxucs/SgG/8JHZaX4zJfvi9IpoOV2A54bwOpDHh09byGEX8dkSxKw8r
-         CBIvNC8vCaFB1TeJUgU0fjgX2p1YbhjlgHR8D2ZjTK4nB8IAZLt4gXkGdcFCI+8Cm6r3
-         QzxQ==
-X-Gm-Message-State: APuU4Z/mJK0Kdq8qYs/mSYJ+TrOmpKUmvdrYZYiNpYZSszvA6EOqsioV
-	OKNUxxZCTuZiyrXiE/bthoKd8k29KMTgqAlw/jVWR0JLIRCpyg2bveYm
-X-Gm-Gg: AYBFou2xPwzgwpgTPzEl6oUGtW4clMcKmLnZ6Q+x8Y96kFhxOLGEDvR6nKgAFoNFxSU
-	lccwBJe58TmgGVdh+N5LYbXdjRktOUuMcUDGWfv035jM08m+WLmcnKso1WzN3LNmrR3VWXFKJP1
-	4Pi6WAXDvqItIu3P5+sXmwsGH1gSXZIVpjWSzYmN4qbR8xo2pXjl8FHwmU7JU4fn8gQGrizsllk
-	54D3R/5g6/9HYI44U4dPzTb13cezUNY26jCkAB7EP3ZqddiYZxAM0fNgxv7iFBq6OAvVVJ9MJCm
-	sjsho+lHM6hVRz57h7SHnXgrga3vZ5DvjsaFwVuQK5n8dDC/IjbG2be6mWw7Ahum08+63k4dZGg
-	6tV0ZFsGtl7uI/570IV5Zw0zNU2dAofdu46ptg6fwjk2A35t+PA0k16gftPvP5au+BcnEpnSFKU
-	LhaTfO5OFxYNV8s/C6jDqsAMbTCk7diCF+k7DY1F+9mWp93hczGtXKDpL6gsCEqCLPiRFa+U3tj
-	Sh0gRQWmIsT8w0Do1UNJ2nzOXSEPub9zGm+Avwp3VtLxU1/2UCB7FFj71frH1SZuzbOnSqFOiWE
-	XcemfhmUEXQWphra6yJyR1zT939E6j3lBtWg+QuWhtg4DqKNPzronu5xKy7d04QvtiPcaZo7U9k
-	YN/1X339C1g6vW2lbvyd3JaTcm2Dq2EdUVzZxMVQ8ygxi
-X-Received: by 2002:a17:90b:540f:b0:3b0:9bfa:72ac with SMTP id 98e67ed59e1d1-3b197caa480mr2243793a91.21.1794504797884;
-        Thu, 12 Nov 2026 09:33:17 -0800 (PST)
-Received: from acemagic-m1.tail4fb79.ts.net ([2401:7400:c804:b668:2c54:4647:b67e:c94c])
-        by smtp.gmail.com with ESMTPSA id 98e67ed59e1d1-3b1ae8be5adsm383532a91.0.2026.11.12.09.33.15
+        d=1e100.net; s=20260707; t=1794506187; x=1795110987;
+        h=content-transfer-encoding:mime-version:message-id:date:subject:cc
+         :to:from:x-gm-gg:x-gm-message-state:from:to:cc:subject:date
+         :message-id:reply-to:content-type;
+        bh=kmnLdMmjUsJ8mDUaHUl0eMypkCr4ZnV84joT0wzngzk=;
+        b=vDt2IR1ZagEtjCRo4632TWPkWIa6BPko1anYIzpqtmK0pT7/MPlt0Wyk8xJzYcgcVW
+         vov3ulNkuUSko6en7XC6quSA7B9klTRu3NjdM3ZCN1ytnzczpcFCopym3RQks2lMy7ug
+         sdob0hkFCukVbpF7wHg732howKsUKJbc7zmfkFtLP/AkktQUODwjE+CNdMj/HHjEMxUU
+         VUORrusI9iF7CYV+SadHUnrtysGvzanbwlwaT9RKzYBceI+S6JWsyUKRQmFRUpd0OB5q
+         Lq5g4uO+HU+h4u/14r1LA6J194Zi87DjE1klPON7DcpPSHT6Myk1fcHvciAddiLFHSDa
+         BJHg==
+X-Gm-Message-State: APuU4Z8wvNhKLV444rFpF8793oG/NOi/zx3lVESScOwWHy2TO7gQlpDK
+	gF0ajT6XE8gR/sg77NJ8sHbSqJr/PuD2TFoCpH3OHGI92EGTnF2GHpoRtU+iZP1ZXlw=
+X-Gm-Gg: AYBFou0BJrTU+RFFqKXGJ2HUN9ZJlkldvQAXteiL9lIJxjzfJK10hd8EcNmLqN0ZY80
+	q2BlcieHDsxQoZ8A30XInJ1hZrcXF8CfLtiua8VRlaw7ignUT7eF/b/TMxGpYQ9yD9pqqb/ogo1
+	YTjyZ/meFcl8LYZzUp9bsvMJl5IQG5w97cuZc0GBNGqSoLkzz9F8fxv+yq4vXmqGivxlmHv8u1/
+	ATowiFwSt7Fr6UdIulg8fVvECzxyXGEUXjUTEetl3EBeE/Ut63qLf1CUA5gbRPqjdbwcFfytdgj
+	k9Hl5lk44SOtA8t9EljyUHFcXeeErqOClRnmg1N41pcTJfs9NETr1Hi9cqYNWF3jWW621KVfjJ8
+	zYLQFk3vN2Y9+U4gwZlC3sZW8A5Otn8Gb28dwpIM394XPZPDLhLYP3SaqutB5EyEkCjoereqSPg
+	TOpNJT4e/MISlwrRDdJck2dDQA0UDh9ZbtlKs+2qe5S9ZzTv+QF9FlCVEjoyzBMB/Vxa9XvAzRZ
+	k/p0a+QfnntFfiTliVXpcS7gASTgHB13DHb3Du6hje+EyYQyci6MDPAB8tyIRuJ7gA3PltX4oq1
+	4lURPcpXt+ebTGu0qBZaXMgyPXuBA4RGyHb880xjGEKy4apBzu1XfA9lolQ5E1IH99GlPAgnrr2
+	bi9ULOvs10PxMPQvePFLL1+05unn2Lbz7e3j2G5Zac3pv6mLUVb5j0LVQ01LTW7ZzToiESEGIti
+	5Cuo3zhhILJBlT743L8XxOp5fX8PrQ5Sy0s2DjrWDfbw==
+X-Received: by 2002:adf:e00e:0:20b0:490:1881:80ec with SMTP id ffacd0b85a97d-49c710c24f8mr229471f8f.36.1794506186972;
+        Thu, 12 Nov 2026 09:56:26 -0800 (PST)
+Received: from zitrone.tail45b538.ts.net ([2a02:810d:a1:6000:900:be5c:7a9c:c176])
+        by smtp.gmail.com with ESMTPSA id ffacd0b85a97d-49c60f8d66esm438408f8f.57.2026.11.12.09.56.25
         (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
-        Thu, 12 Nov 2026 09:33:17 -0800 (PST)
-From: Ho Jie Feng <hjf3108@gmail.com>
-To: Ping-Ke Shih <pkshih@realtek.com>
-Cc: linux-wireless@vger.kernel.org,
-	linux-kernel@vger.kernel.org,
-	Bitterblue Smith <rtl8821cerfe2@gmail.com>,
-	Luka Gejak <luka.gejak@linux.dev>,
-	Ho Jie Feng <hjf3108@gmail.com>
-Subject: [PATCH rtw-next v3 5/5] wifi: rtw88: 8812a, 8821a: respect peer A-MPDU size limits
-Date: Fri, 13 Nov 2026 01:32:44 +0800
-Message-ID: <20261112173246.3201729-6-hjf3108@gmail.com>
-X-Mailer: git-send-email 2.53.0
-In-Reply-To: <20261112173246.3201729-1-hjf3108@gmail.com>
-References: <20261112173246.3201729-1-hjf3108@gmail.com>
+        Thu, 12 Nov 2026 09:56:26 -0800 (PST)
+From: Andreas Wendleder <gonsolo@gmail.com>
+To: linux-wireless@vger.kernel.org
+Cc: Johannes Berg <johannes@sipsolutions.net>,
+	b43-dev@lists.infradead.org,
+	Michael Buesch <m@bues.ch>,
+	Alessio Ferri <alessio.ferri@mythread.it>,
+	kvalo@kernel.org,
+	julian.calaby@gmail.com,
+	jpeisach@ubuntu.com,
+	rosenp@gmail.com,
+	linux-kernel@vger.kernel.org
+Subject: [PATCH RFC wireless-next 0/3] wifi: b43: core revision 40 and 42 MAC setup (series 2/4)
+Date: Thu, 12 Nov 2026 18:56:21 +0100
+Message-ID: <20261112175624.40547-1-gonsolo@gmail.com>
+X-Mailer: git-send-email 2.54.0
 X-Mailing-List: linux-wireless@vger.kernel.org
 List-Id: <linux-wireless.vger.kernel.org>
 List-Post: <mailto:linux-wireless@vger.kernel.org>
@@ -102,70 +103,43 @@ Precedence: list
 MIME-Version: 1.0
 Content-Transfer-Encoding: 8bit
 
-Honor the peer-advertised receive limit for transmitted A-MPDUs.
+MAC core support for the BCM4352/BCM4360 core revisions 40 and 42. Things
+that depend on the core revision are gated on it (b43_is_ac_core()),
+things that depend on the microcode layout are gated on the microcode
+revision (b43_ucode_is_ac(), revision 784 and above, set once the
+microcode is loaded). The TX and RX formats and the PHY are not in this
+series. Based on series 1/4.
 
-Signed-off-by: Ho Jie Feng <hjf3108@gmail.com>
----
- drivers/net/wireless/realtek/rtw88/rtw8812a.c | 10 +++++++++-
- drivers/net/wireless/realtek/rtw88/rtw8821a.c | 10 +++++++++-
- 2 files changed, 18 insertions(+), 2 deletions(-)
+This is posted as RFC so that people with these chips can use and test
+it now; b43 is orphaned and nobody is set to take these patches at the
+moment. Series 1/4 is on the list:
+https://lore.kernel.org/linux-wireless/20261014143225.82149-1-gonsolo@gmail.com/
 
-diff --git a/drivers/net/wireless/realtek/rtw88/rtw8812a.c b/drivers/net/wireless/realtek/rtw88/rtw8812a.c
-index c8008cf43d..c8f5cdf31c 100644
---- a/drivers/net/wireless/realtek/rtw88/rtw8812a.c
-+++ b/drivers/net/wireless/realtek/rtw88/rtw8812a.c
-@@ -78,6 +78,14 @@ static void rtw8812a_cfg_ldo25(struct rtw_dev *rtwdev, bool enable)
- {
- }
- 
-+static void rtw8812a_set_ampdu_factor(struct rtw_dev *rtwdev, u8 factor)
-+{
-+	factor = min_t(u8, factor, IEEE80211_VHT_MAX_AMPDU_128K);
-+
-+	rtw_write32(rtwdev, REG_AMPDU_MAX_LENGTH,
-+		    ((8192 << factor) - 1) | BIT(31));
-+}
-+
- static void rtw8812a_do_lck(struct rtw_dev *rtwdev)
- {
- 	u32 cont_tx, lc_cal, i;
-@@ -926,7 +934,7 @@ static const struct rtw_chip_ops rtw8812a_ops = {
- 	.set_tx_power_index	= rtw88xxa_set_tx_power_index,
- 	.cfg_ldo25		= rtw8812a_cfg_ldo25,
- 	.efuse_grant		= rtw88xxa_efuse_grant,
--	.set_ampdu_factor	= NULL,
-+	.set_ampdu_factor	= rtw8812a_set_ampdu_factor,
- 	.false_alarm_statistics	= rtw88xxa_false_alarm_statistics,
- 	.phy_calibration	= rtw8812a_phy_calibration,
- 	.cck_pd_set		= rtw_phy_cck_pd_set,
-diff --git a/drivers/net/wireless/realtek/rtw88/rtw8821a.c b/drivers/net/wireless/realtek/rtw88/rtw8821a.c
-index 17d3677ca4..796c100165 100644
---- a/drivers/net/wireless/realtek/rtw88/rtw8821a.c
-+++ b/drivers/net/wireless/realtek/rtw88/rtw8821a.c
-@@ -49,6 +49,14 @@ static void rtw8821a_cfg_ldo25(struct rtw_dev *rtwdev, bool enable)
- {
- }
- 
-+static void rtw8821a_set_ampdu_factor(struct rtw_dev *rtwdev, u8 factor)
-+{
-+	factor = min_t(u8, factor, IEEE80211_VHT_MAX_AMPDU_64K);
-+
-+	rtw_write32(rtwdev, REG_AMPDU_MAX_LENGTH,
-+		    ((8192 << factor) - 1) | BIT(31));
-+}
-+
- #define CAL_NUM_8821A 3
- #define MACBB_REG_NUM_8821A 8
- #define AFE_REG_NUM_8821A 4
-@@ -872,7 +880,7 @@ static const struct rtw_chip_ops rtw8821a_ops = {
- 	.set_tx_power_index	= rtw88xxa_set_tx_power_index,
- 	.cfg_ldo25		= rtw8821a_cfg_ldo25,
- 	.efuse_grant		= rtw88xxa_efuse_grant,
--	.set_ampdu_factor	= NULL,
-+	.set_ampdu_factor	= rtw8821a_set_ampdu_factor,
- 	.false_alarm_statistics	= rtw88xxa_false_alarm_statistics,
- 	.phy_calibration	= rtw8821a_phy_calibration,
- 	.cck_pd_set		= rtw_phy_cck_pd_set,
--- 
-2.53.0
+Where the values come from: the register sequences and table contents were
+taken from Broadcom's wl driver running on this MacBook, by tracing its
+register accesses (bpftrace on wl's MMIO accessors), and reduced to what
+the hardware needs. Parts come from Alessio Ferri's AC-PHY work (the PHY
+init sequence, the 40 and 80 MHz coefficient tables, a TX gain table, the
+Farrow resampler formula, the VHT fields of the TX descriptor, register
+and table names), and some formats follow brcmsmac.
+The result was tested on the hardware as described below.
+
+Each patch compiles on its own (kernel 7.2.10 headers). The four series
+together were run on a MacBookAir6,1 (14e4:43a0, BCM4360, core revision 42,
+microcode 832.127, 2 of 3 chains wired) on top of v7.3-rc5's b43. The AC PHY
+only comes with series 4, so the earlier series cannot be exercised on this
+hardware alone.
+
+Andreas Wendleder (3):
+  wifi: b43: set the DMA burst and prefetch bits of core revisions 40
+    and 42
+  wifi: b43: MAC core setup for core revisions 40 and 42
+  wifi: b43: address match table, templates and beacons for the AC
+    microcode
+
+ drivers/net/wireless/broadcom/b43/b43.h  |  14 ++
+ drivers/net/wireless/broadcom/b43/dma.c  |   4 +
+ drivers/net/wireless/broadcom/b43/dma.h  |   2 +
+ drivers/net/wireless/broadcom/b43/main.c | 242 +++++++++++++++++++++--
+ 4 files changed, 246 insertions(+), 16 deletions(-)
 
