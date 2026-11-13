@@ -1,110 +1,110 @@
-Authentication-Results: smtp.subspace.kernel.org; arc=none smtp.remote-ip=205.220.168.131
+Authentication-Results: smtp.subspace.kernel.org; arc=none smtp.remote-ip=205.220.180.131
 ARC-Seal: i=1; d=subspace.kernel.org; s=arc20261015; a=rsa-sha256; cv=none;
-	t=1794594787;
-	b=OctJPnfVkgdFP9OT0H1fcvNAJnRgBAwMrjax1hNmiP43tThA7elIBsfFZIKC6gHjXJl2
-	 QeK7c2+znXrLADDPYFusyVIHToccfw2DKsEp1oLk0h5bEFpQ+8vNaS1mdIRmxIzIGxVsh
-	 O8d0uCkYzM3wZQcWi43jetT68bQbANv/puoYiR3dL15ucjGuHD1EBlKn4D7VRXdCWe9Us
-	 9hbpRGjiwc3jSQ4s28GES8LUknIgVjrTNpTBp4Jlzv3li/DYnVNPumZWD7Ji6NBMf4xMl
-	 of8wGBJjx21KkP3TD8fUGr0MYsGk2H4Iu68ue2OTZXzaUHM7zu9YsKsvkMpJcr07/Ug==
+	t=1794595143;
+	b=TFWByqUhtmeCVy68vywmar5HdK92OT+e+ofN1Wq+/Uot7aBWL3L6hcpQz7d7njigCj+P
+	 /ZYfB/PRyR2cJyLTvtAikMrVzYX8U/ZP4TXZI71hai5hqU3y8UHYOJt0fd3bB4qwFz3TE
+	 JFAE0AtpFU3CfO9Rpncd2NYxfNQdTTS5k+8Y7vTbotkiNWwbw5hL2XuZEWiJwQO8YOPXt
+	 ju/CMRz9Q3+127dlHreb4YyKfrFWAHhAVDEjF7dAsc9f+Qu0VQU7JOk8IaSbS6LlaDmT7
+	 Pqn0wFqpoLndfar8mm4FuNHStZlkZPGzlXl/Lli/3kyKZSp+wG/jKYeyNUJTdfe3rgA==
 ARC-Message-Signature: i=1; d=subspace.kernel.org; s=arc20261015;
-	a=rsa-sha256; c=relaxed/relaxed; t=1794594787;
+	a=rsa-sha256; c=relaxed/relaxed; t=1794595143;
 	h=DMARC-Filter:Received:DKIM-Signature:Received:Received:
 	 DKIM-Signature:X-Google-DKIM-Signature:X-Gm-Message-State:X-Gm-Gg:
 	 X-Received:X-Received:Received:Message-ID:Date:MIME-Version:
 	 User-Agent:Subject:To:Cc:References:Content-Language:From:In-Reply-To:
-	 Content-Type:Content-Transfer-Encoding:X-Proofpoint-ORIG-GUID:
-	 X-Proofpoint-Spam-Details-Enc:X-Proofpoint-Spam-Info:
-	 X-Authority-Analysis:X-Proofpoint-GUID:X-Proofpoint-Virus-Version:
-	 X-Proofpoint-Spam-Details;
-	bh=4tUv5114t+zriGrndIi1jj8Phxwq1uvGYapqkrY4UYI=;
-	b=EF8PWzAb8g/As/5lMSF/tJBnz30qaJZqiUBul9oaTHRedP4yxYCJIKmTUlP8CBAWVoXJ
-	 wu4ciqUIyweiJHhfGE8ABCHd619ms1SdP4INn2bN3QkQlJqE0utFmqNkxF/T9dz75sRUT
-	 dgrkczp1QIkPUQeC/a5pyQ8D7awVtNRcoqbEkVE7gU1alDlJTyz+n6BAFMjwowZ/vUaA5
-	 INCKYZf9Rf+LzQOzBxAlnF9ONOBdiGe/NC7cmR7Um3CqcKzcB90iZDJhPxMl7+Lo4OWKB
-	 7FfkV0JDvvyXSX1VHJw0yvGGISes9CLioe4LnLX8HoUrauy2BfxH9IevRQQUBoVCqig==
+	 Content-Type:Content-Transfer-Encoding:X-Authority-Analysis:
+	 X-Proofpoint-GUID:X-Proofpoint-Spam-Info:
+	 X-Proofpoint-Spam-Details-Enc:X-Proofpoint-ORIG-GUID:
+	 X-Proofpoint-Virus-Version:X-Proofpoint-Spam-Details;
+	bh=s7c8JL+q9Cbm7aNJEf8MDq8Yrx/mghovFmqSkIqYKJM=;
+	b=T3Xja06WmV9MjowbKOp9f0438CAIlpB/hbM9K/+rT0G5cDrVlBEZlMSJ6rVNouJpwX2Y
+	 p9WbuvABdPhJ/5MNyRaZ5GcPTvZUMYJhx8AqGP+8xKY+ywk5i/HxXtsGiBapToFwUdR4X
+	 Mx+0nqwFJdaphd20VwvmiMU9jx4jIE8BvAT/LXansdVguGaM/lXXVLkwKFAEmD+HRKBc6
+	 dJ9lRJTjc4TRqtlUwlAKIaeS25z7ABPX+r44gmsrKhaNW4H7aO+GAdCWDdVIyhEFOZDHC
+	 Yym0aRKOkJMgfc/jgWOHVEMisKJF0p6dsmeNeHRi2DQeAUP2+HMlmjP9itI5teKUCFA==
 ARC-Authentication-Results: i=1; smtp.subspace.kernel.org; 
 	dmarc=pass header.from=oss.qualcomm.com;
 	spf=pass smtp.mailfrom=oss.qualcomm.com;
-	dkim=pass header.d=qualcomm.com header.i=@qualcomm.com header.a=rsa-sha256 header.s=qcppdkim1 header.b=YRZyIDfK;
-	dkim=pass header.d=oss.qualcomm.com header.i=@oss.qualcomm.com header.a=rsa-sha256 header.s=google header.b="A/gDixv0";
-	arc=none smtp.remote-ip=205.220.168.131
-Received: from mx0a-0031df01.pphosted.com (mx0a-0031df01.pphosted.com [205.220.168.131])
+	dkim=pass header.d=qualcomm.com header.i=@qualcomm.com header.a=rsa-sha256 header.s=qcppdkim1 header.b=noOnX1MQ;
+	dkim=pass header.d=oss.qualcomm.com header.i=@oss.qualcomm.com header.a=rsa-sha256 header.s=google header.b=jICNGaWY;
+	arc=none smtp.remote-ip=205.220.180.131
+Received: from mx0b-0031df01.pphosted.com (mx0b-0031df01.pphosted.com [205.220.180.131])
 	(using TLSv1.3 with cipher TLS_AES_256_GCM_SHA384 (256/256 bits)
 	 key-exchange X25519 server-signature ECDSA (prime256v1) server-digest SHA256)
 	(No client certificate requested)
-	by smtp.subspace.kernel.org (Postfix) with ESMTPS id C7110606A88A
-	for <linux-wireless@vger.kernel.org>; Fri, 13 Nov 2026 18:33:06 +0000 (UTC)
-DMARC-Filter: OpenDMARC Filter v1.4.2 smtp.subspace.kernel.org C7110606A88A
+	by smtp.subspace.kernel.org (Postfix) with ESMTPS id 0E2CD6077DAF
+	for <linux-wireless@vger.kernel.org>; Fri, 13 Nov 2026 18:39:02 +0000 (UTC)
+DMARC-Filter: OpenDMARC Filter v1.4.2 smtp.subspace.kernel.org 0E2CD6077DAF
 Authentication-Results: smtp.subspace.kernel.org; dmarc=pass (p=none dis=none) header.from=oss.qualcomm.com
 Authentication-Results: smtp.subspace.kernel.org; spf=pass smtp.mailfrom=oss.qualcomm.com
 Authentication-Results: smtp.subspace.kernel.org;
-	dkim=pass (2048-bit key) header.d=qualcomm.com header.i=@qualcomm.com header.a=rsa-sha256 header.s=qcppdkim1 header.b=YRZyIDfK;
-	dkim=pass (2048-bit key) header.d=oss.qualcomm.com header.i=@oss.qualcomm.com header.a=rsa-sha256 header.s=google header.b=A/gDixv0
-Received: from pps.filterd (m0279866.ppops.net [127.0.0.1])
-	by mx0a-0031df01.pphosted.com (8.18.1.11/8.18.1.11) with ESMTP id 6ADFR0ah074893
-	for <linux-wireless@vger.kernel.org>; Fri, 13 Nov 2026 18:33:06 GMT
+	dkim=pass (2048-bit key) header.d=qualcomm.com header.i=@qualcomm.com header.a=rsa-sha256 header.s=qcppdkim1 header.b=noOnX1MQ;
+	dkim=pass (2048-bit key) header.d=oss.qualcomm.com header.i=@oss.qualcomm.com header.a=rsa-sha256 header.s=google header.b=jICNGaWY
+Received: from pps.filterd (m0279869.ppops.net [127.0.0.1])
+	by mx0a-0031df01.pphosted.com (8.18.1.11/8.18.1.11) with ESMTP id 6ADFRhBc1725993
+	for <linux-wireless@vger.kernel.org>; Fri, 13 Nov 2026 18:39:02 GMT
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=qualcomm.com; h=
 	cc:content-transfer-encoding:content-type:date:from:in-reply-to
 	:message-id:mime-version:references:subject:to; s=qcppdkim1; bh=
-	4tUv5114t+zriGrndIi1jj8Phxwq1uvGYapqkrY4UYI=; b=YRZyIDfKqQQoEfwn
-	WHoFxHopIowIaQ1yYaiHHxZPYbrEk3/GF/5rYmKTS6zPIR4JnhO1VcpOtkaioU0A
-	i43V+/Z3BgKXV567tGlh/LZYEOEBZ3T7aD5s3siAtPujVzmuRx/hNzErNGGVIHrB
-	UoxuMuT6QSJwQgI1KmDuAFQAF5X9XtuFUUc+uwhbYTAl1MEVoM8JkpHf8EZJU/kA
-	TAR2/tRgApt7C1aA2ZPx2SIL32WoHMqEslM+Gro0LY22/uWiXhvVcoFJ6rZjjwCo
-	pLP+ZM0Yf5b2+QCN9MAb0dWGwiV5h+wgXnFPV6j1joTTOQI1dCC4fnIF8+Sh3j/0
-	DBmXfQ==
-Received: from mail-dl1-f71.google.com (mail-dl1-f71.google.com [74.125.82.71])
-	by mx0a-0031df01.pphosted.com (PPS) with ESMTPS id 4hwu2mu11m-1
+	s7c8JL+q9Cbm7aNJEf8MDq8Yrx/mghovFmqSkIqYKJM=; b=noOnX1MQVRia9Aj6
+	N+ueNXJB+FcGxC8p/iBKe/96NLK3vje6NQvNs/bierFd9mM9F5TrlHtCnQxrnfmF
+	8suVJwv/RKjVl6GzD/ijCABvJXE2S64+OMnoveHGQcfMVtW//wWnsudxibuIGOYn
+	MJZ4tXcGsi+3MfgWSo9qF7naUcZu8r7S8uqYFmETTd8EBS5tHtEa//udcAjBLn+7
+	SUnXtSDnJj9ZgB9uAdRunDHt2qGRCM1T0Jm1rlK6fIK1XDv+ZNHGzSKLdehVH/Jk
+	R6Jfr1qIxyLjlQ9471+iG+CzF49qzame66TF7eHNGndhLwxCZryIwktmbdJeviim
+	imHe5w==
+Received: from mail-dy1-f197.google.com (mail-dy1-f197.google.com [74.125.82.197])
+	by mx0a-0031df01.pphosted.com (PPS) with ESMTPS id 4hx1bp9mxu-1
 	(version=TLSv1.3 cipher=TLS_AES_128_GCM_SHA256 bits=128 verify=NOT)
-	for <linux-wireless@vger.kernel.org>; Fri, 13 Nov 2026 18:33:06 +0000 (GMT)
-Received: by mail-dl1-f71.google.com with SMTP id a92af1059eb24-1a71dd190b0so556862c88.1
-        for <linux-wireless@vger.kernel.org>; Fri, 13 Nov 2026 10:33:05 -0800 (PST)
+	for <linux-wireless@vger.kernel.org>; Fri, 13 Nov 2026 18:39:02 +0000 (GMT)
+Received: by mail-dy1-f197.google.com with SMTP id 5a478bee46e88-37549877380so1617596eec.0
+        for <linux-wireless@vger.kernel.org>; Fri, 13 Nov 2026 10:39:01 -0800 (PST)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=oss.qualcomm.com; s=google; t=1794594785; x=1795199585; darn=vger.kernel.org;
+        d=oss.qualcomm.com; s=google; t=1794595141; x=1795199941; darn=vger.kernel.org;
         h=content-transfer-encoding:content-type:in-reply-to:from
          :content-language:references:cc:to:subject:user-agent:mime-version
          :date:message-id:from:to:cc:subject:date:message-id:reply-to
          :content-type;
-        bh=4tUv5114t+zriGrndIi1jj8Phxwq1uvGYapqkrY4UYI=;
-        b=A/gDixv0pGI4SAurXqQDN0OA7xe3YZ9G6RcD5b6MjyW9rWVhjfmbv9vHidbdE854c4
-         XMzzJQWI2FDsTtcYy5ouJpW4pVmouJZCrBV4fmxZm3WpuXMpmZxKACAxM5Kr6O3vfaj5
-         NsyJMkUoOg+5jBihmmbaOC7CAyCodqeRgnNA56NWqnJT9PLuQfSY8QksH6wQb+Hk326w
-         vjBCqLIumh8TmKMDT8f6RA5Oweo0GyK1grg7QL/gukyX4uVl/66Lphbe4lAh371UZ5oH
-         +IxEio2sZzd5xM3pN1apMjSNuUDCksQbgGSSWwzMv7xffIuSzPvUnJpao6CbAkU54RJ8
-         jmxg==
+        bh=s7c8JL+q9Cbm7aNJEf8MDq8Yrx/mghovFmqSkIqYKJM=;
+        b=jICNGaWYkqEfwqfrVD9C1lKkWIPeL85nnytLt+IfqpS1RqBeXwi7XTGu7tL/MvHnOR
+         wiJwAWX8R4fIZHITrJO35jGRsE6FbUWjjMGjA3fs7D2wJmgJsVY0/Fc/SHPugJicMIlz
+         OPDb8DEeTMYOxeJP7QtngosgQqbHbgQjqzB94HOC/xpIvH3BZpcwsV8kiB9QpOqfa1QQ
+         lToBwwSls3zwwNgrFMRt9cJlPMwxnKnD9VgKESao7vzlvO0p+PqR8RskuR8tecPvWlC9
+         fEnmPSH2GTFwawrdWLPle5xfbGct5tyjcF/0wf9lkoSQ2HhrusjEoK72p28ZasMLV3y7
+         YKng==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=1e100.net; s=20260707; t=1794594785; x=1795199585;
+        d=1e100.net; s=20260707; t=1794595141; x=1795199941;
         h=content-transfer-encoding:content-type:in-reply-to:from
          :content-language:references:cc:to:subject:user-agent:mime-version
          :date:message-id:x-gm-gg:x-gm-message-state:from:to:cc:subject:date
          :message-id:reply-to:content-type;
-        bh=4tUv5114t+zriGrndIi1jj8Phxwq1uvGYapqkrY4UYI=;
-        b=saVsC+5bGvbjoR4zYTIaJFLo0eBdE2Esi+HkurM1CaEAngNBfSYnUYIr4qAWXvC5ig
-         6fmdXgZ1UZVGIlP2Ywi2ctWLxeFs/ss5VuyUJEKf4cGIA+amaUnNxtRFeLuifsv5PBFk
-         4CDvs7YoZlNUrD0Ep4HYboVL39jNF5GGbpmom5vn7bGyMTIC/fOCZFfDcFbdACl7thM6
-         4ug4nkkzb3UeI4cLV8vDAihrSf7+pjHlpXeBsogO3jidFIKtNc0PEUgXpM4A37bE1Pts
-         It7bXXosIcE9SSnVqTSa/PjCpyFbenUi8sTjA7fCfEgChxrAyrI+k1znRObbPRJLA/Oj
-         Gvfw==
-X-Gm-Message-State: APuU4Z/GXdOPIN6CdpkbyM3pbklz0UWQsbJD7xXnBOPmubDRKINrETVU
-	QXw0kWhq5it/A/F0kBF376C9SYIhbTurIiVPjRcak0DYKY3eW5oc19wVkR17oK7dsDpXxWsk1/l
-	grpPIPzwEaTqVM3OtU4edjAajQp09c3xV1BeOh4p7YIxC5pLzQMPA/3gnzFY2y4WywPhU
-X-Gm-Gg: AYBFou1EqbD0BWchlivFHiQ6AE2/gEANa5wDkBiKTdzLpWaeQiy0/7ISBgfh3ELht4n
-	RyyUWMp8377ncUv5Vhray08lsns2Te3emGF8kI/AwMUX/ij/1C44bjhhJ4zshDAE/WEUNx5lFP9
-	m/Kg6FdCggouQCtOiR3rrhU5AfD7OfiM6xuX+gjbh6HcH1yYO/glPvaPmd29yBIm6iTVwE8GFKp
-	BkeIylEBm0newfESTeUrIOtPK/prhYBDO4+MTyQRetc7ou9B/RlBhnUkHoNqG1g/XqrivfYWTBe
-	9NBlNXMxBv7b+Jde6QtmsSTvnyZjBNx7RnDnWD9yGZsgHAqBS9DqaJIRXVTlsLml0SYrwF7x9wo
-	5jvQQLK7hb/NC86SEXuOYpdWBp44ddDvUSYLN9w99YWwBXYUKwtLTLEoWMNdbIBWqysz5p5T5NN
-	3WXgzdqicougzm9EAeIYRipXCqxWQ5UdsPXBbBBZ7ps/CwjQTRoCiLQJz2YtSzJ56QWw==
-X-Received: by 2002:a05:701b:2802:b0:1a7:78a3:bda8 with SMTP id a92af1059eb24-1b50318d7abmr3048332c88.27.1794594785247;
-        Fri, 13 Nov 2026 10:33:05 -0800 (PST)
-X-Received: by 2002:a05:701b:2802:b0:1a7:78a3:bda8 with SMTP id a92af1059eb24-1b50318d7abmr3048314c88.27.1794594784688;
-        Fri, 13 Nov 2026 10:33:04 -0800 (PST)
+        bh=s7c8JL+q9Cbm7aNJEf8MDq8Yrx/mghovFmqSkIqYKJM=;
+        b=aJVyitc2BL1Mif5YRJI8U/OwOwNCOQuWXuJteJ4bqehcEs1kyJ+tStpxG3KyGzEmXZ
+         Nfd51kfF2JI025mPtu/BgliFMiVJ/LJAp8ZqQ+0mmwFFTKmjgdmGk5kzjAIPpRpWqDfx
+         VSOJQHr3JGAYHIXf2w73LXVC5a8+7bvTJaqd/Sf3jWHhqKVx9P0xufsK6iEjoClJVIc9
+         aTsJfEwOq84vWNkykrjwIpb6PSKTF00vRS2voQipEJiLRR6SEZ4sHR/n/d5pzxFLFFbC
+         2uutdeEWXMRKZdrLUA7oh9AqYXi9kDzC/TGiAlWPXWRt1tex+P8v5Fc9DkQiAMpMmDka
+         ErtA==
+X-Gm-Message-State: APuU4Z/CceEccFrSf7xu+pAooAKdLH7Kq/JlPmLJ8VIL5VWBnMdGObkH
+	z9cfdMS86u990x9G9+Ay2EN21nIHEJjPdGK/64vIBBsgon9+5LhHNgMzOPnHSbTfC1RLQ1IopM8
+	O+oUZIF/B53X5drAHJZchM1o1A+laoowbBJ2o4JBl5qpeBwkbACuuzqaIIY20YSbs314g
+X-Gm-Gg: AYBFou0pwdZwfxxLCx05To+Ux6nQCzz0mGzekwleuvIKqhDCD8WeKKm07xMRyafdJSu
+	MlVHnMVzIZCREmGEhBugKS0/WH4OASQGifs1RHZ7HFEY2a6uz51NvF9r3L6oeQKBGcglFQ/xAoz
+	tK+XExvnZ51xPNMPEXU5HYcS9tsHZq/dkuD3G6fUX2mkYinrjNyj9KJLyPCY6DQ2MG/caFdApDP
+	9/rE9rvEFZHIZMbjMkgCPwcMWsb4t8ct76TxuV58ckCePaJYPFGdwP4K83heh5Z+nKij2KZSqRG
+	Xwm2vCp+GhOliisJyXr1uCb4BF5T/gWjpnfzohAMDdQRTYOfbGS0zofEbzXERCuhzY94m9hc3xm
+	r/kUA5US9RNDLz9B71AtUvX26KTinJAiSnRvLCNJMbuukuPqpldYmKbVPAESMIPGPQwlaTAuo3L
+	cV1kGXkbCoKDVLnepyLBuHelugcS9kJcd9AN3SAk4Xt63eXDpvlLBKgzcqCtRXF+iK+w==
+X-Received: by 2002:a05:693c:83cf:20b0:36a:4a08:f0f0 with SMTP id 5a478bee46e88-379684b1ba3mr3617872eec.27.1794595141001;
+        Fri, 13 Nov 2026 10:39:01 -0800 (PST)
+X-Received: by 2002:a05:693c:83cf:20b0:36a:4a08:f0f0 with SMTP id 5a478bee46e88-379684b1ba3mr3617846eec.27.1794595140468;
+        Fri, 13 Nov 2026 10:39:00 -0800 (PST)
 Received: from [10.50.62.158] (blr-bdr-fw-01_GlobalNAT_AllZones-Outside.qualcomm.com. [103.229.18.19])
-        by smtp.gmail.com with ESMTPSA id a92af1059eb24-1b50313d8f5sm15122245c88.3.2026.11.13.10.33.02
+        by smtp.gmail.com with ESMTPSA id 5a478bee46e88-37955ffcbc9sm14046781eec.18.2026.11.13.10.38.57
         (version=TLS1_3 cipher=TLS_AES_128_GCM_SHA256 bits=128/128);
-        Fri, 13 Nov 2026 10:33:04 -0800 (PST)
-Message-ID: <18544db8-05e9-43b9-b60b-bf24e97a1225@oss.qualcomm.com>
-Date: Sat, 14 Nov 2026 00:03:01 +0530
+        Fri, 13 Nov 2026 10:38:59 -0800 (PST)
+Message-ID: <91d1c974-5910-4053-8f4d-6bb54ee295ec@oss.qualcomm.com>
+Date: Sat, 14 Nov 2026 00:08:55 +0530
 X-Mailing-List: linux-wireless@vger.kernel.org
 List-Id: <linux-wireless.vger.kernel.org>
 List-Post: <mailto:linux-wireless@vger.kernel.org>
@@ -115,81 +115,68 @@ List-Owner: <mailto:linux-wireless+owner@vger.kernel.org>
 Precedence: list
 MIME-Version: 1.0
 User-Agent: Mozilla Thunderbird
-Subject: Re: [PATCH wireless-next v4 10/21] wifi: nl80211/cfg80211: add
- support for querying SMD context for target AP MLD
+Subject: Re: [PATCH wireless-next v4 11/21] wifi: nl80211/cfg80211: define API
+ to notify SMD Drain completion
 To: Johannes Berg <johannes@sipsolutions.net>
 Cc: linux-wireless@vger.kernel.org, linux-kernel@vger.kernel.org
 References: <20261106-smd-v4-0-62e39487f51a@oss.qualcomm.com>
- <20261106-smd-v4-10-62e39487f51a@oss.qualcomm.com>
- <29b38fc6c8a5f1b2b58d81c1a9046308d2ca9e2d.camel@sipsolutions.net>
+ <20261106-smd-v4-11-62e39487f51a@oss.qualcomm.com>
+ <4c5dc50b40bde5cd9221d318e44645d913268666.camel@sipsolutions.net>
 Content-Language: en-US
 From: Pooventhiran G <pooventhiran.g@oss.qualcomm.com>
-In-Reply-To: <29b38fc6c8a5f1b2b58d81c1a9046308d2ca9e2d.camel@sipsolutions.net>
+In-Reply-To: <4c5dc50b40bde5cd9221d318e44645d913268666.camel@sipsolutions.net>
 Content-Type: text/plain; charset=UTF-8
 Content-Transfer-Encoding: 7bit
-X-Proofpoint-ORIG-GUID: jyrw_-3BGCekutOY5mymP0IZIuhwJBy4
-X-Proofpoint-Spam-Details-Enc: AW1haW4tMjYxMTEzMDA3MyBTYWx0ZWRfX5r1M8RRhEgtF
- KdXGwKY4TpDLmmWOTJ8FhgfQmu0qgyAdI6NBEirS94Habb7R/uzi+Q3jHjyNUyhXaK24RchF56j
- sACHN+gV1i0JbK34uZG4iWuHbPxZ+cfHrluTa8pR65wBACWnRpCOQMyJNvziqG5T013lKbGD4BN
- SI+0y4TtfmQOAXD0/yzMpEPO2W+TCznNxck3qi2RfeuVdFxkFrxnpGgT/DQuP0ShPnPD+TU3nkY
- xIhH4w335NtCUQ2RfKryKkagYlGNsSdeft6sMFYY5YJn3Rt3ckAoTxmHPlTE7Z+fJmECH5xeOw3
- 9SDQrFYl5SBKMbur3ToAU7rAphoGYMaZcNKocdZ3NcPHx59ESPitmu37UqBCPzW9neP8WFp6YTp
- 7AFxENhyLWvhesWSpH6grq5lPkpygfrP1WM/KVP7H1oKzz8iYaiB6mHAbypWieQ5hZZqaHjY2Pu
- PJgYtM2W/ZMDx2o+zAw==
-X-Proofpoint-Spam-Info: AW1haW4tMjYxMTEzMDA3MyBTYWx0ZWRfXw2AiMVDJIw7A
- +GeIyIcH0Co8hy/XhExnHVuSrHSi8nHZmdEbAdLQr3hJtlOQaptox7oOqy/0u0SN6lZdEn7x7TX
- X1/z0zX38JXpbFYdXrq8iHP3/lcoQSc=
-X-Authority-Analysis: v=2.4 cv=ddQVTnXe c=1 sm=1 tr=0 ts=6af757e2 cx=c_pps
- a=JYo30EpNSr/tUYqK9jHPoA==:117 a=Ou0eQOY4+eZoSc0qltEV5Q==:17
+X-Authority-Analysis: v=2.4 cv=W9ytxhWk c=1 sm=1 tr=0 ts=6af75946 cx=c_pps
+ a=Uww141gWH0fZj/3QKPojxA==:117 a=Ou0eQOY4+eZoSc0qltEV5Q==:17
  a=IkcTkHD0fZMA:10 a=zJRp6_cAMcgA:10 a=s4-Qcg_JpJYA:10
- a=VkNPw1HP01LnGYTKEx00:22 a=u7WPNUs3qKkmUXheDGA7:22 a=YMgV9FUhrdKAYTUUvYB2:22
- a=RSDq6vcL7OiZwIkGrs0A:9 a=QEXdDO2ut3YA:10 a=Fk4IpSoW4aLDllm1B1p-:22
-X-Proofpoint-GUID: jyrw_-3BGCekutOY5mymP0IZIuhwJBy4
+ a=VkNPw1HP01LnGYTKEx00:22 a=u7WPNUs3qKkmUXheDGA7:22 a=_glEPmIy2e8OvE2BGh3C:22
+ a=RKf9KYSdOsptWaLQyIwA:9 a=QEXdDO2ut3YA:10 a=zZCYzV9kfG8A:10
+ a=PxkB5W3o20Ba91AHUih5:22
+X-Proofpoint-GUID: 4t2kwMfPY7Kv5BveWaJB1PO2uC31tmhN
+X-Proofpoint-Spam-Info: AW1haW4tMjYxMTEzMDA3NCBTYWx0ZWRfXxT+VQtluGaYX
+ OhLcoA9YxeE7q+qIr+GOepYIKtfGs+23L52E8HyX8Ufp2Q2fObQ+dcCwc5rTvY/ICI6l/+K8NiY
+ ZFNaHe5KLERjcQxv4bEcvk/BT/uMrMc=
+X-Proofpoint-Spam-Details-Enc: AW1haW4tMjYxMTEzMDA3NCBTYWx0ZWRfXzO/TqwHn3Gvu
+ BESb/GPPuauklTKnJDw3BO8fY14dnwg+uOjBUGSNk37RPUzU8A+w+pY08gkGq40WZM8naDOXXR8
+ zYFIj8AQ0JyG1da9uKUzz4QC1TwIv/7jNlJjbclYhmBqvODMFVbQ/nU2By2zHACYgLP0PejdrA+
+ pOvhiSd9LUmQhl0iwhxuTApnrc4l8eN+XYGOkZiVN8GxVrgVaADneEMuWlRQEYODirjKqiJ7ena
+ If7eeO9P+81TeQpJGm6yXIt0deoItXygryNrjLaoOYW6cWnzBZEIp6FD1GLjlfFEQx4EcSwesUm
+ tkVmJFmDWZzInXaydY39g9p72HFGXe+poZ5MD9CgBaRSCmqEZSBdpNpOsb2vVew30iZVc03csLH
+ t60oSAhc7OWbWQGuvw7/fJvJ3u0shHovV+8tCB30tnqua3YrdBXhRNfyVH9ZG7/5NRUIDKK2dVQ
+ Xl7mE8VOMy1mv8jFuqw==
+X-Proofpoint-ORIG-GUID: 4t2kwMfPY7Kv5BveWaJB1PO2uC31tmhN
 X-Proofpoint-Virus-Version: vendor=baseguard
  engine=ICAP:2.0.293,Aquarius:18.0.1176,Hydra:6.1.138,FMLib:17.12.100.49
  definitions=2026-11-13_05,2026-11-11_03,2025-10-01_01
 X-Proofpoint-Spam-Details: rule=outbound_notspam policy=outbound score=0
- clxscore=1015 bulkscore=0 impostorscore=0 priorityscore=1501 phishscore=0
- suspectscore=0 adultscore=0 lowpriorityscore=0 malwarescore=0 spamscore=0
+ phishscore=0 priorityscore=1501 adultscore=0 impostorscore=0 clxscore=1015
+ bulkscore=0 malwarescore=0 spamscore=0 suspectscore=0 lowpriorityscore=0
  classifier=typeunknown authscore=0 authtc= authcc= route=outbound adjust=0
- reason=mlx scancount=1 engine=8.22.0-2611040001 definitions=main-2611130073
+ reason=mlx scancount=1 engine=8.22.0-2611040001 definitions=main-2611130074
 
 
 
-On 11/11/2026 12:30 am, Johannes Berg wrote:
+On 11/11/2026 12:31 am, Johannes Berg wrote:
 > On Fri, 2026-11-06 at 13:28 +0530, Pooventhiran G wrote:
 >>
 >> +/**
->> + * struct cfg80211_smd_get_ctx_pending - pending async GET_SMD_CTX request
->> + * @list: linkage on wireless_dev::smd_get_ctx_pending_list
->> + * @sta_addr: non-AP MLD address for which context was requested
->> + * @dev_tracker: tracker object for the netdev referenced
->> + */
->> +struct cfg80211_smd_get_ctx_pending {
->> +	struct list_head list;
->> +	u8 sta_addr[ETH_ALEN];
->> +	netdevice_tracker dev_tracker;
->> +};
+>> + * cfg80211_notify_smd_drain_completion - notify userspace about downlink drain
+>> + *	early termination.
+>> + * @wdev: wireless device corresponding to the AP MLD
+>> + * @sta_addr: non-AP MLD address for which DL draining is being terminated
+>> + *
+>> + * Should be called under wiphy_lock.
 > 
-> This seems ridiculous, if userspace sets the interface down it might get
-> a stale response, but you're writing dozens of lines of code just to
-> avoid _that_?
-> 
-> Maybe also to avoid querying the same STA twice but if the firmware
-> can't cope with it then it can still reject it (or the driver), is there
-> really a good reason to have all this complexity to prevent it?
-> 
-> Tracing on the output path, on the other hand, would be useful?
+> "Should" doesn't really work here (it's either must or not), but anyway,
+> why, it's completely unnecessary?!
 > 
 
-Just the sta_addr alone helps identifying back-to-back requests for the same
-STA and it is rejected in nl80211 itself.
-
-The netdev reference is held to prevent invalid accesses to wdev/dev while
-reporting the context back to userspace as there are no locks in this path and
-another core may be servicing a DEL_INTERFACE unsynchronized with this context
-report. Since the collated context report comes from atomic contexts, we
-wouldn't be able to take wiphy_lock.
+wdev/dev access in nl80211_notify_smd_drain_completion is not protected again
+and it might race with a DELETE_INTERFACE. But I think instead of mandating
+wiphy_lock here, would it be okay if I changed it to use the wiphy_work_queue
+to post this event which provides safe access?
 
 > johannes
+
 
