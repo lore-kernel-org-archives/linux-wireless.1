@@ -1,85 +1,79 @@
-Authentication-Results: smtp.subspace.kernel.org; arc=none smtp.remote-ip=209.85.219.46
-ARC-Seal: i=1; d=subspace.kernel.org; s=arc20261015; a=rsa-sha256; cv=none;
-	t=1794596640;
-	b=dorj6oOZmQ+zB3CRMe8oSbnwG05SBAoUvtLhXjdbZkY6PFRCBeSApcUy7OnXmq1CD2n7
-	 /BHU+wfxDkRgm5zhUS5pLcBI1mRXAJfECY1rNtRD02ce1UnE/kPs1qFkjyxDcaCtyvhcb
-	 HSk8QXqGwMK8Yk4ZCeXAqrRCaxPEgHFEtEi8N7IRuuyR8VvjzyfJy1RjB4VNBArEFd03e
-	 kXVrh+PmREjQf/XgR2XVR81cYjiWfubpxNaUbeyBGFKNhnMixFJQ/RLLelxd6zu5JHkUO
-	 2EsL6wTSJGrarh8nQfBzLWi7/X7tYTKXDH14r3T6TwDT+t6mRPVva22ZZ7EO7EJ+MbQ==
-ARC-Message-Signature: i=1; d=subspace.kernel.org; s=arc20261015;
-	a=rsa-sha256; c=relaxed/relaxed; t=1794596640;
-	h=DMARC-Filter:Received:DKIM-Signature:X-Google-DKIM-Signature:
-	 X-Forwarded-Encrypted:X-Gm-Message-State:X-Gm-Gg:X-Received:Received:
-	 Message-ID:Date:MIME-Version:User-Agent:Subject:To:Cc:References:
-	 Content-Language:From:In-Reply-To:Content-Type:
-	 Content-Transfer-Encoding;
-	bh=5v4390+5+0gQiMHK1KicuB/Gp64Vkth2gdQzKankJ34=;
-	b=aRuSC/31jGkHyHUuTrPa1LMO9qNSHOzRkzZrsCSSLjFN2b9fL5JP+SlNOZozju3Z3nO9
-	 6lPRAGSYouhr5fPP7yZgRrqs1lhm4KdtXAl7YYa3wUp6smJmD3rC8yMDMOlrzhgqXEIx4
-	 ZunFLjdGa8oN/8Qh2dRfwPpi5zw7hELzXwQGTKANJj6AKKRpYv542se7yInPckuu57DdF
-	 XJ01GT6fTGL5y5Ga1zdlgktfEIk5Mx5Mw6lIGvcBEQv2f0HjiAGG3buxEtTscSapPuqY/
-	 qatUgwvEquLxpi5n/hgkB1j38/5Ng7KRF9FINNE0vVYMsll/W7h6c2xCHMZatvyqgvQ==
-ARC-Authentication-Results: i=1; smtp.subspace.kernel.org; 
-	dmarc=pass header.from=ieee.org;
-	spf=pass smtp.mailfrom=ieee.org;
-	dkim=pass header.d=ieee.org header.i=@ieee.org header.a=rsa-sha256 header.s=google header.b=OBl7H+i6;
-	arc=none smtp.remote-ip=209.85.219.46
-Received: from mail-qv1-f46.google.com (mail-qv1-f46.google.com [209.85.219.46])
-	(using TLSv1.3 with cipher TLS_AES_128_GCM_SHA256 (128/128 bits)
+Authentication-Results: smtp.subspace.kernel.org; arc=pass header.oldest-pass=0 smtp.remote-ip=100.103.45.18
+ARC-Seal: i=2; d=subspace.kernel.org; s=arc20261015; a=rsa-sha256; cv=pass;
+	t=1794597161;
+	b=GCIzg1Je9gXKTAotevY9i6LJY3RzS6V9JCPhmA9V8uILDsNqo5mke1us3SVZiPvI3Fgt
+	 iW1qUvvXJn60wLJ4Co3CsWp81+Npz7isjS6Y/AEcyfyoIMHA6E8VAZe1cesx3wp3DsrKl
+	 gPh6qbJ0gWalJMtu8QkUObWKuwQjBvgjahGCULkwABYMZjLoxgG12BqaZDjQK7scnXPNo
+	 BBlB0aLn7u53O12zMTMxSExCKEDGHUK5pQa7uWOD1o14Guop40LVqodmRQhWSX9PXal4X
+	 wpco8tNeIWCpTHpZNuriGg9XsgspXMn5EnB2bB3TKJ/PnIl7FC6eI8qBd0TGs2TXtvg==
+ARC-Message-Signature: i=2; d=subspace.kernel.org; s=arc20261015;
+	a=rsa-sha256; c=relaxed/relaxed; t=1794597161;
+	h=Received:DKIM-Signature:Received:From:Date:Subject:MIME-Version:
+	 Content-Type:Message-Id:X-B4-Tracking:X-Change-ID:To:Cc:X-Mailer:
+	 X-Developer-Signature:X-Developer-Key:X-Endpoint-Received:
+	 X-Original-From:Reply-To:Content-Transfer-Encoding;
+	bh=hLZtGA46uUnhosvnrSpHGWny2vwTfNqO81vS+IzHZrg=;
+	b=q9++LMF0udxmJl0QU2cJBFXwNiUvjbrTNGh8JCmGYv4MBiCCTjS9JdqHMS5S2+S4oy5U
+	 SYZ6ADYqyy27rde/SVkDdLTJSLZa6l8cfPUgYPgXllyX6ZTqxWDR0opb3gnoHY6QuRGPj
+	 OxyX5j7jVXNlb52OOcKUOgu+nZKL/6ez1jEZAaCY0hzjdS1oOv/2HXxLtq17tkUpo/y2d
+	 /WO2LjdT56f9/SErhkTBs7yjes7zeCRIrtCvaKXYFbnXH/x94XqzooDP6UkQB+weiS9mU
+	 FFvLubxi0+5tgrM3URQSXZEelSs3DFpKbWBc5/gQ87DtyUmZq37WSt+wZpnyhUk1nkQ==
+ARC-Authentication-Results: i=2; smtp.subspace.kernel.org; 
+	dkim=pass header.d=kernel.org header.i=@kernel.org header.a=rsa-sha256 header.s=k20260515 header.b=W7NxPW5R;
+	arc=pass header.oldest-pass=0 smtp.remote-ip=100.103.45.18
+Received: from smtp.kernel.org (quasi.space.kernel.org [100.103.45.18])
+	(using TLSv1.3 with cipher TLS_AES_256_GCM_SHA384 (256/256 bits)
+	 key-exchange X25519 server-signature ECDSA (prime256v1))
+	(No client certificate requested)
+	by smtp.subspace.kernel.org (Postfix) with ESMTPS id 8DC3C606A334;
+	Fri, 13 Nov 2026 19:12:41 +0000 (UTC)
+Authentication-Results: smtp.subspace.kernel.org;
+	dkim=pass (2048-bit key) header.d=kernel.org header.i=@kernel.org header.a=rsa-sha256 header.s=k20260515 header.b=W7NxPW5R
+Authentication-Results: smtp.kernel.org; arc=none smtp.remote-ip=100.80.115.77
+ARC-Seal: i=1; d=kernel.org; s=arc20260519; a=rsa-sha256; cv=none;
+	t=1794597161;
+	b=t59zogXt8EYW/vo/pYhyEgQXGJa4YE9NiuEo8mF3XDrgkcTTtvkpVT0LcEKjMtg6S35C
+	 y0ym7mD8D694abINXtERcnIAtMZpW/0szW0hOzxAEGG7JF0DFHzbblVt3et3n1uZTBI3R
+	 ly3K4cxOUCpo3DeB2psNY26/c3jUq2Z60dzWg86kaoy1WE5zPYCdEAp6GBp7B1JHVtrpL
+	 3/hSTwRFaAlwZr4ZXO744h3f2H/b0q1alBmus8XJTAUbNCV8SNMA1HC6ENjFWb7aup3JX
+	 yJOzwv91vVB8Ug3gbgH6/7iGuDyzZpLrRJI5c2bomUmj3uV4/dkt+wgQOhAfoA4Q3Pg==
+ARC-Message-Signature: i=1; d=kernel.org; s=arc20260519; a=rsa-sha256;
+	c=relaxed/relaxed; t=1794597161;
+	h=DKIM-Signature:Received:From:Date:Subject:MIME-Version:Content-Type:
+	 Message-Id:X-B4-Tracking:X-Change-ID:To:Cc:X-Mailer:
+	 X-Developer-Signature:X-Developer-Key:X-Endpoint-Received:
+	 X-Original-From:Reply-To:Content-Transfer-Encoding;
+	bh=hLZtGA46uUnhosvnrSpHGWny2vwTfNqO81vS+IzHZrg=;
+	b=xUaa3sTVJzkyL97+qOd2qZ0+WTgu39I18asIyeeD1Pdf9CjBIJN55MCFDE0q4hyE0EcI
+	 BCwehLBB+DFC6+vMs5xeY1KAs1TUu5cecTsgx333a6sYC764aoZrn5PIVZKqy/GzHrqSa
+	 eTn1bxarB6vS2zgl8vBrlgQmp+aRX16JdFrpT8pCkXGY2hMaS/DoWV7Jo0uL/U24CQU0y
+	 +LOSDp3l+xLXZtkZ8wgzpNwryTE4Zw0+LuabsLojA1jxLuiZM9KK+uyl6OGwCNH7HQ2ss
+	 tZXzU6rvRCtfW/bQRj6fTkK+rzEpYKfPbDwfbzbFEr8WR10A0eGPoKZCv3GePDNHQ/A==
+ARC-Authentication-Results: i=1; smtp.kernel.org; 
+	arc=none smtp.remote-ip=100.80.115.77
+Received: from lkml.kernel.org (nexus.subspace.kernel.org [100.80.115.77])
+	(using TLSv1.3 with cipher TLS_AES_256_GCM_SHA384 (256/256 bits)
 	 key-exchange X25519 server-signature ECDSA (prime256v1) server-digest SHA256)
 	(No client certificate requested)
-	by smtp.subspace.kernel.org (Postfix) with ESMTPS id 6D111606A33B
-	for <linux-wireless@vger.kernel.org>; Fri, 13 Nov 2026 19:04:00 +0000 (UTC)
-DMARC-Filter: OpenDMARC Filter v1.4.2 smtp.subspace.kernel.org 6D111606A33B
-Authentication-Results: smtp.subspace.kernel.org; dmarc=pass (p=reject dis=none) header.from=ieee.org
-Authentication-Results: smtp.subspace.kernel.org; spf=pass smtp.mailfrom=ieee.org
-Authentication-Results: smtp.subspace.kernel.org;
-	dkim=pass (1024-bit key) header.d=ieee.org header.i=@ieee.org header.a=rsa-sha256 header.s=google header.b=OBl7H+i6
-Received: by mail-qv1-f46.google.com with SMTP id 6a1803df08f44-91e8a05ec5aso27611186d6.1
-        for <linux-wireless@vger.kernel.org>; Fri, 13 Nov 2026 11:04:00 -0800 (PST)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=ieee.org; s=google; t=1794596639; x=1795201439; darn=vger.kernel.org;
-        h=content-transfer-encoding:content-type:in-reply-to:from
-         :content-language:references:cc:to:subject:user-agent:mime-version
-         :date:message-id:from:to:cc:subject:date:message-id:reply-to
-         :content-type;
-        bh=5v4390+5+0gQiMHK1KicuB/Gp64Vkth2gdQzKankJ34=;
-        b=OBl7H+i6ZwCYqyZENMFkOks9QMvP3Q1O5CrDefd7QEnoWxR7Gzg2PWplPwjprGwO9m
-         ONLcl2A+SicRV5yCDWOMiHwCcJzaUmNARnD8racf2rem5cydfXkKMyTLGas/HjHQXhp0
-         TTMH+rLW9ObkrPLd+QQ+P9H/NwQsFwau/hQwA=
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=1e100.net; s=20260707; t=1794596639; x=1795201439;
-        h=content-transfer-encoding:content-type:in-reply-to:from
-         :content-language:references:cc:to:subject:user-agent:mime-version
-         :date:message-id:x-gm-gg:x-gm-message-state:from:to:cc:subject:date
-         :message-id:reply-to:content-type;
-        bh=5v4390+5+0gQiMHK1KicuB/Gp64Vkth2gdQzKankJ34=;
-        b=eo17LWr4mqYk4jesHI72Jz3twCjE4PyM9+6nw0BF/bLPZBGv2iR/9C4ChItfdLIF/K
-         8fHGaeSdYmw3YdWxmqvLycjscbRn/wc0Ngx6fzhCMBY3aDUCqVSfUHo+hj6vJTHGs/cw
-         gGnH+8UhpAcpblhnOyIWlmEUwv1RGWrsMb1+LAyp/7yjwEwGZg6qsxVFVgIgWncJ8DB7
-         QuSODp2QVXMFo7sPkSAdroa4YJpCgXHKTQG8A3pWYC8omW8mKrkO6/ZZZI+gPbulvFd5
-         /aK0G207QpWMc0UqT5jcCgDHIuqlE241gUmM2P8k35HLw5x7F/eUvcV6UEEOklaqHE1Y
-         J7Zg==
-X-Forwarded-Encrypted: i=1; AL+hErFKZLSV+2tG8AaBfuAdBxHyq4pYaWR3KLEdgY6lUVfOHUg8T2z6XS8Rvp+7lTp4ndX29OARR7pQFtnS3sJbfg==@vger.kernel.org
-X-Gm-Message-State: APuU4Z/ZLZQC5+l1vIU64vLcrkS4+DV99aJ2E3Ch5dpma/KgUQMNga4o
-	3Gy17ZH5JmnpJpRpl5AxBqFpfDxhL7gIDFhlc6376XB7JF0FMe1Hs1T9cXN/UP1ejQ==
-X-Gm-Gg: AYBFou07LZdWiiTd61EEMl+pcZwiUNkiU8C/EtXct0OMwsA1TnVeSNdYIyXHxSZOAq6
-	4Io5pGnUHCoX9EC0RT03GIJTfDmlEHMTuIorzcczoAJAOFpfTrJSoSRtNiIkXgVzTUKQZ52G73Z
-	RfJuIi5FHrbDC94dHHQpQK9af7qy3U8WEW5FCiFBIbzcLaH7uMVlOZhaL9RuTGQgkPOmymqcmdI
-	j7uvvCTv+5GYNpsswgQfD9Vhm12ep4EVEKuFEC4yoXJ7RQvONTaEQcdIMzYioeKEOpY2skCfx9s
-	1bGdUZOr9xVIsdSUwBTikDr4KNwEcjb3GtDpauvZPsobfg71oOF4FKEoAhseV+4+GHVaGIW52Bv
-	/kGlUlAN9uYkmYE4Wgk2hJAqX1yomU1PYNnoDkmvNEZWYDUJoEy+RwWPJP8cSrqXYXMxRXdmiGy
-	HNlrkjWvRke155yTBGSgo5HZDvsDG8X/ijPeFIiVNPiJSkON8am1KcQrWQr5+nAvkA7b8lvxDji
-	ZeXt5a3O0M+g7Ta0pL3jk9isWM64MfT6TMyYx8+3BV+M1oBHWxgZxWOaTprtAsBcfEwaj+3nUKf
-	SuJ9XySYzggymN9i5ALQHaLO
-X-Received: by 2002:a05:6214:4409:b0:91c:74ce:a452 with SMTP id 6a1803df08f44-91f241ddd3fmr55479136d6.46.1794596639018;
-        Fri, 13 Nov 2026 11:03:59 -0800 (PST)
-Received: from [172.22.22.28] ([73.62.185.64])
-        by smtp.googlemail.com with ESMTPSA id 6a1803df08f44-91f23d780e8sm27000686d6.27.2026.11.13.11.03.53
-        (version=TLS1_3 cipher=TLS_AES_128_GCM_SHA256 bits=128/128);
-        Fri, 13 Nov 2026 11:03:56 -0800 (PST)
-Message-ID: <1b84bbe8-28b6-4a74-af0c-5b9cfdd8b394@ieee.org>
-Date: Fri, 13 Nov 2026 13:03:53 -0600
+	by smtp.kernel.org (Postfix) with ESMTPS id DF7A21F000C4;
+	Fri, 13 Nov 2026 19:12:40 +0000 (UTC)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=kernel.org;
+	s=k20260515; t=1794597161;
+	bh=hLZtGA46uUnhosvnrSpHGWny2vwTfNqO81vS+IzHZrg=;
+	h=From:Date:Subject:To:Cc:Reply-To;
+	b=W7NxPW5RybjlOtaDm9qMqP9JGvSVC3YQdPg3G+1FX7tUlghT/SVIaX3MbMAanxNyf
+	 2JZNyLNz3e47IZnX8O4bMzr0Ssl1xrJkprEG0y58Lvu9UKxAk6FzoHDzjV+Ekmmer3
+	 XTMeCwSFKEcy3he/vTdV3B/z198PCUwbmDUEnSIES1g/IhWRNnATpMxozTTPD/gfgg
+	 H0ag6G4aiiySQ/2wj6741UX7UpLw62dZ6tybJQmfVvh7ke+s29PY/uG/TOe57MrRlX
+	 uhybmAAbrRrP767gUqV7BUGt5QM+qk1dPBTskYHmx7hOC5IlV0sMcm/h/ONfrxw21V
+	 89YTmfC90mUCA==
+Received: from nexus.subspace.kernel.org (localhost [IPv6:::1])
+	by lkml.kernel.org (Postfix) with ESMTP id 71F8549A75;
+	Fri, 13 Nov 2026 19:12:40 +0000 (UTC)
+From: Patrick Fischer via B4 Relay <devnull+admin.tsv-stahl-riesa.de@kernel.org>
+Date: Fri, 13 Nov 2026 20:12:29 +0100
+Subject: [PATCH wireless-next] wifi: wlcore: Don't report RSSI events on
+ the P2P device
 X-Mailing-List: linux-wireless@vger.kernel.org
 List-Id: <linux-wireless.vger.kernel.org>
 List-Post: <mailto:linux-wireless@vger.kernel.org>
@@ -89,120 +83,118 @@ List-Unsubscribe: <mailto:linux-wireless+unsubscribe@vger.kernel.org>
 List-Owner: <mailto:linux-wireless+owner@vger.kernel.org>
 Precedence: list
 MIME-Version: 1.0
-User-Agent: Mozilla Thunderbird
-Subject: Re: [PATCH v2 6/9] net: ipa: migrate firmware loading to
- qcom_mdt_pas_load() and qcom_pas_prepare_and_auth_reset()
-To: Mukesh Ojha <mukesh.ojha@oss.qualcomm.com>,
- Sumit Garg <sumit.garg@oss.qualcomm.com>,
- Bjorn Andersson <andersson@kernel.org>,
- Konrad Dybcio <konradybcio@kernel.org>,
- Rob Clark <robin.clark@oss.qualcomm.com>, Dmitry Baryshkov
- <lumag@kernel.org>, David Airlie <airlied@gmail.com>,
- Simona Vetter <simona@ffwll.ch>,
- Vikash Garodia <vikash.garodia@oss.qualcomm.com>,
- Dikshita Agarwal <dikshita.agarwal@oss.qualcomm.com>,
- Bryan O'Donoghue <bod@kernel.org>, Mauro Carvalho Chehab
- <mchehab@kernel.org>, Alex Elder <elder@kernel.org>,
- Andrew Lunn <andrew+netdev@lunn.ch>, "David S. Miller"
- <davem@davemloft.net>, Eric Dumazet <edumazet@kernel.org>,
- Jakub Kicinski <kuba@kernel.org>, Paolo Abeni <pabeni@redhat.com>,
- Jeff Johnson <jjohnson@kernel.org>,
- Mathieu Poirier <mathieu.poirier@linaro.org>
-Cc: Abel Vesa <abelvesa@kernel.org>, Sean Paul <sean@poorly.run>,
- Akhil P Oommen <akhilpo@oss.qualcomm.com>,
- Abhinav Kumar <abhinav.kumar@linux.dev>,
- Jessica Zhang <jesszhan0024@gmail.com>,
- Marijn Suijten <marijn.suijten@somainline.org>,
- linux-arm-msm@vger.kernel.org, linux-kernel@vger.kernel.org,
- dri-devel@lists.freedesktop.org, freedreno@lists.freedesktop.org,
- linux-media@vger.kernel.org, netdev@vger.kernel.org,
- linux-wireless@vger.kernel.org, ath12k@lists.infradead.org,
- linux-remoteproc@vger.kernel.org, Alex Elder <elder@riscstar.com>
-References: <20261113185009.157893-1-mukesh.ojha@oss.qualcomm.com>
- <20261113185009.157893-7-mukesh.ojha@oss.qualcomm.com>
-Content-Language: en-US
-From: Alex Elder <elder@ieee.org>
-In-Reply-To: <20261113185009.157893-7-mukesh.ojha@oss.qualcomm.com>
-Content-Type: text/plain; charset=UTF-8; format=flowed
+Content-Type: text/plain; charset="utf-8"
+Message-Id: <20261113-upstream-wlcore-p2p-rssi-v1-1-754bd625daca@tsv-stahl-riesa.de>
+X-B4-Tracking: v=1; b=H4sIAAAAAAAC/yWM0Q6CMBAEf4Xcs5dATdD6K8aHCquewdLcFSEh/
+ LtV922ymVnJoAKjU7WS4i0mYyzQ7CrqHiHewdIXJle7tinjKVlWhBfPQzcqOLnEaiZ8DN6jdf5
+ Q73sqelLcZPmlzzSLYoAZRyyZLv/bpusTXf7mads+Avpj6IsAAAA=
+X-Change-ID: 20261111-upstream-wlcore-p2p-rssi-8a99e629703d
+To: linux-wireless@vger.kernel.org
+Cc: Johannes Berg <johannes@sipsolutions.net>, 
+ Svyatoslav Ryhel <clamor95@gmail.com>, linux-kernel@vger.kernel.org, 
+ Patrick Fischer <admin@tsv-stahl-riesa.de>
+X-Mailer: b4 0.15.2
+X-Developer-Signature: v=1; a=ed25519-sha256; t=1794597159; l=3844;
+ i=admin@tsv-stahl-riesa.de; s=20261020; h=from:subject:message-id;
+ bh=HaLsB5FeE4e7mOdZ4s/ZKiZhR7ChbgmoXjUw6qN7ook=;
+ b=2cHA0+InI1KT1A9ZFgrZG//bS45GCpNqhMjtHwb7EdWajV3IMaDEr63gN40QPqpd0ChS99Mq5
+ lnMEF7NPN6+CbNrB2wihngbtumu4oHIEhEDZKbj+XdkT4rtVfTPEWBv
+X-Developer-Key: i=admin@tsv-stahl-riesa.de; a=ed25519;
+ pk=D+v6EloYcEY9PIUHFyTM5sqcGIU/fIXzLUdkR8vjAtk=
+X-Endpoint-Received: by B4 Relay for admin@tsv-stahl-riesa.de/20261020 with
+ auth_id=1251
+X-Original-From: Patrick Fischer <admin@tsv-stahl-riesa.de>
+Reply-To: admin@tsv-stahl-riesa.de
 Content-Transfer-Encoding: 7bit
 
-On 11/13/26 12:50 PM, Mukesh Ojha wrote:
-> ipa_firmware_load() calls qcom_mdt_load(), which bundles metadata
-> initialization, memory setup, and segment loading into a single API that
-> does not expose a PAS context. Later it calls qcom_pas_auth_and_reset() for
-> TrustZone authentication, which is the intended behaviour. However, a new
-> qcom_mdt_pas_load() has recently been introduced that works with a PAS
-> context and can handle everything qcom_mdt_load() provides, along with
-> additional functionality such as shmbridge creation and retrieving memory
-> from the shmbridge buffer when the same remote processor needs to run while
-> Linux runs at EL2.
-> 
-> Replace the open-coded memremap()/qcom_mdt_load()/memunmap() sequence with
-> qcom_pas_context_init() and qcom_mdt_pas_load() and
-> qcom_pas_auth_and_reset() with qcom_pas_prepare_and_auth_reset().
-> 
-> Acked-by: Alex Elder <elder@riscstar.com>
-> Signed-off-by: Mukesh Ojha <mukesh.ojha@oss.qualcomm.com>
+From: Patrick Fischer <admin@tsv-stahl-riesa.de>
 
-I haven't reviewed the rest of what the PAS library does but
-I trust it does the same thing as this did before.  So thanks
-again for implementing the non-devm interface.  This looks
-good to me.  My ack is already present, but I'll reiterate:
+A P2P device vif has no netdev, but wl12xx_init_vif_data() makes it
+BSS_TYPE_STA_BSS, so wl12xx_for_each_wlvif_sta() in
+wlcore_event_rssi_trigger() visits it as well. Its rssi_thold and
+last_rssi_event stay 0, and 0 is NL80211_CQM_RSSI_THRESHOLD_EVENT_LOW.
+A metric above 0 therefore looks like a change to HIGH, and
+ieee80211_cqm_rssi_notify() ends in cfg80211_cqm_rssi_notify(), which
+dereferences the NULL sdata->dev:
 
-Acked-by: Alex Elder <elder@riscstar.com>
+  Internal error: Oops: 5 [#1] SMP ARM
+  PC is at cfg80211_cqm_rssi_notify+0x18/0x108
+  LR is at wlcore_event_rssi_trigger+0x84/0xa0 [wlcore]
+  Call trace:
+   cfg80211_cqm_rssi_notify from wlcore_event_rssi_trigger
+   wlcore_event_rssi_trigger from wl18xx_process_mailbox_events
+   wl18xx_process_mailbox_events from wl1271_event_handle
+   wl1271_event_handle from wlcore_irq_locked
+   wlcore_irq_locked from wlcore_irq
+   wlcore_irq from irq_thread_fn
 
-> ---
->   drivers/net/ipa/ipa_main.c | 23 ++++++++---------------
->   1 file changed, 8 insertions(+), 15 deletions(-)
-> 
-> diff --git a/drivers/net/ipa/ipa_main.c b/drivers/net/ipa/ipa_main.c
-> index 14ac2d2faf7c..0a37741c2285 100644
-> --- a/drivers/net/ipa/ipa_main.c
-> +++ b/drivers/net/ipa/ipa_main.c
-> @@ -585,12 +585,11 @@ static void ipa_deconfig(struct ipa *ipa)
->   
->   static int ipa_firmware_load(struct device *dev)
->   {
-> +	struct qcom_pas_context ctx;
->   	const struct firmware *fw;
->   	struct resource res;
->   	phys_addr_t phys;
->   	const char *path;
-> -	ssize_t size;
-> -	void *virt;
->   	int ret;
->   
->   	ret = of_reserved_mem_region_to_resource(dev->of_node, 0, &res);
-> @@ -615,24 +614,18 @@ static int ipa_firmware_load(struct device *dev)
->   	}
->   
->   	phys = res.start;
-> -	size = (size_t)resource_size(&res);
-> -	virt = memremap(phys, size, MEMREMAP_WC);
-> -	if (!virt) {
-> -		dev_err(dev, "unable to remap firmware memory\n");
-> -		ret = -ENOMEM;
-> -		goto out_release_firmware;
-> -	}
-> +	qcom_pas_context_init(&ctx, dev, IPA_PAS_ID, phys, resource_size(&res));
->   
-> -	ret = qcom_mdt_load(dev, fw, path, IPA_PAS_ID, virt, phys, size, NULL);
-> +	ret = qcom_mdt_pas_load(&ctx, fw, path, NULL);
->   	if (ret) {
->   		dev_err(dev, "error %d loading \"%s\"\n", ret, path);
-> -	} else {
-> -		ret = qcom_pas_auth_and_reset(IPA_PAS_ID);
-> -		if (ret)
-> -			dev_err(dev, "error %d authenticating \"%s\"\n", ret, path);
-> +		goto out_release_firmware;
->   	}
->   
-> -	memunmap(virt);
-> +	ret = qcom_pas_prepare_and_auth_reset(&ctx);
-> +	if (ret)
-> +		dev_err(dev, "error %d authenticating \"%s\"\n", ret, path);
-> +
->   out_release_firmware:
->   	release_firmware(fw);
->   
+The oops kills the IRQ thread with wl->mutex held, so the driver does
+not recover: everything that takes the mutex hangs, and the interrupt
+is disabled as unhandled.
+
+A real RSSI trigger reports a negative value in dBm and does not take
+this path. Here, on a WL1801 (Tegra Note 7) with wpa_supplicant running,
+the metric was +54 because the event mailbox held firmware statistics
+instead of event data: reading the firmware statistics through debugfs
+once a second during an iperf3 upload overwrote the mailbox. That is a
+separate problem, but any bogus metric above 0 crashes the same way.
+
+Skip P2P device vifs. Connection quality monitoring does not apply to
+them, and wlcore_event_beacon_loss() also leaves them out, by their
+invalid role_id.
+
+Fixes: 7845af35e0de ("wlcore: add p2p device support")
+Signed-off-by: Patrick Fischer <admin@tsv-stahl-riesa.de>
+---
+Tested on a Tegra Note 7 (WL1801, firmware 8.9.0.0.83,
+wpa_supplicant with its P2P device) with v7.3 plus this patch; the
+patched files are the same in v7.3 and wireless-next. Load was a 600 s
+iperf3 upload at about 47 Mbit/s while the debugfs firmware statistics
+were read once a second:
+
+- without the patch: oops as above after about 285 s of upload,
+  WLAN dead until reboot;
+- with the patch: 86 RSSI trigger events with bogus positive metrics,
+  no oops, upload ran to the end with 0 failed frames.
+
+Without the statistics reads the same upload produced no RSSI trigger
+event at all. I will send the fix for the overwritten event mailbox
+separately, once I have checked it on the device.
+
+I did not add Cc: stable, as I only know of the debugfs statistics as a
+way to get a positive metric here.
+
+Tool use (see Documentation/process/generated-content.rst): this patch,
+its changelog and this note were prepared with an LLM coding assistant
+(Claude Code). It found the cause from the oops registers and the
+driver source and wrote the change and the texts from my logs and
+instructions. I reviewed the change and ran the tests on the device.
+---
+ drivers/net/wireless/ti/wlcore/event.c | 4 ++++
+ 1 file changed, 4 insertions(+)
+
+diff --git a/drivers/net/wireless/ti/wlcore/event.c b/drivers/net/wireless/ti/wlcore/event.c
+index 6c3a8ea9613e..eb5db3c5ec27 100644
+--- a/drivers/net/wireless/ti/wlcore/event.c
++++ b/drivers/net/wireless/ti/wlcore/event.c
+@@ -117,6 +117,10 @@ void wlcore_event_rssi_trigger(struct wl1271 *wl, s8 *metric_arr)
+ 
+ 	/* TODO: check actual multi-role support */
+ 	wl12xx_for_each_wlvif_sta(wl, wlvif) {
++		/* A P2P device has no netdev to report the event on */
++		if (wlcore_is_p2p_mgmt(wlvif))
++			continue;
++
+ 		if (metric <= wlvif->rssi_thold)
+ 			event = NL80211_CQM_RSSI_THRESHOLD_EVENT_LOW;
+ 		else
+
+---
+base-commit: 5dbf2415ca9821a611d09308e3b29d2c37e7cd77
+change-id: 20261111-upstream-wlcore-p2p-rssi-8a99e629703d
+
+Best regards,
+--  
+Patrick Fischer <admin@tsv-stahl-riesa.de>
+
 
