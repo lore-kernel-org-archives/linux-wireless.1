@@ -1,61 +1,63 @@
 Authentication-Results: smtp.subspace.kernel.org; arc=pass header.oldest-pass=0 smtp.remote-ip=165.173.180.54
 ARC-Seal: i=2; d=subspace.kernel.org; s=arc20261015; a=rsa-sha256; cv=pass;
-	t=1794613941;
-	b=LSHrQtEZmUStywtG8ew9++K/Hr/Nr3s039lODjPnNhQ08Rd3iIIL8YrgrLE2Sil93KR2
-	 SJkIgPRy5OxOjqIzm/nI53o9hz/xSMWRV9JlY0fClNt1ZvQDZts7dc1dfk0B9D3QLDCCF
-	 GllqajYQJZbZ/zijqB7RFJOB5VFnET8PxWTp39tz3bdzosEbWTkE57IZphyjQzouEwjry
-	 fkJybUIOl16zkch1LzCXwXSAJpmfmNYQYfj2j7Ryx1maMf5T1oZkxgaZaK6lHOn/GCgLW
-	 X6Ddboua8eSUEoZuG9mQuuQGnwRV7qiopkEgk1C742rF9/N4WsJgIeV97SOkzOIH3yw==
+	t=1794613980;
+	b=Hqbu4NniGx6Wz1Zi6onYzn3yWZltlwSD/ccpxcuRN9Ld6+FhvmQRlVXNe2psctOVC+gR
+	 d851lNT68zGZdj/97Acau2pLIx4fe/KB47CPI3/shOtAzI8iEr/PscWgrD6tAts5adlVU
+	 LKf0cex0XOst0Q7mPAT/cxNar4uUYaCn02tGMuuoQuaS5ALQkq0RAYJ6F1BLUG9qnkMCj
+	 0sifIXuTEmGw/XobfSHF40Kz/uQCN74GrR2VRVFY7obHdpTu/whVX57H2H+IB4feCYSnu
+	 7FzWdMEXptonJYUa45Flf9psi5K3fR8aqONsCa2DUO7aZgNbLU2MkIo02EFKqufS+yA==
 ARC-Message-Signature: i=2; d=subspace.kernel.org; s=arc20261015;
-	a=rsa-sha256; c=relaxed/relaxed; t=1794613941;
+	a=rsa-sha256; c=relaxed/relaxed; t=1794613980;
 	h=DMARC-Filter:DKIM-Signature:Received:From:To:Cc:Subject:Date:
-	 Message-ID:X-Mailer:MIME-Version:Content-Transfer-Encoding:
-	 X-ZohoMailClient;
-	bh=Z63hzdNsCj0yShb0LqNKN0actouvBeMauSyX1t3SugY=;
-	b=R1/pdvtCSWFk9mBSigICSeKupYM5JYzf6ZtiJsLDP7GNS2RgvxrXa4oFtFNnpYyyF7dW
-	 nRqq6tkh8OwW1s0XdG+9mMo4R2xYfyJb+sQo/InGhKMo+ho7IcKvq8uccJ10lYGEbc9tU
-	 jPe6NZEHNsSSxqIVz61x6ub7oz+p8ArCJjFHUEUMyMqTEJ52+ssbGLaTbOGMLU9IkGsOI
-	 ILGYcpyyf0IFTmKXxRuw6M8gqZ3NEYTdM5GUFzdnRV/YatORPgaQe0fAC6KhUJ+YtKeT1
-	 ZLhqfRE0hz8q+O0OohfQfyVgs775IpmpyhDak0yno94SQqC/XX+6o+2ZoZgq8KJaX+g==
+	 Message-ID:X-Mailer:In-Reply-To:References:MIME-Version:
+	 Content-Transfer-Encoding:X-ZohoMailClient;
+	bh=k1w3+O9veVvG69u+4DyKuDfq5j8qNZ69yw6d6sshB+g=;
+	b=FsdzJkiVKU2NkHDRSwBR/fZ9tKbm3hLFYbJTxKoLWSko8Qme80Ph2iIM9zeH9Hei/Ow2
+	 W9L7wsap0moonE72VfQiUe7oZ1e6g7/CES2QWbUg3dQpfWbjLEtK+aqVmFWr+tFVIQhcd
+	 T3zCSpsTbjOUcvg2119W32SSquiVrV3c/o2zzNW+u3Yv+5wZ6BUDKVh3K3CM6qkAoZFS2
+	 ORQtdnzE/u30+1lLBDWtTQl3LCpLNVplOjuuyAWPZAYJknn8JjHLJkxIFWUTZpCqOft5R
+	 zU2z5w7s8InTW+lhrvB5nyq1tbfeO8BEMF1zd/AXq1tzTLNq1TYPMVfA97E2gIqpwiQ==
 ARC-Authentication-Results: i=2; smtp.subspace.kernel.org; 
 	dmarc=pass header.from=ph4ntom-rev.uz;
 	spf=pass smtp.mailfrom=ph4ntom-rev.uz;
-	dkim=pass header.d=ph4ntom-rev.uz header.i=@ph4ntom-rev.uz header.a=rsa-sha256 header.s=zoho header.b=YlYcbL0t;
+	dkim=pass header.d=ph4ntom-rev.uz header.i=@ph4ntom-rev.uz header.a=rsa-sha256 header.s=zoho header.b=zuwbA+bn;
 	arc=pass header.oldest-pass=0 smtp.remote-ip=165.173.180.54
 Received: from sender6-of-o54.zoho.com (sender6-of-o54.zoho.com [165.173.180.54])
 	(using TLSv1.3 with cipher TLS_AES_256_GCM_SHA384 (256/256 bits)
-	 key-exchange X25519 server-signature ECDSA (prime256v1) server-digest SHA256)
+	 key-exchange X25519 server-signature ECDSA (prime256v1))
 	(No client certificate requested)
-	by smtp.subspace.kernel.org (Postfix) with ESMTPS id 2C979606A332;
-	Fri, 13 Nov 2026 23:52:19 +0000 (UTC)
-DMARC-Filter: OpenDMARC Filter v1.4.2 smtp.subspace.kernel.org 2C979606A332
+	by smtp.subspace.kernel.org (Postfix) with ESMTPS id 31A92606A336;
+	Fri, 13 Nov 2026 23:52:59 +0000 (UTC)
+DMARC-Filter: OpenDMARC Filter v1.4.2 smtp.subspace.kernel.org 31A92606A336
 Authentication-Results: smtp.subspace.kernel.org; dmarc=pass (p=none dis=none) header.from=ph4ntom-rev.uz
 Authentication-Results: smtp.subspace.kernel.org; spf=pass smtp.mailfrom=ph4ntom-rev.uz
 Authentication-Results: smtp.subspace.kernel.org;
-	dkim=pass (2048-bit key, unprotected) header.d=ph4ntom-rev.uz header.i=@ph4ntom-rev.uz header.a=rsa-sha256 header.s=zoho header.b=YlYcbL0t
-ARC-Seal: i=1; a=rsa-sha256; t=1794613936; cv=none; 
+	dkim=pass (2048-bit key) header.d=ph4ntom-rev.uz header.i=@ph4ntom-rev.uz header.a=rsa-sha256 header.s=zoho header.b=zuwbA+bn
+ARC-Seal: i=1; a=rsa-sha256; t=1794613938; cv=none; 
 	d=zohomail.com; s=zohoarc; 
-	b=aPDLc/gyFTAiygM5H6GiL37qvUlAqXmeRSFgJvTZ3d4bISIeC7tbKOdeSeahMdah95ZjNEqMLt5kipdS/XEjuZkMs3HiDpWhO+21UPvNvUewE3yiQwuwiGTIBNQA55fO2Uh7Lb9K+ZY7KlV+H2BrXqzS2F1S8nWtEk+8gSm9tRQ=
+	b=COtcxXcZ7394OhDFX5Ea+FiGcZP13EwXEMWKgiFHNL/XC+noNFf3kiggK62SzQu8AyjNwAK1B0z4fGcDKtQ1O614lFTOOUzZUZqvcNrulrgtnIcsQVHka1eUa/dh1rBxyLrePIgi5WV4DPklNg94iS+P/tLMgmRIEtZCKZh5Saw=
 ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=zohomail.com; s=zohoarc; 
-	t=1794613936; h=Content-Transfer-Encoding:Cc:Cc:Date:Date:From:From:MIME-Version:Message-ID:Subject:Subject:To:To:Message-Id:Reply-To; 
-	bh=Z63hzdNsCj0yShb0LqNKN0actouvBeMauSyX1t3SugY=; 
-	b=YfzUbapidxBQbj+OrR/7aKueqtHuTCP5eFs+Tm6QiWY+/FDb2Rmmp9Z75EZcpjBt1/lZyGz9votQmftD15YptF37VfzR+WNHx4QTHBIhrZtv2UfGadxlideKbPQgJLqQiLvdhG4XmIYT/lFdQpWcgbGUXtXzdVbn5YVzUiNHtw0=
+	t=1794613938; h=Content-Transfer-Encoding:Cc:Cc:Date:Date:From:From:In-Reply-To:MIME-Version:Message-ID:Subject:Subject:To:To:Message-Id:Reply-To; 
+	bh=k1w3+O9veVvG69u+4DyKuDfq5j8qNZ69yw6d6sshB+g=; 
+	b=deiJzB3PIlXPCUE1J2QR5Wdreed+t5Syb3orLNf2IdtuNzTAD+X82I5Q4W6eHKtJChZ3UmX4bCCymzcdEfDDnBkM3xmd5veX6k0Wl5j/SnRnkwMpT5g3iLzF80I8VEWNaAgTDY5axWT5s9x0noi1AHsWip31HiFogrHw2+Uwguo=
 ARC-Authentication-Results: i=1; mx.zohomail.com;
 	dkim=pass  header.i=ph4ntom-rev.uz;
 	spf=pass  smtp.mailfrom=owner@ph4ntom-rev.uz;
 	dmarc=pass header.from=<owner@ph4ntom-rev.uz>
-DKIM-Signature: a=rsa-sha256; b=YlYcbL0t/Hoy4uNhX34v5Wf+esYUMGkpK8J8TbRl/ytAYPdOVbmSbqJOwVbt+DYf5nYdg2WCEytUKuryP6nr1ROx8JBLR/dKMiISWnj6THMph72803cH4HwZyJEEGcs5LNrQseQO5bhrRca8IXIsEODAy6kcui7S7DOH/eY4ZFiT0Xt0Pv0wGb2dbNCxnHd7cHZgfPgVoQ/F0uQ6Fah2g1z8fLmjBUK84P6CJpcIgt8IqgHnfgixcJzsH0ux5H2UUO+elJ3f2/2d49QK0S2iEypPhGzHf/0q1qGZcOTpJCFKwyWNG5mhQ7UpZ7uN/80EUaT91yoxC+zDqap3G5GyIQ==; c=relaxed/relaxed; s=zoho; d=ph4ntom-rev.uz; v=1; bh=Z63hzdNsCj0yShb0LqNKN0actouvBeMauSyX1t3SugY=; h=Content-Description:Content-ID:Content-Type:Content-Transfer-Encoding:Cc:Date:From:In-Reply-To:List-Subscribe:List-Post:List-Owner:List-Id:List-Archive:List-Help:List-Unsubscribe:MIME-Version:Message-ID:Resent-Sender:Resent-Cc:Resent-Date:Resent-To:Reply-To:Resent-Message-ID:Resent-From:Sender:Subject:To:Date:From:Message-Id:Reply-To:Subject:To:Cc;
-Received: by smtp.zohomail.com with SMTPS id 1794613935706450.2854713570015;
-	Fri, 13 Nov 2026 15:52:15 -0800 (PST)
+DKIM-Signature: a=rsa-sha256; b=zuwbA+bnWimizSaUUmpuhzOlaCa8lnr96WHtNICL7CdtR2KCB007ol0k4Y0dS3Ko4iFlZ3pEghct8djNNrShRotHBfeRppUiTvAwEiRLB7K19+9WHM0eaQPc8KRQUcuiyb1C1bssdYlo2w3nlpV+VCIKVTIzuWNhM5IPByZETxK4yDaMqGMKuvdgd1PlIjBVGV41/ytCS9ouuyuTC2UBOmZSaaa3qvlCgLgqOq/faHKTDxkwEYYAkvf5ivoxvmcXGo3CuttxtlR5e9IkR/9cUWgeT7Ei5gEwQlzvcTAerybQrsKPBItcbCITfdlQTo6LqTRiNHcOFRrC+DrShIXT6w==; c=relaxed/relaxed; s=zoho; d=ph4ntom-rev.uz; v=1; bh=k1w3+O9veVvG69u+4DyKuDfq5j8qNZ69yw6d6sshB+g=; h=Content-Description:Content-ID:Content-Type:Content-Transfer-Encoding:Cc:Date:From:In-Reply-To:List-Subscribe:List-Post:List-Owner:List-Id:List-Archive:List-Help:List-Unsubscribe:MIME-Version:Message-ID:Resent-Sender:Resent-Cc:Resent-Date:Resent-To:Reply-To:Resent-Message-ID:Resent-From:Sender:Subject:To:Date:From:Message-Id:Reply-To:Subject:To:Cc;
+Received: by smtp.zohomail.com with SMTPS id 1794613938098567.1809972158901;
+	Fri, 13 Nov 2026 15:52:18 -0800 (PST)
 From: Enver Ikromov <owner@ph4ntom-rev.uz>
 To: Ping-Ke Shih <pkshih@realtek.com>
 Cc: linux-wireless@vger.kernel.org,
 	linux-kernel@vger.kernel.org,
 	Enver Ikromov <owner@ph4ntom-rev.uz>
-Subject: [PATCH rtw-next v5 00/10] wifi: rtw89: monitor mode RX filter and raw frame injection fixes
-Date: Sat, 14 Nov 2026 04:52:01 +0500
-Message-ID: <20261113235211.1911-1-owner@ph4ntom-rev.uz>
+Subject: [PATCH rtw-next v5 01/10] wifi: rtw89: avoid NULL vif dereference in rtw89_ops_tx()
+Date: Sat, 14 Nov 2026 04:52:02 +0500
+Message-ID: <20261113235211.1911-2-owner@ph4ntom-rev.uz>
 X-Mailer: git-send-email 2.56.0.windows.4
+In-Reply-To: <20261113235211.1911-1-owner@ph4ntom-rev.uz>
+References: <20261113235211.1911-1-owner@ph4ntom-rev.uz>
 X-Mailing-List: linux-wireless@vger.kernel.org
 List-Id: <linux-wireless.vger.kernel.org>
 List-Post: <mailto:linux-wireless@vger.kernel.org>
@@ -68,136 +70,52 @@ MIME-Version: 1.0
 Content-Transfer-Encoding: 8bit
 X-ZohoMailClient: External
 
-This series fixes a NULL pointer dereference and a negative rate index
-bug on the rtw89 TX path for injected frames, makes monitor mode
-receive frames that are currently dropped by the hardware RX filter
-without disabling hardware Auto-ACK on concurrent active interfaces,
-enables raw 802.11 frame injection on standalone and concurrent
-MONITOR_FLAG_ACTIVE monitor interfaces, and restores the operating
-channel when leaving idle on devices using mac80211 chanctx emulation.
+rtw89 sets IEEE80211_HW_WANT_MONITOR_VIF but not
+IEEE80211_HW_QUEUE_CONTROL. For frames transmitted on a monitor
+interface, ieee80211_tx_frags() therefore passes
+info->control.vif == NULL to the driver whenever local->monitor_sdata
+does not exist, e.g. when a raw frame is sent on a monitor interface
+while a station interface is also up and the frame's addr2 does not
+match any running interface.
 
-Patches 1-2 are standalone bug fixes with Fixes: and Cc: stable tags:
-  1. drop frames without a vif instead of dereferencing NULL in
-     rtw89_ops_tx() (reachable when injecting on a passive monitor
-     interface while a station interface is up)
-  2. treat the radiotap "no rate" index (-1) as signed in
-     rtw89_core_tx_update_injection()
+rtw89_ops_tx() unconditionally converts the vif with vif_to_rtwvif()
+and dereferences rtwvif->offchan, so such a frame makes the kernel
+access memory at a small offset from NULL.
 
-Patch 3 retains FIF_CONTROL | FIF_PSPOLL, tracks FIF_OTHER_BSS in
-rtwdev->hal.rx_fltr_other_bss, and clears target-address, multicast,
-CAM, beacon check, and UID filter drop bits whenever B_AX_SNIFFER_MODE
-or rx_fltr_other_bss is active (including across scan/ROC/MAC reinit
-restores) while keeping B_AX_SNIFFER_MODE restricted to pure passive
-monitor mode so hardware Auto-ACK remains intact for concurrent STA/AP
-and MONITOR_FLAG_ACTIVE interfaces.
+Drop frames without a vif, as there is no MAC ID or port they could
+be transmitted on.
 
-Patches 4-9 enable raw frame injection on standalone and active monitor
-interfaces:
-  4. RCU protection and sole-monitor tracking for pure_monitor_mode_vif
-     with optional deferred RCU synchronization
-  5. RTW89_SELF_ROLE_AP for monitor interfaces so the JoinInfo H2C
-     initializes the MAC ID's CMAC control entry without arming client
-     TBTT tracking or AP beacon transmission
-  6. resolve standalone NULL-vif TX via pure_monitor_mode_vif and direct
-     MONITOR_FLAG_ACTIVE vif TX via rtwvif->mon_tx_ready with coalesced
-     synchronize_rcu(), track rtwdev->monitor_vifs for radiotap/PHYSTS
-     enablement, parse frequency IEs before pushing VHT/HE/EHT radiotap
-     headers during concurrent scans, and validate linear 802.11 header
-     lengths via skb_headlen()
-  7. route injected control frames through the management queue and
-     guard hdr->seq_ctrl reads on short/control frames
-  8. skip host-side IP/UDP traffic stats, WoWLAN AKM parsing, BT-coex,
-     HE HTC, and A-MPDU/TXQ aggregation hooks on injected frames
-  9. honor IEEE80211_TX_CTL_ASSIGN_SEQ, IEEE80211_TX_RC_USE_RTS_CTS,
-     IEEE80211_RADIOTAP_DATA_RETRIES (hw->max_rate_tries = 63), and
-     IEEE80211_TX_CTL_NO_ACK across AX/BE TX descriptors and PCIe/RPQ
-     TX completion status
+Fixes: a0e97ae3f332 ("wifi: rtw89: add ieee80211::remain_on_channel ops")
+Cc: stable@vger.kernel.org
+Signed-off-by: Enver Ikromov <owner@ph4ntom-rev.uz>
+---
+ drivers/net/wireless/realtek/rtw89/mac80211.c | 9 ++++++++-
+ 1 file changed, 8 insertions(+), 1 deletion(-)
 
-Patch 10 restores hw->conf.chandef when leaving idle or toggling
-monitor mode on devices without assign_vif_chanctx while RTW89_PHY_0 is
-inactive after rtw89_ops_stop() / rtw89_enter_ips().
-
-Verification:
-- Firmware behavior in patches 3, 5, and 10 was verified against
-  RTL8852AE firmware 0.13.36.2 (JoinInfo H2C role/CCTL handling,
-  scan-offload RX filter pause/restore, and absence of BEACON_FILTER
-  forcing no_chanctx even with support_chanctx_num == 1).
-- Each patch builds cleanly in isolation on rtw-next (Linux 7.4-rc1)
-  with W=1, C=1 (sparse), and CONFIG_PROVE_LOCKING=y, and passes
-  checkpatch.pl --strict without warnings.
-- Runtime hardware validation was conducted on RTL8852AE (10ec:8852,
-  firmware rtw89/rtw8852a_fw-1.bin 0.13.36.2, Linux 7.1.5): promiscuous
-  RX across down/up restart (ftrace confirmed channel/RFK programming),
-  NULL-vif drop on passive monitor while a station interface is up vs
-  concurrent MONITOR_FLAG_ACTIVE raw TX + Auto-ACK preservation,
-  10B ACK / 16B RTS / SN=1337 Data & AssocReq raw TX, NO_ACK vs
-  DATA_RETRIES tx_retry_lmt telemetry verification, and 25 concurrent
-  del/add RCU stress cycles (0 dmesg alerts).
-  RTL8852B/C, RTL8851B, RTL8922A (BE), USB devices, and DBCC setups were
-  not runtime-tested.
-
-Changes in v5:
-- Split the NULL vif fix and signed rate index fix out as standalone
-  patches 1-2 with Fixes: and Cc: stable tags.
-- Split monitor injection into focused patches 5-9 and support
-  concurrent MONITOR_FLAG_ACTIVE interfaces alongside standalone
-  passive monitors while coalescing synchronize_rcu() on teardown.
-- Route only injected control frames through the management path so
-  mac80211-generated BlockAckReq frames keep the normal data path.
-- Separate FIF_OTHER_BSS drop-mask clearing from B_AX_SNIFFER_MODE so
-  arbitrary-BSS RX works on MONITOR_FLAG_ACTIVE without suppressing
-  hardware Auto-ACK on active interfaces.
-- Advertise hw->max_rate_tries = 63, honor rates[0].count, and avoid
-  false tx_retry_lmt increments on single-shot NO_ACK completions.
-- Gate channel restoration on leaving idle / monitor changes with
-  !rtwdev->ops->assign_vif_chanctx so non-chanctx devices (such as
-  RTL8852AE) activate RTW89_PHY_0 for both standalone and active
-  monitor interfaces.
-
-Changes in v4:
-- Use full legal name in From/Signed-off-by.
-- Retain FIF_CONTROL and FIF_PSPOLL and clear B_AX_A_MC and
-  B_AX_A_MC_LIST_CAM_MATCH in monitor mode.
-- Split RCU conversion of pure_monitor_mode_vif into its own patch.
-- Handle injected control frames, negative rate indices, NO_ACK, and
-  sequence number preservation.
-- Move monitor restart channel restoration into rtw89_ops_config().
-
-Changes in v3:
-- Split into a patch series.
-- Dropped direct register writes in favor of driver abstractions.
-- Added RCU synchronization around pure_monitor_mode_vif.
-
-v4: not sent to the list
-v3: https://lore.kernel.org/linux-wireless/20261104203051.564-1-owner@ph4ntom-rev.uz/
-v2: https://lore.kernel.org/linux-wireless/179371849554.20972.16232816164394690660@ph4ntom-rev.uz/
-v1 (RFC): https://lore.kernel.org/linux-wireless/1a196d6dfbc.35537d221913104450.3720060455831933789@zoho.com/
-
-
-Enver Ikromov (10):
-  wifi: rtw89: avoid NULL vif dereference in rtw89_ops_tx()
-  wifi: rtw89: handle negative rate index for injected frames
-  wifi: rtw89: fix RX filter configuration for monitor mode
-  wifi: rtw89: protect pure_monitor_mode_vif with RCU
-  wifi: rtw89: use AP self role for monitor interfaces
-  wifi: rtw89: transmit frames from monitor interfaces
-  wifi: rtw89: send injected control frames through the management path
-  wifi: rtw89: skip host-side TX hooks for injected frames
-  wifi: rtw89: honor ASSIGN_SEQ, retries, and NO_ACK for injected frames
-  wifi: rtw89: restore channel when leaving idle on non-chanctx devices
-
- drivers/net/wireless/realtek/rtw89/core.c     | 144 ++++++++++++++----
- drivers/net/wireless/realtek/rtw89/core.h     |  17 ++-
- drivers/net/wireless/realtek/rtw89/mac.c      |   3 +-
- drivers/net/wireless/realtek/rtw89/mac.h      |  18 +++
- drivers/net/wireless/realtek/rtw89/mac80211.c | 131 +++++++++++++++-
- drivers/net/wireless/realtek/rtw89/mac_be.c   |   3 +-
- drivers/net/wireless/realtek/rtw89/pci.c      |   3 +-
- drivers/net/wireless/realtek/rtw89/phy.c      |   2 +-
- 8 files changed, 278 insertions(+), 43 deletions(-)
-
-
-base-commit: 61a5eb87b2d9b4d5e353780b781cf691f39ba9e1
+diff --git a/drivers/net/wireless/realtek/rtw89/mac80211.c b/drivers/net/wireless/realtek/rtw89/mac80211.c
+index 9134cdc..5a12639 100644
+--- a/drivers/net/wireless/realtek/rtw89/mac80211.c
++++ b/drivers/net/wireless/realtek/rtw89/mac80211.c
+@@ -23,11 +23,18 @@ static void rtw89_ops_tx(struct ieee80211_hw *hw,
+ 	struct rtw89_dev *rtwdev = hw->priv;
+ 	struct ieee80211_tx_info *info = IEEE80211_SKB_CB(skb);
+ 	struct ieee80211_vif *vif = info->control.vif;
+-	struct rtw89_vif *rtwvif = vif_to_rtwvif(vif);
+ 	struct ieee80211_sta *sta = control->sta;
+ 	u32 flags = IEEE80211_SKB_CB(skb)->flags;
++	struct rtw89_vif *rtwvif;
+ 	int ret, qsel;
+ 
++	if (unlikely(!vif)) {
++		ieee80211_free_txskb(hw, skb);
++		return;
++	}
++
++	rtwvif = vif_to_rtwvif(vif);
++
+ 	if (rtwvif->offchan && !(flags & IEEE80211_TX_CTL_TX_OFFCHAN) && sta) {
+ 		struct rtw89_sta *rtwsta = sta_to_rtwsta(sta);
+ 
 -- 
 2.56.0.windows.4
 
