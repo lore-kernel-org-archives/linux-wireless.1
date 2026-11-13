@@ -1,120 +1,55 @@
-Authentication-Results: smtp.subspace.kernel.org; arc=none smtp.remote-ip=205.220.168.131
+Authentication-Results: smtp.subspace.kernel.org; arc=none smtp.remote-ip=213.97.179.56
 ARC-Seal: i=1; d=subspace.kernel.org; s=arc20261015; a=rsa-sha256; cv=none;
-	t=1794582301;
-	b=MWA1ft/q2hiDY5MyByu2l+VKBmaf9EdUHfzctlIaxIx3MdcNp6FKe2ww9VvNpFFPW7qh
-	 tonF/HR63Nh8QQZjHkap0fbFAkzZjjIGDSEHVzlg0K38szDizZT3fz0KNnIgFxcSVQo2d
-	 bnJttRRNA4zmvpV8B/IpSRMfzhNBQfC8tendxr3NB2BNfkauIFLMtT8bzf9oKCsM5x0Uz
-	 oxQ0PF0tOYMxkYoPVQ7sqdQGIAwcsXRUqOFKCe3odDZ7QNBzR21P7l1vwVR0TIUyDova+
-	 qgeuEyNaninBW6CRydq4hWg+1++py7bCrh66lJau7dLhIBRc95I1tHYMH6HxWpUfmVQ==
+	t=1794582992;
+	b=eOKHk97f3dJe5eQvZ8ReQFwpv9x88+g5iiJ16sLn/gjdGcPzEo/BoRTCe6u2velI7u1N
+	 gnncsaSL4Unto1odTsaVlGb6L7cSGZNVx3pbFOgc21tTs/n1bZ/5I3gMdEA1nhYfQI3oV
+	 w0Usbs+bGyMA/EqNYM9wEAwRfLTz6v/sDizi2RGo02d9ffdTR60P7VlQQl+GEN8Q/SaGl
+	 2RGTwEqPQ0MSxQcb8rngTGMRbMY/R7ZHkDRfaHVcDka+IVqAfZ1X7EVUB6xItgmyLznGl
+	 KDqKsEp49etivVRGs+1BrHARBQDr0VJWWW/CEMzOkV61kZWESswMOA7t6+eLkWWfYLg==
 ARC-Message-Signature: i=1; d=subspace.kernel.org; s=arc20261015;
-	a=rsa-sha256; c=relaxed/relaxed; t=1794582301;
-	h=DMARC-Filter:Received:DKIM-Signature:Received:Received:
-	 DKIM-Signature:X-Google-DKIM-Signature:X-Forwarded-Encrypted:
-	 X-Gm-Message-State:X-Gm-Gg:X-Received:X-Received:Received:From:To:Cc:
-	 In-Reply-To:References:Subject:Message-Id:Date:MIME-Version:
-	 Content-Type:Content-Transfer-Encoding:X-Mailer:X-Authority-Analysis:
-	 X-Proofpoint-GUID:X-Proofpoint-Spam-Details-Enc:
-	 X-Proofpoint-ORIG-GUID:X-Proofpoint-Spam-Info:
-	 X-Proofpoint-Virus-Version:X-Proofpoint-Spam-Details;
-	bh=EfsGkFoCvw5Z3mmB7OlXO2ikw4/sUz2q7CxAknfxV6M=;
-	b=WxkE1p5z9rgUtIjcfyJxlzYo7YXzDgvLbDWzfq9xiqijYB2zP8GLbQz/PXwL5/+9WGHL
-	 t+sXLqhDqr0z3ur7oJz/zYOiDmPVr5vbdnx4ckK4E6STHfDfkKZbAZy/i6wGkq7XqUBPB
-	 1d1e//2+XQv0ZcqvXTTcni6uQLy2+s47pomXUJaNjLuXLo/4J7Edg5ulYDK7ndBO61U+Z
-	 MznaH7QewkcgWTajY5VvMDUoJrciak4ojsk/Zxbjzq3uV4ztZOjwtRAUjb7/mcqyWwzdo
-	 qFk4w9spQFgqYlxv0R50sUjJM8uHPZCr6ovovStvV7AWzePwJ/ujMpRjtA4+B+DJvCA==
+	a=rsa-sha256; c=relaxed/relaxed; t=1794582992;
+	h=DMARC-Filter:DKIM-Signature:Received:From:Date:Subject:MIME-Version:
+	 Content-Type:Content-Transfer-Encoding:Message-Id:X-B4-Tracking:
+	 X-Change-ID:To:Cc:X-Mailer;
+	bh=neIsIOYrXedUz1G3zWq1jiKbezCseAxykAXroLao1Js=;
+	b=eoLm9KS8RiVCSaAgv/UZOxf07NBYlsoJZ5kl1U1cjKYPsyGPk9DvJnD4ofKvUnlQgABe
+	 CzNIp82IkYHr8AH11IjHb1OHkFB/52mEPV3H3hmQN0DPAjZmddVnNdLNvh0BWMzDsvhNz
+	 CxglSXQyvuoUKN8acwCiH6rGU8rNDOmBN9GK3fvxAQU3XDR43gpVc/euw9C9OQQd7rk3Y
+	 EkamosJbD8DcrdwB2DPxmqzdLcxIEnNurM+3em6Y0EXg+EUM7exW/0codEy9RgPq2Z39f
+	 FjkgjiCXQZLFDv8Fw+LPpvhnXeo49sowdkoNn2eHZqnDEI7ab3uBK1xyVf6pqctTvtw==
 ARC-Authentication-Results: i=1; smtp.subspace.kernel.org; 
-	dmarc=pass header.from=oss.qualcomm.com;
-	spf=pass smtp.mailfrom=oss.qualcomm.com;
-	dkim=pass header.d=qualcomm.com header.i=@qualcomm.com header.a=rsa-sha256 header.s=qcppdkim1 header.b=Ai2JN6Wg;
-	dkim=pass header.d=oss.qualcomm.com header.i=@oss.qualcomm.com header.a=rsa-sha256 header.s=google header.b=b3jvtKD3;
-	arc=none smtp.remote-ip=205.220.168.131
-Received: from mx0a-0031df01.pphosted.com (mx0a-0031df01.pphosted.com [205.220.168.131])
+	dmarc=pass header.from=igalia.com;
+	spf=pass smtp.mailfrom=igalia.com;
+	dkim=pass header.d=igalia.com header.i=@igalia.com header.a=rsa-sha256 header.s=20170329 header.b=g0YWM1Ge;
+	arc=none smtp.remote-ip=213.97.179.56
+Received: from fanzine2.igalia.com (fanzine2.igalia.com [213.97.179.56])
 	(using TLSv1.3 with cipher TLS_AES_256_GCM_SHA384 (256/256 bits)
-	 key-exchange X25519 server-signature ECDSA (prime256v1) server-digest SHA256)
+	 key-exchange ECDHE (prime256v1) server-signature ECDSA (prime256v1) server-digest SHA256)
 	(No client certificate requested)
-	by smtp.subspace.kernel.org (Postfix) with ESMTPS id D0140606A882
-	for <linux-wireless@vger.kernel.org>; Fri, 13 Nov 2026 15:05:00 +0000 (UTC)
-DMARC-Filter: OpenDMARC Filter v1.4.2 smtp.subspace.kernel.org D0140606A882
-Authentication-Results: smtp.subspace.kernel.org; dmarc=pass (p=none dis=none) header.from=oss.qualcomm.com
-Authentication-Results: smtp.subspace.kernel.org; spf=pass smtp.mailfrom=oss.qualcomm.com
+	by smtp.subspace.kernel.org (Postfix) with ESMTPS id 6BBCF606A8A6;
+	Fri, 13 Nov 2026 15:16:31 +0000 (UTC)
+DMARC-Filter: OpenDMARC Filter v1.4.2 smtp.subspace.kernel.org 6BBCF606A8A6
+Authentication-Results: smtp.subspace.kernel.org; dmarc=pass (p=none dis=none) header.from=igalia.com
+Authentication-Results: smtp.subspace.kernel.org; spf=pass smtp.mailfrom=igalia.com
 Authentication-Results: smtp.subspace.kernel.org;
-	dkim=pass (2048-bit key) header.d=qualcomm.com header.i=@qualcomm.com header.a=rsa-sha256 header.s=qcppdkim1 header.b=Ai2JN6Wg;
-	dkim=pass (2048-bit key) header.d=oss.qualcomm.com header.i=@oss.qualcomm.com header.a=rsa-sha256 header.s=google header.b=b3jvtKD3
-Received: from pps.filterd (m0279864.ppops.net [127.0.0.1])
-	by mx0a-0031df01.pphosted.com (8.18.1.11/8.18.1.11) with ESMTP id 6ADCKPT43126266
-	for <linux-wireless@vger.kernel.org>; Fri, 13 Nov 2026 15:05:00 GMT
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=qualcomm.com; h=
-	cc:content-transfer-encoding:content-type:date:from:in-reply-to
-	:message-id:mime-version:references:subject:to; s=qcppdkim1; bh=
-	EfsGkFoCvw5Z3mmB7OlXO2ikw4/sUz2q7CxAknfxV6M=; b=Ai2JN6Wg6D5WPmv8
-	r/3AltXCMnS5XmB7sVjWFHvOwG7pnZoQTJxCBDln5vN7b8MglhD4UKxxGJY62WGM
-	mXPlYWwoBJbqSQplVl4aJdQuGnXubcQBjuRzxsEKOxRrpUTWfv0LBdixd2YpAp7Z
-	b03GM1lOze/nnzt6IqDSiNHyUrxM02ynp7EmWqx9ECgmAvFluOec52+W3FctGrcz
-	LBDSYX+ufXfhJ7jxuiGCy3Hu20O7fzUbAeY0q5ZkCcPaTlx17OnWHoMCjeYgPVnO
-	EWCkuK4g7Al79PUND7wIYXkq3mZRjzL8S7gNiSJrJy7EW4pi5h715PyeOjZuDQSf
-	Lfe6pw==
-Received: from mail-pf1-f197.google.com (mail-pf1-f197.google.com [209.85.210.197])
-	by mx0a-0031df01.pphosted.com (PPS) with ESMTPS id 4hwg1bcj38-1
-	(version=TLSv1.3 cipher=TLS_AES_128_GCM_SHA256 bits=128 verify=NOT)
-	for <linux-wireless@vger.kernel.org>; Fri, 13 Nov 2026 15:04:59 +0000 (GMT)
-Received: by mail-pf1-f197.google.com with SMTP id d2e1a72fcca58-89f84753b43so798625b3a.1
-        for <linux-wireless@vger.kernel.org>; Fri, 13 Nov 2026 07:04:59 -0800 (PST)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=oss.qualcomm.com; s=google; t=1794582299; x=1795187099; darn=vger.kernel.org;
-        h=content-transfer-encoding:content-type:mime-version:date:message-id
-         :subject:references:in-reply-to:cc:to:from:from:to:cc:subject:date
-         :message-id:reply-to:content-type;
-        bh=EfsGkFoCvw5Z3mmB7OlXO2ikw4/sUz2q7CxAknfxV6M=;
-        b=b3jvtKD3K6MQYEDyWs9H4d2LWci0eGpm49rOx4H2UCCzJzQiz8eyG5Cq+IE06tIod5
-         YSDrciDapd/U8CStKXUDYmcO01ewQMj4wyTebBOD1NKDJ6+8XJ4qeTAOElMoiomGcmQR
-         J7HZbFt82eNhPXSXsX7lpsPTF+ML8+Hj0+swCij08yhdRq5rBzBmDKnPQLUTsYX4NAob
-         h17+/yigCRF8kYGTM9RcY4oalZ39aUsVy0IcDhwhOb1j+W87OrQX82WNCPyI4MCpEbWo
-         Zucr3i2DC2ztBk09g1hRUXrYgH6pGxNL6y8NmuhdmcrFzSygY5Ui1ens+epd19wz0T8x
-         B/tg==
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=1e100.net; s=20260707; t=1794582299; x=1795187099;
-        h=content-transfer-encoding:content-type:mime-version:date:message-id
-         :subject:references:in-reply-to:cc:to:from:x-gm-gg
-         :x-gm-message-state:from:to:cc:subject:date:message-id:reply-to
-         :content-type;
-        bh=EfsGkFoCvw5Z3mmB7OlXO2ikw4/sUz2q7CxAknfxV6M=;
-        b=NBBGuBYCNJ6em5gib4w0O3GPiagn5C8rPBiwEvefd9H2Ejp0wxXJ7QDYc4VVQtyIgX
-         Px45nbJkqjxqKu6I34MnRqgrF4kXSXOtJyJWgH63Gw25/sPADrpqDQrFRxGEGZj95oiP
-         0dy5O71vaYMaX4+zrs90SFURfFjIqWmnLgOtdzGkyemXdMO0YdqZH9gj8KxiEYoVmQQG
-         1srNrpvrdflIECMuPv3MWgUSWNCuGmv8EaGLtaKGc3eqlqo5uh0FkB18SGpYM2p4OFUC
-         /6q+dGPOxhFIwG7QGjOpkKzR128meFItaE9ACGINzFOgP/O0ccMz73NE+CSy1wU3B6Ms
-         drJw==
-X-Forwarded-Encrypted: i=1; AL+hErEIJ2mWsQosfRSyt29kARhHH/mN63mSXzyaDWsBuFfzvZJMB4V//fwNy2iedFA386lopkU2uuqyXN+KDCM+6A==@vger.kernel.org
-X-Gm-Message-State: APuU4Z++Zmet6BQbEKuSWLs825PZH9ayyWTIaKYiruDCMuMJsZshL+bP
-	yRbi28Ptd6513Qs0r7sIaS4UNHpv73vSEB5LFQzglZTL8ywZ4WkjVL851dc7B1BI9TpzUQwsaax
-	h6Nxtk7mJOdo5/VEVtStEKDqGuZoTON14ZRmm3Zdg6mu9Q7Fyt+uqm1IgNHIDUkLnz6EvYN1wUq
-	K/Gg==
-X-Gm-Gg: AYBFou0jJDNhQKMrEpweR4W7177vgBgD/9DGbD1+lBFWI4ROEKpo7+DthRGDKcnS1qG
-	WGFdUJbXCumWfTjVSdBiQDnADR5dMcmS7tz2mWDxXQOiKBoRv5snTE6gqApbi5xZL8yEXxgjTGw
-	TXLRzgVWoTpPpy7zvlxR+oshtZYdDFFD+meKseHUXbVeYqLM7W09uPNc7riey2tvuXAyPNT9Fvo
-	8mic0Az3aWoO9GUJE4pwV3IS1rZ1Pn/ADMY5FDK7vxa7bKHSWkVrrtjWKSy1129JVfrJxk5V0LK
-	fTBY65YNmQ08WTTLp1y5wf2EJqKL1LR4/D1Oxhxubp1QmbICTTA1/E8QSbNcp6Z8SmfxSNhl1kQ
-	KP+30L9nJCdxnvHi2HcLuhy5n5WthXKYsUz+wYKpJxAhZa/CXmYmK/5vAC50o8PdCiyUK2RdVwJ
-	5Mhk+x0W6yA06CMjYp3N1QDcEtTng=
-X-Received: by 2002:a05:6a00:94e3:b0:873:5267:dfd0 with SMTP id d2e1a72fcca58-8beb1dea1fdmr2808142b3a.5.1794582299114;
-        Fri, 13 Nov 2026 07:04:59 -0800 (PST)
-X-Received: by 2002:a05:6a00:94e3:b0:873:5267:dfd0 with SMTP id d2e1a72fcca58-8beb1dea1fdmr2808105b3a.5.1794582298485;
-        Fri, 13 Nov 2026 07:04:58 -0800 (PST)
-Received: from hu-jjohnson-lv.qualcomm.com (Global_NAT1.qualcomm.com. [129.46.96.20])
-        by smtp.gmail.com with ESMTPSA id d2e1a72fcca58-8bed243ffb6sm1252199b3a.43.2026.11.13.07.04.57
-        (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
-        Fri, 13 Nov 2026 07:04:57 -0800 (PST)
-From: Jeff Johnson <jeff.johnson@oss.qualcomm.com>
-To: Jeff Johnson <jjohnson@kernel.org>,
-        Shunsuke Nagashima <shunsuke@nagashi.ma>
-Cc: Kalle Valo <kvalo@kernel.org>, linux-wireless@vger.kernel.org,
-        ath10k@lists.infradead.org, linux-kernel@vger.kernel.org
-In-Reply-To: <20260927-ath10k-bundle-status-v1-1-a1eea048ada9@nagashi.ma>
-References: <20260927-ath10k-bundle-status-v1-1-a1eea048ada9@nagashi.ma>
-Subject: Re: [PATCH ath-next] wifi: ath10k: fix status of bundled mgmt tx
- completions
-Message-Id: <179458229712.913702.1338158233604985110.b4-ty@b4>
-Date: Fri, 13 Nov 2026 07:04:57 -0800
+	dkim=pass (2048-bit key) header.d=igalia.com header.i=@igalia.com header.a=rsa-sha256 header.s=20170329 header.b=g0YWM1Ge
+DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed; d=igalia.com;
+	s=20170329; h=Cc:To:Message-Id:Content-Transfer-Encoding:Content-Type:
+	MIME-Version:Subject:Date:From:From:Reply-To;
+	bh=neIsIOYrXedUz1G3zWq1jiKbezCseAxykAXroLao1Js=; t=1794582991; x=2109942991; 
+	b=g0YWM1GeAI8bQbRzwstzLCALraKLhcmcKY/Pygrf6f4Jmn81Lmp+iSbSjY5wSJ95nvc38+gAj9n
+	6u88hlagPvzD/rDOr/epn5tBH4jRRflINpZOFTkOcoEWjs64a52pgf2HT81ZPOF36Y5FkbRAgJDs4
+	51kppX+0mKBSjUCsMT3NxTVTh+lBJ5jpsosz6VUBF61O3teikG+9HaqTmEHQBHeSABOT45SAJV2XO
+	LsDrEhT5nXN/bKOl6wz1QMpzjFrftX3O8kirgwGiwB/U3vAEqFKZpiQe/vKScItPrDxtmwYUnJoJf
+	0m7XvkKZdqj9AL+cYK9Cx2qYJB6xVSsQNYfQ==;
+Received: from 186-249-149-121.shared.desktop.com.br ([186.249.149.121] helo=[127.0.1.1])
+	by fanzine2.igalia.com with esmtpsa 
+	(Cipher TLS1.3:ECDHE_X25519__RSA_PSS_RSAE_SHA256__AES_256_GCM:256) (Exim)
+	id 1xRt0o-00AEXe-JG; Fri, 13 Nov 2026 16:16:22 +0100
+From: Mauricio Faria de Oliveira <mfo@igalia.com>
+Date: Fri, 13 Nov 2026 12:17:33 -0300
+Subject: [PATCH] wifi: rtw88: fix skb leak in hw_scan probe request length
+ check
 X-Mailing-List: linux-wireless@vger.kernel.org
 List-Id: <linux-wireless.vger.kernel.org>
 List-Post: <mailto:linux-wireless@vger.kernel.org>
@@ -126,56 +61,76 @@ Precedence: list
 MIME-Version: 1.0
 Content-Type: text/plain; charset="utf-8"
 Content-Transfer-Encoding: 7bit
-X-Mailer: b4 0.16.0
-X-Authority-Analysis: v=2.4 cv=c6Q+0h9l c=1 sm=1 tr=0 ts=6af7271c cx=c_pps
- a=rEQLjTOiSrHUhVqRoksmgQ==:117 a=ouPCqIW2jiPt+lZRy3xVPw==:17
- a=IkcTkHD0fZMA:10 a=zJRp6_cAMcgA:10 a=s4-Qcg_JpJYA:10
- a=VkNPw1HP01LnGYTKEx00:22 a=u7WPNUs3qKkmUXheDGA7:22 a=DJpcGTmdVt4CTyJn9g5Z:22
- a=EUspDBNiAAAA:8 a=ALV8Qg0lGWWfAH_4w1oA:9 a=QEXdDO2ut3YA:10
- a=2VI0MkxyNR6bbpdq8BZq:22
-X-Proofpoint-GUID: Mu51-fs8XUHwZtewoBl3DCQi5zFqdRl3
-X-Proofpoint-Spam-Details-Enc: AW1haW4tMjYxMTEzMDA2MCBTYWx0ZWRfX54AiccONnPXO
- N+Jez+V3zzTrB3NtH3MNV8mKAqmIoTtWKLs6LImGsoTiaGMVPAfz3eo+Nbxo01oz1ojGn58lKTs
- 9U7I8iK0U/7WZJrTVNOYaZrJREyE2Yi4jb4ked07h3+nkOWmB3+n1kuACNiyh1Jzw0NDAPFu4qt
- 73L4JwxBXwyFlmOVMYhIKVtFXb+lyFNdxV90C1PZnCRgXQprTdkc4j3fIfzaJy2TwUtJptvRhNf
- u0/xm2arVuNhqtShl2Se/TrU5ufxTb+GCDdFrJeIZuvt2BBjVeoqUbDbmhSy2DHeNefk+HVNxU6
- EwKdAC+RfL06HdAEohcazp4iSHYGQgkA1xP8x7AKjEWK7c9JOLgdFTcIXcFD1k5d+JzcCeXZIaO
- u4gscEakVmceRwtoS9YzBRst5suhxOXUKp5J7ksxkb1UJ6rorF7uI2v7U0Ci+YQshygpLZmZWZa
- a9ieQ0dgfrpz3yGyQFA==
-X-Proofpoint-ORIG-GUID: Mu51-fs8XUHwZtewoBl3DCQi5zFqdRl3
-X-Proofpoint-Spam-Info: AW1haW4tMjYxMTEzMDA2MCBTYWx0ZWRfX357A2ged8N0T
- +t3bFLUQ8CwovDRDiWs1BhcZvvITxfiRTzakrSk865Y34Y59C5G2i5I9m5AeNUpkKHMeqxLFq7W
- DVng3oE1+KmJCA8PQgTalMVWIXec6Qs=
-X-Proofpoint-Virus-Version: vendor=baseguard
- engine=ICAP:2.0.293,Aquarius:18.0.1176,Hydra:6.1.138,FMLib:17.12.100.49
- definitions=2026-11-13_04,2026-11-11_03,2025-10-01_01
-X-Proofpoint-Spam-Details: rule=outbound_notspam policy=outbound score=0
- adultscore=0 bulkscore=0 suspectscore=0 priorityscore=1501 phishscore=0
- impostorscore=0 malwarescore=0 clxscore=1015 spamscore=0 lowpriorityscore=0
- classifier=typeunknown authscore=0 authtc= authcc= route=outbound adjust=0
- reason=mlx scancount=1 engine=8.22.0-2611040001 definitions=main-2611130060
+Message-Id: <20261113-rtw88-hw-scan-skb-leak-v1-1-3bd47562abf6@igalia.com>
+X-B4-Tracking: v=1; b=H4sIAAwq92oC/6tWKk4tykwtVrJSqFYqSi3LLM7MzwNyDHUUlJIzE
+ vPSU3UzU4B8JSMDIzNDQ0Mj3aKScgsL3Yxy3eLkxDzd4uwk3ZzUxGxdy1RzQ1OTlNQ04xRTJaD
+ mgqLUtMwKsMHRsbW1AHH+e7RoAAAA
+X-Change-ID: 20261112-rtw88-hw-scan-skb-leak-9e7154def3d5
+To: linux-wireless@vger.kernel.org
+Cc: Ping-Ke Shih <pkshih@realtek.com>, Po-Hao Huang <phhuang@realtek.com>, 
+ Kalle Valo <kvalo@kernel.org>, kernel-dev@igalia.com, 
+ linux-kernel@vger.kernel.org, Mauricio Faria de Oliveira <mfo@igalia.com>
+X-Mailer: b4 0.14.2
 
+In _rtw_hw_scan_update_probe_req(), if the first loop fails (goto out;) the
+skb is leaked. It does not reach kfree_skb() at the end of the loop body or
+in the second loop (out:) since it is unlinked from probe_req_list.
 
-On Sun, 27 Sep 2026 21:10:53 +0900, Shunsuke Nagashima wrote:
-> ath10k_wmi_event_mgmt_tx_bundle_compl() takes the completion status of
-> each report from desc_ids[i] instead of status[i]. Any non-zero status
-> is handled as "not acked", so a bundled report is marked as acked if
-> and only if its descriptor id is 0, whatever status the firmware
-> returned.
-> 
-> The bundle handler read status[i] when it was added in
-> commit cc123fac978f ("ath10k: Handle bundled tx completion for
-> management frames"). The commit named in the Fixes tag replaced it
-> with desc_ids[i].
-> 
-> [...]
+Fix the leak by calling kfree_skb() if the first loop fails.
 
-Applied, thanks!
+In /sys/kernel/debug/kmemleak, after simulating the failure:
 
-[1/1] wifi: ath10k: fix status of bundled mgmt tx completions
-      commit: 51222df62c7af2f0f11ec25c9fa8bcaa0f87fac8
+  unreferenced object 0xffff88810965a000 (size 232):
+    comm "iw", pid 4729, jiffies 4345008185
+    hex dump (first 32 bytes):
+      00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00  ................
+      00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00  ................
+    backtrace (crc 20f7de11):
+      kmem_cache_alloc_node_noprof+0x302/0x380
+      __alloc_skb+0x74/0x2f0
+      skb_copy+0x57/0xe0
+      rtw_hw_scan_update_probe_req+0xff/0x230
+      rtw_hw_scan_prehandle+0x4e/0x180
+      rtw_hw_scan_offload+0x186/0x1d0
+      rtw_ops_hw_scan+0x61/0xb0
+      drv_hw_scan+0x81/0x130
+      __ieee80211_start_scan+0x2e0/0x760
+      rdev_scan+0x42/0x100
+      nl80211_trigger_scan+0x53b/0x730
+      genl_family_rcv_msg_doit+0x103/0x160
+      genl_rcv_msg+0x1b5/0x2c0
+      netlink_rcv_skb+0x52/0x100
+      genl_rcv+0x28/0x40
+      netlink_unicast+0x26d/0x3b0
+
+This leak exists in the first loop since the function was introduced, and
+still happened with the addition of the second loop, in these two commits:
+
+Fixes: 10d162b2ed39 ("rtw88: 8822c: add ieee80211_ops::hw_scan")
+Fixes: d95984b5580d ("rtw88: fix memory overrun and memory leak during hw_scan")
+Signed-off-by: Mauricio Faria de Oliveira <mfo@igalia.com>
+---
+ drivers/net/wireless/realtek/rtw88/fw.c | 1 +
+ 1 file changed, 1 insertion(+)
+
+diff --git a/drivers/net/wireless/realtek/rtw88/fw.c b/drivers/net/wireless/realtek/rtw88/fw.c
+index 945fedcd375b62b4110ab631e87889bb84e2f16b..09b5836540c41e80a5fecca0f781aa45c6327cc0 100644
+--- a/drivers/net/wireless/realtek/rtw88/fw.c
++++ b/drivers/net/wireless/realtek/rtw88/fw.c
+@@ -2061,6 +2061,7 @@ static int _rtw_hw_scan_update_probe_req(struct rtw_dev *rtwdev, u8 num_probes,
+ 		skb_unlink(skb, probe_req_list);
+ 		rtw_fill_rsvd_page_desc(rtwdev, skb, RSVD_PROBE_REQ);
+ 		if (skb->len > page_size * page_cnt) {
++			kfree_skb(skb);
+ 			ret = -EINVAL;
+ 			goto out;
+ 		}
+
+---
+base-commit: 7e1392a42ea288d70a266f6553fe06f57f8647ea
+change-id: 20261112-rtw88-hw-scan-skb-leak-9e7154def3d5
 
 Best regards,
 -- 
-Jeff Johnson <jeff.johnson@oss.qualcomm.com>
+Mauricio Faria de Oliveira <mfo@igalia.com>
 
