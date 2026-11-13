@@ -1,79 +1,80 @@
 Authentication-Results: smtp.subspace.kernel.org; arc=pass header.oldest-pass=0 smtp.remote-ip=100.103.45.18
 ARC-Seal: i=2; d=subspace.kernel.org; s=arc20261015; a=rsa-sha256; cv=pass;
-	t=1794597161;
-	b=GCIzg1Je9gXKTAotevY9i6LJY3RzS6V9JCPhmA9V8uILDsNqo5mke1us3SVZiPvI3Fgt
-	 iW1qUvvXJn60wLJ4Co3CsWp81+Npz7isjS6Y/AEcyfyoIMHA6E8VAZe1cesx3wp3DsrKl
-	 gPh6qbJ0gWalJMtu8QkUObWKuwQjBvgjahGCULkwABYMZjLoxgG12BqaZDjQK7scnXPNo
-	 BBlB0aLn7u53O12zMTMxSExCKEDGHUK5pQa7uWOD1o14Guop40LVqodmRQhWSX9PXal4X
-	 wpco8tNeIWCpTHpZNuriGg9XsgspXMn5EnB2bB3TKJ/PnIl7FC6eI8qBd0TGs2TXtvg==
+	t=1794597280;
+	b=USkQNjuTwvghaJSJM3Le0iShAFdPlzL4bBdWhHhfN51SvIDiQW4oR1H2PYDv+LTai7xk
+	 FkrE8zaWT1pzPRpEhdqV6Wj101O9LntoetY5jnhsHALXLjzI08n5l5wnthSccAnOU9o4b
+	 EtGkEU69y9uiqbpkv24J00rhqylekeYVvII+jnePtXvQl1Fa+Q41uYg2yg21HJg0Qy0OK
+	 ZNiYCf+nl2II7V67QKSZG4vNQPGdHsrm7sKJcZusyLff4Kq5TDDkABznB+pIY2GNDwWKc
+	 c9bjayVesaOCbE7gsQKpZSxYJDiYBPhN1keupx2To+XT1cjeQzN62qJ6oUhzOIPRHOA==
 ARC-Message-Signature: i=2; d=subspace.kernel.org; s=arc20261015;
-	a=rsa-sha256; c=relaxed/relaxed; t=1794597161;
-	h=Received:DKIM-Signature:Received:From:Date:Subject:MIME-Version:
-	 Content-Type:Message-Id:X-B4-Tracking:X-Change-ID:To:Cc:X-Mailer:
-	 X-Developer-Signature:X-Developer-Key:X-Endpoint-Received:
-	 X-Original-From:Reply-To:Content-Transfer-Encoding;
-	bh=hLZtGA46uUnhosvnrSpHGWny2vwTfNqO81vS+IzHZrg=;
-	b=q9++LMF0udxmJl0QU2cJBFXwNiUvjbrTNGh8JCmGYv4MBiCCTjS9JdqHMS5S2+S4oy5U
-	 SYZ6ADYqyy27rde/SVkDdLTJSLZa6l8cfPUgYPgXllyX6ZTqxWDR0opb3gnoHY6QuRGPj
-	 OxyX5j7jVXNlb52OOcKUOgu+nZKL/6ez1jEZAaCY0hzjdS1oOv/2HXxLtq17tkUpo/y2d
-	 /WO2LjdT56f9/SErhkTBs7yjes7zeCRIrtCvaKXYFbnXH/x94XqzooDP6UkQB+weiS9mU
-	 FFvLubxi0+5tgrM3URQSXZEelSs3DFpKbWBc5/gQ87DtyUmZq37WSt+wZpnyhUk1nkQ==
+	a=rsa-sha256; c=relaxed/relaxed; t=1794597280;
+	h=Received:DKIM-Signature:Received:From:Subject:Date:Message-Id:
+	 MIME-Version:Content-Type:Content-Transfer-Encoding:X-B4-Tracking:
+	 X-Change-ID:To:Cc:X-Mailer:X-Developer-Signature:X-Developer-Key:
+	 X-Endpoint-Received:X-Original-From:Reply-To;
+	bh=ewn4nCsmxQKS4ciDscnEf8cddbaRp74HJH3ImWn4V/c=;
+	b=Vdon2yVtDJOPbyJC2zdzoi4W/MLLCQ3+3CEeR5oNYt0AOgJbvOdn7K4a+nwGH0PzaGnj
+	 AALuUmiRqzg3u4W6Va59vP8qZAFd4kVVsPpwXHBELuPddWMDrS3lMStiQoN3QyRG2WfBg
+	 YRE7u1zkOuGjSbWDXp53paZdTa6mt6m/FyE02zrnR91Ya44vRXAr9ucWY9TX70Ov/fwNY
+	 W9xLjOdi1eB/YdAcPVU6feG3y9vA32GLEeyODIju5a9id8seurrSVumsEpnNw8dTBk5L4
+	 FFlcuiVZceUh0DABPo7BjM7F9PbiWwnJ5/tSqiovjHOkRDGeeh0pl4EPGR/7vY0TOgQ==
 ARC-Authentication-Results: i=2; smtp.subspace.kernel.org; 
-	dkim=pass header.d=kernel.org header.i=@kernel.org header.a=rsa-sha256 header.s=k20260515 header.b=W7NxPW5R;
+	dkim=pass header.d=kernel.org header.i=@kernel.org header.a=rsa-sha256 header.s=k20260515 header.b=Wam+U6lO;
 	arc=pass header.oldest-pass=0 smtp.remote-ip=100.103.45.18
 Received: from smtp.kernel.org (quasi.space.kernel.org [100.103.45.18])
 	(using TLSv1.3 with cipher TLS_AES_256_GCM_SHA384 (256/256 bits)
 	 key-exchange X25519 server-signature ECDSA (prime256v1))
 	(No client certificate requested)
-	by smtp.subspace.kernel.org (Postfix) with ESMTPS id 8DC3C606A334;
-	Fri, 13 Nov 2026 19:12:41 +0000 (UTC)
+	by smtp.subspace.kernel.org (Postfix) with ESMTPS id A61FB606A323;
+	Fri, 13 Nov 2026 19:14:40 +0000 (UTC)
 Authentication-Results: smtp.subspace.kernel.org;
-	dkim=pass (2048-bit key) header.d=kernel.org header.i=@kernel.org header.a=rsa-sha256 header.s=k20260515 header.b=W7NxPW5R
+	dkim=pass (2048-bit key) header.d=kernel.org header.i=@kernel.org header.a=rsa-sha256 header.s=k20260515 header.b=Wam+U6lO
 Authentication-Results: smtp.kernel.org; arc=none smtp.remote-ip=100.80.115.77
 ARC-Seal: i=1; d=kernel.org; s=arc20260519; a=rsa-sha256; cv=none;
-	t=1794597161;
-	b=t59zogXt8EYW/vo/pYhyEgQXGJa4YE9NiuEo8mF3XDrgkcTTtvkpVT0LcEKjMtg6S35C
-	 y0ym7mD8D694abINXtERcnIAtMZpW/0szW0hOzxAEGG7JF0DFHzbblVt3et3n1uZTBI3R
-	 ly3K4cxOUCpo3DeB2psNY26/c3jUq2Z60dzWg86kaoy1WE5zPYCdEAp6GBp7B1JHVtrpL
-	 3/hSTwRFaAlwZr4ZXO744h3f2H/b0q1alBmus8XJTAUbNCV8SNMA1HC6ENjFWb7aup3JX
-	 yJOzwv91vVB8Ug3gbgH6/7iGuDyzZpLrRJI5c2bomUmj3uV4/dkt+wgQOhAfoA4Q3Pg==
+	t=1794597280;
+	b=OTcouzTjMNULNZzPO29Q/ZPtKf2W6DfMGfhWtham93/Q+Y9fvzawjd0Cfl7VYot6ZaiK
+	 RpzQDLlLr17gARI0UwkCi3IXmlnTeivPt3BXxeMUgHMAfeeiUm8DLET/i5/BAjHd4z2rd
+	 ald9+dcuvOvpaN2/bpNUG4HxhWUmkt8rRWciDyoo7f623e/ywAImpqKwpXpJjOtwcap7E
+	 FH/LwwB25XnVcJK4E4QKdP8oKEjwtpxgD2f6/o/68SZS+uINCcQG95vF4t691J+yTCNVJ
+	 tLGbz9HKGpuCINobAIVG22fd+EVplu6eDbjVsKIJ6WXVgKbJWj6FJ4/ji462O9ijtSA==
 ARC-Message-Signature: i=1; d=kernel.org; s=arc20260519; a=rsa-sha256;
-	c=relaxed/relaxed; t=1794597161;
-	h=DKIM-Signature:Received:From:Date:Subject:MIME-Version:Content-Type:
-	 Message-Id:X-B4-Tracking:X-Change-ID:To:Cc:X-Mailer:
-	 X-Developer-Signature:X-Developer-Key:X-Endpoint-Received:
-	 X-Original-From:Reply-To:Content-Transfer-Encoding;
-	bh=hLZtGA46uUnhosvnrSpHGWny2vwTfNqO81vS+IzHZrg=;
-	b=xUaa3sTVJzkyL97+qOd2qZ0+WTgu39I18asIyeeD1Pdf9CjBIJN55MCFDE0q4hyE0EcI
-	 BCwehLBB+DFC6+vMs5xeY1KAs1TUu5cecTsgx333a6sYC764aoZrn5PIVZKqy/GzHrqSa
-	 eTn1bxarB6vS2zgl8vBrlgQmp+aRX16JdFrpT8pCkXGY2hMaS/DoWV7Jo0uL/U24CQU0y
-	 +LOSDp3l+xLXZtkZ8wgzpNwryTE4Zw0+LuabsLojA1jxLuiZM9KK+uyl6OGwCNH7HQ2ss
-	 tZXzU6rvRCtfW/bQRj6fTkK+rzEpYKfPbDwfbzbFEr8WR10A0eGPoKZCv3GePDNHQ/A==
+	c=relaxed/relaxed; t=1794597280;
+	h=DKIM-Signature:Received:From:Subject:Date:Message-Id:MIME-Version:
+	 Content-Type:Content-Transfer-Encoding:X-B4-Tracking:X-Change-ID:To:
+	 Cc:X-Mailer:X-Developer-Signature:X-Developer-Key:X-Endpoint-Received:
+	 X-Original-From:Reply-To;
+	bh=ewn4nCsmxQKS4ciDscnEf8cddbaRp74HJH3ImWn4V/c=;
+	b=F1rNn+OkPEl1/v7E//47mWnHSjdgDTurn/5ELJ3Io2pOenyXSDEbi9qYcIoE+dZ14SBp
+	 Ln+7j53CkY5XdOVfvktK6Z3JvQ0t83l6xoUUjYMeyKJ6jyhZKSZ6YKwWi0KyuBZvr+NWm
+	 4UzWg3/SeUg/vNocey7A39QQYJPNIfB0/z9QDwHGRKivKRC1CyvCwpxtg8sxK45vz9Fsb
+	 he0uC/EbvEZcj5lMehjK7S+5MQvavj+jAEv5xF6ybQXuj4/IYJUjhP3w+7g01T3otn4hZ
+	 gSseTmcJgoB3IQfaqW761JrU3ouJWZ9oaan/TpL8okfdBBwdQ7Z8cEcFRsPZBvlvsxQ==
 ARC-Authentication-Results: i=1; smtp.kernel.org; 
 	arc=none smtp.remote-ip=100.80.115.77
 Received: from lkml.kernel.org (nexus.subspace.kernel.org [100.80.115.77])
 	(using TLSv1.3 with cipher TLS_AES_256_GCM_SHA384 (256/256 bits)
 	 key-exchange X25519 server-signature ECDSA (prime256v1) server-digest SHA256)
 	(No client certificate requested)
-	by smtp.kernel.org (Postfix) with ESMTPS id DF7A21F000C4;
-	Fri, 13 Nov 2026 19:12:40 +0000 (UTC)
+	by smtp.kernel.org (Postfix) with ESMTPS id EBF641F000C4;
+	Fri, 13 Nov 2026 19:14:39 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=kernel.org;
-	s=k20260515; t=1794597161;
-	bh=hLZtGA46uUnhosvnrSpHGWny2vwTfNqO81vS+IzHZrg=;
-	h=From:Date:Subject:To:Cc:Reply-To;
-	b=W7NxPW5RybjlOtaDm9qMqP9JGvSVC3YQdPg3G+1FX7tUlghT/SVIaX3MbMAanxNyf
-	 2JZNyLNz3e47IZnX8O4bMzr0Ssl1xrJkprEG0y58Lvu9UKxAk6FzoHDzjV+Ekmmer3
-	 XTMeCwSFKEcy3he/vTdV3B/z198PCUwbmDUEnSIES1g/IhWRNnATpMxozTTPD/gfgg
-	 H0ag6G4aiiySQ/2wj6741UX7UpLw62dZ6tybJQmfVvh7ke+s29PY/uG/TOe57MrRlX
-	 uhybmAAbrRrP767gUqV7BUGt5QM+qk1dPBTskYHmx7hOC5IlV0sMcm/h/ONfrxw21V
-	 89YTmfC90mUCA==
+	s=k20260515; t=1794597280;
+	bh=ewn4nCsmxQKS4ciDscnEf8cddbaRp74HJH3ImWn4V/c=;
+	h=From:Subject:Date:To:Cc:Reply-To;
+	b=Wam+U6lO5/CdCTpd1kiKzJY0hDq3mivn+DmU+A1T6mvlAHQ6Am7WzQADu8Gdw/yHf
+	 xe56pbgrJsFygjG7aHXRPoc7p5LXa1FyJP5+ttIYd8DRsCUXGuh7rx6I8FtSU3SV+H
+	 TBCV6gHS5MlmRrfJE1Gl9YbLKaYQ0psMViC1hHegnNw9K7l9WJt15Nsz4G/Qi5rWRg
+	 z+Zjuumpsj4aOamPv585oiv/+i0GNCclcFXuMg9Qqw8ULOJvh4u6Vs7I4Kqc/USTGx
+	 LqF8JPzwY6QIWj+BLSntkk8AGVwnl3Vov1soAx417a3ZLZiLcKSo7FmGlYnsjbC8Lq
+	 vKCbfroC/uQ8A==
 Received: from nexus.subspace.kernel.org (localhost [IPv6:::1])
-	by lkml.kernel.org (Postfix) with ESMTP id 71F8549A75;
-	Fri, 13 Nov 2026 19:12:40 +0000 (UTC)
+	by lkml.kernel.org (Postfix) with ESMTP id 6C07E49A8B;
+	Fri, 13 Nov 2026 19:14:39 +0000 (UTC)
 From: Patrick Fischer via B4 Relay <devnull+admin.tsv-stahl-riesa.de@kernel.org>
-Date: Fri, 13 Nov 2026 20:12:29 +0100
-Subject: [PATCH wireless-next] wifi: wlcore: Don't report RSSI events on
- the P2P device
+Subject: [PATCH RFC wireless-next 0/2] wifi: wl18xx: Stop querying the
+ firmware statistics
+Date: Fri, 13 Nov 2026 20:14:19 +0100
+Message-Id: <20261113-upstream-wl18xx-fw-stats-v1-0-cbdf50739185@tsv-stahl-riesa.de>
 X-Mailing-List: linux-wireless@vger.kernel.org
 List-Id: <linux-wireless.vger.kernel.org>
 List-Post: <mailto:linux-wireless@vger.kernel.org>
@@ -84,114 +85,96 @@ List-Owner: <mailto:linux-wireless+owner@vger.kernel.org>
 Precedence: list
 MIME-Version: 1.0
 Content-Type: text/plain; charset="utf-8"
-Message-Id: <20261113-upstream-wlcore-p2p-rssi-v1-1-754bd625daca@tsv-stahl-riesa.de>
-X-B4-Tracking: v=1; b=H4sIAAAAAAAC/yWM0Q6CMBAEf4Xcs5dATdD6K8aHCquewdLcFSEh/
- LtV922ymVnJoAKjU7WS4i0mYyzQ7CrqHiHewdIXJle7tinjKVlWhBfPQzcqOLnEaiZ8DN6jdf5
- Q73sqelLcZPmlzzSLYoAZRyyZLv/bpusTXf7mads+Avpj6IsAAAA=
-X-Change-ID: 20261111-upstream-wlcore-p2p-rssi-8a99e629703d
+Content-Transfer-Encoding: 7bit
+X-B4-Tracking: v=1; b=H4sIAAAAAAAC/yWNTQ6CMBCFr0Jm7SSUBYhbEw/glrgo7VTHYCWdY
+ psQ7m7Rt/te3s8KQoFJ4FStEOjDwm9fQB0qMA/t74RsC0NTN60qwmWWGEi/ME3qmDO6hBJ1FDR
+ dbftWW+tMD6U+B3Kcf9MDXC/n3UscaCIR9JQj3P4pWcYnmbi/wLZ9AYIYETOSAAAA
+X-Change-ID: 20261111-upstream-wl18xx-fw-stats-c70d96addfc9
 To: linux-wireless@vger.kernel.org
 Cc: Johannes Berg <johannes@sipsolutions.net>, 
  Svyatoslav Ryhel <clamor95@gmail.com>, linux-kernel@vger.kernel.org, 
  Patrick Fischer <admin@tsv-stahl-riesa.de>
 X-Mailer: b4 0.15.2
-X-Developer-Signature: v=1; a=ed25519-sha256; t=1794597159; l=3844;
+X-Developer-Signature: v=1; a=ed25519-sha256; t=1794597277; l=3601;
  i=admin@tsv-stahl-riesa.de; s=20261020; h=from:subject:message-id;
- bh=HaLsB5FeE4e7mOdZ4s/ZKiZhR7ChbgmoXjUw6qN7ook=;
- b=2cHA0+InI1KT1A9ZFgrZG//bS45GCpNqhMjtHwb7EdWajV3IMaDEr63gN40QPqpd0ChS99Mq5
- lnMEF7NPN6+CbNrB2wihngbtumu4oHIEhEDZKbj+XdkT4rtVfTPEWBv
+ bh=xIHoochWWNIF1OBob5awdmieWYZJ3MmNdz4ox+BKRs8=;
+ b=BmDcxnz+qaJUpjLNVd8On1QPe2mIV1DXo7LzCwM1yRoUmMe5yxROT9sVe8G970/EbTZszzu5O
+ C5mIKHRaG3LDMC4ogmvhz8WI2xSPKaspkryZ/IbnNI/1zGFDcA5nYV3
 X-Developer-Key: i=admin@tsv-stahl-riesa.de; a=ed25519;
  pk=D+v6EloYcEY9PIUHFyTM5sqcGIU/fIXzLUdkR8vjAtk=
 X-Endpoint-Received: by B4 Relay for admin@tsv-stahl-riesa.de/20261020 with
  auth_id=1251
 X-Original-From: Patrick Fischer <admin@tsv-stahl-riesa.de>
 Reply-To: admin@tsv-stahl-riesa.de
-Content-Transfer-Encoding: 7bit
 
-From: Patrick Fischer <admin@tsv-stahl-riesa.de>
+On a WL1801 (Tegra Note 7, firmware 8.9.0.0.83) the answer to
+ACX_STATISTICS overwrites both event mailboxes. struct
+wl18xx_acx_statistics is 1100 bytes, the command mailbox 740 bytes,
+and the two 180-byte event mailboxes sit right behind it
+(0xb007f8, +740, +920 on this chip). An event that is waiting in a
+mailbox while the statistics are read is then handled with statistics
+counters as its vector and data. I ran into it as a NULL pointer
+dereference in wlcore_event_rssi_trigger() with a P2P device; the fix
+for that crash went out separately earlier today [1].
 
-A P2P device vif has no netdev, but wl12xx_init_vif_data() makes it
-BSS_TYPE_STA_BSS, so wl12xx_for_each_wlvif_sta() in
-wlcore_event_rssi_trigger() visits it as well. Its rssi_thold and
-last_rssi_event stay 0, and 0 is NL80211_CQM_RSSI_THRESHOLD_EVENT_LOW.
-A metric above 0 therefore looks like a change to HIGH, and
-ieee80211_cqm_rssi_notify() ends in cfg80211_cqm_rssi_notify(), which
-dereferences the NULL sdata->dev:
+What I measured, with a test kernel that logs the mailbox addresses and
+can change the requested length at run time:
 
-  Internal error: Oops: 5 [#1] SMP ARM
-  PC is at cfg80211_cqm_rssi_notify+0x18/0x108
-  LR is at wlcore_event_rssi_trigger+0x84/0xa0 [wlcore]
-  Call trace:
-   cfg80211_cqm_rssi_notify from wlcore_event_rssi_trigger
-   wlcore_event_rssi_trigger from wl18xx_process_mailbox_events
-   wl18xx_process_mailbox_events from wl1271_event_handle
-   wl1271_event_handle from wlcore_irq_locked
-   wlcore_irq_locked from wlcore_irq
-   wlcore_irq from irq_thread_fn
+- idle, chip memory read through debugfs "mem" before and after one
+  query: the pipeline counters (bytes 952-1000 of the statistics) show
+  up in event mailbox B after every query, also when only 740 bytes are
+  requested. The firmware ignores the requested length.
+- 600 s iperf3 upload with the statistics read once a second: 50 bogus
+  RSSI trigger events with 1100 bytes, 24 with 740 bytes, all from
+  mailbox B and all with statistics content. Without the statistics
+  reads: none.
 
-The oops kills the IRQ thread with wl->mutex held, so the driver does
-not recover: everything that takes the mutex hangs, and the interrupt
-is disabled as unhandled.
+So the only fix I see on the host side is not to send ACX_STATISTICS
+on wl18xx at all, which is what this series does. Patch 1 lets wlcore
+run without firmware statistics, patch 2 drops them from wl18xx.
 
-A real RSSI trigger reports a negative value in dBm and does not take
-this path. Here, on a WL1801 (Tegra Note 7) with wpa_supplicant running,
-the metric was +54 because the event mailbox held firmware statistics
-instead of event data: reading the firmware statistics through debugfs
-once a second during an iperf3 upload overwrote the mailbox. That is a
-separate problem, but any bogus metric above 0 crashes the same way.
+Why RFC:
 
-Skip P2P device vifs. Connection quality monitoring does not apply to
-them, and wlcore_event_beacon_loss() also leaves them out, by their
-invalid role_id.
+- It removes the wl18xx fw_stats debugfs files. If someone knows a
+  firmware setting or version where the command mailbox is big enough,
+  or another way to get the statistics, I would rather do that.
+- I kept the statistics structures in wl18xx/acx.h as documentation of
+  the firmware interface. I can drop them as well.
+- Should patch 2 go to stable? It fixes corrupted events, but only for
+  people who read the debugfs statistics.
 
-Fixes: 7845af35e0de ("wlcore: add p2p device support")
-Signed-off-by: Patrick Fischer <admin@tsv-stahl-riesa.de>
+Tested on the same Tegra Note 7 with v7.3 plus these two patches (the
+touched files are the same in v7.3 and wireless-next): wl18xx/fw_stats,
+clear_fw_stats and fw_stats_raw are gone, the other debugfs files are
+still there; unloading and reloading wl18xx works and the station
+reassociates. The same 600 s iperf3 upload, with the monitoring script
+still trying to read the statistics once a second, ran at 46.7 Mbit/s
+with no RSSI trigger event, no oops, no recovery and 0 failed frames.
+Build-tested with W=1 for arm (gcc, clang) and arm64 (clang).
+
+[1] https://lore.kernel.org/r/20261113-upstream-wlcore-p2p-rssi-v1-1-754bd625daca@tsv-stahl-riesa.de
+
+Tool use (see Documentation/process/generated-content.rst): these
+patches, the changelogs and this letter were prepared with an LLM
+coding assistant (Claude Code). It worked out the mailbox layout from
+the driver source and my logs, wrote the test tooling, the changes and
+the texts from my measurements and instructions. I reviewed the
+changes and ran the tests on the device.
+
 ---
-Tested on a Tegra Note 7 (WL1801, firmware 8.9.0.0.83,
-wpa_supplicant with its P2P device) with v7.3 plus this patch; the
-patched files are the same in v7.3 and wireless-next. Load was a 600 s
-iperf3 upload at about 47 Mbit/s while the debugfs firmware statistics
-were read once a second:
+Patrick Fischer (2):
+      wifi: wlcore: Allow lower drivers without firmware statistics
+      wifi: wl18xx: Stop querying the firmware statistics
 
-- without the patch: oops as above after about 285 s of upload,
-  WLAN dead until reboot;
-- with the patch: 86 RSSI trigger events with bogus positive metrics,
-  no oops, upload ran to the end with 0 failed frames.
-
-Without the statistics reads the same upload produced no RSSI trigger
-event at all. I will send the fix for the overwritten event mailbox
-separately, once I have checked it on the device.
-
-I did not add Cc: stable, as I only know of the debugfs statistics as a
-way to get a positive metric here.
-
-Tool use (see Documentation/process/generated-content.rst): this patch,
-its changelog and this note were prepared with an LLM coding assistant
-(Claude Code). It found the cause from the oops registers and the
-driver source and wrote the change and the texts from my logs and
-instructions. I reviewed the change and ran the tests on the device.
----
- drivers/net/wireless/ti/wlcore/event.c | 4 ++++
- 1 file changed, 4 insertions(+)
-
-diff --git a/drivers/net/wireless/ti/wlcore/event.c b/drivers/net/wireless/ti/wlcore/event.c
-index 6c3a8ea9613e..eb5db3c5ec27 100644
---- a/drivers/net/wireless/ti/wlcore/event.c
-+++ b/drivers/net/wireless/ti/wlcore/event.c
-@@ -117,6 +117,10 @@ void wlcore_event_rssi_trigger(struct wl1271 *wl, s8 *metric_arr)
- 
- 	/* TODO: check actual multi-role support */
- 	wl12xx_for_each_wlvif_sta(wl, wlvif) {
-+		/* A P2P device has no netdev to report the event on */
-+		if (wlcore_is_p2p_mgmt(wlvif))
-+			continue;
-+
- 		if (metric <= wlvif->rssi_thold)
- 			event = NL80211_CQM_RSSI_THRESHOLD_EVENT_LOW;
- 		else
-
+ drivers/net/wireless/ti/wl18xx/acx.c     |  24 ---
+ drivers/net/wireless/ti/wl18xx/acx.h     |   5 -
+ drivers/net/wireless/ti/wl18xx/debugfs.c | 333 +------------------------------
+ drivers/net/wireless/ti/wl18xx/main.c    |   1 -
+ drivers/net/wireless/ti/wlcore/debugfs.c |  18 +-
+ 5 files changed, 14 insertions(+), 367 deletions(-)
 ---
 base-commit: 5dbf2415ca9821a611d09308e3b29d2c37e7cd77
-change-id: 20261111-upstream-wlcore-p2p-rssi-8a99e629703d
+change-id: 20261111-upstream-wl18xx-fw-stats-c70d96addfc9
 
 Best regards,
 --  
