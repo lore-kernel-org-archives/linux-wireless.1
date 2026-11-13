@@ -1,111 +1,99 @@
-Authentication-Results: smtp.subspace.kernel.org; arc=none smtp.remote-ip=205.220.180.131
-ARC-Seal: i=1; d=subspace.kernel.org; s=arc20261015; a=rsa-sha256; cv=none;
-	t=1794583392;
-	b=aiiKvP5Eonh8cFnzfqv1Beax/sqgQeA2ztizaRTbxaIz/o9H1IezRxdNjd62Pi2l4KRY
-	 Y9M/B76cDcOs7ixgAUq3ao2kK7OMkEM0NmiZTo63iAr/GF0Zc6UNhywivj08KhA3ON8Ba
-	 thUt8P/q5TrAUlgHMQpgtAkuYEsURQwar7y8Tn44aGmiMdzgNTTGItqKZ6ru+ODU3WhBj
-	 1DH8YQtQxxj3XewK22ezeZ7Lk6TQsJWpOdgb4Ge2rCiEbulZf2ZlqriObl80l+EmEe14s
-	 xmEmRR+k5zK5eHyV+Rv7dchWW8K6ytRU/so+34KWlKMandEAQDXnD4IZpk/qTOXGgDw==
-ARC-Message-Signature: i=1; d=subspace.kernel.org; s=arc20261015;
-	a=rsa-sha256; c=relaxed/relaxed; t=1794583392;
-	h=DMARC-Filter:Received:DKIM-Signature:Received:Received:
-	 DKIM-Signature:X-Google-DKIM-Signature:X-Gm-Message-State:X-Gm-Gg:
-	 X-Received:X-Received:Received:Message-ID:Date:MIME-Version:
-	 User-Agent:Subject:To:Cc:References:Content-Language:From:In-Reply-To:
-	 Content-Type:Content-Transfer-Encoding:X-Proofpoint-Spam-Info:
-	 X-Proofpoint-ORIG-GUID:X-Proofpoint-GUID:
-	 X-Proofpoint-Spam-Details-Enc:X-Authority-Analysis:
-	 X-Proofpoint-Virus-Version:X-Proofpoint-Spam-Details;
-	bh=xrOmOi5IMTP1OBLd53RlrSVTXsL0uWCx99VscQ2eiUg=;
-	b=rSVEkBqDxADsCP4Ag/e6hbXUfHGNh15QLI3xw2ttZjHaWUdbwm0kjL5Q/6+I/by2TWmj
-	 y6FXeq1wS9YmMoencMv9cVzoW8hQv8zTa0x1TWP8D7YLPO1g2Fj9oewIwqsZc+3ANGgMq
-	 Mrk2RBBRlUQgqSPPqv8PKQmI58iPAMBqGKE8YvbWAfPeY4tjW9491czGj8f57qWJ37BXP
-	 OHLy78YSDEYBqDMYF//9X7lB+VAOKQtLlaYnrSLKumYqZxWewPFEO7mlOr9Sr4+TE9Vi1
-	 TRsdpuMvPmUOBREyfxJzT2U4iM93XruCgIDwXdBpo1bLwhm7qG9TPHMwmcSgmDRssWw==
-ARC-Authentication-Results: i=1; smtp.subspace.kernel.org; 
-	dmarc=pass header.from=oss.qualcomm.com;
-	spf=pass smtp.mailfrom=oss.qualcomm.com;
-	dkim=pass header.d=qualcomm.com header.i=@qualcomm.com header.a=rsa-sha256 header.s=qcppdkim1 header.b=a5ouvxL2;
-	dkim=pass header.d=oss.qualcomm.com header.i=@oss.qualcomm.com header.a=rsa-sha256 header.s=google header.b="N/5WZFpi";
-	arc=none smtp.remote-ip=205.220.180.131
-Received: from mx0b-0031df01.pphosted.com (mx0b-0031df01.pphosted.com [205.220.180.131])
-	(using TLSv1.3 with cipher TLS_AES_256_GCM_SHA384 (256/256 bits)
+Authentication-Results: smtp.subspace.kernel.org; arc=pass header.oldest-pass=0 smtp.remote-ip=209.85.218.46
+ARC-Seal: i=2; d=subspace.kernel.org; s=arc20261015; a=rsa-sha256; cv=pass;
+	t=1794584086;
+	b=f1s5P8HrMpkXhf/f0vwenmKNkhUppcPAI6IYqv2kv8WlaYIiMxxgsg7dTJSULBK67LDF
+	 x2IUzE18nE+nJRb+j/75dsTILoPciC06cFRBPexIYonYz5IL9eoAfuKEaue/OtjD5Lq/N
+	 TxkvoTg18MfcKU78GpWgAfUImvGDVnoY3ls5e0WTJ/veql0Ezl5Jly25rqDp55R3S1QBg
+	 1OuwdJay3Um+2zBwCITElq9ZdL83qExu/GZQLX5aaD1D6B8xEBHkVxmlLqIUv+k/OQyJQ
+	 lxr04vDO9q5JrHJvV5aBwOiVJ9IhosMzDAMrgBV2VqhGTd3fcHXFJ6mknk5DYhG9n7A==
+ARC-Message-Signature: i=2; d=subspace.kernel.org; s=arc20261015;
+	a=rsa-sha256; c=relaxed/relaxed; t=1794584086;
+	h=DMARC-Filter:Received:DKIM-Signature:X-Google-DKIM-Signature:
+	 X-Gm-Message-State:X-Gm-Gg:X-Received:MIME-Version:References:
+	 In-Reply-To:From:Date:X-Gm-Features:Message-ID:Subject:To:Cc:
+	 Content-Type:Content-Transfer-Encoding;
+	bh=jwrlUJPKdABx5QTH0PQtOE2va6y3nW2738NJUmIJqwg=;
+	b=GwwGqDMys66Am2JeQywXJTBA+nc73QIzTudiHx/M1nc7eCvDzuU8K0TUNLrXmRUtoG8n
+	 ZVoxgJsYjhBAyjuoOJC9JPln4krRuhdg083nuDAxGPbqiYI0R9er7xc2Q8nOybtlydKBa
+	 /vluO4Ew+XfPa2ILbE2zzAbaOxBXQlZILIXxSVBtrtvKbXHBuEqJA6+i0mtgcjqz4GJOC
+	 QHZcpXK6RxMnpu06LCn1KcCNFyB/F/Yu/gcu8Wi61aOA3ypO6ddEsooXHnJlx8CGktS15
+	 2t2TaDX30jfwSczQ/a5T70IHRzlT0pg14gyWus0i5DVU6/3mrL+Q8yvPoC/LLmleRXQ==
+ARC-Authentication-Results: i=2; smtp.subspace.kernel.org; 
+	dmarc=none header.from=acio.nl;
+	spf=none smtp.mailfrom=acio.nl;
+	dkim=pass header.d=acio-nl.20260707.gappssmtp.com header.i=@acio-nl.20260707.gappssmtp.com header.a=rsa-sha256 header.s=20260707 header.b=lJehH9+a;
+	arc=pass header.oldest-pass=0 smtp.remote-ip=209.85.218.46
+Received: from mail-ej1-f46.google.com (mail-ej1-f46.google.com [209.85.218.46])
+	(using TLSv1.3 with cipher TLS_AES_128_GCM_SHA256 (128/128 bits)
 	 key-exchange X25519 server-signature ECDSA (prime256v1) server-digest SHA256)
 	(No client certificate requested)
-	by smtp.subspace.kernel.org (Postfix) with ESMTPS id 1BE64606A884
-	for <linux-wireless@vger.kernel.org>; Fri, 13 Nov 2026 15:23:11 +0000 (UTC)
-DMARC-Filter: OpenDMARC Filter v1.4.2 smtp.subspace.kernel.org 1BE64606A884
-Authentication-Results: smtp.subspace.kernel.org; dmarc=pass (p=none dis=none) header.from=oss.qualcomm.com
-Authentication-Results: smtp.subspace.kernel.org; spf=pass smtp.mailfrom=oss.qualcomm.com
+	by smtp.subspace.kernel.org (Postfix) with ESMTPS id 3D592606A32E
+	for <linux-wireless@vger.kernel.org>; Fri, 13 Nov 2026 15:34:44 +0000 (UTC)
+DMARC-Filter: OpenDMARC Filter v1.4.2 smtp.subspace.kernel.org 3D592606A32E
+Authentication-Results: smtp.subspace.kernel.org; dmarc=none (p=none dis=none) header.from=acio.nl
+Authentication-Results: smtp.subspace.kernel.org; spf=none smtp.mailfrom=acio.nl
 Authentication-Results: smtp.subspace.kernel.org;
-	dkim=pass (2048-bit key) header.d=qualcomm.com header.i=@qualcomm.com header.a=rsa-sha256 header.s=qcppdkim1 header.b=a5ouvxL2;
-	dkim=pass (2048-bit key) header.d=oss.qualcomm.com header.i=@oss.qualcomm.com header.a=rsa-sha256 header.s=google header.b=N/5WZFpi
-Received: from pps.filterd (m0279868.ppops.net [127.0.0.1])
-	by mx0a-0031df01.pphosted.com (8.18.1.11/8.18.1.11) with ESMTP id 6ADCJcWX242548
-	for <linux-wireless@vger.kernel.org>; Fri, 13 Nov 2026 15:23:11 GMT
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=qualcomm.com; h=
-	cc:content-transfer-encoding:content-type:date:from:in-reply-to
-	:message-id:mime-version:references:subject:to; s=qcppdkim1; bh=
-	xrOmOi5IMTP1OBLd53RlrSVTXsL0uWCx99VscQ2eiUg=; b=a5ouvxL2csSRdfoy
-	rTSg13+0wZMPovl9NDZ5sUIk1y7/Mvnc2pFGRIstPl3xE8jk61cUsuFPWXPG1oma
-	OA7ok6uz36moAF5Y5gmxDDUPb+htJz3MuZRtkvaaThqEKpG2Mkj4Kbaf1cD6Cch5
-	Sm0RVW9MMkgKit1PWN0W7FVQ5tnkW373Ds2pRM0ckdn68JUfTwWazkXktx9fzYJY
-	4gfD+6bc0HnIoYAEPpz4qoT3tGmWzv/OnaKNMN2uYjoiTn3lSOD0eOOfmQhyPcAS
-	7vp+coSjqPosIvC7HaB+PH9b5Ke9NLm3LjvOxWvJMSlLtxMJK06RyJXdrVr/F6Z6
-	cm9Xng==
-Received: from mail-pl1-f198.google.com (mail-pl1-f198.google.com [209.85.214.198])
-	by mx0a-0031df01.pphosted.com (PPS) with ESMTPS id 4hwv37j3t5-1
-	(version=TLSv1.3 cipher=TLS_AES_128_GCM_SHA256 bits=128 verify=NOT)
-	for <linux-wireless@vger.kernel.org>; Fri, 13 Nov 2026 15:23:10 +0000 (GMT)
-Received: by mail-pl1-f198.google.com with SMTP id d9443c01a7336-2ea71803effso10210755ad.3
-        for <linux-wireless@vger.kernel.org>; Fri, 13 Nov 2026 07:23:10 -0800 (PST)
+	dkim=pass (2048-bit key, unprotected) header.d=acio-nl.20260707.gappssmtp.com header.i=@acio-nl.20260707.gappssmtp.com header.a=rsa-sha256 header.s=20260707 header.b=lJehH9+a
+Received: by mail-ej1-f46.google.com with SMTP id a640c23a62f3a-c505b2e1cb9so206487766b.2
+        for <linux-wireless@vger.kernel.org>; Fri, 13 Nov 2026 07:34:44 -0800 (PST)
+ARC-Seal: i=1; a=rsa-sha256; t=1794584083; cv=none;
+        d=google.com; s=arc-20260327;
+        b=O1J1iFJbeYkhFznYS+mTkKbKu8EQihBMFfBx+KeE5l2E/Jg9dKDOR8FZlPWRFrxpRP
+         v9K+sD/2NKX8/xrbh+/WlsAMYvT9vMP6LVjgnesFCXxtKDfB1d+kh8OlMXtZoOJwHczT
+         0fRYe4KWhlgSjM25/JCu3WAhqLfMeULWmJGtEOD8UIRc6uJ9R2pRRv/IYYPjJafFGXLg
+         Rf4wIWUbKkwH0Z2c468mb4gdSWb1PIJYNDz0XCGX/ZdMTDHyUH22v5xo2LzViMWEo4w8
+         +NcgzcxvbVmQ9GXnczAnYxAKG2vD3qfKDj23qAmos8zLaaXAi4K03O4wkB+O2OdF4SAb
+         evWA==
+ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=google.com; s=arc-20260327;
+        h=content-transfer-encoding:cc:to:subject:message-id:date:from
+         :in-reply-to:references:mime-version:dkim-signature;
+        bh=jwrlUJPKdABx5QTH0PQtOE2va6y3nW2738NJUmIJqwg=;
+        fh=zFCB9yj6tbPtiNOgT9n/qK9LnQKfgtX1AWhCxXtoerY=;
+        b=fXvw8cz2SaRsHItfxqcvsvRzwYEHJSFszhynJPElm3WnE828PALM5rUepqsj8JDggU
+         K7ZTxMp7w2x7OSKDb47bRSBeQ7ZM7tiUHoASZEz0mnZhgxHmEStx0367Um1zbRrO2+Zf
+         P+wkPIATfK51Q8iyxu9clGAjWuR7s9EFRgTJlCxQCDTEIWbSr4MRCakMa0sxR1ME+uzC
+         d5hDJuZpDuS1PwrTH07n0SQu35CenYnBVLybjm2GfgOCqNqO3WovzsPaSm9ObWLdMaZN
+         Z0PZL6XzbNe2A1wsWFMhUEUtM8oLG+kbfxPkXbM5BqoIJ2MEAIHQOYsx0DA/63iR0sWQ
+         xYXg==;
+        darn=vger.kernel.org
+ARC-Authentication-Results: i=1; mx.google.com; arc=none
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=oss.qualcomm.com; s=google; t=1794583390; x=1795188190; darn=vger.kernel.org;
-        h=content-transfer-encoding:content-type:in-reply-to:from
-         :content-language:references:cc:to:subject:user-agent:mime-version
-         :date:message-id:from:to:cc:subject:date:message-id:reply-to
-         :content-type;
-        bh=xrOmOi5IMTP1OBLd53RlrSVTXsL0uWCx99VscQ2eiUg=;
-        b=N/5WZFpinMEB+SUxB807//dYKcXYPwnBjzXTwj3HoUZIqNdml/Sx3mVUtXLzqlgaIW
-         J/jXh7B+nrLrMc1lCYCJNK3CUyWEfdG1MSGhGFWrJ9OIwmATpfFtLQZqFA2oInKM8SAp
-         dtMXopMdzgu+x+OXHIWMl5Two1/kRnJSIJVJYCtC1CFxb0AxzVR5qlhUSVG2DnfGXeTO
-         NmoEd8EUQo+fWt/eDyO1tbS0wHN1qgdVjJCLMfaPUu4XybtMEUcLltf1g5yuXWDE99sb
-         MHCM/g1mBLIVm6iiigL0aq8/p9fDnetSn5wwBG5GCYylTF8A8bazg741LtOC0lZBmnSK
-         XRLA==
+        d=acio-nl.20260707.gappssmtp.com; s=20260707; t=1794584083; x=1795188883; darn=vger.kernel.org;
+        h=content-transfer-encoding:content-type:cc:to:subject:message-id
+         :date:from:in-reply-to:references:mime-version:from:to:cc:subject
+         :date:message-id:reply-to:content-type;
+        bh=jwrlUJPKdABx5QTH0PQtOE2va6y3nW2738NJUmIJqwg=;
+        b=lJehH9+aYjooq1lKqyPQ0etA2/AfKyiU9u6DFC5p4NGTVn2rJ8fWWtHvMotDs/d7Lr
+         O78ojSqsr+o68m6JHGkLM0ihami5nxIJb5hj9GT4dd7K9ZKe3AklgkSUS5hpH+r1aBv1
+         tlf/5cN5BpRkNn8B5tw9jhk/Rk4UjY51yTe1zl49CmKjPrrpTSY4pMLRSTg2nXrwVEdv
+         /l4Bqtd3WGQT+B0IX/p1ujcS2sBH75dgOpyh3NS0AFUYu0tHGbqAgpK4VJqwpbpRMbEs
+         oH5+T+KcfnQTOBgso61ViygYSz2T3gJPWDX4WFdKmYMiL3bqBvfS1SndYuk0xd+oe+Bd
+         A5Lg==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=1e100.net; s=20260707; t=1794583390; x=1795188190;
-        h=content-transfer-encoding:content-type:in-reply-to:from
-         :content-language:references:cc:to:subject:user-agent:mime-version
-         :date:message-id:x-gm-gg:x-gm-message-state:from:to:cc:subject:date
-         :message-id:reply-to:content-type;
-        bh=xrOmOi5IMTP1OBLd53RlrSVTXsL0uWCx99VscQ2eiUg=;
-        b=xZ8jL6IsIMvNkHDegkUbg4xHPtY+mKuOWxMSLEFwFwyf59+wvnlP3FoOO7XbqbB19q
-         RcVVvpxSDQhY2h1dcBYjaVZxAnBi5RO8qoN8fpkgsSom7yhldmuhqm02rUd3F+ZREmBb
-         TvTSDQrxcgL2EYNikWzU/Rjkh2hz4hmc42nMl5+iW3cH1AAYETItoImm8q2013lupOTw
-         dz2sLQykO9sORyIKXIDuw3mWheIMBHhrPHKW+63T2+gI5TguQoc5Bh1eKcKLrUNhapDL
-         S5UMRAe9yrn0BLNHfMJLcBezRI8qlCfdnUiGdK6QrHk0mpJhXYiABzKn/5V+gZvAyPbz
-         Q9mg==
-X-Gm-Message-State: APuU4Z/N84arDnqzf7TQJcrL9V4ReMwUw2Kj32meAaKap23PPRNeDETv
-	f+jGU7UrTwOpLp4NV8jQHkaV2zJcbzkhr3LM0VshhDPokGXtbU29XpCcRpg0zsjz40CmgMsiQIE
-	gyRdktBOS+8hWRymRgO2b1VLRW7fDtcORVCQm5pgEmq85hQRNhrRO/NFPrpkQcoR9iNEu3HOuDN
-	Fj
-X-Gm-Gg: AYBFou0ow3kLPCyn2xntCp6cZw/y5VUrqUpR1P3NNbTz2+3TDaKHXozjY30GV57S+5Q
-	ueqss2xoqu334d6fNcmayK8S+T2zdr3yKbeDDUcaykjhYd+UCFL5L5Sx0PBqLLTukcWgdea2bmv
-	eIwUnWDLFilIDS8PgtFH1EZj1Pt1hE5Usrdtfm7vGDHbQVh2kllxdy5rLzdSQyU9oLLOYvVzdCI
-	rNdpSMiV8MYFMz+GhMmI63TH4oTQcFybhPR0yUEGvbWNqm+bFAEjucTvl13DuI31tKvr9pt9bNV
-	jyXG1UsXVK/HPCZ4vpUgHWuVzD2PZyCO/aPo66kPHbOATEl5xzZihUWbYCDl7gPg3d4TpuXnVC0
-	EjL2fVWFd9RCyMTrC9vLiNZv9AUHY0/ywTgIIXNrWjKRa/fYITrHaN1TKY+xFSC+xq9cu+fbcAg
-	Jx7X3suiD3Q+G/ark69roJuDVZealfFQ2un5in4Z0mMH8ToQ/xDi7/vyrDlGxVqUBqtA==
-X-Received: by 2002:a17:902:fd88:b0:2ed:21fb:e762 with SMTP id d9443c01a7336-2ee0dc933d2mr29590555ad.12.1794583389736;
-        Fri, 13 Nov 2026 07:23:09 -0800 (PST)
-X-Received: by 2002:a17:902:fd88:b0:2ed:21fb:e762 with SMTP id d9443c01a7336-2ee0dc933d2mr29590095ad.12.1794583389081;
-        Fri, 13 Nov 2026 07:23:09 -0800 (PST)
-Received: from [10.50.62.158] (blr-bdr-fw-01_GlobalNAT_AllZones-Outside.qualcomm.com. [103.229.18.19])
-        by smtp.gmail.com with ESMTPSA id d9443c01a7336-2ee0f8d70d3sm11869985ad.60.2026.11.13.07.23.06
-        (version=TLS1_3 cipher=TLS_AES_128_GCM_SHA256 bits=128/128);
-        Fri, 13 Nov 2026 07:23:08 -0800 (PST)
-Message-ID: <05d0e51a-7189-4095-8243-fdc1c424e37b@oss.qualcomm.com>
-Date: Fri, 13 Nov 2026 20:53:05 +0530
+        d=1e100.net; s=20260707; t=1794584083; x=1795188883;
+        h=content-transfer-encoding:content-type:cc:to:subject:message-id
+         :date:from:in-reply-to:references:mime-version:x-gm-gg
+         :x-gm-message-state:from:to:cc:subject:date:message-id:reply-to
+         :content-type;
+        bh=jwrlUJPKdABx5QTH0PQtOE2va6y3nW2738NJUmIJqwg=;
+        b=ljtaz3pqRL1tkpD3X5DrQabyzhsK0vvwsPEVJxLRl4/fNcHHQnLOmTbiqmxW1RiD1O
+         RQwGYkiHyUycGxpFTWUU7jjz2mFQ6GxogPywJ//nMFzihc977ZyDh6jk1U00uRcUWSPN
+         ojliv7moWgUq4PY4zq4o8F5G+046HTiONeE5dFgvEU8yU4dnasgGjvo1TvEaSt/TypLo
+         bQ/y/83lmMIHGGzNN++uTMqrIqQhtPPRqLy1076pYGGRrJzqmC7uBLnEKc5heLIp9JEc
+         IzHVDnp1NwrIx349L72dBtMb8qWC/u5s5KzB+0cF4a6R+VIe+9L/7V2KkriobqM1p1DF
+         e4WQ==
+X-Gm-Message-State: APuU4Z8f6ZDdcZ+J7OF+FkxhpAzBKmTWWUZpDWKiMr+nlJJCNGNrZOHT
+	YqW/P1LXq8qDUHjTnnh1nbd3vxhMIbLzo81EtC8DWv1Oc4IqKcj3kICENEHNJTQg7LRVvnFNVeO
+	HUzklBKECl73kRDgPqc7yN74X09cWAVyg5IcnLRUDwZOoSyvpNugpUWXA
+X-Gm-Gg: AYBFou3BKlHQhKSd1r46G/303D1Zw8n56bLbiOS76piJjZj94SHMayGLk097qkv3+OR
+	LtyqGx2UPNVZ4WsrHRQKI48sCVN8VEvDau/Ef6Yp95KnlHruLYEPZmBcKGuu/xrHKM3cvxbxvXh
+	JU37XAI9kFxPFWi4iN4P2r1rdOOjhMu+If1pxof20njuxjh+rCzoOe+J+cfFyfnyGkR50SbIUXN
+	f9sUrVHkseGDUqcASaHbdw+nC0WbKwSoa+Ha0hPY6bBJbbi9AuV4wJktVcu31u+MkxPC2yLpqfF
+	53cVS+snoVvouSKaSeiKHM+EZWdCMTGZgzcbC8MyDL3uqF9/PK0+YzJ4GS6f1tGsLZxTH/hRm/R
+	MmpxvBAbhSyvOEGnADU7nV3e+udLkSKs+q80UwnO9hzT+7dRpL0egTdyS+qkr7AwZZZv4f8Q=
+X-Received: by 2002:a17:907:72cf:b0:c41:e75e:5889 with SMTP id
+ a640c23a62f3a-c5096398b58mr251813566b.33.1794584083139; Fri, 13 Nov 2026
+ 07:34:43 -0800 (PST)
 X-Mailing-List: linux-wireless@vger.kernel.org
 List-Id: <linux-wireless.vger.kernel.org>
 List-Post: <mailto:linux-wireless@vger.kernel.org>
@@ -115,76 +103,121 @@ List-Unsubscribe: <mailto:linux-wireless+unsubscribe@vger.kernel.org>
 List-Owner: <mailto:linux-wireless+owner@vger.kernel.org>
 Precedence: list
 MIME-Version: 1.0
-User-Agent: Mozilla Thunderbird
-Subject: Re: [PATCH wireless-next v4 01/21] wifi: nl80211: define Seamless
- Mobility Domain (SMD) device capability
-To: Johannes Berg <johannes@sipsolutions.net>
-Cc: linux-wireless@vger.kernel.org, linux-kernel@vger.kernel.org
-References: <20261106-smd-v4-0-62e39487f51a@oss.qualcomm.com>
- <20261106-smd-v4-1-62e39487f51a@oss.qualcomm.com>
- <7638714d73cda9a2538952f577be1a236ddee55f.camel@sipsolutions.net>
- <24917e113f203e6f6606dc5adefeefc4ebc27d9c.camel@sipsolutions.net>
-Content-Language: en-US
-From: Pooventhiran G <pooventhiran.g@oss.qualcomm.com>
-In-Reply-To: <24917e113f203e6f6606dc5adefeefc4ebc27d9c.camel@sipsolutions.net>
-Content-Type: text/plain; charset=UTF-8
-Content-Transfer-Encoding: 7bit
-X-Proofpoint-Spam-Info: AW1haW4tMjYxMTEzMDA2MSBTYWx0ZWRfX0nad9MTivb8M
- 6wGTLG5OlxQVtA3xcX3BmODwcvbMf8bFobcKg86UnBnpohvxgpVgoEdVRKGbsZZMqW5oSBuaK8a
- D2bIoqWamxD+6sPs2XYUWmWDPpdxYtw=
-X-Proofpoint-ORIG-GUID: KDUtXTHhodLcY_XV2__qzFaRbniVGgxJ
-X-Proofpoint-GUID: KDUtXTHhodLcY_XV2__qzFaRbniVGgxJ
-X-Proofpoint-Spam-Details-Enc: AW1haW4tMjYxMTEzMDA2MSBTYWx0ZWRfXzUl3IxHlhprr
- djNgAkRKCaMiQ7v0lneshkG539TQuvNq6Dqid4NikTEgpYxE28RXhQwmJue+vnuOuzqIl96l42m
- fdl8geZKPOeWZS3Y1DdpGH94nO1kF+NGmnYh16YisZ6/K0ysA7wU5+oqC2y3Gnv92iIy64lF8Y/
- c81p/IpnK3HxwFyMJ+lVNEcyrXfkbjuLirGUDR2sIXhKEFzCr9IlJh7kT7RiK3jhvr01MzLGQd+
- /yaUS0Bcl14Agz6kLfHIBY0LL//Cc4W9JETE02SXpm2EDuWZnQ3NsJi0l0tK7MSR9bCYB7WIDt8
- CdetIqMTvJclnCzVYH6Jwbw3fgLJfXTgiw47WLwIZ33hfu1yqp/0gXbfbkMQvCie74LEJz2uaXQ
- 2PRkE2xbWoepT+ATLNmwCt0h8nHSni8289O9tSSd3nA/7U0t7XBPCem8QzMdMkLno/q2OUzxvcC
- vgEYJpR0zcXIst+ZLZQ==
-X-Authority-Analysis: v=2.4 cv=ZeeIpcVA c=1 sm=1 tr=0 ts=6af72b5e cx=c_pps
- a=MTSHoo12Qbhz2p7MsH1ifg==:117 a=Ou0eQOY4+eZoSc0qltEV5Q==:17
- a=IkcTkHD0fZMA:10 a=zJRp6_cAMcgA:10 a=s4-Qcg_JpJYA:10
- a=VkNPw1HP01LnGYTKEx00:22 a=u7WPNUs3qKkmUXheDGA7:22 a=ZpdpYltYx_vBUK5n70dp:22
- a=C7ppcZlkJX4NIHrk3x4A:9 a=QEXdDO2ut3YA:10 a=GvdueXVYPmCkWapjIL-Q:22
-X-Proofpoint-Virus-Version: vendor=baseguard
- engine=ICAP:2.0.293,Aquarius:18.0.1176,Hydra:6.1.138,FMLib:17.12.100.49
- definitions=2026-11-13_04,2026-11-11_03,2025-10-01_01
-X-Proofpoint-Spam-Details: rule=outbound_notspam policy=outbound score=0
- lowpriorityscore=0 clxscore=1015 priorityscore=1501 malwarescore=0
- phishscore=0 impostorscore=0 bulkscore=0 suspectscore=0 adultscore=0
- spamscore=0 classifier=typeunknown authscore=0 authtc= authcc= route=outbound
- adjust=0 reason=mlx scancount=1 engine=8.22.0-2611040001
- definitions=main-2611130061
+References: <20261113080731.30155-1-spam@acio.nl> <4985719de8b5439e8484384ed52033e1@realtek.com>
+In-Reply-To: <4985719de8b5439e8484384ed52033e1@realtek.com>
+From: "V. S." <spam@acio.nl>
+Date: Fri, 13 Nov 2026 16:34:32 +0100
+X-Gm-Features: AclHuK_fJT4q2TJ56RTo_qXiWrIJ7wwaBWroGnBejNWlwJo_mMjtDDlCpc8LiFA
+Message-ID: <CAJKtVVYmwL3FOC473sQ4BMPjmhep-ERiu=YtmpOQ+24qXB-VMA@mail.gmail.com>
+Subject: Re: [PATCH rtw-next v3] wifi: rtw89: set RA init rate level when the
+ station RSSI is known
+To: Ping-Ke Shih <pkshih@realtek.com>
+Cc: "linux-wireless@vger.kernel.org" <linux-wireless@vger.kernel.org>
+Content-Type: text/plain; charset="UTF-8"
+Content-Transfer-Encoding: quoted-printable
 
+Ping-Ke Shih <pkshih@realtek.com> wrote:
+> Not only RSSI 0 but RSSI 1 can fall into this case, but I think it is har=
+mless.
 
+Agreed.
 
-On 11/10/2026 07:56 pm, Johannes Berg wrote:
-> On Tue, 2026-11-10 at 15:15 +0100, Johannes Berg wrote:
->>> + * @NL80211_ATTR_SMD_SUPPORT: Flag attribute to indicate SMD support. Used with
->>> + *	multiple commands to indicate appropriate SMD support (refer DOC).
->>
->> This (with the wiphy flag) is the wrong way to do this, we have extended
->> flags that don't need the double enum value and pass through to
->> userspace directly.
+> How about put into ra-> instead of rtwsta_link-> ?
+>
+> Please put it on bottom with a comment like below, because the struct rtw=
+89_ra_info
+> is a copy of H2C command (at initial version).
 
-I changed the EXT_FEATURE flag to WIPHY_FLAG based on the comments in v2 and
-NL80211_ATTR_MLO_SUPPORT implementation. I will change this back to
-EXT_FEATURE flag to indicate driver support.
+OK. One point before I send v4: rtw89_phy_ra_sta_update() starts with
+memset(ra, 0, sizeof(*ra)). The RA update calls it every 2 seconds, so
+the memset clears the flag before the RA update can read it. Thus, the
+RA update must keep the flag in a local variable before the call. This
+is my proposal for v4:
 
->>
->> But also, this does absolutely _nothing_, the only thing you do with it
->> is pass a completely ignored NL80211_ATTR_SMD_SUPPORT to START_AP ...
->> it's not even passed to the driver.
-> 
-> Actually it is, just ignored. I don't really see why we'd care at this
-> point though.
-> 
+--- a/drivers/net/wireless/realtek/rtw89/core.h
++++ b/drivers/net/wireless/realtek/rtw89/core.h
+@@ struct rtw89_ra_info {
+  u8 macid_msb:2;
+  u8 band:2; /* enum rtw89_band */
+  u8 is_new_dbgreg:1;
++ /* driver helpers */
++ bool rssi_unknown:1;
+ };
 
-NL80211_ATTR_SMD_SUPPORT passed to ieee80211_start_ap is parsed into link_conf
-and (will be) read by the driver in assign_vif_chanctx drv-op. ath12k
-implementation needs this indication to instantiate vifs and workflows in both
-the driver and firmware.
+--- a/drivers/net/wireless/realtek/rtw89/phy.c
++++ b/drivers/net/wireless/realtek/rtw89/phy.c
+@@ void rtw89_phy_ra_update_sta_link(struct rtw89_dev *rtwdev,
+  struct rtw89_ra_info *ra =3D &rtwsta_link->ra;
++ bool rssi_unknown =3D ra->rssi_unknown;
+  struct ieee80211_link_sta *link_sta;
+@@
+  rcu_read_unlock();
 
-> johannes
++ ra->init_rate_lv =3D rtw89_phy_ra_get_init_rate_lv(rtwsta_link);
++ if (rssi_unknown && ra->init_rate_lv)
++ ra->upd_all =3D 1;
++ else
++ ra->rssi_unknown =3D rssi_unknown;
+  if (changed & IEEE80211_RC_SUPP_RATES_CHANGED)
+  ra->upd_mask =3D 1;
+@@ void rtw89_phy_ra_assoc(struct rtw89_dev *rtwdev, struct
+rtw89_sta_link *rtwsta_link)
+  ra->init_rate_lv =3D rtw89_phy_ra_get_init_rate_lv(rtwsta_link);
++ ra->rssi_unknown =3D !ra->init_rate_lv;
+  ra->upd_all =3D 1;
 
+Another option is to keep the flag in struct rtw89_sta_link, as in v3.
+Then the memset does not clear it, and the RA update does not need the
+local variable. Which one do you prefer? I will test the change on
+RTL8912AU before I send v4.
+
+On Fri, Nov 13, 2026 at 9:24=E2=80=AFAM Ping-Ke Shih <pkshih@realtek.com> w=
+rote:
+>
+>
+> Vincent Schurink <spam@acio.nl> wrote:
+>
+> [...]
+>
+> > @@ -747,14 +765,8 @@ void rtw89_phy_ra_assoc(struct rtw89_dev *rtwdev, =
+struct rtw89_sta_link *rtwsta_
+> >
+> >         rcu_read_unlock();
+> >
+> > -       if (rssi > 40)
+> > -               ra->init_rate_lv =3D 1;
+> > -       else if (rssi > 20)
+> > -               ra->init_rate_lv =3D 2;
+> > -       else if (rssi > 1)
+> > -               ra->init_rate_lv =3D 3;
+> > -       else
+> > -               ra->init_rate_lv =3D 0;
+> > +       ra->init_rate_lv =3D rtw89_phy_ra_get_init_rate_lv(rtwsta_link)=
+;
+> > +       rtwsta_link->ra_rssi_unknown =3D !ra->init_rate_lv;
+>
+> Not only RSSI 0 but RSSI 1 can fall into this case, but I think it is har=
+mless.
+>
+> How about put into ra-> instead of rtwsta_link-> ?
+>
+> Please put it on bottom with a comment like below, because the struct rtw=
+89_ra_info
+> is a copy of H2C command (at initial version).
+>
+> @@ -5235,6 +5235,8 @@ struct rtw89_ra_info {
+>         u8 macid_msb:2;
+>         u8 band:2; /* enum rtw89_band */
+>         u8 is_new_dbgreg:1;
+> +       /* driver helpers */
+> +       bool rssi_unknown:1;
+>  };
+>
+>
+> >         ra->upd_all =3D 1;
+> >         rtw89_debug(rtwdev, RTW89_DBG_RA,
+> >                     "ra assoc: macid =3D %d, mode =3D %d, bw =3D %d, ns=
+s =3D %d, lv =3D %d",
+> > --
+> > 2.53.0
+>
