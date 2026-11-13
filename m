@@ -1,83 +1,83 @@
-Authentication-Results: smtp.subspace.kernel.org; arc=none smtp.remote-ip=209.85.221.51
+Authentication-Results: smtp.subspace.kernel.org; arc=none smtp.remote-ip=209.85.128.46
 ARC-Seal: i=1; d=subspace.kernel.org; s=arc20261015; a=rsa-sha256; cv=none;
-	t=1794607547;
-	b=pYBfJPdwxDY0V+sYEWNxW9xS41q+6OilLu7z9sUCJwp95hLESIj2crMwfYfDfFA68dVB
-	 KLkQrMVvf9Ft1vaZxUlXiqbVJBUq+UJ6ERvbSWvnpypA2JxSVuztUFAFted4pGB8zUcVg
-	 sRog7K8cpdi2RgXykFsfSnUCIOHlfpgsqCFYv98ppCEIpwuk9GpIFRo3fDZa7p42Qsb6M
-	 ukzPveQpcLfZ2bPX6N8ZpJM9Lu6XsKMrTy5GLO+rl9klNGZjJ255J+izDcfWL/chzo3tz
-	 9oa7G+VPEuhCzC0nX8wqQVE/pTT4emX1OB+aTR49uOqVAv3bD5mzsTHdQJ0Ng8E4GQQ==
+	t=1794607549;
+	b=tEQgQgIA9bWWDJUuzN8StGwwnvGe4TMxyQ9MMqeUCW2lPIXBW/Cw7vURSFaI5q0xi73C
+	 O77ooTntUBIKhKIVT0sh7EA/uKOQz7/Of+uxz6WBsae3spX/0A7cI4L1UDPjsg1KpahBK
+	 DV8Z6ggqzIc84SqyGbCcPpQxgnyw0dQ3OH06iG9mZ0us9yXjcDeAWdIrnNT40d0JhXtXU
+	 E9/Cnn1st7xtyzIqiL8hvQWBegJRym6/nDLQrwuvVgIpMWMm1XRkiCa1eNXvqWS/t6SDN
+	 jg40AsZ/ZBx+vYdOSnFhRKcnd5UQMHDvozkub1vsE9iGk4VNEK+SsUbdsFifQh2UeLA==
 ARC-Message-Signature: i=1; d=subspace.kernel.org; s=arc20261015;
-	a=rsa-sha256; c=relaxed/relaxed; t=1794607547;
+	a=rsa-sha256; c=relaxed/relaxed; t=1794607549;
 	h=DMARC-Filter:Received:DKIM-Signature:X-Google-DKIM-Signature:
 	 X-Forwarded-Encrypted:X-Gm-Message-State:X-Gm-Gg:X-Received:Received:
 	 From:To:Cc:Subject:Date:Message-ID:X-Mailer:In-Reply-To:References:
 	 MIME-Version:Content-Transfer-Encoding;
-	bh=6RowVT2Xo1NxyJ1M7Sp9VuAoN0rAdPrex9DVd67tr20=;
-	b=tMsddFSKYr/KvG0LXQrLwOy8QHaQKWomV1cBrGcd2puxr9V7Tv1LBDf7s21baPLFnWog
-	 hMWoraQbMZe6vmp8d3RFl05mxXeMB31QImvV1FJ/sd4Ku0qnTUCe+Gufx31lgUkwtMuW/
-	 nGEugIaShg9tk+mQuY8aflQ+Yz3lY8o5bs18EGvgR/dMwgv3J6/dz4mVyRbcUyXjCVyaJ
-	 Itbav4+JOYMARU0nYMafLs/Pyf1jS6zvXT4iFsMiE7rJL1nLgQW6mvYaFeuZyEmv2UmAV
-	 Eo1n4P70ibdJdsBqZ4dPVE+zvWlMMZVUQPd764ZBsUiG+Nvl4n4cpxCrKj3JHvxdMEw==
+	bh=UuCcRaWcfhI534qP5WKzVNn48w3a+JItDciIOEIM+EM=;
+	b=vh0VHaVoYTNtHQboFWTAlawNIZMMz2FVG+3rZXn9Nfib87+qTR20gie/mLE+B04qhpNS
+	 Gsa668X5vjPpwq88NnIbr1YEYyhW5psHMzx40Ib/klKv6MzvO+7PFRE9Cn90Wk0Lp98gE
+	 FtoyGzmF7AmVShSghCIXlScGuHc93SyHGV44IMl1Hb2dPPcgLsgBhH+ti3CFMR0dfdZiX
+	 TzxJt1bvlI/16TlT9ttF+9sUkzhEeAY0N19fnj+I4yttpmVewhXNac3MI+2LahopB+QDy
+	 KXvOUjQNSP9mYdi6iWAc6wyBD/71ykeUBMJiMlUb/qP5OWRWTD9FXTk8kZZmFbL0ZvA==
 ARC-Authentication-Results: i=1; smtp.subspace.kernel.org; 
 	dmarc=pass header.from=gmail.com;
 	spf=pass smtp.mailfrom=gmail.com;
-	dkim=pass header.d=gmail.com header.i=@gmail.com header.a=rsa-sha256 header.s=20260707 header.b="Ee/Xv4Ww";
-	arc=none smtp.remote-ip=209.85.221.51
-Received: from mail-wr1-f51.google.com (mail-wr1-f51.google.com [209.85.221.51])
+	dkim=pass header.d=gmail.com header.i=@gmail.com header.a=rsa-sha256 header.s=20260707 header.b=Q7fUvc7B;
+	arc=none smtp.remote-ip=209.85.128.46
+Received: from mail-wm1-f46.google.com (mail-wm1-f46.google.com [209.85.128.46])
 	(using TLSv1.3 with cipher TLS_AES_128_GCM_SHA256 (128/128 bits)
 	 key-exchange X25519 server-signature ECDSA (prime256v1) server-digest SHA256)
 	(No client certificate requested)
-	by smtp.subspace.kernel.org (Postfix) with ESMTPS id 66E39606A323
-	for <linux-wireless@vger.kernel.org>; Fri, 13 Nov 2026 22:05:47 +0000 (UTC)
-DMARC-Filter: OpenDMARC Filter v1.4.2 smtp.subspace.kernel.org 66E39606A323
+	by smtp.subspace.kernel.org (Postfix) with ESMTPS id 61E70606A33A
+	for <linux-wireless@vger.kernel.org>; Fri, 13 Nov 2026 22:05:49 +0000 (UTC)
+DMARC-Filter: OpenDMARC Filter v1.4.2 smtp.subspace.kernel.org 61E70606A33A
 Authentication-Results: smtp.subspace.kernel.org; dmarc=pass (p=none dis=none) header.from=gmail.com
 Authentication-Results: smtp.subspace.kernel.org; spf=pass smtp.mailfrom=gmail.com
 Authentication-Results: smtp.subspace.kernel.org;
-	dkim=pass (2048-bit key) header.d=gmail.com header.i=@gmail.com header.a=rsa-sha256 header.s=20260707 header.b=Ee/Xv4Ww
-Received: by mail-wr1-f51.google.com with SMTP id ffacd0b85a97d-48e09aa5264so687250f8f.2
-        for <linux-wireless@vger.kernel.org>; Fri, 13 Nov 2026 14:05:47 -0800 (PST)
+	dkim=pass (2048-bit key) header.d=gmail.com header.i=@gmail.com header.a=rsa-sha256 header.s=20260707 header.b=Q7fUvc7B
+Received: by mail-wm1-f46.google.com with SMTP id 5b1f17b1804b1-4afe2d546f9so22099585e9.3
+        for <linux-wireless@vger.kernel.org>; Fri, 13 Nov 2026 14:05:49 -0800 (PST)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=gmail.com; s=20260707; t=1794607546; x=1795212346; darn=vger.kernel.org;
+        d=gmail.com; s=20260707; t=1794607548; x=1795212348; darn=vger.kernel.org;
         h=content-transfer-encoding:mime-version:references:in-reply-to
          :message-id:date:subject:cc:to:from:from:to:cc:subject:date
          :message-id:reply-to:content-type;
-        bh=6RowVT2Xo1NxyJ1M7Sp9VuAoN0rAdPrex9DVd67tr20=;
-        b=Ee/Xv4WwOW2MVfLKhKdapsxwBE6D3haIpCxiQ0Eys9YO+HPqJqP8M20lfxyB+GjOt0
-         +S41TaaFeW0NWD1fu3lfpImHFCgVkvrJKv1w6mNk/tn8fAwosew8ngGZyK8gA2DTzucR
-         F9ccsLgNk7wWM6+K5K8WPADtv2mwtqthtUUCTTHAx6tAClz4SO+Iusd6D82qZxdr7BHu
-         hpBcM1iICi2AqS66vp+65rD7sZHgIu0ukRSjoa6TbRbLSx2f33zdfIb0FOdptntUzsDW
-         Zd8zUbiTIVsuQNGwmtIa/2L41QFKtuhnadTM8U/p+Zra7xSHc8zAogTHDbz8KdJVr9ln
-         4MjA==
+        bh=UuCcRaWcfhI534qP5WKzVNn48w3a+JItDciIOEIM+EM=;
+        b=Q7fUvc7B+KCjlLEbd7LBof097PJOOZomD59SknDaa6DwF/nygvds24aEOnwTzjBnuN
+         /MmbOZj2ihnF2jFoQJE4K1RNA2dcpUV2Szu0keHR1S0+hdypRBTdmnQdAVej53mX6MMd
+         A8hpcn+4MVafT7vGDBfTM/Xkrlhb+1XR1yFU2e5T0prRvogpF6aecWknnJD3yvzUn4Ex
+         IPu4HB9ZkQXsOh/DVyxOPMWtFUQYYOTdcPyDqsgWJumIFBPGkQuVj/jJSEjEajM7bw3V
+         gLtsDSuDXyON1GYnI0CNZoC0pS1vqVZ6USfp+/Zh9S09a5pEmgMxWcTEGmnwmoLNF3kF
+         Pz2Q==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=1e100.net; s=20260707; t=1794607546; x=1795212346;
+        d=1e100.net; s=20260707; t=1794607548; x=1795212348;
         h=content-transfer-encoding:mime-version:references:in-reply-to
          :message-id:date:subject:cc:to:from:x-gm-gg:x-gm-message-state:from
          :to:cc:subject:date:message-id:reply-to:content-type;
-        bh=6RowVT2Xo1NxyJ1M7Sp9VuAoN0rAdPrex9DVd67tr20=;
-        b=HqMvSZ5J9dTUQabp+W7J7K5rw9VzSdgy+IwfwsqJ75QUmEoYYrsoO+ZtEY1lSke8k8
-         K2JUz8dhF6HHCfxvJcLov8crDl4VkGvbK7MP6OkwDV/NMwANsEkOtoFWocJ8kVXSNlGU
-         i+BY8f5KJHneLLH8Cxn6H6rm0qj/nDTHjNq2Nq4EVYK9UnRCAHhXlKYqZfWfJk0YizjE
-         2GoBRRX+sdReTe/k9Zb1USQtOnYsfJZ8REz65DYKrdnMh1sudlk2YWdpMioLQdY5FNVv
-         6UHh9lnuGmlR4j1jGmUezd8BEF/TiuYc5z4V9htVQjdNI8nO+yG8MN6VSOZ73YiZ1KyV
-         Qkqg==
-X-Forwarded-Encrypted: i=1; AL+hErEOGjVPkregojEHYC3GbfPVIEiKVl9JHjpyUxYLdOO6C68+yOJyIEnlPNV3WFo4ipQszLYyK9Z3CKh4lFehUg==@vger.kernel.org
-X-Gm-Message-State: APuU4Z+z6uEE0O97NVd9O6h4tpUtkHa5LzeGE2ZqaTjtK48xtKO/Yf74
-	YUdKlGf4n75X0sEgXjjmGpAQCqGKWC+cWSMf2uGubehnB4eYDMKq495itxg4iYvL
-X-Gm-Gg: AYBFou3WRtRyTCCYmt8/hgJTsO0++2vc5a1A7PS32TwhSSTzqH97G85RiPwr4vQb5F/
-	L07hhkLfVtVtYY44hjVhG+SquDEB1aG1XmxjaL7zjE3HmHTP3sZBZA3DQcJ4mkdiTde97MZdY1O
-	hCOebDEe81sR20MOVp9Ec/6VVKyuzH3xwIgeQdJZdVEnKouZOnCTn1z6Iq+YANuiJFYNwU8UGpd
-	yUl/8VAFCpqBjCwzy6/TBCoEfPRAv49BwtCuu0x2tyzldG6puzdJZhPd5z12T7FXAeVXdAy7lqx
-	prPMNQ+3vuiI8oxJl1rbl30BOi6qUJkm4WVHVxQ8r5xVsY/h/2Kl4kr56MhyOH4gMY4YjCtqrSx
-	/Yz1DrG5o4zqQGP4Is9CV3My8GknWxTxJn9o1B5WkmT/6LFdu8MKU90ckj2yf3Lm7lh2uZ741Kx
-	SqWgnVU8nR2Am/j+tZavVFozYtzaj0nkorW/LGDIxn26Y9Tn6dzcehyv12geCd4TsWVUQGpX5Dj
-	Y6s3ydaJUpsozWN3p8tUMu7G6fCHqVulDd+HpdHLHVlSNSAZOqWPMwdoeZJVHUkQ9wgyQNubYnD
-	ze6FmLqYfoK7MeJ5hFCisdJZ0z0fGNFgPKg=
-X-Received: by 2002:a05:6000:2c04:b0:48e:d36:77 with SMTP id ffacd0b85a97d-49c6fc9db5bmr9022706f8f.4.1794607545676;
-        Fri, 13 Nov 2026 14:05:45 -0800 (PST)
+        bh=UuCcRaWcfhI534qP5WKzVNn48w3a+JItDciIOEIM+EM=;
+        b=MxIfNWI246hKIQbgQl8spoCaJ1ZfuCyVoO+DTSX+9GBDbo2E3JbY5d972HXB4tk3h+
+         K+tJB/fWyFEgdGR6Gx7XyzI6N1ObFgRT1/W3hmJxtbr1nSgedqi8tG9bR8fxDakXbUzC
+         99e7ckvK0Y8YKC2TWsHJ158At3RiRJiUdwDrNn3Tb0vzcMDI/Bj4K9Qdr3l1i9stP90Z
+         fXLzpDqNbQxmbiclJYKlNtXEoJ3kcQ4/oU3KawwNg0kFNB0eY4bvR+wUfLzhLYE5umzc
+         3ARNsKi61ba0xk1FqvjdFQ1qxDs/A5KoHqEU5rD/0cg+l6iFZqlagOFkYkytPcPlbr/I
+         iwkA==
+X-Forwarded-Encrypted: i=1; AL+hErGpwztucsqBHFm5P4KwF9MEZD9WxSPplktXmzNcz10HdExGY5T5c7cVwXkKYg/BocR1dIAfYsXYO7nEsIpfzQ==@vger.kernel.org
+X-Gm-Message-State: APuU4Z+EOZnbHEv5o8KcHfMauHFnraM0dNDZSWRiczMZCZXUs7Hbr+ac
+	dsF8hMbRV2kHvjeiSJmJHUsn3ynBl9/NOZDIX3D90htVLuOlMn15HFq4
+X-Gm-Gg: AYBFou2TgdttIunjfriLIzgZ4gQwSHRD1wmRvCqbJEZ/ie08UvIFRoJy0+ni5U5JsMU
+	Io8DXpzJkpzaHILCdJvZ1LPwkps9f3JWd71/du+1/kwM5SOvUVqpOr3b4+cooDPbYJC0XbAO2d/
+	M5WFrT3hk0w1ZCL5Lnsc+2joGwmP7sVL5nIWhuCprN4sBhcOVKSBnl/7hBwdRzVt3JXHD9ewazz
+	FSCnv4OlIm1ChSjDCS13J/7dWOD6UID53L9pykf4i9USFPf7gAGnRHvqSPECw0DtvAq7MRvjt0g
+	ZxkijGt26J9NfbJEPTQougqvUnLpbkY3lnnwv2chp1ZqW1owBGh7TEUzs9OOoi3tOc/SiVnB89g
+	st8fkpPJJrr9RJxXrwZgLOa6wf4olvT0W+JYlb4Z18244B55t78b9m38wPIEu+diMrrH0m1UHeQ
+	sFv31KvOX/b5wQFWXKsn64kdBfLWsq6+fFUXfYVQV65VLPvhjIMjI3bVFLxdegOSGf56rq/6Xjm
+	XjptgXRFuRBtoTy5dnF34McN+MSkISUyjuvVlfzWFm8+09cIsJB0zTrEym4H/YI/RPSEVRhw/vT
+	D3iBdTXC3BFWwINVqII8SFI/qgl/xRGhdSwM
+X-Received: by 2002:a05:600c:470a:b0:4a0:b6:4619 with SMTP id 5b1f17b1804b1-4bb5599b358mr83112735e9.0.1794607547553;
+        Fri, 13 Nov 2026 14:05:47 -0800 (PST)
 Received: from deb05.proceq.com ([213.160.61.66])
-        by smtp.gmail.com with ESMTPSA id ffacd0b85a97d-49c5fe373casm7238049f8f.30.2026.11.13.14.05.43
+        by smtp.gmail.com with ESMTPSA id 5b1f17b1804b1-4bb55a0ffcdsm87834915e9.0.2026.11.13.14.05.46
         (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
-        Fri, 13 Nov 2026 14:05:44 -0800 (PST)
+        Fri, 13 Nov 2026 14:05:47 -0800 (PST)
 From: Mehmet Fide <mehmet.fide@gmail.com>
 To: Luka Gejak <luka.gejak@linux.dev>
 Cc: Ping-Ke Shih <pkshih@realtek.com>,
@@ -85,11 +85,11 @@ Cc: Ping-Ke Shih <pkshih@realtek.com>,
 	linux-wireless@vger.kernel.org,
 	linux-kernel@vger.kernel.org,
 	mehmet.fide@screeningeagle.com
-Subject: Re: [PATCH rtw-next v10 2/3] wifi: rtw88: support channel switch in AP mode
-Date: Fri, 13 Nov 2026 23:05:43 +0100
-Message-ID: <20261113220543.826489-1-mehmet.fide@gmail.com>
+Subject: Re: [PATCH rtw-next v10 3/3] wifi: rtw88: time the countdown downloads from the TBTT
+Date: Fri, 13 Nov 2026 23:05:46 +0100
+Message-ID: <20261113220546.826710-1-mehmet.fide@gmail.com>
 X-Mailer: git-send-email 2.56.0
-In-Reply-To: <F9A94BCB-D3DD-4ACB-AEA5-118611FCBE08@linux.dev>
+In-Reply-To: <1D396970-35B7-4B0B-82E9-24B523AD69C2@linux.dev>
 References: 
 X-Mailing-List: linux-wireless@vger.kernel.org
 List-Id: <linux-wireless.vger.kernel.org>
@@ -106,11 +106,25 @@ Hi Luka,
 
 Thanks for the review.
 
-> Maybe drop the op and say in the comment above that this path starts
-> the countdown? Or is it kept on purpose?
+> Could you check the beacon spacing in a capture with beacon_int=200? If
+> it stays at 100 TU, that is a separate bug. Would you be willing to send
+> a fix for that too?
 
-It is not kept on purpose. The BSS_CHANGED_BEACON path starts every
-countdown, so I will drop the op in v11 and say so in the comment.
+You are right. With beacon_int 200 and 50 in hostapd, the beacons of an
+RTL8822CE, RTL8822CU, RTL8822BU and RTL8821CU stay 102.4 ms apart on
+the air, while the beacon interval field in them says 200 and 50. The
+register reads 0x00640064 in every case. I will send a fix for it as a
+separate patch.
+
+> rtw88 sets BIT_DIS_TSF_UDT for AP and IBSS and has no reset_tsf op, so I
+> think this mostly catches a download that ran more than a beacon
+> interval late, not a TSF jump. Maybe say that in the comment?
+>
+> The start case computes the same next TBTT, so it could share this
+> branch:
+
+Yes to both. I will reword the comment and let the start case share
+the branch in v11.
 
 Best regards,
 Mehmet
