@@ -1,86 +1,65 @@
-Authentication-Results: smtp.subspace.kernel.org; arc=none smtp.remote-ip=211.75.126.72
+Authentication-Results: smtp.subspace.kernel.org; arc=none smtp.remote-ip=95.215.58.115
 ARC-Seal: i=1; d=subspace.kernel.org; s=arc20261015; a=rsa-sha256; cv=none;
-	t=1794552772;
-	b=UHd+iFU8mZRmLdQxcat9U2yLAEQxQnJPpgObgy8K81mi8frPY52D/5X+Ch0wnEggu45B
-	 RCRRFOMgiJDBjU6+Kuvvb0GGuBTJ9hNbG/pPwnJdtQYiXElR+fOy2UHwfjxfRXOS3Rggo
-	 ScQl5U/sxmTl7sMEYpifq4pjKzdYb/HA5XjY/7ADO4eIAKtczzLFJggHnxwzR9NBk1jrv
-	 TPsBioC4UCQhvqnMZbqrWapLp/e+PDVtB8MInHB9HGJNXOQKSqLbmFM7fGVCxbyuXCaB2
-	 Z5med8yCj8R4tcwbKDoGk2Gc2zK2FomieK8HmYb+XktkMfDv6uonI0A8xlxNwUBc0kA==
+	t=1794552886;
+	b=zAt1nLtgIoorhjotGwIN0OLUgOl4Oc3FTgTowtuRIzPH7teSYZNPp325ajT+JaFrdWkT
+	 e78O3/3GbMBZSK0EmVibzbj8kDUCIBn4d3jo5ClBuhAZoJF+yPn4bwQ41eB5QHk+sHaDL
+	 wI4JZxiuS6XESLPbveJLcFjcfO+tElbYAvrJzFsJ7mHE+8eZySr5Tl8Z9Xdk+bCT9Jto4
+	 8TSe8kZSJgoPuMNLAmghNBICYHUZz/Hfpths+ZzoB1kSvfAr16olEAYL0Z73/T6PxjO14
+	 asLZjTlHKSk5DxsO+d5U0/KWVgoUK6DWwoFStP9s2IrlfQvYO9uDmkjPp+RaBtLomWQ==
 ARC-Message-Signature: i=1; d=subspace.kernel.org; s=arc20261015;
-	a=rsa-sha256; c=relaxed/relaxed; t=1794552772;
-	h=DMARC-Filter:X-SpamFilter-By:DKIM-Signature:Received:Received:
-	 Received:Received:From:To:CC:Subject:Thread-Topic:Thread-Index:Date:
-	 Message-ID:References:In-Reply-To:Accept-Language:Content-Language:
-	 x-originating-ip:Content-Type:Content-Transfer-Encoding:MIME-Version;
-	bh=WQW+v9O1HGQ8o2pXDEOIzEzJj5a39LNknvT0vu9u25c=;
-	b=rxRFIl2qC6CzbW0eYlDsc87J0kmjxujB/s4LKqjprW7rdixWR6rGUuy1fAP6Vvpzosmc
-	 z7kiLU0pXPYy0r5n8OnvjYRDeGxcqN26G+JutJ56GAJGKgrJu8kKHIlK8lb/YSw4jnt9Z
-	 3qum0JbGju/vl1agiKFkss+D4q1rlYpCBhD3pPkO6NAdGiLUCpDh3p5/DYdKvcejQhT+t
-	 56zWZemWKwoPqCXbCtDS7a4OsOp+TAyZu0EdAderk5yie4po6ky1GU3oQ8pE1moywXGZ6
-	 UOBNz2+QUNFW99iYpgx0ELAYc/TvCnjASOURVKumBeXtcRlBvpkzZ/OxdKJ1fpkA61g==
+	a=rsa-sha256; c=relaxed/relaxed; t=1794552886;
+	h=DMARC-Filter:X-Envelope-To:DKIM-Signature:X-Envelope-To:Received:
+	 X-Mizu-Trace-ID:X-Migadu-Flow:Date:From:To:CC:Subject:In-Reply-To:
+	 References:Message-ID:MIME-Version:Content-Type:
+	 Content-Transfer-Encoding;
+	bh=R2fhwLvHTy1x0CH3Us+GlmFnqE7m+FoayPcluGQhNk4=;
+	b=odzreIgXYl5JqL4/ZJUMf6syP7xpGTiKctnnyd4bVkdczRWK09EfSVeoFLfK0sfDcApM
+	 gh3ZUfRnMWzN5UnsAyhDQj/iMaHv1EB/ue7+UOYfejWdxnmeMdd8k/XiV0iJTQjn8/oQj
+	 hh6eFnm8+ty9enAV58ppHmelltJMIlX8R+39Cn9JlgHjWt1jADNKE4BiaoAfCrtl6kh6I
+	 e710Cqj1Rk6i9dD8RvNd8a4UEQmq2FnDOBbJfBfFcve69exF5xK1lN7oYm06eDJwKgfFC
+	 bex+yWatRhWcwtQQerb8ZKwiYX1GY3rfIrAhDRMWhxa+4vcNzOna54Uu7qg4J6Lif5w==
 ARC-Authentication-Results: i=1; smtp.subspace.kernel.org; 
-	dmarc=pass header.from=realtek.com;
-	spf=pass smtp.mailfrom=realtek.com;
-	dkim=pass header.d=realtek.com header.i=@realtek.com header.a=rsa-sha256 header.s=dkim header.b=uiC+UYed;
-	arc=none smtp.remote-ip=211.75.126.72
-Received: from rtits2.realtek.com.tw (rtits2.realtek.com [211.75.126.72])
-	(using TLSv1.3 with cipher TLS_AES_256_GCM_SHA384 (256/256 bits)
+	dmarc=pass header.from=linux.dev;
+	spf=pass smtp.mailfrom=linux.dev;
+	dkim=pass header.d=linux.dev header.i=@linux.dev header.a=rsa-sha256 header.s=key1 header.b=d9VC2BA2;
+	arc=none smtp.remote-ip=95.215.58.115
+Received: from mta1.migadu.com (out-115.mta1.migadu.com [95.215.58.115])
+	(using TLSv1.3 with cipher TLS_AES_128_GCM_SHA256 (128/128 bits)
 	 key-exchange X25519 server-signature ECDSA (prime256v1) server-digest SHA256)
 	(No client certificate requested)
-	by smtp.subspace.kernel.org (Postfix) with ESMTPS id 0737C606A31C;
-	Fri, 13 Nov 2026 06:52:51 +0000 (UTC)
-DMARC-Filter: OpenDMARC Filter v1.4.2 smtp.subspace.kernel.org 0737C606A31C
-Authentication-Results: smtp.subspace.kernel.org; dmarc=pass (p=none dis=none) header.from=realtek.com
-Authentication-Results: smtp.subspace.kernel.org; spf=pass smtp.mailfrom=realtek.com
+	by smtp.subspace.kernel.org (Postfix) with ESMTPS id 638E5606A321
+	for <linux-wireless@vger.kernel.org>; Fri, 13 Nov 2026 06:54:45 +0000 (UTC)
+DMARC-Filter: OpenDMARC Filter v1.4.2 smtp.subspace.kernel.org 638E5606A321
+Authentication-Results: smtp.subspace.kernel.org; dmarc=pass (p=none dis=none) header.from=linux.dev
+Authentication-Results: smtp.subspace.kernel.org; spf=pass smtp.mailfrom=linux.dev
 Authentication-Results: smtp.subspace.kernel.org;
-	dkim=pass (2048-bit key, unprotected) header.d=realtek.com header.i=@realtek.com header.a=rsa-sha256 header.s=dkim header.b=uiC+UYed
-X-SpamFilter-By: ArmorX SpamTrap 5.80 with qID 6AD6qNC51539959, This message is accepted by code: ctloc85258
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=realtek.com; s=dkim;
-	t=1794552743; bh=WQW+v9O1HGQ8o2pXDEOIzEzJj5a39LNknvT0vu9u25c=;
-	h=From:To:CC:Subject:Date:Message-ID:References:In-Reply-To:
-	 Content-Type:Content-Transfer-Encoding:MIME-Version;
-	b=uiC+UYed3+UHZ9JAC9sQ8XWYu9kYOV1QioK9O68nW06t3TJrA1Pl+KwKBqCk51GNR
-	 NQqgtnLBww+ItVA4p1Cu6u9cbdcbtGo8S+XGmmP+vklr40CqANIk1W/rX7QlGUT1ML
-	 P6xB6CMXSHn/lVK8wC496qR8Nf0RUrmSiono+m8uC1oFQ/fxUN0z8YQKItPADZE7ns
-	 sMvhJK2vtdJ65k2q6BU77Z0/n+dA3W6xL39KspLMfoKIgAGELlCiZPoEYFJgAAacQ7
-	 FPiuA4LaadvN0+3/ta7L3Z2uTxdZtN/yKGv2OjwdlvDdmifLWlVn4PQhtXHgE5wez4
-	 bh9fsYUfT8Ywg==
-Received: from mail.realtek.com (rtkexhmbs02.realtek.com.tw[172.21.6.41])
-	by rtits2.realtek.com.tw (8.15.2/3.29/5.94) with ESMTPS id 6AD6qNC51539959
-	(version=TLSv1.2 cipher=ECDHE-RSA-AES256-GCM-SHA384 bits=256 verify=FAIL);
-	Fri, 13 Nov 2026 14:52:23 +0800
-Received: from RTKEXHMBS01.realtek.com.tw (172.21.6.40) by
- RTKEXHMBS02.realtek.com.tw (172.21.6.41) with Microsoft SMTP Server
- (version=TLS1_2, cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id
- 15.2.2562.56; Fri, 13 Nov 2026 14:52:24 +0800
-Received: from RTKEXHMBS03.realtek.com.tw (10.21.1.53) by
- RTKEXHMBS01.realtek.com.tw (172.21.6.40) with Microsoft SMTP Server
- (version=TLS1_2, cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id
- 15.2.2562.56; Fri, 13 Nov 2026 14:52:23 +0800
-Received: from RTKEXHMBS03.realtek.com.tw ([fe80::d2b4:cd25:1a3e:aca8]) by
- RTKEXHMBS03.realtek.com.tw ([fe80::d2b4:cd25:1a3e:aca8%9]) with mapi id
- 15.02.2562.056; Fri, 13 Nov 2026 14:52:23 +0800
-From: Zong-Zhe Yang <kevin_yang@realtek.com>
-To: Kalpesh Solanki <skalpesh942@gmail.com>, Ping-Ke Shih
-	<pkshih@realtek.com>, "luka.gejak@linux.dev" <luka.gejak@linux.dev>
-CC: "kvalo@kernel.org" <kvalo@kernel.org>, "linux-wireless@vger.kernel.org"
-	<linux-wireless@vger.kernel.org>, "linux-kernel@vger.kernel.org"
-	<linux-kernel@vger.kernel.org>, "stable@vger.kernel.org"
-	<stable@vger.kernel.org>
-Subject: RE: [PATCH v5 1/3] wifi: rtw88: clear RTW_FLAG_RESTARTING on stop and
- start failure
-Thread-Topic: [PATCH v5 1/3] wifi: rtw88: clear RTW_FLAG_RESTARTING on stop
- and start failure
-Thread-Index: AQHdcqo3L5nzYrwr1UGT1rk58sg+cbcrixbw
-Date: Fri, 13 Nov 2026 06:52:23 +0000
-Message-ID: <ee602061ce314b5a9741094b7b93836e@realtek.com>
-References: <20261112131401.236433-1-skalpesh942@gmail.com>
- <20261112131401.236433-2-skalpesh942@gmail.com>
-In-Reply-To: <20261112131401.236433-2-skalpesh942@gmail.com>
-Accept-Language: zh-TW, en-US
-Content-Language: zh-TW
-Content-Type: text/plain; charset="us-ascii"
-Content-Transfer-Encoding: quoted-printable
+	dkim=pass (1024-bit key, unprotected) header.d=linux.dev header.i=@linux.dev header.a=rsa-sha256 header.s=key1 header.b=d9VC2BA2
+X-Envelope-To: linux-wireless@vger.kernel.org
+DKIM-Signature: a=rsa-sha256; bh=OsS3qsQqkiRhs5vCMH87Zrs/o6a3Yg7xoB13t5bDoD4=;
+ c=simple/simple; d=linux.dev;
+ h=from:to:subject:date:message-id:mime-version:content-type; s=key1;
+ t=1794552883; v=1; x=1795157683;
+ b=d9VC2BA2Ksc1SYEexOYvI9NbFfuD/9nfwxBBhF+mNKQLkVqU2gSStA4WlHVhf7nFXBFWwzuQ
+ k8O0A56dcZDb5ubBDi3UcyHv21/DbmvNbaUQeZUNTUH+JRuPAXf4sMhzwxy7hGyqKV5Q4kdf7rD
+ KDsPmJq7QnuxL04lT2fjBqUw=
+X-Envelope-To: linux-wireless@vger.kernel.org
+Received: by smtp.migadu.com with ESMTPS id f6a10e7b9b8e81ff;
+	Fri, 13 Nov 2026 06:54:43 +0000
+X-Mizu-Trace-ID: f6a10e7b9b8e81ff
+X-Migadu-Flow: FLOW_OUT
+Date: Fri, 13 Nov 2026 07:54:40 +0100
+From: Luka Gejak <luka.gejak@linux.dev>
+To: linux-wireless@vger.kernel.org, Mehmet Fide <mehmet.fide@gmail.com>,
+ Ping-Ke Shih <pkshih@realtek.com>
+CC: Tzu-En Huang <tehuang@realtek.com>, Yan-Hsuan Chuang <yhchuang@realtek.com>,
+ Kalle Valo <kvalo@kernel.org>, Stanislaw Gruszka <sgruszka@redhat.com>,
+ Brian Norris <briannorris@chromium.org>, linux-kernel@vger.kernel.org,
+ mehmet.fide@screeningeagle.com
+Subject: =?US-ASCII?Q?Re=3A_=5BPATCH_rtw-next_1/3=5D_wifi=3A_rtw88=3A_free_the_re?=
+ =?US-ASCII?Q?served_pages_of_an_interface_on_firmware_recovery?=
+In-Reply-To: <20261111213239.569224-2-mehmet.fide@gmail.com>
+References: <20261111213239.569224-1-mehmet.fide@gmail.com> <20261111213239.569224-2-mehmet.fide@gmail.com>
+Message-ID: <7DDD0FC3-AD89-4819-8058-15DFDA7E5D6D@linux.dev>
 X-Mailing-List: linux-wireless@vger.kernel.org
 List-Id: <linux-wireless.vger.kernel.org>
 List-Post: <mailto:linux-wireless@vger.kernel.org>
@@ -90,64 +69,49 @@ List-Unsubscribe: <mailto:linux-wireless+unsubscribe@vger.kernel.org>
 List-Owner: <mailto:linux-wireless+owner@vger.kernel.org>
 Precedence: list
 MIME-Version: 1.0
+Content-Type: text/plain;
+ charset=utf-8
+Content-Transfer-Encoding: 8bit
 
-Kalpesh Solanki <skalpesh942@gmail.com> wrote:
->=20
-> When mac80211 stops or suspends the device without WoWLAN,
-> drv_reconfig_complete() is never invoked with
-> IEEE80211_RECONFIG_TYPE_RESTART. If firmware recovery was in flight
-> during this transition, RTW_FLAG_RESTARTING remains set permanently,
-> blocking all subsequent firmware recoveries until the module is reloaded.
->=20
+Hi Mehmet,
 
-In this case, I saw you clear RTW_FLAG_RESTARTING in rtw_ops_stop.
-However, the reconfig flow might not have even run at that moment.
+Thanks for sending these. One comment below.
 
-How about clearing RTW_FLAG_RESTARTING when driver gets
-IEEE80211_RECONFIG_TYPE_SUSPEND?
+On November 11, 2026 10:32:37 PM GMT+01:00, Mehmet Fide
+<mehmet.fide@gmail.com> wrote:
 
->=20
-> Similarly, if rtw_core_start() fails during drv_start() in a recovery
-> restart, local->started remains false. When mac80211 cleans up via
-> cfg80211_shutdown_all_interfaces(), drv_stop() returns early without
-> calling rtw_ops_stop(), leaving RTW_FLAG_RESTARTING set permanently on
-> hardware that failed to recover.
->=20
-> Clear RTW_FLAG_RESTARTING in rtw_ops_stop(), as well as in
-> rtw_ops_start() when rtw_core_start() returns an error, ensuring the
-> driver always exits the restarting state on error or teardown.
->=20
-> Fixes: 5c831644e1f4 ("rtw88: handle and recover when firmware crash")
-> Cc: stable@vger.kernel.org
-> Signed-off-by: Kalpesh Solanki <skalpesh942@gmail.com>
-> ---
->  drivers/net/wireless/realtek/rtw88/mac80211.c | 3 +++
->  1 file changed, 3 insertions(+)
->=20
-> diff --git a/drivers/net/wireless/realtek/rtw88/mac80211.c
-> b/drivers/net/wireless/realtek/rtw88/mac80211.c
-> index 5e40cf06a9e..ffd86f08185 100644
-> --- a/drivers/net/wireless/realtek/rtw88/mac80211.c
-> +++ b/drivers/net/wireless/realtek/rtw88/mac80211.c
-> @@ -57,6 +57,8 @@ static int rtw_ops_start(struct ieee80211_hw *hw)
->=20
->         mutex_lock(&rtwdev->mutex);
->         ret =3D rtw_core_start(rtwdev);
-> +       if (ret)
-> +               clear_bit(RTW_FLAG_RESTARTING, rtwdev->flags);
->         mutex_unlock(&rtwdev->mutex);
->=20
->         return ret;
-> @@ -67,6 +69,7 @@ static void rtw_ops_stop(struct ieee80211_hw *hw, bool
-> suspend)
->         struct rtw_dev *rtwdev =3D hw->priv;
->=20
->         mutex_lock(&rtwdev->mutex);
-> +       clear_bit(RTW_FLAG_RESTARTING, rtwdev->flags);
->         rtw_core_stop(rtwdev);
->         mutex_unlock(&rtwdev->mutex);
->  }
-> --
-> 2.53.0
->=20
+> diff --git a/drivers/net/wireless/realtek/rtw88/main.c b/drivers/net/wireless/realtek/rtw88/main.c
+> index f7708ad17b6f..adc54b063382 100644
+> --- a/drivers/net/wireless/realtek/rtw88/main.c
+> +++ b/drivers/net/wireless/realtek/rtw88/main.c
+> @@ -627,6 +627,7 @@ static void rtw_reset_vif_iter(void *data, u8 *mac, struct ieee80211_vif *vif)
+>       rtw_bf_disassoc(rtwdev, vif, NULL);
+>       rtw_vif_assoc_changed(rtwvif, NULL);
+>       rtw_txq_cleanup(rtwdev, vif->txq);
+> +     rtw_remove_rsvd_page(rtwdev, rtwvif);
 
+As far as I can see, update_beacon_work can still run after this reset
+and before ieee80211_reconfig() adds the interfaces again.
+rtw_core_stop() cancels it from rtw_enter_ips(), but rtw_ops_set_tim()
+can queue it again right after, for example when a frame for a dozing
+station gets buffered. ieee80211_restart_work() then flushes
+local->workqueue before it calls ieee80211_reconfig().
+
+So if I read it right, with an AP interface (ap_active stays set) the
+work now finds every per vif list empty and runs into this in
+__rtw_build_rsvd_page_from_vifs():
+
+        rsvd_pkt = list_first_entry_or_null(&rtwdev->rsvd_page_list,
+                                            struct rtw_rsvd_page, build_list);
+        if (!rsvd_pkt) {
+                WARN(1, "Should not have an empty reserved page\n");
+                return -EINVAL;
+        }
+
+Before this patch it built the page from the stale entries and did not
+warn. Maybe rtw_fw_update_beacon_work() could skip the download while
+RTW_FLAG_RESTARTING is set? The reconfig downloads the beacon again for
+BSS_CHANGED_BEACON anyway.
+
+Best regards,
+Luka Gejak
