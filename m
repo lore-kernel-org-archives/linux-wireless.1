@@ -1,100 +1,100 @@
 Authentication-Results: smtp.subspace.kernel.org; arc=pass header.oldest-pass=0 smtp.remote-ip=209.85.161.51
 ARC-Seal: i=2; d=subspace.kernel.org; s=arc20261015; a=rsa-sha256; cv=pass;
-	t=1794557572;
-	b=z6vy7G6APs6OLXqKKOaFKi/6EK0s8r35gqakoC2xgId2L1u8J6KliR1BA08D0Mx38Twp
-	 g/8pamOyFfs6FzcZqe3W/JujBwA0lcEdBvDlV9kjnV7gB6jvhi+CrSDLXiNhx8PatOZ0d
-	 tYbnxP7Y1OCNxhFG3s+Kx/itX1a/mlpn0xLx4m58ATaQ5qf/67IlSdGo/LwiWKpOYRPAS
-	 xEum61O45rdPmN7cflRGhIdUE0QVxqrEy/YfYXq6Z3LIFtK/Ge+m3sAYWZ++cGv9sW4jo
-	 duCznILHJ58hxWS97ON0CF1aYxbIyFA1/Oe5fYyc58Ewv7DQrCiLMO4l8CzgNPzpwDA==
+	t=1794557830;
+	b=fvSC1OnJNP0wT83HqeJ3zWTPqRQ/3+GXK39zYNQaap860fTR+MbwNWQaeG3oc4UxHcDQ
+	 y+s2x8xXNws7nnTbhcd8h9oTxC8pQ4nLxy53KQMLGSRYU5LT5zSZl5lgY0oN/ni0HuV6I
+	 mAgxQtiOGmfKzAmlhaFayzeB55DAmDayS/urjPsPN+BFtuY52Mv+ALeKoO7ff4D2cNQoZ
+	 f59RSi3SwRLsZDI4i+Jyx0Jm3EcqI+QWEXL4MODHTgKw3TQ6iBR6EAZAp/ZpFKF5+js8c
+	 iIETEZhU6bdIBh16WiTOz8mQdKzP7ZIrw3nlQhdGY999SmkOVQ39b5AGnZx2P0JQpsQ==
 ARC-Message-Signature: i=2; d=subspace.kernel.org; s=arc20261015;
-	a=rsa-sha256; c=relaxed/relaxed; t=1794557572;
+	a=rsa-sha256; c=relaxed/relaxed; t=1794557830;
 	h=DMARC-Filter:Received:DKIM-Signature:X-Google-DKIM-Signature:
 	 X-Forwarded-Encrypted:X-Gm-Message-State:X-Gm-Gg:X-Received:
 	 MIME-Version:References:In-Reply-To:From:Date:X-Gm-Features:
 	 Message-ID:Subject:To:Cc:Content-Type;
-	bh=opZlLJLOJr9mWZNC7pqH3rSXoldYSnCPWePhRUrrcbA=;
-	b=I2tt+VdhAKWhY7o5+3PzpBM/FDBkELOKwpS84CvMxABu8BOKdbs6Ppc0LNPnkj73Xtmo
-	 +21AknjbPQ+tEbHio2YfBYSiWN7R09IXT2a963ycbGjkplV59AGeTYkmVVbHj1ElSh7yJ
-	 t+Vo0B+0iXJOu0Wre3SMcNTwdfXFbvsEoJ2MRXLrBKhiCU3o5WiRS9/CuvlWTxVG5zH61
-	 n3Evr4JDYKBfX9ZQudRiOBDr5odDg1VN4duBlrjCum5xXFSIC0RdrpZqeNHlGE6IKImAq
-	 8BEiqE7A32ty0UrApScHBE/+ht1altZVpaXFcoyTp6+1223dQ9aOwnmJx08TKAAHBbw==
+	bh=Aa20yMC+qrPNN01+rXYcJyf/XAQhNrt1bJTIMLzFkc0=;
+	b=lINesLtTImZ4eFLyHAdql/AsQLnhKI7Dp78uLNHe8BNJkNDtM/Vd9WihjIN2q6tlJn+e
+	 suOrI36PodoLfz5AS1u6c6ZPej9KLq3L8+nH4H2PWSkYkzkFTYL/jPr7cMwpjG8do9nmf
+	 463HoEPrDrQy/t8Q14QlMU83mMeTG/w1zfYFsJ37/sIMyJrYmY3tw6P9jYb99YvaElGJh
+	 F0DpfWOeKaYE8pCh1zMKg4Wlo9fimDwDnYedCyUt/WAUigPCBEuTKfhWoisoqOiByaAbe
+	 9v9nzrubfLMams1OlyN3AR/mL+cX5ssqrgG1fj72gLb7A5Txc/Mm5DcSTod93g8v5Dg==
 ARC-Authentication-Results: i=2; smtp.subspace.kernel.org; 
 	dmarc=pass header.from=gmail.com;
 	spf=pass smtp.mailfrom=gmail.com;
-	dkim=pass header.d=gmail.com header.i=@gmail.com header.a=rsa-sha256 header.s=20260707 header.b=AXhSTd6n;
+	dkim=pass header.d=gmail.com header.i=@gmail.com header.a=rsa-sha256 header.s=20260707 header.b=ZviSqqXp;
 	arc=pass header.oldest-pass=0 smtp.remote-ip=209.85.161.51
 Received: from mail-oo1-f51.google.com (mail-oo1-f51.google.com [209.85.161.51])
 	(using TLSv1.3 with cipher TLS_AES_128_GCM_SHA256 (128/128 bits)
 	 key-exchange X25519 server-signature ECDSA (prime256v1) server-digest SHA256)
 	(No client certificate requested)
-	by smtp.subspace.kernel.org (Postfix) with ESMTPS id EBD6D606A335
-	for <linux-wireless@vger.kernel.org>; Fri, 13 Nov 2026 08:12:51 +0000 (UTC)
-DMARC-Filter: OpenDMARC Filter v1.4.2 smtp.subspace.kernel.org EBD6D606A335
+	by smtp.subspace.kernel.org (Postfix) with ESMTPS id 00CB2606A32E
+	for <linux-wireless@vger.kernel.org>; Fri, 13 Nov 2026 08:17:09 +0000 (UTC)
+DMARC-Filter: OpenDMARC Filter v1.4.2 smtp.subspace.kernel.org 00CB2606A32E
 Authentication-Results: smtp.subspace.kernel.org; dmarc=pass (p=none dis=none) header.from=gmail.com
 Authentication-Results: smtp.subspace.kernel.org; spf=pass smtp.mailfrom=gmail.com
 Authentication-Results: smtp.subspace.kernel.org;
-	dkim=pass (2048-bit key) header.d=gmail.com header.i=@gmail.com header.a=rsa-sha256 header.s=20260707 header.b=AXhSTd6n
-Received: by mail-oo1-f51.google.com with SMTP id 006d021491bc7-716d052dc23so223457eaf.1
-        for <linux-wireless@vger.kernel.org>; Fri, 13 Nov 2026 00:12:51 -0800 (PST)
-ARC-Seal: i=1; a=rsa-sha256; t=1794557571; cv=none;
+	dkim=pass (2048-bit key) header.d=gmail.com header.i=@gmail.com header.a=rsa-sha256 header.s=20260707 header.b=ZviSqqXp
+Received: by mail-oo1-f51.google.com with SMTP id 006d021491bc7-6dde81a6820so840551eaf.2
+        for <linux-wireless@vger.kernel.org>; Fri, 13 Nov 2026 00:17:09 -0800 (PST)
+ARC-Seal: i=1; a=rsa-sha256; t=1794557829; cv=none;
         d=google.com; s=arc-20260327;
-        b=Jww9j05fY4hsJrQMPpoUy3bY9jePllVSvpuGG9drZCoGxRlJFDZVy3w8D88SKB/s0K
-         SNy+NggO15HFNNFHf8J3E77KTlvghs40JVVUjaTIJTTWpcfc6dLwz9yMyE5wdWCl2eWy
-         JUCudjuy4NyJYPZbKavRlAzg4YBUw6byPLw3D7V3xnxSQ+s8PqNCWcU1H68IEKdCALb5
-         MZJPBkkpxQ6JZIYFR8jQIRcgfTIlcSLGunxW8DUicUI/k0UxCZjJIpfxF8rUakoI+PHM
-         2g7p2jLonXKYxowtahTcTfHUL6KBJFIauPkHZXiriFeMJkXhGkl3cDAY/CGo+eIxxy+l
-         lIAQ==
+        b=DqPT1hi3cOfn3wxXcuULw+2KAAc7ZLTMtGRIZPenlo81KCnU6PicMKr38jhh8y1Z1V
+         s/3kQ74cx56q1m0s/6WOKiivoMg2aNSrgeoq6FCbFjq3/sgBAN+v07OX3YkatVr3HIvn
+         /0sn2zrTYSo9P1bw6qE4Dqa179YVi2BEd9BYq7DPjZ/xUqG8m2w2molBukXVx1fy4QgE
+         TUdd1LZhoAs7ljxPOV0XVnscm2WR1oM78Z/msqOYBRckYDUwRevltJFAjyiruIpvNHiD
+         sCYh677ua4OnYvXDO3DNN5BHJnpi2gy8mPlXY1ai/a2aff3UONwqAWDRmHQMbEVWNpc6
+         i07A==
 ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=google.com; s=arc-20260327;
         h=cc:to:subject:message-id:date:from:in-reply-to:references
          :mime-version:dkim-signature;
-        bh=opZlLJLOJr9mWZNC7pqH3rSXoldYSnCPWePhRUrrcbA=;
-        fh=xyBSFavGEPg9VYzHdGusLchDVdKN5+b4NY+FjAarIew=;
-        b=AuC4rty8xYeFi9BAxaUnvDtygLg7OCY6jKgZSS92plSa9FdVQs5fdSj/Rpq+AJ3Ujg
-         IH8dOMEYrTQBu18XBYESKZj8ZwNoMWOp4lLxxkgruFyHSTIb4+UD5j8SRmTvQHnlpRWN
-         3HrU2g/ORDDYu5pLV7gxcR3kFeIoGiVPWTki2JD1w6ZS9hv6MmKk0t27blTQnjiCTCzs
-         exdnl33+dSP7+tpfCravl4Q3SvQIZl2OE6Rco+sbVotGoJeMtcex9SuhM2C4zTPgeDzw
-         eASCVBm/D1e+HTruseDm5kzsWh+3+wlD2ECEC/txrz7UvMWeGNRl5eJ3qVGecTOH1fhz
-         dEpQ==;
+        bh=Aa20yMC+qrPNN01+rXYcJyf/XAQhNrt1bJTIMLzFkc0=;
+        fh=sYFMpcnQxqs/o6IOJjkdRqWWaJi4Portnkw2Y8bt5cM=;
+        b=m+7fEVctxcw/dQLEsTLOJHr7CfeTbDj+xfPSWo1uZIUpfGselPOtFSVx5Zq/HsZtku
+         AxQnKqjGxfBnkQNTy6EYOwdv+W3lrcBw2ygRl5XMxSAnk7dZSBItB/XIf5EqAJAdHJSV
+         wPbYIn+7o6aRxuAHStgUWXD/WFXh3pkzBnjcbxmKHjkbnvDepD5rxiAKn2aK78mr2LvY
+         jEVedu6UP02INzjVrkiL+qGDx8laY0LnsQH8JdC1OthfDHymtMse9/w18CklTuZDXqmC
+         0ee6IXZHkPYnAi0x/MB09pLq5SfMP2U1AM9T+j+Z8PB1N42I2RARQz1pS7dtSMHLpcvy
+         DsHw==;
         darn=vger.kernel.org
 ARC-Authentication-Results: i=1; mx.google.com; arc=none
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=gmail.com; s=20260707; t=1794557571; x=1795162371; darn=vger.kernel.org;
+        d=gmail.com; s=20260707; t=1794557829; x=1795162629; darn=vger.kernel.org;
         h=content-type:cc:to:subject:message-id:date:from:in-reply-to
          :references:mime-version:from:to:cc:subject:date:message-id:reply-to
          :content-type;
-        bh=opZlLJLOJr9mWZNC7pqH3rSXoldYSnCPWePhRUrrcbA=;
-        b=AXhSTd6nftg6zWVJ9fo3q8eYZ4G3S4KS2l4zxMiB7uKk+5Y/IJ/q2IEe49wQoR3JkP
-         pz4jG+AUT6R5bR0sQue3zMfIVGVjRregCCDygUWZQTjLYmt33xkMhXvcKZW88FPZbu7a
-         1D5ciMNplSGl2ldSO37BNPgb4dnPqWf2WR3SyY9oyFrIXR7xK3Vd/mlxW8SxOQr5ZUGv
-         MV82OoXdrBCGAA+aVWsBctSwNbyjjP4r+yyC1lFlA680HzPltfkoi6x35taetsBlayFu
-         hpC5bynJtv9d4g6Gml6mxOEzgIAI6tH2Kz2Dy41PU3o7G1HTd6abZ6R372pmQ/1R2Ocl
-         raWw==
+        bh=Aa20yMC+qrPNN01+rXYcJyf/XAQhNrt1bJTIMLzFkc0=;
+        b=ZviSqqXprtJkTwGcqDLbuEP9A7MkKflFXZVq5ryC7K+MsY2qTlYfz2wczPzfmIevmg
+         Q6XxmuV9tFi30cN5q4ysSrTz4kc+oX100N0fqiyn4aoJ4rHGuI3j0+bNiv8nbC1hwNKe
+         IyB6Qm3XuXNwSqlXxf3oeReTKv9fLg+Ng0PfAqdLRdVuC2bjwTyW1JxvPSKrCaIwRMg0
+         xME+mjA7TdJPThdD+UAF4ikrVSr8+90GPNHYlKKN12k8ohALdVT67yXYrh/8W6Nx6E/h
+         mOMB7eNLk2cpjbOhenSAnYDGvny+rNyOmRy3HMeCCKUMPk4Fo9+0rM0OdnFtCXVVOKqA
+         5yVA==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=1e100.net; s=20260707; t=1794557571; x=1795162371;
+        d=1e100.net; s=20260707; t=1794557829; x=1795162629;
         h=content-type:cc:to:subject:message-id:date:from:in-reply-to
          :references:mime-version:x-gm-gg:x-gm-message-state:from:to:cc
          :subject:date:message-id:reply-to:content-type;
-        bh=opZlLJLOJr9mWZNC7pqH3rSXoldYSnCPWePhRUrrcbA=;
-        b=YpAnWw7cONNHtnpR15ZU+64iaqDR+Zqz7nZGMUN5x8MfigBfYH2C+TuKLIe9MfZVvi
-         btsvozqA2oB9PZqu8jInPtQrXlaCLoBaHDm95fIIKlsxWwoKaH+aUQcGAVUrhZWjus0k
-         xsemgJA34/yYPFwLHL5PzOkgpkJykGkd66dsGCCjwV56leC0Z9QoFRrQMSybzflbcqyF
-         ErXHBMN4kJuOkW74PDV7L0vtXxdUIsZclTlLjt4iloADv43kfP/RL05RApRi/+GINiPr
-         EAUIfZ5Hv4pwAyP362SLGg5BWrGdYGcoMgYEqoFeArE667PDbn1BBZO18gnwcEQVVASr
-         5j3w==
-X-Forwarded-Encrypted: i=1; AL+hErFiMPZ+pFAvS0CgA2iZya1VTRPAApuIUVoPKA1b7gTtBzcPkomPzQt7KyLIsewpBrA5Zrmiigfk734YQrLJCQ==@vger.kernel.org
-X-Gm-Message-State: APuU4Z8MjcKc+ZXUjGXTom6BXeQen2Bg3u6Tdbh0oL6vHPJyBQF1ij/w
-	+5FhBsApqWhwCf9z195YvdihDEfw78czgakF7GM8UPVwPQPavFSpODd1df1mm1VMmNUEri7orY3
-	1bKvRaeuNrh5hkzuEOEf14olPLKEB8Loi1ngkd1ZEAA==
-X-Gm-Gg: AYBFou1Wqshd6YSGL/F4aRiUI0MFIgPD9L0lsG9mnB9D9ucJJoTq8Sy/JclRu9TM20P
-	XVwTu7o6770zzpo6g2BEUoKPNgY7jb/o7IgeyuslxopwkRlwrli2uv++qO9CFfpwXX38dgqHU5z
-	BgvbCoTGtL4dShOtWGo4Y6g/jkUBFINCLbjo/RfQGhf1Fdil2EspMngpL095zKUnBUdqeEGYTna
-	Jumm/aenBBDurgYK2jUjM0o4cTsNC3Of0R4PHnq59m9O3zlSHjjQx1Kl3DIz2Mhkdrj9vcfpHMi
-	ZLdV8DjcMQxAu2JgBr98P26Ud79njC7fjYJU0eL7xPDK5EUKA4YvLNOyNtiyo4trorrSnYbkK09
-	Pl9NRKEotIKHu02ua8vwVL7ZzvI7aYK5NS5FmHBM4kfyDzK8MwNfpb14NnvWrtI2SDeGA2kWAC0
-	fTLUEf0ekMR0LdXg5TwzWfelaUrXHqrVvmH6umFBFKzx0N5baV4Gdu+w==
-X-Received: by 2002:a05:6820:1626:b0:70b:af3d:2b2b with SMTP id
- 006d021491bc7-71ab520b2ffmr975571eaf.67.1794557570842; Fri, 13 Nov 2026
- 00:12:50 -0800 (PST)
+        bh=Aa20yMC+qrPNN01+rXYcJyf/XAQhNrt1bJTIMLzFkc0=;
+        b=bpukfHtaprf6P2nzIlQOteYbXt4xoAqbIjXkdUrnnVCzo7UsFTBDTcTiYn4Uh9InJ/
+         /zewIVQazXdMPNGDCcWtJzUJ0YWr8h2Z+9h2SM5oca2/XgqJz1+LE/7xFAkIxmOtUroL
+         b4zZmzIT8gdOk0cdlCtm3qN5OAdVgY8tyXrOPMmn/gYuWT6CWy64MDxQ/q1YYfz0h4nf
+         +h6dT92Eh/b1yOSTSXwCqI3ziB5teRWPwartBplJW7HrHzmiX7K/T8fzWnb1csSKPG2j
+         GORAce8JrZYn757uPTZBwShgWFWKvei8zza4/9wv3wL2ZsnUzxbm5iVB1+qPY0Y93SE2
+         bpjQ==
+X-Forwarded-Encrypted: i=1; AL+hErHJgf9dHiJb4WHJnnU0GG3WRyuytmCU3RlOi7U8jZvN6BT4mCsKMtd5gX90GsLC+xSmSSEr6uU1aPT4eGraAg==@vger.kernel.org
+X-Gm-Message-State: APuU4Z+cLxnFLp1UoQchXqxwWYIwMjEJJUVBrgDR6Vy9V0ftzM4lbtkR
+	j5MG6uNoc0j233W6NEkh1nvxoT0pYbWaSWh3H74u7u26JQU3HhE6K5Z9lg5FFBe1kAFFL9F3Dto
+	EQyj8hejKkSmn4gQNQkWIlJcET3imQL4=
+X-Gm-Gg: AYBFou1CaD/jyffZr9TF4ijoJLopKLYU32/odEgrDX3QVrXbMQlsPplx/r8MRr4ZSWy
+	+16/xE/z2lJzsEcKPBsnV9yMW6FdAD5XSt4gdFT2TsUnyS9yEeltqui6yiWgotUu8W90P/xyS5+
+	4QYxN+BmncIFaus8Qkm5jq8tg9cF+JI0t3hXMm8zlmS0OrNmYFgexvsFRdePN4l3GqsVyJlzdt1
+	L7dKT1jNW2U+HbMiQ7bsG/X3cKHqI6eRc7tBFgaLH6OId+mtxhP0kUacr+bzm3RQKehXouXT45j
+	NOlau2Dis3iyWUBVDe9aXRVGtykdj2TgsmzySN8B/QhAZahBMztFWRRVGnxlVuXaoJv0qUzmuuk
+	fcMq/GV7RKOozn0257FffhHZaFKU7OaUs7wRPZUdPAsp9/LJTQkEtNGSFtKsXnU7RkHw91Dyxhm
+	m78gSu36tz1WEBn+Dhu9DUa3UuMMGXimb+tyrH1Hzxr3ervN4kwXk4
+X-Received: by 2002:a05:6820:a088:b0:716:cd2c:e47b with SMTP id
+ 006d021491bc7-71ab5158f87mr921510eaf.87.1794557828952; Fri, 13 Nov 2026
+ 00:17:08 -0800 (PST)
 X-Mailing-List: linux-wireless@vger.kernel.org
 List-Id: <linux-wireless.vger.kernel.org>
 List-Post: <mailto:linux-wireless@vger.kernel.org>
@@ -104,129 +104,49 @@ List-Unsubscribe: <mailto:linux-wireless+unsubscribe@vger.kernel.org>
 List-Owner: <mailto:linux-wireless+owner@vger.kernel.org>
 Precedence: list
 MIME-Version: 1.0
-References: <20261112173246.3201729-1-hjf3108@gmail.com> <20261112173246.3201729-3-hjf3108@gmail.com>
- <466A842E-68A6-4F5B-B0CB-8EF314AF34DA@linux.dev> <CABOQOSWrZXet+SYmvvG1B+idYmWx60F_prbQ3QGSiKaA7z-AFQ@mail.gmail.com>
- <85E23B83-4D3E-4270-B5A5-B835235093A0@linux.dev>
-In-Reply-To: <85E23B83-4D3E-4270-B5A5-B835235093A0@linux.dev>
+References: <20261112173246.3201729-1-hjf3108@gmail.com> <20261112173246.3201729-6-hjf3108@gmail.com>
+ <83327241-2EE9-4F4E-8770-4C422D0430B7@linux.dev>
+In-Reply-To: <83327241-2EE9-4F4E-8770-4C422D0430B7@linux.dev>
 From: Jie Feng <hjf3108@gmail.com>
-Date: Fri, 13 Nov 2026 16:12:13 +0800
-X-Gm-Features: AclHuK8IkWODjhJeiKO05zNzg8ptkfLX6Y2XM_QUwiS0tVaj33IW_KAZbd5Fkn4
-Message-ID: <CABOQOSX5B4zjORY0JZrt93899Af9V=YBFy7d5537efAQEtQgYA@mail.gmail.com>
-Subject: Re: [PATCH rtw-next v3 2/5] wifi: rtw88: 88xxa: receive VHT SU
- beamformed transmissions
+Date: Fri, 13 Nov 2026 16:16:33 +0800
+X-Gm-Features: AclHuK_1culTos-u-oxy_J93zKZtmhjiPq-ZDs1VYWKqmzaPC9GedZ23IH9qJrs
+Message-ID: <CABOQOSUj9R1qHJh5M=TBi8Mn2YP68cuYns93R8jS0qK8FXZC0Q@mail.gmail.com>
+Subject: Re: [PATCH rtw-next v3 5/5] wifi: rtw88: 8812a, 8821a: respect peer
+ A-MPDU size limits
 To: Luka Gejak <luka.gejak@linux.dev>
 Cc: Ping-Ke Shih <pkshih@realtek.com>, linux-wireless@vger.kernel.org, 
 	linux-kernel@vger.kernel.org, Bitterblue Smith <rtl8821cerfe2@gmail.com>
 Content-Type: text/plain; charset="UTF-8"
 
-On Fri, 13 Nov 2026 at 16:07, Luka Gejak <luka.gejak@linux.dev> wrote:
+On Fri, 13 Nov 2026 at 16:10, Luka Gejak <luka.gejak@linux.dev> wrote:
 >
-> On November 13, 2026 9:01:47 AM GMT+01:00, Jie Feng <hjf3108@gmail.com>
+> Hi Jie Feng,
+>
+> Thanks for the patch. One small question below.
+>
+> On November 12, 2026 6:32:44 PM GMT+01:00, Ho Jie Feng <hjf3108@gmail.com>
 > wrote:
-> >On Fri, 13 Nov 2026 at 15:46, Luka Gejak <luka.gejak@linux.dev> wrote:
-> >>
-> >> Hi Jie Feng,
-> >>
-> >> Thanks for the new version. A question and a comment below.
-> >>
-> >> On November 12, 2026 6:32:41 PM GMT+01:00, Ho Jie Feng
-> ><hjf3108@gmail.com>
-> >> wrote:
-> >>
-> >> > diff --git a/drivers/net/wireless/realtek/rtw88/main.c
-> >b/drivers/net/wireless/realtek/rtw88/main.c
-> >> > index e243738809..fe93c93b1a 100644
-> >> > --- a/drivers/net/wireless/realtek/rtw88/main.c
-> >> > +++ b/drivers/net/wireless/realtek/rtw88/main.c
-> >>
-> >> [ ... ]
-> >>
-> >> > @@ -1621,10 +1622,13 @@ static void rtw_init_vht_cap(struct rtw_dev
-> >*rtwdev,
-> >> >                      0;
-> >> >       if (rtwdev->hal.rf_path_num > 1)
-> >> >               vht_cap->cap |= IEEE80211_VHT_CAP_TXSTBC;
-> >> > -     vht_cap->cap |= IEEE80211_VHT_CAP_MU_BEAMFORMEE_CAPABLE |
-> >> > -                     IEEE80211_VHT_CAP_SU_BEAMFORMEE_CAPABLE;
-> >> > -     vht_cap->cap |= (rtwdev->hal.bfee_sts_cap <<
-> >> > -                     IEEE80211_VHT_CAP_BEAMFORMEE_STS_SHIFT);
-> >> > +     if (rtw_bf_support && chip->bfer_su_max_num) {
-> >> > +             vht_cap->cap |= IEEE80211_VHT_CAP_SU_BEAMFORMEE_CAPABLE;
-> >> > +             vht_cap->cap |= rtwdev->hal.bfee_sts_cap <<
-> >> > +                             IEEE80211_VHT_CAP_BEAMFORMEE_STS_SHIFT;
-> >> > +     }
-> >> > +     if (rtw_bf_support && chip->bfer_mu_max_num)
-> >> > +             vht_cap->cap |= IEEE80211_VHT_CAP_MU_BEAMFORMEE_CAPABLE;
-> >>
-> >> In v2 this was its own patch, 3/7 "correctly expose beamformee
-> >> capabilities", after Bitterblue asked on v1 for it to be split out. Was
-> >> folding it back in here intended? I couldn't find it in the v3
-> >changelog.
-> >Sorry, looks like I used the wrong commit on my local tree, will resend as
-> >a v4.
-> >Please ignore this v3.
-> >
 >
-> Can you address all comments I have send, as they will most likely apply
-> to v4 as well?
-Yes v4 will address both the csi and cfo comments. I will send it out
-after figuring
-out the correct fix.
+> > diff --git a/drivers/net/wireless/realtek/rtw88/rtw8812a.c b/drivers/net/wireless/realtek/rtw88/rtw8812a.c
+> > index c8008cf43d..c8f5cdf31c 100644
+> > --- a/drivers/net/wireless/realtek/rtw88/rtw8812a.c
+> > +++ b/drivers/net/wireless/realtek/rtw88/rtw8812a.c
+>
+> [ ... ]
+>
+> > +static void rtw8812a_set_ampdu_factor(struct rtw_dev *rtwdev, u8 factor)
+> > +{
+> > +     factor = min_t(u8, factor, IEEE80211_VHT_MAX_AMPDU_128K);
+> > +
+> > +     rtw_write32(rtwdev, REG_AMPDU_MAX_LENGTH,
+> > +                 ((8192 << factor) - 1) | BIT(31));
+> > +}
+>
+> What does BIT(31) do here? I see the vendor driver sets it too, so I
+> think it is right, but a define in reg.h or a short comment would make
+> it easier to follow. The same goes for rtw8821a_set_ampdu_factor().
+I reviewed it again and saw it, so I added it to be at parity with the
+vendor code.
 
-> >> I can see a reason for it. Without this part, an AP that is also a MU
-> >> beamformer makes rtw_bf_assoc() take the MU branch and return at
-> >> bfer_mu_max_num, so the new config_bfee code would never run for it. If
-> >> that is why, maybe mention it in the changelog, and in the commit
-> >message
-> >> too, since this is core code and the support_bf check now hides the
-> >> beamformee caps on every chip when beamforming is turned off.
-> >>
-> >> [ ... ]
-> >>
-> >> > diff --git a/drivers/net/wireless/realtek/rtw88/rtw8812a.c
-> >b/drivers/net/wireless/realtek/rtw88/rtw8812a.c
-> >> > index 55f1d3d324..5d58dff4fc 100644
-> >> > --- a/drivers/net/wireless/realtek/rtw88/rtw8812a.c
-> >> > +++ b/drivers/net/wireless/realtek/rtw88/rtw8812a.c
-> >> > @@ -931,7 +931,7 @@ static const struct rtw_chip_ops rtw8812a_ops = {
-> >> >       .phy_calibration        = rtw8812a_phy_calibration,
-> >> >       .cck_pd_set             = rtw_phy_cck_pd_set,
-> >> >       .pwr_track              = rtw8812a_pwr_track,
-> >> > -     .config_bfee            = NULL,
-> >> > +     .config_bfee            = rtw88xxa_bf_config_bfee,
-> >> >       .set_gid_table          = NULL,
-> >> >       .cfg_csi_rate           = NULL,
-> >>
-> >> As far as I can see, 8812a, 8821a and 8814a are now the first chips that
-> >> can become a SU beamformee without a cfg_csi_rate op. Once
-> >rtw_bf_assoc()
-> >> has set bfee.role, the watchdog goes through
-> >>
-> >>         rtw_vif_watch_dog_iter()
-> >>           rtw_dynamic_csi_rate()
-> >>
-> >> and there new_csi_rate_idx is only written by that op:
-> >>
-> >>         u8 new_csi_rate_idx;
-> >>         ...
-> >>         rtw_chip_cfg_csi_rate(rtwdev, rtwdev->dm_info.min_rssi,
-> >>                               bf_info->cur_csi_rpt_rate,
-> >>                               fix_rate_enable, &new_csi_rate_idx);
-> >>
-> >>         if (new_csi_rate_idx != bf_info->cur_csi_rpt_rate)
-> >>                 bf_info->cur_csi_rpt_rate = new_csi_rate_idx;
-> >>
-> >> So if I read it right, it compares and stores an uninitialized value
-> >> there. cur_csi_rpt_rate has no other user on these chips, so it seems
-> >> harmless for now, but I think KMSAN would report it. Maybe
-> >> rtw_dynamic_csi_rate() could return early when the chip has no
-> >> cfg_csi_rate op?
-This looks correct, will put in v4.
-
-Another alternative would be to do:
-u8 new_csi_rate_idx = bf_info->cur_csi_rpt_rate
-and the != will never pass.
-
-> >> Best regards,
-> >> Luka Gejak
-> >
+> Best regards,
+> Luka Gejak
