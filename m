@@ -1,53 +1,53 @@
-Authentication-Results: smtp.subspace.kernel.org; arc=none smtp.remote-ip=95.215.58.115
+Authentication-Results: smtp.subspace.kernel.org; arc=none smtp.remote-ip=91.218.175.148
 ARC-Seal: i=1; d=subspace.kernel.org; s=arc20261015; a=rsa-sha256; cv=none;
-	t=1794552886;
-	b=zAt1nLtgIoorhjotGwIN0OLUgOl4Oc3FTgTowtuRIzPH7teSYZNPp325ajT+JaFrdWkT
-	 e78O3/3GbMBZSK0EmVibzbj8kDUCIBn4d3jo5ClBuhAZoJF+yPn4bwQ41eB5QHk+sHaDL
-	 wI4JZxiuS6XESLPbveJLcFjcfO+tElbYAvrJzFsJ7mHE+8eZySr5Tl8Z9Xdk+bCT9Jto4
-	 8TSe8kZSJgoPuMNLAmghNBICYHUZz/Hfpths+ZzoB1kSvfAr16olEAYL0Z73/T6PxjO14
-	 asLZjTlHKSk5DxsO+d5U0/KWVgoUK6DWwoFStP9s2IrlfQvYO9uDmkjPp+RaBtLomWQ==
+	t=1794552941;
+	b=M4nPVowpi/d7bdpWqAcYRTgCahJThdB75D1fkOvmmvmOl8KSrXU+/g1ECxlaRAJtah4A
+	 gYC+1yuESJBwHp+kqyp4A39QRXGRia/CLlYbmPPy6WpeOUoFvuOBsObNHtFTdwPfTvYV/
+	 Y/bDHTOh3fveGQL1xpNwHgKyakq+1QrzA5zN2p7GKpiSbt+hJKy0s4CdX/ko/DrFojr+i
+	 IgQ88MiAeA4aJVHCPuNKnfpfdknJL/sK+mkcUP7aYzS8fDSKpDcfzTaRzeXquQnnmR44H
+	 4j97VkDD4sXEWAiMdOE6fBvDECE63FEaOEW7cV1Ia/ItZX6zBMR/a9HDIpjGvAZcoMw==
 ARC-Message-Signature: i=1; d=subspace.kernel.org; s=arc20261015;
-	a=rsa-sha256; c=relaxed/relaxed; t=1794552886;
+	a=rsa-sha256; c=relaxed/relaxed; t=1794552941;
 	h=DMARC-Filter:X-Envelope-To:DKIM-Signature:X-Envelope-To:Received:
 	 X-Mizu-Trace-ID:X-Migadu-Flow:Date:From:To:CC:Subject:In-Reply-To:
 	 References:Message-ID:MIME-Version:Content-Type:
 	 Content-Transfer-Encoding;
-	bh=R2fhwLvHTy1x0CH3Us+GlmFnqE7m+FoayPcluGQhNk4=;
-	b=odzreIgXYl5JqL4/ZJUMf6syP7xpGTiKctnnyd4bVkdczRWK09EfSVeoFLfK0sfDcApM
-	 gh3ZUfRnMWzN5UnsAyhDQj/iMaHv1EB/ue7+UOYfejWdxnmeMdd8k/XiV0iJTQjn8/oQj
-	 hh6eFnm8+ty9enAV58ppHmelltJMIlX8R+39Cn9JlgHjWt1jADNKE4BiaoAfCrtl6kh6I
-	 e710Cqj1Rk6i9dD8RvNd8a4UEQmq2FnDOBbJfBfFcve69exF5xK1lN7oYm06eDJwKgfFC
-	 bex+yWatRhWcwtQQerb8ZKwiYX1GY3rfIrAhDRMWhxa+4vcNzOna54Uu7qg4J6Lif5w==
+	bh=d3D9BzIQzbde6wqcDiqDA/BpphsaAl0CoKRTl2D5pco=;
+	b=ANARvuJJQIwHMUUnKXqj8aFsPVYuIPkRaRDjLZY9Wu5QnCxKWNSRHRrNXMN45JY+xBvj
+	 GntM9r+knN07wELgT6S+Ki36Eb9CW68cqdoWFhkuwTsz98oyHkXrW2aKi3AiXbZUvBYAu
+	 l0W3mlKMiQpxC8FjfpOhNszHtZzM9AMNUvGBLE+v9rhvy308iiWub1/TA4nV3AQ+mmLUq
+	 j5fKh+c4p67LhO+mvYzAgFPUHweRcOCcYr2QaDaYdAUbSgJc+gB6mskd+BuRpTtxdD7Xz
+	 bP5GOksS9twjFlG9iYApt5nPO5znMCyr4dCceAy90zk3a8W48qpOJxg93yZBnqfOYug==
 ARC-Authentication-Results: i=1; smtp.subspace.kernel.org; 
 	dmarc=pass header.from=linux.dev;
 	spf=pass smtp.mailfrom=linux.dev;
-	dkim=pass header.d=linux.dev header.i=@linux.dev header.a=rsa-sha256 header.s=key1 header.b=d9VC2BA2;
-	arc=none smtp.remote-ip=95.215.58.115
-Received: from mta1.migadu.com (out-115.mta1.migadu.com [95.215.58.115])
+	dkim=pass header.d=linux.dev header.i=@linux.dev header.a=rsa-sha256 header.s=key1 header.b=RRbkH2v5;
+	arc=none smtp.remote-ip=91.218.175.148
+Received: from mta0.migadu.com (out-148.mta0.migadu.com [91.218.175.148])
 	(using TLSv1.3 with cipher TLS_AES_128_GCM_SHA256 (128/128 bits)
 	 key-exchange X25519 server-signature ECDSA (prime256v1) server-digest SHA256)
 	(No client certificate requested)
-	by smtp.subspace.kernel.org (Postfix) with ESMTPS id 638E5606A321
-	for <linux-wireless@vger.kernel.org>; Fri, 13 Nov 2026 06:54:45 +0000 (UTC)
-DMARC-Filter: OpenDMARC Filter v1.4.2 smtp.subspace.kernel.org 638E5606A321
+	by smtp.subspace.kernel.org (Postfix) with ESMTPS id 9660260A3801
+	for <linux-wireless@vger.kernel.org>; Fri, 13 Nov 2026 06:55:40 +0000 (UTC)
+DMARC-Filter: OpenDMARC Filter v1.4.2 smtp.subspace.kernel.org 9660260A3801
 Authentication-Results: smtp.subspace.kernel.org; dmarc=pass (p=none dis=none) header.from=linux.dev
 Authentication-Results: smtp.subspace.kernel.org; spf=pass smtp.mailfrom=linux.dev
 Authentication-Results: smtp.subspace.kernel.org;
-	dkim=pass (1024-bit key, unprotected) header.d=linux.dev header.i=@linux.dev header.a=rsa-sha256 header.s=key1 header.b=d9VC2BA2
+	dkim=pass (1024-bit key, unprotected) header.d=linux.dev header.i=@linux.dev header.a=rsa-sha256 header.s=key1 header.b=RRbkH2v5
 X-Envelope-To: linux-wireless@vger.kernel.org
-DKIM-Signature: a=rsa-sha256; bh=OsS3qsQqkiRhs5vCMH87Zrs/o6a3Yg7xoB13t5bDoD4=;
+DKIM-Signature: a=rsa-sha256; bh=d3D9BzIQzbde6wqcDiqDA/BpphsaAl0CoKRTl2D5pco=;
  c=simple/simple; d=linux.dev;
  h=from:to:subject:date:message-id:mime-version:content-type; s=key1;
- t=1794552883; v=1; x=1795157683;
- b=d9VC2BA2Ksc1SYEexOYvI9NbFfuD/9nfwxBBhF+mNKQLkVqU2gSStA4WlHVhf7nFXBFWwzuQ
- k8O0A56dcZDb5ubBDi3UcyHv21/DbmvNbaUQeZUNTUH+JRuPAXf4sMhzwxy7hGyqKV5Q4kdf7rD
- KDsPmJq7QnuxL04lT2fjBqUw=
+ t=1794552938; v=1; x=1795157738;
+ b=RRbkH2v5BxT+JaaaCqFybj8ZUmBRzWFLS98oS/eIHIs/a3lMfc4XXQo94TNMJX1x7nQfLujj
+ /3+fkK2BBQ41RgAyslcXsyXyuNVPcW6o3VbPMJvVX+xVC3nKjesyASThwu0ax1/lSyb4nfzSK3h
+ 6ET/f5uAjw8W1dUokL1qaNes=
 X-Envelope-To: linux-wireless@vger.kernel.org
-Received: by smtp.migadu.com with ESMTPS id f6a10e7b9b8e81ff;
-	Fri, 13 Nov 2026 06:54:43 +0000
-X-Mizu-Trace-ID: f6a10e7b9b8e81ff
+Received: by smtp.migadu.com with ESMTPS id 294e72e22a57f0d0;
+	Fri, 13 Nov 2026 06:55:38 +0000
+X-Mizu-Trace-ID: 294e72e22a57f0d0
 X-Migadu-Flow: FLOW_OUT
-Date: Fri, 13 Nov 2026 07:54:40 +0100
+Date: Fri, 13 Nov 2026 07:55:37 +0100
 From: Luka Gejak <luka.gejak@linux.dev>
 To: linux-wireless@vger.kernel.org, Mehmet Fide <mehmet.fide@gmail.com>,
  Ping-Ke Shih <pkshih@realtek.com>
@@ -55,11 +55,11 @@ CC: Tzu-En Huang <tehuang@realtek.com>, Yan-Hsuan Chuang <yhchuang@realtek.com>,
  Kalle Valo <kvalo@kernel.org>, Stanislaw Gruszka <sgruszka@redhat.com>,
  Brian Norris <briannorris@chromium.org>, linux-kernel@vger.kernel.org,
  mehmet.fide@screeningeagle.com
-Subject: =?US-ASCII?Q?Re=3A_=5BPATCH_rtw-next_1/3=5D_wifi=3A_rtw88=3A_free_the_re?=
- =?US-ASCII?Q?served_pages_of_an_interface_on_firmware_recovery?=
-In-Reply-To: <20261111213239.569224-2-mehmet.fide@gmail.com>
-References: <20261111213239.569224-1-mehmet.fide@gmail.com> <20261111213239.569224-2-mehmet.fide@gmail.com>
-Message-ID: <7DDD0FC3-AD89-4819-8058-15DFDA7E5D6D@linux.dev>
+Subject: =?US-ASCII?Q?Re=3A_=5BPATCH_rtw-next_2/3=5D_wifi=3A_rtw88=3A_repor?=
+ =?US-ASCII?Q?t_the_frames_purged_from_the_TX_report_queue?=
+In-Reply-To: <20261111213239.569224-3-mehmet.fide@gmail.com>
+References: <20261111213239.569224-1-mehmet.fide@gmail.com> <20261111213239.569224-3-mehmet.fide@gmail.com>
+Message-ID: <89B03654-2285-4A15-A5B2-91B0F355B7E2@linux.dev>
 X-Mailing-List: linux-wireless@vger.kernel.org
 List-Id: <linux-wireless.vger.kernel.org>
 List-Post: <mailto:linux-wireless@vger.kernel.org>
@@ -73,45 +73,39 @@ Content-Type: text/plain;
  charset=utf-8
 Content-Transfer-Encoding: 8bit
 
-Hi Mehmet,
-
-Thanks for sending these. One comment below.
-
-On November 11, 2026 10:32:37 PM GMT+01:00, Mehmet Fide
+On November 11, 2026 10:32:38 PM GMT+01:00, Mehmet Fide
 <mehmet.fide@gmail.com> wrote:
+>From: Mehmet Fide <mehmet.fide@screeningeagle.com>
+>
+>A frame whose sender asked for its TX status waits in the TX report
+>queue for the report of the firmware. When no report comes, the purge
+>timer frees the frames with skb_queue_purge(), and rtw_core_deinit()
+>does the same. mac80211 is not told: the sender gets no status, and the
+>copy mac80211 keeps for the status of a frame from user space stays in
+>its list until ieee80211_free_hw() warns about it. On an RTL8822CE with
+>hostapd, after a firmware crash and an unbind of the driver:
+>
+>rtw88_8822ce 0000:01:00.0: failed to get tx report from firmware
+>[...]
+>Have pending ack frames!
+>WARNING: net/mac80211/main.c:1761 at ieee80211_free_ack_frame+0x4c/0x70 [mac80211], CPU#1: sh/24725
+>Call trace:
+> ieee80211_free_ack_frame+0x4c/0x70 [mac80211] (P)
+> idr_for_each+0x6c/0xf4
+> ieee80211_free_hw+0x30/0x8c [mac80211]
+> rtw_pci_remove+0xd8/0xf0 [rtw88_pci]
+> pci_device_remove+0x44/0xd4
+>
+>Take the frames off the queue under its lock and hand them to
+>ieee80211_purge_tx_queue(), which reports each one as not sent.
+>
+>Fixes: e3037485c68e ("rtw88: new Realtek 802.11ac driver")
+>Signed-off-by: Mehmet Fide <mehmet.fide@screeningeagle.com>
+>---
 
-> diff --git a/drivers/net/wireless/realtek/rtw88/main.c b/drivers/net/wireless/realtek/rtw88/main.c
-> index f7708ad17b6f..adc54b063382 100644
-> --- a/drivers/net/wireless/realtek/rtw88/main.c
-> +++ b/drivers/net/wireless/realtek/rtw88/main.c
-> @@ -627,6 +627,7 @@ static void rtw_reset_vif_iter(void *data, u8 *mac, struct ieee80211_vif *vif)
->       rtw_bf_disassoc(rtwdev, vif, NULL);
->       rtw_vif_assoc_changed(rtwvif, NULL);
->       rtw_txq_cleanup(rtwdev, vif->txq);
-> +     rtw_remove_rsvd_page(rtwdev, rtwvif);
+Looks good to me,
 
-As far as I can see, update_beacon_work can still run after this reset
-and before ieee80211_reconfig() adds the interfaces again.
-rtw_core_stop() cancels it from rtw_enter_ips(), but rtw_ops_set_tim()
-can queue it again right after, for example when a frame for a dozing
-station gets buffered. ieee80211_restart_work() then flushes
-local->workqueue before it calls ieee80211_reconfig().
-
-So if I read it right, with an AP interface (ap_active stays set) the
-work now finds every per vif list empty and runs into this in
-__rtw_build_rsvd_page_from_vifs():
-
-        rsvd_pkt = list_first_entry_or_null(&rtwdev->rsvd_page_list,
-                                            struct rtw_rsvd_page, build_list);
-        if (!rsvd_pkt) {
-                WARN(1, "Should not have an empty reserved page\n");
-                return -EINVAL;
-        }
-
-Before this patch it built the page from the stale entries and did not
-warn. Maybe rtw_fw_update_beacon_work() could skip the download while
-RTW_FLAG_RESTARTING is set? The reconfig downloads the beacon again for
-BSS_CHANGED_BEACON anyway.
+Reviewed-by: Luka Gejak <luka.gejak@linux.dev>
 
 Best regards,
 Luka Gejak
