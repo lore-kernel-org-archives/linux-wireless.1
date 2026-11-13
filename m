@@ -1,55 +1,111 @@
-Authentication-Results: smtp.subspace.kernel.org; arc=none smtp.remote-ip=213.97.179.56
+Authentication-Results: smtp.subspace.kernel.org; arc=none smtp.remote-ip=205.220.180.131
 ARC-Seal: i=1; d=subspace.kernel.org; s=arc20261015; a=rsa-sha256; cv=none;
-	t=1794582992;
-	b=eOKHk97f3dJe5eQvZ8ReQFwpv9x88+g5iiJ16sLn/gjdGcPzEo/BoRTCe6u2velI7u1N
-	 gnncsaSL4Unto1odTsaVlGb6L7cSGZNVx3pbFOgc21tTs/n1bZ/5I3gMdEA1nhYfQI3oV
-	 w0Usbs+bGyMA/EqNYM9wEAwRfLTz6v/sDizi2RGo02d9ffdTR60P7VlQQl+GEN8Q/SaGl
-	 2RGTwEqPQ0MSxQcb8rngTGMRbMY/R7ZHkDRfaHVcDka+IVqAfZ1X7EVUB6xItgmyLznGl
-	 KDqKsEp49etivVRGs+1BrHARBQDr0VJWWW/CEMzOkV61kZWESswMOA7t6+eLkWWfYLg==
+	t=1794583392;
+	b=aiiKvP5Eonh8cFnzfqv1Beax/sqgQeA2ztizaRTbxaIz/o9H1IezRxdNjd62Pi2l4KRY
+	 Y9M/B76cDcOs7ixgAUq3ao2kK7OMkEM0NmiZTo63iAr/GF0Zc6UNhywivj08KhA3ON8Ba
+	 thUt8P/q5TrAUlgHMQpgtAkuYEsURQwar7y8Tn44aGmiMdzgNTTGItqKZ6ru+ODU3WhBj
+	 1DH8YQtQxxj3XewK22ezeZ7Lk6TQsJWpOdgb4Ge2rCiEbulZf2ZlqriObl80l+EmEe14s
+	 xmEmRR+k5zK5eHyV+Rv7dchWW8K6ytRU/so+34KWlKMandEAQDXnD4IZpk/qTOXGgDw==
 ARC-Message-Signature: i=1; d=subspace.kernel.org; s=arc20261015;
-	a=rsa-sha256; c=relaxed/relaxed; t=1794582992;
-	h=DMARC-Filter:DKIM-Signature:Received:From:Date:Subject:MIME-Version:
-	 Content-Type:Content-Transfer-Encoding:Message-Id:X-B4-Tracking:
-	 X-Change-ID:To:Cc:X-Mailer;
-	bh=neIsIOYrXedUz1G3zWq1jiKbezCseAxykAXroLao1Js=;
-	b=eoLm9KS8RiVCSaAgv/UZOxf07NBYlsoJZ5kl1U1cjKYPsyGPk9DvJnD4ofKvUnlQgABe
-	 CzNIp82IkYHr8AH11IjHb1OHkFB/52mEPV3H3hmQN0DPAjZmddVnNdLNvh0BWMzDsvhNz
-	 CxglSXQyvuoUKN8acwCiH6rGU8rNDOmBN9GK3fvxAQU3XDR43gpVc/euw9C9OQQd7rk3Y
-	 EkamosJbD8DcrdwB2DPxmqzdLcxIEnNurM+3em6Y0EXg+EUM7exW/0codEy9RgPq2Z39f
-	 FjkgjiCXQZLFDv8Fw+LPpvhnXeo49sowdkoNn2eHZqnDEI7ab3uBK1xyVf6pqctTvtw==
+	a=rsa-sha256; c=relaxed/relaxed; t=1794583392;
+	h=DMARC-Filter:Received:DKIM-Signature:Received:Received:
+	 DKIM-Signature:X-Google-DKIM-Signature:X-Gm-Message-State:X-Gm-Gg:
+	 X-Received:X-Received:Received:Message-ID:Date:MIME-Version:
+	 User-Agent:Subject:To:Cc:References:Content-Language:From:In-Reply-To:
+	 Content-Type:Content-Transfer-Encoding:X-Proofpoint-Spam-Info:
+	 X-Proofpoint-ORIG-GUID:X-Proofpoint-GUID:
+	 X-Proofpoint-Spam-Details-Enc:X-Authority-Analysis:
+	 X-Proofpoint-Virus-Version:X-Proofpoint-Spam-Details;
+	bh=xrOmOi5IMTP1OBLd53RlrSVTXsL0uWCx99VscQ2eiUg=;
+	b=rSVEkBqDxADsCP4Ag/e6hbXUfHGNh15QLI3xw2ttZjHaWUdbwm0kjL5Q/6+I/by2TWmj
+	 y6FXeq1wS9YmMoencMv9cVzoW8hQv8zTa0x1TWP8D7YLPO1g2Fj9oewIwqsZc+3ANGgMq
+	 Mrk2RBBRlUQgqSPPqv8PKQmI58iPAMBqGKE8YvbWAfPeY4tjW9491czGj8f57qWJ37BXP
+	 OHLy78YSDEYBqDMYF//9X7lB+VAOKQtLlaYnrSLKumYqZxWewPFEO7mlOr9Sr4+TE9Vi1
+	 TRsdpuMvPmUOBREyfxJzT2U4iM93XruCgIDwXdBpo1bLwhm7qG9TPHMwmcSgmDRssWw==
 ARC-Authentication-Results: i=1; smtp.subspace.kernel.org; 
-	dmarc=pass header.from=igalia.com;
-	spf=pass smtp.mailfrom=igalia.com;
-	dkim=pass header.d=igalia.com header.i=@igalia.com header.a=rsa-sha256 header.s=20170329 header.b=g0YWM1Ge;
-	arc=none smtp.remote-ip=213.97.179.56
-Received: from fanzine2.igalia.com (fanzine2.igalia.com [213.97.179.56])
+	dmarc=pass header.from=oss.qualcomm.com;
+	spf=pass smtp.mailfrom=oss.qualcomm.com;
+	dkim=pass header.d=qualcomm.com header.i=@qualcomm.com header.a=rsa-sha256 header.s=qcppdkim1 header.b=a5ouvxL2;
+	dkim=pass header.d=oss.qualcomm.com header.i=@oss.qualcomm.com header.a=rsa-sha256 header.s=google header.b="N/5WZFpi";
+	arc=none smtp.remote-ip=205.220.180.131
+Received: from mx0b-0031df01.pphosted.com (mx0b-0031df01.pphosted.com [205.220.180.131])
 	(using TLSv1.3 with cipher TLS_AES_256_GCM_SHA384 (256/256 bits)
-	 key-exchange ECDHE (prime256v1) server-signature ECDSA (prime256v1) server-digest SHA256)
+	 key-exchange X25519 server-signature ECDSA (prime256v1) server-digest SHA256)
 	(No client certificate requested)
-	by smtp.subspace.kernel.org (Postfix) with ESMTPS id 6BBCF606A8A6;
-	Fri, 13 Nov 2026 15:16:31 +0000 (UTC)
-DMARC-Filter: OpenDMARC Filter v1.4.2 smtp.subspace.kernel.org 6BBCF606A8A6
-Authentication-Results: smtp.subspace.kernel.org; dmarc=pass (p=none dis=none) header.from=igalia.com
-Authentication-Results: smtp.subspace.kernel.org; spf=pass smtp.mailfrom=igalia.com
+	by smtp.subspace.kernel.org (Postfix) with ESMTPS id 1BE64606A884
+	for <linux-wireless@vger.kernel.org>; Fri, 13 Nov 2026 15:23:11 +0000 (UTC)
+DMARC-Filter: OpenDMARC Filter v1.4.2 smtp.subspace.kernel.org 1BE64606A884
+Authentication-Results: smtp.subspace.kernel.org; dmarc=pass (p=none dis=none) header.from=oss.qualcomm.com
+Authentication-Results: smtp.subspace.kernel.org; spf=pass smtp.mailfrom=oss.qualcomm.com
 Authentication-Results: smtp.subspace.kernel.org;
-	dkim=pass (2048-bit key) header.d=igalia.com header.i=@igalia.com header.a=rsa-sha256 header.s=20170329 header.b=g0YWM1Ge
-DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed; d=igalia.com;
-	s=20170329; h=Cc:To:Message-Id:Content-Transfer-Encoding:Content-Type:
-	MIME-Version:Subject:Date:From:From:Reply-To;
-	bh=neIsIOYrXedUz1G3zWq1jiKbezCseAxykAXroLao1Js=; t=1794582991; x=2109942991; 
-	b=g0YWM1GeAI8bQbRzwstzLCALraKLhcmcKY/Pygrf6f4Jmn81Lmp+iSbSjY5wSJ95nvc38+gAj9n
-	6u88hlagPvzD/rDOr/epn5tBH4jRRflINpZOFTkOcoEWjs64a52pgf2HT81ZPOF36Y5FkbRAgJDs4
-	51kppX+0mKBSjUCsMT3NxTVTh+lBJ5jpsosz6VUBF61O3teikG+9HaqTmEHQBHeSABOT45SAJV2XO
-	LsDrEhT5nXN/bKOl6wz1QMpzjFrftX3O8kirgwGiwB/U3vAEqFKZpiQe/vKScItPrDxtmwYUnJoJf
-	0m7XvkKZdqj9AL+cYK9Cx2qYJB6xVSsQNYfQ==;
-Received: from 186-249-149-121.shared.desktop.com.br ([186.249.149.121] helo=[127.0.1.1])
-	by fanzine2.igalia.com with esmtpsa 
-	(Cipher TLS1.3:ECDHE_X25519__RSA_PSS_RSAE_SHA256__AES_256_GCM:256) (Exim)
-	id 1xRt0o-00AEXe-JG; Fri, 13 Nov 2026 16:16:22 +0100
-From: Mauricio Faria de Oliveira <mfo@igalia.com>
-Date: Fri, 13 Nov 2026 12:17:33 -0300
-Subject: [PATCH] wifi: rtw88: fix skb leak in hw_scan probe request length
- check
+	dkim=pass (2048-bit key) header.d=qualcomm.com header.i=@qualcomm.com header.a=rsa-sha256 header.s=qcppdkim1 header.b=a5ouvxL2;
+	dkim=pass (2048-bit key) header.d=oss.qualcomm.com header.i=@oss.qualcomm.com header.a=rsa-sha256 header.s=google header.b=N/5WZFpi
+Received: from pps.filterd (m0279868.ppops.net [127.0.0.1])
+	by mx0a-0031df01.pphosted.com (8.18.1.11/8.18.1.11) with ESMTP id 6ADCJcWX242548
+	for <linux-wireless@vger.kernel.org>; Fri, 13 Nov 2026 15:23:11 GMT
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=qualcomm.com; h=
+	cc:content-transfer-encoding:content-type:date:from:in-reply-to
+	:message-id:mime-version:references:subject:to; s=qcppdkim1; bh=
+	xrOmOi5IMTP1OBLd53RlrSVTXsL0uWCx99VscQ2eiUg=; b=a5ouvxL2csSRdfoy
+	rTSg13+0wZMPovl9NDZ5sUIk1y7/Mvnc2pFGRIstPl3xE8jk61cUsuFPWXPG1oma
+	OA7ok6uz36moAF5Y5gmxDDUPb+htJz3MuZRtkvaaThqEKpG2Mkj4Kbaf1cD6Cch5
+	Sm0RVW9MMkgKit1PWN0W7FVQ5tnkW373Ds2pRM0ckdn68JUfTwWazkXktx9fzYJY
+	4gfD+6bc0HnIoYAEPpz4qoT3tGmWzv/OnaKNMN2uYjoiTn3lSOD0eOOfmQhyPcAS
+	7vp+coSjqPosIvC7HaB+PH9b5Ke9NLm3LjvOxWvJMSlLtxMJK06RyJXdrVr/F6Z6
+	cm9Xng==
+Received: from mail-pl1-f198.google.com (mail-pl1-f198.google.com [209.85.214.198])
+	by mx0a-0031df01.pphosted.com (PPS) with ESMTPS id 4hwv37j3t5-1
+	(version=TLSv1.3 cipher=TLS_AES_128_GCM_SHA256 bits=128 verify=NOT)
+	for <linux-wireless@vger.kernel.org>; Fri, 13 Nov 2026 15:23:10 +0000 (GMT)
+Received: by mail-pl1-f198.google.com with SMTP id d9443c01a7336-2ea71803effso10210755ad.3
+        for <linux-wireless@vger.kernel.org>; Fri, 13 Nov 2026 07:23:10 -0800 (PST)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+        d=oss.qualcomm.com; s=google; t=1794583390; x=1795188190; darn=vger.kernel.org;
+        h=content-transfer-encoding:content-type:in-reply-to:from
+         :content-language:references:cc:to:subject:user-agent:mime-version
+         :date:message-id:from:to:cc:subject:date:message-id:reply-to
+         :content-type;
+        bh=xrOmOi5IMTP1OBLd53RlrSVTXsL0uWCx99VscQ2eiUg=;
+        b=N/5WZFpinMEB+SUxB807//dYKcXYPwnBjzXTwj3HoUZIqNdml/Sx3mVUtXLzqlgaIW
+         J/jXh7B+nrLrMc1lCYCJNK3CUyWEfdG1MSGhGFWrJ9OIwmATpfFtLQZqFA2oInKM8SAp
+         dtMXopMdzgu+x+OXHIWMl5Two1/kRnJSIJVJYCtC1CFxb0AxzVR5qlhUSVG2DnfGXeTO
+         NmoEd8EUQo+fWt/eDyO1tbS0wHN1qgdVjJCLMfaPUu4XybtMEUcLltf1g5yuXWDE99sb
+         MHCM/g1mBLIVm6iiigL0aq8/p9fDnetSn5wwBG5GCYylTF8A8bazg741LtOC0lZBmnSK
+         XRLA==
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+        d=1e100.net; s=20260707; t=1794583390; x=1795188190;
+        h=content-transfer-encoding:content-type:in-reply-to:from
+         :content-language:references:cc:to:subject:user-agent:mime-version
+         :date:message-id:x-gm-gg:x-gm-message-state:from:to:cc:subject:date
+         :message-id:reply-to:content-type;
+        bh=xrOmOi5IMTP1OBLd53RlrSVTXsL0uWCx99VscQ2eiUg=;
+        b=xZ8jL6IsIMvNkHDegkUbg4xHPtY+mKuOWxMSLEFwFwyf59+wvnlP3FoOO7XbqbB19q
+         RcVVvpxSDQhY2h1dcBYjaVZxAnBi5RO8qoN8fpkgsSom7yhldmuhqm02rUd3F+ZREmBb
+         TvTSDQrxcgL2EYNikWzU/Rjkh2hz4hmc42nMl5+iW3cH1AAYETItoImm8q2013lupOTw
+         dz2sLQykO9sORyIKXIDuw3mWheIMBHhrPHKW+63T2+gI5TguQoc5Bh1eKcKLrUNhapDL
+         S5UMRAe9yrn0BLNHfMJLcBezRI8qlCfdnUiGdK6QrHk0mpJhXYiABzKn/5V+gZvAyPbz
+         Q9mg==
+X-Gm-Message-State: APuU4Z/N84arDnqzf7TQJcrL9V4ReMwUw2Kj32meAaKap23PPRNeDETv
+	f+jGU7UrTwOpLp4NV8jQHkaV2zJcbzkhr3LM0VshhDPokGXtbU29XpCcRpg0zsjz40CmgMsiQIE
+	gyRdktBOS+8hWRymRgO2b1VLRW7fDtcORVCQm5pgEmq85hQRNhrRO/NFPrpkQcoR9iNEu3HOuDN
+	Fj
+X-Gm-Gg: AYBFou0ow3kLPCyn2xntCp6cZw/y5VUrqUpR1P3NNbTz2+3TDaKHXozjY30GV57S+5Q
+	ueqss2xoqu334d6fNcmayK8S+T2zdr3yKbeDDUcaykjhYd+UCFL5L5Sx0PBqLLTukcWgdea2bmv
+	eIwUnWDLFilIDS8PgtFH1EZj1Pt1hE5Usrdtfm7vGDHbQVh2kllxdy5rLzdSQyU9oLLOYvVzdCI
+	rNdpSMiV8MYFMz+GhMmI63TH4oTQcFybhPR0yUEGvbWNqm+bFAEjucTvl13DuI31tKvr9pt9bNV
+	jyXG1UsXVK/HPCZ4vpUgHWuVzD2PZyCO/aPo66kPHbOATEl5xzZihUWbYCDl7gPg3d4TpuXnVC0
+	EjL2fVWFd9RCyMTrC9vLiNZv9AUHY0/ywTgIIXNrWjKRa/fYITrHaN1TKY+xFSC+xq9cu+fbcAg
+	Jx7X3suiD3Q+G/ark69roJuDVZealfFQ2un5in4Z0mMH8ToQ/xDi7/vyrDlGxVqUBqtA==
+X-Received: by 2002:a17:902:fd88:b0:2ed:21fb:e762 with SMTP id d9443c01a7336-2ee0dc933d2mr29590555ad.12.1794583389736;
+        Fri, 13 Nov 2026 07:23:09 -0800 (PST)
+X-Received: by 2002:a17:902:fd88:b0:2ed:21fb:e762 with SMTP id d9443c01a7336-2ee0dc933d2mr29590095ad.12.1794583389081;
+        Fri, 13 Nov 2026 07:23:09 -0800 (PST)
+Received: from [10.50.62.158] (blr-bdr-fw-01_GlobalNAT_AllZones-Outside.qualcomm.com. [103.229.18.19])
+        by smtp.gmail.com with ESMTPSA id d9443c01a7336-2ee0f8d70d3sm11869985ad.60.2026.11.13.07.23.06
+        (version=TLS1_3 cipher=TLS_AES_128_GCM_SHA256 bits=128/128);
+        Fri, 13 Nov 2026 07:23:08 -0800 (PST)
+Message-ID: <05d0e51a-7189-4095-8243-fdc1c424e37b@oss.qualcomm.com>
+Date: Fri, 13 Nov 2026 20:53:05 +0530
 X-Mailing-List: linux-wireless@vger.kernel.org
 List-Id: <linux-wireless.vger.kernel.org>
 List-Post: <mailto:linux-wireless@vger.kernel.org>
@@ -59,78 +115,76 @@ List-Unsubscribe: <mailto:linux-wireless+unsubscribe@vger.kernel.org>
 List-Owner: <mailto:linux-wireless+owner@vger.kernel.org>
 Precedence: list
 MIME-Version: 1.0
-Content-Type: text/plain; charset="utf-8"
+User-Agent: Mozilla Thunderbird
+Subject: Re: [PATCH wireless-next v4 01/21] wifi: nl80211: define Seamless
+ Mobility Domain (SMD) device capability
+To: Johannes Berg <johannes@sipsolutions.net>
+Cc: linux-wireless@vger.kernel.org, linux-kernel@vger.kernel.org
+References: <20261106-smd-v4-0-62e39487f51a@oss.qualcomm.com>
+ <20261106-smd-v4-1-62e39487f51a@oss.qualcomm.com>
+ <7638714d73cda9a2538952f577be1a236ddee55f.camel@sipsolutions.net>
+ <24917e113f203e6f6606dc5adefeefc4ebc27d9c.camel@sipsolutions.net>
+Content-Language: en-US
+From: Pooventhiran G <pooventhiran.g@oss.qualcomm.com>
+In-Reply-To: <24917e113f203e6f6606dc5adefeefc4ebc27d9c.camel@sipsolutions.net>
+Content-Type: text/plain; charset=UTF-8
 Content-Transfer-Encoding: 7bit
-Message-Id: <20261113-rtw88-hw-scan-skb-leak-v1-1-3bd47562abf6@igalia.com>
-X-B4-Tracking: v=1; b=H4sIAAwq92oC/6tWKk4tykwtVrJSqFYqSi3LLM7MzwNyDHUUlJIzE
- vPSU3UzU4B8JSMDIzNDQ0Mj3aKScgsL3Yxy3eLkxDzd4uwk3ZzUxGxdy1RzQ1OTlNQ04xRTJaD
- mgqLUtMwKsMHRsbW1AHH+e7RoAAAA
-X-Change-ID: 20261112-rtw88-hw-scan-skb-leak-9e7154def3d5
-To: linux-wireless@vger.kernel.org
-Cc: Ping-Ke Shih <pkshih@realtek.com>, Po-Hao Huang <phhuang@realtek.com>, 
- Kalle Valo <kvalo@kernel.org>, kernel-dev@igalia.com, 
- linux-kernel@vger.kernel.org, Mauricio Faria de Oliveira <mfo@igalia.com>
-X-Mailer: b4 0.14.2
+X-Proofpoint-Spam-Info: AW1haW4tMjYxMTEzMDA2MSBTYWx0ZWRfX0nad9MTivb8M
+ 6wGTLG5OlxQVtA3xcX3BmODwcvbMf8bFobcKg86UnBnpohvxgpVgoEdVRKGbsZZMqW5oSBuaK8a
+ D2bIoqWamxD+6sPs2XYUWmWDPpdxYtw=
+X-Proofpoint-ORIG-GUID: KDUtXTHhodLcY_XV2__qzFaRbniVGgxJ
+X-Proofpoint-GUID: KDUtXTHhodLcY_XV2__qzFaRbniVGgxJ
+X-Proofpoint-Spam-Details-Enc: AW1haW4tMjYxMTEzMDA2MSBTYWx0ZWRfXzUl3IxHlhprr
+ djNgAkRKCaMiQ7v0lneshkG539TQuvNq6Dqid4NikTEgpYxE28RXhQwmJue+vnuOuzqIl96l42m
+ fdl8geZKPOeWZS3Y1DdpGH94nO1kF+NGmnYh16YisZ6/K0ysA7wU5+oqC2y3Gnv92iIy64lF8Y/
+ c81p/IpnK3HxwFyMJ+lVNEcyrXfkbjuLirGUDR2sIXhKEFzCr9IlJh7kT7RiK3jhvr01MzLGQd+
+ /yaUS0Bcl14Agz6kLfHIBY0LL//Cc4W9JETE02SXpm2EDuWZnQ3NsJi0l0tK7MSR9bCYB7WIDt8
+ CdetIqMTvJclnCzVYH6Jwbw3fgLJfXTgiw47WLwIZ33hfu1yqp/0gXbfbkMQvCie74LEJz2uaXQ
+ 2PRkE2xbWoepT+ATLNmwCt0h8nHSni8289O9tSSd3nA/7U0t7XBPCem8QzMdMkLno/q2OUzxvcC
+ vgEYJpR0zcXIst+ZLZQ==
+X-Authority-Analysis: v=2.4 cv=ZeeIpcVA c=1 sm=1 tr=0 ts=6af72b5e cx=c_pps
+ a=MTSHoo12Qbhz2p7MsH1ifg==:117 a=Ou0eQOY4+eZoSc0qltEV5Q==:17
+ a=IkcTkHD0fZMA:10 a=zJRp6_cAMcgA:10 a=s4-Qcg_JpJYA:10
+ a=VkNPw1HP01LnGYTKEx00:22 a=u7WPNUs3qKkmUXheDGA7:22 a=ZpdpYltYx_vBUK5n70dp:22
+ a=C7ppcZlkJX4NIHrk3x4A:9 a=QEXdDO2ut3YA:10 a=GvdueXVYPmCkWapjIL-Q:22
+X-Proofpoint-Virus-Version: vendor=baseguard
+ engine=ICAP:2.0.293,Aquarius:18.0.1176,Hydra:6.1.138,FMLib:17.12.100.49
+ definitions=2026-11-13_04,2026-11-11_03,2025-10-01_01
+X-Proofpoint-Spam-Details: rule=outbound_notspam policy=outbound score=0
+ lowpriorityscore=0 clxscore=1015 priorityscore=1501 malwarescore=0
+ phishscore=0 impostorscore=0 bulkscore=0 suspectscore=0 adultscore=0
+ spamscore=0 classifier=typeunknown authscore=0 authtc= authcc= route=outbound
+ adjust=0 reason=mlx scancount=1 engine=8.22.0-2611040001
+ definitions=main-2611130061
 
-In _rtw_hw_scan_update_probe_req(), if the first loop fails (goto out;) the
-skb is leaked. It does not reach kfree_skb() at the end of the loop body or
-in the second loop (out:) since it is unlinked from probe_req_list.
 
-Fix the leak by calling kfree_skb() if the first loop fails.
 
-In /sys/kernel/debug/kmemleak, after simulating the failure:
+On 11/10/2026 07:56 pm, Johannes Berg wrote:
+> On Tue, 2026-11-10 at 15:15 +0100, Johannes Berg wrote:
+>>> + * @NL80211_ATTR_SMD_SUPPORT: Flag attribute to indicate SMD support. Used with
+>>> + *	multiple commands to indicate appropriate SMD support (refer DOC).
+>>
+>> This (with the wiphy flag) is the wrong way to do this, we have extended
+>> flags that don't need the double enum value and pass through to
+>> userspace directly.
 
-  unreferenced object 0xffff88810965a000 (size 232):
-    comm "iw", pid 4729, jiffies 4345008185
-    hex dump (first 32 bytes):
-      00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00  ................
-      00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00  ................
-    backtrace (crc 20f7de11):
-      kmem_cache_alloc_node_noprof+0x302/0x380
-      __alloc_skb+0x74/0x2f0
-      skb_copy+0x57/0xe0
-      rtw_hw_scan_update_probe_req+0xff/0x230
-      rtw_hw_scan_prehandle+0x4e/0x180
-      rtw_hw_scan_offload+0x186/0x1d0
-      rtw_ops_hw_scan+0x61/0xb0
-      drv_hw_scan+0x81/0x130
-      __ieee80211_start_scan+0x2e0/0x760
-      rdev_scan+0x42/0x100
-      nl80211_trigger_scan+0x53b/0x730
-      genl_family_rcv_msg_doit+0x103/0x160
-      genl_rcv_msg+0x1b5/0x2c0
-      netlink_rcv_skb+0x52/0x100
-      genl_rcv+0x28/0x40
-      netlink_unicast+0x26d/0x3b0
+I changed the EXT_FEATURE flag to WIPHY_FLAG based on the comments in v2 and
+NL80211_ATTR_MLO_SUPPORT implementation. I will change this back to
+EXT_FEATURE flag to indicate driver support.
 
-This leak exists in the first loop since the function was introduced, and
-still happened with the addition of the second loop, in these two commits:
+>>
+>> But also, this does absolutely _nothing_, the only thing you do with it
+>> is pass a completely ignored NL80211_ATTR_SMD_SUPPORT to START_AP ...
+>> it's not even passed to the driver.
+> 
+> Actually it is, just ignored. I don't really see why we'd care at this
+> point though.
+> 
 
-Fixes: 10d162b2ed39 ("rtw88: 8822c: add ieee80211_ops::hw_scan")
-Fixes: d95984b5580d ("rtw88: fix memory overrun and memory leak during hw_scan")
-Signed-off-by: Mauricio Faria de Oliveira <mfo@igalia.com>
----
- drivers/net/wireless/realtek/rtw88/fw.c | 1 +
- 1 file changed, 1 insertion(+)
+NL80211_ATTR_SMD_SUPPORT passed to ieee80211_start_ap is parsed into link_conf
+and (will be) read by the driver in assign_vif_chanctx drv-op. ath12k
+implementation needs this indication to instantiate vifs and workflows in both
+the driver and firmware.
 
-diff --git a/drivers/net/wireless/realtek/rtw88/fw.c b/drivers/net/wireless/realtek/rtw88/fw.c
-index 945fedcd375b62b4110ab631e87889bb84e2f16b..09b5836540c41e80a5fecca0f781aa45c6327cc0 100644
---- a/drivers/net/wireless/realtek/rtw88/fw.c
-+++ b/drivers/net/wireless/realtek/rtw88/fw.c
-@@ -2061,6 +2061,7 @@ static int _rtw_hw_scan_update_probe_req(struct rtw_dev *rtwdev, u8 num_probes,
- 		skb_unlink(skb, probe_req_list);
- 		rtw_fill_rsvd_page_desc(rtwdev, skb, RSVD_PROBE_REQ);
- 		if (skb->len > page_size * page_cnt) {
-+			kfree_skb(skb);
- 			ret = -EINVAL;
- 			goto out;
- 		}
-
----
-base-commit: 7e1392a42ea288d70a266f6553fe06f57f8647ea
-change-id: 20261112-rtw88-hw-scan-skb-leak-9e7154def3d5
-
-Best regards,
--- 
-Mauricio Faria de Oliveira <mfo@igalia.com>
+> johannes
 
