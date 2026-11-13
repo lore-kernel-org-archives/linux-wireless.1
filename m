@@ -1,79 +1,86 @@
-Authentication-Results: smtp.subspace.kernel.org; arc=pass header.oldest-pass=0 smtp.remote-ip=100.103.45.18
-ARC-Seal: i=2; d=subspace.kernel.org; s=arc20261015; a=rsa-sha256; cv=pass;
-	t=1794551526;
-	b=q3GducJ85xGzNpMLvEThtEnDVEWvfBVYfkrTT04gvlVUWX53JiQrWZki4AspHBaP0XR8
-	 9qlc7+VhdxeRP2lGWz297v2/N+78xj5hXOv5Olk46puixmZME9YGbBpIM9kNIFIp9Kl31
-	 d7mxjfszZo7OQ8tdX94qwZ/7FOlFVTVtcBAQDc/ehu6jaZpnO+2+eSQF1aQCMOoZXJwp4
-	 Aaw+FLMLljaGoxlDkUDtKv1oYzJ2jiMtFEGLZ6yQjL0PPtVSF/RqlXoXByYZdL18CdF9e
-	 7mFHBv7c2zHfjo1VJZ81nBA6zsdq07Kk7wTuXx52SuFUEjHHbSMvcRvdUAJLExpuDBQ==
-ARC-Message-Signature: i=2; d=subspace.kernel.org; s=arc20261015;
-	a=rsa-sha256; c=relaxed/relaxed; t=1794551526;
-	h=Received:DKIM-Signature:Received:From:Date:Subject:MIME-Version:
-	 Content-Type:Content-Transfer-Encoding:Message-Id:References:
-	 In-Reply-To:To:Cc:X-Mailer:X-Developer-Signature:X-Developer-Key:
-	 X-Endpoint-Received:X-Original-From:Reply-To;
-	bh=YmWFfab+E2ZaatuW5a+x18MB647hdFjiS4Sr9Z50EvA=;
-	b=T20R8bY/wT9as0+vssMK04jxQWOjDV46ZgYfjFp2nCMquyWhNj37TVMUn/u5ua6nXPvn
-	 hNy6ge1nOyos8lBjDhir7GIP26jEIrU6CBAHJJRBA9Z+6L7Hj3lfGVZDR5dzmXa0l9RTR
-	 Y12Pj9k7GOzzcbH1y6TKw0nLYp+ox8guVWlPaRYH2saoZFyZfKIukgTeFWCPkbuDebQUx
-	 p4OUOiB75UhAF3a68YQej+aYh9KHRNxUSJhjiQvuoUZ3kXS0zOoXm/rH4qbzAlWusUrX0
-	 M6nfldXhPGTo5ngLjSL6sln8+IYK0dhXmxj4FKZW6A1PhYYc+8sPzqnWqBNDCY80xhA==
-ARC-Authentication-Results: i=2; smtp.subspace.kernel.org; 
-	dkim=pass header.d=kernel.org header.i=@kernel.org header.a=rsa-sha256 header.s=k20260515 header.b=FmSKI5IH;
-	arc=pass header.oldest-pass=0 smtp.remote-ip=100.103.45.18
-Received: from smtp.kernel.org (quasi.space.kernel.org [100.103.45.18])
-	(using TLSv1.3 with cipher TLS_AES_256_GCM_SHA384 (256/256 bits)
-	 key-exchange X25519 server-signature ECDSA (prime256v1))
-	(No client certificate requested)
-	by smtp.subspace.kernel.org (Postfix) with ESMTPS id 04AA0606A323;
-	Fri, 13 Nov 2026 06:32:05 +0000 (UTC)
-Authentication-Results: smtp.subspace.kernel.org;
-	dkim=pass (2048-bit key) header.d=kernel.org header.i=@kernel.org header.a=rsa-sha256 header.s=k20260515 header.b=FmSKI5IH
-Authentication-Results: smtp.kernel.org; arc=none smtp.remote-ip=100.80.115.77
-ARC-Seal: i=1; d=kernel.org; s=arc20260519; a=rsa-sha256; cv=none;
-	t=1794551525;
-	b=3qpkTm6RDWUBMtonSz3wFXHNF5YPYhm4Gjz8O6QbjrSDuIp/AwTy1ShNJ7Jc/TFkD5oQ
-	 6IfwVXlgraIEIsFzF+mHRSLQPgPpk8SQwX8Nitxu6CSjsYb8TvMhcDu8p3H4ACY7wQwCF
-	 m3q67hKyz58DnAVqL0oy/kzxg8dSu8Xo+/UNC3FlPprwknakB7FzYEmUvFi44Wr93mSvG
-	 DyVjdi7g9RZ2AU2idTyk5x5/V4mR2Fl5sKjT56Xn9TcCL7Qt257bwR9rg5c/XfKuht5LH
-	 Prwx2YI4FOtblPGnQj0bFmHmsGDOUGhDwAZgkJ1CYftukazL6ikETOxux859pnTwfSg==
-ARC-Message-Signature: i=1; d=kernel.org; s=arc20260519; a=rsa-sha256;
-	c=relaxed/relaxed; t=1794551525;
-	h=DKIM-Signature:Received:From:Date:Subject:MIME-Version:Content-Type:
-	 Content-Transfer-Encoding:Message-Id:References:In-Reply-To:To:Cc:
-	 X-Mailer:X-Developer-Signature:X-Developer-Key:X-Endpoint-Received:
-	 X-Original-From:Reply-To;
-	bh=YmWFfab+E2ZaatuW5a+x18MB647hdFjiS4Sr9Z50EvA=;
-	b=kQ+Rpw9t+BiPanHfUeB6YCbrO4ZRE6+9WldWG1/Pu2Ra3nK5Xh4T+TqJplodpAWEP/3W
-	 rlp4iXps7FH3cU022w9t/sNGiCFlmz55br+YCqXmUsSPi9p2uVg+o4iMLQIt7Rszn4YUu
-	 aMz/WWOMswgeg/+aurHOQCJbGQuKQTWbRpyVLVpdGD72faRsApCn3kgtwCZlWrAnejeb6
-	 WkH4uhu8atNlsXVrEqoNCoxUbhhn6Ft297SSa5tJ/1QBImuqafEg0eggHo6MtaitmGI22
-	 /CBycs/XtIi26K9+TZvrpQTER9+ZkGcOKZ/xj5c1WbOh7htE+OQSSIGi8L6O0xjJl/g==
-ARC-Authentication-Results: i=1; smtp.kernel.org; 
-	arc=none smtp.remote-ip=100.80.115.77
-Received: from lkml.kernel.org (nexus.subspace.kernel.org [100.80.115.77])
+Authentication-Results: smtp.subspace.kernel.org; arc=none smtp.remote-ip=211.75.126.72
+ARC-Seal: i=1; d=subspace.kernel.org; s=arc20261015; a=rsa-sha256; cv=none;
+	t=1794552772;
+	b=UHd+iFU8mZRmLdQxcat9U2yLAEQxQnJPpgObgy8K81mi8frPY52D/5X+Ch0wnEggu45B
+	 RCRRFOMgiJDBjU6+Kuvvb0GGuBTJ9hNbG/pPwnJdtQYiXElR+fOy2UHwfjxfRXOS3Rggo
+	 ScQl5U/sxmTl7sMEYpifq4pjKzdYb/HA5XjY/7ADO4eIAKtczzLFJggHnxwzR9NBk1jrv
+	 TPsBioC4UCQhvqnMZbqrWapLp/e+PDVtB8MInHB9HGJNXOQKSqLbmFM7fGVCxbyuXCaB2
+	 Z5med8yCj8R4tcwbKDoGk2Gc2zK2FomieK8HmYb+XktkMfDv6uonI0A8xlxNwUBc0kA==
+ARC-Message-Signature: i=1; d=subspace.kernel.org; s=arc20261015;
+	a=rsa-sha256; c=relaxed/relaxed; t=1794552772;
+	h=DMARC-Filter:X-SpamFilter-By:DKIM-Signature:Received:Received:
+	 Received:Received:From:To:CC:Subject:Thread-Topic:Thread-Index:Date:
+	 Message-ID:References:In-Reply-To:Accept-Language:Content-Language:
+	 x-originating-ip:Content-Type:Content-Transfer-Encoding:MIME-Version;
+	bh=WQW+v9O1HGQ8o2pXDEOIzEzJj5a39LNknvT0vu9u25c=;
+	b=rxRFIl2qC6CzbW0eYlDsc87J0kmjxujB/s4LKqjprW7rdixWR6rGUuy1fAP6Vvpzosmc
+	 z7kiLU0pXPYy0r5n8OnvjYRDeGxcqN26G+JutJ56GAJGKgrJu8kKHIlK8lb/YSw4jnt9Z
+	 3qum0JbGju/vl1agiKFkss+D4q1rlYpCBhD3pPkO6NAdGiLUCpDh3p5/DYdKvcejQhT+t
+	 56zWZemWKwoPqCXbCtDS7a4OsOp+TAyZu0EdAderk5yie4po6ky1GU3oQ8pE1moywXGZ6
+	 UOBNz2+QUNFW99iYpgx0ELAYc/TvCnjASOURVKumBeXtcRlBvpkzZ/OxdKJ1fpkA61g==
+ARC-Authentication-Results: i=1; smtp.subspace.kernel.org; 
+	dmarc=pass header.from=realtek.com;
+	spf=pass smtp.mailfrom=realtek.com;
+	dkim=pass header.d=realtek.com header.i=@realtek.com header.a=rsa-sha256 header.s=dkim header.b=uiC+UYed;
+	arc=none smtp.remote-ip=211.75.126.72
+Received: from rtits2.realtek.com.tw (rtits2.realtek.com [211.75.126.72])
 	(using TLSv1.3 with cipher TLS_AES_256_GCM_SHA384 (256/256 bits)
 	 key-exchange X25519 server-signature ECDSA (prime256v1) server-digest SHA256)
 	(No client certificate requested)
-	by smtp.kernel.org (Postfix) with ESMTPS id 134871F000C6;
-	Fri, 13 Nov 2026 06:32:05 +0000 (UTC)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=kernel.org;
-	s=k20260515; t=1794551525;
-	bh=YmWFfab+E2ZaatuW5a+x18MB647hdFjiS4Sr9Z50EvA=;
-	h=From:Date:Subject:References:In-Reply-To:To:Cc:Reply-To;
-	b=FmSKI5IHR3BKfOo4RG3denXlTh6lraS4v2dsEjan0JLaqw4NRXQQmxkDKZpgk3j89
-	 gUpVW+R8uENx3ddYVXUsO4rTrZXXM6YwGjMWZqrXa0eAMKPiM0w7BjEQmCAubclyVR
-	 Wih0/dJaOYWylNmALwZkXo7KJAcl8YGPoRUsDf7QNjFFnr3Lqdkt+LtMB9xUV1bY0Z
-	 X+rKh9W90lhX2tdw6tbUwQG/VXFdW71M0ZIc3TFIB15pUa8wtpB3onuKXxkQj0MED7
-	 tKp+N5Bl92xK+xqL7d8iw0TJQ12gPiw9WY4lkXl5a1gfnhqZNIuKlyjkCcxQhWXqEz
-	 A1fzDvRTqneKA==
-Received: from nexus.subspace.kernel.org (localhost [IPv6:::1])
-	by lkml.kernel.org (Postfix) with ESMTP id 7BF6047622;
-	Fri, 13 Nov 2026 06:32:04 +0000 (UTC)
-From: Michael Reeves via B4 Relay <devnull+michael.reeves077.gmail.com@kernel.org>
-Date: Fri, 13 Nov 2026 06:31:55 +0000
-Subject: [PATCH wireless-next 1/4] wifi: brcmfmac: Add support for 6 GHz
- chanspecs
+	by smtp.subspace.kernel.org (Postfix) with ESMTPS id 0737C606A31C;
+	Fri, 13 Nov 2026 06:52:51 +0000 (UTC)
+DMARC-Filter: OpenDMARC Filter v1.4.2 smtp.subspace.kernel.org 0737C606A31C
+Authentication-Results: smtp.subspace.kernel.org; dmarc=pass (p=none dis=none) header.from=realtek.com
+Authentication-Results: smtp.subspace.kernel.org; spf=pass smtp.mailfrom=realtek.com
+Authentication-Results: smtp.subspace.kernel.org;
+	dkim=pass (2048-bit key, unprotected) header.d=realtek.com header.i=@realtek.com header.a=rsa-sha256 header.s=dkim header.b=uiC+UYed
+X-SpamFilter-By: ArmorX SpamTrap 5.80 with qID 6AD6qNC51539959, This message is accepted by code: ctloc85258
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=realtek.com; s=dkim;
+	t=1794552743; bh=WQW+v9O1HGQ8o2pXDEOIzEzJj5a39LNknvT0vu9u25c=;
+	h=From:To:CC:Subject:Date:Message-ID:References:In-Reply-To:
+	 Content-Type:Content-Transfer-Encoding:MIME-Version;
+	b=uiC+UYed3+UHZ9JAC9sQ8XWYu9kYOV1QioK9O68nW06t3TJrA1Pl+KwKBqCk51GNR
+	 NQqgtnLBww+ItVA4p1Cu6u9cbdcbtGo8S+XGmmP+vklr40CqANIk1W/rX7QlGUT1ML
+	 P6xB6CMXSHn/lVK8wC496qR8Nf0RUrmSiono+m8uC1oFQ/fxUN0z8YQKItPADZE7ns
+	 sMvhJK2vtdJ65k2q6BU77Z0/n+dA3W6xL39KspLMfoKIgAGELlCiZPoEYFJgAAacQ7
+	 FPiuA4LaadvN0+3/ta7L3Z2uTxdZtN/yKGv2OjwdlvDdmifLWlVn4PQhtXHgE5wez4
+	 bh9fsYUfT8Ywg==
+Received: from mail.realtek.com (rtkexhmbs02.realtek.com.tw[172.21.6.41])
+	by rtits2.realtek.com.tw (8.15.2/3.29/5.94) with ESMTPS id 6AD6qNC51539959
+	(version=TLSv1.2 cipher=ECDHE-RSA-AES256-GCM-SHA384 bits=256 verify=FAIL);
+	Fri, 13 Nov 2026 14:52:23 +0800
+Received: from RTKEXHMBS01.realtek.com.tw (172.21.6.40) by
+ RTKEXHMBS02.realtek.com.tw (172.21.6.41) with Microsoft SMTP Server
+ (version=TLS1_2, cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id
+ 15.2.2562.56; Fri, 13 Nov 2026 14:52:24 +0800
+Received: from RTKEXHMBS03.realtek.com.tw (10.21.1.53) by
+ RTKEXHMBS01.realtek.com.tw (172.21.6.40) with Microsoft SMTP Server
+ (version=TLS1_2, cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id
+ 15.2.2562.56; Fri, 13 Nov 2026 14:52:23 +0800
+Received: from RTKEXHMBS03.realtek.com.tw ([fe80::d2b4:cd25:1a3e:aca8]) by
+ RTKEXHMBS03.realtek.com.tw ([fe80::d2b4:cd25:1a3e:aca8%9]) with mapi id
+ 15.02.2562.056; Fri, 13 Nov 2026 14:52:23 +0800
+From: Zong-Zhe Yang <kevin_yang@realtek.com>
+To: Kalpesh Solanki <skalpesh942@gmail.com>, Ping-Ke Shih
+	<pkshih@realtek.com>, "luka.gejak@linux.dev" <luka.gejak@linux.dev>
+CC: "kvalo@kernel.org" <kvalo@kernel.org>, "linux-wireless@vger.kernel.org"
+	<linux-wireless@vger.kernel.org>, "linux-kernel@vger.kernel.org"
+	<linux-kernel@vger.kernel.org>, "stable@vger.kernel.org"
+	<stable@vger.kernel.org>
+Subject: RE: [PATCH v5 1/3] wifi: rtw88: clear RTW_FLAG_RESTARTING on stop and
+ start failure
+Thread-Topic: [PATCH v5 1/3] wifi: rtw88: clear RTW_FLAG_RESTARTING on stop
+ and start failure
+Thread-Index: AQHdcqo3L5nzYrwr1UGT1rk58sg+cbcrixbw
+Date: Fri, 13 Nov 2026 06:52:23 +0000
+Message-ID: <ee602061ce314b5a9741094b7b93836e@realtek.com>
+References: <20261112131401.236433-1-skalpesh942@gmail.com>
+ <20261112131401.236433-2-skalpesh942@gmail.com>
+In-Reply-To: <20261112131401.236433-2-skalpesh942@gmail.com>
+Accept-Language: zh-TW, en-US
+Content-Language: zh-TW
+Content-Type: text/plain; charset="us-ascii"
+Content-Transfer-Encoding: quoted-printable
 X-Mailing-List: linux-wireless@vger.kernel.org
 List-Id: <linux-wireless.vger.kernel.org>
 List-Post: <mailto:linux-wireless@vger.kernel.org>
@@ -83,182 +90,64 @@ List-Unsubscribe: <mailto:linux-wireless+unsubscribe@vger.kernel.org>
 List-Owner: <mailto:linux-wireless+owner@vger.kernel.org>
 Precedence: list
 MIME-Version: 1.0
-Content-Type: text/plain; charset="utf-8"
-Content-Transfer-Encoding: 7bit
-Message-Id: <20261113-6ghz-v1-1-0b9a67e413a9@gmail.com>
-References: <20261113-6ghz-v1-0-0b9a67e413a9@gmail.com>
-In-Reply-To: <20261113-6ghz-v1-0-0b9a67e413a9@gmail.com>
-To: Arend van Spriel <arend.vanspriel@broadcom.com>
-Cc: asahi@lists.linux.dev, linux-wireless@vger.kernel.org, 
- brcm80211@lists.linux.dev, brcm80211-dev-list.pdl@broadcom.com, 
- linux-kernel@vger.kernel.org, Michael Reeves <michael.reeves077@gmail.com>, 
- Daniel Berlin <dberlin@dberlin.org>, Yureka Lilian <yureka@cyberchaos.dev>
-X-Mailer: b4 0.16.0
-X-Developer-Signature: v=1; a=ed25519-sha256; t=1794551523; l=5582;
- i=michael.reeves077@gmail.com; s=20261107; h=from:subject:message-id;
- bh=I8Dn0B0/ZXLgxEeo25bE3yyy9LMgsSW2UPLw3KLxDLs=;
- b=LZss0WT+9OEW4S9grQeQ8nmkxYR13aw4wu/oUAidV5zoJ7w/4lzEYIrqNm8wLW340YT4q5zqx
- Pj2ESOlsrqaBvdtfIky5MS8yLiKIep/fVL9sEGa/I3qWwtD4KQYI9a2
-X-Developer-Key: i=michael.reeves077@gmail.com; a=ed25519;
- pk=ykwkLcuByJYb/cdLc2UuoYP03pIzwrscEZg30+4tJL8=
-X-Endpoint-Received: by B4 Relay for michael.reeves077@gmail.com/20261107
- with auth_id=1442
-X-Original-From: Michael Reeves <michael.reeves077@gmail.com>
-Reply-To: michael.reeves077@gmail.com
 
-From: Daniel Berlin <dberlin@dberlin.org>
+Kalpesh Solanki <skalpesh942@gmail.com> wrote:
+>=20
+> When mac80211 stops or suspends the device without WoWLAN,
+> drv_reconfig_complete() is never invoked with
+> IEEE80211_RECONFIG_TYPE_RESTART. If firmware recovery was in flight
+> during this transition, RTW_FLAG_RESTARTING remains set permanently,
+> blocking all subsequent firmware recoveries until the module is reloaded.
+>=20
 
-Although the AC chanspec format defines a band value for 6 GHz, the
-driver currently neither encodes nor decodes it.
+In this case, I saw you clear RTW_FLAG_RESTARTING in rtw_ops_stop.
+However, the reconfig flow might not have even run at that moment.
 
-Extend the chanspec encoder and decoder to support the 6 GHz band,
-replacing the obsolete and unused 3 GHz definition. Populate the band
-when converting cfg80211 channels to chanspecs.
+How about clearing RTW_FLAG_RESTARTING when driver gets
+IEEE80211_RECONFIG_TYPE_SUSPEND?
 
-Additionally, initialise channel structures prior to encoding in the P2P
-path, as the encoder now requires a valid band field.
-
-Tested-by: Yureka Lilian <yureka@cyberchaos.dev>
-Signed-off-by: Daniel Berlin <dberlin@dberlin.org>
-Co-developed-by: Michael Reeves <michael.reeves077@gmail.com>
-Signed-off-by: Michael Reeves <michael.reeves077@gmail.com>
----
- .../broadcom/brcm80211/brcmfmac/cfg80211.c         | 28 +++++++++++++---------
- .../net/wireless/broadcom/brcm80211/brcmfmac/p2p.c |  6 ++---
- .../net/wireless/broadcom/brcm80211/brcmutil/d11.c |  7 +++++-
- .../broadcom/brcm80211/include/brcmu_d11.h         |  3 ++-
- 4 files changed, 28 insertions(+), 16 deletions(-)
-
-diff --git a/drivers/net/wireless/broadcom/brcm80211/brcmfmac/cfg80211.c b/drivers/net/wireless/broadcom/brcm80211/brcmfmac/cfg80211.c
-index b0eaf96413b7..c4ef4f6d3a06 100644
---- a/drivers/net/wireless/broadcom/brcm80211/brcmfmac/cfg80211.c
-+++ b/drivers/net/wireless/broadcom/brcm80211/brcmfmac/cfg80211.c
-@@ -326,6 +326,21 @@ static u8 nl80211_band_to_fwil(enum nl80211_band band)
- 	return 0;
- }
- 
-+static u8 nl80211_band_to_chanspec_band(enum nl80211_band band)
-+{
-+	switch (band) {
-+	case NL80211_BAND_2GHZ:
-+		return BRCMU_CHAN_BAND_2G;
-+	case NL80211_BAND_5GHZ:
-+		return BRCMU_CHAN_BAND_5G;
-+	case NL80211_BAND_6GHZ:
-+		return BRCMU_CHAN_BAND_6G;
-+	default:
-+		WARN_ON_ONCE(1);
-+		return BRCMU_CHAN_BAND_2G;
-+	}
-+}
-+
- static u16 chandef_to_chanspec(struct brcmu_d11inf *d11inf,
- 			       struct cfg80211_chan_def *ch)
- {
-@@ -385,17 +400,7 @@ static u16 chandef_to_chanspec(struct brcmu_d11inf *d11inf,
- 	default:
- 		WARN_ON_ONCE(1);
- 	}
--	switch (ch->chan->band) {
--	case NL80211_BAND_2GHZ:
--		ch_inf.band = BRCMU_CHAN_BAND_2G;
--		break;
--	case NL80211_BAND_5GHZ:
--		ch_inf.band = BRCMU_CHAN_BAND_5G;
--		break;
--	case NL80211_BAND_60GHZ:
--	default:
--		WARN_ON_ONCE(1);
--	}
-+	ch_inf.band = nl80211_band_to_chanspec_band(ch->chan->band);
- 	d11inf->encchspec(&ch_inf);
- 
- 	brcmf_dbg(TRACE, "chanspec: 0x%x\n", ch_inf.chspec);
-@@ -409,6 +414,7 @@ u16 channel_to_chanspec(struct brcmu_d11inf *d11inf,
- 
- 	ch_inf.chnum = ieee80211_frequency_to_channel(ch->center_freq);
- 	ch_inf.bw = BRCMU_CHAN_BW_20;
-+	ch_inf.band = nl80211_band_to_chanspec_band(ch->band);
- 	d11inf->encchspec(&ch_inf);
- 
- 	return ch_inf.chspec;
-diff --git a/drivers/net/wireless/broadcom/brcm80211/brcmfmac/p2p.c b/drivers/net/wireless/broadcom/brcm80211/brcmfmac/p2p.c
-index 813cc15d8b87..06e0d90b194a 100644
---- a/drivers/net/wireless/broadcom/brcm80211/brcmfmac/p2p.c
-+++ b/drivers/net/wireless/broadcom/brcm80211/brcmfmac/p2p.c
-@@ -958,7 +958,7 @@ brcmf_p2p_discover_listen(struct brcmf_p2p_info *p2p, u16 channel, u32 duration)
- {
- 	struct brcmf_pub *drvr = p2p->cfg->pub;
- 	struct brcmf_cfg80211_vif *vif;
--	struct brcmu_chan ch;
-+	struct brcmu_chan ch = {};
- 	s32 err = 0;
- 
- 	vif = p2p->bss_idx[P2PAPI_BSSCFG_DEVICE].vif;
-@@ -1092,7 +1092,7 @@ static s32 brcmf_p2p_act_frm_search(struct brcmf_p2p_info *p2p, u16 channel)
- 	u32 channel_cnt;
- 	u16 *default_chan_list;
- 	u32 i;
--	struct brcmu_chan ch;
-+	struct brcmu_chan ch = {};
- 
- 	brcmf_dbg(TRACE, "Enter\n");
- 
-@@ -2031,7 +2031,7 @@ static void brcmf_p2p_get_current_chanspec(struct brcmf_p2p_info *p2p,
- {
- 	struct brcmf_if *ifp;
- 	u8 mac_addr[ETH_ALEN];
--	struct brcmu_chan ch;
-+	struct brcmu_chan ch = {};
- 	struct brcmf_bss_info_le *bi;
- 	u8 *buf;
- 
-diff --git a/drivers/net/wireless/broadcom/brcm80211/brcmutil/d11.c b/drivers/net/wireless/broadcom/brcm80211/brcmutil/d11.c
-index 1e2b1e487eb7..6cd43920fe67 100644
---- a/drivers/net/wireless/broadcom/brcm80211/brcmutil/d11.c
-+++ b/drivers/net/wireless/broadcom/brcm80211/brcmutil/d11.c
-@@ -87,7 +87,9 @@ static void brcmu_d11ac_encchspec(struct brcmu_chan *ch)
- 			0, d11ac_bw(ch->bw));
- 
- 	ch->chspec &= ~BRCMU_CHSPEC_D11AC_BND_MASK;
--	if (ch->chnum <= CH_MAX_2G_CHANNEL)
-+	if (ch->band == BRCMU_CHAN_BAND_6G)
-+		ch->chspec |= BRCMU_CHSPEC_D11AC_BND_6G;
-+	else if (ch->chnum <= CH_MAX_2G_CHANNEL)
- 		ch->chspec |= BRCMU_CHSPEC_D11AC_BND_2G;
- 	else
- 		ch->chspec |= BRCMU_CHSPEC_D11AC_BND_5G;
-@@ -222,6 +224,9 @@ static void brcmu_d11ac_decchspec(struct brcmu_chan *ch)
- 	}
- 
- 	switch (ch->chspec & BRCMU_CHSPEC_D11AC_BND_MASK) {
-+	case BRCMU_CHSPEC_D11AC_BND_6G:
-+		ch->band = BRCMU_CHAN_BAND_6G;
-+		break;
- 	case BRCMU_CHSPEC_D11AC_BND_5G:
- 		ch->band = BRCMU_CHAN_BAND_5G;
- 		break;
-diff --git a/drivers/net/wireless/broadcom/brcm80211/include/brcmu_d11.h b/drivers/net/wireless/broadcom/brcm80211/include/brcmu_d11.h
-index f6344023855c..aae75329e266 100644
---- a/drivers/net/wireless/broadcom/brcm80211/include/brcmu_d11.h
-+++ b/drivers/net/wireless/broadcom/brcm80211/include/brcmu_d11.h
-@@ -81,12 +81,13 @@
- #define BRCMU_CHSPEC_D11AC_BND_MASK	0xc000
- #define BRCMU_CHSPEC_D11AC_BND_SHIFT	14
- #define  BRCMU_CHSPEC_D11AC_BND_2G	0x0000
--#define  BRCMU_CHSPEC_D11AC_BND_3G	0x4000
-+#define  BRCMU_CHSPEC_D11AC_BND_6G	0x4000
- #define  BRCMU_CHSPEC_D11AC_BND_4G	0x8000
- #define  BRCMU_CHSPEC_D11AC_BND_5G	0xc000
- 
- #define BRCMU_CHAN_BAND_2G		0
- #define BRCMU_CHAN_BAND_5G		1
-+#define BRCMU_CHAN_BAND_6G		2
- 
- enum brcmu_chan_bw {
- 	BRCMU_CHAN_BW_20,
-
--- 
-2.56.0
-
+>=20
+> Similarly, if rtw_core_start() fails during drv_start() in a recovery
+> restart, local->started remains false. When mac80211 cleans up via
+> cfg80211_shutdown_all_interfaces(), drv_stop() returns early without
+> calling rtw_ops_stop(), leaving RTW_FLAG_RESTARTING set permanently on
+> hardware that failed to recover.
+>=20
+> Clear RTW_FLAG_RESTARTING in rtw_ops_stop(), as well as in
+> rtw_ops_start() when rtw_core_start() returns an error, ensuring the
+> driver always exits the restarting state on error or teardown.
+>=20
+> Fixes: 5c831644e1f4 ("rtw88: handle and recover when firmware crash")
+> Cc: stable@vger.kernel.org
+> Signed-off-by: Kalpesh Solanki <skalpesh942@gmail.com>
+> ---
+>  drivers/net/wireless/realtek/rtw88/mac80211.c | 3 +++
+>  1 file changed, 3 insertions(+)
+>=20
+> diff --git a/drivers/net/wireless/realtek/rtw88/mac80211.c
+> b/drivers/net/wireless/realtek/rtw88/mac80211.c
+> index 5e40cf06a9e..ffd86f08185 100644
+> --- a/drivers/net/wireless/realtek/rtw88/mac80211.c
+> +++ b/drivers/net/wireless/realtek/rtw88/mac80211.c
+> @@ -57,6 +57,8 @@ static int rtw_ops_start(struct ieee80211_hw *hw)
+>=20
+>         mutex_lock(&rtwdev->mutex);
+>         ret =3D rtw_core_start(rtwdev);
+> +       if (ret)
+> +               clear_bit(RTW_FLAG_RESTARTING, rtwdev->flags);
+>         mutex_unlock(&rtwdev->mutex);
+>=20
+>         return ret;
+> @@ -67,6 +69,7 @@ static void rtw_ops_stop(struct ieee80211_hw *hw, bool
+> suspend)
+>         struct rtw_dev *rtwdev =3D hw->priv;
+>=20
+>         mutex_lock(&rtwdev->mutex);
+> +       clear_bit(RTW_FLAG_RESTARTING, rtwdev->flags);
+>         rtw_core_stop(rtwdev);
+>         mutex_unlock(&rtwdev->mutex);
+>  }
+> --
+> 2.53.0
+>=20
 
