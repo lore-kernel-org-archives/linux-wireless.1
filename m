@@ -1,60 +1,60 @@
-Authentication-Results: smtp.subspace.kernel.org; arc=pass header.oldest-pass=0 smtp.remote-ip=165.173.182.54
+Authentication-Results: smtp.subspace.kernel.org; arc=pass header.oldest-pass=0 smtp.remote-ip=165.173.180.54
 ARC-Seal: i=2; d=subspace.kernel.org; s=arc20261015; a=rsa-sha256; cv=pass;
-	t=1794614121;
-	b=caWJSmq36Bb+EnUxsXsBDHwUkYx+mfzynzSPGN1AagdxhpFAbYtaqZYuTpl8YqNKj7c9
-	 VyJtsGpXTJdDC67v5LO91xHSf+I/8VRhDF3GPKWRcyEULJhBlhemlc6fwDIKzk5Q/661/
-	 +E/Zg8sHc0eGuQyWbkcCHGRduTT8glSl2iACqrgpEIn7WWbLISG9NFeGPO4MBvkBU4aLX
-	 K3BeROebld/A2vs8QRLYdqB5Yifdn5QDif1eFTB5khBY+TXKtz3behud9Ie8uGSFOcdox
-	 aKx4nZFFNOeRigysV9CveZiVO8nTJzkeXcDGLq7C4wV2EW+LmgNHRqr5Ki5I2FQycRQ==
+	t=1794614155;
+	b=I50qDiR3Kxuz3Mc36FJ51CZOwxPtqp0ZrYvqCsfDrnWjW0ybMIXpQvAVZVgrO+AJRqU/
+	 QeowJiUpUrQajOlfJ9IJo8xscXC41Lmn9o56On5PQ3tkrO4BykxzBM+xWBeHBbFzbN0as
+	 OGZ5ZsAotrWhSh3UoqoRgaKVvAL30XXroAkCuQqos+J+zRMncI5gkPFptJvQLWDXZzQzd
+	 CgQnl0UcRlqYQdqQpyYO7yQHMEtKxYIMrIynLhrIZQNy3YIj+pON/FTeeyxoUmadCNzRq
+	 hzoCsTbCUxGRaDAS8D8DoUPPrhMQ8hXqhiMUZ+zSf8RbpeqR/foA6v6U1YNIHcACwVQ==
 ARC-Message-Signature: i=2; d=subspace.kernel.org; s=arc20261015;
-	a=rsa-sha256; c=relaxed/relaxed; t=1794614121;
+	a=rsa-sha256; c=relaxed/relaxed; t=1794614155;
 	h=DMARC-Filter:DKIM-Signature:Received:From:To:Cc:Subject:Date:
 	 Message-ID:X-Mailer:In-Reply-To:References:MIME-Version:
 	 Content-Transfer-Encoding:X-ZohoMailClient;
-	bh=BDmNp4Xz5w21MkSPxai69E07DBPtE9YzGQTBFDr72RM=;
-	b=jxfNPXqgUo+jaqzDOknb0gxl7nbEPcaNWayDlDs8wYhGWqQH7I0s1vEg2oH3hG4JhYu1
-	 XXvHLFYWX1u7D4awPHPsFpoK3cgblF+UYBkQrTK+crhGAL6m5pe/zGLOrqlMPNAmgeNWy
-	 b8n2xFIDOnMkrKsjhFblSO4klyx9N8vwWWSuhd9Ehf9x2W+9IzmsiY0VK0LwvyIT6c4dp
-	 RjQSp1Y/2J2U6YQ1xRIrZ/9iOS3IwhSyboa4oiMiicEvmbSiCRqL20WOGLrhMc2x0fRA0
-	 xR+R8QfKuNv9U5t4d533cgRM6fwlnJ7/Kmm4qnLLSj7bqTZRdKXTYmNUUZXscDAyAVg==
+	bh=aj5v3YISUETunv0qmakJRaV0+UZmIeUu8obFdPMYJbQ=;
+	b=Qv876wD82xT2QGnEq4dYkwT3csdKtGFlPYmGvAXQgQERfMfLLIeJwHFMFdHReipdNOib
+	 TE6niBVnxUUWqgf7WxGceNMYsbtnxNY4QFC/zpklvJtEfIvl5hJkRWQb+lQOupyYzzVAq
+	 zcxEHfZp4xLLzP+UHejffQnVqD1OCwrRTJ2MUkLkwEaDZPxrCExUGwwh0cMCzINCUXN0p
+	 YB7m5DMYXxcnOWC5XOYLO2WHJODIU8S2RQXWPyxPCtCQSUNWCKdL+OT45jPYc734NRD/u
+	 9gua/c98Y9J6lSnr5ssUxj44Pkz0lUjlnoheAfHaZuKI4hZE62cJWEmwZ+nqF+GDnUQ==
 ARC-Authentication-Results: i=2; smtp.subspace.kernel.org; 
 	dmarc=pass header.from=ph4ntom-rev.uz;
 	spf=pass smtp.mailfrom=ph4ntom-rev.uz;
-	dkim=pass header.d=ph4ntom-rev.uz header.i=@ph4ntom-rev.uz header.a=rsa-sha256 header.s=zoho header.b=OwtDwi9i;
-	arc=pass header.oldest-pass=0 smtp.remote-ip=165.173.182.54
-Received: from sender5-of-o54.zoho.com (sender5-of-o54.zoho.com [165.173.182.54])
+	dkim=pass header.d=ph4ntom-rev.uz header.i=@ph4ntom-rev.uz header.a=rsa-sha256 header.s=zoho header.b=ciOPakxI;
+	arc=pass header.oldest-pass=0 smtp.remote-ip=165.173.180.54
+Received: from sender6-of-o54.zoho.com (sender6-of-o54.zoho.com [165.173.180.54])
 	(using TLSv1.3 with cipher TLS_AES_256_GCM_SHA384 (256/256 bits)
-	 key-exchange X25519 server-signature ECDSA (prime256v1))
+	 key-exchange X25519 server-signature ECDSA (prime256v1) server-digest SHA256)
 	(No client certificate requested)
-	by smtp.subspace.kernel.org (Postfix) with ESMTPS id 8FBBC606A338;
-	Fri, 13 Nov 2026 23:55:19 +0000 (UTC)
-DMARC-Filter: OpenDMARC Filter v1.4.2 smtp.subspace.kernel.org 8FBBC606A338
+	by smtp.subspace.kernel.org (Postfix) with ESMTPS id 43D46606A330;
+	Fri, 13 Nov 2026 23:55:55 +0000 (UTC)
+DMARC-Filter: OpenDMARC Filter v1.4.2 smtp.subspace.kernel.org 43D46606A330
 Authentication-Results: smtp.subspace.kernel.org; dmarc=pass (p=none dis=none) header.from=ph4ntom-rev.uz
 Authentication-Results: smtp.subspace.kernel.org; spf=pass smtp.mailfrom=ph4ntom-rev.uz
 Authentication-Results: smtp.subspace.kernel.org;
-	dkim=pass (2048-bit key) header.d=ph4ntom-rev.uz header.i=@ph4ntom-rev.uz header.a=rsa-sha256 header.s=zoho header.b=OwtDwi9i
+	dkim=pass (2048-bit key) header.d=ph4ntom-rev.uz header.i=@ph4ntom-rev.uz header.a=rsa-sha256 header.s=zoho header.b=ciOPakxI
 ARC-Seal: i=1; a=rsa-sha256; t=1794613948; cv=none; 
 	d=zohomail.com; s=zohoarc; 
-	b=XSSJdMnEGl862DCS2sZZd3iwWjRkkAxX2HE5ENpDy667wonU6nXkRQCjqxzzciLBGs9/WxeANjjjpdC+CGsR1FV/N5qPznojNkN9RrPLGeUkAsTSUCe7VkywGuYYKFtVuMn2td0wioGeWdxgacyc0+DLpGtSpCnzqSNEIi2a9XU=
+	b=Zrc+YBNkfv4m9v4SCKbGmpHhWSkWJHcxrlX03e5gJXced8s5TmajyK80Hgd6JF3UQXfxF7pklmISUgTXPDYnUiO7HLgnGAIqhEsZgN9K48fG0cs52bqcSR/P5n7f9RnQwn0yMoEgV241vCa9qKq+DMPc1/6i9BtiOjZOMmrEg/c=
 ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=zohomail.com; s=zohoarc; 
 	t=1794613948; h=Content-Transfer-Encoding:Cc:Cc:Date:Date:From:From:In-Reply-To:MIME-Version:Message-ID:Subject:Subject:To:To:Message-Id:Reply-To; 
-	bh=BDmNp4Xz5w21MkSPxai69E07DBPtE9YzGQTBFDr72RM=; 
-	b=H6jkBfXk6x8iIY2AY0XROd6V4S6aY/KacDUsJ/3PYa8v2dGSQn2Aas+0Z6ZvPyTiV/vab1t6NAyPosg9rMXdIbGcXDxgT5HKmiKipUDVb1kiBFZr/UIZ5ZTnhaKr2hDTlgS5XJY3gleFeyRkvkksxXbsjkDB7TR9NT+spb8L4qY=
+	bh=aj5v3YISUETunv0qmakJRaV0+UZmIeUu8obFdPMYJbQ=; 
+	b=LjEUXNRQgY1u1yjH/ZfAxg9q6ImnEZeBDKhqEPnawMJGhN197C2jVtHwvPyqqnSab02P5Uzqj3m6RiXU41eu302MREHALz5wu4N3QpE10aymKKsYUkruwfYDgp1bWLnfuv51IVmb8QriFFBgO4nFAyGM3rDV80oYWjUOxsIVCo0=
 ARC-Authentication-Results: i=1; mx.zohomail.com;
 	dkim=pass  header.i=ph4ntom-rev.uz;
 	spf=pass  smtp.mailfrom=owner@ph4ntom-rev.uz;
 	dmarc=pass header.from=<owner@ph4ntom-rev.uz>
-DKIM-Signature: a=rsa-sha256; b=OwtDwi9iH0zjcqE6mIKqwHjP+yiHjFFAgc4x1oxw31hQ1S86WJ41ML1cmJw/cpNQs8EXaL3rJ3TsJ/5IDRU4uwJRM4eRsZ/vondLMia4IbGuqAJPulZXiRYlkOkyCaspoz6nSJek3L1NW5/Kzsp2qM4+USz++rxcAE59jL+LHT430w4hzf3m/+TcO2pfPY4zeV+F08LJBf8PK7oDJm400KBdACHSrJ1Pm+VvrYkSpGOHyC7DUXgVa0Xzrq6fpJ8lxAKNf++AKzjSRzFiYMpIym7azMS19lhLmKft/2MllgFd1liczOM4pWJDnK/ORBaldghAbnT3bmbiD8osSg4lCw==; c=relaxed/relaxed; s=zoho; d=ph4ntom-rev.uz; v=1; bh=BDmNp4Xz5w21MkSPxai69E07DBPtE9YzGQTBFDr72RM=; h=Content-Description:Content-ID:Content-Type:Content-Transfer-Encoding:Cc:Date:From:In-Reply-To:List-Subscribe:List-Post:List-Owner:List-Id:List-Archive:List-Help:List-Unsubscribe:MIME-Version:Message-ID:Resent-Sender:Resent-Cc:Resent-Date:Resent-To:Reply-To:Resent-Message-ID:Resent-From:Sender:Subject:To:Date:From:Message-Id:Reply-To:Subject:To:Cc;
-Received: by smtp.zohomail.com with SMTPS id 1794613946521832.1566096560762;
-	Fri, 13 Nov 2026 15:52:26 -0800 (PST)
+DKIM-Signature: a=rsa-sha256; b=ciOPakxIk5A5lZGuN7g/8u/fN6OxgXdJEuPY4iOW3GEMubr2nokJMg3nA1r+VygQzd7c/S9riCT/qnMWWs1Kut5IM8Q0DpDPrVWNI5Kq9dg1Y3ySGWfZmMmzDiTcTIWunMUdaPfHV0oYRf9lxmWZdLkJgDKSwvf7K3Xf4ra6AGFkbVvgDUFalS1Bg66rtFdOnhX1wdbdVMeZC+ACqflJW8XpQe0KMGq8lyCcGnMD7UJa5Dxp8ldW4VX/M6GXJ7vcdNYsd5WMxh58sLyfYNAvJ3Ub0rUb6oYTTa1L1BkZS0OEgBCag8PjnNY0pv9USTDzBb37aysfGKivngQ6dy0oKA==; c=relaxed/relaxed; s=zoho; d=ph4ntom-rev.uz; v=1; bh=aj5v3YISUETunv0qmakJRaV0+UZmIeUu8obFdPMYJbQ=; h=Content-Description:Content-ID:Content-Type:Content-Transfer-Encoding:Cc:Date:From:In-Reply-To:List-Subscribe:List-Post:List-Owner:List-Id:List-Archive:List-Help:List-Unsubscribe:MIME-Version:Message-ID:Resent-Sender:Resent-Cc:Resent-Date:Resent-To:Reply-To:Resent-Message-ID:Resent-From:Sender:Subject:To:Date:From:Message-Id:Reply-To:Subject:To:Cc;
+Received: by smtp.zohomail.com with SMTPS id 1794613948397437.90105265797854;
+	Fri, 13 Nov 2026 15:52:28 -0800 (PST)
 From: Enver Ikromov <owner@ph4ntom-rev.uz>
 To: Ping-Ke Shih <pkshih@realtek.com>
 Cc: linux-wireless@vger.kernel.org,
 	linux-kernel@vger.kernel.org,
 	Enver Ikromov <owner@ph4ntom-rev.uz>
-Subject: [PATCH rtw-next v5 05/10] wifi: rtw89: use AP self role for monitor interfaces
-Date: Sat, 14 Nov 2026 04:52:06 +0500
-Message-ID: <20261113235211.1911-6-owner@ph4ntom-rev.uz>
+Subject: [PATCH rtw-next v5 06/10] wifi: rtw89: transmit frames from monitor interfaces
+Date: Sat, 14 Nov 2026 04:52:07 +0500
+Message-ID: <20261113235211.1911-7-owner@ph4ntom-rev.uz>
 X-Mailer: git-send-email 2.56.0.windows.4
 In-Reply-To: <20261113235211.1911-1-owner@ph4ntom-rev.uz>
 References: <20261113235211.1911-1-owner@ph4ntom-rev.uz>
@@ -70,45 +70,300 @@ MIME-Version: 1.0
 Content-Transfer-Encoding: 8bit
 X-ZohoMailClient: External
 
-rtw89_vif_type_mapping() leaves net_type and self_role zero for
-NL80211_IFTYPE_MONITOR, i.e. RTW89_NET_TYPE_NO_LINK and
-RTW89_SELF_ROLE_CLIENT. When rtw89_mac_add_vif() initializes the
-interface, rtw89_mac_vif_init() first creates the role via H2C
-ROLE_MAINTAIN and then sends JoinInfo with disassoc set (op == 1) and
-this client role.
+Frames injected on a monitor interface reach the driver either through
+rtw89_ops_tx() (with info->control.vif == NULL for a passive monitor,
+info->control.vif == &sdata->vif for MONITOR_FLAG_ACTIVE, or a running
+interface matched by addr2) or, for injected data frames whose addr2
+matches an active interface, via wake_tx_queue and
+rtw89_core_txq_push().
 
-In firmware (verified on RTL8852AE firmware 0.13.36.2), the JoinInfo
-H2C handler treats (self_role != RTW89_SELF_ROLE_AP && op == 1) as a
-station disconnect request (HAL8852A_Role_Disconnect), which clears the
-newly created role's active bit in the firmware role table and skips
-initializing its CMAC control table entry (CCTL_ResetByMacid). Frames
-queued on that MAC ID are then silently dropped instead of transmitted.
+Passing local->monitor_sdata directly is racy because
+ieee80211_del_virtual_monitor() calls drv_remove_interface() before
+clearing local->monitor_sdata, so mac80211 may still pass a tearing-down
+monitor vif to rtw89_ops_tx() after the driver has released its MAC ID
+and port.
 
-With self_role set to RTW89_SELF_ROLE_AP and net_type kept at
-RTW89_NET_TYPE_NO_LINK, the JoinInfo H2C handler initializes the
-MAC ID's CMAC control entry and connects the role without enabling
-client TBTT tracking (gated on RTW89_SELF_ROLE_CLIENT) or AP beacon
-transmission (gated on RTW89_NET_TYPE_AP_MODE). Set both fields
-explicitly for monitor interfaces.
+In rtw89_ops_tx(), require an active PHY entity and resolve passive
+monitor TX through rtwdev->pure_monitor_mode_vif under rcu_read_lock(),
+while permitting concurrent MONITOR_FLAG_ACTIVE interfaces to transmit
+through their own driver vif while rtwvif->mon_tx_ready is set (clearing
+mon_tx_ready and coalescing synchronize_rcu() before teardown). Track
+active driver monitor vifs in rtwdev->monitor_vifs via
+rtw89_is_monitoring() so concurrent MONITOR_FLAG_ACTIVE interfaces
+reserve radiotap headroom and enable PHY status parsing (parsing scan
+channel IEs before pushing radiotap headers), and verify skb_headlen()
+in rtw89_core_tx_write_link() before reading skb->data.
 
 Signed-off-by: Enver Ikromov <owner@ph4ntom-rev.uz>
 ---
- drivers/net/wireless/realtek/rtw89/core.c | 2 ++
- 1 file changed, 2 insertions(+)
+ drivers/net/wireless/realtek/rtw89/core.c     | 22 ++++--
+ drivers/net/wireless/realtek/rtw89/core.h     | 10 ++-
+ drivers/net/wireless/realtek/rtw89/mac80211.c | 71 ++++++++++++++++---
+ drivers/net/wireless/realtek/rtw89/phy.c      |  2 +-
+ 4 files changed, 88 insertions(+), 17 deletions(-)
 
 diff --git a/drivers/net/wireless/realtek/rtw89/core.c b/drivers/net/wireless/realtek/rtw89/core.c
-index 3447f0e..9cf2b03 100644
+index 9cf2b03..54605f7 100644
 --- a/drivers/net/wireless/realtek/rtw89/core.c
 +++ b/drivers/net/wireless/realtek/rtw89/core.c
-@@ -5756,6 +5756,8 @@ void rtw89_vif_type_mapping(struct rtw89_vif_link *rtwvif_link, bool assoc)
- 		rtwvif_link->self_role = RTW89_SELF_ROLE_CLIENT;
- 		break;
- 	case NL80211_IFTYPE_MONITOR:
-+		rtwvif_link->net_type = RTW89_NET_TYPE_NO_LINK;
-+		rtwvif_link->self_role = RTW89_SELF_ROLE_AP;
- 		break;
- 	default:
- 		WARN_ON(1);
+@@ -1450,6 +1450,14 @@ static int rtw89_core_tx_write_link(struct rtw89_dev *rtwdev,
+ 	struct rtw89_core_tx_request tx_req = {};
+ 	int ret;
+ 
++	if (unlikely(IEEE80211_SKB_CB(skb)->flags & IEEE80211_TX_CTL_INJECTED)) {
++		struct ieee80211_hdr *hdr = (void *)skb->data;
++
++		if (skb_headlen(skb) < sizeof(struct ieee80211_cts) ||
++		    skb_headlen(skb) < ieee80211_hdrlen(hdr->frame_control))
++			return -EINVAL;
++	}
++
+ 	tx_req.skb = skb;
+ 	tx_req.vif = vif;
+ 	tx_req.sta = sta;
+@@ -2258,7 +2266,7 @@ static int rtw89_core_process_phy_status_ie(struct rtw89_dev *rtwdev,
+ 	 * scanning that needs to get chan_idx in IE01.
+ 	 */
+ 	accept = phy_ppdu->to_self || ie == RTW89_PHYSTS_IE01_CMN_OFDM ||
+-		 rtwdev->hw->conf.flags & IEEE80211_CONF_MONITOR;
++		 rtw89_is_monitoring(rtwdev);
+ 	if (!accept)
+ 		return 0;
+ 
+@@ -2341,8 +2349,7 @@ static int rtw89_core_rx_parse_phy_sts(struct rtw89_dev *rtwdev,
+ 	u16 ie_len;
+ 
+ 	/* for normal mode, mark invalid reports and bypass them */
+-	accept = phy_ppdu->ie >= RTW89_CCK_PKT ||
+-		 rtwdev->hw->conf.flags & IEEE80211_CONF_MONITOR;
++	accept = phy_ppdu->ie >= RTW89_CCK_PKT || rtw89_is_monitoring(rtwdev);
+ 	if (!accept)
+ 		return -EINVAL;
+ 
+@@ -3231,7 +3238,7 @@ void rtw89_core_update_rx_status_by_ppdu(struct rtw89_dev *rtwdev,
+ 					 struct ieee80211_rx_status *rx_status,
+ 					 struct rtw89_rx_phy_ppdu *phy_ppdu)
+ {
+-	if (!(rtwdev->hw->conf.flags & IEEE80211_CONF_MONITOR))
++	if (!rtw89_is_monitoring(rtwdev))
+ 		return;
+ 
+ 	if (!phy_ppdu)
+@@ -3803,7 +3810,7 @@ static void rtw89_core_update_radiotap(struct rtw89_dev *rtwdev,
+ 				       struct ieee80211_rx_status *rx_status,
+ 				       struct rtw89_rx_phy_ppdu *phy_ppdu)
+ {
+-	if (!(rtwdev->hw->conf.flags & IEEE80211_CONF_MONITOR))
++	if (!rtw89_is_monitoring(rtwdev))
+ 		return;
+ 
+ 	/*
+@@ -4029,9 +4036,9 @@ static void rtw89_core_rx_to_mac80211(struct rtw89_dev *rtwdev,
+ 	rtw89_core_hw_to_sband_rate(rx_status);
+ 	rtw89_core_rx_stats(rtwdev, phy_ppdu, desc_info, skb);
+ 	rtw89_core_update_rx_status_by_ppdu(rtwdev, rx_status, phy_ppdu);
+-	rtw89_core_update_radiotap(rtwdev, desc_info, skb, rx_status, phy_ppdu);
+ 	rtw89_core_validate_rx_signal(rx_status);
+ 	rtw89_core_update_rx_freq_from_ie(rtwdev, skb, rx_status);
++	rtw89_core_update_radiotap(rtwdev, desc_info, skb, rx_status, phy_ppdu);
+ 	rtw89_core_correct_mcc_chan(rtwdev, desc_info, rx_status, phy_ppdu);
+ 
+ 	/* In low power mode, it does RX in thread context. */
+@@ -7577,7 +7584,8 @@ static int rtw89_core_register_hw(struct rtw89_dev *rtwdev)
+ 		hw->wiphy->num_iftype_ext_capab = ARRAY_SIZE(rtw89_iftypes_ext_capa);
+ 	}
+ 
+-	hw->wiphy->features |= NL80211_FEATURE_SCAN_RANDOM_MAC_ADDR;
++	hw->wiphy->features |= NL80211_FEATURE_SCAN_RANDOM_MAC_ADDR |
++			       NL80211_FEATURE_ACTIVE_MONITOR;
+ 
+ 	hw->wiphy->max_scan_ssids = RTW89_SCANOFLD_MAX_SSID;
+ 	hw->wiphy->max_scan_ie_len = RTW89_SCANOFLD_MAX_IE_LEN;
+diff --git a/drivers/net/wireless/realtek/rtw89/core.h b/drivers/net/wireless/realtek/rtw89/core.h
+index 78f6ef0..7b03154 100644
+--- a/drivers/net/wireless/realtek/rtw89/core.h
++++ b/drivers/net/wireless/realtek/rtw89/core.h
+@@ -7833,6 +7833,7 @@ struct rtw89_dev {
+ 
+ 	struct rtw89_debugfs *debugfs;
+ 	struct rtw89_vif __rcu *pure_monitor_mode_vif;
++	unsigned int monitor_vifs;
+ 	struct rtw89_led led;
+ 
+ 	/* HCI related data, keep last */
+@@ -7870,6 +7871,7 @@ struct rtw89_vif {
+ 	struct rtw89_roc roc;
+ 	bool offchan;
+ 	bool burst_active;
++	bool mon_tx_ready;
+ 
+ 	enum rtw89_mlo_mode mlo_mode;
+ 	struct rtw89_vif_ml_trans ml_trans;
+@@ -9323,12 +9325,18 @@ static inline struct rtw89_fw_suit *rtw89_fw_suit_get(struct rtw89_dev *rtwdev,
+ 	return &fw_info->normal;
+ }
+ 
++static inline bool rtw89_is_monitoring(struct rtw89_dev *rtwdev)
++{
++	return (rtwdev->hw->conf.flags & IEEE80211_CONF_MONITOR) ||
++	       READ_ONCE(rtwdev->monitor_vifs);
++}
++
+ static inline struct sk_buff *rtw89_alloc_skb_for_rx(struct rtw89_dev *rtwdev,
+ 						     unsigned int length)
+ {
+ 	struct sk_buff *skb;
+ 
+-	if (rtwdev->hw->conf.flags & IEEE80211_CONF_MONITOR) {
++	if (rtw89_is_monitoring(rtwdev)) {
+ 		skb = dev_alloc_skb(length + RTW89_RADIOTAP_ROOM);
+ 		if (!skb)
+ 			return NULL;
+diff --git a/drivers/net/wireless/realtek/rtw89/mac80211.c b/drivers/net/wireless/realtek/rtw89/mac80211.c
+index b38e04f..c8a6003 100644
+--- a/drivers/net/wireless/realtek/rtw89/mac80211.c
++++ b/drivers/net/wireless/realtek/rtw89/mac80211.c
+@@ -16,6 +16,12 @@
+ #include "util.h"
+ #include "wow.h"
+ 
++static bool rtw89_has_active_entity(struct rtw89_dev *rtwdev)
++{
++	return rtw89_get_entity_state(rtwdev, RTW89_PHY_0) ||
++	       (rtwdev->dbcc_en && rtw89_get_entity_state(rtwdev, RTW89_PHY_1));
++}
++
+ static void rtw89_ops_tx(struct ieee80211_hw *hw,
+ 			 struct ieee80211_tx_control *control,
+ 			 struct sk_buff *skb)
+@@ -28,28 +34,56 @@ static void rtw89_ops_tx(struct ieee80211_hw *hw,
+ 	struct rtw89_vif *rtwvif;
+ 	int ret, qsel;
+ 
+-	if (unlikely(!vif)) {
+-		ieee80211_free_txskb(hw, skb);
+-		return;
+-	}
++	rcu_read_lock();
+ 
+-	rtwvif = vif_to_rtwvif(vif);
++	if (unlikely(!vif || vif->type == NL80211_IFTYPE_MONITOR)) {
++		if (!rtw89_has_active_entity(rtwdev)) {
++			ieee80211_free_txskb(hw, skb);
++			goto out;
++		}
++
++		/* Passive monitors pass vif == NULL and are only permitted to
++		 * transmit when a standalone monitor vif is the sole active
++		 * interface; active monitors (MONITOR_FLAG_ACTIVE) pass their
++		 * own driver vif and may transmit concurrently while
++		 * mon_tx_ready is set. Both paths unpublish and wait for an
++		 * RCU grace period before releasing link, port, and MAC ID.
++		 */
++		rtwvif = rcu_dereference(rtwdev->pure_monitor_mode_vif);
++		if (!rtwvif && vif) {
++			rtwvif = vif_to_rtwvif(vif);
++			if (!READ_ONCE(rtwvif->mon_tx_ready))
++				rtwvif = NULL;
++		}
++		if (!rtwvif) {
++			ieee80211_free_txskb(hw, skb);
++			goto out;
++		}
++
++		vif = rtwvif_to_vif(rtwvif);
++		info->control.vif = vif;
++	} else {
++		rtwvif = vif_to_rtwvif(vif);
++	}
+ 
+ 	if (rtwvif->offchan && !(flags & IEEE80211_TX_CTL_TX_OFFCHAN) && sta) {
+ 		struct rtw89_sta *rtwsta = sta_to_rtwsta(sta);
+ 
+ 		rtw89_debug(rtwdev, RTW89_DBG_TXRX, "ops_tx during offchan\n");
+ 		skb_queue_tail(&rtwsta->roc_queue, skb);
+-		return;
++		goto out;
+ 	}
+ 
+ 	ret = rtw89_core_tx_write(rtwdev, vif, sta, skb, &qsel);
+ 	if (ret) {
+ 		rtw89_err(rtwdev, "failed to transmit skb: %d\n", ret);
+ 		ieee80211_free_txskb(hw, skb);
+-		return;
++		goto out;
+ 	}
+ 	rtw89_core_tx_kick_off(rtwdev, qsel);
++
++out:
++	rcu_read_unlock();
+ }
+ 
+ static void rtw89_ops_wake_tx_queue(struct ieee80211_hw *hw,
+@@ -282,6 +316,13 @@ static int rtw89_ops_add_interface(struct ieee80211_hw *hw,
+ 	if (ret)
+ 		goto unset_link;
+ 
++	if (vif->type == NL80211_IFTYPE_MONITOR) {
++		WRITE_ONCE(rtwvif->mon_tx_ready, true);
++		WRITE_ONCE(rtwdev->monitor_vifs, rtwdev->monitor_vifs + 1);
++		if (rtwdev->monitor_vifs == 1 &&
++		    test_bit(RTW89_FLAG_POWERON, rtwdev->flags))
++			rtw89_physts_parsing_init(rtwdev);
++	}
+ 	rtw89_recalc_pure_monitor_vif(rtwdev, NULL, true);
+ 	rtw89_recalc_lps(rtwdev);
+ 	return 0;
+@@ -305,6 +346,7 @@ static void rtw89_ops_remove_interface(struct ieee80211_hw *hw,
+ 	u8 macid = rtw89_vif_get_main_macid(rtwvif);
+ 	u8 port = rtw89_vif_get_main_port(rtwvif);
+ 	struct rtw89_vif_link *rtwvif_link;
++	bool need_sync;
+ 
+ 	lockdep_assert_wiphy(hw->wiphy);
+ 
+@@ -312,7 +354,13 @@ static void rtw89_ops_remove_interface(struct ieee80211_hw *hw,
+ 		    vif->addr, vif->type, vif->p2p);
+ 
+ 	/* unpublish before tearing down the link, port and MAC ID */
+-	rtw89_recalc_pure_monitor_vif(rtwdev, rtwvif, true);
++	need_sync = rtw89_recalc_pure_monitor_vif(rtwdev, rtwvif, false);
++	if (vif->type == NL80211_IFTYPE_MONITOR && rtwvif->mon_tx_ready) {
++		WRITE_ONCE(rtwvif->mon_tx_ready, false);
++		need_sync = true;
++	}
++	if (need_sync)
++		synchronize_rcu();
+ 
+ 	wiphy_delayed_work_cancel(hw->wiphy, &rtwvif->roc.roc_work);
+ 
+@@ -333,6 +381,13 @@ static void rtw89_ops_remove_interface(struct ieee80211_hw *hw,
+ 	rtw89_core_release_bit_map(rtwdev->hw_port, port);
+ 	rtw89_release_mac_id(rtwdev, macid);
+ 
++	if (vif->type == NL80211_IFTYPE_MONITOR && rtwdev->monitor_vifs) {
++		WRITE_ONCE(rtwdev->monitor_vifs, rtwdev->monitor_vifs - 1);
++		if (!rtwdev->monitor_vifs &&
++		    test_bit(RTW89_FLAG_POWERON, rtwdev->flags))
++			rtw89_physts_parsing_init(rtwdev);
++	}
++
+ 	rtw89_recalc_lps(rtwdev);
+ 	rtw89_enter_ips_by_hwflags(rtwdev);
+ }
+diff --git a/drivers/net/wireless/realtek/rtw89/phy.c b/drivers/net/wireless/realtek/rtw89/phy.c
+index 795920b..c04fbcf 100644
+--- a/drivers/net/wireless/realtek/rtw89/phy.c
++++ b/drivers/net/wireless/realtek/rtw89/phy.c
+@@ -7183,7 +7183,7 @@ static void __rtw89_physts_parsing_init(struct rtw89_dev *rtwdev,
+ 	u32 val;
+ 	u8 i;
+ 
+-	if (rtwdev->hw->conf.flags & IEEE80211_CONF_MONITOR) {
++	if (rtw89_is_monitoring(rtwdev)) {
+ 		monitor_mode_mu_ies = BIT(RTW89_PHYSTS_IE09_FTR_0);
+ 		if (phy->physt_gen < 2)
+ 			monitor_mode_mu_ies |= BIT(RTW89_PHYSTS_IE10_FTR_PLCP_EXT);
 -- 
 2.56.0.windows.4
 
