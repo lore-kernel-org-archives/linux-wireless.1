@@ -1,59 +1,65 @@
-Authentication-Results: smtp.subspace.kernel.org; arc=none smtp.remote-ip=100.103.45.18
+Authentication-Results: smtp.subspace.kernel.org; arc=none smtp.remote-ip=95.215.58.172
 ARC-Seal: i=1; d=subspace.kernel.org; s=arc20261015; a=rsa-sha256; cv=none;
-	t=1794552971;
-	b=CWplws+X+yBk6IbnFNYyLsOUC9y5B/DCZq5LrIF3TG3dSCwiKIVIKop+p7IWOHHi3Cvg
-	 7BRUgA3UbACugi5MQrtOnlH/DKZEuEo4hBVjfRlWVQIITEEsxdFEtUW0e1nt0kqwwkksk
-	 mIjLGV7RqRCUzN6/m+h7vPZbWSMlS3wyQtWLfTyQPTxaX2CPVPLuKLAhVwBl3tL/iMo4Y
-	 atg1bKv3T5/620+otB90PRkqJ4VEzRhYQ3CppocWld0iACoppV6gjOlbTET59oVDccBJf
-	 hbJc6SCgo+97wrOLb/IiquL32r3OSY+xmH+AutBzYM0j+1WH7vbJYMo6T3RpxhJfCtg==
+	t=1794553048;
+	b=y0jS4g6qXPJHVk5JGYbQ4QlWqk+4LlAiEtZB5gxiKpiYa7ML1NA5eRDgt6IlEUoyoPqq
+	 76et4kg6YGVjB9sKtTirxZKsc2VCJvfs7O8vVt1dGxVTts665kOv5Bwbc1ic/y9u/THjP
+	 996kyJzNJWAmrPIBYp6cEqkjOvECSG7s1XY8XCrQOY0GC7ZlBhuP6Z45m6R1nn2zfBwKF
+	 81xYcAIbgisgQCiAQIW3oyfeke/FLh9NOLMs3hMoOfZRWm0MpbTzvALv/bw3FlGgJaScS
+	 gY0QbEDWq9ynUxZ1mO6vKcad86SRr6MeaQ4htxfLYFTSzBIWAEuUo2MkXPGMJyZhGvQ==
 ARC-Message-Signature: i=1; d=subspace.kernel.org; s=arc20261015;
-	a=rsa-sha256; c=relaxed/relaxed; t=1794552971;
-	h=Received:DKIM-Signature:From:To:Cc:Subject:Date:Message-ID:X-Mailer:
-	 MIME-Version:X-Developer-Signature:X-Developer-Key:
+	a=rsa-sha256; c=relaxed/relaxed; t=1794553048;
+	h=DMARC-Filter:X-Envelope-To:DKIM-Signature:X-Envelope-To:Received:
+	 X-Mizu-Trace-ID:X-Migadu-Flow:Date:From:To:CC:Subject:In-Reply-To:
+	 References:Message-ID:MIME-Version:Content-Type:
 	 Content-Transfer-Encoding;
-	bh=Pyq+1orvp/DnEDgd8Z2hspx3OAoSnJmA6J15epMOGkA=;
-	b=A5zSo7+BnR1/II97M6WIo21auRDWnRFAgVo0USui+YYmn9sTs1/oVxIi3Od2mYLC/Hlw
-	 5RBbVJsiWiizUbi3HMvgjZaqKcfe5eQ6hnS/Ztu0jS2d2KSxsatYrpM9Z9dauqLeiFmnZ
-	 rhiIavQW8APNdF4DOD/w6N4z2/P2JoBx8LHqWyFRhlwTl6ywYY2tXejQJE6hms4DCVb42
-	 4ziharGfJXf++qPAVt0IdjBrL4ODp5KFXlrShWkxGvED/vkNKTH39QVe96OKzwKIK0OrZ
-	 L798ABfkP1kqhptR8/lFPVg6YPjZok21scwhYLzw1NJ5QXi4z5tjufhed0oDZA9EH5A==
+	bh=TSIZ/NIMpDoAtTyHaUk17MQMdrZ8OXOHr5Xy7o+2duM=;
+	b=Z0fqODIfLSD10R2uOAglqoGUhRs2ogj/IxlblP4nh/N5FrzE0gKbi2DssqWRoV6ZoEV0
+	 7jd2SG+rBdqma4EINLrvVzxGe6k0esEj591FisT2tqysFez9sFCwKt78lSV6JOexvZqMq
+	 43HA7YaglM8A0ZWyqyKDfvshLLQtceBzVaQFUnWZaMEsm0zAKGlzwtsvNaWpr9/nm/EXH
+	 sZBFAkzdCM7DeqVuBDY8sSt64HWLN5u/HKyseOgXShIELfeORMS8hhX7fbTShO5XxVquY
+	 4OSCO0mxmniyfeX6huLpRF4Qh5lmc3c1kdg/BskZej2jAgxiJ4QpdFgn5Wx9j8WmlGA==
 ARC-Authentication-Results: i=1; smtp.subspace.kernel.org; 
-	dkim=pass header.d=kernel.org header.i=@kernel.org header.a=rsa-sha256 header.s=k20260515 header.b=FzAf10c0;
-	arc=none smtp.remote-ip=100.103.45.18
-Received: from smtp.kernel.org (quasi.space.kernel.org [100.103.45.18])
-	(using TLSv1.3 with cipher TLS_AES_256_GCM_SHA384 (256/256 bits)
-	 key-exchange X25519 server-signature ECDSA (prime256v1))
+	dmarc=pass header.from=linux.dev;
+	spf=pass smtp.mailfrom=linux.dev;
+	dkim=pass header.d=linux.dev header.i=@linux.dev header.a=rsa-sha256 header.s=key1 header.b=ZH0nOXPN;
+	arc=none smtp.remote-ip=95.215.58.172
+Received: from mta1.migadu.com (out-172.mta1.migadu.com [95.215.58.172])
+	(using TLSv1.3 with cipher TLS_AES_128_GCM_SHA256 (128/128 bits)
+	 key-exchange X25519 server-signature ECDSA (prime256v1) server-digest SHA256)
 	(No client certificate requested)
-	by smtp.subspace.kernel.org (Postfix) with ESMTPS id DACAD606A321;
-	Fri, 13 Nov 2026 06:56:11 +0000 (UTC)
+	by smtp.subspace.kernel.org (Postfix) with ESMTPS id 0A491606A32A
+	for <linux-wireless@vger.kernel.org>; Fri, 13 Nov 2026 06:57:27 +0000 (UTC)
+DMARC-Filter: OpenDMARC Filter v1.4.2 smtp.subspace.kernel.org 0A491606A32A
+Authentication-Results: smtp.subspace.kernel.org; dmarc=pass (p=none dis=none) header.from=linux.dev
+Authentication-Results: smtp.subspace.kernel.org; spf=pass smtp.mailfrom=linux.dev
 Authentication-Results: smtp.subspace.kernel.org;
-	dkim=pass (2048-bit key) header.d=kernel.org header.i=@kernel.org header.a=rsa-sha256 header.s=k20260515 header.b=FzAf10c0
-Received: by smtp.kernel.org (Postfix) with ESMTPSA id 753C81F000C5;
-	Fri, 13 Nov 2026 06:56:11 +0000 (UTC)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=kernel.org;
-	s=k20260515; t=1794552971;
-	bh=Pyq+1orvp/DnEDgd8Z2hspx3OAoSnJmA6J15epMOGkA=;
-	h=From:To:Cc:Subject:Date;
-	b=FzAf10c07bp3b7OqNi4NavlNXx5rCLbBIFtov7/EZekJWs5AtdBD4J/JJs5TeJVNs
-	 U23ND7p88ZY5+D807NwjLhs4+dLxsOIZZWlTgt9YY1KxjYXL29n14rBy1+TTYZirhJ
-	 jLBPEZWSKPloUizBco9jXzd7Exa7j5frNbAcEnhg2jsIdz64OzdZ093KHdSlgiG1iN
-	 JARSVSAODHf10bpwzLO9FDpEmJieL6K5dU2viBloIIf0UDpyupR2a7rm2D6U0UBuln
-	 HQPK0/Kq058vNQvqN9ELGpLrPTuw8OakYj6pFqu7vyWHhTsUejatisISZdzSqn2oTT
-	 H/tWd80onSdIg==
-From: Kees Cook <kees@kernel.org>
-To: Miri Korenblit <miriam.rachel.korenblit@intel.com>
-Cc: Kees Cook <kees@kernel.org>,
-	"Gustavo A. R. Silva" <gustavoars@kernel.org>,
-	Emmanuel Grumbach <emmanuel.grumbach@intel.com>,
-	linux-wireless@vger.kernel.org,
-	linux-hardening@vger.kernel.org,
-	Dennis Gilmore <dennis@ausil.us>,
-	stable@vger.kernel.org,
-	linux-kernel@vger.kernel.org
-Subject: [PATCH] wifi: iwlwifi: mld: Start the netdetect match counts at zero
-Date: Thu, 12 Nov 2026 22:56:09 -0800
-Message-ID: <20261113065608.i.785-kees@kernel.org>
-X-Mailer: git-send-email 2.55.0
+	dkim=pass (1024-bit key, unprotected) header.d=linux.dev header.i=@linux.dev header.a=rsa-sha256 header.s=key1 header.b=ZH0nOXPN
+X-Envelope-To: linux-wireless@vger.kernel.org
+DKIM-Signature: a=rsa-sha256; bh=yLGnhnvrP+1DLPZgeP3cQbQNdkVKbbC/M18T1Cb2bRQ=;
+ c=simple/simple; d=linux.dev;
+ h=from:to:subject:date:message-id:mime-version:content-type; s=key1;
+ t=1794553045; v=1; x=1795157845;
+ b=ZH0nOXPNG3vdv4JA6zep7a07lW8iTvjTXSnXEkvghdU4vFeVdGIzbiUz7bvf6d7K3ATtD0jl
+ OA9rLLU0iEIqlkNEm9PyYJLuLpmCKy9jqb8S5pbdYCiyCVegD62cv3Od6nVLtLxWg9cNbuSIqvY
+ +g+247jK9qAfHFPwHcNi3nEQ=
+X-Envelope-To: linux-wireless@vger.kernel.org
+Received: by smtp.migadu.com with ESMTPS id b374c89bdcf8feb7;
+	Fri, 13 Nov 2026 06:57:25 +0000
+X-Mizu-Trace-ID: b374c89bdcf8feb7
+X-Migadu-Flow: FLOW_OUT
+Date: Fri, 13 Nov 2026 07:57:23 +0100
+From: Luka Gejak <luka.gejak@linux.dev>
+To: linux-wireless@vger.kernel.org, Mehmet Fide <mehmet.fide@gmail.com>,
+ Ping-Ke Shih <pkshih@realtek.com>
+CC: Tzu-En Huang <tehuang@realtek.com>, Yan-Hsuan Chuang <yhchuang@realtek.com>,
+ Kalle Valo <kvalo@kernel.org>, Stanislaw Gruszka <sgruszka@redhat.com>,
+ Brian Norris <briannorris@chromium.org>, linux-kernel@vger.kernel.org,
+ mehmet.fide@screeningeagle.com
+Subject: =?US-ASCII?Q?Re=3A_=5BPATCH_rtw-next_3/3=5D_wifi=3A_rtw88=3A_reset_th?=
+ =?US-ASCII?Q?e_stations_outside_of_RCU_on_firmware_recovery?=
+In-Reply-To: <20261111213239.569224-4-mehmet.fide@gmail.com>
+References: <20261111213239.569224-1-mehmet.fide@gmail.com> <20261111213239.569224-4-mehmet.fide@gmail.com>
+Message-ID: <699D1E7C-1793-44A7-AF57-CFE16AD036E6@linux.dev>
 X-Mailing-List: linux-wireless@vger.kernel.org
 List-Id: <linux-wireless.vger.kernel.org>
 List-Post: <mailto:linux-wireless@vger.kernel.org>
@@ -63,81 +69,46 @@ List-Unsubscribe: <mailto:linux-wireless+unsubscribe@vger.kernel.org>
 List-Owner: <mailto:linux-wireless+owner@vger.kernel.org>
 Precedence: list
 MIME-Version: 1.0
-X-Developer-Signature: v=1; a=openpgp-sha256; l=3056; i=kees@kernel.org; h=from:subject:message-id; bh=3cF43qk02UNaKgufk26U47Z2VrGNzATQVV0xUuQxQyQ=; b=owGbwMvMwCVmps19z/KJym7G02pJDFnftnQ2X/QJW7njcdCtr32/q+Xus172nnXpZmvgT83az 7PXXRSP7ShlYRDjYpAVU2QJsnOPc/F42x7uPlcRZg4rE8gQBi5OAZiI3XyGfzr3l+a8ulKb1ay8 RuJpv9ByyyVmf8vyjwY8PnbgddQcjo+MDBcu8nr3q06Q/uPju2F7Zv/MSp7j1j7s87a83bbz2Bv maG4A
-X-Developer-Key: i=kees@kernel.org; a=openpgp; fpr=A5C3F68F229DD60F723E6E138972F4DFDC6DC026
+Content-Type: text/plain;
+ charset=utf-8
 Content-Transfer-Encoding: 8bit
 
-iwl_mld_process_netdetect_res() allocates the netdetect results with
-kzalloc_flex(), and iwl_mld_set_netdetect_info() allocates each match the
-same way. kzalloc_flex() sets the __counted_by() counters "n_matches" and
-"n_channels" to the allocated sizes when the compiler supports
-__builtin_counted_by_ref(), but iwl_mld_set_netdetect_info() uses them as
-the number of entries filled so far, expecting them to start at zero as
-they did when the results came from kzalloc(). Starting from the
-allocated sizes, every match and channel is stored past the end of its
-array.
+Hi Mehmet,
 
-Reset both counters after allocation, since they are "usage" counters, not
-"total allocation" counters. Also increment each counter before storing
-the entry it counts, so that no store is beyond the __counted_by()
-bound at the time it is made.
+Thanks for the fix. It looks good to me, though I have one small comment
+below, but I don't think it should block the patch.
 
-Build tested ARCH=x86_64 defconfig with CONFIG_IWLMLD=m and W=1, with
-GCC 16.2.0.
+> diff --git a/drivers/net/wireless/realtek/rtw88/main.c b/drivers/net/wireless/realtek/rtw88/main.c
+> index ce65a1a80840..8e7ae747b900 100644
+> --- a/drivers/net/wireless/realtek/rtw88/main.c
+> +++ b/drivers/net/wireless/realtek/rtw88/main.c
+> @@ -664,7 +664,7 @@ static void __fw_recovery_work(struct rtw_dev *rtwdev)
+>       WARN(1, "firmware crash, start reset and recover\n");
+>
+>       rtw_iterate_keys_atomic(rtwdev, NULL, rtw_reset_key_iter, rtwdev);
+> -     rtw_iterate_stas_atomic(rtwdev, rtw_reset_sta_iter, rtwdev);
+> +     rtw_iterate_stas(rtwdev, rtw_reset_sta_iter, rtwdev);
+>       rtw_iterate_vifs_atomic(rtwdev, rtw_reset_vif_iter, rtwdev);
 
-Reported-by: Dennis Gilmore <dennis@ausil.us>
-Closes: https://lore.kernel.org/all/20261112025252.71375-1-dennis@ausil.us/
-Fixes: 69050f8d6d075 ("treewide: Replace kmalloc with kmalloc_obj for non-scalar types")
-Cc: stable@vger.kernel.org
-Signed-off-by: Kees Cook <kees@kernel.org>
----
- drivers/net/wireless/intel/iwlwifi/mld/d3.c | 13 +++++++++----
- 1 file changed, 9 insertions(+), 4 deletions(-)
+One difference to the atomic iterator: rtw_collect_sta_iter() allocates
+an entry per station with GFP_ATOMIC and silently skips the station when
+that fails:
 
-diff --git a/drivers/net/wireless/intel/iwlwifi/mld/d3.c b/drivers/net/wireless/intel/iwlwifi/mld/d3.c
-index ce959363f62c..711877ac4c23 100644
---- a/drivers/net/wireless/intel/iwlwifi/mld/d3.c
-+++ b/drivers/net/wireless/intel/iwlwifi/mld/d3.c
-@@ -1437,9 +1437,11 @@ iwl_mld_set_netdetect_info(struct iwl_mld *mld,
- 		match = kzalloc_flex(*match, channels, n_channels);
- 		if (!match)
- 			return;
-+		/* The channels are counted below as they are added. */
-+		match->n_channels = 0;
- 
--		netdetect_info->matches[netdetect_info->n_matches] = match;
- 		netdetect_info->n_matches++;
-+		netdetect_info->matches[netdetect_info->n_matches - 1] = match;
- 
- 		/* We inverted the order of the SSIDs in the scan
- 		 * request, so invert the index here.
-@@ -1457,9 +1459,9 @@ iwl_mld_set_netdetect_info(struct iwl_mld *mld,
- 		for_each_set_bit(j,
- 				 (unsigned long *)&matches[i].matching_channels[0],
- 				 sizeof(matches[i].matching_channels)) {
--			match->channels[match->n_channels] =
--				netdetect_cfg->channels[j]->center_freq;
- 			match->n_channels++;
-+			match->channels[match->n_channels - 1] =
-+				netdetect_cfg->channels[j]->center_freq;
- 		}
- 	}
- }
-@@ -1512,10 +1514,13 @@ iwl_mld_process_netdetect_res(struct iwl_mld *mld,
- 	}
- 	n_matches = hweight_long(matched_profiles);
- 	netdetect_info = kzalloc_flex(*netdetect_info, matches, n_matches);
--	if (netdetect_info)
-+	if (netdetect_info) {
-+		/* iwl_mld_set_netdetect_info() counts the matches it adds. */
-+		netdetect_info->n_matches = 0;
- 		iwl_mld_set_netdetect_info(mld, netdetect_cfg, netdetect_info,
- 					   resume_data->netdetect_res,
- 					   matched_profiles);
-+	}
- 
- 	wakeup.net_detect = netdetect_info;
-  out:
--- 
-2.55.0
+        stas_entry = kmalloc_obj(*stas_entry, GFP_ATOMIC);
+        if (!stas_entry)
+                return;
 
+For the other rtw_iterate_stas() users that only loses one update, but
+here it skips rtw_sta_remove(). So if I read it right, the reconfig then
+adds that station again with rtw_sta_add(), sta_cnt stays one too high
+from then on (rtw8822c_cfo_track() for example resets its tracking unless
+sta_cnt is 1), and the old macid of an AP client is never released.
+
+It needs the allocation to fail during a recovery, so it is very
+unlikely, and I don't see a simple way around it without the wiphy lock.
+Just mentioning it, I am fine with the patch as is.
+
+Reviewed-by: Luka Gejak <luka.gejak@linux.dev>
+
+Best regards,
+Luka Gejak
