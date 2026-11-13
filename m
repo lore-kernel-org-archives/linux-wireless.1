@@ -1,96 +1,61 @@
-Authentication-Results: smtp.subspace.kernel.org; arc=none smtp.remote-ip=209.85.128.46
-ARC-Seal: i=1; d=subspace.kernel.org; s=arc20261015; a=rsa-sha256; cv=none;
-	t=1794607549;
-	b=tEQgQgIA9bWWDJUuzN8StGwwnvGe4TMxyQ9MMqeUCW2lPIXBW/Cw7vURSFaI5q0xi73C
-	 O77ooTntUBIKhKIVT0sh7EA/uKOQz7/Of+uxz6WBsae3spX/0A7cI4L1UDPjsg1KpahBK
-	 DV8Z6ggqzIc84SqyGbCcPpQxgnyw0dQ3OH06iG9mZ0us9yXjcDeAWdIrnNT40d0JhXtXU
-	 E9/Cnn1st7xtyzIqiL8hvQWBegJRym6/nDLQrwuvVgIpMWMm1XRkiCa1eNXvqWS/t6SDN
-	 jg40AsZ/ZBx+vYdOSnFhRKcnd5UQMHDvozkub1vsE9iGk4VNEK+SsUbdsFifQh2UeLA==
-ARC-Message-Signature: i=1; d=subspace.kernel.org; s=arc20261015;
-	a=rsa-sha256; c=relaxed/relaxed; t=1794607549;
-	h=DMARC-Filter:Received:DKIM-Signature:X-Google-DKIM-Signature:
-	 X-Forwarded-Encrypted:X-Gm-Message-State:X-Gm-Gg:X-Received:Received:
-	 From:To:Cc:Subject:Date:Message-ID:X-Mailer:In-Reply-To:References:
-	 MIME-Version:Content-Transfer-Encoding;
-	bh=UuCcRaWcfhI534qP5WKzVNn48w3a+JItDciIOEIM+EM=;
-	b=vh0VHaVoYTNtHQboFWTAlawNIZMMz2FVG+3rZXn9Nfib87+qTR20gie/mLE+B04qhpNS
-	 Gsa668X5vjPpwq88NnIbr1YEYyhW5psHMzx40Ib/klKv6MzvO+7PFRE9Cn90Wk0Lp98gE
-	 FtoyGzmF7AmVShSghCIXlScGuHc93SyHGV44IMl1Hb2dPPcgLsgBhH+ti3CFMR0dfdZiX
-	 TzxJt1bvlI/16TlT9ttF+9sUkzhEeAY0N19fnj+I4yttpmVewhXNac3MI+2LahopB+QDy
-	 KXvOUjQNSP9mYdi6iWAc6wyBD/71ykeUBMJiMlUb/qP5OWRWTD9FXTk8kZZmFbL0ZvA==
-ARC-Authentication-Results: i=1; smtp.subspace.kernel.org; 
-	dmarc=pass header.from=gmail.com;
-	spf=pass smtp.mailfrom=gmail.com;
-	dkim=pass header.d=gmail.com header.i=@gmail.com header.a=rsa-sha256 header.s=20260707 header.b=Q7fUvc7B;
-	arc=none smtp.remote-ip=209.85.128.46
-Received: from mail-wm1-f46.google.com (mail-wm1-f46.google.com [209.85.128.46])
-	(using TLSv1.3 with cipher TLS_AES_128_GCM_SHA256 (128/128 bits)
+Authentication-Results: smtp.subspace.kernel.org; arc=pass header.oldest-pass=0 smtp.remote-ip=165.173.180.54
+ARC-Seal: i=2; d=subspace.kernel.org; s=arc20261015; a=rsa-sha256; cv=pass;
+	t=1794613941;
+	b=LSHrQtEZmUStywtG8ew9++K/Hr/Nr3s039lODjPnNhQ08Rd3iIIL8YrgrLE2Sil93KR2
+	 SJkIgPRy5OxOjqIzm/nI53o9hz/xSMWRV9JlY0fClNt1ZvQDZts7dc1dfk0B9D3QLDCCF
+	 GllqajYQJZbZ/zijqB7RFJOB5VFnET8PxWTp39tz3bdzosEbWTkE57IZphyjQzouEwjry
+	 fkJybUIOl16zkch1LzCXwXSAJpmfmNYQYfj2j7Ryx1maMf5T1oZkxgaZaK6lHOn/GCgLW
+	 X6Ddboua8eSUEoZuG9mQuuQGnwRV7qiopkEgk1C742rF9/N4WsJgIeV97SOkzOIH3yw==
+ARC-Message-Signature: i=2; d=subspace.kernel.org; s=arc20261015;
+	a=rsa-sha256; c=relaxed/relaxed; t=1794613941;
+	h=DMARC-Filter:DKIM-Signature:Received:From:To:Cc:Subject:Date:
+	 Message-ID:X-Mailer:MIME-Version:Content-Transfer-Encoding:
+	 X-ZohoMailClient;
+	bh=Z63hzdNsCj0yShb0LqNKN0actouvBeMauSyX1t3SugY=;
+	b=R1/pdvtCSWFk9mBSigICSeKupYM5JYzf6ZtiJsLDP7GNS2RgvxrXa4oFtFNnpYyyF7dW
+	 nRqq6tkh8OwW1s0XdG+9mMo4R2xYfyJb+sQo/InGhKMo+ho7IcKvq8uccJ10lYGEbc9tU
+	 jPe6NZEHNsSSxqIVz61x6ub7oz+p8ArCJjFHUEUMyMqTEJ52+ssbGLaTbOGMLU9IkGsOI
+	 ILGYcpyyf0IFTmKXxRuw6M8gqZ3NEYTdM5GUFzdnRV/YatORPgaQe0fAC6KhUJ+YtKeT1
+	 ZLhqfRE0hz8q+O0OohfQfyVgs775IpmpyhDak0yno94SQqC/XX+6o+2ZoZgq8KJaX+g==
+ARC-Authentication-Results: i=2; smtp.subspace.kernel.org; 
+	dmarc=pass header.from=ph4ntom-rev.uz;
+	spf=pass smtp.mailfrom=ph4ntom-rev.uz;
+	dkim=pass header.d=ph4ntom-rev.uz header.i=@ph4ntom-rev.uz header.a=rsa-sha256 header.s=zoho header.b=YlYcbL0t;
+	arc=pass header.oldest-pass=0 smtp.remote-ip=165.173.180.54
+Received: from sender6-of-o54.zoho.com (sender6-of-o54.zoho.com [165.173.180.54])
+	(using TLSv1.3 with cipher TLS_AES_256_GCM_SHA384 (256/256 bits)
 	 key-exchange X25519 server-signature ECDSA (prime256v1) server-digest SHA256)
 	(No client certificate requested)
-	by smtp.subspace.kernel.org (Postfix) with ESMTPS id 61E70606A33A
-	for <linux-wireless@vger.kernel.org>; Fri, 13 Nov 2026 22:05:49 +0000 (UTC)
-DMARC-Filter: OpenDMARC Filter v1.4.2 smtp.subspace.kernel.org 61E70606A33A
-Authentication-Results: smtp.subspace.kernel.org; dmarc=pass (p=none dis=none) header.from=gmail.com
-Authentication-Results: smtp.subspace.kernel.org; spf=pass smtp.mailfrom=gmail.com
+	by smtp.subspace.kernel.org (Postfix) with ESMTPS id 2C979606A332;
+	Fri, 13 Nov 2026 23:52:19 +0000 (UTC)
+DMARC-Filter: OpenDMARC Filter v1.4.2 smtp.subspace.kernel.org 2C979606A332
+Authentication-Results: smtp.subspace.kernel.org; dmarc=pass (p=none dis=none) header.from=ph4ntom-rev.uz
+Authentication-Results: smtp.subspace.kernel.org; spf=pass smtp.mailfrom=ph4ntom-rev.uz
 Authentication-Results: smtp.subspace.kernel.org;
-	dkim=pass (2048-bit key) header.d=gmail.com header.i=@gmail.com header.a=rsa-sha256 header.s=20260707 header.b=Q7fUvc7B
-Received: by mail-wm1-f46.google.com with SMTP id 5b1f17b1804b1-4afe2d546f9so22099585e9.3
-        for <linux-wireless@vger.kernel.org>; Fri, 13 Nov 2026 14:05:49 -0800 (PST)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=gmail.com; s=20260707; t=1794607548; x=1795212348; darn=vger.kernel.org;
-        h=content-transfer-encoding:mime-version:references:in-reply-to
-         :message-id:date:subject:cc:to:from:from:to:cc:subject:date
-         :message-id:reply-to:content-type;
-        bh=UuCcRaWcfhI534qP5WKzVNn48w3a+JItDciIOEIM+EM=;
-        b=Q7fUvc7B+KCjlLEbd7LBof097PJOOZomD59SknDaa6DwF/nygvds24aEOnwTzjBnuN
-         /MmbOZj2ihnF2jFoQJE4K1RNA2dcpUV2Szu0keHR1S0+hdypRBTdmnQdAVej53mX6MMd
-         A8hpcn+4MVafT7vGDBfTM/Xkrlhb+1XR1yFU2e5T0prRvogpF6aecWknnJD3yvzUn4Ex
-         IPu4HB9ZkQXsOh/DVyxOPMWtFUQYYOTdcPyDqsgWJumIFBPGkQuVj/jJSEjEajM7bw3V
-         gLtsDSuDXyON1GYnI0CNZoC0pS1vqVZ6USfp+/Zh9S09a5pEmgMxWcTEGmnwmoLNF3kF
-         Pz2Q==
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=1e100.net; s=20260707; t=1794607548; x=1795212348;
-        h=content-transfer-encoding:mime-version:references:in-reply-to
-         :message-id:date:subject:cc:to:from:x-gm-gg:x-gm-message-state:from
-         :to:cc:subject:date:message-id:reply-to:content-type;
-        bh=UuCcRaWcfhI534qP5WKzVNn48w3a+JItDciIOEIM+EM=;
-        b=MxIfNWI246hKIQbgQl8spoCaJ1ZfuCyVoO+DTSX+9GBDbo2E3JbY5d972HXB4tk3h+
-         K+tJB/fWyFEgdGR6Gx7XyzI6N1ObFgRT1/W3hmJxtbr1nSgedqi8tG9bR8fxDakXbUzC
-         99e7ckvK0Y8YKC2TWsHJ158At3RiRJiUdwDrNn3Tb0vzcMDI/Bj4K9Qdr3l1i9stP90Z
-         fXLzpDqNbQxmbiclJYKlNtXEoJ3kcQ4/oU3KawwNg0kFNB0eY4bvR+wUfLzhLYE5umzc
-         3ARNsKi61ba0xk1FqvjdFQ1qxDs/A5KoHqEU5rD/0cg+l6iFZqlagOFkYkytPcPlbr/I
-         iwkA==
-X-Forwarded-Encrypted: i=1; AL+hErGpwztucsqBHFm5P4KwF9MEZD9WxSPplktXmzNcz10HdExGY5T5c7cVwXkKYg/BocR1dIAfYsXYO7nEsIpfzQ==@vger.kernel.org
-X-Gm-Message-State: APuU4Z+EOZnbHEv5o8KcHfMauHFnraM0dNDZSWRiczMZCZXUs7Hbr+ac
-	dsF8hMbRV2kHvjeiSJmJHUsn3ynBl9/NOZDIX3D90htVLuOlMn15HFq4
-X-Gm-Gg: AYBFou2TgdttIunjfriLIzgZ4gQwSHRD1wmRvCqbJEZ/ie08UvIFRoJy0+ni5U5JsMU
-	Io8DXpzJkpzaHILCdJvZ1LPwkps9f3JWd71/du+1/kwM5SOvUVqpOr3b4+cooDPbYJC0XbAO2d/
-	M5WFrT3hk0w1ZCL5Lnsc+2joGwmP7sVL5nIWhuCprN4sBhcOVKSBnl/7hBwdRzVt3JXHD9ewazz
-	FSCnv4OlIm1ChSjDCS13J/7dWOD6UID53L9pykf4i9USFPf7gAGnRHvqSPECw0DtvAq7MRvjt0g
-	ZxkijGt26J9NfbJEPTQougqvUnLpbkY3lnnwv2chp1ZqW1owBGh7TEUzs9OOoi3tOc/SiVnB89g
-	st8fkpPJJrr9RJxXrwZgLOa6wf4olvT0W+JYlb4Z18244B55t78b9m38wPIEu+diMrrH0m1UHeQ
-	sFv31KvOX/b5wQFWXKsn64kdBfLWsq6+fFUXfYVQV65VLPvhjIMjI3bVFLxdegOSGf56rq/6Xjm
-	XjptgXRFuRBtoTy5dnF34McN+MSkISUyjuvVlfzWFm8+09cIsJB0zTrEym4H/YI/RPSEVRhw/vT
-	D3iBdTXC3BFWwINVqII8SFI/qgl/xRGhdSwM
-X-Received: by 2002:a05:600c:470a:b0:4a0:b6:4619 with SMTP id 5b1f17b1804b1-4bb5599b358mr83112735e9.0.1794607547553;
-        Fri, 13 Nov 2026 14:05:47 -0800 (PST)
-Received: from deb05.proceq.com ([213.160.61.66])
-        by smtp.gmail.com with ESMTPSA id 5b1f17b1804b1-4bb55a0ffcdsm87834915e9.0.2026.11.13.14.05.46
-        (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
-        Fri, 13 Nov 2026 14:05:47 -0800 (PST)
-From: Mehmet Fide <mehmet.fide@gmail.com>
-To: Luka Gejak <luka.gejak@linux.dev>
-Cc: Ping-Ke Shih <pkshih@realtek.com>,
-	Bitterblue Smith <rtl8821cerfe2@gmail.com>,
-	linux-wireless@vger.kernel.org,
+	dkim=pass (2048-bit key, unprotected) header.d=ph4ntom-rev.uz header.i=@ph4ntom-rev.uz header.a=rsa-sha256 header.s=zoho header.b=YlYcbL0t
+ARC-Seal: i=1; a=rsa-sha256; t=1794613936; cv=none; 
+	d=zohomail.com; s=zohoarc; 
+	b=aPDLc/gyFTAiygM5H6GiL37qvUlAqXmeRSFgJvTZ3d4bISIeC7tbKOdeSeahMdah95ZjNEqMLt5kipdS/XEjuZkMs3HiDpWhO+21UPvNvUewE3yiQwuwiGTIBNQA55fO2Uh7Lb9K+ZY7KlV+H2BrXqzS2F1S8nWtEk+8gSm9tRQ=
+ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=zohomail.com; s=zohoarc; 
+	t=1794613936; h=Content-Transfer-Encoding:Cc:Cc:Date:Date:From:From:MIME-Version:Message-ID:Subject:Subject:To:To:Message-Id:Reply-To; 
+	bh=Z63hzdNsCj0yShb0LqNKN0actouvBeMauSyX1t3SugY=; 
+	b=YfzUbapidxBQbj+OrR/7aKueqtHuTCP5eFs+Tm6QiWY+/FDb2Rmmp9Z75EZcpjBt1/lZyGz9votQmftD15YptF37VfzR+WNHx4QTHBIhrZtv2UfGadxlideKbPQgJLqQiLvdhG4XmIYT/lFdQpWcgbGUXtXzdVbn5YVzUiNHtw0=
+ARC-Authentication-Results: i=1; mx.zohomail.com;
+	dkim=pass  header.i=ph4ntom-rev.uz;
+	spf=pass  smtp.mailfrom=owner@ph4ntom-rev.uz;
+	dmarc=pass header.from=<owner@ph4ntom-rev.uz>
+DKIM-Signature: a=rsa-sha256; b=YlYcbL0t/Hoy4uNhX34v5Wf+esYUMGkpK8J8TbRl/ytAYPdOVbmSbqJOwVbt+DYf5nYdg2WCEytUKuryP6nr1ROx8JBLR/dKMiISWnj6THMph72803cH4HwZyJEEGcs5LNrQseQO5bhrRca8IXIsEODAy6kcui7S7DOH/eY4ZFiT0Xt0Pv0wGb2dbNCxnHd7cHZgfPgVoQ/F0uQ6Fah2g1z8fLmjBUK84P6CJpcIgt8IqgHnfgixcJzsH0ux5H2UUO+elJ3f2/2d49QK0S2iEypPhGzHf/0q1qGZcOTpJCFKwyWNG5mhQ7UpZ7uN/80EUaT91yoxC+zDqap3G5GyIQ==; c=relaxed/relaxed; s=zoho; d=ph4ntom-rev.uz; v=1; bh=Z63hzdNsCj0yShb0LqNKN0actouvBeMauSyX1t3SugY=; h=Content-Description:Content-ID:Content-Type:Content-Transfer-Encoding:Cc:Date:From:In-Reply-To:List-Subscribe:List-Post:List-Owner:List-Id:List-Archive:List-Help:List-Unsubscribe:MIME-Version:Message-ID:Resent-Sender:Resent-Cc:Resent-Date:Resent-To:Reply-To:Resent-Message-ID:Resent-From:Sender:Subject:To:Date:From:Message-Id:Reply-To:Subject:To:Cc;
+Received: by smtp.zohomail.com with SMTPS id 1794613935706450.2854713570015;
+	Fri, 13 Nov 2026 15:52:15 -0800 (PST)
+From: Enver Ikromov <owner@ph4ntom-rev.uz>
+To: Ping-Ke Shih <pkshih@realtek.com>
+Cc: linux-wireless@vger.kernel.org,
 	linux-kernel@vger.kernel.org,
-	mehmet.fide@screeningeagle.com
-Subject: Re: [PATCH rtw-next v10 3/3] wifi: rtw88: time the countdown downloads from the TBTT
-Date: Fri, 13 Nov 2026 23:05:46 +0100
-Message-ID: <20261113220546.826710-1-mehmet.fide@gmail.com>
-X-Mailer: git-send-email 2.56.0
-In-Reply-To: <1D396970-35B7-4B0B-82E9-24B523AD69C2@linux.dev>
-References: 
+	Enver Ikromov <owner@ph4ntom-rev.uz>
+Subject: [PATCH rtw-next v5 00/10] wifi: rtw89: monitor mode RX filter and raw frame injection fixes
+Date: Sat, 14 Nov 2026 04:52:01 +0500
+Message-ID: <20261113235211.1911-1-owner@ph4ntom-rev.uz>
+X-Mailer: git-send-email 2.56.0.windows.4
 X-Mailing-List: linux-wireless@vger.kernel.org
 List-Id: <linux-wireless.vger.kernel.org>
 List-Post: <mailto:linux-wireless@vger.kernel.org>
@@ -101,30 +66,138 @@ List-Owner: <mailto:linux-wireless+owner@vger.kernel.org>
 Precedence: list
 MIME-Version: 1.0
 Content-Transfer-Encoding: 8bit
+X-ZohoMailClient: External
 
-Hi Luka,
+This series fixes a NULL pointer dereference and a negative rate index
+bug on the rtw89 TX path for injected frames, makes monitor mode
+receive frames that are currently dropped by the hardware RX filter
+without disabling hardware Auto-ACK on concurrent active interfaces,
+enables raw 802.11 frame injection on standalone and concurrent
+MONITOR_FLAG_ACTIVE monitor interfaces, and restores the operating
+channel when leaving idle on devices using mac80211 chanctx emulation.
 
-Thanks for the review.
+Patches 1-2 are standalone bug fixes with Fixes: and Cc: stable tags:
+  1. drop frames without a vif instead of dereferencing NULL in
+     rtw89_ops_tx() (reachable when injecting on a passive monitor
+     interface while a station interface is up)
+  2. treat the radiotap "no rate" index (-1) as signed in
+     rtw89_core_tx_update_injection()
 
-> Could you check the beacon spacing in a capture with beacon_int=200? If
-> it stays at 100 TU, that is a separate bug. Would you be willing to send
-> a fix for that too?
+Patch 3 retains FIF_CONTROL | FIF_PSPOLL, tracks FIF_OTHER_BSS in
+rtwdev->hal.rx_fltr_other_bss, and clears target-address, multicast,
+CAM, beacon check, and UID filter drop bits whenever B_AX_SNIFFER_MODE
+or rx_fltr_other_bss is active (including across scan/ROC/MAC reinit
+restores) while keeping B_AX_SNIFFER_MODE restricted to pure passive
+monitor mode so hardware Auto-ACK remains intact for concurrent STA/AP
+and MONITOR_FLAG_ACTIVE interfaces.
 
-You are right. With beacon_int 200 and 50 in hostapd, the beacons of an
-RTL8822CE, RTL8822CU, RTL8822BU and RTL8821CU stay 102.4 ms apart on
-the air, while the beacon interval field in them says 200 and 50. The
-register reads 0x00640064 in every case. I will send a fix for it as a
-separate patch.
+Patches 4-9 enable raw frame injection on standalone and active monitor
+interfaces:
+  4. RCU protection and sole-monitor tracking for pure_monitor_mode_vif
+     with optional deferred RCU synchronization
+  5. RTW89_SELF_ROLE_AP for monitor interfaces so the JoinInfo H2C
+     initializes the MAC ID's CMAC control entry without arming client
+     TBTT tracking or AP beacon transmission
+  6. resolve standalone NULL-vif TX via pure_monitor_mode_vif and direct
+     MONITOR_FLAG_ACTIVE vif TX via rtwvif->mon_tx_ready with coalesced
+     synchronize_rcu(), track rtwdev->monitor_vifs for radiotap/PHYSTS
+     enablement, parse frequency IEs before pushing VHT/HE/EHT radiotap
+     headers during concurrent scans, and validate linear 802.11 header
+     lengths via skb_headlen()
+  7. route injected control frames through the management queue and
+     guard hdr->seq_ctrl reads on short/control frames
+  8. skip host-side IP/UDP traffic stats, WoWLAN AKM parsing, BT-coex,
+     HE HTC, and A-MPDU/TXQ aggregation hooks on injected frames
+  9. honor IEEE80211_TX_CTL_ASSIGN_SEQ, IEEE80211_TX_RC_USE_RTS_CTS,
+     IEEE80211_RADIOTAP_DATA_RETRIES (hw->max_rate_tries = 63), and
+     IEEE80211_TX_CTL_NO_ACK across AX/BE TX descriptors and PCIe/RPQ
+     TX completion status
 
-> rtw88 sets BIT_DIS_TSF_UDT for AP and IBSS and has no reset_tsf op, so I
-> think this mostly catches a download that ran more than a beacon
-> interval late, not a TSF jump. Maybe say that in the comment?
->
-> The start case computes the same next TBTT, so it could share this
-> branch:
+Patch 10 restores hw->conf.chandef when leaving idle or toggling
+monitor mode on devices without assign_vif_chanctx while RTW89_PHY_0 is
+inactive after rtw89_ops_stop() / rtw89_enter_ips().
 
-Yes to both. I will reword the comment and let the start case share
-the branch in v11.
+Verification:
+- Firmware behavior in patches 3, 5, and 10 was verified against
+  RTL8852AE firmware 0.13.36.2 (JoinInfo H2C role/CCTL handling,
+  scan-offload RX filter pause/restore, and absence of BEACON_FILTER
+  forcing no_chanctx even with support_chanctx_num == 1).
+- Each patch builds cleanly in isolation on rtw-next (Linux 7.4-rc1)
+  with W=1, C=1 (sparse), and CONFIG_PROVE_LOCKING=y, and passes
+  checkpatch.pl --strict without warnings.
+- Runtime hardware validation was conducted on RTL8852AE (10ec:8852,
+  firmware rtw89/rtw8852a_fw-1.bin 0.13.36.2, Linux 7.1.5): promiscuous
+  RX across down/up restart (ftrace confirmed channel/RFK programming),
+  NULL-vif drop on passive monitor while a station interface is up vs
+  concurrent MONITOR_FLAG_ACTIVE raw TX + Auto-ACK preservation,
+  10B ACK / 16B RTS / SN=1337 Data & AssocReq raw TX, NO_ACK vs
+  DATA_RETRIES tx_retry_lmt telemetry verification, and 25 concurrent
+  del/add RCU stress cycles (0 dmesg alerts).
+  RTL8852B/C, RTL8851B, RTL8922A (BE), USB devices, and DBCC setups were
+  not runtime-tested.
 
-Best regards,
-Mehmet
+Changes in v5:
+- Split the NULL vif fix and signed rate index fix out as standalone
+  patches 1-2 with Fixes: and Cc: stable tags.
+- Split monitor injection into focused patches 5-9 and support
+  concurrent MONITOR_FLAG_ACTIVE interfaces alongside standalone
+  passive monitors while coalescing synchronize_rcu() on teardown.
+- Route only injected control frames through the management path so
+  mac80211-generated BlockAckReq frames keep the normal data path.
+- Separate FIF_OTHER_BSS drop-mask clearing from B_AX_SNIFFER_MODE so
+  arbitrary-BSS RX works on MONITOR_FLAG_ACTIVE without suppressing
+  hardware Auto-ACK on active interfaces.
+- Advertise hw->max_rate_tries = 63, honor rates[0].count, and avoid
+  false tx_retry_lmt increments on single-shot NO_ACK completions.
+- Gate channel restoration on leaving idle / monitor changes with
+  !rtwdev->ops->assign_vif_chanctx so non-chanctx devices (such as
+  RTL8852AE) activate RTW89_PHY_0 for both standalone and active
+  monitor interfaces.
+
+Changes in v4:
+- Use full legal name in From/Signed-off-by.
+- Retain FIF_CONTROL and FIF_PSPOLL and clear B_AX_A_MC and
+  B_AX_A_MC_LIST_CAM_MATCH in monitor mode.
+- Split RCU conversion of pure_monitor_mode_vif into its own patch.
+- Handle injected control frames, negative rate indices, NO_ACK, and
+  sequence number preservation.
+- Move monitor restart channel restoration into rtw89_ops_config().
+
+Changes in v3:
+- Split into a patch series.
+- Dropped direct register writes in favor of driver abstractions.
+- Added RCU synchronization around pure_monitor_mode_vif.
+
+v4: not sent to the list
+v3: https://lore.kernel.org/linux-wireless/20261104203051.564-1-owner@ph4ntom-rev.uz/
+v2: https://lore.kernel.org/linux-wireless/179371849554.20972.16232816164394690660@ph4ntom-rev.uz/
+v1 (RFC): https://lore.kernel.org/linux-wireless/1a196d6dfbc.35537d221913104450.3720060455831933789@zoho.com/
+
+
+Enver Ikromov (10):
+  wifi: rtw89: avoid NULL vif dereference in rtw89_ops_tx()
+  wifi: rtw89: handle negative rate index for injected frames
+  wifi: rtw89: fix RX filter configuration for monitor mode
+  wifi: rtw89: protect pure_monitor_mode_vif with RCU
+  wifi: rtw89: use AP self role for monitor interfaces
+  wifi: rtw89: transmit frames from monitor interfaces
+  wifi: rtw89: send injected control frames through the management path
+  wifi: rtw89: skip host-side TX hooks for injected frames
+  wifi: rtw89: honor ASSIGN_SEQ, retries, and NO_ACK for injected frames
+  wifi: rtw89: restore channel when leaving idle on non-chanctx devices
+
+ drivers/net/wireless/realtek/rtw89/core.c     | 144 ++++++++++++++----
+ drivers/net/wireless/realtek/rtw89/core.h     |  17 ++-
+ drivers/net/wireless/realtek/rtw89/mac.c      |   3 +-
+ drivers/net/wireless/realtek/rtw89/mac.h      |  18 +++
+ drivers/net/wireless/realtek/rtw89/mac80211.c | 131 +++++++++++++++-
+ drivers/net/wireless/realtek/rtw89/mac_be.c   |   3 +-
+ drivers/net/wireless/realtek/rtw89/pci.c      |   3 +-
+ drivers/net/wireless/realtek/rtw89/phy.c      |   2 +-
+ 8 files changed, 278 insertions(+), 43 deletions(-)
+
+
+base-commit: 61a5eb87b2d9b4d5e353780b781cf691f39ba9e1
+-- 
+2.56.0.windows.4
+
