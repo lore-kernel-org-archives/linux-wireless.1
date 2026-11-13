@@ -1,101 +1,94 @@
-Authentication-Results: smtp.subspace.kernel.org; arc=none smtp.remote-ip=209.85.128.45
-ARC-Seal: i=1; d=subspace.kernel.org; s=arc20261015; a=rsa-sha256; cv=none;
-	t=1794590693;
-	b=X7FB/vUVfjoQGaYhx7Et1/V6BO6P4tipD0Nmy8YsH4erIF+QDhMgtO6x9og9HMnXDQSe
-	 9xr5vshZU+2jTDfruvTPU8P/I8WhfsJ1LItNPGRFZsxYUKhCkfAOIjWIAFm88nXyfOAzX
-	 pxhVIcHrzhQFmDqxPcN41W//7CmqGarUUvf3eK2oMCl6wr/k1oQAFhTk0rDiIbeRhguqi
-	 IfWrJbPxqrjjKFKQzlgNcs4j74pjDe4XiSEwuoJ07jzl5q+doVZQJbcpVA0ATSTMMytyX
-	 YeV6U5HVQ4PlypKYSfE61xBJFyeZ4Zj6Ms2s1IU8Py4eY919ULMeOFnqn8fUJPcjvVA==
-ARC-Message-Signature: i=1; d=subspace.kernel.org; s=arc20261015;
-	a=rsa-sha256; c=relaxed/relaxed; t=1794590693;
+Authentication-Results: smtp.subspace.kernel.org; arc=pass header.oldest-pass=0 smtp.remote-ip=74.125.82.179
+ARC-Seal: i=2; d=subspace.kernel.org; s=arc20261015; a=rsa-sha256; cv=pass;
+	t=1794590889;
+	b=ZIbYRqTNZwQ9kFS79hO+ZKTChwm2R49q6gQbKYhpqvi4ased7eRSNebehXMRXFWTlj7G
+	 zcVomMNfnuSSRpc7s0BSiEFJIEbLRxhu7+dNWy0grkvpE+PfAKPOS0w8OeywzfeUWW9GK
+	 y6ZPs+WKAtwqKyAe04WIEKxzzwpHus9EmqhlS4wDuKbJn0w5LJzUK1fXVOgWLYsvEgIRG
+	 8LIf5ScpGUsGvg3el46SxUcf+ITtMp9HaLc7J72aDNm2XumolKelz5w/Vlh1D5j0fMCWg
+	 TffBi5C4/VB2HOEy0GXE9Bpgw1PZnBM97jEWtqX8EVEvIcOnieGzlDEV7NzuvfPOYYw==
+ARC-Message-Signature: i=2; d=subspace.kernel.org; s=arc20261015;
+	a=rsa-sha256; c=relaxed/relaxed; t=1794590889;
 	h=DMARC-Filter:Received:DKIM-Signature:X-Google-DKIM-Signature:
-	 X-Forwarded-Encrypted:X-Gm-Message-State:X-Gm-Gg:X-Received:Received:
-	 From:To:Cc:Subject:Date:Message-ID:X-Mailer:In-Reply-To:References:
-	 MIME-Version:Content-Transfer-Encoding;
-	bh=jhvgUdLmcuXsITWjIdcJRYEzmc5gsWkSLbwzyqjpaKQ=;
-	b=cDCy/tu2UnDSEI0hqH5hzX7Hs8RvYi3tSQbhUVbwOphMoP3k80RV3MwolFtlwzopPy0V
-	 cBTbC/upj99qz7BBoVSeMoEezqtuY7vW932HeJzff5/vPcFVPSTPJeHmrRkk4BYKXofdT
-	 DjETfXbU1g4kM25p6ObFoYSNIE/7lcl2niqN7wXWAsRdNbVTngqtU9NAhTZsWSCaR7PO4
-	 uRag+ZUMCr3d4tLbiiAPbgagxybrmxeHZiGPGKvlNdDBsewblC4HlD+xVTQHgsE8qLYeC
-	 uWLt6FQTN3sJRm2iNOpO79geOHtVhDSxRLukEoPv/HPW/azPdmAxl1NnDHDX6XapQWQ==
-ARC-Authentication-Results: i=1; smtp.subspace.kernel.org; 
-	dmarc=pass header.from=gmail.com;
-	spf=pass smtp.mailfrom=gmail.com;
-	dkim=pass header.d=gmail.com header.i=@gmail.com header.a=rsa-sha256 header.s=20260707 header.b=zQrCFJdR;
-	arc=none smtp.remote-ip=209.85.128.45
-Received: from mail-wm1-f45.google.com (mail-wm1-f45.google.com [209.85.128.45])
+	 X-Forwarded-Encrypted:X-Gm-Message-State:X-Gm-Gg:X-Received:
+	 MIME-Version:From:Date:X-Gm-Features:Message-ID:Subject:To:Cc:
+	 Content-Type;
+	bh=8g4+3asb8Iuk1LfooCJ6bahkJm4TLY1wfISHOzmUnVg=;
+	b=2ca/aXxbFd1eJ7kdH6tR+aNcwIBGVs9btddCAJ12XKwa3bEr1h41XcxdvmGeXQj9vXV0
+	 MpxqZnAK23A3oXwg9jv0YVReEyKu/2L5ExZaJKObAQqMsnJJrjU0gNT9UTRooRqv7cRZc
+	 2+eEg29olm5CcJVPBs7J9N6GIwnWfj8A9rPabg+M1yPOvVj1MI6Sub//5/zT/o9VRpDX3
+	 Sp65ICklLFmc7RFcuIPNLet/w4SDvXK+mW0Cbsz10g6cLvjawmUbxkE5BGhLxkBD1cnUC
+	 geDY5N6doASJXoZLZJHi/9wQ9H9bm6mvyiqnviiZ8+baBvqam7WbDMvuVzB1PUlZIsg==
+ARC-Authentication-Results: i=2; smtp.subspace.kernel.org; 
+	dmarc=pass header.from=chromium.org;
+	spf=pass smtp.mailfrom=chromium.org;
+	dkim=pass header.d=chromium.org header.i=@chromium.org header.a=rsa-sha256 header.s=google header.b=Yaph8Wpk;
+	arc=pass header.oldest-pass=0 smtp.remote-ip=74.125.82.179
+Received: from mail-dy1-f179.google.com (mail-dy1-f179.google.com [74.125.82.179])
 	(using TLSv1.3 with cipher TLS_AES_128_GCM_SHA256 (128/128 bits)
 	 key-exchange X25519 server-signature ECDSA (prime256v1) server-digest SHA256)
 	(No client certificate requested)
-	by smtp.subspace.kernel.org (Postfix) with ESMTPS id F18F1606CEEC
-	for <linux-wireless@vger.kernel.org>; Fri, 13 Nov 2026 17:24:52 +0000 (UTC)
-DMARC-Filter: OpenDMARC Filter v1.4.2 smtp.subspace.kernel.org F18F1606CEEC
-Authentication-Results: smtp.subspace.kernel.org; dmarc=pass (p=none dis=none) header.from=gmail.com
-Authentication-Results: smtp.subspace.kernel.org; spf=pass smtp.mailfrom=gmail.com
+	by smtp.subspace.kernel.org (Postfix) with ESMTPS id BC3EA606D4B3
+	for <linux-wireless@vger.kernel.org>; Fri, 13 Nov 2026 17:28:08 +0000 (UTC)
+DMARC-Filter: OpenDMARC Filter v1.4.2 smtp.subspace.kernel.org BC3EA606D4B3
+Authentication-Results: smtp.subspace.kernel.org; dmarc=pass (p=none dis=none) header.from=chromium.org
+Authentication-Results: smtp.subspace.kernel.org; spf=pass smtp.mailfrom=chromium.org
 Authentication-Results: smtp.subspace.kernel.org;
-	dkim=pass (2048-bit key) header.d=gmail.com header.i=@gmail.com header.a=rsa-sha256 header.s=20260707 header.b=zQrCFJdR
-Received: by mail-wm1-f45.google.com with SMTP id 5b1f17b1804b1-4a207b02a2cso6995445e9.1
-        for <linux-wireless@vger.kernel.org>; Fri, 13 Nov 2026 09:24:52 -0800 (PST)
+	dkim=pass (1024-bit key, unprotected) header.d=chromium.org header.i=@chromium.org header.a=rsa-sha256 header.s=google header.b=Yaph8Wpk
+Received: by mail-dy1-f179.google.com with SMTP id 5a478bee46e88-37198ed3727so2614322eec.0
+        for <linux-wireless@vger.kernel.org>; Fri, 13 Nov 2026 09:28:08 -0800 (PST)
+ARC-Seal: i=1; a=rsa-sha256; t=1794590888; cv=none;
+        d=google.com; s=arc-20260327;
+        b=mOoCUiLKk2Slpn8eLVKxSo8MD3icL0F7nlcFnTRvzA9EibtTVfawhL3ekkiEABpB0J
+         yh3wcuHARuzw3pZhrJQ4wHdz2Se8V79Ro5M9kwJAyQPWLQsSqfgeUWFJqRmj3/k0uRaR
+         ROYSOOtLbvzqU9pTDFRU8DgIjaT0Tvab9FOnC5Ne8Jq2f/1GxhFX+6lRgqWI7YkgSuEv
+         wfr5kaxRXfAqI4iKlB2y57MFDiBGCwjRlHQp8rAaALiTWYeuE+ZI2ZnaIV01AM6aAlYj
+         bJ88rnlrA5dSxz5cruEvg0oC2vZGSau6NGbvrPJ9HwBdTFLK7Ww3dDLEsLGu15ADo7An
+         df9A==
+ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=google.com; s=arc-20260327;
+        h=cc:to:subject:message-id:date:from:mime-version:dkim-signature;
+        bh=8g4+3asb8Iuk1LfooCJ6bahkJm4TLY1wfISHOzmUnVg=;
+        fh=zI797sKMmrwAi7OE/g03p0HulnzjvobFzmVREugZGGU=;
+        b=LvwV9wNnEf8KRiQHy1EO+XANp9W+VTgupTWWznG9PwKhumhgn1x2cmr6M/ZDDaKqJ9
+         L5ROeRdsOJkrsKja8g7/6LpWWvlteCyRpbIIIbw3WzKTY6aznk5w7XBl67o1n7CzrnwR
+         wpmqYMO3d9ma9jND9ptvqB7Wf9qWCGxf8mL/PoJ4N8JOfUJnJWrfi3Q/yo1kWhfhDIsm
+         JzZmt2C6DnSAMBQUuUz/fSQbebxhbwkXjpk9g4ruCOF6KFBI4+0hNV4Ipq+j7+aj1Nxx
+         vjc5ZwPIf4I58qo7v/pyoVSjCvRhgpOPZgM8WiMhsvTtY90f2dMEAHkphdszREq8+INu
+         U4rg==;
+        darn=vger.kernel.org
+ARC-Authentication-Results: i=1; mx.google.com; arc=none
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=gmail.com; s=20260707; t=1794590691; x=1795195491; darn=vger.kernel.org;
-        h=content-transfer-encoding:mime-version:references:in-reply-to
-         :message-id:date:subject:cc:to:from:from:to:cc:subject:date
-         :message-id:reply-to:content-type;
-        bh=jhvgUdLmcuXsITWjIdcJRYEzmc5gsWkSLbwzyqjpaKQ=;
-        b=zQrCFJdRfXWgk8OEv5Ax3gtXyhelKidixwQgbs8Z3wgrmQNKJSG+hQy2EIG3PC1slW
-         SrwyIM8jI3IameNVYvgy1hgj2zI3ur82hmv+IXAvvJLT+Jguu/LYIhr9Fv7g69bAVdMJ
-         a2NJe9dmxTq5+yjfvafzpE9YQOM4eyLvCPubAQWf6DOyswLnP5LniCdC4oYk/WGOhj0p
-         UrNRv7NydQp8ZkqAO7S471XxfADkqUPAqE+B2l+U1xZ1odWIlTvYMyF4mLfG/1YQV1ne
-         PGKuwYZJuOAhAqC3OsG/zbOwkMB7z771uGSpaxQgmHGWKfUjMva4erzXyrd1K/WazGzh
-         e2hg==
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=1e100.net; s=20260707; t=1794590691; x=1795195491;
-        h=content-transfer-encoding:mime-version:references:in-reply-to
-         :message-id:date:subject:cc:to:from:x-gm-gg:x-gm-message-state:from
+        d=chromium.org; s=google; t=1794590888; x=1795195688; darn=vger.kernel.org;
+        h=content-type:cc:to:subject:message-id:date:from:mime-version:from
          :to:cc:subject:date:message-id:reply-to:content-type;
-        bh=jhvgUdLmcuXsITWjIdcJRYEzmc5gsWkSLbwzyqjpaKQ=;
-        b=fv1Kb3cK0VInNjfNZhH8x7lBk699AeT7UYMTfv5w0yR9SSLoUd5WH3f+/ZnRFW4zLx
-         ptoaBKdrvryoA9XUUPvBhEyNrstTKCWWhDrro9oLs3CU++Shhym5rhQ8PhcV+/DzwFXn
-         fDvIVA8EA9FgxsI9O45qBrKMJWBa+B9GXqfhaYzvMCMhR8jnK+0/nNx5c22H6GV+bcoD
-         HANwsCk2FL0CXrg2CIGCP0/+aszL/XMLX4zHuCX5Kbs4r1mSSShBph7bh0JUWUc8zFfn
-         h/XrVZmi9gfyAmt13VHGT0x0rL8PA1i2mmypt5f333ARGnXIC40yGCiQR0y96W+WsK2S
-         jGcQ==
-X-Forwarded-Encrypted: i=1; AL+hErHedYtx+5PUgf3KYYAJjhaq+Yqe+ve7aRHh9xKOrEROuZkG9YiRF7t82JLeGRcu4DODsrDfDPlVMP0z/1vVLw==@vger.kernel.org
-X-Gm-Message-State: APuU4Z9UWNBHSln3Y57Ze/Nj+WpMMSvz/r/4g4Y0vyc9Si7HZ+q8/RTg
-	6sKdDA3LyzBWr2VfZdKQ7dojG3fz3xmvLxVCsl3py5GyyNJMx4hFHLVT3Z6OTIc+
-X-Gm-Gg: AYBFou1IevTghrNn3nMkMlVMtOOYhHA9TdJyvc8Hgx5sIOfmHX8mFxYZ3gwybv6T0fB
-	Rq22YL6OFLGM0/6P9rkG7cAZIYWP0Y1HoEZDgYKLaxoIHmf7U8MAy1Tlft778ZP98BU3aeMTtro
-	su0oxmkheYQ3LGoZW5m5ATfO+lM4fXJvSpAjRh0VEopzQCw6ykikEPr85kPvsU4uNWm+DtXGHex
-	px9wPzpkebRSFK8uGFs5GaeQD6MgURdxHmkUu/JM5GM2Lz7KMuxyQpo9rIuQSWFD7FWpAMq7SJE
-	mZ7DrJu4B8E4sCl4p2WYJMeGo46prfUFUfUkwpuxjNWQl4hK13XxRioNdtk7mA2Jmo0pzfc03nx
-	avbY1Q8Wa2t6urxOnK/opm6gt477KQuQxY3WX7p4+fcAOfh4+6ugvy5L6GhevWgkZ3ORGMRk2t8
-	Ny0YdFxI5BchROv2ej6uIOrtwDJUQ59Ei8/herIFDe/rYyLM7lvFxaDEktD0V2ufk0p+ANcrMce
-	EsLd9YzX0W8XPHXfdAuzGuZ/7Ty9pFsKrh3A/8tUz4BBh4yhWXzppqJ2j28gc44zmc4k53UBUTC
-	6j+TO6dqHeL0JbDOHBgQ7cyLoAVEKyKFtOw=
-X-Received: by 2002:a05:600c:6208:b0:4a4:fc8c:cfd9 with SMTP id 5b1f17b1804b1-4bb55a66467mr63599825e9.25.1794590691155;
-        Fri, 13 Nov 2026 09:24:51 -0800 (PST)
-Received: from deb05.proceq.com ([213.160.61.66])
-        by smtp.gmail.com with ESMTPSA id ffacd0b85a97d-49c5f5972a7sm6033301f8f.21.2026.11.13.09.24.50
-        (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
-        Fri, 13 Nov 2026 09:24:50 -0800 (PST)
-From: Mehmet Fide <mehmet.fide@gmail.com>
-To: Luka Gejak <luka.gejak@linux.dev>,
-	Zong-Zhe Yang <kevin_yang@realtek.com>
-Cc: Ping-Ke Shih <pkshih@realtek.com>,
-	Tzu-En Huang <tehuang@realtek.com>,
-	Yan-Hsuan Chuang <yhchuang@realtek.com>,
-	Kalle Valo <kvalo@kernel.org>,
-	Stanislaw Gruszka <sgruszka@redhat.com>,
-	Brian Norris <briannorris@chromium.org>,
-	linux-wireless@vger.kernel.org,
-	linux-kernel@vger.kernel.org,
-	mehmet.fide@screeningeagle.com
-Subject: Re: [PATCH rtw-next 1/3] wifi: rtw88: free the reserved pages of an interface on firmware recovery
-Date: Fri, 13 Nov 2026 18:24:49 +0100
-Message-ID: <20261113172449.3313425-1-mehmet.fide@gmail.com>
-X-Mailer: git-send-email 2.56.0
-In-Reply-To: <5FA04DA4-863E-46D3-A993-5F3C074ABC37@linux.dev>
-References: 
+        bh=8g4+3asb8Iuk1LfooCJ6bahkJm4TLY1wfISHOzmUnVg=;
+        b=Yaph8Wpk8mG8HwTmvJfyr7QdexHmPRO8VxP7ADet62vC3aqLmYK2/mnGXGvU79dlq4
+         RJxdo/8WhYB5O2QcHKjkG4Qa9tU8lVLB2dwLmNnZJpr32EIVZ8x/jXSpKGUVT0pqHMbT
+         wMxgDMJYe0pImSzYLSDs5o8+xzXtm6SFYh1lo=
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+        d=1e100.net; s=20260707; t=1794590888; x=1795195688;
+        h=content-type:cc:to:subject:message-id:date:from:mime-version
+         :x-gm-gg:x-gm-message-state:from:to:cc:subject:date:message-id
+         :reply-to:content-type;
+        bh=8g4+3asb8Iuk1LfooCJ6bahkJm4TLY1wfISHOzmUnVg=;
+        b=n+kOhIK18TwV5Aue1mtn9aqFoaXGAFtddyQErwpCMDwvCF3HWD8yxjPOLj3jKToTr5
+         7gCcIyRtLPvHQZUEytozrAOFrUTFKEsJK4T3S39kzxCNJU4bsGZhA5AgO9SxKIzQCZ0A
+         yDQ9f5dX8pI2kmW3EB9jE8qcKWPl88mkTXWz5SD+fGq9oawNnrtCqDLt+y230HNIRJXI
+         i7Dt5n4oS1zMckX9aottxYIcjoX5Sf/xA/BuTF7WV0IkpoT0foBdczA3ZMsAxOZL7OR0
+         3x1V48k8eFNMx0yazi4rFPoxgzmsdLIXKWQeeNhm3lPdWiPrpWdrb+aXLd3MppXKqHI9
+         +xWw==
+X-Forwarded-Encrypted: i=1; AL+hErGUph2PdKCeBsM16YLO6P/AyWPWbLe1cOBWUFehHqXQnWwwryJTwLpGBM8vyHS9w1042aL3QPXfv9Uwr6/T6Q==@vger.kernel.org
+X-Gm-Message-State: APuU4Z/xLIdzZhCFJZEOgTH+iIBSCTOvUH6N/s9G25+vQWIx1DzfwQgc
+	RE8kD82uTesMVWUOxPgCZ9eQcdgI+IJBae4TsLzsQq8bK0UlnLjXDRib4nZtzC8+oDeqWoZJKxC
+	BQp5QKkd6SmeO84BY84rDBIfZr4bMKwDMDPvIXDpA
+X-Gm-Gg: AYBFou26wNtPtOZ9U1Axdzwa1RGvqU4NW1UpSiiarEZ+Vb3O1yzyv3x1eBH81vEEYwt
+	vhEcDTorK7Y6CE61FRbc5f0KkkKA7MOtlpJpBp1YxgEFH76oTEIq1z2yyZNa2ASvXDjuU8rmHFz
+	ZyPPhYYdBINmIMm/AuHNLNdJ226VM0cfeIr9+eUTWC1AGIl7DCHjOloCjCZUD6JJk8g+ygTFLvb
+	Snv1L86FK+Ekfh1evqL5T3BCMdSFGa4UV3v0cYa1ky6Pd7HLI/Tk6jVXX+kWCoYH2Y3SJlEV+rG
+	UWDx63+M9EacYVGCyE7P+Yt+ic+jqVemvp6Dx9oOfKOndfTHdSjdEfo6NjUce2Yq62Pi25SvnkG
+	ZszkF474zx6PS52Yuz05cTJkN3U/YlmuPj3oUqTzNgCCd7tGb372GR37kivLfQ39SOZ3Y3kY=
+X-Received: by 2002:a05:701b:4544:10b0:1ab:9742:e860 with SMTP id
+ a92af1059eb24-1b4f5f67318mr5082057c88.20.1794590887761; Fri, 13 Nov 2026
+ 09:28:07 -0800 (PST)
 X-Mailing-List: linux-wireless@vger.kernel.org
 List-Id: <linux-wireless.vger.kernel.org>
 List-Post: <mailto:linux-wireless@vger.kernel.org>
@@ -105,25 +98,25 @@ List-Unsubscribe: <mailto:linux-wireless+unsubscribe@vger.kernel.org>
 List-Owner: <mailto:linux-wireless+owner@vger.kernel.org>
 Precedence: list
 MIME-Version: 1.0
-Content-Transfer-Encoding: 8bit
+From: David Ruth <druth@chromium.org>
+Date: Fri, 13 Nov 2026 12:27:56 -0500
+X-Gm-Features: AclHuK-qRtk9mqvOrRh9SPz51JfFNZMChDx1v0-4jKu_NLpTjjJhLXJ-2y3euyI
+Message-ID: <CACr5y4pzM61tvyyOabqhmCGhBO40VJ=k-KE1fA6prEHVvQ_c5g@mail.gmail.com>
+Subject: Re: [PATCH v1] wifi: mt76: mt792x: Add MTK OUI support for wpa supplicant
+To: eason.lai@mediatek.com
+Cc: =?UTF-8?B?RGVyZW4gV3UgKOatpuW+t+S7gSk=?= <deren.wu@mediatek.com>, 
+	jb.tsai@mediatek.com, kun.wu@mediatek.com, Leon Yen <leon.yen@mediatek.com>, 
+	linux-mediatek <linux-mediatek@lists.infradead.org>, 
+	linux-wireless <linux-wireless@vger.kernel.org>, litien.chang@mediatek.com, 
+	Lorenzo Bianconi <lorenzo@kernel.org>, michael.shih@mediatek.com, 
+	Felix Fietkau <nbd@nbd.name>, Quan Zhou <quan.zhou@mediatek.com>, 
+	Ryder Lee <ryder.lee@mediatek.com>, Sean Wang <sean.wang@mediatek.com>
+Content-Type: text/plain; charset="UTF-8"
 
-On Fri, 13 Nov 2026, Luka Gejak wrote:
-> Maybe rtw_fw_update_beacon_work() could skip the download while
-> RTW_FLAG_RESTARTING is set? The reconfig downloads the beacon again for
-> BSS_CHANGED_BEACON anyway.
-
-On Fri, 13 Nov 2026, Zong-Zhe Yang wrote:
-> How about adding a flag to indicate if this rtwvif has been init-ed or not ?
-> If init-ed and rtw_ops_add_interface() again, call rtw_remove_rsvd_page() first.
-
-Thank you both. I could reproduce it: with a test build that queues the
-work right after rtw_enter_ips() in the recovery, v1 gives the "Should
-not have an empty reserved page" warning on an RTL8822CE with an AP
-interface.
-
-I will take the RTW_FLAG_RESTARTING check for v2, as the flag already
-covers the time from the reset to the end of the reconfiguration. With
-it the same test build does not warn.
-
-Best regards,
-Mehmet
+Given that this is a nonstandard vendor command, shouldn't it be
+behind a Kconfig option so that users can choose to not have it
+compiled in? If this is for Android, maybe something like "config
+MTK_ANDROID", if it's just additional MTK functionality, "config
+MTK_VENDOR". That would at least allow users and distributions who may
+be concerned about the additional functionality to give it a look and
+leave it out if they don't want it.
