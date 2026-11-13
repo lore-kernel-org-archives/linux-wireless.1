@@ -1,98 +1,62 @@
-Authentication-Results: smtp.subspace.kernel.org; arc=none smtp.remote-ip=209.85.222.174
+Authentication-Results: smtp.subspace.kernel.org; arc=none smtp.remote-ip=91.218.175.60
 ARC-Seal: i=1; d=subspace.kernel.org; s=arc20261015; a=rsa-sha256; cv=none;
-	t=1794544700;
-	b=1XTivixTH1kOEaB7NAjk2UPS8i8NJxKdkBYRdoaQjQ0xcfVVBNQL8TfEWVg139bx+f98
-	 Pfg8E6rrBsxTpVK3L0gAzJnY7tSMbuShdIviLQUa7d3+gaZKAZZHxQoi/5v/0S2LI7qJs
-	 S7ZClssJNLhdSNfy7sdX7YYkDc2apk04iI9mtMCM2iaU+I1aWl0BjsCybu0QI43lsLgJx
-	 Ml0L1XD4gZthiW1HuzdS2ldz+87sBSF10XAKynbg2ioxRaCHzUHnJwj9x/U62ZqWZ3JVI
-	 JrTHhPMjicuOG+ahy3K2MqYCgyji6eaY1o4vi9wlOn+fF+Aiy58WV3BS/Pvup/1BjcQ==
+	t=1794550714;
+	b=USRMtzN/DUiD4Q+VzSNwXHKljTaEAK7UEF5knTY1Jh7bLFtCmZiQEMz/bGMeoLHyvCja
+	 W1gXkRJysEBm+KnEeVtiqS8a9WQtHPxq8gSWS6Ll+e9mLoP+3nV46J7O3UTzoogux7Xlf
+	 3aFTH9us9cjxeUQ3gm7h5VvTsk7dCa4KAjvXDZyhs2MoapxGAoqh9ZJkNjnz9LCS7KDqz
+	 y5BxlHhJdS+AcHAoLQ9tbHcpum1d2fMzDVKWS2mwwabJvQ2L+MJjqEGIxPg69z5VoH6PK
+	 pqUhd4ENnKitaWS5qiyRC/9eJ/rPKQd7a+p9vPQUFEQ8XpN62kWI+fUD5t4bc70iJTg==
 ARC-Message-Signature: i=1; d=subspace.kernel.org; s=arc20261015;
-	a=rsa-sha256; c=relaxed/relaxed; t=1794544700;
-	h=DMARC-Filter:Received:DKIM-Signature:X-Google-DKIM-Signature:
-	 X-Forwarded-Encrypted:X-Gm-Message-State:X-Gm-Gg:X-Received:Received:
-	 From:To:Cc:Subject:Date:Message-ID:X-Mailer:MIME-Version:
+	a=rsa-sha256; c=relaxed/relaxed; t=1794550714;
+	h=DMARC-Filter:X-Envelope-To:DKIM-Signature:X-Envelope-To:Received:
+	 X-Mizu-Trace-ID:X-Migadu-Flow:Date:From:To:CC:Subject:In-Reply-To:
+	 References:Message-ID:MIME-Version:Content-Type:
 	 Content-Transfer-Encoding;
-	bh=5pTCbeuMBw4mtr39j3WfpOFFcKqtGe3X/Jp0q87wrlE=;
-	b=gZH9MBzgGTPOKcGgYCdg+JwMicd0Wx0fAbu/f5TWSHFsV8kv4fKGX3/ATqgbGkEH/qQx
-	 prndDjkq+yJTR0Iq3VEprV8chZvhoUhZkmn9CMYB3l7riogLb6tLZ3zRkaFcPe9Lm6Wrx
-	 h2MNSDbUsf8dxT2IZ9CTlrsl5INEUgCXreorqt4VLVYjyqiWjUAQ/dLUmkkGYjMx6SeLn
-	 hMLmFCEEWMQpM8rMR6o77wg6ALop65atVWqhndSVJo19hSiiakLiLVTGva3oGbD4rK1W8
-	 ecOXlA88nInkyde6SdbvQUBd/2nLR7ZLUKNVc8Conn1lWt2jDbaZ/nCRCxtn1Fmi25Q==
+	bh=8fhtiSM4RMXSPkWZ2Ym+TAinvYmR3dBhlVKb++Zid/U=;
+	b=0OElgCUSt9vzhTPimauEDsU5NcyxSH/WHQpSFQ3K+UWRJIMOwoHiKXRcV9Md7cRDDwdL
+	 /cJWcHzD+k1IX89OPuW1Q/Rm6A/rgi3ffTsCbxfGAWk1AylFGeS7F9Sbg1dFlLuIWeSjR
+	 6dCIqj4Ejik7MAuEGmLPk3oPu53flQ9l8BRzNqPoFqXhzN2nZatNhRY6zqtN/IHG2a83h
+	 y12DGIFGod1bqS9ufjmgFV+VUoF9CofEuaL24XXsKK4ukfr8fFp1wpH2Pma9mlFILpZNm
+	 sepa6qGjS/hkn+5oBffU3j70owvWeblHCQ/rfnJyUYZiZjDasaIAGKO+0s0qKephq0A==
 ARC-Authentication-Results: i=1; smtp.subspace.kernel.org; 
-	dmarc=pass header.from=gmail.com;
-	spf=pass smtp.mailfrom=gmail.com;
-	dkim=pass header.d=gmail.com header.i=@gmail.com header.a=rsa-sha256 header.s=20260707 header.b="N4/AQyBa";
-	arc=none smtp.remote-ip=209.85.222.174
-Received: from mail-qk1-f174.google.com (mail-qk1-f174.google.com [209.85.222.174])
+	dmarc=pass header.from=linux.dev;
+	spf=pass smtp.mailfrom=linux.dev;
+	dkim=pass header.d=linux.dev header.i=@linux.dev header.a=rsa-sha256 header.s=key1 header.b=UPv0KjcG;
+	arc=none smtp.remote-ip=91.218.175.60
+Received: from mta0.migadu.com (out-60.mta0.migadu.com [91.218.175.60])
 	(using TLSv1.3 with cipher TLS_AES_128_GCM_SHA256 (128/128 bits)
 	 key-exchange X25519 server-signature ECDSA (prime256v1) server-digest SHA256)
 	(No client certificate requested)
-	by smtp.subspace.kernel.org (Postfix) with ESMTPS id 3C974606A323
-	for <linux-wireless@vger.kernel.org>; Fri, 13 Nov 2026 04:38:20 +0000 (UTC)
-DMARC-Filter: OpenDMARC Filter v1.4.2 smtp.subspace.kernel.org 3C974606A323
-Authentication-Results: smtp.subspace.kernel.org; dmarc=pass (p=none dis=none) header.from=gmail.com
-Authentication-Results: smtp.subspace.kernel.org; spf=pass smtp.mailfrom=gmail.com
+	by smtp.subspace.kernel.org (Postfix) with ESMTPS id E606E606A327
+	for <linux-wireless@vger.kernel.org>; Fri, 13 Nov 2026 06:18:32 +0000 (UTC)
+DMARC-Filter: OpenDMARC Filter v1.4.2 smtp.subspace.kernel.org E606E606A327
+Authentication-Results: smtp.subspace.kernel.org; dmarc=pass (p=none dis=none) header.from=linux.dev
+Authentication-Results: smtp.subspace.kernel.org; spf=pass smtp.mailfrom=linux.dev
 Authentication-Results: smtp.subspace.kernel.org;
-	dkim=pass (2048-bit key) header.d=gmail.com header.i=@gmail.com header.a=rsa-sha256 header.s=20260707 header.b=N4/AQyBa
-Received: by mail-qk1-f174.google.com with SMTP id af79cd13be357-93f079a63b8so85286085a.3
-        for <linux-wireless@vger.kernel.org>; Thu, 12 Nov 2026 20:38:20 -0800 (PST)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=gmail.com; s=20260707; t=1794544699; x=1795149499; darn=vger.kernel.org;
-        h=content-transfer-encoding:mime-version:message-id:date:subject:cc
-         :to:from:from:to:cc:subject:date:message-id:reply-to:content-type;
-        bh=5pTCbeuMBw4mtr39j3WfpOFFcKqtGe3X/Jp0q87wrlE=;
-        b=N4/AQyBaK2t3RlBLNPt5N0jsmXcaICmUAn74EgkFJ8PTMSf4bhtTdx7CwtYPeGvco8
-         OR42eS9vyrCDHvt3QkCcZzxaoaSQSTCA92mpLMla/p7aYKvyd1959oweVsUPpQXlhQw5
-         zwn5w0Xb9A3Elib2NPNK6lSa9LHPy2OAl4W777Ba9Jv90QJq6n19FpHwZV2YjkZiugyE
-         x3kJ6ck9+ca5VDDNpGaSUUYlwFYnGWPDTnoBvDX+oW6NyQ3v5dTKC7plFJIiq7UONsZf
-         BB+GQa5p/o8dyN8lGe0pCDBAB29Huez+0m6eybG2k2bs3DxvronTZcuiQMYZcrr0nusC
-         sSNg==
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=1e100.net; s=20260707; t=1794544699; x=1795149499;
-        h=content-transfer-encoding:mime-version:message-id:date:subject:cc
-         :to:from:x-gm-gg:x-gm-message-state:from:to:cc:subject:date
-         :message-id:reply-to:content-type;
-        bh=5pTCbeuMBw4mtr39j3WfpOFFcKqtGe3X/Jp0q87wrlE=;
-        b=fPstxG0oFC8WHhizLuq2csWRhq8XeLQH0Y9E216XKFcwO6xO42d/k3Vc14XeaR9oPK
-         cZDNsfiQDaKytOR4S2NJKji8UYSDzrFu+e1UsjHr/w/+2W10mtq06Cxda/nKD7PZ0sPh
-         DSUq/0U63sj7zeOtjVyb5qMsriML1z06O4unqB3PskV1P4mF2JakKXf0ORAx1sgeVr6b
-         Mj5L52keAJWiIlZ7Wz0G04GG3Dt/T+NE5NEnctp4jIh8SkOv6+DpRWqYXeibPKOlxDyw
-         ED9tvP8lmMJ7dhI8z5wG5RCraQsw4OwtntVhQPtvJFsRKFWEgMY567JbpjH15uXK3DWL
-         tb3w==
-X-Forwarded-Encrypted: i=1; AL+hErF9/jUGnN/In4HWE3JpxvyxLxE3nY+QwVPwrXyL1ie6OeKfVJsXelqTHdnytCaJTpMISHeKZHGeVPTSIlpIOw==@vger.kernel.org
-X-Gm-Message-State: APuU4Z8E2C4tqBrXwXrkYUIgVTIvPeCWgYMiKvdZbGFoGdN4ZlDY54lZ
-	WFVqeWabvV3DC0N8f488oCdxUhM+bLa/HwnDI+s2ZyKZFrlnC0UPh/xI
-X-Gm-Gg: AYBFou04DcGvTg8F3UlMCmBjA8H8M8ZdlAiJNSlY67Z1NTZWMGpNEA+bUeoned0iTsM
-	X/qPYRYYn1yTeksnOwNsrkswQxuG4NltTAMi5OhsLGUgmfMuH+80pm9EZPYDy1P3jfVUIbFQHKB
-	lLgir2rRrbyJE4movt4lCYW002Ezb5lmsMz3qYwwmF8PD8b7xyacdP0HGeaM71TwOfEnbTCPnrf
-	u9Yg8QmkpHAr+nS92TXTHQFwRVsoqlC++8louzgog4fa4jujjK3reCvObwlzTZv+erO1iv5yrOj
-	YfOnbTrsbI+n0+mQjFA1Xs12RbKFi/TdLjoR+7hQuPX6kJMP9rSg2XE/eGtQ12QT9urbU4KmFIN
-	a7H6wK6956/FlOxMyL+iIrGlBjLG8s5bWciJsslRZMWaWKmAv4fkHnDggAlX8cQhnHXnUZW6T/l
-	zterkPSVcRV4acW/rnHTu4uZ1211AfCdCoIo69vKroBXeLDgOToAWrNutAz9LpVos9XusqD9crC
-	UgsVFGb0oGdS4TO8u9Ij3NdMv0FxiUMljRt99BX5EBIItcuoZ50oDrZzqVyGUsU5DFmWvXzAIlj
-	vouk/wyOUL8eBvz1IsToSvjpR+6Rg1h5F0Mrks+moqTw52FCfOvsA3kG/Yo0pg0hJUxDpeQnbEq
-	SGSkGU1sUvGrxOxR9yK0A
-X-Received: by 2002:a05:620a:400f:b0:93e:4e1e:aafc with SMTP id af79cd13be357-9494bb5198amr253467285a.36.1794544699199;
-        Thu, 12 Nov 2026 20:38:19 -0800 (PST)
-Received: from linux.. ([8.34.174.240])
-        by smtp.gmail.com with ESMTPSA id af79cd13be357-9494c8f9576sm97734885a.42.2026.11.12.20.38.18
-        (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
-        Thu, 12 Nov 2026 20:38:18 -0800 (PST)
-From: Changyul Lee <lcy8047@gmail.com>
-To: Jeff Johnson <jjohnson@kernel.org>
-Cc: Baochen Qiang <baochen.qiang@oss.qualcomm.com>,
-	Jiale Yao <yaojiale02@163.com>,
-	John Crispin <john@phrozen.org>,
-	Sven Eckelmann <sven@narfation.org>,
-	linux-wireless@vger.kernel.org,
-	ath11k@lists.infradead.org,
-	linux-kernel@vger.kernel.org,
-	Changyul Lee <lcy8047@gmail.com>,
-	Rameshkumar Sundaram <rameshkumar.sundaram@oss.qualcomm.com>
-Subject: [PATCH ath-next] wifi: ath11k: hold txmgmt_idr_lock while freeing pending mgmt frames
-Date: Thu, 12 Nov 2026 23:38:13 -0500
-Message-ID: <20261113043813.2174717-1-lcy8047@gmail.com>
-X-Mailer: git-send-email 2.43.0
+	dkim=pass (1024-bit key, unprotected) header.d=linux.dev header.i=@linux.dev header.a=rsa-sha256 header.s=key1 header.b=UPv0KjcG
+X-Envelope-To: linux-wireless@vger.kernel.org
+DKIM-Signature: a=rsa-sha256; bh=8fhtiSM4RMXSPkWZ2Ym+TAinvYmR3dBhlVKb++Zid/U=;
+ c=simple/simple; d=linux.dev;
+ h=from:to:subject:date:message-id:mime-version:content-type; s=key1;
+ t=1794550710; v=1; x=1795155510;
+ b=UPv0KjcGCKw2FX6TaL4to0xlRFVjY0mChqj9N3zuAyzD7EB444b4uWLUSUZBiJ1RxWSIKkdk
+ /wFJEVIL8/KsCMhYo8wWf7Z6XE4/FruiG145XXVd+nyj4FvsWrseMR5AF/1VTY3CSOEwgTJFc13
+ ZS4+/Rz4n4DNcRgBHRB9NnF8=
+X-Envelope-To: linux-wireless@vger.kernel.org
+Received: by smtp.migadu.com with ESMTPS id 3a5ec91a947c39f8;
+	Fri, 13 Nov 2026 06:18:30 +0000
+X-Mizu-Trace-ID: 3a5ec91a947c39f8
+X-Migadu-Flow: FLOW_OUT
+Date: Fri, 13 Nov 2026 07:18:28 +0100
+From: Luka Gejak <luka.gejak@linux.dev>
+To: Kalpesh Solanki <skalpesh942@gmail.com>, pkshih@realtek.com
+CC: kvalo@kernel.org, linux-wireless@vger.kernel.org,
+ linux-kernel@vger.kernel.org, stable@vger.kernel.org
+Subject: =?US-ASCII?Q?Re=3A_=5BPATCH_v6_2/3=5D_wifi=3A_rtw88=3A_skip_al?=
+ =?US-ASCII?Q?ready_reset_station_in_rtw=5Fsta=5Fremove=28=29?=
+In-Reply-To: <20261113034704.21283-3-skalpesh942@gmail.com>
+References: <20261113034704.21283-1-skalpesh942@gmail.com> <20261113034704.21283-3-skalpesh942@gmail.com>
+Message-ID: <5369FA8B-8D0E-490C-8CA4-7D572DF9276A@linux.dev>
 X-Mailing-List: linux-wireless@vger.kernel.org
 List-Id: <linux-wireless.vger.kernel.org>
 List-Post: <mailto:linux-wireless@vger.kernel.org>
@@ -102,76 +66,36 @@ List-Unsubscribe: <mailto:linux-wireless+unsubscribe@vger.kernel.org>
 List-Owner: <mailto:linux-wireless+owner@vger.kernel.org>
 Precedence: list
 MIME-Version: 1.0
+Content-Type: text/plain;
+ charset=utf-8
 Content-Transfer-Encoding: 8bit
 
-ath11k_mac_vif_txmgmt_cleanup() and ath11k_mac_tx_mgmt_pending_free()
-walk ar->txmgmt_idr without txmgmt_idr_lock. A WMI management TX
-completion can meanwhile remove an entry and pass its skb to mac80211,
-which frees it. ath11k_mac_vif_txmgmt_cleanup() then reads skb_cb->vif
-from the freed skb, and both walks can read an IDR node that was freed
-after an RCU grace period.
+On November 13, 2026 4:47:03 AM GMT+01:00, Kalpesh Solanki
+<skalpesh942@gmail.com> wrote:
+>During firmware recovery, __fw_recovery_work() iterates over all
+>stations and invokes rtw_sta_remove() via rtw_reset_sta_iter().
+>
+>If recovery is triggered concurrently with station teardown (such as
+>during ieee80211_set_disassoc() where mac80211 leaves LPS before
+>removing the AP station), rtw_ops_sta_remove() is subsequently called
+>for the same station. This causes rtw_sta_remove() to execute twice,
+>leading to a double free of si->mask and an underflow of rtwdev->sta_cnt.
+>
+>Cancel pending rate control work first, as rtw_ops_sta_rc_update() can
+>still schedule rc_work after the station was reset. Then check si->vif
+>and return early if the station was already reset. Clear si->vif,
+>si->mask, and si->use_cfg_mask upon removal to ensure clean teardown
+>and avoid a NULL pointer dereference in rtw_rate_mask_cfg() if mac80211
+>re-adds the station across recovery restart.
+>
+>Fixes: 5c831644e1f4 ("rtw88: handle and recover when firmware crash")
+>Cc: stable@vger.kernel.org
+>Signed-off-by: Kalpesh Solanki <skalpesh942@gmail.com>
+>---
 
-Hold txmgmt_idr_lock over both walks and make ath11k_mac_tx_mgmt_free()
-expect it to be held.
+Looks good to me,
 
-Fixes: d5c65159f289 ("ath11k: driver for Qualcomm IEEE 802.11ax devices")
-Suggested-by: Rameshkumar Sundaram <rameshkumar.sundaram@oss.qualcomm.com>
-Signed-off-by: Changyul Lee <lcy8047@gmail.com>
----
-Found with a static analysis tool we are developing.
+Reviewed-by: Luka Gejak <luka.gejak@linux.dev>
 
-This is the follow-up for the skb use-after-free that was left out of
-the "wifi: ath: avoid IDR mutation while iterating" series.
-
-Compile-tested only, with x86_64_defconfig plus ATH11K_PCI and W=1.
-
- drivers/net/wireless/ath/ath11k/mac.c | 9 ++++++---
- 1 file changed, 6 insertions(+), 3 deletions(-)
-
-diff --git a/drivers/net/wireless/ath/ath11k/mac.c b/drivers/net/wireless/ath/ath11k/mac.c
-index 1a237adaa37d..ef60811fcf54 100644
---- a/drivers/net/wireless/ath/ath11k/mac.c
-+++ b/drivers/net/wireless/ath/ath11k/mac.c
-@@ -6151,10 +6151,9 @@ static void ath11k_mac_tx_mgmt_free(struct ath11k *ar, int buf_id)
- 	struct sk_buff *msdu;
- 	struct ieee80211_tx_info *info;
- 
--	spin_lock_bh(&ar->txmgmt_idr_lock);
--	msdu = idr_remove(&ar->txmgmt_idr, buf_id);
--	spin_unlock_bh(&ar->txmgmt_idr_lock);
-+	lockdep_assert_held(&ar->txmgmt_idr_lock);
- 
-+	msdu = idr_remove(&ar->txmgmt_idr, buf_id);
- 	if (!msdu)
- 		return;
- 
-@@ -6172,8 +6171,10 @@ void ath11k_mac_tx_mgmt_pending_free(struct ath11k *ar)
- 	struct sk_buff *msdu;
- 	int buf_id;
- 
-+	spin_lock_bh(&ar->txmgmt_idr_lock);
- 	idr_for_each_entry(&ar->txmgmt_idr, msdu, buf_id)
- 		ath11k_mac_tx_mgmt_free(ar, buf_id);
-+	spin_unlock_bh(&ar->txmgmt_idr_lock);
- }
- 
- static void ath11k_mac_vif_txmgmt_cleanup(struct ath11k *ar,
-@@ -6183,11 +6184,13 @@ static void ath11k_mac_vif_txmgmt_cleanup(struct ath11k *ar,
- 	struct sk_buff *skb;
- 	int buf_id;
- 
-+	spin_lock_bh(&ar->txmgmt_idr_lock);
- 	idr_for_each_entry(&ar->txmgmt_idr, skb, buf_id) {
- 		skb_cb = ATH11K_SKB_CB(skb);
- 		if (skb_cb->vif == vif)
- 			ath11k_mac_tx_mgmt_free(ar, buf_id);
- 	}
-+	spin_unlock_bh(&ar->txmgmt_idr_lock);
- }
- 
- static int ath11k_mac_mgmt_tx_wmi(struct ath11k *ar, struct ath11k_vif *arvif,
-
-base-commit: 7475ea8b58616b33c04afb976cf0fbaad9dd63fb
--- 
-2.43.0
-
+Best regards,
+Luka Gejak
