@@ -1,63 +1,80 @@
-Authentication-Results: smtp.subspace.kernel.org; arc=none smtp.remote-ip=95.215.58.1
-ARC-Seal: i=1; d=subspace.kernel.org; s=arc20261015; a=rsa-sha256; cv=none;
-	t=1794663649;
-	b=YeGiL+8MwjTN8Tmzj7LzUqML44Kh+w2LI1gsLUb1+D605ci6poNlL+yGVbHCi24VeGCu
-	 l8VQUkFVs/IMk53OyQqs9+rNaiplc11yxrV99R8iyzdt5qqbWF4teJsxcGX/hw1b5+1d4
-	 IVXD+FCTDjAohDZqLIulxRo9kZPW7FdnnJprOyq/TFqJ8Gw0rAb0Pd3F3YOxN9SY/vU6j
-	 L/u/45NtXUBXDMK4PzeUYWd6P25yFCpcd4KmXlDFdLVYUbsK5ZGyiFAiyXGV/n9Xg0bgV
-	 gaNdo2tA6GtEd+hkl0XF0bDrduccjX4h0sRfkfY1iywdPqPrR8o21+zOrzaThvXBJVw==
-ARC-Message-Signature: i=1; d=subspace.kernel.org; s=arc20261015;
-	a=rsa-sha256; c=relaxed/relaxed; t=1794663649;
-	h=DMARC-Filter:X-Envelope-To:DKIM-Signature:X-Envelope-To:Received:
-	 X-Mizu-Trace-ID:X-Migadu-Flow:Date:From:To:CC:Subject:In-Reply-To:
-	 References:Message-ID:MIME-Version:Content-Type:
-	 Content-Transfer-Encoding;
-	bh=2sFWVrN02se1GOVqXfsWJswTq/geOkfN2nj2Xp5zpwQ=;
-	b=J1gDk0smfzGevKqLKRDN5VlmDXEW9qITXiq3+Pj63t84pekdUyf4JTYWJN1Blo+gzL99
-	 RqdPwuYrOpPiTbU3+aeCRtrsZU85KuBwG0bP0iNxCYCpGtZWdiivOW56vOXuDNkTZecNr
-	 iThbxdx2qJDjXIBjMeJ2b1rsveFnPJwFNvXY5F4ge2KEQEVFmZoTGNM8sJymZ6v39Sk6a
-	 Kogl2viaQVe31m3j/VBxv4ffCxOLrn5b9SpAnmNdfCeS71C6/z+LjLShSwuETGNEPitOB
-	 eqfxIiDxddxSfuN+4R5VhOitjwRKI70k0E2pG9W3WD1ySCN67A9oM0k+bmF5prjXRSg==
-ARC-Authentication-Results: i=1; smtp.subspace.kernel.org; 
-	dmarc=pass header.from=linux.dev;
-	spf=pass smtp.mailfrom=linux.dev;
-	dkim=pass header.d=linux.dev header.i=@linux.dev header.a=rsa-sha256 header.s=key1 header.b=lsBIDmSN;
-	arc=none smtp.remote-ip=95.215.58.1
-Received: from mta1.migadu.com (out-1.mta1.migadu.com [95.215.58.1])
-	(using TLSv1.3 with cipher TLS_AES_128_GCM_SHA256 (128/128 bits)
+Authentication-Results: smtp.subspace.kernel.org; arc=pass header.oldest-pass=0 smtp.remote-ip=100.103.45.18
+ARC-Seal: i=2; d=subspace.kernel.org; s=arc20261015; a=rsa-sha256; cv=pass;
+	t=1794666384;
+	b=QNVrFIjDmDoYEtc6T5lA3kHL1kgpU5R10qjM2upGNzrcbAvz0HoGNQFJhJx5eh2rKGfv
+	 IxSVcsw2QRuxAnQGRzmu6+pmEMdLWyB/thM6fIdo4SEnslyDRB/PRv37XlwAeuroMX2tk
+	 1Xp5UB8iy2DelVW6CGQCu/tlnwXHdDESwY2bEP6CBCKAKvXCHSq/ZiQvnqs6sJlwqfKdL
+	 ReILR9kkRqx++P/6xNdCV6Wfr8SszCkOLGqF4h8JgpJXF79PyyWBeYURjv2+avLnUMIWR
+	 UL0Xfu7WaAxqm77MMQ9tjm8DWd3vH4iTf+n3aWUqnk2rcI9jN6MuXOvhuOz0R5/POwQ==
+ARC-Message-Signature: i=2; d=subspace.kernel.org; s=arc20261015;
+	a=rsa-sha256; c=relaxed/relaxed; t=1794666384;
+	h=Received:DKIM-Signature:Received:From:Subject:Date:Message-Id:
+	 MIME-Version:Content-Type:Content-Transfer-Encoding:X-B4-Tracking:
+	 X-Change-ID:To:Cc:X-Mailer:X-Developer-Signature:X-Developer-Key:
+	 X-Endpoint-Received:X-Original-From:Reply-To;
+	bh=AxaHcu2PiaREa6EaU5xMQUPkts9FaYkDzMG2Ui7K/DI=;
+	b=tBbD07w+h8IuUElpJhOdhCLIun73p46LHpb2xvWxKD6ENAefMw0WQAg4F8KNCi5lvtwb
+	 GyuQClQM2oDrG1hLcr6umjo0nZyrU+DNLDgDNxtZgnJwzIYKTn1s6E/FuKQj5lbJQm/PO
+	 V1YlYvWGiO8sYldoMBk/vysgNTzfiT6+nnxJwOx9gI1b97o0E8Rd6bMsW4sTTl+cDT5bZ
+	 eGJ4Ad6eyBp3GY53O8+Zon5VKqziyG6M1ci4BDeLOBZ+Ni54D30fJDQjX4ITyq4NvjwGI
+	 u+Qp2ag0UGF/3QCsL5knC3TQ9e+BoatOvXtisfAxo8P+N/YK21Wz5qWFPOsKvwVG+qA==
+ARC-Authentication-Results: i=2; smtp.subspace.kernel.org; 
+	dkim=pass header.d=kernel.org header.i=@kernel.org header.a=rsa-sha256 header.s=k20260515 header.b=eEEeEk4N;
+	arc=pass header.oldest-pass=0 smtp.remote-ip=100.103.45.18
+Received: from smtp.kernel.org (quasi.space.kernel.org [100.103.45.18])
+	(using TLSv1.3 with cipher TLS_AES_256_GCM_SHA384 (256/256 bits)
+	 key-exchange X25519 server-signature ECDSA (prime256v1))
+	(No client certificate requested)
+	by smtp.subspace.kernel.org (Postfix) with ESMTPS id 21D08606A323;
+	Sat, 14 Nov 2026 14:26:23 +0000 (UTC)
+Authentication-Results: smtp.subspace.kernel.org;
+	dkim=pass (2048-bit key) header.d=kernel.org header.i=@kernel.org header.a=rsa-sha256 header.s=k20260515 header.b=eEEeEk4N
+Authentication-Results: smtp.kernel.org; arc=none smtp.remote-ip=100.80.115.77
+ARC-Seal: i=1; d=kernel.org; s=arc20260519; a=rsa-sha256; cv=none;
+	t=1794666383;
+	b=Cq1QW7mOGfK7gYbmWzIc5Iq287L+2knrm9QMVlva/tpMNI3oMNp4YCzMyxBMFsEMqh32
+	 qqkl+vgZwB/tys4Ow5Zx+RT/zYWA2fsoMEcQu+GKOBYN6AUZwVju8eoYNKTdxW8oXGyud
+	 HX7G5t4mX2Dck8+BkQ5DPbvHK3MkXAXYEVm8+gURVqHt0tdTkOMgJ2alyVZLdmwAj9ZJE
+	 ckU0uvAdkYwY1BClNOdcJOfkT8RpgyL5DhaBnu9/sRW2wsL+CQZpFHZiVAxfH3xHL3NO5
+	 ByMNmPRjSfwmMIAOsNby9N8QHbr7dv/9Mweaf0Z/GvtFeXBgJmfW70wiNQb+mdY2AEA==
+ARC-Message-Signature: i=1; d=kernel.org; s=arc20260519; a=rsa-sha256;
+	c=relaxed/relaxed; t=1794666383;
+	h=DKIM-Signature:Received:From:Subject:Date:Message-Id:MIME-Version:
+	 Content-Type:Content-Transfer-Encoding:X-B4-Tracking:X-Change-ID:To:
+	 Cc:X-Mailer:X-Developer-Signature:X-Developer-Key:X-Endpoint-Received:
+	 X-Original-From:Reply-To;
+	bh=AxaHcu2PiaREa6EaU5xMQUPkts9FaYkDzMG2Ui7K/DI=;
+	b=e5t9OiRbvUms2/VF+YkLB2yYhZwNJgKbQ+Ns+8buKE2u//hRHYIQonj95XQR56WBNF1S
+	 fot7AHtPK+9EV51q8CAVn/p+475nKCp5ADLDTJe1QRFCe29XuCdTYv+9bMV+G8iUOXaNu
+	 n+VEf6rPNO/AohWE6fCmiq0J2WeNDY9ZnakGvgW/c3L51dC/cEDChFu770DGt5KFmX9k+
+	 sVIgnj7yr5GxywQUfAjoiL4GWAgyTyZ8Mi+MFp130e+RPnkWxHDToq1RHH32uZ94GCTPl
+	 zhzXsS0Yme2SCiQmccarT6FncSqCafy8gOh+/1LdXafRp8pSzv535dUI6UwcwZbKJXA==
+ARC-Authentication-Results: i=1; smtp.kernel.org; 
+	arc=none smtp.remote-ip=100.80.115.77
+Received: from lkml.kernel.org (nexus.subspace.kernel.org [100.80.115.77])
+	(using TLSv1.3 with cipher TLS_AES_256_GCM_SHA384 (256/256 bits)
 	 key-exchange X25519 server-signature ECDSA (prime256v1) server-digest SHA256)
 	(No client certificate requested)
-	by smtp.subspace.kernel.org (Postfix) with ESMTPS id 40077606A327
-	for <linux-wireless@vger.kernel.org>; Sat, 14 Nov 2026 13:40:47 +0000 (UTC)
-DMARC-Filter: OpenDMARC Filter v1.4.2 smtp.subspace.kernel.org 40077606A327
-Authentication-Results: smtp.subspace.kernel.org; dmarc=pass (p=none dis=none) header.from=linux.dev
-Authentication-Results: smtp.subspace.kernel.org; spf=pass smtp.mailfrom=linux.dev
-Authentication-Results: smtp.subspace.kernel.org;
-	dkim=pass (1024-bit key, unprotected) header.d=linux.dev header.i=@linux.dev header.a=rsa-sha256 header.s=key1 header.b=lsBIDmSN
-X-Envelope-To: linux-wireless@vger.kernel.org
-DKIM-Signature: a=rsa-sha256; bh=PBhTNR6hPM9HSFYa5+yBZcEPQicg6SZ+iadVGupiVcY=;
- c=simple/simple; d=linux.dev;
- h=from:to:subject:date:message-id:mime-version:content-type; s=key1;
- t=1794663646; v=1; x=1795268446;
- b=lsBIDmSNmS2DxyTt0wKLyh45pKzD0cJqjeeZ9co88kVT6RItLrL5RF/vsSB7Ps+WOmSPNeQL
- /Z85omUDqPwcs3CtSE3BottsAYnn9jvXLtA8pN5MK2J4WRu9Mcvz5nCcczLBfBCzXDBjOJlWP9q
- 4+MjYaIlZTc8kkkRV4sH6SLg=
-X-Envelope-To: linux-wireless@vger.kernel.org
-Received: by smtp.migadu.com with ESMTPS id 5ede4a74e9d03b07;
-	Sat, 14 Nov 2026 13:40:30 +0000
-X-Mizu-Trace-ID: 5ede4a74e9d03b07
-X-Migadu-Flow: FLOW_OUT
-Date: Sat, 14 Nov 2026 14:40:24 +0100
-From: Luka Gejak <luka.gejak@linux.dev>
-To: linux-wireless@vger.kernel.org, Mauricio Faria de Oliveira <mfo@igalia.com>
-CC: Ping-Ke Shih <pkshih@realtek.com>, Po-Hao Huang <phhuang@realtek.com>,
- Kalle Valo <kvalo@kernel.org>, kernel-dev@igalia.com,
- linux-kernel@vger.kernel.org
-Subject: =?US-ASCII?Q?Re=3A_=5BPATCH=5D_wifi=3A_rtw88=3A_fix_skb_leak?=
- =?US-ASCII?Q?_in_hw=5Fscan_probe_request_length_check?=
-In-Reply-To: <20261113-rtw88-hw-scan-skb-leak-v1-1-3bd47562abf6@igalia.com>
-References: <20261113-rtw88-hw-scan-skb-leak-v1-1-3bd47562abf6@igalia.com>
-Message-ID: <9AF24DB9-D92E-479C-A678-0571B1557198@linux.dev>
+	by smtp.kernel.org (Postfix) with ESMTPS id F294A1F000C5;
+	Sat, 14 Nov 2026 14:26:22 +0000 (UTC)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=kernel.org;
+	s=k20260515; t=1794666383;
+	bh=AxaHcu2PiaREa6EaU5xMQUPkts9FaYkDzMG2Ui7K/DI=;
+	h=From:Subject:Date:To:Cc:Reply-To;
+	b=eEEeEk4NFdQPjILF5GOWkRdol2G5mIVguN2lG6bYL+aWJYCZBVmdozxZu5N96q1Ic
+	 nG3gquOZUA4IxDKaC5GLWJAOfhjDqIyRQ1pz6Vd0Ul3DbMpXAWw3bTgW8bNvNRTmSo
+	 VZPpJyoXn49HzUkoHVtzeNiXrhczohAXWvgq93BVay81IAAqpJ44S0z5eUo4IgoXbD
+	 ZFqXHAH2bdNf9m0oZ/2X2pI3u0ALpkCVqRatQLq8OGRLcH1jGvqw5lDJ9XTU3bnXe2
+	 pO7u0uEp3LQqxdnAc4rjittOYDTvUEYODQEuGDrsUxBiajcB2v5o8Z/udjtOPDE0GL
+	 a5LXBIxa9255Q==
+Received: from nexus.subspace.kernel.org (localhost [IPv6:::1])
+	by lkml.kernel.org (Postfix) with ESMTP id 50C8749E0B;
+	Sat, 14 Nov 2026 14:26:22 +0000 (UTC)
+From: Manivannan Sadhasivam via B4 Relay <devnull+manivannan.sadhasivam.oss.qualcomm.com@kernel.org>
+Subject: [PATCH net-next v6 0/4] net: qrtr: Add support for using identical
+ MHI endpoint devices
+Date: Sat, 14 Nov 2026 06:26:12 -0800
+Message-Id: <20261114-qrtr-multi-ep-v6-0-2eb9885659e2@oss.qualcomm.com>
 X-Mailing-List: linux-wireless@vger.kernel.org
 List-Id: <linux-wireless.vger.kernel.org>
 List-Post: <mailto:linux-wireless@vger.kernel.org>
@@ -67,63 +84,157 @@ List-Unsubscribe: <mailto:linux-wireless+unsubscribe@vger.kernel.org>
 List-Owner: <mailto:linux-wireless+owner@vger.kernel.org>
 Precedence: list
 MIME-Version: 1.0
-Content-Type: text/plain;
- charset=utf-8
+Content-Type: text/plain; charset="utf-8"
 Content-Transfer-Encoding: 8bit
+X-B4-Tracking: v=1; b=H4sIAIRv+GoC/3XPzU7DMAwH8FeZciZT4qRpyon3QBzy4bKgtd2St
+ Bqa+u6kRYKp0Isly/bvL99JwhgwkefDnUScQgpDXxr1dCDuZPp3pMGXngADxRqu6TXmSLvxnAP
+ FC3VQO7CukoiclJtLxDbcVu+V9Jhpj7dM3r4nabQf6PLCLbunkPIQP9foia8XOykTp4xqw5QzR
+ ijtxcuQ0vE6mrMbuu5YyhoxwQMCfItAQaD2XjOvJTdsBxGPCGwRURDHmBYctW6qegeRPwhnfxG
+ 5IKr1tq5a5wXuINUvwpncIlVBpPMWrGx5A/+9M8/zFx9hY6XhAQAA
+X-Change-ID: 20260918-qrtr-multi-ep-c27c2bc54ee1
+To: Manivannan Sadhasivam <mani@kernel.org>, 
+ "David S. Miller" <davem@davemloft.net>, Jakub Kicinski <kuba@kernel.org>, 
+ Paolo Abeni <pabeni@redhat.com>, Simon Horman <horms@kernel.org>, 
+ Jeff Johnson <jjohnson@kernel.org>, Eric Dumazet <edumazet@kernel.org>, 
+ Eric Dumazet <edumazet@kernel.org>
+Cc: linux-arm-msm@vger.kernel.org, netdev@vger.kernel.org, 
+ linux-kernel@vger.kernel.org, linux-wireless@vger.kernel.org, 
+ ath11k@lists.infradead.org, ath12k@lists.infradead.org, 
+ Bjorn Andersson <andersson@kernel.org>, 
+ Chris Lew <christopher.lew@oss.qualcomm.com>, 
+ Deepak Kumar Singh <deepak.singh@oss.qualcomm.com>, 
+ Raj Kumar Bhagat <raj.bhagat@oss.qualcomm.com>, 
+ Juha-Matti Tilli <juha-matti.tilli@iki.fi>, 
+ Jeff Hugo <jeff.hugo@oss.qualcomm.com>, 
+ Manivannan Sadhasivam <manivannan.sadhasivam@oss.qualcomm.com>, 
+ Jeff Johnson <jeff.johnson@oss.qualcomm.com>, 
+ Daizhuang Bai <daizhuang.bai@oss.qualcomm.com>
+X-Mailer: b4 0.15.2
+X-Developer-Signature: v=1; a=openpgp-sha256; l=4832;
+ i=manivannan.sadhasivam@oss.qualcomm.com; h=from:subject:message-id;
+ bh=mStg907ZGIEscYjOgl3MoUFtQPYwFvhG+EbB7tiG+OY=;
+ b=owEBbQGS/pANAwAKAVWfEeb+kc71AcsmYgBq+G+LtBIgd5PJ9/0GfobMsZ85HvsP+KGavJBLP
+ dFThwe5cQaJATMEAAEKAB0WIQRnpUMqgUjL2KRYJ5dVnxHm/pHO9QUCavhviwAKCRBVnxHm/pHO
+ 9epyB/9hqCCSEZFZ7LcvCLz0EpB9WVXkUSQv/aNHkw3r1U2kPfzmwazIpPsODkfJYTc5PAGqgwT
+ kI8LxUFM741NW7Rqt1rhF7n6tSQjqh3ZSyeukLio3g6DI+fZz8f9NRwD/var+QrvSxOLPHFqmQY
+ JtxPT7+3dZIyFmFJuV18M059/VUdmhYk17PX2RQeUSduzGtpQjKAt5xNrAWWE6Y5f1sE/2JdTIN
+ uYzw8cWZJ98y1KPflP4ZM+3KVQtcCuTU6sLtMiv8iA0FxteRU8R0yceqSu0Dn3X7ZGDOfA7O2jU
+ zCZkI9Nzj0yCurQPwFYbhRc//pNT5KLG3y/eDIM7t9mYlVMZ
+X-Developer-Key: i=manivannan.sadhasivam@oss.qualcomm.com; a=openpgp;
+ fpr=C668AEC3C3188E4C611465E7488550E901166008
+X-Endpoint-Received: by B4 Relay for
+ manivannan.sadhasivam@oss.qualcomm.com/default with auth_id=461
+X-Original-From: Manivannan Sadhasivam <manivannan.sadhasivam@oss.qualcomm.com>
+Reply-To: manivannan.sadhasivam@oss.qualcomm.com
 
-On November 13, 2026 4:17:33 PM GMT+01:00, Mauricio Faria de Oliveira
-<mfo@igalia.com> wrote:
->In _rtw_hw_scan_update_probe_req(), if the first loop fails (goto out;)
->the
->skb is leaked. It does not reach kfree_skb() at the end of the loop body
->or
->in the second loop (out:) since it is unlinked from probe_req_list.
->
->Fix the leak by calling kfree_skb() if the first loop fails.
->
->In /sys/kernel/debug/kmemleak, after simulating the failure:
->
->  unreferenced object 0xffff88810965a000 (size 232):
->    comm "iw", pid 4729, jiffies 4345008185
->    hex dump (first 32 bytes):
->      00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00  ................
->      00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00  ................
->    backtrace (crc 20f7de11):
->      kmem_cache_alloc_node_noprof+0x302/0x380
->      __alloc_skb+0x74/0x2f0
->      skb_copy+0x57/0xe0
->      rtw_hw_scan_update_probe_req+0xff/0x230
->      rtw_hw_scan_prehandle+0x4e/0x180
->      rtw_hw_scan_offload+0x186/0x1d0
->      rtw_ops_hw_scan+0x61/0xb0
->      drv_hw_scan+0x81/0x130
->      __ieee80211_start_scan+0x2e0/0x760
->      rdev_scan+0x42/0x100
->      nl80211_trigger_scan+0x53b/0x730
->      genl_family_rcv_msg_doit+0x103/0x160
->      genl_rcv_msg+0x1b5/0x2c0
->      netlink_rcv_skb+0x52/0x100
->      genl_rcv+0x28/0x40
->      netlink_unicast+0x26d/0x3b0
->
+Hi,
 
-Should this dump go under --- so it doesn't end up in commit message?
+This series reworks the QRTR driver to add support for using identical MHI
+endpoint devices at the same time. Currently, QRTR driver has a limitation on
+using more than one identical MHI endpoint devices like QCS6490 or any Qcom
+Endpoint device making use of QRTR at the same time. Because of the fact that
+these devices will have the identical QRTR node id, they cannot be used at the
+same time, on the same host machine.
 
->This leak exists in the first loop since the function was introduced, and
->still happened with the addition of the second loop, in these two commits:
->
->Fixes: 10d162b2ed39 ("rtw88: 8822c: add ieee80211_ops::hw_scan")
->Fixes: d95984b5580d ("rtw88: fix memory overrun and memory leak during hw_scan")
+This limitation is a blocker for running upstream kernel on devices like Qcom
+based routers as they often have multiple identical WLAN Endpoint devices
+connected to the Router SoC.
 
-Should this perhaps cc stable?
+This series supersedes the following 2 series from Juha:
+https://lore.kernel.org/all/20260915054207.2513877-1-juha-matti.tilli@iki.fi
+https://lore.kernel.org/all/20260915074135.2567411-1-juha-matti.tilli@iki.fi
 
->Signed-off-by: Mauricio Faria de Oliveira <mfo@igalia.com>
->---
+Compared to the series from Juha, this series simplifies the multi-endpoint
+support by computing a unique node id for each MHI endpoint and uses it for the
+internal QRTR book keeping. This ensures that even if the MHI endpoint devices
+have same node ids, the host QRTR will always use a unique node id for each one
+of them.
 
-Either way I'm fine with the code, so just fix the commit message. Feel
-free to carry the tag for v2.
+More details can be found in the individual patches.
 
-Reviewed-by: Luka Gejak <luka.gejak@linux.dev>
+Merge Strategy
+==============
+
+Since both QRTR and ath drivers are falling under the networking tree, the whole
+series can be merged through netdev tree.
+
+Signed-off-by: Manivannan Sadhasivam <manivannan.sadhasivam@oss.qualcomm.com>
+---
+Changes in v6:
+- Rebased on top of net-next/main
+- Dropped the checks for node id collision as they were not needed
+- Link to v5: https://patch.msgid.link/20261104-qrtr-multi-ep-v5-0-4cdb2b4f1920@oss.qualcomm.com
+
+Changes in v5:
+- Rebased on top of net-next/main
+- Collected tags
+- Link to v4: https://patch.msgid.link/20261022-qrtr-multi-ep-v4-0-c6fdb75fcd3e@oss.qualcomm.com
+
+Changes in v4:
+- Moved the 'ep_nid' and the node id assignment into a single
+  'qrtr_nodes_lock' critical section and used READ_ONCE() elsewhere
+- Propagated the radix tree insert error out of qrtr_node_assign() and
+  rejected the packet or failed the endpoint registration
+- Fixed the assign condition that stopped adding bridged node ids as
+  lookup keys
+- Moved the control packet length check to qrtr_endpoint_post() and
+  extended it to DEL_SERVER and DEL_CLIENT
+- Rejected endpoint node ids at and above QRTR_NODE_HOST_BASE
+- Returned error for the QMI message received from an unknown server in
+  ath{11k,12k} so that the QMI core drops the service
+- Dropped Juha's Tested-by and Vasanth's Reviewed-bt as the code changed since v3
+- Link to v3: https://patch.msgid.link/20260922-qrtr-multi-ep-v3-0-c00831e88957@oss.qualcomm.com
+
+Changes in v3:
+- Added missing qrtr_node_rewrite_ctrl() for QRTR_TYPE_RESUME_TX
+- Fixed the types of ath{11k/12k}_pci_get_qrtr_node_id() and helpers to use
+  'unsigned int' to match qrtr_host_node_id()
+- Collected tags
+- Link to v2: https://patch.msgid.link/20260921-qrtr-multi-ep-v2-0-27dd80d841a0@oss.qualcomm.com
+
+Changes in v2:
+- Rebased on top of net-next/main
+- Used READ/WRITE_ONCE for reading/writing ep_nid
+- Link to v1: https://patch.msgid.link/20260918-qrtr-multi-ep-v1-0-8a06caa368d3@oss.qualcomm.com
+
+Cc: linux-arm-msm@vger.kernel.org
+Cc: netdev@vger.kernel.org
+Cc: linux-kernel@vger.kernel.org
+Cc: linux-wireless@vger.kernel.org
+Cc: ath11k@lists.infradead.org
+Cc: ath12k@lists.infradead.org
+To: Manivannan Sadhasivam <mani@kernel.org>
+To: "David S. Miller" <davem@davemloft.net>
+To: Eric Dumazet <edumazet@kernel.org>
+To: Jakub Kicinski <kuba@kernel.org>
+To: Paolo Abeni <pabeni@redhat.com>
+To: Simon Horman <horms@kernel.org>
+To: Jeff Johnson <jjohnson@kernel.org>
+
+---
+Manivannan Sadhasivam (4):
+      net: qrtr: Allow the host QRTR to assign a unique node id
+      net: qrtr: Assign unique node id for MHI endpoints
+      wifi: ath11k: Connect to the QMI server belonging to the device owned by this driver
+      wifi: ath12k: Connect to the QMI server belonging to the device owned by this driver
+
+ MAINTAINERS                           |   1 +
+ drivers/net/wireless/ath/ath11k/hif.h |   9 +++
+ drivers/net/wireless/ath/ath11k/pci.c |   9 +++
+ drivers/net/wireless/ath/ath11k/qmi.c |  11 +++
+ drivers/net/wireless/ath/ath12k/hif.h |   9 +++
+ drivers/net/wireless/ath/ath12k/pci.c |   9 +++
+ drivers/net/wireless/ath/ath12k/qmi.c |  12 +++
+ include/net/qrtr.h                    |  27 +++++++
+ net/qrtr/af_qrtr.c                    | 136 ++++++++++++++++++++++++++++++----
+ net/qrtr/mhi.c                        |   4 +-
+ 10 files changed, 210 insertions(+), 17 deletions(-)
+---
+base-commit: 6964ff21c5d8b75649211a52dbfd92753e605649
+change-id: 20260918-qrtr-multi-ep-c27c2bc54ee1
 
 Best regards,
-Luka Gejak
+--  
+மணிவண்ணன் சதாசிவம்
+
+
