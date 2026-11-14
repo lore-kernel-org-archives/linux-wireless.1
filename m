@@ -1,96 +1,47 @@
-Authentication-Results: smtp.subspace.kernel.org; arc=pass header.oldest-pass=0 smtp.remote-ip=209.85.217.46
-ARC-Seal: i=2; d=subspace.kernel.org; s=arc20261015; a=rsa-sha256; cv=pass;
-	t=1794627049;
-	b=iKQs4j07bfWPLeGsQgy1cSdzq5JBWWCPyrsd4Jq8/42ZvG1a8XIwD4KQppzdM0pMHKfr
-	 zB/oGGTiaZBkDcGZyWuF5ere0E2kCwIFMRZGZyCfJcNdSMgfzkaaiBneaxmhIM0WbsRag
-	 rJ+ky2GKC7SrqRC3BhzwyAkE4wycIDZpuqyb7F3Z8soh9YAnqGeArD3GNW2D+msj3bKAz
-	 pJfuPdMwMiW6Or2Gzf5vauwGKxU2WOp0dyUEK0ESTrMC276cB5qJScOf/knql9E1V16Ff
-	 CikgVIn50EOvmfMOr7+WId0zBu6vdhu0vrxh4SDiA0bMsDHP8zOihyWUMjls37GFKHA==
-ARC-Message-Signature: i=2; d=subspace.kernel.org; s=arc20261015;
-	a=rsa-sha256; c=relaxed/relaxed; t=1794627049;
-	h=DMARC-Filter:Received:DKIM-Signature:X-Google-DKIM-Signature:
-	 X-Gm-Message-State:X-Gm-Gg:X-Received:MIME-Version:From:Date:
-	 X-Gm-Features:Message-ID:Subject:To:Cc:Content-Type;
-	bh=jwB/23jRHhcsHV0wrCuIYDgqv/rmgRn7H8RU3sd+R6Q=;
-	b=kJX3BqgV+JG4taN0NSuD+fJyyAWcyWn/ozSRObZtHW+r3vuShn5G8Hb0hh/FxPnE3j0q
-	 dW389AF6cZvoGzav2Y/oif5Gbo0ntQYg5WncKNtG7JWsrBTnmv4gH5zmBrFKeU3O60dKW
-	 24ULAcg3/9kU//fCDgeZj/uQmQQLiTnAHtEEjr51600Or7bsIurjJJQTbm/827JBmWQ0d
-	 MJDJ3BsWq3JA9y02cSzIkQkBDbZGtR5n9vZGATGsi7z4cMMRzkUw2Jx3bP7FZyZqs7qV4
-	 xxHFXWDvv6eL4vbGSexkPkUx/cGNk93AbkOb7nEe0yUQMjjFHzV94/RqsROiTClRcwA==
-ARC-Authentication-Results: i=2; smtp.subspace.kernel.org; 
-	dmarc=pass header.from=gmail.com;
-	spf=pass smtp.mailfrom=gmail.com;
-	dkim=pass header.d=gmail.com header.i=@gmail.com header.a=rsa-sha256 header.s=20260707 header.b=nujAVQzE;
-	arc=pass header.oldest-pass=0 smtp.remote-ip=209.85.217.46
-Received: from mail-vs1-f46.google.com (mail-vs1-f46.google.com [209.85.217.46])
-	(using TLSv1.3 with cipher TLS_AES_128_GCM_SHA256 (128/128 bits)
-	 key-exchange X25519 server-signature ECDSA (prime256v1) server-digest SHA256)
+Authentication-Results: smtp.subspace.kernel.org; arc=none smtp.remote-ip=100.103.45.18
+ARC-Seal: i=1; d=subspace.kernel.org; s=arc20261015; a=rsa-sha256; cv=none;
+	t=1794641640;
+	b=zfKbqvlsq+IC40F+JxPo2flLPJgk9p/EI/BsU35CPuUvbuOLjh9Lc4MUbuXFtu9z2BKB
+	 xbiN+z63WH9ZxK7/eCUYZrz87sGM2AGlMCMnwC7mCMCbJpYRHFA6Y6SFwXxWEib99jhel
+	 zXZ9wLCEHML/zhSsbi1xz4dYaocOJxqho85AJBtB9iAeBoDqFYCAws8s+ynCct7/MVCjq
+	 6bbMBHx+MWXBBhhModGznF97y0ErCo245opXZKdZLceXHZzKsd1D6wJeeS2Vxd5/E5Shj
+	 t0bdis6YfYwZTsi9QD2bGksrJlrsPRfAilIARXyu08ipXNOewl9VALCqmIIgnnNAMrw==
+ARC-Message-Signature: i=1; d=subspace.kernel.org; s=arc20261015;
+	a=rsa-sha256; c=relaxed/relaxed; t=1794641640;
+	h=Received:DKIM-Signature:Message-ID:Date:MIME-Version:User-Agent:
+	 Subject:To:Cc:References:From:Content-Language:Autocrypt:In-Reply-To:
+	 Content-Type:Content-Transfer-Encoding;
+	bh=skQyLbajY/JdnR4E6uMtkLCcC4Gk80WNRunpYsHQRok=;
+	b=UX3z2Jl0hTnrN6u9FpcLrhRw7oe+bA3vVAeFXn3m2BofRIEs9Sd/JtAIH5jcpVDbw5O5
+	 2j8H6fZuFDwr2kqhK3gCiR2xSHFpNxXrMdZCwjrTVZsvG/9r8f2wVH/45pJb5LJAHHbVW
+	 zbziOduAmS9s4NrGAP5TyOYlf604P3XH8+HqYiDBKZy0mOaeVE7qoSp8jM1wzYzVhIRot
+	 Vo4kbDqtaU5aqyiPzholuLGWCr2xITWL/NtmMuCTZMbsPvZ3Mv0c/GeTLSdw49WCtWo5O
+	 Q6BoC1ONRlIAkcdK4+0cIPI38fYKV+Pc/jmqr0/V9PKhfAPgWUWZUhXTvOfwal4hwHg==
+ARC-Authentication-Results: i=1; smtp.subspace.kernel.org; 
+	dkim=pass header.d=kernel.org header.i=@kernel.org header.a=rsa-sha256 header.s=k20260515 header.b=j9821BeG;
+	arc=none smtp.remote-ip=100.103.45.18
+Received: from smtp.kernel.org (quasi.space.kernel.org [100.103.45.18])
+	(using TLSv1.3 with cipher TLS_AES_256_GCM_SHA384 (256/256 bits)
+	 key-exchange X25519 server-signature ECDSA (prime256v1))
 	(No client certificate requested)
-	by smtp.subspace.kernel.org (Postfix) with ESMTPS id 96239606A890
-	for <linux-wireless@vger.kernel.org>; Sat, 14 Nov 2026 03:30:48 +0000 (UTC)
-DMARC-Filter: OpenDMARC Filter v1.4.2 smtp.subspace.kernel.org 96239606A890
-Authentication-Results: smtp.subspace.kernel.org; dmarc=pass (p=none dis=none) header.from=gmail.com
-Authentication-Results: smtp.subspace.kernel.org; spf=pass smtp.mailfrom=gmail.com
+	by smtp.subspace.kernel.org (Postfix) with ESMTPS id 3B1AE606A329;
+	Sat, 14 Nov 2026 07:33:59 +0000 (UTC)
 Authentication-Results: smtp.subspace.kernel.org;
-	dkim=pass (2048-bit key) header.d=gmail.com header.i=@gmail.com header.a=rsa-sha256 header.s=20260707 header.b=nujAVQzE
-Received: by mail-vs1-f46.google.com with SMTP id ada2fe7eead31-7d2b25786d9so1817356137.0
-        for <linux-wireless@vger.kernel.org>; Fri, 13 Nov 2026 19:30:48 -0800 (PST)
-ARC-Seal: i=1; a=rsa-sha256; t=1794627047; cv=none;
-        d=google.com; s=arc-20260327;
-        b=ryFLG0FmoWnIVzhZlF6EnZbgccOMckqRGTKzatkKAdaFXqwsxJWo0ZL6OmPndpifAA
-         ZDMQT7Qffvm/M5B8fZOOzeUSknfstsUMVbfBNhSgIiRor/qYekZ+fq+tbRFtD96G+j7v
-         TpM0kkKZG93/Clnnu0Jm6SwqghvEo/QrcsZD9Pko7sw2Sa5gwZkye+izV+bCym5m0wyB
-         0poMSoBm98DqWg+crLl+lUANqMhJ2OPZKXQI7jqdO/xJdXZF0n93XpZr3KB8x0Aioctv
-         MU6CJwW0QYcx1aclcTfm3cSfppYmCbfEwi7ScuQ5zF133WC8rgxvnPXoNhy+n7h+mosd
-         4GEA==
-ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=google.com; s=arc-20260327;
-        h=cc:to:subject:message-id:date:from:mime-version:dkim-signature;
-        bh=jwB/23jRHhcsHV0wrCuIYDgqv/rmgRn7H8RU3sd+R6Q=;
-        fh=unOd+iR/s4g3ccNRscfqoIvCvfbfQt24cpkffWnNbx8=;
-        b=KOhCTUTw0JJT/ISZGRGB3cV8h426pVCZjK840At7ZtYVxkbRzT3h3N4mSfUF8u1QCQ
-         IZrgaWtdOihNCcjYTb8CLKVttNqEkWTzmWpmggJUX4eqi4lfKWM0LkPfixfb7M5/ovXG
-         44J0VD4LboWpp/zLBNNEBRUDHxI42bB8JKUy3cp6hVaJg+BvuSjJOmAqJrBcsperB4ME
-         7/LXTfQd+uRlUsNTrYTYguV5cynk/zGzjeGVQyevwEG7TQGeGMmKYCDerloaZpu8EiUa
-         txbX1P8JDBM+aMZa9l5rhEJeyyiro8zC0YC1F19NolWdFisRuGTjJXCFkZSw2WVWWL2z
-         iHHw==;
-        darn=vger.kernel.org
-ARC-Authentication-Results: i=1; mx.google.com; arc=none
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=gmail.com; s=20260707; t=1794627047; x=1795231847; darn=vger.kernel.org;
-        h=content-type:cc:to:subject:message-id:date:from:mime-version:from
-         :to:cc:subject:date:message-id:reply-to:content-type;
-        bh=jwB/23jRHhcsHV0wrCuIYDgqv/rmgRn7H8RU3sd+R6Q=;
-        b=nujAVQzELW2hc5gQ8H8056GkEhIG4MoL2e6FtlpJAUkfnW8PYwvhbht2DP3dW5oJ3s
-         6LRDZQhK4atycpqzD3vyJDrfXIlJYD691XwapX8lNo8q4lNgZPVhVdOkpzzkjOS5U7+J
-         RwAzJra3Hkv70VKEBPj913ImCE6p24vOSxMESV6fE1sfFicmbAIidRN1E30oV2OYVxIl
-         X6seswygXCFmbQW1BRTdHJI8xDSNLFV8ehfB3AjVySdgNcW85eT9WrsySE466J4c0yWh
-         rDhfrwp1K6H7zRCvMfRA32hTCgpIW2ugAPRD9FWtzdCBuqMU8y4Y+ZT0juVF5fw5PcQE
-         5OkQ==
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=1e100.net; s=20260707; t=1794627047; x=1795231847;
-        h=content-type:cc:to:subject:message-id:date:from:mime-version
-         :x-gm-gg:x-gm-message-state:from:to:cc:subject:date:message-id
-         :reply-to:content-type;
-        bh=jwB/23jRHhcsHV0wrCuIYDgqv/rmgRn7H8RU3sd+R6Q=;
-        b=cvKlP59jsHKK7B1BYx6SwKsXZvyGIvb/2LsEXeALlaiiKtOMkV9InG+JglD1U0KAgS
-         uslIEDQORNzvJuKptVBwXtvvQnMeEvU/IndUuxrKvVPqH4WDL0E48uHGGS4Dn6IWCBxG
-         pplT9Ze30WkkOOFok9MzO/fwfFU/HWOvovNl6YgWwZRkz1Lke+sIvX2/5Yc2qolChYVK
-         U7sYgVjtxsB6RADNwiSgCFMSi5cl+oZM8MyCyF6zQP0rdnWQrEWrVKIqBOHWCPHwhvL1
-         BVOO1ieP3iLjL9d3xLeRlcKpQwilt8+vBAfSyg+PuMJGP7jxekysaBaTlX/jleR3Ensh
-         yl0Q==
-X-Gm-Message-State: APuU4Z+7QaQQ4/KZDEGF1nPhplh8mjP3X9s7OwMpg3K7RSjoBljd6FSP
-	sgBclDCBt2nMtuEWsV96jb+mnwvAaIBrcjyUCsKVyxg6u6z6YyrZqJ2o719Y81dZTDrADCgcAKB
-	oXZ+7ICXmviT4742WMLInueGis8Hleni5kuyf
-X-Gm-Gg: AYBFou3ADo4Z+ugKag3yu++U3dlXBA3wbmOHUyHGnvQEADg0BekbWVFslxrwlBGcjVu
-	DmSIPV8qJEzyQ1VX8S51RsfIRT3ZgLjtZfHJ86l533YPBJrf/xoPMnKOC5jWQsXsD84IJ99MxIr
-	DiedAD6ghWSojMTy2K4ZG4ua0PLiQ0FHLKJ65iktrKPw/EVq6e8nigoGXvvDoZpKr4Wgx471Ta5
-	qQlbzq13TfFzcBI5EIiSTXV3pO+5nsjPkr2+JE4k0b5ZrYbjFRl37+Ovjq2PRzsmKjmuolj4jNr
-	+jyWdJttMLCBPAvE6gnfwuxzukYf2ROz+EgXdmxzke5pX66Zc4BQigl0K4BSrgjYy+HpcFR8uuj
-	sMRUz0Zo4XyAVHRKyOXE5oY9mng1eGaq4F671wdr3vWV0l/PJxOfufV7wEkEd7jkcAM0hVX36KG
-	+VdQ==
-X-Received: by 2002:a05:6102:a4e:b0:7cc:2086:34c9 with SMTP id
- ada2fe7eead31-7d64d43bcc7mr1812425137.2.1794627047354; Fri, 13 Nov 2026
- 19:30:47 -0800 (PST)
+	dkim=pass (2048-bit key) header.d=kernel.org header.i=@kernel.org header.a=rsa-sha256 header.s=k20260515 header.b=j9821BeG
+Received: by smtp.kernel.org (Postfix) with ESMTPSA id 2E8081F000C4;
+	Sat, 14 Nov 2026 07:33:55 +0000 (UTC)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=kernel.org;
+	s=k20260515; t=1794641639;
+	bh=skQyLbajY/JdnR4E6uMtkLCcC4Gk80WNRunpYsHQRok=;
+	h=Date:Subject:To:Cc:References:From:In-Reply-To;
+	b=j9821BeGF9glXFemfEqa1hJoxeskWujtRLwXUa9jq8/QlGCxdgAEJu4fiMpcOSWhm
+	 ++428UKU67Bi52gw04UhPe4GIy8hF1T1T8rWhHbtfeZXNTJwbhaGsw/mBe4m3p8Ixh
+	 6n2PCB9imMGxNgIxHi4dJF1MgVYwkJTdSYjoQ5qqyNOwiKiHRRVBsVkaQ1wjmCy2j6
+	 hFCNy02jbNpRlMCpa74PGzjoDFKszzZqqNbvSfsGQSOBew5IXEMsgRCoxE8N0gKeMK
+	 jZbKVvliaROMODRBx7SMx8UEPsD4H3/fyMw10UP5PGS0fxs5CU47te6bMLP7n+ZCbD
+	 ly4gxWANPAOLg==
+Message-ID: <a84e2db6-17d5-455a-9b3a-eb3d787ce92c@kernel.org>
+Date: Sat, 14 Nov 2026 08:33:53 +0100
 X-Mailing-List: linux-wireless@vger.kernel.org
 List-Id: <linux-wireless.vger.kernel.org>
 List-Post: <mailto:linux-wireless@vger.kernel.org>
@@ -100,126 +51,91 @@ List-Unsubscribe: <mailto:linux-wireless+unsubscribe@vger.kernel.org>
 List-Owner: <mailto:linux-wireless+owner@vger.kernel.org>
 Precedence: list
 MIME-Version: 1.0
-From: Christopher Griffin <christophergriffin05@gmail.com>
-Date: Fri, 13 Nov 2026 21:30:36 -0600
-X-Gm-Features: AclHuK8b75Fk-1RSRh9Q1vYDh7AWBSUZpRAbQcRD3QXXJl6D-8li7ykdtCf4qmc
-Message-ID: <CAKobHXD6beuX0RJb0CS+aMB9N9_8tbvd-LKtpuDHRbhsBNsPrg@mail.gmail.com>
-Subject: ath12k: NULL dereference in ath12k_link_sta_rhash_delete() when an
- MLO station is removed during recovery
-To: ath12k@lists.infradead.org
-Cc: linux-wireless@vger.kernel.org
-Content-Type: text/plain; charset="UTF-8"
+User-Agent: Mozilla Thunderbird
+Subject: Re: [PATCH] dt-bindings: net: wireless: qcom,ath10k: add PCI devices
+To: Rosen Penev <rosenp@gmail.com>
+Cc: Johannes Berg <johannes@sipsolutions.net>, Rob Herring <robh@kernel.org>,
+ Krzysztof Kozlowski <krzk+dt@kernel.org>, Conor Dooley
+ <conor+dt@kernel.org>, Jeff Johnson <jjohnson@kernel.org>,
+ Loic Poulain <loic.poulain@oss.qualcomm.com>,
+ linux-wireless@vger.kernel.org, devicetree@vger.kernel.org,
+ ath10k@lists.infradead.org, linux-kernel@vger.kernel.org
+References: <20261111034418.194610-1-rosenp@gmail.com>
+ <20261113-gabby-vigorous-dragon-6a2fed@quoll>
+ <CAKxU2N846Ebd50z8adJsNcy-kJBSNDSKU8_ZLf68fJzoc+r+xA@mail.gmail.com>
+From: Krzysztof Kozlowski <krzk@kernel.org>
+Content-Language: en-US
+Autocrypt: addr=krzk@kernel.org; keydata=
+ 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
+In-Reply-To: <CAKxU2N846Ebd50z8adJsNcy-kJBSNDSKU8_ZLf68fJzoc+r+xA@mail.gmail.com>
+Content-Type: text/plain; charset=UTF-8
+Content-Transfer-Encoding: 8bit
 
-Hello,
+On 13/11/2026 22:34, Rosen Penev wrote:
+> On Fri, Nov 13, 2026 at 3:11 AM Krzysztof Kozlowski <krzk@kernel.org> wrote:
+>>
+>> On Tue, Nov 10, 2026 at 07:44:18PM -0800, Rosen Penev wrote:
+>>> ath10k PCI devices can be described as children of their PCI host
+>>> bridge, for example to supply the MAC address and calibration data
+>>> through nvmem cells. The only compatible for that was "qcom,ath10k",
+>>> but the generic PCI device schema requires a node under a PCI bus to
+>>> carry a "pciVVVV,DDDD" or "pciclass,..." compatible, so such nodes fail
+>>> validation.
+>>>
+>>> Add the PCI vendor/device IDs handled by the ath10k PCI driver, as the
+>>> ath9k and ath11k PCI bindings already do.
+>>
+>> We do not need to least all PCI devices here. Were is any actual DTS
+>> user of these?
+> I have some WIP patches that include the QCA988X. Reason for it is
+> nvram calibration and MAC lookup.
+> 
+> This is basically copy/paste of what's already present in ath9k.yaml.
+> 
+> AFAIK this came up because of dtbs_check
 
-I hit a kernel panic on an AP with three QCN9274 hw2.0 on PCIe that are
-grouped into one hardware group through the WSI graph (IPQ9574 board,
-one AP MLD across 2.4, 5 and 6 GHz).
+It cannot come as dtbs_check result, because there are no DTS with these.
 
-Software: OpenWrt main, kernel 6.18.60, wireless stack from backports
-7.2 with OpenWrt's ath12k patches (none of them touch the functions
-named below), hostapd from OpenWrt main, firmware
-WLAN.WBE.1.4.1-00199-QCAHKSWPL_SILICONZ-1 on all three chips.
-
-Seen once; I have not tried to reproduce it yet. This report and the
-source analysis in it were written with Claude, an AI coding assistant.
-
-What happened
-
-1. A multi-link client (Intel BE200, links on 6 GHz and 5 GHz,
-   association link 6 GHz) was connected and passing traffic normally.
-
-2. The 6 GHz link of the AP MLD was restarted alone (OpenWrt "wifi
-   reload" after a channel width change on that radio). hostapd logged
-   "Announce the removal of ap-mld0 on phy phy1.0 before its restart"
-   and CTRL-EVENT-LINK-STA-REMOVED link_id=0. The driver logged (the
-   prefix "ath12k_wifi7_pci 0002:01:00.0:" is shortened to "0002:",
-   that is the 6 GHz chip; "0003:" is the 5 GHz chip; client addresses
-   are masked):
-
-   0002: Timeout in receiving vdev delete response
-   0002: removing stale peer xx:xx:xx:xx:xx:2a from vdev_id 0
-
-   From here the client was still associated (hostapd listed it on the
-   5 GHz link, the client showed both links), but no frame reached it
-   any more. That is the first problem: the station is neither moved
-   nor removed.
-
-3. Two minutes later the client disconnected and reconnected:
-
-   0002: failed to clear all peer keys for vdev 1: -2
-   0002: failed to find the peer to stop rx aggregation
-   ap-mld0: HW problem - can not stop rx aggregation for
-         xx:xx:xx:xx:xx:27 tid 0
-   0002: mac station xx:xx:xx:xx:xx:2a disconnect for vdev 1 without
-         any connected station
-   0002: failed to get peer assoc conf event for xx:xx:xx:xx:xx:2b
-         vdev 1
-   0002: Failed to associate station: xx:xx:xx:xx:xx:2b
-   0002: unable to move link sta 0 of sta xx:xx:xx:xx:xx:2b from
-         state 2 to 3
-   0002: failed to send WMI_PEER_DELETE cmd
-   0002: failed to delete peer vdev_id 1 addr xx:xx:xx:xx:xx:2b
-         ret -108
-   0003: failed to send WMI_PEER_DELETE cmd
-   0003: failed to delete peer vdev_id 0 addr xx:xx:xx:xx:xx:2a
-         ret -108
-   mhi mhi2: Requested to power ON
-   (then mhi1 and mhi3: all three devices of the group restart)
-
-4. About six seconds into that recovery:
-
-   Unable to handle kernel read from unreadable memory at virtual
-     address 0000000000000000
-   Internal error: Oops: 0000000096000005 [#1] SMP
-   CPU: 3 UID: 101 PID: 2306 Comm: hostapd
-     Tainted: G O 6.18.60 #0 NONE
-   pc : ath12k_link_sta_rhash_delete+0x3c/0x220 [ath12k]
-   lr : ath12k_mac_op_sta_state+0xe18/0x1764 [ath12k]
-   Call trace:
-    ath12k_link_sta_rhash_delete+0x3c/0x220 [ath12k] (P)
-    ath12k_mac_op_sta_state+0xe18/0x1764 [ath12k]
-    drv_sta_state+0x80/0x3e4 [mac80211]
-    sta_set_sinfo+0x1158/0x1194 [mac80211]
-    sta_info_destroy_addr_bss+0x34/0x48 [mac80211]
-    ieee80211_del_station+0x1c/0x54 [mac80211]
-    nl80211_del_station+0xdc/0x144 [cfg80211]
-    genl_family_rcv_msg_doit+0xcc/0x140
-    ...
-   Code: f9641035 f9642037 79505418 79505819 (f94002b4)
-   Kernel panic - not syncing: Oops: Fatal exception in interrupt
-
-What the cause of the panic looks like
-
-ath12k_core_reconfigure_on_crash() starts by calling
-ath12k_link_sta_rhash_tbl_destroy(ab), which frees the table and sets
-ab->rhead_sta_addr to NULL. The table is created again in
-ath12k_core_start() once the firmware is back. In that window user
-space can still delete a station. For an MLO station
-ath12k_mac_ml_station_remove() calls ath12k_link_sta_rhash_delete() for
-every link without looking at the device state, and
-ath12k_link_sta_rhash_remove() passes ab->rhead_sta_addr straight to
-rhashtable_remove_fast(). With the table pointer NULL that is the read
-at address 0. ath12k_link_sta_rhash_insert() and
-ath12k_link_sta_find_by_addr() use the pointer the same way.
-
-Questions
-
-- Is the table meant to be torn down at the start of recovery while
-  mac80211 still holds stations, or should the entries be flushed and
-  the table kept until the stations are gone?
-- Would a guard in the insert/remove/lookup helpers (table pointer
-  NULL, return -ENOENT) be acceptable as a fix, or should the station
-  remove path skip the per-device cleanup while the device is in
-  recovery? I can test either on this board.
-- Separately, is a restart of a single link of an AP MLD (step 2)
-  expected to leave multi-link stations in that state with this
-  firmware, or should the station be dropped?
-
-I can provide the full console log.
-
-Hardware and firmware: QCN9274 hw2.0 PCI
-WLAN.WBE.1.4.1-00199-QCAHKSWPL_SILICONZ-1
-
-Thanks,
-Christopher Griffin
+Best regards,
+Krzysztof
