@@ -1,47 +1,68 @@
-Authentication-Results: smtp.subspace.kernel.org; arc=none smtp.remote-ip=100.103.45.18
+Authentication-Results: smtp.subspace.kernel.org; arc=none smtp.remote-ip=77.75.76.210
 ARC-Seal: i=1; d=subspace.kernel.org; s=arc20261015; a=rsa-sha256; cv=none;
-	t=1794641640;
-	b=zfKbqvlsq+IC40F+JxPo2flLPJgk9p/EI/BsU35CPuUvbuOLjh9Lc4MUbuXFtu9z2BKB
-	 xbiN+z63WH9ZxK7/eCUYZrz87sGM2AGlMCMnwC7mCMCbJpYRHFA6Y6SFwXxWEib99jhel
-	 zXZ9wLCEHML/zhSsbi1xz4dYaocOJxqho85AJBtB9iAeBoDqFYCAws8s+ynCct7/MVCjq
-	 6bbMBHx+MWXBBhhModGznF97y0ErCo245opXZKdZLceXHZzKsd1D6wJeeS2Vxd5/E5Shj
-	 t0bdis6YfYwZTsi9QD2bGksrJlrsPRfAilIARXyu08ipXNOewl9VALCqmIIgnnNAMrw==
+	t=1794647337;
+	b=pc43FtAEo8dGUY5/xRMEPpHWhaDiAHxDhVRECQxKt+GhAeS+l1Qxg3ltC0AGQM/qnrE0
+	 Ecv8AUubPq6WO/6Fy9BxyKwMeU+xjg97lVr4L2BsEImRtvX5cAFBV0p1YuT3EXYL97lZy
+	 0uL512EeYIWNANWTCVD6a70QwiWHrgxHjV4nkSuC5t+khmEJLFL6gnwo7RZsMDA+u2ZGL
+	 cjfT0hdr+eDYUuly70aFX9QQuKBMXRUQtTz1k5c2j35iIQh02xQ19hoC9YRLP/Y/tkfkt
+	 9Fkv3CRcsKYaIPV2OmTI/VXAXzqtK9UjPsBsiNIwckdb5Tmr/yWpI4oIc0hfO4C29fw==
 ARC-Message-Signature: i=1; d=subspace.kernel.org; s=arc20261015;
-	a=rsa-sha256; c=relaxed/relaxed; t=1794641640;
-	h=Received:DKIM-Signature:Message-ID:Date:MIME-Version:User-Agent:
-	 Subject:To:Cc:References:From:Content-Language:Autocrypt:In-Reply-To:
-	 Content-Type:Content-Transfer-Encoding;
-	bh=skQyLbajY/JdnR4E6uMtkLCcC4Gk80WNRunpYsHQRok=;
-	b=UX3z2Jl0hTnrN6u9FpcLrhRw7oe+bA3vVAeFXn3m2BofRIEs9Sd/JtAIH5jcpVDbw5O5
-	 2j8H6fZuFDwr2kqhK3gCiR2xSHFpNxXrMdZCwjrTVZsvG/9r8f2wVH/45pJb5LJAHHbVW
-	 zbziOduAmS9s4NrGAP5TyOYlf604P3XH8+HqYiDBKZy0mOaeVE7qoSp8jM1wzYzVhIRot
-	 Vo4kbDqtaU5aqyiPzholuLGWCr2xITWL/NtmMuCTZMbsPvZ3Mv0c/GeTLSdw49WCtWo5O
-	 Q6BoC1ONRlIAkcdK4+0cIPI38fYKV+Pc/jmqr0/V9PKhfAPgWUWZUhXTvOfwal4hwHg==
+	a=rsa-sha256; c=relaxed/relaxed; t=1794647337;
+	h=DMARC-Filter:Received:DKIM-Signature:Received:From:To:Cc:Subject:
+	 Date:Message-ID:X-Mailer:In-Reply-To:References:MIME-Version:
+	 Content-Transfer-Encoding;
+	bh=08dAqwjFraSeFcB1P1Hmj/Co5aFihYuNoiPOZEEnkkc=;
+	b=z6E1h78d3W0nW6RTNgCt/SfUPzgM2lPOsEP1IRNy2Vc9zwfNx3npC5/X5OV7OIWhz5x/
+	 fnXp2LgmdrYOxzXz49sXn/unSFIpb+FV+745kRbSRHFdIRiOli5w0qegh9eQmvkYO3udy
+	 VuO/+spa0EGn2rkcLe/OzafuGe5UvJnN0W7MxD79Odi7ahW3qlwNylkqODpMuExO1Ce5R
+	 HsBnFaZFOSUiL86I5LtdlbaZiU86OiUMkPx3oxrEgQ9jkJrpPH7V9QPAe/I7Z7YKno5mi
+	 NVZ/yf4rTqPE4Kj51pF5p6ueAMniIXUuw13fyBGE9Ky7d3I0Op5asy+0up2gtMqXZVQ==
 ARC-Authentication-Results: i=1; smtp.subspace.kernel.org; 
-	dkim=pass header.d=kernel.org header.i=@kernel.org header.a=rsa-sha256 header.s=k20260515 header.b=j9821BeG;
-	arc=none smtp.remote-ip=100.103.45.18
-Received: from smtp.kernel.org (quasi.space.kernel.org [100.103.45.18])
+	dmarc=pass header.from=email.cz;
+	spf=pass smtp.mailfrom=email.cz;
+	dkim=pass header.d=email.cz header.i=@email.cz header.a=rsa-sha256 header.s=szn1 header.b=zcou6bBc;
+	arc=none smtp.remote-ip=77.75.76.210
+Received: from mxd.seznam.cz (mxd.seznam.cz [77.75.76.210])
 	(using TLSv1.3 with cipher TLS_AES_256_GCM_SHA384 (256/256 bits)
-	 key-exchange X25519 server-signature ECDSA (prime256v1))
+	 key-exchange X25519 server-signature ECDSA (prime256v1) server-digest SHA256)
 	(No client certificate requested)
-	by smtp.subspace.kernel.org (Postfix) with ESMTPS id 3B1AE606A329;
-	Sat, 14 Nov 2026 07:33:59 +0000 (UTC)
+	by smtp.subspace.kernel.org (Postfix) with ESMTPS id 5BA98606A327
+	for <linux-wireless@vger.kernel.org>; Sat, 14 Nov 2026 09:08:54 +0000 (UTC)
+DMARC-Filter: OpenDMARC Filter v1.4.2 smtp.subspace.kernel.org 5BA98606A327
+Authentication-Results: smtp.subspace.kernel.org; dmarc=pass (p=none dis=none) header.from=email.cz
+Authentication-Results: smtp.subspace.kernel.org; spf=pass smtp.mailfrom=email.cz
 Authentication-Results: smtp.subspace.kernel.org;
-	dkim=pass (2048-bit key) header.d=kernel.org header.i=@kernel.org header.a=rsa-sha256 header.s=k20260515 header.b=j9821BeG
-Received: by smtp.kernel.org (Postfix) with ESMTPSA id 2E8081F000C4;
-	Sat, 14 Nov 2026 07:33:55 +0000 (UTC)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=kernel.org;
-	s=k20260515; t=1794641639;
-	bh=skQyLbajY/JdnR4E6uMtkLCcC4Gk80WNRunpYsHQRok=;
-	h=Date:Subject:To:Cc:References:From:In-Reply-To;
-	b=j9821BeGF9glXFemfEqa1hJoxeskWujtRLwXUa9jq8/QlGCxdgAEJu4fiMpcOSWhm
-	 ++428UKU67Bi52gw04UhPe4GIy8hF1T1T8rWhHbtfeZXNTJwbhaGsw/mBe4m3p8Ixh
-	 6n2PCB9imMGxNgIxHi4dJF1MgVYwkJTdSYjoQ5qqyNOwiKiHRRVBsVkaQ1wjmCy2j6
-	 hFCNy02jbNpRlMCpa74PGzjoDFKszzZqqNbvSfsGQSOBew5IXEMsgRCoxE8N0gKeMK
-	 jZbKVvliaROMODRBx7SMx8UEPsD4H3/fyMw10UP5PGS0fxs5CU47te6bMLP7n+ZCbD
-	 ly4gxWANPAOLg==
-Message-ID: <a84e2db6-17d5-455a-9b3a-eb3d787ce92c@kernel.org>
-Date: Sat, 14 Nov 2026 08:33:53 +0100
+	dkim=pass (2048-bit key, unprotected) header.d=email.cz header.i=@email.cz header.a=rsa-sha256 header.s=szn1 header.b=zcou6bBc
+Received: from email.seznam.cz
+	by smtpc-mxd-5f46658f7f-chpkt
+	(smtpc-mxd-5f46658f7f-chpkt [2a02:598:128:8a00::1000:a3b])
+	id 5da1f9f7a3554b5d5d2f77ef;
+	Sat, 14 Nov 2026 10:08:09 +0100 (CET)
+DKIM-Signature:v=1; a=rsa-sha256; c=relaxed/relaxed; d=email.cz; s=szn1;
+	t=1794647289; bh=08dAqwjFraSeFcB1P1Hmj/Co5aFihYuNoiPOZEEnkkc=;
+	h=From:To:Cc:Subject:Date:Message-ID:MIME-Version:
+	 Content-Transfer-Encoding;
+	b=zcou6bBczVHObU2qvRSvf+XiLYt9iMIBSytC5iWCeejqlPsa8LU+L/v6MCPiyzKBJ
+	 VKPP4iHvWatblFfv+Mgi2C4NlyXt+qx3oO5wgJa/H4alqHbsJBi1Cv2f53bRBsgHxh
+	 1huqCPks3pbvdm1EyxTfWQfZtNWg2LnuRJfBI33DVE343P8cFMKQ+VhfqZFr502t7B
+	 spIf/Ac9nnPzEFZHLINi3I+GptnjTvy7ukbo0j1rn3dFtvXIyOpeVx+XwAN9OAfpDE
+	 hAchqV8GjPoOAUAFD1CqsqvrnnyMcLiQ/1p8XLgvG/0ujaqX3izA7Mvn++eCJu1r2j
+	 gteyIkmBqUegQ==
+Received: from localhost.localdomain (184-143.ktuo.cz [82.144.143.184])
+	by smtpd-relay-5bf55fdf87-n6z6s (szn-email-smtpd/2.0.97) with ESMTPA
+	id d129b7ef-0abc-4681-95c1-101067508816;
+	Sat, 14 Nov 2026 10:08:03 +0100
+From: Tomas Paukrt <tomaspaukrt@email.cz>
+To: jjohnson@kernel.org
+Cc: linux-wireless@vger.kernel.org,
+	ath10k@lists.infradead.org,
+	Tomas Paukrt <tomaspaukrt@email.cz>
+Subject: [PATCH ath-next 6/6] wifi: ath10k: usb: remove the experimental status
+Date: Sat, 14 Nov 2026 10:07:37 +0100
+Message-ID: <20261114090737.64348-7-tomaspaukrt@email.cz>
+X-Mailer: git-send-email 2.43.0
+In-Reply-To: <20261114090737.64348-1-tomaspaukrt@email.cz>
+References: <20261114090737.64348-1-tomaspaukrt@email.cz>
 X-Mailing-List: linux-wireless@vger.kernel.org
 List-Id: <linux-wireless.vger.kernel.org>
 List-Post: <mailto:linux-wireless@vger.kernel.org>
@@ -51,91 +72,52 @@ List-Unsubscribe: <mailto:linux-wireless+unsubscribe@vger.kernel.org>
 List-Owner: <mailto:linux-wireless+owner@vger.kernel.org>
 Precedence: list
 MIME-Version: 1.0
-User-Agent: Mozilla Thunderbird
-Subject: Re: [PATCH] dt-bindings: net: wireless: qcom,ath10k: add PCI devices
-To: Rosen Penev <rosenp@gmail.com>
-Cc: Johannes Berg <johannes@sipsolutions.net>, Rob Herring <robh@kernel.org>,
- Krzysztof Kozlowski <krzk+dt@kernel.org>, Conor Dooley
- <conor+dt@kernel.org>, Jeff Johnson <jjohnson@kernel.org>,
- Loic Poulain <loic.poulain@oss.qualcomm.com>,
- linux-wireless@vger.kernel.org, devicetree@vger.kernel.org,
- ath10k@lists.infradead.org, linux-kernel@vger.kernel.org
-References: <20261111034418.194610-1-rosenp@gmail.com>
- <20261113-gabby-vigorous-dragon-6a2fed@quoll>
- <CAKxU2N846Ebd50z8adJsNcy-kJBSNDSKU8_ZLf68fJzoc+r+xA@mail.gmail.com>
-From: Krzysztof Kozlowski <krzk@kernel.org>
-Content-Language: en-US
-Autocrypt: addr=krzk@kernel.org; keydata=
- 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
-In-Reply-To: <CAKxU2N846Ebd50z8adJsNcy-kJBSNDSKU8_ZLf68fJzoc+r+xA@mail.gmail.com>
-Content-Type: text/plain; charset=UTF-8
 Content-Transfer-Encoding: 8bit
 
-On 13/11/2026 22:34, Rosen Penev wrote:
-> On Fri, Nov 13, 2026 at 3:11 AM Krzysztof Kozlowski <krzk@kernel.org> wrote:
->>
->> On Tue, Nov 10, 2026 at 07:44:18PM -0800, Rosen Penev wrote:
->>> ath10k PCI devices can be described as children of their PCI host
->>> bridge, for example to supply the MAC address and calibration data
->>> through nvmem cells. The only compatible for that was "qcom,ath10k",
->>> but the generic PCI device schema requires a node under a PCI bus to
->>> carry a "pciVVVV,DDDD" or "pciclass,..." compatible, so such nodes fail
->>> validation.
->>>
->>> Add the PCI vendor/device IDs handled by the ath10k PCI driver, as the
->>> ath9k and ath11k PCI bindings already do.
->>
->> We do not need to least all PCI devices here. Were is any actual DTS
->> user of these?
-> I have some WIP patches that include the QCA988X. Reason for it is
-> nvram calibration and MAC lookup.
-> 
-> This is basically copy/paste of what's already present in ath9k.yaml.
-> 
-> AFAIK this came up because of dtbs_check
+The USB support is functional now. A QCA9377 USB device can be probed,
+started, stopped, unloaded and connected to a protected network, so
+remove the warning that tells the user not to expect anything to work
+and the experimental status from the Kconfig entry.
 
-It cannot come as dtbs_check result, because there are no DTS with these.
+Tested-on: QCA9377 hw1.1 USB 0.0.0.111
+Signed-off-by: Tomas Paukrt <tomaspaukrt@email.cz>
+---
+ drivers/net/wireless/ath/ath10k/Kconfig | 5 ++---
+ drivers/net/wireless/ath/ath10k/usb.c   | 3 ---
+ 2 files changed, 2 insertions(+), 6 deletions(-)
 
-Best regards,
-Krzysztof
+diff --git a/drivers/net/wireless/ath/ath10k/Kconfig b/drivers/net/wireless/ath/ath10k/Kconfig
+index efb9f022d8c6..a727cd73ec09 100644
+--- a/drivers/net/wireless/ath/ath10k/Kconfig
++++ b/drivers/net/wireless/ath/ath10k/Kconfig
+@@ -34,11 +34,10 @@ config ATH10K_SDIO
+ 	  This module adds support for SDIO/MMC bus.
+ 
+ config ATH10K_USB
+-	tristate "Atheros ath10k USB support (EXPERIMENTAL)"
++	tristate "Atheros ath10k USB support"
+ 	depends on ATH10K && USB
+ 	help
+-	  This module adds experimental support for USB bus. Currently
+-	  work in progress and will not fully work.
++	  This module adds support for USB bus.
+ 
+ config ATH10K_SNOC
+ 	tristate "Qualcomm ath10k SNOC support"
+diff --git a/drivers/net/wireless/ath/ath10k/usb.c b/drivers/net/wireless/ath/ath10k/usb.c
+index 9804ea0ffacb..e23d87c84069 100644
+--- a/drivers/net/wireless/ath/ath10k/usb.c
++++ b/drivers/net/wireless/ath/ath10k/usb.c
+@@ -1081,9 +1081,6 @@ static int ath10k_usb_probe(struct usb_interface *interface,
+ 		goto err_usb_destroy;
+ 	}
+ 
+-	/* TODO: remove this once USB support is fully implemented */
+-	ath10k_warn(ar, "Warning: ath10k USB support is incomplete, don't expect anything to work!\n");
+-
+ 	return 0;
+ 
+ err_usb_destroy:
+-- 
+2.43.0
+
