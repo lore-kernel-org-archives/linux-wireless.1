@@ -1,105 +1,74 @@
-Authentication-Results: smtp.subspace.kernel.org; arc=none smtp.remote-ip=209.85.208.54
+Authentication-Results: smtp.subspace.kernel.org; arc=none smtp.remote-ip=198.175.65.20
 ARC-Seal: i=1; d=subspace.kernel.org; s=arc20261015; a=rsa-sha256; cv=none;
-	t=1794676861;
-	b=SaGAJyR+UBWnsAFLVvAg4sl1pgHEH7ozJHj40qUf20nQbBALq/LUcgOW/ygCoKV8c0sT
-	 Tl8obSdfkrMD/gFKr8wB3NdBoOgnS9JtqGJV0r+bQshortCBKz/3eKlyNsWmHoPtzMcfr
-	 cBcwMEaID/ZGzGvalsa7uCE4FG6uzxYLm0Tb8lYlVtOC6sKl7Izg7z/Wc9qRWzaGMRnxt
-	 eD6zaZgyvOd1C87rPSCjQIrpS6pHWrw7T4WzRwOqfXDGIFnOP/J3cPAvQ40XhyghaRVjx
-	 56/vzCSWFh6+w6KmDvj+ZxlwVIglQGAwn/sAxaSfh7v2JHZ0QjHjqDLq/ef+A6zDCfg==
+	t=1794677407;
+	b=WPa91gxDe9476ecIDmtaHLJ3rsSDe2S3I691aXhR1Nk/qixhK/2eqm6DuzeO6f+mPUxG
+	 AXr6Z4/NdbnGhx3aJCU51rMPq4hd/JVLiUax2+uPuASUOC6iYk2pTEQX/+OVUFuTgAZKR
+	 7CDveq6T7Scpt+hM8TSw2T6SIkA6oDjhJqeqKzk5Ni3S7zUG9XgNJdZNzgxa4HzN60Fdq
+	 DLzk5M30WXp05ReC4wQbS6YNto7fX+DxdxuQO8TBTuX/ZFMhr1Em6cO7hAt+CWRgXrfFH
+	 smDkhj+hQabIojC+rdiLIeI07EVxrsPb+3RLUSrNnVLyDAL50X6Q4MwljJCcWDtPDVA==
 ARC-Message-Signature: i=1; d=subspace.kernel.org; s=arc20261015;
-	a=rsa-sha256; c=relaxed/relaxed; t=1794676861;
-	h=DMARC-Filter:Received:DKIM-Signature:X-Google-DKIM-Signature:
-	 X-Forwarded-Encrypted:X-Gm-Message-State:X-Gm-Gg:X-Received:Received:
-	 From:To:Cc:Subject:Date:Message-ID:X-Mailer:In-Reply-To:References:
-	 MIME-Version:Content-Transfer-Encoding;
-	bh=OE0WjxLLrE3A9lY9DuO2yvYGktTA/H5dP7T78Fl8WrQ=;
-	b=vfOEoC4YI3OZqi7P4jG+yRwIHdTgBcat+apUNFBYnAqBg0pKE/xYOFkjQZZ6jywXy6Jh
-	 HNEDt6IczB0m9LFACMo8tyPsT3z8jTwrYYp6/9PCwfwFbDIctB0Yuc/yODksyE6FCY2rz
-	 82Y70IoeVtMrwWTxA7BL9p4houxlfJrehh8R4ZqoeTFwBPmKbva76wxtO6Wt4Coh8lB5y
-	 dVTo/xHmbQc4uQJAaB6zDDHfNgnKFeA8UJGGLRT35Ta1/OAIfn0fEVM3OiuavOM4cOoxX
-	 65olkzRLo6lzTmdQ1gs5m8KOIRwOQIYgZpRZip3vPu3wASK42SRDHYjVdA2wgb+Rk/g==
+	a=rsa-sha256; c=relaxed/relaxed; t=1794677407;
+	h=DMARC-Filter:DKIM-Signature:X-CSE-ConnectionGUID:X-CSE-MsgGUID:
+	 X-IronPort-AV:X-IronPort-AV:Received:X-CSE-ConnectionGUID:
+	 X-CSE-MsgGUID:X-ExtLoop1:X-IronPort-AV:Received:From:To:Cc:Subject:
+	 Date:Message-Id:X-Mailer:MIME-Version:Organization:
+	 Content-Transfer-Encoding;
+	bh=dZS3XYkEujLQKpcsktUIlUdVfV86EqLgWk+nVdlRmRg=;
+	b=Qiy9UcemqzAffX1hEaJnV6IvlXmBvAbRm7tb30sQZt+Rkm5hhTBDDjMq/h5xT/WpiN4O
+	 TD+ME9bDy7Y/3k5K1n1t5RFXkR5SNPyVYCZHB/IF9jxsKnOOKk4k4FUixoL6qqklII6wT
+	 W2XTEOlp2DHlDqUje/ayIzYr+JUBpdBqS8WHGj8CQg5FkJh2RN6VmhTesRTUhKlcuxbxX
+	 iakM6PJw2sIB8of2hcNt2wQIpJaaCIQzSqE9yxUZtMSS0HbS754paoFCJ4CeOrq8YiGXH
+	 YPNUeS4USop7ms5IJ0Vz7tw+oiytbao9FfpPgC6NIhGG7qdjdrbwF/gdb2Wckz8MNMA==
 ARC-Authentication-Results: i=1; smtp.subspace.kernel.org; 
-	dmarc=pass header.from=bairaktaris.de;
-	spf=pass smtp.mailfrom=bairaktaris.de;
-	dkim=pass header.d=bairaktaris.de header.i=@bairaktaris.de header.a=rsa-sha256 header.s=google header.b=L9Y7t1b2;
-	arc=none smtp.remote-ip=209.85.208.54
-Received: from mail-ed1-f54.google.com (mail-ed1-f54.google.com [209.85.208.54])
-	(using TLSv1.3 with cipher TLS_AES_128_GCM_SHA256 (128/128 bits)
-	 key-exchange X25519 server-signature ECDSA (prime256v1) server-digest SHA256)
+	dmarc=pass header.from=intel.com;
+	spf=pass smtp.mailfrom=intel.com;
+	dkim=pass header.d=intel.com header.i=@intel.com header.a=rsa-sha256 header.s=Intel header.b=jtT4eBp8;
+	arc=none smtp.remote-ip=198.175.65.20
+Received: from mgamail.intel.com (mgamail.intel.com [198.175.65.20])
+	(using TLSv1.2 with cipher ECDHE-ECDSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.subspace.kernel.org (Postfix) with ESMTPS id 1426F606A327
-	for <linux-wireless@vger.kernel.org>; Sat, 14 Nov 2026 17:21:00 +0000 (UTC)
-DMARC-Filter: OpenDMARC Filter v1.4.2 smtp.subspace.kernel.org 1426F606A327
-Authentication-Results: smtp.subspace.kernel.org; dmarc=pass (p=reject dis=none) header.from=bairaktaris.de
-Authentication-Results: smtp.subspace.kernel.org; spf=pass smtp.mailfrom=bairaktaris.de
+	by smtp.subspace.kernel.org (Postfix) with ESMTPS id EA626606A885
+	for <linux-wireless@vger.kernel.org>; Sat, 14 Nov 2026 17:30:05 +0000 (UTC)
+DMARC-Filter: OpenDMARC Filter v1.4.2 smtp.subspace.kernel.org EA626606A885
+Authentication-Results: smtp.subspace.kernel.org; dmarc=pass (p=none dis=none) header.from=intel.com
+Authentication-Results: smtp.subspace.kernel.org; spf=pass smtp.mailfrom=intel.com
 Authentication-Results: smtp.subspace.kernel.org;
-	dkim=pass (2048-bit key, unprotected) header.d=bairaktaris.de header.i=@bairaktaris.de header.a=rsa-sha256 header.s=google header.b=L9Y7t1b2
-Received: by mail-ed1-f54.google.com with SMTP id 4fb4d7f45d1cf-6b75712fb57so2803912a12.2
-        for <linux-wireless@vger.kernel.org>; Sat, 14 Nov 2026 09:21:00 -0800 (PST)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=bairaktaris.de; s=google; t=1794676859; x=1795281659; darn=vger.kernel.org;
-        h=content-transfer-encoding:mime-version:references:in-reply-to
-         :message-id:date:subject:cc:to:from:from:to:cc:subject:date
-         :message-id:reply-to:content-type;
-        bh=OE0WjxLLrE3A9lY9DuO2yvYGktTA/H5dP7T78Fl8WrQ=;
-        b=L9Y7t1b26tvL/YAVend1GF3/zvElMG3l8cU7K95rtjReKXX8XhEjtZn9omgTomTz0E
-         yq0/43JC18sP43LqxQ/xT4GbuGuKhNDlXeWgRAFFxuZva4+XzYKhyb949ZDKsmwsUc2H
-         60lW7s3apY+R5aT1BhUIHvwlZXrGeoVpGjstCmVsNVKg9BPpFgjs0cLHemRRqwejXLdR
-         q1zNeVpxwBX6NovdXkTfrGl/os0AuIgrpLXSnf5ipKgkmLNUOKOfR/wWAkMlBFrRRFui
-         uAh8HdWV89urxxb9ZKZ1b7vGPBn0wQVIT3GQjrqQoPigPvqW4O2X7ZzoCoolNT05iRVZ
-         aO6A==
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=1e100.net; s=20260707; t=1794676859; x=1795281659;
-        h=content-transfer-encoding:mime-version:references:in-reply-to
-         :message-id:date:subject:cc:to:from:x-gm-gg:x-gm-message-state:from
-         :to:cc:subject:date:message-id:reply-to:content-type;
-        bh=OE0WjxLLrE3A9lY9DuO2yvYGktTA/H5dP7T78Fl8WrQ=;
-        b=kqsB14c6EeRaUGeTqtycJm8fz2C+HoBL3OG3tNbITFJfaMYG9wo8+Ul4Nmmqy0vlgv
-         /Sk9hPHdp3g+3MzG5w5xLR2gFMqLa0Ppp/RiQjrXQoj3zJOvxyW71KAVP4izTG1JpRQU
-         RZC2zWxsD/ZuQyW/tyCncpKtgyoI62gPYfFG45V61bgvBpJARwamiOT/MT4eAn9GEO+w
-         cl2qKDpoKIWJBPomTKVy6dOgk7a0XHV0flrPc/36Bs2UWNSnGLc548zWWFs9Xvgjl7b7
-         jTUoKQSSSDufVcc5NzPjJMlMj4FGTnvaSNgJQgO7ODslGmDcpl4j0+hul0+JjtFdldy2
-         nrtw==
-X-Forwarded-Encrypted: i=1; AL+hErEharTcD325n22mcvRHZ7E3ulc+oBxzj4BfA3SgjOFONxZidII4yo4OBK2JV+kG3Oyc1AXi2Uxqz7fDGrkXkQ==@vger.kernel.org
-X-Gm-Message-State: APuU4Z/lfQGIy9zBr1ETX3Jb9uADCKJzMteenCdax8Yso7hKSE58xl9j
-	tcrgo/OnZJ92ppO071mk58aDsfOwmHt4Vr5Hn0/II3RxmnVDjj+FzTCghiS+KB5Jgw==
-X-Gm-Gg: AYBFou2wiMBpBamDX7GT0ZWYrA+qeh0Hy+EtvSi1ni7ZbHgQ6se6TXSzmtAf4u0YNXm
-	ubSWxlqtp1YRP4vlOB9JfILJIDzG+95J0y5StNDKE6KgGae0OlkbM0GQibvtFmxvc+RGf8dqlNO
-	5iIeegNgr5HU/gl6bb1XUt8FoHWX7pDNOUU+zW/QEBrJ6G1vbz3lPunb3gfRBpRJnYHL2xUrZsl
-	X181DG5yM3Vk8t0F4JqU0aHFm3VcnPy/recGK2LRpSzb8KeDDHxbONNHS9DijT3CrOKEz5sWg9L
-	VVRajOdcrvGDL4+TItcrxepwyYU0eSrfaq5zxjcAUiv+asqlwAh8ujrsUUX7pMDT0E3ig0cUDf4
-	ZxdcEvHs/SMc/8DK4QZ51KTVidfOkTe2CAdflRwwCCt5F3URa42PFWMWakqMa0j2ObFlqQKeukB
-	VOIFZ25Buzy2FiNcUPyxfofVbmQBgGGVjftpYwX7cIog4mi5Ot3/Pxtip8LZpjvQhgjmbWStC3L
-	IpwonPssODv6NXz4aFIChj/Rqwx/Bj75huKZB/0Xh+ycU/nGliBMReX/ZuHZ08egvgXQwEy4zr6
-	V73/JqinC3E7P02S8PjX+CK9UcjnTmWGpAMn94TexyZHPrL3uuaSLbiQwwKzDZKV3MmFtRf7F/H
-	2JztWdGLEfS2uY7nHEtEm1zqJdk46PVndJqCgPuPsQTenGEwKEgFC3U46oI7k88PlrFUBRNixXZ
-	Whb07QgDID9Rmne0lOMfWBrigV68ntnSkEnvyGXIQC+rSHgvk9+84+0jaguW/0YFEw/t4rPpdyr
-	3NK1x61BophRrGRibVXYoUU3jO7e/aFD+xzone9Sq6ny86L16SReCHNNmwkxzYHJp4mIdWbeDxm
-	Eovs
-X-Received: by 2002:a05:6402:320a:b0:6b5:6546:f7f2 with SMTP id 4fb4d7f45d1cf-6b7c0d144demr4458124a12.37.1794676859188;
-        Sat, 14 Nov 2026 09:20:59 -0800 (PST)
-Received: from Desktop.fritz.box ([185.181.130.189])
-        by smtp.gmail.com with ESMTPSA id 4fb4d7f45d1cf-6b7c21b1a08sm2462848a12.5.2026.11.14.09.20.57
-        (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
-        Sat, 14 Nov 2026 09:20:58 -0800 (PST)
-From: Julius Bairaktaris <julius@bairaktaris.de>
-To: jeff.johnson@oss.qualcomm.com
-Cc: jjohnson@kernel.org,
-	baochen.qiang@oss.qualcomm.com,
-	vasanthakumar.thiagarajan@oss.qualcomm.com,
-	manikanta.pubbisetty@oss.qualcomm.com,
-	kvalo@kernel.org,
-	sriram.ramachandran@oss.qualcomm.com,
-	linux-wireless@vger.kernel.org,
-	ath11k@lists.infradead.org,
-	ath12k@lists.infradead.org,
-	linux-kernel@vger.kernel.org
-Subject: Re: [PATCH ath-next 0/2] wifi: ath11k/ath12k: drop TKIP frames too short for the Michael MIC
-Date: Sat, 14 Nov 2026 18:20:56 +0100
-Message-ID: <20261114172056.678298-1-julius@bairaktaris.de>
-X-Mailer: git-send-email 2.53.0
-In-Reply-To: <002f7e3f-e4e5-4c7b-b683-c2add5b6377c@oss.qualcomm.com>
-References: <20261111080620.244164-1-julius@bairaktaris.de> <002f7e3f-e4e5-4c7b-b683-c2add5b6377c@oss.qualcomm.com>
+	dkim=pass (2048-bit key) header.d=intel.com header.i=@intel.com header.a=rsa-sha256 header.s=Intel header.b=jtT4eBp8
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple;
+  d=intel.com; i=@intel.com; q=dns/txt; s=Intel;
+  t=1794677406; x=1826213406;
+  h=from:to:cc:subject:date:message-id:mime-version:
+   content-transfer-encoding;
+  bh=HMM+RFBciKYhRYoU6Od8ydF1zWt80VhbMKHQBcX4Nlw=;
+  b=jtT4eBp89lFfrK8+Ef7pk7st7wnUbkfiuojg2kh1tCJyCs7yMZTr43x2
+   P1PZQOlR0GFAcZSUmxJ/OKXANP7r5cTjXVzm5d84wYHzgqHggD4spkDB0
+   Kv87NBySaRnaetTmswempE5f2OkrXYNmXJgD80z07ItOpwYqlER5+PUco
+   mfO7IasrU7TpDUa8x6UDn8G7D1RtyLLBARiCnBd0fhX759/3orwgejz3p
+   hBmE3eVIPyOvumFMDs1YvtUOAbxBd/TEO6/P0uPNpfBeL5oicBocJvNA5
+   l4iGe1nPeWJBYYkmAAtuyFMH0o7sYShDwjfRMcx2EMw3o+3t9OcHci8kA
+   Q==;
+X-CSE-ConnectionGUID: jyVgQ0EQRoSux/WVSvw0ag==
+X-CSE-MsgGUID: QqbkTmSGREuPizu0YHTfVg==
+X-IronPort-AV: E=McAfee;i="6800,10657,11966"; a="3498801"
+X-IronPort-AV: E=Sophos;i="6.27,213,1787036400"; 
+   d="scan'208";a="3498801"
+Received: from fmviesa012.fm.intel.com ([10.60.135.152])
+  by orvoesa112.jf.intel.com with ESMTP/TLS/ECDHE-RSA-AES256-GCM-SHA384; 14 Nov 2026 09:30:05 -0800
+X-CSE-ConnectionGUID: IQcgtvcSRo2YPxvuRlmROA==
+X-CSE-MsgGUID: 6ijmFmaARrOmrYW8ygHrgA==
+X-ExtLoop1: 1
+X-IronPort-AV: E=Sophos;i="6.27,213,1787036400"; 
+   d="scan'208";a="10897009"
+Received: from weis0040.iil.intel.com ([10.12.217.108])
+  by smtpauth.intel.com with ESMTP/TLS/ECDHE-RSA-AES256-GCM-SHA384; 14 Nov 2026 09:30:04 -0800
+From: Miri Korenblit <miriam.rachel.korenblit@intel.com>
+To: miriam.rachel.korenblit@intel.com
+Cc: linux-wireless@vger.kernel.org,
+	Chris Bainbridge <chris.bainbridge@gmail.com>
+Subject: [PATCH iwlwifi-fixes] wifi: iwlwifi: mvm: correctly check the API version
+Date: Sat, 14 Nov 2026 19:31:58 +0200
+Message-Id: <20261114193144.ab54bc9717fc.I8cda260e2ef7aedd790915a17cb6832010f82aa4@changeid>
+X-Mailer: git-send-email 2.34.1
 X-Mailing-List: linux-wireless@vger.kernel.org
 List-Id: <linux-wireless.vger.kernel.org>
 List-Post: <mailto:linux-wireless@vger.kernel.org>
@@ -109,19 +78,50 @@ List-Unsubscribe: <mailto:linux-wireless+unsubscribe@vger.kernel.org>
 List-Owner: <mailto:linux-wireless+owner@vger.kernel.org>
 Precedence: list
 MIME-Version: 1.0
+Organization: Intel Israel (74) Limited
 Content-Transfer-Encoding: 8bit
 
-On Thu, 12 Nov 2026 10:40:50 -0800, Jeff Johnson wrote:
-> Is this a theoretical change or are you able to have firmware pass too short
-> frames to the host?
+The check for the firmware version for the reset handshake
+was wrong. mvm->fw->ucode_ver is the major number itself.
+No need to mask it with IWL_UCODE_MAJOR.
 
-Not shown on hardware yet. The overflow is in the host code and a
-harness that runs the driver's MIC path under ASan hits it, but whether
-the firmware hands such a fragment pair to the host is the open part.
+We could look at the major number from IWL_UCODE_TLV_FW_VERSION
+but we don't remember that number and looking at fw->ucode_ver
+is good enough.
 
-I'll measure it on an IPQ8074 with ath11k. That needs a USB adapter
-that can inject raw TKIP fragments, which I'm buying now. I'll reply
-with the capture and dmesg either way; if the firmware drops the frame
-before the host sees it, I'll withdraw the series.
+Fixes: 0eaa1f245ac0 ("wifi: iwlwifi: mvm: don't support the reset handshake for old firmwares")
+Reported-and-tested-by: Chris Bainbridge <chris.bainbridge@gmail.com>
+Link: https://lore.kernel.org/linux-wireless/amzVtgQb2p-_nShU@debian.local/
+Signed-off-by: Miri Korenblit <miriam.rachel.korenblit@intel.com>
+---
+ drivers/net/wireless/intel/iwlwifi/mvm/ops.c | 12 +++++-------
+ 1 file changed, 5 insertions(+), 7 deletions(-)
 
-Julius
+diff --git a/drivers/net/wireless/intel/iwlwifi/mvm/ops.c b/drivers/net/wireless/intel/iwlwifi/mvm/ops.c
+index 183251457361..3d35c922706f 100644
+--- a/drivers/net/wireless/intel/iwlwifi/mvm/ops.c
++++ b/drivers/net/wireless/intel/iwlwifi/mvm/ops.c
+@@ -1412,15 +1412,13 @@ iwl_op_mode_mvm_start(struct iwl_trans *trans, const struct iwl_rf_cfg *cfg,
+ 		 sizeof(mvm->hw->wiphy->fw_version),
+ 		 "%.31s", fw->fw_version);
+ 
+-	trans->conf.fw_reset_handshake =
+-		fw_has_capa(&mvm->fw->ucode_capa,
+-			    IWL_UCODE_TLV_CAPA_FW_RESET_HANDSHAKE);
+-
+-	/* Those firmware versions claim to support the fw_reset_handshake
++	/* Some firmware versions claim to support the fw_reset_handshake
+ 	 * but they are buggy.
+ 	 */
+-	if (IWL_UCODE_MAJOR(mvm->fw->ucode_ver) <= 77)
+-		trans->conf.fw_reset_handshake = false;
++	trans->conf.fw_reset_handshake =
++		fw_has_capa(&mvm->fw->ucode_capa,
++			    IWL_UCODE_TLV_CAPA_FW_RESET_HANDSHAKE) &&
++		mvm->fw->ucode_ver > 77;
+ 
+ 	trans->conf.queue_alloc_cmd_ver =
+ 		iwl_fw_lookup_cmd_ver(mvm->fw,
+-- 
+2.34.1
+
