@@ -1,68 +1,65 @@
-Authentication-Results: smtp.subspace.kernel.org; arc=none smtp.remote-ip=77.75.76.210
+Authentication-Results: smtp.subspace.kernel.org; arc=none smtp.remote-ip=77.75.78.210
 ARC-Seal: i=1; d=subspace.kernel.org; s=arc20261015; a=rsa-sha256; cv=none;
-	t=1794647337;
-	b=pc43FtAEo8dGUY5/xRMEPpHWhaDiAHxDhVRECQxKt+GhAeS+l1Qxg3ltC0AGQM/qnrE0
-	 Ecv8AUubPq6WO/6Fy9BxyKwMeU+xjg97lVr4L2BsEImRtvX5cAFBV0p1YuT3EXYL97lZy
-	 0uL512EeYIWNANWTCVD6a70QwiWHrgxHjV4nkSuC5t+khmEJLFL6gnwo7RZsMDA+u2ZGL
-	 cjfT0hdr+eDYUuly70aFX9QQuKBMXRUQtTz1k5c2j35iIQh02xQ19hoC9YRLP/Y/tkfkt
-	 9Fkv3CRcsKYaIPV2OmTI/VXAXzqtK9UjPsBsiNIwckdb5Tmr/yWpI4oIc0hfO4C29fw==
+	t=1794647362;
+	b=vGOd1rXIVzhLtzwvMRqJ1mZfFJ3vP5dNWoFctswOqQ7as7c5OPpBHf3fWVBN3uEH5QW8
+	 5QC/4bpRj5crL7M+MCCibFpSYyR4LlUhqSZq5NQ3gNjecEgftrLxWab9j00ojgmGXIkgn
+	 cox3quSR3GbErUdbSbrXcpOjoGoyfNxbVhG8lrGQDdVoLlCtMQDxnb8R1uhhLjQq9b4gh
+	 ncOYW/Xa2DofpRJJ3CjcNL9weLL6KpNdpET7zic6aVRVFn0iOFFtiaLcdIFAWMYyv9ZEu
+	 GbPXxsfsbp1inYLye3KvfkaahhpuQanPekGccWvwAbQHFhxXv7VrmkpNz5rx/QzGIbQ==
 ARC-Message-Signature: i=1; d=subspace.kernel.org; s=arc20261015;
-	a=rsa-sha256; c=relaxed/relaxed; t=1794647337;
+	a=rsa-sha256; c=relaxed/relaxed; t=1794647362;
 	h=DMARC-Filter:Received:DKIM-Signature:Received:From:To:Cc:Subject:
-	 Date:Message-ID:X-Mailer:In-Reply-To:References:MIME-Version:
-	 Content-Transfer-Encoding;
-	bh=08dAqwjFraSeFcB1P1Hmj/Co5aFihYuNoiPOZEEnkkc=;
-	b=z6E1h78d3W0nW6RTNgCt/SfUPzgM2lPOsEP1IRNy2Vc9zwfNx3npC5/X5OV7OIWhz5x/
-	 fnXp2LgmdrYOxzXz49sXn/unSFIpb+FV+745kRbSRHFdIRiOli5w0qegh9eQmvkYO3udy
-	 VuO/+spa0EGn2rkcLe/OzafuGe5UvJnN0W7MxD79Odi7ahW3qlwNylkqODpMuExO1Ce5R
-	 HsBnFaZFOSUiL86I5LtdlbaZiU86OiUMkPx3oxrEgQ9jkJrpPH7V9QPAe/I7Z7YKno5mi
-	 NVZ/yf4rTqPE4Kj51pF5p6ueAMniIXUuw13fyBGE9Ky7d3I0Op5asy+0up2gtMqXZVQ==
+	 Date:Message-ID:X-Mailer:MIME-Version:Content-Transfer-Encoding;
+	bh=Fc1AMHFjZdJOsY6HvXjnpsl4FGY8JOTpErhRwf0EaXY=;
+	b=W9yaIrQTZIOB8Zm2Btdz1YKMn8yf8PlOio9TkHZdYT5FGHUftD3KflJKy82ctLKvVIiU
+	 j+R7JfQoW/y7LitJ/Jwxi2a0tDI/ttlhT70Exg7irTaZCe39hB8LUAly0Fscwo38ruoWM
+	 XRoEJ8PK1Z6QLxwbXC6CcoP7FEKU+HgXgpdaiTiOvqUJHSG6znYP6iKn/OYlipZyLC01C
+	 sRcOgWvQBIu9MrsRDD64lXHR0BvP7M9qY6QrtOzJDezqOVMNVvHvxOwDMonUNAAjzsfOW
+	 nZDpruWGQvQBZdPkVVCYHxZhBEAB4eXv4/EMGZnZDSkbZ5142cRih2VculeeCFXad7g==
 ARC-Authentication-Results: i=1; smtp.subspace.kernel.org; 
 	dmarc=pass header.from=email.cz;
 	spf=pass smtp.mailfrom=email.cz;
-	dkim=pass header.d=email.cz header.i=@email.cz header.a=rsa-sha256 header.s=szn1 header.b=zcou6bBc;
-	arc=none smtp.remote-ip=77.75.76.210
-Received: from mxd.seznam.cz (mxd.seznam.cz [77.75.76.210])
+	dkim=pass header.d=email.cz header.i=@email.cz header.a=rsa-sha256 header.s=szn1 header.b=S+k7IcPu;
+	arc=none smtp.remote-ip=77.75.78.210
+Received: from mxd.seznam.cz (mxd.seznam.cz [77.75.78.210])
 	(using TLSv1.3 with cipher TLS_AES_256_GCM_SHA384 (256/256 bits)
 	 key-exchange X25519 server-signature ECDSA (prime256v1) server-digest SHA256)
 	(No client certificate requested)
-	by smtp.subspace.kernel.org (Postfix) with ESMTPS id 5BA98606A327
-	for <linux-wireless@vger.kernel.org>; Sat, 14 Nov 2026 09:08:54 +0000 (UTC)
-DMARC-Filter: OpenDMARC Filter v1.4.2 smtp.subspace.kernel.org 5BA98606A327
+	by smtp.subspace.kernel.org (Postfix) with ESMTPS id 17FC0606A323
+	for <linux-wireless@vger.kernel.org>; Sat, 14 Nov 2026 09:09:21 +0000 (UTC)
+DMARC-Filter: OpenDMARC Filter v1.4.2 smtp.subspace.kernel.org 17FC0606A323
 Authentication-Results: smtp.subspace.kernel.org; dmarc=pass (p=none dis=none) header.from=email.cz
 Authentication-Results: smtp.subspace.kernel.org; spf=pass smtp.mailfrom=email.cz
 Authentication-Results: smtp.subspace.kernel.org;
-	dkim=pass (2048-bit key, unprotected) header.d=email.cz header.i=@email.cz header.a=rsa-sha256 header.s=szn1 header.b=zcou6bBc
+	dkim=pass (2048-bit key, unprotected) header.d=email.cz header.i=@email.cz header.a=rsa-sha256 header.s=szn1 header.b=S+k7IcPu
 Received: from email.seznam.cz
-	by smtpc-mxd-5f46658f7f-chpkt
-	(smtpc-mxd-5f46658f7f-chpkt [2a02:598:128:8a00::1000:a3b])
-	id 5da1f9f7a3554b5d5d2f77ef;
-	Sat, 14 Nov 2026 10:08:09 +0100 (CET)
+	by smtpc-mxd-5f46658f7f-dlhcx
+	(smtpc-mxd-5f46658f7f-dlhcx [2a02:598:64:8a00::1000:a36])
+	id 739ceef58d685c5f731260ed;
+	Sat, 14 Nov 2026 10:08:10 +0100 (CET)
 DKIM-Signature:v=1; a=rsa-sha256; c=relaxed/relaxed; d=email.cz; s=szn1;
-	t=1794647289; bh=08dAqwjFraSeFcB1P1Hmj/Co5aFihYuNoiPOZEEnkkc=;
+	t=1794647290; bh=Fc1AMHFjZdJOsY6HvXjnpsl4FGY8JOTpErhRwf0EaXY=;
 	h=From:To:Cc:Subject:Date:Message-ID:MIME-Version:
 	 Content-Transfer-Encoding;
-	b=zcou6bBczVHObU2qvRSvf+XiLYt9iMIBSytC5iWCeejqlPsa8LU+L/v6MCPiyzKBJ
-	 VKPP4iHvWatblFfv+Mgi2C4NlyXt+qx3oO5wgJa/H4alqHbsJBi1Cv2f53bRBsgHxh
-	 1huqCPks3pbvdm1EyxTfWQfZtNWg2LnuRJfBI33DVE343P8cFMKQ+VhfqZFr502t7B
-	 spIf/Ac9nnPzEFZHLINi3I+GptnjTvy7ukbo0j1rn3dFtvXIyOpeVx+XwAN9OAfpDE
-	 hAchqV8GjPoOAUAFD1CqsqvrnnyMcLiQ/1p8XLgvG/0ujaqX3izA7Mvn++eCJu1r2j
-	 gteyIkmBqUegQ==
+	b=S+k7IcPuNUB9+a39pQvvkqsBSy85gB1SvnUcLSHqOJz2FUUjvhRqY7ipSvAYpigID
+	 9bzGkrGnaqEfhqsooWXoLW3BTOGv4dRwX87PLFS2DSapXp+kxkoOMiO/wmSfLBGrcy
+	 ixSjVnL02xnvyZ226MrRReOxtFafn/DQQZDlYMJ+K4sH4WSrkLYQTEYC4BvAyiXikR
+	 NeHnbJlbtl9ql1b7JMKjjZang90bLUUuV8qzkS2MflHdd9Sby6Mox4keA/08R+uOLR
+	 u1Y+8x74tybR8s4+OHQoS7kSzeVWSPbXE+h1FCWxqPR0V2P/0t7zubB+aEZZOu7qIr
+	 yETwjSTgnOCag==
 Received: from localhost.localdomain (184-143.ktuo.cz [82.144.143.184])
 	by smtpd-relay-5bf55fdf87-n6z6s (szn-email-smtpd/2.0.97) with ESMTPA
-	id d129b7ef-0abc-4681-95c1-101067508816;
-	Sat, 14 Nov 2026 10:08:03 +0100
+	id a5e4434c-3865-4159-b907-7de5041a54e6;
+	Sat, 14 Nov 2026 10:08:02 +0100
 From: Tomas Paukrt <tomaspaukrt@email.cz>
 To: jjohnson@kernel.org
 Cc: linux-wireless@vger.kernel.org,
 	ath10k@lists.infradead.org,
 	Tomas Paukrt <tomaspaukrt@email.cz>
-Subject: [PATCH ath-next 6/6] wifi: ath10k: usb: remove the experimental status
-Date: Sat, 14 Nov 2026 10:07:37 +0100
-Message-ID: <20261114090737.64348-7-tomaspaukrt@email.cz>
+Subject: [PATCH ath-next 0/6] wifi: ath10k: make USB support work for QCA9377
+Date: Sat, 14 Nov 2026 10:07:31 +0100
+Message-ID: <20261114090737.64348-1-tomaspaukrt@email.cz>
 X-Mailer: git-send-email 2.43.0
-In-Reply-To: <20261114090737.64348-1-tomaspaukrt@email.cz>
-References: <20261114090737.64348-1-tomaspaukrt@email.cz>
 X-Mailing-List: linux-wireless@vger.kernel.org
 List-Id: <linux-wireless.vger.kernel.org>
 List-Post: <mailto:linux-wireless@vger.kernel.org>
@@ -74,50 +71,49 @@ Precedence: list
 MIME-Version: 1.0
 Content-Transfer-Encoding: 8bit
 
-The USB support is functional now. A QCA9377 USB device can be probed,
-started, stopped, unloaded and connected to a protected network, so
-remove the warning that tells the user not to expect anything to work
-and the experimental status from the Kconfig entry.
+The ath10k USB support has been marked as experimental and incomplete
+since it was added. This series makes it work for modules based on the
+Atheros QCA9377-7 chipset like 8devices Blue Bean or SparkLAN
+WUBQ-159ACN.
 
-Tested-on: QCA9377 hw1.1 USB 0.0.0.111
-Signed-off-by: Tomas Paukrt <tomaspaukrt@email.cz>
----
- drivers/net/wireless/ath/ath10k/Kconfig | 5 ++---
- drivers/net/wireless/ath/ath10k/usb.c   | 3 ---
- 2 files changed, 2 insertions(+), 6 deletions(-)
+The main obstacle is that the firmware of a QCA9377 USB target can be
+started only once. It does not accept BMI commands while running, and
+the only way back to the boot loader is a cold reset, which makes the
+target leave the bus and enumerate again as a new device. Patch 3 keeps
+the firmware started during the registration running until the device
+is unregistered and resets the target instead of restarting the
+firmware in place.
 
-diff --git a/drivers/net/wireless/ath/ath10k/Kconfig b/drivers/net/wireless/ath/ath10k/Kconfig
-index efb9f022d8c6..a727cd73ec09 100644
---- a/drivers/net/wireless/ath/ath10k/Kconfig
-+++ b/drivers/net/wireless/ath/ath10k/Kconfig
-@@ -34,11 +34,10 @@ config ATH10K_SDIO
- 	  This module adds support for SDIO/MMC bus.
- 
- config ATH10K_USB
--	tristate "Atheros ath10k USB support (EXPERIMENTAL)"
-+	tristate "Atheros ath10k USB support"
- 	depends on ATH10K && USB
- 	help
--	  This module adds experimental support for USB bus. Currently
--	  work in progress and will not fully work.
-+	  This module adds support for USB bus.
- 
- config ATH10K_SNOC
- 	tristate "Qualcomm ath10k SNOC support"
-diff --git a/drivers/net/wireless/ath/ath10k/usb.c b/drivers/net/wireless/ath/ath10k/usb.c
-index 9804ea0ffacb..e23d87c84069 100644
---- a/drivers/net/wireless/ath/ath10k/usb.c
-+++ b/drivers/net/wireless/ath/ath10k/usb.c
-@@ -1081,9 +1081,6 @@ static int ath10k_usb_probe(struct usb_interface *interface,
- 		goto err_usb_destroy;
- 	}
- 
--	/* TODO: remove this once USB support is fully implemented */
--	ath10k_warn(ar, "Warning: ath10k USB support is incomplete, don't expect anything to work!\n");
--
- 	return 0;
- 
- err_usb_destroy:
+Patches 1 and 2 fix a timeout during the installation of group keys and
+WMI command failures during the driver unload. They do not depend on
+the rest of the series.
+
+Patches 4 and 5 add the hw_params and the USB device ID for QCA9377-7
+and patch 6 removes the experimental status.
+
+Tested on QCA9377 hw1.1 USB with the firmware version 0.0.0.111.
+
+Tomas Paukrt (6):
+  wifi: ath10k: usb: fix group key installation
+  wifi: ath10k: usb: set soft_unbind
+  wifi: ath10k: usb: start the firmware only once
+  wifi: ath10k: usb: add hw_params for Atheros QCA9377-7
+  wifi: ath10k: usb: add device ID for Atheros QCA9377-7
+  wifi: ath10k: usb: remove the experimental status
+
+ drivers/net/wireless/ath/ath10k/Kconfig    |  5 +-
+ drivers/net/wireless/ath/ath10k/core.c     | 77 +++++++++++++++++++++-
+ drivers/net/wireless/ath/ath10k/core.h     |  5 ++
+ drivers/net/wireless/ath/ath10k/hw.h       |  1 +
+ drivers/net/wireless/ath/ath10k/mac.c      | 12 +++-
+ drivers/net/wireless/ath/ath10k/testmode.c |  6 ++
+ drivers/net/wireless/ath/ath10k/usb.c      | 60 ++++++++++++++++-
+ drivers/net/wireless/ath/ath10k/usb.h      |  1 +
+ drivers/net/wireless/ath/ath10k/wmi.c      |  4 ++
+ 9 files changed, 161 insertions(+), 10 deletions(-)
+
+
+base-commit: 5dbf2415ca9821a611d09308e3b29d2c37e7cd77
 -- 
 2.43.0
 
