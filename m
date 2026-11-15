@@ -1,83 +1,61 @@
-Authentication-Results: smtp.subspace.kernel.org; arc=none smtp.remote-ip=211.75.126.72
+Authentication-Results: smtp.subspace.kernel.org; arc=none smtp.remote-ip=220.197.31.2
 ARC-Seal: i=1; d=subspace.kernel.org; s=arc20261015; a=rsa-sha256; cv=none;
-	t=1794715719;
-	b=di3d6EfubdsRa4TFJupFtYzMxwNUCGgMIqYguLY8UXP5KCetIH/r/5F9lhricSgnsSqS
-	 gsHU3e7HqIZTXtAummtrxLHgR8axXF3Rd/3T1Lbo2Lj67pNm1CzbifQCORmLl9MSoTrkT
-	 WW7s5H1tf8pluEPlQDgW5zQ5a2tVlt6u5VoSIH+LW3G+Fd1hbFups4EwwkFAFAWFuLJO8
-	 pZgwD8GekpqVTa/ZlmX9UVI54Aq1VT9Mv2rkXIWGj7luJMAww9Nngu2hQ9coS2A+MqXRr
-	 /VMJw4BILT++7s89vQzrAPogGLmd7Hhxba26fGT0OauUP/ReVcB6+5Pr+atMedpZHJA==
+	t=1794729786;
+	b=Q7dZTVVpTlE9q4s0sEDqYrkkb6TqGlDxKGn1LsbUym9CIW8eLB7Ka/oT6Rl28qkPvMtz
+	 5i5drN+Dnc+nxOSI0+4qfwLvppYNPi/NCLslMhfso0r/X7KKJ2/uA0ulkfEVnbjPWll9D
+	 2cPhuUoV4l53G0Ljfxj8vyUydRqmzw2SDEsYAIW59goatdBVFgG/du5H6ji8sAlme+mTL
+	 7lGqzGMFU4+lGVhxIQwuxSyCQkQM4VJSMf3jKr9LJwONCzz8e3BY1qMwXW2J6JWlt9c10
+	 cvKACTNTg7tt8Lakw1w1nvXoZNkB5WMseJFPVpU7c7FFAy4uBSeTAClQog/mBn6rQZA==
 ARC-Message-Signature: i=1; d=subspace.kernel.org; s=arc20261015;
-	a=rsa-sha256; c=relaxed/relaxed; t=1794715719;
-	h=DMARC-Filter:X-SpamFilter-By:DKIM-Signature:Received:Received:
-	 Received:Received:From:To:CC:Subject:Thread-Topic:Thread-Index:Date:
-	 Message-ID:References:In-Reply-To:Accept-Language:Content-Language:
-	 x-originating-ip:Content-Type:Content-Transfer-Encoding:MIME-Version;
-	bh=TOgDAngET7SCptQyx7wtEEDhE65iKbzZJMncrBheFv8=;
-	b=XLHf6QRK+MCqegMHKdr8N3CNG2IlAiwUyb0YMZUpHtB5pq20jf6rkkA1yCwa3K0ICtVt
-	 mg478EX/kHdCdkdzAVj1B+O6sDy047D+vK16Pnde/PDnDAkEoHJ3jDzLQcTGHsQS1SWOY
-	 M5roqbEVUFxFQ8kGEJxVn+VwE7FkunDKecKv4WioA6w4HJ7V4mwwAgCszw8EI08VrXgAx
-	 L3XGeDkHftumMdZzouhrPOL9oYIk3nkxC9mlzM+ulAkwFjtFdzAyGgpAGoIh3sTI2pvds
-	 C6bOlRTjGwgUfmOrF9gSys2Q/pHRjZkCB4xGyzP9thf1S+yIlUEEHXt5NOfUrrOyq7w==
+	a=rsa-sha256; c=relaxed/relaxed; t=1794729786;
+	h=DMARC-Filter:DKIM-Signature:Received:From:To:Cc:Subject:Date:
+	 Message-ID:X-Mailer:MIME-Version:Content-Transfer-Encoding:
+	 X-CM-TRANSID:X-Coremail-Antispam:X-CM-SenderInfo;
+	bh=Ox2XlTyOSiiELfMJRA1RMpYz/DEXqGXFohGx482vSjg=;
+	b=NZM9NLoF3hYCbue13oKE2z2FulGLOtNE+Q3dFvEehmHANn+kmT3O0sQaimpq32QZydLO
+	 BKYX8MFa0KaZiGpQVo4/wi1uOyUkk1xtwoWr0XcKFFTrdVjm+ZfEVRYwX6dJIA2vi1Zm+
+	 ngaH8pJW9DgEr5WPSY0vCYiH6nNJ6PlEB0m3qTYYgZoyhUzLbJDLIxqX+Tqa5A4fn/REc
+	 9fbheqCP20n8la3Ut7GQIT6j4+uUdRWOk5LkS9Zsu+QtOi1jruaJFEwRd32JhlFVLzt3C
+	 tAXA5bvnvTXWVbDIcXUL5CIqhGF/CDTVel042pNC5aprDQayfPwwgZl0i5eL54HmNTg==
 ARC-Authentication-Results: i=1; smtp.subspace.kernel.org; 
-	dmarc=pass header.from=realtek.com;
-	spf=pass smtp.mailfrom=realtek.com;
-	dkim=pass header.d=realtek.com header.i=@realtek.com header.a=rsa-sha256 header.s=dkim header.b=KMP9lLio;
-	arc=none smtp.remote-ip=211.75.126.72
-Received: from rtits2.realtek.com.tw (rtits2.realtek.com [211.75.126.72])
+	dmarc=pass header.from=163.com;
+	spf=pass smtp.mailfrom=163.com;
+	dkim=pass header.d=163.com header.i=@163.com header.a=rsa-sha256 header.s=s110527 header.b=UsTDTdqY;
+	arc=none smtp.remote-ip=220.197.31.2
+Received: from m16.mail.163.com (m16.mail.163.com [220.197.31.2])
 	(using TLSv1.3 with cipher TLS_AES_256_GCM_SHA384 (256/256 bits)
 	 key-exchange X25519 server-signature ECDSA (prime256v1) server-digest SHA256)
 	(No client certificate requested)
-	by smtp.subspace.kernel.org (Postfix) with ESMTPS id 4FF6E606A323;
-	Sun, 15 Nov 2026 04:08:37 +0000 (UTC)
-DMARC-Filter: OpenDMARC Filter v1.4.2 smtp.subspace.kernel.org 4FF6E606A323
-Authentication-Results: smtp.subspace.kernel.org; dmarc=pass (p=none dis=none) header.from=realtek.com
-Authentication-Results: smtp.subspace.kernel.org; spf=pass smtp.mailfrom=realtek.com
+	by smtp.subspace.kernel.org (Postfix) with ESMTPS id C39E1606A31A;
+	Sun, 15 Nov 2026 08:03:04 +0000 (UTC)
+DMARC-Filter: OpenDMARC Filter v1.4.2 smtp.subspace.kernel.org C39E1606A31A
+Authentication-Results: smtp.subspace.kernel.org; dmarc=pass (p=none dis=none) header.from=163.com
+Authentication-Results: smtp.subspace.kernel.org; spf=pass smtp.mailfrom=163.com
 Authentication-Results: smtp.subspace.kernel.org;
-	dkim=pass (2048-bit key) header.d=realtek.com header.i=@realtek.com header.a=rsa-sha256 header.s=dkim header.b=KMP9lLio
-X-SpamFilter-By: ArmorX SpamTrap 5.80 with qID 6AF48WcG42162428, This message is accepted by code: ctloc85258
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=realtek.com; s=dkim;
-	t=1794715712; bh=TOgDAngET7SCptQyx7wtEEDhE65iKbzZJMncrBheFv8=;
-	h=From:To:CC:Subject:Date:Message-ID:References:In-Reply-To:
-	 Content-Type:Content-Transfer-Encoding:MIME-Version;
-	b=KMP9lLioGVmzdk4oync2O9IyJkneSW0RI1ZX5wcgkXQBQ7ulAl1IbQtq/oXwhD+Nu
-	 HjplDvi66UbjsMdMAHyRLYiKmq3p3dhMkOJJZ2FdDqdVxXwXIlPlX5itKS67tPCX1O
-	 XjwCDeicGUeZqqY/qYBROW+PKLlyYT2YXxnUPxHPZuJrkO4ITf0756f7nIIvm5DR2T
-	 m3iNX7f1oqTLW0EmpXBWukJmr7cFGBx9g96B0DbzbD3v1T9mqp+21ILE+jExEtWJ9v
-	 kNgOdFYep1EWlpWaojf7bMVWQoegpF4f88NoRkCeXnsyU4He45j7DcIw1F4Hc89Sbf
-	 TZNCIX3/1FPqQ==
-Received: from mail.realtek.com (rtkexhmbs04.realtek.com.tw[10.21.1.54])
-	by rtits2.realtek.com.tw (8.15.2/3.29/5.94) with ESMTPS id 6AF48WcG42162428
-	(version=TLSv1.2 cipher=ECDHE-RSA-AES256-GCM-SHA384 bits=256 verify=FAIL);
-	Sun, 15 Nov 2026 12:08:32 +0800
-Received: from RTKEXHMBS05.realtek.com.tw (10.21.1.55) by
- RTKEXHMBS04.realtek.com.tw (10.21.1.54) with Microsoft SMTP Server
- (version=TLS1_2, cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id
- 15.2.2562.56; Sun, 15 Nov 2026 12:08:32 +0800
-Received: from RTKEXHMBS06.realtek.com.tw (10.21.1.56) by
- RTKEXHMBS05.realtek.com.tw (10.21.1.55) with Microsoft SMTP Server
- (version=TLS1_2, cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id
- 15.2.2562.56; Sun, 15 Nov 2026 12:08:32 +0800
-Received: from RTKEXHMBS06.realtek.com.tw ([fe80::eeeb:c765:ca73:5eef]) by
- RTKEXHMBS06.realtek.com.tw ([fe80::eeeb:c765:ca73:5eef%10]) with mapi id
- 15.02.2562.056; Sun, 15 Nov 2026 12:08:32 +0800
-From: Ping-Ke Shih <pkshih@realtek.com>
-To: Enver Ikromov <owner@ph4ntom-rev.uz>
-CC: "linux-wireless@vger.kernel.org" <linux-wireless@vger.kernel.org>,
-	"linux-kernel@vger.kernel.org" <linux-kernel@vger.kernel.org>
-Subject: RE: [PATCH rtw-next v5 05/10] wifi: rtw89: use AP self role for
- monitor interfaces
-Thread-Topic: [PATCH rtw-next v5 05/10] wifi: rtw89: use AP self role for
- monitor interfaces
-Thread-Index: AQHdc8qFK2Jt1QtiLUSH4J8FZa1Wk7cuhEig
-Date: Sun, 15 Nov 2026 04:08:31 +0000
-Message-ID: <971ff7a2aa6e4f5bb6d4e459c386d433@realtek.com>
-References: <20261113235211.1911-1-owner@ph4ntom-rev.uz>
- <20261113235211.1911-6-owner@ph4ntom-rev.uz>
-In-Reply-To: <20261113235211.1911-6-owner@ph4ntom-rev.uz>
-Accept-Language: en-US, zh-TW
-Content-Language: zh-TW
-Content-Type: text/plain; charset="us-ascii"
-Content-Transfer-Encoding: quoted-printable
+	dkim=pass (1024-bit key) header.d=163.com header.i=@163.com header.a=rsa-sha256 header.s=s110527 header.b=UsTDTdqY
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=163.com;
+	s=s110527; h=From:To:Subject:Date:Message-ID:MIME-Version; bh=Ox
+	2XlTyOSiiELfMJRA1RMpYz/DEXqGXFohGx482vSjg=; b=UsTDTdqYIgrfG2yCl7
+	p9l5zRaFhkqL6dLz7I/pvh7lF9JVvwXTHcZbyM6qyu9RToyIrz2nn1u9Y99wxQbJ
+	hiuBkVTiiOBvZ+2UgAU1qzNyciERnaszjeVo4NcrYeCaEObDLKqdAQ6Fj+QSM31P
+	oej25ueIQDy44OiIK/5f+Opvg=
+Received: from user-VMware-Virtual-Platform.localdomain (unknown [])
+	by gzga-smtp-mtada-g0-4 (Coremail) with SMTP id _____wD3v_AZZ_lqifQ9IQ--.40454S2;
+	Sun, 15 Nov 2026 16:02:33 +0800 (CST)
+From: Ziheng Wei <zihengw03@163.com>
+To: Felix Fietkau <nbd@nbd.name>,
+	Lorenzo Bianconi <lorenzo@kernel.org>
+Cc: Ryder Lee <ryder.lee@mediatek.com>,
+	Shayne Chen <shayne.chen@mediatek.com>,
+	Sean Wang <sean.wang@mediatek.com>,
+	linux-wireless@vger.kernel.org,
+	linux-mediatek@lists.infradead.org,
+	linux-kernel@vger.kernel.org,
+	stable@vger.kernel.org
+Subject: [PATCH] wifi: mt76: connac: use wcid_to_sta() when dequeuing PM frames
+Date: Sun, 15 Nov 2026 16:02:33 +0800
+Message-ID: <20261115080233.910330-1-zihengw03@163.com>
+X-Mailer: git-send-email 2.43.0
 X-Mailing-List: linux-wireless@vger.kernel.org
 List-Id: <linux-wireless.vger.kernel.org>
 List-Post: <mailto:linux-wireless@vger.kernel.org>
@@ -87,59 +65,71 @@ List-Unsubscribe: <mailto:linux-wireless+unsubscribe@vger.kernel.org>
 List-Owner: <mailto:linux-wireless+owner@vger.kernel.org>
 Precedence: list
 MIME-Version: 1.0
+Content-Transfer-Encoding: 8bit
+X-CM-TRANSID:_____wD3v_AZZ_lqifQ9IQ--.40454S2
+X-Coremail-Antispam: 1Uf129KBjvJXoWxWF47ur17KF1kZrW7KrWDtwb_yoW5Gr1UpF
+	WUK3yq9r1vgr45Za1kAw4kZF9Iyan5GFy0yF1S9wn5uw1rZF109F4jga4YyF4FyFs2qFnI
+	kr4DtrnxurZ8Z37anT9S1TB71UUUUU7qnTZGkaVYY2UrUUUUjbIjqfuFe4nvWSU5nxnvy2
+	9KBjDUYxBIdaVFxhVjvjDU0xZFpf9x07jkGYLUUUUU=
+X-CM-SenderInfo: p2lkv0ljzqjqqrwthudrp/xtbC7hn4SWr5Zxmk1wAA3Y
 
-Enver Ikromov <owner@ph4ntom-rev.uz> wrote:
-> rtw89_vif_type_mapping() leaves net_type and self_role zero for
-> NL80211_IFTYPE_MONITOR, i.e. RTW89_NET_TYPE_NO_LINK and
-> RTW89_SELF_ROLE_CLIENT. When rtw89_mac_add_vif() initializes the
-> interface, rtw89_mac_vif_init() first creates the role via H2C
-> ROLE_MAINTAIN and then sends JoinInfo with disassoc set (op =3D=3D 1) and
-> this client role.
+When the device is in runtime PM, mt792x_tx() cannot transmit right
+away and queues the frame with mt76_connac_pm_queue_skb(), keeping only
+the wcid. mt76_connac_pm_dequeue_skbs() later recovers the station
+from that wcid with
 
-Describe why you need this patch. Which problem you encountered and
-wanted to fix.=20
+	sta = container_of((void *)wcid, struct ieee80211_sta, drv_priv);
 
->=20
-> In firmware (verified on RTL8852AE firmware 0.13.36.2), the JoinInfo
-> H2C handler treats (self_role !=3D RTW89_SELF_ROLE_AP && op =3D=3D 1) as =
-a
-> station disconnect request (HAL8852A_Role_Disconnect), which clears the
-> newly created role's active bit in the firmware role table and skips
-> initializing its CMAC control table entry (CCTL_ResetByMacid). Frames
-> queued on that MAC ID are then silently dropped instead of transmitted.
->=20
-> With self_role set to RTW89_SELF_ROLE_AP and net_type kept at
-> RTW89_NET_TYPE_NO_LINK, the JoinInfo H2C handler initializes the
-> MAC ID's CMAC control entry and connects the role without enabling
-> client TBTT tracking (gated on RTW89_SELF_ROLE_CLIENT) or AP beacon
-> transmission (gated on RTW89_NET_TYPE_AP_MODE). Set both fields
-> explicitly for monitor interfaces.
+This is only valid for the default link's wcid, which is embedded at
+the start of struct mt792x_sta and therefore at drv_priv. Since MLO
+support, mt792x_tx() queues the per-link wcid of the link the frame is
+sent on. For any link other than the default one, that wcid lives in a
+separately allocated struct mt792x_link_sta, so container_of() yields
+a pointer 600 bytes (offsetof(struct ieee80211_sta, drv_priv) on
+x86_64) before that allocation. mt76_tx() then passes it to mac80211,
+which dereferences it as the station, e.g. in
+rate_control_fill_sta_table() via ieee80211_get_tx_rates().
 
-I'll check firmware people the setting.
+wcid_to_sta() in mt76.h follows wcid->def_wcid for link wcids and is
+correct for both cases. Use it.
 
-(I will review remaining patches tomorrow.)
+mt76_check_sta() in mac80211.c has the same pattern, but only uses the
+result when MT_WCID_FLAG_CHECK_PS is set, which only mt76x02 and
+mt7603 set; neither supports MLO, so it is left alone.
 
->=20
-> Signed-off-by: Enver Ikromov <owner@ph4ntom-rev.uz>
-> ---
->  drivers/net/wireless/realtek/rtw89/core.c | 2 ++
->  1 file changed, 2 insertions(+)
->=20
-> diff --git a/drivers/net/wireless/realtek/rtw89/core.c b/drivers/net/wire=
-less/realtek/rtw89/core.c
-> index 3447f0e..9cf2b03 100644
-> --- a/drivers/net/wireless/realtek/rtw89/core.c
-> +++ b/drivers/net/wireless/realtek/rtw89/core.c
-> @@ -5756,6 +5756,8 @@ void rtw89_vif_type_mapping(struct rtw89_vif_link *=
-rtwvif_link, bool assoc)
->                 rtwvif_link->self_role =3D RTW89_SELF_ROLE_CLIENT;
->                 break;
->         case NL80211_IFTYPE_MONITOR:
-> +               rtwvif_link->net_type =3D RTW89_NET_TYPE_NO_LINK;
-> +               rtwvif_link->self_role =3D RTW89_SELF_ROLE_AP;
->                 break;
->         default:
->                 WARN_ON(1);
-> --
-> 2.56.0.windows.4
+Found by LLM-assisted source review. Not tested on hardware. A test
+module that queues a frame for a separately allocated link wcid and
+calls mt76_connac_pm_dequeue_skbs() hits a KASAN slab-out-of-bounds
+read in rate_control_fill_sta_table().
+
+Fixes: ebb1406813c6 ("wifi: mt76: mt7925: add link handling to txwi")
+Cc: stable@vger.kernel.org
+Signed-off-by: Ziheng Wei <zihengw03@163.com>
+---
+
+Notes:
+    The changelog was drafted with an AI assistant from my analysis;
+    I have reviewed the code, the fix and the text.
+
+ drivers/net/wireless/mediatek/mt76/mt76_connac_mac.c | 3 +--
+ 1 file changed, 1 insertion(+), 2 deletions(-)
+
+diff --git a/drivers/net/wireless/mediatek/mt76/mt76_connac_mac.c b/drivers/net/wireless/mediatek/mt76/mt76_connac_mac.c
+index 8481eac8d..6c2caade6 100644
+--- a/drivers/net/wireless/mediatek/mt76/mt76_connac_mac.c
++++ b/drivers/net/wireless/mediatek/mt76/mt76_connac_mac.c
+@@ -134,8 +134,7 @@ void mt76_connac_pm_dequeue_skbs(struct mt76_phy *phy,
+ 			continue;
+ 
+ 		if (wcid && wcid->sta)
+-			sta = container_of((void *)wcid, struct ieee80211_sta,
+-					   drv_priv);
++			sta = wcid_to_sta(wcid);
+ 
+ 		mt76_tx(phy, sta, wcid, pm->tx_q[i].skb);
+ 		pm->tx_q[i].skb = NULL;
+
+base-commit: 97d73c8251226cf27cc6656b4c542869bb8c69fa
+-- 
+2.43.0
 
