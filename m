@@ -1,57 +1,62 @@
-Authentication-Results: smtp.subspace.kernel.org; arc=none smtp.remote-ip=185.70.43.167
+Authentication-Results: smtp.subspace.kernel.org; arc=none smtp.remote-ip=91.218.175.157
 ARC-Seal: i=1; d=subspace.kernel.org; s=arc20261015; a=rsa-sha256; cv=none;
-	t=1794748571;
-	b=mGylRrt3MNEGsP5JTkJT4s0WxNm9QNwMK5LCn04VswLo3e08tkjj9ZrSCcdEpbbWg+uR
-	 8MMxefxCvie95JNLlo/L5mi3Df60RV62xL86rEB88LlkK91bmMkGaiwEjSHEnPctWpQAe
-	 jYBqDRezL3fBK1DvY2sHRabcuvgxBurmAsp18T1blfELL+JdAMWrZPn8ilaAqXZWRLZte
-	 6p5SvzO4p/6pr3ln7sXT80J8EjM68lPf8zr3oNo0IdiPLzvqqYH6O3c1MywuonnX9/N8x
-	 BhPVoN/MHIQzGqXWe6btksFPdEC5EsCFWyEaTQduifxd+zAc2yYqf9yJOt2m3z7SiqQ==
+	t=1794748819;
+	b=ZlbqJ5lg50t3CfZcujf6KdQegya4bhfLZXYLxgORHYccckBn8a0H+i/EHRPOKAgmha7m
+	 z0dj+eaZHuzW91VSFuBjMDjwzucOebParlx/XXLFGbUxKacY/kg6KeF9z6+7XsBs56zG8
+	 ZVyLT7pdCR1bqP7jcy88MaBvf+sY3aatlCwLm0x0nQ2+4UbFLiQlZ69IknT/d+h+LoHpo
+	 4adJRiHRimiAgjUV7DYSkp0yhC5s9MmDQ6rvFKMJreqR4gGHTanogWCp2RIMM77XpREbS
+	 lAtPYru0PK0/x6/fBQUWIQf7uFWDsBgdgvg/K4RKE2Mx7bx2s8WD3Mweyj1tk5FlYNg==
 ARC-Message-Signature: i=1; d=subspace.kernel.org; s=arc20261015;
-	a=rsa-sha256; c=relaxed/relaxed; t=1794748571;
-	h=DMARC-Filter:DKIM-Signature:Date:To:From:Cc:Subject:Message-ID:
-	 Feedback-ID:X-Pm-Message-ID:MIME-Version:Content-Type:
+	a=rsa-sha256; c=relaxed/relaxed; t=1794748819;
+	h=DMARC-Filter:X-Envelope-To:DKIM-Signature:X-Envelope-To:Received:
+	 X-Mizu-Trace-ID:X-Migadu-Flow:Date:From:To:CC:Subject:In-Reply-To:
+	 References:Message-ID:MIME-Version:Content-Type:
 	 Content-Transfer-Encoding;
-	bh=8go9S3oYzYO5ww8YtwyFyx26lMvshd8Hs+WOxsUkQR8=;
-	b=3KBnsI1Svzji5q3IZFPz1jwIqyR9ATylmsxttT0PhZjPW9Yz2tO2h9v3r+ox9TOSYhlX
-	 QvJ1z4uBJ9V2ctHoOsNLvzwLuBEe80xe2jchdOH/dB7QMXGGqeRqkBsc190u87lzVdNcm
-	 idRWuLW4netcXFO2GpGlDcdP0AO1uj7dl0WdbfwOBPAJD0A7C9H0/2H8saB9IYRYpJbLp
-	 FY1kb7U6mh3HbJYwsx/toZigwY2pQJkkc4F1eH43TyEt1HVbi2Y0zKJIlqb2nqyReFQgB
-	 0sIu8Gl/5ru2prTiS41SrEjA2NBfRZ31Mc1AOFCTLPqoXBfpFdAFIgxC+TjWFD36pAA==
+	bh=W+UpOO6DEn25URdVBLc7AeAdrcKMrae8NJE1l5vt8gc=;
+	b=II4ItHzwLYmbQmtP61yUJlU7aWj+ReMKh//lREWSyDqEWeqpXcJ767nxmVMkaP8/Crq7
+	 Kvu360Jdnkc9eSPP6TsGESAx8m7FohC6PK4EdZ9avTxb+xkSTvOeTBhzSvNefVVa4m0xT
+	 BLr+5Eos6WEYTmbHTCQCLtjtbF/scAov9sFa2/8zgwVS2YGx/WsYQfeJPx8SUSD+XJw4q
+	 FLpTP9dK17qv56HFezbpK13mbuuKLoM2qQM6xR/SSspeVf4UxbUNfdFir8E8BRaj2Evst
+	 JJIHGN4r+jJvrdKXkY7DBWgsv1fCAyJLGdlg6DPC68Aa9BW0ZUOnzFkG3DLw9peSgrA==
 ARC-Authentication-Results: i=1; smtp.subspace.kernel.org; 
-	dmarc=pass header.from=protonmail.com;
-	spf=pass smtp.mailfrom=protonmail.com;
-	dkim=pass header.d=protonmail.com header.i=@protonmail.com header.a=rsa-sha256 header.s=protonmail3 header.b=JvwGx3Ll;
-	arc=none smtp.remote-ip=185.70.43.167
-Received: from mail-43167.protonmail.ch (mail-43167.protonmail.ch [185.70.43.167])
-	(using TLSv1.3 with cipher TLS_AES_256_GCM_SHA384 (256/256 bits)
+	dmarc=pass header.from=linux.dev;
+	spf=pass smtp.mailfrom=linux.dev;
+	dkim=pass header.d=linux.dev header.i=@linux.dev header.a=rsa-sha256 header.s=key1 header.b=JhEUuMjY;
+	arc=none smtp.remote-ip=91.218.175.157
+Received: from mta0.migadu.com (out-157.mta0.migadu.com [91.218.175.157])
+	(using TLSv1.3 with cipher TLS_AES_128_GCM_SHA256 (128/128 bits)
 	 key-exchange X25519 server-signature ECDSA (prime256v1) server-digest SHA256)
 	(No client certificate requested)
-	by smtp.subspace.kernel.org (Postfix) with ESMTPS id 09710606A31E
-	for <linux-wireless@vger.kernel.org>; Sun, 15 Nov 2026 13:16:09 +0000 (UTC)
-DMARC-Filter: OpenDMARC Filter v1.4.2 smtp.subspace.kernel.org 09710606A31E
-Authentication-Results: smtp.subspace.kernel.org; dmarc=pass (p=quarantine dis=none) header.from=protonmail.com
-Authentication-Results: smtp.subspace.kernel.org; spf=pass smtp.mailfrom=protonmail.com
+	by smtp.subspace.kernel.org (Postfix) with ESMTPS id 2A214606A31F
+	for <linux-wireless@vger.kernel.org>; Sun, 15 Nov 2026 13:20:17 +0000 (UTC)
+DMARC-Filter: OpenDMARC Filter v1.4.2 smtp.subspace.kernel.org 2A214606A31F
+Authentication-Results: smtp.subspace.kernel.org; dmarc=pass (p=none dis=none) header.from=linux.dev
+Authentication-Results: smtp.subspace.kernel.org; spf=pass smtp.mailfrom=linux.dev
 Authentication-Results: smtp.subspace.kernel.org;
-	dkim=pass (2048-bit key, unprotected) header.d=protonmail.com header.i=@protonmail.com header.a=rsa-sha256 header.s=protonmail3 header.b=JvwGx3Ll
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=protonmail.com;
-	s=protonmail3; t=1794748567; x=1795007767;
-	bh=8go9S3oYzYO5ww8YtwyFyx26lMvshd8Hs+WOxsUkQR8=;
-	h=Date:To:From:Cc:Subject:Message-ID:Feedback-ID:From:To:Cc:Date:
-	 Subject:Reply-To:Feedback-ID:Message-ID:BIMI-Selector;
-	b=JvwGx3Ll61GnAjTU1i0dGH+STl/IerAHTw1Hxh05weYh8G792/U7mypr0ZDJ0yFsf
-	 TD0+QOxFmWuMRMNFRz6h+T5j35kNUz752XsJfR4QgCDULovg6ZqcFmDsRn2U4NM1NA
-	 r381xjNdhhtXaRBY29kWHJoKCymBQ9joACIdwoMGXC1Hnhzsq5PWP9KG3YCxLyzTOU
-	 B5bsXI6dOfQuf7TUvukKou+nJneaxnigSnt7BsiAdxd9/GLZHtDC6Zgz63tJ1w5Fal
-	 ZslDWKZLW6aV+VmsvuU08+Nn0lOGJZ+3lYhPvx+iVf4qJAXK+RdGi1oGQIqGCDy7Jn
-	 M60hKkuV4Zzhw==
-Date: Sun, 15 Nov 2026 13:16:02 +0000
-To: "ath11k@lists.infradead.org" <ath11k@lists.infradead.org>
-From: alexiscalin <alexiscalin@protonmail.com>
-Cc: "linux-wireless@vger.kernel.org" <linux-wireless@vger.kernel.org>, Jeff Johnson <jjohnson@kernel.org>, Baochen Qiang <baochen.qiang@oss.qualcomm.com>, Mark Pearson <mpearson-lenovo@squebb.ca>
-Subject: ath11k: WCN6855 on Lenovo (17aa:9309) uses generic regdb, 5 GHz passive-only
-Message-ID: <uiDP3AfIPxylorMgOmrrT94taa0jYfo5VPw94l4YkKyGPD0X7byxDKdEF4LFqv6ltBlbS2atFSQT7PgJORjH30HU8wOK4uS3DhyacPPuT9k=@protonmail.com>
-Feedback-ID: 41683595:user:proton
-X-Pm-Message-ID: 0e80abd9cae358e0bc39a71cd1ebe1bcfdd9c9c2
+	dkim=pass (1024-bit key, unprotected) header.d=linux.dev header.i=@linux.dev header.a=rsa-sha256 header.s=key1 header.b=JhEUuMjY
+X-Envelope-To: linux-wireless@vger.kernel.org
+DKIM-Signature: a=rsa-sha256; bh=2Kp2E0/johYFo8M8Ky9xP207E97x3L3vqHNFFy5qtpw=;
+ c=simple/simple; d=linux.dev;
+ h=from:to:subject:date:message-id:mime-version:content-type; s=key1;
+ t=1794748815; v=1; x=1795353615;
+ b=JhEUuMjYT2vY0EKeoKbAZ0iTEtLSPEvlQH61HbvagNkEWcS3/vSUjDj7eon54V6cYLGDysea
+ E6G/eCrLsR6LQ8VqBLUVmXuAek4Sf2X9nN5Kz2DenQ+nno8Oryzn+/RA58iFFRjhLC/6fdjNqkG
+ iSGX64B9DZQZXg1p9CwCMj30=
+X-Envelope-To: linux-wireless@vger.kernel.org
+Received: by smtp.migadu.com with ESMTPS id f207da07ea8041fd;
+	Sun, 15 Nov 2026 13:20:15 +0000
+X-Mizu-Trace-ID: f207da07ea8041fd
+X-Migadu-Flow: FLOW_OUT
+Date: Sun, 15 Nov 2026 14:20:13 +0100
+From: Luka Gejak <luka.gejak@linux.dev>
+To: Ho Jie Feng <hjf3108@gmail.com>, Ping-Ke Shih <pkshih@realtek.com>
+CC: linux-wireless@vger.kernel.org, linux-kernel@vger.kernel.org,
+ Bitterblue Smith <rtl8821cerfe2@gmail.com>
+Subject: =?US-ASCII?Q?Re=3A_=5BPATCH_rtw-next_v4_3/7=5D_wifi=3A_rtw88=3A?=
+ =?US-ASCII?Q?_correctly_expose_beamformee_capabilities?=
+In-Reply-To: <20261115114336.1739863-4-hjf3108@gmail.com>
+References: <20261115114336.1739863-1-hjf3108@gmail.com> <20261115114336.1739863-4-hjf3108@gmail.com>
+Message-ID: <7807490F-585F-4C6D-8C2D-890C7DFDD957@linux.dev>
 X-Mailing-List: linux-wireless@vger.kernel.org
 List-Id: <linux-wireless.vger.kernel.org>
 List-Post: <mailto:linux-wireless@vger.kernel.org>
@@ -61,61 +66,47 @@ List-Unsubscribe: <mailto:linux-wireless+unsubscribe@vger.kernel.org>
 List-Owner: <mailto:linux-wireless+owner@vger.kernel.org>
 Precedence: list
 MIME-Version: 1.0
-Content-Type: text/plain; charset=utf-8
-Content-Transfer-Encoding: quoted-printable
+Content-Type: text/plain;
+ charset=utf-8
+Content-Transfer-Encoding: 8bit
 
-Hardware: ThinkPad P14s Gen 5 AMD (21ME), Qualcomm QCNFA765 / WCN6855
-hw2.1 [17cb:1103], subsystem 17aa:9309, chip_id 0x12, board_id 0xff.
-Firmware: WLAN.HSP.1.1-03125-QCAHSPSWPL_V1_V2_SILICONZ_LITE-3.6510.41
-board-2.bin: atheros-firmware-20261019 (Fedora 44)
-Kernel: 7.2.13 (ath11k identical to v7.2.13)
+Hi Jie Feng,
 
-ath11k finds the board data for the Lenovo variant (SMBIOS type 0xf8
-"LE"):
+Thanks for the update. One comment below.
 
-  boot found board data for 'bus=3Dpci,vendor=3D17cb,device=3D1103,
-  subsystem-vendor=3D17aa,subsystem-device=3D9309,qmi-chip-id=3D18,
-  qmi-board-id=3D255,variant=3DLE'
+On November 15, 2026 12:43:29 PM GMT+01:00, Ho Jie Feng <hjf3108@gmail.com>
+wrote:
 
-but there is no regdb for it, so it falls back to the generic one:
+> diff --git a/drivers/net/wireless/realtek/rtw88/main.c b/drivers/net/wireless/realtek/rtw88/main.c
+> --- a/drivers/net/wireless/realtek/rtw88/main.c
+> +++ b/drivers/net/wireless/realtek/rtw88/main.c
 
-  boot failed to fetch regdb data for bus=3Dpci,vendor=3D17cb,device=3D1103=
-,
-  subsystem-vendor=3D17aa,subsystem-device=3D9309,qmi-chip-id=3D18,
-  qmi-board-id=3D255,variant=3DLE from ath11k/WCN6855/hw2.1/board-2.bin
-  boot found match regdb data for name 'bus=3Dpci'
+[ ... ]
 
-board-2.bin has 16 board entries for Lenovo (subsystem-device 9308,
-9309, 930a and e0be) but no Lenovo regdb entry. Its 35 regdb entries are
-the generic 'bus=3Dpci' one and 34 for HP (subsystem-vendor 105b).
+> @@ -1624,10 +1625,13 @@ static void rtw_init_vht_cap(struct rtw_dev *rtwdev,
 
-With the generic regdb, the firmware's default country is BR, and every
-5 GHz rule it reports has REGULATORY_CHAN_NO_IR (FLAGS 2), also after
-11d has switched the country to US or FR:
+[ ... ]
 
-  wmi cc_ext BR dfs 0 ...
-  wmi reg rule 1: (5170 - 5330 @ 160) (0, 20) (FLAGS 2)
-  wmi reg rule 2: (5490 - 5730 @ 160) (0, 20) (FLAGS 2)
-  wmi reg rule 3: (5735 - 5895 @ 160) (0, 20) (FLAGS 2)
+> +     if (rtw_bf_support && chip->bfer_su_max_num) {
+> +             vht_cap->cap |= IEEE80211_VHT_CAP_SU_BEAMFORMEE_CAPABLE;
+> +             vht_cap->cap |= rtwdev->hal.bfee_sts_cap <<
+> +                             IEEE80211_VHT_CAP_BEAMFORMEE_STS_SHIFT;
+> +     }
+> +     if (rtw_bf_support && chip->bfer_mu_max_num)
+> +             vht_cap->cap |= IEEE80211_VHT_CAP_MU_BEAMFORMEE_CAPABLE;
 
-So all 28 5 GHz channels are scanned passively, including the non-DFS
-ones. For FR, wireless-regdb (iw reg get, global) has no NO-IR on these
-ranges, but the device reports:
+As far as I can see, this also changes whether support_bf can be enabled
+at runtime. It is still writable, but if it is false when the adapter
+probes, writing Y later and reconnecting leaves these capabilities clear.
+rtw_set_supported_band() only runs from rtw_register_hw(), and the bool
+setter does not update the bands.
 
-  global: (5150 - 5250 @ 80), (N/A, 23), (N/A), NO-OUTDOOR, AUTO-BW
-          (5725 - 5875 @ 80), (N/A, 13), (N/A)
-  phy:    (5170 - 5250 @ 80), (N/A, 20), (N/A), AUTO-BW, PASSIVE-SCAN
-          (5735 - 5855 @ 80), (N/A, 14), (N/A), AUTO-BW, PASSIVE-SCAN
+rtw_bf_assoc() checks these cached capabilities too, so neither SU nor MU
+setup can run. Before this patch, enabling the parameter before the next
+association worked on chips that already supported beamforming.
 
-A full scan takes about 5 s, of which the 28 passive 5 GHz channels at a
-150 ms dwell time account for about 4.2 s. This delays every connection
-that needs a scan, e.g., Wi-Fi after resume: with NetworkManager, Wi-Fi
-is back 6.6-7.7 s after the wake-up alarm. For comparison, an Intel 8265
-laptop measured the same way takes 5.4-5.5 s. (An additional scan done
-by wpa_supplicant after resume, which made it 12.6-12.7 s, is a separate
-wpa_supplicant issue and has been reported on the hostap list:
-"wpa_supplicant: Initialize is_6ghz_enabled when adding an interface".)
+Could we keep that runtime enable working? If the setting now needs to be
+fixed at probe, maybe the parameter should be read only instead.
 
-Could a regdb for the Lenovo WCN6855 variants be added to board-2.bin,
-as was done for HP? I can test a candidate file on this machine.
-
+Best regards,
+Luka Gejak
