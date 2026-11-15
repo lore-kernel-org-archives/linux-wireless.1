@@ -1,96 +1,99 @@
-Authentication-Results: smtp.subspace.kernel.org; arc=none smtp.remote-ip=74.125.82.42
+Authentication-Results: smtp.subspace.kernel.org; arc=none smtp.remote-ip=209.85.216.42
 ARC-Seal: i=1; d=subspace.kernel.org; s=arc20261015; a=rsa-sha256; cv=none;
-	t=1794769135;
-	b=Y3NwNSDZmndhoX25f8O01eavOJrXJltiuy5jpiKgm9f13y4xRfFvq6o2jKC4JhTYwgun
-	 IQxXGLo9dQK3zgM55XRbcEeydtSr+h08LoDyPUp13DGVseny4tqBMbhgeBHOY0EVZRGH1
-	 +Kd7SUc0vooVmWsJw4tXHxdAgeg2W4IlmyZeTtsGIp2PA7+uVy+7SJkrEfxnuTDq3Z+Cs
-	 A8zNZ9o0GlJRXJu9ECVGabYca9/MbljU5/Z/QKQbqMGLCVuFr9cnb27Xemhpv+shKDUwx
-	 s7XUCCI0REkbzK1t5PpPlHKoaPRC59gPu/whJLIsx5buWcedaKHYDDmBkS6qzwglEUQ==
+	t=1794770870;
+	b=OBcMBD6nY8D2yz6gKcpLmyvBASb1XYdz7oobQ1wbtzu9fcRcySrPwQcuIYZ0iaJyE3XO
+	 7z5pWku+epFuoIGaAJZDTuE32DPTBEPif9NRCa5Qn/5MbL4JLrs8zCg3+GsfJqoIo0UWq
+	 fFqPOpTMhEq8YaGXVkHlCMtGj2Pr88kfKBzqrp4o0FP2XQXGP1xsoPuzwJscOby3irn/K
+	 VxgmZbtwbYMBDK3Mr2LZsTdAnbgdX62uHrtIGVnCJlIxTrhnbKmfpuFc9a7mamCh7Tko/
+	 ayvGZS7bn36cKnTx6CAAfbln0gvaAwvGzsWc9j/O64NfB3HH0zsUuCwvnutwTtKbPww==
 ARC-Message-Signature: i=1; d=subspace.kernel.org; s=arc20261015;
-	a=rsa-sha256; c=relaxed/relaxed; t=1794769135;
+	a=rsa-sha256; c=relaxed/relaxed; t=1794770870;
 	h=DMARC-Filter:Received:DKIM-Signature:X-Google-DKIM-Signature:
-	 X-Gm-Message-State:X-Gm-Gg:X-Received:Received:From:To:Cc:Subject:
-	 Date:Message-Id:X-Mailer:In-Reply-To:References:MIME-Version:
-	 Content-Transfer-Encoding;
-	bh=Rfx8/QKieNzWuOWEnTbfc0MHqfPFCPFKkwmu9s+LsEQ=;
-	b=QhjtwIPn2JgCrdlwzPKpY3k8zJwLTAs4BcIvTye0CAHki2ykFBKnN73Uzi2ZoZxeOCpZ
-	 vPfSBiXdgQ8g6dpDfqXKyx4eoYfgUoTpaigHY+IEdTHr5JXJvU+wo8NkaS/Ca1QBk6XVj
-	 V9OO8G3DY2CuNchOOgq9AwV1JIdawSubYN9Leqo7WjOblbJg1s+pMXcPdpg1JRPXDcHxW
-	 z8it0ur69FGrllveFTc4Tqf/BIN1VSBaVCnS07MzJXay+g4J758KDK/KRp9XkPX06eHnQ
-	 D9zdaCK1WwLtaa0XJbm4VrFQSSWuhiDwLXE9AHxc6CQLKrv3vB8E88UxKJFmJoCrhRA==
+	 X-Forwarded-Encrypted:X-Gm-Message-State:X-Gm-Gg:X-Received:Received:
+	 From:To:Cc:Subject:Date:Message-ID:X-Mailer:In-Reply-To:References:
+	 MIME-Version:Content-Transfer-Encoding;
+	bh=zK1HFeXb+5RIaaTyR8jNDy335l1vYAJOKc4AYeqRcfQ=;
+	b=GhwGcP/3+OTER095UjHPC7iSAOB1QTVqTSdK/3J7O39RAjEHBSrsz1CdIGmIIp9qlonI
+	 CkxMgT5TNIlixfDuAo964byvy14KJqreIYF/fETxTGFKlzpFojFbFNVaTieCFA4KRyZyL
+	 p2jXEoJsom5e91VX+1M/PLy/plzbBKXVXt97iOiHP1bknKHj6HWVZxJL2Z0KlKXbrzzF4
+	 2M0avLqmb42ZsG6wzkc0JgofaT/Eb/OuxGVjChbH0Fn4ff83uU6BYdHlIbeutxTsY668s
+	 IT/79PpEIF1qFwBQYrCSIKoIzHwoQC5MkWBQ2lukhA5dsfmAwGP2ji/Drfw/Xe22Lbg==
 ARC-Authentication-Results: i=1; smtp.subspace.kernel.org; 
 	dmarc=pass header.from=gmail.com;
 	spf=pass smtp.mailfrom=gmail.com;
-	dkim=pass header.d=gmail.com header.i=@gmail.com header.a=rsa-sha256 header.s=20260707 header.b=nEK1UAhv;
-	arc=none smtp.remote-ip=74.125.82.42
-Received: from mail-dl1-f42.google.com (mail-dl1-f42.google.com [74.125.82.42])
+	dkim=pass header.d=gmail.com header.i=@gmail.com header.a=rsa-sha256 header.s=20260707 header.b=OIzoKe6Q;
+	arc=none smtp.remote-ip=209.85.216.42
+Received: from mail-pj1-f42.google.com (mail-pj1-f42.google.com [209.85.216.42])
 	(using TLSv1.3 with cipher TLS_AES_128_GCM_SHA256 (128/128 bits)
 	 key-exchange X25519 server-signature ECDSA (prime256v1) server-digest SHA256)
 	(No client certificate requested)
-	by smtp.subspace.kernel.org (Postfix) with ESMTPS id C2D45606A8AC
-	for <linux-wireless@vger.kernel.org>; Sun, 15 Nov 2026 18:58:54 +0000 (UTC)
-DMARC-Filter: OpenDMARC Filter v1.4.2 smtp.subspace.kernel.org C2D45606A8AC
+	by smtp.subspace.kernel.org (Postfix) with ESMTPS id 0B585606A329
+	for <linux-wireless@vger.kernel.org>; Sun, 15 Nov 2026 19:27:49 +0000 (UTC)
+DMARC-Filter: OpenDMARC Filter v1.4.2 smtp.subspace.kernel.org 0B585606A329
 Authentication-Results: smtp.subspace.kernel.org; dmarc=pass (p=none dis=none) header.from=gmail.com
 Authentication-Results: smtp.subspace.kernel.org; spf=pass smtp.mailfrom=gmail.com
 Authentication-Results: smtp.subspace.kernel.org;
-	dkim=pass (2048-bit key) header.d=gmail.com header.i=@gmail.com header.a=rsa-sha256 header.s=20260707 header.b=nEK1UAhv
-Received: by mail-dl1-f42.google.com with SMTP id a92af1059eb24-1b244fb7fffso3032516c88.1
-        for <linux-wireless@vger.kernel.org>; Sun, 15 Nov 2026 10:58:54 -0800 (PST)
+	dkim=pass (2048-bit key) header.d=gmail.com header.i=@gmail.com header.a=rsa-sha256 header.s=20260707 header.b=OIzoKe6Q
+Received: by mail-pj1-f42.google.com with SMTP id 98e67ed59e1d1-3acb11973c3so2977313a91.3
+        for <linux-wireless@vger.kernel.org>; Sun, 15 Nov 2026 11:27:49 -0800 (PST)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=gmail.com; s=20260707; t=1794769134; x=1795373934; darn=vger.kernel.org;
+        d=gmail.com; s=20260707; t=1794770869; x=1795375669; darn=vger.kernel.org;
         h=content-transfer-encoding:mime-version:references:in-reply-to
          :message-id:date:subject:cc:to:from:from:to:cc:subject:date
          :message-id:reply-to:content-type;
-        bh=Rfx8/QKieNzWuOWEnTbfc0MHqfPFCPFKkwmu9s+LsEQ=;
-        b=nEK1UAhvCMl01hvbouw9seyvdetcS4NCdpZI7UFQbJEL+LLeSBaHvb8KFWmRuCJfkV
-         wVeZ4YSQsMIrpa+2X6DKlbJlgoTg3Y+K9dp6SFjRqFqKQ0fJb9nBqkZQ8su92THTj4gb
-         sufwRzJwLHbceHUY3kSDb2c8k3MlubNfhEY5THsXsLbPNpl3rWaYcg8YosgRXgtxSVGo
-         erSbOkTzlNfFR15748TrHeq1xlUzyuCnJ3xAObNHKEfVJlV86zk1lKT3ujHErpmuxIY0
-         Cji2rpsQBLEULthGikGy+PXFm1Vc/7xa/aTxhP2SDpxFeL+ywg+3dAF0A8YOPmA1/ydd
-         zfvQ==
+        bh=zK1HFeXb+5RIaaTyR8jNDy335l1vYAJOKc4AYeqRcfQ=;
+        b=OIzoKe6QdCSPp0UTuPTRvk4jU2866oxArlCSwkQQ0rk53rt2m2h0Rnqyy6YiLEHn+i
+         ITZXLfC2DUrD8/MZDW9gyQwYK9x1dzUzk9WxLCeGT5D6ItOCerMzTnkYl36CC8lZp3z/
+         QW62V0XxpvRoN1GS0TkHQdDiCAYZ6Ts2thQFPvzO+6cL5HQ0E+Ga3CyS4PrSR+FzAFvj
+         1tyEMYDbhKQ1TaM+PkV6c4kJtexkl5GKhq/Ex0ycn04KMaBIgs5oZmq+u6+pZOn8hrc/
+         UO5alnT7IIqm7KPzUDKWF/63k5tGaQxQWWm//y+HaT6LoyxQSYAvv8vWd4/ciz4IOOza
+         HNtQ==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=1e100.net; s=20260707; t=1794769134; x=1795373934;
+        d=1e100.net; s=20260707; t=1794770869; x=1795375669;
         h=content-transfer-encoding:mime-version:references:in-reply-to
          :message-id:date:subject:cc:to:from:x-gm-gg:x-gm-message-state:from
          :to:cc:subject:date:message-id:reply-to:content-type;
-        bh=Rfx8/QKieNzWuOWEnTbfc0MHqfPFCPFKkwmu9s+LsEQ=;
-        b=ffFm1sZ+WWijSrUOKJwEGcrmM9isi4omddDMd7TZMw7Fm8xSUQKsWAUSHyj96i+kkE
-         +KF5wwO/gX/zEVDnBx/Q5ifAHYWN7MX9hHfCZeD3kvBmusiDNIphTZx0i2lwfdWiHIef
-         AeCufweIVrQSzhe7/0AyCYB1MmGzEB5U19bYS+Q8Nh0+69nys45f9j/vb40R952kjS4H
-         sAxkOuwCbTEaLK4+1L6zghhT2e7O1M8QOgQilyRYb28l3m5BWigj5AGMx4xm/CTklp23
-         sZGCw3uoJRZLNp8yZuU61ltEgeIZWiysl20oB9AHswJMPeYE4xSGm7OazCPO5d2R2k/y
-         5QNQ==
-X-Gm-Message-State: APuU4Z/wMca0Vmdl0DEfGcJZ1kk1y8U5EC6hj7A1dfKcYPRcDXRbYBuN
-	VB24kkhxqvWE61+MVCcJBw+0DSY0gffo61JXmuIV7AK+NMz3o/nf6Apd
-X-Gm-Gg: AYBFou0SRVr6ZEJS6uyPjqwV5enrZST2fZEXpbF6dvN0rOtHLbRhf1526EuNDC5md6v
-	/jQvfVigojz2srefKD1dH9aDfNfox8X4MtM2/pu1d8J5VfTDWWK2zCpzwyCrl911sDDmNt5S/a3
-	FZgw32MwKEtuXh+oxz3L3ChP5674y6tscOFbSX++/HuZFV6kDIEE56iHuHX17NmftuHkKkCDaTe
-	ezOsEw3z27YyNRnj07ReLvHmVYVvZNx14gArIIXBdbLyGgf2PzT2cEtUqE4ubQXz3+rhR95DmOj
-	SnoqXNAMm635MSqVpOQ5s0H+T5H80PmYSbdO5/xwmego7ceRbWWt7/1TWRSbt1zNVl4+1z+G7fd
-	F4NCyvpdHaB/u2dzgmIpJu01H9x8bdJ/Y/LsxH++3O3eZ818TY5G35v4ZCZqlqf+C0sSfLqyrI8
-	DoeGf4uay2yP9QnM+G4/ZaOO/9Dy3IshNKZ9D5YBx4pStlz0zDd6a1HpjLlBEPWO4gtzH1Zyqg6
-	893igNip8kQEBuPnyasdCk2qOa0ScfluKgQGstK3afIPM0oLM/wdZRk57+LLq6Dj3HMPFdTtFT6
-	pUlIGZprbNWmPDX/O4W4p2vydXmRGRkATQV/NhTuMgFWcGO6RTFcuAYZxtVmxkppEWzFlGnomAQ
-	=
-X-Received: by 2002:a05:7022:8f:b0:191:444:425 with SMTP id a92af1059eb24-1b50306832fmr7755064c88.2.1794769133806;
-        Sun, 15 Nov 2026 10:58:53 -0800 (PST)
-Received: from csl-conti-dell7858.ntu.edu.sg ([155.69.195.57])
-        by smtp.gmail.com with ESMTPSA id a92af1059eb24-1b5329ec87bsm82306c88.0.2026.11.15.10.58.51
-        (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
-        Sun, 15 Nov 2026 10:58:53 -0800 (PST)
-From: Maoyi Xie <maoyixie.tju@gmail.com>
-To: Arend van Spriel <arend.vanspriel@broadcom.com>
-Cc: linux-wireless@vger.kernel.org,
-	brcm80211@lists.linux.dev,
-	brcm80211-dev-list.pdl@broadcom.com,
-	linux-kernel@vger.kernel.org,
-	stable@vger.kernel.org
-Subject: [PATCH wireless 2/2] wifi: brcmfmac: fwsignal: bound the MACDESC_ADD interface index
-Date: Mon, 16 Nov 2026 02:58:43 +0800
-Message-Id: <20261115185843.64633-3-maoyixie.tju@gmail.com>
-X-Mailer: git-send-email 2.34.1
-In-Reply-To: <20261115185843.64633-1-maoyixie.tju@gmail.com>
-References: <20261115185843.64633-1-maoyixie.tju@gmail.com>
+        bh=zK1HFeXb+5RIaaTyR8jNDy335l1vYAJOKc4AYeqRcfQ=;
+        b=OcmnP2r/P2StMcxEItLRDIXGaGWsOqHe7rtkwxzp6CJCTOQP/a4SIyZzvRh/nS1Grg
+         6pdh4V4eSHEH2DM4d3bEFye5Xsg44oLxudsvZqCAfNAr6axAF17esQVOH4+cceIjuoWu
+         0x2RFdm+jgkkJQaSU+B+SP03z07WNE1zaSHALF+dsgUSWDZDWcgLuLhR2JV/IV0BQFAC
+         Z2denckLaPXxxwM4KFl+m/TPTudgOazOGUczX1x45MS7ZrclQ7nyD9wSttvM+VE8a6Cp
+         ke1o8BFtXwR4nE+/K75eSYSrij4V88FNWcDaYNIds/HrcS3/cuCwgMcuogHNcctiMHW0
+         7xGg==
+X-Forwarded-Encrypted: i=1; AL+hErH6W7AKLClOJmWIrL+4JVRaFsC71UmqFMjNPH9cmZQZ6SPn/y1w+3OPCNqzVW+xQF2j5OsSOwqP+Z9plqdrig==@vger.kernel.org
+X-Gm-Message-State: APuU4Z9wAhNhDmjssrt4c0Ip8OLu5sb66c9Uv8kbFNJAj7kjx1UMf1rV
+	8MnJ5gw0oaTw/n5zidRQqvqsSbBO/kbyqonofZPUt4zxMSJ6towWGFOZ
+X-Gm-Gg: AYBFou1a8bhO/+OE66KByHH21fVdjijhuMT0x3YBehXUMaYAtgV7Tqgr1jmAYZvJhkf
+	KzFA7HcIqajaK+C5NYpePiQv5viAgReOoSmptUZlafEWIuxy5ZlgThq6ojLxTijOJXbt5CJZH8h
+	nHECDJX/jH7Nr7e7a8Il5kLUbPNGPs11WCStTJcLqpWDeg79wsMkgibaHBOcxkCSGIKxKCiNR1Q
+	9S216z+15byGuyKJFFsCriMIlKYKPBIGmiMua5UOSgEpOParQCIA8sdRy8StUlTUBaFalabQmCM
+	eq89ZqoA1Lc/AxQ51z2vnXR+tPaKxHJxOLUCoYNYBsXIzASBpxZ7WMJ6fKn7Hw2DySDzsGtdfsL
+	O4/qsa61wnWHkoTR/HGQiokZK3l875bJeA6e2OeP7gsP7zaANZuSncnf7GK9PNav47DseUCKpWl
+	ovGvnn307sUemntUIu/jaUly2/wUNjyrDgzV019wQPlS8E9ADqZionPv8tkX1xbK8khznmCTlC6
+	7PZ+DDaspMk3ZQZ1+MPpxMWT+CWMlKNgIeg890VjPIYgzdHzzn/g6G/m8wOB01iOn9XkznLdcg7
+	FiJYSFDx9KCwUIX7ierVUX3CR65aMmEKwyJCv+rAAxrDtEI72jIg2uwvrU/D
+X-Received: by 2002:a17:90b:1b12:b0:3b0:a3eb:759e with SMTP id 98e67ed59e1d1-3b1b09e5cb0mr8453054a91.17.1794770869377;
+        Sun, 15 Nov 2026 11:27:49 -0800 (PST)
+Received: from G7XWH7K1F3 ([2408:8256:2e80:7371:d1be:2710:af83:9beb])
+        by smtp.gmail.com with ESMTPSA id 98e67ed59e1d1-3b1b3b4cca7sm5633895a91.2.2026.11.15.11.27.41
+        (version=TLS1_3 cipher=TLS_CHACHA20_POLY1305_SHA256 bits=256/256);
+        Sun, 15 Nov 2026 11:27:49 -0800 (PST)
+From: Zhao Li <enderaoelyther@gmail.com>
+To: Ziheng Wei <zihengw03@163.com>
+Cc: Felix Fietkau <nbd@nbd.name>,
+	Lorenzo Bianconi <lorenzo@kernel.org>,
+	Ryder Lee <ryder.lee@mediatek.com>,
+	Shayne Chen <shayne.chen@mediatek.com>,
+	Sean Wang <sean.wang@mediatek.com>,
+	linux-wireless@vger.kernel.org,
+	linux-mediatek@lists.infradead.org,
+	linux-kernel@vger.kernel.org
+Subject: Re: [PATCH] wifi: mt76: mt7925: fix mt7925_reverse_frag0_hdr_trans() for MLO
+Date: Mon, 16 Nov 2026 03:27:25 +0800
+Message-ID: <20261115192725.8230-1-enderaoelyther@gmail.com>
+X-Mailer: git-send-email 2.56.1
+In-Reply-To: <20261115080239.910402-1-zihengw03@163.com>
+References: <20261115080239.910402-1-zihengw03@163.com>
 X-Mailing-List: linux-wireless@vger.kernel.org
 List-Id: <linux-wireless.vger.kernel.org>
 List-Post: <mailto:linux-wireless@vger.kernel.org>
@@ -102,43 +105,56 @@ Precedence: list
 MIME-Version: 1.0
 Content-Transfer-Encoding: 8bit
 
-brcmf_fws_macdesc_indicate() stores the interface index of a
-MACDESC_ADD signal without a check. brcmf_fws_macdesc_closed() later
-uses it as an index.
+Hi Ziheng,
 
-	if_entry = &fws->desc.iface[entry->interface_id];
+On Sun, Nov 15, 2026 at 04:02:39PM +0800, Ziheng Wei wrote:
+> -	struct mt792x_sta *msta = (struct mt792x_sta *)status->wcid;
+> +	struct mt792x_link_sta *mlink = (struct mt792x_link_sta *)status->wcid;
+> +	struct mt792x_sta *msta = mlink ? mlink->sta : NULL;
 
-A device that reports an index of BRCMF_MAX_IFS or more makes this read
-past iface[]. On USB this parser runs with the default module
-parameters. Reject such a signal as
-brcmf_fws_interface_state_indicate() does, and count it as a failed
-update.
+The MLO part is right, but the cast still needs a guard, and the
+MT_RXD3_NORMAL_U2M check below does not provide one: it selects the
+unguarded path. mt7925_mac_fill_rx() computes unicast from the same
+rxd3 comparison, so every frame that gets past that check arrived
+through the one branch of mt792x_rx_get_wcid() that returns the WTBL
+entry as it found it:
 
-This was found with a static analysis tool that we develop. A userspace
-harness that compiles the fwsignal.c functions unchanged shows the
-out-of-bounds index under UBSAN before this patch, but not after it. No
-hardware was available for testing.
+	wcid = mt76_wcid_ptr(dev, idx);
+	if (unicast || !wcid)
+		return wcid;
 
-Fixes: b75c1a301b7d ("brcmfmac: destination mac closed when interface is closed")
-Cc: stable@vger.kernel.org
-Signed-off-by: Maoyi Xie <maoyixie.tju@gmail.com>
----
- drivers/net/wireless/broadcom/brcm80211/brcmfmac/fwsignal.c | 2 +-
- 1 file changed, 1 insertion(+), 1 deletion(-)
+	if (!wcid->sta)
+		return NULL;
 
-diff --git a/drivers/net/wireless/broadcom/brcm80211/brcmfmac/fwsignal.c b/drivers/net/wireless/broadcom/brcm80211/brcmfmac/fwsignal.c
-index e81105154d6543..56eb2c2943dbe8 100644
---- a/drivers/net/wireless/broadcom/brcm80211/brcmfmac/fwsignal.c
-+++ b/drivers/net/wireless/broadcom/brcm80211/brcmfmac/fwsignal.c
-@@ -1010,7 +1010,7 @@ int brcmf_fws_macdesc_indicate(struct brcmf_fws_info *fws, u8 type, u8 *data)
- 
- 	existing = brcmf_fws_macdesc_lookup(fws, addr);
- 	if (IS_ERR(existing)) {
--		if (!entry->occupied) {
-+		if (!entry->occupied && ifidx < BRCMF_MAX_IFS) {
- 			brcmf_fws_lock(fws);
- 			entry->mac_handle = mac_handle;
- 			brcmf_fws_macdesc_init(entry, addr, ifidx);
--- 
-2.34.1
+Not every entry is a station link. mt792x_init_wcid() reserves index 0
+for beacons and management frames and installs dev->mt76.global_wcid
+there, a bare struct mt76_wcid inside struct mt76_dev, immediately
+followed by the wcid[] table. For that entry, mlink->sta reads at the
+offset mt792x_link_sta keeps its back pointer at, which lands in that
+table, and msta->vif then dereferences whatever it found, so the header
+is still built from a type-confused object. I can't say whether the
+hardware reports index 0 for a header-translated unicast fragment, but
+the non-unicast path in the same helper already guards its container_of()
+with wcid->sta.
 
+Doing the same here keeps the conversion valid for every entry, with
+mlink and msta left uninitialized in the declarations:
+
+	if (!status->wcid || !status->wcid->sta)
+		return -EINVAL;
+
+	mlink = container_of(status->wcid, struct mt792x_link_sta, wcid);
+	msta = mlink->sta;
+	if (!msta || !msta->vif)
+		return -EINVAL;
+
+> +	link_conf = rcu_dereference(vif->link_conf[mlink->wcid.link_id]);
+> +	if (!sta || !link_conf)
+> +		return -EINVAL;
+
+With status->wcid->sta checked above, wcid_to_sta() cannot return NULL
+here, so only !link_conf needs to be tested. The per-link BSSID lookup
+matches what a3ea1c309bf3 did for mt7996.
+
+Thanks,
+Zhao
