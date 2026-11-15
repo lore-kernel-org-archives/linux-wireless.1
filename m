@@ -1,83 +1,83 @@
-Authentication-Results: smtp.subspace.kernel.org; arc=none smtp.remote-ip=209.85.215.179
+Authentication-Results: smtp.subspace.kernel.org; arc=none smtp.remote-ip=209.85.216.43
 ARC-Seal: i=1; d=subspace.kernel.org; s=arc20261015; a=rsa-sha256; cv=none;
-	t=1794743780;
-	b=NQBEF+xJNdRWxQoTMLDEP+HqzIfQdj9pdRmOo9upiIUNT6YYVyPr7txCNikl5OqR54do
-	 tqOof1eos8Zcnt+K+1LQjI8VxheSNo3oavIQHJLHupKBDThcupS31MtoNZmlcD+xOCLcG
-	 05+iNRogTFlLdqefHE63pMDp3V89uKzg72bBdjd3Sn5QB4HmtSOkbmwhsQ34df+3nQ32U
-	 CLVp7J0QpYkNVn6mrSgvqN+xtInvDqyQDVPIvKGzTsBMvyFysYWtMKCnCX3fZvPcwhhIj
-	 ZggQatEY3caIeYIvgBWDczIbFKAuU3EAvC6fUa4G5f6wF0YOAc9H9tYRCUYZ1kOsC3Q==
+	t=1794743785;
+	b=bAFWbIU5DQJC9KIkloMIkdZK3O/FT5f3gGmGAtYIyT8SFddk1pwYwTxGX/Cv8xjUtNr/
+	 fId8l+2IQ+UrEW7lxafKcAC/F5lSbe9gB5VKNG8dwUs1uhvpl6/K3kgKiA9rBrDEadGbS
+	 UDRQjXJCXE0bgMNvFAI2r4NBNunEWHaUM8gaYST2NMi0D81ly8vyteWacdyU8aFSU3N3X
+	 pVcMOwZsI+gZnS5ltWTuTHszISAzdz8ZBKWtTcsR/7VDACG23A42pfud/7/kwOlEbGAhE
+	 LCl7WnnUter9WzupVvVd5QAJRH/6wZDeRoXeFsm0qpyPZWZTZtfLQ0ihNI/5eHNcyKQ==
 ARC-Message-Signature: i=1; d=subspace.kernel.org; s=arc20261015;
-	a=rsa-sha256; c=relaxed/relaxed; t=1794743780;
+	a=rsa-sha256; c=relaxed/relaxed; t=1794743785;
 	h=DMARC-Filter:Received:DKIM-Signature:X-Google-DKIM-Signature:
 	 X-Gm-Message-State:X-Gm-Gg:X-Received:Received:From:To:Cc:Subject:
 	 Date:Message-ID:X-Mailer:In-Reply-To:References:MIME-Version:
 	 Content-Transfer-Encoding;
-	bh=W2vKZCmZg+O2Nxyw7f6Hngxn6AcFlY6WocbES4OvvUs=;
-	b=G66WYCWASDx/o1W0cHcCevDC1X8CPJ/aTiH8KVa8GhjGC0FiXUlEl1HAEUzXLaMqW0kK
-	 hS5WzVlGRw3abL4GeV+ADxrh28y3BslvACBXngMASCY/IdE1TDWgv70caRFPW1p1Kzkvw
-	 IH5kX1IbZlAmJESho33FYPPZmIkeq9oBX/qHAo8pCp6PSsC5zTY14aj+90szPx1WxQ5Us
-	 lD43UJO8hO2IjHVJyvj1U+0fKR9qU3Rt4eVMNlS7bqo8f1j0sD0bbI54poyZQWDURyLrE
-	 uHJ+TnUa5OWF9bxD33UTkUlQ2Kwr9cqAx+VURpPCjVYMiri2vP0LirT3qmEpo7jLdSQ==
+	bh=Bi9izper4hhzVGDMuEBOOUEjObfUjf3Mhvpg/zT4k3A=;
+	b=dwm7Yx5+/lrpFZsisMClYunmYTyOr0Qp7DAsHGO9x0bcFbcRQ1CLCLw3XN9TWRW6grEl
+	 ZrcDQYxyXIetsnJvU035k+M0qp/KOo26SzK4lB/g2s1KuJ+Nb6tP7caqr0JYt/NQSY4OT
+	 MnKcLe+fE+58vWVKJqqtqNicRHZZdNIgE4rVRiOG0lroyTrCmeJcioj1VYI1d2UyzMMVg
+	 jC6JnxMFvVPMLyBnb0sOBHDJoYYrwNGOzc7hcQx4Q3A6iWsnZdir9TkHJ/vOgnsMJW4z2
+	 DHCrzacWyDfM5RkDiraeM4teGys2n8WcoeLHc2c2Ue1Z0YnlfUfCvXZEgNC9Szepx6A==
 ARC-Authentication-Results: i=1; smtp.subspace.kernel.org; 
 	dmarc=pass header.from=gmail.com;
 	spf=pass smtp.mailfrom=gmail.com;
-	dkim=pass header.d=gmail.com header.i=@gmail.com header.a=rsa-sha256 header.s=20260707 header.b=BoPnW10v;
-	arc=none smtp.remote-ip=209.85.215.179
-Received: from mail-pg1-f179.google.com (mail-pg1-f179.google.com [209.85.215.179])
+	dkim=pass header.d=gmail.com header.i=@gmail.com header.a=rsa-sha256 header.s=20260707 header.b=MgMXFNPv;
+	arc=none smtp.remote-ip=209.85.216.43
+Received: from mail-pj1-f43.google.com (mail-pj1-f43.google.com [209.85.216.43])
 	(using TLSv1.3 with cipher TLS_AES_128_GCM_SHA256 (128/128 bits)
 	 key-exchange X25519 server-signature ECDSA (prime256v1) server-digest SHA256)
 	(No client certificate requested)
-	by smtp.subspace.kernel.org (Postfix) with ESMTPS id 4B4CF606A32D
-	for <linux-wireless@vger.kernel.org>; Sun, 15 Nov 2026 11:56:20 +0000 (UTC)
-DMARC-Filter: OpenDMARC Filter v1.4.2 smtp.subspace.kernel.org 4B4CF606A32D
+	by smtp.subspace.kernel.org (Postfix) with ESMTPS id C090E606A88A
+	for <linux-wireless@vger.kernel.org>; Sun, 15 Nov 2026 11:56:24 +0000 (UTC)
+DMARC-Filter: OpenDMARC Filter v1.4.2 smtp.subspace.kernel.org C090E606A88A
 Authentication-Results: smtp.subspace.kernel.org; dmarc=pass (p=none dis=none) header.from=gmail.com
 Authentication-Results: smtp.subspace.kernel.org; spf=pass smtp.mailfrom=gmail.com
 Authentication-Results: smtp.subspace.kernel.org;
-	dkim=pass (2048-bit key) header.d=gmail.com header.i=@gmail.com header.a=rsa-sha256 header.s=20260707 header.b=BoPnW10v
-Received: by mail-pg1-f179.google.com with SMTP id 41be03b00d2f7-cdba1b5ed8dso1160306a12.1
-        for <linux-wireless@vger.kernel.org>; Sun, 15 Nov 2026 03:56:20 -0800 (PST)
+	dkim=pass (2048-bit key) header.d=gmail.com header.i=@gmail.com header.a=rsa-sha256 header.s=20260707 header.b=MgMXFNPv
+Received: by mail-pj1-f43.google.com with SMTP id 98e67ed59e1d1-3ac91ac8924so1305824a91.1
+        for <linux-wireless@vger.kernel.org>; Sun, 15 Nov 2026 03:56:24 -0800 (PST)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=gmail.com; s=20260707; t=1794743780; x=1795348580; darn=vger.kernel.org;
+        d=gmail.com; s=20260707; t=1794743784; x=1795348584; darn=vger.kernel.org;
         h=content-transfer-encoding:mime-version:references:in-reply-to
          :message-id:date:subject:cc:to:from:from:to:cc:subject:date
          :message-id:reply-to:content-type;
-        bh=W2vKZCmZg+O2Nxyw7f6Hngxn6AcFlY6WocbES4OvvUs=;
-        b=BoPnW10vW+Z+OHHcWFjjEOUGmjrkS40gq658bhH62+ixEdAbYdc7aCglqYxGXsDCUt
-         PY7uNts1nSsrGsIJTHBiIm2GBXag1fAV8GMNZmp2ol8WcZ8yYWnRlj2hZzvIs/PrdxJ+
-         t3p2KHJCaQfpa2U/k+sMIDDU0KNs8pQ5QaJnymTUAJU79IpG3mc1TQtKyYIFMp6Llb9y
-         gsg3Hy9HmU8zryHJ/wJCAPGfG1m/JXQgEH3CEhMGH7A74zP4DQcK4/2jlZHrQpmOZwmw
-         8/qFp46Cpx6GP4R1As+U0UIff+JME1SgpwVTclv9K7q8B7WHyvDIXRIDk27uswFev8l6
-         +c2Q==
+        bh=Bi9izper4hhzVGDMuEBOOUEjObfUjf3Mhvpg/zT4k3A=;
+        b=MgMXFNPvec2LvAmy755QczgUvumom5UQxVeGxpCTcgJMLwX2zsGzrknCQZgBOA7fOA
+         Xt80K78EtDlXqn9sssv1TJGB/pAHBiD3vBPnwCA6jVI2JEVCKWZovGFHBwwuwC9Vb7cG
+         A3jS+nFUZuPAt4GN6aZ1PUqvmf6Xscze7ulOHpP/ooqTsGLf0D5PZY9OIiWB87gJphEd
+         DdUikCLHd7i68v6QEKJU7AaIssTcAnzxR9c/WEwHipd+lyLyEuZlKwHTgFKLlonXfzPe
+         ZbRfVCw6mcmmNcjEJtekcjQvQqa1NzoWWJ7j/VPK7CeDTKodFeEUSX7/T6JwJDoOVsHB
+         x0Bg==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=1e100.net; s=20260707; t=1794743780; x=1795348580;
+        d=1e100.net; s=20260707; t=1794743784; x=1795348584;
         h=content-transfer-encoding:mime-version:references:in-reply-to
          :message-id:date:subject:cc:to:from:x-gm-gg:x-gm-message-state:from
          :to:cc:subject:date:message-id:reply-to:content-type;
-        bh=W2vKZCmZg+O2Nxyw7f6Hngxn6AcFlY6WocbES4OvvUs=;
-        b=D0W+UsQjDeQnz75WeTEzQSD0aNSKyJYXxF9ViOxmjwSd3HBO9DE2RT7OtnMPtpuOCU
-         BFOgSfid4ev9GTb9trKFDtX6S8BlK4++piz21HUyvPKlhnIWnTJKZq5hH7T8rbMf2W2J
-         u54DCD5xrp6a5E51QGgRiNBH8HmGVTtSmvp+HzstnfOT7TSJ5WE8Wvaj3ol6FMZGD/4R
-         zcrb6vo4h/DhpTnM5qpYZ2AQNtC6etcyZptFPBtHAMO4xfRd1deXLOZ7+vKmxa7Lp/tb
-         QjSJDFgcQOsdNm7xqbVjh8SSZnvvYbu6ZiJyI9eZD+BhDsFmvIDVfASdIDHAL1394IHQ
-         ZvFw==
-X-Gm-Message-State: APuU4Z+GrGL9CRxYe3Zll5vt0bPlgBk1aTWJK/qCb7sFPeM1TUaSbjPo
-	ZPCO4eJRPrnyq5vLBsaLhoyqltfvL68a9iTllGKDBBV6silv1HNKONOp
-X-Gm-Gg: AYBFou3TKfwJKjYh+emFddWbDXhoHdnno0RdrO471eLQHPjxAj55Cn5d5+FXLrD7WkM
-	Ah+EDlEsPdr3J7gtQuUpf+LgiwAVBW3qMCNcsAM5v/SWGjocIZxr8oBLFlzz31D4p9JJZaji7Yp
-	ij4AjEPtlpyQ4DHGGTgpVT4BKKsDIWCMyn+D9rNpNAWFFjWudZhCdJIIjai1hzogclNWdnFsBx5
-	rIo5lXUDSncNnz3PFaNrEYWLO/E5V5TFNLWVmUvvk3K816dJKVxJVjRxwOJPZaAVpI4QdQWD6n2
-	S2oqJvQ6zxTBc/9xiWhbp4PmFAUK6hf70Y1yxWiqipvmu61qnVjdNz9h6l3K05GnU1YlhfKkUPs
-	yXCqYMYMc0a0KaNSmOIxumPf0buMDGR9kX7Qo7YE6YqV6BkogM/GFAYLYtY2TX4QtkDpboygASX
-	Ts41UMAsPzIwEZKPw2djphZxQZZ6hmTyJRZ0FdqtyrQepCwRxCiVn+MVAdJ5pmTHMLEhscN/Hq/
-	3ckiD2/mGggx5OCQQoX8Up8pCTRrjg7myCUzy4YdFyiJ0wGbPKbR93Kblws50un7PvWJzngQ1Cj
-	pjEEcOLAQuQ0A8JVVqs5gnMUH8THYWdlexZhxBjhce54KSHiWo1AlDGKn1TP9SNqVdbdePQFJKZ
-	kwrC+3+Am37Lmax0yVtvvnFb62g5/uND8SPUeyEy1eoE=
-X-Received: by 2002:a17:90b:3c4a:b0:3a8:786a:cfed with SMTP id 98e67ed59e1d1-3b1b0d34b9fmr5475277a91.37.1794743779543;
-        Sun, 15 Nov 2026 03:56:19 -0800 (PST)
+        bh=Bi9izper4hhzVGDMuEBOOUEjObfUjf3Mhvpg/zT4k3A=;
+        b=Fer2E5NIkBTlBBQz7OWuLUnqZHtyaO+bQcaGLXnQ0Zr9hbI5/utlCZkLs62exAkLs3
+         ZWO1E1Dsp6yTtclpUIzSmL5juGeCbNZM9WHn1FGaIsbcRQcSlF2i6zPg6PKCNMuUmLS/
+         5UfhwooGL56oX9pVqhwrN42N/A2IeQzxKg3WUPuobxIPngtOkHUOUlvePMtch19gRvmC
+         RLzeVCQLz6EGE+2z1Zys9DttQ4dGrNcRhUGSMe0J95FDiYm13/IlRhCAaW17sJ+8YIbr
+         d7Dowcc7g1IRdVIKZhSIwujjG7AHdhfj4CUkQvyTj1teCgrMcSeDra8BDOGD+7x9wR5w
+         faOg==
+X-Gm-Message-State: APuU4Z9OBNM3x1ZF1UrsAdv3TkdOxH6fD19gTsUJmXW80ofuhnMHuK1W
+	6MdwWOJIEq6ySpH8l58mQQPigsOLH67bur43BDamTXkE/YsnYZavaIFe
+X-Gm-Gg: AYBFou3csJxUxK4IMQPsfLrCZtZLP0Ss/Nl6bDsjbR8I4cm7a/JSYIkzZu8qXvIcUm6
+	HbQ58jIGdr1x29R82UdNmNPSyglyJCb+5fKxjCWp2/DY9gtfeBTsztxz9kNIOMbJLOJ0ts9PHhq
+	Uj0ZaIPxaYoU2ZkzcHNpBlRbm7adhZKolzw2pgjKVAykUGW1oE5WuX0IsegIML/9TBhHcu9cFy8
+	+l1GMN625KiIb2+hufLV62fkRRkGSOV5+UHP54cQuYlVnbRa7qtTGgAFKDCdNnXRYyBbM3b4rNF
+	ZZwEbOTRb3fJfvC6m8hSofq6RWFzUjNisWgITcwfFLSyy8eb908Fp1qMUh+vFfBoJTOlC2HB4Cy
+	YyjiaFLWvSmFWv6RfDbK0JbvEFQ8otgGdXnAitbbi5CRyuyVFPQqwxoH7xu/QCdIDFLjZFhbu6V
+	kEzZTgKsUHfvtzAufZP4AsNOLOwVyM3ktYHaBs5gTONpclZr5/K96u9dx5FSxtOndEvO2QwCFSf
+	Fmdn1IcHQIKDlJGXw/flZ1YtTeY49EWhTVnCQTc0LKHvtgAKqJrwDAfzMQM0pWSjRrW/0mgx1CV
+	iSaI7AsBUEuipsWn5ZpKKtPmuPhHrcT0E+Q7m69rypw75qCqsxZTVUgWlQJi1rV/jMRURZmz326
+	eVufdjEzymQNKniflYtEise5pLpRIdMdeL4CyL5h0fue9
+X-Received: by 2002:a17:90b:5910:b0:3b0:aaed:48d0 with SMTP id 98e67ed59e1d1-3b1b0b4d0d0mr6724017a91.37.1794743784133;
+        Sun, 15 Nov 2026 03:56:24 -0800 (PST)
 Received: from acemagic-m1.tail4fb79.ts.net ([2401:7400:c804:b668:5ade:5fb:5602:326b])
-        by smtp.gmail.com with ESMTPSA id 98e67ed59e1d1-3b1b3ac294bsm5853901a91.2.2026.11.15.03.56.17
+        by smtp.gmail.com with ESMTPSA id 98e67ed59e1d1-3b1b3ac294bsm5853901a91.2.2026.11.15.03.56.21
         (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
-        Sun, 15 Nov 2026 03:56:18 -0800 (PST)
+        Sun, 15 Nov 2026 03:56:23 -0800 (PST)
 From: Ho Jie Feng <hjf3108@gmail.com>
 To: Ping-Ke Shih <pkshih@realtek.com>
 Cc: linux-wireless@vger.kernel.org,
@@ -85,9 +85,9 @@ Cc: linux-wireless@vger.kernel.org,
 	Bitterblue Smith <rtl8821cerfe2@gmail.com>,
 	Luka Gejak <luka.gejak@linux.dev>,
 	Ho Jie Feng <hjf3108@gmail.com>
-Subject: [PATCH rtw-next v4 4/7] wifi: rtw88: 88xxa: receive VHT SU beamformed transmissions
-Date: Sun, 15 Nov 2026 19:43:30 +0800
-Message-ID: <20261115114336.1739863-5-hjf3108@gmail.com>
+Subject: [PATCH rtw-next v4 5/7] wifi: rtw88: prepare frequency-offset correction for more chips
+Date: Sun, 15 Nov 2026 19:43:31 +0800
+Message-ID: <20261115114336.1739863-6-hjf3108@gmail.com>
 X-Mailer: git-send-email 2.53.0
 In-Reply-To: <20261115114336.1739863-1-hjf3108@gmail.com>
 References: <20261115114336.1739863-1-hjf3108@gmail.com>
@@ -102,281 +102,282 @@ Precedence: list
 MIME-Version: 1.0
 Content-Transfer-Encoding: 8bit
 
-Implement beamformee support for 88xxa since they have
-support for it.
+Promote chip specific functions into the common core for cfo tracking.
+These become helpers which can be used by the other drivers.
 
 Signed-off-by: Ho Jie Feng <hjf3108@gmail.com>
 ---
- drivers/net/wireless/realtek/rtw88/bf.h       |  7 ++
- drivers/net/wireless/realtek/rtw88/reg.h      |  1 +
- drivers/net/wireless/realtek/rtw88/rtw8812a.c |  3 +-
- drivers/net/wireless/realtek/rtw88/rtw8814a.c | 42 ++++++++++-
- drivers/net/wireless/realtek/rtw88/rtw8821a.c |  3 +-
- drivers/net/wireless/realtek/rtw88/rtw88xxa.c | 73 +++++++++++++++++++
- drivers/net/wireless/realtek/rtw88/rtw88xxa.h |  2 +
- 7 files changed, 126 insertions(+), 5 deletions(-)
+ drivers/net/wireless/realtek/rtw88/phy.c      | 106 ++++++++++++++++++
+ drivers/net/wireless/realtek/rtw88/phy.h      |   2 +
+ drivers/net/wireless/realtek/rtw88/rtw8822c.c | 100 +----------------
+ drivers/net/wireless/realtek/rtw88/rtw8822c.h |   3 -
+ 4 files changed, 113 insertions(+), 98 deletions(-)
 
-diff --git a/drivers/net/wireless/realtek/rtw88/bf.h b/drivers/net/wireless/realtek/rtw88/bf.h
-index a5d3010e6b..3a53e69d01 100644
---- a/drivers/net/wireless/realtek/rtw88/bf.h
-+++ b/drivers/net/wireless/realtek/rtw88/bf.h
-@@ -12,9 +12,16 @@
- #define REG_ASSOCIATED_BFMER0_INFO	0x06E4
- #define REG_ASSOCIATED_BFMER1_INFO	0x06EC
- #define REG_TX_CSI_RPT_PARAM_BW20	0x06F4
-+#define REG_TX_CSI_RPT_PARAM_BW40	0x06F8
-+#define REG_TX_CSI_RPT_PARAM_BW80	0x06FC
- #define REG_SND_PTCL_CTRL		0x0718
-+#define BIT_USE_NSTS			BIT(7)
- #define BIT_DIS_CHK_VHTSIGB_CRC		BIT(6)
- #define BIT_DIS_CHK_VHTSIGA_CRC		BIT(5)
-+#define BIT_BFPARAM_SEL			BIT(4)
-+#define BIT_CSISEQ_SEL			BIT(3)
-+#define BIT_HT_NDPA_EN			BIT(1)
-+#define BIT_VHT_NDPA_EN			BIT(0)
- #define BIT_MASK_BEAMFORM		(GENMASK(4, 0) | BIT(7))
- #define REG_MU_TX_CTL			0x14C0
- #define REG_MU_STA_GID_VLD		0x14C4
-diff --git a/drivers/net/wireless/realtek/rtw88/reg.h b/drivers/net/wireless/realtek/rtw88/reg.h
-index afcdb66fdb..f8ec1e2931 100644
---- a/drivers/net/wireless/realtek/rtw88/reg.h
-+++ b/drivers/net/wireless/realtek/rtw88/reg.h
-@@ -671,6 +671,7 @@
- #define REG_IQK_COM96		0x0984
+diff --git a/drivers/net/wireless/realtek/rtw88/phy.c b/drivers/net/wireless/realtek/rtw88/phy.c
+index e2515a662b..d0c1fb65be 100644
+--- a/drivers/net/wireless/realtek/rtw88/phy.c
++++ b/drivers/net/wireless/realtek/rtw88/phy.c
+@@ -720,6 +720,112 @@ void rtw_phy_parsing_cfo(struct rtw_dev *rtwdev,
+ }
+ EXPORT_SYMBOL(rtw_phy_parsing_cfo);
  
- #define REG_FAS			0x09a4
-+#define REG_CSI_CONTENT_VALUE	0x09b4
- #define REG_RXSB		0x0a00
- #define BIT_RXSB_ANA_DIV	BIT(15)
- #define REG_CCK_RX		0x0a04
-diff --git a/drivers/net/wireless/realtek/rtw88/rtw8812a.c b/drivers/net/wireless/realtek/rtw88/rtw8812a.c
-index 55f1d3d324..5d58dff4fc 100644
---- a/drivers/net/wireless/realtek/rtw88/rtw8812a.c
-+++ b/drivers/net/wireless/realtek/rtw88/rtw8812a.c
-@@ -931,7 +931,7 @@ static const struct rtw_chip_ops rtw8812a_ops = {
- 	.phy_calibration	= rtw8812a_phy_calibration,
- 	.cck_pd_set		= rtw_phy_cck_pd_set,
- 	.pwr_track		= rtw8812a_pwr_track,
--	.config_bfee		= NULL,
-+	.config_bfee		= rtw88xxa_bf_config_bfee,
- 	.set_gid_table		= NULL,
- 	.cfg_csi_rate		= NULL,
- 	.led_set		= rtw8812a_led_set,
-@@ -1084,6 +1084,7 @@ const struct rtw_chip_info rtw8812a_hw_spec = {
- 	.old_datarate_fb_limit = true,
- 	.usb_tx_agg_desc_num = 1,
- 	.iqk_threshold = 8,
-+	.bfer_su_max_num = 2,
- 	.ampdu_density = IEEE80211_HT_MPDU_DENSITY_16,
- 	.max_scan_ie_len = IEEE80211_MAX_DATA_LEN,
- 
-diff --git a/drivers/net/wireless/realtek/rtw88/rtw8814a.c b/drivers/net/wireless/realtek/rtw88/rtw8814a.c
-index e35c57c9d1..13c22d2e50 100644
---- a/drivers/net/wireless/realtek/rtw88/rtw8814a.c
-+++ b/drivers/net/wireless/realtek/rtw88/rtw8814a.c
-@@ -4,6 +4,7 @@
- 
- #include <linux/usb.h>
- #include "main.h"
-+#include "bf.h"
- #include "coex.h"
- #include "tx.h"
- #include "phy.h"
-@@ -115,10 +116,13 @@ static void rtw8814a_init_hwcap(struct rtw_dev *rtwdev)
- 			   BIT(RTW_CHANNEL_WIDTH_80);
- 	efuse->hw_cap.ptcl = EFUSE_HW_CAP_PTCL_VHT;
- 
--	if (hal->rf_type == RF_3T3R)
-+	if (hal->rf_type == RF_3T3R) {
- 		efuse->hw_cap.nss = 3;
--	else
-+		hal->bfee_sts_cap = 2;
++#define CFO_TRK_ENABLE_TH	20
++#define CFO_TRK_STOP_TH		10
++#define CFO_TRK_ADJ_TH		10
++
++static u8 rtw_phy_cfo_tracking_reset(struct rtw_dev *rtwdev)
++{
++	struct rtw_dm_info *dm_info = &rtwdev->dm_info;
++	struct rtw_cfo_track *cfo = &dm_info->cfo_track;
++
++	cfo->is_adjust = true;
++
++	if (cfo->crystal_cap > rtwdev->efuse.crystal_cap)
++		return cfo->crystal_cap - 1;
++	else if (cfo->crystal_cap < rtwdev->efuse.crystal_cap)
++		return cfo->crystal_cap + 1;
++
++	return cfo->crystal_cap;
++}
++
++void rtw_phy_cfo_xcap_init(struct rtw_dev *rtwdev)
++{
++	struct rtw_dm_info *dm_info = &rtwdev->dm_info;
++	struct rtw_cfo_track *cfo = &dm_info->cfo_track;
++
++	cfo->crystal_cap = rtwdev->efuse.crystal_cap;
++	cfo->is_adjust = true;
++}
++EXPORT_SYMBOL(rtw_phy_cfo_xcap_init);
++
++#define REPORT_TO_KHZ(val) ({typeof(val) _v = (val); (_v << 1) + (_v >> 1); })
++static s32 rtw_phy_cfo_calc_avg(struct rtw_dev *rtwdev, u8 path_num)
++{
++	struct rtw_dm_info *dm_info = &rtwdev->dm_info;
++	struct rtw_cfo_track *cfo = &dm_info->cfo_track;
++	s32 cfo_avg, cfo_path_sum = 0, cfo_rpt_sum;
++	u8 i;
++
++	for (i = 0; i < path_num; i++) {
++		cfo_rpt_sum = REPORT_TO_KHZ(cfo->cfo_tail[i]);
++
++		if (cfo->cfo_cnt[i])
++			cfo_avg = cfo_rpt_sum / cfo->cfo_cnt[i];
++		else
++			cfo_avg = 0;
++
++		cfo_path_sum += cfo_avg;
++	}
++
++	for (i = 0; i < path_num; i++) {
++		cfo->cfo_tail[i] = 0;
++		cfo->cfo_cnt[i] = 0;
++	}
++
++	return cfo_path_sum / path_num;
++}
++
++static void rtw_phy_cfo_need_adjust(struct rtw_dev *rtwdev, s32 cfo_avg)
++{
++	struct rtw_dm_info *dm_info = &rtwdev->dm_info;
++	struct rtw_cfo_track *cfo = &dm_info->cfo_track;
++
++	if (!cfo->is_adjust) {
++		if (abs(cfo_avg) > CFO_TRK_ENABLE_TH)
++			cfo->is_adjust = true;
 +	} else {
- 		efuse->hw_cap.nss = 2;
-+		hal->bfee_sts_cap = 1;
++		if (abs(cfo_avg) <= CFO_TRK_STOP_TH)
++			cfo->is_adjust = false;
 +	}
- 
- 	rtw_dbg(rtwdev, RTW_DBG_EFUSE,
- 		"hw cap: hci=0x%02x, bw=0x%02x, ptcl=0x%02x, ant_num=%d, nss=%d\n",
-@@ -2039,6 +2043,37 @@ static void rtw8814a_led_set(struct led_classdev *led,
- 	rtw_write32(rtwdev, REG_GPIO_PIN_CTRL_2, led_gpio_cfg);
- }
- 
-+#define RTW_NDP_RX_STANDBY_TIME_8814A	0x40
-+#define RTW_SND_CTRL_SOUNDING_8814A	(BIT_USE_NSTS | \
-+					 BIT_DIS_CHK_VHTSIGB_CRC | \
-+					 BIT_BFPARAM_SEL | BIT_CSISEQ_SEL | \
-+					 BIT_HT_NDPA_EN | BIT_VHT_NDPA_EN)
-+#define RTW_CSI_RPT_OFFSET_VHT_8814A	2
-+#define RTW_CSI_RPT_OFFSET_HT_8814A	2
-+
-+static void rtw8814a_bf_enable_bfee_su(struct rtw_dev *rtwdev,
-+				       struct rtw_vif *vif,
-+				       struct rtw_bfee *bfee)
-+{
-+	rtw_bf_enable_bfee_su(rtwdev, vif, bfee);
-+
-+	rtw_write8(rtwdev, REG_SND_PTCL_CTRL + 1, RTW_CSI_RPT_OFFSET_VHT_8814A);
-+	rtw_write8(rtwdev, REG_SND_PTCL_CTRL + 2, RTW_CSI_RPT_OFFSET_HT_8814A);
-+	rtw_write8(rtwdev, REG_SND_PTCL_CTRL, RTW_SND_CTRL_SOUNDING_8814A);
-+	rtw_write8(rtwdev, REG_SND_PTCL_CTRL + 3,
-+		   RTW_NDP_RX_STANDBY_TIME_8814A);
 +}
 +
-+static void rtw8814a_bf_config_bfee(struct rtw_dev *rtwdev,
-+				    struct rtw_vif *vif,
-+				    struct rtw_bfee *bfee, bool enable)
++u8 rtw_phy_cfo_xcap_track(struct rtw_dev *rtwdev, u8 xcap_max, bool bt_hold)
 +{
-+	if (enable)
-+		rtw8814a_bf_enable_bfee_su(rtwdev, vif, bfee);
-+	else
-+		rtw_bf_remove_bfee_su(rtwdev, bfee);
-+}
++	struct rtw_dm_info *dm_info = &rtwdev->dm_info;
++	struct rtw_cfo_track *cfo = &dm_info->cfo_track;
++	u8 path_num = rtwdev->hal.rf_path_num;
++	s8 crystal_cap = cfo->crystal_cap;
++	s32 cfo_avg = 0;
 +
- static void rtw8814a_fill_txdesc_checksum(struct rtw_dev *rtwdev,
- 					  struct rtw_tx_pkt_info *pkt_info,
- 					  u8 *txdesc)
-@@ -2068,7 +2103,7 @@ static const struct rtw_chip_ops rtw8814a_ops = {
- 	.phy_calibration	= rtw8814a_phy_calibration,
- 	.cck_pd_set		= rtw8814a_phy_cck_pd_set,
- 	.pwr_track		= rtw8814a_pwr_track,
--	.config_bfee		= NULL,
-+	.config_bfee		= rtw8814a_bf_config_bfee,
- 	.set_gid_table		= NULL,
- 	.cfg_csi_rate		= NULL,
- 	.led_set		= rtw8814a_led_set,
-@@ -2231,6 +2266,7 @@ const struct rtw_chip_info rtw8814a_hw_spec = {
- 	.rfe_defs = rtw8814a_rfe_defs,
- 	.rfe_defs_size = ARRAY_SIZE(rtw8814a_rfe_defs),
- 	.iqk_threshold = 8,
-+	.bfer_su_max_num = 2,
- 	.max_scan_ie_len = IEEE80211_MAX_DATA_LEN,
- 
- 	.coex_para_ver = 0,
-diff --git a/drivers/net/wireless/realtek/rtw88/rtw8821a.c b/drivers/net/wireless/realtek/rtw88/rtw8821a.c
-index 6096d3b8e4..6d106ae70d 100644
---- a/drivers/net/wireless/realtek/rtw88/rtw8821a.c
-+++ b/drivers/net/wireless/realtek/rtw88/rtw8821a.c
-@@ -877,7 +877,7 @@ static const struct rtw_chip_ops rtw8821a_ops = {
- 	.phy_calibration	= rtw8821a_phy_calibration,
- 	.cck_pd_set		= rtw_phy_cck_pd_set,
- 	.pwr_track		= rtw8821a_pwr_track,
--	.config_bfee		= NULL,
-+	.config_bfee		= rtw88xxa_bf_config_bfee,
- 	.set_gid_table		= NULL,
- 	.cfg_csi_rate		= NULL,
- 	.led_set		= rtw8821a_led_set,
-@@ -1188,6 +1188,7 @@ const struct rtw_chip_info rtw8821a_hw_spec = {
- 	.old_datarate_fb_limit = true,
- 	.usb_tx_agg_desc_num = 6,
- 	.iqk_threshold = 8,
-+	.bfer_su_max_num = 2,
- 	.ampdu_density = IEEE80211_HT_MPDU_DENSITY_16,
- 	.max_scan_ie_len = IEEE80211_MAX_DATA_LEN,
- 
-diff --git a/drivers/net/wireless/realtek/rtw88/rtw88xxa.c b/drivers/net/wireless/realtek/rtw88/rtw88xxa.c
-index 5ffa29d181..9780999a9b 100644
---- a/drivers/net/wireless/realtek/rtw88/rtw88xxa.c
-+++ b/drivers/net/wireless/realtek/rtw88/rtw88xxa.c
-@@ -138,6 +138,7 @@ static void rtw88xxa_read_usb_type(struct rtw_dev *rtwdev)
- 		efuse->hw_cap.nss = 1;
- 	else
- 		efuse->hw_cap.nss = 2;
-+	hal->bfee_sts_cap = 1;
- 
- 	if (rtwdev->chip->id == RTW_CHIP_TYPE_8821A)
- 		goto print_hw_cap;
-@@ -197,6 +198,78 @@ static void rtw88xxa_read_usb_type(struct rtw_dev *rtwdev)
- 		efuse->hw_cap.ant_num, efuse->hw_cap.nss);
- }
- 
-+#define RTW_NDP_RX_STANDBY_TIME_88XXA	0x50
-+#define RTW_SND_CTRL_REMOVE_88XXA	(BIT_USE_NSTS | \
-+					 BIT_DIS_CHK_VHTSIGB_CRC | \
-+					 BIT_CSISEQ_SEL)
-+#define RTW_SND_CTRL_SOUNDING_88XXA	(RTW_SND_CTRL_REMOVE_88XXA | \
-+					 BIT_HT_NDPA_EN | BIT_VHT_NDPA_EN)
-+/* REG_CSI_CONTENT_VALUE from the 8812a (2T2R) and 8821a (1T1R) bb tables */
-+#define RTW_CSI_CONTENT_2T2R_88XXA	0x00000000
-+#define RTW_CSI_CONTENT_1T1R_88XXA	0x01081008
++	if (rtwdev->sta_cnt != 1)
++		return rtw_phy_cfo_tracking_reset(rtwdev);
 +
-+void rtw88xxa_bf_config_bfee(struct rtw_dev *rtwdev, struct rtw_vif *vif,
-+			     struct rtw_bfee *bfee, bool enable)
-+{
-+	static const u32 csi_rpt_regs[] = {
-+		REG_TX_CSI_RPT_PARAM_BW20,
-+		REG_TX_CSI_RPT_PARAM_BW40,
-+		REG_TX_CSI_RPT_PARAM_BW80,
-+	};
-+	struct rtw_bf_info *bf_info = &rtwdev->bf_info;
-+	u8 nc_index = rtwdev->efuse.hw_cap.nss - 1;
-+	u8 nr_index = 1, grouping = 0, codebookinfo = 1, coefficientsize = 0;
-+	u8 slot = bfee->su_reg_index;
-+	u32 addr_bfer_info;
-+	u32 csi_param;
-+	int i;
++	if (cfo->packet_count == cfo->packet_count_pre)
++		return cfo->crystal_cap;
 +
-+	if (bfee->role != RTW_BFEE_SU || slot >= 2)
-+		return;
++	cfo->packet_count_pre = cfo->packet_count;
++	cfo_avg = rtw_phy_cfo_calc_avg(rtwdev, path_num);
++	rtw_phy_cfo_need_adjust(rtwdev, cfo_avg);
 +
-+	addr_bfer_info = slot ? REG_ASSOCIATED_BFMER1_INFO :
-+				REG_ASSOCIATED_BFMER0_INFO;
-+
-+	rtw_dbg(rtwdev, RTW_DBG_BF, "SU beamformee %s slot %u\n",
-+		enable ? "enable" : "disable", slot);
-+
-+	if (!enable) {
-+		rtw_write32(rtwdev, addr_bfer_info, 0);
-+		rtw_write16(rtwdev, addr_bfer_info + 4, 0);
-+
-+		clear_bit(slot, bf_info->bfer_su_reg_maping);
-+		bfee->su_reg_index = 0xff;
-+
-+		if (!bf_info->bfer_su_cnt)
-+			rtw_write8(rtwdev, REG_SND_PTCL_CTRL,
-+				   RTW_SND_CTRL_REMOVE_88XXA);
-+		return;
++	if (bt_hold) {
++		cfo->is_adjust = false;
++		return rtwdev->efuse.crystal_cap;
 +	}
 +
-+	if (rtwdev->efuse.hw_cap.nss == 2)
-+		rtw_write32(rtwdev, REG_CSI_CONTENT_VALUE,
-+			    RTW_CSI_CONTENT_2T2R_88XXA);
-+	else
-+		rtw_write32(rtwdev, REG_CSI_CONTENT_VALUE,
-+			    RTW_CSI_CONTENT_1T1R_88XXA);
++	if (cfo->is_adjust) {
++		if (cfo_avg > CFO_TRK_ADJ_TH)
++			crystal_cap++;
++		else if (cfo_avg < -CFO_TRK_ADJ_TH)
++			crystal_cap--;
 +
-+	csi_param = (coefficientsize << 10) | (codebookinfo << 8) |
-+		    (grouping << 6) | (nr_index << 3) | nc_index;
-+	/* same parameters for both beamformer slots */
-+	csi_param |= csi_param << 16;
++		crystal_cap = clamp_t(s8, crystal_cap, 0, xcap_max);
++	}
 +
-+	rtw_write8(rtwdev, REG_SND_PTCL_CTRL, RTW_SND_CTRL_SOUNDING_88XXA);
-+	for (i = 0; i < ETH_ALEN; i++)
-+		rtw_write8(rtwdev, addr_bfer_info + i, bfee->mac_addr[i]);
-+
-+	for (i = 0; i < ARRAY_SIZE(csi_rpt_regs); i++)
-+		rtw_write32(rtwdev, csi_rpt_regs[i], csi_param);
-+
-+	rtw_write8(rtwdev, REG_SND_PTCL_CTRL + 3,
-+		   RTW_NDP_RX_STANDBY_TIME_88XXA);
++	return (u8)crystal_cap;
 +}
-+EXPORT_SYMBOL(rtw88xxa_bf_config_bfee);
++EXPORT_SYMBOL(rtw_phy_cfo_xcap_track);
 +
- int rtw88xxa_read_efuse(struct rtw_dev *rtwdev, u8 *log_map, u8 *phy_map)
+ static void rtw_phy_cfo_track(struct rtw_dev *rtwdev)
  {
  	const struct rtw_chip_info *chip = rtwdev->chip;
-diff --git a/drivers/net/wireless/realtek/rtw88/rtw88xxa.h b/drivers/net/wireless/realtek/rtw88/rtw88xxa.h
-index 6597ca0dfc..150e86ea74 100644
---- a/drivers/net/wireless/realtek/rtw88/rtw88xxa.h
-+++ b/drivers/net/wireless/realtek/rtw88/rtw88xxa.h
-@@ -170,5 +170,7 @@ bool rtw88xxa_iqk_finish(int average, int threshold,
- void rtw88xxa_phy_pwrtrack(struct rtw_dev *rtwdev,
- 			   void (*do_lck)(struct rtw_dev *rtwdev),
- 			   void (*do_iqk)(struct rtw_dev *rtwdev));
-+void rtw88xxa_bf_config_bfee(struct rtw_dev *rtwdev, struct rtw_vif *vif,
-+			     struct rtw_bfee *bfee, bool enable);
+diff --git a/drivers/net/wireless/realtek/rtw88/phy.h b/drivers/net/wireless/realtek/rtw88/phy.h
+index 8a843aac73..b551cb860d 100644
+--- a/drivers/net/wireless/realtek/rtw88/phy.h
++++ b/drivers/net/wireless/realtek/rtw88/phy.h
+@@ -68,6 +68,8 @@ void rtw_phy_adaptivity_set_mode(struct rtw_dev *rtwdev);
+ void rtw_phy_cck_pd_set(struct rtw_dev *rtwdev, u8 new_lvl);
+ void rtw_phy_parsing_cfo(struct rtw_dev *rtwdev,
+ 			 struct rtw_rx_pkt_stat *pkt_stat);
++void rtw_phy_cfo_xcap_init(struct rtw_dev *rtwdev);
++u8 rtw_phy_cfo_xcap_track(struct rtw_dev *rtwdev, u8 xcap_max, bool bt_hold);
+ void rtw_phy_tx_path_diversity(struct rtw_dev *rtwdev);
  
- #endif
+ struct rtw_txpwr_lmt_cfg_pair {
+diff --git a/drivers/net/wireless/realtek/rtw88/rtw8822c.c b/drivers/net/wireless/realtek/rtw88/rtw8822c.c
+index 09315d23e2..d7b0204e6d 100644
+--- a/drivers/net/wireless/realtek/rtw88/rtw8822c.c
++++ b/drivers/net/wireless/realtek/rtw88/rtw8822c.c
+@@ -4243,103 +4243,13 @@ static void rtw8822c_set_crystal_cap(struct rtw_dev *rtwdev, u8 crystal_cap)
+ 	rtw8822c_set_crystal_cap_reg(rtwdev, crystal_cap);
+ }
+ 
+-static void rtw8822c_cfo_tracking_reset(struct rtw_dev *rtwdev)
+-{
+-	struct rtw_dm_info *dm_info = &rtwdev->dm_info;
+-	struct rtw_cfo_track *cfo = &dm_info->cfo_track;
+-
+-	cfo->is_adjust = true;
+-
+-	if (cfo->crystal_cap > rtwdev->efuse.crystal_cap)
+-		rtw8822c_set_crystal_cap(rtwdev, cfo->crystal_cap - 1);
+-	else if (cfo->crystal_cap < rtwdev->efuse.crystal_cap)
+-		rtw8822c_set_crystal_cap(rtwdev, cfo->crystal_cap + 1);
+-}
+-
+-static void rtw8822c_cfo_init(struct rtw_dev *rtwdev)
+-{
+-	struct rtw_dm_info *dm_info = &rtwdev->dm_info;
+-	struct rtw_cfo_track *cfo = &dm_info->cfo_track;
+-
+-	cfo->crystal_cap = rtwdev->efuse.crystal_cap;
+-	cfo->is_adjust = true;
+-}
+-
+-#define REPORT_TO_KHZ(val) ({typeof(val) _v = (val); (_v << 1) + (_v >> 1); })
+-static s32 rtw8822c_cfo_calc_avg(struct rtw_dev *rtwdev, u8 path_num)
+-{
+-	struct rtw_dm_info *dm_info = &rtwdev->dm_info;
+-	struct rtw_cfo_track *cfo = &dm_info->cfo_track;
+-	s32 cfo_avg, cfo_path_sum = 0, cfo_rpt_sum;
+-	u8 i;
+-
+-	for (i = 0; i < path_num; i++) {
+-		cfo_rpt_sum = REPORT_TO_KHZ(cfo->cfo_tail[i]);
+-
+-		if (cfo->cfo_cnt[i])
+-			cfo_avg = cfo_rpt_sum / cfo->cfo_cnt[i];
+-		else
+-			cfo_avg = 0;
+-
+-		cfo_path_sum += cfo_avg;
+-	}
+-
+-	for (i = 0; i < path_num; i++) {
+-		cfo->cfo_tail[i] = 0;
+-		cfo->cfo_cnt[i] = 0;
+-	}
+-
+-	return cfo_path_sum / path_num;
+-}
+-
+-static void rtw8822c_cfo_need_adjust(struct rtw_dev *rtwdev, s32 cfo_avg)
+-{
+-	struct rtw_dm_info *dm_info = &rtwdev->dm_info;
+-	struct rtw_cfo_track *cfo = &dm_info->cfo_track;
+-
+-	if (!cfo->is_adjust) {
+-		if (abs(cfo_avg) > CFO_TRK_ENABLE_TH)
+-			cfo->is_adjust = true;
+-	} else {
+-		if (abs(cfo_avg) <= CFO_TRK_STOP_TH)
+-			cfo->is_adjust = false;
+-	}
+-
+-	if (!rtw_coex_disabled(rtwdev)) {
+-		cfo->is_adjust = false;
+-		rtw8822c_set_crystal_cap(rtwdev, rtwdev->efuse.crystal_cap);
+-	}
+-}
+-
+ static void rtw8822c_cfo_track(struct rtw_dev *rtwdev)
+ {
+-	struct rtw_dm_info *dm_info = &rtwdev->dm_info;
+-	struct rtw_cfo_track *cfo = &dm_info->cfo_track;
+-	u8 path_num = rtwdev->hal.rf_path_num;
+-	s8 crystal_cap = cfo->crystal_cap;
+-	s32 cfo_avg = 0;
+-
+-	if (rtwdev->sta_cnt != 1) {
+-		rtw8822c_cfo_tracking_reset(rtwdev);
+-		return;
+-	}
+-
+-	if (cfo->packet_count == cfo->packet_count_pre)
+-		return;
+-
+-	cfo->packet_count_pre = cfo->packet_count;
+-	cfo_avg = rtw8822c_cfo_calc_avg(rtwdev, path_num);
+-	rtw8822c_cfo_need_adjust(rtwdev, cfo_avg);
+-
+-	if (cfo->is_adjust) {
+-		if (cfo_avg > CFO_TRK_ADJ_TH)
+-			crystal_cap++;
+-		else if (cfo_avg < -CFO_TRK_ADJ_TH)
+-			crystal_cap--;
++	u8 crystal_cap;
+ 
+-		crystal_cap = clamp_t(s8, crystal_cap, 0, XCAP_MASK);
+-		rtw8822c_set_crystal_cap(rtwdev, (u8)crystal_cap);
+-	}
++	crystal_cap = rtw_phy_cfo_xcap_track(rtwdev, XCAP_MASK,
++					     !rtw_coex_disabled(rtwdev));
++	rtw8822c_set_crystal_cap(rtwdev, crystal_cap);
+ }
+ 
+ static const struct rtw_phy_cck_pd_reg
+@@ -4985,7 +4895,7 @@ static const struct rtw_chip_ops rtw8822c_ops = {
+ 	.cfg_csi_rate		= rtw_bf_cfg_csi_rate,
+ 	.adaptivity_init	= rtw8822c_adaptivity_init,
+ 	.adaptivity		= rtw8822c_adaptivity,
+-	.cfo_init		= rtw8822c_cfo_init,
++	.cfo_init		= rtw_phy_cfo_xcap_init,
+ 	.cfo_track		= rtw8822c_cfo_track,
+ 	.config_tx_path		= rtw8822c_config_tx_path,
+ 	.config_txrx_mode	= rtw8822c_config_trx_mode,
+diff --git a/drivers/net/wireless/realtek/rtw88/rtw8822c.h b/drivers/net/wireless/realtek/rtw88/rtw8822c.h
+index fc62b67a15..c27e4c394a 100644
+--- a/drivers/net/wireless/realtek/rtw88/rtw8822c.h
++++ b/drivers/net/wireless/realtek/rtw88/rtw8822c.h
+@@ -181,9 +181,6 @@ const struct rtw_table name ## _tbl = {			\
+ #define REG_ANAPARLDO_POW_MAC	0x0029
+ #define BIT_LDOE25_PON		BIT(0)
+ #define XCAP_MASK		GENMASK(6, 0)
+-#define CFO_TRK_ENABLE_TH	20
+-#define CFO_TRK_STOP_TH		10
+-#define CFO_TRK_ADJ_TH		10
+ 
+ #define REG_TXDFIR0		0x808
+ #define REG_DFIRBW		0x810
 -- 
 2.53.0
 
