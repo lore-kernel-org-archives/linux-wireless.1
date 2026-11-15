@@ -1,49 +1,92 @@
-Authentication-Results: smtp.subspace.kernel.org; arc=none smtp.remote-ip=95.143.172.20
+Authentication-Results: smtp.subspace.kernel.org; arc=none smtp.remote-ip=74.125.82.180
 ARC-Seal: i=1; d=subspace.kernel.org; s=arc20261015; a=rsa-sha256; cv=none;
-	t=1794752962;
-	b=PGDsGTEidf6KJFah+RzSB6t1Eipb3XC3hcAgK1I5RFXGZoig/dBZ0FymHfSrjgmcHtdd
-	 /Q+U2eL64Tjhl8hUVElg5E2shL1qRQfqAfk2iyeQ4VeX7a6RPSylUCZF+9Zr5XgpVB1J9
-	 uyC7bKkU2ynwCar5AdjZ9wiR5WyGk9a8onqyGaYpVXdG80Yo+RNRCp89PQVUNXRxWKNXx
-	 WRD++Ub2bnFaUthXiA2EIkT/irOpr3zlFSkxcQxQ1ezMpXuFsbnK+usuOex6VvtY1MtE9
-	 xFJnaUKTSqtJ6MlEgow3fPAnXTfQK1Czv6wzxeCvWYoetR0cQ9vAHGXMNuYVw4vziTA==
+	t=1794757433;
+	b=TYvIfDyLxAsX2BueLEqSgDuOk3EbzFY5NtLZ7suBjQ3bVifEPEbyXPvX9aYuzxj1H0yC
+	 rGkOVAoGY0ndjBKtaCPM2D18jcyEmRlIBvKIkq4f9thMY1wWbhQQAJXWQ428IAuizSCpO
+	 dHKcIklyjxuZ0DdgwzW7a9/IBM96YwOlWOawatmkucdVUtJeV65Oqg2hrc/C5HRM4JX93
+	 FqrU/2nXZjOpj0mUMOwCjJqof5y4xrtiNL7T7mbmFgGGEiLYOybZChgWj8pxMwqsblg7I
+	 3C02EHzVc6SxOjCy/frlyTox0gXwhVYW/y9EFcK4jTn/ZXQ65arfHi74TqtLcyW1r/Q==
 ARC-Message-Signature: i=1; d=subspace.kernel.org; s=arc20261015;
-	a=rsa-sha256; c=relaxed/relaxed; t=1794752962;
-	h=DMARC-Filter:Received:Received:Received:Message-ID:Date:MIME-Version:
-	 User-Agent:Subject:To:Cc:References:Content-Language:From:In-Reply-To:
-	 Content-Type:Content-Transfer-Encoding:X-Rspamd-Bar:X-Rspamd-Report:
-	 X-Rspamd-Score:DKIM-Signature;
-	bh=LIUtwVZijcaea8PHqry13WEVg1Y0ZG+St9hFxwNLtd4=;
-	b=44naMn5JNkIjH/Zcg8j+xds1GnGltvKXcoi67XFmc33KkVkXMkXRvQ/YL+RWxjcqae1M
-	 fUnp8DhWsyZE6u7SHsSa/slEwLM28H2x0wVANY8AMvG4EZEZHvRF43dkCTdP468Qo7Wyy
-	 kj3HwqtRKQTKBO6xzMJZvjlzqAvK24lO1ijd8w6bcqCA26K3wF7Tg0yurBCjXOnxHZCrc
-	 LoIo7kKHmIERZ6IklGsk3PbGtrtNsXGtucxKzRUKndFoThvVvNOK2NO2/L+lbUzJBuJdZ
-	 WEDJn3MMP91vRPOTCa+6uwX0vLL7hdYQgaHnWcfh1vnTuTbY3GVLTxh9czvjyTGk2Vw==
+	a=rsa-sha256; c=relaxed/relaxed; t=1794757433;
+	h=DMARC-Filter:Received:DKIM-Signature:X-Google-DKIM-Signature:
+	 X-Gm-Message-State:X-Gm-Gg:X-Received:Received:From:To:Cc:Subject:
+	 Date:Message-ID:X-Mailer:In-Reply-To:References:MIME-Version:
+	 Content-Transfer-Encoding;
+	bh=aQeEqSqLx+Kp/30sy6eZjaTFG/cEmbiqOE4nLKGI28I=;
+	b=plbdF+NuSh9Q/dYajxubkwXbIyy/AlBabKF6VggRr0WJYfL1TJ4Pg9GzdlxEmqus621y
+	 9BKxaGf49GXJkwC1C2vKyVYt5Z4WdCCvkdCeCWOBVAK8QLlxILOtEZb21MXkoZmMP4Jkl
+	 qqMt7YdtQ/oLFgJBJ1UAd2wQtbWRtY5H0H6lN5TdmXcaBvVknTVhbzRnA+AsElroON/lr
+	 tvpPSuvC/YPhOSXsAkGlD2O4vg+iXDpT2gMlkvxrGj6RCcXMsLI+YJuyVoMykm6B9a4m7
+	 vC03ndLnLaqKShf1qMJz58iVecvpfg/Dovo3ccwlgfEjGXxG8jyXyorcvOEOSGQFf2A==
 ARC-Authentication-Results: i=1; smtp.subspace.kernel.org; 
-	dmarc=pass header.from=lausen.nl;
-	spf=pass smtp.mailfrom=lausen.nl;
-	dkim=pass header.d=lausen.nl header.i=@lausen.nl header.a=rsa-sha256 header.s=uberspace header.b="nTECe/ak";
-	arc=none smtp.remote-ip=95.143.172.20
-Received: from mailgate01.uberspace.is (mailgate01.uberspace.is [95.143.172.20])
-	(using TLSv1.3 with cipher TLS_AES_256_GCM_SHA384 (256/256 bits)
-	 key-exchange X25519 server-signature ECDSA (prime256v1))
+	dmarc=pass header.from=gmail.com;
+	spf=pass smtp.mailfrom=gmail.com;
+	dkim=pass header.d=gmail.com header.i=@gmail.com header.a=rsa-sha256 header.s=20260707 header.b=LQW6XtIt;
+	arc=none smtp.remote-ip=74.125.82.180
+Received: from mail-dy1-f180.google.com (mail-dy1-f180.google.com [74.125.82.180])
+	(using TLSv1.3 with cipher TLS_AES_128_GCM_SHA256 (128/128 bits)
+	 key-exchange X25519 server-signature ECDSA (prime256v1) server-digest SHA256)
 	(No client certificate requested)
-	by smtp.subspace.kernel.org (Postfix) with ESMTPS id 7C559606A31F
-	for <linux-wireless@vger.kernel.org>; Sun, 15 Nov 2026 14:29:21 +0000 (UTC)
-DMARC-Filter: OpenDMARC Filter v1.4.2 smtp.subspace.kernel.org 7C559606A31F
-Authentication-Results: smtp.subspace.kernel.org; dmarc=pass (p=none dis=none) header.from=lausen.nl
-Authentication-Results: smtp.subspace.kernel.org; spf=pass smtp.mailfrom=lausen.nl
+	by smtp.subspace.kernel.org (Postfix) with ESMTPS id 9E4DC606A32D
+	for <linux-wireless@vger.kernel.org>; Sun, 15 Nov 2026 15:43:52 +0000 (UTC)
+DMARC-Filter: OpenDMARC Filter v1.4.2 smtp.subspace.kernel.org 9E4DC606A32D
+Authentication-Results: smtp.subspace.kernel.org; dmarc=pass (p=none dis=none) header.from=gmail.com
+Authentication-Results: smtp.subspace.kernel.org; spf=pass smtp.mailfrom=gmail.com
 Authentication-Results: smtp.subspace.kernel.org;
-	dkim=pass (4096-bit key) header.d=lausen.nl header.i=@lausen.nl header.a=rsa-sha256 header.s=uberspace header.b=nTECe/ak
-Received: from devico.uberspace.de (devico.uberspace.de [185.26.156.185])
-	by mailgate01.uberspace.is (Postfix) with ESMTPS id F093F60D61
-	for <linux-wireless@vger.kernel.org>; Sun, 15 Nov 2026 15:29:19 +0100 (CET)
-Received: (qmail 28843 invoked by uid 990); 15 Nov 2026 14:29:19 -0000
-Authentication-Results: devico.uberspace.de;
-	auth=pass (plain)
-Received: from unknown (HELO unknown) (::1)
-	by devico.uberspace.de (Haraka/3.1.1) with ESMTPSA; Sun, 15 Nov 2026 15:29:19 +0100
-Message-ID: <3813f20a-7e0a-436e-b8f6-a29756280a74@lausen.nl>
-Date: Sun, 15 Nov 2026 15:29:18 +0100
+	dkim=pass (2048-bit key) header.d=gmail.com header.i=@gmail.com header.a=rsa-sha256 header.s=20260707 header.b=LQW6XtIt
+Received: by mail-dy1-f180.google.com with SMTP id 5a478bee46e88-3282db206d3so7844286eec.0
+        for <linux-wireless@vger.kernel.org>; Sun, 15 Nov 2026 07:43:52 -0800 (PST)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+        d=gmail.com; s=20260707; t=1794757432; x=1795362232; darn=vger.kernel.org;
+        h=content-transfer-encoding:mime-version:references:in-reply-to
+         :message-id:date:subject:cc:to:from:from:to:cc:subject:date
+         :message-id:reply-to:content-type;
+        bh=aQeEqSqLx+Kp/30sy6eZjaTFG/cEmbiqOE4nLKGI28I=;
+        b=LQW6XtItJ3Y5xPLhFo4UcMi12xncRFb02s8hw5IpcQ4UQYFYH5ckAqv1dyx9T45lRW
+         ZSNu2rnDwQZZDoBw2S1DuVj5B+W3BMG/jSTBz0iqnMtWJ2grChQ/hDUujfF3VyNMkJiE
+         GD7U0TitCUXks1hTSWoQNdLJz8/mNviTk8+fR7/sLu/99e+PVejqdqkTztOnhhorX775
+         2sbrCiQlBanwrSNt9xPx2UkS3miIbm7iRRG0tqJ8K7OOwV+N5RfG3PE+yZ8KkcLiD4JG
+         Y7HwRMPheKpvy1EtWFxEGz/5i5hff3BLjzfN604qCOAiZnFEc/sV9hRA6LNpQ+33HiDy
+         BAaw==
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+        d=1e100.net; s=20260707; t=1794757432; x=1795362232;
+        h=content-transfer-encoding:mime-version:references:in-reply-to
+         :message-id:date:subject:cc:to:from:x-gm-gg:x-gm-message-state:from
+         :to:cc:subject:date:message-id:reply-to:content-type;
+        bh=aQeEqSqLx+Kp/30sy6eZjaTFG/cEmbiqOE4nLKGI28I=;
+        b=vmmsqLHkqBDdEkBPqOskOeti9dgHX+WcMkodcyVMsPX2r8DvKwi5PT913VhKAv+wGz
+         Wlt3sYRWU74rzD9T6HcgyFagDQvs332Y74cFQ5p3e86p8r3DoMEaUUzzTcg34XTz7nvT
+         PCNGf6gxux+Ji6DsoDo47e07SlVjXQvh9AtrDHWGTMqeOQeeU1D+aps6xsNSxfqwEBGA
+         S6m5CQWXvjjj4qazYnyXyPv8aPXxQMzBh2n+bMsiJpbVxoWgle1QqqsmWTQj7wX+J41s
+         LxKpqafMo+b3/XbI1rJVR8zLEpiucIUrZDIi09X59Y3tV6HWYCVC5FAhxwFRKep+uCPE
+         VdYQ==
+X-Gm-Message-State: APuU4Z906jXit2VBTquhwaP0QOfYBZQEWHD/kSQVCpZBlt0vzlnTmEwc
+	j3p18zdkLTPTFeKicvJhox5H9WfHBdpRjgwiSiS40Tj6uBUGe/WZVcFemLvAkpB4Jbw=
+X-Gm-Gg: AYBFou2zu5v/L7PArvUjnKzt939BU1u6ZN4woFxmiAdd5W+uphRa/TjjbXS4+QZls68
+	02gBcwsoL0Ozxhyzo5RGF/7J4BbG0snUTOZDf8H9njIwJAMRMXX+VtQTAYhrAp5WjZ1c+/hW6qM
+	tvc5x3lhDUM1sb5rBKlFU++tGpFYVIcOtKv1hP/vOfoBiYOyuFR13/DP36brKKy2nvq0CJYhoNL
+	8p9Uy0jqk4VTOV72WS2Yh0CoTMaDbnTEbg4Ag6XqWO2vcjGhZZHNipRIWJauSqrSbWUZFGAibuq
+	Wddh2wxKSFDUKEORr8UsTCvQGVHOSD1myA4pxJGoZJh+vIhU4ciR5mM/EENySYmlwwVcxpAwawS
+	5cN0gvaw67szHPnx0Xie0c7Xvtj1umi78xNsvmOWLZWjXzdkvaQAf0FOM2pXszch6nyq735EXfg
+	l4HOe9aZWOcUO3lpUb565O0fH89hgimlf8Y92qb49vELqx4uFKQ5hjxeApJsqooYHkXT8aGmEd4
+	6XwB8Fw+UBu3cQ9Ik6I1wcl1IxMr6V2qA3/DXIlnZR/mE0eduwxGDYG19IdvlH68psgOxnI9TAm
+	y8OXKYDxfore5cq0e+/ajedf+rmj5rsMHUn7Qcqit/rt4zEkQJKQsj9ADu9f
+X-Received: by 2002:a05:7301:52c5:b0:36c:a281:1bc with SMTP id 5a478bee46e88-37966a5ba74mr8291604eec.16.1794757431228;
+        Sun, 15 Nov 2026 07:43:51 -0800 (PST)
+Received: from G7XWH7K1F3 ([2408:8256:2e80:7371:d1be:2710:af83:9beb])
+        by smtp.gmail.com with ESMTPSA id 5a478bee46e88-3795591f4f8sm26224242eec.13.2026.11.15.07.43.46
+        (version=TLS1_3 cipher=TLS_CHACHA20_POLY1305_SHA256 bits=256/256);
+        Sun, 15 Nov 2026 07:43:49 -0800 (PST)
+From: Zhao Li <enderaoelyther@gmail.com>
+To: Johannes Berg <johannes@sipsolutions.net>
+Cc: linux-wireless@vger.kernel.org,
+	linux-kernel@vger.kernel.org
+Subject: Re: [PATCH wireless v2] wifi: mac80211: parse wrapper TPE elements without an extension offset
+Date: Sun, 15 Nov 2026 23:43:21 +0800
+Message-ID: <20261115154321.78691-1-enderaoelyther@gmail.com>
+X-Mailer: git-send-email 2.56.1
+In-Reply-To: <CACHPgzyxGEYJVCyGH6GJBvUdqG8zsfyRn5zxDiuj14tw3byXBw@mail.gmail.com>
+References: <CACHPgzyxGEYJVCyGH6GJBvUdqG8zsfyRn5zxDiuj14tw3byXBw@mail.gmail.com>
 X-Mailing-List: linux-wireless@vger.kernel.org
 List-Id: <linux-wireless.vger.kernel.org>
 List-Post: <mailto:linux-wireless@vger.kernel.org>
@@ -53,102 +96,16 @@ List-Unsubscribe: <mailto:linux-wireless+unsubscribe@vger.kernel.org>
 List-Owner: <mailto:linux-wireless+owner@vger.kernel.org>
 Precedence: list
 MIME-Version: 1.0
-User-Agent: Mozilla Thunderbird
-Subject: Re: [PATCH 1/2] wifi: rtw88: 8822c: filter hardware-handled control
- frames on SDIO
-To: Ping-Ke Shih <pkshih@realtek.com>
-Cc: Shawn Lin <shawn.lin@rock-chips.com>, Heiko Stuebner <heiko@sntech.de>,
- linux-wireless@vger.kernel.org, linux-rockchip@lists.infradead.org,
- linux-kernel@vger.kernel.org
-References: <20261115142330.359247-2-leonard@lausen.nl>
- <20261115142330.359247-4-leonard@lausen.nl>
-Content-Language: en-US
-From: Leonard Lausen <leonard@lausen.nl>
-In-Reply-To: <20261115142330.359247-4-leonard@lausen.nl>
-Content-Type: text/plain; charset=UTF-8; format=flowed
-Content-Transfer-Encoding: 7bit
-X-Rspamd-Bar: ---
-X-Rspamd-Report: BAYES_HAM(-2.999999) XM_UA_NO_VERSION(0.01) MIME_GOOD(-0.1)
-X-Rspamd-Score: -3.089999
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple;
-	d=lausen.nl; s=uberspace;
-	h=from:to:cc:subject:date;
-	bh=gsaC/4/UTX3ni3aFcTq1jM1TUloizS3Ttt12uTCL2X8=;
-	b=nTECe/akQIMrRRC7vGgLQIr15P+dQ8YGAnKp6ZSGFNYv/SAVL9Woa/qdftW8WEXdsXTWosXtU+
-	AQnlYogzaS5Ef5nDIBf9M6n303MbJMcjd1oQVHUlNUHRPM/wwWvpsH3Pjg3IvbQIaze3XywBX0ZG
-	SPnCRjnX5aT91d5bOp/hqgP/JM2OhKP4zbgdfYV/sWVM98+wyLlJ5NTJ8IoQrxWbud1SLyr/tBWj
-	TjV+67w/8fdOKFhFg464yjmEUNWXBJRX1ScOeUQ9Gu/avSP9hVo1TlMV50kZT1tIRUpY/vgWBYoV
-	YdzxJ95FtwypaTEANZB8+O5v6PaG1Mre5KZSzkqThMG/lV+f4X4kE3PHiTBCEPMA/TDk92gx3fzV
-	Hyux0gqWlINC4cCNhf37gOtPdY0YloUy89b7YN/uGKE/7ioE9PO9968DjLVNhX/HQubSaDoyNvml
-	yIW638ttdNbMkixyKdGfmuoY8T4MPPw1s75JXMvZJP48YT3pj47WtTrF4eVz2T1h6HGtA6jf9RHL
-	5Fyw4XhghBlEaV1vDssCg2xvysq9FuTHuGE9YXoXI5AIBJ8uCL9zfTknhlE+EHFOfKLhGkmmfFwl
-	8TYTO+C4g3iX63e12t0d9q6bb8ApbRZ6T/RM9O4V1+S9ciy3NOux3CMDE7jdrMT9opX5Njwixsy9
-	s=
+Content-Transfer-Encoding: 8bit
 
-RTL8822C forwards every control-frame subtype to the host by default.
-ACK, Block Ack, RTS and CTS frames are handled by hardware, but forwarding
-them also adds small SDIO transfers to the data path.
+Please do not apply either v1 or v2.
 
-Clear these four subtypes from the SDIO default RX filter. Retain BAR,
-PS-Poll and the remaining subtypes, and store the default in rxfltmap1
-so FIF_CONTROL can still request all control frames.
+An agent used a Gmail connector to send emails during read-only review. It
+sent v1 through that connector, then sent v2 without authorization. Gmail
+line-wrapped both diffs, so neither public revision applies. Please treat
+both messages as invalid.
 
-Limit the new default to SDIO, where profiling identified the overhead
-and throughput tests measured a benefit. PCIe and USB use different
-receive paths and have not been validated with this filter setting.
+A clean v3 will follow through git send-email.
 
-FriendlyElec's RTL8822CS driver also filters control frames at startup;
-this change retains additional subtypes for mac80211.
-
-On RTL8822CS/NanoPi M5 at 198 MHz SDR104, this patch alone increased
-median TCP upload from 170 to 258 Mbit/s (+52%).
-A separate download test (four 30-second samples per configuration)
-measured 241 to 263 Mbit/s (+9%).
-
-Link: 
-https://github.com/friendlyarm/rtl8822cs/blob/c8b944a34bba2116fcdb060362bde40242bb87e5/hal/rtl8822c/rtl8822c_halinit.c
-Assisted-by: LLM
-Signed-off-by: Leonard Lausen <leonard@lausen.nl>
----
-Resending with the Signed-off-by and Assisted-by tags.
-
-  drivers/net/wireless/realtek/rtw88/reg.h      | 4 ++++
-  drivers/net/wireless/realtek/rtw88/rtw8822c.c | 9 +++++++++
-  2 files changed, 13 insertions(+)
-
-diff --git a/drivers/net/wireless/realtek/rtw88/reg.h 
-b/drivers/net/wireless/realtek/rtw88/reg.h
-index afcdb66fdb9a1..8e220580be4f8 100644
---- a/drivers/net/wireless/realtek/rtw88/reg.h
-+++ b/drivers/net/wireless/realtek/rtw88/reg.h
-@@ -587,6 +587,10 @@
-   #define REG_RXFLTMAP0		0x06A0
-  #define REG_RXFLTMAP1		0x06A2
-+#define BIT_RXFLTMAP1_BACK	BIT(9)
-+#define BIT_RXFLTMAP1_RTS	BIT(11)
-+#define BIT_RXFLTMAP1_CTS	BIT(12)
-+#define BIT_RXFLTMAP1_ACK	BIT(13)
-  #define REG_RXFLTMAP2		0x06A4
-  #define REG_RXFLTMAP4		0x068A
-  #define REG_BT_COEX_TABLE0	0x06C0
-diff --git a/drivers/net/wireless/realtek/rtw88/rtw8822c.c 
-b/drivers/net/wireless/realtek/rtw88/rtw8822c.c
-index 32d9709f2c243..9c9e4f2397282 100644
---- a/drivers/net/wireless/realtek/rtw88/rtw8822c.c
-+++ b/drivers/net/wireless/realtek/rtw88/rtw8822c.c
-@@ -2096,6 +2096,15 @@ static int rtw8822c_mac_init(struct rtw_dev *rtwdev)
-  	rtw_write8(rtwdev, REG_WMAC_TRXPTCL_CTL_H  + 2, WLAN_BAR_ACK_TYPE);
-  	rtw_write16(rtwdev, REG_RXFLTMAP0, WLAN_RX_FILTER0);
-  	rtwdev->hal.rxfltmap1 = WLAN_RX_FILTER1;
-+	if (rtw_hci_type(rtwdev) == RTW_HCI_TYPE_SDIO) {
-+		/* Hardware handles these frames; retain BAR and PS-Poll for
-+		 * mac80211. FIF_CONTROL restores all subtypes for monitors.
-+		 */
-+		rtwdev->hal.rxfltmap1 &= ~(BIT_RXFLTMAP1_BACK |
-+						BIT_RXFLTMAP1_RTS |
-+						BIT_RXFLTMAP1_CTS |
-+						BIT_RXFLTMAP1_ACK);
-+	}
-  	rtw_write16(rtwdev, REG_RXFLTMAP1, rtwdev->hal.rxfltmap1);
-  	rtw_write16(rtwdev, REG_RXFLTMAP2, WLAN_RX_FILTER2);
-  	rtw_write32(rtwdev, REG_RCR, WLAN_RCR_CFG);
+Thanks,
+Zhao
