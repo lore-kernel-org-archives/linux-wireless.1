@@ -1,61 +1,117 @@
-Authentication-Results: smtp.subspace.kernel.org; arc=none smtp.remote-ip=220.197.31.5
+Authentication-Results: smtp.subspace.kernel.org; arc=none smtp.remote-ip=205.220.168.131
 ARC-Seal: i=1; d=subspace.kernel.org; s=arc20261015; a=rsa-sha256; cv=none;
-	t=1794729788;
-	b=IzvA23Pn2gVDdpe3yr5vIKRZUDfcMjGr6nU4LVW4iegSRR3ulUD6pY24jvY9JKsdgNQs
-	 y3qYDBp2B0tNw5vD9YkneIoVcRB19Z8pVcn/Qu8O/K21YjkJY6NrVQHgSuGbyyD6GWeqR
-	 fSe2vXYgaTr5d8Mz/VBLOuj8/G3dQqGdjdS0h7nEy2W3nOb9oxfLXPjVY5Dqd3ZU3J3XX
-	 Q2tvcrgid5baNPxAIovVxPVXDVuivIoPEJkcYhMp7wD0DvXBqhjf+wNtvVxqEDCt9C8jX
-	 DuJhE5a6ggbnalTYta99a0ruJoCfyyFXaBliaMd7m45QAzMeQ8U/OIcBXBxAm4nzzCg==
+	t=1794733101;
+	b=iN5gx079lCk1g/8eRxgD8aJAWWTSrgFam6PsM2PrZaUcxncJIX9CEKM+XS4S3qv55HCG
+	 FPT27Q9FHNeyUSOlkbAqzcSLX7OK02eGNhrMQ9Y7AbkOOtJXcHZ3Yf39hKdNYW/kTSmGa
+	 BnG8W3zfRm+g9swHESROnkjYwvo+CkEF4fZaWuBRgduVm/Ci9P8eONZASEzFi4uAqGWy6
+	 gqplCtbr8c0tdK6TiyAmknuw8IaEOodDwk3mMz//ssqqQwDM7oi0HCOnQwEabeAKtNhot
+	 ot+0m5utWWdsMb0zWFTfSfrWO/jhyWjLwcAISQ77ly0T5x+bdV3pqFExCVaFVpaIYGA==
 ARC-Message-Signature: i=1; d=subspace.kernel.org; s=arc20261015;
-	a=rsa-sha256; c=relaxed/relaxed; t=1794729788;
-	h=DMARC-Filter:DKIM-Signature:Received:From:To:Cc:Subject:Date:
-	 Message-ID:X-Mailer:MIME-Version:Content-Transfer-Encoding:
-	 X-CM-TRANSID:X-Coremail-Antispam:X-CM-SenderInfo;
-	bh=iqFD1Dy0PA5Hv/7kVoTZRvbdlmdkVu9y//K9Cw3fKM8=;
-	b=qHkExpasRRDPUSTXPVeEhcGQXqfIvSS94J9q+txQU38YM317zLUj8Cznqv/VqPn6zvS5
-	 aDZ8eqSr6Yxui4+/5wAD0vvGbFDMxgQ+p1a7pmaH/0vXuO6LwIAIo8g1cQrAxKZwFgpt9
-	 dqBDWua+t7NzxrYH3y6wjj2N8td5fvrQFKqrmyQ91LqrXD7P/PYlqJs2MAQ5KXtKE6R9C
-	 yiRlJ3UIBeN0Dij6R1HsnqesNmOF6jGU/+NIXzXFRYwHNGnBAHOU65O6C78nE5WUmRX/z
-	 BuMOQeSsRdS4EpIWSv1xaUwMgH2C4cuhnHINsc4ZMnO2y2K0aUl100r2zfYb8oj4fsQ==
+	a=rsa-sha256; c=relaxed/relaxed; t=1794733101;
+	h=DMARC-Filter:Received:DKIM-Signature:Received:Received:
+	 DKIM-Signature:X-Google-DKIM-Signature:X-Forwarded-Encrypted:
+	 X-Gm-Message-State:X-Gm-Gg:X-Received:X-Received:Received:Date:From:
+	 To:Cc:Subject:Message-ID:References:MIME-Version:Content-Type:
+	 Content-Disposition:In-Reply-To:X-Proofpoint-ORIG-GUID:
+	 X-Proofpoint-Spam-Details-Enc:X-Authority-Analysis:X-Proofpoint-GUID:
+	 X-Proofpoint-Spam-Info:X-Proofpoint-Virus-Version:
+	 X-Proofpoint-Spam-Details;
+	bh=0LvtZuJ5CN6Lr7Eo+zvU6W+i7dFkPmCniuuS67TMBeU=;
+	b=Atsuv89Aio5YkHHN+/ciSw3/MDKaR6hl9CUz6ftr/Ivkd4ysRaLJFmnm7p4lL134bmJv
+	 2i7ub4uSnJiJzns8HFmATPvn/yz7nOFYxTYdSDDR60HBHFLTCpAbliEsrDqe8F72yVNGH
+	 wZ5To0bsckBbtvFWtioaVS3oYkWJGEOAWmjefPsgswrXWaSQFKL5vUGabt0l/4QlEwznO
+	 qD69ePH7wsr83iVarELintgaBXKi1nHUNkNnQt7bbG2utkOPfenrf/M+BHir5I9ccq6ke
+	 u3JvJsM6SCQWbmV/+mmB3ZlCEo1ePkWmyzCYHmgNuHXbzwzVf4auYvA4h/wC8LRA/EA==
 ARC-Authentication-Results: i=1; smtp.subspace.kernel.org; 
-	dmarc=pass header.from=163.com;
-	spf=pass smtp.mailfrom=163.com;
-	dkim=pass header.d=163.com header.i=@163.com header.a=rsa-sha256 header.s=s110527 header.b=AccT0Gtp;
-	arc=none smtp.remote-ip=220.197.31.5
-Received: from m16.mail.163.com (m16.mail.163.com [220.197.31.5])
+	dmarc=pass header.from=oss.qualcomm.com;
+	spf=pass smtp.mailfrom=oss.qualcomm.com;
+	dkim=pass header.d=qualcomm.com header.i=@qualcomm.com header.a=rsa-sha256 header.s=qcppdkim1 header.b=UZdzHikZ;
+	dkim=pass header.d=oss.qualcomm.com header.i=@oss.qualcomm.com header.a=rsa-sha256 header.s=google header.b=SfwSH66l;
+	arc=none smtp.remote-ip=205.220.168.131
+Received: from mx0a-0031df01.pphosted.com (mx0a-0031df01.pphosted.com [205.220.168.131])
 	(using TLSv1.3 with cipher TLS_AES_256_GCM_SHA384 (256/256 bits)
 	 key-exchange X25519 server-signature ECDSA (prime256v1) server-digest SHA256)
 	(No client certificate requested)
-	by smtp.subspace.kernel.org (Postfix) with ESMTPS id 372F4606A33F;
-	Sun, 15 Nov 2026 08:03:06 +0000 (UTC)
-DMARC-Filter: OpenDMARC Filter v1.4.2 smtp.subspace.kernel.org 372F4606A33F
-Authentication-Results: smtp.subspace.kernel.org; dmarc=pass (p=none dis=none) header.from=163.com
-Authentication-Results: smtp.subspace.kernel.org; spf=pass smtp.mailfrom=163.com
+	by smtp.subspace.kernel.org (Postfix) with ESMTPS id 82ECD606A31A
+	for <linux-wireless@vger.kernel.org>; Sun, 15 Nov 2026 08:58:21 +0000 (UTC)
+DMARC-Filter: OpenDMARC Filter v1.4.2 smtp.subspace.kernel.org 82ECD606A31A
+Authentication-Results: smtp.subspace.kernel.org; dmarc=pass (p=none dis=none) header.from=oss.qualcomm.com
+Authentication-Results: smtp.subspace.kernel.org; spf=pass smtp.mailfrom=oss.qualcomm.com
 Authentication-Results: smtp.subspace.kernel.org;
-	dkim=pass (1024-bit key) header.d=163.com header.i=@163.com header.a=rsa-sha256 header.s=s110527 header.b=AccT0Gtp
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=163.com;
-	s=s110527; h=From:To:Subject:Date:Message-ID:MIME-Version; bh=iq
-	FD1Dy0PA5Hv/7kVoTZRvbdlmdkVu9y//K9Cw3fKM8=; b=AccT0GtpYOmkgHaMbw
-	qgk5oDQiS2+F1HIJtb+ZKtzUXFiXh54CYN9I5QXybfghSl07ssNJFR5CUN9Sr2O9
-	aVHMcfKssWn8Cj0UVh6X01X72wBDJjRvjdSp/NCAU8/CWDTJauu5jt6RiNq4crHu
-	XhmT7y22CyAFlzxkKRUhDaVxs=
-Received: from user-VMware-Virtual-Platform.localdomain (unknown [])
-	by gzga-smtp-mtada-g1-0 (Coremail) with SMTP id _____wBnbpcfZ_lqTjp7HA--.27549S2;
-	Sun, 15 Nov 2026 16:02:39 +0800 (CST)
-From: Ziheng Wei <zihengw03@163.com>
-To: Felix Fietkau <nbd@nbd.name>,
-	Lorenzo Bianconi <lorenzo@kernel.org>
-Cc: Ryder Lee <ryder.lee@mediatek.com>,
-	Shayne Chen <shayne.chen@mediatek.com>,
-	Sean Wang <sean.wang@mediatek.com>,
-	linux-wireless@vger.kernel.org,
-	linux-mediatek@lists.infradead.org,
-	linux-kernel@vger.kernel.org,
-	stable@vger.kernel.org
-Subject: [PATCH] wifi: mt76: mt7925: fix mt7925_reverse_frag0_hdr_trans() for MLO
-Date: Sun, 15 Nov 2026 16:02:39 +0800
-Message-ID: <20261115080239.910402-1-zihengw03@163.com>
-X-Mailer: git-send-email 2.43.0
+	dkim=pass (2048-bit key) header.d=qualcomm.com header.i=@qualcomm.com header.a=rsa-sha256 header.s=qcppdkim1 header.b=UZdzHikZ;
+	dkim=pass (2048-bit key, unprotected) header.d=oss.qualcomm.com header.i=@oss.qualcomm.com header.a=rsa-sha256 header.s=google header.b=SfwSH66l
+Received: from pps.filterd (m0279865.ppops.net [127.0.0.1])
+	by mx0a-0031df01.pphosted.com (8.18.1.11/8.18.1.11) with ESMTP id 6AF7weS02337744
+	for <linux-wireless@vger.kernel.org>; Sun, 15 Nov 2026 08:58:20 GMT
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=qualcomm.com; h=
+	cc:content-type:date:from:in-reply-to:message-id:mime-version
+	:references:subject:to; s=qcppdkim1; bh=0LvtZuJ5CN6Lr7Eo+zvU6W+i
+	7dFkPmCniuuS67TMBeU=; b=UZdzHikZ3+6+aMpSVftEgb6vf3BLx1ON+p3jnnSf
+	chOgOWAtafwkVqiTqXvocXlG2xS3Y16pnKTISaO04mwgqQuMNLqK2vb5x+sFMJGj
+	2q7fqj3OU5OmtIbp4Vui+0CCu3b3BISgVzTwIJQEOLlQ4qSeMzqIY9L00DCDaQMj
+	YQCe+vLuaZfVX3O/6L+1FCZXpDuzf97DtynGm6QxiYeWDN250Qn6AiJZcMUsK6Rk
+	jQQvUrzgggtRUzsSVh/+rPOgs7YkT4NtOQJwtcQjo5p3/rsjjOihKlwvaWNGwQbG
+	zTcIfNIFbHUp4ASuISdxrQRM+DvNJEE47x78eTpPgqwtcQ==
+Received: from mail-qk1-f199.google.com (mail-qk1-f199.google.com [209.85.222.199])
+	by mx0a-0031df01.pphosted.com (PPS) with ESMTPS id 4hxhjqjp3n-1
+	(version=TLSv1.3 cipher=TLS_AES_128_GCM_SHA256 bits=128 verify=NOT)
+	for <linux-wireless@vger.kernel.org>; Sun, 15 Nov 2026 08:58:20 +0000 (GMT)
+Received: by mail-qk1-f199.google.com with SMTP id af79cd13be357-93909014c85so52651585a.0
+        for <linux-wireless@vger.kernel.org>; Sun, 15 Nov 2026 00:58:20 -0800 (PST)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+        d=oss.qualcomm.com; s=google; t=1794733100; x=1795337900; darn=vger.kernel.org;
+        h=in-reply-to:content-disposition:content-type:mime-version
+         :references:message-id:subject:cc:to:from:date:from:to:cc:subject
+         :date:message-id:reply-to:content-type;
+        bh=0LvtZuJ5CN6Lr7Eo+zvU6W+i7dFkPmCniuuS67TMBeU=;
+        b=SfwSH66leZ2VWDAZIhFN33B+j17ol/WURyJsFXYdgdkqHgVyVn2m4WmBRO1yIOsA5X
+         tR+AaSbCm7q1A7Fn9OA7F+cm9nWJxs3Ffazo/nHTvR3FE+cQy58Br4IPOKidLL6C90B5
+         Bz4jgFZbEdDsdwMu9GBP11k/vovUctrSE3p6BJVC9xliErRg/reIt+eTqnnAtebiIMDr
+         goh/ZU0KcVuj4j4N/F0xcsDWmquc9wa/MYnHmB/2nEeYN1gCcPCEpNvxvDOhTIou4MHE
+         N3cQfb6LkqaP/7aH3q3XjNdIqx02vX+tVskBroGD6e06nmjQa9WFf3FZrIqvZYGfVzdl
+         l1ug==
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+        d=1e100.net; s=20260707; t=1794733100; x=1795337900;
+        h=in-reply-to:content-disposition:content-type:mime-version
+         :references:message-id:subject:cc:to:from:date:x-gm-gg
+         :x-gm-message-state:from:to:cc:subject:date:message-id:reply-to
+         :content-type;
+        bh=0LvtZuJ5CN6Lr7Eo+zvU6W+i7dFkPmCniuuS67TMBeU=;
+        b=JOIEwbtRj2zm0z/nDkM9T5GLg1nixZ4W1/Nbf9/GiIpv0pLenPTKm9r6QtRoaMc/ni
+         8DpY6OuE0JCnF5ybbTjErYDtER69JhuhqZz2P3mQsPEfklm+tM/4Hw4slyJ6qNkBVxes
+         AJ3iqcxcxhXmoNHIctj/7ctqQJv5Zpgltv9MCu2SpyWj+KLCku50jQVdQMx1YhnILvOw
+         88oT9F1ZA6b61m/weqATcQM8+afPsXK4wM1vhenzE7Y2sjuIhlfsXTVdwatuELagqviW
+         5iFVF2dkip5JWRAF2xjANSw1sSglK304PXQDEdZdowNcEJCaLYBEDr0vt/yAUR0gYKPa
+         zZFQ==
+X-Forwarded-Encrypted: i=1; AL+hErH94DOrnhGnawiLL8g7NhSZOz7zojSTxJyyqkVgvxzRtgFA3CeYDqIL1KaAY5JkEo2jjafXGhsLnFJR7dE0Wg==@vger.kernel.org
+X-Gm-Message-State: APuU4Z8mKcR2GFJ55wmSd0YA5u178DB8PVnVJpq35+cL2MO+WmRcdqNp
+	UcVE5RxKDwbhdxO4kD1tdOFRoz9oyRCiMS4OG0IqWJHp+o6UN5akSRTPg239RlN8q5BTUP5v4s0
+	lYwuNdZrNVul/QvUuvDOqeDvcRQ8lGPGU8Wul6uzjxiQv0fpT86t5v5jRi4QC2RsUPdRbcQ==
+X-Gm-Gg: AYBFou30EOlnNMwaDsx2VsmL0FJb5UJCNx/9da0/OSQFO5P1jBmCYBta4FA3aOQJKx8
+	8ah1PxekdVlRoR0rwue8BGuQfLwyXihHIKko5HG7lwYCvxN8m8i5iJWdHbyc9WPqdnK/4brolDO
+	ub4I2xcbOuJfJD+tQ8MM4WTWM76UVMn7qhR/aYyWEOvIc4cxfUvreNG2aJQvsHDKPb9XpqB611X
+	EGXBBT+jACYeTp3RfsaVOLjatvxAqc1lGHpsQpw0oEzPDtGCZR76X4znm/vH30on9972HVhaffG
+	Mym+pmvYXsXI/0SM0mcp7QtDpdzcz1j+L8ZLfmErf9bLgqihgyM4bsH4sgbPHQzTCgDko2zPaPX
+	kCRPTkGtL5uog12bp957/E/eDjzCN+2DvPd9YTAwFRIprWe5RI8iYyhKgQqSLwQ==
+X-Received: by 2002:a05:620a:6f01:b0:946:6:129d with SMTP id af79cd13be357-9494bc744a5mr1234052285a.54.1794733099545;
+        Sun, 15 Nov 2026 00:58:19 -0800 (PST)
+X-Received: by 2002:a05:620a:6f01:b0:946:6:129d with SMTP id af79cd13be357-9494bc744a5mr1234050385a.54.1794733099002;
+        Sun, 15 Nov 2026 00:58:19 -0800 (PST)
+Received: from localhost ([93.66.91.216])
+        by smtp.gmail.com with ESMTPSA id 5b1f17b1804b1-4bb5faf05f8sm102148105e9.10.2026.11.15.00.58.17
+        (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
+        Sun, 15 Nov 2026 00:58:17 -0800 (PST)
+Date: Sun, 15 Nov 2026 09:58:16 +0100
+From: Lorenzo Bianconi <lorenzo.bianconi@oss.qualcomm.com>
+To: Jeff Johnson <jeff.johnson@oss.qualcomm.com>
+Cc: Jeff Johnson <jjohnson@kernel.org>, Kalle Valo <kvalo@kernel.org>,
+        Baochen Qiang <quic_bqiang@quicinc.com>,
+        linux-wireless@vger.kernel.org, ath12k@lists.infradead.org
+Subject: Re: [PATCH ath-current v3] wifi: ath12k: fix DMA direction for
+ re-injected Rx buffers
+Message-ID: <avl0KJunNkgixBIS@lore-desk>
+References: <20261023-ath12k-fix-dma-mapping-for-reinject-packets-v3-1-443f9e13bbc9@oss.qualcomm.com>
+ <92d632b3-3aee-4786-9c89-b106b66a32ac@oss.qualcomm.com>
 X-Mailing-List: linux-wireless@vger.kernel.org
 List-Id: <linux-wireless.vger.kernel.org>
 List-Post: <mailto:linux-wireless@vger.kernel.org>
@@ -65,87 +121,110 @@ List-Unsubscribe: <mailto:linux-wireless+unsubscribe@vger.kernel.org>
 List-Owner: <mailto:linux-wireless+owner@vger.kernel.org>
 Precedence: list
 MIME-Version: 1.0
-Content-Transfer-Encoding: 8bit
-X-CM-TRANSID:_____wBnbpcfZ_lqTjp7HA--.27549S2
-X-Coremail-Antispam: 1Uf129KBjvJXoWxZF18Ww4fWFyktFWUGw15Arb_yoW5tw43pa
-	yjk3y5Gr1kXrs5Zw18Cw4j9FWava1fKFyIkryfG3Z5uFZ5tr18JFsrXry0vryYkr4kuFnI
-	yFW8tr98Gayq937anT9S1TB71UUUUU7qnTZGkaVYY2UrUUUUjbIjqfuFe4nvWSU5nxnvy2
-	9KBjDUYxBIdaVFxhVjvjDU0xZFpf9x07jkpnQUUUUU=
-X-CM-SenderInfo: p2lkv0ljzqjqqrwthudrp/xtbC7QD6S2r5ZyCuOAAA3e
+Content-Type: multipart/signed; micalg=pgp-sha512;
+	protocol="application/pgp-signature"; boundary="TFQXiE9/RmqGVScH"
+Content-Disposition: inline
+In-Reply-To: <92d632b3-3aee-4786-9c89-b106b66a32ac@oss.qualcomm.com>
+X-Proofpoint-ORIG-GUID: qqpy85eV34-u08l7SDdIsEmiGymYtG73
+X-Proofpoint-Spam-Details-Enc: AW1haW4tMjYxMTE1MDAzNSBTYWx0ZWRfX6hhgMJjbIb6+
+ fgEREyJN85QTebia/ohx7hRwAMwspj5xYIpV+j+eWzwm0wQ2242ftYN2KPPxZSGazYmXFPm73LG
+ NSPBWj2zdxQhh7FsAJLyN9D6FMq4v8ZRMryn401Q0oiKp5s/TxBFNL1171zGXxGAoehOBj+Ft83
+ qHWoVdAxAeQ76EUnz7W0vGkuaB51QKsJuk07/Jq6CVCEpnBOFIAc9+AvfJPeWrF6XGgAT+rw1iD
+ gvovaYxeWH8200usKemO2pCQblh/3vZKRv6PABtBBxOfzm8n8CbwKW5e9FLJ6jNPNeEgTaHJmIe
+ 5DIzyP1U/vqaisPq97kJs7KRWoWGnBa6uKANE2dgjKUks0GKCntDE4RDTT/1sr2MM9C41yYtUzL
+ rrVzkW/gCpz9+870ad4cU+b3KIidzOmBQWD+LIBniMItwIRyf/ylUoKgcDkxHqZfgWlgca42pKL
+ lSRdqHEVx6oByMvielA==
+X-Authority-Analysis: v=2.4 cv=TqJzFzXh c=1 sm=1 tr=0 ts=6af9742c cx=c_pps
+ a=HLyN3IcIa5EE8TELMZ618Q==:117 a=8zQ3sPA27H7dy4zktjPBAQ==:17
+ a=zJRp6_cAMcgA:10 a=s4-Qcg_JpJYA:10 a=VkNPw1HP01LnGYTKEx00:22
+ a=u7WPNUs3qKkmUXheDGA7:22 a=Um2Pa8k9VHT-vaBCBUpS:22 a=VwQbUJbxAAAA:8
+ a=EUspDBNiAAAA:8 a=2LnXmgUbajm_jcWkuQEA:9 a=CjuIK1q_8ugA:10
+ a=CDx97edxcbZoIHJnS8wA:9 a=bTQJ7kPSJx9SKPbeHEYW:22
+X-Proofpoint-GUID: qqpy85eV34-u08l7SDdIsEmiGymYtG73
+X-Proofpoint-Spam-Info: AW1haW4tMjYxMTE1MDAzNSBTYWx0ZWRfX8szFgtjQS83V
+ SAdP+f0OcNFfh0MqKKA26ncWuo3oWfAhA3eBSecgQCekOdgPFBcLM8MQjQPmhO4VFGlmcrjiqmw
+ enJfSIFO41vtS+fL61fNGRxGEHusZno=
+X-Proofpoint-Virus-Version: vendor=baseguard
+ engine=ICAP:2.0.293,Aquarius:18.0.1176,Hydra:6.1.138,FMLib:17.12.100.49
+ definitions=2026-11-15_03,2026-11-11_03,2025-10-01_01
+X-Proofpoint-Spam-Details: rule=outbound_notspam policy=outbound score=0
+ malwarescore=0 clxscore=1015 lowpriorityscore=0 bulkscore=0 suspectscore=0
+ spamscore=0 priorityscore=1501 phishscore=0 impostorscore=0 adultscore=0
+ classifier=typeunknown authscore=0 authtc= authcc= route=outbound adjust=0
+ reason=mlx scancount=1 engine=8.22.0-2611040001 definitions=main-2611150035
 
-For unicast frames mt792x_rx_get_wcid() returns the wcid of the
-receiving link. Since commit 43aa4033eb18 ("wifi: mt76: mt7925: add
-mt7925_change_sta_links") the wcid of a non-default station link is
-embedded in a separately allocated struct mt792x_link_sta, not in
-struct mt792x_sta. mt7925_reverse_frag0_hdr_trans() still casts
-status->wcid to struct mt792x_sta and derives the ieee80211_sta from
-it with container_of(), so for a frame received on such a link it
-reads msta->vif past the end of the link allocation, dereferences the
-result as a vif, and copies sta->addr from memory in front of it into
-the rebuilt 802.11 header.
+--TFQXiE9/RmqGVScH
+Content-Type: text/plain; charset=us-ascii
+Content-Disposition: inline
+Content-Transfer-Encoding: quoted-printable
 
-This path is taken for the first fragment of a header-translated
-unicast frame, so it is reached when the AP sends fragmented data on
-a secondary link while RX header translation is active there.
+> On 10/23/2026 9:49 AM, Lorenzo Bianconi wrote:
+> > Defragmented MPDUs that are re-injected into the REO are mapped with
+> > DMA_TO_DEVICE, but all the Rx reap and teardown paths unmap them with
+> > DMA_FROM_DEVICE. The DMA API requires the unmap direction to match the
+> > map direction, so this violates the contract.
+> >=20
+> > The mapping actually spans both directions, since the host has written
+> > the buffer before the REO reads it and the buffer is read back by the
+> > host afterwards, so DMA_BIDIRECTIONAL is the correct choice.
+> >=20
+> > Add a common ath12k_dp_unmap_rx_buf() helper that selects
+> > DMA_BIDIRECTIONAL for re-injected buffers, identified by the existing
+> > ath12k_skb_rxcb::is_frag flag, and DMA_FROM_DEVICE otherwise, then use =
+it
+> > in all the Rx reap and cleanup paths. Map and unmap the re-injected buf=
+fer
+> > with DMA_BIDIRECTIONAL consistently.
+> >=20
+> > Tested-on: WCN7850 hw2.0 PCI WLAN.HMT.1.1.c7-00108-QCAHMTSWPL_V1.0_V2.0=
+_SILICONZ_UPSTREAM-3
+> >=20
+> > Fixes: 33322e3ef074 ("wifi: ath12k: change DMA direction while mapping =
+reinjected packets")
+> > Signed-off-by: Lorenzo Bianconi <lorenzo.bianconi@oss.qualcomm.com>
+> > ---
+> > Changes in v3:
+> > - Set ATH12K_SKB_RXCB()->paddr before err_unmap_dma condition in
+> >   ath12k_wifi7_dp_rx_h_defrag_reo_reinject().
+> > - Link to v2: https://lore.kernel.org/r/20261023-ath12k-fix-dma-mapping=
+-for-reinject-packets-v2-1-9f436a26dd72@oss.qualcomm.com
+> >=20
+> > Changes in v2:
+> > - Rely on ath12k_skb_rxcb is_frag field and drop reinjected one.
+> > - Link to v1: https://lore.kernel.org/r/20261017-ath12k-fix-dma-mapping=
+-for-reinject-packets-v1-1-b94860e18ba4@oss.qualcomm.com
+> > ---
+> >  drivers/net/wireless/ath/ath12k/dp.c           |  6 ++---
+> >  drivers/net/wireless/ath/ath12k/dp_mon.c       |  5 ++--
+> >  drivers/net/wireless/ath/ath12k/dp_rx.c        |  3 +--
+> >  drivers/net/wireless/ath/ath12k/dp_rx.h        | 11 ++++++++
+> >  drivers/net/wireless/ath/ath12k/wifi7/dp_mon.c | 17 +++---------
+> >  drivers/net/wireless/ath/ath12k/wifi7/dp_rx.c  | 37 ++++++++----------=
+--------
+> >  6 files changed, 31 insertions(+), 48 deletions(-)
+> This conflicts with recently added:
+> febe1f8cbccc ("wifi: ath12k: avoid double DMA unmap of held monitor RX bu=
+ffers")
+>=20
+> Please rebase.
 
-Do what commit a3ea1c309bf3 ("wifi: mt76: mt7996: Fix
-mt7996_reverse_frag0_hdr_trans for MLO") did for mt7996: get the
-station through the sta back pointer of the link and wcid_to_sta(),
-and take the BSSID from the bss_conf of the receiving link.
+ack, I will fix it in v4. Thanks.
 
-Found by LLM-assisted source review. Not tested on hardware.
+Regards,
+Lorenzo
 
-Fixes: 43aa4033eb18 ("wifi: mt76: mt7925: add mt7925_change_sta_links")
-Cc: stable@vger.kernel.org
-Signed-off-by: Ziheng Wei <zihengw03@163.com>
----
+>=20
+> /jeff
 
-Notes:
-    The changelog was drafted with an AI assistant from my analysis;
-    I have reviewed the code, the fix and the text.
+--TFQXiE9/RmqGVScH
+Content-Type: application/pgp-signature; name=signature.asc
 
- drivers/net/wireless/mediatek/mt76/mt7925/mac.c | 11 ++++++++---
- 1 file changed, 8 insertions(+), 3 deletions(-)
+-----BEGIN PGP SIGNATURE-----
 
-diff --git a/drivers/net/wireless/mediatek/mt76/mt7925/mac.c b/drivers/net/wireless/mediatek/mt76/mt7925/mac.c
-index 7af996abe..e00c04cf5 100644
---- a/drivers/net/wireless/mediatek/mt76/mt7925/mac.c
-+++ b/drivers/net/wireless/mediatek/mt76/mt7925/mac.c
-@@ -184,7 +184,9 @@ static int mt7925_reverse_frag0_hdr_trans(struct sk_buff *skb, u16 hdr_gap)
- {
- 	struct mt76_rx_status *status = (struct mt76_rx_status *)skb->cb;
- 	struct ethhdr *eth_hdr = (struct ethhdr *)(skb->data + hdr_gap);
--	struct mt792x_sta *msta = (struct mt792x_sta *)status->wcid;
-+	struct mt792x_link_sta *mlink = (struct mt792x_link_sta *)status->wcid;
-+	struct mt792x_sta *msta = mlink ? mlink->sta : NULL;
-+	struct ieee80211_bss_conf *link_conf;
- 	__le32 *rxd = (__le32 *)skb->data;
- 	struct ieee80211_sta *sta;
- 	struct ieee80211_vif *vif;
-@@ -201,8 +203,11 @@ static int mt7925_reverse_frag0_hdr_trans(struct sk_buff *skb, u16 hdr_gap)
- 	if (!msta || !msta->vif)
- 		return -EINVAL;
- 
--	sta = container_of((void *)msta, struct ieee80211_sta, drv_priv);
-+	sta = wcid_to_sta(status->wcid);
- 	vif = container_of((void *)msta->vif, struct ieee80211_vif, drv_priv);
-+	link_conf = rcu_dereference(vif->link_conf[mlink->wcid.link_id]);
-+	if (!sta || !link_conf)
-+		return -EINVAL;
- 
- 	/* store the info from RXD and ethhdr to avoid being overridden */
- 	frame_control = le32_get_bits(rxd[8], MT_RXD8_FRAME_CONTROL);
-@@ -215,7 +220,7 @@ static int mt7925_reverse_frag0_hdr_trans(struct sk_buff *skb, u16 hdr_gap)
- 	switch (frame_control & (IEEE80211_FCTL_TODS |
- 				 IEEE80211_FCTL_FROMDS)) {
- 	case 0:
--		ether_addr_copy(hdr.addr3, vif->bss_conf.bssid);
-+		ether_addr_copy(hdr.addr3, link_conf->bssid);
- 		break;
- 	case IEEE80211_FCTL_FROMDS:
- 		ether_addr_copy(hdr.addr3, eth_hdr->h_source);
+iHUEABYKAB0WIQTquNwa3Txd3rGGn7Y6cBh0uS2trAUCavl0KAAKCRA6cBh0uS2t
+rDfIAP9LsvchkosseFMCCklR+xp+xLpkmVThJzdpJWr4FgvdMwD/e43bZ8MnuxjP
+p0Z+P8Aes18g9Ty6PaAfn4ql5WDFFQ4=
+=RQOP
+-----END PGP SIGNATURE-----
 
-base-commit: 97d73c8251226cf27cc6656b4c542869bb8c69fa
--- 
-2.43.0
-
+--TFQXiE9/RmqGVScH--
