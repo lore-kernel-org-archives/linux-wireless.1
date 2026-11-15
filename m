@@ -1,72 +1,92 @@
-Authentication-Results: smtp.subspace.kernel.org; arc=none smtp.remote-ip=77.75.76.34
+Authentication-Results: smtp.subspace.kernel.org; arc=none smtp.remote-ip=209.85.210.180
 ARC-Seal: i=1; d=subspace.kernel.org; s=arc20261015; a=rsa-sha256; cv=none;
-	t=1794743085;
-	b=S7R0e8s44JsQXOGp890XEcG7/KprkfzWcRJ6OeQl1wi30bqHbq2SZ9LxuHQSyMj4Oxw8
-	 BnFBcNJH1wBE+cprtsRpMrPvGfhm4t0HFgmeHdumMQx/8Fr9dMj+KmerNQd00IdN/KQe2
-	 ECPqE2lqAsDAcewDlBQk0NDpUfmTeOkAMLiqxD7RvjCAImIPo6/Kg2NEw5QGfC0u7zXMW
-	 pI6lAXU0ZaHzUCFO+ckyFIe1V7lypnJL9HrRYupC9pIBt5adp2tA1EnjhSemyc+JiFvT7
-	 0LTN/E5pbpE18DGoX5G3Sn1rzLbgB+EFI+DgyYK9q6LCoppNiqrJvGw3YNk+ZBcLxcA==
+	t=1794743758;
+	b=vocxnagFR7kog+23MTDIchsdFqP/pfKfB08b0+QjlzyoRVXbeD+2TBkGeOjl9UiVX93I
+	 Ac5VPMAYLSow71voeSTODJhg7EG2zCHYTWSe/Bu9rXdf+lQgOiN4CjBkctREuhLTv4ejQ
+	 DlEExYnV2nerEMVPN+T5RFqU9Ir7UHlclvrMfBxspVxxSpU6HCoUXkdwq+fCICGfI/jou
+	 12GPm8swXAe38gl/d2XkR23dxY0HICGqDC3CvJUAla2zTLKeGknuxpDjpFYPQW5sTaSI6
+	 JApXc5GfxW8GMlWbbI6GjXGv2llizfQ++/Mrkiq5bGgiQ9Nn+h0/GBPVQN42Sap4VPA==
 ARC-Message-Signature: i=1; d=subspace.kernel.org; s=arc20261015;
-	a=rsa-sha256; c=relaxed/relaxed; t=1794743085;
-	h=DMARC-Filter:Received:DKIM-Signature:Received:From:To:Cc:Subject:
-	 Date:Message-Id:References:In-Reply-To:Mime-Version:X-Mailer:
-	 Content-Type:Content-Transfer-Encoding;
-	bh=PoYGPxB2i0uKWFraLX5C0mUL7s/KPNhZ0wsY+qncz/4=;
-	b=JGz4lliwnmUmSal6A6LrIrh951U6l4VVcx7q2sxo0tofN+J+wtZWN7Gmtdiyyone5bCb
-	 edYNY/4FcAuVi4wPVRBAsUjpv5m3KZGszHxKxcyIuOd/G2dpMIBfxEq2i9ut+gCzd7XPZ
-	 hIsAT4mNWPpEPcjnVe2Lj2Ovz5qx8MTV3u9Nt4Gdc6AmjhP1Ok9hhfQRjjn3GAslkTnsG
-	 ZXke1KFQXHdxq+0wGYAyjNI4VbrJQxEkz+WUqGvsr95p5V9+DTSS2WlvxBaUS1Kt5Tazd
-	 UgglJ3w4LhHqHDHHIjgOFro/PfX86bzbmKo7s5/xAYdvY2lr2Yry9RuktMamzfzPBHg==
+	a=rsa-sha256; c=relaxed/relaxed; t=1794743758;
+	h=DMARC-Filter:Received:DKIM-Signature:X-Google-DKIM-Signature:
+	 X-Gm-Message-State:X-Gm-Gg:X-Received:Received:From:To:Cc:Subject:
+	 Date:Message-ID:X-Mailer:MIME-Version:Content-Transfer-Encoding;
+	bh=U4XOjwAQ2BOIbW/PJ0TA8j9BUAT0ghRUzuZuG7wBy1w=;
+	b=YHJfo1VeOM5e3v+PrM6EoROtyhApRSLBqDZd8HeVLmgIwVWGuYbIeouN9PHthFzpuLjv
+	 1IQ4Z3r+F+E0P5iDM5QqYKfhsM/OFGKxXDM6cL9HraFnKE+2vf8g3FuLumt266lQvAMZC
+	 Og3jS/NBdeZ3KM1a30ZBBUUZw8tjSCbYD4efT3LQYGGYfS8QC6nbQtk1aSSCsMtM9pi77
+	 5SjJQ/NG01vfIs7fj1fuXmAVb6K0efrQw6nUxnHm00KSIUPv5ANv374caqq/t9nm0Xuno
+	 1ZbACJcUFHLBxrecUIX2VmfGOdqORVSNZB040/l/vt0Caa81pOigtcftl1b1B/QTQjw==
 ARC-Authentication-Results: i=1; smtp.subspace.kernel.org; 
-	dmarc=pass header.from=email.cz;
-	spf=pass smtp.mailfrom=email.cz;
-	dkim=pass header.d=email.cz header.i=@email.cz header.a=rsa-sha256 header.s=szn1 header.b=II6YJ4R9;
-	arc=none smtp.remote-ip=77.75.76.34
-Received: from mxe.seznam.cz (mxe.seznam.cz [77.75.76.34])
-	(using TLSv1.3 with cipher TLS_AES_256_GCM_SHA384 (256/256 bits)
+	dmarc=pass header.from=gmail.com;
+	spf=pass smtp.mailfrom=gmail.com;
+	dkim=pass header.d=gmail.com header.i=@gmail.com header.a=rsa-sha256 header.s=20260707 header.b=Z1wXDAzh;
+	arc=none smtp.remote-ip=209.85.210.180
+Received: from mail-pf1-f180.google.com (mail-pf1-f180.google.com [209.85.210.180])
+	(using TLSv1.3 with cipher TLS_AES_128_GCM_SHA256 (128/128 bits)
 	 key-exchange X25519 server-signature ECDSA (prime256v1) server-digest SHA256)
 	(No client certificate requested)
-	by smtp.subspace.kernel.org (Postfix) with ESMTPS id 0DF74606A31D;
-	Sun, 15 Nov 2026 11:44:42 +0000 (UTC)
-DMARC-Filter: OpenDMARC Filter v1.4.2 smtp.subspace.kernel.org 0DF74606A31D
-Authentication-Results: smtp.subspace.kernel.org; dmarc=pass (p=none dis=none) header.from=email.cz
-Authentication-Results: smtp.subspace.kernel.org; spf=pass smtp.mailfrom=email.cz
+	by smtp.subspace.kernel.org (Postfix) with ESMTPS id 61A37606A31F
+	for <linux-wireless@vger.kernel.org>; Sun, 15 Nov 2026 11:55:58 +0000 (UTC)
+DMARC-Filter: OpenDMARC Filter v1.4.2 smtp.subspace.kernel.org 61A37606A31F
+Authentication-Results: smtp.subspace.kernel.org; dmarc=pass (p=none dis=none) header.from=gmail.com
+Authentication-Results: smtp.subspace.kernel.org; spf=pass smtp.mailfrom=gmail.com
 Authentication-Results: smtp.subspace.kernel.org;
-	dkim=pass (2048-bit key, unprotected) header.d=email.cz header.i=@email.cz header.a=rsa-sha256 header.s=szn1 header.b=II6YJ4R9
-Received: from email.seznam.cz
-	by smtpc-mxe-5988798c85-lmdnl
-	(smtpc-mxe-5988798c85-lmdnl [2a02:598:128:8a00::1000:ab7])
-	id 29bef5e7d74a474d29307bff;
-	Sun, 15 Nov 2026 12:43:54 +0100 (CET)
-DKIM-Signature:v=1; a=rsa-sha256; c=relaxed/relaxed; d=email.cz; s=szn1;
-	t=1794743034; bh=PoYGPxB2i0uKWFraLX5C0mUL7s/KPNhZ0wsY+qncz/4=;
-	h=From:To:Cc:Subject:Date:Message-Id:Mime-Version:Content-Type:
-	 Content-Transfer-Encoding;
-	b=II6YJ4R9ZokmVQ1tRWD2X0i2k5GpluL17iiE92nMZHm35/4amQBFrZoXFUIHCtqah
-	 hdJCukyZjtTNr76GW/CJTgr9sBsIJKJaTUTl9RL55VIoeghgKAGuuVvHJHFNSrEChZ
-	 yKFa2zFySWE973WDrVkTv3z4JI+86bW1gzb3QSCyNqe077GUFMqwksMUDjOKFCoNxp
-	 oir8/RKqC/R5vqtwvDtt+x3PR8XC9Mg8K8RW0kA2myVariLgnm1+MrlpANdkLVjI6r
-	 1x5QNRLL3r+RHtwkYEXukCM4JNry5ifDCjtdO34KzQDDlJbh2F1IlzLQB6d+drWjsd
-	 OoTRsMu++EjLg==
-Received: from 184-143.ktuo.cz (184-143.ktuo.cz [82.144.143.184])
-	by email.seznam.cz (szn-email-ebox-5.1.30) with HTTP;
-	Sun, 15 Nov 2026 12:43:44 +0100 (CET)
-From: "Tomas Paukrt" <tomaspaukrt@email.cz>
-To: "David Heidelberg" <david@ixit.cz>
-Cc: <linux-wireless@vger.kernel.org>,
-	<ath10k@lists.infradead.org>,
-	"phone-devel" <phone-devel@vger.kernel.org>,
-	"Felix Kaechele" <felix@kaechele.ca>,
-	<jjohnson@kernel.org>
-Subject: =?utf-8?q?Re=3A_=5BPATCH_ath-next_1/6=5D_wifi=3A_ath10k=3A_usb=3A?=
-	=?utf-8?q?_fix_group_key_installation?=
-Date: Sun, 15 Nov 2026 12:43:44 +0100 (CET)
-Message-Id: <5Nd.ZqDG.68CtbqKyNmY.1g{Phm@seznam.cz>
-References: <20261114090737.64348-1-tomaspaukrt@email.cz>
-	<20261114090737.64348-2-tomaspaukrt@email.cz>
-	<7e36cb20-7752-4778-b068-56d41819f670@kaechele.ca>
-	<dfae62c8-6fd0-40da-bc4c-65d4d6594cd0@ixit.cz>
-In-Reply-To: <dfae62c8-6fd0-40da-bc4c-65d4d6594cd0@ixit.cz>
+	dkim=pass (2048-bit key) header.d=gmail.com header.i=@gmail.com header.a=rsa-sha256 header.s=20260707 header.b=Z1wXDAzh
+Received: by mail-pf1-f180.google.com with SMTP id d2e1a72fcca58-8b5a6f2f27fso969938b3a.3
+        for <linux-wireless@vger.kernel.org>; Sun, 15 Nov 2026 03:55:58 -0800 (PST)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+        d=gmail.com; s=20260707; t=1794743758; x=1795348558; darn=vger.kernel.org;
+        h=content-transfer-encoding:mime-version:message-id:date:subject:cc
+         :to:from:from:to:cc:subject:date:message-id:reply-to:content-type;
+        bh=U4XOjwAQ2BOIbW/PJ0TA8j9BUAT0ghRUzuZuG7wBy1w=;
+        b=Z1wXDAzhjNVI10WIK7v/6AqSuIruRxpc0Sbim4L5OLsdEqHcPd2U7tyQu+itwpcOI8
+         Fle9AwKV7de8cp725gHnsJkpkRWJmNiYhyBphFBjExB+GmIG0F/VVwBuClxlYvogXA3P
+         HNYhNW59TFSoX/Kzf/90k9bTRK4teCIfcMgtPFaTD28u0jM4e9KS33O7wVFRSB9rtpml
+         6VY10sdSCgnU/oXhSOn3vm/18C2C7Ma7k+kcRaEZzebYACJqza34wN8TJjzeeBYO4bpK
+         QqqtOWGx1hq8tcP5/kefneB4iQfbH/4p537R8wf388nF3JIHF5DgYd0iJkaraCIYBEXH
+         a9Uw==
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+        d=1e100.net; s=20260707; t=1794743758; x=1795348558;
+        h=content-transfer-encoding:mime-version:message-id:date:subject:cc
+         :to:from:x-gm-gg:x-gm-message-state:from:to:cc:subject:date
+         :message-id:reply-to:content-type;
+        bh=U4XOjwAQ2BOIbW/PJ0TA8j9BUAT0ghRUzuZuG7wBy1w=;
+        b=B2Cz4X7XCYIMRQSZJ4k26ghZZKXc/2fivudCtIhKB2j4ozsC6IYnDzwMO/Te19iv+N
+         ZG1kDo0GHEpofOmR5HVwzIuczEoAvlooq2sPiI/CCy+1g561o3yHB6B3b+zw9MaBh5WC
+         mCMj6IKwXiKuhviK1IZPyhZdgBupphnp5WAYA4h3mJ155pEK86Q0JhIg/lNKrCGBR1xM
+         whdALEZaNhkdGmUlIhdekfU6+3EfUAkw9QIIZTMA91/ehxm+nP5wLcc/pAR1SQp3MgHi
+         F61+jBx8yQ+4wQV4RMS7DvYRsYV/xUk1QyVQSz6kEya8tU2XbAaa7VfL6OyfZgWIA0By
+         zIVg==
+X-Gm-Message-State: APuU4Z/IYN0eFcIHZhgZAQzwKN7O0YK+VaVNX9+9wO3HMfABKPk5reTd
+	kj4q4ffEIvjRvQctshgbJPJZ/Cqs0T/WPHVl7TLuP/ZQWSFpkCxuhieN
+X-Gm-Gg: AYBFou34vf0qxqBbtGIGK7+oiCtrl8IfVg8bcX5fvNRmwj6qALGGHGxgwaNU53gzRVB
+	QfaImh3wjWTp7kcmY8dMinS2hieFU0LSFTBJhiEmkYJstjgNezz4RqWs5D7rRLzH3Vbn3mY3n7B
+	R1zJngD2/PBet+g9i5XaEdWRZe3eEv9DE8wVGlocZxnPVDXFozSOU9tDHYBfZ8Cl41HQ10OTE+A
+	Tuqmi53vGuODhB2vDLLoFz7l+hHsY77oozFp+SD3rxVWPsDhm+Ef5LQFJ6ndDQhY49EySicSKHC
+	J3l4uN4glgLcGFIN3Rrt0nuUb3XCBdH0pjT7rcgZjX7SdkiMge/Iv2swC4PfqUJOHTpl1cKfWx7
+	pHUg2TlnHQn0gInzSbljiJrvPH+dXTkoaQvv9vNDk04hAEGRdhwH15h9FTjX+jMR9Hpd36p0KD9
+	u+L/2VwrzZg1Dd2dCBRRcizYm2eRoPXjpcKOi/Unl2RQDDeBABTGZ+1TKHqNODevY7PovZvL4lx
+	oXF2M4CuPuytJPiwEf3hm8o0GHuTf3MjUt1xM05rarKZc7yvUJnapkKCj03mTQ1Td6eKIdoPrMU
+	+Fi91J624fl5yldk+Avf+GibJcybjY6ewHDfepsXHh6TJ+kihsiEKZlRasxeX00y7OTrt3ZCIjR
+	vfdRk4pml7GZZ19C176tkkjQXrEwy6rXZ6bOfFAMgd/6L+av3bBbh/hymycRzcS3m
+X-Received: by 2002:a17:90a:e7d0:b0:398:c3ca:1ebc with SMTP id 98e67ed59e1d1-3b1b0a1be73mr6848483a91.18.1794743757542;
+        Sun, 15 Nov 2026 03:55:57 -0800 (PST)
+Received: from acemagic-m1.tail4fb79.ts.net ([2401:7400:c804:b668:5ade:5fb:5602:326b])
+        by smtp.gmail.com with ESMTPSA id 98e67ed59e1d1-3b1b3ac294bsm5853901a91.2.2026.11.15.03.55.54
+        (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
+        Sun, 15 Nov 2026 03:55:56 -0800 (PST)
+From: Ho Jie Feng <hjf3108@gmail.com>
+To: Ping-Ke Shih <pkshih@realtek.com>
+Cc: linux-wireless@vger.kernel.org,
+	linux-kernel@vger.kernel.org,
+	Bitterblue Smith <rtl8821cerfe2@gmail.com>,
+	Luka Gejak <luka.gejak@linux.dev>,
+	Ho Jie Feng <hjf3108@gmail.com>
+Subject: [PATCH rtw-next v4 0/7] wifi: rtw88: extend 88xxA support
+Date: Sun, 15 Nov 2026 19:43:26 +0800
+Message-ID: <20261115114336.1739863-1-hjf3108@gmail.com>
+X-Mailer: git-send-email 2.53.0
 X-Mailing-List: linux-wireless@vger.kernel.org
 List-Id: <linux-wireless.vger.kernel.org>
 List-Post: <mailto:linux-wireless@vger.kernel.org>
@@ -75,49 +95,68 @@ List-Subscribe: <mailto:linux-wireless+subscribe@vger.kernel.org>
 List-Unsubscribe: <mailto:linux-wireless+unsubscribe@vger.kernel.org>
 List-Owner: <mailto:linux-wireless+owner@vger.kernel.org>
 Precedence: list
-Mime-Version: 1.0 (szn-mime-2.2.19)
-X-Mailer: szn-email-ebox-5.1.30
-Content-Type: text/plain;
-	charset=utf-8
-Content-Transfer-Encoding: quoted-printable
+MIME-Version: 1.0
+Content-Transfer-Encoding: 8bit
 
-> Hello.
->
-> I'm pretty sure it's not related to the USB bus, but related to the devi=
-ce firmware.
->
-> Check what firmware you use, add the `.no_pairwise_key_del_ind =3D true`=
- and 
-> report if that solves your issue, I'm happy to send v2 with your usecase=
- covered.
->
-> David
->
-> P.S. Felix, thanks for Ccing me here :)
+This series enables HT STBC transmission, VHT SU beamformed reception
+and carrier-frequency-offset correction on supported 88xxA devices.
 
-Hi David and Felix,
+Tested on RTL8812AU:
+TX went from 136.0 to 144.2.
+RX went from 215.5 to 249.2.
 
-I tested David's patch with .no_pairwise_key_del_ind =3D true on QCA9377-7=
+Changelog v4:
+- Restore "wifi: rtw88: correctly expose beamformee capabilities"
+- Add a patch to skip the dynamic CSI rate on chips without a
+  cfg_csi_rate op.
+- Describe magic numbers
+- Link to v3: https://lore.kernel.org/linux-wireless/20261112173246.3201729-1-hjf3108@gmail.com/
 
-against my patch, 30 minutes of disconnect/reconnect cycles each.
+Changelog v3:
+- Remove EDCCA commits since it causes problems in some situations
+- Beamformee: gate on spatial streams instead of the RX antennas,
+  in case an antenna is disabled
+- Beamformee: writes RTL8814A use rtw_write32_mask() instead of
+  an unaligned 16-bit write
+- Beamformee: drop the chip ID from the debug message, style fixes
+- CFO: add RTW_XCAP_MASK to phy.h
+- CFO: use 0x20 as the RTL8814A crystal cap when the efuse is empty,
+  following the vendor driver
+- CFO: add comment on why min(...,2) is needed for rtl8814
+- A-MPDU: set BIT(31) of REG_AMPDU_MAX_LENGTH, like the vendor driver
+- A-MPDU: limit RTL8821A with IEEE80211_VHT_MAX_AMPDU_64K
+- Link to v2: https://lore.kernel.org/linux-wireless/20261031070950.425176-1-hjf3108@gmail.com/
 
-You are right that the firmware sends no HTT security indication for
-the pairwise key removal, and David's patch fixes that part here too.
+Changelog v2:
+- Split correcting beamform caps into its own commit
+- Adjust EDCCA threshold on scan to avoid high latency
+- Link to v1: https://lore.kernel.org/linux-wireless/20261029055212.84711-1-hjf3108@gmail.com/
 
-But QCA9377-7 has a second problem: the indication for the group key
-installation comes late, from 47 ms up to 4 s. With David's patch 64
-of 184 group key installations (35%) still timed out and mac80211
-deauthenticated.
+Ho Jie Feng (7):
+  wifi: rtw88: 8812a, 8814a: enable STBC for HT transmissions
+  wifi: rtw88: skip the dynamic CSI rate without a cfg_csi_rate op
+  wifi: rtw88: correctly expose beamformee capabilities
+  wifi: rtw88: 88xxa: receive VHT SU beamformed transmissions
+  wifi: rtw88: prepare frequency-offset correction for more chips
+  wifi: rtw88: 88xxa: correct carrier-frequency offset
+  wifi: rtw88: 8812a, 8821a: respect peer A-MPDU size limits
 
-WMI_VDEV_INSTALL_KEY_COMPLETE_EVENTID arrives within 1 ms for every
-installation and removal. Completing install_key_done on it gave no
-timeout in 211 connections.
+ drivers/net/wireless/realtek/rtw88/bf.h       |   7 +
+ drivers/net/wireless/realtek/rtw88/main.c     |  17 ++-
+ drivers/net/wireless/realtek/rtw88/phy.c      | 109 +++++++++++++++-
+ drivers/net/wireless/realtek/rtw88/phy.h      |   8 ++
+ drivers/net/wireless/realtek/rtw88/reg.h      |   1 +
+ drivers/net/wireless/realtek/rtw88/rtw8812a.c |  17 ++-
+ drivers/net/wireless/realtek/rtw88/rtw8814a.c |  75 ++++++++++-
+ drivers/net/wireless/realtek/rtw88/rtw8821a.c |  16 ++-
+ drivers/net/wireless/realtek/rtw88/rtw8822c.c | 100 +--------------
+ drivers/net/wireless/realtek/rtw88/rtw8822c.h |   3 -
+ drivers/net/wireless/realtek/rtw88/rtw88xxa.c | 120 ++++++++++++++++--
+ drivers/net/wireless/realtek/rtw88/rtw88xxa.h |   3 +
+ 12 files changed, 353 insertions(+), 123 deletions(-)
 
-So David's patch alone does not fix QCA9377-7. I agree the issue is
-not USB specific. Without the bus check, the wait would be completed
-on the WMI event for all WMI-TLV targets. Could you check if my patch
-without the bus check also works on WCN3990 and QCA9379 SDIO?
 
-Thanks
+base-commit: 61a5eb87b2d9b4d5e353780b781cf691f39ba9e1
+-- 
+2.53.0
 
-Tomas
