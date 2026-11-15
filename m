@@ -1,47 +1,47 @@
 Authentication-Results: smtp.subspace.kernel.org; arc=none smtp.remote-ip=95.143.172.20
 ARC-Seal: i=1; d=subspace.kernel.org; s=arc20261015; a=rsa-sha256; cv=none;
-	t=1794752670;
-	b=AhxHxhi0WOicKwOdnP1bQmY7OB3QQ5QoMdbsnlBV1nZZJM0/+Luvl/QXqbkqn97+VxJs
-	 iQReScMiPigq8qJxnC9DlNPsOu6aopqZhoY38nnu5FDZC4cG+aJDGv0Jl9hPPUV2KrHo3
-	 47oBfeIhXniat7/CJCDER/qh3V2cgAgJUa3zELD0k4NdDzdC46eZiKHXik/6dzygEI5Ab
-	 qFQso07U4d3eFLWGjuCOu3Eqf2JAdy6TVpBYrKqijSMleSvSz1RLPmOMb5XerZWWrx5RX
-	 hHJFjnNc0LEPPE9NQGdvYVJsAuWKYMtqU1FCBNXWDcCbjIdjbxNCvqVa1cYJ+6bbCFQ==
+	t=1794752762;
+	b=lJWTQiL+6wxGdG3dhjMjXPUs8ily0DB/+ntsdeb+hb5T4tW9Oe77We7tXWztkm83I8ry
+	 XU5Sd3MNeSeTMRZCdwzT0TDTu2NFPar82FsRENgMHeLsJzLe09QqR5fqdXoKd57thqa/H
+	 N9or/wyWBh/SXCeX5xQsdSoV6J1vZdD1guKrM/s7JM5cDFwPO2Rm6l1sKfANKLaccolIg
+	 lRJsGnGaro81MLb+GNDyYYYgyFBRzEBHNbcVYvaHng73Ng3x8baTVYKr7JVv3Z2EcAMN8
+	 rKBf2IhhjZIw5U2kdxIVfiK6hYCVLh3rS1hnoap4KXG3lehFFeNKwX2It7ko4fnJXxg==
 ARC-Message-Signature: i=1; d=subspace.kernel.org; s=arc20261015;
-	a=rsa-sha256; c=relaxed/relaxed; t=1794752670;
+	a=rsa-sha256; c=relaxed/relaxed; t=1794752762;
 	h=DMARC-Filter:Received:Received:Received:From:To:Cc:Subject:Date:
 	 Message-ID:X-Mailer:In-Reply-To:References:MIME-Version:
 	 Content-Transfer-Encoding:X-Rspamd-Bar:X-Rspamd-Report:X-Rspamd-Score:
 	 DKIM-Signature;
-	bh=vcanUONDfh4UpwdX4o7Q9IMWZ0FQX/y7PhEqP7yd0GI=;
-	b=wleJGQ2CFkFfsLm/TTyim7cOMm3XXYyT8wtxmdezKqcSCFNdYYU3Slao0BmcClZnVOil
-	 ySpAA/7550UfUMihkshmYstKvsZO/m5noqKNz+v5g4CaXOQuT/IWmxwS1xu+jes0AyzDb
-	 N6L6EBM01Stjq6tqNKnKv06nwbGkuZ6zvQID3gxyYAvUEXpSsNra6ikPxYoXBk9Pflrt5
-	 uOF2nIdSofXbJWmzvGzf3DDC0M9U4r2sJhJuMisyy5haRQgdPNBd40zFrNsXAD+3dlchF
-	 DqNGV+yyUJPkxIPlMcyLmsDWXpKfGK5xYRlPC7J852BTJU095jngEBffg9RBkolA1ow==
+	bh=ShjgCvqqZNLaBDF7Bo4oAbg7L5sjoWh7XMVc+AD2/Yw=;
+	b=Mof/zjkarcOW1iCdmXJ2JLHg7Qmd6pcf7G+ANEwJQ2f0lHy5PQat2gr/JYI/2nfL9rIy
+	 gxUjb0n/+C4EHoCqlw4cWTqUhxXKnrUc8BrJzOtTg6JrpmnO+FIq0JR1hsif9ARCbqJlA
+	 NKt4MPjmXhnmHrPHeyOBzJoiNAv4ZnjQmUC2+KzuvO/DZe2aqC7hW+nNgEcykJr/3jP+C
+	 NHxzlfK3o6h4YHM4k/cJXwe54n3UHJUJtXh9gVy4FIKATbqQcLWPglBoB68eaBSlJqo42
+	 j1+pdLKuaS+pRVac9BntG/A/A4TeSyZbTNlxHpMxqxqrK5MKFkbPMwQaTFnNVmFm+Sg==
 ARC-Authentication-Results: i=1; smtp.subspace.kernel.org; 
 	dmarc=pass header.from=lausen.nl;
 	spf=pass smtp.mailfrom=lausen.nl;
-	dkim=pass header.d=lausen.nl header.i=@lausen.nl header.a=rsa-sha256 header.s=uberspace header.b=wc9by7I+;
+	dkim=pass header.d=lausen.nl header.i=@lausen.nl header.a=rsa-sha256 header.s=uberspace header.b=Fijdk6XF;
 	arc=none smtp.remote-ip=95.143.172.20
 Received: from mailgate01.uberspace.is (mailgate01.uberspace.is [95.143.172.20])
 	(using TLSv1.3 with cipher TLS_AES_256_GCM_SHA384 (256/256 bits)
 	 key-exchange X25519 server-signature ECDSA (prime256v1))
 	(No client certificate requested)
-	by smtp.subspace.kernel.org (Postfix) with ESMTPS id 0F3D9606A885
-	for <linux-wireless@vger.kernel.org>; Sun, 15 Nov 2026 14:24:28 +0000 (UTC)
-DMARC-Filter: OpenDMARC Filter v1.4.2 smtp.subspace.kernel.org 0F3D9606A885
+	by smtp.subspace.kernel.org (Postfix) with ESMTPS id B4495606A31E
+	for <linux-wireless@vger.kernel.org>; Sun, 15 Nov 2026 14:26:01 +0000 (UTC)
+DMARC-Filter: OpenDMARC Filter v1.4.2 smtp.subspace.kernel.org B4495606A31E
 Authentication-Results: smtp.subspace.kernel.org; dmarc=pass (p=none dis=none) header.from=lausen.nl
 Authentication-Results: smtp.subspace.kernel.org; spf=pass smtp.mailfrom=lausen.nl
 Authentication-Results: smtp.subspace.kernel.org;
-	dkim=pass (4096-bit key) header.d=lausen.nl header.i=@lausen.nl header.a=rsa-sha256 header.s=uberspace header.b=wc9by7I+
+	dkim=pass (4096-bit key) header.d=lausen.nl header.i=@lausen.nl header.a=rsa-sha256 header.s=uberspace header.b=Fijdk6XF
 Received: from devico.uberspace.de (devico.uberspace.de [185.26.156.185])
-	by mailgate01.uberspace.is (Postfix) with ESMTPS id 6409660D53
-	for <linux-wireless@vger.kernel.org>; Sun, 15 Nov 2026 15:24:27 +0100 (CET)
-Received: (qmail 22121 invoked by uid 990); 15 Nov 2026 14:24:27 -0000
+	by mailgate01.uberspace.is (Postfix) with ESMTPS id 3EC0F60D17
+	for <linux-wireless@vger.kernel.org>; Sun, 15 Nov 2026 15:26:00 +0100 (CET)
+Received: (qmail 24959 invoked by uid 990); 15 Nov 2026 14:26:00 -0000
 Authentication-Results: devico.uberspace.de;
 	auth=pass (plain)
 Received: from unknown (HELO unknown) (::1)
-	by devico.uberspace.de (Haraka/3.1.1) with ESMTPSA; Sun, 15 Nov 2026 15:24:27 +0100
+	by devico.uberspace.de (Haraka/3.1.1) with ESMTPSA; Sun, 15 Nov 2026 15:25:59 +0100
 From: Leonard Lausen <leonard@lausen.nl>
 To: Ping-Ke Shih <pkshih@realtek.com>
 Cc: leonard@lausen.nl,
@@ -50,9 +50,9 @@ Cc: leonard@lausen.nl,
 	linux-wireless@vger.kernel.org,
 	linux-rockchip@lists.infradead.org,
 	linux-kernel@vger.kernel.org
-Subject: [PATCH 1/2] wifi: rtw88: 8822c: filter hardware-handled control frames on SDIO
-Date: Sun, 15 Nov 2026 14:23:30 +0000
-Message-ID: <20261115142330.359247-4-leonard@lausen.nl>
+Subject: [PATCH 2/2] wifi: rtw88: sdio: combine free TX page register reads
+Date: Sun, 15 Nov 2026 14:23:32 +0000
+Message-ID: <20261115142330.359247-6-leonard@lausen.nl>
 X-Mailer: git-send-email 2.47.3
 In-Reply-To: <20261115142330.359247-2-leonard@lausen.nl>
 References: <20261115142330.359247-2-leonard@lausen.nl>
@@ -67,82 +67,153 @@ Precedence: list
 MIME-Version: 1.0
 Content-Transfer-Encoding: 8bit
 X-Rspamd-Bar: -----
-X-Rspamd-Report: REPLY(-4) BAYES_HAM(-2.999999) MID_CONTAINS_FROM(1) MIME_GOOD(-0.1) R_MISSING_CHARSET(0.5)
-X-Rspamd-Score: -5.599999
+X-Rspamd-Report: REPLY(-4) BAYES_HAM(-3) MID_CONTAINS_FROM(1) MIME_GOOD(-0.1) R_MISSING_CHARSET(0.5)
+X-Rspamd-Score: -5.6
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple;
 	d=lausen.nl; s=uberspace;
 	h=from:to:cc:subject:date;
-	bh=0TRBf06mo4IgPwGwnvbNv30x92205M3V5CcT3zrUl3o=;
-	b=wc9by7I+3JGBK/Oc6+bASwD97QqerUv6hamR6+se/F2occAtCIHswHSlIXEpapmfz9lsOW+rf2
-	GCZST68Pd0Q2D5sotV2l1bJ2N1HTJN4Sn/u6nxp1pPviQHAWl0baeDBNZJgFycwRRUDXo7IrH+gT
-	wTH7UAvbjA9+sM6FbS8qnqjOgkJaUzzfvVwWDX6ag8cX6N/MfeVVeOC2OjGIuGh6ABIyljAw0lSu
-	U1sd51T1Z+RcGQ5uLN1rslJoDsM8kWhe4OthejYNsJjIld7da36T2lhpw4qvJ4czLF2i583jFU5d
-	ld7EQBDoXTGwBNraF1P0BwyONNkUbe9NqoxzWcWo6L48UOGQJCf5Ve4+CO5Si+yWF9Q1Kxw8Q4K/
-	Irhot6hs91bKGV5RpbFpLcvx1S2BO/SYM7S/IMXy5EhvJjZ1Vfh0cO01NXDxTXrtmOk1W09E6pVy
-	YCidZt8iTwufehXAjUMkI+Qw2BU9EugERVFBwK0C8hcBxb0/VHrd/yQpntGWgR/XWHWu8CE96f8j
-	W8sUlqW42/TnMumIbw3COZgOMbCPtggB65UdtrC/xcmG2jjTMlpm7R17O2fGsHj6cZNNIRX1Wo+d
-	QDhVU/FeepyHz6jIIy3ZPzvdcGACHKCocMo/rYhIfzv90NDajnH7amjyfkuA0AmP5/B1SX1S1kY0
-	o=
+	bh=qQro4BPyHAD9tgg6RcpreG2vwjlqZkQarO5Fq3srUEE=;
+	b=Fijdk6XFsoszXGzwojm16N9Wwk5P6TWeHsr5PF6iwx1cMyostFAss2Eig7cimO/b0Zr2CRqNwO
+	IXzLWzwAyAwv0mppekeJuMAEaurfsim/y6wrVfezxfEQKGHPch9OzGf1EFf4D/89el5vPgAlZdkI
+	Y/nHeu16DLxcvQEC2pqB6p4WzRhA5uPcC7NvPLZF9dLseqoGMDTVFGaRNpcmIRI6UO8Bs90tHvys
+	gpQCp1mUm8Snqv+uWm7eLCkornvrCmCLMVyiVlngusLdiyf4mDNlFwT44mnlLu9IxQ64t7yHXJ8a
+	9f+3nXmIIAMDiiy6qvGc07v5TebtOKecjskmaOONycxyZ15GPea5IkBvz0GY4luhl6s116qcILEa
+	A6QEE2tlDzzhp12rzkDZFdhSD1KVt05pavxNR7+dT3RUFDwD0FU+Say30WzivRFjrlFH+Ji+g3/5
+	hSuaTxQjAauFh21YxebhwmoI822pxo+oiSEEgEgAxEyueE0GU6+lrPwoXdKDaSItooHL0cJNa1xt
+	P3lKhFoIbpJFnWTLrirhNNdb0mSMCSlRQ5hJcpGlODTQULtBCAJUaPbbJkPaFY7sFPkJ77aDOKKU
+	tGfWTK8P8KigXjHQ8raac0SiJAeAK4Pih5Q5MDJ/x9k/PApq43ZWIORgqWUPRkERtCw1bhg832DB
+	Q=
 
-RTL8822C forwards every control-frame subtype to the host by default.
-ACK, Block Ack, RTS and CTS frames are handled by hardware, but forwarding
-them also adds small SDIO transfers to the data path.
+TX capacity checks on non-8051 chips read three adjacent 32-bit registers
+in separate SDIO requests. Combine them into one 12-byte CMD53 read when
+the existing power/alignment check permits it, with the per-register
+fallback otherwise. Propagate read errors before checking queue capacity.
 
-Clear these four subtypes from the SDIO default RX filter. Retain BAR,
-PS-Poll and the remaining subtypes, and store the default in rxfltmap1
-so FIF_CONTROL can still request all control frames.
+Allocate a DMA-safe buffer at probe and copy its little-endian values
+into the caller's array before releasing the host. Holding the host
+through the read and copy serializes access to the shared buffer.
 
-Limit the new default to SDIO, where profiling identified the overhead
-and throughput tests measured a benefit. PCIe and USB use different
-receive paths and have not been validated with this filter setting.
+On RTL8822CS/NanoPi M5 at 198 MHz SDR104, median TCP upload increased
+from 170 to 186 Mbit/s (+9%) with this patch alone, and from 258 to
+287 Mbit/s (+11%) when added after control-frame filtering.
 
-FriendlyElec's RTL8822CS driver also filters control frames at startup;
-this change retains additional subtypes for mac80211.
+A separate download test  measured 241 to 262 Mbit/s (+8%) with this
+patch alone, and 263 to 274 Mbit/s (+4%) when added after filtering.
 
-On RTL8822CS/NanoPi M5 at 198 MHz SDR104, this patch alone increased
-median TCP upload from 170 to 258 Mbit/s (+52%). 
-
-A separate download test (four 30-second samples per configuration)
-measured 241 to 263 Mbit/s (+9%).
-
-Link: https://github.com/friendlyarm/rtl8822cs/blob/c8b944a34bba2116fcdb060362bde40242bb87e5/hal/rtl8822c/rtl8822c_halinit.c
+Assisted-by: LLM
+Signed-off-by: Leonard Lausen <leonard@lausen.nl>
 ---
- drivers/net/wireless/realtek/rtw88/reg.h      | 4 ++++
- drivers/net/wireless/realtek/rtw88/rtw8822c.c | 9 +++++++++
- 2 files changed, 13 insertions(+)
+ drivers/net/wireless/realtek/rtw88/sdio.c | 58 +++++++++++++++++++++--
+ drivers/net/wireless/realtek/rtw88/sdio.h |  1 +
+ 2 files changed, 55 insertions(+), 4 deletions(-)
 
-diff --git a/drivers/net/wireless/realtek/rtw88/reg.h b/drivers/net/wireless/realtek/rtw88/reg.h
-index afcdb66fdb9a1..8e220580be4f8 100644
---- a/drivers/net/wireless/realtek/rtw88/reg.h
-+++ b/drivers/net/wireless/realtek/rtw88/reg.h
-@@ -587,6 +587,10 @@
+diff --git a/drivers/net/wireless/realtek/rtw88/sdio.c b/drivers/net/wireless/realtek/rtw88/sdio.c
+index dc2fd0f8f9fff..4aeff250a6d6a 100644
+--- a/drivers/net/wireless/realtek/rtw88/sdio.c
++++ b/drivers/net/wireless/realtek/rtw88/sdio.c
+@@ -26,6 +26,7 @@
+ #define RTW_SDIO_TX_FIFO_HIWATER			16
+ #define RTW_SDIO_TX_FIFO_LOWATER			8
+ #define RTW_SDIO_TX_RETRY_DELAY			msecs_to_jiffies(1)
++#define RTW_SDIO_FREE_TXPG_COUNT			3
  
- #define REG_RXFLTMAP0		0x06A0
- #define REG_RXFLTMAP1		0x06A2
-+#define BIT_RXFLTMAP1_BACK	BIT(9)
-+#define BIT_RXFLTMAP1_RTS	BIT(11)
-+#define BIT_RXFLTMAP1_CTS	BIT(12)
-+#define BIT_RXFLTMAP1_ACK	BIT(13)
- #define REG_RXFLTMAP2		0x06A4
- #define REG_RXFLTMAP4		0x068A
- #define REG_BT_COEX_TABLE0	0x06C0
-diff --git a/drivers/net/wireless/realtek/rtw88/rtw8822c.c b/drivers/net/wireless/realtek/rtw88/rtw8822c.c
-index 32d9709f2c243..9c9e4f2397282 100644
---- a/drivers/net/wireless/realtek/rtw88/rtw8822c.c
-+++ b/drivers/net/wireless/realtek/rtw88/rtw8822c.c
-@@ -2096,6 +2096,15 @@ static int rtw8822c_mac_init(struct rtw_dev *rtwdev)
- 	rtw_write8(rtwdev, REG_WMAC_TRXPTCL_CTL_H  + 2, WLAN_BAR_ACK_TYPE);
- 	rtw_write16(rtwdev, REG_RXFLTMAP0, WLAN_RX_FILTER0);
- 	rtwdev->hal.rxfltmap1 = WLAN_RX_FILTER1;
-+	if (rtw_hci_type(rtwdev) == RTW_HCI_TYPE_SDIO) {
-+		/* Hardware handles these frames; retain BAR and PS-Poll for
-+		 * mac80211. FIF_CONTROL restores all subtypes for monitors.
-+		 */
-+		rtwdev->hal.rxfltmap1 &= ~(BIT_RXFLTMAP1_BACK |
-+						BIT_RXFLTMAP1_RTS |
-+						BIT_RXFLTMAP1_CTS |
-+						BIT_RXFLTMAP1_ACK);
+ static bool rtw_sdio_is_bus_addr(u32 addr)
+ {
+@@ -675,6 +676,40 @@ static atomic_t *rtw_sdio_8723bs_free_txpg(struct rtw_dev *rtwdev, u8 queue)
+ 	}
+ }
+ 
++static int rtw_sdio_read_free_txpg(struct rtw_dev *rtwdev, u32 *free_txpg)
++{
++	struct rtw_sdio *rtwsdio = (struct rtw_sdio *)rtwdev->priv;
++	bool bus_claim = rtw_sdio_bus_claim_needed(rtwsdio);
++	u32 addr = rtw_sdio_to_bus_offset(rtwdev, REG_SDIO_FREE_TXPG);
++	int i, ret;
++
++	if (bus_claim)
++		sdio_claim_host(rtwsdio->sdio_func);
++
++	if (!rtw_sdio_use_memcpy_io(rtwdev, addr, sizeof(u32))) {
++		for (i = 0; i < RTW_SDIO_FREE_TXPG_COUNT; i++) {
++			free_txpg[i] = rtw_sdio_readl(rtwdev, addr + i * sizeof(u32), &ret);
++			if (ret)
++				break;
++		}
++		goto out;
 +	}
- 	rtw_write16(rtwdev, REG_RXFLTMAP1, rtwdev->hal.rxfltmap1);
- 	rtw_write16(rtwdev, REG_RXFLTMAP2, WLAN_RX_FILTER2);
- 	rtw_write32(rtwdev, REG_RCR, WLAN_RCR_CFG);
++
++	ret = sdio_memcpy_fromio(rtwsdio->sdio_func, rtwsdio->free_txpg, addr,
++				 RTW_SDIO_FREE_TXPG_COUNT * sizeof(__le32));
++	if (!ret) {
++		/* Copy the shared DMA buffer before releasing the host. */
++		for (i = 0; i < RTW_SDIO_FREE_TXPG_COUNT; i++)
++			free_txpg[i] = le32_to_cpu(rtwsdio->free_txpg[i]);
++	}
++
++out:
++	if (bus_claim)
++		sdio_release_host(rtwsdio->sdio_func);
++
++	return ret;
++}
++
+ static int rtw_sdio_check_free_txpg(struct rtw_dev *rtwdev, u8 queue,
+ 				    size_t count)
+ {
+@@ -727,11 +762,14 @@ static int rtw_sdio_check_free_txpg(struct rtw_dev *rtwdev, u8 queue,
+ 		/* add the pages from the public queue */
+ 		pages_free += (free_txpg >> 24) & 0xff;
+ 	} else {
+-		u32 free_txpg[3];
++		u32 free_txpg[RTW_SDIO_FREE_TXPG_COUNT];
++		int ret;
+ 
+-		free_txpg[0] = rtw_sdio_read32(rtwdev, REG_SDIO_FREE_TXPG);
+-		free_txpg[1] = rtw_sdio_read32(rtwdev, REG_SDIO_FREE_TXPG + 4);
+-		free_txpg[2] = rtw_sdio_read32(rtwdev, REG_SDIO_FREE_TXPG + 8);
++		ret = rtw_sdio_read_free_txpg(rtwdev, free_txpg);
++		if (ret) {
++			rtw_warn(rtwdev, "Failed to read free TX pages: %d\n", ret);
++			return ret;
++		}
+ 
+ 		switch (queue) {
+ 		case RTW_TX_QUEUE_BCN:
+@@ -1777,6 +1815,7 @@ int rtw_sdio_probe(struct sdio_func *sdio_func,
+ {
+ 	struct ieee80211_hw *hw;
+ 	struct rtw_dev *rtwdev;
++	struct rtw_sdio *rtwsdio;
+ 	int drv_data_size;
+ 	int ret;
+ 
+@@ -1798,6 +1837,17 @@ int rtw_sdio_probe(struct sdio_func *sdio_func,
+ 	if (ret)
+ 		goto err_release_hw;
+ 
++	rtwsdio = (struct rtw_sdio *)rtwdev->priv;
++	if (!rtw_chip_wcpu_8051(rtwdev)) {
++		rtwsdio->free_txpg = devm_kmalloc_array(rtwdev->dev,
++							RTW_SDIO_FREE_TXPG_COUNT,
++							sizeof(*rtwsdio->free_txpg), GFP_KERNEL);
++		if (!rtwsdio->free_txpg) {
++			ret = -ENOMEM;
++			goto err_deinit_core;
++		}
++	}
++
+ 	rtw_dbg(rtwdev, RTW_DBG_SDIO,
+ 		"rtw88 SDIO probe: vendor=0x%04x device=%04x class=%02x",
+ 		id->vendor, id->device, id->class);
+diff --git a/drivers/net/wireless/realtek/rtw88/sdio.h b/drivers/net/wireless/realtek/rtw88/sdio.h
+index 6e7e6009744b0..8310bf6d54b59 100644
+--- a/drivers/net/wireless/realtek/rtw88/sdio.h
++++ b/drivers/net/wireless/realtek/rtw88/sdio.h
+@@ -181,6 +181,7 @@ struct rtw_sdio {
+ 	atomic_t tx_oqt_free;
+ 	/* one writer at a time between the credit check and the accounting */
+ 	struct mutex tx_credit_lock;
++	__le32 *free_txpg;
+ };
+ 
+ extern const struct dev_pm_ops rtw_sdio_pm_ops;
