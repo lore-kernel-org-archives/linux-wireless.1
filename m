@@ -1,73 +1,73 @@
 Authentication-Results: smtp.subspace.kernel.org; arc=none smtp.remote-ip=192.198.163.13
 ARC-Seal: i=1; d=subspace.kernel.org; s=arc20261015; a=rsa-sha256; cv=none;
-	t=1794864115;
-	b=RguCur58iwNXGdjhHQ/7HwyiWLGzIl46yD0/WqjxVA5T9WzHoITHeApGAOHGJ+5SEryi
-	 hQQLOLS9qi8CNvSSXw33FO2b88IZ6m7l8odU9Im94kYtaajlAn/d5NQ4qb8zPQQ5WuWHh
-	 bmeKvtjA6L7gaZOQ8XBQT4ScYvO9Re9eBAIsK8Lr1mYnYbNdkVLsfUQ9zcm3NS9RiGx+4
-	 q81CTI20LjCYLgKPYRFuNWvYFArRnMWPZoklCnfUR96aqnHjR/Xql28H74jyllAucemhr
-	 rxcRuOTe3ITUVchr72R8JpbV3QNnWMMJBJFH7DQcn2loxc1SYO7LHqP9G9UC4xBMltA==
+	t=1794864116;
+	b=cr37I+8gB2nB14ccp3u/YQi9ePDnWlvumjZ8OOoYEgf8Qmi4M4G178/YiYhmQLfVWRC3
+	 1yQ4lDe4xKDnt0XNcDbpVX+UslRj0gEZq6Q5yIryvd7dtN+CIk5xNjIMXIUcp4Oc4REp0
+	 06zhUeXT2l/1XWqiEnrebFSzqsLVFuNvM9ndEjE+TZrYnfGOr/bTmPy2zNcL6gOHilhIX
+	 Cp+E5mbpbX6v1MvnDRYSycZUGWZ96DMY4auiRaFGsPRJURH4VG+6zjtLjujDPQQh1i7X7
+	 1sSNKiTWW6anvJWUBC5IYnGF+gr32+0HdgYg+agJZQuPDeEf/pRqgdgEtjD1+yQedIg==
 ARC-Message-Signature: i=1; d=subspace.kernel.org; s=arc20261015;
-	a=rsa-sha256; c=relaxed/relaxed; t=1794864115;
+	a=rsa-sha256; c=relaxed/relaxed; t=1794864116;
 	h=DMARC-Filter:DKIM-Signature:X-CSE-ConnectionGUID:X-CSE-MsgGUID:
 	 X-IronPort-AV:X-IronPort-AV:Received:X-CSE-ConnectionGUID:
 	 X-CSE-MsgGUID:X-ExtLoop1:X-IronPort-AV:Received:From:To:Cc:Subject:
 	 Date:Message-Id:X-Mailer:In-Reply-To:References:MIME-Version:
 	 Organization:Content-Transfer-Encoding;
-	bh=aXJIdeKgB/y/v9VsoxHbKoAEiZIb/HV/Q7gi7iFtvC0=;
-	b=MO7PjtciE6mtRoxSCJmo3tfD5oFc/h9UwFGGaeI6HtN1cAQjiCr81msTSJvgFLuCnUoM
-	 yQeJ1FlPkV9DaRyQXNLp9NvaAX4LQck1M3JgKdeZqKx5Hticv8mtht56cN0rqtJEIu3ES
-	 JdtLmkhE/dqAC6FOoGDRRIxhlomG+031oAW975PTBOvgjm8fgCphZDM2U/5sTk95SS8Dt
-	 nvUi2CTTpyTl9swupExDKJuCxGXx6czWBLcBmr70SmnPGDZx0+X58Y85SGlH6QvTXfJK2
-	 s+A/Eik4uxMME6qqZiHt9ir9koLHybjJ060uX8ebYY5RErdtcjaVvBMgfAOYRB4UAzA==
+	bh=g3GSqJ8CZLBahhBwUI9HVCBEC34l6Gw0YVRZz3jYyJg=;
+	b=5mKTcAEZW3xjAG3VWhCMzFJhLJM2Y66DukL1ZyzgDwT4LX/hInZC5Fp5TJdvy44IjU7k
+	 dTyP8q90QS+IAzZNUcbCBG2lmS5aaZm4/fXlLURqxRRYW1C243njs0syUS8kyvj3zyrcL
+	 fZDKEzKmOsWC3PCqLHyyzfRnlfIZKH/+hg+QY6D2lf8n2N1sL3vzV63jkvmcorjhZ5OVu
+	 t8J2Fsjo64TFBqkdfXrzgGKIw+SzPWiRSFrZ/bGqY42tyza9PwoqJSbpS1Jvyo1jGZTdn
+	 2F2TsLYVOpcsNmg0w7Y0NQssI6zNH/35lWla3JHZNmCJF/5o/fpGXkxMozt94xj4cFA==
 ARC-Authentication-Results: i=1; smtp.subspace.kernel.org; 
 	dmarc=pass header.from=intel.com;
 	spf=pass smtp.mailfrom=intel.com;
-	dkim=pass header.d=intel.com header.i=@intel.com header.a=rsa-sha256 header.s=Intel header.b=ehzdIDlV;
+	dkim=pass header.d=intel.com header.i=@intel.com header.a=rsa-sha256 header.s=Intel header.b=JVWGgIqz;
 	arc=none smtp.remote-ip=192.198.163.13
 Received: from mgamail.intel.com (mgamail.intel.com [192.198.163.13])
 	(using TLSv1.2 with cipher ECDHE-ECDSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.subspace.kernel.org (Postfix) with ESMTPS id 91DBD606A335
-	for <linux-wireless@vger.kernel.org>; Mon, 16 Nov 2026 21:21:54 +0000 (UTC)
-DMARC-Filter: OpenDMARC Filter v1.4.2 smtp.subspace.kernel.org 91DBD606A335
+	by smtp.subspace.kernel.org (Postfix) with ESMTPS id E7133606A331
+	for <linux-wireless@vger.kernel.org>; Mon, 16 Nov 2026 21:21:55 +0000 (UTC)
+DMARC-Filter: OpenDMARC Filter v1.4.2 smtp.subspace.kernel.org E7133606A331
 Authentication-Results: smtp.subspace.kernel.org; dmarc=pass (p=none dis=none) header.from=intel.com
 Authentication-Results: smtp.subspace.kernel.org; spf=pass smtp.mailfrom=intel.com
 Authentication-Results: smtp.subspace.kernel.org;
-	dkim=pass (2048-bit key) header.d=intel.com header.i=@intel.com header.a=rsa-sha256 header.s=Intel header.b=ehzdIDlV
+	dkim=pass (2048-bit key) header.d=intel.com header.i=@intel.com header.a=rsa-sha256 header.s=Intel header.b=JVWGgIqz
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple;
   d=intel.com; i=@intel.com; q=dns/txt; s=Intel;
-  t=1794864114; x=1826400114;
+  t=1794864116; x=1826400116;
   h=from:to:cc:subject:date:message-id:in-reply-to:
    references:mime-version:content-transfer-encoding;
-  bh=XqD+ytfIXJHqmadqcNZci9CuvLDotT9xl1Zi5/ZYOHI=;
-  b=ehzdIDlVrKEj8SRFA1ji4oR4OhfuCv23UBr+lqOorInx5z0nP7ovtTUw
-   SjaiRwhl2s8ZbgCil8ZShZ1CLgbJ4SuPOOXCcMkACcdrRbuJX5XxN6AzL
-   hP0vCSJQoQTq63Ig0AmfUr60cux5/eFV1LrI8cwQsgAg9XbXxwEtM509c
-   iR7naF6NtXmKYJnjxH2953pNwi14NupH/lL+WjrqSNMdS90MNf5mv6w3w
-   mbFaXuN03pXQrocoIbDgcdZu+mgyjTJJULwMzSG5QTi7XoDmcxi/bL38n
-   XaQGxI2Gh8tzjyBS4p2ftCYDE/Ob/NyoAcFmRkmNYAbHJUQezbUS7d73C
-   A==;
-X-CSE-ConnectionGUID: 0zDfzKZ3TjKl+KUi1He4pQ==
-X-CSE-MsgGUID: 3/F9KbOzRJKdZKUjYPyegA==
-X-IronPort-AV: E=McAfee;i="6800,10657,11968"; a="3604202"
+  bh=VbZ8V7bn9z+AvAb8HAGiABYBZAnzni7lAYVrLrpTH1s=;
+  b=JVWGgIqzH6cmOvrnC0Dhxa3G71o2TTcg6YRdd7ii3TXA7qOfdhw3/wgW
+   9e3by+T2PywNGc8MEaH8+d5GoK9L9d0Bs53x/GdhS1cklP1FJJrdUdLyn
+   LgoWVgHbDbMFFyM7HJa3TsW5Crb9usiyDeMPnOZGqgxT2VJ9PxWigjR4U
+   59jU4MC3lXlrYd/PvO9Zo3jiwFcUC67SPi8tc48XOn20gWWtfnUU4lL5y
+   AJ9oeJ5erMgdbx8SytSzMrOWkorkOxYBt6erkjcnObanwvNxlC6z46Dd2
+   7utNmUXuxGQJfB/5kTC1ymOY4YAbLhycL+5Y/JqdrzeUdD9J1DCmqeR3I
+   g==;
+X-CSE-ConnectionGUID: 6/1u8TRwQXOYgJJWfJlqAA==
+X-CSE-MsgGUID: Wn0akZhrT/ald6mIDGFwfw==
+X-IronPort-AV: E=McAfee;i="6800,10657,11968"; a="3604204"
 X-IronPort-AV: E=Sophos;i="6.27,217,1787036400"; 
-   d="scan'208";a="3604202"
+   d="scan'208";a="3604204"
 Received: from fmviesa006.fm.intel.com ([10.60.135.146])
-  by fmvoesa107.fm.intel.com with ESMTP/TLS/ECDHE-RSA-AES256-GCM-SHA384; 16 Nov 2026 13:21:54 -0800
-X-CSE-ConnectionGUID: aDsemDF5Thy1sMHdA6Vl+A==
-X-CSE-MsgGUID: lMvFZusQSP2d/kxUB4HLyA==
+  by fmvoesa107.fm.intel.com with ESMTP/TLS/ECDHE-RSA-AES256-GCM-SHA384; 16 Nov 2026 13:21:56 -0800
+X-CSE-ConnectionGUID: yAooapiaRjKggA7NtaBvaQ==
+X-CSE-MsgGUID: IHaiATV9RwOV7qWVHEe3FQ==
 X-ExtLoop1: 1
 X-IronPort-AV: E=Sophos;i="6.27,217,1787036400"; 
-   d="scan'208";a="9969144"
+   d="scan'208";a="9969147"
 Received: from weis0040.iil.intel.com ([10.12.217.108])
-  by smtpauth.intel.com with ESMTP/TLS/ECDHE-RSA-AES256-GCM-SHA384; 16 Nov 2026 13:21:53 -0800
+  by smtpauth.intel.com with ESMTP/TLS/ECDHE-RSA-AES256-GCM-SHA384; 16 Nov 2026 13:21:55 -0800
 From: Miri Korenblit <miriam.rachel.korenblit@intel.com>
 To: miriam.rachel.korenblit@intel.com
 Cc: linux-wireless@vger.kernel.org,
 	Johannes Berg <johannes.berg@intel.com>
-Subject: [PATCH iwlwifi-next 10/15] wifi: iwlwifi: mld: dump the FW error logs from dump_error
-Date: Mon, 16 Nov 2026 23:23:28 +0200
-Message-Id: <20261116232138.3a171bd66b0a.Ie743c51b74024019c00d176fa650a439830b1301@changeid>
+Subject: [PATCH iwlwifi-next 11/15] wifi: iwlwifi: dbg: rename the time point sync argument
+Date: Mon, 16 Nov 2026 23:23:29 +0200
+Message-Id: <20261116232138.5a1cab5b2e97.I3ee72c836f8d514c527335a3e59389a03280eddc@changeid>
 X-Mailer: git-send-email 2.34.1
 In-Reply-To: <20261116212333.2404653-1-miriam.rachel.korenblit@intel.com>
 References: <20261116212333.2404653-1-miriam.rachel.korenblit@intel.com>
@@ -83,78 +83,112 @@ MIME-Version: 1.0
 Organization: Intel Israel (74) Limited
 Content-Transfer-Encoding: 8bit
 
-The nic_error op must be atomic, but dumping the FW error logs reads the
-error tables from the device, which may sleep on some transports.
+The sync argument of _iwl_dbg_tlv_time_point() was added to collect the
+debug data inline rather than from a worker, for flows in which the device
+is about to be turned off right after the time point. It doesn't say
+anything else about the time point.
 
-Dump them from dump_error instead, which can sleep.
-Reading the tables later is fine: the FW is halted after the error,
-and dump_error always runs before the device is reset or stopped,
-so the tables are still intact.
-
-This also fixes a race: do_not_dump_once shares a bitfield with other
-fw_status flags that are modified under the wiphy lock, but nic_error
-cleared it without holding that lock. dump_error holds it.
+Rename it to sync_dump to make this clear, before adding another argument
+that describes the calling context.
 
 Assisted-by: LLM
 Reviewed-by: Johannes Berg <johannes.berg@intel.com>
 Signed-off-by: Miri Korenblit <miriam.rachel.korenblit@intel.com>
 ---
- drivers/net/wireless/intel/iwlwifi/mld/mld.c | 21 ++++++++++++++------
- 1 file changed, 15 insertions(+), 6 deletions(-)
+ .../net/wireless/intel/iwlwifi/iwl-dbg-tlv.c  | 21 ++++++++++++-------
+ .../net/wireless/intel/iwlwifi/iwl-dbg-tlv.h  |  2 +-
+ 2 files changed, 14 insertions(+), 9 deletions(-)
 
-diff --git a/drivers/net/wireless/intel/iwlwifi/mld/mld.c b/drivers/net/wireless/intel/iwlwifi/mld/mld.c
-index 71832d92024d..57ff811964bd 100644
---- a/drivers/net/wireless/intel/iwlwifi/mld/mld.c
-+++ b/drivers/net/wireless/intel/iwlwifi/mld/mld.c
-@@ -671,14 +671,9 @@ iwl_mld_nic_error(struct iwl_op_mode *op_mode,
- 		  enum iwl_fw_error_type type)
- {
- 	struct iwl_mld *mld = IWL_OP_MODE_GET_MLD(op_mode);
--	bool trans_dead = iwl_trans_is_dead(mld->trans);
- 
- 	if (type == IWL_ERR_TYPE_CMD_QUEUE_FULL)
- 		IWL_ERR(mld, "Command queue full!\n");
--	else if (!trans_dead && !mld->fw_status.do_not_dump_once)
--		iwl_fwrt_dump_error_logs(&mld->fwrt);
--
--	mld->fw_status.do_not_dump_once = false;
- 
- 	/* It is necessary to abort any os scan here because mac80211 requires
- 	 * having the scan cleared before restarting.
-@@ -709,6 +704,17 @@ iwl_mld_nic_error(struct iwl_op_mode *op_mode,
- 	iwl_mld_cancel_async_notifications(mld);
+diff --git a/drivers/net/wireless/intel/iwlwifi/iwl-dbg-tlv.c b/drivers/net/wireless/intel/iwlwifi/iwl-dbg-tlv.c
+index cc6044222b5c..a64f958bbe5f 100644
+--- a/drivers/net/wireless/intel/iwlwifi/iwl-dbg-tlv.c
++++ b/drivers/net/wireless/intel/iwlwifi/iwl-dbg-tlv.c
+@@ -1242,7 +1242,7 @@ static bool iwl_dbg_tlv_check_fw_pkt(struct iwl_fw_runtime *fwrt,
  }
  
-+static void iwl_mld_dump_error_logs(struct iwl_mld *mld,
-+				    enum iwl_fw_error_type type)
-+{
-+	if (type != IWL_ERR_TYPE_CMD_QUEUE_FULL &&
-+	    !iwl_trans_is_dead(mld->trans) &&
-+	    !mld->fw_status.do_not_dump_once)
-+		iwl_fwrt_dump_error_logs(&mld->fwrt);
-+
-+	mld->fw_status.do_not_dump_once = false;
-+}
-+
- static void iwl_mld_dump_error(struct iwl_op_mode *op_mode,
- 			       struct iwl_fw_error_dump_mode *mode)
+ static int
+-iwl_dbg_tlv_tp_trigger(struct iwl_fw_runtime *fwrt, bool sync,
++iwl_dbg_tlv_tp_trigger(struct iwl_fw_runtime *fwrt, bool sync_dump,
+ 		       struct list_head *active_trig_list,
+ 		       union iwl_dbg_tlv_tp_data *tp_data,
+ 		       bool (*data_check)(struct iwl_fw_runtime *fwrt,
+@@ -1263,7 +1263,8 @@ iwl_dbg_tlv_tp_trigger(struct iwl_fw_runtime *fwrt, bool sync,
+ 
+ 
+ 		if (!num_data) {
+-			ret = iwl_fw_dbg_ini_collect(fwrt, &dump_data, sync);
++			ret = iwl_fw_dbg_ini_collect(fwrt, &dump_data,
++						     sync_dump);
+ 			if (ret)
+ 				return ret;
+ 		}
+@@ -1272,7 +1273,8 @@ iwl_dbg_tlv_tp_trigger(struct iwl_fw_runtime *fwrt, bool sync,
+ 			if (!data_check ||
+ 			    data_check(fwrt, &dump_data, tp_data,
+ 				       le32_to_cpu(dump_data.trig->data[i]))) {
+-				ret = iwl_fw_dbg_ini_collect(fwrt, &dump_data, sync);
++				ret = iwl_fw_dbg_ini_collect(fwrt, &dump_data,
++							     sync_dump);
+ 				if (ret)
+ 					return ret;
+ 
+@@ -1397,7 +1399,7 @@ void iwl_dbg_tlv_init_cfg(struct iwl_fw_runtime *fwrt)
+ void _iwl_dbg_tlv_time_point(struct iwl_fw_runtime *fwrt,
+ 			     enum iwl_fw_ini_time_point tp_id,
+ 			     union iwl_dbg_tlv_tp_data *tp_data,
+-			     bool sync)
++			     bool sync_dump)
  {
-@@ -717,11 +723,14 @@ static void iwl_mld_dump_error(struct iwl_op_mode *op_mode,
- 	/* if we come in from opmode we have the mutex held */
- 	if (mode->context == IWL_ERR_CONTEXT_FROM_OPMODE) {
- 		lockdep_assert_wiphy(mld->wiphy);
-+		iwl_mld_dump_error_logs(mld, mode->type);
- 		iwl_fw_error_collect(&mld->fwrt);
- 	} else {
- 		wiphy_lock(mld->wiphy);
--		if (mode->context != IWL_ERR_CONTEXT_ABORT)
-+		if (mode->context != IWL_ERR_CONTEXT_ABORT) {
-+			iwl_mld_dump_error_logs(mld, mode->type);
- 			iwl_fw_error_collect(&mld->fwrt);
-+		}
- 		wiphy_unlock(mld->wiphy);
+ 	struct list_head *hcmd_list, *trig_list, *conf_list;
+ 
+@@ -1414,13 +1416,15 @@ void _iwl_dbg_tlv_time_point(struct iwl_fw_runtime *fwrt,
+ 	case IWL_FW_INI_TIME_POINT_EARLY:
+ 		iwl_dbg_tlv_init_cfg(fwrt);
+ 		iwl_dbg_tlv_update_drams(fwrt);
+-		iwl_dbg_tlv_tp_trigger(fwrt, sync, trig_list, tp_data, NULL);
++		iwl_dbg_tlv_tp_trigger(fwrt, sync_dump, trig_list, tp_data,
++				       NULL);
+ 		iwl_dbg_tlv_apply_config(fwrt, conf_list);
+ 		break;
+ 	case IWL_FW_INI_TIME_POINT_AFTER_ALIVE:
+ 		iwl_dbg_tlv_apply_buffers(fwrt);
+ 		iwl_dbg_tlv_send_hcmds(fwrt, hcmd_list);
+-		iwl_dbg_tlv_tp_trigger(fwrt, sync, trig_list, tp_data, NULL);
++		iwl_dbg_tlv_tp_trigger(fwrt, sync_dump, trig_list, tp_data,
++				       NULL);
+ 		iwl_dbg_tlv_apply_config(fwrt, conf_list);
+ 		break;
+ 	case IWL_FW_INI_TIME_POINT_PERIODIC:
+@@ -1431,13 +1435,14 @@ void _iwl_dbg_tlv_time_point(struct iwl_fw_runtime *fwrt,
+ 	case IWL_FW_INI_TIME_POINT_MISSED_BEACONS:
+ 	case IWL_FW_INI_TIME_POINT_FW_DHC_NOTIFICATION:
+ 		iwl_dbg_tlv_send_hcmds(fwrt, hcmd_list);
+-		iwl_dbg_tlv_tp_trigger(fwrt, sync, trig_list, tp_data,
++		iwl_dbg_tlv_tp_trigger(fwrt, sync_dump, trig_list, tp_data,
+ 				       iwl_dbg_tlv_check_fw_pkt);
+ 		iwl_dbg_tlv_apply_config(fwrt, conf_list);
+ 		break;
+ 	default:
+ 		iwl_dbg_tlv_send_hcmds(fwrt, hcmd_list);
+-		iwl_dbg_tlv_tp_trigger(fwrt, sync, trig_list, tp_data, NULL);
++		iwl_dbg_tlv_tp_trigger(fwrt, sync_dump, trig_list, tp_data,
++				       NULL);
+ 		iwl_dbg_tlv_apply_config(fwrt, conf_list);
+ 		break;
  	}
- }
+diff --git a/drivers/net/wireless/intel/iwlwifi/iwl-dbg-tlv.h b/drivers/net/wireless/intel/iwlwifi/iwl-dbg-tlv.h
+index fe4e46a0edbd..886d21ab6a53 100644
+--- a/drivers/net/wireless/intel/iwlwifi/iwl-dbg-tlv.h
++++ b/drivers/net/wireless/intel/iwlwifi/iwl-dbg-tlv.h
+@@ -56,7 +56,7 @@ void iwl_dbg_tlv_init(struct iwl_trans *trans);
+ void _iwl_dbg_tlv_time_point(struct iwl_fw_runtime *fwrt,
+ 			     enum iwl_fw_ini_time_point tp_id,
+ 			     union iwl_dbg_tlv_tp_data *tp_data,
+-			     bool sync);
++			     bool sync_dump);
+ void iwl_dbg_tlv_init_cfg(struct iwl_fw_runtime *fwrt);
+ 
+ static inline void iwl_dbg_tlv_time_point(struct iwl_fw_runtime *fwrt,
 -- 
 2.34.1
 
