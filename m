@@ -1,60 +1,60 @@
-Authentication-Results: smtp.subspace.kernel.org; arc=none smtp.remote-ip=109.224.244.119
+Authentication-Results: smtp.subspace.kernel.org; arc=none smtp.remote-ip=185.70.43.98
 ARC-Seal: i=1; d=subspace.kernel.org; s=arc20261015; a=rsa-sha256; cv=none;
-	t=1794815611;
-	b=ArxezfmdfViES2L/nnXJZRKRnQaH8UxYI5BFGpRE72zWqmImy0CsqbhmgTfuzbpY317l
-	 pYDKwf62IGZpZtgwlJFImloJ+qKGqFJYIPyYxKhhp2WTs934u1jRIUkmYC3crfTVrfoPV
-	 ql498ChiYaMVcG4WaENp1zeptkFrjBfsCpe10IvIv6EeScv+5FeaB4C2KyUANRHH20eGH
-	 IoGbnKRNlxUULSUTh3xeZT+mM+DEASUEzbw/ksjieXW2mATiIStGRR5uCcFSx01TbFPHe
-	 hF0I+O4P41/iz9t/Nrhlcyon1GQec5R8bwp1S3HT2gvYRA+ZRERDVbtfVIszAkGTj4Q==
+	t=1794815622;
+	b=FVYB79R0O10x9KmPmyLibyitVeyXzOwqIXDzIgqVNi3oCfeT7ASk2q8AHH2o5kVy46ih
+	 85MsHj1HFmY/ncciLUx7IvmWfsV8+LL+8IBKY0TPS6oC+COYRK+Tonh7c8tW5Xzv9Jihi
+	 OtTJDdf17pRzRLj8m9IKdFZtZFdPcfcjWcS13sT0EKq/amRN86FBvlBtfDS8kt+Y/QBp9
+	 VFP795T5Ck3rwBRNipn3pXT6LpYcdrlJwBJr/CRKuoOcFZ45dWIiLc1ZSTutIlLTZVJ7f
+	 0JUMJKCf380OzuxoUZ8e/dLSKLVOKnQfj1ZiDqq3U8oip3xQ2R1OFeCdwW/37NmFnqw==
 ARC-Message-Signature: i=1; d=subspace.kernel.org; s=arc20261015;
-	a=rsa-sha256; c=relaxed/relaxed; t=1794815611;
+	a=rsa-sha256; c=relaxed/relaxed; t=1794815622;
 	h=DMARC-Filter:DKIM-Signature:Date:To:From:Cc:Subject:Message-ID:
 	 In-Reply-To:References:Feedback-ID:X-Pm-Message-ID:MIME-Version:
 	 Content-Type:Content-Transfer-Encoding;
-	bh=lVr+PvuxwPoJYoyARXvzG+BDMpFOZxa4C3Y0HgYCBmA=;
-	b=xDW/+FH2uCfJi5tONuo6n8AV6Yjf66Wj3NYu/ydCGBO8XAqdSge4uFtq2Y7CLtlVYQVc
-	 Kt7BJyYghyOPaZFJoPJM+ZSilBYkRP3+QXVvgj+NIyf5YPX5wg5ax5ScAvhblmAjaqCkT
-	 nubZiHwtpZZ9yu3nIfMSZLBtIXE+B9AW5+IwwhZ5pAC+xYhJ+2BdEOG9IZ0gO7HYVjN1s
-	 xeYqepmTwhQjE5EZzZNl5Rf8wg141Gw14D9RBra74w2Zny1uQzjwW9ObY8CdLFWK+NWcq
-	 dwPvOZoPTxtHD8KLTeZZU3CYpWZpnK98gSY3dkeelRitlWHO4EzW2MgksDY2z1zUSkQ==
+	bh=2F33A6bEP+OrAPizEB3SP5t3+1ZxvV6gi8weCwy4N3o=;
+	b=Xmy/2grVeyR8blPQk7gjzle+EleI4PWfvoAXXN0mOY/iE6ajleKVUEQDPvkp47wutcxj
+	 7+D9a/xugX1A4sLZbumShSAoSAvy6103XcMYmd/rKGiZhdR2uMK35dEI2Gc2a6hrK025a
+	 y6WSUAnJVE5QB0bx8DdwuXZjiE2Q/5Ky++cj5/GQPpQT33Z/pZp3tSzbh8JkeraUKinTt
+	 cz4T1B3D97SpF2n4Fr9s5WJ1bDlTzBZfz3iMP0bKJwgkfYjMm8uCakUo8/ufQOmlJ3uzS
+	 Qu0KBpcZIElmcri9GG6i5U3+wulzSdpuk2VdgajpA0o0taqnax0Waf9nCFyWIdofk+A==
 ARC-Authentication-Results: i=1; smtp.subspace.kernel.org; 
 	dmarc=pass header.from=becholey.ch;
 	spf=pass smtp.mailfrom=becholey.ch;
-	dkim=pass header.d=becholey.ch header.i=@becholey.ch header.a=rsa-sha256 header.s=protonmail header.b=pYL0rGRH;
-	arc=none smtp.remote-ip=109.224.244.119
-Received: from mail-244119.protonmail.ch (mail-244119.protonmail.ch [109.224.244.119])
+	dkim=pass header.d=becholey.ch header.i=@becholey.ch header.a=rsa-sha256 header.s=protonmail header.b=SRbxBv+q;
+	arc=none smtp.remote-ip=185.70.43.98
+Received: from mail-4398.protonmail.ch (mail-4398.protonmail.ch [185.70.43.98])
 	(using TLSv1.3 with cipher TLS_AES_256_GCM_SHA384 (256/256 bits)
-	 key-exchange X25519 server-signature ECDSA (prime256v1) server-digest SHA256)
+	 key-exchange X25519 server-signature ECDSA (prime256v1))
 	(No client certificate requested)
-	by smtp.subspace.kernel.org (Postfix) with ESMTPS id BD52E606A337;
-	Mon, 16 Nov 2026 07:53:30 +0000 (UTC)
-DMARC-Filter: OpenDMARC Filter v1.4.2 smtp.subspace.kernel.org BD52E606A337
+	by smtp.subspace.kernel.org (Postfix) with ESMTPS id 56C1B606A329
+	for <linux-wireless@vger.kernel.org>; Mon, 16 Nov 2026 07:53:41 +0000 (UTC)
+DMARC-Filter: OpenDMARC Filter v1.4.2 smtp.subspace.kernel.org 56C1B606A329
 Authentication-Results: smtp.subspace.kernel.org; dmarc=pass (p=quarantine dis=none) header.from=becholey.ch
 Authentication-Results: smtp.subspace.kernel.org; spf=pass smtp.mailfrom=becholey.ch
 Authentication-Results: smtp.subspace.kernel.org;
-	dkim=pass (2048-bit key, unprotected) header.d=becholey.ch header.i=@becholey.ch header.a=rsa-sha256 header.s=protonmail header.b=pYL0rGRH
+	dkim=pass (2048-bit key, unprotected) header.d=becholey.ch header.i=@becholey.ch header.a=rsa-sha256 header.s=protonmail header.b=SRbxBv+q
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=becholey.ch;
-	s=protonmail; t=1794815608; x=1795074808;
-	bh=lVr+PvuxwPoJYoyARXvzG+BDMpFOZxa4C3Y0HgYCBmA=;
+	s=protonmail; t=1794815619; x=1795074819;
+	bh=2F33A6bEP+OrAPizEB3SP5t3+1ZxvV6gi8weCwy4N3o=;
 	h=Date:To:From:Cc:Subject:Message-ID:In-Reply-To:References:
 	 Feedback-ID:From:To:Cc:Date:Subject:Reply-To:Feedback-ID:
 	 Message-ID:BIMI-Selector;
-	b=pYL0rGRHYAaJBTpHrQkIra/2TG6WdVyW6buM3oDyD6mEVPuZHOvo5rgTk/UxZXp7k
-	 /xG0hc1QJ+UlfDGFfb9uExkfL3GIRqiABB/sA7NfJCMN6b1iEooVr1lNOGbLQ6H0S4
-	 3HIjcKuJnJiQCeocw14LIKtyv7xruq/7LaD+rtz+iX+Xz1Y18Z3FR4+5KS6Z4Igkwh
-	 KFmPvy1/97rmmdVV0RtAgL10azY//2MJUtnZdMj8hyO4BJsXMNa/h1bRaD0OpV/my/
-	 gOq6cNNjl/OZURQD3Po6vB9DEguaiCJUvWrolhFa2FziL7Jyr4tckyE0szLQi42/tz
-	 S0sWvGGUq5zAQ==
-Date: Mon, 16 Nov 2026 07:53:23 +0000
+	b=SRbxBv+qnzS1kkZy8F6psPNvhLJubA5zxiH7HxmBXrQufvd3qQBGesKwVlxpKUYTQ
+	 DLK83IPReAHb5T9Au/ny3rzicA3/LxFYo2An9K8ZaAI18bcAqh/IUVbOFJrsRiA5hU
+	 luSkeNpGgBFX43dxKcZVvVhcF3UBWpn/6ykHz3N/rOfnWsHyX4wR63rmSZXqsZ45HH
+	 PgceWtQ9xbHMvEYpise3gfkV+DqhANMMV7HbQfbW79Ltd9tQwJ5IJNWr4vFH7gBowY
+	 jG8mopUac/aDEo2iHVavNqSn+4Y+TJXwnynad2961U7hTgR880/kiiJApTGiGVZa4P
+	 EbMGob+9U+dkQ==
+Date: Mon, 16 Nov 2026 07:53:34 +0000
 To: linux-wireless@vger.kernel.org, "John W. Linville" <linville@tuxdriver.com>, Pontus Fuchs <pontus.fuchs@gmail.com>
 From: Alexandre Becholey <alex@becholey.ch>
 Cc: Jeff Johnson <jjohnson@kernel.org>, Weiming Shi <bestswngs@gmail.com>, linux-kernel@vger.kernel.org, Alexandre Becholey <alex@becholey.ch>, stable@vger.kernel.org
-Subject: [PATCH 1/3] wifi: ar5523: don't WARN on a short command reply
-Message-ID: <20261116075305.234240-2-alex@becholey.ch>
+Subject: [PATCH 3/3] wifi: ar5523: don't leave a stale reply buffer behind in ar5523_cmd()
+Message-ID: <20261116075305.234240-4-alex@becholey.ch>
 In-Reply-To: <20261116075305.234240-1-alex@becholey.ch>
 References: <20261116075305.234240-1-alex@becholey.ch>
 Feedback-ID: 60743817:user:proton
-X-Pm-Message-ID: fb848ebaef6850f0537b43cc977c114a54fac972
+X-Pm-Message-ID: 586e1d5bc4976e3e42fe7af22bbd370381dd1771
 X-Mailing-List: linux-wireless@vger.kernel.org
 List-Id: <linux-wireless.vger.kernel.org>
 List-Post: <mailto:linux-wireless@vger.kernel.org>
@@ -67,33 +67,43 @@ MIME-Version: 1.0
 Content-Type: text/plain; charset=utf-8
 Content-Transfer-Encoding: quoted-printable
 
-ar5523_read_reply() computes the reply payload length from the header
-length sent by the device:
+ar5523_cmd() stores the caller's reply buffer in ar->tx_cmd.odata and
+clears it only when the command times out. Every other exit leaves the
+pointer set after the caller has returned: usb_submit_urb() failure,
+a command TX URB that completes with an error (ar5523_cmd_tx_cb() sets
+cmd->res and completes, e.g. -EPIPE when the device halts the command
+endpoint), and reply errors such as -EOVERFLOW from
+ar5523_read_reply().
 
-=09dlen =3D be32_to_cpu(hdr->len) - sizeof(*hdr);
+The command RX URB keeps running after such a failure, and
+ar5523_cmd_rx_cb() copies the payload of any WDCMSG_TARGET_START
+message, or of any read reply, through cmd->odata as long as it is not
+NULL. ar5523_start() passes the address of an on-stack variable for
+WDCMSG_TARGET_START, and when ar5523_start() fails mac80211 does not
+call ->stop(), so no further command replaces the pointer. A USB device
+that fails that one command can then write 4 bytes of its choice into
+the stack of the task that tried to bring the interface up, at any later
+time and as often as it likes. With KASAN, after that task has exited:
 
-ar5523_cmd_rx_cb() only checks that the USB transfer carries at least a
-full header; hdr->len itself is not validated. A device that sends a
-reply of at least 32 bytes with hdr->len < 32 (or with bit 31 set) makes
-dlen negative and hits WARN_ON(1). This is reachable during probe, from
-the first read command (WDCMSG_HOST_AVAILABLE), and also later from an
-unsolicited reply once the interface is up. With panic_on_warn set it
-panics the machine. With an emulated device on
-v7.4-rc2-141-g9d66f26fefac (arm64):
+  BUG: KASAN: vmalloc-out-of-bounds in ar5523_cmd_rx_cb+0x2b4/0x980
+  Write of size 4 at addr ffff80008c597480 by task swapper/1/0
+  Call trace:
+   ...
+   __asan_memcpy+0x54/0xa0
+   ar5523_cmd_rx_cb+0x2b4/0x980
+   __usb_hcd_giveback_urb+0x350/0x64c
+   usb_hcd_giveback_urb+0x3c8/0x4a4
+   dummy_timer+0xdd8/0x2d5c
+   ...
 
-[    2.565535] WARNING: drivers/net/wireless/ath/ar5523/ar5523.c:57 at ar55=
-23_cmd_rx_cb+0x730/0x980, CPU#0: swapper/0/0
-[    2.573914]  ar5523_cmd_rx_cb+0x730/0x980 (P)
+Clear cmd->odata on every exit of ar5523_cmd(), not only on timeout.
+The callback tests the pointer and then writes through it from URB
+completion context, so clearing it alone could still race with a reply
+that arrives just as the command finishes. Protect the pointer with a
+spinlock that the callback holds across the test and the copy.
 
-The branch also completes the command without setting cmd->res, so the
-caller gets the result of the previous command (normally 0) and goes on
-with an output buffer that was never written. For example, a corrupted
-GET_STATUS(ST_MAC_ADDR) reply lets probe succeed and registers a wiphy
-with the all-zero MAC address read from the unwritten stack buffer.
-
-A bad length from the device is not a kernel bug. Report it with
-ar5523_err() and fail the command with -EPROTO, like the existing
-"olen too small" case in the same function.
+Commit b6702a942a06 ("wifi: ar5523: Fix use-after-free on ar5523_cmd()
+timed out") fixed the timeout exit only.
 
 The bug was found, and the reproducer and this fix were written, by AI
 agents (Claude Mythos and Claude Opus models). The analysis and the
@@ -106,94 +116,192 @@ Signed-off-by: Alexandre Becholey <alex@becholey.ch>
 Notes for reviewers (not part of the commit message):
 
 Trigger: an AR5523 device emulated with raw-gadget behind dummy_hcd
-(arm64, QEMU virt), also seen with QEMU's xHCI. The device answers the
-WDCMSG_HOST_AVAILABLE read command during probe with a 36-byte reply
-whose header length is 16. Other variants that hit the same WARN: a
-header length of 31, a header length of 0xffffffff in the
-GET_STATUS(ST_MAC_ADDR) reply, and an unsolicited reply with header
-length 16 after the interface has been brought up. No local action is
-needed for the probe case. The reproducer is available to maintainers
-on request.
+(arm64, QEMU virt), also on QEMU's xHCI. The device completes the probe
+handshake, so wlan0 appears. A short-lived process brings the interface
+up; the device accepts the setup commands, then halts its command OUT
+endpoint, so WDCMSG_TARGET_START fails with -EPIPE and the interface
+does not come up. After that process has exited, the device sends a
+36-byte WDCMSG_TARGET_START message, which is copied into the freed
+stack. A variant without the STALL answers TARGET_START with a
+default-path reply whose length word is 8 ("olen too small", -EOVERFLOW)
+and gives the same report. Bringing the interface up is the only local
+action needed. Without the failed command, or without the late message,
+nothing happens. The reproducer is available to maintainers on
+request.
 
-Decoded trace, torvalds/master 9d66f26fefac (arm64, QEMU virt):
+Decoded trace, v7.4-rc2-141-g9d66f26fefac (arm64, QEMU virt,
+dummy_hcd):
 
-  WARNING: drivers/net/wireless/ath/ar5523/ar5523.c:57 at ar5523_cmd_rx_cb+=
-0x730/0x980, CPU#0: swapper/0/0
-  CPU: 0 UID: 0 PID: 0 Comm: swapper/0 Not tainted 7.4.0-rc2-00141-g9d66f26=
-fefac #1 PREEMPT(full)
-  pc : ar5523_cmd_rx_cb (drivers/net/wireless/ath/ar5523/ar5523.c:57 (discr=
-iminator 2) drivers/net/wireless/ath/ar5523/ar5523.c:125 (discriminator 2))
+  BUG: KASAN: vmalloc-out-of-bounds in ar5523_cmd_rx_cb (drivers/net/wirele=
+ss/ath/ar5523/ar5523.c:160 (discriminator 27))
+  Write of size 4 at addr ffff80008c597480 by task swapper/1/0
   Call trace:
-   ar5523_cmd_rx_cb (drivers/net/wireless/ath/ar5523/ar5523.c:57 (discrimin=
-ator 2) drivers/net/wireless/ath/ar5523/ar5523.c:125 (discriminator 2)) (P)
+   __asan_memcpy (mm/kasan/shadow.c:106 (discriminator 1))
+   ar5523_cmd_rx_cb (drivers/net/wireless/ath/ar5523/ar5523.c:160 (discrimi=
+nator 27))
    __usb_hcd_giveback_urb (drivers/usb/core/hcd.c:1657)
    usb_hcd_giveback_urb (drivers/usb/core/hcd.c:1741)
    dummy_timer (drivers/usb/gadget/udc/dummy_hcd.c:2051 (discriminator 1))
    __hrtimer_run_queues (kernel/time/hrtimer.c:2079 kernel/time/hrtimer.c:2=
 136)
-   hrtimer_run_softirq (kernel/time/hrtimer.c:2153)
-   handle_softirqs (kernel/softirq.c:669)
-  Kernel panic - not syncing: kernel: panic_on_warn set ...
+   ...
+  The buggy address belongs to a vmalloc virtual mapping
 
-ar5523.c is identical in v7.3.1 and 9d66f26fefac; the same WARN
-appears on both and the patch applies unchanged to both.
+Without the patch: v7.3.1 5/5 on dummy_hcd and 2/2 on xHCI, the
+-EOVERFLOW variant 3/3 (1 on xHCI); 9d66f26fefac 4/4 (1 on xHCI) and
+the -EOVERFLOW variant 1/1. ar5523.c is identical in v7.3.1 and
+9d66f26fefac.
 
-Testing (KASAN, UBSAN, lockdep, emulated device): without the patch,
-6 of 6 boots with a bad reply length hit the WARN (v7.3.1 5, one of
-them on xHCI; 9d66f26fefac 1). With the patch, the ar5523.c:57 WARN
-appears in none of 35 boots (v7.3.1 27, 9d66f26fefac 8; 5 of them on
-xHCI). Every bad length is reported as "invalid reply length N" and the
-command fails; probe then fails cleanly with -EPROTO. A header length
-of exactly 32 (empty payload) is still accepted, and a device with a
-valid handshake still probes, reports its MAC address and the interface
-comes up.
-
-Not fixed here, but by patch 2/3 of this series: any unsolicited
-reply carrying the command id, even with a valid length, completes
-cmd->done although no read command is pending. The next command then
-returns early and the one after that resubmits a URB that is still
-active ("URB submitted while active" WARN in usb_submit_urb() from
-ar5523_cmd()). This happens with and without this patch; with this
-patch alone an unsolicited reply with a bad length ends in that same
-state instead of the ar5523.c:57 WARN.
-
-Related: Weiming Shi's "wifi: ar5523: reject negative reply lengths"
-(2026-08-31, not merged,
-https://lore.kernel.org/all/20260831191502.3321906-1-bestswngs@gmail.com/)
-fixes a different bug, a negative olen word in the reply payload, a few
-lines further down in ar5523_read_reply(). None of the three patches
-here depends on it; 1/3 and 2/3 apply with or without it. 3/3 and his
-patch overlap in one context line: with this series applied first, his
-patch still applies with git am -3. If his patch goes in first, 3/3
-needs a one-line rebase (the check becomes
-"if (olen < 0 || cmd->olen < olen) {" inside the new locked section),
-and I can send a rebased version on request.
+This patch is written on top of 2/3 (the only nearby code is the else
+branch 2/3 adds after the wait). Testing of the whole series is in the
+notes of 2/3: no report in 64 boots on v7.3.1 and 9d66f26fefac. After
+this patch a late WDCMSG_TARGET_START message takes the existing
+"Unexpected WDCMSG_TARGET_START reply" branch, which returns without
+resubmitting the command RX URB, so the driver gets no further command
+replies until it is re-probed. That is pre-existing behaviour for that
+branch and not changed here.
 
 Thanks,
 Alexandre Becholey
 
- drivers/net/wireless/ath/ar5523/ar5523.c | 5 ++++-
- 1 file changed, 4 insertions(+), 1 deletion(-)
-
+ drivers/net/wireless/ath/ar5523/ar5523.c | 27 +++++++++++++++++++++---
+ drivers/net/wireless/ath/ar5523/ar5523.h |  1 +
+ 2 files changed, 25 insertions(+), 3 deletions(-)
 
 diff --git a/drivers/net/wireless/ath/ar5523/ar5523.c b/drivers/net/wireles=
 s/ath/ar5523/ar5523.c
-index 66ac396858a5..734f0561cf73 100644
+index 51d8d998b07d..9569bd3bc090 100644
 --- a/drivers/net/wireless/ath/ar5523/ar5523.c
 +++ b/drivers/net/wireless/ath/ar5523/ar5523.c
-@@ -54,7 +54,10 @@ static void ar5523_read_reply(struct ar5523 *ar, struct =
-ar5523_cmd_hdr *hdr,
- =09dlen =3D be32_to_cpu(hdr->len) - sizeof(*hdr);
+@@ -48,6 +48,7 @@ static void ar5523_data_tx_pkt_put(struct ar5523 *ar);
+ static void ar5523_read_reply(struct ar5523 *ar, struct ar5523_cmd_hdr *hd=
+r,
+ =09=09=09      struct ar5523_tx_cmd *cmd)
+ {
++=09unsigned long flags;
+ =09int dlen, olen;
+ =09__be32 *rp;
 =20
- =09if (dlen < 0) {
--=09=09WARN_ON(1);
-+=09=09ar5523_err(ar, "invalid reply length %u\n",
-+=09=09=09   be32_to_cpu(hdr->len));
-+=09=09cmd->olen =3D 0;
-+=09=09cmd->res =3D -EPROTO;
- =09=09goto out;
+@@ -75,6 +76,7 @@ static void ar5523_read_reply(struct ar5523 *ar, struct a=
+r5523_cmd_hdr *hdr,
+ =09} else
+ =09=09olen =3D 0;
+=20
++=09spin_lock_irqsave(&cmd->lock, flags);
+ =09if (cmd->odata) {
+ =09=09if (cmd->olen < olen) {
+ =09=09=09ar5523_err(ar, "olen too small %d < %d\n",
+@@ -87,6 +89,7 @@ static void ar5523_read_reply(struct ar5523 *ar, struct a=
+r5523_cmd_hdr *hdr,
+ =09=09=09cmd->res =3D 0;
+ =09=09}
+ =09}
++=09spin_unlock_irqrestore(&cmd->lock, flags);
+=20
+ out:
+ =09complete(&cmd->done);
+@@ -97,6 +100,7 @@ static void ar5523_cmd_rx_cb(struct urb *urb)
+ =09struct ar5523 *ar =3D urb->context;
+ =09struct ar5523_tx_cmd *cmd =3D &ar->tx_cmd;
+ =09struct ar5523_cmd_hdr *hdr =3D ar->rx_cmd_buf;
++=09unsigned long flags;
+ =09int dlen;
+ =09u32 code, hdrlen;
+=20
+@@ -156,12 +160,15 @@ static void ar5523_cmd_rx_cb(struct urb *urb)
+ =09=09=09ar5523_err(ar, "Invalid reply to WDCMSG_TARGET_START");
+ =09=09=09return;
+ =09=09}
++=09=09spin_lock_irqsave(&cmd->lock, flags);
+ =09=09if (!cmd->odata) {
++=09=09=09spin_unlock_irqrestore(&cmd->lock, flags);
+ =09=09=09ar5523_err(ar, "Unexpected WDCMSG_TARGET_START reply");
+ =09=09=09return;
+ =09=09}
+ =09=09memcpy(cmd->odata, hdr + 1, sizeof(u32));
+ =09=09cmd->olen =3D sizeof(u32);
++=09=09spin_unlock_irqrestore(&cmd->lock, flags);
+ =09=09cmd->res =3D 0;
+ =09=09complete(&cmd->done);
+ =09=09break;
+@@ -254,6 +261,7 @@ static int ar5523_cmd(struct ar5523 *ar, u32 code, cons=
+t void *idata,
+ {
+ =09struct ar5523_cmd_hdr *hdr;
+ =09struct ar5523_tx_cmd *cmd =3D &ar->tx_cmd;
++=09unsigned long irqflags;
+ =09int xferlen, error;
+=20
+ =09/* always bulk-out a multiple of 4 bytes */
+@@ -270,8 +278,10 @@ static int ar5523_cmd(struct ar5523 *ar, u32 code, con=
+st void *idata,
+ =09if (ilen)
+ =09=09memcpy(hdr + 1, idata, ilen);
+=20
++=09spin_lock_irqsave(&cmd->lock, irqflags);
+ =09cmd->odata =3D odata;
+ =09cmd->olen =3D olen;
++=09spin_unlock_irqrestore(&cmd->lock, irqflags);
+ =09cmd->flags =3D flags;
+=20
+ =09ar5523_dbg(ar, "do cmd %02x\n", code);
+@@ -287,12 +297,11 @@ static int ar5523_cmd(struct ar5523 *ar, u32 code, co=
+nst void *idata,
+ =09if (error) {
+ =09=09ar5523_err(ar, "could not send command 0x%x, error=3D%d\n",
+ =09=09=09   code, error);
+-=09=09return error;
++=09=09goto out;
  =09}
 =20
+ =09if (!wait_for_completion_timeout(&cmd->done, 2 * HZ)) {
+ =09=09ar5523_cancel_tx_cmd(ar);
+-=09=09cmd->odata =3D NULL;
+ =09=09ar5523_err(ar, "timeout waiting for command %02x reply\n",
+ =09=09=09   code);
+ =09=09cmd->res =3D -ETIMEDOUT;
+@@ -305,7 +314,18 @@ static int ar5523_cmd(struct ar5523 *ar, u32 code, con=
+st void *idata,
+ =09=09 */
+ =09=09ar5523_cancel_tx_cmd(ar);
+ =09}
+-=09return cmd->res;
++=09error =3D cmd->res;
++
++out:
++=09/*
++=09 * The caller's output buffer is often on its stack. Make sure a
++=09 * late or unsolicited reply from the device can no longer write
++=09 * to it once we return, whatever the outcome of the command.
++=09 */
++=09spin_lock_irqsave(&cmd->lock, irqflags);
++=09cmd->odata =3D NULL;
++=09spin_unlock_irqrestore(&cmd->lock, irqflags);
++=09return error;
+ }
+=20
+ static int ar5523_cmd_write(struct ar5523 *ar, u32 code, const void *data,
+@@ -969,6 +989,7 @@ static int ar5523_alloc_tx_cmd(struct ar5523 *ar)
+=20
+ =09cmd->ar =3D ar;
+ =09init_completion(&cmd->done);
++=09spin_lock_init(&cmd->lock);
+=20
+ =09cmd->urb_tx =3D usb_alloc_urb(0, GFP_KERNEL);
+ =09if (!cmd->urb_tx)
+diff --git a/drivers/net/wireless/ath/ar5523/ar5523.h b/drivers/net/wireles=
+s/ath/ar5523/ar5523.h
+index 9a322a65cdb5..9db606332acd 100644
+--- a/drivers/net/wireless/ath/ar5523/ar5523.h
++++ b/drivers/net/wireless/ath/ar5523/ar5523.h
+@@ -61,6 +61,7 @@ struct ar5523_tx_cmd {
+ =09struct ar5523=09=09*ar;
+ =09struct urb=09=09*urb_tx;
+ =09void=09=09=09*buf_tx;
++=09spinlock_t=09=09lock;=09=09/* protects odata and olen */
+ =09void=09=09=09*odata;
+ =09int=09=09=09olen;
+ =09int=09=09=09flags;
 --=20
 2.53.0
 
