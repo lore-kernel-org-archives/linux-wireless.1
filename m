@@ -1,85 +1,65 @@
-Authentication-Results: smtp.subspace.kernel.org; arc=none smtp.remote-ip=211.75.126.72
+Authentication-Results: smtp.subspace.kernel.org; arc=none smtp.remote-ip=100.103.45.18
 ARC-Seal: i=1; d=subspace.kernel.org; s=arc20261015; a=rsa-sha256; cv=none;
-	t=1794789697;
-	b=GHo0XtgFof7+aSVoKjMo4oQEwE7VAroOo+1CcX5dcVI2VItAL4OaAZanRoJOQ1iutSCf
-	 yaL0hILHrBBYEA0namAsrRSAdi+6JbEA1B1sG4fF65TJ0/fo9mum8tm8IbRz5SOLb6Khu
-	 JX0i4Rf+1DCyjLO2MY+rscz5BFw7IlEDwME2z0KkRgFZA6UtCs/kotcR5aqSCE/FggX1e
-	 P/VXxS1l7opSvdSqL7y0eME2wp3YloccpjMqjO4iUw8xgkozs8obtVOmzkKGS2tTtxGej
-	 EqdDu+kAR1pAqwpXzO/xZfVqqWTBpm76NpJHy2zAE96jvtFNxB8nTHcKAhS7FByRECw==
+	t=1794789853;
+	b=l7QCk8cW3yoQgAfsPTHAjE87j4ndriIa5gLL+O5T/dmjYoeuIxrm6DVd+3hFivaXfOLh
+	 RhMCAIJ2TjSuhxM+l9MtZ02I08mx0VKO5wYooJSxDTkseU7TiiAyKK+WSR8SClWHcTVQa
+	 s6iXuQKJXxWad+TYJCAgmMrXsJubfQYNvPcOeTWvXH8oSJgMAREYQPgOWY6+Abgahn4Wo
+	 7B1izBW84uJfiYRppfGFDIcuujJqsb//Rc8XA8GErUI+5bnCH35idVbe4lyy+iSh+vdwu
+	 ZrtKjam1j/aaH4H6U7CPTC9rR3AloD7XQe5kpY1EBLgZSoVaIZuC3YEwKEpczIfhP6Q==
 ARC-Message-Signature: i=1; d=subspace.kernel.org; s=arc20261015;
-	a=rsa-sha256; c=relaxed/relaxed; t=1794789697;
-	h=DMARC-Filter:X-SpamFilter-By:DKIM-Signature:Received:Received:
-	 Received:Received:From:To:CC:Subject:Thread-Topic:Thread-Index:Date:
-	 Message-ID:References:In-Reply-To:Accept-Language:Content-Language:
-	 x-originating-ip:Content-Type:Content-Transfer-Encoding:MIME-Version;
-	bh=k+V0c0QTfwbjOBLho+aPVXHfT26IV0QrMzdVRB6G0MY=;
-	b=1jwFvKN7c+6EgsNSVXEafvvRjXNUAjwJCClvioXvt4WZN8OKJxlXcUOaxGNSh/o4zfFS
-	 npOsvMkIfjF2Kjw5bLk0JxvHr8nlmxaxV+fDXHdyrgyodHp1esCJMvuKS5VBKIGqb6OJL
-	 STR0ZjfLpvmvfklfZyJNCVuvCeSz2i5e/5hYpQjI6OukZlAE1Wij6vB8+qqr49DDRN+Gk
-	 HQEmmi6nAZnKQwDz6PSa87YV9g3k7EpubPjk94OS2nEyOwDoEjMpwmimFS5j5uPFW+7M2
-	 Ku6YkIfdA14KI13zmL9N+KwNjnhD/kZToUfNgczwJWk/N+gpv3EsM9Hzzy2+Mmy8xiQ==
+	a=rsa-sha256; c=relaxed/relaxed; t=1794789853;
+	h=Received:DKIM-Signature:Subject:From:To:Cc:Date:Message-ID:
+	 In-Reply-To:References:X-sashiko-severity:Content-Type:
+	 Content-Transfer-Encoding:MIME-Version;
+	bh=boP3TDoFz59Ih81IUQg+NDTi2BNfV6i2vvoA7UF1O/o=;
+	b=IALCaT6Tb7KOvtdncJz1sxsaMe+B7M5XfDCpQrWZYeSOIs5aLAkLpomr4fsf8dfvbBfM
+	 lX1DAo+t8ZFLgklOo3v//zIKW6WZyMUfPkPs1Xvc4s0rurAdJ/QPK38YkfXBHvWjF9r2t
+	 52ifDSqf1WN2WiOubpP8X1qrdMzLWESEsWKzq3X8qsc+9+cvAmWVZBR7zPuXfTQ6yNwBp
+	 M3AoZNXyEK2SstKmC/qtfoTJjVzSYKRGwPIwsgf30NuUFk8bwRGWV9SwqeH6I1Xjf9evv
+	 NIpeFyfHRQPBLM51WP4hK3+DGXMwGpYuE2cC+YdnsGvRofk0HHWr2d9sf7Bfxq/+Kvg==
 ARC-Authentication-Results: i=1; smtp.subspace.kernel.org; 
-	dmarc=pass header.from=realtek.com;
-	spf=pass smtp.mailfrom=realtek.com;
-	dkim=pass header.d=realtek.com header.i=@realtek.com header.a=rsa-sha256 header.s=dkim header.b=k4aXhrvd;
-	arc=none smtp.remote-ip=211.75.126.72
-Received: from rtits2.realtek.com.tw (rtits2.realtek.com [211.75.126.72])
+	dkim=pass header.d=kernel.org header.i=@kernel.org header.a=rsa-sha256 header.s=k20260515 header.b=oOWrmDTo;
+	arc=none smtp.remote-ip=100.103.45.18
+Received: from smtp.kernel.org (quasi.space.kernel.org [100.103.45.18])
 	(using TLSv1.3 with cipher TLS_AES_256_GCM_SHA384 (256/256 bits)
-	 key-exchange X25519 server-signature ECDSA (prime256v1) server-digest SHA256)
+	 key-exchange X25519 server-signature ECDSA (prime256v1))
 	(No client certificate requested)
-	by smtp.subspace.kernel.org (Postfix) with ESMTPS id 319B0606A33D
-	for <linux-wireless@vger.kernel.org>; Mon, 16 Nov 2026 00:41:35 +0000 (UTC)
-DMARC-Filter: OpenDMARC Filter v1.4.2 smtp.subspace.kernel.org 319B0606A33D
-Authentication-Results: smtp.subspace.kernel.org; dmarc=pass (p=none dis=none) header.from=realtek.com
-Authentication-Results: smtp.subspace.kernel.org; spf=pass smtp.mailfrom=realtek.com
+	by smtp.subspace.kernel.org (Postfix) with ESMTPS id B5E0B606A32F;
+	Mon, 16 Nov 2026 00:44:13 +0000 (UTC)
 Authentication-Results: smtp.subspace.kernel.org;
-	dkim=pass (2048-bit key, unprotected) header.d=realtek.com header.i=@realtek.com header.a=rsa-sha256 header.s=dkim header.b=k4aXhrvd
-X-SpamFilter-By: ArmorX SpamTrap 5.80 with qID 6AG0fUaqD2859423, This message is accepted by code: ctloc85258
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=realtek.com; s=dkim;
-	t=1794789690; bh=k+V0c0QTfwbjOBLho+aPVXHfT26IV0QrMzdVRB6G0MY=;
-	h=From:To:CC:Subject:Date:Message-ID:References:In-Reply-To:
-	 Content-Type:Content-Transfer-Encoding:MIME-Version;
-	b=k4aXhrvdiv3VDa8gvIw8o2X41GxpQcaEGWhBprEmtJX+ox2Wr5QzHiEP5x1hPbTsY
-	 JfafNmxC4xjjVg77jO/ZulT7+v2eE4Q9jye6hARRwz79viyLp0K47knKEguEx3fQG4
-	 tybRpriUXjBJ5jXTCmRGXZKzW3il41LxCHrFT3GQtfp9ej1/8tGpOYQ37hsaMWK6G4
-	 QtTtwAJrRHAB4ypKEeHViLFTRJu8Ooo+lQUvX4ign9kLAUUfVqiiinfyPlYWh197XY
-	 MmQknz5PeNmD2Ztb3qL+RcARF2dJntnG4R0luZMlqZy6v640w67ohPs8TrPf0BwzOr
-	 kGUDibOosp8Yw==
-Received: from mail.realtek.com (rtkexhmbs03.realtek.com.tw[10.21.1.53])
-	by rtits2.realtek.com.tw (8.15.2/3.29/5.94) with ESMTPS id 6AG0fUaqD2859423
-	(version=TLSv1.2 cipher=ECDHE-RSA-AES256-GCM-SHA384 bits=256 verify=FAIL);
-	Mon, 16 Nov 2026 08:41:30 +0800
-Received: from RTKEXHMBS06.realtek.com.tw (10.21.1.56) by
- RTKEXHMBS03.realtek.com.tw (10.21.1.53) with Microsoft SMTP Server
- (version=TLS1_2, cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id
- 15.2.2562.56; Mon, 16 Nov 2026 08:41:30 +0800
-Received: from RTKEXHMBS06.realtek.com.tw (10.21.1.56) by
- RTKEXHMBS06.realtek.com.tw (10.21.1.56) with Microsoft SMTP Server
- (version=TLS1_2, cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id
- 15.2.2562.56; Mon, 16 Nov 2026 08:41:30 +0800
-Received: from RTKEXHMBS06.realtek.com.tw ([fe80::eeeb:c765:ca73:5eef]) by
- RTKEXHMBS06.realtek.com.tw ([fe80::eeeb:c765:ca73:5eef%10]) with mapi id
- 15.02.2562.056; Mon, 16 Nov 2026 08:41:30 +0800
-From: Ping-Ke Shih <pkshih@realtek.com>
-To: "V. S." <spam@acio.nl>
-CC: "linux-wireless@vger.kernel.org" <linux-wireless@vger.kernel.org>
-Subject: RE: [PATCH rtw-next v3] wifi: rtw89: set RA init rate level when the
- station RSSI is known
-Thread-Topic: [PATCH rtw-next v3] wifi: rtw89: set RA init rate level when the
- station RSSI is known
-Thread-Index: AQHdc0YlUf9eQmeiD0qR+cPoa7qFpLcrqBfg///0NQCAAthicIAAEBAAgAFZOnA=
-Date: Mon, 16 Nov 2026 00:41:29 +0000
-Message-ID: <a0448c760a5243a7b956b16e9d563183@realtek.com>
-References: <20261113080731.30155-1-spam@acio.nl>
- <4985719de8b5439e8484384ed52033e1@realtek.com>
- <CAJKtVVYmwL3FOC473sQ4BMPjmhep-ERiu=YtmpOQ+24qXB-VMA@mail.gmail.com>
- <6c3b2f153e884047b6fd44da9a12f8cd@realtek.com>
- <CAJKtVVa6n++Uhy7z58d-Wbb3oGnTHz+bHt07_Akp7FPn6F2qYA@mail.gmail.com>
-In-Reply-To: <CAJKtVVa6n++Uhy7z58d-Wbb3oGnTHz+bHt07_Akp7FPn6F2qYA@mail.gmail.com>
-Accept-Language: en-US, zh-TW
-Content-Language: zh-TW
+	dkim=pass (2048-bit key) header.d=kernel.org header.i=@kernel.org header.a=rsa-sha256 header.s=k20260515 header.b=oOWrmDTo
+Received: by smtp.kernel.org (Postfix) with ESMTPSA id 5CB3B1F000C4;
+	Mon, 16 Nov 2026 00:44:12 +0000 (UTC)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=kernel.org;
+	s=k20260515; t=1794789853;
+	bh=boP3TDoFz59Ih81IUQg+NDTi2BNfV6i2vvoA7UF1O/o=;
+	h=Subject:From:To:Cc:Date:In-Reply-To:References;
+	b=oOWrmDTogG20YLkFe/iPh+utOr2EnTfiQRd9sOHgZ7uM5Fgf+PYrx32vKk1pdFFAo
+	 ve3l2wVYahMq6xlHCGjG5pJbIqVFnckIO3ReiPA6N36hBPwHqY7RulYtNupMbps3z5
+	 myDQJ0wcfU9GnR1TvyTKfCokAzJFS2c8+po+JFtO9E1+pcvLjZCU4yoGPTELhJnUK1
+	 FyHWbePJMIzwBWjh7L+UgLfkZ9ZeiFg9MSfDoyT9DsWIIWvcUxikvjZqPoQ3fY00xi
+	 /qayuR7NSOjxw26QCxTRzi7gbGYOGJUf8aZgYZAFxNC7BSYUiUKyiyTbM8duxor4Jp
+	 VIH4ypphiUD9A==
+Subject: Re: [PATCH net-next v6 1/4] net: qrtr: Allow the host QRTR to assign
+ a unique node id
+From: netdev-bot+sashiko@kernel.org
+To: manivannan.sadhasivam@oss.qualcomm.com
+Cc: mani@kernel.org, davem@davemloft.net, kuba@kernel.org, pabeni@redhat.com,
+ horms@kernel.org, jjohnson@kernel.org, edumazet@kernel.org,
+ linux-arm-msm@vger.kernel.org, netdev@vger.kernel.org,
+ linux-kernel@vger.kernel.org, linux-wireless@vger.kernel.org,
+ ath11k@lists.infradead.org, ath12k@lists.infradead.org, andersson@kernel.org,
+ christopher.lew@oss.qualcomm.com, deepak.singh@oss.qualcomm.com,
+ raj.bhagat@oss.qualcomm.com, juha-matti.tilli@iki.fi,
+ jeff.hugo@oss.qualcomm.com, daizhuang.bai@oss.qualcomm.com,
+ jeff.johnson@oss.qualcomm.com
+Date: Mon, 16 Nov 2026 00:44:11 +0000
+Message-ID: <179478985187.3136.15328141866524028119@kernel.org>
+In-Reply-To: <20261114-qrtr-multi-ep-v6-1-2eb9885659e2@oss.qualcomm.com>
+References: <20261114-qrtr-multi-ep-v6-1-2eb9885659e2@oss.qualcomm.com>
+X-sashiko-severity: Medium
 Content-Type: text/plain; charset="utf-8"
-Content-Transfer-Encoding: base64
+Content-Transfer-Encoding: 8bit
 X-Mailing-List: linux-wireless@vger.kernel.org
 List-Id: <linux-wireless.vger.kernel.org>
 List-Post: <mailto:linux-wireless@vger.kernel.org>
@@ -90,62 +70,291 @@ List-Owner: <mailto:linux-wireless+owner@vger.kernel.org>
 Precedence: list
 MIME-Version: 1.0
 
-Vi4gUy4gPHNwYW1AYWNpby5ubD4gd3JvdGU6DQo+IFBpbmctS2UgU2hpaCA8cGtzaGloQHJlYWx0
-ZWsuY29tPiB3cm90ZToNCj4gPiBIb3cgYWJvdXQgbWVtc2V0KHJhLCAwLCBvZmZzZXRvZih0eXBl
-b2YoKnJhKSwgcnNzaV91bmtub3duKSkgPw0KPiANCj4gR29vZCBpZGVhLiBJIGRpZCB0aGlzIGZv
-ciB2NC4gVGhlbiB0aGUgUkEgdXBkYXRlIGRvZXMgbm90IG5lZWQgdGhlDQo+IGxvY2FsIHZhcmlh
-YmxlLCBhbmQgaXQgY2xlYXJzIHRoZSBmbGFnIGFmdGVyIGl0IHVzZXMgdGhlIGZsYWcuDQo+IA0K
-PiA+IC8qIGRyaXZlciBoZWxwZXJzIChub3QgY2xlYXIgYnkgcnR3ODlfcGh5X3JhX3N0YV91cGRh
-dGUoKSkgKi8NCj4gPg0KPiA+ID4gKyBib29sIHJzc2lfdW5rbm93bjoxOw0KPiANCj4gT25lIGNo
-YW5nZSBmcm9tIHlvdXIgcHJvcG9zYWw6IHJzc2lfdW5rbm93biBtdXN0IGJlIGEgcGxhaW4gYm9v
-bCwgbm90DQo+IGEgYml0LWZpZWxkLiBvZmZzZXRvZigpIGNhbm5vdCBiZSB1c2VkIG9uIGEgYml0
-LWZpZWxkLiBXaXRoDQo+ICJib29sIHJzc2lfdW5rbm93bjoxOyIsIGdjYyBzdG9wcyB3aXRoIHRo
-ZSBlcnJvciAiYXR0ZW1wdCB0byB0YWtlDQo+IGFkZHJlc3Mgb2YgYml0LWZpZWxkIHN0cnVjdHVy
-ZSBtZW1iZXIiLiBJIGFsc28gd3JvdGUgIm5vdCBjbGVhcmVkIg0KPiBpbiB0aGUgY29tbWVudC4N
-Cj4gDQo+IEFsc28sIHdpdGggdGhpcyBtZW1zZXQgdGhlIG9yZGVyIG9mIHRoZSBmaWVsZHMgaXMg
-aW1wb3J0YW50IGZvcg0KPiBmdXR1cmUgY2hhbmdlcy4gcnNzaV91bmtub3duIGlzIHRoZSBib3Vu
-ZGFyeSBvZiB0aGUgbWVtc2V0Og0KPiAtIEEgbmV3IGZpZWxkIGZvciB0aGUgSDJDIGNvbW1hbmQg
-bXVzdCBiZSBhYm92ZSByc3NpX3Vua25vd24uIElmIGl0IGlzDQo+ICAgYmVsb3csIHJ0dzg5X3Bo
-eV9yYV9zdGFfdXBkYXRlKCkgZG9lcyBub3QgY2xlYXIgaXQsIGFuZCB0aGUgUkEgdXBkYXRlDQo+
-ICAgc2VuZHMgYW4gb2xkIHZhbHVlLg0KPiAtIEEgbmV3IGRyaXZlciBoZWxwZXIgbXVzdCBiZSBi
-ZWxvdyByc3NpX3Vua25vd24uIElmIGl0IGlzIGFib3ZlLCB0aGUNCj4gICBtZW1zZXQgY2xlYXJz
-IGl0IGV2ZXJ5IDIgc2Vjb25kcy4NCj4gVGhlIGNvbW1lbnQgbWFya3MgdGhpcyBib3VuZGFyeS4g
-VGVsbCBtZSBpZiB5b3Ugd2FudCBhIHN0cm9uZ2VyDQo+IGNvbW1lbnQsIGZvciBleGFtcGxlICJr
-ZWVwIGRyaXZlciBoZWxwZXJzIGJlbG93IHRoaXMgbGluZSIuDQoNClRoZSBzdHJvbmdlciBjb21t
-ZW50IGlzIGdvb2QgdG8gbWUuDQoNCkkgaGF2ZSBhbm90aGVyIHRob3VnaHQgaXMgdG8gdXNlIHN0
-cnVjdF9ncm91cCgpIHRvIGhhdmUgY2xlYXIgYm91bmRhcnksIHN1Y2ggYXMNCg0Kc3RydWN0IHJ0
-dzg5X3JhX2luZm8gew0KCS4uLg0KDQoJLyoga2VlcCBkcml2ZXIgaGVscGVycyBiZWxvdyBpbiBn
-cm91cCAobm90IGNsZWFyZWQgYnkgcnR3ODlfcGh5X3JhX3N0YV91cGRhdGUoKSkgKi8NCglzdHJ1
-Y3RfZ3JvdXAoaGVscGVycywNCgkgICAgICAgICAgICAgYm9vbCByc3NpX3Vua25vd247DQoJKTsN
-Cn07DQoNCj4gDQo+IFRoaXMgaXMgdGhlIHY0IGNoYW5nZToNCj4gDQo+IC0tLSBhL2RyaXZlcnMv
-bmV0L3dpcmVsZXNzL3JlYWx0ZWsvcnR3ODkvY29yZS5oDQo+ICsrKyBiL2RyaXZlcnMvbmV0L3dp
-cmVsZXNzL3JlYWx0ZWsvcnR3ODkvY29yZS5oDQo+IEBAIHN0cnVjdCBydHc4OV9yYV9pbmZvIHsN
-Cj4gICB1OCBtYWNpZF9tc2I6MjsNCj4gICB1OCBiYW5kOjI7IC8qIGVudW0gcnR3ODlfYmFuZCAq
-Lw0KPiAgIHU4IGlzX25ld19kYmdyZWc6MTsNCj4gKyAvKiBkcml2ZXIgaGVscGVycyAobm90IGNs
-ZWFyZWQgYnkgcnR3ODlfcGh5X3JhX3N0YV91cGRhdGUoKSkgKi8NCj4gKyBib29sIHJzc2lfdW5r
-bm93bjsNCj4gIH07DQo+IA0KPiAtLS0gYS9kcml2ZXJzL25ldC93aXJlbGVzcy9yZWFsdGVrL3J0
-dzg5L3BoeS5jDQo+ICsrKyBiL2RyaXZlcnMvbmV0L3dpcmVsZXNzL3JlYWx0ZWsvcnR3ODkvcGh5
-LmMNCj4gQEAgc3RhdGljIHZvaWQgcnR3ODlfcGh5X3JhX3N0YV91cGRhdGUoc3RydWN0IHJ0dzg5
-X2RldiAqcnR3ZGV2LA0KPiAtIG1lbXNldChyYSwgMCwgc2l6ZW9mKCpyYSkpOw0KPiArIG1lbXNl
-dChyYSwgMCwgb2Zmc2V0b2YodHlwZW9mKCpyYSksIHJzc2lfdW5rbm93bikpOw0KPiBAQCB2b2lk
-IHJ0dzg5X3BoeV9yYV91cGRhdGVfc3RhX2xpbmsoc3RydWN0IHJ0dzg5X2RldiAqcnR3ZGV2LA0K
-PiAgIHJjdV9yZWFkX3VubG9jaygpOw0KPiANCj4gKyByYS0+aW5pdF9yYXRlX2x2ID0gcnR3ODlf
-cGh5X3JhX2dldF9pbml0X3JhdGVfbHYocnR3c3RhX2xpbmspOw0KPiArIGlmIChyYS0+cnNzaV91
-bmtub3duICYmIHJhLT5pbml0X3JhdGVfbHYpIHsNCj4gKyByYS0+dXBkX2FsbCA9IDE7DQo+ICsg
-cmEtPnJzc2lfdW5rbm93biA9IGZhbHNlOw0KPiArIH0NCj4gICBpZiAoY2hhbmdlZCAmIElFRUU4
-MDIxMV9SQ19TVVBQX1JBVEVTX0NIQU5HRUQpDQo+ICAgcmEtPnVwZF9tYXNrID0gMTsNCj4gQEAg
-dm9pZCBydHc4OV9waHlfcmFfYXNzb2Moc3RydWN0IHJ0dzg5X2RldiAqcnR3ZGV2LCBzdHJ1Y3QN
-Cj4gcnR3ODlfc3RhX2xpbmsgKnJ0d3N0YV9saW5rKQ0KPiAgIHJhLT5pbml0X3JhdGVfbHYgPSBy
-dHc4OV9waHlfcmFfZ2V0X2luaXRfcmF0ZV9sdihydHdzdGFfbGluayk7DQo+ICsgcmEtPnJzc2lf
-dW5rbm93biA9ICFyYS0+aW5pdF9yYXRlX2x2Ow0KPiAgIHJhLT51cGRfYWxsID0gMTsNCg0KSSB0
-aGluayB0aGUgY29taW5nIHY0IHdpbGwgYmUgZ29vZCB0byBtZS4NCg0KPiANCj4gT25seSBydHc4
-OV9waHlfcmFfYXNzb2MoKSBhbmQgcnR3ODlfcGh5X3JhX3VwZGF0ZV9zdGFfbGluaygpIGNhbGwN
-Cj4gcnR3ODlfcGh5X3JhX3N0YV91cGRhdGUoKS4gQSBuZXcgc3RhdGlvbiBzdGFydHMgd2l0aCBh
-IHplcm9lZA0KPiBydHc4OV9zdGEsIGFuZCBydHc4OV9waHlfcmFfYXNzb2MoKSBzZXRzIHRoZSBm
-bGFnIGFnYWluIGZvciBlYWNoDQo+IGFzc29jaWF0aW9uLg0KPiANCj4gSSB0ZXN0ZWQgdGhpcyBv
-biBSVEw4OTEyQVUgaW4gQVAgbW9kZS4gVGhlIGNsaWVudCBpcyBhdCAtNTYgdG8NCj4gLTU5IGRC
-bSwgYW5kIGVhY2ggY29ubmVjdGlvbiBzZW5kcyBUQ1AgZm9yIDYwIHMuIDggb2YgOCBjb25uZWN0
-aW9ucw0KPiB1c2UgODAgTUh6IChWSFQgMVNTIE1DUyA5IG9yIDJTUyBNQ1MgNSB0byA3KSwgMzQx
-IHRvIDQyOCBNYml0L3MuIFBNRg0KPiBzdGlsbCB3b3Jrcy4NCj4gDQo+IElmIHRoaXMgaXMgT0sg
-Zm9yIHlvdSwgSSB3aWxsIHNlbmQgdjQgd2l0aCAiU3VnZ2VzdGVkLWJ5OiBQaW5nLUtlIFNoaWgi
-Lg0KDQpXaXRoL3dpdGhvdXQgc3VnZ2VzdGVkLWJ5IGFyZSBPSyB0byBtZS4NCg0KDQo=
+Thank you for your contribution! Sashiko AI review found 5 potential
+issue(s) to consider.
+
+Critical: 0 · High: 0 · Medium: 2 · Low: 3
+
+If you believe none of the issues are legitimate, please reply to each
+issue of Medium severity or higher and explain why the AI is wrong.
+If any of them are legitimate and you plan to respin, please let patchwork
+know by including "pw-bot: cr" as a separate line at the end of your reply
+(one such reply per series is enough).
+
+- [Medium] A failed node-id insert now drops the packet, where the old
+  code still delivered it, and a dropped HELLO is never recovered.
+- [Medium] In AUTO mode, nid and ep_nid can end up different, which the
+  commit message says cannot happen, and the rewrite logic then…
+- [Low] The TX path now uses node->ep_nid as the destination, but the
+  readiness guard still checks node->nid, so packets can go out…
+- [Low] The new control-packet handling is keyed on the QRTR header type
+  (cb->type), but the consumer acts on the payload cmd field.
+- [Low] The struct qrtr_node kernel-doc describes @ep_nid as the
+  "endpoint's own node id as received", but qrtr_endpoint_post() latches…
+
+--
+
+net: qrtr: Allow the host QRTR to assign a unique node id
+
+This commit lets the host QRTR use the nid passed to
+qrtr_endpoint_register() as the key in the qrtr_nodes radix tree. The
+endpoint's own source id is stored in a new qrtr_node->ep_nid field.
+Node ids in incoming packets are rewritten from ep_nid to nid, and
+outgoing destinations are rewritten from nid back to ep_nid. Errors from
+radix_tree_insert() are now passed back to the caller.
+
+> diff --git a/net/qrtr/af_qrtr.c b/net/qrtr/af_qrtr.c
+> index 45cb8e8c36ca2..fff1d70fd8bfc 100644
+> --- a/net/qrtr/af_qrtr.c
+> +++ b/net/qrtr/af_qrtr.c
+> @@ -118,7 +118,8 @@ static DEFINE_XARRAY_ALLOC(qrtr_ports);
+>   * @ep_lock: lock for endpoint management and callbacks
+>   * @ep: endpoint
+>   * @ref: reference count for node
+> - * @nid: node id
+> + * @nid: node id assigned by the host QRTR
+> + * @ep_nid: endpoint's own node id as received
+
+[Severity: Low]
+Is this description accurate? qrtr_endpoint_post() sets ep_nid from the
+src_node of the first packet that arrives, whatever its type:
+
+	if (node->ep_nid == QRTR_EP_NID_AUTO)
+		WRITE_ONCE(node->ep_nid, nid);
+
+Nothing checks that this packet is a HELLO, or that it came from the
+endpoint itself and not from a node it bridges. The commit message itself
+says incoming source ids can belong to bridged nodes.
+
+Suppose the first packet is forwarded from a bridged node Y. Then ep_nid
+becomes Y, and the endpoint's real id X is treated as a bridged key. Y's
+traffic is rewritten to the host nid in qrtr_endpoint_post() and
+qrtr_node_rewrite_ctrl(). TX addressed to the host nid in
+qrtr_node_enqueue() goes to Y.
+
+With the later explicit-nid MHI change, would the ath11k/ath12k host nid
+filter in their qmi_ops_new_server() callbacks then accept Y's services
+and reject X's?
+
+[ ... ]
+
+> @@ -371,10 +374,14 @@ static int qrtr_node_enqueue(struct qrtr_node *node, struct sk_buff *skb,
+>  	hdr->src_node_id = cpu_to_le32(from->sq_node);
+>  	hdr->src_port_id = cpu_to_le32(from->sq_port);
+>  	if (to->sq_port == QRTR_PORT_CTRL) {
+> -		hdr->dst_node_id = cpu_to_le32(READ_ONCE(node->nid));
+> +		hdr->dst_node_id = cpu_to_le32(READ_ONCE(node->ep_nid));
+>  		hdr->dst_port_id = cpu_to_le32(QRTR_PORT_CTRL);
+>  	} else {
+> -		hdr->dst_node_id = cpu_to_le32(to->sq_node);
+> +		/* Put back the endpoint's own node id */
+> +		dst_node = to->sq_node;
+> +		if (dst_node == READ_ONCE(node->nid))
+> +			dst_node = READ_ONCE(node->ep_nid);
+> +		hdr->dst_node_id = cpu_to_le32(dst_node);
+>  		hdr->dst_port_id = cpu_to_le32(to->sq_port);
+>  	}
+
+[Severity: Low]
+Can ep_nid still be QRTR_EP_NID_AUTO at this point?
+
+The readiness guard in qrtr_bcast_enqueue() still checks node->nid, not
+ep_nid:
+
+	/* Skip nodes with no assigned node ID yet. */
+	if (READ_ONCE(node->nid) == QRTR_EP_NID_AUTO)
+		continue;
+
+When qrtr_endpoint_register() is given an explicit nid, node->nid is set
+at registration time. ep_nid stays QRTR_EP_NID_AUTO until the first RX
+packet. The later commit "net: qrtr: Assign unique node id for MHI
+endpoints" makes this the normal MHI case.
+
+Consider the window after hello_sent is set but before the remote's first
+packet arrives. Would ns broadcasts (NEW_SERVER, DEL_SERVER, DEL_CLIENT)
+and data packets sent to the host nid go out with dst_node_id 0xffffffff
+during that window?
+
+In QRTR_EP_NID_AUTO mode, ep_nid and node->nid are written by separate
+WRITE_ONCE() stores in qrtr_endpoint_post() and __qrtr_node_assign(), with
+no ordering between them. qrtr_bcast_enqueue() and qrtr_node_enqueue()
+read both without taking qrtr_nodes_lock. Could a weakly ordered CPU see
+the new nid together with the old ep_nid?
+
+[ ... ]
+
+> @@ -533,14 +597,36 @@ int qrtr_endpoint_post(struct qrtr_endpoint *ep, const void *data, size_t len)
+>  
+>  	skb_put_data(skb, data + hdrlen, size);
+>  
+> -	qrtr_node_assign(node, cb->src_node);
+> +	nid = cb->src_node;
+> +
+> +	spin_lock_irqsave(&qrtr_nodes_lock, flags);
+> +
+> +	if (node->ep_nid == QRTR_EP_NID_AUTO)
+> +		WRITE_ONCE(node->ep_nid, nid);
+> +
+> +	/*
+> +	 * Add the source id to the lookup table only if 'node->nid' is auto
+> +	 * assigned or the packet came from a bridged node.
+> +	 */
+> +	if (node->nid == QRTR_EP_NID_AUTO || nid != node->ep_nid)
+> +		rc = __qrtr_node_assign(node, nid);
+> +
+
+[Severity: Medium]
+Can node->nid and ep_nid end up different for an endpoint registered with
+QRTR_EP_NID_AUTO? The commit message says they stay the same for these
+callers.
+
+ep_nid is set before __qrtr_node_assign() runs, whether or not it
+succeeds. Consider an AUTO endpoint where:
+
+1. The first packet's src X is already owned by another node (-EEXIST),
+   or the GFP_ATOMIC insert fails (-ENOMEM). ep_nid = X is set,
+   node->nid stays QRTR_EP_NID_AUTO, and the packet is dropped.
+
+2. The next packet is forwarded from a bridged node Y. node->nid is still
+   QRTR_EP_NID_AUTO, so __qrtr_node_assign(Y) succeeds and adopts Y:
+
+	if (node->nid == QRTR_EP_NID_AUTO)
+		WRITE_ONCE(node->nid, nid);
+
+Now nid == Y and ep_nid == X. From then on, packets from X have
+cb->src_node rewritten to Y. qrtr_node_rewrite_ctrl() also rewrites
+NEW_SERVER, DEL_SERVER, DEL_CLIENT and RESUME_TX payloads that name X so
+they name Y.
+
+In qrtr_node_enqueue(), packets addressed to the real bridged node Y are
+rewritten to dst_node_id X, so Y can no longer be reached. X is never
+inserted later either, because the condition above skips the insert once
+node->nid is set and nid == ep_nid.
+
+Before this patch, node->nid would simply have become X, and Y was routed
+through its own key. Is this change in behavior intended?
+
+> +	spin_unlock_irqrestore(&qrtr_nodes_lock, flags);
+> +
+> +	if (rc)
+> +		goto err_nid;
+>  
+>  	if (cb->type == QRTR_TYPE_NEW_SERVER) {
+>  		/* Remote node endpoint can bridge other distant nodes */
+> -		const struct qrtr_ctrl_pkt *pkt;
+> +		const struct qrtr_ctrl_pkt *pkt = data + hdrlen;
+> +
+> +		nid = le32_to_cpu(pkt->server.node);
+>  
+> -		pkt = data + hdrlen;
+> -		qrtr_node_assign(node, le32_to_cpu(pkt->server.node));
+> +		if (nid != READ_ONCE(node->ep_nid)) {
+> +			rc = qrtr_node_assign(node, nid);
+> +			if (rc)
+> +				goto err_nid;
+> +		}
+>  	}
+
+[Severity: Medium]
+Is it intended that a failed node id insert now drops the whole packet?
+
+Before this patch, qrtr_node_assign() ignored the result of
+radix_tree_insert(). The packet was still delivered, and node->nid was set
+anyway. Now __qrtr_node_assign() can return -EEXIST, or -ENOMEM because
+qrtr_nodes is a GFP_ATOMIC radix tree. Both goto err_nid sites above then
+free the skb.
+
+For QRTR_EP_NID_AUTO endpoints (smd and tun, and MHI as of this commit),
+these cases seem to follow.
+
+If the source id X is already a key owned by another qrtr_node, every
+packet from this node is dropped. node->nid stays QRTR_EP_NID_AUTO, the
+insert is retried and fails on every packet, and qrtr_bcast_enqueue()
+skips the node.
+
+If the first packet hits a transient -ENOMEM or a stale key, the remote's
+HELLO is dropped before hello_rcvd is set and before it reaches the ns
+control port. Stale keys are possible because keys are only removed in
+__qrtr_node_release() at the final kref put, not in
+qrtr_endpoint_unregister(). qrtr_sendmsg() and qrtr_send_resume_tx() can
+hold that reference.
+
+In that case qrtr_hello_work() does not reschedule:
+
+	/* Pairs with smp_store_release() in qrtr_endpoint_post() */
+	if (!smp_load_acquire(&node->hello_rcvd))
+		goto out;
+
+Would the ns then never see this node's HELLO, even after the conflict
+goes away?
+
+Even with an explicit nid, a whole NEW_SERVER is now dropped when its
+bridged server.node is owned by another node. Before, only the extra key
+was skipped.
+
+The commit message says:
+
+    Currently, all QRTR endpoint drivers pass 'QRTR_EP_NID_AUTO' as the 'nid'
+    during qrtr_endpoint_register(). So 'ep_nid' and 'nid' are same and the
+    routing behavior is not changed.
+
+Given these new drops, is that statement still accurate?
+
+> @@ -548,6 +634,15 @@ int qrtr_endpoint_post(struct qrtr_endpoint *ep, const void *data, size_t len)
+>  		smp_store_release(&node->hello_rcvd, true);
+>  	}
+>  
+> +	if (cb->src_node == READ_ONCE(node->ep_nid))
+> +		cb->src_node = READ_ONCE(node->nid);
+> +
+> +	if (cb->type == QRTR_TYPE_NEW_SERVER ||
+> +	    cb->type == QRTR_TYPE_DEL_SERVER ||
+> +	    cb->type == QRTR_TYPE_DEL_CLIENT ||
+> +	    cb->type == QRTR_TYPE_RESUME_TX)
+> +		qrtr_node_rewrite_ctrl(node, cb->type, skb);
+> +
+
+[Severity: Low]
+Should these checks and the rewrite be keyed on the payload cmd instead of
+cb->type?
+
+qrtr_ns_worker() in net/qrtr/ns.c dispatches on the payload and never sees
+the header type:
+
+	cmd = le32_to_cpu(pkt->cmd);
+
+qrtr_endpoint_post() accepts any header type sent to QRTR_PORT_CTRL. So a
+remote can send a QRTR_TYPE_DATA packet to the CTRL port carrying a
+NEW_SERVER, DEL_SERVER or DEL_CLIENT payload. For such a packet, the new
+NEW_SERVER server.node ownership check and qrtr_node_rewrite_ctrl() are
+both skipped. The cb->src_node rewrite above still runs.
+
+This seems to lead to the following.
+
+A NEW_SERVER payload that names another device's host nid gets past the
+new -EEXIST rejection and is registered in the ns.
+
+For a DEL_CLIENT payload under a different header type, from is rewritten
+to the host nid but client.node stays at ep_nid. The anti-spoof check in
+ctrl_cmd_del_client() then rejects it:
+
+	/* Don't accept spoofed messages */
+	if (from->sq_node != node_id)
+		return -EINVAL;
+
+NEW_SERVER payloads are recorded under ep_nid instead of the unique host
+nid.
+
+Also, qrtr_node_rewrite_ctrl() chooses the union member from the header
+type:
+
+	if (type == QRTR_TYPE_DEL_CLIENT || type == QRTR_TYPE_RESUME_TX)
+		nid = &pkt->client.node;
+	else
+		nid = &pkt->server.node;
+
+With a DEL_CLIENT header and a NEW_SERVER payload, would this rewrite
+client.node? That field is at the same offset as server.service.
+
+-- 
+Sashiko AI review · https://netdev-ai.bots.linux.dev/sashiko/#/patchset/20261114-qrtr-multi-ep-v6-0-2eb9885659e2%40oss.qualcomm.com
