@@ -1,67 +1,116 @@
-Authentication-Results: smtp.subspace.kernel.org; arc=none smtp.remote-ip=168.119.38.16
+Authentication-Results: smtp.subspace.kernel.org; arc=none smtp.remote-ip=209.85.215.227
 ARC-Seal: i=1; d=subspace.kernel.org; s=arc20261015; a=rsa-sha256; cv=none;
-	t=1794826242;
-	b=jXNX+aK21T1ksoxzJR82RTp4nRXJyiGOGbEeB4L5BIodRhWCupKAhvxCu5/uTKB/Ib/t
-	 PzZXMcOtyH59NQyk8WU4DKwBfl+IsvMcQubcYFHDNvyAgq96YQKWmbhVC3jZb6vlS2ts8
-	 gW2BGbrNvN2lWD9pTxIflpCAbo5Gl5jHbNCejd26sGTn8A99LWGykAFUsjRkTIoJmQUvr
-	 DN3mzuqBe6XVmSLC3yu2XDMJY/iFppIDPkilUB4uEPJNLQsRSRVc7zViBXQRiUZrMZb9J
-	 +E5TOsQ8wYpsijVAydWf7SvGSQxbnjaH30zlVpxRmbwAiVCzE88mzCNebfB8yu2nUCA==
+	t=1794826400;
+	b=hE71Ifgj0mdz/Z76p5GUE33JrrQW2nRC+Jv5cYCB6T2/KoVyz4uC+QcGk1v27+BrrwOF
+	 Zp5kFzhSXHNqtUHAHT7JbjFWPvTEY4MAvqRrxKZj2hxhhr+9LsF4mMr7SlKsxlFmKSjNZ
+	 dFsl6s4/V2duArQJOcSlo5NgEgv17LW3vB8CfXiFanYOw8ngfhHogAHJssdPUvAJsq6vj
+	 OI3Yp72SdkrKt+7VR/3iNZfqQ/m98NdSX2CEcZiCWrplVNPfX+X6xjGz7gNJAejfN7V22
+	 P9J7JeHzmaVTPVduvhbI2a3AiW27TDg8bcyw6Jj/7uFjemYtaPr2eF6dxSEoALIqnow==
 ARC-Message-Signature: i=1; d=subspace.kernel.org; s=arc20261015;
-	a=rsa-sha256; c=relaxed/relaxed; t=1794826242;
-	h=DKIM-Signature:Received:Message-ID:Subject:From:To:Cc:Date:
-	 In-Reply-To:References:Content-Type:Content-Transfer-Encoding:
-	 User-Agent:MIME-Version:X-malware-bazaar;
-	bh=exY/9TFF57Z1r27okxm+GfJXhiK3dLzKWYnOlboPnlc=;
-	b=b4GUyllATumSIEnoFqd+LnPNlMh4jMI6Tm9ZMVTNsKypRseZaYTl12Q+r9hVm8ZLuEIx
-	 blx5U7DTSUp3kmenxFSO4pDVAifmJlaCa5euRWLJAINDi0cLc5Tg2w2QfxN7V7SmU9XKA
-	 GbrecmEX0n3CmczUtBGtibj0NoVtZJ4e9j3nILO7gav1M1HG5loseXIh3OcktsC6nudiT
-	 a4SpLwQiPY4EPOBS4Xy/4DzS0Uu/ABO9dlgYg8XuFhf3j5ov8rEjhxicE5OiERqSt1Tjl
-	 IvXVFbz8T5Y2yStocnUoCmDPe9A8FsHHsFEWazZFB4n+/Kcrvu3YRIEz0V1DEWbYymQ==
+	a=rsa-sha256; c=relaxed/relaxed; t=1794826400;
+	h=DMARC-Filter:Received:X-Google-DKIM-Signature:X-Forwarded-Encrypted:
+	 X-Gm-Message-State:X-Gm-Gg:X-Received:Received:X-Relaying-Domain:
+	 X-CFilter-Loop:Received:DKIM-Signature:X-Forwarded-Encrypted:
+	 X-Received:X-Received:Received:From:To:Cc:Subject:Date:Message-ID:
+	 X-Mailer:In-Reply-To:References:MIME-Version:
+	 Content-Transfer-Encoding:X-DetectorID-Processed;
+	bh=HVQaD9JPLSlypPeoMjV3YW5/MfO3VO8SRm2wJMatWzY=;
+	b=KN8UNNJHkh8IwadTGHGOyXlaOfcZUXoTUu+cQM77TO1hzNsZMyeHzTxD2mkDsxD//PvS
+	 1OpHo7v20mPfzIOCv3CLGNE27jJ+lgsRp3h8LrV86Ywv9E0Dwr+jhwv/EPpdEiQx5uRQY
+	 2lO9yoiO3qgseGYsNVWw7qf0f93fYfhXOSATwVHOaAXCF1/XVyiqEbCX+FInqXnubYF0w
+	 mxGizCZ0BxowRKRY8fmIAs+i7kSz24KTDZU7ApXZ5TFZ3xmaO91OG8PleKxq1VHCf2Tzt
+	 CVU/Aed7ztlznHvWhwwrPXOvgAuSzsBn/UTO82JipZ21UyTCkiEl7jnj3Xmo9LatM6g==
 ARC-Authentication-Results: i=1; smtp.subspace.kernel.org; 
-	dmarc=permerror header.from=sipsolutions.net;
-	spf=pass smtp.mailfrom=sipsolutions.net;
-	dkim=pass header.d=sipsolutions.net header.i=@sipsolutions.net header.a=rsa-sha256 header.s=mail header.b=aPiVO8B7;
-	arc=none smtp.remote-ip=168.119.38.16
-Received: from sipsolutions.net (s3.sipsolutions.net [168.119.38.16])
-	(using TLSv1.3 with cipher TLS_AES_256_GCM_SHA384 (256/256 bits)
-	 key-exchange ECDHE (prime256v1) server-signature ECDSA (prime256v1) server-digest SHA256)
+	dmarc=pass header.from=broadcom.com;
+	spf=fail smtp.mailfrom=broadcom.com;
+	dkim=pass header.d=broadcom.com header.i=@broadcom.com header.a=rsa-sha256 header.s=google header.b="gVOy/ThH";
+	arc=none smtp.remote-ip=209.85.215.227
+Received: from mail-pg1-f227.google.com (mail-pg1-f227.google.com [209.85.215.227])
+	(using TLSv1.3 with cipher TLS_AES_128_GCM_SHA256 (128/128 bits)
+	 key-exchange X25519 server-signature ECDSA (prime256v1) server-digest SHA256)
 	(No client certificate requested)
-	by smtp.subspace.kernel.org (Postfix) with ESMTPS id ED921606A31C;
-	Mon, 16 Nov 2026 10:50:41 +0000 (UTC)
-Authentication-Results: smtp.subspace.kernel.org; dmarc=permerror header.from=sipsolutions.net
-Authentication-Results: smtp.subspace.kernel.org; spf=pass smtp.mailfrom=sipsolutions.net
+	by smtp.subspace.kernel.org (Postfix) with ESMTPS id 705CB606A8A6
+	for <linux-wireless@vger.kernel.org>; Mon, 16 Nov 2026 10:53:20 +0000 (UTC)
+DMARC-Filter: OpenDMARC Filter v1.4.2 smtp.subspace.kernel.org 705CB606A8A6
+Authentication-Results: smtp.subspace.kernel.org; dmarc=pass (p=reject dis=none) header.from=broadcom.com
+Authentication-Results: smtp.subspace.kernel.org; spf=fail smtp.mailfrom=broadcom.com
 Authentication-Results: smtp.subspace.kernel.org;
-	dkim=pass (2048-bit key) header.d=sipsolutions.net header.i=@sipsolutions.net header.a=rsa-sha256 header.s=mail header.b=aPiVO8B7
-DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=sipsolutions.net; s=mail; h=MIME-Version:Content-Transfer-Encoding:
-	Content-Type:References:In-Reply-To:Date:Cc:To:From:Subject:Message-ID:Sender
-	:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:Resent-To:
-	Resent-Cc:Resent-Message-ID; bh=exY/9TFF57Z1r27okxm+GfJXhiK3dLzKWYnOlboPnlc=;
-	t=1794826241; x=1796035841; b=aPiVO8B7yZvDwN/Dgws0zr3eeiJBWbZ6hd9FobBBO4KK5Zs
-	R+ZN6uYz+CyCy+CbSGLREz1B6Y6jPU3zUvLcm91RwkInPB2ZKV3PjPvwl+2HtxwETUUMuAoZOnmq2
-	CdWyvigkq3EKXE56v8Xup37Zz9VLInKrNIq84NeVkZXfn37+hQoueaON4gPhYWFOPT14GXeoukz2i
-	meI68LYbej1761xp2zmQf4PZFln7iwTzCus+zUsfxr1FAXDIDy/qXq+nIy5zMaaEXE+ozLjtAkQxp
-	QMUMP+R+dnfw8RVh6l6AMfLGvG0GIxd56QgjtuFlfuNgr+gVpzeXcVBBwrVyZeFQ==;
-Received: by sipsolutions.net with esmtpsa (TLS1.3:ECDHE_X25519__ECDSA_SECP256R1_SHA256__AES_256_GCM:256)
-	(Exim 4.98.2)
-	(envelope-from <johannes@sipsolutions.net>)
-	id 1xSuIH-0000000GXqX-2O3j;
-	Mon, 16 Nov 2026 11:50:37 +0100
-Message-ID: <7a83c6576a0797cfc009066ef768e2828284c212.camel@sipsolutions.net>
-Subject: Re: [PATCH wireless-next v4 03/21] wifi: nl80211: add SMD BSS
- Transition sub-state STA flags
-From: Johannes Berg <johannes@sipsolutions.net>
-To: Pooventhiran G <pooventhiran.g@oss.qualcomm.com>
-Cc: linux-wireless@vger.kernel.org, linux-kernel@vger.kernel.org
-Date: Mon, 16 Nov 2026 11:50:36 +0100
-In-Reply-To: <aeb887e0-48c3-40d7-8e93-951231dd2ed0@oss.qualcomm.com>
-References: <20261106-smd-v4-0-62e39487f51a@oss.qualcomm.com>
-	 <20261106-smd-v4-3-62e39487f51a@oss.qualcomm.com>
-	 <3fba8cce0b09251c7d88788b531ffbe12a79307c.camel@sipsolutions.net>
-	 <aeb887e0-48c3-40d7-8e93-951231dd2ed0@oss.qualcomm.com>
-Content-Type: text/plain; charset="UTF-8"
-Content-Transfer-Encoding: quoted-printable
-User-Agent: Evolution 3.60.2 (3.60.2-3.fc44) 
+	dkim=pass (1024-bit key) header.d=broadcom.com header.i=@broadcom.com header.a=rsa-sha256 header.s=google header.b=gVOy/ThH
+Received: by mail-pg1-f227.google.com with SMTP id 41be03b00d2f7-cc751eddf25so2623360a12.3
+        for <linux-wireless@vger.kernel.org>; Mon, 16 Nov 2026 02:53:20 -0800 (PST)
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+        d=1e100.net; s=20260707; t=1794826399; x=1795431199;
+        h=content-transfer-encoding:mime-version:references:in-reply-to
+         :message-id:date:subject:cc:to:from:dkim-signature:x-gm-gg
+         :x-gm-message-state:from:to:cc:subject:date:message-id:reply-to
+         :content-type;
+        bh=HVQaD9JPLSlypPeoMjV3YW5/MfO3VO8SRm2wJMatWzY=;
+        b=AngCT36yaWNrS21Az9GHXXRCYG2Zey4SdrEi40KDBg56m2IGQrGveIfLNVqxn4dlqy
+         nJaVB9ulhJPNhmOlNo1D5Oac83+oi9lJOy7qvNnO4fkqt/r4JyHzgvvOZWpPA4pGVhNY
+         xcoDJeM/yLk9bwTuVlxenCgAzIg/+pdwllWto9iyEjcad1H1ADUGfVizaer87k0PuYZ5
+         q9ddlWiItUTQI4q/d5UfNEJNxeXfbOlWquTYpuYVGIn5a/QnQ7o4JuBb5n6+z8XXLopF
+         Vtvsm62FBNIPPAHkVTDljBNZxK7nyMsPWQgvVzRSu7nvVmOI0bmsc5wyzBhF7K7b8fDL
+         aUHg==
+X-Forwarded-Encrypted: i=1; AL+hErF6D7nsPkic5VpgZZPCYNg/YuIlUzjV/oHJ6K5JJXsqn/cPMHDzMmFIVeECMv9Fqvt4u27t0lUViimKoQ1fvw==@vger.kernel.org
+X-Gm-Message-State: APuU4Z/ViHzOzsRU/ov7ahYRRlDhyZa5Z0fk1+XSQQaUswtvMct7e5vV
+	k+j1rjNpuLruyn7cgLSYuZ2Xo1vDWd5cwTLpG5PdUc4x0bJZ75ZSFKmaQ5ipqXufjRQ0NVBphby
+	Pv9aSkN+4eeIBzus1NsIndhO/Lda+Hi7UIU5ZJDXkA2MXuB4JigjuSCX/5h5nAuSf49dbvTixJY
+	uXM1/hdClxFXtCvrK/ge+hVlMp1wl+6PK5V6sDUFfot8iqz/Eq0pyo4be82NxKoZkfW0KUEIr8H
+	VAbtSwHTLl3W9se+FL7YIAJKg==
+X-Gm-Gg: AZFdTZepG9cMbev67/BSlPDQ6eGYccgBpeB2BDUKxc8232LHuvehfpEZPbpmI9YfxKT
+	hMF6G+MbrnX5eaek9t7kOUBqcj2HadCGNLPnuk2frbw/jCRoDDKWpWao/nLrSEtUpr8/gsQYAjj
+	sX6rcjQ/yGiifydhLpKamic2iIvsfC9a2gmYbCBiVFGYYkBt3iLh+1FDFB5pp/pAP8rDfZI9BO+
+	OC3k1Sk1lJVm+iRnG5VljaCDbaUbCELOBTdgV3mQqEzc9T20WEgVDeosQtKbr2sms+Vkr07E8hO
+	8FemGdNBsbzy96LtO+C2jEMQ5svJ+8S5Mn4cswhvXHNLCv+adfKAHrxHLxCNNKIy6N9UALIXlab
+	r9Mxby/+bv347eFIQoe69XRb0DoKZasXYIjQaK1VWyCokmilFcKXOFtp9+vG+sS7EXoDY3qqCeE
+	C5KLRfLxB7vt/pnT3EMCHCZyU0HnGoXMY9jzC+PmA=
+X-Received: by 2002:a17:90b:4b:b0:3ac:8897:7b92 with SMTP id 98e67ed59e1d1-3b1b0d75e68mr10064902a91.57.1794826399500;
+        Mon, 16 Nov 2026 02:53:19 -0800 (PST)
+Received: from smtp-us-east1-p01-i01-si01.dlp.protect.broadcom.com (address-144-49-247-28.dlp.protect.broadcom.com. [144.49.247.28])
+        by smtp-relay.gmail.com with ESMTPS id 98e67ed59e1d1-3b19db1fd6csm13659800a91.1.2026.11.16.02.53.19
+        for <linux-wireless@vger.kernel.org>
+        (version=TLS1_2 cipher=ECDHE-ECDSA-AES128-GCM-SHA256 bits=128/128);
+        Mon, 16 Nov 2026 02:53:19 -0800 (PST)
+X-Relaying-Domain: broadcom.com
+X-CFilter-Loop: Reflected
+Received: by mail-qk1-f197.google.com with SMTP id af79cd13be357-94607500fb0so182085485a.2
+        for <linux-wireless@vger.kernel.org>; Mon, 16 Nov 2026 02:53:18 -0800 (PST)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+        d=broadcom.com; s=google; t=1794826398; x=1795431198; darn=vger.kernel.org;
+        h=content-transfer-encoding:mime-version:references:in-reply-to
+         :message-id:date:subject:cc:to:from:from:to:cc:subject:date
+         :message-id:reply-to:content-type;
+        bh=HVQaD9JPLSlypPeoMjV3YW5/MfO3VO8SRm2wJMatWzY=;
+        b=gVOy/ThHKXUgs1OvPpLYhMH/sQgjvWOvzLAUqnIZKQn69+idgqqFb0nESnT7u8LyjC
+         9MyPVIZjBhBRKAbr9Hqjb7OcJtCQhztZdUnayjXqb2fH7CQ8Dr+dqODaj6gP5NoX0opu
+         xWSBP8Ywx5mA6kVppv2sCNbG4ApEfpMXpAXkw=
+X-Forwarded-Encrypted: i=1; AL+hErGeXIlLls8uDpdXe5tWE+EieVrWLVUiLharEcnLhTH0KkurL+VTOtXHoZ3biBgWx1eGtXpD4nOjyX1CLzW8SQ==@vger.kernel.org
+X-Received: by 2002:a05:620a:4541:b0:945:afc1:a73e with SMTP id af79cd13be357-9494ba601efmr1588959485a.8.1794826398318;
+        Mon, 16 Nov 2026 02:53:18 -0800 (PST)
+X-Received: by 2002:a05:620a:4541:b0:945:afc1:a73e with SMTP id af79cd13be357-9494ba601efmr1588957785a.8.1794826397898;
+        Mon, 16 Nov 2026 02:53:17 -0800 (PST)
+Received: from bld-bun-02.bun.broadcom.net ([192.19.176.227])
+        by smtp.gmail.com with ESMTPSA id af79cd13be357-949825e08b4sm125151785a.37.2026.11.16.02.53.15
+        (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
+        Mon, 16 Nov 2026 02:53:17 -0800 (PST)
+From: Arend van Spriel <arend.vanspriel@broadcom.com>
+To: Kordian Chmielewski <kudzo51@gmail.com>
+Cc: dev@deq.rocks,
+	linux-wireless@vger.kernel.org,
+	brcm80211@lists.linux.dev,
+	brcm80211-dev-list.pdl@broadcom.com,
+	asahi@lists.linux.dev,
+	j@jannau.net,
+	marcan@marcan.st,
+	sebastian.reichel@collabora.com,
+	linux-kernel@vger.kernel.org,
+	Arend van Spriel <arend.vanspriel@broadcom.com>
+Subject: Re: [PATCH wireless-next v2] wifi: brcmfmac: msgbuf: count tx status only for the current flowring
+Date: Mon, 16 Nov 2026 11:53:13 +0100
+Message-ID: <20261116105313.3479803-1-arend.vanspriel@broadcom.com>
+X-Mailer: git-send-email 2.54.0
+In-Reply-To: <20261112175754.396469-1-kudzo51@gmail.com>
+References: <20261112175754.396469-1-kudzo51@gmail.com>
 X-Mailing-List: linux-wireless@vger.kernel.org
 List-Id: <linux-wireless.vger.kernel.org>
 List-Post: <mailto:linux-wireless@vger.kernel.org>
@@ -71,46 +120,28 @@ List-Unsubscribe: <mailto:linux-wireless+unsubscribe@vger.kernel.org>
 List-Owner: <mailto:linux-wireless+owner@vger.kernel.org>
 Precedence: list
 MIME-Version: 1.0
-X-malware-bazaar: not-scanned
+Content-Transfer-Encoding: 8bit
+X-DetectorID-Processed: b00c1d49-9d2e-4205-b15f-d015386d3d5e
 
-On Mon, 2026-11-16 at 15:51 +0530, Pooventhiran G wrote:
->=20
-> > I'm also not sure why you need to distinguish between the latter two at
-> > all, hostapd is going to send the ST execution response and immediately
-> > transition to DL drain (4c) or back to 4 anyway?
-> >=20
->=20
-> The 4b/4c differentiation is needed to resolve frame filtering (especiall=
-y UL
-> data) since the requirements differ between these two states. There will =
-be
-> some time here between the reception of ST Exec Request (set 4b, communic=
-ate
-> with the target AP MLD, and get the confirmation back) and sending the ST=
- Exec
-> Response to the non-AP STA MLD.
+On Thu, 12 Nov 2026 18:57:54 +0100, Kordian Chmielewski wrote:
+> brcmf_msgbuf_delete_flowring() waits for the outstanding_tx counter of a
+> flowring to reach zero before it sends the delete. When the wait times
+> out, it sets the counter to zero with packets still out. Their tx status
+> still comes and takes the counter below zero, and since the counter
+> lives in the commonring of the flowid and nothing resets it, the next
+> flowring that gets the flowid starts from there. With the counter below
+> zero, the next delete of that flowring waits until it times out as well.
 
-Well, technically yes, but there shouldn't _be_ any UL data (from a
-compliant non-AP MLD). If that's the only reason, do we really want to
-make the implementation more complex for effectively non-compliant
-stations?
+[...]
 
-I understand that you need to get the ST context at some time between
-those points, or already have it attached to the ST execution request
-frame, and then receiving and accepting UL data from a non-compliant
-peer will ... break things for that peer after it transitions. Actually
-it's broken anyway, regardless of the AP dropping the frames, since the
-peer continued to transmit. A (buggy or malicious) peer can already
-duplicate the frame on the DS by just sending it multiple times. In your
-(planned) implementation, the AP can't even protect against it fully
-because the ST context snapshot is at the RX time, while moving the
-state takes a hostapd reaction, unless you say that the FW also has to
-move the state when it takes the ST context snapshot. In the case you
-just discussed with Allen, you could move the state before taking the
-context.
+> Reset the counter when a flowring is created. Give each flowid a
+> generation that goes up when the flowid is released, and keep it in the
+> tx pktid of every packet posted to the flowring. A tx status of an older
+> generation still releases its packet, but no longer touches the counter.
 
-So ... that's a fairly long-winded way of saying "is it really worth
-it"? It doesn't seem to buy either side anything if the peer isn't
-compliant, and has no effect if it is compliant?
+Acked-by: Arend van Spriel <arend.vanspriel@broadcom.com>
 
-johannes
+> Signed-off-by: Kordian Chmielewski <kudzo51@gmail.com>
+> ---
+>  .../wireless/broadcom/brcm80211/brcmfmac/msgbuf.c  | 36 +++++++++++++++++++++-
+>  1 file changed, 35 insertions(+), 1 deletion(-)
