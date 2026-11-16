@@ -1,69 +1,69 @@
-Authentication-Results: smtp.subspace.kernel.org; arc=none smtp.remote-ip=209.85.160.50
+Authentication-Results: smtp.subspace.kernel.org; arc=none smtp.remote-ip=209.85.160.41
 ARC-Seal: i=1; d=subspace.kernel.org; s=arc20261015; a=rsa-sha256; cv=none;
-	t=1794871173;
-	b=FN7AEBBY7u8u91s1DhiDpGVxn/iIE42iOi1GZQQ51fyQv/95ikWFCkcDVSky8Vx6nAdF
-	 l2ouaiwomNKbs2uCI5fnf8jDTgW8IJJZZM+DbMn44Ym6ItAselYRRsN40jrUE6OpWLKG2
-	 1maREksM8nGZKcHXIW9bMFzGf7X9IHkZsERza5CtNeBXW2R4amXKzd8BQwbkL0NHSRJDl
-	 4p6jLmsbQMoEOyqnwXn8V8wxvTPMxrVDuQWOSr5Lg0N7Uvq4KzhGT4p3B55C5iuqpdFYA
-	 a5QPSLbRSz+JWhVNEMt6ftN+quFPYnj7bOQouoUPuxUgiuXpLqGqqJBrrgaq3I55UUw==
+	t=1794871185;
+	b=d/50h/5SBadW2NAMTQpLKIBhGWAwRtMmCSF01yw8wkf0gpnsdAqEsUNraBWUWzZSIKxX
+	 sqQA9YPMp4lJercTmsIUINPQt6Nqx4oHVNXDVlDv96gBTUnWdrNvNQACg3aPx8qXxWywn
+	 0G7Zlrddy8VJQVQ50AMUgvbruGd30XAxYDYiBEBXX31FXRFjXK81/5QEOSQ21MbNutmhf
+	 u2Q+rReQcPFAhtz29ESahfRNx0TsZPOPW7RmzzXBY0R8IJb5YPetHyH/EPQWn/FZrcszU
+	 ewmonJbwPXRqB/bgoLtjYrZENX3IAVTVi6nQGa+osVXG8EeybTtiholznzUtjldSGhA==
 ARC-Message-Signature: i=1; d=subspace.kernel.org; s=arc20261015;
-	a=rsa-sha256; c=relaxed/relaxed; t=1794871173;
+	a=rsa-sha256; c=relaxed/relaxed; t=1794871185;
 	h=DMARC-Filter:Received:X-Google-DKIM-Signature:X-Forwarded-Encrypted:
 	 X-Gm-Message-State:X-Gm-Gg:X-Received:Received:From:To:Cc:Subject:
 	 Date:Message-ID:X-Mailer:In-Reply-To:References:MIME-Version:
 	 Content-Transfer-Encoding;
-	bh=f3Z16Is7JJ5QNyB2RJKkWgILNYqi5rZnhGq+IeCbrE8=;
-	b=i+jok7mCL3BvwUNPJEuOxPh1sbUr8zampzqF/UdU127Ik5bU5iDo8f19jfIIcs2tK3Nn
-	 pyP9H9TKn9k3v4dw+obozAU0PCPceGY7ddHusQu7rWkmia8HLSpz7ja9thljN+L0oKI4m
-	 eWDDya7/ypvONMdhdSznPKFtfqjTVcXvEPB8PP7J3/BLeNCw7G+51BeF8S7DzbfVufx7a
-	 hdYP+rU+qTKfrTjTMY7vqzXA7KZLu6zwcOQ9cHeqKg6DLYVSxyqhGzS/Wi8iepqbrJqG5
-	 ISLu7UocCCLBP+NBG7+tjbutb8d4Y/JBtqpYY6beD5N4dSgU5tOul3QwE/bv8H/lVYQ==
+	bh=Ovr1vQdfY8B1hnPOa0U9HTNe54gtsAljzjaukZV1nY8=;
+	b=PhkJwWNiElCy2KVOP9lc0HgW5zFzo8KTp75FNnMx2BKeYggZxcKPozkHrlpl71mqWe5k
+	 0Kt+BNwQhT4A1vlXdrUrhhX/B1fDWLKQyeqaRKhOdoXu5sgbDrLk46MYGuvJv0u4v1/gv
+	 AzN6Scl2/8jXT/SBjdH+ScjRGfik7UDg6zrPfBya/hr8dOmwas6p7X/GuskCN+A7oZoPL
+	 hPPMn8x8Nep7Vn9GhPCQP1cOwCBbQeImxzvu6i299RkL37P9u8v3WPhaGouUvcaHuPPNY
+	 e1boMMT3VfO44mJlYlhTvb2GMFXymNC7sE6aaJNpze6d1v4r+lzsYQWk0D2m3fs8Jaw==
 ARC-Authentication-Results: i=1; smtp.subspace.kernel.org; 
 	dmarc=fail header.from=kernel.org;
 	spf=pass smtp.mailfrom=gmail.com;
-	arc=none smtp.remote-ip=209.85.160.50
-Received: from mail-oa1-f50.google.com (mail-oa1-f50.google.com [209.85.160.50])
+	arc=none smtp.remote-ip=209.85.160.41
+Received: from mail-oa1-f41.google.com (mail-oa1-f41.google.com [209.85.160.41])
 	(using TLSv1.3 with cipher TLS_AES_128_GCM_SHA256 (128/128 bits)
 	 key-exchange X25519 server-signature ECDSA (prime256v1) server-digest SHA256)
 	(No client certificate requested)
-	by smtp.subspace.kernel.org (Postfix) with ESMTPS id 6F682606A32A
-	for <linux-wireless@vger.kernel.org>; Mon, 16 Nov 2026 23:19:33 +0000 (UTC)
-DMARC-Filter: OpenDMARC Filter v1.4.2 smtp.subspace.kernel.org 6F682606A32A
+	by smtp.subspace.kernel.org (Postfix) with ESMTPS id 90D73606A330
+	for <linux-wireless@vger.kernel.org>; Mon, 16 Nov 2026 23:19:45 +0000 (UTC)
+DMARC-Filter: OpenDMARC Filter v1.4.2 smtp.subspace.kernel.org 90D73606A330
 Authentication-Results: smtp.subspace.kernel.org; dmarc=fail (p=quarantine dis=none) header.from=kernel.org
 Authentication-Results: smtp.subspace.kernel.org; spf=pass smtp.mailfrom=gmail.com
-Received: by mail-oa1-f50.google.com with SMTP id 586e51a60fabf-48ed0b68895so3110274fac.1
-        for <linux-wireless@vger.kernel.org>; Mon, 16 Nov 2026 15:19:33 -0800 (PST)
+Received: by mail-oa1-f41.google.com with SMTP id 586e51a60fabf-43bf9548df4so5363851fac.0
+        for <linux-wireless@vger.kernel.org>; Mon, 16 Nov 2026 15:19:45 -0800 (PST)
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=1e100.net; s=20260707; t=1794871172; x=1795475972;
+        d=1e100.net; s=20260707; t=1794871184; x=1795475984;
         h=content-transfer-encoding:mime-version:references:in-reply-to
          :message-id:date:subject:cc:to:from:x-gm-gg:x-gm-message-state:from
          :to:cc:subject:date:message-id:reply-to:content-type;
-        bh=f3Z16Is7JJ5QNyB2RJKkWgILNYqi5rZnhGq+IeCbrE8=;
-        b=KyiNG/PqmxYYShJxSisOGe/4qTDyHVgAasMLmPWHEoDz0UMKGSqJGDiaVduaClNBup
-         dteqVB6Y4s5tsynRt10IOH5oHUrYZ/0so3Cr2aPs/ELqVUOyAvmnaB9e35N8QPLqlBAQ
-         i78jxWBDjjLF3Rh2U7VMHcIkJ4+O/JjuHUn/F19R0V6c9FURBRnzvO186bXpbAjJeHD9
-         9v3/Da0+gODtjrJ/Qw8BlpAKvg62LXPxfLXQAXV1pCs49kGOEAB4aVQeMF2l/QMRs98J
-         7YekID1wZ1JHoIa0AbAzq00yDEy5pqU8rJFTdcoE5IL9MLPpt6KmIWC3P3oEjOvljtK/
-         8D+g==
-X-Forwarded-Encrypted: i=1; AL+hErFeleyaKSRFrLfh8pE3uGqJ3/kxlRvpoL0PP6Xq8hwIsaUs97KJBHhjrA8qRse+P1Gj1vhbLOFqHt8UKMaGyA==@vger.kernel.org
-X-Gm-Message-State: APuU4Z/5QSDP+1a0YKCZy78a4khCgGKHI2C0wpkdhP8cW1u6QkhpQ6aV
-	QI8Ta1jcTAg2oKYgoMFs85ecXEhac3QlbMnwKxCX2QTOkiGMJNKPAMdU
-X-Gm-Gg: AYBFou1uLhoDfjJMomFt6Oi+Q6XWIYbPqc+nyY9nSDWkBzNMbZpcDvA6jWy1BQQvOXT
-	AtLBX97SAnK8AmC0fNOr1JWHjfOMddty+3Ix5mhyhjo/9Z2FzWuM4aHVP4CvciT7WKdHDwt+ZwW
-	5iJKzN9qocHwBM98HwA9D/2k0Ly504bUBgdL8dMub/oqfBWCcgOAgfD/Jw2hd84GjV0Tqg4TIBC
-	mqOCPNSn/fEc8LzjDAfaEB+0BDLg+YSGhQZXneQpe8ogrKC492zGpOZpE/JdxjWV5WnUaSboGpz
-	y16gFODwq+NE5HoYJWOdO5geqRMb8jv/+A2yaUbINJARBuGd2RUC0mmeDEOfmtZPlNapKmXb3XY
-	7jmpNITSwI8E1WuQmG00+DSOeG2+jqVSagUXoqZpO8Uo2WdQYqVCA6JHuX3fZ8rAvq7IYKZmlVY
-	+db4QCKddYtytm5hLh/0X55meaGK4jd4/15rGchjhXWupZQ/qhn4C2YhwUAEwYi4MWfEi12XyQY
-	11ggswZez637wxwx6MoMExNAVz/zbdz59XQii506d4MiO5fJlyeHg57+a5o4Qodny0/uWG8PKo+
-	I26zpgHaiujKX3VzX4GIRR7knRx1UKkw2Q7ig5qPa26akbnp2sFNpyIl2SIGoyck8HZq6wk6yQF
-	BP4Un88X+
-X-Received: by 2002:a05:6808:319b:b0:4f4:d7:b16d with SMTP id 5614622812f47-56e65c53555mr9526418b6e.60.1794871172475;
-        Mon, 16 Nov 2026 15:19:32 -0800 (PST)
+        bh=Ovr1vQdfY8B1hnPOa0U9HTNe54gtsAljzjaukZV1nY8=;
+        b=BMqm5TvM/moHIjc4sgRNQ/r/OaXzEtVKo/VlWqDJT2kiCFKggr8Rtp6Y76njmJJgpM
+         E9q/PfWygC70ozdkpPp8azkNI1LmBo6I/sT3KbVtVMqtRi5BfuQKvN7LiuXvl2Gy1MqV
+         jtJQ6O9XXwYBi3VVFzdM7keFKE4V9KXC0O9d7GPJlplF52YrJ0RS96To8rJWwGTPHHOG
+         FCroqn3nz6uJ6mDzxtFdpbxzeQgIlXfZpouBh0+W73GtCRCLeQVw5djpWFlMDce1t6pQ
+         Urt4vl6wvwh2ViPyycCKPlyz30eG2Kk9UdUevUGGVxYn4DA5arJ/sMpFmdtZU0hRHzn2
+         T3bA==
+X-Forwarded-Encrypted: i=1; AL+hErEHnNLOAVjx/AjRyqzPlH5VRWw0gfcJaMYzdUkxO7Q1p9xC9pjUJAPEiX+lJ6bxwywZdoj3q/6EqjjeM8FgOQ==@vger.kernel.org
+X-Gm-Message-State: APuU4Z95KkM2HtnTteQ6XXfgwSaHydV4Vyj64BWNPljtjd2sju329ZrY
+	Tlc+wGsGocI0u66oUymIHqQnCinN9PWorv7Z/TN8KK5PxetJBCoabYy2WZFS/A==
+X-Gm-Gg: AYBFou1fqsdQo3l0stU/5ce8YmknzEOGq+vl47wJNFWrGBDvKqdXVTapsAeBqY6BjXY
+	TrznUbZ94HVZbAH6XG1LxDVLrUxc5kRlz5E+SdnrLgj6P+ioKKsHNS/TyrO6GtLn2VOhyjMMfwA
+	i1XQC9h8zOub04+nlM60ecYCq/7fuBd/Qm48fDm+C8zQ1bOCqRHtzH5I42vzsPkAuX24sV9/lbY
+	bINshu9iqnHtGrLbVDu+rEb22C1VuVd9xbKnAd8035HWLqr+2B6Qhat4nivNilTp4Hvq2sqiEaz
+	XrLKLFkOpqBiXiItlPobmgpgIyuU0qDTlDYbNNTO9z0guko2HKWtFibAYOFSMIR/YyZychiemJK
+	gMWbbb8V+0gIo0X2ARh+0Q73wl2BZU/O8orVMioUEB1ZOxd071aUYNwePqsb4lv28sTmBGvW5Qw
+	34FQVaD4t3U61qspD6a09bBvVQwyjQq021g/HS3qm++48OE5RdELSgQJXceOaYbJ2ZOUrUm26+J
+	24SeaWDkfCFyKMvyPJUSSwM4bB07WvvaJX8Ltouk15Uf5y5vbtX+ad+rN8ig9TrjwcKPyUWu5U5
+	T+RfRNrR2Yhe2D7eVLy7Munm3TvzQ672CiuRJNCvs8usYjm/owcgR0mBc46Am6dWa+alfvLsSAI
+	m28Y6X+rW0Sz47840aLHkFuqHn1mgtTU=
+X-Received: by 2002:a05:6808:10cf:b0:563:e8b6:c5d5 with SMTP id 5614622812f47-56e64cf4cb6mr11277026b6e.44.1794871184505;
+        Mon, 16 Nov 2026 15:19:44 -0800 (PST)
 Received: from sean-HP-EliteBook-830-G6.lan ([207.191.35.252])
-        by smtp.gmail.com with ESMTPSA id 5614622812f47-56e70c58f9bsm10239635b6e.13.2026.11.16.15.19.30
+        by smtp.gmail.com with ESMTPSA id 5614622812f47-56e70c58f9bsm10239635b6e.13.2026.11.16.15.19.42
         (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
-        Mon, 16 Nov 2026 15:19:30 -0800 (PST)
+        Mon, 16 Nov 2026 15:19:44 -0800 (PST)
 From: Sean Wang <sean.wang@kernel.org>
 To: nbd@nbd.name,
 	lorenzo.bianconi@kernel.org
@@ -75,9 +75,9 @@ Cc: yu-ching.liu@mediatek.com,
 	linux-wireless@vger.kernel.org,
 	linux-mediatek@lists.infradead.org,
 	Sean Wang <sean.wang@mediatek.com>
-Subject: [PATCH v2 12/19] wifi: mt76: mt7925: let TX status of DW-held NAN frames outlive the DW period
-Date: Mon, 16 Nov 2026 17:16:23 -0600
-Message-ID: <20261116231630.1733906-13-sean.wang@kernel.org>
+Subject: [PATCH v2 13/19] wifi: mt76: mt7925: defer the NAN joined-cluster event out of NAN_START
+Date: Mon, 16 Nov 2026 17:16:24 -0600
+Message-ID: <20261116231630.1733906-14-sean.wang@kernel.org>
 X-Mailer: git-send-email 2.43.0
 In-Reply-To: <20261116231630.1733906-1-sean.wang@kernel.org>
 References: <20261116231630.1733906-1-sean.wang@kernel.org>
@@ -94,53 +94,108 @@ Content-Transfer-Encoding: 8bit
 
 From: Jacobs Wu <jacobs.wu@mediatek.com>
 
-Frames on the NAN DW-WTBL legitimately wait up to a full discovery
-window period (524ms) in a paused queue before they air, but the TX
-status tracking times a packet out MT_TX_STATUS_SKB_TIMEOUT (250ms)
-after DMA completion and reports it as failed. wpa_supplicant treats
-the false no-ack as a delivery failure and retransmits: a NIK follow-up
-held to the DW is then re-queued every cycle, the peer receives one
-copy per DW (56 copies measured over one 30s window), and the resulting
-pairing-confirm storm poisons the pairing-verification state, which
-never triggers and times out.
+The firmware can join an existing cluster from inside the passive scan it
+runs at the start of NAN_START, so NAN_EVENT_ID_JOINED_CLUSTER lands while
+the start path is still executing and ieee80211_vif_nan_started() is not
+true yet. The handler dropped the event with a warning, leaving userspace
+unaware of the cluster it had joined, and service discovery then never
+completed: measured 4 failures in 12 NDP bring-ups on an MT7925 pair, each
+one accompanied by exactly one dropped event on the joining side and none
+on the side that created the cluster.
 
-Extend the TX status lifetime for frames tracked on the DW wcid so the
-status is reported from the actual transmission.
+NAN_EVENT_ID_STARTED_CLUSTER already defers past NAN_START through
+nan_deferred_work for the same reason; JOINED_CLUSTER is the other exit of
+the same firmware warm-up branch and needs the same treatment. Queue it on
+that work with its own cluster id, so a started and a joined event pending
+at once cannot overwrite each other.
 
+Fixes: a5487a682406 ("wifi: mt76: mt7925: add NAN MCU helpers")
 Co-developed-by: Sean Wang <sean.wang@mediatek.com>
 Signed-off-by: Sean Wang <sean.wang@mediatek.com>
 Signed-off-by: Jacobs Wu <jacobs.wu@mediatek.com>
 ---
- drivers/net/wireless/mediatek/mt76/tx.c | 13 +++++++++++--
- 1 file changed, 11 insertions(+), 2 deletions(-)
+ .../net/wireless/mediatek/mt76/mt7925/nan.c   | 20 ++++++++++++++++++-
+ .../net/wireless/mediatek/mt76/mt7925/nan.h   |  1 +
+ drivers/net/wireless/mediatek/mt76/mt792x.h   |  1 +
+ 3 files changed, 21 insertions(+), 1 deletion(-)
 
-diff --git a/drivers/net/wireless/mediatek/mt76/tx.c b/drivers/net/wireless/mediatek/mt76/tx.c
-index 08b04f092a0b..7e205412dae3 100644
---- a/drivers/net/wireless/mediatek/mt76/tx.c
-+++ b/drivers/net/wireless/mediatek/mt76/tx.c
-@@ -190,11 +190,20 @@ mt76_tx_status_skb_get(struct mt76_dev *dev, struct mt76_wcid *wcid, int pktid,
- 		struct mt76_tx_cb *cb = mt76_tx_skb_cb(skb);
+diff --git a/drivers/net/wireless/mediatek/mt76/mt7925/nan.c b/drivers/net/wireless/mediatek/mt76/mt7925/nan.c
+index 2d6760c50fc5..0fe8ae6c0d26 100644
+--- a/drivers/net/wireless/mediatek/mt76/mt7925/nan.c
++++ b/drivers/net/wireless/mediatek/mt76/mt7925/nan.c
+@@ -706,8 +706,20 @@ mt7925_nan_mcu_handle_de_event(struct mt792x_dev *dev, struct tlv *tlv)
+ 		return;
+ 	}
  
- 		if (pktid >= 0) {
-+			unsigned long timeout = MT_TX_STATUS_SKB_TIMEOUT;
++	/* JOINED_CLUSTER has the same race as STARTED_CLUSTER above: the
++	 * firmware joins an existing cluster from inside its start-up passive
++	 * scan, so the event can land while NAN_START is still running and
++	 * nan.started is not set yet. Defer it the same way instead of
++	 * dropping it - a lost join leaves userspace unaware of the cluster it
++	 * is in and service discovery never completes.
++	 */
+ 	if (!dev->nan_vif || !ieee80211_vif_nan_started(dev->nan_vif)) {
+-		dev_warn(dev->mt76.dev, "nan: joined-cluster event but NAN not started\n");
++		spin_lock_bh(&dev->nan_deferred_lock);
++		memcpy(dev->nan_joined_cluster_id, cluster_id, ETH_ALEN);
++		set_bit(MT7925_NAN_DEFERRED_JOINED_CLUSTER,
++			&dev->nan_deferred_pending);
++		spin_unlock_bh(&dev->nan_deferred_lock);
++		ieee80211_queue_work(dev->mt76.hw, &dev->nan_deferred_work);
+ 		return;
+ 	}
+ 
+@@ -729,6 +741,7 @@ mt7925_nan_deferred_work(struct work_struct *work)
+ {
+ 	struct mt792x_dev *dev = container_of(work, struct mt792x_dev,
+ 					      nan_deferred_work);
++	u8 joined_cluster_id[ETH_ALEN];
+ 	struct ieee80211_vif *vif;
+ 	unsigned long pending;
+ 	u8 cluster_id[ETH_ALEN];
+@@ -737,6 +750,7 @@ mt7925_nan_deferred_work(struct work_struct *work)
+ 	pending = dev->nan_deferred_pending;
+ 	dev->nan_deferred_pending = 0;
+ 	memcpy(cluster_id, dev->nan_started_cluster_id, ETH_ALEN);
++	memcpy(joined_cluster_id, dev->nan_joined_cluster_id, ETH_ALEN);
+ 	spin_unlock_bh(&dev->nan_deferred_lock);
+ 
+ 	if (!pending)
+@@ -750,6 +764,10 @@ mt7925_nan_deferred_work(struct work_struct *work)
+ 	if (test_bit(MT7925_NAN_DEFERRED_STARTED_CLUSTER, &pending))
+ 		ieee80211_nan_cluster_joined(vif, cluster_id, true, GFP_KERNEL);
+ 
++	if (test_bit(MT7925_NAN_DEFERRED_JOINED_CLUSTER, &pending))
++		ieee80211_nan_cluster_joined(vif, joined_cluster_id, false,
++					     GFP_KERNEL);
 +
- 			if (!(cb->flags & MT_TX_CB_DMA_DONE))
- 				continue;
+ 	if (test_bit(MT7925_NAN_DEFERRED_SCHED_UPDATE_DONE, &pending))
+ 		ieee80211_nan_sched_update_done(vif);
+ out:
+diff --git a/drivers/net/wireless/mediatek/mt76/mt7925/nan.h b/drivers/net/wireless/mediatek/mt76/mt7925/nan.h
+index 165cf21b787b..94d8d4bc445e 100644
+--- a/drivers/net/wireless/mediatek/mt76/mt7925/nan.h
++++ b/drivers/net/wireless/mediatek/mt76/mt7925/nan.h
+@@ -144,6 +144,7 @@ enum mt7925_nan_key_type {
+  */
+ enum mt7925_nan_deferred_event {
+ 	MT7925_NAN_DEFERRED_STARTED_CLUSTER,
++	MT7925_NAN_DEFERRED_JOINED_CLUSTER,
+ 	MT7925_NAN_DEFERRED_SCHED_UPDATE_DONE,
+ };
  
--			if (time_is_after_jiffies(cb->jiffies +
--						   MT_TX_STATUS_SKB_TIMEOUT))
-+			/* A frame held to the NAN DW legitimately waits up to
-+			 * a full DW period (524ms) before it airs; timing its
-+			 * status out earlier reports a false no-ack to the
-+			 * one-shot NAN handshakes (PASN, NDP key install).
-+			 */
-+			if (wcid->nan_dw)
-+				timeout = HZ;
-+
-+			if (time_is_after_jiffies(cb->jiffies + timeout))
- 				continue;
- 		}
+diff --git a/drivers/net/wireless/mediatek/mt76/mt792x.h b/drivers/net/wireless/mediatek/mt76/mt792x.h
+index 78901585d784..c46b88467193 100644
+--- a/drivers/net/wireless/mediatek/mt76/mt792x.h
++++ b/drivers/net/wireless/mediatek/mt76/mt792x.h
+@@ -424,6 +424,7 @@ struct mt792x_dev {
+ 	spinlock_t nan_deferred_lock;
+ 	unsigned long nan_deferred_pending;
+ 	u8 nan_started_cluster_id[ETH_ALEN];
++	u8 nan_joined_cluster_id[ETH_ALEN];
  
+ 	struct {
+ 		void *va;
 -- 
 2.43.0
 
