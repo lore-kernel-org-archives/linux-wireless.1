@@ -1,77 +1,91 @@
-Authentication-Results: smtp.subspace.kernel.org; arc=none smtp.remote-ip=211.75.126.72
+Authentication-Results: smtp.subspace.kernel.org; arc=none smtp.remote-ip=209.85.214.174
 ARC-Seal: i=1; d=subspace.kernel.org; s=arc20261015; a=rsa-sha256; cv=none;
-	t=1794820664;
-	b=oQRL9MOHyA8Myw2eK4x2k3ZNufXgYzP54xDhl6AcON2aZDo13ddoWqYmcQ48Mz4vgAZu
-	 TlV4Omz63J/Zpenwbp7F5FrltKNfe+X7xUPJ8Q5k86SOXXhFhF3ucNuGgmf8QykKWcFTa
-	 BTNFxqPCGLtPk1uSbEnEZZp5yryrjuGlf8U4fEz71YSovtf6ce52QgbFihJj+PHpziwSh
-	 TlvHZXhnua3j38K+RVt15Lp+MAibR+l2LpG5u9jn8H0kdmiHF42nxM1UxE13cbI8fYEZY
-	 01jV4IZarCYMR8OS1DtabIql94HyhTd8HZpvrMvHmYfVJUOjJnsav/5iTVky0uptMaw==
+	t=1794821010;
+	b=m7b+x903Gfp9J9PcAi749IokJDlldr/pAHguqmAvtYa4o9ZHlv/o1ofvDAZKg3D99aEY
+	 +nth2OUXZ6Bz9LGgXsLKllTihOzFyryZvn/q8LoHcn4UqvFKtlwfO4EjxPUwWXuKDdB2T
+	 Bk42p/apDpCuXDYvnnJv9acO3KSNqomRV3fqQjsZ5cxA78tgFS86RhDnpJTTAADL+n+OD
+	 fkxaATFik1hdQUwiD1xXyEmMG8o2W4IGtjy5hRntQJ2wX3XeI8+pretG6j0z9TUleRzcJ
+	 XdhsK8qu93D/j7YoCNIOEf6VENHZrnpRe7lxtjtOdUnJcNM7gDyVd1pDg+kXLl2Z7eg==
 ARC-Message-Signature: i=1; d=subspace.kernel.org; s=arc20261015;
-	a=rsa-sha256; c=relaxed/relaxed; t=1794820664;
-	h=DMARC-Filter:X-SpamFilter-By:DKIM-Signature:Received:Received:
-	 Received:From:To:CC:Subject:Thread-Topic:Thread-Index:Date:Message-ID:
-	 References:In-Reply-To:Accept-Language:Content-Language:
-	 x-originating-ip:Content-Type:Content-Transfer-Encoding:MIME-Version;
-	bh=W1ID0KUmiJ0hJt1hSYwPJknYkkXTw1HPu1FxKo7PFK0=;
-	b=tVIDGPGC/fT/idbHJP3zHWZ7mrh3Ow6We0MB0VY6vu5wgtZS21s0zBkBlmdvLG4pzjdv
-	 hbmJbpQNlylCSQN7QhZ5tzyGqg93RBgj43FTbHgRe9r6ZsxsfzrDp6U6LUdGVniU3bwnQ
-	 D+5LxV/XvZQqIv1hBGWIbJujFyq8zI1ILsRwtZEfPoUlu+Vzh6B6Ddl9qO0LIXoWZmhtg
-	 D3KfxetbR1alq8dXGQnv+prHfEkLPot0sRuN2z3FQeBlEGXnvY8EopSHWr/osA/IxfBeo
-	 WQQJR3nJQF/bMcEyb28bwvoXLS1oMiUj0J8SncZxk/rZSQGWLxOEVSf3CSGM7H60b2Q==
+	a=rsa-sha256; c=relaxed/relaxed; t=1794821010;
+	h=DMARC-Filter:Received:DKIM-Signature:X-Google-DKIM-Signature:
+	 X-Forwarded-Encrypted:X-Gm-Message-State:X-Gm-Gg:X-Received:Received:
+	 From:To:Cc:Subject:Date:Message-ID:X-Mailer:MIME-Version:
+	 Content-Transfer-Encoding;
+	bh=8Di33WShdwbsd6k1hBxIRZVPI/wZsEbgX0u8y5qE320=;
+	b=ziImlGu3s6s+mVSAMbABosvYJLgCh3CNHnF8i6FL7sU83h4SiITw9F4ayAxaFYSHauPA
+	 sNocTD/87Dq5w87pdQUyrtoUGpdBeX9R0PSBjbkbqMh8KCfPpnt9ZT8ChQqg8xbJerq0R
+	 rQQEq8snhCpzkVi13oW4JNfViXzSKBYgxqFqDaSw9dtT/igph7TXiDyxzNm0wLqWWyvV8
+	 SmvELVCokmGLUM0f60FaszY6e1Bfvbvnfpj51UbePCvYI4BF2IZjQY/BiM1vIewpQOmjq
+	 EGokCd69AaA9iHSXYdFyKNgxfpbrawB1wecvhMv5YfiHn2xHCFlLCQ5fLU3WcUZ32BQ==
 ARC-Authentication-Results: i=1; smtp.subspace.kernel.org; 
-	dmarc=pass header.from=realtek.com;
-	spf=pass smtp.mailfrom=realtek.com;
-	dkim=pass header.d=realtek.com header.i=@realtek.com header.a=rsa-sha256 header.s=dkim header.b=iJ4nljKd;
-	arc=none smtp.remote-ip=211.75.126.72
-Received: from rtits2.realtek.com.tw (rtits2.realtek.com [211.75.126.72])
-	(using TLSv1.3 with cipher TLS_AES_256_GCM_SHA384 (256/256 bits)
+	dmarc=pass header.from=gmail.com;
+	spf=pass smtp.mailfrom=gmail.com;
+	dkim=pass header.d=gmail.com header.i=@gmail.com header.a=rsa-sha256 header.s=20260707 header.b=EyJdSiG1;
+	arc=none smtp.remote-ip=209.85.214.174
+Received: from mail-pl1-f174.google.com (mail-pl1-f174.google.com [209.85.214.174])
+	(using TLSv1.3 with cipher TLS_AES_128_GCM_SHA256 (128/128 bits)
 	 key-exchange X25519 server-signature ECDSA (prime256v1) server-digest SHA256)
 	(No client certificate requested)
-	by smtp.subspace.kernel.org (Postfix) with ESMTPS id 18E2A606A337
-	for <linux-wireless@vger.kernel.org>; Mon, 16 Nov 2026 09:17:41 +0000 (UTC)
-DMARC-Filter: OpenDMARC Filter v1.4.2 smtp.subspace.kernel.org 18E2A606A337
-Authentication-Results: smtp.subspace.kernel.org; dmarc=pass (p=none dis=none) header.from=realtek.com
-Authentication-Results: smtp.subspace.kernel.org; spf=pass smtp.mailfrom=realtek.com
+	by smtp.subspace.kernel.org (Postfix) with ESMTPS id 0546D606A329
+	for <linux-wireless@vger.kernel.org>; Mon, 16 Nov 2026 09:23:28 +0000 (UTC)
+DMARC-Filter: OpenDMARC Filter v1.4.2 smtp.subspace.kernel.org 0546D606A329
+Authentication-Results: smtp.subspace.kernel.org; dmarc=pass (p=none dis=none) header.from=gmail.com
+Authentication-Results: smtp.subspace.kernel.org; spf=pass smtp.mailfrom=gmail.com
 Authentication-Results: smtp.subspace.kernel.org;
-	dkim=pass (2048-bit key, unprotected) header.d=realtek.com header.i=@realtek.com header.a=rsa-sha256 header.s=dkim header.b=iJ4nljKd
-X-SpamFilter-By: ArmorX SpamTrap 5.80 with qID 6AG9HaPqA3285774, This message is accepted by code: ctloc85258
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=realtek.com; s=dkim;
-	t=1794820657; bh=W1ID0KUmiJ0hJt1hSYwPJknYkkXTw1HPu1FxKo7PFK0=;
-	h=From:To:CC:Subject:Date:Message-ID:References:In-Reply-To:
-	 Content-Type:Content-Transfer-Encoding:MIME-Version;
-	b=iJ4nljKd8GHo0U7FDxd29RgwOE95FbOIohtwxiKWrOJA8KViP3WN6T5uOAs2UutLL
-	 g6PTsvEVT5ym+fmGRTU9VcsTAAZlr2PBbNv3Q4rdVQbG/1wav+yiYUax/XtQqh+K2O
-	 R+cRAthKC/JZ1Z1GD4aeXbitZic79yRPKsB2QeNpD4L61lMcy++g7CZ+j1EqNXiLry
-	 TlcPah/5/isBVWwLlD37F1dfAxCq8kKFaWF1911JWQOGRRi2o/4yjZpitfg/yjlKgg
-	 UvsvguEOUeB/Sse4M2qTlSfZU+oq/WYUtwAZn3sFIF51a7yDQkA/kTXPtPW6nylDbi
-	 kaEW5B718/dzg==
-Received: from mail.realtek.com (rtkexhmbs04.realtek.com.tw[10.21.1.54])
-	by rtits2.realtek.com.tw (8.15.2/3.29/5.94) with ESMTPS id 6AG9HaPqA3285774
-	(version=TLSv1.2 cipher=ECDHE-RSA-AES256-GCM-SHA384 bits=256 verify=FAIL);
-	Mon, 16 Nov 2026 17:17:36 +0800
-Received: from RTKEXHMBS06.realtek.com.tw (10.21.1.56) by
- RTKEXHMBS04.realtek.com.tw (10.21.1.54) with Microsoft SMTP Server
- (version=TLS1_2, cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id
- 15.2.2562.56; Mon, 16 Nov 2026 17:17:37 +0800
-Received: from RTKEXHMBS06.realtek.com.tw ([fe80::eeeb:c765:ca73:5eef]) by
- RTKEXHMBS06.realtek.com.tw ([fe80::eeeb:c765:ca73:5eef%10]) with mapi id
- 15.02.2562.056; Mon, 16 Nov 2026 17:17:37 +0800
-From: Ping-Ke Shih <pkshih@realtek.com>
-To: Vincent Schurink <spam@acio.nl>
-CC: "linux-wireless@vger.kernel.org" <linux-wireless@vger.kernel.org>
-Subject: RE: [PATCH rtw-next v5] wifi: rtw89: set RA init rate level when the
- station RSSI is known
-Thread-Topic: [PATCH rtw-next v5] wifi: rtw89: set RA init rate level when the
- station RSSI is known
-Thread-Index: AQHddahadC2LlAQx70epkOwGpneDyrcwazrg
-Date: Mon, 16 Nov 2026 09:17:37 +0000
-Message-ID: <96354bbc054c46f9b9546a19d3037566@realtek.com>
-References: <20261116085534.66746-1-spam@acio.nl>
-In-Reply-To: <20261116085534.66746-1-spam@acio.nl>
-Accept-Language: en-US, zh-TW
-Content-Language: zh-TW
-Content-Type: text/plain; charset="us-ascii"
-Content-Transfer-Encoding: quoted-printable
+	dkim=pass (2048-bit key) header.d=gmail.com header.i=@gmail.com header.a=rsa-sha256 header.s=20260707 header.b=EyJdSiG1
+Received: by mail-pl1-f174.google.com with SMTP id d9443c01a7336-2e977109392so17473085ad.0
+        for <linux-wireless@vger.kernel.org>; Mon, 16 Nov 2026 01:23:28 -0800 (PST)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+        d=gmail.com; s=20260707; t=1794821008; x=1795425808; darn=vger.kernel.org;
+        h=content-transfer-encoding:mime-version:message-id:date:subject:cc
+         :to:from:from:to:cc:subject:date:message-id:reply-to:content-type;
+        bh=8Di33WShdwbsd6k1hBxIRZVPI/wZsEbgX0u8y5qE320=;
+        b=EyJdSiG1l2h+Qw6QXQI4AHp9x+efFXbaWsf23ACOXySlZe0TOjoqVsBCWPBsyBcoR9
+         sf+4UbiR5nLb1kqDIoosl/P0PdpUpz1BE1aQRTu5bT7VlCCg4iXwo5j3Pltpl3HkuRo0
+         GE8N+v9TgrxUzUfj44iac/geYD0aQ7juG2ugZ0HteyxOdyDfOzSDUa0vgy7a2E8t7Kt8
+         P36kmyYTtmKnT7Tw1u6Hx5uAy4TmY/9GuYZ2u3aekdILN1fvCLzrC+AGDRB4GB4aeXmg
+         aAd65yQ0dv/mxYlE8E+2Llj+n/z2yp+YtM5rf3OUKnWH+NhmDZOkqGcYAY01Z+kC96ku
+         9mhA==
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+        d=1e100.net; s=20260707; t=1794821008; x=1795425808;
+        h=content-transfer-encoding:mime-version:message-id:date:subject:cc
+         :to:from:x-gm-gg:x-gm-message-state:from:to:cc:subject:date
+         :message-id:reply-to:content-type;
+        bh=8Di33WShdwbsd6k1hBxIRZVPI/wZsEbgX0u8y5qE320=;
+        b=ukgwlu3BH4k1+nt5McnzI39YZRH7zNOsZh/Or98SN+UQQkZXHrter22k1nKPc+hses
+         H8EBVpUNxlCSjAzECfE8muuxE+aBsJJ4QAVF5nc2kWRR7c6OUdqEdyn+7rmas8lzeQTU
+         GSX2z0RGXKy6dSQlftABA4FXOV+Ukj21OXU7/jJrrYfyZPGCNCDSJsrO1xoyfOjzJJ/F
+         Osit9Z18RHtYloTq9kmcQ4B7X1fUB9oacNRaOcc050Q8Ua8lEsnS+MkZTm5WA3+FbyXd
+         1ifhvFGDFlw9D+juDtUsVW+GLLisJN78t98KbUapFPgawYHpKj0KbkDLiVaFoBISsJnv
+         hk2A==
+X-Forwarded-Encrypted: i=1; AL+hErGW4LfVmfBvUCZDZVMlEoNBZmsRKmzkhNJDxGRUgVtrkZPwM9NSDnIEt7HuAzvC+0kKe/xYE0TXLyvB61ddPQ==@vger.kernel.org
+X-Gm-Message-State: APuU4Z82Ji/el6A6Kv+f0c8hdqq2MHa/AOVp24pVpnQJv7R0wa0C5mPX
+	n1grrJDAE7Pe24ykkgWrgt8cBlpjDOeB8tuqpjp8M8HDhDMXEoIYkv5M
+X-Gm-Gg: AZFdTZfJwYSoTP7WqQGA+k4GvraSgp8QXaX2VYie06PhpSzP9lOQwdY1yI+1piMkmSr
+	Kj7O3WXOSAUSMLN/f7SLL+4HEi4Gvy1brWMnr+1XgYADALsJoWsRpmi0zy4o86+nCT5ndLpmQFO
+	FcVqvDYu4ZVsLvlH7kGZ5JRkL6mGeEk+qDxANs7r0jJNYFMVdZklRsZgWOO5t/Jxp1FPlE6PcMR
+	CIxkaNaW94DYSZKnThiYKcyriFpo03XPKE0msg6GKDOitCIxrYO+7VLbLEbx+/uZJl6XEkO7v4R
+	CklXDkpGyc5C5KnFnP+Hb+fDFeCwanglXES+HvH2aIM8IecoxX0KH/24ac5PS059Zvr9gemcInK
+	Vy3uFPUCnvd8yJsxSyq5800hw57B8oUCUZEI6rzYepkD6HwGh6Xnb09gmj5Rod3iM1zjcrpWBBE
+	HE7x0um33qbvsVyY4BSPLaLgr/Z5VhxHiyQYgSUz+/sV/iDaTB0V3OHeRxWMvP+lQKBIr4Mh5sH
+	MhBvS0jRszg5U2WJH8HR/hI42PGBl8CbLmra8b3qwPUUSNalyYBJ8ckneR7XHQH/JimoAzvAMR7
+	l9uWEBDx57xTKyJWj8YTWECjASC4CDA2ebw8L0k7UPCDmfQjeitzYw==
+X-Received: by 2002:a17:902:e951:b0:2e5:54b9:6b5c with SMTP id d9443c01a7336-2ee0da98ceemr88257225ad.20.1794821007979;
+        Mon, 16 Nov 2026 01:23:27 -0800 (PST)
+Received: from G7XWH7K1F3 ([2408:8256:2e80:7371:90a:5f11:9056:5eea])
+        by smtp.gmail.com with ESMTPSA id d9443c01a7336-2ee0f7d99fasm35015195ad.35.2026.11.16.01.23.21
+        (version=TLS1_3 cipher=TLS_CHACHA20_POLY1305_SHA256 bits=256/256);
+        Mon, 16 Nov 2026 01:23:27 -0800 (PST)
+From: Zhao Li <enderaoelyther@gmail.com>
+To: Ping-Ke Shih <pkshih@realtek.com>
+Cc: Po-Hao Huang <phhuang@realtek.com>,
+	linux-wireless@vger.kernel.org,
+	linux-kernel@vger.kernel.org
+Subject: [PATCH rtw-next v2] wifi: rtw89: update PN state only from correctly decrypted frames
+Date: Mon, 16 Nov 2026 17:23:00 +0800
+Message-ID: <20261116092300.20414-1-enderaoelyther@gmail.com>
+X-Mailer: git-send-email 2.56.1
 X-Mailing-List: linux-wireless@vger.kernel.org
 List-Id: <linux-wireless.vger.kernel.org>
 List-Post: <mailto:linux-wireless@vger.kernel.org>
@@ -81,34 +95,54 @@ List-Unsubscribe: <mailto:linux-wireless+unsubscribe@vger.kernel.org>
 List-Owner: <mailto:linux-wireless+owner@vger.kernel.org>
 Precedence: list
 MIME-Version: 1.0
+Content-Transfer-Encoding: 8bit
 
-Vincent Schurink <spam@acio.nl> wrote:
-> When a station associates to an AP, the AP does not know the RSSI of
-> the station yet. Thus, rtw89_phy_ra_assoc() sends init_rate_lv 0 to the
-> firmware. With this value, the firmware RA of RTL8922A often uses 20 MHz
-> and VHT-MCS 2 for the station. It does not try a higher rate, also when
-> the PER is 0. On an 80 MHz AP, the TCP throughput to the station
-> then stays at approximately 36 Mbit/s for the full connection.
->=20
-> Move the mapping from RSSI to init_rate_lv to a function. In a test on
-> RTL8922A, the firmware used init_rate_lv only together with upd_all, and
-> upd_all resets the RA context. Thus, the RA association sets
-> rssi_unknown in the RA info when the RSSI is not known. When the RSSI is
-> known, the RA update sets init_rate_lv and upd_all one time. Other RA
-> updates still send init_rate_lv 0.
-> The flag is in a struct_group at the end of the RA info, and
-> rtw89_phy_ra_sta_update() clears the RA info only up to this group.
-> Thus, the flag stays until the RA update uses it.
->=20
-> Tested on RTL8912AU (RTL8922A, USB) in AP mode with hostapd 2.10 and
-> VHT 80 MHz. The client is an Intel Meteor Lake CNVi (iwlwifi) at -34 to
-> -40 dBm. Each test reconnects the client, then sends TCP from the AP for
-> 60 s.
-> Before: 6 of 8 connections stay at VHT-MCS 2 and 20 MHz, 36 Mbit/s.
-> After: 8 of 8 connections use VHT-MCS 9 at 80 MHz, 671 to 683 Mbit/s.
->=20
-> Suggested-by: Ping-Ke Shih <pkshih@realtek.com>
-> Signed-off-by: Vincent Schurink <spam@acio.nl>
+rtw89_core_skb_pn_valid() records the sequence and packet numbers of
+hardware-decrypted QoS data frames so that it can drop frames whose
+sequence number goes backwards while the PN advances. It runs before
+mac80211 discards frames with an ICV/MIC or FCS error and requires only
+hw_dec, so a frame that failed decryption still updates last_sn and
+last_pn. Such a frame need not come from the peer. One with an advanced
+sequence number and a PN between the recorded PN and the peer's next
+one makes the check drop the peer's following valid frames until their
+sequence numbers catch up.
 
-Acked-by: Ping-Ke Shih <pkshih@realtek.com>
+Skip frames that rtw89_core_update_rx_status() does not report to
+mac80211 as decrypted, or reports with an FCS error.
+
+Found by code review and not reproduced; compile-tested only.
+
+AI assistance was used.
+
+Fixes: bda294ed0ed0 ("wifi: rtw89: Drop malformed AMPDU frames with abnormal PN")
+Cc: stable@vger.kernel.org
+Signed-off-by: Zhao Li <enderaoelyther@gmail.com>
+---
+Changes in v2:
+- Keep the two existing conditions in place and append the three new
+  ones (Ping-Ke).
+
+v1: https://lore.kernel.org/r/20261115172754.35124-1-enderaoelyther@gmail.com
+
+ drivers/net/wireless/realtek/rtw89/core.c | 3 ++-
+ 1 file changed, 2 insertions(+), 1 deletion(-)
+
+diff --git a/drivers/net/wireless/realtek/rtw89/core.c b/drivers/net/wireless/realtek/rtw89/core.c
+index 58ee5efc3b5e..ef6bb1a43cd3 100644
+--- a/drivers/net/wireless/realtek/rtw89/core.c
++++ b/drivers/net/wireless/realtek/rtw89/core.c
+@@ -3950,7 +3950,8 @@ static bool rtw89_core_skb_pn_valid(struct rtw89_dev *rtwdev,
+ 	if (!ieee80211_is_data_qos(hdr->frame_control))
+ 		return true;
+ 
+-	if (!desc_info->hw_dec || !desc_info->addr1_match)
++	if (!desc_info->hw_dec || !desc_info->addr1_match ||
++	    desc_info->sw_dec || desc_info->icv_err || desc_info->crc32_err)
+ 		return true;
+ 
+ 	guard(rcu)();
+
+base-commit: 5dbf2415ca9821a611d09308e3b29d2c37e7cd77
+-- 
+2.56.1
 
