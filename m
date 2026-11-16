@@ -1,88 +1,87 @@
-Authentication-Results: smtp.subspace.kernel.org; arc=none smtp.remote-ip=100.103.45.18
+Authentication-Results: smtp.subspace.kernel.org; arc=none smtp.remote-ip=209.85.160.173
 ARC-Seal: i=1; d=subspace.kernel.org; s=arc20261015; a=rsa-sha256; cv=none;
-	t=1794834522;
-	b=qYHWbcj4z8WImWhy53t+R3uRL9JesMam8zp4slv6kPuSDFtS4xtHNwUR0JeJO22D2eLa
-	 O6qPgJhGfpTk9D+BkNNAdv1fGlizhHDiQiQzG0tKsQlP87hfPFMzAsn6C+VI+0FpCnAJB
-	 BHOQwawzgNX4lqyfHdwaOTLoagWAnlm3qzjM8xV2FHLE+SxW8W9Z1N0AgJjMad3MHDelG
-	 j85Ti+rNvG0MyfHZLT7vLTjKu1J7eXwTVB928Wab4aXlssViIQ0bUgP/es2Oy7E3NVkCp
-	 xVaotvife7iQJquxfVsGN1I84Ws64Mr994TNZwNcpHL0k//Ev7Hhf0fhhwu6ZmMbN5w==
+	t=1794834612;
+	b=Kc6dlJoNAHaX8NfDNimA3j8NghPNzG7GlxzAdM9reIdlCaf1uZqGihDNsv6HP1dyqoCT
+	 iDAFLrixuzgHFk3Q3U7dEwe6xQjC0sT9tiB7D6dw++fNU2PWUa2ulMopgliWSx+XvJgV1
+	 J6wDN73eVbWe9kMeFQyL9wRBId5KOoOYHJ4tuzNjo/rCT5Vr+4XjkegXtPrh04a9A+c3h
+	 HCohqsfLdlyZ3s1fMo6J29jlpRWZyDsT81RZlryHhmGIy8P9n2uebQh/Y7JSnuwQ7wMqk
+	 4hOLYbcBDR5n2qEgFyAav0EBCZIsT/YHDj1eUqkliOiH8+IRO+s3sCaFTqFhOWAYgZA==
 ARC-Message-Signature: i=1; d=subspace.kernel.org; s=arc20261015;
-	a=rsa-sha256; c=relaxed/relaxed; t=1794834522;
-	h=Received:DKIM-Signature:X-Mailer:From:To:Cc:Subject:In-Reply-To:
-	 References:Date:Message-ID:MIME-Version:Content-Type;
-	bh=FwoCPPpdO8j0QQzLogIM9E8IgkHPKoUE54w1Plha5dw=;
-	b=g5T2LIQhBkTcsMozvcwrUyP+MygohRJqOAd5/pHxuV6GYHgVaX9agEodLoUFvRvJD145
-	 32F+rkLvBLHeJAtKAejr/AycEFr63qb9YQKot8lcsnXAyRJeKyHcpOE2XooxbblIiYkDb
-	 y8KgUrus4Y2xq+bYmtcB4hx/8+4dGSUZehDBmwgNCyRezRg0E3f5CHFwVoggdpLnxKG7Y
-	 ujQmZzq29Q6MsLnIz/CZMUiaPvY1Z4JJInTPaK00F080DNEcVacjQXG4dRKDd8k7lJFmq
-	 zHynIvoMJJwx1BHPvZXPcu+A2fzfd4vs1tMNrI3MF+6wELsvxIcxUnguDXvcIDUJF7w==
+	a=rsa-sha256; c=relaxed/relaxed; t=1794834612;
+	h=DMARC-Filter:Received:DKIM-Signature:X-Google-DKIM-Signature:
+	 X-Gm-Message-State:X-Gm-Gg:X-Received:Received:Message-ID:Date:
+	 MIME-Version:User-Agent:Subject:To:Cc:References:Content-Language:
+	 From:In-Reply-To:Content-Type:Content-Transfer-Encoding;
+	bh=kM0UvzoijstUksjplMkCj1gO0fSeCed6wJBFK/eRQrY=;
+	b=M1btI8nsRocKfyYc/F43xYkcuVHRfkY9xduhu+/dRfLeiQW3eXP30ybIQB3dEhCp1zJT
+	 tSTpPd8RJMsbjWrESBRexQS+XfG3zgXNdZzdFQT8YI+UOmPfL8l9DP+HXKWJ72W0USvXS
+	 Z3+GY+o5kaNmUey99o4Wmr6zCMbrXnHM/9hmwetJk1r85LtTF0BjtMbAaB6CboWp95lf5
+	 bjlV2oajZObkCYzuB1uaLgxjUSmv2d8ISs3cULJ4KIu1KcoxI8bIoBrHeipJum78TSLEF
+	 ALiQb/NmUMj+3RUNYxdJ/IEi12Y2dbTSzNMpycIrQYt1BpIn9QegQNjd3gX4uE3nPLA==
 ARC-Authentication-Results: i=1; smtp.subspace.kernel.org; 
-	dkim=pass header.d=kernel.org header.i=@kernel.org header.a=rsa-sha256 header.s=k20260515 header.b=LIc5lPy1;
-	arc=none smtp.remote-ip=100.103.45.18
-Received: from smtp.kernel.org (quasi.space.kernel.org [100.103.45.18])
-	(using TLSv1.3 with cipher TLS_AES_256_GCM_SHA384 (256/256 bits)
-	 key-exchange X25519 server-signature ECDSA (prime256v1))
+	dmarc=pass header.from=gmail.com;
+	spf=pass smtp.mailfrom=gmail.com;
+	dkim=pass header.d=gmail.com header.i=@gmail.com header.a=rsa-sha256 header.s=20260707 header.b=EhR72kYd;
+	arc=none smtp.remote-ip=209.85.160.173
+Received: from mail-qt1-f173.google.com (mail-qt1-f173.google.com [209.85.160.173])
+	(using TLSv1.3 with cipher TLS_AES_128_GCM_SHA256 (128/128 bits)
+	 key-exchange X25519 server-signature ECDSA (prime256v1) server-digest SHA256)
 	(No client certificate requested)
-	by smtp.subspace.kernel.org (Postfix) with ESMTPS id B0D07606A33B;
-	Mon, 16 Nov 2026 13:08:42 +0000 (UTC)
+	by smtp.subspace.kernel.org (Postfix) with ESMTPS id 73273606A886
+	for <linux-wireless@vger.kernel.org>; Mon, 16 Nov 2026 13:10:12 +0000 (UTC)
+DMARC-Filter: OpenDMARC Filter v1.4.2 smtp.subspace.kernel.org 73273606A886
+Authentication-Results: smtp.subspace.kernel.org; dmarc=pass (p=none dis=none) header.from=gmail.com
+Authentication-Results: smtp.subspace.kernel.org; spf=pass smtp.mailfrom=gmail.com
 Authentication-Results: smtp.subspace.kernel.org;
-	dkim=pass (2048-bit key) header.d=kernel.org header.i=@kernel.org header.a=rsa-sha256 header.s=k20260515 header.b=LIc5lPy1
-Received: by smtp.kernel.org (Postfix) with ESMTPSA id 612A41F000C5;
-	Mon, 16 Nov 2026 13:08:29 +0000 (UTC)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=kernel.org;
-	s=k20260515; t=1794834522;
-	bh=FwoCPPpdO8j0QQzLogIM9E8IgkHPKoUE54w1Plha5dw=;
-	h=From:To:Cc:Subject:In-Reply-To:References:Date;
-	b=LIc5lPy1D71RQN2xAbDw2oXaH5IV6pJ32H0KUZEqe8L249TmRi2WTJNQxKcuU1wEO
-	 oLm11Z/jqifv9rpcqf6oDFERa929d+JDfwRjC64Lnedd+EABh/BlgjMO2vcuLflph1
-	 8ElRVqEMjm7Be2V+wkEQvCuB9EDMcj/MMyH7AM8kqurVjgwf5jK5SAvnQJxVfCyPce
-	 WrnayG/saturD08cn49YyfcaDZzfKPuzx0jRt56/DImYkW4CmT1Kyp50jL+nYJU21v
-	 MsNp1ZjKlC00n397AZiiTcJm11MwJ1MeO9np8vdTOwAxjjQ4K/7vmluasP5XB0SeNC
-	 zhGRJWHaUOOpw==
-X-Mailer: emacs 31.1 (via feedmail 11-beta-1 I)
-From: Aneesh Kumar K.V <aneesh.kumar@kernel.org>
-To: Leon Romanovsky <leon@kernel.org>,
-	Greg Kroah-Hartman <gregkh@linuxfoundation.org>,
-	"Rafael J. Wysocki" <rafael@kernel.org>,
-	Danilo Krummrich <dakr@kernel.org>,
-	Dmitry Torokhov <dmitry.torokhov@gmail.com>,
-	Andrew Lunn <andrew@lunn.ch>,
-	Heiner Kallweit <hkallweit1@gmail.com>,
-	Russell King <linux@armlinux.org.uk>,
-	"David S. Miller" <davem@davemloft.net>,
-	Jakub Kicinski <kuba@kernel.org>,
-	Paolo Abeni <pabeni@redhat.com>,
-	Johannes Berg <johannes@sipsolutions.net>,
-	Jonathan Corbet <corbet@lwn.net>,
-	Shuah Khan <skhan@linuxfoundation.org>,
-	Randy Dunlap <rdunlap@infradead.org>,
-	Bjorn Helgaas <bhelgaas@google.com>,
-	"Joerg Roedel (AMD)" <joro@8bytes.org>,
-	Suravee Suthikulpanit <suravee.suthikulpanit@amd.com>,
-	Vasant Hegde <vasant.hegde@amd.com>,
-	Will Deacon <will@kernel.org>,
-	Robin Murphy <robin.murphy@arm.com>,
-	David Woodhouse <dwmw2@infradead.org>,
-	Lu Baolu <baolu.lu@linux.intel.com>,
-	Johan Hovold <johan@kernel.org>,
-	Eric Dumazet <edumazet@kernel.org>,
-	Marcel Holtmann <marcel@holtmann.org>,
-	Luiz Augusto von Dentz <luiz.dentz@gmail.com>,
-	Nipun Gupta <nipun.gupta@amd.com>,
-	Nikhil Agarwal <nikhil.agarwal@amd.com>,
-	Pieter Jansen van Vuuren <pieter.jansen-van-vuuren@amd.com>
-Cc: linux-kernel@vger.kernel.org, driver-core@lists.linux.dev,
-	linux-input@vger.kernel.org, netdev@vger.kernel.org,
-	linux-wireless@vger.kernel.org, linux-usb@vger.kernel.org,
-	linux-bluetooth@vger.kernel.org, linux-acpi@vger.kernel.org,
-	linux-doc@vger.kernel.org, linux-pci@vger.kernel.org,
-	iommu@lists.linux.dev, Jason Gunthorpe <jgg@ziepe.ca>
-Subject: Re: [PATCH 17/17] PCI: Replace untrusted state with device trust
-In-Reply-To: <20261105-device-trust-core-v1-17-1e536825b4eb@nvidia.com>
-References: <20261105-device-trust-core-v1-0-1e536825b4eb@nvidia.com>
- <20261105-device-trust-core-v1-17-1e536825b4eb@nvidia.com>
-Date: Mon, 16 Nov 2026 18:38:25 +0530
-Message-ID: <yq5amrr8yldi.fsf@kernel.org>
+	dkim=pass (2048-bit key) header.d=gmail.com header.i=@gmail.com header.a=rsa-sha256 header.s=20260707 header.b=EhR72kYd
+Received: by mail-qt1-f173.google.com with SMTP id d75a77b69052e-55ade1de0b4so46825921cf.3
+        for <linux-wireless@vger.kernel.org>; Mon, 16 Nov 2026 05:10:12 -0800 (PST)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+        d=gmail.com; s=20260707; t=1794834611; x=1795439411; darn=vger.kernel.org;
+        h=content-transfer-encoding:content-type:in-reply-to:from
+         :content-language:references:cc:to:subject:user-agent:mime-version
+         :date:message-id:from:to:cc:subject:date:message-id:reply-to
+         :content-type;
+        bh=kM0UvzoijstUksjplMkCj1gO0fSeCed6wJBFK/eRQrY=;
+        b=EhR72kYdA/Iu3c8YdYdZpjcgdHwRlIFXA73wyZj/PDfuRwNZwZpeZyp2hWGot7dsQ4
+         dd0x8XKfFPDPWMKqloO/aBSe107vRG60bsclIK5DNCdgbqXqwAx9RB0pnGNBlBqoZ0oy
+         /V/f3I8jEtYGEkdlqZmJhs5FyluX62Cicq8cwpxUJ4ckqzaDA+9TtM4TwodWCS8qoCaC
+         qY3y/uvJWCX408jrdO0NBbq7YaBTIZvoXqR4cfYrMDCCFv3bLZsczJ3xZxspmtlIFhJC
+         1CPzAy9HMCfTpH4GveeXfU7lTiKa7/r2oodqWtu/p40BxVKUvplLuLX1MJaNcExveB4G
+         2UQQ==
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+        d=1e100.net; s=20260707; t=1794834611; x=1795439411;
+        h=content-transfer-encoding:content-type:in-reply-to:from
+         :content-language:references:cc:to:subject:user-agent:mime-version
+         :date:message-id:x-gm-gg:x-gm-message-state:from:to:cc:subject:date
+         :message-id:reply-to:content-type;
+        bh=kM0UvzoijstUksjplMkCj1gO0fSeCed6wJBFK/eRQrY=;
+        b=yotHGNn4FdkaBUCInGLZ8paWqhN2lTjV+XVnQvL7zPweG8XVuuKWXHiprO53rI4nJX
+         XBFIJS2HiSFy52/ZkY3m+x/q/CMOby4EH+s98Tox7/eRGYgD++EQveRBp/2Ed4Js6cG0
+         Grr1McZB/TmV5+f9SPwnsKtMNwht+hDX9mbgjRbWixVFGNmaV8ZmRrgzcOjzwNRhSVMm
+         nv+oxetIYLpdM8rXZk6Kg4awuCtZWxnOho5Bw5NQdJrWu1fTZvk1DTCTLG0NB/4MC1es
+         NRQ/qDGYXpDxYEdPc53BOE6LmrFBcbW1k6xrh+GQRaLlS2Fb2XeGJpveFISi02JHb1zg
+         5yFA==
+X-Gm-Message-State: APuU4Z8yFBowqzvBsVj4pB0Q5qJYWiEBsM8ZqjZA/Dj0/UqezBC3MwvP
+	VhfxYPb4B7y3Jt59OI+FYGCtIaaA8u25WuJVYhohXAUaz6PKMLCT+BlPHESm7VUk
+X-Gm-Gg: AYBFou3dbUccHwwFq9Aysv896KgeyxhWvHgvy9oBmxtTuHAl5tLd9r1v2bPe+P4Zuqa
+	gcZC5DYDPJmO1oFv0k5QvqJctiNGIkGevk9ORK3vTVXKryaqOF2nuZa8NwfRD3msB+nWlh/R0/j
+	6Nyg7VChDNLsHp4Cp7/XcoaqIco0cdElyQG+C6UM1OMg6X5LVKD2STzL3f7IeX2kCMbAU8Qtqht
+	Botm/dXiCrrWzlGCOWCCugDTx4jpDa0Us4FUtzTYgejV/A9EvTY/0KwXtrXBClEfWDL+mLpazcU
+	S75zSBb7yHKGfKFF4PnC74pAEL6xOBDqipgJdvHaDVZXo3Z+xZ+fpn5Hj1OHR4Z0jt8pYrnJvTo
+	r/1y161AQ8IQobyUMjfrBejsuikgPhG2V6k2U5TXEYpj4WOyF7XlQRQOZKxb8Y4AHj8sS1Cmrz2
+	PI6AEZviiQT3xk5w9abKQc5Ex5A1V0sWE2PcrwQzpvEk8yiMutk3TyWGLhROO9HINgXzlvJhUgL
+	OLprTmZxaNV16kiWZq61arDKyU1Gw59ceE9rNsEH6kJkPUYpZMeRUdOeuluFL2kXdP3BminVOXk
+	qdl1ojpSEFdLhcv2srhKzxVWK1Ee1e9vci5TfFuhft3gMQ9dk3+xj3VUXnBQEKq/PLlkfgjV6cw
+	75p97GihyzIU=
+X-Received: by 2002:a05:622a:22a2:b0:536:52ae:d91c with SMTP id d75a77b69052e-55ac80705cbmr164197351cf.47.1794834611428;
+        Mon, 16 Nov 2026 05:10:11 -0800 (PST)
+Received: from [192.168.50.163] (99-7-255-95.lightspeed.clmboh.sbcglobal.net. [99.7.255.95])
+        by smtp.gmail.com with ESMTPSA id d75a77b69052e-55d37daf422sm25492351cf.15.2026.11.16.05.10.10
+        (version=TLS1_3 cipher=TLS_AES_128_GCM_SHA256 bits=128/128);
+        Mon, 16 Nov 2026 05:10:10 -0800 (PST)
+Message-ID: <261fd10f-8db0-4458-b7b0-a8875c37ae85@gmail.com>
+Date: Mon, 16 Nov 2026 07:10:10 -0600
 X-Mailing-List: linux-wireless@vger.kernel.org
 List-Id: <linux-wireless.vger.kernel.org>
 List-Post: <mailto:linux-wireless@vger.kernel.org>
@@ -92,112 +91,47 @@ List-Unsubscribe: <mailto:linux-wireless+unsubscribe@vger.kernel.org>
 List-Owner: <mailto:linux-wireless+owner@vger.kernel.org>
 Precedence: list
 MIME-Version: 1.0
-Content-Type: text/plain
+User-Agent: Mozilla Thunderbird
+Subject: Re: [PATCH ath-next v4 00/11] wifi: ath12k: resolve RX link id via
+ logical link id on WCN7850/QCC2072
+To: Baochen Qiang <baochen.qiang@oss.qualcomm.com>,
+ Jeff Johnson <jeff.johnson@oss.qualcomm.com>,
+ Jeff Johnson <jjohnson@kernel.org>
+Cc: linux-wireless@vger.kernel.org, ath12k@lists.infradead.org
+References: <20261102-ath12k-logical-link-id-v4-0-f4c7807c299b@oss.qualcomm.com>
+ <f154f553-6739-48c6-bddf-21f429b34bae@oss.qualcomm.com>
+ <a715e044-848f-4adf-b497-de745169e6d2@oss.qualcomm.com>
+ <4a56db1c-f6ba-4468-92e2-0d5553222c4f@gmail.com>
+ <d3970c1a-4bf8-4231-8a31-ebe8f1c44f25@oss.qualcomm.com>
+Content-Language: en-US
+From: Walt Holman <waltholman09@gmail.com>
+In-Reply-To: <d3970c1a-4bf8-4231-8a31-ebe8f1c44f25@oss.qualcomm.com>
+Content-Type: text/plain; charset=UTF-8; format=flowed
+Content-Transfer-Encoding: 7bit
 
-Leon Romanovsky <leon@kernel.org> writes:
+On 11/15/26 23:28, Baochen Qiang wrote:
+> 
+> 
+> On 11/15/2026 3:35 AM, Walt Holman wrote:
+>> On 11/3/26 09:26, Jeff Johnson wrote:
+>>> On 11/2/2026 9:20 PM, Baochen Qiang wrote:
+>>>>
+>>>> Hmm, forget to reset revision number ...
+>>>>
+>>>> Jeff, let me know if I need to resend it with number fixed.
+>>>
+>>> No, this is fine. Waiting for a R-B from the infrastructure team.
+>>>
+>>> /jeff
+>>
+>> Has there been any progress on this getting merged? I need the patches to connect to my
+>> wifi on anything other than the 2.4Ghz band with 7.4-rc2.
+> 
+> the v5 version has got merged in ath.git already:
+> 
+> https://lore.kernel.org/ath12k/20261110-ath12k-logical-link-id-v5-0-26a3ed38db09@oss.qualcomm.com/
 
-> From: Leon Romanovsky <leonro@nvidia.com>
->
-> Convert the PCI specific untrusted to use the common device trust
-> level. Adversarial means the same thing untrusted does.
->
-> PCI discovery keeps the logic that set untrusted: it looks for removable
-> PCI devices with arch_pci_dev_is_removable() and defaults them to an
-> adversarial policy. Treat a disabled policy the same way when choosing
-> the IOMMU domain. Do not record the ATS capability of such a device, as
-> pci_ats_supported() rejected untrusted ones. Let the Intel write-buffer
-> quirk apply, as it only adds flushing.
->
+THank you!
 
- [ ... 28 lines skipped ... ] 
+-Walt
 
-> diff --git a/drivers/iommu/dma-iommu.c b/drivers/iommu/dma-iommu.c
-> index 78742aeba932d..a48fb511bfe6f 100644
-> --- a/drivers/iommu/dma-iommu.c
-> +++ b/drivers/iommu/dma-iommu.c
-> @@ -589,16 +589,11 @@ static int iova_reserve_iommu_regions(struct device *dev,
->  	return ret;
->  }
->  
-> -static bool dev_is_untrusted(struct device *dev)
-> -{
-> -	return dev_is_pci(dev) && to_pci_dev(dev)->untrusted;
-> -}
-> -
-
- [ ... 244 lines skipped ... ] 
-
-> diff --git a/include/linux/device.h b/include/linux/device.h
-> index 65ea07c9ac35b..870ce14924905 100644
-> --- a/include/linux/device.h
-> +++ b/include/linux/device.h
-> @@ -934,6 +934,11 @@ static inline bool device_iommu_mapped(struct device *dev)
->  	return (dev->iommu_group != NULL);
->  }
->  
-> +static inline bool device_policy_is_adversarial(const struct device *dev)
-> +{
-> +	return READ_ONCE(dev->trust_policy) == DEVICE_TRUST_POLICY_ADVERSARY;
-> +}
-> +
->  /* Get the wakeup routines, which depend on struct device */
->  #include <linux/pm_wakeup.h>
->  
-> diff --git a/include/linux/pci.h b/include/linux/pci.h
-> index aa3765a20a96c..087c63b177c85 100644
-> --- a/include/linux/pci.h
-> +++ b/include/linux/pci.h
-> @@ -490,14 +490,6 @@ struct pci_dev {
->  	unsigned int	shpc_managed:1;		/* SHPC owned by shpchp */
->  	unsigned int	is_thunderbolt:1;	/* Thunderbolt controller */
->  	unsigned int	is_cxl:1;               /* Compute Express Link (CXL) */
-> -	/*
-> -	 * Devices marked being untrusted are the ones that can potentially
-> -	 * execute DMA attacks and similar. They are typically connected
-> -	 * through external ports such as Thunderbolt but not limited to
-> -	 * that. When an IOMMU is enabled they should be getting full
-> -	 * mappings to make sure they cannot access arbitrary memory.
-> -	 */
-> -	unsigned int	untrusted:1;
->  	/*
->  	 * Info from the platform, e.g., ACPI or device tree, may mark a
->  	 * device as "external-facing".  An external-facing device is
-> @@ -616,6 +608,28 @@ static inline struct pci_dev *to_pci_dev(const struct device *dev)
->  {
->  	return container_of(dev, struct pci_dev, dev);
->  }
-> +
-> +static inline bool
-> +pci_dev_default_is_restricted(const struct pci_dev *pdev)
-> +{
-> +	enum device_trust_policy policy = READ_ONCE(pdev->dev.trust_policy);
-> +
-> +	return policy == DEVICE_TRUST_POLICY_DISABLED ||
-> +	       policy == DEVICE_TRUST_POLICY_ADVERSARY;
-> +}
-> +
-
-Could you clarify how this series will work alongside device acceptance
-and private-memory access?
-
-In particular, what should callers of device_cc_accepted() use under
-this model? My understanding is that trust describes the operating
-policy, not TDISP acceptance or DMA access to private memory. Therefore,
-neither FULL nor ADVERSARY alone indicates whether a device can access
-private memory?
-
-You also mention that once a trust level other than DISABLED is set, it
-cannot be changed during the device's lifetime. If a device initially
-operates in ADVERSARY mode and later attestation justifies FULL
-operation, is that transition intentionally unsupported for the existing
-device object? As documented, unbind/rebind and reset preserve the
-committed level.
-
-Some of these details are discussed in this thread:
-https://lore.kernel.org/all/20260708143153.GH118978@ziepe.ca/
-
-It would help to describe how the trust framework fits together with
-those separate mechanisms, including which pieces are left for follow-up
-series.
-
--aneesh
