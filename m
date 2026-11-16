@@ -1,56 +1,136 @@
-Authentication-Results: smtp.subspace.kernel.org; arc=none smtp.remote-ip=213.97.179.56
+Authentication-Results: smtp.subspace.kernel.org; arc=none smtp.remote-ip=205.220.180.131
 ARC-Seal: i=1; d=subspace.kernel.org; s=arc20261015; a=rsa-sha256; cv=none;
-	t=1794845770;
-	b=ZB1AF1Vx2JaWUSGW5SfakTjdlgkqgagVy8WySHVbCWLOEt3aAR9/+Ddoebd/LxMGgcCg
-	 0hg0ZckpGAUwzfyGKcczm7v6VTTCdOxgS+K9a9LtcSFVXAeQnvUbRIeCAz8onCcbNVHwl
-	 PrUMksmVvEa/Qt5jBjI+R6pHCN/3i82L7KYKgNClR5XrjuhakU5llJXvAa6Qo7eVd0Cxe
-	 6wciBZpvH6YRMciIuTR0qo4Ve1mIOb5B0K6Ee7mNhKBwphnbtGiQnQ+YZH4k6D7souiep
-	 tSRGWbtVUx0EVUB0JyxDhTqU1cYculuyPPi4MhXMcjwFLKccsNENtQpMV78HCxZ53XA==
+	t=1794846126;
+	b=Bam0rszcl0m+cOtKq01WPNlclMrU9sZQ56fVvjCUSqhbGNgvaQmFS1dI8stqc9sqGqn6
+	 r0N3WyOFmpHMgw6s29HTVWbh4RLlme4N1i6pQrdHIwh19qDFcBWS1S+qPhnzSFRCQjZRq
+	 vzZRwgnJhx/CT0ZTku8EILl9zWcQGRk5B8zptfRD2HAU2uVRN3kwRqnGwvP0SO7kXNd2e
+	 MnrCIPQ9EHHCAg+1XjwRXUWdCbqZnN/EiMtJxZW1TDw+q6gmo4AqGxQbf9wvuvuoMsqZa
+	 qdpX5B8Y6DAWZDw2oPFCoPjYnKlI/PmCSUbnkbSHoQtkVdxKEXmlkr3PNPDOb6Lq2xg==
 ARC-Message-Signature: i=1; d=subspace.kernel.org; s=arc20261015;
-	a=rsa-sha256; c=relaxed/relaxed; t=1794845770;
-	h=DMARC-Filter:DKIM-Signature:Received:From:Date:Subject:MIME-Version:
-	 Content-Type:Content-Transfer-Encoding:Message-Id:X-B4-Tracking:
-	 X-Change-ID:To:Cc:X-Mailer;
-	bh=u8OM82i/n/vgWyId+NC+VEpMoNyAg9PAz01gC1ijy4U=;
-	b=daNjmXbFEUPsMwuQODUhwLedP8cNjhqhuz+0NjW47N2rOq5vDNFsL7+RaKIiyZEjnpQ4
-	 9B73oCOKtSwvaqPpGurpwA2Ik0eNxv40A2dtgcT6ZK2i+5Dnbra95TJY8O9xZKlFIlsMM
-	 8kYYu9csQmIuJDWDfsd85E4OiOQUsFtn/bu+or9nDF+Ui4KwhS3nHTC8DRCK8JmFN3R6y
-	 WNiXYgZm73q4Rfv+jMIoy6/KmXUYo28KoxZBtIhQUlV133nhbLt4FOpDESacwbL1Si7OT
-	 8/2MUWTfBTLz6DyqYvI4LpWc9vYAhQP7XO5be1EsquXuZLWhuJPVyGMJztW5+HxwE2g==
+	a=rsa-sha256; c=relaxed/relaxed; t=1794846126;
+	h=DMARC-Filter:Received:DKIM-Signature:Received:Received:
+	 DKIM-Signature:X-Google-DKIM-Signature:X-Forwarded-Encrypted:
+	 X-Gm-Message-State:X-Gm-Gg:X-Received:X-Received:Received:From:To:Cc:
+	 Subject:Date:Message-ID:X-Mailer:MIME-Version:
+	 Content-Transfer-Encoding:X-Proofpoint-Spam-Info:X-Proofpoint-GUID:
+	 X-Proofpoint-Spam-Details-Enc:X-Proofpoint-ORIG-GUID:
+	 X-Authority-Analysis:X-Proofpoint-Virus-Version:
+	 X-Proofpoint-Spam-Details;
+	bh=jOFnPdS9OzKd2pQAuWQI40FvjqklDv0OYhhO4gHPm10=;
+	b=I4Zxe+RAHctqgL+p2mTt5B5ICGdNEzjgR7eICFIqbuI6Mi0DliRGGp5E2riuQIkY1xwS
+	 rLwOnzd9tJ+hxMYTT02UnI6J6dFkMe4qhNOm1YmVAkPjjMn6BbO8RBxln4R7TylRJJT29
+	 CGfy8uO9/7UgTh6sa2q8ufH0Rh1qi9+lTYfYkdNszT3jkDM4HnP4DROVyltxCojcqdACZ
+	 MHcNRa47tPsfnL2InVvw7Nqfk4xnAhG3A2Djg0dSYR+rr83LbtX7t72ALT9Bk/j888WN2
+	 +K9WGOarcFcrzS+IRtjLTtAxs8aOQhzTvr/LMzEwGumZyTAbBc81CDjD5WnhVNi+CwA==
 ARC-Authentication-Results: i=1; smtp.subspace.kernel.org; 
-	dmarc=pass header.from=igalia.com;
-	spf=pass smtp.mailfrom=igalia.com;
-	dkim=pass header.d=igalia.com header.i=@igalia.com header.a=rsa-sha256 header.s=20170329 header.b=NO123rfb;
-	arc=none smtp.remote-ip=213.97.179.56
-Received: from fanzine2.igalia.com (fanzine2.igalia.com [213.97.179.56])
+	dmarc=pass header.from=oss.qualcomm.com;
+	spf=pass smtp.mailfrom=oss.qualcomm.com;
+	dkim=pass header.d=qualcomm.com header.i=@qualcomm.com header.a=rsa-sha256 header.s=qcppdkim1 header.b=p7OfNETp;
+	dkim=pass header.d=oss.qualcomm.com header.i=@oss.qualcomm.com header.a=rsa-sha256 header.s=google header.b=Xn6B8mkZ;
+	arc=none smtp.remote-ip=205.220.180.131
+Received: from mx0b-0031df01.pphosted.com (mx0b-0031df01.pphosted.com [205.220.180.131])
 	(using TLSv1.3 with cipher TLS_AES_256_GCM_SHA384 (256/256 bits)
-	 key-exchange ECDHE (prime256v1) server-signature ECDSA (prime256v1) server-digest SHA256)
+	 key-exchange X25519 server-signature ECDSA (prime256v1) server-digest SHA256)
 	(No client certificate requested)
-	by smtp.subspace.kernel.org (Postfix) with ESMTPS id 9F857606A31C;
-	Mon, 16 Nov 2026 16:16:09 +0000 (UTC)
-DMARC-Filter: OpenDMARC Filter v1.4.2 smtp.subspace.kernel.org 9F857606A31C
-Authentication-Results: smtp.subspace.kernel.org; dmarc=pass (p=none dis=none) header.from=igalia.com
-Authentication-Results: smtp.subspace.kernel.org; spf=pass smtp.mailfrom=igalia.com
+	by smtp.subspace.kernel.org (Postfix) with ESMTPS id 9CC45606A323
+	for <linux-wireless@vger.kernel.org>; Mon, 16 Nov 2026 16:22:05 +0000 (UTC)
+DMARC-Filter: OpenDMARC Filter v1.4.2 smtp.subspace.kernel.org 9CC45606A323
+Authentication-Results: smtp.subspace.kernel.org; dmarc=pass (p=none dis=none) header.from=oss.qualcomm.com
+Authentication-Results: smtp.subspace.kernel.org; spf=pass smtp.mailfrom=oss.qualcomm.com
 Authentication-Results: smtp.subspace.kernel.org;
-	dkim=pass (2048-bit key) header.d=igalia.com header.i=@igalia.com header.a=rsa-sha256 header.s=20170329 header.b=NO123rfb
-DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed; d=igalia.com;
-	s=20170329; h=Cc:To:Message-Id:Content-Transfer-Encoding:Content-Type:
-	MIME-Version:Subject:Date:From:From:Reply-To;
-	bh=u8OM82i/n/vgWyId+NC+VEpMoNyAg9PAz01gC1ijy4U=; t=1794845769; x=2110205769; 
-	b=NO123rfbGaJEYu5jaoZPTyN3G0Iw3n4vqK0WA+KKZX0SundHEvFWCfkLVXUCD4hfV61R/JrBaLS
-	NH7NnPlcYRXGTNgGrodX+M3ugV6qcFcnqGy/KPwozMLyR7Hdxag2qWs0zRIMcuB3LxSHdF0OR8y90
-	fYjJKNTdq1//HMKJ6ryQ4KA6wmfVl4/8rQcGYowIBApfY/ZOOr8zO9l5RrqoZacnXx67tJ8XNO8qD
-	Qxzzkbtnos6RLtOmRgJiGLVaTlGxMtWkSqLreJpxBWC8+gQw7+jZ4N8koH28XF6SrkEc+HpfQtG53
-	o4zydwRlV1SOaP+9PuIn6Lkpu+50bJrb68AQ==;
-Received: from 186-249-149-121.shared.desktop.com.br ([186.249.149.121] helo=[127.0.1.1])
-	by fanzine2.igalia.com with esmtpsa 
-	(Cipher TLS1.3:ECDHE_X25519__RSA_PSS_RSAE_SHA256__AES_256_GCM:256) (Exim)
-	id 1xSzNH-00000000GXQ-2Oa6;
-	Mon, 16 Nov 2026 17:16:07 +0100
-From: Mauricio Faria de Oliveira <mfo@igalia.com>
-Date: Mon, 16 Nov 2026 13:17:28 -0300
-Subject: [PATCH v2] wifi: rtw88: fix skb leak in hw_scan probe request
- length check
+	dkim=pass (2048-bit key) header.d=qualcomm.com header.i=@qualcomm.com header.a=rsa-sha256 header.s=qcppdkim1 header.b=p7OfNETp;
+	dkim=pass (2048-bit key) header.d=oss.qualcomm.com header.i=@oss.qualcomm.com header.a=rsa-sha256 header.s=google header.b=Xn6B8mkZ
+Received: from pps.filterd (m0279868.ppops.net [127.0.0.1])
+	by mx0a-0031df01.pphosted.com (8.18.1.11/8.18.1.11) with ESMTP id 6AGGIJEq1788300
+	for <linux-wireless@vger.kernel.org>; Mon, 16 Nov 2026 16:22:04 GMT
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=qualcomm.com; h=
+	cc:content-transfer-encoding:date:from:message-id:mime-version
+	:subject:to; s=qcppdkim1; bh=jOFnPdS9OzKd2pQAuWQI40FvjqklDv0OYhh
+	O4gHPm10=; b=p7OfNETpEr68CLI0FHZnru+WSdSkOWcv95PEkSOO17XhebYpD14
+	DfEypxXf9qv30Nno20G5GbZdH4vUA3yytNSqTdr3jQyerOMYoNX1kbXLqUeE8Xm3
+	z2Amb0sNDDdy1hNjpFWoKsJuhvJIplQtmtAZGdMXE+f5NlINe+yFbbK4RRC5Ytyb
+	tAUx0aeQRf8n+viyoAihM06FWVfPSZD9kU71jhEz7na1nkNmtBuqcuBgrY+rrbAR
+	ZFAyEDhlZ/4gSypJ2dXu9AQmSvDFrhSrR2tpFFbE04k+Y47f95sguXhUF7fnxqGz
+	TLMba/Bnqx6GI/MB5R1SWBV8ytMR4dK7m2A==
+Received: from mail-dl1-f71.google.com (mail-dl1-f71.google.com [74.125.82.71])
+	by mx0a-0031df01.pphosted.com (PPS) with ESMTPS id 4hyyqy9ebk-1
+	(version=TLSv1.3 cipher=TLS_AES_128_GCM_SHA256 bits=128 verify=NOT)
+	for <linux-wireless@vger.kernel.org>; Mon, 16 Nov 2026 16:22:04 +0000 (GMT)
+Received: by mail-dl1-f71.google.com with SMTP id a92af1059eb24-1a71dd190b0so5163180c88.1
+        for <linux-wireless@vger.kernel.org>; Mon, 16 Nov 2026 08:22:04 -0800 (PST)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+        d=oss.qualcomm.com; s=google; t=1794846123; x=1795450923; darn=vger.kernel.org;
+        h=content-transfer-encoding:mime-version:message-id:date:subject:cc
+         :to:from:from:to:cc:subject:date:message-id:reply-to:content-type;
+        bh=jOFnPdS9OzKd2pQAuWQI40FvjqklDv0OYhhO4gHPm10=;
+        b=Xn6B8mkZSfmNeEcNaeCxnrHt/+2ZgdGHpcMa5RaA87K7Hbkk7M4aPYMvkrEhFiZ2vm
+         Rar/ENgh/HHaZ4bTPH4FLFFlLcYSD3ATSZWPZpgLjLTwMNzBByyDlqWlJauPNryGHRlQ
+         69591C/kHb280LmTy8Ch9EnuOFohfsuDTq+ZGB4Y0GRLTQXv7SCQn3Fat0dxcV4jpmNN
+         SZAWwunZ+vsmhJKbvFDN4/moW3PjPJ/MCJV2HynRxRDHzuv69KIEFUYweqkseCQKSzHL
+         5T4Y8lJzf+pyYLvjj9R3S4KhJ0470t2TdJLUmP4kkJETvASA6Ha67lfn+432dJvU+PQI
+         Vd5w==
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+        d=1e100.net; s=20260707; t=1794846123; x=1795450923;
+        h=content-transfer-encoding:mime-version:message-id:date:subject:cc
+         :to:from:x-gm-gg:x-gm-message-state:from:to:cc:subject:date
+         :message-id:reply-to:content-type;
+        bh=jOFnPdS9OzKd2pQAuWQI40FvjqklDv0OYhhO4gHPm10=;
+        b=yQ9ZFiSEq1cyQWMjLMkO/MCVD0i0sSIigLt5mpvAkwUz0cTqhuWhRwpN1E0Ay5Kacy
+         LGxm1qMPB7QKDZylyNooL+gZkQ5Q0M7zD2xUCcV4+KAJcTzQYvIM38ZkX94zQQFvUzBS
+         dKLTAGpYXGbxTls2U30uP/BzDwAfiDCOrF3I9gtHO6reNOPTGwACCZh3JzNngmGd0ocU
+         mV3xzWBAkrPcQoCTDJVJcg6zzKlA0RSIbPcCENlXaZty/fJs9PUSeVPUjZYXP+U5KbWC
+         84kbhZGjPCOvWBLic8F6C5Wye3x+oeQCCI/fVumMF+4+uBHw++FtquA02ulMuuFyJA3s
+         /BFA==
+X-Forwarded-Encrypted: i=1; AL+hErGq1kJW26+gNqUgaI82EmN2qZNY7W/sVUpnbYpvUFjPYV2uGdhNIGBBCiVuqHQymwKFkOi/zWBddG126oBQfg==@vger.kernel.org
+X-Gm-Message-State: APuU4Z/URzNOm6ozVKCfQ4CEgM3wAU1m7emYNR/ImQDzg5+M8ZH7KRHF
+	qxhTK0xnjxZN3G/pyWYRoOILyFmouwUb/si8DPX1XXJ8cM4AShGf3csS2UT50CAr/Fn7TcrVgz5
+	VCvrfCrtRV7opcArqrFwkST+guypXhEe+HXjbpXBrAAi7O7Wzwz+O6CBGnb9UnpNkU/DLBw==
+X-Gm-Gg: AYBFou2e8ZnwcBFmVoOiH1J8Yy4zN1hvrdrQASdyLVoW4tOysg2hVCJqyGl90t4pYk5
+	2uE/s14zBZhDB1krI0rdFes/UbpbX8qqAIM46Ixt3/zL/GLplujgPOUQk4Ez8TrFjd4NC0ahOG4
+	Tf7nuFSWXa20qmSfA5AqKxx0I3i+dfkFqs2kiibayJPIyevKIt0MMY4wesyVq0+gqhaZ6OOPi9p
+	orLMHMgMTILWa/vhHkZ6NYM/IA2WbyJTEPaijSIKRzg9ituWjRJTFb0LPCJEdAR4U2ACQAryV71
+	Ug2NV/bZDZT1GC2A8Dt4rwnys35kz/CCAFhQUYgds8CxEmftvrwg4fjflZQFZMgnqXZ8m1kGoyT
+	iIzI192OeukHHNI6SpmtfNhYPCoWdtkcUOIqpRbq8Dn2aMaF5bL3Ng1y34VFMRilSdmWS0t5saZ
+	eB
+X-Received: by 2002:a05:701b:42c6:10b0:1b3:ba92:145a with SMTP id a92af1059eb24-1b503171008mr11928391c88.19.1794846123178;
+        Mon, 16 Nov 2026 08:22:03 -0800 (PST)
+X-Received: by 2002:a05:701b:42c6:10b0:1b3:ba92:145a with SMTP id a92af1059eb24-1b503171008mr11928366c88.19.1794846122515;
+        Mon, 16 Nov 2026 08:22:02 -0800 (PST)
+Received: from hu-mojha-hyd.qualcomm.com ([202.46.23.25])
+        by smtp.gmail.com with ESMTPSA id a92af1059eb24-1b5031468b7sm38623826c88.5.2026.11.16.08.21.52
+        (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
+        Mon, 16 Nov 2026 08:22:01 -0800 (PST)
+From: Mukesh Ojha <mukesh.ojha@oss.qualcomm.com>
+To: Sumit Garg <sumit.garg@oss.qualcomm.com>,
+        Bjorn Andersson <andersson@kernel.org>,
+        Konrad Dybcio <konradybcio@kernel.org>,
+        Rob Clark <robin.clark@oss.qualcomm.com>,
+        Dmitry Baryshkov <lumag@kernel.org>, David Airlie <airlied@gmail.com>,
+        Simona Vetter <simona@ffwll.ch>,
+        Vikash Garodia <vikash.garodia@oss.qualcomm.com>,
+        Dikshita Agarwal <dikshita.agarwal@oss.qualcomm.com>,
+        "Bryan O'Donoghue" <bod@kernel.org>,
+        Mauro Carvalho Chehab <mchehab@kernel.org>,
+        Alex Elder <elder@kernel.org>, Andrew Lunn <andrew+netdev@lunn.ch>,
+        "David S. Miller" <davem@davemloft.net>,
+        Eric Dumazet <edumazet@kernel.org>, Jakub Kicinski <kuba@kernel.org>,
+        Paolo Abeni <pabeni@redhat.com>, Jeff Johnson <jjohnson@kernel.org>,
+        Mathieu Poirier <mathieu.poirier@linaro.org>
+Cc: Abel Vesa <abelvesa@kernel.org>, Sean Paul <sean@poorly.run>,
+        Akhil P Oommen <akhilpo@oss.qualcomm.com>,
+        Abhinav Kumar <abhinav.kumar@linux.dev>,
+        Jessica Zhang <jesszhan0024@gmail.com>,
+        Marijn Suijten <marijn.suijten@somainline.org>,
+        linux-arm-msm@vger.kernel.org, linux-kernel@vger.kernel.org,
+        dri-devel@lists.freedesktop.org, freedreno@lists.freedesktop.org,
+        linux-media@vger.kernel.org, netdev@vger.kernel.org,
+        linux-wireless@vger.kernel.org, ath12k@lists.infradead.org,
+        linux-remoteproc@vger.kernel.org,
+        Mukesh Ojha <mukesh.ojha@oss.qualcomm.com>
+Subject: [PATCH v3 0/9] Migrate PAS clients to qcom_mdt_pas_load() and qcom_pas_prepare_and_auth_reset()
+Date: Mon, 16 Nov 2026 21:51:39 +0530
+Message-ID: <20261116162148.2864501-1-mukesh.ojha@oss.qualcomm.com>
+X-Mailer: git-send-email 2.55.0
 X-Mailing-List: linux-wireless@vger.kernel.org
 List-Id: <linux-wireless.vger.kernel.org>
 List-Post: <mailto:linux-wireless@vger.kernel.org>
@@ -60,88 +140,92 @@ List-Unsubscribe: <mailto:linux-wireless+unsubscribe@vger.kernel.org>
 List-Owner: <mailto:linux-wireless+owner@vger.kernel.org>
 Precedence: list
 MIME-Version: 1.0
-Content-Type: text/plain; charset="utf-8"
-Content-Transfer-Encoding: 7bit
-Message-Id: <20261116-rtw88-hw-scan-skb-leak-v2-1-cc9644774fff@igalia.com>
-X-B4-Tracking: v=1; b=H4sIAJcs+2oC/3WNyw6CMBBFf4XM2jFOecrK/zAsCh1gAlLTEtAQ/
- t1K4tLlOck9dwPPTthDGW3geBEvdgqgThE0vZ46RjGBQV1URkQK3bwWBfYr+kZP6IcaR9YDXjm
- nNDHcxiaFMH46buV1hO9V4F78bN37+Fnoa3/J+F9yISSMa5PkaaZ03WY36fQo+tzYB1T7vn8Am
- QXmgL0AAAA=
-X-Change-ID: 20261112-rtw88-hw-scan-skb-leak-9e7154def3d5
-To: linux-wireless@vger.kernel.org
-Cc: Ping-Ke Shih <pkshih@realtek.com>, Po-Hao Huang <phhuang@realtek.com>, 
- Kalle Valo <kvalo@kernel.org>, kernel-dev@igalia.com, 
- linux-kernel@vger.kernel.org, stable@vger.kernel.org, 
- Mauricio Faria de Oliveira <mfo@igalia.com>, 
- Luka Gejak <luka.gejak@linux.dev>
-X-Mailer: b4 0.14.2
+Content-Transfer-Encoding: 8bit
+X-Proofpoint-Spam-Info: AW1haW4tMjYxMTE2MDA2NCBTYWx0ZWRfX+z1WSbdTtTIj
+ vhoS+Hu1I+CxC2n/Vp/NaV2UvX/lBlDNA4iTGb6QeMpo/SMzJEjkH4c0zNfxsYUYpJI9PI9aTGu
+ OPY4GbgiylXZOgXxkD/zscPnyDVKxmE=
+X-Proofpoint-GUID: q84lYHZPLNttaE9sTcogBIqcIlP6aHRh
+X-Proofpoint-Spam-Details-Enc: AW1haW4tMjYxMTE2MDA2NCBTYWx0ZWRfXyJWFLrz2gk5R
+ t2akJq41RmYsQ979UxgU8qWnDZSZfodL7s9xfqHuOlC8rZ9GguGvpZKyhuaFMKjEWlFyKHa7gj+
+ B/+0snsf99fMF66BzATYvlPItbYhkpcgzDM+36PsBZWWrV/NvLKhM/OPET9+smY3mDHN/od+tYu
+ ymfhRsUY4JBmvfcAeytqG6dYnmF37ulU7hxpYc7S7J/7tUvJGtuTwS+uXD33GMXwWlDjXuNFDIn
+ 4das+1LAHX17s/SOQRY6yeccxgsmYEGI50txQQn2mUATZrNtnHuDiwtDPNdTetBtfugaGHpUWjl
+ 5JU4oLe4fegsDWcRzu9AeMkbnU9D9Va/yVHeV4+Mpd9A+r+ik530H1mZLf/7vfijWbPy5rzUpL7
+ E4f7sCrqmPKs7gE0enfeavJkyztFiI6QEjh2mhJEI4fukq1qdCOBh0M8gPw51hJO2i2aYkB/tfj
+ fMeHXsxs5TTV0bS58CA==
+X-Proofpoint-ORIG-GUID: q84lYHZPLNttaE9sTcogBIqcIlP6aHRh
+X-Authority-Analysis: v=2.4 cv=ePeGH3p1 c=1 sm=1 tr=0 ts=6afb2dac cx=c_pps
+ a=JYo30EpNSr/tUYqK9jHPoA==:117 a=ZePRamnt/+rB5gQjfz0u9A==:17
+ a=zJRp6_cAMcgA:10 a=s4-Qcg_JpJYA:10 a=VkNPw1HP01LnGYTKEx00:22
+ a=u7WPNUs3qKkmUXheDGA7:22 a=ZpdpYltYx_vBUK5n70dp:22 a=VwQbUJbxAAAA:8
+ a=EUspDBNiAAAA:8 a=HLFs0uR_R7ZgEvxmAyIA:9 a=Fk4IpSoW4aLDllm1B1p-:22
+X-Proofpoint-Virus-Version: vendor=baseguard
+ engine=ICAP:2.0.293,Aquarius:18.0.1176,Hydra:6.1.138,FMLib:17.12.100.49
+ definitions=2026-11-16_05,2026-11-16_01,2025-10-01_01
+X-Proofpoint-Spam-Details: rule=outbound_notspam policy=outbound score=0
+ impostorscore=0 adultscore=0 spamscore=0 clxscore=1015 priorityscore=1501
+ suspectscore=0 bulkscore=0 malwarescore=0 lowpriorityscore=0 phishscore=0
+ classifier=typeunknown authscore=0 authtc= authcc= route=outbound adjust=0
+ reason=mlx scancount=1 engine=8.22.0-2611040001 definitions=main-2611160064
 
-In _rtw_hw_scan_update_probe_req(), if the first loop fails (goto out;) the
-skb is leaked. It does not reach kfree_skb() at the end of the loop body or
-in the second loop (out:) since it is unlinked from probe_req_list.
+In preparation to remove qcom_mdt_load() and qcom_pas_auth_and_reset()
+public function, migrate every user to the new PAS context-aware API
+qcom_mdt_pas_load() and qcom_pas_prepare_and_auth_reset().
 
-Fix the leak by calling kfree_skb() if the first loop fails.
+This series migrates every remaining caller of the deprecated APIs
+(qcom_wcnss, adreno zap shader, iris, venus, IPA, ath12k) and then
+removes qcom_mdt_load() and qcom_pas_auth_and_reset() entirely.
 
-In /sys/kernel/debug/kmemleak, after simulating the failure:
+Requesting the Ack from subsystem owners to get this series merge
+through Bjorn's tree.
 
-  unreferenced object 0xffff88810965a000 (size 232):
-    comm "iw", pid 4729, jiffies 4345008185
-    hex dump (first 32 bytes):
-      00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00  ................
-      00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00  ................
-    backtrace (crc 20f7de11):
-      kmem_cache_alloc_node_noprof+0x302/0x380
-      __alloc_skb+0x74/0x2f0
-      skb_copy+0x57/0xe0
-      rtw_hw_scan_update_probe_req+0xff/0x230
-      rtw_hw_scan_prehandle+0x4e/0x180
-      rtw_hw_scan_offload+0x186/0x1d0
-      rtw_ops_hw_scan+0x61/0xb0
-      drv_hw_scan+0x81/0x130
-      __ieee80211_start_scan+0x2e0/0x760
-      rdev_scan+0x42/0x100
-      nl80211_trigger_scan+0x53b/0x730
-      genl_family_rcv_msg_doit+0x103/0x160
-      genl_rcv_msg+0x1b5/0x2c0
-      netlink_rcv_skb+0x52/0x100
-      genl_rcv+0x28/0x40
-      netlink_unicast+0x26d/0x3b0
+Changes in v3:
+ - Added Acked by tag.
+ - Fixed build warning.
+ - Link to v2: https://lore.kernel.org/lkml/20261113185009.157893-1-mukesh.ojha@oss.qualcomm.com/
 
-This leak exists in the first loop since the function was introduced, and
-still happened with the addition of the second loop, in these two commits:
-
-Fixes: 10d162b2ed39 ("rtw88: 8822c: add ieee80211_ops::hw_scan")
-Fixes: d95984b5580d ("rtw88: fix memory overrun and memory leak during hw_scan")
-Cc: stable@vger.kernel.org
-Signed-off-by: Mauricio Faria de Oliveira <mfo@igalia.com>
-Reviewed-by: Luka Gejak <luka.gejak@linux.dev>
----
 Changes in v2:
-- Add 'Cc: stable' (Luka Gejak)
-- Add 'Reviewed-by: Luka Gejak'
-- Link to v1: https://lore.kernel.org/r/20261113-rtw88-hw-scan-skb-leak-v1-1-3bd47562abf6@igalia.com
----
- drivers/net/wireless/realtek/rtw88/fw.c | 1 +
- 1 file changed, 1 insertion(+)
+ - Addressed Sasiko comments.
+ - Addressed Alex comment and added 1/9 as new patch in this
+   series and use the  API to other patches.
+ - Commit description change.
+ - Link to v1: https://lore.kernel.org/lkml/20260925155737.4161358-1-mukesh.ojha@oss.qualcomm.com/
 
-diff --git a/drivers/net/wireless/realtek/rtw88/fw.c b/drivers/net/wireless/realtek/rtw88/fw.c
-index 945fedcd375b62b4110ab631e87889bb84e2f16b..09b5836540c41e80a5fecca0f781aa45c6327cc0 100644
---- a/drivers/net/wireless/realtek/rtw88/fw.c
-+++ b/drivers/net/wireless/realtek/rtw88/fw.c
-@@ -2061,6 +2061,7 @@ static int _rtw_hw_scan_update_probe_req(struct rtw_dev *rtwdev, u8 num_probes,
- 		skb_unlink(skb, probe_req_list);
- 		rtw_fill_rsvd_page_desc(rtwdev, skb, RSVD_PROBE_REQ);
- 		if (skb->len > page_size * page_cnt) {
-+			kfree_skb(skb);
- 			ret = -EINVAL;
- 			goto out;
- 		}
+Mukesh Ojha (9):
+  firmware: qcom: pas: add qcom_pas_context_init() for pre-allocated
+    context
+  remoteproc: qcom_wcnss: migrate to qcom_mdt_pas_load() and
+    qcom_pas_prepare_and_auth_reset()
+  drm/msm/adreno: migrate zap shader loading to qcom_mdt_pas_load() and
+    qcom_pas_prepare_and_auth_reset()
+  media: iris: migrate firmware loading to qcom_mdt_pas_load() and
+    qcom_pas_prepare_and_auth_reset()
+  media: venus: migrate firmware loading to qcom_mdt_pas_load() and
+    qcom_pas_prepare_and_auth_reset()
+  net: ipa: migrate firmware loading to qcom_mdt_pas_load() and
+    qcom_pas_prepare_and_auth_reset()
+  wifi: ath12k: migrate firmware loading to qcom_mdt_pas_load() and
+    qcom_pas_prepare_and_auth_reset()
+  soc: qcom: mdt_loader: remove qcom_mdt_load()
+  firmware: qcom: pas: remove qcom_pas_auth_and_reset()
 
----
-base-commit: 7e1392a42ea288d70a266f6553fe06f57f8647ea
-change-id: 20261112-rtw88-hw-scan-skb-leak-9e7154def3d5
+ drivers/firmware/qcom/qcom_pas.c              | 42 +++++++------
+ drivers/firmware/qcom/qcom_pas.h              |  3 -
+ drivers/firmware/qcom/qcom_pas_tee.c          |  6 --
+ drivers/firmware/qcom/qcom_scm.c              |  7 +--
+ drivers/gpu/drm/msm/adreno/adreno_gpu.c       | 22 ++-----
+ drivers/media/platform/qcom/iris/iris_core.h  |  2 +
+ .../media/platform/qcom/iris/iris_firmware.c  | 27 ++++----
+ drivers/media/platform/qcom/venus/core.h      |  2 +
+ drivers/media/platform/qcom/venus/firmware.c  | 29 ++++-----
+ drivers/net/ipa/ipa_main.c                    | 23 +++----
+ drivers/net/wireless/ath/ath12k/ahb.c         | 23 ++++---
+ drivers/remoteproc/qcom_wcnss.c               | 12 ++--
+ drivers/soc/qcom/mdt_loader.c                 | 63 +++++++------------
+ include/linux/firmware/qcom/qcom_pas.h        |  3 +-
+ include/linux/soc/qcom/mdt_loader.h           | 12 ----
+ 15 files changed, 116 insertions(+), 160 deletions(-)
 
-Best regards,
 -- 
-Mauricio Faria de Oliveira <mfo@igalia.com>
+2.55.0
 
