@@ -1,62 +1,88 @@
-Authentication-Results: smtp.subspace.kernel.org; arc=none smtp.remote-ip=117.135.210.2
+Authentication-Results: smtp.subspace.kernel.org; arc=none smtp.remote-ip=209.85.218.44
 ARC-Seal: i=1; d=subspace.kernel.org; s=arc20261015; a=rsa-sha256; cv=none;
-	t=1794816918;
-	b=TQ4ySYD2GMoqzm3Aj5PQ1Vr5PKNNTezg74mZbrVKqrG1dMJf1E2ts8pX3M0pZa72eIWk
-	 dWRZQFwGM76NEsKDeP8qz4XAu/CjKFjRs2aeiGOGdjdA/eeeXDSTaHIwoB6NgQKjY5rwW
-	 jyaN4l+PpHrYlE/hFOuc870m6AXG4EhohF3L0egFzdMUeMrwGC/AuGm0B9yTkDd3YPT+L
-	 ga5rUkRS5prRHt8BR2qy9AZ3kAw9InYbNFtq7NxBFav7CxWqVN8mnPrEAOvKgaQ25Uj3k
-	 k5BihhZvFQzEHtEvbbT2bLMq0zbd5A3z6YWGtN12cUttXg7BW4YnlQyRKwTQMER2jOg==
+	t=1794817071;
+	b=fbxchykMhx8z2ZUoAfb9wYNApchj4MGjNji4FqY8+VXuqid0F/FRS5FJPbMwr8hjjNo6
+	 g+/lc4WnP9GCb+c3gDrUkCwwndUJ7hZPCq1ewdT66uKcSk5mI8DMEWLULUDOHWatAGB4I
+	 gr8/FrRcQNc2GCrB3Z9V8yTCgxW7fq5MlZ18Ok2OsTtZyOfnhhCgtr2oH7Y0TER1+LGql
+	 VUw/sJl4FVTBJec0QqYNEsVF9VcENdWLd5cy1RWIYROFInjgdxAeGgR0ayAAV7tC9paxm
+	 oe5JdMDPUOowpL8+05Z47D1hBReQqXCZvAbI4mdfPBkc4nJJDEvf9EKGSo/3IoC7Uzg==
 ARC-Message-Signature: i=1; d=subspace.kernel.org; s=arc20261015;
-	a=rsa-sha256; c=relaxed/relaxed; t=1794816918;
-	h=DMARC-Filter:DKIM-Signature:Received:From:To:Cc:Subject:Date:
-	 Message-ID:X-Mailer:MIME-Version:Content-Transfer-Encoding:
-	 X-CM-TRANSID:X-Coremail-Antispam:X-CM-SenderInfo;
-	bh=f4KSxtdG3vQaJyl5njlVKbU4jwHtFCn8k+q0cZfb9w8=;
-	b=K0JSVBZn/oTj17hcBVP+HCmhWfCp40aPhfmr1wfxtjpZ5z0tHvsXsSUFpVkyAYDyStYV
-	 KXhAhv/ZbfOo8XgWbSP7HNeyErAWiWuv/0xAnnDyv0o99bVNYs0cTSnjQ0LKV/8HwI8Vu
-	 GyFtCeChArv5FfdLKICKTdDKQHax5LxR0lTSzcBIlL6a0BHba8k83SZAePIitOsq3Z3C6
-	 e3egTZ1vF7F5gjnThmi+vLKrqcw6lF23ZMdJ211rJnOq+N4kuhUNPy+JF8bIpscVWX4qE
-	 NE3I/ev+ZFStedMXVa/uuo0Sxny9korj1xJerhD59TJ9N55Ent52PDVY+wwre+XTK7A==
+	a=rsa-sha256; c=relaxed/relaxed; t=1794817071;
+	h=DMARC-Filter:Received:DKIM-Signature:X-Google-DKIM-Signature:
+	 X-Gm-Message-State:X-Gm-Gg:X-Received:Received:From:To:Cc:Subject:
+	 Date:Message-ID:X-Mailer:MIME-Version:Content-Transfer-Encoding;
+	bh=vS4ZBwjJkSSp2Q4b0PwSgI895+RDd6JFRrXwmtNijoY=;
+	b=zMRCp0iCMxivh5LkjC044dXBVDY1SL3CoL2wCr0L5WwLCCL5WJCi+mn18FGCJOppeTyq
+	 Ejl2N9PxfSXCIKyATZdXgpCpl1DA8oIzUIQm3obMjXxH3Kwa8khmV5P7FUW3fT5pJG4/q
+	 CO5HM1yOmyMYO+t5b1KMZ+RGF65guQKM37B2nYZ7rKHm10VJrhANH0trTBfFeA9173aXQ
+	 uC2EFynVH6fcc4XNDW3Ps0GUMyGnxyzVwP0Zn3TP8C+LyKvhRqe+oYVsilqMZ5eqQ6Uhd
+	 h/X4Z3ahix5p+kN/AfS67f8T8dNaX4HLetVC5f6HqVLelVXxK9x8CWEjcfgiw032YAA==
 ARC-Authentication-Results: i=1; smtp.subspace.kernel.org; 
-	dmarc=pass header.from=163.com;
-	spf=pass smtp.mailfrom=163.com;
-	dkim=pass header.d=163.com header.i=@163.com header.a=rsa-sha256 header.s=s110527 header.b=WPjqbzyd;
-	arc=none smtp.remote-ip=117.135.210.2
-Received: from m16.mail.163.com (m16.mail.163.com [117.135.210.2])
-	(using TLSv1.3 with cipher TLS_AES_256_GCM_SHA384 (256/256 bits)
+	dmarc=none header.from=acio.nl;
+	spf=none smtp.mailfrom=acio.nl;
+	dkim=pass header.d=acio-nl.20260707.gappssmtp.com header.i=@acio-nl.20260707.gappssmtp.com header.a=rsa-sha256 header.s=20260707 header.b=p2oMAD3n;
+	arc=none smtp.remote-ip=209.85.218.44
+Received: from mail-ej1-f44.google.com (mail-ej1-f44.google.com [209.85.218.44])
+	(using TLSv1.3 with cipher TLS_AES_128_GCM_SHA256 (128/128 bits)
 	 key-exchange X25519 server-signature ECDSA (prime256v1) server-digest SHA256)
 	(No client certificate requested)
-	by smtp.subspace.kernel.org (Postfix) with ESMTPS id 77D9B606A32F;
-	Mon, 16 Nov 2026 08:15:15 +0000 (UTC)
-DMARC-Filter: OpenDMARC Filter v1.4.2 smtp.subspace.kernel.org 77D9B606A32F
-Authentication-Results: smtp.subspace.kernel.org; dmarc=pass (p=none dis=none) header.from=163.com
-Authentication-Results: smtp.subspace.kernel.org; spf=pass smtp.mailfrom=163.com
+	by smtp.subspace.kernel.org (Postfix) with ESMTPS id B94D3606A31C
+	for <linux-wireless@vger.kernel.org>; Mon, 16 Nov 2026 08:17:50 +0000 (UTC)
+DMARC-Filter: OpenDMARC Filter v1.4.2 smtp.subspace.kernel.org B94D3606A31C
+Authentication-Results: smtp.subspace.kernel.org; dmarc=none (p=none dis=none) header.from=acio.nl
+Authentication-Results: smtp.subspace.kernel.org; spf=none smtp.mailfrom=acio.nl
 Authentication-Results: smtp.subspace.kernel.org;
-	dkim=pass (1024-bit key) header.d=163.com header.i=@163.com header.a=rsa-sha256 header.s=s110527 header.b=WPjqbzyd
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=163.com;
-	s=s110527; h=From:To:Subject:Date:Message-ID:MIME-Version; bh=f4
-	KSxtdG3vQaJyl5njlVKbU4jwHtFCn8k+q0cZfb9w8=; b=WPjqbzydbabgVLT9Bw
-	+B9O6YTCuiWu9VNZQhxLFqUA3zhCpKXM0TD+jdkHEibFvY+cmPeA6Zr8u/r36N0V
-	mHEUYa9FhE+IVIJGwVntDdiroHvWfEAks+5odH4UUn5wpEtbss+wE1O/M/ZETu9i
-	43hNW0CO6yagUkdFaLC5GWnUA=
-Received: from user-VMware-Virtual-Platform.localdomain (unknown [])
-	by gzga-smtp-mtada-g0-3 (Coremail) with SMTP id _____wD33z5xu_pqGJBDIA--.12815S2;
-	Mon, 16 Nov 2026 16:14:42 +0800 (CST)
-From: Ziheng Wei <zihengw03@163.com>
-To: Felix Fietkau <nbd@nbd.name>,
-	Lorenzo Bianconi <lorenzo@kernel.org>
-Cc: Ryder Lee <ryder.lee@mediatek.com>,
-	Shayne Chen <shayne.chen@mediatek.com>,
-	Sean Wang <sean.wang@mediatek.com>,
-	Zhao Li <enderaoelyther@gmail.com>,
-	linux-wireless@vger.kernel.org,
-	linux-mediatek@lists.infradead.org,
-	linux-kernel@vger.kernel.org,
-	stable@vger.kernel.org
-Subject: [PATCH v2] wifi: mt76: mt7925: fix mt7925_reverse_frag0_hdr_trans() for MLO
-Date: Mon, 16 Nov 2026 16:14:40 +0800
-Message-ID: <20261116081440.1011837-1-zihengw03@163.com>
-X-Mailer: git-send-email 2.43.0
+	dkim=pass (2048-bit key, unprotected) header.d=acio-nl.20260707.gappssmtp.com header.i=@acio-nl.20260707.gappssmtp.com header.a=rsa-sha256 header.s=20260707 header.b=p2oMAD3n
+Received: by mail-ej1-f44.google.com with SMTP id a640c23a62f3a-c4697404c2bso415850766b.2
+        for <linux-wireless@vger.kernel.org>; Mon, 16 Nov 2026 00:17:50 -0800 (PST)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+        d=acio-nl.20260707.gappssmtp.com; s=20260707; t=1794817069; x=1795421869; darn=vger.kernel.org;
+        h=content-transfer-encoding:mime-version:message-id:date:subject:cc
+         :to:from:from:to:cc:subject:date:message-id:reply-to:content-type;
+        bh=vS4ZBwjJkSSp2Q4b0PwSgI895+RDd6JFRrXwmtNijoY=;
+        b=p2oMAD3nWjLOeLMq2fG4Szb+6x66ESquVtU+tebgOxLx47TXdrg2scF6XhxKTKCQsq
+         23X8zNez1Jj2q8SNyyB78XM7ZnIiR9jyI4+n1qyDAHkorWDnGJdMVE9fcnlrErAjThwp
+         HmEOQbd3SxavQ9rNBJfS7Q0/HPmcDwSlosQ1u9FBhCeI9tx/w9Q/bELXAxJRY2j9Ow7F
+         vYKIXhqR7g7t1W85g7wxvr9Bk90BLpt+RdwCgdRRTvVlF9I1oEug3RraeNQhqaZpxPcA
+         KjHx4z5yZftvYWU0aCFytcdIM93XGW7r8CqhrDedQnGxCxZ1Ez0maEoe5W2KXjiJ2vAD
+         2QqA==
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+        d=1e100.net; s=20260707; t=1794817069; x=1795421869;
+        h=content-transfer-encoding:mime-version:message-id:date:subject:cc
+         :to:from:x-gm-gg:x-gm-message-state:from:to:cc:subject:date
+         :message-id:reply-to:content-type;
+        bh=vS4ZBwjJkSSp2Q4b0PwSgI895+RDd6JFRrXwmtNijoY=;
+        b=KULRfjjU3pOxSKwTSubEwU1rEHbiAkR+qhS7g1Ijsxig5yrMt9A/TVDHJSQdOFn0La
+         ZnYWm4OG1wuq30DwvMpv9boWCjtVHpGBbxkPyNsehTGROJVIBD8pI3sMYafdEvedhi0l
+         KYqq6ip/2iH3HmxnE+pl0lNjshcG3qfeioHKp3rHzclHEFlp/ZnhrLR+ddSUQXL+JObr
+         BqQCnLjVxuIDNT12Ug40AYXZEyC4FGFLf/NvHs13W+tQoS3UdAY29w13fjhVKF/M7d2L
+         Z/rbOBlb5+JszByv7EOMX7/Ol55ikHQxIvbANuVR9/+0CvP6WHBQPip38EIsrCMaxzNm
+         ulSA==
+X-Gm-Message-State: APuU4Z/loJPtxL5eL50vAdLGlxvpRw3K2LqGEzdWrven+BlS8RaW7o4E
+	Pnb0p3UNMU73fWVqvESerwDYrzc/Iygb2VCa2x8mcPiVMe//RXotyOZFyDgySBHF3g==
+X-Gm-Gg: AYBFou3eptB6K6yCtU8oagx/Dv2tx1AVK44K5xW5zDxrTxyW+4wFb8ejOTNu3sXnzp/
+	SLr3ObiXoU+7jGumP+Q9MRZSzWF6M+b848S114e2enXzGYAQpuTfp/YrOaBz7r9YMufa8SEWPZv
+	EdqiTM7p85Xdh+cziDlYM060R3eOW4GWVXxcOsW+BMtJaSbKXLHB3XZ1xCmfFvzlSUHB5pqU1j/
+	+B0NPjPRw/l3FP4Y/bJzVDUv/nPTOjEIZs0AMP2uS5Pl7cVGAvvkB1i0XJajvVh3HBWAUjQCSM8
+	MewK+mOI5Ek9eWaMXkjv+k3PVRsqFic28r/G590ps5gyhE3DqPTad8DmolHY36FL8VP+zn4sFGH
+	uVdpwTsmQTtKttOIj3crPeCveu4MK3aTIUS2ly0MSdbIKjaQfCLA3hse0p1dGSqab5hLtYSNOIW
+	HvbjivWVOFaYjLMz8lZvHo+565Xi7L8jSKPxSasZXQ+GvLj9BBupbI1o76bpwRd6OI669Qs8CVt
+	37lll6uhvjxN3ebgE8V5Bv19GcI+ZSXcTw87LvRvVBseETYXQzuhQD9l0wjXkn189JmurBLFCHR
+	N7CM1SjvqsWSFN+oVZG90xiPqaZRDvLymo0X
+X-Received: by 2002:a17:907:2d9e:b0:c31:e9b7:f10b with SMTP id a640c23a62f3a-c509664589fmr786681366b.42.1794817068613;
+        Mon, 16 Nov 2026 00:17:48 -0800 (PST)
+Received: from vschurink-Latitude-5550 ([178.224.169.188])
+        by smtp.gmail.com with ESMTPSA id a640c23a62f3a-c5095b4289csm386251966b.37.2026.11.16.00.17.47
+        (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
+        Mon, 16 Nov 2026 00:17:47 -0800 (PST)
+From: Vincent Schurink <spam@acio.nl>
+To: Ping-Ke Shih <pkshih@realtek.com>
+Cc: linux-wireless@vger.kernel.org,
+	Vincent Schurink <spam@acio.nl>
+Subject: [PATCH rtw-next v4] wifi: rtw89: set RA init rate level when the station RSSI is known
+Date: Mon, 16 Nov 2026 09:17:41 +0100
+Message-ID: <20261116081741.51039-1-spam@acio.nl>
+X-Mailer: git-send-email 2.53.0
 X-Mailing-List: linux-wireless@vger.kernel.org
 List-Id: <linux-wireless.vger.kernel.org>
 List-Post: <mailto:linux-wireless@vger.kernel.org>
@@ -67,109 +93,151 @@ List-Owner: <mailto:linux-wireless+owner@vger.kernel.org>
 Precedence: list
 MIME-Version: 1.0
 Content-Transfer-Encoding: 8bit
-X-CM-TRANSID:_____wD33z5xu_pqGJBDIA--.12815S2
-X-Coremail-Antispam: 1Uf129KBjvJXoWxZF18Ww4fWFyktFWUZFy8Grg_yoWrZr43pa
-	yjk3y5ur1kXr4kZr18Cw40vrWava1fKay2kryfK3Z5uFs5tr18JFnFqryjvryYkrZ5uF1a
-	yFWxtrn5Gayqv37anT9S1TB71UUUUU7qnTZGkaVYY2UrUUUUjbIjqfuFe4nvWSU5nxnvy2
-	9KBjDUYxBIdaVFxhVjvjDU0xZFpf9x07jq_M3UUUUU=
-X-CM-SenderInfo: p2lkv0ljzqjqqrwthudrp/xtbC7RNktGr6u3PSgAAA3k
 
-For unicast frames mt792x_rx_get_wcid() returns the wcid of the
-receiving link. Since commit 43aa4033eb18 ("wifi: mt76: mt7925: add
-mt7925_change_sta_links") the wcid of a non-default station link is
-embedded in a separately allocated struct mt792x_link_sta, not in
-struct mt792x_sta. mt7925_reverse_frag0_hdr_trans() still casts
-status->wcid to struct mt792x_sta and derives the ieee80211_sta from
-it with container_of(), so for a frame received on such a link it
-reads msta->vif past the end of the link allocation, dereferences the
-result as a vif, and copies sta->addr from memory in front of it into
-the rebuilt 802.11 header.
+When a station associates to an AP, the AP does not know the RSSI of
+the station yet. Thus, rtw89_phy_ra_assoc() sends init_rate_lv 0 to the
+firmware. With this value, the firmware RA of RTL8922A often uses 20 MHz
+and VHT-MCS 2 for the station. It does not try a higher rate, also when
+the PER is 0. On an 80 MHz AP, the TCP throughput to the station
+then stays at approximately 36 Mbit/s for the full connection.
 
-This path is taken for the first fragment of a header-translated
-unicast frame, so it is reached when the AP sends fragmented data on
-a secondary link while RX header translation is active there.
+Move the mapping from RSSI to init_rate_lv to a function. Use it in the
+RA association and in the RA update. In a test on RTL8922A, the
+firmware used init_rate_lv only together with upd_all, and upd_all
+resets the RA context. Thus, the RA
+association sets rssi_unknown in the RA info when the RSSI is not known.
+The RA update then sets upd_all one time, when the RSSI is known.
+The flag is in a struct_group at the end of the RA info, and
+rtw89_phy_ra_sta_update() clears the RA info only up to this group.
+Thus, the flag stays until the RA update uses it.
 
-Do what commit a3ea1c309bf3 ("wifi: mt76: mt7996: Fix
-mt7996_reverse_frag0_hdr_trans for MLO") did for mt7996: get the
-station through the sta back pointer of the link and wcid_to_sta(),
-and take the BSSID from the bss_conf of the receiving link.
+Tested on RTL8912AU (RTL8922A, USB) in AP mode with hostapd 2.10 and
+VHT 80 MHz. The client is an Intel Meteor Lake CNVi (iwlwifi) at -38 to
+-40 dBm. Each test reconnects the client, then sends TCP from the AP for
+60 s.
+Before: 6 of 8 connections stay at VHT-MCS 2 and 20 MHz, 36 Mbit/s.
+After: 8 of 8 connections use VHT-MCS 7 to 9 at 80 MHz, 668 to
+684 Mbit/s.
 
-The unicast path of mt792x_rx_get_wcid() returns the WTBL entry
-unchecked, and not every entry is a station link: index 0 holds the
-bare global wcid. Check wcid->sta before converting the wcid to
-struct mt792x_link_sta, as the non-unicast path already does.
-
-Found by LLM-assisted source review. Not tested on hardware.
-
-Fixes: 43aa4033eb18 ("wifi: mt76: mt7925: add mt7925_change_sta_links")
-Cc: stable@vger.kernel.org
-Signed-off-by: Ziheng Wei <zihengw03@163.com>
+Suggested-by: Ping-Ke Shih <pkshih@realtek.com>
+Signed-off-by: Vincent Schurink <spam@acio.nl>
 ---
+v4:
+- Move the flag from struct rtw89_sta_link to the end of struct
+  rtw89_ra_info, in a struct_group with a comment, as suggested by
+  Ping-Ke.
+- rtw89_phy_ra_sta_update() clears the RA info only up to this group,
+  with offsetof(), as suggested by Ping-Ke. rssi_unknown is a plain bool
+  and not a bit-field, because offsetof() cannot be used on a bit-field.
+- RSSI 1 also sets the flag. As Ping-Ke wrote, this is harmless.
+- Rebase on rtw-next 61a5eb87b2d.
+- checkpatch --strict reports "Alignment should match open parenthesis"
+  for the member in struct_group(). With alignment to the parenthesis,
+  checkpatch reports "Statements should start on a tabstop" instead.
+- Tested again with v4. The client is at -39 to -40 dBm, 60 s per
+  connection. 8 of 8 connections use 80 MHz (VHT 2SS MCS 7 to 9), 668 to
+  684 Mbit/s. PMF still works: the client accepts a protected broadcast
+  deauthentication.
+- Not tested on AX chips. On AX chips, the RA update sends upd_all
+  without the CSI fields. Also, the RA update now sends init_rate_lv 1
+  to 3 instead of 0 on all chips. In the v2 test on RTL8922A, this had
+  no effect without upd_all.
 
-Notes:
-    Changes in v2:
-    - Check status->wcid->sta before container_of(), so that a non-station
-      WTBL entry such as the global wcid at index 0 is never treated as
-      struct mt792x_link_sta; drop the now redundant !sta check
-      (suggested by Zhao Li)
-    - v1: https://lore.kernel.org/all/20261115080239.910402-1-zihengw03@163.com/
-    
-    The changelog was drafted with an AI assistant from my analysis;
-    I have reviewed the code, the fix and the text.
+v3: https://lore.kernel.org/linux-wireless/20261113080731.30155-1-spam@acio.nl/
+v2: https://lore.kernel.org/linux-wireless/20261112075622.32785-1-spam@acio.nl/
+v1: https://lore.kernel.org/linux-wireless/20261108131723.206533-1-spam@acio.nl/
 
- drivers/net/wireless/mediatek/mt76/mt7925/mac.c | 17 ++++++++++++++---
- 1 file changed, 14 insertions(+), 3 deletions(-)
+ drivers/net/wireless/realtek/rtw89/core.h |  5 ++++
+ drivers/net/wireless/realtek/rtw89/phy.c  | 32 ++++++++++++++++-------
+ 2 files changed, 27 insertions(+), 10 deletions(-)
 
-diff --git a/drivers/net/wireless/mediatek/mt76/mt7925/mac.c b/drivers/net/wireless/mediatek/mt76/mt7925/mac.c
-index 7af996abe..9a79b989b 100644
---- a/drivers/net/wireless/mediatek/mt76/mt7925/mac.c
-+++ b/drivers/net/wireless/mediatek/mt76/mt7925/mac.c
-@@ -184,9 +184,11 @@ static int mt7925_reverse_frag0_hdr_trans(struct sk_buff *skb, u16 hdr_gap)
- {
- 	struct mt76_rx_status *status = (struct mt76_rx_status *)skb->cb;
- 	struct ethhdr *eth_hdr = (struct ethhdr *)(skb->data + hdr_gap);
--	struct mt792x_sta *msta = (struct mt792x_sta *)status->wcid;
-+	struct ieee80211_bss_conf *link_conf;
-+	struct mt792x_link_sta *mlink;
- 	__le32 *rxd = (__le32 *)skb->data;
- 	struct ieee80211_sta *sta;
-+	struct mt792x_sta *msta;
- 	struct ieee80211_vif *vif;
- 	struct ieee80211_hdr hdr;
- 	u16 frame_control;
-@@ -198,11 +200,20 @@ static int mt7925_reverse_frag0_hdr_trans(struct sk_buff *skb, u16 hdr_gap)
- 	if (!(le32_to_cpu(rxd[1]) & MT_RXD1_NORMAL_GROUP_4))
- 		return -EINVAL;
- 
-+	/* not every WTBL entry is a station link, e.g. the global wcid */
-+	if (!status->wcid || !status->wcid->sta)
-+		return -EINVAL;
+diff --git a/drivers/net/wireless/realtek/rtw89/core.h b/drivers/net/wireless/realtek/rtw89/core.h
+index 7f84ee59f825..df702f4420bb 100644
+--- a/drivers/net/wireless/realtek/rtw89/core.h
++++ b/drivers/net/wireless/realtek/rtw89/core.h
+@@ -4626,6 +4626,11 @@ struct rtw89_ra_info {
+ 	u8 macid_msb:2;
+ 	u8 band:2; /* enum rtw89_band */
+ 	u8 is_new_dbgreg:1;
 +
-+	mlink = container_of(status->wcid, struct mt792x_link_sta, wcid);
-+	msta = mlink->sta;
- 	if (!msta || !msta->vif)
- 		return -EINVAL;
++	/* keep driver helpers below in group (not cleared by rtw89_phy_ra_sta_update()) */
++	struct_group(helpers,
++		bool rssi_unknown;
++	);
+ };
  
--	sta = container_of((void *)msta, struct ieee80211_sta, drv_priv);
-+	sta = wcid_to_sta(status->wcid);
- 	vif = container_of((void *)msta->vif, struct ieee80211_vif, drv_priv);
-+	link_conf = rcu_dereference(vif->link_conf[mlink->wcid.link_id]);
-+	if (!link_conf)
-+		return -EINVAL;
+ #define RTW89_PPDU_MAC_INFO_USR_SIZE 4
+diff --git a/drivers/net/wireless/realtek/rtw89/phy.c b/drivers/net/wireless/realtek/rtw89/phy.c
+index 795920b899d9..441568573624 100644
+--- a/drivers/net/wireless/realtek/rtw89/phy.c
++++ b/drivers/net/wireless/realtek/rtw89/phy.c
+@@ -343,7 +343,7 @@ static void rtw89_phy_ra_sta_update(struct rtw89_dev *rtwdev,
+ 	bool sgi = false;
+ 	bool fix_giltf_en = false;
  
- 	/* store the info from RXD and ethhdr to avoid being overridden */
- 	frame_control = le32_get_bits(rxd[8], MT_RXD8_FRAME_CONTROL);
-@@ -215,7 +226,7 @@ static int mt7925_reverse_frag0_hdr_trans(struct sk_buff *skb, u16 hdr_gap)
- 	switch (frame_control & (IEEE80211_FCTL_TODS |
- 				 IEEE80211_FCTL_FROMDS)) {
- 	case 0:
--		ether_addr_copy(hdr.addr3, vif->bss_conf.bssid);
-+		ether_addr_copy(hdr.addr3, link_conf->bssid);
- 		break;
- 	case IEEE80211_FCTL_FROMDS:
- 		ether_addr_copy(hdr.addr3, eth_hdr->h_source);
-
-base-commit: 97d73c8251226cf27cc6656b4c542869bb8c69fa
+-	memset(ra, 0, sizeof(*ra));
++	memset(ra, 0, offsetof(typeof(*ra), helpers));
+ 	/* Set the ra mask from sta's capability */
+ 	if (link_sta->eht_cap.has_eht) {
+ 		mode |= RTW89_RA_MODE_EHT;
+@@ -502,6 +502,20 @@ static void rtw89_phy_ra_sta_update(struct rtw89_dev *rtwdev,
+ 	ra->csi_mode = csi_mode;
+ }
+ 
++static u8 rtw89_phy_ra_get_init_rate_lv(struct rtw89_sta_link *rtwsta_link)
++{
++	u8 rssi = ewma_rssi_read(&rtwsta_link->avg_rssi) >> RSSI_FACTOR;
++
++	if (rssi > 40)
++		return 1;
++	if (rssi > 20)
++		return 2;
++	if (rssi > 1)
++		return 3;
++
++	return 0;
++}
++
+ void rtw89_phy_ra_update_sta_link(struct rtw89_dev *rtwdev,
+ 				  struct rtw89_sta_link *rtwsta_link,
+ 				  u32 changed)
+@@ -519,6 +533,11 @@ void rtw89_phy_ra_update_sta_link(struct rtw89_dev *rtwdev,
+ 
+ 	rcu_read_unlock();
+ 
++	ra->init_rate_lv = rtw89_phy_ra_get_init_rate_lv(rtwsta_link);
++	if (ra->rssi_unknown && ra->init_rate_lv) {
++		ra->upd_all = 1;
++		ra->rssi_unknown = false;
++	}
+ 	if (changed & IEEE80211_RC_SUPP_RATES_CHANGED)
+ 		ra->upd_mask = 1;
+ 	if (changed & (IEEE80211_RC_BW_CHANGED | IEEE80211_RC_NSS_CHANGED))
+@@ -733,7 +752,6 @@ void rtw89_phy_ra_assoc(struct rtw89_dev *rtwdev, struct rtw89_sta_link *rtwsta_
+ 	struct rtw89_vif_link *rtwvif_link = rtwsta_link->rtwvif_link;
+ 	struct ieee80211_vif *vif = rtwvif_link_to_vif(rtwvif_link);
+ 	struct rtw89_ra_info *ra = &rtwsta_link->ra;
+-	u8 rssi = ewma_rssi_read(&rtwsta_link->avg_rssi) >> RSSI_FACTOR;
+ 	struct ieee80211_link_sta *link_sta;
+ 	bool csi;
+ 
+@@ -747,14 +765,8 @@ void rtw89_phy_ra_assoc(struct rtw89_dev *rtwdev, struct rtw89_sta_link *rtwsta_
+ 
+ 	rcu_read_unlock();
+ 
+-	if (rssi > 40)
+-		ra->init_rate_lv = 1;
+-	else if (rssi > 20)
+-		ra->init_rate_lv = 2;
+-	else if (rssi > 1)
+-		ra->init_rate_lv = 3;
+-	else
+-		ra->init_rate_lv = 0;
++	ra->init_rate_lv = rtw89_phy_ra_get_init_rate_lv(rtwsta_link);
++	ra->rssi_unknown = !ra->init_rate_lv;
+ 	ra->upd_all = 1;
+ 	rtw89_debug(rtwdev, RTW89_DBG_RA,
+ 		    "ra assoc: macid = %d, mode = %d, bw = %d, nss = %d, lv = %d",
 -- 
-2.43.0
+2.53.0
 
