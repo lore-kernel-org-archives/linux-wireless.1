@@ -1,69 +1,69 @@
-Authentication-Results: smtp.subspace.kernel.org; arc=none smtp.remote-ip=209.85.167.177
+Authentication-Results: smtp.subspace.kernel.org; arc=none smtp.remote-ip=209.85.167.176
 ARC-Seal: i=1; d=subspace.kernel.org; s=arc20261015; a=rsa-sha256; cv=none;
-	t=1794871191;
-	b=cICYWQdAah+34Dx9i6ZUG8hCu4+RKEwaDKxwsR+xfp//+8MEl0eT6zMVqcIOpbIUUN46
-	 FFEM3zWVazGyJ4vh2z7kayzWaMS8MhUHwQYpUJHSmxNjFxqq/vwbn3slXhGPkoms9mc0j
-	 uVXInhAGawf4DnjwpaCVqKWW2lLu++BvMvH8i5BLSEckg/zw7/K/paKFuIWkJD5dtvV/6
-	 nTvI8y9uJvmM7K38oPj8Cg1QzSA7EGMI7HSYra4w+jSz0BUniZmz6vcbhm1P7l66+c9/x
-	 BM4/nES6md/bOHMvZIgvseOyYFLrDau8pzHYrSzF8SenxFV5Gy/+HMlvpTzzGJMu8rw==
+	t=1794871193;
+	b=ckCdoRNgew9HKQC+V+y9W1FQrhA/5pm+WiP+cDEvi1wVduEEpFZhkKB/FV328rVfdh6O
+	 rnTgminaaHL3aHaNtCibdIChU5DWtCZBg0vav377szpl7OXOcKoAKSrVtZkESI2UNkcal
+	 NJPU2vtmEUW1fTlicsl9brtUEkM4cm3gWE+NpccrcM2zDCQsnY/QYw5sRJU6fH1YjqR8n
+	 0rkfeGgs+wABzY1RHahkTLVKpIDo1C9N0/pmgTkpJOwKfwcfIOaIim0tYWj1id9gCM1VF
+	 ntrkBPSaV0fUhokjtp5oKe+Mo/IaenseHWzuDpgRr0kqc5udECY0OMsIhvIcpSYCESw==
 ARC-Message-Signature: i=1; d=subspace.kernel.org; s=arc20261015;
-	a=rsa-sha256; c=relaxed/relaxed; t=1794871191;
+	a=rsa-sha256; c=relaxed/relaxed; t=1794871193;
 	h=DMARC-Filter:Received:X-Google-DKIM-Signature:X-Forwarded-Encrypted:
 	 X-Gm-Message-State:X-Gm-Gg:X-Received:Received:From:To:Cc:Subject:
 	 Date:Message-ID:X-Mailer:In-Reply-To:References:MIME-Version:
 	 Content-Transfer-Encoding;
-	bh=ovD5H6S5jQwSZumZQjn/7Elyf6SaJFCwpBEMaO/7ZD0=;
-	b=AL/fEdW6n8/D/s6nyx4fR1/4CMGKsa6+WeiwafiJ6g/7GKpXKAicP3KCnNO81jIjIysJ
-	 9/VMiHZkM+uVCDQQoXCetdtU64G0p9QIvN+qBHZH5dIeHFV4RUswih/vgiirjWKZv4LMo
-	 2299mT6fbL7fwVwg4YNGKinyI0P4Aky9RLRko6l8TPVSHEdgaJmJI82t9NqA9e2/iYLEW
-	 n8RZ7h3F7iMLBDHNNT3lhM9/XYoNUqgSFtinkm12nn3omVwaiAY24cFiPXeA838uFTVNf
-	 Qzp7l4AGDHGIaxSBXd7EH1UI35Prr/iY4YGLK7y+w1yrMG0KoCkPnmgkJ/y7v/3MA2A==
+	bh=vYYiOFzTjYSCr6Fp7dl2UeRPDz2kE3dHsqu4/v2K5CA=;
+	b=eMKCS0Mda1V/bXwW2LF0MuDy2FJpfr3dnEUFj4ENY8TmYwoDH0I/pU7hj/lLW+iOeCEn
+	 /Defj/6KqWM+xoElAztacLhNJ41wSBQJvZ05LG4TyyktrNk32q4vShV9IpKBEOOwSo/8o
+	 t2Hb86ndMZoC7Rv816jRcjmExzorj7mpTDJqqHpd0SE53hKBR5jbtlfHk07c70iJSEbTm
+	 BHW4Rm/rjCpuKqqvr1fp4HBx24w5UTtABn4IMVNVJ2UNvG7mr6IdVQBzlo8bQ8gIAsy0C
+	 xLsaV0ExzXpqcwQ281h/a3rBxbgRG6RKC6H8ZJ0rdaxNloPwqVWctyGchSWqU2GTYag==
 ARC-Authentication-Results: i=1; smtp.subspace.kernel.org; 
 	dmarc=fail header.from=kernel.org;
 	spf=pass smtp.mailfrom=gmail.com;
-	arc=none smtp.remote-ip=209.85.167.177
-Received: from mail-oi1-f177.google.com (mail-oi1-f177.google.com [209.85.167.177])
+	arc=none smtp.remote-ip=209.85.167.176
+Received: from mail-oi1-f176.google.com (mail-oi1-f176.google.com [209.85.167.176])
 	(using TLSv1.3 with cipher TLS_AES_128_GCM_SHA256 (128/128 bits)
 	 key-exchange X25519 server-signature ECDSA (prime256v1) server-digest SHA256)
 	(No client certificate requested)
-	by smtp.subspace.kernel.org (Postfix) with ESMTPS id 9FFAC606A31C
-	for <linux-wireless@vger.kernel.org>; Mon, 16 Nov 2026 23:19:50 +0000 (UTC)
-DMARC-Filter: OpenDMARC Filter v1.4.2 smtp.subspace.kernel.org 9FFAC606A31C
+	by smtp.subspace.kernel.org (Postfix) with ESMTPS id 7043D606A31C
+	for <linux-wireless@vger.kernel.org>; Mon, 16 Nov 2026 23:19:53 +0000 (UTC)
+DMARC-Filter: OpenDMARC Filter v1.4.2 smtp.subspace.kernel.org 7043D606A31C
 Authentication-Results: smtp.subspace.kernel.org; dmarc=fail (p=quarantine dis=none) header.from=kernel.org
 Authentication-Results: smtp.subspace.kernel.org; spf=pass smtp.mailfrom=gmail.com
-Received: by mail-oi1-f177.google.com with SMTP id 5614622812f47-4f14642adb4so2943499b6e.1
-        for <linux-wireless@vger.kernel.org>; Mon, 16 Nov 2026 15:19:50 -0800 (PST)
+Received: by mail-oi1-f176.google.com with SMTP id 5614622812f47-53ec2cc397aso2845470b6e.1
+        for <linux-wireless@vger.kernel.org>; Mon, 16 Nov 2026 15:19:53 -0800 (PST)
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=1e100.net; s=20260707; t=1794871189; x=1795475989;
+        d=1e100.net; s=20260707; t=1794871192; x=1795475992;
         h=content-transfer-encoding:mime-version:references:in-reply-to
          :message-id:date:subject:cc:to:from:x-gm-gg:x-gm-message-state:from
          :to:cc:subject:date:message-id:reply-to:content-type;
-        bh=ovD5H6S5jQwSZumZQjn/7Elyf6SaJFCwpBEMaO/7ZD0=;
-        b=EWdfzSMj8uTHMMEXZxpuH+uXSTiET9mtiirIszW+nTOtCbg7O2Y6vPvyhA31v/DZf1
-         9zM901DOulcqfMcztf+P1vbnTEW4HD1knV4MdyalK8DIo9fqblsE5yhimCSHcjOrlNhh
-         mzbnCu5q+YfWqHmg4wuVh+fdthVDjtNrtmrfRVyWRKHCVOfUqURx203EU76PgKA5tVf6
-         DhPIwNyFW8jAOawdQyFx8aCVXfVPoQLdZmS96wVPzYEySZXZUF2qeL4BKWZjdEgFayxY
-         A8lNmf13NvZvTweVJ//xJOYgIxeVazfEcJLVfv8dE8eeY+E4j7BJgDnMkb/fmn2kYdsb
-         W7ug==
-X-Forwarded-Encrypted: i=1; AL+hErGdCWwL2bELwQbo3M74dpLHiLVM8SQjbnuN97cNQUmV0VvIffl0JjFVuXy9K6hmRitl3XrxGQJAJMB3cdvcnw==@vger.kernel.org
-X-Gm-Message-State: APuU4Z9ymRZnQZmA581OrIU+avsrrV8WXIkLsCQciBI3qZv9MbNmCVsY
-	6w9GcdKY5Hmzsy4kAe+bWbvQ5NoMyqQUwa/ecDKnJ0qykK2dyQNCDJDm
-X-Gm-Gg: AYBFou2gp2UzBUUShGpya3jy37AGoozOILUuqAOEkvFRNu0cvmW5cDdBVy3n+cUmWeR
-	ha+3NTWEbFj/i6uTQKz+q5hf3GmK0+BuSUxlwHJzY9kArbKLANPSSekESKnlg+haa5iYgIKBaO3
-	/FoAHzOm9QbGX1xwxMtG7Oui5pgLBP/1LPCOjBUQfKDPy0JOAEolWjYc+pl0OnBSZGjkzlVIrbO
-	L2KE40HQUnR1cLX/IxaqP8CaWIuAjCHsfJC5nXSxeYTz9Vv4JxLWnXalD6t3nw+xblmcbwZyiBv
-	weDSUI/VnMI1h6nBi05r1x/QqhmO383D+lowG2rINek2YFs8QAVUUAo/5VyokuIQUtcr2mN1gBd
-	ZVObYIbsFARssOj3xhMs4l3L1/86QO+Bxgz/uZue6W5xfXB8ZiMPtDxtiLmkRcNDSt8ZrNTnjso
-	YyD/Hts/RA5kRrhlgXPVlO+q+fnTpc8MSp8wxlBx6cH8r2iCozeyvcZXiK9RjhUQyHLXs8GpYGc
-	Jc+rhNiec6NINyclLvmaNWMI9MLWvPcKgWZnZZ6pPGuDw5rQNOMm5Om1OgN8uI40B9ViuTm7ipZ
-	BYthA/4DLam0z7EXYWseuP6nKhfBBC/S07qkFa2hlT5KAZK5veuIHKMfry/6jG2eq5lsJJc30c6
-	coGRHiZZd
-X-Received: by 2002:a05:6808:6d82:b0:573:1dfa:f0c2 with SMTP id 5614622812f47-5731dfaf630mr5362400b6e.29.1794871188866;
-        Mon, 16 Nov 2026 15:19:48 -0800 (PST)
+        bh=vYYiOFzTjYSCr6Fp7dl2UeRPDz2kE3dHsqu4/v2K5CA=;
+        b=cImpxKFa4fCQ8FUA8lQBLuIPCQgt68/6ebJrybA8b1P8imVSmZHEBz01KwSa+bfYHg
+         Tq7FpgZkayfs9n9DLLu0YoKMPUGk232+RMHuV2KvNO5dmCniqL0M+/3i2KmFiNWfpY1t
+         nAY2KGO7C+P7pD8Ogqtaq9y7scpF8ukLHlPySE661SnJrIIgiXMhChcKxvORrG+eAGlQ
+         afDgksKJqot4K8LB/hzBdAlY2Nan5wr8g6DcZsj/C5FyoROxCtCA1C8ArQlfayauvc7v
+         0inmigv+xVRaDPvOFTjr1Hi5FP7hUNIF8ybKCvXmgFXjMUYU9V+9C8dGauLt0P1X0kdg
+         ZgvQ==
+X-Forwarded-Encrypted: i=1; AL+hErHEPoFAzJA0oFavvLNnrIy8ujOLcjpIoNeLl1vqs3sF8KEXqWi4YcLnNk5fU6kvVVlLDWFq4tBWvsFObGvHmA==@vger.kernel.org
+X-Gm-Message-State: APuU4Z/skzJqirCytSjf2WvVRLPYcHbNOs8nOaCk7p4shZ/2fK9BwDOT
+	6cslx/tRmrLQBJe63QCi5Ic9NjVidVvJJSamKVDVbNZbkvw+KkCjpSeW
+X-Gm-Gg: AYBFou1dKkIGCqZRHoSteKTHSPhOOdFTu2kqs9jU81VF5vOH3mp2Yc08xttO6sBT+aS
+	ihFMeNx8S8znvX19sdSgXnZeHUiA5Mov++uBY7Nf2w1VIYuxCEnS5Igo/+vHhkrmE5sv9jLhFth
+	1CGyEZCYoaytNA01PQ4FlDxpQFnKAUoZUqEyw7BdgXblpGKgm4swL7uK5j+xDEAfaWwRwP3oVID
+	6wkpicq7RKDHwlk3WR0FLqLA9PZaGVmb+wS0EmvTSHgghXBM/YRiu1xmWvEfh5/QTIYYaYinj31
+	cgL9dtbMLCCBRsOjvnJhPazoQC2UynxPXXev3F6ZfaoOD9qQPiPTt0K6cF9L1J44n944anXlfjY
+	eJR3e4YmMOnpDt4Gv5k03+98PPOVTQyTnX3D7wLOGMnWh78sMSwngOLMmcE/GLtirg5mI5LsVWk
+	+GZHpnPbiR8ggQMhWoDkTtc3knLKIPYiwKFAxQCM7aRc/4XD28tuHinLqZMR1ujUAwv7pVX4czA
+	TJZzZ9IQ1uV3TcVAmPjsep9jg0yj/LhedWzmvVaQ/wKRHEqxx4jecFjUlL7FHXVbvO55Ha2sjek
+	GZqfCNwQRYugyr1PVZVGQgvGp/QRTa9Ehcv5/aYApbsxFkQs6Yn/cNa5K/rrP25S4cPZRP4whzS
+	4Js8x+PjaIg==
+X-Received: by 2002:a05:6808:5094:b0:4d6:90d3:e189 with SMTP id 5614622812f47-56e645e3178mr12285184b6e.50.1794871192310;
+        Mon, 16 Nov 2026 15:19:52 -0800 (PST)
 Received: from sean-HP-EliteBook-830-G6.lan ([207.191.35.252])
-        by smtp.gmail.com with ESMTPSA id 5614622812f47-56e70c58f9bsm10239635b6e.13.2026.11.16.15.19.45
+        by smtp.gmail.com with ESMTPSA id 5614622812f47-56e70c58f9bsm10239635b6e.13.2026.11.16.15.19.50
         (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
-        Mon, 16 Nov 2026 15:19:47 -0800 (PST)
+        Mon, 16 Nov 2026 15:19:50 -0800 (PST)
 From: Sean Wang <sean.wang@kernel.org>
 To: nbd@nbd.name,
 	lorenzo.bianconi@kernel.org
@@ -75,9 +75,9 @@ Cc: yu-ching.liu@mediatek.com,
 	linux-wireless@vger.kernel.org,
 	linux-mediatek@lists.infradead.org,
 	Sean Wang <sean.wang@mediatek.com>
-Subject: [PATCH v2 14/19] wifi: mt76: mt7925: steer NAN handshake frames by committed-bitmap state
-Date: Mon, 16 Nov 2026 17:16:25 -0600
-Message-ID: <20261116231630.1733906-15-sean.wang@kernel.org>
+Subject: [PATCH v2 15/19] wifi: mt76: mt7925: disable only the RX NAPI instances that exist
+Date: Mon, 16 Nov 2026 17:16:26 -0600
+Message-ID: <20261116231630.1733906-16-sean.wang@kernel.org>
 X-Mailer: git-send-email 2.43.0
 In-Reply-To: <20261116231630.1733906-1-sean.wang@kernel.org>
 References: <20261116231630.1733906-1-sean.wang@kernel.org>
@@ -94,215 +94,62 @@ Content-Transfer-Encoding: 8bit
 
 From: Jacobs Wu <jacobs.wu@mediatek.com>
 
-Unencrypted unicast NAN management is held to the discovery window on the
-DW-WTBL, because a peer whose NDL is not yet confirmed is only reliably
-awake there. That is the right call while nothing is known about the
-peer, but it stays in force for the whole session, and the DW is a narrow
-place to live: it opens for 16 ms every 512 ms and is shared with the
-discovery queue, so roughly four transmit opportunities exist inside the
-two seconds a Data Path Response has to complete. Under load the
-handshake loses that race. Routing the same frames through the peer STA
-WTBL was what made NDP setup reliable with a partial availability bitmap
-in the first place, since the firmware then paces them by the committed
-window instead of bursting blindly.
+mt7925e_mac_reset() picks the RX NAPI instances to disable from the
+interrupt masks, but the instances themselves are created per allocated
+RX queue by mt76_dma_init(). On mt7925 the two do not agree: the tx-done
+ring is only described by the mt7928 DMA layout, so q_rx[MT_RXQ_MCU_WA]
+is never allocated and never gets a NAPI, while mt7925_irq_map still
+carries rx.wm2_complete_mask.
 
-Neither placement is right on its own: the peer WTBL is only usable once
-the firmware actually holds that peer's committed bitmap. A peer station
-existing in mac80211 does not imply that - until the CRB download lands,
-the peer's availability gate has no slots to open and a frame steered
-there parks behind the pause until the session is torn down.
+A MAC reset therefore calls napi_disable() on an instance whose
+net_device pointer is NULL. The fault happens inside napi_disable()
+while the reset work holds the RTNL, so networking goes down with it and
+the machine is left answering ping with no usable userspace; only a
+power cycle recovers it. Repeated NAN data path setup and teardown hits
+this reliably on a busy channel, where MAC resets are frequent.
 
-Track the committed state per peer. mt7925_nan_fill_crb_committed()
-returns the number of committed slots it programmed, and
-mt7925_nan_update_crb_tlv() latches whether that count was non-zero into
-nan_sched.has_commit; the allocation rollback in
-mt792x_nan_set_peer_schedule() and the peer record removal in
-mt792x_nan_set_peer_rec() clear it again. Frames to a peer holding a
-committed bitmap keep that peer's WTBL and are served in the slots it
-has promised to be awake for; frames to a peer without one, and frames
-with no station resolved, keep riding the DW-WTBL. Secured frames are
-untouched and keep their own WTBL and key.
+Iterate the RX queues instead, the same way the restore path further
+down re-enables them, so only instances that were actually added are
+touched.
 
+Fixes: c948b5da6bbe ("wifi: mt76: mt7925: add Mediatek Wi-Fi7 driver for mt7925 chips")
 Co-developed-by: Sean Wang <sean.wang@mediatek.com>
 Signed-off-by: Sean Wang <sean.wang@mediatek.com>
 Signed-off-by: Jacobs Wu <jacobs.wu@mediatek.com>
 ---
- .../net/wireless/mediatek/mt76/mt7925/nan.c   | 30 +++++++++++----
- .../wireless/mediatek/mt76/mt7925/pci_mac.c   | 37 +++++++------------
- drivers/net/wireless/mediatek/mt76/mt792x.h   |  1 +
- 3 files changed, 38 insertions(+), 30 deletions(-)
+ .../wireless/mediatek/mt76/mt7925/pci_mac.c   | 19 +++++++++++++------
+ 1 file changed, 13 insertions(+), 6 deletions(-)
 
-diff --git a/drivers/net/wireless/mediatek/mt76/mt7925/nan.c b/drivers/net/wireless/mediatek/mt76/mt7925/nan.c
-index 0fe8ae6c0d26..aa030dca7e01 100644
---- a/drivers/net/wireless/mediatek/mt76/mt7925/nan.c
-+++ b/drivers/net/wireless/mediatek/mt76/mt7925/nan.c
-@@ -1336,14 +1336,14 @@ static int mt7925_nan_peer_cap_tlv(struct sk_buff *skb,
- 	return 0;
- }
- 
--static void
-+static u32
- mt7925_nan_fill_crb_committed(struct mt7925_nan_sched_update_crb_tlv *crb_tlv,
- 			      struct ieee80211_nan_peer_sched *sched)
- {
--	u32 m, slot;
-+	u32 m, slot, total = 0;
- 
- 	if (!sched)
--		return;
-+		return 0;
- 
- 	for (m = 0; m < CFG80211_NAN_MAX_PEER_MAPS &&
- 	     m < NAN_TIMELINE_MGMT_SIZE; m++) {
-@@ -1369,10 +1369,14 @@ mt7925_nan_fill_crb_committed(struct mt7925_nan_sched_update_crb_tlv *crb_tlv,
- 			if (!ch || !ch->chanctx_conf)
- 				continue;
- 
-+			total++;
-+
- 			for (dw = 0; dw < NAN_TOTAL_DW; dw++)
- 				tl->avail_map[dw] |= cpu_to_le32(BIT(slot));
- 		}
- 	}
-+
-+	return total;
- }
- 
- static int mt7925_nan_update_crb_tlv(struct sk_buff *skb,
-@@ -1397,9 +1401,10 @@ static int mt7925_nan_update_crb_tlv(struct sk_buff *skb,
- 	crb_tlv->is_use_ranging = false;
- 	crb_tlv->comm_ndc_ctrl.is_valid = false;
- 
--	mt7925_nan_fill_crb_committed(crb_tlv, sta->nan_sched);
--
--	return 0;
-+	/* Returns the number of committed slots programmed; the caller latches
-+	 * has_commit only once the command has actually reached firmware.
-+	 */
-+	return mt7925_nan_fill_crb_committed(crb_tlv, sta->nan_sched);
- }
- 
- static int
-@@ -1442,6 +1447,7 @@ int mt792x_nan_set_peer_schedule(struct mt792x_dev *dev,
- 	struct mt792x_nan *nan;
- 	struct mt76_dev *mdev;
- 	struct sk_buff *skb;
-+	int committed;
- 	int ret;
- 
- 	if (!dev || !sta)
-@@ -1480,7 +1486,8 @@ int mt792x_nan_set_peer_schedule(struct mt792x_dev *dev,
- 		}
- 	}
- 
--	if (mt7925_nan_update_crb_tlv(skb, sta, msta)) {
-+	committed = mt7925_nan_update_crb_tlv(skb, sta, msta);
-+	if (committed < 0) {
- 		ret = -ENOMEM;
- 		goto free_skb;
- 	}
-@@ -1493,6 +1500,13 @@ int mt792x_nan_set_peer_schedule(struct mt792x_dev *dev,
- 	if (ret && idx_allocated)
- 		goto clear_idx;
- 
-+	/* Latch only now: firmware holds this peer's committed bitmap, so its
-+	 * availability gate has slots to open and unencrypted NAF may be
-+	 * steered at the peer WTBL. Cleared when the CRB is torn down.
-+	 */
-+	if (!ret)
-+		msta->nan_sched.has_commit = committed > 0;
-+
- 	return ret;
- 
- free_skb:
-@@ -1503,6 +1517,7 @@ int mt792x_nan_set_peer_schedule(struct mt792x_dev *dev,
- clear_idx:
- 	clear_bit(msta->nan_sched.sch_idx, &nan->conn_bitmap);
- 	msta->nan_sched.idx_assigned = false;
-+	msta->nan_sched.has_commit = false;
- 
- 	return ret;
- }
-@@ -1566,6 +1581,7 @@ int mt792x_nan_set_peer_rec(struct mt76_dev *mdev,
- 
- 	clear_bit(msta->nan_sched.sch_idx, &nan->conn_bitmap);
- 	msta->nan_sched.idx_assigned = false;
-+	msta->nan_sched.has_commit = false;
- 
- 	return 0;
- }
 diff --git a/drivers/net/wireless/mediatek/mt76/mt7925/pci_mac.c b/drivers/net/wireless/mediatek/mt76/mt7925/pci_mac.c
-index eb07abfef209..7f6da681b4a4 100644
+index 7f6da681b4a4..6189615d6604 100644
 --- a/drivers/net/wireless/mediatek/mt76/mt7925/pci_mac.c
 +++ b/drivers/net/wireless/mediatek/mt76/mt7925/pci_mac.c
-@@ -33,16 +33,15 @@ int mt7925e_tx_prepare_skb(struct mt76_dev *mdev, void *txwi_ptr,
- 	 * full retry budget on an unACKable multicast RA, so one frame eats a
- 	 * whole DW window and the publish SDF queue backlogs.
- 	 *
--	 * Unencrypted unicast to a peer we have no station for is first
--	 * contact (SDF, NDP request): the DW is the only rendezvous, so it
--	 * goes on the DW-WTBL and waits for it.
--	 *
--	 * Once its schedule is known - the peer station exists, which is also
--	 * when firmware holds its committed bitmap - the frame belongs on that
--	 * station instead. Firmware then airs it inside the peer's own
--	 * committed slots, where the peer is awake and the medium is not the
--	 * DW pile-up, and follows the FAW onto whatever channel the window
--	 * actually uses rather than being pinned to the DW channel.
-+	 * Unencrypted unicast is handshake traffic (SDF follow-up, NDP
-+	 * request/response, pairing bootstrap). Until firmware holds the
-+	 * peer's committed bitmap its availability gate has nothing to open,
-+	 * so a frame steered at the peer WTBL would park behind the BY_NAN
-+	 * pause; such frames ride the DW-WTBL, which firmware unpauses every
-+	 * DW - the one rendezvous both peers must be awake for. Once the CRB
-+	 * download latches has_commit, the frame keeps the peer's own WTBL
-+	 * and firmware serves it in the committed slots, which a 2-second
-+	 * handshake deadline needs (the DW alone offers only ~4 shots).
- 	 *
- 	 * Secured frames belong to an established peer and keep its own WTBL
- 	 * and key.
-@@ -52,24 +51,16 @@ int mt7925e_tx_prepare_skb(struct mt76_dev *mdev, void *txwi_ptr,
- 		struct mt792x_vif *mvif = (void *)vif->drv_priv;
- 		bool mcast = is_multicast_ether_addr(hdr->addr1);
+@@ -132,12 +132,19 @@ int mt7925e_mac_reset(struct mt792x_dev *dev)
+ 	mt76_txq_schedule_all(&dev->mphy);
  
-+		struct mt792x_sta *peer = (!mcast && sta) ?
-+			(struct mt792x_sta *)sta->drv_priv : NULL;
+ 	mt76_worker_disable(&dev->mt76.tx_worker);
+-	if (irq_map->rx.data_complete_mask)
+-		napi_disable(&dev->mt76.napi[MT_RXQ_MAIN]);
+-	if (irq_map->rx.wm_complete_mask)
+-		napi_disable(&dev->mt76.napi[MT_RXQ_MCU]);
+-	if (irq_map->rx.wm2_complete_mask)
+-		napi_disable(&dev->mt76.napi[MT_RXQ_MCU_WA]);
 +
- 		if (mcast && wcid == &mvif->nan_dw_wcid) {
- 			wcid = &mvif->sta.deflink.wcid;
- 		} else if (!mcast && !key &&
-+			   !(peer && peer->nan_sched.has_commit) &&
- 			   mvif->nan_dw_wcid.idx &&
- 			   mvif->nan_dw_wcid.idx < MT792x_WTBL_STA) {
--			struct ieee80211_sta *psta;
--			struct mt792x_sta *pmsta;
--
--			rcu_read_lock();
--			psta = ieee80211_find_sta(vif, hdr->addr1);
--			pmsta = psta ? (struct mt792x_sta *)psta->drv_priv :
--				       NULL;
--
--			if (pmsta && pmsta->deflink.wcid.idx)
--				wcid = &pmsta->deflink.wcid;
--			else
--				wcid = &mvif->nan_dw_wcid;
--			rcu_read_unlock();
-+			wcid = &mvif->nan_dw_wcid;
- 		}
- 	}
++	/*
++	 * Disable the RX NAPI instances that were actually created. They are
++	 * added per allocated RX queue by mt76_dma_init(), while the interrupt
++	 * masks describe what the hardware is able to raise - on mt7925 the
++	 * tx-done queue is never allocated (only mt7928 defines that ring), so
++	 * its NAPI has no net_device and napi_disable() faults on it while
++	 * holding the RTNL, wedging the whole machine. Iterate the queues, the
++	 * same way the restore path below re-enables them.
++	 */
++	mt76_for_each_q_rx(&dev->mt76, i)
++		napi_disable(&dev->mt76.napi[i]);
++
+ 	if (irq_map->tx.all_complete_mask)
+ 		napi_disable(&dev->mt76.tx_napi);
  
-diff --git a/drivers/net/wireless/mediatek/mt76/mt792x.h b/drivers/net/wireless/mediatek/mt76/mt792x.h
-index c46b88467193..586352f4b1d0 100644
---- a/drivers/net/wireless/mediatek/mt76/mt792x.h
-+++ b/drivers/net/wireless/mediatek/mt76/mt792x.h
-@@ -134,6 +134,7 @@ struct mt792x_sta_nan_sched {
- 	u16 committed_dw;
- 	u32 sch_idx;
- 	bool idx_assigned;
-+	bool has_commit;	/* last CRB carried a non-empty committed map */
- 	unsigned long ndp_ctx_bitmap;
- 	bool ndp_ctx_assigned;
- 	u8 ndp_ctx_id;		/* assigned NDP context ID (for NDI sta) */
 -- 
 2.43.0
 
