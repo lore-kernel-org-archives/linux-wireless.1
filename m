@@ -1,79 +1,61 @@
-Authentication-Results: smtp.subspace.kernel.org; arc=none smtp.remote-ip=211.75.126.72
+Authentication-Results: smtp.subspace.kernel.org; arc=none smtp.remote-ip=220.197.31.5
 ARC-Seal: i=1; d=subspace.kernel.org; s=arc20261015; a=rsa-sha256; cv=none;
-	t=1794800716;
-	b=gkd+YWmbF367qHE2hSoLFhrdW5MGcWrwCH54UPt/e2Wi6OR3ghMi19G7WDjwCFg3pq2D
-	 rD9fhnDN4dantemMGIKSunvMCJimCaPLcXeaUGrfIDRzO+8XRjIIOKpeEiqfG9Drmi6mR
-	 hdJq2A1snLanmgLSRIBYX7iaDZJABHcUrYfDRN2cCBK41pBUpOMJqu/QzpsiZ3SW21xrc
-	 SrT0AjBqstQ/xsAwiwJcsNM0LZPD4kLBkN98e15ypukR6rn69+q7+OwivOsDvw9AMbW0N
-	 TnRcLIS6WTjehQyKLSGZr3UXWHhpKcRzlHOFxEFX146vq2CohXGoKpl1+zgeCffHtZg==
+	t=1794802577;
+	b=5C4pqOq9fAByrV+Ja0zke3mLJVNjP+ta++bW+TNIxnI6YtM7wFiLgQE/LHUMiipxw/aT
+	 /+3IqHK5rpmTwytnYmqG/WbCLRDh1xIH8+Uq+Na4QAxDA6ZyNO/ZXmh1w8JIU9641BG9Q
+	 NLyo71/4/a4k/sn8XrF5y9OdrKv2pCYP+aEcfE5mzKhThae+60k6XAf5wFXyxtD1QPVSM
+	 Cno0E0jUqwO9mTR3abjW2BHX5vdK7ezouVdIarMf2L77t9nUNj3oH0KMRrRf/+bwjkk/6
+	 mMy29PuP5aTiA8Cuxm+cj3kyw5iFE0IN5TRFg+R4AS42S4Dh43SMDxg469Ma4WSHlSw==
 ARC-Message-Signature: i=1; d=subspace.kernel.org; s=arc20261015;
-	a=rsa-sha256; c=relaxed/relaxed; t=1794800716;
-	h=DMARC-Filter:X-SpamFilter-By:DKIM-Signature:Received:Received:
-	 Received:From:To:CC:Subject:Thread-Topic:Thread-Index:Date:Message-ID:
-	 References:In-Reply-To:Accept-Language:Content-Language:
-	 x-originating-ip:Content-Type:Content-Transfer-Encoding:MIME-Version;
-	bh=wpl+S+iJCeStkF4eCrEXYSjgIUWJWc9vv+PMak9Q1QI=;
-	b=ijTNKMAwJH3NvcsNdvy2rP+rxtNeeDPGCydZcflyQIYpK12NrxIaaX8CjVimAsHO6ZjH
-	 ZJoPYm2Iobitn4P0PrjFMBjSQPLca1c0li7q9HDB0pv4aZolWY0Hxa5GUIS6AS/7loEP2
-	 0L3LjSdK52b+xgCg6DjDxcIdPjNkgq0Ub5LOmhOltrx9DqG04ENB9+ZFhPFQNXtXMwwof
-	 Jv8teZm3IIx//L7cE39ESoMdX+z1INSaE2lJvcIRvUV3jDuvKZQCgTufQ3S3ZErlKWXX6
-	 205kLE3KIuX27LV/Cej2g0rgx7C37Pw2i9ZqC60zRj3qMCBD2Nu6ieEimhuGcwqG/EQ==
+	a=rsa-sha256; c=relaxed/relaxed; t=1794802577;
+	h=DMARC-Filter:DKIM-Signature:Received:From:To:Cc:Subject:Date:
+	 Message-ID:X-Mailer:In-Reply-To:References:MIME-Version:
+	 Content-Transfer-Encoding:X-CM-TRANSID:X-Coremail-Antispam:
+	 X-CM-SenderInfo;
+	bh=pjmbWb2Lje8tGPxgjuae32cwUfNa7HeNQCPIdazfluI=;
+	b=A67+mxKXLWN1iKY+WUfqN7X51Elg21ru7e0p087Bd8khiwPwNqKuj28//lTX5/nUS3jS
+	 EnqIvOlfKwLCMf/hSuvlKkQvMK2DGklIX8lBLurh1xr6rWY1sV/cq7w6s+bjNhMJuE5GB
+	 RV+U5yiSqcoz+fQbQCxpy4fEko81CpafDcjJUO6lM28NpNry61XezU3zmbyd24QQOwz1X
+	 r/sdwKJVh6ZEshOVOCxZL+cS8KKGeQVBr4rcl4ixa9T3o8hM1ZbvCRgmSvq7a9arKPdsR
+	 +IgEU5y0vQJgAWH4XAY8uechOpMOF8L09IMF3hLxeqDDXqZNMbNFWIxWiYdLM6yikCw==
 ARC-Authentication-Results: i=1; smtp.subspace.kernel.org; 
-	dmarc=pass header.from=realtek.com;
-	spf=pass smtp.mailfrom=realtek.com;
-	dkim=pass header.d=realtek.com header.i=@realtek.com header.a=rsa-sha256 header.s=dkim header.b="ERUE8cW/";
-	arc=none smtp.remote-ip=211.75.126.72
-Received: from rtits2.realtek.com.tw (rtits2.realtek.com [211.75.126.72])
+	dmarc=pass header.from=163.com;
+	spf=pass smtp.mailfrom=163.com;
+	dkim=pass header.d=163.com header.i=@163.com header.a=rsa-sha256 header.s=s110527 header.b=Mu48bp44;
+	arc=none smtp.remote-ip=220.197.31.5
+Received: from m16.mail.163.com (m16.mail.163.com [220.197.31.5])
 	(using TLSv1.3 with cipher TLS_AES_256_GCM_SHA384 (256/256 bits)
 	 key-exchange X25519 server-signature ECDSA (prime256v1) server-digest SHA256)
 	(No client certificate requested)
-	by smtp.subspace.kernel.org (Postfix) with ESMTPS id 51029606A31C;
-	Mon, 16 Nov 2026 03:45:14 +0000 (UTC)
-DMARC-Filter: OpenDMARC Filter v1.4.2 smtp.subspace.kernel.org 51029606A31C
-Authentication-Results: smtp.subspace.kernel.org; dmarc=pass (p=none dis=none) header.from=realtek.com
-Authentication-Results: smtp.subspace.kernel.org; spf=pass smtp.mailfrom=realtek.com
+	by smtp.subspace.kernel.org (Postfix) with ESMTPS id B91DC606A31F;
+	Mon, 16 Nov 2026 04:16:15 +0000 (UTC)
+DMARC-Filter: OpenDMARC Filter v1.4.2 smtp.subspace.kernel.org B91DC606A31F
+Authentication-Results: smtp.subspace.kernel.org; dmarc=pass (p=none dis=none) header.from=163.com
+Authentication-Results: smtp.subspace.kernel.org; spf=pass smtp.mailfrom=163.com
 Authentication-Results: smtp.subspace.kernel.org;
-	dkim=pass (2048-bit key) header.d=realtek.com header.i=@realtek.com header.a=rsa-sha256 header.s=dkim header.b=ERUE8cW/
-X-SpamFilter-By: ArmorX SpamTrap 5.80 with qID 6AG3j7C413037339, This message is accepted by code: ctloc85258
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=realtek.com; s=dkim;
-	t=1794800707; bh=wpl+S+iJCeStkF4eCrEXYSjgIUWJWc9vv+PMak9Q1QI=;
-	h=From:To:CC:Subject:Date:Message-ID:References:In-Reply-To:
-	 Content-Type:Content-Transfer-Encoding:MIME-Version;
-	b=ERUE8cW/gEGTZpiV9G3Key/4tNTmQY7JiX2pUCjdqZob0bRBShgJhQHKnCuK7H5yT
-	 jfd6Og1RKnfFovny/6sHTu4SnQIzCOC8tf8r1Y72CkPGwLr4NRZX0ufS1owdsOdXWy
-	 oqfR4Wf3hqnTWY/rgl+TScam5QUrULFO3JLZuZ6ca2rjGNyUFCTzgLBsV1kgF4X9zZ
-	 /sl2ay6WuEaDxGGzrKDyfDt6F57MVPEvBGK63ksinN+fwWfe1ucTQbEZGStRHAY/ct
-	 Qfeei3LkGPEgm3Xwv9kh6l8/JhyfE0mZFzN7FuQFBWGr/xWvxRlMHo3FTUZMwf5GDz
-	 ds+PBHEXdVC/Q==
-Received: from mail.realtek.com (rtkexhmbs02.realtek.com.tw[172.21.6.41])
-	by rtits2.realtek.com.tw (8.15.2/3.29/5.94) with ESMTPS id 6AG3j7C413037339
-	(version=TLSv1.2 cipher=ECDHE-RSA-AES256-GCM-SHA384 bits=256 verify=FAIL);
-	Mon, 16 Nov 2026 11:45:07 +0800
-Received: from RTKEXHMBS06.realtek.com.tw (10.21.1.56) by
- RTKEXHMBS02.realtek.com.tw (172.21.6.41) with Microsoft SMTP Server
- (version=TLS1_2, cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id
- 15.2.2562.56; Mon, 16 Nov 2026 11:45:04 +0800
-Received: from RTKEXHMBS06.realtek.com.tw ([fe80::eeeb:c765:ca73:5eef]) by
- RTKEXHMBS06.realtek.com.tw ([fe80::eeeb:c765:ca73:5eef%10]) with mapi id
- 15.02.2562.056; Mon, 16 Nov 2026 11:45:04 +0800
-From: Ping-Ke Shih <pkshih@realtek.com>
-To: Enver Ikromov <owner@ph4ntom-rev.uz>
-CC: "linux-wireless@vger.kernel.org" <linux-wireless@vger.kernel.org>,
-	"linux-kernel@vger.kernel.org" <linux-kernel@vger.kernel.org>
-Subject: RE: [PATCH rtw-next v5 10/10] wifi: rtw89: restore channel when
- leaving idle on non-chanctx devices
-Thread-Topic: [PATCH rtw-next v5 10/10] wifi: rtw89: restore channel when
- leaving idle on non-chanctx devices
-Thread-Index: AQHdc9EJw4nEcxWhMkqG8ygFaOrxf7cwB0Ug
-Date: Mon, 16 Nov 2026 03:45:04 +0000
-Message-ID: <ef6d8d689d88443e993d667e7a75d538@realtek.com>
-References: <20261113235211.1911-1-owner@ph4ntom-rev.uz>
- <20261113235211.1911-11-owner@ph4ntom-rev.uz>
-In-Reply-To: <20261113235211.1911-11-owner@ph4ntom-rev.uz>
-Accept-Language: en-US, zh-TW
-Content-Language: zh-TW
-Content-Type: text/plain; charset="us-ascii"
-Content-Transfer-Encoding: quoted-printable
+	dkim=pass (1024-bit key) header.d=163.com header.i=@163.com header.a=rsa-sha256 header.s=s110527 header.b=Mu48bp44
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=163.com;
+	s=s110527; h=From:To:Subject:Date:Message-ID:MIME-Version; bh=pj
+	mbWb2Lje8tGPxgjuae32cwUfNa7HeNQCPIdazfluI=; b=Mu48bp44yXnW2arbmH
+	olSwt92HnUyG67sWgxVf2s9ynhCCHI+NlSS7IKQlYmkJRkirs7TDb8lOqPhVjlX+
+	ahMvtGOq6HeAUQKYDnld7VhhpROm5Pw4EWgV1OAcKI9O5s+5kbR+I6ZMG+mgcApp
+	DqB5HZszm0/iF6PWJ2kHhZtSk=
+Received: from WIN-TOG0NDEIICD.localdomain (unknown [])
+	by gzga-smtp-mtada-g0-4 (Coremail) with SMTP id _____wDXP_Nng_pq40UOIg--.4498S2;
+	Mon, 16 Nov 2026 12:15:36 +0800 (CST)
+From: Shirong Zhao <shxzhaosr@163.com>
+To: Arend van Spriel <arend.vanspriel@broadcom.com>
+Cc: linux-wireless@vger.kernel.org,
+	brcm80211@lists.linux.dev,
+	brcm80211-dev-list.pdl@broadcom.com,
+	linux-kernel@vger.kernel.org,
+	stable@vger.kernel.org
+Subject: [PATCH v3] wifi: brcmfmac: drop glom superframe on header parse failure
+Date: Mon, 16 Nov 2026 12:15:34 +0800
+Message-ID: <20261116041534.24-1-shxzhaosr@163.com>
+X-Mailer: git-send-email 2.53.0
+In-Reply-To: <20261009072232.18-1-shxzhaosr@163.com>
+References: <20261009072232.18-1-shxzhaosr@163.com>
 X-Mailing-List: linux-wireless@vger.kernel.org
 List-Id: <linux-wireless.vger.kernel.org>
 List-Post: <mailto:linux-wireless@vger.kernel.org>
@@ -83,100 +65,64 @@ List-Unsubscribe: <mailto:linux-wireless+unsubscribe@vger.kernel.org>
 List-Owner: <mailto:linux-wireless+owner@vger.kernel.org>
 Precedence: list
 MIME-Version: 1.0
+Content-Transfer-Encoding: 8bit
+X-CM-TRANSID:_____wDXP_Nng_pq40UOIg--.4498S2
+X-Coremail-Antispam: 1Uf129KBjvJXoW7tF43ur4ftw17uryUZry5Jwb_yoW8KF45p3
+	y0gFWYkr4DAr4rCrWxAF1IkFyFqa1jya4UKFW8Wa4fuF4rArn3tr409Fy2gr1jyr4qk3sF
+	qFWSvFnxJr9FgFJanT9S1TB71UUUUU7qnTZGkaVYY2UrUUUUjbIjqfuFe4nvWSU5nxnvy2
+	9KBjDUYxBIdaVFxhVjvjDU0xZFpf9x07j4zuAUUUUU=
+X-CM-SenderInfo: hvk06xhdrv2qqrwthudrp/xtbC7QhUkmr6g2igjgAA32
 
-Enver Ikromov <owner@ph4ntom-rev.uz> wrote:
-> rtw89_alloc_ieee80211_hw() disables native chanctx callbacks
-> (ops->assign_vif_chanctx =3D NULL) and relies on mac80211 chanctx
-> emulation via hw->conf.chandef and rtw89_ops_config() whenever
-> chip->support_chanctx_num =3D=3D 0 or the loaded firmware lacks
-> SCAN_OFFLOAD or BEACON_FILTER (for example on RTL8852AE with firmware
-> 0.13.36.2, where support_chanctx_num =3D=3D 1 but BEACON_FILTER is absent=
-).
->=20
-> When the last monitor interface is brought down or deleted (or all
-> interfaces become idle), rtw89_ops_stop() / rtw89_enter_ips() powers
-> down the MAC/BB/RF and clears the RTW89_PHY_0 entity state while
-> mac80211 retains local->hw.conf.chandef.=20
+brcmf_sdio_rxglom() uses rd_new.len_nxtfrm and rd_new.dat_offset
+right after the superframe brcmf_sdio_hdparse() without checking
+errcode.  On parse failure those fields are either uninitialized
+(the early -ENODATA/-EIO/-EPROTO returns) or hold a rejected value
+(the -ENXIO bad-offset return), so bus->cur_read.len gets garbage
+and skb_pull() runs with a garbage length.
 
-> When a monitor interface
-> (including a concurrent MONITOR_FLAG_ACTIVE interface alongside an
-> unassociated STA, where __ieee80211_recalc_idle() clears
-> IEEE80211_CONF_IDLE without setting IEEE80211_CONF_MONITOR) is brought
-> up on the same channel, rtw89_ops_start() sets RTW89_FLAG_POWERON
-> without programming the channel (so rtw89_leave_ips() returns early),
-> and ieee80211_hw_conf_chan() omits IEEE80211_CONF_CHANGE_CHANNEL
-> because chandef is unchanged, leaving RX/TX silent until a manual
-> channel change.
+Check errcode first and drop the superframe with the same cleanup
+used for a bad subframe below.
 
-This should be the first paragraph to explain why you need this patch.
+Fixes: 9d7d6f95bda1 ("brcmfmac: streamline header parse code of sdio glom read")
+Cc: stable@vger.kernel.org
+Signed-off-by: Shirong Zhao <shxzhaosr@163.com>
+Acked-by: Arend van Spriel <arend.vanspriel@broadcom.com>
+---
 
-The commit message may just say that fix the channel in monitor doesn't
-restore after monitor interface down/up.
+Changes in v3: add the Fixes tag and Cc: stable as requested by
+Arend van Spriel.  Re-verified against current wireless.git main and
+wireless-next main: applies with no offset and no fuzz, and
+build-tested with CONFIG_BRCMUTIL=m CONFIG_BRCMFMAC=m
+CONFIG_BRCMFMAC_SDIO=y (baseline and patched both compile clean,
+0 warnings, including a W=1 pass).  No code change.
 
-The detail trace can be second paragraph or not necessary.=20
-The LLM provide the trace is good to understand what/how it does, but
-not suitable for commit message always.
+Changes in v2: check errcode before sdio_release_host() so the
+cleanup runs under the already-claimed host, avoiding the extra
+release/claim cycle (suggested by Arend van Spriel).
 
-Please rephrase commit message.
+ drivers/net/wireless/broadcom/brcm80211/brcmfmac/sdio.c | 11 +++++++++++
+ 1 file changed, 11 insertions(+)
 
->=20
-> In rtw89_ops_config(), when IEEE80211_CONF_CHANGE_IDLE or
-> IEEE80211_CONF_CHANGE_MONITOR leaves the device non-idle on hardware
-> without assign_vif_chanctx and RTW89_PHY_0 is not yet active, apply
-> hw->conf.chandef and call rtw89_set_channel(). When
-> IEEE80211_CONF_CHANGE_CHANNEL has already configured RTW89_PHY_0, the
-> entity state check avoids redundant RF calibration.
->=20
-> Signed-off-by: Enver Ikromov <owner@ph4ntom-rev.uz>
-> ---
->  drivers/net/wireless/realtek/rtw89/mac80211.c | 11 +++++++++++
->  1 file changed, 11 insertions(+)
->=20
-> diff --git a/drivers/net/wireless/realtek/rtw89/mac80211.c
-> b/drivers/net/wireless/realtek/rtw89/mac80211.c
-> index c8a6003..3649a7a 100644
-> --- a/drivers/net/wireless/realtek/rtw89/mac80211.c
-> +++ b/drivers/net/wireless/realtek/rtw89/mac80211.c
-> @@ -152,6 +152,17 @@ static int rtw89_ops_config(struct ieee80211_hw *hw,=
- int radio_idx, u32 changed)
->         if (changed & IEEE80211_CONF_CHANGE_MONITOR)
->                 rtw89_physts_parsing_init(rtwdev);
->=20
-> +       if ((changed & (IEEE80211_CONF_CHANGE_IDLE |
-> +                       IEEE80211_CONF_CHANGE_MONITOR)) &&
-> +           !(hw->conf.flags & IEEE80211_CONF_IDLE) &&
-> +           !rtwdev->ops->assign_vif_chanctx &&
-
-This might be the first condition 'no_chanctx'.
-
-Declare a local variable 'no_chanctx =3D !rtwdev->ops->assign_vif_chanctx';
-Move this upward after rtw89_leave_ps_mode(), and update the 'changed'
-
-   changed |=3D IEEE80211_CONF_CHANGE_CHANNEL;
-
-to share existing code.
-
-	bool no_chanctx =3D !rtwdev->ops->assign_vif_chanctx;
-
-	if (no_chanctx &&
-		(changed & (IEEE80211_CONF_CHANGE_IDLE | IEEE80211_CONF_CHANGE_MONITOR) =
-=3D=3D
-	               (IEEE80211_CONF_CHANGE_IDLE | IEEE80211_CONF_CHANGE_MONITOR=
-)) {
-		if (!(hw->conf.flags & IEEE80211_CONF_IDLE))
-			changed |=3D IEEE80211_CONF_CHANGE_CHANNEL;
-	}
-
-> +           !rtw89_get_entity_state(rtwdev, RTW89_PHY_0) &&
-> +           cfg80211_chandef_valid(&hw->conf.chandef)) {
-> +               rtw89_config_entity_chandef(rtwdev, RTW89_CHANCTX_0,
-> +                                           &hw->conf.chandef);
-> +               rtw89_set_channel(rtwdev);
-> +       }
-> +
->         return 0;
->  }
->=20
-> --
-> 2.56.0.windows.4
+diff --git a/drivers/net/wireless/broadcom/brcm80211/brcmfmac/sdio.c b/drivers/net/wireless/broadcom/brcm80211/brcmfmac/sdio.c
+index cea52d4..d30468c 100644
+--- a/drivers/net/wireless/broadcom/brcm80211/brcmfmac/sdio.c
++++ b/drivers/net/wireless/broadcom/brcm80211/brcmfmac/sdio.c
+@@ -1649,6 +1649,17 @@ static u8 brcmf_sdio_rxglom(struct brcmf_sdio *bus, u8 rxseq)
+ 		sdio_claim_host(bus->sdiodev->func1);
+ 		errcode = brcmf_sdio_hdparse(bus, pfirst->data, &rd_new,
+ 					     BRCMF_SDIO_FT_SUPER);
++		if (errcode) {
++			/* Superframe header is bad; rd_new fields are not
++			 * valid here. Drop it like a bad subframe below.
++			 */
++			brcmf_sdio_rxfail(bus, true, false);
++			bus->sdcnt.rxglomfail++;
++			brcmf_sdio_free_glom(bus);
++			sdio_release_host(bus->sdiodev->func1);
++			bus->cur_read.len = 0;
++			return 0;
++		}
+ 		sdio_release_host(bus->sdiodev->func1);
+ 		bus->cur_read.len = rd_new.len_nxtfrm << 4;
+ 
 
