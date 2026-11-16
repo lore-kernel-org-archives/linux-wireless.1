@@ -1,79 +1,62 @@
-Authentication-Results: smtp.subspace.kernel.org; arc=none smtp.remote-ip=211.75.126.72
+Authentication-Results: smtp.subspace.kernel.org; arc=none smtp.remote-ip=95.215.58.27
 ARC-Seal: i=1; d=subspace.kernel.org; s=arc20261015; a=rsa-sha256; cv=none;
-	t=1794816270;
-	b=lDvquvgGvUWfL+cEjow+mC3gBSxSwONQ3EDE+AJQOml7lhEagBT6SqGEumIs5xhj65QC
-	 Ag469ZAqVQ9giXUW1FHM7I3J8YxByE5OyhgTkahCUZUOnDnPeEhyIBpuLjPNaFaUzdZ0R
-	 61orVrEqYTyqmABhOrN87Nuyngy8gqE5DAb3cMkP2KkQ1WjI5/uEOVlbwnGrbZ2GHxXv1
-	 9OVtN/uvuKTuLhF/rkO6oGkz4CI1sifjM1tdnWPGnbnuKGDI0TqfitIA71qSrVyTTMhPE
-	 R+cKsYh6GgzHPdgdvoxjDzuYyX8uz6UPm0Pd7nbahTujNxFfsWHNwe8Vlh6oD62ZAsg==
+	t=1794816416;
+	b=SnNoksau3PeGHFr1HI/9L5JcbBsfxuxx2hGPf6t7KY/eQMF4RekHhArW9283NF/SYGoa
+	 Fam3tBAaYqGx7rK+Mw5O24eHQZFQHF6Nm4Gk2W/WrojZTxVal7HlZmmdh+ERT3ny8LcfI
+	 JWD8vR6cQvKHhC0j9qN/tudUGbPQCywRpGTEdLHQSEbdoQRBkRPvT2WF4/IuSJqOkH9Jm
+	 SGPjzBX/xwCGQV0H3yE6mMzB9gCZ8mMh+VSrVqAaLEF755BaqWrhpbtHt/NAmvAEPkHM0
+	 Mp2JO+iMi2Vp1RlIuCxaABadPqVNYR8MiwL1QC2Z2r9H+iAXQzcmBSStO7OCa0obEbQ==
 ARC-Message-Signature: i=1; d=subspace.kernel.org; s=arc20261015;
-	a=rsa-sha256; c=relaxed/relaxed; t=1794816270;
-	h=DMARC-Filter:X-SpamFilter-By:DKIM-Signature:Received:Received:
-	 Received:From:To:CC:Subject:Thread-Topic:Thread-Index:Date:Message-ID:
-	 References:In-Reply-To:Accept-Language:Content-Language:
-	 x-originating-ip:Content-Type:Content-Transfer-Encoding:MIME-Version;
-	bh=G8pmM3gxjKjpm+02Wdq+NqXN+xecKR+TNl0hK4Vnze8=;
-	b=z3EpqM4cFx7aOQI/IKWBZNHtDnn3cUiqeQs/e0fu8LuK4rOuplsjDJOQ2k3bvINDc1eA
-	 n+3GQH2fARY7l8eViSEshBnfQhnQJFtMnJRdM8S1U2dcciD2qfAUsZO20deTNSBhBIJn6
-	 4F6Vd4AaKTN2c0jfRJOd8nQnm0IxvGbfQAMB0O28HySBX6hYieUtMP06ls4n2QxG+WWom
-	 EPszcNJE4neQ694zm2npZHTG65czg0w9ThWxFgVlVcBudDq00dfw+aPB4HCoszznl0G8E
-	 RGHu0hQ7khbZo1IuOgRZcm+dDT1Se8O3nlm4tA7qCNqmoZStfEV46FWtT5jk6CyLhfg==
+	a=rsa-sha256; c=relaxed/relaxed; t=1794816416;
+	h=DMARC-Filter:X-Envelope-To:DKIM-Signature:X-Envelope-To:Received:
+	 X-Mizu-Trace-ID:X-Migadu-Flow:Date:From:To:CC:Subject:In-Reply-To:
+	 References:Message-ID:MIME-Version:Content-Type:
+	 Content-Transfer-Encoding;
+	bh=mXEm4ni7IMYJDYClmIxXaOLYx9r6MmPpSBwKJoKyoGg=;
+	b=hSOv1Qtp2g8mMz8Kyu+/eteXTRX/a/qZtfutOImXT3HQNcdQhcbvnW7v8yBEwqo5AgLt
+	 cBP5mmnu7x9LTqQZuloQPISnsqUAm5nuLwvXZ+ew3xmKI0aAfuaZ7YOMgry6mZgnGKMTJ
+	 f6jClExQgrsS6t5muibPJ7rLekxJfZPBt5FaqWloeTI24br+dxXycYXEXrtOwV/3FbXNl
+	 l8xWByNJMKKLbdHArUuzK1TauWbBC/TViaqKbhkCZ4bVXBmkpa+HK4F1LQshDAmAGT2fJ
+	 QluMO61m4xhuuUhP0wsFnc6KHkCvqKrphC4L4+FkRvHVrZayZv1PtDpXL7BqCLuSxIw==
 ARC-Authentication-Results: i=1; smtp.subspace.kernel.org; 
-	dmarc=pass header.from=realtek.com;
-	spf=pass smtp.mailfrom=realtek.com;
-	dkim=pass header.d=realtek.com header.i=@realtek.com header.a=rsa-sha256 header.s=dkim header.b=pXTtTy5T;
-	arc=none smtp.remote-ip=211.75.126.72
-Received: from rtits2.realtek.com.tw (rtits2.realtek.com [211.75.126.72])
-	(using TLSv1.3 with cipher TLS_AES_256_GCM_SHA384 (256/256 bits)
+	dmarc=pass header.from=linux.dev;
+	spf=pass smtp.mailfrom=linux.dev;
+	dkim=pass header.d=linux.dev header.i=@linux.dev header.a=rsa-sha256 header.s=key1 header.b=YS7RHOwA;
+	arc=none smtp.remote-ip=95.215.58.27
+Received: from mta1.migadu.com (out-27.mta1.migadu.com [95.215.58.27])
+	(using TLSv1.3 with cipher TLS_AES_128_GCM_SHA256 (128/128 bits)
 	 key-exchange X25519 server-signature ECDSA (prime256v1) server-digest SHA256)
 	(No client certificate requested)
-	by smtp.subspace.kernel.org (Postfix) with ESMTPS id 754C1606A32A;
-	Mon, 16 Nov 2026 08:04:29 +0000 (UTC)
-DMARC-Filter: OpenDMARC Filter v1.4.2 smtp.subspace.kernel.org 754C1606A32A
-Authentication-Results: smtp.subspace.kernel.org; dmarc=pass (p=none dis=none) header.from=realtek.com
-Authentication-Results: smtp.subspace.kernel.org; spf=pass smtp.mailfrom=realtek.com
+	by smtp.subspace.kernel.org (Postfix) with ESMTPS id 8C364606A32F
+	for <linux-wireless@vger.kernel.org>; Mon, 16 Nov 2026 08:06:55 +0000 (UTC)
+DMARC-Filter: OpenDMARC Filter v1.4.2 smtp.subspace.kernel.org 8C364606A32F
+Authentication-Results: smtp.subspace.kernel.org; dmarc=pass (p=none dis=none) header.from=linux.dev
+Authentication-Results: smtp.subspace.kernel.org; spf=pass smtp.mailfrom=linux.dev
 Authentication-Results: smtp.subspace.kernel.org;
-	dkim=pass (2048-bit key) header.d=realtek.com header.i=@realtek.com header.a=rsa-sha256 header.s=dkim header.b=pXTtTy5T
-X-SpamFilter-By: ArmorX SpamTrap 5.80 with qID 6AG84OtcC3236066, This message is accepted by code: ctloc85258
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=realtek.com; s=dkim;
-	t=1794816264; bh=G8pmM3gxjKjpm+02Wdq+NqXN+xecKR+TNl0hK4Vnze8=;
-	h=From:To:CC:Subject:Date:Message-ID:References:In-Reply-To:
-	 Content-Type:Content-Transfer-Encoding:MIME-Version;
-	b=pXTtTy5TWoH2TW7Fnjx/86UrPVyEh6DzlAtzg5GSDrRLIJ4HwPXLqdisRtm2rMsII
-	 raJdv2KgdZsBWp2l/zCnlpq/By1yD2Gt986viMDew6eEIj+P3UGClyHeL1YBo5pYcQ
-	 /uUcigRuGXiL+cXD1JAVOk9vGfI/3M48mtuV1976w3oXC6HhJKuNQTrIFxx33rpwNB
-	 GXmwW3JKyAvNrRZnyV9rSKjyhVwlGXC9AYL7teGMYa1/3yD3VmoTkVycBsKSrwIEps
-	 GvbvbVJDDXQQOaVAH+WAgAn5EFyPn6i7L/TAOBWvli2VnRsVtQxav9tMXwrem7Spv0
-	 dQTfEPXJ2lSHw==
-Received: from mail.realtek.com (rtkexhmbs03.realtek.com.tw[10.21.1.53])
-	by rtits2.realtek.com.tw (8.15.2/3.29/5.94) with ESMTPS id 6AG84OtcC3236066
-	(version=TLSv1.2 cipher=ECDHE-RSA-AES256-GCM-SHA384 bits=256 verify=FAIL);
-	Mon, 16 Nov 2026 16:04:24 +0800
-Received: from RTKEXHMBS06.realtek.com.tw (10.21.1.56) by
- RTKEXHMBS03.realtek.com.tw (10.21.1.53) with Microsoft SMTP Server
- (version=TLS1_2, cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id
- 15.2.2562.56; Mon, 16 Nov 2026 16:04:22 +0800
-Received: from RTKEXHMBS06.realtek.com.tw ([fe80::eeeb:c765:ca73:5eef]) by
- RTKEXHMBS06.realtek.com.tw ([fe80::eeeb:c765:ca73:5eef%10]) with mapi id
- 15.02.2562.056; Mon, 16 Nov 2026 16:04:22 +0800
-From: Ping-Ke Shih <pkshih@realtek.com>
-To: Zhao Li <enderaoelyther@gmail.com>
-CC: Bernie Huang <phhuang@realtek.com>, "linux-wireless@vger.kernel.org"
-	<linux-wireless@vger.kernel.org>, "linux-kernel@vger.kernel.org"
-	<linux-kernel@vger.kernel.org>
-Subject: RE: [PATCH] wifi: rtw89: update PN state only from correctly
- decrypted frames
-Thread-Topic: [PATCH] wifi: rtw89: update PN state only from correctly
- decrypted frames
-Thread-Index: AQHddSbhzzSjuCVzmU+SpIqpEQhOrrcwVydA
-Date: Mon, 16 Nov 2026 08:04:21 +0000
-Message-ID: <9b6df144207a4427bc63959a064f6a22@realtek.com>
-References: <20261115172754.35124-1-enderaoelyther@gmail.com>
-In-Reply-To: <20261115172754.35124-1-enderaoelyther@gmail.com>
-Accept-Language: en-US, zh-TW
-Content-Language: zh-TW
-Content-Type: text/plain; charset="us-ascii"
-Content-Transfer-Encoding: quoted-printable
+	dkim=pass (1024-bit key, unprotected) header.d=linux.dev header.i=@linux.dev header.a=rsa-sha256 header.s=key1 header.b=YS7RHOwA
+X-Envelope-To: linux-wireless@vger.kernel.org
+DKIM-Signature: a=rsa-sha256; bh=mXEm4ni7IMYJDYClmIxXaOLYx9r6MmPpSBwKJoKyoGg=;
+ c=simple/simple; d=linux.dev;
+ h=from:to:subject:date:message-id:mime-version:content-type; s=key1;
+ t=1794816413; v=1; x=1795421213;
+ b=YS7RHOwAubclZJWRLzxzjt9qv3Td5KTpEb61nrPdiuDnrAUkqDxfHGJwPYnjdDcZSuEY83+j
+ 2zQRf5ThYhCwY+hJOPxKM62lCMAzLqHA5950YZ4di5U2avmx+JWYxGs8qmgmQ+Fd7tzvn/EPA31
+ zwckg7aBml682T09GOlOQEMA=
+X-Envelope-To: linux-wireless@vger.kernel.org
+Received: by smtp.migadu.com with ESMTPS id 49a111c8c3a0b835;
+	Mon, 16 Nov 2026 08:06:53 +0000
+X-Mizu-Trace-ID: 49a111c8c3a0b835
+X-Migadu-Flow: FLOW_OUT
+Date: Mon, 16 Nov 2026 09:06:48 +0100
+From: Luka Gejak <luka.gejak@linux.dev>
+To: Jie Feng <hjf3108@gmail.com>
+CC: Ping-Ke Shih <pkshih@realtek.com>, linux-wireless@vger.kernel.org,
+ linux-kernel@vger.kernel.org, Bitterblue Smith <rtl8821cerfe2@gmail.com>
+Subject: =?US-ASCII?Q?Re=3A_=5BPATCH_rtw-next_v4_1/7=5D_wifi=3A_rtw88=3A_88?=
+ =?US-ASCII?Q?12a=2C_8814a=3A_enable_STBC_for_HT_transmissions?=
+In-Reply-To: <CABOQOSU4Oebap-U=6oGa_VQsZwm4szumK93XFJ__w0Q4f25=iQ@mail.gmail.com>
+References: <20261115114336.1739863-1-hjf3108@gmail.com> <20261115114336.1739863-2-hjf3108@gmail.com> <56FC313D-ADEF-48B2-BBF5-A4DFAC129C3A@linux.dev> <CABOQOSU4Oebap-U=6oGa_VQsZwm4szumK93XFJ__w0Q4f25=iQ@mail.gmail.com>
+Message-ID: <4E88B598-B337-49A2-92E5-AE122A6B1D85@linux.dev>
 X-Mailing-List: linux-wireless@vger.kernel.org
 List-Id: <linux-wireless.vger.kernel.org>
 List-Post: <mailto:linux-wireless@vger.kernel.org>
@@ -83,33 +66,48 @@ List-Unsubscribe: <mailto:linux-wireless+unsubscribe@vger.kernel.org>
 List-Owner: <mailto:linux-wireless+owner@vger.kernel.org>
 Precedence: list
 MIME-Version: 1.0
+Content-Type: text/plain;
+ charset=utf-8
+Content-Transfer-Encoding: 8bit
 
-Zhao Li <enderaoelyther@gmail.com> wrote:
-> diff --git a/drivers/net/wireless/realtek/rtw89/core.c b/drivers/net/wire=
-less/realtek/rtw89/core.c
-> index 58ee5efc3b5e..a173253d51ff 100644
-> --- a/drivers/net/wireless/realtek/rtw89/core.c
-> +++ b/drivers/net/wireless/realtek/rtw89/core.c
-> @@ -3950,7 +3950,8 @@ static bool rtw89_core_skb_pn_valid(struct rtw89_de=
-v *rtwdev,
->         if (!ieee80211_is_data_qos(hdr->frame_control))
->                 return true;
->=20
-> -       if (!desc_info->hw_dec || !desc_info->addr1_match)
-> +       if (!desc_info->hw_dec || desc_info->sw_dec || desc_info->icv_err=
- ||
-> +           desc_info->crc32_err || !desc_info->addr1_match)
+On November 16, 2026 7:54:02 AM GMT+01:00, Jie Feng <hjf3108@gmail.com>
+wrote:
+>On Sun, 15 Nov 2026 at 05:35, Luka Gejak <luka.gejak@linux.dev> wrote:
+>>
+>> Hi Jie Feng,
+>>
+>> Thanks for the update. Two comments below.
+>>
+>> On November 15, 2026 12:43:27 PM GMT+01:00, Ho Jie Feng
+><hjf3108@gmail.com>
+>> wrote:
+>>
+>> > 8812a and 8814a support STBC, enable it.
+>>
+>> Could you mention here that this enables HT TX STBC on these chips? As
+>> far as I can see, VHT TX STBC was already advertised when more than one
+>RF
+>> path is available, so that would make the scope clearer.
+>The commit subject line already mentions HT explicitly, do you think
+>it will be better
+>to put it again in the description too?
 
-This patch is OK to me, but can you keep existing two conditions unchanged?
-Just add three new conditions.=20
+The subject makes the HT scope clear. I think it would still help to
+explain that these chips already advertised VHT TX STBC but did not
+advertise it for HT. That would give the change a little more context.
 
-Or any reason you want move addr1_match to be the last one?
+>
+>> [ ... ]
+>>
+>> > Tested on RTL8812AU, STBC packets were captured in monitor mode.
+>>
+>> Were these HT transmissions from the RTL8812AU, for example on 2.4 GHz
+>> or with an HT only AP? As far as I can see, we already advertise VHT TX
+>> STBC on this chip, so a VHT capture would not confirm the change here.
+>Yes it is a HT only AP, I see HT STBC packets in the capture.
+>
 
->                 return true;
->=20
->         guard(rcu)();
->=20
-> base-commit: 5dbf2415ca9821a611d09308e3b29d2c37e7cd77
-> --
-> 2.56.1
+Thanks, that answers my question.
 
+Best regards,
+Luka Gejak
