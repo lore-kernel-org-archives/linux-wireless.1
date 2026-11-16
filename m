@@ -1,83 +1,93 @@
-Authentication-Results: smtp.subspace.kernel.org; arc=none smtp.remote-ip=211.75.126.72
+Authentication-Results: smtp.subspace.kernel.org; arc=none smtp.remote-ip=209.85.160.179
 ARC-Seal: i=1; d=subspace.kernel.org; s=arc20261015; a=rsa-sha256; cv=none;
-	t=1794795651;
-	b=jCEXA3PxeFI3eQPSbymzJ2CP744NGEzOg7sqlzUktSHrJG7I5oGtgXewxGS0q8RTOTBy
-	 wt5YUOe9/vlysJxfUuVe/HkyGhrSG3FDELqE4XWNDi7H9ORmVJmZLsRYo7nF9hqqvFVLo
-	 Bv/wdp8+7qQ1lx2EYVzukvVyptQV6FVaGgk9D3KeK1vOw6vRtOgfC+NWEAw7kacsp6Vef
-	 ZDtHrKzzC/FNoj+rhogCbP9toH44XoMg807L9CPoPqXitqIHeBJ/CSu32y4lPDeHzbS2s
-	 5EAo1i+07UEsRWSyrd3zhEuwfs3+h0CYAwRoc8BqP9nI7r5OJMTtexjC33CwEwm3hgA==
+	t=1794796505;
+	b=Z9n4RlbrhWz/7vU5Cyl/1lt0WpfxeEc7DltXJvEPwhzRMpXb9asGevirUt3X4L6x7Ubg
+	 ySz46cxBr456ixvQo43Pw2wl0ia0F2/FT5U5mCdDilnR9kcWgKhNO/1SrjJUBh4oFWg1n
+	 X7GSje+B3kX+O90CHaReW8LeVJrJ3BU7MNuqr6VxK633TiVfVVfVAHiBV5FJnY+Pw/tBf
+	 YXB75kVe5e7WoRLSQcTpq/wIUc8D2ZDMKt0vB/MVw/DOciVNCv4DCBXprPoUX6JNvBkV/
+	 mC6fxgU/a0jLNTeW7qdTzvA9dTJVLFdt3Sih9LhoijUBqi3QHwMx3eAlZZCaqJbXQoA==
 ARC-Message-Signature: i=1; d=subspace.kernel.org; s=arc20261015;
-	a=rsa-sha256; c=relaxed/relaxed; t=1794795651;
-	h=DMARC-Filter:X-SpamFilter-By:DKIM-Signature:Received:Received:
-	 Received:Received:From:To:CC:Subject:Thread-Topic:Thread-Index:Date:
-	 Message-ID:References:In-Reply-To:Accept-Language:Content-Language:
-	 x-originating-ip:Content-Type:Content-Transfer-Encoding:MIME-Version;
-	bh=Yu5wfLvEo2m1zglmmpHehCmVeDANNMLd7GBTNsOJmlM=;
-	b=x2ZDkO4aeGI2it24W8VM0rZPuwY7CpaGtrkWXG0eC7fRx9F3K7/fDo/tUBLmrtmqXS1z
-	 33leef4cTcfF1HVBmeClPG++zo35F7Ogng5rNkG3nM+gXohacgfJtTg4Jv8UXh2n93xPE
-	 Qghg4cnBi5Tcd5OemhGtAg17i4MuVp/oPlPjEpkvdTBRD4pYcaphZVCVbrvKt2WPAAA+H
-	 cwdEIK2wOaps3IYjxvE91tbQ5xabKSQHrd7z4hz/OEZWPN1qo2M8ErNOBVJCED5GqBRrH
-	 vQFU4k1BYK4zVFbj2Ie1mjkCKNvWclvyHK7moEbbLQdKNlksoInFxNYOT1Vcr10QkPA==
+	a=rsa-sha256; c=relaxed/relaxed; t=1794796505;
+	h=DMARC-Filter:Received:DKIM-Signature:X-Google-DKIM-Signature:
+	 X-Forwarded-Encrypted:X-Gm-Message-State:X-Gm-Gg:X-Received:Received:
+	 From:To:Cc:Subject:Date:Message-ID:X-Mailer:MIME-Version:
+	 Content-Transfer-Encoding;
+	bh=+30GbQt49RMaQZxcPWjKgejVf+ly98xtC7JnE7Ukrtg=;
+	b=32TlJzPlXoTVHG6mPvPJigZZeulsgKGn3ZwdAFQwLN3ormlw7GTZUEj9fDCM12u8Y9OT
+	 JPRtrU/qwDCdb5du+Qhp1d1T5OAwZdek6xbhZoQGO1vZGP4ZRWTT4Akut0Q7yZzBeIOem
+	 8SSw0/I+Lay5Bcb4Fkc6JyPdeDygT1EvniB6njbrFSqqWbS1YHFuQjdvrYkWDrZcKgS4r
+	 HN5sl6xyePuknLQDaKO0ynT6gkOjruknzrEC2uA6m2pdAUmUNfaSC6PSeWIb4yE2VqGps
+	 Cswm6Ev3FFTzqHaW0cP4OCRu8Xv4TWamoLhlHVI1rFa7O3mXWpaN3FojZ/2gAo2DSFQ==
 ARC-Authentication-Results: i=1; smtp.subspace.kernel.org; 
-	dmarc=pass header.from=realtek.com;
-	spf=pass smtp.mailfrom=realtek.com;
-	dkim=pass header.d=realtek.com header.i=@realtek.com header.a=rsa-sha256 header.s=dkim header.b=agWcaB13;
-	arc=none smtp.remote-ip=211.75.126.72
-Received: from rtits2.realtek.com.tw (rtits2.realtek.com [211.75.126.72])
-	(using TLSv1.3 with cipher TLS_AES_256_GCM_SHA384 (256/256 bits)
+	dmarc=pass header.from=gmail.com;
+	spf=pass smtp.mailfrom=gmail.com;
+	dkim=pass header.d=gmail.com header.i=@gmail.com header.a=rsa-sha256 header.s=20260707 header.b="O1T/RW2g";
+	arc=none smtp.remote-ip=209.85.160.179
+Received: from mail-qt1-f179.google.com (mail-qt1-f179.google.com [209.85.160.179])
+	(using TLSv1.3 with cipher TLS_AES_128_GCM_SHA256 (128/128 bits)
 	 key-exchange X25519 server-signature ECDSA (prime256v1) server-digest SHA256)
 	(No client certificate requested)
-	by smtp.subspace.kernel.org (Postfix) with ESMTPS id E1A4A606A31C;
-	Mon, 16 Nov 2026 02:20:50 +0000 (UTC)
-DMARC-Filter: OpenDMARC Filter v1.4.2 smtp.subspace.kernel.org E1A4A606A31C
-Authentication-Results: smtp.subspace.kernel.org; dmarc=pass (p=none dis=none) header.from=realtek.com
-Authentication-Results: smtp.subspace.kernel.org; spf=pass smtp.mailfrom=realtek.com
+	by smtp.subspace.kernel.org (Postfix) with ESMTPS id 5584C606A323
+	for <linux-wireless@vger.kernel.org>; Mon, 16 Nov 2026 02:35:05 +0000 (UTC)
+DMARC-Filter: OpenDMARC Filter v1.4.2 smtp.subspace.kernel.org 5584C606A323
+Authentication-Results: smtp.subspace.kernel.org; dmarc=pass (p=none dis=none) header.from=gmail.com
+Authentication-Results: smtp.subspace.kernel.org; spf=pass smtp.mailfrom=gmail.com
 Authentication-Results: smtp.subspace.kernel.org;
-	dkim=pass (2048-bit key) header.d=realtek.com header.i=@realtek.com header.a=rsa-sha256 header.s=dkim header.b=agWcaB13
-X-SpamFilter-By: ArmorX SpamTrap 5.80 with qID 6AG2KilgE2951396, This message is accepted by code: ctloc85258
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=realtek.com; s=dkim;
-	t=1794795644; bh=Yu5wfLvEo2m1zglmmpHehCmVeDANNMLd7GBTNsOJmlM=;
-	h=From:To:CC:Subject:Date:Message-ID:References:In-Reply-To:
-	 Content-Type:Content-Transfer-Encoding:MIME-Version;
-	b=agWcaB13HfB2wzwRPoxLZw63rCXhDuZpLyXvDZ5XQIQkCWC/PGArspMCTQRXyRrOo
-	 d2TKGmW/VOnAZqY4iYG4Jtfw5z48EqGCirlZwLKn4/M4sQ7P4WUpg6t2/+Bzd/3kpZ
-	 Vi1G5BHLCwdHalynNgNdDv3ydYFdsQvEzperSaZtvFZ6mB8Yh2yrR2SKTqyPD+pit6
-	 LDSYGHp1aaRxCZIeh3/CBCHESQA5bcBqeJLhEb5dZy6FEGQVn7nCTKLwQT312b8AlG
-	 W5y+rtej5puLVRtb8SSM4p+mtUfI/tQIdGTIOz6K/XpN3rjLN8mRbw/gyzeTIKCyom
-	 NUy5wWtxXM+Eg==
-Received: from mail.realtek.com (rtkexhmbs02.realtek.com.tw[172.21.6.41])
-	by rtits2.realtek.com.tw (8.15.2/3.29/5.94) with ESMTPS id 6AG2KilgE2951396
-	(version=TLSv1.2 cipher=ECDHE-RSA-AES256-GCM-SHA384 bits=256 verify=FAIL);
-	Mon, 16 Nov 2026 10:20:44 +0800
-Received: from RTKEXHMBS01.realtek.com.tw (172.21.6.40) by
- RTKEXHMBS02.realtek.com.tw (172.21.6.41) with Microsoft SMTP Server
- (version=TLS1_2, cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id
- 15.2.2562.56; Mon, 16 Nov 2026 10:20:42 +0800
-Received: from RTKEXHMBS06.realtek.com.tw (10.21.1.56) by
- RTKEXHMBS01.realtek.com.tw (172.21.6.40) with Microsoft SMTP Server
- (version=TLS1_2, cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id
- 15.2.2562.56; Mon, 16 Nov 2026 10:20:40 +0800
-Received: from RTKEXHMBS06.realtek.com.tw ([fe80::eeeb:c765:ca73:5eef]) by
- RTKEXHMBS06.realtek.com.tw ([fe80::eeeb:c765:ca73:5eef%10]) with mapi id
- 15.02.2562.056; Mon, 16 Nov 2026 10:20:40 +0800
-From: Ping-Ke Shih <pkshih@realtek.com>
-To: Enver Ikromov <owner@ph4ntom-rev.uz>
-CC: "linux-wireless@vger.kernel.org" <linux-wireless@vger.kernel.org>,
-	"linux-kernel@vger.kernel.org" <linux-kernel@vger.kernel.org>
-Subject: RE: [PATCH rtw-next v5 08/10] wifi: rtw89: skip host-side TX hooks
- for injected frames
-Thread-Topic: [PATCH rtw-next v5 08/10] wifi: rtw89: skip host-side TX hooks
- for injected frames
-Thread-Index: AQHdc8qmn0XT5xN44UOv5dy82T3xC7cv+VDg
-Date: Mon, 16 Nov 2026 02:20:40 +0000
-Message-ID: <6d14ce5428da43378c19fa56c1755c6e@realtek.com>
-References: <20261113235211.1911-1-owner@ph4ntom-rev.uz>
- <20261113235211.1911-9-owner@ph4ntom-rev.uz>
-In-Reply-To: <20261113235211.1911-9-owner@ph4ntom-rev.uz>
-Accept-Language: en-US, zh-TW
-Content-Language: zh-TW
-Content-Type: text/plain; charset="us-ascii"
-Content-Transfer-Encoding: quoted-printable
+	dkim=pass (2048-bit key) header.d=gmail.com header.i=@gmail.com header.a=rsa-sha256 header.s=20260707 header.b=O1T/RW2g
+Received: by mail-qt1-f179.google.com with SMTP id d75a77b69052e-5361e313e63so45214011cf.3
+        for <linux-wireless@vger.kernel.org>; Sun, 15 Nov 2026 18:35:05 -0800 (PST)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+        d=gmail.com; s=20260707; t=1794796504; x=1795401304; darn=vger.kernel.org;
+        h=content-transfer-encoding:mime-version:message-id:date:subject:cc
+         :to:from:from:to:cc:subject:date:message-id:reply-to:content-type;
+        bh=+30GbQt49RMaQZxcPWjKgejVf+ly98xtC7JnE7Ukrtg=;
+        b=O1T/RW2gTXx4anSr+Sd6NniszdjK7SXAZfXCoJRntf+SMTcmG57/3zTxXRTXC4uB6n
+         dQ5MfWwtVFhRLp94mePLJrZ2N8AKvJgAlSDA39Ef3Jp2IIDX8sB/VvTvmrN4ySvf2FMR
+         hg1j6vQSdJ6m4Ui7mmJy93E8cMSnnRfIJg1AoT879CBOepsk71N304AbPi+7YqIqqz1p
+         zK76Trq/c3r8fa0178lDDf2KPjG25/nRF63xEw8ET0qPeGRHwEJ9iSzg0/pYK22zH1bh
+         U/vjzL8aCQcpTS3NBh/1Nl10pbsevl5AcvaGFf5cOrRDfKP75zkmOOptzNVGRr8NMR3E
+         wTxg==
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+        d=1e100.net; s=20260707; t=1794796504; x=1795401304;
+        h=content-transfer-encoding:mime-version:message-id:date:subject:cc
+         :to:from:x-gm-gg:x-gm-message-state:from:to:cc:subject:date
+         :message-id:reply-to:content-type;
+        bh=+30GbQt49RMaQZxcPWjKgejVf+ly98xtC7JnE7Ukrtg=;
+        b=Ijzvj+rhbAj0oEZcly6fchXGEuZHwtO3jfnbuvHNM2M+8QoQ51M+Et/RVbvyP8gcOB
+         ixKi+hle9IefV0K3UYo080uvrddcOMgcP/fyCKOguWf4wcygqe7fMvD5QiWE2xSlBoqC
+         05u5/e5TpCg8MFHP7oVdjzA4IwTQlV5HiLnvF7JwtciXyNwwQDYkDUl0/xFPMr3nq7UJ
+         egIVJp3x9LKQ9Jw4qK02YLjsL12Zip5y87xzA4t7O08OyMggodjg9rLq7kkvFhUCUjdI
+         skdk27Aty7zbrs6OSByiRwga4NTXqrM1P12M3qphCrFl1yzX0S838tfC99LRAxCJegTO
+         C/Sg==
+X-Forwarded-Encrypted: i=1; AL+hErG5XQwal8BGccHcEEDKeKnr+hDVK2cCuRaWBIQMvwcj5tOeVfJ0alnobnP31pMmQ9oekm9n4YB8RTaR7xnDrQ==@vger.kernel.org
+X-Gm-Message-State: APuU4Z8p4wUG8qkmu4sNmQGb3R9zuIpsFYq8UbIV5Tcx4f3k3R5Otn16
+	BELQ95TDEjoXOrG1U9xOvV0c4hHmfcsfkTW7m1XNrt5H/6PKfb4bT2ysCNU2EThg
+X-Gm-Gg: AYBFou3JXHUgClhvSMpmO/aPLhxkgK6sdnztnGT4nPJgWBM9Ob8B8OtPf6pfxbNnbxn
+	LPqWVleqz8sjH5/L2EhANrBn2FqxYDKrzq4XgTEypt7df4iYBGZu+IPqbFtkFrEDWekbaTR5UMF
+	/93wwyq6J+WsP52EepyCn19FvENy/Ize6EKU+8jyxx6MjDJRm45BXVFngP9iJuV3STHD4DNGCuH
+	YL84LYJaOpc89GG2lHzgux84gE10/gYs3RE1ySBR7IutccjYCpHo6vWE6EsMh699czLwnAYUqrA
+	ukoQT4KJPVdV4jwKIfH1igk1RFsvNlc/rof6KYR+YX5VmkfqkcPqmXg+xbfmpXrdDMcm1dNU05l
+	a/XgZgZ7jr0yAcWQo+BbHq7hBUcWZ43UkAqgRzaJu9grZ/lZIIAPK9sOHJa75j+plBKMegxN7Z7
+	73PbgvGNboZajfnOTSnP+1348z5f8IlCDCc0Leb73U1UeInR32ydXIS8jGaH0YCCLHbzYAY836X
+	9hG1+X304ZbAh3C9uNI6h2WNw8N6OaLjFb4QmCapKZ+cAV/QK0H+WTe8ISYO/4QtyL5aXPhmqHg
+	Qwi7IQNIV8a6vYuSGmoej4XPJmvSBxST2Nm4w5B3zYN8J34QVR229gByiM7PV3ZK12U3QCi51Dw
+	=
+X-Received: by 2002:ac8:6f13:0:b0:55d:3789:8c8e with SMTP id d75a77b69052e-55d37898ed8mr37604981cf.15.1794796504192;
+        Sun, 15 Nov 2026 18:35:04 -0800 (PST)
+Received: from linux.. ([8.34.174.240])
+        by smtp.gmail.com with ESMTPSA id d75a77b69052e-55ad1b11d9csm72535261cf.28.2026.11.15.18.35.03
+        (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
+        Sun, 15 Nov 2026 18:35:03 -0800 (PST)
+From: Changyul Lee <lcy8047@gmail.com>
+To: Brian Norris <briannorris@chromium.org>
+Cc: Francesco Dolcini <francesco@dolcini.it>,
+	linux-wireless@vger.kernel.org,
+	linux-kernel@vger.kernel.org,
+	Changyul Lee <lcy8047@gmail.com>
+Subject: [PATCH wireless-next] wifi: mwifiex: hold ack_status_lock while freeing pending ack frames
+Date: Sun, 15 Nov 2026 21:35:00 -0500
+Message-ID: <20261116023500.577610-1-lcy8047@gmail.com>
+X-Mailer: git-send-email 2.43.0
 X-Mailing-List: linux-wireless@vger.kernel.org
 List-Id: <linux-wireless.vger.kernel.org>
 List-Post: <mailto:linux-wireless@vger.kernel.org>
@@ -87,24 +97,46 @@ List-Unsubscribe: <mailto:linux-wireless+unsubscribe@vger.kernel.org>
 List-Owner: <mailto:linux-wireless+owner@vger.kernel.org>
 Precedence: list
 MIME-Version: 1.0
+Content-Transfer-Encoding: 8bit
 
-Enver Ikromov <owner@ph4ntom-rev.uz> wrote:
-> Several TX hooks assume frames that were built by the local network
-> stack for an associated link:
->=20
-> - rtw89_traffic_stats_accu() and rtw89_core_tx_btc_spec_pkt_notify()
->   inspect ip_hdr()/udp_hdr(). For frames injected on a monitor
->   interface the network header points into the 802.11 header, so
->   traffic statistics and BT-coexistence notifications are derived
->   from unrelated bytes.
-> - rtw89_wow_parse_akm() records the AKM from (Re)Association Request
->   frames for WoWLAN, which an injected frame must not change.
-> - rtw89_core_tx_update_he_qos_htc(), rtw89_core_tx_update_ampdu_info(),
->   and rtw89_core_txq_check_agg() mutate QoS/HTC headers, enable A-MPDU
->   aggregation, or start/stop BA sessions based on link state, while
->   injected frames are expected to be sent as supplied.
+mwifiex_clean_txrx() frees the frames left in priv->ack_status_frames
+and destroys the IDR without ack_status_lock. It runs on every
+disconnect from the event work, while mwifiex_clone_skb_for_tx_status()
+can still add an entry from the mgmt TX or data TX path. idr_destroy()
+then drops the new entry and leaks its skb, and idr_alloc() can write
+to a node that idr_destroy() has already passed to call_rcu().
 
-If these are harmless to inject in single one monitor interface.
-I prefer not applying these changes.=20
+Hold ack_status_lock around both calls, as the other users of the IDR
+do.
 
+Fixes: 808bbebcc8fc ("mwifiex: add Tx status support for EAPOL packets")
+Signed-off-by: Changyul Lee <lcy8047@gmail.com>
+---
+Found with a static analysis tool we are developing.
+
+Compile-tested only, with x86_64_defconfig plus MWIFIEX_SDIO,
+MWIFIEX_PCIE, MWIFIEX_USB and W=1.
+
+ drivers/net/wireless/marvell/mwifiex/wmm.c | 2 ++
+ 1 file changed, 2 insertions(+)
+
+diff --git a/drivers/net/wireless/marvell/mwifiex/wmm.c b/drivers/net/wireless/marvell/mwifiex/wmm.c
+index 841505e83c7f..b889a58c7f6c 100644
+--- a/drivers/net/wireless/marvell/mwifiex/wmm.c
++++ b/drivers/net/wireless/marvell/mwifiex/wmm.c
+@@ -611,8 +611,10 @@ mwifiex_clean_txrx(struct mwifiex_private *priv)
+ 	}
+ 	atomic_set(&priv->adapter->bypass_tx_pending, 0);
+ 
++	spin_lock_bh(&priv->ack_status_lock);
+ 	idr_for_each(&priv->ack_status_frames, mwifiex_free_ack_frame, NULL);
+ 	idr_destroy(&priv->ack_status_frames);
++	spin_unlock_bh(&priv->ack_status_lock);
+ }
+ 
+ /*
+
+base-commit: 7475ea8b58616b33c04afb976cf0fbaad9dd63fb
+-- 
+2.43.0
 
