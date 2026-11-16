@@ -1,99 +1,79 @@
-Authentication-Results: smtp.subspace.kernel.org; arc=none smtp.remote-ip=209.85.160.171
+Authentication-Results: smtp.subspace.kernel.org; arc=none smtp.remote-ip=211.75.126.72
 ARC-Seal: i=1; d=subspace.kernel.org; s=arc20261015; a=rsa-sha256; cv=none;
-	t=1794795044;
-	b=hiAkd8WJUM8YQGn73PVnqY5LkwRTWzNpeaf33+JAZXRiSJLFPC4l0fCSvYAoXpBg4FCc
-	 HnlVxMWOYRRzwaIceBdS1PK9lRTKrUktWP7FNFpH6FwPPPwsmLfSwJid8Z5CMUA9e0cbS
-	 mHEtiVPohxd8OjrGTmGHYuc9P9bYDWxmiBt5WsupWUpTZ5GEWbyTZuWxhcTorfY+SA74i
-	 Q45+hilmGe0ChtJHsXmV0CpFiIlkhh7BV7JoZfzjjeRBGMgPlZJ+lVKdvZAprIi+0Fzak
-	 ZM/VBVJCv8xDkUwjdx/bPzv8RgKjrSB5Jo7jxytf/+LUpmiBwK57zA9UdjKv+MOh3Qw==
+	t=1794795288;
+	b=FyD+OMt7ZxAXchwmlhr5h92bmsu+6jGlSIqa10EECUWVaezBjycv7Mto+foaIHrWYE+v
+	 zof2nTvK9CE783rUDvo2X0Hea65QD3J6x5bR4/VQJQuSEPeZs2TtmaBjZ2UY1ZmS93YTA
+	 pEryd1Vomea1hGzZw9PswXZUi/FuQ/qNxxbUrGHACPokp7cpOJ0dGT3XRNmIMfpjdpGWD
+	 P+iz/JUfK3TehRtg1Q1yt5OJf2Q9XjAlRvXSL6GcsGB2vaTvBXaU/0Y+wkCDhgoBrL7LS
+	 Kpe9sOqah8JUI8doEVm1LPgO+piUpTGALdBFPSsBQFjl/yZPX/iMGWgVFWaBHPtFFBg==
 ARC-Message-Signature: i=1; d=subspace.kernel.org; s=arc20261015;
-	a=rsa-sha256; c=relaxed/relaxed; t=1794795044;
-	h=DMARC-Filter:Received:DKIM-Signature:X-Google-DKIM-Signature:
-	 X-Forwarded-Encrypted:X-Gm-Message-State:X-Gm-Gg:X-Received:Received:
-	 From:To:Cc:Subject:Date:Message-ID:X-Mailer:MIME-Version:
-	 Content-Transfer-Encoding;
-	bh=O8E59MHyWwiA+wcCL4U828xtteetfn3cJcwAEEyfPtQ=;
-	b=blr8s2sbzfAih/ggdStSvM6gSv4bObYGyyGg8dkxfC817zvw7ppk1442PwYAF41kv/7C
-	 q5ag6JtlK7EdbeAXWZlr/IigY4akwSRAoYWJjInR9Qc20pTe5T8a42753Scaf10rAQ+Vn
-	 Jk2FuvXUEwfJ6y3OfDgumKt8/tB2s7GwbCE9ustYSLoOWZ/n9XZxY1pYMEOi4nfMRNCVL
-	 RuhV3/FDHysH40bXKDt+7KeOQX/vJSU3HxAvG/Gwn/rqTwfaLZHgEFnjnQUJbxvWzZMw/
-	 i6JqIjQ2Lf+udTXoQypaiYiup/IpTJWhO1qOpC8V1oAuipqKkcaOqx7OdMAfWT5bV9w==
+	a=rsa-sha256; c=relaxed/relaxed; t=1794795288;
+	h=DMARC-Filter:X-SpamFilter-By:DKIM-Signature:Received:Received:
+	 Received:From:To:CC:Subject:Thread-Topic:Thread-Index:Date:Message-ID:
+	 References:In-Reply-To:Accept-Language:Content-Language:
+	 x-originating-ip:Content-Type:Content-Transfer-Encoding:MIME-Version;
+	bh=864FAA6YweKAzn6YTHxoTvwaGejxMEO7rBi0aHeqezk=;
+	b=YfLlAC1CtBtj9L5T3E7gUrO1Blyo60u5S/waPQdWxF3xI5Uk+854194UGWJZUNJhp0+e
+	 HuNga6uls1qnE+aDgfsowouW6Yh1/b4P+icK4SsOoSSUpq/rfez9rdicop5X546bdQ7In
+	 /3i+nj4TwyyrT+sv7w1kOmNLsIX0NdrljEUawkIjYovefpvbTHMmEeOIGil8UWnBdZXp9
+	 5ikTaotoH2/ipb03AeaikEl6jnaF2RRA1S8REtsXkdy/kpVchuoWlpq548i0iTM7rHak9
+	 pzfxcs78u1Mn9A1jyaKRzABbhsjkDwcGtpEvp9wuSdamcyq43O1fOhxcye6FooIRYqg==
 ARC-Authentication-Results: i=1; smtp.subspace.kernel.org; 
-	dmarc=pass header.from=gmail.com;
-	spf=pass smtp.mailfrom=gmail.com;
-	dkim=pass header.d=gmail.com header.i=@gmail.com header.a=rsa-sha256 header.s=20260707 header.b=Jbqv4uHR;
-	arc=none smtp.remote-ip=209.85.160.171
-Received: from mail-qt1-f171.google.com (mail-qt1-f171.google.com [209.85.160.171])
-	(using TLSv1.3 with cipher TLS_AES_128_GCM_SHA256 (128/128 bits)
+	dmarc=pass header.from=realtek.com;
+	spf=pass smtp.mailfrom=realtek.com;
+	dkim=pass header.d=realtek.com header.i=@realtek.com header.a=rsa-sha256 header.s=dkim header.b=SK14jKxO;
+	arc=none smtp.remote-ip=211.75.126.72
+Received: from rtits2.realtek.com.tw (rtits2.realtek.com [211.75.126.72])
+	(using TLSv1.3 with cipher TLS_AES_256_GCM_SHA384 (256/256 bits)
 	 key-exchange X25519 server-signature ECDSA (prime256v1) server-digest SHA256)
 	(No client certificate requested)
-	by smtp.subspace.kernel.org (Postfix) with ESMTPS id 41C49606A31C
-	for <linux-wireless@vger.kernel.org>; Mon, 16 Nov 2026 02:10:44 +0000 (UTC)
-DMARC-Filter: OpenDMARC Filter v1.4.2 smtp.subspace.kernel.org 41C49606A31C
-Authentication-Results: smtp.subspace.kernel.org; dmarc=pass (p=none dis=none) header.from=gmail.com
-Authentication-Results: smtp.subspace.kernel.org; spf=pass smtp.mailfrom=gmail.com
+	by smtp.subspace.kernel.org (Postfix) with ESMTPS id 44040606A31C;
+	Mon, 16 Nov 2026 02:14:46 +0000 (UTC)
+DMARC-Filter: OpenDMARC Filter v1.4.2 smtp.subspace.kernel.org 44040606A31C
+Authentication-Results: smtp.subspace.kernel.org; dmarc=pass (p=none dis=none) header.from=realtek.com
+Authentication-Results: smtp.subspace.kernel.org; spf=pass smtp.mailfrom=realtek.com
 Authentication-Results: smtp.subspace.kernel.org;
-	dkim=pass (2048-bit key) header.d=gmail.com header.i=@gmail.com header.a=rsa-sha256 header.s=20260707 header.b=Jbqv4uHR
-Received: by mail-qt1-f171.google.com with SMTP id d75a77b69052e-55d2f5f1e26so10564201cf.3
-        for <linux-wireless@vger.kernel.org>; Sun, 15 Nov 2026 18:10:44 -0800 (PST)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=gmail.com; s=20260707; t=1794795043; x=1795399843; darn=vger.kernel.org;
-        h=content-transfer-encoding:mime-version:message-id:date:subject:cc
-         :to:from:from:to:cc:subject:date:message-id:reply-to:content-type;
-        bh=O8E59MHyWwiA+wcCL4U828xtteetfn3cJcwAEEyfPtQ=;
-        b=Jbqv4uHRQP54cdnuaL/Q/gZHnXBJRWgXPZVEdMzHxXrdSrN+ZbCCCz67AwbrZxpJm4
-         fGrpnwp8q3OyYuqYDrgABdKhzipJJOZ6xePz2HSPn0Ot4Xj4aVqZPec+sjv374uauMnk
-         Umb61gF2VZhReJ7iP47Lxha+w62hUf98FrmhbfCQH+o93Y83tYu0KES9RI8ICmKe2Gk+
-         XCAP6KoMXNADYt9wp/H/gf3UiDsAsngAwkXHmDVxRx01F5gfEj9lEvRoYFWco06hqbT1
-         sLFndp2zL7p4sF8JGXF8gxpKFAQSWGUldN+aXLNaPHoOsV87GZyGe3Gfsp8SNqIwqsYZ
-         9qYw==
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=1e100.net; s=20260707; t=1794795043; x=1795399843;
-        h=content-transfer-encoding:mime-version:message-id:date:subject:cc
-         :to:from:x-gm-gg:x-gm-message-state:from:to:cc:subject:date
-         :message-id:reply-to:content-type;
-        bh=O8E59MHyWwiA+wcCL4U828xtteetfn3cJcwAEEyfPtQ=;
-        b=SI2OVE9Iav00t77I1WLQm9tkjeOln0Dh639WI7up5AMAdGpcsxV+EqwT1xmGqEipje
-         w8xp1IOKj8oA+DSKQYy/64eHmhMayz6lwe69zslBLF6xyQqqdkMkDGppYl04drU+Hglb
-         ZHHyuWqxGznXj8mczEoalmquNzkF2iz6Q1K7J+N2yeyUp+z3h5m0RPesVP1lLnHU4SDx
-         GMZxHxqUE2pPcFQnj8rSsS/mz5EQ8PyrsxhXAUm4vwu2by6wys/pSXlmEV6mW2bdrIvu
-         TduYLqSkzOpvTRyNYl7XiodW6cKAIUsNiyeGU83ulepr22+orCKm+E0J4IcJ1tCCym4w
-         sfpw==
-X-Forwarded-Encrypted: i=1; AL+hErG6nftwVS7h3DuchnEMWOPLRLiFuex6DideHODWP280Egs5Kuafv/oaT3XibMxY9AXCcFbY4X8Cbl01qAr6vg==@vger.kernel.org
-X-Gm-Message-State: APuU4Z+JSyScJdlP9nl03jA/3isA72PHAoxW2Nj8GLiQl7ADdLc7Rspy
-	oZT9Fp/dOeNjVOYqkv3MwpyCgy2vKATweTU185SybxDCcyQv3OHJvC+1
-X-Gm-Gg: AYBFou04y6BKc0R3/EiJpytx1EtRSgAVnPq+iepQzF5PU020R4n/1BgtzPP+UBwZIMK
-	p24a3gAoK4x9IKZ6VXssonS7MfM3sqAys2x4YqP8wR7yj3FNipZ6r8hQ/bEcocqTuOEuifTh+ym
-	29k1YPzGluDhtAECEKT7z7Wm3wrWytbTFWL4VfQxwWpnrSRj/hdreRjdGIi4Oec4YUovCAb7pY5
-	dlPK6WOHOOQCcY0y0EIRnsi5RhQAzSWv3oOnEgW2ffIZeOYqWMYJJyZxmX+sJBhs23fVQWarrgN
-	qlIL6aX5sWbCf0lDQbDsXAusxTYuN9J341zFvvB0b+KIxyLxYuuGgBrImChxBEY+3lLMPJ3LTCn
-	ed02SpMhTo5LVSON18DxTiB9f+PiTd2FpPEyWqVvl/8M0qizw/HOYpyuZnG7Yx726ajPzWlmGDw
-	/aBvtEv4H1GVXjV0pb/9YILcgr5P+82kPs71k9RY9erk9UQpYfT4mFqCYq8hyKy+RXE04hhbZ9q
-	ZH1gs7QwjjycBEWKHSqzoHSGGqAlK588PSGkVOAuFcjFBy4c6NKUPZcWp65JL08ab0T3GATfwOR
-	v01BbhCX5F/glmC1S4wMELvca5LpgaB8ezso34DmE7Mex7pG98PZTvFyN3Bw27PCVhEjHEYwRlA
-	=
-X-Received: by 2002:a05:622a:14ce:b0:55d:30f5:34f6 with SMTP id d75a77b69052e-55d30f560f8mr60276151cf.37.1794795043056;
-        Sun, 15 Nov 2026 18:10:43 -0800 (PST)
-Received: from linux.. ([8.34.174.240])
-        by smtp.gmail.com with ESMTPSA id d75a77b69052e-55d34a139f6sm22083541cf.22.2026.11.15.18.10.42
-        (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
-        Sun, 15 Nov 2026 18:10:42 -0800 (PST)
-From: Changyul Lee <lcy8047@gmail.com>
-To: Jeff Johnson <jjohnson@kernel.org>
-Cc: Baochen Qiang <baochen.qiang@oss.qualcomm.com>,
-	Sriram R <sriram.ramachandran@oss.qualcomm.com>,
-	Vasanthakumar Thiagarajan <vasanthakumar.thiagarajan@oss.qualcomm.com>,
-	Praneesh P <praneesh.p@oss.qualcomm.com>,
-	Jiale Yao <yaojiale02@163.com>,
-	linux-wireless@vger.kernel.org,
-	ath12k@lists.infradead.org,
-	linux-kernel@vger.kernel.org,
-	Changyul Lee <lcy8047@gmail.com>,
-	Rameshkumar Sundaram <rameshkumar.sundaram@oss.qualcomm.com>
-Subject: [PATCH ath-next] wifi: ath12k: hold txmgmt_idr_lock while freeing pending mgmt frames
-Date: Sun, 15 Nov 2026 21:10:37 -0500
-Message-ID: <20261116021037.538128-1-lcy8047@gmail.com>
-X-Mailer: git-send-email 2.43.0
+	dkim=pass (2048-bit key, unprotected) header.d=realtek.com header.i=@realtek.com header.a=rsa-sha256 header.s=dkim header.b=SK14jKxO
+X-SpamFilter-By: ArmorX SpamTrap 5.80 with qID 6AG2Eb5mA2947241, This message is accepted by code: ctloc85258
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=realtek.com; s=dkim;
+	t=1794795278; bh=864FAA6YweKAzn6YTHxoTvwaGejxMEO7rBi0aHeqezk=;
+	h=From:To:CC:Subject:Date:Message-ID:References:In-Reply-To:
+	 Content-Type:Content-Transfer-Encoding:MIME-Version;
+	b=SK14jKxORCRku2AGcmZrmv+TAOgrXa1dxENsD4EfAlPNud2Ff40IfOUkf6SZ6sD/J
+	 cy7X4WHGa2yCG4wUtr/TOZcmcmouLg13zI4lPQ+Xhdx+hO9qajiCe6gX7rzeucFqJB
+	 hlJpFB6tkkHkURjs5MiZAr608mdcsgVt2YyeG5k5g8QAvcEmaZEsa1zw3gMtnvpc0d
+	 +b1Aj/GR/eaZG62jso7rrA2uJWJzuDAZ/XOYduy6Bsnf//V0z/KjLVXt0ijhgCkERk
+	 BtlBcC5mFpjRgDSFe8hgfje2hkOZQ3C9i+aAHKEDDNcoRooPfJu5l4ai0Y/wki7dcv
+	 3DbaPG5Coq5VA==
+Received: from mail.realtek.com (rtkexhmbs03.realtek.com.tw[10.21.1.53])
+	by rtits2.realtek.com.tw (8.15.2/3.29/5.94) with ESMTPS id 6AG2Eb5mA2947241
+	(version=TLSv1.2 cipher=ECDHE-RSA-AES256-GCM-SHA384 bits=256 verify=FAIL);
+	Mon, 16 Nov 2026 10:14:38 +0800
+Received: from RTKEXHMBS06.realtek.com.tw (10.21.1.56) by
+ RTKEXHMBS03.realtek.com.tw (10.21.1.53) with Microsoft SMTP Server
+ (version=TLS1_2, cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id
+ 15.2.2562.56; Mon, 16 Nov 2026 10:14:36 +0800
+Received: from RTKEXHMBS06.realtek.com.tw ([fe80::eeeb:c765:ca73:5eef]) by
+ RTKEXHMBS06.realtek.com.tw ([fe80::eeeb:c765:ca73:5eef%10]) with mapi id
+ 15.02.2562.056; Mon, 16 Nov 2026 10:14:36 +0800
+From: Ping-Ke Shih <pkshih@realtek.com>
+To: Enver Ikromov <owner@ph4ntom-rev.uz>
+CC: "linux-wireless@vger.kernel.org" <linux-wireless@vger.kernel.org>,
+	"linux-kernel@vger.kernel.org" <linux-kernel@vger.kernel.org>
+Subject: RE: [PATCH rtw-next v5 07/10] wifi: rtw89: send injected control
+ frames through the management path
+Thread-Topic: [PATCH rtw-next v5 07/10] wifi: rtw89: send injected control
+ frames through the management path
+Thread-Index: AQHdc8qmfuHwz0gXRk62fz2izryq2bcv9R/Q
+Date: Mon, 16 Nov 2026 02:14:36 +0000
+Message-ID: <0a32e2d1a6d745a88f1a814c5bf145cc@realtek.com>
+References: <20261113235211.1911-1-owner@ph4ntom-rev.uz>
+ <20261113235211.1911-8-owner@ph4ntom-rev.uz>
+In-Reply-To: <20261113235211.1911-8-owner@ph4ntom-rev.uz>
+Accept-Language: en-US, zh-TW
+Content-Language: zh-TW
+Content-Type: text/plain; charset="us-ascii"
+Content-Transfer-Encoding: quoted-printable
 X-Mailing-List: linux-wireless@vger.kernel.org
 List-Id: <linux-wireless.vger.kernel.org>
 List-Post: <mailto:linux-wireless@vger.kernel.org>
@@ -103,72 +83,112 @@ List-Unsubscribe: <mailto:linux-wireless+unsubscribe@vger.kernel.org>
 List-Owner: <mailto:linux-wireless+owner@vger.kernel.org>
 Precedence: list
 MIME-Version: 1.0
-Content-Transfer-Encoding: 8bit
 
-ath12k_mac_vif_txmgmt_cleanup() and ath12k_mac_tx_mgmt_pending_free()
-walk ar->txmgmt_idr without txmgmt_idr_lock. A WMI management TX
-completion can meanwhile remove an entry and pass its skb to mac80211,
-which frees it. ath12k_mac_vif_txmgmt_cleanup() then reads skb_cb->vif
-from the freed skb, and both walks can read an IDR node that was freed
-after an RCU grace period.
 
-Hold txmgmt_idr_lock over both walks and make ath12k_mac_tx_mgmt_free()
-expect it to be held.
+Enver Ikromov <owner@ph4ntom-rev.uz> wrote:
+> rtw89_core_get_tx_type() classifies every frame that is neither a
+> management nor a null-data frame as data. Injected control frames
+> such as a 10-byte ACK or 16-byte RTS therefore go through
+> rtw89_core_tx_update_data_info(), which derives a TID and data queue
+> from skb->priority and enables AMPDU/QoS related descriptor fields
+> that make no sense for them.
 
-Fixes: d889913205cf ("wifi: ath12k: driver for Qualcomm Wi-Fi 7 devices")
-Suggested-by: Rameshkumar Sundaram <rameshkumar.sundaram@oss.qualcomm.com>
-Signed-off-by: Changyul Lee <lcy8047@gmail.com>
----
-Found with a static analysis tool we are developing.
-Compile-tested only, with x86_64_defconfig plus ATH12K and W=1.
+Original design is only to send urgent packets via MGMT queue, and
+I think no control frame sent vi driver. Instead, firmware/hardware
+will sent them.
 
- drivers/net/wireless/ath/ath12k/mac.c | 9 ++++++---
- 1 file changed, 6 insertions(+), 3 deletions(-)
+Did you encounter real problem if CTS/RST goes via AC queue?
+I just don't want much conditions in data path.
 
-diff --git a/drivers/net/wireless/ath/ath12k/mac.c b/drivers/net/wireless/ath/ath12k/mac.c
-index eee3f38375ae..bffb2edd0531 100644
---- a/drivers/net/wireless/ath/ath12k/mac.c
-+++ b/drivers/net/wireless/ath/ath12k/mac.c
-@@ -9220,10 +9220,9 @@ static void ath12k_mac_tx_mgmt_free(struct ath12k *ar, int buf_id)
- 	struct sk_buff *msdu;
- 	struct ieee80211_tx_info *info;
- 
--	spin_lock_bh(&ar->txmgmt_idr_lock);
--	msdu = idr_remove(&ar->txmgmt_idr, buf_id);
--	spin_unlock_bh(&ar->txmgmt_idr_lock);
-+	lockdep_assert_held(&ar->txmgmt_idr_lock);
- 
-+	msdu = idr_remove(&ar->txmgmt_idr, buf_id);
- 	if (!msdu)
- 		return;
- 
-@@ -9241,8 +9240,10 @@ void ath12k_mac_tx_mgmt_pending_free(struct ath12k *ar)
- 	struct sk_buff *msdu;
- 	int buf_id;
- 
-+	spin_lock_bh(&ar->txmgmt_idr_lock);
- 	idr_for_each_entry(&ar->txmgmt_idr, msdu, buf_id)
- 		ath12k_mac_tx_mgmt_free(ar, buf_id);
-+	spin_unlock_bh(&ar->txmgmt_idr_lock);
- }
- 
- static void ath12k_mac_vif_txmgmt_cleanup(struct ath12k *ar,
-@@ -9252,11 +9253,13 @@ static void ath12k_mac_vif_txmgmt_cleanup(struct ath12k *ar,
- 	struct sk_buff *skb;
- 	int buf_id;
- 
-+	spin_lock_bh(&ar->txmgmt_idr_lock);
- 	idr_for_each_entry(&ar->txmgmt_idr, skb, buf_id) {
- 		skb_cb = ATH12K_SKB_CB(skb);
- 		if (skb_cb->vif == vif)
- 			ath12k_mac_tx_mgmt_free(ar, buf_id);
- 	}
-+	spin_unlock_bh(&ar->txmgmt_idr_lock);
- }
- 
- static int ath12k_mac_mgmt_tx_wmi(struct ath12k *ar, struct ath12k_link_vif *arvif,
+>=20
+> Classify injected non-data frames as management frames. Frames
+> generated by mac80211 itself, such as BlockAckReq, are not affected.
 
-base-commit: 1be6c8d3027d4a421dc46b93a89a196c61945614
--- 
-2.43.0
+Did you actually see driver sends control frames generated by mac80211?
+If so, when and how?
+
+>=20
+> In addition, rtw89_core_tx_update_desc_info() reads hdr->seq_ctrl at
+> offset 22 for every frame. Control frames have no sequence control
+> field and are shorter than 24 bytes, so only read hdr->seq_ctrl from
+> non-control frames whose linear header is long enough to carry it.
+
+I think all control frames have no sequence control, just fill seq=3D0
+for them?
+
+>=20
+> Signed-off-by: Enver Ikromov <owner@ph4ntom-rev.uz>
+> ---
+>  drivers/net/wireless/realtek/rtw89/core.c | 16 ++++++++++++++--
+>  1 file changed, 14 insertions(+), 2 deletions(-)
+>=20
+> diff --git a/drivers/net/wireless/realtek/rtw89/core.c b/drivers/net/wire=
+less/realtek/rtw89/core.c
+> index 54605f7..7003c24 100644
+> --- a/drivers/net/wireless/realtek/rtw89/core.c
+> +++ b/drivers/net/wireless/realtek/rtw89/core.c
+> @@ -637,12 +637,21 @@ static enum rtw89_core_tx_type
+>  rtw89_core_get_tx_type(struct rtw89_dev *rtwdev,
+>                        struct sk_buff *skb)
+>  {
+> +       struct ieee80211_tx_info *info =3D IEEE80211_SKB_CB(skb);
+>         struct ieee80211_hdr *hdr =3D (void *)skb->data;
+>         __le16 fc =3D hdr->frame_control;
+>=20
+>         if (ieee80211_is_mgmt(fc) || ieee80211_is_any_nullfunc(fc))
+>                 return RTW89_CORE_TX_TYPE_MGMT;
+>=20
+> +       /* Injected control frames have no QoS/TID and no data payload, s=
+o
+> +        * send them through the management path. Control frames built by
+> +        * mac80211 itself (e.g. BlockAckReq) keep using the data path.
+> +        */
+
+The code self-explain it is injection, no need comment.
+
+But I still wonder this is required? Any problem without this?
+
+> +       if (unlikely(info->flags & IEEE80211_TX_CTL_INJECTED) &&
+> +           !ieee80211_is_data(fc))
+> +               return RTW89_CORE_TX_TYPE_MGMT;
+> +
+>         return RTW89_CORE_TX_TYPE_DATA;
+>  }
+>=20
+> @@ -1299,7 +1308,7 @@ rtw89_core_tx_update_desc_info(struct rtw89_dev *rt=
+wdev,
+>         enum btc_pkt_type pkt_type;
+>         bool upd_wlan_hdr =3D false;
+>         bool is_bmc;
+> -       u16 seq;
+> +       u16 seq =3D 0;
+>=20
+>         desc_info->pkt_size =3D skb->len;
+>=20
+> @@ -1315,7 +1324,10 @@ rtw89_core_tx_update_desc_info(struct rtw89_dev *r=
+twdev,
+>         else if (tx_req->vif)
+>                 desc_info->mlo =3D ieee80211_vif_is_mld(tx_req->vif);
+>=20
+> -       seq =3D (le16_to_cpu(hdr->seq_ctrl) & IEEE80211_SCTL_SEQ) >> 4;
+> +       /* control frames (e.g. 10-byte ACK/CTS) have no sequence control=
+ */
+> +       if (!ieee80211_is_ctl(hdr->frame_control) &&
+> +           skb_headlen(skb) >=3D sizeof(struct ieee80211_hdr_3addr))
+> +               seq =3D (le16_to_cpu(hdr->seq_ctrl) & IEEE80211_SCTL_SEQ)=
+ >> 4;
+
+If my thought is correct, here can just
+
+	if (ieee80211_is_ctl(hdr->frame_control))
+		seq =3D 0;
+	else
+		seq =3D (le16_to_cpu(hdr->seq_ctrl) & IEEE80211_SCTL_SEQ) >> 4;
+
+>         addr_cam =3D rtw89_get_addr_cam_of(tx_req->rtwvif_link,
+>                                          tx_req->rtwsta_link);
+>         if (addr_cam->valid && desc_info->mlo)
+> --
+> 2.56.0.windows.4
+>=20
 
