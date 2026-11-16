@@ -1,69 +1,69 @@
-Authentication-Results: smtp.subspace.kernel.org; arc=none smtp.remote-ip=209.85.160.41
+Authentication-Results: smtp.subspace.kernel.org; arc=none smtp.remote-ip=209.85.167.177
 ARC-Seal: i=1; d=subspace.kernel.org; s=arc20261015; a=rsa-sha256; cv=none;
-	t=1794871185;
-	b=d/50h/5SBadW2NAMTQpLKIBhGWAwRtMmCSF01yw8wkf0gpnsdAqEsUNraBWUWzZSIKxX
-	 sqQA9YPMp4lJercTmsIUINPQt6Nqx4oHVNXDVlDv96gBTUnWdrNvNQACg3aPx8qXxWywn
-	 0G7Zlrddy8VJQVQ50AMUgvbruGd30XAxYDYiBEBXX31FXRFjXK81/5QEOSQ21MbNutmhf
-	 u2Q+rReQcPFAhtz29ESahfRNx0TsZPOPW7RmzzXBY0R8IJb5YPetHyH/EPQWn/FZrcszU
-	 ewmonJbwPXRqB/bgoLtjYrZENX3IAVTVi6nQGa+osVXG8EeybTtiholznzUtjldSGhA==
+	t=1794871191;
+	b=cICYWQdAah+34Dx9i6ZUG8hCu4+RKEwaDKxwsR+xfp//+8MEl0eT6zMVqcIOpbIUUN46
+	 FFEM3zWVazGyJ4vh2z7kayzWaMS8MhUHwQYpUJHSmxNjFxqq/vwbn3slXhGPkoms9mc0j
+	 uVXInhAGawf4DnjwpaCVqKWW2lLu++BvMvH8i5BLSEckg/zw7/K/paKFuIWkJD5dtvV/6
+	 nTvI8y9uJvmM7K38oPj8Cg1QzSA7EGMI7HSYra4w+jSz0BUniZmz6vcbhm1P7l66+c9/x
+	 BM4/nES6md/bOHMvZIgvseOyYFLrDau8pzHYrSzF8SenxFV5Gy/+HMlvpTzzGJMu8rw==
 ARC-Message-Signature: i=1; d=subspace.kernel.org; s=arc20261015;
-	a=rsa-sha256; c=relaxed/relaxed; t=1794871185;
+	a=rsa-sha256; c=relaxed/relaxed; t=1794871191;
 	h=DMARC-Filter:Received:X-Google-DKIM-Signature:X-Forwarded-Encrypted:
 	 X-Gm-Message-State:X-Gm-Gg:X-Received:Received:From:To:Cc:Subject:
 	 Date:Message-ID:X-Mailer:In-Reply-To:References:MIME-Version:
 	 Content-Transfer-Encoding;
-	bh=Ovr1vQdfY8B1hnPOa0U9HTNe54gtsAljzjaukZV1nY8=;
-	b=PhkJwWNiElCy2KVOP9lc0HgW5zFzo8KTp75FNnMx2BKeYggZxcKPozkHrlpl71mqWe5k
-	 0Kt+BNwQhT4A1vlXdrUrhhX/B1fDWLKQyeqaRKhOdoXu5sgbDrLk46MYGuvJv0u4v1/gv
-	 AzN6Scl2/8jXT/SBjdH+ScjRGfik7UDg6zrPfBya/hr8dOmwas6p7X/GuskCN+A7oZoPL
-	 hPPMn8x8Nep7Vn9GhPCQP1cOwCBbQeImxzvu6i299RkL37P9u8v3WPhaGouUvcaHuPPNY
-	 e1boMMT3VfO44mJlYlhTvb2GMFXymNC7sE6aaJNpze6d1v4r+lzsYQWk0D2m3fs8Jaw==
+	bh=ovD5H6S5jQwSZumZQjn/7Elyf6SaJFCwpBEMaO/7ZD0=;
+	b=AL/fEdW6n8/D/s6nyx4fR1/4CMGKsa6+WeiwafiJ6g/7GKpXKAicP3KCnNO81jIjIysJ
+	 9/VMiHZkM+uVCDQQoXCetdtU64G0p9QIvN+qBHZH5dIeHFV4RUswih/vgiirjWKZv4LMo
+	 2299mT6fbL7fwVwg4YNGKinyI0P4Aky9RLRko6l8TPVSHEdgaJmJI82t9NqA9e2/iYLEW
+	 n8RZ7h3F7iMLBDHNNT3lhM9/XYoNUqgSFtinkm12nn3omVwaiAY24cFiPXeA838uFTVNf
+	 Qzp7l4AGDHGIaxSBXd7EH1UI35Prr/iY4YGLK7y+w1yrMG0KoCkPnmgkJ/y7v/3MA2A==
 ARC-Authentication-Results: i=1; smtp.subspace.kernel.org; 
 	dmarc=fail header.from=kernel.org;
 	spf=pass smtp.mailfrom=gmail.com;
-	arc=none smtp.remote-ip=209.85.160.41
-Received: from mail-oa1-f41.google.com (mail-oa1-f41.google.com [209.85.160.41])
+	arc=none smtp.remote-ip=209.85.167.177
+Received: from mail-oi1-f177.google.com (mail-oi1-f177.google.com [209.85.167.177])
 	(using TLSv1.3 with cipher TLS_AES_128_GCM_SHA256 (128/128 bits)
 	 key-exchange X25519 server-signature ECDSA (prime256v1) server-digest SHA256)
 	(No client certificate requested)
-	by smtp.subspace.kernel.org (Postfix) with ESMTPS id 90D73606A330
-	for <linux-wireless@vger.kernel.org>; Mon, 16 Nov 2026 23:19:45 +0000 (UTC)
-DMARC-Filter: OpenDMARC Filter v1.4.2 smtp.subspace.kernel.org 90D73606A330
+	by smtp.subspace.kernel.org (Postfix) with ESMTPS id 9FFAC606A31C
+	for <linux-wireless@vger.kernel.org>; Mon, 16 Nov 2026 23:19:50 +0000 (UTC)
+DMARC-Filter: OpenDMARC Filter v1.4.2 smtp.subspace.kernel.org 9FFAC606A31C
 Authentication-Results: smtp.subspace.kernel.org; dmarc=fail (p=quarantine dis=none) header.from=kernel.org
 Authentication-Results: smtp.subspace.kernel.org; spf=pass smtp.mailfrom=gmail.com
-Received: by mail-oa1-f41.google.com with SMTP id 586e51a60fabf-43bf9548df4so5363851fac.0
-        for <linux-wireless@vger.kernel.org>; Mon, 16 Nov 2026 15:19:45 -0800 (PST)
+Received: by mail-oi1-f177.google.com with SMTP id 5614622812f47-4f14642adb4so2943499b6e.1
+        for <linux-wireless@vger.kernel.org>; Mon, 16 Nov 2026 15:19:50 -0800 (PST)
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=1e100.net; s=20260707; t=1794871184; x=1795475984;
+        d=1e100.net; s=20260707; t=1794871189; x=1795475989;
         h=content-transfer-encoding:mime-version:references:in-reply-to
          :message-id:date:subject:cc:to:from:x-gm-gg:x-gm-message-state:from
          :to:cc:subject:date:message-id:reply-to:content-type;
-        bh=Ovr1vQdfY8B1hnPOa0U9HTNe54gtsAljzjaukZV1nY8=;
-        b=BMqm5TvM/moHIjc4sgRNQ/r/OaXzEtVKo/VlWqDJT2kiCFKggr8Rtp6Y76njmJJgpM
-         E9q/PfWygC70ozdkpPp8azkNI1LmBo6I/sT3KbVtVMqtRi5BfuQKvN7LiuXvl2Gy1MqV
-         jtJQ6O9XXwYBi3VVFzdM7keFKE4V9KXC0O9d7GPJlplF52YrJ0RS96To8rJWwGTPHHOG
-         FCroqn3nz6uJ6mDzxtFdpbxzeQgIlXfZpouBh0+W73GtCRCLeQVw5djpWFlMDce1t6pQ
-         Urt4vl6wvwh2ViPyycCKPlyz30eG2Kk9UdUevUGGVxYn4DA5arJ/sMpFmdtZU0hRHzn2
-         T3bA==
-X-Forwarded-Encrypted: i=1; AL+hErEHnNLOAVjx/AjRyqzPlH5VRWw0gfcJaMYzdUkxO7Q1p9xC9pjUJAPEiX+lJ6bxwywZdoj3q/6EqjjeM8FgOQ==@vger.kernel.org
-X-Gm-Message-State: APuU4Z95KkM2HtnTteQ6XXfgwSaHydV4Vyj64BWNPljtjd2sju329ZrY
-	Tlc+wGsGocI0u66oUymIHqQnCinN9PWorv7Z/TN8KK5PxetJBCoabYy2WZFS/A==
-X-Gm-Gg: AYBFou1fqsdQo3l0stU/5ce8YmknzEOGq+vl47wJNFWrGBDvKqdXVTapsAeBqY6BjXY
-	TrznUbZ94HVZbAH6XG1LxDVLrUxc5kRlz5E+SdnrLgj6P+ioKKsHNS/TyrO6GtLn2VOhyjMMfwA
-	i1XQC9h8zOub04+nlM60ecYCq/7fuBd/Qm48fDm+C8zQ1bOCqRHtzH5I42vzsPkAuX24sV9/lbY
-	bINshu9iqnHtGrLbVDu+rEb22C1VuVd9xbKnAd8035HWLqr+2B6Qhat4nivNilTp4Hvq2sqiEaz
-	XrLKLFkOpqBiXiItlPobmgpgIyuU0qDTlDYbNNTO9z0guko2HKWtFibAYOFSMIR/YyZychiemJK
-	gMWbbb8V+0gIo0X2ARh+0Q73wl2BZU/O8orVMioUEB1ZOxd071aUYNwePqsb4lv28sTmBGvW5Qw
-	34FQVaD4t3U61qspD6a09bBvVQwyjQq021g/HS3qm++48OE5RdELSgQJXceOaYbJ2ZOUrUm26+J
-	24SeaWDkfCFyKMvyPJUSSwM4bB07WvvaJX8Ltouk15Uf5y5vbtX+ad+rN8ig9TrjwcKPyUWu5U5
-	T+RfRNrR2Yhe2D7eVLy7Munm3TvzQ672CiuRJNCvs8usYjm/owcgR0mBc46Am6dWa+alfvLsSAI
-	m28Y6X+rW0Sz47840aLHkFuqHn1mgtTU=
-X-Received: by 2002:a05:6808:10cf:b0:563:e8b6:c5d5 with SMTP id 5614622812f47-56e64cf4cb6mr11277026b6e.44.1794871184505;
-        Mon, 16 Nov 2026 15:19:44 -0800 (PST)
+        bh=ovD5H6S5jQwSZumZQjn/7Elyf6SaJFCwpBEMaO/7ZD0=;
+        b=EWdfzSMj8uTHMMEXZxpuH+uXSTiET9mtiirIszW+nTOtCbg7O2Y6vPvyhA31v/DZf1
+         9zM901DOulcqfMcztf+P1vbnTEW4HD1knV4MdyalK8DIo9fqblsE5yhimCSHcjOrlNhh
+         mzbnCu5q+YfWqHmg4wuVh+fdthVDjtNrtmrfRVyWRKHCVOfUqURx203EU76PgKA5tVf6
+         DhPIwNyFW8jAOawdQyFx8aCVXfVPoQLdZmS96wVPzYEySZXZUF2qeL4BKWZjdEgFayxY
+         A8lNmf13NvZvTweVJ//xJOYgIxeVazfEcJLVfv8dE8eeY+E4j7BJgDnMkb/fmn2kYdsb
+         W7ug==
+X-Forwarded-Encrypted: i=1; AL+hErGdCWwL2bELwQbo3M74dpLHiLVM8SQjbnuN97cNQUmV0VvIffl0JjFVuXy9K6hmRitl3XrxGQJAJMB3cdvcnw==@vger.kernel.org
+X-Gm-Message-State: APuU4Z9ymRZnQZmA581OrIU+avsrrV8WXIkLsCQciBI3qZv9MbNmCVsY
+	6w9GcdKY5Hmzsy4kAe+bWbvQ5NoMyqQUwa/ecDKnJ0qykK2dyQNCDJDm
+X-Gm-Gg: AYBFou2gp2UzBUUShGpya3jy37AGoozOILUuqAOEkvFRNu0cvmW5cDdBVy3n+cUmWeR
+	ha+3NTWEbFj/i6uTQKz+q5hf3GmK0+BuSUxlwHJzY9kArbKLANPSSekESKnlg+haa5iYgIKBaO3
+	/FoAHzOm9QbGX1xwxMtG7Oui5pgLBP/1LPCOjBUQfKDPy0JOAEolWjYc+pl0OnBSZGjkzlVIrbO
+	L2KE40HQUnR1cLX/IxaqP8CaWIuAjCHsfJC5nXSxeYTz9Vv4JxLWnXalD6t3nw+xblmcbwZyiBv
+	weDSUI/VnMI1h6nBi05r1x/QqhmO383D+lowG2rINek2YFs8QAVUUAo/5VyokuIQUtcr2mN1gBd
+	ZVObYIbsFARssOj3xhMs4l3L1/86QO+Bxgz/uZue6W5xfXB8ZiMPtDxtiLmkRcNDSt8ZrNTnjso
+	YyD/Hts/RA5kRrhlgXPVlO+q+fnTpc8MSp8wxlBx6cH8r2iCozeyvcZXiK9RjhUQyHLXs8GpYGc
+	Jc+rhNiec6NINyclLvmaNWMI9MLWvPcKgWZnZZ6pPGuDw5rQNOMm5Om1OgN8uI40B9ViuTm7ipZ
+	BYthA/4DLam0z7EXYWseuP6nKhfBBC/S07qkFa2hlT5KAZK5veuIHKMfry/6jG2eq5lsJJc30c6
+	coGRHiZZd
+X-Received: by 2002:a05:6808:6d82:b0:573:1dfa:f0c2 with SMTP id 5614622812f47-5731dfaf630mr5362400b6e.29.1794871188866;
+        Mon, 16 Nov 2026 15:19:48 -0800 (PST)
 Received: from sean-HP-EliteBook-830-G6.lan ([207.191.35.252])
-        by smtp.gmail.com with ESMTPSA id 5614622812f47-56e70c58f9bsm10239635b6e.13.2026.11.16.15.19.42
+        by smtp.gmail.com with ESMTPSA id 5614622812f47-56e70c58f9bsm10239635b6e.13.2026.11.16.15.19.45
         (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
-        Mon, 16 Nov 2026 15:19:44 -0800 (PST)
+        Mon, 16 Nov 2026 15:19:47 -0800 (PST)
 From: Sean Wang <sean.wang@kernel.org>
 To: nbd@nbd.name,
 	lorenzo.bianconi@kernel.org
@@ -75,9 +75,9 @@ Cc: yu-ching.liu@mediatek.com,
 	linux-wireless@vger.kernel.org,
 	linux-mediatek@lists.infradead.org,
 	Sean Wang <sean.wang@mediatek.com>
-Subject: [PATCH v2 13/19] wifi: mt76: mt7925: defer the NAN joined-cluster event out of NAN_START
-Date: Mon, 16 Nov 2026 17:16:24 -0600
-Message-ID: <20261116231630.1733906-14-sean.wang@kernel.org>
+Subject: [PATCH v2 14/19] wifi: mt76: mt7925: steer NAN handshake frames by committed-bitmap state
+Date: Mon, 16 Nov 2026 17:16:25 -0600
+Message-ID: <20261116231630.1733906-15-sean.wang@kernel.org>
 X-Mailer: git-send-email 2.43.0
 In-Reply-To: <20261116231630.1733906-1-sean.wang@kernel.org>
 References: <20261116231630.1733906-1-sean.wang@kernel.org>
@@ -94,108 +94,215 @@ Content-Transfer-Encoding: 8bit
 
 From: Jacobs Wu <jacobs.wu@mediatek.com>
 
-The firmware can join an existing cluster from inside the passive scan it
-runs at the start of NAN_START, so NAN_EVENT_ID_JOINED_CLUSTER lands while
-the start path is still executing and ieee80211_vif_nan_started() is not
-true yet. The handler dropped the event with a warning, leaving userspace
-unaware of the cluster it had joined, and service discovery then never
-completed: measured 4 failures in 12 NDP bring-ups on an MT7925 pair, each
-one accompanied by exactly one dropped event on the joining side and none
-on the side that created the cluster.
+Unencrypted unicast NAN management is held to the discovery window on the
+DW-WTBL, because a peer whose NDL is not yet confirmed is only reliably
+awake there. That is the right call while nothing is known about the
+peer, but it stays in force for the whole session, and the DW is a narrow
+place to live: it opens for 16 ms every 512 ms and is shared with the
+discovery queue, so roughly four transmit opportunities exist inside the
+two seconds a Data Path Response has to complete. Under load the
+handshake loses that race. Routing the same frames through the peer STA
+WTBL was what made NDP setup reliable with a partial availability bitmap
+in the first place, since the firmware then paces them by the committed
+window instead of bursting blindly.
 
-NAN_EVENT_ID_STARTED_CLUSTER already defers past NAN_START through
-nan_deferred_work for the same reason; JOINED_CLUSTER is the other exit of
-the same firmware warm-up branch and needs the same treatment. Queue it on
-that work with its own cluster id, so a started and a joined event pending
-at once cannot overwrite each other.
+Neither placement is right on its own: the peer WTBL is only usable once
+the firmware actually holds that peer's committed bitmap. A peer station
+existing in mac80211 does not imply that - until the CRB download lands,
+the peer's availability gate has no slots to open and a frame steered
+there parks behind the pause until the session is torn down.
 
-Fixes: a5487a682406 ("wifi: mt76: mt7925: add NAN MCU helpers")
+Track the committed state per peer. mt7925_nan_fill_crb_committed()
+returns the number of committed slots it programmed, and
+mt7925_nan_update_crb_tlv() latches whether that count was non-zero into
+nan_sched.has_commit; the allocation rollback in
+mt792x_nan_set_peer_schedule() and the peer record removal in
+mt792x_nan_set_peer_rec() clear it again. Frames to a peer holding a
+committed bitmap keep that peer's WTBL and are served in the slots it
+has promised to be awake for; frames to a peer without one, and frames
+with no station resolved, keep riding the DW-WTBL. Secured frames are
+untouched and keep their own WTBL and key.
+
 Co-developed-by: Sean Wang <sean.wang@mediatek.com>
 Signed-off-by: Sean Wang <sean.wang@mediatek.com>
 Signed-off-by: Jacobs Wu <jacobs.wu@mediatek.com>
 ---
- .../net/wireless/mediatek/mt76/mt7925/nan.c   | 20 ++++++++++++++++++-
- .../net/wireless/mediatek/mt76/mt7925/nan.h   |  1 +
+ .../net/wireless/mediatek/mt76/mt7925/nan.c   | 30 +++++++++++----
+ .../wireless/mediatek/mt76/mt7925/pci_mac.c   | 37 +++++++------------
  drivers/net/wireless/mediatek/mt76/mt792x.h   |  1 +
- 3 files changed, 21 insertions(+), 1 deletion(-)
+ 3 files changed, 38 insertions(+), 30 deletions(-)
 
 diff --git a/drivers/net/wireless/mediatek/mt76/mt7925/nan.c b/drivers/net/wireless/mediatek/mt76/mt7925/nan.c
-index 2d6760c50fc5..0fe8ae6c0d26 100644
+index 0fe8ae6c0d26..aa030dca7e01 100644
 --- a/drivers/net/wireless/mediatek/mt76/mt7925/nan.c
 +++ b/drivers/net/wireless/mediatek/mt76/mt7925/nan.c
-@@ -706,8 +706,20 @@ mt7925_nan_mcu_handle_de_event(struct mt792x_dev *dev, struct tlv *tlv)
- 		return;
- 	}
+@@ -1336,14 +1336,14 @@ static int mt7925_nan_peer_cap_tlv(struct sk_buff *skb,
+ 	return 0;
+ }
  
-+	/* JOINED_CLUSTER has the same race as STARTED_CLUSTER above: the
-+	 * firmware joins an existing cluster from inside its start-up passive
-+	 * scan, so the event can land while NAN_START is still running and
-+	 * nan.started is not set yet. Defer it the same way instead of
-+	 * dropping it - a lost join leaves userspace unaware of the cluster it
-+	 * is in and service discovery never completes.
-+	 */
- 	if (!dev->nan_vif || !ieee80211_vif_nan_started(dev->nan_vif)) {
--		dev_warn(dev->mt76.dev, "nan: joined-cluster event but NAN not started\n");
-+		spin_lock_bh(&dev->nan_deferred_lock);
-+		memcpy(dev->nan_joined_cluster_id, cluster_id, ETH_ALEN);
-+		set_bit(MT7925_NAN_DEFERRED_JOINED_CLUSTER,
-+			&dev->nan_deferred_pending);
-+		spin_unlock_bh(&dev->nan_deferred_lock);
-+		ieee80211_queue_work(dev->mt76.hw, &dev->nan_deferred_work);
- 		return;
- 	}
- 
-@@ -729,6 +741,7 @@ mt7925_nan_deferred_work(struct work_struct *work)
+-static void
++static u32
+ mt7925_nan_fill_crb_committed(struct mt7925_nan_sched_update_crb_tlv *crb_tlv,
+ 			      struct ieee80211_nan_peer_sched *sched)
  {
- 	struct mt792x_dev *dev = container_of(work, struct mt792x_dev,
- 					      nan_deferred_work);
-+	u8 joined_cluster_id[ETH_ALEN];
- 	struct ieee80211_vif *vif;
- 	unsigned long pending;
- 	u8 cluster_id[ETH_ALEN];
-@@ -737,6 +750,7 @@ mt7925_nan_deferred_work(struct work_struct *work)
- 	pending = dev->nan_deferred_pending;
- 	dev->nan_deferred_pending = 0;
- 	memcpy(cluster_id, dev->nan_started_cluster_id, ETH_ALEN);
-+	memcpy(joined_cluster_id, dev->nan_joined_cluster_id, ETH_ALEN);
- 	spin_unlock_bh(&dev->nan_deferred_lock);
+-	u32 m, slot;
++	u32 m, slot, total = 0;
  
- 	if (!pending)
-@@ -750,6 +764,10 @@ mt7925_nan_deferred_work(struct work_struct *work)
- 	if (test_bit(MT7925_NAN_DEFERRED_STARTED_CLUSTER, &pending))
- 		ieee80211_nan_cluster_joined(vif, cluster_id, true, GFP_KERNEL);
+ 	if (!sched)
+-		return;
++		return 0;
  
-+	if (test_bit(MT7925_NAN_DEFERRED_JOINED_CLUSTER, &pending))
-+		ieee80211_nan_cluster_joined(vif, joined_cluster_id, false,
-+					     GFP_KERNEL);
+ 	for (m = 0; m < CFG80211_NAN_MAX_PEER_MAPS &&
+ 	     m < NAN_TIMELINE_MGMT_SIZE; m++) {
+@@ -1369,10 +1369,14 @@ mt7925_nan_fill_crb_committed(struct mt7925_nan_sched_update_crb_tlv *crb_tlv,
+ 			if (!ch || !ch->chanctx_conf)
+ 				continue;
+ 
++			total++;
 +
- 	if (test_bit(MT7925_NAN_DEFERRED_SCHED_UPDATE_DONE, &pending))
- 		ieee80211_nan_sched_update_done(vif);
- out:
-diff --git a/drivers/net/wireless/mediatek/mt76/mt7925/nan.h b/drivers/net/wireless/mediatek/mt76/mt7925/nan.h
-index 165cf21b787b..94d8d4bc445e 100644
---- a/drivers/net/wireless/mediatek/mt76/mt7925/nan.h
-+++ b/drivers/net/wireless/mediatek/mt76/mt7925/nan.h
-@@ -144,6 +144,7 @@ enum mt7925_nan_key_type {
-  */
- enum mt7925_nan_deferred_event {
- 	MT7925_NAN_DEFERRED_STARTED_CLUSTER,
-+	MT7925_NAN_DEFERRED_JOINED_CLUSTER,
- 	MT7925_NAN_DEFERRED_SCHED_UPDATE_DONE,
- };
+ 			for (dw = 0; dw < NAN_TOTAL_DW; dw++)
+ 				tl->avail_map[dw] |= cpu_to_le32(BIT(slot));
+ 		}
+ 	}
++
++	return total;
+ }
+ 
+ static int mt7925_nan_update_crb_tlv(struct sk_buff *skb,
+@@ -1397,9 +1401,10 @@ static int mt7925_nan_update_crb_tlv(struct sk_buff *skb,
+ 	crb_tlv->is_use_ranging = false;
+ 	crb_tlv->comm_ndc_ctrl.is_valid = false;
+ 
+-	mt7925_nan_fill_crb_committed(crb_tlv, sta->nan_sched);
+-
+-	return 0;
++	/* Returns the number of committed slots programmed; the caller latches
++	 * has_commit only once the command has actually reached firmware.
++	 */
++	return mt7925_nan_fill_crb_committed(crb_tlv, sta->nan_sched);
+ }
+ 
+ static int
+@@ -1442,6 +1447,7 @@ int mt792x_nan_set_peer_schedule(struct mt792x_dev *dev,
+ 	struct mt792x_nan *nan;
+ 	struct mt76_dev *mdev;
+ 	struct sk_buff *skb;
++	int committed;
+ 	int ret;
+ 
+ 	if (!dev || !sta)
+@@ -1480,7 +1486,8 @@ int mt792x_nan_set_peer_schedule(struct mt792x_dev *dev,
+ 		}
+ 	}
+ 
+-	if (mt7925_nan_update_crb_tlv(skb, sta, msta)) {
++	committed = mt7925_nan_update_crb_tlv(skb, sta, msta);
++	if (committed < 0) {
+ 		ret = -ENOMEM;
+ 		goto free_skb;
+ 	}
+@@ -1493,6 +1500,13 @@ int mt792x_nan_set_peer_schedule(struct mt792x_dev *dev,
+ 	if (ret && idx_allocated)
+ 		goto clear_idx;
+ 
++	/* Latch only now: firmware holds this peer's committed bitmap, so its
++	 * availability gate has slots to open and unencrypted NAF may be
++	 * steered at the peer WTBL. Cleared when the CRB is torn down.
++	 */
++	if (!ret)
++		msta->nan_sched.has_commit = committed > 0;
++
+ 	return ret;
+ 
+ free_skb:
+@@ -1503,6 +1517,7 @@ int mt792x_nan_set_peer_schedule(struct mt792x_dev *dev,
+ clear_idx:
+ 	clear_bit(msta->nan_sched.sch_idx, &nan->conn_bitmap);
+ 	msta->nan_sched.idx_assigned = false;
++	msta->nan_sched.has_commit = false;
+ 
+ 	return ret;
+ }
+@@ -1566,6 +1581,7 @@ int mt792x_nan_set_peer_rec(struct mt76_dev *mdev,
+ 
+ 	clear_bit(msta->nan_sched.sch_idx, &nan->conn_bitmap);
+ 	msta->nan_sched.idx_assigned = false;
++	msta->nan_sched.has_commit = false;
+ 
+ 	return 0;
+ }
+diff --git a/drivers/net/wireless/mediatek/mt76/mt7925/pci_mac.c b/drivers/net/wireless/mediatek/mt76/mt7925/pci_mac.c
+index eb07abfef209..7f6da681b4a4 100644
+--- a/drivers/net/wireless/mediatek/mt76/mt7925/pci_mac.c
++++ b/drivers/net/wireless/mediatek/mt76/mt7925/pci_mac.c
+@@ -33,16 +33,15 @@ int mt7925e_tx_prepare_skb(struct mt76_dev *mdev, void *txwi_ptr,
+ 	 * full retry budget on an unACKable multicast RA, so one frame eats a
+ 	 * whole DW window and the publish SDF queue backlogs.
+ 	 *
+-	 * Unencrypted unicast to a peer we have no station for is first
+-	 * contact (SDF, NDP request): the DW is the only rendezvous, so it
+-	 * goes on the DW-WTBL and waits for it.
+-	 *
+-	 * Once its schedule is known - the peer station exists, which is also
+-	 * when firmware holds its committed bitmap - the frame belongs on that
+-	 * station instead. Firmware then airs it inside the peer's own
+-	 * committed slots, where the peer is awake and the medium is not the
+-	 * DW pile-up, and follows the FAW onto whatever channel the window
+-	 * actually uses rather than being pinned to the DW channel.
++	 * Unencrypted unicast is handshake traffic (SDF follow-up, NDP
++	 * request/response, pairing bootstrap). Until firmware holds the
++	 * peer's committed bitmap its availability gate has nothing to open,
++	 * so a frame steered at the peer WTBL would park behind the BY_NAN
++	 * pause; such frames ride the DW-WTBL, which firmware unpauses every
++	 * DW - the one rendezvous both peers must be awake for. Once the CRB
++	 * download latches has_commit, the frame keeps the peer's own WTBL
++	 * and firmware serves it in the committed slots, which a 2-second
++	 * handshake deadline needs (the DW alone offers only ~4 shots).
+ 	 *
+ 	 * Secured frames belong to an established peer and keep its own WTBL
+ 	 * and key.
+@@ -52,24 +51,16 @@ int mt7925e_tx_prepare_skb(struct mt76_dev *mdev, void *txwi_ptr,
+ 		struct mt792x_vif *mvif = (void *)vif->drv_priv;
+ 		bool mcast = is_multicast_ether_addr(hdr->addr1);
+ 
++		struct mt792x_sta *peer = (!mcast && sta) ?
++			(struct mt792x_sta *)sta->drv_priv : NULL;
++
+ 		if (mcast && wcid == &mvif->nan_dw_wcid) {
+ 			wcid = &mvif->sta.deflink.wcid;
+ 		} else if (!mcast && !key &&
++			   !(peer && peer->nan_sched.has_commit) &&
+ 			   mvif->nan_dw_wcid.idx &&
+ 			   mvif->nan_dw_wcid.idx < MT792x_WTBL_STA) {
+-			struct ieee80211_sta *psta;
+-			struct mt792x_sta *pmsta;
+-
+-			rcu_read_lock();
+-			psta = ieee80211_find_sta(vif, hdr->addr1);
+-			pmsta = psta ? (struct mt792x_sta *)psta->drv_priv :
+-				       NULL;
+-
+-			if (pmsta && pmsta->deflink.wcid.idx)
+-				wcid = &pmsta->deflink.wcid;
+-			else
+-				wcid = &mvif->nan_dw_wcid;
+-			rcu_read_unlock();
++			wcid = &mvif->nan_dw_wcid;
+ 		}
+ 	}
  
 diff --git a/drivers/net/wireless/mediatek/mt76/mt792x.h b/drivers/net/wireless/mediatek/mt76/mt792x.h
-index 78901585d784..c46b88467193 100644
+index c46b88467193..586352f4b1d0 100644
 --- a/drivers/net/wireless/mediatek/mt76/mt792x.h
 +++ b/drivers/net/wireless/mediatek/mt76/mt792x.h
-@@ -424,6 +424,7 @@ struct mt792x_dev {
- 	spinlock_t nan_deferred_lock;
- 	unsigned long nan_deferred_pending;
- 	u8 nan_started_cluster_id[ETH_ALEN];
-+	u8 nan_joined_cluster_id[ETH_ALEN];
- 
- 	struct {
- 		void *va;
+@@ -134,6 +134,7 @@ struct mt792x_sta_nan_sched {
+ 	u16 committed_dw;
+ 	u32 sch_idx;
+ 	bool idx_assigned;
++	bool has_commit;	/* last CRB carried a non-empty committed map */
+ 	unsigned long ndp_ctx_bitmap;
+ 	bool ndp_ctx_assigned;
+ 	u8 ndp_ctx_id;		/* assigned NDP context ID (for NDI sta) */
 -- 
 2.43.0
 
