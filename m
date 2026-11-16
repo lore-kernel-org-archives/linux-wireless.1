@@ -1,70 +1,88 @@
-Authentication-Results: smtp.subspace.kernel.org; arc=none smtp.remote-ip=188.68.63.166
+Authentication-Results: smtp.subspace.kernel.org; arc=none smtp.remote-ip=100.103.45.18
 ARC-Seal: i=1; d=subspace.kernel.org; s=arc20261015; a=rsa-sha256; cv=none;
-	t=1794833808;
-	b=cUx9NPjRGVBOAFgNX0Hnem2iF+nWVua6TQrciCGiIqMvuaMBrifjv1fFU1fs2zAQeJC9
-	 Xds1TbeW5yIPEtulweY1AoHTPF4KGg9kVxIKbCfinu5B9v64vOERQjBtxjz26rKY7fnD7
-	 bjXcEc+ytg3m09+ScamFKc1SCugv4t6FdRbrMdFbNUJ7QOxV0l+Vsq/443Y82ogSsFFcH
-	 zCRrI9v5QpsO0ISZFiS7Q8Lo8+7wFZbOE8rIAezv308gNRvSv4QEksstrV/8AGYbbH0nv
-	 +ORtUoWUMuF9y57SCVxbrsiggriRQuHTvgn+Vyo0Ihzd12v4rGPIf8LcJL08p3m6oKQ==
+	t=1794834522;
+	b=qYHWbcj4z8WImWhy53t+R3uRL9JesMam8zp4slv6kPuSDFtS4xtHNwUR0JeJO22D2eLa
+	 O6qPgJhGfpTk9D+BkNNAdv1fGlizhHDiQiQzG0tKsQlP87hfPFMzAsn6C+VI+0FpCnAJB
+	 BHOQwawzgNX4lqyfHdwaOTLoagWAnlm3qzjM8xV2FHLE+SxW8W9Z1N0AgJjMad3MHDelG
+	 j85Ti+rNvG0MyfHZLT7vLTjKu1J7eXwTVB928Wab4aXlssViIQ0bUgP/es2Oy7E3NVkCp
+	 xVaotvife7iQJquxfVsGN1I84Ws64Mr994TNZwNcpHL0k//Ev7Hhf0fhhwu6ZmMbN5w==
 ARC-Message-Signature: i=1; d=subspace.kernel.org; s=arc20261015;
-	a=rsa-sha256; c=relaxed/relaxed; t=1794833808;
-	h=DMARC-Filter:Received:DKIM-Signature:Received:Received:Received:
-	 Received-SPF:Message-ID:Date:MIME-Version:User-Agent:Subject:To:Cc:
-	 References:From:Content-Language:In-Reply-To:Content-Type:
-	 Content-Transfer-Encoding:X-PPP-Message-ID:X-Rspamd-Server:
-	 X-Rspamd-Queue-Id:X-NC-CID;
-	bh=AySk9TZzV4MYiU/BGdCP3GZJ+DuHFYPn7n3AJWBQ9/U=;
-	b=fon4wnEG9j93+6BAI7SjpJbk7bEX8ZRJaeY/TZEqB/fbjhfvpXfQyx+uto+d5DoKnXxH
-	 kfRYkHuohW2G4DvybNFDyGq0MUQxPzwlmQSoJqjM1NRJnXcr/2XW1UengqRa/oM4C80C0
-	 JcPIW33wSxHiu139XpDEaxPG7xSLswKdZyluzolVqys24gBC7kNGL7FnudJK0QqjKQ3MO
-	 K951rdXXP/aEKIvV1ljylvg8x5Hm106+oByH9th3cToHRJTpoTxmMadzyJOAclfVEXBOq
-	 8JgF/PHMaz76NgmHUlsuOK8Z7uooMoWltZJqV34UTkqgTO0Nzbu1bdLbKo5e7XpJvyQ==
+	a=rsa-sha256; c=relaxed/relaxed; t=1794834522;
+	h=Received:DKIM-Signature:X-Mailer:From:To:Cc:Subject:In-Reply-To:
+	 References:Date:Message-ID:MIME-Version:Content-Type;
+	bh=FwoCPPpdO8j0QQzLogIM9E8IgkHPKoUE54w1Plha5dw=;
+	b=g5T2LIQhBkTcsMozvcwrUyP+MygohRJqOAd5/pHxuV6GYHgVaX9agEodLoUFvRvJD145
+	 32F+rkLvBLHeJAtKAejr/AycEFr63qb9YQKot8lcsnXAyRJeKyHcpOE2XooxbblIiYkDb
+	 y8KgUrus4Y2xq+bYmtcB4hx/8+4dGSUZehDBmwgNCyRezRg0E3f5CHFwVoggdpLnxKG7Y
+	 ujQmZzq29Q6MsLnIz/CZMUiaPvY1Z4JJInTPaK00F080DNEcVacjQXG4dRKDd8k7lJFmq
+	 zHynIvoMJJwx1BHPvZXPcu+A2fzfd4vs1tMNrI3MF+6wELsvxIcxUnguDXvcIDUJF7w==
 ARC-Authentication-Results: i=1; smtp.subspace.kernel.org; 
-	dmarc=pass header.from=leemhuis.info;
-	spf=pass smtp.mailfrom=leemhuis.info;
-	dkim=pass header.d=leemhuis.info header.i=@leemhuis.info header.a=rsa-sha256 header.s=key2 header.b=G98JHegM;
-	arc=none smtp.remote-ip=188.68.63.166
-Received: from relay.yourmailgateway.de (relay.yourmailgateway.de [188.68.63.166])
+	dkim=pass header.d=kernel.org header.i=@kernel.org header.a=rsa-sha256 header.s=k20260515 header.b=LIc5lPy1;
+	arc=none smtp.remote-ip=100.103.45.18
+Received: from smtp.kernel.org (quasi.space.kernel.org [100.103.45.18])
 	(using TLSv1.3 with cipher TLS_AES_256_GCM_SHA384 (256/256 bits)
-	 key-exchange X25519 server-signature ECDSA (prime256v1) server-digest SHA256)
+	 key-exchange X25519 server-signature ECDSA (prime256v1))
 	(No client certificate requested)
-	by smtp.subspace.kernel.org (Postfix) with ESMTPS id 61189606A323
-	for <linux-wireless@vger.kernel.org>; Mon, 16 Nov 2026 12:56:47 +0000 (UTC)
-DMARC-Filter: OpenDMARC Filter v1.4.2 smtp.subspace.kernel.org 61189606A323
-Authentication-Results: smtp.subspace.kernel.org; dmarc=pass (p=quarantine dis=none) header.from=leemhuis.info
-Authentication-Results: smtp.subspace.kernel.org; spf=pass smtp.mailfrom=leemhuis.info
+	by smtp.subspace.kernel.org (Postfix) with ESMTPS id B0D07606A33B;
+	Mon, 16 Nov 2026 13:08:42 +0000 (UTC)
 Authentication-Results: smtp.subspace.kernel.org;
-	dkim=pass (2048-bit key, unprotected) header.d=leemhuis.info header.i=@leemhuis.info header.a=rsa-sha256 header.s=key2 header.b=G98JHegM
-Received: from mors-relay-8202.netcup.net (localhost [127.0.0.1])
-	by mors-relay-8202.netcup.net (Postfix) with ESMTPS id 4jSntZ2FrNz4Jvq;
-	Mon, 16 Nov 2026 13:56:38 +0100 (CET)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=leemhuis.info;
-	s=key2; t=1794833798;
-	bh=RUCNJeguN48m5eoyub5yMpKhrSolVckKqyUaULknHCQ=;
-	h=Date:Subject:To:Cc:References:From:In-Reply-To:From;
-	b=G98JHegMDZXR2RMTEZbqKHeJ012FIUi4YbLhYQWcB0Lo+54Q1IUYV4Oh3s6hr5qHz
-	 SeF8y+U6ro4OEy2o4sRl8zgU2QkjysAGAgk0pnhZ9D3PEeg/7TQsUj/H3fOycMAIKq
-	 gLANn9rqJ1IMfnHv+PJqwj8IvpM4JUcNLPCJGeLrLI/2Q2xN62XDpH7dZlYqhcYXLD
-	 d5i08xoefDZCQ9mX7yxMBRl/ft1N7BjmmURkZXBR7U25FkUsYoOZqbRzM0sUgewyzN
-	 vlpXb9jcphiARipmIHnewp9H3fz8toOwnwVxqi60B3MmF7cg8VNKxwr8pkZro76k1Y
-	 rL3VMRC9wLLCQ==
-Received: from policy02-mors.netcup.net (unknown [46.38.225.35])
-	by mors-relay-8202.netcup.net (Postfix) with ESMTPS id 4jSntZ1YhSz4Jvf;
-	Mon, 16 Nov 2026 13:56:38 +0100 (CET)
-Received: from mxe9fb.netcup.net (unknown [10.243.12.53])
-	(using TLSv1.3 with cipher TLS_AES_256_GCM_SHA384 (256/256 bits)
-	 key-exchange ECDHE (P-256) server-signature RSA-PSS (2048 bits) server-digest SHA256)
-	(No client certificate requested)
-	by policy02-mors.netcup.net (Postfix) with ESMTPS id 4jSntZ3ZLDz8sb7;
-	Mon, 16 Nov 2026 13:56:38 +0100 (CET)
-Received: from [IPV6:2a02:8108:8984:1d00:a0cf:1912:4be:477f] (unknown [IPv6:2a02:8108:8984:1d00:a0cf:1912:4be:477f])
-	by mxe9fb.netcup.net (Postfix) with ESMTPSA id 7811C5F9EB;
-	Mon, 16 Nov 2026 13:56:33 +0100 (CET)
-Authentication-Results: mxe9fb;
-        spf=pass (sender IP is 2a02:8108:8984:1d00:a0cf:1912:4be:477f) smtp.mailfrom=regressions@leemhuis.info smtp.helo=[IPV6:2a02:8108:8984:1d00:a0cf:1912:4be:477f]
-Received-SPF: pass (mxe9fb: connection is authenticated)
-Message-ID: <4a47a57d-ee54-45c2-8948-fabbcbc6e322@leemhuis.info>
-Date: Mon, 16 Nov 2026 13:56:32 +0100
+	dkim=pass (2048-bit key) header.d=kernel.org header.i=@kernel.org header.a=rsa-sha256 header.s=k20260515 header.b=LIc5lPy1
+Received: by smtp.kernel.org (Postfix) with ESMTPSA id 612A41F000C5;
+	Mon, 16 Nov 2026 13:08:29 +0000 (UTC)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=kernel.org;
+	s=k20260515; t=1794834522;
+	bh=FwoCPPpdO8j0QQzLogIM9E8IgkHPKoUE54w1Plha5dw=;
+	h=From:To:Cc:Subject:In-Reply-To:References:Date;
+	b=LIc5lPy1D71RQN2xAbDw2oXaH5IV6pJ32H0KUZEqe8L249TmRi2WTJNQxKcuU1wEO
+	 oLm11Z/jqifv9rpcqf6oDFERa929d+JDfwRjC64Lnedd+EABh/BlgjMO2vcuLflph1
+	 8ElRVqEMjm7Be2V+wkEQvCuB9EDMcj/MMyH7AM8kqurVjgwf5jK5SAvnQJxVfCyPce
+	 WrnayG/saturD08cn49YyfcaDZzfKPuzx0jRt56/DImYkW4CmT1Kyp50jL+nYJU21v
+	 MsNp1ZjKlC00n397AZiiTcJm11MwJ1MeO9np8vdTOwAxjjQ4K/7vmluasP5XB0SeNC
+	 zhGRJWHaUOOpw==
+X-Mailer: emacs 31.1 (via feedmail 11-beta-1 I)
+From: Aneesh Kumar K.V <aneesh.kumar@kernel.org>
+To: Leon Romanovsky <leon@kernel.org>,
+	Greg Kroah-Hartman <gregkh@linuxfoundation.org>,
+	"Rafael J. Wysocki" <rafael@kernel.org>,
+	Danilo Krummrich <dakr@kernel.org>,
+	Dmitry Torokhov <dmitry.torokhov@gmail.com>,
+	Andrew Lunn <andrew@lunn.ch>,
+	Heiner Kallweit <hkallweit1@gmail.com>,
+	Russell King <linux@armlinux.org.uk>,
+	"David S. Miller" <davem@davemloft.net>,
+	Jakub Kicinski <kuba@kernel.org>,
+	Paolo Abeni <pabeni@redhat.com>,
+	Johannes Berg <johannes@sipsolutions.net>,
+	Jonathan Corbet <corbet@lwn.net>,
+	Shuah Khan <skhan@linuxfoundation.org>,
+	Randy Dunlap <rdunlap@infradead.org>,
+	Bjorn Helgaas <bhelgaas@google.com>,
+	"Joerg Roedel (AMD)" <joro@8bytes.org>,
+	Suravee Suthikulpanit <suravee.suthikulpanit@amd.com>,
+	Vasant Hegde <vasant.hegde@amd.com>,
+	Will Deacon <will@kernel.org>,
+	Robin Murphy <robin.murphy@arm.com>,
+	David Woodhouse <dwmw2@infradead.org>,
+	Lu Baolu <baolu.lu@linux.intel.com>,
+	Johan Hovold <johan@kernel.org>,
+	Eric Dumazet <edumazet@kernel.org>,
+	Marcel Holtmann <marcel@holtmann.org>,
+	Luiz Augusto von Dentz <luiz.dentz@gmail.com>,
+	Nipun Gupta <nipun.gupta@amd.com>,
+	Nikhil Agarwal <nikhil.agarwal@amd.com>,
+	Pieter Jansen van Vuuren <pieter.jansen-van-vuuren@amd.com>
+Cc: linux-kernel@vger.kernel.org, driver-core@lists.linux.dev,
+	linux-input@vger.kernel.org, netdev@vger.kernel.org,
+	linux-wireless@vger.kernel.org, linux-usb@vger.kernel.org,
+	linux-bluetooth@vger.kernel.org, linux-acpi@vger.kernel.org,
+	linux-doc@vger.kernel.org, linux-pci@vger.kernel.org,
+	iommu@lists.linux.dev, Jason Gunthorpe <jgg@ziepe.ca>
+Subject: Re: [PATCH 17/17] PCI: Replace untrusted state with device trust
+In-Reply-To: <20261105-device-trust-core-v1-17-1e536825b4eb@nvidia.com>
+References: <20261105-device-trust-core-v1-0-1e536825b4eb@nvidia.com>
+ <20261105-device-trust-core-v1-17-1e536825b4eb@nvidia.com>
+Date: Mon, 16 Nov 2026 18:38:25 +0530
+Message-ID: <yq5amrr8yldi.fsf@kernel.org>
 X-Mailing-List: linux-wireless@vger.kernel.org
 List-Id: <linux-wireless.vger.kernel.org>
 List-Post: <mailto:linux-wireless@vger.kernel.org>
@@ -74,97 +92,112 @@ List-Unsubscribe: <mailto:linux-wireless+unsubscribe@vger.kernel.org>
 List-Owner: <mailto:linux-wireless+owner@vger.kernel.org>
 Precedence: list
 MIME-Version: 1.0
-User-Agent: Mozilla Thunderbird
-Subject: Re: [REGRESSION] brcmfmac BCM43602: DMAR read faults and firmware
- timeouts on 7.3.3 with intel_iommu=on, works on 7.2.14 / with iommu=pt
-To: Argishti KHACHIK <argishti.khachik@itsolution.at>,
- linux-wireless@vger.kernel.org, brcm80211@lists.linux.dev
-Cc: iommu@lists.linux.dev, regressions@lists.linux.dev
-References: <b010a7fa-73ea-43fa-a020-c2ea706295dd@itsolution.at>
-From: Thorsten Leemhuis <regressions@leemhuis.info>
-Content-Language: de-DE, en-US
-In-Reply-To: <b010a7fa-73ea-43fa-a020-c2ea706295dd@itsolution.at>
-Content-Type: text/plain; charset=UTF-8
-Content-Transfer-Encoding: 8bit
-X-PPP-Message-ID: <179483379382.1000705.2016802566482365866@mxe9fb.netcup.net>
-X-Rspamd-Server: rspamd-worker-8404
-X-Rspamd-Queue-Id: 7811C5F9EB
-X-NC-CID: wo7XxjZvvxvxxZLF30kXgaRnnU84ojJuzpJUm/nFgafWKYiNY1A=
+Content-Type: text/plain
 
-On 11/13/26 09:39, Argishti KHACHIK wrote:
-> 
-> since updating from 7.2.14 to 7.3.3 (Fedora 44 kernels), the
-> BCM43602 Wi-Fi in my Dell XPS 15 9550 is unusable when the Intel
-> IOMMU is in translation mode. Booting with iommu=pt fixes it.
-> 
-> Hardware: Dell XPS 15 9550, BIOS 1.14.0 02/13/2020
-> Device:   Broadcom BCM43602 [14e4:43ba], PCIe, brcmfmac (msgbuf)
-> Firmware: BCM43602/1 wl0: Nov 10 2015 06:38:10 version 7.35.177.61
->           (r598657) FWID 01-ea662a8c (linux-firmware)
-> Cmdline:  ... intel_iommu=on
-> 
-> Results:
-> - 7.2.14-200.fc44.x86_64:            works
-> - 7.3.3-200.fc44.x86_64:             broken
-> - 7.3.3-200.fc44.x86_64 + iommu=pt:  works
-> 
-> Userspace and firmware are identical in all three cases.
-> 
-> The firmware loads fine, then a few seconds later the IOMMU
-> rejects DMA reads from the card:
-> 
->   brcmfmac: brcmf_c_preinit_dcmds: Firmware: BCM43602/1 wl0: Nov 10 2015
-> 06:38:10 version 7.35.177.61 (r598657) FWID 01-ea662a8c
->   brcmfmac 0000:02:00.0 wlp2s0: renamed from wlan0
->   DMAR: DRHD: handling fault status reg 2
+Leon Romanovsky <leon@kernel.org> writes:
 
-Thx for the report. This is not at all my area of expertise, so be aware
-that the following might be misleading:
+> From: Leon Romanovsky <leonro@nvidia.com>
+>
+> Convert the PCI specific untrusted to use the common device trust
+> level. Adversarial means the same thing untrusted does.
+>
+> PCI discovery keeps the logic that set untrusted: it looks for removable
+> PCI devices with arch_pci_dev_is_removable() and defaults them to an
+> adversarial policy. Treat a disabled policy the same way when choosing
+> the IOMMU domain. Do not record the ATS capability of such a device, as
+> pci_ats_supported() rejected untrusted ones. Let the Intel write-buffer
+> quirk apply, as it only adds flushing.
+>
 
-From a quick search for your error msg I found this thread that sounds
-somewhat related:
-https://lore.kernel.org/all/2c840dcf-4292-4579-a62d-f9766b7cb780@linux.intel.com/
+ [ ... 28 lines skipped ... ] 
 
-A fix for that is currently heading towards 7.3.y:
-wifi: brcmfmac: map msgbuf RX packet IDs bidirectional
-https://lore.kernel.org/all/20261113153755.740970246@linuxfoundation.org/
+> diff --git a/drivers/iommu/dma-iommu.c b/drivers/iommu/dma-iommu.c
+> index 78742aeba932d..a48fb511bfe6f 100644
+> --- a/drivers/iommu/dma-iommu.c
+> +++ b/drivers/iommu/dma-iommu.c
+> @@ -589,16 +589,11 @@ static int iova_reserve_iommu_regions(struct device *dev,
+>  	return ret;
+>  }
+>  
+> -static bool dev_is_untrusted(struct device *dev)
+> -{
+> -	return dev_is_pci(dev) && to_pci_dev(dev)->untrusted;
+> -}
+> -
 
-Is that maybe solving your problem as well?
+ [ ... 244 lines skipped ... ] 
 
-Ciao, Thorsten
+> diff --git a/include/linux/device.h b/include/linux/device.h
+> index 65ea07c9ac35b..870ce14924905 100644
+> --- a/include/linux/device.h
+> +++ b/include/linux/device.h
+> @@ -934,6 +934,11 @@ static inline bool device_iommu_mapped(struct device *dev)
+>  	return (dev->iommu_group != NULL);
+>  }
+>  
+> +static inline bool device_policy_is_adversarial(const struct device *dev)
+> +{
+> +	return READ_ONCE(dev->trust_policy) == DEVICE_TRUST_POLICY_ADVERSARY;
+> +}
+> +
+>  /* Get the wakeup routines, which depend on struct device */
+>  #include <linux/pm_wakeup.h>
+>  
+> diff --git a/include/linux/pci.h b/include/linux/pci.h
+> index aa3765a20a96c..087c63b177c85 100644
+> --- a/include/linux/pci.h
+> +++ b/include/linux/pci.h
+> @@ -490,14 +490,6 @@ struct pci_dev {
+>  	unsigned int	shpc_managed:1;		/* SHPC owned by shpchp */
+>  	unsigned int	is_thunderbolt:1;	/* Thunderbolt controller */
+>  	unsigned int	is_cxl:1;               /* Compute Express Link (CXL) */
+> -	/*
+> -	 * Devices marked being untrusted are the ones that can potentially
+> -	 * execute DMA attacks and similar. They are typically connected
+> -	 * through external ports such as Thunderbolt but not limited to
+> -	 * that. When an IOMMU is enabled they should be getting full
+> -	 * mappings to make sure they cannot access arbitrary memory.
+> -	 */
+> -	unsigned int	untrusted:1;
+>  	/*
+>  	 * Info from the platform, e.g., ACPI or device tree, may mark a
+>  	 * device as "external-facing".  An external-facing device is
+> @@ -616,6 +608,28 @@ static inline struct pci_dev *to_pci_dev(const struct device *dev)
+>  {
+>  	return container_of(dev, struct pci_dev, dev);
+>  }
+> +
+> +static inline bool
+> +pci_dev_default_is_restricted(const struct pci_dev *pdev)
+> +{
+> +	enum device_trust_policy policy = READ_ONCE(pdev->dev.trust_policy);
+> +
+> +	return policy == DEVICE_TRUST_POLICY_DISABLED ||
+> +	       policy == DEVICE_TRUST_POLICY_ADVERSARY;
+> +}
+> +
 
->   DMAR: [DMA Read NO_PASID] Request device [0000:02:00.0] fault addr
-> 0xfff83000 [fault reason 0x06] PTE Read access is not set
->   DMAR: [DMA Read NO_PASID] Request device [0000:02:00.0] fault addr
-> 0xfff80000 [fault reason 0x06] PTE Read access is not set
->   DMAR: [DMA Read NO_PASID] Request device [0000:02:00.0] fault addr
-> 0xfff7e000 [fault reason 0x06] PTE Read access is not set
-> 
-> After that, every firmware command times out:
-> 
->   ieee80211 phy0: brcmf_msgbuf_query_dcmd: Timeout on response for query
-> command
->   ieee80211 phy0: brcmf_cfg80211_get_channel: chanspec failed (-5)
->   ieee80211 phy0: brcmf_run_escan: error (-5)
->   ieee80211 phy0: brcmf_set_wsec: failed to change PSK in firmware (len=0)
-> 
-> and after about two minutes the command ring is full:
-> 
->   ieee80211 phy0: brcmf_msgbuf_tx_ioctl: Failed to reserve space in
-> commonring
->   ieee80211 phy0: brcmf_run_escan: error (-12)
-> 
-> Unloading and reloading brcmfmac reproduces the same DMAR faults
-> right after the firmware loads again.
-> 
-> User-visible effect: networks show up briefly, connecting never
-> completes, then the scan list goes empty. Boot is noticeably slower.
-> 
-> I can provide the full kernel log, test patches or bisect between
-> v7.2 and v7.3 if that helps.
-> 
-> #regzbot introduced: v7.2..v7.3
-> 
-> Thanks,
-> Argishti
+Could you clarify how this series will work alongside device acceptance
+and private-memory access?
 
+In particular, what should callers of device_cc_accepted() use under
+this model? My understanding is that trust describes the operating
+policy, not TDISP acceptance or DMA access to private memory. Therefore,
+neither FULL nor ADVERSARY alone indicates whether a device can access
+private memory?
+
+You also mention that once a trust level other than DISABLED is set, it
+cannot be changed during the device's lifetime. If a device initially
+operates in ADVERSARY mode and later attestation justifies FULL
+operation, is that transition intentionally unsupported for the existing
+device object? As documented, unbind/rebind and reset preserve the
+committed level.
+
+Some of these details are discussed in this thread:
+https://lore.kernel.org/all/20260708143153.GH118978@ziepe.ca/
+
+It would help to describe how the trust framework fits together with
+those separate mechanisms, including which pieces are left for follow-up
+series.
+
+-aneesh
