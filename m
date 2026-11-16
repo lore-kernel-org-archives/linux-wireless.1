@@ -1,58 +1,67 @@
-Authentication-Results: smtp.subspace.kernel.org; arc=none smtp.remote-ip=100.103.45.18
+Authentication-Results: smtp.subspace.kernel.org; arc=none smtp.remote-ip=168.119.38.16
 ARC-Seal: i=1; d=subspace.kernel.org; s=arc20261015; a=rsa-sha256; cv=none;
-	t=1794827536;
-	b=k2OzrgDitFWnWRT/Zm2ZoWuK87VWVi1xoxiFd1rpKu7YnVnq4vW9FLsnWN926Pe8qJFH
-	 UmKG2IqBb/DDpKgd8IOegUmXqCpLxhcG+/O8r5qHSCD7MFByQkDFYbWaus7IbDAuXnRLC
-	 gvfRmTlRD3DMP5sYyPjAlt53z44reznFlBz6ApSWv7UidMdaIZJNKFQAkqMW4/xMyfC6g
-	 S3zQMNbIg1txhBVw3E7+j2i7Jjelh6sVsQP4a8eV4y/Yb7j/q5Puwp44C4xfHlw0ClcnF
-	 zXD3w1eixeXwODWxdB/or9JyxpmOpmz7TcgrwgtsoItK70/krQj1mojztYJ4wMwf7rw==
+	t=1794827640;
+	b=PWkn9kwQ+Mq87SAPSjf8qdg0QjttzaF8txUThtNkXZnjc0zZe2/ur2PhUEZCq5lGcAeA
+	 f48j2MBEVIRkpIb+mnpztRwHraoKyzFHfLJfOxZyIlg5zQ1uZbIv6UoVdiOQCAJho0mGm
+	 ckbmJLh+ag1LLxwk1gt4QUtYm2FCkh5yCCugvHY+BfdHsuY1tlZTe5Q8zJyX6SASGqjM2
+	 IhbFjGahKfYPMIlEvOjLKyBTcpGVpdCtbM/KgCbKP2DWqT0mGOCvpUuFCEAUIqUzM02A/
+	 xUjwOn3txPnP319OvNGqWjM8qIBwYPqP3V1Xii89Gmsj97gF01Le71548ErjJKlOn0w==
 ARC-Message-Signature: i=1; d=subspace.kernel.org; s=arc20261015;
-	a=rsa-sha256; c=relaxed/relaxed; t=1794827536;
-	h=Received:DKIM-Signature:Date:From:To:Cc:Subject:Message-ID:
-	 References:MIME-Version:Content-Type:Content-Disposition:In-Reply-To;
-	bh=wJhGraY4E2F3DhRPt+fkpNkkY0LjI7cgZJQyq/wKMOk=;
-	b=P/rczQyQODcq6WB9mC/HKx2g/vuqUK/yApVJzCsVNKPIcaLy2RS+6et7CTbyGj7K4S1x
-	 pfMx9PTxs9xLCGUabxqwVDIMqQcuYT6NHwSXPfBHseKJ4sbDzu8G4Qx4WIwI0WcF2+A0e
-	 rMRWFQpGNWfyj/rI5G8pBeXRykePowMWEzL86TW4hYNOaHqmU9XpsdyUlOkKrRzbCGhgI
-	 Wn9zG+jL98eoOGvL23Thob+0Cn+woOzpIWavAxMCS/19rpt/zNiSoy45korV8HSKm39mQ
-	 D2r4MMxIEbLHj1WHf6gCxwtFsepjgo5Khw+TdZWbR/me74nWQFztNWiS52VveU5dHgw==
+	a=rsa-sha256; c=relaxed/relaxed; t=1794827640;
+	h=DKIM-Signature:Received:Message-ID:Subject:From:To:Cc:Date:
+	 In-Reply-To:References:Content-Type:Content-Transfer-Encoding:
+	 User-Agent:MIME-Version:X-malware-bazaar;
+	bh=q3tXTTuzZPDwf7cWttrKZdbIQ10UDrDakG8A8akmtsc=;
+	b=hyqrdd51OaUMQXG6jGXsFQyXWrM1tOm4kuCEwF/1brNuGhJGgLLzwXeO9MPSiHhmx/7s
+	 VNA/8lYu+BMLkaMVCa9l+Vr2aOrjx/FkSPMvwvbueJg4zW6faYKwgmEwYwMo0lXughZvy
+	 F0tlOg6232zt8/Ay9mGUNt0tYH487Vxj7T1JAn8w2modxOEeXE1IxYc3mJhudhFe0Nv4n
+	 Hn9ZPnQkCUKeuDd3uo1jBYPJLtpAPNZxClHl4GsnMzH52UeOPdKNdnHo0oE5qMQOoZhOJ
+	 XADdzkRSnPm/BNOSNTxsnpy1Bbh/bcRSX+L1DudTuVrQAl8lHEwBooQDw5hhqmr5ZVA==
 ARC-Authentication-Results: i=1; smtp.subspace.kernel.org; 
-	dkim=pass header.d=kernel.org header.i=@kernel.org header.a=rsa-sha256 header.s=k20260515 header.b=be3RE2Tv;
-	arc=none smtp.remote-ip=100.103.45.18
-Received: from smtp.kernel.org (quasi.space.kernel.org [100.103.45.18])
+	dmarc=permerror header.from=sipsolutions.net;
+	spf=pass smtp.mailfrom=sipsolutions.net;
+	dkim=pass header.d=sipsolutions.net header.i=@sipsolutions.net header.a=rsa-sha256 header.s=mail header.b="p6tJuYr/";
+	arc=none smtp.remote-ip=168.119.38.16
+Received: from sipsolutions.net (s3.sipsolutions.net [168.119.38.16])
 	(using TLSv1.3 with cipher TLS_AES_256_GCM_SHA384 (256/256 bits)
-	 key-exchange X25519 server-signature ECDSA (prime256v1))
+	 key-exchange ECDHE (prime256v1) server-signature ECDSA (prime256v1) server-digest SHA256)
 	(No client certificate requested)
-	by smtp.subspace.kernel.org (Postfix) with ESMTPS id 920AC606A31C;
-	Mon, 16 Nov 2026 11:12:16 +0000 (UTC)
+	by smtp.subspace.kernel.org (Postfix) with ESMTPS id 27204606A8B9;
+	Mon, 16 Nov 2026 11:13:59 +0000 (UTC)
+Authentication-Results: smtp.subspace.kernel.org; dmarc=permerror header.from=sipsolutions.net
+Authentication-Results: smtp.subspace.kernel.org; spf=pass smtp.mailfrom=sipsolutions.net
 Authentication-Results: smtp.subspace.kernel.org;
-	dkim=pass (2048-bit key) header.d=kernel.org header.i=@kernel.org header.a=rsa-sha256 header.s=k20260515 header.b=be3RE2Tv
-Received: by smtp.kernel.org (Postfix) with ESMTPSA id EF6C41F000C4;
-	Mon, 16 Nov 2026 11:12:14 +0000 (UTC)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=kernel.org;
-	s=k20260515; t=1794827536;
-	bh=wJhGraY4E2F3DhRPt+fkpNkkY0LjI7cgZJQyq/wKMOk=;
-	h=Date:From:To:Cc:Subject:References:In-Reply-To;
-	b=be3RE2TvHfu/0+xHeuoCE6/kUt020jzanpOKfY2dJPntwCkGA8zzpR+if6hDSxfZ3
-	 xlR4NatqGaVrQHPNX7X7jpwdO/JykdMhgR4Wyo0uJaay5F2AD7O/82hsMzJ9C4+KwV
-	 QRO2Ur+CSE3g6ig1CkdwHzBRm8xfUKxXuGUG9h2euPws0jJtqC6tZDznYp/jF97JOQ
-	 AzsirOO8JH7MMs+71eoG11Nk7kpSQoAzE2jg7HFjx2QRvWJcx60POqnv3h2Gz5bnBg
-	 c7vE8kOHR5uYPdN+XGTfJ3MpylRMZEYlBbvDG+9v2BUN0eXwow39UhQr8JXO/uS1MM
-	 R2xt668x4LoJQ==
-Date: Mon, 16 Nov 2026 12:12:06 +0100
-From: Krzysztof Kozlowski <krzk@kernel.org>
-To: Yanli Yang <yanli.yang@bedmex.com>
-Cc: linux-wireless@vger.kernel.org, 
-	Johannes Berg <johannes@sipsolutions.net>, Rob Herring <robh@kernel.org>, 
-	Krzysztof Kozlowski <krzk+dt@kernel.org>, Conor Dooley <conor+dt@kernel.org>, devicetree@vger.kernel.org, 
-	linux-kernel@vger.kernel.org, Zhirun Liu <zhirunliu@aicsemi.com>, 
-	Dijia Xu <dijiaxu@aicsemi.com>, Chunqiu Liu <chunqiuliu@aicsemi.com>, 
-	Liheng Wei <liheng.wei@bedmex.com>
-Subject: Re: [PATCH wireless-next v5 1/4] dt-bindings: net: wireless: Add
- AIC8800D80 SDIO Wi-Fi
-Message-ID: <20261116-groundhog-of-magic-flowers-baeecf@quoll>
-References: <179481380235.4.7388336477392853157@bedmex.com>
- <179481380235.4.9476425206200425967@bedmex.com>
+	dkim=pass (2048-bit key) header.d=sipsolutions.net header.i=@sipsolutions.net header.a=rsa-sha256 header.s=mail header.b=p6tJuYr/
+DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
+	d=sipsolutions.net; s=mail; h=MIME-Version:Content-Transfer-Encoding:
+	Content-Type:References:In-Reply-To:Date:Cc:To:From:Subject:Message-ID:Sender
+	:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:Resent-To:
+	Resent-Cc:Resent-Message-ID; bh=q3tXTTuzZPDwf7cWttrKZdbIQ10UDrDakG8A8akmtsc=;
+	t=1794827639; x=1796037239; b=p6tJuYr/EAWGpL2edL7Zpun4M6i3IRsmyNLZ8LlvyDsQHsJ
+	JgTBysM8cDCLFPQFC6ZLM83lBRFVHr2irBIDDG6c7L4JB2QyVdq9g9pA0M8aFu2OnmJrLUxAugMAT
+	SwYi7wrwfAEopmTv34Xqw1DA0xyt8a5IssdnpNtWTjP/2ZJ5YnsN03uFsnnqgaUodqxTl1O+NRAWb
+	PA0ASE/elpvrZaFkp/2Y8JeysaYCa1P5HGRChqXp7iH0ylTYgdudHgrWtRkUi6g+rNeY9cAHVUp9v
+	jP9Uxu4y70+3sGxHmVRtxRuEflQ/KGuY35A/h5GYARo6sh/aCOK62rELjfd8VezA==;
+Received: by sipsolutions.net with esmtpsa (TLS1.3:ECDHE_X25519__ECDSA_SECP256R1_SHA256__AES_256_GCM:256)
+	(Exim 4.98.2)
+	(envelope-from <johannes@sipsolutions.net>)
+	id 1xSueq-0000000GZaZ-1ipX;
+	Mon, 16 Nov 2026 12:13:56 +0100
+Message-ID: <0ebac9768c0294b8ecfc8729447dee94ec0b7c84.camel@sipsolutions.net>
+Subject: Re: [PATCH wireless-next v4 09/21] wifi: nl80211/cfg80211: add
+ support for SMD context programming
+From: Johannes Berg <johannes@sipsolutions.net>
+To: Pooventhiran G <pooventhiran.g@oss.qualcomm.com>
+Cc: linux-wireless@vger.kernel.org, linux-kernel@vger.kernel.org
+Date: Mon, 16 Nov 2026 12:13:55 +0100
+In-Reply-To: <2be101bb-081c-4d6b-93b6-a7cea3f183f2@oss.qualcomm.com>
+References: <20261106-smd-v4-0-62e39487f51a@oss.qualcomm.com>
+	 <20261106-smd-v4-9-62e39487f51a@oss.qualcomm.com>
+	 <7e6a6640fe034af160eec0dda532259b499153ad.camel@sipsolutions.net>
+	 <2be101bb-081c-4d6b-93b6-a7cea3f183f2@oss.qualcomm.com>
+Content-Type: text/plain; charset="UTF-8"
+Content-Transfer-Encoding: quoted-printable
+User-Agent: Evolution 3.60.2 (3.60.2-3.fc44) 
 X-Mailing-List: linux-wireless@vger.kernel.org
 List-Id: <linux-wireless.vger.kernel.org>
 List-Post: <mailto:linux-wireless@vger.kernel.org>
@@ -62,32 +71,33 @@ List-Unsubscribe: <mailto:linux-wireless+unsubscribe@vger.kernel.org>
 List-Owner: <mailto:linux-wireless+owner@vger.kernel.org>
 Precedence: list
 MIME-Version: 1.0
-Content-Type: text/plain; charset=utf-8
-Content-Disposition: inline
-In-Reply-To: <179481380235.4.9476425206200425967@bedmex.com>
+X-malware-bazaar: not-scanned
 
-On Mon, Nov 16, 2026 at 03:23:22PM +0800, Yanli Yang wrote:
-> +description:
-> +  The AIC8800D80 and AIC8800D80N are Wi-Fi and Bluetooth combo chips.
-> +  Wi-Fi is attached over SDIO and the chip variant is identified through
-> +  the SDIO vendor and device IDs. Both chips use the aicsemi,aic8800d80-fmac
-> +  compatible and the same device tree properties defined here.
-> +  The node describes SDIO function 1 and its optional out-of-band wake-up
-> +  lines, and is a child of the MMC host controller node. The chip supply
-> +  and enable line are described on the MMC host controller through
-> +  vmmc-supply and mmc-pwrseq.
-> +
-> +allOf:
-> +  - $ref: ieee80211.yaml#
-> +
-> +properties:
-> +  compatible:
-> +    const: aicsemi,aic8800d80-fmac
+On Fri, 2026-11-13 at 23:24 +0530, Pooventhiran G wrote:
+>=20
+> There were similar changes done for array of values for
+> NL80211_ATTR_CNTDWN_OFFS_BEACON, NL80211_ATTR_SCAN_FREQUENCIES, etc., So,=
+ this
+> approach was done here to make sure that each SN in the array was u16 as
+> expected. If there _is_ a way to add policies for the iterator-based nest=
+ing
+> of such values that you could point me to, I will change accordingly.
+>=20
+> [1] =3D>
+>=20
+> struct nla_policy sn_policy[8] =3D {
+> 	[0] =3D { .type =3D NLA_U16 },
+> 	[1] =3D { .type =3D NLA_U16 },
+> 	...
+> 	[7] =3D { .type =3D NLA_U16 },
+> }
+>=20
 
-Nothing binds to it, no user. At least I could not find one. Can you
-point me? See also submitting patches in DT for explanation of rules.
+Wait, I thought you _had_ a policy for this? Sorry! I also thought we
+had a macro for such policies, but ... I guess not?
 
+There's a preference for using a single attribute multiple times to get
+an array, in part for this reason, but we've never done that really in
+nl80211. Maybe see how that'd be?
 
-Best regards,
-Krzysztof
-
+johannes
