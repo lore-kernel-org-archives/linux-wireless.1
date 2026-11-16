@@ -1,143 +1,53 @@
-Authentication-Results: smtp.subspace.kernel.org; arc=pass header.oldest-pass=0 smtp.remote-ip=52.101.62.50
-ARC-Seal: i=2; d=subspace.kernel.org; s=arc20261015; a=rsa-sha256; cv=pass;
-	t=1794852694;
-	b=RAl80AdnfQuZMu2h7GqMm5ins+63vF892ks2Hxe+rY1qok7Z1h48aANBgoSy4KIoOC/K
-	 uJf+1P3BXPk3sd8sTwRHmBAXB7/PVKqMlC4WSIGGUYbw/AKfL6XpWJXQ0DOXx7jz88y8b
-	 OnJsqNK654616MkaZWQ7wQtmSyh3dqKvMekyAjlztuPmj6QGyJNimZ54A41/nTwZwcJFK
-	 ocZZ+XjqnBSP+rOjpad7VtVntLftr1OLbXnlQLGFw+EfnUkrHGzqTbQC+Io1QRDdnMeoA
-	 N2Vka5i2llsJT2Y56fi5WQbecXWDik2hAjBc8PGC4Xt9rOt9794MJ49/DTmk0jaP+Sw==
-ARC-Message-Signature: i=2; d=subspace.kernel.org; s=arc20261015;
-	a=rsa-sha256; c=relaxed/relaxed; t=1794852694;
-	h=DMARC-Filter:DKIM-Signature:Received:Received:From:To:CC:Subject:
-	 Thread-Topic:Thread-Index:Date:Message-ID:Accept-Language:
-	 Content-Language:X-MS-Has-Attach:X-MS-TNEF-Correlator:
-	 x-ms-publictraffictype:x-ms-traffictypediagnostic:
-	 x-ms-office365-filtering-correlation-id:x-ms-exchange-senderadcheck:
-	 x-ms-exchange-antispam-relay:x-microsoft-antispam:
-	 x-microsoft-antispam-message-info:x-forefront-antispam-report:
-	 x-ms-exchange-antispam-messagedata-chunkcount:
-	 x-ms-exchange-antispam-messagedata-0:
-	 x-ms-exchange-antispam-messagedata-1:Content-Type:Content-ID:
-	 Content-Transfer-Encoding:MIME-Version:X-OriginatorOrg:
-	 X-MS-Exchange-CrossTenant-AuthAs:X-MS-Exchange-CrossTenant-AuthSource:
-	 X-MS-Exchange-CrossTenant-Network-Message-Id:
-	 X-MS-Exchange-CrossTenant-originalarrivaltime:
-	 X-MS-Exchange-CrossTenant-fromentityheader:
-	 X-MS-Exchange-CrossTenant-id:X-MS-Exchange-CrossTenant-mailboxtype:
-	 X-MS-Exchange-CrossTenant-userprincipalname:
-	 X-MS-Exchange-Transport-CrossTenantHeadersStamped;
-	bh=I2jUHuuNNh+AJ5mYvphm1Vmhxtjra84T9NLLmn2BRnM=;
-	b=AXeiJwbbQZQ7mgugZWY/rosaxll6hrYRfH4do4+XqDnUkbRP17V3YFcuzGaZTGCZpSya
-	 kCHjOY1Vcp8P+T/iwtjKiOjWcBQZkfvkSzSWRrdJ+k3kXPpnkVShfhAs4/KpuDKJn0csE
-	 sc73GyuKzoTa8SRwn51Hu5UvvXLMJcu328GJyf4hcgvUV0CkXwJph7qcbpbPPl/BY+jm5
-	 FdxTx3iWW+XmHEjXJZs9X4cwylzMeMmRme/ediXYgZ72uKucxjZ37s6iJLFY+HQqy85hf
-	 laowJyanB96+5YneOhTgVqxqBfbotpoirpDfOB4PL8v1b3Ewi5kNdvRD3uahG8Fh/6g==
-ARC-Authentication-Results: i=2; smtp.subspace.kernel.org; 
-	dmarc=pass header.from=sunydutchess.edu;
-	spf=pass smtp.mailfrom=sunydutchess.edu;
-	dkim=pass header.d=sunydutchess.edu header.i=@sunydutchess.edu header.a=rsa-sha256 header.s=selector1 header.b=s2cYc5mO;
-	arc=pass header.oldest-pass=0 smtp.remote-ip=52.101.62.50
-Received: from DM5PR21CU001.outbound.protection.outlook.com (mail-centralusazon11011050.outbound.protection.outlook.com [52.101.62.50])
-	(using TLSv1.3 with cipher TLS_AES_256_GCM_SHA384 (256/256 bits)
-	 key-exchange ECDHE (secp384r1) server-signature ECDSA (prime256v1) server-digest SHA256)
-	(No client certificate requested)
-	by smtp.subspace.kernel.org (Postfix) with ESMTPS id 1C613606A31C
-	for <linux-wireless@vger.kernel.org>; Mon, 16 Nov 2026 18:11:33 +0000 (UTC)
-DMARC-Filter: OpenDMARC Filter v1.4.2 smtp.subspace.kernel.org 1C613606A31C
-Authentication-Results: smtp.subspace.kernel.org; dmarc=pass (p=quarantine dis=none) header.from=sunydutchess.edu
-Authentication-Results: smtp.subspace.kernel.org; spf=pass smtp.mailfrom=sunydutchess.edu
-Authentication-Results: smtp.subspace.kernel.org;
-	dkim=pass (1024-bit key, unprotected) header.d=sunydutchess.edu header.i=@sunydutchess.edu header.a=rsa-sha256 header.s=selector1 header.b=s2cYc5mO
-ARC-Seal: i=1; a=rsa-sha256; s=arcselector10001; d=microsoft.com; cv=none;
- b=zNbWi8aJi6EUoK/W+SoinGjo+UjD43tE4zl/vejwOnd8h8qXk+IQ7aYOGw/KNTb+IQVe1Zl+/HrKOXLS9RaJiWln31GMInCooTMf8wT2YKB+5XI1VDYoRGLGqtBovhT9Msv0NqHvo1cXcdIJJV16lKPkAFrj6cVMpujhaKgEyIEdZb78wWgaqOowF+AwNY7Spi6i/nvkE78cWMAmy8RaJJi8DR4z+TG9sug5MW4D+SxGur+Gl/VPR8QCclMnzk+QK8tgVtaBugaoTLcN/63k8n1K1haPctsUN/kuFOkt290IxC2bD5yTT4q0r85u8hYqpKlz4AOrI3xQaT/lZFJLqA==
-ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=microsoft.com;
- s=arcselector10001;
- h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-AntiSpam-MessageData-ChunkCount:X-MS-Exchange-AntiSpam-MessageData-0:X-MS-Exchange-AntiSpam-MessageData-1;
- bh=I2jUHuuNNh+AJ5mYvphm1Vmhxtjra84T9NLLmn2BRnM=;
- b=jsMcKWykslxUMEbYbs2U5rZFc0dN3RbgJ/gfCTp6XRCdim3rlfO3J83VdkSkLSIZISpIG0KL1ViHLOnUrZtGyCKg1DhsuNU/zFCpMZlZpNUadbPZdbYGxeK3gXWwUz+XY62iEgLFfw9V8Wt3lzjEWvI/jheACUWy3MCJvCrp3lRtI+/oRN3DbWRqAQ32Z+e7CgsVLjAmOot8h/iCBGHdPqi2dsKz8Ar0vVazfuukG1CR1ceJo6prVGH29z3ghlID0JphVW82qEMWcTLE9uHpH9dhvhWvLjgZ0eGPJ8nmvjBk4h5zkquW6/hQ6DZqeeBNg/cIWb/zJXM6nqYAibn1oA==
-ARC-Authentication-Results: i=1; mx.microsoft.com 1; spf=pass
- smtp.mailfrom=sunydutchess.edu; dmarc=pass action=none
- header.from=sunydutchess.edu; dkim=pass header.d=sunydutchess.edu; arc=none
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=sunydutchess.edu;
- s=selector1;
- h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
- bh=I2jUHuuNNh+AJ5mYvphm1Vmhxtjra84T9NLLmn2BRnM=;
- b=s2cYc5mO2ahSgrDF8wyVmxPpnaaYsTDG/OrE68DThtPd4ikw4NxwRSbmIM0/N0VDzdhaEpxU7muwKNBYOrH01jkCzYymludM0k1TOZ8C//ZcJdnVay5kylxcELvaZT+4cnbLHvDVY8Ge3YA6Z0pgHic2eRCwJOyZUI5ZsSO4bxc=
-Received: from SA5PR03MB8425.namprd03.prod.outlook.com (2603:10b6:806:47b::8)
- by DS3PR03MB989169.namprd03.prod.outlook.com (2603:10b6:8:39c::16) with
- Microsoft SMTP Server (version=TLS1_2,
- cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id 15.21.615.12; Mon, 16 Nov
- 2026 18:11:19 +0000
-Received: from SA5PR03MB8425.namprd03.prod.outlook.com
- ([fe80::ad3e:e026:f2fa:bf5f]) by SA5PR03MB8425.namprd03.prod.outlook.com
- ([fe80::ad3e:e026:f2fa:bf5f%3]) with mapi id 15.21.0615.013; Mon, 16 Nov 2026
- 18:11:18 +0000
-From: "Ure, Christopher R." <christopher.ure@sunydutchess.edu>
-To: "fernan.tapia@fernandotapia.eu" <fernan.tapia@fernandotapia.eu>
-CC: "ath11k@lists.infradead.org" <ath11k@lists.infradead.org>,
-	"jjohnson@kernel.org" <jjohnson@kernel.org>, "linux-wireless@vger.kernel.org"
-	<linux-wireless@vger.kernel.org>
-Subject: Re: [PATCH ath-next] wifi: ath11k: don't create a duplicate peer on
- the same pdev
-Thread-Topic: [PATCH ath-next] wifi: ath11k: don't create a duplicate peer on
- the same pdev
-Thread-Index: AQHddfXgZGwzVBjsOkyw6KCqiIbdVg==
-Date: Mon, 16 Nov 2026 18:11:18 +0000
-Message-ID: <9744CE3F-114F-4A08-9A3D-E39DA7D06E1F@sunydutchess.edu>
-Accept-Language: en-US
-Content-Language: en-US
-X-MS-Has-Attach:
-X-MS-TNEF-Correlator:
-authentication-results: mx.microsoft.com 1; dkim=none (message not signed)
- header.d=none;dmarc=none action=none header.from=sunydutchess.edu;
-x-ms-publictraffictype: Email
-x-ms-traffictypediagnostic: SA5PR03MB8425:EE_|DS3PR03MB989169:EE_
-x-ms-office365-filtering-correlation-id: 618bf7fb-a221-49ff-66d0-08df440d02f2
-x-ms-exchange-senderadcheck: 1
-x-ms-exchange-antispam-relay: 0
-x-microsoft-antispam:
- BCL:0;ARA:13230040|1800799024|376014|23010399003|786006|10070799003|366016|18002099003|6133799003|11063799006|56012099006|10067099003|261102123227099003|261021121427099003|38070700021;
-x-microsoft-antispam-message-info:
- 9z7ZVXt30UJjMiseDRTG7ycOGi42FTRd1WY+a0na1r5c2GYRiIa0pAjobn4nQbhGV481oouwxGfeCftvfpAskCu7P8MViTZz4iR7lGeEs3g8pVueLfNrTIgOGCQyPuuIO7ZwFdO3cED8uVvDVCQW6OmoHQl0fsPVJNmFOald40UR02WQsoo7lpqXSoUMuawQzdgtO+oK4DRPnNPCXJsfI1dtY9ZvbX7CHeCJ+RhIR05YpITX+57Z1bjTXgcJvBZzTi8eCzgCklPkQp7kn4oLKznbw93aS0UbA9GOXVdRLpUwBj3gqmRkns6gCPyd13iSsB7wosGoBOga6L13PszDF8YOQjtHI5h60wM5KHv7ZgtBlYn7NhdGrwGP0b8EiAbq5ChnnerDHARQuYpMRH2U1oo7kRi0KdJU2s6XraUuyeXONNMBtPE0tNrJE2oflWYgGQHLxQ7t62OKZMfp/XpXKtuH5ZO0jEcCuKz4j8wQEQj0jzNdyMnH0REYzjgiBayjKmCH5aizeSo8gTCuQdPWHcXX75xxfsQXTnv3DaCqu3+hGY8sMijyfOQq+oYGnQT+doNGeEVafc0D+dqmzvGtCuAVCK+0C3Bvfi4pa59EHVUAlBZFUQTivxi0/wZhfLkNlcEV/+F46IsT0cZAcRGb+N4bSN+7/oShmElXuRYiRbr4kWeL8NvL2X8uxnOHDIuN0Ir8W5ib4hDdycVrSzQizA==
-x-forefront-antispam-report:
- CIP:255.255.255.255;CTRY:;LANG:en;SCL:1;SRV:;IPV:NLI;SFV:NSPM;H:SA5PR03MB8425.namprd03.prod.outlook.com;PTR:;CAT:NONE;SFS:(13230040)(1800799024)(376014)(23010399003)(786006)(10070799003)(366016)(18002099003)(6133799003)(11063799006)(56012099006)(10067099003)(261102123227099003)(261021121427099003)(38070700021);DIR:OUT;SFP:1101;
-x-ms-exchange-antispam-messagedata-chunkcount: 2
-x-ms-exchange-antispam-messagedata-0:
- =?us-ascii?Q?vDkGGXGXhg84OclYqaSYJ3KrjvHdMi+2O2Xy1LOXR3b/V6RgWlKJKg3MPRuE?=
- =?us-ascii?Q?GpKbx7r3YI6iHChsYY30uocic8HRThvrplHzhPQuAFi8mDgJY/bWz3uX2T0H?=
- =?us-ascii?Q?l19vtjHVjLswctP15tFKd0ZUAd9rRLQxl1XKPOMk1gMaJbDCMr7R0j2OMCFE?=
- =?us-ascii?Q?ZpT9tGVuFtzu/Z2+mNEwS0E1CWUmJOG2BZXeFDD7rvbNsaOZIQara1R/O1sy?=
- =?us-ascii?Q?TrnXwbhWYwxN+tq9KocRbjE3wF9tfBeKh3amvT68DhkwQZmQ7jdnXdlIDK2C?=
- =?us-ascii?Q?HUtBn4yIt/HerHpNbcerAO6N7S60ihHwq5Ip4b/Hqj1XxKJS9LnWgxc3X/8B?=
- =?us-ascii?Q?aL7VU0KmfwaWZi/t8aCr3bBYdcYwWufoRKZPg19bm8icruF/eYFkkZk7ueXM?=
- =?us-ascii?Q?s+Z7aWvfhKNZZAJo+keYL79eF7e0PHXVlBUFa0wf4pWMjJ9N2+HCICxcppNH?=
- =?us-ascii?Q?vzJzdi4PYd9cvxS9JXncICTBATtAh0L1WVEdFanAn7LdypdT8lRvdZ/KLYIP?=
- =?us-ascii?Q?IvQE7sQaY1zE4I5K83eU4r7it3fJFkINiY/L2Thyyzu5li188HTNPjQBVOfi?=
- =?us-ascii?Q?uTnsDbckr/YxcnlajuI+Sh8XMTkvMxOUl0UHtDAG9GTK8LZmTI63ZK8wrdg2?=
- =?us-ascii?Q?eSRQ8CweOvwINNrt+jOXHWenQGa22kAT24Ez5jNLq7z7nsmMOF167hfwsQYR?=
- =?us-ascii?Q?UknsNBTQPB2342ox9IyH3vvB+Or8uPe7LUIho5Ymjj96mtpkgupyvkX8zjjr?=
- =?us-ascii?Q?2tymZP2p6sLskF9kxpEEbEtZCQhKoKioRR9C1/M2TD1M+/e+q3i9N8XfNo+6?=
- =?us-ascii?Q?TxtnE/f60Vih0VxpxWRSSPBK3v9O4ISvdIGHq+8KgLSgMyNoLC+693W8Z0gZ?=
- =?us-ascii?Q?tGYV8z8ex3ls2anjdYYlMTZ3sNFQnbftcTJeiOHB5+JR3Zo+t4yRq+f3/ZLa?=
- =?us-ascii?Q?kNZVhZar87Eodx6mrW+0NBn2Vao99lPdHfuI9gJOHeZx7c+GokdbJEThd4HK?=
- =?us-ascii?Q?M3sQ4HK0pwbTCx2R/f1BOFlybGnylv87S3yZ7q3yT0UW/j9CPAvFjX0dukdH?=
- =?us-ascii?Q?igyDW0kHuL/1KmewRa3s6d17436Ul+dRMAQsLzI+cTI45MLaWQYIucj3Uy3j?=
- =?us-ascii?Q?Kl0GVun4tjL0Qypet6sMWQLnl/wyrtfNTW97aS+5QOmbY2n4aYf0kyVEkHWv?=
- =?us-ascii?Q?Ds/VjPJxLP9LOCQjVjjOVlzi/H/iJlX4vTfKBLK1TRvIKzskCZUYYr+YrtTU?=
- =?us-ascii?Q?22M3Jw0gBOKc/9NDiux+oTep40ckvQ354SepzCCewV3RN+mraLYQ0Bpfv9Fu?=
- =?us-ascii?Q?i7Wjp4KJbCZbf/nKJgQJnvj63OtaT4gdPmN1pOiUOv3VomUpT/PO7O/kxH9T?=
- =?us-ascii?Q?dTYd5EZnjDgUkDQ7fe6C5xeSTCv6MDRjVvtJRqcWWpGUTWGbQQXHlxP8dQVE?=
- =?us-ascii?Q?rVmp8Iz0pnj8QgXcNejsc786qJ7c0gYYaTnt3KVDzoKvExNjWQreyQhLeiQ3?=
- =?us-ascii?Q?3yJLumETtMmhs8RINvN9eTdlHM/jquBo05BKsK5nuXqeUbq5BPg9cPF+iJdO?=
- =?us-ascii?Q?QufWf3xyKWrBtYiwCnlRIkmljnLr9NjWPpFSSlHsdCgcYUocMPOc34o4zIzK?=
- =?us-ascii?Q?bEka1g7syPwzpELdeWGoxXxK7mrvu/spSYORBt0S7TZEpFA8Aj+Ky5L5FxSE?=
- =?us-ascii?Q?yyrTSoEBta9yz4OVOufynhGKem7GsJk0KvNi5KIAaIefnD4mi3Sn7NAbi6pf?=
- =?us-ascii?Q?FW1YppA/7mwHXYOmm8qvUdiTBItXAeTt4i8e8zggJnpAni661ipB69cufG8J?=
-x-ms-exchange-antispam-messagedata-1:
- ERJCepL2Vr7U+65UYMqh4tjE2fb15eAyOW2q3ma/l0VCMZTc8W9wooNx
-Content-Type: text/plain; charset="us-ascii"
-Content-ID: <413F39D44F759841B239EC113AEE70BE@namprd03.prod.outlook.com>
-Content-Transfer-Encoding: quoted-printable
+Authentication-Results: smtp.subspace.kernel.org; arc=none smtp.remote-ip=162.243.164.118
+ARC-Seal: i=1; d=subspace.kernel.org; s=arc20261015; a=rsa-sha256; cv=none;
+	t=1794853359;
+	b=hv8lOCQdfYmrcYHtyGnb5KaWvlN3CFed3NaWRnA3Bw9sHdl/QvIffRS35w7sEqOYmWny
+	 EK/D0ruoSs4geB+oALFFxYrVFKyQ7vaB7VOwqjC7EkwEALVjV2BR0CSKsxGNgwngw3on8
+	 0UmTUWGY5aWSU8R+HVS0m2lHRk6liDrZiMTTtbrl1CnMNPiX6mdGZCPfTTQJkdTFr+LN7
+	 6BjOC0eVogPijU+/P08TdRfdFdCVVMkSVyOFoYZyKKmetSOiMIuF9+SrfBSVNLkEy7TAI
+	 /c8Rw4MrA+2xS8agftp1+QNaYbUzP7pCbygtIm4jQwBwkpbHsbFelhDDFEw46lmSjXw==
+ARC-Message-Signature: i=1; d=subspace.kernel.org; s=arc20261015;
+	a=rsa-sha256; c=relaxed/relaxed; t=1794853359;
+	h=DMARC-Filter:DKIM-Signature:Received:From:To:Cc:Subject:Date:
+	 Message-Id:X-Mailer:MIME-Version:Content-Transfer-Encoding:
+	 X-CM-TRANSID:X-Coremail-Antispam:X-CM-SenderInfo;
+	bh=nUzQK2bO7zFTjdpmOXstZkGgEn1F3y3A2JYnd8cPk3A=;
+	b=EblraOw5zOBXnJ8p31Te9c1bi147jYOm+/O/U/aJz+OTJkpioIUkuKb2Fyu4BldiujV6
+	 dK5pvD8TN+5QvF+SLHqiLy8A+lN8hty0fpduoWeXZZJ8YKl8Fe15J2wEQbxre/ihi3thb
+	 sc4s0Nq7a5Ptce0GlLTwQNwSKaN2KW4xl/puF/yEcBpIT5Rd8gt7sG7Hdwm8atdPTKqAV
+	 vz5IO4/MPSXlQteuSY4NSwhXASfbmlzLBIdU6mqNf5P3qN0IYh4xDJcYteuU5udLqozAH
+	 DhSYKNP2Tl4ht1CratNKUYVcNDrVmaLLUAaFTdoAFuMu1C0ne72UfwrPKR0296Avp5g==
+ARC-Authentication-Results: i=1; smtp.subspace.kernel.org; 
+	dmarc=pass header.from=stu.xidian.edu.cn;
+	spf=pass smtp.mailfrom=stu.xidian.edu.cn;
+	arc=none smtp.remote-ip=162.243.164.118
+Received: from zg8tmtyylji0my4xnjqumte4.icoremail.net (zg8tmtyylji0my4xnjqumte4.icoremail.net [162.243.164.118])
+	by smtp.subspace.kernel.org (Postfix) with ESMTP id E7CC5606A8AF;
+	Mon, 16 Nov 2026 18:22:36 +0000 (UTC)
+DMARC-Filter: OpenDMARC Filter v1.4.2 smtp.subspace.kernel.org E7CC5606A8AF
+Authentication-Results: smtp.subspace.kernel.org; dmarc=pass (p=quarantine dis=none) header.from=stu.xidian.edu.cn
+Authentication-Results: smtp.subspace.kernel.org; spf=pass smtp.mailfrom=stu.xidian.edu.cn
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+	d=stu.xidian.edu.cn; s=dkim; h=Received:From:To:Cc:Subject:Date:
+	Message-Id:MIME-Version:Content-Transfer-Encoding; bh=nUzQK2bO7z
+	FTjdpmOXstZkGgEn1F3y3A2JYnd8cPk3A=; b=nWM2EmfMtQwuhwD3GDDj/xbJQS
+	wcPP7nwoQdr8VxmsznmRxH8o7LnvxhHdzB6PwI9ramxbg8bQlZIDXGqSgWy57gu+
+	NAprmmKyE955Yp62tdaPCXsXNzyV0pAMGT/Pulh4DHTEA+44H7H6fo+11zl2aouP
+	KoVGhd43e8rb6cpeM=
+Received: from user-virtual-machine.localdomain (unknown [113.200.174.41])
+	by hzbj-edu-front-2.icoremail.net (Coremail) with UTF8SMTPA id BLQMCkCm6v_jSftqGL27AQ--.30176S2;
+	Tue, 17 Nov 2026 02:22:29 +0800 (CST)
+From: YuanZhe Liu <25031212351@stu.xidian.edu.cn>
+To: Brian Norris <briannorris@chromium.org>
+Cc: Francesco Dolcini <francesco@dolcini.it>,
+	Bin Yu <byu@xidian.edu.cn>,
+	Cheng Wen <wencheng@xidian.edu.cn>,
+	linux-wireless@vger.kernel.org,
+	linux-kernel@vger.kernel.org
+Subject: [PATCH] wifi: mwifiex: drop RX packets before the interface is created
+Date: Tue, 17 Nov 2026 02:22:26 +0800
+Message-Id: <20261116182226.8663-1-25031212351@stu.xidian.edu.cn>
+X-Mailer: git-send-email 2.34.1
 X-Mailing-List: linux-wireless@vger.kernel.org
 List-Id: <linux-wireless.vger.kernel.org>
 List-Post: <mailto:linux-wireless@vger.kernel.org>
@@ -147,22 +57,82 @@ List-Unsubscribe: <mailto:linux-wireless+unsubscribe@vger.kernel.org>
 List-Owner: <mailto:linux-wireless+owner@vger.kernel.org>
 Precedence: list
 MIME-Version: 1.0
-X-OriginatorOrg: sunydutchess.edu
-X-MS-Exchange-CrossTenant-AuthAs: Internal
-X-MS-Exchange-CrossTenant-AuthSource: SA5PR03MB8425.namprd03.prod.outlook.com
-X-MS-Exchange-CrossTenant-Network-Message-Id: 618bf7fb-a221-49ff-66d0-08df440d02f2
-X-MS-Exchange-CrossTenant-originalarrivaltime: 16 Nov 2026 18:11:18.4436
- (UTC)
-X-MS-Exchange-CrossTenant-fromentityheader: Hosted
-X-MS-Exchange-CrossTenant-id: 8f5b3bd5-b312-4dde-9df7-41fa4bc1d9cf
-X-MS-Exchange-CrossTenant-mailboxtype: HOSTED
-X-MS-Exchange-CrossTenant-userprincipalname: 3l/TYU2ycfDk3SCyi71hrb/qXu3wVkzyC8qDj7iWC4ujk2gJ3Wr5pOnHf5w2H0r3eWI6YLc8eImU6Y8SEOfZ+Yim+zNDcFbgi4HIZUE0+iu6zvG4oAHSPr5eUawXU+D1
-X-MS-Exchange-Transport-CrossTenantHeadersStamped: DS3PR03MB989169
+Content-Transfer-Encoding: 8bit
+X-CM-TRANSID:BLQMCkCm6v_jSftqGL27AQ--.30176S2
+X-Coremail-Antispam: 1UD129KBjvJXoW7tw1DKFWkZw13tw45uF48WFg_yoW8KF1kpa
+	98Gryku3ykJr1qkw4kJF47AF1Y9a18Cry7Crsruw1F9rn3Ca4SqryYgrW0gFWYyFWvva4Y
+	yF1jqr15Z347A3DanT9S1TB71UUUUU7qnTZGkaVYY2UrUUUUjbIjqfuFe4nvWSU5nxnvy2
+	9KBjDU0xBIdaVrnRJUUU9Ib7Iv0xC_Cr1lb4IE77IF4wAFF20E14v26r1j6r4UM7CY07I2
+	0VC2zVCF04k26cxKx2IYs7xG6rWj6s0DM7CIcVAFz4kK6r1j6r18M28lY4IEw2IIxxk0rw
+	A2F7IY1VAKz4vEj48ve4kI8wA2z4x0Y4vE2Ix0cI8IcVAFwI0_Jr0_JF4l84ACjcxK6xII
+	jxv20xvEc7CjxVAFwI0_Jr0_Gr1l84ACjcxK6I8E87Iv67AKxVW8JVWxJwA2z4x0Y4vEx4
+	A2jsIEc7CjxVAFwI0_Gr0_Gr1UM2vYz4IE04k24VAvwVAKI4IrM2AIxVAIcxkEcVAq07x2
+	0xvEncxIr21l5I8CrVACY4xI64kE6c02F40Ex7xfMcIj6xIIjxv20xvE14v26r1j6r18Mc
+	Ij6I8E87Iv67AKxVWUJVW8JwAm72CE4IkC6x0Yz7v_Jr0_Gr1lF7xvr2IYc2Ij64vIr41l
+	c7CjxVAaw2AFwI0_JF0_Jw1lc2xSY4AK67AK6ryl42xK82IYc2Ij64vIr41l4I8I3I0E4I
+	kC6x0Yz7v_Jr0_Gr1lx2IqxVAqx4xG67AKxVWUJVWUGwC20s026x8GjcxK67AKxVWUGVWU
+	WwC2zVAF1VAY17CE14v26r126r1DMIIYrxkI7VAKI48JMIIF0xvE2Ix0cI8IcVAFwI0_Jr
+	0_JF4lIxAIcVC0I7IYx2IY6xkF7I0E14v26r1j6r4UMIIF0xvE42xK8VAvwI8IcIk0rVWU
+	JVWUCwCI42IY6I8E87Iv67AKxVWUJVW8JwCI42IY6I8E87Iv6xkF7I0E14v26r4j6r4UJb
+	IYCTnIWIevJa73UjIFyTuYvjxUs9mRUUUUU
+X-CM-SenderInfo: ysvqjiysrsjkur6v33wo0lvxldqovvfxof0/1tbiAQUTD2r7HFch0wABsx
 
-After modifying the build script to target 25.12.6 and applying the patch t=
-o my devices, I was able to associate a Tuya device that had previously tri=
-ggered the bug.
+mwifiex_usb_dnld_fw() submits the RX data URBs as soon as the firmware
+image has been downloaded, which happens before _mwifiex_fw_dpc()
+creates the default station interface.  A data packet sent by the device
+in that window is queued to adapter->rx_data_q and handled by
+mwifiex_rx_work_queue() while the remaining initialization is still in
+progress.
 
-Currently at 2.5 days of uptime with no issues to report.
+mwifiex_get_priv_by_id() skips the private structures whose bss_mode is
+still NL80211_IFTYPE_UNSPECIFIED, so mwifiex_handle_rx_packet() falls
+back to mwifiex_get_priv(MWIFIEX_BSS_ROLE_ANY), which returns the first
+private structure of the adapter.  Its bss_role is zero, that is
+MWIFIEX_BSS_ROLE_STA, but hist_data is only allocated later by
+mwifiex_init_priv_params() when the interface is created, so
+mwifiex_hist_data_add() dereferences a NULL pointer:
 
-Tested-on: Linksys MX8500 OpenWRT v25.12.6 kernel 6.12.112=
+  KASAN: null-ptr-deref in mwifiex_hist_data_add
+  Read of size 4 at addr 0000000000000d28
+  ...
+  mwifiex_process_rx_packet
+  mwifiex_process_sta_rx_packet
+  mwifiex_handle_rx_packet
+  mwifiex_rx_work_queue
+
+priv->netdev is NULL at that point as well, so the packet would also make
+mwifiex_recv_packet() pass a NULL net_device to eth_type_trans().
+
+Such a private structure cannot receive data yet, so drop the packet
+instead of entering the receive path.
+
+Co-developed-by: Bin Yu <byu@xidian.edu.cn>
+Signed-off-by: Bin Yu <byu@xidian.edu.cn>
+Co-developed-by: Cheng Wen <wencheng@xidian.edu.cn>
+Signed-off-by: Cheng Wen <wencheng@xidian.edu.cn>
+Signed-off-by: YuanZhe Liu <25031212351@stu.xidian.edu.cn>
+---
+ drivers/net/wireless/marvell/mwifiex/txrx.c | 7 +++++++
+ 1 file changed, 7 insertions(+)
+
+diff --git a/drivers/net/wireless/marvell/mwifiex/txrx.c b/drivers/net/wireless/marvell/mwifiex/txrx.c
+index f44e22f24511..6c651bfa3bff 100644
+--- a/drivers/net/wireless/marvell/mwifiex/txrx.c
++++ b/drivers/net/wireless/marvell/mwifiex/txrx.c
+@@ -43,6 +43,13 @@ int mwifiex_handle_rx_packet(struct mwifiex_adapter *adapter,
+ 		return -1;
+ 	}
+ 
++	if (!priv->netdev) {
++		mwifiex_dbg(adapter, ERROR,
++			    "data: interface is not ready. Drop RX packet\n");
++		dev_kfree_skb_any(skb);
++		return -1;
++	}
++
+ 	mwifiex_dbg_dump(adapter, DAT_D, "rx pkt:", skb->data,
+ 			 min_t(size_t, skb->len, DEBUG_DUMP_DATA_MAX_LEN));
+ 
+-- 
+2.34.1
+
