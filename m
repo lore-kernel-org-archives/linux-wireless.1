@@ -1,49 +1,70 @@
-Authentication-Results: smtp.subspace.kernel.org; arc=none smtp.remote-ip=54.39.219.105
+Authentication-Results: smtp.subspace.kernel.org; arc=none smtp.remote-ip=188.68.61.103
 ARC-Seal: i=1; d=subspace.kernel.org; s=arc20261015; a=rsa-sha256; cv=none;
-	t=1794834937;
-	b=kRm1MSSyITWqxPxW2bnq3SI3qsU6nJnCdGMNbkejgsUEalbHfqQ1smmZNObtt9Odnjk2
-	 Paw3A9f6dMkREjyMhFDQZGo61/TVtoZ7BrpaHJxb6nx5RM5Q+8CnAXI94jl6BLLtqARJF
-	 EosqArrhiAkx1nU5NQbzU32ohLCAuvfmOgBXYZqTtZUKJIASn/HkQhBYdRfOQugkSqSvH
-	 BZdPsokYbbtHp4YLWPqUcqNr3KrdDCH7hCrRiiVTg+lCAavN5q7odKi5uL8qYjBAeNv8B
-	 MQ3NVTmpYti46Jpbtwm2WmY5Buws/cu3GLlJi2easTgCB21q20ua5WBiUarpX4Mas2g==
+	t=1794835009;
+	b=LJgjNHu18FLxIx7RqgUcc4Rygqvxt0GBESarz9YPabOXjwbsZlFeZYsCUNhBa94mO0V1
+	 6eNraT65OTolVAy53pqWRi3lrKs+r24YJgQIB49ed2gPvZo5XpOw/Qp0BzSzBrDMNpp5R
+	 a/G++cyX3C0wRRz1H9iGRfDlUjBWWnxZSp4nlYzupQoRWzm7206CK6YTxPgQrlACtDl1b
+	 XrtlKXbHNijqURxvEaKLcwTwvCjMXZINCRmwP1jzzd3iCr0OyuUitNMDW3uK/eRp5Dlem
+	 Bu+LndebjB4e2xgJVj6v2ici7w6gXpziHNiu+oew+fKNMuTqtsRSwaD3D1ojjJsqojQ==
 ARC-Message-Signature: i=1; d=subspace.kernel.org; s=arc20261015;
-	a=rsa-sha256; c=relaxed/relaxed; t=1794834937;
-	h=DMARC-Filter:Received:DKIM-Signature:Message-ID:Date:MIME-Version:
-	 User-Agent:Subject:To:Cc:References:Content-Language:From:In-Reply-To:
-	 Content-Type:Content-Transfer-Encoding:X-Last-TLS-Session-Version;
-	bh=qv0E9umeW5iq8XQGTrmgEL6yTVV22eJdaaUMd3VC/yE=;
-	b=eOhPl+ryIv+AYhDnKw3yosZwq43XVHYXjvpLfsxI5ANceIVSLjEN1+8MQiq/U/DW/6xt
-	 JkVeM2PgBMiS7tePRuzp+sD7fhl0f4Y5CGJp6fHWJ7AIJhgeefWHc4V2gYbQ+95qeISlP
-	 JutRQgtw0J6tvMDZxDx4LzX+c/wYvzhfS9tfdbuMnxDWpNZga43707+kLpU0xGGEKYZvp
-	 s6VZ6Pg+muawnfrxzgfytfALnk0787ELu066Z+LDuUf8RZuvkthbzz/AsAPEuumv7PtyG
-	 rE9utu+Go/XASoS9gytlMrwC5pqN7ljOTLnPmta2tqKNP4owjCNMBunGkv7YdHiJeHg==
+	a=rsa-sha256; c=relaxed/relaxed; t=1794835009;
+	h=DMARC-Filter:Received:DKIM-Signature:Received:Received:Received:
+	 Received-SPF:Message-ID:Date:MIME-Version:User-Agent:Subject:To:Cc:
+	 References:From:Content-Language:In-Reply-To:Content-Type:
+	 Content-Transfer-Encoding:X-PPP-Message-ID:X-Rspamd-Server:
+	 X-Rspamd-Queue-Id:X-NC-CID;
+	bh=hLeEYeSQsdOJFhziWzm1Zzf90TVQsJyc7BGUihiqPBM=;
+	b=l44X6zzv3JKwhwWmR7LcdwZPrz9bGK1tCAY7u1uMJykRjcsQfvmNinsY+HduUaRuhPtb
+	 WNMRqJ5i8cNDPD1Naue+dF3oa5Hv7aQ7WnBvxOqEkA+cXsvg2K1ggZyP4rR7YfG2gGmjg
+	 Jt0uy656ruoqpp4sBza9tWi+wNOhfjE03IeJX8Bk5GLWdY5+LL7V6OxRKHkzlpbYzjX0U
+	 O7DphOF1s36bfM0fAmi8u0pFMvwJaECxyowWWaWNbXC6vXB+1gtuErilCBTypnWBa0Xd5
+	 FSR00CtaAN8l+458JRacekMov4sUBj+ZXyjO3DkUT2p5v2+MwlmcYeGKlZT4yYL0GIA==
 ARC-Authentication-Results: i=1; smtp.subspace.kernel.org; 
-	dmarc=pass header.from=kaechele.ca;
-	spf=pass smtp.mailfrom=kaechele.ca;
-	dkim=pass header.d=kaechele.ca header.i=@kaechele.ca header.a=rsa-sha256 header.s=201907 header.b=AWSy6z8W;
-	arc=none smtp.remote-ip=54.39.219.105
-Received: from mail.kaechele.ca (mail.kaechele.ca [54.39.219.105])
+	dmarc=pass header.from=leemhuis.info;
+	spf=pass smtp.mailfrom=leemhuis.info;
+	dkim=pass header.d=leemhuis.info header.i=@leemhuis.info header.a=rsa-sha256 header.s=key2 header.b=QnXUv5Xb;
+	arc=none smtp.remote-ip=188.68.61.103
+Received: from relay.yourmailgateway.de (relay.yourmailgateway.de [188.68.61.103])
 	(using TLSv1.3 with cipher TLS_AES_256_GCM_SHA384 (256/256 bits)
 	 key-exchange X25519 server-signature ECDSA (prime256v1) server-digest SHA256)
 	(No client certificate requested)
-	by smtp.subspace.kernel.org (Postfix) with ESMTPS id 17A27606A32C;
-	Mon, 16 Nov 2026 13:15:35 +0000 (UTC)
-DMARC-Filter: OpenDMARC Filter v1.4.2 smtp.subspace.kernel.org 17A27606A32C
-Authentication-Results: smtp.subspace.kernel.org; dmarc=pass (p=reject dis=none) header.from=kaechele.ca
-Authentication-Results: smtp.subspace.kernel.org; spf=pass smtp.mailfrom=kaechele.ca
+	by smtp.subspace.kernel.org (Postfix) with ESMTPS id 8358A606A31C
+	for <linux-wireless@vger.kernel.org>; Mon, 16 Nov 2026 13:16:48 +0000 (UTC)
+DMARC-Filter: OpenDMARC Filter v1.4.2 smtp.subspace.kernel.org 8358A606A31C
+Authentication-Results: smtp.subspace.kernel.org; dmarc=pass (p=quarantine dis=none) header.from=leemhuis.info
+Authentication-Results: smtp.subspace.kernel.org; spf=pass smtp.mailfrom=leemhuis.info
 Authentication-Results: smtp.subspace.kernel.org;
-	dkim=pass (1024-bit key, unprotected) header.d=kaechele.ca header.i=@kaechele.ca header.a=rsa-sha256 header.s=201907 header.b=AWSy6z8W
-Received: from [127.0.0.1] (localhost [127.0.0.1]) by localhost (Mailerdaemon) with ESMTPSA id BFB0035D6F5;
-	Mon, 16 Nov 2026 08:15:25 -0500 (EST)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=kaechele.ca; s=201907;
-	t=1794834928; h=from:subject:date:message-id:to:cc:mime-version:content-type:
-	 content-transfer-encoding:content-language:in-reply-to:references;
-	bh=qv0E9umeW5iq8XQGTrmgEL6yTVV22eJdaaUMd3VC/yE=;
-	b=AWSy6z8W3uvYmeAuapaWKYflN50ECGqbmimuMrILuDvQmoWKqOAOB80/0kVY/H9Ib1Dwkr
-	L+hUgnzzYoTPT5Rl8JC1mUIpY2dq2Iqkw2MSOaC4R/PrmrSExTxWK9pSaE1NDwpbjjt3e/
-	qkpNZQ+m/TNBbLHzCFRCzwclxRSq9Ho=
-Message-ID: <a1f4322b-0564-44cb-a548-ff87d2b19595@kaechele.ca>
-Date: Mon, 16 Nov 2026 08:15:23 -0500
+	dkim=pass (2048-bit key, unprotected) header.d=leemhuis.info header.i=@leemhuis.info header.a=rsa-sha256 header.s=key2 header.b=QnXUv5Xb
+Received: from mors-relay-8403.netcup.net (localhost [127.0.0.1])
+	by mors-relay-8403.netcup.net (Postfix) with ESMTPS id 4jSpC40FRhz88SY;
+	Mon, 16 Nov 2026 14:10:56 +0100 (CET)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=leemhuis.info;
+	s=key2; t=1794834656;
+	bh=2TxI9+SGe0sHxbIUvAhIfB1CrhLPpO7iBEfQOzLxbNU=;
+	h=Date:Subject:To:Cc:References:From:In-Reply-To:From;
+	b=QnXUv5XbKULYwiSBGL44LOV4A/cW1X/t9E26L1U0bEezgR3kvZ9WHB+qkXbgEbBOe
+	 2oe3Mmk2/t4zkb5QaKK01qK1B9Q62h/mOP7lWv63TJdGr9RarWIVP/RejdBTtb++jw
+	 +z6l+XZ9b9NoVXnqnsl4tUyqI5y+0dZhTj6M1Ho4o/AdQnxGQTKsR8rgr/fqdYrc7U
+	 t2GdOehEdKHDobzNLgFD2srIFLuVlvrtzsUmoZnt1byJCd5LwoxlM3zwJ/eQcyrAk6
+	 FyVXWLU/MpiK8qHkyGomlqGXsojMv69d0GZZ83UGgBweiTMI7vxLcAzATmz4xdMXXG
+	 KNKz+zDRLujWg==
+Received: from policy02-mors.netcup.net (unknown [46.38.225.35])
+	by mors-relay-8403.netcup.net (Postfix) with ESMTPS id 4jSp9d1wQ2z88yF;
+	Mon, 16 Nov 2026 14:09:41 +0100 (CET)
+Received: from mxe9fb.netcup.net (unknown [10.243.12.53])
+	(using TLSv1.3 with cipher TLS_AES_256_GCM_SHA384 (256/256 bits)
+	 key-exchange ECDHE (P-256) server-signature RSA-PSS (2048 bits) server-digest SHA256)
+	(No client certificate requested)
+	by policy02-mors.netcup.net (Postfix) with ESMTPS id 4jSp9C55bNz8tKY;
+	Mon, 16 Nov 2026 14:09:19 +0100 (CET)
+Received: from [IPV6:2a02:8108:8984:1d00:a0cf:1912:4be:477f] (unknown [IPv6:2a02:8108:8984:1d00:a0cf:1912:4be:477f])
+	by mxe9fb.netcup.net (Postfix) with ESMTPSA id E405F5FA96;
+	Mon, 16 Nov 2026 14:09:14 +0100 (CET)
+Authentication-Results: mxe9fb;
+        spf=pass (sender IP is 2a02:8108:8984:1d00:a0cf:1912:4be:477f) smtp.mailfrom=regressions@leemhuis.info smtp.helo=[IPV6:2a02:8108:8984:1d00:a0cf:1912:4be:477f]
+Received-SPF: pass (mxe9fb: connection is authenticated)
+Message-ID: <340e5fc5-4b9e-4b29-a53a-cb7702858997@leemhuis.info>
+Date: Mon, 16 Nov 2026 14:09:14 +0100
 X-Mailing-List: linux-wireless@vger.kernel.org
 List-Id: <linux-wireless.vger.kernel.org>
 List-Post: <mailto:linux-wireless@vger.kernel.org>
@@ -54,65 +75,68 @@ List-Owner: <mailto:linux-wireless+owner@vger.kernel.org>
 Precedence: list
 MIME-Version: 1.0
 User-Agent: Mozilla Thunderbird
-Subject: Re: [PATCH ath-next 1/6] wifi: ath10k: usb: fix group key
- installation
-To: Tomas Paukrt <tomaspaukrt@email.cz>, David Heidelberg <david@ixit.cz>
-Cc: linux-wireless@vger.kernel.org, ath10k@lists.infradead.org,
- phone-devel <phone-devel@vger.kernel.org>, jjohnson@kernel.org
-References: <20261114090737.64348-1-tomaspaukrt@email.cz>
- <20261114090737.64348-2-tomaspaukrt@email.cz>
- <7e36cb20-7752-4778-b068-56d41819f670@kaechele.ca>
- <dfae62c8-6fd0-40da-bc4c-65d4d6594cd0@ixit.cz>
- <5Nd.ZqDG.68CtbqKyNmY.1g{Phm@seznam.cz>
-Content-Language: en-US
-From: Felix Kaechele <felix@kaechele.ca>
-In-Reply-To: <5Nd.ZqDG.68CtbqKyNmY.1g{Phm@seznam.cz>
-Content-Type: text/plain; charset=UTF-8; format=flowed
+Subject: Re: [REGRESSION] iwlwifi IO_PAGE_FAULT and Master Disable Timed Out
+To: HyeongJun An <sammiee5311@gmail.com>,
+ "Korenblit, Miriam Rachel" <miriam.rachel.korenblit@intel.com>
+Cc: Chris Bainbridge <chris.bainbridge@gmail.com>,
+ "Grumbach, Emmanuel" <emmanuel.grumbach@intel.com>,
+ "Berg, Johannes" <johannes.berg@intel.com>, linux-wireless@vger.kernel.org,
+ regressions@lists.linux.dev
+References: <amzVtgQb2p-_nShU@debian.local>
+ <DS0PR11MB78800B96A0FE637DC5390E4AA3D62@DS0PR11MB7880.namprd11.prod.outlook.com>
+ <e320fab5-d4d4-40fd-b032-d64554e5c0b0@leemhuis.info>
+ <20261113080830.1459856-1-sammiee5311@gmail.com>
+From: Thorsten Leemhuis <regressions@leemhuis.info>
+Content-Language: de-DE, en-US
+In-Reply-To: <20261113080830.1459856-1-sammiee5311@gmail.com>
+Content-Type: text/plain; charset=UTF-8
 Content-Transfer-Encoding: 7bit
-X-Last-TLS-Session-Version: TLSv1.3
+X-PPP-Message-ID: <179483455533.1110648.8436113547868285335@mxe9fb.netcup.net>
+X-Rspamd-Server: rspamd-worker-8404
+X-Rspamd-Queue-Id: E405F5FA96
+X-NC-CID: 8foajYi4Klc2JC9F7J5k//o7f+WNeI9nKzd0kquhizoTVtZHNKQ=
 
-I can confirm that the fix from this patch (without the bus check) also 
-fixes the group rekeying issue on QCA9379-3 (SDIO, firmware 
-WLAN.NPL.1.6-00163-QCANPLSWPZ-1) without David's patch applied.
 
-Regards,
-Felix
 
-On 2026-11-15 06:43, Tomas Paukrt wrote:
->> Hello.
->>
->> I'm pretty sure it's not related to the USB bus, but related to the device firmware.
->>
->> Check what firmware you use, add the `.no_pairwise_key_del_ind = true` and
->> report if that solves your issue, I'm happy to send v2 with your usecase covered.
->>
->> David
->>
->> P.S. Felix, thanks for Ccing me here :)
+On 11/13/26 09:08, HyeongJun An wrote:
+> Hello Miri,
 > 
-> Hi David and Felix,
+> The same happens on a Dell Latitude 9420 (Intel AX210, firmware
+> 89.123cf747.0) with Intel VT-d, on 7.4-rc1. It shows up when iwlwifi
+> stops the device, on driver unload and also once at probe and once on
+> suspend entry:
 > 
-> I tested David's patch with .no_pairwise_key_del_ind = true on QCA9377-7
-> against my patch, 30 minutes of disconnect/reconnect cycles each.
+>   DMAR: [DMA Read NO_PASID] Request device [0000:a4:00.0] fault addr 0xfd8ed000 [fault reason 0x06] PTE Read access is not set
+>   iwlwifi 0000:a4:00.0: Master Disable Timed Out, 100 usec
 > 
-> You are right that the firmware sends no HTT security indication for
-> the pairwise key removal, and David's patch fixes that part here too.
+> ty-a0-gf-a0-89.ucode has the TLV version 0x00000059, so
+> IWL_UCODE_MAJOR() gives 0 and the "<= 77" check turns the reset
+> handshake off.
 > 
-> But QCA9377-7 has a second problem: the indication for the group key
-> installation comes late, from 47 ms up to 4 s. With David's patch 64
-> of 184 group key installations (35%) still timed out and mac80211
-> deauthenticated.
+> Your "wifi: iwlwifi: mvm: properly check the FW version" fixes the
+> unload case here. Unloading and reloading iwlmvm and iwlwifi 50 times:
 > 
-> WMI_VDEV_INSTALL_KEY_COMPLETE_EVENTID arrives within 1 ms for every
-> installation and removal. Completing install_key_done on it gave no
-> timeout in 211 connections.
+>   without the patch: 18 of 50 unloads hit the fault and the timeout
+>   with the patch:     0 of 50
 > 
-> So David's patch alone does not fix QCA9377-7. I agree the issue is
-> not USB specific. Without the bus check, the wait would be completed
-> on the WMI event for all WMI-TLV targets. Could you check if my patch
-> without the bus check also works on WCN3990 and QCA9379 SDIO?
+> Tested-by: HyeongJun An <sammiee5311@gmail.com>
+
+Just to be sure everybody is aware of it: Miri meanwhile afaics
+submitted the fix here:
+
+wifi: iwlwifi: mvm: correctly check the API version
+https://lore.kernel.org/all/20261114193144.ab54bc9717fc.I8cda260e2ef7aedd790915a17cb6832010f82aa4@changeid/
+
+HyeongJun An: your Tested-by wasn't included, so might be worth
+resubmitting it there again as a reply.
+
+Ciao, Thorsten
+
+> I could not find the patch in next-20261112 or in the wireless trees
+> yet. The check also went to 6.18.y as 9dca67624721.
 > 
-> Thanks
+> I ran these with Claude Code (Claude Opus 5.5).
 > 
-> Tomas
+> Best regards,
+> HyeongJun An
 
