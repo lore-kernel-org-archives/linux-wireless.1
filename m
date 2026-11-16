@@ -1,67 +1,85 @@
-Authentication-Results: smtp.subspace.kernel.org; arc=none smtp.remote-ip=168.119.38.16
+Authentication-Results: smtp.subspace.kernel.org; arc=none smtp.remote-ip=209.85.221.42
 ARC-Seal: i=1; d=subspace.kernel.org; s=arc20261015; a=rsa-sha256; cv=none;
-	t=1794826832;
-	b=irC1Y8ckkKtjPRe3Uo29bM6J/oqYzvlH4lUGZQH8LH4uB7YNPeUQOKiDY/FIuDGPK+kb
-	 Gc99H8O9J33ElnyCGUoEdyUlFDjXrXke7yqNWNCdyY2F820c+CuFBNnxZGe8Cf9uUKN/7
-	 RlGRNEkolrvH1pMxgP7ekZnl6nAW08PLI4pxSbpy8S7hIhVmDanpTOR9WSDKKgM+RRq2D
-	 s5/r4gvd2NfZLGQZ1+qWH1wn3i4vz2YDIeo51HPFVMLz42uflYUuzjLpmNIc+D3d+hT3X
-	 o55gEAtBJXm1DLciEMb1qGr7eeGLNxjDxCV4qYwyp7XBT22xwLgxJZ0CdIPoFxjnOlQ==
+	t=1794826836;
+	b=fDys684ScSl5zxdvppQkFIyRsjiPDrpIwpZFiEGM/coIFh4cma3di090QyLGmNkuxN58
+	 UOMOWNNhaELkHSfFyk6MUbAJPljX3TaBApEGIANJOZQbpPea0LM4qi6Oz91hdbCp4+Z+f
+	 B8Ub3mgERA41rMgJJ9fP+DdGKCz3O9S1GUn03YBPy3d9rxvqhFEOW0jHPKM0FBEdq4MQv
+	 jZgQXi1MMdCmG+QQoy9/2YbEXzWB/BBWZQRrcVaLpJg8i4oleiFCKyQLQxug5RwZCMriZ
+	 EFoAG3ySBYWaMVSFFVMC+y7kSDfsLPwpaQ/4Yx1ZuFu4qzTTQv56Ewf+GxkClBez+JQ==
 ARC-Message-Signature: i=1; d=subspace.kernel.org; s=arc20261015;
-	a=rsa-sha256; c=relaxed/relaxed; t=1794826832;
-	h=DKIM-Signature:Received:Message-ID:Subject:From:To:Cc:Date:
-	 In-Reply-To:References:Content-Type:Content-Transfer-Encoding:
-	 User-Agent:MIME-Version:X-malware-bazaar;
-	bh=OTF4aEzGDRWKVbtHjmWpnT83X7Uqnedr3VIkObBqkFU=;
-	b=zPSOvtJDD7XaCHqL5akRhKWuCIsINAqw6jYPEXERZD/nAsaMChxEDdyjBjrWJ/qi4kH2
-	 6NG31IFA3Tt20BsTcINHh6Qe1NY07Rc4OqPahmGIGGDxTAEhJDRc1Y52gPBLeyhYfgJS1
-	 2i/lCe5Li3lCIjwZZ8i4QTADvcsyuSTB8o7kwlAnF8hZoNpqhMnIS6vXBWfSGxJYbpomy
-	 rHDxngTIzsrvyB5MLT9+Mu8yvq318KJzxovhNTu21GnU4KIAPvrsN9Eeu43Z4+rMlDgtF
-	 vnuXF87XP0kDEsF726MK2owytuGhpzFOVrSyKfmMtW4de8pA8RNgHmvlgq4+tloI5Sg==
+	a=rsa-sha256; c=relaxed/relaxed; t=1794826836;
+	h=DMARC-Filter:Received:DKIM-Signature:X-Google-DKIM-Signature:
+	 X-Forwarded-Encrypted:X-Gm-Message-State:X-Gm-Gg:X-Received:Received:
+	 Mime-Version:Content-Transfer-Encoding:Content-Type:Date:Message-Id:
+	 Cc:Subject:From:To:X-Mailer:References:In-Reply-To;
+	bh=PoGuIV2CW1MyjUCqGaI+U1vpCobn5gb5K6UIl8jT3Vw=;
+	b=cKsmSVzxItsSsnEAQMzinpp4bluyatu1dudZX3bxqCg7kgHPsNTqQ4iUd3WOos4bbz33
+	 xKx99+Ch2zRcHHfX6HPqmMN94Pc6mvvTlsM+WfFzmwaarClOExwamTaweU3fA+zdIFsm5
+	 S4Vuxp5a8IRWtLOXiZH/SbuVNW2PfX03aTPB3kGwm8FU+9++5ZVtzTYqjrleHPLPHw6DL
+	 WevFHrpOLUqlgrEmoUGZnZ2XKdXt2UXp7N0OlIdQpaadm27t/8Fko5vsAFca3ns4w21DG
+	 wK5V3rfhCiPTlxN/8rSAUNchKRRkK4KYg963DGgjHPGSY7Ze2kGh1eJ1Pe9etm67bzg==
 ARC-Authentication-Results: i=1; smtp.subspace.kernel.org; 
-	dmarc=permerror header.from=sipsolutions.net;
-	spf=pass smtp.mailfrom=sipsolutions.net;
-	dkim=pass header.d=sipsolutions.net header.i=@sipsolutions.net header.a=rsa-sha256 header.s=mail header.b=rlASTcBM;
-	arc=none smtp.remote-ip=168.119.38.16
-Received: from sipsolutions.net (s3.sipsolutions.net [168.119.38.16])
-	(using TLSv1.3 with cipher TLS_AES_256_GCM_SHA384 (256/256 bits)
-	 key-exchange ECDHE (prime256v1) server-signature ECDSA (prime256v1) server-digest SHA256)
+	dmarc=pass header.from=gmail.com;
+	spf=pass smtp.mailfrom=gmail.com;
+	dkim=pass header.d=gmail.com header.i=@gmail.com header.a=rsa-sha256 header.s=20260707 header.b=vzR4NcZO;
+	arc=none smtp.remote-ip=209.85.221.42
+Received: from mail-wr1-f42.google.com (mail-wr1-f42.google.com [209.85.221.42])
+	(using TLSv1.3 with cipher TLS_AES_128_GCM_SHA256 (128/128 bits)
+	 key-exchange X25519 server-signature ECDSA (prime256v1) server-digest SHA256)
 	(No client certificate requested)
-	by smtp.subspace.kernel.org (Postfix) with ESMTPS id 107FF606A32F;
-	Mon, 16 Nov 2026 11:00:31 +0000 (UTC)
-Authentication-Results: smtp.subspace.kernel.org; dmarc=permerror header.from=sipsolutions.net
-Authentication-Results: smtp.subspace.kernel.org; spf=pass smtp.mailfrom=sipsolutions.net
+	by smtp.subspace.kernel.org (Postfix) with ESMTPS id 62378606A330
+	for <linux-wireless@vger.kernel.org>; Mon, 16 Nov 2026 11:00:36 +0000 (UTC)
+DMARC-Filter: OpenDMARC Filter v1.4.2 smtp.subspace.kernel.org 62378606A330
+Authentication-Results: smtp.subspace.kernel.org; dmarc=pass (p=none dis=none) header.from=gmail.com
+Authentication-Results: smtp.subspace.kernel.org; spf=pass smtp.mailfrom=gmail.com
 Authentication-Results: smtp.subspace.kernel.org;
-	dkim=pass (2048-bit key) header.d=sipsolutions.net header.i=@sipsolutions.net header.a=rsa-sha256 header.s=mail header.b=rlASTcBM
-DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=sipsolutions.net; s=mail; h=MIME-Version:Content-Transfer-Encoding:
-	Content-Type:References:In-Reply-To:Date:Cc:To:From:Subject:Message-ID:Sender
-	:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:Resent-To:
-	Resent-Cc:Resent-Message-ID; bh=OTF4aEzGDRWKVbtHjmWpnT83X7Uqnedr3VIkObBqkFU=;
-	t=1794826831; x=1796036431; b=rlASTcBMr53R1Sv0ikZuWe8PmENz/3zMQa02LAitx2BecC6
-	lcdpWesvPP/DqUX6Yd4tP3qXuKg0mbU+SNlGe7ti3id95Iho3bhyqyeVXQWzncmN8o+NrPeTPBXk8
-	E4lBaFotb/EsHTJzg9jKpMAg4U+0fvNHfM1Wqwy4i7L+gonEBzJtZa3K3r5Fnd47O8FN3UQcXhDZK
-	khn7GOcxdes0MNrSoNu657A+1V0i5ePH8DBwqGfsaw3m0H6gBYXqwMkGEGUfw/DqgTAvRcDop1NPv
-	p+MT+bLsESPbJEXv/gDGjqypFRQYqN7bvZ1plaIz07s5tQmUFXSDnYQ3/aoF39iw==;
-Received: by sipsolutions.net with esmtpsa (TLS1.3:ECDHE_X25519__ECDSA_SECP256R1_SHA256__AES_256_GCM:256)
-	(Exim 4.98.2)
-	(envelope-from <johannes@sipsolutions.net>)
-	id 1xSuRo-0000000GYQX-3C8Y;
-	Mon, 16 Nov 2026 12:00:28 +0100
-Message-ID: <cef0d4146270d9f01384129f72259f9eceb08a36.camel@sipsolutions.net>
-Subject: Re: [PATCH wireless-next v4 08/21] wifi: nl80211/cfg80211: pack SMD
- dynamic context along with frame
-From: Johannes Berg <johannes@sipsolutions.net>
-To: Pooventhiran G <pooventhiran.g@oss.qualcomm.com>
-Cc: linux-wireless@vger.kernel.org, linux-kernel@vger.kernel.org
-Date: Mon, 16 Nov 2026 12:00:28 +0100
-In-Reply-To: <338b21e4-b23e-4cc9-930a-8f043538f881@oss.qualcomm.com>
-References: <20261106-smd-v4-0-62e39487f51a@oss.qualcomm.com>
-	 <20261106-smd-v4-8-62e39487f51a@oss.qualcomm.com>
-	 <db523e851beda07c6f52f3c094b5ea2bf718af03.camel@sipsolutions.net>
-	 <338b21e4-b23e-4cc9-930a-8f043538f881@oss.qualcomm.com>
-Content-Type: text/plain; charset="UTF-8"
-Content-Transfer-Encoding: quoted-printable
-User-Agent: Evolution 3.60.2 (3.60.2-3.fc44) 
+	dkim=pass (2048-bit key) header.d=gmail.com header.i=@gmail.com header.a=rsa-sha256 header.s=20260707 header.b=vzR4NcZO
+Received: by mail-wr1-f42.google.com with SMTP id ffacd0b85a97d-491971ac844so2900083f8f.2
+        for <linux-wireless@vger.kernel.org>; Mon, 16 Nov 2026 03:00:36 -0800 (PST)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+        d=gmail.com; s=20260707; t=1794826835; x=1795431635; darn=vger.kernel.org;
+        h=in-reply-to:references:to:from:subject:cc:message-id:date
+         :content-type:content-transfer-encoding:mime-version:from:to:cc
+         :subject:date:message-id:reply-to:content-type;
+        bh=PoGuIV2CW1MyjUCqGaI+U1vpCobn5gb5K6UIl8jT3Vw=;
+        b=vzR4NcZO6Ppt8IQ80moaMSyoWpeBFnbXtj109DRiSO4QSMu0X/iQfQd5eRpxYPpAXZ
+         ns4sy5TS4s9x9J1cSKcuz+pgopbzYCq/SVEvfhOJUQnpJRKvmGKP8VWFcZyVJuzP0xic
+         upk+PALWfKhTpc+a+CcMLdROYgbalxMLNR+WjfNggHsQKF1dpS/rL/zw2PDxihGiqbXb
+         p8uJbGDXgnr3XaekBDtyJkNoHuG9vDnHGQZwIhNNEJ7kzpaU2QjdpL4Xgyd1DWDL8V0N
+         ThsqOr2CCyiZfYRrMZ2MCpPVu7ZGuyh3ROOQ9t9iDyD+xkJeIXfOrSWr60NhNFkG7mJ/
+         TDBA==
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+        d=1e100.net; s=20260707; t=1794826835; x=1795431635;
+        h=in-reply-to:references:to:from:subject:cc:message-id:date
+         :content-type:content-transfer-encoding:mime-version:x-gm-gg
+         :x-gm-message-state:from:to:cc:subject:date:message-id:reply-to
+         :content-type;
+        bh=PoGuIV2CW1MyjUCqGaI+U1vpCobn5gb5K6UIl8jT3Vw=;
+        b=LSrgmDylh1pMTdR8CiN+R5FUhOTkNnZXA83pIbzZGmnnVWHIoBMJuyrhc5OzJOLH0Z
+         al76k2Lk4m4jJCqwXQ65ve7UAz2j4qmQk5dIwbtHHCx8bW+9fgl3CFmUcVuhsVWMHb/w
+         VOdyn7tyJXG9ydhVS/u3Trcd4ok6mO5/nTxcinKSZgeRDh42w7l+jl3UoWrZI98LqAYK
+         S6a19w2QOyK3mf7Foa3T2fbl2LteMmaeKWCjNKowY0aaehMH/1eHdd2h3KG1cYDj5Xai
+         xrkiSd/CuatFCr8XAd5C25GNmEnTjlUGU8UEeSvzkx/AV+5KkgCo/OrHplDsiGW8O7bc
+         CxtQ==
+X-Forwarded-Encrypted: i=1; AL+hErH2giBqgrnoSqyu+bTNusv56I7MmzJ5qgQCIqm5v9wQwjwRcmQG10LA6en+gz6L5mAUPaY9WvlQvtJt2nnlXQ==@vger.kernel.org
+X-Gm-Message-State: APuU4Z/lTx9ITLeS3/0VooKp728Hsw8XRWg5OG4o0YospFItOwVAf+mL
+	nW11paYe35QI7aFaOpreGv4P1nJ4PYo+YTGkozM5NMT8PApznWh/dtqJ
+X-Gm-Gg: AYBFou2cgQmYNM/tf11/7Smf8x47PbgBaUilNIXB9mnqpjQzvZ+G4Dn2bqejQCCNJtb
+	z4I3nS4YQy2RDCPkx8oAmaaNfXBJxD5tmiuqZVPHQld97zIu1y6UuGxVmgL6C5sISmOZkSyMG0L
+	P47ZimaRyWZio55CD1w/AqA57tRN8hiB0Dpm5p5hmUZAPcWYIiXphtzEPqr02WxCjbks+TayTdt
+	hL/aykPvw+IZkXpLCmKePXqnNyxUcj0fwbK7S6IVEPU5fx8fsS/hvQXZaHwyXlxo11Roo3sAiLz
+	2XSFWA2VI1mc4xrrAs5Wa/gOgQ+GMnuIFoM+CzTMfY5mg5VESeIjOLzV1lQk06EoP8Pf3Wu7XVy
+	nMFDoWWfq+BIOSMixrlewjHqrqakhR4V6viH3WSo6NeZFLs0bvjDK2s8OCycC18OA5WPacH9ch1
+	zNsSOujENJzdd0g39thHbq3h3UVS5x3UTHeXZPH6Ll1p+XkETsz2lNdc5aRX+S5CFPNjqksLJQn
+	IsOXv1OZNFwe4ioqiR7fS0BejchbdHMfUpNORih9Un7cwxWm/Lw8Qdy5yXm917LE6WqRC4g85wH
+	fGNO9l+yPXBTowFDgUmA9C4VnLcWS6QfVKM2irktl5ZbbXcmlmi+zrKvnubMSrI6y/TdSefck0z
+	eSnStIwr8kbVceR6unjoQi7jkHOEkFLsq1hiFY0eMdKBJNJ+L
+X-Received: by 2002:a05:600c:4313:b0:4a1:f377:5c68 with SMTP id 5b1f17b1804b1-4bb55a83305mr140076445e9.34.1794826834356;
+        Mon, 16 Nov 2026 03:00:34 -0800 (PST)
+Received: from localhost (freebox.vlq16.iliad.fr. [213.36.7.13])
+        by smtp.gmail.com with ESMTPSA id 5b1f17b1804b1-4bb56689bc2sm168426655e9.2.2026.11.16.03.00.33
+        (version=TLS1_3 cipher=TLS_AES_128_GCM_SHA256 bits=128/128);
+        Mon, 16 Nov 2026 03:00:33 -0800 (PST)
 X-Mailing-List: linux-wireless@vger.kernel.org
 List-Id: <linux-wireless.vger.kernel.org>
 List-Post: <mailto:linux-wireless@vger.kernel.org>
@@ -70,43 +88,52 @@ List-Subscribe: <mailto:linux-wireless+subscribe@vger.kernel.org>
 List-Unsubscribe: <mailto:linux-wireless+unsubscribe@vger.kernel.org>
 List-Owner: <mailto:linux-wireless+owner@vger.kernel.org>
 Precedence: list
-MIME-Version: 1.0
-X-malware-bazaar: not-scanned
+Mime-Version: 1.0
+Content-Transfer-Encoding: quoted-printable
+Content-Type: text/plain; charset=UTF-8
+Date: Mon, 16 Nov 2026 12:00:33 +0100
+Message-Id: <DMWL0GJF8W4F.LOVVKMQHF9R@gmail.com>
+Cc: "Jeff Johnson" <jjohnson@kernel.org>, "Filippo Falezza"
+ <effeffe99@gmail.com>, <linux-wireless@vger.kernel.org>,
+ <ath10k@lists.infradead.org>
+Subject: Re: [PATCH v2] wifi: ath10k: Stop unanswered temperature reads
+From: "Nicolas Escande" <nico.escande@gmail.com>
+To: "Loic Poulain" <loic.poulain@oss.qualcomm.com>, "Nicolas Escande"
+ <nico.escande@gmail.com>
+X-Mailer: aerc 0.22.0-0-gc2f86b7abde3
+References: <20261027-ath10k-temperature-v2-1-0793e80d73bc@gmail.com>
+ <DMRPC2GCD51O.S4DMHZFDKRFG@gmail.com>
+ <CAFEp6-3PWumihQLg0CPR+U40sEUkEwU1EL7mgq8rnnmA4veSeg@mail.gmail.com>
+ <DMTDV3EMV9WV.TFY5VECJNNR4@gmail.com>
+ <CAFEp6-2a-0NSmSZXOdKNfB+C+2T6=hmaBC2zV-sfkCrDwZu0GA@mail.gmail.com>
+In-Reply-To: <CAFEp6-2a-0NSmSZXOdKNfB+C+2T6=hmaBC2zV-sfkCrDwZu0GA@mail.gmail.com>
 
-On Fri, 2026-11-13 at 23:47 +0530, Pooventhiran G wrote:
->=20
-> We moved to computing the size instead of having a fixed value because we
-> transfer an almost dense context in one phase but just a very sparse one =
-in
-> another and thought this would save space on the nlmsg skb.
->=20
+On Thu Nov 12, 2026 at 5:56 PM CET, Loic Poulain wrote:
+[...]
+>
+> The 100 ms timeout seems reasonable. However, will it actually help in
+> your case? You mentioned that the failures are sporadic. If we happen
+> to read the temperature at the "wrong" moment, is it likely that all
+> three retry attempts will fail as well, or would it be better to wait
+> a little longer before retrying the read?
+>
+> In other words, do we expect a short retry loop to be sufficient, or
+> is the failure window long enough that spacing out the retries would
+> improve the chances of success?
 
-It saves allocation, not actual space in the message or for the
-userspace copy. I'm not sure it's worth doing.
+So from my POV I believe the driver should not do any kind ok retry by itse=
+lf.
+No need to add complexity. We (ath10k thermal users) already had to cope wi=
+th
+read failures.
 
-The biggest problem with this is that it's basically not maintainable.
-We already see this in many places, with fixes to these things, if we
-have allocation and building the frame separately.
+So what I would do would is something along the lines:
+  - if we fail the first 3 times we read the temperature, disable it perman=
+ently
+  - past the first success, don't disable and report errors like before
+  - lower timeout value as this holds a lock for a longtime to no gain
+>
+> Regards,
+> Loic
 
->  If we transfer
-> data as D2.0 says, we will transfer about 330 bytes in Prep while only ab=
-out
-> 70 bytes in Exec. This assumes all 8 active data TIDs and without nlhdr
-> overhead. Is it okay to define the max size (~400 bytes + nlhdr overhead)
-> nevertheless to avoid this size computation?
 
-If it's really that small just allocate NLMSG_GOODSIZE or whatever that
-is, which is a bit under 4k so it just takes one page? Don't think it
-matters here much, it's also short-lived (if not you have much bigger
-problems).
-
-> Ahh, I think I misreferred some examples (like cfg80211_net_detect_result=
-s())
-> to cancel the inner nests but are pointless to an skb that is going to be
-> freed. I will remove them.
-
-It's also pointless to cancel inner nests when cancelling an outer, but
-I'm sure we have plenty of code like that because the mere existence of
-that API seems to make people think it should always be balanced ;)
-
-johannes
