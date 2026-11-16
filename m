@@ -1,69 +1,69 @@
-Authentication-Results: smtp.subspace.kernel.org; arc=none smtp.remote-ip=209.85.167.173
+Authentication-Results: smtp.subspace.kernel.org; arc=none smtp.remote-ip=209.85.160.50
 ARC-Seal: i=1; d=subspace.kernel.org; s=arc20261015; a=rsa-sha256; cv=none;
-	t=1794871170;
-	b=3LHwDUVc3tUpONz4N31PhO6AN7/Udf7P8+iKFO0u/Chq7IYBYiMh6QxOxPgxEQmhFn/o
-	 87xDggePpNX5wmlYw/vTOPkh87saa6hhM8QSQ6Iibun1NEVb8gJBFYLo3emnrXrfIR0lS
-	 xM3UneFqcO1MEgCGGFx+mUh6jPbodZpqzvH2goS2eiZP0WiU1p2cEP0x6r0+q57u3cF3i
-	 sOJvH/jHWpjuFGyCYwMN+Y601mxeJFX1k71dYdDDpSZPHv/DhdSHBChSozZWH4U6XdkP8
-	 iGHfC9FyI5AaynugPpOoVpKxHCx5UUMA69ah5kq25y+h60eHtsLySFX/tV0MaGeCT0g==
+	t=1794871173;
+	b=FN7AEBBY7u8u91s1DhiDpGVxn/iIE42iOi1GZQQ51fyQv/95ikWFCkcDVSky8Vx6nAdF
+	 l2ouaiwomNKbs2uCI5fnf8jDTgW8IJJZZM+DbMn44Ym6ItAselYRRsN40jrUE6OpWLKG2
+	 1maREksM8nGZKcHXIW9bMFzGf7X9IHkZsERza5CtNeBXW2R4amXKzd8BQwbkL0NHSRJDl
+	 4p6jLmsbQMoEOyqnwXn8V8wxvTPMxrVDuQWOSr5Lg0N7Uvq4KzhGT4p3B55C5iuqpdFYA
+	 a5QPSLbRSz+JWhVNEMt6ftN+quFPYnj7bOQouoUPuxUgiuXpLqGqqJBrrgaq3I55UUw==
 ARC-Message-Signature: i=1; d=subspace.kernel.org; s=arc20261015;
-	a=rsa-sha256; c=relaxed/relaxed; t=1794871170;
+	a=rsa-sha256; c=relaxed/relaxed; t=1794871173;
 	h=DMARC-Filter:Received:X-Google-DKIM-Signature:X-Forwarded-Encrypted:
 	 X-Gm-Message-State:X-Gm-Gg:X-Received:Received:From:To:Cc:Subject:
 	 Date:Message-ID:X-Mailer:In-Reply-To:References:MIME-Version:
 	 Content-Transfer-Encoding;
-	bh=rHLutSlyk92/tZTdye7/3Pucv9rgQaVGVJYULoTD0E4=;
-	b=eSFyzSTIFMl/htW8F2Oa6r4MyKsB7Bo/jgzPXBJ/nQ8aQZvMowiNDuzLfgsmGbYMVPSO
-	 7LnZcWN9cVnlkjNz0VE2aIEm5qEfP1lwwjh9djse5g86tY5n5QSWVp7uAnJATiXF80LCQ
-	 oygaYyNaE9pZ+WpsgQvT2jEvaI6xMyH57bvK2SRPuYpRLyfKyEpq4h+QJ9g7as522f2Bb
-	 C6pmj6YM4alnUwYgqlv6Z7c+fUwnE5V3w7iyvRQkOJYRmhj5VulWQX5fUl/+wv4316NjS
-	 uIpwaNBIcmnZq+aKsMGsH37cRKTjdRaGYbqtx9D6mq0k21Xra2kk5HnN8WO2pRFgINg==
+	bh=f3Z16Is7JJ5QNyB2RJKkWgILNYqi5rZnhGq+IeCbrE8=;
+	b=i+jok7mCL3BvwUNPJEuOxPh1sbUr8zampzqF/UdU127Ik5bU5iDo8f19jfIIcs2tK3Nn
+	 pyP9H9TKn9k3v4dw+obozAU0PCPceGY7ddHusQu7rWkmia8HLSpz7ja9thljN+L0oKI4m
+	 eWDDya7/ypvONMdhdSznPKFtfqjTVcXvEPB8PP7J3/BLeNCw7G+51BeF8S7DzbfVufx7a
+	 hdYP+rU+qTKfrTjTMY7vqzXA7KZLu6zwcOQ9cHeqKg6DLYVSxyqhGzS/Wi8iepqbrJqG5
+	 ISLu7UocCCLBP+NBG7+tjbutb8d4Y/JBtqpYY6beD5N4dSgU5tOul3QwE/bv8H/lVYQ==
 ARC-Authentication-Results: i=1; smtp.subspace.kernel.org; 
 	dmarc=fail header.from=kernel.org;
 	spf=pass smtp.mailfrom=gmail.com;
-	arc=none smtp.remote-ip=209.85.167.173
-Received: from mail-oi1-f173.google.com (mail-oi1-f173.google.com [209.85.167.173])
+	arc=none smtp.remote-ip=209.85.160.50
+Received: from mail-oa1-f50.google.com (mail-oa1-f50.google.com [209.85.160.50])
 	(using TLSv1.3 with cipher TLS_AES_128_GCM_SHA256 (128/128 bits)
 	 key-exchange X25519 server-signature ECDSA (prime256v1) server-digest SHA256)
 	(No client certificate requested)
-	by smtp.subspace.kernel.org (Postfix) with ESMTPS id 731D6606A329
-	for <linux-wireless@vger.kernel.org>; Mon, 16 Nov 2026 23:19:30 +0000 (UTC)
-DMARC-Filter: OpenDMARC Filter v1.4.2 smtp.subspace.kernel.org 731D6606A329
+	by smtp.subspace.kernel.org (Postfix) with ESMTPS id 6F682606A32A
+	for <linux-wireless@vger.kernel.org>; Mon, 16 Nov 2026 23:19:33 +0000 (UTC)
+DMARC-Filter: OpenDMARC Filter v1.4.2 smtp.subspace.kernel.org 6F682606A32A
 Authentication-Results: smtp.subspace.kernel.org; dmarc=fail (p=quarantine dis=none) header.from=kernel.org
 Authentication-Results: smtp.subspace.kernel.org; spf=pass smtp.mailfrom=gmail.com
-Received: by mail-oi1-f173.google.com with SMTP id 5614622812f47-571eb508edaso856198b6e.3
-        for <linux-wireless@vger.kernel.org>; Mon, 16 Nov 2026 15:19:30 -0800 (PST)
+Received: by mail-oa1-f50.google.com with SMTP id 586e51a60fabf-48ed0b68895so3110274fac.1
+        for <linux-wireless@vger.kernel.org>; Mon, 16 Nov 2026 15:19:33 -0800 (PST)
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=1e100.net; s=20260707; t=1794871169; x=1795475969;
+        d=1e100.net; s=20260707; t=1794871172; x=1795475972;
         h=content-transfer-encoding:mime-version:references:in-reply-to
          :message-id:date:subject:cc:to:from:x-gm-gg:x-gm-message-state:from
          :to:cc:subject:date:message-id:reply-to:content-type;
-        bh=rHLutSlyk92/tZTdye7/3Pucv9rgQaVGVJYULoTD0E4=;
-        b=oH0grDGdXWXfb+CQkM178qxv6YSHMeCeYoj4IVaVXtQoJwqwtVMJUcZn0SWdOjEckK
-         RUxvUBSm5qvtWc8dHpl2TsokBL85Wy9ehVuSjgXYII17Gy9ZwkhpODLd0Jp7tdcpAeq3
-         NCUvtZ0LF6bMoNKSfwk2VWqwLHB42jn4VMmdcxmu1mniMECtwS5GT1yHk4ZIJ7R5fGjk
-         432k+7CzGjbdxWKyoi5W/1cAtshR0j2m6wMRLgzQ5xEqGuTynWJKqx3D6hRedQhjHnGD
-         JdzyZ7GxkLylHtBempboBz4FVnbs5SI6ogxyqt6Z4iBnvzm6otxDkJZA6dcf/d4NBSEu
-         q7TA==
-X-Forwarded-Encrypted: i=1; AL+hErGlxMg8byLk4bi4anvsACbKi4VIlq7B/pqBmOSfAqiyjT1MFYYa+0jtFy9H7UxP4yjw1a88gJmwsn0X5uuThA==@vger.kernel.org
-X-Gm-Message-State: APuU4Z/S7UhQDO+txvCkSfPWP6yPe6bQAqbZX07ZoZLADq5jpjoCviVd
-	778UTmfJTVIrFK/BuqM4zMZRACaGsBaFglvwJFAqw+bhg3YJoM5k1UXX
-X-Gm-Gg: AYBFou1d+9WAzwgM8VZSZcqXzX+1Ewm0KwjI573gVRZKkDSiOXIlJzTy5OnEbXU8gre
-	MLcQLA1Z3NAOIDWoPd+GPjIo8OEM0mCiq+1E9lchKB4YPEnnzsfq6HhDnNPsVApNQgcxrSW3H6O
-	RErWq7kQ+H3EtB0hl0ioAlkoGrCYBHjYpF/sV/lw9ZyydZ8qvzx+XQzBa6CVB+D6iC+vma1t+/b
-	HbYV1L8LmwDjBUxS6woGnMtTKqog8aKH8s85xj9cv5xGnWnPVoBrDxUykb/A0ic329i5gF5qTk6
-	XbDS7ujnSjzSwiEeWhKbnoeU+RtkfOaNvNGDEVNcG0t+QRdLNZ0WYSjCyEPmJghdLWBJSYBUcsK
-	KJ9+3q+4I259z57Md4e3MPksMaDlBENj2WYZrw9Kt6wY536SDUM3RUcZeIFRp5suYiVLOyR3EQf
-	x0iE+88GgjwuSoqqRjwfbw4cwccnbnl+yqjhS/PGncBTo/mdIuNKLu4OuW/kNRuiIEhn5+YPWfq
-	ZkZBENxeg6NbHR1cgkUs4cORKK85XlxMpCSzOs2/OiwwXt8TItG0CyS4LEkx2HyLxLQ3TxSIaXB
-	KA3jkA5PgzO6sHqXWD8XAT9DIG58HwzVwhlBmWmAYI3RyTKxMcDb+Sp2vJHL5Crz4P95W2g2Znx
-	mMeo+KgdJ
-X-Received: by 2002:a05:6808:23cf:b0:4f3:6c2b:5f22 with SMTP id 5614622812f47-56e63aa4882mr9024922b6e.29.1794871169424;
-        Mon, 16 Nov 2026 15:19:29 -0800 (PST)
+        bh=f3Z16Is7JJ5QNyB2RJKkWgILNYqi5rZnhGq+IeCbrE8=;
+        b=KyiNG/PqmxYYShJxSisOGe/4qTDyHVgAasMLmPWHEoDz0UMKGSqJGDiaVduaClNBup
+         dteqVB6Y4s5tsynRt10IOH5oHUrYZ/0so3Cr2aPs/ELqVUOyAvmnaB9e35N8QPLqlBAQ
+         i78jxWBDjjLF3Rh2U7VMHcIkJ4+O/JjuHUn/F19R0V6c9FURBRnzvO186bXpbAjJeHD9
+         9v3/Da0+gODtjrJ/Qw8BlpAKvg62LXPxfLXQAXV1pCs49kGOEAB4aVQeMF2l/QMRs98J
+         7YekID1wZ1JHoIa0AbAzq00yDEy5pqU8rJFTdcoE5IL9MLPpt6KmIWC3P3oEjOvljtK/
+         8D+g==
+X-Forwarded-Encrypted: i=1; AL+hErFeleyaKSRFrLfh8pE3uGqJ3/kxlRvpoL0PP6Xq8hwIsaUs97KJBHhjrA8qRse+P1Gj1vhbLOFqHt8UKMaGyA==@vger.kernel.org
+X-Gm-Message-State: APuU4Z/5QSDP+1a0YKCZy78a4khCgGKHI2C0wpkdhP8cW1u6QkhpQ6aV
+	QI8Ta1jcTAg2oKYgoMFs85ecXEhac3QlbMnwKxCX2QTOkiGMJNKPAMdU
+X-Gm-Gg: AYBFou1uLhoDfjJMomFt6Oi+Q6XWIYbPqc+nyY9nSDWkBzNMbZpcDvA6jWy1BQQvOXT
+	AtLBX97SAnK8AmC0fNOr1JWHjfOMddty+3Ix5mhyhjo/9Z2FzWuM4aHVP4CvciT7WKdHDwt+ZwW
+	5iJKzN9qocHwBM98HwA9D/2k0Ly504bUBgdL8dMub/oqfBWCcgOAgfD/Jw2hd84GjV0Tqg4TIBC
+	mqOCPNSn/fEc8LzjDAfaEB+0BDLg+YSGhQZXneQpe8ogrKC492zGpOZpE/JdxjWV5WnUaSboGpz
+	y16gFODwq+NE5HoYJWOdO5geqRMb8jv/+A2yaUbINJARBuGd2RUC0mmeDEOfmtZPlNapKmXb3XY
+	7jmpNITSwI8E1WuQmG00+DSOeG2+jqVSagUXoqZpO8Uo2WdQYqVCA6JHuX3fZ8rAvq7IYKZmlVY
+	+db4QCKddYtytm5hLh/0X55meaGK4jd4/15rGchjhXWupZQ/qhn4C2YhwUAEwYi4MWfEi12XyQY
+	11ggswZez637wxwx6MoMExNAVz/zbdz59XQii506d4MiO5fJlyeHg57+a5o4Qodny0/uWG8PKo+
+	I26zpgHaiujKX3VzX4GIRR7knRx1UKkw2Q7ig5qPa26akbnp2sFNpyIl2SIGoyck8HZq6wk6yQF
+	BP4Un88X+
+X-Received: by 2002:a05:6808:319b:b0:4f4:d7:b16d with SMTP id 5614622812f47-56e65c53555mr9526418b6e.60.1794871172475;
+        Mon, 16 Nov 2026 15:19:32 -0800 (PST)
 Received: from sean-HP-EliteBook-830-G6.lan ([207.191.35.252])
-        by smtp.gmail.com with ESMTPSA id 5614622812f47-56e70c58f9bsm10239635b6e.13.2026.11.16.15.19.26
+        by smtp.gmail.com with ESMTPSA id 5614622812f47-56e70c58f9bsm10239635b6e.13.2026.11.16.15.19.30
         (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
-        Mon, 16 Nov 2026 15:19:27 -0800 (PST)
+        Mon, 16 Nov 2026 15:19:30 -0800 (PST)
 From: Sean Wang <sean.wang@kernel.org>
 To: nbd@nbd.name,
 	lorenzo.bianconi@kernel.org
@@ -75,9 +75,9 @@ Cc: yu-ching.liu@mediatek.com,
 	linux-wireless@vger.kernel.org,
 	linux-mediatek@lists.infradead.org,
 	Sean Wang <sean.wang@mediatek.com>
-Subject: [PATCH v2 11/19] wifi: mt76: mt7925: double the retry budget for NAN unicast management
-Date: Mon, 16 Nov 2026 17:16:22 -0600
-Message-ID: <20261116231630.1733906-12-sean.wang@kernel.org>
+Subject: [PATCH v2 12/19] wifi: mt76: mt7925: let TX status of DW-held NAN frames outlive the DW period
+Date: Mon, 16 Nov 2026 17:16:23 -0600
+Message-ID: <20261116231630.1733906-13-sean.wang@kernel.org>
 X-Mailer: git-send-email 2.43.0
 In-Reply-To: <20261116231630.1733906-1-sean.wang@kernel.org>
 References: <20261116231630.1733906-1-sean.wang@kernel.org>
@@ -94,48 +94,53 @@ Content-Transfer-Encoding: 8bit
 
 From: Jacobs Wu <jacobs.wu@mediatek.com>
 
-The NAN setup handshakes are one-shot at the host: wpa_supplicant aborts
-PASN on the first unacknowledged authentication frame and completes the
-NDP state machine without retransmitting an unacknowledged key-install.
-Right after the data path confirm both peers transmit at each other
-nearly simultaneously, and with half-duplex radios one 15-retry burst
-regularly dies inside the peer's own TX window (measured ~50% loss of
-the key-install on an MT7925 pair, killing the NDP setup).
+Frames on the NAN DW-WTBL legitimately wait up to a full discovery
+window period (524ms) in a paused queue before they air, but the TX
+status tracking times a packet out MT_TX_STATUS_SKB_TIMEOUT (250ms)
+after DMA completion and reports it as failed. wpa_supplicant treats
+the false no-ack as a delivery failure and retransmits: a NIK follow-up
+held to the DW is then re-queued every cycle, the peer receives one
+copy per DW (56 copies measured over one 30s window), and the resulting
+pairing-confirm storm poisons the pairing-verification state, which
+never triggers and times out.
 
-Double the TXD retry budget to the field maximum for NAN unicast
-management so the burst outlives the cross-fire window.
+Extend the TX status lifetime for frames tracked on the DW wcid so the
+status is reported from the actual transmission.
 
 Co-developed-by: Sean Wang <sean.wang@mediatek.com>
 Signed-off-by: Sean Wang <sean.wang@mediatek.com>
 Signed-off-by: Jacobs Wu <jacobs.wu@mediatek.com>
 ---
- drivers/net/wireless/mediatek/mt76/mt7925/mac.c | 13 +++++++++++++
- 1 file changed, 13 insertions(+)
+ drivers/net/wireless/mediatek/mt76/tx.c | 13 +++++++++++--
+ 1 file changed, 11 insertions(+), 2 deletions(-)
 
-diff --git a/drivers/net/wireless/mediatek/mt76/mt7925/mac.c b/drivers/net/wireless/mediatek/mt76/mt7925/mac.c
-index 5518960e1375..9837018ba193 100644
---- a/drivers/net/wireless/mediatek/mt76/mt7925/mac.c
-+++ b/drivers/net/wireless/mediatek/mt76/mt7925/mac.c
-@@ -827,6 +827,19 @@ mt7925_mac_write_txwi(struct mt76_dev *dev, __le32 *txwi,
+diff --git a/drivers/net/wireless/mediatek/mt76/tx.c b/drivers/net/wireless/mediatek/mt76/tx.c
+index 08b04f092a0b..7e205412dae3 100644
+--- a/drivers/net/wireless/mediatek/mt76/tx.c
++++ b/drivers/net/wireless/mediatek/mt76/tx.c
+@@ -190,11 +190,20 @@ mt76_tx_status_skb_get(struct mt76_dev *dev, struct mt76_wcid *wcid, int pktid,
+ 		struct mt76_tx_cb *cb = mt76_tx_skb_cb(skb);
  
- 	val = FIELD_PREP(MT_TXD3_REM_TX_COUNT, 15);
+ 		if (pktid >= 0) {
++			unsigned long timeout = MT_TX_STATUS_SKB_TIMEOUT;
++
+ 			if (!(cb->flags & MT_TX_CB_DMA_DONE))
+ 				continue;
  
-+	/* NAN setup handshakes are one-shot at the host: a single lost burst
-+	 * kills the NDP (peers transmit at each other nearly simultaneously
-+	 * after M3 and half-duplex radios miss the reply). Double the retry
-+	 * budget so the burst outlives the cross-fire window.
-+	 */
-+	if (vif && vif->type == NL80211_IFTYPE_NAN) {
-+		struct ieee80211_hdr *nan_hdr = (struct ieee80211_hdr *)skb->data;
+-			if (time_is_after_jiffies(cb->jiffies +
+-						   MT_TX_STATUS_SKB_TIMEOUT))
++			/* A frame held to the NAN DW legitimately waits up to
++			 * a full DW period (524ms) before it airs; timing its
++			 * status out earlier reports a false no-ack to the
++			 * one-shot NAN handshakes (PASN, NDP key install).
++			 */
++			if (wcid->nan_dw)
++				timeout = HZ;
 +
-+		if (ieee80211_is_mgmt(nan_hdr->frame_control) &&
-+		    !is_multicast_ether_addr(nan_hdr->addr1))
-+			val = FIELD_PREP(MT_TXD3_REM_TX_COUNT, 31);
-+	}
-+
- 	if (key)
- 		val |= MT_TXD3_PROTECT_FRAME;
- 	if (info->flags & IEEE80211_TX_CTL_NO_ACK)
++			if (time_is_after_jiffies(cb->jiffies + timeout))
+ 				continue;
+ 		}
+ 
 -- 
 2.43.0
 
