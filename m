@@ -1,64 +1,64 @@
 Authentication-Results: smtp.subspace.kernel.org; arc=none smtp.remote-ip=168.119.38.16
 ARC-Seal: i=1; d=subspace.kernel.org; s=arc20261015; a=rsa-sha256; cv=none;
-	t=1794827640;
-	b=PWkn9kwQ+Mq87SAPSjf8qdg0QjttzaF8txUThtNkXZnjc0zZe2/ur2PhUEZCq5lGcAeA
-	 f48j2MBEVIRkpIb+mnpztRwHraoKyzFHfLJfOxZyIlg5zQ1uZbIv6UoVdiOQCAJho0mGm
-	 ckbmJLh+ag1LLxwk1gt4QUtYm2FCkh5yCCugvHY+BfdHsuY1tlZTe5Q8zJyX6SASGqjM2
-	 IhbFjGahKfYPMIlEvOjLKyBTcpGVpdCtbM/KgCbKP2DWqT0mGOCvpUuFCEAUIqUzM02A/
-	 xUjwOn3txPnP319OvNGqWjM8qIBwYPqP3V1Xii89Gmsj97gF01Le71548ErjJKlOn0w==
+	t=1794828018;
+	b=ih8ydb/L7sh9a6jLlMvE0d9bTv0Zw7CQR0zOLdmE4bXzELV52fTTEVs3j1zeMgf1TLxa
+	 +TtO2iZxMvLznQiAQnY7I8pXkhD5EKYJNURRjqN2H8JKjvxeSXDJoyzqsrq3CAbYI3lg8
+	 gNzkZGEimh2qGJs7PrPsT3WHygXZebMBGzgH4gKaosShizB/xLvnfvyurA5LxByh1uwQb
+	 f3SA2R6dqVmOUj0wn/q5ZGvDe/SnC47pANTX/dbt/WWJKW9eNVwuWMpoMwm5gbUkbi2Dg
+	 V6buSpd2RiUMYgsBVG2f3au0icPzamT7TD+zbvUjfBIg0VuTlZ+UpJ/lbOCc5C+UmQg==
 ARC-Message-Signature: i=1; d=subspace.kernel.org; s=arc20261015;
-	a=rsa-sha256; c=relaxed/relaxed; t=1794827640;
+	a=rsa-sha256; c=relaxed/relaxed; t=1794828018;
 	h=DKIM-Signature:Received:Message-ID:Subject:From:To:Cc:Date:
 	 In-Reply-To:References:Content-Type:Content-Transfer-Encoding:
 	 User-Agent:MIME-Version:X-malware-bazaar;
-	bh=q3tXTTuzZPDwf7cWttrKZdbIQ10UDrDakG8A8akmtsc=;
-	b=hyqrdd51OaUMQXG6jGXsFQyXWrM1tOm4kuCEwF/1brNuGhJGgLLzwXeO9MPSiHhmx/7s
-	 VNA/8lYu+BMLkaMVCa9l+Vr2aOrjx/FkSPMvwvbueJg4zW6faYKwgmEwYwMo0lXughZvy
-	 F0tlOg6232zt8/Ay9mGUNt0tYH487Vxj7T1JAn8w2modxOEeXE1IxYc3mJhudhFe0Nv4n
-	 Hn9ZPnQkCUKeuDd3uo1jBYPJLtpAPNZxClHl4GsnMzH52UeOPdKNdnHo0oE5qMQOoZhOJ
-	 XADdzkRSnPm/BNOSNTxsnpy1Bbh/bcRSX+L1DudTuVrQAl8lHEwBooQDw5hhqmr5ZVA==
+	bh=Bfvf5kdxyLDGuRC3fc3q3S11fL5OIUcHZ64sgUBkSj0=;
+	b=cPj3gtVIG1ldwDAaEryjgU/Jjhs2dXuqIQoMF0q9J/nltA+0TQqYmtcltkT54Zdc7tUF
+	 cRxw7gmMI8Dk+UutEZQoKgGcJfnwVc6y19Hx7+jB9UytU0NxHW/mhORhOnokG0nrOt6SU
+	 JGF5gPL04l/KFjML4M+ZvqSNYmw4rgn0GnYhZ4JIli8X5Mdz3U606WExbJcQq6U2BPED6
+	 jlshk8MsZcIuyYbFhqNd8ocy1NbPvs3m3QTirlS/uc3hudYMUwFW7hqd/lRqqm4OWW+E7
+	 +A1YDFLaDKTGIpXUdcTIDCE3NPqbexFaHt2DcpDdBlQadJiKvr+bN6u6P0cvkmy5Orw==
 ARC-Authentication-Results: i=1; smtp.subspace.kernel.org; 
 	dmarc=permerror header.from=sipsolutions.net;
 	spf=pass smtp.mailfrom=sipsolutions.net;
-	dkim=pass header.d=sipsolutions.net header.i=@sipsolutions.net header.a=rsa-sha256 header.s=mail header.b="p6tJuYr/";
+	dkim=pass header.d=sipsolutions.net header.i=@sipsolutions.net header.a=rsa-sha256 header.s=mail header.b="CM/CAGpT";
 	arc=none smtp.remote-ip=168.119.38.16
 Received: from sipsolutions.net (s3.sipsolutions.net [168.119.38.16])
 	(using TLSv1.3 with cipher TLS_AES_256_GCM_SHA384 (256/256 bits)
 	 key-exchange ECDHE (prime256v1) server-signature ECDSA (prime256v1) server-digest SHA256)
 	(No client certificate requested)
-	by smtp.subspace.kernel.org (Postfix) with ESMTPS id 27204606A8B9;
-	Mon, 16 Nov 2026 11:13:59 +0000 (UTC)
+	by smtp.subspace.kernel.org (Postfix) with ESMTPS id DBD3A606A7AE;
+	Mon, 16 Nov 2026 11:20:17 +0000 (UTC)
 Authentication-Results: smtp.subspace.kernel.org; dmarc=permerror header.from=sipsolutions.net
 Authentication-Results: smtp.subspace.kernel.org; spf=pass smtp.mailfrom=sipsolutions.net
 Authentication-Results: smtp.subspace.kernel.org;
-	dkim=pass (2048-bit key) header.d=sipsolutions.net header.i=@sipsolutions.net header.a=rsa-sha256 header.s=mail header.b=p6tJuYr/
+	dkim=pass (2048-bit key) header.d=sipsolutions.net header.i=@sipsolutions.net header.a=rsa-sha256 header.s=mail header.b=CM/CAGpT
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=sipsolutions.net; s=mail; h=MIME-Version:Content-Transfer-Encoding:
 	Content-Type:References:In-Reply-To:Date:Cc:To:From:Subject:Message-ID:Sender
 	:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:Resent-To:
-	Resent-Cc:Resent-Message-ID; bh=q3tXTTuzZPDwf7cWttrKZdbIQ10UDrDakG8A8akmtsc=;
-	t=1794827639; x=1796037239; b=p6tJuYr/EAWGpL2edL7Zpun4M6i3IRsmyNLZ8LlvyDsQHsJ
-	JgTBysM8cDCLFPQFC6ZLM83lBRFVHr2irBIDDG6c7L4JB2QyVdq9g9pA0M8aFu2OnmJrLUxAugMAT
-	SwYi7wrwfAEopmTv34Xqw1DA0xyt8a5IssdnpNtWTjP/2ZJ5YnsN03uFsnnqgaUodqxTl1O+NRAWb
-	PA0ASE/elpvrZaFkp/2Y8JeysaYCa1P5HGRChqXp7iH0ylTYgdudHgrWtRkUi6g+rNeY9cAHVUp9v
-	jP9Uxu4y70+3sGxHmVRtxRuEflQ/KGuY35A/h5GYARo6sh/aCOK62rELjfd8VezA==;
+	Resent-Cc:Resent-Message-ID; bh=Bfvf5kdxyLDGuRC3fc3q3S11fL5OIUcHZ64sgUBkSj0=;
+	t=1794828017; x=1796037617; b=CM/CAGpTFl8AJP+BKFqGJ6KimS/TTzJUnInV/t3/HwpKDel
+	jmtId9aij7i5W9k9Pe0F5i35Pmmh1XDgIMaAyH7k0hjHf4dgCWwRiYbbXu067zbM3dhtUI0RbEqam
+	R5tp5nT5rfUBc2njW54wucRwiuTzw6YjqtFJqWwWYJQAr/X0VsQ2BMIqjg0KyecbBrrMy2HxZK2na
+	1fMbd3qK7S1hsK2+Fgyuu9zudMCAvjOysZcQdoNSuHGciIXVfVjdNJwtVU6TqWwZW566EZuZ5TZYz
+	UI3AaZ8T95sx2UoQYCWqnCdMiTfxdST/evVhp2w41DTXbdP15u1yGI90AeN/a3Bw==;
 Received: by sipsolutions.net with esmtpsa (TLS1.3:ECDHE_X25519__ECDSA_SECP256R1_SHA256__AES_256_GCM:256)
 	(Exim 4.98.2)
 	(envelope-from <johannes@sipsolutions.net>)
-	id 1xSueq-0000000GZaZ-1ipX;
-	Mon, 16 Nov 2026 12:13:56 +0100
-Message-ID: <0ebac9768c0294b8ecfc8729447dee94ec0b7c84.camel@sipsolutions.net>
-Subject: Re: [PATCH wireless-next v4 09/21] wifi: nl80211/cfg80211: add
- support for SMD context programming
+	id 1xSukw-0000000GZwQ-0rfQ;
+	Mon, 16 Nov 2026 12:20:14 +0100
+Message-ID: <a31c882bce704ef51c71f16c63377a7d234d1a67.camel@sipsolutions.net>
+Subject: Re: [PATCH wireless-next v4 10/21] wifi: nl80211/cfg80211: add
+ support for querying SMD context for target AP MLD
 From: Johannes Berg <johannes@sipsolutions.net>
 To: Pooventhiran G <pooventhiran.g@oss.qualcomm.com>
 Cc: linux-wireless@vger.kernel.org, linux-kernel@vger.kernel.org
-Date: Mon, 16 Nov 2026 12:13:55 +0100
-In-Reply-To: <2be101bb-081c-4d6b-93b6-a7cea3f183f2@oss.qualcomm.com>
+Date: Mon, 16 Nov 2026 12:20:13 +0100
+In-Reply-To: <18544db8-05e9-43b9-b60b-bf24e97a1225@oss.qualcomm.com>
 References: <20261106-smd-v4-0-62e39487f51a@oss.qualcomm.com>
-	 <20261106-smd-v4-9-62e39487f51a@oss.qualcomm.com>
-	 <7e6a6640fe034af160eec0dda532259b499153ad.camel@sipsolutions.net>
-	 <2be101bb-081c-4d6b-93b6-a7cea3f183f2@oss.qualcomm.com>
+	 <20261106-smd-v4-10-62e39487f51a@oss.qualcomm.com>
+	 <29b38fc6c8a5f1b2b58d81c1a9046308d2ca9e2d.camel@sipsolutions.net>
+	 <18544db8-05e9-43b9-b60b-bf24e97a1225@oss.qualcomm.com>
 Content-Type: text/plain; charset="UTF-8"
 Content-Transfer-Encoding: quoted-printable
 User-Agent: Evolution 3.60.2 (3.60.2-3.fc44) 
@@ -73,31 +73,22 @@ Precedence: list
 MIME-Version: 1.0
 X-malware-bazaar: not-scanned
 
-On Fri, 2026-11-13 at 23:24 +0530, Pooventhiran G wrote:
+On Sat, 2026-11-14 at 00:03 +0530, Pooventhiran G wrote:
 >=20
-> There were similar changes done for array of values for
-> NL80211_ATTR_CNTDWN_OFFS_BEACON, NL80211_ATTR_SCAN_FREQUENCIES, etc., So,=
- this
-> approach was done here to make sure that each SN in the array was u16 as
-> expected. If there _is_ a way to add policies for the iterator-based nest=
-ing
-> of such values that you could point me to, I will change accordingly.
->=20
-> [1] =3D>
->=20
-> struct nla_policy sn_policy[8] =3D {
-> 	[0] =3D { .type =3D NLA_U16 },
-> 	[1] =3D { .type =3D NLA_U16 },
-> 	...
-> 	[7] =3D { .type =3D NLA_U16 },
-> }
->=20
+> The netdev reference is held to prevent invalid accesses to wdev/dev whil=
+e
+> reporting the context back to userspace as there are no locks in this pat=
+h and
+> another core may be servicing a DEL_INTERFACE unsynchronized with this co=
+ntext
+> report. Since the collated context report comes from atomic contexts, we
+> wouldn't be able to take wiphy_lock.
 
-Wait, I thought you _had_ a policy for this? Sorry! I also thought we
-had a macro for such policies, but ... I guess not?
+No, that's just not right. The driver provides a netdev (wdev)
+reference, so it's its job to not call nl80211_notify_get_smd_ctx_done()
+with a stale netdev/wdev, however it achieves that.
 
-There's a preference for using a single attribute multiple times to get
-an array, in part for this reason, but we've never done that really in
-nl80211. Maybe see how that'd be?
+The address is also already provided by the driver, and cfg80211 doesn't
+need to track anything.
 
 johannes
