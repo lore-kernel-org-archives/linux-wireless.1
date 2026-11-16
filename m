@@ -1,79 +1,109 @@
-Authentication-Results: smtp.subspace.kernel.org; arc=none smtp.remote-ip=211.75.126.72
+Authentication-Results: smtp.subspace.kernel.org; arc=none smtp.remote-ip=205.220.168.131
 ARC-Seal: i=1; d=subspace.kernel.org; s=arc20261015; a=rsa-sha256; cv=none;
-	t=1794798026;
-	b=CKaGysUJ4dj2n4bccaRQqcVUoqLTrxX/ST7Jt4LdpLmxWCRkrCyZlQZMtkbNDdf2m+g1
-	 465udpHG2n5LXTJhMNJgYGWzLxXo4OHRmRtrX66XtHoj0Q0n10EQvuD6p77fK7b8B45a2
-	 AyYGtq/G0BQgp90MqSJo3ydKz1mGN0EYJCeOp34O4u1CPAduGrdU7ikk1bvltwuX22RYt
-	 Uh2FIv5URCmj4t0eAykAIzSxHnaKhCBtkWfTh6FC0iWUlBarBYyJD0d9gEODsmS2WeQpb
-	 yCCSZGhgXtlVR191uFWN7SycQYziSzTnXWoFVuYgf7NQfGmM81CbyLSdZ2WCIm5xJ4Q==
+	t=1794798269;
+	b=pVD/vQz80jiSxuO5/Gj8JNVs5Bvk0T3/C+tttoP4J5JXOs+hw2glwjvkpuOzRPSbjbL3
+	 MpNoONnwLue/T/H7HsLDce2Cg/f0FQji0fsoZL16aazp/jh9xV/hWO9Xxpz++D5Q33b1o
+	 wKIFGMa47oq62CnVEWvBKy4dJwd6XMWHJx5nUIw4nWJcZnnjmPvbXwnafrLqpyCPjcr7S
+	 jbIGBvf7NjEaHruWiX1/qIPouW4RTugfaPv8oMME138WhtxiebFXejvjgeOFWFbB8F1tx
+	 OYmRgTaBtKAyFmuPxBeb7Fx6BrTo2XF1vtaF8hZMwkN2qVK+XQrsdsz6TrbAuXYC/Qw==
 ARC-Message-Signature: i=1; d=subspace.kernel.org; s=arc20261015;
-	a=rsa-sha256; c=relaxed/relaxed; t=1794798026;
-	h=DMARC-Filter:X-SpamFilter-By:DKIM-Signature:Received:Received:
-	 Received:From:To:CC:Subject:Thread-Topic:Thread-Index:Date:Message-ID:
-	 References:In-Reply-To:Accept-Language:Content-Language:
-	 x-originating-ip:Content-Type:Content-Transfer-Encoding:MIME-Version;
-	bh=OJq+NoU9z85sOsy2AIfVpakEqi16h5aVjBNylrJZYBs=;
-	b=Z0ACXMgtpuRGbwOFk/k8Ub0+4ln27uO5dDpUFoArqAuVc0zn7C7cyrcL7wVXYQyHpok+
-	 AFXFpT09laiIxVnmWbgJhKvdoJvgSk2EdsNNL0Ym4NzOY9dXcirE1o4j4uKuHY7iG0Qja
-	 via27mV5cAnJWHOHtGLscfRuwklzP9CdIdH87jQoNl5qOEHL2tZY1yKqoAFJv76i26NlK
-	 MT3Hwpj2MyxRm2L/8mbDYNFYK9qMl/7ffsfxlbNTB9Y+tQucNwzXNcum9SPUNTv0JnXke
-	 2DPqsAOS0uiKy00u6Hbx+YG7rrSqBIo0QdMoAY0Hv9FlQD1kF5KSNLhllBeXODL2otQ==
+	a=rsa-sha256; c=relaxed/relaxed; t=1794798269;
+	h=DMARC-Filter:Received:DKIM-Signature:Received:Received:
+	 DKIM-Signature:X-Google-DKIM-Signature:X-Gm-Message-State:X-Gm-Gg:
+	 X-Received:X-Received:Received:Message-ID:Date:MIME-Version:
+	 User-Agent:Subject:To:Cc:References:From:Content-Language:In-Reply-To:
+	 Content-Type:Content-Transfer-Encoding:X-Proofpoint-Spam-Info:
+	 X-Proofpoint-ORIG-GUID:X-Proofpoint-GUID:
+	 X-Proofpoint-Spam-Details-Enc:X-Authority-Analysis:
+	 X-Proofpoint-Virus-Version:X-Proofpoint-Spam-Details;
+	bh=T+s/YqkfPu6xF4OVnuCJWP5RfIw0rp2fVL5Y005kWSU=;
+	b=oVRqZBTxW1a/MRyPmUMae6mCjzjwmbQQUrWyVgOggSsUqFrqa/HPzt9/OeUgkMVADUvj
+	 DWjwOXzaD9cqh+897CaC3ncBLnSJfjJehCrQJL2pSzvyvtHTlSdC5Jss5HiaN+C6mxpfd
+	 YLe0c+6W8GYGgzijXw7KTlA54xRrdnS5ghsLbW0OZ+jVe39qT8yaIlzn+foFTmpfBKI1q
+	 nznSwNaScitTOcwbmMmZkgR0m1gwP+VFs3rd47ZYYpcLE+OJdp6RTsFNDgui4tLq8BwRc
+	 VLKTSHsJI9DZBtJYK6y4cg22Tp6VNHvg3a0HCxHBp3MVdngaa09mh3Ep23g0INiarjQ==
 ARC-Authentication-Results: i=1; smtp.subspace.kernel.org; 
-	dmarc=pass header.from=realtek.com;
-	spf=pass smtp.mailfrom=realtek.com;
-	dkim=pass header.d=realtek.com header.i=@realtek.com header.a=rsa-sha256 header.s=dkim header.b=aHu5UEaS;
-	arc=none smtp.remote-ip=211.75.126.72
-Received: from rtits2.realtek.com.tw (rtits2.realtek.com [211.75.126.72])
+	dmarc=pass header.from=oss.qualcomm.com;
+	spf=pass smtp.mailfrom=oss.qualcomm.com;
+	dkim=pass header.d=qualcomm.com header.i=@qualcomm.com header.a=rsa-sha256 header.s=qcppdkim1 header.b=CZ0mtxA2;
+	dkim=pass header.d=oss.qualcomm.com header.i=@oss.qualcomm.com header.a=rsa-sha256 header.s=google header.b=LFpxagt7;
+	arc=none smtp.remote-ip=205.220.168.131
+Received: from mx0a-0031df01.pphosted.com (mx0a-0031df01.pphosted.com [205.220.168.131])
 	(using TLSv1.3 with cipher TLS_AES_256_GCM_SHA384 (256/256 bits)
 	 key-exchange X25519 server-signature ECDSA (prime256v1) server-digest SHA256)
 	(No client certificate requested)
-	by smtp.subspace.kernel.org (Postfix) with ESMTPS id B64BD606A321;
-	Mon, 16 Nov 2026 03:00:25 +0000 (UTC)
-DMARC-Filter: OpenDMARC Filter v1.4.2 smtp.subspace.kernel.org B64BD606A321
-Authentication-Results: smtp.subspace.kernel.org; dmarc=pass (p=none dis=none) header.from=realtek.com
-Authentication-Results: smtp.subspace.kernel.org; spf=pass smtp.mailfrom=realtek.com
+	by smtp.subspace.kernel.org (Postfix) with ESMTPS id 57DA5606A329
+	for <linux-wireless@vger.kernel.org>; Mon, 16 Nov 2026 03:04:27 +0000 (UTC)
+DMARC-Filter: OpenDMARC Filter v1.4.2 smtp.subspace.kernel.org 57DA5606A329
+Authentication-Results: smtp.subspace.kernel.org; dmarc=pass (p=none dis=none) header.from=oss.qualcomm.com
+Authentication-Results: smtp.subspace.kernel.org; spf=pass smtp.mailfrom=oss.qualcomm.com
 Authentication-Results: smtp.subspace.kernel.org;
-	dkim=pass (2048-bit key, unprotected) header.d=realtek.com header.i=@realtek.com header.a=rsa-sha256 header.s=dkim header.b=aHu5UEaS
-X-SpamFilter-By: ArmorX SpamTrap 5.80 with qID 6AG30C5D02999701, This message is accepted by code: ctloc85258
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=realtek.com; s=dkim;
-	t=1794798012; bh=OJq+NoU9z85sOsy2AIfVpakEqi16h5aVjBNylrJZYBs=;
-	h=From:To:CC:Subject:Date:Message-ID:References:In-Reply-To:
-	 Content-Type:Content-Transfer-Encoding:MIME-Version;
-	b=aHu5UEaSm4cxvLyatXtCwRsAHDEWR9kzC7MkWKjaGYJLUvGQTePWwgiBTEV7auQss
-	 dBHdgtCQF/+rKJh81uRMNKWIlBCe2ahRsNgQDJqeKjLU6TtmNLul2LcXazjSJ80C57
-	 oRpnaCZa8E2Imp47tHrRyighKZyECKkB8nTYiziErYrWjJscGEDTuIcNmTCyipnoua
-	 0EMPnXBQuNBQPZ9FphIIBgpfTBcQI6y6+CRIsX0qgKJyXKEHIsNxoBLiTmynmnLhuh
-	 lxod10V+p5m4/WiRZ6Pzv46LePgyPaS327FgSSkVinvVQjfAGTP4qdkNpcqTvLJ9IG
-	 E7VYOOa2SsGhg==
-Received: from mail.realtek.com (rtkexhmbs04.realtek.com.tw[10.21.1.54])
-	by rtits2.realtek.com.tw (8.15.2/3.29/5.94) with ESMTPS id 6AG30C5D02999701
-	(version=TLSv1.2 cipher=ECDHE-RSA-AES256-GCM-SHA384 bits=256 verify=FAIL);
-	Mon, 16 Nov 2026 11:00:12 +0800
-Received: from RTKEXHMBS06.realtek.com.tw (10.21.1.56) by
- RTKEXHMBS04.realtek.com.tw (10.21.1.54) with Microsoft SMTP Server
- (version=TLS1_2, cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id
- 15.2.2562.56; Mon, 16 Nov 2026 11:00:10 +0800
-Received: from RTKEXHMBS06.realtek.com.tw ([fe80::eeeb:c765:ca73:5eef]) by
- RTKEXHMBS06.realtek.com.tw ([fe80::eeeb:c765:ca73:5eef%10]) with mapi id
- 15.02.2562.056; Mon, 16 Nov 2026 11:00:10 +0800
-From: Ping-Ke Shih <pkshih@realtek.com>
-To: Enver Ikromov <owner@ph4ntom-rev.uz>
-CC: "linux-wireless@vger.kernel.org" <linux-wireless@vger.kernel.org>,
-	"linux-kernel@vger.kernel.org" <linux-kernel@vger.kernel.org>
-Subject: RE: [PATCH rtw-next v5 09/10] wifi: rtw89: honor ASSIGN_SEQ, retries,
- and NO_ACK for injected frames
-Thread-Topic: [PATCH rtw-next v5 09/10] wifi: rtw89: honor ASSIGN_SEQ,
- retries, and NO_ACK for injected frames
-Thread-Index: AQHdc9EKoDHkogFGDkeY+qoS8pIb/Lcv+2WA
-Date: Mon, 16 Nov 2026 03:00:10 +0000
-Message-ID: <a56a85ff19dc4bd29cb3c81cb7e0c77a@realtek.com>
-References: <20261113235211.1911-1-owner@ph4ntom-rev.uz>
- <20261113235211.1911-10-owner@ph4ntom-rev.uz>
-In-Reply-To: <20261113235211.1911-10-owner@ph4ntom-rev.uz>
-Accept-Language: en-US, zh-TW
-Content-Language: zh-TW
-Content-Type: text/plain; charset="us-ascii"
-Content-Transfer-Encoding: quoted-printable
+	dkim=pass (2048-bit key) header.d=qualcomm.com header.i=@qualcomm.com header.a=rsa-sha256 header.s=qcppdkim1 header.b=CZ0mtxA2;
+	dkim=pass (2048-bit key) header.d=oss.qualcomm.com header.i=@oss.qualcomm.com header.a=rsa-sha256 header.s=google header.b=LFpxagt7
+Received: from pps.filterd (m0279864.ppops.net [127.0.0.1])
+	by mx0a-0031df01.pphosted.com (8.18.1.11/8.18.1.11) with ESMTP id 6AG1Kx7n2658607
+	for <linux-wireless@vger.kernel.org>; Mon, 16 Nov 2026 03:04:26 GMT
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=qualcomm.com; h=
+	cc:content-transfer-encoding:content-type:date:from:in-reply-to
+	:message-id:mime-version:references:subject:to; s=qcppdkim1; bh=
+	T+s/YqkfPu6xF4OVnuCJWP5RfIw0rp2fVL5Y005kWSU=; b=CZ0mtxA2DzDQ8HYl
+	btsGnnbN5VpMegPO5gUYmTzsj1r9EEiVKe86NMJMsCYYsJhw0YNb4GsXJ5R6A4SY
+	1Hu3xDFmP6SeTGSt7IqUQXjocQ0GvPDgN+sab0flbKYSifp1TsHEjz1B5JEJYT91
+	Qw4PCh48QDeTEo+lbMcTUUbRlnMPEZyQm1z94DRvSFG22Lf/mlGuZ5nk7FHoE7nV
+	vLtwYw581V0yY1eSmjMu8OhYX3p4mpZGriZwWeExHm1kNIPhynx9facweGSlEd2W
+	uu2/Tv/erq9mStoUM1S7JwE2FCqdhRd4FbYfcSuIwboCtTghQKY24GhaDIFl/nc8
+	f18aTQ==
+Received: from mail-pj1-f70.google.com (mail-pj1-f70.google.com [209.85.216.70])
+	by mx0a-0031df01.pphosted.com (PPS) with ESMTPS id 4hxhmccdp6-1
+	(version=TLSv1.3 cipher=TLS_AES_128_GCM_SHA256 bits=128 verify=NOT)
+	for <linux-wireless@vger.kernel.org>; Mon, 16 Nov 2026 03:04:26 +0000 (GMT)
+Received: by mail-pj1-f70.google.com with SMTP id 98e67ed59e1d1-3aed37745bcso2909253a91.1
+        for <linux-wireless@vger.kernel.org>; Sun, 15 Nov 2026 19:04:26 -0800 (PST)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+        d=oss.qualcomm.com; s=google; t=1794798266; x=1795403066; darn=vger.kernel.org;
+        h=content-transfer-encoding:content-type:in-reply-to:content-language
+         :from:references:cc:to:subject:user-agent:mime-version:date
+         :message-id:from:to:cc:subject:date:message-id:reply-to:content-type;
+        bh=T+s/YqkfPu6xF4OVnuCJWP5RfIw0rp2fVL5Y005kWSU=;
+        b=LFpxagt7sYrRirvIGb9a2MKJIB9qCihkn/1bF929xyPniTdIV1X+ddN6wHA6izaUxI
+         d5+ARI/AQO+bjdKDumYtG30ot8+boLQPDElO6VhAleKsVlrnQuKnjGq4l3/E3pFn001H
+         83R+iWZhg456jXsT7SdRZs8TFBEonS8uyp+ESPMsvrKRLLrqkIlrOhcRuwM8EOAATsSQ
+         PajR+B2WVIxdzbTRhYZ5JrB5uN03hUQuaa927UrFh4SDWq/hu0G9yAcjn4SqaqJBluSI
+         26Zdd/WDIVWWmipTLrWur0o7iabWyiDDSsdTm88H9gyOf8cgAj0gSxkxFSAZjPTw0Y7p
+         7ogw==
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+        d=1e100.net; s=20260707; t=1794798266; x=1795403066;
+        h=content-transfer-encoding:content-type:in-reply-to:content-language
+         :from:references:cc:to:subject:user-agent:mime-version:date
+         :message-id:x-gm-gg:x-gm-message-state:from:to:cc:subject:date
+         :message-id:reply-to:content-type;
+        bh=T+s/YqkfPu6xF4OVnuCJWP5RfIw0rp2fVL5Y005kWSU=;
+        b=k7+X3QAgAFUmWB5lHJUQwQ47k4UE/jHMpCa8S/3CwCWUi7dzElzd+XQ3pwwRCUiiiy
+         UZ/ussMCmvrjR5nLkZOni5bisnzLO8U4EmoeT040Wf8PTLwGdNr0oij8opvqZr/WvRS3
+         AcG5RC1CYaI3ggnHR98vNTXa4YZy8vLUGPv3dQESF4U166c/7OU3pWzdEe7RvCzMQD84
+         UOTN9XUfVzf0rvpT8gJ9002hE/qQQwvrAngL5fz+vwm+u8j7o6GegaQ4/NiUpRb/vsz5
+         9c9FkHqiXTnjmwuNVibSEaFpHAc2pF/whPJm3e5FL9QEPlwNiaVoNBIOzNNY7mL7mx0B
+         CmdA==
+X-Gm-Message-State: APuU4Z/JDVGsxsxkgNmt/FHrXqC+0Wv2iHjPMP5c861kpJluqdMZe981
+	obey4sxJGVWw512RInSM9fjOoRcJ2HKOvYPRaF6w1eCokxi2H772VeCioGxL2tfA7Qt/mLb7z+4
+	+vher0aZ24CwB2WkS5Xe1tssPC9O1IuC09a01RPoUF/mfS9s+XubjreBNtHkGfqC773D0bA==
+X-Gm-Gg: AYBFou3omgfOL0+MbcMvC0rf7Y66W0YRjoUKEaJc/chioKHXJVMlCD3y38ObDoshGu4
+	+43tyKcgn5Hy3nPzIG+Lc+SZwQtzRX9/yoCUih+4uG1FVrMjMLsdAqlZbFxEes++0YcG2wE/Dte
+	ykEPV7cJ64YDc66lILhM8Zyqu0H+L5+t3QmEjYuR7nRGJ4kgH0KSzU6Fa1kTQ+42k3p80aojyu1
+	S2Pu0Ur5nKNhLvjA0MD9xZ+ntIcyW+egPPG6QbmYoDh0Q2BhWs8/vyxz9L7AJyCEd+SmR6jaV8D
+	+I9INJEC9VRfz5BtDORCFAsifbicq/LDo8dhFwiaQTO9WB/pdAn2sxCsah/5NnI/A7BGOz7S/og
+	B1c33pntNeyZCGZYPumRLERWAeqpaUYaxIIB0Xem9NOjHvQESSXP7JBjwQ29WQe5/tarZ7MdHe8
+	FGoyLStKs/dXlrwKt/nBy3OxsOuyNojhuu2je7KJiA0Q3u
+X-Received: by 2002:a17:90b:5112:b0:3ac:9ad9:6afe with SMTP id 98e67ed59e1d1-3b1b0d481c5mr6099337a91.39.1794798265658;
+        Sun, 15 Nov 2026 19:04:25 -0800 (PST)
+X-Received: by 2002:a17:90b:5112:b0:3ac:9ad9:6afe with SMTP id 98e67ed59e1d1-3b1b0d481c5mr6099319a91.39.1794798265100;
+        Sun, 15 Nov 2026 19:04:25 -0800 (PST)
+Received: from [10.133.33.65] (tpe-colo-wan-fw-bordernet.qualcomm.com. [103.229.16.4])
+        by smtp.gmail.com with ESMTPSA id 98e67ed59e1d1-3b197c6dd2dsm18994350a91.2.2026.11.15.19.04.22
+        (version=TLS1_3 cipher=TLS_AES_128_GCM_SHA256 bits=128/128);
+        Sun, 15 Nov 2026 19:04:24 -0800 (PST)
+Message-ID: <a346e622-8fe9-4912-9ded-b531b1bdc82e@oss.qualcomm.com>
+Date: Mon, 16 Nov 2026 11:03:59 +0800
 X-Mailing-List: linux-wireless@vger.kernel.org
 List-Id: <linux-wireless.vger.kernel.org>
 List-Post: <mailto:linux-wireless@vger.kernel.org>
@@ -83,195 +113,154 @@ List-Unsubscribe: <mailto:linux-wireless+unsubscribe@vger.kernel.org>
 List-Owner: <mailto:linux-wireless+owner@vger.kernel.org>
 Precedence: list
 MIME-Version: 1.0
+User-Agent: Mozilla Thunderbird
+Subject: Re: [PATCH] wifi: ath11k: read a station's TX rate under base_lock
+To: christophergriffin05@gmail.com, Jeff Johnson <jjohnson@kernel.org>
+Cc: linux-wireless@vger.kernel.org, ath11k@lists.infradead.org,
+        linux-kernel@vger.kernel.org,
+        Jeff Johnson <jeff.johnson@oss.qualcomm.com>
+References: <20261114-ath11k-sta-txrate-lock-v1-1-8331a03b1000@gmail.com>
+From: Baochen Qiang <baochen.qiang@oss.qualcomm.com>
+Content-Language: en-US
+In-Reply-To: <20261114-ath11k-sta-txrate-lock-v1-1-8331a03b1000@gmail.com>
+Content-Type: text/plain; charset=UTF-8
+Content-Transfer-Encoding: 7bit
+X-Proofpoint-Spam-Info: AW1haW4tMjYxMTE2MDAxMSBTYWx0ZWRfX5oCXkr9Tfklo
+ MuUCrK5Y9iegUp19cT3eQK/gBmLcL6C+okCh2hq5aTHMus+YUtkidd18Tw6w1PugPYLUsnsYHxR
+ RulbVo4jDuezAj1z+l4/DA7NAcsuapI=
+X-Proofpoint-ORIG-GUID: lf6ndanazbikrdew2EG-M8q6zPZyTIIl
+X-Proofpoint-GUID: lf6ndanazbikrdew2EG-M8q6zPZyTIIl
+X-Proofpoint-Spam-Details-Enc: AW1haW4tMjYxMTE2MDAxMSBTYWx0ZWRfX4jqLNO3RUkHI
+ wknfyZkgkA79W4tYpN3AeYIypWSMsQknYBgDcPr6klWIdJRaCYlc7xcDuheKQU9yBJM7xnk4Y4l
+ IEpmer9/nilkgaTIlxIxH0ZqsGkmpmitzFA6nej5TvwCYQPowj+4ocoWbtK8T8gb8guDsfuoMVP
+ 7nUDQS6uMDtW/j20rTzIvm5cS55ozEMXbLpuzLSBrB+2iT+Sm2RDV/kYh9fDi57c+HbTHAjtC3M
+ Zy05wXo+2rKdK2n6TI4juKAheH2v4jIuITd+CNPUYEGVQhpsnDHDDuNmfyBA68ovL4+UM2+zpt9
+ 25t9DIUZtqzn0xWtidGOTvNVCxngeNsUznShnpHNO4/uKSl+mPoPioXePZK6p8ryjmaeqLwdv4D
+ wt/ZxsfkZAdNyuDiQ1+bKGvTBNsIEv5R0Rrv+YIZ9xQL68yC203lQLpPslaK8eFUFLuQYT5Nw1y
+ a8cErEI+kCgS0QYCzeQ==
+X-Authority-Analysis: v=2.4 cv=Vpy2kO2n c=1 sm=1 tr=0 ts=6afa72ba cx=c_pps
+ a=0uOsjrqzRL749jD1oC5vDA==:117 a=nuhDOHQX5FNHPW3J6Bj6AA==:17
+ a=IkcTkHD0fZMA:10 a=zJRp6_cAMcgA:10 a=s4-Qcg_JpJYA:10
+ a=VkNPw1HP01LnGYTKEx00:22 a=u7WPNUs3qKkmUXheDGA7:22 a=DJpcGTmdVt4CTyJn9g5Z:22
+ a=pGLkceISAAAA:8 a=EUspDBNiAAAA:8 a=nA-HWIxgkZHMIsNwmeYA:9 a=QEXdDO2ut3YA:10
+ a=mQ_c8vxmzFEMiUWkPHU9:22
+X-Proofpoint-Virus-Version: vendor=baseguard
+ engine=ICAP:2.0.293,Aquarius:18.0.1176,Hydra:6.1.138,FMLib:17.12.100.49
+ definitions=2026-11-16_01,2026-11-11_03,2025-10-01_01
+X-Proofpoint-Spam-Details: rule=outbound_notspam policy=outbound score=0
+ impostorscore=0 lowpriorityscore=0 adultscore=0 clxscore=1015 malwarescore=0
+ phishscore=0 priorityscore=1501 bulkscore=0 spamscore=0 suspectscore=0
+ classifier=typeunknown authscore=0 authtc= authcc= route=outbound adjust=0
+ reason=mlx scancount=1 engine=8.22.0-2611040001 definitions=main-2611160011
 
-Enver Ikromov <owner@ph4ntom-rev.uz> wrote:
-> For injected frames, rtw89_core_tx_update_injection() only applies
-> the radiotap rate and leaves several TX descriptor and completion
-> settings mismatched with the radiotap flags:
->=20
-> - The management path sets hw_ssn_sel/hw_seq_mode (and MLO links set
->   upd_wlan_hdr), overwriting user-supplied sequence numbers when
->   IEEE80211_TX_CTL_ASSIGN_SEQ is not set, and leaving hw_seq_mode
->   enabled even on injected control frames that have no seq_ctrl field.
->   Conversely, injected data frames leave hw_seq_mode unset when
->   ASSIGN_SEQ is requested on a monitor interface.
-> - Unicast frames unconditionally set RTS_EN =3D 1 and HW_RTS_EN =3D 1 in
->   txwd_info4. On normal traffic HW_RTS_EN =3D 1 gates RTS on the MAC
->   length/duration threshold (4080B / 2816us), whereas for injected
->   frames RTS_EN must follow IEEE80211_TX_RC_USE_RTS_CTS with
->   HW_RTS_EN =3D 0 so short frames requesting RTS/CTS actually emit RTS.
 
-No need to describe driver behavior.=20
 
-> - IEEE80211_TX_CTL_NO_ACK (e.g. IEEE80211_RADIOTAP_F_TX_NOACK) neither
->   sets BE_TXD_BODY6_NO_ACK on Wi-Fi 7 descriptors nor bounds retries,
->   causing unacknowledged frames to be retransmitted up to the retry
->   limit. Note that Wi-Fi 6 TXWD v0 chips (RTL8852A/B, RTL8851B) have
->   no dedicated per-packet NO_ACK descriptor bit and rely on
->   tx_cnt_lmt =3D 1 to suppress retransmissions; when that single attempt
->   completes with RTW89_TX_RETRY_LIMIT, suppress false tx_retry_lmt
->   accounting in rtw89_pci_tx_status() and set
->   IEEE80211_TX_STAT_NOACK_TRANSMITTED in rtw89_tx_rpt_tx_status() too.
-> - hw->max_rate_tries is left at the mac80211 default (4), truncating
->   IEEE80211_RADIOTAP_DATA_RETRIES, and info->control.rates[0].count is
->   ignored when a radiotap rate is specified.
-> - Positive radiotap HT/VHT/legacy rate indices are added to the table
->   base without clamping to the chip's valid MCS or legacy rate bounds.
->=20
-> Configure hardware sequence assignment according to
-> IEEE80211_TX_CTL_ASSIGN_SEQ (and never on control frames), drive
-> rts_en and hw_rts_en for radiotap RTS/CTS, advertise
-> RTW89_TX_DATA_CNT_LMT_MAX (63) in hw->max_rate_tries, honor
-> rates[0].count and NO_ACK descriptor/status semantics, and clamp
-> positive radiotap rate indices to valid hardware ranges.
->=20
-> Signed-off-by: Enver Ikromov <owner@ph4ntom-rev.uz>
+On 11/14/2026 10:34 PM, Christopher Griffin via B4 Relay wrote:
+> From: Christopher Griffin <christophergriffin05@gmail.com>
+> 
+> ath11k_update_per_peer_tx_stats() and ath11k_dp_tx_update_txcompl()
+> rewrite arsta->txrate under ab->base_lock: they clear it, then fill in
+> its fields one by one. ath11k_mac_op_sta_statistics() copies it into the
+> station info without that lock, so a station dump that runs while a TX
+> status updates the rate can copy the HE flag with an nss of 0, and
+> cfg80211 warns:
+> 
+>   WARNING: CPU: 3 PID: 30429 at net/wireless/util.c:1581 ieee80211_get_vht_max_nss+0x474/0x868 [cfg80211]
+>   Call trace:
+>    ieee80211_get_vht_max_nss+0x474/0x868 [cfg80211] (P)
+>    cfg80211_calculate_bitrate+0x1e0/0x4f4 [cfg80211]
+>    nl80211_put_sta_rate+0x50/0x1230 [cfg80211]
+>    nl80211_put_sta_rate+0xa30/0x1230 [cfg80211]
+>    nl80211_dump_station+0x4b8/0x7e0 [cfg80211]
+> 
+> (the line is the nss check in the inlined
+> cfg80211_calculate_bitrate_he()). It was seen once in about a day on an
+> IPQ8074 AP whose stations are dumped periodically by a monitoring agent.
+> 
+> Copy the rate under base_lock and report from the copy, as ath12k reads
+> its peer rate info under its DP lock.
+> 
+> The change and this message were written with Claude, an AI coding
+> assistant.
+> 
+> Tested-on: IPQ8074 hw2.0 AHB WLAN.HK.2.9.0.1-02146-QCAHKSWPL_SILICONZ-1
+> Tested-on: QCN9074 hw1.0 PCI WLAN.HK.2.5.r4-00683-QCAHKSWPL_SILICONZ-1
+> Tested-on: IPQ6018 hw1.0 AHB WLAN.HK.2.5.0.1-03982-QCAHKSWPL_SILICONZ-3
+> 
+> Fixes: d5c65159f289 ("ath11k: driver for Qualcomm IEEE 802.11ax devices")
+> Signed-off-by: Christopher Griffin <christophergriffin05@gmail.com>
 > ---
->  drivers/net/wireless/realtek/rtw89/core.c | 63 ++++++++++++++++++-----
->  drivers/net/wireless/realtek/rtw89/core.h |  4 ++
->  drivers/net/wireless/realtek/rtw89/mac.h  |  2 +
->  drivers/net/wireless/realtek/rtw89/pci.c  |  3 +-
->  4 files changed, 58 insertions(+), 14 deletions(-)
->=20
-> diff --git a/drivers/net/wireless/realtek/rtw89/core.c b/drivers/net/wire=
-less/realtek/rtw89/core.c
-> index 84c12c6..7d174d2 100644
-> --- a/drivers/net/wireless/realtek/rtw89/core.c
-> +++ b/drivers/net/wireless/realtek/rtw89/core.c
-> @@ -1252,12 +1252,43 @@ static void rtw89_core_tx_update_injection(struct=
- rtw89_dev *rtwdev,
->         const struct rtw89_hw_rate_def *hw_rate =3D &rtw89_hw_rate[rtwdev=
-->chip->chip_gen];
->         enum mac80211_rate_control_flags flags =3D info->control.rates[0]=
-.flags;
->         struct rtw89_tx_desc_info *desc_info =3D &tx_req->desc_info;
-> +       struct ieee80211_hdr *hdr =3D (void *)tx_req->skb->data;
->         const struct rtw89_chan *chan;
->         s8 idx =3D info->control.rates[0].idx;
-> -       u8 nss, mcs;
-> +       u8 nss, mcs, max_mcs;
->=20
->         desc_info->use_rate =3D true;
->         desc_info->dis_data_fb =3D true;
-> +       desc_info->hw_rts_en =3D false;
-> +       desc_info->rts_en =3D (flags & IEEE80211_TX_RC_USE_RTS_CTS) &&
-> +                           !desc_info->is_bmc &&
-> +                           !(info->flags & IEEE80211_TX_CTL_NO_ACK);
+> Found on an Arista C-360 (IPQ8074 + QCN9074) running OpenWrt, from a
+> warning in its kernel log; the cause was found by reading the code.
+> ath12k already reads its peer rate info under its DP lock.
+> ---
+>  drivers/net/wireless/ath/ath11k/mac.c | 26 ++++++++++++++++----------
+>  1 file changed, 16 insertions(+), 10 deletions(-)
+> 
+> diff --git a/drivers/net/wireless/ath/ath11k/mac.c b/drivers/net/wireless/ath/ath11k/mac.c
+> index 1a237adaa37d1..d76eeb1ca0019 100644
+> --- a/drivers/net/wireless/ath/ath11k/mac.c
+> +++ b/drivers/net/wireless/ath/ath11k/mac.c
+> @@ -9425,6 +9425,7 @@ static void ath11k_mac_op_sta_statistics(struct ieee80211_hw *hw,
+>  {
+>  	struct ath11k_sta *arsta = ath11k_sta_to_arsta(sta);
+>  	struct ath11k *ar = arsta->arvif->ar;
+> +	struct rate_info txrate;
+>  	s8 signal;
+>  	bool db2dbm = test_bit(WMI_TLV_SERVICE_HW_DB2DBM_CONVERSION_SUPPORT,
+>  			       ar->ab->wmi_ab.svc_map);
+> @@ -9435,18 +9436,23 @@ static void ath11k_mac_op_sta_statistics(struct ieee80211_hw *hw,
+>  	sinfo->tx_duration = arsta->tx_duration;
+
+arsta->rx_duration and arsta->tx_duration are u64 and are also only updated under
+ab->base_lock, so on 32-bit they can tear the same way. Since the lock is taken here
+anyway, moving those two reads into the same critical section would cost nothing, and is what
+ath12k_mac_op_link_sta_statistics() does under dp_lock.
+
+Not a blocker, fine to leave it for a separate patch.
+
+>  	sinfo->filled |= BIT_ULL(NL80211_STA_INFO_TX_DURATION);
+>  
+> -	if (arsta->txrate.legacy || arsta->txrate.nss) {
+> -		if (arsta->txrate.legacy) {
+> -			sinfo->txrate.legacy = arsta->txrate.legacy;
+> +	/* The TX status paths clear and refill txrate under base_lock */
+> +	spin_lock_bh(&ar->ab->base_lock);
+> +	txrate = arsta->txrate;
+> +	spin_unlock_bh(&ar->ab->base_lock);
 > +
-> +       /* Control frames have no seq_ctrl field; otherwise keep the
-> +        * sequence number supplied by user space unless ASSIGN_SEQ is se=
-t.
-> +        */
-> +       if (!(info->flags & IEEE80211_TX_CTL_ASSIGN_SEQ) ||
-> +           ieee80211_is_ctl(hdr->frame_control)) {
-> +               desc_info->upd_wlan_hdr =3D false;
+> +	if (txrate.legacy || txrate.nss) {
+> +		if (txrate.legacy) {
+> +			sinfo->txrate.legacy = txrate.legacy;
+>  		} else {
+> -			sinfo->txrate.mcs = arsta->txrate.mcs;
+> -			sinfo->txrate.nss = arsta->txrate.nss;
+> -			sinfo->txrate.bw = arsta->txrate.bw;
+> -			sinfo->txrate.he_gi = arsta->txrate.he_gi;
+> -			sinfo->txrate.he_dcm = arsta->txrate.he_dcm;
+> -			sinfo->txrate.he_ru_alloc = arsta->txrate.he_ru_alloc;
+> +			sinfo->txrate.mcs = txrate.mcs;
+> +			sinfo->txrate.nss = txrate.nss;
+> +			sinfo->txrate.bw = txrate.bw;
+> +			sinfo->txrate.he_gi = txrate.he_gi;
+> +			sinfo->txrate.he_dcm = txrate.he_dcm;
+> +			sinfo->txrate.he_ru_alloc = txrate.he_ru_alloc;
+>  		}
+> -		sinfo->txrate.flags = arsta->txrate.flags;
+> +		sinfo->txrate.flags = txrate.flags;
+>  		sinfo->filled |= BIT_ULL(NL80211_STA_INFO_TX_BITRATE);
+>  	}
+>  
+> 
+> ---
+> base-commit: ff4c7359e310744a7abe53cf66d921fa2969eb19
+> change-id: 20261111-ath11k-sta-txrate-lock-50b530be39c2
+> 
+> Best regards,
+> --  
+> Christopher Griffin <christophergriffin05@gmail.com>
+> 
+> 
 
-Does it need to update this?
-
-> +               desc_info->hw_ssn_sel =3D 0;
-> +               desc_info->hw_seq_mode =3D 0;
-> +       } else {
-> +               desc_info->hw_ssn_sel =3D RTW89_MGMT_HW_SSN_SEL;
-> +               desc_info->hw_seq_mode =3D RTW89_MGMT_HW_SEQ_MODE;
-
-This is only for MGMT frames. If you inject QoS data frames, the sequence
-number should count per TID. But for injection it seems not build BA seesio=
-n
-, so this is harmless.
-
-
-> +       }
-> +
-> +       /* Suppress hardware retransmissions (and ACK waiting on BE) for =
-NO_ACK;
-> +        * otherwise honor explicit radiotap retry limits when a rate is =
-set.
-> +        */
-
-First line of block comment should be empty.=20
-
-But this comment is not necessary. The code explains itself.
-
-> +       if (info->flags & IEEE80211_TX_CTL_NO_ACK) {
-> +               desc_info->no_ack =3D true;
-> +               desc_info->tx_cnt_lmt_en =3D true;
-> +               desc_info->tx_cnt_lmt =3D 1;
-> +       } else if (info->control.rates[0].count) {
-> +               desc_info->tx_cnt_lmt_en =3D true;
-> +               desc_info->tx_cnt_lmt =3D umin(info->control.rates[0].cou=
-nt,
-> +                                            RTW89_TX_DATA_CNT_LMT_MAX);
-
-You have set=20
-   hw->max_rate_tries =3D RTW89_TX_DATA_CNT_LMT_MAX;
-
-Is it still necessary to have umin()?
-
-
-> +       }
->=20
->         /* No rate was given in the radiotap header. Management frames
->          * already carry the rate from rtw89_core_tx_update_mgmt_info(), =
-so
-> @@ -1283,16 +1314,20 @@ static void rtw89_core_tx_update_injection(struct=
- rtw89_dev *rtwdev,
->                 desc_info->gi_ltf =3D 1;
->=20
->         if (flags & IEEE80211_TX_RC_VHT_MCS) {
-> +               max_mcs =3D rtwdev->chip->chip_gen =3D=3D RTW89_CHIP_BE ?=
- 11 : 9;
-
-I think the maximum standard VHT MCS rate is 9. Just use 9 inline.
-
->                 nss =3D umin(idx >> 4, ARRAY_SIZE(hw_rate->vht) - 1);
-> -               mcs =3D idx & 0xf;
-> +               mcs =3D umin(idx & 0xf, max_mcs);
->                 desc_info->data_rate =3D hw_rate->vht[nss] + mcs;
->         } else if (flags & IEEE80211_TX_RC_MCS) {
-> -               desc_info->data_rate =3D hw_rate->ht + idx;
-> +               desc_info->data_rate =3D hw_rate->ht + umin(idx, 31);
->         } else {
->                 chan =3D rtw89_chan_get(rtwdev, tx_req->rtwvif_link->chan=
-ctx_idx);
-> -
-> -               desc_info->data_rate =3D idx + (chan->band_type =3D=3D RT=
-W89_BAND_2G ?
-> -                                             RTW89_HW_RATE_CCK1 : RTW89_=
-HW_RATE_OFDM6);
-> +               if (chan->band_type =3D=3D RTW89_BAND_2G)
-> +                       desc_info->data_rate =3D RTW89_HW_RATE_CCK1 +
-> +                                              umin(idx, 11);
-> +               else
-> +                       desc_info->data_rate =3D RTW89_HW_RATE_OFDM6 +
-> +                                              umin(idx, 7);
->         }
->  }
->=20
-
-[...]
-
-
-> diff --git a/drivers/net/wireless/realtek/rtw89/pci.c b/drivers/net/wirel=
-ess/realtek/rtw89/pci.c
-> index 6d19e75..6c4d6c0 100644
-> --- a/drivers/net/wireless/realtek/rtw89/pci.c
-> +++ b/drivers/net/wireless/realtek/rtw89/pci.c
-> @@ -475,7 +475,8 @@ static void rtw89_pci_tx_status(struct rtw89_dev *rtw=
-dev,
->         if (tx_status =3D=3D RTW89_TX_DONE) {
->                 info->flags |=3D IEEE80211_TX_STAT_ACK;
->                 tx_ring->tx_acked++;
-> -       } else {
-> +       } else if (!(info->flags & IEEE80211_TX_CTL_NO_ACK) ||
-> +                  tx_status !=3D RTW89_TX_RETRY_LIMIT) {
-
-Will it be a problem without this change?
-This branch is only to sum internal counters of the driver.=20
-
->                 if (info->flags & IEEE80211_TX_CTL_REQ_TX_STATUS)
->                         rtw89_debug(rtwdev, RTW89_DBG_FW,
->                                     "failed to TX of status %x\n", tx_sta=
-tus);
-> --
-> 2.56.0.windows.4
+Reviewed-by: Baochen Qiang <baochen.qiang@oss.qualcomm.com>
 
