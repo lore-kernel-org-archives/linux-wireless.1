@@ -1,72 +1,73 @@
 Authentication-Results: smtp.subspace.kernel.org; arc=none smtp.remote-ip=192.198.163.13
 ARC-Seal: i=1; d=subspace.kernel.org; s=arc20261015; a=rsa-sha256; cv=none;
-	t=1794864109;
-	b=r5igcV9EDNyRFRXOE6LjVdyAegdk48sd3p42pSbCzf2etLJg5DNDR3oNeubchFjhOS4K
-	 0irwhFh9P6YeSDZN5nRQt3/CXQy1SlEO7P05FN8wVcNOIMty+U2nrFXwFx2OrZ+lRTamx
-	 fdNPPX/B9LdaOrCmtI2CtRGAqh+vaGqyUw9pqoCV7tli7cILaSPId+xiXp3+rvvEpMaeT
-	 QW67UwE/4oLMoFQgB6tqIjT7QTMXLqKYLK25Hmw7Ci4ItNFysbn3ySK7e+BEoZlJcciHa
-	 VNXWvtB0GK6B8g3d7cpqj92Ns8QMTw1dz6Y6BtkGEKL/IbAVnkQ41nQgLnbHRpklvMQ==
+	t=1794864111;
+	b=C/lXTdKerj/J6zq5Ta/SmExHSi/4I4/3HRJSN0+ZA5gGMaehHzjaNy7iYFr1lroL4LVw
+	 7IWS3XPVLha5jNvfhS4ynGm30Scs7RuTAGNzIoGIiQ3HccdCKBAj/Z5pDjIkodcBt1cHD
+	 vwEVC1sXXpWUPoCscBDY4jSqCnlfeWk6chtymXDQGXKgmklJGkHbBAS9buFlbdHxupc6q
+	 fpyb+K1jJ7r4ZZlivFAkQKli2h0lhRDweS1rJyAkZ7X9UkMsrHfTssaM0TUM02WsMH6AN
+	 8psWcd7veu2FX9F1h4nYJY2p2h/ZHZWA1SAc+omYfuY3DAImDpUvsESkQhR2w2Mkctg==
 ARC-Message-Signature: i=1; d=subspace.kernel.org; s=arc20261015;
-	a=rsa-sha256; c=relaxed/relaxed; t=1794864109;
+	a=rsa-sha256; c=relaxed/relaxed; t=1794864111;
 	h=DMARC-Filter:DKIM-Signature:X-CSE-ConnectionGUID:X-CSE-MsgGUID:
 	 X-IronPort-AV:X-IronPort-AV:Received:X-CSE-ConnectionGUID:
 	 X-CSE-MsgGUID:X-ExtLoop1:X-IronPort-AV:Received:From:To:Cc:Subject:
 	 Date:Message-Id:X-Mailer:In-Reply-To:References:MIME-Version:
 	 Organization:Content-Transfer-Encoding;
-	bh=I1m7dNSrNNk2kme/WHHO3IvZebKqVRPslhlVkWW7pyc=;
-	b=JSSr/ZGGjdpGvKoP1acnreMnotlX+4OYQq1BzWnk9zJRKQ7KZeS8VqGK/01rI3LXwM0I
-	 aWngTH8ELF3vFugBTGz9XGqP8eqgZQOsb2berd6n/VCz/JyS8pt/rpsHMowPYKRQHvERX
-	 Tl0MKb2eZpkPhian0QjpHAe85b8CzOjZs2qRFFydsxafGFM2TwY0262iUw+pBQUzlCNH/
-	 ovyoE25D3ngVDuV0cNaeI3uX3YdolKRkDx01XXLm0LvRBxU0CDGFJnDh7l3Mq4UDjB0QZ
-	 f4vXD6IfCn8kXw++TykD0xt1KLwiXYaU5pT2edAoD9rZhKT5wILk8QZysa/q2fLH5Mw==
+	bh=Gcsy+5WHFq6rhpsJhzLZ/5VJMqp3eqaw4f4uZJoc3hY=;
+	b=an4xdv/WQaByko03EvOrkYqDipAC0b/ucRNYff3LRVpFQlNmDoNtMSyfPBTyV0ooTUhE
+	 kCPGHUKfEocWiE5uVVyRUHlAHcg/1wwlGHYP1/Chsdm9fAwy8rA1R7iS8Fj3LKufNBSBx
+	 gy6H/YPgMr726Ku94QJI6wNrOnwI4c9DsjbZQe15yBqafZFp6WHvIITvFcQX6j/ZUbgDc
+	 kHkgVIXw0h4digJQvPLoGWbMDUhua+ZsMFqrwZRW5iG0+WT3J/CFPBCSwvaLwVGoFwGUA
+	 T/D240zvlcJw8OIHzz/BBCg4TCKsI4kg4IthC7D0ZcSa/RnGgggDnsaJDYZbimsmIkw==
 ARC-Authentication-Results: i=1; smtp.subspace.kernel.org; 
 	dmarc=pass header.from=intel.com;
 	spf=pass smtp.mailfrom=intel.com;
-	dkim=pass header.d=intel.com header.i=@intel.com header.a=rsa-sha256 header.s=Intel header.b=foxEd1uR;
+	dkim=pass header.d=intel.com header.i=@intel.com header.a=rsa-sha256 header.s=Intel header.b=Tb9iMHJb;
 	arc=none smtp.remote-ip=192.198.163.13
 Received: from mgamail.intel.com (mgamail.intel.com [192.198.163.13])
 	(using TLSv1.2 with cipher ECDHE-ECDSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.subspace.kernel.org (Postfix) with ESMTPS id 0A28E606A33B
-	for <linux-wireless@vger.kernel.org>; Mon, 16 Nov 2026 21:21:49 +0000 (UTC)
-DMARC-Filter: OpenDMARC Filter v1.4.2 smtp.subspace.kernel.org 0A28E606A33B
+	by smtp.subspace.kernel.org (Postfix) with ESMTPS id 6AD64606A32F
+	for <linux-wireless@vger.kernel.org>; Mon, 16 Nov 2026 21:21:50 +0000 (UTC)
+DMARC-Filter: OpenDMARC Filter v1.4.2 smtp.subspace.kernel.org 6AD64606A32F
 Authentication-Results: smtp.subspace.kernel.org; dmarc=pass (p=none dis=none) header.from=intel.com
 Authentication-Results: smtp.subspace.kernel.org; spf=pass smtp.mailfrom=intel.com
 Authentication-Results: smtp.subspace.kernel.org;
-	dkim=pass (2048-bit key) header.d=intel.com header.i=@intel.com header.a=rsa-sha256 header.s=Intel header.b=foxEd1uR
+	dkim=pass (2048-bit key) header.d=intel.com header.i=@intel.com header.a=rsa-sha256 header.s=Intel header.b=Tb9iMHJb
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple;
   d=intel.com; i=@intel.com; q=dns/txt; s=Intel;
-  t=1794864109; x=1826400109;
+  t=1794864110; x=1826400110;
   h=from:to:cc:subject:date:message-id:in-reply-to:
    references:mime-version:content-transfer-encoding;
-  bh=b+wfgwwa1OCAKPklI47eTFKnIjXfX6TniWnXUMW++Ys=;
-  b=foxEd1uRmB3eESeJYmGx8PjF2k3dv4cFc2jJtcI1nyZdckuRt2w376hc
-   Slp/xlhmegkvqoqO1f9oGaGPy5H3rduvPmAR/Qs3t9QJ2T5/RlK4TduQr
-   2Oi7QT5bwn6jT6j0NBXZoF+iuYCP6CrS8cohxSsWvlmm4Q+vaMvujTHWm
-   wS+B4Jv9ZTKIa81CIWQ1c9xIKwjgh/mJcI2/vtjuJaoLDuL2sshrfENNm
-   2v+FHsZsRVfCAsoKLKWhPoPqJHfgAzt0kZsFLAjvTvpEOFFqpAweTHwb7
-   DhG4zv41QWjrXKfDH3ZQ0qpJoFqmak/b9JGJjV7Z/dGSLB7dDDdnYUPuZ
-   Q==;
-X-CSE-ConnectionGUID: GHciM9p3TOivOOVyxD40UQ==
-X-CSE-MsgGUID: 8WKO6avGStWjCxZoRwHMLA==
-X-IronPort-AV: E=McAfee;i="6800,10657,11968"; a="3604198"
+  bh=MF68axkFR/iO1NWuZYRrdM7na7+PN9alLIqQln75auw=;
+  b=Tb9iMHJbHyhTJ5OU40FBtct8PAex3ncOUFNN3AWW6xrVmw5Q+aZB3aYX
+   Gp/XQokO6P4iqipv9PEkR6WIcgzq6gUcWM2ea0hwf+CVHPvMNowG1HT0Q
+   0me9cke/5V032tFa6cn90pxxEV5ljkZ3tW+yg60wfcB8MBUFtNBvnZVYF
+   /dQDLluhT0yjrz7nCOnq4e8QQ0CiS44WF4yem5sXCfAHxDJ9ny2mn4bCM
+   QzqYnR63MqceCcpfOWBfkpBoW8TvA9552dgqvGWXBB97NLYoVunOiSP72
+   TnUz+RVlcYs98JmBv0YRaV5LbWBeVqPOKlg2Uw9cYOrYQR6DZJ9bMLFD6
+   w==;
+X-CSE-ConnectionGUID: JI/ts8SaSg2lTDDezJMumg==
+X-CSE-MsgGUID: 1k67qwTjQd6Bm76U74oIlA==
+X-IronPort-AV: E=McAfee;i="6800,10657,11968"; a="3604199"
 X-IronPort-AV: E=Sophos;i="6.27,217,1787036400"; 
-   d="scan'208";a="3604198"
+   d="scan'208";a="3604199"
 Received: from fmviesa006.fm.intel.com ([10.60.135.146])
-  by fmvoesa107.fm.intel.com with ESMTP/TLS/ECDHE-RSA-AES256-GCM-SHA384; 16 Nov 2026 13:21:49 -0800
-X-CSE-ConnectionGUID: 9MjwlU3iTmaqoEcj2blh3A==
-X-CSE-MsgGUID: DTwHJjO9TYGDAHST+9Z8XQ==
+  by fmvoesa107.fm.intel.com with ESMTP/TLS/ECDHE-RSA-AES256-GCM-SHA384; 16 Nov 2026 13:21:50 -0800
+X-CSE-ConnectionGUID: mdu87liJQR+372q1aC4X/g==
+X-CSE-MsgGUID: WF1NozfoTku8xB8U7u+AHw==
 X-ExtLoop1: 1
 X-IronPort-AV: E=Sophos;i="6.27,217,1787036400"; 
-   d="scan'208";a="9969124"
+   d="scan'208";a="9969132"
 Received: from weis0040.iil.intel.com ([10.12.217.108])
-  by smtpauth.intel.com with ESMTP/TLS/ECDHE-RSA-AES256-GCM-SHA384; 16 Nov 2026 13:21:48 -0800
+  by smtpauth.intel.com with ESMTP/TLS/ECDHE-RSA-AES256-GCM-SHA384; 16 Nov 2026 13:21:49 -0800
 From: Miri Korenblit <miriam.rachel.korenblit@intel.com>
 To: miriam.rachel.korenblit@intel.com
-Cc: linux-wireless@vger.kernel.org
-Subject: [PATCH iwlwifi-next 06/15] wifi: iwlwifi: rename IWL_MAX_CMD_TBS_PER_TFD
-Date: Mon, 16 Nov 2026 23:23:24 +0200
-Message-Id: <20261116232138.bac27862da2e.Ia703dcfca36eee4699ac4ea70787c104976e2207@changeid>
+Cc: linux-wireless@vger.kernel.org,
+	Pagadala Yesu Anjaneyulu <pagadala.yesu.anjaneyulu@intel.com>
+Subject: [PATCH iwlwifi-next 07/15] wifi: iwlwifi: move UEFI GUID lock status to transport
+Date: Mon, 16 Nov 2026 23:23:25 +0200
+Message-Id: <20261116232138.1bd355d28c26.Ie3c053dcd6655e5a95b611f0423919ef0b5ab91b@changeid>
 X-Mailer: git-send-email 2.34.1
 In-Reply-To: <20261116212333.2404653-1-miriam.rachel.korenblit@intel.com>
 References: <20261116212333.2404653-1-miriam.rachel.korenblit@intel.com>
@@ -82,162 +83,354 @@ MIME-Version: 1.0
 Organization: Intel Israel (74) Limited
 Content-Transfer-Encoding: 8bit
 
-This is not really representing TBs per TFD (which is 20 and not 2),
-this is just the API that the transport provides.
+From: Pagadala Yesu Anjaneyulu <pagadala.yesu.anjaneyulu@intel.com>
 
+Currently, it is initialized by the opmode, but now we will need this
+information before the opmode even starts, when selecting the fseq image.
+Store it in struct trans rather than in struct iwl_fw_runtime.
+
+Resolve the BIOS GUID lock status while allocating the transport layer,
+so it is cached once at probe time and available before an opmode and its
+firmware runtime are created. This removes the need to query it whenever
+an opmode starts.
+
+Update the UEFI, ACPI, and regulatory helpers to operate directly on
+struct iwl_trans. Firmware-runtime users access the cached status
+through their transport pointer. Remove the per-opmode GUID lock status
+queries.
+
+Signed-off-by: Pagadala Yesu Anjaneyulu <pagadala.yesu.anjaneyulu@intel.com>
 Signed-off-by: Miri Korenblit <miriam.rachel.korenblit@intel.com>
 ---
- .../wireless/intel/iwlwifi/iwl-devtrace-iwlwifi.h    |  4 ++--
- drivers/net/wireless/intel/iwlwifi/iwl-trans.h       | 11 +++++------
- drivers/net/wireless/intel/iwlwifi/pcie/tx-gen2.c    | 10 +++++-----
- drivers/net/wireless/intel/iwlwifi/pcie/tx.c         | 12 ++++++------
- 4 files changed, 18 insertions(+), 19 deletions(-)
+ drivers/net/wireless/intel/iwlwifi/fw/acpi.c  | 14 ++++++-------
+ drivers/net/wireless/intel/iwlwifi/fw/acpi.h  |  4 ++--
+ drivers/net/wireless/intel/iwlwifi/fw/init.c  |  2 --
+ .../wireless/intel/iwlwifi/fw/regulatory.c    | 18 +++++++++--------
+ .../wireless/intel/iwlwifi/fw/regulatory.h    |  2 +-
+ .../net/wireless/intel/iwlwifi/fw/runtime.h   |  4 ----
+ drivers/net/wireless/intel/iwlwifi/fw/uefi.c  | 20 +++++++++----------
+ drivers/net/wireless/intel/iwlwifi/fw/uefi.h  |  4 ++--
+ .../net/wireless/intel/iwlwifi/iwl-trans.c    |  2 ++
+ .../net/wireless/intel/iwlwifi/iwl-trans.h    |  4 ++++
+ .../wireless/intel/iwlwifi/mld/regulatory.c   |  2 --
+ drivers/net/wireless/intel/iwlwifi/mvm/fw.c   |  2 --
+ 12 files changed, 38 insertions(+), 40 deletions(-)
 
-diff --git a/drivers/net/wireless/intel/iwlwifi/iwl-devtrace-iwlwifi.h b/drivers/net/wireless/intel/iwlwifi/iwl-devtrace-iwlwifi.h
-index ead72c3d33bd..1743490ad2e6 100644
---- a/drivers/net/wireless/intel/iwlwifi/iwl-devtrace-iwlwifi.h
-+++ b/drivers/net/wireless/intel/iwlwifi/iwl-devtrace-iwlwifi.h
-@@ -4,7 +4,7 @@
-  * Copyright(c) 2009 - 2014 Intel Corporation. All rights reserved.
-  * Copyright(c) 2015 Intel Mobile Communications GmbH
-  * Copyright(c) 2016 - 2017 Intel Deutschland GmbH
-- * Copyright(c) 2018, 2023-2024  Intel Corporation
-+ * Copyright(c) 2018, 2023-2024, 2026  Intel Corporation
-  *****************************************************************************/
+diff --git a/drivers/net/wireless/intel/iwlwifi/fw/acpi.c b/drivers/net/wireless/intel/iwlwifi/fw/acpi.c
+index 7b11316a3062..a1184da82b11 100644
+--- a/drivers/net/wireless/intel/iwlwifi/fw/acpi.c
++++ b/drivers/net/wireless/intel/iwlwifi/fw/acpi.c
+@@ -1266,23 +1266,23 @@ int iwl_acpi_get_phy_filters(struct iwl_fw_runtime *fwrt)
+ }
+ IWL_EXPORT_SYMBOL(iwl_acpi_get_phy_filters);
  
- #if !defined(__IWLWIFI_DEVICE_TRACE_IWLWIFI) || defined(TRACE_HEADER_MULTI_READ)
-@@ -35,7 +35,7 @@ TRACE_EVENT(iwlwifi_dev_hcmd,
- 		__entry->flags = cmd->flags;
- 		memcpy(__get_dynamic_array(hcmd), hdr, offset);
+-void iwl_acpi_get_guid_lock_status(struct iwl_fw_runtime *fwrt)
++void iwl_acpi_get_guid_lock_status(struct iwl_trans *trans)
+ {
+ 	union acpi_object *wifi_pkg, *data;
+ 	int tbl_rev;
  
--		for (i = 0; i < IWL_MAX_CMD_TBS_PER_TFD; i++) {
-+		for (i = 0; i < IWL_MAX_CMD_CHUNKS_PER_HCMD; i++) {
- 			if (!cmd->len[i])
- 				continue;
- 			memcpy((u8 *)__get_dynamic_array(hcmd) + offset,
-diff --git a/drivers/net/wireless/intel/iwlwifi/iwl-trans.h b/drivers/net/wireless/intel/iwlwifi/iwl-trans.h
-index 7a358daab584..a07dd492beb5 100644
---- a/drivers/net/wireless/intel/iwlwifi/iwl-trans.h
-+++ b/drivers/net/wireless/intel/iwlwifi/iwl-trans.h
-@@ -166,10 +166,9 @@ struct iwl_device_tx_cmd {
- 	(TFD_MAX_PAYLOAD_SIZE - sizeof(struct iwl_cmd_header_wide))
+-	data = iwl_acpi_get_object(fwrt->dev, ACPI_GLAI_METHOD);
++	data = iwl_acpi_get_object(trans->dev, ACPI_GLAI_METHOD);
+ 	if (IS_ERR(data))
+ 		return;
  
- /*
-- * number of transfer buffers (fragments) per transmit frame descriptor;
-- * this is just the driver's idea, the hardware supports 20
-+ * number of transfer buffers (fragments) per hcmd;
-  */
--#define IWL_MAX_CMD_TBS_PER_TFD	2
-+#define IWL_MAX_CMD_CHUNKS_PER_HCMD	2
+-	wifi_pkg = iwl_acpi_get_wifi_pkg(fwrt->dev, data,
++	wifi_pkg = iwl_acpi_get_wifi_pkg(trans->dev, data,
+ 					 ACPI_GLAI_WIFI_DATA_SIZE,
+ 					 &tbl_rev);
+ 	if (IS_ERR(wifi_pkg))
+ 		goto out_free;
+ 
+ 	if (tbl_rev != 0) {
+-		IWL_DEBUG_RADIO(fwrt, "Invalid GLAI revision: %d\n", tbl_rev);
++		IWL_DEBUG_RADIO(trans, "Invalid GLAI revision: %d\n", tbl_rev);
+ 		goto out_free;
+ 	}
+ 
+@@ -1291,12 +1291,12 @@ void iwl_acpi_get_guid_lock_status(struct iwl_fw_runtime *fwrt)
+ 	    UEFI_CNV_GUID_TEST_MODE)
+ 		goto out_free;
+ 
+-	fwrt->uefi_tables_lock_status =
++	trans->uefi_tables_lock_status =
+ 		wifi_pkg->package.elements[1].integer.value;
+ 
+-	IWL_DEBUG_RADIO(fwrt,
++	IWL_DEBUG_RADIO(trans,
+ 			"Loaded UEFI WIFI GUID lock status: %d from ACPI\n",
+-			fwrt->uefi_tables_lock_status);
++			trans->uefi_tables_lock_status);
+ out_free:
+ 	kfree(data);
+ }
+diff --git a/drivers/net/wireless/intel/iwlwifi/fw/acpi.h b/drivers/net/wireless/intel/iwlwifi/fw/acpi.h
+index b722beae2f00..c7c474555868 100644
+--- a/drivers/net/wireless/intel/iwlwifi/fw/acpi.h
++++ b/drivers/net/wireless/intel/iwlwifi/fw/acpi.h
+@@ -190,7 +190,7 @@ int iwl_acpi_get_ppag_table(struct iwl_fw_runtime *fwrt);
+ 
+ int iwl_acpi_get_phy_filters(struct iwl_fw_runtime *fwrt);
+ 
+-void iwl_acpi_get_guid_lock_status(struct iwl_fw_runtime *fwrt);
++void iwl_acpi_get_guid_lock_status(struct iwl_trans *trans);
+ 
+ int iwl_acpi_get_dsm(struct iwl_fw_runtime *fwrt,
+ 		     enum iwl_dsm_funcs func, u32 *value);
+@@ -266,7 +266,7 @@ static inline int iwl_acpi_get_phy_filters(struct iwl_fw_runtime *fwrt)
+ 	return -ENOENT;
+ }
+ 
+-static inline void iwl_acpi_get_guid_lock_status(struct iwl_fw_runtime *fwrt)
++static inline void iwl_acpi_get_guid_lock_status(struct iwl_trans *trans)
+ {
+ }
+ 
+diff --git a/drivers/net/wireless/intel/iwlwifi/fw/init.c b/drivers/net/wireless/intel/iwlwifi/fw/init.c
+index f62c6a69f0dc..4eaf3c951d23 100644
+--- a/drivers/net/wireless/intel/iwlwifi/fw/init.c
++++ b/drivers/net/wireless/intel/iwlwifi/fw/init.c
+@@ -33,8 +33,6 @@ void iwl_fw_runtime_init(struct iwl_fw_runtime *fwrt, struct iwl_trans *trans,
+ 	fwrt->sanitize_ops = sanitize_ops;
+ 	fwrt->sanitize_ctx = sanitize_ctx;
+ 	fwrt->ops_ctx = ops_ctx;
+-	/* default until the connectivity GUID lock status is resolved */
+-	fwrt->uefi_tables_lock_status = UEFI_CNV_GUID_UNKNOWN;
+ 	for (i = 0; i < IWL_FW_RUNTIME_DUMP_WK_NUM; i++) {
+ 		fwrt->dump.wks[i].idx = i;
+ 		INIT_DELAYED_WORK(&fwrt->dump.wks[i].wk, iwl_fw_error_dump_wk);
+diff --git a/drivers/net/wireless/intel/iwlwifi/fw/regulatory.c b/drivers/net/wireless/intel/iwlwifi/fw/regulatory.c
+index b6707312c188..01f24db2216b 100644
+--- a/drivers/net/wireless/intel/iwlwifi/fw/regulatory.c
++++ b/drivers/net/wireless/intel/iwlwifi/fw/regulatory.c
+@@ -477,7 +477,7 @@ IWL_EXPORT_SYMBOL(iwl_rfi_is_enabled_in_bios);
  
  /**
-  * enum iwl_hcmd_dataflag - flag for each one of the chunks of the command
-@@ -215,15 +214,15 @@ enum iwl_error_event_table_status {
-  *	version and group as well
+  * iwl_bios_get_guid_lock_status - resolve connectivity variables lock status
+- * @fwrt: the firmware runtime context
++ * @trans: the transport context
+  *
+  * Determine the root-of-trust for the connectivity UEFI variables. The UEFI
+  * GUID Lock Indicator (GLUI) is preferred: if it attests the tables as locked
+@@ -485,16 +485,18 @@ IWL_EXPORT_SYMBOL(iwl_rfi_is_enabled_in_bios);
+  * reports unlocked) the ACPI GUID Lock Indicator is consulted and can override
+  * the GLUI result.
+  *
+- * This only caches the result in &fwrt->uefi_tables_lock_status
++ * This only caches the result in &trans->uefi_tables_lock_status
+  * (see &enum iwl_uefi_cnv_guid_status).
   */
- struct iwl_host_cmd {
--	const void *data[IWL_MAX_CMD_TBS_PER_TFD];
-+	const void *data[IWL_MAX_CMD_CHUNKS_PER_HCMD];
- 	struct iwl_rx_packet *resp_pkt;
- 	unsigned long _rx_page_addr;
- 	u32 _rx_page_order;
+-void iwl_bios_get_guid_lock_status(struct iwl_fw_runtime *fwrt)
++void iwl_bios_get_guid_lock_status(struct iwl_trans *trans)
+ {
+-	iwl_uefi_get_guid_lock_status(fwrt);
+-	if (fwrt->uefi_tables_lock_status == UEFI_CNV_GUID_LOCKED ||
+-	    fwrt->uefi_tables_lock_status == UEFI_CNV_GUID_TEST_MODE)
++	/* default until the GUID lock status is resolved */
++	trans->uefi_tables_lock_status = UEFI_CNV_GUID_UNKNOWN;
++
++	iwl_uefi_get_guid_lock_status(trans);
++	if (trans->uefi_tables_lock_status == UEFI_CNV_GUID_LOCKED ||
++	    trans->uefi_tables_lock_status == UEFI_CNV_GUID_TEST_MODE)
+ 		return;
  
- 	u32 flags;
- 	u32 id;
--	u16 len[IWL_MAX_CMD_TBS_PER_TFD];
--	u8 dataflags[IWL_MAX_CMD_TBS_PER_TFD];
-+	u16 len[IWL_MAX_CMD_CHUNKS_PER_HCMD];
-+	u8 dataflags[IWL_MAX_CMD_CHUNKS_PER_HCMD];
- };
+-	iwl_acpi_get_guid_lock_status(fwrt);
++	iwl_acpi_get_guid_lock_status(trans);
+ }
+-IWL_EXPORT_SYMBOL(iwl_bios_get_guid_lock_status);
+diff --git a/drivers/net/wireless/intel/iwlwifi/fw/regulatory.h b/drivers/net/wireless/intel/iwlwifi/fw/regulatory.h
+index e32e107812b1..98fcb66f459e 100644
+--- a/drivers/net/wireless/intel/iwlwifi/fw/regulatory.h
++++ b/drivers/net/wireless/intel/iwlwifi/fw/regulatory.h
+@@ -265,7 +265,7 @@ bool iwl_puncturing_is_allowed_in_bios(u32 puncturing, u16 mcc);
  
- static inline void iwl_free_resp(struct iwl_host_cmd *cmd)
-diff --git a/drivers/net/wireless/intel/iwlwifi/pcie/tx-gen2.c b/drivers/net/wireless/intel/iwlwifi/pcie/tx-gen2.c
-index b235a4539d7c..3dcb62a67e2f 100644
---- a/drivers/net/wireless/intel/iwlwifi/pcie/tx-gen2.c
-+++ b/drivers/net/wireless/intel/iwlwifi/pcie/tx-gen2.c
-@@ -1210,8 +1210,8 @@ int iwl_pcie_gen2_enqueue_hcmd(struct iwl_trans *trans,
- 	u16 copy_size, cmd_size, tb0_size;
- 	bool had_nocopy = false;
- 	u8 group_id = iwl_cmd_groupid(cmd->id);
--	const u8 *cmddata[IWL_MAX_CMD_TBS_PER_TFD];
--	u16 cmdlen[IWL_MAX_CMD_TBS_PER_TFD];
-+	const u8 *cmddata[IWL_MAX_CMD_CHUNKS_PER_HCMD];
-+	u16 cmdlen[IWL_MAX_CMD_CHUNKS_PER_HCMD];
- 	struct iwl_tfh_tfd *tfd;
- 	unsigned long flags;
+ int iwl_bios_get_dsbr(struct iwl_fw_runtime *fwrt, u32 *value);
+ int iwl_bios_get_phy_filters(struct iwl_fw_runtime *fwrt);
+-void iwl_bios_get_guid_lock_status(struct iwl_fw_runtime *fwrt);
++void iwl_bios_get_guid_lock_status(struct iwl_trans *trans);
  
-@@ -1221,7 +1221,7 @@ int iwl_pcie_gen2_enqueue_hcmd(struct iwl_trans *trans,
- 	copy_size = sizeof(struct iwl_cmd_header_wide);
- 	cmd_size = sizeof(struct iwl_cmd_header_wide);
+ static inline void iwl_bios_setup_step(struct iwl_trans *trans,
+ 				       struct iwl_fw_runtime *fwrt)
+diff --git a/drivers/net/wireless/intel/iwlwifi/fw/runtime.h b/drivers/net/wireless/intel/iwlwifi/fw/runtime.h
+index 33ce06f1a60a..6a9e783e38ba 100644
+--- a/drivers/net/wireless/intel/iwlwifi/fw/runtime.h
++++ b/drivers/net/wireless/intel/iwlwifi/fw/runtime.h
+@@ -108,9 +108,6 @@ struct iwl_txf_iter_data {
+  * @dump: debug dump data
+  * @ap_type_cmd: AP type tables (for enablement on 6 GHz)
+  * @ap_type_cmd_valid: if &ap_type_cmd is valid
+- * @uefi_tables_lock_status: the status of the WIFI GUID UEFI variables lock,
+- *	see &enum iwl_uefi_cnv_guid_status.
+- *	Trust the UEFI variables if locked or in test mode.
+  * @sar_profiles: sar profiles as read from WRDS/EWRD BIOS tables
+  * @sar_standalone_profiles: standalone sar profiles as read from
+  *	WSSS/EWSS BIOS tables (for Wi-Fi HB/UHB without concurrent BT)
+@@ -229,7 +226,6 @@ struct iwl_fw_runtime {
+ 	bool sgom_enabled;
+ 	struct iwl_mcc_allowed_ap_type_cmd ap_type_cmd;
+ 	bool ap_type_cmd_valid;
+-	u8 uefi_tables_lock_status;
+ 	struct iwl_phy_specific_cfg phy_filters;
+ 	enum bios_source dsm_source;
+ 	u8 dsm_revision;
+diff --git a/drivers/net/wireless/intel/iwlwifi/fw/uefi.c b/drivers/net/wireless/intel/iwlwifi/fw/uefi.c
+index a654ab29ee42..6f08e3b19efc 100644
+--- a/drivers/net/wireless/intel/iwlwifi/fw/uefi.c
++++ b/drivers/net/wireless/intel/iwlwifi/fw/uefi.c
+@@ -146,13 +146,13 @@ iwl_uefi_get_verified_variable_guid(struct iwl_fw_runtime *fwrt,
+ 	u32 attributes = 0;
+ 	void *var;
  
--	for (i = 0; i < IWL_MAX_CMD_TBS_PER_TFD; i++) {
-+	for (i = 0; i < IWL_MAX_CMD_CHUNKS_PER_HCMD; i++) {
- 		cmddata[i] = cmd->data[i];
- 		cmdlen[i] = cmd->len[i];
+-	if (fwrt->uefi_tables_lock_status == UEFI_CNV_GUID_UNLOCKED)
++	if (fwrt->trans->uefi_tables_lock_status == UEFI_CNV_GUID_UNLOCKED)
+ 		return ERR_PTR(-EINVAL);
  
-@@ -1325,7 +1325,7 @@ int iwl_pcie_gen2_enqueue_hcmd(struct iwl_trans *trans,
- 	copy_size = sizeof(struct iwl_cmd_header_wide);
+ 	/* In x86 either GLUI or GLAI should exist */
+ 	if ((IS_ENABLED(CONFIG_X86) || IS_ENABLED(CONFIG_X86_64) ||
+ 	     IS_ENABLED(CONFIG_X86_32)) &&
+-	    fwrt->uefi_tables_lock_status == UEFI_CNV_GUID_UNKNOWN)
++	    fwrt->trans->uefi_tables_lock_status == UEFI_CNV_GUID_UNKNOWN)
+ 		return ERR_PTR(-EINVAL);
  
- 	/* and copy the data that needs to be copied */
--	for (i = 0; i < IWL_MAX_CMD_TBS_PER_TFD; i++) {
-+	for (i = 0; i < IWL_MAX_CMD_CHUNKS_PER_HCMD; i++) {
- 		int copy;
+ 	var = iwl_uefi_get_variable_guid(fwrt->trans,
+@@ -163,7 +163,7 @@ iwl_uefi_get_verified_variable_guid(struct iwl_fw_runtime *fwrt,
+ 	if (IS_ERR(var))
+ 		return var;
  
- 		if (!cmd->len[i])
-@@ -1390,7 +1390,7 @@ int iwl_pcie_gen2_enqueue_hcmd(struct iwl_trans *trans,
+-	if (fwrt->uefi_tables_lock_status != UEFI_CNV_GUID_UNKNOWN)
++	if (fwrt->trans->uefi_tables_lock_status != UEFI_CNV_GUID_UNKNOWN)
+ 		goto out;
+ 
+ 	/*
+@@ -1292,10 +1292,10 @@ int iwl_uefi_get_phy_filters(struct iwl_fw_runtime *fwrt)
+ 	return 0;
+ }
+ 
+-void iwl_uefi_get_guid_lock_status(struct iwl_fw_runtime *fwrt)
++void iwl_uefi_get_guid_lock_status(struct iwl_trans *trans)
+ {
+ 	struct uefi_cnv_var_glui *data __free(kfree) =
+-		iwl_uefi_get_variable_guid(fwrt->trans,
++		iwl_uefi_get_variable_guid(trans,
+ 					   &IWL_EFI_GLUI_GUID,
+ 					   IWL_UEFI_GLUI_NAME, "GLUI",
+ 					   sizeof(*data), NULL, NULL);
+@@ -1304,20 +1304,20 @@ void iwl_uefi_get_guid_lock_status(struct iwl_fw_runtime *fwrt)
+ 		return;
+ 
+ 	if (data->revision != IWL_UEFI_GLUI_REVISION) {
+-		IWL_DEBUG_RADIO(fwrt, "Unsupported UEFI GLUI revision:%d\n",
++		IWL_DEBUG_RADIO(trans, "Unsupported UEFI GLUI revision:%d\n",
+ 				data->revision);
+ 		return;
  	}
  
- 	/* map the remaining (adjusted) nocopy/dup fragments */
--	for (i = 0; i < IWL_MAX_CMD_TBS_PER_TFD; i++) {
-+	for (i = 0; i < IWL_MAX_CMD_CHUNKS_PER_HCMD; i++) {
- 		void *data = (void *)(uintptr_t)cmddata[i];
- 
- 		if (!cmdlen[i])
-diff --git a/drivers/net/wireless/intel/iwlwifi/pcie/tx.c b/drivers/net/wireless/intel/iwlwifi/pcie/tx.c
-index 0c29fb6b9ca7..ad9b80ed7214 100644
---- a/drivers/net/wireless/intel/iwlwifi/pcie/tx.c
-+++ b/drivers/net/wireless/intel/iwlwifi/pcie/tx.c
-@@ -1370,8 +1370,8 @@ int iwl_pcie_enqueue_hcmd(struct iwl_trans *trans,
- 	u8 group_id = iwl_cmd_groupid(cmd->id);
- 	int i, ret;
- 	u32 cmd_pos;
--	const u8 *cmddata[IWL_MAX_CMD_TBS_PER_TFD];
--	u16 cmdlen[IWL_MAX_CMD_TBS_PER_TFD];
-+	const u8 *cmddata[IWL_MAX_CMD_CHUNKS_PER_HCMD];
-+	u16 cmdlen[IWL_MAX_CMD_CHUNKS_PER_HCMD];
- 	unsigned long flags;
- 
- 	if (WARN(!trans->conf.wide_cmd_header &&
-@@ -1388,9 +1388,9 @@ int iwl_pcie_enqueue_hcmd(struct iwl_trans *trans,
+ 	/* UEFI_CNV_GUID_TEST_MODE is the max value the BIOS can report */
+ 	if (data->guid_lock_status > UEFI_CNV_GUID_TEST_MODE) {
+-		IWL_DEBUG_RADIO(fwrt, "Invalid UEFI GUID lock status:%d\n",
++		IWL_DEBUG_RADIO(trans, "Invalid UEFI GUID lock status:%d\n",
+ 				data->guid_lock_status);
+ 		return;
  	}
  
- 	/* need one for the header if the first is NOCOPY */
--	BUILD_BUG_ON(IWL_MAX_CMD_TBS_PER_TFD > IWL_NUM_OF_TBS - 1);
-+	BUILD_BUG_ON(IWL_MAX_CMD_CHUNKS_PER_HCMD > IWL_NUM_OF_TBS - 1);
+-	fwrt->uefi_tables_lock_status = data->guid_lock_status;
++	trans->uefi_tables_lock_status = data->guid_lock_status;
  
--	for (i = 0; i < IWL_MAX_CMD_TBS_PER_TFD; i++) {
-+	for (i = 0; i < IWL_MAX_CMD_CHUNKS_PER_HCMD; i++) {
- 		cmddata[i] = cmd->data[i];
- 		cmdlen[i] = cmd->len[i];
+-	IWL_DEBUG_RADIO(fwrt, "Loaded UEFI WIFI GUID lock status: %d\n",
+-			fwrt->uefi_tables_lock_status);
++	IWL_DEBUG_RADIO(trans, "Loaded UEFI WIFI GUID lock status: %d\n",
++			trans->uefi_tables_lock_status);
+ }
+diff --git a/drivers/net/wireless/intel/iwlwifi/fw/uefi.h b/drivers/net/wireless/intel/iwlwifi/fw/uefi.h
+index f4f7a447e528..df5782862fef 100644
+--- a/drivers/net/wireless/intel/iwlwifi/fw/uefi.h
++++ b/drivers/net/wireless/intel/iwlwifi/fw/uefi.h
+@@ -360,7 +360,7 @@ void iwl_uefi_get_uneb_table(struct iwl_trans *trans,
+ int iwl_uefi_get_puncturing(struct iwl_fw_runtime *fwrt);
+ int iwl_uefi_get_dsbr(struct iwl_fw_runtime *fwrt, u32 *value);
+ int iwl_uefi_get_phy_filters(struct iwl_fw_runtime *fwrt);
+-void iwl_uefi_get_guid_lock_status(struct iwl_fw_runtime *fwrt);
++void iwl_uefi_get_guid_lock_status(struct iwl_trans *trans);
+ #else /* CONFIG_EFI */
+ static inline void *iwl_uefi_get_pnvm(struct iwl_trans *trans, size_t *len)
+ {
+@@ -489,7 +489,7 @@ static inline int iwl_uefi_get_phy_filters(struct iwl_fw_runtime *fwrt)
+ 	return -ENOENT;
+ }
  
-@@ -1505,7 +1505,7 @@ int iwl_pcie_enqueue_hcmd(struct iwl_trans *trans,
- 	}
+-static inline void iwl_uefi_get_guid_lock_status(struct iwl_fw_runtime *fwrt)
++static inline void iwl_uefi_get_guid_lock_status(struct iwl_trans *trans)
+ {
+ }
+ #endif /* CONFIG_EFI */
+diff --git a/drivers/net/wireless/intel/iwlwifi/iwl-trans.c b/drivers/net/wireless/intel/iwlwifi/iwl-trans.c
+index 6ddf4945ed1c..e75d3a6cf5a6 100644
+--- a/drivers/net/wireless/intel/iwlwifi/iwl-trans.c
++++ b/drivers/net/wireless/intel/iwlwifi/iwl-trans.c
+@@ -14,6 +14,7 @@
+ #include "iwl-prph.h"
+ #include <linux/dmapool.h>
+ #include "fw/api/commands.h"
++#include "fw/regulatory.h"
  
- 	/* and copy the data that needs to be copied */
--	for (i = 0; i < IWL_MAX_CMD_TBS_PER_TFD; i++) {
-+	for (i = 0; i < IWL_MAX_CMD_CHUNKS_PER_HCMD; i++) {
- 		int copy;
+ struct iwl_trans_dev_restart_data {
+ 	struct list_head list;
+@@ -287,6 +288,7 @@ struct iwl_trans *iwl_trans_alloc(unsigned int priv_size,
+ #endif
  
- 		if (!cmd->len[i])
-@@ -1574,7 +1574,7 @@ int iwl_pcie_enqueue_hcmd(struct iwl_trans *trans,
- 	}
+ 	trans->dev = dev;
++	iwl_bios_get_guid_lock_status(trans);
  
- 	/* map the remaining (adjusted) nocopy/dup fragments */
--	for (i = 0; i < IWL_MAX_CMD_TBS_PER_TFD; i++) {
-+	for (i = 0; i < IWL_MAX_CMD_CHUNKS_PER_HCMD; i++) {
- 		void *data = (void *)(uintptr_t)cmddata[i];
+ 	INIT_DELAYED_WORK(&trans->restart.wk, iwl_trans_restart_wk);
  
- 		if (!cmdlen[i])
+diff --git a/drivers/net/wireless/intel/iwlwifi/iwl-trans.h b/drivers/net/wireless/intel/iwlwifi/iwl-trans.h
+index a07dd492beb5..c65d9f012d15 100644
+--- a/drivers/net/wireless/intel/iwlwifi/iwl-trans.h
++++ b/drivers/net/wireless/intel/iwlwifi/iwl-trans.h
+@@ -770,6 +770,9 @@ struct iwl_trans_ops;
+  *	worker that should be scheduled (with appropriate reason)
+  * @do_top_reset: indication to the (PCIe) transport/context-info
+  *	to do the TOP reset
++ * @uefi_tables_lock_status: the status of the WIFI GUID UEFI variables lock,
++ *	see &enum iwl_uefi_cnv_guid_status.
++ *	Trust the UEFI variables if locked or in test mode.
+  */
+ struct iwl_trans {
+ 	bool csme_own;
+@@ -811,6 +814,7 @@ struct iwl_trans {
+ 
+ 	u8 request_top_reset:1,
+ 	   do_top_reset:1;
++	u8 uefi_tables_lock_status;
+ 
+ 	/* pointer to trans specific struct */
+ 	/*Ensure that this pointer will always be aligned to sizeof pointer */
+diff --git a/drivers/net/wireless/intel/iwlwifi/mld/regulatory.c b/drivers/net/wireless/intel/iwlwifi/mld/regulatory.c
+index 8a20d7622329..e9d7a23fda3c 100644
+--- a/drivers/net/wireless/intel/iwlwifi/mld/regulatory.c
++++ b/drivers/net/wireless/intel/iwlwifi/mld/regulatory.c
+@@ -36,8 +36,6 @@ void iwl_mld_get_bios_tables(struct iwl_mld *mld)
+ {
+ 	int ret;
+ 
+-	iwl_bios_get_guid_lock_status(&mld->fwrt);
+-
+ 	ret = iwl_bios_get_ppag_table(&mld->fwrt);
+ 	if (ret < 0) {
+ 		IWL_DEBUG_RADIO(mld,
+diff --git a/drivers/net/wireless/intel/iwlwifi/mvm/fw.c b/drivers/net/wireless/intel/iwlwifi/mvm/fw.c
+index ae109e3ea141..bad54d17d27d 100644
+--- a/drivers/net/wireless/intel/iwlwifi/mvm/fw.c
++++ b/drivers/net/wireless/intel/iwlwifi/mvm/fw.c
+@@ -1576,8 +1576,6 @@ void iwl_mvm_get_bios_tables(struct iwl_mvm *mvm)
+ {
+ 	int ret;
+ 
+-	iwl_bios_get_guid_lock_status(&mvm->fwrt);
+-
+ 	/* read PPAG table */
+ 	ret = iwl_bios_get_ppag_table(&mvm->fwrt);
+ 	if (ret < 0) {
 -- 
 2.34.1
 
