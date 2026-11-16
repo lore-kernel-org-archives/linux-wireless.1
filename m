@@ -1,46 +1,70 @@
-Authentication-Results: smtp.subspace.kernel.org; arc=none smtp.remote-ip=45.145.95.4
+Authentication-Results: smtp.subspace.kernel.org; arc=none smtp.remote-ip=124.126.103.232
 ARC-Seal: i=1; d=subspace.kernel.org; s=arc20261015; a=rsa-sha256; cv=none;
-	t=1794831259;
-	b=WJQJG8C1VlSzqEUT65luTFGzS7QsKIWiuyOejU109iMzdKa0l+MPbo9ajR+va04GCTHZ
-	 ek3VnI+a5ASSqCZMND7YhVucH+Tv2QJI1Gvku8Qsai1YMxJXzqWxmbQDXnU2ATIRuJPdp
-	 pkmAqW6z6cbztbHBo3a2XifOnhrMhr02ola1ZlLF2K3VTKuZTsb95FGDxlgXHgCEcW5gr
-	 NioDeylKzbRQt0EiK+WEm1dnDugy5xpaeLQXuiEAhHqzY1cdARd4UpD7s+1WZZx/qgL9i
-	 T2I9FdCJmRxevz1a0XiZ7rE9p6yvV1B+Ud3ChcwRDYNv1cch3Q/wTRChxAhP6piNsYw==
+	t=1794831529;
+	b=XAo5rW1U881fEYD4LkyRpqql+4om84i+BJOQ5DbBEPqtVWXM7Lu/uftGrhgDvaSuh3NY
+	 e1frRbhpmn9qtYrBe+EiNfaOmQ/i5SNry43MBWGP+paPd2VeIJ/cI3+mXbzcHtsYubNSa
+	 cVDP30vIOMPvj/RE52FfC0q8KD9z/LTv7Ag3zk8zZQ/fWE4weadCAKh2NB1FJp8rG85O2
+	 73Kb46Syox/ls0w6Qi1uj/K4OoEw97RmfuQS73H8DAnkZZaWewsAc+TGUu6IraawoqCbO
+	 T+80hph5ltGJY53TOyQE6fvOaMYrYC0zZoA49arhJoETdg1+KyXozGuAOC807kaFDhw==
 ARC-Message-Signature: i=1; d=subspace.kernel.org; s=arc20261015;
-	a=rsa-sha256; c=relaxed/relaxed; t=1794831259;
-	h=DMARC-Filter:From:To:Cc:Subject:In-Reply-To:References:Date:
-	 X-Clacks-Overhead:Message-ID:MIME-Version:Content-Type:
-	 Content-Transfer-Encoding;
-	bh=alkB35vMDP6Ea/sE08F2tIeX6BsjbwLRq1pKzh4GKt8=;
-	b=oM72KB0ZJxl/+BGc8zGgh6Kmyymad6SUAJDOoJoEr/dxywQNm31ssSkT2FiH+QDkNBu/
-	 TVJcla5RwFrLRhTvm6h5rBVeJmSfjtTrxGL+wtlTeJ7WrP4E8Ib1GQWOZuRXWsOWFe9V7
-	 jOnp6xn6trl/+h1GKmwjOLE/cM1ljNNCCOwD5KUl55f26UTsJXxlukoVjHtzu7goh3S1s
-	 c4ZxJgtcYoPHj8NSJtxyUDk9/FjGXlogv+VhySSRGulgZnv0mAZvouWuiZB0Mtvm0f5+D
-	 WrBiafvS1+djde57gWQGKWdPOUC7FKIz7w19h9f10Wz1ovZDN0maEitf2pG/yy0Z49w==
+	a=rsa-sha256; c=relaxed/relaxed; t=1794831529;
+	h=DMARC-Filter:X-UUID:X-CID-P-RULE:X-CID-O-INFO:X-CID-INFO:X-CID-META:
+	 X-CID-BVR:X-CID-BAS:X-CID-FACTOR:X-CID-RHF:X-UUID:X-User:Received:
+	 From:To:Cc:Subject:Date:Message-Id:X-Mailer:In-Reply-To:References:
+	 MIME-Version:Content-Transfer-Encoding;
+	bh=80b3anvnd7MVUWhpZmOk291V+lkwDF/NktOlvSXVTBY=;
+	b=N0RSBv56BtHq32pxpOob47R31pwBvSjhk5Z0vJbWZcParb+jl4K8tF8BHu6K2tsN/W4t
+	 jZmlkN3jFibMCfw6zd/5RiTtG384sClmHMRIjl6estGtb4z1ZOAwOgvjREkxfNgJFdJzo
+	 yTGorKMXH53z2ZGOveI2kQgZCGKWh/yd2aVH78XOi0555LB2RddGeijH7t3lc/gLWiWUm
+	 ubcDy/DTJOqVbRGUBivXwkWbjT3qU/hhrjXLuq/6SObnzmu3In4AvIa01dOFNZeR7zDiQ
+	 1o6iZojpYut/NUYVofglXoscBmnrWdagG9TKfRlhR+sFmAzy9wopU+3Mf0QnjWQ3Hhw==
 ARC-Authentication-Results: i=1; smtp.subspace.kernel.org; 
-	dmarc=pass header.from=toke.dk;
-	spf=pass smtp.mailfrom=toke.dk;
-	arc=none smtp.remote-ip=45.145.95.4
-Received: from mail.toke.dk (mail.toke.dk [45.145.95.4])
+	dmarc=none header.from=kylinos.cn;
+	spf=pass smtp.mailfrom=kylinos.cn;
+	arc=none smtp.remote-ip=124.126.103.232
+Received: from mailgw.kylinos.cn (mailgw.kylinos.cn [124.126.103.232])
 	(using TLSv1.3 with cipher TLS_AES_256_GCM_SHA384 (256/256 bits)
 	 key-exchange X25519 server-signature ECDSA (prime256v1) server-digest SHA256)
 	(No client certificate requested)
-	by smtp.subspace.kernel.org (Postfix) with ESMTPS id 2A4FA606A31C;
-	Mon, 16 Nov 2026 12:14:17 +0000 (UTC)
-DMARC-Filter: OpenDMARC Filter v1.4.2 smtp.subspace.kernel.org 2A4FA606A31C
-Authentication-Results: smtp.subspace.kernel.org; dmarc=pass (p=none dis=none) header.from=toke.dk
-Authentication-Results: smtp.subspace.kernel.org; spf=pass smtp.mailfrom=toke.dk
-Authentication-Results: mail.toke.dk; dkim=none
-From: Toke =?utf-8?Q?H=C3=B8iland-J=C3=B8rgensen?= <toke@toke.dk>
-To: =?utf-8?Q?=E9=93=AE?= <fengaojigui88@gmail.com>
-Cc: linux-wireless@vger.kernel.org, linux-usb@vger.kernel.org
-Subject: Re: [BUG] ath9k_htc: KASAN slab-use-after-free in WMI event tasklet
- (v7.4-rc2)
-In-Reply-To: <CAO-4RZ1Xu6vdLg6y74YfyT=On+Lom9L+XprpvORdXXOdOsAALA@mail.gmail.com>
-References: <CAO-4RZ1Xu6vdLg6y74YfyT=On+Lom9L+XprpvORdXXOdOsAALA@mail.gmail.com>
-Date: Mon, 16 Nov 2026 13:14:08 +0100
-X-Clacks-Overhead: GNU Terry Pratchett
-Message-ID: <87zev9t1m7.fsf@toke.dk>
+	by smtp.subspace.kernel.org (Postfix) with ESMTPS id F27C0606A31C;
+	Mon, 16 Nov 2026 12:18:46 +0000 (UTC)
+DMARC-Filter: OpenDMARC Filter v1.4.2 smtp.subspace.kernel.org F27C0606A31C
+Authentication-Results: smtp.subspace.kernel.org; dmarc=none (p=none dis=none) header.from=kylinos.cn
+Authentication-Results: smtp.subspace.kernel.org; spf=pass smtp.mailfrom=kylinos.cn
+X-UUID: da7a41bee1b711f19a56ed5b684f684d-20261116
+X-CID-P-RULE: Release_Ham
+X-CID-O-INFO: VERSION:1.3.19,REQID:f789347c-5fdd-4a3d-bda6-c8de70592941,IP:15,
+	URL:25,TC:0,Content:0,EDM:0,RT:0,SF:0,FILE:0,BULK:0,RULE:Release_Ham,ACTIO
+	N:release,TS:40
+X-CID-INFO: VERSION:1.3.19,REQID:f789347c-5fdd-4a3d-bda6-c8de70592941,IP:15,UR
+	L:25,TC:0,Content:0,EDM:0,RT:0,SF:0,FILE:0,BULK:0,RULE:Release_Ham,ACTION:
+	release,TS:40
+X-CID-META: VersionHash:7db8b62,CLOUDID:2c450e8ed8f441285c2749269fb0360e,BulkI
+	D:2611162015321ZIESIX6,BulkQuantity:1,SF:17|19|66|78|81|82|101|102|127|153
+	|850|865|898,TC:nil,Content:0|15|50|99,EDM:-3,IP:-2,URL:11|99|82|1,File:ni
+	l,RT:nil,Bulk:40,QS:nil,BEC:nil,COL:0,OSI:0,OSA:0,AV:0,LES:1,SPR:NO,DKR:0,
+	DKP:0,BRR:0,BRE:0,ARC:0
+X-CID-BVR: 2,SSN|SDN
+X-CID-BAS: 2,SSN|SDN,0,_
+X-CID-FACTOR: TF_CID_SPAM_SNR,TF_CID_SPAM_FAS,TF_CID_SPAM_FSD,TF_CID_SPAM_ULN
+X-CID-RHF: D41D8CD98F00B204E9800998ECF8427E
+X-UUID: da7a41bee1b711f19a56ed5b684f684d-20261116
+X-User: kuangkai@kylinos.cn
+Received: from localhost.localdomain [(116.128.244.171)] by mailgw.kylinos.cn
+	(envelope-from <kuangkai@kylinos.cn>)
+	(Generic MTA)
+	with ESMTP id 1920287571; Mon, 16 Nov 2026 20:18:38 +0800
+From: Kai Kuang <kuangkai@kylinos.cn>
+To: linux-wireless@vger.kernel.org
+Cc: libertas-dev@lists.infradead.org,
+	linux-kernel@vger.kernel.org,
+	Johannes Berg <johannes@sipsolutions.net>
+Subject: [PATCH v2] wifi: libertas: reject short monitor TX frames
+Date: Mon, 16 Nov 2026 20:18:05 +0800
+Message-Id: <20261116121805.326767-1-kuangkai@kylinos.cn>
+X-Mailer: git-send-email 2.25.1
+In-Reply-To: <866f6a81c1dfe95b3969361d5ac54f615f060eed.camel@sipsolutions.net>
+References: <866f6a81c1dfe95b3969361d5ac54f615f060eed.camel@sipsolutions.net>
 X-Mailing-List: linux-wireless@vger.kernel.org
 List-Id: <linux-wireless.vger.kernel.org>
 List-Post: <mailto:linux-wireless@vger.kernel.org>
@@ -50,31 +74,54 @@ List-Unsubscribe: <mailto:linux-wireless+unsubscribe@vger.kernel.org>
 List-Owner: <mailto:linux-wireless+owner@vger.kernel.org>
 Precedence: list
 MIME-Version: 1.0
-Content-Type: text/plain; charset=utf-8
-Content-Transfer-Encoding: quoted-printable
+Content-Transfer-Encoding: 8bit
 
-=E9=93=AE <fengaojigui88@gmail.com> writes:
+In monitor mode, lbs_hard_start_xmit() casts skb->data to a radiotap TX
+header, skips that header and then copies the 802.11 destination address
+from offset 4 in the remaining frame.  The generic length check only
+rejects zero-length and oversized skbs, so a short monitor frame is read
+past the end of the skb data.  If the frame is shorter than the radiotap
+header, the subtraction that computes pkt_len also underflows, turning
+the following memcpy() into a large out-of-bounds read of the skb and a
+write past the end of tx_pending_buf.
 
-> Hi Toke,
->
-> We found a KASAN slab-use-after-free in the ath9k_htc WMI event tasklet
-> on v7.4-rc2 with syzkaller:
->
->   BUG: KASAN: slab-use-after-free in tasklet_action_common+0x2ec/0x3b0
-> kernel/softirq.c:988
->
->   Allocated by task 1259:
->    ath9k_init_wmi+0x49/0x320 drivers/net/wireless/ath/ath9k/wmi.c:95
->    ath9k_htc_probe_device+0x203/0x2650
-> drivers/net/wireless/ath/ath9k/htc_drv_init.c:956
->   Freed by task 1259:
->    ath9k_htc_probe_device+0x292/0x2650
-> drivers/net/wireless/ath/ath9k/htc_drv_init.c:978
+Require enough bytes for the radiotap TX header and the destination
+address field before using the monitor-mode header layout.  The check
+runs while driver_lock is held and before the TX queues are stopped, so
+the drop path reuses the existing "goto free" cleanup; placing it after
+the lock is dropped would unlock driver_lock twice and leave
+tx_pending_len set to -1 with the queues stopped.
 
-I believe we already have a pending patch for this in patchwork:
-https://patchwork.kernel.org/project/linux-wireless/patch/20261021120237.48=
-1898-1-toke@toke.dk/
+This addresses the same out-of-bounds read that the earlier submission
+linked below was meant to fix, but was reverted because it performed the
+check after driver_lock had already been released.
 
-Could you please test if this resolves the issue you're seeing?
+Link: https://patch.msgid.link/20260704011140.37639-1-pengpeng@iscas.ac.cn
+Signed-off-by: Kai Kuang <kuangkai@kylinos.cn>
+---
+Dropped the comments.
 
--Toke
+ drivers/net/wireless/marvell/libertas/tx.c | 7 +++++++
+ 1 file changed, 7 insertions(+)
+
+diff --git a/drivers/net/wireless/marvell/libertas/tx.c b/drivers/net/wireless/marvell/libertas/tx.c
+index 27304a98787d..23d68df1f61c 100644
+--- a/drivers/net/wireless/marvell/libertas/tx.c
++++ b/drivers/net/wireless/marvell/libertas/tx.c
+@@ -88,6 +88,13 @@ netdev_tx_t lbs_hard_start_xmit(struct sk_buff *skb, struct net_device *dev)
+ 		goto free;
+ 	}
+ 
++	if (priv->wdev->iftype == NL80211_IFTYPE_MONITOR &&
++	    skb->len < sizeof(struct tx_radiotap_hdr) + 4 + ETH_ALEN) {
++		lbs_deb_tx("tx err: short monitor frame %d\n", skb->len);
++		dev->stats.tx_dropped++;
++		dev->stats.tx_errors++;
++		goto free;
++	}
+ 
+ 	netif_stop_queue(priv->dev);
+ 	if (priv->mesh_dev)
+-- 
+2.25.1
+
