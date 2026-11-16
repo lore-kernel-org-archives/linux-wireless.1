@@ -1,51 +1,63 @@
-Authentication-Results: smtp.subspace.kernel.org; arc=none smtp.remote-ip=185.84.6.188
+Authentication-Results: smtp.subspace.kernel.org; arc=none smtp.remote-ip=95.215.58.126
 ARC-Seal: i=1; d=subspace.kernel.org; s=arc20261015; a=rsa-sha256; cv=none;
-	t=1794807629;
-	b=33B5ipp4hm94KvQlPcRy1VMZSpF4qQW6S7k4feTTHXRCFa/VKiqmjhk0NWfIrV5G+h5s
-	 MjyKH+sgOiEpxRaee3HmY2qLRYeD5PoKhjOms143a2r/ihHbvQqNiO6jTPyI5gGBmwqX1
-	 xIctKmabkcpQPhNK+B672l/HassfgKNVphEmjVp02Snq90IbCFUsBbVchu0p48u3BQfOk
-	 I2Mu2NsQcXt6GUSX/p5s8lzqK7BKgh6uH09DKxzIjpGMsmzs/sVFP3u3lg8Dwj3zCchgY
-	 9cz846KZhBmpNM8aEQxXjTmYL4JKHs6N/F4qgEVGGDQBTVxJBGvgyCnVtzJlV4drMzQ==
+	t=1794809261;
+	b=SloCUy1ynB6YFJOSxjXJj48EZiHjNhGlB4rAZ07VnLL+XW8kaE3CgkItjncmPUhpgBVZ
+	 8iu9Orhfgwtsh01SaTyzQsazAjaiu5/Sqz4M2UFDjg+Jh7xkKDf4SO22fEru+L0aDR3pt
+	 Zlm1Vnwy8T0aWyA2QByE3uK0uRFunqxECdo0LYS9+MZKFD38fryLU9Khb3VfTUOsAMFiA
+	 l7vkkr3GCQ0U41koqq4lSSXTIQHQxTzXemWNn6CnWc+rWWmFU3M5+oiut0QSvbvllk5c1
+	 kW8B8ZSj+Mr+jWVUGLi6PaY39eCXYAvqi8yh7FNwXndxXtA6ipX8/Hijre4LCOdOwSQ==
 ARC-Message-Signature: i=1; d=subspace.kernel.org; s=arc20261015;
-	a=rsa-sha256; c=relaxed/relaxed; t=1794807629;
-	h=DMARC-Filter:Received:DKIM-Signature:Message-ID:Date:MIME-Version:
-	 User-Agent:Subject:To:References:From:In-Reply-To:Content-Type:
-	 Content-Transfer-Encoding:Received-SPF:X-SA-Exim-Connect-IP:
-	 X-SA-Exim-Mail-From:X-SA-Exim-Scanned:X-NMN-MailScanner-Information:
-	 X-NMN-MailScanner-ID:X-NMN-MailScanner:X-NMN-MailScanner-From:
-	 X-Spam-Status:X-Received;
-	bh=Gb9g/0+39yzx0iXkhS8fgcxSDQqjH0jfPE2h2OD8zKQ=;
-	b=xb+MzhQVPYwxsKL9dCsaA7d0kG5C8r9viKigxC3xcfOcFVNFf6SqbcP9wrz8LFU2M9/T
-	 xspzruVSbaP4X4yF4mkvnpmMLCxdQVBlyxuPO+VFhDLeNvvPJxyjylsuft3K3h13yCopn
-	 Mb7W1JJhOCzTBYxWworx3lVtGxx8ZhScXDKz1gwkB2d0ZCCaUTSJWfBdujMEkObkypd1v
-	 Mwb492B5ZwPoVzUAm5OrCL+M6nAkgocNYbthydyPb39xvByDdaLzW0aLIMVAAbKgJCw/H
-	 jG3w/d/aOGJPFtZIMFNcMcvd9HCszhi5wzDfNZ0fh+aPXXFvYXYaYeIsFCaN0TrZS4w==
+	a=rsa-sha256; c=relaxed/relaxed; t=1794809261;
+	h=DMARC-Filter:X-Envelope-To:DKIM-Signature:X-Envelope-To:Received:
+	 X-Mizu-Trace-ID:X-Migadu-Flow:From:To:Cc:Subject:Date:Message-ID:
+	 X-Mailer:MIME-Version:Content-Type:Content-Transfer-Encoding;
+	bh=ohY8oBfL9HsIxJ4pthQEE7H8EctHPP05752yO5BuBs0=;
+	b=c1Vp1yIeQyuagmTKUH6eePEbsewWJ+rvq3ZvX1bdT+LGw5SwagJNwL98fPNggSXs5zOG
+	 MfF6PMxr9N5s0pUo1B4EGh5hkQHVaGIWAV+KZSb7mcrCKEf7OtZKeRevEIHeyXBN9aunE
+	 acxkcgL+/BflOmEKftXcYOW9FAW6RXo9kPsyoHNcq6qE6K0x/VJDGHM2WK1+752/vikX6
+	 d/8UCtq8Qpx9WjdxKPa+ow/R6M5mLbvM+i3i2x9Ky/Re+I1tTLOy6cKlSw/K93W9Zcexa
+	 I3H0cq1lS7+TfH3/AgQ5PihFRxtEf/YQQTs3s+JgAwq6+TkyD4yZlsOugSFbiti8tJA==
 ARC-Authentication-Results: i=1; smtp.subspace.kernel.org; 
-	dmarc=pass header.from=dd-wrt.com;
-	spf=pass smtp.mailfrom=dd-wrt.com;
-	dkim=pass header.d=dd-wrt.com header.i=@dd-wrt.com header.a=rsa-sha256 header.s=mikd header.b=fCqYUmUn;
-	arc=none smtp.remote-ip=185.84.6.188
-Received: from mail.as201155.net (mail.as201155.net [185.84.6.188])
-	(using TLSv1.3 with cipher TLS_AES_256_GCM_SHA384 (256/256 bits)
+	dmarc=pass header.from=justthetip.ca;
+	spf=pass smtp.mailfrom=justthetip.ca;
+	dkim=pass header.d=justthetip.ca header.i=@justthetip.ca header.a=rsa-sha256 header.s=key1 header.b=U5FfbXae;
+	arc=none smtp.remote-ip=95.215.58.126
+Received: from mta1.migadu.com (out-126.mta1.migadu.com [95.215.58.126])
+	(using TLSv1.3 with cipher TLS_AES_128_GCM_SHA256 (128/128 bits)
 	 key-exchange X25519 server-signature ECDSA (prime256v1) server-digest SHA256)
 	(No client certificate requested)
-	by smtp.subspace.kernel.org (Postfix) with ESMTPS id BE651606A31C
-	for <linux-wireless@vger.kernel.org>; Mon, 16 Nov 2026 05:40:28 +0000 (UTC)
-DMARC-Filter: OpenDMARC Filter v1.4.2 smtp.subspace.kernel.org BE651606A31C
-Authentication-Results: smtp.subspace.kernel.org; dmarc=pass (p=none dis=none) header.from=dd-wrt.com
-Authentication-Results: smtp.subspace.kernel.org; spf=pass smtp.mailfrom=dd-wrt.com
+	by smtp.subspace.kernel.org (Postfix) with ESMTPS id 29145606A894
+	for <linux-wireless@vger.kernel.org>; Mon, 16 Nov 2026 06:07:36 +0000 (UTC)
+DMARC-Filter: OpenDMARC Filter v1.4.2 smtp.subspace.kernel.org 29145606A894
+Authentication-Results: smtp.subspace.kernel.org; dmarc=pass (p=quarantine dis=none) header.from=justthetip.ca
+Authentication-Results: smtp.subspace.kernel.org; spf=pass smtp.mailfrom=justthetip.ca
 Authentication-Results: smtp.subspace.kernel.org;
-	dkim=pass (1024-bit key, unprotected) header.d=dd-wrt.com header.i=@dd-wrt.com header.a=rsa-sha256 header.s=mikd header.b=fCqYUmUn
-Received: from webmail.newmedia-net.de (smtps.newmedia-net.de [IPv6:2a05:a1c0:0:de::167])
-	(using TLSv1 with cipher DHE-RSA-AES256-SHA (256/256 bits))
-	(No client certificate requested)
-	by mail.as201155.net (Postfix) with ESMTPS id EEB81DFC49
-	for <linux-wireless@vger.kernel.org>; Mon, 16 Nov 2026 06:40:20 +0100 (CET)
-DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed; d=dd-wrt.com; s=mikd;
-	h=Content-Transfer-Encoding:Content-Type:In-Reply-To:From:References:To:Subject:MIME-Version:Date:Message-ID; bh=Gb9g/0+39yzx0iXkhS8fgcxSDQqjH0jfPE2h2OD8zKQ=;
-	b=fCqYUmUnaqHtBAfky2DsmuCIjStL3DXysNTTkpYtDkMas3l1YiPOCwLEK0mGh+PmbkUkSvBIjC8CsVWZ3baK0ygSuK1CO7esQHNF3/hUZ0XtCuFbJQc3mVnpNP7btwCCwruVNEPQJcfRhSTNAe8DEuVQYkhnuZqUyt77cBaY2Y0=;
-Message-ID: <6f6d6233-f798-49fc-a428-b4c9f0bba102@dd-wrt.com>
-Date: Mon, 16 Nov 2026 06:40:18 +0100
+	dkim=pass (2048-bit key, unprotected) header.d=justthetip.ca header.i=@justthetip.ca header.a=rsa-sha256 header.s=key1 header.b=U5FfbXae
+X-Envelope-To: linux-wireless@vger.kernel.org
+DKIM-Signature: a=rsa-sha256; bh=zjZz3AvtYv5pnFEpIMQaU/5mq50DMy49MjdfgWYYMaI=;
+ c=simple/simple; d=justthetip.ca;
+ h=from:to:subject:date:message-id:mime-version:content-type; s=key1;
+ t=1794809255; v=1; x=1795414055;
+ b=U5FfbXaeU+jYNMF0KT9tv0gGfHx6hLcpNHpi5D/znDQVLceXQCShfwamWP0xjpWWZqMXJaen
+ +ovZN57sWfFS8DEn6jzGGjr6WXhVrLt8CULp+Kq7jZyDdhOhQfv0JTfJD5AaBcoL3GppH344MYw
+ 9aGidJTYodMZvX3tHhuS4MXfC2HExYYVxwyQjePkPbBjqSnU0wsw6z/umfswkGIjDe0gIGSlpHs
+ Nd/Nb0rKU0ZFF6KbjgwrncgBn1MYe9Bm1eHCUm7C7/tSbJk8g84JTwQS3f9HNmjvmHi78Yo6poD
+ 0pd2MKQanBI1wVwTtrN19j8QhbBzEkoUdO3zarn52ThDQ==
+X-Envelope-To: linux-wireless@vger.kernel.org
+Received: by smtp.migadu.com with ESMTPS id 3c946c982c1bf979;
+	Mon, 16 Nov 2026 06:07:35 +0000
+X-Mizu-Trace-ID: 3c946c982c1bf979
+X-Migadu-Flow: FLOW_OUT
+From: Devin Wittmayer <lucid_duck@justthetip.ca>
+To: Johannes Berg <johannes@sipsolutions.net>
+Cc: Martin Moosbauer <martinmoosbauer@vivaldi.net>,
+	linux-wireless@vger.kernel.org,
+	linux-kernel@vger.kernel.org,
+	stable@vger.kernel.org
+Subject: [PATCH wireless] wifi: cfg80211: don't call CRDA for a country regdb lacks
+Date: Sun, 15 Nov 2026 23:07:23 -0700
+Message-ID: <20261116060723.37130-1-lucid_duck@justthetip.ca>
+X-Mailer: git-send-email 2.56.1
 X-Mailing-List: linux-wireless@vger.kernel.org
 List-Id: <linux-wireless.vger.kernel.org>
 List-Post: <mailto:linux-wireless@vger.kernel.org>
@@ -55,89 +67,67 @@ List-Unsubscribe: <mailto:linux-wireless+unsubscribe@vger.kernel.org>
 List-Owner: <mailto:linux-wireless+owner@vger.kernel.org>
 Precedence: list
 MIME-Version: 1.0
-User-Agent: Mozilla Thunderbird Beta
-Subject: Re: [PATCH v2] wifi: ath12k: set OFFLOAD_ENCAP_4ADDR on interface
- bringup
-To: linux-wireless@vger.kernel.org
-References: <20261116015955.564420-1-repaxan@gmail.com>
-From: Sebastian Gottschall <s.gottschall@dd-wrt.com>
-In-Reply-To: <20261116015955.564420-1-repaxan@gmail.com>
-Content-Type: text/plain; charset=UTF-8; format=flowed
-Content-Transfer-Encoding: 7bit
-Received-SPF: pass (webmail.newmedia-net.de: localhost is always allowed.) client-ip=127.0.0.1; envelope-from=s.gottschall@dd-wrt.com; helo=webmail.newmedia-net.de;
-X-SA-Exim-Connect-IP: 127.0.0.1
-X-SA-Exim-Mail-From: s.gottschall@dd-wrt.com
-X-SA-Exim-Scanned: No (on webmail.newmedia-net.de); SAEximRunCond expanded to false
-X-NMN-MailScanner-Information: Please contact the ISP for more information
-X-NMN-MailScanner-ID: 1xSpRz-000B88-O8
-X-NMN-MailScanner: Found to be clean
-X-NMN-MailScanner-From: s.gottschall@dd-wrt.com
-X-Received:  from localhost ([127.0.0.1] helo=webmail.newmedia-net.de)
-	by webmail.newmedia-net.de with esmtp (Exim 4.72)
-	(envelope-from <s.gottschall@dd-wrt.com>)
-	id 1xSpRz-000B88-O8
-	for linux-wireless@vger.kernel.org; Mon, 16 Nov 2026 06:40:19 +0100
+Content-Type: text/plain; charset=UTF-8
+Content-Transfer-Encoding: 8bit
 
+Connecting to an AP that advertises the country "EU", seen on
+Vodafone routers, looks up a country that isn't in regulatory.db.
+The lookup falls back to CRDA, nothing answers, and the CRDA timeout
+then restores the world domain and drops the user's setting.
 
-Am 16.11.2026 um 02:59 schrieb Ronald Ouyang:
-> I tried the WDS support added in https://lore.kernel.org/linux-wireless/20260525110942.2890212-1-tamizh.raja@oss.qualcomm.com/.
-> With a ath12k WDS client, the frames received by the WDS AP had some extra bytes in the beginning of the frame.
->
-> My understanding of the problem:
-> 1 - this is a WDS client, 4 address mode.
-> 2 - on interface bringup (ath12k_mac_op_add_interface), it has OFFLOAD_ENCAP_ENABLED but not OFFLOAD_ENCAP_4ADDR.
->      it picks software encap for this interface and it doesn't get rechecked later.
->      so later on, it software encaps the ethernet frames and sends the resulting wifi frames to the vdev
-> 3 - on vdev bringup (ath12k_mac_vdev_create -> ath12k_mac_update_vif_offload), it has OFFLOAD_ENCAP_ENABLED.
->      so it expects to receive ethernet or "native wifi" frames.
->      it also sets OFFLOAD_ENCAP_4ADDR but it's too late here
-> 4 - the wifi frame encapsulated according to (2) gets passed to the vdev marked as "native wifi".
->      it already had a QOS field in it, the vdev adds an extra one when doing the hardware encap
->
-> This fixes it by setting OFFLOAD_ENCAP_4ADDR during interface bringup.
->
-> Tested-on: QCN9274 hw2.0 PCI WLAN.WBE.1.6-01243-QCAHKSWPL_SILICONZ-1
-> Fixes: 729cad3c3c9e ("wifi: ath12k: Add 4-address mode support for eth offload")
->
-> Signed-off-by: Ronald Ouyang <repaxan@gmail.com>
-> ---
-> Changes in v2:
-> - add explicit check for station and AP for consistency with ath12k_mac_update_vif_offload()
-> - clarify problem description slightly
-> - Link to v1: https://lore.kernel.org/linux-wireless/20261111215845.814490-1-repaxan@gmail.com/
-> ---
->   drivers/net/wireless/ath/ath12k/mac.c | 8 +++++++-
->   1 file changed, 7 insertions(+), 1 deletion(-)
->
-> diff --git a/drivers/net/wireless/ath/ath12k/mac.c b/drivers/net/wireless/ath/ath12k/mac.c
-> index a247dcf387de..f0936f6c969e 100644
-> --- a/drivers/net/wireless/ath/ath12k/mac.c
-> +++ b/drivers/net/wireless/ath/ath12k/mac.c
-> @@ -10276,7 +10276,8 @@ static void ath12k_mac_update_vif_offload(struct ath12k_link_vif *arvif)
->   	if (ret) {
->   		ath12k_warn(ab, "failed to set vdev %d tx encap mode: %d\n",
->   			    arvif->vdev_id, ret);
-> -		vif->offload_flags &= ~IEEE80211_OFFLOAD_ENCAP_ENABLED;
-> +		vif->offload_flags &= ~(IEEE80211_OFFLOAD_ENCAP_ENABLED |
-> +					IEEE80211_OFFLOAD_ENCAP_4ADDR);
->   	}
->   
->   	if (vif->offload_flags & IEEE80211_OFFLOAD_ENCAP_ENABLED)
-> @@ -10940,6 +10941,11 @@ int ath12k_mac_op_add_interface(struct ieee80211_hw *hw,
->   
->   	vif->driver_flags |= IEEE80211_VIF_SUPPORTS_UAPSD;
->   
-> +	if ((vif->type == NL80211_IFTYPE_STATION ||
-> +	     vif->type == NL80211_IFTYPE_AP) &&
-> +	    (vif->offload_flags & IEEE80211_OFFLOAD_ENCAP_ENABLED))
-> +		vif->offload_flags |= IEEE80211_OFFLOAD_ENCAP_4ADDR;
-> +
+CRDA has the same data, so don't ask it for a country that the
+loaded regulatory.db lacks.
 
-isnt the correct iftype AP_VLAN for AP with 4addr frame support enabled?
+Fixes: 007f6c5e6eb4 ("cfg80211: support loading regulatory database as firmware file")
+Reported-by: Martin Moosbauer <martinmoosbauer@vivaldi.net>
+Link: https://lore.kernel.org/linux-wireless/8db36875c56cd9703dee42c7a00b81c9@vivaldi.net/
+Cc: stable@vger.kernel.org
+Signed-off-by: Devin Wittmayer <lucid_duck@justthetip.ca>
+---
+Connecting to an AP whose beacons carry Country "EU", with a user
+country set:
 
+  kernel                             card          before          after
+  7.4-rc1                            MT7925, USB   world after 3s  kept
+  7.3.4 (Fedora)                     MT7927, PCIe  world after 3s  kept
+  6.18.52, 6.18.63 (Arch)            MT7925, USB   world after 3s  kept
+  6.12, 6.6, 6.1, 5.15, 5.10 (Arch)  MT7612, USB   world after 3s  kept
 
-Sebastian
+"iw reg set EU" did the same and is now ignored, with no CRDA
+request. A CA element is still applied, and with regulatory.db
+missing or broken, CRDA is asked as before.
 
->   	ath12k_mac_determine_vdev_type(vif, ahvif);
->   
->   	for_each_ar(ah, ar, i) {
+Before 7.4 the database pointer isn't RCU protected, so stable trees
+need the plain pointer in the check. That form is what ran on 7.3 and
+older above.
+
+ net/wireless/reg.c | 9 ++++++++-
+ 1 file changed, 8 insertions(+), 1 deletion(-)
+
+diff --git a/net/wireless/reg.c b/net/wireless/reg.c
+index 5cd3880ee384..cf79059b9992 100644
+--- a/net/wireless/reg.c
++++ b/net/wireless/reg.c
+@@ -1125,9 +1125,16 @@ int reg_reload_regdb(void)
+ 
+ static bool reg_query_database(struct regulatory_request *request)
+ {
+-	if (query_regdb_file(request->alpha2) == 0)
++	int err;
++
++	err = query_regdb_file(request->alpha2);
++	if (!err)
+ 		return true;
+ 
++	/* CRDA has the same data, it won't have this country either */
++	if (err == -ENODATA && !IS_ERR_OR_NULL(rcu_access_pointer(global_regdb)))
++		return false;
++
+ 	if (call_crda(request->alpha2) == 0)
+ 		return true;
+ 
+
+base-commit: 831e33ad02ff884ecc793c07a9c9bd9e06941fe5
+-- 
+2.56.1
+
