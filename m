@@ -1,33 +1,33 @@
 Authentication-Results: smtp.subspace.kernel.org; arc=none smtp.remote-ip=94.130.186.121
 ARC-Seal: i=1; d=subspace.kernel.org; s=arc20261015; a=rsa-sha256; cv=none;
 	t=1794844610;
-	b=SXFFnIl2sZWbrKrftEIhsEm8Mf0jczN0F0aAHq//rG+AwpHPa02AsFjp6gG6Qeflnjwt
-	 pBejGdODPcl+nSOC+gpI2ksLEbZFAuvTcvgSs38Z39GGixowRWMCT+5YwbdyWp7vzTGph
-	 SAKq614fTuVuu8ajkSz0S/KHMunfoeMcRWJJg3ZwAxqNNqj+BQ4wpKUMdQyiP+kcuL08V
-	 pklxpvu4aSIQOfenvVgCyHnUMNrzuhoPPwUIXSbRCTqVrRRbCt1Vl324G5Dar6ubNAhIF
-	 Re9gDSl4563/RaWK8S3wVYF8YBVjVsETREeHGvduYJ+Zq/Aq2F83ZNYo9LGS7uAd+OA==
+	b=MPSecR4kxMeO0EjPqsobjPLlrZSq9QimifrxuVYoLSVA/Xd5MzE3S4NldKJaZ/Ku0uET
+	 SjhoEYPDl2wg39NIeCKYzL2RnMrpeNKApFWKkvJ9PLnbsHkpiAGGjsS7KPuDQERhXurGx
+	 GFQ1NJ5fO0VoAIxdCAASWWXpMf+FMiWhnAcmDTs4hZXKNoWfF9FP5UC8rmzduf+2twFpp
+	 r+vgeA5GNdqppc6qTUqqK8LgmfI6jBWTii2fQub9uoCpYxJlm3uzphT9N608BKJfpcncj
+	 uOqUNotdoEAfYMFxQViu+/nrOxknPRW3WuMaB9KGBsFJMBs2Mjsm14s9r9ZS79Ealvg==
 ARC-Message-Signature: i=1; d=subspace.kernel.org; s=arc20261015;
 	a=rsa-sha256; c=relaxed/relaxed; t=1794844610;
 	h=DMARC-Filter:Received:DKIM-Signature:DKIM-Signature:Received:
-	 Received:From:To:Cc:Subject:Date:Message-ID:MIME-Version:Content-Type:
-	 Content-Transfer-Encoding;
-	bh=FqHPthAcq6Uz03AJHp7aohO3mOH1sdAWWLoVN9Y6wig=;
-	b=LgahlU9chq9TidNTU8s/etyJg7p1aBSlVNLJT6pKYFq7VMBFmERQMqXhJyh4tBR4dA9l
-	 wAHEBBYeMvC9yG6pxN6VVtyPrBv2QdZtMibnzfglU7xMzq1YEWaw6C8psIc9xLb/gUyaI
-	 LRPv1fzYJlMXFpPWEFw276d5rrEd+8g7laajD+IdlTlLq3trMWBro3LI8p9AnTDqrXgo4
-	 q1ZrCzUJ3Jtgxb4mX8UfGs1T55QLtnLQQLU72NkxTd8OzIGlDDKgWKn6xw+Ko2fhi1ofM
-	 7vgAdjfDSLQ3aW2GQVbXi8f3jCTyZGR5MgINdfKrA+Rx9rs8S6epAxjflKR3kAeJyFA==
+	 Received:From:To:Cc:Subject:Date:Message-ID:In-Reply-To:References:
+	 MIME-Version:Content-Type:Content-Transfer-Encoding;
+	bh=y9DYKsYoecSdNmX9SvDsJrsO61W5/drf8na13hvzLUQ=;
+	b=kB6dLWm41VYxYh/Zze9gF9D1CylCxXVm6IZ9m68yAGQCSXcutEZbjE5AC8XMCKuMkzSq
+	 Broe46jgczlwbtIjRyLlvff+OwzaZynbiMILp251TKxaYt3F37Tqg/l02W+nCbY7NOzYm
+	 eoHa7DMlhb0ZDDuU1yUCTAjxgOl40707SsNdmu1l6oTawuOP3J83rptRZYA2pV6LxXeJj
+	 9XjLXCMKFn1oK3gAjatpsfWBL7Kf7PfWy5bMYzY+f0gK6TSJGubEIb190te3dSM2B43c/
+	 pEnBtyrSCUAJb5lnC6H3SVdsn9r0adQgfa0I8yRqCzaCyr1VuvnV1wKr9LbSZT5AAYw==
 ARC-Authentication-Results: i=1; smtp.subspace.kernel.org; 
 	dmarc=none header.from=hardeman.nu;
 	spf=pass smtp.mailfrom=hardeman.nu;
 	arc=none smtp.remote-ip=94.130.186.121
 Received: from thor.hardeman.nu (thor.hardeman.nu [94.130.186.121])
 	(using TLSv1.3 with cipher TLS_AES_256_GCM_SHA384 (256/256 bits)
-	 key-exchange X25519 server-signature ECDSA (prime256v1) server-digest SHA256)
+	 key-exchange X25519 server-signature ECDSA (prime256v1))
 	(No client certificate requested)
-	by smtp.subspace.kernel.org (Postfix) with ESMTPS id C4543606A329;
+	by smtp.subspace.kernel.org (Postfix) with ESMTPS id C445E606A323;
 	Mon, 16 Nov 2026 15:56:48 +0000 (UTC)
-DMARC-Filter: OpenDMARC Filter v1.4.2 smtp.subspace.kernel.org C4543606A329
+DMARC-Filter: OpenDMARC Filter v1.4.2 smtp.subspace.kernel.org C445E606A323
 Authentication-Results: smtp.subspace.kernel.org; dmarc=none (p=none dis=none) header.from=hardeman.nu
 Authentication-Results: smtp.subspace.kernel.org; spf=pass smtp.mailfrom=hardeman.nu
 Received: from thor.hardeman.nu (thor.hardeman.nu [IPv6:fd27:2a41:8fcb:2::f])
@@ -36,39 +36,43 @@ Received: from thor.hardeman.nu (thor.hardeman.nu [IPv6:fd27:2a41:8fcb:2::f])
 	 client-signature ECDSA (secp384r1) client-digest SHA384)
 	(Client CN "thor.hardeman.nu", Issuer "Hardeman Internal Mail Relay CA" (verified OK))
 	(Authenticated sender: nullmailer@mil.hardeman.nu)
-	by thor.hardeman.nu (Postfix) with ESMTPSA id 4jSstH1RpmzFphN;
-	Mon, 16 Nov 2026 16:56:39 +0100 (CET)
+	by thor.hardeman.nu (Postfix) with ESMTPSA id 4jSstJ2YZmzFpkF;
+	Mon, 16 Nov 2026 16:56:40 +0100 (CET)
 DKIM-Signature: v=1; a=ed25519-sha256; c=relaxed/relaxed; d=hardeman.nu;
-	s=202608-ed25519; t=1794844599;
+	s=202608-ed25519; t=1794844600;
 	h=from:from:reply-to:subject:subject:date:date:message-id:message-id:
 	 to:to:cc:cc:mime-version:mime-version:content-type:content-type:
-	 content-transfer-encoding:content-transfer-encoding;
-	bh=FqHPthAcq6Uz03AJHp7aohO3mOH1sdAWWLoVN9Y6wig=;
-	b=Q8o5/JAJmH9QlLxMvuTr00iub0uKfhPO9QX7eUBR1FNYaXyiqe8xZuG12qoHX+WMeLogH1
-	y0IgwQt3y9aODfDA==
+	 content-transfer-encoding:content-transfer-encoding:
+	 in-reply-to:in-reply-to:references:references;
+	bh=y9DYKsYoecSdNmX9SvDsJrsO61W5/drf8na13hvzLUQ=;
+	b=YcX//DQsPBRLrEGpfAGwyO2xclAuP/hIrImlChwWhjTOUN/adyMuNw+A+xWONud4xzgRIP
+	MQMZyiCxIKG9/PAg==
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=hardeman.nu; s=202608-rsa;
-	t=1794844599;
+	t=1794844600;
 	h=from:from:reply-to:subject:subject:date:date:message-id:message-id:
 	 to:to:cc:cc:mime-version:mime-version:content-type:content-type:
-	 content-transfer-encoding:content-transfer-encoding;
-	bh=FqHPthAcq6Uz03AJHp7aohO3mOH1sdAWWLoVN9Y6wig=;
-	b=CdC7Xm8/1khQiaO+ZENY2XlvHRx7yCGz/oVdDXbls18ZB2bKDhCXABuO7J8I0+oxraVK5J
-	mQrgx3Eqiwr0zo6QRe2jnMVYI8gmP3fHLqh/HE4MpLHwK3yO/hDrbueKhCkNiaOzpy+VkK
-	gClUYxthYwUaSVfS/VcJJ6tXJYqUtmwxjXQ/p6nesSws7wH2t2uD8q6l3SrCemnNrBbJ7A
-	l+5mWZSUG57PVAKxLk6DkJ9dWXO8LwVZayj84qCzxmsCE1jUbA3ncRYn/bjK5o8jcloT1U
-	Xnbbb7flQFCUVMzCkn6jsQgt/+WcyM1Sm1jDKMtdjXzbxVfEY4vQoCusXwvlww==
+	 content-transfer-encoding:content-transfer-encoding:
+	 in-reply-to:in-reply-to:references:references;
+	bh=y9DYKsYoecSdNmX9SvDsJrsO61W5/drf8na13hvzLUQ=;
+	b=m/ZVc+u4iXqWLbr6tu1Fs77TWbbw67tLWDcVl8UR0az0XjF/3hSrURacv6XpJfYek0Eikq
+	2eAqGQLSFfJTy5ScjpmxthK3EcRrpjm/7VVM3z/3iUi8rAdkBOxEBCcJlWXuVK13k9vcXa
+	1EhQxRgOBbM+TAKeHHnpXdubFEmYyI6bdZPNWdRNsbjMGPCThm51cVNYZ5TiFbsb8Fklp4
+	lejLUQnxsrFuxxw5GxNzaNMDPIM0d20y8GzTIt36+3inEmxW7Ry2Udx5YRQZQDxikYrnI3
+	f/Q2wOxdDyEW6mKgFrF4FNxOb4eICEXqFzlHfsoh9ZK+vQ/N/6KbfDVH5pmaiA==
 Received: from mil.hardeman.nu ([fd27:2a41:8fcb:2::f])
 	by thor.hardeman.nu with ESMTPSA
-	id XNFhMrYn+2qE7igAWTs42w
-	(envelope-from <david@mil.hardeman.nu>); Mon, 16 Nov 2026 16:56:38 +0100
-Received: (nullmailer pid 535617 invoked by uid 2002000001);
+	id LlefErgn+2qQ7igAWTs42w
+	(envelope-from <david@mil.hardeman.nu>); Mon, 16 Nov 2026 16:56:40 +0100
+Received: (nullmailer pid 535621 invoked by uid 2002000001);
 	Mon, 16 Nov 2026 15:56:38 -0000
 From: =?UTF-8?q?David=20H=C3=A4rdeman?= <david@hardeman.nu>
 To: Miri Korenblit <miriam.rachel.korenblit@intel.com>
-Cc: Emmanuel Grumbach <emmanuel.grumbach@intel.com>, linux-wireless@vger.kernel.org, linux-kernel@vger.kernel.org, =?UTF-8?q?David=20H=C3=A4rdeman?= <david@hardeman.nu>
-Subject: [PATCH 0/2] wifi: iwlwifi: release frames before one beyond the reorder window
-Date: Mon, 16 Nov 2026 16:56:07 +0100
-Message-ID: <20261116155609.535595-1-david@hardeman.nu>
+Cc: Emmanuel Grumbach <emmanuel.grumbach@intel.com>, linux-wireless@vger.kernel.org, linux-kernel@vger.kernel.org, =?UTF-8?q?David=20H=C3=A4rdeman?= <david@hardeman.nu>, stable@vger.kernel.org
+Subject: [PATCH 1/2] wifi: iwlwifi: mvm: release frames before one beyond the window
+Date: Mon, 16 Nov 2026 16:56:08 +0100
+Message-ID: <20261116155609.535595-2-david@hardeman.nu>
+In-Reply-To: <20261116155609.535595-1-david@hardeman.nu>
+References: <20261116155609.535595-1-david@hardeman.nu>
 X-Mailing-List: linux-wireless@vger.kernel.org
 List-Id: <linux-wireless.vger.kernel.org>
 List-Post: <mailto:linux-wireless@vger.kernel.org>
@@ -81,42 +85,61 @@ MIME-Version: 1.0
 Content-Type: text/plain; charset=UTF-8
 Content-Transfer-Encoding: 8bit
 
-An AP that gives up on an MPDU of a BA session without sending a BAR
-and keeps transmitting will eventually send a frame with SN ==
-head_sn + buf_size. Both iwlmvm and iwlmld store that frame in the slot
-of head_sn and then release it ahead of the frames before it, which
-all fail the PN check. A single lost MPDU becomes a burst of up to 63
-dropped frames, i.e. a TCP loss burst.
+If a transmitter gives up on an MPDU of a BA session without sending a
+BAR and keeps sending, it can send a frame with SN == head_sn + buf_size
+(or beyond). The firmware then moves the window and reports an NSSN
+past the hole, but iwl_mvm_reorder() first stores the frame at
+sn % buf_size, which is the slot of head_sn. iwl_mvm_release_frames()
+starts at head_sn and so passes the new frame to mac80211 ahead of the
+buf_size - 1 frames before it, and those then all fail
+iwl_mvm_check_pn(): one lost frame turns into buf_size lost frames.
 
-I ran into this with an AX210 (iwlmvm) on an rtw88 SDIO AP (RTL8822CS)
-that drops frames without a BAR while the client is off-channel for
-background scans; the AP side is a separate problem. A kprobe at the
-PN check showed every burst starting with the frame at hole + 64.
+Seen with an AX210 (iwlmvm, 7.2.15) on an rtw88 AP during client
+background scans: bursts of up to 63 PN-replay drops per lost frame
+(two such bursts back to back when two holes were close together), each
+starting with the frame at hole + 64 (traced at iwl_mvm_release_frames,
+e.g. SN 447 PN 0x1bb3f0 passed, then SN 384-446 with PN
+0x1bb3b1-0x1bb3ef dropped).
 
-Patch 1 restores the window check that iwlmvm had before the reorder
-buffer was simplified. Tested on 7.2.15 (same code): PN-replay drops
-per client scan went from about 280 to about 12, and in normal use
-(8 two-minute bidirectional TCP runs each) from 290 to 3 per run.
+The driver used to release frames up to min(sn, nssn) for a frame
+outside the window; that check went with the RSS-sync logic. Restore
+just the window check.
 
-Patch 2 does the same for iwlmld, which has the same code. I have no
-iwlmld hardware; it adds a KUnit case that fails without the fix and
-passes with it.
+With the fix, the PN-replay drops in that setup went from about 280 to
+about 12 per client scan.
 
-The patches were generated with the help of an LLM; I have reviewed
-them (to the best of my ability), and tested patch 1 on actual hardware
-as described above (patch 2 only with the KUnit case).
+Fixes: ff8e3a40d78b ("wifi: iwlwifi: mvm: simplify the reorder buffer")
+Cc: stable@vger.kernel.org
+Assisted-by: LLM
+Signed-off-by: David Härdeman <david@hardeman.nu>
+---
+ drivers/net/wireless/intel/iwlwifi/mvm/rxmq.c | 13 +++++++++++++
+ 1 file changed, 13 insertions(+)
 
-David Härdeman (2):
-  wifi: iwlwifi: mvm: release frames before one beyond the window
-  wifi: iwlwifi: mld: release frames before one beyond the window
-
- drivers/net/wireless/intel/iwlwifi/mld/agg.c  | 14 ++++++++++
- .../wireless/intel/iwlwifi/mld/tests/agg.c    | 28 +++++++++++++++++++
- drivers/net/wireless/intel/iwlwifi/mvm/rxmq.c | 13 +++++++++
- 3 files changed, 55 insertions(+)
-
-
-base-commit: 3627924ed81fd7783394fb2555ea179c6606a231
+diff --git a/drivers/net/wireless/intel/iwlwifi/mvm/rxmq.c b/drivers/net/wireless/intel/iwlwifi/mvm/rxmq.c
+index 77a3d8dcab5..c2fdc3a5155 100644
+--- a/drivers/net/wireless/intel/iwlwifi/mvm/rxmq.c
++++ b/drivers/net/wireless/intel/iwlwifi/mvm/rxmq.c
+@@ -899,6 +899,19 @@ static bool iwl_mvm_reorder(struct iwl_mvm *mvm,
+ 		return false;
+ 	}
+ 
++	/*
++	 * A frame beyond the end of the reorder window means that the
++	 * transmitter gave up on older frames without sending a BAR. The
++	 * firmware moves the window (NSSN) for it, but the frame would be
++	 * stored in the slot of an older SN and released ahead of the frames
++	 * before it, which would then all fail the PN check. Release the
++	 * older frames first, as for a BAR.
++	 */
++	if (!ieee80211_sn_less(sn, ieee80211_sn_add(buffer->head_sn,
++						    baid_data->buf_size)))
++		iwl_mvm_release_frames(mvm, sta, napi, baid_data, buffer,
++				       ieee80211_sn_less(sn, nssn) ? sn : nssn);
++
+ 	/* put in reorder buffer */
+ 	index = sn % baid_data->buf_size;
+ 	__skb_queue_tail(&entries[index].frames, skb);
 -- 
 2.47.3
 
