@@ -1,64 +1,86 @@
-Authentication-Results: smtp.subspace.kernel.org; arc=none smtp.remote-ip=162.243.164.118
+Authentication-Results: smtp.subspace.kernel.org; arc=none smtp.remote-ip=100.103.45.18
 ARC-Seal: i=1; d=subspace.kernel.org; s=arc20261015; a=rsa-sha256; cv=none;
-	t=1794829857;
-	b=2S7lklcZoK2cknidP2mVdA00JZsHehc4nulx6RkTXdQ9GEl7WTdEAjhlvdTeoHytRda/
-	 QeaPPDURL/9QB/nImRuM5GvZHptGFzyU51i2YuCazfBoYp2swh/7ijKs0e5krQJplkH12
-	 VAH8FstvDyFRV+ATjS9ELxA1QY4f8fbmq9L68Fw39LP5zO9oGi7lckcOw5cvKwXd7XDgJ
-	 8MITiGN5SejhyRAGWJARrLjlbHYheVoQSOnP9YlB5qLo5UH/GlHprDlbnWkIM6Ih7kbFq
-	 RK6DMxs7FT6ZIOzuOQtn0pfUXhucTXhDpq/kjgJSmZtFpQ82AFPNHgyTqGn9fMHdxfw==
+	t=1794831072;
+	b=CgD79C9EbZqbQdb056FQSlsEeaHs8MwfiT9uEX2NUr6KftHEU9qfmSyLqCYkhfrZTzYD
+	 C96/MCqywQqeyXIvZ+5whi3j7qZQ6oEL1YwVVzKwTa0tqiXjtX1QUQmllGtyX6Os2xC5Y
+	 RU/eVtFC4dIy+TnTyLzUXtwFKWNCy0ot+mlrqx1/ygmXc4FJcwUwi9uTw1SyjPebesGyO
+	 ib+lGMaOPV/H+BPS0tLJ7tYD1yyWQ6BeN27gNOubsZrXSuJ7nqkbv2icIYTrkw3MNGkmw
+	 wZopufI9GJA2ESS16RDwj84nKJTYWo2rxqXOi54M5mBcgxX+YWSNmyde7k5ZZMbvANg==
 ARC-Message-Signature: i=1; d=subspace.kernel.org; s=arc20261015;
-	a=rsa-sha256; c=relaxed/relaxed; t=1794829857;
-	h=DMARC-Filter:DKIM-Signature:Received:From:To:Cc:Subject:Date:
-	 Message-Id:X-Mailer:In-Reply-To:References:MIME-Version:
-	 Content-Transfer-Encoding:X-CM-TRANSID:X-Coremail-Antispam:
-	 X-CM-SenderInfo;
-	bh=6WoQEmCVBIuhl/cSF3DZdFXshm17IcMA/oo1QCpuU6Y=;
-	b=zylW2fj3wfADCDo+Vj4HFuwp6f6kQeGafGMJ2d+I+YJscFN67Z09ZwLOTreCAs/EXFLr
-	 firQztqkGmVs94PYnqbDymveMgdZOx7trioVy8PfTF27o6ar6Wsdi4CLjfPvj/Vv0YRUj
-	 wDk+SDuzfzziRmZ+t8ksDtOIJLnKET91W3ZO63cpO2o7KC1knUwNtK8atVKdqKHWGRdm5
-	 H+M0u8qgZljpd7oAyKj2xg6+vtAJdpwAAVoPBGhwlx55bOnISzgGtt0Mk9c1Dp0RKup0l
-	 w2MWAYKq/l0RabyKbByWTCrx2b55hYALmCuNH44UFFIsBSmWEL5G2E9MEB1eMuPqaLg==
+	a=rsa-sha256; c=relaxed/relaxed; t=1794831072;
+	h=Received:DKIM-Signature:Date:From:To:Cc:Subject:Message-ID:
+	 References:MIME-Version:Content-Type:Content-Disposition:In-Reply-To;
+	bh=d1QNaqA4UuxT165UtFo9MygMRqXbXgGBeQ/kJMNr1F4=;
+	b=xGYMSqwMFYHMGZcPCU1WsO892slI06zNDHiZR8SDVELP9lb+dSmPcHCAVi1qPPMftqty
+	 1ULWGMVHV5kc3OiKeiqJf29Y92qz9ZtpVea2Dk3oJK0iRRW0pKiqIXYrFvEKiJi88WDRm
+	 bRmgMXDxPgUowTngTFa+DNmWjVJ99nPEUzwhepuR7s9nhTTfoaBaKSMe5tBOeSRyfmLR8
+	 Wz7YuVURdqyX1gCLJXtyo/Hzg3suGvpttPczcPtjGntW7LmYuk/xbFuXI7+FXfUBdZsxJ
+	 aI4Wp80trDIUod6XAWJYFpHMBbNEkjceodSHinbusnmpHT/oAccFjm79tDB9cJjOm3Q==
 ARC-Authentication-Results: i=1; smtp.subspace.kernel.org; 
-	dmarc=pass header.from=stu.xidian.edu.cn;
-	spf=pass smtp.mailfrom=stu.xidian.edu.cn;
-	arc=none smtp.remote-ip=162.243.164.118
-Received: from zg8tmtyylji0my4xnjqumte4.icoremail.net (zg8tmtyylji0my4xnjqumte4.icoremail.net [162.243.164.118])
-	by smtp.subspace.kernel.org (Postfix) with ESMTP id 37FDD606A32C;
-	Mon, 16 Nov 2026 11:50:56 +0000 (UTC)
-DMARC-Filter: OpenDMARC Filter v1.4.2 smtp.subspace.kernel.org 37FDD606A32C
-Authentication-Results: smtp.subspace.kernel.org; dmarc=pass (p=quarantine dis=none) header.from=stu.xidian.edu.cn
-Authentication-Results: smtp.subspace.kernel.org; spf=pass smtp.mailfrom=stu.xidian.edu.cn
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-	d=stu.xidian.edu.cn; s=dkim; h=Received:From:To:Cc:Subject:Date:
-	Message-Id:In-Reply-To:References:MIME-Version:
-	Content-Transfer-Encoding; bh=6WoQEmCVBIuhl/cSF3DZdFXshm17IcMA/o
-	o1QCpuU6Y=; b=xd7TyJkFQexSyjngBgdxIIKCaZmIeVLBa3O+p/8KMV+5Gl5OTJ
-	eLmcux86f349NUo1qW52SJdv/wKIaWudJB8uxPJn15VJEOwtNZxA4w14Olv2KgiE
-	moX8Nh4vllVi4rlI0ogmTcZ7p0X5i8oeuNEvgPNm6euagYNPg/S2M1u3I=
-Received: from user-virtual-machine.localdomain (unknown [113.200.174.41])
-	by hzbj-edu-front-2.icoremail.net (Coremail) with UTF8SMTPA id BLQMCkB2vwQF7vpqZ6S3AQ--.3956S3;
-	Mon, 16 Nov 2026 19:50:38 +0800 (CST)
-From: YuanZhe Liu <25031212351@stu.xidian.edu.cn>
-To: Felix Fietkau <nbd@nbd.name>
-Cc: Lorenzo Bianconi <lorenzo@kernel.org>,
-	Ryder Lee <ryder.lee@mediatek.com>,
-	Shayne Chen <shayne.chen@mediatek.com>,
-	Sean Wang <sean.wang@mediatek.com>,
-	Matthias Brugger <mbrugger@suse.com>,
-	AngeloGioacchino Del Regno <angelogioacchino.delregno@collabora.com>,
-	Bin Yu <byu@xidian.edu.cn>,
-	Cheng Wen <wencheng@xidian.edu.cn>,
-	linux-wireless@vger.kernel.org,
-	linux-kernel@vger.kernel.org,
-	linux-arm-kernel@lists.infradead.org,
-	linux-mediatek@lists.infradead.org,
-	stable@vger.kernel.org
-Subject: [PATCH 1/2] wifi: mt76: mt7615: fix out-of-bounds read in mt7615_mac_add_txs
-Date: Mon, 16 Nov 2026 19:50:27 +0800
-Message-Id: <20261116115028.2766-2-25031212351@stu.xidian.edu.cn>
-X-Mailer: git-send-email 2.34.1
-In-Reply-To: <20261116115028.2766-1-25031212351@stu.xidian.edu.cn>
-References: <20261116115028.2766-1-25031212351@stu.xidian.edu.cn>
+	dkim=pass header.d=kernel.org header.i=@kernel.org header.a=rsa-sha256 header.s=k20260515 header.b=JkukwzGb;
+	arc=none smtp.remote-ip=100.103.45.18
+Received: from smtp.kernel.org (quasi.space.kernel.org [100.103.45.18])
+	(using TLSv1.3 with cipher TLS_AES_256_GCM_SHA384 (256/256 bits)
+	 key-exchange X25519 server-signature ECDSA (prime256v1))
+	(No client certificate requested)
+	by smtp.subspace.kernel.org (Postfix) with ESMTPS id 1DE9C606A31C;
+	Mon, 16 Nov 2026 12:11:12 +0000 (UTC)
+Authentication-Results: smtp.subspace.kernel.org;
+	dkim=pass (2048-bit key) header.d=kernel.org header.i=@kernel.org header.a=rsa-sha256 header.s=k20260515 header.b=JkukwzGb
+Received: by smtp.kernel.org (Postfix) with ESMTPSA id 2CF391F000C5;
+	Mon, 16 Nov 2026 12:11:11 +0000 (UTC)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=kernel.org;
+	s=k20260515; t=1794831072;
+	bh=d1QNaqA4UuxT165UtFo9MygMRqXbXgGBeQ/kJMNr1F4=;
+	h=Date:From:To:Cc:Subject:References:In-Reply-To;
+	b=JkukwzGbEvTcRYQiQbZwmA/mk2PVHTyXM6F56jbB+ZEQcpOrHLIY5pxO7kKiM6rQz
+	 0EwP5ZgG9DLK7jFGiSx9rNSP3jecoIEKdDYTO14xW1IttoAG5v+N1Aez3pwlJjjX4h
+	 b9xMXEbfDclbyVeamtQyzfwSgbEfbMjF9uY6+FyAidTnAxdoFPAPVSLekGMi7QSJU1
+	 emdILX1T7g10aAXHkb+Ax2GF/b+k8KVztp14ydhiNTchkHtPM7YD2i4zOANkI1QD4j
+	 LDuHomhf5257ArYnxVdxwLVpbtGt22Thq3Isp2WsCen8vZYobgCtY7pslu+Kg9qXRm
+	 chRxB8ZndPC5g==
+Date: Mon, 16 Nov 2026 14:11:08 +0200
+From: Leon Romanovsky <leon@kernel.org>
+To: Alexey Kardashevskiy <aik@ozlabs.ru>
+Cc: Greg Kroah-Hartman <gregkh@linuxfoundation.org>,
+	"Rafael J. Wysocki" <rafael@kernel.org>,
+	Danilo Krummrich <dakr@kernel.org>,
+	Dmitry Torokhov <dmitry.torokhov@gmail.com>,
+	Andrew Lunn <andrew@lunn.ch>,
+	Heiner Kallweit <hkallweit1@gmail.com>,
+	Russell King <linux@armlinux.org.uk>,
+	"David S. Miller" <davem@davemloft.net>,
+	Jakub Kicinski <kuba@kernel.org>, Paolo Abeni <pabeni@redhat.com>,
+	Johannes Berg <johannes@sipsolutions.net>,
+	Jonathan Corbet <corbet@lwn.net>,
+	Shuah Khan <skhan@linuxfoundation.org>,
+	Randy Dunlap <rdunlap@infradead.org>,
+	Bjorn Helgaas <bhelgaas@google.com>,
+	"Joerg Roedel (AMD)" <joro@8bytes.org>,
+	Suravee Suthikulpanit <suravee.suthikulpanit@amd.com>,
+	Vasant Hegde <vasant.hegde@amd.com>, Will Deacon <will@kernel.org>,
+	Robin Murphy <robin.murphy@arm.com>,
+	David Woodhouse <dwmw2@infradead.org>,
+	Lu Baolu <baolu.lu@linux.intel.com>,
+	Johan Hovold <johan@kernel.org>, Eric Dumazet <edumazet@kernel.org>,
+	Marcel Holtmann <marcel@holtmann.org>,
+	Luiz Augusto von Dentz <luiz.dentz@gmail.com>,
+	Nipun Gupta <nipun.gupta@amd.com>,
+	Nikhil Agarwal <nikhil.agarwal@amd.com>,
+	Pieter Jansen van Vuuren <pieter.jansen-van-vuuren@amd.com>,
+	linux-kernel@vger.kernel.org, driver-core@lists.linux.dev,
+	linux-input@vger.kernel.org, netdev@vger.kernel.org,
+	linux-wireless@vger.kernel.org, linux-usb@vger.kernel.org,
+	linux-bluetooth@vger.kernel.org, linux-acpi@vger.kernel.org,
+	linux-doc@vger.kernel.org, linux-pci@vger.kernel.org,
+	iommu@lists.linux.dev, Jason Gunthorpe <jgg@ziepe.ca>,
+	Alexey Kardashevskiy <aik@amd.com>
+Subject: Re: [PATCH v2 11/19] driver core: Introduce a generic device trust
+ level
+Message-ID: <20261116121108.GK11319@unreal>
+References: <20261109-device-trust-core-v2-0-3b12d9a9f861@nvidia.com>
+ <20261109-device-trust-core-v2-11-3b12d9a9f861@nvidia.com>
+ <de5772b3-c340-4822-a49a-1434ece1b144@ozlabs.ru>
 X-Mailing-List: linux-wireless@vger.kernel.org
 List-Id: <linux-wireless.vger.kernel.org>
 List-Post: <mailto:linux-wireless@vger.kernel.org>
@@ -68,64 +90,27 @@ List-Unsubscribe: <mailto:linux-wireless+unsubscribe@vger.kernel.org>
 List-Owner: <mailto:linux-wireless+owner@vger.kernel.org>
 Precedence: list
 MIME-Version: 1.0
-Content-Transfer-Encoding: 8bit
-X-CM-TRANSID:BLQMCkB2vwQF7vpqZ6S3AQ--.3956S3
-X-Coremail-Antispam: 1UD129KBjvJXoW7Ar4kJw4fXw1ftr4rZFWxCrg_yoW8AFyrpF
-	WjkFyj93yDtr4DGw4kAa1293Z8XanYgFWSgr4Fvw15u3s8Cr1rXFyrZF4j9r1FyrWYkF18
-	JF4Utry3WrZ8uaDanT9S1TB71UUUUU7qnTZGkaVYY2UrUUUUjbIjqfuFe4nvWSU5nxnvy2
-	9KBjDU0xBIdaVrnRJUUUmEb7Iv0xC_Cr1lb4IE77IF4wAFF20E14v26rWj6s0DM7CY07I2
-	0VC2zVCF04k26cxKx2IYs7xG6rWj6s0DM7CIcVAFz4kK6r1j6r18M28IrcIa0xkI8VA2jI
-	8067AKxVWUGwA2048vs2IY020Ec7CjxVAFwI0_Gr0_Xr1l8cAvFVAK0II2c7xJM28CjxkF
-	64kEwVA0rcxSw2x7M28EF7xvwVC0I7IYx2IY67AKxVW8JVW5JwA2z4x0Y4vE2Ix0cI8IcV
-	CY1x0267AKxVW8JVWxJwA2z4x0Y4vEx4A2jsIE14v26r4UJVWxJr1l84ACjcxK6I8E87Iv
-	6xkF7I0E14v26F4UJVW0owAac4AC62xK8xCEY4vEwIxC4wAS0I0E0xvYzxvE52x082IY62
-	kv0487Mc02F40EFcxC0VAKzVAqx4xG6I80ewAv7VC0I7IYx2IY67AKxVWUJVWUGwAv7VC2
-	z280aVAFwI0_Gr0_Cr1lOx8S6xCaFVCjc4AY6r1j6r4UM4x0Y48IcxkI7VAKI48JM4IIrI
-	8v6xkF7I0E8cxan2IY04v7MxkF7I0En4kS14v26r1q6r43MxAIw28IcxkI7VAKI48JMxC2
-	0s026xCaFVCjc4AY6r1j6r4UMI8I3I0E5I8CrVAFwI0_Jr0_Jr4lx2IqxVCjr7xvwVAFwI
-	0_JrI_JrWlx4CE17CEb7AF67AKxVWUtVW8ZwCIc40Y0x0EwIxGrwCI42IY6xIIjxv20xvE
-	14v26r1j6r1xMIIF0xvE2Ix0cI8IcVCY1x0267AKxVW8JVWxJwCI42IY6xAIw20EY4v20x
-	vaj40_Jr0_JF4lIxAIcVC2z280aVAFwI0_Jr0_Gr1lIxAIcVC2z280aVCY1x0267AKxVW8
-	JVW8JrUvcSsGvfC2KfnxnUUI43ZEXa7IU0ag43UUUUU==
-X-CM-SenderInfo: ysvqjiysrsjkur6v33wo0lvxldqovvfxof0/1tbiAQUTD2r5ytfPsAAAsp
+Content-Type: text/plain; charset=us-ascii
+Content-Disposition: inline
+In-Reply-To: <de5772b3-c340-4822-a49a-1434ece1b144@ozlabs.ru>
 
-mt7615_queue_rx_skb() walks the TXS entries up to skb->len, but that
-length only describes the whole packet. For RX skbs that are not fully
-linear, such as the ones built from the fragmented USB RX path,
-skb->data only covers skb_headlen(skb) bytes, so the loop advances past
-the skb head buffer and mt7615_mac_add_txs() reads outside of the
-allocated slab object:
+On Fri, Nov 13, 2026 at 10:30:23PM +1100, Alexey Kardashevskiy wrote:
+> On 9/11/26 18:33, Leon Romanovsky wrote:
+> > From: Leon Romanovsky <leonro@nvidia.com>
+> > 
+> > Device setup needs a common operating policy before driver probing or DMA
+> > configuration. Userspace must be able to hold devices disabled until it
+> > authorizes them.
+> > 
+> > Add generic trust admission with an immutable global boot policy. Restrict
+> > the compatibility attachment API to explicit global full policy and full
+> > operation, checking admission before probe. Keep the operating level
+> > stable until teardown and retain normal locked admission for other callers.
+> > 
+> > Signed-off-by: Leon Romanovsky <leonro@nvidia.com>
+> 
+> this got many CCs except the one where I was (eagerly) looking for it: linux-coco@lists.linux.dev :)
 
-  BUG: KASAN: slab-out-of-bounds in mt7615_mac_add_txs+0x5c8/0x650
-  Read of size 4 at addr ffff888005097b40
+I will pay more attention next time and will CC CoCo list.
 
-Bound the iteration by skb_headlen(skb) instead. Fully linear skbs keep
-the previous behaviour, since both lengths are equal there.
-
-Fixes: eb99cc95c3b6 ("mt76: mt7615: introduce mt7663u support")
-Cc: stable@vger.kernel.org
-Co-developed-by: Bin Yu <byu@xidian.edu.cn>
-Signed-off-by: Bin Yu <byu@xidian.edu.cn>
-Co-developed-by: Cheng Wen <wencheng@xidian.edu.cn>
-Signed-off-by: Cheng Wen <wencheng@xidian.edu.cn>
-Signed-off-by: YuanZhe Liu <25031212351@stu.xidian.edu.cn>
----
- drivers/net/wireless/mediatek/mt76/mt7615/mac.c | 2 +-
- 1 file changed, 1 insertion(+), 1 deletion(-)
-
-diff --git a/drivers/net/wireless/mediatek/mt76/mt7615/mac.c b/drivers/net/wireless/mediatek/mt76/mt7615/mac.c
-index aad232c5a6fa..86c6b443ef71 100644
---- a/drivers/net/wireless/mediatek/mt76/mt7615/mac.c
-+++ b/drivers/net/wireless/mediatek/mt76/mt7615/mac.c
-@@ -1620,7 +1620,7 @@ void mt7615_queue_rx_skb(struct mt76_dev *mdev, enum mt76_rxq_id q,
- {
- 	struct mt7615_dev *dev = container_of(mdev, struct mt7615_dev, mt76);
- 	__le32 *rxd = (__le32 *)skb->data;
--	__le32 *end = (__le32 *)&skb->data[skb->len];
-+	__le32 *end = (__le32 *)&skb->data[skb_headlen(skb)];
- 	enum rx_pkt_type type;
- 	u16 flag;
- 
--- 
-2.34.1
-
+Thanks
