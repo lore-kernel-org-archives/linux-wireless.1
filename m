@@ -1,63 +1,73 @@
-Authentication-Results: smtp.subspace.kernel.org; arc=none smtp.remote-ip=95.143.172.20
+Authentication-Results: smtp.subspace.kernel.org; arc=none smtp.remote-ip=192.198.163.13
 ARC-Seal: i=1; d=subspace.kernel.org; s=arc20261015; a=rsa-sha256; cv=none;
-	t=1794862915;
-	b=E0EfC0hMqnJJ/RkMiuHesFRUKeseR4JL3IeaD4nAiaxpOLzIMBvt52EQflJP6A5SQvYp
-	 G0/jcivK7xGScZqTtTD7Jrp5I2MhWXWzd0MlNPGjR4fuvT+1mrXKSuLb3WF04l3qkr71w
-	 5wGqaaxbzz6dIyqQ8wWPXBtwVpHJOBqdEEk46cIXShio6mhZ3THpq35KfQPlozUaA6IB8
-	 MLAzG6lPglASEEH60fto/te84H4s29YDD0hsqNZx5RZcK1/WNH3zeAEE55CTj3nsV2UjI
-	 TJLisXver+KYe2OIIvg08FNgf+yT+senn95/+QbmN/CAZts+Jo826MJBYlEXOwCjZvg==
+	t=1794864101;
+	b=UMyqDL1eAKADa6KVZKwD5dayTks7j0lEAUpO/RULg9Ta9P02WDtTn7ilhn0ciO98XXxy
+	 S5FXxoLCnNW07OU9pfym6UcaOkhudI7OfpnNi5sUfWYpvpu2boPTAk++8dw3BSZJJmCnE
+	 k5Hm7pOuZsnH1JAMi5qE+eIq8GYu9OehqPpKT9xJcsj64mKei6tcYXVAdzEkcF2pXPxf2
+	 BCOi/ezKpro8FJ3o7muAPKqWAkXVX/l6GuGBB0b2Jccy/2Kcdg3Vov6jG7lhCj1GyfQYn
+	 N5E5LIn296O9QZ/rsZzqTi840+owpLtinL6AIR9jFTcsDxlfoWpjewJ4nkgAZEkiv4g==
 ARC-Message-Signature: i=1; d=subspace.kernel.org; s=arc20261015;
-	a=rsa-sha256; c=relaxed/relaxed; t=1794862915;
-	h=DMARC-Filter:Received:Received:Received:From:To:Cc:Subject:Date:
-	 Message-ID:X-Mailer:In-Reply-To:References:MIME-Version:
-	 Content-Transfer-Encoding:X-Rspamd-Bar:X-Rspamd-Report:X-Rspamd-Score:
-	 DKIM-Signature;
-	bh=D2VoQ3mzn9IV/deL7z6q7kor82sRFzrWZnuI+dB14N0=;
-	b=oyWMtdIhYPELo9BcisZ6YMiVEcWNHYbPG0KTeDLKE+AdQqdcNiSSefs9MXtYa57oLX2u
-	 LEncOKIF0dKz+PLrCmP3h+LxK4J98iQknk/+tzkhnGsRM6F1z5mUVWmAb41OPZSA0zoLg
-	 82x14K3af/i0Y1aMg5b4vdf5HoQR+FePSh/xKpEu9KpD0aUCUu0TKiWGQjIgWfwcRDHeJ
-	 2jb3Ag6sf1ZB7OKjm7B6KerRFevLWQSIoUX/WPWCvhdxaeNYvaB1IMe8hDClCg1/e5mak
-	 94CW/ZQHWPprL6DOog98Q9pHz6ZfWKmcSEm2vbxBDrmvrrn33NLU/8smJKttdcRDpQw==
+	a=rsa-sha256; c=relaxed/relaxed; t=1794864101;
+	h=DMARC-Filter:DKIM-Signature:X-CSE-ConnectionGUID:X-CSE-MsgGUID:
+	 X-IronPort-AV:X-IronPort-AV:Received:X-CSE-ConnectionGUID:
+	 X-CSE-MsgGUID:X-ExtLoop1:X-IronPort-AV:Received:From:To:Cc:Subject:
+	 Date:Message-Id:X-Mailer:MIME-Version:Organization:
+	 Content-Transfer-Encoding;
+	bh=gaU4V5QT2XafotkQ4bGWfJ1U/5AAyiLVaqJmVjhEYXs=;
+	b=D9fQ1WZq2C+IRYnqP8c/uQ6th9RQV5bUfItvSfHriYxM7wB6Y/Rect31wddM9HNkoBMY
+	 Pdtzl7aiUIUI1XwEbDcF3UWSJWBtUq3JXDDooJ2pUzav4d/I54MJ1Ee3VOsb3Vayrsjl7
+	 08CvSbHH5XEcDWkUl9HqarPmJhVk9kf1pLIBeL/G0ODIqAbNWYlzSXRjB25R3D263Iglq
+	 xu1UOsqYTbcSl0NoKIwvNgc4Ftc2W6VmDGTGRLS+eNDLHl3sfyINDNT6EeKdZi6vtsxPL
+	 r3fXFGswZbO2Qh2qKhY1ePy1azA8N7fnIuPa627C4DcfYOqFkgyL+1K1kYUfdRABEYg==
 ARC-Authentication-Results: i=1; smtp.subspace.kernel.org; 
-	dmarc=pass header.from=lausen.nl;
-	spf=pass smtp.mailfrom=lausen.nl;
-	dkim=pass header.d=lausen.nl header.i=@lausen.nl header.a=rsa-sha256 header.s=uberspace header.b=KZ1PmW7f;
-	arc=none smtp.remote-ip=95.143.172.20
-Received: from mailgate01.uberspace.is (mailgate01.uberspace.is [95.143.172.20])
-	(using TLSv1.3 with cipher TLS_AES_256_GCM_SHA384 (256/256 bits)
-	 key-exchange X25519 server-signature ECDSA (prime256v1))
+	dmarc=pass header.from=intel.com;
+	spf=pass smtp.mailfrom=intel.com;
+	dkim=pass header.d=intel.com header.i=@intel.com header.a=rsa-sha256 header.s=Intel header.b=AFmYUse8;
+	arc=none smtp.remote-ip=192.198.163.13
+Received: from mgamail.intel.com (mgamail.intel.com [192.198.163.13])
+	(using TLSv1.2 with cipher ECDHE-ECDSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.subspace.kernel.org (Postfix) with ESMTPS id 23AB1606A335
-	for <linux-wireless@vger.kernel.org>; Mon, 16 Nov 2026 21:01:55 +0000 (UTC)
-DMARC-Filter: OpenDMARC Filter v1.4.2 smtp.subspace.kernel.org 23AB1606A335
-Authentication-Results: smtp.subspace.kernel.org; dmarc=pass (p=none dis=none) header.from=lausen.nl
-Authentication-Results: smtp.subspace.kernel.org; spf=pass smtp.mailfrom=lausen.nl
+	by smtp.subspace.kernel.org (Postfix) with ESMTPS id D1473606A322
+	for <linux-wireless@vger.kernel.org>; Mon, 16 Nov 2026 21:21:40 +0000 (UTC)
+DMARC-Filter: OpenDMARC Filter v1.4.2 smtp.subspace.kernel.org D1473606A322
+Authentication-Results: smtp.subspace.kernel.org; dmarc=pass (p=none dis=none) header.from=intel.com
+Authentication-Results: smtp.subspace.kernel.org; spf=pass smtp.mailfrom=intel.com
 Authentication-Results: smtp.subspace.kernel.org;
-	dkim=pass (4096-bit key) header.d=lausen.nl header.i=@lausen.nl header.a=rsa-sha256 header.s=uberspace header.b=KZ1PmW7f
-Received: from devico.uberspace.de (devico.uberspace.de [185.26.156.185])
-	by mailgate01.uberspace.is (Postfix) with ESMTPS id 952176044E
-	for <linux-wireless@vger.kernel.org>; Mon, 16 Nov 2026 22:01:53 +0100 (CET)
-Received: (qmail 15164 invoked by uid 990); 16 Nov 2026 21:01:53 -0000
-Authentication-Results: devico.uberspace.de;
-	auth=pass (plain)
-Received: from unknown (HELO unknown) (::1)
-	by devico.uberspace.de (Haraka/3.1.1) with ESMTPSA; Mon, 16 Nov 2026 22:01:53 +0100
-From: Leonard Lausen <leonard@lausen.nl>
-To: Ping-Ke Shih <pkshih@realtek.com>
-Cc: leonard@lausen.nl,
-	Luka Gejak <luka.gejak@linux.dev>,
-	=?UTF-8?q?David=20H=C3=A4rdeman?= <david@hardeman.nu>,
-	Shawn Lin <shawn.lin@rock-chips.com>,
-	Heiko Stuebner <heiko@sntech.de>,
-	linux-wireless@vger.kernel.org,
-	linux-rockchip@lists.infradead.org,
-	linux-kernel@vger.kernel.org
-Subject: [PATCH rtw-next v3 2/2] wifi: rtw88: sdio: combine free TX page register reads
-Date: Mon, 16 Nov 2026 20:57:40 +0000
-Message-ID: <20261116205739.462458-6-leonard@lausen.nl>
-X-Mailer: git-send-email 2.47.3
-In-Reply-To: <20261116205739.462458-2-leonard@lausen.nl>
-References: <20261116205739.462458-2-leonard@lausen.nl>
+	dkim=pass (2048-bit key) header.d=intel.com header.i=@intel.com header.a=rsa-sha256 header.s=Intel header.b=AFmYUse8
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple;
+  d=intel.com; i=@intel.com; q=dns/txt; s=Intel;
+  t=1794864101; x=1826400101;
+  h=from:to:cc:subject:date:message-id:mime-version:
+   content-transfer-encoding;
+  bh=roOiGzKbJnNzWQWvM0JQZNAi8GyiRoQFVNx4StucNYs=;
+  b=AFmYUse80RLyoKrSrsugPxTXoGtdGO1QqrOOZ/JE6z+go4GBoa9TZKc8
+   CNcVjKUUta2Lh0d+nY9vEOCbNeknxRbmKLOX8ieZx6GZKhrbqQ23uAJuR
+   tkYwyz4tpfR3DKiB3rGvsJ/CsZ+dz9dENBNNI3tc6CrHit9y3bFuzPrtR
+   SpLlps11XGWJ3CZyWr0Kgv0Yd8uHyTB+HpL44CuWN/Z+JRQV02PVMNnfC
+   gOAKs5LNOjlo5o9F+UfmKy6kSDso2qAooHfKZUEJkiDJRz9Cpg8/DOa33
+   RYSIxUpxYdZhZ+4LANCZtVJqQeGl43++hU8Ss+P0+8la249oU4/4iRJsf
+   g==;
+X-CSE-ConnectionGUID: ustrU5OERAu58MfjIRKdTQ==
+X-CSE-MsgGUID: mrykJrNPS/W8pS7aJ31ziA==
+X-IronPort-AV: E=McAfee;i="6800,10657,11968"; a="3604182"
+X-IronPort-AV: E=Sophos;i="6.27,217,1787036400"; 
+   d="scan'208";a="3604182"
+Received: from fmviesa006.fm.intel.com ([10.60.135.146])
+  by fmvoesa107.fm.intel.com with ESMTP/TLS/ECDHE-RSA-AES256-GCM-SHA384; 16 Nov 2026 13:21:40 -0800
+X-CSE-ConnectionGUID: HHOO3aw9R9e0kAbXIJlJdw==
+X-CSE-MsgGUID: SxdyXMB8RN2Q5kZA4lyObg==
+X-ExtLoop1: 1
+X-IronPort-AV: E=Sophos;i="6.27,217,1787036400"; 
+   d="scan'208";a="9969071"
+Received: from weis0040.iil.intel.com ([10.12.217.108])
+  by smtpauth.intel.com with ESMTP/TLS/ECDHE-RSA-AES256-GCM-SHA384; 16 Nov 2026 13:21:39 -0800
+From: Miri Korenblit <miriam.rachel.korenblit@intel.com>
+To: miriam.rachel.korenblit@intel.com
+Cc: linux-wireless@vger.kernel.org
+Subject: [PATCH iwlwifi-next 00/15] wifi: iwlwifi: updates - 2026-11-16
+Date: Mon, 16 Nov 2026 23:23:18 +0200
+Message-Id: <20261116212333.2404653-1-miriam.rachel.korenblit@intel.com>
+X-Mailer: git-send-email 2.34.1
 X-Mailing-List: linux-wireless@vger.kernel.org
 List-Id: <linux-wireless.vger.kernel.org>
 List-Post: <mailto:linux-wireless@vger.kernel.org>
@@ -67,153 +77,79 @@ List-Unsubscribe: <mailto:linux-wireless+unsubscribe@vger.kernel.org>
 List-Owner: <mailto:linux-wireless+owner@vger.kernel.org>
 Precedence: list
 MIME-Version: 1.0
+Organization: Intel Israel (74) Limited
 Content-Transfer-Encoding: 8bit
-X-Rspamd-Bar: -----
-X-Rspamd-Report: REPLY(-4) BAYES_HAM(-3) MID_CONTAINS_FROM(1) MIME_GOOD(-0.1) FUZZY_BULK(0.099999) R_MISSING_CHARSET(0.5)
-X-Rspamd-Score: -5.5
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple;
-	d=lausen.nl; s=uberspace;
-	h=from:to:cc:subject:date;
-	bh=u9zBG78NfuqjnWbNtLn07MUPutjuv/dSBbMhffUUwS0=;
-	b=KZ1PmW7fDHjXhhn4bQ81uyNP9B6k/7SP81W5TgD7gfpkpqhy4ITvCLyYcOKCYFMMrJqewTMm+A
-	CfJOVtnzLftAjm++4Umo1glEKFzGBLXWsMIrH8mJzaBvoa5P9p6S4FQbjgX4dY8HpcqnaX3LDx4I
-	EUE3e2+DCOVP14/s09Z3m2AamxPHcY5a/VaIZ3QSWEZjfPU90Bk91+B0SzA1/6ngojU4Drc/w1jy
-	nJgbUsw6vPEujy84+oo0eUEnYv0O+qXelOejXfjz7x5Wyn4RAeevPRuAOxYaT0JsQssKgK5ZqsoC
-	au7DotyJgYdXaend+quo+Zl54V8xf6vKvdYsbQaEperQVWQVtOCAKRZ0IveBXb4dgky9zovQO7Up
-	y7diWy2PWXa+erfFnFe3Zdm+mj8vLqezutTbrvU89N6NBWo5lPpE0fwOSYd9DxbALDzmAC0A165u
-	FrTZLbt9j/hQ3N8XcTxxjJiYpFCYDrTZIpFVGBtc/x+AxdQ0J34+kuzXt+4b7dfmh+aPnID3lRDc
-	ug8jBrgGUZQJ2mNs2IMAGciGpsVmI/CqA9cZFGiexWA/PBHXWhtxFY/nBKZBdcnRtnd+CdV0Jtr1
-	8Db9NFNu4fmBs6GNzdOyZsVW/GsyxxVX/XK2bYw6UyoLiDP9OR2C3y+QKCZCemoiuHLobqKiu/Q0
-	w=
 
-TX capacity checks on non-8051 chips read three adjacent 32-bit registers
-in separate SDIO requests. Combine them into one 12-byte CMD53 read when
-the existing power/alignment check permits it, with the per-register
-fallback otherwise. Propagate read errors before checking queue capacity.
+Hi,
+Usual features, fixes and cleanups from our internal tree.
 
-Allocate a DMA-safe buffer at probe and copy its little-endian values
-into the caller's array before releasing the host. Holding the host
-through the read and copy serializes access to the shared buffer.
-
-Signed-off-by: Leonard Lausen <leonard@lausen.nl>
+Thanks,
+Miri
 ---
- drivers/net/wireless/realtek/rtw88/sdio.c | 64 +++++++++++++++++++++--
- drivers/net/wireless/realtek/rtw88/sdio.h |  1 +
- 2 files changed, 61 insertions(+), 4 deletions(-)
 
-diff --git a/drivers/net/wireless/realtek/rtw88/sdio.c b/drivers/net/wireless/realtek/rtw88/sdio.c
-index ecd4d751c05a5..09337acb76749 100644
---- a/drivers/net/wireless/realtek/rtw88/sdio.c
-+++ b/drivers/net/wireless/realtek/rtw88/sdio.c
-@@ -26,6 +26,7 @@
- #define RTW_SDIO_TX_FIFO_HIWATER			16
- #define RTW_SDIO_TX_FIFO_LOWATER			8
- #define RTW_SDIO_TX_RETRY_DELAY			msecs_to_jiffies(1)
-+#define RTW_SDIO_FREE_TXPG_COUNT			3
- 
- static bool rtw_sdio_is_bus_addr(u32 addr)
- {
-@@ -675,6 +676,43 @@ static atomic_t *rtw_sdio_8723bs_free_txpg(struct rtw_dev *rtwdev, u8 queue)
- 	}
- }
- 
-+static int rtw_sdio_read_free_txpg(struct rtw_dev *rtwdev, u32 *free_txpg)
-+{
-+	u32 addr = rtw_sdio_to_bus_offset(rtwdev, REG_SDIO_FREE_TXPG);
-+	struct rtw_sdio *rtwsdio = (struct rtw_sdio *)rtwdev->priv;
-+	bool bus_claim = rtw_sdio_bus_claim_needed(rtwsdio);
-+	int i, ret;
-+
-+	if (bus_claim)
-+		sdio_claim_host(rtwsdio->sdio_func);
-+
-+	if (!rtw_sdio_use_memcpy_io(rtwdev, addr, sizeof(u32))) {
-+		for (i = 0; i < RTW_SDIO_FREE_TXPG_COUNT; i++) {
-+			free_txpg[i] = rtw_sdio_readl(rtwdev,
-+						      addr + i * sizeof(u32),
-+						      &ret);
-+			if (ret)
-+				break;
-+		}
-+		goto out;
-+	}
-+
-+	ret = sdio_memcpy_fromio(rtwsdio->sdio_func,
-+				 rtwsdio->free_txpg_buf, addr,
-+				 RTW_SDIO_FREE_TXPG_COUNT * sizeof(__le32));
-+	if (!ret) {
-+		/* Copy the shared DMA buffer before releasing the host. */
-+		for (i = 0; i < RTW_SDIO_FREE_TXPG_COUNT; i++)
-+			free_txpg[i] = le32_to_cpu(rtwsdio->free_txpg_buf[i]);
-+	}
-+
-+out:
-+	if (bus_claim)
-+		sdio_release_host(rtwsdio->sdio_func);
-+
-+	return ret;
-+}
-+
- static int rtw_sdio_check_free_txpg(struct rtw_dev *rtwdev, u8 queue,
- 				    size_t count)
- {
-@@ -727,11 +765,15 @@ static int rtw_sdio_check_free_txpg(struct rtw_dev *rtwdev, u8 queue,
- 		/* add the pages from the public queue */
- 		pages_free += (free_txpg >> 24) & 0xff;
- 	} else {
--		u32 free_txpg[3];
-+		u32 free_txpg[RTW_SDIO_FREE_TXPG_COUNT];
-+		int ret;
- 
--		free_txpg[0] = rtw_sdio_read32(rtwdev, REG_SDIO_FREE_TXPG);
--		free_txpg[1] = rtw_sdio_read32(rtwdev, REG_SDIO_FREE_TXPG + 4);
--		free_txpg[2] = rtw_sdio_read32(rtwdev, REG_SDIO_FREE_TXPG + 8);
-+		ret = rtw_sdio_read_free_txpg(rtwdev, free_txpg);
-+		if (ret) {
-+			rtw_warn(rtwdev, "Failed to read free TX pages: %d\n",
-+				 ret);
-+			return ret;
-+		}
- 
- 		switch (queue) {
- 		case RTW_TX_QUEUE_BCN:
-@@ -1782,6 +1824,7 @@ static void rtw_sdio_deinit_tx(struct rtw_dev *rtwdev)
- int rtw_sdio_probe(struct sdio_func *sdio_func,
- 		   const struct sdio_device_id *id)
- {
-+	struct rtw_sdio *rtwsdio;
- 	struct ieee80211_hw *hw;
- 	struct rtw_dev *rtwdev;
- 	int drv_data_size;
-@@ -1805,6 +1848,19 @@ int rtw_sdio_probe(struct sdio_func *sdio_func,
- 	if (ret)
- 		goto err_release_hw;
- 
-+	rtwsdio = (struct rtw_sdio *)rtwdev->priv;
-+	if (!rtw_chip_wcpu_8051(rtwdev)) {
-+		rtwsdio->free_txpg_buf =
-+			devm_kmalloc_array(rtwdev->dev,
-+					   RTW_SDIO_FREE_TXPG_COUNT,
-+					   sizeof(*rtwsdio->free_txpg_buf),
-+					   GFP_KERNEL);
-+		if (!rtwsdio->free_txpg_buf) {
-+			ret = -ENOMEM;
-+			goto err_deinit_core;
-+		}
-+	}
-+
- 	rtw_dbg(rtwdev, RTW_DBG_SDIO,
- 		"rtw88 SDIO probe: vendor=0x%04x device=%04x class=%02x",
- 		id->vendor, id->device, id->class);
-diff --git a/drivers/net/wireless/realtek/rtw88/sdio.h b/drivers/net/wireless/realtek/rtw88/sdio.h
-index 6e7e6009744b0..5c2337ccffb2a 100644
---- a/drivers/net/wireless/realtek/rtw88/sdio.h
-+++ b/drivers/net/wireless/realtek/rtw88/sdio.h
-@@ -181,6 +181,7 @@ struct rtw_sdio {
- 	atomic_t tx_oqt_free;
- 	/* one writer at a time between the credit check and the accounting */
- 	struct mutex tx_credit_lock;
-+	__le32 *free_txpg_buf;
- };
- 
- extern const struct dev_pm_ops rtw_sdio_pm_ops;
+Benjamin Berg (2):
+  wifi: iwlwifi: mld: handle CIP key installation
+  wifi: iwlwifi: mld: enable Control Integrity Protocol support
+
+Emmanuel Grumbach (3):
+  wifi: iwlwifi: mld: set cip_defer before association
+  wifi: iwlwifi: mld: support CIGTK rekey in D3
+  wifi: iwlwifi: stop the firmware completely after the reset handshake
+
+Johannes Berg (2):
+  wifi: iwlwifi: mld: request per-STA GTKs for the AP
+  wifi: iwlwifi: partially enable context analysis
+
+Miri Korenblit (6):
+  wifi: iwlwifi: rename IWL_MAX_CMD_TBS_PER_TFD
+  wifi: iwlwifi: mld: dump the FW error logs from dump_error
+  wifi: iwlwifi: dbg: rename the time point sync argument
+  wifi: iwlwifi: don't send sync host commands from atomic context
+  wifi: iwlwifi: mld: PHC: don't read GP2 under the PTP spinlock
+  wifi: iwlwifi: mld: take the PTP lock for the monitor timestamp
+
+Pagadala Yesu Anjaneyulu (2):
+  wifi: iwlwifi: move UEFI GUID lock status to transport
+  wifi: iwlwifi: add PDGC platform config reader
+
+ drivers/net/wireless/intel/iwlwifi/Makefile   |   2 +
+ drivers/net/wireless/intel/iwlwifi/fw/acpi.c  |  43 ++++-
+ drivers/net/wireless/intel/iwlwifi/fw/acpi.h  |  16 +-
+ .../wireless/intel/iwlwifi/fw/api/datapath.h  |   2 +
+ .../net/wireless/intel/iwlwifi/fw/dbg-old.c   |   3 +
+ drivers/net/wireless/intel/iwlwifi/fw/dbg.c   |  21 +++
+ drivers/net/wireless/intel/iwlwifi/fw/init.c  |   2 -
+ .../wireless/intel/iwlwifi/fw/notif-wait.c    |   7 +-
+ .../wireless/intel/iwlwifi/fw/notif-wait.h    |  20 ++-
+ .../wireless/intel/iwlwifi/fw/regulatory.c    |  28 +++-
+ .../wireless/intel/iwlwifi/fw/regulatory.h    |   4 +-
+ .../net/wireless/intel/iwlwifi/fw/runtime.h   |   4 -
+ drivers/net/wireless/intel/iwlwifi/fw/uefi.c  |  52 ++++--
+ drivers/net/wireless/intel/iwlwifi/fw/uefi.h  |  22 ++-
+ .../net/wireless/intel/iwlwifi/iwl-dbg-tlv.c  |  22 ++-
+ .../net/wireless/intel/iwlwifi/iwl-dbg-tlv.h  |   2 +-
+ .../intel/iwlwifi/iwl-devtrace-iwlwifi.h      |   4 +-
+ .../wireless/intel/iwlwifi/iwl-nvm-parse.c    |   3 +
+ .../net/wireless/intel/iwlwifi/iwl-trans.c    |  10 +-
+ .../net/wireless/intel/iwlwifi/iwl-trans.h    |  38 +++--
+ drivers/net/wireless/intel/iwlwifi/mld/d3.c   | 158 +++++++++++-------
+ drivers/net/wireless/intel/iwlwifi/mld/key.c  |  49 +-----
+ drivers/net/wireless/intel/iwlwifi/mld/key.h  |   6 +-
+ .../net/wireless/intel/iwlwifi/mld/mac80211.c |  44 +++--
+ drivers/net/wireless/intel/iwlwifi/mld/mld.c  |  21 ++-
+ drivers/net/wireless/intel/iwlwifi/mld/ptp.c  |  10 +-
+ .../wireless/intel/iwlwifi/mld/regulatory.c   |   2 -
+ drivers/net/wireless/intel/iwlwifi/mld/rx.c   |  11 +-
+ drivers/net/wireless/intel/iwlwifi/mld/sta.c  |  31 +++-
+ drivers/net/wireless/intel/iwlwifi/mvm/fw.c   |   2 -
+ .../wireless/intel/iwlwifi/pcie/internal.h    |  18 +-
+ .../wireless/intel/iwlwifi/pcie/trans-gen2.c  |   3 +
+ .../net/wireless/intel/iwlwifi/pcie/trans.c   |   6 +
+ .../net/wireless/intel/iwlwifi/pcie/tx-gen2.c |  10 +-
+ drivers/net/wireless/intel/iwlwifi/pcie/tx.c  |  12 +-
+ .../net/wireless/intel/iwlwifi/pcie/utils.h   |   7 +-
+ 36 files changed, 452 insertions(+), 243 deletions(-)
+
+-- 
+2.34.1
+
