@@ -1,83 +1,83 @@
-Authentication-Results: smtp.subspace.kernel.org; arc=none smtp.remote-ip=209.85.128.44
+Authentication-Results: smtp.subspace.kernel.org; arc=none smtp.remote-ip=209.85.128.47
 ARC-Seal: i=1; d=subspace.kernel.org; s=arc20261015; a=rsa-sha256; cv=none;
-	t=1794865753;
-	b=pVbDwroTC1fkSTl2DuY2V7f6inbBGftfpGWfhGZyDTBJOuDFGOHi1SkIaWyCA4yI9B1A
-	 Dlt5nd63mqjaVCNh3qOyqQ3MRcAuh7fOgxteaWFSN8u5sY9gVH/70uGnjthyq/cbmYd+c
-	 ay0VDJf5no8SXNAZQmzmQWZTnzM3y/FoYcrCEFYmup6Z7UoeK2amcUpAhj06hH4KdIP1c
-	 ZP1KOWeHLjrKtrIKeu454We+FhH/4VR4ePDW7M6GyA+48+GRPkZyhO6eDTjuJ5lIdDDt7
-	 qdL4S6N9F4QCHxzdkJwPdL6FNzhIlRGlCcmVX1K+sXZkIYhXsHH6MybAky/EzmAge4g==
+	t=1794865776;
+	b=Si5g4q52JMWG5VSZdQycCZrFTSCxClvYPxyyzu2sy2fcKO5XTGStI7pc1mICrhUb55mv
+	 KeGxVTp2bvdyt5x2UghDsvnWFhkICu72ClzOd6umxvn/Y94OxRzN3fDjx99ImuYcnyk19
+	 lfRHXo4eKc7YKdt3jcrTeQOx8Sa5UvxlljtWoGrceXkBpJMfv3sodCzvcqcVRSnt52X2f
+	 wIWVuS72YnUAeql3qBRYgtBbZwaiIuwcjw/GK6JSFlp1j7ZGuX5VUNyprrTTwy86iOUb9
+	 zS4TT34j5Xjzas7Tj1tAQUgevf+yD8dvdl5GDqCitX/aBuZODHNqQa/kg4JH9fGzyZQ==
 ARC-Message-Signature: i=1; d=subspace.kernel.org; s=arc20261015;
-	a=rsa-sha256; c=relaxed/relaxed; t=1794865753;
+	a=rsa-sha256; c=relaxed/relaxed; t=1794865776;
 	h=DMARC-Filter:Received:DKIM-Signature:X-Google-DKIM-Signature:
 	 X-Forwarded-Encrypted:X-Gm-Message-State:X-Gm-Gg:X-Received:Received:
 	 From:To:Cc:Subject:Date:Message-ID:X-Mailer:In-Reply-To:References:
 	 MIME-Version:Content-Transfer-Encoding;
-	bh=MWS9HuyyNmrnPfnUOwmph9d5xBJHBzx5A67xlVtIv9M=;
-	b=CcCDoSX9xZO8I2YJQLS89nHAnyrFX74g7m+w7XJSrC4pn6cwgkgQ6qnEUTnGezd/P8du
-	 TGj9Sb1UPoeK+XJPy3efrp13OfnVGQKt2Lkv6onM6zfqUr44Rhcka4zy3/lSmOyFRuaAD
-	 hwO/naqm7q7y9xffrUUhQJRm7EaKbNPMVrxck13MK6jj8MOrUzQ0kpjVrVpKHiQlvyBPU
-	 0dfOyyp4Y7YwzLeL0vDWqPN47gShVPvcOzi+bImfYMI7+a2100QCqaKzmqEeKvXh9eOuG
-	 uOy3825s4Njs+nipL+RcSBW6TZQxq+VJDv6+D6rWnqkO+uQj09MI3tbYAXcONW7hnEg==
+	bh=uakBzQHpnruk0tRar0RXS2ZBRRSBv/kAwPvqULpDtWY=;
+	b=E4P+xaMCac87nIEQ33lDBZsMHNlTgLuoE4ZwXEZ28LyUewccGARokB2lQA6K2mYmNmmG
+	 X9Vo5iGbSn2hgEyamJZzoR6SRYsFv3OFzfc4jOw1bVhRMFJmBGw+3ItbAQVUc2PKOfGKh
+	 MJb9PNC8ZHbEYjwfEadgCMAVjbeCViVN+5HMcd8FCzTimLv3848eq0Z6rqgy0yxliN2/1
+	 hI3dmD/cJpWP7tg9FVQEJlg7FzS5WMKZoLKr9F8OpDff7Dq/aGM1B6qnPtjSZ8YAehX6n
+	 GXVzwZAarIdtKunRw3idZ52SOoz109iG+EBdT5fuxu+NdCiRsGs+ONEjDQIwadIyZng==
 ARC-Authentication-Results: i=1; smtp.subspace.kernel.org; 
 	dmarc=pass header.from=gmail.com;
 	spf=pass smtp.mailfrom=gmail.com;
-	dkim=pass header.d=gmail.com header.i=@gmail.com header.a=rsa-sha256 header.s=20260707 header.b=d7JHDbwk;
-	arc=none smtp.remote-ip=209.85.128.44
-Received: from mail-wm1-f44.google.com (mail-wm1-f44.google.com [209.85.128.44])
+	dkim=pass header.d=gmail.com header.i=@gmail.com header.a=rsa-sha256 header.s=20260707 header.b=E+hjxuO7;
+	arc=none smtp.remote-ip=209.85.128.47
+Received: from mail-wm1-f47.google.com (mail-wm1-f47.google.com [209.85.128.47])
 	(using TLSv1.3 with cipher TLS_AES_128_GCM_SHA256 (128/128 bits)
 	 key-exchange X25519 server-signature ECDSA (prime256v1) server-digest SHA256)
 	(No client certificate requested)
-	by smtp.subspace.kernel.org (Postfix) with ESMTPS id 62F1F606A32A
-	for <linux-wireless@vger.kernel.org>; Mon, 16 Nov 2026 21:49:12 +0000 (UTC)
-DMARC-Filter: OpenDMARC Filter v1.4.2 smtp.subspace.kernel.org 62F1F606A32A
+	by smtp.subspace.kernel.org (Postfix) with ESMTPS id 90E08606A323
+	for <linux-wireless@vger.kernel.org>; Mon, 16 Nov 2026 21:49:36 +0000 (UTC)
+DMARC-Filter: OpenDMARC Filter v1.4.2 smtp.subspace.kernel.org 90E08606A323
 Authentication-Results: smtp.subspace.kernel.org; dmarc=pass (p=none dis=none) header.from=gmail.com
 Authentication-Results: smtp.subspace.kernel.org; spf=pass smtp.mailfrom=gmail.com
 Authentication-Results: smtp.subspace.kernel.org;
-	dkim=pass (2048-bit key) header.d=gmail.com header.i=@gmail.com header.a=rsa-sha256 header.s=20260707 header.b=d7JHDbwk
-Received: by mail-wm1-f44.google.com with SMTP id 5b1f17b1804b1-4a140e7405dso41177685e9.3
-        for <linux-wireless@vger.kernel.org>; Mon, 16 Nov 2026 13:49:12 -0800 (PST)
+	dkim=pass (2048-bit key) header.d=gmail.com header.i=@gmail.com header.a=rsa-sha256 header.s=20260707 header.b=E+hjxuO7
+Received: by mail-wm1-f47.google.com with SMTP id 5b1f17b1804b1-4a5b2be99a8so27049795e9.2
+        for <linux-wireless@vger.kernel.org>; Mon, 16 Nov 2026 13:49:36 -0800 (PST)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=gmail.com; s=20260707; t=1794865751; x=1795470551; darn=vger.kernel.org;
+        d=gmail.com; s=20260707; t=1794865775; x=1795470575; darn=vger.kernel.org;
         h=content-transfer-encoding:mime-version:references:in-reply-to
          :message-id:date:subject:cc:to:from:from:to:cc:subject:date
          :message-id:reply-to:content-type;
-        bh=MWS9HuyyNmrnPfnUOwmph9d5xBJHBzx5A67xlVtIv9M=;
-        b=d7JHDbwk9VEEBpl0ifoxlONZ+rcxz3lAMH/W2wIUaMRsM79hzjnd1QcdK3mtEVeq0p
-         54gr2ZSz+kTtofnFVXmVydA09j/Eyv1JBsDTOlYKZcxFwYiz94TWnzN4rgYpe/7OlE+a
-         O2rP4G0F3lyI5MRIFXt1rObFAHHn+WhS/cTK1WJJzlvkVBfi6lFajp0Tszyem3hXcsIG
-         hxaj3JDAtoEXyhp7sTvMMnhtH1sBO8NPSn0HODnOHpi1qrzMjPa52+uoO2+Gq+Q0BN/Q
-         gYKR4XnkDpTFS9Q0hyed8/tblKEm5WQOWJnHyztcXRVbSHvMgKZ0Yy8NuLTY2wIzgAvL
-         I7uA==
+        bh=uakBzQHpnruk0tRar0RXS2ZBRRSBv/kAwPvqULpDtWY=;
+        b=E+hjxuO7iKRJ3ueT3ZvIUPsmnnATLyhItSygXKlGMjYCVBAqIsaxwYyBS7WtFRNa2d
+         FAyI4n8S0MnvngzX2NIilIZ6REX3+ej4wliGoq9olX7jUaOUFnuZ6NHbnreJikmMa+zC
+         dfQheHijyPWjUdisMEUTyhIQIVkWbdVf71/CNoC7acdTDXKyrdqVSPdu3M7Caw81xUYq
+         qiRaDxGxbjmmUVNcXVoZr+Rd8b5ut9GexxUR6Gsm+22VM+jEwktVh36jLU1BvMx0GFpS
+         8Y+B19/v67a7W0WhIKz8UBqhq5DYijPx4bPUC+m/Gq1Hb3lYD9ewQ2XytPivwRA1VYzf
+         CnwA==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=1e100.net; s=20260707; t=1794865751; x=1795470551;
+        d=1e100.net; s=20260707; t=1794865775; x=1795470575;
         h=content-transfer-encoding:mime-version:references:in-reply-to
          :message-id:date:subject:cc:to:from:x-gm-gg:x-gm-message-state:from
          :to:cc:subject:date:message-id:reply-to:content-type;
-        bh=MWS9HuyyNmrnPfnUOwmph9d5xBJHBzx5A67xlVtIv9M=;
-        b=c9D2glNJHPrbpXOUovyBrJkC3zamIjMdRo6y+lyFZVzOlyX6G59MEuWw2YBycEffgT
-         oiW5nphBmW/EGH2JEAAyF5XWSAU8V0qyjLkCew+8D3N1cuQ7FxtyTCEUkTB23nGDPKb5
-         s4IjEZeVwrZrtzWC/r1NKEH98o4vixcqaXmcpZ+uJQHMOwnpN73vBGLNB4tDuOhHTgxR
-         Flk3tz2P00o7C1NYA5C+IlMJCXjF65jTxpEzU1V1ihpWRp3OeNkqvOmxwEBi53Y4zsvs
-         Mx2DHo8Bk60S3zziFc09tMjL5kI/UhJISd6tPc9FH5DBcBrz0sfTxOcgAnCKaMzpTf3i
-         sD3w==
-X-Forwarded-Encrypted: i=1; AL+hErGJiHC1HoJbQkAGfEYOY5q7XLwc5gfANRDECwes6dmWyo0YwXPowV23Q5F1K+P3b/DvKooeMwMBw9gPg0rQLA==@vger.kernel.org
-X-Gm-Message-State: APuU4Z8VDjvqEUDl0ChP9QSDu4umBahGjtHi3e9CazSvE88Kc/52ktAd
-	cqGW5U4caLmnXlq2dkGeY6XtYcGtjZvW0dY08wI0iH+hje8Pi93z9V6zWkLjfURI
-X-Gm-Gg: AYBFou2g6rUDpKdJ3BOc2t/NX+HmNklXhPc0g2j/EWBs6nC5tIWsXj5WosdOi9OmTr1
-	qN6Is+WDCTLUlzm3/LskvAguUSzigqPD/4QInyYPgpnh+i/8L2qdPd3YhLfal0T6IZJtCsrAGzl
-	NYDyvCh3udU+fO6ZwVfpaqqhpoA8U2hmWGBTa0btu1zPdQ357k2hluLmZLc3aYZwzhjbK5VfFY1
-	VP9NEB5vVG9hxNXvFw3Sciwm679BY8njASMcF935bE69O+DdY1NCpo+0DnOm0Y05k5t67A73Kps
-	1q2qjYDrgXIuPkdfhHcILJgAtwM/r0oWHjY9MPXluSS/8J3Sbmrf9XLTmfVI5ryhMLiC+zAYtqo
-	8LzSt/uBOovy7DZ/sR8ez7OtTPPkxT4pIRnu5azelH/0IvJKBaWH1z1OJnlganMQ+BgimVBgm7W
-	pdbXx5oQfz6VW95rO02Qze5KPMEVLN3pAw56zuB2ApaZbmu0d3q4VX0azF3s8Hb43+G6xYsPPfk
-	tZlVA6GpZmf6wHXSqEAw9vnCCofb6RrH1laR3e3pNtRiB9UoOC0RZvE0hHhLb9RFi8ppm0JT+FS
-	mqfbwF6nOqaqtsmTMGt/V1K9S+34/x2HaDc=
-X-Received: by 2002:a05:600c:34d0:b0:4a2:133:45e1 with SMTP id 5b1f17b1804b1-4bb55a59f41mr248892725e9.24.1794865751381;
-        Mon, 16 Nov 2026 13:49:11 -0800 (PST)
+        bh=uakBzQHpnruk0tRar0RXS2ZBRRSBv/kAwPvqULpDtWY=;
+        b=rdTvA236qtIOtqfq43NlYBL0OmKtF4MEio0VyEvipDbVnM2IsdFeMUbVw8hW+/8Kn5
+         L9In2nkAnfWRwoWcJUd6hNqtr/7IPe9IWaCrhheoYbkHtP025ObWZnEs5POTE6x+sQef
+         u1C8t2hPtvmgGfjn6SGRpdhBxBuCiXMuWxcPOeFn//2Ao6yy37bxIkZQ4bOEgFm3FeYo
+         76HBfovunB/sJSTaH+c4C81nu7Px25vBHey0Q8EIGEjLFdkDu1Chvl+rb8Hsz7eRin+o
+         ZVJlKgEVJEdG82GJEDpov+pXqDf1UzPXGfEuuWbOmmXCx1p9z2ME0bYDhB3rGjueJWb1
+         9MXg==
+X-Forwarded-Encrypted: i=1; AL+hErHZbzXU7+wAaTVvHiswi1ITe8/gtVTL6wAd0NJE9slsz/GwrzHjtowuVEexZQhSKOy3t/qaaBhlaaHUQzbIKg==@vger.kernel.org
+X-Gm-Message-State: APuU4Z/RbZYG6tmoc+ilO65iOi0NABz0D2sra7TwjOs6nKA97xieGLen
+	WNM1+1D910dI3eUI4DJ43D1Kcxvc6i3ebChWWEQ6Ismx4HK+2aLnuSFR
+X-Gm-Gg: AYBFou1mt9JKTbXj7hwfYu49AiDdBPfmonlupRDXu3Rc1/ZKvBVgt5SXD273xlBLmvW
+	6mgV6p0grrHzNfytixaqOJ9l2yUiTjYOCIeuUvvJR9QbqbUXn2z+FSnpQgUB1OIjWn+g1uqSPMZ
+	BhT6w7jYuaWWvTQkRMPDClujg3E7vUs88PEzdZ36YdL6eqLJBI/32z6tc3D3HS01CxNhIHif4TR
+	L7jm8TMvuHJldDsyTOXze8HY30tuqHzRFja45/fRfEAn3C6ThL23+TRf4G8ipHoCY2qaP9Tbxkf
+	YEys1oE5VSVNROOmA5n/igMPetEaTJaw/dyz+poNnqw2Ov3+aOzO7qiG5xzO0Ux423wX0UV/J1f
+	TC4Ydz8lpDDcpNLUa3Hj3di5W840YSYsno/9pugSwUulqaJpTcruGNiXm7/1PdY+K6yjl+XJOKB
+	zbdXIsK1pEH+XfQt4skmyWp7+78y0ksb6NXLPNFdmmRLqq/4kfT3MQMQqANHbs9zdYdTcY3IFpd
+	ZbHNtxbaARkNthFyDuSKr2MqwgotwUaZ4OajpQJwMZ+WqdrTca2h/7CtTQvsnhMMW6u++Fxn8kk
+	NmnfUvLrT5H9SFLOaefY7Z3J2mG1ZEvkIno=
+X-Received: by 2002:a05:600d:2:b0:4ba:761:c0c5 with SMTP id 5b1f17b1804b1-4bb55a581e6mr192961515e9.5.1794865774974;
+        Mon, 16 Nov 2026 13:49:34 -0800 (PST)
 Received: from deb05.proceq.com ([213.160.61.66])
-        by smtp.gmail.com with ESMTPSA id 5b1f17b1804b1-4bb7843bd79sm16434045e9.14.2026.11.16.13.49.10
+        by smtp.gmail.com with ESMTPSA id 5b1f17b1804b1-4bb783f7eecsm30265735e9.3.2026.11.16.13.49.34
         (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
-        Mon, 16 Nov 2026 13:49:10 -0800 (PST)
+        Mon, 16 Nov 2026 13:49:34 -0800 (PST)
 From: Mehmet Fide <mehmet.fide@gmail.com>
 To: Luka Gejak <luka.gejak@linux.dev>
 Cc: Ping-Ke Shih <pkshih@realtek.com>,
@@ -85,11 +85,11 @@ Cc: Ping-Ke Shih <pkshih@realtek.com>,
 	linux-wireless@vger.kernel.org,
 	linux-kernel@vger.kernel.org,
 	mehmet.fide@screeningeagle.com
-Subject: Re: [PATCH rtw-next v11 2/3] wifi: rtw88: support channel switch in AP mode
-Date: Mon, 16 Nov 2026 22:49:09 +0100
-Message-ID: <20261116214909.1569237-1-mehmet.fide@gmail.com>
+Subject: Re: [PATCH rtw-next v11 3/3] wifi: rtw88: time the countdown downloads from the TBTT
+Date: Mon, 16 Nov 2026 22:49:33 +0100
+Message-ID: <20261116214933.1569681-1-mehmet.fide@gmail.com>
 X-Mailer: git-send-email 2.56.0
-In-Reply-To: <59C03074-784F-41CE-A27D-EF3F30773D77@linux.dev>
+In-Reply-To: <781999FE-B0CB-4D6E-8A1B-06A38082202F@linux.dev>
 References: 
 X-Mailing-List: linux-wireless@vger.kernel.org
 List-Id: <linux-wireless.vger.kernel.org>
@@ -104,26 +104,19 @@ Content-Transfer-Encoding: 8bit
 
 Hi Luka,
 
-All three are right, thanks.
+> Could the next step wait for a TBTT that can send the first download,
+> including when the first work has missed its scheduled one?
 
-> Could a failed download keep that count pending for a retry before
-> allowing completion?
+Yes. In v12 each step reads the TSF after its download and queues the
+next one 10 ms after the first TBTT at least 10 ms away, so every count,
+the first too, has a TBTT. A step that would run less than 5 ms after
+a TBTT or less than 10 ms before one waits until 10 ms after that TBTT.
 
-Yes. v12 downloads the same count again at the next step and calls
-ieee80211_csa_finish() only after the count of 1 reached the firmware.
-With the first download of a countdown failed on purpose and a count of
-2, v11 switched with no CSA beacon on the air in 5 of 5 tries. v12 sent
-every count in 30 of 30 with counts 2 and 5 on an RTL8821CU, an
-RTL8822BU and an RTL8822CE.
+With the first work held back by 90 to 100 ms and a count of 2, v11
+switched without any CSA beacon in 10 of 12 tries. With v12 and the
+first work held back by 95 ms, every count went out in 48 of 50
+switches with counts 2 and 5 on an RTL8821CU, an RTL8822BU and an
+RTL8822CE; in the other two one count is missing in the capture.
 
-> Maybe the refresh should not depend on csa_vif still being set?
-
-v12 refreshes the page in rtw_ops_stop_ap() whenever a station interface
-stays, and the work no longer clears csa_vif, only the driver ops do.
-
-> Could the AP be found without allocating an entry?
-
-v12 keeps the interface of the countdown in rtw_ops_suspend() and starts
-it again in rtw_ops_resume(), without iterating.
-
+Thanks,
 Mehmet
