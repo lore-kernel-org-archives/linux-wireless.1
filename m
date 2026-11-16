@@ -1,49 +1,79 @@
-Authentication-Results: smtp.subspace.kernel.org; arc=none smtp.remote-ip=13.77.154.182
-ARC-Seal: i=1; d=subspace.kernel.org; s=arc20261015; a=rsa-sha256; cv=none;
-	t=1794857080;
-	b=hYge3uEIbGLs4a2VMEWoFVrkm6JEbtqYOBV3P07apNzmD56jSfB8rtSn6SavgJSNqqRo
-	 WCd6pFsNaAsaNcJ9J72KtmC7Oj+qVj8e5cbop+8Hp96KnLWQ1PS+zeQM2gFeHLzr74STU
-	 r3filf7mDjcdTXUtvTAD15J0jd7QhM7QtQ5l0FJpiGtHN6KTlAgriZeoEDgkuKTgFoa9H
-	 ih4BHxf0vWjM/UJIK80VUzNIWR4ZIWuuCdnjU3d1EwexU+i3ShoPsFDZWjF9gecCmr9CS
-	 S7eguuES82ERH53jlEmYYWseOld4BJnrGTXJ7pHRkxroZh8YSCTlRVJ+bFc90vFefVw==
-ARC-Message-Signature: i=1; d=subspace.kernel.org; s=arc20261015;
-	a=rsa-sha256; c=relaxed/relaxed; t=1794857080;
-	h=DMARC-Filter:Received:DKIM-Filter:DKIM-Signature:Message-ID:Date:
-	 MIME-Version:User-Agent:Subject:To:Cc:References:Content-Language:
-	 From:In-Reply-To:Content-Type:Content-Transfer-Encoding:X-Spam-Status:
-	 X-Spam-Checker-Version;
-	bh=/jMq9zexFNDpH3C/DDQ7uqTP8N2QQoRe+wPcLSvmhEo=;
-	b=vdXpyHIBCv7wIQjjFsxbhFQWJgqVNfQhFYbll1nEdvvmvn4U3H3p7XG+hWE4ZgEiJ0mt
-	 pjEOJ60YUazYd+MrevTtKyMVN6sUQkcDq3+1Ao9xat+zqWmuiGyMpyMGHM4jY3tbay/fj
-	 CcQMMymLPH2TpPmBsx7GX2LvIz4OsGkPSQTlJNtjasZOYK6vcnVS905UEAfyobhLGgXBx
-	 5EaZmM13DjsicERjDbprMJNnnaBNqQUoPYGjqYMpjMPRsKWB2d8oerLhe2AKG9c4S9wtr
-	 tuec7VYf+z9PcSCgkWOidm0lYkNFOu3bb/FWkJRxk8PrbVEipIMWYHdnxOJvdis14Tg==
-ARC-Authentication-Results: i=1; smtp.subspace.kernel.org; 
-	dmarc=pass header.from=linux.microsoft.com;
-	spf=pass smtp.mailfrom=linux.microsoft.com;
-	dkim=pass header.d=linux.microsoft.com header.i=@linux.microsoft.com header.a=rsa-sha256 header.s=default header.b=Ns0YTHGC;
-	arc=none smtp.remote-ip=13.77.154.182
-Received: from linux.microsoft.com (linux.microsoft.com [13.77.154.182])
-	by smtp.subspace.kernel.org (Postfix) with ESMTP id F0802606A322;
-	Mon, 16 Nov 2026 19:24:39 +0000 (UTC)
-DMARC-Filter: OpenDMARC Filter v1.4.2 smtp.subspace.kernel.org F0802606A322
-Authentication-Results: smtp.subspace.kernel.org; dmarc=pass (p=none dis=none) header.from=linux.microsoft.com
-Authentication-Results: smtp.subspace.kernel.org; spf=pass smtp.mailfrom=linux.microsoft.com
+Authentication-Results: smtp.subspace.kernel.org; arc=pass header.oldest-pass=0 smtp.remote-ip=100.103.45.18
+ARC-Seal: i=2; d=subspace.kernel.org; s=arc20261015; a=rsa-sha256; cv=pass;
+	t=1794857824;
+	b=VZxkKNIkBqApW7yiqL9qNwck72O/QiI6NOVQ8SuYDm2EB7OXY2Dxrxw/o5qjUeGpuem2
+	 1mxYsS57IUoFKI/mSZTVUtDO6Zu1G39N1+PaasSVX3zIu8/HIOEXP/ynsKBg26GgxmSsS
+	 Y8HnUOefy7lgcLrWlQNX8nTNjr7XMY2jbLf/iTh2widC5XmeN4I1ayYC/yfAFelCvcdlR
+	 cvrQ+741wFmzPgtVhM8H6YfNG8/DUgGzVUmrXpCFXF+s3jrkv45o4+Z7f7gO7eEiOgSEJ
+	 U/rZi6WT36puhIg8TCSJXN2FaRWzQNR80GD+9Y2GqClTJ2pDq60nFHJj/v6PtKpKWXw==
+ARC-Message-Signature: i=2; d=subspace.kernel.org; s=arc20261015;
+	a=rsa-sha256; c=relaxed/relaxed; t=1794857824;
+	h=Received:DKIM-Signature:Received:From:Date:Subject:MIME-Version:
+	 Content-Type:Message-Id:X-B4-Tracking:To:Cc:X-Mailer:
+	 X-Developer-Signature:X-Developer-Key:X-Endpoint-Received:
+	 X-Original-From:Reply-To:Content-Transfer-Encoding;
+	bh=a0K8lr5jk5XWVgJ/UEpvtq0hIuOeWcwshx7945Bw4bA=;
+	b=m5TdGipGsdXj4LOqHznYPRaN0sitY5tI2W82pTd8Yt5yHTBXmJMZQRrMxm7sjBDyg/65
+	 rdS7NLs0nt9Gidva8VHuO+Yhz6g9ilzDjmj4D4wMfPLg3nFxUlWVvh3RcrEoou3tWK7Er
+	 p51NbzAnlMmAkqrMjMTO0+lXzNGB309h9kh8ImOsFe5bb5ZTLjh6+exHmqEZbb8Sx/954
+	 v7JsqB6M+Z6G19u1aqEEDHGH7hOYvC/Zu9FPQmlW1Oz6NTlaPY/DQMdG1Y1nVxg6IzDLW
+	 TxZe5cVwAXp0h146XbJIccabfIcUVAuESGUylDboxq3A4SIhUtMlOC+oBkdfrOazLqw==
+ARC-Authentication-Results: i=2; smtp.subspace.kernel.org; 
+	dkim=pass header.d=kernel.org header.i=@kernel.org header.a=rsa-sha256 header.s=k20260515 header.b="RV19A/iV";
+	arc=pass header.oldest-pass=0 smtp.remote-ip=100.103.45.18
+Received: from smtp.kernel.org (quasi.space.kernel.org [100.103.45.18])
+	(using TLSv1.3 with cipher TLS_AES_256_GCM_SHA384 (256/256 bits)
+	 key-exchange X25519 server-signature ECDSA (prime256v1))
+	(No client certificate requested)
+	by smtp.subspace.kernel.org (Postfix) with ESMTPS id A6CE6606A31C;
+	Mon, 16 Nov 2026 19:37:04 +0000 (UTC)
 Authentication-Results: smtp.subspace.kernel.org;
-	dkim=pass (1024-bit key) header.d=linux.microsoft.com header.i=@linux.microsoft.com header.a=rsa-sha256 header.s=default header.b=Ns0YTHGC
-Received: from [10.4.158.9] (unknown [52.172.102.187])
-	by linux.microsoft.com (Postfix) with ESMTPSA id AA7BC20B7168;
-	Mon, 16 Nov 2026 11:24:15 -0800 (PST)
-DKIM-Filter: OpenDKIM Filter v2.11.0 linux.microsoft.com AA7BC20B7168
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=linux.microsoft.com;
-	s=default; t=1794857073;
-	bh=/jMq9zexFNDpH3C/DDQ7uqTP8N2QQoRe+wPcLSvmhEo=;
-	h=Date:Subject:To:Cc:References:From:In-Reply-To:From;
-	b=Ns0YTHGCbVFg2Ub/fyOigOpJU4J0TcfQ1eFpxC7YU2ez5cfaxEAqlsCeoFHMafjQB
-	 Ez21+qjTVZjGl/1e16SSmBLT0c3QjSJd1Dr1ZlO6K32I+mEy5ExN1Oz2KUyhddLCiu
-	 C5msXOJN0zT1P0CREAiPCpuIL1JchPIGpXm94mdE=
-Message-ID: <2965c691-82fc-49f3-abdb-383860f6e82f@linux.microsoft.com>
-Date: Mon, 16 Nov 2026 11:24:17 -0800
+	dkim=pass (2048-bit key) header.d=kernel.org header.i=@kernel.org header.a=rsa-sha256 header.s=k20260515 header.b=RV19A/iV
+Authentication-Results: smtp.kernel.org; arc=none smtp.remote-ip=100.80.115.77
+ARC-Seal: i=1; d=kernel.org; s=arc20260519; a=rsa-sha256; cv=none;
+	t=1794857824;
+	b=e7gnd0dt5awoK7dS+KCvBKCFiJ0+7RzRtX23DCVveJjA/qnVxGloNOpRzu+a6n/Qhz0B
+	 QENqKYNBrFsKYWCOi3qAkeeQCNGl0ohFozAIpXbqVpwrvsJg9igZ21niFSRM3MlVTl/Ir
+	 0WMgFuDHTpunU11X1aMTNy2Ntj9gVwDb7Fe5Cnz3InHSJglj1IuZ1mMEQtZ1rT99WhWo5
+	 Eg6sZu6LDlkmCI0HmH3z85jk4Dsa18oyjN2180SmcK6kHctzQebd5sIoD6+4zWCadBbkQ
+	 A7M0ka8gFAVGgeDX9sbugKyUrPFhXs4NCj2FDQUM6OyoxldbE5xGVdx8NHGk7ZynA/w==
+ARC-Message-Signature: i=1; d=kernel.org; s=arc20260519; a=rsa-sha256;
+	c=relaxed/relaxed; t=1794857824;
+	h=DKIM-Signature:Received:From:Date:Subject:MIME-Version:Content-Type:
+	 Message-Id:X-B4-Tracking:To:Cc:X-Mailer:X-Developer-Signature:
+	 X-Developer-Key:X-Endpoint-Received:X-Original-From:Reply-To:
+	 Content-Transfer-Encoding;
+	bh=a0K8lr5jk5XWVgJ/UEpvtq0hIuOeWcwshx7945Bw4bA=;
+	b=XlWvFKKDSWjecF4DjcVFjdBub5Lso5g81WzyZKJT+leAcAoSrLnU2fMmOfB02ViQUl6R
+	 Tx8B10dgOn/hML3kqzTE6981xNYEsg9c4kJaqDSbGMeqagAm9YT1iUrcNvgKUp0E8f+vY
+	 lW2tQ19IMddBxO/27t9NnP03G9HZFTVnRH1d8/zz0C14CIGujCl9QNk9vI0ZDh1/Jdt/f
+	 NCkqAm/h5AyySpHhlKnzrVkVSeNkKw6hBEzODnL70sgLLXavMdWo6K9ZXYNoX4JB3MmHJ
+	 em2CBiWrThedYYTHAwxC07Y31ZJXgxSLaHWLujfk+QPwiFEe80W61tR3GfFsorn5QSg==
+ARC-Authentication-Results: i=1; smtp.kernel.org; 
+	arc=none smtp.remote-ip=100.80.115.77
+Received: from lkml.kernel.org (nexus.subspace.kernel.org [100.80.115.77])
+	(using TLSv1.3 with cipher TLS_AES_256_GCM_SHA384 (256/256 bits)
+	 key-exchange X25519 server-signature ECDSA (prime256v1) server-digest SHA256)
+	(No client certificate requested)
+	by smtp.kernel.org (Postfix) with ESMTPS id B3E491F000C4;
+	Mon, 16 Nov 2026 19:37:03 +0000 (UTC)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=kernel.org;
+	s=k20260515; t=1794857824;
+	bh=a0K8lr5jk5XWVgJ/UEpvtq0hIuOeWcwshx7945Bw4bA=;
+	h=From:Date:Subject:To:Cc:Reply-To;
+	b=RV19A/iVx0kiQu+ah6k4t612fqY45bgsLVrjoU5kro0GvnLI2w/bsJRLW9ubq9Yil
+	 lB1Odd5xZcMEzBGOUiw2+pmCPrISOMAI89AoZqNBjH4Hv1RbdEp3GRD2f8Aug+OzDH
+	 aXmMjFRu1/nFhWI2cf5adaaL/Vlt+EYLsJ3mULBY7msQ0a/QXKplB2o8XNg6J233le
+	 XhJV3pZK52bPiGKesxz6tj6GroTK9Qakn0f49tM4YxEECypEEJ6Lg36gH0kKdz10r1
+	 /WP8uovi/DFbc7HqId+RHl8pJ2jldu/5cAmNKsT2NOP200jHUEJJeAs0dQJ3zmu+b3
+	 BJ5D4ppGVinJg==
+Received: from nexus.subspace.kernel.org (localhost [IPv6:::1])
+	by lkml.kernel.org (Postfix) with ESMTP id 04C704A584;
+	Mon, 16 Nov 2026 19:37:03 +0000 (UTC)
+From: Joas Antonio dos Santos via B4 Relay <devnull+joasantonio108.gmail.com@kernel.org>
+Date: Mon, 16 Nov 2026 19:37:03 +0000
+Subject: [PATCH wireless v2] wifi: mac80211: check for a NULL link in the
+ MLD station RX loop
 X-Mailing-List: linux-wireless@vger.kernel.org
 List-Id: <linux-wireless.vger.kernel.org>
 List-Post: <mailto:linux-wireless@vger.kernel.org>
@@ -53,126 +83,90 @@ List-Unsubscribe: <mailto:linux-wireless+unsubscribe@vger.kernel.org>
 List-Owner: <mailto:linux-wireless+owner@vger.kernel.org>
 Precedence: list
 MIME-Version: 1.0
-User-Agent: Mozilla Thunderbird
-Subject: Re: [PATCH v2 18/19] PCI: Replace untrusted state with device trust
-To: Jason Gunthorpe <jgg@ziepe.ca>
-Cc: Leon Romanovsky <leon@kernel.org>,
- Greg Kroah-Hartman <gregkh@linuxfoundation.org>,
- "Rafael J. Wysocki" <rafael@kernel.org>, Danilo Krummrich <dakr@kernel.org>,
- Dmitry Torokhov <dmitry.torokhov@gmail.com>, Andrew Lunn <andrew@lunn.ch>,
- Heiner Kallweit <hkallweit1@gmail.com>, Russell King
- <linux@armlinux.org.uk>, "David S. Miller" <davem@davemloft.net>,
- Jakub Kicinski <kuba@kernel.org>, Paolo Abeni <pabeni@redhat.com>,
- Johannes Berg <johannes@sipsolutions.net>, Jonathan Corbet <corbet@lwn.net>,
- Shuah Khan <skhan@linuxfoundation.org>, Randy Dunlap
- <rdunlap@infradead.org>, Bjorn Helgaas <bhelgaas@google.com>,
- "Joerg Roedel (AMD)" <joro@8bytes.org>,
- Suravee Suthikulpanit <suravee.suthikulpanit@amd.com>,
- Vasant Hegde <vasant.hegde@amd.com>, Will Deacon <will@kernel.org>,
- Robin Murphy <robin.murphy@arm.com>, David Woodhouse <dwmw2@infradead.org>,
- Lu Baolu <baolu.lu@linux.intel.com>, Johan Hovold <johan@kernel.org>,
- Eric Dumazet <edumazet@kernel.org>, Marcel Holtmann <marcel@holtmann.org>,
- Luiz Augusto von Dentz <luiz.dentz@gmail.com>,
- Nipun Gupta <nipun.gupta@amd.com>, Nikhil Agarwal <nikhil.agarwal@amd.com>,
- Pieter Jansen van Vuuren <pieter.jansen-van-vuuren@amd.com>,
- linux-kernel@vger.kernel.org, driver-core@lists.linux.dev,
- linux-input@vger.kernel.org, netdev@vger.kernel.org,
- linux-wireless@vger.kernel.org, linux-usb@vger.kernel.org,
- linux-bluetooth@vger.kernel.org, linux-acpi@vger.kernel.org,
- linux-doc@vger.kernel.org, linux-pci@vger.kernel.org, iommu@lists.linux.dev
-References: <20261109-device-trust-core-v2-0-3b12d9a9f861@nvidia.com>
- <20261109-device-trust-core-v2-18-3b12d9a9f861@nvidia.com>
- <193e4130-9c2f-4a0f-b218-f5fcf0b3d508@linux.microsoft.com>
- <20261116190417.GD2299285@ziepe.ca>
-Content-Language: en-US
-From: Kameron Carr <kameroncarr@linux.microsoft.com>
-In-Reply-To: <20261116190417.GD2299285@ziepe.ca>
-Content-Type: text/plain; charset=UTF-8
+Content-Type: text/plain; charset="utf-8"
+Message-Id: <20261116-mac80211-rx-null-link-v2-1-ea512ae98139@gmail.com>
+X-B4-Tracking: v=1; b=H4sIAF5b+2oC/4WNQQ6CMBBFr0Jm7ZhOiZW48h6GBa0DTCzFtFoxh
+ LvbcAGXLy///RUSR+EEl2qFyFmSzKGAPlTgxi4MjHIvDFppQ6Q0Tp1rlCbCuGB4e49ewgNNr1n
+ Zk+qNtVC2z8i9LHv3Bh+J7DklaIsZJb3m+N0PM+3+TzsTEtZ1rayx1LizuQ5TJ/7o5gnabdt+A
+ FfmVcQAAAA=
+To: Johannes Berg <johannes@sipsolutions.net>, 
+ Benjamin Berg <benjamin.berg@intel.com>, joasantonio108@gmail.com
+Cc: linux-wireless@vger.kernel.org, linux-kernel@vger.kernel.org
+X-Mailer: b4 0.13.0
+X-Developer-Signature: v=1; a=ed25519-sha256; t=1794857822; l=2604;
+ i=joasantonio108@gmail.com; s=20261031; h=from:subject:message-id;
+ bh=aZzRCwDrJjSzerq/sLcLnuuDLZ11aHczEbNwIJoX7XQ=;
+ b=jDCpi/RFWz9PlMH8/eSEDk4bEOkTS1I0UhEAtDMX/w3CZ6EcMKTc68kK9071y+TcF2Y3Nn+ue
+ /FvMJYHQFAlBqCIhYoIvWfg77Lw3W9zThE8ZT7UIHjZwlcihaU9Ez48
+X-Developer-Key: i=joasantonio108@gmail.com; a=ed25519;
+ pk=ZxAznJT/FcPPdzLrDDFJQm4LLjjHVGBBqDSG3TXS23w=
+X-Endpoint-Received: by B4 Relay for joasantonio108@gmail.com/20261031 with
+ auth_id=1371
+X-Original-From: Joas Antonio dos Santos <joasantonio108@gmail.com>
+Reply-To: joasantonio108@gmail.com
 Content-Transfer-Encoding: 7bit
 
-On 11/16/2026 11:04 AM, Jason Gunthorpe wrote:
-> On Mon, Nov 16, 2026 at 10:46:25AM -0800, Kameron Carr wrote:
->>> @@ -1738,24 +1738,24 @@ static void set_pcie_cxl(struct pci_dev *dev)
->>>  
->>>  }
->>>  
->>> -static void set_pcie_untrusted(struct pci_dev *dev)
->>> +static void pci_set_default_trust_policy(struct pci_dev *dev)
->>>  {
->>> -	struct pci_dev *parent = pci_upstream_bridge(dev);
->>> +	struct pci_dev *parent = pci_physfn(dev);
->>> +
->>> +	if (parent == dev)
->>> +		parent = pci_upstream_bridge(dev);
->>>  
->>>  	if (!parent)
->>>  		return;
->>
->> Hi Leon,
->>
->> The default policy here works for physical hierarchies, but there's no
->> opportunity for a paravirtual host bridge to participate in the trust
->> resolution when the host bridge driver itself knows the appropriate
->> trust level for a device.
-> 
-> HW doesn't really "know" the trust level, it can suggest a default but
-> the kernel command line and userspace should always be able to
-> override it.
-> 
->> My scenario is pci-hyperv in a confidential VM with a paravisor. The
->> paravisor is inside the guest's trust boundary and owns TDISP. It locks,
->> attests and accepts the device, then answers a VMBus query describing
->> which BAR ranges are private and whether the device's DMA may target
->> private memory. Before a driver can bind pci-hyperv has to:
-> 
-> Sounds like a user in such an environment just wouldn't use the trust
-> level mechanism at all.
-> 
-> What use do you see for enabling trust level but having all the
-> devices unattestable and accepted already?
+From: Joas Antonio dos Santos <joasantonio108@gmail.com>
 
-Previous iterations of device trust used the trust level to make
-decisions around DMA bounce buffering, etc. Is that no longer the case?
+Since commit 6d531b9af16e ("wifi: mac80211: rework RX packet handling"),
+__ieee80211_rx_handle_packet() looks up the link of each MLD station
+that matches addr2 and passes it straight to ieee80211_rx_valid_freq(),
+which dereferences link->sdata and link->conf whenever status->freq is
+set.  The non-MLD loop and the interface loop below it check the link,
+this one does not.
 
-You're right that my scenario doesn't really care about the device trust
-per se. I'm primarily interested in how device DMA bounce buffering will
-be turned off for TDISP devices and how MMIO setup will be managed.
+The link can be NULL there.  ieee80211_vif_update_links() clears
+sdata->link[link_id] for a removed link first, and only later, after
+ieee80211_tear_down_links() (including its synchronize_rcu()) and
+drv_change_vif_links(), calls ieee80211_sta_remove_link(), which takes
+the link station out of the hash.  RX runs under RCU only, so a data
+frame from that link's address arriving in this window finds the link
+station but a NULL link, and the kernel oopses in softirq context.  A
+link is removed this way for example when an associated AP announces
+removal of one of its links (ieee80211_ml_reconf_work()), and the
+frames only need a matching transmitter address, before any crypto.
 
-> 
-> Your bigger issue is the below:
-> 
->>   - query the paravisor,
->>   - refuse to operate the device if the query failed or if the response
->>     is invalid,
->>   - decide whether the device may operate.
->>
->> The modular host bridge driver in this scenario needs a hook to be able
->> to participate in trust resolution.
->>
->> I'm also looking for the right place to setup MMIO and configure DMA
->> in my scenario. Let me know if you have guidance.
-> 
-> Well, you are very far outside what Linux expects for a CC flow, and
-> these special requests conflict with the arch code flows we need to
-> have.
-> 
-> So, I don't know. Maybe somewhere in the arch code hyperv can hook and
-> say the device is special? You'll have to see when we get more of the
-> CC stuff layed out.
+Before the rework, ieee80211_rx_data_set_link() returned false for a
+NULL link and the frame was skipped.  Skip it again.
 
-I am looking for good hook candidates. I was hoping that trust levels
-would end up directing DMA behavior, etc. but maybe I am
-misunderstanding the design direction for these trust levels.
+Fixes: 6d531b9af16e ("wifi: mac80211: rework RX packet handling")
+Signed-off-by: Joas Antonio dos Santos <joasantonio108@gmail.com>
+---
+Found by LLM-assisted code review of the RX rework and confirmed by
+reading the link removal path by hand.  I have not reproduced the oops
+at runtime.
 
+v1 got no replies but is marked "Changes Requested" in patchwork, so I
+am not sure what is expected.  Please let me know if something else is
+wanted here.
+---
+Changes in v2:
+- Rebased on wireless/for-next (763b13f622e2), no code changes.
+- Link to v1: https://lore.kernel.org/r/20261102-mac80211-rx-null-link-v1-1-3330b6b18c76@gmail.com
+---
+ net/mac80211/rx.c | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+diff --git a/net/mac80211/rx.c b/net/mac80211/rx.c
+index f8cfd04c0c6c..a1db6488e4bc 100644
+--- a/net/mac80211/rx.c
++++ b/net/mac80211/rx.c
+@@ -5505,7 +5505,7 @@ static void __ieee80211_rx_handle_packet(struct ieee80211_hw *hw,
+ 			sdata =	sta->sdata;
+ 			link = rcu_dereference(sdata->link[link_sta->link_id]);
+ 
+-			if (!ieee80211_rx_valid_freq(status->freq, link))
++			if (!link || !ieee80211_rx_valid_freq(status->freq, link))
+ 				continue;
+ 
+ 			if (rx_data_pending) {
+
+---
+base-commit: 763b13f622e2758726e8e3ecaef819db8fa0430a
+change-id: 20261102-mac80211-rx-null-link-6f2e0b50f6bb
+
+Best regards,
 -- 
-Regards,
-Kameron
-
-> Though, FWIW, I don't like it at all as a model. Denying the tenant
-> the ability to directly attest the HW is far away from what I'd
-> consider as necessary for CC.
-> 
-> Jason
-
+Joas Antonio dos Santos <joasantonio108@gmail.com>
 
 
