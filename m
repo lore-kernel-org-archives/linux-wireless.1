@@ -1,58 +1,67 @@
-Authentication-Results: smtp.subspace.kernel.org; arc=none smtp.remote-ip=100.103.45.18
+Authentication-Results: smtp.subspace.kernel.org; arc=none smtp.remote-ip=168.119.38.16
 ARC-Seal: i=1; d=subspace.kernel.org; s=arc20261015; a=rsa-sha256; cv=none;
-	t=1794828304;
-	b=gvP5JcEE1f/HE/Ef/iaGMn8o30HaWAytLTowlxtv3Ng6w10uY+1SfGe+v7MMgHUSDH8f
-	 wtarfD0QeL58omwmqz+U0fgDYfSip1pGQ9mbdixszP0WDlDZUbGlVPxWUdZBC75ZBbNaI
-	 Ed6Rg5rCbwiK+EwtWqv2hXWOj/XGHwaCgo7yRGohT+3Nbkmvb/Hd3tTjruo5naGXQ2MRv
-	 j1HEcG7csMIG9F3mraM8CXdqKJh2BV1tCn69k+k43qVtrf2ZPE2YdIKDWEVTPPecgofmo
-	 nY3UljQW6AS54ecqIJP7eXpih1ADpumAkBKcFZ7rZw3OrWO38cV6MuSjWtNHu17zjpA==
+	t=1794828764;
+	b=Hgn8re39r7grBnheU0GVyXir0uI8YNu1CHGivo4mVOH3wa+bTCCrNAHx1K6vAizjoR9h
+	 mVRS1fEkM7MADhhul+hTvhkyZa59K4OcDIllQMrrMNVCgijGrOBZv7ugF580oyUn5wTSH
+	 w9LLglq7VWc4JRBQoEJRpu/6SyzyJDC2/CmiwK3aEax3RILwGS0rdpEMOmQJ71TJ+exmv
+	 Jj/8zTi3IA9zbtHm9Ye8eZ9DfxIIIJ2C5F4480ht2rGuTPZu/zTeVEbsLPQhi9Vk4V7rA
+	 gAPe/o0OXxHTcJe2ptSivg/dS/FJEyrvg2qfO/uCb09hANu6qc9nxAsbeJD/CVkj9BA==
 ARC-Message-Signature: i=1; d=subspace.kernel.org; s=arc20261015;
-	a=rsa-sha256; c=relaxed/relaxed; t=1794828304;
-	h=Received:DKIM-Signature:Date:From:To:Cc:Subject:Message-ID:
-	 References:MIME-Version:Content-Type:Content-Disposition:In-Reply-To;
-	bh=eIwoQCjr7sSj0vIAB37IuYU9H+c2hGghh5VTlhNpJ0E=;
-	b=TfSSL92ZxR1bctbnHY5DGCLLcfzsc8E/FHrMMRawiMlSBU7z3UKLO/coJbeYpuWvijBq
-	 o7BnMN8kl70X9iAKID+iSfsRCrzYPQaK39s1ufGru7+azjw5DWAGVfWUXs+DtPQ3ZCD4Q
-	 5KNzFFmu92h7BiDfwL8cu8DAyTF1KwSWGb8MlhXbNRzQK6gA9LYPQDLBJvdss+yOjZKJx
-	 2Tfdx81ETaXaBuWgytRtK6j5qU9mcklKX3uZNWBsROdbqdDxhYh/twYvNNgbtqVhYThjq
-	 oDuT6Az3uRNKbOifx9QAwqVCbq8W+ExQ0Qy8EsTtFZuvNk1yQs3QuRS55vJIZYwiOqQ==
+	a=rsa-sha256; c=relaxed/relaxed; t=1794828764;
+	h=DKIM-Signature:Received:Message-ID:Subject:From:To:Cc:Date:
+	 In-Reply-To:References:Content-Type:Content-Transfer-Encoding:
+	 User-Agent:MIME-Version:X-malware-bazaar;
+	bh=Uken2bPihuMdCrwPkCgP3IGwX1lpQRkERvwjisD/E0c=;
+	b=3yM7DZH69lmiek1jEuYyZDwKv3YZ5nWMMhnC4xIQ9hzVgHNH3wlepfFeCf79BHRZW8zg
+	 PiBKYZmFtsaq3cT1eOBtgvj28y6xywF6veJjRJxwGDfRwb8vqcd/PjT6oBfzBLF8bNBOy
+	 XDBPb8upYnnk7QOw3+pN9XewXmql3xtfOlbpuKC0hADACFh07Rax06hoBwPG/G5vepYxY
+	 x13/i+8SnobPukFZhacRsjZfPxP/ZAPFNRUt/Veo17yaHm0sS53QEm+MebPHrpyo3DRNk
+	 S4rtQ80nlGaq0eVQeTWR0mJQDb6QBH9FNMltTj/wcwuzAYpE1anyFxHRYT2uyP3+TDQ==
 ARC-Authentication-Results: i=1; smtp.subspace.kernel.org; 
-	dkim=pass header.d=kernel.org header.i=@kernel.org header.a=rsa-sha256 header.s=k20260515 header.b=SKSY95KC;
-	arc=none smtp.remote-ip=100.103.45.18
-Received: from smtp.kernel.org (quasi.space.kernel.org [100.103.45.18])
+	dmarc=permerror header.from=sipsolutions.net;
+	spf=pass smtp.mailfrom=sipsolutions.net;
+	dkim=pass header.d=sipsolutions.net header.i=@sipsolutions.net header.a=rsa-sha256 header.s=mail header.b=phT42UFz;
+	arc=none smtp.remote-ip=168.119.38.16
+Received: from sipsolutions.net (s3.sipsolutions.net [168.119.38.16])
 	(using TLSv1.3 with cipher TLS_AES_256_GCM_SHA384 (256/256 bits)
-	 key-exchange X25519 server-signature ECDSA (prime256v1))
+	 key-exchange ECDHE (prime256v1) server-signature ECDSA (prime256v1) server-digest SHA256)
 	(No client certificate requested)
-	by smtp.subspace.kernel.org (Postfix) with ESMTPS id EE9F5606D7A8;
-	Mon, 16 Nov 2026 11:25:03 +0000 (UTC)
+	by smtp.subspace.kernel.org (Postfix) with ESMTPS id 3B544606A334;
+	Mon, 16 Nov 2026 11:32:44 +0000 (UTC)
+Authentication-Results: smtp.subspace.kernel.org; dmarc=permerror header.from=sipsolutions.net
+Authentication-Results: smtp.subspace.kernel.org; spf=pass smtp.mailfrom=sipsolutions.net
 Authentication-Results: smtp.subspace.kernel.org;
-	dkim=pass (2048-bit key) header.d=kernel.org header.i=@kernel.org header.a=rsa-sha256 header.s=k20260515 header.b=SKSY95KC
-Received: by smtp.kernel.org (Postfix) with ESMTPSA id 5BCA81F000C4;
-	Mon, 16 Nov 2026 11:25:01 +0000 (UTC)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=kernel.org;
-	s=k20260515; t=1794828303;
-	bh=eIwoQCjr7sSj0vIAB37IuYU9H+c2hGghh5VTlhNpJ0E=;
-	h=Date:From:To:Cc:Subject:References:In-Reply-To;
-	b=SKSY95KC0u2jqsHTtnv98ctb8ZfxF+kt2pzTwhbMQAQl4wj4xa+ycVFCl5L0uFlBO
-	 oaioRJogaHFdUBLkC9j1bIscY0JYJjvaWM8LFBHdrtkwmx/vFuVLGhys/E+b+VzPQk
-	 HHlO4WJ6Y+Uo42lrnFFaLqXe8KbUM4Yp9BPlYEqaDWIjtH5yRRPzvhtq/6wGEGfurS
-	 yF3WkAcoAgK5zVUUMLvZvh2sco/D14yXNBTQ8qT+v+4VJ/yI4iRbnDFTePtVHFTS9X
-	 w0eM7cmkf4ziTQ/5y7PbGywMGHMupw7AhdxKI0iKKMkE2DjJcV1rZqK/5QGiD5Gb6Q
-	 yWKUbr3Dj8rAA==
-Date: Mon, 16 Nov 2026 12:24:57 +0100
-From: Krzysztof Kozlowski <krzk@kernel.org>
-To: Yanli Yang <yanli.yang@bedmex.com>
-Cc: linux-wireless@vger.kernel.org, 
-	Johannes Berg <johannes@sipsolutions.net>, Rob Herring <robh@kernel.org>, 
-	Krzysztof Kozlowski <krzk+dt@kernel.org>, Conor Dooley <conor+dt@kernel.org>, devicetree@vger.kernel.org, 
-	linux-kernel@vger.kernel.org, Zhirun Liu <zhirunliu@aicsemi.com>, 
-	Dijia Xu <dijiaxu@aicsemi.com>, Chunqiu Liu <chunqiuliu@aicsemi.com>, 
-	Liheng Wei <liheng.wei@bedmex.com>
-Subject: Re: [PATCH wireless-next v5 3/4] wifi: aic: Add the AIC8800D80 and
- D80N FullMAC driver
-Message-ID: <20261116-silent-archetypal-fulmar-afff19@quoll>
-References: <179481380235.4.7388336477392853157@bedmex.com>
- <179481380240.4.5564040872791747367@bedmex.com>
+	dkim=pass (2048-bit key) header.d=sipsolutions.net header.i=@sipsolutions.net header.a=rsa-sha256 header.s=mail header.b=phT42UFz
+DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
+	d=sipsolutions.net; s=mail; h=MIME-Version:Content-Transfer-Encoding:
+	Content-Type:References:In-Reply-To:Date:Cc:To:From:Subject:Message-ID:Sender
+	:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:Resent-To:
+	Resent-Cc:Resent-Message-ID; bh=Uken2bPihuMdCrwPkCgP3IGwX1lpQRkERvwjisD/E0c=;
+	t=1794828763; x=1796038363; b=phT42UFzf4pBlFAh4oNJaLzUzj0Cj+5xzMoLfO0oTw+ii2T
+	iH0CmA419yD+OVuC1lMHVyArwkwXvcLOT+rycrUU/iAsn+Bg/xgTIaaFL+2q7K7489l38LYc1XzgD
+	iMPeE7Tnxw9eFJMR3LToKB6gTi0FX9IjEJUAq4MV6ns7xK1nUtrxDONyRbtAyvr/v5Vzv3RHYXleL
+	CtGVOt2bDeSPEjq1NZBGuP1Gk5hBH21c5cn5CNBUD1aBcKOAp1whIPhmdIhWGCUHTCXvd7UlVyqde
+	UuXrlnlZ8Z34WA5Ex5kMfRk7IfT7MOOX+JLvMxgG6QdVfWFFaWwgiN+Cb0pSz5Dg==;
+Received: by sipsolutions.net with esmtpsa (TLS1.3:ECDHE_X25519__ECDSA_SECP256R1_SHA256__AES_256_GCM:256)
+	(Exim 4.98.2)
+	(envelope-from <johannes@sipsolutions.net>)
+	id 1xSuwy-0000000Gaa3-0frj;
+	Mon, 16 Nov 2026 12:32:40 +0100
+Message-ID: <13d0d8d00897f425ace949084cc0644d52a0e504.camel@sipsolutions.net>
+Subject: Re: [PATCH wireless-next v4 14/21] wifi: mac80211: add driver_op
+ for SMD substate changes
+From: Johannes Berg <johannes@sipsolutions.net>
+To: Pooventhiran G <pooventhiran.g@oss.qualcomm.com>
+Cc: linux-wireless@vger.kernel.org, linux-kernel@vger.kernel.org
+Date: Mon, 16 Nov 2026 12:32:39 +0100
+In-Reply-To: <a743c654-14f8-435f-9b83-bccdf2865615@oss.qualcomm.com>
+References: <20261106-smd-v4-0-62e39487f51a@oss.qualcomm.com>
+	 <20261106-smd-v4-14-62e39487f51a@oss.qualcomm.com>
+	 <9016700a02b45e18e06525b338fcce52a1e341e3.camel@sipsolutions.net>
+	 <a743c654-14f8-435f-9b83-bccdf2865615@oss.qualcomm.com>
+Content-Type: text/plain; charset="UTF-8"
+Content-Transfer-Encoding: quoted-printable
+User-Agent: Evolution 3.60.2 (3.60.2-3.fc44) 
 X-Mailing-List: linux-wireless@vger.kernel.org
 List-Id: <linux-wireless.vger.kernel.org>
 List-Post: <mailto:linux-wireless@vger.kernel.org>
@@ -62,212 +71,93 @@ List-Unsubscribe: <mailto:linux-wireless+unsubscribe@vger.kernel.org>
 List-Owner: <mailto:linux-wireless+owner@vger.kernel.org>
 Precedence: list
 MIME-Version: 1.0
-Content-Type: text/plain; charset=utf-8
-Content-Disposition: inline
-In-Reply-To: <179481380240.4.5564040872791747367@bedmex.com>
+X-malware-bazaar: not-scanned
 
-On Mon, Nov 16, 2026 at 03:23:22PM +0800, Yanli Yang wrote:
-> From: Zhirun Liu <zhirunliu@aicsemi.com>
-> 
-> Add the cfg80211 interface and TX/RX data paths for AIC8800D80 U02 and
-> AIC8800D80N SDIO Wi-Fi. Expose station operation on the 2.4 GHz and 5 GHz
-> bands through cfg80211/nl80211, with scanning, connection management,
-> key configuration and station statistics.
-> 
-> Implement transmit queues, receive reordering and packet delivery, and
-> register firmware-derived capabilities with cfg80211. Propagate the
-> cfg80211 channel restrictions and power limits to the firmware through
-> the regulatory notifier.
-> 
-> Add the AIC Kconfig and Makefiles and build a single aic8800_fdrv module.
-> Keep the initial selectable configuration restricted to station mode.
-> Retain the existing non-station source behind disabled configuration
-> branches, together with the optional allocation helpers.
-> 
-> This patch depends on the firmware and transport sources in patch 2.
-> The next patch connects the complete driver to the wireless build.
-> 
-> Signed-off-by: Chunqiu Liu <chunqiuliu@aicsemi.com>
-> Signed-off-by: Zhirun Liu <zhirunliu@aicsemi.com>
-> Signed-off-by: Yanli Yang <yanli.yang@bedmex.com>
-> ---
->  drivers/net/wireless/aic/Kconfig              |   16 +
->  drivers/net/wireless/aic/Makefile             |    3 +
->  drivers/net/wireless/aic/aic8800_fdrv/Kconfig |   90 +
->  .../net/wireless/aic/aic8800_fdrv/Makefile    |   36 +
->  .../wireless/aic/aic8800_fdrv/aicwf_bfmer.c   |   93 +
->  .../wireless/aic/aic8800_fdrv/aicwf_main.c    | 5114 +++++++++++++++++
->  .../wireless/aic/aic8800_fdrv/aicwf_mesh.c    |   33 +
->  .../aic/aic8800_fdrv/aicwf_mod_params.c       |  644 +++
->  .../aic/aic8800_fdrv/aicwf_mu_group.c         |  653 +++
->  .../wireless/aic/aic8800_fdrv/aicwf_radar.c   | 1969 +++++++
->  .../aic/aic8800_fdrv/aicwf_resv_mem.c         |  106 +
->  .../net/wireless/aic/aic8800_fdrv/aicwf_rx.c  | 2434 ++++++++
->  .../aic/aic8800_fdrv/aicwf_rx_prealloc.c      |   99 +
->  .../net/wireless/aic/aic8800_fdrv/aicwf_tx.c  | 1469 +++++
->  .../net/wireless/aic/aic8800_fdrv/aicwf_txq.c | 1368 +++++
->  .../aic/aic8800_fdrv/aicwf_txq_prealloc.c     |   55 +
->  16 files changed, 14182 insertions(+)
->  create mode 100644 drivers/net/wireless/aic/Kconfig
->  create mode 100644 drivers/net/wireless/aic/Makefile
->  create mode 100644 drivers/net/wireless/aic/aic8800_fdrv/Kconfig
->  create mode 100644 drivers/net/wireless/aic/aic8800_fdrv/Makefile
->  create mode 100644 drivers/net/wireless/aic/aic8800_fdrv/aicwf_bfmer.c
->  create mode 100644 drivers/net/wireless/aic/aic8800_fdrv/aicwf_main.c
->  create mode 100644 drivers/net/wireless/aic/aic8800_fdrv/aicwf_mesh.c
->  create mode 100644 drivers/net/wireless/aic/aic8800_fdrv/aicwf_mod_params.c
->  create mode 100644 drivers/net/wireless/aic/aic8800_fdrv/aicwf_mu_group.c
->  create mode 100644 drivers/net/wireless/aic/aic8800_fdrv/aicwf_radar.c
->  create mode 100644 drivers/net/wireless/aic/aic8800_fdrv/aicwf_resv_mem.c
->  create mode 100644 drivers/net/wireless/aic/aic8800_fdrv/aicwf_rx.c
->  create mode 100644 drivers/net/wireless/aic/aic8800_fdrv/aicwf_rx_prealloc.c
->  create mode 100644 drivers/net/wireless/aic/aic8800_fdrv/aicwf_tx.c
->  create mode 100644 drivers/net/wireless/aic/aic8800_fdrv/aicwf_txq.c
->  create mode 100644 drivers/net/wireless/aic/aic8800_fdrv/aicwf_txq_prealloc.c
-> 
-> diff --git a/drivers/net/wireless/aic/Kconfig b/drivers/net/wireless/aic/Kconfig
-> new file mode 100644
-> index 000000000000..338ab1cb97ff
-> --- /dev/null
-> +++ b/drivers/net/wireless/aic/Kconfig
-> @@ -0,0 +1,16 @@
-> +# SPDX-License-Identifier: GPL-2.0-only
-> +
-> +config WLAN_VENDOR_AIC
-> +	bool "AIC devices"
-> +	default y
-> +	help
-> +	  Say Y to expose the AIC8800D80 U02 / AIC8800D80N SDIO Wi-Fi driver.
-> +	  The first upstreaming target is a narrow D80/D80N SDIO station
-> +	  configuration; legacy transport, Bluetooth, Android, test and
-> +	  manufacturing build switches are intentionally not exposed.
-> +
-> +if WLAN_VENDOR_AIC
-> +
-> +source "drivers/net/wireless/aic/aic8800_fdrv/Kconfig"
-> +
-> +endif # WLAN_VENDOR_AIC
-> diff --git a/drivers/net/wireless/aic/Makefile b/drivers/net/wireless/aic/Makefile
-> new file mode 100644
-> index 000000000000..3e4620989aaf
-> --- /dev/null
-> +++ b/drivers/net/wireless/aic/Makefile
-> @@ -0,0 +1,3 @@
-> +# SPDX-License-Identifier: GPL-2.0
-> +
-> +obj-$(CONFIG_AIC8800_WLAN_SUPPORT) += aic8800_fdrv/
-> diff --git a/drivers/net/wireless/aic/aic8800_fdrv/Kconfig b/drivers/net/wireless/aic/aic8800_fdrv/Kconfig
-> new file mode 100644
-> index 000000000000..6416c9c7a5b0
-> --- /dev/null
-> +++ b/drivers/net/wireless/aic/aic8800_fdrv/Kconfig
-> @@ -0,0 +1,90 @@
-> +# SPDX-License-Identifier: GPL-2.0-only
-> +
-> +menuconfig AIC8800_WLAN_SUPPORT
-> +	tristate "AIC8800D80 U02 / AIC8800D80N SDIO station support"
-> +	depends on MMC
-> +	depends on CFG80211
-> +	select CRYPTO_LIB_MD5
-> +	help
-> +	  Enable the AIC8800D80 U02 and AIC8800D80N (D80N, D80LN, D40N,
-> +	  D40LN) FullMAC Wi-Fi driver for the first upstreaming baseline.
-> +	  This build is restricted to the SDIO station path and uses
-> +	  cfg80211/nl80211 for normal Wi-Fi operation. The driver also
-> +	  downloads and starts the chip firmware.
-> +
-> +	  Firmware files are loaded from the aic/aic8800d80/ and
-> +	  aic/aic8800d80n/ subdirectories of the kernel firmware search
-> +	  path for AIC8800D80 and AIC8800D80N, respectively.
-> +
-> +	  If unsure, say N.
-> +
-> +if AIC8800_WLAN_SUPPORT
-> +
-> +config AIC8800_SDIO_SUPPORT
-> +	def_bool y
-> +	help
-> +	  Build the shared SDIO transport for AIC8800D80 and AIC8800D80N.
-> +
-> +config AIC8800_SDIO_PWRCTRL
-> +	def_bool y
-> +	depends on AIC8800_SDIO_SUPPORT
-> +	help
-> +	  Enable SDIO active/sleep transitions and the inactivity timer used
-> +	  by the driver. This is a required feature of the AIC8800D80 and
+On Sat, 2026-11-14 at 00:50 +0530, Pooventhiran G wrote:
+>=20
+> > > +void sta_info_reset_smd_state(struct sta_info *sta, bool notify)
+> > > +{
+> > > +	if (sta->smd_state =3D=3D IEEE80211_STA_SMD_NONE)
+> > > +		return;
+> > > +
+> > > +	/* DRAIN -> NONE, EXEC -> NONE or PREP -> NONE */
+> > > +	WARN_ON_ONCE(sta_info_move_smd_state(sta, IEEE80211_STA_SMD_NONE,
+> > > +					     notify));
+> >=20
+> > How is that even useful? If we're talking about a sub-state while in
+> > state 4, then surely moving out of state 4 simply invalidates that, why
+> > bother?
+> >=20
+>=20
+> True, thought I could clean up the roam states before that exact invalida=
+tion
+> happens. I will remove it from state 4->3 transition.
+>=20
+> > > +	clear_sta_flag(sta, WLAN_STA_SMD_PREP_TARGET);
+> > > +	clear_sta_flag(sta, WLAN_STA_SMD_EXEC_CURRENT);
+> > > +	clear_sta_flag(sta, WLAN_STA_SMD_DL_DRAIN);
+> >=20
+> > Understand that you need to clear the stale flags, but for the driver
+> > that just seems strange?
+> >=20
+>=20
+> So, this is also called from state 4->3 transition so clearing the stale =
+flags
+> seems necessary. For the drv_sta_smd_state op as well, if we don't clear =
+the
+> state in mac80211, there will be inconsistency between driver and mac8021=
+1.
 
-Drop. Don't add your downstream config features.
+Wait, which way is it then? Anyway I'm not sure I see a lot of value in
+moving the driver down when the whole state 4 is left later?
 
-> +	  AIC8800D80N SDIO configurations, independent of system suspend support.
-> +
-> +config AIC8800_AUTO_POWERSAVE
-> +        def_bool y
-> +        depends on AIC8800_SDIO_PWRCTRL
-> +        help
-> +	  Low-power configuration within the chip
-> +
-> +config AIC8800_USE_5G
-> +	def_bool y
+> > > +	case IEEE80211_STA_SMD_EXEC:
+> > > +	case IEEE80211_STA_SMD_DRAIN:
+> > > +		err =3D drv_sta_smd_state(local, sta->sdata, &sta->sta,
+> > > +					IEEE80211_STA_SMD_NONE,
+> > > +					IEEE80211_STA_SMD_EXEC);
+> > > +		if (err)
+> > > +			goto rollback;
+> > > +
+> > > +		if (new_ss =3D=3D IEEE80211_STA_SMD_DRAIN)
+> > > +			err =3D drv_sta_smd_state(local, sta->sdata, &sta->sta,
+> > > +						IEEE80211_STA_SMD_EXEC,
+> > > +						IEEE80211_STA_SMD_DRAIN);
+> > > +		break;
+> >=20
+> > you do realize "fallthrough" exists?
+> >=20
+>=20
+> I am afraid I am not able to understand how fallthrough helps here.=C2=A0
 
-Why build option would be NOT to use 5 Ghz? Like, if I go to different
-building with different WiFi I rebuild the kernel?
+My bad, sorry! I mixed up the order of operations.
 
-What?
+> > > +	/* if EXEC -> DRAIN failed in the driver, notify EXEC -> NONE */
+> > > +	WARN_ON_ONCE(drv_sta_smd_state(local, sta->sdata, &sta->sta,
+> > > +				       IEEE80211_STA_SMD_EXEC,
+> > > +				       IEEE80211_STA_SMD_NONE));
+> >=20
+> > I'm not a fan of sticking whole blocks of code into a WARN, but I'm als=
+o
+> > not sure this whole "model what should be a one-way sub-state based on
+> > sta_state" was a good idea in this patch.
+> >=20
+> Could you please kindly clarify "model what should be a one-way sub-state
+> based on sta_state"? Would you prefer if the driver was able to directly
+> update the state as well?
 
-Upstream kernel is MULTIPLATFORM.
+Ah, no, I was just mostly thinking about the above discussion, and also
+the whole substates.
 
-> +	help
-> +	  Enable the 5 GHz band. The AIC8800D80 is a dual-band device;
-> +	  keep this on for the upstream station baseline.
-> +
-> +config RESV_MEM_SUPPORT
+For station _state_ I think it makes sense (mostly) to go have the
+"ladder" of states (notexist <-> none <-> auth <-> assoc <-> authorized)
+and clearly modelled it based on that.
 
-Why are you inventing more config symbols?
+But does that makes sense here? Why even go 4 -> 4b -> 4c as a substate
+etc. Wouldn't it be a lot simpler to just say "this is the new substate"
+deal with it? There's not a lot of "ladder" going on, the substates
+don't really depend on each other as fundamentally. In fact, for 4a vs.
+b/c they're not even a ladder anyway since that's completely different
+use cases.
 
-> +	bool "Reserve the SDIO TX aggregation buffer per device"
-> +	depends on AIC8800_SDIO_SUPPORT
-> +	help
-> +	  Allocate the SDIO TX aggregation buffer as soon as the device is
-> +	  probed and keep it until the device is removed, instead of
-> +	  allocating it when the SDIO bus is brought up.
-> +
-> +	  If unsure, say N.
-> +
-> +config PREALLOC_TXQ
-> +	bool "Preallocate the TX queue array"
-> +	help
-> +	  Allocate the TX queue array separately and keep it until the
-> +	  device is removed, instead of embedding it in the wiphy private
-> +	  data.
-> +
-> +	  If unsure, say N.
-> +
-> +config AICWF_FULLMAC
-> +	def_bool y
-> +
-> +# Preserve the enabled features of the SDIO station baseline.
-> +config AIC8800_RX_REORDER
-> +	def_bool y
-> +
-> +config AIC8800_ARP_OFFLOAD
-> +	def_bool y
-> +
-> +config AIC8800_RX_NETIF_RECV_SKB
-> +	def_bool y
-> +
-> +config AIC8800_STA_ONLY
-> +	def_bool y
-> +	help
-> +	  Limit the initial upstream driver to station mode. The AP, P2P,
-> +	  monitor and mesh implementations remain in the source tree
-> +	  so they can be enabled when those modes are ready for upstream.
-> +
-> +config AIC8800_NONSTA_SUPPORT
-> +	def_bool y if !AIC8800_STA_ONLY
-
-Almost nothing above makes sense.
-
-
-Best regards,
-Krzysztof
-
+johannes
