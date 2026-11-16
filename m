@@ -1,63 +1,63 @@
-Authentication-Results: smtp.subspace.kernel.org; arc=pass header.oldest-pass=0 smtp.remote-ip=165.173.182.54
+Authentication-Results: smtp.subspace.kernel.org; arc=pass header.oldest-pass=0 smtp.remote-ip=165.173.180.54
 ARC-Seal: i=2; d=subspace.kernel.org; s=arc20261015; a=rsa-sha256; cv=pass;
-	t=1794843145;
-	b=VZnn0d1WyUeZvFUziIWqQyixTqWrJWJ5rOiwZVZuAf0f4KQmQiYyqh0P7gMvtjTcyiV4
-	 2a9K5/KS2pPy5rfJAcLAt+HQRFB2I673mBGGz3uXkIyDTEL5M9XkkAUMrc5Eoq+glt1Fw
-	 LgnJUNEV0EQx0erCoFswBvRMAROxwoHojBL27njWkoapKujjA/j/o2JI20lSCJDUHJhHD
-	 O0KS7U1GqDAvacB54zraFJ+3CnGzat8SIXXOlH02NYywHC4GVRE9ClsUla/D2buo7LgBd
-	 8GHjulxO1f+mTaiSBoqbsaiHyIgepsaJ0xCLqL0+5NmQdEZO8Gy4EfaRFJ9DaKC1f0w==
+	t=1794843180;
+	b=D7ZOwHV+2ReIdbyNmzcr91Jm/jSbjkg1bNUpOsUbOzqY0adEg5ZWbqKMbB+1hWTNy3L+
+	 b35TRcSy4BZN2IBqSugPY7XLKtTOulCUYEnrNVWkJz3NSZ1z5mF3UvGHUESHHghZntBtv
+	 144TNOjvU5dgCgk7+oSy+V7KU5dB/b2KUQQQcHwcv/Alle0OzMwmVKrYYIuwVjrpYRx67
+	 QTi82g7PwVGdafCdc/2aYp+6aoZee0CoB/3pAqJcyURoGLaGKn2F0LK650xccnHX3OSue
+	 610hDGKAHVv395gsqXnb9PfeL+1fqNmGLQWC7Mnfmeh8qeJ15BpKhGh3dH7P/VWG7Tw==
 ARC-Message-Signature: i=2; d=subspace.kernel.org; s=arc20261015;
-	a=rsa-sha256; c=relaxed/relaxed; t=1794843145;
+	a=rsa-sha256; c=relaxed/relaxed; t=1794843180;
 	h=DMARC-Filter:DKIM-Signature:Received:From:To:Cc:Subject:Date:
 	 Message-ID:X-Mailer:In-Reply-To:References:MIME-Version:Content-Type:
 	 Content-Transfer-Encoding:X-ZohoMailClient;
-	bh=j8TYqybOgL/6OwYiPC6FNAMDA7f2wLSSGFwaygcDTJY=;
-	b=hVxMqdzqo12IYbLoRhuQOfDCIUG43cxxcM/l5dljw5N6sHAjINdtjKI86oJwAcKzkIIk
-	 ehR4TorKWmHaW8BF+XLWEf7nzfAt8gP7EvhNxSTDQqwKGYRKKtPxg378EJmBeai+XSGvI
-	 KusiIrYQ+HN2vzCwpDTKtTebl41pFIiGOX64htbXLy2umpM7BYWSs9XAK3bonO29deXjV
-	 +glHY5z20YhqIVwMRmK8vaE+aV+K+bTq/a5d5wMc6olsTkIPdWv7Sd8az/2ywm8xfwBxJ
-	 NgHkzut+gC8HbNfCrRU4gkfg8Y3Dy5h6+h1HavbkGOSbuzBEnW2dJ65Y3vOSHxtE2Hg==
+	bh=wnAjq1uguLq+6OvOyFVP26dzXyMwH1TvCniD3Y5sAEI=;
+	b=WhkluhFPEDSxGQoGg/J/CaRfNo0OpIl2MfARVNuMPoLE4Wwdm7qzC3GJY8FEhUQlE26m
+	 5OoLODeAaEmyFCp3ILXII9QsUe8CujBfYxJELa5tGwxBa501ROcxpVs7OgTm4NADTHT6g
+	 bsynYsJejW3+b1OPXd2XWvzLWZ4joLhMcUZ9WE7YBcnDWJjEjA13f3FtNijyAsJFSh9Hy
+	 JpMBR/gI3AwKaZUc3hSXTQ0tJXmaMT26wiFp6vuE2ftvTyeNV2KHmXC3zNNqEFQvOCLcw
+	 KsDf+4VjzpIHo9gZBqpMSBizAKndX6S+dkDDqzblP4bVUTVJgVxiz6o0y1W5wT3zB1Q==
 ARC-Authentication-Results: i=2; smtp.subspace.kernel.org; 
 	dmarc=pass header.from=ph4ntom-rev.uz;
 	spf=pass smtp.mailfrom=ph4ntom-rev.uz;
-	dkim=pass header.d=ph4ntom-rev.uz header.i=@ph4ntom-rev.uz header.a=rsa-sha256 header.s=zoho header.b=23Av5BgF;
-	arc=pass header.oldest-pass=0 smtp.remote-ip=165.173.182.54
-Received: from sender5-of-o54.zoho.com (sender5-of-o54.zoho.com [165.173.182.54])
+	dkim=pass header.d=ph4ntom-rev.uz header.i=@ph4ntom-rev.uz header.a=rsa-sha256 header.s=zoho header.b=uGddCVG7;
+	arc=pass header.oldest-pass=0 smtp.remote-ip=165.173.180.54
+Received: from sender6-of-o54.zoho.com (sender6-of-o54.zoho.com [165.173.180.54])
 	(using TLSv1.3 with cipher TLS_AES_256_GCM_SHA384 (256/256 bits)
-	 key-exchange X25519 server-signature ECDSA (prime256v1))
+	 key-exchange X25519 server-signature ECDSA (prime256v1) server-digest SHA256)
 	(No client certificate requested)
-	by smtp.subspace.kernel.org (Postfix) with ESMTPS id 104C2606A32A;
-	Mon, 16 Nov 2026 15:32:24 +0000 (UTC)
-DMARC-Filter: OpenDMARC Filter v1.4.2 smtp.subspace.kernel.org 104C2606A32A
+	by smtp.subspace.kernel.org (Postfix) with ESMTPS id 0EDEB606A32C;
+	Mon, 16 Nov 2026 15:32:59 +0000 (UTC)
+DMARC-Filter: OpenDMARC Filter v1.4.2 smtp.subspace.kernel.org 0EDEB606A32C
 Authentication-Results: smtp.subspace.kernel.org; dmarc=pass (p=none dis=none) header.from=ph4ntom-rev.uz
 Authentication-Results: smtp.subspace.kernel.org; spf=pass smtp.mailfrom=ph4ntom-rev.uz
 Authentication-Results: smtp.subspace.kernel.org;
-	dkim=pass (2048-bit key) header.d=ph4ntom-rev.uz header.i=@ph4ntom-rev.uz header.a=rsa-sha256 header.s=zoho header.b=23Av5BgF
-ARC-Seal: i=1; a=rsa-sha256; t=1794842908; cv=none; 
+	dkim=pass (2048-bit key) header.d=ph4ntom-rev.uz header.i=@ph4ntom-rev.uz header.a=rsa-sha256 header.s=zoho header.b=uGddCVG7
+ARC-Seal: i=1; a=rsa-sha256; t=1794842910; cv=none; 
 	d=zohomail.com; s=zohoarc; 
-	b=hfL9TqsUvZ/XVIFn5D33QXv5dQZAvWirEmCxLdcO0uj+X2IC3rUV9dDmBeNM5i5x5TGdVrAINmzvSct8IkIVNwfV92OrT6PV/Pc8FkBUZp994ZbhTefFpNf5RCLpYzU6+/GYoAdZmWHxyahRqVcCsu49yIzRLz1Yrx86kjs1zGw=
+	b=hKrPojceiSuhrPDifINXqjLPmMsXkBJtU++IjbjOaVOMGAucw1nhfqnl+EVSb8I8BW2jtnqnmJNz11eKmPoeTtx3cmDy3gWgCbaMJOCMm6O3smIXZ61Bfxucm9QnCAn+mWdxGgkZAgyHUIOUgPRS/HBIylcg/fueYkXttauxVdc=
 ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=zohomail.com; s=zohoarc; 
-	t=1794842908; h=Content-Type:Content-Transfer-Encoding:Cc:Cc:Date:Date:From:From:In-Reply-To:MIME-Version:Message-ID:Subject:Subject:To:To:Message-Id:Reply-To; 
-	bh=j8TYqybOgL/6OwYiPC6FNAMDA7f2wLSSGFwaygcDTJY=; 
-	b=B5QnOtC5485VV2uCSrgkqiQsNHVgw8pVSt+v8kqPgQG9kYfE/IEQ1TfZ+tIw8gJhl3/eidCqyXCJiB+eP+4zZ4p0+zCpjrbeJCxJsBfe3513vq+QkgsTlu0ZDqZ7vNjg28R8s2yBiKtvlbY2uJ5duSs7V8xFLz5oowa70Z2iU4s=
+	t=1794842910; h=Content-Type:Content-Transfer-Encoding:Cc:Cc:Date:Date:From:From:In-Reply-To:MIME-Version:Message-ID:Subject:Subject:To:To:Message-Id:Reply-To; 
+	bh=wnAjq1uguLq+6OvOyFVP26dzXyMwH1TvCniD3Y5sAEI=; 
+	b=ftdoU5xngsUc0A3rzqQAm7I0XP/+S0n6QENF10xJK/IcSoradoDOsW/u1qQh3X+YftuyF9MRDrSoBE7v2Us9pqDYWtOqA+XJDmTHtccgZvihZJHveCPjBIbtHFbzuM8wHesFXbt9XXdk93ZjJZFkApRkf1GZqdz3XLz15tozuEk=
 ARC-Authentication-Results: i=1; mx.zohomail.com;
 	dkim=pass  header.i=ph4ntom-rev.uz;
 	spf=pass  smtp.mailfrom=owner@ph4ntom-rev.uz;
 	dmarc=pass header.from=<owner@ph4ntom-rev.uz>
-DKIM-Signature: a=rsa-sha256; b=23Av5BgFFbhoUTKaZCarZyPfBW/OarQX2057zTIvDuNtDLGrvapjs8sCOgTW4T7Nx6A0jGLUN3XgcDGphsqvxPfiEWuLg2yKFMFy8xrNYl/JalGyTdj4XVDT3RQcFEkYDBi7c2k7NBVVXUrvzhWba5ivbkwUq/FpFomF27LMCJQ6HgwSSzkDKPZX4vxKZtm5L9WGt3TjzeFWWLBTfMyEEP+BQaYF+8Z6llbieMFaoPOIEhLIUJH5EexsSdhtdCDHr7tcIZQnFYcFj+HPyG2mkGX5a0MWEIuLTVhNgazPOUTODreRTE4StYG627kfyD529lfhL8CkFGqQePI7C8ZrGQ==; c=relaxed/relaxed; s=zoho; d=ph4ntom-rev.uz; v=1; bh=j8TYqybOgL/6OwYiPC6FNAMDA7f2wLSSGFwaygcDTJY=; h=Content-Description:Content-ID:Content-Type:Content-Transfer-Encoding:Cc:Date:From:In-Reply-To:List-Subscribe:List-Post:List-Owner:List-Id:List-Archive:List-Help:List-Unsubscribe:MIME-Version:Message-ID:Resent-Sender:Resent-Cc:Resent-Date:Resent-To:Reply-To:Resent-Message-ID:Resent-From:Sender:Subject:To:Date:From:Message-Id:Reply-To:Subject:To:Cc;
-Received: by smtp.zohomail.com with SMTPS id 1794842905416817.4745555354066;
-	Mon, 16 Nov 2026 07:28:25 -0800 (PST)
+DKIM-Signature: a=rsa-sha256; b=uGddCVG7TJLLTyo8FmXLRZoaay2+tCgO6o3EtP+pNPjAxzNtK82NIHPn0IPHwUUcomEhBAmNHhP73vI8Ipp35lTKfdCmWWZyeETeNfOTFHY0u0g0cdLmyduiypawPrVDX62qza1zE3vxBVmaBQ5ZRyv5m1uQ8Kr2i/zvzZSunqDtgJCmWbSVhgiOwwBCzJ+KdNN2asZOSY+OaRQcLkZXzDjfYv4L5mOvaI55IH5+lIuQQu6K30qRxNltBBPysf1d5WYAok/8Tdi0756j78ZT/eOllR3jfzEu0nMcJEleVYvtwJZE7WSRs+xvxvaKHWP9mQTJh89lB7L0jeMiwHsYdQ==; c=relaxed/relaxed; s=zoho; d=ph4ntom-rev.uz; v=1; bh=wnAjq1uguLq+6OvOyFVP26dzXyMwH1TvCniD3Y5sAEI=; h=Content-Description:Content-ID:Content-Type:Content-Transfer-Encoding:Cc:Date:From:In-Reply-To:List-Subscribe:List-Post:List-Owner:List-Id:List-Archive:List-Help:List-Unsubscribe:MIME-Version:Message-ID:Resent-Sender:Resent-Cc:Resent-Date:Resent-To:Reply-To:Resent-Message-ID:Resent-From:Sender:Subject:To:Date:From:Message-Id:Reply-To:Subject:To:Cc;
+Received: by smtp.zohomail.com with SMTPS id 1794842907554590.3151237487023;
+	Mon, 16 Nov 2026 07:28:27 -0800 (PST)
 From: Enver Ikromov <owner@ph4ntom-rev.uz>
 To: Ping-Ke Shih <pkshih@realtek.com>
 Cc: Enver Ikromov <owner@ph4ntom-rev.uz>,
 	linux-wireless@vger.kernel.org,
 	linux-kernel@vger.kernel.org
-Subject: Re: [PATCH rtw-next v5 06/10] wifi: rtw89: transmit frames from monitor interfaces
-Date: Mon, 16 Nov 2026 20:27:58 +0500
-Message-ID: <20261116152804.781-8-owner@ph4ntom-rev.uz>
+Subject: Re: [PATCH rtw-next v5 07/10] wifi: rtw89: send injected control frames through the management path
+Date: Mon, 16 Nov 2026 20:27:59 +0500
+Message-ID: <20261116152804.781-9-owner@ph4ntom-rev.uz>
 X-Mailer: git-send-email 2.56.0.windows.4
-In-Reply-To: <3017c874678a439c9009f1b3c3ad765d@realtek.com>
-References: <20261113235211.1911-1-owner@ph4ntom-rev.uz> <20261113235211.1911-7-owner@ph4ntom-rev.uz> <3017c874678a439c9009f1b3c3ad765d@realtek.com>
+In-Reply-To: <0a32e2d1a6d745a88f1a814c5bf145cc@realtek.com>
+References: <20261113235211.1911-1-owner@ph4ntom-rev.uz> <20261113235211.1911-8-owner@ph4ntom-rev.uz> <0a32e2d1a6d745a88f1a814c5bf145cc@realtek.com>
 X-Mailing-List: linux-wireless@vger.kernel.org
 List-Id: <linux-wireless.vger.kernel.org>
 List-Post: <mailto:linux-wireless@vger.kernel.org>
@@ -71,30 +71,32 @@ Content-Type: text/plain; charset=UTF-8
 Content-Transfer-Encoding: 8bit
 X-ZohoMailClient: External
 
-On Mon, Nov 16, 2026 at 01:35:42AM +0000, Ping-Ke Shih wrote:
-> > for injected data frames whose addr2
-> > matches an active interface, via wake_tx_queue and
-> > rtw89_core_txq_push().
+On Mon, Nov 16, 2026 at 02:14:36AM +0000, Ping-Ke Shih wrote:
+> Did you encounter real problem if CTS/RST goes via AC queue?
+> I just don't want much conditions in data path.
+
+I tested injecting 16-byte RTS (checking live over-the-air CTS replies
+from an AP) as well as 10-byte ACK and 10-byte CTS via the AC queue
+without changing rtw89_core_get_tx_type(): it works identically to the
+management queue (23/25 CTS replies on 2.4 GHz and 25/25 on 5 GHz, with
+no errors). So routing control frames to the management path is not
+needed.
+
+> Did you actually see driver sends control frames generated by mac80211?
+> If so, when and how?
+
+Only via ieee80211_send_bar() (BlockAckReq when a TX BA session flushes
+or tears down).
+
+> If my thought is correct, here can just
 >
-> How can I reproduce this? I setup wlan0 + mon0 (with UP state), and
-> use your script to inject packet with wlan0's mac address, it still
-> goes via rtw89_ops_tx().
+> 	if (ieee80211_is_ctl(hdr->frame_control))
+> 		seq = 0;
+> 	else
+> 		seq = (le16_to_cpu(hdr->seq_ctrl) & IEEE80211_SCTL_SEQ) >> 4;
 
-That only happened when wlan0 was associated to an AP and the injected
-data frame's addr1 matched the peer STA (so ieee80211_lookup_ra_sta()
-found the STA TXQ).
-
-> The flag IEEE80211_CONF_MONITOR is cleared if both wlan0 + mon0 are UP.
-> Do you actually need that? I have no good idea now. Can we just focus
-> on single monitor case? Or just avoid crash from concurrency
-> combination.
-
-Agreed. Focusing on the single monitor interface case (and just
-avoiding the crash on wlan0 + mon0 via patch 1) makes the series much
-simpler. In single monitor mode mac80211 already validates
-skb_headlen() in ieee80211_monitor_start_xmit() and passes the virtual
-monitor vif to rtw89_ops_tx(), so this entire patch is unnecessary. I
-will drop patch 06/10 completely in v6.
+Agreed, I will drop the rtw89_core_get_tx_type() change and keep only
+this 4-line seq = 0 check in v6.
 
 Thanks,
 Enver
