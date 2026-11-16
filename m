@@ -1,82 +1,57 @@
-Authentication-Results: smtp.subspace.kernel.org; arc=none smtp.remote-ip=211.75.126.72
+Authentication-Results: smtp.subspace.kernel.org; arc=none smtp.remote-ip=109.224.244.119
 ARC-Seal: i=1; d=subspace.kernel.org; s=arc20261015; a=rsa-sha256; cv=none;
-	t=1794815349;
-	b=Yu24VYiJwNa6OYNYl1+e0/asdtzYE/JP1MDpUSxFL5zJjjlrQ7sjYeKqDLG6305xgo62
-	 OVpurbiLDjuIAPs8AN4tGotA9VyJG5nV/o94G/YXNnpouDHSKLd/zClbx6ZG7p7tKC4hX
-	 VjmDG8w3pMNlbF0hdvcaySoUcoF8vF/Wp6KncWeaYFl1SziiqPNW3ug9vCsbQe6MgddzF
-	 aGcIqAlQcM/vXGvANmsJCe+jiT4zxpvQ8/WTwszbYDYggecsRHKYQaJ8EPTGB4uydlYX1
-	 wUUjE5eS30iZ3FbfJ0vRKyj7bqQed48d34l2gNf0mIywevOLUSWTPHkwDX7nD7bnmxg==
+	t=1794815608;
+	b=0Mbkt+YClogvL8uFwZLo2oohKidJKbUkAzsTGw2INaTYr5AceiiXTlOoQ2PekG6Eem1/
+	 aNdBvGUfMKo49ZoEPxdA/XUWndWkuYecbwRXTBBJ+OITbyv8kYMSB4UqqfNs1KASDyYd8
+	 r2clicHOt6x+ni6CSjtgYwJiThuQtKWivtJ0U9LYkA6gjW+EOi9jiaM/BQQfUi/QcDYvL
+	 F/H4hklMTqX+bSHrTvlGfQXF91bdT5fYMFw+waq5sD0RolXfpBSyVNsvNAIQ877ahyXMp
+	 hdJDsAgUOdPN0T/ameASds3zWn8bChSmS9jUrSZRBqD5hCpLxZODGMgkSltFqDSBMxQ==
 ARC-Message-Signature: i=1; d=subspace.kernel.org; s=arc20261015;
-	a=rsa-sha256; c=relaxed/relaxed; t=1794815349;
-	h=DMARC-Filter:X-SpamFilter-By:DKIM-Signature:Received:Received:
-	 Received:From:To:CC:Subject:Thread-Topic:Thread-Index:Date:Message-ID:
-	 References:In-Reply-To:Accept-Language:Content-Language:
-	 x-originating-ip:Content-Type:Content-Transfer-Encoding:MIME-Version;
-	bh=FMDqEW4ZKuY0G5VySG8XnVV3zPt2F9GWS7hK9Beg1B4=;
-	b=iCoQE10AdPlvEYAvguKZidVu1NeyjKGnbS8OacC7UZYp/RLS1PFbi2x52tQaE8B9AoAR
-	 4DNyO0tnRnNT+AdNG9ftWQ0xM6spn8lKM5kJX/1yIikMhRW1j2lTmELr9sde11AlMgmUM
-	 czgTm7JP6/cBcFPvK5ANquFgW9SOVD5hzO3ri16HooQbb86hgthHmsR+wdwd8YecMNmHE
-	 i5l/Ovc/TBNdy3Pq5o8xi181PZAh56Nye54ZkqB1hMlDftdmIliMknYwnYvZJKGP9GA9h
-	 Pc/ABZMo5BGwpZbaw33pwaZW6okySx10XsAQjXGj2xjG4K75+wfRpxFRcQ9T88jWF6g==
+	a=rsa-sha256; c=relaxed/relaxed; t=1794815608;
+	h=DMARC-Filter:DKIM-Signature:Date:To:From:Cc:Subject:Message-ID:
+	 Feedback-ID:X-Pm-Message-ID:MIME-Version:Content-Type:
+	 Content-Transfer-Encoding;
+	bh=rP/ytoIFxyKaHItDHLsWZVp8ErKS2pDSrb2VxTCxhyc=;
+	b=Eb3IeUO0VH8rKFyp0++rkcFg3fZffQdOY5dFLf7906gGksrLUSO44HK9kqvGROWBQ03R
+	 axQpbcIp18nvnYix4S3PEeLjJJ0plVVYp88CniTrHCnTH0WuMhouJ9tMYFOfwCiDbo3BR
+	 c6VwfqhiN7WBrGEZePjB5Dl4vIk9oKUW978agv/4h8oRtosSVMq9XhMwYNE7wY9SolXt6
+	 UFLsHEjuhAj6qiGW0dQIwnl7blhAnhRCZzUvgQPvKR7Ajbt+bEYX3PNYinNFR48kAtkGp
+	 1r4trFdOCKX9lKgHtIMIOw2l+e7e3c+3H8721sPWXOWWMuAkuu1SFbbeeSF4ihbYgpw==
 ARC-Authentication-Results: i=1; smtp.subspace.kernel.org; 
-	dmarc=pass header.from=realtek.com;
-	spf=pass smtp.mailfrom=realtek.com;
-	dkim=pass header.d=realtek.com header.i=@realtek.com header.a=rsa-sha256 header.s=dkim header.b=oBA0S6G0;
-	arc=none smtp.remote-ip=211.75.126.72
-Received: from rtits2.realtek.com.tw (rtits2.realtek.com [211.75.126.72])
+	dmarc=pass header.from=becholey.ch;
+	spf=pass smtp.mailfrom=becholey.ch;
+	dkim=pass header.d=becholey.ch header.i=@becholey.ch header.a=rsa-sha256 header.s=protonmail header.b=WcX4Hlo+;
+	arc=none smtp.remote-ip=109.224.244.119
+Received: from mail-244119.protonmail.ch (mail-244119.protonmail.ch [109.224.244.119])
 	(using TLSv1.3 with cipher TLS_AES_256_GCM_SHA384 (256/256 bits)
 	 key-exchange X25519 server-signature ECDSA (prime256v1) server-digest SHA256)
 	(No client certificate requested)
-	by smtp.subspace.kernel.org (Postfix) with ESMTPS id E7636606A31C
-	for <linux-wireless@vger.kernel.org>; Mon, 16 Nov 2026 07:49:08 +0000 (UTC)
-DMARC-Filter: OpenDMARC Filter v1.4.2 smtp.subspace.kernel.org E7636606A31C
-Authentication-Results: smtp.subspace.kernel.org; dmarc=pass (p=none dis=none) header.from=realtek.com
-Authentication-Results: smtp.subspace.kernel.org; spf=pass smtp.mailfrom=realtek.com
+	by smtp.subspace.kernel.org (Postfix) with ESMTPS id A0F40606A32A
+	for <linux-wireless@vger.kernel.org>; Mon, 16 Nov 2026 07:53:26 +0000 (UTC)
+DMARC-Filter: OpenDMARC Filter v1.4.2 smtp.subspace.kernel.org A0F40606A32A
+Authentication-Results: smtp.subspace.kernel.org; dmarc=pass (p=quarantine dis=none) header.from=becholey.ch
+Authentication-Results: smtp.subspace.kernel.org; spf=pass smtp.mailfrom=becholey.ch
 Authentication-Results: smtp.subspace.kernel.org;
-	dkim=pass (2048-bit key) header.d=realtek.com header.i=@realtek.com header.a=rsa-sha256 header.s=dkim header.b=oBA0S6G0
-X-SpamFilter-By: ArmorX SpamTrap 5.80 with qID 6AG7n3Yg93224320, This message is accepted by code: ctloc85258
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=realtek.com; s=dkim;
-	t=1794815343; bh=FMDqEW4ZKuY0G5VySG8XnVV3zPt2F9GWS7hK9Beg1B4=;
-	h=From:To:CC:Subject:Date:Message-ID:References:In-Reply-To:
-	 Content-Type:Content-Transfer-Encoding:MIME-Version;
-	b=oBA0S6G0X1eZZ27aLStrmj9zbrTrC81V60UGUd+HakrbR4r07wsX132frSpcCFLkB
-	 lSINE7jYagDmS49XaC4mdhoWZnzaPl89V+7HenJ33s57/OBwwzD4dbifb9MBIb+rok
-	 eBXAc1jwjGSo614GO7lqHLpwZJbLxzm+AdQ/lUtfDrfLrJntK8pyyjmAVPkzTFmIAK
-	 Lm1ZPLyy1PkOc93nuheKUXInD0QBr9RXpB5fZIJ0ltcIJNtduiitGxs6VgI8IHEINT
-	 CLMrYbN2J/e8CCDZwAEP91ELAsfr8QbueEfO5b+3t2lvpg6GckUUTNgHer8hmJqSjs
-	 tltwIVE5KkQQQ==
-Received: from mail.realtek.com (rtkexhmbs04.realtek.com.tw[10.21.1.54])
-	by rtits2.realtek.com.tw (8.15.2/3.29/5.94) with ESMTPS id 6AG7n3Yg93224320
-	(version=TLSv1.2 cipher=ECDHE-RSA-AES256-GCM-SHA384 bits=256 verify=FAIL);
-	Mon, 16 Nov 2026 15:49:03 +0800
-Received: from RTKEXHMBS06.realtek.com.tw (10.21.1.56) by
- RTKEXHMBS04.realtek.com.tw (10.21.1.54) with Microsoft SMTP Server
- (version=TLS1_2, cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id
- 15.2.2562.56; Mon, 16 Nov 2026 15:48:59 +0800
-Received: from RTKEXHMBS06.realtek.com.tw ([fe80::eeeb:c765:ca73:5eef]) by
- RTKEXHMBS06.realtek.com.tw ([fe80::eeeb:c765:ca73:5eef%10]) with mapi id
- 15.02.2562.056; Mon, 16 Nov 2026 15:48:59 +0800
-From: Ping-Ke Shih <pkshih@realtek.com>
-To: "V. S." <spam@acio.nl>
-CC: "linux-wireless@vger.kernel.org" <linux-wireless@vger.kernel.org>
-Subject: RE: [PATCH rtw-next v3] wifi: rtw89: set RA init rate level when the
- station RSSI is known
-Thread-Topic: [PATCH rtw-next v3] wifi: rtw89: set RA init rate level when the
- station RSSI is known
-Thread-Index: AQHdc0YlUf9eQmeiD0qR+cPoa7qFpLcrqBfg///0NQCAAthicIAAEBAAgAFZOnCAAHhFUA==
-Date: Mon, 16 Nov 2026 07:48:59 +0000
-Message-ID: <1df4e66bece7402fbd92bb6dddb7ed1f@realtek.com>
-References: <20261113080731.30155-1-spam@acio.nl>
- <4985719de8b5439e8484384ed52033e1@realtek.com>
- <CAJKtVVYmwL3FOC473sQ4BMPjmhep-ERiu=YtmpOQ+24qXB-VMA@mail.gmail.com>
- <6c3b2f153e884047b6fd44da9a12f8cd@realtek.com>
- <CAJKtVVa6n++Uhy7z58d-Wbb3oGnTHz+bHt07_Akp7FPn6F2qYA@mail.gmail.com>
- <a0448c760a5243a7b956b16e9d563183@realtek.com>
-In-Reply-To: <a0448c760a5243a7b956b16e9d563183@realtek.com>
-Accept-Language: en-US, zh-TW
-Content-Language: zh-TW
-Content-Type: text/plain; charset="utf-8"
-Content-Transfer-Encoding: base64
+	dkim=pass (2048-bit key, unprotected) header.d=becholey.ch header.i=@becholey.ch header.a=rsa-sha256 header.s=protonmail header.b=WcX4Hlo+
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=becholey.ch;
+	s=protonmail; t=1794815604; x=1795074804;
+	bh=rP/ytoIFxyKaHItDHLsWZVp8ErKS2pDSrb2VxTCxhyc=;
+	h=Date:To:From:Cc:Subject:Message-ID:Feedback-ID:From:To:Cc:Date:
+	 Subject:Reply-To:Feedback-ID:Message-ID:BIMI-Selector;
+	b=WcX4Hlo+CMtecklcVq0IZ6zuLXBSRm4zAZyRotrYQ30C6bIPvqtE6HyYN7I1cHaHt
+	 xue77m+ZgPZ/sGwbCZEJuvt8mHQDotgO3g1j82UjKlV8ULFLlaDVPvJZGaHxT1Otgy
+	 4e/+U6v0L7VlBtrqHM7tOSxlP5EfCenmQlXvlnIlZMdEbSv/xMwr9WVj9EWjRUQkqG
+	 /OQPI+pbDjgFnfBJFKAXOg9d1OAndj+wjEpWvGAcG8iA5VEh7DpD3HO0TAl6WcLk29
+	 5UdaOZf8n8hxK0K/q9eyFisotdWNDVXHxtu5bTJySO8qihPl1z21YprRW4rKF1A/wW
+	 AuJ+D149/i7Dw==
+Date: Mon, 16 Nov 2026 07:53:18 +0000
+To: linux-wireless@vger.kernel.org
+From: Alexandre Becholey <alex@becholey.ch>
+Cc: Jeff Johnson <jjohnson@kernel.org>, Weiming Shi <bestswngs@gmail.com>, Pontus Fuchs <pontus.fuchs@gmail.com>, "John W. Linville" <linville@tuxdriver.com>, linux-kernel@vger.kernel.org, Alexandre Becholey <alex@becholey.ch>
+Subject: [PATCH 0/3] wifi: ar5523: fix three command path bugs
+Message-ID: <20261116075305.234240-1-alex@becholey.ch>
+Feedback-ID: 60743817:user:proton
+X-Pm-Message-ID: f24f7eb8c3148cd6fdcc695c66627d156e38ade5
 X-Mailing-List: linux-wireless@vger.kernel.org
 List-Id: <linux-wireless.vger.kernel.org>
 List-Post: <mailto:linux-wireless@vger.kernel.org>
@@ -86,14 +61,66 @@ List-Unsubscribe: <mailto:linux-wireless+unsubscribe@vger.kernel.org>
 List-Owner: <mailto:linux-wireless+owner@vger.kernel.org>
 Precedence: list
 MIME-Version: 1.0
+Content-Type: text/plain; charset=utf-8
+Content-Transfer-Encoding: quoted-printable
 
-UGluZy1LZSBTaGloIDxwa3NoaWhAcmVhbHRlay5jb20+IHdyb3RlOg0KPiBWLiBTLiA8c3BhbUBh
-Y2lvLm5sPiB3cm90ZToNCj4gPiBQaW5nLUtlIFNoaWggPHBrc2hpaEByZWFsdGVrLmNvbT4gd3Jv
-dGU6DQo+ID4gPiBIb3cgYWJvdXQgbWVtc2V0KHJhLCAwLCBvZmZzZXRvZih0eXBlb2YoKnJhKSwg
-cnNzaV91bmtub3duKSkgPw0KDQpGWUkuDQoNClBlb3BsZSBhcmUgd29ya2luZyBvbiBwYXRjaHNl
-dCB0byByZW1vdmUgdGhlICd0eXBlb2YnIFsxXS4gQW4gZXhhbXBsZQ0KbGlrZSB0aGlzOg0KDQot
-CWlmIChsZW4gPCBvZmZzZXRvZih0eXBlb2YoKm1nbXQpLCB1LmJlYWNvbi52YXJpYWJsZSkpDQor
-CWlmIChsZW4gPCBzdHJ1Y3Rfb2Zmc2V0KG1nbXQsIHUuYmVhY29uLnZhcmlhYmxlKSkNCg0KSSBj
-YW4gbWlncmF0ZSB0byB0aGUgc3R5bGUgYWZ0ZXJ3YXJkLiBXZSBjYW4gc3RpbGwgY29udGludWUg
-dGhpcyBwYXRjaC4NCg0KWzFdIGh0dHBzOi8vbG9yZS5rZXJuZWwub3JnL2xpbnV4LXdpcmVsZXNz
-LzIwMjYxMTEzLW9mZnNldG9mLXYzLTItNzE0ZGY3MDUzODkzQGFybS5jb20vDQoNCg0K
+Hi,
+
+Three bugs in the ar5523 command path, all reachable from a USB device
+that presents itself as an AR5523, and all reproduced with an emulated
+device (raw-gadget/dummy_hcd and QEMU's xHCI) under KASAN on
+torvalds/master (v7.4-rc2-141-g9d66f26fefac) and on v7.3.1:
+
+ 1/3 ar5523_read_reply() hits WARN_ON(1) on a short reply: a header
+     length below the header size (or with bit 31 set) makes the
+     payload length negative. The device triggers it during probe by
+     answering the first read command (WDCMSG_HOST_AVAILABLE) with such
+     a reply, or later with an unsolicited one. The command also
+     completes with the result of the previous command.
+ 2/3 ar5523_cmd() returns while the command TX URB is still in flight
+     when the device sends the reply without taking the command on its
+     bulk OUT endpoint. If that reply fails the command, probe unwinds
+     and frees the command buffer and struct ar5523 under the queued
+     URB; when the URB completes later (the device takes the command,
+     or is unplugged), the host controller and ar5523_cmd_tx_cb() use
+     the freed memory (use-after-free). The device does this on its own
+     at plug-in.
+ 3/3 ar5523_cmd() leaves the caller's reply buffer in tx_cmd.odata
+     when a command fails. If WDCMSG_TARGET_START fails while the
+     interface is being brought up (the device halts its command
+     endpoint), the pointer keeps referring to a variable on the stack
+     of the task that brought the interface up, and a later
+     WDCMSG_TARGET_START message from the device writes 4 bytes of its
+     choice into that dead stack frame. Bringing the interface up is
+     the only local action needed.
+
+3/3 is written on top of 2/3 (it changes the branch that 2/3 adds after
+the wait), so please apply the series in order. The series is based on
+v7.4-rc2-141-g9d66f26fefac (base-commit below); ar5523.c is identical
+in v7.3.1 and the patches apply there unchanged. Each patch has its
+trigger, a decoded trace from that commit and its testing notes below
+its '---' line; the testing of the whole series is in the notes of 2/3.
+The notes of 1/3 explain how the series interacts with Weiming Shi's
+pending "wifi: ar5523: reject negative reply lengths" patch.
+
+How we found it: the bugs were found, and the reproducers and these
+patches were written, by AI agents (Claude Mythos and Claude Opus
+models), in QEMU with an emulated USB device.
+A human reviewed the analysis and the patches. The reproducers are
+available to maintainers on request.
+
+Thanks,
+Alexandre Becholey
+
+Alexandre Becholey (3):
+  wifi: ar5523: don't WARN on a short command reply
+  wifi: ar5523: don't leave the command TX URB in flight
+  wifi: ar5523: don't leave a stale reply buffer behind in ar5523_cmd()
+
+ drivers/net/wireless/ath/ar5523/ar5523.c | 43 ++++++++++++++++++++++++++++=
++---
+ drivers/net/wireless/ath/ar5523/ar5523.h |  1 +
+ 2 files changed, 40 insertions(+), 4 deletions(-)
+
+base-commit: 9d66f26fefacebfeed15de31c1123451a17ff119
+
