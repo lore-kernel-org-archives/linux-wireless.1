@@ -1,107 +1,110 @@
-Authentication-Results: smtp.subspace.kernel.org; arc=none smtp.remote-ip=209.85.216.98
+Authentication-Results: smtp.subspace.kernel.org; arc=none smtp.remote-ip=205.220.168.131
 ARC-Seal: i=1; d=subspace.kernel.org; s=arc20261015; a=rsa-sha256; cv=none;
-	t=1794825726;
-	b=NLw6VBKqd3+8HX9g25XvrTgmKc35O41dlmuEym3WXhAxm+DDqzxMGzy0rs0o//+1y4eJ
-	 ENCQz9M3/aEUPrr4qn+sJwXiO1pSXLv28tlN9UpCN93cQOj0kiRsfnl24TeiN/AkEiWPV
-	 dnU0soUbCeueqEbaWKDzf5I4Hio1SOef7Ia1KL32p0Vpa/Y96DKZs1V3J8sQwWeHQxscP
-	 5ViEEa++VM7GFPYhHDtEcvhFvYL+FY7ArDniZ3Jyab4x3PBP7N7zDKegEXCrQTC+GiVnq
-	 Aiep7CYxRWBeD5UFAr6wh9rGBP4kJgQYRiZMx4Yyn5BekWf8+iarhfWnsg+Oi5xrP3A==
+	t=1794826219;
+	b=NwWG6FmJVn5AZ/Kz1VLm01rMtopHIQhhxWeqoMe1gYhmtBFi3JQIsKiBDGY+qdDZr4uO
+	 jy07wi4k0qHMEgFDQGKhOxSRgrvegVO+cx/Jk8uK2E1dIio/IIiQ0ntqvWlemcHWJH4Pd
+	 U0eHpioGBeGnzsv5rACz20e4Z8xdaEKAUIetAoqwos9lN2s4mMO5CRMn3PHet+gLmTa4G
+	 WbvtpNYE0RfcbwPfs0KD+vqEglSWxnosDb9ybtice2kQ6udNEELfPrXcWQKXY6oJjDJfk
+	 v5qVpneTv2qPUeu7Bxh09N3z4nxi2P/Wrlld4l1D/EsYJXw+fCnlKsJQ3gV8AG4xVWQ==
 ARC-Message-Signature: i=1; d=subspace.kernel.org; s=arc20261015;
-	a=rsa-sha256; c=relaxed/relaxed; t=1794825726;
-	h=DMARC-Filter:Received:X-Google-DKIM-Signature:X-Gm-Message-State:
-	 X-Gm-Gg:X-Received:Received:X-Relaying-Domain:X-CFilter-Loop:Received:
-	 DKIM-Signature:X-Received:X-Received:Received:From:To:Cc:Subject:Date:
-	 Message-ID:X-Mailer:In-Reply-To:References:MIME-Version:
-	 Content-Transfer-Encoding:X-DetectorID-Processed;
-	bh=3TnZeP/Myi6EwsvWImdUdCOwfUWWi1PsNVUc8BFWuNU=;
-	b=w6aDs/vX7NP+OHh83kjFid52+HZCJvMOtsxhsrpNUe0vF9jvKFt504x/tMWWRKsU5A+a
-	 eJwKDvketYCLWJ4m4Rj061oe2vqG4G47/uCzUnlUEs+Vn0irP7aWGnXIrgiE18q2omTtF
-	 OKabvVuMQ23B3Ve+ky6b+1u1bm1bW8kOUiri8zGdWMVBzDCVhFPFwJfjkW4l7RtDFwUci
-	 ifQxA0U/t8xNCY2QouSmXfQ+R7ZN7W9avXhQIRDExUABwGMx6/WNmFCaGzIkloth5mTZr
-	 L4Le5nd4Ji8VTtVbIgQ8+2uz7NtzhBXOdQJfjmfII5j5abq3arj0HmWzv22TpxSX1HA==
+	a=rsa-sha256; c=relaxed/relaxed; t=1794826219;
+	h=DMARC-Filter:Received:DKIM-Signature:Received:Received:
+	 DKIM-Signature:X-Google-DKIM-Signature:X-Gm-Message-State:X-Gm-Gg:
+	 X-Received:X-Received:Received:Message-ID:Date:MIME-Version:
+	 User-Agent:Subject:To:Cc:References:Content-Language:From:In-Reply-To:
+	 Content-Type:Content-Transfer-Encoding:X-Proofpoint-Spam-Info:
+	 X-Authority-Analysis:X-Proofpoint-ORIG-GUID:X-Proofpoint-GUID:
+	 X-Proofpoint-Spam-Details-Enc:X-Proofpoint-Virus-Version:
+	 X-Proofpoint-Spam-Details;
+	bh=DAZVfLcGYYhklRO/MWrxZTQNHhdEa+18VRwahyI2Cms=;
+	b=bXSs3isZBliRTv/veoVpwRlw6bvLnfDTX0J9Nw1LK5/Nwiv5Fgru89ZJSmx7XL6GV35k
+	 MuhkIyEFCtgujtEZfLw9hUTDg6DySnGeTODnMHRsRfCDL58UsHB5Citof2wNi4rR8CGAG
+	 VS6F1D2FijyljkIMDo1Y6gMfFUmpnRqDSYmTvOxWtfDsh+5WuNZjaE8/6oKGUXLI/zt3m
+	 ej8MLgjjwFj1GDV5Cr6yjeKbSXSeFBMiSOz8K2wHQio3T/IbJ/ND2yf9ojCqsEklqOXrn
+	 P8oB/3SII2OvyNBKwYxGKy07NkiO7rCWF9iungY3x0FOYxuhPXcBj9DjF/gNlwwHSXQ==
 ARC-Authentication-Results: i=1; smtp.subspace.kernel.org; 
-	dmarc=pass header.from=broadcom.com;
-	spf=fail smtp.mailfrom=broadcom.com;
-	dkim=pass header.d=broadcom.com header.i=@broadcom.com header.a=rsa-sha256 header.s=google header.b=XMQ+zHVx;
-	arc=none smtp.remote-ip=209.85.216.98
-Received: from mail-pj1-f98.google.com (mail-pj1-f98.google.com [209.85.216.98])
-	(using TLSv1.3 with cipher TLS_AES_128_GCM_SHA256 (128/128 bits)
+	dmarc=pass header.from=oss.qualcomm.com;
+	spf=pass smtp.mailfrom=oss.qualcomm.com;
+	dkim=pass header.d=qualcomm.com header.i=@qualcomm.com header.a=rsa-sha256 header.s=qcppdkim1 header.b=N5LVk2uz;
+	dkim=pass header.d=oss.qualcomm.com header.i=@oss.qualcomm.com header.a=rsa-sha256 header.s=google header.b=LgTEt8Md;
+	arc=none smtp.remote-ip=205.220.168.131
+Received: from mx0a-0031df01.pphosted.com (mx0a-0031df01.pphosted.com [205.220.168.131])
+	(using TLSv1.3 with cipher TLS_AES_256_GCM_SHA384 (256/256 bits)
 	 key-exchange X25519 server-signature ECDSA (prime256v1) server-digest SHA256)
 	(No client certificate requested)
-	by smtp.subspace.kernel.org (Postfix) with ESMTPS id 9B557606A323
-	for <linux-wireless@vger.kernel.org>; Mon, 16 Nov 2026 10:42:05 +0000 (UTC)
-DMARC-Filter: OpenDMARC Filter v1.4.2 smtp.subspace.kernel.org 9B557606A323
-Authentication-Results: smtp.subspace.kernel.org; dmarc=pass (p=reject dis=none) header.from=broadcom.com
-Authentication-Results: smtp.subspace.kernel.org; spf=fail smtp.mailfrom=broadcom.com
+	by smtp.subspace.kernel.org (Postfix) with ESMTPS id 84F19606A323
+	for <linux-wireless@vger.kernel.org>; Mon, 16 Nov 2026 10:50:19 +0000 (UTC)
+DMARC-Filter: OpenDMARC Filter v1.4.2 smtp.subspace.kernel.org 84F19606A323
+Authentication-Results: smtp.subspace.kernel.org; dmarc=pass (p=none dis=none) header.from=oss.qualcomm.com
+Authentication-Results: smtp.subspace.kernel.org; spf=pass smtp.mailfrom=oss.qualcomm.com
 Authentication-Results: smtp.subspace.kernel.org;
-	dkim=pass (1024-bit key, unprotected) header.d=broadcom.com header.i=@broadcom.com header.a=rsa-sha256 header.s=google header.b=XMQ+zHVx
-Received: by mail-pj1-f98.google.com with SMTP id 98e67ed59e1d1-3b0bbdeae06so2136994a91.1
-        for <linux-wireless@vger.kernel.org>; Mon, 16 Nov 2026 02:42:05 -0800 (PST)
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=1e100.net; s=20260707; t=1794825725; x=1795430525;
-        h=content-transfer-encoding:mime-version:references:in-reply-to
-         :message-id:date:subject:cc:to:from:dkim-signature:x-gm-gg
-         :x-gm-message-state:from:to:cc:subject:date:message-id:reply-to
-         :content-type;
-        bh=3TnZeP/Myi6EwsvWImdUdCOwfUWWi1PsNVUc8BFWuNU=;
-        b=a1q27AFA15Iu1v2ZTknmnVwhgFUO8OgoPw0QxYjggphaDlrmrbD6KfWAjYr+8Zkmht
-         HggNHbmyvdaQPx4Ea9hCGogglyzVcoWzqM2nMQTZvZTf+b+S6rhhClS39Bk716e7ojq8
-         noOY5mpwHI9XiS52DdbmVSV3MYKeATOgXGJH8aPhfK8CfTb78w+o5cWEQnPDp27QMB3W
-         WAPKd/+Imrhy4bN0cFLkYY22Q6Z2BV4Dygc2Q0pej7hz59cVT3Hh21ff/KmYDUCFyDow
-         SGKp/VHHUz3WnMAnTDu02oO9HxL30feyHhKl+AbVlwC0wdQb0JQACOl2cTiG0b9bYMCP
-         qHAA==
-X-Gm-Message-State: APuU4Z/CalBKGdZwT0XbHTqp+KKtW7ArI3do1CYJyyhV1L+CWIuiMPat
-	JbN3PM9W37HY6CWQJbhZdbelYDeK1GceAb3lC/tvsDpNGz9MhAnzuWJoQuWcbqLu7HIG4NcHQzi
-	ZMbPRFjiveLw1buQpMD3JhxB7mtHO2ecdPIBln5q/4hNhd6Hd0eFpiZpZfKBy8HsdXM/nCn3b3v
-	OmOdbDqttv0TxTq9aXmeGH4bMXnIVbkOx0p8ACkdcCHeJvKvfvdVf2GAL7OsHTyljOizy0N2OA+
-	yVu19GY19vd0T3U0TBN93jdpwNh
-X-Gm-Gg: AZFdTZdIvTslaqqtbfGkwe/qVSO/Djk40Iw1sKOcVoRm/5XE/U3azjLasHyuizS9XI8
-	/xTYGkV1MG38dVPZssSL/pJV80OrkwSQ74wymmeOpohkMH2JbPFHn6DG26uYgMYt192PPldAsZL
-	I2nazIELHORaqLFRWmSkQLhnFaSALGDPJE6XIEcL+CwjEUgy59fuSnO9D2+7rhMteaTFdIWEugl
-	IYMWWJosUEhSnohQ34nkDv6o3mZa3a2aQsnS4QSrQo6qZfrInctmh2rdEd36XVCcmeHwryMvwcm
-	7ExGAD8V6BcbLf7eIkxNnciITgLq0rMo6tl7NSyt6hYl492Tcq9hq0jfzWh2J1zeI0Tli3qz+48
-	NMnL4tuwOJYFG47hMxFRs2XjMRvTw6tzcWrMD2UBb7FyLjqN/cBIP9yIs3nmyxNyVT+yDi6pSSu
-	t7HFnru0IhVHXb8Y55kkbLGRpFfgec+qs/W4g3opw6ng==
-X-Received: by 2002:a17:90b:274a:b0:3ac:8ee5:e007 with SMTP id 98e67ed59e1d1-3b1b0a0c4a3mr8224536a91.20.1794825724652;
-        Mon, 16 Nov 2026 02:42:04 -0800 (PST)
-Received: from smtp-us-east1-p01-i01-si01.dlp.protect.broadcom.com (address-144-49-247-123.dlp.protect.broadcom.com. [144.49.247.123])
-        by smtp-relay.gmail.com with ESMTPS id 98e67ed59e1d1-3b1b3a17086sm5849053a91.3.2026.11.16.02.42.04
-        for <linux-wireless@vger.kernel.org>
-        (version=TLS1_2 cipher=ECDHE-ECDSA-AES128-GCM-SHA256 bits=128/128);
-        Mon, 16 Nov 2026 02:42:04 -0800 (PST)
-X-Relaying-Domain: broadcom.com
-X-CFilter-Loop: Reflected
-Received: by mail-qt1-f198.google.com with SMTP id d75a77b69052e-536720195ebso65782261cf.1
-        for <linux-wireless@vger.kernel.org>; Mon, 16 Nov 2026 02:42:03 -0800 (PST)
+	dkim=pass (2048-bit key) header.d=qualcomm.com header.i=@qualcomm.com header.a=rsa-sha256 header.s=qcppdkim1 header.b=N5LVk2uz;
+	dkim=pass (2048-bit key) header.d=oss.qualcomm.com header.i=@oss.qualcomm.com header.a=rsa-sha256 header.s=google header.b=LgTEt8Md
+Received: from pps.filterd (m0279865.ppops.net [127.0.0.1])
+	by mx0a-0031df01.pphosted.com (8.18.1.11/8.18.1.11) with ESMTP id 6AG7enlF1109776
+	for <linux-wireless@vger.kernel.org>; Mon, 16 Nov 2026 10:50:19 GMT
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=qualcomm.com; h=
+	cc:content-transfer-encoding:content-type:date:from:in-reply-to
+	:message-id:mime-version:references:subject:to; s=qcppdkim1; bh=
+	DAZVfLcGYYhklRO/MWrxZTQNHhdEa+18VRwahyI2Cms=; b=N5LVk2uzs5TMt0XL
+	BEyIvhlxFrNUTQ95NY6y3XydGGzyP77uqmLpMPFhU9iCPRoIkhK4mtrPC8Mc3B0r
+	woelA56tGDdtO76IC0kWnen0mBM2m/Igc5sels4JK/vIrhKYkV1dUi5pPVM4o2K/
+	FUEvs8Yh/m2To38j5uW0row62ShESxRvGhO+6ju9xKVV5vBa/JePgKoS4nsPU0MX
+	1dX9aaFyb0xPwuFdfwJQ67re9PC9YxQXPKWPQsw9YwHeb4od4Ip55z6oyvI7tMDz
+	SDcnIyr/zXbNm/93rB+TFcKeBZdgbeMfcX10Ca8TmH2IJ8uvPjdmStRPcPmg/vYq
+	5jYlTA==
+Received: from mail-pj1-f72.google.com (mail-pj1-f72.google.com [209.85.216.72])
+	by mx0a-0031df01.pphosted.com (PPS) with ESMTPS id 4hyrmc1s91-1
+	(version=TLSv1.3 cipher=TLS_AES_128_GCM_SHA256 bits=128 verify=NOT)
+	for <linux-wireless@vger.kernel.org>; Mon, 16 Nov 2026 10:50:18 +0000 (GMT)
+Received: by mail-pj1-f72.google.com with SMTP id 98e67ed59e1d1-3ae6fda7a00so3132279a91.2
+        for <linux-wireless@vger.kernel.org>; Mon, 16 Nov 2026 02:50:18 -0800 (PST)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=broadcom.com; s=google; t=1794825723; x=1795430523; darn=vger.kernel.org;
-        h=content-transfer-encoding:mime-version:references:in-reply-to
-         :message-id:date:subject:cc:to:from:from:to:cc:subject:date
+        d=oss.qualcomm.com; s=google; t=1794826218; x=1795431018; darn=vger.kernel.org;
+        h=content-transfer-encoding:content-type:in-reply-to:from
+         :content-language:references:cc:to:subject:user-agent:mime-version
+         :date:message-id:from:to:cc:subject:date:message-id:reply-to
+         :content-type;
+        bh=DAZVfLcGYYhklRO/MWrxZTQNHhdEa+18VRwahyI2Cms=;
+        b=LgTEt8Md1Gp1CGJYeR6IvA7tqzw3TBmObWRAqdh8kmG9qxEzCdQE6rknfrC62PSpUN
+         IJD8tTGiRX/PgQiQ0+0YR+T3jszON+G/dd1eu3gkkvqWYOjmNV1DBP/hpwrerI7ytpVR
+         pOC1sDPP2j8lD9R/diZ95F5oq4LykS338Zjbfp6/saW+5k/MJRHMoGLz2N+3I6MaB3/i
+         QXryHQ5nrBQzQ1Limcx+V6tURCZT0eEcUgXVzzJJ4CUu00HlBDVmqBX4jRWBoCGwlAh/
+         QRQFZK7ldoqcz24PP7e5057vQbfVaa6Yp9DMsEINK418KG316WBiA9qi63NYuMmnxrKD
+         W6+w==
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+        d=1e100.net; s=20260707; t=1794826218; x=1795431018;
+        h=content-transfer-encoding:content-type:in-reply-to:from
+         :content-language:references:cc:to:subject:user-agent:mime-version
+         :date:message-id:x-gm-gg:x-gm-message-state:from:to:cc:subject:date
          :message-id:reply-to:content-type;
-        bh=3TnZeP/Myi6EwsvWImdUdCOwfUWWi1PsNVUc8BFWuNU=;
-        b=XMQ+zHVxEh1e5eeFfYHEveiN5mG/652o5sXTBXsCTYHAkLyHfpKpGNevpBiQMM9VLu
-         w64sKp/8LlIDyySP9UU/jAQV4IvZ5BTs7bZlJv1Y8m6pK1varUPVCFkfxlYRRdpM7yKH
-         whp+W6e49eWi3xNF+Xx6alTa9XitHrJNLYgAc=
-X-Received: by 2002:ac8:5ac2:0:b0:536:51d2:1e44 with SMTP id d75a77b69052e-55ac667dfc5mr167806921cf.22.1794825723522;
-        Mon, 16 Nov 2026 02:42:03 -0800 (PST)
-X-Received: by 2002:ac8:5ac2:0:b0:536:51d2:1e44 with SMTP id d75a77b69052e-55ac667dfc5mr167806701cf.22.1794825723025;
-        Mon, 16 Nov 2026 02:42:03 -0800 (PST)
-Received: from bld-bun-02.bun.broadcom.net ([192.19.176.227])
-        by smtp.gmail.com with ESMTPSA id 6a1803df08f44-91f23efa2edsm82699996d6.15.2026.11.16.02.42.01
-        (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
-        Mon, 16 Nov 2026 02:42:02 -0800 (PST)
-From: Arend van Spriel <arend.vanspriel@broadcom.com>
-To: Kordian Chmielewski <kudzo51@gmail.com>
-Cc: linux-wireless@vger.kernel.org,
-	Arend van Spriel <arend.vanspriel@broadcom.com>,
-	brcm80211@lists.linux.dev,
-	brcm80211-dev-list.pdl@broadcom.com
-Subject: Re: [PATCH RESEND wireless-next] wifi: brcmfmac: delete the flowrings of an AP that stops or goes down
-Date: Mon, 16 Nov 2026 11:41:58 +0100
-Message-ID: <20261116104158.3133373-1-arend.vanspriel@broadcom.com>
-X-Mailer: git-send-email 2.54.0
-In-Reply-To: <20261110231145.206744-1-kudzo51@gmail.com>
-References: <20261110231145.206744-1-kudzo51@gmail.com>
+        bh=DAZVfLcGYYhklRO/MWrxZTQNHhdEa+18VRwahyI2Cms=;
+        b=H0mFoMdM3ZOD2lhbKaOJfa05sp7HRYBBWJvthnM1Jz0sptBaxGD3q1AgNnevUkAc8k
+         79YCaOVg6z2JRmSz/B5Wgmg3fIfC9SWwbI7zr9immllAKkwg+jW4HaYFUf2Jv8zMnb4Z
+         j0/IpMf627S/lXgqDpPs0z/BQ3VuUnjHq+4hplE7eW0M2FO8oi5BpyLtDo+8fYf7RsEu
+         C8y5f8+/QNoyGWl3WycRtH/suvH7vJP70Dg2XmNIOJQMM3xjCqT1911FlIFdbYit+ZyM
+         C07Cb4DTTY6d17vRuoaavTmIQnypGzHoY50wgCJOdLxxpN6a1Y4BKCCIAGo+JSQVAJmU
+         81Ww==
+X-Gm-Message-State: APuU4Z+C5ufF7sTyytsrMqIXCGLRcR2Bfm13yZOEPPmF9oSl7UKhnqFT
+	n2RYCfpQ1zCZ8/dfTBtsn0ywER4Wd4km1GTJ2BFnzSRi4er0xv3yqetXU9XGPqf+lf6E5Ascci/
+	a3yqC7brRogU8LEUiopEGCkN89+TIt/aRbskcCiND1ykHo3IZ2VdmO1Rn7NvzEnI+oXy2
+X-Gm-Gg: AZFdTZfGzRKe5RsEzxojlHCo9dIDHkbYB2d8Z8KktUMf+93mFeiUqqWupL5vgLnkc6b
+	l8eouDx6wviOIRoy/EACdki20pwGcmb/XJWtb2uoXQIHk02SCJyaPG2mddGW2gMOfh9H1ArJ5Nz
+	4ZPReGyjK0WhGo7KSk1s2ZFNdwHj8eYUUTrCJWST7aGbEeR1bSPXgoJhjiS7G5VfuV2LIX43Wte
+	Edwp40Ir/+RxLKJipBZcEY5rWvyVrSHqlO50l4IwhlyPYyhDwBHUDy+S3Qlh23ONmjrbKma1CBx
+	L0k2RCHDSTs5/dg3UDl73J13pEaw0zOoDaEGPc+EoTTzE9UJMfOvA9PQHfXIaTLW+DDImXxH38C
+	nUlRBDeh6PB4NAYRi1QIK+jB0MP1XXcrBvL+9vXWARs1tL3umIcmBNtmCyvNj4i/V/ef4dhun39
+	qzvvmvuxrQCMJTqsmf5Z7EJ0sSV+dTg8jqdZFWvSU6mPQBP/6y1l0sFndIa0pmgWyP
+X-Received: by 2002:a17:90b:4b0a:b0:3ac:17c:6e89 with SMTP id 98e67ed59e1d1-3b1b09fa36bmr9142279a91.19.1794826218072;
+        Mon, 16 Nov 2026 02:50:18 -0800 (PST)
+X-Received: by 2002:a17:90b:4b0a:b0:3ac:17c:6e89 with SMTP id 98e67ed59e1d1-3b1b09fa36bmr9142268a91.19.1794826217536;
+        Mon, 16 Nov 2026 02:50:17 -0800 (PST)
+Received: from [10.50.36.90] (blr-bdr-fw-01_GlobalNAT_AllZones-Outside.qualcomm.com. [103.229.18.19])
+        by smtp.gmail.com with ESMTPSA id 98e67ed59e1d1-3b1aeb17853sm16351460a91.5.2026.11.16.02.50.15
+        (version=TLS1_3 cipher=TLS_AES_128_GCM_SHA256 bits=128/128);
+        Mon, 16 Nov 2026 02:50:17 -0800 (PST)
+Message-ID: <099e07e4-7861-41e5-a688-a43f1f57918f@oss.qualcomm.com>
+Date: Mon, 16 Nov 2026 16:20:14 +0530
 X-Mailing-List: linux-wireless@vger.kernel.org
 List-Id: <linux-wireless.vger.kernel.org>
 List-Post: <mailto:linux-wireless@vger.kernel.org>
@@ -111,38 +114,71 @@ List-Unsubscribe: <mailto:linux-wireless+unsubscribe@vger.kernel.org>
 List-Owner: <mailto:linux-wireless+owner@vger.kernel.org>
 Precedence: list
 MIME-Version: 1.0
-Content-Transfer-Encoding: 8bit
-X-DetectorID-Processed: b00c1d49-9d2e-4205-b15f-d015386d3d5e
+User-Agent: Mozilla Thunderbird
+Subject: Re: [PATCH wireless-next v4 16/21] wifi: mac80211: send BlockAck
+ policy in AMPDU action
+To: Johannes Berg <johannes@sipsolutions.net>
+Cc: linux-wireless@vger.kernel.org, linux-kernel@vger.kernel.org
+References: <20261106-smd-v4-0-62e39487f51a@oss.qualcomm.com>
+ <20261106-smd-v4-16-62e39487f51a@oss.qualcomm.com>
+ <dacf9b17cee00430301403e64d8353348a747d46.camel@sipsolutions.net>
+Content-Language: en-US
+From: Pooventhiran G <pooventhiran.g@oss.qualcomm.com>
+In-Reply-To: <dacf9b17cee00430301403e64d8353348a747d46.camel@sipsolutions.net>
+Content-Type: text/plain; charset=UTF-8
+Content-Transfer-Encoding: 7bit
+X-Proofpoint-Spam-Info: AW1haW4tMjYxMTE2MDA0MiBTYWx0ZWRfX6WppkImVlDhu
+ 3NTYWECU+KXQ2A2AlfmZXM5yVvmaVRC1qK2+NOWNIeB5ecpElo//1EVXGAsBXJU4SvZ72u/5WG0
+ FAV9Dt6lvbzVb0dwy5/E2ji4vPAFl9s=
+X-Authority-Analysis: v=2.4 cv=C9N8WgP+ c=1 sm=1 tr=0 ts=6afadfea cx=c_pps
+ a=RP+M6JBNLl+fLTcSJhASfg==:117 a=Ou0eQOY4+eZoSc0qltEV5Q==:17
+ a=IkcTkHD0fZMA:10 a=zJRp6_cAMcgA:10 a=s4-Qcg_JpJYA:10
+ a=VkNPw1HP01LnGYTKEx00:22 a=u7WPNUs3qKkmUXheDGA7:22 a=Um2Pa8k9VHT-vaBCBUpS:22
+ a=nEXYo2GfNLYU3GksVNYA:9 a=QEXdDO2ut3YA:10 a=iS9zxrgQBfv6-_F4QbHw:22
+X-Proofpoint-ORIG-GUID: KEibpusEvK8NM1QikvI2sJ8cXcbs0fdB
+X-Proofpoint-GUID: KEibpusEvK8NM1QikvI2sJ8cXcbs0fdB
+X-Proofpoint-Spam-Details-Enc: AW1haW4tMjYxMTE2MDA0MiBTYWx0ZWRfXxCWbPXGSdt1O
+ RBkOJ7hWf8hK/ZR4py5yFv6eJVWK7F9aprboJlOsuTolWI+P6SdKzQkqRgwpGY9QHskVajqnbnv
+ j5eh8JUVC1pepDlUfP8v+cUR4LlF99nQ4dXq6JOckssCYvyJFzDqqYfjqbR88N4IrTEY6qSeCx3
+ gTL7Gg5sg1hHtCWPFxIA4wBQpFeyXZor+CgqJmLvvcNkOLrUS6gOuThadCZpxkNa3xYr98ySdzV
+ NMkrc6TrO+KSgbMQm8t2Hr2dx7Dotx7z6f+aY+PY/WLb/Sylxi9DW5+r/MB0pdDbcMftjNfiRCU
+ AueV64Sh/Onl/kEJCf/70a9v+FpOJjP6/vik0vAO25oI7/ulta9lrLU6wwV3hyYmewOiLuHqpeT
+ kRv8aQbJ5cd4wP9+Jm3rJxZelLYHImcrfwInFD5IXLcO6GLsyL9NtDwT75u6qzjR6LVB1f9w+tm
+ DOwGWqIiA0LR4z/u8CA==
+X-Proofpoint-Virus-Version: vendor=baseguard
+ engine=ICAP:2.0.293,Aquarius:18.0.1176,Hydra:6.1.138,FMLib:17.12.100.49
+ definitions=2026-11-16_03,2026-11-11_03,2025-10-01_01
+X-Proofpoint-Spam-Details: rule=outbound_notspam policy=outbound score=0
+ malwarescore=0 impostorscore=0 suspectscore=0 lowpriorityscore=0
+ clxscore=1015 spamscore=0 adultscore=0 bulkscore=0 phishscore=0
+ priorityscore=1501 classifier=typeunknown authscore=0 authtc= authcc=
+ route=outbound adjust=0 reason=mlx scancount=1 engine=8.22.0-2611040001
+ definitions=main-2611160042
 
-On Wed, 11 Nov 2026 00:11:45 +0100, Kordian Chmielewski (mlody1212) wrote:
-> Do the same, and when the AP stops: brcmf_flowring_delete_peer() without
-> a peer now deletes every ring of the interface.
->
-> Fixes: 9a1bb60250d2 ("brcmfmac: Adding msgbuf protocol.")
-> Signed-off-by: Kordian Chmielewski (mlody1212) <kudzo51@gmail.com>
 
-[...]
 
-> @@ -5480,6 +5480,11 @@ static int brcmf_cfg80211_stop_ap(struct wiphy *wiphy, struct net_device *ndev,
->  		/* first to make sure they get processed by fw. */
->  		msleep(400);
->
-> +		/* the BSS goes away and its rings with it: nothing else
-> +		 * deletes the one for broadcast and multicast frames
-> +		 */
-> +		brcmf_proto_delete_peer(ifp->drvr, ifp->ifidx, NULL);
-> +
->  		if (profile->use_fwauth != BIT(BRCMF_PROFILE_FWAUTH_NONE)) {
->  			struct cfg80211_crypto_settings crypto = {};
+On 11/11/2026 02:13 am, Johannes Berg wrote:
+> On Fri, 2026-11-06 at 13:28 +0530, Pooventhiran G wrote:
+>> While sending AMPDU action hints to drivers, mac80211 does not include
+>> the BlockAck policy extracted from ADDBA frames. Drivers may require the
+>> complete set of BlockAck negotiation parameters for certain use cases,
+>> such as SMD BSS Transition, where the complete BlockAck context needs to
+>> be transported as part of the transition.
+>>
+>> Include the BlockAck policy as well in AMPDU action so that drivers have
+>> the required information about the negotiation. Since the policy is
+>> extracted from the received ADDBA Request, it is valid only for
+>> IEEE80211_AMPDU_RX_START.
+> 
+> This seems a bit strange. Doesn't not knowing basically mean we don't
+> really even support one of them (delayed BA)? We also don't (cannot)
+> advertised delayed BA support.
+> 
+> Pushing a bit to the driver from mac80211 just to have the driver push
+> it back to mac80211 also seems odd?
+> 
 
-This is issued while the BSS is still up. A broadcast or multicast frame
-sent after the delete response removed the ring, but before BRCMF_C_DOWN
-below, creates a new flowring that then survives the stop, which is the
-problem the patch sets out to fix. The E_LINK down event that
-BRCMF_C_DOWN triggers is handled by the second hunk and deletes all rings
-of the interface, so the call here is redundant for that case. Suggest
-moving it to after BRCMF_C_DOWN, or dropping it and relying on the E_LINK
-down event.
+True, since delayed BA is not supported, I will drop this patch from the series.
 
-Regards,
-Arend
+> johannes
+
