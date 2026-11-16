@@ -1,74 +1,73 @@
 Authentication-Results: smtp.subspace.kernel.org; arc=none smtp.remote-ip=192.198.163.13
 ARC-Seal: i=1; d=subspace.kernel.org; s=arc20261015; a=rsa-sha256; cv=none;
-	t=1794864117;
-	b=ikOAl+SttHO4ni/epTIp15JokU+QbuoHlkwibyyGjEvhsNRGZMcI5ZQ+8dRb2ZE/p1oO
-	 G6PF/x1z4BhuHfF961aE9V70xtEpYqOKijuRc04jdlKg+sEPCKw53vn93k0EdYZSdOpi1
-	 aYh0B8bt2rNAY+jTtysQfZ0sfKYzO7ymZ+DmNCNYMdCwYh7xUa0bdXRkIqG/6Kfn3JjSE
-	 XJmyI6DupefH0bSmbPjcA9qBQMz7iD+fpUyQlP+IoS6jC/Mbhyfsucl6L7MLEIJR3A8j+
-	 orNppScKIR+y3AND5Ix4yzyAkujMx1vNKqqbSvk05OnlJnKKC3E3hAU10tMDA5KAMPw==
+	t=1794864119;
+	b=KMSr0cuPDu+2UJCgcDtJeaE9eWZLf6KQIPtgW/FFvvlRvctgmh3MhH1ppc/6kTy4nwqo
+	 TMnJ/AU/F3lR/DtvzNoYV84/3t255IwlieNe1bDhrRtonw5kC99QUalaaIMOVxD7YC9cH
+	 Cnsd9mbx5DCRyVcKfbFP5Jegur0L//Yz7RMELWHBAZv5SZqAV3ChdtcuubGj4xd+Nspjz
+	 L3aMF8XmGRFEtjKAhBFudXgEDcxS+KIeI5mZZF6vrI72sDtcC4ixEDFoUOQJLVhXiihFw
+	 63sPILuJRnrd8M430No3DUjxs0cXCPpCi4mj5qPFGyrTe7mkmhjF0SMZ9DW8YJK1nLQ==
 ARC-Message-Signature: i=1; d=subspace.kernel.org; s=arc20261015;
-	a=rsa-sha256; c=relaxed/relaxed; t=1794864117;
+	a=rsa-sha256; c=relaxed/relaxed; t=1794864119;
 	h=DMARC-Filter:DKIM-Signature:X-CSE-ConnectionGUID:X-CSE-MsgGUID:
 	 X-IronPort-AV:X-IronPort-AV:Received:X-CSE-ConnectionGUID:
 	 X-CSE-MsgGUID:X-ExtLoop1:X-IronPort-AV:Received:From:To:Cc:Subject:
 	 Date:Message-Id:X-Mailer:In-Reply-To:References:MIME-Version:
 	 Organization:Content-Transfer-Encoding;
-	bh=wUfA2l5mxnlidUSI/TPmYmITOlEKBlef5NqpUXPMXbs=;
-	b=A38koRYjgoVUVDdjGd3xg7r+8+3GZbY3tM9IlVNd3CsCBKFNm8mn8cJ9Bk1XbHvJGD2U
-	 dEneBC+1aAeqL2oVDTCGl/1btp+tKDhQGqmvvGE1kPwOvoq7Toa+R8ePHgf0cGNlj+eZ5
-	 UWhj+IkN0xT5LYi61w0KQFPdA9saseTD3inFSBZmcxSKRabX7HQWCqE50oROr9iRtZzxu
-	 6KRsE2Fvr/hEIvLiyd+37utBn7t/8YBS5+tldDM6lTQJxawVuyScsSkPanpbbdN0GNMo7
-	 Ww/mLnPqVx6saKm/9VARjeqycfDqoSzunY3YZ3JufomdVm8iA+bBAHFJbHasawPNCkg==
+	bh=qEXrrBHW/QIPJkf1gZUlYDHhj9XATRYqIOf2wCj343U=;
+	b=zG33DeXaVbc4Artv+qhjJzNtOfjZSrIodQ9BhelWw3mQLHZ0+eqmfOvPX0cmWprM2iBk
+	 noshdmlPMwsQg/BbBzrkWVfH2mTAVIYnvMSnP0ti9YAovNlD5eGD0jwqsBUpThpKbVVTe
+	 9aCrxfwfGRYfS2zuNyVVbmXt7uwur98q+N2d9mmBWHQnUYp6eUXtZN8JLMDC1dgBrakdk
+	 MPWdrYgslqZdLZFA7iUQDXDIs8xtWYjn/i+HqlU541qWAUZ+M0c1I/kds4RbSHLAFt/ZL
+	 Yu5KZvf+8fjrftnZ5HQCgwYtHOYzacy0VAkh29w7R+lFUudMOxqf5Ea12BPExFkAohQ==
 ARC-Authentication-Results: i=1; smtp.subspace.kernel.org; 
 	dmarc=pass header.from=intel.com;
 	spf=pass smtp.mailfrom=intel.com;
-	dkim=pass header.d=intel.com header.i=@intel.com header.a=rsa-sha256 header.s=Intel header.b=ajHuCNz0;
+	dkim=pass header.d=intel.com header.i=@intel.com header.a=rsa-sha256 header.s=Intel header.b=V0rUHYTY;
 	arc=none smtp.remote-ip=192.198.163.13
 Received: from mgamail.intel.com (mgamail.intel.com [192.198.163.13])
 	(using TLSv1.2 with cipher ECDHE-ECDSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.subspace.kernel.org (Postfix) with ESMTPS id 6F07D606A32F
-	for <linux-wireless@vger.kernel.org>; Mon, 16 Nov 2026 21:21:57 +0000 (UTC)
-DMARC-Filter: OpenDMARC Filter v1.4.2 smtp.subspace.kernel.org 6F07D606A32F
+	by smtp.subspace.kernel.org (Postfix) with ESMTPS id C40E1606A323
+	for <linux-wireless@vger.kernel.org>; Mon, 16 Nov 2026 21:21:58 +0000 (UTC)
+DMARC-Filter: OpenDMARC Filter v1.4.2 smtp.subspace.kernel.org C40E1606A323
 Authentication-Results: smtp.subspace.kernel.org; dmarc=pass (p=none dis=none) header.from=intel.com
 Authentication-Results: smtp.subspace.kernel.org; spf=pass smtp.mailfrom=intel.com
 Authentication-Results: smtp.subspace.kernel.org;
-	dkim=pass (2048-bit key) header.d=intel.com header.i=@intel.com header.a=rsa-sha256 header.s=Intel header.b=ajHuCNz0
+	dkim=pass (2048-bit key) header.d=intel.com header.i=@intel.com header.a=rsa-sha256 header.s=Intel header.b=V0rUHYTY
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple;
   d=intel.com; i=@intel.com; q=dns/txt; s=Intel;
-  t=1794864117; x=1826400117;
+  t=1794864119; x=1826400119;
   h=from:to:cc:subject:date:message-id:in-reply-to:
    references:mime-version:content-transfer-encoding;
-  bh=7EiUlabWlJ3y+O0QMgNvmsKHx2I9xyCelJzo4Iqmj7M=;
-  b=ajHuCNz061GpfRj5MlV+qDwwy/czhNSxQczB1YIOP3SojYEEIyjq1Nml
-   /n6RWx7aJuWTy47fOCQof0Hvnx5lkKe68U9TQdbUZV58tOJF7Rje/+S6M
-   gqEOCR4zKeo180azQPin1PWlM1xW1F+zmcSRSsriqzaTGTttUViAbKG2+
-   0oMDKed1T0bu0QJD2qc3zPRAsK9eai1o8NxUHRaHHVHqyyZE9hNvQ3XT2
-   ATLfOm2OI/gLRAlCsKDADoBrSb1bAUulTaJ7XHWyvp/SbwBkk0Nls6v2C
-   LVovoMckT/U9GbQhJ5vVgn9hy+Q1qFJds37z5Ty8biW68zkLp7NgsI5yq
-   A==;
-X-CSE-ConnectionGUID: csh+v6hMR4ifgA4aHM8dqQ==
-X-CSE-MsgGUID: 8sLETzhmRHK7taX3LnkmXg==
-X-IronPort-AV: E=McAfee;i="6800,10657,11968"; a="3604207"
+  bh=7LeIzJ9vzNrL0K71C4xtOg3iAg3ensISpfxr4OpG9OU=;
+  b=V0rUHYTY1azh9LmcWlveHnOQzJNt4jQPlcAYlN0UN/Z3d47trcZoJ5y5
+   UrmDqMbTTYSsnJI2P7dDctoAAwd3ryBryd6y8QLuXQLab3mnxZzbL/pXF
+   D6w0QolydYy489dUMeFIfkYVib/x6KD+bZgS5P/UTGJltf9VFI59oeAm+
+   nzu3btEQATeN84Da0ooqJ4+Ya7jsUY0Adc72weYjiQrjW6gpsg/a1AbL2
+   OIlCmU5cg9cnxP4gjbpZCJ9Roz6LYt/Ou+L8/sgk6Mk0N+maobXv6nXd6
+   e/cNA2LxSg5mzeHneXoZyN5pgH9BP+RK+R+z1LWep25owC/jImf2g5fjD
+   w==;
+X-CSE-ConnectionGUID: xnONFeV5SKiCw8vuyAtO1A==
+X-CSE-MsgGUID: rktRpE09Q4it5kzJ3GQrOA==
+X-IronPort-AV: E=McAfee;i="6800,10657,11968"; a="3604208"
 X-IronPort-AV: E=Sophos;i="6.27,217,1787036400"; 
-   d="scan'208";a="3604207"
+   d="scan'208";a="3604208"
 Received: from fmviesa006.fm.intel.com ([10.60.135.146])
-  by fmvoesa107.fm.intel.com with ESMTP/TLS/ECDHE-RSA-AES256-GCM-SHA384; 16 Nov 2026 13:21:57 -0800
-X-CSE-ConnectionGUID: nziua0XfRFe+phpdgU/SMQ==
-X-CSE-MsgGUID: wgC8uh3XS8WHtsev8zdbIg==
+  by fmvoesa107.fm.intel.com with ESMTP/TLS/ECDHE-RSA-AES256-GCM-SHA384; 16 Nov 2026 13:21:58 -0800
+X-CSE-ConnectionGUID: 4EaAVRcwS1iNre/bnG/BkQ==
+X-CSE-MsgGUID: yhGXcBl+T+GWQwdMG1DXqQ==
 X-ExtLoop1: 1
 X-IronPort-AV: E=Sophos;i="6.27,217,1787036400"; 
-   d="scan'208";a="9969155"
+   d="scan'208";a="9969158"
 Received: from weis0040.iil.intel.com ([10.12.217.108])
-  by smtpauth.intel.com with ESMTP/TLS/ECDHE-RSA-AES256-GCM-SHA384; 16 Nov 2026 13:21:56 -0800
+  by smtpauth.intel.com with ESMTP/TLS/ECDHE-RSA-AES256-GCM-SHA384; 16 Nov 2026 13:21:58 -0800
 From: Miri Korenblit <miriam.rachel.korenblit@intel.com>
 To: miriam.rachel.korenblit@intel.com
 Cc: linux-wireless@vger.kernel.org,
-	Johannes Berg <johannes.berg@intel.com>,
 	Emmanuel Grumbach <emmanuel.grumbach@intel.com>
-Subject: [PATCH iwlwifi-next 12/15] wifi: iwlwifi: don't send sync host commands from atomic context
-Date: Mon, 16 Nov 2026 23:23:30 +0200
-Message-Id: <20261116232138.e1beaa292023.I608d9635a5c427a0ba9e427f609cd3529517cd5a@changeid>
+Subject: [PATCH iwlwifi-next 13/15] wifi: iwlwifi: mld: PHC: don't read GP2 under the PTP spinlock
+Date: Mon, 16 Nov 2026 23:23:31 +0200
+Message-Id: <20261116232138.3af90fb76883.Ie50cd66612aed30efab9144c9694119ac150c985@changeid>
 X-Mailer: git-send-email 2.34.1
 In-Reply-To: <20261116212333.2404653-1-miriam.rachel.korenblit@intel.com>
 References: <20261116212333.2404653-1-miriam.rachel.korenblit@intel.com>
@@ -84,37 +83,43 @@ MIME-Version: 1.0
 Organization: Intel Israel (74) Limited
 Content-Transfer-Encoding: 8bit
 
-Some time points are reached from atomic context, e.g. FW_RSP_OR_NOTIF,
-TX_FAILED, FAKE_TX, and more.
-The debug commands of a time point are always sent synchronously,
-which means that we sleep in atomic contexts.
+iwl_mld_ptp_work() reads the GP2 register while holding data->lock.
+The lock only protects the software wraparound state, not the register
+read. gettime() and adjfine() already read GP2 first and only then take
+the lock; a read that races with a newer update is caught by
+iwl_mld_ptp_update_new_read() and dropped as an old read.
 
-The reason we didn't have issues so far is probably because we never had
-to send hcmds in those timepoints.
-
-Simply send the hcmd asynchrounously.
+Read the GP2 outside the lock.
 
 Assisted-by: LLM
-Fixes: 3ed34fbf9d3b ("iwlwifi: dbg_ini: support FW response/notification region type")
-Reviewed-by: Johannes Berg <johannes.berg@intel.com>
 Reviewed-by: Emmanuel Grumbach <emmanuel.grumbach@intel.com>
 Signed-off-by: Miri Korenblit <miriam.rachel.korenblit@intel.com>
 ---
- drivers/net/wireless/intel/iwlwifi/iwl-dbg-tlv.c | 1 +
- 1 file changed, 1 insertion(+)
+ drivers/net/wireless/intel/iwlwifi/mld/ptp.c | 10 ++++++----
+ 1 file changed, 6 insertions(+), 4 deletions(-)
 
-diff --git a/drivers/net/wireless/intel/iwlwifi/iwl-dbg-tlv.c b/drivers/net/wireless/intel/iwlwifi/iwl-dbg-tlv.c
-index a64f958bbe5f..6636c21f3704 100644
---- a/drivers/net/wireless/intel/iwlwifi/iwl-dbg-tlv.c
-+++ b/drivers/net/wireless/intel/iwlwifi/iwl-dbg-tlv.c
-@@ -881,6 +881,7 @@ static void iwl_dbg_tlv_send_hcmds(struct iwl_fw_runtime *fwrt,
- 		u16 hcmd_len = le32_to_cpu(node->tlv.length) - sizeof(*hcmd);
- 		struct iwl_host_cmd cmd = {
- 			.id = WIDE_ID(hcmd_data->group, hcmd_data->id),
-+			.flags = CMD_ASYNC,
- 			.len = { hcmd_len, },
- 			.data = { hcmd_data->data, },
- 		};
+diff --git a/drivers/net/wireless/intel/iwlwifi/mld/ptp.c b/drivers/net/wireless/intel/iwlwifi/mld/ptp.c
+index 9f7d17dbdee1..eafc261c15bb 100644
+--- a/drivers/net/wireless/intel/iwlwifi/mld/ptp.c
++++ b/drivers/net/wireless/intel/iwlwifi/mld/ptp.c
+@@ -173,11 +173,13 @@ static void iwl_mld_ptp_work(struct work_struct *wk)
+ 	struct ptp_data *data = &mld->ptp_data;
+ 	u32 gp2;
+ 
+-	spin_lock_bh(&data->lock);
+-	if (!iwl_mld_get_systime(mld, &gp2))
+-		iwl_mld_ptp_update_new_read(mld, gp2);
+-	else
++	if (iwl_mld_get_systime(mld, &gp2)) {
+ 		IWL_DEBUG_PTP(mld, "PTP work: failed to read GP2\n");
++		return;
++	}
++
++	spin_lock_bh(&data->lock);
++	iwl_mld_ptp_update_new_read(mld, gp2);
+ 	spin_unlock_bh(&data->lock);
+ }
+ 
 -- 
 2.34.1
 
