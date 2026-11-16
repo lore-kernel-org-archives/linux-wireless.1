@@ -1,66 +1,65 @@
-Authentication-Results: smtp.subspace.kernel.org; arc=none smtp.remote-ip=168.119.38.16
+Authentication-Results: smtp.subspace.kernel.org; arc=none smtp.remote-ip=91.218.175.13
 ARC-Seal: i=1; d=subspace.kernel.org; s=arc20261015; a=rsa-sha256; cv=none;
-	t=1794844846;
-	b=5tOkkoXzzEyN2EfoaLlmoWEjateL/j/aezq68p9hRvCdmzzLmMGRBC0pt7GsYgBVwued
-	 hU6d/IiWec6UgfMMWdl4zpYwm093LHdFr5X/LU51Wm4JeSyLJrvdJnfG7cUJHCka6EvfC
-	 hfaUEKgC9akoHv3C3lLIkm5ggYqIsUscCAeStlhHGKjG4+7nZF++fk8pSEcl+FLCz5a5K
-	 ss/Jq5KVRbL0jr0gqm5RLS97Us1RLfLcULJl7mIjMMdbKNNqo96iXFxPOWJ8KjQ65u/Ue
-	 N+kWrEvDIJ+OX6P/PRTJ65P/0gLbOGowxLMFlKybfj13rUGlKOoeJDRL0TFbNLsLFiw==
+	t=1794844963;
+	b=11ebd+IqCjYkbDpvt9BHw4FlqDT/Gt+R1p+HRrl861CcgewERzmCvsAC5kCEIhOIjPyZ
+	 +Voyn8qBlj2QR97n4otEN9r/fUW4FWvL+ZM/QfXTRb+jCEVrD4wpgZ5Ug56bpsV3zd+Cq
+	 gyRqi8okBuc4NlDkR41V/glYjSdrXKDhPbukISZsg3t/jY8YjGihvKAqDHWPmNB1EMAfq
+	 4f7yxHpq9Fz8xkDFddTv8NjzMhZAKUb7yf1ek3BsK2YaQOdP02f5WNpnHwFb06dEZpP5C
+	 ijQovti5NlwlGHgna6Ai2zqQuUFBkgpY285k9LCh3GKDafQcQHjegCC2Fts4c9Ono0w==
 ARC-Message-Signature: i=1; d=subspace.kernel.org; s=arc20261015;
-	a=rsa-sha256; c=relaxed/relaxed; t=1794844846;
-	h=DKIM-Signature:Received:Message-ID:Subject:From:To:Cc:Date:
-	 In-Reply-To:References:Content-Type:Content-Transfer-Encoding:
-	 User-Agent:MIME-Version:X-malware-bazaar;
-	bh=awUBBokyjA1ESA7ZA/rLZ5c8P1+TSeCs5IsCOdLW0uw=;
-	b=uZwHrvU1GznJtZRRFqNU4+Zg0xeE4WL4HMvVzUms8GlIRRoZwDB0YiaA4etzc8zuXXXB
-	 h85VPPJwTIKdvCiviT3kQEqmvP0gAcQUEw7Aw5AgvtMIy8M5OVrbhduJOEnh/2gtzFwwG
-	 LrCARmCp7Quaj5Geh8GIZVQCFIpqls1+y8yw9+jwFE5IQL+5SgAoUOfcB/HoRuQzBUfqh
-	 jK80yqsFcDnxMekDBswWa/zTho74QtHy0qWN1sRmeD1GHM9nFuzE/DVbWEVlV0e55X/Vo
-	 1O94RvaeuEpxRBQQ4JURmZR7+QL8HgOr3btFPV+jEykP6R3m2E2lK6hvkHSVKIlqceg==
+	a=rsa-sha256; c=relaxed/relaxed; t=1794844963;
+	h=DMARC-Filter:X-Envelope-To:DKIM-Signature:X-Envelope-To:Received:
+	 X-Mizu-Trace-ID:X-Migadu-Flow:Date:From:To:CC:Subject:In-Reply-To:
+	 References:Message-ID:MIME-Version:Content-Type:
+	 Content-Transfer-Encoding;
+	bh=eHVdqjLRJFXA8mYzzzCbjI9ezA8PX6dZisux1DYYEa4=;
+	b=iUkkPSW6ivgeQvtX2gaHFp6Isk3yVM8U2b8zSMjFKuOiik9VJG2xjXj5GRDVY+JuPmSG
+	 Wgk/trk1rWvgM4GPPK9E01GKbNaEu9Wi5HUa22FcV3w7bbv5SYRYiRWdBaWXrD/JiyvX/
+	 8EqNa5R2f+Nb3SfYgjNjp/AUog+hfeMlAsIwmAKu9gpIccJMOObVHPibrgA2LfJv91zKY
+	 UWbnyM8IWjDjJEDk5Fxn7VSKRlRBlRM9xSIZ7fpHaRdpLG8qrLjusGCcE6AzchhLHSDKi
+	 sd99zbfqVua8fdm/E+7aXJCIMfs3hsbuhbIfrzIBPKkGrbBW3ooS9sPMsGlt+RfbBaQ==
 ARC-Authentication-Results: i=1; smtp.subspace.kernel.org; 
-	dmarc=permerror header.from=sipsolutions.net;
-	spf=pass smtp.mailfrom=sipsolutions.net;
-	dkim=pass header.d=sipsolutions.net header.i=@sipsolutions.net header.a=rsa-sha256 header.s=mail header.b=VXeBAdYi;
-	arc=none smtp.remote-ip=168.119.38.16
-Received: from sipsolutions.net (s3.sipsolutions.net [168.119.38.16])
-	(using TLSv1.3 with cipher TLS_AES_256_GCM_SHA384 (256/256 bits)
-	 key-exchange ECDHE (prime256v1) server-signature ECDSA (prime256v1) server-digest SHA256)
+	dmarc=pass header.from=linux.dev;
+	spf=pass smtp.mailfrom=linux.dev;
+	dkim=pass header.d=linux.dev header.i=@linux.dev header.a=rsa-sha256 header.s=key1 header.b="lw/t/U5j";
+	arc=none smtp.remote-ip=91.218.175.13
+Received: from mta0.migadu.com (out-13.mta0.migadu.com [91.218.175.13])
+	(using TLSv1.3 with cipher TLS_AES_128_GCM_SHA256 (128/128 bits)
+	 key-exchange X25519 server-signature ECDSA (prime256v1) server-digest SHA256)
 	(No client certificate requested)
-	by smtp.subspace.kernel.org (Postfix) with ESMTPS id 6CCD2606A31C
-	for <linux-wireless@vger.kernel.org>; Mon, 16 Nov 2026 16:00:46 +0000 (UTC)
-Authentication-Results: smtp.subspace.kernel.org; dmarc=permerror header.from=sipsolutions.net
-Authentication-Results: smtp.subspace.kernel.org; spf=pass smtp.mailfrom=sipsolutions.net
+	by smtp.subspace.kernel.org (Postfix) with ESMTPS id AEF15606A323
+	for <linux-wireless@vger.kernel.org>; Mon, 16 Nov 2026 16:02:42 +0000 (UTC)
+DMARC-Filter: OpenDMARC Filter v1.4.2 smtp.subspace.kernel.org AEF15606A323
+Authentication-Results: smtp.subspace.kernel.org; dmarc=pass (p=none dis=none) header.from=linux.dev
+Authentication-Results: smtp.subspace.kernel.org; spf=pass smtp.mailfrom=linux.dev
 Authentication-Results: smtp.subspace.kernel.org;
-	dkim=pass (2048-bit key) header.d=sipsolutions.net header.i=@sipsolutions.net header.a=rsa-sha256 header.s=mail header.b=VXeBAdYi
-DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=sipsolutions.net; s=mail; h=MIME-Version:Content-Transfer-Encoding:
-	Content-Type:References:In-Reply-To:Date:Cc:To:From:Subject:Message-ID:Sender
-	:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:Resent-To:
-	Resent-Cc:Resent-Message-ID; bh=awUBBokyjA1ESA7ZA/rLZ5c8P1+TSeCs5IsCOdLW0uw=;
-	t=1794844846; x=1796054446; b=VXeBAdYiUUsDH0KezWHHClG6G0iVy+BX/fvPITt44pxCqDM
-	c8t8b5pCEE6wqYcS5NBn56S7l/afAQ0UGfTIwAbOZLYxsidP5EXK30gXM7Bho2fnl6kJf8BLqkyOs
-	d/bcqS2LsfI4CvnDAfleDn4nx1yYxdttXg1iK54MRH4pyBemEN2Pmsjk0AtiRn90IDby7XSFUY493
-	zF6Fk+bnbTU9u4zcpTSyt3V1mX6pqNk1+VciWtODFmqWL1w9PthsSDiEmjFrWrKafn+bRATSZI4i9
-	TQr5kjhdxnoCGXlqXyWctp1MWxSTTe/q8qBZHPW33nWR7VpnPA+zydJ285oUT+XQ==;
-Received: by sipsolutions.net with esmtpsa (TLS1.3:ECDHE_X25519__ECDSA_SECP256R1_SHA256__AES_256_GCM:256)
-	(Exim 4.98.2)
-	(envelope-from <johannes@sipsolutions.net>)
-	id 1xSz8N-0000000GomW-3obS;
-	Mon, 16 Nov 2026 17:00:44 +0100
-Message-ID: <dd56ed9479b239b55bc13d08d9a2d111e76ebad7.camel@sipsolutions.net>
-Subject: Re: [PATCH wireless] wifi: cfg80211: don't call CRDA for a country
- regdb lacks
-From: Johannes Berg <johannes@sipsolutions.net>
-To: Devin Wittmayer <lucid_duck@justthetip.ca>
-Cc: Martin Moosbauer <martinmoosbauer@vivaldi.net>, 
-	linux-wireless@vger.kernel.org
-Date: Mon, 16 Nov 2026 17:00:42 +0100
-In-Reply-To: <20261116155339.6127-1-lucid_duck@justthetip.ca>
-References: <20261116060723.37130-1-lucid_duck@justthetip.ca>
-	 <20261116155339.6127-1-lucid_duck@justthetip.ca>
-Content-Type: text/plain; charset="UTF-8"
-Content-Transfer-Encoding: quoted-printable
-User-Agent: Evolution 3.60.2 (3.60.2-3.fc44) 
+	dkim=pass (1024-bit key, unprotected) header.d=linux.dev header.i=@linux.dev header.a=rsa-sha256 header.s=key1 header.b=lw/t/U5j
+X-Envelope-To: linux-wireless@vger.kernel.org
+DKIM-Signature: a=rsa-sha256; bh=msxTvuarS4fZOZCtBj5HnfrJixuccUldSih4wvJ+0z8=;
+ c=simple/simple; d=linux.dev;
+ h=from:to:subject:date:message-id:mime-version:content-type; s=key1;
+ t=1794844960; v=1; x=1795449760;
+ b=lw/t/U5jgUmt6tYTmdMlnfyyQurRVheCBzYlU28JshZLt7dxG5fQlX20w721DkuO2BxnVWuS
+ Uo4WVJPROgwBbztNqlo1QCGZYgKXIqYhEBkV3jeHW2vEAdGwZ62eonT0ocLLgYTnJhv5N83p2NQ
+ PkifSg8Y1v5qvBHNguy6OKhU=
+X-Envelope-To: linux-wireless@vger.kernel.org
+Received: by smtp.migadu.com with ESMTPS id 76efade92409a56c;
+	Mon, 16 Nov 2026 16:02:40 +0000
+X-Mizu-Trace-ID: 76efade92409a56c
+X-Migadu-Flow: FLOW_OUT
+Date: Mon, 16 Nov 2026 17:02:39 +0100
+From: Luka Gejak <luka.gejak@linux.dev>
+To: Mehmet Fide <mehmet.fide@gmail.com>, Ping-Ke Shih <pkshih@realtek.com>
+CC: Zong-Zhe Yang <kevin_yang@realtek.com>, Tzu-En Huang <tehuang@realtek.com>,
+ Yan-Hsuan Chuang <yhchuang@realtek.com>, Kalle Valo <kvalo@kernel.org>,
+ Stanislaw Gruszka <sgruszka@redhat.com>,
+ Brian Norris <briannorris@chromium.org>, linux-wireless@vger.kernel.org,
+ linux-kernel@vger.kernel.org, mehmet.fide@screeningeagle.com
+Subject: =?US-ASCII?Q?Re=3A_=5BPATCH_rtw-next_v2_1/3=5D_wifi=3A_rtw88=3A_free_the_?=
+ =?US-ASCII?Q?reserved_pages_of_an_interface_on_firmware_recovery?=
+In-Reply-To: <20261116072014.1142494-2-mehmet.fide@gmail.com>
+References: <20261116072014.1142494-1-mehmet.fide@gmail.com> <20261116072014.1142494-2-mehmet.fide@gmail.com>
+Message-ID: <5285DA11-651F-4286-A0FD-52A6051B3A88@linux.dev>
 X-Mailing-List: linux-wireless@vger.kernel.org
 List-Id: <linux-wireless.vger.kernel.org>
 List-Post: <mailto:linux-wireless@vger.kernel.org>
@@ -70,16 +69,52 @@ List-Unsubscribe: <mailto:linux-wireless+unsubscribe@vger.kernel.org>
 List-Owner: <mailto:linux-wireless+owner@vger.kernel.org>
 Precedence: list
 MIME-Version: 1.0
-X-malware-bazaar: not-scanned
+Content-Type: text/plain;
+ charset=utf-8
+Content-Transfer-Encoding: 8bit
 
-On Mon, 2026-11-16 at 08:53 -0700, Devin Wittmayer wrote:
-> Hi Johannes,
->=20
-> I see this was marked rejected in patchwork, but I didn't find a
-> reply. Is the approach wrong, or should I change something for a v2?
+Hi Mehmet,
 
-You've not really convinced me you're doing much more than feeding
-things into an LLM, but yes, it's just completely wrong to make any sort
-of relation between those two independent paths here.
+Thanks for the update. Three comments below.
 
-johannes
+On November 16, 2026 8:20:12 AM GMT+01:00, Mehmet Fide
+<mehmet.fide@gmail.com> wrote:
+
+> @@ -1800,8 +1800,10 @@ void rtw_fw_update_beacon_work(struct work_struct *work)
+> +     if (!test_bit(RTW_FLAG_RESTARTING, rtwdev->flags)) {
+> +             rtw_fw_download_rsvd_page(rtwdev);
+> +             rtw_send_rsvd_page_h2c(rtwdev);
+> +     }
+
+Could a skipped TIM update be retried at reconfig_complete()? After
+reconfig's last beacon download, sta_info_cleanup() can still expire a
+buffered frame and queue this work. If it runs before the flag clears,
+the beacon keeps the old TIM bit.
+
+[ ... ]
+
+> +     if (!test_bit(RTW_FLAG_RESTARTING, rtwdev->flags)) {
+
+Also, if the last interface closes before restart work takes the wiphy
+lock, open_count is zero and reconfig_complete() is skipped. The flag
+survives normal reopening, so the worker still skips TIM updates.
+Could that exit be covered too?
+
+[ ... ]
+
+> @@ -627,6 +627,7 @@ static void rtw_reset_vif_iter(void *data, u8 *mac, struct ieee80211_vif *vif)
+> +     rtw_remove_rsvd_page(rtwdev, rtwvif);
+
+As far as I can see, rtw_core_stop() drops the driver mutex without
+holding wiphy. A concurrent beacon change can then reach:
+
+        ieee80211_change_beacon()
+          rtw_ops_bss_info_changed()
+            rtw_fw_download_rsvd_page()
+
+The lists are already empty, and mac80211 restart has not begun yet.
+This seems to leave a path to the empty reserved page warning.
+Could the direct download path be covered too?
+
+Best regards,
+Luka Gejak
