@@ -1,106 +1,106 @@
 Authentication-Results: smtp.subspace.kernel.org; arc=none smtp.remote-ip=205.220.168.131
 ARC-Seal: i=1; d=subspace.kernel.org; s=arc20261015; a=rsa-sha256; cv=none;
-	t=1794846196;
-	b=L8bm/terNqrpx5ev2Su8FOly/SsWUlsw655xP62kFloR4ExMghuKKIitvzlim2gDBS/J
-	 DoR0jIG90aghjNPBhQvz4x9U/CI/t7infPguUiZ27XvdyYyL/KmKwsTLCUl6cmNMcUH28
-	 ZJHInk3ByURAIYzCeD+dkekHS5zcEug+WdP5AjWlnSWcXkCohM/lxWxq03j76gDq6SgmD
-	 dXV1oguJjXp+Ci2APHkIQPtoCNpp1Rl/YOOEQRJW9nuXIwpeogGPPMMMgDKXWRVQS8BV+
-	 qLqvZzgSJaopVzH1Ud/x5yZZdmkxgPZ3pyya2GThL7GheqTBH4zCYgXXc3SrF7THesg==
+	t=1794846206;
+	b=vZASlGUiBjeVfjEXOJSBY/vLeV8SxujOyu3pWYEtLhmhERQS/UHvzVNT5wNeCE9Tsc+F
+	 9gKqqbTGSRUidYdcSA4w4xlrinSH2TnxWIkccsMy+l0yyezcEK+dKWKvaQf8iHtzxnFqA
+	 3mg4vxc2Vk4Ju5fP45Oq2ezpAm6eg7OvPhjXwiRrsW1D8g04/PcHlZ1iWaxoNigA+5Zcq
+	 K2B2xPdF0WynTJmlulYF0Z0S9h2AQyKKZhHGFWoGz8fh5TEpsxvqLsKAzsG1loHBiJYNd
+	 qKhPkrXWNflUCGHk8PHEUkkByt/Dup/J5ZREHVNAHM/EQ6lFIggB95+DnQ/Focb2FBQ==
 ARC-Message-Signature: i=1; d=subspace.kernel.org; s=arc20261015;
-	a=rsa-sha256; c=relaxed/relaxed; t=1794846196;
+	a=rsa-sha256; c=relaxed/relaxed; t=1794846206;
 	h=DMARC-Filter:Received:DKIM-Signature:Received:Received:
 	 DKIM-Signature:X-Google-DKIM-Signature:X-Forwarded-Encrypted:
 	 X-Gm-Message-State:X-Gm-Gg:X-Received:X-Received:Received:From:To:Cc:
 	 Subject:Date:Message-ID:X-Mailer:In-Reply-To:References:MIME-Version:
-	 Content-Transfer-Encoding:X-Authority-Analysis:X-Proofpoint-ORIG-GUID:
-	 X-Proofpoint-Spam-Details-Enc:X-Proofpoint-Spam-Info:
+	 Content-Transfer-Encoding:X-Proofpoint-Spam-Details-Enc:
+	 X-Authority-Analysis:X-Proofpoint-ORIG-GUID:X-Proofpoint-Spam-Info:
 	 X-Proofpoint-GUID:X-Proofpoint-Virus-Version:
 	 X-Proofpoint-Spam-Details;
-	bh=EPho6yeU36Z5EZsv2aujXlYhkTqpLdJTwXH4ZQGbqvQ=;
-	b=Jt9QpTCTTyr7gYZBwQM5M1atNN92V9X0kW2jDF138EaVLlENeV5JgrWlt2baHe+qmwT0
-	 TCskIHm/ZL+4UcOt6JpUWpSGqC9ETU3T6AXqMloPQlrtTC/EDKfIiza9SbR1TvxVmc81d
-	 Hff3rMZoLO3UkzpeJF+7rWsxdk48kutPbr9UwrqTVh8z/8fdWceZn8xlHPw6xgKYhBCX9
-	 4ievBovo5HA92uqJ44E7JgQiECz6ufTbQrooKPB3WuWTY0yceizWRx/pz7N89MI/5ed22
-	 p+cyyK4kxpSWbDybDWTAV2F8lq9bJbvXnpnA8UWUzUx5jW2ChRMPfqZ2GJWO7MSCYBg==
+	bh=0iSH72bVkObJ6XNgFyC1IcqJNSUQhJ9lsse8nsmCQfg=;
+	b=TocgiqKu8nVgjJPLkY7OzaxZ0kikRmwabSWWFDzZc0coPbhyUx1MMvRCZ/8qFZMu7Alf
+	 7wXkHMCOWplxZ7XdaCwjm1vYeIlqzfn0Q5C+qLt3O7i5o5a3QyJC+ycSpNGs0X5Kb4dtP
+	 jz5Oi7dB82zT5AC1Xg9y6UJ30FNev35iQfH4CvLJpYXF1IqRtxVC7rqx1Y9ndBdYo6vv2
+	 KaUNcjoL6UTDEeNIG/ytDzcEx+VLvQ4P7x6+LtJVwg6eiaa7kOY4+le57lOZLNdjdG4sG
+	 S3KOmkmkwTV1cI6HzUUj+3IzaVva09BXetRCi/GccyoyNHo4R3SRN4FfqBY3TMzHRXQ==
 ARC-Authentication-Results: i=1; smtp.subspace.kernel.org; 
 	dmarc=pass header.from=oss.qualcomm.com;
 	spf=pass smtp.mailfrom=oss.qualcomm.com;
-	dkim=pass header.d=qualcomm.com header.i=@qualcomm.com header.a=rsa-sha256 header.s=qcppdkim1 header.b=ZVZ3YHZ5;
-	dkim=pass header.d=oss.qualcomm.com header.i=@oss.qualcomm.com header.a=rsa-sha256 header.s=google header.b=RgJAw1R4;
+	dkim=pass header.d=qualcomm.com header.i=@qualcomm.com header.a=rsa-sha256 header.s=qcppdkim1 header.b=jT42H1qg;
+	dkim=pass header.d=oss.qualcomm.com header.i=@oss.qualcomm.com header.a=rsa-sha256 header.s=google header.b=DhJ9SCR7;
 	arc=none smtp.remote-ip=205.220.168.131
 Received: from mx0a-0031df01.pphosted.com (mx0a-0031df01.pphosted.com [205.220.168.131])
 	(using TLSv1.3 with cipher TLS_AES_256_GCM_SHA384 (256/256 bits)
 	 key-exchange X25519 server-signature ECDSA (prime256v1) server-digest SHA256)
 	(No client certificate requested)
-	by smtp.subspace.kernel.org (Postfix) with ESMTPS id 9D984606A32F
-	for <linux-wireless@vger.kernel.org>; Mon, 16 Nov 2026 16:23:15 +0000 (UTC)
-DMARC-Filter: OpenDMARC Filter v1.4.2 smtp.subspace.kernel.org 9D984606A32F
+	by smtp.subspace.kernel.org (Postfix) with ESMTPS id BF400606A337
+	for <linux-wireless@vger.kernel.org>; Mon, 16 Nov 2026 16:23:25 +0000 (UTC)
+DMARC-Filter: OpenDMARC Filter v1.4.2 smtp.subspace.kernel.org BF400606A337
 Authentication-Results: smtp.subspace.kernel.org; dmarc=pass (p=none dis=none) header.from=oss.qualcomm.com
 Authentication-Results: smtp.subspace.kernel.org; spf=pass smtp.mailfrom=oss.qualcomm.com
 Authentication-Results: smtp.subspace.kernel.org;
-	dkim=pass (2048-bit key) header.d=qualcomm.com header.i=@qualcomm.com header.a=rsa-sha256 header.s=qcppdkim1 header.b=ZVZ3YHZ5;
-	dkim=pass (2048-bit key) header.d=oss.qualcomm.com header.i=@oss.qualcomm.com header.a=rsa-sha256 header.s=google header.b=RgJAw1R4
-Received: from pps.filterd (m0279863.ppops.net [127.0.0.1])
-	by mx0a-0031df01.pphosted.com (8.18.1.11/8.18.1.11) with ESMTP id 6AGGIeax2055784
-	for <linux-wireless@vger.kernel.org>; Mon, 16 Nov 2026 16:23:15 GMT
+	dkim=pass (2048-bit key) header.d=qualcomm.com header.i=@qualcomm.com header.a=rsa-sha256 header.s=qcppdkim1 header.b=jT42H1qg;
+	dkim=pass (2048-bit key) header.d=oss.qualcomm.com header.i=@oss.qualcomm.com header.a=rsa-sha256 header.s=google header.b=DhJ9SCR7
+Received: from pps.filterd (m0279867.ppops.net [127.0.0.1])
+	by mx0a-0031df01.pphosted.com (8.18.1.11/8.18.1.11) with ESMTP id 6AGGI7DI3045202
+	for <linux-wireless@vger.kernel.org>; Mon, 16 Nov 2026 16:23:25 GMT
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=qualcomm.com; h=
 	cc:content-transfer-encoding:date:from:in-reply-to:message-id
-	:mime-version:references:subject:to; s=qcppdkim1; bh=EPho6yeU36Z
-	5EZsv2aujXlYhkTqpLdJTwXH4ZQGbqvQ=; b=ZVZ3YHZ59rK2FGx0nxxNalzsueK
-	ClmYgIbnhi9BNOktRJNO8GHVNBEMgLHHHqXcPxVNvi4GMOLotmUfjxXjXI1/78s1
-	ucWStiSfbicw1PMbIw304IpZC2pK3vRbvuC/fHmPxdrnF7eQVlFBZLqIwSr6u/py
-	TbbaQx2zMOXmAJ7DmcaH6HjBlLD/GDgq7RCmnhoVh69cJ2ERq0oxCxNcB9XVD3vT
-	1USdn9zmo6SfLRF3fsjYasmj/hKGi4m2RoCO2pwMpTkxgqgS99tfMLr0UXCr6inA
-	M7irf1gkE0w3Jbz/mEYQuDvKBxb7mfRGxJynhqWAAAqN9eqbIL+Oo0ga+jw==
-Received: from mail-dl1-f71.google.com (mail-dl1-f71.google.com [74.125.82.71])
-	by mx0a-0031df01.pphosted.com (PPS) with ESMTPS id 4hyyrqhdj5-1
+	:mime-version:references:subject:to; s=qcppdkim1; bh=0iSH72bVkOb
+	J6XNgFyC1IcqJNSUQhJ9lsse8nsmCQfg=; b=jT42H1qgiCDlGxRcRtQEi/B2bZF
+	tLeo0XIzsD2ZzgGZ1ADa12XsOqaBp9cyGCq2p8uUk9/rm6Ajr+wzl+cz8hcddcZp
+	hzpH2Vsnb5uMlvHk44AZdco3mxi6g3/9PHpgZl9fO+Ih+thxJf0sIyf0Z+FZ4ez9
+	RhwtNAbAgQb9Nk2HMrAXhEsY4F7bFlhgg/F3Ro31pX9QZG2JTH9erOosOgvrXur0
+	mHSqdEjqpV2gdc3j+3jJ/TLHjb7e0iObiLwLdFyHy3jLD4pgLJ1yA66kgMKT7sr+
+	1gdxzWxHrdVqc3jen4OUX4MTUHuwz2YmiLSVsvByZIHt40MK+IdJ9javByA==
+Received: from mail-dl1-f69.google.com (mail-dl1-f69.google.com [74.125.82.69])
+	by mx0a-0031df01.pphosted.com (PPS) with ESMTPS id 4j038m8kgk-1
 	(version=TLSv1.3 cipher=TLS_AES_128_GCM_SHA256 bits=128 verify=NOT)
-	for <linux-wireless@vger.kernel.org>; Mon, 16 Nov 2026 16:23:14 +0000 (GMT)
-Received: by mail-dl1-f71.google.com with SMTP id a92af1059eb24-1af203073e0so3226543c88.1
-        for <linux-wireless@vger.kernel.org>; Mon, 16 Nov 2026 08:23:14 -0800 (PST)
+	for <linux-wireless@vger.kernel.org>; Mon, 16 Nov 2026 16:23:25 +0000 (GMT)
+Received: by mail-dl1-f69.google.com with SMTP id a92af1059eb24-1a71dd190b0so5167087c88.1
+        for <linux-wireless@vger.kernel.org>; Mon, 16 Nov 2026 08:23:25 -0800 (PST)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=oss.qualcomm.com; s=google; t=1794846194; x=1795450994; darn=vger.kernel.org;
+        d=oss.qualcomm.com; s=google; t=1794846204; x=1795451004; darn=vger.kernel.org;
         h=content-transfer-encoding:mime-version:references:in-reply-to
          :message-id:date:subject:cc:to:from:from:to:cc:subject:date
          :message-id:reply-to:content-type;
-        bh=EPho6yeU36Z5EZsv2aujXlYhkTqpLdJTwXH4ZQGbqvQ=;
-        b=RgJAw1R4943sEz07rWePPy5rfhK3c8Pj/LRqf8QGm6cJoSOZuCm4I13MaFaP/AumSS
-         VUKewYHC2l/cvevwyHOCfCAwQMfRwJnfC8/qnqAOZOuyXRfrEhNJurov33UVGH3lXQnp
-         AOTOT9VKNRH381Me4euJNx3j+Q+QjjlSN4P2T4qHFwlObvuh2mCP80aBjVqWkJvT/bCl
-         ejD1eF2LHxN1Xnn8N5VChagiBLpnjfwLjQALdR8OZCBh2Y83BgyCEtMoGTerZ2X1ErIv
-         CpkmDne/mD7Xqy8ArdxsOpHqfGnUo4M+PN0Ga9Z1mzeOrZjwaq9cK9DJUkH9BZQ+mMzr
-         3dhw==
+        bh=0iSH72bVkObJ6XNgFyC1IcqJNSUQhJ9lsse8nsmCQfg=;
+        b=DhJ9SCR76ZgKZPRLYTnu3OZX2UBOUsU+UufdYChRJlche6uQkCw3kjUw2agMnkz9bl
+         rF/Yq3agZ9mg/MkFOr5V2iEXxItTFs63iHz7cgldNUvmiNlqD6t9/AvXC2FYfnlLRGjd
+         KAPrz+CPNOfoSAP0ui7ti/gvgurEqKhwbyaL+zFuhqgWkvyNXd8mPjhCxEk6yUcEeqPe
+         NcLB2GTdG8nb+aFwL9svZDvpahbAGIe61rvnjkj/mLKx2Mm98LdMdW/RgAGX8znviJr0
+         1AJdJAECXN3/igCFV34VYdVpkc0VMPrdlsuvnG/RVhXsK0wbA4icPwsuppXcQCyPjFFM
+         UqKg==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=1e100.net; s=20260707; t=1794846194; x=1795450994;
+        d=1e100.net; s=20260707; t=1794846204; x=1795451004;
         h=content-transfer-encoding:mime-version:references:in-reply-to
          :message-id:date:subject:cc:to:from:x-gm-gg:x-gm-message-state:from
          :to:cc:subject:date:message-id:reply-to:content-type;
-        bh=EPho6yeU36Z5EZsv2aujXlYhkTqpLdJTwXH4ZQGbqvQ=;
-        b=fk5PnHjtarcC2y+2N2R++t7+vvTzpSAxIbg3mWueOViEA4mCh7Q3p4reSCDYKEw6dx
-         EXUNyDStMxrhiHwpM4wV0bz4r1ealt4DeycQkLhkUWZ6NnwGYczi3xk2K+FNHRlK0RXb
-         w3JqjxehA+T9mTZmTomFIiVOJ5SDvag8M1VWCdaxMrs2y42Zds7S3kcYj6uQEKWcFpGO
-         /e2GyCk8WyB3ohebB+BVYVDgq5bMJgIauDPa10BeOcnLeIQqDa9H9lggwxhcHnaYPQde
-         xrKUvMtJ+aZRXK2bL8fe4iIsGq9kIylHskryoAdIIX/PMQdQLYpSoDZmpbbCDa1R8YSl
-         Vkuw==
-X-Forwarded-Encrypted: i=1; AL+hErF865sRd/mW9x3qOkz2KQP/5erhzgBgkXrquAGWjXKVsD4QbZsohG4tZOz6d2qP5+/Wyto9gJRt86N3U7VJPg==@vger.kernel.org
-X-Gm-Message-State: APuU4Z/+kvekPu9Fo0i0e35W0LVHzu2w1pQLj/IrcU5bBOkABdbSCmof
-	dnkv3uKa9grzMXITZXslBhCmgMxi98dk5BXiwPl8lpjZliKpcFQuP+xxMSbjkkodZV4/Pf/ErOK
-	kImjTNNK5A1MmkmoH6pVgdgfx/CFf3tPle4sIr4ZcXgaxOqPwZkSjeYqaGqrGtCO7I4v6QQ==
-X-Gm-Gg: AYBFou3xRaB5jlDd/2VD11HOXavY9OIh/GRoyJDuce3veuT364+MnX6S2CLw4pnWI8j
-	HmyhfqVk7V5X49qSli13Wp2VyeZH7AnWlDFR0Vtba9XlxZJKHSc27Hu+DuRbNMqtBWUjN8ioUbM
-	fGSSM6aPKFx5t5FiIWucM4myhrSKeJBh+pKbTiKrG1pS26EapO2i9ZxH5Od+skzFObyAJxxprqc
-	bs98NxrNNG/GZ2wld9ySv3QU56E/X8MIaitsgbaVb0Bk72oSlrDIMKJYw7nYIhVW1HNNtU+7NO4
-	UPcXq/XUBcLzGWWakKJCj+pCUBkswG1ByZzZU/45r+1RFwqJv3EDmfRrinigWGIXcZ9b1/9U9uH
-	Twc6jOHC3hwxdv7fp4SGhNoEcyckq10wGELTjOH5jyCdqa7NHDXCI6Q0AIJ+1peSfW5wi21RwcC
-	cl
-X-Received: by 2002:a05:701b:4553:10b0:1b5:31e4:9970 with SMTP id a92af1059eb24-1b531e499a1mr2421683c88.8.1794846194038;
-        Mon, 16 Nov 2026 08:23:14 -0800 (PST)
-X-Received: by 2002:a05:701b:4553:10b0:1b5:31e4:9970 with SMTP id a92af1059eb24-1b531e499a1mr2421666c88.8.1794846193436;
-        Mon, 16 Nov 2026 08:23:13 -0800 (PST)
+        bh=0iSH72bVkObJ6XNgFyC1IcqJNSUQhJ9lsse8nsmCQfg=;
+        b=gpvyROMeSZ8xDJExx136yPn8tjpKNC3lRCmArx3AhruwYBbxB1rDZA+qaN/vfODiG3
+         JiBG8kuo+zOPuMTwDaGV4r7gVTFD8cA4ngfZnnh0xSodC9MZvevhX3uDPw27GAo57eYh
+         TGgRmzUSm+eOgEUnFmhNSMnqU/0PDgmlx0Ma85YBNrk/xKzPKXMRqcUSJ4kcSdKI5RXs
+         5nLSZVrtCgVfq0e6Sj8lAEoJ76WCnxiZ+gs8wiQg8SHK7JCTZgkAhYnRcKweGmt13UoW
+         I+KpYRXTVR21H3vcev7dfIOtZvjqdcZdc85N1qYiyOzNXZDa6cBnHxJ4HAm2PcnNeP7C
+         gpJg==
+X-Forwarded-Encrypted: i=1; AL+hErGxz7ZsIooTKmGoKQgiirS9I3rDubz0izHirj9AvisEW5hJ0c3TW8K7L5yW9EIO2nRH1bVN5rKpJ6tQ1KOsyg==@vger.kernel.org
+X-Gm-Message-State: APuU4Z/HNirU+Gp0C1pMJLfBZEwbPnrko2FSeG9Pj86IsIddbkX8wIlg
+	ij1jgELf44fXVbOqFvFCq86pZhgBBobEs8KuLAAjHUlBxswmNLnALUAla5cKFQAv1BVc1rLwxV6
+	L/RpoQqamOyN1LgQilutTxjUumV3DgeGC+4a15qQ6AHk/FkzDEheQ8/Zfwn8RD7StwE6XLA==
+X-Gm-Gg: AYBFou3TrEqUIkYEXnvrrjTKPGAmy2ig7+Pk2me2VfzJm9P3Lii4w9pVpl0cwOkQ9XW
+	TPq/zsR0Y24cmBEiDMidbeMnv5BgnJax+we71TrGjd2u4LHx+NLec25rt3eH0wyUgNY6xTrey+Q
+	m1A8EGEsgf4RUYKaHAcf5ToNAp+NKLhoz3bDit4oS9L/wufxky9rsIKHOyp9Ja43fdzbn7wjobZ
+	BEVWiqlwWUnAiTswh4OMcQ8njNop6/E0liHovcfYZoejdpsN3pC4iLEX3zeoXSL1tBHMdwQU9lz
+	0/ZbUVLiu3h3SPb2+WNuhR6hlqGUYMpLnH0AAhckk+vBdBPYTUpT20Eu/exJTvlKpWKdhQUz5XO
+	SFGnDs5P2cpKoC4E4T77+wikE3IPApe9qvoe8SqHGtpEE2zjarKdmE+bwBjcRWXrgsFI7d5Z2n/
+	Mc
+X-Received: by 2002:a05:701b:2802:b0:1a7:78a3:bda8 with SMTP id a92af1059eb24-1b50318d7abmr10284806c88.27.1794846204140;
+        Mon, 16 Nov 2026 08:23:24 -0800 (PST)
+X-Received: by 2002:a05:701b:2802:b0:1a7:78a3:bda8 with SMTP id a92af1059eb24-1b50318d7abmr10284757c88.27.1794846203416;
+        Mon, 16 Nov 2026 08:23:23 -0800 (PST)
 Received: from hu-mojha-hyd.qualcomm.com ([202.46.23.25])
-        by smtp.gmail.com with ESMTPSA id a92af1059eb24-1b5031468b7sm38623826c88.5.2026.11.16.08.23.03
+        by smtp.gmail.com with ESMTPSA id a92af1059eb24-1b5031468b7sm38623826c88.5.2026.11.16.08.23.13
         (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
-        Mon, 16 Nov 2026 08:23:13 -0800 (PST)
+        Mon, 16 Nov 2026 08:23:23 -0800 (PST)
 From: Mukesh Ojha <mukesh.ojha@oss.qualcomm.com>
 To: Sumit Garg <sumit.garg@oss.qualcomm.com>,
         Bjorn Andersson <andersson@kernel.org>,
@@ -128,9 +128,9 @@ Cc: Abel Vesa <abelvesa@kernel.org>, Sean Paul <sean@poorly.run>,
         linux-wireless@vger.kernel.org, ath12k@lists.infradead.org,
         linux-remoteproc@vger.kernel.org,
         Mukesh Ojha <mukesh.ojha@oss.qualcomm.com>
-Subject: [PATCH v3 7/9] wifi: ath12k: migrate firmware loading to qcom_mdt_pas_load() and qcom_pas_prepare_and_auth_reset()
-Date: Mon, 16 Nov 2026 21:51:46 +0530
-Message-ID: <20261116162148.2864501-8-mukesh.ojha@oss.qualcomm.com>
+Subject: [PATCH v3 8/9] soc: qcom: mdt_loader: remove qcom_mdt_load()
+Date: Mon, 16 Nov 2026 21:51:47 +0530
+Message-ID: <20261116162148.2864501-9-mukesh.ojha@oss.qualcomm.com>
 X-Mailer: git-send-email 2.55.0
 In-Reply-To: <20261116162148.2864501-1-mukesh.ojha@oss.qualcomm.com>
 References: <20261116162148.2864501-1-mukesh.ojha@oss.qualcomm.com>
@@ -144,128 +144,188 @@ List-Owner: <mailto:linux-wireless+owner@vger.kernel.org>
 Precedence: list
 MIME-Version: 1.0
 Content-Transfer-Encoding: 8bit
-X-Authority-Analysis: v=2.4 cv=VcJir1p9 c=1 sm=1 tr=0 ts=6afb2df2 cx=c_pps
- a=JYo30EpNSr/tUYqK9jHPoA==:117 a=ZePRamnt/+rB5gQjfz0u9A==:17
+X-Proofpoint-Spam-Details-Enc: AW1haW4tMjYxMTE2MDA2NCBTYWx0ZWRfX8hgSoCh3pjwe
+ 7FTYuAP6HMVPsDQosv/mTSUeNPoxalJnETh03JArh6oFzgJIPyqUyZXS64APmYPmleY6fyezii2
+ 9tiXCUeReRwLZaieVQpo7dImGi8A6t3A+mqWg15jd4T+xYbLe0Ahh7CEzJcLg4fJj1uSOVpBBj4
+ Ymn9YUk94LtKQtsdpxXKiqSeaqkV3OVQEW5NTQKoIsgE0+ODE5IzGphTTMKphAN+W71ilp58oPa
+ y3vz05x9mGv8Z1/nFxZ6dF3Fp1r/hMOsr5yEhkMTYTf2u2P3yG95AFCJkS8T/HRlJuUUA+uxhu1
+ 15fMV2dXybj1noXbLWMBWN3mIbdyeJ+Jlor1k/lYZR8eMZ3Jp1J39tMMZEs0IdQelkwigkQsix8
+ zieSGYQF1IfAi1aYB4kiJXrVhxdw99ptGWCqoZlWtlY28rs/0UFQacLKi9YtvTRatTNVYNTJK4p
+ znpcVDLjk5C7CCi0AIA==
+X-Authority-Analysis: v=2.4 cv=TckDJhQh c=1 sm=1 tr=0 ts=6afb2dfd cx=c_pps
+ a=kVLUcbK0zfr7ocalXnG1qA==:117 a=ZePRamnt/+rB5gQjfz0u9A==:17
  a=zJRp6_cAMcgA:10 a=s4-Qcg_JpJYA:10 a=VkNPw1HP01LnGYTKEx00:22
- a=u7WPNUs3qKkmUXheDGA7:22 a=yOCtJkima9RkubShWh1s:22 a=VwQbUJbxAAAA:8
- a=EUspDBNiAAAA:8 a=tFPd4D2tFowRDCwbfnIA:9 a=Fk4IpSoW4aLDllm1B1p-:22
-X-Proofpoint-ORIG-GUID: FcZnGQP_Ww5CNbyyon2igaAxZk16kCpt
-X-Proofpoint-Spam-Details-Enc: AW1haW4tMjYxMTE2MDA2NCBTYWx0ZWRfXx5ObrqD/B0au
- vKFVKb78TSrU0nhQ6k2T7Ns4DfMLcloYFRfWdwixjllmAu5A2tqShicqW9cyIs8cCRYacPmeBo8
- FOXk2qFU8isS655a2D/zTAcs8AUnMooqC9tgHdxTuCh7b7Wr21YVa3MyzwjS5qirVkNNZhxqx5H
- lgknQuCmYw2gOx3OPDEXwgz2usXnOLAuaJNQ3CUi+MOv3ptIi5uqGwpL0sZh177cyAQWQbfS1Ze
- r5FgTMwXcBOaIUHE+UT2v318PVAM1usNkxHtsIdhGPzApz/jjp/yizvRlDvG+oawfOHRYMCD5ve
- mUDmsK/L4decoRHX3rgB5Thmk+8+zn0kmIsoNJbSEZgbm8VYpR7qYK246xS/QZ/sUvH+63oO+yv
- ZvRER25FwWFvHnAwHCjazWoHeGrnudyAhldKv4V8TeMNgjQ21NeofekJ9u9l9jVyRY00HEOE1dv
- 7LfSuu44sgSEXWr15JQ==
-X-Proofpoint-Spam-Info: AW1haW4tMjYxMTE2MDA2NCBTYWx0ZWRfX03T1yb/59Bek
- HWCmf9jZvUw5wL5rI8TsjdUk0XwEywpuK3V0DCMkNdJ3vUt1FSmNIxyfbrbmdWjE4OruL6KQRs0
- w8qaeD5l+82ks0jwDkeldAKg9GfuQ4A=
-X-Proofpoint-GUID: FcZnGQP_Ww5CNbyyon2igaAxZk16kCpt
+ a=u7WPNUs3qKkmUXheDGA7:22 a=eoimf2acIAo5FJnRuUoq:22 a=EUspDBNiAAAA:8
+ a=GTbpKQ6npsRNubDcNtEA:9 a=vr4QvYf-bLy2KjpDp97w:22
+X-Proofpoint-ORIG-GUID: 9vTWBn_j5VZPF_kzdWt7UGiw0umNp78H
+X-Proofpoint-Spam-Info: AW1haW4tMjYxMTE2MDA2NCBTYWx0ZWRfX1fsOIXvJVeLw
+ Kzoaxp9cclLsDnl3bwHA7FjjqM4lX5AQR5AxLbC5OtjT/Eq1DPtg+HxV5zvmhiLKVbQ6kG8n+dD
+ 2ifwnmOSly/gGzvkSu8cJsnTOq4/J6Q=
+X-Proofpoint-GUID: 9vTWBn_j5VZPF_kzdWt7UGiw0umNp78H
 X-Proofpoint-Virus-Version: vendor=baseguard
  engine=ICAP:2.0.293,Aquarius:18.0.1176,Hydra:6.1.138,FMLib:17.12.100.49
  definitions=2026-11-16_05,2026-11-16_01,2025-10-01_01
 X-Proofpoint-Spam-Details: rule=outbound_notspam policy=outbound score=0
- spamscore=0 adultscore=0 clxscore=1015 suspectscore=0 lowpriorityscore=0
- bulkscore=0 phishscore=0 malwarescore=0 priorityscore=1501 impostorscore=0
- classifier=typeunknown authscore=0 authtc= authcc= route=outbound adjust=0
- reason=mlx scancount=1 engine=8.22.0-2611040001 definitions=main-2611160064
+ priorityscore=1501 impostorscore=0 lowpriorityscore=0 phishscore=0
+ suspectscore=0 clxscore=1015 spamscore=0 malwarescore=0 adultscore=0
+ bulkscore=0 classifier=typeunknown authscore=0 authtc= authcc= route=outbound
+ adjust=0 reason=mlx scancount=1 engine=8.22.0-2611040001
+ definitions=main-2611160064
 
-ath12k_ahb_power_up() calls qcom_mdt_load(), which bundles metadata
-initialization, memory setup, and segment loading into a single API that
-does not expose a PAS context. Later it calls qcom_pas_auth_and_reset() for
-TrustZone authentication, which is the intended behaviour. However, a new
-qcom_mdt_pas_load() has recently been introduced that works with a PAS
-context and can handle everything qcom_mdt_load() provides, along with
-additional functionality such as shmbridge creation and retrieving memory
-from the shmbridge buffer when the same remote processor needs to run while
-Linux runs at EL2.
+All callers have been migrated to qcom_mdt_pas_load(), which takes an
+explicit qcom_pas_context instead of a raw pas_id and delegates memory
+setup to the context.  Remove the now-unused qcom_mdt_load() wrapper
+along with its EXPORT_SYMBOL_GPL and header declaration.
 
-Replace qcom_mdt_load() with qcom_pas_context_init() +
-qcom_mdt_pas_load() and replace qcom_pas_auth_and_reset() with
-qcom_pas_prepare_and_auth_reset(), using a stack-allocated struct
-qcom_pas_context in ath12k_ahb_power_up(). The non-scm_auth path
-retains qcom_mdt_load_no_init() with the caller-provided mem_region.
-
-Apply the same pattern to ath12k_ahb_load_auth_shared_fw() for
-consistency.
-
-Acked-by: Jeff Johnson <jjohnson@kernel.org>
 Signed-off-by: Mukesh Ojha <mukesh.ojha@oss.qualcomm.com>
 ---
- drivers/net/wireless/ath/ath12k/ahb.c | 23 ++++++++++++++---------
- 1 file changed, 14 insertions(+), 9 deletions(-)
+ drivers/soc/qcom/mdt_loader.c       | 59 ++++++++++-------------------
+ include/linux/soc/qcom/mdt_loader.h | 12 ------
+ 2 files changed, 19 insertions(+), 52 deletions(-)
 
-diff --git a/drivers/net/wireless/ath/ath12k/ahb.c b/drivers/net/wireless/ath/ath12k/ahb.c
-index 8a3919675134..75d3141f968f 100644
---- a/drivers/net/wireless/ath/ath12k/ahb.c
-+++ b/drivers/net/wireless/ath/ath12k/ahb.c
-@@ -418,6 +418,7 @@ static int ath12k_ahb_power_up(struct ath12k_base *ab)
- 	struct ath12k_ahb_rproc_info *rproc_info = ab_ahb->rproc_info;
- 	char fw_name[ATH12K_USERPD_FW_NAME_LEN];
- 	char fw2_name[ATH12K_USERPD_FW_NAME_LEN];
-+	struct qcom_pas_context ctx;
- 	struct device *dev = ab->dev;
- 	const struct firmware *fw, *fw2;
- 	unsigned long time_left;
-@@ -451,14 +452,15 @@ static int ath12k_ahb_power_up(struct ath12k_base *ab)
- 		ATH12K_AHB_UPD_SWID;
+diff --git a/drivers/soc/qcom/mdt_loader.c b/drivers/soc/qcom/mdt_loader.c
+index c6ec67e1da09..fd638833b17e 100644
+--- a/drivers/soc/qcom/mdt_loader.c
++++ b/drivers/soc/qcom/mdt_loader.c
+@@ -329,7 +329,8 @@ static bool qcom_mdt_bins_are_split(const struct firmware *fw)
+  * @dev:	device handle to associate resources with
+  * @fw:		firmware object for the mdt file
+  * @fw_name:	name of the firmware, for construction of segment file names
+- * @mem_region:	allocated memory region to load firmware into
++ * @mem_region:	virtual address of the memory region to load firmware into,
++ *		or NULL to have the region mapped internally with ioremap_wc()
+  * @mem_phys:	physical address of allocated memory region
+  * @mem_size:	size of the allocated memory region
+  * @reloc_base:	adjusted physical address after relocation
+@@ -344,6 +345,7 @@ int qcom_mdt_load_no_init(struct device *dev, const struct firmware *fw,
+ 	const struct elf32_phdr *phdrs;
+ 	const struct elf32_phdr *phdr;
+ 	const struct elf32_hdr *ehdr;
++	void __iomem *mapped = NULL;
+ 	phys_addr_t mem_reloc;
+ 	phys_addr_t min_addr = PHYS_ADDR_MAX;
+ 	ssize_t offset;
+@@ -353,12 +355,22 @@ int qcom_mdt_load_no_init(struct device *dev, const struct firmware *fw,
+ 	int ret = 0;
+ 	int i;
  
- 	/* Load FW image to a reserved memory location */
--	if (ab_ahb->scm_auth_enabled)
--		ret = qcom_mdt_load(dev, fw, fw_name, pasid, rproc_info->mem_region,
--				    rproc_info->mem_phys, rproc_info->mem_size,
--				    NULL);
--	else
-+	if (ab_ahb->scm_auth_enabled) {
-+		qcom_pas_context_init(&ctx, dev, pasid,
-+				      rproc_info->mem_phys, rproc_info->mem_size);
-+		ret = qcom_mdt_pas_load(&ctx, fw, fw_name, NULL);
-+	} else {
- 		ret = qcom_mdt_load_no_init(dev, fw, fw_name, rproc_info->mem_region,
- 					    rproc_info->mem_phys, rproc_info->mem_size,
- 					    NULL);
+-	if (!fw || !mem_region || !mem_phys || !mem_size)
++	if (!fw || !mem_phys || !mem_size)
+ 		return -EINVAL;
+ 
+ 	if (!mdt_header_valid(fw))
+ 		return -EINVAL;
+ 
++	if (!mem_region) {
++		mapped = ioremap_wc(mem_phys, mem_size);
++		if (!mapped) {
++			dev_err(dev, "unable to map memory region: %pa+%zx\n",
++				&mem_phys, mem_size);
++			return -ENOMEM;
++		}
++		mem_region = (__force void *)mapped;
 +	}
- 	if (ret) {
- 		ath12k_err(ab, "Failed to load MDT segments: %d\n", ret);
- 		goto err_fw;
-@@ -492,7 +494,7 @@ static int ath12k_ahb_power_up(struct ath12k_base *ab)
++
+ 	is_split = qcom_mdt_bins_are_split(fw);
+ 	ehdr = (struct elf32_hdr *)fw->data;
+ 	phdrs = (struct elf32_phdr *)(fw->data + ehdr->e_phoff);
+@@ -437,39 +449,13 @@ int qcom_mdt_load_no_init(struct device *dev, const struct firmware *fw,
+ 	if (reloc_base)
+ 		*reloc_base = mem_reloc;
  
- 	if (ab_ahb->scm_auth_enabled) {
- 		/* Authenticate FW image using peripheral ID */
--		ret = qcom_pas_auth_and_reset(pasid);
-+		ret = qcom_pas_prepare_and_auth_reset(&ctx);
- 		if (ret) {
- 			ath12k_err(ab, "failed to boot the remote processor %d\n", ret);
- 			goto err_fw2;
-@@ -1056,6 +1058,7 @@ static int ath12k_ahb_load_auth_shared_fw(struct ath12k_base *ab,
- 					  struct ath12k_ahb_rproc_info *rproc_info,
- 					  const char *fw_name, u32 pasid)
++	if (mapped)
++		iounmap(mapped);
++
+ 	return ret;
+ }
+ EXPORT_SYMBOL_GPL(qcom_mdt_load_no_init);
+ 
+-/**
+- * qcom_mdt_load() - load the firmware which header is loaded as fw
+- * @dev:	device handle to associate resources with
+- * @fw:		firmware object for the mdt file
+- * @fw_name:	name of the firmware, for construction of segment file names
+- * @pas_id:	PAS identifier
+- * @mem_region:	allocated memory region to load firmware into
+- * @mem_phys:	physical address of allocated memory region
+- * @mem_size:	size of the allocated memory region
+- * @reloc_base:	adjusted physical address after relocation
+- *
+- * Returns 0 on success, negative errno otherwise.
+- */
+-int qcom_mdt_load(struct device *dev, const struct firmware *fw,
+-		  const char *fw_name, int pas_id, void *mem_region,
+-		  phys_addr_t mem_phys, size_t mem_size,
+-		  phys_addr_t *reloc_base)
+-{
+-	int ret;
+-
+-	ret = __qcom_mdt_pas_init(dev, fw, fw_name, pas_id, mem_phys, NULL);
+-	if (ret)
+-		return ret;
+-
+-	return qcom_mdt_load_no_init(dev, fw, fw_name, mem_region, mem_phys,
+-				     mem_size, reloc_base);
+-}
+-EXPORT_SYMBOL_GPL(qcom_mdt_load);
+-
+ /**
+  * qcom_mdt_pas_load - Loads and authenticates the metadata of the firmware
+  * (typically contained in the .mdt file), followed by loading the actual
+@@ -489,21 +475,14 @@ EXPORT_SYMBOL_GPL(qcom_mdt_load);
+ int qcom_mdt_pas_load(struct qcom_pas_context *ctx, const struct firmware *fw,
+ 		      const char *firmware, phys_addr_t *reloc_base)
  {
-+	struct qcom_pas_context ctx;
+-	void __iomem *mem_region;
  	int ret;
  
- 	const struct firmware *fw __free(firmware) = NULL;
-@@ -1074,14 +1077,16 @@ static int ath12k_ahb_load_auth_shared_fw(struct ath12k_base *ab,
- 	ath12k_dbg(ab, ATH12K_DBG_AHB, "loading firmware %s, size %zd\n", fw_name,
- 		   fw->size);
- 
--	ret = qcom_mdt_load(ab->dev, fw, fw_name, pasid, rproc_info->mem_region,
--			    rproc_info->mem_phys, rproc_info->mem_size, NULL);
-+	qcom_pas_context_init(&ctx, ab->dev, pasid,
-+			      rproc_info->mem_phys, rproc_info->mem_size);
-+
-+	ret = qcom_mdt_pas_load(&ctx, fw, fw_name, NULL);
- 	if (ret) {
- 		ath12k_err(ab, "failed to load RO firmware %s: %d\n", fw_name, ret);
- 		return ret;
- 	}
- 
--	ret = qcom_pas_auth_and_reset(pasid);
-+	ret = qcom_pas_prepare_and_auth_reset(&ctx);
+ 	ret = __qcom_mdt_pas_init(ctx->dev, fw, firmware, ctx->pas_id, ctx->mem_phys, ctx);
  	if (ret)
- 		ath12k_err(ab, "failed to authenticate and boot shared firmware: %d\n",
- 			   ret);
+ 		return ret;
+ 
+-	mem_region = qcom_pas_ctx_map(ctx);
+-	if (!mem_region)
+-		return -ENOMEM;
+-
+-	ret = qcom_mdt_load_no_init(ctx->dev, fw, firmware, (__force void *)mem_region,
+-				    ctx->mem_phys, ctx->mem_size, reloc_base);
+-	iounmap(mem_region);
+-	return ret;
++	return qcom_mdt_load_no_init(ctx->dev, fw, firmware, NULL,
++				     ctx->mem_phys, ctx->mem_size, reloc_base);
+ }
+ EXPORT_SYMBOL_GPL(qcom_mdt_pas_load);
+ 
+diff --git a/include/linux/soc/qcom/mdt_loader.h b/include/linux/soc/qcom/mdt_loader.h
+index 74886f772d46..f49de7b388bc 100644
+--- a/include/linux/soc/qcom/mdt_loader.h
++++ b/include/linux/soc/qcom/mdt_loader.h
+@@ -15,10 +15,6 @@ struct qcom_pas_context;
+ #if IS_ENABLED(CONFIG_QCOM_MDT_LOADER)
+ 
+ ssize_t qcom_mdt_get_size(const struct firmware *fw);
+-int qcom_mdt_load(struct device *dev, const struct firmware *fw,
+-		  const char *fw_name, int pas_id, void *mem_region,
+-		  phys_addr_t mem_phys, size_t mem_size,
+-		  phys_addr_t *reloc_base);
+ 
+ int qcom_mdt_pas_load(struct qcom_pas_context *ctx, const struct firmware *fw,
+ 		      const char *firmware, phys_addr_t *reloc_base);
+@@ -37,14 +33,6 @@ static inline ssize_t qcom_mdt_get_size(const struct firmware *fw)
+ 	return -ENODEV;
+ }
+ 
+-static inline int qcom_mdt_load(struct device *dev, const struct firmware *fw,
+-				const char *fw_name, int pas_id,
+-				void *mem_region, phys_addr_t mem_phys,
+-				size_t mem_size, phys_addr_t *reloc_base)
+-{
+-	return -ENODEV;
+-}
+-
+ static inline int qcom_mdt_pas_load(struct qcom_pas_context *ctx,
+ 				    const struct firmware *fw, const char *firmware,
+ 				    phys_addr_t *reloc_base)
 -- 
 2.55.0
 
