@@ -1,77 +1,110 @@
-Authentication-Results: smtp.subspace.kernel.org; arc=none smtp.remote-ip=124.126.103.232
+Authentication-Results: smtp.subspace.kernel.org; arc=none smtp.remote-ip=205.220.168.131
 ARC-Seal: i=1; d=subspace.kernel.org; s=arc20261015; a=rsa-sha256; cv=none;
-	t=1794824209;
-	b=3Bqe6NcDd0dX0HMDxe63sJocyNVEj36YF84RlMI6UwA5KOcrgRMHoz0A2NPK4ktEZryZ
-	 UW17Y0v1tZEleu2zCLhsBslv2DNF2WkVgPFBROBCSbZKAKuLrsw3Eho7VKxAQW8z4Q6OL
-	 Z2Z8T9bjvY1Wins576XDLkILVXzPxrG3JpQqkX3SKvarzGWZLWkKeGEjyHQ4JdI7Wo0Er
-	 jLkLvl0uiDB10zIOw0Y0hJJZ6MT0gx3CEvTN2fppYWfbtzH1UBzC1f3TPQYubn+m1oJDh
-	 JTo3Y1nrdbmn+QmTjelibkfLof6V0X/zrDTkgAuDUj8/62IKLjNCHpNu8dqmKsaWEuQ==
+	t=1794824515;
+	b=HdF3xf8YOuUjpLuPvc6V3ii5RRD9wysldJ097IEvIRfoIgxMl2JXUhQcIvh4inANmy5c
+	 Cmo+YhASJERuDqjTtXfXtA3a636gnRXcMrtKKHJfg+2yFKCTuPraFsokXX1xbShjE4zck
+	 A8pNmFobBtvZp575zPEgyt0raDyK+L0cMoev9xJF3UvmaX4Ky7VnT3PQFsFfw/wGMjyuC
+	 cyo7oNqHPjUg9r2dHUQV5RDGa1LCau4QLC8Pt0c0Lido3h5amYvGBgjykuRwrm6dA/WCm
+	 xa6mErF5P79U5pxM6IguNn7O2ZULJW9qSSP1ao075JOKjoYCwbtfP2A0fClHsot08pQ==
 ARC-Message-Signature: i=1; d=subspace.kernel.org; s=arc20261015;
-	a=rsa-sha256; c=relaxed/relaxed; t=1794824209;
-	h=DMARC-Filter:X-UUID:X-CTIC-Tags:X-CID-P-RULE:X-CID-O-INFO:X-CID-INFO:
-	 X-CID-META:X-CID-BVR:X-CID-BAS:X-CID-FACTOR:X-CID-RHF:X-UUID:X-User:
-	 Received:From:To:Cc:Subject:Date:Message-Id:X-Mailer:MIME-Version:
-	 Content-Transfer-Encoding;
-	bh=zbaFq7OEWqsLiuTjDHUQxdS44tS3QqhoQkwXVTbBnss=;
-	b=S4hw8oXmb+FLqvUcARuzz2MDOa/uo9QdeAHosS/dSIx9QuYECPbgilT2axvjnkgdJ6el
-	 kV68tDDf44HEkmhqD3F/o0CH1IZacW4dxZqATK1McXXJFXPC+OhJC+6NVIkRghELpyir/
-	 ImZ2y8btbxD//JwZGbFuoQ1IG3m9nbLVFXqKHy64kGiOVLIOkW8/I4m1gML5fTDE+QpGv
-	 CVi0sRy8tuO+Kv+rNjWOETx7hgCNMcaQ635DQChbNlgZCbFiHkqrkIYU7R0tR0piKH2Lb
-	 0X6NAlQVE2u4fOSXu68iGzvlHxOYF1DuYM3RSUKm3vMpyMxtKb4ANCdAlColIQWSF5g==
+	a=rsa-sha256; c=relaxed/relaxed; t=1794824515;
+	h=DMARC-Filter:Received:DKIM-Signature:Received:Received:
+	 DKIM-Signature:X-Google-DKIM-Signature:X-Gm-Message-State:X-Gm-Gg:
+	 X-Received:X-Received:Received:Message-ID:Date:MIME-Version:
+	 User-Agent:From:Subject:To:Cc:References:Content-Language:In-Reply-To:
+	 Content-Type:Content-Transfer-Encoding:X-Proofpoint-Spam-Info:
+	 X-Authority-Analysis:X-Proofpoint-ORIG-GUID:
+	 X-Proofpoint-Spam-Details-Enc:X-Proofpoint-GUID:
+	 X-Proofpoint-Virus-Version:X-Proofpoint-Spam-Details;
+	bh=JDf2zsMrdWvOlslTziqJ1SfqTfHM2JLlkjufHoKag2k=;
+	b=DQLWdU1rkWzriKxNkDtWdK7jT6xfp+BXvIWsgk88ugoE/Gq6sUlllF+V2VBdliRqOqRK
+	 y5JQDNF9VWJuGjcf7PwuYlm16jnV3kNQB8UpTwIK2GRb/qy5fxXTmpd0iUHIqFFxq9csX
+	 qan9T172Y1W8PdZ1HQRtOymDVktEMJQCFBQcmCilh2bLHUgj5RZTew94pnol273QKa6Ms
+	 x4hUFLirkCmyBHX3DxuBOpBvcRifqzqLFTCFo04L3tTOuySLv+QWVov2o9xsz9xfQ1Ned
+	 dSFI1DMZTy8V1GCRik75KrG82UaEmAjMZC5griQ/aok+HNOxdoDPcy/CNfx/acYI2RQ==
 ARC-Authentication-Results: i=1; smtp.subspace.kernel.org; 
-	dmarc=none header.from=kylinos.cn;
-	spf=pass smtp.mailfrom=kylinos.cn;
-	arc=none smtp.remote-ip=124.126.103.232
-Received: from mailgw.kylinos.cn (mailgw.kylinos.cn [124.126.103.232])
+	dmarc=pass header.from=oss.qualcomm.com;
+	spf=pass smtp.mailfrom=oss.qualcomm.com;
+	dkim=pass header.d=qualcomm.com header.i=@qualcomm.com header.a=rsa-sha256 header.s=qcppdkim1 header.b=MJ5QXahE;
+	dkim=pass header.d=oss.qualcomm.com header.i=@oss.qualcomm.com header.a=rsa-sha256 header.s=google header.b=GKzhOXps;
+	arc=none smtp.remote-ip=205.220.168.131
+Received: from mx0a-0031df01.pphosted.com (mx0a-0031df01.pphosted.com [205.220.168.131])
 	(using TLSv1.3 with cipher TLS_AES_256_GCM_SHA384 (256/256 bits)
 	 key-exchange X25519 server-signature ECDSA (prime256v1) server-digest SHA256)
 	(No client certificate requested)
-	by smtp.subspace.kernel.org (Postfix) with ESMTPS id F37C2606A31C
-	for <linux-wireless@vger.kernel.org>; Mon, 16 Nov 2026 10:16:47 +0000 (UTC)
-DMARC-Filter: OpenDMARC Filter v1.4.2 smtp.subspace.kernel.org F37C2606A31C
-Authentication-Results: smtp.subspace.kernel.org; dmarc=none (p=none dis=none) header.from=kylinos.cn
-Authentication-Results: smtp.subspace.kernel.org; spf=pass smtp.mailfrom=kylinos.cn
-X-UUID: cf5adc6ee1a611f19a56ed5b684f684d-20261116
-X-CTIC-Tags:
-	HR_CC_COUNT, HR_CC_DOMAIN_COUNT, HR_CC_NAME, HR_CC_NO_NAME, HR_CTE_8B
-	HR_CTT_MISS, HR_DATE_H, HR_DATE_WKD, HR_DATE_ZONE, HR_FROM_NAME
-	HR_SJ_LANG, HR_SJ_LEN, HR_SJ_LETTER, HR_SJ_NOR_SYM, HR_SJ_PHRASE
-	HR_SJ_PHRASE_LEN, HR_SJ_WS, HR_TO_COUNT, HR_TO_DOMAIN_COUNT, HR_TO_NO_NAME
-	IP_TRUSTED, SRC_TRUSTED, SA_TRUSTED, SA_EXISTED, SN_EXISTED
-	SPF_NOPASS, DKIM_NOPASS, DMARC_NOPASS, CIE_BAD, CIE_GOOD
-	CIE_GOOD_SPF, GTI_FG_BS, GTI_C_CI, GTI_FG_IT, GTI_RG_INFO
-	GTI_C_BU, AMN_T1, AMN_GOOD, ABX_MISS_RDNS
-X-CID-P-RULE: Release_Ham
-X-CID-O-INFO: VERSION:1.3.19,REQID:d3365779-1235-4317-ab9f-a067164d5eac,IP:15,
-	URL:25,TC:0,Content:0,EDM:0,RT:0,SF:0,FILE:0,BULK:0,RULE:Release_Ham,ACTIO
-	N:release,TS:40
-X-CID-INFO: VERSION:1.3.19,REQID:d3365779-1235-4317-ab9f-a067164d5eac,IP:15,UR
-	L:25,TC:0,Content:0,EDM:0,RT:0,SF:0,FILE:0,BULK:0,RULE:Release_Ham,ACTION:
-	release,TS:40
-X-CID-META: VersionHash:7db8b62,CLOUDID:d6c680d3a9b1ba532d44a4d321665fab,BulkI
-	D:261116180357T5TB6NYH,BulkQuantity:1,SF:17|19|66|78|102|127|153|850|865|8
-	98,TC:nil,Content:0|15|50|99,EDM:-3,IP:-2,URL:99|82|11|1,File:nil,RT:nil,B
-	ulk:40,QS:nil,BEC:nil,COL:0,OSI:0,OSA:0,AV:0,LES:1,SPR:NO,DKR:0,DKP:0,BRR:
-	0,BRE:0,ARC:0
-X-CID-BVR: 2,SSN|SDN
-X-CID-BAS: 2,SSN|SDN,0,_
-X-CID-FACTOR: TF_CID_SPAM_FSD,TF_CID_SPAM_ULN,TF_CID_SPAM_SNR,TF_CID_SPAM_FAS
-X-CID-RHF: D41D8CD98F00B204E9800998ECF8427E
-X-UUID: cf5adc6ee1a611f19a56ed5b684f684d-20261116
-X-User: kuangkai@kylinos.cn
-Received: from localhost.localdomain [(116.128.244.171)] by mailgw.kylinos.cn
-	(envelope-from <kuangkai@kylinos.cn>)
-	(Generic MTA)
-	with ESMTP id 1765325865; Mon, 16 Nov 2026 18:16:38 +0800
-From: Kai Kuang <kuangkai@kylinos.cn>
-To: linux-wireless@vger.kernel.org
-Cc: libertas-dev@lists.infradead.org,
-	Johannes Berg <johannes@sipsolutions.net>,
-	kuangkai@kylinos.cn
-Subject: [PATCH] wifi: libertas: reject short monitor TX frames
-Date: Mon, 16 Nov 2026 18:16:15 +0800
-Message-Id: <20261116101615.276337-1-kuangkai@kylinos.cn>
-X-Mailer: git-send-email 2.25.1
+	by smtp.subspace.kernel.org (Postfix) with ESMTPS id 5B712606A33A
+	for <linux-wireless@vger.kernel.org>; Mon, 16 Nov 2026 10:21:55 +0000 (UTC)
+DMARC-Filter: OpenDMARC Filter v1.4.2 smtp.subspace.kernel.org 5B712606A33A
+Authentication-Results: smtp.subspace.kernel.org; dmarc=pass (p=none dis=none) header.from=oss.qualcomm.com
+Authentication-Results: smtp.subspace.kernel.org; spf=pass smtp.mailfrom=oss.qualcomm.com
+Authentication-Results: smtp.subspace.kernel.org;
+	dkim=pass (2048-bit key) header.d=qualcomm.com header.i=@qualcomm.com header.a=rsa-sha256 header.s=qcppdkim1 header.b=MJ5QXahE;
+	dkim=pass (2048-bit key) header.d=oss.qualcomm.com header.i=@oss.qualcomm.com header.a=rsa-sha256 header.s=google header.b=GKzhOXps
+Received: from pps.filterd (m0279866.ppops.net [127.0.0.1])
+	by mx0a-0031df01.pphosted.com (8.18.1.11/8.18.1.11) with ESMTP id 6AGA1rAZ273717
+	for <linux-wireless@vger.kernel.org>; Mon, 16 Nov 2026 10:21:54 GMT
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=qualcomm.com; h=
+	cc:content-transfer-encoding:content-type:date:from:in-reply-to
+	:message-id:mime-version:references:subject:to; s=qcppdkim1; bh=
+	JDf2zsMrdWvOlslTziqJ1SfqTfHM2JLlkjufHoKag2k=; b=MJ5QXahEYAMt0a67
+	oo6Waf5Y5auXbiw9exfaKLioiKpisPhDxXH/W5YlpClyOUnPPjGbJPTOd8QGhneB
+	7R1bg4+9+rW/DEu4ICMI0AK6351ir+nMHiux0NI/QHf6Tqf5cyxTMBon9ID3tf9+
+	UhrxsrrJug1sWD3WmciQwAN0A7JvZxkxgo2/PQe0CiHRJwdl7cxg5+Pcw7C8c0SL
+	jocUDdMJ9oTSqFpV5ugVdoGinG6cnS21hCs1zMTtdtpV4Y/eQZz2QKyBEqDzTR3B
+	9hVzBpmJ5rQp9H9k6qMha5gbYAitQIWXufxt091Rt8VENt+3v2plcVTC2FzozWMK
+	FTT7DA==
+Received: from mail-pj1-f70.google.com (mail-pj1-f70.google.com [209.85.216.70])
+	by mx0a-0031df01.pphosted.com (PPS) with ESMTPS id 4hyyqgg2be-1
+	(version=TLSv1.3 cipher=TLS_AES_128_GCM_SHA256 bits=128 verify=NOT)
+	for <linux-wireless@vger.kernel.org>; Mon, 16 Nov 2026 10:21:54 +0000 (GMT)
+Received: by mail-pj1-f70.google.com with SMTP id 98e67ed59e1d1-3b191f8a9b3so4496175a91.1
+        for <linux-wireless@vger.kernel.org>; Mon, 16 Nov 2026 02:21:54 -0800 (PST)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+        d=oss.qualcomm.com; s=google; t=1794824514; x=1795429314; darn=vger.kernel.org;
+        h=content-transfer-encoding:content-type:in-reply-to:content-language
+         :references:cc:to:subject:from:user-agent:mime-version:date
+         :message-id:from:to:cc:subject:date:message-id:reply-to:content-type;
+        bh=JDf2zsMrdWvOlslTziqJ1SfqTfHM2JLlkjufHoKag2k=;
+        b=GKzhOXpsGM64ys/MUqGVTbFSdT7IcOMBY6ElITsqKgdTWbMKunO+imsRWmdTV7gqaK
+         4/JArFmGi87lPWXvAHeb1cFnKA3vb7mO7DZmvzfZ+1G7X1G5JsW+Yiw8OcQRT0ZCr7Eu
+         tfKmnsW84TDWrGgMQ/vttGtFCuc/8d/F7mA/Sg/F+yMknvbhW0QrXEKdcFOqUmLNuiw2
+         fwNMIU2Dx5Ctd9GsDecj0OU+Taa+3kK+/FMUeCxks3sY2330bWBEGWBH7I1eQm6bHPZe
+         LDwWn/g0KrHBska7+WykDcqS7bwywfkqglwnahH+yIvXij/85ZZPXXAlmKJ8z0iUxwsY
+         aksw==
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+        d=1e100.net; s=20260707; t=1794824514; x=1795429314;
+        h=content-transfer-encoding:content-type:in-reply-to:content-language
+         :references:cc:to:subject:from:user-agent:mime-version:date
+         :message-id:x-gm-gg:x-gm-message-state:from:to:cc:subject:date
+         :message-id:reply-to:content-type;
+        bh=JDf2zsMrdWvOlslTziqJ1SfqTfHM2JLlkjufHoKag2k=;
+        b=O6KNVmqZh+wswfMwwMy5tIsbxLxKNS2DM4JAdc2rtqkW6Z4oz4N2k/sPGRuXz7WgQM
+         7fpZARMpemaBa9aG80RgbQ9knedUHMjyM16ymdFPvwEj725qxdNxaBljzasy+UR9EADL
+         0Qh3AwoVwbnfPdZTZjCCd0/VQnCod7PY+D8ByF8Ni9ANwrsyg4q6tAk970y5QbagrI9S
+         KvNGGWnmZqBZWh5C4HJyY2CcYLyGNGs3Qd9dvnQZLsiL4vU5G7lDIPIE4EDXn7axw/17
+         9nob7w7mnrOr1M0i+DqkNfQq+9GMuykqXaHNjE+73XAnpRRw6NNb8IAhW7f4nBCerinG
+         uXEQ==
+X-Gm-Message-State: APuU4Z+K/+cRy8AMuEC8ScFOmEZPvDQNrEQyZTZ7KzgHhd5hiWcmcUCg
+	MqX32KmO+2jtCFrfV/NpVdnV/wJApSPw2UUzRpdVpxJZhjtsunxf0Cfe6ppfh8Kb8uk01gcmVt7
+	Zp/VQU17uFdAtOfH0ho36RShBzFxnHNgyfzfCgYDDAUlxNpj0L/VCiiVBpFlH3jXf9/C6tJ7yd7
+	6e
+X-Gm-Gg: AZFdTZee9v9O2CAO5h6A0QJGXY0aZkJr81umssSwKZtjlkbufNdGy1R2nN6sxpq7pno
+	bShs56Iz/Hfa9h0nwQftEOGQ229umHJ7eYYZpJ4e9izYYLSM8ImPLI+coGKgkxZN+m1SgCvnzs0
+	+iRgK6afhpS87BLqnUAQVOW+Yv0lXI1xUasNVlssMNVMeFiswOlUE9fPM8xEUuq9uwvu1AOvMgk
+	wWLgoDBXb95ZlK34VhnJJSgRQNMj3aTu2MADDPFEt871+655al75nzNAkysMOz0w94sIwFHEvNp
+	nFZtvijExXa6GlysbAmFqpz9zh/+0NMjbKLCLsfM5w1x+Qx1kkDeYW2pEYkBVnt02Lep+3Lrv6l
+	glCQ14zA2fmHHKzbmO1H9zTSmD0+A56Cs6GwrVSKyLFyUVyOeLP6wbe8FsLd678iaO4GYFSZ/Fd
+	EeAzAdMG57NoRp5mLwtgOvUazi/kYKD9GvmpPQ58jWA7n3TcRw90tkYLfZT5FVOTmo
+X-Received: by 2002:a17:90b:4acb:b0:3a4:f75d:d194 with SMTP id 98e67ed59e1d1-3b1b0a20d40mr11058971a91.36.1794824513863;
+        Mon, 16 Nov 2026 02:21:53 -0800 (PST)
+X-Received: by 2002:a17:90b:4acb:b0:3a4:f75d:d194 with SMTP id 98e67ed59e1d1-3b1b0a20d40mr11058946a91.36.1794824513302;
+        Mon, 16 Nov 2026 02:21:53 -0800 (PST)
+Received: from [10.50.36.90] (blr-bdr-fw-01_GlobalNAT_AllZones-Outside.qualcomm.com. [103.229.18.19])
+        by smtp.gmail.com with ESMTPSA id 98e67ed59e1d1-3b1b39fb9a3sm8808509a91.3.2026.11.16.02.21.51
+        (version=TLS1_3 cipher=TLS_AES_128_GCM_SHA256 bits=128/128);
+        Mon, 16 Nov 2026 02:21:52 -0800 (PST)
+Message-ID: <aeb887e0-48c3-40d7-8e93-951231dd2ed0@oss.qualcomm.com>
+Date: Mon, 16 Nov 2026 15:51:50 +0530
 X-Mailing-List: linux-wireless@vger.kernel.org
 List-Id: <linux-wireless.vger.kernel.org>
 List-Post: <mailto:linux-wireless@vger.kernel.org>
@@ -81,58 +114,92 @@ List-Unsubscribe: <mailto:linux-wireless+unsubscribe@vger.kernel.org>
 List-Owner: <mailto:linux-wireless+owner@vger.kernel.org>
 Precedence: list
 MIME-Version: 1.0
-Content-Transfer-Encoding: 8bit
+User-Agent: Mozilla Thunderbird
+From: Pooventhiran G <pooventhiran.g@oss.qualcomm.com>
+Subject: Re: [PATCH wireless-next v4 03/21] wifi: nl80211: add SMD BSS
+ Transition sub-state STA flags
+To: Johannes Berg <johannes@sipsolutions.net>
+Cc: linux-wireless@vger.kernel.org, linux-kernel@vger.kernel.org
+References: <20261106-smd-v4-0-62e39487f51a@oss.qualcomm.com>
+ <20261106-smd-v4-3-62e39487f51a@oss.qualcomm.com>
+ <3fba8cce0b09251c7d88788b531ffbe12a79307c.camel@sipsolutions.net>
+Content-Language: en-US
+In-Reply-To: <3fba8cce0b09251c7d88788b531ffbe12a79307c.camel@sipsolutions.net>
+Content-Type: text/plain; charset=UTF-8
+Content-Transfer-Encoding: 7bit
+X-Proofpoint-Spam-Info: AW1haW4tMjYxMTE2MDA0MSBTYWx0ZWRfX6sg3Y/E3as4o
+ N4K9EQ/iO1ZZWov5zdAxYUiRTaKk2j0KlWTYXwjR/WcR/ydpy3uDy72ChFImYSlclrwGbFlAnMf
+ JO7E+Gju9IjW7uCYroQRyBE6qHAKe10=
+X-Authority-Analysis: v=2.4 cv=epRKXYpX c=1 sm=1 tr=0 ts=6afad942 cx=c_pps
+ a=0uOsjrqzRL749jD1oC5vDA==:117 a=Ou0eQOY4+eZoSc0qltEV5Q==:17
+ a=IkcTkHD0fZMA:10 a=zJRp6_cAMcgA:10 a=s4-Qcg_JpJYA:10
+ a=VkNPw1HP01LnGYTKEx00:22 a=u7WPNUs3qKkmUXheDGA7:22 a=YMgV9FUhrdKAYTUUvYB2:22
+ a=p4CsnxLYdRdR-_IEqH0A:9 a=QEXdDO2ut3YA:10 a=mQ_c8vxmzFEMiUWkPHU9:22
+X-Proofpoint-ORIG-GUID: PbBUHxEkrtgwKZ79XGV18AoxzK8BgKxj
+X-Proofpoint-Spam-Details-Enc: AW1haW4tMjYxMTE2MDA0MSBTYWx0ZWRfXwmNJ+Mjm6+qs
+ 6a3zfnWtzNapcYatO9VSseqD8l4LWmAaW90H2QEO414oaz2d16mp6mZ1GViU1/GF4UXmGV7fcty
+ g+KjB7XEMAXdZyCHdvGqCbwSl2VddD2lmG9MH6TpO1BQuU+CsySUgOI3V/H0Kpho83uXptF0bgj
+ URrvpcXNFgGf8XnVUl40BCxk/hFtI9ZYeBxI3e3FZYvQGdciDRJwu7exC0T1D3+KwSYjDoq3aUO
+ gQzJB+ZDizepT5AwlozhV518OZMKD3kNoJ6MhotbLdsaShdbbB80YDwJrhCbAmJPWaZLC8JO1o7
+ MvELInS6ubUs1jyn4lxfqtkabk8wGpcQbqur94zrwCygICT/ccrI53Ja7czkvWwx1np3jLWD9S+
+ 0MrkQuW/qlRFD/Fk7WlN8L5EOtg440m1WdFqa2TbhYaJ76nf3L3FxRArkyRRtnPLBdLmHhjAN6m
+ e9Sh1QQZV8shzaQjkrQ==
+X-Proofpoint-GUID: PbBUHxEkrtgwKZ79XGV18AoxzK8BgKxj
+X-Proofpoint-Virus-Version: vendor=baseguard
+ engine=ICAP:2.0.293,Aquarius:18.0.1176,Hydra:6.1.138,FMLib:17.12.100.49
+ definitions=2026-11-16_03,2026-11-11_03,2025-10-01_01
+X-Proofpoint-Spam-Details: rule=outbound_notspam policy=outbound score=0
+ lowpriorityscore=0 malwarescore=0 bulkscore=0 phishscore=0 adultscore=0
+ priorityscore=1501 suspectscore=0 spamscore=0 clxscore=1015 impostorscore=0
+ classifier=typeunknown authscore=0 authtc= authcc= route=outbound adjust=0
+ reason=mlx scancount=1 engine=8.22.0-2611040001 definitions=main-2611160041
 
-In monitor mode, lbs_hard_start_xmit() casts skb->data to a radiotap TX
-header, skips that header and then copies the 802.11 destination address
-from offset 4 in the remaining frame.  The generic length check only
-rejects zero-length and oversized skbs, so a short monitor frame is read
-past the end of the skb data.  If the frame is shorter than the radiotap
-header, the subtraction that computes pkt_len also underflows, turning
-the following memcpy() into a large out-of-bounds read of the skb and a
-write past the end of tx_pending_buf.
 
-Require enough bytes for the radiotap TX header and the destination
-address field before using the monitor-mode header layout.  The check
-runs while driver_lock is held and before the TX queues are stopped, so
-the drop path reuses the existing "goto free" cleanup; placing it after
-the lock is dropped would unlock driver_lock twice and leave
-tx_pending_len set to -1 with the queues stopped.
 
-This addresses the same out-of-bounds read that the earlier submission
-linked below was meant to fix, but was reverted because it performed the
-check after driver_lock had already been released.
+On 11/10/2026 11:57 pm, Johannes Berg wrote:
+> On Fri, 2026-11-06 at 13:28 +0530, Pooventhiran G wrote:
+>> IEEE P802.11bn/D2.0, Aug 2026, subclause 11.3.1, defines three new MLD
+>> state sub-states (4a, 4b, 4c) that apply when a non-AP MLD and its
+>> associated SMD-ME are in state 4 and an SMD BSS Transition is
+>> in progress.
+>>
+>> Add the corresponding nl80211 STA flags to track the state changes:
+>>  - NL80211_STA_FLAG_SMD_PREP_TARGET - State 4a: non-AP MLD is prepared
+>>    with target AP MLD
+>>  - NL80211_STA_FLAG_SMD_EXEC_CURRENT - State 4b: ST execution active on
+>>    current AP MLD
+>>
+> I think the current/target nomenclature here is strange - this API
+> pertains only to a single AP MLD, so it's never involved with the
+> target?
+> 
+> What you need to know is 4a on the target, and 4b/4c on the current AP
+> MLD. But the nomenclature doesn't really translate to that since we only
+> look at one of them, only know implicitly which whether a given
+> interface is the current or target?
+> 
 
-Link: https://patch.msgid.link/20260704011140.37639-1-pengpeng@iscas.ac.cn
-Signed-off-by: Kai Kuang <kuangkai@kylinos.cn>
----
- drivers/net/wireless/marvell/libertas/tx.c | 16 ++++++++++++++++
- 1 file changed, 16 insertions(+)
+Understood. I will remove CURRENT/TARGET from the name.
 
-diff --git a/drivers/net/wireless/marvell/libertas/tx.c b/drivers/net/wireless/marvell/libertas/tx.c
-index 27304a98787d..6ad7a5067f2a 100644
---- a/drivers/net/wireless/marvell/libertas/tx.c
-+++ b/drivers/net/wireless/marvell/libertas/tx.c
-@@ -88,6 +88,22 @@ netdev_tx_t lbs_hard_start_xmit(struct sk_buff *skb, struct net_device *dev)
- 		goto free;
- 	}
- 
-+	/*
-+	 * A monitor frame carries a radiotap TX header followed by the
-+	 * 802.11 header; the destination address is copied from offset 4
-+	 * of the latter.  Drop frames too short for that layout instead of
-+	 * reading past the end of skb data or underflowing pkt_len.
-+	 *
-+	 * This must happen while driver_lock is held and before the queues
-+	 * are stopped, so that the "goto free" path above stays consistent.
-+	 */
-+	if (priv->wdev->iftype == NL80211_IFTYPE_MONITOR &&
-+	    skb->len < sizeof(struct tx_radiotap_hdr) + 4 + ETH_ALEN) {
-+		lbs_deb_tx("tx err: short monitor frame %d\n", skb->len);
-+		dev->stats.tx_dropped++;
-+		dev->stats.tx_errors++;
-+		goto free;
-+	}
- 
- 	netif_stop_queue(priv->dev);
- 	if (priv->mesh_dev)
+>>  - NL80211_STA_FLAG_SMD_DL_DRAIN - State 4c: DL draining period
+> 
+> 
+> I'd also get rid of the "SMD" part here - it's less about the SMD but
+> about SMD Transition (i.e. ST), so I think I'd rather call this
+> ST_PREPARED, ST_EXECUTING and ST_DL_DRAIN.>
+
+I will replace SMD with ST throughout the series.
+
+> I'm also not sure why you need to distinguish between the latter two at
+> all, hostapd is going to send the ST execution response and immediately
+> transition to DL drain (4c) or back to 4 anyway?
+> 
+
+The 4b/4c differentiation is needed to resolve frame filtering (especially UL
+data) since the requirements differ between these two states. There will be
+some time here between the reception of ST Exec Request (set 4b, communicate
+with the target AP MLD, and get the confirmation back) and sending the ST Exec
+Response to the non-AP STA MLD.
+
+> johannes
+
