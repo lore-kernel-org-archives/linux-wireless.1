@@ -1,62 +1,77 @@
-Authentication-Results: smtp.subspace.kernel.org; arc=none smtp.remote-ip=95.143.172.20
+Authentication-Results: smtp.subspace.kernel.org; arc=none smtp.remote-ip=124.126.103.232
 ARC-Seal: i=1; d=subspace.kernel.org; s=arc20261015; a=rsa-sha256; cv=none;
-	t=1794823916;
-	b=obdkTI+ulvTfXmA1OXIV8QUvfxmSV8pkB2JiI3W1/hT6uGtvbV1KsKB7L/uPtrJQ99pe
-	 DW6VGvKPxN3oysL/8kKku4M17zJC7EE2YGKT3jJz77p+qY/BfSqiwZtOLb+nCNVRFF4LQ
-	 1aYmckdYngdX0vKSw9W21B+T0qIjBoF1X7r40TDCRausKWsuS38wzpQ9jCWE583zxE2xG
-	 WG0FqltzLI1t5c8Jusp5p51dvrhflEvHcqUEQm1IP2PFtzFLI0dxsK4UtImZxvaILqKlU
-	 GR8GZwpFPyUb9Hr6XqX6+McvqxoraiFck4xmFJWd+jAkpBdoHNg6On3EYvOijRHdL6w==
+	t=1794824209;
+	b=3Bqe6NcDd0dX0HMDxe63sJocyNVEj36YF84RlMI6UwA5KOcrgRMHoz0A2NPK4ktEZryZ
+	 UW17Y0v1tZEleu2zCLhsBslv2DNF2WkVgPFBROBCSbZKAKuLrsw3Eho7VKxAQW8z4Q6OL
+	 Z2Z8T9bjvY1Wins576XDLkILVXzPxrG3JpQqkX3SKvarzGWZLWkKeGEjyHQ4JdI7Wo0Er
+	 jLkLvl0uiDB10zIOw0Y0hJJZ6MT0gx3CEvTN2fppYWfbtzH1UBzC1f3TPQYubn+m1oJDh
+	 JTo3Y1nrdbmn+QmTjelibkfLof6V0X/zrDTkgAuDUj8/62IKLjNCHpNu8dqmKsaWEuQ==
 ARC-Message-Signature: i=1; d=subspace.kernel.org; s=arc20261015;
-	a=rsa-sha256; c=relaxed/relaxed; t=1794823916;
-	h=DMARC-Filter:Received:Received:Received:From:To:Cc:Subject:Date:
-	 Message-ID:X-Mailer:In-Reply-To:References:MIME-Version:
-	 Content-Transfer-Encoding:X-Rspamd-Bar:X-Rspamd-Report:X-Rspamd-Score:
-	 DKIM-Signature;
-	bh=5jH2tJA0uI2n3x3vkbX24aFcRenl7hpMtrCEnX84aIs=;
-	b=r1ZpUA2ObjNapTRY8nrklQ3OWxTlOp1Dgg7GnAfsO1UgcVGpWxHTfCH9SNaYq5ZzWJa7
-	 +VV7U2alZkNuVZ0oM6k4p7JM1IFFq0klfABwNw7DhoG7XCdzDieqA5VMHN33N1ZbR7fhM
-	 +d08p9+3EVo4FCoZ7oAJxqEExL5kE0YLYU3tfejgjZcufd8GNnsaaXbLl6VXsTn4njGI9
-	 o2hnZYQll7y3Sanpnw2lCRf0UMvg6jxhwSHMfm3pM9qFgaJfgXno4Moh+4FHqTBTqCNnH
-	 Ky1TmTszgpuxVPJz8u4MAYYeXLI5l5xTH8volNjMfBNwsDP32tlPyyp4G91WHx99+Bg==
+	a=rsa-sha256; c=relaxed/relaxed; t=1794824209;
+	h=DMARC-Filter:X-UUID:X-CTIC-Tags:X-CID-P-RULE:X-CID-O-INFO:X-CID-INFO:
+	 X-CID-META:X-CID-BVR:X-CID-BAS:X-CID-FACTOR:X-CID-RHF:X-UUID:X-User:
+	 Received:From:To:Cc:Subject:Date:Message-Id:X-Mailer:MIME-Version:
+	 Content-Transfer-Encoding;
+	bh=zbaFq7OEWqsLiuTjDHUQxdS44tS3QqhoQkwXVTbBnss=;
+	b=S4hw8oXmb+FLqvUcARuzz2MDOa/uo9QdeAHosS/dSIx9QuYECPbgilT2axvjnkgdJ6el
+	 kV68tDDf44HEkmhqD3F/o0CH1IZacW4dxZqATK1McXXJFXPC+OhJC+6NVIkRghELpyir/
+	 ImZ2y8btbxD//JwZGbFuoQ1IG3m9nbLVFXqKHy64kGiOVLIOkW8/I4m1gML5fTDE+QpGv
+	 CVi0sRy8tuO+Kv+rNjWOETx7hgCNMcaQ635DQChbNlgZCbFiHkqrkIYU7R0tR0piKH2Lb
+	 0X6NAlQVE2u4fOSXu68iGzvlHxOYF1DuYM3RSUKm3vMpyMxtKb4ANCdAlColIQWSF5g==
 ARC-Authentication-Results: i=1; smtp.subspace.kernel.org; 
-	dmarc=pass header.from=lausen.nl;
-	spf=pass smtp.mailfrom=lausen.nl;
-	dkim=pass header.d=lausen.nl header.i=@lausen.nl header.a=rsa-sha256 header.s=uberspace header.b=FNsTOjKf;
-	arc=none smtp.remote-ip=95.143.172.20
-Received: from mailgate01.uberspace.is (mailgate01.uberspace.is [95.143.172.20])
+	dmarc=none header.from=kylinos.cn;
+	spf=pass smtp.mailfrom=kylinos.cn;
+	arc=none smtp.remote-ip=124.126.103.232
+Received: from mailgw.kylinos.cn (mailgw.kylinos.cn [124.126.103.232])
 	(using TLSv1.3 with cipher TLS_AES_256_GCM_SHA384 (256/256 bits)
-	 key-exchange X25519 server-signature ECDSA (prime256v1))
+	 key-exchange X25519 server-signature ECDSA (prime256v1) server-digest SHA256)
 	(No client certificate requested)
-	by smtp.subspace.kernel.org (Postfix) with ESMTPS id EA47A606A31C
-	for <linux-wireless@vger.kernel.org>; Mon, 16 Nov 2026 10:11:55 +0000 (UTC)
-DMARC-Filter: OpenDMARC Filter v1.4.2 smtp.subspace.kernel.org EA47A606A31C
-Authentication-Results: smtp.subspace.kernel.org; dmarc=pass (p=none dis=none) header.from=lausen.nl
-Authentication-Results: smtp.subspace.kernel.org; spf=pass smtp.mailfrom=lausen.nl
-Authentication-Results: smtp.subspace.kernel.org;
-	dkim=pass (4096-bit key) header.d=lausen.nl header.i=@lausen.nl header.a=rsa-sha256 header.s=uberspace header.b=FNsTOjKf
-Received: from devico.uberspace.de (devico.uberspace.de [185.26.156.185])
-	by mailgate01.uberspace.is (Postfix) with ESMTPS id 68CC660E3D
-	for <linux-wireless@vger.kernel.org>; Mon, 16 Nov 2026 11:11:54 +0100 (CET)
-Received: (qmail 32747 invoked by uid 990); 16 Nov 2026 10:11:54 -0000
-Authentication-Results: devico.uberspace.de;
-	auth=pass (plain)
-Received: from unknown (HELO unknown) (::1)
-	by devico.uberspace.de (Haraka/3.1.1) with ESMTPSA; Mon, 16 Nov 2026 11:11:53 +0100
-From: Leonard Lausen <leonard@lausen.nl>
-To: Ping-Ke Shih <pkshih@realtek.com>
-Cc: leonard@lausen.nl,
-	Luka Gejak <luka.gejak@linux.dev>,
-	Shawn Lin <shawn.lin@rock-chips.com>,
-	Heiko Stuebner <heiko@sntech.de>,
-	linux-wireless@vger.kernel.org,
-	linux-rockchip@lists.infradead.org,
-	linux-kernel@vger.kernel.org
-Subject: [PATCH rtw-next v2 2/2] wifi: rtw88: sdio: combine free TX page register reads
-Date: Mon, 16 Nov 2026 10:08:05 +0000
-Message-ID: <20261116100804.425592-6-leonard@lausen.nl>
-X-Mailer: git-send-email 2.47.3
-In-Reply-To: <20261116100804.425592-2-leonard@lausen.nl>
-References: <20261116100804.425592-2-leonard@lausen.nl>
+	by smtp.subspace.kernel.org (Postfix) with ESMTPS id F37C2606A31C
+	for <linux-wireless@vger.kernel.org>; Mon, 16 Nov 2026 10:16:47 +0000 (UTC)
+DMARC-Filter: OpenDMARC Filter v1.4.2 smtp.subspace.kernel.org F37C2606A31C
+Authentication-Results: smtp.subspace.kernel.org; dmarc=none (p=none dis=none) header.from=kylinos.cn
+Authentication-Results: smtp.subspace.kernel.org; spf=pass smtp.mailfrom=kylinos.cn
+X-UUID: cf5adc6ee1a611f19a56ed5b684f684d-20261116
+X-CTIC-Tags:
+	HR_CC_COUNT, HR_CC_DOMAIN_COUNT, HR_CC_NAME, HR_CC_NO_NAME, HR_CTE_8B
+	HR_CTT_MISS, HR_DATE_H, HR_DATE_WKD, HR_DATE_ZONE, HR_FROM_NAME
+	HR_SJ_LANG, HR_SJ_LEN, HR_SJ_LETTER, HR_SJ_NOR_SYM, HR_SJ_PHRASE
+	HR_SJ_PHRASE_LEN, HR_SJ_WS, HR_TO_COUNT, HR_TO_DOMAIN_COUNT, HR_TO_NO_NAME
+	IP_TRUSTED, SRC_TRUSTED, SA_TRUSTED, SA_EXISTED, SN_EXISTED
+	SPF_NOPASS, DKIM_NOPASS, DMARC_NOPASS, CIE_BAD, CIE_GOOD
+	CIE_GOOD_SPF, GTI_FG_BS, GTI_C_CI, GTI_FG_IT, GTI_RG_INFO
+	GTI_C_BU, AMN_T1, AMN_GOOD, ABX_MISS_RDNS
+X-CID-P-RULE: Release_Ham
+X-CID-O-INFO: VERSION:1.3.19,REQID:d3365779-1235-4317-ab9f-a067164d5eac,IP:15,
+	URL:25,TC:0,Content:0,EDM:0,RT:0,SF:0,FILE:0,BULK:0,RULE:Release_Ham,ACTIO
+	N:release,TS:40
+X-CID-INFO: VERSION:1.3.19,REQID:d3365779-1235-4317-ab9f-a067164d5eac,IP:15,UR
+	L:25,TC:0,Content:0,EDM:0,RT:0,SF:0,FILE:0,BULK:0,RULE:Release_Ham,ACTION:
+	release,TS:40
+X-CID-META: VersionHash:7db8b62,CLOUDID:d6c680d3a9b1ba532d44a4d321665fab,BulkI
+	D:261116180357T5TB6NYH,BulkQuantity:1,SF:17|19|66|78|102|127|153|850|865|8
+	98,TC:nil,Content:0|15|50|99,EDM:-3,IP:-2,URL:99|82|11|1,File:nil,RT:nil,B
+	ulk:40,QS:nil,BEC:nil,COL:0,OSI:0,OSA:0,AV:0,LES:1,SPR:NO,DKR:0,DKP:0,BRR:
+	0,BRE:0,ARC:0
+X-CID-BVR: 2,SSN|SDN
+X-CID-BAS: 2,SSN|SDN,0,_
+X-CID-FACTOR: TF_CID_SPAM_FSD,TF_CID_SPAM_ULN,TF_CID_SPAM_SNR,TF_CID_SPAM_FAS
+X-CID-RHF: D41D8CD98F00B204E9800998ECF8427E
+X-UUID: cf5adc6ee1a611f19a56ed5b684f684d-20261116
+X-User: kuangkai@kylinos.cn
+Received: from localhost.localdomain [(116.128.244.171)] by mailgw.kylinos.cn
+	(envelope-from <kuangkai@kylinos.cn>)
+	(Generic MTA)
+	with ESMTP id 1765325865; Mon, 16 Nov 2026 18:16:38 +0800
+From: Kai Kuang <kuangkai@kylinos.cn>
+To: linux-wireless@vger.kernel.org
+Cc: libertas-dev@lists.infradead.org,
+	Johannes Berg <johannes@sipsolutions.net>,
+	kuangkai@kylinos.cn
+Subject: [PATCH] wifi: libertas: reject short monitor TX frames
+Date: Mon, 16 Nov 2026 18:16:15 +0800
+Message-Id: <20261116101615.276337-1-kuangkai@kylinos.cn>
+X-Mailer: git-send-email 2.25.1
 X-Mailing-List: linux-wireless@vger.kernel.org
 List-Id: <linux-wireless.vger.kernel.org>
 List-Post: <mailto:linux-wireless@vger.kernel.org>
@@ -67,152 +82,57 @@ List-Owner: <mailto:linux-wireless+owner@vger.kernel.org>
 Precedence: list
 MIME-Version: 1.0
 Content-Transfer-Encoding: 8bit
-X-Rspamd-Bar: -----
-X-Rspamd-Report: REPLY(-4) BAYES_HAM(-3) MID_CONTAINS_FROM(1) MIME_GOOD(-0.1) R_MISSING_CHARSET(0.5)
-X-Rspamd-Score: -5.6
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple;
-	d=lausen.nl; s=uberspace;
-	h=from:to:cc:subject:date;
-	bh=CnMs8NT+xPKw7Y8nLMvWZzG8vTWG9cCa8Tj+HGNDofQ=;
-	b=FNsTOjKffSt9/4uddZlxuurPBC/5wYuB48nKpcsujdN8+eLzgqiYlrDEdp66ZtN6aBrd2Xo3ZV
-	rXDwBThP7AimteRhAI5s3tL4KxSqvwS+J8xwDzyI/26kwlASP+C7B3A0A1Bnt1YNny1uPTfftNMX
-	QkJvSvzPcqif1hbn0qlXLrGi05bG+esZDyGBptcyX4iaGNN7dBOXfKXxhFAR3TT4RmoTD12dI563
-	49pZHjVM1q+t95gKJ6k0Q447UP+oewTgAsa+fdDZdEO/Uaxh+cKn+WPVEEJ+/anIjHlllXbve3Dv
-	Zbf4/fpDnsHIKyeDjMx16cr26dlZesh3eX3zHSnVvjeOvW/q8Z59n7vyxIKMMtFp16qiBRUDWvXc
-	RSYpMSCKnqBb8JUW5n9CKIiZSTHDcKGbd0sPSEiYFkBNWD6x2AaUMig8ckUw8A/3qItxO5B7Wjl0
-	7Ff77u6cVwWULa791EIEIB7u2TZbQr6Zj5VTcXxs9BsWs5oXqgeZj0bqdB+XvmEmCrrlVzW1wzAL
-	GHo3NM68h9Vw+z6Mcd9kFU43DjYCN+0nFNwVTdlZnOROZBzjmj1tWoO2YM5ydU7MT9d+qhPrf5Q5
-	7XYYJ8zh/7YEWgUobuNBgUFUeu8RRYOqCbX+pyQd1BE/LEuoszy3K1EH0R7Z3npX0ya3wCnYxs8l
-	I=
 
-TX capacity checks on non-8051 chips read three adjacent 32-bit registers
-in separate SDIO requests. Combine them into one 12-byte CMD53 read when
-the existing power/alignment check permits it, with the per-register
-fallback otherwise. Propagate read errors before checking queue capacity.
+In monitor mode, lbs_hard_start_xmit() casts skb->data to a radiotap TX
+header, skips that header and then copies the 802.11 destination address
+from offset 4 in the remaining frame.  The generic length check only
+rejects zero-length and oversized skbs, so a short monitor frame is read
+past the end of the skb data.  If the frame is shorter than the radiotap
+header, the subtraction that computes pkt_len also underflows, turning
+the following memcpy() into a large out-of-bounds read of the skb and a
+write past the end of tx_pending_buf.
 
-Allocate a DMA-safe buffer at probe and copy its little-endian values
-into the caller's array before releasing the host. Holding the host
-through the read and copy serializes access to the shared buffer.
+Require enough bytes for the radiotap TX header and the destination
+address field before using the monitor-mode header layout.  The check
+runs while driver_lock is held and before the TX queues are stopped, so
+the drop path reuses the existing "goto free" cleanup; placing it after
+the lock is dropped would unlock driver_lock twice and leave
+tx_pending_len set to -1 with the queues stopped.
 
-Signed-off-by: Leonard Lausen <leonard@lausen.nl>
+This addresses the same out-of-bounds read that the earlier submission
+linked below was meant to fix, but was reverted because it performed the
+check after driver_lock had already been released.
+
+Link: https://patch.msgid.link/20260704011140.37639-1-pengpeng@iscas.ac.cn
+Signed-off-by: Kai Kuang <kuangkai@kylinos.cn>
 ---
- drivers/net/wireless/realtek/rtw88/sdio.c | 64 +++++++++++++++++++++++++++++--
- drivers/net/wireless/realtek/rtw88/sdio.h |  1 +
- 2 files changed, 61 insertions(+), 4 deletions(-)
+ drivers/net/wireless/marvell/libertas/tx.c | 16 ++++++++++++++++
+ 1 file changed, 16 insertions(+)
 
-diff --git a/drivers/net/wireless/realtek/rtw88/sdio.c b/drivers/net/wireless/realtek/rtw88/sdio.c
-index ecd4d751c05a5..09337acb76749 100644
---- a/drivers/net/wireless/realtek/rtw88/sdio.c
-+++ b/drivers/net/wireless/realtek/rtw88/sdio.c
-@@ -26,6 +26,7 @@
- #define RTW_SDIO_TX_FIFO_HIWATER			16
- #define RTW_SDIO_TX_FIFO_LOWATER			8
- #define RTW_SDIO_TX_RETRY_DELAY			msecs_to_jiffies(1)
-+#define RTW_SDIO_FREE_TXPG_COUNT			3
- 
- static bool rtw_sdio_is_bus_addr(u32 addr)
- {
-@@ -675,6 +676,43 @@ static atomic_t *rtw_sdio_8723bs_free_txpg(struct rtw_dev *rtwdev, u8 queue)
+diff --git a/drivers/net/wireless/marvell/libertas/tx.c b/drivers/net/wireless/marvell/libertas/tx.c
+index 27304a98787d..6ad7a5067f2a 100644
+--- a/drivers/net/wireless/marvell/libertas/tx.c
++++ b/drivers/net/wireless/marvell/libertas/tx.c
+@@ -88,6 +88,22 @@ netdev_tx_t lbs_hard_start_xmit(struct sk_buff *skb, struct net_device *dev)
+ 		goto free;
  	}
- }
  
-+static int rtw_sdio_read_free_txpg(struct rtw_dev *rtwdev, u32 *free_txpg)
-+{
-+	u32 addr = rtw_sdio_to_bus_offset(rtwdev, REG_SDIO_FREE_TXPG);
-+	struct rtw_sdio *rtwsdio = (struct rtw_sdio *)rtwdev->priv;
-+	bool bus_claim = rtw_sdio_bus_claim_needed(rtwsdio);
-+	int i, ret;
-+
-+	if (bus_claim)
-+		sdio_claim_host(rtwsdio->sdio_func);
-+
-+	if (!rtw_sdio_use_memcpy_io(rtwdev, addr, sizeof(u32))) {
-+		for (i = 0; i < RTW_SDIO_FREE_TXPG_COUNT; i++) {
-+			free_txpg[i] = rtw_sdio_readl(rtwdev,
-+						      addr + i * sizeof(u32),
-+						      &ret);
-+			if (ret)
-+				break;
-+		}
-+		goto out;
++	/*
++	 * A monitor frame carries a radiotap TX header followed by the
++	 * 802.11 header; the destination address is copied from offset 4
++	 * of the latter.  Drop frames too short for that layout instead of
++	 * reading past the end of skb data or underflowing pkt_len.
++	 *
++	 * This must happen while driver_lock is held and before the queues
++	 * are stopped, so that the "goto free" path above stays consistent.
++	 */
++	if (priv->wdev->iftype == NL80211_IFTYPE_MONITOR &&
++	    skb->len < sizeof(struct tx_radiotap_hdr) + 4 + ETH_ALEN) {
++		lbs_deb_tx("tx err: short monitor frame %d\n", skb->len);
++		dev->stats.tx_dropped++;
++		dev->stats.tx_errors++;
++		goto free;
 +	}
-+
-+	ret = sdio_memcpy_fromio(rtwsdio->sdio_func,
-+				 rtwsdio->free_txpg_buf, addr,
-+				 RTW_SDIO_FREE_TXPG_COUNT * sizeof(__le32));
-+	if (!ret) {
-+		/* Copy the shared DMA buffer before releasing the host. */
-+		for (i = 0; i < RTW_SDIO_FREE_TXPG_COUNT; i++)
-+			free_txpg[i] = le32_to_cpu(rtwsdio->free_txpg_buf[i]);
-+	}
-+
-+out:
-+	if (bus_claim)
-+		sdio_release_host(rtwsdio->sdio_func);
-+
-+	return ret;
-+}
-+
- static int rtw_sdio_check_free_txpg(struct rtw_dev *rtwdev, u8 queue,
- 				    size_t count)
- {
-@@ -727,11 +765,15 @@ static int rtw_sdio_check_free_txpg(struct rtw_dev *rtwdev, u8 queue,
- 		/* add the pages from the public queue */
- 		pages_free += (free_txpg >> 24) & 0xff;
- 	} else {
--		u32 free_txpg[3];
-+		u32 free_txpg[RTW_SDIO_FREE_TXPG_COUNT];
-+		int ret;
  
--		free_txpg[0] = rtw_sdio_read32(rtwdev, REG_SDIO_FREE_TXPG);
--		free_txpg[1] = rtw_sdio_read32(rtwdev, REG_SDIO_FREE_TXPG + 4);
--		free_txpg[2] = rtw_sdio_read32(rtwdev, REG_SDIO_FREE_TXPG + 8);
-+		ret = rtw_sdio_read_free_txpg(rtwdev, free_txpg);
-+		if (ret) {
-+			rtw_warn(rtwdev, "Failed to read free TX pages: %d\n",
-+				 ret);
-+			return ret;
-+		}
- 
- 		switch (queue) {
- 		case RTW_TX_QUEUE_BCN:
-@@ -1782,6 +1824,7 @@ static void rtw_sdio_deinit_tx(struct rtw_dev *rtwdev)
- int rtw_sdio_probe(struct sdio_func *sdio_func,
- 		   const struct sdio_device_id *id)
- {
-+	struct rtw_sdio *rtwsdio;
- 	struct ieee80211_hw *hw;
- 	struct rtw_dev *rtwdev;
- 	int drv_data_size;
-@@ -1805,6 +1848,19 @@ int rtw_sdio_probe(struct sdio_func *sdio_func,
- 	if (ret)
- 		goto err_release_hw;
- 
-+	rtwsdio = (struct rtw_sdio *)rtwdev->priv;
-+	if (!rtw_chip_wcpu_8051(rtwdev)) {
-+		rtwsdio->free_txpg_buf =
-+			devm_kmalloc_array(rtwdev->dev,
-+					   RTW_SDIO_FREE_TXPG_COUNT,
-+					   sizeof(*rtwsdio->free_txpg_buf),
-+					   GFP_KERNEL);
-+		if (!rtwsdio->free_txpg_buf) {
-+			ret = -ENOMEM;
-+			goto err_deinit_core;
-+		}
-+	}
-+
- 	rtw_dbg(rtwdev, RTW_DBG_SDIO,
- 		"rtw88 SDIO probe: vendor=0x%04x device=%04x class=%02x",
- 		id->vendor, id->device, id->class);
-diff --git a/drivers/net/wireless/realtek/rtw88/sdio.h b/drivers/net/wireless/realtek/rtw88/sdio.h
-index 6e7e6009744b0..5c2337ccffb2a 100644
---- a/drivers/net/wireless/realtek/rtw88/sdio.h
-+++ b/drivers/net/wireless/realtek/rtw88/sdio.h
-@@ -181,6 +181,7 @@ struct rtw_sdio {
- 	atomic_t tx_oqt_free;
- 	/* one writer at a time between the credit check and the accounting */
- 	struct mutex tx_credit_lock;
-+	__le32 *free_txpg_buf;
- };
- 
- extern const struct dev_pm_ops rtw_sdio_pm_ops;
+ 	netif_stop_queue(priv->dev);
+ 	if (priv->mesh_dev)
