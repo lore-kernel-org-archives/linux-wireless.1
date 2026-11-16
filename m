@@ -1,67 +1,61 @@
-Authentication-Results: smtp.subspace.kernel.org; arc=none smtp.remote-ip=168.119.38.16
+Authentication-Results: smtp.subspace.kernel.org; arc=none smtp.remote-ip=162.243.164.118
 ARC-Seal: i=1; d=subspace.kernel.org; s=arc20261015; a=rsa-sha256; cv=none;
-	t=1794828764;
-	b=Hgn8re39r7grBnheU0GVyXir0uI8YNu1CHGivo4mVOH3wa+bTCCrNAHx1K6vAizjoR9h
-	 mVRS1fEkM7MADhhul+hTvhkyZa59K4OcDIllQMrrMNVCgijGrOBZv7ugF580oyUn5wTSH
-	 w9LLglq7VWc4JRBQoEJRpu/6SyzyJDC2/CmiwK3aEax3RILwGS0rdpEMOmQJ71TJ+exmv
-	 Jj/8zTi3IA9zbtHm9Ye8eZ9DfxIIIJ2C5F4480ht2rGuTPZu/zTeVEbsLPQhi9Vk4V7rA
-	 gAPe/o0OXxHTcJe2ptSivg/dS/FJEyrvg2qfO/uCb09hANu6qc9nxAsbeJD/CVkj9BA==
+	t=1794829856;
+	b=LBT+ekGbC5G4/83l5nVe1FTEgyIrO+GLil5GVYNZtjigZOzPKCzr+MQYYXNYnOWW7KSE
+	 TsCRGtkniqfvwZSUCf+WG3Awq7n132JxM93rQIKOwCuCCQQm4sVAzd5Me5Z8Oq+bVuC84
+	 cdwqPn0ysMd85w4RW3jDdxTvGBomQHVX5+aZr+R2j1JWOOOml1hrsvBwWagR/ghsb0HT3
+	 PwUXiJS6S6gG+cP65dHyfHyUJL77qM7x9LcEyRFs9I/cupWtjzGP/LN+JZdpJhvJZWn6Q
+	 i3IMp5y8LcuckUQbOVZMLlUSKBxmu0c66PCH9lQac+DhZkWt9ya6iNVDEeV4QrXN5yw==
 ARC-Message-Signature: i=1; d=subspace.kernel.org; s=arc20261015;
-	a=rsa-sha256; c=relaxed/relaxed; t=1794828764;
-	h=DKIM-Signature:Received:Message-ID:Subject:From:To:Cc:Date:
-	 In-Reply-To:References:Content-Type:Content-Transfer-Encoding:
-	 User-Agent:MIME-Version:X-malware-bazaar;
-	bh=Uken2bPihuMdCrwPkCgP3IGwX1lpQRkERvwjisD/E0c=;
-	b=3yM7DZH69lmiek1jEuYyZDwKv3YZ5nWMMhnC4xIQ9hzVgHNH3wlepfFeCf79BHRZW8zg
-	 PiBKYZmFtsaq3cT1eOBtgvj28y6xywF6veJjRJxwGDfRwb8vqcd/PjT6oBfzBLF8bNBOy
-	 XDBPb8upYnnk7QOw3+pN9XewXmql3xtfOlbpuKC0hADACFh07Rax06hoBwPG/G5vepYxY
-	 x13/i+8SnobPukFZhacRsjZfPxP/ZAPFNRUt/Veo17yaHm0sS53QEm+MebPHrpyo3DRNk
-	 S4rtQ80nlGaq0eVQeTWR0mJQDb6QBH9FNMltTj/wcwuzAYpE1anyFxHRYT2uyP3+TDQ==
+	a=rsa-sha256; c=relaxed/relaxed; t=1794829856;
+	h=DMARC-Filter:DKIM-Signature:Received:From:To:Cc:Subject:Date:
+	 Message-Id:X-Mailer:MIME-Version:Content-Transfer-Encoding:
+	 X-CM-TRANSID:X-Coremail-Antispam:X-CM-SenderInfo;
+	bh=+Gulw9rQwCgMfpqxWvGwqpn6aChNo0sF9Qf6gDE7Ap4=;
+	b=z0CTVVjkzyDx2ZkjvtMNOUaCtOecwCTKRfKXXN5YDen7/jCu9U7CqxqHwt0xEVn0Vj1k
+	 muZtyBnIvcTPTRlTzvAgZOaBM4uO7sl5kTQ7GIqIXwUCMBRB9KmgPp7roy+LHizUzGcqB
+	 YLCdwZ9/UPeiekBm/+ll2A+yeAWEruNh/qbqVOK7+HI4T86toXjHruNACGtAWVNPe9sFP
+	 FWJ1SXr4HWWFW7+wAWCiU4hcAHpu4JQjfC6V3bER1vuFDYwYV3Hc5BbUIffJiKoobsOrH
+	 A4ckoxw8l26GMsWYZeIBsAckWpBmiEZ6fvIimu58fsAMm6A80PBxBQTsU7enIrcuyuA==
 ARC-Authentication-Results: i=1; smtp.subspace.kernel.org; 
-	dmarc=permerror header.from=sipsolutions.net;
-	spf=pass smtp.mailfrom=sipsolutions.net;
-	dkim=pass header.d=sipsolutions.net header.i=@sipsolutions.net header.a=rsa-sha256 header.s=mail header.b=phT42UFz;
-	arc=none smtp.remote-ip=168.119.38.16
-Received: from sipsolutions.net (s3.sipsolutions.net [168.119.38.16])
-	(using TLSv1.3 with cipher TLS_AES_256_GCM_SHA384 (256/256 bits)
-	 key-exchange ECDHE (prime256v1) server-signature ECDSA (prime256v1) server-digest SHA256)
-	(No client certificate requested)
-	by smtp.subspace.kernel.org (Postfix) with ESMTPS id 3B544606A334;
-	Mon, 16 Nov 2026 11:32:44 +0000 (UTC)
-Authentication-Results: smtp.subspace.kernel.org; dmarc=permerror header.from=sipsolutions.net
-Authentication-Results: smtp.subspace.kernel.org; spf=pass smtp.mailfrom=sipsolutions.net
-Authentication-Results: smtp.subspace.kernel.org;
-	dkim=pass (2048-bit key) header.d=sipsolutions.net header.i=@sipsolutions.net header.a=rsa-sha256 header.s=mail header.b=phT42UFz
-DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=sipsolutions.net; s=mail; h=MIME-Version:Content-Transfer-Encoding:
-	Content-Type:References:In-Reply-To:Date:Cc:To:From:Subject:Message-ID:Sender
-	:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:Resent-To:
-	Resent-Cc:Resent-Message-ID; bh=Uken2bPihuMdCrwPkCgP3IGwX1lpQRkERvwjisD/E0c=;
-	t=1794828763; x=1796038363; b=phT42UFzf4pBlFAh4oNJaLzUzj0Cj+5xzMoLfO0oTw+ii2T
-	iH0CmA419yD+OVuC1lMHVyArwkwXvcLOT+rycrUU/iAsn+Bg/xgTIaaFL+2q7K7489l38LYc1XzgD
-	iMPeE7Tnxw9eFJMR3LToKB6gTi0FX9IjEJUAq4MV6ns7xK1nUtrxDONyRbtAyvr/v5Vzv3RHYXleL
-	CtGVOt2bDeSPEjq1NZBGuP1Gk5hBH21c5cn5CNBUD1aBcKOAp1whIPhmdIhWGCUHTCXvd7UlVyqde
-	UuXrlnlZ8Z34WA5Ex5kMfRk7IfT7MOOX+JLvMxgG6QdVfWFFaWwgiN+Cb0pSz5Dg==;
-Received: by sipsolutions.net with esmtpsa (TLS1.3:ECDHE_X25519__ECDSA_SECP256R1_SHA256__AES_256_GCM:256)
-	(Exim 4.98.2)
-	(envelope-from <johannes@sipsolutions.net>)
-	id 1xSuwy-0000000Gaa3-0frj;
-	Mon, 16 Nov 2026 12:32:40 +0100
-Message-ID: <13d0d8d00897f425ace949084cc0644d52a0e504.camel@sipsolutions.net>
-Subject: Re: [PATCH wireless-next v4 14/21] wifi: mac80211: add driver_op
- for SMD substate changes
-From: Johannes Berg <johannes@sipsolutions.net>
-To: Pooventhiran G <pooventhiran.g@oss.qualcomm.com>
-Cc: linux-wireless@vger.kernel.org, linux-kernel@vger.kernel.org
-Date: Mon, 16 Nov 2026 12:32:39 +0100
-In-Reply-To: <a743c654-14f8-435f-9b83-bccdf2865615@oss.qualcomm.com>
-References: <20261106-smd-v4-0-62e39487f51a@oss.qualcomm.com>
-	 <20261106-smd-v4-14-62e39487f51a@oss.qualcomm.com>
-	 <9016700a02b45e18e06525b338fcce52a1e341e3.camel@sipsolutions.net>
-	 <a743c654-14f8-435f-9b83-bccdf2865615@oss.qualcomm.com>
-Content-Type: text/plain; charset="UTF-8"
-Content-Transfer-Encoding: quoted-printable
-User-Agent: Evolution 3.60.2 (3.60.2-3.fc44) 
+	dmarc=pass header.from=stu.xidian.edu.cn;
+	spf=pass smtp.mailfrom=stu.xidian.edu.cn;
+	arc=none smtp.remote-ip=162.243.164.118
+Received: from zg8tmtyylji0my4xnjqumte4.icoremail.net (zg8tmtyylji0my4xnjqumte4.icoremail.net [162.243.164.118])
+	by smtp.subspace.kernel.org (Postfix) with ESMTP id 69F32606A31C;
+	Mon, 16 Nov 2026 11:50:51 +0000 (UTC)
+DMARC-Filter: OpenDMARC Filter v1.4.2 smtp.subspace.kernel.org 69F32606A31C
+Authentication-Results: smtp.subspace.kernel.org; dmarc=pass (p=quarantine dis=none) header.from=stu.xidian.edu.cn
+Authentication-Results: smtp.subspace.kernel.org; spf=pass smtp.mailfrom=stu.xidian.edu.cn
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+	d=stu.xidian.edu.cn; s=dkim; h=Received:From:To:Cc:Subject:Date:
+	Message-Id:MIME-Version:Content-Transfer-Encoding; bh=+Gulw9rQwC
+	gMfpqxWvGwqpn6aChNo0sF9Qf6gDE7Ap4=; b=6QG+SVo3+dvCTkPl539gPwdwCu
+	cpeCtg6aCHqPWmLhZ3L9trsWYfoXr595MnbBE11oyc0k9NbauhLFD3aDxqDgHz5H
+	hd2rVIR+LGIXUpKGA5SLWUWsyQU+mf/spTlFUHctTK7iGRLITq0U+c9tBpX7oXdX
+	9jQGWqGsrrBBVfMdQ=
+Received: from user-virtual-machine.localdomain (unknown [113.200.174.41])
+	by hzbj-edu-front-2.icoremail.net (Coremail) with UTF8SMTPA id BLQMCkB2vwQF7vpqZ6S3AQ--.3956S2;
+	Mon, 16 Nov 2026 19:50:31 +0800 (CST)
+From: YuanZhe Liu <25031212351@stu.xidian.edu.cn>
+To: Felix Fietkau <nbd@nbd.name>
+Cc: Lorenzo Bianconi <lorenzo@kernel.org>,
+	Ryder Lee <ryder.lee@mediatek.com>,
+	Shayne Chen <shayne.chen@mediatek.com>,
+	Sean Wang <sean.wang@mediatek.com>,
+	Matthias Brugger <mbrugger@suse.com>,
+	AngeloGioacchino Del Regno <angelogioacchino.delregno@collabora.com>,
+	Bin Yu <byu@xidian.edu.cn>,
+	Cheng Wen <wencheng@xidian.edu.cn>,
+	linux-wireless@vger.kernel.org,
+	linux-kernel@vger.kernel.org,
+	linux-arm-kernel@lists.infradead.org,
+	linux-mediatek@lists.infradead.org,
+	stable@vger.kernel.org
+Subject: [PATCH 0/2] wifi: mt76: mt7615: fix RX parsing on the USB transport
+Date: Mon, 16 Nov 2026 19:50:26 +0800
+Message-Id: <20261116115028.2766-1-25031212351@stu.xidian.edu.cn>
+X-Mailer: git-send-email 2.34.1
 X-Mailing-List: linux-wireless@vger.kernel.org
 List-Id: <linux-wireless.vger.kernel.org>
 List-Post: <mailto:linux-wireless@vger.kernel.org>
@@ -71,93 +65,49 @@ List-Unsubscribe: <mailto:linux-wireless+unsubscribe@vger.kernel.org>
 List-Owner: <mailto:linux-wireless+owner@vger.kernel.org>
 Precedence: list
 MIME-Version: 1.0
-X-malware-bazaar: not-scanned
+Content-Transfer-Encoding: 8bit
+X-CM-TRANSID:BLQMCkB2vwQF7vpqZ6S3AQ--.3956S2
+X-Coremail-Antispam: 1UD129KBjvdXoWrKFWDZF1UZF4UXw1ktFW8WFg_yoWfWwbE9r
+	1fJrn3Kw1xGrs7Kr43tr4jqryrK393AFyfZr4FqFWavrZ7ArZ8WFn2qrs8Zr4fua1Iyrnr
+	tanFy3sxZFnIgjkaLaAFLSUrUUUUjb8apTn2vfkv8UJUUUU8Yxn0WfASr-VFAUDa7-sFnT
+	9fnUUIcSsGvfJTRUUUbf8YjsxI4VW3JwAYFVCjjxCrM7AC8VAFwI0_Gr0_Xr1l1xkIjI8I
+	6I8E6xAIw20EY4v20xvaj40_Wr0E3s1l1IIY67AEw4v_Jr0_Jr4l8cAvFVAK0II2c7xJM2
+	8CjxkF64kEwVA0rcxSw2x7M28EF7xvwVC0I7IYx2IY67AKxVW8JVW5JwA2z4x0Y4vE2Ix0
+	cI8IcVCY1x0267AKxVW8JVWxJwA2z4x0Y4vEx4A2jsIE14v26r4UJVWxJr1l84ACjcxK6I
+	8E87Iv6xkF7I0E14v26F4UJVW0owAac4AC62xK8xCEY4vEwIxC4wAS0I0E0xvYzxvE52x0
+	82IY62kv0487Mc02F40EFcxC0VAKzVAqx4xG6I80ewAv7VC0I7IYx2IY67AKxVWUJVWUGw
+	Av7VC2z280aVAFwI0_Gr0_Cr1lOx8S6xCaFVCjc4AY6r1j6r4UM4x0Y48IcxkI7VAKI48J
+	M4IIrI8v6xkF7I0E8cxan2IY04v7MxkF7I0En4kS14v26r1q6r43MxAIw28IcxkI7VAKI4
+	8JMxC20s026xCaFVCjc4AY6r1j6r4UMI8I3I0E5I8CrVAFwI0_Jr0_Jr4lx2IqxVCjr7xv
+	wVAFwI0_JrI_JrWlx4CE17CEb7AF67AKxVWUtVW8ZwCIc40Y0x0EwIxGrwCI42IY6xIIjx
+	v20xvE14v26r1j6r1xMIIF0xvE2Ix0cI8IcVCY1x0267AKxVW8JVWxJwCI42IY6xAIw20E
+	Y4v20xvaj40_Jr0_JF4lIxAIcVC2z280aVAFwI0_Jr0_Gr1lIxAIcVC2z280aVCY1x0267
+	AKxVW8JVW8JrUvcSsGvfC2KfnxnUUI43ZEXa7IU8ZiSPUUUUU==
+X-CM-SenderInfo: ysvqjiysrsjkur6v33wo0lvxldqovvfxof0/1tbiAgUTD2r5zUi2hAAEs7
 
-On Sat, 2026-11-14 at 00:50 +0530, Pooventhiran G wrote:
->=20
-> > > +void sta_info_reset_smd_state(struct sta_info *sta, bool notify)
-> > > +{
-> > > +	if (sta->smd_state =3D=3D IEEE80211_STA_SMD_NONE)
-> > > +		return;
-> > > +
-> > > +	/* DRAIN -> NONE, EXEC -> NONE or PREP -> NONE */
-> > > +	WARN_ON_ONCE(sta_info_move_smd_state(sta, IEEE80211_STA_SMD_NONE,
-> > > +					     notify));
-> >=20
-> > How is that even useful? If we're talking about a sub-state while in
-> > state 4, then surely moving out of state 4 simply invalidates that, why
-> > bother?
-> >=20
->=20
-> True, thought I could clean up the roam states before that exact invalida=
-tion
-> happens. I will remove it from state 4->3 transition.
->=20
-> > > +	clear_sta_flag(sta, WLAN_STA_SMD_PREP_TARGET);
-> > > +	clear_sta_flag(sta, WLAN_STA_SMD_EXEC_CURRENT);
-> > > +	clear_sta_flag(sta, WLAN_STA_SMD_DL_DRAIN);
-> >=20
-> > Understand that you need to clear the stale flags, but for the driver
-> > that just seems strange?
-> >=20
->=20
-> So, this is also called from state 4->3 transition so clearing the stale =
-flags
-> seems necessary. For the drv_sta_smd_state op as well, if we don't clear =
-the
-> state in mac80211, there will be inconsistency between driver and mac8021=
-1.
+Two independent fixes for the mt7615 RX path:
 
-Wait, which way is it then? Anyway I'm not sure I see a lot of value in
-moving the driver down when the whole state 4 is left later?
+- mt7615_queue_rx_skb() walks the TXS entries up to skb->len, which
+  describes the whole packet including paged fragments. Frames
+  delivered by the USB transport can be fragmented, so the parser can
+  run past the linear part of the skb and read outside of the skb head
+  allocation.
 
-> > > +	case IEEE80211_STA_SMD_EXEC:
-> > > +	case IEEE80211_STA_SMD_DRAIN:
-> > > +		err =3D drv_sta_smd_state(local, sta->sdata, &sta->sta,
-> > > +					IEEE80211_STA_SMD_NONE,
-> > > +					IEEE80211_STA_SMD_EXEC);
-> > > +		if (err)
-> > > +			goto rollback;
-> > > +
-> > > +		if (new_ss =3D=3D IEEE80211_STA_SMD_DRAIN)
-> > > +			err =3D drv_sta_smd_state(local, sta->sdata, &sta->sta,
-> > > +						IEEE80211_STA_SMD_EXEC,
-> > > +						IEEE80211_STA_SMD_DRAIN);
-> > > +		break;
-> >=20
-> > you do realize "fallthrough" exists?
-> >=20
->=20
-> I am afraid I am not able to understand how fallthrough helps here.=C2=A0
+- mt7615_get_status_freq_info() dereferences the configured channel
+  although received frames may be processed before mac80211 assigned
+  one, which crashes with a NULL pointer dereference.
 
-My bad, sorry! I mixed up the order of operations.
+An equivalent fix for the first issue in mt7925 was posted separately.
 
-> > > +	/* if EXEC -> DRAIN failed in the driver, notify EXEC -> NONE */
-> > > +	WARN_ON_ONCE(drv_sta_smd_state(local, sta->sdata, &sta->sta,
-> > > +				       IEEE80211_STA_SMD_EXEC,
-> > > +				       IEEE80211_STA_SMD_NONE));
-> >=20
-> > I'm not a fan of sticking whole blocks of code into a WARN, but I'm als=
-o
-> > not sure this whole "model what should be a one-way sub-state based on
-> > sta_state" was a good idea in this patch.
-> >=20
-> Could you please kindly clarify "model what should be a one-way sub-state
-> based on sta_state"? Would you prefer if the driver was able to directly
-> update the state as well?
 
-Ah, no, I was just mostly thinking about the above discussion, and also
-the whole substates.
+YuanZhe Liu (2):
+  wifi: mt76: mt7615: fix out-of-bounds read in mt7615_mac_add_txs
+  wifi: mt76: mt7615: fix NULL pointer dereference in
+    mt7615_get_status_freq_info
 
-For station _state_ I think it makes sense (mostly) to go have the
-"ladder" of states (notexist <-> none <-> auth <-> assoc <-> authorized)
-and clearly modelled it based on that.
+ drivers/net/wireless/mediatek/mt76/mt7615/mac.c | 5 +++--
+ 1 file changed, 3 insertions(+), 2 deletions(-)
 
-But does that makes sense here? Why even go 4 -> 4b -> 4c as a substate
-etc. Wouldn't it be a lot simpler to just say "this is the new substate"
-deal with it? There's not a lot of "ladder" going on, the substates
-don't really depend on each other as fundamentally. In fact, for 4a vs.
-b/c they're not even a ladder anyway since that's completely different
-use cases.
+-- 
+2.34.1
 
-johannes
