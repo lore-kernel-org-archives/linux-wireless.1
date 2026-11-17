@@ -1,59 +1,59 @@
 Authentication-Results: smtp.subspace.kernel.org; arc=none smtp.remote-ip=46.4.11.11
 ARC-Seal: i=1; d=subspace.kernel.org; s=arc20261015; a=rsa-sha256; cv=none;
 	t=1794938510;
-	b=uJ6CDg2/abUag/EzzE842JkV18y1UIluTVBd7kwe16Vk4s4os0/e6Qdm/Cb9ZfhFhEbr
-	 UKuootQAjUZFe+HdhbKfOwr7TG8D9x/lSi6nbki3OKwgTK5do5xhAL27rMinNpHKIhGOk
-	 sfDVixOsBNYwgRwaxHvY+t2ZRI3yl2STCuQmt6QRx07EOlXJsiMGnJAWUMMeqRsbUfe1k
-	 TlJ+5onHTI5sEiMPJ5ATztbmxfcXyo+MXuAG4og7dIgdi7B/znmouVgM5pS4uuqLEeS2R
-	 sCAFX1yqoBLYLKMlvQIOhz7PBz/aTFcXszE5Y8oXum+zF5juHP5BM5hUrkYncASkdsA==
+	b=3QmvUywR1DnuMBJo0NnGCLZCIQFcfGFq0uUe6zfVQhS8NRVexevjhktMDSQ3YL9XrqKe
+	 fdmJXNw9HHP20ePIR/MD79ENDLmMUVKTFnY2bwUkQLqYcR07Zpuxg+b1CTR+2IWRj8Ld9
+	 mnUQ2jTqjZLk7CY7Hio3fLfkuu/nxWHml/MvOKqS6SZuWaUR+fhFput3nBYX1YRCgt67S
+	 QCXiupuX6kaoMqoqJRubZ7+oLBeB83p3bPtkK5pJuitqkXQJE/5T6Uis9uWF9iBk0hD7H
+	 OtLiE3jSsaYKaJFYe0B58Yk3Q60tUGMGEtFdhlRdgQiLSwbgjWpaZ0Bq0YKhfwAO9SA==
 ARC-Message-Signature: i=1; d=subspace.kernel.org; s=arc20261015;
 	a=rsa-sha256; c=relaxed/relaxed; t=1794938510;
 	h=DMARC-Filter:DKIM-Signature:Received:From:To:Subject:Date:Message-ID:
 	 X-Mailer:In-Reply-To:References:MIME-Version:
 	 Content-Transfer-Encoding;
-	bh=Rr6lp8BScajsiT8tmIj+/AZ4o2DKEsadAOceAdtslaw=;
-	b=Sw/OoXMixme07m/o2RsPpetPa5knrD9irM9tnWzDPbjuOONJ8YkNCGPgRhVLKECpXjaX
-	 Xz4c0I9d58GO4M/QkwAB0C0KL0m1aeiirhQ5e8ZqKh0yb8SKBwTB/5aJw8S3cBWZUxAY8
-	 b4ciMz5Dz96uOLgMLq6t0gEwAZtNchl3ad5n+qh/0Pv0i86p4HbMyUjEPrr1t8b4/W7j3
-	 I1C82xaEHNod5FNf7tRz1FGGjTOUGBtCwB+nG03Kc+k2IRvQUs4tOyHZIb7oRmWvPzu4i
-	 m9xr6xOmaBiQQf0EMpxxT9vpePh3scFPpBYuZ090l7o/xN7Vs17RCCgiMQerScJFCvw==
+	bh=c48pvsPksA7naEGAOH1VVBlp7GnUj1J7VbFaXc42IRk=;
+	b=ucI5LempzZ83oVBdHFniuAUxh+K8dZ8ibW9XoAVUKEDinrQXLLGrV44Z1rLSx4zPURBl
+	 Cer6b8ng+k5BRo9JU3Shpwjxfg7BGJNB0lII5IML98XmJGEt7uy9gctz0LF8AqonL5wHc
+	 G1SNZaICwYBMKB3XvjKQIjtJgzXBPOfuUW2i4s8MrTrTAg+sqxXL3Ia3cluFt14wQC80R
+	 qjDPIrgQDZ5RxjJJFEwC1LG2I/BUWDME5Dol+YQXfZeAV471xYSuIEV2kh5lHtlcmefx5
+	 esTgURYmcI/A7TiZjB6O9zpemDNPJlAjAOKQERYRwQtrER4nt4iFWwwzq6CcqnjIaCg==
 ARC-Authentication-Results: i=1; smtp.subspace.kernel.org; 
 	dmarc=pass header.from=nbd.name;
 	spf=pass smtp.mailfrom=nbd.name;
-	dkim=pass header.d=nbd.name header.i=@nbd.name header.a=rsa-sha256 header.s=20160729 header.b=YrOiNmPc;
+	dkim=pass header.d=nbd.name header.i=@nbd.name header.a=rsa-sha256 header.s=20160729 header.b=UzvQpc6j;
 	arc=none smtp.remote-ip=46.4.11.11
 Received: from nbd.name (nbd.name [46.4.11.11])
 	(using TLSv1.3 with cipher TLS_AES_256_GCM_SHA384 (256/256 bits)
 	 key-exchange ECDHE (prime256v1) server-signature ECDSA (prime256v1) server-digest SHA256)
 	(No client certificate requested)
-	by smtp.subspace.kernel.org (Postfix) with ESMTPS id 4208A606A333
-	for <linux-wireless@vger.kernel.org>; Tue, 17 Nov 2026 18:01:50 +0000 (UTC)
-DMARC-Filter: OpenDMARC Filter v1.4.2 smtp.subspace.kernel.org 4208A606A333
+	by smtp.subspace.kernel.org (Postfix) with ESMTPS id 9C97D606A32C
+	for <linux-wireless@vger.kernel.org>; Tue, 17 Nov 2026 18:01:49 +0000 (UTC)
+DMARC-Filter: OpenDMARC Filter v1.4.2 smtp.subspace.kernel.org 9C97D606A32C
 Authentication-Results: smtp.subspace.kernel.org; dmarc=pass (p=none dis=none) header.from=nbd.name
 Authentication-Results: smtp.subspace.kernel.org; spf=pass smtp.mailfrom=nbd.name
 Authentication-Results: smtp.subspace.kernel.org;
-	dkim=pass (1024-bit key) header.d=nbd.name header.i=@nbd.name header.a=rsa-sha256 header.s=20160729 header.b=YrOiNmPc
+	dkim=pass (1024-bit key) header.d=nbd.name header.i=@nbd.name header.a=rsa-sha256 header.s=20160729 header.b=UzvQpc6j
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed; d=nbd.name;
 	s=20160729; h=Content-Transfer-Encoding:MIME-Version:References:In-Reply-To:
 	Message-ID:Date:Subject:To:From:Sender:Reply-To:Cc:Content-Type:Content-ID:
 	Content-Description:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc
 	:Resent-Message-ID:List-Id:List-Help:List-Unsubscribe:List-Subscribe:
 	List-Post:List-Owner:List-Archive;
-	bh=Rr6lp8BScajsiT8tmIj+/AZ4o2DKEsadAOceAdtslaw=; b=YrOiNmPc6UUeIUiPrkLPBD20Qx
-	2/P0F6UDqzS0gAi0L7wqm/J/dXwysCI2bHkNs8bR/nl9ocobzi1rmln8VoxjXm/oSxkET+BEMLNP4
-	dKEWuCjnShTkBKHRPFVluxIM8YHzxN+8Gh51SmQ6uQx6DtjU/qTqvLmRCzuKhLjZJfYY=;
+	bh=c48pvsPksA7naEGAOH1VVBlp7GnUj1J7VbFaXc42IRk=; b=UzvQpc6j6H8M/u8X49/B6PT39t
+	xiJt0hKqQUupRVeJFAbHFmUyz7MmOGvrmLq1qL1NS2bFy9sittov0dJOSW+zYGS4XA2VBXHIu7B/T
+	bCK8P/j2whJLnuJ2+UlQRwZ6Kac8i/Y39zREFQzftby+s+2SE9WCxHnSYIdcxlFNokjg=;
 Received: from p200300cadf12920000000000000005bb.dip0.t-ipconnect.de ([2003:ca:df12:9200::5bb] helo=localhost.localdomain)
 	by ds12 with esmtpsa  (TLS1.3) tls TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384
 	(Exim 4.96)
 	(envelope-from <nbd@nbd.name>)
-	id 1xTNV1-004eiZ-16
+	id 1xTNV0-004eiZ-1e
 	for linux-wireless@vger.kernel.org;
-	Tue, 17 Nov 2026 19:01:43 +0100
+	Tue, 17 Nov 2026 19:01:42 +0100
 From: Felix Fietkau <nbd@nbd.name>
 To: linux-wireless@vger.kernel.org
-Subject: [PATCH mt76-next 08/19] wifi: mt76: skip the radiotap TLVs in mt76_skb_get_hdr()
-Date: Tue, 17 Nov 2026 19:01:23 +0100
-Message-ID: <20261117180134.2940930-8-nbd@nbd.name>
+Subject: [PATCH mt76-next 03/19] wifi: mt76: mt7996: use the default timeout for STA_REC and BSS_INFO
+Date: Tue, 17 Nov 2026 19:01:18 +0100
+Message-ID: <20261117180134.2940930-3-nbd@nbd.name>
 X-Mailer: git-send-email 2.47.3
 In-Reply-To: <20261117180134.2940930-1-nbd@nbd.name>
 References: <20261117180134.2940930-1-nbd@nbd.name>
@@ -68,36 +68,32 @@ Precedence: list
 MIME-Version: 1.0
 Content-Transfer-Encoding: 8bit
 
-mt76_skb_get_hdr() skips only the HE radiotap fields, so for a frame
-with EHT radiotap TLVs in front of the 802.11 header it returns the
-first TLV. mt76_check_ccmp_pn() then checks QoS Data of EHT PPDUs
-against the counter of robust Management frames, and
-mt76_rx_aggr_check_ctl() does not see a BlockAckReq.
+mt7996_mcu_set_timeout() gives STA_REC_UPDATE and BSS_INFO_UPDATE a
+timeout of 2 seconds. Their payload grows with the beacon templates of
+MBSS and MLD configurations, the firmware can take longer to process
+them, and an MCU timeout resets the device.
 
-Return the mac header for a frame with RX_FLAG_RADIOTAP_TLV_AT_END,
-which mac80211 requires to point to the 802.11 header.
+Use the default timeout for both commands.
 
-Fixes: 97d7ab9f51ec ("wifi: mt76: mt7925: add EHT radiotap support in monitor mode")
-Fixes: e016239fcb98 ("wifi: mt76: mt7996: Add eht radiotap tlv")
+Fixes: beb01caa570c ("wifi: mt76: mt7996: decrease timeout for commonly issued MCU commands")
 Signed-off-by: Felix Fietkau <nbd@nbd.name>
 ---
- drivers/net/wireless/mediatek/mt76/mt76.h | 3 +++
- 1 file changed, 3 insertions(+)
+ drivers/net/wireless/mediatek/mt76/mt7996/mcu.c | 2 --
+ 1 file changed, 2 deletions(-)
 
-diff --git a/drivers/net/wireless/mediatek/mt76/mt76.h b/drivers/net/wireless/mediatek/mt76/mt76.h
-index da135e76aabb..8f8388d44aa9 100644
---- a/drivers/net/wireless/mediatek/mt76/mt76.h
-+++ b/drivers/net/wireless/mediatek/mt76/mt76.h
-@@ -1485,6 +1485,9 @@ static inline void *mt76_skb_get_hdr(struct sk_buff *skb)
- 
- 	mstat = *((struct mt76_rx_status *)skb->cb);
- 
-+	if (mstat.flag & RX_FLAG_RADIOTAP_TLV_AT_END)
-+		return skb_mac_header(skb);
-+
- 	if (mstat.flag & RX_FLAG_RADIOTAP_HE)
- 		data += sizeof(struct ieee80211_radiotap_he);
- 	if (mstat.flag & RX_FLAG_RADIOTAP_HE_MU)
+diff --git a/drivers/net/wireless/mediatek/mt76/mt7996/mcu.c b/drivers/net/wireless/mediatek/mt76/mt7996/mcu.c
+index 94e88455c732..e56b60346fc4 100644
+--- a/drivers/net/wireless/mediatek/mt76/mt7996/mcu.c
++++ b/drivers/net/wireless/mediatek/mt76/mt7996/mcu.c
+@@ -282,8 +282,6 @@ mt7996_mcu_set_timeout(struct mt76_dev *mdev, int cmd)
+ 	case MCU_UNI_CMD_THERMAL:
+ 	case MCU_UNI_CMD_TWT:
+ 	case MCU_UNI_CMD_GET_MIB_INFO:
+-	case MCU_UNI_CMD_STA_REC_UPDATE:
+-	case MCU_UNI_CMD_BSS_INFO_UPDATE:
+ 		mdev->mcu.timeout = 2 * HZ;
+ 		return;
+ 	case MCU_UNI_CMD_EFUSE_CTRL:
 -- 
 2.47.3
 
