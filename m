@@ -1,83 +1,66 @@
-Authentication-Results: smtp.subspace.kernel.org; arc=none smtp.remote-ip=211.75.126.72
+Authentication-Results: smtp.subspace.kernel.org; arc=none smtp.remote-ip=111.22.67.135
 ARC-Seal: i=1; d=subspace.kernel.org; s=arc20261015; a=rsa-sha256; cv=none;
-	t=1794879343;
-	b=5W35vw9+CHYkmP29Tk15qoId9xtZcP9tYh+6Dtml3vt6kku+rKnxKLpbwXYTBx4wb7lf
-	 +n3p1y1M8vbXepl4v/Xb+ktuJWMiz1qOwls8Ks3awg0vfEzyG3D23xI2KiESGpwSubC+t
-	 xBEhZ8gIgvlmSpEONu/sOumXxpLum6QGSKDMINGso3kSmlH4zYdQbQX4Z3xu9JQvm/Hso
-	 t5wtbkDML+D7xfZOrjxqCtmhInqR8wicMaTS+GOgTT4VNGgC0Am9jEdZiZZGSwLLbYBe+
-	 0uaINMsjOToUrRVQwpl6mf5/0TD1jYdIqapDlMyxzR5JUdYsqXZ7TUZF9sOiwLRpKKg==
+	t=1794879806;
+	b=hDgG0SFErzLrnM3HX7oybg+9LT4k4mmMcSdSEQfAjTs8tf6IZeeJNoHJLlq61ryua6mG
+	 OuphZIyKw3J+XSV20+FuWjfaqRctFV+5ikTlFWadUWljVXBiYyyxQx5Dl3rl4Cv9APdqy
+	 9tfQrCj5XTQqRIJecIhO9MSWODvfKjuDjaqMz0nNjnuW9aGb3TpBotKTwZo6FW39y5SrD
+	 jgQln6eIEeZyzuSqPZ4zSp/ts4Ca6sayAgvg4aC1TM8XtIla5OoOzzsS84EgEwWTNB95i
+	 7qzDST1O2mtZaDAprrK8CC6DJBhus0BFKbtXTeBoA+zLI9KAua3tuFcLA3xeVRR95ZA==
 ARC-Message-Signature: i=1; d=subspace.kernel.org; s=arc20261015;
-	a=rsa-sha256; c=relaxed/relaxed; t=1794879343;
-	h=DMARC-Filter:X-SpamFilter-By:DKIM-Signature:Received:Received:
-	 Received:Received:From:To:CC:Subject:Thread-Topic:Thread-Index:Date:
-	 Message-ID:References:In-Reply-To:Accept-Language:Content-Language:
-	 x-originating-ip:Content-Type:Content-Transfer-Encoding:MIME-Version;
-	bh=/GaoTHlvdwCxZnsyrE2dClN5WmkZlsTr2++LAeIbplk=;
-	b=GBgFBLlcvKbbrof6iz7XFjuvMO/1QBzCeE1w2zvIYXlvIfmjcyH2jghwltPOICEawPVM
-	 nmiuz5gzHCtkSq5cLmyafcyTX12ZphbSFCYD9uSGuAX4T562moXcYOQAD08G+pTUAPzTe
-	 SIjGQuJQtHf2rE7FgGAsRIyUa0Dvjl8zYRKSeQKb56qtYaqsiUFJMmrut4mgAzoBCIzQt
-	 lOJEwhHllgFEsAElg79vpGUqQZfGHFsAQnsGjhZGBL8dVJIrhJQvaU5wHC/II868XtcNp
-	 76BPpyU085HRTX7hcUBMoG/alre0V5o4gDunA6R7nXnKb7B0YhUquAGh9y3JcIVee6g==
+	a=rsa-sha256; c=relaxed/relaxed; t=1794879806;
+	h=DMARC-Filter:DKIM-Signature:X-RM-TagInfo:X-RM-SPAM-FLAG:Received:
+	 X-RM-TRANSID:X-RM-TagInfo:X-RM-SPAM-FLAG:Received:X-RM-TRANSID:From:
+	 To:Cc:Subject:Date:Message-Id:X-Mailer:MIME-Version:
+	 Content-Transfer-Encoding;
+	bh=erNoA3lOUo0ZYtOb9qkmx1CJe4mtUfobD6S4pgfjrbM=;
+	b=fFwiGEP38oqLYd1QzBXgORqAUm9RJAeJRNENUZguqLgrCkKBaI2g5mSQV6eTJCIhVm3s
+	 vWyDEue4w75MhEYhuu47/YUoP4hrxjuLr++DKdkFi5d2tI5YfyTA/2vPVxAs5xes6W9PP
+	 HVzu0a/KbNOYuxGWE6lTOnPgbITlu7Lnu5uw3ys+Fj+ZBRADA+iwYM5oy6RpPt/gkE1ef
+	 CK8L0YBJNsmdfwwniXaLzpnvPmjqV2vAMFAKMeR9y47+X04VhMO4v7I3xHczb3bts0arB
+	 lTH/DJ/fvsd78zgd7ted3/ebhHwQj53s6QvF5nvX/TLCWHaQKsBuZ2Pj7aMHDiG1aMg==
 ARC-Authentication-Results: i=1; smtp.subspace.kernel.org; 
-	dmarc=pass header.from=realtek.com;
-	spf=pass smtp.mailfrom=realtek.com;
-	dkim=pass header.d=realtek.com header.i=@realtek.com header.a=rsa-sha256 header.s=dkim header.b=lF+zdThK;
-	arc=none smtp.remote-ip=211.75.126.72
-Received: from rtits2.realtek.com.tw (rtits2.realtek.com [211.75.126.72])
-	(using TLSv1.3 with cipher TLS_AES_256_GCM_SHA384 (256/256 bits)
-	 key-exchange X25519 server-signature ECDSA (prime256v1) server-digest SHA256)
-	(No client certificate requested)
-	by smtp.subspace.kernel.org (Postfix) with ESMTPS id 2951D606A31C;
-	Tue, 17 Nov 2026 01:35:42 +0000 (UTC)
-DMARC-Filter: OpenDMARC Filter v1.4.2 smtp.subspace.kernel.org 2951D606A31C
-Authentication-Results: smtp.subspace.kernel.org; dmarc=pass (p=none dis=none) header.from=realtek.com
-Authentication-Results: smtp.subspace.kernel.org; spf=pass smtp.mailfrom=realtek.com
+	dmarc=pass header.from=cmss.chinamobile.com;
+	spf=pass smtp.mailfrom=cmss.chinamobile.com;
+	dkim=pass header.d=cmss.chinamobile.com header.i=@cmss.chinamobile.com header.a=rsa-sha256 header.s=default header.b="V2tx/T3w";
+	arc=none smtp.remote-ip=111.22.67.135
+Received: from cmccmta2.chinamobile.com (cmccmta2.chinamobile.com [111.22.67.135])
+	by smtp.subspace.kernel.org (Postfix) with ESMTP id 2B509606A31C;
+	Tue, 17 Nov 2026 01:43:23 +0000 (UTC)
+DMARC-Filter: OpenDMARC Filter v1.4.2 smtp.subspace.kernel.org 2B509606A31C
+Authentication-Results: smtp.subspace.kernel.org; dmarc=pass (p=none dis=none) header.from=cmss.chinamobile.com
+Authentication-Results: smtp.subspace.kernel.org; spf=pass smtp.mailfrom=cmss.chinamobile.com
 Authentication-Results: smtp.subspace.kernel.org;
-	dkim=pass (2048-bit key) header.d=realtek.com header.i=@realtek.com header.a=rsa-sha256 header.s=dkim header.b=lF+zdThK
-X-SpamFilter-By: ArmorX SpamTrap 5.80 with qID 6AH1ZdFD23943628, This message is accepted by code: ctloc85258
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=realtek.com; s=dkim;
-	t=1794879339; bh=/GaoTHlvdwCxZnsyrE2dClN5WmkZlsTr2++LAeIbplk=;
-	h=From:To:CC:Subject:Date:Message-ID:References:In-Reply-To:
-	 Content-Type:Content-Transfer-Encoding:MIME-Version;
-	b=lF+zdThKqvQ/k6guH3nkRaHxbvHmiFozhEXc1VD7HHrtFTkFcDXuOgzz3pq8dropn
-	 fd3fxlrPw+hvZOsNrpzv0D4LgEsirWMy1NA8C57Fa8M2J3dcDhWpcWjluQPjOqsRAC
-	 KWBvYgvZBzzSSSXu+0o8wUJUD0YbS9hLluTcJ22DqtLcDknV6qiVy+G2VMvFDHJbD8
-	 8liB8VwGcZEzxg+a+pcuoHFifLekMlip1dnqaIwI5K9NaDT2fKAa3sAFnomb0TOl+L
-	 D4CU60aj6zQThYml1pNWT7bkz1K51Z90jW1kIJovZsuuRBD7cJbG4H5YFj8eanPbr+
-	 k1KGTvtlopHaQ==
-Received: from mail.realtek.com (rtkexhmbs04.realtek.com.tw[10.21.1.54])
-	by rtits2.realtek.com.tw (8.15.2/3.29/5.94) with ESMTPS id 6AH1ZdFD23943628
-	(version=TLSv1.2 cipher=ECDHE-RSA-AES256-GCM-SHA384 bits=256 verify=FAIL);
-	Tue, 17 Nov 2026 09:35:39 +0800
-Received: from RTKEXHMBS05.realtek.com.tw (10.21.1.55) by
- RTKEXHMBS04.realtek.com.tw (10.21.1.54) with Microsoft SMTP Server
- (version=TLS1_2, cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id
- 15.2.2562.56; Tue, 17 Nov 2026 09:35:39 +0800
-Received: from RTKEXHMBS06.realtek.com.tw (10.21.1.56) by
- RTKEXHMBS05.realtek.com.tw (10.21.1.55) with Microsoft SMTP Server
- (version=TLS1_2, cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id
- 15.2.2562.56; Tue, 17 Nov 2026 09:35:39 +0800
-Received: from RTKEXHMBS06.realtek.com.tw ([fe80::eeeb:c765:ca73:5eef]) by
- RTKEXHMBS06.realtek.com.tw ([fe80::eeeb:c765:ca73:5eef%10]) with mapi id
- 15.02.2562.056; Tue, 17 Nov 2026 09:35:38 +0800
-From: Ping-Ke Shih <pkshih@realtek.com>
-To: Rosen Penev <rosenp@gmail.com>, "linux-wireless@vger.kernel.org"
-	<linux-wireless@vger.kernel.org>
-CC: open list <linux-kernel@vger.kernel.org>
-Subject: RE: [PATCH rtw-next v3] wifi: rtw89: acpi: check for _DSM function
- support before evaluating it
-Thread-Topic: [PATCH rtw-next v3] wifi: rtw89: acpi: check for _DSM function
- support before evaluating it
-Thread-Index: AQHdb8F45Ag5kkMCtk2pEzAcm+MLY7cxhzhQgAAAwkA=
-Date: Tue, 17 Nov 2026 01:35:38 +0000
-Message-ID: <2d5e6b2071444fa5a23ff230744fce2f@realtek.com>
-References: <20261108204056.28049-1-rosenp@gmail.com>
- <c182ad839d9b44c3adcc0b208b84d85e@realtek.com>
-In-Reply-To: <c182ad839d9b44c3adcc0b208b84d85e@realtek.com>
-Accept-Language: en-US, zh-TW
-Content-Language: zh-TW
-Content-Type: text/plain; charset="us-ascii"
-Content-Transfer-Encoding: quoted-printable
+	dkim=pass (1024-bit key) header.d=cmss.chinamobile.com header.i=@cmss.chinamobile.com header.a=rsa-sha256 header.s=default header.b=V2tx/T3w
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+	d=cmss.chinamobile.com; s=default; l=0;
+	h=from:subject:message-id:to:cc:mime-version;
+	bh=47DEQpj8HBSa+/TImW+5JCeuQeRkm5NMpJWZG3hSuFU=;
+	b=V2tx/T3wnghATcjH2lGigflaRwhcNVL1iiDyEYzjX4GUyl7Hu8HKD9TNzu7LOxRIoHfXxIUkXkobn
+	 JgPxZNFHw/EJvPhSG/cUYgocTiPRuejf5ZirzqNecaPW48p87bYS08srJrXQjqjiC7LUSZUujEqspU
+	 6HzbWlV8c7MbIMoY=
+X-RM-TagInfo: emlType=0                                       
+X-RM-SPAM-FLAG:00000000
+Received:from spf.mail.chinamobile.com (unknown[10.188.0.87])
+	by rmmx-syy-dmz-app07-12007 (RichMail) with SMTP id 2ee76afbb12ca52-04812;
+	Tue, 17 Nov 2026 09:43:08 +0800 (CST)
+X-RM-TRANSID:2ee76afbb12ca52-04812
+X-RM-TagInfo: emlType=0                                       
+X-RM-SPAM-FLAG:00000000
+Received:from localhost.localdomain.localdomain (unknown[10.55.1.72])
+	by rmsmtp-syy-appsvr09-12009 (RichMail) with SMTP id 2ee96afbb12ab7a-9e119;
+	Tue, 17 Nov 2026 09:43:08 +0800 (CST)
+X-RM-TRANSID:2ee96afbb12ab7a-9e119
+From: luoyifan <luoyifan@cmss.chinamobile.com>
+To: Jeff Chen <jeff.chen_1@nxp.com>,
+	Francesco Dolcini <francesco@dolcini.it>,
+	linux-wireless@vger.kernel.org
+Cc: Johannes Berg <johannes@sipsolutions.net>,
+	linux-kernel@vger.kernel.org,
+	Luo Yifan <luoyifan@cmss.chinamobile.com>
+Subject: [PATCH] wifi: nxpwifi: validate TID in ADDBA and DELBA command responses
+Date: Tue, 17 Nov 2026 09:43:10 +0800
+Message-Id: <20261117014311.19627-1-luoyifan@cmss.chinamobile.com>
+X-Mailer: git-send-email 2.24.4
 X-Mailing-List: linux-wireless@vger.kernel.org
 List-Id: <linux-wireless.vger.kernel.org>
 List-Post: <mailto:linux-wireless@vger.kernel.org>
@@ -87,35 +70,77 @@ List-Unsubscribe: <mailto:linux-wireless+unsubscribe@vger.kernel.org>
 List-Owner: <mailto:linux-wireless+owner@vger.kernel.org>
 Precedence: list
 MIME-Version: 1.0
+Content-Transfer-Encoding: 8bit
 
-Hi Rosen,
+From: Luo Yifan <luoyifan@cmss.chinamobile.com>
 
-Ping-Ke Shih <pkshih@realtek.com> wrote:
-> Rosen Penev <rosenp@gmail.com> wrote:
-> > When the WiFi device has no ACPI companion, or the firmware does not
-> > implement a given rtw89 _DSM function, rtw89_acpi_evaluate_dsm() calls
-> > acpi_evaluate_dsm() anyway. ACPI core then warns on every probe:
-> >
-> >   ACPI: \: failed to evaluate _DSM e8c3a8d2-694b-004f-82bd-fe8607803aa7=
- rev:0 func:10 (0x1001)
-> >   ACPI: \: failed to evaluate _DSM e8c3a8d2-694b-004f-82bd-fe8607803aa7=
- rev:0 func:6 (0x1001)
-> >
-> > Here the handle is NULL, and acpi_evaluate_object() returns
-> > AE_BAD_PARAMETER. All callers already treat failure as "no policy
-> > provided by the platform", so this is only noise.
-> >
-> > Bail out early when there is no ACPI handle,
-> >
-> > Seen on an RTL8852BE in a desktop PCIe slot.
-> >
-> > Signed-off-by: Rosen Penev <rosenp@gmail.com>
->=20
-> Acked-by: Ping-Ke Shih <pkshih@realtek.com>
+The TID field in ADDBA and DELBA management frames is four bits wide, so a
+peer can put any value in the range 0-15 in it.  The firmware forwards the
+parsed frames to the driver as command responses and events, and
+nxpwifi_ret_11n_delba(), nxpwifi_ret_11n_addba_req() and
+nxpwifi_11n_delete_ba_stream() use that TID without validating it.
 
-Can you take by Acked-by and resend v4?
+The TID is then used to index arrays that only have MAX_NUM_TID (8)
+entries: rx_reorder_tbl_ptr[], rx_reorder_tbl_lock[],
+tx_ba_stream_tbl_ptr[], tx_ba_stream_tbl_lock[] and aggr_prio_tbl[].  A
+TID in the range 8-15 therefore reads or writes past the end of these
+arrays.  In particular, nxpwifi_del_ba_tbl() takes a spinlock at
+priv->tx_ba_stream_tbl_lock[tid] and nxpwifi_get_ba_tbl() walks a list at
+priv->tx_ba_stream_tbl_ptr[tid], so a peer can make the driver operate on
+unrelated memory.
 
-The v3 isn't existing in patchwork, since it broken at the period you sent =
-v3.
+Reject out-of-range TIDs at the entry of the three handlers.  This covers
+the DELBA response, the ADDBA response and the DELBA event paths; the RX
+reorder data path has its own checks.
+
+Signed-off-by: Luo Yifan <luoyifan@cmss.chinamobile.com>
+---
+ drivers/net/wireless/nxp/nxpwifi/11n.c | 16 ++++++++++++++++
+ 1 file changed, 16 insertions(+)
+
+diff --git a/drivers/net/wireless/nxp/nxpwifi/11n.c b/drivers/net/wireless/nxp/nxpwifi/11n.c
+index 9eae93c3b8..56aadbb540 100644
+--- a/drivers/net/wireless/nxp/nxpwifi/11n.c
++++ b/drivers/net/wireless/nxp/nxpwifi/11n.c
+@@ -99,6 +99,12 @@ int nxpwifi_ret_11n_delba(struct nxpwifi_private *priv,
+ 	u16 del_ba_param_set = le16_to_cpu(del_ba->del_ba_param_set);
+ 
+ 	tid = del_ba_param_set >> DELBA_TID_POS;
++	if (tid >= MAX_NUM_TID) {
++		nxpwifi_dbg(priv->adapter, ERROR,
++			    "DELBA: invalid tid %d\n", tid);
++		return -EINVAL;
++	}
++
+ 	if (del_ba->del_result == BA_RESULT_SUCCESS) {
+ 		nxpwifi_del_ba_tbl(priv, tid, del_ba->peer_mac_addr,
+ 				   TYPE_DELBA_SENT,
+@@ -143,6 +149,11 @@ int nxpwifi_ret_11n_addba_req(struct nxpwifi_private *priv,
+ 			& SSN_MASK);
+ 
+ 	tid = u16_get_bits(block_ack_param_set, IEEE80211_ADDBA_PARAM_TID_MASK);
++	if (tid >= MAX_NUM_TID) {
++		nxpwifi_dbg(priv->adapter, ERROR,
++			    "ADDBA RSP: invalid tid %d\n", tid);
++		return -EINVAL;
++	}
+ 
+ 	tid_down = nxpwifi_wmm_downgrade_tid(priv, tid);
+ 	ra_list = nxpwifi_wmm_get_ralist_node(priv, tid_down,
+@@ -626,6 +637,11 @@ void nxpwifi_11n_delete_ba_stream(struct nxpwifi_private *priv, u8 *del_ba)
+ 	int tid;
+ 
+ 	tid = del_ba_param_set >> DELBA_TID_POS;
++	if (tid >= MAX_NUM_TID) {
++		nxpwifi_dbg(priv->adapter, ERROR,
++			    "DELBA event: invalid tid %d\n", tid);
++		return;
++	}
+ 
+ 	nxpwifi_del_ba_tbl(priv, tid, cmd_del_ba->peer_mac_addr,
+ 			   TYPE_DELBA_RECEIVE, INITIATOR_BIT(del_ba_param_set));
+-- 
+2.24.4
+
 
 
