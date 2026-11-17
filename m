@@ -1,89 +1,90 @@
-Authentication-Results: smtp.subspace.kernel.org; arc=none smtp.remote-ip=94.130.186.121
+Authentication-Results: smtp.subspace.kernel.org; arc=none smtp.remote-ip=209.85.210.181
 ARC-Seal: i=1; d=subspace.kernel.org; s=arc20261015; a=rsa-sha256; cv=none;
-	t=1794926687;
-	b=I37toDkP73wXHjxSjd5PXcHa3R9bNpWFONqWfPCJ/PuaVWh+l4ZAoBC31kK5ArwugLrO
-	 01Jv2MiQsI6j5Tg2cn8QfuGV0q5x/mxXMKHX9cldz6SuJXwnCo1golvLE1I6l4R2jzAJj
-	 jQza18XgLcTJ2XsthEB+4bkt8o7pn90QHGggYRzoaA37v9GbymRETK/GwUH90hdTiYAkA
-	 PSRgpJZRkayo27XvrYxdTN6TXQnvpanSArQYPHEiWl056KwdFavLNHx9cjHCyjFVtt5ww
-	 EBqVmp9zfUL9Lu2jYKISgdEXBgRndO1huXzV+gIgGUKo+6d/6DhMPn3rPqNE3yTWw1w==
+	t=1794927278;
+	b=Y3dVSjh5r0qwmfUxC3HNHhd4FhRK9W9Lx2kFnJMJ/xgCCGprTOnqpIGnZpWO6Gd+1+Xm
+	 RQU0KQvcwXozMf2Q0Jx8tfZkR60cUn1v8Qp3+uTXyrx8tAjzlIHQFhcTozFo1Dyijii8s
+	 FM8OvDzgylvNcHfAK6q0DUG5CFqMjU2sOprLs9Ce8e14Wfqn0KgSKIXFeIkoKEstb8LRq
+	 p1xFNrfAVNzLi6Kc3b9+NwSPPmt9W3U4Fnne31wU0oXQXN3eM1euTBUGiSzHbaEC0Ny8L
+	 dO4qjTH9yKmECRuQXsluyL2fV8GH2sD1nu+Y+sxkSJp78nljXRtw6ttyY9pr8GTHswQ==
 ARC-Message-Signature: i=1; d=subspace.kernel.org; s=arc20261015;
-	a=rsa-sha256; c=relaxed/relaxed; t=1794926687;
-	h=DMARC-Filter:Received:DKIM-Signature:DKIM-Signature:Received:
-	 Received:Date:From:To:Cc:Subject:Message-ID:Mail-Followup-To:
-	 References:MIME-Version:Content-Type:Content-Disposition:
-	 Content-Transfer-Encoding:In-Reply-To;
-	bh=PHXoIi8ouLda/eOhfRDumPGk6plK6QA3eTC0611Rdb4=;
-	b=hTl+RGD/fZ5nCFriItV7SFjdhW+8Vj1HcitWTGu9tYKqBnHol4BX1LQuAkue42RTYxAe
-	 wInajsx028/hGAwckUcQ0DqGWlNSHCesRk2TLFXrW0kaqj1Ok0T3RAp/lIoeCZgIY0555
-	 fI27eRMzmmP/n1z7g83BpNWPL6lxtlNKI48vxubWWblt0UyBLGXD4BtMWW9vwJ0b9QQRw
-	 irYPMegXS58fBu/FzmxFvHt9vtW+EVOrDfyKmFeJoVH9jB4hzqfom+JW+pLqraEHajFeW
-	 iPR4OS6u3M8re7bme6g4QsZzzy7u10QBdNGJXnsizlTEQ5yoik2JGbniQVUOgnRKgYQ==
+	a=rsa-sha256; c=relaxed/relaxed; t=1794927278;
+	h=DMARC-Filter:Received:DKIM-Signature:X-Google-DKIM-Signature:
+	 X-Gm-Message-State:X-Gm-Gg:X-Received:Received:From:To:Cc:Subject:
+	 Date:Message-Id:X-Mailer:MIME-Version:Content-Transfer-Encoding;
+	bh=IP0GW2wit1DG5jrtVXntkzGkK3XObCmCGO6fI5J3Kv0=;
+	b=uIWimX4uhx8CrcIbi5u5pUtkLpVGUG/GMElk5LcEUbSRbixSHZ7QxgUV1sstnOb7Gu5d
+	 VP74Znjc27VTJPX6SSj6U6cLFYF6pelgZokGcwNJGGwarBr1LWIThG2jkmDGaiQBZSKHJ
+	 UWfUvo7Nz0uzK8f+3y615c1wkRBPviwH9sOa03mPBy9DKUe3hMh1HafruyOp5nyuVNtJk
+	 lomdzeHqqT5by3tSR6PpmgSldAU148Jht67C9u1X6B3f25gCWQRhmvFOKW2wYfgRuZN4P
+	 xG4iNtUqDx9mkbZqFYjZ5Roi/CXkH6imBVGegDQP/4TDwG7KZYvHZNwFgjwRTdZKQuw==
 ARC-Authentication-Results: i=1; smtp.subspace.kernel.org; 
-	dmarc=none header.from=hardeman.nu;
-	spf=pass smtp.mailfrom=hardeman.nu;
-	arc=none smtp.remote-ip=94.130.186.121
-Received: from thor.hardeman.nu (thor.hardeman.nu [94.130.186.121])
-	(using TLSv1.3 with cipher TLS_AES_256_GCM_SHA384 (256/256 bits)
+	dmarc=pass header.from=gmail.com;
+	spf=pass smtp.mailfrom=gmail.com;
+	dkim=pass header.d=gmail.com header.i=@gmail.com header.a=rsa-sha256 header.s=20260707 header.b=hRQwcyj2;
+	arc=none smtp.remote-ip=209.85.210.181
+Received: from mail-pf1-f181.google.com (mail-pf1-f181.google.com [209.85.210.181])
+	(using TLSv1.3 with cipher TLS_AES_128_GCM_SHA256 (128/128 bits)
 	 key-exchange X25519 server-signature ECDSA (prime256v1) server-digest SHA256)
 	(No client certificate requested)
-	by smtp.subspace.kernel.org (Postfix) with ESMTPS id 5EDF0606A31C;
-	Tue, 17 Nov 2026 14:44:44 +0000 (UTC)
-DMARC-Filter: OpenDMARC Filter v1.4.2 smtp.subspace.kernel.org 5EDF0606A31C
-Authentication-Results: smtp.subspace.kernel.org; dmarc=none (p=none dis=none) header.from=hardeman.nu
-Authentication-Results: smtp.subspace.kernel.org; spf=pass smtp.mailfrom=hardeman.nu
-Received: from thor.hardeman.nu (thor.hardeman.nu [IPv6:fd27:2a41:8fcb:2::a])
-	(using TLSv1.3 with cipher TLS_AES_256_GCM_SHA384 (256/256 bits)
-	 key-exchange x25519 server-signature RSA-PSS (2048 bits) server-digest SHA256
-	 client-signature ECDSA (secp384r1) client-digest SHA384)
-	(Client CN "thor.hardeman.nu", Issuer "Hardeman Internal Mail Relay CA" (verified OK))
-	(Authenticated sender: nullmailer@odin.hardeman.nu)
-	by thor.hardeman.nu (Postfix) with ESMTPSA id 4jTSDn5P58zFpfj;
-	Tue, 17 Nov 2026 15:44:41 +0100 (CET)
-DKIM-Signature: v=1; a=ed25519-sha256; c=relaxed/relaxed; d=hardeman.nu;
-	s=202608-ed25519; t=1794926681;
-	h=from:from:reply-to:subject:subject:date:date:message-id:message-id:
-	 to:to:cc:cc:mime-version:mime-version:content-type:content-type:
-	 content-transfer-encoding:content-transfer-encoding:
-	 in-reply-to:in-reply-to:references:references;
-	bh=PHXoIi8ouLda/eOhfRDumPGk6plK6QA3eTC0611Rdb4=;
-	b=OidOVGcj5jSJL/RbruFcEDywi0NNeAxMzWNFnzgm4fyKh/IayFguF2OPI6XiSImGTM1uHB
-	8aS6Hh6WBieTmgDg==
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=hardeman.nu; s=202608-rsa;
-	t=1794926681;
-	h=from:from:reply-to:subject:subject:date:date:message-id:message-id:
-	 to:to:cc:cc:mime-version:mime-version:content-type:content-type:
-	 content-transfer-encoding:content-transfer-encoding:
-	 in-reply-to:in-reply-to:references:references;
-	bh=PHXoIi8ouLda/eOhfRDumPGk6plK6QA3eTC0611Rdb4=;
-	b=W2KlU7pDyAqyHIksiR1nGc03Jb8PYAWbpOIDZ+HL1zD4Xal+HYV89k4IJ1Tr4JYkjlMnlU
-	sA1jIdIqdztM9c9oWBtzbs0FA3n4NXdVTSJtFOGxZ3QelMzzTtxFA0ZvJ6VKEtMh+s949z
-	R8xFpuKwhuXgh4qb7MUIglthUvsfSBX7EtxLOBWhqeDVFp6XNW0tMuOiL1yOwJjIw1RbI1
-	SMfA11B7a1preyJCE+JZlkEVz0Puq1KP1+MVNLnybIX6o8ySqCAVej1FC2AVzPM9K+Px4u
-	mz4QdbU9Gx9osW4+QFc44U++FZoe6uLhLE79RC/OLfPKWlTuFQCktT5H8ViRxQ==
-Received: from odin.hardeman.nu ([fd27:2a41:8fcb:2::a])
-	by thor.hardeman.nu with ESMTPSA
-	id wElRI1lo/GqCFikAWTs42w
-	(envelope-from <david@odin.hardeman.nu>); Tue, 17 Nov 2026 15:44:41 +0100
-Received: (nullmailer pid 3747762 invoked by uid 2002000001);
-	Tue, 17 Nov 2026 14:44:41 -0000
-Date: Tue, 17 Nov 2026 15:44:41 +0100
-From: David =?iso-8859-1?Q?H=E4rdeman?= <david@hardeman.nu>
-To: Ping-Ke Shih <pkshih@realtek.com>
-Cc: "linux-wireless@vger.kernel.org" <linux-wireless@vger.kernel.org>, "linux-kernel@vger.kernel.org" <linux-kernel@vger.kernel.org>, Leonard Lausen <leonard@lausen.nl>, Alastair D'Silva <alastair@d-silva.org>, Luka Gejak <luka.gejak@linux.dev>, Martin Blumenstingl <martin.blumenstingl@googlemail.com>, Jernej Skrabec <jernej.skrabec@gmail.com>, Bitterblue Smith <rtl8821cerfe2@gmail.com>
-Subject: Re: [PATCH rtw-next 0/5] wifi: rtw88: sdio: faster and fairer TX for
- the 88xx chips
-Message-ID: <avxoWTaI2G8aklLk@hardeman.nu>
-Mail-Followup-To: Ping-Ke Shih <pkshih@realtek.com>,
-	"linux-wireless@vger.kernel.org" <linux-wireless@vger.kernel.org>,
-	"linux-kernel@vger.kernel.org" <linux-kernel@vger.kernel.org>,
-	Leonard Lausen <leonard@lausen.nl>,
-	Alastair D'Silva <alastair@d-silva.org>,
-	Luka Gejak <luka.gejak@linux.dev>,
-	Martin Blumenstingl <martin.blumenstingl@googlemail.com>,
-	Jernej Skrabec <jernej.skrabec@gmail.com>,
-	Bitterblue Smith <rtl8821cerfe2@gmail.com>
-References: <20261116190145.2736364-1-david@hardeman.nu>
- <4c0d81f7a207468d8bca3c3c1a5b8dc5@realtek.com>
+	by smtp.subspace.kernel.org (Postfix) with ESMTPS id 0555F606A886
+	for <linux-wireless@vger.kernel.org>; Tue, 17 Nov 2026 14:54:37 +0000 (UTC)
+DMARC-Filter: OpenDMARC Filter v1.4.2 smtp.subspace.kernel.org 0555F606A886
+Authentication-Results: smtp.subspace.kernel.org; dmarc=pass (p=none dis=none) header.from=gmail.com
+Authentication-Results: smtp.subspace.kernel.org; spf=pass smtp.mailfrom=gmail.com
+Authentication-Results: smtp.subspace.kernel.org;
+	dkim=pass (2048-bit key) header.d=gmail.com header.i=@gmail.com header.a=rsa-sha256 header.s=20260707 header.b=hRQwcyj2
+Received: by mail-pf1-f181.google.com with SMTP id d2e1a72fcca58-8b29b83fdf1so2641588b3a.2
+        for <linux-wireless@vger.kernel.org>; Tue, 17 Nov 2026 06:54:37 -0800 (PST)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+        d=gmail.com; s=20260707; t=1794927277; x=1795532077; darn=vger.kernel.org;
+        h=content-transfer-encoding:mime-version:message-id:date:subject:cc
+         :to:from:from:to:cc:subject:date:message-id:reply-to:content-type;
+        bh=IP0GW2wit1DG5jrtVXntkzGkK3XObCmCGO6fI5J3Kv0=;
+        b=hRQwcyj2v1rQpVKBYfY/y/BWv/PI6B8tEiCv1+Wjf2Z1fWLdQmPwXREO6K3AaoYMLu
+         drOxsG6bVfatEdY+WL6yX+tUPvawfhoPyGkELPNGE623C/i6W6h5T1tBF3W6sKzrc/jN
+         SvXZasm/pJBI6kzZu11rHTxVVrrDAnkxo0ipYXragZVr9WjUHaYItZ9/z4ngE8zr1pKT
+         z/PEqeowdcTicOJkuEA3Xq0sp1CnVgNwfOWQaOgP2tpp94/jB4id+GaiSqN7j6a1TIVe
+         TepTCzMpt7DoIq2B5ck5f9S/xxjvlAV+b/ItqD1Me1wZdtZgquWf4bB6pWpFnKG7efcD
+         r7YA==
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+        d=1e100.net; s=20260707; t=1794927277; x=1795532077;
+        h=content-transfer-encoding:mime-version:message-id:date:subject:cc
+         :to:from:x-gm-gg:x-gm-message-state:from:to:cc:subject:date
+         :message-id:reply-to:content-type;
+        bh=IP0GW2wit1DG5jrtVXntkzGkK3XObCmCGO6fI5J3Kv0=;
+        b=NHrek1IiywpUGha4v/njr225N4/UXdmj+QDAquOnuNQcluudDqBYQXaZ6xejEU40tw
+         ijfiqpfoC8zuF+qoC11inlHc5qVJw8S64c5UMDzoSegqEeKOwDwe2snDLFdJZEBP7SD7
+         agOC0DpzxvOrYFcG5H/Z3uijhoxBHIr+EkvhFXbDdxakZfaWqc0sBsz6xah0zqc/rd71
+         aplYB2goGdn23vx03WdNdhJ3CYdqJIGtCys2B2P0BDXQFXJxjQ4jS/iQbfKfa+1CoI3X
+         TeYgScp1a8N6PkfljIsLG+YJZBrqmJPkBf9cVQNIu3FD064NTwjro25uYiMJ5sL5SU7C
+         rABQ==
+X-Gm-Message-State: APuU4Z9M4PTtJm2luG6mPVnIwP3NiJGhowzqh7M2J2WA26ZsUwp4LXMT
+	qn3MKArGkXkK3Lzjo6QDdBu6WEI/g+aiX+EeHA/AdJXO2DSXtKJcZErvrU6dWryxbsA=
+X-Gm-Gg: AYBFou0BKlC2NDQFtwULASYTA06iAqh+Sss/l3B0ahIoksNuq89lqIwd3pe1oKRqsQD
+	4pUSzTvpCr+I84H2sqgHz/bdG7VYI904TS4F++lkauQWImG4U6MNK4j+nw3WLUH4JYMmXbj89pH
+	BwR8lT1x+PZ821af3Gc7CE8yKl/bOLGfIBk59ucocDvLh2HO0pMOdmJCExYIVy4aly11npY7jbO
+	gJfWXyfRE8pstj1q1GaPuOYrjKhpAgfXIdlS6jx4HXBuzg5Cxw7nT/Qorz55KRykU9nfoy4yX9o
+	y9dVTjl4ei1K7ErUN2B4Hxkhob8XCkWXsgFV1kx1gBLLJZBe9MLfN1cLb9lgwQ+/8s2gpMIZFsu
+	enT7pJOj2Si62dCBHs7cGIDSuKXxwn+X2c4VAZapiuJ+mL//VY9OSt3X4XTh84JKzrZJyTl/vU7
+	cg5XVvM5npYCw0nyZzxJXWolnTta8igD2GDrALcWERaVyR17L8lCz7JOWDmiQjx4ALFAY8SsRU2
+	6xsRCL9+ps9L2y64ACLN1nYIPVowdhghHLXn/FjYCLq04WShlwOgqoFmegFTaihBWdgM2AdgnFR
+	X/Ls0NGmT1y3Czqkytf3wT2mGrOhNvoINbZSkLr8Ckf6X2EsXHtUm7lsOgxzU1CCWUKUzaXiGS2
+	sI+ng98AN3MMqRIBbhqBZSX1jf67Ng25WXe6EZOTRwg==
+X-Received: by 2002:a05:6a20:4127:b0:3f9:357c:bb82 with SMTP id adf61e73a8af0-3f9357cf962mr5712893637.52.1794927277048;
+        Tue, 17 Nov 2026 06:54:37 -0800 (PST)
+Received: from lwq-System-Product-Name.. ([2602:feda:30:cafe:ec49:29ac:0:f6])
+        by smtp.gmail.com with ESMTPSA id d2e1a72fcca58-8bed12a8172sm5270513b3a.13.2026.11.17.06.54.34
+        (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
+        Tue, 17 Nov 2026 06:54:36 -0800 (PST)
+From: Yaohan Li <shunsheng1218@gmail.com>
+To: jjohnson@kernel.org
+Cc: linux-wireless@vger.kernel.org,
+	ath12k@lists.infradead.org,
+	linux-kernel@vger.kernel.org
+Subject: [PATCH] wifi: ath12k: hold dp_lock when updating monitor user stats
+Date: Tue, 17 Nov 2026 22:54:31 +0800
+Message-Id: <20261117145431.1092736-1-shunsheng1218@gmail.com>
+X-Mailer: git-send-email 2.34.1
 X-Mailing-List: linux-wireless@vger.kernel.org
 List-Id: <linux-wireless.vger.kernel.org>
 List-Post: <mailto:linux-wireless@vger.kernel.org>
@@ -93,137 +94,86 @@ List-Unsubscribe: <mailto:linux-wireless+unsubscribe@vger.kernel.org>
 List-Owner: <mailto:linux-wireless+owner@vger.kernel.org>
 Precedence: list
 MIME-Version: 1.0
-Content-Type: text/plain; charset=iso-8859-1
-Content-Disposition: inline
 Content-Transfer-Encoding: 8bit
-In-Reply-To: <4c0d81f7a207468d8bca3c3c1a5b8dc5@realtek.com>
 
-On Tue, Nov 17, 2026 at 07:46:44AM +0000, Ping-Ke Shih wrote:
->David Härdeman <david@hardeman.nu> wrote:
->> Known issue, not addressed here: when the client goes off-channel (for
->> example for a background scan), the chip sometimes gives up on an MPDU
->> of an A-MPDU session without sending a BAR, and keeps sending up to 64
->> frames past it. 
->
->What do you expect? 
->
->     rtw88                client
->     TX A-MPDU   -->
->     TX BAR      -->
->                 <--      BA
->
->I have not seen BAR for a long time. Do you really need it?
+ath12k_dp_mon_rx_update_user_stats() looks the peer up with
+ath12k_dp_link_peer_find_by_ast(), which walks dp->peers and asserts
+dp->dp_lock, but the monitor NAPI path only holds rcu_read_lock().
 
-First, I'm not a WiFi expert, so please excuse me if my
-understanding/explanation is wrong, weird, or both...
+Peers are not RCU freed.  ath12k_dp_link_peer_unmap_event() takes
+dp->dp_lock and calls ath12k_dp_link_peer_free(), which does list_del()
+followed by kfree(peer->peer_stats.rx_stats) and kfree(peer), so an
+unmap arriving between the lookup and the use of peer or rx_stats frees
+the objects the monitor path is still writing to.  The lookup itself
+walks a list that the same path can be unlinking from.
 
-That said, I should have explained this better. What I see is:
+Take dp_lock around the lookup and the statistics update.  The update
+only performs arithmetic on the peer, so nothing that can sleep ends up
+under the lock.
 
-1. The client (iwlwifi) goes off-channel for a scan, about 120 ms at a
-   time. Here these were the background scans that NetworkManager sets
-   up in wpa_supplicant to find roaming candidates, which run every 30 s
-   while the signal is below a threshold.
+The affected code is present in v7.0 and later trees.
 
-2. The chip keeps retrying the frames it already has, gives up on one of
-   them (SN n) when the retry limit is reached, and later continues with
-   n+1 and onwards. SN n is never sent again.
+Signed-off-by: Yaohan Li <shunsheng1218@gmail.com>
+---
+Prepared against v7.4-rc1-1969-g666539eecdf4.
 
-3. The client's reorder buffer now has a hole at n. It holds n+1 and the
-   following frames until its reorder timeout fires, or until a frame at
-   n+64 or beyond pushes the window past the hole.
+AI assistance: the analysis, the change and its review notes were
+prepared with Claude (Anthropic) as a coding assistant.  The author
+reviewed the reasoning and takes responsibility for the content.
 
-A BAR with starting sequence number n+1 after step 2 would tell the
-client that n won't come, so that it can release the frames it holds
-right away. That's the use I mean, not asking for a BA.
+Testing: compile tested only (x86_64, gcc 11.4).  No ath12k hardware
+was available.  The affected code is present in v7.0 and later
+trees; v6.18 and earlier do not have dp_peer.c.
 
->> rtw88 reports every SDIO data frame as acked, so
->> mac80211 doesn't know either and can't send a BAR. 
->
->Can you check air sniffer if the A-MPDU is actually acked, or firmware
->report incorrect ack?
+Locking: the monitor call chain holds no other lock at this point
+(ath12k_dp_mon_rx_process_ulofdma() and the rate-table helper take
+none, and the monitor paths never take ab->base_lock), and dp_lock is
+not held by any caller, so the added lock introduces no inversion.
 
-I did use a second AP as a sniffer, but it was too far from the R76S to
-decode its VHT data frames. It did see the client's BAs, and no BAR from
-the AP. I can repeat the capture closer to the AP if you think it would
-help (I would have to wait until a time when I'm not interrupting the
-kids' gaming though).
+No Fixes: tag is given because the introducing commit lies outside the
+fetched history of this tree; the code has been present since v7.0.
+---
+ drivers/net/wireless/ath/ath12k/dp_mon.c | 9 ++++++++-
+ 1 file changed, 8 insertions(+), 1 deletion(-)
 
-What I have seen:
-
-- On the client, a trace of every MPDU its firmware passed up showed
-  that SN n never arrived (within +-500 ms, on any RX queue), while n+1
-  and onwards arrived as retries once the client was back.
-
-- On the AP, a debug build of the driver that polls the firmware's
-  per-MACID TX statistics every 2 s (H2C 0x43, C2H AP_REQ_TXRPT)
-  saw failed frames only while the client was scanning (13 in four
-  2-minute runs, all during scans).
-
-So I don't think the firmware considers these frames acked: it knows
-that it dropped them, but rtw88 doesn't learn which ones. The "acked" I
-wrote about is what rtw88 tells mac80211 for every SDIO data frame.
-
->I think mac80211 has no way to send a BAR. How can it do? Driver
->tells mac80211 once it TX a set of frames?
-
-From what I understand, mac80211 can, but only if the driver tells it
-which frame was dropped: the driver reports that frame as not acked,
-with IEEE80211_TX_STAT_AMPDU_NO_BACK set, and mac80211 then sends a BAR
-with SSN = SN + 1 (see net/mac80211/status.c). iwlwifi's mvm does this
-when a single frame of an A-MPDU fails.
-
-rtw88 can't do that today, because it doesn't learn which frame the chip
-dropped: for SDIO it reports every data frame as acked once it has been
-handed to the chip. That's why I asked if the firmware can report the
-dropped frames (or send the BAR itself).
-
->> The client's
->> reorder window then stalls until it is pushed past the hole, which
->> costs a short throughput dip. 
->
->Are there some frames get missed but hardware somehow considers it
->has acked them already? (I think need to check air sniffer)
-
-See above: as far as I can tell, the frame is missed, and the firmware
-counts it as failed (so it must be aware).
-
->> With iwlwifi clients it turned into
->> bursts of up to 63 lost frames per hole because of a reorder buffer
->> bug there, for which I have sent fixes:
->> https://lore.kernel.org/linux-wireless/20261116155609.535595-1-david@hardeman.nu/
->> I tried the hardware BAR settings (REG_BAR_MODE_CTRL thresholds, the
->> BAR retry bits in the TX descriptor), a longer retry limit, MACID sleep
->> for dozing clients, per-frame TX reports and a BAR sent by the driver
->> after the client wakes up; none of them helped, and per-frame reports
->> only came back for about one frame per A-MPDU. Ping-Ke, is there a way
->> for the firmware to report which MPDU it dropped, 
->
->I think hardware's retry buffer will do it properly. If a frame exceeds
->retry limit, TX report tells driver a frame is dropped. But this is only
->for specific frames with SN (see rtw_tx_report_enqueue()). 
-
-I tried requesting that report for every QoS data frame: only about 7 %
-of the requests were answered, roughly one per A-MPDU, and download
-throughput dropped by about a third (~210 to ~140 Mbit/s). So per-frame
-reports don't seem usable for this. A report that only covers the
-dropped frames, with their SN, would be enough.
-
->> or to send the BAR
->> itself?
->
->As I know BAR is to ask peer to send BA, what does your expectation if
->you can send BAR?
-
-As above, a BAR with SSN = n+1 moves the client's window past the
-dropped frame. REG_BAR_MODE_CTRL suggests that the MAC can send BARs by
-itself (BAR_EN is set on my chip), but lowering its thresholds made no
-difference to the losses.
-
-As for whether it's needed: with the iwlwifi fix, the remaining cost is
-a throughput dip while the client scans, because it waits for the
-timeout or for the window to be pushed past the hole. So it isn't
-urgent, and this series doesn't try to fix it. I mentioned it as a
-known issue in case there is a firmware feature for it.
-
+diff --git a/drivers/net/wireless/ath/ath12k/dp_mon.c b/drivers/net/wireless/ath/ath12k/dp_mon.c
+index ae14e118fe36..edf7a8142998 100644
+--- a/drivers/net/wireless/ath/ath12k/dp_mon.c
++++ b/drivers/net/wireless/ath/ath12k/dp_mon.c
+@@ -955,9 +955,12 @@ ath12k_dp_mon_rx_update_user_stats(struct ath12k_base *ab,
+ 	if (user_stats->ast_index == 0 || user_stats->ast_index == 0xFFFF)
+ 		return;
+ 
++	spin_lock_bh(&dp->dp_lock);
++
+ 	peer = ath12k_dp_link_peer_find_by_ast(dp, user_stats->ast_index);
+ 
+ 	if (!peer) {
++		spin_unlock_bh(&dp->dp_lock);
+ 		ath12k_warn(ab, "peer ast idx %d can't be found\n",
+ 			    user_stats->ast_index);
+ 		return;
+@@ -966,8 +969,10 @@ ath12k_dp_mon_rx_update_user_stats(struct ath12k_base *ab,
+ 	peer->rssi_comb = ppdu_info->rssi_comb;
+ 	ewma_avg_rssi_add(&peer->avg_rssi, ppdu_info->rssi_comb);
+ 	rx_stats = peer->peer_stats.rx_stats;
+-	if (!rx_stats)
++	if (!rx_stats) {
++		spin_unlock_bh(&dp->dp_lock);
+ 		return;
++	}
+ 
+ 	num_msdu = user_stats->tcp_msdu_count + user_stats->tcp_ack_msdu_count +
+ 		   user_stats->udp_msdu_count + user_stats->other_msdu_count;
+@@ -1038,6 +1043,8 @@ ath12k_dp_mon_rx_update_user_stats(struct ath12k_base *ab,
+ 
+ 	ath12k_dp_mon_rx_update_peer_rate_table_stats(rx_stats, ppdu_info,
+ 						      user_stats, num_msdu);
++
++	spin_unlock_bh(&dp->dp_lock);
+ }
+ 
+ void
 -- 
-David Härdeman
+2.34.1
+
