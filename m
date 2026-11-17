@@ -1,92 +1,96 @@
-Authentication-Results: smtp.subspace.kernel.org; arc=none smtp.remote-ip=209.85.216.49
+Authentication-Results: smtp.subspace.kernel.org; arc=none smtp.remote-ip=209.85.216.44
 ARC-Seal: i=1; d=subspace.kernel.org; s=arc20261015; a=rsa-sha256; cv=none;
-	t=1794875598;
-	b=1x+B5MUT+HR2w9PoRUdE6tpDuNgMYknAZiM0Mc3wVWwSJPfBdOoQlQ8MPg/N5cR8BVjn
-	 LT7SJ7S6Z1MJ7zYl3GdFe5y6GJiroW9vG3Rbj2Zanf5mb6v9b4UDxiCBmf4jy++r3mMhX
-	 dUUW4q0fABjdrj0vrkmmOOLI9KanJLa9EvWf56Tv5jLuUfrdjkkiYQbk12Rqij2xCEoEN
-	 kYkVbrnArok6wziC7pnOl72ik1lpzZamYunv3LsKgiSqmWwQDefdyUZsm9MVXyXDQ9a2p
-	 9IKAmlBA5yAQ8a/s3OFv/V6ARVxRNrMyTLFC2kCXoIs0WXUdEaVFQdPuAMUC7zkFWgw==
+	t=1794875601;
+	b=wPC0hTaBlhOofTKooknc03NUpHCIqaMv4waEPEzUYLx69Fjsgdsbv2qjDjWCLzbsM5Tm
+	 0TrNqD65hQamMXRA7+LFwscG0MzUcKzxwtd41hyfepk39ze/uWwH7tdno2rI2Ua3L5DvX
+	 82oJN7otIOi5Gapn2tgxlp9V+o1rB0FBms9Ct6f9Fh5pGWrh/kUOJ+k244him9DgrtI3c
+	 fT9RLDf32qH92UJgWG8uBPlv5sTFmKD4YSDmnPY1LY/EIPgGSIX5oOCzXVTZvNnHZ3qGw
+	 lzEP0kVBm2WzI9Nk1xYVYtZwYK9ezOAJSsD7R9vDlF4bWSb7448PCq5cQHR2r7EgnQQ==
 ARC-Message-Signature: i=1; d=subspace.kernel.org; s=arc20261015;
-	a=rsa-sha256; c=relaxed/relaxed; t=1794875598;
+	a=rsa-sha256; c=relaxed/relaxed; t=1794875601;
 	h=DMARC-Filter:Received:DKIM-Signature:X-Google-DKIM-Signature:
 	 X-Forwarded-Encrypted:X-Gm-Message-State:X-Gm-Gg:X-Received:Received:
-	 From:To:Cc:Subject:Date:Message-ID:X-Mailer:MIME-Version:
-	 Content-Transfer-Encoding;
-	bh=wk/6CeKFWBeNsJ8DA0yqF5F5wGTUdrFSo/NK3zWhvT0=;
-	b=M2kLtkyuORJTKqH4VHndnoEn3dEywtu3/EIJHx/wA0eQdE0CphpHrFD91uQbmWL6CPA7
-	 yf1Zost+ajsFsfJvyMC6hiAriB1kuJY6N9VG9n06jFxKcTEtiyPKwDcYFrKeHHesl++sJ
-	 8QNJ0bw1lHHZoy3q6aJY60tnrZB9gLmMx/zUULn+A9EKCbqxI4CKniNt4A2ufbprHRiqr
-	 AqwhtmhZ7Sf28GTNoEUHxg94zSpqxticITK71o+23KNcL1GwwdXvO2h/JFZcibbbF2ON7
-	 tyFQw/4mxXOVBA8DrFNVGh1VYHyzUe7LbVSao4pdt81EyuQNHyweOgOXnGOIraywOeg==
+	 From:To:Cc:Subject:Date:Message-ID:X-Mailer:In-Reply-To:References:
+	 MIME-Version:Content-Transfer-Encoding;
+	bh=T7IIQCqo8guYi8GfDq1q7f5IjmWJ2tulGl8JbhnGqY4=;
+	b=mh+WtbtedSkJCIX1lKRZODEIWwZKiBJr3Hj2nryNWq3VQ5vs7x0FMYUaYfhL86Vp+zmj
+	 +c5fiNVAJaqjptjW9H6FnOz1S7WdSn2G5TZVz7DhhPukOGUnB+bamELDu4Tc6YNOpW9G5
+	 4LZb9+FY+SA0paSrHKUYExWK3dYLuM/E5z/v44TQHJlKJZkzRXtxlztWGyJlRPAG+ghEq
+	 7uKwu6uLuw5KORYR8lK2csH3+F8rWbWvZSNWbpeMh+fdBDrgfMrhHF08CtazA6u+xxVgY
+	 /UuM2aC2X3BfOZ0x9K6wDq6s8Ol5ARp9fPJc/wird/6hQu8tvHHjLMJzaq67b7rrp8g==
 ARC-Authentication-Results: i=1; smtp.subspace.kernel.org; 
 	dmarc=pass header.from=morsemicro.com;
 	spf=pass smtp.mailfrom=morsemicro.com;
-	dkim=pass header.d=morsemicro-com.20260707.gappssmtp.com header.i=@morsemicro-com.20260707.gappssmtp.com header.a=rsa-sha256 header.s=20260707 header.b=fW+qUs2v;
-	arc=none smtp.remote-ip=209.85.216.49
-Received: from mail-pj1-f49.google.com (mail-pj1-f49.google.com [209.85.216.49])
+	dkim=pass header.d=morsemicro-com.20260707.gappssmtp.com header.i=@morsemicro-com.20260707.gappssmtp.com header.a=rsa-sha256 header.s=20260707 header.b=MiqTx3Cj;
+	arc=none smtp.remote-ip=209.85.216.44
+Received: from mail-pj1-f44.google.com (mail-pj1-f44.google.com [209.85.216.44])
 	(using TLSv1.3 with cipher TLS_AES_128_GCM_SHA256 (128/128 bits)
 	 key-exchange X25519 server-signature ECDSA (prime256v1) server-digest SHA256)
 	(No client certificate requested)
-	by smtp.subspace.kernel.org (Postfix) with ESMTPS id 3B3A0606A31C
-	for <linux-wireless@vger.kernel.org>; Tue, 17 Nov 2026 00:33:18 +0000 (UTC)
-DMARC-Filter: OpenDMARC Filter v1.4.2 smtp.subspace.kernel.org 3B3A0606A31C
+	by smtp.subspace.kernel.org (Postfix) with ESMTPS id B1609606A338
+	for <linux-wireless@vger.kernel.org>; Tue, 17 Nov 2026 00:33:20 +0000 (UTC)
+DMARC-Filter: OpenDMARC Filter v1.4.2 smtp.subspace.kernel.org B1609606A338
 Authentication-Results: smtp.subspace.kernel.org; dmarc=pass (p=none dis=none) header.from=morsemicro.com
 Authentication-Results: smtp.subspace.kernel.org; spf=pass smtp.mailfrom=morsemicro.com
 Authentication-Results: smtp.subspace.kernel.org;
-	dkim=pass (2048-bit key, unprotected) header.d=morsemicro-com.20260707.gappssmtp.com header.i=@morsemicro-com.20260707.gappssmtp.com header.a=rsa-sha256 header.s=20260707 header.b=fW+qUs2v
-Received: by mail-pj1-f49.google.com with SMTP id 98e67ed59e1d1-3b1535be329so3021200a91.3
-        for <linux-wireless@vger.kernel.org>; Mon, 16 Nov 2026 16:33:18 -0800 (PST)
+	dkim=pass (2048-bit key) header.d=morsemicro-com.20260707.gappssmtp.com header.i=@morsemicro-com.20260707.gappssmtp.com header.a=rsa-sha256 header.s=20260707 header.b=MiqTx3Cj
+Received: by mail-pj1-f44.google.com with SMTP id 98e67ed59e1d1-3b3af93b85cso175453a91.1
+        for <linux-wireless@vger.kernel.org>; Mon, 16 Nov 2026 16:33:20 -0800 (PST)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=morsemicro-com.20260707.gappssmtp.com; s=20260707; t=1794875597; x=1795480397; darn=vger.kernel.org;
-        h=content-transfer-encoding:mime-version:message-id:date:subject:cc
-         :to:from:from:to:cc:subject:date:message-id:reply-to:content-type;
-        bh=wk/6CeKFWBeNsJ8DA0yqF5F5wGTUdrFSo/NK3zWhvT0=;
-        b=fW+qUs2vgn4DZVySS6x/xWxBllqUKCg4MabtzPEse+63PB5p20sBpd02G8KEkCqCOQ
-         8gt3xDmJYuuMQaw7J2qTNhZBgYqdjaurw3GauqZAq/1BJR9Fdy4QJfbWm8CrUK7hgi1X
-         CwaglNtnBltfkSMQYior/sGNM6TCufJJ9K2eq0N3ZhA75f2p0/M726GdyHzP8vkKoN1/
-         +mlziIy4d3OvjQZ9vrZ7xwvAxmAmL0H2clPFC8l1ulwJzkjNMyQZNqGms+Lq9gM0bny/
-         Y+8U6s/6kJz58hiAhaHICg8j4iF/wZ1IZlU2c/rPJA93qwBaJKgcnc5QUArfoI/vkUa8
-         km4w==
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=1e100.net; s=20260707; t=1794875597; x=1795480397;
-        h=content-transfer-encoding:mime-version:message-id:date:subject:cc
-         :to:from:x-gm-gg:x-gm-message-state:from:to:cc:subject:date
+        d=morsemicro-com.20260707.gappssmtp.com; s=20260707; t=1794875600; x=1795480400; darn=vger.kernel.org;
+        h=content-transfer-encoding:mime-version:references:in-reply-to
+         :message-id:date:subject:cc:to:from:from:to:cc:subject:date
          :message-id:reply-to:content-type;
-        bh=wk/6CeKFWBeNsJ8DA0yqF5F5wGTUdrFSo/NK3zWhvT0=;
-        b=Iluowo8SrR7I1IKJFhzwdf64+STNL6EHId8jxEP3MkNj025K+yt0NCbMqRmOJ/QSst
-         xvbf380eSgQZ0jeu7aWNhcCYUcC81vEgBAty8Rz9M56214ApCU/y7Itb0WgkFenB83Xu
-         Je03m4ZGmahCj603si1NXlTff237PwCJZoYOTrU0p7g6bSTaTPbUH6N3nGGXoDGr9RVm
-         507q/YH6Gcz/+8W05I/KtXo03OAUWJfVofT6xClE7M52EDkiqj4rdBGwbh584ng9/trA
-         wNo0Q5jU3SRiUJ+zrEwDIwONdohLX3pULtmOPb+AP4XHt2xFPIAEX4Fn3QiWsX5uKD3C
-         RvmA==
-X-Forwarded-Encrypted: i=1; AL+hErH8AHf+S9vAYpA+BLp7G0kS9d56hN0Uyy4Rc2GGi8S1ie9JHHs5ppziFnLduUrl+sNjpUxQLaxRMU+OLOJ9qQ==@vger.kernel.org
-X-Gm-Message-State: APuU4Z/4ERMjGxc+Vffwkuhm9UK3OAJ74F+X1MY8WR3KZTixGkCqGvJB
-	3iZ8aQdUwI1UNij8js3FBXaGEC6FE1XMBwUlWBk4fmWgHj1p4zJSY3/BzfehlEOa5WM=
-X-Gm-Gg: AZFdTZcGF+ivbna00QSP6jY7LsySuJRN88EK4M4Uc69C8SbCJJxYIw97rdnCbfc8rX5
-	mqb5Ij6H8KLx6E3y0OMpQ9IhrtEhrbcsGdZS1PObLZivSa7vwsJ2eG6ZCmIZU7fg/7xRGLOz6FO
-	7dP6NYxjNQEtrKxDieETW7IT+NJ/JxFxD9AGgHU4vm894POf1KjVZRVqEd/WYnA+X1sYYZbAIaL
-	u9xL9uWnLOIE46fdD//spGETwKhW+ISHcN/syf4YnlQbjn1k/SPtGTZFJBKAryUTeY8C5iqq8YK
-	sgT31Dn0cv74s/MP9HTivM5FA3P2B+Q8H0DTIQtl3jNeO4Ry9hhugn4skENB5m71s1zCGO0OiG8
-	7Fp+P+OoIU0OTzJ+6FgCFL/WaUjqZzXgTvESqZYhq2ytZBuPzb8xQnt3G3syriP7OGMmMbCOSYQ
-	0prZOW3IY+/Noxjuqvpo8Zr2CoA1kJx8Jdx8y8ZiZPJRnYgitIIrEL80nWXjieMdpRIH4Uk+MJ+
-	/GHFUC7rq9vLUdxB+OM+6Y/+V3NlmgljZcgBrkINSpz2pxZhVbclolFqGYFyH1VYMEh2eupnZf3
-	7Ic7SIGnDyoUvJQWNS0CE75CKmlR9QP6CuF54ZWzbPU2eC+6YwqSX3ul0hI7HWggZei1N+bu8O+
-	gxeXte8EJVe1g1g/Sn+FJMbD55TVMkONae7lX+wTt9vg8UXHM
-X-Received: by 2002:a17:90b:1dc3:b0:3b0:9782:8721 with SMTP id 98e67ed59e1d1-3b1b0a0e116mr11010308a91.36.1794875597402;
-        Mon, 16 Nov 2026 16:33:17 -0800 (PST)
+        bh=T7IIQCqo8guYi8GfDq1q7f5IjmWJ2tulGl8JbhnGqY4=;
+        b=MiqTx3CjJtdROOGc37z9C5CIUsrfCeZrv8Vndqa/xMuObO5LFAissWXRFaw0T4ptP5
+         4tY9LStPoDCpMI4dEm7/W/BfGe7GHilN3H3ZobPqAsT4dQ/iLNGXO8WvX5ZoC9CZgZ0d
+         BZd495A2Td7uBLbOeaodPbLDUne5v2kHteG0OPOOkzcJZr1ISmPQD294Kf2LkU8NO50J
+         84FqvvjGqJdi9LKIrm6BeQwdOfXi8/tx8wUyF8/UJsohXaAgxbRwA+XQBYXoKAMXKrZS
+         OJ6R1jKGy6KJrYFulv3LksMPxlmGhEfRV/bK6PrKLr2l/chTG/HZcgLMUhVsC47W8VmG
+         luvA==
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+        d=1e100.net; s=20260707; t=1794875600; x=1795480400;
+        h=content-transfer-encoding:mime-version:references:in-reply-to
+         :message-id:date:subject:cc:to:from:x-gm-gg:x-gm-message-state:from
+         :to:cc:subject:date:message-id:reply-to:content-type;
+        bh=T7IIQCqo8guYi8GfDq1q7f5IjmWJ2tulGl8JbhnGqY4=;
+        b=zEmJY3s4VoiDYYiqqaEbVUTq1e1Qur+c8ljGd5PtVgcWJf7B20HloXnFYV8MK6t8qB
+         R7TzWk8p7yGxOOzw5VE3cR1NyzCN8BwmXD1i2yg4IyRNotSvtCmeLX/nLZ9hDtwEQqX0
+         zFcD22d0bN8OFRJ7wBt+6SpTi2ihiQw1cXD8m+urFyKd7bFRJEnM/dttEJpZNq7T4wxS
+         85DRIgnYeTiy+hyQy8ed1zEPfsxpQA+hPHYngVGofwUY2+/GI2ifGLhISxHnjWSE4YyA
+         Rs3cNLPMuiMfu2mnBMZu8dIrfkrAlw7EznUa0j+v9FJjVZ2thZBkdvy6/1/SC+CK57Wk
+         gjoQ==
+X-Forwarded-Encrypted: i=1; AL+hErGkyCKP0udPKHTzrJFFujOjhF13nZJVvB7WkKqE/T+Lw3Pynr4dEle1k3yaYWMVnX6R5I7Jk47wJ19AYRRkRQ==@vger.kernel.org
+X-Gm-Message-State: APuU4Z93pLchwwNhz6iStkJKpyKM5RDgs/BaseE8Gti/Uxa+J82cyMR6
+	klkzssSd4ViXBELBxIMFKYZxziyo0MhdH9cJf60coJrSUcym7UdQhjZVL2MtBmfmULfwCZ9qBf1
+	Bud+HsTY=
+X-Gm-Gg: AZFdTZcuvFOQ457jrnUtJzkOB4tP3nBq5Q5fv0yEwfA99yhM2gaxT5rGrZCP/0JqNEC
+	FfCxhY9cGMV5kWpWez7NEFV3loW1HowU73cmviOqClfZFRX94wLbuQKweYT09e26XQryhOPmL43
+	ppV0TJUeipZdjShYiOeZShGyjKixaCx7Gr2x2Q62UznOI9TF3UAjqIzbSypL8YjZJhhuli7CLVh
+	hr44NFEd4FcuPXZXun3HPM00qXLDlyJYfwTecIioQCoH4Vqy1fFOiWfcqcHj0LXAGuEggjFcGKB
+	lApo3Oq7IHq2n4QfnoeeIzBwrF1Y/jJShaij7/nfHTfZSrwIWmBoUqsl23zAJU8C7qfYHoxQYvO
+	o46iTSsQl677HDHkgAhuzwGm7PqsYUL9Dk3xgjmlw3dTwOLMhZFrMBIXzeWEFpEfG+JOIm8rt3n
+	b3Fpr46X7kKKIgMgW1qNlCsCtEnPrPkIOO1EW2OA/6rmK7gqEyGC/GBt4G/XGr4WihcO/d5GH5A
+	M0cNO4vBgz+BCBqumccrETBlWhBJmBRGOaBaqGUmfKVNtWogU5BG0gHNkw639eC2UCpA2UrK3ZS
+	rN8URnRsYzxIsq4My2Z3PQ35UMnf8PhmrxWDdxhxuqDTcJyhpPMqF4DiMxKMxNI6Nr4kUgqIwJA
+	OmvUO+EHvp8ZuVLQ4GYCGnIEltANW76+sJHxYJCCYSkXFspo=
+X-Received: by 2002:a17:90b:17c7:b0:3ab:884b:65ab with SMTP id 98e67ed59e1d1-3b1b0ba4fd8mr12833227a91.55.1794875599769;
+        Mon, 16 Nov 2026 16:33:19 -0800 (PST)
 Received: from mma-H9MHD44.sydney.mm.lcl (60-242-93-14.static.tpgi.com.au. [60.242.93.14])
-        by smtp.gmail.com with ESMTPSA id 98e67ed59e1d1-3b3ac6016c3sm1214868a91.15.2026.11.16.16.33.15
+        by smtp.gmail.com with ESMTPSA id 98e67ed59e1d1-3b3ac6016c3sm1214868a91.15.2026.11.16.16.33.17
         (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
-        Mon, 16 Nov 2026 16:33:17 -0800 (PST)
+        Mon, 16 Nov 2026 16:33:19 -0800 (PST)
 From: Lachlan Hodges <lachlan.hodges@morsemicro.com>
 To: lachlan.hodges@morsemicro.com,
 	dan.callaghan@morsemicro.com
 Cc: arien.judge@morsemicro.com,
 	linux-wireless@vger.kernel.org
-Subject: [PATCH wireless-next 0/4] wifi: mm81x: support v57 firmware
-Date: Tue, 17 Nov 2026 11:33:06 +1100
-Message-ID: <20261117003310.1032097-1-lachlan.hodges@morsemicro.com>
+Subject: [PATCH wireless-next 1/4] wifi: mm81x: use guard(rcu)() over scoped_guard()
+Date: Tue, 17 Nov 2026 11:33:07 +1100
+Message-ID: <20261117003310.1032097-2-lachlan.hodges@morsemicro.com>
 X-Mailer: git-send-email 2.43.0
+In-Reply-To: <20261117003310.1032097-1-lachlan.hodges@morsemicro.com>
+References: <20261117003310.1032097-1-lachlan.hodges@morsemicro.com>
 X-Mailing-List: linux-wireless@vger.kernel.org
 List-Id: <linux-wireless.vger.kernel.org>
 List-Post: <mailto:linux-wireless@vger.kernel.org>
@@ -98,27 +102,55 @@ Precedence: list
 MIME-Version: 1.0
 Content-Transfer-Encoding: 8bit
 
-Hi,
+use guard(rcu) over scoped_guard() to reduce a level of indentation.
+No functional change.
 
-Small set to support v57 firmware.
+Signed-off-by: Lachlan Hodges <lachlan.hodges@morsemicro.com>
+---
+ drivers/net/wireless/morsemicro/mm81x/mac.c | 27 ++++++++++-----------
+ 1 file changed, 13 insertions(+), 14 deletions(-)
 
-lachlan
-
-Lachlan Hodges (4):
-  wifi: mm81x: use guard(rcu)() over scoped_guard()
-  wifi: mm81x: use the BCF size advertised by the firmware
-  wifi: mm81x: support v57 firmware
-  wifi: mm81x: drop probe requests received off channel
-
- .../wireless/morsemicro/mm81x/command_defs.h  | 38 +++++++++--
- drivers/net/wireless/morsemicro/mm81x/core.h  |  1 +
- drivers/net/wireless/morsemicro/mm81x/fw.c    | 27 +++++---
- drivers/net/wireless/morsemicro/mm81x/fw.h    |  3 +-
- drivers/net/wireless/morsemicro/mm81x/hw.c    |  2 +
- drivers/net/wireless/morsemicro/mm81x/mac.c   | 64 +++++++++++++++----
- drivers/net/wireless/morsemicro/mm81x/skbq.h  | 22 ++++++-
- 7 files changed, 127 insertions(+), 30 deletions(-)
-
+diff --git a/drivers/net/wireless/morsemicro/mm81x/mac.c b/drivers/net/wireless/morsemicro/mm81x/mac.c
+index cd0bb4d21acf..77c4d3358e25 100644
+--- a/drivers/net/wireless/morsemicro/mm81x/mac.c
++++ b/drivers/net/wireless/morsemicro/mm81x/mac.c
+@@ -2136,23 +2136,22 @@ void mm81x_mac_rx_skb(struct mm81x *mors, struct sk_buff *skb,
+ 
+ 	mm81x_rx_h_fill_status(mors, hdr_rx_status, &rx_status, skb);
+ 
+-	scoped_guard(rcu) {
+-		vif = mm81x_rx_h_skb_get_vif(mors, skb, hdr_rx_status);
+-		if (vif) {
+-			sta = ieee80211_find_sta(vif, lookup);
+-			if (sta)
+-				mm81x_rx_h_update_sta(sta, &rx_status);
+-		}
++	guard(rcu)();
++	vif = mm81x_rx_h_skb_get_vif(mors, skb, hdr_rx_status);
++	if (vif) {
++		sta = ieee80211_find_sta(vif, lookup);
++		if (sta)
++			mm81x_rx_h_update_sta(sta, &rx_status);
++	}
+ 
+-		if (mors->monitor_en)
+-			mm81x_rx_h_add_rt_s1g_tlv(skb, hdr_rx_status, &rx_status);
++	if (mors->monitor_en)
++		mm81x_rx_h_add_rt_s1g_tlv(skb, hdr_rx_status, &rx_status);
+ 
+-		memcpy(IEEE80211_SKB_RXCB(skb), &rx_status, sizeof(rx_status));
++	memcpy(IEEE80211_SKB_RXCB(skb), &rx_status, sizeof(rx_status));
+ 
+-		local_bh_disable();
+-		ieee80211_rx_napi(hw, sta ? &sta->deflink : NULL, skb, NULL);
+-		local_bh_enable();
+-	}
++	local_bh_disable();
++	ieee80211_rx_napi(hw, sta ? &sta->deflink : NULL, skb, NULL);
++	local_bh_enable();
+ }
+ 
+ static void mm81x_mac_flush_queues(struct mm81x *mors)
 -- 
 2.43.0
 
