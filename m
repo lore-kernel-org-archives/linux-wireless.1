@@ -1,73 +1,82 @@
 Authentication-Results: smtp.subspace.kernel.org; arc=none smtp.remote-ip=211.75.126.72
 ARC-Seal: i=1; d=subspace.kernel.org; s=arc20261015; a=rsa-sha256; cv=none;
-	t=1794900678;
-	b=jjCooOMuGXGIidmPu5B3sAVAXRKjySQ6y75JgA78G5vfvMecPOFRDD8hl5yBLnRKAMLt
-	 KyzYkxn6iduNXs93jSDenHZuseFp80xuBFD19Yb9Q+vKA2tUyJjGwMudRDJeMMqbzxcEB
-	 6byYtMAn2/i6apyxCikXhoD/ovMuB03cvnp2TiHPXhlfvHmQEYBpEUV6RdCzoMSBsuk1U
-	 ZOn7SPbOUoaAv+oR00R3wepmHtY3+IRQOzw3ljnpEdPlY0gpey4CfDcZZDLDoYgezY0IL
-	 LH79ArCB4aCoTo09mImgYJWYKf5nhWKC7AaTjhpeNBMIzWLK9Wq+XtyCmcwL2I0zOIg==
+	t=1794901652;
+	b=fxjYkYzOey5WHmkpaV+Q8XwLl586GLhDTD0rJCRKmspMIKcSOc04EwXOtPlqQ1lEOuXM
+	 Fh8+018TiVNcUU/8AO1vWxPDT9jk7pdRnWjybBhKLMozHIus2fFeJmZY0NTPbqTYso7In
+	 Y83QiMbziG2/R9Vh+y6Sox7xwIzqi7Y8Wv3pv1Jk8m1e/HuWgphjN/6FOisVea+sYHmBl
+	 K+pmoJZoKjt+coMDcjDOQ8ttNsnhRoeY3s7S1Y7Oba0B9hXwkCmiN5tEMg21uSRFfMj2O
+	 QKYkay3rSQ00s0qPH9G10kgJmMtlfWe0qNdeRlwHDhAj3oE6ajATi0Wm+TcrfPe0+zA==
 ARC-Message-Signature: i=1; d=subspace.kernel.org; s=arc20261015;
-	a=rsa-sha256; c=relaxed/relaxed; t=1794900678;
+	a=rsa-sha256; c=relaxed/relaxed; t=1794901652;
 	h=DMARC-Filter:X-SpamFilter-By:DKIM-Signature:Received:Received:
-	 Received:Received:From:To:CC:Subject:In-Reply-To:References:
-	 Message-ID:Date:MIME-Version:Content-Type;
-	bh=2NCaHb7V9i+h1hiUu+i++Ep7PuCN36ddPB8quleqqD0=;
-	b=D20siR4GrqLALnDNkW0bgHIRqeFf9Yx6V6xRhc8OdRHIpxbwgRlkksoflT3bvVLmjgGn
-	 HInft6uxY29EPMUpPLDHeH5rg86oGhBeAieo2SmCB3GfsFYw312CRT+t5PpRpfh8EaUnM
-	 88pidDF0RaorQ/n9fFklecWfDDTRqfloTf4BQTQqjvsdvorCgBw4+8CbUkdsDGN+I+Meu
-	 4fDIFI1wJe5Svax3jfz6yuaxb/+Fa1iT5OAEzW5yC/xC10XgY7zjBAbwP+V6Ov0KpZe8b
-	 A/DJTr7ff5FZMpy5MfQ9QRmXtjByQYn0SSgqAvWuWZ+fR08Xjs4HzxTaHf5eKfYlL5w==
+	 Received:From:To:CC:Subject:Thread-Topic:Thread-Index:Date:Message-ID:
+	 References:In-Reply-To:Accept-Language:Content-Language:
+	 x-originating-ip:Content-Type:Content-Transfer-Encoding:MIME-Version;
+	bh=OJ3r04GuSjyhSN8axOjHdwytmVDEfojJU16qbNpx0XA=;
+	b=z5XHpuxN3OPXGrugzvePhfwc84vP2f/vVgCYm1IdU8oi0lOSC0fn7HvA2rcHeQQNbK0e
+	 lRJc2ufyex4K44Xa0LD80G4IvlrDoycV2O0IQgRcXsx8Na2hQ6g48BdlQ8Hk587S639M1
+	 cgOBU7OquQf7KPSyyOsRwVoB8zJh4RL0uhgI02/D34Ndnxceh1S1MjUq6Zy8AgfOjtCRy
+	 +gc7Ad3IQY5iZs4kdq9J8Su8fzX59FUxsdCCnHRC4BOivroGu6LYXdSA64MYVE/J5bwq9
+	 IG3eVxUn1EP/UlmVZDlJ9oiIUZVs3CGYFuxfTragoRkQcEC9/8QQGPpwZxO5DHpxIrQ==
 ARC-Authentication-Results: i=1; smtp.subspace.kernel.org; 
 	dmarc=pass header.from=realtek.com;
 	spf=pass smtp.mailfrom=realtek.com;
-	dkim=pass header.d=realtek.com header.i=@realtek.com header.a=rsa-sha256 header.s=dkim header.b=Z3g4Jod1;
+	dkim=pass header.d=realtek.com header.i=@realtek.com header.a=rsa-sha256 header.s=dkim header.b=RvGELSNR;
 	arc=none smtp.remote-ip=211.75.126.72
 Received: from rtits2.realtek.com.tw (rtits2.realtek.com [211.75.126.72])
 	(using TLSv1.3 with cipher TLS_AES_256_GCM_SHA384 (256/256 bits)
 	 key-exchange X25519 server-signature ECDSA (prime256v1) server-digest SHA256)
 	(No client certificate requested)
-	by smtp.subspace.kernel.org (Postfix) with ESMTPS id D4812606A31C
-	for <linux-wireless@vger.kernel.org>; Tue, 17 Nov 2026 07:31:17 +0000 (UTC)
-DMARC-Filter: OpenDMARC Filter v1.4.2 smtp.subspace.kernel.org D4812606A31C
+	by smtp.subspace.kernel.org (Postfix) with ESMTPS id C5799606A31C;
+	Tue, 17 Nov 2026 07:47:31 +0000 (UTC)
+DMARC-Filter: OpenDMARC Filter v1.4.2 smtp.subspace.kernel.org C5799606A31C
 Authentication-Results: smtp.subspace.kernel.org; dmarc=pass (p=none dis=none) header.from=realtek.com
 Authentication-Results: smtp.subspace.kernel.org; spf=pass smtp.mailfrom=realtek.com
 Authentication-Results: smtp.subspace.kernel.org;
-	dkim=pass (2048-bit key) header.d=realtek.com header.i=@realtek.com header.a=rsa-sha256 header.s=dkim header.b=Z3g4Jod1
-X-SpamFilter-By: ArmorX SpamTrap 5.80 with qID 6AH7VEulC047273, This message is accepted by code: ctloc85258
+	dkim=pass (2048-bit key) header.d=realtek.com header.i=@realtek.com header.a=rsa-sha256 header.s=dkim header.b=RvGELSNR
+X-SpamFilter-By: ArmorX SpamTrap 5.80 with qID 6AH7kjqoF057981, This message is accepted by code: ctloc85258
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=realtek.com; s=dkim;
-	t=1794900674; bh=2NCaHb7V9i+h1hiUu+i++Ep7PuCN36ddPB8quleqqD0=;
-	h=From:To:CC:Subject:In-Reply-To:References:Message-ID:Date:
-	 MIME-Version:Content-Type;
-	b=Z3g4Jod18cqFIr+VQ99w5RwUYeea9Y4KN4mCTILpWLQNobD4RbasU+3Y0DVo9P3Yx
-	 MNBkLfTNHgMy3Cgm11sZEcN4Pl1gUKAAK/qIhrDS4LuJ1eC5n9qRT/le9lliFe184A
-	 lr+TRXt3BVZG4MlluUDtcig43OTNFjwc3TZiV/8t2LIA37LV1ChQkhAUnhaDN/u68z
-	 ldvkGEAGMSaMrysdLfhOBTcoZNTSIggpmo3Vo4Acpj9fo8MeQlBswvYHAbmgqVk9vV
-	 9KbtCRggna8Co+GMxyE1Qui3LHMxFG+FBhYYha+m2GYuWvUkdyKGCrZ5S2PbwKzsnm
-	 4EDiwiIVd0iZg==
-Received: from mail.realtek.com (rtkexhmbs04.realtek.com.tw[10.21.1.54])
-	by rtits2.realtek.com.tw (8.15.2/3.29/5.94) with ESMTPS id 6AH7VEulC047273
+	t=1794901606; bh=OJ3r04GuSjyhSN8axOjHdwytmVDEfojJU16qbNpx0XA=;
+	h=From:To:CC:Subject:Date:Message-ID:References:In-Reply-To:
+	 Content-Type:Content-Transfer-Encoding:MIME-Version;
+	b=RvGELSNRSos8zB2GwZV/B/94y+CaVoz4h5eh3YnMTTQfd/n2C59tAAwPVKYu9iVUF
+	 LpF1/6PWp2CsYqz8xlW0z+rJx1+siBVSgbXbX+7t/L2d7C34c1+hbrLDRjXth8a0Al
+	 R4ygcPUP9IWhafh8zIbrDO6UaWZnQyXCgKi4bNf/1bWPamiQveuWQCJ80kZtNfTlqR
+	 hybB7Y7lrORqQdXfo9VJYYQdf3BIUrHuRAzUt/o5b2/lkJBvXM3RbamWDsZgXwAJRf
+	 +C6KrSMnhvP4chIhjqLxvXcJBi6Gkg4mP0Z/PpFlfE0lp0heZdE8LkZOwGQtO8FylU
+	 EY4xQ5o5KVRRg==
+Received: from mail.realtek.com (rtkexhmbs03.realtek.com.tw[10.21.1.53])
+	by rtits2.realtek.com.tw (8.15.2/3.29/5.94) with ESMTPS id 6AH7kjqoF057981
 	(version=TLSv1.2 cipher=ECDHE-RSA-AES256-GCM-SHA384 bits=256 verify=FAIL);
-	Tue, 17 Nov 2026 15:31:14 +0800
-Received: from RTKEXHMBS05.realtek.com.tw (10.21.1.55) by
- RTKEXHMBS04.realtek.com.tw (10.21.1.54) with Microsoft SMTP Server
- (version=TLS1_2, cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id
- 15.2.2562.56; Tue, 17 Nov 2026 15:31:14 +0800
+	Tue, 17 Nov 2026 15:46:46 +0800
 Received: from RTKEXHMBS06.realtek.com.tw (10.21.1.56) by
- RTKEXHMBS05.realtek.com.tw (10.21.1.55) with Microsoft SMTP Server
+ RTKEXHMBS03.realtek.com.tw (10.21.1.53) with Microsoft SMTP Server
  (version=TLS1_2, cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id
- 15.2.2562.56; Tue, 17 Nov 2026 15:31:13 +0800
-Received: from [127.0.1.1] (172.21.40.75) by RTKEXHMBS06.realtek.com.tw
- (10.21.1.56) with Microsoft SMTP Server (version=TLS1_2,
- cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id 15.2.2562.56 via Frontend
- Transport; Tue, 17 Nov 2026 15:31:13 +0800
+ 15.2.2562.56; Tue, 17 Nov 2026 15:46:44 +0800
+Received: from RTKEXHMBS06.realtek.com.tw ([fe80::eeeb:c765:ca73:5eef]) by
+ RTKEXHMBS06.realtek.com.tw ([fe80::eeeb:c765:ca73:5eef%10]) with mapi id
+ 15.02.2562.056; Tue, 17 Nov 2026 15:46:44 +0800
 From: Ping-Ke Shih <pkshih@realtek.com>
-To: Hao Tan <guwolf@guwolf.com>, Ping-Ke Shih <pkshih@realtek.com>
-CC: <linux-wireless@vger.kernel.org>
-Subject: Re: [PATCH] wifi: rtw89: coex: Disable pre-AGC for out-of-band links
-In-Reply-To: <E6568F470624C07E+179429427543.116514.14355630958613033614@guwolf.com>
-References: <0A58E3B7800E469B+179421939016.46230.883154851683340495@guwolf.com> <340ed206ff6a4680a46806e3bea5dbc5@realtek.com> <06F216C4AE1262C6+179429243268.102150.10348649522717765093@guwolf.com>  <E6568F470624C07E+179429427543.116514.14355630958613033614@guwolf.com>
-Message-ID: <fd863ef2-8bb3-44e6-ab5b-27f9ef0d1c4a@RTKEXHMBS06.realtek.com.tw>
-Date: Tue, 17 Nov 2026 15:31:13 +0800
+To: =?utf-8?B?RGF2aWQgSMOkcmRlbWFu?= <david@hardeman.nu>,
+	"linux-wireless@vger.kernel.org" <linux-wireless@vger.kernel.org>
+CC: "linux-kernel@vger.kernel.org" <linux-kernel@vger.kernel.org>, "Leonard
+ Lausen" <leonard@lausen.nl>, Alastair D'Silva <alastair@d-silva.org>, "Luka
+ Gejak" <luka.gejak@linux.dev>, Martin Blumenstingl
+	<martin.blumenstingl@googlemail.com>, Jernej Skrabec
+	<jernej.skrabec@gmail.com>, Bitterblue Smith <rtl8821cerfe2@gmail.com>
+Subject: RE: [PATCH rtw-next 0/5] wifi: rtw88: sdio: faster and fairer TX for
+ the 88xx chips
+Thread-Topic: [PATCH rtw-next 0/5] wifi: rtw88: sdio: faster and fairer TX for
+ the 88xx chips
+Thread-Index: AQHddgQDfZKeyZuyCUqJjidW/UaqCLcx3raA
+Date: Tue, 17 Nov 2026 07:46:44 +0000
+Message-ID: <4c0d81f7a207468d8bca3c3c1a5b8dc5@realtek.com>
+References: <20261116190145.2736364-1-david@hardeman.nu>
+In-Reply-To: <20261116190145.2736364-1-david@hardeman.nu>
+Accept-Language: en-US, zh-TW
+Content-Language: zh-TW
+Content-Type: text/plain; charset="utf-8"
+Content-Transfer-Encoding: base64
 X-Mailing-List: linux-wireless@vger.kernel.org
 List-Id: <linux-wireless.vger.kernel.org>
 List-Post: <mailto:linux-wireless@vger.kernel.org>
@@ -77,39 +86,41 @@ List-Unsubscribe: <mailto:linux-wireless+unsubscribe@vger.kernel.org>
 List-Owner: <mailto:linux-wireless+owner@vger.kernel.org>
 Precedence: list
 MIME-Version: 1.0
-Content-Type: text/plain
 
-Hao Tan <guwolf@guwolf.com> wrote:
-
-> When Wi-Fi and Bluetooth are on different RF bands, neither the TDD nor
-> the FDD binding has a band. _update_coex_bind() records that as
-> dm->out_of_band.
-> 
-> _set_wl_preagc_ctrl() disables pre-AGC when the TDD binding is 5 GHz, or
-> when the role is still NOLINK. After commit a76501e1d148 ("wifi: rtw89:
-> coex: Separate _ntfy_role_info into two function"), a 5 GHz-only STA is
-> no longer NOLINK. With Wi-Fi on 5 GHz and Bluetooth on 2.4 GHz, tdd_bind
-> is empty, so pre-AGC stays enabled. On RTL8851B this programs the
-> pre-AGC table, and a VHT80 link drops shortly after association.
-> 
-> Also disable pre-AGC when dm->out_of_band is set. Overlapping TDD and
-> FDD bindings are unchanged.
-> 
-> Tested on RTL8851BE (RFE 5, rtw8851b_fw-1.bin 0.29.41.5) with 5 GHz
-> Wi-Fi and 2.4 GHz Bluetooth. With this change, VHT80 stayed up for 600
-> seconds on v7.3 and on rtw-next 04c998418722. Without it, v7.3 drops the
-> link shortly after association.
-> 
-> Fixes: a76501e1d148 ("wifi: rtw89: coex: Separate _ntfy_role_info into two function")
-> Cc: stable@vger.kernel.org
-> Link: https://lore.kernel.org/linux-wireless/340ed206ff6a4680a46806e3bea5dbc5@realtek.com/
-> Signed-off-by: Hao Tan <guwolf@guwolf.com>
-> Acked-by: Ping-Ke Shih <pkshih@realtek.com>
-
-1 patch(es) applied to rtw branch of rtw.git, thanks.
-
-685dc94d51ca wifi: rtw89: coex: Disable pre-AGC for out-of-band links
-
----
-https://github.com/pkshih/rtw.git
-
+RGF2aWQgSMOkcmRlbWFuIDxkYXZpZEBoYXJkZW1hbi5udT4gd3JvdGU6DQo+IEtub3duIGlzc3Vl
+LCBub3QgYWRkcmVzc2VkIGhlcmU6IHdoZW4gdGhlIGNsaWVudCBnb2VzIG9mZi1jaGFubmVsIChm
+b3INCj4gZXhhbXBsZSBmb3IgYSBiYWNrZ3JvdW5kIHNjYW4pLCB0aGUgY2hpcCBzb21ldGltZXMg
+Z2l2ZXMgdXAgb24gYW4gTVBEVQ0KPiBvZiBhbiBBLU1QRFUgc2Vzc2lvbiB3aXRob3V0IHNlbmRp
+bmcgYSBCQVIsIGFuZCBrZWVwcyBzZW5kaW5nIHVwIHRvIDY0DQo+IGZyYW1lcyBwYXN0IGl0LiAN
+Cg0KV2hhdCBkbyB5b3UgZXhwZWN0PyANCg0KICAgICBydHc4OCAgICAgICAgICAgICAgICBjbGll
+bnQNCiAgICAgVFggQS1NUERVICAgLS0+DQogICAgIFRYIEJBUiAgICAgIC0tPg0KICAgICAgICAg
+ICAgICAgICA8LS0gICAgICBCQQ0KDQpJIGhhdmUgbm90IHNlZW4gQkFSIGZvciBhIGxvbmcgdGlt
+ZS4gRG8geW91IHJlYWxseSBuZWVkIGl0Pw0KDQo+IHJ0dzg4IHJlcG9ydHMgZXZlcnkgU0RJTyBk
+YXRhIGZyYW1lIGFzIGFja2VkLCBzbw0KPiBtYWM4MDIxMSBkb2Vzbid0IGtub3cgZWl0aGVyIGFu
+ZCBjYW4ndCBzZW5kIGEgQkFSLiANCg0KQ2FuIHlvdSBjaGVjayBhaXIgc25pZmZlciBpZiB0aGUg
+QS1NUERVIGlzIGFjdHVhbGx5IGFja2VkLCBvciBmaXJtd2FyZQ0KcmVwb3J0IGluY29ycmVjdCBh
+Y2s/DQoNCkkgdGhpbmsgbWFjODAyMTEgaGFzIG5vIHdheSB0byBzZW5kIGEgQkFSLiBIb3cgY2Fu
+IGl0IGRvPyBEcml2ZXINCnRlbGxzIG1hYzgwMjExIG9uY2UgaXQgVFggYSBzZXQgb2YgZnJhbWVz
+Pw0KDQo+IFRoZSBjbGllbnQncw0KPiByZW9yZGVyIHdpbmRvdyB0aGVuIHN0YWxscyB1bnRpbCBp
+dCBpcyBwdXNoZWQgcGFzdCB0aGUgaG9sZSwgd2hpY2gNCj4gY29zdHMgYSBzaG9ydCB0aHJvdWdo
+cHV0IGRpcC4gDQoNCkFyZSB0aGVyZSBzb21lIGZyYW1lcyBnZXQgbWlzc2VkIGJ1dCBoYXJkd2Fy
+ZSBzb21laG93IGNvbnNpZGVycyBpdA0KaGFzIGFja2VkIHRoZW0gYWxyZWFkeT8gKEkgdGhpbmsg
+bmVlZCB0byBjaGVjayBhaXIgc25pZmZlcikNCg0KPiBXaXRoIGl3bHdpZmkgY2xpZW50cyBpdCB0
+dXJuZWQgaW50bw0KPiBidXJzdHMgb2YgdXAgdG8gNjMgbG9zdCBmcmFtZXMgcGVyIGhvbGUgYmVj
+YXVzZSBvZiBhIHJlb3JkZXIgYnVmZmVyDQo+IGJ1ZyB0aGVyZSwgZm9yIHdoaWNoIEkgaGF2ZSBz
+ZW50IGZpeGVzOg0KPiBodHRwczovL2xvcmUua2VybmVsLm9yZy9saW51eC13aXJlbGVzcy8yMDI2
+MTExNjE1NTYwOS41MzU1OTUtMS1kYXZpZEBoYXJkZW1hbi5udS8NCj4gSSB0cmllZCB0aGUgaGFy
+ZHdhcmUgQkFSIHNldHRpbmdzIChSRUdfQkFSX01PREVfQ1RSTCB0aHJlc2hvbGRzLCB0aGUNCj4g
+QkFSIHJldHJ5IGJpdHMgaW4gdGhlIFRYIGRlc2NyaXB0b3IpLCBhIGxvbmdlciByZXRyeSBsaW1p
+dCwgTUFDSUQgc2xlZXANCj4gZm9yIGRvemluZyBjbGllbnRzLCBwZXItZnJhbWUgVFggcmVwb3J0
+cyBhbmQgYSBCQVIgc2VudCBieSB0aGUgZHJpdmVyDQo+IGFmdGVyIHRoZSBjbGllbnQgd2FrZXMg
+dXA7IG5vbmUgb2YgdGhlbSBoZWxwZWQsIGFuZCBwZXItZnJhbWUgcmVwb3J0cw0KPiBvbmx5IGNh
+bWUgYmFjayBmb3IgYWJvdXQgb25lIGZyYW1lIHBlciBBLU1QRFUuIFBpbmctS2UsIGlzIHRoZXJl
+IGEgd2F5DQo+IGZvciB0aGUgZmlybXdhcmUgdG8gcmVwb3J0IHdoaWNoIE1QRFUgaXQgZHJvcHBl
+ZCwgDQoNCkkgdGhpbmsgaGFyZHdhcmUncyByZXRyeSBidWZmZXIgd2lsbCBkbyBpdCBwcm9wZXJs
+eS4gSWYgYSBmcmFtZSBleGNlZWRzDQpyZXRyeSBsaW1pdCwgVFggcmVwb3J0IHRlbGxzIGRyaXZl
+ciBhIGZyYW1lIGlzIGRyb3BwZWQuIEJ1dCB0aGlzIGlzIG9ubHkNCmZvciBzcGVjaWZpYyBmcmFt
+ZXMgd2l0aCBTTiAoc2VlIHJ0d190eF9yZXBvcnRfZW5xdWV1ZSgpKS4gDQoNCj4gb3IgdG8gc2Vu
+ZCB0aGUgQkFSDQo+IGl0c2VsZj8NCg0KQXMgSSBrbm93IEJBUiBpcyB0byBhc2sgcGVlciB0byBz
+ZW5kIEJBLCB3aGF0IGRvZXMgeW91ciBleHBlY3RhdGlvbiBpZg0KeW91IGNhbiBzZW5kIEJBUj8N
+Cg0KDQo=
