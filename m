@@ -1,83 +1,96 @@
-Authentication-Results: smtp.subspace.kernel.org; arc=none smtp.remote-ip=211.75.126.72
+Authentication-Results: smtp.subspace.kernel.org; arc=none smtp.remote-ip=209.85.214.178
 ARC-Seal: i=1; d=subspace.kernel.org; s=arc20261015; a=rsa-sha256; cv=none;
-	t=1794877028;
-	b=gX14UNeEorzhgQQw7qSqZ1aGe//ZXAynXkmBQ8kIKF71CLefvH1z4JK0aOH7S0cMiO3V
-	 dN6TsxnruVxOBh6myrgj4tmigZKR04XXlo/sTR8qpPNkwQeFwNc+YloUVbrcjtHSTHRJ3
-	 RZiGS0RPSK3gxhQuRPYk0x+q+ntAGHaO0fiCPWWFYM5IRYOHqeLTAOX5sfZSVQnY+B7Vl
-	 4RpSQ7CQRepEwD/bAqw6yiLBch2+m8CaZJrvODtb+MD6wAEOHJdlkMwV278fn4PfGNNmU
-	 /maVWh/xOm36phUd8LgxiMN09Y/rBUlanG0t+r0fRvfSlh0zBhpX2s8jajTsmiNnrcg==
+	t=1794877236;
+	b=38K8whuZxEHjDlNFLu1YU8u6HZ2QU39TnuwC25IOQLmH1EHkHxSdILSFZxt8DU2EKTLs
+	 fDrrD4S4pPLIycxT6UBd/e62evqsw3db7R7m0qHS/HQCtznmHRW0trA++Dz81itT58pYT
+	 AYI7sLwJrVvg3rnT8x83EGrAg3IQhDk1DEsPZIcmQ2W9ohu9FL6FTyuWX/9RhQCiQdAC9
+	 0+k6UfLlUs19eWIj0EFhyNQewbmy8vGnpvxJ2BQ8npKH/U5ByvZxhjbK2CQIVTO2d+wrC
+	 kGvLnI0Pqh3udCR9Mtm9PLgdZxwD/DYkh/tJUbJgZp2GZLTQnrN25UBpRvrnoSwJ6zA==
 ARC-Message-Signature: i=1; d=subspace.kernel.org; s=arc20261015;
-	a=rsa-sha256; c=relaxed/relaxed; t=1794877028;
-	h=DMARC-Filter:X-SpamFilter-By:DKIM-Signature:Received:Received:
-	 Received:From:To:CC:Subject:Thread-Topic:Thread-Index:Date:Message-ID:
-	 References:In-Reply-To:Accept-Language:Content-Language:
-	 x-originating-ip:Content-Type:Content-Transfer-Encoding:MIME-Version;
-	bh=KkSocnQnBgp0BjKmXIH5z0p/YimYzgerqDGPhJWVJlI=;
-	b=kdMQGh3rJo9g7qSb5FNNM6lx2/Q7914CARwWHqplVQG9uJCd4WP7X85amQw8h7OFB4fG
-	 AVWBldQax1lM1xUtwEttIrk8L5Wie0xoQ9W5bMVLZQ5fx7dOv/8AYSIXh5+nwbx5PiZt7
-	 Pyg7hUUDENc6Ra6mxYux7HS3ACLKehcj1tAcFVGy3TG38R8lvAPB9M099YAe7wcx7Zilf
-	 DUYowoEu5z2UOtVC7Q3YtxA9dODAFImmDJWEqmGBC5wBLzo4WF9+EfxStFAANwpKo/j1f
-	 UlvNUWzPda+67WV1E2PBLseQoGU6IIiTcrqH49T+28HtVqRPO62wSlJFyBqyDqeX8QQ==
+	a=rsa-sha256; c=relaxed/relaxed; t=1794877236;
+	h=DMARC-Filter:Received:DKIM-Signature:X-Google-DKIM-Signature:
+	 X-Forwarded-Encrypted:X-Gm-Message-State:X-Gm-Gg:X-Received:Received:
+	 From:To:Cc:Subject:Date:Message-ID:X-Mailer:In-Reply-To:References:
+	 MIME-Version:Content-Transfer-Encoding;
+	bh=IXy2JymFhA+X88tMegq3sd75f1KIiWfsHJC7fjLlgww=;
+	b=fl5oW7nYbhLDDEtnwq3TPH08qvK3sVO/mqnaahrRVGrs50xZIGUVJtDORdImVdSQ/wJ7
+	 6x1BmRNhx9tYd7gK7eb2LKqcOHq8XN4tzU7FSjWJgKbqL2OAbNRKoSAqNe2hwGsXIUUZG
+	 7GiD6il4xVzkPJrKGZPgd2MprJ+usVEGNc27Gf7xieSgTPghGNiqAiTdiARVYTsjo3A86
+	 1Beo5qSNFgH9oWc3n11iaGzjhH2yisXZwRO7PHjpH2hGstyL45xYAkcYduh5tHlMiE3h5
+	 RXYVzDa/vIcT1378IbVbMmxwfCN/PfHnbPD7o7UbwuR3Ss8eXlZ9t6nEdlZB77oF9aA==
 ARC-Authentication-Results: i=1; smtp.subspace.kernel.org; 
-	dmarc=pass header.from=realtek.com;
-	spf=pass smtp.mailfrom=realtek.com;
-	dkim=pass header.d=realtek.com header.i=@realtek.com header.a=rsa-sha256 header.s=dkim header.b=oL1e9aht;
-	arc=none smtp.remote-ip=211.75.126.72
-Received: from rtits2.realtek.com.tw (rtits2.realtek.com [211.75.126.72])
-	(using TLSv1.3 with cipher TLS_AES_256_GCM_SHA384 (256/256 bits)
+	dmarc=pass header.from=gmail.com;
+	spf=pass smtp.mailfrom=gmail.com;
+	dkim=pass header.d=gmail.com header.i=@gmail.com header.a=rsa-sha256 header.s=20260707 header.b=xXbjSL8z;
+	arc=none smtp.remote-ip=209.85.214.178
+Received: from mail-pl1-f178.google.com (mail-pl1-f178.google.com [209.85.214.178])
+	(using TLSv1.3 with cipher TLS_AES_128_GCM_SHA256 (128/128 bits)
 	 key-exchange X25519 server-signature ECDSA (prime256v1) server-digest SHA256)
 	(No client certificate requested)
-	by smtp.subspace.kernel.org (Postfix) with ESMTPS id B1BF2606A31C;
-	Tue, 17 Nov 2026 00:57:07 +0000 (UTC)
-DMARC-Filter: OpenDMARC Filter v1.4.2 smtp.subspace.kernel.org B1BF2606A31C
-Authentication-Results: smtp.subspace.kernel.org; dmarc=pass (p=none dis=none) header.from=realtek.com
-Authentication-Results: smtp.subspace.kernel.org; spf=pass smtp.mailfrom=realtek.com
+	by smtp.subspace.kernel.org (Postfix) with ESMTPS id 60D0F606A31C
+	for <linux-wireless@vger.kernel.org>; Tue, 17 Nov 2026 01:00:36 +0000 (UTC)
+DMARC-Filter: OpenDMARC Filter v1.4.2 smtp.subspace.kernel.org 60D0F606A31C
+Authentication-Results: smtp.subspace.kernel.org; dmarc=pass (p=none dis=none) header.from=gmail.com
+Authentication-Results: smtp.subspace.kernel.org; spf=pass smtp.mailfrom=gmail.com
 Authentication-Results: smtp.subspace.kernel.org;
-	dkim=pass (2048-bit key) header.d=realtek.com header.i=@realtek.com header.a=rsa-sha256 header.s=dkim header.b=oL1e9aht
-X-SpamFilter-By: ArmorX SpamTrap 5.80 with qID 6AH0sStqD3918343, This message is accepted by code: ctloc85258
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=realtek.com; s=dkim;
-	t=1794876868; bh=KkSocnQnBgp0BjKmXIH5z0p/YimYzgerqDGPhJWVJlI=;
-	h=From:To:CC:Subject:Date:Message-ID:References:In-Reply-To:
-	 Content-Type:Content-Transfer-Encoding:MIME-Version;
-	b=oL1e9aht0xw+xPgT6bG4mzsI3sCTBce+3uXc0QQvc6nWXtKdHJkbtoRD2SHLS4f+O
-	 59wO1VVpl2gWqkNx49vn/PhesL6QYAVtyDdrpkM2O0U6CfmhuN9xWFMmEfB0YAdKgG
-	 BwXzwkxn7ka6sQNREGqhApoYsaByzsHStT9mPMhLT4pOTyx0s3iv29OCYT0lUbFvLk
-	 8FrdasxT/sLVpdZa/bEgTJnJrhO3eA2OkpwOjB47pkWhmjGhtx1kaJ1gNn3DXWF8mf
-	 CLgY1fyNXR7VhDMcfwi7gWrMeH1swAgP9xTIg3nk5FiFDKPxHBnSnG7ZwB/1CEi9Vt
-	 BSCqGVow1eapA==
-Received: from mail.realtek.com (rtkexhmbs04.realtek.com.tw[10.21.1.54])
-	by rtits2.realtek.com.tw (8.15.2/3.29/5.94) with ESMTPS id 6AH0sStqD3918343
-	(version=TLSv1.2 cipher=ECDHE-RSA-AES256-GCM-SHA384 bits=256 verify=FAIL);
-	Tue, 17 Nov 2026 08:54:28 +0800
-Received: from RTKEXHMBS06.realtek.com.tw (10.21.1.56) by
- RTKEXHMBS04.realtek.com.tw (10.21.1.54) with Microsoft SMTP Server
- (version=TLS1_2, cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id
- 15.2.2562.56; Tue, 17 Nov 2026 08:54:28 +0800
-Received: from RTKEXHMBS06.realtek.com.tw ([fe80::eeeb:c765:ca73:5eef]) by
- RTKEXHMBS06.realtek.com.tw ([fe80::eeeb:c765:ca73:5eef%10]) with mapi id
- 15.02.2562.056; Tue, 17 Nov 2026 08:54:28 +0800
-From: Ping-Ke Shih <pkshih@realtek.com>
-To: Luka Gejak <luka.gejak@linux.dev>, Leonard Lausen <leonard@lausen.nl>
-CC: "leonard@lausen.nl" <leonard@lausen.nl>, =?utf-8?B?RGF2aWQgSMOkcmRlbWFu?=
-	<david@hardeman.nu>, Shawn Lin <shawn.lin@rock-chips.com>, Heiko Stuebner
-	<heiko@sntech.de>, "linux-wireless@vger.kernel.org"
-	<linux-wireless@vger.kernel.org>, "linux-rockchip@lists.infradead.org"
-	<linux-rockchip@lists.infradead.org>, "linux-kernel@vger.kernel.org"
-	<linux-kernel@vger.kernel.org>
-Subject: RE: [PATCH rtw-next v3 0/2] wifi: rtw88: reduce RTL8822CS SDIO
- request overhead
-Thread-Topic: [PATCH rtw-next v3 0/2] wifi: rtw88: reduce RTL8822CS SDIO
- request overhead
-Thread-Index: AQHddg2EVbbHh10fu0+8z00k0SLpZrcwtZYAgAC6T7A=
-Date: Tue, 17 Nov 2026 00:54:28 +0000
-Message-ID: <b2ccb54c9b264722b2fac5ddbf854379@realtek.com>
-References: <20261116205739.462458-2-leonard@lausen.nl>
- <0867C5E9-DDCC-448A-A22A-9AEEFE009358@linux.dev>
-In-Reply-To: <0867C5E9-DDCC-448A-A22A-9AEEFE009358@linux.dev>
-Accept-Language: en-US, zh-TW
-Content-Language: zh-TW
-Content-Type: text/plain; charset="utf-8"
-Content-Transfer-Encoding: base64
+	dkim=pass (2048-bit key, unprotected) header.d=gmail.com header.i=@gmail.com header.a=rsa-sha256 header.s=20260707 header.b=xXbjSL8z
+Received: by mail-pl1-f178.google.com with SMTP id d9443c01a7336-2e9995ce866so39151005ad.0
+        for <linux-wireless@vger.kernel.org>; Mon, 16 Nov 2026 17:00:36 -0800 (PST)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+        d=gmail.com; s=20260707; t=1794877236; x=1795482036; darn=vger.kernel.org;
+        h=content-transfer-encoding:mime-version:references:in-reply-to
+         :message-id:date:subject:cc:to:from:from:to:cc:subject:date
+         :message-id:reply-to:content-type;
+        bh=IXy2JymFhA+X88tMegq3sd75f1KIiWfsHJC7fjLlgww=;
+        b=xXbjSL8z8pvZUVQ9AOk/SmlF2elkOczDYpcnCB8Ub1eB41oKB4aP2Xr4KlGeamalVr
+         Vr5Y9zoSaUz+L78i9EHHfC2UZrdx1Y6ANwx0qFWJaOJ3+XNeAwGsKNj1iaGBf44uQmLd
+         oud63ZI4Lcxd0mzHA7uf3g1hLZFIZH6YczzpeqZ3zF0G684iH0rHMJc6P42pYoV1Mfja
+         nejh2x3KAZd/bbzb6uafLjuXO7SwoI20MjfK79dqUoPZa1pBrhyXCq+gZPx5yc4m9C8H
+         UbmaDMpI5ZyhH3juDbIrfNmNyb+xmKTNlcGIrRqmsCFsbZQN8/RSsNYsJ5KYXC4qEaCY
+         BJFA==
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+        d=1e100.net; s=20260707; t=1794877236; x=1795482036;
+        h=content-transfer-encoding:mime-version:references:in-reply-to
+         :message-id:date:subject:cc:to:from:x-gm-gg:x-gm-message-state:from
+         :to:cc:subject:date:message-id:reply-to:content-type;
+        bh=IXy2JymFhA+X88tMegq3sd75f1KIiWfsHJC7fjLlgww=;
+        b=M1fj/xnzvECoQKXh4j0dDxCpdwPvSepCYPt05mubBEUyXo4HebbdRhp1npyFswdi4M
+         fzSFa+g4gFXT5PrA3nffZXuZ3LCuW/3W+okE285NCnSX88wqVbMCkJ1Q6U+tkaV8wR+9
+         LgsKwHgtBINdqKYxHNVqnenbJr2I1XHCW0WMHLzKsFrjpINaWZnK0H+Tj5H2z6Rj+VFb
+         FLPOryKW/78BoIhOsnA4wCYVZd1Dx6oxTdi92tW08lvIMusfMzdlnay8mZPYCT+Ttycx
+         WdGVk42TnFm+mMKWKSFCNBBjFKPbfqW3qQF05Rq37NIeogvN84qDwL90cpvFLItY83fB
+         gHog==
+X-Forwarded-Encrypted: i=1; AL+hErEhG1hQj/+kVQvnrxH7iNRRgKZJaWxu78j4rQApwsMrWlT87AktI8ZLjs8ZdFhp9q/dRQ+zoxAYiqNQKcbCzw==@vger.kernel.org
+X-Gm-Message-State: APuU4Z/srDSfJN7ui0bCB6JRU57HnMBIiPJe20gu66KJzpUh4XqdvFfw
+	xEh5As8p5sLRY1FKrxUjgejUGjvgHcOfVpeMvT6+HEAogXGTCwMK188a
+X-Gm-Gg: AZFdTZdsBM0F3uqHmKJkG42a0KNhmgbdrCst7xRxw5r/fIHym0AOxcoJYI5UO8VzXWo
+	f9DJk0LGjKpKuSipS/gmSMUHJS0yJfetP38+znkv28qErAxtBqZqno6siqVzPYukSfyH8rmxRv6
+	7Jc+IqPAoqXN7TC++vADGiZsogPVlHa+vIIoAmHeic4i/Hq72sq6bqjyN7PBbX71P1B+o8y+0vo
+	KU6DcA8PaeRI4NW8RTlGrnu7xxctzP+UqYDpJd4q1ChI7mJ/EisLLXeeBw21hebsi2nm1PuksFr
+	OfU33rn8bARFlu6rYMv4Ocw45pdU+Gbhr+sTpyCZmrgQ7eUXvNZJkc/zBVTeXAhJcHUYrTP+SdW
+	3PDcWB+N4wGNUiegZwRxCgdvndyXeEKVYorYACTt3U2COSxW+SUoiwB69nVfiuIVml0vNM0gRjJ
+	PyTpRltmTWdIUZ5+XqRZeDxi++0unUfIGv7kyWWxQck3Ces1kWk1sbvo+cQeUB509IEtaSPu47L
+	QK9E/ILflPIBhiovQHCHK0ugzjt/9DXOPw+3UoB+Vu86zzdaTJHzmIsdwv8TukqTU1jv/Z0Q38r
+	p48OBmIuCGoPp/Nus83D5urHUniObThYeBBtuOZQOLGdWJ/HSifk4KdojJmjkRx6GdDFxqTALO0
+	n5Mh90yZb+CT/OB+r0SP+XqLsXNOfbrG3j4N716oQ
+X-Received: by 2002:a17:903:41c6:b0:2ed:205e:eabc with SMTP id d9443c01a7336-2ee0dad02dfmr128283445ad.32.1794877235439;
+        Mon, 16 Nov 2026 17:00:35 -0800 (PST)
+Received: from nugod-NUC15CRHU5.tail9f095a.ts.net ([218.237.104.87])
+        by smtp.gmail.com with ESMTPSA id d9443c01a7336-2efd76d8f08sm5716795ad.4.2026.11.16.17.00.33
+        (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
+        Mon, 16 Nov 2026 17:00:34 -0800 (PST)
+From: HyeongJun An <sammiee5311@gmail.com>
+To: Miri Korenblit <miriam.rachel.korenblit@intel.com>
+Cc: HyeongJun An <sammiee5311@gmail.com>,
+	linux-wireless@vger.kernel.org,
+	Chris Bainbridge <chris.bainbridge@gmail.com>,
+	Thorsten Leemhuis <regressions@leemhuis.info>
+Subject: Re: [PATCH iwlwifi-fixes] wifi: iwlwifi: mvm: correctly check the API version
+Date: Tue, 17 Nov 2026 10:00:28 +0900
+Message-ID: <20261117010028.1591963-1-sammiee5311@gmail.com>
+X-Mailer: git-send-email 2.43.0
+In-Reply-To: <20261114193144.ab54bc9717fc.I8cda260e2ef7aedd790915a17cb6832010f82aa4@changeid>
+References: <20261114193144.ab54bc9717fc.I8cda260e2ef7aedd790915a17cb6832010f82aa4@changeid>
 X-Mailing-List: linux-wireless@vger.kernel.org
 List-Id: <linux-wireless.vger.kernel.org>
 List-Post: <mailto:linux-wireless@vger.kernel.org>
@@ -87,20 +100,16 @@ List-Unsubscribe: <mailto:linux-wireless+unsubscribe@vger.kernel.org>
 List-Owner: <mailto:linux-wireless+owner@vger.kernel.org>
 Precedence: list
 MIME-Version: 1.0
+Content-Transfer-Encoding: 8bit
 
-SGkgTHVrYSwNCg0KTHVrYSBHZWphayA8bHVrYS5nZWpha0BsaW51eC5kZXY+IHdyb3RlOg0KPiBI
-aSBMZW9uYXJkLA0KPiANCj4gT24gTm92ZW1iZXIgMTYsIDIwMjYgOTo1NzozNiBQTSBHTVQrMDE6
-MDAsIExlb25hcmQgTGF1c2VuDQo+IDxsZW9uYXJkQGxhdXNlbi5ubD4gd3JvdGU6DQo+ID5SZWR1
-Y2UgUlRMODgyMkNTIFNESU8gcmVxdWVzdCBvdmVyaGVhZCBieSBmaWx0ZXJpbmcgaGFyZHdhcmUt
-aGFuZGxlZA0KPiA+Y29udHJvbCBmcmFtZXMgYW5kIGNvbWJpbmluZyBhZGphY2VudCBUWC1jYXBh
-Y2l0eSByZWFkcy4NCj4gPg0KPiA+Q2hhbmdlcyBpbiB2MzoNCj4gPi0gSW5jbHVkZSBtb25pdG9y
-LWZpbHRlciBjb3JyZWN0aW9uIGluIHBhdGNoIDEgYXMgc3VnZ2VzdGVkIGJ5IEx1a2EgR2VqYWsu
-DQo+ID4tIENhY2hlIHRoZSBjdXJyZW50IEZJRl9DT05UUk9MIHJlcXVlc3QgZXZlbiB3aGVuIGNo
-YW5nZWRfZmxhZ3Mgb21pdHMgaXQuDQo+ID4tIFVzZSBhIHNoYXJlZCBmaWx0ZXIgd3JpdGVyIGlu
-IGV2ZXJ5IGNoaXAgaW5pdGlhbGl6ZXIgYW5kIGJvdGgNCj4gPiAgYmVhbWZvcm1pbmcgcGF0aHMs
-IHByZXNlcnZpbmcgdGhlIG1vbml0b3Igb3ZlcnJpZGUgYW5kIG5vcm1hbCBkZWZhdWx0Lg0KPiA+
-LSBLZWVwIHRoZSBUWC1jYXBhY2l0eSByZWFkIG9wdGltaXphdGlvbiB1bmNoYW5nZWQgZnJvbSB2
-Mi4NCj4gPg0KPiANCj4gVGhhbmtzIGZvciB2My4gSXQgbG9va3MgZ29vZCB0byBtZSwgc28gZm9y
-IHRoZSBzZXJpZXMsDQo+IA0KPiBSZXZpZXdlZC1ieTogTHVrYSBHZWphayA8bHVrYS5nZWpha0Bs
-aW51eC5kZXY+DQoNClNpbmNlIEknbSBub3QgdXNpbmcgYjQgdG8gYXBwbHkgcGF0Y2hlcywgY291
-bGQgeW91IHBsZWFzZSBhZGQgeW91ciB0YWcNCnRvIGVhY2ggcGF0Y2g/IFRoYW5rcy4gDQoNCg0K
+Hello Miri,
+
+Same change as I tested in [1] on a Dell Latitude 9420 (AX210):
+18 of 50 driver unloads hit the fault before, 0 of 50 after.
+
+Tested-by: HyeongJun An <sammiee5311@gmail.com>
+
+[1] https://lore.kernel.org/all/20261113080830.1459856-1-sammiee5311@gmail.com/
+
+Best regards,
+HyeongJun An
