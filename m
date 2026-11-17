@@ -1,85 +1,66 @@
-Authentication-Results: smtp.subspace.kernel.org; arc=none smtp.remote-ip=211.75.126.72
+Authentication-Results: smtp.subspace.kernel.org; arc=none smtp.remote-ip=95.215.58.79
 ARC-Seal: i=1; d=subspace.kernel.org; s=arc20261015; a=rsa-sha256; cv=none;
-	t=1794899838;
-	b=eaSmeoZLLj2kUlC4cmuH4LSVtmd5qAP4lBgYbJ+DclWcI7aUs70uA/AtXxnYV7XJWqWg
-	 CioisHXefvGdx/HzSRJGtxdMSGBahXDRVGxDTyq5yCUWv+gTbH3dVhd5Y6I4BKfEcnhF9
-	 XNbu5Ba1rRNM0+4GmkHvpKWNEL8d1x511EPV5DKLA137wI5DVn1IKtgpIIBejdW1uxEhW
-	 cwLO4lh1ZEY2MkGaXOuafmsr0zr0m2uVjSm4idULWfzju1PZP+Df5aBQIxX7S9DPdmDnj
-	 uDoNljCG9OgCk0DFiFmQl9swSodWU3/nS6iyd0C7xHIR0fv1pMhDpuGylE/UWwgW/xQ==
+	t=1794900025;
+	b=xjLN+fInHupavzHr+BStT+Iqd6CVl/Rnl0qOPkmur+U+4NUXICLSGHL+uSBCR9zN85CA
+	 45IBG5if4dqCIFXfGsAVziLU+g3nPz5vgENfw1ajJXH3fOE0fovnWRChgylHRTHyalwfY
+	 qtFMM90wibgVUUN9I5rZUJNPzyklvMYeWs11I3aBe4a+XTvHAZ4n2d35Xr22kTzrzIWzW
+	 Qmc8MN/wIpNfG8gWXOP0z7yQCIj4E5Bzginz4LIQ3CkKa3HHg6Jp5sv5GxleZKkKPPoZv
+	 2r/74cBuK3tY8cAT/7fQPuep7FwlXbsBjgVn6QnJu3P94kFuRJ8z/Oml4DRBm6s17FA==
 ARC-Message-Signature: i=1; d=subspace.kernel.org; s=arc20261015;
-	a=rsa-sha256; c=relaxed/relaxed; t=1794899838;
-	h=DMARC-Filter:X-SpamFilter-By:DKIM-Signature:Received:Received:
-	 Received:Received:From:To:CC:Subject:Thread-Topic:Thread-Index:Date:
-	 Message-ID:References:In-Reply-To:Accept-Language:Content-Language:
-	 x-originating-ip:Content-Type:Content-Transfer-Encoding:MIME-Version;
-	bh=qNllxfNEQUDfMbvpc0joSISQX3hVJ95+yhNvYERibLY=;
-	b=oUa9spvr60iD80lSh/Kl0yGytJUtG6oEdnlYi3yNhRgfuW052YoeFUDXFN42tgbKloFX
-	 Gn0ZXopZzxZFDl+4b0Z4Yuz3Q1g61DwYaDY3Pcixxz+rOXGGmZ1/jwiHQHsiNlD0ro+r2
-	 S6GiOXvvmuiYGR7WhJfHHGKxjJ9dnvZSPQ4Kit6FH1ovN9gwFHccpQDS/g+EdTIMcaho0
-	 IkNsuBEz5WZh9D+R+7igYnHclhXRi2dAF6077ZdrYG+ag/I/4yk7cz5h22jaSHl1EjXxA
-	 6+vq3jwwAuEIVzKJrcxIfK0aRwaHNLK9J9gxW1wR0xSvcgpz9enRDZ0s/iI6pvO9udA==
+	a=rsa-sha256; c=relaxed/relaxed; t=1794900025;
+	h=DMARC-Filter:X-Envelope-To:DKIM-Signature:X-Envelope-To:Received:
+	 X-Mizu-Trace-ID:X-Migadu-Flow:Date:From:To:CC:Subject:In-Reply-To:
+	 References:Message-ID:MIME-Version:Content-Type:
+	 Content-Transfer-Encoding;
+	bh=jq8pirwHCDBjHczrIow9hfLd9FNV9oipiUXhXIMuypE=;
+	b=5IPytNfQUp8BVA33qXaGVOd3BIIDCouVx5XE73SSU4thdIWksXhZ6hRlQNLN3iPA4Txp
+	 dwr7FBiTPzbNuUdGy3/MbsuGThwnQkN7gtqjE9g/E3GCyev83jtaplhNRQEht8dbsp9gn
+	 Ia0ql1oAerkD3PoD8hyZ3Vwji6mzkCZq3adwB9N/2oQ4wRfDUvZtcWSUIbLhML5IE7tQR
+	 Cuz5HKzZmrrm22/LHI9ezBLPoPyv3POaUvx01lIZ89fuYMffn8diILChVrVT0TSW41UrY
+	 DFh80FRPtVc2+Uqm8gcRtyAxVMZpWInX9tpIwkbc6uRh0gCWgMRtAW86IXftbsnePPQ==
 ARC-Authentication-Results: i=1; smtp.subspace.kernel.org; 
-	dmarc=pass header.from=realtek.com;
-	spf=pass smtp.mailfrom=realtek.com;
-	dkim=pass header.d=realtek.com header.i=@realtek.com header.a=rsa-sha256 header.s=dkim header.b=bevNIuPc;
-	arc=none smtp.remote-ip=211.75.126.72
-Received: from rtits2.realtek.com.tw (rtits2.realtek.com [211.75.126.72])
-	(using TLSv1.3 with cipher TLS_AES_256_GCM_SHA384 (256/256 bits)
+	dmarc=pass header.from=linux.dev;
+	spf=pass smtp.mailfrom=linux.dev;
+	dkim=pass header.d=linux.dev header.i=@linux.dev header.a=rsa-sha256 header.s=key1 header.b=dRMjOMA+;
+	arc=none smtp.remote-ip=95.215.58.79
+Received: from mta1.migadu.com (out-79.mta1.migadu.com [95.215.58.79])
+	(using TLSv1.3 with cipher TLS_AES_128_GCM_SHA256 (128/128 bits)
 	 key-exchange X25519 server-signature ECDSA (prime256v1) server-digest SHA256)
 	(No client certificate requested)
-	by smtp.subspace.kernel.org (Postfix) with ESMTPS id D0139606A33B;
-	Tue, 17 Nov 2026 07:17:17 +0000 (UTC)
-DMARC-Filter: OpenDMARC Filter v1.4.2 smtp.subspace.kernel.org D0139606A33B
-Authentication-Results: smtp.subspace.kernel.org; dmarc=pass (p=none dis=none) header.from=realtek.com
-Authentication-Results: smtp.subspace.kernel.org; spf=pass smtp.mailfrom=realtek.com
+	by smtp.subspace.kernel.org (Postfix) with ESMTPS id 47813606A323
+	for <linux-wireless@vger.kernel.org>; Tue, 17 Nov 2026 07:20:23 +0000 (UTC)
+DMARC-Filter: OpenDMARC Filter v1.4.2 smtp.subspace.kernel.org 47813606A323
+Authentication-Results: smtp.subspace.kernel.org; dmarc=pass (p=none dis=none) header.from=linux.dev
+Authentication-Results: smtp.subspace.kernel.org; spf=pass smtp.mailfrom=linux.dev
 Authentication-Results: smtp.subspace.kernel.org;
-	dkim=pass (2048-bit key, unprotected) header.d=realtek.com header.i=@realtek.com header.a=rsa-sha256 header.s=dkim header.b=bevNIuPc
-X-SpamFilter-By: ArmorX SpamTrap 5.80 with qID 6AH7HALJ0021635, This message is accepted by code: ctloc85258
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=realtek.com; s=dkim;
-	t=1794899830; bh=qNllxfNEQUDfMbvpc0joSISQX3hVJ95+yhNvYERibLY=;
-	h=From:To:CC:Subject:Date:Message-ID:References:In-Reply-To:
-	 Content-Type:Content-Transfer-Encoding:MIME-Version;
-	b=bevNIuPc/u+Q2qAv2NqBSnns3Zg+2MqCskPPFonjo62lNY5RNWRxuqUVhafJMdEdR
-	 BIDCUoIRFyhyOdKv9pArQw/eNimSK7JaNYzd4FrRrqMUVqtTewFz6dtxwgv1fj/gsz
-	 ULH1/ZsJ/ca5LYMR/2XTjhIIEXfkbO2Gva1F4coakDsbF5xfMzMPwI5CwUvDAXB1yH
-	 wnbuJmVMDxioolr1lUCKATFVl8tVt2SWWjJFuEMNfaUFP5+XNCYtwKxqZ7P2PZJF15
-	 S56IXPhi+ykR3tOWWMpbuxSeD1HqULs0sgnNpJtUl2j20xPrYmwYEWcJGeqRPsIiC0
-	 h5FPWml9eHgsA==
-Received: from mail.realtek.com (rtkexhmbs03.realtek.com.tw[10.21.1.53])
-	by rtits2.realtek.com.tw (8.15.2/3.29/5.94) with ESMTPS id 6AH7HALJ0021635
-	(version=TLSv1.2 cipher=ECDHE-RSA-AES256-GCM-SHA384 bits=256 verify=FAIL);
-	Tue, 17 Nov 2026 15:17:10 +0800
-Received: from RTKEXHMBS05.realtek.com.tw (10.21.1.55) by
- RTKEXHMBS03.realtek.com.tw (10.21.1.53) with Microsoft SMTP Server
- (version=TLS1_2, cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id
- 15.2.2562.56; Tue, 17 Nov 2026 15:17:10 +0800
-Received: from RTKEXHMBS06.realtek.com.tw (10.21.1.56) by
- RTKEXHMBS05.realtek.com.tw (10.21.1.55) with Microsoft SMTP Server
- (version=TLS1_2, cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id
- 15.2.2562.56; Tue, 17 Nov 2026 15:17:10 +0800
-Received: from RTKEXHMBS06.realtek.com.tw ([fe80::eeeb:c765:ca73:5eef]) by
- RTKEXHMBS06.realtek.com.tw ([fe80::eeeb:c765:ca73:5eef%10]) with mapi id
- 15.02.2562.056; Tue, 17 Nov 2026 15:17:10 +0800
-From: Ping-Ke Shih <pkshih@realtek.com>
-To: Enver Ikromov <owner@ph4ntom-rev.uz>
-CC: "linux-wireless@vger.kernel.org" <linux-wireless@vger.kernel.org>,
-	"linux-kernel@vger.kernel.org" <linux-kernel@vger.kernel.org>
-Subject: RE: [PATCH rtw-next v5 03/10] wifi: rtw89: fix RX filter
- configuration for monitor mode
-Thread-Topic: [PATCH rtw-next v5 03/10] wifi: rtw89: fix RX filter
- configuration for monitor mode
-Thread-Index: AQHdc8pMdgCLaTs82ESX+TiwL0Qf/bcufleggAHSEoCAAY5rIA==
-Date: Tue, 17 Nov 2026 07:17:09 +0000
-Message-ID: <51477fcfcbb7462488e2fa3f299328b8@realtek.com>
-References: <20261113235211.1911-1-owner@ph4ntom-rev.uz>
- <20261113235211.1911-4-owner@ph4ntom-rev.uz>
- <0a6a486d052e43c0adfb7fc6445b2026@realtek.com>
- <20261116152804.781-5-owner@ph4ntom-rev.uz>
-In-Reply-To: <20261116152804.781-5-owner@ph4ntom-rev.uz>
-Accept-Language: en-US, zh-TW
-Content-Language: zh-TW
-Content-Type: text/plain; charset="utf-8"
-Content-Transfer-Encoding: base64
+	dkim=pass (1024-bit key, unprotected) header.d=linux.dev header.i=@linux.dev header.a=rsa-sha256 header.s=key1 header.b=dRMjOMA+
+X-Envelope-To: linux-wireless@vger.kernel.org
+DKIM-Signature: a=rsa-sha256; bh=/wT/xjc/A5pWF9M3+pmHS24DpE6FHAK3DS4o9xG5i1k=;
+ c=simple/simple; d=linux.dev;
+ h=from:to:subject:date:message-id:mime-version:content-type; s=key1;
+ t=1794900022; v=1; x=1795504822;
+ b=dRMjOMA+i3QXAn4jJQ6sf+xk2g4wDAmX6/4PtopwyeB0E+lV1HJ3gS1xLY6QEWrBtOfp56ZJ
+ 5zmhnDv1fbOJV8hkG5+98k/XvgbsKmOXSSJPEfSf+Ej6v0eGvT4UQGc5KGvJ8XQGwskP8bM2XJd
+ Pscc34LLf0p3jFcguKQxsl3I=
+X-Envelope-To: linux-wireless@vger.kernel.org
+Received: by smtp.migadu.com with ESMTPS id 14a02e8760ccc26d;
+	Tue, 17 Nov 2026 07:20:21 +0000
+X-Mizu-Trace-ID: 14a02e8760ccc26d
+X-Migadu-Flow: FLOW_OUT
+Date: Tue, 17 Nov 2026 08:20:16 +0100
+From: Luka Gejak <luka.gejak@linux.dev>
+To: =?ISO-8859-1?Q?David_H=E4rdeman?= <david@hardeman.nu>,
+ Ping-Ke Shih <pkshih@realtek.com>, linux-wireless@vger.kernel.org
+CC: linux-kernel@vger.kernel.org, Leonard Lausen <leonard@lausen.nl>,
+ Alastair D'Silva <alastair@d-silva.org>,
+ Martin Blumenstingl <martin.blumenstingl@googlemail.com>,
+ Jernej Skrabec <jernej.skrabec@gmail.com>,
+ Bitterblue Smith <rtl8821cerfe2@gmail.com>
+Subject: =?US-ASCII?Q?Re=3A_=5BPATCH_rtw-next_1/5=5D_wifi=3A_rtw88=3A_sdio=3A_c?=
+ =?US-ASCII?Q?ache_the_free_TX_page_counts_of_the_88xx_chips?=
+In-Reply-To: <20261116190145.2736364-2-david@hardeman.nu>
+References: <20261116190145.2736364-1-david@hardeman.nu> <20261116190145.2736364-2-david@hardeman.nu>
+Message-ID: <83F543B9-2066-493F-8372-0E36779C1B04@linux.dev>
 X-Mailing-List: linux-wireless@vger.kernel.org
 List-Id: <linux-wireless.vger.kernel.org>
 List-Post: <mailto:linux-wireless@vger.kernel.org>
@@ -89,20 +70,39 @@ List-Unsubscribe: <mailto:linux-wireless+unsubscribe@vger.kernel.org>
 List-Owner: <mailto:linux-wireless+owner@vger.kernel.org>
 Precedence: list
 MIME-Version: 1.0
+Content-Type: text/plain;
+ charset=utf-8
+Content-Transfer-Encoding: 8bit
 
-RW52ZXIgSWtyb21vdiA8b3duZXJAcGg0bnRvbS1yZXYudXo+IHdyb3RlOg0KPiBPbiBTdW4sIE5v
-diAxNSwgMjAyNiBhdCAwMzo0ODoxOUFNICswMDAwLCBQaW5nLUtlIFNoaWggd3JvdGU6DQo+ID4g
-UGxlYXNlIGRlc2NyaWJlIHlvdXIgcHVycG9zZS4gRm9yIGV4YW1wbGUsIGRlc2NyaWJlIHdoaWNo
-IGtpbmQgb2YNCj4gPiBwYWNrZXRzIHlvdSB3YW50IHRvIGNhcHR1cmUsIGJ1dCBjdXJyZW50IHNl
-dHRpbmdzIG1pc2JlaGF2aW9yLiBUaGVuLA0KPiA+IEkgY2FuIGFzayBpbnRlcm5hbGx5IHRvIGtu
-b3cgaWYgeW91IHBhdGNoIGlzIG5lY2Vzc2FyeSBvciBub3QuDQo+IA0KPiBJIHJlLXRlc3RlZCBz
-dGFuZGFsb25lIG1vbml0b3IgbW9kZSBvbiBSVEw4ODUyQUUgd2l0aCBydHctbmV4dCdzDQo+IGRl
-ZmF1bHQgMHhDRTIwID0gMHgwMzE3NDQzOSAoQl9BWF9TTklGRkVSX01PREUgPSAxKS4gQWNyb3Nz
-IGludGVybGVhdmVkDQo+IGNhcHR1cmUgd2luZG93cyBvbiAyLjQgR0h6IGFuZCA1IEdIeiwgMHgw
-MzE3NDQzOSBhbHJlYWR5IHJlY2VpdmVzDQo+IGJyb2FkY2FzdCwgbXVsdGljYXN0LCBhbmQgb3Ro
-ZXItQlNTIHVuaWNhc3QgZGF0YSwgbWFuYWdlbWVudCwgYW5kDQo+IGNvbnRyb2wgKFJUUy9DVFMv
-QUNLL0Jsb2NrQWNrKSBmcmFtZXMsIGFuZCBGSUZfRkNTRkFJTCBhbHJlYWR5IHRvZ2dsZXMNCj4g
-Ql9BWF9BX0NSQzMyX0VSUi4NCg0KSSBhbHNvIGNvbmZpcm1lZCB3aGVuIEJfQVhfU05JRkZFUl9N
-T0RFIGlzIHNldCwgQl9BWF9BX0NSQzMyX0VSUiBpcyB0aGUNCmFkZGl0aW9uYWwgYml0IHlvdSBu
-ZWVkIHRvIHNldC4gSSB0aGluayB0aGlzIGJpdCBjYW4gYmUgZW5hYmxlZCBieQ0KZmxhZyBvZiBp
-dyBzZXQgbW9uaXRvciBjb21tYW5kLCByaWdodD8NCg0KDQo=
+Hi David,
+
+Thanks for picking this up. One comment below.
+
+On November 16, 2026 8:01:41 PM GMT+01:00, "David Härdeman"
+<david@hardeman.nu> wrote:
+
+> +     free_txpg[0] = rtw_sdio_read32(rtwdev, REG_SDIO_FREE_TXPG);
+> +     free_txpg[1] = rtw_sdio_read32(rtwdev, REG_SDIO_FREE_TXPG + 4);
+> +     free_txpg[2] = rtw_sdio_read32(rtwdev, REG_SDIO_FREE_TXPG + 8);
+
+[ ... ]
+
+> +     rtwsdio->free_txpg_valid = true;
+
+As far as I can see, a failed read can leave bogus credits cached here.
+While the chip is powered on, sdio_readl() returns 0xffffffff on an I/O
+error, and rtw_sdio_read32() only logs the error. That becomes 4095 pages
+in each affected page count.
+
+The first frame can still fit the real page pool and be sent
+successfully. The cache then stays valid, so the next frame can be
+admitted using credits from the failed read even after the real pages
+have been consumed. Previously, the next transfer would read the
+registers again.
+
+Could the sync return an error and leave the cache invalid unless all
+three reads succeed? The individual reads used as a fallback in patch 5
+would need to preserve their errors too.
+
+Best regards,
+Luka Gejak
