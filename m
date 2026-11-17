@@ -1,100 +1,95 @@
-Authentication-Results: smtp.subspace.kernel.org; arc=pass header.oldest-pass=0 smtp.remote-ip=209.85.210.172
-ARC-Seal: i=2; d=subspace.kernel.org; s=arc20261015; a=rsa-sha256; cv=pass;
-	t=1794927530;
-	b=o5AURXTMvEl79AipR56egJD3EetArDvxwh2m+Sp6yEfor2AMfpvijR9Rd+q7QfK4GKWN
-	 847jy5UStRg9mwdPa35TKNVPJKKUSSdZ9cyR60JThqrRipMxS3/h1ysjarcw0/FbLAuA7
-	 wMExswCbbBwynlQMt0gKuou127jXYATOC/XtmSsKzhdGX6axYrlhQ5kGpv0qRS8Bn6WtJ
-	 1onhCvHMG18m3XkkqKqcFdvS3Tbt9DTJFNytvuINXHldLfHo8Gr/P7qKCk3lTu4Hg4q6o
-	 hby0PFrjf6M29dvw3WhWWfhCnzw4gv0DHw2o2+RQi5XbRZui2Li8rJ8jp4q/wXQRifA==
-ARC-Message-Signature: i=2; d=subspace.kernel.org; s=arc20261015;
-	a=rsa-sha256; c=relaxed/relaxed; t=1794927530;
+Authentication-Results: smtp.subspace.kernel.org; arc=none smtp.remote-ip=209.85.128.43
+ARC-Seal: i=1; d=subspace.kernel.org; s=arc20261015; a=rsa-sha256; cv=none;
+	t=1794928405;
+	b=RNh4mUhTD8YxOltlmpMKyFYfNT0BANv3UbfFqh95JCjagR1PTqQN8BFOXG1LDpDEjdTf
+	 +7b8tDY8A4eW2p5VP6pM1QH9uTbwjXLwUnoWafS6MYRo6rITzzqnKEDFRaKioq1bmcqLQ
+	 rKeBU1zJ2SsKp9XlErQut4Kyig7Rb0Z/4Pd5RbE1B6MW96GQzrGfW5LGg1YDdwXh+g1L9
+	 q9cy0ryZhzdP+Ob92gbonOHfCRby9yPrA50RBAY00iCuk+GvJnbrWStBlcwnpPyy5EfkO
+	 KxrJqgFNfUnSlg+s2eoLRducp2qaxGer6Fd088Z/JfoOvozjArSIx4qqXe6GfKJNylw==
+ARC-Message-Signature: i=1; d=subspace.kernel.org; s=arc20261015;
+	a=rsa-sha256; c=relaxed/relaxed; t=1794928405;
 	h=DMARC-Filter:Received:DKIM-Signature:X-Google-DKIM-Signature:
-	 X-Forwarded-Encrypted:X-Gm-Message-State:X-Gm-Gg:X-Received:
-	 MIME-Version:References:In-Reply-To:From:Date:X-Gm-Features:
-	 Message-ID:Subject:To:Cc:Content-Type:Content-Transfer-Encoding;
-	bh=rPDYX9H0g1BawO3rTHI9KVIdSs+LnRoUnNvMMbtRxnE=;
-	b=RRZSikYXLBD6wohVcwcbba/AXlXyqS4Upf42Y/WisdTkwRjGSnOhDCnB7yv8sNP73iEg
-	 fcinJy2o/EVVOCr+6+JlQofx3VMXBn07iGDzZHXt1j40XJ8VNwmJfCCS2yMBiX2Klt3xO
-	 uo6Y7S4y8e/jZLawDPw0rKiJ3jBTgNaVGZajDI8xnpawK6+XA7DiW9/01M5P/LUusB6Hm
-	 z9jhTuXuFkpYBAmXwRH0vTp8oHWpGQq3nBExl71bZW+8bCY+4c6/b4kLiAIc+l0G/ohdO
-	 tX6Dud9zkHG/3kFzRltG9w0sslbChisV7HwcQY/vBYi0Imf7HNycWny+mdID0tlRhaw==
-ARC-Authentication-Results: i=2; smtp.subspace.kernel.org; 
+	 X-Forwarded-Encrypted:X-Gm-Message-State:X-Gm-Gg:X-Received:Received:
+	 From:To:Cc:Subject:Date:Message-ID:X-Mailer:In-Reply-To:References:
+	 MIME-Version:Content-Transfer-Encoding;
+	bh=f+YFQvL5C9p5UH90uuV2o0Lu6pGVMNmrGLVZ9HmJFk0=;
+	b=BrNwz5erpNLVmDuzHfqOeR9eqRMjJmozbK8nag8bLDboY0PISAU0ujKZyDLFcPliZOca
+	 9MME6XXrySUN9dV0+lVmReNmLC8jnoTuF5ZJ9PZU2MwUapz4WA/hvrjw5NIC/GEUce3NI
+	 +2M+n5yyj98S4MJloYdjEBDS6nXb3IAEXajIhQweoCX8q7+DrTUrsWbMmBtKeQbIwHyKC
+	 q6B75aGNTpMv9YE855CX2MWreVXJlYRnjLG3KQS+ZrNjVtISDw1Fia40lhV2+LKBA6a+k
+	 XIHfs3XHjNVAgcsDOf5pNRKHRZ+CXzMK/IHzoJ2SHyDolxKFJPmk+qzVV+mYvs7cUZA==
+ARC-Authentication-Results: i=1; smtp.subspace.kernel.org; 
 	dmarc=pass header.from=gmail.com;
 	spf=pass smtp.mailfrom=gmail.com;
-	dkim=pass header.d=gmail.com header.i=@gmail.com header.a=rsa-sha256 header.s=20260707 header.b=uXZiJNT5;
-	arc=pass header.oldest-pass=0 smtp.remote-ip=209.85.210.172
-Received: from mail-pf1-f172.google.com (mail-pf1-f172.google.com [209.85.210.172])
+	dkim=pass header.d=gmail.com header.i=@gmail.com header.a=rsa-sha256 header.s=20260707 header.b=0ez1x1tV;
+	arc=none smtp.remote-ip=209.85.128.43
+Received: from mail-wm1-f43.google.com (mail-wm1-f43.google.com [209.85.128.43])
 	(using TLSv1.3 with cipher TLS_AES_128_GCM_SHA256 (128/128 bits)
 	 key-exchange X25519 server-signature ECDSA (prime256v1) server-digest SHA256)
 	(No client certificate requested)
-	by smtp.subspace.kernel.org (Postfix) with ESMTPS id 51ACC606A31C
-	for <linux-wireless@vger.kernel.org>; Tue, 17 Nov 2026 14:58:50 +0000 (UTC)
-DMARC-Filter: OpenDMARC Filter v1.4.2 smtp.subspace.kernel.org 51ACC606A31C
+	by smtp.subspace.kernel.org (Postfix) with ESMTPS id 748B1606A32C
+	for <linux-wireless@vger.kernel.org>; Tue, 17 Nov 2026 15:13:25 +0000 (UTC)
+DMARC-Filter: OpenDMARC Filter v1.4.2 smtp.subspace.kernel.org 748B1606A32C
 Authentication-Results: smtp.subspace.kernel.org; dmarc=pass (p=none dis=none) header.from=gmail.com
 Authentication-Results: smtp.subspace.kernel.org; spf=pass smtp.mailfrom=gmail.com
 Authentication-Results: smtp.subspace.kernel.org;
-	dkim=pass (2048-bit key) header.d=gmail.com header.i=@gmail.com header.a=rsa-sha256 header.s=20260707 header.b=uXZiJNT5
-Received: by mail-pf1-f172.google.com with SMTP id d2e1a72fcca58-8b5c3288e6cso2191110b3a.3
-        for <linux-wireless@vger.kernel.org>; Tue, 17 Nov 2026 06:58:50 -0800 (PST)
-ARC-Seal: i=1; a=rsa-sha256; t=1794927530; cv=none;
-        d=google.com; s=arc-20260327;
-        b=gIRfsrBfWMwziltRLkUu3t2pkbqWI/BStB5WkJ8WioM39ocHR6kXnMWroJaM85THqM
-         y56lDJngcDErq0ZsdJFOsrk71pz0KI+tsIeOFh0qsdOET+PeqeJT43gchEdM5y6MZuVt
-         nQjv0fyrUeAzIcHHTkP2B5JYwaQZgaEFEkDu2Jc5iiQe0bimqqKhtYP1zs5MIu6RLS3T
-         cjHU2qS1iIXRsijKYVk/S8GjgMRAo951ZRHoxSdXnkPK61MIqP0VnRbkE9ZsuADcmDR0
-         KXLl5ACoRmi8wusYDNThl6asUHOjAceS3R2ga3mii48JFf5qUo4q7PKHBmjOp7QKT4Lk
-         5nLg==
-ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=google.com; s=arc-20260327;
-        h=content-transfer-encoding:cc:to:subject:message-id:date:from
-         :in-reply-to:references:mime-version:dkim-signature;
-        bh=rPDYX9H0g1BawO3rTHI9KVIdSs+LnRoUnNvMMbtRxnE=;
-        fh=Hc5spICtGzgI+h4jvz9So/gAiKrp07odJ4R/SeoPbSI=;
-        b=ryAQML/qyalW0oAW2Ywzq/FucySApljUmyJPQwSFNKcR/bT7V1WjkouEJq9tb85eoH
-         h/6H5jjMsqBL9UQ7ZHsEkkwoU9oQkqaplb4N+eojNrWsJGBxmEt3fyEcPt/Zo+fDs07v
-         0zhjqEpfLuqIPdvCTR5VvmqVNSCzb6pOWq2op+ATsVtDJL31wkDDGN+r9b9qTww/Fu8q
-         i+Tc8Tbl8+6MR+hnA5biZ23+at58VyUbn1zzunbeRTGZ1iVscbISM2SU9jEv9Yv+rstl
-         sROi/dEJZBWXTiVWNZw2ffuMjyaLoTBv3nBdnIGB8Hd1rvf0Dte/mvFgnAZpLhoYonm6
-         rflA==;
-        darn=vger.kernel.org
-ARC-Authentication-Results: i=1; mx.google.com; arc=none
+	dkim=pass (2048-bit key) header.d=gmail.com header.i=@gmail.com header.a=rsa-sha256 header.s=20260707 header.b=0ez1x1tV
+Received: by mail-wm1-f43.google.com with SMTP id 5b1f17b1804b1-4bb64ef5a00so20830855e9.3
+        for <linux-wireless@vger.kernel.org>; Tue, 17 Nov 2026 07:13:25 -0800 (PST)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=gmail.com; s=20260707; t=1794927530; x=1795532330; darn=vger.kernel.org;
-        h=content-transfer-encoding:content-type:cc:to:subject:message-id
-         :date:from:in-reply-to:references:mime-version:from:to:cc:subject
-         :date:message-id:reply-to:content-type;
-        bh=rPDYX9H0g1BawO3rTHI9KVIdSs+LnRoUnNvMMbtRxnE=;
-        b=uXZiJNT5vMrpplettboptMa3j8K512EH+19DBN6MaG7i4WWsmLVR1XLeCD1HcYxbCv
-         DmYLYhDziRULmJAc5qSxm90xz0497eS3JSgj1bcrICGisnzPx1NgV+s6Pbn9mkH9NHyB
-         igGIJ/1iEs+jiU8M9w3kObrkxbLLjbqjF5nULhlKfKRhtbhOG7AFVXn0CIArZFbY8AIi
-         NP+dnkZX7qeXTNMt9+3RJUIi2vWEfmqUzjUeQimgSv683voKtKCcnDraZS8N2s5Z3Hlq
-         IPNQF7GV/ne3/ZBKTITLv3UoLhqiJo3WYNlBuTQFwQX515oNHeMXydXfGvhckl+PIJtE
-         LwCA==
+        d=gmail.com; s=20260707; t=1794928404; x=1795533204; darn=vger.kernel.org;
+        h=content-transfer-encoding:mime-version:references:in-reply-to
+         :message-id:date:subject:cc:to:from:from:to:cc:subject:date
+         :message-id:reply-to:content-type;
+        bh=f+YFQvL5C9p5UH90uuV2o0Lu6pGVMNmrGLVZ9HmJFk0=;
+        b=0ez1x1tVETbVuKs6ZgS6iPGAnZoPBZ0m+F351/Nr7XCUBKEY9rmb0bxdjrJkVjIv7O
+         4Bq6UA6HR/pik8uGM3gt5Te/RoB7+knum+XI9YOR/hkQbZ1alm4wIb+vxUtMJt2nBZ+v
+         sXJdcBP1Zq+J/hZU2KIz3WhSIDNw57Hz3XhfTveA4DeCEKkF+Z7oLe5KgWAYDL+uYPqa
+         kfx7AsRDAa9F2kPnPJ7m+S6XGsWO1YqV05tMZ3ue4NxDIUWbPtwmMMwqXCBqJ6NmHAS2
+         QSe6H25gie3d7x1l0oyjuk3gstSyQXgk4b6EGfgBlFSENB37foBk05rBOGynIQWv71Ol
+         n6+w==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=1e100.net; s=20260707; t=1794927530; x=1795532330;
-        h=content-transfer-encoding:content-type:cc:to:subject:message-id
-         :date:from:in-reply-to:references:mime-version:x-gm-gg
-         :x-gm-message-state:from:to:cc:subject:date:message-id:reply-to
-         :content-type;
-        bh=rPDYX9H0g1BawO3rTHI9KVIdSs+LnRoUnNvMMbtRxnE=;
-        b=pEDN2LemWpyNwKGIkoWsVAV3N2pkNatlyCbCzoImurQ2XeuKvQg8BAtIB2tfmSaQXf
-         acRR9m21J7qDacyHW4Dgzz0+H72yae35xxyt3VnLr7GCC47qINpXk62m2ohOq+KTG4Tj
-         857j2Z+xB17mP6U2IRx+/UiFCQIAmS6CeSp4yTQ8DEX3FsT396K2i9vGYQ+jyr1QaRGc
-         EdjTlr3PmhstmN54JanhnD2+102JjDXwd0E3TRrgELnse7wk+OxWQJPbrbHsGsW4wdgF
-         lJNexaDS+tQ+DpVZS0qHvOnFBI+2kDAf+Bp1gc2kcyK51g97k2hFC3sidZAHvDHe7US1
-         J26w==
-X-Forwarded-Encrypted: i=1; AL+hErHHxEq4aj076Bv9xZDoNZmK02JLid11yb2nWG3F17HPSxCQm4ck2jU+v5eiCusBrMDITKSF5SZoC+j0r+2u4g==@vger.kernel.org
-X-Gm-Message-State: APuU4Z+wk5xA/QoJacGtzDTqd5dI3hAH5WplclpK5MXXoG+2xZhtwOgF
-	QB0fmLD+yidhalMtCh01mwsDoWZHv7f4VGW/iAI7M5cHYHqWn2q+sHNv15TaKFnl8gjvY1KoxYD
-	4o/k+YyHpHkuuSwVWNYgF9r6Xrppy4JE=
-X-Gm-Gg: AYBFou3Tj9uzhOg4ac0mQxlwqjBNxbr1M4jk011UL1IHEIOaJf8sFO9EbfYOI7epJ7A
-	EvjVKA7m0ebjJNuIWJ6VrzWKgUnBdxNWivjgE+nKzlANXxlYxU9BUcR/iC6A9U6DGy9V89UZFrY
-	vDxCHSp7jbHrB5NASYNmBrhn0AuGxsG4TMgYf4divBSU/rKPBiAOSh3lqic7/IYKnbFHBXkul35
-	R4kXOv6hdcIjkT0nmBQCmEvn6YC9ixY5MVQz1/r4jAFiwH78RujkE86W6cyfUjyEJlcQ5+l4x7J
-	L3qRJnE49sYTigBWKV1BP86+SXjOnsGTsxG00JamOwkFxdxvED709rNFQ3xWWy/GQ5QM1T9C2ZW
-	MA1jq4WWGQGX4l6iMfPyMpHOr1il+L1XXpr6o7Q==
-X-Received: by 2002:a05:6a21:7e87:b0:3e2:891b:c50f with SMTP id
- adf61e73a8af0-3f7a71c513bmr11027784637.13.1794927529599; Tue, 17 Nov 2026
- 06:58:49 -0800 (PST)
+        d=1e100.net; s=20260707; t=1794928404; x=1795533204;
+        h=content-transfer-encoding:mime-version:references:in-reply-to
+         :message-id:date:subject:cc:to:from:x-gm-gg:x-gm-message-state:from
+         :to:cc:subject:date:message-id:reply-to:content-type;
+        bh=f+YFQvL5C9p5UH90uuV2o0Lu6pGVMNmrGLVZ9HmJFk0=;
+        b=cRs6sldbgES0IH7ym73/Dte3LI/cJ2jo0HTdBsiPUB8H9Vwd7ZEhQlBj/WglsSkwSz
+         MmuXlhyl7oi1PqxV72ygaHPSt2agEe40XcHlFiBsFVmhjF6+tmn7b0PDnML6YHB7oqo7
+         rksecp/s+H3UKARH7utMlQlOSsjLptmqtfYIrfEhJgLa9yDbHFnlZNUHrPTs8jfygf3D
+         W23LgUvt/n+e6pIOj3oAB/bzyItt8MW7J0V8ZSUzVE4JK4bwBwg1V4kxeERT2d3IyGIr
+         NXw35YpxF7RtNWW1iPyhb+43i45Mthchc5qCeyCrsxnkB/Oqxvu3ojiWvQIgRXfehr/7
+         QJBg==
+X-Forwarded-Encrypted: i=1; AL+hErEzzdhibbKepfLygT6KW2rkSD2BlAffbVPBcNsUKGSh22zozxILxbnnji+2rdv0i090ihTgpzitzF0/idr6pA==@vger.kernel.org
+X-Gm-Message-State: APuU4Z9Gkkyzi5D5vL+lUSwrEXWLDBBULdTsaruQr+SP0CJhSWrtODHV
+	VeQPvXAsZl18PB7XXv7jQpo8D1jR56eUxLtwOD7VtXpcSvwXsrjedkOM
+X-Gm-Gg: AYBFou22lH00GV1RBDb+9BirlodoEs0wDYvoFesmcl5gEyBNXlV0FFo9tk1YJDyYjqS
+	t3PVtMZg27J8F7ypVJNDyiaWMVtXWCcEzX36i4cqvKZb0FlL0CcMWYHhmlAWKlZ+Chn6RP0OMpa
+	xI6PaE0WimUSWA+J3bRK92nZW/0artOWeGKY2UxvuzYlnekEwo+F4/ukr1u40u4q0M+PzGBR2Ny
+	U16TykHh4R/YM8jjdrmDuC2yoJgpdoVbFnxRbyv6IYw5cSvOEmakjt0nrdMWf9QYZCiM/0oGUz3
+	4dl5mDtAFrVLxwCIf11AlyzTWUDKr9IeeyDM61Sbe9TVODjC1EeP/GUY7w+BwC0KBbkVrPn1eqt
+	xNM93B2E5XmUJL+DZ+npDzsInlXjmfGnGzqwOGGHLZFsEzHXL3QgMbruGM/JlsrHwtrDNUvrh1m
+	3yrgqTKBW6rNYpCboU2IIn7qFMSqSy64XEchuAArNsjwWnkw0swheDosq+bzAEgPTwv3imnDo99
+	qbvxh5ikiob8Dwdfz4hPR6zlM9ylT5pZNiafj9LbTglav4JDU0L6NISCum1QC8lQJmvAlPxYLZv
+	mf5ZoXRDWJZWaUAHJ6hDU/39B1necy0EDqc=
+X-Received: by 2002:a05:600c:4f07:b0:4bb:7b4d:6396 with SMTP id 5b1f17b1804b1-4bb7b4d63f0mr23921525e9.3.1794928403587;
+        Tue, 17 Nov 2026 07:13:23 -0800 (PST)
+Received: from deb05.proceq.com ([213.160.61.66])
+        by smtp.gmail.com with ESMTPSA id 5b1f17b1804b1-4bb68c00b10sm146014255e9.0.2026.11.17.07.13.22
+        (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
+        Tue, 17 Nov 2026 07:13:23 -0800 (PST)
+From: Mehmet Fide <mehmet.fide@gmail.com>
+To: =?UTF-8?q?Toke=20H=C3=B8iland-J=C3=B8rgensen?= <toke@toke.dk>
+Cc: Chun-Yeow Yeoh <yeohchunyeow@gmail.com>,
+	linux-wireless@vger.kernel.org,
+	linux-kernel@vger.kernel.org,
+	mehmet.fide@screeningeagle.com
+Subject: Re: [PATCH ath-next] wifi: ath9k_htc: do not fetch the beacon of a finished countdown
+Date: Tue, 17 Nov 2026 16:13:22 +0100
+Message-ID: <20261117151322.1801523-1-mehmet.fide@gmail.com>
+X-Mailer: git-send-email 2.56.0
+In-Reply-To: <878q2rtvbk.fsf@toke.dk>
+References: 
 X-Mailing-List: linux-wireless@vger.kernel.org
 List-Id: <linux-wireless.vger.kernel.org>
 List-Post: <mailto:linux-wireless@vger.kernel.org>
@@ -104,81 +99,16 @@ List-Unsubscribe: <mailto:linux-wireless+unsubscribe@vger.kernel.org>
 List-Owner: <mailto:linux-wireless+owner@vger.kernel.org>
 Precedence: list
 MIME-Version: 1.0
-References: <20260831032832.83338-1-eason.lai@mediatek.com>
- <20261112075558.1813785-1-michael.shih@mediatek.com> <20261112075558.1813785-3-michael.shih@mediatek.com>
- <20261113150048.5271-1-lucid_duck@justthetip.ca> <644ef5eaf8cf84f5760691ffe9bcf8e7ac8b9f69.camel@mediatek.com>
-In-Reply-To: <644ef5eaf8cf84f5760691ffe9bcf8e7ac8b9f69.camel@mediatek.com>
-From: Chris <hoopyfrood42@gmail.com>
-Date: Tue, 17 Nov 2026 09:58:36 -0500
-X-Gm-Features: AclHuK9Pzpcw2OgK_ABRSF114EBt_4pkWN3NuhgG70kUz-EjTXmuHflRHxj__bQ
-Message-ID: <CAHaeJsTYEi=T-3r_ZtY6-WweH6Be8C+v5euttsLSmbAg1fKBZw@mail.gmail.com>
-Subject: Re: [PATCH v5 2/2] wifi: mt76: mt7925: support per-channel survey
- dump during scan
-To: =?UTF-8?B?TWljaGFlbCBTaGloICjlj7LlkJvku7Ip?= <Michael.Shih@mediatek.com>
-Cc: "lucid_duck@justthetip.ca" <lucid_duck@justthetip.ca>, 
-	=?UTF-8?B?RWFzb24gTGFpICjos7TmmJPogZYp?= <Eason.Lai@mediatek.com>, 
-	=?UTF-8?B?TGl0aWVuIENoYW5nICjlvLXnq4vlhbgp?= <Litien.Chang@mediatek.com>, 
-	"nbd@nbd.name" <nbd@nbd.name>, "lorenzo@kernel.org" <lorenzo@kernel.org>, 
-	=?UTF-8?B?UXVhbiBaaG91ICjlkajlhagp?= <Quan.Zhou@mediatek.com>, 
-	=?UTF-8?B?S3VuIFd1ICjlkLPorLnoh7Mp?= <kun.wu@mediatek.com>, 
-	Ryder Lee <Ryder.Lee@mediatek.com>, 
-	"linux-wireless@vger.kernel.org" <linux-wireless@vger.kernel.org>, Sean Wang <Sean.Wang@mediatek.com>, 
-	=?UTF-8?B?TGVvbiBZZW4gKOmhj+iJr+WEkik=?= <Leon.Yen@mediatek.com>, 
-	"linux-mediatek@lists.infradead.org" <linux-mediatek@lists.infradead.org>, 
-	=?UTF-8?B?RGVyZW4gV3UgKOatpuW+t+S7gSk=?= <Deren.Wu@mediatek.com>, 
-	=?UTF-8?B?SkIgVHNhaSAo6JSh5b+X5b2sKQ==?= <Jb.Tsai@mediatek.com>
-Content-Type: text/plain; charset="UTF-8"
-Content-Transfer-Encoding: quoted-printable
+Content-Transfer-Encoding: 8bit
 
-Hi Michael,
+Hi Toke,
 
-Thanks for the explanation. A related question while the firmware
-change is being prepared: we can=E2=80=99t find a noise floor reading for t=
-he
-MT7925. mt792x_phy_get_nf() returns 0, and the idle-power (IPI)
-histogram that mt7915/mt7996 build their noise floor from reads as all
-zeros on this chip. Setting IPI_EN through debugfs didn=E2=80=99t stick and
-caused MCU timeouts and firmware reloads, so we stopped there.
+> I think doing a similar change in ath9k_htc would allow us to have the
+> pre-check use the same function without this issue, *and* get rid of the
+> setting of csa_vif without any locks protecting it, no?
 
-Is a noise floor, or the IPI histogram, available from the MT7925
-firmware, for example in the GET_MIB_INFO response or another MCU
-query? Or could it be added alongside this change? With it, the survey
-could report noise as well as busy time.
+Yes. With the check on the vif of the beacon slot, csa_vif and the
+channel_switch_beacon callback can go. I'll send that as v2, and the
+mac80211 order change as a separate patch.
 
-We=E2=80=99re running an A9000 on USB 2.0, mostly in monitor mode, with
-firmware WM 20260605184805. We=E2=80=99re happy to test the firmware and
-driver changes when they=E2=80=99re available.
-
-Thanks,
-Chris
-
-On Mon, Nov 16, 2026 at 9:51=E2=80=AFPM Michael Shih (=E5=8F=B2=E5=90=9B=E4=
-=BB=B2)
-<Michael.Shih@mediatek.com> wrote:
->
-> Hi Devin,
->
-> Sorry for not mentioning that this Driver change requires MT7925  FW
-> change as well, this is the reason why there is no transmit time with
-> this driver change only.
->
-> I am also preparing the FW change on MTK side, and the FW change will
-> be provided to upstream on MTK's FW provision schedule.
->
-> Thanks,
-> Michael.
->
-> *********** MEDIATEK Confidentiality Notice
->  ***********
-> The information contained in this e-mail message (including any
-> attachments) may be confidential, proprietary, privileged, or
-> otherwise exempt from disclosure under applicable laws. It is
-> intended to be conveyed only to the designated recipient(s). Any
-> use, dissemination, distribution, printing, retaining or copying
-> of this e-mail (including its attachments) by unintended recipient(s)
-> is strictly prohibited and may be unlawful. If you are not an
-> intended recipient of this e-mail, or believe that you have received
-> this e-mail in error, please notify the sender immediately
-> (by replying to this e-mail), delete any and all copies of this
-> e-mail (including any attachments) from your system, and do not
-> disclose the content of this e-mail to any other person. Thank you!
+Mehmet
