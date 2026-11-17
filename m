@@ -1,80 +1,80 @@
 Authentication-Results: smtp.subspace.kernel.org; arc=none smtp.remote-ip=211.75.126.72
 ARC-Seal: i=1; d=subspace.kernel.org; s=arc20261015; a=rsa-sha256; cv=none;
-	t=1794880286;
-	b=HNQTYESOHdWQHXNfRsvqKFl0puyDik34m7LRjzkUV9Ydi+5b82LIjRQ2fVFPTXdorZTE
-	 zxLtU3V6J1oyMwyTDh7AhHRiufhJbllZ1crTTipMzODW6SBDa981ac3o0r5t/At8i0mer
-	 BB+2sWRL0hG9vjSOXNp7YTYnLFgo/ytYhkckMH1vA2aqs4Ej+u/viallWGQAfApZlUx/7
-	 YpdDB6O6ZRuP15ii0+bU9FB6+WQ+0JRwJBQdRrdMqFDDDmPXFi5OmSOZuspa+6Z/4r0Op
-	 spQt0SIXIu4eIlBjn14QiHQL7FeKv4+XY5fMqDJRhPFGeQoXzTUD0fVxyAD1FhT88Lw==
+	t=1794881917;
+	b=sqF3ocX4JIS0BPxC5ut/tQgv5vJTrc5r4VnFBsq6ACUDktXGcgZXEPquLNtPzLLZyAJt
+	 p+4wsC9pDgdjaeAANftxHRRyvTqGLVr7Tl3mE/VdHDFMwCkkuT7chBfHXg2azOwEM+27j
+	 5AHvybyxBIew9hPegr0GA3V+CfeTjRL2cNkMmyRK4VJGc5krCR/vg0f20YsFzN0uIC+uQ
+	 3eoQHKGN89jArRmLIN8B9JQiQQMJ2ambUWAJ5e7KPHDqEfkIZY6MrBv6dqvi72o5WSeRb
+	 GKLnT8mErcbjxOIEhC7LpO0QjLzTNEeOnGSMaCxL8A/u3rdgVQQr+FtbEE69+S0e6uA==
 ARC-Message-Signature: i=1; d=subspace.kernel.org; s=arc20261015;
-	a=rsa-sha256; c=relaxed/relaxed; t=1794880286;
+	a=rsa-sha256; c=relaxed/relaxed; t=1794881917;
 	h=DMARC-Filter:X-SpamFilter-By:DKIM-Signature:Received:Received:
 	 Received:Received:From:To:CC:Subject:Thread-Topic:Thread-Index:Date:
 	 Message-ID:References:In-Reply-To:Accept-Language:Content-Language:
 	 x-originating-ip:Content-Type:Content-Transfer-Encoding:MIME-Version;
-	bh=B/vLT+6daParNl8PihlKbTSDfRPjuN/fXdkYXtYR128=;
-	b=tX12GF65b4aAvueEdXUz+gUSWtvXYPZO6BxIwZyvVCYDtN2a776POwBM/tv5V1abLA5u
-	 +jmrktBzXFQnc5kxqUchvK7Pn+B+EndP1yeuMfAOqNYB1Zl9+Sv8iESqg5cprxulYOx8i
-	 XA2pqsB0Dj+TM394udaJxxwo65YkWSm53TT8On+FudMn4KcKJfTNwLyM49CgkmOfaKTzl
-	 gSg/ktqZUl69OEHJAZlwJpcHFqZPQk8Ys5yvoHqCNwXHDq5vfr2s8aQ07JNtMdgL9ksKm
-	 3I7k4PuerN/2igugCmtq8bjEAW0/VIjmBABSNEQIIqcW3j+RWmpMGtxCm5YqFDbxGdA==
+	bh=brRjyc0BlmbhB1cjdM0v5JQa0YEQ/gMA0rYJIW6GsKY=;
+	b=BUOaiRN5Gjrt9L40KddRgj9/oS2jSmZBArSG6LBO1u2SBM2tcu6gTpy5teHX2d5rBLEl
+	 XvIOrfTxkBAdbwVilwkc+pGO0RpKlaqQ/ciGKicaLKQ46D2HeBS1jeLCFP3kwwiOFUHK6
+	 MNKmqiveCqlO7Df334vWEQj841OJBCIw0/FlfBGr4eo5VN3Iicb6lJLspsldcYcD7fMS5
+	 hkTM86jlddXOiDnqCrrRI79GOvr1lX1Izd49jiSo0GDgkDF5jXIfjPTz3Ito5yL9lw8mv
+	 TjX8PzhppSnChpt2w57eGfqSZKL21ESnAXwfhd0UBM7WeBGmzSHR1oO+SZ+g+AwUKzA==
 ARC-Authentication-Results: i=1; smtp.subspace.kernel.org; 
 	dmarc=pass header.from=realtek.com;
 	spf=pass smtp.mailfrom=realtek.com;
-	dkim=pass header.d=realtek.com header.i=@realtek.com header.a=rsa-sha256 header.s=dkim header.b=q7nNpyGg;
+	dkim=pass header.d=realtek.com header.i=@realtek.com header.a=rsa-sha256 header.s=dkim header.b="SweWRh/t";
 	arc=none smtp.remote-ip=211.75.126.72
 Received: from rtits2.realtek.com.tw (rtits2.realtek.com [211.75.126.72])
 	(using TLSv1.3 with cipher TLS_AES_256_GCM_SHA384 (256/256 bits)
 	 key-exchange X25519 server-signature ECDSA (prime256v1) server-digest SHA256)
 	(No client certificate requested)
-	by smtp.subspace.kernel.org (Postfix) with ESMTPS id B99B0606A329;
-	Tue, 17 Nov 2026 01:51:25 +0000 (UTC)
-DMARC-Filter: OpenDMARC Filter v1.4.2 smtp.subspace.kernel.org B99B0606A329
+	by smtp.subspace.kernel.org (Postfix) with ESMTPS id E8D0D606A333;
+	Tue, 17 Nov 2026 02:18:36 +0000 (UTC)
+DMARC-Filter: OpenDMARC Filter v1.4.2 smtp.subspace.kernel.org E8D0D606A333
 Authentication-Results: smtp.subspace.kernel.org; dmarc=pass (p=none dis=none) header.from=realtek.com
 Authentication-Results: smtp.subspace.kernel.org; spf=pass smtp.mailfrom=realtek.com
 Authentication-Results: smtp.subspace.kernel.org;
-	dkim=pass (2048-bit key) header.d=realtek.com header.i=@realtek.com header.a=rsa-sha256 header.s=dkim header.b=q7nNpyGg
-X-SpamFilter-By: ArmorX SpamTrap 5.80 with qID 6AH1pLezD3954129, This message is accepted by code: ctloc85258
+	dkim=pass (2048-bit key) header.d=realtek.com header.i=@realtek.com header.a=rsa-sha256 header.s=dkim header.b=SweWRh/t
+X-SpamFilter-By: ArmorX SpamTrap 5.80 with qID 6AH2IWd043978426, This message is accepted by code: ctloc85258
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=realtek.com; s=dkim;
-	t=1794880281; bh=B/vLT+6daParNl8PihlKbTSDfRPjuN/fXdkYXtYR128=;
+	t=1794881912; bh=brRjyc0BlmbhB1cjdM0v5JQa0YEQ/gMA0rYJIW6GsKY=;
 	h=From:To:CC:Subject:Date:Message-ID:References:In-Reply-To:
 	 Content-Type:Content-Transfer-Encoding:MIME-Version;
-	b=q7nNpyGg1BoIaV5KYfqltIFC0HLCdM3TNaUx13N/XPeARzqCnJYbk4J2o56lS8/7c
-	 9piv3w+4eA01DDsW7GQQWh8HzthrK5Ay5j/ljsdDZdgX674ZGP9saOag8bvlgI0YEF
-	 Ed+DFBleIb2yi9iCNmDiDMmVXvy629CTvh6naiO0aTwJl9McGQAMeI3C6JC6w+Zh7N
-	 BR0Oh3WzyubaUV8jtBVL6yg5HUQuzpmC1Gr+HnKQGd5F5qY572BZ/C+nMxJe2BgXzL
-	 BTzRaKd70pOANk87LuOY/qfpGSawaT7wjL/H2j3k3IymT0pErUhKFk6sSx5HZWnF2c
-	 d37qpcMeqfuIA==
+	b=SweWRh/t3GLV9cIIwzWHriEXb0oQ6eqq5rzT1WDSdH06SLpgVfCs4qtwidWrQGHhk
+	 QXiv43VXisyBZNeISz5lECP9761NJcVPz6bqEjdG2xRrn8Sq2fA+nVO0nHDOpsTwUX
+	 TFtVsxVIIl2wIje+M5ikjK3dMIaP7clqcLtWErut7wFlZFAptzbvGIQXLpzEZWCzbd
+	 DUO3Ko3xDMvt5mctmihFW+gBLRavnRAgNI7C46bJDOo7hmLQkhgF4HWjSLSvl32LOx
+	 ocLRlmynaIAQyn6OZuDTOjByH/sBD8F5bUYfdWFGToDNA8ITUVfI3rRaDs8zL1lho4
+	 T6+h2XEHDNHhw==
 Received: from mail.realtek.com (rtkexhmbs04.realtek.com.tw[10.21.1.54])
-	by rtits2.realtek.com.tw (8.15.2/3.29/5.94) with ESMTPS id 6AH1pLezD3954129
+	by rtits2.realtek.com.tw (8.15.2/3.29/5.94) with ESMTPS id 6AH2IWd043978426
 	(version=TLSv1.2 cipher=ECDHE-RSA-AES256-GCM-SHA384 bits=256 verify=FAIL);
-	Tue, 17 Nov 2026 09:51:21 +0800
-Received: from RTKEXHMBS05.realtek.com.tw (10.21.1.55) by
+	Tue, 17 Nov 2026 10:18:32 +0800
+Received: from RTKEXHMBS01.realtek.com.tw (172.21.6.40) by
  RTKEXHMBS04.realtek.com.tw (10.21.1.54) with Microsoft SMTP Server
  (version=TLS1_2, cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id
- 15.2.2562.56; Tue, 17 Nov 2026 09:51:21 +0800
+ 15.2.2562.56; Tue, 17 Nov 2026 10:18:32 +0800
 Received: from RTKEXHMBS06.realtek.com.tw (10.21.1.56) by
- RTKEXHMBS05.realtek.com.tw (10.21.1.55) with Microsoft SMTP Server
+ RTKEXHMBS01.realtek.com.tw (172.21.6.40) with Microsoft SMTP Server
  (version=TLS1_2, cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id
- 15.2.2562.56; Tue, 17 Nov 2026 09:51:21 +0800
+ 15.2.2562.56; Tue, 17 Nov 2026 10:18:32 +0800
 Received: from RTKEXHMBS06.realtek.com.tw ([fe80::eeeb:c765:ca73:5eef]) by
  RTKEXHMBS06.realtek.com.tw ([fe80::eeeb:c765:ca73:5eef%10]) with mapi id
- 15.02.2562.056; Tue, 17 Nov 2026 09:51:21 +0800
+ 15.02.2562.056; Tue, 17 Nov 2026 10:18:32 +0800
 From: Ping-Ke Shih <pkshih@realtek.com>
-To: Ho Jie Feng <hjf3108@gmail.com>, "linux-wireless@vger.kernel.org"
-	<linux-wireless@vger.kernel.org>
-CC: Bitterblue Smith <rtl8821cerfe2@gmail.com>, "linux-kernel@vger.kernel.org"
-	<linux-kernel@vger.kernel.org>
-Subject: RE: [PATCH rtw-next v2 4/5] wifi: rtlwifi: usb: move the radiotap
- headroom size to usb.h
-Thread-Topic: [PATCH rtw-next v2 4/5] wifi: rtlwifi: usb: move the radiotap
- headroom size to usb.h
-Thread-Index: AQHdcOnJLssSHEau1UaWlbaDfqMSbLcxiaXQ
-Date: Tue, 17 Nov 2026 01:51:21 +0000
-Message-ID: <ca7a2c3c220c4d2eb1e4f57fe66450ba@realtek.com>
-References: <20261110080143.1362021-1-hjf3108@gmail.com>
- <20261110080143.1362021-5-hjf3108@gmail.com>
-In-Reply-To: <20261110080143.1362021-5-hjf3108@gmail.com>
+To: Rishik Yechuri <epicrishik@gmail.com>
+CC: "linux-wireless@vger.kernel.org" <linux-wireless@vger.kernel.org>,
+	"linux-kernel@vger.kernel.org" <linux-kernel@vger.kernel.org>, Rishik Yechuri
+	<rishik.yechuri.code@gmail.com>
+Subject: RE: [PATCH rtw-next 1/6] wifi: rtlwifi: use struct ieee80211_pspoll
+ for the PS Poll reserved page
+Thread-Topic: [PATCH rtw-next 1/6] wifi: rtlwifi: use struct ieee80211_pspoll
+ for the PS Poll reserved page
+Thread-Index: AQHdcUN9DKXFcrqvX023bsfqE+nL2rcxi3GQ
+Date: Tue, 17 Nov 2026 02:18:32 +0000
+Message-ID: <77b9ec4651f54eb2a3199900df69d316@realtek.com>
+References: <20261110184409.42205-1-rishik.yechuri.code@gmail.com>
+ <20261110184409.42205-2-rishik.yechuri.code@gmail.com>
+In-Reply-To: <20261110184409.42205-2-rishik.yechuri.code@gmail.com>
 Accept-Language: en-US, zh-TW
 Content-Language: zh-TW
 Content-Type: text/plain; charset="us-ascii"
@@ -89,39 +89,56 @@ List-Owner: <mailto:linux-wireless+owner@vger.kernel.org>
 Precedence: list
 MIME-Version: 1.0
 
-Ho Jie Feng <hjf3108@gmail.com> wrote:
-> Let drivers use the same define to add headroom for the frames
-> split out of aggregated transfers.
+Rishik Yechuri <epicrishik@gmail.com> wrote:
+> The reserved page builders fill in the PS Poll template with the
+> SET_80211_PS_POLL_* macros from base.h, which write at fixed byte
+> offsets into a u8 buffer. The AID macro stores a host order u16, so
+> the frame is only correct on a little endian machine.
 >=20
-> Move __RADIO_TAP_SIZE_RSV to usb.h as RTL_RADIO_TAP_SIZE_RSV
-> so chip specific code can use it.
+> Point at the template with struct ieee80211_pspoll from
+> <linux/ieee80211.h> instead.=20
+
+No need this sentence. It is obvious.
+
+> Its aid member is __le16, so the AID goes
+> through cpu_to_le16() and sparse can check it. The two addresses are
+> copied with ether_addr_copy() on the struct members. Remove the three
+> macros.
 >=20
-> Signed-off-by: Ho Jie Feng <hjf3108@gmail.com>
+> On little endian systems the bytes written are the same as before.
+>=20
+> Signed-off-by: Rishik Yechuri <rishik.yechuri.code@gmail.com>
 
-Acked-by: Ping-Ke Shih <pkshih@realtek.com>
+Not match the From: field
 
-Carry my Acked-by to v3 with a nit below.
+> Assisted-by: Claude:claude-fable-5-1
+
+No need Assisted-by.
+
+Please check the result of patchwork:
+
+https://patchwork.kernel.org/project/linux-wireless/list/?series=3D1207558
 
 [...]
 
-> diff --git a/drivers/net/wireless/realtek/rtlwifi/usb.h
-> b/drivers/net/wireless/realtek/rtlwifi/usb.h
-> index b873bbc9c4..329b734ca1 100644
-> --- a/drivers/net/wireless/realtek/rtlwifi/usb.h
-> +++ b/drivers/net/wireless/realtek/rtlwifi/usb.h
-> @@ -7,6 +7,7 @@
->  #include <linux/skbuff.h>
->=20
->  #define RTL_RX_DESC_SIZE               24
-> +#define RTL_RADIO_TAP_SIZE_RSV 32
+> diff --git a/drivers/net/wireless/realtek/rtlwifi/rtl8188ee/fw.c
+> b/drivers/net/wireless/realtek/rtlwifi/rtl8188ee/fw.c
+> index 9a9f9e14f472..cda9388388ab 100644
+> --- a/drivers/net/wireless/realtek/rtlwifi/rtl8188ee/fw.c
+> +++ b/drivers/net/wireless/realtek/rtlwifi/rtl8188ee/fw.c
+> @@ -545,7 +545,7 @@ void rtl88e_set_fw_rsvdpagepkt(struct ieee80211_hw *h=
+w, bool b_dl_finished)
+>         u8 u1rsvdpageloc[5] =3D { 0 };
+>         bool b_dlok =3D false;
+>         u8 *beacon;
+> -       u8 *p_pspoll;
+> +       struct ieee80211_pspoll *p_pspoll;
 
-nit: prefer to align the column of number.=20
-Though I'm not fan of <tabs + space> alignment, it is there already.
-Just let it look comfortable.=20
+reverse x'mas tree (apply to whole patch)
 
+>         u8 *nullfunc;
+>         u8 *p_probersp;
 >=20
->  #define RTL_USB_DEVICE(vend, prod, cfg) \
->         .match_flags =3D USB_DEVICE_ID_MATCH_DEVICE, \
-> --
-> 2.53.0
+
+
 
