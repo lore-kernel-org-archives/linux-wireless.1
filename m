@@ -1,64 +1,83 @@
-Authentication-Results: smtp.subspace.kernel.org; arc=none smtp.remote-ip=91.218.175.23
+Authentication-Results: smtp.subspace.kernel.org; arc=none smtp.remote-ip=211.75.126.72
 ARC-Seal: i=1; d=subspace.kernel.org; s=arc20261015; a=rsa-sha256; cv=none;
-	t=1794894234;
-	b=mmmEdcqwiozKeuC6Lm1Z4xF4Kx7JPyL0KAoIiJn4UqaOi0UFmOi19d/CFWz6XN5q4gnz
-	 GItjPx2m4jmXQs0dkfEvG2UIXvClFVNpYUCxClsIyyJR3VNqja7fy4WwSL2gI+ZCItI5h
-	 OmSoYajbSK2rY058o5XYEv+u9tAj3S241KWz6W23csSueW1eD6dscEfrXvVngFrEuCi/I
-	 045G14nXfhUSyjfvcN+94EAIJz/xfixKQn2W7T/QhMQ/XMmrLgBIaUihKZC1qplistomK
-	 Lhzi0LthIcxMJf6IngHou8SSBBtRdBTsDFEE6TXv96bzgXB7AhWtSMZzzyh7Pgr1X9Q==
+	t=1794896144;
+	b=yhNKX/YsB9fhbYrm1TzQGfUGCm3BmOhcTu6C5iI2q/mO8ioG0HTkkZo8f0YXL9YFFvSP
+	 0iCG8Sy3Ng4Hrpj7JegK959AbmoBGJad2szVuZsNs+1Wx3Wyceym7UC6PdaHfe5DDMIdn
+	 /+icJippBFFgsNTICSB8L8H/VqE35rXH8ezwoY6Abi8tNrH+wRVdaOaZuJLTNDdjwcKCF
+	 NdB/txZp/k5jZd6UPibaVq5Jk/ay8lBoZ0aOLbVPv5RYWXVQMKK8oiCZ1C07xR5sLLGSX
+	 ad+DrM5dtsggYvWi/+rhAZ6conm1vLzutD8ICWJynzfwrEnBBHoaFkqeynZYd5vaFlA==
 ARC-Message-Signature: i=1; d=subspace.kernel.org; s=arc20261015;
-	a=rsa-sha256; c=relaxed/relaxed; t=1794894234;
-	h=DMARC-Filter:X-Envelope-To:DKIM-Signature:X-Envelope-To:Received:
-	 X-Mizu-Trace-ID:X-Migadu-Flow:Date:From:To:CC:Subject:In-Reply-To:
-	 References:Message-ID:MIME-Version:Content-Type:
-	 Content-Transfer-Encoding;
-	bh=/hp3mzoQPunJuzlAQ0Nu0QxoCcTF9DX1oZZFPLvhRzY=;
-	b=aAgaRjBdy9z7IAK9pZi2jOuKNdNbVdfsME/Ho1302aw7AVp3pKuUzlYiWzLzdVoloo7x
-	 8tSUdR7+JCtAZbYJnUbKfw1n+3+N2hg52mA51Xrz5FZAUx+OU49hrKCM87WXcPMVt59iG
-	 zsp9Eqy9DH91ns8nUXSRv0AMzsnjaDqgAKhHKyFruw4LApOuVE/GBJiEuCfXWwAJq7YDG
-	 9RxcY7QydwRBhei+7PpM/1lwEIgCYF+KuOa+CM4M1V48dUyI4l1fvMgVB8dj4n6yU/cax
-	 JSnA9m7CR/zuOiqd9ch7y7N+wuDtAo6GALIRxVBYPhys49Xv90RLf8gUvfMh8pglchg==
+	a=rsa-sha256; c=relaxed/relaxed; t=1794896144;
+	h=DMARC-Filter:X-SpamFilter-By:DKIM-Signature:Received:Received:
+	 Received:From:To:CC:Subject:Thread-Topic:Thread-Index:Date:Message-ID:
+	 References:In-Reply-To:Accept-Language:Content-Language:
+	 x-originating-ip:Content-Type:Content-Transfer-Encoding:MIME-Version;
+	bh=vWoDjOBeo1hAWyxzYdw2qtx/GzU6IPF2wlEpRRXvwRY=;
+	b=sds+ZVuT8lFZob+/uGnBZ0VilwWZ9YdyriuK5es6LH2HIxGDatHWeB/Ao3WNmxh6pGfq
+	 mkIdFwbTxQVYG1QaRPNOWfxmvlSeGpYm20tce7Q/udDsBxX6TFYNq+Ek0fs6gtsEHKZJK
+	 cFNKCBRsCuhAZPTdXFTxJExTPeaq1WIvsKOF1vryS6jkSAhQ93HJ6spwAY0bnsiG8kkJJ
+	 F/CvR2C21GD1ygHFx8MszgwmFo664HTuQ6H+eZnDtd0uNa9wfZ5uMm8jk+rPrWckEDE/s
+	 Weg/qlhOiunvdet4qQz6lKxCHh8tWmdP0PtKuuaqsVggXuPkXXyAGOnAOSNXsAp8LGQ==
 ARC-Authentication-Results: i=1; smtp.subspace.kernel.org; 
-	dmarc=pass header.from=linux.dev;
-	spf=pass smtp.mailfrom=linux.dev;
-	dkim=pass header.d=linux.dev header.i=@linux.dev header.a=rsa-sha256 header.s=key1 header.b=aS5NVWKJ;
-	arc=none smtp.remote-ip=91.218.175.23
-Received: from mta0.migadu.com (out-23.mta0.migadu.com [91.218.175.23])
-	(using TLSv1.3 with cipher TLS_AES_128_GCM_SHA256 (128/128 bits)
+	dmarc=pass header.from=realtek.com;
+	spf=pass smtp.mailfrom=realtek.com;
+	dkim=pass header.d=realtek.com header.i=@realtek.com header.a=rsa-sha256 header.s=dkim header.b=rx4JcEvb;
+	arc=none smtp.remote-ip=211.75.126.72
+Received: from rtits2.realtek.com.tw (rtits2.realtek.com [211.75.126.72])
+	(using TLSv1.3 with cipher TLS_AES_256_GCM_SHA384 (256/256 bits)
 	 key-exchange X25519 server-signature ECDSA (prime256v1) server-digest SHA256)
 	(No client certificate requested)
-	by smtp.subspace.kernel.org (Postfix) with ESMTPS id B3591606A31C
-	for <linux-wireless@vger.kernel.org>; Tue, 17 Nov 2026 05:43:53 +0000 (UTC)
-DMARC-Filter: OpenDMARC Filter v1.4.2 smtp.subspace.kernel.org B3591606A31C
-Authentication-Results: smtp.subspace.kernel.org; dmarc=pass (p=none dis=none) header.from=linux.dev
-Authentication-Results: smtp.subspace.kernel.org; spf=pass smtp.mailfrom=linux.dev
+	by smtp.subspace.kernel.org (Postfix) with ESMTPS id 21721606A31C;
+	Tue, 17 Nov 2026 06:15:42 +0000 (UTC)
+DMARC-Filter: OpenDMARC Filter v1.4.2 smtp.subspace.kernel.org 21721606A31C
+Authentication-Results: smtp.subspace.kernel.org; dmarc=pass (p=none dis=none) header.from=realtek.com
+Authentication-Results: smtp.subspace.kernel.org; spf=pass smtp.mailfrom=realtek.com
 Authentication-Results: smtp.subspace.kernel.org;
-	dkim=pass (1024-bit key, unprotected) header.d=linux.dev header.i=@linux.dev header.a=rsa-sha256 header.s=key1 header.b=aS5NVWKJ
-X-Envelope-To: linux-wireless@vger.kernel.org
-DKIM-Signature: a=rsa-sha256; bh=/hp3mzoQPunJuzlAQ0Nu0QxoCcTF9DX1oZZFPLvhRzY=;
- c=simple/simple; d=linux.dev;
- h=from:to:subject:date:message-id:mime-version:content-type; s=key1;
- t=1794894231; v=1; x=1795499031;
- b=aS5NVWKJ5TIFNsaAlno5sZFPZVDirwr2ECYGAHVe1FuSfxsGuGLe1/8vOE18eciztqugtOGB
- kkNlmoaO4mCiPHLR5C443Vhg4E+wOMRAqigsZ37tqdmogjpPi+NyxJxEkH3lNpMBWtUfvzSKAvd
- YEJZNZhfN3HKtMU8ohOGFXmo=
-X-Envelope-To: linux-wireless@vger.kernel.org
-Received: by smtp.migadu.com with ESMTPS id 3695ad99563aa3f3;
-	Tue, 17 Nov 2026 05:43:51 +0000
-X-Mizu-Trace-ID: 3695ad99563aa3f3
-X-Migadu-Flow: FLOW_OUT
-Date: Tue, 17 Nov 2026 06:43:47 +0100
-From: Luka Gejak <luka.gejak@linux.dev>
-To: Leonard Lausen <leonard@lausen.nl>, Ping-Ke Shih <pkshih@realtek.com>
-CC: leonard@lausen.nl, =?ISO-8859-1?Q?David_H=E4rdeman?= <david@hardeman.nu>,
- Shawn Lin <shawn.lin@rock-chips.com>, Heiko Stuebner <heiko@sntech.de>,
- linux-wireless@vger.kernel.org, linux-rockchip@lists.infradead.org,
- linux-kernel@vger.kernel.org
-Subject: =?US-ASCII?Q?Re=3A_=5BPATCH_rtw-next_v3_2/2=5D_wifi=3A_rtw88=3A_?=
- =?US-ASCII?Q?sdio=3A_combine_free_TX_page_register_reads?=
-In-Reply-To: <20261116205739.462458-6-leonard@lausen.nl>
-References: <20261116205739.462458-2-leonard@lausen.nl> <20261116205739.462458-6-leonard@lausen.nl>
-Message-ID: <4DA7AB91-A420-4C91-B57F-B39FD5DF6696@linux.dev>
+	dkim=pass (2048-bit key, unprotected) header.d=realtek.com header.i=@realtek.com header.a=rsa-sha256 header.s=dkim header.b=rx4JcEvb
+X-SpamFilter-By: ArmorX SpamTrap 5.80 with qID 6AH6FDGV04175949, This message is accepted by code: ctloc85258
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=realtek.com; s=dkim;
+	t=1794896113; bh=vWoDjOBeo1hAWyxzYdw2qtx/GzU6IPF2wlEpRRXvwRY=;
+	h=From:To:CC:Subject:Date:Message-ID:References:In-Reply-To:
+	 Content-Type:Content-Transfer-Encoding:MIME-Version;
+	b=rx4JcEvbTzz1+caKLOAoxA7HkTAjyDgPMiTiqjJYO02YW+KtPfyQLKz0yIg5SJv6e
+	 tbIUjTb6SOXyT6dyTJukQvVxMNtzgZ5iSqdstzpH9FcIOcNFmvOxd7wbqx78qWgdAz
+	 8inVeUXcVxZDY0ixClkKrfaE2z1eoCi4XSX02UMLXley8CYkLXDeUI2+FLNevJX1fD
+	 Zxm+E6NZpkTDZbMXcuQcxR6KDIRI6upAuBdDCJFLS8toFsA0Pj6k5mcwJzH/wUwuZl
+	 w9BB+iA9RJf9J0kIZ3GCSvkXnwTSJUcx9Ne5iSV9mErxQTkNgHuIp3Ok+iYlvqBjhh
+	 A1v5aFNL6qdOA==
+Received: from mail.realtek.com (rtkexhmbs04.realtek.com.tw[10.21.1.54])
+	by rtits2.realtek.com.tw (8.15.2/3.29/5.94) with ESMTPS id 6AH6FDGV04175949
+	(version=TLSv1.2 cipher=ECDHE-RSA-AES256-GCM-SHA384 bits=256 verify=FAIL);
+	Tue, 17 Nov 2026 14:15:13 +0800
+Received: from RTKEXHMBS06.realtek.com.tw (10.21.1.56) by
+ RTKEXHMBS04.realtek.com.tw (10.21.1.54) with Microsoft SMTP Server
+ (version=TLS1_2, cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id
+ 15.2.2562.56; Tue, 17 Nov 2026 14:15:13 +0800
+Received: from RTKEXHMBS06.realtek.com.tw ([fe80::eeeb:c765:ca73:5eef]) by
+ RTKEXHMBS06.realtek.com.tw ([fe80::eeeb:c765:ca73:5eef%10]) with mapi id
+ 15.02.2562.056; Tue, 17 Nov 2026 14:15:13 +0800
+From: Ping-Ke Shih <pkshih@realtek.com>
+To: Alastair D'Silva <alastair@d-silva.org>, "linux-wireless@vger.kernel.org"
+	<linux-wireless@vger.kernel.org>, Kalle Valo <kvalo@kernel.org>
+CC: Luka Gejak <luka.gejak@linux.dev>, Martin Blumenstingl
+	<martin.blumenstingl@googlemail.com>, Jernej Skrabec
+	<jernej.skrabec@gmail.com>, Ulf Hansson <ulfh@kernel.org>,
+	"linux-kernel@vger.kernel.org" <linux-kernel@vger.kernel.org>,
+	"stable@vger.kernel.org" <stable@vger.kernel.org>
+Subject: RE: [PATCH rtw-next v10 2/4] wifi: rtw88: sdio: Track running state
+ and cancel TX worker on stop
+Thread-Topic: [PATCH rtw-next v10 2/4] wifi: rtw88: sdio: Track running state
+ and cancel TX worker on stop
+Thread-Index: AQHdc0hRmL5VjdzwlUqF6WpiTM7N/7cxzhuw
+Date: Tue, 17 Nov 2026 06:15:13 +0000
+Message-ID: <74ed5d7ad4b04a2591ae0071cc8280ab@realtek.com>
+References: <20261113082242.2773369-1-alastair@d-silva.org>
+ <20261113082242.2773369-3-alastair@d-silva.org>
+In-Reply-To: <20261113082242.2773369-3-alastair@d-silva.org>
+Accept-Language: en-US, zh-TW
+Content-Language: zh-TW
+Content-Type: text/plain; charset="us-ascii"
+Content-Transfer-Encoding: quoted-printable
 X-Mailing-List: linux-wireless@vger.kernel.org
 List-Id: <linux-wireless.vger.kernel.org>
 List-Post: <mailto:linux-wireless@vger.kernel.org>
@@ -68,25 +87,78 @@ List-Unsubscribe: <mailto:linux-wireless+unsubscribe@vger.kernel.org>
 List-Owner: <mailto:linux-wireless+owner@vger.kernel.org>
 Precedence: list
 MIME-Version: 1.0
-Content-Type: text/plain;
- charset=utf-8
-Content-Transfer-Encoding: 8bit
 
-On November 16, 2026 9:57:40 PM GMT+01:00, Leonard Lausen
-<leonard@lausen.nl> wrote:
->TX capacity checks on non-8051 chips read three adjacent 32-bit registers
->in separate SDIO requests. Combine them into one 12-byte CMD53 read when
->the existing power/alignment check permits it, with the per-register
->fallback otherwise. Propagate read errors before checking queue capacity.
->
->Allocate a DMA-safe buffer at probe and copy its little-endian values
->into the caller's array before releasing the host. Holding the host
->through the read and copy serializes access to the shared buffer.
->
->Signed-off-by: Leonard Lausen <leonard@lausen.nl>
->---
+Alastair D'Silva <alastair@d-silva.org> wrote:
+> When rtw_sdio_stop() disables interrupts, in-flight interrupt handlers or
+> delayed TX work may still run against a powered-down device.
+>=20
+> Track the operational state in rtwsdio->running with an irq_lock mutex
+> (similar to PCI), check it at the entry of rtw_sdio_handle_interrupt()
+> and rtw_sdio_tx_handler(), serialize state transitions in rtw_sdio_start(=
+)
+> and rtw_sdio_stop() under sdio_claim_host() and irq_lock, and cancel the
+> TX worker synchronously in rtw_sdio_stop().
+>=20
+> Drain rtwsdio->tx_queue[] with locked skb_dequeue() and
+> ieee80211_free_txskb() in rtw_sdio_stop() and again in rtw_sdio_start() t=
+o
+> catch any frames queued by an in-flight rtwdev->tx_work after
+> rtw_sdio_stop() completes, and reset rtwsdio->tx_queue_stopped[] while
+> waking stopped AC queues under tx_queue[].lock in rtw_sdio_start().
+>=20
+> Fixes: 28eaf7971a20 ("wifi: rtw88: sdio: add TX back-pressure and retry o=
+n page starvation")
+> Cc: stable@vger.kernel.org
+> Assisted-by: LLM
 
-Reviewed-by: Luka Gejak <luka.gejak@linux.dev>
+No need Assisted-by tag now.
 
-Best regards,
-Luka Gejak
+> Reviewed-by: Luka Gejak <luka.gejak@linux.dev>
+> Signed-off-by: Alastair D'Silva <alastair@d-silva.org>
+
+Take my acked-by to v11 with small nit below.
+
+Acked-by: Ping-Ke Shih <pkshih@realtek.com>
+
+[...]
+
+>  static int rtw_sdio_start(struct rtw_dev *rtwdev)
+>  {
+> +       struct rtw_sdio *rtwsdio =3D (struct rtw_sdio *)rtwdev->priv;
+> +       enum rtw_tx_queue_type queue;
+>         u32 clear;
+> +       int i;
+>=20
+>         if (rtw_is_8723bs(rtwdev)) {
+>                 int ret =3D rtw_sdio_8723bs_check_rqpn(rtwdev);
+> @@ -1069,20 +1086,49 @@ static int rtw_sdio_start(struct rtw_dev *rtwdev)
+>=20
+>         rtw_sdio_enable_rx_aggregation(rtwdev);
+>=20
+> +       rtw_sdio_purge_tx_queues(rtwdev);
+> +
+> +       for (i =3D 0; i < IEEE80211_NUM_ACS; i++) {
+> +               queue =3D rtw_tx_ac_to_hwq(i);
+> +               scoped_guard(spinlock_irqsave, &rtwsdio->tx_queue[queue].=
+lock) {
+> +                       if (rtwsdio->tx_queue_stopped[queue]) {
+> +                               rtwsdio->tx_queue_stopped[queue] =3D fals=
+e;
+> +                               ieee80211_wake_queue(rtwdev->hw, i);
+> +                       }
+> +               }
+> +       }
+
+Create a function to reset TX queues state.=20
+
+In rtw_sdio_start(), this is a cleanup operation, but it takes up too much =
+space
+(blurring the focus).
+
+> +
+> +       sdio_claim_host(rtwsdio->sdio_func);
+> +
+
+[...]
+
+
