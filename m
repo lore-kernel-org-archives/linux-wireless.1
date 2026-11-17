@@ -1,103 +1,101 @@
-Authentication-Results: smtp.subspace.kernel.org; arc=none smtp.remote-ip=209.85.128.42
+Authentication-Results: smtp.subspace.kernel.org; arc=none smtp.remote-ip=209.85.221.42
 ARC-Seal: i=1; d=subspace.kernel.org; s=arc20261015; a=rsa-sha256; cv=none;
-	t=1794937328;
-	b=SIxQsKRULJ2urNjR0/Sn7k4MzWGFZmjiuf0P3a1WYRnDtzWHTHHFwlx8XgSpzUd03rLm
-	 2EwgmkqIUk05xMCUH4zGAm+H7YU/FTK9dPShnx3Vnziw46egTEky5kXkQEq6riskR2p4t
-	 aB/QQKVMagmMMd9sMVfDODsyzWFfdyvv9wUIEeMj1Doe+q8IEgkJHtpaeqLIks3sV1gmf
-	 DWbZVOB1K25LWmr724MzcxMmucZHQj3lJq/uZWC7Gxj3G29PXsi1qwDKyMhEt9hYtdj6i
-	 WPPTiVIxbmGwqKeIk71Ow6dmcTSenQkWw/nOUCECEnLXSJ/j0UBIv4YuyAISNRxjOJA==
+	t=1794937329;
+	b=W5pY/9HthCBzULYkKeLE+M2iDlJ5K9p3ZBdbf/+0APtTem4GlBq5NINRGpNCkfvlqN59
+	 A6CRLE870WCIG3Y0FJZYRKnJrIKgSt2ZLMhQyKcvYOXi7k9u5ZN2O/mNCKRyoqRXXZBzJ
+	 iCw+Tceq44BvwLcUh5Qs0QTGCp31Ccw3tws9PzM1MJ3D2/0PocqEF3jeZ+K+4xsnllHCY
+	 I+YrfEleh9E9mtLrAwXkgmknxDCAgNHg1d4PO2bAOZzLcho/1p4titIZmUOhjlW4MztuU
+	 t/JwNUDLZ9U6caxKqx/J8R3KthlDbnwRQ1kgxw23xk1bQdjAIvbR27RXNhlt4IBdZ8Q==
 ARC-Message-Signature: i=1; d=subspace.kernel.org; s=arc20261015;
-	a=rsa-sha256; c=relaxed/relaxed; t=1794937328;
+	a=rsa-sha256; c=relaxed/relaxed; t=1794937329;
 	h=DMARC-Filter:Received:DKIM-Signature:X-Google-DKIM-Signature:
 	 X-Forwarded-Encrypted:X-Gm-Message-State:X-Gm-Gg:X-Received:Received:
-	 From:To:Cc:Subject:Date:Message-ID:X-Mailer:MIME-Version:
-	 Content-Transfer-Encoding;
-	bh=Mk0QZKmfgNlcLXfZLYxQ0YCEj7H/gNwx+nyoD+NSv8U=;
-	b=gjHvhX6zOpS1kl5ONuA0HP5+sip+RPA6dvY9NSgRRYNIQP1BQNFaTqbb8CqTAXbWr0dk
-	 cUYTQMgTbmqW4xkGNybSMz4zgVyYRTDFjeFLtNScW5lQ4zrlB1U2kfBl9K+mn4pfDeUqd
-	 07dKqxSzL/xhJj2aa/1/aa+qYStEGm6XZ/60Txh7nOQp5cZCEupAc0h8OxcnMvdHXbEal
-	 Gd/w31oJID+0IFD7AdUOsi88roFxSTolrxidZrB89+QOvbQEFTP4KM2bfhxpHQJTQgVCN
-	 Xo/WU+5LxIGwrserjZQjIt/aFpTxugRVh6jf4uDCqlUEiSrEqf4zzw7x+fFGlDkrx9w==
+	 From:To:Cc:Subject:Date:Message-ID:X-Mailer:In-Reply-To:References:
+	 MIME-Version:Content-Transfer-Encoding;
+	bh=eS8A6I+JbYZ0P//SqMb5gbJ5IMT5Lxzbqv3mJYgvIAw=;
+	b=Dd/eiaxxTYEu3GpZ6O3wDHUOYbI5nwscMm5CaY5DnA0MHUGh5OWCiaTuyuMCtF3JiAPu
+	 AQKKb28ulSLS/K9JS6Ff93IsVcBOuTd3F5G60wTm6zW2pKKXN/yDiv0bZhhzyvkhcDxhv
+	 UE0pYTl35yEa2RC3RGsSoNeubqi+BcKGOwBRWv0chDihyaxFEOWfA85jVocWBtBqJlC86
+	 e1YkyGHDMCEK+dzFDy2h8BzyjSh4n8B8p7W++w9V5i2+Uo71tOL5HTbdlZ9CY9MwvyXym
+	 m6i1C8MEZ9UuSJtQL3u0xaQp7rDm1ejOpPiDqVIFiUUWtWoQGMzsGjFBhbSOrY3en1w==
 ARC-Authentication-Results: i=1; smtp.subspace.kernel.org; 
 	dmarc=pass header.from=gmail.com;
 	spf=pass smtp.mailfrom=gmail.com;
-	dkim=pass header.d=gmail.com header.i=@gmail.com header.a=rsa-sha256 header.s=20260707 header.b=EDwh4KfT;
-	arc=none smtp.remote-ip=209.85.128.42
-Received: from mail-wm1-f42.google.com (mail-wm1-f42.google.com [209.85.128.42])
+	dkim=pass header.d=gmail.com header.i=@gmail.com header.a=rsa-sha256 header.s=20260707 header.b=FFGjpIaO;
+	arc=none smtp.remote-ip=209.85.221.42
+Received: from mail-wr1-f42.google.com (mail-wr1-f42.google.com [209.85.221.42])
 	(using TLSv1.3 with cipher TLS_AES_128_GCM_SHA256 (128/128 bits)
 	 key-exchange X25519 server-signature ECDSA (prime256v1) server-digest SHA256)
 	(No client certificate requested)
-	by smtp.subspace.kernel.org (Postfix) with ESMTPS id 9D2D8606A32A
-	for <linux-wireless@vger.kernel.org>; Tue, 17 Nov 2026 17:42:07 +0000 (UTC)
-DMARC-Filter: OpenDMARC Filter v1.4.2 smtp.subspace.kernel.org 9D2D8606A32A
+	by smtp.subspace.kernel.org (Postfix) with ESMTPS id C92EA606A884
+	for <linux-wireless@vger.kernel.org>; Tue, 17 Nov 2026 17:42:08 +0000 (UTC)
+DMARC-Filter: OpenDMARC Filter v1.4.2 smtp.subspace.kernel.org C92EA606A884
 Authentication-Results: smtp.subspace.kernel.org; dmarc=pass (p=none dis=none) header.from=gmail.com
 Authentication-Results: smtp.subspace.kernel.org; spf=pass smtp.mailfrom=gmail.com
 Authentication-Results: smtp.subspace.kernel.org;
-	dkim=pass (2048-bit key) header.d=gmail.com header.i=@gmail.com header.a=rsa-sha256 header.s=20260707 header.b=EDwh4KfT
-Received: by mail-wm1-f42.google.com with SMTP id 5b1f17b1804b1-4bb6c7b6dbdso2307195e9.0
-        for <linux-wireless@vger.kernel.org>; Tue, 17 Nov 2026 09:42:07 -0800 (PST)
+	dkim=pass (2048-bit key) header.d=gmail.com header.i=@gmail.com header.a=rsa-sha256 header.s=20260707 header.b=FFGjpIaO
+Received: by mail-wr1-f42.google.com with SMTP id ffacd0b85a97d-48e47347279so20945f8f.1
+        for <linux-wireless@vger.kernel.org>; Tue, 17 Nov 2026 09:42:08 -0800 (PST)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=gmail.com; s=20260707; t=1794937326; x=1795542126; darn=vger.kernel.org;
-        h=content-transfer-encoding:mime-version:message-id:date:subject:cc
-         :to:from:from:to:cc:subject:date:message-id:reply-to:content-type;
-        bh=Mk0QZKmfgNlcLXfZLYxQ0YCEj7H/gNwx+nyoD+NSv8U=;
-        b=EDwh4KfThj9gvgd4ZiID54fBn43gGzte/ynCoDYEqJkB2FDrv4Gf/YpoLOTiiC15cD
-         jtT3YQwl8mXytztDAUQUB0F3f5wsC/dGO96h8RGOCu9ocl3nTFJbLm3zC3EVCK9Bk1W+
-         U+g6qQRqQ7ewtsQJLqe6lqKVT9qiGvEIP9ZNwZTttxt1Ag/XzfmG3wpCADEEHewCwlKQ
-         3+AGbySErlBLCYMVTdnqo6Su9Hy9trzoBcpIgacMj7zNek9dyKZb/SHJpUGr1wlAAncp
-         Tu4sDAz6ONg4yU8BDjCK7gjyAYTaXN7lT/790myHY6tXv0h1SRhHu5IUE5OVwoLk2Doy
-         ycXg==
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=1e100.net; s=20260707; t=1794937326; x=1795542126;
-        h=content-transfer-encoding:mime-version:message-id:date:subject:cc
-         :to:from:x-gm-gg:x-gm-message-state:from:to:cc:subject:date
+        d=gmail.com; s=20260707; t=1794937327; x=1795542127; darn=vger.kernel.org;
+        h=content-transfer-encoding:mime-version:references:in-reply-to
+         :message-id:date:subject:cc:to:from:from:to:cc:subject:date
          :message-id:reply-to:content-type;
-        bh=Mk0QZKmfgNlcLXfZLYxQ0YCEj7H/gNwx+nyoD+NSv8U=;
-        b=ku+6xTcNnNhcpn/8HTlfir3wZuTiPbHO3d66YIH3JicYgkFdj5IS8lokNCDx2z4buY
-         /VHMtC4YpHJOVe1ldBwMu+Pjqr2NY8qeAxrxvAiydiWIG8Ns5iAEfgXpetynvNrjPacn
-         Pxlm4DQBW1OifDwYYN70sJw6VQ6M1UoTR9oTTxQ/FW7vxwcB5hl/hefcC06D4An87Kc6
-         RzjM8j1+1pXd2qPLqeijuSA4y26QxYtWgtMq0b1C4a0WzMxRn7P3SfOdQ65UwG2e0N5L
-         l7YGwqbXevYJHmoTCTsKoTNo3LRUL2Yx8Yr+DnjlSG3Xnrvo0aX+tHIhyjV4J98a7G8v
-         KCVA==
-X-Forwarded-Encrypted: i=1; AL+hErGQLfIwO5XhgYNzuvCR52VVzqOCjlxBwNsfCToFNtAc3hjxFrxCBANSWM/BihX2p/ye41or178clQi8scSuUg==@vger.kernel.org
-X-Gm-Message-State: APuU4Z9KMp91fFZrpeO6U/PjgHOc7xehLA/wq9bf3Hmzbkxg/uK7ysB+
-	oC8H0CYKLG5vaipB9pVT1V7bQMrITZQ0RDKpUeld6IGFfen0aqSBZCGj
-X-Gm-Gg: AYBFou11fGiQ3+3lCioNCicffbQPTe+FmaSI5T+SnOf1uGc/25QHz/gF1o0R4Tq4Bbb
-	lwfanWmHqUL/THEScCgv6O14ULDA+Mx3OoC3/Lr/45twbVbZjH41K2pJmnIFkiGOTMnRPS+yEpV
-	Lwo+r/v1nMjL7PZzUfko5D2Bt5/w5nmg2OfoIHVNK895g2JpLMxh7ELaQ3MYxkgUsZFmKlwm31a
-	+prlHZLPu55C91ibMedaT4B5gS0OWRwYPjF5eT96vQx2ZAk3mr5DOsh7k42bfhVePFexGRS6ehR
-	C1NO/6fJN66zEZMt5PNBajGZBehvjE1dLrVzIYZ3y0Hql1MsxjHxOS2QPrG2KjwMTXj+l/uw6g6
-	XYgNfLJv/nCltC4W5zdVe0VIkx2zrOWcRsXPbkb1eAMDKB4bFWKmBJZDOIoYG0QLKxeQ9YX9PvX
-	tNEnR50xrak9VYE9x3N/uBCs5iN5wHGfAT7nigSH2vS+AWVYOFQTQHIxUfRJPkOYNnY/+ddGBB2
-	xF2LdXxsn28NNvTp94nsM7nzDxecxcvP4H5xzTehYIIS06Ui81fBuHLh8lNBdop1/PfQ3UClYaz
-	4u2wEiZYze8ywcmvqisTLC2eV0dgB66xmjFyKd1Z6/8UXTeQSw+JZpCoS1lDfbH4+cxTIz0BhhC
-	wMJ7X
-X-Received: by 2002:a05:600c:a0b:b0:4bb:685e:cc41 with SMTP id 5b1f17b1804b1-4bb685eccc8mr207958615e9.8.1794937325497;
-        Tue, 17 Nov 2026 09:42:05 -0800 (PST)
+        bh=eS8A6I+JbYZ0P//SqMb5gbJ5IMT5Lxzbqv3mJYgvIAw=;
+        b=FFGjpIaO7cL15zX3nPk1NbIb0TtthT2MxbC6mTMT+9988qugXo4KEd/YFISIExRb2E
+         vpqav2wDB9C+GbNYUWjPdXvjQ6TpIyso8ViGM199yvmnHNdu1Oc4EcskTxrrSCWf7RP7
+         k1pVissPAZZg8IWCXZMGmuQA2OGVMNHixFndfiVAUbNuVmevLRN1e1ocOaL0qqJLfxKC
+         N3ZLNnX/B2eniMkl/0NfPpm7ppln03kxUXKcYdHEORsSdKRexnd7oYZe4MgLysYp5Bvn
+         Gc4osTTWZiGGCkQIgD3v17KPr35iNs//xj5GOcbbA2q/A6Wgx6oyMOHWZRsB3CKGkm2e
+         F2bg==
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+        d=1e100.net; s=20260707; t=1794937327; x=1795542127;
+        h=content-transfer-encoding:mime-version:references:in-reply-to
+         :message-id:date:subject:cc:to:from:x-gm-gg:x-gm-message-state:from
+         :to:cc:subject:date:message-id:reply-to:content-type;
+        bh=eS8A6I+JbYZ0P//SqMb5gbJ5IMT5Lxzbqv3mJYgvIAw=;
+        b=cMzsHa4JyEyZK+Pk68vYY/QmY25Odm/v5w04zpQI6ZZ4ArB7MbePYj1GvC0DHiwhmP
+         6vJL8tc3I/flooc2ck2bOphIfCqTb3TndCDIqN6ckaltKbmHoTbTzMkoIQDHJLVF+qMc
+         Sz97crmfSDh6FX4yZzrXmrYEkXScTXF7r2mSTYB4xEA0WIW/9aBxF2R0CJdwrAXcPJAx
+         ZfdIEb4vvmriCfi+xc4VBTdK7/ejpget4DSXDGMLmvtOu+40rFqRfXHt2Rujk8FKSsS8
+         tvCa7netWIT6dz46gumjK2ZS72j43Fj+ldderKZ01FvKlDVYHd4tzGo3uuL0Nz5RyZPp
+         sdow==
+X-Forwarded-Encrypted: i=1; AL+hErGYWgETE0Cd357c5+OCD1iZwMJyDGr09tjst+xjWdzwyTXfDKwmgOosfKXDSIHcz2vqa0gWMSNaMcN9OMaIFQ==@vger.kernel.org
+X-Gm-Message-State: APuU4Z9FPvV/x2+fNHuD4/U6zcjJlxE6l0F/qGitM+wgjkukpkY6kqqn
+	zch60ZzC5y1GcrzeBjWPbOmYwMAsLkMLLVvgTquDOpptiX+X8lP1kLQq
+X-Gm-Gg: AZFdTZe5HAAF2oCCeOv0AeohWwoc559nMFlQd8oxuIWMFCvwbyCVABy3sgw7DgddurU
+	FJMSoapdxL9GeFwffrdXGUvy1myVuljpnKxD7ciydf3VwlccxYmlZpChJLjEL09Csc2hVl17bVv
+	yHA7tHvjKOI0+++E6WQyko+0yFZ93p2YNZGDT1cGSlDdfCXd3dnk4SvYbUHTmEQgvZ10PLBVLKg
+	0wNeiV2xqHlcdPVtOU+U8sGD8T7KJ2oISR9Z1hBBiucc6hCuSliLhE9ZQ0h1eMgWts3olbQruWC
+	rEi+0uM1zscuYJm3t8HYFWcYtWFK+kL7xNe38GkogNtjJ/Q4H2wCkjG+q+fdUdci4Trf/tGHIXG
+	UfzVkwNhIrzhFsSPQpVeSPufvVBMj2JcGOh9aOjRkiocOWCDfAg83+dmV4MEKOzUTiVu/H017Kz
+	N3FwKcCdOU8B9cVxD163PyooenRxTHmxkimDiGMY35mCnwAGEHDatcYBBX/X3tcgeigszRyZ5wD
+	uaiGEyLN54u4PHg+kqgInj8WW2XjdXolylVJ9Q/bUtbK6+HHC1jQ7Rzkyf+iLRvcovPxqyfJMVV
+	Q4GMz02vaOvWecbfGetyrX8aTF0jSK3AHLipwyEPzXtrND5HPXHOBV2+Nw==
+X-Received: by 2002:a5d:64ed:0:b0:4a4:14db:233b with SMTP id ffacd0b85a97d-4a638ae26abmr362462f8f.12.1794937327122;
+        Tue, 17 Nov 2026 09:42:07 -0800 (PST)
 Received: from vitor-21h1cto1ww (dsl-30-199.bl27.telepac.pt. [176.79.30.199])
-        by smtp.gmail.com with ESMTPSA id ffacd0b85a97d-49c7390fe82sm30962552f8f.17.2026.11.17.09.42.03
+        by smtp.gmail.com with ESMTPSA id ffacd0b85a97d-49c7390fe82sm30962552f8f.17.2026.11.17.09.42.05
         (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
-        Tue, 17 Nov 2026 09:42:04 -0800 (PST)
+        Tue, 17 Nov 2026 09:42:06 -0800 (PST)
 From: Vitor Soares <ivitro@gmail.com>
 To: Johannes Berg <johannes@sipsolutions.net>,
 	Rob Herring <robh@kernel.org>,
 	Krzysztof Kozlowski <krzk+dt@kernel.org>,
 	Conor Dooley <conor+dt@kernel.org>,
-	Jeff Johnson <jjohnson@kernel.org>,
-	Nishanth Menon <nm@ti.com>,
-	Vignesh Raghavendra <vigneshr@ti.com>,
-	Tero Kristo <kristo@kernel.org>
+	Jeff Johnson <jjohnson@kernel.org>
 Cc: Vitor Soares <vitor.soares@toradex.com>,
 	Jeff Johnson <jeff.johnson@oss.qualcomm.com>,
 	linux-wireless@vger.kernel.org,
 	devicetree@vger.kernel.org,
 	ath12k@lists.infradead.org,
-	linux-kernel@vger.kernel.org,
-	linux-arm-kernel@lists.infradead.org
-Subject: [PATCH 0/2] Add ath12k calibration variant for Silex SX-PCEBE on Aquila AM69
-Date: Tue, 17 Nov 2026 17:41:54 +0000
-Message-ID: <20261117174154.549590-4-ivitro@gmail.com>
+	linux-kernel@vger.kernel.org
+Subject: [PATCH 1/2] dt-bindings: wireless: ath12k: Make WCN7850 supplies optional
+Date: Tue, 17 Nov 2026 17:41:55 +0000
+Message-ID: <20261117174154.549590-5-ivitro@gmail.com>
 X-Mailer: git-send-email 2.53.0
+In-Reply-To: <20261117174154.549590-4-ivitro@gmail.com>
+References: <20261117174154.549590-4-ivitro@gmail.com>
 X-Mailing-List: linux-wireless@vger.kernel.org
 List-Id: <linux-wireless.vger.kernel.org>
 List-Post: <mailto:linux-wireless@vger.kernel.org>
@@ -111,35 +109,71 @@ Content-Transfer-Encoding: 8bit
 
 From: Vitor Soares <vitor.soares@toradex.com>
 
-The Aquila AM69 has a Silex SX-PCEBE Wi-Fi module (WCN7850). The module
-reports the same PCI and QMI IDs as other WCN7850 designs, and its board
-data also comes in variants for different regulatory domains. The IDs
-alone therefore cannot identify the right board data. Patch 2 describes
-the Wi-Fi device and sets qcom,calibration-variant to select it.
+The binding requires all nine WCN7850 power inputs. This matches designs
+where the chip is placed on the board and its rails come from the
+WCN7850 PMU described in DT.
 
-The qcom,ath12k binding requires all nine WCN7850 supplies, which only
-fits designs with the chip on the board and its PMU described in DT. On
-modules like the SX-PCEBE, the PMU is on the module and powered from the
-slot, so there are no supplies to describe. Patch 1 makes them optional.
+WCN7850 is also used in modules, such as the Silex SX-PCEBE, where the
+PMU and its rails are on the module and powered from the slot. None of
+these supplies are connected to the host, so there is nothing to
+describe. The DT node is still needed to set qcom,calibration-variant.
 
-Patch 1 is for ath-next, patch 2 for ti-k3-dts-next. Patch 2 also relies
-on commit 75bc725cd92b ("dt-bindings: wireless: ath12k: allow calibration
-variant for WCN7850"), already in ath-next. There is no build dependency;
-until both binding changes are merged, dtbs_check reports the missing
-supplies and qcom,calibration-variant for the AM69 Wi-Fi node.
+When the binding was introduced, it was agreed that the supplies can
+be made optional for cases such as M.2 boards once the need arises [1].
 
-Based on ath/ath-next.
+Make the supplies optional. Keep requiring all of them once any is
+present, so designs using the PMU are validated as before.
 
-Vitor Soares (2):
-  dt-bindings: wireless: ath12k: Make WCN7850 supplies optional
-  arm64: dts: ti: k3-am69-aquila: Add ath12k calibration variant
-
+Link: https://lore.kernel.org/all/87ikyenx5c.fsf@kernel.org/ [1]
+Signed-off-by: Vitor Soares <vitor.soares@toradex.com>
+---
  .../bindings/net/wireless/qcom,ath12k.yaml    | 33 ++++++++++++++-----
- arch/arm64/boot/dts/ti/k3-am69-aquila.dtsi    | 15 +++++++++
- 2 files changed, 39 insertions(+), 9 deletions(-)
+ 1 file changed, 24 insertions(+), 9 deletions(-)
 
-
-base-commit: 1be6c8d3027d4a421dc46b93a89a196c61945614
+diff --git a/Documentation/devicetree/bindings/net/wireless/qcom,ath12k.yaml b/Documentation/devicetree/bindings/net/wireless/qcom,ath12k.yaml
+index cf3e1fd99c12..27f443bbc401 100644
+--- a/Documentation/devicetree/bindings/net/wireless/qcom,ath12k.yaml
++++ b/Documentation/devicetree/bindings/net/wireless/qcom,ath12k.yaml
+@@ -63,15 +63,30 @@ properties:
+ required:
+   - compatible
+   - reg
+-  - vddaon-supply
+-  - vddwlcx-supply
+-  - vddwlmx-supply
+-  - vddrfacmn-supply
+-  - vddrfa0p8-supply
+-  - vddrfa1p2-supply
+-  - vddrfa1p8-supply
+-  - vddpcie0p9-supply
+-  - vddpcie1p8-supply
++
++allOf:
++  - if:
++      anyOf:
++        - required: [vddaon-supply]
++        - required: [vddwlcx-supply]
++        - required: [vddwlmx-supply]
++        - required: [vddrfacmn-supply]
++        - required: [vddrfa0p8-supply]
++        - required: [vddrfa1p2-supply]
++        - required: [vddrfa1p8-supply]
++        - required: [vddpcie0p9-supply]
++        - required: [vddpcie1p8-supply]
++    then:
++      required:
++        - vddaon-supply
++        - vddwlcx-supply
++        - vddwlmx-supply
++        - vddrfacmn-supply
++        - vddrfa0p8-supply
++        - vddrfa1p2-supply
++        - vddrfa1p8-supply
++        - vddpcie0p9-supply
++        - vddpcie1p8-supply
+ 
+ additionalProperties: false
+ 
 -- 
 2.53.0
 
