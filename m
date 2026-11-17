@@ -1,68 +1,81 @@
-Authentication-Results: smtp.subspace.kernel.org; arc=none smtp.remote-ip=111.22.67.135
+Authentication-Results: smtp.subspace.kernel.org; arc=none smtp.remote-ip=211.75.126.72
 ARC-Seal: i=1; d=subspace.kernel.org; s=arc20261015; a=rsa-sha256; cv=none;
-	t=1794886187;
-	b=pTeDrdsDW1BJxnn3l8HszW/hQLNtrHUsq1Jwg1dirpseQqlTFHxRtkbb2Oexi0/b9ho3
-	 IEF3rn9oY1gk/g4VbSU/l0Es6U2fhBvmgsiQwANpTpgMxqq3vTvcYC5QjhxRz/fJEDPDz
-	 HyDcWFTTa54+ev8G6xqCSBoroMNzOQWDB4alE4sbyxwPCALECWArumo9Nr0jDpOT4UO6x
-	 peNbB03HkWxSYiQ6sSOu+Y1n287b4I6uH3erq/JgT8jUSxBB7X6nxY76xE9f9NIBKC2tC
-	 ElgHY2FEn4x7ZH8Ves/zuCScDRqSZZh6beMt1zf6mdd/1/j7Kk4EB08gI5ZQLiWR5bw==
+	t=1794888903;
+	b=UIn+CEOY/jRZBWchsu1ie+Yd3I4+uFJZZpkCuWj+Z/mb+tleeYAiT8a3k4sEwUUD9D0x
+	 niuSTcT5o4UEe1XAimoVsuxxv9nKz/9b02nYXSUIqg0QvucelieXVDXmDQGL9eoaeyJhz
+	 LWRAMVHFC3g/C13fss6njjgaJ5ioYNSAjMALYQhHv8VjFxLOauUboW1/0ImMAeeayHMxK
+	 eb2MF9x9J0HN9I18IjaCup8LPIpx9RiRlpbkC8+yvJkclknwLoepQek73ESTMA1DjTjiO
+	 FXUOcuOZvPzawTNI8XS2IpM0NIN1LuHOoN5ALFECGxNcTc8jrfx8PheoSbBVrKvN8Ug==
 ARC-Message-Signature: i=1; d=subspace.kernel.org; s=arc20261015;
-	a=rsa-sha256; c=relaxed/relaxed; t=1794886187;
-	h=DMARC-Filter:DKIM-Signature:X-RM-TagInfo:X-RM-SPAM-FLAG:Received:
-	 X-RM-TRANSID:X-RM-TagInfo:X-RM-SPAM-FLAG:Received:X-RM-TRANSID:From:
-	 To:Cc:Subject:Date:Message-ID:X-Mailer:MIME-Version:
-	 Content-Transfer-Encoding;
-	bh=Y8wKiGuzX25eLnanDcoXEPChhaOMr2nZTEmPGyBD0hw=;
-	b=uuYWKGfiT2r4aN/SK22iXcpQyFcyr8IpvCNvY7LeSSWgNvdW9hZKbyfypfCdw7eVIOTw
-	 x81e1q5D8NLlGG6KjFRCYUnWMCaT5M8dPr411Vh4rqvmagfSAf0fLqfwdi8WbNS/uBSiH
-	 tIqnv4fsu0FXXTAzTU1bhv64OEACujKQJG2ecl32HgZTHYrSP1hBYFI7YMZHuEUMtRxGJ
-	 Fw79YrRfjbAufsdHLXiEwnizc55QkUoD/XOKoK8ZYOgBNXiDeWgrztdR05yvWasA/+Ki5
-	 f3IswMJaGS9P8xE/SNISyIy1Tjar5Se5CE0OMB1XU3mTcXbINd+Nf30Fszt/nrLhoUg==
+	a=rsa-sha256; c=relaxed/relaxed; t=1794888903;
+	h=DMARC-Filter:X-SpamFilter-By:DKIM-Signature:Received:Received:
+	 Received:From:To:CC:Subject:Thread-Topic:Thread-Index:Date:Message-ID:
+	 References:In-Reply-To:Accept-Language:Content-Language:
+	 x-originating-ip:Content-Type:Content-Transfer-Encoding:MIME-Version;
+	bh=jpEA1p737d/LV6b1EhSKDxczg7NwRl/i2PETIxXcRJM=;
+	b=W8xbuTa4DObr5/tHvDM6XFqajEDTj0auDOpL2ggb9OLG0tErkz5SUdXx5D1rV3awUnKO
+	 UmmzCEdyWnW26aB7ath9m/xwjDnqIhXqBlyPBzIaDohrlMFODc/CSi7BG7HIMt2LLZDMX
+	 5d0wwG9SfXSSWB8oIeKlGAkPzDswYOGPeU5mrfmbqWJrZw1+1tksZOCuOIpibTqOytCHq
+	 nderPYNfhwcGutWLJdA46LMj9OLnGWQ75ZD5i6uHYGqv8rMJP+6q/34ysIucz3ygYLo+3
+	 d99pfBzd++eUsGN3eHBFzuFOlzFqnWJx8mol34M1FKxl3HJdxYzmGE39TtPEkiXRkkw==
 ARC-Authentication-Results: i=1; smtp.subspace.kernel.org; 
-	dmarc=pass header.from=cmss.chinamobile.com;
-	spf=pass smtp.mailfrom=cmss.chinamobile.com;
-	dkim=pass header.d=cmss.chinamobile.com header.i=@cmss.chinamobile.com header.a=rsa-sha256 header.s=default header.b=vvq+Ezog;
-	arc=none smtp.remote-ip=111.22.67.135
-Received: from cmccmta2.chinamobile.com (cmccmta2.chinamobile.com [111.22.67.135])
-	by smtp.subspace.kernel.org (Postfix) with ESMTP id 9C12F606A8AD;
-	Tue, 17 Nov 2026 03:29:40 +0000 (UTC)
-DMARC-Filter: OpenDMARC Filter v1.4.2 smtp.subspace.kernel.org 9C12F606A8AD
-Authentication-Results: smtp.subspace.kernel.org; dmarc=pass (p=none dis=none) header.from=cmss.chinamobile.com
-Authentication-Results: smtp.subspace.kernel.org; spf=pass smtp.mailfrom=cmss.chinamobile.com
+	dmarc=pass header.from=realtek.com;
+	spf=pass smtp.mailfrom=realtek.com;
+	dkim=pass header.d=realtek.com header.i=@realtek.com header.a=rsa-sha256 header.s=dkim header.b=RHi7poMd;
+	arc=none smtp.remote-ip=211.75.126.72
+Received: from rtits2.realtek.com.tw (rtits2.realtek.com [211.75.126.72])
+	(using TLSv1.3 with cipher TLS_AES_256_GCM_SHA384 (256/256 bits)
+	 key-exchange X25519 server-signature ECDSA (prime256v1) server-digest SHA256)
+	(No client certificate requested)
+	by smtp.subspace.kernel.org (Postfix) with ESMTPS id 0E8C3606A329;
+	Tue, 17 Nov 2026 04:15:01 +0000 (UTC)
+DMARC-Filter: OpenDMARC Filter v1.4.2 smtp.subspace.kernel.org 0E8C3606A329
+Authentication-Results: smtp.subspace.kernel.org; dmarc=pass (p=none dis=none) header.from=realtek.com
+Authentication-Results: smtp.subspace.kernel.org; spf=pass smtp.mailfrom=realtek.com
 Authentication-Results: smtp.subspace.kernel.org;
-	dkim=pass (1024-bit key) header.d=cmss.chinamobile.com header.i=@cmss.chinamobile.com header.a=rsa-sha256 header.s=default header.b=vvq+Ezog
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-	d=cmss.chinamobile.com; s=default; l=0;
-	h=from:subject:message-id:to:cc:mime-version;
-	bh=47DEQpj8HBSa+/TImW+5JCeuQeRkm5NMpJWZG3hSuFU=;
-	b=vvq+Ezog5SoOviNJNBNIk+grJ6fyhK+IwTXMIwWM+xN3CXZeDyzhvHFrUMMFLMHozttCyJddbzR5E
-	 3YwpX5eqBgMSWmhKjlyQxNUK4jf+a4uSTdy5sF17ZjmjoxuoCL6CpP1LCyPz/VjUpFFLmg804PTGuw
-	 d6+J/5LZJeILVTbs=
-X-RM-TagInfo: emlType=0                                       
-X-RM-SPAM-FLAG:00000000
-Received:from spf.mail.chinamobile.com (unknown[10.188.0.87])
-	by rmmx-syy-dmz-app07-12007 (RichMail) with SMTP id 2ee76afbca22e95-05c60;
-	Tue, 17 Nov 2026 11:29:38 +0800 (CST)
-X-RM-TRANSID:2ee76afbca22e95-05c60
-X-RM-TagInfo: emlType=0                                       
-X-RM-SPAM-FLAG:00000000
-Received:from localhost.localdomain (unknown[223.112.32.189])
-	by rmsmtp-syy-appsvr02-12002 (RichMail) with SMTP id 2ee26afbca214b2-a19cf;
-	Tue, 17 Nov 2026 11:29:38 +0800 (CST)
-X-RM-TRANSID:2ee26afbca214b2-a19cf
-From: guohongyu <guohongyu@cmss.chinamobile.com>
-To: lachlan.hodges@morsemicro.com,
-	dan.callaghan@morsemicro.com,
-	arien.judge@morsemicro.com,
-	johannes@sipsolutions.net
-Cc: linux-wireless@vger.kernel.org,
-	linux-kernel@vger.kernel.org,
-	stable@vger.kernel.org,
-	13057616121@163.com
-Subject: [PATCH 1/2] wifi: mm81x: clamp command-response copy to the received skb length
-Date: Tue, 17 Nov 2026 11:22:26 +0800
-Message-ID: <20261117032227.154874-1-guohongyu@cmss.chinamobile.com>
-X-Mailer: git-send-email 2.43.0
+	dkim=pass (2048-bit key, unprotected) header.d=realtek.com header.i=@realtek.com header.a=rsa-sha256 header.s=dkim header.b=RHi7poMd
+X-SpamFilter-By: ArmorX SpamTrap 5.80 with qID 6AH4EkWX24070782, This message is accepted by code: ctloc85258
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=realtek.com; s=dkim;
+	t=1794888886; bh=jpEA1p737d/LV6b1EhSKDxczg7NwRl/i2PETIxXcRJM=;
+	h=From:To:CC:Subject:Date:Message-ID:References:In-Reply-To:
+	 Content-Type:Content-Transfer-Encoding:MIME-Version;
+	b=RHi7poMdqSSknvK19taRqxFECNnhOURXLeo5+5iizIs4AFW0xcYQtjH+CZU5YdvAK
+	 geIR+3rsFxHAvhTVWQaW5faUe2UgqHHIJQeC91bngGpBwevPHAJpqzr+rbbKLlwaAO
+	 l2Kkmx42XbdU7DYuJoI2DjRCU++BemhZmuVzKciyKngSR7VTkSJ1StDuEbWTSIgX9Z
+	 XP3yw/PwWrus9Au4Uvfh4EN/JH+ZT79ibkigxklu0nM9pWk3l2BmGvOnTTS6wSWWcQ
+	 iIamuPya4d0jxGiGKyoWh0iLrvc7f+YivO5+NqPPGBj3OiKLUYuGNrZEMt7IGMz0W6
+	 9utT6W06E+zqg==
+Received: from mail.realtek.com (rtkexhmbs03.realtek.com.tw[10.21.1.53])
+	by rtits2.realtek.com.tw (8.15.2/3.29/5.94) with ESMTPS id 6AH4EkWX24070782
+	(version=TLSv1.2 cipher=ECDHE-RSA-AES256-GCM-SHA384 bits=256 verify=FAIL);
+	Tue, 17 Nov 2026 12:14:46 +0800
+Received: from RTKEXHMBS03.realtek.com.tw (10.21.1.53) by
+ RTKEXHMBS03.realtek.com.tw (10.21.1.53) with Microsoft SMTP Server
+ (version=TLS1_2, cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id
+ 15.2.2562.56; Tue, 17 Nov 2026 12:14:44 +0800
+Received: from RTKEXHMBS03.realtek.com.tw ([fe80::d2b4:cd25:1a3e:aca8]) by
+ RTKEXHMBS03.realtek.com.tw ([fe80::d2b4:cd25:1a3e:aca8%9]) with mapi id
+ 15.02.2562.056; Tue, 17 Nov 2026 12:14:44 +0800
+From: Zong-Zhe Yang <kevin_yang@realtek.com>
+To: Enver Ikromov <owner@ph4ntom-rev.uz>, Ping-Ke Shih <pkshih@realtek.com>
+CC: "linux-wireless@vger.kernel.org" <linux-wireless@vger.kernel.org>,
+	"linux-kernel@vger.kernel.org" <linux-kernel@vger.kernel.org>
+Subject: RE: [PATCH rtw-next v5 10/10] wifi: rtw89: restore channel when
+ leaving idle on non-chanctx devices
+Thread-Topic: [PATCH rtw-next v5 10/10] wifi: rtw89: restore channel when
+ leaving idle on non-chanctx devices
+Thread-Index: AQHdc8qsP3ErQ6YwO02QgdrypGLW6bcvjAgAgADEaQCAAVitMA==
+Date: Tue, 17 Nov 2026 04:14:43 +0000
+Message-ID: <4c7cb29ef6f442e6babe7dec989cbfbd@realtek.com>
+References: <20261113235211.1911-1-owner@ph4ntom-rev.uz>
+ <20261113235211.1911-11-owner@ph4ntom-rev.uz>
+ <ef6d8d689d88443e993d667e7a75d538@realtek.com>
+ <20261116152804.781-12-owner@ph4ntom-rev.uz>
+In-Reply-To: <20261116152804.781-12-owner@ph4ntom-rev.uz>
+Accept-Language: zh-TW, en-US
+Content-Language: zh-TW
+Content-Type: text/plain; charset="utf-8"
+Content-Transfer-Encoding: base64
 X-Mailing-List: linux-wireless@vger.kernel.org
 List-Id: <linux-wireless.vger.kernel.org>
 List-Post: <mailto:linux-wireless@vger.kernel.org>
@@ -72,50 +85,21 @@ List-Unsubscribe: <mailto:linux-wireless+unsubscribe@vger.kernel.org>
 List-Owner: <mailto:linux-wireless+owner@vger.kernel.org>
 Precedence: list
 MIME-Version: 1.0
-Content-Transfer-Encoding: 8bit
 
-mm81x_cmd_resp_process() copies a synchronous command response from
-the received skb into the caller-provided buffer:
-
-	length = min_t(int, length,
-		       le16_to_cpu(src_resp->hdr.len) +
-			       sizeof(struct host_cmd_header));
-	memcpy(dest_resp, src_resp, length);
-
-src_resp->hdr.len is the inner host_cmd_header length of the firmware
-response.  The skb, however, was sized by the *outer* mm81x_skb_hdr.len
-(mm81x_yaps_read_pkt(), yaps.c:186-199: skb_len = sizeof(*hdr) +
-hdr->offset + le16_to_cpu(hdr->len); skb_trim(skb, skb_len)), and
-nothing ties the inner header length to the outer one.  A buggy or
-malicious firmware can therefore declare an inner hdr.len far larger
-than the payload actually present, and the memcpy reads past the end of
-the skb's data into adjacent heap memory, leaking it into the command
-response buffer.
-
-Clamp the copy to skb->len so we never read past the data actually
-received.
-
-Fixes: b1906cea00b0 ("wifi: mm81x: add mm81x Wi-Fi HaLow driver")
-Cc: stable@vger.kernel.org
-Signed-off-by: guohongyu <guohongyu@cmss.chinamobile.com>
----
- drivers/net/wireless/morsemicro/mm81x/command.c | 1 +
- 1 file changed, 1 insertion(+)
-
-diff --git a/drivers/net/wireless/morsemicro/mm81x/command.c b/drivers/net/wireless/morsemicro/mm81x/command.c
-index afb7ee9bb236..591e5ba10753 100644
---- a/drivers/net/wireless/morsemicro/mm81x/command.c
-+++ b/drivers/net/wireless/morsemicro/mm81x/command.c
-@@ -209,6 +209,7 @@ int mm81x_cmd_resp_process(struct mm81x *mors, struct sk_buff *skb)
- 		length = min_t(int, length,
- 			       le16_to_cpu(src_resp->hdr.len) +
- 				       sizeof(struct host_cmd_header));
-+		length = min_t(int, length, skb->len);
- 		memcpy(dest_resp, src_resp, length);
- 	} else {
- 		ret = le32_to_cpu(src_resp->status);
--- 
-2.43.0
-
-
-
+RW52ZXIgSWtyb21vdiA8b3duZXJAcGg0bnRvbS1yZXYudXo+IHdyb3RlOg0KPiANCj4gT24gTW9u
+LCBOb3YgMTYsIDIwMjYgYXQgMDM6NDU6MDRBTSArMDAwMCwgUGluZy1LZSBTaGloIHdyb3RlOg0K
+PiA+IFRoZSBjb21taXQgbWVzc2FnZSBtYXkganVzdCBzYXkgdGhhdCBmaXggdGhlIGNoYW5uZWwg
+aW4gbW9uaXRvcg0KPiA+IGRvZXNuJ3QgcmVzdG9yZSBhZnRlciBtb25pdG9yIGludGVyZmFjZSBk
+b3duL3VwLg0KPiA+IFsuLi5dDQo+ID4gRGVjbGFyZSBhIGxvY2FsIHZhcmlhYmxlICdub19jaGFu
+Y3R4ID0NCj4gPiAhcnR3ZGV2LT5vcHMtPmFzc2lnbl92aWZfY2hhbmN0eCc7DQoNClBlcmhhcHMg
+YWRkIGEgc3VwcG9ydF9jaGFuY3R4IGZsYWcgaW4gcnR3ZGV2Lg0KKFlvdSBjYW4gcmVmZXIgdG8g
+dGhlIHN1cHBvcnRfbWxvIGZsYWcuKQ0KVGhlbjoNCiAgICBub19jaGFuY3R4ID0gIXJ0d2Rldi0+
+c3VwcG9ydF9jaGFuY3R4Ow0KDQo+ID4gTW92ZSB0aGlzIHVwd2FyZCBhZnRlciBydHc4OV9sZWF2
+ZV9wc19tb2RlKCksIGFuZCB1cGRhdGUgdGhlICdjaGFuZ2VkJw0KPiA+DQo+ID4gICAgY2hhbmdl
+ZCB8PSBJRUVFODAyMTFfQ09ORl9DSEFOR0VfQ0hBTk5FTDsNCj4gPg0KPiA+IHRvIHNoYXJlIGV4
+aXN0aW5nIGNvZGUuDQo+IA0KPiBUZXN0ZWQgeW91ciBleGFjdCBzbmlwcGV0IG9uIFJUTDg4NTJB
+RSBhY3Jvc3MgY29sZCBzdGFydCBhbmQgbW9uaXRvcg0KPiBkb3duL3VwIG9uIDUgR0h6ICg4MCBN
+SHopLCBhbmQgUlggYW5kIFRYIHJlc3RvcmUgY2xlYW5seS4gSSB3aWxsIHVzZSB0aGlzDQo+IGFw
+cHJvYWNoLCBzaG9ydGVuIHRoZSBjb21taXQgbWVzc2FnZSwgYW5kIHBsYWNlIHRoZSBwYXRjaCBi
+ZWZvcmUgdGhlIGZlYXR1cmUNCj4gcGF0Y2hlcyBpbiB2NiBhcyBab25nLVpoZSBzdWdnZXN0ZWQu
+DQo+IA0K
