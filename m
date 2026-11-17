@@ -1,77 +1,46 @@
-Authentication-Results: smtp.subspace.kernel.org; arc=none smtp.remote-ip=119.15.109.137
+Authentication-Results: smtp.subspace.kernel.org; arc=none smtp.remote-ip=45.145.95.4
 ARC-Seal: i=1; d=subspace.kernel.org; s=arc20261015; a=rsa-sha256; cv=none;
-	t=1794910462;
-	b=koaUoPMfzkeKW9DoQopC4z30haXMt+WA9/y/RaNqvsCMN0rF/r7frXA5ES3k0OaYO45i
-	 SQXCaxH85YDnfyik3YKu3kRXKOVLTBgzDwZ7bq2BosXNTchxXivUSpbBMsTcElyxqBBEJ
-	 5aTgAimy5+xrYYfRGhuevWfTBHk2mom7Lvhmsiebe0Gv7gVrWPG5WvzaX3N5nSn7Wd4aq
-	 I9cacnGBEXa39AE5Dr6AcaScw88YY+30BuHvW+goGWXxejRwx+rm0q47PfxlvDXfDQrGb
-	 vzFFVHuzoeQKI8/nEhZGUepkK766ayzKvssb/hcHNfLwGBq4cCM+i5Y8fH15qQtWmCg==
+	t=1794911125;
+	b=Tob2oWWrva2T3wDbr7i7IVgtX+qfa+NRcV8g+RT8eELXQO/xBecC3/bLHpcLKhXeCRe1
+	 tY/1noZurtCI9y6A3ShcmqB4c36LrfnJNYz/NRK3rjzU3CtU/7IXmkWe92dDk0oDWyQCW
+	 DHy7is8VdTILJBD0zLUFCNDDbfuk4iIhVcYy6bb2mC8X+BzReEHEP7jUWtBxDyD1Of5Qr
+	 wTJbctM6d5MXoL0+zLQLeDB3Hs8upR0Dhj4woEfTTOd4PevtZQ/qQJqkG2vqTXM6HaoZo
+	 wwxNo75A9fyg9btwsCu8XfAG/u3tHUbA5mXAzQsTR3nki7KzdNNbBCLQjt2ZhMEoiaQ==
 ARC-Message-Signature: i=1; d=subspace.kernel.org; s=arc20261015;
-	a=rsa-sha256; c=relaxed/relaxed; t=1794910462;
-	h=DMARC-Filter:Received:DKIM-Signature:X-GPT-Reason:From:To:Cc:Subject:
-	 Date:Message-ID:X-Mailer:In-Reply-To:References:MIME-Version:
-	 Content-Transfer-Encoding;
-	bh=+7ul3OF8HHUvqsRXXBWXLj40o6dUYm7dd7f6zWwBbpY=;
-	b=MhDzT6pGRZQpBBSrdJmil96PEqXpq0REyJD4smbnrzwKVQ8F6gNWPP5f58gm8dIvEwrY
-	 vu3aPDzwxYpGWB5iRJPQHoxXA7cdPgSOYRJUzB5Xf+x/583NcN8lsqFLvgncKE5gZZCp5
-	 hzr0zhTeVBN4poYgRwCOe4m9kLxNHdL7NINgVNaGoz04o/1eyI4iLxcV8gieg68jIUKFL
-	 JEw4Wqcmv7jGjXsLqoZfsaEiPHMwii1Q0DU+qlUgREUbyYAPFaM4OK1Rd0YVFQxgR/Vvu
-	 Et8RpLU0uJJ2rSlcJbhAkf2TUUeVfUlIMXogN8+6VBy7gbp4EAJCypnBHL82hVr6g4w==
+	a=rsa-sha256; c=relaxed/relaxed; t=1794911125;
+	h=DMARC-Filter:From:To:Cc:Subject:In-Reply-To:References:Date:
+	 X-Clacks-Overhead:Message-ID:MIME-Version:Content-Type;
+	bh=Um5CS4DWBBrUH6jR7Nw25CFMYmy9leGAKLeb8NaQSdU=;
+	b=I3OXvXACEBjISuGw/qmDNkU0A31fv5wvg3ppklto22w5CeBLO6H4n+OllR0rHkm7ovOM
+	 1i48xkUPGu77rfhLShDPJu9Z/Czh26Byr1jq5QGRJmaYn2fEuZPaxpfWhzYKbLxQqFAZV
+	 TmI7kM+p0aulYgLw0gS0cg9l3ox93sEKdXVaTQNhaa0y1yd4rWwHkdLg4iE++OAZJQi+2
+	 fUXMJL0muGxUHVBqgGjELQcwXnkdXXt8VLRrz8myx6pUIrZvzZ84vs468X1/qV0Mr3ilg
+	 vcOUSgRfvoGdnZCjH6WR8cjCvtQhj3mIeWLI+CXWf8OFtFh7HQmBmmfpFabRcrl8CNg==
 ARC-Authentication-Results: i=1; smtp.subspace.kernel.org; 
-	dmarc=pass header.from=d-silva.org;
-	spf=pass smtp.mailfrom=d-silva.org;
-	dkim=pass header.d=d-silva.org header.i=@d-silva.org header.a=rsa-sha256 header.s=2025a header.b=poHvmjcI;
-	arc=none smtp.remote-ip=119.15.109.137
-Received: from www.nmnhosting.com (watt.d-silva.org [119.15.109.137])
+	dmarc=pass header.from=toke.dk;
+	spf=pass smtp.mailfrom=toke.dk;
+	arc=none smtp.remote-ip=45.145.95.4
+Received: from mail.toke.dk (mail.toke.dk [45.145.95.4])
 	(using TLSv1.3 with cipher TLS_AES_256_GCM_SHA384 (256/256 bits)
-	 key-exchange X25519 server-signature ECDSA (prime256v1))
+	 key-exchange X25519 server-signature ECDSA (prime256v1) server-digest SHA256)
 	(No client certificate requested)
-	by smtp.subspace.kernel.org (Postfix) with ESMTPS id BCFED606A336;
-	Tue, 17 Nov 2026 10:14:21 +0000 (UTC)
-DMARC-Filter: OpenDMARC Filter v1.4.2 smtp.subspace.kernel.org BCFED606A336
-Authentication-Results: smtp.subspace.kernel.org; dmarc=pass (p=reject dis=none) header.from=d-silva.org
-Authentication-Results: smtp.subspace.kernel.org; spf=pass smtp.mailfrom=d-silva.org
-Authentication-Results: smtp.subspace.kernel.org;
-	dkim=pass (2048-bit key) header.d=d-silva.org header.i=@d-silva.org header.a=rsa-sha256 header.s=2025a header.b=poHvmjcI
-Received: from Hawking.lan (hawking.lan [10.0.1.4])
-	by www.nmnhosting.com (Postfix) with ESMTP id 3BF3B44A4F;
-	Tue, 17 Nov 2026 21:14:14 +1100 (AEDT)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=d-silva.org; s=2025a;
-	t=1794910454;
-	h=from:from:reply-to:subject:subject:date:date:message-id:message-id:
-	 to:to:cc:cc:mime-version:mime-version:
-	 content-transfer-encoding:content-transfer-encoding:
-	 in-reply-to:in-reply-to:references:references;
-	bh=+7ul3OF8HHUvqsRXXBWXLj40o6dUYm7dd7f6zWwBbpY=;
-	b=poHvmjcIl6sod+UlQBTPkgA6Fz622wMSVOmOKQjj9crs/05wFAuZSyuUO5grlOHSrzCTYi
-	yhFzfT8FERbdfTZPbaAqamhMOPdgAtl7lRMMYXKqhE5wtvXOulmTc61LrATjeScrD4gg3K
-	aaPduKBB8Rkb0c1fEE/F5bRGewC/vJDs446te6U/KJjqQ0oNHjJ9B3MV9oWUzrgFbG8Zi1
-	LuNlDAkEnCgv25e/yZVeqxFNjop6T6drQAQ5ZuhswZSM4l7lmMS1fPVRcfyeNcVhwB/aC9
-	Hfn/8Ig9IUzmNYft60w5yeiFDs+n6QlGK/M3bg4Bxj4Ldfo/yfmAtvygB9NXZg==
-X-GPT-Reason: The message is classified as legitimate personal/professional
-	correspondence. The content is a technical Linux kernel patch
-	description (rtw88 driver) which aligns perfectly with the sender's
-	identity (alastair@d-silva.org) and the personal nature of the
-	mailbox. There are no signs of marketing, urgency, or phishing; the
-	From domain matches the sender's name, no suspicious URLs are present,
-	and the technical "Acked-by" and "Reviewed-by" fields indicate
-	a standard open-source development workflow.
-From: Alastair D'Silva <alastair@d-silva.org>
-To: linux-wireless@vger.kernel.org,
-	Ping-Ke Shih <pkshih@realtek.com>,
-	Kalle Valo <kvalo@kernel.org>
-Cc: Luka Gejak <luka.gejak@linux.dev>,
-	Martin Blumenstingl <martin.blumenstingl@googlemail.com>,
-	Jernej Skrabec <jernej.skrabec@gmail.com>,
-	Ulf Hansson <ulfh@kernel.org>,
-	linux-kernel@vger.kernel.org,
-	Alastair D'Silva <alastair@d-silva.org>
-Subject: [PATCH rtw-next v11 4/4] wifi: rtw88: sdio: Split rtw_sdio_rx_isr into 8051 and 3081 variants
-Date: Tue, 17 Nov 2026 21:13:47 +1100
-Message-ID: <20261117101347.2157211-5-alastair@d-silva.org>
-X-Mailer: git-send-email 2.53.0
-In-Reply-To: <20261117101347.2157211-1-alastair@d-silva.org>
-References: <20261117101347.2157211-1-alastair@d-silva.org>
+	by smtp.subspace.kernel.org (Postfix) with ESMTPS id 6B043606A31C;
+	Tue, 17 Nov 2026 10:25:24 +0000 (UTC)
+DMARC-Filter: OpenDMARC Filter v1.4.2 smtp.subspace.kernel.org 6B043606A31C
+Authentication-Results: smtp.subspace.kernel.org; dmarc=pass (p=none dis=none) header.from=toke.dk
+Authentication-Results: smtp.subspace.kernel.org; spf=pass smtp.mailfrom=toke.dk
+Authentication-Results: mail.toke.dk; dkim=none
+From: Toke =?utf-8?Q?H=C3=B8iland-J=C3=B8rgensen?= <toke@toke.dk>
+To: Mehmet Fide <mehmet.fide@gmail.com>
+Cc: Chun-Yeow Yeoh <yeohchunyeow@gmail.com>, linux-wireless@vger.kernel.org,
+ linux-kernel@vger.kernel.org, mehmet.fide@screeningeagle.com
+Subject: Re: [PATCH ath-next] wifi: ath9k_htc: do not fetch the beacon of a
+ finished countdown
+In-Reply-To: <20261102123430.1136741-1-mehmet.fide@gmail.com>
+References: <20261102123430.1136741-1-mehmet.fide@gmail.com>
+Date: Tue, 17 Nov 2026 11:25:21 +0100
+X-Clacks-Overhead: GNU Terry Pratchett
+Message-ID: <87fqwzu54e.fsf@toke.dk>
 X-Mailing-List: linux-wireless@vger.kernel.org
 List-Id: <linux-wireless.vger.kernel.org>
 List-Post: <mailto:linux-wireless@vger.kernel.org>
@@ -81,120 +50,84 @@ List-Unsubscribe: <mailto:linux-wireless+unsubscribe@vger.kernel.org>
 List-Owner: <mailto:linux-wireless+owner@vger.kernel.org>
 Precedence: list
 MIME-Version: 1.0
-Content-Transfer-Encoding: 8bit
+Content-Type: text/plain
 
-Split rtw_sdio_rx_isr() into separate 8051 and 3081 variants to be
-clear. The two differences between the architectures are:
-- Register size: REG_SDIO_RX0_REQ_LEN is 16-bit on 8051, 32-bit on 3081.
-- HISR behavior: 8051 re-reads REG_SDIO_HISR on each iteration, while
-  3081 drains based on rx_len without re-reading HISR.
+Mehmet Fide <mehmet.fide@gmail.com> writes:
 
-This is a refactoring without any logic changes.
+> From: Mehmet Fide <mehmet.fide@screeningeagle.com>
+>
+> ath9k_htc_send_beacon() checks the channel switch countdown only after
+> ieee80211_beacon_get(). mac80211 replaces the CSA beacon only after the
+> channel change, and ath9k_htc_set_channel() re-enables beaconing before
+> that, so an SWBA event can fetch the CSA beacon again on the new channel
+> and mac80211 reports "beacon TX faster than countdown".
+>
+> Skip the beacon while the countdown is complete and finish the switch
+> from there, as ath9k does for non-EDMA chips. Finishing from the skip
+> also covers a count of 2, where the first fetch can complete the
+> countdown before csa_vif is set.
+>
+> Tested on 6.12 with an AR9271 AP and hostapd chan_switch: the CSA beacon
+> was fetched again in 3 of 40 switches with a count of 5 before and in
+> none after, and all 60 switches with a count of 2 completed.
+>
+> Fixes: f0e449627e4a ("ath9k_htc: add support of channel switch")
+> Signed-off-by: Mehmet Fide <mehmet.fide@screeningeagle.com>
+> ---
+>  drivers/net/wireless/ath/ath9k/htc_drv_beacon.c | 7 +++++++
+>  1 file changed, 7 insertions(+)
+>
+> diff --git a/drivers/net/wireless/ath/ath9k/htc_drv_beacon.c b/drivers/net/wireless/ath/ath9k/htc_drv_beacon.c
+> index 81fa7cbad892..2b5bf07511bb 100644
+> --- a/drivers/net/wireless/ath/ath9k/htc_drv_beacon.c
+> +++ b/drivers/net/wireless/ath/ath9k/htc_drv_beacon.c
+> @@ -214,6 +214,13 @@ static void ath9k_htc_send_beacon(struct ath9k_htc_priv *priv,
+>  		return;
+>  	}
+>  
+> +	if (vif->bss_conf.csa_active &&
+> +	    ieee80211_beacon_cntdwn_is_complete(vif, 0)) {
+> +		spin_unlock_bh(&priv->beacon_lock);
+> +		ath9k_htc_csa_is_finished(priv);
+> +		return;
+> +	}
+> +
 
-Acked-by: Ping-Ke Shih <pkshih@realtek.com>
-Reviewed-by: Luka Gejak <luka.gejak@linux.dev>
-Signed-off-by: Alastair D'Silva <alastair@d-silva.org>
----
- drivers/net/wireless/realtek/rtw88/sdio.c | 58 +++++++++++++----------
- 1 file changed, 33 insertions(+), 25 deletions(-)
+Hmm, there's something odd going on with the locking / vif selection
+here. In the snippet above, you're basically replicating the checks
+inside ath9k_htc_csa_is_finished(), before then calling
+ath9k_htc_csa_is_finished() itself. Which presumably then repeats the
+same checks, and does the ieee80211_csa_finish()? Or at least that's
+the logic for why this is correct, AFAIU, no?
 
-diff --git a/drivers/net/wireless/realtek/rtw88/sdio.c b/drivers/net/wireless/realtek/rtw88/sdio.c
-index ca3006f21cd25..300244bef6f67 100644
---- a/drivers/net/wireless/realtek/rtw88/sdio.c
-+++ b/drivers/net/wireless/realtek/rtw88/sdio.c
-@@ -1479,17 +1479,13 @@ static int rtw_sdio_rxfifo_recv(struct rtw_dev *rtwdev, u32 rx_len)
- 	return 0;
- }
- 
--static void rtw_sdio_rx_isr(struct rtw_dev *rtwdev)
-+static void rtw_sdio_rx_isr_8051(struct rtw_dev *rtwdev)
- {
- 	u32 rx_len, hisr, total_rx_bytes = 0;
- 	int ret;
- 
- 	do {
--		if (rtw_chip_wcpu_8051(rtwdev))
--			rx_len = rtw_read16(rtwdev, REG_SDIO_RX0_REQ_LEN);
--		else
--			rx_len = rtw_read32(rtwdev, REG_SDIO_RX0_REQ_LEN);
--
-+		rx_len = rtw_read16(rtwdev, REG_SDIO_RX0_REQ_LEN);
- 		if (!rx_len)
- 			break;
- 
-@@ -1499,33 +1495,45 @@ static void rtw_sdio_rx_isr(struct rtw_dev *rtwdev)
- 
- 		total_rx_bytes += rx_len;
- 
--		if (rtw_chip_wcpu_8051(rtwdev)) {
--			/* Stop if no more RX requests are pending, even if
--			 * rx_len could be greater than zero in the next
--			 * iteration. This is needed because the RX buffer may
--			 * already contain data while either HW or FW are not
--			 * done filling that buffer yet. Still reading the
--			 * buffer can result in packets where
--			 * rtw_rx_pkt_stat.pkt_len is zero or points beyond the
--			 * end of the buffer.
--			 */
--			hisr = rtw_read32(rtwdev, REG_SDIO_HISR);
--		} else {
--			/* RTW_WCPU_3081 chips have improved hardware or
--			 * firmware and can use rx_len unconditionally.
--			 */
--			hisr = REG_SDIO_HISR_RX_REQUEST;
--		}
-+		/*
-+		 * Stop if no more RX requests are pending, even if
-+		 * rx_len could be greater than zero in the next
-+		 * iteration. This is needed because the RX buffer may
-+		 * already contain data while either HW or FW are not
-+		 * done filling that buffer yet. Still reading the
-+		 * buffer can result in packets where
-+		 * rtw_rx_pkt_stat.pkt_len is zero or points beyond the
-+		 * end of the buffer.
-+		 */
-+		hisr = rtw_read32(rtwdev, REG_SDIO_HISR);
- 	} while (total_rx_bytes < SZ_64K && hisr & REG_SDIO_HISR_RX_REQUEST);
- }
- 
-+static void rtw_sdio_rx_isr_3081(struct rtw_dev *rtwdev)
-+{
-+	u32 rx_len, total_rx_bytes = 0;
-+	int ret;
-+
-+	do {
-+		rx_len = rtw_read32(rtwdev, REG_SDIO_RX0_REQ_LEN);
-+		if (!rx_len)
-+			break;
-+
-+		ret = rtw_sdio_rxfifo_recv(rtwdev, rx_len);
-+		if (ret)
-+			break;
-+
-+		total_rx_bytes += rx_len;
-+	} while (total_rx_bytes < SZ_64K);
-+}
-+
- static void rtw_sdio_handle_interrupt_8051(struct rtw_dev *rtwdev, u32 hisr)
- {
- 	if (hisr & REG_SDIO_HISR_TXERR)
- 		rtw_sdio_tx_err_isr(rtwdev);
- 	if (hisr & REG_SDIO_HISR_RX_REQUEST) {
- 		hisr &= ~REG_SDIO_HISR_RX_REQUEST;
--		rtw_sdio_rx_isr(rtwdev);
-+		rtw_sdio_rx_isr_8051(rtwdev);
- 	}
- 
- 	/*
-@@ -1555,7 +1563,7 @@ static void rtw_sdio_handle_interrupt_3081(struct rtw_dev *rtwdev, u32 hisr)
- 	if (hisr & REG_SDIO_HISR_TXERR)
- 		rtw_sdio_tx_err_isr(rtwdev);
- 	if (hisr & REG_SDIO_HISR_RX_REQUEST)
--		rtw_sdio_rx_isr(rtwdev);
-+		rtw_sdio_rx_isr_3081(rtwdev);
- 
- 	/*
- 	 * Unmasking HIMR re-asserts the IRQ line if new packets arrived or if
--- 
-2.53.0
+But ath9k_htc_csa_is_finished() doesn't take the 'vif' from the beacon
+slot, it takes the 'priv' pointer that was passed to the function. Which
+implies that either:
 
+(1) priv->csa_vif is guaranteed to be the same whenever csa_active is
+set, and thus this doesn't matter, or
+
+(2) there's a bug here and things can get mixed up.
+
+Since there's already a call to ath9k_htc_csa_is_finished(priv) at the
+end of that same function, I'm assuming it's case (1) that holds. In
+which case, I don't see any reason why we can't just do an early return
+before taking the lock as:
+
+if (ath9k_htc_csa_is_finished(priv))
+   return;
+
+The priv->csa_vif pointer is not protected by the beacon lock anyway[0], so
+I don't think this would lead to trouble?
+
+Thoughts?
+
+-Toke
+
+[0] Side note - the priv->csa_vif pointer seems to be quite
+inconsistently lock-protected: it's set under priv->mutex in the driver
+setup paths, under the mac80211 wiphy lock by the
+channel_switch_beacon() callback, and under the wmi lock by
+ath9k_htc_csa_is_finished() itself. Not quite sure if there's some other
+dependency between these locks that ensures this works, or if that's
+just a total coincidence...
