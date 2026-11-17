@@ -1,63 +1,89 @@
-Authentication-Results: smtp.subspace.kernel.org; arc=none smtp.remote-ip=168.119.38.16
+Authentication-Results: smtp.subspace.kernel.org; arc=none smtp.remote-ip=94.130.186.121
 ARC-Seal: i=1; d=subspace.kernel.org; s=arc20261015; a=rsa-sha256; cv=none;
-	t=1794924375;
-	b=X+STI/DOr53OkH8njb1t2lrdg8skafpLAUUjWi+JMiQXsr/PYyGBZUcWzvO5YMEwPwRO
-	 KGnVmzOIvmwZYiGf8/P6oXOUtPF64nmndcirKWJzRKNb2sXl7VTh+74fbeqvPPZdCuEyI
-	 Rtg4ULxZAslYKY/9LsjIewcggc8h+ClZ3Vcksi7+TNYvkGsFiFC2EubV/XBUwHQZicHdd
-	 /+6pkCLmYnXYjpdfC3mEvg4GeCKSiJb8CjoET5K+jNnpz2x53YH2oY0UTOLA1OKUCFPKt
-	 aTISlSo+/6/NkdqLkmt1cquHbG+CHXipsYP6fDtbxJzIhBCj8xys3cqmfYKR9U/ZiEA==
+	t=1794926687;
+	b=I37toDkP73wXHjxSjd5PXcHa3R9bNpWFONqWfPCJ/PuaVWh+l4ZAoBC31kK5ArwugLrO
+	 01Jv2MiQsI6j5Tg2cn8QfuGV0q5x/mxXMKHX9cldz6SuJXwnCo1golvLE1I6l4R2jzAJj
+	 jQza18XgLcTJ2XsthEB+4bkt8o7pn90QHGggYRzoaA37v9GbymRETK/GwUH90hdTiYAkA
+	 PSRgpJZRkayo27XvrYxdTN6TXQnvpanSArQYPHEiWl056KwdFavLNHx9cjHCyjFVtt5ww
+	 EBqVmp9zfUL9Lu2jYKISgdEXBgRndO1huXzV+gIgGUKo+6d/6DhMPn3rPqNE3yTWw1w==
 ARC-Message-Signature: i=1; d=subspace.kernel.org; s=arc20261015;
-	a=rsa-sha256; c=relaxed/relaxed; t=1794924375;
-	h=DKIM-Signature:Received:Message-ID:Subject:From:To:Date:In-Reply-To:
-	 References:Content-Type:Content-Transfer-Encoding:User-Agent:
-	 MIME-Version:X-malware-bazaar;
-	bh=TI4z+WsJUkXducHM9tsLduN4n3Y6eqgVGUOqVnsPesg=;
-	b=sRr3vQGLi5cbxVJx5kf7Mj1q/v6vfhC2j9KoS1x5DyEIsC8jDW81/aY0ClwhwX41lD0E
-	 Cyv3SuyOnX6MB8++91dsYIYZx89ppuCVA7HFWxX83DLpQzbFGefTPXlAd4nAd/jf1Ktw0
-	 XNgvT3Yke6xJV0yCdLkFOJf2T13+658xbB/DJrYazjlXeLsrubgmRu9Im0zThq3ex9dDK
-	 flqeLow06dmkFxXmof4F63WOhUvYWtxwFSQs0LwrdGIs+VEmMGJZ9h9ZyEhT5hf6Qy0x+
-	 7fKTfKWswPQpL8ry0j/iokJnTrNJZNcvy1BSM2N0OfAoR2o+8zUuY+BPiZK/4gjnfMA==
+	a=rsa-sha256; c=relaxed/relaxed; t=1794926687;
+	h=DMARC-Filter:Received:DKIM-Signature:DKIM-Signature:Received:
+	 Received:Date:From:To:Cc:Subject:Message-ID:Mail-Followup-To:
+	 References:MIME-Version:Content-Type:Content-Disposition:
+	 Content-Transfer-Encoding:In-Reply-To;
+	bh=PHXoIi8ouLda/eOhfRDumPGk6plK6QA3eTC0611Rdb4=;
+	b=hTl+RGD/fZ5nCFriItV7SFjdhW+8Vj1HcitWTGu9tYKqBnHol4BX1LQuAkue42RTYxAe
+	 wInajsx028/hGAwckUcQ0DqGWlNSHCesRk2TLFXrW0kaqj1Ok0T3RAp/lIoeCZgIY0555
+	 fI27eRMzmmP/n1z7g83BpNWPL6lxtlNKI48vxubWWblt0UyBLGXD4BtMWW9vwJ0b9QQRw
+	 irYPMegXS58fBu/FzmxFvHt9vtW+EVOrDfyKmFeJoVH9jB4hzqfom+JW+pLqraEHajFeW
+	 iPR4OS6u3M8re7bme6g4QsZzzy7u10QBdNGJXnsizlTEQ5yoik2JGbniQVUOgnRKgYQ==
 ARC-Authentication-Results: i=1; smtp.subspace.kernel.org; 
-	dmarc=permerror header.from=sipsolutions.net;
-	spf=pass smtp.mailfrom=sipsolutions.net;
-	dkim=pass header.d=sipsolutions.net header.i=@sipsolutions.net header.a=rsa-sha256 header.s=mail header.b="tFqZN/Wm";
-	arc=none smtp.remote-ip=168.119.38.16
-Received: from sipsolutions.net (s3.sipsolutions.net [168.119.38.16])
+	dmarc=none header.from=hardeman.nu;
+	spf=pass smtp.mailfrom=hardeman.nu;
+	arc=none smtp.remote-ip=94.130.186.121
+Received: from thor.hardeman.nu (thor.hardeman.nu [94.130.186.121])
 	(using TLSv1.3 with cipher TLS_AES_256_GCM_SHA384 (256/256 bits)
-	 key-exchange ECDHE (prime256v1) server-signature ECDSA (prime256v1) server-digest SHA256)
+	 key-exchange X25519 server-signature ECDSA (prime256v1) server-digest SHA256)
 	(No client certificate requested)
-	by smtp.subspace.kernel.org (Postfix) with ESMTPS id AEC12606A330
-	for <linux-wireless@vger.kernel.org>; Tue, 17 Nov 2026 14:06:14 +0000 (UTC)
-Authentication-Results: smtp.subspace.kernel.org; dmarc=permerror header.from=sipsolutions.net
-Authentication-Results: smtp.subspace.kernel.org; spf=pass smtp.mailfrom=sipsolutions.net
-Authentication-Results: smtp.subspace.kernel.org;
-	dkim=pass (2048-bit key, unprotected) header.d=sipsolutions.net header.i=@sipsolutions.net header.a=rsa-sha256 header.s=mail header.b=tFqZN/Wm
-DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=sipsolutions.net; s=mail; h=MIME-Version:Content-Transfer-Encoding:
-	Content-Type:References:In-Reply-To:Date:To:From:Subject:Message-ID:Sender:
-	Reply-To:Cc:Content-ID:Content-Description:Resent-Date:Resent-From:Resent-To:
-	Resent-Cc:Resent-Message-ID; bh=TI4z+WsJUkXducHM9tsLduN4n3Y6eqgVGUOqVnsPesg=;
-	t=1794924374; x=1796133974; b=tFqZN/Wmm1xEpjehWAzOWhOxpMLxi3ef1cvtdAbefHvPf8q
-	TQkyQQVopcIdPIQs1tPzXNof6sNZGEZq/aZ/GDl4DJV5cfxXjxGYx0RKTKX7Tn7CLCsHG8Gio0PiY
-	BJPm6kizC2VfpF6rWtVClIIvYqevLbCo6Mifcy/po19ENQwAfnFY1hn51J3xgUCEnFma5fAzAmHit
-	fkPvJuQEZkBFJT4OWm/j7BVJJGo44qIpYuC4I0pnAiKupeDvHWGJNMbRvd9iMeWr5ky1dBSSi5u8b
-	807C/zjI8aBMA1N4Vw7g3V3z5A5zAu+DdTIjQC3PsxUMXL1WEdD/W358pUSywnKA==;
-Received: by sipsolutions.net with esmtpsa (TLS1.3:ECDHE_X25519__ECDSA_SECP256R1_SHA256__AES_256_GCM:256)
-	(Exim 4.98.2)
-	(envelope-from <johannes@sipsolutions.net>)
-	id 1xTJp0-00000000YNJ-0vEO;
-	Tue, 17 Nov 2026 15:06:06 +0100
-Message-ID: <d654e38a45785b29bf79cb35929d706bad1ab909.camel@sipsolutions.net>
-Subject: Re: pull-request: nxpwifi-next-20261106
-From: Johannes Berg <johannes@sipsolutions.net>
-To: jeff.chen_1@oss.nxp.com, linux-wireless@vger.kernel.org
-Date: Tue, 17 Nov 2026 15:06:04 +0100
-In-Reply-To: <20261117134456.477898-1-jeff.chen_1@oss.nxp.com>
-References: <20261111013858.98465-1-jeff.chen_1@oss.nxp.com>
-	 <20261117134456.477898-1-jeff.chen_1@oss.nxp.com>
-Content-Type: text/plain; charset="UTF-8"
-Content-Transfer-Encoding: quoted-printable
-User-Agent: Evolution 3.60.2 (3.60.2-3.fc44) 
+	by smtp.subspace.kernel.org (Postfix) with ESMTPS id 5EDF0606A31C;
+	Tue, 17 Nov 2026 14:44:44 +0000 (UTC)
+DMARC-Filter: OpenDMARC Filter v1.4.2 smtp.subspace.kernel.org 5EDF0606A31C
+Authentication-Results: smtp.subspace.kernel.org; dmarc=none (p=none dis=none) header.from=hardeman.nu
+Authentication-Results: smtp.subspace.kernel.org; spf=pass smtp.mailfrom=hardeman.nu
+Received: from thor.hardeman.nu (thor.hardeman.nu [IPv6:fd27:2a41:8fcb:2::a])
+	(using TLSv1.3 with cipher TLS_AES_256_GCM_SHA384 (256/256 bits)
+	 key-exchange x25519 server-signature RSA-PSS (2048 bits) server-digest SHA256
+	 client-signature ECDSA (secp384r1) client-digest SHA384)
+	(Client CN "thor.hardeman.nu", Issuer "Hardeman Internal Mail Relay CA" (verified OK))
+	(Authenticated sender: nullmailer@odin.hardeman.nu)
+	by thor.hardeman.nu (Postfix) with ESMTPSA id 4jTSDn5P58zFpfj;
+	Tue, 17 Nov 2026 15:44:41 +0100 (CET)
+DKIM-Signature: v=1; a=ed25519-sha256; c=relaxed/relaxed; d=hardeman.nu;
+	s=202608-ed25519; t=1794926681;
+	h=from:from:reply-to:subject:subject:date:date:message-id:message-id:
+	 to:to:cc:cc:mime-version:mime-version:content-type:content-type:
+	 content-transfer-encoding:content-transfer-encoding:
+	 in-reply-to:in-reply-to:references:references;
+	bh=PHXoIi8ouLda/eOhfRDumPGk6plK6QA3eTC0611Rdb4=;
+	b=OidOVGcj5jSJL/RbruFcEDywi0NNeAxMzWNFnzgm4fyKh/IayFguF2OPI6XiSImGTM1uHB
+	8aS6Hh6WBieTmgDg==
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=hardeman.nu; s=202608-rsa;
+	t=1794926681;
+	h=from:from:reply-to:subject:subject:date:date:message-id:message-id:
+	 to:to:cc:cc:mime-version:mime-version:content-type:content-type:
+	 content-transfer-encoding:content-transfer-encoding:
+	 in-reply-to:in-reply-to:references:references;
+	bh=PHXoIi8ouLda/eOhfRDumPGk6plK6QA3eTC0611Rdb4=;
+	b=W2KlU7pDyAqyHIksiR1nGc03Jb8PYAWbpOIDZ+HL1zD4Xal+HYV89k4IJ1Tr4JYkjlMnlU
+	sA1jIdIqdztM9c9oWBtzbs0FA3n4NXdVTSJtFOGxZ3QelMzzTtxFA0ZvJ6VKEtMh+s949z
+	R8xFpuKwhuXgh4qb7MUIglthUvsfSBX7EtxLOBWhqeDVFp6XNW0tMuOiL1yOwJjIw1RbI1
+	SMfA11B7a1preyJCE+JZlkEVz0Puq1KP1+MVNLnybIX6o8ySqCAVej1FC2AVzPM9K+Px4u
+	mz4QdbU9Gx9osW4+QFc44U++FZoe6uLhLE79RC/OLfPKWlTuFQCktT5H8ViRxQ==
+Received: from odin.hardeman.nu ([fd27:2a41:8fcb:2::a])
+	by thor.hardeman.nu with ESMTPSA
+	id wElRI1lo/GqCFikAWTs42w
+	(envelope-from <david@odin.hardeman.nu>); Tue, 17 Nov 2026 15:44:41 +0100
+Received: (nullmailer pid 3747762 invoked by uid 2002000001);
+	Tue, 17 Nov 2026 14:44:41 -0000
+Date: Tue, 17 Nov 2026 15:44:41 +0100
+From: David =?iso-8859-1?Q?H=E4rdeman?= <david@hardeman.nu>
+To: Ping-Ke Shih <pkshih@realtek.com>
+Cc: "linux-wireless@vger.kernel.org" <linux-wireless@vger.kernel.org>, "linux-kernel@vger.kernel.org" <linux-kernel@vger.kernel.org>, Leonard Lausen <leonard@lausen.nl>, Alastair D'Silva <alastair@d-silva.org>, Luka Gejak <luka.gejak@linux.dev>, Martin Blumenstingl <martin.blumenstingl@googlemail.com>, Jernej Skrabec <jernej.skrabec@gmail.com>, Bitterblue Smith <rtl8821cerfe2@gmail.com>
+Subject: Re: [PATCH rtw-next 0/5] wifi: rtw88: sdio: faster and fairer TX for
+ the 88xx chips
+Message-ID: <avxoWTaI2G8aklLk@hardeman.nu>
+Mail-Followup-To: Ping-Ke Shih <pkshih@realtek.com>,
+	"linux-wireless@vger.kernel.org" <linux-wireless@vger.kernel.org>,
+	"linux-kernel@vger.kernel.org" <linux-kernel@vger.kernel.org>,
+	Leonard Lausen <leonard@lausen.nl>,
+	Alastair D'Silva <alastair@d-silva.org>,
+	Luka Gejak <luka.gejak@linux.dev>,
+	Martin Blumenstingl <martin.blumenstingl@googlemail.com>,
+	Jernej Skrabec <jernej.skrabec@gmail.com>,
+	Bitterblue Smith <rtl8821cerfe2@gmail.com>
+References: <20261116190145.2736364-1-david@hardeman.nu>
+ <4c0d81f7a207468d8bca3c3c1a5b8dc5@realtek.com>
 X-Mailing-List: linux-wireless@vger.kernel.org
 List-Id: <linux-wireless.vger.kernel.org>
 List-Post: <mailto:linux-wireless@vger.kernel.org>
@@ -67,31 +93,137 @@ List-Unsubscribe: <mailto:linux-wireless+unsubscribe@vger.kernel.org>
 List-Owner: <mailto:linux-wireless+owner@vger.kernel.org>
 Precedence: list
 MIME-Version: 1.0
-X-malware-bazaar: not-scanned
+Content-Type: text/plain; charset=iso-8859-1
+Content-Disposition: inline
+Content-Transfer-Encoding: 8bit
+In-Reply-To: <4c0d81f7a207468d8bca3c3c1a5b8dc5@realtek.com>
 
-On Tue, 2026-11-17 at 21:44 +0800, jeff.chen_1@oss.nxp.com wrote:
-> From: Jeff Chen <jeff.chen_1@oss.nxp.com>
->=20
-> On Wed, Nov 11, 2026 at 09:38:58 AM +0800, jeff.chen_1@oss.nxp.com wrote:
-> > Hi Johannes,
-> >=20
-> > Please pull the following nxpwifi updates for Linux v7.5.
-> > This series adds P2P support for nxpwifi.
-> > Resending the pull request.
-> >=20
-> > Thanks,
-> > Jeff
->=20
-> Hi Johannes,
->=20
-> Just following up on this pull request.
-> Please let me know if there are any concerns or if any changes are needed=
-.
+On Tue, Nov 17, 2026 at 07:46:44AM +0000, Ping-Ke Shih wrote:
+>David Härdeman <david@hardeman.nu> wrote:
+>> Known issue, not addressed here: when the client goes off-channel (for
+>> example for a background scan), the chip sometimes gives up on an MPDU
+>> of an A-MPDU session without sending a BAR, and keeps sending up to 64
+>> frames past it. 
+>
+>What do you expect? 
+>
+>     rtw88                client
+>     TX A-MPDU   -->
+>     TX BAR      -->
+>                 <--      BA
+>
+>I have not seen BAR for a long time. Do you really need it?
 
-Don't think so, but also haven't looked much yet ;-)
+First, I'm not a WiFi expert, so please excuse me if my
+understanding/explanation is wrong, weird, or both...
 
-I've just had my own pull request in flight, which only just settled,
-and I might wait until Friday(-ish) until it all settles with Linus
-before I pull anything new.
+That said, I should have explained this better. What I see is:
 
-johannes
+1. The client (iwlwifi) goes off-channel for a scan, about 120 ms at a
+   time. Here these were the background scans that NetworkManager sets
+   up in wpa_supplicant to find roaming candidates, which run every 30 s
+   while the signal is below a threshold.
+
+2. The chip keeps retrying the frames it already has, gives up on one of
+   them (SN n) when the retry limit is reached, and later continues with
+   n+1 and onwards. SN n is never sent again.
+
+3. The client's reorder buffer now has a hole at n. It holds n+1 and the
+   following frames until its reorder timeout fires, or until a frame at
+   n+64 or beyond pushes the window past the hole.
+
+A BAR with starting sequence number n+1 after step 2 would tell the
+client that n won't come, so that it can release the frames it holds
+right away. That's the use I mean, not asking for a BA.
+
+>> rtw88 reports every SDIO data frame as acked, so
+>> mac80211 doesn't know either and can't send a BAR. 
+>
+>Can you check air sniffer if the A-MPDU is actually acked, or firmware
+>report incorrect ack?
+
+I did use a second AP as a sniffer, but it was too far from the R76S to
+decode its VHT data frames. It did see the client's BAs, and no BAR from
+the AP. I can repeat the capture closer to the AP if you think it would
+help (I would have to wait until a time when I'm not interrupting the
+kids' gaming though).
+
+What I have seen:
+
+- On the client, a trace of every MPDU its firmware passed up showed
+  that SN n never arrived (within +-500 ms, on any RX queue), while n+1
+  and onwards arrived as retries once the client was back.
+
+- On the AP, a debug build of the driver that polls the firmware's
+  per-MACID TX statistics every 2 s (H2C 0x43, C2H AP_REQ_TXRPT)
+  saw failed frames only while the client was scanning (13 in four
+  2-minute runs, all during scans).
+
+So I don't think the firmware considers these frames acked: it knows
+that it dropped them, but rtw88 doesn't learn which ones. The "acked" I
+wrote about is what rtw88 tells mac80211 for every SDIO data frame.
+
+>I think mac80211 has no way to send a BAR. How can it do? Driver
+>tells mac80211 once it TX a set of frames?
+
+From what I understand, mac80211 can, but only if the driver tells it
+which frame was dropped: the driver reports that frame as not acked,
+with IEEE80211_TX_STAT_AMPDU_NO_BACK set, and mac80211 then sends a BAR
+with SSN = SN + 1 (see net/mac80211/status.c). iwlwifi's mvm does this
+when a single frame of an A-MPDU fails.
+
+rtw88 can't do that today, because it doesn't learn which frame the chip
+dropped: for SDIO it reports every data frame as acked once it has been
+handed to the chip. That's why I asked if the firmware can report the
+dropped frames (or send the BAR itself).
+
+>> The client's
+>> reorder window then stalls until it is pushed past the hole, which
+>> costs a short throughput dip. 
+>
+>Are there some frames get missed but hardware somehow considers it
+>has acked them already? (I think need to check air sniffer)
+
+See above: as far as I can tell, the frame is missed, and the firmware
+counts it as failed (so it must be aware).
+
+>> With iwlwifi clients it turned into
+>> bursts of up to 63 lost frames per hole because of a reorder buffer
+>> bug there, for which I have sent fixes:
+>> https://lore.kernel.org/linux-wireless/20261116155609.535595-1-david@hardeman.nu/
+>> I tried the hardware BAR settings (REG_BAR_MODE_CTRL thresholds, the
+>> BAR retry bits in the TX descriptor), a longer retry limit, MACID sleep
+>> for dozing clients, per-frame TX reports and a BAR sent by the driver
+>> after the client wakes up; none of them helped, and per-frame reports
+>> only came back for about one frame per A-MPDU. Ping-Ke, is there a way
+>> for the firmware to report which MPDU it dropped, 
+>
+>I think hardware's retry buffer will do it properly. If a frame exceeds
+>retry limit, TX report tells driver a frame is dropped. But this is only
+>for specific frames with SN (see rtw_tx_report_enqueue()). 
+
+I tried requesting that report for every QoS data frame: only about 7 %
+of the requests were answered, roughly one per A-MPDU, and download
+throughput dropped by about a third (~210 to ~140 Mbit/s). So per-frame
+reports don't seem usable for this. A report that only covers the
+dropped frames, with their SN, would be enough.
+
+>> or to send the BAR
+>> itself?
+>
+>As I know BAR is to ask peer to send BA, what does your expectation if
+>you can send BAR?
+
+As above, a BAR with SSN = n+1 moves the client's window past the
+dropped frame. REG_BAR_MODE_CTRL suggests that the MAC can send BARs by
+itself (BAR_EN is set on my chip), but lowering its thresholds made no
+difference to the losses.
+
+As for whether it's needed: with the iwlwifi fix, the remaining cost is
+a throughput dip while the client scans, because it waits for the
+timeout or for the window to be pushed past the hole. So it isn't
+urgent, and this series doesn't try to fix it. I mentioned it as a
+known issue in case there is a firmware feature for it.
+
+-- 
+David Härdeman
