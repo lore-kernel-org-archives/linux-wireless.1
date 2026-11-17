@@ -1,85 +1,53 @@
-Authentication-Results: smtp.subspace.kernel.org; arc=none smtp.remote-ip=211.75.126.72
+Authentication-Results: smtp.subspace.kernel.org; arc=none smtp.remote-ip=100.103.45.18
 ARC-Seal: i=1; d=subspace.kernel.org; s=arc20261015; a=rsa-sha256; cv=none;
-	t=1794876098;
-	b=ugUogWqMKsTaRgWoqpTZWoAZb0nTVMkVt9bh0ElzTbahWRo+nx4Ep7A+0YhCwv/CnQ8G
-	 W1TKUa27hppOzX8ZbOnJydfLFGVkhmxZnZTcA0Tg4UQ4a4h/mxidRf5V+HM0p4JIWWQbw
-	 YviS9Kh2oNC+AO/bLB02s2XWX/fzH/MLGJEuP5T2uq3tZdhQgTxq8w3mxQ38tK0kd1cCi
-	 jGFbvbc3H/FvLaKVskfB39NbdgR1enWID/oAqvEGQLrflShm6bfspbA7514oehKkD0n/V
-	 cr9XNUNh89WBPGgLB664NRkR8D/0dDJnTVZOfj7RaclYcc4kVCWnvv7YeSezCed0agQ==
+	t=1794876343;
+	b=Wwkhzu5r2PbUGjAZCoQkFi8mlnE5wY+GzrTvkkS0WYm7+w6oRQcn1rHElMX8662ysIX/
+	 edvn/oU89t+nN9COO0iUQ512Jenb5URsLLuef/DWsdqxNPBjMWJTdze3M+KFnyC1loyt6
+	 hhiQChPfQOZjbAE/Mw1xKAhBKr7UiL3O0mCh+LlinBjf4eEuml2DV/XtFVreCQnlDwjpQ
+	 SixOz6z60lSpKSDC2h5MAS0UNRN6VAvC//gIal88DWzBXUOincZKR8orCmr1KoQ7zk4SI
+	 lLzYzow3na7g/ieMySs5qXwYlvLTsFUmtrEk5pw2wNTACYakNdvRRZJ+YY2+jx0F6EA==
 ARC-Message-Signature: i=1; d=subspace.kernel.org; s=arc20261015;
-	a=rsa-sha256; c=relaxed/relaxed; t=1794876098;
-	h=DMARC-Filter:X-SpamFilter-By:DKIM-Signature:Received:Received:
-	 Received:Received:From:To:CC:Subject:Thread-Topic:Thread-Index:Date:
-	 Message-ID:References:In-Reply-To:Accept-Language:Content-Language:
-	 x-originating-ip:Content-Type:Content-Transfer-Encoding:MIME-Version;
-	bh=Wamf/8QY/WSddJRl6WK3BwrXY3Yj7OVM7fpv5Bwll44=;
-	b=s4shet6r8ZWoimMNN4XSH8yBdhWbEiblnDlvIi89mgYl2MHc2zhw9xDKsPcwc8YS/ENV
-	 Bo5KDBnjITJFsIoWiGju6YAG3aSm7yLsG9o0ZVLzGRnpnI33236dIVBLcjuGktjEf4Pa6
-	 szwIxtFgvSD7ZhdOmwVrBZDbWDIbapOtmGn9+P8Kbs/y7X9m2Ls4KMgg/h8ikcjYDMszk
-	 ni9dwZPUDweYkJ43uGoc/092BQHoOEWt/uqCxdW3xQ2fhM8u26t9E9apdnnnBcamljiSO
-	 W5qEwSEpfO8fa+QAq9N4KNr0vPKHIOONG/nsLwf8sehkZxl8twMbR7VjUHi6c8b3rog==
+	a=rsa-sha256; c=relaxed/relaxed; t=1794876343;
+	h=Received:DKIM-Signature:Date:From:To:Cc:Subject:Message-ID:
+	 In-Reply-To:References:MIME-Version:Content-Type:
+	 Content-Transfer-Encoding;
+	bh=noljbUX/VThb4fr2sBKGxQKmiG1tVKJPJOeQDSwiGCA=;
+	b=wv5TWlsuNVl4K+gXviLvH20EVsJxTXBsnP0kfNTlP7WMB7Q5j2DSKaOyR+cxCqRoMmVL
+	 OrT5szTeLQT4f3R5qxOu/gkUSb3/8pV9hdpwe5tzXqNEcnPp0OY1M69sf+ofhC4ClRrtE
+	 f78QIViCuGhPHvZRPEkWUcrOSQBdkeLJhaWwqhFzjEjy5jfGH2F++iWV+ad62rmO9ESqB
+	 ilVZtyD6PWGSbFj2O/p4gFjF3U09T2wmYA+AnhVsWXzSz3aYW17Z1arDrzg2g2BWYy5MU
+	 iMlH1nQE2YVjgk0W3pkGe+bpR0jmTlR3qDyrF7ndjYdWj4yqcXWqjuNbk+UQM26KJgA==
 ARC-Authentication-Results: i=1; smtp.subspace.kernel.org; 
-	dmarc=pass header.from=realtek.com;
-	spf=pass smtp.mailfrom=realtek.com;
-	dkim=pass header.d=realtek.com header.i=@realtek.com header.a=rsa-sha256 header.s=dkim header.b=fQ78ZyZ4;
-	arc=none smtp.remote-ip=211.75.126.72
-Received: from rtits2.realtek.com.tw (rtits2.realtek.com [211.75.126.72])
+	dkim=pass header.d=kernel.org header.i=@kernel.org header.a=rsa-sha256 header.s=k20260515 header.b=OGb95pGl;
+	arc=none smtp.remote-ip=100.103.45.18
+Received: from smtp.kernel.org (quasi.space.kernel.org [100.103.45.18])
 	(using TLSv1.3 with cipher TLS_AES_256_GCM_SHA384 (256/256 bits)
-	 key-exchange X25519 server-signature ECDSA (prime256v1) server-digest SHA256)
+	 key-exchange X25519 server-signature ECDSA (prime256v1))
 	(No client certificate requested)
-	by smtp.subspace.kernel.org (Postfix) with ESMTPS id B8D37606A31C;
-	Tue, 17 Nov 2026 00:41:37 +0000 (UTC)
-DMARC-Filter: OpenDMARC Filter v1.4.2 smtp.subspace.kernel.org B8D37606A31C
-Authentication-Results: smtp.subspace.kernel.org; dmarc=pass (p=none dis=none) header.from=realtek.com
-Authentication-Results: smtp.subspace.kernel.org; spf=pass smtp.mailfrom=realtek.com
+	by smtp.subspace.kernel.org (Postfix) with ESMTPS id 1ED4C606A33A;
+	Tue, 17 Nov 2026 00:45:42 +0000 (UTC)
 Authentication-Results: smtp.subspace.kernel.org;
-	dkim=pass (2048-bit key, unprotected) header.d=realtek.com header.i=@realtek.com header.a=rsa-sha256 header.s=dkim header.b=fQ78ZyZ4
-X-SpamFilter-By: ArmorX SpamTrap 5.80 with qID 6AH0fSm353912518, This message is accepted by code: ctloc85258
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=realtek.com; s=dkim;
-	t=1794876088; bh=Wamf/8QY/WSddJRl6WK3BwrXY3Yj7OVM7fpv5Bwll44=;
-	h=From:To:CC:Subject:Date:Message-ID:References:In-Reply-To:
-	 Content-Type:Content-Transfer-Encoding:MIME-Version;
-	b=fQ78ZyZ4zJzV4zg6Vtwcyz0dIjCvW2apJkHfVUtyVIGgu86jlJFJa+2XHwrTV8+tD
-	 Hxrr8prDVyh0zSROKa/G0SUWEDS2DjVdYdh/KRGYNYLX0msWKeCpeqxL7dY+0Bq7WS
-	 zWJcZCRQC59hlFCkBVV63nfjpT4DkKjgUx7VzKM4Zzq2lXEFLxnSpb+/pYKBGV7o/J
-	 yUlw4+1rJIibcyDkrZfZU9h50CW50AwsF/lWj8J3eK0ew9PyInUR0CHJlFceV/+QJs
-	 3edOpDU+KtXy8jiyvbtVy+G528WS56irw+OJ1cwW5BD8ysFxxHY9gEaJYMRdgmZ7KI
-	 kzRX2+g8979/Q==
-Received: from mail.realtek.com (rtkexhmbs02.realtek.com.tw[172.21.6.41])
-	by rtits2.realtek.com.tw (8.15.2/3.29/5.94) with ESMTPS id 6AH0fSm353912518
-	(version=TLSv1.2 cipher=ECDHE-RSA-AES256-GCM-SHA384 bits=256 verify=FAIL);
-	Tue, 17 Nov 2026 08:41:28 +0800
-Received: from RTKEXHMBS06.realtek.com.tw (10.21.1.56) by
- RTKEXHMBS02.realtek.com.tw (172.21.6.41) with Microsoft SMTP Server
- (version=TLS1_2, cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id
- 15.2.2562.56; Tue, 17 Nov 2026 08:41:29 +0800
-Received: from RTKEXHMBS06.realtek.com.tw (10.21.1.56) by
- RTKEXHMBS06.realtek.com.tw (10.21.1.56) with Microsoft SMTP Server
- (version=TLS1_2, cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id
- 15.2.2562.56; Tue, 17 Nov 2026 08:41:29 +0800
-Received: from RTKEXHMBS06.realtek.com.tw ([fe80::eeeb:c765:ca73:5eef]) by
- RTKEXHMBS06.realtek.com.tw ([fe80::eeeb:c765:ca73:5eef%10]) with mapi id
- 15.02.2562.056; Tue, 17 Nov 2026 08:41:29 +0800
-From: Ping-Ke Shih <pkshih@realtek.com>
-To: Enver Ikromov <owner@ph4ntom-rev.uz>
-CC: "linux-wireless@vger.kernel.org" <linux-wireless@vger.kernel.org>,
-	"linux-kernel@vger.kernel.org" <linux-kernel@vger.kernel.org>
-Subject: RE: [PATCH rtw-next v5 05/10] wifi: rtw89: use AP self role for
- monitor interfaces
-Thread-Topic: [PATCH rtw-next v5 05/10] wifi: rtw89: use AP self role for
- monitor interfaces
-Thread-Index: AQHdc8qFK2Jt1QtiLUSH4J8FZa1Wk7cuhEiggAHMI4CAASAJsA==
-Date: Tue, 17 Nov 2026 00:41:28 +0000
-Message-ID: <ffc63e08f954499799f67fffc068c0de@realtek.com>
-References: <20261113235211.1911-1-owner@ph4ntom-rev.uz>
- <20261113235211.1911-6-owner@ph4ntom-rev.uz>
- <971ff7a2aa6e4f5bb6d4e459c386d433@realtek.com>
- <20261116152804.781-7-owner@ph4ntom-rev.uz>
-In-Reply-To: <20261116152804.781-7-owner@ph4ntom-rev.uz>
-Accept-Language: en-US, zh-TW
-Content-Language: zh-TW
-Content-Type: text/plain; charset="utf-8"
-Content-Transfer-Encoding: base64
+	dkim=pass (2048-bit key) header.d=kernel.org header.i=@kernel.org header.a=rsa-sha256 header.s=k20260515 header.b=OGb95pGl
+Received: by smtp.kernel.org (Postfix) with ESMTPSA id 80ABA1F000C9;
+	Tue, 17 Nov 2026 00:45:42 +0000 (UTC)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=kernel.org;
+	s=k20260515; t=1794876342;
+	bh=noljbUX/VThb4fr2sBKGxQKmiG1tVKJPJOeQDSwiGCA=;
+	h=Date:From:To:Cc:Subject:In-Reply-To:References;
+	b=OGb95pGlTAb7DRhQexHalzLvVeH0CH5G22dC+Nnne/EOpY0gife49mUn+HCcHsXfl
+	 exhQqITywzosNkiX7Kie6//VZOuihdYoNX+lXQgXlXu1/qrGce52s7VqSeS4DLnIdM
+	 iuglDz7BoJL2hjVj9iMo0XAs7jqqoY8iE0L+FA2qtB3FgijrylX4p0h29dyOM5a7xA
+	 jh4JZQgV5bmH62lWy0NinW4YKwlgejlVGL2InQmisbBufFQgQmCEAQOKM72acXc1gm
+	 Wp5Cbzj87Bjv/t8MNg258XZrwuZADJCw0BexsY7XF7FRLrd8Mm4o0582yZl2IBaOII
+	 tieg7D3SdxqRQ==
+Date: Mon, 16 Nov 2026 16:45:41 -0800
+From: Jakub Kicinski <kuba@kernel.org>
+To: Johannes Berg <johannes@sipsolutions.net>
+Cc: netdev@vger.kernel.org, linux-wireless@vger.kernel.org
+Subject: Re: [GIT PULL] wireless-next-2026-11-16
+Message-ID: <20261116164541.3adf8979@kernel.org>
+In-Reply-To: <20261116122302.1501378-3-johannes@sipsolutions.net>
+References: <20261116122302.1501378-3-johannes@sipsolutions.net>
 X-Mailing-List: linux-wireless@vger.kernel.org
 List-Id: <linux-wireless.vger.kernel.org>
 List-Post: <mailto:linux-wireless@vger.kernel.org>
@@ -89,17 +57,15 @@ List-Unsubscribe: <mailto:linux-wireless+unsubscribe@vger.kernel.org>
 List-Owner: <mailto:linux-wireless+owner@vger.kernel.org>
 Precedence: list
 MIME-Version: 1.0
+Content-Type: text/plain; charset=US-ASCII
+Content-Transfer-Encoding: 7bit
 
-RW52ZXIgSWtyb21vdiA8b3duZXJAcGg0bnRvbS1yZXYudXo+IHdyb3RlOg0KPiBPbiBTdW4sIE5v
-diAxNSwgMjAyNiBhdCAwNDowODozMUFNICswMDAwLCBQaW5nLUtlIFNoaWggd3JvdGU6DQo+ID4g
-RGVzY3JpYmUgd2h5IHlvdSBuZWVkIHRoaXMgcGF0Y2guIFdoaWNoIHByb2JsZW0geW91IGVuY291
-bnRlcmVkIGFuZA0KPiA+IHdhbnRlZCB0byBmaXguDQo+ID4gWy4uLl0NCj4gPiBJJ2xsIGNoZWNr
-IGZpcm13YXJlIHBlb3BsZSB0aGUgc2V0dGluZy4NCj4gDQo+IFdpdGhvdXQgdGhpcyBjaGFuZ2Us
-IHJhdyBmcmFtZXMgaW5qZWN0ZWQgb24gYSBtb25pdG9yIGludGVyZmFjZSBhcmUNCj4gcXVldWVk
-IGJ5IHRoZSBkcml2ZXIgd2l0aG91dCBlcnJvciwgYnV0IG5vdGhpbmcgaXMgdHJhbnNtaXR0ZWQg
-b3ZlciB0aGUNCj4gYWlyIGJlY2F1c2UgZmlybXdhcmUgc2lsZW50bHkgZHJvcHMgZnJhbWVzIHF1
-ZXVlZCBvbiB0aGUgbW9uaXRvciBNQUMgSUQNCj4gd2hlbiBpdCB3YXMgaW5pdGlhbGl6ZWQgd2l0
-aCB0aGUgZGVmYXVsdCBjbGllbnQgcm9sZSBhbmQgZGlzYXNzb2MgPSAxLg0KDQpCdXQgSSBjYW4g
-dXNlIHlvdXIgcHl0aG9uIHNjcmlwdCB0byBpbmplY3QgcGFja2V0cyB3aXRob3V0IGFueSBjaGFu
-Z2Ugb24NCmtlcm5lbCA3LjEuNS4gQ2FuIHlvdSBkZXNjcmliZSB0aGUgInJhdyBmcmFtZXMiIG1v
-cmUgc3BlY2lmaWM/DQoNCg0K
+On Mon, 16 Nov 2026 13:20:08 +0100 Johannes Berg wrote:
+> net/mac80211/link.c
+>  -> two conflicts, use the new version  
+>     (the sync issue was fixed already implicitly in the new one)
+
+I shied away from doing this and followed Mark's resolution.
+AI wasn't convinced that taking -next is good enough, or maybe
+I fumbled the edit.. Either way, I assume it's more expedient
+to do the merge the way I did and let you fix up on top as needed
