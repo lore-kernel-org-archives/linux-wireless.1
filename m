@@ -1,101 +1,55 @@
-Authentication-Results: smtp.subspace.kernel.org; arc=none smtp.remote-ip=209.85.221.42
+Authentication-Results: smtp.subspace.kernel.org; arc=none smtp.remote-ip=91.218.175.102
 ARC-Seal: i=1; d=subspace.kernel.org; s=arc20261015; a=rsa-sha256; cv=none;
-	t=1794937329;
-	b=W5pY/9HthCBzULYkKeLE+M2iDlJ5K9p3ZBdbf/+0APtTem4GlBq5NINRGpNCkfvlqN59
-	 A6CRLE870WCIG3Y0FJZYRKnJrIKgSt2ZLMhQyKcvYOXi7k9u5ZN2O/mNCKRyoqRXXZBzJ
-	 iCw+Tceq44BvwLcUh5Qs0QTGCp31Ccw3tws9PzM1MJ3D2/0PocqEF3jeZ+K+4xsnllHCY
-	 I+YrfEleh9E9mtLrAwXkgmknxDCAgNHg1d4PO2bAOZzLcho/1p4titIZmUOhjlW4MztuU
-	 t/JwNUDLZ9U6caxKqx/J8R3KthlDbnwRQ1kgxw23xk1bQdjAIvbR27RXNhlt4IBdZ8Q==
+	t=1794937776;
+	b=nQaUxeU2Xq/wN3z5PHkLfJWyGqgqGH5q3l4Uv1680szXMK8Zu5vO8I2V0lIa9GqBn75+
+	 xqB8hfUK8ub5ZWvnliyWVKBH6VgV+jmd8duvidpMKBXZpU/ew2XX7Zql5ZeyuH5+W0p59
+	 JKdSAI+jEY8ny7xOFDfksB+wqY0oqSrb6ciA/kLZuypAJoYmBtqLlJME/PfXCkzIoXKVI
+	 3QdvXHox5EvRpmUPFj4BfDY8hMU9AZ6AW85+J1zeIf5qJgqXzV6/P3Jvixvr9aUyhEY2B
+	 +8jJyaUMbfc/9d88haEeY6+jxNvNDils0nX1Bi2o7VfuVab8ySLESrmL0K5QjKAevLA==
 ARC-Message-Signature: i=1; d=subspace.kernel.org; s=arc20261015;
-	a=rsa-sha256; c=relaxed/relaxed; t=1794937329;
-	h=DMARC-Filter:Received:DKIM-Signature:X-Google-DKIM-Signature:
-	 X-Forwarded-Encrypted:X-Gm-Message-State:X-Gm-Gg:X-Received:Received:
-	 From:To:Cc:Subject:Date:Message-ID:X-Mailer:In-Reply-To:References:
-	 MIME-Version:Content-Transfer-Encoding;
-	bh=eS8A6I+JbYZ0P//SqMb5gbJ5IMT5Lxzbqv3mJYgvIAw=;
-	b=Dd/eiaxxTYEu3GpZ6O3wDHUOYbI5nwscMm5CaY5DnA0MHUGh5OWCiaTuyuMCtF3JiAPu
-	 AQKKb28ulSLS/K9JS6Ff93IsVcBOuTd3F5G60wTm6zW2pKKXN/yDiv0bZhhzyvkhcDxhv
-	 UE0pYTl35yEa2RC3RGsSoNeubqi+BcKGOwBRWv0chDihyaxFEOWfA85jVocWBtBqJlC86
-	 e1YkyGHDMCEK+dzFDy2h8BzyjSh4n8B8p7W++w9V5i2+Uo71tOL5HTbdlZ9CY9MwvyXym
-	 m6i1C8MEZ9UuSJtQL3u0xaQp7rDm1ejOpPiDqVIFiUUWtWoQGMzsGjFBhbSOrY3en1w==
+	a=rsa-sha256; c=relaxed/relaxed; t=1794937776;
+	h=DMARC-Filter:X-Envelope-To:DKIM-Signature:X-Envelope-To:Received:
+	 X-Mizu-Trace-ID:X-Migadu-Flow:Content-Type:Content-Transfer-Encoding:
+	 From:Mime-Version:Subject:Date:Message-Id:References:Cc:In-Reply-To:
+	 To:X-Mailer;
+	bh=USqC8s22nHYoDzDQF9uFHHFGZ31h3DAy1gNTvMcr9dU=;
+	b=ok9TLOxcFf42v64/Q3LyoQgFsdrOp7fXPvH1bmsPBzalCVq3npuUXTjujvq9giAy9wB2
+	 wZUh1QcfGPCeo1d36wyeSWH54I0Y9VVj0hb4AkcpGs1nI7GA42dFIT7IVyN6BK6wK5Hxm
+	 t/mSht+1iFanUO0xAE4qM6IND9r9yVZon+l7jA2vVpKwq/xb5kiinHcDoKyIw14WR6H36
+	 /j8vRccIbXjteT7DF9brj9KLNDvVSM17uPLWI+GdNcszpoYjxplsxDGHb4fGCb7k6lmqj
+	 91PUQjWCY4J1a03c+2fL4dk3jZxZufYt5tNAmIndh7/FyGzyhm4WWMRSuo+v2x1lEww==
 ARC-Authentication-Results: i=1; smtp.subspace.kernel.org; 
-	dmarc=pass header.from=gmail.com;
-	spf=pass smtp.mailfrom=gmail.com;
-	dkim=pass header.d=gmail.com header.i=@gmail.com header.a=rsa-sha256 header.s=20260707 header.b=FFGjpIaO;
-	arc=none smtp.remote-ip=209.85.221.42
-Received: from mail-wr1-f42.google.com (mail-wr1-f42.google.com [209.85.221.42])
+	dmarc=pass header.from=linux.dev;
+	spf=pass smtp.mailfrom=linux.dev;
+	dkim=pass header.d=linux.dev header.i=@linux.dev header.a=rsa-sha256 header.s=key1 header.b=YfIRHYZI;
+	arc=none smtp.remote-ip=91.218.175.102
+Received: from mta0.migadu.com (out-102.mta0.migadu.com [91.218.175.102])
 	(using TLSv1.3 with cipher TLS_AES_128_GCM_SHA256 (128/128 bits)
 	 key-exchange X25519 server-signature ECDSA (prime256v1) server-digest SHA256)
 	(No client certificate requested)
-	by smtp.subspace.kernel.org (Postfix) with ESMTPS id C92EA606A884
-	for <linux-wireless@vger.kernel.org>; Tue, 17 Nov 2026 17:42:08 +0000 (UTC)
-DMARC-Filter: OpenDMARC Filter v1.4.2 smtp.subspace.kernel.org C92EA606A884
-Authentication-Results: smtp.subspace.kernel.org; dmarc=pass (p=none dis=none) header.from=gmail.com
-Authentication-Results: smtp.subspace.kernel.org; spf=pass smtp.mailfrom=gmail.com
+	by smtp.subspace.kernel.org (Postfix) with ESMTPS id 7B9BA606A31C
+	for <linux-wireless@vger.kernel.org>; Tue, 17 Nov 2026 17:49:35 +0000 (UTC)
+DMARC-Filter: OpenDMARC Filter v1.4.2 smtp.subspace.kernel.org 7B9BA606A31C
+Authentication-Results: smtp.subspace.kernel.org; dmarc=pass (p=none dis=none) header.from=linux.dev
+Authentication-Results: smtp.subspace.kernel.org; spf=pass smtp.mailfrom=linux.dev
 Authentication-Results: smtp.subspace.kernel.org;
-	dkim=pass (2048-bit key) header.d=gmail.com header.i=@gmail.com header.a=rsa-sha256 header.s=20260707 header.b=FFGjpIaO
-Received: by mail-wr1-f42.google.com with SMTP id ffacd0b85a97d-48e47347279so20945f8f.1
-        for <linux-wireless@vger.kernel.org>; Tue, 17 Nov 2026 09:42:08 -0800 (PST)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=gmail.com; s=20260707; t=1794937327; x=1795542127; darn=vger.kernel.org;
-        h=content-transfer-encoding:mime-version:references:in-reply-to
-         :message-id:date:subject:cc:to:from:from:to:cc:subject:date
-         :message-id:reply-to:content-type;
-        bh=eS8A6I+JbYZ0P//SqMb5gbJ5IMT5Lxzbqv3mJYgvIAw=;
-        b=FFGjpIaO7cL15zX3nPk1NbIb0TtthT2MxbC6mTMT+9988qugXo4KEd/YFISIExRb2E
-         vpqav2wDB9C+GbNYUWjPdXvjQ6TpIyso8ViGM199yvmnHNdu1Oc4EcskTxrrSCWf7RP7
-         k1pVissPAZZg8IWCXZMGmuQA2OGVMNHixFndfiVAUbNuVmevLRN1e1ocOaL0qqJLfxKC
-         N3ZLNnX/B2eniMkl/0NfPpm7ppln03kxUXKcYdHEORsSdKRexnd7oYZe4MgLysYp5Bvn
-         Gc4osTTWZiGGCkQIgD3v17KPr35iNs//xj5GOcbbA2q/A6Wgx6oyMOHWZRsB3CKGkm2e
-         F2bg==
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=1e100.net; s=20260707; t=1794937327; x=1795542127;
-        h=content-transfer-encoding:mime-version:references:in-reply-to
-         :message-id:date:subject:cc:to:from:x-gm-gg:x-gm-message-state:from
-         :to:cc:subject:date:message-id:reply-to:content-type;
-        bh=eS8A6I+JbYZ0P//SqMb5gbJ5IMT5Lxzbqv3mJYgvIAw=;
-        b=cMzsHa4JyEyZK+Pk68vYY/QmY25Odm/v5w04zpQI6ZZ4ArB7MbePYj1GvC0DHiwhmP
-         6vJL8tc3I/flooc2ck2bOphIfCqTb3TndCDIqN6ckaltKbmHoTbTzMkoIQDHJLVF+qMc
-         Sz97crmfSDh6FX4yZzrXmrYEkXScTXF7r2mSTYB4xEA0WIW/9aBxF2R0CJdwrAXcPJAx
-         ZfdIEb4vvmriCfi+xc4VBTdK7/ejpget4DSXDGMLmvtOu+40rFqRfXHt2Rujk8FKSsS8
-         tvCa7netWIT6dz46gumjK2ZS72j43Fj+ldderKZ01FvKlDVYHd4tzGo3uuL0Nz5RyZPp
-         sdow==
-X-Forwarded-Encrypted: i=1; AL+hErGYWgETE0Cd357c5+OCD1iZwMJyDGr09tjst+xjWdzwyTXfDKwmgOosfKXDSIHcz2vqa0gWMSNaMcN9OMaIFQ==@vger.kernel.org
-X-Gm-Message-State: APuU4Z9FPvV/x2+fNHuD4/U6zcjJlxE6l0F/qGitM+wgjkukpkY6kqqn
-	zch60ZzC5y1GcrzeBjWPbOmYwMAsLkMLLVvgTquDOpptiX+X8lP1kLQq
-X-Gm-Gg: AZFdTZe5HAAF2oCCeOv0AeohWwoc559nMFlQd8oxuIWMFCvwbyCVABy3sgw7DgddurU
-	FJMSoapdxL9GeFwffrdXGUvy1myVuljpnKxD7ciydf3VwlccxYmlZpChJLjEL09Csc2hVl17bVv
-	yHA7tHvjKOI0+++E6WQyko+0yFZ93p2YNZGDT1cGSlDdfCXd3dnk4SvYbUHTmEQgvZ10PLBVLKg
-	0wNeiV2xqHlcdPVtOU+U8sGD8T7KJ2oISR9Z1hBBiucc6hCuSliLhE9ZQ0h1eMgWts3olbQruWC
-	rEi+0uM1zscuYJm3t8HYFWcYtWFK+kL7xNe38GkogNtjJ/Q4H2wCkjG+q+fdUdci4Trf/tGHIXG
-	UfzVkwNhIrzhFsSPQpVeSPufvVBMj2JcGOh9aOjRkiocOWCDfAg83+dmV4MEKOzUTiVu/H017Kz
-	N3FwKcCdOU8B9cVxD163PyooenRxTHmxkimDiGMY35mCnwAGEHDatcYBBX/X3tcgeigszRyZ5wD
-	uaiGEyLN54u4PHg+kqgInj8WW2XjdXolylVJ9Q/bUtbK6+HHC1jQ7Rzkyf+iLRvcovPxqyfJMVV
-	Q4GMz02vaOvWecbfGetyrX8aTF0jSK3AHLipwyEPzXtrND5HPXHOBV2+Nw==
-X-Received: by 2002:a5d:64ed:0:b0:4a4:14db:233b with SMTP id ffacd0b85a97d-4a638ae26abmr362462f8f.12.1794937327122;
-        Tue, 17 Nov 2026 09:42:07 -0800 (PST)
-Received: from vitor-21h1cto1ww (dsl-30-199.bl27.telepac.pt. [176.79.30.199])
-        by smtp.gmail.com with ESMTPSA id ffacd0b85a97d-49c7390fe82sm30962552f8f.17.2026.11.17.09.42.05
-        (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
-        Tue, 17 Nov 2026 09:42:06 -0800 (PST)
-From: Vitor Soares <ivitro@gmail.com>
-To: Johannes Berg <johannes@sipsolutions.net>,
-	Rob Herring <robh@kernel.org>,
-	Krzysztof Kozlowski <krzk+dt@kernel.org>,
-	Conor Dooley <conor+dt@kernel.org>,
-	Jeff Johnson <jjohnson@kernel.org>
-Cc: Vitor Soares <vitor.soares@toradex.com>,
-	Jeff Johnson <jeff.johnson@oss.qualcomm.com>,
-	linux-wireless@vger.kernel.org,
-	devicetree@vger.kernel.org,
-	ath12k@lists.infradead.org,
-	linux-kernel@vger.kernel.org
-Subject: [PATCH 1/2] dt-bindings: wireless: ath12k: Make WCN7850 supplies optional
-Date: Tue, 17 Nov 2026 17:41:55 +0000
-Message-ID: <20261117174154.549590-5-ivitro@gmail.com>
-X-Mailer: git-send-email 2.53.0
-In-Reply-To: <20261117174154.549590-4-ivitro@gmail.com>
-References: <20261117174154.549590-4-ivitro@gmail.com>
+	dkim=pass (1024-bit key, unprotected) header.d=linux.dev header.i=@linux.dev header.a=rsa-sha256 header.s=key1 header.b=YfIRHYZI
+X-Envelope-To: linux-wireless@vger.kernel.org
+DKIM-Signature: a=rsa-sha256; bh=4nUZbHSGDeC5EzVQv/op9L9Mno790WzQ1pC5Hx0vt5Q=;
+ c=simple/simple; d=linux.dev;
+ h=from:to:subject:date:message-id:mime-version:content-type; s=key1;
+ t=1794937773; v=1; x=1795542573;
+ b=YfIRHYZI1UkGKEdWhq1EsKsV9sJ5TYB/Zor6pnppHWXMR+Tfw/P0oJtiSJ90IDue4AnhNKo3
+ PTSTnowS2ll+bQhIUgVIX0Z0CEMV8bc+3svVjImk9HUApeCyBM10uA5XI/AVJ3L2ZgtHwzuMnPV
+ uukKNDjFQs7JjM74a0TimTCc=
+X-Envelope-To: linux-wireless@vger.kernel.org
+Received: by mta12.migadu.com with ESMTPS id 4b46ce5bd6d34d3e;
+	Tue, 17 Nov 2026 17:49:33 +0000
+X-Mizu-Trace-ID: 4b46ce5bd6d34d3e
+X-Migadu-Flow: FLOW_OUT
+Content-Type: text/plain; charset=utf-8
+Content-Transfer-Encoding: quoted-printable
+From: Aditya Garg <aditya.garg@linux.dev>
 X-Mailing-List: linux-wireless@vger.kernel.org
 List-Id: <linux-wireless.vger.kernel.org>
 List-Post: <mailto:linux-wireless@vger.kernel.org>
@@ -104,76 +58,101 @@ List-Subscribe: <mailto:linux-wireless+subscribe@vger.kernel.org>
 List-Unsubscribe: <mailto:linux-wireless+unsubscribe@vger.kernel.org>
 List-Owner: <mailto:linux-wireless+owner@vger.kernel.org>
 Precedence: list
-MIME-Version: 1.0
-Content-Transfer-Encoding: 8bit
+Mime-Version: 1.0 (1.0)
+Subject: Re: [PATCH] wifi: brcmfmac: leave the AP 4-way handshake to the host on Apple chips
+Date: Tue, 17 Nov 2026 23:19:18 +0530
+Message-Id: <BF5FB50E-063E-4EAA-A06D-ADC3670DEAE9@linux.dev>
+References: <20261116203719.281605-3-arend.vanspriel@broadcom.com>
+Cc: Andre Eikmeyer <dev@deq.rocks>, arend.vanspriel@broadcom.com,
+ linux-wireless@vger.kernel.org, brcm80211@lists.linux.dev,
+ brcm80211-dev-list.pdl@broadcom.com, linux-kernel@vger.kernel.org,
+ Yossef Osman <Yossef.Osman@proton.me>
+In-Reply-To: <20261116203719.281605-3-arend.vanspriel@broadcom.com>
+To: Arend van Spriel <arend.vanspriel@broadcom.com>
+X-Mailer: iPad Mail (24B119)
 
-From: Vitor Soares <vitor.soares@toradex.com>
 
-The binding requires all nine WCN7850 power inputs. This matches designs
-where the chip is placed on the board and its rails come from the
-WCN7850 PMU described in DT.
 
-WCN7850 is also used in modules, such as the Silex SX-PCEBE, where the
-PMU and its rails are on the module and powered from the slot. None of
-these supplies are connected to the host, so there is nothing to
-describe. The DT node is still needed to set qcom,calibration-variant.
+> On 17 Nov 2026, at 2:07=E2=80=AFAM, Arend van Spriel <arend.vanspriel@broa=
+dcom.com> wrote:
+>=20
+> =EF=BB=BFOn Wed, 4 Nov 2026 16:16:29 +0100, Andre Eikmeyer <dev@deq.rocks>=
+ wrote:
+>> The Apple firmware for the BCM4364 and BCM4377 lists "idauth" in its
+>> capabilities, so brcmfmac enables BRCMF_FEAT_FWAUTH and advertises
+>> NL80211_EXT_FEATURE_4WAY_HANDSHAKE_AP_PSK. hostapd and wpa_supplicant
+>> then pass the PSK to the driver and leave the AP side of the 4-way
+>> handshake to the firmware. On the BCM4364 that handshake never
+>> completes.
+>>=20
+>> [...]
+>>=20
+>> Clear BRCMF_FEAT_FWAUTH on the chips in Apple's T2 Macs, so the host
+>> runs the handshake.
+>=20
+> [...]
+>=20
+>> ---
+>> .../wireless/broadcom/brcm80211/brcmfmac/feature.c | 14 ++++++++++++++
+>> 1 file changed, 14 insertions(+)
+>=20
+>> @@ -318,6 +318,20 @@ void brcmf_feat_attach(struct brcmf_pub *drvr)
+>>                    BIT(BRCMF_FEAT_WOWL_GTK);
+>>        }
+>>    }
+>> +    /* The Apple firmware for these chips lists "idauth", but in AP mode=
 
-When the binding was introduced, it was agreed that the supplies can
-be made optional for cases such as M.2 boards once the need arises [1].
+>> +     * its authenticator never completes the 4-way handshake and the
+>> +     * station is dropped after about 8 s. Leave the handshake to the ho=
+st.
+>> +     */
+>> +    switch (drvr->bus_if->chip) {
+>> +    case BRCM_CC_4355_CHIP_ID:
+>> +    case BRCM_CC_4364_CHIP_ID:
+>> +    case BRCM_CC_4377_CHIP_ID:
+>> +        ifp->drvr->feat_flags &=3D ~BIT(BRCMF_FEAT_FWAUTH);
+>> +        break;
+>> +    default:
+>> +        break;
+>> +    }
+>> +
+>>    /* MBSS does not work for all chips */
+>>    switch (drvr->bus_if->chip) {
+>=20
+> The commit message and the test report only cover BCM4364 and BCM4377,
+> but the code also clears FWAUTH for BCM4355. Where does that come from?
+> Was it tested, and is BCM4355 found in T2 Macs? If not, please drop it
+> or justify it.
 
-Make the supplies optional. Keep requiring all of them once any is
-present, so designs using the PMU are validated as before.
+4355 is also a Mac specific chip found in MacBookAir8,1 and 8,2. I'm actuall=
+y surprised you forgot about that especially when there was a whole issue wh=
+en Cypress named their chip firmware wrongly as 4355.
 
-Link: https://lore.kernel.org/all/87ikyenx5c.fsf@kernel.org/ [1]
-Signed-off-by: Vitor Soares <vitor.soares@toradex.com>
----
- .../bindings/net/wireless/qcom,ath12k.yaml    | 33 ++++++++++++++-----
- 1 file changed, 24 insertions(+), 9 deletions(-)
+>=20
+> The chip ID check has the same problem as in the ARP/ND offload patch [1]:=
 
-diff --git a/Documentation/devicetree/bindings/net/wireless/qcom,ath12k.yaml b/Documentation/devicetree/bindings/net/wireless/qcom,ath12k.yaml
-index cf3e1fd99c12..27f443bbc401 100644
---- a/Documentation/devicetree/bindings/net/wireless/qcom,ath12k.yaml
-+++ b/Documentation/devicetree/bindings/net/wireless/qcom,ath12k.yaml
-@@ -63,15 +63,30 @@ properties:
- required:
-   - compatible
-   - reg
--  - vddaon-supply
--  - vddwlcx-supply
--  - vddwlmx-supply
--  - vddrfacmn-supply
--  - vddrfa0p8-supply
--  - vddrfa1p2-supply
--  - vddrfa1p8-supply
--  - vddpcie0p9-supply
--  - vddpcie1p8-supply
-+
-+allOf:
-+  - if:
-+      anyOf:
-+        - required: [vddaon-supply]
-+        - required: [vddwlcx-supply]
-+        - required: [vddwlmx-supply]
-+        - required: [vddrfacmn-supply]
-+        - required: [vddrfa0p8-supply]
-+        - required: [vddrfa1p2-supply]
-+        - required: [vddrfa1p8-supply]
-+        - required: [vddpcie0p9-supply]
-+        - required: [vddpcie1p8-supply]
-+    then:
-+      required:
-+        - vddaon-supply
-+        - vddwlcx-supply
-+        - vddwlmx-supply
-+        - vddrfacmn-supply
-+        - vddrfa0p8-supply
-+        - vddrfa1p2-supply
-+        - vddrfa1p8-supply
-+        - vddpcie0p9-supply
-+        - vddpcie1p8-supply
- 
- additionalProperties: false
- 
--- 
-2.53.0
-
+> the issue is described as specific to the Apple firmware, but the quirk
+> applies to every BCM4355, BCM4364 and BCM4377, and those users would lose
+> offloaded AP PSK. Please restrict it as suggested there.
+>=20
+> Note that BRCMF_FEAT_FWAUTH is required for NL80211_EXT_FEATURE_SAE_OFFLOA=
+D_AP
+> in brcmf_setup_wiphy(). Please mention in the commit message whether
+> that is affected on these chips (i.e. whether the firmware offers "sae"
+> at all) or confirm it is intentionally dropped too.
+>=20
+> Have you looked at the actual root cause (e.g. missing/incorrect
+> "idauth" related iovars such as setting the PMK or wsec_info for AP on
+> this firmware)? If the offload is never usable on these firmwares, say
+> so in the commit message with reference to the firmware version(s)
+> checked.
+>=20
+> [...]
+>=20
+> Minor: please add the target tree to the subject (wifibot series_format
+> warning).
+>=20
+> [1] https://lore.kernel.org/all/20261104151620.70671-1-dev@deq.rocks/
+>=20
+> Regards,
+> Arend
