@@ -1,101 +1,54 @@
-Authentication-Results: smtp.subspace.kernel.org; arc=none smtp.remote-ip=209.85.216.98
+Authentication-Results: smtp.subspace.kernel.org; arc=none smtp.remote-ip=209.85.160.71
 ARC-Seal: i=1; d=subspace.kernel.org; s=arc20261015; a=rsa-sha256; cv=none;
-	t=1794944806;
-	b=hw/cr2ap0uF5X0JyTYjS21iJcLlKWcHPf9luGhN7n0DsQN90nzDFqolG5XIara/7IicJ
-	 K9H7LqMrrjQTeF7HrJq9mE1AGRq622zNP4aeHYSJkwYizOffzp+eVoUOjelAzYYsIBtwi
-	 nOXusW6N8s5q2Be+OKut7vwxk0JLy7gKN4iD+vuDqS+PVUjy84ePJAgkxN4Rre8EYQAA7
-	 dsPCadfbuCbByECQ30AboyeCxutAPbNSW4mJDsV4SRC+YrqZlo0jljzpcLIIWnaCiQGpG
-	 96YNKO0Fyp+1czJ+G/oo+VoEocuWgo7UNmm685/52rPvblpG2E5Att6OdVXYAg7A8Hg==
+	t=1794945939;
+	b=AIG2OLf7GVgmFKf3KibumAohWCucuTmX3EnnZVn5i/8ol67v+arW9t2O0JkMuvRnq+gg
+	 F/qd9uElh7lXU/e2hVU9GJj5I7aPaW2AtA4D9xVNMGkJdNGjvYk/ckFSSacuZY7BTGV6p
+	 ri+P2Q06ZNfXARXqLb0DbQhV0SWpFvsN3PICjCyy148uKRnmbHCRSNCnnIAwzbV9mL4jT
+	 Ep7dEX1VbBibTK/kVkfvAwawWlSncq7ge0nV/gIR3bcN79NeN4I7XuiPUfRtU0AhDS8AD
+	 7ZDNLbNpQCd1WWFz8LGc5wDGYtLgy9WssZL9iHCYGZ2qacmw9FHRN+KzACjbRGpxH3w==
 ARC-Message-Signature: i=1; d=subspace.kernel.org; s=arc20261015;
-	a=rsa-sha256; c=relaxed/relaxed; t=1794944806;
+	a=rsa-sha256; c=relaxed/relaxed; t=1794945939;
 	h=DMARC-Filter:Received:X-Google-DKIM-Signature:X-Forwarded-Encrypted:
-	 X-Gm-Message-State:X-Gm-Gg:X-Received:Received:X-Relaying-Domain:
-	 X-CFilter-Loop:Received:DKIM-Signature:X-Forwarded-Encrypted:
-	 X-Received:X-Received:Received:Message-ID:Date:MIME-Version:
-	 User-Agent:Subject:To:Cc:References:Content-Language:From:In-Reply-To:
-	 Content-Type:Content-Transfer-Encoding:X-DetectorID-Processed;
-	bh=aFd/RP58uuymd6sBgw7qEUvIDPwjlsp1rmxiXiW1mtY=;
-	b=aZ+ngVPvpgSYPHp72vSwxqAaWV4U9HxXk5Ev3vJsJYz7ayUx14HkLyFTAgoMBuDOUT61
-	 qPOWoZgb6QIAQksIoVSVg9nyUYpOxRxoTLQgHoAWdnofXYsiTGshJJPDKRyys0l3WsxUi
-	 4nBK6lXqJRdulqhpsLRzwVPnBGauzPbDNX/HeHudlbg9KX5nnYb5hVRRPYtGIUWTzEZQr
-	 4ovSGF7Wizie0VJR1WIjg7yClxCWIFemLRVkyHrzXUh74EiTlyru95SiUKJAO7xKo2lN2
-	 NMzfIc0tg0Cx7yic/jwYPNmdIhhHQhVPUV1RK1AEr7j41+/eGtRmQ5fKDQDl01M8CgA==
+	 X-Gm-Message-State:MIME-Version:X-Received:Date:In-Reply-To:
+	 X-Google-Appengine-App-Id:X-Google-Appengine-App-Id-Alias:Message-ID:
+	 Subject:From:To:Cc:Content-Type;
+	bh=BZtm9sHyiktDYCnGeG1o6io6Mc88A5AWr/6VU3Ebv6k=;
+	b=SCSlObdYtpw6YnHCoxqUas266189RizrmlsS4Emcxx+yGCMrU7ezUER+qR6kibH/XwTD
+	 auue2I5Yn/9R4xoM90i+CeFXmJDCJgjB4KWwY5ASytrQAY/Y+SELL7mOdx3r/uzpjXmzM
+	 KhtmwoSgaOn7dW+o+NqNjK70JHIO2kv4dDzar3aZWGnHFtegz9Qdhkxw2fxgOAMFFkH1Q
+	 fGqrSfgAXRbFXPIR5BAe2Rv8KUc3rruBrLfBjlwfRBamzXBDsAfBKd2I54OR8AD3DbPrn
+	 Zw5dI3cYR2mYGswgM0lUwDQG1Kz1JnXjky2/t61BmHIoYN8BT4qhn8hwL8BF/jppDdw==
 ARC-Authentication-Results: i=1; smtp.subspace.kernel.org; 
-	dmarc=pass header.from=broadcom.com;
-	spf=fail smtp.mailfrom=broadcom.com;
-	dkim=pass header.d=broadcom.com header.i=@broadcom.com header.a=rsa-sha256 header.s=google header.b=CrJioLXS;
-	arc=none smtp.remote-ip=209.85.216.98
-Received: from mail-pj1-f98.google.com (mail-pj1-f98.google.com [209.85.216.98])
+	dmarc=fail header.from=syzkaller.appspotmail.com;
+	spf=pass smtp.mailfrom=M3KW2WVRGUFZ5GODRSRYTGD7.apphosting.bounces.google.com;
+	arc=none smtp.remote-ip=209.85.160.71
+Received: from mail-oa1-f71.google.com (mail-oa1-f71.google.com [209.85.160.71])
 	(using TLSv1.3 with cipher TLS_AES_128_GCM_SHA256 (128/128 bits)
 	 key-exchange X25519 server-signature ECDSA (prime256v1) server-digest SHA256)
 	(No client certificate requested)
-	by smtp.subspace.kernel.org (Postfix) with ESMTPS id DB297606A880
-	for <linux-wireless@vger.kernel.org>; Tue, 17 Nov 2026 19:46:45 +0000 (UTC)
-DMARC-Filter: OpenDMARC Filter v1.4.2 smtp.subspace.kernel.org DB297606A880
-Authentication-Results: smtp.subspace.kernel.org; dmarc=pass (p=reject dis=none) header.from=broadcom.com
-Authentication-Results: smtp.subspace.kernel.org; spf=fail smtp.mailfrom=broadcom.com
-Authentication-Results: smtp.subspace.kernel.org;
-	dkim=pass (1024-bit key) header.d=broadcom.com header.i=@broadcom.com header.a=rsa-sha256 header.s=google header.b=CrJioLXS
-Received: by mail-pj1-f98.google.com with SMTP id 98e67ed59e1d1-3b3b3c072eeso42328a91.3
-        for <linux-wireless@vger.kernel.org>; Tue, 17 Nov 2026 11:46:45 -0800 (PST)
+	by smtp.subspace.kernel.org (Postfix) with ESMTPS id 30632606A88E
+	for <linux-wireless@vger.kernel.org>; Tue, 17 Nov 2026 20:05:39 +0000 (UTC)
+DMARC-Filter: OpenDMARC Filter v1.4.2 smtp.subspace.kernel.org 30632606A88E
+Authentication-Results: smtp.subspace.kernel.org; dmarc=fail (p=none dis=none) header.from=syzkaller.appspotmail.com
+Authentication-Results: smtp.subspace.kernel.org; spf=pass smtp.mailfrom=M3KW2WVRGUFZ5GODRSRYTGD7.apphosting.bounces.google.com
+Received: by mail-oa1-f71.google.com with SMTP id 586e51a60fabf-45e6091d8a1so179024fac.1
+        for <linux-wireless@vger.kernel.org>; Tue, 17 Nov 2026 12:05:39 -0800 (PST)
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=1e100.net; s=20260707; t=1794944805; x=1795549605;
-        h=content-transfer-encoding:content-type:in-reply-to:from
-         :content-language:references:cc:to:subject:user-agent:mime-version
-         :date:message-id:dkim-signature:x-gm-gg:x-gm-message-state:from:to
-         :cc:subject:date:message-id:reply-to:content-type;
-        bh=aFd/RP58uuymd6sBgw7qEUvIDPwjlsp1rmxiXiW1mtY=;
-        b=q16pzSggxsI1DfYZ1m0o4luXzkKBdbTPaIBw1X9Sy7QZmxGCbRNuJYEbCZ7j4HQ3KW
-         uaX20gD2kMZ7x6Nzm247t6Egn1po7f7RrKiAa3jqVJ4ubAXAp6jUWYuBGQ+CwhTAMvOm
-         FVczK0DnHiWc8egit52dYLi4wrVEgbgipLvGDskD3Yd5+vuQDjoyJBlfvY24+coK7k8q
-         UEbnjDa0w6RLh5Sm+cxPTn4or7qI0I7YAnfoPbojMJ4mgJtOaq/r7Jxd6GCiD5KpiFIZ
-         kPJ1EZ4b6eIsh2lzZQQcm/6R7y65MV3O0u44Qm00HezZbMSqZCQ1Ym0uzknTgjY6200S
-         +AUw==
-X-Forwarded-Encrypted: i=1; AL+hErF/nOMKGG11Rudwc4PRm/pj9Hhe8G8l16eQAG2icNQiz8plKH5tN7iJlYwGCDDEBIu2vGDTtPuJdDt9R7H1BQ==@vger.kernel.org
-X-Gm-Message-State: APuU4Z//fibB63PnhYLQZ+76Dat7C26F6rhjUQkNpY33ZsPeY7PQvpD2
-	BQpb0fB/ZlSqsmB/0Y01LTk/H6AyPfFocR/dCwWRWxaEKT4ChJMwzBdbC2ZNDNwfc/DnY4ofGxE
-	vKHXEPOVFuaKYwO9nYpKF9pp+m7hmPhosmf9t0u6hYAAeEymwjUm1UlXoXhdG6QN6dSpKvAp2Q1
-	UfyyCRiKi8h1yiY+ZiqaRkC4CVi6BoYcFTDiUZTUvjrbFeBKwXmNYbNjhvjifaL0pxSQt3frCGp
-	apfMhLTQwFfncL0ITuux3Mjgw==
-X-Gm-Gg: AZFdTZeiBeoqZVvCkSRj7SnWspas29Vz/7Qm8Kz+sHNUGz3PY2U8VhcdwPC3eOWixdx
-	uh4OT2HL+8STgIyAV0tma3p/laOCc+mx2Tw5MlDboNsgUdVueK6mGMXxcA7eiqvtBW7g3V3TIph
-	9Lvi19YItJ6Pagivols3qZfwHlqV5VNbl4Jn+rM1Jiy/fxXR1jJTh161DGZP/TYTsf7WbuHDivA
-	UBi8MoceOP8F/E7/OXGjUtqT2FCPtLWdPKTZuIS6wQTpDPne+yiblXM79qD0yMl1MBdNDnd2tUE
-	qEfhVWX7LfrIXP8v6NuoN1LXfwYQFvi0P9cm8ansCXOkH2EQx4HcKcv+UAhuaAEwGl0hHncdcub
-	ICxhRCg12kBKjaepAXlQt9WaduP8joqnGUWlZM3z+BGYllRSExbvWsRvAj94sPmkosv6RV28fKN
-	lMTI4ggXtwQnQe0vjt4ebSWmyDqXk4Dim4qXJYwvCa4A==
-X-Received: by 2002:a17:90b:17ca:b0:3a8:c0cd:57f3 with SMTP id 98e67ed59e1d1-3b3d0763168mr392557a91.18.1794944805170;
-        Tue, 17 Nov 2026 11:46:45 -0800 (PST)
-Received: from smtp-us-east1-p01-i01-si01.dlp.protect.broadcom.com (address-144-49-247-123.dlp.protect.broadcom.com. [144.49.247.123])
-        by smtp-relay.gmail.com with ESMTPS id 98e67ed59e1d1-3b3d0987ac9sm271434a91.0.2026.11.17.11.46.44
-        for <linux-wireless@vger.kernel.org>
-        (version=TLS1_2 cipher=ECDHE-ECDSA-AES128-GCM-SHA256 bits=128/128);
-        Tue, 17 Nov 2026 11:46:45 -0800 (PST)
-X-Relaying-Domain: broadcom.com
-X-CFilter-Loop: Reflected
-Received: by mail-ej1-f72.google.com with SMTP id a640c23a62f3a-c50b0de2139so4200766b.3
-        for <linux-wireless@vger.kernel.org>; Tue, 17 Nov 2026 11:46:44 -0800 (PST)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=broadcom.com; s=google; t=1794944803; x=1795549603; darn=vger.kernel.org;
-        h=content-transfer-encoding:content-type:in-reply-to:from
-         :content-language:references:cc:to:subject:user-agent:mime-version
-         :date:message-id:from:to:cc:subject:date:message-id:reply-to
-         :content-type;
-        bh=aFd/RP58uuymd6sBgw7qEUvIDPwjlsp1rmxiXiW1mtY=;
-        b=CrJioLXSrQrzjyCedrcFdZXOQlHTUrIFqi9+BjfX8Z7VPZaPMfbRajtr0NN9SPy3x5
-         fHxPu9u37H07G/qmq6Mlf0d7L4RE+mSsZxssONsmMC2HsB9Blwv2vLl7qANzSdEpnJrS
-         rvrGrGNaFTr7LHCSLh822aPcX9FkB/E3jtsak=
-X-Forwarded-Encrypted: i=1; AL+hErGatK2E/Bw/tqmaYA4Ib8DHDmm/keTqyBYzX2SUsi1WAroAFibFDP3n5kPzpeUkewM6RF3Mt8buY85ejFfZOA==@vger.kernel.org
-X-Received: by 2002:a17:907:728a:b0:c50:48b8:22bf with SMTP id a640c23a62f3a-c510e4fcb61mr21124666b.36.1794944803139;
-        Tue, 17 Nov 2026 11:46:43 -0800 (PST)
-X-Received: by 2002:a17:907:728a:b0:c50:48b8:22bf with SMTP id a640c23a62f3a-c510e4fcb61mr21123566b.36.1794944802720;
-        Tue, 17 Nov 2026 11:46:42 -0800 (PST)
-Received: from [192.168.178.26] (f215227.upc-f.chello.nl. [80.56.215.227])
-        by smtp.gmail.com with ESMTPSA id a640c23a62f3a-c510ca09c82sm16249666b.21.2026.11.17.11.46.42
-        (version=TLS1_3 cipher=TLS_AES_128_GCM_SHA256 bits=128/128);
-        Tue, 17 Nov 2026 11:46:42 -0800 (PST)
-Message-ID: <716869b3-adaf-4155-88bf-638952dd358f@broadcom.com>
-Date: Tue, 17 Nov 2026 20:46:42 +0100
+        d=1e100.net; s=20260707; t=1794945938; x=1795550738;
+        h=content-type:cc:to:from:subject:message-id:in-reply-to:date
+         :mime-version:x-gm-message-state:from:to:cc:subject:date:message-id
+         :reply-to:content-type;
+        bh=BZtm9sHyiktDYCnGeG1o6io6Mc88A5AWr/6VU3Ebv6k=;
+        b=wy2fnijTwFvB5NtvIzDY90dyFdpnKancu0cxmF095/sjGUNOPN0al1EdMP5UM2HP58
+         rtN4V+HrQyo/KuqL/8kiBmWmWqfreH+rDJTjCJS0Fe9jeq8JaHCIJ1P+73HHUUCwfArZ
+         7YRMlTQzzgnGQ34/y10jd6uMCpDhaAKNgWq+LfJjWjqKxzxCqMQxJ5L2aSAw9pPmKiNc
+         OeIAPyw0Sfnwx2/NeEU+nzxHZjb79+L5q6ICFjuzFUeKZcAVKxGPRG9189x8grJT6Zp6
+         MdlBK6s6SabAhHUoPxDaLXzdJmmSjXKdxlWhd8RSCufTi4AZyhmvzdEScAgl/Il7YZk1
+         4RzA==
+X-Forwarded-Encrypted: i=1; AL+hErHo7Kd9TzXv69kChkU+1F2DeFGX3RjoLr6cOGf1Aq/ANgAYUaqDuWrhOiINu1QMjoLt2ENmFSKmsTzaDxHOSw==@vger.kernel.org
+X-Gm-Message-State: APuU4Z+afw2/sGUtc1Al28gEia9Tj2UUZeJFYm/wrfrFhcyksu4fsW22
+	sO4EkZS6+/5g0/8hTtUc+LJaioLoaBc3tBa1JMDQcxmNvwoY43sC4I9JT1lc7ftTSnLNZ6Wk4b1
+	Zk2lC7hh5Ks+MPPbwPNW4CdZYV1q7dc+oCCaDEr6Akw3+pTVAmSgLIJiOjhg=
 X-Mailing-List: linux-wireless@vger.kernel.org
 List-Id: <linux-wireless.vger.kernel.org>
 List-Post: <mailto:linux-wireless@vger.kernel.org>
@@ -105,80 +58,148 @@ List-Unsubscribe: <mailto:linux-wireless+unsubscribe@vger.kernel.org>
 List-Owner: <mailto:linux-wireless+owner@vger.kernel.org>
 Precedence: list
 MIME-Version: 1.0
-User-Agent: Mozilla Thunderbird
-Subject: Re: [PATCH] wifi: brcmfmac: disable TX beamforming on BCM4364
-To: Aditya Garg <aditya.garg@linux.dev>
-Cc: Andre Eikmeyer <dev@deq.rocks>, linux-wireless@vger.kernel.org,
- brcm80211@lists.linux.dev, brcm80211-dev-list.pdl@broadcom.com,
- linux-kernel@vger.kernel.org, Yossef Osman <Yossef.Osman@proton.me>
-References: <20261116203719.281605-2-arend.vanspriel@broadcom.com>
- <2FBC4AA9-16FE-4710-B43D-9004B0B17DFA@linux.dev>
-Content-Language: en-US
-From: Arend van Spriel <arend.vanspriel@broadcom.com>
-In-Reply-To: <2FBC4AA9-16FE-4710-B43D-9004B0B17DFA@linux.dev>
-Content-Type: text/plain; charset=UTF-8; format=flowed
-Content-Transfer-Encoding: 8bit
-X-DetectorID-Processed: b00c1d49-9d2e-4205-b15f-d015386d3d5e
+X-Received: by 2002:a05:6808:5088:b0:4a4:744:a4ff with SMTP id
+ 5614622812f47-5773db24bc2mr955458b6e.4.1794945938174; Tue, 17 Nov 2026
+ 12:05:38 -0800 (PST)
+Date: Tue, 17 Nov 2026 12:05:38 -0800
+In-Reply-To: <20261113102228.1917973-1-shivani.baranwal@oss.qualcomm.com>
+X-Google-Appengine-App-Id: s~syzkaller
+X-Google-Appengine-App-Id-Alias: syzkaller
+Message-ID: <6afcb392.8f566acc.2517be.0008.GAE@google.com>
+Subject: [syzbot ci] Re: wifi: cfg80211/nl80211: add NAN offload support
+From: syzbot ci <syzbot+ci70f784aad288583b@syzkaller.appspotmail.com>
+To: johannes@sipsolutions.net, kavita.kavita@oss.qualcomm.com, 
+	linux-wireless@vger.kernel.org, shivani.baranwal@oss.qualcomm.com, 
+	vamsin@qti.qualcomm.com, vganneva@qti.qualcomm.com
+Cc: syzbot@lists.linux.dev, syzkaller-bugs@googlegroups.com
+Content-Type: text/plain; charset="UTF-8"
 
-On 17/11/2026 18:50, Aditya Garg wrote:
-> 
-> 
->> On 17 Nov 2026, at 2:07 AM, Arend van Spriel <arend.vanspriel@broadcom.com> wrote:
->>
->> ﻿On Wed, 4 Nov 2026 16:16:23 +0100, Andre Eikmeyer <dev@deq.rocks> wrote:
->>> With "txbf" enabled, the BCM4364 firmware (9.30.514.0.32.5.94, as shipped
->>> by Apple for the MacBookPro15,1) transmits a single beamformed spatial
->>> stream (nrate VHT MCS9 NSS1 TXBF) towards a two stream AP. With "txbf"
->>> cleared it picks two streams (VHT MCS9 NSS2) on its own. The firmware
->>> enables "txbf" by default, so the driver has to clear it.
->>>
->>> [...]
->>>
->>> Tested-by: Yossef Osman <Yossef.Osman@proton.me>
->>> Tested-by: Aditya Garg <aditya.garg@linux.dev>
->>> Signed-off-by: Andre Eikmeyer <dev@deq.rocks>
->>
->> [...]
->>
->>> @@ -450,8 +451,12 @@ int brcmf_c_preinit_dcmds(struct brcmf_if *ifp)
->>>         goto done;
->>>     }
->>>
->>> -    /* Enable tx beamforming, errors can be ignored (not supported) */
->>> -    (void)brcmf_fil_iovar_int_set(ifp, "txbf", 1);
->>> +    /* Enable tx beamforming, errors can be ignored (not supported).
->>> +     * BCM4364 firmware enables it by default and then transmits a single
->>> +     * beamformed stream instead of two, halving its uplink throughput.
->>> +     */
->>> +    (void)brcmf_fil_iovar_int_set(ifp, "txbf",
->>> +                      drvr->bus_if->chip != BRCM_CC_4364_CHIP_ID);
->>> done:
->>>     return err;
->>> }
->>
->> The chip ID check has the same problem as in the ARP/ND offload patch [1]:
->> the issue is described as specific to the firmware shipped by Apple
->> (9.30.514.0.32.5.94), but the quirk applies to every BCM4364. Please
->> restrict it as suggested there.
->>
->> Also, the comment says "Enable tx beamforming" while the code now
->> conditionally disables it. Please make the code self-explanatory, e.g. a
->> local variable or an explicit if (chip == BRCM_CC_4364_CHIP_ID) with the
->> txbf value spelled out, instead of passing a bool expression as the
->> iovar value.
->>
->> Minor: typo "refression" in the commit message, and the subject lacks
->> the target tree (wireless-next) which wifibot flagged.
->>
->> Since this is a throughput quirk (not a fix) I would also like to know
->> whether TX beamforming is functional at all on the BCM4364 or just
->> mis-selected by rate control, so the commit message can state the actual
->> root cause.
-> 
-> Unrelated but Airdrop conversation seems to have been stalled :(.
+syzbot ci has tested the following series
 
-Indeed unrelated so let me respond to your earlier email that was more 
-on the subject.
+[v3] wifi: cfg80211/nl80211: add NAN offload support
+https://lore.kernel.org/all/20261113102228.1917973-1-shivani.baranwal@oss.qualcomm.com
+* [PATCH wireless-next v3 01/19] wifi: nl80211: reject NAN function add/delete when Discovery Engine is in userspace
+* [PATCH wireless-next v3 02/19] wifi: nl80211/cfg80211: extend NAN function and configuration for discovery offload
+* [PATCH wireless-next v3 03/19] wifi: nl80211/cfg80211: extend NAN match indication for discovery offload
+* [PATCH wireless-next v3 04/19] wifi: nl80211/cfg80211: add NAN ranging FTM capability
+* [PATCH wireless-next v3 05/19] wifi: nl80211/cfg80211: advertise NAN ranging support
+* [PATCH wireless-next v3 06/19] wifi: nl80211/cfg80211: add support for request-based NAN ranging
+* [PATCH wireless-next v3 07/19] wifi: nl80211/cfg80211: add support for discovery-based NAN ranging
+* [PATCH wireless-next v3 08/19] wifi: nl80211/cfg80211: add ranging results to NAN match event
+* [PATCH wireless-next v3 09/19] wifi: nl80211: add NDP offload capability advertisement
+* [PATCH wireless-next v3 10/19] wifi: nl80211/cfg80211: add support for NDP initiation in offload mode
+* [PATCH wireless-next v3 11/19] wifi: nl80211/cfg80211: add support for NDP response in offload mode
+* [PATCH wireless-next v3 12/19] wifi: nl80211/cfg80211: add support for NDP termination in offload mode
+* [PATCH wireless-next v3 13/19] wifi: nl80211/cfg80211: add support for NDP request indication
+* [PATCH wireless-next v3 14/19] wifi: nl80211/cfg80211: add support for NDP status indication
+* [PATCH wireless-next v3 15/19] wifi: nl80211/cfg80211: add support for NDP terminated indication
+* [PATCH wireless-next v3 16/19] wifi: nl80211/cfg80211: support updating an offloaded NAN publish function
+* [PATCH wireless-next v3 17/19] wifi: nl80211/cfg80211: allow extra NAN attributes in offloaded functions
+* [PATCH wireless-next v3 18/19] wifi: nl80211/cfg80211: add NAN group key capabilities to NAN functions
+* [PATCH wireless-next v3 19/19] wifi: nl80211/cfg80211: select the 5 GHz NAN channel for IC
 
-Regards,
-Arend
+and found the following issue:
+WARNING in genl_register_family
+
+Full report is available here:
+https://ci.syzbot.org/series/51fe1835-2116-4216-afb5-89006d12c38e
+
+***
+
+WARNING in genl_register_family
+
+tree:      linux-next
+URL:       https://kernel.googlesource.com/pub/scm/linux/kernel/git/next/linux-next
+base:      5dbf2415ca9821a611d09308e3b29d2c37e7cd77
+arch:      amd64
+compiler:  Debian clang version 22.1.8 (1~deb13u4), Debian LLD 22.1.8
+config:    https://ci.syzbot.org/builds/88ad3d6b-ffda-4626-be13-f0ecdc12abcf/config
+
+Bluetooth: L2CAP socket layer initialized
+Bluetooth: SCO socket layer initialized
+NET: Registered PF_ATMPVC protocol family
+NetLabel: Initializing
+NetLabel:  domain hash size = 128
+NetLabel:  protocols = UNLABELED CIPSOv4 CALIPSO
+NetLabel:  unlabeled traffic allowed by default
+nfc: nfc_init: NFC Core ver 0.1
+NET: Registered PF_NFC protocol family
+mctp: management component transport protocol core
+NET: Registered PF_MCTP protocol family
+PCI: Using ACPI for IRQ routing
+e820: register RAM buffer resource [mem 0x0009fc00-0x0009ffff]
+e820: register RAM buffer resource [mem 0x7ffdf000-0x7fffffff]
+pci 0000:00:01.0: vgaarb: setting as boot VGA device
+pci 0000:00:01.0: vgaarb: bridge control possible
+pci 0000:00:01.0: vgaarb: VGA device added: decodes=io+mem,owns=io+mem,locks=none
+vgaarb: loaded
+hpet: 3 channels of 0 reserved for per-cpu timers
+hpet0: at MMIO 0xfed00000, IRQs 2, 8, 0
+hpet0: 3 comparators, 64-bit 100.000000 MHz counter
+clocksource: Switched to clocksource kvm-clock
+VFS: Disk quotas dquot_6.6.0
+VFS: Dquot-cache hash table entries: 512 (4096 bytes)
+netfs: FS-Cache loaded
+CacheFiles: Loaded
+TOMOYO: 2.6.0
+Mandatory Access Control activated.
+AppArmor: AppArmor Filesystem Enabled
+acpi PNP0C01:00: Reserved [mem 0xb0000000-0xbfffffff]
+pnp: PnP ACPI init
+pnp: PnP ACPI: found 4 devices
+clocksource: acpi_pm: mask: 0xffffff max_cycles: 0xffffff, max_idle_ns: 2085701024 ns
+NET: Registered PF_INET protocol family
+IP idents hash table entries: 131072 (order: 8, 1048576 bytes, vmalloc)
+tcp_listen_portaddr_hash hash table entries: 4096 (order: 7, 294912 bytes, vmalloc)
+Table-perturb hash table entries: 65536 (order: 6, 262144 bytes, vmalloc)
+TCP established hash table entries: 65536 (order: 7, 524288 bytes, vmalloc)
+TCP bind hash table entries: 65536 (order: 12, 9437184 bytes, vmalloc hugepage)
+TCP: Hash tables configured (established 65536 bind 65536)
+MPTCP token hash table entries: 8192 (order: 8, 720896 bytes, vmalloc)
+UDP hash table entries: 4096 (order: 8, 1048576 bytes, vmalloc)
+NET: Registered PF_UNIX/PF_LOCAL protocol family
+RPC: Registered named UNIX socket transport module.
+RPC: Registered udp transport module.
+RPC: Registered tcp transport module.
+RPC: Registered tcp-with-tls transport module.
+RPC: Registered tcp NFSv4.1 backchannel transport module.
+------------[ cut here ]------------
+i.cmd >= family->resv_start_op && (i.doit.validate || i.dumpit.validate)
+WARNING: net/netlink/genetlink.c:581 at genl_register_family+0xc9e/0x17d0, CPU#1: swapper/0/1
+Modules linked in:
+CPU: 1 UID: 0 PID: 1 Comm: swapper/0 Not tainted syzkaller #0 PREEMPT(full) 
+Hardware name: QEMU Standard PC (Q35 + ICH9, 2009), BIOS 1.16.2-debian-1.16.2-1 04/01/2014
+RIP: 0010:genl_register_family+0xc9e/0x17d0
+Code: de e8 a6 98 c8 f7 83 fb 01 0f 85 26 0b 00 00 e8 18 95 c8 f7 b0 01 89 44 24 08 4c 8b 7c 24 18 e9 f3 02 00 00 e8 03 95 c8 f7 90 <0f> 0b 90 e9 82 fa ff ff e8 f5 94 c8 f7 4c 8b 7c 24 20 e9 b9 f6 ff
+RSP: 0000:ffffc90000067740 EFLAGS: 00010293
+RAX: ffffffff89ffd11d RBX: 0000000000000003 RCX: ffff888102aa5a00
+RDX: 0000000000000000 RSI: 0000000000000003 RDI: 0000000000000000
+RBP: ffffc90000067948 R08: ffffc90000067827 R09: 0000000000000000
+R10: ffffc90000067800 R11: fffff5200000cf05 R12: ffffc90000067860
+R13: ffffc900000677d0 R14: 00000000000000b2 R15: 1ffffffff1cf0d83
+FS:  0000000000000000(0000) GS:ffff8882a7c57000(0000) knlGS:0000000000000000
+CS:  0010 DS: 0000 ES: 0000 CR0: 0000000080050033
+CR2: 0000000000000000 CR3: 000000000fb48000 CR4: 00000000000006f0
+Call Trace:
+ <TASK>
+ nl80211_init+0x11/0x50
+ cfg80211_init+0x3c/0xe0
+ do_one_initcall+0x250/0x870
+ do_initcall_level+0x10a/0x1a0
+ do_initcalls+0x59/0xa0
+ kernel_init_freeable+0x29d/0x3e0
+ kernel_init+0x22/0x1d0
+ ret_from_fork+0x514/0xb70
+ ret_from_fork_asm+0x1a/0x30
+ </TASK>
+
+
+***
+
+If these findings have caused you to resend the series or submit a
+separate fix, please add the following tag to your commit message:
+  Tested-by: syzbot@syzkaller.appspotmail.com
+
+---
+This report is generated by a bot. It may contain errors.
+syzbot ci engineers can be reached at syzkaller@googlegroups.com.
