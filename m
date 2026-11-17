@@ -1,53 +1,53 @@
-Authentication-Results: smtp.subspace.kernel.org; arc=none smtp.remote-ip=95.215.58.79
+Authentication-Results: smtp.subspace.kernel.org; arc=none smtp.remote-ip=91.218.175.12
 ARC-Seal: i=1; d=subspace.kernel.org; s=arc20261015; a=rsa-sha256; cv=none;
-	t=1794900025;
-	b=xjLN+fInHupavzHr+BStT+Iqd6CVl/Rnl0qOPkmur+U+4NUXICLSGHL+uSBCR9zN85CA
-	 45IBG5if4dqCIFXfGsAVziLU+g3nPz5vgENfw1ajJXH3fOE0fovnWRChgylHRTHyalwfY
-	 qtFMM90wibgVUUN9I5rZUJNPzyklvMYeWs11I3aBe4a+XTvHAZ4n2d35Xr22kTzrzIWzW
-	 Qmc8MN/wIpNfG8gWXOP0z7yQCIj4E5Bzginz4LIQ3CkKa3HHg6Jp5sv5GxleZKkKPPoZv
-	 2r/74cBuK3tY8cAT/7fQPuep7FwlXbsBjgVn6QnJu3P94kFuRJ8z/Oml4DRBm6s17FA==
+	t=1794900118;
+	b=PR2blgGwFNSb9cLfbu7UguNZ5PDnnb9n1h9YEfURaJDw6Qcd6xMovh4XJlwaylCtr/pL
+	 NOLNEQ2Dokzauu+SRlA/IOav+CkHKSRzmW/BXQ7TOYBgIPAQlVSOlBrMLP1VKR3zVHRNu
+	 VemYjPwwaUTmW5xZVKDjlkW7UN2IKcwJKB786qgYV3GZ9p/JAxkSHfluPzOHBfIYAYMvt
+	 qzj1i7QQIlu4Fjn5L+jV8cb4tzJm0xivG5JALpHPcnD5ZR9mN7FC8P0PYPiEDlUroIZnD
+	 wXwbZrY1R01LekG+eHf7BShhmc9CvibNReW4VJWmJWhuEUHqoqMJyIjU+R+uCsus2fA==
 ARC-Message-Signature: i=1; d=subspace.kernel.org; s=arc20261015;
-	a=rsa-sha256; c=relaxed/relaxed; t=1794900025;
+	a=rsa-sha256; c=relaxed/relaxed; t=1794900118;
 	h=DMARC-Filter:X-Envelope-To:DKIM-Signature:X-Envelope-To:Received:
 	 X-Mizu-Trace-ID:X-Migadu-Flow:Date:From:To:CC:Subject:In-Reply-To:
 	 References:Message-ID:MIME-Version:Content-Type:
 	 Content-Transfer-Encoding;
-	bh=jq8pirwHCDBjHczrIow9hfLd9FNV9oipiUXhXIMuypE=;
-	b=5IPytNfQUp8BVA33qXaGVOd3BIIDCouVx5XE73SSU4thdIWksXhZ6hRlQNLN3iPA4Txp
-	 dwr7FBiTPzbNuUdGy3/MbsuGThwnQkN7gtqjE9g/E3GCyev83jtaplhNRQEht8dbsp9gn
-	 Ia0ql1oAerkD3PoD8hyZ3Vwji6mzkCZq3adwB9N/2oQ4wRfDUvZtcWSUIbLhML5IE7tQR
-	 Cuz5HKzZmrrm22/LHI9ezBLPoPyv3POaUvx01lIZ89fuYMffn8diILChVrVT0TSW41UrY
-	 DFh80FRPtVc2+Uqm8gcRtyAxVMZpWInX9tpIwkbc6uRh0gCWgMRtAW86IXftbsnePPQ==
+	bh=oxM0dfNHWhh0JA5nDAwcg0YM5ZxKXWKNv+wLwQN0H2o=;
+	b=Gs6C4RO6nge9ondgGIvL9f+En8tAzcCtKWoq222tPKffWDDPj6/DAV/HVJKOkphlSXHk
+	 rVNxQauudF3v4xhzIBmfFAiXmQO5z7G9LEolrZUb9wIQtyx2Z9eXy06UiDK+hb9HuZCJw
+	 qb7IyDPqMtYCdU9q40GMKhJcyT7huEMmv+ciVxkD62x+JCu0jP+8iYUYzABrcVSLWJTqB
+	 K5IGHUwz9ktEy7kv/fxEHFVlEOMxuk6NXkqbQkQTzem4ZVfkhm9qTO8tFFnXZNeIZmyYo
+	 A6GWdVZ8gFHu8Ai2gzG4erScxY3aDtt3dcxapD57Owhxs26/hnctNGrkqsXwJNKJ54A==
 ARC-Authentication-Results: i=1; smtp.subspace.kernel.org; 
 	dmarc=pass header.from=linux.dev;
 	spf=pass smtp.mailfrom=linux.dev;
-	dkim=pass header.d=linux.dev header.i=@linux.dev header.a=rsa-sha256 header.s=key1 header.b=dRMjOMA+;
-	arc=none smtp.remote-ip=95.215.58.79
-Received: from mta1.migadu.com (out-79.mta1.migadu.com [95.215.58.79])
+	dkim=pass header.d=linux.dev header.i=@linux.dev header.a=rsa-sha256 header.s=key1 header.b=YHZppQaL;
+	arc=none smtp.remote-ip=91.218.175.12
+Received: from mta0.migadu.com (out-12.mta0.migadu.com [91.218.175.12])
 	(using TLSv1.3 with cipher TLS_AES_128_GCM_SHA256 (128/128 bits)
 	 key-exchange X25519 server-signature ECDSA (prime256v1) server-digest SHA256)
 	(No client certificate requested)
-	by smtp.subspace.kernel.org (Postfix) with ESMTPS id 47813606A323
-	for <linux-wireless@vger.kernel.org>; Tue, 17 Nov 2026 07:20:23 +0000 (UTC)
-DMARC-Filter: OpenDMARC Filter v1.4.2 smtp.subspace.kernel.org 47813606A323
+	by smtp.subspace.kernel.org (Postfix) with ESMTPS id 42B77606A31C
+	for <linux-wireless@vger.kernel.org>; Tue, 17 Nov 2026 07:21:57 +0000 (UTC)
+DMARC-Filter: OpenDMARC Filter v1.4.2 smtp.subspace.kernel.org 42B77606A31C
 Authentication-Results: smtp.subspace.kernel.org; dmarc=pass (p=none dis=none) header.from=linux.dev
 Authentication-Results: smtp.subspace.kernel.org; spf=pass smtp.mailfrom=linux.dev
 Authentication-Results: smtp.subspace.kernel.org;
-	dkim=pass (1024-bit key, unprotected) header.d=linux.dev header.i=@linux.dev header.a=rsa-sha256 header.s=key1 header.b=dRMjOMA+
+	dkim=pass (1024-bit key, unprotected) header.d=linux.dev header.i=@linux.dev header.a=rsa-sha256 header.s=key1 header.b=YHZppQaL
 X-Envelope-To: linux-wireless@vger.kernel.org
-DKIM-Signature: a=rsa-sha256; bh=/wT/xjc/A5pWF9M3+pmHS24DpE6FHAK3DS4o9xG5i1k=;
+DKIM-Signature: a=rsa-sha256; bh=C5pBUkm+CKl8mzMt2Ynj+HJYaQvwfObB423yYROWZWM=;
  c=simple/simple; d=linux.dev;
  h=from:to:subject:date:message-id:mime-version:content-type; s=key1;
- t=1794900022; v=1; x=1795504822;
- b=dRMjOMA+i3QXAn4jJQ6sf+xk2g4wDAmX6/4PtopwyeB0E+lV1HJ3gS1xLY6QEWrBtOfp56ZJ
- 5zmhnDv1fbOJV8hkG5+98k/XvgbsKmOXSSJPEfSf+Ej6v0eGvT4UQGc5KGvJ8XQGwskP8bM2XJd
- Pscc34LLf0p3jFcguKQxsl3I=
+ t=1794900116; v=1; x=1795504916;
+ b=YHZppQaL+C5s0HBFTcD3hg4U5jW3M7Xi5UG9rjn5mU2aq4LFxuJ5I3mZ5YTLTvNCSY+qC9Zo
+ s03iHD/k4nbwNWG48noZzJLq1fBFyvLZRVcRJeuIojU27BehYhoxHCmAQ/5j7gtldqe+42C86Bl
+ yb02MZ5J5An4GcPDxpsLrpC0=
 X-Envelope-To: linux-wireless@vger.kernel.org
-Received: by smtp.migadu.com with ESMTPS id 14a02e8760ccc26d;
-	Tue, 17 Nov 2026 07:20:21 +0000
-X-Mizu-Trace-ID: 14a02e8760ccc26d
+Received: by smtp.migadu.com with ESMTPS id a40618706497855e;
+	Tue, 17 Nov 2026 07:21:56 +0000
+X-Mizu-Trace-ID: a40618706497855e
 X-Migadu-Flow: FLOW_OUT
-Date: Tue, 17 Nov 2026 08:20:16 +0100
+Date: Tue, 17 Nov 2026 08:21:50 +0100
 From: Luka Gejak <luka.gejak@linux.dev>
 To: =?ISO-8859-1?Q?David_H=E4rdeman?= <david@hardeman.nu>,
  Ping-Ke Shih <pkshih@realtek.com>, linux-wireless@vger.kernel.org
@@ -56,11 +56,11 @@ CC: linux-kernel@vger.kernel.org, Leonard Lausen <leonard@lausen.nl>,
  Martin Blumenstingl <martin.blumenstingl@googlemail.com>,
  Jernej Skrabec <jernej.skrabec@gmail.com>,
  Bitterblue Smith <rtl8821cerfe2@gmail.com>
-Subject: =?US-ASCII?Q?Re=3A_=5BPATCH_rtw-next_1/5=5D_wifi=3A_rtw88=3A_sdio=3A_c?=
- =?US-ASCII?Q?ache_the_free_TX_page_counts_of_the_88xx_chips?=
-In-Reply-To: <20261116190145.2736364-2-david@hardeman.nu>
-References: <20261116190145.2736364-1-david@hardeman.nu> <20261116190145.2736364-2-david@hardeman.nu>
-Message-ID: <83F543B9-2066-493F-8372-0E36779C1B04@linux.dev>
+Subject: =?US-ASCII?Q?Re=3A_=5BPATCH_rtw-next_3/5=5D_wifi=3A_rtw88=3A_sdio=3A?=
+ =?US-ASCII?Q?_limit_the_TX_queue_length_of_the_88xx_chips?=
+In-Reply-To: <20261116190145.2736364-4-david@hardeman.nu>
+References: <20261116190145.2736364-1-david@hardeman.nu> <20261116190145.2736364-4-david@hardeman.nu>
+Message-ID: <B58755EF-D7EC-47C5-8DED-EB19A880CE26@linux.dev>
 X-Mailing-List: linux-wireless@vger.kernel.org
 List-Id: <linux-wireless.vger.kernel.org>
 List-Post: <mailto:linux-wireless@vger.kernel.org>
@@ -76,33 +76,49 @@ Content-Transfer-Encoding: 8bit
 
 Hi David,
 
-Thanks for picking this up. One comment below.
-
-On November 16, 2026 8:01:41 PM GMT+01:00, "David Härdeman"
+On November 16, 2026 8:01:43 PM GMT+01:00, "David Härdeman"
 <david@hardeman.nu> wrote:
 
-> +     free_txpg[0] = rtw_sdio_read32(rtwdev, REG_SDIO_FREE_TXPG);
-> +     free_txpg[1] = rtw_sdio_read32(rtwdev, REG_SDIO_FREE_TXPG + 4);
-> +     free_txpg[2] = rtw_sdio_read32(rtwdev, REG_SDIO_FREE_TXPG + 8);
+> +             if (ret == -EBUSY && !rtw_chip_wcpu_8051(rtwdev))
+> +                     resched = true;
+
+I think -ENOMEM needs a retry here too. mmc_io_rw_extended() allocates a
+scatterlist when a transfer needs more than one segment. For example,
+dw_mmc with IDMAC sets max_seg_size to 4096, so an aggregate larger than
+that can fail this allocation and return -ENOMEM.
+
+The aggregate is put back in the queue on error. If the retry loop keeps
+failing while the queue is stopped, no further attempt is scheduled.
+Fresh TX callbacks can kick the worker again, including for the same AC,
+but if no more arrive, recovering memory alone leaves the queued frames
+stalled. The single frame fallback can also return -ENOMEM from
+__skb_pad().
+
+Could this handle -ENOMEM as the RTL8723BS retry helper already does?
 
 [ ... ]
 
-> +     rtwsdio->free_txpg_valid = true;
+> +     if (resched)
+> +             queue_delayed_work(rtwsdio->txwq, &work_data->work,
+> +                                RTW_SDIO_TX_RETRY_DELAY);
 
-As far as I can see, a failed read can leave bogus credits cached here.
-While the chip is powered on, sdio_readl() returns 0xffffffff on an I/O
-error, and rtw_sdio_read32() only logs the error. That becomes 4095 pages
-in each affected page count.
+So if I read it right, this also needs the work to be cancelled when the
+SDIO interface stops. The power off path is:
 
-The first frame can still fit the real page pool and be sent
-successfully. The cache then stays valid, so the next frame can be
-admitted using credits from the failed read even after the real pages
-have been consumed. Previously, the next transfer would read the
-registers again.
+        rtw_power_off()
+                rtw_hci_stop()
+                        rtw_sdio_stop()
+                rtw_mac_power_off()
 
-Could the sync return an error and leave the cache invalid unless all
-three reads succeed? The individual reads used as a fallback in patch 5
-would need to preserve their errors too.
+rtw_sdio_stop() only disables interrupts and invalidates the credits.
+The cancellation is in rtw_sdio_deinit_tx(), which closing the interface
+does not call. The flush callback does not drain the SDIO software queues
+either, since the SDIO operations have no flush_queues callback.
+
+A pending retry can therefore run after power off and keep rearming
+while credits are unavailable. The RTL8723BS retry helper seems to have
+the same lifetime gap already, so maybe the shared stop path is the right
+place to fix this before extending the retries to the other chips?
 
 Best regards,
 Luka Gejak
