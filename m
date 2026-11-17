@@ -1,73 +1,73 @@
 Authentication-Results: smtp.subspace.kernel.org; arc=none smtp.remote-ip=211.75.126.72
 ARC-Seal: i=1; d=subspace.kernel.org; s=arc20261015; a=rsa-sha256; cv=none;
-	t=1794903870;
-	b=H2xulDNeXMOarguckJLYR3ngzTWez2M6YmDwp24lZ1GvFzP6A0Lo0qSw0ihamAwpCYqC
-	 cRPcBvWpaXecBOSBqUcOjZ0G7REOQlbkKYwonbc9zBkI+JhMS8VxhgzqXarmL48VvbR7k
-	 lU1tWci5HCKv4A6S12xzjhGsoFe61uM6WMswB9oB6tWJT2Yet5xnbBL70EGpIeKiYKpjI
-	 GOBA+BK4taKtea7NNjEa/DExdO+suESsLhftTq5zss7RtPGxniG+0VrG+/m4cKl1KDAQq
-	 PPsLfNtZIdJAj2uHUkEqBmakBShpkUspmdjx8Ok8Q4mPx28b4qH8UNs9InI1uhcN6zQ==
+	t=1794904089;
+	b=ueViGV5pbECBltBZoD9oVDFL5HBuLBJiGTqD7TC0tsi2QJHt3UYEgiLqi1p+pThIUPZl
+	 Zzhq+HeGM0qgt1i8pRiVs3lbNHheZUMtJaSnFpN6x33I79AhIRWhUybZjufmY5T3Fy6Lr
+	 rD9lERQE/Aw9TbMKSh8f/LI8ICj/lc5+xv1XbLxg5S/5z7QAFVKMabEGnpJ/78b21V/uF
+	 O1tS/mhV+DIb0qJitp3eim38k7XwYpuITzjL/lMQ/x2qSoeEr6AZWbg3L0MdiC4Nnjsf0
+	 Nie+3QnEv7ErMVQlQtzbs3jnFeYEC6sTd43YlprTt+idONHH1/65DiBzQDPyhdBrymQ==
 ARC-Message-Signature: i=1; d=subspace.kernel.org; s=arc20261015;
-	a=rsa-sha256; c=relaxed/relaxed; t=1794903870;
+	a=rsa-sha256; c=relaxed/relaxed; t=1794904089;
 	h=DMARC-Filter:X-SpamFilter-By:DKIM-Signature:Received:Received:
-	 Received:From:To:CC:Subject:In-Reply-To:References:Message-ID:Date:
-	 MIME-Version:Content-Type;
-	bh=w7OTxenFT6A8JYevnH8NQBfKgcuFik3UXOa/tHwcT6o=;
-	b=hGpM+418bSHI0xyMLqPuUEGaOytln+14jKptqt3ptXOpAo+Y2CCnYyF3uoFwEJ8Y6N53
-	 SjyVgv4K9hQsjPvATFbwsRdZSymA6c6NaheHA1Gt1pJPXQENC+Kgxjm+B5UIGbZnoUb7p
-	 lOqFL2rBh++C/noqzbpEbx8JY1hiIw8ll+lc8ZIGBfoGxK4oa1lp+eq7HDvIwmZqXIow2
-	 IhuPZyofMgug+KKyBEAnTMnHIRLtBE5c0vp5KY2gzprlmfpL4+xe7q5+RzxKP1jxxS5km
-	 Bbs2K2vtJCYdp4e6uedZGDd0o5sH5KAiji9tACguirG+4VeetmhIFQ2IgwFsxdfcLog==
+	 Received:Received:From:To:CC:Subject:In-Reply-To:References:
+	 Message-ID:Date:MIME-Version:Content-Type;
+	bh=lfmEDuH+vuU8hq7oTwAoWe8C9yQbsXRY2McNeZkjrdk=;
+	b=rr9HwEpupzYtii4Lt9O6VsAFjyj3psLLZs2e2lONgjWneW6QRYD3dC4+LwLuqU3BA4pA
+	 sO7Xe44Lz/QvdiEWY8OdmWekV5vP5Ajry0SfqkvnP8jhyXWWkV3Q2Jjqgtk0AXFOkchPe
+	 O1SRlEghmuL8qrIa82DeeArfb3Vu39QeUpOapN0ArlcqSq7b4JbG/20FKVbXf+gGdK3YQ
+	 bP9jlvpsQlXTP+gHuZQiAxUdJ5rkUo3XXxn4a0KmXcN3XWhRgie7WreCMKT8R6/5owowd
+	 j11Q5p+yYE/PsSXItf01mHajjlw9RiKL9v/Ud74OaHGntComggcErGMtKGF8EAmfrWw==
 ARC-Authentication-Results: i=1; smtp.subspace.kernel.org; 
 	dmarc=pass header.from=realtek.com;
 	spf=pass smtp.mailfrom=realtek.com;
-	dkim=pass header.d=realtek.com header.i=@realtek.com header.a=rsa-sha256 header.s=dkim header.b=nq8QtScd;
+	dkim=pass header.d=realtek.com header.i=@realtek.com header.a=rsa-sha256 header.s=dkim header.b=a1iNGG4h;
 	arc=none smtp.remote-ip=211.75.126.72
 Received: from rtits2.realtek.com.tw (rtits2.realtek.com [211.75.126.72])
 	(using TLSv1.3 with cipher TLS_AES_256_GCM_SHA384 (256/256 bits)
 	 key-exchange X25519 server-signature ECDSA (prime256v1) server-digest SHA256)
 	(No client certificate requested)
-	by smtp.subspace.kernel.org (Postfix) with ESMTPS id C803E606A8BD;
-	Tue, 17 Nov 2026 08:24:29 +0000 (UTC)
-DMARC-Filter: OpenDMARC Filter v1.4.2 smtp.subspace.kernel.org C803E606A8BD
+	by smtp.subspace.kernel.org (Postfix) with ESMTPS id AEFF7606A323
+	for <linux-wireless@vger.kernel.org>; Tue, 17 Nov 2026 08:28:06 +0000 (UTC)
+DMARC-Filter: OpenDMARC Filter v1.4.2 smtp.subspace.kernel.org AEFF7606A323
 Authentication-Results: smtp.subspace.kernel.org; dmarc=pass (p=none dis=none) header.from=realtek.com
 Authentication-Results: smtp.subspace.kernel.org; spf=pass smtp.mailfrom=realtek.com
 Authentication-Results: smtp.subspace.kernel.org;
-	dkim=pass (2048-bit key) header.d=realtek.com header.i=@realtek.com header.a=rsa-sha256 header.s=dkim header.b=nq8QtScd
-X-SpamFilter-By: ArmorX SpamTrap 5.80 with qID 6AH8O9Am8085203, This message is accepted by code: ctloc85258
+	dkim=pass (2048-bit key) header.d=realtek.com header.i=@realtek.com header.a=rsa-sha256 header.s=dkim header.b=a1iNGG4h
+X-SpamFilter-By: ArmorX SpamTrap 5.80 with qID 6AH8S2Bv8087340, This message is accepted by code: ctloc85258
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=realtek.com; s=dkim;
-	t=1794903849; bh=w7OTxenFT6A8JYevnH8NQBfKgcuFik3UXOa/tHwcT6o=;
+	t=1794904082; bh=lfmEDuH+vuU8hq7oTwAoWe8C9yQbsXRY2McNeZkjrdk=;
 	h=From:To:CC:Subject:In-Reply-To:References:Message-ID:Date:
 	 MIME-Version:Content-Type;
-	b=nq8QtScdKoGCetjKtrmu0oUh/WHqPY95XaE7qrOgLqFunCAfszGhVCFm37TQA0wmW
-	 EnvmeBjKZbiFof8jOlMMZYAqSKuOA7kJ0zFtTST1o4pch4c49DcuL5T7LTJzL0CU47
-	 sE7w6qdNFS+7VfzB1Q/mxVwqbkqmd3oZy7x+OG81aa72RFBI05V07u8G0jcpr1PV2p
-	 8HplxMN7G3SBjXex8OLgqpse4PmUpQX6fNEEjxo5fDwOnAG+cxMaHSh4/21B7rz1VN
-	 Mj7xyJTTPMjq7NKjeeGqcl2od1oxl8VPt35kwNs1pAPM4s+7+yp5ui5RK6R/3bc0Wz
-	 43uo5kXXQmPXQ==
-Received: from mail.realtek.com (rtkexhmbs02.realtek.com.tw[172.21.6.41])
-	by rtits2.realtek.com.tw (8.15.2/3.29/5.94) with ESMTPS id 6AH8O9Am8085203
+	b=a1iNGG4hWrNlRie1HT6oHzYY5oLRa/RV2J5U2KpnMIwBFVdcAF4zfYDuZ5fzmHvt8
+	 bdThepRVKEKRnQn3xkSRotgVWGO2GtzS1uJo0qcebMno32s9Y8f38y54o3gjCyPJki
+	 B+q6lxnvy81yT6ryJQ9KsNUDeT7x6mCXziNdPoQ00muW6NuQXOfwiCHvr+t0IU3DaQ
+	 M6sPehCh6T1LDf5ZYpZYDbjo4xS+8VZgxDoUTgUamZWxsTUWPuVsVVHkBsj43F7iXX
+	 bCyC4/9T2QBlc3khRyGxH3E5kNfMewyAotV/OuVM23g3dDa3tNQP/fhy0yYa2pRogc
+	 gZXaqQoAbql9g==
+Received: from mail.realtek.com (rtkexhmbs03.realtek.com.tw[10.21.1.53])
+	by rtits2.realtek.com.tw (8.15.2/3.29/5.94) with ESMTPS id 6AH8S2Bv8087340
 	(version=TLSv1.2 cipher=ECDHE-RSA-AES256-GCM-SHA384 bits=256 verify=FAIL);
-	Tue, 17 Nov 2026 16:24:09 +0800
+	Tue, 17 Nov 2026 16:28:02 +0800
 Received: from RTKEXHMBS05.realtek.com.tw (10.21.1.55) by
- RTKEXHMBS02.realtek.com.tw (172.21.6.41) with Microsoft SMTP Server
+ RTKEXHMBS03.realtek.com.tw (10.21.1.53) with Microsoft SMTP Server
  (version=TLS1_2, cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id
- 15.2.2562.56; Tue, 17 Nov 2026 16:24:09 +0800
-Received: from [127.0.1.1] (172.21.40.75) by RTKEXHMBS05.realtek.com.tw
- (10.21.1.55) with Microsoft SMTP Server (version=TLS1_2,
+ 15.2.2562.56; Tue, 17 Nov 2026 16:28:01 +0800
+Received: from RTKEXHMBS06.realtek.com.tw (10.21.1.56) by
+ RTKEXHMBS05.realtek.com.tw (10.21.1.55) with Microsoft SMTP Server
+ (version=TLS1_2, cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id
+ 15.2.2562.56; Tue, 17 Nov 2026 16:28:01 +0800
+Received: from [127.0.1.1] (172.21.40.75) by RTKEXHMBS06.realtek.com.tw
+ (10.21.1.56) with Microsoft SMTP Server (version=TLS1_2,
  cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id 15.2.2562.56 via Frontend
- Transport; Tue, 17 Nov 2026 16:24:04 +0800
+ Transport; Tue, 17 Nov 2026 16:28:01 +0800
 From: Ping-Ke Shih <pkshih@realtek.com>
-To: Mauricio Faria de Oliveira <mfo@igalia.com>,
-	<linux-wireless@vger.kernel.org>
-CC: Ping-Ke Shih <pkshih@realtek.com>, Po-Hao Huang <phhuang@realtek.com>,
-	Kalle Valo <kvalo@kernel.org>, <kernel-dev@igalia.com>,
-	<linux-kernel@vger.kernel.org>, <stable@vger.kernel.org>, Mauricio Faria de
- Oliveira <mfo@igalia.com>, Luka Gejak <luka.gejak@linux.dev>
-Subject: Re: [PATCH v2] wifi: rtw88: fix skb leak in hw_scan probe request length check
-In-Reply-To: <20261116-rtw88-hw-scan-skb-leak-v2-1-cc9644774fff@igalia.com>
-References: <20261116-rtw88-hw-scan-skb-leak-v2-1-cc9644774fff@igalia.com>
-Message-ID: <4f05b7e9-211f-458a-a73a-8b4708317f9e@RTKEXHMBS05.realtek.com.tw>
-Date: Tue, 17 Nov 2026 16:24:04 +0800
+To: Rosen Penev <rosenp@gmail.com>, <linux-wireless@vger.kernel.org>
+CC: Ping-Ke Shih <pkshih@realtek.com>
+Subject: Re: [PATCH rtw-next v4] wifi: rtw89: acpi: skip _DSM when there is no ACPI companion
+In-Reply-To: <20261117024612.26239-1-rosenp@gmail.com>
+References: <20261117024612.26239-1-rosenp@gmail.com>
+Message-ID: <7600f205-38c9-44d6-999e-29a8a3bf28bc@RTKEXHMBS06.realtek.com.tw>
+Date: Tue, 17 Nov 2026 16:28:01 +0800
 X-Mailing-List: linux-wireless@vger.kernel.org
 List-Id: <linux-wireless.vger.kernel.org>
 List-Post: <mailto:linux-wireless@vger.kernel.org>
@@ -79,51 +79,27 @@ Precedence: list
 MIME-Version: 1.0
 Content-Type: text/plain
 
-Mauricio Faria de Oliveira <mfo@igalia.com> wrote:
+Rosen Penev <rosenp@gmail.com> wrote:
 
-> In _rtw_hw_scan_update_probe_req(), if the first loop fails (goto out;) the
-> skb is leaked. It does not reach kfree_skb() at the end of the loop body or
-> in the second loop (out:) since it is unlinked from probe_req_list.
+> When the WiFi device has no ACPI companion, ACPI_HANDLE(rtwdev->dev) is
+> NULL and rtw89_acpi_evaluate_dsm() still calls acpi_evaluate_dsm().
+> acpi_evaluate_object() then returns AE_BAD_PARAMETER and ACPI core
+> warns on every probe:
 > 
-> Fix the leak by calling kfree_skb() if the first loop fails.
+>   ACPI: \: failed to evaluate _DSM e8c3a8d2-694b-004f-82bd-fe8607803aa7 rev:0 func:10 (0x1001)
+>   ACPI: \: failed to evaluate _DSM e8c3a8d2-694b-004f-82bd-fe8607803aa7 rev:0 func:6 (0x1001)
 > 
-> In /sys/kernel/debug/kmemleak, after simulating the failure:
+> All callers already treat failure as "no policy provided by the
+> platform", so this is only noise.  Bail out early in that case.
 > 
->   unreferenced object 0xffff88810965a000 (size 232):
->     comm "iw", pid 4729, jiffies 4345008185
->     hex dump (first 32 bytes):
->       00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00  ................
->       00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00  ................
->     backtrace (crc 20f7de11):
->       kmem_cache_alloc_node_noprof+0x302/0x380
->       __alloc_skb+0x74/0x2f0
->       skb_copy+0x57/0xe0
->       rtw_hw_scan_update_probe_req+0xff/0x230
->       rtw_hw_scan_prehandle+0x4e/0x180
->       rtw_hw_scan_offload+0x186/0x1d0
->       rtw_ops_hw_scan+0x61/0xb0
->       drv_hw_scan+0x81/0x130
->       __ieee80211_start_scan+0x2e0/0x760
->       rdev_scan+0x42/0x100
->       nl80211_trigger_scan+0x53b/0x730
->       genl_family_rcv_msg_doit+0x103/0x160
->       genl_rcv_msg+0x1b5/0x2c0
->       netlink_rcv_skb+0x52/0x100
->       genl_rcv+0x28/0x40
->       netlink_unicast+0x26d/0x3b0
+> Seen on an RTL8852BE in a desktop PCIe slot.
 > 
-> This leak exists in the first loop since the function was introduced, and
-> still happened with the addition of the second loop, in these two commits:
-> 
-> Fixes: 10d162b2ed39 ("rtw88: 8822c: add ieee80211_ops::hw_scan")
-> Fixes: d95984b5580d ("rtw88: fix memory overrun and memory leak during hw_scan")
-> Cc: stable@vger.kernel.org
-> Signed-off-by: Mauricio Faria de Oliveira <mfo@igalia.com>
-> Reviewed-by: Luka Gejak <luka.gejak@linux.dev>
+> Acked-by: Ping-Ke Shih <pkshih@realtek.com>
+> Signed-off-by: Rosen Penev <rosenp@gmail.com>
 
 1 patch(es) applied to rtw-next branch of rtw.git, thanks.
 
-432441d951ca wifi: rtw88: fix skb leak in hw_scan probe request length check
+badf4c3c7679 wifi: rtw89: acpi: skip _DSM when there is no ACPI companion
 
 ---
 https://github.com/pkshih/rtw.git
