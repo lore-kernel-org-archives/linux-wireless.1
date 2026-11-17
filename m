@@ -1,130 +1,92 @@
-Authentication-Results: smtp.subspace.kernel.org; arc=none smtp.remote-ip=209.85.222.181
+Authentication-Results: smtp.subspace.kernel.org; arc=none smtp.remote-ip=209.85.216.49
 ARC-Seal: i=1; d=subspace.kernel.org; s=arc20261015; a=rsa-sha256; cv=none;
-	t=1794873921;
-	b=wxqcXlmpHYNPiku0WW8jS68go2/MsqLdg/t4gqyaPOTxAUlClaoNJvOgNM/hBoB2K9iC
-	 vuEDnhHmmklRvY3iR8j8Mgyj8W5ckyKEEtmfNp+4Fs0/geLz3155rWjZf9eDAUH9yJ+QV
-	 jjj1g0lexyK6L1B5O3ERVoQRuDVNWUPhypFvU+cK4tVVUZZ0zhQrOZyTGm5c5XIf1uIxl
-	 46Knrkg1XEwF5mZgyBWbIEQVzMpIMCSpzcB0hbJsepjfGbE5xxBdn2q2KwroMSEaZkZ0M
-	 axH0d2EnC4LKecGg435wGKy22MPxt8G04v8krkFOSa1/Fs/JzBGsfgU1jRAoYOj7A2A==
+	t=1794875598;
+	b=1x+B5MUT+HR2w9PoRUdE6tpDuNgMYknAZiM0Mc3wVWwSJPfBdOoQlQ8MPg/N5cR8BVjn
+	 LT7SJ7S6Z1MJ7zYl3GdFe5y6GJiroW9vG3Rbj2Zanf5mb6v9b4UDxiCBmf4jy++r3mMhX
+	 dUUW4q0fABjdrj0vrkmmOOLI9KanJLa9EvWf56Tv5jLuUfrdjkkiYQbk12Rqij2xCEoEN
+	 kYkVbrnArok6wziC7pnOl72ik1lpzZamYunv3LsKgiSqmWwQDefdyUZsm9MVXyXDQ9a2p
+	 9IKAmlBA5yAQ8a/s3OFv/V6ARVxRNrMyTLFC2kCXoIs0WXUdEaVFQdPuAMUC7zkFWgw==
 ARC-Message-Signature: i=1; d=subspace.kernel.org; s=arc20261015;
-	a=rsa-sha256; c=relaxed/relaxed; t=1794873921;
+	a=rsa-sha256; c=relaxed/relaxed; t=1794875598;
 	h=DMARC-Filter:Received:DKIM-Signature:X-Google-DKIM-Signature:
 	 X-Forwarded-Encrypted:X-Gm-Message-State:X-Gm-Gg:X-Received:Received:
-	 Received:Date:From:To:Cc:Subject:Message-ID:References:MIME-Version:
-	 Content-Type:Content-Disposition:In-Reply-To;
-	bh=eMx+CTkXv1VoOtSvi+6D1nYsmWu0vpvPd8N8huVVt6c=;
-	b=evOEJ6oV9CBtXpd6lFwrwJyl7EmyGGChwWzpshqydVByhaGWx4NJ/+0MRa3ip1Kd0bvM
-	 2BUfVJuT7c9xwfISZRpLcJD5Z0FIDmupPwmS6d5lKGB5VvivpzPocKyT6SXp4O5FvS4Vp
-	 6uycxhm8shT/nyiv1g3F+mlZu/bwlfSeM5xaGFU+4lUkRykhbrNANraFBqN5zSU8ZdKfT
-	 sOCE8Lyl4os85dBgB32GYHdVvFA/V5IP229ZTUC7vRX2+yoVEEjFB8Fa6qSbrp1Z1A/65
-	 0fCD+8HBjwgUwLBCUAGa1jgrcBA2lhQF/T/CxI2e1sOB6JcB2Jon/1K9w0WY9MKI4nA==
+	 From:To:Cc:Subject:Date:Message-ID:X-Mailer:MIME-Version:
+	 Content-Transfer-Encoding;
+	bh=wk/6CeKFWBeNsJ8DA0yqF5F5wGTUdrFSo/NK3zWhvT0=;
+	b=M2kLtkyuORJTKqH4VHndnoEn3dEywtu3/EIJHx/wA0eQdE0CphpHrFD91uQbmWL6CPA7
+	 yf1Zost+ajsFsfJvyMC6hiAriB1kuJY6N9VG9n06jFxKcTEtiyPKwDcYFrKeHHesl++sJ
+	 8QNJ0bw1lHHZoy3q6aJY60tnrZB9gLmMx/zUULn+A9EKCbqxI4CKniNt4A2ufbprHRiqr
+	 AqwhtmhZ7Sf28GTNoEUHxg94zSpqxticITK71o+23KNcL1GwwdXvO2h/JFZcibbbF2ON7
+	 tyFQw/4mxXOVBA8DrFNVGh1VYHyzUe7LbVSao4pdt81EyuQNHyweOgOXnGOIraywOeg==
 ARC-Authentication-Results: i=1; smtp.subspace.kernel.org; 
-	dmarc=none header.from=ziepe.ca;
-	spf=pass smtp.mailfrom=ziepe.ca;
-	dkim=pass header.d=ziepe.ca header.i=@ziepe.ca header.a=rsa-sha256 header.s=google header.b=o+1molFf;
-	arc=none smtp.remote-ip=209.85.222.181
-Received: from mail-qk1-f181.google.com (mail-qk1-f181.google.com [209.85.222.181])
+	dmarc=pass header.from=morsemicro.com;
+	spf=pass smtp.mailfrom=morsemicro.com;
+	dkim=pass header.d=morsemicro-com.20260707.gappssmtp.com header.i=@morsemicro-com.20260707.gappssmtp.com header.a=rsa-sha256 header.s=20260707 header.b=fW+qUs2v;
+	arc=none smtp.remote-ip=209.85.216.49
+Received: from mail-pj1-f49.google.com (mail-pj1-f49.google.com [209.85.216.49])
 	(using TLSv1.3 with cipher TLS_AES_128_GCM_SHA256 (128/128 bits)
 	 key-exchange X25519 server-signature ECDSA (prime256v1) server-digest SHA256)
 	(No client certificate requested)
-	by smtp.subspace.kernel.org (Postfix) with ESMTPS id 28AE2606A32F
-	for <linux-wireless@vger.kernel.org>; Tue, 17 Nov 2026 00:05:20 +0000 (UTC)
-DMARC-Filter: OpenDMARC Filter v1.4.2 smtp.subspace.kernel.org 28AE2606A32F
-Authentication-Results: smtp.subspace.kernel.org; dmarc=none (p=none dis=none) header.from=ziepe.ca
-Authentication-Results: smtp.subspace.kernel.org; spf=pass smtp.mailfrom=ziepe.ca
+	by smtp.subspace.kernel.org (Postfix) with ESMTPS id 3B3A0606A31C
+	for <linux-wireless@vger.kernel.org>; Tue, 17 Nov 2026 00:33:18 +0000 (UTC)
+DMARC-Filter: OpenDMARC Filter v1.4.2 smtp.subspace.kernel.org 3B3A0606A31C
+Authentication-Results: smtp.subspace.kernel.org; dmarc=pass (p=none dis=none) header.from=morsemicro.com
+Authentication-Results: smtp.subspace.kernel.org; spf=pass smtp.mailfrom=morsemicro.com
 Authentication-Results: smtp.subspace.kernel.org;
-	dkim=pass (2048-bit key, unprotected) header.d=ziepe.ca header.i=@ziepe.ca header.a=rsa-sha256 header.s=google header.b=o+1molFf
-Received: by mail-qk1-f181.google.com with SMTP id af79cd13be357-949589c1495so334703385a.3
-        for <linux-wireless@vger.kernel.org>; Mon, 16 Nov 2026 16:05:20 -0800 (PST)
+	dkim=pass (2048-bit key, unprotected) header.d=morsemicro-com.20260707.gappssmtp.com header.i=@morsemicro-com.20260707.gappssmtp.com header.a=rsa-sha256 header.s=20260707 header.b=fW+qUs2v
+Received: by mail-pj1-f49.google.com with SMTP id 98e67ed59e1d1-3b1535be329so3021200a91.3
+        for <linux-wireless@vger.kernel.org>; Mon, 16 Nov 2026 16:33:18 -0800 (PST)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=ziepe.ca; s=google; t=1794873920; x=1795478720; darn=vger.kernel.org;
-        h=in-reply-to:content-disposition:content-type:mime-version
-         :references:message-id:subject:cc:to:from:date:from:to:cc:subject
-         :date:message-id:reply-to:content-type;
-        bh=eMx+CTkXv1VoOtSvi+6D1nYsmWu0vpvPd8N8huVVt6c=;
-        b=o+1molFffc9e6T9ddIDnNeseSjzEf2bQKujHs4vpOVw4OzSSGS4YQo8BJrSN9kd667
-         k9JFBOotGGRYa0PkAFx2E0FiQp1pgsnwgn6pcnUL3Eya4+1ObVIZXwVWtTnGOXsLpAKM
-         Qm4w4F5jBIoZdwaJAnrycuNhvr/nMKvlaRPWeoY+KemZwqtCHlIRV3pKlOZAan8ZiPyk
-         dg+rWFVtziAEodqueYjujOY8FQIiLOIqi0nCOki4SNuEx/vo4myxz/px2YhfTxnQyYx8
-         5SnT2fX1BMMsw9KBqqyDMrnK6kEETUe11lAAN+nPzvpxO9VlnJiaiLVZSGU+NSdcdbag
-         q8ig==
+        d=morsemicro-com.20260707.gappssmtp.com; s=20260707; t=1794875597; x=1795480397; darn=vger.kernel.org;
+        h=content-transfer-encoding:mime-version:message-id:date:subject:cc
+         :to:from:from:to:cc:subject:date:message-id:reply-to:content-type;
+        bh=wk/6CeKFWBeNsJ8DA0yqF5F5wGTUdrFSo/NK3zWhvT0=;
+        b=fW+qUs2vgn4DZVySS6x/xWxBllqUKCg4MabtzPEse+63PB5p20sBpd02G8KEkCqCOQ
+         8gt3xDmJYuuMQaw7J2qTNhZBgYqdjaurw3GauqZAq/1BJR9Fdy4QJfbWm8CrUK7hgi1X
+         CwaglNtnBltfkSMQYior/sGNM6TCufJJ9K2eq0N3ZhA75f2p0/M726GdyHzP8vkKoN1/
+         +mlziIy4d3OvjQZ9vrZ7xwvAxmAmL0H2clPFC8l1ulwJzkjNMyQZNqGms+Lq9gM0bny/
+         Y+8U6s/6kJz58hiAhaHICg8j4iF/wZ1IZlU2c/rPJA93qwBaJKgcnc5QUArfoI/vkUa8
+         km4w==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=1e100.net; s=20260707; t=1794873920; x=1795478720;
-        h=in-reply-to:content-disposition:content-type:mime-version
-         :references:message-id:subject:cc:to:from:date:x-gm-gg
-         :x-gm-message-state:from:to:cc:subject:date:message-id:reply-to
-         :content-type;
-        bh=eMx+CTkXv1VoOtSvi+6D1nYsmWu0vpvPd8N8huVVt6c=;
-        b=LmlitLskmoz/+Kyd956KvFr5ti9eJrwX6U0YbpAP75E21+U/4YK9S0NjNZZiCN8gKG
-         ESdDsm7kf2gpSSYOR5VLN0jwbaC6Oh1WpX8Zz6Z4eYe4WXGVq2f7d5ozlU2tc5aq7XNJ
-         NLfYt3oJAoHpY91+toHZX8Rap9Z8rX2wbJXaNcT+7ZzV5DPNKZb0xi4ezx1Nt9IPZI/4
-         24q3jaS8a6TJv1F3WTs6UE5jbNPSdhxwjBniAPrJd0gscDFX4WJ93oVu2Tm5Dzzd4/s1
-         tdlTmEGiAYHS0aGzNL7Nk4ZT+r3VQaRwQBFIX7L/HZmP3TYVs+Wc1FNE77Kex+0rkKT9
-         UabA==
-X-Forwarded-Encrypted: i=1; AL+hErE8OZQ61T5YFYJ5a7udqHeHGFTheDC6FGWIcV5aEe2pajFksO6yhftNa18qbcjRV2IOk3uOyC0iLrfkM870PQ==@vger.kernel.org
-X-Gm-Message-State: APuU4Z83KajZguJ61CLWNcNZojMMS0GBvhkiBgQjvEU98K8KVp5GzjOo
-	8qG6tEtnRwp80J/9UQN5YQsfoqkKdqblhXBLcXZWSUGcxOEHewOr3oMToO2S/Ravqlk=
-X-Gm-Gg: AYBFou0lnzkXS1D8VCD0YlGW3jMmXF1wUSvUFkNdcYMYtsGxkWX2VTY9IE/aK65oKi5
-	6+6/rRwNFsL+nnochmmUe7/nm5reK1bsNlMPWqMLAPZ0F6d+ECEKU9RtauqjIsZtqFiDa66Kcuq
-	MFAcKQRPigvKQso7zwTGbkpMz9S1GOxIH6QJb7J5+DpNHWZd2lio+2cypoLDHyLzdQlWi9ZtS++
-	8g1Atk6qkFx4znbYXUqtFKf52Qaaqa4JOeiLHetWr944qM4hTFxnfW7LnIKNuQTvcqMS+z2jUMd
-	OoeVuxbZcxrpupV08e3qOx71FTzIez1cubisXmF173PEJUSPrzgsh2wKR97S9YzJRJxTdbJ65qh
-	vK57jHY9F70/l75ckJ6pWP3SrhZhgFgW8X2URuJaMYh0EGbuHyCZzDsCI0KeipCM0ygMe7S7FU/
-	+S9dCKbjLzIWQgJYJsP3zYJgFHtqLizNaaG4cu3PrpPV63W44FhoUz9iU63aS9PqtuYtKsgooOK
-	RamzNvXs/M+o9YZ3LjEwWIF+HoBSU79nlrtvZy5ifm92TWceJ4OJ8IKWCnTu3zn2bFaL7CtQA8w
-	EfnuMg==
-X-Received: by 2002:a05:620a:aa0b:b0:949:7473:b1a5 with SMTP id af79cd13be357-9497473c077mr807892285a.55.1794873920005;
-        Mon, 16 Nov 2026 16:05:20 -0800 (PST)
-Received: from ziepe.ca ([142.166.156.71])
-        by smtp.gmail.com with ESMTPSA id af79cd13be357-9494c8b889csm969866585a.32.2026.11.16.16.05.08
+        d=1e100.net; s=20260707; t=1794875597; x=1795480397;
+        h=content-transfer-encoding:mime-version:message-id:date:subject:cc
+         :to:from:x-gm-gg:x-gm-message-state:from:to:cc:subject:date
+         :message-id:reply-to:content-type;
+        bh=wk/6CeKFWBeNsJ8DA0yqF5F5wGTUdrFSo/NK3zWhvT0=;
+        b=Iluowo8SrR7I1IKJFhzwdf64+STNL6EHId8jxEP3MkNj025K+yt0NCbMqRmOJ/QSst
+         xvbf380eSgQZ0jeu7aWNhcCYUcC81vEgBAty8Rz9M56214ApCU/y7Itb0WgkFenB83Xu
+         Je03m4ZGmahCj603si1NXlTff237PwCJZoYOTrU0p7g6bSTaTPbUH6N3nGGXoDGr9RVm
+         507q/YH6Gcz/+8W05I/KtXo03OAUWJfVofT6xClE7M52EDkiqj4rdBGwbh584ng9/trA
+         wNo0Q5jU3SRiUJ+zrEwDIwONdohLX3pULtmOPb+AP4XHt2xFPIAEX4Fn3QiWsX5uKD3C
+         RvmA==
+X-Forwarded-Encrypted: i=1; AL+hErH8AHf+S9vAYpA+BLp7G0kS9d56hN0Uyy4Rc2GGi8S1ie9JHHs5ppziFnLduUrl+sNjpUxQLaxRMU+OLOJ9qQ==@vger.kernel.org
+X-Gm-Message-State: APuU4Z/4ERMjGxc+Vffwkuhm9UK3OAJ74F+X1MY8WR3KZTixGkCqGvJB
+	3iZ8aQdUwI1UNij8js3FBXaGEC6FE1XMBwUlWBk4fmWgHj1p4zJSY3/BzfehlEOa5WM=
+X-Gm-Gg: AZFdTZcGF+ivbna00QSP6jY7LsySuJRN88EK4M4Uc69C8SbCJJxYIw97rdnCbfc8rX5
+	mqb5Ij6H8KLx6E3y0OMpQ9IhrtEhrbcsGdZS1PObLZivSa7vwsJ2eG6ZCmIZU7fg/7xRGLOz6FO
+	7dP6NYxjNQEtrKxDieETW7IT+NJ/JxFxD9AGgHU4vm894POf1KjVZRVqEd/WYnA+X1sYYZbAIaL
+	u9xL9uWnLOIE46fdD//spGETwKhW+ISHcN/syf4YnlQbjn1k/SPtGTZFJBKAryUTeY8C5iqq8YK
+	sgT31Dn0cv74s/MP9HTivM5FA3P2B+Q8H0DTIQtl3jNeO4Ry9hhugn4skENB5m71s1zCGO0OiG8
+	7Fp+P+OoIU0OTzJ+6FgCFL/WaUjqZzXgTvESqZYhq2ytZBuPzb8xQnt3G3syriP7OGMmMbCOSYQ
+	0prZOW3IY+/Noxjuqvpo8Zr2CoA1kJx8Jdx8y8ZiZPJRnYgitIIrEL80nWXjieMdpRIH4Uk+MJ+
+	/GHFUC7rq9vLUdxB+OM+6Y/+V3NlmgljZcgBrkINSpz2pxZhVbclolFqGYFyH1VYMEh2eupnZf3
+	7Ic7SIGnDyoUvJQWNS0CE75CKmlR9QP6CuF54ZWzbPU2eC+6YwqSX3ul0hI7HWggZei1N+bu8O+
+	gxeXte8EJVe1g1g/Sn+FJMbD55TVMkONae7lX+wTt9vg8UXHM
+X-Received: by 2002:a17:90b:1dc3:b0:3b0:9782:8721 with SMTP id 98e67ed59e1d1-3b1b0a0e116mr11010308a91.36.1794875597402;
+        Mon, 16 Nov 2026 16:33:17 -0800 (PST)
+Received: from mma-H9MHD44.sydney.mm.lcl (60-242-93-14.static.tpgi.com.au. [60.242.93.14])
+        by smtp.gmail.com with ESMTPSA id 98e67ed59e1d1-3b3ac6016c3sm1214868a91.15.2026.11.16.16.33.15
         (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
-        Mon, 16 Nov 2026 16:05:10 -0800 (PST)
-Received: from jgg by wakko with local (Exim 4.97)
-	(envelope-from <jgg@ziepe.ca>)
-	id 1xT6h7-0000000Apgy-1pGN;
-	Mon, 16 Nov 2026 20:05:05 -0400
-Date: Mon, 16 Nov 2026 20:05:05 -0400
-From: Jason Gunthorpe <jgg@ziepe.ca>
-To: Robin Murphy <robin.murphy@arm.com>
-Cc: Leon Romanovsky <leon@kernel.org>,
-	Greg Kroah-Hartman <gregkh@linuxfoundation.org>,
-	"Rafael J. Wysocki" <rafael@kernel.org>,
-	Danilo Krummrich <dakr@kernel.org>,
-	Dmitry Torokhov <dmitry.torokhov@gmail.com>,
-	Andrew Lunn <andrew@lunn.ch>,
-	Heiner Kallweit <hkallweit1@gmail.com>,
-	Russell King <linux@armlinux.org.uk>,
-	"David S. Miller" <davem@davemloft.net>,
-	Jakub Kicinski <kuba@kernel.org>, Paolo Abeni <pabeni@redhat.com>,
-	Johannes Berg <johannes@sipsolutions.net>,
-	Jonathan Corbet <corbet@lwn.net>,
-	Shuah Khan <skhan@linuxfoundation.org>,
-	Randy Dunlap <rdunlap@infradead.org>,
-	Bjorn Helgaas <bhelgaas@google.com>,
-	"Joerg Roedel (AMD)" <joro@8bytes.org>,
-	Suravee Suthikulpanit <suravee.suthikulpanit@amd.com>,
-	Vasant Hegde <vasant.hegde@amd.com>, Will Deacon <will@kernel.org>,
-	David Woodhouse <dwmw2@infradead.org>,
-	Lu Baolu <baolu.lu@linux.intel.com>,
-	Johan Hovold <johan@kernel.org>, Eric Dumazet <edumazet@kernel.org>,
-	Marcel Holtmann <marcel@holtmann.org>,
-	Luiz Augusto von Dentz <luiz.dentz@gmail.com>,
-	Nipun Gupta <nipun.gupta@amd.com>,
-	Nikhil Agarwal <nikhil.agarwal@amd.com>,
-	Pieter Jansen van Vuuren <pieter.jansen-van-vuuren@amd.com>,
-	linux-kernel@vger.kernel.org, driver-core@lists.linux.dev,
-	linux-input@vger.kernel.org, netdev@vger.kernel.org,
-	linux-wireless@vger.kernel.org, linux-usb@vger.kernel.org,
-	linux-bluetooth@vger.kernel.org, linux-acpi@vger.kernel.org,
-	linux-doc@vger.kernel.org, linux-pci@vger.kernel.org,
-	iommu@lists.linux.dev
-Subject: Re: [PATCH v2 18/19] PCI: Replace untrusted state with device trust
-Message-ID: <20261117000505.GA2488304@ziepe.ca>
-References: <20261109-device-trust-core-v2-0-3b12d9a9f861@nvidia.com>
- <20261109-device-trust-core-v2-18-3b12d9a9f861@nvidia.com>
- <d0999161-3b27-4c3b-9d66-1d117c4836fd@arm.com>
- <20261110122237.GG8635@unreal>
- <b4c2538f-8021-4abc-be2e-fcd1596f84ca@arm.com>
+        Mon, 16 Nov 2026 16:33:17 -0800 (PST)
+From: Lachlan Hodges <lachlan.hodges@morsemicro.com>
+To: lachlan.hodges@morsemicro.com,
+	dan.callaghan@morsemicro.com
+Cc: arien.judge@morsemicro.com,
+	linux-wireless@vger.kernel.org
+Subject: [PATCH wireless-next 0/4] wifi: mm81x: support v57 firmware
+Date: Tue, 17 Nov 2026 11:33:06 +1100
+Message-ID: <20261117003310.1032097-1-lachlan.hodges@morsemicro.com>
+X-Mailer: git-send-email 2.43.0
 X-Mailing-List: linux-wireless@vger.kernel.org
 List-Id: <linux-wireless.vger.kernel.org>
 List-Post: <mailto:linux-wireless@vger.kernel.org>
@@ -134,53 +96,29 @@ List-Unsubscribe: <mailto:linux-wireless+unsubscribe@vger.kernel.org>
 List-Owner: <mailto:linux-wireless+owner@vger.kernel.org>
 Precedence: list
 MIME-Version: 1.0
-Content-Type: text/plain; charset=us-ascii
-Content-Disposition: inline
-In-Reply-To: <b4c2538f-8021-4abc-be2e-fcd1596f84ca@arm.com>
+Content-Transfer-Encoding: 8bit
 
-On Mon, Nov 16, 2026 at 05:13:59PM +0000, Robin Murphy wrote:
-> Even with the slightly dubious argument that this series only intends to
-> shuffle the existing PCI code around rather than fully introduce the generic
-> abstraction that it claims to, if the PCI behaviour is still just based on
-> propagating the internal "untrusted" flag plus the new global override, both
-> of which *are* known at add_device time into the common trust state, then
-> there seems little excuse for not doing that up-front so that the new API
-> *can* just work as expected.
+Hi,
 
-The desired iommu flow is to start out as blocking and create the
-default domain only right before driver binding when we have the
-correct trust level.
+Small set to support v57 firmware.
 
-If we try to do that without this series then we have to do it all the
-time, which I'm really scared will break some embedded thing that
-expects scanout to work or something like that. My hope was this
-becomes opt-in based on the new command line stuff in this series.
+lachlan
 
-On the other hand this series works properly on systems without an
-iommu, which is pretty much all CC VMs today.
+Lachlan Hodges (4):
+  wifi: mm81x: use guard(rcu)() over scoped_guard()
+  wifi: mm81x: use the BCF size advertised by the firmware
+  wifi: mm81x: support v57 firmware
+  wifi: mm81x: drop probe requests received off channel
 
-There are probably around 15 series to complete all of this PCI device
-attestation. Without everything it isn't really usable, IMHO. I'm not
-that worried about the series ordering.
-> > We have two levels: policy - that describes the default of all devices
-> > for that bus. level - actual decision on how that device is going to be
-> > operated.
-> > 
-> > "Disabled" prevents driver probing until the device is authorized,
-> > "Adversary" permits probing and requests the available protections
-> > for operating an untrusted device.
-> > 
-> > Both need conservative initial IOMMU setup: a disabled device may later
-> > be authorized as adversary, and authorization does not rebuild its IOMMU
-> > domain.
-> 
-> Urgh, I can be absolutely certain I'm not the only one who is going to be
-> confused this way... I see "disabled" and instinctively take it to mean
-> disabling the device_trust *mechanism*, as the logical thing that people
-> will reach for in terms of "I don't care what this new thing is, just get it
-> out of my way and let my drivers work like they always used to; I want to
-> disable the new thing."
+ .../wireless/morsemicro/mm81x/command_defs.h  | 38 +++++++++--
+ drivers/net/wireless/morsemicro/mm81x/core.h  |  1 +
+ drivers/net/wireless/morsemicro/mm81x/fw.c    | 27 +++++---
+ drivers/net/wireless/morsemicro/mm81x/fw.h    |  3 +-
+ drivers/net/wireless/morsemicro/mm81x/hw.c    |  2 +
+ drivers/net/wireless/morsemicro/mm81x/mac.c   | 64 +++++++++++++++----
+ drivers/net/wireless/morsemicro/mm81x/skbq.h  | 22 ++++++-
+ 7 files changed, 127 insertions(+), 30 deletions(-)
 
-Maybe "isolated" is a better word?
+-- 
+2.43.0
 
-Jason
