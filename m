@@ -1,65 +1,64 @@
-Authentication-Results: smtp.subspace.kernel.org; arc=none smtp.remote-ip=100.103.45.18
+Authentication-Results: smtp.subspace.kernel.org; arc=none smtp.remote-ip=168.119.38.16
 ARC-Seal: i=1; d=subspace.kernel.org; s=arc20261015; a=rsa-sha256; cv=none;
-	t=1794907413;
-	b=QuxkZVnIUyHC7ZjIdSQBTrCnuO9ov71M/VU8KridX3b+6C3AVJXhtBwwyhg08JpTaWgC
-	 WsmeJN8E0et8dvt1vFJPdH6jD8xOUzT38Of0oIX83sATL46zVDsA/PqmmGBImj/WWr90M
-	 7+Yyx/MJndDeC1jxtwiApTmpDXkTmWjuz5jFzdt+rqph/Wbj6amoHCV72vIh8UmOAiVZ4
-	 apl6H7Jz1KRgAMW8yszKJ4hxW6nGX9xyX39jSmc/Iz9vtWk27UTbHMWYg1bYEWKSMZMqJ
-	 ss3r0Ig1+cFErdzjFHIlpE9++pvCDdxql8Xr5Bdbwq6QK5g+6fMOVEXiIvu/RkLxP9w==
+	t=1794908194;
+	b=DMl+zAn8TzO9DIPeIDkKikIyQ5j1RiGBPFgFCPDk7SoefB78Y8Obc3w+OWR5Sd3dWY3K
+	 ToXZZhknKyI01XOXs/iKgAu7fYSDCI2hqsqdKDxJJdEYPvVtxciA/K3fsxDqoUvFFOlrW
+	 mGFHnH1IzKpVHxTjJGbW0ASgM6j3Q5fSHEYLP4J++U52AKctoirLROzRSvlQ0j75/p+qf
+	 7YgXRcnNRZKow1FDW4i6HqQI0dt5WGSuTpQTj+M7oanNypGpCYr7I/H62DnrLCCXOYtTH
+	 ETnNIqGLEPaerIQP0IxOzZTSuSrJHkdr7Ea9oeCy6VuBMCjxvdEDHfRREbbhfun0F+Q==
 ARC-Message-Signature: i=1; d=subspace.kernel.org; s=arc20261015;
-	a=rsa-sha256; c=relaxed/relaxed; t=1794907413;
-	h=Received:DKIM-Signature:Date:From:To:Cc:Subject:Message-ID:
-	 References:MIME-Version:Content-Type:Content-Disposition:In-Reply-To;
-	bh=y0Dxc4AUtnds+NirsV609zNbchLGxMc3AgfuhcVTQUs=;
-	b=IzKFGa0pzvLOkcTwZLgaw0Zd0Y0GImRxUoKh4cZYUO2Q2dPslACP4yPe0CgFQ3HJalqB
-	 ZP01QXEkBq+pntRSGXKqivmUmKTfQxmIKDpNN8G5F4djQzYYfvC6oJI6YWh/NvoC2NYUE
-	 z0hrel72CnZDOqKs7RHXIoQz4vWhuEoJs0BAqYc9MsOXtTJChQ18SW3t2k5/nbNNft+m4
-	 6j4R/pZO9eVYSnduKVnn2O9b5v8vo+4PGfJyqZUHQS6eFUMKePQtSyCdOXPsYtmQtiO1p
-	 Faxzkb+hJVoK09cnZ0GcuHW6Z9FE1tR0qAPfJ8NTVrN1OZ5fQ3bDhfRUudE0VNf6t5A==
+	a=rsa-sha256; c=relaxed/relaxed; t=1794908194;
+	h=DKIM-Signature:Received:Message-ID:Subject:From:To:Cc:Date:
+	 In-Reply-To:References:Content-Type:Content-Transfer-Encoding:
+	 User-Agent:MIME-Version:X-malware-bazaar;
+	bh=mmoOL9TxuANYAsujlxrcguo44tEldsX5JWB3FQvn64o=;
+	b=R4gucyuTbwacqHcu/ER4HPs2zIlh5t0Oq2VA+KhoYMydMWwBOCBvzjaWMd4yURzxlMlL
+	 2tx/3wIV4g5z8vVGMFQZTJhQ+69s35Cz7jD5RpZPbS4ZAnLPbBw2OzgRpskOV6BAw0X6M
+	 DLnSDUSTpZH9aRV0ShPcFNOU/dXywOKywziD0atGbIZFSz9qv9Z/3vhjBzsyKFVWSSbAO
+	 pPzmOrhSvrmsG0dstsyNj7cuNd/0XVkV/wT28nl/kcLgTt0DWURIA4+qf4pmW5jY9EN3E
+	 O/0oqqbg096ceSCt33XD0FvNV/5pNApqNAXuy0Bb2XgSOWAPk16P/buGcnb6coNa9sQ==
 ARC-Authentication-Results: i=1; smtp.subspace.kernel.org; 
-	dkim=pass header.d=kernel.org header.i=@kernel.org header.a=rsa-sha256 header.s=k20260515 header.b=eRSTQspS;
-	arc=none smtp.remote-ip=100.103.45.18
-Received: from smtp.kernel.org (quasi.space.kernel.org [100.103.45.18])
+	dmarc=permerror header.from=sipsolutions.net;
+	spf=pass smtp.mailfrom=sipsolutions.net;
+	dkim=pass header.d=sipsolutions.net header.i=@sipsolutions.net header.a=rsa-sha256 header.s=mail header.b=KrGUXukK;
+	arc=none smtp.remote-ip=168.119.38.16
+Received: from sipsolutions.net (s3.sipsolutions.net [168.119.38.16])
 	(using TLSv1.3 with cipher TLS_AES_256_GCM_SHA384 (256/256 bits)
-	 key-exchange X25519 server-signature ECDSA (prime256v1))
+	 key-exchange ECDHE (prime256v1) server-signature ECDSA (prime256v1) server-digest SHA256)
 	(No client certificate requested)
-	by smtp.subspace.kernel.org (Postfix) with ESMTPS id 2008D606A31C;
-	Tue, 17 Nov 2026 09:23:33 +0000 (UTC)
+	by smtp.subspace.kernel.org (Postfix) with ESMTPS id EB6B2606A32A;
+	Tue, 17 Nov 2026 09:36:33 +0000 (UTC)
+Authentication-Results: smtp.subspace.kernel.org; dmarc=permerror header.from=sipsolutions.net
+Authentication-Results: smtp.subspace.kernel.org; spf=pass smtp.mailfrom=sipsolutions.net
 Authentication-Results: smtp.subspace.kernel.org;
-	dkim=pass (2048-bit key) header.d=kernel.org header.i=@kernel.org header.a=rsa-sha256 header.s=k20260515 header.b=eRSTQspS
-Received: by smtp.kernel.org (Postfix) with ESMTPSA id 571371F000C7;
-	Tue, 17 Nov 2026 09:23:32 +0000 (UTC)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=kernel.org;
-	s=k20260515; t=1794907412;
-	bh=y0Dxc4AUtnds+NirsV609zNbchLGxMc3AgfuhcVTQUs=;
-	h=Date:From:To:Cc:Subject:References:In-Reply-To;
-	b=eRSTQspSxgaqoaoK60PFKexxHJe0ahOvWAZv8sFb02FsK7851Tdx9jqtFimAE+JSw
-	 FVzgjicajcGYzSjx6YKbwyyxCzAO7iXon19D5mByJfrLyIjFnT7kkToPaR1Rb8MeFz
-	 NgYy/7vY42oGvZyvEfwh26G8SO4X/XAcuWPU0kwL/Vfv6ZD3eucTVVvc56AlnIoloI
-	 Ie/7B2shCxsgNnfSAnRCdaY7+oFhWmWqFsxkYWiloEZX+WsDXsW+AXoHxgjCOrWw7s
-	 YvqurGf7Fl9VpIT9QtgrRHm1DiUVbi5BqQZAfzhWbh0eoIP6Q8xNe+ZWhujYEhvFod
-	 HnJR10Ui3iGAg==
-Date: Tue, 17 Nov 2026 10:23:30 +0100
-From: Lorenzo Bianconi <lorenzo@kernel.org>
-To: Florian Maurer <fmaurer@disroot.org>
-Cc: Felix Fietkau <nbd@nbd.name>, Ryder Lee <ryder.lee@mediatek.com>,
-	Shayne Chen <shayne.chen@mediatek.com>,
-	Sean Wang <sean.wang@mediatek.com>,
-	Matthias Brugger <matthias.bgg@gmail.com>,
-	AngeloGioacchino Del Regno <angelogioacchino.delregno@collabora.com>,
-	linux-wireless@vger.kernel.org, linux-kernel@vger.kernel.org,
-	linux-arm-kernel@lists.infradead.org,
-	linux-mediatek@lists.infradead.org, stable@vger.kernel.org
-Subject: Re: [PATCH wireless 1/2] wifi: mt76: npu: return rx slots to the NPU
- only after refilling them
-Message-ID: <avwdEgGBeZWWGvzq@lore-qca>
-References: <cover.1793927986.git.fmaurer@disroot.org>
- <d6314f34e0965464207656d38a145490b6437aa5.1793927986.git.fmaurer@disroot.org>
- <au3igPTxdz3i64SO@lore-desk>
- <20261108205350.2956138-1-fmaurer@disroot.org>
- <avGnv8Jr7BAiQhG1@lore-desk>
- <avrdu8qr9L2sEuTz@lore-desk>
- <20261116162741.2438098-1-fmaurer@disroot.org>
+	dkim=pass (2048-bit key) header.d=sipsolutions.net header.i=@sipsolutions.net header.a=rsa-sha256 header.s=mail header.b=KrGUXukK
+DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
+	d=sipsolutions.net; s=mail; h=MIME-Version:Content-Transfer-Encoding:
+	Content-Type:References:In-Reply-To:Date:Cc:To:From:Subject:Message-ID:Sender
+	:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:Resent-To:
+	Resent-Cc:Resent-Message-ID; bh=mmoOL9TxuANYAsujlxrcguo44tEldsX5JWB3FQvn64o=;
+	t=1794908193; x=1796117793; b=KrGUXukKdMidyfA4KWW62jKam3Lh4flMT7f0FRjiLch1lvH
+	84FyT7TWipOToIM4IW7Tzy9rwoFlx/IhQ2fomntbcq4LH9Jp3NOJytpksBiK+Wx85bOTSQplGciD6
+	QumDnKOSE8N1P4qwRkP3bNCN3QAGRulOFGqgr0/EWQysL17yiVn2NzaBwBnDDhd++Ngf36NXsDTOM
+	Mr6JBiAGjyrV043H/ezZv2xCVQdXvVWOYJuiPBWYew1aGhvyIhXHt2vH00PomQXtnYL60rFs7sjCQ
+	3OpmEeL1f6hufY/hCucvLfuxLFmtJE36MTrdGL3F2gi6JI2ggyqwEy2j6YyLsY5A==;
+Received: by sipsolutions.net with esmtpsa (TLS1.3:ECDHE_X25519__ECDSA_SECP256R1_SHA256__AES_256_GCM:256)
+	(Exim 4.98.2)
+	(envelope-from <johannes@sipsolutions.net>)
+	id 1xTFc6-00000000CzM-2EDN;
+	Tue, 17 Nov 2026 10:36:30 +0100
+Message-ID: <63f451c9226b44361e38c05f8fb0c1846ac4d73d.camel@sipsolutions.net>
+Subject: Re: [GIT PULL] wireless-next-2026-11-16
+From: Johannes Berg <johannes@sipsolutions.net>
+To: Jakub Kicinski <kuba@kernel.org>
+Cc: netdev@vger.kernel.org, linux-wireless@vger.kernel.org
+Date: Tue, 17 Nov 2026 10:36:29 +0100
+In-Reply-To: <20261116164541.3adf8979@kernel.org>
+References: <20261116122302.1501378-3-johannes@sipsolutions.net>
+	 <20261116164541.3adf8979@kernel.org>
+Content-Type: text/plain; charset="UTF-8"
+Content-Transfer-Encoding: quoted-printable
+User-Agent: Evolution 3.60.2 (3.60.2-3.fc44) 
 X-Mailing-List: linux-wireless@vger.kernel.org
 List-Id: <linux-wireless.vger.kernel.org>
 List-Post: <mailto:linux-wireless@vger.kernel.org>
@@ -69,75 +68,22 @@ List-Unsubscribe: <mailto:linux-wireless+unsubscribe@vger.kernel.org>
 List-Owner: <mailto:linux-wireless+owner@vger.kernel.org>
 Precedence: list
 MIME-Version: 1.0
-Content-Type: multipart/signed; micalg=pgp-sha512;
-	protocol="application/pgp-signature"; boundary="s+XiL6GVKLQjZ58r"
-Content-Disposition: inline
-In-Reply-To: <20261116162741.2438098-1-fmaurer@disroot.org>
+X-malware-bazaar: not-scanned
 
---s+XiL6GVKLQjZ58r
-Content-Type: text/plain; charset=us-ascii
-Content-Disposition: inline
-Content-Transfer-Encoding: quoted-printable
+On Mon, 2026-11-16 at 16:45 -0800, Jakub Kicinski wrote:
+> On Mon, 16 Nov 2026 13:20:08 +0100 Johannes Berg wrote:
+> > net/mac80211/link.c
+> >  -> two conflicts, use the new version =20
+> >     (the sync issue was fixed already implicitly in the new one)
+>=20
+> I shied away from doing this and followed Mark's resolution.
+> AI wasn't convinced that taking -next is good enough, or maybe
+> I fumbled the edit.. Either way, I assume it's more expedient
+> to do the merge the way I did and let you fix up on top as needed
 
-On Nov 16, Florian Maurer wrote:
-> On Mon, Nov 09, 2026 at 12:00:15PM +0100, Lorenzo Bianconi wrote:
-> > q->head and q->tail are not the same when we have refilled the queue
-> > with new buffers. Moreover, I think if mt76_npu_fill_rx_queue() fails
-> > [...] it is not correct to use q->head for dma_idx
->=20
-> You're right, q->tail it is. In my tests I could not tell your version
-> and mine apart, so nothing speaks for head + 1.
->=20
-> > Can you please check the updated patch below?
->=20
-> Sorry for the delay. I tested it on the W1700K (kernel 6.18.55, mt76
-> 467ae2e3) and it works: no oops, no rx stall.
->=20
-> What I ran: your diff as posted, plus read-only counters that write
-> nothing to the descriptors. Load was 62 minutes of iperf3 from an
-> ath11k mesh peer at 113-259 Mbit/s, with four busy loops at nice -20
-> on the W1700K for 3 s every 18 s. In that time:
->=20
-> - 61.9 M frames on MT_RXQ_NPU1, 1.88 M on MT_RXQ_NPU0, of which 227781
->   span two slots
-> - no oops, no page_pool warning
-> - no descriptor that changed between consume and refill
-> - no refill failure, no skb failure, no tx-free parse error
->=20
-> Tested-by: Florian Maurer <fmaurer@disroot.org>
->=20
-> I found another issue of the NPU while testing, so this took me some
-> time as well:
-> In one minute, 226 multi-slot frames in a row did not end on the slot
-> with LAST. Slots of the rx ring go missing under this kind of load (I
-> suspect the NPU drops them), and counting slots by PKT_COUNT then
-> assembles the following frames one slot off, in your version and in
-> mine. I think tx-free events are lost the same way.
-> I will post it as a separate [BUG] report in the next days.
->=20
-> Optional: in my tree I made the poll report the budget as used when
-> the skb allocation fails, so napi polls again instead of waiting for
-> an interrupt. It never triggered here.
->=20
-> Please post your patch with the Tested-by. My 2/2 can be dropped.
->=20
-> Thanks,
-> Florian
+Sounds good, thanks. I actually mostly thought I'd let you merge it the
+simpler way and then see what we still need, pretty sure the sync issue
+was something I'd fixed on both sides, but I wasn't entirely sure about
+the rollback ones anyway :) Will check.
 
-ack, I will do. Thanks for testing.
-
-Regards,
-Lorenzo
-
---s+XiL6GVKLQjZ58r
-Content-Type: application/pgp-signature; name=signature.asc
-
------BEGIN PGP SIGNATURE-----
-
-iHUEABYKAB0WIQTquNwa3Txd3rGGn7Y6cBh0uS2trAUCavwdEgAKCRA6cBh0uS2t
-rFKTAQDrf8StTOI65bgn5xeopIFbWqMbx61UDKD54phLvPS85AEArtbOPqgpGZ5M
-4Q3sUXE6HqctYejU8r0x6vlcCI7NVAc=
-=x/Dy
------END PGP SIGNATURE-----
-
---s+XiL6GVKLQjZ58r--
+johannes
