@@ -1,83 +1,83 @@
-Authentication-Results: smtp.subspace.kernel.org; arc=none smtp.remote-ip=209.85.221.46
+Authentication-Results: smtp.subspace.kernel.org; arc=none smtp.remote-ip=209.85.221.42
 ARC-Seal: i=1; d=subspace.kernel.org; s=arc20261015; a=rsa-sha256; cv=none;
-	t=1794935410;
-	b=PZis19w3Xy2DcPfUhup26Zexj/QP3bnq0nS8Ro1iMMx3zCZw5Lo+noWKXFml0yV9m+Dk
-	 oYxeDt07/FJ7mmUsHSGGW4G0bDuRazW9bE2I9FnQfcODlMO6BkEyl19BB0JUqYSDE8Ys6
-	 NE8buUrcN02j5qqmryVoR5UBAT9rw1krjOxUvSOX3h5pfzf/pfAg0w0Mu5duN26tNFVEC
-	 C1q+i0Z3RV4kqP2p5BVXsMgUzfCuytAUsedXHLLjgVvvkThmyaRwoD8x8leIp558158ee
-	 u6GLkJT9Xr0efBwn/LnfpNLWWrV9n22PTBu9hebd/mkljoCM7yKb16Me0kWstpZA3EA==
+	t=1794935411;
+	b=A9oS7zrAbth9xg3H+VmHNT0iwPEtskJwfVGdOgBoAJNHIkdpe09PLEaN8fWg9U+2S4E7
+	 laJov2VhH12uTOUVsXNJNItZtA76FfrnSR/l4zLkUuAxHjp+mEDVMKa4mzP6BzdGeHAJs
+	 H/HpliKBR+5UPwkQbG7lOcrgOQtWgh2fujXy1y4QEMnR2+WOe0ucnAnSlTdw9mjmKWNc7
+	 4BjlIYgzgjixvizkeyo4mnhhA/AGxMahs7lLurnyfRoP4JE27vQ7sU3OvdzIFHsiW5y9X
+	 wEf43OGhxOqL55KRXMmxZlXhtwG7sVLiJOzUSpu9FENICQMtD4dNZbtNOgsAkgpzW8A==
 ARC-Message-Signature: i=1; d=subspace.kernel.org; s=arc20261015;
-	a=rsa-sha256; c=relaxed/relaxed; t=1794935410;
+	a=rsa-sha256; c=relaxed/relaxed; t=1794935411;
 	h=DMARC-Filter:Received:DKIM-Signature:X-Google-DKIM-Signature:
 	 X-Forwarded-Encrypted:X-Gm-Message-State:X-Gm-Gg:X-Received:Received:
 	 From:To:Cc:Subject:Date:Message-ID:X-Mailer:In-Reply-To:References:
 	 MIME-Version:Content-Transfer-Encoding;
-	bh=CoRmN1rx1+FlXyRXu71X9XZHSrkqHgUxmdKVAdzAPz8=;
-	b=sV4VX+Ys1XYCFFV4cKkCA03E27uvoYvn4Zr30S72eBL8BxS+IinpEQANr3KK08C9DfUl
-	 huApVJHHHj1oz2OEEoksqo7vOmbZw3MerpmVoZK6kmO7YeMg7oc3fS0queP1jXHOHpoqb
-	 UzLi882h5VulA5KamPfgG/nb3a5DRUYHjohRXigp69iqbLIbJL6YZUPbKqZ2Ii/G+YKo/
-	 XDfk6oGDijX5atUjt1W18sV0SZQjJUAL0EmMLWPwwhRQUf/79t1uwx34ewZ7iS4w+H3rY
-	 gQjLtEBRO4MoVhY9cI2qpouwEtAG98ou3/1smYQBXBhCaU8NfRHyqCoTRd8jzoxFbIg==
+	bh=6huBfZmPJQPrAdDCa5Wk9xqnE2GPx+6fEpKq90an7Ag=;
+	b=q2kRXOFeNzGQx2Ap0POao8Zr1sxNOM2jyBw1zgqFqxUAc12p3F2lu1t/XXmYunDzZKCR
+	 fSEASH7VzHquWPrRz6aMRgaOSNSNppm2kELtSxcFdYDR0gBEr9Z6XHkkRKe2JpgDr/SbI
+	 HLB149h4lXUR3dbJYCNhEH1ej3PNx8GoYi19S/rLVkt3o+M2kDkrhcDmok+z9Sonh9QNJ
+	 F1y4gidGKyw1GRij7K0ApSCfM+SYRMKkTf4wiZMNpHd+FUdA+e2P30f2fV9TSocL+vLl8
+	 rxir/KLNC64CKWfWhXNjfQUVZJzlfz9MYYdL6F0TbCbwcsIMe0KKYp91/al+B5c2Yiw==
 ARC-Authentication-Results: i=1; smtp.subspace.kernel.org; 
 	dmarc=pass header.from=gmail.com;
 	spf=pass smtp.mailfrom=gmail.com;
-	dkim=pass header.d=gmail.com header.i=@gmail.com header.a=rsa-sha256 header.s=20260707 header.b=TBDEyX1l;
-	arc=none smtp.remote-ip=209.85.221.46
-Received: from mail-wr1-f46.google.com (mail-wr1-f46.google.com [209.85.221.46])
+	dkim=pass header.d=gmail.com header.i=@gmail.com header.a=rsa-sha256 header.s=20260707 header.b=ntofaL2f;
+	arc=none smtp.remote-ip=209.85.221.42
+Received: from mail-wr1-f42.google.com (mail-wr1-f42.google.com [209.85.221.42])
 	(using TLSv1.3 with cipher TLS_AES_128_GCM_SHA256 (128/128 bits)
 	 key-exchange X25519 server-signature ECDSA (prime256v1) server-digest SHA256)
 	(No client certificate requested)
-	by smtp.subspace.kernel.org (Postfix) with ESMTPS id A92B6606A8A7
-	for <linux-wireless@vger.kernel.org>; Tue, 17 Nov 2026 17:10:09 +0000 (UTC)
-DMARC-Filter: OpenDMARC Filter v1.4.2 smtp.subspace.kernel.org A92B6606A8A7
+	by smtp.subspace.kernel.org (Postfix) with ESMTPS id B0F5360A2609
+	for <linux-wireless@vger.kernel.org>; Tue, 17 Nov 2026 17:10:10 +0000 (UTC)
+DMARC-Filter: OpenDMARC Filter v1.4.2 smtp.subspace.kernel.org B0F5360A2609
 Authentication-Results: smtp.subspace.kernel.org; dmarc=pass (p=none dis=none) header.from=gmail.com
 Authentication-Results: smtp.subspace.kernel.org; spf=pass smtp.mailfrom=gmail.com
 Authentication-Results: smtp.subspace.kernel.org;
-	dkim=pass (2048-bit key) header.d=gmail.com header.i=@gmail.com header.a=rsa-sha256 header.s=20260707 header.b=TBDEyX1l
-Received: by mail-wr1-f46.google.com with SMTP id ffacd0b85a97d-4a5024b3c28so422474f8f.0
-        for <linux-wireless@vger.kernel.org>; Tue, 17 Nov 2026 09:10:09 -0800 (PST)
+	dkim=pass (2048-bit key) header.d=gmail.com header.i=@gmail.com header.a=rsa-sha256 header.s=20260707 header.b=ntofaL2f
+Received: by mail-wr1-f42.google.com with SMTP id ffacd0b85a97d-490d59c3f0aso2106170f8f.1
+        for <linux-wireless@vger.kernel.org>; Tue, 17 Nov 2026 09:10:10 -0800 (PST)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=gmail.com; s=20260707; t=1794935408; x=1795540208; darn=vger.kernel.org;
+        d=gmail.com; s=20260707; t=1794935409; x=1795540209; darn=vger.kernel.org;
         h=content-transfer-encoding:mime-version:references:in-reply-to
          :message-id:date:subject:cc:to:from:from:to:cc:subject:date
          :message-id:reply-to:content-type;
-        bh=CoRmN1rx1+FlXyRXu71X9XZHSrkqHgUxmdKVAdzAPz8=;
-        b=TBDEyX1lIcLXoGaoP01j646LcuXOvZZ3kW13uJf0qLjMH0tUDrshOcQuzxodhV292q
-         +o3SQFy/fTMixvzDb7QduZWPnBil5eyBhANvSF8+r+j9U1ragZnNu9iPb23C9v1/t+Qr
-         Ka3I0UrqQcnvtQ+UUZ0F42JuA0LGasmKfh6wMjW33iGDUMmHmOSW0WzRAc6DUizfw0rq
-         WN01o7KKLcFtqU7xeaYmIVggsi5bBRyPZ+KgeVP9oU7WACALWplfux97fVgsdmbypReE
-         y0ATMn9QqokAs2TH4dh3hWRgEmtCG1PvDzWEZnE2mOH6nDfKQ/bsMoxH2jk4xwgYFq5K
-         Aq2Q==
+        bh=6huBfZmPJQPrAdDCa5Wk9xqnE2GPx+6fEpKq90an7Ag=;
+        b=ntofaL2fBYzCjynF1c8NmGqctSSh8ulMFmY9Qxcamd4g2662lO1CL/51dKeRj4sIzd
+         asq/X1ettnzwnLTW05VhRM3QFS1ZqSI5yrs6CBtpOiVueImRsrmAWS4DtkFRBmS5o1Vt
+         Ut9d3BnEu8iRJfiGiv53rGggN8yUmKIJeeR7m6lc0qWo/LB4SU/J8JoJwLh7IzhBMHfp
+         nUv/raSDFFneQmY+YttiZio7ZvYyM90LghW7P6qvolJO74knLhgGCCoIT5elu3kSj3B1
+         OK66m+1MhR8zEny+qXxObduPj9ayVgNOoANAGLpWHtHlzBv6I3D0vTqVk56N0uAc7dZs
+         7fuA==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=1e100.net; s=20260707; t=1794935408; x=1795540208;
+        d=1e100.net; s=20260707; t=1794935409; x=1795540209;
         h=content-transfer-encoding:mime-version:references:in-reply-to
          :message-id:date:subject:cc:to:from:x-gm-gg:x-gm-message-state:from
          :to:cc:subject:date:message-id:reply-to:content-type;
-        bh=CoRmN1rx1+FlXyRXu71X9XZHSrkqHgUxmdKVAdzAPz8=;
-        b=xYE+F2M9xoNYewKoEDz56e1OcN/Fl9xmPw1Kjf+zZT+DayC2HZhlNtvlNA0L7gbqCA
-         OvKJmH8KxssDQVIqC6+4jxJtUaiZ5oJwgVYxEBONbqc5ceToThB4kSI6uOqSqRAZiE1G
-         8wppVIYZh1rrXjuYt8zW2vpgIsWMZHHrp/Kw3fX+sPa2Uwy16ScF3lDwIdDrBLKMB2g/
-         dgEuNmu920lLTZUnwyoAgarrHT9ov+RSm5ycxSR6LZKjHcDjrp0BtRhEueMy8fgrIber
-         yh/BGEBZupwD2iU8OKuGXqo4+aUHl++9KPEE6JzgiX7otgekfrKwJOOeE2vBDK7WnN/s
-         Zjcg==
-X-Forwarded-Encrypted: i=1; AL+hErFAKFqTa/TVOhZTFHXSCu7+ErOO6tBfCvsvPI+tDtw1lIXlGKR27tWLawiabFyGiOXx6BHe+0dJZAon/jaJ5Q==@vger.kernel.org
-X-Gm-Message-State: APuU4Z9Xx4gDHQcPME0HAXDebjjDvi4/JBiCK4BBjUvJdZnR8lVq+cTy
-	yXiUSlWIk30SUugm1P6eJOFwa23MolOUcyMd2w7z7o+bvS9pBt/7y3UD
-X-Gm-Gg: AZFdTZc8qMxak94Vpy94lwLcqDR8LVCypr+ntdYFOotLrid8wv8vez86rQSWOb+r0g1
-	Hv8pHAXMS2Gd24fNcK/8Br0doAFKy54h4tvAqC7O3jFqwbtNk4/P0rq4UwrrYaK8Jd4dr3LVl8J
-	/RljUsVQPn3RNhzY6YY8/0iRbXgnZHkM/Eg6fEKm4daxaf1ocw0gnNI9S+Sg1c/4+0038L3gCIX
-	2cNBa+pBgJ6PfSu3oAMgAMyL9xVrrQwWYLgcEim8vNqaC5L26qkhKmRbcV2p/ZPBWlkcpLAj2ZZ
-	gcplULF2BU8dIrDYQxvVXAx36fGRTg/Y5xiIsvaiUJw9156zWoqfA3N2dln1bu5/nj7ahKl+dAl
-	AjOo3877/N7yXg7TT1zXhvPodKpztcsvDTAIKiafbF308xbTINUdyu4kf/8qV81r55shR4ziHhO
-	ZXVyNdzKavgIbqPOwLLuCKH09aYbDSsZiUVU3LboSPyJzY2O/zpLYTbEXw0834YorbKk3Str89D
-	raNq2IHHfzN0kgaInJ9iNaSWA7Ytn3XjUc0TQe+AbU7dr9ZUzhI0vSy9k8UpYgaltCsv2RaEv/O
-	vqobiOMKX9D6tEyR+ESMU+1J1I95iMZw8H0=
-X-Received: by 2002:a05:6000:4213:b0:49a:94e6:378d with SMTP id ffacd0b85a97d-4a377f4f68bmr6704100f8f.30.1794935408012;
+        bh=6huBfZmPJQPrAdDCa5Wk9xqnE2GPx+6fEpKq90an7Ag=;
+        b=B67AO63HyujOxz9Dpya6/PUVCpwHNBsaTv75PZcqnZTTcNP0OkdLQVsuxiuApZH9BN
+         E/OYVl07L1Z7UK2mpkskeT10zwTys6QMNkVJZtKIh3fev6sRDZ1PoWkaWQ/EZZgfmx+F
+         +F2a1iGbePRXdsjW0NY8MSbocon/6vq36RQ4VO12669ncMzZvTsP+3DVLgN8ma9NUZIU
+         maSa9kfG9RHB8CUzvfjE09l95qb3afM2locSfQythukLhrOflDqHV4E7s8HsLQvwOaQ5
+         WbTvKNz0La0b1jvz+gKc9c06zv61RfYU7tPon7Gw8sq4zRPJ1UIagHVQuN65M2WnEihx
+         V0hw==
+X-Forwarded-Encrypted: i=1; AL+hErF+n+tfYemfl4Ya6AEFIGbXWDfX92IJH86hLLnnP6KQHDGotj+5edtVXoaisbI6uXMlv8RMgErOpijENju/RQ==@vger.kernel.org
+X-Gm-Message-State: APuU4Z/panlf7dQGz7qIDBxdiX4MAFGDdvESKqhrmv1WbFexUUp3YI1c
+	7jg0an9Rb3SmUMeQFgInEgsMsgGljbWwPRZS6X4aC8bmYz373Z69UPJU
+X-Gm-Gg: AZFdTZeCwCthQtfOemirvajN173lfVCaCgqSeOCFPOIu6WChaRA0cjkF3SscTBjjBcU
+	3CaMuZmWWP/5J81C5yTphmdH/3+OaCdRO57ykdpBCgSsbUOyxh9ghYoEQDdxdmPdSTh79cBax0G
+	nFfkj2zpb4N3YOo0XQNc5+6IlLme/UTFJXXEtfEDSmZpeHdZYrxz6fcCC2MK034c2UzeXrjx+tg
+	S8OuoHdGCe+1UUYDbF7nKHk/wweO5GqX4330bOu14cK+8wEMGIdewvOZaSePRWAOYOtnRyCMnju
+	pWR5yQaw4kyRzDiVsU0xEMGEnQyvQIAygia9UDrQfVvQchsifj3FAWZLzFcBYt3X0qlzc8njPpt
+	R9tgoFqDNSX7r95/qjLFd01XT94Mz8nWMQo9VgZjplZcC2OlyWpJwoV9w4QAOQUP6ArAbnFuj7R
+	YL1vbuG6bowgIqnOv6zUoeuMfhjhYez6XlCp0bsQWhVeD/sYD9yFXPu14mERWR3bw0BMWgbJLMA
+	RGpqDJsaEc7oe9TLgIwBrwCFzdGwaXThz0Jy1l9pGHlW+CjSxsyEz5sLXlI5qiEvpABi2umAUp3
+	sBl4YTWn9NGOifSlS0DQThQr5UlJKE9OUk0=
+X-Received: by 2002:a05:6000:41c9:b0:492:b1c5:6db4 with SMTP id ffacd0b85a97d-4a63bbc379bmr82062f8f.26.1794935408907;
         Tue, 17 Nov 2026 09:10:08 -0800 (PST)
 Received: from deb05.proceq.com ([213.160.61.66])
-        by smtp.gmail.com with ESMTPSA id ffacd0b85a97d-49c6d079a2asm26828762f8f.16.2026.11.17.09.10.07
+        by smtp.gmail.com with ESMTPSA id ffacd0b85a97d-49c6d079a2asm26828762f8f.16.2026.11.17.09.10.08
         (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
-        Tue, 17 Nov 2026 09:10:07 -0800 (PST)
+        Tue, 17 Nov 2026 09:10:08 -0800 (PST)
 From: Mehmet Fide <mehmet.fide@gmail.com>
 To: Ping-Ke Shih <pkshih@realtek.com>
 Cc: Luka Gejak <luka.gejak@linux.dev>,
@@ -91,9 +91,9 @@ Cc: Luka Gejak <luka.gejak@linux.dev>,
 	linux-wireless@vger.kernel.org,
 	linux-kernel@vger.kernel.org,
 	mehmet.fide@screeningeagle.com
-Subject: [PATCH rtw-next v3 3/5] wifi: rtw88: do not drop stations when collecting them for an iteration
-Date: Tue, 17 Nov 2026 18:10:01 +0100
-Message-ID: <20261117171003.1840491-4-mehmet.fide@gmail.com>
+Subject: [PATCH rtw-next v3 4/5] wifi: rtw88: reset the stations outside of RCU on firmware recovery
+Date: Tue, 17 Nov 2026 18:10:02 +0100
+Message-ID: <20261117171003.1840491-5-mehmet.fide@gmail.com>
 X-Mailer: git-send-email 2.56.0
 In-Reply-To: <20261117171003.1840491-1-mehmet.fide@gmail.com>
 References: <20261117171003.1840491-1-mehmet.fide@gmail.com>
@@ -110,102 +110,54 @@ Content-Transfer-Encoding: 8bit
 
 From: Mehmet Fide <mehmet.fide@screeningeagle.com>
 
-rtw_iterate_stas() collects the stations with an atomic iterator and
-calls the iterator for them afterwards. It allocates an entry for each
-station with GFP_ATOMIC and silently skips the station when that fails.
+The recovery after a firmware crash removes the driver state of every
+station with rtw_sta_remove(), called from an atomic station iterator.
+rtw_sta_remove() cancels the rate work of the station with
+cancel_work_sync(), which can sleep. With a station associated:
 
-The firmware recovery resets the stations through it with the next
-patch. A skipped station keeps its TX queues on rtwdev->txqs, and when
-mac80211 adds it again, rtw_txq_init() reinitializes the list node of a
-queue that is still linked there.
+BUG: sleeping function called from invalid context at kernel/workqueue.c:4722
+in_atomic(): 0, irqs_disabled(): 0, non_block: 0, pid: 14, name: kworker/u16:1
+RCU nest depth: 1, expected: 0
+Workqueue: phy35 rtw_fw_recovery_work [rtw88_core]
+Call trace:
+ __might_resched+0x13c/0x1f0
+ __might_sleep+0x48/0x7c
+ __cancel_work_sync+0xa8/0xb4
+ cancel_work_sync+0x14/0x20
+ rtw_sta_remove+0x34/0x10c [rtw88_core]
+ rtw_reset_sta_iter+0x20/0x48 [rtw88_core]
+ ieee80211_iterate_stations_atomic+0x80/0x144 [mac80211]
+ rtw_fw_recovery_work+0x1dc/0x2b8 [rtw88_core]
 
-Link the stations through a list node in struct rtw_sta_info instead,
-so the collection cannot fail. All callers hold rtwdev->mutex, which
-keeps two collections apart, and no station iterator collects again.
+Use rtw_iterate_stas(), which collects the stations under RCU and calls
+the iterator after it. The recovery holds the driver mutex it asks for.
 
-Reported-by: Luka Gejak <luka.gejak@linux.dev>
-Closes: https://lore.kernel.org/linux-wireless/4EE3D95E-988D-4514-9849-9546CD49D8E9@linux.dev/
-Fixes: 78d5bf925f30 ("wifi: rtw88: iterate over vif/sta list non-atomically")
+Fixes: bcafcb959a57 ("wifi: rtw88: use work to update rate to avoid RCU warning")
 Signed-off-by: Mehmet Fide <mehmet.fide@screeningeagle.com>
+Reviewed-by: Luka Gejak <luka.gejak@linux.dev>
 ---
 
 Notes:
-    v3: new, recovery resets every station through rtw_iterate_stas() with
-        the next patch (Luka Gejak)
+    v3: no change; the station skip Luka Gejak found is removed by the
+        previous patch
+    v2: Reviewed-by Luka Gejak, no change
 
- drivers/net/wireless/realtek/rtw88/main.h |  1 +
- drivers/net/wireless/realtek/rtw88/util.c | 24 ++++++-----------------
- 2 files changed, 7 insertions(+), 18 deletions(-)
+ drivers/net/wireless/realtek/rtw88/main.c | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
 
-diff --git a/drivers/net/wireless/realtek/rtw88/main.h b/drivers/net/wireless/realtek/rtw88/main.h
-index 6ecbeb4ffe4b..6b26c517c738 100644
---- a/drivers/net/wireless/realtek/rtw88/main.h
-+++ b/drivers/net/wireless/realtek/rtw88/main.h
-@@ -792,6 +792,7 @@ struct rtw_sta_info {
- 	struct cfg80211_bitrate_mask *mask;
+diff --git a/drivers/net/wireless/realtek/rtw88/main.c b/drivers/net/wireless/realtek/rtw88/main.c
+index ce65a1a80840..8e7ae747b900 100644
+--- a/drivers/net/wireless/realtek/rtw88/main.c
++++ b/drivers/net/wireless/realtek/rtw88/main.c
+@@ -664,7 +664,7 @@ static void __fw_recovery_work(struct rtw_dev *rtwdev)
+ 	WARN(1, "firmware crash, start reset and recover\n");
  
- 	struct work_struct rc_work;
-+	struct list_head iter_list;
- };
- 
- enum rtw_bfee_role {
-diff --git a/drivers/net/wireless/realtek/rtw88/util.c b/drivers/net/wireless/realtek/rtw88/util.c
-index fcd6eb1ab32a..3e8a520177d1 100644
---- a/drivers/net/wireless/realtek/rtw88/util.c
-+++ b/drivers/net/wireless/realtek/rtw88/util.c
-@@ -107,11 +107,6 @@ void rtw_desc_to_mcsrate(u16 rate, u8 *mcs, u8 *nss)
- 	}
- }
- 
--struct rtw_stas_entry {
--	struct list_head list;
--	struct ieee80211_sta *sta;
--};
--
- struct rtw_iter_stas_data {
- 	struct rtw_dev *rtwdev;
- 	struct list_head list;
-@@ -120,14 +115,9 @@ struct rtw_iter_stas_data {
- static void rtw_collect_sta_iter(void *data, struct ieee80211_sta *sta)
- {
- 	struct rtw_iter_stas_data *iter_stas = data;
--	struct rtw_stas_entry *stas_entry;
-+	struct rtw_sta_info *si = (struct rtw_sta_info *)sta->drv_priv;
- 
--	stas_entry = kmalloc_obj(*stas_entry, GFP_ATOMIC);
--	if (!stas_entry)
--		return;
--
--	stas_entry->sta = sta;
--	list_add_tail(&stas_entry->list, &iter_stas->list);
-+	list_add_tail(&si->iter_list, &iter_stas->list);
- }
- 
- void rtw_iterate_stas(struct rtw_dev *rtwdev,
-@@ -136,7 +126,7 @@ void rtw_iterate_stas(struct rtw_dev *rtwdev,
- 		      void *data)
- {
- 	struct rtw_iter_stas_data iter_data;
--	struct rtw_stas_entry *sta_entry, *tmp;
-+	struct rtw_sta_info *si, *tmp;
- 
- 	/* &rtwdev->mutex makes sure no stations can be removed between
- 	 * collecting the stations and iterating over them.
-@@ -149,11 +139,9 @@ void rtw_iterate_stas(struct rtw_dev *rtwdev,
- 	ieee80211_iterate_stations_atomic(rtwdev->hw, rtw_collect_sta_iter,
- 					  &iter_data);
- 
--	list_for_each_entry_safe(sta_entry, tmp, &iter_data.list,
--				 list) {
--		list_del_init(&sta_entry->list);
--		iterator(data, sta_entry->sta);
--		kfree(sta_entry);
-+	list_for_each_entry_safe(si, tmp, &iter_data.list, iter_list) {
-+		list_del_init(&si->iter_list);
-+		iterator(data, si->sta);
- 	}
- }
- 
+ 	rtw_iterate_keys_atomic(rtwdev, NULL, rtw_reset_key_iter, rtwdev);
+-	rtw_iterate_stas_atomic(rtwdev, rtw_reset_sta_iter, rtwdev);
++	rtw_iterate_stas(rtwdev, rtw_reset_sta_iter, rtwdev);
+ 	rtw_iterate_vifs_atomic(rtwdev, rtw_reset_vif_iter, rtwdev);
+ 	bitmap_zero(rtwdev->hw_port, RTW_PORT_NUM);
+ 	rtw_enter_ips(rtwdev);
 -- 
 2.56.0
 
