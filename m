@@ -1,73 +1,73 @@
 Authentication-Results: smtp.subspace.kernel.org; arc=none smtp.remote-ip=198.175.65.21
 ARC-Seal: i=1; d=subspace.kernel.org; s=arc20261015; a=rsa-sha256; cv=none;
-	t=1794992158;
-	b=t/47eDG349rTHu2bHDQBMtlXSEQiqGnhbqNt/yCcaNXCQ5t9QxCJ8DlJfwW96L/+ll5N
-	 4OxTnKoxQXE5LdoDBDG5ZhVQ6vBfyQ+HBS+/sSG3wf+jrTgagag24snVSIqQRxzWTtdx2
-	 uABSTGIlZoWOMEAPXA9KHGYV6942Qonx5D1815ZWluTEG4UybmIC/ZJxMm2TnXeVx8jtt
-	 QBp0hWjHWgNLKV68gaU7JK4i3lQTB+eUJUxvCbgD3j5RJttgWxJPKoZHULV5Ist7Itrre
-	 bM0C3tCEvD2G9axnwNP6ejyIoI5IEIGu86LRxea76FKPKaXfrK0Au2HnVtdHpAiamug==
+	t=1794992159;
+	b=imKBilO5kXRoBRb14pGopqeMN3k3V4dLlX/x2TOWfMoqYGE/51wio702wrCxr2aiBTW2
+	 1Ad4HI5APo56fvP5CYjvB723Jel055+X6MYi7smlI9MYuOkTQT26MxM1DCjCPzPTax2Sg
+	 6dIjqdj5/u1UV2JBDDLjtbbiAo3kDxhLGRq0LFA7yIWci+nkT6rP/urxH2tL7ohSd1XVE
+	 3Yr32KNtMGxlDPbugdHwlah/sIfyln8fsi7zMHpEUU32t8PBSQzop30bhBEF3p3dPaDB3
+	 NJ01OFvj68dUMcYSc1dTUsBBLrBYRMpPUCPInsRynVk+0xe+HNwxnQ+O4JBrxp6YPzQ==
 ARC-Message-Signature: i=1; d=subspace.kernel.org; s=arc20261015;
-	a=rsa-sha256; c=relaxed/relaxed; t=1794992158;
+	a=rsa-sha256; c=relaxed/relaxed; t=1794992159;
 	h=DMARC-Filter:DKIM-Signature:X-CSE-ConnectionGUID:X-CSE-MsgGUID:
 	 X-IronPort-AV:X-IronPort-AV:Received:X-CSE-ConnectionGUID:
 	 X-CSE-MsgGUID:X-ExtLoop1:X-IronPort-AV:Received:From:To:Cc:Subject:
 	 Date:Message-Id:X-Mailer:In-Reply-To:References:MIME-Version:
 	 Organization:Content-Transfer-Encoding;
-	bh=mFbarUnT5Cth2Pm+/avfUF8Tapw+bzryQe20C1rCbTA=;
-	b=OzCT7JNeSVmihIBK28/dLfIP8KwVs71sQZ8M0E7or7HKtE5+5/Y0YrxwnRvNwexD/x6G
-	 VSNRMu72z7cl5FEgRKYK5I579bqKiZwvgcwhHDIUdKjH1Sp60hWQBOIhOnkHV3xbUCqv0
-	 tWM5Ju96YLC29XaDfq7sbpSEETmseCYBxrzRDWBllOVUkjYsQiAQKGeJA6IZxcvMJ5N9C
-	 kWyeCHHjcNgidGZaVyY7UjsfklWppzVZ6YR9OjHKhHtJHx1woPrzxRX647x78DsVDs62h
-	 dYeesQFntzrI6kC0MdNpG4I9cBRgY3Iey/lejKWbW0m7s8BMqsMXn8XKU7CGKZw+mBg==
+	bh=daW1seqW4xagCdSG8AnCovjOguK2mjuERwWYi2MASkY=;
+	b=Yo43+JoY8CjH2c2J32KPVyHB4nb042pyr033VM60L42Y0qdeyM8E8UIft5QsK0eCHPFz
+	 lTT5XeQrq/mme6KNXv891IoGVthgfdC50AhwoFmKoJMCBg5gGo0HXhdiVvKtNjg7hjzyR
+	 1rK0v/8vYuP1qMy0PSwXV79q7+sWwWkHfns+r6pOawmeMYIDxuDP41gbJ0u520F71xU8y
+	 K46zibhymdSsohbOdjbMf25bL8oAe+4oFgha5/O0ns8QtcoGlPliANVrd180APUyPducS
+	 yETdNEgAh0bmvPe1YYx8eF5j/zX5mHqEo6RYTbJMdjqiPqttjxavci6gPtviErvgyyA==
 ARC-Authentication-Results: i=1; smtp.subspace.kernel.org; 
 	dmarc=pass header.from=intel.com;
 	spf=pass smtp.mailfrom=intel.com;
-	dkim=pass header.d=intel.com header.i=@intel.com header.a=rsa-sha256 header.s=Intel header.b=g4A+d+HO;
+	dkim=pass header.d=intel.com header.i=@intel.com header.a=rsa-sha256 header.s=Intel header.b=fa3fXMqe;
 	arc=none smtp.remote-ip=198.175.65.21
 Received: from mgamail.intel.com (mgamail.intel.com [198.175.65.21])
 	(using TLSv1.2 with cipher ECDHE-ECDSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.subspace.kernel.org (Postfix) with ESMTPS id CE72C606A33B
-	for <linux-wireless@vger.kernel.org>; Wed, 18 Nov 2026 08:55:57 +0000 (UTC)
-DMARC-Filter: OpenDMARC Filter v1.4.2 smtp.subspace.kernel.org CE72C606A33B
+	by smtp.subspace.kernel.org (Postfix) with ESMTPS id 2E8E3606A32A
+	for <linux-wireless@vger.kernel.org>; Wed, 18 Nov 2026 08:55:59 +0000 (UTC)
+DMARC-Filter: OpenDMARC Filter v1.4.2 smtp.subspace.kernel.org 2E8E3606A32A
 Authentication-Results: smtp.subspace.kernel.org; dmarc=pass (p=none dis=none) header.from=intel.com
 Authentication-Results: smtp.subspace.kernel.org; spf=pass smtp.mailfrom=intel.com
 Authentication-Results: smtp.subspace.kernel.org;
-	dkim=pass (2048-bit key) header.d=intel.com header.i=@intel.com header.a=rsa-sha256 header.s=Intel header.b=g4A+d+HO
+	dkim=pass (2048-bit key) header.d=intel.com header.i=@intel.com header.a=rsa-sha256 header.s=Intel header.b=fa3fXMqe
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple;
   d=intel.com; i=@intel.com; q=dns/txt; s=Intel;
-  t=1794992158; x=1826528158;
+  t=1794992160; x=1826528160;
   h=from:to:cc:subject:date:message-id:in-reply-to:
    references:mime-version:content-transfer-encoding;
-  bh=bkaKhdVmG2wyQYFZbkVyHzY62D/FeosvELAUu8p1S4U=;
-  b=g4A+d+HOIBBC4uCOmFnPNd8XuuYyI+xX3VCBzPFbg+unve1y/IKWd3Ya
-   5jkVbsoz7DjFiCoYc/thr1JoJMyP/1mSYN+0I3B2QLg685j9tGsflt+e7
-   n94SFC8J4X+IEmdgK9eTFFlcVPijPvoU8h22AGU3dHcfXE7pqIjuY0aei
-   tEMevc02rDw0AcaWJ5qxWPp+QFtBSE8/T7wRUpZoBynghgrkp+aUCO23f
-   LqKz2ktuAYDHLt3prA0Xl916BbcArR26WHd4l4RA/zSm76TXiFSH3FB3M
-   1mykfRERMtQRDDYXgjpeDNkpQTsSglS3V7zgY9A20Y8+YF4A811j40vHH
-   w==;
-X-CSE-ConnectionGUID: h8LGbmWOQKebYwcNDkaimw==
-X-CSE-MsgGUID: m1weJZvIToi/M4/p7j+ASA==
-X-IronPort-AV: E=McAfee;i="6800,10657,11969"; a="3871947"
+  bh=CZHjflpxYecSxGKxypVv/Yp0Bx+buPBdCokWD0OcP+E=;
+  b=fa3fXMqexIuP5tC+Q5/ZOP+TweqdQzt1Db5ltrgYMNjiHpIravror8vU
+   86wIYpq6k1evW+t35k0+E82NkR1VmUy1AwaLvAkMpKakV0aXaQGp0oIfB
+   FTf2nkMgixXb5lG+wWuIMYT2Xg6fRTmX3aKNFV6y5+3iKS5tNm23UcOxD
+   nLYg3uBIEW6rsLNNFwrRBIyte6HslgfWn8emeuShOMGKB+tOYhs0nDuGT
+   +E/nTOurZdJnASUvuEqqHjMs/ohKimNgUoqBzqRSw07NoZRb7KUy6PLFu
+   h2/uUZ8JcSeH4GG0yn3Z94/K0VaGhap+Jngag/yhbv9j3kRPkliZsuxRn
+   Q==;
+X-CSE-ConnectionGUID: Ul7rIjqATZOFTtAelIqdQg==
+X-CSE-MsgGUID: ak4wLH4TROSUY+j3xCqT2A==
+X-IronPort-AV: E=McAfee;i="6800,10657,11969"; a="3871949"
 X-IronPort-AV: E=Sophos;i="6.27,219,1787036400"; 
-   d="scan'208";a="3871947"
+   d="scan'208";a="3871949"
 Received: from orviesa003.jf.intel.com ([10.64.159.143])
-  by orvoesa113.jf.intel.com with ESMTP/TLS/ECDHE-RSA-AES256-GCM-SHA384; 18 Nov 2026 00:55:58 -0800
-X-CSE-ConnectionGUID: JtThBv2VTj+4PtRXY/46CQ==
-X-CSE-MsgGUID: dkxhLWJRRIubnzo3PLJV8g==
+  by orvoesa113.jf.intel.com with ESMTP/TLS/ECDHE-RSA-AES256-GCM-SHA384; 18 Nov 2026 00:56:00 -0800
+X-CSE-ConnectionGUID: T9HBNyRTR7qYyAxRVB+vlg==
+X-CSE-MsgGUID: jsJSKm+3SASwy5yrCiYusw==
 X-ExtLoop1: 1
 X-IronPort-AV: E=Sophos;i="6.27,219,1787036400"; 
-   d="scan'208";a="10000185"
+   d="scan'208";a="10000204"
 Received: from weis0040.iil.intel.com ([10.12.217.108])
-  by smtpauth.intel.com with ESMTP/TLS/ECDHE-RSA-AES256-GCM-SHA384; 18 Nov 2026 00:55:56 -0800
+  by smtpauth.intel.com with ESMTP/TLS/ECDHE-RSA-AES256-GCM-SHA384; 18 Nov 2026 00:55:58 -0800
 From: Miri Korenblit <miriam.rachel.korenblit@intel.com>
 To: miriam.rachel.korenblit@intel.com
 Cc: linux-wireless@vger.kernel.org,
-	Benjamin Berg <benjamin.berg@intel.com>
-Subject: [PATCH v2 iwlwifi-next 02/15] wifi: iwlwifi: mld: enable Control Integrity Protocol support
-Date: Wed, 18 Nov 2026 10:57:34 +0200
-Message-Id: <20261118105612.a0430f1079b6.Iefa46c4cd4ae5256f496ad4454898fb9f76da260@changeid>
+	Johannes Berg <johannes.berg@intel.com>
+Subject: [PATCH v2 iwlwifi-next 03/15] wifi: iwlwifi: mld: request per-STA GTKs for the AP
+Date: Wed, 18 Nov 2026 10:57:35 +0200
+Message-Id: <20261118105612.986bdcfcff34.I50229b16c33419e4875020d1074aa444f4cfa282@changeid>
 X-Mailer: git-send-email 2.34.1
 In-Reply-To: <20261118085747.3845425-1-miriam.rachel.korenblit@intel.com>
 References: <20261118085747.3845425-1-miriam.rachel.korenblit@intel.com>
@@ -83,78 +83,210 @@ MIME-Version: 1.0
 Organization: Intel Israel (74) Limited
 Content-Transfer-Encoding: 8bit
 
-From: Benjamin Berg <benjamin.berg@intel.com>
+From: Johannes Berg <johannes.berg@intel.com>
 
-On new enough hardware, the feature can be enabled. However, it is not
-yet fully supported so hide it behind a debug configuration. Also add an
-option to tell the firmware to use UHR trigger frames (which can be
-protected) instead of RTS for the initial Control frames (IFS).
+Request getting the STA pointer for the AP for GTKs
+installed in client mode, and remove the code that
+was necessary to work around not having them while
+the firmware requires the station entry.
 
-Signed-off-by: Benjamin Berg <benjamin.berg@intel.com>
+Signed-off-by: Johannes Berg <johannes.berg@intel.com>
 Signed-off-by: Miri Korenblit <miriam.rachel.korenblit@intel.com>
 ---
- .../net/wireless/intel/iwlwifi/mld/mac80211.c   | 17 +++++++++++++++++
- drivers/net/wireless/intel/iwlwifi/mld/sta.c    | 12 ++++++++++++
- 2 files changed, 29 insertions(+)
+ drivers/net/wireless/intel/iwlwifi/mld/d3.c   |  8 ++--
+ drivers/net/wireless/intel/iwlwifi/mld/key.c  | 46 +------------------
+ drivers/net/wireless/intel/iwlwifi/mld/key.h  |  6 +--
+ .../net/wireless/intel/iwlwifi/mld/mac80211.c | 13 +-----
+ drivers/net/wireless/intel/iwlwifi/mld/sta.c  |  7 ---
+ 5 files changed, 8 insertions(+), 72 deletions(-)
 
+diff --git a/drivers/net/wireless/intel/iwlwifi/mld/d3.c b/drivers/net/wireless/intel/iwlwifi/mld/d3.c
+index 77e485034e3b..c2c75db40749 100644
+--- a/drivers/net/wireless/intel/iwlwifi/mld/d3.c
++++ b/drivers/net/wireless/intel/iwlwifi/mld/d3.c
+@@ -71,8 +71,8 @@ iwl_mld_wake_pkt_key_iter(struct ieee80211_hw *hw, struct ieee80211_vif *vif,
+ 			  struct ieee80211_sta *sta,
+ 			  struct ieee80211_key_conf *key, void *_data)
+ {
++	bool is_group_key = !(key->flags & IEEE80211_KEY_FLAG_PAIRWISE);
+ 	struct iwl_mld_wake_pkt_iter_data *data = _data;
+-	bool is_group_key = !sta;
+ 
+ 	/* ignore anything that is not a PTK / GTK */
+ 	if (key->keyidx > 3)
+@@ -1060,7 +1060,7 @@ iwl_mld_resume_keys_iter(struct ieee80211_hw *hw,
+ 	if (rsc_notif_ver == IWL_FW_CMD_VER_UNKNOWN &&
+ 	    key->keyidx >= 0 && key->keyidx <= 3) {
+ 		/* PTK */
+-		if (sta) {
++		if (key->flags & IEEE80211_KEY_FLAG_PAIRWISE) {
+ 			iwl_mld_update_ptk_rx_seq(data->mld, wowlan_status,
+ 						  sta, key,
+ 						  key->cipher ==
+@@ -1100,7 +1100,7 @@ iwl_mld_rsc_update_key_iter(struct ieee80211_hw *hw,
+ 	if (key->keyidx > 3)
+ 		return;
+ 
+-	if (sta) {
++	if (key->flags & IEEE80211_KEY_FLAG_PAIRWISE) {
+ 		/* PTK */
+ 		BUILD_BUG_ON(ARRAY_SIZE(data->notif->ucast_rsc) !=
+ 			     IWL_MAX_TID_COUNT);
+@@ -1827,7 +1827,7 @@ iwl_mld_suspend_key_data_iter(struct ieee80211_hw *hw,
+ 	case WLAN_CIPHER_SUITE_TKIP:
+ 		if (!cipher)
+ 			cipher = cpu_to_le32(STA_KEY_FLG_TKIP);
+-		if (sta) {
++		if (key->flags & IEEE80211_KEY_FLAG_PAIRWISE) {
+ 			key_rsc = data->rsc->ucast_rsc;
+ 			if (key->cipher == WLAN_CIPHER_SUITE_TKIP)
+ 				iwl_mld_suspend_convert_tkip_ipn(key, key_rsc);
+diff --git a/drivers/net/wireless/intel/iwlwifi/mld/key.c b/drivers/net/wireless/intel/iwlwifi/mld/key.c
+index 74b483783de8..5ee5e0ed0350 100644
+--- a/drivers/net/wireless/intel/iwlwifi/mld/key.c
++++ b/drivers/net/wireless/intel/iwlwifi/mld/key.c
+@@ -346,49 +346,6 @@ int iwl_mld_add_key(struct iwl_mld *mld,
+ 	return 0;
+ }
+ 
+-struct remove_ap_keys_iter_data {
+-	u8 link_id;
+-	struct ieee80211_sta *sta;
+-};
+-
+-static void iwl_mld_remove_ap_keys_iter(struct ieee80211_hw *hw,
+-					struct ieee80211_vif *vif,
+-					struct ieee80211_sta *sta,
+-					struct ieee80211_key_conf *key,
+-					void *_data)
+-{
+-	struct iwl_mld *mld = IWL_MAC80211_GET_MLD(hw);
+-	struct remove_ap_keys_iter_data *data = _data;
+-
+-	if (key->hw_key_idx == STA_KEY_IDX_INVALID)
+-		return;
+-
+-	/* All the pairwise keys should have been removed by now */
+-	if (WARN_ON(sta))
+-		return;
+-
+-	if (key->link_id >= 0 && key->link_id != data->link_id)
+-		return;
+-
+-	iwl_mld_remove_key(mld, vif, data->sta, key);
+-}
+-
+-void iwl_mld_remove_ap_keys(struct iwl_mld *mld, struct ieee80211_vif *vif,
+-			    struct ieee80211_sta *sta, unsigned int link_id)
+-{
+-	struct remove_ap_keys_iter_data iter_data = {
+-		.link_id = link_id,
+-		.sta = sta,
+-	};
+-
+-	if (WARN_ON_ONCE(vif->type != NL80211_IFTYPE_STATION))
+-		return;
+-
+-	ieee80211_iter_keys(mld->hw, vif,
+-			    iwl_mld_remove_ap_keys_iter,
+-			    &iter_data);
+-}
+-
+ struct iwl_mvm_sta_key_update_data {
+ 	struct ieee80211_sta *sta;
+ 	u32 old_sta_mask;
+@@ -414,8 +371,7 @@ static void iwl_mld_update_sta_key_iter(struct ieee80211_hw *hw,
+ 	};
+ 	int err;
+ 
+-	/* only need to do this for pairwise keys (link_id == -1) */
+-	if (sta != data->sta || key->link_id >= 0)
++	if (sta != data->sta || !(key->flags & IEEE80211_KEY_FLAG_PAIRWISE))
+ 		return;
+ 
+ 	err = iwl_mld_send_cmd_pdu(mld, WIDE_ID(DATA_PATH_GROUP, SEC_KEY_CMD),
+diff --git a/drivers/net/wireless/intel/iwlwifi/mld/key.h b/drivers/net/wireless/intel/iwlwifi/mld/key.h
+index 5a9efdaa3b03..ddd1e7b52e4b 100644
+--- a/drivers/net/wireless/intel/iwlwifi/mld/key.h
++++ b/drivers/net/wireless/intel/iwlwifi/mld/key.h
+@@ -1,6 +1,6 @@
+ /* SPDX-License-Identifier: GPL-2.0 OR BSD-3-Clause */
+ /*
+- * Copyright (C) 2024 Intel Corporation
++ * Copyright (C) 2024. 2026 Intel Corporation
+  */
+ #ifndef __iwl_mld_key_h__
+ #define __iwl_mld_key_h__
+@@ -17,10 +17,6 @@ int iwl_mld_add_key(struct iwl_mld *mld,
+ 		    struct ieee80211_vif *vif,
+ 		    struct ieee80211_sta *sta,
+ 		    struct ieee80211_key_conf *key);
+-void iwl_mld_remove_ap_keys(struct iwl_mld *mld,
+-			    struct ieee80211_vif *vif,
+-			    struct ieee80211_sta *sta,
+-			    unsigned int link_id);
+ 
+ int iwl_mld_update_sta_keys(struct iwl_mld *mld,
+ 			    struct ieee80211_vif *vif,
 diff --git a/drivers/net/wireless/intel/iwlwifi/mld/mac80211.c b/drivers/net/wireless/intel/iwlwifi/mld/mac80211.c
-index a7530e01f8c0..821cd2d2a73b 100644
+index 821cd2d2a73b..728863d818fd 100644
 --- a/drivers/net/wireless/intel/iwlwifi/mld/mac80211.c
 +++ b/drivers/net/wireless/intel/iwlwifi/mld/mac80211.c
-@@ -304,6 +304,18 @@ static void iwl_mld_hw_set_nan(struct iwl_mld *mld)
- 	hw->wiphy->nan_capa.phy.he = mld->nvm_data->nan_phy_capa.he;
+@@ -263,6 +263,7 @@ static void iwl_mac_hw_set_flags(struct iwl_mld *mld)
+ 	ieee80211_hw_set(hw, SINGLE_SCAN_ON_ALL_BANDS);
+ 	ieee80211_hw_set(hw, SUPPORTS_AMSDU_IN_AMPDU);
+ 	ieee80211_hw_set(hw, TDLS_WIDER_BW);
++	ieee80211_hw_set(hw, PER_STA_AP_GTK);
  }
  
-+static bool iwl_mld_is_cip_supported(struct iwl_mld *mld)
-+{
-+	if (CSR_HW_RFID_TYPE(mld->trans->info.hw_rf_id) != IWL_CFG_RF_TYPE_PE)
-+		return false;
-+
-+	/*
-+	 * There is no D3 rekey support for the CIGTK,
-+	 * this can be enabled once the firmware fully supports the feature.
-+	 */
-+	return false;
-+}
-+
- static void iwl_mac_hw_set_wiphy(struct iwl_mld *mld)
+ static void iwl_mld_hw_set_nan(struct iwl_mld *mld)
+@@ -2355,20 +2356,9 @@ static int iwl_mld_mac80211_set_key(struct ieee80211_hw *hw,
+ 				    struct ieee80211_sta *sta,
+ 				    struct ieee80211_key_conf *key)
  {
- 	struct ieee80211_hw *hw = mld->hw;
-@@ -432,6 +444,11 @@ static void iwl_mac_hw_set_wiphy(struct iwl_mld *mld)
- 	mld->ext_capab[0].ext_mld_capa_and_ops =
- 		IEEE80211_UHR_ML_EXT_MLD_CAPA_ML_PM;
+-	struct iwl_mld_vif *mld_vif = iwl_mld_vif_from_mac80211(vif);
+ 	struct iwl_mld *mld = IWL_MAC80211_GET_MLD(hw);
+ 	int ret;
  
-+	if (iwl_mld_is_cip_supported(mld)) {
-+		/* The hardware does not need any delays */
-+		mld->ext_capab[0].cip_supported = true;
-+		mld->ext_capab[0].cip_capabilities = 0;
-+	}
- }
- 
- static void iwl_mac_hw_set_misc(struct iwl_mld *mld)
+-	/*
+-	 * FW always needs the AP STA for client mode.
+-	 * Note that during removal this could already
+-	 * be NULL (mac80211 removes keys after STAs)
+-	 * but then we'll already have removed the key
+-	 * and set hw_key_idx = STA_KEY_IDX_INVALID.
+-	 */
+-	if (!sta && vif->type == NL80211_IFTYPE_STATION)
+-		sta = mld_vif->ap_sta;
+-
+ 	switch (cmd) {
+ 	case SET_KEY:
+ 		ret = iwl_mld_set_key_add(mld, vif, sta, key);
+@@ -2595,6 +2585,7 @@ static void iwl_mld_sta_pre_rcu_remove(struct ieee80211_hw *hw,
+ 	 * on further RCU synchronisation after the sta_state()
+ 	 * callback deleted the station.
+ 	 */
++
+ 	for_each_mld_link_sta(mld_sta, mld_link_sta, link_id)
+ 		RCU_INIT_POINTER(mld->fw_id_to_link_sta[mld_link_sta->fw_id],
+ 				 NULL);
 diff --git a/drivers/net/wireless/intel/iwlwifi/mld/sta.c b/drivers/net/wireless/intel/iwlwifi/mld/sta.c
-index 6122a7dab811..cfdf7c1baaaf 100644
+index cfdf7c1baaaf..d66b1164b8e2 100644
 --- a/drivers/net/wireless/intel/iwlwifi/mld/sta.c
 +++ b/drivers/net/wireless/intel/iwlwifi/mld/sta.c
-@@ -509,6 +509,18 @@ int iwl_mld_add_modify_sta_cmd(struct iwl_mld *mld,
- 	if (sta->mfp || mld_sta->sta_state < IEEE80211_STA_AUTHORIZED)
- 		cmd.mfp = cpu_to_le32(1);
+@@ -920,13 +920,6 @@ void iwl_mld_remove_sta(struct iwl_mld *mld, struct ieee80211_sta *sta)
+ 		iwl_mld_remove_txq(mld, sta->txq[i]);
  
-+	if (sta->cip) {
-+		/* Always add padding when soliciting protected frames */
-+		cmd.mic_prep_pad_delay =
-+			u8_get_bits(link_sta->cip_cap,
-+				    IEEE80211_CIP_CAP_MIC_PADDING);
-+
-+		/* But skip adding it inside our own protected frames */
-+		if (!(link_sta->cip_cap &
-+		      IEEE80211_CIP_CAP_PROTECTED_CTRL_FRAME_ONLY))
-+			cmd.mic_compute_pad_delay = cmd.mic_prep_pad_delay;
-+	}
-+
- 	switch (link_sta->rx_nss) {
- 	case 1:
- 		cmd.mimo = cpu_to_le32(0);
+ 	for_each_sta_active_link(sta, link_sta, link_id) {
+-		/* Mac8011 will remove the groupwise keys after the sta is
+-		 * removed, but FW expects all the keys to be removed before
+-		 * the STA is, so remove them all here.
+-		 */
+-		if (vif->type == NL80211_IFTYPE_STATION && !sta->tdls)
+-			iwl_mld_remove_ap_keys(mld, vif, sta, link_id);
+-
+ 		/* Remove the link_sta */
+ 		iwl_mld_remove_link_sta(mld, link_sta);
+ 	}
 -- 
 2.34.1
 
