@@ -1,62 +1,85 @@
-Authentication-Results: smtp.subspace.kernel.org; arc=none smtp.remote-ip=95.215.58.172
+Authentication-Results: smtp.subspace.kernel.org; arc=none smtp.remote-ip=211.75.126.72
 ARC-Seal: i=1; d=subspace.kernel.org; s=arc20261015; a=rsa-sha256; cv=none;
-	t=1794993269;
-	b=XTbEmzRmECTQzPW27pFBaBSOTlk4Lcb2nm4uFomTm383kiDRJX4NKDhaTadJ7bmdHeAQ
-	 kkWFrO93G96eZ7fAm12qdTxp8HCnqC6xFuIeN+/izLkH+SptbInNzoHwWJ2D5aVUyrqOi
-	 iNNyUzDaspAKSj1VpHqfroKx2xqQA4PqWWfQrApmczJovnnG+4ejUjBSfDtjRPSPgFgng
-	 DOE2YC/fRkNMPDbgGgUwKL6ENn2LToesFaPzP33R6aHyrj+yiC/Pbe6AqnH8U1zVlFpU2
-	 OUwtzR+1MEn/rqp+LBxJy1pS1a2DpIHVbpTlqX51TxlDTFiGpwi/ZIh6OfYdtWwmitg==
+	t=1794993276;
+	b=0MHG2sdf/9TdGCKVoAb7RkwWENh8xKktX00ahswidPrqJnYmHYH14JNe36WRidl7Xvim
+	 toSzD9LmNg/7cKqYIFeSZFsZUJl/xyG/7kuTJgbphGCiOTV56dkdcX02Nt62DDEqo+wMI
+	 AAXy2nzV8EOcuZnBDsb7YELVRU97M0P2/BG3pNBYtF9dB2p1mWOUdN7EJRtK3EgMVwKsX
+	 GuCWYh0xMl8wr39n6LMGcY8sxfJy2w/ds8AV311307aoiwJ5+1E6nnfZeyIptqpzshWbD
+	 9V0BOL//Vc2nj86IhO+MZEUw5Odhv9fdvY2/BRBrRykWRLf8jlJ3NQ5kgf4mWQCu9BA==
 ARC-Message-Signature: i=1; d=subspace.kernel.org; s=arc20261015;
-	a=rsa-sha256; c=relaxed/relaxed; t=1794993269;
-	h=DMARC-Filter:X-Envelope-To:DKIM-Signature:X-Envelope-To:Received:
-	 X-Mizu-Trace-ID:X-Migadu-Flow:Date:From:To:CC:Subject:In-Reply-To:
-	 References:Message-ID:MIME-Version:Content-Type:
-	 Content-Transfer-Encoding;
-	bh=wrWsmpFUEsR3lRS9lv6ubqR22/udzNI+pJsuck8/tuw=;
-	b=IIGL04ZC3lRUv/SN4IjTqQ6g/6n12HCQTAd8I1LAxG3SwSK0S/TpMFm+M6V2CIPNaBEN
-	 qsZwqyJJoK2Yuw05P63PDOeKHX8IxCGke/Frxvbs1ktU+EMQyY/gOZ6y52qDoMVRGydb0
-	 t+kIl5+rdrL8gLQ/r16B19qnmg2/AMml4JGq+mNGs1kU5nC68pWdnIxn+GhpQKnmCnpbw
-	 dK3u2R3ZuSbN63DNrJoIcy56z1CkFvBT+QmpugYX9KojbRBHrkZchjsw8rh4kCs71tyJW
-	 aAW1Xacm3+CqyGTROSGCEqW6p+pkzh3prPK2uSe6ExJ2eUpx9V55ZMMY3Jh9EkDpzYw==
+	a=rsa-sha256; c=relaxed/relaxed; t=1794993276;
+	h=DMARC-Filter:X-SpamFilter-By:DKIM-Signature:Received:Received:
+	 Received:Received:From:To:CC:Subject:Thread-Topic:Thread-Index:Date:
+	 Message-ID:References:In-Reply-To:Accept-Language:Content-Language:
+	 x-originating-ip:Content-Type:Content-Transfer-Encoding:MIME-Version;
+	bh=wpfKZ8NYHfJjBDEJIfAmHEAA+XABEcLHLhewUnnbptc=;
+	b=38+5Fsm/xIjbe6G4+B0YEWwkGh7VmCR4+uAFXIXCfPhN1ZgxIZ9nI28qDHYEoOrLQq8Z
+	 zWyeEfq2yJk0ielnkx3M1G0A5PZvFdIxlYZI5dsaUGQaQ5WG4zlojhhpuCARPo2z9bfUi
+	 aGfSm2JKL7R2HRI/F+mV1e0UwQjOYkP+V9HxwnnycuenjAykgcTJrTwILj89LRZvDPFTI
+	 8Ick9WfzkZq+zkSKVw4R7Uj1otY2bJejAgEkUHIEEM0xV5wee0V8aerELxcZpuow7e+o7
+	 Eb3PqAYsYyZMsOafvSAFGO+fu5LILc7VqQ2jqBFqd6oatVEkIybmVCF4XkhqmNg4ieA==
 ARC-Authentication-Results: i=1; smtp.subspace.kernel.org; 
-	dmarc=pass header.from=linux.dev;
-	spf=pass smtp.mailfrom=linux.dev;
-	dkim=pass header.d=linux.dev header.i=@linux.dev header.a=rsa-sha256 header.s=key1 header.b="tg/AuriT";
-	arc=none smtp.remote-ip=95.215.58.172
-Received: from mta1.migadu.com (out-172.mta1.migadu.com [95.215.58.172])
-	(using TLSv1.3 with cipher TLS_AES_128_GCM_SHA256 (128/128 bits)
+	dmarc=pass header.from=realtek.com;
+	spf=pass smtp.mailfrom=realtek.com;
+	dkim=pass header.d=realtek.com header.i=@realtek.com header.a=rsa-sha256 header.s=dkim header.b=atMBJ2nQ;
+	arc=none smtp.remote-ip=211.75.126.72
+Received: from rtits2.realtek.com.tw (rtits2.realtek.com [211.75.126.72])
+	(using TLSv1.3 with cipher TLS_AES_256_GCM_SHA384 (256/256 bits)
 	 key-exchange X25519 server-signature ECDSA (prime256v1) server-digest SHA256)
 	(No client certificate requested)
-	by smtp.subspace.kernel.org (Postfix) with ESMTPS id 1C241606A31C
-	for <linux-wireless@vger.kernel.org>; Wed, 18 Nov 2026 09:14:28 +0000 (UTC)
-DMARC-Filter: OpenDMARC Filter v1.4.2 smtp.subspace.kernel.org 1C241606A31C
-Authentication-Results: smtp.subspace.kernel.org; dmarc=pass (p=none dis=none) header.from=linux.dev
-Authentication-Results: smtp.subspace.kernel.org; spf=pass smtp.mailfrom=linux.dev
+	by smtp.subspace.kernel.org (Postfix) with ESMTPS id 8A701606A31C;
+	Wed, 18 Nov 2026 09:14:35 +0000 (UTC)
+DMARC-Filter: OpenDMARC Filter v1.4.2 smtp.subspace.kernel.org 8A701606A31C
+Authentication-Results: smtp.subspace.kernel.org; dmarc=pass (p=none dis=none) header.from=realtek.com
+Authentication-Results: smtp.subspace.kernel.org; spf=pass smtp.mailfrom=realtek.com
 Authentication-Results: smtp.subspace.kernel.org;
-	dkim=pass (1024-bit key, unprotected) header.d=linux.dev header.i=@linux.dev header.a=rsa-sha256 header.s=key1 header.b=tg/AuriT
-X-Envelope-To: linux-wireless@vger.kernel.org
-DKIM-Signature: a=rsa-sha256; bh=wrWsmpFUEsR3lRS9lv6ubqR22/udzNI+pJsuck8/tuw=;
- c=simple/simple; d=linux.dev;
- h=from:to:subject:date:message-id:mime-version:content-type; s=key1;
- t=1794993267; v=1; x=1795598067;
- b=tg/AuriTVhjeVsvcsQpXTRXG7nvT4FcnGsUbW9qWJzH5iEQI+XOqRzq68YbyEgKPLVAUsrGX
- QZdsOdV5JTQvXNd5hDbjja0JKGBit3VGxynuWoPm3q6eJsQSJ27f1ULdrIYqtW8qGIvkxuS3H3K
- tN8JRolSIG9Elr5Y7ZigSj4k=
-X-Envelope-To: linux-wireless@vger.kernel.org
-Received: by smtp.migadu.com with ESMTPS id 6f0aaf4e757ca185;
-	Wed, 18 Nov 2026 09:14:27 +0000
-X-Mizu-Trace-ID: 6f0aaf4e757ca185
-X-Migadu-Flow: FLOW_OUT
-Date: Wed, 18 Nov 2026 10:14:24 +0100
-From: Luka Gejak <luka.gejak@linux.dev>
-To: Mehmet Fide <mehmet.fide@gmail.com>, Ping-Ke Shih <pkshih@realtek.com>
-CC: Bitterblue Smith <rtl8821cerfe2@gmail.com>, linux-wireless@vger.kernel.org,
- linux-kernel@vger.kernel.org, mehmet.fide@screeningeagle.com
-Subject: =?US-ASCII?Q?Re=3A_=5BPATCH_rtw-next_v12_2/3=5D_wifi=3A_rt?=
- =?US-ASCII?Q?w88=3A_support_channel_switch_in_AP_mode?=
+	dkim=pass (2048-bit key) header.d=realtek.com header.i=@realtek.com header.a=rsa-sha256 header.s=dkim header.b=atMBJ2nQ
+X-SpamFilter-By: ArmorX SpamTrap 5.80 with qID 6AI9EHaC41204479, This message is accepted by code: ctloc85258
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=realtek.com; s=dkim;
+	t=1794993257; bh=wpfKZ8NYHfJjBDEJIfAmHEAA+XABEcLHLhewUnnbptc=;
+	h=From:To:CC:Subject:Date:Message-ID:References:In-Reply-To:
+	 Content-Type:Content-Transfer-Encoding:MIME-Version;
+	b=atMBJ2nQJ8BvwDsHKILWQPv267QNgtR6XMklgBHiB82YE/pYBEhSHaIy4/hqBu4lC
+	 nKnJnKeVZkw1st/EHzh0ndZhXND8o0VrCoOwHyMPetxnW6vkEeDaHcb7B5wJ5w3z6n
+	 G5cjMJJO3K929ESCzL5A5PQv+orUGdGsWKO6u8mDIaRpHZLZhM6GxMg7Osevewa5Ga
+	 3nLmg96/LpduWNw7Cso7GyudJzIA7cLj4RQseMBGZpJsv4T8FmK6rKJvDp1snPLi0z
+	 6PZPnLvN2beVNlAy+cbVilLiAmvZ6QJLj2jWGIoFC7ObphIAfWa6KNG3bxPqvTVdSE
+	 jEnAZ4d230jBQ==
+Received: from mail.realtek.com (rtkexhmbs02.realtek.com.tw[172.21.6.41])
+	by rtits2.realtek.com.tw (8.15.2/3.29/5.94) with ESMTPS id 6AI9EHaC41204479
+	(version=TLSv1.2 cipher=ECDHE-RSA-AES256-GCM-SHA384 bits=256 verify=FAIL);
+	Wed, 18 Nov 2026 17:14:17 +0800
+Received: from RTKEXHMBS01.realtek.com.tw (172.21.6.40) by
+ RTKEXHMBS02.realtek.com.tw (172.21.6.41) with Microsoft SMTP Server
+ (version=TLS1_2, cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id
+ 15.2.2562.56; Wed, 18 Nov 2026 17:14:17 +0800
+Received: from RTKEXHMBS06.realtek.com.tw (10.21.1.56) by
+ RTKEXHMBS01.realtek.com.tw (172.21.6.40) with Microsoft SMTP Server
+ (version=TLS1_2, cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id
+ 15.2.2562.56; Wed, 18 Nov 2026 17:14:17 +0800
+Received: from RTKEXHMBS06.realtek.com.tw ([fe80::eeeb:c765:ca73:5eef]) by
+ RTKEXHMBS06.realtek.com.tw ([fe80::eeeb:c765:ca73:5eef%10]) with mapi id
+ 15.02.2562.056; Wed, 18 Nov 2026 17:14:17 +0800
+From: Ping-Ke Shih <pkshih@realtek.com>
+To: Mehmet Fide <mehmet.fide@gmail.com>, Luka Gejak <luka.gejak@linux.dev>
+CC: Bitterblue Smith <rtl8821cerfe2@gmail.com>,
+	"linux-wireless@vger.kernel.org" <linux-wireless@vger.kernel.org>,
+	"linux-kernel@vger.kernel.org" <linux-kernel@vger.kernel.org>,
+	"mehmet.fide@screeningeagle.com" <mehmet.fide@screeningeagle.com>
+Subject: RE: [PATCH rtw-next v12 2/3] wifi: rtw88: support channel switch in
+ AP mode
+Thread-Topic: [PATCH rtw-next v12 2/3] wifi: rtw88: support channel switch in
+ AP mode
+Thread-Index: AQHddusUlFkb3JLAC0icESyq6ktwKbcy9ygAgAAD3QCAAJC3wA==
+Date: Wed, 18 Nov 2026 09:14:17 +0000
+Message-ID: <d55a09e0accd42f39f476d3abba1cdca@realtek.com>
+References: <9BC4FC13-5723-4711-9798-11E3C285C7F1@linux.dev>
+ <20261118083328.1984956-1-mehmet.fide@gmail.com>
 In-Reply-To: <20261118083328.1984956-1-mehmet.fide@gmail.com>
-References:  <20261118083328.1984956-1-mehmet.fide@gmail.com>
-Message-ID: <FCDF8941-48C3-420B-AC7A-598406EADCF4@linux.dev>
+Accept-Language: en-US, zh-TW
+Content-Language: zh-TW
+Content-Type: text/plain; charset="us-ascii"
+Content-Transfer-Encoding: quoted-printable
 X-Mailing-List: linux-wireless@vger.kernel.org
 List-Id: <linux-wireless.vger.kernel.org>
 List-Post: <mailto:linux-wireless@vger.kernel.org>
@@ -66,33 +89,24 @@ List-Unsubscribe: <mailto:linux-wireless+unsubscribe@vger.kernel.org>
 List-Owner: <mailto:linux-wireless+owner@vger.kernel.org>
 Precedence: list
 MIME-Version: 1.0
-Content-Type: text/plain;
- charset=utf-8
-Content-Transfer-Encoding: 8bit
 
-On November 18, 2026 9:33:28 AM GMT+01:00, Mehmet Fide
-<mehmet.fide@gmail.com> wrote:
->Hi Luka,
->
->> I think the presence check is better fixed in
->> rtw_core_check_sta_active(). Its callback only reads interface state, so
->> could it use an atomic interface iterator without allocating entries?
->
->Right, the callback does not sleep, so rtw_iterate_vifs_atomic() works
->there. The check is older than this series: since commit 96fbb84de4ff
->("wifi: rtw88: handle station mode concurrent scan with AP mode") a
->failed allocation also makes rtw_clear_op_chan() drop the operating
->channel of an associated station, on BSS_CHANGED_BSSID and in
->rtw_ops_stop_ap().
->
->Ping-Ke, Luka: would you take that as a separate fix for rtw-next, or as
->a patch before this one in v13?
->
->Mehmet
->
+Mehmet Fide <mehmet.fide@gmail.com> wrote:
+> > I think the presence check is better fixed in
+> > rtw_core_check_sta_active(). Its callback only reads interface state, s=
+o
+> > could it use an atomic interface iterator without allocating entries?
+>=20
+> Right, the callback does not sleep, so rtw_iterate_vifs_atomic() works
+> there. The check is older than this series: since commit 96fbb84de4ff
+> ("wifi: rtw88: handle station mode concurrent scan with AP mode") a
+> failed allocation also makes rtw_clear_op_chan() drop the operating
+> channel of an associated station, on BSS_CHANGED_BSSID and in
+> rtw_ops_stop_ap().
+>=20
+> Ping-Ke, Luka: would you take that as a separate fix for rtw-next, or as
+> a patch before this one in v13?
 
-I am ok with either, so as far as I am concerned do whatever is easier to
-you.
+I think rtw_core_check_sta_active() is used under wiphy lock, we can
+migrate to use for_each_active_interface() with lockdep_assert_wiphy()
+as a separate patch.
 
-Best regards,
-Luka Gejak
