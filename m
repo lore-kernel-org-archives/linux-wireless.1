@@ -1,85 +1,71 @@
 Authentication-Results: smtp.subspace.kernel.org; arc=none smtp.remote-ip=211.75.126.72
 ARC-Seal: i=1; d=subspace.kernel.org; s=arc20261015; a=rsa-sha256; cv=none;
-	t=1794969167;
-	b=ZQvvMFLVwk9SodO6dxiA7NnzN/Q1FiM4ynA+ovVui/iLMEJb6w1PIi37DCL6Y5a5egz+
-	 sUwzx0B2XPQohpT3A2X0vsyb7uB6rfX/LIonpqbQqayyN+lmG7QlP5MTePDdM5FNKYN6h
-	 rPbTmM0rSU6bMZXZxkYYzCzdfiRmDvdpVjvvkAhiQnR/hS9rPRWCoLA/r9up3yKIkILxh
-	 DQbus+6zNqMYoI4fuuL446QFTKuHVFxRmfESK00dWd1DVn6yaVueh+VbHOaSdFrCn7wwn
-	 MZYgzJDVhvAaMSLFrdhzFoFj0+6ie+h+ANsLFSOOSZmw9wZrhOj8eeJEJ/OurWQCBZA==
+	t=1794970344;
+	b=KhRc+I+znf/QJuwwPOLnAXINB0zn/pD6KQU5dulhNGeBBNsjqYY6iqVPRFmjqHpQvAGz
+	 gqOwPfrvikQHGQandRFStmG7mKIYWzfVh5AMho9yDwWC4lsFffQc6NePpwZS55XwSxe4B
+	 Wx4R3nNWdosg7g+wn2Y4MZqvNEk62M1VspZw2tRHTv9EVOWdL2oJ+umzU5joZgRCe9aqN
+	 EQc8Pc7smNp6bBTTxOMjvweBm/+yoKQm/AxpzdNDUB1dOsVMWKuvwuw5PyHqeQ9bcBmwI
+	 dlwduZYa0RRMp5og+fUVmuMp8h3/ohVIVJVgdIDT1HmGDPKEEL7c2kULwJaLeAsG0ag==
 ARC-Message-Signature: i=1; d=subspace.kernel.org; s=arc20261015;
-	a=rsa-sha256; c=relaxed/relaxed; t=1794969167;
+	a=rsa-sha256; c=relaxed/relaxed; t=1794970344;
 	h=DMARC-Filter:X-SpamFilter-By:DKIM-Signature:Received:Received:
-	 Received:From:To:CC:Subject:Thread-Topic:Thread-Index:Date:Message-ID:
-	 References:In-Reply-To:Accept-Language:Content-Language:
-	 x-originating-ip:Content-Type:Content-Transfer-Encoding:MIME-Version;
-	bh=E2JRUt8R+VeUnYftHxj4Dof2OS5CtNJzpWWxSa5MzYc=;
-	b=QNNb+tgJgQJGXevlLGLFhmJIDX2Cw8QF247lCqtQQE50I7uK2ecE1kDDtrChHtzb+DSZ
-	 RC3mCdvWX8o+SEy7GPTFzimStmDatO2y6ZVtqr2hqlgfjMr8Qa4PxI1XrxTF1QTWgM4le
-	 vQTsw0+PoCxunTmXNSjsj0mUTA66WrULMct4nrDTnRwA00/X1zdZGuEpAXEQO0g5PSKnJ
-	 KqQBl7USOkbdRWoQeJycsa+HTVx8F8rdRC99s/wBf0JpURF4PZ7tGtMjh/b6sHTpAotCC
-	 MPMx+ixBNw25TT1yHKEfkHp1e3dxCMvM9zfKpWpCRNdJRSKeAOeHP5nUMmwSIRMuJAw==
+	 Received:Received:From:To:Subject:Date:Message-ID:X-Mailer:
+	 MIME-Version:Content-Transfer-Encoding:Content-Type;
+	bh=Rsg6aV4bxpdzVAHcRZvKOrjmcxZrQlFZTNiSHbakTIM=;
+	b=hrC79i7ZlyPJTkCdK3nhKVj1+o+TZMILg6CUSfQVUlTzn8Xw7wFh6ebq93QdOCcjukli
+	 TZd6EB83VabZj4GKIObunzQzIjjp8Un6tBB0+BMA9pGyLb1tgULXQwcfPT7LYMG0L6JQD
+	 ZiRQD51U7SvSFSvjZW88MHyk3gYOQ3YhCm+o4VmIRruSwp52K97wNv2PKkeKa+j58o6LV
+	 kDc04aIHYGogrkjcSefgdM4ChEPJT9TyMWySnMylp6fILoLs8LQfU8hsPKMBbfTmDeB8M
+	 Qpg0w+DWZ+QXOnGvWN8UJXPocPfD3rwjWKgJQSlSWrD5zqAgOmtIPt1DAyWdvhWFUeg==
 ARC-Authentication-Results: i=1; smtp.subspace.kernel.org; 
 	dmarc=pass header.from=realtek.com;
 	spf=pass smtp.mailfrom=realtek.com;
-	dkim=pass header.d=realtek.com header.i=@realtek.com header.a=rsa-sha256 header.s=dkim header.b=HagKWm2+;
+	dkim=pass header.d=realtek.com header.i=@realtek.com header.a=rsa-sha256 header.s=dkim header.b=t7foX8jL;
 	arc=none smtp.remote-ip=211.75.126.72
 Received: from rtits2.realtek.com.tw (rtits2.realtek.com [211.75.126.72])
 	(using TLSv1.3 with cipher TLS_AES_256_GCM_SHA384 (256/256 bits)
 	 key-exchange X25519 server-signature ECDSA (prime256v1) server-digest SHA256)
 	(No client certificate requested)
-	by smtp.subspace.kernel.org (Postfix) with ESMTPS id 8D6E4606A325;
-	Wed, 18 Nov 2026 02:32:46 +0000 (UTC)
-DMARC-Filter: OpenDMARC Filter v1.4.2 smtp.subspace.kernel.org 8D6E4606A325
+	by smtp.subspace.kernel.org (Postfix) with ESMTPS id 275E9606A31C
+	for <linux-wireless@vger.kernel.org>; Wed, 18 Nov 2026 02:52:23 +0000 (UTC)
+DMARC-Filter: OpenDMARC Filter v1.4.2 smtp.subspace.kernel.org 275E9606A31C
 Authentication-Results: smtp.subspace.kernel.org; dmarc=pass (p=none dis=none) header.from=realtek.com
 Authentication-Results: smtp.subspace.kernel.org; spf=pass smtp.mailfrom=realtek.com
 Authentication-Results: smtp.subspace.kernel.org;
-	dkim=pass (2048-bit key) header.d=realtek.com header.i=@realtek.com header.a=rsa-sha256 header.s=dkim header.b=HagKWm2+
-X-SpamFilter-By: ArmorX SpamTrap 5.80 with qID 6AI2WRm24908132, This message is accepted by code: ctloc85258
+	dkim=pass (2048-bit key) header.d=realtek.com header.i=@realtek.com header.a=rsa-sha256 header.s=dkim header.b=t7foX8jL
+X-SpamFilter-By: ArmorX SpamTrap 5.80 with qID 6AI2qLRc9920043, This message is accepted by code: ctloc85258
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=realtek.com; s=dkim;
-	t=1794969147; bh=E2JRUt8R+VeUnYftHxj4Dof2OS5CtNJzpWWxSa5MzYc=;
-	h=From:To:CC:Subject:Date:Message-ID:References:In-Reply-To:
-	 Content-Type:Content-Transfer-Encoding:MIME-Version;
-	b=HagKWm2+9onOnETPmvu7wU01KRoZuWua8aVsBa/S12jtX7+Q0QLvctO50tIsc7TYH
-	 uqjnEqnF4+0GlWVEW03pjdBQEgpHCLbHf9EfNh7cCWJicvSnW2qqsUBKm1ToYoQSx5
-	 pxgZ66UHYqHuqAvU6avGOCGABPPVdePHGZC8NniYFa2a1g6MsmnDKlWiw2tmKMngT5
-	 f09TPfp2LzB6bSverTp80jiP9fKe+X5lHd6pJodqkCXYHotjAJsBWimPLl3fvwHAaw
-	 Nq6xt2zAhvNDKxKGp0TGHC8GPTqzy8woI7SyKIMWEbPhj9Ds8weTuioi8ErlRV7jvP
-	 15r5sD9QxxHbg==
+	t=1794970341; bh=Rsg6aV4bxpdzVAHcRZvKOrjmcxZrQlFZTNiSHbakTIM=;
+	h=From:To:Subject:Date:Message-ID:MIME-Version:
+	 Content-Transfer-Encoding:Content-Type;
+	b=t7foX8jLALHYNUaCnAhbgmZd04CKcjzKC8iz4IuAE/c+NXBCDVQ3HBXyZaglYVNaH
+	 KCG3127EyIqrhd9eZG3UZL/+NJv5kyh5N34TGTSl44jhrsdleqvfDVVzkTqrRl7wAG
+	 4zYY4xeJ1wJXwOKq3S1axbfsssMWOvFsX/phYFSxFC9XTtmUzd3mZoHoJyieaF9yYh
+	 nAwS5EKUtDX+SZsVT6kCS8JpVBybM6/2iN6e3MCFI7+fajOQh9jnRAfCiH3ysuJu2G
+	 9sVXVBZPVOYlZ3L0GbkuBXRxBMgL38nqir3AKECHi3sjPHsETSITxmyKOp+KUpQqWr
+	 ues7LIJUqFF1A==
 Received: from mail.realtek.com (rtkexhmbs04.realtek.com.tw[10.21.1.54])
-	by rtits2.realtek.com.tw (8.15.2/3.29/5.94) with ESMTPS id 6AI2WRm24908132
-	(version=TLSv1.2 cipher=ECDHE-RSA-AES256-GCM-SHA384 bits=256 verify=FAIL);
-	Wed, 18 Nov 2026 10:32:27 +0800
-Received: from RTKEXHMBS06.realtek.com.tw (10.21.1.56) by
+	by rtits2.realtek.com.tw (8.15.2/3.29/5.94) with ESMTPS id 6AI2qLRc9920043
+	(version=TLSv1.2 cipher=ECDHE-RSA-AES256-GCM-SHA384 bits=256 verify=FAIL)
+	for <linux-wireless@vger.kernel.org>; Wed, 18 Nov 2026 10:52:21 +0800
+Received: from RTKEXHMBS05.realtek.com.tw (10.21.1.55) by
  RTKEXHMBS04.realtek.com.tw (10.21.1.54) with Microsoft SMTP Server
  (version=TLS1_2, cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id
- 15.2.2562.56; Wed, 18 Nov 2026 10:32:27 +0800
-Received: from RTKEXHMBS06.realtek.com.tw ([fe80::eeeb:c765:ca73:5eef]) by
- RTKEXHMBS06.realtek.com.tw ([fe80::eeeb:c765:ca73:5eef%10]) with mapi id
- 15.02.2562.056; Wed, 18 Nov 2026 10:32:27 +0800
+ 15.2.2562.56; Wed, 18 Nov 2026 10:52:21 +0800
+Received: from RTKEXHMBS06.realtek.com.tw (10.21.1.56) by
+ RTKEXHMBS05.realtek.com.tw (10.21.1.55) with Microsoft SMTP Server
+ (version=TLS1_2, cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id
+ 15.2.2562.56; Wed, 18 Nov 2026 10:52:21 +0800
+Received: from [127.0.1.1] (172.21.40.75) by RTKEXHMBS06.realtek.com.tw
+ (10.21.1.56) with Microsoft SMTP Server (version=TLS1_2,
+ cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id 15.2.2562.56 via Frontend
+ Transport; Wed, 18 Nov 2026 10:52:21 +0800
 From: Ping-Ke Shih <pkshih@realtek.com>
-To: Arend van Spriel <arend.vanspriel@broadcom.com>, Mariia Nikitash
-	<nikitash.mariiaw@gmail.com>
-CC: "linux-wireless@vger.kernel.org" <linux-wireless@vger.kernel.org>,
-	"brcm80211@lists.linux.dev" <brcm80211@lists.linux.dev>,
-	"brcm80211-dev-list.pdl@broadcom.com" <brcm80211-dev-list.pdl@broadcom.com>,
-	"linux-kernel@vger.kernel.org" <linux-kernel@vger.kernel.org>,
-	"morbo@google.com" <morbo@google.com>, "kees@kernel.org" <kees@kernel.org>,
-	"justinstitt@google.com" <justinstitt@google.com>,
-	"codemender-patching+linux@google.com" <codemender-patching+linux@google.com>
-Subject: RE: [PATCH] wifi: brcmfmac: Replace strlcat() with snprintf() in
- brcmf_fw_alloc_request()
-Thread-Topic: [PATCH] wifi: brcmfmac: Replace strlcat() with snprintf() in
- brcmf_fw_alloc_request()
-Thread-Index: AQHdW3bNnvEHc/p9SkKWCGb74Afaobcx8vYAgAFf6GA=
-Date: Wed, 18 Nov 2026 02:32:27 +0000
-Message-ID: <670492ee188945f8a3a3b147ae5b840d@realtek.com>
-References: <20261014005553.71803-1-nikitash.mariiaw@gmail.com>
- <20261117133150.817227-1-arend.vanspriel@broadcom.com>
-In-Reply-To: <20261117133150.817227-1-arend.vanspriel@broadcom.com>
-Accept-Language: en-US, zh-TW
-Content-Language: zh-TW
-Content-Type: text/plain; charset="us-ascii"
-Content-Transfer-Encoding: quoted-printable
+To: <linux-wireless@vger.kernel.org>
+Subject: [PATCH rtw-next] wifi: rtw88: debug: explicitly cast to u8 for %02x format in rtw_debugfs_get_tx_pwr_tbl()
+Date: Wed, 18 Nov 2026 10:52:08 +0800
+Message-ID: <20261118025208.47465-1-pkshih@realtek.com>
+X-Mailer: git-send-email 2.53.0
 X-Mailing-List: linux-wireless@vger.kernel.org
 List-Id: <linux-wireless.vger.kernel.org>
 List-Post: <mailto:linux-wireless@vger.kernel.org>
@@ -89,13 +75,35 @@ List-Unsubscribe: <mailto:linux-wireless+unsubscribe@vger.kernel.org>
 List-Owner: <mailto:linux-wireless+owner@vger.kernel.org>
 Precedence: list
 MIME-Version: 1.0
+Content-Transfer-Encoding: 8bit
+Content-Type: text/plain
 
-> The Assisted-by: tag shows this change was produced with an LLM. Please
-> follow the guidelines in Documentation/process/generated-content.rst so
-> it is clear what was tool generated and what tool and/or LLM was used.
+Explicitly cast to u8 to avoid smatch (with -p=kernel) warning:
 
-FYI. The Assisted-by is removed by:
+   warn: argument 4 to %02x specifier has type 'schar'
 
-1e035297ffda ("docs: remove Assisted-by references")
+Signed-off-by: Ping-Ke Shih <pkshih@realtek.com>
+---
+ drivers/net/wireless/realtek/rtw88/debug.c | 4 ++--
+ 1 file changed, 2 insertions(+), 2 deletions(-)
 
+diff --git a/drivers/net/wireless/realtek/rtw88/debug.c b/drivers/net/wireless/realtek/rtw88/debug.c
+index 1061a1f4d5e9..11de50d39939 100644
+--- a/drivers/net/wireless/realtek/rtw88/debug.c
++++ b/drivers/net/wireless/realtek/rtw88/debug.c
+@@ -739,8 +739,8 @@ static int rtw_debugfs_get_tx_pwr_tbl(struct seq_file *m, void *v)
+ 			seq_printf(m, "%4c ", path + 'A');
+ 			rtw_print_rate(m, rate);
+ 			seq_printf(m, " %3u(0x%02x) %4u %4d (%4d %4d %4d) %4d\n",
+-				   hal->tx_pwr_tbl[path][rate],
+-				   hal->tx_pwr_tbl[path][rate],
++				   (u8)hal->tx_pwr_tbl[path][rate],
++				   (u8)hal->tx_pwr_tbl[path][rate],
+ 				   pwr_param.pwr_base,
+ 				   min3(pwr_param.pwr_offset,
+ 					pwr_param.pwr_limit,
+
+base-commit: 0bdc579dbfc251a6b6838ee9459b6771b948c617
+-- 
+2.53.0
 
