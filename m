@@ -1,55 +1,64 @@
-Authentication-Results: smtp.subspace.kernel.org; arc=none smtp.remote-ip=100.103.45.18
+Authentication-Results: smtp.subspace.kernel.org; arc=none smtp.remote-ip=91.218.175.1
 ARC-Seal: i=1; d=subspace.kernel.org; s=arc20261015; a=rsa-sha256; cv=none;
-	t=1794994925;
-	b=Mpkf4WGlsExy++5twlynln6D/4KPExWWBPySoW7ZC/iKcYZYamYPxO3vt87URnIHYZ5h
-	 jUGoEW7mfbkBjrIWl5kU7lYmy/knErMu7Gyyktv8mRyZ5xxIna7zwLJVpiffVpZK/oWZI
-	 3aSeT+aqd5kR2pfBINfLXCIPAH3iiC1vilEzsWo5TbyHFu7F+A6dKUczGHf1QKJJ+54XM
-	 Vk4gyhDRVq5Y8hpnvwV2vzRfAwYqPgRY4pKJ786FOAfqe7Xls5C2f+EFYpTzNPpaSXmOc
-	 yRg73bXk8+fXKXxjaUClTcBH2N3PgxX6CDvaxeR3YXxdBx4jmukbwYgEnY7aNq9y0Eg==
+	t=1794995715;
+	b=htnULoav64CAiFXnBXafeqDsPY79M5O4rrdmu4UuvyrsB/y0I8mdIrly3+WzhAdTWzX1
+	 rXYrpEBq9Xk3fwd/IMpl4Tg18sWytqvbkGOBKdQb0WZrxpKwzXVSBEo8VNyQyvBi3CkQr
+	 7tPYPMgSFP9VouJcXhHwrfyikWr+AAUugbLLIfcgJNGyjnOs5X88+qbrNwkQDozaa36X+
+	 ZxE8B46OIzufR1cNPpoPerIKLs9xu1HU4by2aBrR6a8DiyoDpRphJh3/ggR+zwtUiB8rx
+	 OtDvpnDbv2yD0VbFnxVfXD4ynYwMbyXrS2zDImI+tXYS40fjYpBgutzzOYGq0KBsytA==
 ARC-Message-Signature: i=1; d=subspace.kernel.org; s=arc20261015;
-	a=rsa-sha256; c=relaxed/relaxed; t=1794994925;
-	h=Received:DKIM-Signature:Date:From:To:Cc:Subject:Message-ID:
-	 References:MIME-Version:Content-Type:Content-Disposition:In-Reply-To;
-	bh=eYeCugMbRYyvGt+DwcZ7cncdd8zoPpPtaruTznr5YFE=;
-	b=X5UJYXjxXkDpby7/43yfFhMTrEalRL5hnhnpSOZPN8CDF+A84gugBJWprmoOYxojRa4F
-	 6csyIsSxBov70zm2e6oWe7aL+CdPigRbYROV4vuVezYezDnj158AwLP/GR93b2ZaMtDN3
-	 zAaJw/EoockhpFBmC/Dw0PB5QwkDAy6pzViWXQAz1QCFOSOr0zVRXHvWYwMbxXqFdFX9G
-	 bbyw8m1lsCClLIH8cNBXUygNTyM51x0FLS5c3taNWqZU8iEbfRq2jh6Bea3zV/TH1rItL
-	 BGBRGSVKIbMusk+85bff1mBd8/RaOP9c3k1dkIYcEoMhV697HUjIzeIDM4gcpep9ysQ==
+	a=rsa-sha256; c=relaxed/relaxed; t=1794995715;
+	h=DMARC-Filter:X-Envelope-To:DKIM-Signature:X-Envelope-To:Received:
+	 X-Mizu-Trace-ID:X-Migadu-Flow:Date:From:To:CC:Subject:In-Reply-To:
+	 References:Message-ID:MIME-Version:Content-Type:
+	 Content-Transfer-Encoding;
+	bh=68aYgIeK1NKoIkVCvJO3EdG3lTe27tI30PqKaRlN81M=;
+	b=E7k1Pyi1tMSMyQQBo3QZ3W2P1o61E39eVZ/S3VL9PaYdICW5jqEJmFDpSZmCUvE+qy7q
+	 RcWcTAUSLTUWhrVMtUd0818xE8HkIOHGfZBjc9NRypvyEV/wdF1hVpKiavxm1DuQRGNVL
+	 waBYEe2pc2JyEMaa4XhrJvMlZHrcn2aG9J1PqgolbCpCVF3fxI5We7VvY8GKVgNG9xZ0f
+	 VMVfVFCFhA2iJLNXGWkb31suEuvm1hWe7mAqK6ik3IssUhmBjnCi5YVum8Ac4TbzmXiaj
+	 mKgSOugN+ouS4/3NlIB+imiabXaxG014kiOTBdjPIOLeUQqb6FNLbyk//HgQ2wADEUA==
 ARC-Authentication-Results: i=1; smtp.subspace.kernel.org; 
-	dkim=pass header.d=kernel.org header.i=@kernel.org header.a=rsa-sha256 header.s=k20260515 header.b=dQrgRcxd;
-	arc=none smtp.remote-ip=100.103.45.18
-Received: from smtp.kernel.org (quasi.space.kernel.org [100.103.45.18])
-	(using TLSv1.3 with cipher TLS_AES_256_GCM_SHA384 (256/256 bits)
-	 key-exchange X25519 server-signature ECDSA (prime256v1))
+	dmarc=pass header.from=linux.dev;
+	spf=pass smtp.mailfrom=linux.dev;
+	dkim=pass header.d=linux.dev header.i=@linux.dev header.a=rsa-sha256 header.s=key1 header.b=dhkOl1qb;
+	arc=none smtp.remote-ip=91.218.175.1
+Received: from mta0.migadu.com (out-1.mta0.migadu.com [91.218.175.1])
+	(using TLSv1.3 with cipher TLS_AES_128_GCM_SHA256 (128/128 bits)
+	 key-exchange X25519 server-signature ECDSA (prime256v1) server-digest SHA256)
 	(No client certificate requested)
-	by smtp.subspace.kernel.org (Postfix) with ESMTPS id 4FAF2606A332
-	for <linux-wireless@vger.kernel.org>; Wed, 18 Nov 2026 09:42:05 +0000 (UTC)
+	by smtp.subspace.kernel.org (Postfix) with ESMTPS id A46C5606A31C
+	for <linux-wireless@vger.kernel.org>; Wed, 18 Nov 2026 09:55:14 +0000 (UTC)
+DMARC-Filter: OpenDMARC Filter v1.4.2 smtp.subspace.kernel.org A46C5606A31C
+Authentication-Results: smtp.subspace.kernel.org; dmarc=pass (p=none dis=none) header.from=linux.dev
+Authentication-Results: smtp.subspace.kernel.org; spf=pass smtp.mailfrom=linux.dev
 Authentication-Results: smtp.subspace.kernel.org;
-	dkim=pass (2048-bit key) header.d=kernel.org header.i=@kernel.org header.a=rsa-sha256 header.s=k20260515 header.b=dQrgRcxd
-Received: by smtp.kernel.org (Postfix) with ESMTPSA id 477BF1F000C4;
-	Wed, 18 Nov 2026 09:42:04 +0000 (UTC)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=kernel.org;
-	s=k20260515; t=1794994924;
-	bh=eYeCugMbRYyvGt+DwcZ7cncdd8zoPpPtaruTznr5YFE=;
-	h=Date:From:To:Cc:Subject:References:In-Reply-To;
-	b=dQrgRcxdy5xtPttu6PiXi1sjU3JGwhpEp/4e7y+T5sOc4O1Qyty9eJK7l/gdZLPWU
-	 kLPoJ8PHFedB5RFDv4EB1sdYP9EW6Rb1OOxNEMWpvdNmR+VObf3UZEpEsq1HAYMlpj
-	 lo5HaUwS7FntYR7QLSUoXXaPa9A/7002A1qOhpdPfm0aD8/GuHia98n548KdfHRKME
-	 CR7tQTFZITBGoNqwaZfIiFgFFATiNXxsDstieKHGxQMHinVVfeYtb0eek0UbKPsWCr
-	 ZasSK7+RJOsJV9SmLLTfCLhHC9MDhkc0XwK4jlllJn9R/ZBNBxrZ8I51AlQD4tevVN
-	 nNduoi5q9GZIg==
-Date: Wed, 18 Nov 2026 10:42:02 +0100
-From: Lorenzo Bianconi <lorenzo@kernel.org>
-To: Felix Fietkau <nbd@nbd.name>
-Cc: linux-wireless@vger.kernel.org
-Subject: Re: [PATCH mt76-next 09/19] wifi: mt76: find the first A-MSDU
- subframe behind the radiotap data
-Message-ID: <av1y6mgMpXQcME8E@lore-qca>
-References: <20261117180134.2940930-1-nbd@nbd.name>
- <20261117180134.2940930-9-nbd@nbd.name>
- <av1lP1f9hczy7jt2@lore-qca>
- <81acd946-dc4c-4fa4-81a7-4df0b7cb06f2@nbd.name>
+	dkim=pass (1024-bit key, unprotected) header.d=linux.dev header.i=@linux.dev header.a=rsa-sha256 header.s=key1 header.b=dhkOl1qb
+X-Envelope-To: linux-wireless@vger.kernel.org
+DKIM-Signature: a=rsa-sha256; bh=tUna76zVsD0TwVxAAHPWMoClAbc3fRYk8TKbzG4ej/U=;
+ c=simple/simple; d=linux.dev;
+ h=from:to:subject:date:message-id:mime-version:content-type; s=key1;
+ t=1794995712; v=1; x=1795600512;
+ b=dhkOl1qbFWOAtBnQUzCrMu7PJ+uWYllQQ6Fw60if40c6aFQ0artumbVGB2LNTMWB69Lszdtp
+ tgzHfEzlvC+TVJbkIdolw9PMEWWk4BRjyKzHf/v3Zfoh3ctFWwpM2u0PAZEkR7VdsVitxcwGfK9
+ lQPtyigd5GJOJRYR4t5/jokI=
+X-Envelope-To: linux-wireless@vger.kernel.org
+Received: by smtp.migadu.com with ESMTPS id 9701b37f731648ef;
+	Wed, 18 Nov 2026 09:55:11 +0000
+X-Mizu-Trace-ID: 9701b37f731648ef
+X-Migadu-Flow: FLOW_OUT
+Date: Wed, 18 Nov 2026 10:55:10 +0100
+From: Luka Gejak <luka.gejak@linux.dev>
+To: Ping-Ke Shih <pkshih@realtek.com>, Mehmet Fide <mehmet.fide@gmail.com>
+CC: Bitterblue Smith <rtl8821cerfe2@gmail.com>,
+ "linux-wireless@vger.kernel.org" <linux-wireless@vger.kernel.org>,
+ "linux-kernel@vger.kernel.org" <linux-kernel@vger.kernel.org>,
+ "mehmet.fide@screeningeagle.com" <mehmet.fide@screeningeagle.com>
+Subject: =?US-ASCII?Q?RE=3A_=5BPATCH_rtw-next_v12_2/3=5D_wifi=3A_rt?=
+ =?US-ASCII?Q?w88=3A_support_channel_switch_in_AP_mode?=
+In-Reply-To: <d55a09e0accd42f39f476d3abba1cdca@realtek.com>
+References: <9BC4FC13-5723-4711-9798-11E3C285C7F1@linux.dev> <20261118083328.1984956-1-mehmet.fide@gmail.com> <d55a09e0accd42f39f476d3abba1cdca@realtek.com>
+Message-ID: <658FDA93-1E44-45D3-BBAA-37FBBAF9954A@linux.dev>
 X-Mailing-List: linux-wireless@vger.kernel.org
 List-Id: <linux-wireless.vger.kernel.org>
 List-Post: <mailto:linux-wireless@vger.kernel.org>
@@ -59,87 +68,34 @@ List-Unsubscribe: <mailto:linux-wireless+unsubscribe@vger.kernel.org>
 List-Owner: <mailto:linux-wireless+owner@vger.kernel.org>
 Precedence: list
 MIME-Version: 1.0
-Content-Type: multipart/signed; micalg=pgp-sha512;
-	protocol="application/pgp-signature"; boundary="WM16RNVdtvEkxK55"
-Content-Disposition: inline
-In-Reply-To: <81acd946-dc4c-4fa4-81a7-4df0b7cb06f2@nbd.name>
+Content-Type: text/plain;
+ charset=utf-8
+Content-Transfer-Encoding: 8bit
 
---WM16RNVdtvEkxK55
-Content-Type: text/plain; charset=us-ascii
-Content-Disposition: inline
-Content-Transfer-Encoding: quoted-printable
+On November 18, 2026 10:14:17 AM GMT+01:00, Ping-Ke Shih
+<pkshih@realtek.com> wrote:
+>Mehmet Fide <mehmet.fide@gmail.com> wrote:
+>> > I think the presence check is better fixed in
+>> > rtw_core_check_sta_active(). Its callback only reads interface state,
+>so
+>> > could it use an atomic interface iterator without allocating entries?
+>> 
+>> Right, the callback does not sleep, so rtw_iterate_vifs_atomic() works
+>> there. The check is older than this series: since commit 96fbb84de4ff
+>> ("wifi: rtw88: handle station mode concurrent scan with AP mode") a
+>> failed allocation also makes rtw_clear_op_chan() drop the operating
+>> channel of an associated station, on BSS_CHANGED_BSSID and in
+>> rtw_ops_stop_ap().
+>> 
+>> Ping-Ke, Luka: would you take that as a separate fix for rtw-next, or as
+>> a patch before this one in v13?
+>
+>I think rtw_core_check_sta_active() is used under wiphy lock, we can
+>migrate to use for_each_active_interface() with lockdep_assert_wiphy()
+>as a separate patch.
+>
 
-On Nov 18, Felix Fietkau wrote:
-> On 18.11.26 09:43, Lorenzo Bianconi wrote:
-> > > mt76_rx_release_amsdu() reads the first subframe relative to
-> > > skb->data, which points to the radiotap data where the driver pushed =
-HE
-> > > fields or EHT TLVs. It then misses an RFC1042 header in place of the
-> > > destination address, so an A-MSDU of an HE or EHT PPDU in 802.11 form=
-at
-> > > passes the mitigation of CVE-2020-24588.
-> > >=20
-> > > Locate the subframe behind the header that mt76_skb_get_hdr() returns.
-> > >=20
-> > > Fixes: 2c2bdd2372af ("mt76: validate rx A-MSDU subframes")
-> > > Signed-off-by: Felix Fietkau <nbd@nbd.name>
-> > > ---
-> > >  drivers/net/wireless/mediatek/mt76/mac80211.c | 11 +++++++----
-> > >  1 file changed, 7 insertions(+), 4 deletions(-)
-> > >=20
-> > > diff --git a/drivers/net/wireless/mediatek/mt76/mac80211.c b/drivers/=
-net/wireless/mediatek/mt76/mac80211.c
-> > > index bd822193e769..271fbd4711f7 100644
-> > > --- a/drivers/net/wireless/mediatek/mt76/mac80211.c
-> > > +++ b/drivers/net/wireless/mediatek/mt76/mac80211.c
-> > > @@ -965,18 +965,21 @@ static void mt76_rx_release_amsdu(struct mt76_p=
-hy *phy, enum mt76_rxq_id q)
-> > >  	 * address.
-> > >  	 */
-> > >  	if (skb_shinfo(skb)->frag_list) {
-> > > -		int offset =3D 0;
-> > > +		u8 *subframe =3D skb->data;
-> > >  		if (!(status->flag & RX_FLAG_8023)) {
-> > > -			offset =3D ieee80211_get_hdrlen_from_skb(skb);
-> > > +			struct ieee80211_hdr *hdr =3D mt76_skb_get_hdr(skb);
-> > > +
-> > > +			subframe =3D (u8 *)hdr +
-> > > +				   ieee80211_hdrlen(hdr->frame_control);
-> > >  			if ((status->flag &
-> > >  			     (RX_FLAG_DECRYPTED | RX_FLAG_IV_STRIPPED)) =3D=3D
-> > >  			    RX_FLAG_DECRYPTED)
-> > > -				offset +=3D 8;
-> > > +				subframe +=3D 8;
-> > >  		}
-> > > -		if (ether_addr_equal(skb->data + offset, rfc1042_header)) {
-> > > +		if (ether_addr_equal(subframe, rfc1042_header)) {
-> >=20
-> > maybe I am too paranoic, but should we check this is part of the skb he=
-ad
-> > running pskb_may_pull()? Otherwise I am fine with the patch.
-> This is only called for hw-deaggregated A-MSDU subframes, and each subfra=
-me
-> has its own buffer. Even if the hardware were to misbehave and pass a
-> truncated subframe here, the pointer would still be much closer to the st=
-art
-> of the buffer than the end, and never overflow.
+Works for me.
 
-ack, in this case:
-
-Reviewed-by: Lorenzo Bianconi <lorenzo@kernel.org>
-
->=20
-> - Felix
-
---WM16RNVdtvEkxK55
-Content-Type: application/pgp-signature; name=signature.asc
-
------BEGIN PGP SIGNATURE-----
-
-iHUEABYKAB0WIQTquNwa3Txd3rGGn7Y6cBh0uS2trAUCav1y6gAKCRA6cBh0uS2t
-rF+iAP4iY40Lf4apJqM6txbuWiiSNPFdwZwYYbHL7f3b6Pr3HgD8CZOgrCd54aWb
-PtZa8b8Cyfho+SGnxd8p5GgDxTsDRQQ=
-=Uuog
------END PGP SIGNATURE-----
-
---WM16RNVdtvEkxK55--
+Best regards,
+Luka Gejak
