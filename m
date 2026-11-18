@@ -1,96 +1,53 @@
-Authentication-Results: smtp.subspace.kernel.org; arc=none smtp.remote-ip=209.85.128.43
+Authentication-Results: smtp.subspace.kernel.org; arc=none smtp.remote-ip=100.103.45.18
 ARC-Seal: i=1; d=subspace.kernel.org; s=arc20261015; a=rsa-sha256; cv=none;
-	t=1794990811;
-	b=VcR2jGOIFON1QulRsIs0xAsm1XQ3i++pksBH6K4YyMpJvmYQT0+kWwhXxuTdWwKUpySi
-	 ajANuwUWrtwyLYD9+SD6qs/XQLLla56x05sKmbkc4VJpPH0kX0GgCQCTR5OpCMWKpmCjA
-	 w18ZKBHT/3usvXNUn7lhTU2Ab4xw+kGillW1V867iae98faBpu1UkvHSWkeh/8XIhjefB
-	 JoJ8w0XYI5gkZ+tO1SXLqjZHD84w4AvSWTpms2d0OhCVZXYJBec3giVW7LMQjYDIFo+S3
-	 20hQH4ol026DEnIVLrW+AJubXWlazQuh5NI77NZKvDhU0sVvM1SBl5cF1BeSUhep5Eg==
+	t=1794991088;
+	b=axkYLK9vSt9v7vQEx9UvLtT5KzO8QHMdpOa5rITgnyFf/b9vhRj8K7afJNa9VzydPTMf
+	 +DEgbumaEUoYmv3sMM3QuD3gtz67k+dzimoQPqJPMnPDpdlcvfPC00rBvoX5mQ8nG9yZW
+	 /F6scP2KMLXhvJUtM5iFKYik26l0NG0ySzDLml9Jo8w7aigzIuEk2e+nDdPWAYp6fIHS+
+	 EKR2dmoExgGkyBnEUlTSJB+py1Rj0juKWCa+j/97xI7vZNFobDdHkWvqi0envstsntrTU
+	 Sw/8TeAT81NPKsV2BZybhY7+XQalJjq3veFQzbX2/zD8mq/oCYKPL9pwmXTHpxbL5sA==
 ARC-Message-Signature: i=1; d=subspace.kernel.org; s=arc20261015;
-	a=rsa-sha256; c=relaxed/relaxed; t=1794990811;
-	h=DMARC-Filter:Received:DKIM-Signature:X-Google-DKIM-Signature:
-	 X-Forwarded-Encrypted:X-Gm-Message-State:X-Gm-Gg:X-Received:Received:
-	 From:To:Cc:Subject:Date:Message-ID:X-Mailer:In-Reply-To:References:
-	 MIME-Version:Content-Transfer-Encoding;
-	bh=WZb+73Z+iGgox3eYm8t3NOu03PW/JBfAauUd0nob7V8=;
-	b=pVnkUD7gCleYjbnuQjmXQoRfPCWlbY6cg3faRbATq9d4lv8Eb2vvMzdlzmv/g4ks2M6W
-	 Q9o3gh5uufm4eM+osGOOETs04q+EeRKCGfDCtKhmN92wEr4fUbgizS4ViATHrhAvF0S5R
-	 oC769+jabk613GTLuSQb/8VFtUtQln+vSf3iM12HEoKE0eBrEOSnn0H24CJTFLAVMJbqv
-	 CJxfzCoFq0012avCyi4gUII19DHrq8a/YYc6OLugRcmVH0IVRacTsIBwo8r3NQyRSMQPJ
-	 6P+CL52oRY3OZOnzbEubgFJ2/MZlRvkC4hF7p3ZH3imVYL2ub5YTCwGK5nv5uOse9wQ==
+	a=rsa-sha256; c=relaxed/relaxed; t=1794991088;
+	h=Received:DKIM-Signature:Date:From:To:Cc:Subject:Message-ID:
+	 References:MIME-Version:Content-Type:Content-Disposition:In-Reply-To;
+	bh=CGnq8aX/ZsFRS1LtOwSHFguyRe636ju53+kiTGVTC/o=;
+	b=ztfcPNG7omaYeGCa8tQqeDBbgrHMs2jbEpmOCfRQ7HaTJXWKV8nsVxKAwtzVyC06Sq8m
+	 AetSdWid/yuLK/WEQF2k3OaUwoGYU4aSDU715Bwyvy8Cf4YPBOInaLumDiiL1gZsSelj+
+	 orqSR96AukJCp79gE4QzaiRrWvn0ksS/CwC37NsjavSFkI7GlK0YnxSDRBhrrXldDocU9
+	 WCe3fyiYF2zjDsTHugR5DUvEUPfuFfvOIRxi9fDetpvlwsrIMKlP6+Hiq3HP3ZE6GARzg
+	 K4A8CtFAEYRojE48prGdXJuMP8IbNhmCnJ/3S9Z62eBxLo8+TPL/Ns03aPqjD7vkWgA==
 ARC-Authentication-Results: i=1; smtp.subspace.kernel.org; 
-	dmarc=pass header.from=gmail.com;
-	spf=pass smtp.mailfrom=gmail.com;
-	dkim=pass header.d=gmail.com header.i=@gmail.com header.a=rsa-sha256 header.s=20260707 header.b=bQO4D9qO;
-	arc=none smtp.remote-ip=209.85.128.43
-Received: from mail-wm1-f43.google.com (mail-wm1-f43.google.com [209.85.128.43])
-	(using TLSv1.3 with cipher TLS_AES_128_GCM_SHA256 (128/128 bits)
-	 key-exchange X25519 server-signature ECDSA (prime256v1) server-digest SHA256)
+	dkim=pass header.d=kernel.org header.i=@kernel.org header.a=rsa-sha256 header.s=k20260515 header.b=MNk7ajDG;
+	arc=none smtp.remote-ip=100.103.45.18
+Received: from smtp.kernel.org (quasi.space.kernel.org [100.103.45.18])
+	(using TLSv1.3 with cipher TLS_AES_256_GCM_SHA384 (256/256 bits)
+	 key-exchange X25519 server-signature ECDSA (prime256v1))
 	(No client certificate requested)
-	by smtp.subspace.kernel.org (Postfix) with ESMTPS id 53486606A88D
-	for <linux-wireless@vger.kernel.org>; Wed, 18 Nov 2026 08:33:31 +0000 (UTC)
-DMARC-Filter: OpenDMARC Filter v1.4.2 smtp.subspace.kernel.org 53486606A88D
-Authentication-Results: smtp.subspace.kernel.org; dmarc=pass (p=none dis=none) header.from=gmail.com
-Authentication-Results: smtp.subspace.kernel.org; spf=pass smtp.mailfrom=gmail.com
+	by smtp.subspace.kernel.org (Postfix) with ESMTPS id 0C9E7606A31C
+	for <linux-wireless@vger.kernel.org>; Wed, 18 Nov 2026 08:38:08 +0000 (UTC)
 Authentication-Results: smtp.subspace.kernel.org;
-	dkim=pass (2048-bit key) header.d=gmail.com header.i=@gmail.com header.a=rsa-sha256 header.s=20260707 header.b=bQO4D9qO
-Received: by mail-wm1-f43.google.com with SMTP id 5b1f17b1804b1-4bb55cda775so3222505e9.0
-        for <linux-wireless@vger.kernel.org>; Wed, 18 Nov 2026 00:33:31 -0800 (PST)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=gmail.com; s=20260707; t=1794990810; x=1795595610; darn=vger.kernel.org;
-        h=content-transfer-encoding:mime-version:references:in-reply-to
-         :message-id:date:subject:cc:to:from:from:to:cc:subject:date
-         :message-id:reply-to:content-type;
-        bh=WZb+73Z+iGgox3eYm8t3NOu03PW/JBfAauUd0nob7V8=;
-        b=bQO4D9qOhqdRtujHIY8YK9X32hDfdF7vpHDzmnZKDOgSmy8t805+pS6gwQLlGGCG0C
-         yeUEhGJ86k5Y6t73jvrOO5DyoL/Zy+h1GILrdZ5wm9i2fyB4ZERfAPH92yOw8yN95nSh
-         9pb3kr9sLGBGFWRo4LiOivQC27hkdzYho/pN6exN695aVHhjS/Lif8uRyFUOgQr5gw77
-         SVEBLNvOodqfX4aGDhAisUj3l8PNkXU3zVVcTQz0z0VG8Kt2LvGKv66vUPLosGQMXgWm
-         QxfyfxsN/MGL7u+o5vIz0A0W0L+PjUrKVdq/wQJ6E3H+hUMGg3ysgTEXBeg2o+DLhRrf
-         yXMQ==
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=1e100.net; s=20260707; t=1794990810; x=1795595610;
-        h=content-transfer-encoding:mime-version:references:in-reply-to
-         :message-id:date:subject:cc:to:from:x-gm-gg:x-gm-message-state:from
-         :to:cc:subject:date:message-id:reply-to:content-type;
-        bh=WZb+73Z+iGgox3eYm8t3NOu03PW/JBfAauUd0nob7V8=;
-        b=WNAtJK451eDyaVoQMAXMUF1jE/UAf/BjfnkP6bbs40I0oaTCDdXI7MrmtIto/nbs0J
-         ZQQ+p7++3Bz/G2pMjleCNe3vY5XD44TMNcedyGhrsfztD3Eyj2uTnfVchtVLZgjD55XI
-         5UhIk0/UrdCLpHhkdnWGUsEmQ84uuHS/1fADfGkgfJadmXMvzyi88PUsv7R9onEXNTfj
-         kbJ6yF4loweiTaNlK5adUQf8xoz/Fdv1WfztZPRwi1nN+X/p/dqbxB9mXEi6CDcZQatj
-         bUIf8FGF20sbVHtf2rPwiXL5NlMdulcq2rn1EnnsRxTfyf1BjFKMC7oOQmlYJ2M3UKUK
-         eASQ==
-X-Forwarded-Encrypted: i=1; AL+hErFt0Ey54IIvAyKs/qWP+dpBzNRVHzpzCai9vf1K64LD0vGewWhwcv2DqKnBLX5NWRpxZCfBZ94q8nfLOUg9AA==@vger.kernel.org
-X-Gm-Message-State: APuU4Z8XkVDh7d4WK0ZXUfJ4B51EF5omY+aHqJCniF0IJHCP3tpZsr20
-	tYwqwxiU4GdAT6im78rDCWCK33f6Kbs+NH7TDiW/0dpwQ8YrWGucwMd8
-X-Gm-Gg: AYBFou3dVKtec5xidN86faCLo88XOmpRiTGBXC9mb+vjrYNsS8dl88D5hQW0c5EfFry
-	4iOOatiRx5EZsN5/4tZQXyOnbLW3qqk/NYbQ7AbqEw5SN9Jz831d8UeuhFTr6PHdOvLfUhAtKGT
-	xI/tRV5kSC7nZH8qIVl2+OC6s4PJKPCAyCdwTHSKYA+g0CFu1T7RFu7EwADnvutJMhSPypYlZcj
-	l5nyC3yM6C02fe3u1mwcDl2SST5SJz7hp+GRxbiZ+BYG7RKvhi2oj6QteqRO6pKMUiqY2eCqHB7
-	yP8A9RzMae2/GrJMu6VKxnyNGFDfGcXTeRrlW/HCQquedDj6NI5YrEHU6AgNSY3MJu0G4FKgHuJ
-	vDQxyj1JssRb0M37VA29zot8sUYmkqWA63KDLRcx98VK5F22ZyUvCygFe2g08Dkpp+T6sVRdf1V
-	0Ob5v2Z1B5GRVQMs9URz9reWu0AXzVYm1YeiQickFrpk9O27AGhbL5L27/+P/nZ7NJiCjR3PFu7
-	DgDZk+2kMbTy7UV1f+CH7Oop2hgJF5PynkWoqTkttUpzDA2G3XTIQB4n7q+BOC7hqcJD6qeraq8
-	4jX0bEe0tgOngnO95rlmPkl12c7/TCm8aTw=
-X-Received: by 2002:a05:600c:6290:b0:4bb:6a78:7c42 with SMTP id 5b1f17b1804b1-4bb7d6cd48cmr34574185e9.1.1794990809715;
-        Wed, 18 Nov 2026 00:33:29 -0800 (PST)
-Received: from deb05.proceq.com ([213.160.61.66])
-        by smtp.gmail.com with ESMTPSA id 5b1f17b1804b1-4bb7843bd79sm127318605e9.14.2026.11.18.00.33.28
-        (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
-        Wed, 18 Nov 2026 00:33:29 -0800 (PST)
-From: Mehmet Fide <mehmet.fide@gmail.com>
-To: Luka Gejak <luka.gejak@linux.dev>,
-	Ping-Ke Shih <pkshih@realtek.com>
-Cc: Bitterblue Smith <rtl8821cerfe2@gmail.com>,
-	linux-wireless@vger.kernel.org,
-	linux-kernel@vger.kernel.org,
-	mehmet.fide@screeningeagle.com
-Subject: Re: [PATCH rtw-next v12 2/3] wifi: rtw88: support channel switch in AP mode
-Date: Wed, 18 Nov 2026 09:33:28 +0100
-Message-ID: <20261118083328.1984956-1-mehmet.fide@gmail.com>
-X-Mailer: git-send-email 2.56.0
-In-Reply-To: <9BC4FC13-5723-4711-9798-11E3C285C7F1@linux.dev>
-References: 
+	dkim=pass (2048-bit key) header.d=kernel.org header.i=@kernel.org header.a=rsa-sha256 header.s=k20260515 header.b=MNk7ajDG
+Received: by smtp.kernel.org (Postfix) with ESMTPSA id 5AE301F000C4;
+	Wed, 18 Nov 2026 08:38:07 +0000 (UTC)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=kernel.org;
+	s=k20260515; t=1794991087;
+	bh=CGnq8aX/ZsFRS1LtOwSHFguyRe636ju53+kiTGVTC/o=;
+	h=Date:From:To:Cc:Subject:References:In-Reply-To;
+	b=MNk7ajDGmEMw0M3C+OROjPSd9TBx4xx71/TIP7fjy7KoiMAw8zki1JUI8qDhKv7lp
+	 PQ0J5Sy0aC46U4Tp9XTRYR7D0m9GzkHcn9Z1R/u5CgCrmGGntyLmZaT6cX6GwhKbBO
+	 EXNZWhaqPBjzQIfSWfbzir0ZlSES0rbhzhFeCD46CDXxCJKofcCzzLBkBZxPLAfKR5
+	 6sPTHJhDmUuQ440ugftayFalfEjUVippM50tb6Ktv/il8CuBLm9Tv0QacW2bH1Ok7y
+	 VPhvcSXhsEZXhQMb7XJRDPJ+RSSPMl1UJ9k+CR6a28ESm4WkO8SDZxN/n3644Kewq9
+	 J6C+mtrMwFjcg==
+Date: Wed, 18 Nov 2026 09:38:05 +0100
+From: Lorenzo Bianconi <lorenzo@kernel.org>
+To: Felix Fietkau <nbd@nbd.name>
+Cc: linux-wireless@vger.kernel.org
+Subject: Re: [PATCH mt76-next 07/19] wifi: mt76: mt7996: stop WED before the
+ DMA reset of a full reset
+Message-ID: <av1j7Xh9lQBNKorF@lore-qca>
+References: <20261117180134.2940930-1-nbd@nbd.name>
+ <20261117180134.2940930-7-nbd@nbd.name>
 X-Mailing-List: linux-wireless@vger.kernel.org
 List-Id: <linux-wireless.vger.kernel.org>
 List-Post: <mailto:linux-wireless@vger.kernel.org>
@@ -100,22 +57,167 @@ List-Unsubscribe: <mailto:linux-wireless+unsubscribe@vger.kernel.org>
 List-Owner: <mailto:linux-wireless+owner@vger.kernel.org>
 Precedence: list
 MIME-Version: 1.0
-Content-Transfer-Encoding: 8bit
+Content-Type: multipart/signed; micalg=pgp-sha512;
+	protocol="application/pgp-signature"; boundary="9M1xvDU882pZCzjo"
+Content-Disposition: inline
+In-Reply-To: <20261117180134.2940930-7-nbd@nbd.name>
 
-Hi Luka,
+--9M1xvDU882pZCzjo
+Content-Type: text/plain; charset=us-ascii
+Content-Disposition: inline
+Content-Transfer-Encoding: quoted-printable
 
-> I think the presence check is better fixed in
-> rtw_core_check_sta_active(). Its callback only reads interface state, so
-> could it use an atomic interface iterator without allocating entries?
+> Unlike the L1 SER path, mt7996_mac_restart() resets the WFSYS while the
+> attached WEDs still access it over PCIe. Their reads during the reset
+> get no completion, and MT7988 reports uncorrectable PCIe completion
+> timeouts on both root ports.
+>=20
+> Stop both WEDs at the start of the restart, and disable the WED
+> interrupt agent and wait for it to go idle before the WFSYS reset. The
+> other agents stay enabled, since TX through WED stops after the restart
+> otherwise.
+>=20
+> Fixes: 83eafc9251d6 ("wifi: mt76: mt7996: add wed tx support")
+> Signed-off-by: Felix Fietkau <nbd@nbd.name>
 
-Right, the callback does not sleep, so rtw_iterate_vifs_atomic() works
-there. The check is older than this series: since commit 96fbb84de4ff
-("wifi: rtw88: handle station mode concurrent scan with AP mode") a
-failed allocation also makes rtw_clear_op_chan() drop the operating
-channel of an associated station, on BSS_CHANGED_BSSID and in
-rtw_ops_stop_ap().
+Reviewed-by: Lorenzo Bianconi <lorenzo@kernel.org>
 
-Ping-Ke, Luka: would you take that as a separate fix for rtw-next, or as
-a patch before this one in v13?
+> ---
+>  .../net/wireless/mediatek/mt76/mt7996/dma.c   | 25 ++++++++++++++++++-
+>  .../net/wireless/mediatek/mt76/mt7996/mac.c   | 19 +++++++++-----
+>  .../net/wireless/mediatek/mt76/mt7996/regs.h  |  5 ++++
+>  3 files changed, 42 insertions(+), 7 deletions(-)
+>=20
+> diff --git a/drivers/net/wireless/mediatek/mt76/mt7996/dma.c b/drivers/ne=
+t/wireless/mediatek/mt76/mt7996/dma.c
+> index 3d9353811a02..4450d35e9439 100644
+> --- a/drivers/net/wireless/mediatek/mt76/mt7996/dma.c
+> +++ b/drivers/net/wireless/mediatek/mt76/mt7996/dma.c
+> @@ -3,6 +3,7 @@
+>   * Copyright (C) 2022 MediaTek Inc.
+>   */
+> =20
+> +#include <linux/iopoll.h>
+>  #include "mt7996.h"
+>  #include "../dma.h"
+>  #include "mac.h"
+> @@ -957,6 +958,25 @@ int mt7996_dma_init(struct mt7996_dev *dev)
+>  	return 0;
+>  }
+> =20
+> +static void
+> +mt7996_wed_int_agent_disable(struct mt7996_dev *dev,
+> +			     struct mtk_wed_device *wed)
+> +{
+> +	u32 val;
+> +
+> +	if (!mtk_wed_device_active(wed))
+> +		return;
+> +
+> +	val =3D mtk_wed_device_reg_read(wed, MT_WED_CTRL);
+> +	mtk_wed_device_reg_write(wed, MT_WED_CTRL,
+> +				 val & ~MT_WED_CTRL_WPDMA_INT_AGENT_EN);
+> +
+> +	if (read_poll_timeout(mtk_wed_device_reg_read, val,
+> +			      !(val & MT_WED_CTRL_WPDMA_INT_AGENT_BUSY),
+> +			      100, 20000, false, wed, MT_WED_CTRL))
+> +		dev_warn(dev->mt76.dev, "WED interrupt agent still busy\n");
+> +}
+> +
+>  void mt7996_dma_reset(struct mt7996_dev *dev, bool force)
+>  {
+>  	struct mt76_phy *phy2 =3D dev->mt76.phys[MT_BAND1];
+> @@ -996,8 +1016,11 @@ void mt7996_dma_reset(struct mt7996_dev *dev, bool =
+force)
+>  		mt7996_rro_msdu_page_map_free(dev);
+> =20
+>  	/* reset wfsys */
+> -	if (force)
+> +	if (force) {
+> +		mt7996_wed_int_agent_disable(dev, &dev->mt76.mmio.wed_hif2);
+> +		mt7996_wed_int_agent_disable(dev, &dev->mt76.mmio.wed);
+>  		mt7996_wfsys_reset(dev);
+> +	}
+> =20
+>  	if (dev->hif2 && mtk_wed_device_active(&dev->mt76.mmio.wed_hif2))
+>  		mtk_wed_device_dma_reset(&dev->mt76.mmio.wed_hif2);
+> diff --git a/drivers/net/wireless/mediatek/mt76/mt7996/mac.c b/drivers/ne=
+t/wireless/mediatek/mt76/mt7996/mac.c
+> index 03670293a78f..2e1d98bf823a 100644
+> --- a/drivers/net/wireless/mediatek/mt76/mt7996/mac.c
+> +++ b/drivers/net/wireless/mediatek/mt76/mt7996/mac.c
+> @@ -2291,6 +2291,16 @@ void mt7996_tx_token_put(struct mt7996_dev *dev)
+>  	}
+>  }
+> =20
+> +static void
+> +mt7996_wed_stop(struct mt7996_dev *dev)
+> +{
+> +	if (mtk_wed_device_active(&dev->mt76.mmio.wed_hif2))
+> +		mtk_wed_device_stop(&dev->mt76.mmio.wed_hif2);
+> +
+> +	if (mtk_wed_device_active(&dev->mt76.mmio.wed))
+> +		mtk_wed_device_stop(&dev->mt76.mmio.wed);
+> +}
+> +
+>  static int
+>  mt7996_mac_restart(struct mt7996_dev *dev)
+>  {
+> @@ -2298,6 +2308,8 @@ mt7996_mac_restart(struct mt7996_dev *dev)
+>  	struct mt7996_phy *phy;
+>  	int i, ret;
+> =20
+> +	mt7996_wed_stop(dev);
+> +
+>  	if (dev->hif2) {
+>  		mt76_wr(dev, MT_INT1_MASK_CSR, 0x0);
+>  		mt76_wr(dev, MT_INT1_SOURCE_CSR, ~0);
+> @@ -2573,12 +2585,7 @@ void mt7996_mac_reset_work(struct work_struct *wor=
+k)
+>  	dev_info(dev->mt76.dev,"\n%s L1 SER recovery start.",
+>  		 wiphy_name(hw->wiphy));
+> =20
+> -	if (mtk_wed_device_active(&dev->mt76.mmio.wed_hif2))
+> -		mtk_wed_device_stop(&dev->mt76.mmio.wed_hif2);
+> -
+> -	if (mtk_wed_device_active(&dev->mt76.mmio.wed))
+> -		mtk_wed_device_stop(&dev->mt76.mmio.wed);
+> -
+> +	mt7996_wed_stop(dev);
+>  	mt7996_npu_hw_stop(dev);
+>  	ieee80211_stop_queues(mt76_hw(dev));
+> =20
+> diff --git a/drivers/net/wireless/mediatek/mt76/mt7996/regs.h b/drivers/n=
+et/wireless/mediatek/mt76/mt7996/regs.h
+> index 6df6e4c3d45d..e82a281a773a 100644
+> --- a/drivers/net/wireless/mediatek/mt76/mt7996/regs.h
+> +++ b/drivers/net/wireless/mediatek/mt76/mt7996/regs.h
+> @@ -782,6 +782,11 @@ enum offs_rev {
+>  #define MT_WF_SUBSYS_RST_BYPASS_WFDMA2_SLP_PROT	BIT(16)
+>  #define MT_WF_SUBSYS_RST_WHOLE_PATH_RST_REVERT_CYCLE	GENMASK(15, 8)
+> =20
+> +/* WED registers, offsets for mtk_wed_device_reg_read() */
+> +#define MT_WED_CTRL				0x00c
+> +#define MT_WED_CTRL_WPDMA_INT_AGENT_EN		BIT(0)
+> +#define MT_WED_CTRL_WPDMA_INT_AGENT_BUSY	BIT(1)
+> +
+>  /* PCIE MAC */
+>  #define MT_PCIE_MAC_BASE			0x74030000
+>  #define MT_PCIE_MAC(ofs)			(MT_PCIE_MAC_BASE + (ofs))
+> --=20
+> 2.47.3
+>=20
+>=20
 
-Mehmet
+--9M1xvDU882pZCzjo
+Content-Type: application/pgp-signature; name=signature.asc
+
+-----BEGIN PGP SIGNATURE-----
+
+iHUEABYKAB0WIQTquNwa3Txd3rGGn7Y6cBh0uS2trAUCav1j7QAKCRA6cBh0uS2t
+rJhBAQDx844leyo0sYwhxjNzKnGu8x8pQY/mrjTaHH4zCY1LLQEA6DUsYnKKPGv0
+yIpUCfrNk/45aGe5sJUxIp67MTG/Iwg=
+=xqp4
+-----END PGP SIGNATURE-----
+
+--9M1xvDU882pZCzjo--
