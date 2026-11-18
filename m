@@ -1,98 +1,105 @@
-Authentication-Results: smtp.subspace.kernel.org; arc=pass header.oldest-pass=0 smtp.remote-ip=209.85.215.178
-ARC-Seal: i=2; d=subspace.kernel.org; s=arc20261015; a=rsa-sha256; cv=pass;
-	t=1795029895;
-	b=kEtqk4UCKCbHooBfrw5GY/F9IbCNywg27By4cCZuuIaWRAYU9qo1MJUbUoeG/39YYDyU
-	 k5glRVfzZEbQ/XtEDqZRROQnZj8CCqp+FjUKdWY965yHjsoF3HUeCbjfWjqWJlcVujPB/
-	 HHU6X0Xqtw3/SRgk6N1mx6VruVLq+IXhUSCBQPjcl78TOL+cjeMnMjER4GwPY7yXSvRIB
-	 pAAzWZrDt8+qqwcxskqHKSHXj9ul9oTjwprkU/RXahh8C/vNcZC9QgULSWCcbBok/94+J
-	 TTDeI5+wcYv+XSHSPHCp4n9NPswgKQhbW0O1Js0jtc2msxH88m1Vt5bAQ1v1/H6JcLg==
-ARC-Message-Signature: i=2; d=subspace.kernel.org; s=arc20261015;
-	a=rsa-sha256; c=relaxed/relaxed; t=1795029895;
-	h=DMARC-Filter:Received:DKIM-Signature:X-Google-DKIM-Signature:
-	 X-Gm-Message-State:X-Gm-Gg:X-Received:MIME-Version:From:Date:
-	 X-Gm-Features:Message-ID:Subject:To:Cc:Content-Type:
+Authentication-Results: smtp.subspace.kernel.org; arc=none smtp.remote-ip=100.103.45.18
+ARC-Seal: i=1; d=subspace.kernel.org; s=arc20261015; a=rsa-sha256; cv=none;
+	t=1795030038;
+	b=W6Z0Zc8e7CyAHCqiq3xEB2+gT3AW08/eGTtC2GgINPY4ZELWX0lqIJmb8faxdGtdeoCr
+	 1I80uNT85/R1iMkcg545sNduNM6UaUIQG73DtEiw5IlG+fLWVoj9R4v6+MeLgkyjCDwfF
+	 XQhefAIurmFJ4CT/IbS2wHcOMHP2mbwFACSTsgO0tj3iBiJlRi4T4f9XH2t6Gzvq0sOq3
+	 pKTTzJzlIhFGYgph+6mBxohUvrh6Y5HW8G81jQ2C9Vjml0K0eTIsoBYB4676iA63yyT+k
+	 Vk1BUIr/W96cdN8oZfBcQOY44X2b816kFBNqCnQrsMvMDuhDdmqHYpJ4qSzBzN48BfA==
+ARC-Message-Signature: i=1; d=subspace.kernel.org; s=arc20261015;
+	a=rsa-sha256; c=relaxed/relaxed; t=1795030038;
+	h=Received:DKIM-Signature:From:To:Cc:Subject:Date:Message-ID:X-Mailer:
+	 MIME-Version:Content-Type:X-Change-ID:X-Mailer:
 	 Content-Transfer-Encoding;
-	bh=EjJYvzFdvze5iPMTQvoCwzZHkwJLHlrVNoowatB6Euo=;
-	b=ZjfLirDj493sXrXqmFv8tUWulEdC1LB4z2DujCFV8e6VYPCPENR8SU7QQ5qrKsHcxYQK
-	 qlyffqEgVNsCqHpKR3szq6W993gYDqQUSjDU3SJ2E/n5J9/HWt4851cGPXIsGBv/cTHa4
-	 4wK+pBByeFtt7mHyIK3pnXHV+9Ff/8K+Epv7hgLxJzYQYsNArZ92OGzKXDooR259N8AKc
-	 07hWZ6i8CzSIOgG4M+FqeGP1HC9EyII3SFuBSzCM2aUW5PawpVPwqrIY4gOiNA5UQQv6k
-	 tTXpspn9xzQJk64TnEnCjp8b18qyaWURldQWQeMMtY2KgwP/uDcRZox682zT+XUMDcQ==
-ARC-Authentication-Results: i=2; smtp.subspace.kernel.org; 
-	dmarc=pass header.from=gmail.com;
-	spf=pass smtp.mailfrom=gmail.com;
-	dkim=pass header.d=gmail.com header.i=@gmail.com header.a=rsa-sha256 header.s=20260707 header.b=k59ieq2C;
-	arc=pass header.oldest-pass=0 smtp.remote-ip=209.85.215.178
-Received: from mail-pg1-f178.google.com (mail-pg1-f178.google.com [209.85.215.178])
-	(using TLSv1.3 with cipher TLS_AES_128_GCM_SHA256 (128/128 bits)
-	 key-exchange X25519 server-signature ECDSA (prime256v1) server-digest SHA256)
+	bh=BCQjSl+UyhKmnMy/FBBwR/Y4e953R9N1RQvuUIFqeFQ=;
+	b=flpPtnm39v+R5IusfTqWCEA8gZVsuiQ+BXmRL/2ObC9vVm2AYKfkzutpmdm539j2pvDS
+	 6f1cLt6m1WPwbkssvARHY6jgUPCD0XwdxXQOVy0p23dfKHE4KtVLKqUjaF/yxTxRvS0A7
+	 YHtep93XwPVsUKc21cOAbZvXIiyvsjzgm1U8CHjW84Axk27f/RL/IA8ZIYyHpB9bKvAfV
+	 en+uNgcWqdK8ue9k/ocZGChR120C9obei0FGQTeeqmRjetT+4NwSP1S/xnnHHb7eWP3fV
+	 P5jJ6PHL+uJU0CM2nOSBwybtnnRX+FIBYJw75mgBeA8gxqYr3qU/YLHxDTq6M6MzPPw==
+ARC-Authentication-Results: i=1; smtp.subspace.kernel.org; 
+	dkim=pass header.d=kernel.org header.i=@kernel.org header.a=rsa-sha256 header.s=k20260515 header.b=a8Lbe58D;
+	arc=none smtp.remote-ip=100.103.45.18
+Received: from smtp.kernel.org (quasi.space.kernel.org [100.103.45.18])
+	(using TLSv1.3 with cipher TLS_AES_256_GCM_SHA384 (256/256 bits)
+	 key-exchange X25519 server-signature ECDSA (prime256v1))
 	(No client certificate requested)
-	by smtp.subspace.kernel.org (Postfix) with ESMTPS id 14558606A325
-	for <linux-wireless@vger.kernel.org>; Wed, 18 Nov 2026 19:24:54 +0000 (UTC)
-DMARC-Filter: OpenDMARC Filter v1.4.2 smtp.subspace.kernel.org 14558606A325
-Authentication-Results: smtp.subspace.kernel.org; dmarc=pass (p=none dis=none) header.from=gmail.com
-Authentication-Results: smtp.subspace.kernel.org; spf=pass smtp.mailfrom=gmail.com
+	by smtp.subspace.kernel.org (Postfix) with ESMTPS id 03E33606A320;
+	Wed, 18 Nov 2026 19:27:17 +0000 (UTC)
 Authentication-Results: smtp.subspace.kernel.org;
-	dkim=pass (2048-bit key) header.d=gmail.com header.i=@gmail.com header.a=rsa-sha256 header.s=20260707 header.b=k59ieq2C
-Received: by mail-pg1-f178.google.com with SMTP id 41be03b00d2f7-cdb2dfcca94so597060a12.1
-        for <linux-wireless@vger.kernel.org>; Wed, 18 Nov 2026 11:24:54 -0800 (PST)
-ARC-Seal: i=1; a=rsa-sha256; t=1795029894; cv=none;
-        d=google.com; s=arc-20260327;
-        b=s8iAr49T9xYDI3QNTCIICAfChWZD8h015sM3mo9/MQeiRKPNDR4/FDjArqfAEJ72Ye
-         lypqCHiJANLOsFvRYSiOJ3vzshJ74gmJnh0wldJYMovB4icw1eLeqsLEQjsCiA87C2lN
-         wWuOLtzZR6aO6+PXBAwBjSJhNXmza/g34KjC772aN1g9KfvzBjhYVFLgLKKha6f+Y2SL
-         TsVnmVm4SvuFtJusVIq1fbvGvZax3OgJUVK9Xtk4icY22QO1TLHGv0HdKHWidvf1nFxU
-         fVwaNThdxwy4HriaU3o6lqvAjV9j10Rn9Btro5Mro0q8ocLFO9AoPIafpIs+WtGzo2mb
-         HifA==
-ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=google.com; s=arc-20260327;
-        h=content-transfer-encoding:cc:to:subject:message-id:date:from
-         :mime-version:dkim-signature;
-        bh=EjJYvzFdvze5iPMTQvoCwzZHkwJLHlrVNoowatB6Euo=;
-        fh=mfPvTnM9FlmqjppSUWCSaxAVhLgcs+BLs9pCa00ubkk=;
-        b=AotpDq2A3CF7VTmIAIuRRUfhX8saSB3NszLyM0meOOIHBg4Pm08IxD7lrqZs6uEqP+
-         c8j+Hg5gLK0jIDC9N/FVEpJhbzGuppuajlDeHI8qwTNiBsueW+4ZWXkj+YtukCRGeq+V
-         h+vgzwGI0eovu82KPE/uxIY7Brptci0Lzeid7HeXS56tAOJHhMtUJD9j7S5uh3zOxtWw
-         UK/2fd+beNwcsZY46P2up/zoh5AER/hmEqaKBP1JrtjpCsXERuW+SgeiWsanfLyWDAEp
-         TxxuTbfDydNlaviwrgo50rXONozs4kEatcGmgC16C9dI/+dMn1V/8AIHetM/phJY0JaS
-         yH0g==;
-        darn=vger.kernel.org
-ARC-Authentication-Results: i=1; mx.google.com; arc=none
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=gmail.com; s=20260707; t=1795029894; x=1795634694; darn=vger.kernel.org;
-        h=content-transfer-encoding:content-type:cc:to:subject:message-id
-         :date:from:mime-version:from:to:cc:subject:date:message-id:reply-to
-         :content-type;
-        bh=EjJYvzFdvze5iPMTQvoCwzZHkwJLHlrVNoowatB6Euo=;
-        b=k59ieq2ChQ8MRGf4Du0YPN9pkt5dQYBBGmuLXdjC3bsx8JYkf5wKLBp70lxzTWBATq
-         cD6DqXuoOeB3NYJE9IeI5OZc4RtBw2pRP8zWJtSPXsr4Gcnx0KitD0Bf1MnPRBkT0kzb
-         zrA+myTheO0J0wdTLczPcxo6KKzBC3WCHJxmcuAoAUpqOb8S6HJXGN+CDkcMgaSrB3Eh
-         QmGKiJkMzRJdHbAAoDcXjwM5aW6XvixhmpaysMXUPVDNNHGTnhojdlh2hdWC4LyONm1/
-         6pQBa/g0ii9H0JrPzxCEGw7ZKsRDYd7teTskfXl0NeBpAtCl03L3wpKnXR8tWD3oNAyL
-         wh6A==
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=1e100.net; s=20260707; t=1795029894; x=1795634694;
-        h=content-transfer-encoding:content-type:cc:to:subject:message-id
-         :date:from:mime-version:x-gm-gg:x-gm-message-state:from:to:cc
-         :subject:date:message-id:reply-to:content-type;
-        bh=EjJYvzFdvze5iPMTQvoCwzZHkwJLHlrVNoowatB6Euo=;
-        b=i3s14eoT4s7XsR+l5vlFWLz9m6qCrDxRfSP1Un5xBrTwL7SpIIKHEAYlEW5SxJTJ2L
-         JdMVj59gHY10AfaZV05e+d3h7Nq7nEubu64Rd17aJSQWIvXhJS/lccmCL4ISG5ZAHfYh
-         MkmRWHl1WNNfTZH8nxnhTK3QAJh3FV+zXIs3hB2tVn1EyDosrzGTLlOyhpryh+5tLd8Z
-         KeqV3j3F0SHyaGmXiuEb+VC0uIOFM7cFYdioXmkRssEBP66nVFEamungw3YCwHR16r7v
-         eA6AIS+s/g2y7l6bT7HYPTtJ1cVWFKtGRR4U0ptSz/hiE56k4f8gVd9ooNEzgLg1YJ02
-         q03g==
-X-Gm-Message-State: APuU4Z9Kujfc5KPFSTsmEPn4EzI0K9Hqw90LpQtd3dHk87CQV67Cks41
-	7x5fo9mkIgO/6Q3E21vE8eXTxHeTS2HazlpMSPhMH+6p07yBaye6S49QbJlGJzggLgMFGPwsVfF
-	wHPYg4zfXxQQRv7MRdaI3bgpO+LtNu+4=
-X-Gm-Gg: AZFdTZf4E8YpZKLmAt6Ufkt9Rnd4bJ3zsuRiJxtS4mlVwynxT8xM3a15zmMYX4/ESYL
-	rxmKnzyi7jKp0hGfRlrMRbW6Kij47HfYQnCRvwFGlE7KRKnk3oSwyNt9CrxN3cPBlLd3IdFl+Eu
-	OnuU//vW7hWzCOiZthz7W/gW/fr8o5n8CHhoDZuBxkKrleuD7zwiTLJW/rO+kejaGwDySI+BX4c
-	PVGW7o/Nv14oBcvVJqfoe3UBgxngl8C7mfNKzxF68xRh4WO/FgM2SX6enKuDCqTK4ioot3vMe9E
-	N5qRYxampNJV9+uNNbFT3rFm47BmLf+6uB93r3WUmAmD2mz4wd/e4J+h0nkh6H2ur83XEf9jiFL
-	/YT6Jkc1WLewH+m1fU3VQS0coH8ZKYQwBXQmtMg==
-X-Received: by 2002:a17:90b:3890:b0:3ae:9944:3bf0 with SMTP id
- 98e67ed59e1d1-3b3d07bec9fmr3738908a91.34.1795029894222; Wed, 18 Nov 2026
- 11:24:54 -0800 (PST)
+	dkim=pass (2048-bit key) header.d=kernel.org header.i=@kernel.org header.a=rsa-sha256 header.s=k20260515 header.b=a8Lbe58D
+Received: by smtp.kernel.org (Postfix) with ESMTPSA id F01CE1F000C7;
+	Wed, 18 Nov 2026 19:27:16 +0000 (UTC)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=kernel.org;
+	s=k20260515; t=1795030037;
+	bh=BCQjSl+UyhKmnMy/FBBwR/Y4e953R9N1RQvuUIFqeFQ=;
+	h=From:To:Cc:Subject:Date;
+	b=a8Lbe58DBMpEAxA4r5TOCAf5iBHegruQvn97EQlvPBNS2hiv5VsV2CjJBwo5W4mbu
+	 oIAeInveN8MblMw+kpDuK/6mgRi7IVOyBJgREqeYEktOY4OdPuKAdqaD/1LZ20CRde
+	 cgCB5ZP2dBG7mPXEBP+kgSrAfcRezYxd036OqOPLAcwE8a9aZ3/17QJ4xnzwgyH0F4
+	 c+9BE02vkk76YO/ShOPrfbD2oCU8ah/bI6m/UvTFN0RjS5sr55RkzcZsmiglLh0C7D
+	 5LHv5ObEfaX5sUGCO0BqnpYBDm1TVF19qfO7cDynDmqHe1qmxvcri9pvkK3ecNS17h
+	 mKbVdiaPFFVSw==
+From: Leon Romanovsky <leon@kernel.org>
+To: Greg Kroah-Hartman <gregkh@linuxfoundation.org>,
+	"Rafael J. Wysocki" <rafael@kernel.org>,
+	Danilo Krummrich <dakr@kernel.org>,
+	Dmitry Torokhov <dmitry.torokhov@gmail.com>,
+	Andrew Lunn <andrew@lunn.ch>,
+	Heiner Kallweit <hkallweit1@gmail.com>,
+	Russell King <linux@armlinux.org.uk>,
+	"David S. Miller" <davem@davemloft.net>,
+	Jakub Kicinski <kuba@kernel.org>,
+	Paolo Abeni <pabeni@redhat.com>,
+	Johannes Berg <johannes@sipsolutions.net>,
+	Jonathan Corbet <corbet@lwn.net>,
+	Shuah Khan <skhan@linuxfoundation.org>,
+	Randy Dunlap <rdunlap@infradead.org>,
+	Bjorn Helgaas <bhelgaas@google.com>,
+	"Joerg Roedel (AMD)" <joro@8bytes.org>,
+	Suravee Suthikulpanit <suravee.suthikulpanit@amd.com>,
+	Vasant Hegde <vasant.hegde@amd.com>,
+	Will Deacon <will@kernel.org>,
+	Robin Murphy <robin.murphy@arm.com>,
+	David Woodhouse <dwmw2@infradead.org>,
+	Lu Baolu <baolu.lu@linux.intel.com>,
+	Johan Hovold <johan@kernel.org>,
+	Eric Dumazet <edumazet@kernel.org>,
+	Marcel Holtmann <marcel@holtmann.org>,
+	Luiz Augusto von Dentz <luiz.dentz@gmail.com>,
+	Nipun Gupta <nipun.gupta@amd.com>,
+	Nikhil Agarwal <nikhil.agarwal@amd.com>,
+	Pieter Jansen van Vuuren <pieter.jansen-van-vuuren@amd.com>,
+	Chris Lu <chris.lu@mediatek.com>,
+	Mans Rullgard <mans@mansr.com>,
+	Alan Stern <stern@rowland.harvard.edu>,
+	Jaroslav Kysela <perex@perex.cz>,
+	Takashi Iwai <tiwai@suse.com>,
+	Andrew Morton <akpm@linux-foundation.org>,
+	Cornelia Huck <cornelia.huck@de.ibm.com>,
+	Andrew Morton <akpm@osdl.org>,
+	Jeff Garzik <jeff@garzik.org>
+Cc: linux-kernel@vger.kernel.org,
+	driver-core@lists.linux.dev,
+	linux-input@vger.kernel.org,
+	netdev@vger.kernel.org,
+	linux-wireless@vger.kernel.org,
+	linux-usb@vger.kernel.org,
+	linux-bluetooth@vger.kernel.org,
+	linux-acpi@vger.kernel.org,
+	linux-doc@vger.kernel.org,
+	linux-pci@vger.kernel.org,
+	iommu@lists.linux.dev,
+	linux-coco@lists.linux.dev,
+	Alexey Kardashevskiy <aik@amd.com>,
+	Luiz Augusto von Dentz <luiz.von.dentz@intel.com>,
+	Greg Kroah-Hartman <gregkh@suse.de>,
+	linux-sound@vger.kernel.org,
+	Jason Gunthorpe <jgg@ziepe.ca>
+Subject: [PATCH v3 00/31] driver core: Authorize device trust before driver binding
+Date: Wed, 18 Nov 2026 21:26:30 +0200
+Message-ID: <20261118-device-trust-core-v3-0-d655875c4bfb@nvidia.com>
+X-Mailer: git-send-email 2.56.1
 X-Mailing-List: linux-wireless@vger.kernel.org
 List-Id: <linux-wireless.vger.kernel.org>
 List-Post: <mailto:linux-wireless@vger.kernel.org>
@@ -102,84 +109,172 @@ List-Unsubscribe: <mailto:linux-wireless+unsubscribe@vger.kernel.org>
 List-Owner: <mailto:linux-wireless+owner@vger.kernel.org>
 Precedence: list
 MIME-Version: 1.0
-From: Chris <hoopyfrood42@gmail.com>
-Date: Wed, 18 Nov 2026 14:24:42 -0500
-X-Gm-Features: AclHuK_3EOv6FHAHbDp6-ErJ25zBqiU1yu-YUlfjEHlibePkPM2zLKcLWHf-JWM
-Message-ID: <CAHaeJsT7vfKnjwDhFicMUVraf7EeSVXSZVdt40ri3u-accUsFw@mail.gmail.com>
-Subject: =?UTF-8?Q?MT7925_=28USB=29_as_a_roaming_client=3A_130=E2=80=93350_ms_befor?=
-	=?UTF-8?Q?e_its_first_frame_on_the_new_channel_=28MT7921=3A_9_ms=29?=
-To: "michael.shih@mediatek.com" <michael.shih@mediatek.com>
-Cc: linux-wireless@vger.kernel.org, nbd@nbd.name, lorenzo@kernel.org, 
-	linux-mediatek@lists.infradead.org, 
-	"ryder.lee@mediatek.com" <ryder.lee@mediatek.com>, 
-	"shayne.chen@mediatek.com" <shayne.chen@mediatek.com>, 
-	"sean.wang@mediatek.com" <sean.wang@mediatek.com>, "deren.wu@mediatek.com" <deren.wu@mediatek.com>
-Content-Type: text/plain; charset="UTF-8"
-Content-Transfer-Encoding: quoted-printable
+Content-Type: text/plain; charset="utf-8"
+X-Change-ID: 20260915-device-trust-core-12934e618489
+X-Mailer: b4 0.15-dev-18f8f
+Content-Transfer-Encoding: 8bit
 
-Hi Michael,
+Device trust policies need to precede driver setup, including manual
+attachment, so userspace can authorize devices before they operate.
 
-One more observation from our MT7925 testing, this time with the chip
-as a client roaming between two APs (802.11r).
+This series introduces device trust policy, authorization, and lifetime
+commitment. Authorization does not reconfigure ATS capabilities or replace
+IOMMU domains selected during discovery and further ATS and IOMMU integration
+will follow in a separate series.
 
-Setup
+The table below tries to summarize the possible kernel command line
+options and system behavior after that:
 
-Netgear A9000: MT7925, USB 0846:9072, mt7925u. Firmware: WM build
-20260605184805, HW/SW 0x8a108a10 (20260605184651a), from
-linux-firmware 20260319.
-Kernel 7.0.0-43-generic (Ubuntu). The mt76 modules are built from that
-kernel's tree with our local patches: the survey busy-time change from
-the earlier thread, plus two crash fixes. None of them touch
-association or channel handling.
-The roam is wpa_supplicant's SME (ROAM <bssid>): FT-PSK over the air,
-between two APs on one SSID and mobility domain, from ch 149 (5745
-MHz, 40 MHz) to ch 44 (5220 MHz, 40 MHz).
-For comparison, the same roam with an MT7921 (Comfast, USB 0e8d:7961,
-mt7921u, the same kernel and mt76 tree) and with the laptop's Intel
-Centrino 6200 (iwlwifi).
-Measured (mac80211's own log lines, times from the ROAM command):
+Command line                        Initial behavior
+----------------------------------  ---------------------------------------
+No device_trust options             General: existing driver binding.
+                                    PCI: existing ACPI/topology
+                                      restrictions.
+                                    USB: existing authorized sysfs flow.
 
-Step MT7925 (A9000) MT7921 (USB) Intel 6200
-disconnect from AP =E2=86=92 authenticate with 145=E2=80=93176 ms 51 ms 77 =
-ms
-authenticate with =E2=86=92 send auth 126=E2=80=93136 ms or 345=E2=80=93354=
- ms 9 ms 0 ms
-associated, from the ROAM command 382=E2=80=93635 ms 120 ms 115 ms
-The AP's answers (Authentication + Reassociation) 15=E2=80=9320 ms 6 ms 7 m=
-s
-The MT7925 figures come from 6 roams and 22 joins. The authenticate
-with =E2=86=92 send auth step was bimodal: about 130 ms or about 350 ms, ne=
-ver
-in between, and slow in 7 of the 22. The MT7921 and Intel figures come
-from one roam each.
+device_trust.default=default        General: use each bus's initial policy.
+                                    PCI: use platform trust policy; keep
+                                      existing domain and ATS decisions.
+                                    USB: devices and interfaces denied by
+                                      USB defaults wait for authorization
+                                      before binding.
 
-The step that stands out is authenticate with =E2=86=92 send auth: the time
-before the station can transmit its first frame on the new channel. On
-the MT7925 it is ~130 or ~350 ms. On the MT7921, over USB with the
-same driver family, it is 9 ms. So USB alone doesn't seem to explain
-it. Our guess is the driver's mgd_prepare_tx / remain-on-channel
-request, or the firmware's channel-context switch, but we haven't
-traced it.
+device_trust.default=blocked        General: block driver binding until
+                                      authorization.
+                                    PCI: keep existing domain and ATS
+                                      decisions while binding is blocked.
+                                    USB: leave devices and interfaces
+                                      unbound until authorized.
 
-For a voice client this decides the result. The AP's part of the roam
-is 6=E2=80=9320 ms, but the MT7925 is not ready to transmit on the new chan=
-nel
-until ~400=E2=80=93600 ms after the roam starts, against ~120 ms for the
-MT7921.
+device_trust.default=adversary      General: allow binding as an adversary.
+                                    PCI: keep existing platform-based DMA
+                                      handling, domain and ATS decisions.
+                                    USB: allow binding as an adversary,
+                                      overriding USB authorization
+                                      defaults.
 
-Questions
+device_trust.default=unrestricted   General: allow unrestricted binding;
+                                      freeze trust policy changes.
+                                    PCI: unrestricted active trust; keep
+                                      existing domain and ATS decisions.
+                                    USB: authorize devices and interfaces
+                                      regardless of USB defaults.
 
-Before granting the new channel to a station connecting to a BSS on
-another channel, does the MT7925 firmware wait for a scheduling slot,
-or run a calibration? Is the 130 / 350 ms split expected?
-Is there a faster path for a station reassociating to a known BSS,
-such as FT reassociation? For example, a firmware command or driver
-setting that avoids the full channel-context teardown and setup.
-Is ~150 ms for the teardown and setup (disconnect =E2=86=92 authenticate wi=
-th)
-expected for the MT7925 over USB, when the MT7921 takes ~50 ms?
-I'm happy to test firmware or driver changes, as with the earlier
-thread, and can send the full kernel timelines.
+device_trust=...                    General: matching rules select policy;
+or device_trust.driver=...            unmatched devices stay blocked.
+without an explicit default         PCI: rules select admission policy;
+                                      existing domain and ATS decisions
+                                      remain.
+                                    USB: matching rules select device or
+                                      interface policy.
 
-Thanks,
-Chris
+Signed-off-by: Leon Romanovsky <leonro@nvidia.com>
+---
+Changes in v3:
+- Rewrote all commit messages
+- Split USB patches to smaller chunks
+- Introduced special device attach function which works only in
+  untrusted mode
+- Remove the special PHY -EBUSY IRQ handling.
+- Clarify that further ATS and IOMMU integration follows separately.
+- Link to v2: https://patch.msgid.link/20261109-device-trust-core-v2-0-3b12d9a9f861@nvidia.com
+
+Changes in v2:
+- Replace the serio and PHY attachment conversions with
+  device_driver_attach_unrestricted(), restricted to device_trust.default=unrestricted.
+- Add USB authorization on top of device trust: export
+  device_trust_set_policy() and convert the USB authorized attributes.
+- Documentation and commit messages fixes
+- Small USB patches rewrote and split
+- Link to v1: https://patch.msgid.link/20261105-device-trust-core-v1-0-1e536825b4eb@nvidia.com
+
+---
+Leon Romanovsky (31):
+      wifi: mac80211_hwsim: lock device for manual driver binding
+      Bluetooth: btusb: Fix MediaTek ISO claim locking
+      USB: Lock interfaces during manual driver binding
+      USB: serial: Register USB drivers with their owning module
+      USB: Reject claims of DT-disabled interfaces
+      USB: Release interface claims according to binding state
+      USB: Reject claims after interface registration failure
+      ALSA: usb-audio: Release interface claims when probe fails
+      USB: Pin modules for unregistered interface claims
+      USB: Add helpers to release unpublished interface claims
+      USB: Unwind interface claims after registration or binding failure
+      PNP: Attach card devices through the driver core
+      cdx: Propagate DMA configuration errors
+      driver core: Report deferred probes through sysfs drivers_probe
+      driver core: Add a compatibility API for manual driver attachment
+      Input: gameport - use the compatibility driver attachment API
+      Input: serio - use the compatibility driver attachment API
+      net: phy: Use the compatibility driver attachment API
+      driver core: Introduce a generic device trust level
+      driver core: Expose device trust authorization interfaces
+      driver core: Accept device trust policy on the kernel command line
+      driver core: Accept device trust policy by driver name
+      driver core: Expose committed device trust level
+      driver core: Cover trust authorization and binding with KUnit
+      driver core: Document trust admission and initrd authorization
+      PCI: Use device trust for platform restrictions
+      iommu: Use device trust for DMA restrictions
+      driver core: Allow driver attachment with the device lock held
+      USB: Retain the result of configuration requests
+      USB: Authorize interfaces through device trust
+      USB: Authorize devices through device trust
+
+ Documentation/ABI/testing/sysfs-bus-drivers-probe  |   14 +
+ Documentation/ABI/testing/sysfs-bus-usb            |   18 +
+ Documentation/ABI/testing/sysfs-devices-trust      |   37 +
+ Documentation/admin-guide/kernel-parameters.txt    |   35 +
+ .../driver-api/driver-model/device-trust.rst       |  323 +++
+ Documentation/driver-api/driver-model/index.rst    |    1 +
+ Documentation/usb/authorization.rst                |   37 +
+ MAINTAINERS                                        |    2 +
+ drivers/base/Makefile                              |    2 +-
+ drivers/base/base.h                                |   52 +
+ drivers/base/bus.c                                 |    9 +-
+ drivers/base/core.c                                |   52 +-
+ drivers/base/dd.c                                  |  192 +-
+ drivers/base/test/Makefile                         |    1 +
+ drivers/base/test/device-trust-test.c              | 2461 ++++++++++++++++++++
+ drivers/base/trust.c                               |  508 ++++
+ drivers/bluetooth/btusb_main.c                     |   57 +-
+ drivers/cdx/cdx.c                                  |    2 +-
+ drivers/input/gameport/gameport.c                  |   22 +-
+ drivers/input/serio/serio.c                        |   29 +-
+ drivers/iommu/amd/iommu.c                          |    3 +-
+ drivers/iommu/dma-iommu.c                          |   14 +-
+ drivers/iommu/intel/iommu.c                        |   14 +-
+ drivers/iommu/iommu.c                              |    9 +-
+ drivers/net/phy/phy_device.c                       |   28 +-
+ drivers/net/wireless/virtual/mac80211_hwsim_main.c |    2 +
+ drivers/pci/ats.c                                  |    4 +-
+ drivers/pci/pci.c                                  |    5 +-
+ drivers/pci/probe.c                                |   18 +-
+ drivers/pci/quirks.c                               |    7 +-
+ drivers/pnp/card.c                                 |   12 +-
+ drivers/usb/core/driver.c                          |  121 +-
+ drivers/usb/core/generic.c                         |    2 +-
+ drivers/usb/core/hub.c                             |   39 +-
+ drivers/usb/core/message.c                         |  106 +-
+ drivers/usb/core/sysfs.c                           |    9 +-
+ drivers/usb/core/trace.h                           |    2 +-
+ drivers/usb/core/usb.c                             |    5 +
+ drivers/usb/core/usb.h                             |    6 +-
+ drivers/usb/serial/usb-serial.c                    |    4 +-
+ include/linux/device.h                             |   21 +
+ include/linux/device/bus.h                         |   10 +
+ include/linux/device/trust.h                       |   54 +
+ include/linux/pci.h                                |   18 +-
+ include/linux/usb.h                                |   25 +-
+ include/linux/usb/serial.h                         |    4 +-
+ sound/usb/card.c                                   |    7 +
+ 47 files changed, 4190 insertions(+), 213 deletions(-)
+---
+base-commit: 6628e7d4c6b25c8d18f1345e3a20d21829aae7e4
+change-id: 20260915-device-trust-core-12934e618489
+
+Best regards,
+--  
+Leon Romanovsky <leonro@nvidia.com>
+
