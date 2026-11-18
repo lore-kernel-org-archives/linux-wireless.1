@@ -1,64 +1,86 @@
-Authentication-Results: smtp.subspace.kernel.org; arc=none smtp.remote-ip=91.216.248.207
+Authentication-Results: smtp.subspace.kernel.org; arc=none smtp.remote-ip=209.85.221.48
 ARC-Seal: i=1; d=subspace.kernel.org; s=arc20261015; a=rsa-sha256; cv=none;
-	t=1795005595;
-	b=1kfMRpNzy74oDsjbnhRTgfwtU3Y/tdGJZmAnIWg/xIeenPvGvSaP7IyD4QCvXQdLjfpx
-	 Hhh/j70V0OmmIIOK1NBwEVeQvTxMvX94Y5FNFaHsaCwSk1LVmA8dtYkZmw1+/HgwkhbUH
-	 rL38FdBWNRnBaGapCJGy72CmqK7TUF7k9uhWjyMs4p4a3mWhK35XQOi2mA0f4f4z+k6vZ
-	 m65guocUEZCRbFFnmebQEyqNcENLDdig6xZLFQfxIgAnc+M1LvvBpOP+trffJDv44wbAY
-	 YrxreQqzUH6WhQBJG79Y0pL4Do5Yh96hT181664YMSaQORxYKRWuIy0V6syaKCsi1kg==
+	t=1795005675;
+	b=sQwPvKUxPRhOkTRmdz0G5jAV+9nkQVDQPvGD+pP453w+F9Syq0d1GhtYjYfFaE/Uyo98
+	 pz2mWvTtgBtzKy+21/3THuvR/vLb6ZWy/JFTCvgZZOfx0ZUZmaDVoqT88/wGq8THq043D
+	 9OrshYy70j4H2KMrw4701d/BCNhblpotCsgA40157OmBEcX9JczrzHYrUn37fH/o4PccK
+	 VSWlv/iknJhJUMRRrBhZzc/uAJ3fmamNj7fuMvhR5dzyjiXRPHVaxvKh41cTUNcnjh2Pn
+	 OSdxGxWjAtnsYpHKOBg4ICL9FgNEBVTE6dDytfsBV5Zvkw+5BioH9xu3rsl6jCIDPOg==
 ARC-Message-Signature: i=1; d=subspace.kernel.org; s=arc20261015;
-	a=rsa-sha256; c=relaxed/relaxed; t=1795005595;
-	h=DMARC-Filter:From:X-Lima-ML-UUID:DKIM-Signature:To:Cc:Subject:Date:
-	 Message-ID:X-Mailer:In-Reply-To:References:MIME-Version:
-	 Content-Transfer-Encoding;
-	bh=wJWY+H7MlcUDBSxoJT3NvYfqFR9PW6PfPjEEDgQAXpg=;
-	b=n4hei5qF/5/c1X/OJjNmurjDfQZE3l7ZXA4+/sbg6P3+VURN6TL5ZIdscDMjqvx+67/i
-	 1HbUdJgLMcHkYwNcRJ4ZybcxmeuT+cyVjNe4PABP+Xh9aDBPuz3mY7Imcy9JJ5tTZsLiQ
-	 MbaSgNZmIKvajB2g/zpByBhwtA0259opWtQ/VadKA/QAIkMaRjfwQ+2QFC7OGFxzKnWAa
-	 khHoKUzyB0qpgUVvIAXz249rePoXQx9I3SalL1lpyNXx9Sow5SG1KWgLq6wDztio+UVGD
-	 40POly16KvkjlyUQVMU0TMVrdwE7OIjb0S3ZhYJt8ZXjFYcyk5NuT+oIRSr/hRQZ6QA==
+	a=rsa-sha256; c=relaxed/relaxed; t=1795005675;
+	h=DMARC-Filter:Received:DKIM-Signature:X-Google-DKIM-Signature:
+	 X-Forwarded-Encrypted:X-Gm-Message-State:X-Gm-Gg:X-Received:Received:
+	 Message-ID:Date:MIME-Version:User-Agent:From:Subject:To:References:
+	 Content-Language:In-Reply-To:Content-Type:Content-Transfer-Encoding;
+	bh=Y8TwY36AOomBiTRxjmHL4nctbq5ILY0NPnM2M/EKOGo=;
+	b=TVF58hUVOvgX3eZtfRX8ZNVaVPYXBNaB4sWlVuVsUljT8tLwPMeJZNkeVLELLbP8YrbK
+	 AjNfGQRKfLktzQpHjdXhFaJrtc2zQFybYe4+CFo0uitglACrdh45n5Lb6xVT4hr9q+ddd
+	 bbwD5mdp/3ZoX/ROxaiAkIp+dkFs49kIbNWLSND18cFj5j0qEW0EWdL9J7nowjlZSmNLJ
+	 o9lmnft4hMK+K6SBSSl0jbANloPnbp5n2aTAL4rLuFH8UcgfIbRWrEGoS9dCoxiN/UwAn
+	 1mT8WDVaS6U+thWtMcVDIYJ2NBr5q4tF9To/m1FG90dGtKWfz5hWB6u3EulNcvWKvAA==
 ARC-Authentication-Results: i=1; smtp.subspace.kernel.org; 
-	dmarc=none header.from=deq.rocks;
-	spf=none smtp.mailfrom=deq.rocks;
-	dkim=pass header.d=deq.rocks header.i=@deq.rocks header.a=rsa-sha256 header.s=securedbylima-20251205 header.b=VLolwM2U;
-	arc=none smtp.remote-ip=91.216.248.207
-Received: from mx5.mail-out.lima-city.de (mx5.mail-out.lima-city.de [91.216.248.207])
-	(using TLSv1.3 with cipher TLS_AES_256_GCM_SHA384 (256/256 bits)
+	dmarc=pass header.from=gmail.com;
+	spf=pass smtp.mailfrom=gmail.com;
+	dkim=pass header.d=gmail.com header.i=@gmail.com header.a=rsa-sha256 header.s=20260707 header.b=ZycmmEa2;
+	arc=none smtp.remote-ip=209.85.221.48
+Received: from mail-wr1-f48.google.com (mail-wr1-f48.google.com [209.85.221.48])
+	(using TLSv1.3 with cipher TLS_AES_128_GCM_SHA256 (128/128 bits)
 	 key-exchange X25519 server-signature ECDSA (prime256v1) server-digest SHA256)
 	(No client certificate requested)
-	by smtp.subspace.kernel.org (Postfix) with ESMTPS id 1C24F606A320;
-	Wed, 18 Nov 2026 12:39:53 +0000 (UTC)
-DMARC-Filter: OpenDMARC Filter v1.4.2 smtp.subspace.kernel.org 1C24F606A320
-Authentication-Results: smtp.subspace.kernel.org; dmarc=none (p=none dis=none) header.from=deq.rocks
-Authentication-Results: smtp.subspace.kernel.org; spf=none smtp.mailfrom=deq.rocks
+	by smtp.subspace.kernel.org (Postfix) with ESMTPS id 35160606A331
+	for <linux-wireless@vger.kernel.org>; Wed, 18 Nov 2026 12:41:15 +0000 (UTC)
+DMARC-Filter: OpenDMARC Filter v1.4.2 smtp.subspace.kernel.org 35160606A331
+Authentication-Results: smtp.subspace.kernel.org; dmarc=pass (p=none dis=none) header.from=gmail.com
+Authentication-Results: smtp.subspace.kernel.org; spf=pass smtp.mailfrom=gmail.com
 Authentication-Results: smtp.subspace.kernel.org;
-	dkim=pass (2048-bit key) header.d=deq.rocks header.i=@deq.rocks header.a=rsa-sha256 header.s=securedbylima-20251205 header.b=VLolwM2U
-From: Andre Eikmeyer <dev@deq.rocks>
-X-Lima-ML-UUID: 3b985f98-896a-4dd0-85c6-48ae21c131fb
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=deq.rocks;
-	s=securedbylima-20251205; t=1795005591;
-	bh=RFyJsWBgMKmHUjPTsXIbWid7cPYu4guWWMY3nhzBcBw=;
-	h=From:To:Cc:Subject:Date:In-Reply-To:References:From;
-	b=VLolwM2UjV0+PFE5s0xcHGQQju6g6aylHEoPgLk72sD9Qt/mO+EHndnpYe0F3qvfL
-	 zt5b7b+oVxVvtPKmOOtbCsjIzcU0nhekar/CbdMmt91hwVHKMAGdQGKeNbeT3Q/+Aa
-	 tPqnU21WQfqrMex71r4uQOR95BKG1aqINOMtuIhxqQqLa+1u4vs5OCcTBhYNp8Eajs
-	 cIJnCswf5y+uLDKDOq9bqeyADYze2JtLOwcybmxSJn1wja1yGwhNGwyFjh/7z4XrXO
-	 DjM1jTpVkOluKwIL5qgi4ScdD4f7p1JEP59H49Spa1BDKT97dnwF9qs5PJgaTSdx+C
-	 3gsTC89gVclFw==
-To: arend.vanspriel@broadcom.com
-Cc: linux-wireless@vger.kernel.org,
-	brcm80211@lists.linux.dev,
-	brcm80211-dev-list.pdl@broadcom.com,
-	linux-kernel@vger.kernel.org,
-	Andre Eikmeyer <dev@deq.rocks>,
-	Yossef Osman <Yossef.Osman@proton.me>,
-	Aditya Garg <aditya.garg@linux.dev>
-Subject: [PATCH wireless v2] wifi: brcmfmac: keep ARP and ND offload off on Apple BCM4355 and BCM4364
-Date: Wed, 18 Nov 2026 13:39:33 +0100
-Message-ID: <20261118123933.74517-1-dev@deq.rocks>
-X-Mailer: git-send-email 2.56.0
-In-Reply-To: <20261104151620.70671-1-dev@deq.rocks>
-References: <20261104151620.70671-1-dev@deq.rocks>
+	dkim=pass (2048-bit key) header.d=gmail.com header.i=@gmail.com header.a=rsa-sha256 header.s=20260707 header.b=ZycmmEa2
+Received: by mail-wr1-f48.google.com with SMTP id ffacd0b85a97d-4a357b1c649so517978f8f.3
+        for <linux-wireless@vger.kernel.org>; Wed, 18 Nov 2026 04:41:15 -0800 (PST)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+        d=gmail.com; s=20260707; t=1795005674; x=1795610474; darn=vger.kernel.org;
+        h=content-transfer-encoding:content-type:in-reply-to:content-language
+         :references:to:subject:from:user-agent:mime-version:date:message-id
+         :from:to:cc:subject:date:message-id:reply-to:content-type;
+        bh=Y8TwY36AOomBiTRxjmHL4nctbq5ILY0NPnM2M/EKOGo=;
+        b=ZycmmEa2vWqjOVPS3ygfY1N5GMW3YEqN1nfTHTItzTXG9angxEWE9lfZ6OOj8b+D1z
+         2q3E0boHHP2syZaZoPRSEMGH1hmEdZN4d6++NChb93Dm95hmFEPj/J6GiydfJ1trH2lJ
+         x2Ts98rbInAOu3ytjeTAcSulGWIK7kuN3HoDCILzhCRbhW8iWe956geSxv3FvAUyv5Ry
+         YxRUnAFeFr95Rw6cwDswH/W9zANsnKVbkCuw2yZaNzVS099NLhXJlxdWnEMFYM6cWzYB
+         UxJjcpZyLlhcW0masjmevysPnPwxhbVNJowA+vKZ7XsGmhe3ciA7wo7Nfln8SozqF06Z
+         kSuw==
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+        d=1e100.net; s=20260707; t=1795005674; x=1795610474;
+        h=content-transfer-encoding:content-type:in-reply-to:content-language
+         :references:to:subject:from:user-agent:mime-version:date:message-id
+         :x-gm-gg:x-gm-message-state:from:to:cc:subject:date:message-id
+         :reply-to:content-type;
+        bh=Y8TwY36AOomBiTRxjmHL4nctbq5ILY0NPnM2M/EKOGo=;
+        b=AW79I10WHpu64GwWrP9WIqN970lpULuY0ggISjGEhMOvWO7SyyiWDY6OZhhHtZbMw+
+         6+gm8ziP7LFG0WrXwzu0NWg30//wrdzULiYY+hxCQsHsD5XrH/7Ele9T5FuZL8ap5FjZ
+         tfTCTuVH6qGPf8A8+9QQDkFmEcItI8b5OYhHANmrVuKe5tFRDLSM8PbzNgLkfSBlPIG/
+         4JjcYAkf0QhQEzRLkoFk+0njHk7tePe754hAJqwUbU7pK7zZT70/05/beFuwB5Ykw8q6
+         Ey1c1bVBg4+/3hHPD8YbXYcsJggwrBZFSqdhdGOItu65U+cSQxiRKtcMTLIOfhpqMqPV
+         5Geg==
+X-Forwarded-Encrypted: i=1; AL+hErGOg9OjILVdgWHJ5jaGGcCtgEwkdxCVWUt6s9nBy8Xxpz0V/IUAMn2VF7uUKrmUiuXqf9h0YcjrioHxi76Vmw==@vger.kernel.org
+X-Gm-Message-State: APuU4Z8obU/ND3GwybdWGz7YIvB2Eg8dXPt6bnUs3MHtqsCDcVcdvbn4
+	E/3jBM3LUbFSbfijgJeNZsD4VahdQO52MeXwa22uV0499UkqJju6Z+vB
+X-Gm-Gg: AZFdTZdRYv4VPBpbtfFZI5DJmoge7HFiTg+QRYooFnWrSRoEY0FUKng6NJhES6XqewO
+	LTAJdv/4v4+T2OW7JcBqtfvWGkjoBNqcQKsic0BuMVx7qpDSIdh6t3gVy82i9xcVKlnGv09Ak5B
+	MyndK+E8clPUsxCRznww9IFno9hWUJO2xtgR4kz3wFNAjGW3+yB2FBladHdLzTl16Uu0a8vNk6X
+	Cr+JZj87H6AF7WJ/NRROA/SQBr/AlNxsYVGcEYoBrToIptfceqWW5efeaOZSdqFGi4mqYk5P49e
+	RqcyqUul/2doJTiNTjhfG64uYBd2J8CBI9/9l4RoMLG7muQVw6aRbXeo98wtyhuZ3qveJDopjFO
+	eOYDPeKCjBjdQO5GiCToTXmNr1Nb6DhDuqBsF6okQxzd2+cHncf2YvoL4W1fPPoGq5+RCH4nDTy
+	vAb8kfwg1e75qHa0Z05cmSzbC/SHWdnCQdLPu2IZi6NmWGJvuqS2URD2nGGTTK6XQkIbFvLaoiQ
+	c1WoZLznqHcUL8p/S1zRLwx51aaksBqKRXmH4MH01Wi0cmC8Dw3RrgaxoRrjBHaoqyghUIjxYcH
+	4XSfar58E+KVAvz6qTpgpDLZBEWtTHF3HJ4zFbHMAAGZU9epsMoTRBdIH/mTAg==
+X-Received: by 2002:adf:e00e:0:20b0:48e:6f76:dea2 with SMTP id ffacd0b85a97d-4a63bea56ecmr3996401f8f.38.1795005673545;
+        Wed, 18 Nov 2026 04:41:13 -0800 (PST)
+Received: from [192.168.1.50] ([188.27.124.137])
+        by smtp.gmail.com with ESMTPSA id ffacd0b85a97d-4a65609391bsm4726658f8f.36.2026.11.18.04.41.12
+        (version=TLS1_3 cipher=TLS_AES_128_GCM_SHA256 bits=128/128);
+        Wed, 18 Nov 2026 04:41:13 -0800 (PST)
+Message-ID: <08a6cf57-9c00-445d-bc91-9375e4ba2ef8@gmail.com>
+Date: Wed, 18 Nov 2026 14:41:11 +0200
 X-Mailing-List: linux-wireless@vger.kernel.org
 List-Id: <linux-wireless.vger.kernel.org>
 List-Post: <mailto:linux-wireless@vger.kernel.org>
@@ -68,109 +90,44 @@ List-Unsubscribe: <mailto:linux-wireless+unsubscribe@vger.kernel.org>
 List-Owner: <mailto:linux-wireless+owner@vger.kernel.org>
 Precedence: list
 MIME-Version: 1.0
-Content-Transfer-Encoding: 8bit
+User-Agent: Mozilla Thunderbird
+From: Bitterblue Smith <rtl8821cerfe2@gmail.com>
+Subject: Re: [PATCH rtw-next 0/5] wifi: rtw88: pci: Support an older design,
+ like RTL8821AE/RTL8812AE
+To: Ping-Ke Shih <pkshih@realtek.com>,
+ "linux-wireless@vger.kernel.org" <linux-wireless@vger.kernel.org>
+References: <2033f1b1-fb12-4a04-aef4-923590e64463@gmail.com>
+ <aaaeeef8-1d4b-4d31-9f70-fb7d781d7006@gmail.com>
+ <62b7f8e8d9784877ba8eda4bcde90cc6@realtek.com>
+Content-Language: en-US
+In-Reply-To: <62b7f8e8d9784877ba8eda4bcde90cc6@realtek.com>
+Content-Type: text/plain; charset=UTF-8
+Content-Transfer-Encoding: 7bit
 
-brcmfmac enables the firmware's ARP and IPv6 ND offload (ndoe) whenever
-the interface is up and not promiscuous. On the Apple firmware for the
-BCM4355 and BCM4364, ndoe makes downloads collapse.
+On 16/11/2026 09:43, Ping-Ke Shih wrote:
+> Bitterblue Smith <rtl8821cerfe2@gmail.com> wrote:
+>> On 24/10/2026 01:57, Bitterblue Smith wrote:
+>>>
+>>> Theoretically rtlwifi supports WOWLAN, but it doesn't work for me with
+>>> RTL8821AE or RTL8812AE. rtw88 doesn't support WOWLAN with these chips.
+>>>
+>>
+>> Actually, this looks like my laptop's fault. I tried with RTL8822CE
+>> and RTL8852BE, and they don't work either. The wifi card doesn't have
+>> power while the laptop is suspended to RAM. There is no option for it in
+>> the BIOS, either.
+> 
+> If you have an external PCIE adapter, it will be possible to connect
+> an external power to keep WiFi working. (Note this might damage your
+> laptop or WiFi card if connect extern power to wrong hardware pins)
 
-On the BCM4364, IPv6 downloads topped out at 55 Mbit/s on a
-MacBookPro15,1 with the BCM4364/3 and on the MacBookPro16,1 with the
-later revision [1][2]. On the BCM4355 of the MacBookAir8,1, downloads
-fell to about 50 Mbit/s with the offload on and stayed at 300 to 400
-Mbit/s with it off, and the firmware logged errors several times a
-second [3]. The BCM4377 is not affected.
+I don't have anything external, but you gave me an idea.
 
-macOS enables ARP and ND offload for associated sleep only and clears
-both on wake. ARP offload brings no benefit while awake, and without
-WoWL brcmfmac disconnects on suspend on these Macs, so the offloads are
-never used in sleep either. With ARP offload on, the firmware answers
-from its own host IP table, and the host does not notice when that
-table is stale. brcmfmac already turns both offloads off in promiscuous
-mode and while a soft AP runs.
+I soldered two wires on the motherboard. One connects the M.2 slot to the
+3.3V line which stays on in S3. The other connects the M.2 slot's PCIe
+WAKE pin to the laptop's power button. Now the laptop wakes up when
+I send the magic packet.
 
-Keep both off on these chips when the board type is an Apple one,
-which runs the firmware the way macOS does while awake.
-
-[1] https://github.com/t2linux/kernel/issues/34
-[2] https://github.com/t2linux/T2-Debian-and-Ubuntu-Kernel/issues/227
-[3] https://github.com/t2linux/linux-t2-patches/pull/85
-
-Fixes: 52f22fb21764 ("brcmfmac: add neighbor discovery offload ip address table configuration")
-Cc: stable@vger.kernel.org
-Closes: https://github.com/t2linux/kernel/issues/34
-Closes: https://github.com/t2linux/T2-Debian-and-Ubuntu-Kernel/issues/227
-Link: https://github.com/t2linux/linux-t2-patches/pull/85
-Tested-by: Yossef Osman <Yossef.Osman@proton.me>
-Tested-by: Aditya Garg <aditya.garg@linux.dev>
-Co-developed-by: Aditya Garg <aditya.garg@linux.dev>
-Signed-off-by: Aditya Garg <aditya.garg@linux.dev>
-Signed-off-by: Andre Eikmeyer <dev@deq.rocks>
----
-Changes in v2:
-- Restrict the quirk to Apple boards with settings->board_type
-- Add the BCM4355 of the MacBookAir8,1 (Aditya)
-- Add Fixes and Cc stable, target wireless
-- Explain why ARP offload stays off as well
-- v1: https://lore.kernel.org/all/20261104151620.70671-1-dev@deq.rocks/
-
- .../broadcom/brcm80211/brcmfmac/core.c        | 27 +++++++++++++++++++
- 1 file changed, 27 insertions(+)
-
-diff --git a/drivers/net/wireless/broadcom/brcm80211/brcmfmac/core.c b/drivers/net/wireless/broadcom/brcm80211/brcmfmac/core.c
-index 92ec269f43b2..00d608923380 100644
---- a/drivers/net/wireless/broadcom/brcm80211/brcmfmac/core.c
-+++ b/drivers/net/wireless/broadcom/brcm80211/brcmfmac/core.c
-@@ -13,6 +13,7 @@
- #include <net/addrconf.h>
- #include <net/ieee80211_radiotap.h>
- #include <net/ipv6.h>
-+#include <brcm_hw_ids.h>
- #include <brcmu_utils.h>
- #include <brcmu_wifi.h>
- 
-@@ -93,6 +94,22 @@ struct brcmf_if *brcmf_get_ifp(struct brcmf_pub *drvr, int ifidx)
- 	return ifp;
- }
- 
-+static bool brcmf_is_apple_nd_offload_broken(struct brcmf_pub *drvr)
-+{
-+	const char *board_type = drvr->settings->board_type;
-+
-+	if (!board_type || !strstarts(board_type, "apple,"))
-+		return false;
-+
-+	switch (drvr->bus_if->chip) {
-+	case BRCM_CC_4355_CHIP_ID:
-+	case BRCM_CC_4364_CHIP_ID:
-+		return true;
-+	default:
-+		return false;
-+	}
-+}
-+
- void brcmf_configure_arp_nd_offload(struct brcmf_if *ifp, bool enable)
- {
- 	s32 err;
-@@ -103,6 +120,16 @@ void brcmf_configure_arp_nd_offload(struct brcmf_if *ifp, bool enable)
- 		return;
- 	}
- 
-+	/* With ND offload on while awake, the Apple firmware for the BCM4355
-+	 * and BCM4364 makes IPv6 downloads drop to low rates. macOS runs ARP
-+	 * and ND offload only in sleep, keep both off on these chips.
-+	 */
-+	if (enable && brcmf_is_apple_nd_offload_broken(ifp->drvr)) {
-+		brcmf_dbg(TRACE, "Skip ARP/ND offload enable on Apple BCM%x\n",
-+			  ifp->drvr->bus_if->chip);
-+		enable = false;
-+	}
-+
- 	if (enable)
- 		mode = BRCMF_ARP_OL_AGENT | BRCMF_ARP_OL_PEER_AUTO_REPLY;
- 	else
-
-base-commit: 763b13f622e2758726e8e3ecaef819db8fa0430a
--- 
-2.56.0
-
+I'm not sure it's working 100% correctly. RTL8821AE (with rtw88),
+RTL8822CE, and RTL8852BE all disconnect from the network after waking up.
+Isn't it supposed to stay connected?
