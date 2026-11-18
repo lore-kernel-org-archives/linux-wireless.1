@@ -1,53 +1,76 @@
-Authentication-Results: smtp.subspace.kernel.org; arc=none smtp.remote-ip=100.103.45.18
+Authentication-Results: smtp.subspace.kernel.org; arc=none smtp.remote-ip=198.175.65.21
 ARC-Seal: i=1; d=subspace.kernel.org; s=arc20261015; a=rsa-sha256; cv=none;
-	t=1794992152;
-	b=w4Qr/rrXLfmfQ22ZsWJA7UA+OLc9L9uIAG/TXYvEfuFjOGwGPqAb7dfvQlOmDJNObr4W
-	 ZIZJ3DwI+IQ6L1FU/yuy5B6nYcGP9NkwlZ4OVIjpxvPqWuMTwlxGESEQD33oQy4Xlxmjc
-	 lgMSHS7ExPu1ju+L4KltCvwyi7XelOWfTha8tVeGgq2Kr8Xb+RIAMjqCks+3jlezP7GNM
-	 q08cCoc9xYVOHQpXgOY/TMW7icv07NZBOYauKKlW4v0nhj2FnRZ7hQwECB3wuPbcA6Yqz
-	 9tdFd8mS2UGrPJq+JsaxPzKYQm4H+CMOVF4IexDSFwXuGXfAGLGlU3cu3aI13aOToIw==
+	t=1794992156;
+	b=bnzvzUWf2UcCdJ4uhcfaIW/tX8exfFyWyLk2+G0rL1Cdc81AM6Siwv/1hhRLzIWwfzw4
+	 oBoW61QUQ+mOBCaBi4SX+ukMGEXFohmYIEpLwNTnWd02bgVrhHfLC+BbUKlrBJgTkOnIn
+	 7X7scuS77r6++zaucnSqJ3jUdO5jujkneGbMKKcD5Z0iuArrxmfJdOr2/G6p9EsG++NNH
+	 5uHX9saJyPODXX5W/y5P6JWfCfZFShHOBOaTrnIu21KkDnd2ic7w/A4t4/+mT8GUuWiSF
+	 TDLj84IGzL2Tah79t4zDnLuP1PEThLVQT5c2E3s3z+wXt/nzR3NaPeAXINZ9jSk2/9Q==
 ARC-Message-Signature: i=1; d=subspace.kernel.org; s=arc20261015;
-	a=rsa-sha256; c=relaxed/relaxed; t=1794992152;
-	h=Received:DKIM-Signature:Date:From:To:Cc:Subject:Message-ID:
-	 References:MIME-Version:Content-Type:Content-Disposition:In-Reply-To;
-	bh=rxX8HZ6bdAsiXwmcT/aOWZwgtWEHggXdn2outMxYS2M=;
-	b=CwH7h5G2C8ETaCKRcp3mCu5Xg7CJ5A0yF16D+Za2eD30LPjq8/5kauAEIzq+y493n15u
-	 UnfnRv9IpwxckBvMBPNInQPgswpJiFC41lE8kY5xYNTb8WMBwAvbYysGaMZzrdlZbV4yq
-	 XAApkwNIcItXlSx5rBu17Y7FgoNciAfnHvTh46MEkvfHl73EKhJVwzs2X3XuGNCkim2rV
-	 Y8iytGiO5QH97+w+ekutsPA99nMrzwot6JBO+UcWEqiF+loGO9KSSig1/bWVYj9tanVFE
-	 uMU9D2ZLKv0QwA8sUjH807s6sprVQFzq5ckjK5zaNZZMA6t/X5nMseLm6g0p4c0FBpw==
+	a=rsa-sha256; c=relaxed/relaxed; t=1794992156;
+	h=DMARC-Filter:DKIM-Signature:X-CSE-ConnectionGUID:X-CSE-MsgGUID:
+	 X-IronPort-AV:X-IronPort-AV:Received:X-CSE-ConnectionGUID:
+	 X-CSE-MsgGUID:X-ExtLoop1:X-IronPort-AV:Received:From:To:Cc:Subject:
+	 Date:Message-Id:X-Mailer:In-Reply-To:References:MIME-Version:
+	 Organization:Content-Transfer-Encoding;
+	bh=PF77GFZZQLgW8SSIuGTEHPXjSiEdeZ1lsERACIemzjM=;
+	b=47Iyk1qwQYRwmCu6MPzv7G13+i76h6E7LiB6Akt41NjTTJJjGBGSKxkWZFDH+Jhou6Uo
+	 ZoPTCEo1Awzi8PlPcI/vwv7TSpkdXsHe7ZZnGHeXAgHiEkjGMpAfFhzOa+AtlG2ODsWnQ
+	 qVQhU+PGLyjoM2Y6qcai4gqWvKq9n4Nd39kcnVkod1AEYMGGh3V75Hf6uum97PFPE8UPQ
+	 B20uUiPflj4vdQbRwO5nJlJGZKEPC+QJXH1Oyrx2H+WvsFoAitywrwFhJt2I/fT+oGU/s
+	 PT+4RgOElb+Pk4rBa763ojmMrrRcjB6D0CVT6BdS6AaldZsNDb5yYxg03yp7igpt7/g==
 ARC-Authentication-Results: i=1; smtp.subspace.kernel.org; 
-	dkim=pass header.d=kernel.org header.i=@kernel.org header.a=rsa-sha256 header.s=k20260515 header.b=VCkTj8Ry;
-	arc=none smtp.remote-ip=100.103.45.18
-Received: from smtp.kernel.org (quasi.space.kernel.org [100.103.45.18])
-	(using TLSv1.3 with cipher TLS_AES_256_GCM_SHA384 (256/256 bits)
-	 key-exchange X25519 server-signature ECDSA (prime256v1))
+	dmarc=pass header.from=intel.com;
+	spf=pass smtp.mailfrom=intel.com;
+	dkim=pass header.d=intel.com header.i=@intel.com header.a=rsa-sha256 header.s=Intel header.b="GLOlnC/R";
+	arc=none smtp.remote-ip=198.175.65.21
+Received: from mgamail.intel.com (mgamail.intel.com [198.175.65.21])
+	(using TLSv1.2 with cipher ECDHE-ECDSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.subspace.kernel.org (Postfix) with ESMTPS id 05A81606A31C
-	for <linux-wireless@vger.kernel.org>; Wed, 18 Nov 2026 08:55:52 +0000 (UTC)
+	by smtp.subspace.kernel.org (Postfix) with ESMTPS id 70D85606A32A
+	for <linux-wireless@vger.kernel.org>; Wed, 18 Nov 2026 08:55:56 +0000 (UTC)
+DMARC-Filter: OpenDMARC Filter v1.4.2 smtp.subspace.kernel.org 70D85606A32A
+Authentication-Results: smtp.subspace.kernel.org; dmarc=pass (p=none dis=none) header.from=intel.com
+Authentication-Results: smtp.subspace.kernel.org; spf=pass smtp.mailfrom=intel.com
 Authentication-Results: smtp.subspace.kernel.org;
-	dkim=pass (2048-bit key) header.d=kernel.org header.i=@kernel.org header.a=rsa-sha256 header.s=k20260515 header.b=VCkTj8Ry
-Received: by smtp.kernel.org (Postfix) with ESMTPSA id 477DD1F000C4;
-	Wed, 18 Nov 2026 08:55:51 +0000 (UTC)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=kernel.org;
-	s=k20260515; t=1794992151;
-	bh=rxX8HZ6bdAsiXwmcT/aOWZwgtWEHggXdn2outMxYS2M=;
-	h=Date:From:To:Cc:Subject:References:In-Reply-To;
-	b=VCkTj8Ry0yAK8/pzsXIym6lB8qmoTVW8Nf6BfJ8aNM5uQsXlBS+oBbX1luWKtga/S
-	 ryTPqp2xJexgRpYZ9+eRMB0BWcoUVaKRoCUFi4ZubMx+YtV1Cct3d8G0nSLSZDEW7A
-	 FOWSgakwFtSAxi8tckQfxe2Bi8FrVTNUZCHX2u2pm4rCXdvir/x5qBXu83+7OKbZKu
-	 elweVoeYwG26SNiEYD82Y2xxe3ryfXkJHE0+dEm/25mRCaPyOL7xBfucneTmjX5bqR
-	 3iN7RUjVqucv94wAqpUJ47FeKBH+MIUvGteqP3wpQuLF3Hd954xGMxOHFQSm2KzvH5
-	 MYCxdX5KZzYww==
-Date: Wed, 18 Nov 2026 09:55:49 +0100
-From: Lorenzo Bianconi <lorenzo@kernel.org>
-To: Felix Fietkau <nbd@nbd.name>
-Cc: linux-wireless@vger.kernel.org
-Subject: Re: [PATCH mt76-next 12/19] wifi: mt76: check the PN of a BA session
- frame at its release
-Message-ID: <av1oFdgZJneuAgcg@lore-qca>
-References: <20261117180134.2940930-1-nbd@nbd.name>
- <20261117180134.2940930-12-nbd@nbd.name>
+	dkim=pass (2048-bit key) header.d=intel.com header.i=@intel.com header.a=rsa-sha256 header.s=Intel header.b=GLOlnC/R
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple;
+  d=intel.com; i=@intel.com; q=dns/txt; s=Intel;
+  t=1794992157; x=1826528157;
+  h=from:to:cc:subject:date:message-id:in-reply-to:
+   references:mime-version:content-transfer-encoding;
+  bh=b14suSaJw7B4n3srolU0W5rOkcGhYwE6s5xPf5fyFwM=;
+  b=GLOlnC/RasL6RS/NPmcdygUg8popUfUOROkgir9yorr75CI8rJOO8gxr
+   e2bs/evzxgd0G1pz1j6jGADnhLlS16kh8zp0GBFDM7X5asvM36aOS+z4W
+   7M769QmiAeySooWbKaRr1J1kjfpzGxlA+v9o9+beg8A5LM0IP1TKlMoHG
+   qui8SZNTRpXzRt0JF6eUpLfOvI3VZ8AoVfJvTWTg2cI6xBtpjMK02+cMt
+   s0txFrH4xBrwKR2WTG95htYP1iWKeSpUc4uyIfSxAqtRTyQk0rVVFJVx3
+   N484E76vaWf5zzZiihulOR4YhYZWwxxxI23lF3mhA6R3/KRf0wkzB1Arf
+   A==;
+X-CSE-ConnectionGUID: JOzBJaM8QD2TZiruz0tRSw==
+X-CSE-MsgGUID: 4VnX3z6kQquVZro07a07Rw==
+X-IronPort-AV: E=McAfee;i="6800,10657,11969"; a="3871945"
+X-IronPort-AV: E=Sophos;i="6.27,219,1787036400"; 
+   d="scan'208";a="3871945"
+Received: from orviesa003.jf.intel.com ([10.64.159.143])
+  by orvoesa113.jf.intel.com with ESMTP/TLS/ECDHE-RSA-AES256-GCM-SHA384; 18 Nov 2026 00:55:57 -0800
+X-CSE-ConnectionGUID: LyQW6ixRQRGENmHAANnULQ==
+X-CSE-MsgGUID: ERZu55QbRDq8HSZ1SRtFvw==
+X-ExtLoop1: 1
+X-IronPort-AV: E=Sophos;i="6.27,219,1787036400"; 
+   d="scan'208";a="10000180"
+Received: from weis0040.iil.intel.com ([10.12.217.108])
+  by smtpauth.intel.com with ESMTP/TLS/ECDHE-RSA-AES256-GCM-SHA384; 18 Nov 2026 00:55:55 -0800
+From: Miri Korenblit <miriam.rachel.korenblit@intel.com>
+To: miriam.rachel.korenblit@intel.com
+Cc: linux-wireless@vger.kernel.org,
+	Benjamin Berg <benjamin.berg@intel.com>
+Subject: [PATCH v2 iwlwifi-next 01/15] wifi: iwlwifi: mld: handle CIP key installation
+Date: Wed, 18 Nov 2026 10:57:33 +0200
+Message-Id: <20261118105612.cc268a50f45d.If45c315ae6b9e1b221c2dc042ef29f9c42a34108@changeid>
+X-Mailer: git-send-email 2.34.1
+In-Reply-To: <20261118085747.3845425-1-miriam.rachel.korenblit@intel.com>
+References: <20261118085747.3845425-1-miriam.rachel.korenblit@intel.com>
 X-Mailing-List: linux-wireless@vger.kernel.org
 List-Id: <linux-wireless.vger.kernel.org>
 List-Post: <mailto:linux-wireless@vger.kernel.org>
@@ -57,143 +80,86 @@ List-Unsubscribe: <mailto:linux-wireless+unsubscribe@vger.kernel.org>
 List-Owner: <mailto:linux-wireless+owner@vger.kernel.org>
 Precedence: list
 MIME-Version: 1.0
-Content-Type: multipart/signed; micalg=pgp-sha512;
-	protocol="application/pgp-signature"; boundary="CUcerYJ93Dq16LkN"
-Content-Disposition: inline
-In-Reply-To: <20261117180134.2940930-12-nbd@nbd.name>
+Organization: Intel Israel (74) Limited
+Content-Transfer-Encoding: 8bit
 
---CUcerYJ93Dq16LkN
-Content-Type: text/plain; charset=us-ascii
-Content-Disposition: inline
-Content-Transfer-Encoding: quoted-printable
+From: Benjamin Berg <benjamin.berg@intel.com>
 
-On Nov 17, Felix Fietkau wrote:
-> mt76_rx_complete() checks the PN after a frame left the reorder buffer,
-> outside tid->lock. The links of an MLD peer share one PN state, so a
-> frame released on one RX ring can be checked before an earlier frame of
-> the same TID on another ring, which then reads as a replay. The reorder
-> work has the same gap on a single link.
->=20
-> Check the PN of a BA session frame where it leaves the reorder buffer,
-> under tid->lock. mt76_rx_complete() still checks all other frames.
->=20
-> Fixes: 30ce7f4456ae ("mt76: validate rx CCMP PN")
-> Fixes: 62694ed0b76f ("wifi: mt76: check the RX PN of an MLD peer once per=
- peer")
-> Signed-off-by: Felix Fietkau <nbd@nbd.name>
+The CIGTK and pairwise key needs to be installed with the corresponding
+flag when CIP is in use. Add the logic to set the correct flags and
+install the CIGTK in station mode.
 
-Reviewed-by: Lorenzo Bianconi <lorenzo@kernel.org>
+For AP mode, ignore the CIGTK installation. The firmware will never
+generate frames that would need to be encrypted.
 
-> ---
->  drivers/net/wireless/mediatek/mt76/agg-rx.c   | 11 +++++++++++
->  drivers/net/wireless/mediatek/mt76/mac80211.c |  6 ++++--
->  drivers/net/wireless/mediatek/mt76/mt76.h     |  3 ++-
->  3 files changed, 17 insertions(+), 3 deletions(-)
->=20
-> diff --git a/drivers/net/wireless/mediatek/mt76/agg-rx.c b/drivers/net/wi=
-reless/mediatek/mt76/agg-rx.c
-> index bf1babac3895..49721b4faab1 100644
-> --- a/drivers/net/wireless/mediatek/mt76/agg-rx.c
-> +++ b/drivers/net/wireless/mediatek/mt76/agg-rx.c
-> @@ -12,6 +12,15 @@ static unsigned long mt76_aggr_tid_to_timeo(u8 tidno)
->  	return HZ / (tidno >=3D 4 ? 25 : 10);
->  }
-> =20
-> +static void
-> +mt76_rx_aggr_pn_check(struct sk_buff *skb)
-> +{
-> +	struct mt76_rx_status *status =3D (struct mt76_rx_status *)skb->cb;
-> +
-> +	mt76_check_ccmp_pn(skb);
-> +	status->skip_pn_check =3D true;
-> +}
-> +
->  static void
->  mt76_aggr_release(struct mt76_rx_tid *tid, struct sk_buff_head *frames, =
-int idx)
->  {
-> @@ -25,6 +34,7 @@ mt76_aggr_release(struct mt76_rx_tid *tid, struct sk_bu=
-ff_head *frames, int idx)
-> =20
->  	tid->reorder_buf[idx] =3D NULL;
->  	tid->nframes--;
-> +	mt76_rx_aggr_pn_check(skb);
->  	__skb_queue_tail(frames, skb);
->  }
-> =20
-> @@ -204,6 +214,7 @@ void mt76_rx_aggr_reorder(struct sk_buff *skb, struct=
- sk_buff_head *frames)
->  	}
-> =20
->  	if (seqno =3D=3D head) {
-> +		mt76_rx_aggr_pn_check(skb);
->  		tid->head =3D ieee80211_sn_inc(head);
->  		if (tid->nframes)
->  			mt76_rx_aggr_release_head(tid, frames);
-> diff --git a/drivers/net/wireless/mediatek/mt76/mac80211.c b/drivers/net/=
-wireless/mediatek/mt76/mac80211.c
-> index d72ade2d46cb..b1789be134d6 100644
-> --- a/drivers/net/wireless/mediatek/mt76/mac80211.c
-> +++ b/drivers/net/wireless/mediatek/mt76/mac80211.c
-> @@ -1387,8 +1387,7 @@ mt76_rx_convert(struct mt76_dev *dev, struct sk_buf=
-f *skb,
->  	*hw =3D mt76_phy_hw(dev, mstat.phy_idx);
->  }
-> =20
-> -static void
-> -mt76_check_ccmp_pn(struct sk_buff *skb)
-> +void mt76_check_ccmp_pn(struct sk_buff *skb)
->  {
->  	struct mt76_rx_status *status =3D (struct mt76_rx_status *)skb->cb;
->  	struct mt76_wcid *wcid =3D status->wcid;
-> @@ -1403,6 +1402,9 @@ mt76_check_ccmp_pn(struct sk_buff *skb)
->  	if (status->flag & RX_FLAG_ONLY_MONITOR)
->  		return;
-> =20
-> +	if (status->skip_pn_check)
-> +		return;
-> +
->  	if (!wcid || !wcid->rx_check_pn)
->  		return;
-> =20
-> diff --git a/drivers/net/wireless/mediatek/mt76/mt76.h b/drivers/net/wire=
-less/mediatek/mt76/mt76.h
-> index 8f8388d44aa9..0b16567920fa 100644
-> --- a/drivers/net/wireless/mediatek/mt76/mt76.h
-> +++ b/drivers/net/wireless/mediatek/mt76/mt76.h
-> @@ -774,7 +774,7 @@ struct mt76_rx_status {
->  		} eht;
->  	};
-> =20
-> -	u8 amsdu:1, first_amsdu:1, last_amsdu:1;
-> +	u8 amsdu:1, first_amsdu:1, last_amsdu:1, skip_pn_check:1;
->  	u8 rate_idx;
->  	u8 nss:5, band:3;
->  	u8 chains;
-> @@ -1842,6 +1842,7 @@ void mt76_rx_complete(struct mt76_dev *dev, struct =
-sk_buff_head *frames,
->  void mt76_rx_poll_complete(struct mt76_dev *dev, enum mt76_rxq_id q,
->  			   struct napi_struct *napi);
->  void mt76_rx_aggr_reorder(struct sk_buff *skb, struct sk_buff_head *fram=
-es);
-> +void mt76_check_ccmp_pn(struct sk_buff *skb);
->  void mt76_testmode_tx_pending(struct mt76_phy *phy);
->  void mt76_queue_tx_complete(struct mt76_dev *dev, struct mt76_queue *q,
->  			    struct mt76_queue_entry *e);
-> --=20
-> 2.47.3
->=20
->=20
+Signed-off-by: Benjamin Berg <benjamin.berg@intel.com>
+Signed-off-by: Miri Korenblit <miriam.rachel.korenblit@intel.com>
+---
+ .../net/wireless/intel/iwlwifi/fw/api/datapath.h  |  2 ++
+ drivers/net/wireless/intel/iwlwifi/mld/key.c      |  3 +++
+ drivers/net/wireless/intel/iwlwifi/mld/mac80211.c | 15 +++++++++++++++
+ 3 files changed, 20 insertions(+)
 
---CUcerYJ93Dq16LkN
-Content-Type: application/pgp-signature; name=signature.asc
+diff --git a/drivers/net/wireless/intel/iwlwifi/fw/api/datapath.h b/drivers/net/wireless/intel/iwlwifi/fw/api/datapath.h
+index eddf13325df9..78c991719c28 100644
+--- a/drivers/net/wireless/intel/iwlwifi/fw/api/datapath.h
++++ b/drivers/net/wireless/intel/iwlwifi/fw/api/datapath.h
+@@ -676,6 +676,7 @@ struct iwl_scd_queue_cfg_cmd {
+  * @IWL_SEC_KEY_FLAG_MFP: MFP is in used for this key
+  * @IWL_SEC_KEY_FLAG_MCAST_KEY: this is a multicast key
+  * @IWL_SEC_KEY_FLAG_SPP_AMSDU: SPP A-MSDU should be used
++ * @IWL_SEC_KEY_FLAG_CTRL_FRAME: key is used for CIP
+  * @IWL_SEC_KEY_FLAG_ASSOC_ENC: use this key for (Re)Assoc Req/Resp encryption
+  */
+ enum iwl_sec_key_flags {
+@@ -689,6 +690,7 @@ enum iwl_sec_key_flags {
+ 	IWL_SEC_KEY_FLAG_MFP		= 0x20,
+ 	IWL_SEC_KEY_FLAG_MCAST_KEY	= 0x40,
+ 	IWL_SEC_KEY_FLAG_SPP_AMSDU	= 0x80,
++	IWL_SEC_KEY_FLAG_CTRL_FRAME	= 0x100,
+ 	IWL_SEC_KEY_FLAG_ASSOC_ENC	= 0x200,
+ };
+ 
+diff --git a/drivers/net/wireless/intel/iwlwifi/mld/key.c b/drivers/net/wireless/intel/iwlwifi/mld/key.c
+index f2c87f830ba3..74b483783de8 100644
+--- a/drivers/net/wireless/intel/iwlwifi/mld/key.c
++++ b/drivers/net/wireless/intel/iwlwifi/mld/key.c
+@@ -19,6 +19,9 @@ static u32 iwl_mld_get_key_flags(struct iwl_mld *mld,
+ 	if (!pairwise)
+ 		flags |= IWL_SEC_KEY_FLAG_MCAST_KEY;
+ 
++	if (key->flags & IEEE80211_KEY_FLAG_CIP)
++		flags |= IWL_SEC_KEY_FLAG_CTRL_FRAME;
++
+ 	switch (key->cipher) {
+ 	case WLAN_CIPHER_SUITE_TKIP:
+ 		flags |= IWL_SEC_KEY_FLAG_CIPHER_TKIP;
+diff --git a/drivers/net/wireless/intel/iwlwifi/mld/mac80211.c b/drivers/net/wireless/intel/iwlwifi/mld/mac80211.c
+index 898e376e2979..a7530e01f8c0 100644
+--- a/drivers/net/wireless/intel/iwlwifi/mld/mac80211.c
++++ b/drivers/net/wireless/intel/iwlwifi/mld/mac80211.c
+@@ -2211,6 +2211,21 @@ static int iwl_mld_set_key_add(struct iwl_mld *mld,
+ 	/* Will be set to 0 if added successfully */
+ 	key->hw_key_idx = STA_KEY_IDX_INVALID;
+ 
++	/*
++	 * In AP mode (i.e. when there is no STA and the key is used for TX),
++	 * simply do not install CIGTK but claim we did. Currently the FW will
++	 * never generate frames that would be protected with the CIGTK, so the
++	 * key does not need to be installed. However, these keys require HW
++	 * crypto so we must return success to mac80211.
++	 *
++	 * Note that if we start to install it, we will also need to update the
++	 * bcast/mcast stations to set the correct CIP MIC delays when stations
++	 * join/leave.
++	 */
++	if (!sta && !(key->flags & IEEE80211_KEY_FLAG_PAIRWISE) &&
++	    (key->flags & IEEE80211_KEY_FLAG_CIP))
++		return 0;
++
+ 	switch (key->cipher) {
+ 	case WLAN_CIPHER_SUITE_WEP40:
+ 	case WLAN_CIPHER_SUITE_WEP104:
+-- 
+2.34.1
 
------BEGIN PGP SIGNATURE-----
-
-iHUEABYKAB0WIQTquNwa3Txd3rGGn7Y6cBh0uS2trAUCav1oFQAKCRA6cBh0uS2t
-rKSJAP9ZGOBwIah/Lerj3sZHacjfEOH1jToOKWZqpAd/6t1XZAEAkMQKsyf6D69K
-BmoUaCwO9JbBPvbrOGlwrng14p2Aqwc=
-=11y9
------END PGP SIGNATURE-----
-
---CUcerYJ93Dq16LkN--
