@@ -1,112 +1,113 @@
 Authentication-Results: smtp.subspace.kernel.org; arc=none smtp.remote-ip=205.220.180.131
 ARC-Seal: i=1; d=subspace.kernel.org; s=arc20261015; a=rsa-sha256; cv=none;
-	t=1794983803;
-	b=BRIvf7jXXivC+puGxGGk2gYxcAdZ+YRUdwL9PWwqlEJeD2FBEHJpb1ZwBYFoWfXuCRBN
-	 Mnq4M5L+R2wusiC5KGXZZTR5Fcu37yHCSF8WUzEAUPiyKLyjkdlEe9X76WQrrMPzd1c+q
-	 WiCRl6pxze4gD18VUwE5/5oYX+rqtdmTeRF+tgIZS0QcnEATVnSzKkz0s8JLQUiqAREFu
-	 67VH3l1a4HXrJcSwX2ULarhTAg/X5W955zXXg+zCSan13QxPnCu3M3wdTc953jrqUwtVa
-	 7sLpQunZckdCST4D95wu9dCTkmzxcs+fmZaGEYHoVr7o7hSUt0xe+GVLvJDXwBHMR7Q==
+	t=1794983805;
+	b=upzIwK50PWQsaYq+vT1v7UhUGfwE/+LuiK6nTvoGgtYPOKnp/QTAPDnnKh1chbyRljgx
+	 R1GyJrXKNVq8YcpQwAjeMF9QKSfXW4YDehd70+KlFV5naZKXobt+eDjtG5XhrfCGxHPss
+	 MTnKrcLF49/zWkBiJkMvNdDY5JSvPvMAtqZj6Bd0WxH/+wPmXyowKGwAA+Po89sZtUD9N
+	 K2U9UjZNetYD2SL+grRJz7dXe4SyUDO7CIEgaB2vSLvnPrvKVwcRW573crm9mZbbEidkQ
+	 4ltWEgBaMnDNekvZHxa/a1nrKX5C4RMfM0n9yDncWpyvV4eOAhLReSlsq0QPeXtf82w==
 ARC-Message-Signature: i=1; d=subspace.kernel.org; s=arc20261015;
-	a=rsa-sha256; c=relaxed/relaxed; t=1794983803;
+	a=rsa-sha256; c=relaxed/relaxed; t=1794983805;
 	h=DMARC-Filter:Received:DKIM-Signature:Received:Received:
 	 DKIM-Signature:X-Google-DKIM-Signature:X-Gm-Message-State:X-Gm-Gg:
 	 X-Received:X-Received:Received:From:To:Cc:Subject:Date:Message-Id:
 	 X-Mailer:In-Reply-To:References:MIME-Version:
-	 Content-Transfer-Encoding:X-Proofpoint-Spam-Info:X-Authority-Analysis:
-	 X-Proofpoint-Spam-Details-Enc:X-Proofpoint-ORIG-GUID:
-	 X-Proofpoint-GUID:X-Proofpoint-Virus-Version:
+	 Content-Transfer-Encoding:X-Authority-Analysis:X-Proofpoint-GUID:
+	 X-Proofpoint-Spam-Info:X-Proofpoint-Spam-Details-Enc:
+	 X-Proofpoint-ORIG-GUID:X-Proofpoint-Virus-Version:
 	 X-Proofpoint-Spam-Details;
-	bh=ohW7Mgj+W4b4XRFreMQfi1pZatqbZCgQp00lV3xHb/8=;
-	b=AbWrHyjgKKhurko+8cQGVkfzXdX+n8NGRK+FtTZYCuTw/od7NapZUF5lYc2rSF+7dmAJ
-	 4ncwEe9kxnHzqFB+28W7o0S34nMeLx2HDO7uKmOD0BRnL8uncP++ljpMlSfHsZFqRe1Gp
-	 3B4UtQ6QadNeYCbJtUT3Xv17Boh2AboG12dNHqAQcHQjjihUxPQQrOrRfRE0j/nLNNhvh
-	 C38p2VZJseelD++VkjL2rSJnpQZWoR0hZQzLr6dRG62ZXxCzbbPasDUbtr+3ekWXQgvi3
-	 B0Lg0/jdz4mn+FuktUwVTbAGYQgMg/hlSPpDz9gmRWxK0Ihm0PISBynySnUblVS6MEA==
+	bh=1oLVRSyZUqXnzwkrKAF4Lyb2SfHQpMc5JGXALXu9ACE=;
+	b=f2d+3/gl4EiNOe7GFojNCyZKrMajGNTocJ3bEdvwGYN6mU8t5SdUMru0LsUsD84I1GiK
+	 /nt77az/1kTMPKTbEfNMBwEObI1HiWxJYAqVJ5Vp4Xpip0JP06K+I8OoiYqtKZ9Yj9SP3
+	 SufAEoXRFa0tq+nuatizeHmzIC9sY4sEBNDo6ljk0u2S/sHaCPny/2QVqiX3WbY0rbdVh
+	 V192lFC4VprYw1LyjkYbmVx3X5AAo8nXst/XhW4iZEksrQTNWQgj2tvj+W5aGK7NDEaZp
+	 OYLd2aGLpsvXUhvFD3JxqPKJ7yTX/NfjBriVmtbbW8l9sxMcOeTD8md9efE5UgDJWbw==
 ARC-Authentication-Results: i=1; smtp.subspace.kernel.org; 
 	dmarc=pass header.from=oss.qualcomm.com;
 	spf=pass smtp.mailfrom=oss.qualcomm.com;
-	dkim=pass header.d=qualcomm.com header.i=@qualcomm.com header.a=rsa-sha256 header.s=qcppdkim1 header.b=aKjeGH5D;
-	dkim=pass header.d=oss.qualcomm.com header.i=@oss.qualcomm.com header.a=rsa-sha256 header.s=google header.b="F8C/d/ye";
+	dkim=pass header.d=qualcomm.com header.i=@qualcomm.com header.a=rsa-sha256 header.s=qcppdkim1 header.b=hlL7LdXB;
+	dkim=pass header.d=oss.qualcomm.com header.i=@oss.qualcomm.com header.a=rsa-sha256 header.s=google header.b=VFP1ZZ8J;
 	arc=none smtp.remote-ip=205.220.180.131
 Received: from mx0b-0031df01.pphosted.com (mx0b-0031df01.pphosted.com [205.220.180.131])
 	(using TLSv1.3 with cipher TLS_AES_256_GCM_SHA384 (256/256 bits)
 	 key-exchange X25519 server-signature ECDSA (prime256v1) server-digest SHA256)
 	(No client certificate requested)
-	by smtp.subspace.kernel.org (Postfix) with ESMTPS id 4F3C4606A325
-	for <linux-wireless@vger.kernel.org>; Wed, 18 Nov 2026 06:36:42 +0000 (UTC)
-DMARC-Filter: OpenDMARC Filter v1.4.2 smtp.subspace.kernel.org 4F3C4606A325
+	by smtp.subspace.kernel.org (Postfix) with ESMTPS id C7478606A325
+	for <linux-wireless@vger.kernel.org>; Wed, 18 Nov 2026 06:36:44 +0000 (UTC)
+DMARC-Filter: OpenDMARC Filter v1.4.2 smtp.subspace.kernel.org C7478606A325
 Authentication-Results: smtp.subspace.kernel.org; dmarc=pass (p=none dis=none) header.from=oss.qualcomm.com
 Authentication-Results: smtp.subspace.kernel.org; spf=pass smtp.mailfrom=oss.qualcomm.com
 Authentication-Results: smtp.subspace.kernel.org;
-	dkim=pass (2048-bit key) header.d=qualcomm.com header.i=@qualcomm.com header.a=rsa-sha256 header.s=qcppdkim1 header.b=aKjeGH5D;
-	dkim=pass (2048-bit key) header.d=oss.qualcomm.com header.i=@oss.qualcomm.com header.a=rsa-sha256 header.s=google header.b=F8C/d/ye
-Received: from pps.filterd (m0279870.ppops.net [127.0.0.1])
-	by mx0a-0031df01.pphosted.com (8.18.1.11/8.18.1.11) with ESMTP id 6AI2UunH2453531
-	for <linux-wireless@vger.kernel.org>; Wed, 18 Nov 2026 06:36:41 GMT
+	dkim=pass (2048-bit key) header.d=qualcomm.com header.i=@qualcomm.com header.a=rsa-sha256 header.s=qcppdkim1 header.b=hlL7LdXB;
+	dkim=pass (2048-bit key) header.d=oss.qualcomm.com header.i=@oss.qualcomm.com header.a=rsa-sha256 header.s=google header.b=VFP1ZZ8J
+Received: from pps.filterd (m0279871.ppops.net [127.0.0.1])
+	by mx0a-0031df01.pphosted.com (8.18.1.11/8.18.1.11) with ESMTP id 6AI2VvJg4059960
+	for <linux-wireless@vger.kernel.org>; Wed, 18 Nov 2026 06:36:43 GMT
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=qualcomm.com; h=
 	cc:content-transfer-encoding:date:from:in-reply-to:message-id
-	:mime-version:references:subject:to; s=qcppdkim1; bh=ohW7Mgj+W4b
-	4XRFreMQfi1pZatqbZCgQp00lV3xHb/8=; b=aKjeGH5Dm2EbyvOQGuPT3ETHcPP
-	Qg3KroKTzUoU3ZlK7gZdTsOsq8CvQqpFpfIQ82n4MwJwnN1uCqd+nlhfE2Xs5/bg
-	Y86stSN62A5tDIyE5bSTjQrSBMIoMd2TJMAshOymR/yF009V3x7CIQbEmuMk0uZe
-	oYJmGDbamdo5ei0BTnUpDVdzxUyTw7sL2FR/B1N62johKHhqbpijsWuM8Oo6ACpy
-	qkcjIZshxfV37y5/AebRJ3NRtcLoo7DSOdHpWSmQ2iPErZErmeT4AFm+K/n0LpNW
-	7MvBiLsCA4uLER9imnY9Df2+ZJEqe53+4C8Vfoh6amA0XdqIcR17kvPKCOQ==
-Received: from mail-dy1-f197.google.com (mail-dy1-f197.google.com [74.125.82.197])
-	by mx0a-0031df01.pphosted.com (PPS) with ESMTPS id 4j0yv99jt1-1
+	:mime-version:references:subject:to; s=qcppdkim1; bh=1oLVRSyZUqX
+	nzwkrKAF4Lyb2SfHQpMc5JGXALXu9ACE=; b=hlL7LdXB1lf/9D1K5NPedBbPMM1
+	L/2fqwgoh6dz+mHt42f0aJp8qEv1lrZ0LE04n89/GaWT/tm5exMJVFX+Y24zWmGW
+	WPceyq0y8qgSuxQH6r0H5pgkYvqbF8/0AjpwQGi28qh0YxJPg8AnJAHZlNilchA9
+	0E71vQyIEDUIaM4G0u6xR9PvRNVs1n3q/ISmlGEnA7xcX6Aa7oDzetCjUJhTMXI+
+	kFOzWKZMF6eyUQEy1gVOcBo0BX9QEoPzN8j3cWKhbNERAf1wwlaegJ4/kP+32E1t
+	QsuBr6jmtHT6MLGH58wI/KUrSoTtRu+YsJAC/HwlgcXnloOIgn3ek1YVO3w==
+Received: from mail-dl1-f70.google.com (mail-dl1-f70.google.com [74.125.82.70])
+	by mx0a-0031df01.pphosted.com (PPS) with ESMTPS id 4j0yvchmk5-1
 	(version=TLSv1.3 cipher=TLS_AES_128_GCM_SHA256 bits=128 verify=NOT)
-	for <linux-wireless@vger.kernel.org>; Wed, 18 Nov 2026 06:36:40 +0000 (GMT)
-Received: by mail-dy1-f197.google.com with SMTP id 5a478bee46e88-3724667bc16so445431eec.1
-        for <linux-wireless@vger.kernel.org>; Tue, 17 Nov 2026 22:36:40 -0800 (PST)
+	for <linux-wireless@vger.kernel.org>; Wed, 18 Nov 2026 06:36:43 +0000 (GMT)
+Received: by mail-dl1-f70.google.com with SMTP id a92af1059eb24-1af203073e0so717918c88.1
+        for <linux-wireless@vger.kernel.org>; Tue, 17 Nov 2026 22:36:43 -0800 (PST)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=oss.qualcomm.com; s=google; t=1794983800; x=1795588600; darn=vger.kernel.org;
+        d=oss.qualcomm.com; s=google; t=1794983802; x=1795588602; darn=vger.kernel.org;
         h=content-transfer-encoding:mime-version:references:in-reply-to
          :message-id:date:subject:cc:to:from:from:to:cc:subject:date
          :message-id:reply-to:content-type;
-        bh=ohW7Mgj+W4b4XRFreMQfi1pZatqbZCgQp00lV3xHb/8=;
-        b=F8C/d/yewKMMI2oQTpsaJDe+XQe7K1oJ0ZHaJA72n3gD+sf7IcL156OrXebzpOSokd
-         6fHF+7+Mu9HJvXIMcFRe2XgtY9JtfcnBpn2AJ+RLHnmEMrTptBAB05wEGS3WUqKxxt1a
-         lCgM+JVAhKlq+QUho8kSQMwHZkbfj6jTCC78tQK3Gbfxz/ZieX9IK6yzNBxaj5wNaADs
-         f54WydYdS+dL/jx6nxtYbA2vceFIhQwAJWF2qLC4E5eTkqW35W0qjxhZgWpYOSoQPzPK
-         VHWjEvOtYNLJ1WQF51nLr5Av7ii9HatcNo56eW2y+iPJyjAkKruEv+eXUeKEF99TGxKj
-         hyQQ==
+        bh=1oLVRSyZUqXnzwkrKAF4Lyb2SfHQpMc5JGXALXu9ACE=;
+        b=VFP1ZZ8JmJozwXw5cJRBm+w3lKNtEfSe7kDpkLNaZm5Io8zN9uQFWh48RCrMqCv4Y9
+         IrDou9gIQG2EVD7K/YY5COijK+1mLMwuz2YTo/ZD8UpLiSRH6Z1VYQyK7KQCShP34/ZA
+         FqKHUFi853u4QslsxUzmM9NSJBNy8UZZregZ2rfjolAanuFS044f1Smaqb9WYn/uUsVQ
+         DS17+DDsvSf1eQuMTRjv9wL+swZvW/C6QCbFfvDFImDte9cbIT+nUbz1V+gKAGZVE3dA
+         ZeFOE0norAy5LFFXDEg3+ZObbf7MoKTET7rqrmrtXBuiWgXrCiDGtfSRQZx1Xe+c2juy
+         9qvA==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=1e100.net; s=20260707; t=1794983800; x=1795588600;
+        d=1e100.net; s=20260707; t=1794983802; x=1795588602;
         h=content-transfer-encoding:mime-version:references:in-reply-to
          :message-id:date:subject:cc:to:from:x-gm-gg:x-gm-message-state:from
          :to:cc:subject:date:message-id:reply-to:content-type;
-        bh=ohW7Mgj+W4b4XRFreMQfi1pZatqbZCgQp00lV3xHb/8=;
-        b=KsOaZsKpKg9Rkx5Bixjdb9HsSf9Rvqcx6o5LRs7lkTsfv3lm54RSi/XI6bKkJBX382
-         WCD3y22FJMhQSYS9zAvZw4y6Sn/91yb0S6q4sqzeWpVRzfNyQOUpJ2q1BVqqTjpLlB2j
-         ZQeyMKuI3xazW6xfj5VzEn8CnqJqvharigKrNSsTtBJdOk9M9Pgd+yieFGxvuyqvH3b8
-         OD71v9g1Ar1iGkCApmG4zxTwnmD4v8ME384H9ZkdGq8bWCskWk6WkmAPC7NdszmKM+bO
-         PzZvvx54O28YLD352xxqaaU8LVxHfPRTFOMCCG1EGL1TuyRiCbzLC8KTQeNYP8xKeCMc
-         G0rw==
-X-Gm-Message-State: APuU4Z9XCRq8WJ/mV/b+hR4KL4uUcmDKOHW3ZXtMn8qInnpY7t0IZzDr
-	BNhmLcH5gfXiTqNxMEuFwi06TQhji+8KegUTNvWK82J/25RIe0hOydV8HynpnfQ0Pqg2NFJnC2z
-	b5XfJyyeIjbYeZ8BiOmyPBu5LIoIhAxtZinmO17E0wfADXGUi7tQY2lyve/nopIPCnFI05g==
-X-Gm-Gg: AZFdTZcnjiF7hHWd2rlZ41X/6SXw4X9SaYn5G7NqNOsufwmJAwQ7XMFBbgSrgGq1mcW
-	paBaN816bHq+F6Pq9Qn6JsQH0OJiWjSyL4bHhH0SBUbvnivPRqnZ3b/w0fI41sSv1g4YN0ssbg+
-	vUD92E8f5pxPJrnYArBLyKrOpOakqWEkYhrBkWx2fOcKjdo0fpImBzqh+eXYlaEci7gjh5KB+Oh
-	kW171hEGLsR1VjDZuuBsWOcqb/RlBUG0Lr9h6htVIbFYvDwl8JMz6J3HQKwsCbYIB3/P6nQCj1B
-	51iGnUHXsn4eyOjkBuSh122Lkhu2TuEHRlkQf/VrH4jnuQGQ02t4+w+NV9AuiZXws0BG/v00/gQ
-	WmreXht613DsFQ5UDxuBeZWkKV31qQWTjQRQT2hUw1K1cc16p+5TQcCo6eHC9jocGWs8IuhfKzc
-	mLAu8sqxGxnQ==
-X-Received: by 2002:a05:7301:1887:b0:36a:79cd:12df with SMTP id 5a478bee46e88-38281213fc6mr1561209eec.9.1794983799372;
-        Tue, 17 Nov 2026 22:36:39 -0800 (PST)
-X-Received: by 2002:a05:7301:1887:b0:36a:79cd:12df with SMTP id 5a478bee46e88-38281213fc6mr1561183eec.9.1794983798640;
-        Tue, 17 Nov 2026 22:36:38 -0800 (PST)
+        bh=1oLVRSyZUqXnzwkrKAF4Lyb2SfHQpMc5JGXALXu9ACE=;
+        b=RQA9c51ycY+uktZeRHKakM0QkY8F19Mzmc+qsMtWBRY2+K4YXantyYDtt0jLCohePw
+         dBFKiUf/bY3PU2tgCHnwJ8PkR2TNgQ7rihTaNeO+ei6XXTmAZtn8eVs1Uddv+0kfb+dm
+         Wl5d9fBQJ3nrLuvvg+my4M+cxFOidVPMYMQdTZkFyH0VrEm971x1h+O1+5R1rCsOCtna
+         +sh3l3bA6jbmmgACo06l0L/7ntQF4TN4XG1M4Upm8zaXkNTLo2pbl51oKlxBjN50sY5J
+         8n8xfTayzBc+2ytPLFuDLXYBwwbC5qFFZa49mbn7QyET3k4edmlDKyWn/j7b+yenApuq
+         MpTQ==
+X-Gm-Message-State: APuU4Z8ZaqlssdEdls2S85OUdlBgpxGNHnyVjKWDo+8QvIjjnpmUmcYZ
+	SmORmp8xHEx2bkmYBQ3uKh4o1urP1JQ4PjD+bjTkSsF0jnuIs68Q/9Rv5VR8aV1k1p5kCGJnaE+
+	RM3txFooixEmkZ/eMcRnTwVrFO3xIT6uc5fG+d+9s/lcaB+8aTTe6yfDlCrt7gy60AmTwt2FDal
+	UmoA==
+X-Gm-Gg: AYBFou3ZV4MwnVheJ8qbBNyR+wjfR80EAZstAgAzH9cDkBR2ft12psOU3cKDhL8up7u
+	qFbSwVHnVt82RKUt0yL6onbRF/BXipDUENOQKfQ3+Vq2mTHd/+rnlNzUa10dBAOo5HhT+tMaaFa
+	xJGy8gzO4J9h6J567gj5r3BOrJ/+JNn5bdrAuATkix2gzmC3jc7Fa99uoP7AMgKXBe/d61Cinxn
+	C388+VMG3W8IcIh8BstYti/4QNxLp/MhdBJBh78BNJPsQBmCX1JiJqJ7SoehpCBqgfrr2fGpjrL
+	ylZ6AsNMVKpdeNi5xUUvRH9VB3mCj6n3UmMaXEdvdaN1Eq7EqlwxcaWfbd3w4WakLK7Guoz5Wui
+	vDYDLZ1PTO+YgAwN3TCU2EmIANYQZME2f6h9Tl/Dp/4UNMbC49B8ayNJC+rnsLARCfRIuYvZHIF
+	v4wk/SxUUfow==
+X-Received: by 2002:a05:701a:ccdd:10b0:1b3:af3a:e793 with SMTP id a92af1059eb24-1b543a0e9bcmr1719570c88.0.1794983801976;
+        Tue, 17 Nov 2026 22:36:41 -0800 (PST)
+X-Received: by 2002:a05:701a:ccdd:10b0:1b3:af3a:e793 with SMTP id a92af1059eb24-1b543a0e9bcmr1719547c88.0.1794983801190;
+        Tue, 17 Nov 2026 22:36:41 -0800 (PST)
 Received: from hu-shivbara-hyd.qualcomm.com ([202.46.23.25])
-        by smtp.gmail.com with ESMTPSA id 5a478bee46e88-382a6800338sm4567268eec.11.2026.11.17.22.36.36
+        by smtp.gmail.com with ESMTPSA id 5a478bee46e88-382a6800338sm4567268eec.11.2026.11.17.22.36.39
         (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
-        Tue, 17 Nov 2026 22:36:38 -0800 (PST)
+        Tue, 17 Nov 2026 22:36:40 -0800 (PST)
 From: Shivani Baranwal <shivani.baranwal@oss.qualcomm.com>
 To: johannes@sipsolutions.net
 Cc: linux-wireless@vger.kernel.org, kavita.kavita@oss.qualcomm.com,
         vamsin@qti.qualcomm.com, vganneva@qti.qualcomm.com
-Subject: [PATCH wireless-next v4 10/19] wifi: nl80211/cfg80211: add support for NDP initiation in offload mode
-Date: Wed, 18 Nov 2026 12:05:45 +0530
-Message-Id: <20261118063554.2260397-11-shivani.baranwal@oss.qualcomm.com>
+Subject: [PATCH wireless-next v4 11/19] wifi: nl80211/cfg80211: add support for NDP response in offload mode
+Date: Wed, 18 Nov 2026 12:05:46 +0530
+Message-Id: <20261118063554.2260397-12-shivani.baranwal@oss.qualcomm.com>
 X-Mailer: git-send-email 2.34.1
 In-Reply-To: <20261118063554.2260397-1-shivani.baranwal@oss.qualcomm.com>
 References: <20261118063554.2260397-1-shivani.baranwal@oss.qualcomm.com>
@@ -120,89 +121,85 @@ List-Owner: <mailto:linux-wireless+owner@vger.kernel.org>
 Precedence: list
 MIME-Version: 1.0
 Content-Transfer-Encoding: 8bit
-X-Proofpoint-Spam-Info: AW1haW4tMjYxMTE4MDAyNiBTYWx0ZWRfX9uBReNi65w/T
- T2T68liJnmDFY3UNK9TPXfTbi6yNLYZwWgH7o9bPvGuFGzCMO80izXc+3DTTVQ2rEjm+No6NF44
- hjLubWsfSdYA4yXjzWPrvp7U6h0eJpo=
-X-Authority-Analysis: v=2.4 cv=acT0Dhot c=1 sm=1 tr=0 ts=6afd4778 cx=c_pps
- a=Uww141gWH0fZj/3QKPojxA==:117 a=ZePRamnt/+rB5gQjfz0u9A==:17
+X-Authority-Analysis: v=2.4 cv=R5OWitRX c=1 sm=1 tr=0 ts=6afd477b cx=c_pps
+ a=SvEPeNj+VMjHSW//kvnxuw==:117 a=ZePRamnt/+rB5gQjfz0u9A==:17
  a=zJRp6_cAMcgA:10 a=s4-Qcg_JpJYA:10 a=VkNPw1HP01LnGYTKEx00:22
- a=u7WPNUs3qKkmUXheDGA7:22 a=gowsoOTTUOVcmtlkKump:22 a=EUspDBNiAAAA:8
- a=Me5KlxI2VME_hw2-6gAA:9 a=PxkB5W3o20Ba91AHUih5:22
-X-Proofpoint-Spam-Details-Enc: AW1haW4tMjYxMTE4MDAyNiBTYWx0ZWRfX+52OeyA1tN8E
- iRQwHgZDYiqCdhH0aFzZCfa0DABcQbjBW/RtnmZ3pr4yrN4+LQUBJLX4ory0f5ky2qSmnjJj8+4
- IqZV+NEHB1OOXp0/uIQu4VpnHcefqOfq+1LG/fdVCWXdk3aVZeSURv5raNlwloAIM9I2I4Q/mjQ
- cajuMhhAOjoSRFXc6zLO1AVRD/SD6/8h7cXhRSGMHJLFzHWzUF/tRhQWXakrp+RmNC4/3Z1i/2+
- GBCwz2NAOznksYR87JONKRitNiGKPRn2IvGh9zptk1f3kqfCUrSu4oPblujvCO6FRSXQD1wcvZB
- JYFavXgoVqGhFkN/Q6RoTdiq1XE1VuQjPJw5uUbJt3elHdWKBwybKEfUe9YysQmySiGNhYBlnYK
- KCuzC01WRfrKCl7VlV1Q6tITz/T2vxK5ApjGszmIS64BSnUyOX8F1t1lRXhre0jsDsdWHfsD1cD
- bilfTov+JuD5Xu0gCUg==
-X-Proofpoint-ORIG-GUID: 81wrsEJz8I0znQCnt6gLXjEX4Ykknkdy
-X-Proofpoint-GUID: 81wrsEJz8I0znQCnt6gLXjEX4Ykknkdy
+ a=u7WPNUs3qKkmUXheDGA7:22 a=3WHJM1ZQz_JShphwDgj5:22 a=EUspDBNiAAAA:8
+ a=p-BaYTe5HE0DmCI7z_sA:9 a=Kq8ClHjjuc5pcCNDwlU0:22
+X-Proofpoint-GUID: RFIRWnrPzBKwZgNLh1PcolsfUl6XLy1t
+X-Proofpoint-Spam-Info: AW1haW4tMjYxMTE4MDAyNiBTYWx0ZWRfX/ctCcUjCh2dy
+ 9gG94fPghcK1RNQDfNyT4XOSlbiwLESn6HUpdB+9p9NypypF+jQM3eAVll4y2qBD7dazFAU/9gQ
+ v3mb8EwCq4LI68wyEYOeTU8GcL2yJWk=
+X-Proofpoint-Spam-Details-Enc: AW1haW4tMjYxMTE4MDAyNiBTYWx0ZWRfXycIT2LMSFxDu
+ oeuAX5zquWoqW/Vo5NKp5kVCtsFr3O38x7pA0ROj1naSaa4+67Ugq73GgPHm3hQZcjPbRvuqq6L
+ yWj3atJ+a6OOx0Eg+jZwbHqh4jMaYemaNdHBIif5j4F6A10SBeUwmvFj7hBXrZ/Lm2NUY/Unq1e
+ ygiFIDLDCLvrgYEThJystUtuotXzfd8hb2Jomfsf5UnSWUS0N08Fr0Fu3BJCObi3odO1VyHBcKC
+ vcGzZjItZ29WhEGz8qFM+W7xkTFDyOWwcwtSnD3Tvk+hlzpZuersfUa6/P1RH0d072GqAhjKkAe
+ mMz1usfMvcs9z2z477wfGlr5LOnFW2jGdc0yXWQW7sna7PbNtkkq2Azx3SaTj1DhQvA1AD/Qkiy
+ xRj0iKL79gxnWk9ncf3HMtMJE44ThZTWeKiHIxS1NjIeYAXxoKXNwOZf0uO8aotzSLtZIMT5geu
+ +IH85y2pulMmMMfaAMQ==
+X-Proofpoint-ORIG-GUID: RFIRWnrPzBKwZgNLh1PcolsfUl6XLy1t
 X-Proofpoint-Virus-Version: vendor=baseguard
  engine=ICAP:2.0.293,Aquarius:18.0.1176,Hydra:6.1.138,FMLib:17.12.100.49
  definitions=2026-11-18_01,2026-11-16_01,2025-10-01_01
 X-Proofpoint-Spam-Details: rule=outbound_notspam policy=outbound score=0
- lowpriorityscore=0 suspectscore=0 phishscore=0 impostorscore=0 bulkscore=0
- malwarescore=0 priorityscore=1501 spamscore=0 clxscore=1015 adultscore=0
+ clxscore=1015 impostorscore=0 spamscore=0 lowpriorityscore=0 suspectscore=0
+ malwarescore=0 priorityscore=1501 bulkscore=0 adultscore=0 phishscore=0
  classifier=typeunknown authscore=0 authtc= authcc= route=outbound adjust=0
  reason=mlx scancount=1 engine=8.22.0-2611040001 definitions=main-2611180026
 
-Add NL80211_CMD_NAN_NDP_INITIATE to let userspace initiate a NAN Data
-Path session when NDP management is offloaded to the device. Validate
-that the initiator NDI exists locally, pass key material by pointer, and
-apply the NAN security requirements to cipher suite, PMK, PMKID, and
-GTK.
+Add NL80211_CMD_NAN_NDP_RESPOND so userspace can accept or reject an
+incoming NDP request when the device offloads NDP management. Require a
+local responder NDI only when accepting; the initiator NDI belongs to
+the peer and is not validated as a local interface.
 
-Let the initiator provide QoS requirements for the NDL schedule through
-the minimum time slots and maximum latency fields. The device uses these
-values to allocate the NDL schedule within the user-configured local
-schedule.
+Restrict rejection requests to the reason and optional SSI, and enforce
+the NAN security requirements when accepting. Pass PMK material by
+pointer, clear the request skb, and trace request parameters without
+recording key bytes.
 
-Let the driver assign the NDP ID and return it in the command reply.
-Clear the request skb after handling it because it may contain PMK data.
-Trace the non-secret request parameters without recording PMK or PMKID
-bytes. Build the reply and reserve the NDP ID field before calling the
-driver, so reply construction cannot fail after the driver accepts the
-request.
+Allow the responder to provide transport port and protocol information
+when accepting an NDP request. Accept the NDL QoS requirements on
+accepted responses, and reject them when rejecting an NDP.
 
 Signed-off-by: Shivani Baranwal <shivani.baranwal@oss.qualcomm.com>
 ---
- include/net/cfg80211.h       |  65 ++++++++++
- include/uapi/linux/nl80211.h | 105 +++++++++++++++
- net/wireless/nl80211.c       | 242 +++++++++++++++++++++++++++++++++++
- net/wireless/rdev-ops.h      |  16 +++
- net/wireless/trace.h         |  93 ++++++++++++++
- 5 files changed, 521 insertions(+)
+ include/net/cfg80211.h       |  63 ++++++++++++
+ include/uapi/linux/nl80211.h |  39 +++++++-
+ net/wireless/nl80211.c       | 179 +++++++++++++++++++++++++++++++++++
+ net/wireless/rdev-ops.h      |  16 ++++
+ net/wireless/trace.h         |  92 ++++++++++++++++++
+ 5 files changed, 384 insertions(+), 5 deletions(-)
 
 diff --git a/include/net/cfg80211.h b/include/net/cfg80211.h
-index b1289d5fcd93..6b3b46a993a3 100644
+index 6b3b46a993a3..5857ce6be50f 100644
 --- a/include/net/cfg80211.h
 +++ b/include/net/cfg80211.h
-@@ -4387,6 +4387,60 @@ struct cfg80211_nan_peer_sched {
- 	struct cfg80211_nan_peer_map maps[CFG80211_NAN_MAX_PEER_MAPS];
+@@ -4441,6 +4441,60 @@ struct cfg80211_nan_ndp_initiate {
+ 	u16 qos_max_latency;
  };
  
 +/**
-+ * struct cfg80211_nan_ndp_initiate - NAN NDP initiate parameters
++ * struct cfg80211_nan_ndp_respond - NAN NDP respond parameters
 + *
 + * @peer_nmi: peer NMI address
-+ * @publish_id: publisher's service instance ID
-+ * @service_id: NAN service ID (%NL80211_NAN_FUNC_SERVICE_ID_LEN bytes)
-+ * @init_ndi: initiator NDI MAC address. The corresponding
-+ *	%NL80211_IFTYPE_NAN_DATA interface must exist.
-+ * @ssi: service-specific info (may be NULL)
++ * @ndp_id: NDP ID from the received NDP Request
++ * @init_ndi: initiator NDI MAC from the received NDP Request
++ * @resp_ndi: responder NDI MAC. The corresponding
++ *	%NL80211_IFTYPE_NAN_DATA interface must exist when accepting.
++ * @accept: if true, accept the NDP; if false, reject it
++ * @reason: Wi-Fi Aware reason code for rejection (valid when @accept is false)
++ * @ssi: response service-specific info (may be NULL)
 + * @ssi_len: length of @ssi
-+ * @cipher_suite: NAN cipher suite ID, 0 for open NDP
++ * @cipher_suite: NAN cipher suite ID (must match the initiator's)
 + * @pmk: ND-PMK used to derive the PTK; NULL if absent. Its length depends on
 + *	the cipher suite and is given by @pmk_len. Requires non-zero
 + *	@cipher_suite and %NL80211_EXT_FEATURE_SECURE_NAN.
 + * @pmk_len: length of @pmk in bytes
-+ * @pmkid: PMKID (16 octets) to include in the NDP Request, or NULL if absent
 + * @gtk_required: if true, GTK protection is required for group-addressed data
 + *	frames
 + * @gtk_cipher: GTK cipher suite ID, valid when @gtk_required is true
 + * @ipv6_intf_id: IPv6 link-local interface identifier, or NULL if absent
-+ * @ndp_id: output NDP ID assigned by the driver on success (1-255)
 + * @transport_info: if true, convey @transport_port and @transport_protocol to
 + *	the peer in the NDPE Service Info TLV (Generic Service Protocol). These
 + *	values are not conveyed if the peer does not support NDPE.
@@ -210,25 +207,25 @@ index b1289d5fcd93..6b3b46a993a3 100644
 + * @transport_protocol: IANA protocol number to convey when @transport_info is
 + *	true
 + * @qos_min_slots: minimum number of NAN time slots required for this NDP; 0
-+ *	means no preference
++ *	means no preference. Used only when accepting the NDP.
 + * @qos_max_latency: maximum number of NAN slots between two non-contiguous
-+ *	NDL CRBs; 0xffff means no preference
++ *	NDL CRBs; 0xffff means no preference. Used only when accepting the NDP.
 + */
-+struct cfg80211_nan_ndp_initiate {
++struct cfg80211_nan_ndp_respond {
 +	const u8 *peer_nmi;
-+	u8 publish_id;
-+	u8 service_id[NL80211_NAN_FUNC_SERVICE_ID_LEN];
++	u8 ndp_id;
 +	const u8 *init_ndi;
++	const u8 *resp_ndi;
++	bool accept;
++	u8 reason;
 +	const u8 *ssi;
 +	u8 ssi_len;
 +	u32 cipher_suite;
 +	const u8 *pmk;
 +	u8 pmk_len;
-+	const u8 *pmkid;
 +	bool gtk_required;
 +	u32 gtk_cipher;
 +	const u8 *ipv6_intf_id;
-+	u8 ndp_id;
 +	bool transport_info;
 +	u16 transport_port;
 +	u8 transport_protocol;
@@ -239,258 +236,143 @@ index b1289d5fcd93..6b3b46a993a3 100644
  /**
   * enum cfg80211_nan_conf_changes - indicates changed fields in NAN
   * configuration
-@@ -5374,6 +5428,14 @@ struct mgmt_frame_regs {
-  *	offloaded NDPs, userspace configures these channels for the device to
-  *	consider while negotiating NDL schedules.
-  *
-+ * @nan_ndp_initiate: Initiate a NAN Data Path session as the initiator.
-+ *	Only valid if the driver has set %WIPHY_NAN_FLAGS_OFFLOAD_NDP.
-+ *	The driver must set params->ndp_id to the assigned NDP ID (1-255) on
-+ *	success. Each accepted setup attempt completes asynchronously with one
-+ *	status notification, including on failure or timeout. If the device cannot
-+ *	meet the QoS requirements in @params, it reports setup failure with the
+@@ -5435,6 +5489,12 @@ struct mgmt_frame_regs {
+  *	status notification, including on failure or timeout. If the device cannot
+  *	meet the QoS requirements in @params, it reports setup failure with the
+  *	Wi-Fi Aware reason QoS_UNACCEPTABLE.
++ * @nan_ndp_respond: Respond to an incoming NDP request as the responder.
++ *	Only valid if the driver has set %WIPHY_NAN_FLAGS_OFFLOAD_NDP. Returning
++ *	success acknowledges the response command only; setup outcome is reported
++ *	asynchronously after the handshake. If the accepted response's QoS
++ *	requirements cannot be met, the driver reports setup failure with the
 + *	Wi-Fi Aware reason QoS_UNACCEPTABLE.
-+ *
+  *
   * @set_multicast_to_unicast: configure multicast to unicast conversion for BSS
   *
-  * @get_txq_stats: Get TXQ stats for interface or phy. If wdev is %NULL, this
-@@ -5788,6 +5850,9 @@ struct cfg80211_ops {
- 	int	(*nan_set_non_evac_channels)(struct wiphy *wiphy,
- 					     struct wireless_dev *wdev,
- 					     struct cfg80211_nan_non_evac_channels *channels);
-+	int	(*nan_ndp_initiate)(struct wiphy *wiphy,
-+				    struct wireless_dev *wdev,
-+				    struct cfg80211_nan_ndp_initiate *params);
+@@ -5853,6 +5913,9 @@ struct cfg80211_ops {
+ 	int	(*nan_ndp_initiate)(struct wiphy *wiphy,
+ 				    struct wireless_dev *wdev,
+ 				    struct cfg80211_nan_ndp_initiate *params);
++	int	(*nan_ndp_respond)(struct wiphy *wiphy,
++				   struct wireless_dev *wdev,
++				   struct cfg80211_nan_ndp_respond *params);
  	int	(*set_multicast_to_unicast)(struct wiphy *wiphy,
  					    struct net_device *dev,
  					    const bool enabled);
 diff --git a/include/uapi/linux/nl80211.h b/include/uapi/linux/nl80211.h
-index f22ad0a018a7..33af139c4d4b 100644
+index 33af139c4d4b..1d5e2f2f08ca 100644
 --- a/include/uapi/linux/nl80211.h
 +++ b/include/uapi/linux/nl80211.h
-@@ -1575,6 +1575,25 @@
-  *	addresses (%NL80211_ATTR_MLO_LINKS, each nested link with
-  *	%NL80211_ATTR_MLO_LINK_ID, %NL80211_ATTR_BSSID and %NL80211_ATTR_MAC).
+@@ -1593,6 +1593,18 @@
+  *	Aware reason QoS_UNACCEPTABLE.
+  *	Each accepted setup attempt completes asynchronously with exactly one
+  *	%NL80211_CMD_NAN_NDP_STATUS notification, including on failure or timeout.
++ * @NL80211_CMD_NAN_NDP_RESPOND: Respond to a received NDP request as
++ *	the responder. Requires %NL80211_NAN_CAPA_OFFLOAD_NDP. The NDI
++ *	interface specified in %NL80211_NAN_NDP_ATTR_RESP_NDI must already
++ *	exist as a %NL80211_IFTYPE_NAN_DATA interface. Carries
++ *	%NL80211_ATTR_NAN_NDP nested with %NL80211_NAN_NDP_ATTR_* fields.
++ *	The command reply only acknowledges that the response was accepted for
++ *	processing; setup outcome is reported asynchronously by
++ *	%NL80211_CMD_NAN_NDP_STATUS.
++ *	Transport port and protocol may be supplied together only when accepting.
++ *	NDL QoS attributes may also be supplied only when accepting. If the device
++ *	cannot meet the QoS requirements in an accepted response, setup fails and
++ *	the status notification reports the Wi-Fi Aware reason QoS_UNACCEPTABLE.
   *
-+ * @NL80211_CMD_NAN_NDP_INITIATE: Initiate NAN Data Path (NDP) setup
-+ *	as the initiator. Requires %NL80211_NAN_CAPA_OFFLOAD_NDP,
-+ *	%NL80211_ATTR_MAC (peer NMI), and %NL80211_ATTR_NAN_NDP. The NDI
-+ *	interface specified in %NL80211_NAN_NDP_ATTR_INIT_NDI must already
-+ *	exist as a %NL80211_IFTYPE_NAN_DATA interface. For a locally
-+ *	initiated NDP, the driver assigns the NDP ID and returns it in the
-+ *	%NL80211_ATTR_NAN_NDP reply.
-+ *	%NL80211_NAN_NDP_ATTR_TRANSPORT_PORT and
-+ *	%NL80211_NAN_NDP_ATTR_TRANSPORT_PROTOCOL may be supplied together to
-+ *	include transport information in the NDPE Service Info TLV.
-+ *	%NL80211_NAN_NDP_ATTR_QOS_MIN_SLOTS and
-+ *	%NL80211_NAN_NDP_ATTR_QOS_MAX_LATENCY may be supplied as NDL QoS
-+ *	requirements. The device uses them to allocate the NDL schedule within the
-+ *	user-configured local schedule. If the device cannot meet the QoS
-+ *	requirements, setup fails and the status notification reports the Wi-Fi
-+ *	Aware reason QoS_UNACCEPTABLE.
-+ *	Each accepted setup attempt completes asynchronously with exactly one
-+ *	%NL80211_CMD_NAN_NDP_STATUS notification, including on failure or timeout.
-+ *
   * @NL80211_CMD_MAX: highest used command number
   * @__NL80211_CMD_AFTER_LAST: internal use
-  */
-@@ -1862,6 +1881,8 @@ enum nl80211_commands {
- 	NL80211_CMD_EXECUTE_SMD_TRANSITION,
+@@ -1882,6 +1894,7 @@ enum nl80211_commands {
  	NL80211_CMD_COMPLETED_SMD_TRANSITION,
  
-+	NL80211_CMD_NAN_NDP_INITIATE,
-+
+ 	NL80211_CMD_NAN_NDP_INITIATE,
++	NL80211_CMD_NAN_NDP_RESPOND,
+ 
  	/* add new commands above here */
  
- 	/* used to define NL80211_CMD_MAX below */
-@@ -3356,6 +3377,9 @@ enum nl80211_commands {
-  * @NL80211_ATTR_ASSOC_PROTECTED_TWT: Enable protected TWT for the association,
-  *	requires protected TWT support (flag attribute)
-  *
-+ * @NL80211_ATTR_NAN_NDP: nested attribute carrying NAN Data Path parameters.
-+ *	See &enum nl80211_nan_ndp_attributes.
-+ *
-  * @NUM_NL80211_ATTR: total number of nl80211_attrs available
-  * @NL80211_ATTR_MAX: highest attribute number currently defined
-  * @__NL80211_ATTR_AFTER_LAST: internal use
-@@ -3963,6 +3987,8 @@ enum nl80211_attrs {
+@@ -8166,6 +8179,8 @@ enum nl80211_nan_conf_attributes {
+  *	For locally initiated NDPs, the corresponding
+  *	%NL80211_IFTYPE_NAN_DATA interface must exist.
+  * @NL80211_NAN_NDP_ATTR_RESP_NDI: ETH_ALEN-byte responder NDI MAC address.
++ *	When accepting with %NL80211_CMD_NAN_NDP_RESPOND, this must identify an
++ *	existing local %NL80211_IFTYPE_NAN_DATA interface.
+  * @NL80211_NAN_NDP_ATTR_SSI: binary. Service-specific info carried in
+  *	the NDP setup frames.
+  * @NL80211_NAN_NDP_ATTR_CIPHER_SUITE: u32 NAN cipher suite ID; 0 for open NDP.
+@@ -8186,17 +8201,29 @@ enum nl80211_nan_conf_attributes {
+  *	identifier, %NL80211_NAN_NDP_IPV6_INTF_ID_LEN bytes. The driver conveys it
+  *	in the NDPE attribute and selects NDP or NDPE based on peer capabilities.
+  * @NL80211_NAN_NDP_ATTR_TRANSPORT_PORT: u16 transport port. Must be supplied
+- *	with @NL80211_NAN_NDP_ATTR_TRANSPORT_PROTOCOL. The driver carries the pair
+- *	in the NDPE Service Info TLV (Generic Service Protocol). If the peer does
+- *	not support NDPE, the values are not conveyed.
++ *	with @NL80211_NAN_NDP_ATTR_TRANSPORT_PROTOCOL. The pair may be used in
++ *	%NL80211_CMD_NAN_NDP_INITIATE and in an accepting
++ *	%NL80211_CMD_NAN_NDP_RESPOND. The driver carries these values in the NDPE
++ *	Service Info TLV (Generic Service Protocol). If the peer does not support
++ *	NDPE, these values are not conveyed.
+  * @NL80211_NAN_NDP_ATTR_TRANSPORT_PROTOCOL: u8 IANA protocol number. Must be
+  *	supplied with @NL80211_NAN_NDP_ATTR_TRANSPORT_PORT.
+  * @NL80211_NAN_NDP_ATTR_QOS_MIN_SLOTS: optional u8 Minimum Time Slots field
+  *	of the NDL QoS attribute, specifying the minimum number of NAN time slots
+- *	required for this NDP. Absent or 0 means no preference.
++ *	required for this NDP. Absent or 0 means no preference. Used with
++ *	%NL80211_CMD_NAN_NDP_INITIATE and an accepting
++ *	%NL80211_CMD_NAN_NDP_RESPOND.
+  * @NL80211_NAN_NDP_ATTR_QOS_MAX_LATENCY: optional u16 Maximum Latency field of
+  *	the NDL QoS attribute, specifying the maximum number of NAN slots between
+- *	two non-contiguous NDL CRBs. Absent or 0xffff means no preference.
++ *	two non-contiguous NDL CRBs. Absent or 0xffff means no preference. Used
++ *	with %NL80211_CMD_NAN_NDP_INITIATE and an accepting
++ *	%NL80211_CMD_NAN_NDP_RESPOND.
++ * @NL80211_NAN_NDP_ATTR_ACCEPT: flag. If present in
++ *	%NL80211_CMD_NAN_NDP_RESPOND, it accepts the request; if absent, it is
++ *	rejected.
++ * @NL80211_NAN_NDP_ATTR_REASON: u8 Wi-Fi Aware reason code, not an IEEE 802.11
++ *	reason code (%NL80211_ATTR_REASON_CODE). Used for rejection with
++ *	%NL80211_CMD_NAN_NDP_RESPOND.
+  * @__NL80211_NAN_NDP_ATTR_LAST: Internal.
+  * @NL80211_NAN_NDP_ATTR_MAX: Highest NDP attribute.
+  */
+@@ -8219,6 +8246,8 @@ enum nl80211_nan_ndp_attributes {
+ 	NL80211_NAN_NDP_ATTR_TRANSPORT_PROTOCOL,
+ 	NL80211_NAN_NDP_ATTR_QOS_MIN_SLOTS,
+ 	NL80211_NAN_NDP_ATTR_QOS_MAX_LATENCY,
++	NL80211_NAN_NDP_ATTR_ACCEPT,
++	NL80211_NAN_NDP_ATTR_REASON,
  
- 	NL80211_ATTR_ASSOC_PROTECTED_TWT,
- 
-+	NL80211_ATTR_NAN_NDP,
-+
- 	/* add attributes here, update the policy in nl80211.c */
- 
- 	__NL80211_ATTR_AFTER_LAST,
-@@ -8120,6 +8146,85 @@ enum nl80211_nan_conf_attributes {
- 	NL80211_NAN_CONF_ATTR_MAX = NUM_NL80211_NAN_CONF_ATTR - 1,
- };
- 
-+#define NL80211_NAN_NDP_IPV6_INTF_ID_LEN	8
-+
-+/**
-+ * enum nl80211_nan_ndp_attributes - NAN Data Path attributes
-+ *
-+ * Nested attributes used within %NL80211_ATTR_NAN_NDP for NDP setup commands
-+ * and events.
-+ *
-+ * @__NL80211_NAN_NDP_ATTR_INVALID: Invalid.
-+ * @NL80211_NAN_NDP_ATTR_ID: u8 NDP ID (1-255), assigned by the NDP initiator.
-+ *	For locally initiated NDPs the driver assigns it and returns it in the
-+ *	%NL80211_CMD_NAN_NDP_INITIATE reply; do not include it in that request.
-+ * @NL80211_NAN_NDP_ATTR_PUBLISH_ID: u8 publisher's service instance ID, used
-+ *	to match the NDP to a service.
-+ * @NL80211_NAN_NDP_ATTR_SERVICE_ID: binary NAN service ID derived from the
-+ *	service name, %NL80211_NAN_FUNC_SERVICE_ID_LEN bytes.
-+ * @NL80211_NAN_NDP_ATTR_INIT_NDI: ETH_ALEN-byte initiator NDI MAC address.
-+ *	For locally initiated NDPs, the corresponding
-+ *	%NL80211_IFTYPE_NAN_DATA interface must exist.
-+ * @NL80211_NAN_NDP_ATTR_RESP_NDI: ETH_ALEN-byte responder NDI MAC address.
-+ * @NL80211_NAN_NDP_ATTR_SSI: binary. Service-specific info carried in
-+ *	the NDP setup frames.
-+ * @NL80211_NAN_NDP_ATTR_CIPHER_SUITE: u32 NAN cipher suite ID; 0 for open NDP.
-+ *	See the Wi-Fi Aware Specification for values.
-+ * @NL80211_NAN_NDP_ATTR_PMK: binary ND-PMK used to derive the PTK; its length
-+ *	depends on the cipher suite. Requires non-zero
-+ *	@NL80211_NAN_NDP_ATTR_CIPHER_SUITE and %NL80211_EXT_FEATURE_SECURE_NAN.
-+ * @NL80211_NAN_NDP_ATTR_PMKID: 16-octet PMKID. In
-+ *	%NL80211_CMD_NAN_NDP_INITIATE requests it identifies the PMK and is
-+ *	included in the SCIA of the NDP Request. In a peer-request notification,
-+ *	it carries the PMKID received in the peer's SCIA for cached-PMK lookup.
-+ * @NL80211_NAN_NDP_ATTR_GTK_REQUIRED: flag indicating that GTK protection is
-+ *	required for group-addressed data frames. Requires
-+ *	@NL80211_NAN_NDP_ATTR_GTK_CIPHER; IGTK and BIGTK are not covered.
-+ * @NL80211_NAN_NDP_ATTR_GTK_CIPHER: u32 GTK cipher suite ID. Required if
-+ *	@NL80211_NAN_NDP_ATTR_GTK_REQUIRED is set.
-+ * @NL80211_NAN_NDP_ATTR_IPV6_INTF_ID: binary IPv6 link-local interface
-+ *	identifier, %NL80211_NAN_NDP_IPV6_INTF_ID_LEN bytes. The driver conveys it
-+ *	in the NDPE attribute and selects NDP or NDPE based on peer capabilities.
-+ * @NL80211_NAN_NDP_ATTR_TRANSPORT_PORT: u16 transport port. Must be supplied
-+ *	with @NL80211_NAN_NDP_ATTR_TRANSPORT_PROTOCOL. The driver carries the pair
-+ *	in the NDPE Service Info TLV (Generic Service Protocol). If the peer does
-+ *	not support NDPE, the values are not conveyed.
-+ * @NL80211_NAN_NDP_ATTR_TRANSPORT_PROTOCOL: u8 IANA protocol number. Must be
-+ *	supplied with @NL80211_NAN_NDP_ATTR_TRANSPORT_PORT.
-+ * @NL80211_NAN_NDP_ATTR_QOS_MIN_SLOTS: optional u8 Minimum Time Slots field
-+ *	of the NDL QoS attribute, specifying the minimum number of NAN time slots
-+ *	required for this NDP. Absent or 0 means no preference.
-+ * @NL80211_NAN_NDP_ATTR_QOS_MAX_LATENCY: optional u16 Maximum Latency field of
-+ *	the NDL QoS attribute, specifying the maximum number of NAN slots between
-+ *	two non-contiguous NDL CRBs. Absent or 0xffff means no preference.
-+ * @__NL80211_NAN_NDP_ATTR_LAST: Internal.
-+ * @NL80211_NAN_NDP_ATTR_MAX: Highest NDP attribute.
-+ */
-+enum nl80211_nan_ndp_attributes {
-+	__NL80211_NAN_NDP_ATTR_INVALID,
-+
-+	NL80211_NAN_NDP_ATTR_ID,
-+	NL80211_NAN_NDP_ATTR_PUBLISH_ID,
-+	NL80211_NAN_NDP_ATTR_SERVICE_ID,
-+	NL80211_NAN_NDP_ATTR_INIT_NDI,
-+	NL80211_NAN_NDP_ATTR_RESP_NDI,
-+	NL80211_NAN_NDP_ATTR_SSI,
-+	NL80211_NAN_NDP_ATTR_CIPHER_SUITE,
-+	NL80211_NAN_NDP_ATTR_PMK,
-+	NL80211_NAN_NDP_ATTR_PMKID,
-+	NL80211_NAN_NDP_ATTR_GTK_REQUIRED,
-+	NL80211_NAN_NDP_ATTR_GTK_CIPHER,
-+	NL80211_NAN_NDP_ATTR_IPV6_INTF_ID,
-+	NL80211_NAN_NDP_ATTR_TRANSPORT_PORT,
-+	NL80211_NAN_NDP_ATTR_TRANSPORT_PROTOCOL,
-+	NL80211_NAN_NDP_ATTR_QOS_MIN_SLOTS,
-+	NL80211_NAN_NDP_ATTR_QOS_MAX_LATENCY,
-+
-+	/* keep last */
-+	__NL80211_NAN_NDP_ATTR_LAST,
-+	NL80211_NAN_NDP_ATTR_MAX = __NL80211_NAN_NDP_ATTR_LAST - 1,
-+};
-+
- /**
-  * enum nl80211_external_auth_action - Action to perform with external
-  *     authentication request. Used by NL80211_ATTR_EXTERNAL_AUTH_ACTION.
+ 	/* keep last */
+ 	__NL80211_NAN_NDP_ATTR_LAST,
 diff --git a/net/wireless/nl80211.c b/net/wireless/nl80211.c
-index 7426d2c8a40b..53cd9d5cd648 100644
+index 53cd9d5cd648..74be0f639315 100644
 --- a/net/wireless/nl80211.c
 +++ b/net/wireless/nl80211.c
-@@ -819,6 +819,34 @@ nl80211_nan_peer_map_policy[NL80211_NAN_PEER_MAP_ATTR_MAX + 1] = {
- 		NLA_POLICY_EXACT_LEN(CFG80211_NAN_SCHED_NUM_TIME_SLOTS),
+@@ -845,6 +845,8 @@ nl80211_nan_ndp_policy[NL80211_NAN_NDP_ATTR_MAX + 1] = {
+ 	[NL80211_NAN_NDP_ATTR_TRANSPORT_PROTOCOL] = { .type = NLA_U8 },
+ 	[NL80211_NAN_NDP_ATTR_QOS_MIN_SLOTS] = { .type = NLA_U8 },
+ 	[NL80211_NAN_NDP_ATTR_QOS_MAX_LATENCY] = { .type = NLA_U16 },
++	[NL80211_NAN_NDP_ATTR_ACCEPT] = { .type = NLA_FLAG },
++	[NL80211_NAN_NDP_ATTR_REASON] = { .type = NLA_U8 },
  };
  
-+static const struct nla_policy
-+nl80211_nan_ndp_policy[NL80211_NAN_NDP_ATTR_MAX + 1] = {
-+	[NL80211_NAN_NDP_ATTR_ID] = NLA_POLICY_RANGE(NLA_U8, 1, 255),
-+	[NL80211_NAN_NDP_ATTR_PUBLISH_ID] = { .type = NLA_U8 },
-+	[NL80211_NAN_NDP_ATTR_SERVICE_ID] =
-+		NLA_POLICY_EXACT_LEN(NL80211_NAN_FUNC_SERVICE_ID_LEN),
-+	[NL80211_NAN_NDP_ATTR_INIT_NDI] = NLA_POLICY_EXACT_LEN(ETH_ALEN),
-+	[NL80211_NAN_NDP_ATTR_RESP_NDI] = NLA_POLICY_EXACT_LEN(ETH_ALEN),
-+	[NL80211_NAN_NDP_ATTR_SSI] = {
-+		.type = NLA_BINARY,
-+		.len = NL80211_NAN_FUNC_SERVICE_SPEC_INFO_MAX_LEN
-+	},
-+	[NL80211_NAN_NDP_ATTR_CIPHER_SUITE] = { .type = NLA_U32 },
-+	[NL80211_NAN_NDP_ATTR_PMK] =
-+		NLA_POLICY_VALIDATE_FN(NLA_BINARY, validate_nan_pmk,
-+				       WLAN_PMK_LEN_SUITE_B_192),
-+	[NL80211_NAN_NDP_ATTR_PMKID] =
-+		NLA_POLICY_EXACT_LEN(WLAN_PMKID_LEN),
-+	[NL80211_NAN_NDP_ATTR_GTK_REQUIRED] = { .type = NLA_FLAG },
-+	[NL80211_NAN_NDP_ATTR_GTK_CIPHER] = { .type = NLA_U32 },
-+	[NL80211_NAN_NDP_ATTR_IPV6_INTF_ID] =
-+		NLA_POLICY_EXACT_LEN(NL80211_NAN_NDP_IPV6_INTF_ID_LEN),
-+	[NL80211_NAN_NDP_ATTR_TRANSPORT_PORT] = { .type = NLA_U16 },
-+	[NL80211_NAN_NDP_ATTR_TRANSPORT_PROTOCOL] = { .type = NLA_U8 },
-+	[NL80211_NAN_NDP_ATTR_QOS_MIN_SLOTS] = { .type = NLA_U8 },
-+	[NL80211_NAN_NDP_ATTR_QOS_MAX_LATENCY] = { .type = NLA_U16 },
-+};
-+
  static const struct nla_policy
- nl80211_nan_conf_policy[NL80211_NAN_CONF_ATTR_MAX + 1] = {
- 	[NL80211_NAN_CONF_CLUSTER_ID] =
-@@ -1112,6 +1140,7 @@ static const struct nla_policy nl80211_policy[NUM_NL80211_ATTR] = {
- 	[NL80211_ATTR_BANDS] = { .type = NLA_U32 },
- 	[NL80211_ATTR_NAN_CONFIG] = NLA_POLICY_NESTED(nl80211_nan_conf_policy),
- 	[NL80211_ATTR_NAN_FUNC] = { .type = NLA_NESTED },
-+	[NL80211_ATTR_NAN_NDP] = NLA_POLICY_NESTED(nl80211_nan_ndp_policy),
- 	[NL80211_ATTR_FILS_KEK] = { .type = NLA_BINARY,
- 				    .len = FILS_MAX_KEK_LEN },
- 	[NL80211_ATTR_FILS_NONCES] = NLA_POLICY_EXACT_LEN_WARN(2 * FILS_NONCE_LEN),
-@@ -18504,6 +18533,212 @@ static int nl80211_nan_set_peer_sched(struct sk_buff *skb,
- 	return rdev_nan_set_peer_sched(rdev, wdev, &sched);
+@@ -18739,6 +18741,176 @@ static int nl80211_nan_ndp_initiate(struct sk_buff *skb,
+ 	return genlmsg_reply(msg, info);
  }
  
-+static bool nl80211_nan_ndi_exists(struct cfg80211_registered_device *rdev,
-+				   const u8 *addr)
-+{
-+	struct wireless_dev *wdev;
-+
-+	lockdep_assert_wiphy(&rdev->wiphy);
-+
-+	list_for_each_entry(wdev, &rdev->wiphy.wdev_list, list) {
-+		if (wdev->iftype == NL80211_IFTYPE_NAN_DATA &&
-+		    ether_addr_equal(wdev_address(wdev), addr))
-+			return true;
-+	}
-+
-+	return false;
-+}
-+
-+static int nl80211_nan_ndp_initiate(struct sk_buff *skb,
-+				    struct genl_info *info)
++static int nl80211_nan_ndp_respond(struct sk_buff *skb,
++				   struct genl_info *info)
 +{
 +	struct cfg80211_registered_device *rdev = info->user_ptr[0];
 +	struct wireless_dev *wdev = info->user_ptr[1];
 +	struct nlattr *tb[NL80211_NAN_NDP_ATTR_MAX + 1];
-+	struct nlattr *ndp_attr, *id_attr;
-+	struct cfg80211_nan_ndp_initiate params = {};
-+	struct sk_buff *msg;
-+	void *hdr;
++	struct cfg80211_nan_ndp_respond params = {};
 +	bool secure_nan;
 +	int err;
 +
 +	if (wdev->iftype != NL80211_IFTYPE_NAN) {
 +		NL_SET_ERR_MSG(info->extack,
-+			       "NDP initiate requires NAN interface");
++			       "NDP respond requires NAN interface");
 +		return -EOPNOTSUPP;
 +	}
 +
@@ -503,7 +385,7 @@ index 7426d2c8a40b..53cd9d5cd648 100644
 +	if (!info->attrs[NL80211_ATTR_MAC] ||
 +	    !info->attrs[NL80211_ATTR_NAN_NDP]) {
 +		NL_SET_ERR_MSG(info->extack,
-+			       "NDP initiate requires peer NMI and NDP params");
++			       "NDP respond requires peer NMI and NDP params");
 +		return -EINVAL;
 +	}
 +
@@ -521,41 +403,75 @@ index 7426d2c8a40b..53cd9d5cd648 100644
 +		return -EINVAL;
 +	}
 +
-+	if (tb[NL80211_NAN_NDP_ATTR_ID]) {
-+		NL_SET_ERR_MSG_ATTR(info->extack,
-+				    tb[NL80211_NAN_NDP_ATTR_ID],
-+				    "NDP ID is assigned by the driver");
-+		return -EINVAL;
-+	}
-+
-+	if (!tb[NL80211_NAN_NDP_ATTR_INIT_NDI] ||
-+	    !tb[NL80211_NAN_NDP_ATTR_PUBLISH_ID] ||
-+	    !tb[NL80211_NAN_NDP_ATTR_SERVICE_ID]) {
++	if (!tb[NL80211_NAN_NDP_ATTR_ID] ||
++	    !tb[NL80211_NAN_NDP_ATTR_INIT_NDI]) {
 +		NL_SET_ERR_MSG(info->extack,
-+			       "NDP initiate requires INIT_NDI, PUBLISH_ID and SERVICE_ID");
++			       "NDP respond requires NDP ID and INIT_NDI");
 +		return -EINVAL;
-+	}
-+
-+	if (!nl80211_nan_ndi_exists(rdev,
-+				    nla_data(tb[NL80211_NAN_NDP_ATTR_INIT_NDI]))) {
-+		NL_SET_ERR_MSG_ATTR(info->extack,
-+				    tb[NL80211_NAN_NDP_ATTR_INIT_NDI],
-+				    "INIT_NDI must identify an existing NAN Data interface");
-+		return -ENODEV;
 +	}
 +
 +	params.peer_nmi = nla_data(info->attrs[NL80211_ATTR_MAC]);
++	params.ndp_id = nla_get_u8(tb[NL80211_NAN_NDP_ATTR_ID]);
 +	params.init_ndi = nla_data(tb[NL80211_NAN_NDP_ATTR_INIT_NDI]);
-+	params.publish_id = nla_get_u8(tb[NL80211_NAN_NDP_ATTR_PUBLISH_ID]);
-+	memcpy(params.service_id,
-+	       nla_data(tb[NL80211_NAN_NDP_ATTR_SERVICE_ID]),
-+	       NL80211_NAN_FUNC_SERVICE_ID_LEN);
-+	if (tb[NL80211_NAN_NDP_ATTR_TRANSPORT_PORT]) {
-+		params.transport_info = true;
-+		params.transport_port =
-+			nla_get_u16(tb[NL80211_NAN_NDP_ATTR_TRANSPORT_PORT]);
-+		params.transport_protocol =
-+			nla_get_u8(tb[NL80211_NAN_NDP_ATTR_TRANSPORT_PROTOCOL]);
++	params.accept = nla_get_flag(tb[NL80211_NAN_NDP_ATTR_ACCEPT]);
++	params.qos_max_latency = U16_MAX;
++
++	if (params.accept) {
++		if (tb[NL80211_NAN_NDP_ATTR_REASON]) {
++			NL_SET_ERR_MSG_ATTR(info->extack,
++					    tb[NL80211_NAN_NDP_ATTR_REASON],
++					    "REASON is only valid when rejecting");
++			return -EINVAL;
++		}
++
++		if (!tb[NL80211_NAN_NDP_ATTR_RESP_NDI]) {
++			NL_SET_ERR_MSG(info->extack,
++				       "NDP accept requires RESP_NDI");
++			return -EINVAL;
++		}
++		params.resp_ndi = nla_data(tb[NL80211_NAN_NDP_ATTR_RESP_NDI]);
++		if (!nl80211_nan_ndi_exists(rdev,
++					    params.resp_ndi)) {
++			NL_SET_ERR_MSG_ATTR(info->extack,
++					    tb[NL80211_NAN_NDP_ATTR_RESP_NDI],
++					    "RESP_NDI must identify an existing NAN Data interface");
++			return -ENODEV;
++		}
++
++		if (tb[NL80211_NAN_NDP_ATTR_TRANSPORT_PORT]) {
++			params.transport_info = true;
++			params.transport_port =
++				nla_get_u16(tb[NL80211_NAN_NDP_ATTR_TRANSPORT_PORT]);
++			params.transport_protocol =
++				nla_get_u8(tb[NL80211_NAN_NDP_ATTR_TRANSPORT_PROTOCOL]);
++		}
++
++		if (tb[NL80211_NAN_NDP_ATTR_QOS_MIN_SLOTS])
++			params.qos_min_slots =
++				nla_get_u8(tb[NL80211_NAN_NDP_ATTR_QOS_MIN_SLOTS]);
++
++		if (tb[NL80211_NAN_NDP_ATTR_QOS_MAX_LATENCY])
++			params.qos_max_latency =
++				nla_get_u16(tb[NL80211_NAN_NDP_ATTR_QOS_MAX_LATENCY]);
++	} else {
++		if (tb[NL80211_NAN_NDP_ATTR_RESP_NDI] ||
++		    tb[NL80211_NAN_NDP_ATTR_CIPHER_SUITE] ||
++		    tb[NL80211_NAN_NDP_ATTR_PMK] ||
++		    tb[NL80211_NAN_NDP_ATTR_GTK_REQUIRED] ||
++		    tb[NL80211_NAN_NDP_ATTR_GTK_CIPHER] ||
++		    tb[NL80211_NAN_NDP_ATTR_IPV6_INTF_ID] ||
++		    tb[NL80211_NAN_NDP_ATTR_TRANSPORT_PORT] ||
++		    tb[NL80211_NAN_NDP_ATTR_TRANSPORT_PROTOCOL] ||
++		    tb[NL80211_NAN_NDP_ATTR_QOS_MIN_SLOTS] ||
++		    tb[NL80211_NAN_NDP_ATTR_QOS_MAX_LATENCY]) {
++			NL_SET_ERR_MSG(info->extack,
++				       "RESP_NDI, cipher, PMK, GTK, IPv6 IID, transport info and QoS are only valid when accepting");
++			return -EINVAL;
++		}
++
++		if (tb[NL80211_NAN_NDP_ATTR_REASON])
++			params.reason =
++				nla_get_u8(tb[NL80211_NAN_NDP_ATTR_REASON]);
 +	}
 +
 +	if (tb[NL80211_NAN_NDP_ATTR_SSI]) {
@@ -576,23 +492,18 @@ index 7426d2c8a40b..53cd9d5cd648 100644
 +		return -EOPNOTSUPP;
 +	}
 +
-+	if (tb[NL80211_NAN_NDP_ATTR_PMK] ||
-+	    tb[NL80211_NAN_NDP_ATTR_PMKID] ||
-+	    tb[NL80211_NAN_NDP_ATTR_GTK_REQUIRED]) {
-+		if (!secure_nan || !params.cipher_suite) {
-+			NL_SET_ERR_MSG(info->extack,
-+				       "PMK, PMKID, and GTK require SECURE_NAN and a non-zero cipher suite");
-+			return -EINVAL;
-+		}
++	if ((tb[NL80211_NAN_NDP_ATTR_PMK] ||
++	     tb[NL80211_NAN_NDP_ATTR_GTK_REQUIRED]) &&
++	    (!secure_nan || !params.cipher_suite)) {
++		NL_SET_ERR_MSG(info->extack,
++			       "PMK and GTK require SECURE_NAN and a non-zero cipher suite");
++		return -EINVAL;
 +	}
 +
 +	if (tb[NL80211_NAN_NDP_ATTR_PMK]) {
 +		params.pmk = nla_data(tb[NL80211_NAN_NDP_ATTR_PMK]);
 +		params.pmk_len = nla_len(tb[NL80211_NAN_NDP_ATTR_PMK]);
 +	}
-+
-+	if (tb[NL80211_NAN_NDP_ATTR_PMKID])
-+		params.pmkid = nla_data(tb[NL80211_NAN_NDP_ATTR_PMKID]);
 +
 +	if (tb[NL80211_NAN_NDP_ATTR_GTK_REQUIRED]) {
 +		if (!tb[NL80211_NAN_NDP_ATTR_GTK_CIPHER]) {
@@ -616,65 +527,19 @@ index 7426d2c8a40b..53cd9d5cd648 100644
 +		params.ipv6_intf_id =
 +			nla_data(tb[NL80211_NAN_NDP_ATTR_IPV6_INTF_ID]);
 +
-+	if (tb[NL80211_NAN_NDP_ATTR_QOS_MIN_SLOTS])
-+		params.qos_min_slots =
-+			nla_get_u8(tb[NL80211_NAN_NDP_ATTR_QOS_MIN_SLOTS]);
-+
-+	params.qos_max_latency = U16_MAX;
-+	if (tb[NL80211_NAN_NDP_ATTR_QOS_MAX_LATENCY])
-+		params.qos_max_latency =
-+			nla_get_u16(tb[NL80211_NAN_NDP_ATTR_QOS_MAX_LATENCY]);
-+
-+	msg = nlmsg_new(NLMSG_DEFAULT_SIZE, GFP_KERNEL);
-+	if (!msg)
-+		return -ENOMEM;
-+
-+	hdr = nl80211hdr_put(msg, info->snd_portid, info->snd_seq, 0,
-+			     NL80211_CMD_NAN_NDP_INITIATE);
-+	if (!hdr) {
-+		nlmsg_free(msg);
-+		return -ENOMEM;
-+	}
-+
-+	ndp_attr = nla_nest_start_noflag(msg, NL80211_ATTR_NAN_NDP);
-+	if (!ndp_attr) {
-+		nlmsg_free(msg);
-+		return -ENOBUFS;
-+	}
-+
-+	id_attr = nla_reserve(msg, NL80211_NAN_NDP_ATTR_ID, sizeof(u8));
-+	if (!id_attr) {
-+		nlmsg_free(msg);
-+		return -ENOBUFS;
-+	}
-+
-+	err = rdev_nan_ndp_initiate(rdev, wdev, &params);
-+	if (err) {
-+		nlmsg_free(msg);
-+		return err;
-+	}
-+
-+	if (WARN_ON_ONCE(!params.ndp_id)) {
-+		nlmsg_free(msg);
-+		return -EINVAL;
-+	}
-+
-+	*(u8 *)nla_data(id_attr) = params.ndp_id;
-+	nla_nest_end(msg, ndp_attr);
-+	genlmsg_end(msg, hdr);
-+	return genlmsg_reply(msg, info);
++	return rdev_nan_ndp_respond(rdev, wdev, &params);
 +}
 +
  static bool nl80211_nan_is_sched_empty(struct cfg80211_nan_local_sched *sched)
  {
  	if (!sched->n_channels)
-@@ -21816,6 +22051,13 @@ static const struct genl_small_ops nl80211_small_ops[] = {
- 		.flags = GENL_UNS_ADMIN_PERM,
- 		.internal_flags = IFLAGS(NL80211_FLAG_NEED_NETDEV_UP),
+@@ -22058,6 +22230,13 @@ static const struct genl_small_ops nl80211_small_ops[] = {
+ 		.internal_flags = IFLAGS(NL80211_FLAG_NEED_WDEV_UP |
+ 					 NL80211_FLAG_CLEAR_SKB),
  	},
 +	{
-+		.cmd = NL80211_CMD_NAN_NDP_INITIATE,
-+		.doit = nl80211_nan_ndp_initiate,
++		.cmd = NL80211_CMD_NAN_NDP_RESPOND,
++		.doit = nl80211_nan_ndp_respond,
 +		.flags = GENL_ADMIN_PERM,
 +		.internal_flags = IFLAGS(NL80211_FLAG_NEED_WDEV_UP |
 +					 NL80211_FLAG_CLEAR_SKB),
@@ -683,25 +548,25 @@ index 7426d2c8a40b..53cd9d5cd648 100644
  
  static struct genl_family nl80211_fam __ro_after_init = {
 diff --git a/net/wireless/rdev-ops.h b/net/wireless/rdev-ops.h
-index 44a4255bbc03..e60478a25a31 100644
+index e60478a25a31..c58b83210d60 100644
 --- a/net/wireless/rdev-ops.h
 +++ b/net/wireless/rdev-ops.h
-@@ -1189,6 +1189,22 @@ static inline void rdev_stop_pd(struct cfg80211_registered_device *rdev,
- 	trace_rdev_return_void(&rdev->wiphy);
+@@ -1205,6 +1205,22 @@ rdev_nan_ndp_initiate(struct cfg80211_registered_device *rdev,
+ 	return ret;
  }
  
 +static inline int
-+rdev_nan_ndp_initiate(struct cfg80211_registered_device *rdev,
-+		      struct wireless_dev *wdev,
-+		      struct cfg80211_nan_ndp_initiate *params)
++rdev_nan_ndp_respond(struct cfg80211_registered_device *rdev,
++		     struct wireless_dev *wdev,
++		     struct cfg80211_nan_ndp_respond *params)
 +{
 +	int ret;
 +
-+	if (!rdev->ops->nan_ndp_initiate)
++	if (!rdev->ops->nan_ndp_respond)
 +		return -EOPNOTSUPP;
 +
-+	trace_rdev_nan_ndp_initiate(&rdev->wiphy, wdev, params);
-+	ret = rdev->ops->nan_ndp_initiate(&rdev->wiphy, wdev, params);
++	trace_rdev_nan_ndp_respond(&rdev->wiphy, wdev, params);
++	ret = rdev->ops->nan_ndp_respond(&rdev->wiphy, wdev, params);
 +	trace_rdev_return_int(&rdev->wiphy, ret);
 +	return ret;
 +}
@@ -710,39 +575,40 @@ index 44a4255bbc03..e60478a25a31 100644
  				   struct net_device *dev,
  				   struct cfg80211_acl_data *params)
 diff --git a/net/wireless/trace.h b/net/wireless/trace.h
-index b0ff3cc4176d..26e966c743c8 100644
+index 26e966c743c8..8c5fdbe23747 100644
 --- a/net/wireless/trace.h
 +++ b/net/wireless/trace.h
-@@ -2552,6 +2552,99 @@ TRACE_EVENT(rdev_nan_set_non_evac_channels,
- 				__entry->n_channels, sizeof(u32)))
- );
+@@ -2645,6 +2645,98 @@ TRACE_EVENT(rdev_nan_ndp_initiate,
+ #undef RDEV_NAN_NDP_INITIATE_FMT_4
+ #undef RDEV_NAN_NDP_INITIATE_FMT_5
  
-+#define RDEV_NAN_NDP_INITIATE_FMT_1 \
-+	", peer: %pM, init_ndi: %pM, publish_id: %u, "
-+#define RDEV_NAN_NDP_INITIATE_FMT_2 \
-+	"service_id: %s, ssi_len: %u, ssi: %s, "
-+#define RDEV_NAN_NDP_INITIATE_FMT_3 \
-+	"cipher_suite: %u, pmk_len: %u, pmkid_present: %d, "
-+#define RDEV_NAN_NDP_INITIATE_FMT_4 \
-+	"gtk_required: %d, gtk_cipher: %u, ipv6_intf_id_present: %d, "
-+#define RDEV_NAN_NDP_INITIATE_FMT_5 \
-+	"ipv6_intf_id: %s, qos_min_slots: %u, qos_max_latency: %u"
-+TRACE_EVENT(rdev_nan_ndp_initiate,
++#define NDP_RESP_FMT_1 \
++	", peer_nmi: %pM, ndp_id: %u, init_ndi: %pM, "
++#define NDP_RESP_FMT_2 \
++	"resp_ndi: %pM, accept: %d, reason: %u, ssi_len: %u, ssi: %s, "
++#define NDP_RESP_FMT_3 \
++	"cipher_suite: %u, pmk_len: %u, gtk_required: %d, gtk_cipher: %u, "
++#define NDP_RESP_FMT_4 \
++	"ipv6_intf_id_present: %d, ipv6_intf_id: %s, " \
++	"qos_min_slots: %u, qos_max_latency: %u"
++
++TRACE_EVENT(rdev_nan_ndp_respond,
 +	TP_PROTO(struct wiphy *wiphy, struct wireless_dev *wdev,
-+		 struct cfg80211_nan_ndp_initiate *params),
++		 struct cfg80211_nan_ndp_respond *params),
 +	TP_ARGS(wiphy, wdev, params),
 +	TP_STRUCT__entry(
 +		WIPHY_ENTRY
 +		WDEV_ENTRY
 +		__array(u8, peer_nmi, ETH_ALEN)
++		__field(u8, ndp_id)
 +		__array(u8, init_ndi, ETH_ALEN)
-+		__field(u8, publish_id)
-+		__array(u8, service_id, NL80211_NAN_FUNC_SERVICE_ID_LEN)
++		__array(u8, resp_ndi, ETH_ALEN)
++		__field(bool, accept)
++		__field(u8, reason)
 +		__field(u8, ssi_len)
 +		__dynamic_array(u8, ssi, params->ssi_len)
 +		__field(u32, cipher_suite)
 +		__field(u8, pmk_len)
-+		__field(bool, pmkid_present)
 +		__field(bool, gtk_required)
 +		__field(u32, gtk_cipher)
 +		__field(bool, transport_info)
@@ -757,17 +623,20 @@ index b0ff3cc4176d..26e966c743c8 100644
 +		WIPHY_ASSIGN;
 +		WDEV_ASSIGN;
 +		memcpy(__entry->peer_nmi, params->peer_nmi, ETH_ALEN);
++		__entry->ndp_id = params->ndp_id;
 +		memcpy(__entry->init_ndi, params->init_ndi, ETH_ALEN);
-+		__entry->publish_id = params->publish_id;
-+		memcpy(__entry->service_id, params->service_id,
-+		       NL80211_NAN_FUNC_SERVICE_ID_LEN);
++		if (params->resp_ndi)
++			memcpy(__entry->resp_ndi, params->resp_ndi, ETH_ALEN);
++		else
++			memset(__entry->resp_ndi, 0, ETH_ALEN);
++		__entry->accept = params->accept;
++		__entry->reason = params->reason;
 +		__entry->ssi_len = params->ssi_len;
-+		if (params->ssi_len)
++		if (params->ssi && params->ssi_len)
 +			memcpy(__get_dynamic_array(ssi), params->ssi,
 +			       params->ssi_len);
 +		__entry->cipher_suite = params->cipher_suite;
 +		__entry->pmk_len = params->pmk ? params->pmk_len : 0;
-+		__entry->pmkid_present = !!params->pmkid;
 +		__entry->gtk_required = params->gtk_required;
 +		__entry->gtk_cipher = params->gtk_cipher;
 +		__entry->transport_info = params->transport_info;
@@ -784,31 +653,26 @@ index b0ff3cc4176d..26e966c743c8 100644
 +		__entry->qos_max_latency = params->qos_max_latency;
 +	),
 +	TP_printk(WIPHY_PR_FMT ", " WDEV_PR_FMT
-+		  RDEV_NAN_NDP_INITIATE_FMT_1 RDEV_NAN_NDP_INITIATE_FMT_2
-+		  RDEV_NAN_NDP_INITIATE_FMT_3 RDEV_NAN_NDP_INITIATE_FMT_4
-+		  RDEV_NAN_NDP_INITIATE_FMT_5
++		  NDP_RESP_FMT_1 NDP_RESP_FMT_2 NDP_RESP_FMT_3 NDP_RESP_FMT_4
 +		  ", transport_info: %d, transport_port: %u, transport_protocol: %u",
-+		  WIPHY_PR_ARG, WDEV_PR_ARG, __entry->peer_nmi, __entry->init_ndi,
-+		  __entry->publish_id,
-+		  __print_array(__entry->service_id,
-+				NL80211_NAN_FUNC_SERVICE_ID_LEN, sizeof(u8)),
-+		  __entry->ssi_len,
++		  WIPHY_PR_ARG, WDEV_PR_ARG, __entry->peer_nmi, __entry->ndp_id,
++		  __entry->init_ndi, __entry->resp_ndi, __entry->accept,
++		  __entry->reason, __entry->ssi_len,
 +		  __print_array(__get_dynamic_array(ssi), __entry->ssi_len,
 +				sizeof(u8)),
 +		  __entry->cipher_suite, __entry->pmk_len,
-+		  __entry->pmkid_present, __entry->gtk_required,
-+		  __entry->gtk_cipher, __entry->ipv6_intf_id_present,
++		  __entry->gtk_required, __entry->gtk_cipher,
++		  __entry->ipv6_intf_id_present,
 +		  __print_array(__entry->ipv6_intf_id,
 +				NL80211_NAN_NDP_IPV6_INTF_ID_LEN, sizeof(u8)),
 +		  __entry->qos_min_slots, __entry->qos_max_latency,
 +		  __entry->transport_info, __entry->transport_port,
 +		  __entry->transport_protocol)
 +);
-+#undef RDEV_NAN_NDP_INITIATE_FMT_1
-+#undef RDEV_NAN_NDP_INITIATE_FMT_2
-+#undef RDEV_NAN_NDP_INITIATE_FMT_3
-+#undef RDEV_NAN_NDP_INITIATE_FMT_4
-+#undef RDEV_NAN_NDP_INITIATE_FMT_5
++#undef NDP_RESP_FMT_1
++#undef NDP_RESP_FMT_2
++#undef NDP_RESP_FMT_3
++#undef NDP_RESP_FMT_4
 +
  TRACE_EVENT(rdev_set_mac_acl,
  	TP_PROTO(struct wiphy *wiphy, struct net_device *netdev,
