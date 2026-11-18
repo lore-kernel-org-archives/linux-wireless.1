@@ -1,96 +1,67 @@
-Authentication-Results: smtp.subspace.kernel.org; arc=none smtp.remote-ip=209.85.160.174
+Authentication-Results: smtp.subspace.kernel.org; arc=none smtp.remote-ip=100.103.45.18
 ARC-Seal: i=1; d=subspace.kernel.org; s=arc20261015; a=rsa-sha256; cv=none;
-	t=1795048149;
-	b=NURGQ+LQ83j5In1oKSZladq+hY4L42AlKu42VorzIK4yTaZV2gfrX/mHl0vsddrqxuPD
-	 n9cJqjl+OqO3ucfvZG84otziz793EMJf3fMPOTOHPlz/z38TjnB+y3txDbV/zHbqmRI25
-	 T2XNCuUjXuOO2LgQh+Hoo6i6/x4TBlnW85Dt4k3LIJM82w2gS84CrEVYM0oEQXT6/gNx5
-	 xbafRzsVzS3/x2QUxaM8bPr7+1CTQZrVswdIwmdRQXtORZo5lz6kpUosrXd6I7TepY1Ln
-	 zJKt92FZ8qvcz9nGH+9G85RruPmMj/RjY6yQxKJVUITQ1p53iIHz+VsWBwn/PM2+5BQ==
+	t=1795049422;
+	b=QEeEyy7WQTXoBwJrpMo9HOgfp8oXB9gfzsBNuBk2IjJbgySlFf/WMhvVkjjbO4WQRqXX
+	 3t9f5OkG5S6H58alMM8xFNUVyrhihFZHe+GKx+nWSipNUYupFl4InEmoV3PtyoP37MUks
+	 wJzxw+Fsl2rlLwTS8lWbZc3ElGhdUHEKujoxOLGUmfcyomX4hPQ7gj1xg2ziTR1hlM1u+
+	 qs+aWAT1In7/Xy7brbzcnjeoxaXHzV1Icy0w9cU6B9uZAGuGSYUS89wBHF4sVDoU7JP8Y
+	 TkqpCPw6L8LCNH7whX6QH6s/L9+A9d/W7ZJeZMrgJbN3HWiA6UMCBkVHrzIPOiF/SjQ==
 ARC-Message-Signature: i=1; d=subspace.kernel.org; s=arc20261015;
-	a=rsa-sha256; c=relaxed/relaxed; t=1795048149;
-	h=DMARC-Filter:Received:DKIM-Signature:X-Google-DKIM-Signature:
-	 X-Gm-Message-State:X-Gm-Gg:X-Received:Received:From:To:Cc:Subject:
-	 Date:Message-ID:X-Mailer:In-Reply-To:References:MIME-Version:
-	 Content-Transfer-Encoding;
-	bh=DjXdfM9Xk6dJXeJxolWhgQCA3DIf/b/Pn3vsuXj+pJI=;
-	b=kLqwnHa9UjgcItQTkLsYPKAhAFwA5r6eAPdONVi4q4xrQb/v1lXpmIRw9TQTaLA0Rokm
-	 +Hn7EzcnYjsJDnm4ug2gPbmD/QAiqqRa+t8Kr5ptCzbGAXIQNPbhbGIuKyegOzytqsiql
-	 CrTPIvZgSvvnkItlj90BhhXRCnglxa1PuX9AJICYuIKYARN2Qk71E5lTjXrTJbiqncV2y
-	 VLMdXcTnrySygpl0LgfksX86sZOFfFzAT2sdXxoShty2bz50gCL5CyJHHEL/XQCN3qkT8
-	 2MoH/MfqKzKl6biY0USA2Nyb95uLtw7lSFXORMQSFtDCBnIQNj/WhGfu4g0UuWDmd3Q==
+	a=rsa-sha256; c=relaxed/relaxed; t=1795049422;
+	h=Received:DKIM-Signature:From:To:Cc:Subject:Date:Message-ID:X-Mailer:
+	 In-Reply-To:References:User-Agent:X-stable:X-Patchwork-Hint:
+	 MIME-Version:Content-Transfer-Encoding;
+	bh=oy5ALarL/4nLWwgSv3U2fEUsvPQULQiWYyD2WaUnfO8=;
+	b=T/1ob2BIWbdaolIDY5WQp2mHP2ynaPuq5YypjvOfu8H1eG9tbH85zZDWB1KLRoDRJssP
+	 ZaD1asuSby+IsYhsOK6A+x6IEirzoG6WESzGrPGjUoAbwcBU4G+hoAEZXCnqx0YzEo/ky
+	 Vr0igHBbfQS5iZBAB8mL1XV/BXUGpMWDpy92rXlbcitMIHqQesxLkulXzf5FJfm6XL86c
+	 /RJDejFPBDd8MbdOeBesOcWw+Ol/+hc8Kuj3Cqcas6/GqaNhTGxfNB7/og5V6CE+oOvn+
+	 r4Iv/V+1FVki3T8lNpfwvRgCCFwstWCOkB/kpGSo+y/3gc6ZvhtR3I3WVmCONhT3pkw==
 ARC-Authentication-Results: i=1; smtp.subspace.kernel.org; 
-	dmarc=pass header.from=gmail.com;
-	spf=pass smtp.mailfrom=gmail.com;
-	dkim=pass header.d=gmail.com header.i=@gmail.com header.a=rsa-sha256 header.s=20260707 header.b=LNosMmSY;
-	arc=none smtp.remote-ip=209.85.160.174
-Received: from mail-qt1-f174.google.com (mail-qt1-f174.google.com [209.85.160.174])
-	(using TLSv1.3 with cipher TLS_AES_128_GCM_SHA256 (128/128 bits)
-	 key-exchange X25519 server-signature ECDSA (prime256v1) server-digest SHA256)
+	dkim=pass header.d=linuxfoundation.org header.i=@linuxfoundation.org header.a=rsa-sha256 header.s=korg header.b=eJB8Z0K8;
+	arc=none smtp.remote-ip=100.103.45.18
+Received: from smtp.kernel.org (quasi.space.kernel.org [100.103.45.18])
+	(using TLSv1.3 with cipher TLS_AES_256_GCM_SHA384 (256/256 bits)
+	 key-exchange X25519 server-signature ECDSA (prime256v1))
 	(No client certificate requested)
-	by smtp.subspace.kernel.org (Postfix) with ESMTPS id 1CCEF606A33A
-	for <linux-wireless@vger.kernel.org>; Thu, 19 Nov 2026 00:29:09 +0000 (UTC)
-DMARC-Filter: OpenDMARC Filter v1.4.2 smtp.subspace.kernel.org 1CCEF606A33A
-Authentication-Results: smtp.subspace.kernel.org; dmarc=pass (p=none dis=none) header.from=gmail.com
-Authentication-Results: smtp.subspace.kernel.org; spf=pass smtp.mailfrom=gmail.com
+	by smtp.subspace.kernel.org (Postfix) with ESMTPS id 9C165606A32A;
+	Thu, 19 Nov 2026 00:50:22 +0000 (UTC)
 Authentication-Results: smtp.subspace.kernel.org;
-	dkim=pass (2048-bit key) header.d=gmail.com header.i=@gmail.com header.a=rsa-sha256 header.s=20260707 header.b=LNosMmSY
-Received: by mail-qt1-f174.google.com with SMTP id d75a77b69052e-5364042eecfso19581591cf.2
-        for <linux-wireless@vger.kernel.org>; Wed, 18 Nov 2026 16:29:08 -0800 (PST)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=gmail.com; s=20260707; t=1795048148; x=1795652948; darn=vger.kernel.org;
-        h=content-transfer-encoding:mime-version:references:in-reply-to
-         :message-id:date:subject:cc:to:from:from:to:cc:subject:date
-         :message-id:reply-to:content-type;
-        bh=DjXdfM9Xk6dJXeJxolWhgQCA3DIf/b/Pn3vsuXj+pJI=;
-        b=LNosMmSYVWnJETNENXouh3pSxSOcixqfbVhjtJFB4W4x7If/33+aNHIddZVsFFbdGZ
-         WJLKx5XKzdzp79zwfIzhKaVdDqJ9xW8YaDzT5Goc03+rhDMuHU/sVKfeRl91f8HQx/bU
-         2RAAKG1Phd5ZQtIVBcNBxE019+G4lGoWqy/J2tOXkoqcOgyOn75bysQFaqD1edQIv3A2
-         FKJ6iMJZkzFS0z6zDa+IfoKGFW1ytliU50KTxI0dW2DOMRUGWmaK+VJbLJkCXO2+tD81
-         wtfPAxQdXqKA+U5tciIsFvE6/Tk/yq74Hfo/IKJa5NuA8udDB4/G+AJYUeOm1uofhQ4g
-         +kZg==
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=1e100.net; s=20260707; t=1795048148; x=1795652948;
-        h=content-transfer-encoding:mime-version:references:in-reply-to
-         :message-id:date:subject:cc:to:from:x-gm-gg:x-gm-message-state:from
-         :to:cc:subject:date:message-id:reply-to:content-type;
-        bh=DjXdfM9Xk6dJXeJxolWhgQCA3DIf/b/Pn3vsuXj+pJI=;
-        b=G0N2eH6ORdaiVAeMGJZr9b/cdMCDdCP4rYNoGI5jFEfce0E226PfrEPK2ddUCT39t1
-         MYk5ODPn67dgSI2cdt4n+VGGjYDEInQ0KijTAvpbwJuEYn16ylIymOVuT7pqFol8/ofo
-         k1U/oqFvrlzFNxGylBJBW9xUty1FXFtXIP3UtJ1RHmTcHHG142ze2DsGP/nVf9wZcGJS
-         Q7pgBp/lOgx8rthtcrx1io5fNv9tWOiQDxPvDoY2+bKKH3aFm+rWzwy8Sb1EiUm6T1OC
-         06OFYutvs04szZkv1WNPhS82P4bc83L2lK1gotcSZ94o14dxixHqXTcaB/Ykn6u9YeMk
-         Bqrw==
-X-Gm-Message-State: APuU4Z+FsVoO3M8VEbfgzPGZ3QvO214UeBB19a6o0psJwGtamZ74MloF
-	gIJq7m8UqzIjRhXbm0N0/SeocuUD4jpkztJsqs0vMbq+CFWcIFD2kqbD
-X-Gm-Gg: AYBFou31ShTU8LtQVf5AUp7UoDIZPcjh6/HcVj9stF8Y/RFj47mA6qroA/h+olUJEyb
-	AaOZksihSYaOEcpF2WyCbyUA8TgOBBXF9W0x2WMddi2mBCLS5QiATvNLkIj72h/ulkGQA8f8/yB
-	vzUYxFh3M/PaDXAXgamORK/Mn2+j5NrnOefB5GutDJ5ftjA1jAegDm/pzDMTswJTiNJ2rfsUWuD
-	WEzugrT7tktZ4Q6Z7KPQwclgikeK8Dt+7RSVj0cfeTymrCa91frF9BdbTCWipFOazB7Z3VVcwhi
-	NhDgh72oUj5D5uZh7nteQThZeDaPbJjwzW0YWP7wrbyYaMco3cEVDbUbQFDrpanJT4QpRHHQuXw
-	0yYcXBHDf3pza93427m/VvUQg+xfZhJtuKBMjwKtZS+icqaaB6eEdyxEvtyIawegBhOwzkVnr5R
-	82OKRwEYKXb6daMluf1kDJRwl38HxFbp8uh+gdrmWBj7cTJJ4V5JeHt3Ck2tQjzJvb33wQs7kVo
-	ftJZO9Wkci/LVQCzFRjiWLta0kj2LyQ9spGL9D8fhTKXFf8LuTP4Jxh+sQWySO4y34Ahq/m1DI7
-	1h1J4tzVtJoMlQP11Vq18cq18BqjDZV/fdGunNgpHlx2sFN02FqS3uftYekBalUAzvds+6YOmlw
-	=
-X-Received: by 2002:a05:622a:2b0b:b0:55d:33e2:a351 with SMTP id d75a77b69052e-55d5a537aabmr69062431cf.15.1795048148019;
-        Wed, 18 Nov 2026 16:29:08 -0800 (PST)
-Received: from linux.. ([8.34.174.240])
-        by smtp.gmail.com with ESMTPSA id 6a1803df08f44-92114d16bafsm34925086d6.7.2026.11.18.16.29.07
-        (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
-        Wed, 18 Nov 2026 16:29:07 -0800 (PST)
-From: Changyul Lee <lcy8047@gmail.com>
-To: Jeff Johnson <jjohnson@kernel.org>,
-	Loic Poulain <loic.poulain@oss.qualcomm.com>
-Cc: linux-wireless@vger.kernel.org,
-	ath10k@lists.infradead.org,
-	linux-kernel@vger.kernel.org,
-	Changyul Lee <lcy8047@gmail.com>
-Subject: [PATCH ath-current v2 2/2] wifi: ath10k: drop extra skb reference when HL TX fails
-Date: Wed, 18 Nov 2026 19:28:58 -0500
-Message-ID: <20261119002858.425666-3-lcy8047@gmail.com>
-X-Mailer: git-send-email 2.43.0
-In-Reply-To: <20261119002858.425666-1-lcy8047@gmail.com>
-References: <20261119002858.425666-1-lcy8047@gmail.com>
+	dkim=pass (1024-bit key) header.d=linuxfoundation.org header.i=@linuxfoundation.org header.a=rsa-sha256 header.s=korg header.b=eJB8Z0K8
+Received: by smtp.kernel.org (Postfix) with ESMTPSA id EFB761F000C5;
+	Thu, 19 Nov 2026 00:50:21 +0000 (UTC)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=linuxfoundation.org;
+	s=korg; t=1795049422;
+	bh=oy5ALarL/4nLWwgSv3U2fEUsvPQULQiWYyD2WaUnfO8=;
+	h=From:To:Cc:Subject:Date:In-Reply-To:References;
+	b=eJB8Z0K8vKLIwXTkpwj6WVwMNPLxMfDWwnkZzoTGFarSbyOkg8Po7kf4zOwHoQYfN
+	 rLDev4mmvSjaMl2Y52emvEdC4efesyA4C6ZPEFcthoO6CvxE8E1gCmZP+yt1NK6+yQ
+	 2QrfkV8EeyIPCxGJSGtUvYJZ1lL+OZjajIqbFgSQ=
+From: Greg Kroah-Hartman <gregkh@linuxfoundation.org>
+To: stable@vger.kernel.org
+Cc: Greg Kroah-Hartman <gregkh@linuxfoundation.org>,
+	patches@lists.linux.dev,
+	Randy Dunlap <rdunlap@infradead.org>,
+	Johannes Berg <johannes@sipsolutions.net>,
+	Kalle Valo <kvalo@kernel.org>,
+	linux-wireless@vger.kernel.org,
+	"David S. Miller" <davem@davemloft.net>,
+	Eric Dumazet <edumazet@google.com>,
+	Jakub Kicinski <kuba@kernel.org>,
+	Paolo Abeni <pabeni@redhat.com>,
+	netdev@vger.kernel.org,
+	Simon Horman <horms@kernel.org>,
+	Johannes Berg <johannes.berg@intel.com>,
+	Sasha Levin <sashal@kernel.org>
+Subject: [PATCH 6.1 2345/2857] wifi: cfg80211: fix header kernel-doc typos
+Date: Wed, 18 Nov 2026 15:56:19 +0100
+Message-ID: <20261118150325.962779487@linuxfoundation.org>
+X-Mailer: git-send-email 2.56.0
+In-Reply-To: <20261118150201.293410965@linuxfoundation.org>
+References: <20261118150201.293410965@linuxfoundation.org>
+User-Agent: quilt/0.69
+X-stable: review
+X-Patchwork-Hint: ignore
 X-Mailing-List: linux-wireless@vger.kernel.org
 List-Id: <linux-wireless.vger.kernel.org>
 List-Post: <mailto:linux-wireless@vger.kernel.org>
@@ -102,28 +73,124 @@ Precedence: list
 MIME-Version: 1.0
 Content-Transfer-Encoding: 8bit
 
-If ath10k_htc_send_hl() fails, drop the reference taken by skb_get()
-so the skb can be freed.
+6.1-stable review patch.  If anyone has any objections, please let me know.
 
-Fixes: 30382dd1cf3a ("ath10k: fix use-after-free on SDIO data frames")
-Signed-off-by: Changyul Lee <lcy8047@gmail.com>
+------------------
+
+From: Randy Dunlap <rdunlap@infradead.org>
+
+[ Upstream commit 98e0c7f85773ab161d804103649b33f8a97cf1b3 ]
+
+Correct spelling of several words.
+
+Signed-off-by: Randy Dunlap <rdunlap@infradead.org>
+Cc: Johannes Berg <johannes@sipsolutions.net>
+Cc: Kalle Valo <kvalo@kernel.org>
+Cc: linux-wireless@vger.kernel.org
+Cc: "David S. Miller" <davem@davemloft.net>
+Cc: Eric Dumazet <edumazet@google.com>
+Cc: Jakub Kicinski <kuba@kernel.org>
+Cc: Paolo Abeni <pabeni@redhat.com>
+Cc: netdev@vger.kernel.org
+Reviewed-by: Simon Horman <horms@kernel.org>
+Link: https://lore.kernel.org/r/20231001191633.19090-1-rdunlap@infradead.org
+Signed-off-by: Johannes Berg <johannes.berg@intel.com>
+Stable-dep-of: 298618f28bd3 ("wifi: cfg80211: reg: protect regdb pointer with RCU")
+Signed-off-by: Sasha Levin <sashal@kernel.org>
 ---
- drivers/net/wireless/ath/ath10k/htt_tx.c | 2 ++
- 1 file changed, 2 insertions(+)
+ include/net/cfg80211.h | 20 ++++++++++----------
+ 1 file changed, 10 insertions(+), 10 deletions(-)
 
-diff --git a/drivers/net/wireless/ath/ath10k/htt_tx.c b/drivers/net/wireless/ath/ath10k/htt_tx.c
-index 298e6a092101..7142dc1c4eb9 100644
---- a/drivers/net/wireless/ath/ath10k/htt_tx.c
-+++ b/drivers/net/wireless/ath/ath10k/htt_tx.c
-@@ -1383,6 +1383,8 @@ static int ath10k_htt_tx_hl(struct ath10k_htt *htt, enum ath10k_hw_txrx_mode txm
- 		ath10k_htt_tx_free_msdu_id(htt, msdu_id);
- 		spin_unlock_bh(&htt->tx_lock);
- 	}
-+	if (res)
-+		dev_kfree_skb_any(msdu);
+diff --git a/include/net/cfg80211.h b/include/net/cfg80211.h
+index 691d328e0507f..636fb2a77f996 100644
+--- a/include/net/cfg80211.h
++++ b/include/net/cfg80211.h
+@@ -2407,7 +2407,7 @@ struct mesh_config {
+  * @user_mpm: userspace handles all MPM functions
+  * @dtim_period: DTIM period to use
+  * @beacon_interval: beacon interval to use
+- * @mcast_rate: multicat rate for Mesh Node [6Mbps is the default for 802.11a]
++ * @mcast_rate: multicast rate for Mesh Node [6Mbps is the default for 802.11a]
+  * @basic_rates: basic rates to use when creating the mesh
+  * @beacon_rate: bitrate to be used for beacons
+  * @userspace_handles_dfs: whether user space controls DFS operation, i.e.
+@@ -2678,7 +2678,7 @@ struct cfg80211_bss_select_adjust {
+  * @match_sets: sets of parameters to be matched for a scan result
+  *	entry to be considered valid and to be passed to the host
+  *	(others are filtered out).
+- *	If ommited, all results are passed.
++ *	If omitted, all results are passed.
+  * @n_match_sets: number of match sets
+  * @report_results: indicates that results were reported for this request
+  * @wiphy: the wiphy this was for
+@@ -2712,7 +2712,7 @@ struct cfg80211_bss_select_adjust {
+  *	to the specified band while deciding whether a better BSS is reported
+  *	using @relative_rssi. If delta is a negative number, the BSSs that
+  *	belong to the specified band will be penalized by delta dB in relative
+- *	comparisions.
++ *	comparisons.
+  */
+ struct cfg80211_sched_scan_request {
+ 	u64 reqid;
+@@ -3548,7 +3548,7 @@ struct cfg80211_update_ft_ies_params {
+  * This structure provides information needed to transmit a mgmt frame
+  *
+  * @chan: channel to use
+- * @offchan: indicates wether off channel operation is required
++ * @offchan: indicates whether off channel operation is required
+  * @wait: duration for ROC
+  * @buf: buffer to transmit
+  * @len: buffer length
+@@ -3666,7 +3666,7 @@ struct cfg80211_nan_func_filter {
+  * @publish_bcast: if true, the solicited publish should be broadcasted
+  * @subscribe_active: if true, the subscribe is active
+  * @followup_id: the instance ID for follow up
+- * @followup_reqid: the requestor instance ID for follow up
++ * @followup_reqid: the requester instance ID for follow up
+  * @followup_dest: MAC address of the recipient of the follow up
+  * @ttl: time to live counter in DW.
+  * @serv_spec_info: Service Specific Info
+@@ -6642,7 +6642,7 @@ static inline const u8 *cfg80211_find_ie(u8 eid, const u8 *ies, int len)
+  * @ies: data consisting of IEs
+  * @len: length of data
+  *
+- * Return: %NULL if the etended element could not be found or if
++ * Return: %NULL if the extended element could not be found or if
+  * the element is invalid (claims to be longer than the given
+  * data) or if the byte array doesn't match; otherwise return the
+  * requested element struct.
+@@ -6767,7 +6767,7 @@ int regulatory_hint(struct wiphy *wiphy, const char *alpha2);
+ /**
+  * regulatory_set_wiphy_regd - set regdom info for self managed drivers
+  * @wiphy: the wireless device we want to process the regulatory domain on
+- * @rd: the regulatory domain informatoin to use for this wiphy
++ * @rd: the regulatory domain information to use for this wiphy
+  *
+  * Set the regulatory domain information for self-managed wiphys, only they
+  * may use this function. See %REGULATORY_WIPHY_SELF_MANAGED for more
+@@ -6858,7 +6858,7 @@ bool regulatory_pre_cac_allowed(struct wiphy *wiphy);
+  * Regulatory self-managed driver can use it to proactively
+  *
+  * @alpha2: the ISO/IEC 3166 alpha2 wmm rule to be queried.
+- * @freq: the freqency(in MHz) to be queried.
++ * @freq: the frequency (in MHz) to be queried.
+  * @rule: pointer to store the wmm rule from the regulatory db.
+  *
+  * Self-managed wireless drivers can use this function to  query
+@@ -9066,9 +9066,9 @@ bool cfg80211_iftype_allowed(struct wiphy *wiphy, enum nl80211_iftype iftype,
  
- out:
- 	return res;
+ /**
+  * cfg80211_assoc_comeback - notification of association that was
+- * temporarly rejected with a comeback
++ * temporarily rejected with a comeback
+  * @netdev: network device
+- * @ap_addr: AP (MLD) address that rejected the assocation
++ * @ap_addr: AP (MLD) address that rejected the association
+  * @timeout: timeout interval value TUs.
+  *
+  * this function may sleep. the caller must hold the corresponding wdev's mutex.
 -- 
-2.43.0
+2.53.0
+
+
 
