@@ -1,59 +1,59 @@
 Authentication-Results: smtp.subspace.kernel.org; arc=none smtp.remote-ip=46.4.11.11
 ARC-Seal: i=1; d=subspace.kernel.org; s=arc20261015; a=rsa-sha256; cv=none;
 	t=1795018712;
-	b=H3v+pAEA1jF69Qnmn0/zznvIaXgbXVVxmnkJmH9dHgNE1I4vq6nvv6nif5JmyJCc4hoq
-	 kpxj/lAtTf/4e4pu4pBLCYE9X4s34VGx13+T40ZscKTaY1IhoqVvgbft2LxoaOA6/4uKh
-	 SN3gsR6n5dnGIVYYW8NEJlPJXspaWbih0rt4QA+D5xGPXcNu3aBnVUEUWJ/WQB0mlx5Ij
-	 2MqLtnpHsQPqsFj0XE2Cxuvbe7qvt6rrXSpfgoPMekCi0k5hZKu+pGp3jikTAmD7uqcDK
-	 BzB5mYvB1cggPaF2XxiOfcY98PdCA4Xq2IQHuOB6kykDh4moT98ewtMM+jnUcaP65oQ==
+	b=CeYiVjjP/A/aKsTD8fO2rhNig0e3NXDRT+c99iTV7Nx9f6jRURTynDx5fy7ucqkRGZM+
+	 YyuEitRuFOM4TfihPpkvuxqqhQYNQ+7XTfqvAjBw0GbT898ek6eS1ombwcrbmCRFWE10Q
+	 SCjD6uyMmeBbZ5f3r/6vINEkMK0Zh6CA9zS0jBOu/VBoxwa5K+gDtYLzW0E3mgQi0EJPQ
+	 25R1y4YyyAzfgnWHSQriRB/F/c27kYDFpOG0QhSGSlUliZyl/9VHOZ6LJN9gLutSnQC9Z
+	 yWBqN6AgkUDnA4l5FZs0BXRXeLUUeBPfjtRuCSB+ciZxRSOw8guug2FS55OeCmtqk/Q==
 ARC-Message-Signature: i=1; d=subspace.kernel.org; s=arc20261015;
 	a=rsa-sha256; c=relaxed/relaxed; t=1795018712;
 	h=DMARC-Filter:DKIM-Signature:Received:From:To:Subject:Date:Message-ID:
 	 X-Mailer:In-Reply-To:References:MIME-Version:
 	 Content-Transfer-Encoding;
-	bh=atty5VjjxsIkGyTrhR+UBgtQocRVbelRzBoZ/NMMHTs=;
-	b=uf0td/oynQQa3V2dFFt6RtBi3RhwGE0idsNTFgIShq8WfwOEn1sdQcymhozVn7jqHab5
-	 tZ7+WEE1a7GUgCCXvIzkW9V6qwcadtjy8WJKY/B5d7nbxg9nFPGq6E0kFVORA4YxBrGlZ
-	 dLmPvYAfQ4risdIlB87J6fKmaSJ5hRhQzuqZqTinP33W4vnNMsV0brz7Hmxm66qOC0eWj
-	 jstAeopZjjESO/GRP0FQMVWFs1igldlY4oFklNQauZzJHKQfgdAq8MJCWBGMzuj8nRBFM
-	 ocdIH2RUc/swNNTSJyvxeWmXdAKReNhQbcEG605g3dyWG/IeDtWGMgOKZ1dq8kQgLJA==
+	bh=fj3RMq5IxGtjf0tGADp5Q+j45HfvrI7Hk+c9t27dhl8=;
+	b=KlmFTXba7iYeTZq0A+3sKMtd4lO+o/cYX7ro/wVRciTMkT3+bjhGyYbvrGI1BKgeZcns
+	 i4VmIyAZGmdtEwz7GoX6jOIvekm7clt90J06F4oNxOO7DSO3c3DSfC8ROAaBcIUs96CmT
+	 /G0qAZj7aoFKeyMfL/Lat9Xn78ldT1ghFx3uh7HHpZUoJlF5/vvrll8VxIhBPbUsNnZEQ
+	 14ia+ZFRjIrl+SupCZPxpaCBl7qcUKfKWsAe4u60tG+0RH0TfTTDLHQbLofZmzhVbiEDM
+	 4u6ObS6zs2rtiICebUQSAr7O6vVIVvoT4SQ1e+i8qxbYuUD8a07SFIslvtp4OaZ9sfg==
 ARC-Authentication-Results: i=1; smtp.subspace.kernel.org; 
 	dmarc=pass header.from=nbd.name;
 	spf=pass smtp.mailfrom=nbd.name;
-	dkim=pass header.d=nbd.name header.i=@nbd.name header.a=rsa-sha256 header.s=20160729 header.b=bCsT0opr;
+	dkim=pass header.d=nbd.name header.i=@nbd.name header.a=rsa-sha256 header.s=20160729 header.b=VKoXROkA;
 	arc=none smtp.remote-ip=46.4.11.11
 Received: from nbd.name (nbd.name [46.4.11.11])
 	(using TLSv1.3 with cipher TLS_AES_256_GCM_SHA384 (256/256 bits)
 	 key-exchange ECDHE (prime256v1) server-signature ECDSA (prime256v1) server-digest SHA256)
 	(No client certificate requested)
-	by smtp.subspace.kernel.org (Postfix) with ESMTPS id 5D8AC606A33F
-	for <linux-wireless@vger.kernel.org>; Wed, 18 Nov 2026 16:18:32 +0000 (UTC)
-DMARC-Filter: OpenDMARC Filter v1.4.2 smtp.subspace.kernel.org 5D8AC606A33F
+	by smtp.subspace.kernel.org (Postfix) with ESMTPS id E24C8606A335
+	for <linux-wireless@vger.kernel.org>; Wed, 18 Nov 2026 16:18:31 +0000 (UTC)
+DMARC-Filter: OpenDMARC Filter v1.4.2 smtp.subspace.kernel.org E24C8606A335
 Authentication-Results: smtp.subspace.kernel.org; dmarc=pass (p=none dis=none) header.from=nbd.name
 Authentication-Results: smtp.subspace.kernel.org; spf=pass smtp.mailfrom=nbd.name
 Authentication-Results: smtp.subspace.kernel.org;
-	dkim=pass (1024-bit key) header.d=nbd.name header.i=@nbd.name header.a=rsa-sha256 header.s=20160729 header.b=bCsT0opr
+	dkim=pass (1024-bit key) header.d=nbd.name header.i=@nbd.name header.a=rsa-sha256 header.s=20160729 header.b=VKoXROkA
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed; d=nbd.name;
 	s=20160729; h=Content-Transfer-Encoding:MIME-Version:References:In-Reply-To:
 	Message-ID:Date:Subject:To:From:Sender:Reply-To:Cc:Content-Type:Content-ID:
 	Content-Description:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc
 	:Resent-Message-ID:List-Id:List-Help:List-Unsubscribe:List-Subscribe:
 	List-Post:List-Owner:List-Archive;
-	bh=atty5VjjxsIkGyTrhR+UBgtQocRVbelRzBoZ/NMMHTs=; b=bCsT0oprFlUkisDvRASZc1PdYL
-	/H0dB34LdM3WTeZa8bMcECYafeY0ciiKhmFQ7qnnfSrFlu+biMmzMWB7w29xynUhIqZv2qFR4gU/z
-	NkBr6LsG1uxHJ2qwcM99/cIvz0YoGjo6AmBGnpY6cwvj0MH2D5GADApd0V8qnFrmz0+k=;
+	bh=fj3RMq5IxGtjf0tGADp5Q+j45HfvrI7Hk+c9t27dhl8=; b=VKoXROkAaC7RIUmk4W+ceh22ur
+	y0WfstxInf4+WxMbfikvT/y41hbJWwRza/X6Zldh22hhw47EqrYKVE4m2nPnNaDdz7IiUNynv+HQ+
+	AIIaqBHYscpgBq3cxX1cMc1d0Zc2SDBL3JI9PDKxzvo75ZaX6aRugy9Ag8UlDjkSCj04=;
 Received: from p200300cadf12920000000000000005bb.dip0.t-ipconnect.de ([2003:ca:df12:9200::5bb] helo=localhost.localdomain)
 	by ds12 with esmtpsa  (TLS1.3) tls TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384
 	(Exim 4.96)
 	(envelope-from <nbd@nbd.name>)
-	id 1xTiMg-00552s-2n
+	id 1xTiMg-00552s-0c
 	for linux-wireless@vger.kernel.org;
 	Wed, 18 Nov 2026 17:18:30 +0100
 From: Felix Fietkau <nbd@nbd.name>
 To: linux-wireless@vger.kernel.org
-Subject: [PATCH mt76-next 07/16] wifi: mt76: keep one remain-on-channel request per interface
-Date: Wed, 18 Nov 2026 17:18:18 +0100
-Message-ID: <20261118161827.1208649-7-nbd@nbd.name>
+Subject: [PATCH mt76-next 03/16] wifi: mt76: refuse a scan or ROC on a radio during a channel switch
+Date: Wed, 18 Nov 2026 17:18:14 +0100
+Message-ID: <20261118161827.1208649-3-nbd@nbd.name>
 X-Mailer: git-send-email 2.47.3
 In-Reply-To: <20261118161827.1208649-1-nbd@nbd.name>
 References: <20261118161827.1208649-1-nbd@nbd.name>
@@ -68,77 +68,117 @@ Precedence: list
 MIME-Version: 1.0
 Content-Transfer-Encoding: 8bit
 
-mt76_remain_on_channel() only checks the target phy for a pending
-request, so an interface can hold requests on two phys while
-mvif->roc_phy names only one of them. mac80211 hands such a second
-request to the driver when a late expiry ends a request that the
-driver still runs. When the interface goes down, the other request is
-not aborted, and its completion uses the freed interface:
+mac80211 starts a scan or a remain-on-channel without a check for a
+channel switch in progress. On mt7996, mt7996_set_channel() then
+disables the beacons of the radio for the offchannel dwell and uploads
+them again on the return. During a CSA the upload carries the CSA
+template with its initial count, so each scan or ROC on the radio
+restarts the countdown in the firmware.
 
-  Unable to handle kernel paging request at virtual address 0002001400000048
-  pc : mt7996_mcu_add_bss_info+0x124/0x4d8 [mt7996e]
-  Call trace:
-   mt7996_mcu_add_bss_info+0x124/0x4d8 [mt7996e]
-   mt7996_vif_link_remove+0x98/0x1fc [mt7996e]
-   mt76_put_vif_phy_link+0x3c/0x58 [mt76]
-   mt76_roc_complete+0x60/0xb0 [mt76]
-   mt76_roc_complete_work+0x28/0x40 [mt76]
+Refuse a scan or a ROC that needs a radio on which an AP, mesh or IBSS
+link has csa_active set. Station links are left out, since they only
+follow the channel switch of their AP and send no beacons.
 
-Allow one request per interface across all phys, and only clear
-mvif->roc_phy for the request it names.
-
-Fixes: a8f424c1287c ("wifi: mt76: add multi-radio remain_on_channel functions")
+Fixes: f30906c55a40 ("wifi: mt76: mt7996: disable beacons when going offchannel")
 Signed-off-by: Felix Fietkau <nbd@nbd.name>
 ---
- drivers/net/wireless/mediatek/mt76/channel.c | 21 +++++++++++++++++---
- 1 file changed, 18 insertions(+), 3 deletions(-)
+ drivers/net/wireless/mediatek/mt76/channel.c | 48 ++++++++++++++++++++
+ drivers/net/wireless/mediatek/mt76/mt76.h    |  1 +
+ drivers/net/wireless/mediatek/mt76/scan.c    |  3 +-
+ 3 files changed, 51 insertions(+), 1 deletion(-)
 
 diff --git a/drivers/net/wireless/mediatek/mt76/channel.c b/drivers/net/wireless/mediatek/mt76/channel.c
-index 7847aafdbabd..0de7907b4fb4 100644
+index da111d37c4f5..7847aafdbabd 100644
 --- a/drivers/net/wireless/mediatek/mt76/channel.c
 +++ b/drivers/net/wireless/mediatek/mt76/channel.c
-@@ -360,6 +360,21 @@ bool mt76_phy_csa_active(struct mt76_phy *phy)
- 	return data.active;
+@@ -313,6 +313,53 @@ void mt76_put_vif_phy_link(struct mt76_phy *phy, struct ieee80211_vif *vif,
+ 	kfree_rcu(mlink, rcu_head);
  }
  
-+static struct mt76_phy *
-+mt76_vif_roc_phy(struct mt76_dev *dev, struct ieee80211_vif *vif)
++struct mt76_csa_active_data {
++	struct mt76_phy *phy;
++	bool active;
++};
++
++static void
++mt76_csa_active_iter(void *priv, u8 *mac, struct ieee80211_vif *vif)
 +{
-+	int i;
++	struct mt76_csa_active_data *data = priv;
++	struct ieee80211_bss_conf *link_conf;
++	struct mt76_vif_link *mlink;
++	unsigned int link_id;
 +
-+	for (i = 0; i < ARRAY_SIZE(dev->phys); i++) {
-+		struct mt76_phy *phy = dev->phys[i];
-+
-+		if (phy && phy->roc_vif == vif)
-+			return phy;
++	switch (vif->type) {
++	case NL80211_IFTYPE_AP:
++	case NL80211_IFTYPE_MESH_POINT:
++	case NL80211_IFTYPE_ADHOC:
++		break;
++	default:
++		return;
 +	}
 +
-+	return NULL;
++	for_each_vif_active_link(vif, link_conf, link_id) {
++		if (!link_conf->csa_active)
++			continue;
++
++		mlink = mt76_vif_link(data->phy->dev, vif, link_id);
++		if (mlink && mt76_vif_link_phy(mlink) == data->phy)
++			data->active = true;
++	}
++}
++
++bool mt76_phy_csa_active(struct mt76_phy *phy)
++{
++	struct mt76_csa_active_data data = {
++		.phy = phy,
++	};
++
++	lockdep_assert_held(&phy->dev->mutex);
++
++	ieee80211_iterate_active_interfaces_mtx(phy->hw,
++						IEEE80211_IFACE_ITER_NORMAL,
++						mt76_csa_active_iter, &data);
++
++	return data.active;
 +}
 +
  void mt76_roc_complete(struct mt76_phy *phy)
  {
  	struct mt76_vif_link *mlink = phy->roc_link;
-@@ -368,7 +383,7 @@ void mt76_roc_complete(struct mt76_phy *phy)
- 	if (!phy->roc_vif)
- 		return;
- 
--	if (mlink)
-+	if (mlink && mlink->mvif->roc_phy == phy)
- 		mlink->mvif->roc_phy = NULL;
- 	if (phy->chanctx && phy->main_chandef.chan && phy->offchannel &&
- 	    !test_bit(MT76_MCU_RESET, &dev->phy.state)) {
-@@ -425,8 +440,8 @@ int mt76_remain_on_channel(struct ieee80211_hw *hw, struct ieee80211_vif *vif,
- 
+@@ -379,6 +426,7 @@ int mt76_remain_on_channel(struct ieee80211_hw *hw, struct ieee80211_vif *vif,
  	mutex_lock(&dev->mutex);
  
--	if (phy->roc_vif || mt76_phy_scanning(phy) ||
--	    mt76_phy_csa_active(phy) ||
-+	if (phy->roc_vif || mt76_vif_roc_phy(dev, vif) ||
-+	    mt76_phy_scanning(phy) || mt76_phy_csa_active(phy) ||
+ 	if (phy->roc_vif || mt76_phy_scanning(phy) ||
++	    mt76_phy_csa_active(phy) ||
  	    test_bit(MT76_MCU_RESET, &dev->phy.state) ||
  	    test_bit(MT76_RESTART, &dev->phy.state)) {
  		ret = -EBUSY;
+diff --git a/drivers/net/wireless/mediatek/mt76/mt76.h b/drivers/net/wireless/mediatek/mt76/mt76.h
+index 8ebcd5365290..2a39729142af 100644
+--- a/drivers/net/wireless/mediatek/mt76/mt76.h
++++ b/drivers/net/wireless/mediatek/mt76/mt76.h
+@@ -1905,6 +1905,7 @@ struct mt76_vif_link *mt76_get_vif_phy_link(struct mt76_phy *phy,
+ 					    struct ieee80211_vif *vif);
+ void mt76_put_vif_phy_link(struct mt76_phy *phy, struct ieee80211_vif *vif,
+ 			   struct mt76_vif_link *mlink);
++bool mt76_phy_csa_active(struct mt76_phy *phy);
+ void mt76_offchannel_notify(struct mt76_phy *phy, bool offchannel);
+ 
+ /* usb */
+diff --git a/drivers/net/wireless/mediatek/mt76/scan.c b/drivers/net/wireless/mediatek/mt76/scan.c
+index 3271a2fa100d..51b182ee99e2 100644
+--- a/drivers/net/wireless/mediatek/mt76/scan.c
++++ b/drivers/net/wireless/mediatek/mt76/scan.c
+@@ -276,7 +276,8 @@ int mt76_hw_scan(struct ieee80211_hw *hw, struct ieee80211_vif *vif,
+ 	}
+ 
+ 	for_each_set_bit(i, &phy_mask, ARRAY_SIZE(dev->phys)) {
+-		if (dev->phys[i]->roc_vif) {
++		if (dev->phys[i]->roc_vif ||
++		    mt76_phy_csa_active(dev->phys[i])) {
+ 			ret = -EBUSY;
+ 			goto out;
+ 		}
 -- 
 2.47.3
 
