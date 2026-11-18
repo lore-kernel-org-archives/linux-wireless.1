@@ -1,53 +1,53 @@
 Authentication-Results: smtp.subspace.kernel.org; arc=none smtp.remote-ip=100.103.45.18
 ARC-Seal: i=1; d=subspace.kernel.org; s=arc20261015; a=rsa-sha256; cv=none;
-	t=1794990189;
-	b=mFte2OtjUIcfbpEbu+4//BBFlBfWwM8WBoR3QC2UCQUVxmOPkIHWoydbMA0zgr5kb8Ss
-	 qkkDkk5ouJ6+e9Sdzu68ma/T3DXqoHgVt5+8pI1tePjIhXjnzURy604qd5YHlU/vxJBJJ
-	 +2HW0vQoaiTPK/LG5gnEaJ3ib14cOhdpVhJC2sintK6c8SwyhEHPE2kIhROvYQ3lcQ9sW
-	 8lkQQi5UWJkBAWV1DMt5FX+X9Jp1DnB4U/S8e4rsoUO26JYlN2kbmExNrZg6/kvtvz8Wr
-	 i6PHBQm0cshQEib7B4hcKaex2dhKKyktsrVuIBcCCtPEbGQurU1i0zZsKjZ+C8PjgtQ==
+	t=1794990779;
+	b=ia0PGuSfM5axfLQ3NKcT0tnfnLNwkrC4mJi64vKDv1vpLN7Y9YKAOaXxBQpDkAt0THof
+	 iMI/oxqXVd1ulW4OVO6UIKA14kau7RyS9zKHHhRwyJdpem6Hkso0fQItDaf2UsuFzWH9w
+	 bDwjbUZMaSn6f5mb5zzO4b89Lfc8X/heglwAf0FjkL8tMnlDKbe8btLRwT8QPODONCl3I
+	 TN2Y/Fg8zgvw9fbQN2740kD3MdT99xP1B+uteEcNUz74fr/EzrGprVQI3u4Sz6NfEnOUs
+	 9VOtmSQoEJLAMGGBCfoPde5tKY9ANLMeXTuE/do+H5P7Rs1PQHNHrjLHi3qwsAoq2KQ==
 ARC-Message-Signature: i=1; d=subspace.kernel.org; s=arc20261015;
-	a=rsa-sha256; c=relaxed/relaxed; t=1794990189;
+	a=rsa-sha256; c=relaxed/relaxed; t=1794990779;
 	h=Received:DKIM-Signature:Date:From:To:Cc:Subject:Message-ID:
 	 References:MIME-Version:Content-Type:Content-Disposition:In-Reply-To;
-	bh=+1uc4ao1Ap+nGLdsAXB1nnahTKcpfRqOoQT0w0vGcao=;
-	b=xzRJ1sB+bgEezXHy0URQMW23ic4BiF4hOSqxc9ByKRH/KkSy9owYDx6RX38VvwX58w34
-	 YBQnuejM2JqtWUSs+AIlIyr9MwEuV89WyqqfWf3cYiBGSWE3ajPon/RqH8j9T4MTAk24/
-	 8tPgeIMZTFkpz0N5ilymMQlyiIf85l8EJPTfNZD1mjoqidyTjCwoiX0Za6AYHeOEYs2te
-	 KiW4CjaCYHk++WLqGFrIFFwwCjDOXhZNNvRfCzCGNgiMEhZgJmuIr0WmuLOAxvYO2gOah
-	 rqzPlkvPJXUHuuSGrXXlX442i7Ftnz0+ywUQCZGZaU7W23Q5KQ27/o6B10mxK2vMQmg==
+	bh=ey7Ek9L+AIWnhIw+WSoEymvD0ud+3flTnBgshLlu14Y=;
+	b=LUk5P3tB73Qbbg3XxaD4IZCpPmaGKxho8BqfoEbn4026tFqcE+gdVtAN3ZNs56E+jLGi
+	 OK8N1/HVuoofw2Zia7f5rXj0JwXWXEEVAlUZz8iOgkmrdIfmZeqNksFKQ36swVEgYIrnY
+	 TP7+28V4R0WXZ4lB7ThUz+Tm23Pe+0Ceu/txqnjKkSe8GL7ZlnaKyFOJbOB/um0gggK7W
+	 X3M5CvINpAF3q6IPOWVNzFZGayIqiXPlUUV8EHuWXmKfiWiZz301ehoYcl/HGT4hs7Imy
+	 OrkvTGjXzIVjfwprQtXG8+B3sQKnbLjGez5HqaO/BRowcCLGHXtir7fw6+JuY0Bt2fg==
 ARC-Authentication-Results: i=1; smtp.subspace.kernel.org; 
-	dkim=pass header.d=kernel.org header.i=@kernel.org header.a=rsa-sha256 header.s=k20260515 header.b=UjObT3xm;
+	dkim=pass header.d=kernel.org header.i=@kernel.org header.a=rsa-sha256 header.s=k20260515 header.b=P95W97V4;
 	arc=none smtp.remote-ip=100.103.45.18
 Received: from smtp.kernel.org (quasi.space.kernel.org [100.103.45.18])
 	(using TLSv1.3 with cipher TLS_AES_256_GCM_SHA384 (256/256 bits)
 	 key-exchange X25519 server-signature ECDSA (prime256v1))
 	(No client certificate requested)
-	by smtp.subspace.kernel.org (Postfix) with ESMTPS id 00BA1606A325
-	for <linux-wireless@vger.kernel.org>; Wed, 18 Nov 2026 08:23:08 +0000 (UTC)
+	by smtp.subspace.kernel.org (Postfix) with ESMTPS id 41B9E606A31C
+	for <linux-wireless@vger.kernel.org>; Wed, 18 Nov 2026 08:32:58 +0000 (UTC)
 Authentication-Results: smtp.subspace.kernel.org;
-	dkim=pass (2048-bit key) header.d=kernel.org header.i=@kernel.org header.a=rsa-sha256 header.s=k20260515 header.b=UjObT3xm
-Received: by smtp.kernel.org (Postfix) with ESMTPSA id 16D411F000C7;
-	Wed, 18 Nov 2026 08:23:07 +0000 (UTC)
+	dkim=pass (2048-bit key) header.d=kernel.org header.i=@kernel.org header.a=rsa-sha256 header.s=k20260515 header.b=P95W97V4
+Received: by smtp.kernel.org (Postfix) with ESMTPSA id 43BB41F000C5;
+	Wed, 18 Nov 2026 08:32:58 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=kernel.org;
-	s=k20260515; t=1794990188;
-	bh=+1uc4ao1Ap+nGLdsAXB1nnahTKcpfRqOoQT0w0vGcao=;
+	s=k20260515; t=1794990778;
+	bh=ey7Ek9L+AIWnhIw+WSoEymvD0ud+3flTnBgshLlu14Y=;
 	h=Date:From:To:Cc:Subject:References:In-Reply-To;
-	b=UjObT3xmO3H0QkEyOjPMmzFcUE7zP0uECo3fkqDZuKyDMww+izRlendt7DzJQIcAQ
-	 RvjNUun4DWVtQTTJiT/1+O+wIVgfTcMuyXup4ar/rl/ovz5kDepz0I3MnaEzlBJ2Li
-	 2AwvnXzN2ygDyvsadA1qdSyywP9xWsNzfr+Pt5RvOOL8dT7yij8E3Qe1Shl0KFVCm+
-	 CIAA9I236VGLwZTKYPfiCW7+STNkZlUeE9IYY87Sm5MoCsakoHfnZq8y5Dzs2RHZMW
-	 dumfzle4+1d7M6jmhO81SQIBNJMX7kQ3KC3gjl8pMSL1D2DxirdTEErNFdfSXtikGV
-	 MzRdhruWzteiQ==
-Date: Wed, 18 Nov 2026 09:23:06 +0100
+	b=P95W97V4sc0aC8n6tOEK0uEoVhvXlGRbCZUyBTXirvBZcpAGSOag5YL52UMKfDYy3
+	 d76JJ9igE2BebwBKikrSKeIB7IXKwW76BiGjCGkwdOzZJ0qMiPk8OIWZAMuM4aXEDl
+	 EpCLibmO0EC4O3isOiacpYvZMpKG20oOo5453fu0OsZ7I4po1WhtHGqYuYRnOpM+eY
+	 rKnFrC011N+et5eRTgeewzayzPAkGwkGqIdwQE75d9TWJophZExvnOCzU+AEw+MUSh
+	 Do9f/8t9RhonlpYllXPIK+CAXpxdMXTJJ3lF7lsbjCMCYtHw33fLeUGHZHt4FCvMBn
+	 7vj+m1Muv2nxg==
+Date: Wed, 18 Nov 2026 09:32:56 +0100
 From: Lorenzo Bianconi <lorenzo@kernel.org>
 To: Felix Fietkau <nbd@nbd.name>
 Cc: linux-wireless@vger.kernel.org
-Subject: Re: [PATCH mt76-next 04/19] wifi: mt76: mt7915: use the default
- timeout for STA_REC and BSS_INFO
-Message-ID: <av1gasgmHXDhPO_E@lore-qca>
+Subject: Re: [PATCH mt76-next 05/19] wifi: mt76: delete only the RX NAPIs
+ that were added
+Message-ID: <av1iuPfe-CQP4OLG@lore-qca>
 References: <20261117180134.2940930-1-nbd@nbd.name>
- <20261117180134.2940930-4-nbd@nbd.name>
+ <20261117180134.2940930-5-nbd@nbd.name>
 X-Mailing-List: linux-wireless@vger.kernel.org
 List-Id: <linux-wireless.vger.kernel.org>
 List-Post: <mailto:linux-wireless@vger.kernel.org>
@@ -58,60 +58,61 @@ List-Owner: <mailto:linux-wireless+owner@vger.kernel.org>
 Precedence: list
 MIME-Version: 1.0
 Content-Type: multipart/signed; micalg=pgp-sha512;
-	protocol="application/pgp-signature"; boundary="5NA4iwZ+DODkF1k0"
+	protocol="application/pgp-signature"; boundary="ZD1EbOkqszrLSabP"
 Content-Disposition: inline
-In-Reply-To: <20261117180134.2940930-4-nbd@nbd.name>
+In-Reply-To: <20261117180134.2940930-5-nbd@nbd.name>
 
---5NA4iwZ+DODkF1k0
+--ZD1EbOkqszrLSabP
 Content-Type: text/plain; charset=us-ascii
 Content-Disposition: inline
 Content-Transfer-Encoding: quoted-printable
 
-> mt7915_mcu_set_timeout() gives STA_REC_UPDATE and BSS_INFO_UPDATE a
-> timeout of 2 seconds. Their payload grows with the beacon templates of
-> MBSS configurations, the firmware can take longer to process them, and
-> an MCU timeout resets the device.
+On Nov 17, Felix Fietkau wrote:
+> mt76_dma_cleanup() calls netif_napi_del() for every RX queue, also for
+> the WED RRO queues of mt7996, which get no NAPI while WED is active.
+> __netif_napi_del() then locks the NULL netdev of that NAPI, and rmmod
+> of mt7996e with WED crashes.
 >=20
-> Use the default timeout for both commands, like mt7996.
+> Delete only the RX NAPIs that have a netdev.
 >=20
-> Fixes: 1254c66356d1 ("wifi: mt76: mt7915: decrease timeout for commonly i=
-ssued MCU commands")
+> Fixes: 6b470f36616e ("wifi: mt76: Fix memory leak destroying device")
 > Signed-off-by: Felix Fietkau <nbd@nbd.name>
 
 Reviewed-by: Lorenzo Bianconi <lorenzo@kernel.org>
 
 > ---
->  drivers/net/wireless/mediatek/mt76/mt7915/mcu.c | 2 --
->  1 file changed, 2 deletions(-)
+>  drivers/net/wireless/mediatek/mt76/dma.c | 3 ++-
+>  1 file changed, 2 insertions(+), 1 deletion(-)
 >=20
-> diff --git a/drivers/net/wireless/mediatek/mt76/mt7915/mcu.c b/drivers/ne=
-t/wireless/mediatek/mt76/mt7915/mcu.c
-> index e66968b819da..9b748b37624d 100644
-> --- a/drivers/net/wireless/mediatek/mt76/mt7915/mcu.c
-> +++ b/drivers/net/wireless/mediatek/mt76/mt7915/mcu.c
-> @@ -214,8 +214,6 @@ mt7915_mcu_set_timeout(struct mt76_dev *mdev, int cmd)
->  	case MCU_EXT_CMD_THERMAL_CTRL:
->  	case MCU_EXT_CMD_GET_MIB_INFO:
->  	case MCU_EXT_CMD_PHY_STAT_INFO:
-> -	case MCU_EXT_CMD_STA_REC_UPDATE:
-> -	case MCU_EXT_CMD_BSS_INFO_UPDATE:
->  		mdev->mcu.timeout =3D 2 * HZ;
->  		return;
->  	case MCU_EXT_CMD_EFUSE_BUFFER_MODE:
+> diff --git a/drivers/net/wireless/mediatek/mt76/dma.c b/drivers/net/wirel=
+ess/mediatek/mt76/dma.c
+> index a67880a9281c..8c0403820299 100644
+> --- a/drivers/net/wireless/mediatek/mt76/dma.c
+> +++ b/drivers/net/wireless/mediatek/mt76/dma.c
+> @@ -1217,7 +1217,8 @@ void mt76_dma_cleanup(struct mt76_dev *dev)
+>  	mt76_for_each_q_rx(dev, i) {
+>  		struct mt76_queue *q =3D &dev->q_rx[i];
+> =20
+> -		netif_napi_del(&dev->napi[i]);
+> +		if (dev->napi[i].dev)
+> +			netif_napi_del(&dev->napi[i]);
+>  		mt76_dma_rx_cleanup(dev, q);
+> =20
+>  		page_pool_destroy(q->page_pool);
 > --=20
 > 2.47.3
 >=20
 >=20
 
---5NA4iwZ+DODkF1k0
+--ZD1EbOkqszrLSabP
 Content-Type: application/pgp-signature; name=signature.asc
 
 -----BEGIN PGP SIGNATURE-----
 
-iHUEABYKAB0WIQTquNwa3Txd3rGGn7Y6cBh0uS2trAUCav1gagAKCRA6cBh0uS2t
-rLLRAQDrEFIdHPtsVB+rzuLpNzlQnag+1Zhtj1NP4P+FLWaF+wD/YghmDV/D9Sk8
-vrucQH4xZw5fVzJ4ML9uO7S6QtPJOAs=
-=O9Jr
+iHUEABYKAB0WIQTquNwa3Txd3rGGn7Y6cBh0uS2trAUCav1iuAAKCRA6cBh0uS2t
+rCWQAP9vnSbrCnUXoD1t9bJXQQ627udPPQtkleZP8oAxuINnuQEAiWGLGok0hRYi
+E17+JSaggZmOW/4BY1DWxIK7gj++8Ac=
+=u8Wk
 -----END PGP SIGNATURE-----
 
---5NA4iwZ+DODkF1k0--
+--ZD1EbOkqszrLSabP--
