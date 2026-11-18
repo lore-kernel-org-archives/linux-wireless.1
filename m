@@ -1,59 +1,59 @@
 Authentication-Results: smtp.subspace.kernel.org; arc=none smtp.remote-ip=46.4.11.11
 ARC-Seal: i=1; d=subspace.kernel.org; s=arc20261015; a=rsa-sha256; cv=none;
 	t=1795018713;
-	b=Ky2L77h8lq9d/6xaMUU8e7Zgc1M0DtzP5qbzqtiGPMB5BeBeRCxGQdF1JaPxuAUf3Ba2
-	 rafB4T75OD7qjUbSq9uHhL/z/ZPH2r7HT+EV7JDc25el/IeJlKxUfepbrAi+om53Uvyn6
-	 IEszxighAyPHPLqA0dn3Le1HT6cpS1xalYQX/alCsavFyTujINYzyQyM4dDD4myHXmiN9
-	 H46X7IrPyPzB+q1T7szieGERnTwxdk+TUJWvgwyr0cWjcxJJH4EuSske0XPNFdOwf3E4N
-	 azUVXo5b87vl9oLvI5YzNeZVfkVFQUA2RYOUqns5HS0kCRr98CqyQQvt0fw8cNKX0fg==
+	b=MvSUeXLC0dfGQ1WTBagQvQ23voL8mZDb50tXAvgADBGk0h50G51bQ3iqqVhAaZHUeuZj
+	 f7Fo5FAUlCPXIctxZkn/ckUiyzJbu1rufJ+WSi3JO5ACZB5+QWBQSjnUWRtpcTRAbTIAg
+	 91WFd5b8L8jfWhL1yjCJYIbIeoFMD+3oy2WdtxwXB6+9I+VADDxPYWs102qjyBDcYl99k
+	 oMx+OkIpshGKv3DXq8mG5FOaxOg5doRKhMdmKxlwpjX/kjTQUBQOgOlo/J2y6waw9c4l7
+	 czbYqcUQUsSB4nNfBr43QVL1h8QEB+ze6Mry2o33YFdoMmaSlofsBz9MAitM/9MFPwA==
 ARC-Message-Signature: i=1; d=subspace.kernel.org; s=arc20261015;
 	a=rsa-sha256; c=relaxed/relaxed; t=1795018713;
 	h=DMARC-Filter:DKIM-Signature:Received:From:To:Subject:Date:Message-ID:
 	 X-Mailer:In-Reply-To:References:MIME-Version:
 	 Content-Transfer-Encoding;
-	bh=6aoqDbZr5czF1n7AbBQiL+5y3Azit+LsSoTTFiv1ac4=;
-	b=5sORMkL+/hICs0CP8bJ8PV3Hl/hFEM79vmcQB/bHXwvQO2R1V4rV7Cy8dHXhDx0St4c7
-	 wx6kN4ZeSBJqxQs9OCXzZclS61WpjEI02t1SJkEALSJd/Wmh/hEiPFWmvDUvRn+pHuM6z
-	 FsFd3qJ1yzQUFEcn7b/VZh37HrcYpi/X/uN2XEnzGQUXt1e0dV4ISd4usy5sIrVnDku15
-	 DS3RU8V+6HgLszi0ILyyjvNHavUF7Zh5kc+rjbL4xZH14MuRUNFnTWCTLDi5f/Vsinu9u
-	 3IyunEYyoZRnQJ6Rc6zPqjnOywAKKLjOnXCaxhL/mrWe/00WVuPUZZS13Z2EmEcsTCw==
+	bh=RuETWdCRG8dk+LKOxm70acWjMFd3eXv1QhBG2u/ySuo=;
+	b=qozy9Hv7n5UYLbqVVJ6p5jyxKAvsbcvp958WcjVt2pmObaLipxmmDwOui/u9kgBbIVO5
+	 Kth6+lzh0gIDnNzQ2o2shJygBA82ynxEWVnL3fmeiIvNbtRwK8O54EWoBxdnGM7WhLjBn
+	 9bCSuVOqMB8ThCO2i8gprqK5060VCSkY5zPyYWF3dUS1mqAGHt9tIVuF79JjkRqo8OCL9
+	 L/bLkolMY7MNaYUx2HOZlL/gNEZ/Lgg327yLpyCwWY102eYOGp6GJ46IA02Li+J9jDzv2
+	 8KKFWIz222hco2+mC8B3RrhC6UVjxSqBFy7qKG0zVRqGCsPeDzkpLOb6HM5HYhEpdmQ==
 ARC-Authentication-Results: i=1; smtp.subspace.kernel.org; 
 	dmarc=pass header.from=nbd.name;
 	spf=pass smtp.mailfrom=nbd.name;
-	dkim=pass header.d=nbd.name header.i=@nbd.name header.a=rsa-sha256 header.s=20160729 header.b=F8akQ7J9;
+	dkim=pass header.d=nbd.name header.i=@nbd.name header.a=rsa-sha256 header.s=20160729 header.b=OBws8ua7;
 	arc=none smtp.remote-ip=46.4.11.11
 Received: from nbd.name (nbd.name [46.4.11.11])
 	(using TLSv1.3 with cipher TLS_AES_256_GCM_SHA384 (256/256 bits)
 	 key-exchange ECDHE (prime256v1) server-signature ECDSA (prime256v1) server-digest SHA256)
 	(No client certificate requested)
-	by smtp.subspace.kernel.org (Postfix) with ESMTPS id 119AE60A261B
-	for <linux-wireless@vger.kernel.org>; Wed, 18 Nov 2026 16:18:33 +0000 (UTC)
-DMARC-Filter: OpenDMARC Filter v1.4.2 smtp.subspace.kernel.org 119AE60A261B
+	by smtp.subspace.kernel.org (Postfix) with ESMTPS id B41A760A260D
+	for <linux-wireless@vger.kernel.org>; Wed, 18 Nov 2026 16:18:32 +0000 (UTC)
+DMARC-Filter: OpenDMARC Filter v1.4.2 smtp.subspace.kernel.org B41A760A260D
 Authentication-Results: smtp.subspace.kernel.org; dmarc=pass (p=none dis=none) header.from=nbd.name
 Authentication-Results: smtp.subspace.kernel.org; spf=pass smtp.mailfrom=nbd.name
 Authentication-Results: smtp.subspace.kernel.org;
-	dkim=pass (1024-bit key) header.d=nbd.name header.i=@nbd.name header.a=rsa-sha256 header.s=20160729 header.b=F8akQ7J9
+	dkim=pass (1024-bit key) header.d=nbd.name header.i=@nbd.name header.a=rsa-sha256 header.s=20160729 header.b=OBws8ua7
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed; d=nbd.name;
 	s=20160729; h=Content-Transfer-Encoding:MIME-Version:References:In-Reply-To:
 	Message-ID:Date:Subject:To:From:Sender:Reply-To:Cc:Content-Type:Content-ID:
 	Content-Description:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc
 	:Resent-Message-ID:List-Id:List-Help:List-Unsubscribe:List-Subscribe:
 	List-Post:List-Owner:List-Archive;
-	bh=6aoqDbZr5czF1n7AbBQiL+5y3Azit+LsSoTTFiv1ac4=; b=F8akQ7J9GihHPBWhZUxZYggPrf
-	j1u6WhIUL50jAxbAOEm6tZyvYCeMKeOQ6qng0qN/MPFY8rdOtJ191/nnWsJkCkAhHqs12zfc+xAau
-	hL7CSd2yRQ/GfwRg3HdopV1lb8G5qTcxZRu3/yKkYjaJEheQ9l5eNd3qrostlFXh4fYc=;
+	bh=RuETWdCRG8dk+LKOxm70acWjMFd3eXv1QhBG2u/ySuo=; b=OBws8ua7VOU4tgK5Xz3I4+tyaI
+	W0awD/0VhMbIjn6GRawGPiR1+NMOubNdzfM3CUG7V56f0qlT59uruBed0dT9gb0JS0WrkW3MTSJfI
+	1AkcQ07WTPoB0PpDRMIJxAkEjxBCH8QxL2t/KKuJqXsrzNi1Ga17UHHJRkJ8iVpe/5P8=;
 Received: from p200300cadf12920000000000000005bb.dip0.t-ipconnect.de ([2003:ca:df12:9200::5bb] helo=localhost.localdomain)
 	by ds12 with esmtpsa  (TLS1.3) tls TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384
 	(Exim 4.96)
 	(envelope-from <nbd@nbd.name>)
-	id 1xTiMh-00552s-1m
+	id 1xTiMh-00552s-0h
 	for linux-wireless@vger.kernel.org;
 	Wed, 18 Nov 2026 17:18:31 +0100
 From: Felix Fietkau <nbd@nbd.name>
 To: linux-wireless@vger.kernel.org
-Subject: [PATCH mt76-next 11/16] wifi: mt76: keep mac_work running when a chanctx switch fails
-Date: Wed, 18 Nov 2026 17:18:22 +0100
-Message-ID: <20261118161827.1208649-11-nbd@nbd.name>
+Subject: [PATCH mt76-next 09/16] wifi: mt76: mt7996: keep the fw_mld_idx link in the MLD setup
+Date: Wed, 18 Nov 2026 17:18:20 +0100
+Message-ID: <20261118161827.1208649-9-nbd@nbd.name>
 X-Mailer: git-send-email 2.47.3
 In-Reply-To: <20261118161827.1208649-1-nbd@nbd.name>
 References: <20261118161827.1208649-1-nbd@nbd.name>
@@ -68,53 +68,71 @@ Precedence: list
 MIME-Version: 1.0
 Content-Transfer-Encoding: 8bit
 
-mt76_switch_vif_chanctx() cancels mac_work of each radio whose channel
-context changes, before it takes dev->mutex. Only the set_channel op of
-the driver queues mac_work again. If the channel update or the link
-move of a vif fails, or a later vif names no radio, the function
-returns before it sets the channel of the other radios, and their
-mac_work stays stopped until their next channel change. Station links
-on these radios then do not detect beacon loss. Reachable via a channel
-switch of vifs on several radios whose MCU command fails.
+mt7996_mcu_sta_mld_setup_tlv() names the WTBL of msta->fw_mld_idx as
+the primary WTBL of the MLD peer, but lists the active links only. A
+station that deactivates the link it associated on, which holds that
+WTBL, and then adds another link thus gets a setup without its primary
+WTBL in the list. The firmware then counts the TX sequence numbers and
+PNs of at least TID 7 on the WTBL of a listed link, where both start
+again at 0, and the peer drops these frames as old in its reorder
+buffer, EAPOL-Key Requests included.
 
-Queue mac_work again for each radio whose channel the function did not
-set, as mt76_remain_on_channel() does for a request that it refuses.
+List the link of the primary WTBL as well, while its station link and
+vif link exist. The firmware record of the MLD still holds that link,
+since its deactivation sends no MLD setup.
 
-Fixes: 70869cc429ff ("wifi: mt76: fix handling channel context with different bands in mt76_switch_vif_chanctx()")
+Fixes: 2f3d7e0ad329 ("wifi: mt76: mt7996: describe an MLD peer with the PEER_MLD command")
 Signed-off-by: Felix Fietkau <nbd@nbd.name>
 ---
- drivers/net/wireless/mediatek/mt76/channel.c | 11 +++++++++--
- 1 file changed, 9 insertions(+), 2 deletions(-)
+ .../net/wireless/mediatek/mt76/mt7996/mcu.c   | 29 ++++++++++++++++++-
+ 1 file changed, 28 insertions(+), 1 deletion(-)
 
-diff --git a/drivers/net/wireless/mediatek/mt76/channel.c b/drivers/net/wireless/mediatek/mt76/channel.c
-index 23066307c92a..df655cc56349 100644
---- a/drivers/net/wireless/mediatek/mt76/channel.c
-+++ b/drivers/net/wireless/mediatek/mt76/channel.c
-@@ -216,8 +216,10 @@ int mt76_switch_vif_chanctx(struct ieee80211_hw *hw,
- 		else
- 			phy = new_ctx->phy;
- 
--		if (!phy)
--			return -EINVAL;
-+		if (!phy) {
-+			ret = -EINVAL;
-+			goto restart_mac_work;
-+		}
- 
- 		if (need_update[phy->band_idx])
- 			continue;
-@@ -273,6 +275,11 @@ int mt76_switch_vif_chanctx(struct ieee80211_hw *hw,
- out:
- 	mutex_unlock(&dev->mutex);
- 
-+restart_mac_work:
-+	for (i = 0; i < ARRAY_SIZE(need_update); i++)
-+		if (need_update[i] && dev->phys[i])
-+			mt76_phy_mac_work_restart(dev->phys[i]);
-+
- 	return ret;
+diff --git a/drivers/net/wireless/mediatek/mt76/mt7996/mcu.c b/drivers/net/wireless/mediatek/mt76/mt7996/mcu.c
+index 57b16f1f5c1d..627ca3e93e51 100644
+--- a/drivers/net/wireless/mediatek/mt76/mt7996/mcu.c
++++ b/drivers/net/wireless/mediatek/mt76/mt7996/mcu.c
+@@ -2781,13 +2781,40 @@ int mt7996_mcu_mld_link_oper(struct mt7996_dev *dev,
+ 				     MCU_WMWA_UNI_CMD(BSS_INFO_UPDATE), true);
  }
- EXPORT_SYMBOL_GPL(mt76_switch_vif_chanctx);
+ 
++static unsigned long
++mt7996_mcu_sta_mld_setup_links(struct mt7996_dev *dev,
++			       struct ieee80211_vif *vif,
++			       struct ieee80211_sta *sta)
++{
++	struct mt7996_sta *msta = (struct mt7996_sta *)sta->drv_priv;
++	unsigned long links = mt7996_mac_sta_links(dev, vif, sta);
++	unsigned int link_id;
++
++	if (!msta->peer_mld_links)
++		return links;
++
++	for (link_id = 0; link_id < ARRAY_SIZE(msta->link); link_id++) {
++		struct mt7996_sta_link *msta_link;
++
++		msta_link = mt7996_sta_link_protected(dev, msta, link_id);
++		if (!msta_link || msta_link->wcid.idx != msta->fw_mld_idx)
++			continue;
++
++		if (mt7996_vif_link(dev, vif, link_id))
++			links |= BIT(link_id);
++		break;
++	}
++
++	return links;
++}
++
+ static void
+ mt7996_mcu_sta_mld_setup_tlv(struct mt7996_dev *dev, struct sk_buff *skb,
+ 			     struct ieee80211_vif *vif,
+ 			     struct ieee80211_sta *sta)
+ {
++	unsigned long links = mt7996_mcu_sta_mld_setup_links(dev, vif, sta);
+ 	struct mt7996_sta *msta = (struct mt7996_sta *)sta->drv_priv;
+-	unsigned long links = mt7996_mac_sta_links(dev, vif, sta);
+ 	unsigned int nlinks = hweight16(links);
+ 	struct mld_setup_link *mld_setup_link;
+ 	struct sta_rec_mld_setup *mld_setup;
 -- 
 2.47.3
 
