@@ -1,79 +1,95 @@
-Authentication-Results: smtp.subspace.kernel.org; arc=pass header.oldest-pass=0 smtp.remote-ip=100.103.45.18
-ARC-Seal: i=2; d=subspace.kernel.org; s=arc20261015; a=rsa-sha256; cv=pass;
-	t=1795013897;
-	b=oK9+BerXBqpHWTgHE1iYBWfB3sh1MMwb14i15RKc1zbHx7E0kp9ITb0elAj55msJy3Hs
-	 pa38V2WSLCvyNB0qSrmAMHiEobSMT5ciIy8R3HyAzr3r7ZifLn0WvwNiCZCJSHxstBUpq
-	 fhrAO6SrlcddX9CfVuNqR8LuHQQSx7sVlP+sn58Y8UD+5gLxuyEQrYWhZ4psDxOzjQ2zk
-	 UHrHcqBNXCyxAgoQgKXpaDi3bXJp+r1T0jwzVeWGwHyaG9smVSC/Of2AlVa7DmWnsow6B
-	 1KE9d7WVD+vY+Ley7BJrVSgddg4TFZUG3gk/rWV/RmPrnFpi8DvqWRTRmCf1f0lvMcA==
-ARC-Message-Signature: i=2; d=subspace.kernel.org; s=arc20261015;
-	a=rsa-sha256; c=relaxed/relaxed; t=1795013897;
-	h=Received:DKIM-Signature:Received:From:Subject:Date:Message-Id:
-	 MIME-Version:Content-Type:Content-Transfer-Encoding:X-B4-Tracking:
-	 X-Change-ID:To:Cc:X-Mailer:X-Developer-Signature:X-Developer-Key:
-	 X-Endpoint-Received:X-Original-From:Reply-To;
-	bh=pu/Zc8lWUl4Jnr74f98ic/pN2AH2QRpGA1MQ3JEWhKQ=;
-	b=cXSkKhC6YWIT7bqOFg3flOumr2AhwrO34R/nHtjKT80Mjl9SbDGzFCjACa65dOCJzt3j
-	 dsplg31VmYXha+hMSaM1NIXQ8AIUhMvJo8RVXvSJ7kDYEBB2WQbGMlEayVRJ8GOgS8+PK
-	 07V26SnHA9jOAoSW/3Q32LZv/Tl7fJ+nhjm06kztMkkhVxmz0g48aALAUuhGQgqigkiEi
-	 7v4enIWRHkv9mivJwCUmDJVNFhzIBemouL9ZqDjUUAsWR2KTNMgLF40jxjpjGMBUNgUdb
-	 luJx0FFiHm03KCgOdxHy9pZB02ZbKvp/tvDqhX3uCP82gCy4A/ezNsT2UxXu63VTR9A==
-ARC-Authentication-Results: i=2; smtp.subspace.kernel.org; 
-	dkim=pass header.d=kernel.org header.i=@kernel.org header.a=rsa-sha256 header.s=k20260515 header.b=n4H5SIKk;
-	arc=pass header.oldest-pass=0 smtp.remote-ip=100.103.45.18
-Received: from smtp.kernel.org (quasi.space.kernel.org [100.103.45.18])
-	(using TLSv1.3 with cipher TLS_AES_256_GCM_SHA384 (256/256 bits)
-	 key-exchange X25519 server-signature ECDSA (prime256v1))
-	(No client certificate requested)
-	by smtp.subspace.kernel.org (Postfix) with ESMTPS id 7577C60A261D;
-	Wed, 18 Nov 2026 14:58:17 +0000 (UTC)
-Authentication-Results: smtp.subspace.kernel.org;
-	dkim=pass (2048-bit key) header.d=kernel.org header.i=@kernel.org header.a=rsa-sha256 header.s=k20260515 header.b=n4H5SIKk
-Authentication-Results: smtp.kernel.org; arc=none smtp.remote-ip=100.80.115.77
-ARC-Seal: i=1; d=kernel.org; s=arc20260519; a=rsa-sha256; cv=none;
-	t=1795013897;
-	b=SoSOg0l+wrngvklntDOYtZ9WSK64rxOlpACqmGCRhGwhzJ1SwGPgA8b1mn/F7bmZ2zpU
-	 exWsEwoY3+SBwykGQ0fKQD8RQlWEea3fPrFbDXeL4/o2Gq1GS0P/mlXP11O4evkB3yHlY
-	 HQ787V4mVGP1J9ApQBnvabZJSksDydMYMGJcEFULWm5rJKeo7fSd0Ehtp51wcCgm6+55a
-	 8SlhGin+CeUT0DHeZdyNRa77gCCLqhKDiyWtzFCzOWNcuF41Ot1lhNgwl/1HQ48C709sV
-	 MD50J2p+etNBmbtQKSzccPwTP9RBEnsyem/TRpw16obp/ToBGoSV3FPv8F0f2PiKS/A==
-ARC-Message-Signature: i=1; d=kernel.org; s=arc20260519; a=rsa-sha256;
-	c=relaxed/relaxed; t=1795013897;
-	h=DKIM-Signature:Received:From:Subject:Date:Message-Id:MIME-Version:
-	 Content-Type:Content-Transfer-Encoding:X-B4-Tracking:X-Change-ID:To:
-	 Cc:X-Mailer:X-Developer-Signature:X-Developer-Key:X-Endpoint-Received:
-	 X-Original-From:Reply-To;
-	bh=pu/Zc8lWUl4Jnr74f98ic/pN2AH2QRpGA1MQ3JEWhKQ=;
-	b=FYJQbjxGfB2ilHHuTdCWi9sg2yn+j61wLVXyMf0CBAJhgkDMBfJslymMjcA8ROBwZLVm
-	 9aHHY4EmhIQ8iDACsWM5JjiynkxFbVpx8h1M5H7JwJGQd5ZiEwR1SsZiObYnLhSxONKDC
-	 OxOb3KSmzhG+Ry95ekevBx6Q5i1/pV8Yd49YiEKnrqrsTlcvSEAtchpLyy0d65nI6oyom
-	 0jV8hUEeUPavnw8MSu/6+nfKKkbWX/xbB/A9misX0BZMqCdoX3kIqE9FCjYII7jUQhqe8
-	 8OlA029GwkGxVWM/ofsq0TKUiE4R7b+0L1FDRKVLgpmykhzXNvtnsJe+vd3SkE8nlVA==
-ARC-Authentication-Results: i=1; smtp.kernel.org; 
-	arc=none smtp.remote-ip=100.80.115.77
-Received: from lkml.kernel.org (nexus.subspace.kernel.org [100.80.115.77])
-	(using TLSv1.3 with cipher TLS_AES_256_GCM_SHA384 (256/256 bits)
+Authentication-Results: smtp.subspace.kernel.org; arc=none smtp.remote-ip=74.125.82.179
+ARC-Seal: i=1; d=subspace.kernel.org; s=arc20261015; a=rsa-sha256; cv=none;
+	t=1795015812;
+	b=BGJkMP5CKYMK5V1Ljh7aHuA3M6nlZDdapZd3O/rY1/264UL1Oo1kEoIC+of2+JHTeE9Q
+	 m9JHQT3qMTS3GaANldr/qZRK50Fw8PHV/v7mTcAFzwIdre1A4vcvm16vmYh85Q86/tliA
+	 liHsXLdPDeDbKBtvLqtkrVtUvOxl/+ufc1PQuUp2iB8aRyU7IxojN+L7O+1yOEScJtk2t
+	 tQpeak8+O5TzEyK7v+jbTOvjxJDVY04gnSYChTRwRjge8uSAygJbYCqVy9Oor5zXIZ+Xh
+	 5hyxbG5Zc9IGs6d9MA40nAqiKLQY+llajbV7z62DHBGG7ZaLSVEkZkjc7EFwj3jmyoQ==
+ARC-Message-Signature: i=1; d=subspace.kernel.org; s=arc20261015;
+	a=rsa-sha256; c=relaxed/relaxed; t=1795015812;
+	h=DMARC-Filter:Received:DKIM-Signature:X-Google-DKIM-Signature:
+	 X-Forwarded-Encrypted:X-Gm-Message-State:X-Gm-Gg:X-Received:Received:
+	 From:To:Cc:Subject:Date:Message-ID:X-Mailer:MIME-Version:
+	 Content-Transfer-Encoding;
+	bh=rHS9B+0BHde2X4jb3Xb3RONvqSby0IcB+XScTmz0upM=;
+	b=zTJHYN5B8mOMB2784FHqIJXHZ84YSlW/xc+E1Etkz5nlmu8M/xtw8PfzGplw3uEERN+l
+	 w3XcKOxfNHPemPBWYcB2x4QrURTfulFuuWfZGXtimZw3abG9H/f8RZhQAoatobdODOu0U
+	 qFldpOhziGl+o/krymITuIYFp6PvCa/lkHSS1G0Z/DqW97Uml0Xrbg8BOe8flGXKHZUlC
+	 D0rhnyLU6oTMkH0mp473acSdr/v11G4+rtNmavdjO7ZY+8THz6h6VRmTpK7U8XkQO9YdA
+	 TYbfaXPP20pb8oPKPJqqSoe63DV+44uAWOPBHbxhxYEkwq2/4JNJIsci4+7AJ7edmAg==
+ARC-Authentication-Results: i=1; smtp.subspace.kernel.org; 
+	dmarc=pass header.from=gmail.com;
+	spf=pass smtp.mailfrom=gmail.com;
+	dkim=pass header.d=gmail.com header.i=@gmail.com header.a=rsa-sha256 header.s=20260707 header.b=VBBtvYWC;
+	arc=none smtp.remote-ip=74.125.82.179
+Received: from mail-dy1-f179.google.com (mail-dy1-f179.google.com [74.125.82.179])
+	(using TLSv1.3 with cipher TLS_AES_128_GCM_SHA256 (128/128 bits)
 	 key-exchange X25519 server-signature ECDSA (prime256v1) server-digest SHA256)
 	(No client certificate requested)
-	by smtp.kernel.org (Postfix) with ESMTPS id 78AE81F000CD;
-	Wed, 18 Nov 2026 14:58:13 +0000 (UTC)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=kernel.org;
-	s=k20260515; t=1795013897;
-	bh=pu/Zc8lWUl4Jnr74f98ic/pN2AH2QRpGA1MQ3JEWhKQ=;
-	h=From:Subject:Date:To:Cc:Reply-To;
-	b=n4H5SIKkVyAt8HZyplafcs7eB8PJEdWcHqaCbpzFmrb4kIzHYzqIWHQ1A88A19JCO
-	 8RsORUwte12anA0oRRG+SCxwfIkZIf6L717oy2DHMVjt/rFyQo9Y3iUh7e8fjuChSu
-	 Ft8XZoeLyNY5cFD+45gklTCflm/MwAlU1nCC2tski9Vm2GytnK5uW+TVWWWkLkl5Fr
-	 Cprb1QAXnCUG2jJ4kXVk0gyggRY8xppaBZjlxRcYxTrPf5oda25dI/7dUTsBn/jluG
-	 gGEuYxmPCkAvafMCDEoKqufiWqr+AJRIHBvq0Uzlio08tjOBSTcFnNe2eBVGenY12a
-	 wht2CVvU0pWfw==
-Received: from nexus.subspace.kernel.org (localhost [IPv6:::1])
-	by lkml.kernel.org (Postfix) with ESMTP id CA47A4ADFC;
-	Wed, 18 Nov 2026 14:58:12 +0000 (UTC)
-From: Alexandre Rapaille via B4 Relay <devnull+arapaille.atlr-engineering.com@kernel.org>
-Subject: [PATCH 0/3] msm8974/wcn36xx: recover Wi-Fi after a WCNSS crash
-Date: Wed, 18 Nov 2026 15:57:58 +0100
-Message-Id: <20261118-wcnss-series-v1-v1-0-a64d82e151bf@atlr-engineering.com>
+	by smtp.subspace.kernel.org (Postfix) with ESMTPS id 18BC8606A337
+	for <linux-wireless@vger.kernel.org>; Wed, 18 Nov 2026 15:30:11 +0000 (UTC)
+DMARC-Filter: OpenDMARC Filter v1.4.2 smtp.subspace.kernel.org 18BC8606A337
+Authentication-Results: smtp.subspace.kernel.org; dmarc=pass (p=none dis=none) header.from=gmail.com
+Authentication-Results: smtp.subspace.kernel.org; spf=pass smtp.mailfrom=gmail.com
+Authentication-Results: smtp.subspace.kernel.org;
+	dkim=pass (2048-bit key) header.d=gmail.com header.i=@gmail.com header.a=rsa-sha256 header.s=20260707 header.b=VBBtvYWC
+Received: by mail-dy1-f179.google.com with SMTP id 5a478bee46e88-3282db206d3so3064065eec.0
+        for <linux-wireless@vger.kernel.org>; Wed, 18 Nov 2026 07:30:11 -0800 (PST)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+        d=gmail.com; s=20260707; t=1795015811; x=1795620611; darn=vger.kernel.org;
+        h=content-transfer-encoding:mime-version:message-id:date:subject:cc
+         :to:from:from:to:cc:subject:date:message-id:reply-to:content-type;
+        bh=rHS9B+0BHde2X4jb3Xb3RONvqSby0IcB+XScTmz0upM=;
+        b=VBBtvYWCkQ+uwNlm145G4Om9lraJpse8fcze2caHbJrErClBJ7lIqbagIsExxitUxs
+         biyUa8H1QMmqgmqHN46h04VxX6i32F1KHOj++0arLGH60Ok8y7K5nrGWS6Jlvm4km23z
+         ukUrlm86ZPPRm/+pFbCvJ5WLNkRA+DnTF4fi46n4bQtiyRK2GqtGb6LWuMChmV1MPTrh
+         Niw7yUPlqOGIElI9h57hz0Thv2myX+EFzOEvlb+vgj7XHBEUL2/Q0QbkA9scRE/Jup2n
+         OhoWqIGdd0CcRQDYG1MrYiEtklNeq4662N0c/qHoJRJrF9tnK6W3U7MnslV7BDiy6owF
+         LzxQ==
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+        d=1e100.net; s=20260707; t=1795015811; x=1795620611;
+        h=content-transfer-encoding:mime-version:message-id:date:subject:cc
+         :to:from:x-gm-gg:x-gm-message-state:from:to:cc:subject:date
+         :message-id:reply-to:content-type;
+        bh=rHS9B+0BHde2X4jb3Xb3RONvqSby0IcB+XScTmz0upM=;
+        b=CeM+c7NQtbfWUTKTQ/NJBooBIY12dssDVWzvSDLuCeO3afuB9CDL8vLcaiL2x+SmPO
+         Fr5gj+4rDAJyB4Q2DGwlm3WNCube3N4JZME4DFcSIt0qP9nkqTgUgItGoTn/LIBBtn+H
+         qctYRU/DijeUP06gPuyjX0AZ8rBR2DbBE5Y7psqjN8gDXnoL5bCEbPuvFbo3TLQq/8dt
+         QoeobWGPEucOQwBJpGLuFMqiUtPbWUHPQ925SoRBjKa4IPlGYBNWvDH+zKp+z9HKTJCx
+         glDG2v8kspGzYtzV9cE2av0V+JZd9nRL8tLBvfh87mSrAHcq5yvCvNmHD2+Kyga6iJ98
+         RKFg==
+X-Forwarded-Encrypted: i=1; AL+hErHP0iYQo54QSjgd0zuh6mivM8W2mRHWC2//Gnp0zXzCn+UVhchLMJFspAd64qa4WBa2xvYEtQoHYamHorjhiw==@vger.kernel.org
+X-Gm-Message-State: APuU4Z82NHT2sWoyPfu5yLB6R/Mb5+vr0NBe3rNUbZlNb63VQld7SCWf
+	MCFdJVtQ3gnu+L2a3MrULrfe/tn8TaVaRZEDzrxTe9+N6WlHZW//6OBQoN5RlndxeoU=
+X-Gm-Gg: AZFdTZd//Gq+aPdp2SmntcUhJYgIV8O2cni+/fbz5nidRE6NwErEq0CxWo51wZwGJHA
+	+ldK/PoozHXPU8p2EtmZ/ckCOrrhLel0Nxk4CsPOBr9QR40YWo8fAvRxLFYJ0c9lJhPl9+6D0Xg
+	TNjm85Qs0HpMHoDOSDeId7NpdNViM5cb6VNoLXG3lc5d2en98J+BE5N45RnbtnYbg1+Rq6Rm/p2
+	2T5iGDtlsjE3puCFUOtIWQj35PQuUyxE2WbNN5YzXn0nXBfjQbIuCeUQ+jnF9TPHoyqyFeMimft
+	+El4U4xaI+YE0SDAvBmxcA8kOLI7RUOk3Crcpmlwrqr2o/UMzng+LFO1ViJLOV8OD0BQgko9fBQ
+	p1sHGfCH5E29JNYqjMcaYLlXwzH0e97Kr7rMVEJsTm9lUFVxW6VzGnMW4kYnHR8BFj5fEmNHsSp
+	XvPtfYoUBGgiYZezZq5qbWfiNVw12KxNIzFdmf7hdxmru1xn4fbWeYSKSvusrN6dhZsAFCA7naA
+	CMA3IsaNaZbMF8RC3tKTwAXKS3DzXHjJ2i9+zHcrHrGGvKHSoDV72sskcZn87i0vOr0e/jo3ceM
+	o3g2MlLIild4feKb9OmYdyxPri2L529ink0tGPuMuIp03jrPPAc4NM3/rvg=
+X-Received: by 2002:a05:7300:50ca:b0:381:7f3b:3c13 with SMTP id 5a478bee46e88-382803787demr2845493eec.23.1795015810729;
+        Wed, 18 Nov 2026 07:30:10 -0800 (PST)
+Received: from G7XWH7K1F3 ([2408:8256:2e80:7371:2c16:ada8:2d24:d03])
+        by smtp.gmail.com with ESMTPSA id 5a478bee46e88-382a630517asm8922616eec.8.2026.11.18.07.30.03
+        (version=TLS1_3 cipher=TLS_CHACHA20_POLY1305_SHA256 bits=256/256);
+        Wed, 18 Nov 2026 07:30:10 -0800 (PST)
+From: Zhao Li <enderaoelyther@gmail.com>
+To: Jeff Johnson <jjohnson@kernel.org>
+Cc: Kalle Valo <kvalo@kernel.org>,
+	Wen Gong <quic_wgong@quicinc.com>,
+	Baochen Qiang <baochen.qiang@oss.qualcomm.com>,
+	Anilkumar Kolli <quic_akolli@quicinc.com>,
+	linux-wireless@vger.kernel.org,
+	ath11k@lists.infradead.org,
+	linux-kernel@vger.kernel.org
+Subject: [PATCH ath-current 0/3] wifi: ath11k: give the regulatory state the lifetime of the device
+Date: Wed, 18 Nov 2026 23:29:39 +0800
+Message-ID: <20261118152942.62838-1-enderaoelyther@gmail.com>
+X-Mailer: git-send-email 2.56.1
 X-Mailing-List: linux-wireless@vger.kernel.org
 List-Id: <linux-wireless.vger.kernel.org>
 List-Post: <mailto:linux-wireless@vger.kernel.org>
@@ -83,65 +99,36 @@ List-Unsubscribe: <mailto:linux-wireless+unsubscribe@vger.kernel.org>
 List-Owner: <mailto:linux-wireless+owner@vger.kernel.org>
 Precedence: list
 MIME-Version: 1.0
-Content-Type: text/plain; charset="utf-8"
-Content-Transfer-Encoding: 7bit
-X-B4-Tracking: v=1; b=H4sIAPa8/WoC/6tWKk4tykwtVrJSqFYqSi3LLM7MzwNyDHUUlJIzE
- vPSU3UzU4B8JSMDIzNDQ0ML3fLkvOJiXYgu3TJD3bQ0E7OUJAPTRGPDZCWgroKi1LTMCrCJ0bE
- QfnFpUlZqcgnIGKXaWgBmx6bscwAAAA==
-X-Change-ID: 20261118-wcnss-series-v1-ff46db05a31c
-To: Bjorn Andersson <andersson@kernel.org>, 
- Konrad Dybcio <konradybcio@kernel.org>, Abel Vesa <abelvesa@kernel.org>, 
- Rob Herring <robh@kernel.org>, Krzysztof Kozlowski <krzk+dt@kernel.org>, 
- Conor Dooley <conor+dt@kernel.org>, 
- Loic Poulain <loic.poulain@oss.qualcomm.com>, 
- Luca Weiss <luca@lucaweiss.eu>, Eugene Krasnikov <k.eugene.e@gmail.com>
-Cc: linux-arm-msm@vger.kernel.org, devicetree@vger.kernel.org, 
- linux-kernel@vger.kernel.org, wcn36xx@lists.infradead.org, 
- linux-wireless@vger.kernel.org, 
- Alexandre Rapaille <arapaille@atlr-engineering.com>
-X-Mailer: b4 0.16.0
-X-Developer-Signature: v=1; a=ed25519-sha256; t=1795013892; l=1299;
- i=arapaille@atlr-engineering.com; s=20261118; h=from:subject:message-id;
- bh=n8yc64Of0fWZA21WPMBAjcjFUjAVUPNfN5qZlFFTgjA=;
- b=dpaJKsS/juYfwL649WABQZENlJBbG0CSt4JcWP76DIQsmjbq6WYGPqFEPosdK4mUTQFxjDjL2
- j32TXZ4SamWALlqXNrknkI4jl2C1PlFhOWdJlM3yvi3hodUyEquqK9X
-X-Developer-Key: i=arapaille@atlr-engineering.com; a=ed25519;
- pk=xskH/sIiNU/aZCeGeBB1TK/AuiG3MXlX0m2wMlbMl08=
-X-Endpoint-Received: by B4 Relay for
- arapaille@atlr-engineering.com/20261118 with auth_id=1560
-X-Original-From: Alexandre Rapaille <arapaille@atlr-engineering.com>
-Reply-To: arapaille@atlr-engineering.com
+Content-Transfer-Encoding: 8bit
 
-On msm8974 the wcn36xx re-probe after a WCNSS crash fails on an IRQ type
-mismatch (DT edge, driver level), so wlan0 stays gone until reboot; seen
-on deployed Fairphone 2 gateways.
+ab->reg_info_store, with the rules it holds, and the default_regd[] and
+new_regd[] domains live as long as struct ath11k_base, but their
+teardown does not follow that lifetime. The SERVICE_READY_EXT error
+path frees the store from a transient event handler, and the remove
+paths that follow a failed start never call ath11k_reg_free().
 
-Tested on a Fairphone 2 (6.12.113 plus this series): 10/10 forced WCNSS
-crashes recovered in ~20 s; unpatched, none did. Build-tested on
-next-20261117, dtbs_check unchanged.
+Patch 1 lets ath11k_reg_free() cope with a store that was never
+allocated. Patch 2 moves ath11k_reg_free() into ath11k_core_free(), so
+that every teardown path frees the regulatory state. Patch 3 then drops
+the free from the SERVICE_READY_EXT error path. In this order no step
+adds a crash or a leak.
 
-Patch 1 is for the qcom tree, 2-3 for ath. Patch 2 needs patch 1 on
-msm8974, or its WCNSS IRQs would turn edge-triggered.
+A separate patch, sent on its own, makes a failed SERVICE_READY_EXT
+fail the start instead of letting SERVICE_READY_EXT2 complete it.
 
-Signed-off-by: Alexandre Rapaille <arapaille@atlr-engineering.com>
----
-Alexandre Rapaille (3):
-      ARM: dts: qcom: msm8974: Fix WCNSS wifi interrupt trigger type
-      wifi: wcn36xx: Do not enforce interrupt trigger type
-      wifi: wcn36xx: Stop waiting on a dead firmware during remove
+Zhao Li (3):
+  wifi: ath11k: don't walk an unallocated regulatory info store
+  wifi: ath11k: free the regulatory state when the device is freed
+  wifi: ath11k: keep the regulatory info store on a SERVICE_READY_EXT
+    error
 
- arch/arm/boot/dts/qcom/qcom-msm8974.dtsi   | 4 ++--
- drivers/net/wireless/ath/wcn36xx/dxe.c     | 6 +++---
- drivers/net/wireless/ath/wcn36xx/main.c    | 1 +
- drivers/net/wireless/ath/wcn36xx/smd.c     | 8 ++++++++
- drivers/net/wireless/ath/wcn36xx/wcn36xx.h | 4 ++++
- 5 files changed, 18 insertions(+), 5 deletions(-)
----
-base-commit: 20eef29b7c8465ac98d7dd6d6f2ac07a8d8056ca
-change-id: 20261118-wcnss-series-v1-ff46db05a31c
+ drivers/net/wireless/ath/ath11k/core.c | 2 +-
+ drivers/net/wireless/ath/ath11k/reg.c  | 6 ++++--
+ drivers/net/wireless/ath/ath11k/wmi.c  | 9 ---------
+ 3 files changed, 5 insertions(+), 12 deletions(-)
 
-Best regards,
---  
-Alexandre Rapaille <arapaille@atlr-engineering.com>
 
+base-commit: b1ed5a45b994a6473ca1cf34f35a1bf87f1d8e2a
+-- 
+2.56.1
 
