@@ -1,112 +1,112 @@
-Authentication-Results: smtp.subspace.kernel.org; arc=none smtp.remote-ip=205.220.168.131
+Authentication-Results: smtp.subspace.kernel.org; arc=none smtp.remote-ip=205.220.180.131
 ARC-Seal: i=1; d=subspace.kernel.org; s=arc20261015; a=rsa-sha256; cv=none;
-	t=1794983816;
-	b=095Rblr3aoZYbDzLvbo6oG+f3LegkoWsOCLwfupgAXShSfEV5vSs8vJFwgxgm1rlW9m3
-	 ONJMeqDomN1q8T1YaIr40I4AlqDXbFlnYkBCZgGHvYEbpQPs3JcvVOh5CLnDMQioSEEfx
-	 kDBtq2kUc98v8bllav0tszZlr8xxw86pFdNn9wBYKMjEsJ2YVqVL0sMd6fvm2vEl2m10e
-	 6QENhfYvkuWpRwoOOOf6vFS/jauj3z3oAtKfwy9VvY+sVVO0YvaH4CMv69piDsPcZyYrX
-	 ChcLsDpoVgPZ9QDXpHSXh4K1X82MSfX104SMvIkVEAY9tUiXOpmkCfMoLETah07h/rQ==
+	t=1794983819;
+	b=tRp86jTIphNJRvkciueLZO2BSvylp1RDU7QQb6hKCCZxQ1ZbPGe7sVIoi/6KdhClblsi
+	 0f2kBpx/rrNyQGTf0eLLFG3JxN2CaONy/F7qxaSrxF4H4CzJRzub29o2t8cpfS/xjR/vY
+	 6rEC1aP++6xFc9+cJV/In1qtmWCWN9W1xPTuRb02ErWKOmhCDPA+vkHOEZXKTh8ydJIGk
+	 Py/OJJC6/wknt6nZYbSmiNXOifEGS3cydVAVg3ATNtd0kx6ykcV/UsyWFI1MTFVvAzIeU
+	 6y4eEbip+9xClVoZzOY9SVeGxDHlD40OfuMrAlyN8uJ+3qFnv4rAnfXi5yNl71X5MUw==
 ARC-Message-Signature: i=1; d=subspace.kernel.org; s=arc20261015;
-	a=rsa-sha256; c=relaxed/relaxed; t=1794983816;
+	a=rsa-sha256; c=relaxed/relaxed; t=1794983819;
 	h=DMARC-Filter:Received:DKIM-Signature:Received:Received:
 	 DKIM-Signature:X-Google-DKIM-Signature:X-Gm-Message-State:X-Gm-Gg:
 	 X-Received:X-Received:Received:From:To:Cc:Subject:Date:Message-Id:
 	 X-Mailer:In-Reply-To:References:MIME-Version:
-	 Content-Transfer-Encoding:X-Proofpoint-GUID:X-Proofpoint-ORIG-GUID:
-	 X-Authority-Analysis:X-Proofpoint-Spam-Info:
-	 X-Proofpoint-Spam-Details-Enc:X-Proofpoint-Virus-Version:
+	 Content-Transfer-Encoding:X-Proofpoint-Spam-Info:X-Authority-Analysis:
+	 X-Proofpoint-Spam-Details-Enc:X-Proofpoint-ORIG-GUID:
+	 X-Proofpoint-GUID:X-Proofpoint-Virus-Version:
 	 X-Proofpoint-Spam-Details;
-	bh=QDYUglgswcA+rKL+bkjXrv3itTZLm+LTd0o9S5dIwWw=;
-	b=AaGFeUcYMUaXr38APz22YApAnOAkOCGYfbeCZVu+skRkeJXLLjZ4bHeyLNhAW6zncvVZ
-	 WzICV549JWll8S71yU9n7P1Qu6WhT74GDSCh7eMOefH/mcXCYo51xNnWyCw1YyPu7hWhw
-	 LNcHqPU4qn+FA/ASt7AXYarx02A5aGTda/YPcrNpXnNJcpE7lzU0Max9IMKjGsoy00w53
-	 7LJvPfa7dhsENMWyTMQ/m51KDnXdWprDWru3zrV2SrnpXD+rcuIvfPTLAr7NLdYOXweVK
-	 Yr/Q8EdcdGc0lH9n0w/Wo+F5VS64A+aYfOXhcqprSYAGZKtvQkOCbHLt66XYY0OQgTQ==
+	bh=uon/wEpTiZk1tyM7+SSj/FRcoNhrSo+Jx86x2o0esz4=;
+	b=HpV2ktukjOE6S1vdkVokEA8EIGJYKr1nTIxb4a1Zlcmcvp8MA7OlkHsuzcyqZ12bDT6M
+	 XkEfGXCYg95h4E/0w5pEMT+Zr0ICXKoCEdKIii37t3ULnUF2vsH7ezt6CEfjLN6gok+mj
+	 437TJqtLjSg1jzry8+HX0uHWgw3SCLWTU0xTl5sihrfxkWSutdmaJlDii/y+mO3g69wlt
+	 r6R5Nc4Gr3jKPO1YcD+gJNvBKism8UHQNhjPXAuSwWT2gf+a/yTJnZC4ZuY/kja2638KI
+	 SMsbgl19n/qKnsgGUwd8utPI8mimz5X3xCdVUIUmCdms+0KDGylSPGFrrZEPPwjWsow==
 ARC-Authentication-Results: i=1; smtp.subspace.kernel.org; 
 	dmarc=pass header.from=oss.qualcomm.com;
 	spf=pass smtp.mailfrom=oss.qualcomm.com;
-	dkim=pass header.d=qualcomm.com header.i=@qualcomm.com header.a=rsa-sha256 header.s=qcppdkim1 header.b=nihz4iw3;
-	dkim=pass header.d=oss.qualcomm.com header.i=@oss.qualcomm.com header.a=rsa-sha256 header.s=google header.b=Q98Ax2hb;
-	arc=none smtp.remote-ip=205.220.168.131
-Received: from mx0a-0031df01.pphosted.com (mx0a-0031df01.pphosted.com [205.220.168.131])
+	dkim=pass header.d=qualcomm.com header.i=@qualcomm.com header.a=rsa-sha256 header.s=qcppdkim1 header.b=EQtjAnZg;
+	dkim=pass header.d=oss.qualcomm.com header.i=@oss.qualcomm.com header.a=rsa-sha256 header.s=google header.b="V/4+yvpY";
+	arc=none smtp.remote-ip=205.220.180.131
+Received: from mx0b-0031df01.pphosted.com (mx0b-0031df01.pphosted.com [205.220.180.131])
 	(using TLSv1.3 with cipher TLS_AES_256_GCM_SHA384 (256/256 bits)
 	 key-exchange X25519 server-signature ECDSA (prime256v1) server-digest SHA256)
 	(No client certificate requested)
-	by smtp.subspace.kernel.org (Postfix) with ESMTPS id 267BD606A325
-	for <linux-wireless@vger.kernel.org>; Wed, 18 Nov 2026 06:36:56 +0000 (UTC)
-DMARC-Filter: OpenDMARC Filter v1.4.2 smtp.subspace.kernel.org 267BD606A325
+	by smtp.subspace.kernel.org (Postfix) with ESMTPS id 68329606A31C
+	for <linux-wireless@vger.kernel.org>; Wed, 18 Nov 2026 06:36:59 +0000 (UTC)
+DMARC-Filter: OpenDMARC Filter v1.4.2 smtp.subspace.kernel.org 68329606A31C
 Authentication-Results: smtp.subspace.kernel.org; dmarc=pass (p=none dis=none) header.from=oss.qualcomm.com
 Authentication-Results: smtp.subspace.kernel.org; spf=pass smtp.mailfrom=oss.qualcomm.com
 Authentication-Results: smtp.subspace.kernel.org;
-	dkim=pass (2048-bit key) header.d=qualcomm.com header.i=@qualcomm.com header.a=rsa-sha256 header.s=qcppdkim1 header.b=nihz4iw3;
-	dkim=pass (2048-bit key) header.d=oss.qualcomm.com header.i=@oss.qualcomm.com header.a=rsa-sha256 header.s=google header.b=Q98Ax2hb
-Received: from pps.filterd (m0279864.ppops.net [127.0.0.1])
-	by mx0a-0031df01.pphosted.com (8.18.1.11/8.18.1.11) with ESMTP id 6AI2V3fN764123
-	for <linux-wireless@vger.kernel.org>; Wed, 18 Nov 2026 06:36:55 GMT
+	dkim=pass (2048-bit key) header.d=qualcomm.com header.i=@qualcomm.com header.a=rsa-sha256 header.s=qcppdkim1 header.b=EQtjAnZg;
+	dkim=pass (2048-bit key) header.d=oss.qualcomm.com header.i=@oss.qualcomm.com header.a=rsa-sha256 header.s=google header.b=V/4+yvpY
+Received: from pps.filterd (m0279870.ppops.net [127.0.0.1])
+	by mx0a-0031df01.pphosted.com (8.18.1.11/8.18.1.11) with ESMTP id 6AI2Uv462453546
+	for <linux-wireless@vger.kernel.org>; Wed, 18 Nov 2026 06:36:58 GMT
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=qualcomm.com; h=
 	cc:content-transfer-encoding:date:from:in-reply-to:message-id
-	:mime-version:references:subject:to; s=qcppdkim1; bh=QDYUglgswcA
-	+rKL+bkjXrv3itTZLm+LTd0o9S5dIwWw=; b=nihz4iw30BVaVvuC3J8MXP7CJGy
-	RT4AOtJtbb4HWRL2Pb5qR+fQNtPQY7UWOsHm6cAxoElnxaF4o7KcY1VyWodm37hp
-	t+XN4Pr6fsmxMJ4cciNRCy4zL7Iv5zIYGeu4uXZ8WOMenwNwaI+GOqWMiXHwJaoX
-	oqiBs179cnXFHBMHP9K8NPmngxZaFPJM6nyq+zzryl/PH6pFVXsWbkzsvpTWULJl
-	RdM7TTAj34iStBGpFfZrv9SAAKOjaQFZ9jcgiuhzJiexEp2swlTgdk6WWAwqXZCa
-	BsYAJWJCXZW1fL/PzwqhNBvx9HWDrIDGavO6mpxzRbC4T3t/7P3eQXWrgXQ==
+	:mime-version:references:subject:to; s=qcppdkim1; bh=uon/wEpTiZk
+	1tyM7+SSj/FRcoNhrSo+Jx86x2o0esz4=; b=EQtjAnZgWePxcmamvvUxIAAJU5o
+	8nKEegW4gApMoTjnTxp/3bWRTp4h5o+fy5DEVpWObXPNOg8se7fad3tGAF0HL2cv
+	+0LtEwgqdHBbcnxSqg/+4nYfs0zPjzE16lGwKNQ0cFDOuns+6zB8Bs6jG3J/qHra
+	lDs5pAD9kJJ8t/sR7sZKEbJHT6Ma+qNlw055s6NhH1qq+EhuL79s+ZizrupOMZ/m
+	Ov4ZgjwdS/gzv2vupM0Y4JExhFJmgz/tBCVk7XoGcEN7DwpinYBOqM6PIreVmAwv
+	8StmSY+K3qinljaQcvtGj19u2MDXeh6hsmp8/8yDM5cKOLeUrNnjO2nTaMQ==
 Received: from mail-dy1-f197.google.com (mail-dy1-f197.google.com [74.125.82.197])
-	by mx0a-0031df01.pphosted.com (PPS) with ESMTPS id 4j0yvb9ke7-1
+	by mx0a-0031df01.pphosted.com (PPS) with ESMTPS id 4j0yv99juq-1
 	(version=TLSv1.3 cipher=TLS_AES_128_GCM_SHA256 bits=128 verify=NOT)
-	for <linux-wireless@vger.kernel.org>; Wed, 18 Nov 2026 06:36:55 +0000 (GMT)
-Received: by mail-dy1-f197.google.com with SMTP id 5a478bee46e88-3724667bc16so445588eec.1
-        for <linux-wireless@vger.kernel.org>; Tue, 17 Nov 2026 22:36:55 -0800 (PST)
+	for <linux-wireless@vger.kernel.org>; Wed, 18 Nov 2026 06:36:58 +0000 (GMT)
+Received: by mail-dy1-f197.google.com with SMTP id 5a478bee46e88-36a3451ea93so746399eec.1
+        for <linux-wireless@vger.kernel.org>; Tue, 17 Nov 2026 22:36:58 -0800 (PST)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=oss.qualcomm.com; s=google; t=1794983815; x=1795588615; darn=vger.kernel.org;
+        d=oss.qualcomm.com; s=google; t=1794983817; x=1795588617; darn=vger.kernel.org;
         h=content-transfer-encoding:mime-version:references:in-reply-to
          :message-id:date:subject:cc:to:from:from:to:cc:subject:date
          :message-id:reply-to:content-type;
-        bh=QDYUglgswcA+rKL+bkjXrv3itTZLm+LTd0o9S5dIwWw=;
-        b=Q98Ax2hblDuRyyj2t2db/2Q0aWzykDw3B4DZLzR5WJNgAkgicd7IMJeONYIbbUTp+c
-         1IG4+Y9Q0eOX+pysJ/pV6d/VynRgDpMt/cxMvZvnGIhgbpeADybYIaGhCnlU+ZPY5fIJ
-         3DhWEiZkT77t7GmlbyvUqFazl4Wjd1rctXlrBljzxMSKAAj7frJtnuGDb1n0aEkpRMjK
-         901qeLLpxAHsYY4sccb5ORJ2UBOHiGSmgUFepcIdDNOFgdN/W8+LunzfwUb0rVeUxyJE
-         dr9Sk1RYzH3tau61UGiD4mW0RijBML3XN6wA5fLj3BL2WsRZAWs80Lw4h9W+wveh/06Y
-         LnGQ==
+        bh=uon/wEpTiZk1tyM7+SSj/FRcoNhrSo+Jx86x2o0esz4=;
+        b=V/4+yvpYOKj2qzrApXefmwL/IeAl0ACCkJnHyp01pbgBziISWlatmOT4rsVbbY5E9X
+         GWD27cHAPSgQHkmQciDApQManGr/L2j1739mEDSden2b9SLnkRKynmgUFip9dxCbD3zZ
+         9rSQJAkEuQA0Kex73iG9b4VdB99V1cnYi1bSfEgsm63eTJh4MFryeIdiaz6CSyrjMpM2
+         7/KkW9+eiCAvQnbeDrbShizP9dZv/eGvdt4c1JjWnws7QbNg4AhBFEgSOjdFma9h9Y1S
+         SIYl++Xkq74iAq3ryjrY9WwaI4hETX+nmteQZ3F6iAwDoeWM27eiH3jN1RHCH0P1fQ4d
+         OAHg==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=1e100.net; s=20260707; t=1794983815; x=1795588615;
+        d=1e100.net; s=20260707; t=1794983817; x=1795588617;
         h=content-transfer-encoding:mime-version:references:in-reply-to
          :message-id:date:subject:cc:to:from:x-gm-gg:x-gm-message-state:from
          :to:cc:subject:date:message-id:reply-to:content-type;
-        bh=QDYUglgswcA+rKL+bkjXrv3itTZLm+LTd0o9S5dIwWw=;
-        b=D8fDkIYB+dh+5tSZs16S+rvqS/1kNrkW2uItDaHLH0iOvYqR4fsiYTY7wmZkmSNoi0
-         QwHGWM1T/t5HCAeqyweYjoNRfVlNv6X8ceiAGNbW7Wx2Mgma5urp6gbAbfwIku7Sc1Zv
-         3/qSUj3qZ7sfgGhZUWVq4Y4RzX5/LnXROUBxfE/ySGZOtN3h8zmmeNxxE04AX0/Q/+8R
-         qp1bgFVd2/9emayL3EkfHypFdicYzlJ7MBzcDIigdcDWE4twuCa1NlFv49vJYnE3RyZL
-         fFrQibH3xgyqhKgXsurLUKFdCTkWUCqJCEgZqYY5fx7WXfU3KSIpPaa0q2aMOOu4vp6F
-         xrRg==
-X-Gm-Message-State: APuU4Z9APct66OQcH2ItOanHM9HrgDgCPM5u7EtmhNXdSYRGfcb5Aibj
-	kx7hqiOsKtY3l0xFmpwbIKQGc1eExlfcxflntOqfy7557bn5aagFcOJJnlXdGU2aK0EIggUtxxp
-	ek9N67c70GbR8pjKeUEpsr6jDw8kz1pbERE/GteCgxBY3tLrbRWg6qcRFIayORvkYPS9KeA==
-X-Gm-Gg: AZFdTZfF78b4ONTI87AvzAGXR4RX7hOAb1Jzl7vCZNKdubf+OqwwGBTKnUsnJdIcMFv
-	1s7AdhZ1jKs4lsx0qAvkicPy3YD2O1mOnmf/VFrNvRKI+7LMjRTPumSxfARLzAjuo/JAAIpjL0b
-	nKX20MaWQ7tUtmOl6ftTxrrFTFHpiyYFKFZHWVfXwhlBTTdlLNl91+x8b9F0nEYGKefnGrtDSu2
-	lV9PUt2yka6nDil9BOl/16xZkB3DU60Ka0YGgg0OsyqG8rauo9T58muv1CcTLKj4k1pgxe7R35g
-	zk1k5sI27vNIFotp3ZR822sr46b8y0DKh5/sZovoMm558PNMyOsfU3x4rM57pLTbWHrBRyWck1R
-	IE8bnwpeoNpnuWduZebpZ2WjJyEr944EZUwwuMRmu49qIa5LihCPPdkQDmEjrWZw5kXFrmVCMxr
-	7TMSfn/qzHhQ==
-X-Received: by 2002:a05:7300:8283:b0:36d:be15:2dd6 with SMTP id 5a478bee46e88-3828161e0bfmr1542547eec.11.1794983814505;
-        Tue, 17 Nov 2026 22:36:54 -0800 (PST)
-X-Received: by 2002:a05:7300:8283:b0:36d:be15:2dd6 with SMTP id 5a478bee46e88-3828161e0bfmr1542526eec.11.1794983813880;
-        Tue, 17 Nov 2026 22:36:53 -0800 (PST)
+        bh=uon/wEpTiZk1tyM7+SSj/FRcoNhrSo+Jx86x2o0esz4=;
+        b=q9z51gkoirhXHYytsHxsXMFeR9L+oiBPcuuS+VZRbmPEQe4MRnkg4cA8K4Zj9WIbku
+         +VgyuUbmliJ31HNyJ7h51cg0JnfaA068ygWj+kmGyhnDI9cO8YJ9p8wHHoAPnyS+XJjA
+         MIZjMdf2x9zdRoP/ABG1rBOjJ+6xGvzrq/u9MdcvbmotTmWl+qriz3klB1CWrhEU0BgB
+         GybP4snTlpV7yfIDugPCNcTSLYTABK5zfXGwD0KgeBN1P/IqeVhrclmIPl0A5T7hIhg7
+         /5wCtWkmeK877/4tKhqkv5b8qc4lYE0kYwSCcGUUMqDdR7s7Q4iwjulbvBAH8YSEoYal
+         RaJg==
+X-Gm-Message-State: APuU4Z+q/oKiPd9BZeeGApbpfVXGWGbqEcqkyA73mQYKchq/UcMdEl7R
+	YbdMXAgGwaCyVVi/DgZ5Un0R+HVHB7vOXWphjCK/FhI7+eyrth3TD22VUAiRG90MajkZWH3wBTm
+	W5R2MsqzGCvG9ifLlKTxZSgP4IHn7WA/eQJNm/XmrkyNG4RHtqlZu83manf8XGygsVRh1PA==
+X-Gm-Gg: AZFdTZfK6bdY6VzlmtmROqYa2H4raIJrGXHKkO+jUqgl8uOokibvCdHOtdk2e8WNSJa
+	g/XbCEP3QxhzXLRSBBELHtZ91tnfqP62KPTZXRCYH+osLGEopi73pAiZvNLE/0qzyO6Bs8DRkZR
+	V6G5K8hBVo7RdW8+t1KwIx9Ha6iBJmWX8ME76W1Ln87ZhNGt905GotVwO1OUkr8vX5odjZUSnlu
+	Z52DdEDLnZ9RDMTAHhtjhe5PwOw+jfyJBQiyWiY7fm7X5m8fIQDIw+X4acVSMhR7SqDiF4xsTmr
+	6bDVTI6nglD+FsXURmrfkRCCdj64gsEaK8rfxVPqZUwcx09o9FkunxHj1QHu67OWg86oPwegcKO
+	qvdqPzN5Ts4ijIC/Puro8sMX6vzZE98zl67bk+ZGNePsnJJ0DSIy6uS4a0Bf1UPXUIEczAJgHHd
+	QyAnvYSQqyeQ==
+X-Received: by 2002:a05:693c:83dc:20b0:369:fe81:a575 with SMTP id 5a478bee46e88-382814184d1mr2004424eec.35.1794983817108;
+        Tue, 17 Nov 2026 22:36:57 -0800 (PST)
+X-Received: by 2002:a05:693c:83dc:20b0:369:fe81:a575 with SMTP id 5a478bee46e88-382814184d1mr2004395eec.35.1794983816373;
+        Tue, 17 Nov 2026 22:36:56 -0800 (PST)
 Received: from hu-shivbara-hyd.qualcomm.com ([202.46.23.25])
-        by smtp.gmail.com with ESMTPSA id 5a478bee46e88-382a6800338sm4567268eec.11.2026.11.17.22.36.51
+        by smtp.gmail.com with ESMTPSA id 5a478bee46e88-382a6800338sm4567268eec.11.2026.11.17.22.36.54
         (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
-        Tue, 17 Nov 2026 22:36:53 -0800 (PST)
+        Tue, 17 Nov 2026 22:36:56 -0800 (PST)
 From: Shivani Baranwal <shivani.baranwal@oss.qualcomm.com>
 To: johannes@sipsolutions.net
 Cc: linux-wireless@vger.kernel.org, kavita.kavita@oss.qualcomm.com,
         vamsin@qti.qualcomm.com, vganneva@qti.qualcomm.com
-Subject: [PATCH wireless-next v4 16/19] wifi: nl80211/cfg80211: support updating an offloaded NAN publish function
-Date: Wed, 18 Nov 2026 12:05:51 +0530
-Message-Id: <20261118063554.2260397-17-shivani.baranwal@oss.qualcomm.com>
+Subject: [PATCH wireless-next v4 17/19] wifi: nl80211/cfg80211: allow extra NAN attributes in offloaded functions
+Date: Wed, 18 Nov 2026 12:05:52 +0530
+Message-Id: <20261118063554.2260397-18-shivani.baranwal@oss.qualcomm.com>
 X-Mailer: git-send-email 2.34.1
 In-Reply-To: <20261118063554.2260397-1-shivani.baranwal@oss.qualcomm.com>
 References: <20261118063554.2260397-1-shivani.baranwal@oss.qualcomm.com>
@@ -120,290 +120,307 @@ List-Owner: <mailto:linux-wireless+owner@vger.kernel.org>
 Precedence: list
 MIME-Version: 1.0
 Content-Transfer-Encoding: 8bit
-X-Proofpoint-GUID: B_jHylQS7hBo9WLc_-OsXjnvBrRyxEmW
-X-Proofpoint-ORIG-GUID: B_jHylQS7hBo9WLc_-OsXjnvBrRyxEmW
-X-Authority-Analysis: v=2.4 cv=YfgodARf c=1 sm=1 tr=0 ts=6afd4787 cx=c_pps
+X-Proofpoint-Spam-Info: AW1haW4tMjYxMTE4MDAyNiBTYWx0ZWRfX1r3YTiqQEi/J
+ vtAyiS4KSxZGgJQYQFuIw6xQu88+dHGzwNWQ8DaQG+hnytjmRJn1JWGAFxre6mJEsAE1nc6zAkc
+ YPtKjUzO0/WC1APwIXLoniW98VJzy8U=
+X-Authority-Analysis: v=2.4 cv=acT0Dhot c=1 sm=1 tr=0 ts=6afd478a cx=c_pps
  a=Uww141gWH0fZj/3QKPojxA==:117 a=ZePRamnt/+rB5gQjfz0u9A==:17
  a=zJRp6_cAMcgA:10 a=s4-Qcg_JpJYA:10 a=VkNPw1HP01LnGYTKEx00:22
- a=u7WPNUs3qKkmUXheDGA7:22 a=DJpcGTmdVt4CTyJn9g5Z:22 a=EUspDBNiAAAA:8
- a=grxfuFoILc7gH7VXXwgA:9 a=PxkB5W3o20Ba91AHUih5:22
-X-Proofpoint-Spam-Info: AW1haW4tMjYxMTE4MDAyNiBTYWx0ZWRfX68KTJlcDgo7f
- UPeHvhVZ+gxp7Nyv9ovwQY6EORSdIWZufm8eDKxcOeJTNMG8eg1ZwrvVvTUQqPxlyqshIFIKe5h
- tntignbXVQqTstwJ9fXiXqwEWNH6beU=
-X-Proofpoint-Spam-Details-Enc: AW1haW4tMjYxMTE4MDAyNiBTYWx0ZWRfX5XEl5Lq7U3rY
- NA5Dp7TRMQVx22nxTAGXtsVBnH4ym0uj1CVFwsRH3m4MeSfJG3nR/9D7iNz+cvNOMQc1UVtc/Sb
- tmdr5evCELCHUrYQ95Dvu6ANABkLiFJ5ixPOmzqLA3A5PGp4clxhs2RmFADao+9mWD2ldNSUawx
- LvpYXTKeIhATKEy40TdcVMcZBpd/7Q9Yx0xcZZeVS4cPYTYLjKwUbGp/cSxFpQM4yN7a3ox/cIH
- 9HVUDJqiDTJDJ86N8DQLY8jPr7iuH9uKiFKQ9OYxCi7fUmUMBf05z4kbKDPJbvIUlaSeMzfB58p
- GCWtHDIUWwWtm71vkHInNizhBZihLn1Q6YXa7dZnvrd/+O7mf6oEQn3S3ZeCgDr7G3xwu5tNWts
- gZ05ER1twO7IOtWj6qOCTA0cEOvPCvpXU9g+eMYmKDRyzfcMeNE3MlgwtGOGNsIOCog8v2pbfYi
- 7h/Z8RBMejPAgVzoWzQ==
+ a=u7WPNUs3qKkmUXheDGA7:22 a=gowsoOTTUOVcmtlkKump:22 a=EUspDBNiAAAA:8
+ a=-RX98rD8DKRKJ5uf4OcA:9 a=PxkB5W3o20Ba91AHUih5:22
+X-Proofpoint-Spam-Details-Enc: AW1haW4tMjYxMTE4MDAyNiBTYWx0ZWRfX+JyjANDacykS
+ 1tXAJZ8aEW2ASeNkhXa7NsKhufe93FQrzRO4JXFKSmWgZJ1Jyl5BGw0v/c2cPWLxKzk5M14cMrb
+ ISOz2DuL6nmpu0DAxxBAs8oXd/Ff8VlNPI4H4eDPQDr4CP9u6bpPkakf5k6SCd8fIgnrDP37KFR
+ TM/dBLUtUn6ZcuuapVE9tR5amVXTpvC7QZXunjlKOjoWmFoP0sFNUi2O0DwfibUr+HZjoowAk0z
+ gJjjXPyi7lniu2kQRc2Vt1hEdMnGg3jsLpBSyJcWZrorZ5oufKaTXpZ/YICSvk3NnqfYPmsdtit
+ mcVSu2xefot5vf/SgsIBH0gM67e71vULEvz5O/UNbeo6XNcL1z7tvmoK4s7fRAIgOtUX/QR9fDI
+ g/HKLQ1x7OJG4hYIOCeQaoYeEUqm+PQPvUEv+HJkO8ngJn9OBYJhuX9a+DFfv1MKf6x5sFTTHAa
+ 9s8a87bSOHJqa/TVfcw==
+X-Proofpoint-ORIG-GUID: LY2fH6MYmu2UKSUx51YhNJfUKQ5GBbyn
+X-Proofpoint-GUID: LY2fH6MYmu2UKSUx51YhNJfUKQ5GBbyn
 X-Proofpoint-Virus-Version: vendor=baseguard
  engine=ICAP:2.0.293,Aquarius:18.0.1176,Hydra:6.1.138,FMLib:17.12.100.49
  definitions=2026-11-18_01,2026-11-16_01,2025-10-01_01
 X-Proofpoint-Spam-Details: rule=outbound_notspam policy=outbound score=0
- clxscore=1015 lowpriorityscore=0 phishscore=0 impostorscore=0 malwarescore=0
- adultscore=0 priorityscore=1501 spamscore=0 bulkscore=0 suspectscore=0
+ lowpriorityscore=0 suspectscore=0 phishscore=0 impostorscore=0 bulkscore=0
+ malwarescore=0 priorityscore=1501 spamscore=0 clxscore=1015 adultscore=0
  classifier=typeunknown authscore=0 authtc= authcc= route=outbound adjust=0
  reason=mlx scancount=1 engine=8.22.0-2611040001 definitions=main-2611180026
 
-With an offloaded NAN Discovery Engine, userspace may need to change the
-service-specific information of an active publish function.
+From: Vinay Gannevaram <vganneva@qti.qualcomm.com>
 
-Add a separate NL80211_CMD_UPDATE_NAN_PUBLISH command, identified only
-by a non-zero cookie, to update the service-specific information as
-specified by the UpdatePublish method in Wi-Fi Aware v4.0, section
-4.1.1.1. A zero-length value clears the information. All other function
-parameters remain unchanged, and the update does not change the
-remaining lifetime (TTL).
+With an offloaded NAN Discovery Engine the device builds and transmits
+the Service Discovery Frames, so everything that goes into them has to
+be expressed with function attributes. NAN pairing, however, can be
+handled in user space: the PASN Authentication frames, the bootstrapping
+frames and the Follow-up messages with the Shared Key Descriptor
+attribute are built by user space and sent with NL80211_CMD_FRAME. For
+pairing verification, the NAN Identity Resolution attribute, which user
+space derives from its NAN Identity Key, must also be included in the
+Publish and Subscribe messages that the device transmits in the
+discovery windows.
 
-Keep NL80211_CMD_ADD_NAN_FUNCTION semantics unchanged for existing
-drivers. Advertise the new command in the supported-commands list when
-the driver provides the update callback.
+Add NL80211_NAN_FUNC_EXTRA_ATTRS to pass a list of complete NAN
+attributes that the device appends to the frames of the function. This
+keeps pairing, and the NAN Identity Key, in user space.
 
-As a new command, it uses strict netlink validation: generic netlink
-rejects relaxed validation flags for commands at or above the family's
-resv_start_op, which would make registration of the nl80211 family
-fail.
+Validate the attribute framing, bound the length like information
+elements, and only accept the attribute if the driver advertises
+NL80211_NAN_CAPA_FUNC_EXTRA_ATTRS.
 
+Signed-off-by: Vinay Gannevaram <vganneva@qti.qualcomm.com>
 Signed-off-by: Shivani Baranwal <shivani.baranwal@oss.qualcomm.com>
 ---
- include/net/cfg80211.h       | 23 ++++++++++++
- include/uapi/linux/nl80211.h |  8 +++++
- net/wireless/nl80211.c       | 70 ++++++++++++++++++++++++++++++++++++
- net/wireless/rdev-ops.h      | 16 +++++++++
- net/wireless/trace.h         | 22 ++++++++++++
- 5 files changed, 139 insertions(+)
+ include/net/cfg80211.h       | 14 ++++++++
+ include/uapi/linux/nl80211.h | 15 +++++++++
+ net/wireless/core.c          |  4 +++
+ net/wireless/nl80211.c       | 63 ++++++++++++++++++++++++++++++++++++
+ net/wireless/trace.h         |  9 ++++--
+ net/wireless/util.c          |  1 +
+ 6 files changed, 103 insertions(+), 3 deletions(-)
 
 diff --git a/include/net/cfg80211.h b/include/net/cfg80211.h
-index 99d8eb202f84..e44c5da96ece 100644
+index e44c5da96ece..0964301473e1 100644
 --- a/include/net/cfg80211.h
 +++ b/include/net/cfg80211.h
-@@ -4735,6 +4735,21 @@ struct cfg80211_nan_func {
+@@ -4690,6 +4690,14 @@ struct cfg80211_nan_func_filter {
+  * @chandef: channel definition for FTM ranging.
+  * @range_report: if true, a NAN Ranging Report is required after the FTM
+  *	session.
++ * @extra_attrs: additional NAN attributes to append to the Service Discovery
++ *	Frames transmitted for this function. It must not contain attributes that
++ *	the device adds itself, such as the Service Descriptor attribute or
++ *	attributes derived from other function fields. Typical uses include the
++ *	NAN Identity Resolution attribute for pairing verification in Publish and
++ *	Subscribe messages. The driver is responsible for ensuring the resulting
++ *	frame fits its supported limits.
++ * @extra_attrs_len: length of @extra_attrs.
+  */
+ struct cfg80211_nan_func {
+ 	enum nl80211_nan_function_type type;
+@@ -4733,6 +4741,8 @@ struct cfg80211_nan_func {
+ 	bool chandef_valid;
+ 	struct cfg80211_chan_def chandef;
  	bool range_report;
++	const u8 *extra_attrs;
++	u16 extra_attrs_len;
  };
  
-+/**
-+ * struct cfg80211_nan_update_publish - update NAN publish service info
-+ *
-+ * @cookie: non-zero cookie of the active publish function to update
-+ * @serv_spec_info: replacement service-specific information. The pointer is
-+ *	valid only for the duration of the callback and must not be retained.
-+ * @serv_spec_info_len: length of @serv_spec_info. A zero length clears the
-+ *	current service-specific information.
-+ */
-+struct cfg80211_nan_update_publish {
-+	u64 cookie;
-+	const u8 *serv_spec_info;
-+	u8 serv_spec_info_len;
-+};
-+
  /**
-  * struct cfg80211_pmk_conf - PMK configuration
-  *
-@@ -5564,6 +5579,11 @@ struct mgmt_frame_regs {
-  *	cfg80211_free_nan_func().
-  *	On success the driver should assign an instance_id in the
-  *	provided @nan_func.
-+ * @nan_update_publish: Update the service-specific information of an active
-+ *	NAN publish function identified by the cookie in @params. Return -ENOENT if
-+ *	the cookie does not identify an active publish function of this wdev;
-+ *	subscribe functions cannot be updated. The service-info pointer is valid
-+ *	only for the duration of the callback.
-  * @del_nan_func: Delete a NAN function.
-  * @nan_change_conf: changes NAN configuration. The changed parameters must
-  *	be specified in @changes (using &enum cfg80211_nan_conf_changes);
-@@ -6012,6 +6032,9 @@ struct cfg80211_ops {
- 	void	(*stop_nan)(struct wiphy *wiphy, struct wireless_dev *wdev);
- 	int	(*add_nan_func)(struct wiphy *wiphy, struct wireless_dev *wdev,
- 				struct cfg80211_nan_func *nan_func);
-+	int	(*nan_update_publish)(struct wiphy *wiphy,
-+				      struct wireless_dev *wdev,
-+				      const struct cfg80211_nan_update_publish *params);
- 	void	(*del_nan_func)(struct wiphy *wiphy, struct wireless_dev *wdev,
- 			       u64 cookie);
- 	int	(*nan_change_conf)(struct wiphy *wiphy,
+@@ -6787,6 +6797,9 @@ struct wiphy_radio {
+  *	cfg80211_nan_ndp_request(), cfg80211_nan_ndp_status(), and
+  *	cfg80211_nan_ndp_terminated(). Secure NDPs require
+  *	%NL80211_EXT_FEATURE_SECURE_NAN.
++ * @WIPHY_NAN_FLAGS_FUNC_EXTRA_ATTRS: Driver accepts additional per-function
++ *	NAN attributes when the Discovery Engine is offloaded. This flag cannot
++ *	be used with %WIPHY_NAN_FLAGS_USERSPACE_DE.
+  */
+ enum wiphy_nan_flags {
+ 	WIPHY_NAN_FLAGS_CONFIGURABLE_SYNC = BIT(0),
+@@ -6794,6 +6807,7 @@ enum wiphy_nan_flags {
+ 	WIPHY_NAN_FLAGS_INSTANT_COMM = BIT(2),
+ 	WIPHY_NAN_FLAGS_OFFLOAD_RANGING = BIT(3),
+ 	WIPHY_NAN_FLAGS_OFFLOAD_NDP = BIT(4),
++	WIPHY_NAN_FLAGS_FUNC_EXTRA_ATTRS = BIT(5),
+ };
+ 
+ /**
 diff --git a/include/uapi/linux/nl80211.h b/include/uapi/linux/nl80211.h
-index b498d5ef094c..e6172abab0d6 100644
+index e6172abab0d6..2581b7328867 100644
 --- a/include/uapi/linux/nl80211.h
 +++ b/include/uapi/linux/nl80211.h
-@@ -1175,6 +1175,13 @@
-  *	This command is also used as a notification sent when a NAN function is
-  *	terminated. This will contain a %NL80211_ATTR_NAN_FUNC_INST_ID
-  *	and %NL80211_ATTR_COOKIE attributes.
-+ * @NL80211_CMD_UPDATE_NAN_PUBLISH: Update only the service-specific
-+ *	information of an active NAN publish function. The function is identified
-+ *	by a non-zero %NL80211_ATTR_COOKIE. Supply the new information as
-+ *	%NL80211_NAN_FUNC_SERVICE_INFO nested in %NL80211_ATTR_NAN_FUNC. A
-+ *	zero-length service-info attribute clears the current value. All other
-+ *	function parameters remain unchanged, and the update does not change the
-+ *	function's remaining lifetime (TTL).
-  * @NL80211_CMD_CHANGE_NAN_CONFIG: Change current NAN
-  *	configuration. NAN must be operational (%NL80211_CMD_START_NAN
-  *	was executed).  It must contain at least one of the following
-@@ -1927,6 +1934,7 @@ enum nl80211_commands {
- 	NL80211_CMD_NAN_NDP_RESPOND,
- 	NL80211_CMD_NAN_NDP_TERMINATE,
- 	NL80211_CMD_NAN_NDP_STATUS,
-+	NL80211_CMD_UPDATE_NAN_PUBLISH,
+@@ -7980,6 +7980,15 @@ enum nl80211_nan_func_term_reason {
+  *	using top-level attributes like %NL80211_ATTR_WIPHY_FREQ etc.
+  * @NL80211_NAN_FUNC_RANGE_REPORT: flag indicating that a NAN Ranging
+  *	Report is required after the FTM session.
++ * @NL80211_NAN_FUNC_EXTRA_ATTRS: binary attribute containing additional NAN
++ *	attributes to append to Service Discovery Frames transmitted for this
++ *	function. Each attribute is encoded as a one-octet ID, a two-octet
++ *	little-endian length, and that many body octets. It must not contain
++ *	attributes that the device adds itself, such as the Service Descriptor
++ *	attribute or attributes derived from other function attributes. Typical
++ *	uses include the NAN Identity Resolution attribute for pairing
++ *	verification in Publish and Subscribe messages. Requires
++ *	%NL80211_NAN_CAPA_FUNC_EXTRA_ATTRS.
+  *
+  * @NUM_NL80211_NAN_FUNC_ATTR: internal
+  * @NL80211_NAN_FUNC_ATTR_MAX: highest NAN function attribute
+@@ -8016,6 +8025,7 @@ enum nl80211_nan_func_attributes {
+ 	NL80211_NAN_FUNC_PREAMBLE,
+ 	NL80211_NAN_FUNC_CHAN,
+ 	NL80211_NAN_FUNC_RANGE_REPORT,
++	NL80211_NAN_FUNC_EXTRA_ATTRS,
  
- 	/* add new commands above here */
+ 	/* keep last */
+ 	NUM_NL80211_NAN_FUNC_ATTR,
+@@ -9564,6 +9574,10 @@ enum nl80211_s1g_short_beacon_attrs {
+  *	and termination with %NL80211_CMD_NAN_NDP_INITIATE,
+  *	%NL80211_CMD_NAN_NDP_STATUS, and %NL80211_CMD_NAN_NDP_TERMINATE.
+  *	Secure NDPs additionally require %NL80211_EXT_FEATURE_SECURE_NAN.
++ * @NL80211_NAN_CAPA_FUNC_EXTRA_ATTRS: flag attribute. The device accepts
++ *	%NL80211_NAN_FUNC_EXTRA_ATTRS for NAN functions when the NAN Discovery
++ *	Engine is offloaded. This capability is not available when
++ *	%NL80211_NAN_CAPA_USERSPACE_DE is set.
+  * @__NL80211_NAN_CAPABILITIES_LAST: Internal
+  * @NL80211_NAN_CAPABILITIES_MAX: Highest NAN capability attribute.
+  */
+@@ -9580,6 +9594,7 @@ enum nl80211_nan_capabilities {
+ 	NL80211_NAN_CAPA_INSTANT_COMM,
+ 	NL80211_NAN_CAPA_OFFLOAD_RANGING,
+ 	NL80211_NAN_CAPA_OFFLOAD_NDP,
++	NL80211_NAN_CAPA_FUNC_EXTRA_ATTRS,
+ 	/* keep last */
+ 	__NL80211_NAN_CAPABILITIES_LAST,
+ 	NL80211_NAN_CAPABILITIES_MAX = __NL80211_NAN_CAPABILITIES_LAST - 1,
+diff --git a/net/wireless/core.c b/net/wireless/core.c
+index 00e97ca901e2..1326786b058b 100644
+--- a/net/wireless/core.c
++++ b/net/wireless/core.c
+@@ -935,6 +935,10 @@ int wiphy_register(struct wiphy *wiphy)
+ 		     !rdev->ops->add_nan_func || !rdev->ops->del_nan_func ||
+ 		     !(wiphy->nan_supported_bands & BIT(NL80211_BAND_2GHZ)))))
+ 		return -EINVAL;
++	if (WARN_ON((wiphy->nan_capa.flags &
++		     WIPHY_NAN_FLAGS_FUNC_EXTRA_ATTRS) &&
++		    (wiphy->nan_capa.flags & WIPHY_NAN_FLAGS_USERSPACE_DE)))
++		return -EINVAL;
  
+ 	if (WARN_ON((wiphy->interface_modes & BIT(NL80211_IFTYPE_NAN_DATA)) &&
+ 		    (!wiphy->nan_capa.phy.ht.ht_supported || wiphy->n_radio > 1)))
 diff --git a/net/wireless/nl80211.c b/net/wireless/nl80211.c
-index f32ae55797a5..137ee621dd56 100644
+index 137ee621dd56..fe20d4eb6f4b 100644
 --- a/net/wireless/nl80211.c
 +++ b/net/wireless/nl80211.c
-@@ -3538,6 +3538,7 @@ static int nl80211_send_wiphy(struct cfg80211_registered_device *rdev,
- 
- 			if (rdev->wiphy.flags & WIPHY_FLAG_SMD_TRANSITION_CLIENT)
- 				CMD(execute_st, EXECUTE_SMD_TRANSITION);
-+			CMD(nan_update_publish, UPDATE_NAN_PUBLISH);
- 		}
- #undef CMD
- 
-@@ -17908,6 +17909,69 @@ static int nl80211_nan_add_func(struct sk_buff *skb,
- 	return -ENOBUFS;
+@@ -479,6 +479,42 @@ static int validate_nan_pmk(const struct nlattr *attr,
+ 	return 0;
  }
  
-+static int nl80211_nan_update_publish(struct sk_buff *skb,
-+				      struct genl_info *info)
++static int validate_nan_func_extra_attrs(const struct nlattr *attr,
++					 struct netlink_ext_ack *extack)
 +{
-+	struct cfg80211_registered_device *rdev = info->user_ptr[0];
-+	struct wireless_dev *wdev = info->user_ptr[1];
-+	struct nlattr *tb[NUM_NL80211_NAN_FUNC_ATTR];
-+	struct nlattr *func_attr, *attr;
-+	struct cfg80211_nan_update_publish params = {};
-+	int rem, err;
++	const u8 *data = nla_data(attr);
++	unsigned int len = nla_len(attr);
++	unsigned int pos = 0;
 +
-+	if (wdev->iftype != NL80211_IFTYPE_NAN)
-+		return -EOPNOTSUPP;
-+
-+	if (!wdev_running(wdev))
-+		return -ENOTCONN;
-+
-+	if (wdev->wiphy->nan_capa.flags & WIPHY_NAN_FLAGS_USERSPACE_DE) {
-+		NL_SET_ERR_MSG(info->extack,
-+			       "NAN Discovery Engine is in userspace");
-+		return -EOPNOTSUPP;
-+	}
-+
-+	if (!info->attrs[NL80211_ATTR_COOKIE] ||
-+	    !info->attrs[NL80211_ATTR_NAN_FUNC])
-+		return -EINVAL;
-+
-+	params.cookie = nla_get_u64(info->attrs[NL80211_ATTR_COOKIE]);
-+	if (!params.cookie) {
-+		NL_SET_ERR_MSG_ATTR(info->extack,
-+				    info->attrs[NL80211_ATTR_COOKIE],
-+				    "NAN publish cookie must be non-zero");
++	if (!len) {
++		NL_SET_ERR_MSG_ATTR(extack, attr,
++				    "NAN function extra attributes must not be empty");
 +		return -EINVAL;
 +	}
 +
-+	func_attr = info->attrs[NL80211_ATTR_NAN_FUNC];
-+	nla_for_each_nested(attr, func_attr, rem) {
-+		if (nla_type(attr) == NL80211_NAN_FUNC_SERVICE_INFO)
-+			continue;
++	while (pos < len) {
++		u16 attr_len;
 +
-+		NL_SET_ERR_MSG_ATTR(info->extack, attr,
-+				    "Only service-specific information can be updated");
-+		return -EINVAL;
++		if (len - pos < 3) {
++			NL_SET_ERR_MSG_ATTR(extack, attr,
++					    "NAN function extra attribute has a truncated header");
++			return -EINVAL;
++		}
++
++		attr_len = get_unaligned_le16(data + pos + 1);
++		pos += 3;
++		if (attr_len > len - pos) {
++			NL_SET_ERR_MSG_ATTR(extack, attr,
++					    "NAN function extra attribute length exceeds remaining data");
++			return -EINVAL;
++		}
++
++		pos += attr_len;
 +	}
 +
-+	err = nla_parse_nested(tb, NL80211_NAN_FUNC_ATTR_MAX, func_attr,
-+			       nl80211_nan_func_policy, info->extack);
-+	if (err)
-+		return err;
-+
-+	if (!tb[NL80211_NAN_FUNC_SERVICE_INFO]) {
-+		NL_SET_ERR_MSG_ATTR(info->extack, func_attr,
-+				    "Service-specific information is required");
-+		return -EINVAL;
-+	}
-+
-+	params.serv_spec_info =
-+		nla_data(tb[NL80211_NAN_FUNC_SERVICE_INFO]);
-+	params.serv_spec_info_len =
-+		nla_len(tb[NL80211_NAN_FUNC_SERVICE_INFO]);
-+
-+	return rdev_nan_update_publish(rdev, wdev, &params);
++	return 0;
 +}
 +
- static int nl80211_nan_del_func(struct sk_buff *skb,
- 			       struct genl_info *info)
+ static int validate_nan_avail_blob(const struct nlattr *attr,
+ 				   struct netlink_ext_ack *extack)
  {
-@@ -22184,6 +22248,12 @@ static const struct genl_small_ops nl80211_small_ops[] = {
- 		.internal_flags = IFLAGS(NL80211_FLAG_NEED_WDEV_UP |
- 					 NL80211_FLAG_CLEAR_SKB),
- 	},
-+	{
-+		.cmd = NL80211_CMD_UPDATE_NAN_PUBLISH,
-+		.doit = nl80211_nan_update_publish,
-+		.flags = GENL_ADMIN_PERM,
-+		.internal_flags = IFLAGS(NL80211_FLAG_NEED_WDEV_UP),
-+	},
- 	{
- 		.cmd = NL80211_CMD_DEL_NAN_FUNCTION,
- 		.validate = GENL_DONT_VALIDATE_STRICT | GENL_DONT_VALIDATE_DUMP,
-diff --git a/net/wireless/rdev-ops.h b/net/wireless/rdev-ops.h
-index 3e4e0d768ae5..5dd95091977e 100644
---- a/net/wireless/rdev-ops.h
-+++ b/net/wireless/rdev-ops.h
-@@ -1096,6 +1096,22 @@ rdev_add_nan_func(struct cfg80211_registered_device *rdev,
- 	return ret;
- }
+@@ -1437,6 +1473,10 @@ nl80211_nan_func_policy[NL80211_NAN_FUNC_ATTR_MAX + 1] = {
+ 				 NL80211_PREAMBLE_HE),
+ 	[NL80211_NAN_FUNC_CHAN] = NLA_POLICY_NESTED(nl80211_policy),
+ 	[NL80211_NAN_FUNC_RANGE_REPORT] = { .type = NLA_FLAG },
++	[NL80211_NAN_FUNC_EXTRA_ATTRS] =
++		NLA_POLICY_VALIDATE_FN(NLA_BINARY,
++				       validate_nan_func_extra_attrs,
++				       IEEE80211_MAX_DATA_LEN),
+ };
  
-+static inline int
-+rdev_nan_update_publish(struct cfg80211_registered_device *rdev,
-+			struct wireless_dev *wdev,
-+			const struct cfg80211_nan_update_publish *params)
-+{
-+	int ret;
+ /* policy for Service Response Filter attributes */
+@@ -3258,6 +3298,10 @@ static int nl80211_put_nan_capa(struct wiphy *wiphy, struct sk_buff *msg)
+ 	    nla_put_flag(msg, NL80211_NAN_CAPA_OFFLOAD_NDP))
+ 		goto fail;
+ 
++	if ((wiphy->nan_capa.flags & WIPHY_NAN_FLAGS_FUNC_EXTRA_ATTRS) &&
++	    nla_put_flag(msg, NL80211_NAN_CAPA_FUNC_EXTRA_ATTRS))
++		goto fail;
 +
-+	trace_rdev_nan_update_publish(&rdev->wiphy, wdev, params);
-+	if (rdev->ops->nan_update_publish)
-+		ret = rdev->ops->nan_update_publish(&rdev->wiphy, wdev, params);
-+	else
-+		ret = -EOPNOTSUPP;
-+	trace_rdev_return_int(&rdev->wiphy, ret);
-+	return ret;
-+}
+ 	if (nla_put_u8(msg, NL80211_NAN_CAPA_OP_MODE,
+ 		       wiphy->nan_capa.op_mode) ||
+ 	    nla_put_u8(msg, NL80211_NAN_CAPA_NUM_ANTENNAS,
+@@ -17719,6 +17763,25 @@ static int nl80211_nan_add_func(struct sk_buff *skb,
+ 			goto out;
+ 	}
+ 
++	if (tb[NL80211_NAN_FUNC_EXTRA_ATTRS]) {
++		if (!(wdev->wiphy->nan_capa.flags &
++		      WIPHY_NAN_FLAGS_FUNC_EXTRA_ATTRS)) {
++			NL_SET_ERR_MSG(info->extack,
++				       "Extra NAN function attributes are not supported");
++			err = -EOPNOTSUPP;
++			goto out;
++		}
 +
- static inline void rdev_del_nan_func(struct cfg80211_registered_device *rdev,
- 				    struct wireless_dev *wdev, u64 cookie)
- {
++		func->extra_attrs_len = nla_len(tb[NL80211_NAN_FUNC_EXTRA_ATTRS]);
++		func->extra_attrs =
++			kmemdup(nla_data(tb[NL80211_NAN_FUNC_EXTRA_ATTRS]),
++				func->extra_attrs_len, GFP_KERNEL);
++		if (!func->extra_attrs) {
++			err = -ENOMEM;
++			goto out;
++		}
++	}
++
+ 	func->data_path_required =
+ 		nla_get_flag(tb[NL80211_NAN_FUNC_DATA_PATH_REQUIRED]);
+ 	func->security_required =
 diff --git a/net/wireless/trace.h b/net/wireless/trace.h
-index b7e1eaa061c8..0b0bef1e8cb7 100644
+index 0b0bef1e8cb7..85eb81d0d87f 100644
 --- a/net/wireless/trace.h
 +++ b/net/wireless/trace.h
-@@ -2460,6 +2460,28 @@ TRACE_EVENT(rdev_add_nan_func,
- 		  __entry->cookie)
+@@ -2448,16 +2448,19 @@ TRACE_EVENT(rdev_add_nan_func,
+ 		WDEV_ENTRY
+ 		__field(u8, func_type)
+ 		__field(u64, cookie)
++		__field(u16, extra_attrs_len)
+ 	),
+ 	TP_fast_assign(
+ 		WIPHY_ASSIGN;
+ 		WDEV_ASSIGN;
+ 		__entry->func_type = func->type;
+-		__entry->cookie = func->cookie
++		__entry->cookie = func->cookie;
++		__entry->extra_attrs_len = func->extra_attrs_len;
+ 	),
+-	TP_printk(WIPHY_PR_FMT ", " WDEV_PR_FMT ", type=%u, cookie=%llu",
++	TP_printk(WIPHY_PR_FMT ", " WDEV_PR_FMT
++		  ", type=%u, cookie=%llu, extra_attrs_len=%u",
+ 		  WIPHY_PR_ARG, WDEV_PR_ARG, __entry->func_type,
+-		  __entry->cookie)
++		  __entry->cookie, __entry->extra_attrs_len)
  );
  
-+TRACE_EVENT(rdev_nan_update_publish,
-+	TP_PROTO(struct wiphy *wiphy, struct wireless_dev *wdev,
-+		 const struct cfg80211_nan_update_publish *params),
-+	TP_ARGS(wiphy, wdev, params),
-+	TP_STRUCT__entry(
-+		WIPHY_ENTRY
-+		WDEV_ENTRY
-+		__field(u64, cookie)
-+		__field(u8, serv_spec_info_len)
-+	),
-+	TP_fast_assign(
-+		WIPHY_ASSIGN;
-+		WDEV_ASSIGN;
-+		__entry->cookie = params->cookie;
-+		__entry->serv_spec_info_len = params->serv_spec_info_len;
-+	),
-+	TP_printk(WIPHY_PR_FMT ", " WDEV_PR_FMT
-+		  ", cookie=%llu, ssi_len=%u",
-+		  WIPHY_PR_ARG, WDEV_PR_ARG, __entry->cookie,
-+		  __entry->serv_spec_info_len)
-+);
-+
- TRACE_EVENT(rdev_del_nan_func,
- 	TP_PROTO(struct wiphy *wiphy, struct wireless_dev *wdev,
- 		 u64 cookie),
+ TRACE_EVENT(rdev_nan_update_publish,
+diff --git a/net/wireless/util.c b/net/wireless/util.c
+index 980b16c72d4f..4e1cbe50af1e 100644
+--- a/net/wireless/util.c
++++ b/net/wireless/util.c
+@@ -2876,6 +2876,7 @@ void cfg80211_free_nan_func(struct cfg80211_nan_func *f)
+ 		return;
+ 
+ 	kfree(f->serv_spec_info);
++	kfree(f->extra_attrs);
+ 	kfree(f->srf_bf);
+ 	kfree(f->srf_macs);
+ 	kfree(f->csids);
 -- 
 2.34.1
 
