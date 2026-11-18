@@ -1,52 +1,53 @@
 Authentication-Results: smtp.subspace.kernel.org; arc=none smtp.remote-ip=100.103.45.18
 ARC-Seal: i=1; d=subspace.kernel.org; s=arc20261015; a=rsa-sha256; cv=none;
-	t=1794990055;
-	b=Iy+qpQ/VCUP3lcUPFkYE++Yk76mNfRU1Iq0REfJcYeu9K/G0vx4wQyok6DYKEElZ9uN/
-	 o0IEeB2jDjw7gMqzqTAIRCOwNuO5BcaVHWeFFHe2P+1UTGBkWxN1nBcl13hrrlKcljlUm
-	 gipE/N7pUxmugehvIT7taTYfqe9lzQCeQAP34WZpARkH1M77K/Hds0//L5o8B4mOLXDQx
-	 d8d7obJmICb7KppBOplUp+op2MqyZ8OES9ashdTL47Hcv/QydG1EdCFfzzqfeu8KMRi1z
-	 pv76skyAqjYH/tUpLd6fLu+tKmZ3QywbME/ITCx35NfzDXcd0uBSrzucwrdl+Szw/TA==
+	t=1794990152;
+	b=wYSI8cFlcoiWnfmS/lp+neUPygf8RXlpREQanxEZP+yvxzD2Yjw+Wu0revam7Yk/HHsM
+	 kXFQuincvR5orT09gTF3TQXnajpnLMFQ5sUMuSNTEp2yhWicwpg661uCMXtW9uX/ucDmZ
+	 w8/yie9lkMBEVHMxgCaeOxDpRD3PMkg6kB8brZaoRiSnf2OLvXJQQtkYDVUb12oqfVPiC
+	 +WkLmncCebx2SCDRgt88SzyoZhLMUW5rDorHB2U7AYk5SJDPlQbpjlFV1VI8ypGtJKEt7
+	 zOHdviDMc7vBFJZs2aLL4llXfeW7w7+65El8cGyOUbhPbvuslEy7dM1u5ZkQU4ZpttQ==
 ARC-Message-Signature: i=1; d=subspace.kernel.org; s=arc20261015;
-	a=rsa-sha256; c=relaxed/relaxed; t=1794990055;
+	a=rsa-sha256; c=relaxed/relaxed; t=1794990152;
 	h=Received:DKIM-Signature:Date:From:To:Cc:Subject:Message-ID:
 	 References:MIME-Version:Content-Type:Content-Disposition:In-Reply-To;
-	bh=06EgvRY5O0tMHpRtpDfFyR4lZr+1OR1CYZjUElG5+F0=;
-	b=4PXkKNpvGqXDlYsQCl+8Dyzr6UZHIY9Ztr5txhY8XPu8hhKowxUQF/q2f9NhXKJCo9wZ
-	 RH5vAGchVxtG+nHdQRCqhA/W/Icql59J+Ah/Jjcuve3MDh3ORx7LQlJAcOAsX7O6bvF7m
-	 VZ3w6cfly/Hj+qMQGrSpd8145P+1lmuMxT7ALvLkNRWP6RXQcluHZgnUeHwpYmtn7w1ga
-	 6MZOxPCuSGn8H1NkCoGsXqObbRdvSxImqF8FyQmm7hjDPq6TWnnPAlrFtpIGbTxfq1WrA
-	 6zZMTwu4jFpaumd2H3nsejjcBbzQy28VI5sS+BmgVcj35TJU8iCLLL6YbuBWarI9wxw==
+	bh=8amZohmZh3AnTIw3kwvCeHfCGYfKSePA+yzhGQzou88=;
+	b=x61Q9DrRaK64kho8s1xfJJ1tgyby57WAMCMg3cXhHUNcEYPj5TJ3yhWBpTT+uTJUWR9F
+	 AEqH8b2uzfskn+kEwO8yPoIdjATtxr7EdnyLdczT9zZQKkGHPf95Qgh8LSUh7zor/iYq8
+	 E13IP88TJbMAMr0p4d06elo6qftqSB4VQ5mRCC58FKqhKRA/jBfn4n1N9nE9SPiBU9Ib9
+	 /tTETJj5ZB2Fc6KKOb2+1omwyJJBe2muB0ta04tgiDcloTLj5h7HW8IwYmfqhF6m4oejh
+	 Pn473bEnYnpLuHOxZXOSIxTHk/4jd2pXXJeY4PPYxTfZAoxfnvNbCgHkuf+AFZHx8oQ==
 ARC-Authentication-Results: i=1; smtp.subspace.kernel.org; 
-	dkim=pass header.d=kernel.org header.i=@kernel.org header.a=rsa-sha256 header.s=k20260515 header.b=Ax4jGAbz;
+	dkim=pass header.d=kernel.org header.i=@kernel.org header.a=rsa-sha256 header.s=k20260515 header.b=IcypHlp7;
 	arc=none smtp.remote-ip=100.103.45.18
 Received: from smtp.kernel.org (quasi.space.kernel.org [100.103.45.18])
 	(using TLSv1.3 with cipher TLS_AES_256_GCM_SHA384 (256/256 bits)
 	 key-exchange X25519 server-signature ECDSA (prime256v1))
 	(No client certificate requested)
-	by smtp.subspace.kernel.org (Postfix) with ESMTPS id 8F647606A31C
-	for <linux-wireless@vger.kernel.org>; Wed, 18 Nov 2026 08:20:55 +0000 (UTC)
+	by smtp.subspace.kernel.org (Postfix) with ESMTPS id E6905606A325
+	for <linux-wireless@vger.kernel.org>; Wed, 18 Nov 2026 08:22:31 +0000 (UTC)
 Authentication-Results: smtp.subspace.kernel.org;
-	dkim=pass (2048-bit key) header.d=kernel.org header.i=@kernel.org header.a=rsa-sha256 header.s=k20260515 header.b=Ax4jGAbz
-Received: by smtp.kernel.org (Postfix) with ESMTPSA id A73031F000C5;
-	Wed, 18 Nov 2026 08:20:54 +0000 (UTC)
+	dkim=pass (2048-bit key) header.d=kernel.org header.i=@kernel.org header.a=rsa-sha256 header.s=k20260515 header.b=IcypHlp7
+Received: by smtp.kernel.org (Postfix) with ESMTPSA id 423341F000C4;
+	Wed, 18 Nov 2026 08:22:31 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=kernel.org;
-	s=k20260515; t=1794990055;
-	bh=06EgvRY5O0tMHpRtpDfFyR4lZr+1OR1CYZjUElG5+F0=;
+	s=k20260515; t=1794990151;
+	bh=8amZohmZh3AnTIw3kwvCeHfCGYfKSePA+yzhGQzou88=;
 	h=Date:From:To:Cc:Subject:References:In-Reply-To;
-	b=Ax4jGAbzHH3DNXteerEyX9ul+6qLCgBXYC+PwNgwGnUe06rCN5uCE8Tp+IP6UwtE4
-	 pgj3XsYvdl4gAoQSIZEyIIJJpIQvuS9kcmDhNQ6O5nXsGQAD0kHf3J6H3KJRrzGd+7
-	 5X3AevqC7PnILW5hnZbahZF3Z3HZuiwqZxNNp4whzuKLtkdDe1W9hWdWoobXWwAe3t
-	 ixbzptkREUnz9k8yvT8fUluBOiQzTqVg81Y2lS05Hsi0vh2Uv4a9EO0Jk/ntufCKP5
-	 f+SzBP1YZjK/6iqlfOEEOAz/3Ly42hM4cEp+EhV6CudsIZAExa+wKarbHikQvRiY6g
-	 YM2sfIGPTowhw==
-Date: Wed, 18 Nov 2026 09:20:52 +0100
+	b=IcypHlp7GDWsexTI3PqxkdwGAKPIFsFwrqhD+Fy4xWBlo+jx7Bfq0ZSlBdicnFNWo
+	 O0+LLDxGyTTeTjS0UbAu3wz728q3PD4Syk3LFJNswQf3ZASn8AXF1SKpu/5eKlBQQ3
+	 Fv02i20AALGEET2e0PC4/77IeFu+e0h4vcJSnMo3XX7RPttbCo3Ja8pECQ68lPo74y
+	 5I26FGFLvZb2Kd6FwCKCXMkbg8VtNLPgFQv2mXye8OLB3FTFcr4eyi7T2fEFCiYO/K
+	 HWjIDHPR+8KNxPYX78hm41MBPvautMIdH0epook2g2d/SxcjCAGreLQkwMeP1GXJ+e
+	 g9kvnq/8r/OKA==
+Date: Wed, 18 Nov 2026 09:22:29 +0100
 From: Lorenzo Bianconi <lorenzo@kernel.org>
 To: Felix Fietkau <nbd@nbd.name>
 Cc: linux-wireless@vger.kernel.org
-Subject: Re: [PATCH mt76-next 01/19] wifi: mt76: don't pin undrainable PS
- stations in the tx scheduler
-Message-ID: <av1f5JG1f7tMhlu-@lore-qca>
+Subject: Re: [PATCH mt76-next 03/19] wifi: mt76: mt7996: use the default
+ timeout for STA_REC and BSS_INFO
+Message-ID: <av1gRcnc-PZYhmlr@lore-qca>
 References: <20261117180134.2940930-1-nbd@nbd.name>
+ <20261117180134.2940930-3-nbd@nbd.name>
 X-Mailing-List: linux-wireless@vger.kernel.org
 List-Id: <linux-wireless.vger.kernel.org>
 List-Post: <mailto:linux-wireless@vger.kernel.org>
@@ -57,71 +58,60 @@ List-Owner: <mailto:linux-wireless+owner@vger.kernel.org>
 Precedence: list
 MIME-Version: 1.0
 Content-Type: multipart/signed; micalg=pgp-sha512;
-	protocol="application/pgp-signature"; boundary="PCsk3m0Lh7wuL/U8"
+	protocol="application/pgp-signature"; boundary="qFK5y0sny0jso20S"
 Content-Disposition: inline
-In-Reply-To: <20261117180134.2940930-1-nbd@nbd.name>
+In-Reply-To: <20261117180134.2940930-3-nbd@nbd.name>
 
---PCsk3m0Lh7wuL/U8
+--qFK5y0sny0jso20S
 Content-Type: text/plain; charset=us-ascii
 Content-Disposition: inline
 Content-Transfer-Encoding: quoted-printable
 
-> A power save station whose buffered frames cannot be delivered consumes
-> no airtime, so its airtime deficit never goes negative, and
-> ieee80211_return_txq() keeps it at the head of the active_txqs list.
-> With all bands on one ieee80211_hw, each scheduling round then ends at
-> that station, and all other stations starve.
+> mt7996_mcu_set_timeout() gives STA_REC_UPDATE and BSS_INFO_UPDATE a
+> timeout of 2 seconds. Their payload grows with the beacon templates of
+> MBSS and MLD configurations, the firmware can take longer to process
+> them, and an MCU timeout resets the device.
 >=20
-> Return the txq only when it sent frames or its queue is stopped.
-> __mt76_tx_complete_skb() schedules it again when a buffered frame
-> completes.
+> Use the default timeout for both commands.
 >=20
-> Fixes: a547b414bf7e ("wifi: mt76: add PS buffering support for HW-managed=
- TIM drivers")
+> Fixes: beb01caa570c ("wifi: mt76: mt7996: decrease timeout for commonly i=
+ssued MCU commands")
 > Signed-off-by: Felix Fietkau <nbd@nbd.name>
 
 Reviewed-by: Lorenzo Bianconi <lorenzo@kernel.org>
 
 > ---
->  drivers/net/wireless/mediatek/mt76/tx.c | 7 +++++--
->  1 file changed, 5 insertions(+), 2 deletions(-)
+>  drivers/net/wireless/mediatek/mt76/mt7996/mcu.c | 2 --
+>  1 file changed, 2 deletions(-)
 >=20
-> diff --git a/drivers/net/wireless/mediatek/mt76/tx.c b/drivers/net/wirele=
-ss/mediatek/mt76/tx.c
-> index ea9993e9a199..0085b7a29fce 100644
-> --- a/drivers/net/wireless/mediatek/mt76/tx.c
-> +++ b/drivers/net/wireless/mediatek/mt76/tx.c
-> @@ -625,10 +625,13 @@ mt76_txq_schedule_list(struct mt76_phy *phy, enum m=
-t76_txq_id qid)
->  			if (!mt76_txq_stopped(q))
->  				n_frames =3D mt76_txq_send_burst(phy, q, mtxq, wcid);
-> =20
-> -			ieee80211_return_txq(phy->hw, txq, false);
-> -
->  			if (unlikely(n_frames < 0))
->  				return n_frames;
-> +
-> +			/* an undrainable PS station would starve all others */
-> +			if (n_frames > 0 || mt76_txq_stopped(q))
-> +				ieee80211_return_txq(phy->hw, txq, false);
-> +
->  			ret +=3D n_frames;
->  			continue;
->  		}
+> diff --git a/drivers/net/wireless/mediatek/mt76/mt7996/mcu.c b/drivers/ne=
+t/wireless/mediatek/mt76/mt7996/mcu.c
+> index 94e88455c732..e56b60346fc4 100644
+> --- a/drivers/net/wireless/mediatek/mt76/mt7996/mcu.c
+> +++ b/drivers/net/wireless/mediatek/mt76/mt7996/mcu.c
+> @@ -282,8 +282,6 @@ mt7996_mcu_set_timeout(struct mt76_dev *mdev, int cmd)
+>  	case MCU_UNI_CMD_THERMAL:
+>  	case MCU_UNI_CMD_TWT:
+>  	case MCU_UNI_CMD_GET_MIB_INFO:
+> -	case MCU_UNI_CMD_STA_REC_UPDATE:
+> -	case MCU_UNI_CMD_BSS_INFO_UPDATE:
+>  		mdev->mcu.timeout =3D 2 * HZ;
+>  		return;
+>  	case MCU_UNI_CMD_EFUSE_CTRL:
 > --=20
 > 2.47.3
 >=20
 >=20
 
---PCsk3m0Lh7wuL/U8
+--qFK5y0sny0jso20S
 Content-Type: application/pgp-signature; name=signature.asc
 
 -----BEGIN PGP SIGNATURE-----
 
-iHUEABYKAB0WIQTquNwa3Txd3rGGn7Y6cBh0uS2trAUCav1f5AAKCRA6cBh0uS2t
-rDg6AQC299Uyx6erfEE/Kyq0qyZMXJ8e7IX24fi87lNVNWgQTQD+OGsYThxM/bFe
-WcVpyMteTZL2qkwt90Qah9zSgVYbwQA=
-=mV7L
+iHUEABYKAB0WIQTquNwa3Txd3rGGn7Y6cBh0uS2trAUCav1gRQAKCRA6cBh0uS2t
+rPNdAP4ovvSJfKRU6im90ArxSTBKSmIRXnTjileZFC5eW0WyuAEAj/poP5/Isnpx
+0MPt4UCS9t5XgN7YvvHIKWZJrpdwAAo=
+=Jfrv
 -----END PGP SIGNATURE-----
 
---PCsk3m0Lh7wuL/U8--
+--qFK5y0sny0jso20S--
