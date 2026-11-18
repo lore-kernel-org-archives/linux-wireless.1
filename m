@@ -1,76 +1,81 @@
 Authentication-Results: smtp.subspace.kernel.org; arc=none smtp.remote-ip=211.75.126.72
 ARC-Seal: i=1; d=subspace.kernel.org; s=arc20261015; a=rsa-sha256; cv=none;
-	t=1794962521;
-	b=znUsLzKxEsAKdVi2UqYrQQchRUeboKIhv64HTlUcCLDEiRGcU0YnFkxD9nsNY2u8VOOv
-	 uFXdH9DxF3PxxhFguZ8JWBXS4kbmkFkGiM9uXRPoSk15L76ZJHe8Vn24e81NixFbE+fVb
-	 xURiMphsNSlPt5mcgFzpnkDkaaBbDoSW8qa8YXRDcsf1ePqZDx4YCltbnB9260J947xYW
-	 lloxDIVhzBW5bABQotZ7WcAiLTXotWjNNrmz1mbfH2VlIlHlmD+dbzIG37WKZ+X8mBhNU
-	 uNIJTGZQ+ziFYyDg5oIJMqos9gUDeDlJEwbNrV7UPTnkbrkVj+YFU4ax+cjU2KfPAPQ==
+	t=1794962778;
+	b=E7YvCwIXiI4bgizm/0npu/BxK8TThF64L4HBzByGqkp0VjnwW1fuvy2KOD4Bxnuwkgrx
+	 aCY+hazcCZTjEvXI3g31cHQtldJNmPzDMDSpE0GUBgXeS8j7tviP6VT/lW+w8k2RRbH8i
+	 Igy6pyVsDzdkzF4kUrwdRKQMmJkKAWN4mG1EC4lcMZpJ5CLRyLakevbvye3qzt1v8Vxdu
+	 2yUpkM9O52/Cdt71uBSQJyXNu5+XZDQ5XRiQMsVEmCT6x+SGBT18EoiS4drCcHs4bQDO0
+	 e9eyAtPlW5iG2iH2gJe8XrewmzGiYiUZavFzWsJhJJ+7GGgFtQ8iyndHe5gmG5NInxw==
 ARC-Message-Signature: i=1; d=subspace.kernel.org; s=arc20261015;
-	a=rsa-sha256; c=relaxed/relaxed; t=1794962521;
+	a=rsa-sha256; c=relaxed/relaxed; t=1794962778;
 	h=DMARC-Filter:X-SpamFilter-By:DKIM-Signature:Received:Received:
-	 Received:Received:From:To:CC:Subject:Thread-Topic:Thread-Index:Date:
-	 Message-ID:References:In-Reply-To:Accept-Language:Content-Language:
+	 Received:From:To:CC:Subject:Thread-Topic:Thread-Index:Date:Message-ID:
+	 References:In-Reply-To:Accept-Language:Content-Language:
 	 x-originating-ip:Content-Type:Content-Transfer-Encoding:MIME-Version;
-	bh=QqD4EFzOMVT6eZ/R/nCjGzqiK9+th0DOJu5beq5zvXw=;
-	b=UJsTZXeFLFCWgQ2vL4JEYQnqTl+F5PVdMMnQBVE5jjL83R4zEZ47wrqh3uEoBzJGg+Qt
-	 BLnnI80ssYtbNiWZqLlaHy2l938QthXAaXDaH8xUPa8iBy/qY6fR0Q5kJdZHBIzbSMv9G
-	 sDvRz1ayanFRWbkTBLRQ+fLGcqFNdEV/e7vJbkn07dVxjJnU0WYoWEqwlZHDi2YQOvNo+
-	 vjw3bYwMurgc+K9EpCyfir0gQySsnD/ftDKh14xoo+R89t5Xgd3SiZ1emgzaVPgsInkdD
-	 SMV7SnuVJCTfIWeHdfzENdZ5W+IwT/TrvMoH0Met2dfI9yOiER/bQO+EIjaaEMqsFig==
+	bh=EiYkSaP5dGb5CUj9ezeFxg3h4M419wH0by02fQ2rKfc=;
+	b=sJvnllO4pm/rqdNxBW8D+bUQjUTCJp9Fj95cYEOHoKuVSTbj0nZwEgK2I5tFt+VD6i87
+	 lABkBHURlhtSI3oI1WMNqGzdfREhhJQd979w+u44c6O86I4jjXZk8UrxwFwZPeY7fD96Y
+	 iaNGDXhGrm52iWKGCwWsqYONh6+0KI0apiBOwoVthOLnh1tMXCnLx1wqWsUiqlKVEK6HT
+	 xhIYELfW0bc2EywgbxGE1q19qTT+lhmeUOTnbM7agIMHYn521hUNtL8DWXDNrWJ7NXToo
+	 rSrEI8FOY+jYJ0SsFC3auYfFlng+pOgHuSefXUctbY8LRFMt3vdmNG18NTZKxTI84/g==
 ARC-Authentication-Results: i=1; smtp.subspace.kernel.org; 
 	dmarc=pass header.from=realtek.com;
 	spf=pass smtp.mailfrom=realtek.com;
-	dkim=pass header.d=realtek.com header.i=@realtek.com header.a=rsa-sha256 header.s=dkim header.b=q31xy8+J;
+	dkim=pass header.d=realtek.com header.i=@realtek.com header.a=rsa-sha256 header.s=dkim header.b=Hrz6InkU;
 	arc=none smtp.remote-ip=211.75.126.72
 Received: from rtits2.realtek.com.tw (rtits2.realtek.com [211.75.126.72])
 	(using TLSv1.3 with cipher TLS_AES_256_GCM_SHA384 (256/256 bits)
 	 key-exchange X25519 server-signature ECDSA (prime256v1) server-digest SHA256)
 	(No client certificate requested)
-	by smtp.subspace.kernel.org (Postfix) with ESMTPS id 42D45606A882
-	for <linux-wireless@vger.kernel.org>; Wed, 18 Nov 2026 00:41:59 +0000 (UTC)
-DMARC-Filter: OpenDMARC Filter v1.4.2 smtp.subspace.kernel.org 42D45606A882
+	by smtp.subspace.kernel.org (Postfix) with ESMTPS id EBAAD606A31C;
+	Wed, 18 Nov 2026 00:46:17 +0000 (UTC)
+DMARC-Filter: OpenDMARC Filter v1.4.2 smtp.subspace.kernel.org EBAAD606A31C
 Authentication-Results: smtp.subspace.kernel.org; dmarc=pass (p=none dis=none) header.from=realtek.com
 Authentication-Results: smtp.subspace.kernel.org; spf=pass smtp.mailfrom=realtek.com
 Authentication-Results: smtp.subspace.kernel.org;
-	dkim=pass (2048-bit key) header.d=realtek.com header.i=@realtek.com header.a=rsa-sha256 header.s=dkim header.b=q31xy8+J
-X-SpamFilter-By: ArmorX SpamTrap 5.80 with qID 6AI0ftrA7781835, This message is accepted by code: ctloc85258
+	dkim=pass (2048-bit key) header.d=realtek.com header.i=@realtek.com header.a=rsa-sha256 header.s=dkim header.b=Hrz6InkU
+X-SpamFilter-By: ArmorX SpamTrap 5.80 with qID 6AI0jcffF784555, This message is accepted by code: ctloc85258
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=realtek.com; s=dkim;
-	t=1794962515; bh=QqD4EFzOMVT6eZ/R/nCjGzqiK9+th0DOJu5beq5zvXw=;
+	t=1794962738; bh=EiYkSaP5dGb5CUj9ezeFxg3h4M419wH0by02fQ2rKfc=;
 	h=From:To:CC:Subject:Date:Message-ID:References:In-Reply-To:
 	 Content-Type:Content-Transfer-Encoding:MIME-Version;
-	b=q31xy8+J67rWcfzwrq343HADBdBdmA0DpnyA43SzsxARXavDLhRNE4d7oin6Ld1nO
-	 sJ3AXCTTl/fgj1Qw58voNr66gBrneR0bi4za7KJAt8KlBGuZAy2VsbxJx4LPV4cVD8
-	 ymUboxNNagza2OrVoQsjaFhJ5eJim8+hbsyadvWMK4OQER9aF9L3DOuhiWzpRAf7+O
-	 iceVkfEuzSHiDIrlaCIR1E6GQ8plsjW+64OStkBK5i6ydHiK5BKTp19Bp8e8EE58G5
-	 dfVbEScLhN9JDoEnvtc+QDtt2MkyZ2qGz3uK8AISju4gpbU2UmCsP1LB9zHh52/gzJ
-	 5kvRrZuFDZBCg==
+	b=Hrz6InkUD9+A/xraD6+HlZ69xtnPb4UITv5+hBk3cfu7cfMr/Osc/XgKK6jIZgsXz
+	 vKTLAsqKv+G6TVwlDxP5FIB60PDaYKj/7nwhZgumMh33UKdpNfXi0ndLM0Ac8DoT58
+	 +lhUEyLAOHVF48lUSOuc64wTHiTbU7MY2lJhFWl9gWguvTPRVHDOMH6zH03wNkFXTn
+	 vdwcAsvpOn04TRVqNfYG3iLwAZfCK5tHcfApSIE4EIsam/RK8sfJj2UEF+fD3U7euQ
+	 TwuP+GTXn2PqPtDxcpULUJEV3q+vOAut+2XYGjGgCTgCHZFesStVdgk/TYjIUgqMmk
+	 DvTRIL0jDcKFg==
 Received: from mail.realtek.com (rtkexhmbs04.realtek.com.tw[10.21.1.54])
-	by rtits2.realtek.com.tw (8.15.2/3.29/5.94) with ESMTPS id 6AI0ftrA7781835
+	by rtits2.realtek.com.tw (8.15.2/3.29/5.94) with ESMTPS id 6AI0jcffF784555
 	(version=TLSv1.2 cipher=ECDHE-RSA-AES256-GCM-SHA384 bits=256 verify=FAIL);
-	Wed, 18 Nov 2026 08:41:55 +0800
-Received: from RTKEXHMBS05.realtek.com.tw (10.21.1.55) by
+	Wed, 18 Nov 2026 08:45:38 +0800
+Received: from RTKEXHMBS06.realtek.com.tw (10.21.1.56) by
  RTKEXHMBS04.realtek.com.tw (10.21.1.54) with Microsoft SMTP Server
  (version=TLS1_2, cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id
- 15.2.2562.56; Wed, 18 Nov 2026 08:41:55 +0800
-Received: from RTKEXHMBS06.realtek.com.tw (10.21.1.56) by
- RTKEXHMBS05.realtek.com.tw (10.21.1.55) with Microsoft SMTP Server
- (version=TLS1_2, cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id
- 15.2.2562.56; Wed, 18 Nov 2026 08:41:55 +0800
+ 15.2.2562.56; Wed, 18 Nov 2026 08:45:38 +0800
 Received: from RTKEXHMBS06.realtek.com.tw ([fe80::eeeb:c765:ca73:5eef]) by
  RTKEXHMBS06.realtek.com.tw ([fe80::eeeb:c765:ca73:5eef%10]) with mapi id
- 15.02.2562.056; Wed, 18 Nov 2026 08:41:55 +0800
+ 15.02.2562.056; Wed, 18 Nov 2026 08:45:38 +0800
 From: Ping-Ke Shih <pkshih@realtek.com>
-To: Kadir Yavuz Kurt <k.yavuzkurt1@gmail.com>
-CC: "linux-wireless@vger.kernel.org" <linux-wireless@vger.kernel.org>
-Subject: RE: [BUG] wifi: rtw89: 8922ae: no association until module reload
-Thread-Topic: [BUG] wifi: rtw89: 8922ae: no association until module reload
-Thread-Index: AQHda8vVqJMtgEcxU0WMB2uaHjTO6bcoM+AQgAn65oCAAOLYkA==
-Date: Wed, 18 Nov 2026 00:41:55 +0000
-Message-ID: <95f8f42c4d844a778cbeac6aae10ec5a@realtek.com>
-References: <c35e169db9404f70b806531180f7ca9d@realtek.com>
- <20261117190249.8814-1-k.yavuzkurt1@gmail.com>
-In-Reply-To: <20261117190249.8814-1-k.yavuzkurt1@gmail.com>
+To: Mehmet Fide <mehmet.fide@gmail.com>
+CC: Luka Gejak <luka.gejak@linux.dev>, Sascha Hauer <s.hauer@pengutronix.de>,
+	Zong-Zhe Yang <kevin_yang@realtek.com>, Tzu-En Huang <tehuang@realtek.com>,
+	Yan-Hsuan Chuang <yhchuang@realtek.com>, Kalle Valo <kvalo@kernel.org>,
+	Stanislaw Gruszka <sgruszka@redhat.com>, Brian Norris
+	<briannorris@chromium.org>, "linux-wireless@vger.kernel.org"
+	<linux-wireless@vger.kernel.org>, "linux-kernel@vger.kernel.org"
+	<linux-kernel@vger.kernel.org>, "mehmet.fide@screeningeagle.com"
+	<mehmet.fide@screeningeagle.com>
+Subject: RE: [PATCH rtw-next v3 5/5] wifi: rtw88: clear the restart flag when
+ the device is stopped
+Thread-Topic: [PATCH rtw-next v3 5/5] wifi: rtw88: clear the restart flag when
+ the device is stopped
+Thread-Index: AQHddraCwLcTtTxZpUS0XSkBmrLE8bcyX6sAgACe/kA=
+Date: Wed, 18 Nov 2026 00:45:38 +0000
+Message-ID: <749d191c3baa42179f87e1af5b9a1a19@realtek.com>
+References: <20261117171003.1840491-6-mehmet.fide@gmail.com>
+ <20261117231558.1952531-1-mehmet.fide@gmail.com>
+In-Reply-To: <20261117231558.1952531-1-mehmet.fide@gmail.com>
 Accept-Language: en-US, zh-TW
 Content-Language: zh-TW
 Content-Type: text/plain; charset="us-ascii"
@@ -85,79 +90,12 @@ List-Owner: <mailto:linux-wireless+owner@vger.kernel.org>
 Precedence: list
 MIME-Version: 1.0
 
-Kadir Yavuz Kurt <k.yavuzkurt1@gmail.com> wrote:
-> > This is a good point. I think you can add rtw89 into blacklist, and
-> > manually load the modules after booting.
+Mehmet Fide <mehmet.fide@gmail.com> wroet:
+> Hi Ping-Ke,
 >=20
-> That works. Blacklisted rtw89_8922ae, booted, loaded it by hand once
-> the desktop was up:
->=20
->     [ 7.427775] Bluetooth: hci0: RTL: fw version 0x41c0c905
->     [50.304704] rtw89_8922ae 0000:07:00.0: loaded firmware
->                                            rtw89/rtw8922a_fw-4.bin
->     [53.787826] wlp7s0: authenticate with xx:xx:xx:xx:xx:xx
->     [53.788897] wlp7s0: authenticated
->     [53.789371] wlp7s0: associate with xx:xx:xx:xx:xx:xx (try 1/3)
->     [53.907495] wlp7s0: associated
->=20
-> First attempt, single load. So the chip doesn't need a second init,
-> which I'd been wondering about.
->=20
-> > If this works, add a udev rule to delay loading rtw89.
->=20
-> This is where it fell apart. I automated it as a systemd unit
-> (After=3Dbluetooth.service, wait for 'bluetoothctl show' to report
-> Powered: yes, then modprobe):
->=20
->     [ 7.464834] Bluetooth: hci0: RTL: fw version 0x41c0c905
->     [ 9.994965] rtw89_8922ae 0000:07:00.0: loaded firmware
->                                            rtw89/rtw8922a_fw-4.bin
->=20
-> No authenticate line, no association. BT had finished 2.5 s earlier, so
-> waiting for BT isn't enough.
+> Commit 3f2238709f5d ("wifi: rtw88: clear RTW_FLAG_RESTARTING on stop
+> and start failure") in rtw-next fixes the same case, so please drop
+> this one. Patches 1-4 apply to rtw-next as they are.
 
-Did you use NetworkManager to connect? If so, maybe turn GUI off/on
-to see if it can try to connect.=20
-
->=20
-> Which pushed me to test what I should have tested first: no BT at all.
-> blacklist btusb + btrtl, rtw89 left to load normally at boot. lsmod
-> shows no btusb, there's no hci0, and no BT firmware download anywhere
-> in the log.
->=20
->     [ 3.037204] rtw89_8922ae 0000:07:00.0: loaded firmware
->                                            rtw89/rtw8922a_fw-4.bin
->     [54.735452] rtw89_8922ae 0000:07:00.0: loaded firmware  (my reload)
->     [58.218773] wlp7s0: authenticate with xx:xx:xx:xx:xx:xx
->     [58.219916] wlp7s0: authenticated
->=20
-> Still broken with Bluetooth completely gone.
->=20
-> So I was wrong about Bluetooth and I'd like to withdraw that part of my
-> first mail. The 1 ms overlap was real but it wasn't causing anything.
-> Load at 3 s: fails. At 10 s: fails. At 3 s with no BT: fails. At 50 s:
-> works. The only thing that tracks the outcome is how late the probe
-> runs, and the reload only helps because it happens late.
-
-I don't know the exact time BT needs to initialize, but 10s should be
-enough. No idea....
-
->=20
-> What I can't tell you is what the driver is sensitive to that early in
-> boot. This box starts a lot at once (amdgpu, nvidia, docker, libvirt,
-> tailscale, ollama), so contention around probe time is my guess, but
-> it's only a guess.
->=20
-> All of the above is on 7.0.0-43-generic.
->=20
-> I can bisect the delay to find where it flips. Each point needs its own
-> boot, since once a probe has failed every load after it succeeds, but
-> reboots are cheap here. Anything you'd like instrumented at probe time,
-> or a debug_mask that would show what differs? I'll test patches on this
-> hardware whenever.
-
-Have you tried manually scanning AP by iw command? Just want to know
-if WiFi works while it doesn't trigger connection.=20
-
-
+Dropped from patchwork.
 
