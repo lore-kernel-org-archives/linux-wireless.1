@@ -1,93 +1,118 @@
-Authentication-Results: smtp.subspace.kernel.org; arc=none smtp.remote-ip=209.85.210.174
-ARC-Seal: i=1; d=subspace.kernel.org; s=arc20261015; a=rsa-sha256; cv=none;
-	t=1794986683;
-	b=uKM2e7nEsS63ApYlSLniGuxdehZG7NgGv2tXQHyWy7wnoyFfDkeFyp2MaTsQKLXynwre
-	 whEdi02db1gLYJ1x6EltPGMOa4cUEeoLyVkyvY8akIDkqksEjF3FoJ4PokA7TMOlbenZH
-	 aarlPK5zVqVGRq2U1t8v/0ctGJ7uIAyMAXPaJac9O8jwFo361iTaLVUSSccZzTc6Qk/Ai
-	 yT+QchLC4h2+MZ95cgMCfVTzMxJNEvHhtUET7iin9F2vlc4GjjdQUrgtqMc3Z9cYibfDd
-	 ebsjO5g1Vnj+5k8ESzv1hzotmhZi+odl2lfSW8RMWJy5iv4ggxOuUlEkmSscsauXucQ==
-ARC-Message-Signature: i=1; d=subspace.kernel.org; s=arc20261015;
-	a=rsa-sha256; c=relaxed/relaxed; t=1794986683;
-	h=DMARC-Filter:Received:DKIM-Signature:X-Google-DKIM-Signature:
-	 X-Gm-Message-State:X-Gm-Gg:X-Received:Received:From:To:Cc:Subject:
-	 Date:Message-Id:X-Mailer:MIME-Version:Content-Transfer-Encoding;
-	bh=+/uCdGuuR5fSzXmjT42xsc7BpukorOyOL5gWzvLV+lo=;
-	b=JyUWeEFoKI125bzX9fTQG2W/aQb3OGUfbPbtB7VNtj9D6W3rxxkrFXCuw785hVM9Svjz
-	 2JqW6rYiw5Z3cyA18edttD/8kMEpzcwaoYLNeZtucsvXyWUaxGIgbBX5HojPiL7Op5kAl
-	 3GpqeZ9HxZPwnGPDmITAEo2k6BizgOKF2MUTTHuIr9DdqZGc6VKkCk8I75buNUYEwpP8Q
-	 67wyKDPgVHCEHpvk8lLtQOOAXcpsxA7UMLZn7YOwv8CjaFtj8eD2c/dqZ554m+k99qoa2
-	 XdbYLW4cYlqgM8A0I+apOo5h8SIOz4D+7fKD1tM0nKTpmJ/YeYzm+uEJ4jt06iL2phA==
-ARC-Authentication-Results: i=1; smtp.subspace.kernel.org; 
-	dmarc=pass header.from=gmail.com;
-	spf=pass smtp.mailfrom=gmail.com;
-	dkim=pass header.d=gmail.com header.i=@gmail.com header.a=rsa-sha256 header.s=20260707 header.b=OGx5lUXU;
-	arc=none smtp.remote-ip=209.85.210.174
-Received: from mail-pf1-f174.google.com (mail-pf1-f174.google.com [209.85.210.174])
-	(using TLSv1.3 with cipher TLS_AES_128_GCM_SHA256 (128/128 bits)
-	 key-exchange X25519 server-signature ECDSA (prime256v1) server-digest SHA256)
+Authentication-Results: smtp.subspace.kernel.org; arc=pass header.oldest-pass=0 smtp.remote-ip=40.93.201.70
+ARC-Seal: i=2; d=subspace.kernel.org; s=arc20261015; a=rsa-sha256; cv=pass;
+	t=1794987246;
+	b=OLKTijIE+awogd6egd1TZWsnwIEh9wqKn0zbKQUTGTq84MuMaNxYbKISBKtZeAiPKxwh
+	 feHo3hTJxkk5b5ecm1mLf0H3hKktt4DxmBPetWLI+lhbjy9evq5x47COVySOTf6/1b7rT
+	 +NYsZxUfaTBlhBbD+R7gWJ7xGbx4Rz6PAVU5vur0x5SsuvGHpMt4duaxtbyBmXZ7tzgbH
+	 foTrFb1bGzknqeaYJyvQELR2H+lCE/If/nZTjv8bwlsXQIT0d78u8AB9VodgNg4sxKzN0
+	 +n/UZtUXozMEdjGCIRQs50/EqQdGryOH1TwpqQnMv5FzdOeFZN17KzuLmm+cz701tGA==
+ARC-Message-Signature: i=2; d=subspace.kernel.org; s=arc20261015;
+	a=rsa-sha256; c=relaxed/relaxed; t=1794987246;
+	h=DMARC-Filter:DKIM-Signature:Received:Received:Message-ID:Date:
+	 User-Agent:Subject:To:Cc:References:From:Content-Language:In-Reply-To:
+	 Content-Type:Content-Transfer-Encoding:X-ClientProxiedBy:MIME-Version:
+	 X-MS-PublicTrafficType:X-MS-TrafficTypeDiagnostic:
+	 X-MS-Office365-Filtering-Correlation-Id:X-MS-Exchange-SenderADCheck:
+	 X-MS-Exchange-AntiSpam-Relay:X-Microsoft-Antispam:
+	 X-Microsoft-Antispam-Message-Info:X-Forefront-Antispam-Report:
+	 X-MS-Exchange-AntiSpam-MessageData-ChunkCount:
+	 X-MS-Exchange-AntiSpam-MessageData-0:X-OriginatorOrg:
+	 X-MS-Exchange-CrossTenant-Network-Message-Id:
+	 X-MS-Exchange-CrossTenant-AuthSource:X-MS-Exchange-CrossTenant-AuthAs:
+	 X-MS-Exchange-CrossTenant-OriginalArrivalTime:
+	 X-MS-Exchange-CrossTenant-FromEntityHeader:
+	 X-MS-Exchange-CrossTenant-Id:X-MS-Exchange-CrossTenant-MailboxType:
+	 X-MS-Exchange-CrossTenant-UserPrincipalName:
+	 X-MS-Exchange-Transport-CrossTenantHeadersStamped;
+	bh=71OmnO+FWbA4EhJ7EN+OTkAqWLzkAt6SqNvR5q45ls0=;
+	b=eWFzZylNDUN9G/EPJL1xJTIJ9NectpbAuXk2oFVzMpwEqdVPKO01h6RMNDog5v7/dd3K
+	 VxbojwFCH8+k68MU2r46Y41xgYmaBtxav9S0WK5B0Be3CjAxSITohoHOtkYfgBdq46kr1
+	 7Ima2+J7ytlOjn8wNKZNbTJVKbQtColiBh5eRNH3bECTxd4BcnX3oci0io1tOUp9DDdX0
+	 mko2FY4ikOmB+P3n1oApbCifrGd9tUGrieVvhO6WSaXpaODz5o5Jc+BjgjI/pAVegz736
+	 IeofS5CTHrjuqiTPwuTTnogqz7HSX8dmR5+kCpNcIcHalFf1N9G+ge/D2qYfI2zYxYw==
+ARC-Authentication-Results: i=2; smtp.subspace.kernel.org; 
+	dmarc=pass header.from=amd.com;
+	spf=fail smtp.mailfrom=amd.com;
+	dkim=pass header.d=amd.com header.i=@amd.com header.a=rsa-sha256 header.s=selector1 header.b=oKSIu2Qc;
+	arc=pass header.oldest-pass=0 smtp.remote-ip=40.93.201.70
+Received: from CY3PR05CU001.outbound.protection.outlook.com (mail-westcentralusazon11013070.outbound.protection.outlook.com [40.93.201.70])
+	(using TLSv1.3 with cipher TLS_AES_256_GCM_SHA384 (256/256 bits)
+	 key-exchange ECDHE (secp384r1) server-signature ECDSA (prime256v1) server-digest SHA256)
 	(No client certificate requested)
-	by smtp.subspace.kernel.org (Postfix) with ESMTPS id 9F1D5606A336
-	for <linux-wireless@vger.kernel.org>; Wed, 18 Nov 2026 07:24:42 +0000 (UTC)
-DMARC-Filter: OpenDMARC Filter v1.4.2 smtp.subspace.kernel.org 9F1D5606A336
-Authentication-Results: smtp.subspace.kernel.org; dmarc=pass (p=none dis=none) header.from=gmail.com
-Authentication-Results: smtp.subspace.kernel.org; spf=pass smtp.mailfrom=gmail.com
+	by smtp.subspace.kernel.org (Postfix) with ESMTPS id 85EBA606A31C;
+	Wed, 18 Nov 2026 07:34:05 +0000 (UTC)
+DMARC-Filter: OpenDMARC Filter v1.4.2 smtp.subspace.kernel.org 85EBA606A31C
+Authentication-Results: smtp.subspace.kernel.org; dmarc=pass (p=quarantine dis=none) header.from=amd.com
+Authentication-Results: smtp.subspace.kernel.org; spf=fail smtp.mailfrom=amd.com
 Authentication-Results: smtp.subspace.kernel.org;
-	dkim=pass (2048-bit key) header.d=gmail.com header.i=@gmail.com header.a=rsa-sha256 header.s=20260707 header.b=OGx5lUXU
-Received: by mail-pf1-f174.google.com with SMTP id d2e1a72fcca58-886e61fa30fso303251b3a.1
-        for <linux-wireless@vger.kernel.org>; Tue, 17 Nov 2026 23:24:42 -0800 (PST)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=gmail.com; s=20260707; t=1794986682; x=1795591482; darn=vger.kernel.org;
-        h=content-transfer-encoding:mime-version:message-id:date:subject:cc
-         :to:from:from:to:cc:subject:date:message-id:reply-to:content-type;
-        bh=+/uCdGuuR5fSzXmjT42xsc7BpukorOyOL5gWzvLV+lo=;
-        b=OGx5lUXUezZu16xrPmG8G+H2ILEabFtt2qff4ET48XooNO1DR7LvHJNPV7jIqT/lMY
-         n7r0YT/LXNbxy9Jg1KPUCIghgQ7XLrUsTLuy6wbDGg/AP8Pdf6t1uuuzXfV7nUhp4iNB
-         /APVGgsXgMZVHIDQcBQzclv5q0iFypbjj4Qyrl5ob1uPOLFDxktcq7O3KmZX/pVBEXr1
-         DhUv26IOGpK7KvStdKJdqD8Oj/SPHgCJkF7vCk5E/RU5ZUvnzXUnPZZ2PiLlPaz+KbDB
-         rZeTddrO9PyU+QJUVM7Wq96Ywu1irSZ1v7/54Poi6XAX9aT7SVwpvvqzsElSlG8w5Uyw
-         8uIQ==
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=1e100.net; s=20260707; t=1794986682; x=1795591482;
-        h=content-transfer-encoding:mime-version:message-id:date:subject:cc
-         :to:from:x-gm-gg:x-gm-message-state:from:to:cc:subject:date
-         :message-id:reply-to:content-type;
-        bh=+/uCdGuuR5fSzXmjT42xsc7BpukorOyOL5gWzvLV+lo=;
-        b=GqemBung3ftWU17qxbhY6d6PmugZOxxIQyIlYylV9LN53neKOU4YjF9CPZ0Xxw7NwR
-         kp1i7tNQlARYGHQy6M/SvK3xeVO069Z/cxEGqdPq6miFRxW8+UDGhbr5jMAnIpTWO+H7
-         iBZeaolBpAaXC/4sJX2p1e2FBh3FHN8NSy1ue4D20oacw8o/BSPq+Fm1Y1zwTBM+JWKL
-         /e8TaotT0f22UVaoK4+KDNDPIF5pxD8jSnbNxu2uyuvZnsZjnIKK+NNlqm0athXGt6qI
-         vUxSQPwutSHLqV5wfU/GheFpguy/yjvz2SD8IJkZkge4vVIkZwqds6X7MA7U+9OODbkU
-         Y8mg==
-X-Gm-Message-State: APuU4Z+SSN0ldOAbNY5ojSc8CsQmyeMYxFudOxz6LK4oAGyUnVAYqpK3
-	T0HyttwHwoAn65x/YG49YTdtOG1yv1HYA9ONAiUrqk+2ahu6dB9p6owd
-X-Gm-Gg: AYBFou00IbDqFk8cpCHyVp04WqGMw5CXmIfxDJXCuSgtpZeHg8tpMNJ/ncMIx4Y53cy
-	SgqvpG3swj1ItiKkh9nc/ShHaOZUF/Noumz5CTJrl+72/75A0mpRSyWrChoVyYnnMNDoVOqj2fi
-	9mQ5k7Bf9fP5xa1tDwYMVIWCeK68irRJTAR79/b/WVLFI8gtB/1wHtMAiWuy5ONnUl/b+ebJKvD
-	QLFymvYBtHJct7/MrDIDvvFXbzVpOfMvS8sHZJyjSRTJc4CMgLhFOGrGPU1pyFB/z78i5LamM9D
-	qVlIB1u0kcb2ogNqPGnKpz78VXHZUwHpvCdGgEgU/OryKpkw3ytXJXAyLXsUmPksGEPwb76whQX
-	lHr3EXfip5Im17nfxx18+ebflyzsScZLs6AwW75cydwyq3bWFJkCUR6y8U0FuGY5Bk7CE/L3Cpy
-	47YJ2Nak9pSmRepZJlYwdE812487RjlSYwR+JkkBejy76JVlCZPbuZisq7CrFp8xTLHyhyNC2di
-	mPp3/T0EeHjJwyWmrDz1SWlTkeElr6ApZIcpBLicgXesw/ejFvqlw5KHbVzP0BHG+GPaUBOILYW
-	nDELbfzVh5uPbcTdMOhr2S9q266wlKZPT4livmj+cKdvmB7xze7nnOXZUgjwyD5qARUGnJRVcHp
-	insZYNtKM4iDp/hLiomvxn3bThFtAeNByLFnPJs/3
-X-Received: by 2002:a05:6a00:2e16:b0:8b1:d612:e945 with SMTP id d2e1a72fcca58-8c5d48d7617mr1382905b3a.52.1794986681813;
-        Tue, 17 Nov 2026 23:24:41 -0800 (PST)
-Received: from lwq-System-Product-Name.. ([2602:feda:30:cafe:ec49:29ac:0:f6])
-        by smtp.gmail.com with ESMTPSA id d2e1a72fcca58-8c5ca7aa75esm694190b3a.15.2026.11.17.23.24.38
-        (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
-        Tue, 17 Nov 2026 23:24:41 -0800 (PST)
-From: Yaohan Li <shunsheng1218@gmail.com>
-To: jjohnson@kernel.org
-Cc: linux-wireless@vger.kernel.org,
-	ath11k@lists.infradead.org,
-	linux-kernel@vger.kernel.org,
-	kvalo@kernel.org,
-	quic_nmaran@quicinc.com,
-	quic_hprem@quicinc.com
-Subject: [PATCH] wifi: ath11k: stop the RX paths before tearing down the peer TIDs
-Date: Wed, 18 Nov 2026 15:24:33 +0800
-Message-Id: <20261118072433.1259877-1-shunsheng1218@gmail.com>
-X-Mailer: git-send-email 2.34.1
+	dkim=pass (1024-bit key, unprotected) header.d=amd.com header.i=@amd.com header.a=rsa-sha256 header.s=selector1 header.b=oKSIu2Qc
+ARC-Seal: i=1; a=rsa-sha256; s=arcselector10001; d=microsoft.com; cv=none;
+ b=wdKAIEGnqdhU/EHEpEmLwUWftF30FTizR18CjiJZl5OBIk0Mt9CG67kYJR7Gk6R4buzoOL87F3MjSjywAeZS093GSZZSUk+vaIR1zn0ny0+uCoW5e+cr8PfgmP6mOvgkc1DJIXmN0cXEme6LPs6hBcSED8TWSjSVE1zwYRxXP4CqSA94cthB3bYSfbtHFvR75mVyAWA34Yc5M9WEb5AadMEcyr5j+ThXOjxGw6X1pqWl0YDncXC65EE4l4ZBhgQbFwZHzwgWdT8iBJYJcDalRyI6SX0nN3oNNT5J9Yq8ty83n1RxQiyDhuYolL9TtFgC3J1YLxuyDfDtlXUs5Zjbew==
+ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=microsoft.com;
+ s=arcselector10001;
+ h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-AntiSpam-MessageData-ChunkCount:X-MS-Exchange-AntiSpam-MessageData-0:X-MS-Exchange-AntiSpam-MessageData-1;
+ bh=71OmnO+FWbA4EhJ7EN+OTkAqWLzkAt6SqNvR5q45ls0=;
+ b=PFJQTaorj+btu/GQHbdEdVWzRzrAdxnBaERWNdmr7kgPjY5VAd0aYP52PJObcll1c52ye2vQmfVuiusrB/R1yKMWTd2j1N93dL/3pSSEnt7z5J1C564dcgDEARaK9gCRy448OInC9kpTqvIA+E65nsl0+Xt6dGNdpYVYr/XnUCTNigBIX0GPzp8HP/C5aO4bOfbIyViVc5T0jEKRZ69h7DHso00WLVuJQZVN6JH+ikur98bH3Jk7dcjVFves2a3PRZA8l+W7G5dN95mMKuBELdVrlRGyaHbDYCDmIJhouZeFJx4gnuJt3JNNfWqn6zd69w2XW7z6rgAJoWBDnFCKyg==
+ARC-Authentication-Results: i=1; mx.microsoft.com 1; spf=pass
+ smtp.mailfrom=amd.com; dmarc=pass action=none header.from=amd.com; dkim=pass
+ header.d=amd.com; arc=none
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=amd.com; s=selector1;
+ h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
+ bh=71OmnO+FWbA4EhJ7EN+OTkAqWLzkAt6SqNvR5q45ls0=;
+ b=oKSIu2QcuIBY3gBoAslJAehQIUbvqoFOn3cbCza/8IKjn4ieDrICYeaK9yZQKCjJwJRoBNEdSeDR1UrRMfis5tYqVwhvBj913hy0sRevca8+7okw961lmfbzmJllF/Um0IqrFliEZEpdmLrRpNKGpW+VQxiitsfyZHTk1N+OLm0=
+Authentication-Results: mx.microsoft.com 1; dkim=none (message not signed)
+ header.d=none;dmarc=none action=none header.from=amd.com;
+Received: from SA1PR12MB999228.namprd12.prod.outlook.com
+ (2603:10b6:806:4db::10) by SJ2PR12MB7866.namprd12.prod.outlook.com
+ (2603:10b6:a03:4cc::13) with Microsoft SMTP Server (version=TLS1_2,
+ cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id 15.21.592.10; Wed, 18 Nov
+ 2026 07:34:01 +0000
+Received: from SA1PR12MB999228.namprd12.prod.outlook.com
+ ([fe80::4dba:119e:8e7c:37b3]) by SA1PR12MB999228.namprd12.prod.outlook.com
+ ([fe80::4dba:119e:8e7c:37b3%6]) with mapi id 15.21.0615.013; Wed, 18 Nov 2026
+ 07:34:01 +0000
+Message-ID: <fd25ed52-e3ea-41a2-9f62-2397d5d9e8c8@amd.com>
+Date: Wed, 18 Nov 2026 18:33:45 +1100
+User-Agent: Mozilla Thunderbird
+Subject: Re: [PATCH v2 18/19] PCI: Replace untrusted state with device trust
+To: Leon Romanovsky <leon@kernel.org>, Robin Murphy <robin.murphy@arm.com>
+Cc: Greg Kroah-Hartman <gregkh@linuxfoundation.org>,
+ "Rafael J. Wysocki" <rafael@kernel.org>, Danilo Krummrich <dakr@kernel.org>,
+ Dmitry Torokhov <dmitry.torokhov@gmail.com>, Andrew Lunn <andrew@lunn.ch>,
+ Heiner Kallweit <hkallweit1@gmail.com>, Russell King
+ <linux@armlinux.org.uk>, "David S. Miller" <davem@davemloft.net>,
+ Jakub Kicinski <kuba@kernel.org>, Paolo Abeni <pabeni@redhat.com>,
+ Johannes Berg <johannes@sipsolutions.net>, Jonathan Corbet <corbet@lwn.net>,
+ Shuah Khan <skhan@linuxfoundation.org>, Randy Dunlap
+ <rdunlap@infradead.org>, Bjorn Helgaas <bhelgaas@google.com>,
+ "Joerg Roedel (AMD)" <joro@8bytes.org>,
+ Suravee Suthikulpanit <suravee.suthikulpanit@amd.com>,
+ Vasant Hegde <vasant.hegde@amd.com>, Will Deacon <will@kernel.org>,
+ David Woodhouse <dwmw2@infradead.org>, Lu Baolu <baolu.lu@linux.intel.com>,
+ Johan Hovold <johan@kernel.org>, Eric Dumazet <edumazet@kernel.org>,
+ Marcel Holtmann <marcel@holtmann.org>,
+ Luiz Augusto von Dentz <luiz.dentz@gmail.com>,
+ Nipun Gupta <nipun.gupta@amd.com>, Nikhil Agarwal <nikhil.agarwal@amd.com>,
+ Pieter Jansen van Vuuren <pieter.jansen-van-vuuren@amd.com>,
+ linux-kernel@vger.kernel.org, driver-core@lists.linux.dev,
+ linux-input@vger.kernel.org, netdev@vger.kernel.org,
+ linux-wireless@vger.kernel.org, linux-usb@vger.kernel.org,
+ linux-bluetooth@vger.kernel.org, linux-acpi@vger.kernel.org,
+ linux-doc@vger.kernel.org, linux-pci@vger.kernel.org, iommu@lists.linux.dev,
+ Jason Gunthorpe <jgg@ziepe.ca>
+References: <20261109-device-trust-core-v2-0-3b12d9a9f861@nvidia.com>
+ <20261109-device-trust-core-v2-18-3b12d9a9f861@nvidia.com>
+ <d0999161-3b27-4c3b-9d66-1d117c4836fd@arm.com> <20261110122237.GG8635@unreal>
+ <b4c2538f-8021-4abc-be2e-fcd1596f84ca@arm.com>
+ <20261117124801.GD124972@unreal>
+From: Alexey Kardashevskiy <aik@amd.com>
+Content-Language: en-US
+In-Reply-To: <20261117124801.GD124972@unreal>
+Content-Type: text/plain; charset=UTF-8; format=flowed
+Content-Transfer-Encoding: 7bit
+X-ClientProxiedBy: SY6PR01CA0131.ausprd01.prod.outlook.com
+ (2603:10c6:10:1b9::7) To SA1PR12MB999228.namprd12.prod.outlook.com
+ (2603:10b6:806:4db::10)
 X-Mailing-List: linux-wireless@vger.kernel.org
 List-Id: <linux-wireless.vger.kernel.org>
 List-Post: <mailto:linux-wireless@vger.kernel.org>
@@ -97,195 +122,259 @@ List-Unsubscribe: <mailto:linux-wireless+unsubscribe@vger.kernel.org>
 List-Owner: <mailto:linux-wireless+owner@vger.kernel.org>
 Precedence: list
 MIME-Version: 1.0
-Content-Transfer-Encoding: 8bit
+X-MS-PublicTrafficType: Email
+X-MS-TrafficTypeDiagnostic: SA1PR12MB999228:EE_|SJ2PR12MB7866:EE_
+X-MS-Office365-Filtering-Correlation-Id: bd85bdef-bc7f-4f4b-6fb7-08df454650ad
+X-MS-Exchange-SenderADCheck: 1
+X-MS-Exchange-AntiSpam-Relay: 0
+X-Microsoft-Antispam:
+	BCL:0;ARA:13230040|7416014|1800799024|376014|23010399003|366016|261026140227099003|56012099006|10067099003|11063799006|261009223027099003|261026121527099003|5023799004|4143699003|261028144727099003|261022075727099003|261022105027099003|261021121427099003|261102123227099003|261021123027099003|22082099003|18002099003|3023799007;
+X-Microsoft-Antispam-Message-Info:
+	kZxqGkqBkyBWGddz7J43Pl2uxsBLycER/2T8xvGeAlMFBYBrqILCeo2xLkvd7irsvHU3dkvMSuLYf8YFAGzYLW5ITQqs7VrwHfg6ge9RLBWA2rmzvXDJfIi+MQarPcP8BLXI5lLOEReRYrxmkgxEKTO5X4dRXJvXy9iYHC+W3Q3eIKuc7qPScMtYS4mt4k5ydQcu8Gmn0ZrZ1gnFrMQGDEvMhHZGJh/GzQyYtkuxknydptTCtMEIcOgbvKz9911rwFxWWvBgWpCgHkn6yQYLvXdEXuE4EG2OZWZ6fx7xSL+UyyUFQVtUgjP9539uPO/lf6g+GMFPTFgT6VoNqio9L1ZqJmf9ABYL4V8mkKK5SLCrJSWdWD9+wzlmgOnk0mY5zbVQMj7ICC5KgJBsg0h5eTNtOvza4IjsxYwVqWTNzsm9c7XbeppZdFHC9gP1RAKywD/PeHoJjmWA9d3jLvRViv6LihiaFYlzln9Cv+HOgLXkUcenh6cZcL48JPafpaRfO4RVUE5qUEuXvt54ePYY5SslDAT/VJ8+zA+uS/FoZE+zXfqT2RV7Ad9CclhY7Zkb5Ofs587wGOoiFn4CdF1cEkDeJXpN+6Mormj5WThJej3v0ZlWEKW1kyMxVysEzZuGCt8Z9uWhM0Xji146/E8TgFiYQfla2tgcOJxcOPKtbZk=
+X-Forefront-Antispam-Report:
+	CIP:255.255.255.255;CTRY:;LANG:en;SCL:1;SRV:;IPV:NLI;SFV:NSPM;H:SA1PR12MB999228.namprd12.prod.outlook.com;PTR:;CAT:NONE;SFS:(13230040)(7416014)(1800799024)(376014)(23010399003)(366016)(261026140227099003)(56012099006)(10067099003)(11063799006)(261009223027099003)(261026121527099003)(5023799004)(4143699003)(261028144727099003)(261022075727099003)(261022105027099003)(261021121427099003)(261102123227099003)(261021123027099003)(22082099003)(18002099003)(3023799007);DIR:OUT;SFP:1101;
+X-MS-Exchange-AntiSpam-MessageData-ChunkCount: 1
+X-MS-Exchange-AntiSpam-MessageData-0:
+	=?utf-8?B?djU3N2JoaG5SRnpKelptR3lmL2dSdG4zTEE5enJuUVhWQ3ZIa0dpYmQzekdC?=
+ =?utf-8?B?NGhLM1AxN2tWV0hFNnJJZW51cnNGS1dLeFY2d1lxQVlsNG1YeDhjT044RTFa?=
+ =?utf-8?B?aWxhSjRCUHNERXJPczJFZDZaU056UkJEZUFFYlFMbEdqWDVIbElsZG1PUTls?=
+ =?utf-8?B?MVRZWEJGbjlQSzE4M25qeENiNXhpaHBmYVVOT3QzQi9QZm0rYmxCbnMvM2FW?=
+ =?utf-8?B?UmpBSWRZSUwxTjJMM2RsNzJtYzBrZmJJZCt5UkhFRVo1OEZjTXF4TmJ2anI1?=
+ =?utf-8?B?V1hrQWRTUjkzMHZYenh5UVlrYkdPNHVUNTVGWFZSUnNUYyt0ekh5d0loUzRu?=
+ =?utf-8?B?K0NUcm10TENvekVtWTNjZlUwMjlaL0cwQmp3VlNsSzJBbHFpUW5CNFlnOWNH?=
+ =?utf-8?B?eHNuQWhCMWdJVGpWTzBmek9qeStINTFWR1k1OUxia1RzUkxrRFQwSzRpRnZS?=
+ =?utf-8?B?NW5RNHhsd254Qm1UcFM2OUhiUWphdVZxU1Jzbi9vK2xTa1pMU01iRXR0c210?=
+ =?utf-8?B?NGpzNmlaS1RCdHUwYmVLWDdsSHNCc2tWbWF1NWhrZkFJbWV5UFRMMDhKMFN4?=
+ =?utf-8?B?MUxOWW5mTjhwYitQMXpCdDRYSFc4Rm9CaWtqTjBVUEd2SzlROU83NGhQdjlG?=
+ =?utf-8?B?bVZ5c2hBNmI5NCtLTHY1QkFRTldKVlJzeHYwNFAzS0M0Mkk5OGNScTg0M1Bo?=
+ =?utf-8?B?Zlp6anduTUFjUVFUeGVtYVc1RzRXMlZQSHFoSTlVQlZGTVA0a2xxWldJRkI3?=
+ =?utf-8?B?NG5zL1IrREZLWU1PZ3RIQ1F3T3Zmd3Z5Mjl0cHh1S05xSno2NlNHTTBWVWJ0?=
+ =?utf-8?B?OUl1V2srdkJzai8xbS9BcUlGWUFRalJKTVZtM2NCMUYvM08yc2FIUVFjSzFJ?=
+ =?utf-8?B?Q2JKcVlQMnVHMXd5ZG5xRzdFb2x0ZVVWNHRxcE1kU2hsMEQySHpwQ1JFemcy?=
+ =?utf-8?B?Mkg3V3I0MkZScVVJSEhjb2YySDI1L0NiTmlNSnU2NlUvTHR3TFJxbFFsSXAr?=
+ =?utf-8?B?d1RIaTB2NzBrNjlCR1hDZ0k0NVd3MFRDRjRWWXdLTVVyWGdkNGpIRDRNODF5?=
+ =?utf-8?B?bXk1VmJ5NVFKR1BGbm1NRkRpM0VnNjlBakRYQ2twZG1GRTV2Z1dJQ1Z1WXJj?=
+ =?utf-8?B?bGRMeGsrWnpnYzFQTnVkUnZSMEl5YWs2bmpiZjZ2TUNyMjV0aTAxb0tqWXV3?=
+ =?utf-8?B?Z3lPcEZpdzZIR3FUMmg4eXpyaHdBdmEzTGZSMFZ0ZzM1dWloMnlMR0FGa21z?=
+ =?utf-8?B?N3laVWhZZU9vcGpTQitqS2xydzJhQ3VLeW5GRzR2VXZUa1NmZmhISWNldDZB?=
+ =?utf-8?B?cUpDT0d1cXpIckpjT3AyNE1UNW81dVdEZ0dhaHlldmh5NFVKcmNhOEZ2VFRX?=
+ =?utf-8?B?L0REb3QxSnR6aTVucXJ5elZvcXZGTHBxUHFnWTJEQkowbjFDdG5FQkp4dE5q?=
+ =?utf-8?B?NWhlb1AxSGNwVVk4ZGJKcU1hd3NlRWNNTHRmMFZ5cVBROEhvdUxocjk0bmNu?=
+ =?utf-8?B?NVBUOUpkMTNQd3YwZFJ2MkxXK3YvWnh6UGhETDAwNmZtNGxOei9Oak5pY3Mx?=
+ =?utf-8?B?L3lOVWZSdVZiekZhUnFlak9tZFovbVRJLzJGcDB5c0ppOTNmbDhFbzB3WnJx?=
+ =?utf-8?B?bmRXYllkYjJoUEZTa0tjOU0zbVVpL0MrdXRtUHJVSWFJT0VRc0N5TGhoNElT?=
+ =?utf-8?B?VFBQQk5ZZXJlbjAzcnVuem1qT3JFMGhoMjZmS3pFR1AvTHBibVQ1Q3FEbmsv?=
+ =?utf-8?B?M05tZERoZWxyVjUvbUhNRHRuOFMxaFc4VVI3R0V2dHpiK1FvYjhvU0E3ZDJz?=
+ =?utf-8?B?MTRSUmVUTDlsbFp4WkFOM211UUtyMU9mckllRFM5M054a1I4YXlWQmJMUGM4?=
+ =?utf-8?B?SnNhVTdlbUxrYVFyNVVUNVZuN0VNVGlqc3lhdk5GYWp1Y2ZvWEJjN2hSSHhI?=
+ =?utf-8?B?aDd6WG1NajdIVWtiSGRrejBSL3U2K2pITmsxNWJYcHRobjFxMGI3ek5FWk9O?=
+ =?utf-8?B?aXUzYjdGZU5FV21veUxidXpVN3IyNkpxeExGOS83eEZXaWcrd2V1Q3pxYUVI?=
+ =?utf-8?B?RUE2SjJ2M1paWTRPbndkS3JmVTlNOWhXMEpRTzltVlh0TS9qYlNzclh4amhO?=
+ =?utf-8?B?eGFteFZDZlhHN3BmT2xoaG14d00ycTF0enB1ampSL3VYNUlIa2ZJNVF3OVF3?=
+ =?utf-8?B?aFlRV0Zxa2UrZEM4SjBkT3FZd1JMTkhuQmtTaEtCb1VkdnN6UkdnVjVyVDFG?=
+ =?utf-8?B?ZXNnYXQxS243MkwxTjhvVTU4akRremwyemlkbjE5OUdLVkhsQlFvQVZibjdj?=
+ =?utf-8?Q?2pFLH8CnXLePCKoejg?=
+X-OriginatorOrg: amd.com
+X-MS-Exchange-CrossTenant-Network-Message-Id: bd85bdef-bc7f-4f4b-6fb7-08df454650ad
+X-MS-Exchange-CrossTenant-AuthSource: SA1PR12MB999228.namprd12.prod.outlook.com
+X-MS-Exchange-CrossTenant-AuthAs: Internal
+X-MS-Exchange-CrossTenant-OriginalArrivalTime: 18 Nov 2026 07:34:01.4690
+ (UTC)
+X-MS-Exchange-CrossTenant-FromEntityHeader: Hosted
+X-MS-Exchange-CrossTenant-Id: 3dd8961f-e488-4e60-8e11-a82d994e183d
+X-MS-Exchange-CrossTenant-MailboxType: HOSTED
+X-MS-Exchange-CrossTenant-UserPrincipalName: 1CclyQk6YPOQ+Exb7LflDSdMYo57jIk9mtHPrVn1FJzl+16k1BeAm8LItqcpegYfmjW3EVUh2jaWqFXUiteQxg==
+X-MS-Exchange-Transport-CrossTenantHeadersStamped: SJ2PR12MB7866
 
-ath11k_dp_peer_cleanup() clears peer->dp_setup_done only after
-ath11k_peer_rx_tid_cleanup() has returned, but that cleanup gives up
-base_lock around every timer_delete_sync() call.  A fragment that
-arrives during one of those windows still sees dp_setup_done set, so it
-passes the check ath11k_dp_rx_frag_h_mpdu() makes under base_lock and
-goes on to use the rx_tid whose REO entry has just been deleted and
-whose fragment queue has just been purged.
+On 17/11/26 23:48, Leon Romanovsky wrote:
+> On Mon, Nov 16, 2026 at 05:13:59PM +0000, Robin Murphy wrote:
+>> On 10/11/2026 12:22 pm, Leon Romanovsky wrote:
+>>> On Mon, Nov 09, 2026 at 01:53:02PM +0000, Robin Murphy wrote:
+>>>> On 09/11/2026 7:33 am, Leon Romanovsky wrote:
+>>>> [...]
+>>>>> diff --git a/drivers/iommu/iommu.c b/drivers/iommu/iommu.c
+>>>>> index b486b8bbd1fcd..8be2a246d4903 100644
+>>>>> --- a/drivers/iommu/iommu.c
+>>>>> +++ b/drivers/iommu/iommu.c
+>>>>> @@ -1879,7 +1879,7 @@ static int iommu_get_def_domain_type(struct iommu_group *group,
+>>>>>     static int iommu_get_default_domain_type(struct iommu_group *group,
+>>>>>     					 int target_type)
+>>>>>     {
+>>>>> -	struct device *untrusted = NULL;
+>>>>> +	struct device *restricted = NULL;
+>>>>>     	struct group_device *gdev;
+>>>>>     	int driver_type = 0;
+>>>>> @@ -1901,14 +1901,15 @@ static int iommu_get_default_domain_type(struct iommu_group *group,
+>>>>>     		driver_type = iommu_get_def_domain_type(group, gdev->dev,
+>>>>>     							driver_type);
+>>>>> -		if (dev_is_pci(gdev->dev) && to_pci_dev(gdev->dev)->untrusted) {
+>>>>> +		if (dev_is_pci(gdev->dev) &&
+>>>>> +		    pci_dev_default_is_restricted(to_pci_dev(gdev->dev))) {
+>>>>
+>>>> I think this should be the generic device_is_adversarial(gdev->dev) now - in
+>>>> fact probably all the dev_is_pci()/to_pci_dev() stanzas aren't conceptually
+>>>> PCI-specific, just an artefact of the current "untrusted" flag being so.
+>>>
+>>> I wanted to do the same, but iommu_get_default_domain_type() may be called
+>>> before the PCI device's trust level has been set. At that point, we are
+>>> still in "disabled" mode, whereas device_is_adversarial() checks for
+>>> "adversarial" mode.
+>>>
+>>> The below is from AI, I asked to present me the path for that:
+>>> --------------------------------------------------------------------------------
+>>> For a newly discovered PCI device with an available IOMMU and a new IOMMU group:
+>>> pci_scan_single_device()
+>>>     pci_device_add()
+>>>       device_add()
+>>>         bus_notify(dev, BUS_NOTIFY_ADD_DEVICE)
+>>>           blocking_notifier_call_chain()
+>>>             notifier_call_chain()
+>>>               iommu_bus_notifier()
+>>>                 iommu_probe_device(dev)
+>>>                   __iommu_probe_device(dev, NULL)
+>>>                     iommu_setup_default_domain(group, 0)
+>>>                       iommu_get_default_domain_type(group, 0)
+>>>
+>>> For a device whose initial policy is adversary, its state during that call is:
+>>> dev->trust_policy          = DEVICE_TRUST_POLICY_ADVERSARY
+>>> dev->trust_level           = DEVICE_TRUST_DISABLED
+>>> dev->trust_committed_level = DEVICE_TRUST_DISABLED
+>>> dev->driver               = NULL
+>>>
+>>> device_is_adversarial(dev) = false
+>>>
+>>> The active level changes later, during binding:
+>>> really_probe()
+>>>     device_trust_prepare()
+>>>       __device_trust_prepare()
+>>>         WRITE_ONCE(dev->trust_level, DEVICE_TRUST_ADVERSARY)
+>>>     dev->bus->dma_configure()
+>>>     call_driver_probe()
+>>
+>> OK, that seems less than ideal. Feels like it would be better if bus code
+>> set the initial device state prior to device_add, so then it only ever
+>> changes later as a result of an explicit attestation/acceptance process. If
+>> the initial IOMMU probe still has to poke into bus-specific code to avoid
+>> always making a worst-case assumption, doesn't that rather defeat the point
+>> of having a generic abstraction?
+> 
+> As Jason said, this is part of a very large series. Each series is an
+> adventure in itself. Even Greg's seemingly simple request to convert the
+> USB authorization knob to this new scheme has been extremely painful
+> because of AI reviews. They keep pointing out bugs and gaps that are
+> automatically attributed to me simply because I'm touching that part of
+> the code.
+> 
+>>
+>> Even with the slightly dubious argument that this series only intends to
+>> shuffle the existing PCI code around rather than fully introduce the generic
+>> abstraction that it claims to, if the PCI behaviour is still just based on
+>> propagating the internal "untrusted" flag plus the new global override, both
+>> of which *are* known at add_device time into the common trust state, then
+>> there seems little excuse for not doing that up-front so that the new API
+>> *can* just work as expected.
+> 
+> I would prefer to keep both PCI and USB out of this series on device trust
+> levels. Let's see what people say if I drop them in v3.
 
-Clear the flag first, while base_lock is still held, so an RX path that
-runs during the cleanup takes the -ENOENT branch instead of touching
-TID state that is being torn down.
 
-ath11k_mac_peer_cleanup_all() walks every peer under base_lock and calls
-the same cleanup before freeing the peer; clear the flag there as well
-for the same reason.
+I'd rather you did not as it is going to make experiments with CoCo VMs harder.
 
-The RX path has the mirror image of the problem: it drops base_lock
-around its own timer_delete_sync() after it has already queued msdu into
-rx_tid->rx_frags, and the teardown can purge that queue and free the
-peer in that window, so neither the rx_tid pointer nor the ownership of
-msdu can be proven afterwards.  The fragment timer callback takes
-base_lock itself, so the lock does not have to be dropped at all:
-delete the timer with timer_delete() while it is held, which keeps the
-whole check-and-reassemble sequence atomic and leaves msdu owned here.
 
-Deleting the timer is not enough on its own, because timer_delete() does
-not wait for a callback that has already started and is blocked on
-base_lock.  That callback would later run
-ath11k_dp_rx_frags_cleanup() against whatever sequence is queued by
-then.  Track the armed timeout per TID, clear it whenever the fragments
-are cleaned, and let the callback clean up only once the deadline it was
-armed for has passed, so a stale callback cannot drop the fragments of a
-newer sequence.
+> 
+>>
+>>>>
+>>>>>     			/*
+>>>>> -			 * No ARM32 using systems will set untrusted, it cannot
+>>>>> -			 * work.
+>>>>> +			 * No ARM32 using systems select a restricted trust
+>>>>> +			 * policy; it cannot work.
+>>>>>     			 */
+>>>>>     			if (WARN_ON(IS_ENABLED(CONFIG_ARM_DMA_USE_IOMMU)))
+>>>>>     				return -1;
+>>>>> -			untrusted = gdev->dev;
+>>>>> +			restricted = gdev->dev;
+>>>>>     		}
+>>>>>     	}
+>>>> [...]
+>>>>> @@ -616,6 +608,28 @@ static inline struct pci_dev *to_pci_dev(const struct device *dev)
+>>>>>     {
+>>>>>     	return container_of(dev, struct pci_dev, dev);
+>>>>>     }
+>>>>> +
+>>>>> +static inline bool
+>>>>> +pci_dev_default_is_restricted(const struct pci_dev *pdev)
+>>>>> +{
+>>>>> +	enum device_trust_policy policy = READ_ONCE(pdev->dev.trust_policy);
+>>>>> +
+>>>>> +	return policy == DEVICE_TRUST_POLICY_DISABLED ||
+>>>>> +	       policy == DEVICE_TRUST_POLICY_ADVERSARY;
+>>>>> +}
+>>>>
+>>>> Unless I've wildly misunderstood, I'm not sure this is right - if the user
+>>>> has set DEVICE_TRUST_POLICY_DISABLED to explicitly override the bus-default
+>>>> behaviour, but that leads to the IOMMU layer special-casing all PCI devices
+>>>> as adversarial and thus force-*enabling* all their trust-model restrictions,
+>>>> isn't that pretty much the complete opposite of what was asked for?
+>>>
+>>> We have two levels: policy - that describes the default of all devices
+>>> for that bus. level - actual decision on how that device is going to be
+>>> operated.
+>>>
+>>> "Disabled" prevents driver probing until the device is authorized,
+>>> "Adversary" permits probing and requests the available protections
+>>> for operating an untrusted device.
+>>>
+>>> Both need conservative initial IOMMU setup: a disabled device may later
+>>> be authorized as adversary, and authorization does not rebuild its IOMMU
+>>> domain.
+>>
+>> Urgh, I can be absolutely certain I'm not the only one who is going to be
+>> confused this way... I see "disabled" and instinctively take it to mean
+>> disabling the device_trust *mechanism*, as the logical thing that people
+>> will reach for in terms of "I don't care what this new thing is, just get it
+>> out of my way and let my drivers work like they always used to; I want to
+>> disable the new thing."
+> 
+> I completely agree. I was under the impression that these names had already
+> been decided, since I picked up where Dan left off.>>
+>>  From there it then also makes perfect self-consistent sense that
+>> "device_trust=full" would be the opposite end of the scale as in "Apply the
+>> explicit trust model 'fully', to all devices regardless of their bus-level
+>> default."
+>>
+>> Now I guess you could name it something like "device.default_trust_level" to
+>> attempt to make it clearer that it represents a value the value represents
+>> the "trust" *of* each individual device itself, but TBH it's still liable to
+>> look backwards to many users - similarly it's hard to guess that
+>> FOO_POLICY_DISABLED might mean something entirely different from "don't
+>> enforce the policy for FOO.", thus rather than try to contort the naming of
+>> everything, I'd still be much more inclined to just flip the meanings to be
+>> more intuitive from the outsider perspective.
+>>
+>> Say you upgrade your kernel and find your boot is broken because it now
+>> flibbles, but at least there is a "flibble" parameter whose values are
+>> "disabled", "wibble" and "frobble". Are you really going to spend time
+>> straight off reading up on what flibbling is to understand what wibbles and
+>> frobbles mean? Or is your instinct just going to be to try the seemingly
+>> obvious way of disabling flibbling, and then getting positively annoyed if
+>> that only makes it flibble harder?
+> 
+> What about: blocked, adversarial and unrestricted
 
-The per-TID timeout state is initialised together with the fragment
-queue, so the first callback after a peer is set up again cannot act on
-values left behind by its previous incarnation.
+yes, that's better.
 
-Fixes: a06bfb3c9f69 ("wifi: ath11k: Ignore frags from uninitialized peer in dp.")
-Signed-off-by: Yaohan Li <shunsheng1218@gmail.com>
----
-Prepared against v7.4-rc1-1969-g666539eecdf4.
+> instead of: disabled, adversarial and full
 
-AI assistance: the analysis, the change and its review notes were
-prepared with Claude (Anthropic) as a coding assistant.  The author
-reviewed the reasoning and takes responsibility for the content.
+may be simplify: blocked, restricted, unrestricted? Thanks,
 
-Testing: compile tested only (arm64, gcc 11.4).  No ath11k hardware was
-available, so the race was not run.
- drivers/net/wireless/ath/ath11k/dp.c    |  8 +++-
- drivers/net/wireless/ath/ath11k/dp.h    |  2 +
- drivers/net/wireless/ath/ath11k/dp_rx.c | 50 ++++++++++++++++++-------
- drivers/net/wireless/ath/ath11k/mac.c   |  1 +
- 4 files changed, 47 insertions(+), 14 deletions(-)
 
-diff --git a/drivers/net/wireless/ath/ath11k/dp.c b/drivers/net/wireless/ath/ath11k/dp.c
-index be65d73b904b..c1ec35262bd1 100644
---- a/drivers/net/wireless/ath/ath11k/dp.c
-+++ b/drivers/net/wireless/ath/ath11k/dp.c
-@@ -35,8 +35,14 @@ void ath11k_dp_peer_cleanup(struct ath11k *ar, int vdev_id, const u8 *addr)
- 		return;
- 	}
- 
--	ath11k_peer_rx_tid_cleanup(ar, peer);
-+	/*
-+	 * Stop the RX paths before tearing the TIDs down.  The TID cleanup
-+	 * drops base_lock around timer_delete_sync(), and a fragment that
-+	 * arrives in that window would otherwise still see dp_setup_done set
-+	 * and go on to use an rx_tid that is being cleaned up.
-+	 */
- 	peer->dp_setup_done = false;
-+	ath11k_peer_rx_tid_cleanup(ar, peer);
- 	spin_unlock_bh(&ab->base_lock);
- }
- 
-diff --git a/drivers/net/wireless/ath/ath11k/dp.h b/drivers/net/wireless/ath/ath11k/dp.h
-index 84f66839f0c6..d343f8e6df23 100644
---- a/drivers/net/wireless/ath/ath11k/dp.h
-+++ b/drivers/net/wireless/ath/ath11k/dp.h
-@@ -35,6 +35,8 @@ struct dp_rx_tid {
- 
- 	/* Timer info related to fragments */
- 	struct timer_list frag_timer;
-+	bool frag_timeout_armed;
-+	unsigned long frag_deadline;
- 	struct ath11k_base *ab;
- 	u32 *vaddr_unaligned;
- 	dma_addr_t paddr_unaligned;
-diff --git a/drivers/net/wireless/ath/ath11k/dp_rx.c b/drivers/net/wireless/ath/ath11k/dp_rx.c
-index 6d95f7b343a5..37fc116c4996 100644
---- a/drivers/net/wireless/ath/ath11k/dp_rx.c
-+++ b/drivers/net/wireless/ath/ath11k/dp_rx.c
-@@ -886,6 +886,13 @@ static void ath11k_dp_rx_frags_cleanup(struct dp_rx_tid *rx_tid, bool rel_link_d
- 
- 	lockdep_assert_held(&ab->base_lock);
- 
-+	/*
-+	 * Whoever cleans the fragments also cancels the sequence that was
-+	 * waiting for the timeout, so a callback that already started for it
-+	 * has to stay out.
-+	 */
-+	rx_tid->frag_timeout_armed = false;
-+
- 	if (rx_tid->dst_ring_desc) {
- 		if (rel_link_desc)
- 			ath11k_dp_rx_link_desc_return(ab, (u32 *)rx_tid->dst_ring_desc,
-@@ -3204,12 +3211,24 @@ static void ath11k_dp_rx_frag_timer(struct timer_list *timer)
- 						      frag_timer);
- 
- 	spin_lock_bh(&rx_tid->ab->base_lock);
-+
-+	/*
-+	 * This callback can have been started for an older fragment sequence
-+	 * and only get the lock after a newer one has queued its fragments
-+	 * and armed its own timeout.  Only clean up once the timeout of the
-+	 * sequence that is currently queued has expired.
-+	 */
-+	if (!rx_tid->frag_timeout_armed ||
-+	    time_before(jiffies, rx_tid->frag_deadline))
-+		goto out_unlock;
-+
- 	if (rx_tid->last_frag_no &&
--	    rx_tid->rx_frag_bitmap == GENMASK(rx_tid->last_frag_no, 0)) {
--		spin_unlock_bh(&rx_tid->ab->base_lock);
--		return;
--	}
-+	    rx_tid->rx_frag_bitmap == GENMASK(rx_tid->last_frag_no, 0))
-+		goto out_unlock;
-+
- 	ath11k_dp_rx_frags_cleanup(rx_tid, true);
-+
-+out_unlock:
- 	spin_unlock_bh(&rx_tid->ab->base_lock);
- }
- 
-@@ -3238,6 +3257,8 @@ int ath11k_peer_rx_frag_setup(struct ath11k *ar, const u8 *peer_mac, int vdev_id
- 		rx_tid = &peer->rx_tid[i];
- 		rx_tid->ab = ab;
- 		timer_setup(&rx_tid->frag_timer, ath11k_dp_rx_frag_timer, 0);
-+		rx_tid->frag_timeout_armed = false;
-+		rx_tid->frag_deadline = 0;
- 		skb_queue_head_init(&rx_tid->rx_frags);
- 	}
- 
-@@ -3698,18 +3719,21 @@ static int ath11k_dp_rx_frag_h_mpdu(struct ath11k *ar,
- 
- 	if (!rx_tid->last_frag_no ||
- 	    rx_tid->rx_frag_bitmap != GENMASK(rx_tid->last_frag_no, 0)) {
--		mod_timer(&rx_tid->frag_timer, jiffies +
--					       ATH11K_DP_RX_FRAGMENT_TIMEOUT_MS);
-+		rx_tid->frag_timeout_armed = true;
-+		rx_tid->frag_deadline = jiffies +
-+					ATH11K_DP_RX_FRAGMENT_TIMEOUT_MS;
-+		mod_timer(&rx_tid->frag_timer, rx_tid->frag_deadline);
- 		goto out_unlock;
- 	}
- 
--	spin_unlock_bh(&ab->base_lock);
--	timer_delete_sync(&rx_tid->frag_timer);
--	spin_lock_bh(&ab->base_lock);
--
--	peer = ath11k_peer_find_by_id(ab, peer_id);
--	if (!peer)
--		goto err_frags_cleanup;
-+	/*
-+	 * The timer callback takes base_lock itself, so it cannot run while
-+	 * the lock is held and deleting the timer here is enough.  Waiting
-+	 * for it with timer_delete_sync() would require dropping the lock,
-+	 * which lets the peer teardown free rx_tid while this path still
-+	 * uses it.
-+	 */
-+	timer_delete(&rx_tid->frag_timer);
- 
- 	if (!ath11k_dp_rx_h_defrag_validate_incr_pn(ar, rx_tid))
- 		goto err_frags_cleanup;
-diff --git a/drivers/net/wireless/ath/ath11k/mac.c b/drivers/net/wireless/ath/ath11k/mac.c
-index 1a237adaa37d..4bdc9afbc3c1 100644
---- a/drivers/net/wireless/ath/ath11k/mac.c
-+++ b/drivers/net/wireless/ath/ath11k/mac.c
-@@ -899,6 +899,7 @@ void ath11k_mac_peer_cleanup_all(struct ath11k *ar)
- 	mutex_lock(&ab->tbl_mtx_lock);
- 	spin_lock_bh(&ab->base_lock);
- 	list_for_each_entry_safe(peer, tmp, &ab->peers, list) {
-+		peer->dp_setup_done = false;
- 		ath11k_peer_rx_tid_cleanup(ar, peer);
- 		ath11k_peer_rhash_delete(ab, peer);
- 		ath11k_mac_station_cleanup(peer->sta);
+> 
+> Thanks
+> 
+>>
+>> Robin.
+
 -- 
-2.34.1
+Alexey
 
