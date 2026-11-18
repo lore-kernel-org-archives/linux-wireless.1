@@ -1,79 +1,88 @@
-Authentication-Results: smtp.subspace.kernel.org; arc=pass header.oldest-pass=0 smtp.remote-ip=100.103.45.18
-ARC-Seal: i=2; d=subspace.kernel.org; s=arc20261015; a=rsa-sha256; cv=pass;
-	t=1795016379;
-	b=jP0aG/KkQ+YJrT7leoze7fy82rjmcbFk0ddr6FirCvLP/YOnI4/hnHW3MgADobvRBfRT
-	 HiOiy97uWLQQhFj9Yo5dfF5/f2llXqpXFKijIAYNMDbELw5YnxJCWsMcwRkFWExJD1rqN
-	 5Jbqg4GaJWsMHwfsjbGZwC6SIOIdkQ1yG2BKsAyO1rQZw2Q9d+ZeiGOhSCtxn83Fd2xdk
-	 k6pmPjGnYKI5PZviq4eelMWvRmjjqZTm5aNGaIimF9rSRml6HZyQfqYuIp6oHpb7rXW9t
-	 nr4gyh3D8qBxEc/aTI+3LwBUuwoWYf2NruTJ2Aa5HJewXQOBv60pXZ0tuOW3Qgyi9zw==
-ARC-Message-Signature: i=2; d=subspace.kernel.org; s=arc20261015;
-	a=rsa-sha256; c=relaxed/relaxed; t=1795016379;
-	h=Received:DKIM-Signature:Received:From:Date:Subject:MIME-Version:
-	 Content-Type:Message-Id:X-B4-Tracking:X-Change-ID:To:Cc:X-Mailer:
-	 X-Developer-Signature:X-Developer-Key:X-Endpoint-Received:
-	 X-Original-From:Reply-To:Content-Transfer-Encoding;
-	bh=ypJ08Z/cH9sdI6bgD8/7yWENIXEqxl6euoBHXQWcshE=;
-	b=Xg7lpMcbROP+wi6/biwx5X10J6jlzDxzdRDfyoqp3xbYU39qL07lc1Ug+YICaV6jQqIv
-	 HLa8DvoMJhwcW0Ux9dTzkL5i98T8i5eQXxuEjcnbLQKiTahvlAxZwE9r3W6bCobf+/6MJ
-	 XlT1UQbtUBYrM00zY1DKv3MNH0N8UBD0NOSI6qxDRpCzOQ3/wludEPW3CkLTrlGog5mix
-	 mrOodfHsPCxql0InYixIyV/rqrokn+M87ALvarDjWZWIrY9nb8H7nzn1kOXhPLu85s8tC
-	 Hag0qWlcFxA0QYIC1bvjdxzNYZjLCmQ3vrr6BlbofB681iVzFx8xcdNygwUErQbvIRg==
-ARC-Authentication-Results: i=2; smtp.subspace.kernel.org; 
-	dkim=pass header.d=kernel.org header.i=@kernel.org header.a=rsa-sha256 header.s=k20260515 header.b=Szd48X2e;
-	arc=pass header.oldest-pass=0 smtp.remote-ip=100.103.45.18
-Received: from smtp.kernel.org (quasi.space.kernel.org [100.103.45.18])
-	(using TLSv1.3 with cipher TLS_AES_256_GCM_SHA384 (256/256 bits)
-	 key-exchange X25519 server-signature ECDSA (prime256v1))
-	(No client certificate requested)
-	by smtp.subspace.kernel.org (Postfix) with ESMTPS id 885FF60A2621;
-	Wed, 18 Nov 2026 15:39:39 +0000 (UTC)
-Authentication-Results: smtp.subspace.kernel.org;
-	dkim=pass (2048-bit key) header.d=kernel.org header.i=@kernel.org header.a=rsa-sha256 header.s=k20260515 header.b=Szd48X2e
-Authentication-Results: smtp.kernel.org; arc=none smtp.remote-ip=100.80.115.77
-ARC-Seal: i=1; d=kernel.org; s=arc20260519; a=rsa-sha256; cv=none;
-	t=1795016379;
-	b=ZLWnXGDgZ8+uAIvPzM6FYaLwFJjmW2U3RUn4lNg51mpsgtumpwnHzAV6URKbzasV69aL
-	 f5JvHzHj79aaIkk+ESEhSgzENj1dtwPAsE1EV2NfF2fJpWh+pZyIpOnmVrslxhS9+Mp9S
-	 a1WEbM+Ky5b+yZ8uF6bhc+2AczzF1ItWx5YaHbrzDARJbLh1ksIXSDov12KhTIQ99VDkK
-	 XVm+3V1VGsiCozwQ4ONlYmoXTW9OILU2FBwHOBGhlIDaNAUuoRdTJSZj7pjq0OjSAGrkP
-	 dwgp08raTP+xX0SvvnN+oGigkYTpCdJI1F4kgpwFca55zWJvHsPklOuRExfbtUsIebg==
-ARC-Message-Signature: i=1; d=kernel.org; s=arc20260519; a=rsa-sha256;
-	c=relaxed/relaxed; t=1795016379;
-	h=DKIM-Signature:Received:From:Date:Subject:MIME-Version:Content-Type:
-	 Message-Id:X-B4-Tracking:X-Change-ID:To:Cc:X-Mailer:
-	 X-Developer-Signature:X-Developer-Key:X-Endpoint-Received:
-	 X-Original-From:Reply-To:Content-Transfer-Encoding;
-	bh=ypJ08Z/cH9sdI6bgD8/7yWENIXEqxl6euoBHXQWcshE=;
-	b=wfXQaWJ7mCqNkyAwyJt2xns+mxhs1IM8vCKVPoHCOE41hqxhpOgvSH1npoyqAzTibANE
-	 XDGPSJdYdOdfyAtPMUUSI/S9jPMvomgIYkR1+h1ELdrXGnAB0ROmOwg7q3UdbYXRACIv0
-	 0HOvbk5sYc4edfYcaMAJJJAbzFyPoDI3E4PfnUPDvf4kNdwQRrmXPzG7hDKMoe3Io11Cj
-	 xfXCixbg0ZPggxuRpvSZQvNl6KN6U/TjMkzk3Zsbzjs/x/RICD/vL88VSb5LBX1YErqAP
-	 pK7jzaW4C3AhAhBPdkWcEtLniVbTtgZtRhL72DYYF7UDHF7stgOOGkWnSfA6QeNe7aQ==
-ARC-Authentication-Results: i=1; smtp.kernel.org; 
-	arc=none smtp.remote-ip=100.80.115.77
-Received: from lkml.kernel.org (nexus.subspace.kernel.org [100.80.115.77])
-	(using TLSv1.3 with cipher TLS_AES_256_GCM_SHA384 (256/256 bits)
+Authentication-Results: smtp.subspace.kernel.org; arc=none smtp.remote-ip=209.85.221.44
+ARC-Seal: i=1; d=subspace.kernel.org; s=arc20261015; a=rsa-sha256; cv=none;
+	t=1795017381;
+	b=kxw70NOXiWh3qwSsDUw7bIfNwqj2mkcnopfj4htj34U8gpjgV3aKsBiQa3enyfR9SLtX
+	 oVMBbhXVpWHW033YcRjEVzJTZmQfP/+wgAzfyCzTs5o7na8nfLBKqedPvrx/9IgrBEfdO
+	 yVp+O4PnQSg7imuY5vAUl8P94K++nCGrMWHMKT14zmVyRbIBO0Frae6G8JAyDSadlruOY
+	 2cHYj1XzKWJQ/C6D/aJCPfCj06fC+bS20p0iOBci4avufk3bZBurvT5rUJ88U9fClEkzO
+	 E26Lg+EinYKt+NWcsjc/KlXCNgvTvpJwyE3L72Udu0Alk+hU/1Tc8/dtpGzBdfcPJKQ==
+ARC-Message-Signature: i=1; d=subspace.kernel.org; s=arc20261015;
+	a=rsa-sha256; c=relaxed/relaxed; t=1795017381;
+	h=DMARC-Filter:Received:DKIM-Signature:X-Google-DKIM-Signature:
+	 X-Forwarded-Encrypted:X-Gm-Message-State:X-Gm-Gg:X-Received:Received:
+	 Message-ID:Date:MIME-Version:User-Agent:Subject:To:Cc:References:
+	 Content-Language:From:In-Reply-To:Content-Type:
+	 Content-Transfer-Encoding;
+	bh=14Rrkj1zzHeLghewisueOdMH2DyN75ASzqaxxjdbHII=;
+	b=lMKRFu/uUPzCAJVKZcSvTV3F4l9K6zhPA7fzW4DyWTicy9CI9AgRxv8gQ+/M+rUTFaku
+	 G3DCbzKOZw23Mm8UibdGULZ6beQagXQf+kP0y0BltgDWCRc17jlYo//3j1wwgcIWB9W2t
+	 uZGeF8wOXT8EdYKVqd05Nd9JA1+05z4px9p3yeJ1sRhw5qS5RCH53+w476ok+KUbAboEE
+	 HGE00SUp0DSRKTO0G1mGmcYcsf7vddhuvpmzlfYbsz/52RAP0NxjqfvfyyVZKERvJ85iK
+	 /p+Jm8JYgkM29y382pXTc5lB0ukJVzT/2JNCD5OqzDC5f1nX5mFtrcjuRKFrrYF/cjA==
+ARC-Authentication-Results: i=1; smtp.subspace.kernel.org; 
+	dmarc=pass header.from=gmail.com;
+	spf=pass smtp.mailfrom=gmail.com;
+	dkim=pass header.d=gmail.com header.i=@gmail.com header.a=rsa-sha256 header.s=20260707 header.b=nNpXJrNj;
+	arc=none smtp.remote-ip=209.85.221.44
+Received: from mail-wr1-f44.google.com (mail-wr1-f44.google.com [209.85.221.44])
+	(using TLSv1.3 with cipher TLS_AES_128_GCM_SHA256 (128/128 bits)
 	 key-exchange X25519 server-signature ECDSA (prime256v1) server-digest SHA256)
 	(No client certificate requested)
-	by smtp.kernel.org (Postfix) with ESMTPS id 9D59E1F000C8;
-	Wed, 18 Nov 2026 15:39:38 +0000 (UTC)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=kernel.org;
-	s=k20260515; t=1795016379;
-	bh=ypJ08Z/cH9sdI6bgD8/7yWENIXEqxl6euoBHXQWcshE=;
-	h=From:Date:Subject:To:Cc:Reply-To;
-	b=Szd48X2epr/W7NQHXko7KLD7VBhdpWF7W8bMakDo30m+Ll4ypAFlbQKkLJlOAmcJn
-	 9g8BNXs6NmzdwiDaJsIgRWh4Sb9oxbBqTR8bqsfgGvxvffJ+BcEbe2UzpDSHodlnzJ
-	 8XQIuhPjB6R3b48ZiU4VG8Sqw9WJoBdvLVSGB6Cyff2lFwZNUkf61GC1lR9ydTeBuI
-	 GqZG/w8pFl+2MtLdQdwk1n0zvtxfY0h4n07X0qYGbeMFcSC9rqm/qsxw3YdDtF0R6J
-	 97QFvFOyhW2N5xeVmb4on1Ke17IymCef26r0yAknhosgiWSzsh5fU+Y1CtGA47RXsO
-	 4dYKobYxHC+vQ==
-Received: from nexus.subspace.kernel.org (localhost [IPv6:::1])
-	by lkml.kernel.org (Postfix) with ESMTP id 2D7FE4AE12;
-	Wed, 18 Nov 2026 15:39:38 +0000 (UTC)
-From: Ryan Leung via B4 Relay <devnull+untilscour.protonmail.com@kernel.org>
-Date: Wed, 18 Nov 2026 15:39:31 +0000
-Subject: [PATCH RESEND v4] wifi: mt76: mt7996: add thermal zone device
- registration
+	by smtp.subspace.kernel.org (Postfix) with ESMTPS id CFDE560A2602
+	for <linux-wireless@vger.kernel.org>; Wed, 18 Nov 2026 15:56:20 +0000 (UTC)
+DMARC-Filter: OpenDMARC Filter v1.4.2 smtp.subspace.kernel.org CFDE560A2602
+Authentication-Results: smtp.subspace.kernel.org; dmarc=pass (p=none dis=none) header.from=gmail.com
+Authentication-Results: smtp.subspace.kernel.org; spf=pass smtp.mailfrom=gmail.com
+Authentication-Results: smtp.subspace.kernel.org;
+	dkim=pass (2048-bit key) header.d=gmail.com header.i=@gmail.com header.a=rsa-sha256 header.s=20260707 header.b=nNpXJrNj
+Received: by mail-wr1-f44.google.com with SMTP id ffacd0b85a97d-497614c95f0so700837f8f.1
+        for <linux-wireless@vger.kernel.org>; Wed, 18 Nov 2026 07:56:20 -0800 (PST)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+        d=gmail.com; s=20260707; t=1795017379; x=1795622179; darn=vger.kernel.org;
+        h=content-transfer-encoding:content-type:in-reply-to:from
+         :content-language:references:cc:to:subject:user-agent:mime-version
+         :date:message-id:from:to:cc:subject:date:message-id:reply-to
+         :content-type;
+        bh=14Rrkj1zzHeLghewisueOdMH2DyN75ASzqaxxjdbHII=;
+        b=nNpXJrNjgKX0g/k/8W9uTi0ybiMY9Om5fZndrOSFdhShxcIomGz3aBxaUmAZCrIq+5
+         VgD0UrFWXEsxqzNgG6Lpt3XJoiRPno05Gm8vpL+P06cGHajtkW+xtd3DBzNacE+KRmbc
+         iscxt+USh5F6yVuVukaxhsHos3Sb/DexpU8XtmIdBHGk1BhwQDVv9yKSO0Kt8RZlMqPO
+         uTivgyS5PepaJkovS9dOvTZ5qWz9VVDq2Y7BJ8jPJ0oNrJsBCl5OMHT3aK54As4ntA+P
+         QQMK4yvMVFFZAEkG3xmK5TljtSnT82f4DFeNhF3r8VnJg7eMCHStokTQLS8yZfO6Ivmr
+         3aYA==
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+        d=1e100.net; s=20260707; t=1795017379; x=1795622179;
+        h=content-transfer-encoding:content-type:in-reply-to:from
+         :content-language:references:cc:to:subject:user-agent:mime-version
+         :date:message-id:x-gm-gg:x-gm-message-state:from:to:cc:subject:date
+         :message-id:reply-to:content-type;
+        bh=14Rrkj1zzHeLghewisueOdMH2DyN75ASzqaxxjdbHII=;
+        b=dV9GKoDMZBEVSEvOy03x54NgCYconS87KkCl9Ws6XfpIkF8GSaG0zxOZee3+EzluJ+
+         o74WSjzYE9gV1tIJr/Dynle/BAOyY50faqVTxKWrJtKG6cf2IO0m/uPkyIsPTX6PsCB6
+         Cg8pnbNXft+GWgzlM5wZ6XT8Bq0jiIwl47IV6G8272GqgZTH0cTtpyMFRVu7hUHxet2K
+         q+ipFbyl/h8fz8kih/tUnfBj0+Wu27pJNygnRPulq8s+QSAunJqnxUZzRxYxrwyx86V8
+         2ShCh1Vgcu+2Oug77NlQcSbuwV2er+X/UqOyuFC9RoWJe2nac0fkb/OJ71ndndIoAm4l
+         MOtw==
+X-Forwarded-Encrypted: i=1; AL+hErEmmxEFXlWjoXzP69XP0X4b/AUBq8iKSeeryzjo77133wEa+ScpIC1weLa4mX3vNpFNPp9RGykrDr4CtyiKLA==@vger.kernel.org
+X-Gm-Message-State: APuU4Z/plHpAV7KEi6JN8hpCbU8RBIgUmo2kJfnObS3m+ScfOwRoWpjg
+	kjL3MtYUaAaKug8AdV6R4RCoL259jS9lGWmVgQZxYTxSmVERKTb7mZ2s
+X-Gm-Gg: AZFdTZeXgMSHeycsVgbcX+VUwzwgT+jNlKYNaa5bQMxc8QI4uEt9GiSkix6GliY8+J4
+	lA9pS07EUOGw3moEMSPpUPw3UGoOGatth4y7Ayo9AhZz0+pQUZ2DA6EL3dhRBIFRZukO08NrXj4
+	7rHBczZ0t9DHlBsPCmW4tEhe+XnEpMyQloNUAdg66eygWU7qYFyHz5hHV8BMLvbpo7QaIpk9T2o
+	d8vziC+DVVxPbqaYGBsaEb5HoCJobA0Qsuh60w9V1VcgITFyJJyl7HBJbKrzjK/Tw8MLo10g48/
+	haj/UTKxZLNvaZyvxoCAWTnhjAKuF1ccP6p/DgFRX3dOnM6umzAtYUFpBdL7RfwoLjiIP/HdHwM
+	f7QyqcM4WZSb+ZX3tvBUsvFTb3Q94M9Luav3kBt68uorhhTUZYgD2RsREWcAtOoeuYO2j1fJC6w
+	kiwxMWRL2pRy9EhW+DE/p4MMl43OOcHzf9bXXTM2oLk/wqoMeJgQv2K3h51qmZ9MGGk38UcVAKw
+	ixGFzdAVhzTloh5GoVgW7a1eWJ7RgeFtE/Fa7GD0kKWded9a4+C+61eyXlWbKgIiX44pkkXKntb
+	FJYU6WKWLANGNpYfPivuN6nJSG3hZIO25IyZcoY=
+X-Received: by 2002:a05:6000:461a:b0:493:fdf6:14aa with SMTP id ffacd0b85a97d-4a63c657ca2mr7054638f8f.56.1795017379082;
+        Wed, 18 Nov 2026 07:56:19 -0800 (PST)
+Received: from [192.168.1.50] ([188.27.124.137])
+        by smtp.gmail.com with ESMTPSA id ffacd0b85a97d-4a656c11f4bsm5644289f8f.51.2026.11.18.07.56.17
+        (version=TLS1_3 cipher=TLS_AES_128_GCM_SHA256 bits=128/128);
+        Wed, 18 Nov 2026 07:56:18 -0800 (PST)
+Message-ID: <eac5da81-b823-4f9e-ac85-add330c03b0b@gmail.com>
+Date: Wed, 18 Nov 2026 17:56:15 +0200
 X-Mailing-List: linux-wireless@vger.kernel.org
 List-Id: <linux-wireless.vger.kernel.org>
 List-Post: <mailto:linux-wireless@vger.kernel.org>
@@ -83,169 +92,61 @@ List-Unsubscribe: <mailto:linux-wireless+unsubscribe@vger.kernel.org>
 List-Owner: <mailto:linux-wireless+owner@vger.kernel.org>
 Precedence: list
 MIME-Version: 1.0
-Content-Type: text/plain; charset="utf-8"
-Message-Id: <20261118-mt7996-thermal-zone-v4-1-fd26d2a55b0c@protonmail.com>
-X-B4-Tracking: v=1; b=H4sIALLG/WoC/yWNwQ7CIBBEf6XZsyQtaYr1bK892KPxQGGVNRYMo
- FEb/l3Q45vMvFkhoCcMsKtW8PikQM5maDcVKCPtBRnpzMBr3tWCc7ZE0fcdiwb9Im/s4ywy2Wg
- Uam604FvIy7vHM71+1iMchmkY93D65+ExX1HFoixNQyE6/y73KaUvkSbj744AAAA=
-X-Change-ID: 20260722-mt7996-thermal-zone-a1de7cb1d728
-To: Felix Fietkau <nbd@nbd.name>, Lorenzo Bianconi <lorenzo@kernel.org>, 
- Ryder Lee <ryder.lee@mediatek.com>, Shayne Chen <shayne.chen@mediatek.com>, 
- Sean Wang <sean.wang@mediatek.com>, 
- Matthias Brugger <matthias.bgg@gmail.com>, 
- AngeloGioacchino Del Regno <angelogioacchino.delregno@collabora.com>
-Cc: linux-wireless@vger.kernel.org, linux-kernel@vger.kernel.org, 
- linux-arm-kernel@lists.infradead.org, linux-mediatek@lists.infradead.org, 
- Ryan Leung <untilscour@protonmail.com>
-X-Mailer: b4 0.16.0
-X-Developer-Signature: v=1; a=ed25519-sha256; t=1795016378; l=4995;
- i=untilscour@protonmail.com; s=20260906; h=from:subject:message-id;
- bh=uvdd8eEFkrwV4Xyy+ziwLkkjmUbgGSFn3bMaGJTPF3w=;
- b=J0I2IvqJvGrgPUC4nnU+/Ex13oHDnooV/SeIF9rb5QhfKwF7JxDZBWJZkZrvpY0lOXZKmcPd9
- 4pSRuLmT6h9Ayyrvc33h2Kb5Omxi9Z9MTGSrZeEXH7b8cKeHTHjdzCm
-X-Developer-Key: i=untilscour@protonmail.com; a=ed25519;
- pk=eCaNcoQNRWYKZ9D7KbOGKvQVK2YFguJXZxglTtAR7Xk=
-X-Endpoint-Received: by B4 Relay for untilscour@protonmail.com/20260906
- with auth_id=1011
-X-Original-From: Ryan Leung <untilscour@protonmail.com>
-Reply-To: untilscour@protonmail.com
-Content-Transfer-Encoding: 7bit
+User-Agent: Mozilla Thunderbird
+Subject: Re: [PATCH rtw-next 5/5] wifi: rtw88: sdio: read neighbouring
+ registers of the 88xx chips at once
+To: =?UTF-8?Q?David_H=C3=A4rdeman?= <david@hardeman.nu>,
+ Ping-Ke Shih <pkshih@realtek.com>, linux-wireless@vger.kernel.org
+Cc: linux-kernel@vger.kernel.org, Leonard Lausen <leonard@lausen.nl>,
+ Alastair D'Silva <alastair@d-silva.org>, Luka Gejak <luka.gejak@linux.dev>,
+ Martin Blumenstingl <martin.blumenstingl@googlemail.com>,
+ Jernej Skrabec <jernej.skrabec@gmail.com>
+References: <20261116190145.2736364-1-david@hardeman.nu>
+ <20261116190145.2736364-6-david@hardeman.nu>
+Content-Language: en-US
+From: Bitterblue Smith <rtl8821cerfe2@gmail.com>
+In-Reply-To: <20261116190145.2736364-6-david@hardeman.nu>
+Content-Type: text/plain; charset=UTF-8
+Content-Transfer-Encoding: 8bit
 
-From: Ryan Leung <untilscour@protonmail.com>
+On 16/11/2026 21:01, David Härdeman wrote:
+> Every register access costs a full SDIO command, about 40 us on a NanoPi
+> R76S (RTL8822CS, SDR104), no matter how many bytes it moves. The
+> interrupt handler reads HISR and then RX0_REQ_LEN, which follows it, and
+> a free page sync reads the three REG_SDIO_FREE_TXPG words one by one.
+> 
+> Read HISR together with RX0_REQ_LEN, and the three free page words, with
+> one transfer each, as Realtek's driver does. As in rtw_sdio_readl(),
+> this is only done while the chip is powered on; before that, and if the
+> small DMA-safe buffers this needs could not be allocated, the registers
+> are read one by one as before.
+> 
+> On the R76S acting as an AP, TCP throughput to a client goes from about
+> 170 to about 190 Mbit/s, the other directions are unchanged.
+> 
+> Signed-off-by: David Härdeman <david@hardeman.nu>
+> ---
+>  drivers/net/wireless/realtek/rtw88/sdio.c | 84 ++++++++++++++++++++---
+>  drivers/net/wireless/realtek/rtw88/sdio.h |  4 ++
+>  2 files changed, 78 insertions(+), 10 deletions(-)
+> 
 
-Register the mt7996 phy as a thermal zone sensor using
-devm_thermal_of_zone_register() so that device tree thermal-zones
-nodes can reference the Wi-Fi chip as a temperature source. This
-allows the kernel thermal governor to control external cooling
-devices such as PWM fans based on Wi-Fi chip temperature.
+[...]
 
-Registration is non-fatal: -ENODEV is returned when no
-thermal-sensors DT property references this device, which is the
-expected case on platforms without a thermal zone configured.
+> diff --git a/drivers/net/wireless/realtek/rtw88/sdio.h b/drivers/net/wireless/realtek/rtw88/sdio.h
+> index ab366f82d92..6aa59ed3db2 100644
+> --- a/drivers/net/wireless/realtek/rtw88/sdio.h
+> +++ b/drivers/net/wireless/realtek/rtw88/sdio.h
+> @@ -188,6 +188,10 @@ struct rtw_sdio {
+>  	bool free_txpg_valid;
+>  	/* TX aggregation buffer of the non-8051 chips, under tx_credit_lock */
+>  	u8 *tx_agg_buf;
+> +	/* non-8051 chips: HISR + RX0_REQ_LEN, read by the interrupt handler */
+> +	__le32 *rx_regs;
+> +	/* non-8051 chips: the REG_SDIO_FREE_TXPG words, under tx_credit_lock */
+> +	__le32 *txpg_regs;
+>  	/* one writer at a time between the credit check and the accounting */
+>  	struct mutex tx_credit_lock;
+>  };
 
-Unregister the thermal zone together with the existing cooling device
-when the phy is torn down, and on the hwmon registration failure path
-in the same init routine, so neither is left registered against a phy
-that is about to be freed. Clear both pointers after unregistering,
-since this init-time failure path can now run before the normal
-teardown path also unregisters the same phy, and without clearing them,
-that second call would unregister already-freed objects.
-
-Signed-off-by: Ryan Leung <untilscour@protonmail.com>
----
-Changes in v4:
-- Clear phy->tzone/phy->cdev in mt7996_unregister_thermal() after
-  unregistering, making it idempotent.
-- Link to v3: https://patch.msgid.link/20260810-mt7996-thermal-zone-v3-1-ae9d7cd6cde1@protonmail.com
-
-Changes in v3:
-- Unwind cdev/tzone registration in mt7996_thermal_init() on hwmon registration failure.
-- Link to v2: https://patch.msgid.link/20260810-mt7996-thermal-zone-v2-1-563dfbbf9175@protonmail.com
-
-Changes in v2:
-- Take phy->dev->mt76.mutex around mt7996_mcu_get_temperature()
-- Unregister phy->tzone explicitly in mt7996_unregister_thermal() before the phy is freed
-- Link to v1: https://patch.msgid.link/20260722-mt7996-thermal-zone-v1-1-88896e6e9985@protonmail.com
----
- drivers/net/wireless/mediatek/mt76/mt7996/init.c   | 40 +++++++++++++++++++++-
- drivers/net/wireless/mediatek/mt76/mt7996/mt7996.h |  1 +
- 2 files changed, 40 insertions(+), 1 deletion(-)
-
-diff --git a/drivers/net/wireless/mediatek/mt76/mt7996/init.c b/drivers/net/wireless/mediatek/mt76/mt7996/init.c
-index cc94eade9950..e28fe357c9d7 100644
---- a/drivers/net/wireless/mediatek/mt76/mt7996/init.c
-+++ b/drivers/net/wireless/mediatek/mt76/mt7996/init.c
-@@ -234,17 +234,42 @@ static const struct thermal_cooling_device_ops mt7996_thermal_ops = {
- 	.set_cur_state = mt7996_thermal_set_cur_throttle_state,
- };
- 
-+static int mt7996_thermal_get_temp(struct thermal_zone_device *tz, int *temp)
-+{
-+	struct mt7996_phy *phy = thermal_zone_device_priv(tz);
-+	int val;
-+
-+	mutex_lock(&phy->dev->mt76.mutex);
-+	val = mt7996_mcu_get_temperature(phy);
-+	mutex_unlock(&phy->dev->mt76.mutex);
-+	if (val < 0)
-+		return val;
-+
-+	*temp = val * 1000;
-+	return 0;
-+}
-+
-+static const struct thermal_zone_device_ops mt7996_tz_ops = {
-+	.get_temp = mt7996_thermal_get_temp,
-+};
-+
- static void mt7996_unregister_thermal(struct mt7996_phy *phy)
- {
- 	struct wiphy *wiphy = phy->mt76->hw->wiphy;
- 	char name[sizeof("cooling_deviceXXX")];
- 
-+	if (phy->tzone) {
-+		devm_thermal_of_zone_unregister(phy->dev->mt76.dev, phy->tzone);
-+		phy->tzone = NULL;
-+	}
-+
- 	if (!phy->cdev)
- 		return;
- 
- 	snprintf(name, sizeof(name), "cooling_device%d", phy->mt76->band_idx);
- 	sysfs_remove_link(&wiphy->dev.kobj, name);
- 	thermal_cooling_device_unregister(phy->cdev);
-+	phy->cdev = NULL;
- }
- 
- static int mt7996_thermal_init(struct mt7996_phy *phy)
-@@ -275,14 +300,27 @@ static int mt7996_thermal_init(struct mt7996_phy *phy)
- 	phy->throttle_temp[MT7996_CRIT_TEMP_IDX] = MT7996_CRIT_TEMP;
- 	phy->throttle_temp[MT7996_MAX_TEMP_IDX] = MT7996_MAX_TEMP;
- 
-+	phy->tzone = devm_thermal_of_zone_register(phy->dev->mt76.dev,
-+						   phy->mt76->band_idx, phy,
-+						   &mt7996_tz_ops);
-+	if (IS_ERR(phy->tzone)) {
-+		if (PTR_ERR(phy->tzone) != -ENODEV)
-+			dev_warn(phy->dev->mt76.dev,
-+				 "failed to register thermal zone %d: %ld\n",
-+				 phy->mt76->band_idx, PTR_ERR(phy->tzone));
-+		phy->tzone = NULL;
-+	}
-+
- 	if (!IS_REACHABLE(CONFIG_HWMON))
- 		return 0;
- 
- 	hwmon = devm_hwmon_device_register_with_groups(&wiphy->dev, name, phy,
- 						       mt7996_hwmon_groups);
- 
--	if (IS_ERR(hwmon))
-+	if (IS_ERR(hwmon)) {
-+		mt7996_unregister_thermal(phy);
- 		return PTR_ERR(hwmon);
-+	}
- 
- 	return 0;
- }
-diff --git a/drivers/net/wireless/mediatek/mt76/mt7996/mt7996.h b/drivers/net/wireless/mediatek/mt76/mt7996/mt7996.h
-index da9958647b54..63154c338362 100644
---- a/drivers/net/wireless/mediatek/mt76/mt7996/mt7996.h
-+++ b/drivers/net/wireless/mediatek/mt76/mt7996/mt7996.h
-@@ -388,6 +388,7 @@ struct mt7996_phy {
- 
- 	struct ieee80211_sband_iftype_data iftype[NUM_NL80211_BANDS][NUM_NL80211_IFTYPES];
- 
-+	struct thermal_zone_device *tzone;
- 	struct thermal_cooling_device *cdev;
- 	u8 cdev_state;
- 	u8 throttle_state;
-
----
-base-commit: e1dd8486807c1acf9551250b7f81e116a21e6ad6
-change-id: 20260722-mt7996-thermal-zone-a1de7cb1d728
-
-Best regards,
---  
-Ryan Leung <untilscour@protonmail.com>
-
-
+By the way, you can call them "3081 chips".
