@@ -1,188 +1,95 @@
-Authentication-Results: smtp.subspace.kernel.org; arc=pass header.oldest-pass=0 smtp.remote-ip=210.61.82.184
-ARC-Seal: i=2; d=subspace.kernel.org; s=arc20261015; a=rsa-sha256; cv=pass;
-	t=1794986628;
-	b=Efc/wGymBEvQLctr4iE1s7JOaXNbNVkYWMt9DcJHzInJJV8CKPbbZMZsA2Lnyc/89268
-	 Gp2q4dWyxdbBqMjVJTYgzOYGAqBaRGN0/SLmpl91+Fd84o8wKPM8JsV9WZ4U/WiLnR4d1
-	 QYTSxmW9WYxeet/umyg9P+xpu8AjHwLO0MbAXqAd51ScyJFIL0eQLN49dPXqUYYh5gF5i
-	 64zibjD0IcHbbfd0HgHi9Hu1fkH+OM+LMh0VbdynxVMTQyXOFgmgxDehmY3gWHdwVS9AD
-	 m+QqILL4lB0LEInlg7n2fAVFzVyF3K2I6082ID60aM6RAKu7qwZulvJwzwQ0RVJUxlw==
-ARC-Message-Signature: i=2; d=subspace.kernel.org; s=arc20261015;
-	a=rsa-sha256; c=relaxed/relaxed; t=1794986628;
-	h=DMARC-Filter:X-UUID:DKIM-Signature:X-CID-P-RULE:X-CID-O-INFO:
-	 X-CID-META:X-CID-BVR:X-CID-BAS:X-CID-FACTOR:X-CID-RHF:X-UUID:Received:
-	 Received:Received:DKIM-Signature:Received:Received:From:To:CC:Subject:
-	 Thread-Topic:Thread-Index:Date:Message-ID:References:In-Reply-To:
-	 Accept-Language:Content-Language:X-MS-Has-Attach:X-MS-TNEF-Correlator:
-	 x-ms-publictraffictype:x-ms-traffictypediagnostic:
-	 x-ms-office365-filtering-correlation-id:x-ms-exchange-senderadcheck:
-	 x-ms-exchange-antispam-relay:x-microsoft-antispam:
-	 x-microsoft-antispam-message-info:x-forefront-antispam-report:
-	 x-ms-exchange-antispam-messagedata-chunkcount:
-	 x-ms-exchange-antispam-messagedata-0:Content-Type:Content-ID:
-	 Content-Transfer-Encoding:MIME-Version:
-	 X-Exchange-RoutingPolicyChecked:X-MS-Exchange-CrossTenant-AuthAs:
-	 X-MS-Exchange-CrossTenant-AuthSource:
-	 X-MS-Exchange-CrossTenant-Network-Message-Id:
-	 X-MS-Exchange-CrossTenant-originalarrivaltime:
-	 X-MS-Exchange-CrossTenant-fromentityheader:
-	 X-MS-Exchange-CrossTenant-id:X-MS-Exchange-CrossTenant-mailboxtype:
-	 X-MS-Exchange-CrossTenant-userprincipalname:
-	 X-MS-Exchange-Transport-CrossTenantHeadersStamped:X-MTK;
-	bh=T+2N1ZvLZH3MJQPCqGLDOh7K8OnQUxf8ez89fT9NbJI=;
-	b=awgPrFsGSx+eSsdzbgAUIwdZLsZQgYFKlFIoh5NNkfyNfSI4SL3kRQkUtoMa9LsLtt1o
-	 XcV0ZYeCCma0BItK3KyQOZ1EH4xfksEMAsPNlbe6+X6CTPlMQh0rvBrSAu6wszacXk3wt
-	 eGYoYyD4mxIZ6CDLTKyEYE5bHTDT1wJICT3o9bk8YzXRena4AG2KJOtFsFlLvrQmSc1ry
-	 uXZH9+olQzj7IYwFAxtN96vlri/8hFXtbM/9cIWnl1P6a+L86E+l1g2vUSfLA1Wh5e3n/
-	 h7RfD+Ft0tYFHjRxU6kXQCjy+omHDAD8h5LJRVIRnnoPacDG2lGyUULZwtmYqh97yFg==
-ARC-Authentication-Results: i=2; smtp.subspace.kernel.org; 
-	dmarc=pass header.from=mediatek.com;
-	spf=pass smtp.mailfrom=mediatek.com;
-	dkim=pass header.d=mediatek.com header.i=@mediatek.com header.a=rsa-sha256 header.s=dk header.b=ac+tri2W;
-	dkim=pass header.d=mediateko365.onmicrosoft.com header.i=@mediateko365.onmicrosoft.com header.a=rsa-sha256 header.s=selector2-mediateko365-onmicrosoft-com header.b=MLqSCkQD;
-	arc=pass header.oldest-pass=0 smtp.remote-ip=210.61.82.184
-Received: from mailgw02.mediatek.com (unknown [210.61.82.184])
-	(using TLSv1.3 with cipher TLS_AES_256_GCM_SHA384 (256/256 bits)
+Authentication-Results: smtp.subspace.kernel.org; arc=none smtp.remote-ip=74.125.82.170
+ARC-Seal: i=1; d=subspace.kernel.org; s=arc20261015; a=rsa-sha256; cv=none;
+	t=1794986668;
+	b=3T6aQxVb+fBlM9ZoHxvgRHxa49xT1L9yOSaKI5bizNnCLt1eFWu7hO+OUakcW/bA21zE
+	 6wo9gbprZ2lVxatsrGz47cbgzQRUP7tOaNAhfdBgV9Ls4SdxP6tYRWqtcRKTsHtA4A2EE
+	 1lZ9nQdb1+NHot8TgN71aKFdfugBRFQ7yL5+9B40jdQApRcn9O9DfRG3+3pVclnGMQVY6
+	 k3Tgk7s97Qmr9N2K2k97gPrf3QbKFJwzukTmHFBWgRfB4zNTKGrFCLP4FqpQMznHDsQPp
+	 TioWHg8ki+e+gSH/mTBs4fSQxmrLahPw+DWwRc3Gt5cfickglZ96NoVNtay0oWJBZgA==
+ARC-Message-Signature: i=1; d=subspace.kernel.org; s=arc20261015;
+	a=rsa-sha256; c=relaxed/relaxed; t=1794986668;
+	h=DMARC-Filter:Received:DKIM-Signature:X-Google-DKIM-Signature:
+	 X-Forwarded-Encrypted:X-Gm-Message-State:X-Gm-Gg:X-Received:Received:
+	 From:To:Cc:Subject:Date:Message-Id:X-Mailer:MIME-Version:
+	 Content-Transfer-Encoding;
+	bh=nWldKJH4ToQxxszIhmpTBzaHDyg4JETHklQ1vv7jvRs=;
+	b=zxrmXnxW4ftPc8UKx7YJ2ldZ1taOxNNT+cfrRZv/5gL9gtY55oio5zR5NIF8lGJlx+sq
+	 SIg0ZfwwnInjjvJm/IiPXcqtVGCCSRgaFyqTf9dF1JHs/+2ISU+OeHarXhcVrnCDNAvkf
+	 /tZwmHkuJSAH7hD28fBD0UGAluusCm3XwY1Fx5e4NJefZGilsjSrtOHQMbpwV0KVl2QyC
+	 zkM89bbsCNdJAT1OgjnpePSctBak9gah3XEWUn1LRBULi0EPasaBB1u4buoE9iNNcHfM3
+	 uu/sonSAZyUUtv4VKPtvODYRGpkPaZoUWri1YHDzjK/bWxtxUvfS9l2eR+ANdXBxRKQ==
+ARC-Authentication-Results: i=1; smtp.subspace.kernel.org; 
+	dmarc=pass header.from=gmail.com;
+	spf=pass smtp.mailfrom=gmail.com;
+	dkim=pass header.d=gmail.com header.i=@gmail.com header.a=rsa-sha256 header.s=20260707 header.b=optmKBhu;
+	arc=none smtp.remote-ip=74.125.82.170
+Received: from mail-dy1-f170.google.com (mail-dy1-f170.google.com [74.125.82.170])
+	(using TLSv1.3 with cipher TLS_AES_128_GCM_SHA256 (128/128 bits)
 	 key-exchange X25519 server-signature ECDSA (prime256v1) server-digest SHA256)
 	(No client certificate requested)
-	by smtp.subspace.kernel.org (Postfix) with ESMTPS id 325E7606A325
-	for <linux-wireless@vger.kernel.org>; Wed, 18 Nov 2026 07:23:46 +0000 (UTC)
-DMARC-Filter: OpenDMARC Filter v1.4.2 smtp.subspace.kernel.org 325E7606A325
-Authentication-Results: smtp.subspace.kernel.org; dmarc=pass (p=quarantine dis=none) header.from=mediatek.com
-Authentication-Results: smtp.subspace.kernel.org; spf=pass smtp.mailfrom=mediatek.com
+	by smtp.subspace.kernel.org (Postfix) with ESMTPS id 3ED18606A325
+	for <linux-wireless@vger.kernel.org>; Wed, 18 Nov 2026 07:24:28 +0000 (UTC)
+DMARC-Filter: OpenDMARC Filter v1.4.2 smtp.subspace.kernel.org 3ED18606A325
+Authentication-Results: smtp.subspace.kernel.org; dmarc=pass (p=none dis=none) header.from=gmail.com
+Authentication-Results: smtp.subspace.kernel.org; spf=pass smtp.mailfrom=gmail.com
 Authentication-Results: smtp.subspace.kernel.org;
-	dkim=pass (1024-bit key) header.d=mediatek.com header.i=@mediatek.com header.a=rsa-sha256 header.s=dk header.b=ac+tri2W;
-	dkim=pass (1024-bit key) header.d=mediateko365.onmicrosoft.com header.i=@mediateko365.onmicrosoft.com header.a=rsa-sha256 header.s=selector2-mediateko365-onmicrosoft-com header.b=MLqSCkQD
-X-UUID: f650691ce32011f18dc8c9802ae25ab1-20261118
-DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed; d=mediatek.com; s=dk;
-	h=MIME-Version:Content-Transfer-Encoding:Content-ID:Content-Type:In-Reply-To:References:Message-ID:Date:Subject:CC:To:From; bh=T+2N1ZvLZH3MJQPCqGLDOh7K8OnQUxf8ez89fT9NbJI=;
-	b=ac+tri2WroGHBNi/uyq8/idr97vRrizYq3C4WUhaVHmBFH5qXTo3OtLQdhGefFuSa21PQZfViq584J0IjUmah5dmFvmO8jxmGoBNglPJ93BaMnf5iRAndZ7Lw3JVa4YQJM5sR/n/Avmupttw2KofT3cZjgjwN+qiqvxsBMHQpzo=;
-X-CID-P-RULE: Release_Ham
-X-CID-O-INFO: VERSION:1.3.21,REQID:0224546c-7bb1-470e-804b-19eb0ddebefc,IP:0,U
-	RL:0,TC:0,Content:0,EDM:0,RT:0,SF:0,FILE:0,BULK:0,RULE:Release_Ham,ACTION:
-	release,TS:0
-X-CID-META: VersionHash:b0318ac,CLOUDID:318a0331-f289-4656-bb36-27baf4489f11,B
-	ulkID:nil,BulkQuantity:0,SF:81|82|83|102|110|111|836|865|888|898,TC:-5,Con
-	tent:0|15|50|99,EDM:-3,IP:nil,URL:0,File:130,RT:0,Bulk:nil,QS:nil,BEC:nil,
-	COL:0,OSI:0,OSA:0,AV:0,LES:1,SPR:NO,DKR:0,DKP:0,BRR:0,BRE:0,ARC:0
-X-CID-BVR: 2,SSN|SDN
-X-CID-BAS: 2,SSN|SDN,0,_
-X-CID-FACTOR: TF_CID_SPAM_SNR
-X-CID-RHF: D41D8CD98F00B204E9800998ECF8427E
-X-UUID: f650691ce32011f18dc8c9802ae25ab1-20261118
-Received: from mtkmbs11n1.mediatek.inc [(172.21.101.185)] by mailgw02.mediatek.com
-	(envelope-from <michael.shih@mediatek.com>)
-	(Generic MTA with TLSv1.2 ECDHE-RSA-AES256-GCM-SHA384 256/256)
-	with ESMTP id 1622411275; Wed, 18 Nov 2026 15:23:33 +0800
-Received: from mtkmbs10n1.mediatek.inc (172.21.101.34) by
- mtkmbs13n1.mediatek.inc (172.21.101.193) with Microsoft SMTP Server
- (version=TLS1_2, cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id
- 15.2.2562.29; Wed, 18 Nov 2026 15:23:32 +0800
-Received: from SG2PR04CU009.outbound.protection.outlook.com (172.21.101.237)
- by mtkmbs10n1.mediatek.inc (172.21.101.34) with Microsoft SMTP Server id
- 15.2.2562.29 via Frontend Transport; Wed, 18 Nov 2026 15:23:32 +0800
-ARC-Seal: i=1; a=rsa-sha256; s=arcselector10001; d=microsoft.com; cv=none;
- b=E4QccaFk+LS8gmycoSruJrZwHsy0t67SSNd6A96iu3/m3Bs7fEnKh4PY4LE7IaX37pIHNvtLoCgdK9JMnW17dqIuRfJpJvOOWLFrPz2NbNIZfUYnUyXQ1/84v/h63YpE7/9F2e2F60JsdThJiGvxpEPlMHoJ1C71qxmkTeJMDhFVBHocYmYZegmTc9s3QedavmIUzcMasqXneuK6FpUVBj26xfT/5H+qEII+2+jkCnyjpf/KTLzhQ182acodxq5hyXXhRt4YE+gSEQEfxBYVO2XX49FQjxwgaAFXiySOjfTv7Z1h3mmsKx5+BmKpYRVh8rT1cEGWsRUF2ETuHsXniw==
-ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=microsoft.com;
- s=arcselector10001;
- h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-AntiSpam-MessageData-ChunkCount:X-MS-Exchange-AntiSpam-MessageData-0:X-MS-Exchange-AntiSpam-MessageData-1;
- bh=T+2N1ZvLZH3MJQPCqGLDOh7K8OnQUxf8ez89fT9NbJI=;
- b=WolFvkWhdJ8mOfln9z+HT2ibb9ZwlrSXngYfNpEz4Rgd2+kcHkgIeEGrBd+bkhYJ3YyUdN5GYbsRnnxU4tLnXIoYc13SsbWmFV/mDAh+4fZXAq08ljJ/oVxt/quqOcW5BGcBCKfLLNpkXoK7zU87yesFHGjlyefW8s84qOt4KUuD0oepuTw03yT0t9HPVHoz9rYPTwQQtvLD3vGNajVOD/DLuEr5hrkl4SBmT6XUDkGhU9zUu/cC/sBDYjv0iMS8+cAUEVrn5IIA4B3tFZMs2MjAGKnYEHIElYaHkt6ks3ZJpCWhkzwkgQjsu4U4NKL0RJTvg+yuFp25/2r7fjqZsA==
-ARC-Authentication-Results: i=1; mx.microsoft.com 1; spf=pass
- smtp.mailfrom=mediatek.com; dmarc=pass action=none header.from=mediatek.com;
- dkim=pass header.d=mediatek.com; arc=none
+	dkim=pass (2048-bit key) header.d=gmail.com header.i=@gmail.com header.a=rsa-sha256 header.s=20260707 header.b=optmKBhu
+Received: by mail-dy1-f170.google.com with SMTP id 5a478bee46e88-3282db206d3so1892804eec.0
+        for <linux-wireless@vger.kernel.org>; Tue, 17 Nov 2026 23:24:28 -0800 (PST)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=mediateko365.onmicrosoft.com; s=selector2-mediateko365-onmicrosoft-com;
- h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
- bh=T+2N1ZvLZH3MJQPCqGLDOh7K8OnQUxf8ez89fT9NbJI=;
- b=MLqSCkQD1h/2z0AKwby2wlrP0eo/Wj27k3fjNOk2P42smvvbZ7Yj1frgUfuu4Mk+83ivUFLS5BmbWpkVUwpWYCpF2KXJAiNSEE/uPKRzRJgdImjKoceLgj2ySZ2pPoguQ5xFipqLGorf97TPzOiJz0odqAm70zXviTSe9KrPCMk=
-Received: from TYZPR03MB5742.apcprd03.prod.outlook.com (2603:1096:400:8f::9)
- by SEZPR03MB7470.apcprd03.prod.outlook.com (2603:1096:101:132::13) with
- Microsoft SMTP Server (version=TLS1_2,
- cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id 15.21.615.14; Wed, 18 Nov
- 2026 07:23:28 +0000
-Received: from TYZPR03MB5742.apcprd03.prod.outlook.com
- ([fe80::ffd:f333:4ece:dfbc]) by TYZPR03MB5742.apcprd03.prod.outlook.com
- ([fe80::ffd:f333:4ece:dfbc%5]) with mapi id 15.21.0615.013; Wed, 18 Nov 2026
- 07:23:28 +0000
-From: =?utf-8?B?TWljaGFlbCBTaGloICjlj7LlkJvku7Ip?= <Michael.Shih@mediatek.com>
-To: "hoopyfrood42@gmail.com" <hoopyfrood42@gmail.com>,
-	"lucid_duck@justthetip.ca" <lucid_duck@justthetip.ca>
-CC: =?utf-8?B?U2hheW5lIENoZW4gKOmZs+i7kuS4nik=?= <Shayne.Chen@mediatek.com>,
-	"nbd@nbd.name" <nbd@nbd.name>, Ryder Lee <Ryder.Lee@mediatek.com>,
-	"lorenzo@kernel.org" <lorenzo@kernel.org>, "linux-wireless@vger.kernel.org"
-	<linux-wireless@vger.kernel.org>, Sean Wang <Sean.Wang@mediatek.com>,
-	"floss@jetm.me" <floss@jetm.me>, "linux-mediatek@lists.infradead.org"
-	<linux-mediatek@lists.infradead.org>,
-	=?utf-8?B?RGVyZW4gV3UgKOatpuW+t+S7gSk=?= <Deren.Wu@mediatek.com>,
-	"stable+noautosel@kernel.org" <stable+noautosel@kernel.org>
-Subject: Re: [PATCH wireless v2] wifi: mt76: mt7925: get the survey airtime
- from the firmware
-Thread-Topic: [PATCH wireless v2] wifi: mt76: mt7925: get the survey airtime
- from the firmware
-Thread-Index: AQHddK0AK8hkGcGwvE6BAU0mBGtAXrcvswcAgAO/B4A=
-Date: Wed, 18 Nov 2026 07:23:28 +0000
-Message-ID: <173fc5e8010e9f01a9a11f0d98d0934c8b8ccc09.camel@mediatek.com>
-References: <20261115025635.40010-1-lucid_duck@justthetip.ca>
-	 <CAHaeJsRTd5KjN9CsKDU-g8Ut-WfBuiKkTnkBSZ9hQSsr7P_HQA@mail.gmail.com>
-In-Reply-To: <CAHaeJsRTd5KjN9CsKDU-g8Ut-WfBuiKkTnkBSZ9hQSsr7P_HQA@mail.gmail.com>
-Accept-Language: zh-TW, en-US
-Content-Language: en-US
-X-MS-Has-Attach:
-X-MS-TNEF-Correlator:
-authentication-results: mx.microsoft.com 1; dkim=none (message not signed)
- header.d=none;dmarc=none action=none header.from=mediatek.com;
-x-ms-publictraffictype: Email
-x-ms-traffictypediagnostic: TYZPR03MB5742:EE_|SEZPR03MB7470:EE_
-x-ms-office365-filtering-correlation-id: cad6b667-409c-4f8c-025d-08df4544d76b
-x-ms-exchange-senderadcheck: 1
-x-ms-exchange-antispam-relay: 0
-x-microsoft-antispam: BCL:0;ARA:13230040|1800799024|376014|366016|23010399003|56012099006|38070700021|261021121427099003|4143699003|11063799006|10067099003|261026121527099003|261102123227099003|18002099003|6133799003|22082099003;
-x-microsoft-antispam-message-info: Cz0oMdZeT9sYUaElZrkwVnbz+u2IrvUcR4UOWwu5AdtRidpwiOLeDA0SXSr4lQOrq8JKIzlkFz2wDvSmIwrKIUgG2FloulRmsYXd3rpA6i2VcS4CVxHEg0qDDt9LwByG4NYr/v/C4h41QoQCYbFowOEnwv0g341tOWrkTpgZn7JxBEM0lP2SBvMl9RGMZkkgar6CRPBClyo7AcXQDZAm+F/N5J4om/NrIt2zyOOKMf7xN3+yrZixxAtoOXjyoGlc4gzzS8WiLC91VUx7OuVb8Ikab/KK+hwUB+GkLMmE5t/inkc2oG8gcjlGIA73YPlVHYvOQ7NH46iXSWL6+lBxX5rhbo/Jq3rzVDdHrOUIlFIlmcDChASkH09nv/xDJms1/kqNHpXBH89bEwllId6OKBuYVmIyKZLpjyYHyteFHyazq0Iqx2B+LJTfBtKjJsd++Tictoa1NEKAkG+8YhZsbQzh3tq2+YKPiKA0pChB6Zzr9qXZ089AYqOq5kCkJXKocJfFXsT6wr4m7h37w5sNB8Yi75cSZL8FRckoax2O844RuG1Ev7PwUP+KmBy8rP0458oZ0kVbxOWOoOW7UdqHkblZzdZl6IXfaonK1jCAOU9m0xihTxRG60qZpnBaraMuzEOWds56GAm6bU9pdlRyeLMD2TUxclT5bTKxhGuWV73opsy5fTHibfhJmJ4LKrEGlCjoVlFnEGSRjszLCDb7oHcWw7hSIwFV4/i4uAIfslw=
-x-forefront-antispam-report: CIP:255.255.255.255;CTRY:;LANG:en;SCL:1;SRV:;IPV:NLI;SFV:NSPM;H:TYZPR03MB5742.apcprd03.prod.outlook.com;PTR:;CAT:NONE;SFS:(13230040)(1800799024)(376014)(366016)(23010399003)(56012099006)(38070700021)(261021121427099003)(4143699003)(11063799006)(10067099003)(261026121527099003)(261102123227099003)(18002099003)(6133799003)(22082099003);DIR:OUT;SFP:1101;
-x-ms-exchange-antispam-messagedata-chunkcount: 1
-x-ms-exchange-antispam-messagedata-0: =?utf-8?B?WTVaWTF2aEUzV2NpWTBWS1FrYmtqejVJUHZsdUw4Q1pCU2tNVWhqT3gvTytQ?=
- =?utf-8?B?UDVxZ21sN205ck85MkJMNm9jc3pMU0lPdkFoZmFGZFRGcFZGNDZtVlUzVmla?=
- =?utf-8?B?Sk93Q1NyVXdGV0Y2Wkt6SVdVYWN0SElKUmRtQ0pjc2NuVUNRd2lDU2M1dW5k?=
- =?utf-8?B?RDRsaXZIUmJ1Tzk2cUhHbmFrdThvUkdMTTJndGdjMDBHcUtuUWRxbG5QV0tq?=
- =?utf-8?B?cWhTUWdzYVNwSHlnSWEzNHdZMmhSUXhYVWUyMnlETzdDQks0SnZUREpjc01Q?=
- =?utf-8?B?dmNvaEZxampFNG1URzg3b2hxTHJQVGlUSExUanhpZElpY3BHc1A3bXFsc3h2?=
- =?utf-8?B?TktRQzB1YVp3VDNWbzdnQ3pQODZZMjFoN2NhNDBRQkpXL0huN1YrWEhkUjV3?=
- =?utf-8?B?eUt0WmEvb1NpbmxienZmWlc3T2l3dnZsOHFFUjV2c09tL1pYUUhFRG9EZU0y?=
- =?utf-8?B?MWtsWWI5aXN5T3Qzalg2MHFYT3BhVDRUYnhwMkVqVzlJSW9rM2lWazBDSkpk?=
- =?utf-8?B?N2M3d3lmMjBDdUJ4YWd2OU9iSWJrWVlkZCtrYjlYZ0JVd2NOeDR5OXBwVWx0?=
- =?utf-8?B?SUNIalZMNDBQQlFPVmVjTVhXNWt4ZUU4czNOdHpFQi8ybVlkWEszUmE0OVc4?=
- =?utf-8?B?QS9TNW1MVmVsZEVjV1BsTUxjbXRjZVhFTGZZMlZWZGl1azh6RXIrTWhvQTFQ?=
- =?utf-8?B?dGtDR0Q4QXFjVHMwL3VQbStsM1BVNlQvSG5Uck1UTnErd0F4SVdvRnJvcUFK?=
- =?utf-8?B?ek1PeWh5UDdWUWE5V1l2ZzIva2JmbEFOWVNmSUpOTTBTZ3QrY2tMN3pibmo3?=
- =?utf-8?B?cC9XVS9DdStsdUdUUDg1U0x5M1k0VEdkZERrRXoxTnAyUmwzcU8wbGZvdkQ2?=
- =?utf-8?B?MjczMGdXN0NPOW10WCtCSUsrQlh3NlJET0wxMG9UQlhQRUhQZENyUzdaeEd5?=
- =?utf-8?B?WWR2OVBUa29PUU50VWZFZUdiMkQ0cG9jWC93SjNOcjNBMkFIdk1zNmdCeWVk?=
- =?utf-8?B?b0lhNXF5YXBwc0JuTVlFaWM0dHBONENaTy8wNVAwWmU3RDM1Z2lzeEY3cE1p?=
- =?utf-8?B?ZHhmMTRBR1NBY3ZGUHNPbGI0TW5aMm0vZ3VLSlpQTmI5bVBscUF4RUZjSDJa?=
- =?utf-8?B?MHBJMHN0VitCRytsY2laZmlQMitHekpLSVNROFdJOUVGd29XdU1nU0xvbzZT?=
- =?utf-8?B?U3hidTM1a1FaTEVscm1pRGFEdEFTT0x4S29weTNwdXJpUGRnMFk2elFsRlVy?=
- =?utf-8?B?bGlMKzIzVmpBTjBMVVdXejdYMjVnWWxqYkJmbUhjUWVhUTRKbnRHZ3ZmaDla?=
- =?utf-8?B?bWZKcXFORmd5SzJLL1R6WE8wTjA2bnZhNUZhRG5SKzNCTXg5ZWtRRlBhRUUv?=
- =?utf-8?B?V2JicEhXTTFqZ2pWNkdScTJBZjlGWnZydy9KZlhHK3hxQWdXbExuelVINmQ1?=
- =?utf-8?B?azY0M3o2eW5ySkVwUHI4RWNnNWg5TmNqMHl0aGdFd0VhTUNiSXhHZzNSY2cw?=
- =?utf-8?B?N29WWnQvWnhhdm5XcDUwTENMdmFhbkxnREVucjZDWVJmMHBOamp1WEZuc1ll?=
- =?utf-8?B?eFlQUzlEZ1V6cGErT29QdERiMzhPd3pReDVURVlqcmdHZU5adnp4L0E5dm9q?=
- =?utf-8?B?cXNJQm5ud25oTGFyTDlEVkwzLzBkckI0VTEyamlpelQvM0pOSEtxZUlWNWVm?=
- =?utf-8?B?V3dRTWsvZUdneUVxaGpURkdKQXZ2ZHQvSGF1a2R3dlEvRzk1U0JBMGc1Qysy?=
- =?utf-8?B?RzZBVW5wVEpidld3SzRkUDgwQVhrVkRVMkkzeXF0Tnh0ekVBTitmejNkVGFI?=
- =?utf-8?B?L1dNaVl0TmM3Ump5MWFaeE5vMTlYQTd5VU5nWDFJZmMwMy9PbGdrNDBHMjJ2?=
- =?utf-8?B?UU5Rc3hvMUZJcmtUK2JXSk9HODA2YlBEb3RQNEI1aHJBaDBiazd1NngxVHQ0?=
- =?utf-8?B?WTBJWU5PZjk3cVVSUXlqelNYazBUbmZVaE1CazMraUczalp3b2NQaWhpVGZj?=
- =?utf-8?B?cFJyS003a2Jqc0d0VXNTNnZWVWFVS0NwS1pkZll0QWtiVkdMM0dZSmh3ZmNU?=
- =?utf-8?B?ZUdYZmtjUHNqeWtPRzVieEY3K3hPSjNHVjJoSUJsMGlxT2pxZ1VnVWw2eUFM?=
- =?utf-8?B?VUp3ZFNLbDg2TjFrSmYveWxHSFZiRXRmZWZ2eDNMVVZxVVprb0NrQ2tWRUFX?=
- =?utf-8?B?WGF2dFNTcW5oREJuN3NsejJjWHNWKy9rS0xST1BiUFRTRDhOK1ZoQytKMUhN?=
- =?utf-8?B?anFLc2l1WEt3R3JHT2JoNWs5SnhjWndDaUtjaGYrVXNLamp0SWFuNFl4cFRZ?=
- =?utf-8?B?YTB0eE1NcE9STjJ1SWM4RVR2RWNsK1gxdjJJN0xXQlptQXRaMk10akZidjR2?=
- =?utf-8?Q?kLQ81ZHfQX/6/7jw=3D?=
-Content-Type: text/plain; charset="utf-8"
-Content-ID: <C4F80CCE06116E429714FBC33A064203@apcprd03.prod.outlook.com>
-Content-Transfer-Encoding: base64
+        d=gmail.com; s=20260707; t=1794986667; x=1795591467; darn=vger.kernel.org;
+        h=content-transfer-encoding:mime-version:message-id:date:subject:cc
+         :to:from:from:to:cc:subject:date:message-id:reply-to:content-type;
+        bh=nWldKJH4ToQxxszIhmpTBzaHDyg4JETHklQ1vv7jvRs=;
+        b=optmKBhusOrjDG69jg4Kw6QLVtpKWDX78kqzv3mPhfX5qbKGNxRR1TibCIDs7O8EV9
+         3z4iKtcjBbS6ZAe9w5FhT98RQTWHR5PmplbO4tvYLIPtxgpHG5kQdshJkIWQHzq1LI+a
+         JCIPr/G10qtfR4xiT6ZTB2VGsNouIRDgSmVz+nw36GIWTx486CaGLhQEcsWkQ3I7n9aB
+         w1P+lJPvCHr6TlyEzxATkOF6vPgv5CJ64FIrBcpIMt5NKt/D/PaR2xFMTytjVMipDbDA
+         eUNumuvsq9voFOu4z9CgQ+s+KmE3DTGKpD4NfFqdzjhS33FGkbAyV7x1e4GNZF+pbvyd
+         0QJA==
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+        d=1e100.net; s=20260707; t=1794986667; x=1795591467;
+        h=content-transfer-encoding:mime-version:message-id:date:subject:cc
+         :to:from:x-gm-gg:x-gm-message-state:from:to:cc:subject:date
+         :message-id:reply-to:content-type;
+        bh=nWldKJH4ToQxxszIhmpTBzaHDyg4JETHklQ1vv7jvRs=;
+        b=TAWgOoJgEwhmB+RpJ2tDp2SXgL+tPsvpfKw/I5EF2XPBkos42IfoEIo0CegZnqCphW
+         w9ZvJSA88b3ysvgsI5bmur5N3Ru3CRDytDaPOltqO/C0K25ZO33U/RNWXNW5qUhsTZi7
+         DxfVNlm3eZsHmn6TW58J47zxSI4wyFlXL/gqHC6bKO5oE/lEEoR/3IoH5Nfp/WCbVZR5
+         W49Pvtz4omfP+1wPKiz+c63DgrwxOkINhyVxBXcmtGS9E77gpBaHyPVpBFNaDb2dykUM
+         /ttY0PNu1p1z5x1aJ0EwkndUnHR8hfk1O5M6q+OcYHkm21h0pQ6VUmI1Wqy6LjqKwPLH
+         sNZg==
+X-Forwarded-Encrypted: i=1; AL+hErGI0i01Hhut/PK/6OgJBhs28dcD4IeCA57AzZmRozQMSXfkFQ7w1y+4bYMx+3xQpbc0JZPhzK3K1Np2bzLMRw==@vger.kernel.org
+X-Gm-Message-State: APuU4Z/gEBQ2uIS7Z2K7yZ/edR5RodWaUXVkg+OqumXYa8yghQO35lFj
+	LY5jzTy/o5ku0f7Xmok0aOXDKu2sW3/DKx1hcOWMnkK0hWqUjPOAYRXo
+X-Gm-Gg: AZFdTZeKKa14WYywNoc3A80sv7MGPx00NRVZateC6vWbsidVDy0NjBXXdi/9rxEQgMz
+	kBzROK+P402bmsnBIIIP/vm+IxkMc+wR8hWxczkrHkn6tctU0VlCmrstNzBdhquvy5UPjuqtFXv
+	Q+y1Me4xECN+7KcE9BIGx1K1JTETwlmshE3RwwrJ9acJi/3MK3ezCnsryjbbux1y5bIlvRQpH09
+	tob55JOCvbMMgy911cFTr6m6PV4+y1GKDr+H9MQCo177AhsLFkZzNme+zb3Z5NJLJuw+c04/2b5
+	ZibEFZppm6rummYSMav5ugsUT/NYb3jUijdCPyaGwpjY3EQPAqJSK3f6fj+162/4XqSaRE4p9om
+	ZrpjU4JIvPHGg0o0eoewii2oC2/nXD1Dr9DzKd7KrwhF6BeR6yaSRX+5J6XghUQ6Xi0lxq5mnRl
+	eVFpw2d6Wq0yTmA75b3ZyxEN27VP6X4NjZ0h2A1jFMJblHpcjxrmommIISbm6Nbk69t1/GsN7vg
+	a4gXIYBfnMDmSYhQ7HYA/2hoR0xM1sI6/3F9hT+xYddMUQ5hfWpBhO9kJH/jhEO77zO9muEJZyO
+	JkHZnAs2Ub0rN1lyHrNMA7+O+/E5E4xtnEGPoLhZxEU5yPofCrc1r1WqsmOnsTTg3J8bsI0OUoL
+	R44KHmI4MRm+lq/o35FkhbjJbbcgRCSrBT/T+vSaA
+X-Received: by 2002:a05:7301:4682:b0:36a:437a:4c00 with SMTP id 5a478bee46e88-382803787b6mr1855612eec.24.1794986667042;
+        Tue, 17 Nov 2026 23:24:27 -0800 (PST)
+Received: from lwq-System-Product-Name.. ([2602:feda:30:cafe:ec49:29ac:0:f6])
+        by smtp.gmail.com with ESMTPSA id 5a478bee46e88-382a7fbceffsm4894511eec.28.2026.11.17.23.24.23
+        (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
+        Tue, 17 Nov 2026 23:24:26 -0800 (PST)
+From: Yaohan Li <shunsheng1218@gmail.com>
+To: briannorris@chromium.org
+Cc: francesco@dolcini.it,
+	linux-wireless@vger.kernel.org,
+	linux-kernel@vger.kernel.org,
+	patila@marvell.com,
+	cluo@marvell.com,
+	linville@tuxdriver.com
+Subject: [PATCH] wifi: mwifiex: shut down the auto TDLS timer instead of deleting it
+Date: Wed, 18 Nov 2026 15:24:19 +0800
+Message-Id: <20261118072419.1259830-1-shunsheng1218@gmail.com>
+X-Mailer: git-send-email 2.34.1
 X-Mailing-List: linux-wireless@vger.kernel.org
 List-Id: <linux-wireless.vger.kernel.org>
 List-Post: <mailto:linux-wireless@vger.kernel.org>
@@ -192,30 +99,88 @@ List-Unsubscribe: <mailto:linux-wireless+unsubscribe@vger.kernel.org>
 List-Owner: <mailto:linux-wireless+owner@vger.kernel.org>
 Precedence: list
 MIME-Version: 1.0
-X-Exchange-RoutingPolicyChecked: lVXGTcEAkV9rIZWOvZ2UDtZkrvrz5Ldmjrw9LuDpcV8ejXrDH75GCIwypV2Q9YI70Fvya8RUCApxMtoq9vneRjmeXOE9EmdGNOPQDUKP+PMZWL+pmLK0LwEqzfpp2oleo3/P2wXZ4T1ntGHQOrhjumiSrQlPkYQwahZZazq/itnPSDXhRFRdWKz7iQ6ULzH60OqZcobL4GeeUKuCuQ+H4bPnRBWcLbSTfltFVkEqVo2Ec1tPW5mk6jKiUaijfZCZ39J1tnR9NsSnIBqc9IVqjH8IFwESVs5ssKWiEohqg6jb2N5YWovzQ8zWe1vYjvNhzRGKG0hkJozu7nhrCrBIzg==
-X-MS-Exchange-CrossTenant-AuthAs: Internal
-X-MS-Exchange-CrossTenant-AuthSource: TYZPR03MB5742.apcprd03.prod.outlook.com
-X-MS-Exchange-CrossTenant-Network-Message-Id: cad6b667-409c-4f8c-025d-08df4544d76b
-X-MS-Exchange-CrossTenant-originalarrivaltime: 18 Nov 2026 07:23:28.4002
- (UTC)
-X-MS-Exchange-CrossTenant-fromentityheader: Hosted
-X-MS-Exchange-CrossTenant-id: a7687ede-7a6b-4ef6-bace-642f677fbe31
-X-MS-Exchange-CrossTenant-mailboxtype: HOSTED
-X-MS-Exchange-CrossTenant-userprincipalname: 1hG6EcIFcZc1P9ANgjvBnwG5YpeDkGa2K1MlFMj8vugenfkGcr4PgY8drYUqA6rZ//qNHV6xoi35vf2XiIVdCczBKl/L4QNNwSIH+MuTZ1w=
-X-MS-Exchange-Transport-CrossTenantHeadersStamped: SEZPR03MB7470
-X-MTK: N
+Content-Transfer-Encoding: 8bit
 
-SGkgQ2hyaXMsDQpUaGFua3MgZm9yIGRpZ2dpbmcgaW50byB0aGlzLsKgDQpTaG9ydCBhbnN3ZXI6
-IG9uIE1UNzkyNSB0aGUgbm9pc2UgZmxvb3IgaXMgbm90IGV4cG9zZWQgdG8gdGhlIGhvc3QNCnRv
-ZGF5Lg0KDQpGb3IgYWRkaXRpb25hbCBpbmZvLCB0aGUgTVQ3OTE1IGFuZCBNVDc5OTYgY2hpcHMg
-YXJlIGZvciBBUC4gV2hpbGUNCk1UNzkyNS9NVDc5MjggYXJlIFNUQSByb2xlcy4NCg0KSSd2ZSBh
-bHNvIGNoZWNrZWQgb24gb3VyIE1UNzkyNS9NVDc5MjggY2hpcCdzIEZXLCBhbmQgaGVyZSBpcyB3
-aGF0IEkNCmtub3c6DQoNCjEuIEl0J3Mgbm90IGluIEdFVF9NSUJfSU5GTy4NCk5laXRoZXIgdGhl
-IE1JQl9JTkZPIHJlc3BvbnNlIG5vciB0aGUgVU5JIE1JQiBjb3VudGVyIHNldCBjYXJyaWVzIGEN
-Cm5vaXNlIC8gTkYgLyBJUEkgZmllbGQg4oCUIHRoZXkncmUgQ0NBL0VEL2NoYW5uZWwtaWRsZSB0
-aW1lIGNvdW50ZXJzDQpvbmx5LiBUaGF0J3MgY29uc2lzdGVudCB3aXRoIHdoYXQgeW91IHNhdzog
-bXQ3OTJ4X3BoeV9nZXRfbmYoKQ0KcmV0dXJuaW5nIDAgaXMgYWNjdXJhdGUsIHRoZXJlJ3Mgc2lt
-cGx5IG5vIE1JQiBmaWVsZCB0byByZWFkLg0KDQoyLiBXaHkgcmVhZGluZyBJUlBJIGRpcmVjdGx5
-IGdpdmVzIHplcm9zLCBhbmQgd2h5IElQSV9FTiAiZGlkbid0IHN0aWNrIg0KKyBjYXVzZWQgTUNV
-IHRpbWVvdXRzLg0KVGhlIElSUEkgaGlzdG9ncmFtIHJlZ2lzdGVycyBhbmQgdGhlIElQSV9FTiBj
-b250cm9sIGRvIGV4aXN0IG9uIHRoaXMNCmNoaXAuDQoNClRoYW5rcy4NCg==
+mwifiex_clean_auto_tdls() clears auto_tdls_timer_active and deletes the
+timer, but the callback may already be past that check and rearm the
+timer with mod_timer() before it returns.  timer_delete() does not wait
+for a running callback, so the timer survives the cleanup.
+
+The mwifiex_private structure is freed later by mwifiex_uninit_sw(), and
+a timer that fires after that dereferences the freed structure in
+timer_container_of() at the top of mwifiex_check_auto_tdls().
+
+Use timer_shutdown_sync(), which waits for a running callback and
+prevents the rearm.  A reconnect sets the timer up again with
+timer_setup() in mwifiex_setup_auto_tdls_timer(), which restores the
+callback, so the timer is not lost for the next association.
+
+The cleanup also has to happen when the interface is no longer a
+station.  The feature flags and priv->bss_type are re-read on every
+call, so a bss_type change while the timer is armed skips the cleanup
+entirely and leaves the timer running past the interface teardown.  Key
+the timer shutdown on auto_tdls_timer_active instead, which is set only
+by mwifiex_setup_auto_tdls_timer() and cleared here, so the timer is
+stopped exactly when it was started.
+
+The peer list is independent of the timer and is flushed unconditionally:
+mwifiex_add_auto_tdls_peer() appends to it whenever adapter->auto_tdls
+is set, whether or not this interface ever armed the timer, so guarding
+the whole cleanup on the timer state would leave list entries behind.
+
+Fixes: 9927baa3c724 ("mwifiex: add auto TDLS support")
+Signed-off-by: Yaohan Li <shunsheng1218@gmail.com>
+---
+Prepared against v7.4-rc1-1969-g666539eecdf4.
+
+AI assistance: the analysis, the change and its review notes were
+prepared with Claude (Anthropic) as a coding assistant.  The author
+reviewed the reasoning and takes responsibility for the content.
+
+Testing: compile tested only (arm64, gcc 11.4).  No mwifiex hardware was
+available, so the disconnect/unbind race was not run.
+ drivers/net/wireless/marvell/mwifiex/tdls.c | 26 +++++++++++++++++----
+ 1 file changed, 21 insertions(+), 5 deletions(-)
+
+diff --git a/drivers/net/wireless/marvell/mwifiex/tdls.c b/drivers/net/wireless/marvell/mwifiex/tdls.c
+index c71ffe8399e4..99948db5bbdf 100644
+--- a/drivers/net/wireless/marvell/mwifiex/tdls.c
++++ b/drivers/net/wireless/marvell/mwifiex/tdls.c
+@@ -1483,13 +1483,29 @@ void mwifiex_setup_auto_tdls_timer(struct mwifiex_private *priv)
+ 
+ void mwifiex_clean_auto_tdls(struct mwifiex_private *priv)
+ {
+-	if (ISSUPP_TDLS_ENABLED(priv->adapter->fw_cap_info) &&
+-	    priv->adapter->auto_tdls &&
+-	    priv->bss_type == MWIFIEX_BSS_TYPE_STA) {
++	/*
++	 * The timer itself records whether this interface set it up: the
++	 * feature flags and bss_type are re-read on every call and can have
++	 * changed since the association that armed the timer.
++	 */
++	if (priv->auto_tdls_timer_active) {
+ 		priv->auto_tdls_timer_active = false;
+-		timer_delete(&priv->auto_tdls_timer);
+-		mwifiex_flush_auto_tdls_list(priv);
++
++		/*
++		 * timer_delete() does not wait for a callback that is
++		 * already running, and that callback rearms the timer when
++		 * it finishes; timer_shutdown_sync() waits for it and
++		 * prevents the rearm.
++		 */
++		timer_shutdown_sync(&priv->auto_tdls_timer);
+ 	}
++
++	/*
++	 * The peer list does not depend on the timer: entries are added
++	 * whenever adapter->auto_tdls is set, so it has to be flushed even
++	 * when this interface never armed the timer.
++	 */
++	mwifiex_flush_auto_tdls_list(priv);
+ }
+ 
+ static int mwifiex_config_tdls(struct mwifiex_private *priv, u8 enable)
+-- 
+2.34.1
+
