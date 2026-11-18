@@ -1,64 +1,63 @@
-Authentication-Results: smtp.subspace.kernel.org; arc=none smtp.remote-ip=91.218.175.1
+Authentication-Results: smtp.subspace.kernel.org; arc=none smtp.remote-ip=91.216.248.207
 ARC-Seal: i=1; d=subspace.kernel.org; s=arc20261015; a=rsa-sha256; cv=none;
-	t=1794995715;
-	b=htnULoav64CAiFXnBXafeqDsPY79M5O4rrdmu4UuvyrsB/y0I8mdIrly3+WzhAdTWzX1
-	 rXYrpEBq9Xk3fwd/IMpl4Tg18sWytqvbkGOBKdQb0WZrxpKwzXVSBEo8VNyQyvBi3CkQr
-	 7tPYPMgSFP9VouJcXhHwrfyikWr+AAUugbLLIfcgJNGyjnOs5X88+qbrNwkQDozaa36X+
-	 ZxE8B46OIzufR1cNPpoPerIKLs9xu1HU4by2aBrR6a8DiyoDpRphJh3/ggR+zwtUiB8rx
-	 OtDvpnDbv2yD0VbFnxVfXD4ynYwMbyXrS2zDImI+tXYS40fjYpBgutzzOYGq0KBsytA==
+	t=1794995908;
+	b=ElrIC8z430oopCEbiFYKaUua0D93Z4KpBiooEsNAVNLCFqQ6uwrYh0VYT6yjMwaI0d+a
+	 ILubQC2uvMHrmTGB8zna/LG8C2B+zxnsqmb8GvtYi+hi9xhyQaCVeNXqTDtWbo7B3p/un
+	 Q00ybcXJZo9Ouka3rFcxCVmRzTMxw7L9vPi3das/JtAISItimi64latrkAnHiXov6ABIl
+	 GCk+pP5pUiyc8ka+u2NJmjwLByIowoSnhcBS6yYlGatlFys5sZOqF9HKGPPOoekb298M/
+	 iM+kvK5gnOOg+TAFVn2IV3pBKVptnDCmkDoBWJpYWFOiOhEspvnEQvhRa/LdcBn/DfA==
 ARC-Message-Signature: i=1; d=subspace.kernel.org; s=arc20261015;
-	a=rsa-sha256; c=relaxed/relaxed; t=1794995715;
-	h=DMARC-Filter:X-Envelope-To:DKIM-Signature:X-Envelope-To:Received:
-	 X-Mizu-Trace-ID:X-Migadu-Flow:Date:From:To:CC:Subject:In-Reply-To:
-	 References:Message-ID:MIME-Version:Content-Type:
-	 Content-Transfer-Encoding;
-	bh=68aYgIeK1NKoIkVCvJO3EdG3lTe27tI30PqKaRlN81M=;
-	b=E7k1Pyi1tMSMyQQBo3QZ3W2P1o61E39eVZ/S3VL9PaYdICW5jqEJmFDpSZmCUvE+qy7q
-	 RcWcTAUSLTUWhrVMtUd0818xE8HkIOHGfZBjc9NRypvyEV/wdF1hVpKiavxm1DuQRGNVL
-	 waBYEe2pc2JyEMaa4XhrJvMlZHrcn2aG9J1PqgolbCpCVF3fxI5We7VvY8GKVgNG9xZ0f
-	 VMVfVFCFhA2iJLNXGWkb31suEuvm1hWe7mAqK6ik3IssUhmBjnCi5YVum8Ac4TbzmXiaj
-	 mKgSOugN+ouS4/3NlIB+imiabXaxG014kiOTBdjPIOLeUQqb6FNLbyk//HgQ2wADEUA==
+	a=rsa-sha256; c=relaxed/relaxed; t=1794995908;
+	h=DMARC-Filter:Date:X-Lima-ML-UUID:DKIM-Signature:From:To:Cc:Subject:
+	 Message-ID:In-Reply-To:References:Organization:X-Mailer:MIME-Version:
+	 Content-Type:Content-Transfer-Encoding;
+	bh=jcs67+Lv+U9upOUf4i1JrBoRc0VrRzju4wtU72Tt0uo=;
+	b=x1FjeesEv1dPAN1KJQoxOlHMHha+qL8/vTrXOerWXk4Mun40Yc4MpaNNs4qXHBWTu/7m
+	 Xi9fD0F+E0ENLp/4pI14pAsubeD2s4KSbjR/H+QaJ9QZCPF/IhKt+XAxfgwgwrXAaYKhS
+	 WnZ/k4nff+JDOXkHjjsFAg8Pf7xpET07S9MDOtMRjryEqdF1vNCKKEvzpDKQEvon/U8AC
+	 5ZEEygY3+60YH6Yv+vO1iUt3L86eWvKtAVwU6g/L5T7exjDS3dqyUgFHwG2oL5DTnAmaC
+	 tPiOYfxcHKq1MKwOnIrGMOiB6pmlYDVltbMOKehsG0cRXwpl6rebyi6FyDGE9OHRf5A==
 ARC-Authentication-Results: i=1; smtp.subspace.kernel.org; 
-	dmarc=pass header.from=linux.dev;
-	spf=pass smtp.mailfrom=linux.dev;
-	dkim=pass header.d=linux.dev header.i=@linux.dev header.a=rsa-sha256 header.s=key1 header.b=dhkOl1qb;
-	arc=none smtp.remote-ip=91.218.175.1
-Received: from mta0.migadu.com (out-1.mta0.migadu.com [91.218.175.1])
-	(using TLSv1.3 with cipher TLS_AES_128_GCM_SHA256 (128/128 bits)
+	dmarc=none header.from=deq.rocks;
+	spf=none smtp.mailfrom=deq.rocks;
+	dkim=pass header.d=deq.rocks header.i=@deq.rocks header.a=rsa-sha256 header.s=securedbylima-20251205 header.b=b8ruWdf1;
+	arc=none smtp.remote-ip=91.216.248.207
+Received: from mx5.mail-out.lima-city.de (mx5.mail-out.lima-city.de [91.216.248.207])
+	(using TLSv1.3 with cipher TLS_AES_256_GCM_SHA384 (256/256 bits)
 	 key-exchange X25519 server-signature ECDSA (prime256v1) server-digest SHA256)
 	(No client certificate requested)
-	by smtp.subspace.kernel.org (Postfix) with ESMTPS id A46C5606A31C
-	for <linux-wireless@vger.kernel.org>; Wed, 18 Nov 2026 09:55:14 +0000 (UTC)
-DMARC-Filter: OpenDMARC Filter v1.4.2 smtp.subspace.kernel.org A46C5606A31C
-Authentication-Results: smtp.subspace.kernel.org; dmarc=pass (p=none dis=none) header.from=linux.dev
-Authentication-Results: smtp.subspace.kernel.org; spf=pass smtp.mailfrom=linux.dev
+	by smtp.subspace.kernel.org (Postfix) with ESMTPS id AF536606A330;
+	Wed, 18 Nov 2026 09:58:27 +0000 (UTC)
+DMARC-Filter: OpenDMARC Filter v1.4.2 smtp.subspace.kernel.org AF536606A330
+Authentication-Results: smtp.subspace.kernel.org; dmarc=none (p=none dis=none) header.from=deq.rocks
+Authentication-Results: smtp.subspace.kernel.org; spf=none smtp.mailfrom=deq.rocks
 Authentication-Results: smtp.subspace.kernel.org;
-	dkim=pass (1024-bit key, unprotected) header.d=linux.dev header.i=@linux.dev header.a=rsa-sha256 header.s=key1 header.b=dhkOl1qb
-X-Envelope-To: linux-wireless@vger.kernel.org
-DKIM-Signature: a=rsa-sha256; bh=tUna76zVsD0TwVxAAHPWMoClAbc3fRYk8TKbzG4ej/U=;
- c=simple/simple; d=linux.dev;
- h=from:to:subject:date:message-id:mime-version:content-type; s=key1;
- t=1794995712; v=1; x=1795600512;
- b=dhkOl1qbFWOAtBnQUzCrMu7PJ+uWYllQQ6Fw60if40c6aFQ0artumbVGB2LNTMWB69Lszdtp
- tgzHfEzlvC+TVJbkIdolw9PMEWWk4BRjyKzHf/v3Zfoh3ctFWwpM2u0PAZEkR7VdsVitxcwGfK9
- lQPtyigd5GJOJRYR4t5/jokI=
-X-Envelope-To: linux-wireless@vger.kernel.org
-Received: by smtp.migadu.com with ESMTPS id 9701b37f731648ef;
-	Wed, 18 Nov 2026 09:55:11 +0000
-X-Mizu-Trace-ID: 9701b37f731648ef
-X-Migadu-Flow: FLOW_OUT
-Date: Wed, 18 Nov 2026 10:55:10 +0100
-From: Luka Gejak <luka.gejak@linux.dev>
-To: Ping-Ke Shih <pkshih@realtek.com>, Mehmet Fide <mehmet.fide@gmail.com>
-CC: Bitterblue Smith <rtl8821cerfe2@gmail.com>,
- "linux-wireless@vger.kernel.org" <linux-wireless@vger.kernel.org>,
- "linux-kernel@vger.kernel.org" <linux-kernel@vger.kernel.org>,
- "mehmet.fide@screeningeagle.com" <mehmet.fide@screeningeagle.com>
-Subject: =?US-ASCII?Q?RE=3A_=5BPATCH_rtw-next_v12_2/3=5D_wifi=3A_rt?=
- =?US-ASCII?Q?w88=3A_support_channel_switch_in_AP_mode?=
-In-Reply-To: <d55a09e0accd42f39f476d3abba1cdca@realtek.com>
-References: <9BC4FC13-5723-4711-9798-11E3C285C7F1@linux.dev> <20261118083328.1984956-1-mehmet.fide@gmail.com> <d55a09e0accd42f39f476d3abba1cdca@realtek.com>
-Message-ID: <658FDA93-1E44-45D3-BBAA-37FBBAF9954A@linux.dev>
+	dkim=pass (2048-bit key, unprotected) header.d=deq.rocks header.i=@deq.rocks header.a=rsa-sha256 header.s=securedbylima-20251205 header.b=b8ruWdf1
+Date: Wed, 18 Nov 2026 10:42:04 +0100
+X-Lima-ML-UUID: e48ff96b-0f23-405e-b3e9-272f618e95ab
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=deq.rocks;
+	s=securedbylima-20251205; t=1794995899;
+	bh=jcs67+Lv+U9upOUf4i1JrBoRc0VrRzju4wtU72Tt0uo=;
+	h=Date:From:To:Cc:Subject:In-Reply-To:References:From;
+	b=b8ruWdf1TRi2fFxA/guW7LfgkkkYoNBZ9wE+VBDdIO35Tl02BfCBP7yNDq91ZhEh1
+	 FpIUGwEsuXayrj4cJ1io+NOy8PnHoooHrtSbNpvan1WPEM4I76XBY9JSiS0aRiaQGo
+	 PdM6Z0AJFslSYK82z/s4qzQCgxDO6PhkUjwyg5uIfDwKKBWEHywkObZbsOTHtYcVdi
+	 i/tF3Xp0Fn7jGQKPcTGkLJvje7UApILifVyWZRHG/lBE10ZJfhZ5Uxd2kKUwm6L3mh
+	 XfpWj36ZOCA2vlVsOtZo1Sb+mnwV+qsDJCnCNwE7zlhtdVzkCQTAl+JugYhgTEt/wF
+	 Xr0OXgnF0krQQ==
+From: =?UTF-8?B?QW5kcsOp?= Eikmeyer <dev@deq.rocks>
+To: Arend van Spriel <arend.vanspriel@broadcom.com>
+Cc: linux-wireless@vger.kernel.org, brcm80211@lists.linux.dev,
+ brcm80211-dev-list.pdl@broadcom.com, linux-kernel@vger.kernel.org, Yossef
+ Osman <Yossef.Osman@proton.me>, Aditya Garg <aditya.garg@linux.dev>
+Subject: Re: [PATCH] wifi: brcmfmac: keep ARP and ND offload off on the
+ BCM4364
+Message-ID: <20261118104049.39e4d3a2@kait2en-mbp15-1>
+In-Reply-To: <20261116203719.281605-1-arend.vanspriel@broadcom.com>
+References: <20261104151620.70671-1-dev@deq.rocks>
+	<20261116203719.281605-1-arend.vanspriel@broadcom.com>
+Organization: KaiT2en
+X-Mailer: Claws Mail 4.4.0 (GTK 3.24.52; x86_64-redhat-linux-gnu)
 X-Mailing-List: linux-wireless@vger.kernel.org
 List-Id: <linux-wireless.vger.kernel.org>
 List-Post: <mailto:linux-wireless@vger.kernel.org>
@@ -68,34 +67,36 @@ List-Unsubscribe: <mailto:linux-wireless+unsubscribe@vger.kernel.org>
 List-Owner: <mailto:linux-wireless+owner@vger.kernel.org>
 Precedence: list
 MIME-Version: 1.0
-Content-Type: text/plain;
- charset=utf-8
-Content-Transfer-Encoding: 8bit
+Content-Type: text/plain; charset=US-ASCII
+Content-Transfer-Encoding: 7bit
 
-On November 18, 2026 10:14:17 AM GMT+01:00, Ping-Ke Shih
-<pkshih@realtek.com> wrote:
->Mehmet Fide <mehmet.fide@gmail.com> wrote:
->> > I think the presence check is better fixed in
->> > rtw_core_check_sta_active(). Its callback only reads interface state,
->so
->> > could it use an atomic interface iterator without allocating entries?
->> 
->> Right, the callback does not sleep, so rtw_iterate_vifs_atomic() works
->> there. The check is older than this series: since commit 96fbb84de4ff
->> ("wifi: rtw88: handle station mode concurrent scan with AP mode") a
->> failed allocation also makes rtw_clear_op_chan() drop the operating
->> channel of an associated station, on BSS_CHANGED_BSSID and in
->> rtw_ops_stop_ap().
->> 
->> Ping-Ke, Luka: would you take that as a separate fix for rtw-next, or as
->> a patch before this one in v13?
->
->I think rtw_core_check_sta_active() is used under wiphy lock, we can
->migrate to use for_each_active_interface() with lockdep_assert_wiphy()
->as a separate patch.
->
+On Mon, 16 Nov 2026 21:37:17 +0100
+Arend van Spriel <arend.vanspriel@broadcom.com> wrote:
 
-Works for me.
+> 1) The measurements only implicate ndoe. Do you have data showing
+> arpoe also needs to be off? Otherwise please limit this to ND offload.
 
-Best regards,
-Luka Gejak
+Well, scratching my head here as well. The throughput drop is ND alone,
+with only ND offload off the MacBookPro 15,1 reaches the full 120 Mbit/s
+as well. I keep ARP offload off anyway because that is how macOS runs
+this firmware. The macOS trace shows arpoe, nd_hostip_clear and ndoe
+set to 0 together on wake, and both offloads are only enabled on entry
+to associated sleep. Apple checks emails, Siri and whatnots on sleep.I
+can't look into the firmware, and with ARP offload on while awake we
+would run it in a configuration Apple does not use. With both off it
+has run on the community machines for weeks without problems.We can
+enable it but may require another few weeks until we can confirm it's
+stable.
+
+> 2) [...] Please restrict the quirk to the affected platform, e.g. with
+> the Apple board type (settings->board_type) [...] The same applies to
+> the other chip ID quirks of this batch (txbf and FWAUTH).
+
+Will do!
+
+> 3) This looks like a bug fix. Please add a Fixes: tag and Cc: stable
+> (as Aditya suggested), and mark the target tree in the subject.
+
+Yes, v2 goes to wireless with both.
+
+Andre
