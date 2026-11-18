@@ -1,100 +1,67 @@
-Authentication-Results: smtp.subspace.kernel.org; arc=pass header.oldest-pass=0 smtp.remote-ip=74.125.82.175
-ARC-Seal: i=2; d=subspace.kernel.org; s=arc20261015; a=rsa-sha256; cv=pass;
-	t=1795038996;
-	b=OWnP+XYp2lsdYKORnuaWpzAC7c4vwlYV8jgHr5xveJVJWSeLBHDelnLdGk61fOMNadbk
-	 K7xH3qCxO00NWt2Hky0NeIiluqoUvATJMu/VkSRE+sE+gsCJO/mje8WO0w3ICFir+HaHM
-	 6wZe3StUcNfkZuVN8Mj9hy0iMFdYgJEXOMjNgJiaIEwv/tbV8hS2L9oYXnwZImQO/9qja
-	 kdfs90JjcOgMUN66e1SjvhUd4T0dn9l1Xmi/i6pfQjBLmlVoZqQsVens2i8gFibsvT5Wf
-	 5uNXcJJ5oNimYORwpHJnxPXipvDdjUhpKXu+mu9EmjE2VuJls/SB56FbZJFuC8WE4oA==
-ARC-Message-Signature: i=2; d=subspace.kernel.org; s=arc20261015;
-	a=rsa-sha256; c=relaxed/relaxed; t=1795038996;
-	h=DMARC-Filter:Received:DKIM-Signature:X-Google-DKIM-Signature:
-	 X-Forwarded-Encrypted:X-Gm-Message-State:X-Gm-Gg:X-Received:
-	 MIME-Version:References:In-Reply-To:From:Date:X-Gm-Features:
-	 Message-ID:Subject:To:Cc:Content-Type;
-	bh=ziTJP7HwMkyh3D0f36moJR65SHyfyGHbTUuUtQiBDOk=;
-	b=molrFKOXyXWoo+NyzWHE8lnzOJODthPeF5aITu5h0XPNq+Olx1OqouDuqAIfrFirQsRJ
-	 yyAW4imPs2CTmTchKytJW2BVN5YIZdlVNF/lHZXFNcESRr/rLDEL7O50WJ+n9oCTPKNCY
-	 6OuFsqny/16wFBidcVaz6yB2txYUmQ2QPvBJ2TY6MsWSLziC52hGxHoF2jjiI8KHrNu3o
-	 jjkcRIBnCeQYgsh+HMvtAEZ1/4wqvOd+E994cqgK8jFlaKx1x+C2zPcfNujV9gd9PQbCl
-	 VVbzWXOe6obkKQ+za5n0SlQiRIcnb9EGu8Ycel3iwtKLR+McugyKwaZMo8vdBq0deeA==
-ARC-Authentication-Results: i=2; smtp.subspace.kernel.org; 
-	dmarc=pass header.from=gmail.com;
-	spf=pass smtp.mailfrom=gmail.com;
-	dkim=pass header.d=gmail.com header.i=@gmail.com header.a=rsa-sha256 header.s=20260707 header.b=wzFOOmSv;
-	arc=pass header.oldest-pass=0 smtp.remote-ip=74.125.82.175
-Received: from mail-dy1-f175.google.com (mail-dy1-f175.google.com [74.125.82.175])
-	(using TLSv1.3 with cipher TLS_AES_128_GCM_SHA256 (128/128 bits)
-	 key-exchange X25519 server-signature ECDSA (prime256v1) server-digest SHA256)
+Authentication-Results: smtp.subspace.kernel.org; arc=none smtp.remote-ip=100.103.45.18
+ARC-Seal: i=1; d=subspace.kernel.org; s=arc20261015; a=rsa-sha256; cv=none;
+	t=1795041272;
+	b=ofddTnKml3b50XrsvVh5ZM7DGqB8gYWRbPWJMBfyMIht4pCZMUEqZinUgz1ibVrWBm7j
+	 TFE+zdI2nBazzYnZRGwGVmscw3snUSS1WVwUxC/FcK6qY1eshHZKno6mkmI8L6i6KdQ94
+	 kEf5ZgrAH7sU2w0dDMLUE2AcVqJJ4BC2ITjyXtXt7aNWjPtkgEt5398wwCrxhzwJxjZCs
+	 uQm/+zAeX1x/c7Os15a6Cn1yO9F6v4VaWop3IrQAZWp4Rn4Sqis6k+pIo6zDVqaqiulcT
+	 fVKx8UGT5+wGuIJIimW+BMszflIwooTQ6w9H62wOrtXOcHvd128lZM74vofv2hiYKsg==
+ARC-Message-Signature: i=1; d=subspace.kernel.org; s=arc20261015;
+	a=rsa-sha256; c=relaxed/relaxed; t=1795041272;
+	h=Received:DKIM-Signature:From:To:Cc:Subject:Date:Message-ID:X-Mailer:
+	 In-Reply-To:References:User-Agent:X-stable:X-Patchwork-Hint:
+	 MIME-Version:Content-Transfer-Encoding;
+	bh=pLYLBI//VahNQuCwQVR9uHA1X/jzENqltyiJq0jsrSg=;
+	b=1//+fzMYKgRaW68uw2/XOTK/iYw7OuKDhxYDcKVGYC3lZ6ztfmLl9IYTr4jgzSOSaJ8G
+	 DTX2xWv/6FsR2gL+VjiiFFvuSbKaoKsbgfoQuPTAaQZbkHxD8MvepPGDBpW4h2rpCHczO
+	 rB70ImczknCiFicBZYkURT0Vc9myRAkqnZMYRLKeC64Xm1PsGk27pgcWHIfT96K9J5b05
+	 gqXjNFYcGQFYqgoqbsdyKH69YOYOwMT1N7BwJQcJQKXevpWT+uJZvUlsvgycRakFUuAQE
+	 CV2kHvdz2fT9yY2DqcUHEcJ6fzcWzxmQaDM/1nzHQDW9xwiZL7GdsmM5bm7yjpUqrpQ==
+ARC-Authentication-Results: i=1; smtp.subspace.kernel.org; 
+	dkim=pass header.d=linuxfoundation.org header.i=@linuxfoundation.org header.a=rsa-sha256 header.s=korg header.b=fXJXlVQN;
+	arc=none smtp.remote-ip=100.103.45.18
+Received: from smtp.kernel.org (quasi.space.kernel.org [100.103.45.18])
+	(using TLSv1.3 with cipher TLS_AES_256_GCM_SHA384 (256/256 bits)
+	 key-exchange X25519 server-signature ECDSA (prime256v1))
 	(No client certificate requested)
-	by smtp.subspace.kernel.org (Postfix) with ESMTPS id 966B5606A32F
-	for <linux-wireless@vger.kernel.org>; Wed, 18 Nov 2026 21:56:36 +0000 (UTC)
-DMARC-Filter: OpenDMARC Filter v1.4.2 smtp.subspace.kernel.org 966B5606A32F
-Authentication-Results: smtp.subspace.kernel.org; dmarc=pass (p=none dis=none) header.from=gmail.com
-Authentication-Results: smtp.subspace.kernel.org; spf=pass smtp.mailfrom=gmail.com
+	by smtp.subspace.kernel.org (Postfix) with ESMTPS id 52F78606A31C;
+	Wed, 18 Nov 2026 22:34:32 +0000 (UTC)
 Authentication-Results: smtp.subspace.kernel.org;
-	dkim=pass (2048-bit key) header.d=gmail.com header.i=@gmail.com header.a=rsa-sha256 header.s=20260707 header.b=wzFOOmSv
-Received: by mail-dy1-f175.google.com with SMTP id 5a478bee46e88-38318d69173so1582287eec.0
-        for <linux-wireless@vger.kernel.org>; Wed, 18 Nov 2026 13:56:36 -0800 (PST)
-ARC-Seal: i=1; a=rsa-sha256; t=1795038996; cv=none;
-        d=google.com; s=arc-20260327;
-        b=EFzFXGo0OiPlHfAH2TF8YVAPrZGd0+ZVZd2arcB2S22rw4RNheISHXM8swEuEKHGc8
-         b2mNSjLkM3cHXPoBHLihV8Sce1+GCd2w9wkM5FIpUJGSL/nIsvU9R7S54CLdO6xnwe6S
-         nlIIbz9OsfWgGw18Uwc5YSORyCh6htE0PPPnOEpDsN2l1idkmxnHq6CQ8/TYyUY6A7I4
-         8bOR/A88tVITOiUH8pKNv3SRJhfPVhDYXzXRMV5eBwKR8T/04/G0AiQbn9wZPO4VdYUc
-         MxxRbh4zlM2d4ueVPKpJq77MGhzIa0cttkSDXVtUIeqZegl0nfBzhlqGSeYdpnDILW4i
-         OpiQ==
-ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=google.com; s=arc-20260327;
-        h=cc:to:subject:message-id:date:from:in-reply-to:references
-         :mime-version:dkim-signature;
-        bh=ziTJP7HwMkyh3D0f36moJR65SHyfyGHbTUuUtQiBDOk=;
-        fh=Ein38p4ueWvvLHG+zltUaOQCqiwZ1A4/iznv0tPpLuc=;
-        b=UrPotHPZIumPG0nFkd9W2Ow/FaLIB+RmoLhTXTf0ogGgcfLQO3d+mzj8ixkj9IMZx8
-         /R77qB4X/i8rtelPIQosqlYW7kj2fTEH3XBsH1Cs+rcdycUnMQxuUlzG4aTTcpiFTYKw
-         if/JBfUAeP34kfSxDbYvGcYyAXcmZ8W6Kn44wP0nh2ZX5/qWpyqx9zpqS8k0JQWileaK
-         3zM1XkTuthGWPg9khQ/H8vUAAVcOd/h9zKDCdQw9OQMnDWk0z4IuGp7oZDFEsl0TcQv/
-         EB0oh1OYz4K4De6bRNHjkePjy/427EjZqYLdE232vjsVN5ifB2vfw51oiytUg+HDkSqw
-         Ms0A==;
-        darn=vger.kernel.org
-ARC-Authentication-Results: i=1; mx.google.com; arc=none
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=gmail.com; s=20260707; t=1795038996; x=1795643796; darn=vger.kernel.org;
-        h=content-type:cc:to:subject:message-id:date:from:in-reply-to
-         :references:mime-version:from:to:cc:subject:date:message-id:reply-to
-         :content-type;
-        bh=ziTJP7HwMkyh3D0f36moJR65SHyfyGHbTUuUtQiBDOk=;
-        b=wzFOOmSveXu8HuiVzCIMGW7OP0GoYf2SnRjJ9Dkjrf2+WvUPWZwaJ/L9yscUEhaVsx
-         chJo+GeNVFybPEDBryX6BYtsMHtFpmRKcbDI/8TjsTB/2EgBmt+FD+Z8p1CR70Ugdk3r
-         wzfq5a2svAb/Lm5Vuckw0Hvln7eYCWw4ahKHQvCf/Cm924mCAxt3pOe5tyY38PkEd09H
-         CPz86mmr18fVq7pR/jH/F5f1hDAU2tJn2KvfyIXDCOsMdQ7HaTq8OfMP/P023MDzZmX/
-         xZdncSfyR+s0TeyuEUD+6fqlcskr/iGNft1oGF2dugvjdHlPeNRqOioj/vEARpLCDGP6
-         4uLQ==
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=1e100.net; s=20260707; t=1795038996; x=1795643796;
-        h=content-type:cc:to:subject:message-id:date:from:in-reply-to
-         :references:mime-version:x-gm-gg:x-gm-message-state:from:to:cc
-         :subject:date:message-id:reply-to:content-type;
-        bh=ziTJP7HwMkyh3D0f36moJR65SHyfyGHbTUuUtQiBDOk=;
-        b=nrr2FTABT+4c6C7Cmo1LJbgQB99HZ99YU6OmzQq3+XBL6vrOKqGlYXzwSKe0d6qkZu
-         k/uF/9wgnucuZ/MENc4LJ1azbXGQdUBuZVuiJOBiizOJi1sbGW4uyE3ekSuVyzwTmPaL
-         p9dPTPoiczgCDPscaoryFGs2c35LSBALaKoIq/JAwzGIokDtegD6adsDY9PW7gp38EXl
-         p677+LddyxSvfvVa/0Hl5Js2ArZeJwtVUo1tWB3D7Y1w9CBx+T9LHS4umSRFkL+Uw194
-         cJZcjGjexBZ4ENS5insTjxG8/3Aq1rRyiRYnW8b4x5mzLUsGvBZIXl0G8R7SsBchf95N
-         lLjQ==
-X-Forwarded-Encrypted: i=1; AL+hErG1stPRdumgyEynSUZ93b6/2iv/+rhzvgXNgMGB7vKIM9lpZvMqRv4yvVqaakU56JSvIGmknXxuRTrAoBw9Bg==@vger.kernel.org
-X-Gm-Message-State: APuU4Z/vBLAb+YhcH9F2XMDpSK7bu8Vek42WEH+26haJs59OcZMdrwxw
-	HmUMPnZKulbPftoddpCZGpCWYzn8M4QRLALtqx7YVWjd1We181a8nw7/Vi8Fcr4VGGfNBmpYmTw
-	3d7AwjI6tDrNOu5R0zjgkS6lalxJZw3zouBg8DGE=
-X-Gm-Gg: AZFdTZc/afSdSZsjeg4Eoq37J0kehZ3gvKCrBnQyGHqNvpjyf22XkPuUGNdwKbHEnVG
-	C4ew0yToA1nEi1TDVQNiwcho0JyuQIc29lm7VIXubvlbUQtLvt9NuZzqOW9XhFW5vwntTpojDo/
-	efFRxPUdqI3CE//ngxlf2kvqvQMxF6ToCU6+o1eTQjEy8N6AKsJaaNxvWZ4zUKJVesrf+vg35U4
-	BoniTIjsIVJEe15iEjkgRiJtL+Y0PyQx0TwTqZzYO+H2yLSrwSjU+snp08M0W5tZNkrUZpg/KiQ
-	68IaHE23Fuk/DqRRwHm/T8geNJ/K5Jxv0iXHnYcwCc6Juhv6HhYPpCSHxaBmkZ/ddaZiiFWh3O8
-	6P+hnDz5LoQ+xXQaHQYw70vtUKOJAGx6aXNEVohdcNuKIkPMBUVJDy89WBHU5sKgZafsenZjQUx
-	xcMtaw04tKyNCeTCzW
-X-Received: by 2002:a05:7300:dc05:b0:36a:7bb7:4609 with SMTP id
- 5a478bee46e88-38281cf2d27mr4946077eec.34.1795038995589; Wed, 18 Nov 2026
- 13:56:35 -0800 (PST)
+	dkim=pass (1024-bit key) header.d=linuxfoundation.org header.i=@linuxfoundation.org header.a=rsa-sha256 header.s=korg header.b=fXJXlVQN
+Received: by smtp.kernel.org (Postfix) with ESMTPSA id A08941F000C4;
+	Wed, 18 Nov 2026 22:34:31 +0000 (UTC)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=linuxfoundation.org;
+	s=korg; t=1795041272;
+	bh=pLYLBI//VahNQuCwQVR9uHA1X/jzENqltyiJq0jsrSg=;
+	h=From:To:Cc:Subject:Date:In-Reply-To:References;
+	b=fXJXlVQNmX9RG4aUD7q0Qd4wUZv4WF/DzMeIKIpyvrZsixy/aOBbU9R9o71SDn+cE
+	 PjHT73ah383eIFjxWforMn2hMOF1PSsvzAb+MCkIzTwa0ceUqvWvlBhM/G2Ba3Utfh
+	 QEkgrOsppzAZvGhgRidLLxEowvuYKJSZ33BcdNo8=
+From: Greg Kroah-Hartman <gregkh@linuxfoundation.org>
+To: stable@vger.kernel.org
+Cc: Greg Kroah-Hartman <gregkh@linuxfoundation.org>,
+	patches@lists.linux.dev,
+	Randy Dunlap <rdunlap@infradead.org>,
+	Johannes Berg <johannes@sipsolutions.net>,
+	Kalle Valo <kvalo@kernel.org>,
+	linux-wireless@vger.kernel.org,
+	"David S. Miller" <davem@davemloft.net>,
+	Eric Dumazet <edumazet@google.com>,
+	Jakub Kicinski <kuba@kernel.org>,
+	Paolo Abeni <pabeni@redhat.com>,
+	netdev@vger.kernel.org,
+	Simon Horman <horms@kernel.org>,
+	Johannes Berg <johannes.berg@intel.com>,
+	Sasha Levin <sashal@kernel.org>
+Subject: [PATCH 6.6 2717/3318] wifi: cfg80211: fix header kernel-doc typos
+Date: Wed, 18 Nov 2026 15:55:39 +0100
+Message-ID: <20261118150442.370643732@linuxfoundation.org>
+X-Mailer: git-send-email 2.56.0
+In-Reply-To: <20261118150313.527275416@linuxfoundation.org>
+References: <20261118150313.527275416@linuxfoundation.org>
+User-Agent: quilt/0.69
+X-stable: review
+X-Patchwork-Hint: ignore
 X-Mailing-List: linux-wireless@vger.kernel.org
 List-Id: <linux-wireless.vger.kernel.org>
 List-Post: <mailto:linux-wireless@vger.kernel.org>
@@ -104,45 +71,126 @@ List-Unsubscribe: <mailto:linux-wireless+unsubscribe@vger.kernel.org>
 List-Owner: <mailto:linux-wireless+owner@vger.kernel.org>
 Precedence: list
 MIME-Version: 1.0
-References: <20261118052116.3901761-1-lcy8047@gmail.com> <CAFEp6-1h0iwXtPr0HXVMceSDdQ09KPYomt58Nme_AzXy+V043Q@mail.gmail.com>
-In-Reply-To: <CAFEp6-1h0iwXtPr0HXVMceSDdQ09KPYomt58Nme_AzXy+V043Q@mail.gmail.com>
-From: Changyul Lee <lcy8047@gmail.com>
-Date: Wed, 18 Nov 2026 16:56:24 -0500
-X-Gm-Features: Aa3M54paIcao6XUjgvQroGOuSTezaTatALtRBeHgZB-rqUe0NegT6OT5B_ER2ss
-Message-ID: <CAKefsHuNpdkSG4m90qavkXD+80TyuX89gTVR-WhBsWX4m7-3Qg@mail.gmail.com>
-Subject: Re: [PATCH ath-next] wifi: ath10k: free msdu_id and skb reference
- when HL TX fails
-To: Loic Poulain <loic.poulain@oss.qualcomm.com>
-Cc: Jeff Johnson <jjohnson@kernel.org>, Wentao Liang <vulab@iscas.ac.cn>, 
-	linux-wireless@vger.kernel.org, ath10k@lists.infradead.org, 
-	linux-kernel@vger.kernel.org
-Content-Type: text/plain; charset="UTF-8"
+Content-Transfer-Encoding: 8bit
 
-Hi Loic,
+6.6-stable review patch.  If anyone has any objections, please let me know.
 
-Thanks for the review.
+------------------
 
-On Wed, Nov 18, 2026 at 9:53 AM Loic Poulain wrote:
-> The above message looks too verbose and confusing for a somewhat
-> simple issue. Maybe this should be split properly in two fixes.
+From: Randy Dunlap <rdunlap@infradead.org>
 
-I originally wanted to fix the msdu_id leak. ath10k_htt_tx_hl()
-allocates an msdu_id in htt->pending_tx, but leaves the entry there
-if ath10k_htc_send_hl() fails.
+[ Upstream commit 98e0c7f85773ab161d804103649b33f8a97cf1b3 ]
 
-I also noticed that the same error path doesn't drop the extra skb
-reference taken by skb_get(), so I included both fixes in v1. I think
-I could have explained this more clearly when covering both fixes
-together. Sorry for the confusion.
+Correct spelling of several words.
 
-> If this is a fix you should not target 'ath-next'.
-> Two fixes tag looks weird, what are you fixin exactly?
+Signed-off-by: Randy Dunlap <rdunlap@infradead.org>
+Cc: Johannes Berg <johannes@sipsolutions.net>
+Cc: Kalle Valo <kvalo@kernel.org>
+Cc: linux-wireless@vger.kernel.org
+Cc: "David S. Miller" <davem@davemloft.net>
+Cc: Eric Dumazet <edumazet@google.com>
+Cc: Jakub Kicinski <kuba@kernel.org>
+Cc: Paolo Abeni <pabeni@redhat.com>
+Cc: netdev@vger.kernel.org
+Reviewed-by: Simon Horman <horms@kernel.org>
+Link: https://lore.kernel.org/r/20231001191633.19090-1-rdunlap@infradead.org
+Signed-off-by: Johannes Berg <johannes.berg@intel.com>
+Stable-dep-of: 298618f28bd3 ("wifi: cfg80211: reg: protect regdb pointer with RCU")
+Signed-off-by: Sasha Levin <sashal@kernel.org>
+---
+ include/net/cfg80211.h | 20 ++++++++++----------
+ 1 file changed, 10 insertions(+), 10 deletions(-)
 
-I Cc'd Wentao Liang because he had already posted a patch for the skb
-reference leak [1], but I left that explanation out of v1. Would it be
-okay if I sent a v2 that only fixes the msdu_id leak?
+diff --git a/include/net/cfg80211.h b/include/net/cfg80211.h
+index 2343f4c0f1d8e..5565465f146f7 100644
+--- a/include/net/cfg80211.h
++++ b/include/net/cfg80211.h
+@@ -2447,7 +2447,7 @@ struct mesh_config {
+  * @user_mpm: userspace handles all MPM functions
+  * @dtim_period: DTIM period to use
+  * @beacon_interval: beacon interval to use
+- * @mcast_rate: multicat rate for Mesh Node [6Mbps is the default for 802.11a]
++ * @mcast_rate: multicast rate for Mesh Node [6Mbps is the default for 802.11a]
+  * @basic_rates: basic rates to use when creating the mesh
+  * @beacon_rate: bitrate to be used for beacons
+  * @userspace_handles_dfs: whether user space controls DFS operation, i.e.
+@@ -2720,7 +2720,7 @@ struct cfg80211_bss_select_adjust {
+  * @match_sets: sets of parameters to be matched for a scan result
+  *	entry to be considered valid and to be passed to the host
+  *	(others are filtered out).
+- *	If ommited, all results are passed.
++ *	If omitted, all results are passed.
+  * @n_match_sets: number of match sets
+  * @report_results: indicates that results were reported for this request
+  * @wiphy: the wiphy this was for
+@@ -2754,7 +2754,7 @@ struct cfg80211_bss_select_adjust {
+  *	to the specified band while deciding whether a better BSS is reported
+  *	using @relative_rssi. If delta is a negative number, the BSSs that
+  *	belong to the specified band will be penalized by delta dB in relative
+- *	comparisions.
++ *	comparisons.
+  */
+ struct cfg80211_sched_scan_request {
+ 	u64 reqid;
+@@ -3596,7 +3596,7 @@ struct cfg80211_update_ft_ies_params {
+  * This structure provides information needed to transmit a mgmt frame
+  *
+  * @chan: channel to use
+- * @offchan: indicates wether off channel operation is required
++ * @offchan: indicates whether off channel operation is required
+  * @wait: duration for ROC
+  * @buf: buffer to transmit
+  * @len: buffer length
+@@ -3714,7 +3714,7 @@ struct cfg80211_nan_func_filter {
+  * @publish_bcast: if true, the solicited publish should be broadcasted
+  * @subscribe_active: if true, the subscribe is active
+  * @followup_id: the instance ID for follow up
+- * @followup_reqid: the requestor instance ID for follow up
++ * @followup_reqid: the requester instance ID for follow up
+  * @followup_dest: MAC address of the recipient of the follow up
+  * @ttl: time to live counter in DW.
+  * @serv_spec_info: Service Specific Info
+@@ -6728,7 +6728,7 @@ static inline const u8 *cfg80211_find_ie(u8 eid, const u8 *ies, int len)
+  * @ies: data consisting of IEs
+  * @len: length of data
+  *
+- * Return: %NULL if the etended element could not be found or if
++ * Return: %NULL if the extended element could not be found or if
+  * the element is invalid (claims to be longer than the given
+  * data) or if the byte array doesn't match; otherwise return the
+  * requested element struct.
+@@ -6875,7 +6875,7 @@ int regulatory_hint(struct wiphy *wiphy, const char *alpha2);
+ /**
+  * regulatory_set_wiphy_regd - set regdom info for self managed drivers
+  * @wiphy: the wireless device we want to process the regulatory domain on
+- * @rd: the regulatory domain informatoin to use for this wiphy
++ * @rd: the regulatory domain information to use for this wiphy
+  *
+  * Set the regulatory domain information for self-managed wiphys, only they
+  * may use this function. See %REGULATORY_WIPHY_SELF_MANAGED for more
+@@ -6966,7 +6966,7 @@ bool regulatory_pre_cac_allowed(struct wiphy *wiphy);
+  * Regulatory self-managed driver can use it to proactively
+  *
+  * @alpha2: the ISO/IEC 3166 alpha2 wmm rule to be queried.
+- * @freq: the freqency(in MHz) to be queried.
++ * @freq: the frequency (in MHz) to be queried.
+  * @rule: pointer to store the wmm rule from the regulatory db.
+  *
+  * Self-managed wireless drivers can use this function to  query
+@@ -9182,9 +9182,9 @@ bool cfg80211_iftype_allowed(struct wiphy *wiphy, enum nl80211_iftype iftype,
+ 
+ /**
+  * cfg80211_assoc_comeback - notification of association that was
+- * temporarly rejected with a comeback
++ * temporarily rejected with a comeback
+  * @netdev: network device
+- * @ap_addr: AP (MLD) address that rejected the assocation
++ * @ap_addr: AP (MLD) address that rejected the association
+  * @timeout: timeout interval value TUs.
+  *
+  * this function may sleep. the caller must hold the corresponding wdev's mutex.
+-- 
+2.53.0
 
-[1] https://lore.kernel.org/all/20260917120112.2150211-1-vulab@iscas.ac.cn/
 
-Thanks,
-Changyul
+
