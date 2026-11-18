@@ -1,92 +1,92 @@
-Authentication-Results: smtp.subspace.kernel.org; arc=none smtp.remote-ip=209.85.210.169
+Authentication-Results: smtp.subspace.kernel.org; arc=none smtp.remote-ip=209.85.210.180
 ARC-Seal: i=1; d=subspace.kernel.org; s=arc20261015; a=rsa-sha256; cv=none;
-	t=1795044693;
-	b=ReL60+Me4b8JFCNMafsifn5j0jHL0DRo3uRMukMqaeJdNUOGeF3g64sYZEVnxVPcc3CY
-	 MW1sbLj4Q2fHfLrnWnYIbMq7Y2Nw1/zMbnu+GgzbdtdDUqtoGjD9SIDu8qerx1TeYLfSS
-	 PIUpFOZDefupvyJsU87MkU1/yWbKDRG9aT3fMd1kyioW3NoW1d9oQ5cPUEyA5wuomNLN3
-	 9afj57KKZJxD/nWSP7nPFRQ0ezx7OTVVrA1Hf1g7N5PKCMdC9mTF8MFmkiQqXzmsiZbDd
-	 feI2VzDql2fxuA2BEdekHNFVs8rg5RR58Cv6d+dI6NVs/uqBBAW/SBUigG4oks66WeQ==
+	t=1795044697;
+	b=cNXIb/FNsIaw3BUv7kYQS4atK4DBOwto/jS9qoDGzo4kuqXsuHlxyRgAmsNQrzar4yQD
+	 0kh3kEdBtGmwFmLB9Jd1HfRQ2DVqNzcWoEUqtHaTmIR3GaQ176sSpBAcjj1bc1wgfd7SF
+	 DxIu8vLiV97+/BsJxmoaysq5FaxFWryvTTPdaorfFBK0rkFc08SPc/x/VPlJ9NTr/afew
+	 +YzbMIHJEPvlwSa8OCAJ442ukKzVKWulZKL9pTz7Isk7A3TQBzm8Hfr2UaEmvau8bVy6w
+	 XY1VioOdGQIM8S4Q2uevdoX9gAEC0RO3tNZOAsRE9y8LL7UvBlcuTw4yWfKDqFRKPGg==
 ARC-Message-Signature: i=1; d=subspace.kernel.org; s=arc20261015;
-	a=rsa-sha256; c=relaxed/relaxed; t=1795044693;
+	a=rsa-sha256; c=relaxed/relaxed; t=1795044697;
 	h=DMARC-Filter:Received:DKIM-Signature:X-Google-DKIM-Signature:
 	 X-Forwarded-Encrypted:X-Gm-Message-State:X-Gm-Gg:X-Received:Received:
 	 From:To:Cc:Subject:Date:Message-ID:X-Mailer:In-Reply-To:References:
 	 MIME-Version:Content-Transfer-Encoding;
-	bh=PWFLgn+UrW3Q/e1aua+nWEyEf3+A8WLg+hRWRw9fbeU=;
-	b=uPnUwiguBQBg+M85NVhr3hXx8fWbtGF3CIuhi1zTgorrKjOqLzLr1PNE28iswKwUHHsQ
-	 TyDxUKYEHyH1g78BW1vWerNQWyi78VY5JVdfjwZGJX+Grr36owfxD/I7R4bqCeUrgc6sW
-	 5zYuRT4EcBOJfDPq+AQi6fFPcIoZ3HbZrwHwNk4wc7GGv1BtrQsSGWsavJGUg37FPrhEf
-	 +0TOY41nCMoS2EJy4Xn4T9JkoO4oVXcQuHsdoAo1SIBhs9usZIL9EHZ9my0/6TirCHVY+
-	 0t0/14dUa7SAXJGof7Ezjd0OjxuUtMRPz6DkBrbIe5k4Vyv3eYkprv9A/wuPWajQrew==
+	bh=JljOJ+5JZ/mVB7HR9h7Mk/LiTfMJkqAy9rLcaKV+yM8=;
+	b=5nw7DI+/XHA2Xnj8i/zhXI9oM+JvYDJI7dte0Z7EigavS55aOuIuOU7jSKVffION1ebX
+	 zbGAnOGZgymLLxzaVTznxiHiYZfnNHvWy9IQdUIakdFyJzl4sO5EqPpFtZ1gtYYpd5Fuf
+	 HLudi/ZDT1FbBeNZ6J9DtyHU/yRT8fbYdyi+wN7XeajoPhNxpsBQMES6yKjX1Tget5jP5
+	 IIREEuWeFU/D9N+241zjnDDwXLjWhkEYTlNOILSLrBxH7m7Jt/30OsSsKgf7CxlC/Dh3X
+	 Im/xn7X8hHIUXsHny9hPY02aRPz/cE9I94R9V+uOBeZ2O8CWnGV07kgOWSJtF35DA2w==
 ARC-Authentication-Results: i=1; smtp.subspace.kernel.org; 
 	dmarc=pass header.from=morsemicro.com;
 	spf=pass smtp.mailfrom=morsemicro.com;
-	dkim=pass header.d=morsemicro-com.20260707.gappssmtp.com header.i=@morsemicro-com.20260707.gappssmtp.com header.a=rsa-sha256 header.s=20260707 header.b="c5/Rp72s";
-	arc=none smtp.remote-ip=209.85.210.169
-Received: from mail-pf1-f169.google.com (mail-pf1-f169.google.com [209.85.210.169])
+	dkim=pass header.d=morsemicro-com.20260707.gappssmtp.com header.i=@morsemicro-com.20260707.gappssmtp.com header.a=rsa-sha256 header.s=20260707 header.b=pKOamYFN;
+	arc=none smtp.remote-ip=209.85.210.180
+Received: from mail-pf1-f180.google.com (mail-pf1-f180.google.com [209.85.210.180])
 	(using TLSv1.3 with cipher TLS_AES_128_GCM_SHA256 (128/128 bits)
 	 key-exchange X25519 server-signature ECDSA (prime256v1) server-digest SHA256)
 	(No client certificate requested)
-	by smtp.subspace.kernel.org (Postfix) with ESMTPS id 9965C606A320
-	for <linux-wireless@vger.kernel.org>; Wed, 18 Nov 2026 23:31:32 +0000 (UTC)
-DMARC-Filter: OpenDMARC Filter v1.4.2 smtp.subspace.kernel.org 9965C606A320
+	by smtp.subspace.kernel.org (Postfix) with ESMTPS id 996B2606A320
+	for <linux-wireless@vger.kernel.org>; Wed, 18 Nov 2026 23:31:36 +0000 (UTC)
+DMARC-Filter: OpenDMARC Filter v1.4.2 smtp.subspace.kernel.org 996B2606A320
 Authentication-Results: smtp.subspace.kernel.org; dmarc=pass (p=none dis=none) header.from=morsemicro.com
 Authentication-Results: smtp.subspace.kernel.org; spf=pass smtp.mailfrom=morsemicro.com
 Authentication-Results: smtp.subspace.kernel.org;
-	dkim=pass (2048-bit key) header.d=morsemicro-com.20260707.gappssmtp.com header.i=@morsemicro-com.20260707.gappssmtp.com header.a=rsa-sha256 header.s=20260707 header.b=c5/Rp72s
-Received: by mail-pf1-f169.google.com with SMTP id d2e1a72fcca58-8b2382bf051so1100105b3a.3
-        for <linux-wireless@vger.kernel.org>; Wed, 18 Nov 2026 15:31:32 -0800 (PST)
+	dkim=pass (2048-bit key) header.d=morsemicro-com.20260707.gappssmtp.com header.i=@morsemicro-com.20260707.gappssmtp.com header.a=rsa-sha256 header.s=20260707 header.b=pKOamYFN
+Received: by mail-pf1-f180.google.com with SMTP id d2e1a72fcca58-8a070781f63so892380b3a.1
+        for <linux-wireless@vger.kernel.org>; Wed, 18 Nov 2026 15:31:36 -0800 (PST)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=morsemicro-com.20260707.gappssmtp.com; s=20260707; t=1795044692; x=1795649492; darn=vger.kernel.org;
+        d=morsemicro-com.20260707.gappssmtp.com; s=20260707; t=1795044696; x=1795649496; darn=vger.kernel.org;
         h=content-transfer-encoding:mime-version:references:in-reply-to
          :message-id:date:subject:cc:to:from:from:to:cc:subject:date
          :message-id:reply-to:content-type;
-        bh=PWFLgn+UrW3Q/e1aua+nWEyEf3+A8WLg+hRWRw9fbeU=;
-        b=c5/Rp72sJS/iIb/JGODo0JLDEr0Jj3lsw8XS/7ZaN7aNVPYlqlr54wy1Msk279aN/Q
-         6+kv8jOee/k+CAuvlzJmcc3y4bczKKArED6hK8V4OgSJEjnWm0QRoFyameTYD5dHrKBo
-         tjn2k5cIWqw8XqxUlxPBvMOaYt/YMOPXoY3Tt4bx3d8RPZxe1+Wk2tqS4mG5tmjUFNam
-         +8cByedGOpkUTiL5016K2elPxmlMoT0IZ5+Vgjc0uQNvcwxJOn7IK0Xad9FsGvDww4WB
-         jpJu9m/7LfEQN+q7GBLfmx9OZljM8nkaxetOytRImUxS+IydK1fVGD10gjVtbQctKIBN
-         Q6DA==
+        bh=JljOJ+5JZ/mVB7HR9h7Mk/LiTfMJkqAy9rLcaKV+yM8=;
+        b=pKOamYFN743YaMPi8zZtS2X7EBb8HKn5yZzI38+Jh465xcRu6eI7tkVlJsbEEsmn74
+         ZA18+dYrmtcm/ifLt/mqcxRxgbelwyrYseP1MJviYXCarhUAH8GbSlCdLR72Ho0LMRZU
+         RL+dwSQVr2IQ8XHhIc3734RjT7FcgMwOCnP7j79et2JMsYhT7/zb/23W0K3RkESk86uU
+         S2/zGZ35rAJ1U9JfVgChjUMa6JVKTGItW3u5+DihUSzAz+KICD5g2Xv59cvuqHc4GWBN
+         UkUJFk8qEHy7pN6TalHL4gXb4LPULbsna/cuuLoQXj96nc9qooUsQfd+SnXuMX3y9rSw
+         gvcw==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=1e100.net; s=20260707; t=1795044692; x=1795649492;
+        d=1e100.net; s=20260707; t=1795044696; x=1795649496;
         h=content-transfer-encoding:mime-version:references:in-reply-to
          :message-id:date:subject:cc:to:from:x-gm-gg:x-gm-message-state:from
          :to:cc:subject:date:message-id:reply-to:content-type;
-        bh=PWFLgn+UrW3Q/e1aua+nWEyEf3+A8WLg+hRWRw9fbeU=;
-        b=CMXa8SZ3LxrMgb8z1GJqZjdHlBCX+0FvLzyTApiZYW2vcAEdMRDaUl9hJNLCAUoLlx
-         ZiLKbxmBQXxjbVTK/GY/+9C3g9s/xcC9170Jqwis2BmlgGd7mEbsmRSN3cl513SSsBJt
-         cwAKarWi2Swmh1x+wDOGF3tBX+9DZzDk6ur6viwZSI0Os5VvLDEQLCUuYLVqEf4RznBB
-         e0d009i/aEcc/iGvmASDeEN7HED/C/Y3yn9Elu9zU9BduI+VYv4/1yednmGMp2BJY25R
-         xDdGSh2VFctsroL2So+G8e0bfDECPsragjIGPPhRzO3E+bdZ1eTHEt1vrE9NGJ3RefbH
-         HP6Q==
-X-Forwarded-Encrypted: i=1; AL+hErFYdjoAktumGsC4VLEjsMLiKxbNycSttEYUGkOaXTaZi4LPCO8/QfJI+LKRdfhq1L5gxq66QiUj+3NvGvltFQ==@vger.kernel.org
-X-Gm-Message-State: APuU4Z8S7MJxZYdZycDgRlzliAyKerMveyUJ7qZKK1gbtYrI2UAR6kZf
-	E/FHKt+YDFOnhl+wtetPAzRGbnH9D45l5RmywKS9sMiAfAd2E+vOd/WxOpVIpgT8iFo=
-X-Gm-Gg: AYBFou3XC4n0sEk5QodrBQNRIEDopLSy9UfLMdoPnaycaIFpZapdJPJ52sjhhgwU5/S
-	nXtvfS9wHMbojkODuvvGKI6Fc8odBgT+bgfx6XEyGuQwXedqZo7W5k18sh9hEocuY6P9Dn1xc9T
-	TKqOPDwcgOG4AlGBV4rkKMz2lJwj0eBF6I+7ntYUyd+ahebioMiuMOGch0j8f0bUvxIf6CJnFzN
-	XgtezE5G5x0izVvX8A+AryLJFrENAPz+a5AS0HEDUsDFmJG/davnc+SlQwapV31DBm2Yi1u6D2R
-	RWIih1a8xGucJRuwXmWVxRQXCd2+ClWRzkvoIvNFH1HMrH34VCiDeqC54VcpX2vaGmHDIOJy7ID
-	y7XUQrAetASOB0ydv+jJp/l0dEeOuGJgW49+SSgECROokwKhMyPUQ9ksIFfvyhN/khIURn8nOCw
-	pV8x0KiPdgV/tVDRa/SgdnhgBy8NaTwNTOOVTneK4p7i8shanb1rqYkceX+7LBizrvO2nL8RxW9
-	ITfzO0+RN9K+9vxEpo3Q4k/psf/wYancP3go00PwqjoPqCLzUl2NHZnDsuzxzly23hm4l17aGms
-	tlMVd6g1YdI1KFpgZCAxwLHDwC+ehlEM+LKg6rsYDl/w6PwvpPz5wDRGcE2RTSXa2/qbqU+uICH
-	SU8yQIQ==
-X-Received: by 2002:a05:6a20:d509:b0:3fb:4a1e:2f82 with SMTP id adf61e73a8af0-3fe8abff694mr4573003637.61.1795044691876;
-        Wed, 18 Nov 2026 15:31:31 -0800 (PST)
+        bh=JljOJ+5JZ/mVB7HR9h7Mk/LiTfMJkqAy9rLcaKV+yM8=;
+        b=1koAExtkXvAtCP/j2fiY7FzWatvPCcBXfIqRWs5gxukf2WT3q0GszR/M6teRPToor4
+         eGMaeebavcFvbaIwbmdxR4H7a0jPqHsnY0+/DCYIXvZK4QHRHTEZSSP0W9A7Z77vBoI5
+         2AQqpjd66US8ke3Zg7Vbc2y2GFXl0+xgOuf0/Z/ceXCmbX508aavEZpsWzSkFZpmtGZa
+         FttggevhI2RWYjn5NwLh4ZimXXGE9HF5nVbScKod6K22SM+3uRDWib52FTS8D52NSxSU
+         ny9JbecZfG8vzcghM/UiLsB/30lEcW3qqGmpjkd2kUDJpEGqxleerAGu1f12NKtzDOLz
+         R+VQ==
+X-Forwarded-Encrypted: i=1; AL+hErEjudCnt39emlynV/QNBbly87alkitNuJ49D50Jp+s7GuFKQGqQVTGlSUgCPQxMVCjgDMxcskIy2ykB+S/jow==@vger.kernel.org
+X-Gm-Message-State: APuU4Z9MueDGhentr2VwfUnOiUY5yQ2qXnhKWz47usvxO4NrVq64yQ70
+	3cGCC8ktTpEZRBnq390l2nxOXpqOPS/zJh4J4fJ+6ApBmK5JOvTQLVV8U+itmawr4ts=
+X-Gm-Gg: AYBFou0NvyD9T9W8JAtOQvNMbkDzwbCHHkK1tXFWUg46Jpei3Bj7ZUinkSpg+4JMQQu
+	Jq7RajaprC9k8Q73NMcUlUUeOoK0l1fdL4CPu/6eIY/2KkIfnwJV4xHvP603tE7fY6F4LOj2pmx
+	pYK6YAxSulvIeIPGa9em3JLPQo3U1tOlVLFmSz2Ku9EFj89iqPagEouTbslKQsNjvM8uIRyoNf1
+	Tuj9voaSl9Rj5lwM25y+Fz/FUWJNtb0SrDo+Dz0Ol6AfD94ohWdeWaDf74jPUVctyzzK9NqaMRy
+	GRDvWF0bVCs7waEIWHGINTgYQZkuAK42dkIgtWYm5lcZW9pBXMJXLG7bddvcNOPzZVPOki0AzyM
+	VHGy6DTapSHmRvY3X+ZheWD+WI31He9SXwbKE3AQagpIv2JdrDVbu7HB6K4hwLtMqmuA0kwhqVe
+	A0SgkTEOAOZC0EJN5MeMpD47T0vxuaYLMvC/fpElgiZKfwujH7oXzbKpKL7eLmPItCOoGDuc5tc
+	IH7ZaAlO09ACvtuS2rDJ81bu4UnRRB71yiyVCseacWpr/bukrwzaKKiu4Lx6Lw02ylCbfDwVK8j
+	40lXjSpaXwe99YXcklRKTpc61x5hmDaExvYOVNZPkVMmPeiJNWZCPkYtp5bNrH4mahbvlRV3O4w
+	P0jKCpw==
+X-Received: by 2002:a05:6a21:7983:b0:3eb:34dd:74f3 with SMTP id adf61e73a8af0-3fe970f2bbemr3562030637.11.1795044696000;
+        Wed, 18 Nov 2026 15:31:36 -0800 (PST)
 Received: from mma-H9MHD44.mymodem ([60.227.235.15])
-        by smtp.gmail.com with ESMTPSA id d2e1a72fcca58-8c6660c2e4csm1467822b3a.22.2026.11.18.15.31.28
+        by smtp.gmail.com with ESMTPSA id d2e1a72fcca58-8c6660c2e4csm1467822b3a.22.2026.11.18.15.31.32
         (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
-        Wed, 18 Nov 2026 15:31:31 -0800 (PST)
+        Wed, 18 Nov 2026 15:31:35 -0800 (PST)
 From: Lachlan Hodges <lachlan.hodges@morsemicro.com>
 To: lachlan.hodges@morsemicro.com,
 	dan.callaghan@morsemicro.com
 Cc: arien.judge@morsemicro.com,
 	linux-wireless@vger.kernel.org
-Subject: [PATCH wireless-next v2 3/4] wifi: mm81x: support v57 firmware
-Date: Thu, 19 Nov 2026 10:31:03 +1100
-Message-ID: <20261118233104.1640855-4-lachlan.hodges@morsemicro.com>
+Subject: [PATCH wireless-next v2 4/4] wifi: mm81x: drop probe requests received off channel
+Date: Thu, 19 Nov 2026 10:31:04 +1100
+Message-ID: <20261118233104.1640855-5-lachlan.hodges@morsemicro.com>
 X-Mailer: git-send-email 2.43.0
 In-Reply-To: <20261118233104.1640855-1-lachlan.hodges@morsemicro.com>
 References: <20261118233104.1640855-1-lachlan.hodges@morsemicro.com>
@@ -101,232 +101,61 @@ Precedence: list
 MIME-Version: 1.0
 Content-Transfer-Encoding: 8bit
 
-Update the type definitions to support the v57 firmware and advertise
-suppport for the new firmware.
+The mm81x receiver picks up probe requests on channels adjacent to
+the tuned 1MHz control channel. These probe requests travel up
+the stack as they are assumed to be received on the control channel
+which leads to multiple probe responses being sent out on the control
+channel flooding airtime. This is especially noticable in mutli-sta
+scenarios at lower bandwidths where airtime is especially precious
+and leads to failed associations.
+
+To fix, drop any probe requests that weren't received on our tuned
+control channel.
 
 Signed-off-by: Lachlan Hodges <lachlan.hodges@morsemicro.com>
 ---
- .../wireless/morsemicro/mm81x/command_defs.h  | 38 +++++++++++++++++--
- drivers/net/wireless/morsemicro/mm81x/fw.c    | 19 +++++++---
- drivers/net/wireless/morsemicro/mm81x/hw.c    |  2 +
- drivers/net/wireless/morsemicro/mm81x/mac.c   | 16 ++++++++
- drivers/net/wireless/morsemicro/mm81x/skbq.h  | 22 +++++++++--
- 5 files changed, 84 insertions(+), 13 deletions(-)
+ drivers/net/wireless/morsemicro/mm81x/mac.c | 21 +++++++++++++++++++++
+ 1 file changed, 21 insertions(+)
 
-diff --git a/drivers/net/wireless/morsemicro/mm81x/command_defs.h b/drivers/net/wireless/morsemicro/mm81x/command_defs.h
-index 91a4ac09ad80..779a6902086a 100644
---- a/drivers/net/wireless/morsemicro/mm81x/command_defs.h
-+++ b/drivers/net/wireless/morsemicro/mm81x/command_defs.h
-@@ -11,8 +11,8 @@
- #define __sle32 __le32
- #define __sle64 __le64
- 
--#define HOST_CMD_SEMVER_MAJOR 56
--#define HOST_CMD_SEMVER_MINOR 17
-+#define HOST_CMD_SEMVER_MAJOR 57
-+#define HOST_CMD_SEMVER_MINOR 20
- #define HOST_CMD_SEMVER_PATCH 0
- 
- #define HOST_CMD_TYPE_REQ BIT(0)
-@@ -149,6 +149,19 @@ enum host_cmd_ocs_subcmd {
- 	HOST_CMD_OCS_SUBCMD_STATUS = 2,
- };
- 
-+enum host_cmd_boot_code {
-+	HOST_CMD_BOOT_CODE_NONE = 0,
-+	HOST_CMD_BOOT_CODE_BCF_INIT = 1,
-+	HOST_CMD_BOOT_CODE_VALID_BCF_NOT_FOUND = 2,
-+	HOST_CMD_BOOT_CODE_BCF_LEN_INVALID = 3,
-+	HOST_CMD_BOOT_CODE_BCF_CRC_INVALID = 4,
-+	HOST_CMD_BOOT_CODE_BCF_UNSUPPORTED_VERSION = 5,
-+	HOST_CMD_BOOT_CODE_BCF_REGDOM_LEN_INVALID = 6,
-+	HOST_CMD_BOOT_CODE_BCF_REGDOM_CRC_INVALID = 7,
-+	HOST_CMD_BOOT_CODE_BCF_PARSE_FAIL = 8,
-+	HOST_CMD_BOOT_CODE_COMPLETE = 255,
-+};
-+
- enum host_cmd_headless_cfg_option {
- 	HOST_CMD_HEADLESS_CFG_OPTION_KEEP_IFACES = BIT(0),
- 	HOST_CMD_HEADLESS_CFG_OPTION_BUFFER_RX = BIT(1),
-@@ -1211,7 +1224,7 @@ struct host_cmd_req_mbssid {
- #define HOST_CMD_MESH_BEACONLESS_MODE_DISABLE 0
- #define HOST_CMD_MESH_BEACONLESS_MODE_ENABLE 1
- #define HOST_CMD_MESH_PEER_LINKS_MIN 0
--#define HOST_CMD_MESH_PEER_LINKS_MAX 10
-+#define HOST_CMD_MESH_PEER_LINKS_MAX 20
- 
- struct host_cmd_req_set_mesh_config {
- 	struct host_cmd_header hdr;
-@@ -1587,9 +1600,18 @@ enum host_cmd_hart_id {
- 	HOST_CMD_HART_ID_LPHY = 3,
- };
- 
-+enum host_cmd_crash_type {
-+	HOST_CMD_CRASH_TYPE_ASSERTION_FAILURE = 0,
-+	HOST_CMD_CRASH_TYPE_NULL_DEREFERENCE = 1,
-+	HOST_CMD_CRASH_TYPE_HANG = 2,
-+	HOST_CMD_CRASH_TYPE_HANG_NOIRQ = 3,
-+};
-+
- struct host_cmd_req_force_assert {
- 	struct host_cmd_header hdr;
- 	__le32 hart_id;
-+	__le32 delay;
-+	__le32 crash_type;
- } __packed;
- 
- #define HOST_CMD_HOST_BLOCK_TX_FRAMES BIT(0)
-@@ -1637,7 +1659,15 @@ enum host_cmd_param_id {
- 	HOST_CMD_PARAM_ID_DEFAULT_ACTIVE_SCAN_DWELL_MS = 27,
- 	HOST_CMD_PARAM_ID_CTS_TO_SELF = 28,
- 	HOST_CMD_PARAM_ID_CHANNELIZATION = 29,
--	HOST_CMD_PARAM_ID_LAST = 30,
-+	HOST_CMD_PARAM_ID_CRYPTO_IN_HOST = 30,
-+	HOST_CMD_PARAM_ID_AUTOCONNECT = 31,
-+	HOST_CMD_PARAM_ID_HOST_PWR_OFF_GPIO = 32,
-+	HOST_CMD_PARAM_ID_HOST_PWR_OFF_GPIO_PULSE_MS = 33,
-+	HOST_CMD_PARAM_ID_ALLOW_PRE_ASSOC_OFF_CHAN_PS = 34,
-+	HOST_CMD_PARAM_ID_SCAN_INTERVAL_BASE_S = 35,
-+	HOST_CMD_PARAM_ID_SCAN_INTERVAL_LIMIT_S = 36,
-+	HOST_CMD_PARAM_ID_AMPDU_FEEDBACK = 37,
-+	HOST_CMD_PARAM_ID_LAST = 38,
- };
- 
- struct host_cmd_req_get_set_generic_param {
-diff --git a/drivers/net/wireless/morsemicro/mm81x/fw.c b/drivers/net/wireless/morsemicro/mm81x/fw.c
-index 2af7d302be2a..619b7d9068b7 100644
---- a/drivers/net/wireless/morsemicro/mm81x/fw.c
-+++ b/drivers/net/wireless/morsemicro/mm81x/fw.c
-@@ -384,7 +384,7 @@ static int mm81x_fw_get_flags(struct mm81x *mors)
- 
- static int mm81x_fw_check_compatibility(struct mm81x *mors)
- {
--	int ret = 0;
-+	int ret;
- 	u32 fw_version;
- 	u32 major;
- 	u32 minor;
-@@ -397,23 +397,30 @@ static int mm81x_fw_check_compatibility(struct mm81x *mors)
- 						fw_version_number),
- 			       &fw_version);
- 	mm81x_release_bus(mors);
-+	if (ret)
-+		return ret;
- 
- 	major = MM81X_SEMVER_GET_MAJOR(fw_version);
- 	minor = MM81X_SEMVER_GET_MINOR(fw_version);
- 	patch = MM81X_SEMVER_GET_PATCH(fw_version);
- 
-+	dev_info(mors->dev, "Firmware API version %u.%u.%u\n", major, minor,
-+		 patch);
-+
- 	/* Firmware on device must match the firmware file we requested */
--	if (ret == 0 && major != mors->fw_major) {
-+	if (major != mors->fw_major) {
- 		dev_err(mors->dev,
- 			"Incompatible FW version: (Requested) v%u, (Chip) %d.%d.%d\n",
- 			mors->fw_major, major, minor, patch);
--		ret = -EPERM;
--	} else if (ret == 0 && major != HOST_CMD_SEMVER_MAJOR) {
-+		return -EPERM;
-+	}
-+
-+	if (major != HOST_CMD_SEMVER_MAJOR) {
- 		dev_warn(
- 			mors->dev,
- 			"Running FW v%d.%d.%d, driver supports up to v%d, some features might not be supported",
- 			major, minor, patch, HOST_CMD_SEMVER_MAJOR);
--	} else if (ret == 0 && minor != HOST_CMD_SEMVER_MINOR) {
-+	} else if (minor != HOST_CMD_SEMVER_MINOR) {
- 		dev_warn(
- 			mors->dev,
- 			"FW version mismatch, some features might not be supported: (Driver) %d.%d.%d, (Chip) %d.%d.%d",
-@@ -421,7 +428,7 @@ static int mm81x_fw_check_compatibility(struct mm81x *mors)
- 			HOST_CMD_SEMVER_PATCH, major, minor, patch);
- 	}
- 
--	return ret;
-+	return 0;
- }
- 
- static int mm81x_fw_invalidate_host_ptr(struct mm81x *mors)
-diff --git a/drivers/net/wireless/morsemicro/mm81x/hw.c b/drivers/net/wireless/morsemicro/mm81x/hw.c
-index 9293f4094db1..8ee78bb7c6bd 100644
---- a/drivers/net/wireless/morsemicro/mm81x/hw.c
-+++ b/drivers/net/wireless/morsemicro/mm81x/hw.c
-@@ -365,3 +365,5 @@ const struct mm81x_regs mm8108_regs = {
- 
- MODULE_FIRMWARE(MM81X_FW_DIR "/v" __stringify(MM81X_FW_VER_MAX) "/"
- 		MM8108_FW_BASE MM81X_FW_EXT);
-+MODULE_FIRMWARE(MM81X_FW_DIR "/v" __stringify(MM81X_FW_VER_MIN) "/"
-+		MM8108_FW_BASE MM81X_FW_EXT);
 diff --git a/drivers/net/wireless/morsemicro/mm81x/mac.c b/drivers/net/wireless/morsemicro/mm81x/mac.c
-index 77c4d3358e25..86e7887c1772 100644
+index 86e7887c1772..60d849c51da7 100644
 --- a/drivers/net/wireless/morsemicro/mm81x/mac.c
 +++ b/drivers/net/wireless/morsemicro/mm81x/mac.c
-@@ -2009,6 +2009,22 @@ static void mm81x_rx_h_add_rt_s1g_tlv(struct sk_buff *skb,
-  * This is a hack to workaround how our firmware reports frequencies.
-  * For any 1MHz frames report them directly (i.e during scanning), else
-  * report the 1MHz control channel we are tuned to.
-+ *
-+ * Unfortunately, the new channel_info field reported by the v57
-+ * is actually not what we are after. The part of the channel_info
-+ * field reports the index of the _first_ 1MHz channel of the
-+ * channel it was transmitted on. This is because the firmware is
-+ * _really_ reporting the subband carrier offset, not the control
-+ * channel the radio was tuned to during reception.
-+ *
-+ * For example, say an 8MHz operating on channel 44 with a 1MHz
-+ * primary of 39. If a frame is transmitted on the 4MHz primary,
-+ * the channel_info will convey the 1MHz index as 0, even though
-+ * the primary 1MHz we were tuned was index 1. For a frame
-+ * transmitted at 8MHz, the index is _always_ zero.
-+ *
-+ * This means we unfortunately need to keep using this for both
-+ * v56 and v57 firmware in the meantime.
-  */
- static void mm81x_rx_h_fill_freq(struct mm81x *mors, u32 rx_khz,
- 				 struct ieee80211_rx_status *rx_status)
-diff --git a/drivers/net/wireless/morsemicro/mm81x/skbq.h b/drivers/net/wireless/morsemicro/mm81x/skbq.h
-index 9930493141cf..ec68c85e1a28 100644
---- a/drivers/net/wireless/morsemicro/mm81x/skbq.h
-+++ b/drivers/net/wireless/morsemicro/mm81x/skbq.h
-@@ -104,7 +104,15 @@ struct mm81x_skb_tx_status {
- 	__le32 pkt_id;
- 	u8 tid;
- 	u8 channel;
--	__le16 ampdu_info;
-+	union {
-+		struct {
-+			__le16 ampdu_info;
-+		} __packed v56;
-+		struct {
-+			u8 per_attempt_ampdu_info;
-+			u8 per_attempt_missing_block_ack;
-+		} __packed v57;
-+	};
- 	struct mm81x_skb_rate_info rates[MM81X_SKB_MAX_RATES];
- } __packed;
+@@ -2115,6 +2115,22 @@ static void mm81x_rx_h_update_sta(struct ieee80211_sta *sta,
+ 	}
+ }
  
-@@ -150,8 +158,16 @@ struct mm81x_skb_rx_status {
- 	__le16 freq_100khz;
- 	u8 bss_color;
- 	s8 noise_dbm;
--	/** Padding for word alignment */
--	u8 padding[2];
-+	union {
-+		struct {
-+			/** Padding for word alignment */
-+			u8 padding[2];
-+		} __packed v56;
-+		struct {
-+			u8 channel_info;
-+			u8 padding;
-+		} __packed v57;
-+	};
- 	__le64 rx_timestamp_us;
- } __packed;
++/*
++ * The chip receives 1MHz PPDUs on any 1MHz channel within the operating
++ * channel. Probe requests sent outside the primary channel are from STAs
++ * that can't hear our response, so don't pass them up.
++ */
++static bool mm81x_rx_h_is_off_chan_probe_req(struct mm81x *mors,
++					     struct ieee80211_hdr *hdr,
++					     struct ieee80211_rx_status *rx_status)
++{
++	if (mors->monitor_en || !ieee80211_is_probe_req(hdr->frame_control))
++		return false;
++
++	return ieee80211_rx_status_to_khz(rx_status) !=
++	       ieee80211_channel_to_khz(mors->chandef.chan);
++}
++
+ static struct ieee80211_vif *
+ mm81x_rx_h_skb_get_vif(struct mm81x *mors, struct sk_buff *skb,
+ 		       struct mm81x_skb_rx_status *hdr_rx_status)
+@@ -2152,6 +2168,11 @@ void mm81x_mac_rx_skb(struct mm81x *mors, struct sk_buff *skb,
  
+ 	mm81x_rx_h_fill_status(mors, hdr_rx_status, &rx_status, skb);
+ 
++	if (mm81x_rx_h_is_off_chan_probe_req(mors, hdr, &rx_status)) {
++		dev_kfree_skb_any(skb);
++		return;
++	}
++
+ 	guard(rcu)();
+ 	vif = mm81x_rx_h_skb_get_vif(mors, skb, hdr_rx_status);
+ 	if (vif) {
 -- 
 2.43.0
 
