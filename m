@@ -1,63 +1,100 @@
-Authentication-Results: smtp.subspace.kernel.org; arc=none smtp.remote-ip=168.119.38.16
-ARC-Seal: i=1; d=subspace.kernel.org; s=arc20261015; a=rsa-sha256; cv=none;
-	t=1795100632;
-	b=oVt0s3mH6tUILwhaDcW4Te2kfsEw3cAx0u6ftkacOlEC/BjNChZi8uI2N1IrpSjXsCe0
-	 4r2aoFwCfSK0OH6ITmIBAyB7IXlPtghCrMLfSooC5/dT17+GuxdAikoZHFLoylcW/HUP+
-	 F5wkauKrqU01cAZlo81ZWID7IJ4ly8LtTdm59ND3bjIyBFU05OirJh4bQGnqJZnfuqCSw
-	 BhFjWo9tsj4Kd/hUE7MZdHDUmlDmZmDlDRaR/lRU/yoC8QJWs2XdKxA+KPbhZmjTjeHGA
-	 yFnD5J6AvqPwJ+3+cRqh7z0/qvw20DNWO4EEMT2mHlAhCUudz+0KEtcK+cD6fpQwckg==
-ARC-Message-Signature: i=1; d=subspace.kernel.org; s=arc20261015;
-	a=rsa-sha256; c=relaxed/relaxed; t=1795100632;
-	h=DKIM-Signature:Received:Message-ID:Subject:From:To:Cc:Date:
-	 In-Reply-To:References:Content-Type:Content-Transfer-Encoding:
-	 User-Agent:MIME-Version:X-malware-bazaar;
-	bh=2DNA/UZEMH8AVZWxg+dU8IaHm5I9tJkEMZIreWMFoic=;
-	b=YlvBN6idSfJfPQvB3D+TRP8/05a65yQj8JeJxAUyF9conK+5+kmWc0q2ZjkEOKayvliz
-	 llho+mATMMUrQ9ZMhKur8Mx7t+mcT5gWOtxcxd9DQOk6HV9FmDPtccqac3PgbqGBTxPH0
-	 XJsvSt6HP7AwDSoeTGDShNAPuk3QQaSoMBow7P568p44sKE/YXUr51wbxLUUyonre19Ey
-	 Sm/Tpaaw21MAE3bX2BP5GTU89r4FLbijwmG25ziiwZ/oP299DaaJHwCb3CcNLCgLdAnFq
-	 dZ3VL3e0PeQ1VylSiUyU6vbg4TGS/ji9WX91tUw24X84ZzSylXB6zOIamRamzyHcDBw==
-ARC-Authentication-Results: i=1; smtp.subspace.kernel.org; 
-	dmarc=permerror header.from=sipsolutions.net;
-	spf=pass smtp.mailfrom=sipsolutions.net;
-	dkim=pass header.d=sipsolutions.net header.i=@sipsolutions.net header.a=rsa-sha256 header.s=mail header.b=JXNmKZIq;
-	arc=none smtp.remote-ip=168.119.38.16
-Received: from sipsolutions.net (s3.sipsolutions.net [168.119.38.16])
-	(using TLSv1.3 with cipher TLS_AES_256_GCM_SHA384 (256/256 bits)
-	 key-exchange ECDHE (prime256v1) server-signature ECDSA (prime256v1) server-digest SHA256)
+Authentication-Results: smtp.subspace.kernel.org; arc=pass header.oldest-pass=0 smtp.remote-ip=209.85.217.53
+ARC-Seal: i=2; d=subspace.kernel.org; s=arc20261015; a=rsa-sha256; cv=pass;
+	t=1795101040;
+	b=L+HwTMN8vs9eLfO2BqZ7fZF9Lbm5vpYjmeYgLFY+ukDcwy2FMCjHWM9uPH6fBZtcefrM
+	 AAHSO188nibKQOtzZEooENZOymdDX4yUrDJ4c7SWpO7Q0c+nz776kn6wMRgfenzisXWee
+	 UzUvkIWlgxufdP9Xl/Xzg8YQQSu6ZN7512NQC1em4E6KBXSI/ZQlkag5fo8Mv71yXji0+
+	 hkVw+LqC9G1lSJWPVVlsne3xD/1K0aCYxQgVnMFL9uS7pJGyAH0LJA+PsBZ7+3Dh8v898
+	 FAOychiU7lsd593AR8swSx15WeYdDA11KaVfoFuU77ON2lLHFbZWu8LdOVttFK5CQ3A==
+ARC-Message-Signature: i=2; d=subspace.kernel.org; s=arc20261015;
+	a=rsa-sha256; c=relaxed/relaxed; t=1795101040;
+	h=DMARC-Filter:Received:DKIM-Signature:X-Google-DKIM-Signature:
+	 X-Forwarded-Encrypted:X-Gm-Message-State:X-Gm-Gg:X-Received:
+	 MIME-Version:References:In-Reply-To:From:Date:X-Gm-Features:
+	 Message-ID:Subject:To:Cc:Content-Type;
+	bh=TAuAtF3fPWsY5c99NF7uBuDUPIOXdqRFu+JX8C/CdeA=;
+	b=HXuZfv7wvvQnqhwwoGz1gzsXWhbZJSpPoxi9/g9VjBM+Ecj9U5gINGbu717D2bcNok2Z
+	 1hAnVywgkiM1gpHgoK8Cxi4Ggp78739hN07Es081FNTMUwBLEuAhf19m+xohwY+JVAo3G
+	 zroqRNz1hsPmjzk7WjLn1XafAq7pKb1WqfVdPV93sL0PEtXONScJlE2DT3ZMCPcCi4YUR
+	 jfHe1jDEjh+XiVYt+C8f2yFKxKB5FohsVjgtq33ECdOrSrU4fwg4rQ51noGygWDY2hIBx
+	 FKILbqUr5e73OatvWG8fFNLpFVQUGRSC1py2PPlD8XqXDMMNWF+zYeCIFCwpAkHr2dw==
+ARC-Authentication-Results: i=2; smtp.subspace.kernel.org; 
+	dmarc=pass header.from=gmail.com;
+	spf=pass smtp.mailfrom=gmail.com;
+	dkim=pass header.d=gmail.com header.i=@gmail.com header.a=rsa-sha256 header.s=20260707 header.b=umIq7Bh8;
+	arc=pass header.oldest-pass=0 smtp.remote-ip=209.85.217.53
+Received: from mail-vs1-f53.google.com (mail-vs1-f53.google.com [209.85.217.53])
+	(using TLSv1.3 with cipher TLS_AES_128_GCM_SHA256 (128/128 bits)
+	 key-exchange X25519 server-signature ECDSA (prime256v1) server-digest SHA256)
 	(No client certificate requested)
-	by smtp.subspace.kernel.org (Postfix) with ESMTPS id EDB34606A320
-	for <linux-wireless@vger.kernel.org>; Thu, 19 Nov 2026 15:03:51 +0000 (UTC)
-Authentication-Results: smtp.subspace.kernel.org; dmarc=permerror header.from=sipsolutions.net
-Authentication-Results: smtp.subspace.kernel.org; spf=pass smtp.mailfrom=sipsolutions.net
+	by smtp.subspace.kernel.org (Postfix) with ESMTPS id 729B2606A324
+	for <linux-wireless@vger.kernel.org>; Thu, 19 Nov 2026 15:10:40 +0000 (UTC)
+DMARC-Filter: OpenDMARC Filter v1.4.2 smtp.subspace.kernel.org 729B2606A324
+Authentication-Results: smtp.subspace.kernel.org; dmarc=pass (p=none dis=none) header.from=gmail.com
+Authentication-Results: smtp.subspace.kernel.org; spf=pass smtp.mailfrom=gmail.com
 Authentication-Results: smtp.subspace.kernel.org;
-	dkim=pass (2048-bit key) header.d=sipsolutions.net header.i=@sipsolutions.net header.a=rsa-sha256 header.s=mail header.b=JXNmKZIq
-DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=sipsolutions.net; s=mail; h=MIME-Version:Content-Transfer-Encoding:
-	Content-Type:References:In-Reply-To:Date:Cc:To:From:Subject:Message-ID:Sender
-	:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:Resent-To:
-	Resent-Cc:Resent-Message-ID; bh=2DNA/UZEMH8AVZWxg+dU8IaHm5I9tJkEMZIreWMFoic=;
-	t=1795100631; x=1796310231; b=JXNmKZIqwaMXsb9Ft900E0eOmw35KfqJc63flX+aXwctTGZ
-	Q0adNWqSylzOVN4FIp7nibT7i5pf4dvh+AUGX8XJqCJMlkLI/8TnfRIsHxXcm411amDvw9mwYFxnA
-	4AazaEwILjYZDmfStKoQN+bxDk/be9aeQH0W8p9XZL4cK1qpurz7Y4RRV9p7rjQ5rPDBZbSqUXwgD
-	G7sAEXqdAGVIhbeWYfkkyaVvlhes5nTO+p2v6whXM2JYMphhLVDJEVToxvvrB2wj32YpPyN/wpFYv
-	9gOwcNwc09t+wd7ziPuAasgoFwTBg8Ij+VP/eEKPJle4db0gbVTwiw58xhUvCiWQ==;
-Received: by sipsolutions.net with esmtpsa (TLS1.3:ECDHE_X25519__ECDSA_SECP256R1_SHA256__AES_256_GCM:256)
-	(Exim 4.98.2)
-	(envelope-from <johannes@sipsolutions.net>)
-	id 1xU3fx-00000004RA2-0cGI;
-	Thu, 19 Nov 2026 16:03:49 +0100
-Message-ID: <940c366543565baf0039f716ac9a65d482a06a8f.camel@sipsolutions.net>
-Subject: Re: [ANN] I will stop applying driver patches
-From: Johannes Berg <johannes@sipsolutions.net>
-To: Alessio Ferri <alessio.ferri@mythread.it>
-Cc: linux-wireless@vger.kernel.org
-Date: Thu, 19 Nov 2026 16:03:48 +0100
-In-Reply-To: <20261106172631.00002d25@mythread.it>
-References: <20261106172631.00002d25@mythread.it>
-Content-Type: text/plain; charset="UTF-8"
-Content-Transfer-Encoding: quoted-printable
-User-Agent: Evolution 3.60.2 (3.60.2-3.fc44) 
+	dkim=pass (2048-bit key) header.d=gmail.com header.i=@gmail.com header.a=rsa-sha256 header.s=20260707 header.b=umIq7Bh8
+Received: by mail-vs1-f53.google.com with SMTP id ada2fe7eead31-7cc81984fceso913275137.0
+        for <linux-wireless@vger.kernel.org>; Thu, 19 Nov 2026 07:10:40 -0800 (PST)
+ARC-Seal: i=1; a=rsa-sha256; t=1795101039; cv=none;
+        d=google.com; s=arc-20260327;
+        b=MXl+m/vjIgHsu5TWsbhXOXQv0U4KixnYxTcQCunA8RAFAoY6dY0lNJe7EucwvhHkm7
+         8qg6NslvmAwDxPcfUOk56QAWgDc6hlLBXN4Q//CjQoTPUJxmry/B0Ib0rhZGN6Z/915C
+         S2iY6Uo9dX+mhpJmq4+PHXII3xFVMGBNMN3KvyUTfdY0rfrjwm9kj1aMqGUKB+afiFed
+         919rR6zBylHCK7nd5RVyQ9qcuEMgeWttVWYaJjzotC+rChgomCOmHsuYhqt9oRjEaWyQ
+         y2LRrLm7sPHhrk9tJ5MpiKSXD5tUase4h4ENqSSAyj8/YionhZzDQnWhWzq6Mf1UiAgq
+         6gNg==
+ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=google.com; s=arc-20260327;
+        h=cc:to:subject:message-id:date:from:in-reply-to:references
+         :mime-version:dkim-signature;
+        bh=TAuAtF3fPWsY5c99NF7uBuDUPIOXdqRFu+JX8C/CdeA=;
+        fh=is5OtJ+EzRVZ6R65yuz4HRnyuNKMXNMzxqkBbCbPNxc=;
+        b=XN1lNu6WS+XXRS+zKsWxNZyq66fyHHFFSFL2gsUqs/lVxztguFGkG6dGG42KKhJ5KF
+         6m8Iys5Yx7MHtyZFDCLdGH+JH8qco81ntFPBd7iAfgKg1WUJja1ZrzkvBKrp9ZoFO4TY
+         571DfKZ8PCtJTqOE/XEVvysv1peF0XVOFYHOgU6WhfXwcmIIKvB4wqrbZ3fXisgjs48F
+         XMyfH8JcjGoDEiFqz7XKwt+mKygh6Ujdjn52W7UzNuBVUB7EptcpsH/y1ye3UPUEeY0U
+         j3HnPDNGJtw47aslnZ5x4dB/KBdTuK/ASbXmfDzE1ty2lHyNpTkYsu1mmN/OvVSIesaz
+         d47A==;
+        darn=vger.kernel.org
+ARC-Authentication-Results: i=1; mx.google.com; arc=none
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+        d=gmail.com; s=20260707; t=1795101039; x=1795705839; darn=vger.kernel.org;
+        h=content-type:cc:to:subject:message-id:date:from:in-reply-to
+         :references:mime-version:from:to:cc:subject:date:message-id:reply-to
+         :content-type;
+        bh=TAuAtF3fPWsY5c99NF7uBuDUPIOXdqRFu+JX8C/CdeA=;
+        b=umIq7Bh8QMl4L922VLIxJcaHAtAi3k3uslktqKyjp3SUD1RQ9uVZM/pMJ3cnHhJH4I
+         N6eps+NicrDzupL2aT1v64Wl66U+PB3XBFn6qQmTfJmRFjquB7K7iTKcnAoAoC2EC3sR
+         DcFv00QBmEDAFp/KAf+/N9Ep0p138lctHGZW6v7NNHKZ8ecz7GUteS6ANJXAW9MQxkgq
+         okNDui8nDwu0atmo3CEROH4Nl9MMjFAdR2TeCWsF2SEV5tcxzcHiRHZemtgYtS5SuZlW
+         vO8PRbH05pbNA32CXqgWe0AvDs5zxUXjMaRbM3whB4Bn4iy9GnbTWqj+9ZrvORaippBD
+         cFyQ==
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+        d=1e100.net; s=20260707; t=1795101039; x=1795705839;
+        h=content-type:cc:to:subject:message-id:date:from:in-reply-to
+         :references:mime-version:x-gm-gg:x-gm-message-state:from:to:cc
+         :subject:date:message-id:reply-to:content-type;
+        bh=TAuAtF3fPWsY5c99NF7uBuDUPIOXdqRFu+JX8C/CdeA=;
+        b=QzZOYHIWNJZL6N6ZbhbWts3HfugM/6CJkwlQNhSMHaujyj0mntXvtIhTydbzaBo4wL
+         Fw/174QJm5QworIz+Wq73lH9ASzUJsR6MUkaAlK8ffByzxBekR9DDt5Uea1u46a0SosC
+         soXNJFjSOlG7QEBKdskV04fRIBO9Gqo/XDYdIz48YRDgzWgWDogBDyYtrxfgc1qsM9AI
+         8GDxwa2fKMX3iunCNzF4p0Z6Vxn4yLhlcRjP7R84vZATdULLKVQvID9o0cfE6lZyRLYA
+         T79OYbNXYJUZEtb0oHSJ8xJpaXKgnLabKwa3ZSGjKLkANGSK/9HLxDOuXmD+yNYhcCzH
+         Rb3w==
+X-Forwarded-Encrypted: i=1; AL+hErG/bdL1u1Rw3eo6aDE9DaCbvbltN7ifb+6uLvTr0JXT910euhcBIXEoFpASkjU1eVrR8J/SZjWsoMaRA/Nj5g==@vger.kernel.org
+X-Gm-Message-State: APuU4Z+nEn6UUSpemXPt+O8bKwcs3ZLt2ZN7glP4+eiiJL7a/rAY0qbD
+	cuLDZjFgE17aVNsmWBOdl+zF72hnjSTli3h1IM6FcSaC+rY8UqnDLdXpTEqOYHQNb1CuN9YFqRc
+	wvEi/vs2ojwMGlJDirQGMCWpkeGO+Erg=
+X-Gm-Gg: AYBFou1k/khSw5uV/Gcag/S7obnMW1aY8Q0B2wzfbgN4cPOKmdIIqZeOic/bHzLY/jZ
+	rHg7wqdzDc4DkexS3ufSfJ8Qsljn+CdYLVM5q1rnHbhN7Z402MglZ/PiP7ZLex76/JgL+wY2haV
+	7iSrcD5Z6xnKqQyeD4/HJv3ZUZh1j0id7ZH4W23Q1FFKanohxSKl8VHP5hAIvuFFJgM8EDFIm6Q
+	4HRv38IjNvDyqPlclIN38+ri1NFTc66+OlmJTI9ahATXncqO4k/2OjNPBRTNW5Lo/WH2GS6d4AS
+	p+IBrs/jbHFjVvVJHHrrgLQWn3k7uxHhW4Q9QPruwKue+Z6IWhRW7fSNOgcodT87tKy4lehJij+
+	UhsABkDz5KAOUGqyN4sYxfK6/Ociq2lTGcBVC0mwcm1iDEFjXmbo2xz6c0G6jbKpnRr5F153epQ
+	wAVQ==
+X-Received: by 2002:a05:6102:548e:b0:7d2:840b:b064 with SMTP id
+ ada2fe7eead31-7d6ba18e430mr2284058137.3.1795101039217; Thu, 19 Nov 2026
+ 07:10:39 -0800 (PST)
 X-Mailing-List: linux-wireless@vger.kernel.org
 List-Id: <linux-wireless.vger.kernel.org>
 List-Post: <mailto:linux-wireless@vger.kernel.org>
@@ -67,87 +104,50 @@ List-Unsubscribe: <mailto:linux-wireless+unsubscribe@vger.kernel.org>
 List-Owner: <mailto:linux-wireless+owner@vger.kernel.org>
 Precedence: list
 MIME-Version: 1.0
-X-malware-bazaar: not-scanned
+References: <20261105-ath-recovery-scan-timeout-v1-0-99a70d89e114@gmail.com>
+ <20261105-ath-recovery-scan-timeout-v1-3-99a70d89e114@gmail.com>
+ <CAFEp6-0O=cPYKndr9hen1jvX==ot2WP4JpGfNFLokVvxUEbxiw@mail.gmail.com>
+ <CAKobHXCMwjAHJOkibPbpDByLZmAKkszZ3WaG6soSDaCEGRQjgA@mail.gmail.com> <b879a6b0-4ca3-4937-8bb0-ee3586d60c1b@oss.qualcomm.com>
+In-Reply-To: <b879a6b0-4ca3-4937-8bb0-ee3586d60c1b@oss.qualcomm.com>
+From: Christopher Griffin <christophergriffin05@gmail.com>
+Date: Thu, 19 Nov 2026 09:10:25 -0600
+X-Gm-Features: Aa3M54pZaHP6ysBEqmdFQebPmeAF0kkje7A47NLqpnzWPq0PTLeUQa2a-UgopI4
+Message-ID: <CAKobHXCUawNNtyLn-n9-qXV3F_q9drWXeG28bY5ARiiTLzXO2Q@mail.gmail.com>
+Subject: Re: [PATCH 3/3] wifi: ath10k: don't arm the scan timeout for a scan
+ that did not start
+To: Jeff Johnson <jeff.johnson@oss.qualcomm.com>
+Cc: loic.poulain@oss.qualcomm.com, jjohnson@kernel.org, kvalo@kernel.org, 
+	quic_haric@quicinc.com, quic_vnaralas@quicinc.com, quic_pradeepc@quicinc.com, 
+	linux-wireless@vger.kernel.org, ath11k@lists.infradead.org, 
+	linux-kernel@vger.kernel.org, quic_mkenna@quicinc.com, john@phrozen.org, 
+	ath10k@lists.infradead.org
+Content-Type: text/plain; charset="UTF-8"
 
-Hi Alessio,
+On 11/5/2026 5:47 PM, Jeff Johnson wrote:
+> Please don't send HTML e-mail.
+>
+> Note your reply was not archived or sent to the mailing list because it was
+> HTML. I only received it since I was directly addressed.
 
-I had to let this one cool off for a while ...
+Sorry, Jeff, and sorry for the duplicate: my last resend went out as
+HTML again. Plain text this time so it lands on the list.
 
-> in defense of the people who "send patches to decades-old drivers":
-> Those drivers are incomplete/buggy/a pain to deal with, usually because
-> of the poor vendor support or totally missing documentation (no need to
-> name names).=20
+On Thu, Nov 5, 2026 at 9:53 PM Loic Poulain
+<loic.poulain@oss.qualcomm.com> wrote:
+> It looks more like a theoretical issue than something that is likely
+> to occur in practice, but the fix looks good to me.
+>
+> Reviewed-by: Loic Poulain <loic.poulain@oss.qualcomm.com>
 
-Trust me, I know. I was part of the reverse engineering team.
+Thanks for the review, Loic.
 
-> A lot of people (I am one of them) have had to deal with them for ages,
-> with great suffering and little hope of ever fixing the situation,
-> because of missing developers interested in fixing them / no
-> documentation to start from / no time to reverse the whole thing.
-> Finally today, with some assistance from an LLM, one could hope to have
-> working hardware with Linux, or at least try to; it seems then natural
-> to send patches upstream for review, instead of keeping them private.
+We did hit it on ath11k, and it did damage: on a QCN9074, a firmware
+crash failed a scan start with -110, the timeout was armed anyway, and
+it fired after the dead radio had been unbound, ending in "cannot queue
+ath11k_scan_timeout_work on wq" with a garbage workqueue, and a panic
+(that is patch 2/3).
 
-Without really saying that's _you_ specifically, and in fact it's
-probably not you from what I've seen, it's crazy at this point to go and
-demand turnaround for your patches, "this must be in wireless", etc.
+Whether ath10k ever hits it I don't know, but the code is the same, so
+the fix can't hurt.
 
-> Sometimes, even with an LLM helping, the work takes months.
-> Sometimes, the contributor has no idea of what they are doing, and
-> I get why this is a problem, after all maintainers are not review
-> machines.
-
-I don't even have the hardware, so I cannot hope to do anything
-reasonable with these patches.
-
-> But, there has to be a middle ground, maybe a small overall quota per
-> merge window would push people to self-review their own work more
-> carefully. That would avoid creating perverse incentives, like
-> forcing people to give reviews, with the risk of having people give away
-> random Reviewed-by tags just to reach the required number.
-
-I think the right thing that happens in these cases is that those people
-who actually have and care about the hardware build a community around
-it first, and *then* go bother the upstream maintainer (i.e. me) after
-they've figured this out.
-
-If nobody except the one guy who's fixing things with an LLM cares, then
-it doesn't need to go upstream, let it die.
-
-If all of them are just throwing patches over the wall with "I have no
-idea my LLM said this" then I'm not going to be the one fixing that for
-them. Some of them need to read the list, look at patches to other
-drivers, learn things and then come back upstream.
-
-Demanding that someone magically upstream reviews things isn't going to
-work. I'd much rather kick a driver for decades-old hardware like b43
-out entirely and say you can maintain it in a github repo, than start
-reviewing patches for it, I have far too many things, even with a better
-ROI for the community (like work on shared components) to deal with.
-
-Look, I get it, everybody thinks upstream magically makes things better
-quality and it's free to send things upstream. I'm telling you that it's
-not, I've paid for it for years (quite a bit personally in time), and
-that at the current level of everyone thinks "upstream" will fix it I'm
-no longer doing it.
-
-Maybe you (again, not personally maybe, a more generic "you") want to
-become an upstream maintainer, great. Start reviewing other drivers,
-other patches, get a feeling for the processes involved, send useful
-comments that show you're learning things. Eventually, open a tree and
-send me pull requests that don't require me combing through every patch.
-Ask questions where you're unsure, that's fine, but be present. And I
-also get that this is a time commitment, trust me, I do. If you don't
-have time for that, that's fair, but then I don't see why you're
-demanding that I spend my time on it, if it's something that my employer
-doesn't really care about (so I'm not really paid for it directly), nor
-I care about myself.
-
-I do care about the whole thing enough that I've done this for years,
-and I have no regrets - it's part of giving back to the community that
-has built me up and brought me to where I am today. But most
-contributors? If I don't apply their patches immediately, or give them
-comments to feed into their LLMs, they don't stay around and give
-nothing back. I'm done with that.
-
-johannes
+Christopher Griffin
