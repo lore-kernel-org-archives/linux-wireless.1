@@ -1,69 +1,71 @@
-Authentication-Results: smtp.subspace.kernel.org; arc=none smtp.remote-ip=111.22.67.151
+Authentication-Results: smtp.subspace.kernel.org; arc=none smtp.remote-ip=178.21.23.139
 ARC-Seal: i=1; d=subspace.kernel.org; s=arc20261015; a=rsa-sha256; cv=none;
-	t=1795082372;
-	b=uOQ9sF8ETDLkyku7qGTR1RTA5Tjc5H8Gc0Xn/2eMVKf4YL9aL6zwtTR6JcODNhAiEdTj
-	 2UyFV6so2Dt7RXY3T7rgKHBqw8+yyU0i7vegr6xTEbiyqyCTI5vfhxLvKL+CMxDMsQzp6
-	 61fRJbmN7dyUHDFvE2dYAqFnUFDMP+pm9pjcG+F36lm8VFNiOMxpb0X3gdNGl6+3WJJ85
-	 T3ZBPvajBbyoGCZpFZA07e3Fg28cXYlkEovi7Mro2Na4JGuH+Vi9coXec+5cxBV1LkDG/
-	 TdUxlbeaZ8s+6vIEmklflxU9Kr6N57ZW0s3gX65oGybHlagmY4fcwAfnjJdF58pTMiA==
+	t=1795082683;
+	b=KR2f9rDcqvZ1lvqqSewL8Yrq8XyFEM1HREHXqOM6f1pC5ORevO0hCvugojqcdcS6iPmd
+	 HOxPsigWo0pQ4sjkGcgyTcu7N6l7ebA20FZ4jXPxnO0SmI+yIA6p9v8x+XEZ5BnxjyWAA
+	 5wLvA29sClF2fzhtX25FyQqryMhpYq6IsAHt6p5Er/lN5gSBKEdqZkBX52p3KhCwJnUBx
+	 d8ix1BzcSmTdyMhlV2l4bt/25j0sQMr7INMgVmhb6jbGWVsrxtlIrrBHWy42eYTkIX72c
+	 en1hMSHWHaj4s1U6y/yNKjTTraYKPPhl+ye48M3dwP8mF1W85VyAQeiQ/1jsI93GvqA==
 ARC-Message-Signature: i=1; d=subspace.kernel.org; s=arc20261015;
-	a=rsa-sha256; c=relaxed/relaxed; t=1795082372;
-	h=DMARC-Filter:DKIM-Signature:X-RM-TagInfo:X-RM-SPAM-FLAG:Received:
-	 X-RM-TRANSID:X-RM-TagInfo:X-RM-SPAM-FLAG:Received:X-RM-TRANSID:From:
-	 To:Cc:Subject:Date:Message-ID:X-Mailer:In-Reply-To:References:
-	 MIME-Version:Content-Transfer-Encoding;
-	bh=UfRoCSvszEcn+i4obulDa86KaHs4sDTjW2MMeP/gVfo=;
-	b=XC9KgvoMUctvxGBRRsbnFGk0xpqtcSed5vOU6Z0rzDVrDrh2G7uGsapT4sPezFgIhQNd
-	 tMe2l12YOVKuJseNwf+YzvF4DsU26/OIeg6NizS707wS0Ylxse76WCPahnAr3FM0tF00P
-	 R67xnAPg/PgmqYD3phxIzVtXQ1Rk49Q3xPDhN0POG5wqmy9SVeSwE8/HWl1tZEzjoyotw
-	 JxSxxQMvKkWd/duaGERHEGvO6BusX2TKg2cxPZ82BR8F7HadJ/zTS+aMO8SUJ+qHVG0lN
-	 QOC+1yXoqV3KrE+/GulElo7RgxuhcT/yujc3FwZjPUCTlezxrfkwNIXb2ggLHY3TI4g==
+	a=rsa-sha256; c=relaxed/relaxed; t=1795082683;
+	h=DMARC-Filter:Received:X-Virus-Scanned:Received:DKIM-Signature:From:
+	 To:Cc:Subject:Date:Message-ID:In-Reply-To:References:MIME-Version:
+	 Content-Transfer-Encoding;
+	bh=JJGLYPHzddrv19l+Wt/RsAOZQA+9iUUhc2s8/QuRBZA=;
+	b=xDHWAHAsirLiz1sEAcaXt/4qlE8+eiX4Q8HOU8g/DSjwQI62I7s4tXSeBkrJzaObXtXJ
+	 0VUgksKw9DDB6fBUl8Gjm9BLRSegbswLv2iDfT3n+k07ZSTb7TudpwRRg0tu+V44HWEZi
+	 a1Glf76EyM+7+NHirRP8lCyEuE9K5yDqJ1Gkz2e5BfYfeDFbGn0QylG5LLmqsgK2Vzk+J
+	 jKmN9URYxSV269m4CSPsP/YN5sGxzB0P4EW4YsoaTM/E8Stm+sYxu1kbl+Bxc2TjLpXjP
+	 QP0kNguEdIs+58BWoNtUYnXNrgb1eCQXE5Vx5LuCYzN8x1vQ3Aw6IW++w0X5jbJf8yw==
 ARC-Authentication-Results: i=1; smtp.subspace.kernel.org; 
-	dmarc=pass header.from=cmss.chinamobile.com;
-	spf=pass smtp.mailfrom=cmss.chinamobile.com;
-	dkim=pass header.d=cmss.chinamobile.com header.i=@cmss.chinamobile.com header.a=rsa-sha256 header.s=default header.b=GXs4QxkN;
-	arc=none smtp.remote-ip=111.22.67.151
-Received: from cmccmta8.chinamobile.com (cmccmta8.chinamobile.com [111.22.67.151])
-	by smtp.subspace.kernel.org (Postfix) with ESMTP id D18B8606A324;
-	Thu, 19 Nov 2026 09:59:30 +0000 (UTC)
-DMARC-Filter: OpenDMARC Filter v1.4.2 smtp.subspace.kernel.org D18B8606A324
-Authentication-Results: smtp.subspace.kernel.org; dmarc=pass (p=none dis=none) header.from=cmss.chinamobile.com
-Authentication-Results: smtp.subspace.kernel.org; spf=pass smtp.mailfrom=cmss.chinamobile.com
+	dmarc=pass header.from=disroot.org;
+	spf=pass smtp.mailfrom=disroot.org;
+	dkim=pass header.d=disroot.org header.i=@disroot.org header.a=rsa-sha256 header.s=mail header.b=bIJ0EY4+;
+	arc=none smtp.remote-ip=178.21.23.139
+Received: from layka.disroot.org (layka.disroot.org [178.21.23.139])
+	(using TLSv1.3 with cipher TLS_AES_256_GCM_SHA384 (256/256 bits)
+	 key-exchange X25519 server-signature ECDSA (prime256v1))
+	(No client certificate requested)
+	by smtp.subspace.kernel.org (Postfix) with ESMTPS id 8094E606A324
+	for <linux-wireless@vger.kernel.org>; Thu, 19 Nov 2026 10:04:42 +0000 (UTC)
+DMARC-Filter: OpenDMARC Filter v1.4.2 smtp.subspace.kernel.org 8094E606A324
+Authentication-Results: smtp.subspace.kernel.org; dmarc=pass (p=reject dis=none) header.from=disroot.org
+Authentication-Results: smtp.subspace.kernel.org; spf=pass smtp.mailfrom=disroot.org
 Authentication-Results: smtp.subspace.kernel.org;
-	dkim=pass (1024-bit key) header.d=cmss.chinamobile.com header.i=@cmss.chinamobile.com header.a=rsa-sha256 header.s=default header.b=GXs4QxkN
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-	d=cmss.chinamobile.com; s=default; l=0;
-	h=from:subject:message-id:to:cc:mime-version;
-	bh=47DEQpj8HBSa+/TImW+5JCeuQeRkm5NMpJWZG3hSuFU=;
-	b=GXs4QxkN0YTOLm+nrJ/ZWk0Y9Dg6yjpsTljgCkvZj/bfpWw4Mh412JXhUvyR/FVkXSfn6lvRq73I7
-	 PfXzXjubm4tb4q+V8kzkFK2uhDuKY6O+ClDYm7h8SqBtBykKagQ2UK7bxJIe2+taNLbxcKR8yWPIBS
-	 v6QdwaM1TXISIN28=
-X-RM-TagInfo: emlType=0                                       
-X-RM-SPAM-FLAG:00000000
-Received:from spf.mail.chinamobile.com (unknown[10.188.0.87])
-	by rmmx-syy-dmz-app02-12002 (RichMail) with SMTP id 2ee26afec87e297-59830;
-	Thu, 19 Nov 2026 17:59:26 +0800 (CST)
-X-RM-TRANSID:2ee26afec87e297-59830
-X-RM-TagInfo: emlType=0                                       
-X-RM-SPAM-FLAG:00000000
-Received:from localhost.localdomain (unknown[223.112.32.189])
-	by rmsmtp-syy-appsvr08-12008 (RichMail) with SMTP id 2ee86afec87d45e-61d0e;
-	Thu, 19 Nov 2026 17:59:26 +0800 (CST)
-X-RM-TRANSID:2ee86afec87d45e-61d0e
-From: guohongyu <guohongyu@cmss.chinamobile.com>
-To: jeff.chen_1@nxp.com,
-	francesco@dolcini.it,
-	johannes@sipsolutions.net
-Cc: linux-wireless@vger.kernel.org,
-	linux-kernel@vger.kernel.org,
-	stable@vger.kernel.org,
-	13057616121@163.com
-Subject: [PATCH v2] wifi: nxpwifi: validate tid in the RX reorder-table lookup
-Date: Thu, 19 Nov 2026 17:52:14 +0800
-Message-ID: <20261119095214.186808-1-guohongyu@cmss.chinamobile.com>
-X-Mailer: git-send-email 2.43.0
-In-Reply-To: <20261111085700.109141-1-guohongyu@cmss.chinamobile.com>
-References: <20261111085700.109141-1-guohongyu@cmss.chinamobile.com>
+	dkim=pass (2048-bit key, unprotected) header.d=disroot.org header.i=@disroot.org header.a=rsa-sha256 header.s=mail header.b=bIJ0EY4+
+Received: from mail01.layka.lan (localhost [127.0.0.1])
+	by disroot.org (Postfix) with ESMTP id 1B39D80BE4;
+	Thu, 19 Nov 2026 11:04:41 +0100 (CET)
+X-Virus-Scanned: SPAM Filter at disroot.org
+Received: from layka.disroot.org ([127.0.0.1])
+ by localhost (disroot.org [127.0.0.1]) (amavis, port 10024) with ESMTP
+ id CwzlICTmi4r9; Thu, 19 Nov 2026 11:04:40 +0100 (CET)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=disroot.org; s=mail;
+	t=1795082680; bh=JJGLYPHzddrv19l+Wt/RsAOZQA+9iUUhc2s8/QuRBZA=;
+	h=From:To:Cc:Subject:Date:In-Reply-To:References;
+	b=bIJ0EY4+XIAASk4SLBZy8dy4H/Ry3xo38MZDSvT1Hjo+i6dgyDZ7X7IhTqXwCOKoH
+	 YrFGvCEgNBraIpbpIgRxgzWxIy3GMH3c0BZ4C2Q+3w96UAZsnaqMTD+W+RMgApCifj
+	 ZvDXByOjb1sFXMFsqARxOv6jEpuEugcgN7PrwOM+il3aZch17EFmgmGg6wyvnF5zdD
+	 UBs4YBQoT4F6dGWe0lgV908l/D10QgzZrnYISC7vdQzOdAvJJP1SB0J0llXxm6bbjL
+	 OrqdWjfH1nEMlTshteWqyqQ6AwborlBTis2moIYGxrwkf/MqADB9x9202G7atQjYo5
+	 htrkMgUkkGnvQ==
+From: Florian Maurer <fmaurer@disroot.org>
+To: Lorenzo Bianconi <lorenzo@kernel.org>
+Cc: Florian Maurer <fmaurer@disroot.org>,
+	Felix Fietkau <nbd@nbd.name>,
+	Ryder Lee <ryder.lee@mediatek.com>,
+	Shayne Chen <shayne.chen@mediatek.com>,
+	Sean Wang <sean.wang@mediatek.com>,
+	Matthias Brugger <matthias.bgg@gmail.com>,
+	AngeloGioacchino Del Regno <angelogioacchino.delregno@collabora.com>,
+	linux-wireless@vger.kernel.org,
+	linux-arm-kernel@lists.infradead.org,
+	linux-mediatek@lists.infradead.org
+Subject: Re: [PATCH] wifi: mt76: npu: fix RX packet reassembly across NAPI polls
+Date: Thu, 19 Nov 2026 10:04:20 +0000
+Message-ID: <20261119100421.1963265-1-fmaurer@disroot.org>
+In-Reply-To: <20261117-mt76-npu-fixes-v1-1-11bf744747f2@kernel.org>
+References: <20261117-mt76-npu-fixes-v1-1-11bf744747f2@kernel.org>
 X-Mailing-List: linux-wireless@vger.kernel.org
 List-Id: <linux-wireless.vger.kernel.org>
 List-Post: <mailto:linux-wireless@vger.kernel.org>
@@ -75,80 +77,18 @@ Precedence: list
 MIME-Version: 1.0
 Content-Transfer-Encoding: 8bit
 
-The RX reorder code uses the tid passed by its callers to index the
-MAX_NUM_TID-sized rx_reorder_tbl_ptr[] and rx_reorder_tbl_lock[]
-arrays.  Several callers take the tid from a received frame or from a
-firmware event and never validate it, so a tid >= MAX_NUM_TID accesses
-the arrays out of bounds.
+On Tue, Nov 17, 2026 at 02:43:46PM +0100, Lorenzo Bianconi wrote:
+> Tested-by: Florian Maurer <fmaurer@disroot.org>
 
-Validate tid in nxpwifi_11n_get_rx_reorder_tbl() itself, so that every
-caller is covered.  Also validate it at the entry of
-nxpwifi_11n_create_rx_reorder_tbl(): when the lookup returns NULL, the
-create path adds a new entry to the tid-indexed rx_reorder_tbl_ptr[]
-list, which the lookup check cannot cover.
+Thanks for posting. I ran the posted patch on mt76 467ae2e3
+(W1700K, kernel 6.18.55) for another hour of iperf3.
+There are no oops, no page_pool warning, no refill or skb failure.
 
-In nxpwifi_11n_rx_reorder_pkt(), the out-of-window drop check bounds
-seq_num by TWOPOW11 rather than by win_size.  The window advance that
-follows keeps the computed pkt_index within win_size, but it does not
-trigger when win_size == 1, so pkt_index can still run past the
-win_size-sized tbl->rx_reorder_ptr[] flex array.  Bound pkt_index by
-win_size before the array access.
+Tested-by: Florian Maurer <fmaurer@disroot.org>
 
-Fixes: 73b01e57ed3e ("wifi: nxp: add nxpwifi driver for IW61x")
-Cc: stable@vger.kernel.org
-Signed-off-by: guohongyu <guohongyu@cmss.chinamobile.com>
----
-Hi Jeff,
+The missing rx slots from my mail of Nov 16 are still there (232 frames
+without LAST on their last slot, 7 unreadable tx-free events), but that
+is not caused by this patch. I will send the [BUG] report separately.
 
-Thank you for the review. I have analyzed your comments and
-updated the patch accordingly.
-
-Changes in v2:
-- Move the tid check into nxpwifi_11n_get_rx_reorder_tbl() so that all
-  callers, including the uap RX path, the RXBA sync event and the DELBA
-  and ADDBA-RSP event handling, are covered, as you suggested.
-
- drivers/net/wireless/nxp/nxpwifi/11n_rxreorder.c | 11 +++++++++++
- 1 file changed, 11 insertions(+)
-
-diff --git a/drivers/net/wireless/nxp/nxpwifi/11n_rxreorder.c b/drivers/net/wireless/nxp/nxpwifi/11n_rxreorder.c
-index 87cf2ec85991..115380a2219a 100644
---- a/drivers/net/wireless/nxp/nxpwifi/11n_rxreorder.c
-+++ b/drivers/net/wireless/nxp/nxpwifi/11n_rxreorder.c
-@@ -182,6 +182,9 @@ nxpwifi_11n_get_rx_reorder_tbl(struct nxpwifi_private *priv, int tid, u8 *ta)
- {
- 	struct nxpwifi_rx_reorder_tbl *tbl, *found = NULL;
- 
-+	if (tid >= MAX_NUM_TID)
-+		return NULL;
-+
- 	guard(rcu)();
- 
- 	list_for_each_entry_rcu(tbl, &priv->rx_reorder_tbl_ptr[tid], list) {
-@@ -266,6 +269,9 @@ nxpwifi_11n_create_rx_reorder_tbl(struct nxpwifi_private *priv, u8 *ta,
- 	u16 last_seq = 0;
- 	struct nxpwifi_sta_node *node;
- 
-+	if (tid >= MAX_NUM_TID)
-+		return;
-+
- 	/* Existing TID/TA: flush and move window to SSN. */
- 	tbl = nxpwifi_11n_get_rx_reorder_tbl(priv, tid, ta);
- 	if (tbl) {
-@@ -492,6 +498,11 @@ int nxpwifi_11n_rx_reorder_pkt(struct nxpwifi_private *priv,
- 		else
- 			pkt_index = (seq_num + MAX_TID_VALUE) - start_win;
- 
-+		if (pkt_index >= tbl->win_size) {
-+			ret = -EINVAL;
-+			goto done;
-+		}
-+
- 		if (tbl->rx_reorder_ptr[pkt_index]) {
- 			ret = -EINVAL;
- 			goto done;
--- 
-2.43.0
-
-
-
+Thanks,
+Florian
