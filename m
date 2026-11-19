@@ -1,77 +1,74 @@
 Authentication-Results: smtp.subspace.kernel.org; arc=none smtp.remote-ip=211.75.126.72
 ARC-Seal: i=1; d=subspace.kernel.org; s=arc20261015; a=rsa-sha256; cv=none;
-	t=1795065643;
-	b=hH/lVVhrPuN96+h8DI7ZLPXRB5QcFWlr6wudSAJEMm1A+VwAJDNAKPsoSfCPNeQmjl0+
-	 SunMItfiZgy1Cm3E1q334IULulch9z4oedhiMElU4y0GCjxSHlJQpbiv9jh78di0371tw
-	 oK1tK8SIwZ7YsesfYp39LJYfTfwybQAnrWVpSYCPnn0NTgK8CY2OaknoavgrE+gQ4s7ox
-	 ewoex5PXg/5irAnMd3ZZm+mjnYivT410/VTbHRySVkI44feiyasHRsXFR0SQTovW/rgG7
-	 WC+dKHiKQFvfRdMRPjMJ77Vbm9hjycYcAB96d2ygCWOpSobC4UgMaViJp9MyIj273fQ==
+	t=1795065735;
+	b=5IlBcK0s4T0K3yIHd2T/gBi7/XWI5aCjCI+ErJ8hZFrKI91XKRfWUUXHetsaNjy3qywF
+	 ihGjNzaObS4GfRLWHreqUttb54yQLQ8pz2mfhMZKKUH1BA6cqiNWxSg9ksnDqV4f93FIL
+	 11RsuFBB7jIXS9isSN4DCMk54h94XQOj3lT7ioZiFu1NGzFopWRnJMXaluVsXA1ehBNiB
+	 Bcj2asJ/v+Q/3I1+EXiY2Rbzh1Lnx4FsPIf7aV8B84oSVuXPCR7um9bX5dZeRDwgy0bGi
+	 8Q4QvQlvHRrsAMlmzwmPfr5biX+IIbTAJU0rQB7g37DO03Hbh/4njm7qepdQbNrKuKA==
 ARC-Message-Signature: i=1; d=subspace.kernel.org; s=arc20261015;
-	a=rsa-sha256; c=relaxed/relaxed; t=1795065643;
+	a=rsa-sha256; c=relaxed/relaxed; t=1795065735;
 	h=DMARC-Filter:X-SpamFilter-By:DKIM-Signature:Received:Received:
 	 Received:From:To:CC:Subject:Thread-Topic:Thread-Index:Date:Message-ID:
 	 References:In-Reply-To:Accept-Language:Content-Language:
 	 x-originating-ip:Content-Type:Content-Transfer-Encoding:MIME-Version;
-	bh=y5AspP9F5DF4vDzgrUup8Ga18pW5PyOtfTkcq4pNT/Y=;
-	b=ZFLTxGlZxfHnGgsvNEnlZVsFcrVUFmXWkXsqnqld2isVvT+3JlCjqkfCMEpG4HAi/BWN
-	 UggAkq2/+LgOlSM660gebWKO+qXorMAeR95bQiiHu31ZbJgAabCI5oETlfwXOiyJNSu6h
-	 GTqXoEmahTImWqEu1d2EzRSSaBfS/pByEv2ealNgOH7VQykR+K0e8DXdSEjCE9pbi0i9/
-	 UmtwsmupoSQlNsP9JsSC5i7qa7fkCrRnKd2oBzj/yao11qv89ioztgSCXOrOWbfNanJqf
-	 L0ngo83KeSAblhyQzeJW3N5LpY1bUFPM+bvJvYxYZz+FngnN+dluaV4O3IPqvrGCmEA==
+	bh=CXBqLDE3adiLJl2oztbDl2MBmI11ykBZVESR0gBdFik=;
+	b=xgSftWzrrCVn2rw3dJjchb4w3riM2MsGW6QhdaiOovr60nIc0qkxLno1+pJAZSmQAMfx
+	 gRhLL1DtFHseQ/JXOJVE7qjMuHuocTg2K4B33vWumgB2QnLpq5wzJHUZDY36q1TbATA+X
+	 zsCKlE7TVcCX4sVBvA1QgosdMqo+LvfnKWodC8zHG35QW0+rhdJwUfJk4qZLKXb7ghf4b
+	 jENbCzDUVpZwEgDHF70TewlrNuey9nONDE+DKF7hY32A1VLh9CGRHZj8kVas8kgDQwZxc
+	 QdaTvhVr3nLebHw+mvJwZjTL0UweniuaMqs0kSc5VjKg3b5LC1Z5MFYa4izknG3rjnw==
 ARC-Authentication-Results: i=1; smtp.subspace.kernel.org; 
 	dmarc=pass header.from=realtek.com;
 	spf=pass smtp.mailfrom=realtek.com;
-	dkim=pass header.d=realtek.com header.i=@realtek.com header.a=rsa-sha256 header.s=dkim header.b=NwPf7x1X;
+	dkim=pass header.d=realtek.com header.i=@realtek.com header.a=rsa-sha256 header.s=dkim header.b=SBaJQLaY;
 	arc=none smtp.remote-ip=211.75.126.72
 Received: from rtits2.realtek.com.tw (rtits2.realtek.com [211.75.126.72])
 	(using TLSv1.3 with cipher TLS_AES_256_GCM_SHA384 (256/256 bits)
 	 key-exchange X25519 server-signature ECDSA (prime256v1) server-digest SHA256)
 	(No client certificate requested)
-	by smtp.subspace.kernel.org (Postfix) with ESMTPS id 30BFD606A320;
-	Thu, 19 Nov 2026 05:20:42 +0000 (UTC)
-DMARC-Filter: OpenDMARC Filter v1.4.2 smtp.subspace.kernel.org 30BFD606A320
+	by smtp.subspace.kernel.org (Postfix) with ESMTPS id BA1D1606A326;
+	Thu, 19 Nov 2026 05:22:14 +0000 (UTC)
+DMARC-Filter: OpenDMARC Filter v1.4.2 smtp.subspace.kernel.org BA1D1606A326
 Authentication-Results: smtp.subspace.kernel.org; dmarc=pass (p=none dis=none) header.from=realtek.com
 Authentication-Results: smtp.subspace.kernel.org; spf=pass smtp.mailfrom=realtek.com
 Authentication-Results: smtp.subspace.kernel.org;
-	dkim=pass (2048-bit key) header.d=realtek.com header.i=@realtek.com header.a=rsa-sha256 header.s=dkim header.b=NwPf7x1X
-X-SpamFilter-By: ArmorX SpamTrap 5.80 with qID 6AJ5KBjZ42036408, This message is accepted by code: ctloc85258
+	dkim=pass (2048-bit key) header.d=realtek.com header.i=@realtek.com header.a=rsa-sha256 header.s=dkim header.b=SBaJQLaY
+X-SpamFilter-By: ArmorX SpamTrap 5.80 with qID 6AJ5MAIX02037187, This message is accepted by code: ctloc85258
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=realtek.com; s=dkim;
-	t=1795065611; bh=y5AspP9F5DF4vDzgrUup8Ga18pW5PyOtfTkcq4pNT/Y=;
+	t=1795065730; bh=CXBqLDE3adiLJl2oztbDl2MBmI11ykBZVESR0gBdFik=;
 	h=From:To:CC:Subject:Date:Message-ID:References:In-Reply-To:
 	 Content-Type:Content-Transfer-Encoding:MIME-Version;
-	b=NwPf7x1XhfCvNARbEhOuGTTRQ1NqMKQc5YRdtGsKmBfgnFMboOah2ztUKAHOVoKLy
-	 Q0okHsaHrhWXgKm5QwGIGkxhuBBBdrCgnQX+IMM3vmqfvq1hzTrxszmPWjTCNxq96r
-	 4zomB6zrpr8WxdtZ4YvU1EQMkrHhjbPVBUTmRYL5rW560uu2E+7sYvlyiTVFDny7IT
-	 HM36wdEdvo1d9fFBmbmTPQmyuVBBp+vx47gO+EyPGg1oocSxCOUEM86M+T1HWBf3oB
-	 YHFo4x4byEJCl9TKVZpUpAa8Zf31ndHdLQKAZUIOuh9Aw2VVFyuUjKKKxGBR/pTc5E
-	 EvsbRCbOaFrCw==
-Received: from mail.realtek.com (rtkexhmbs03.realtek.com.tw[10.21.1.53])
-	by rtits2.realtek.com.tw (8.15.2/3.29/5.94) with ESMTPS id 6AJ5KBjZ42036408
+	b=SBaJQLaYDrbH9fkCzd2fL0aibW79ScMPKej0bTweSB+D5s8K4zL/h5e6GQOT8UpYC
+	 nsPjdklJUkFYs3BRMg86x6NDRcg5LEa1PrLDAydQJ2VoL0mGyHxa0SfEr0ejfw0KcY
+	 bWz1qotWUlvGfsQvIu7wkyiyTxVzyx+bRqwQAFWOvSFMzLBFE9AEveZGPi8oC2FX5b
+	 65Ac+ZNSL0cZOiiGNg6wIhJhAJwXSdifjVCRVCTrP6FCdQL27PPsqga5m3mCMmmcz1
+	 62tlSxW773zbM2XAI5NrKkQplDQjyLie4s37yVZbVzwsm/wBq/BRSfCtvQw/slY9mS
+	 OYOFPpg2HuLjQ==
+Received: from mail.realtek.com (rtkexhmbs02.realtek.com.tw[172.21.6.41])
+	by rtits2.realtek.com.tw (8.15.2/3.29/5.94) with ESMTPS id 6AJ5MAIX02037187
 	(version=TLSv1.2 cipher=ECDHE-RSA-AES256-GCM-SHA384 bits=256 verify=FAIL);
-	Thu, 19 Nov 2026 13:20:11 +0800
+	Thu, 19 Nov 2026 13:22:10 +0800
 Received: from RTKEXHMBS06.realtek.com.tw (10.21.1.56) by
- RTKEXHMBS03.realtek.com.tw (10.21.1.53) with Microsoft SMTP Server
+ RTKEXHMBS02.realtek.com.tw (172.21.6.41) with Microsoft SMTP Server
  (version=TLS1_2, cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id
- 15.2.2562.56; Thu, 19 Nov 2026 13:20:11 +0800
+ 15.2.2562.56; Thu, 19 Nov 2026 13:22:09 +0800
 Received: from RTKEXHMBS06.realtek.com.tw ([fe80::eeeb:c765:ca73:5eef]) by
  RTKEXHMBS06.realtek.com.tw ([fe80::eeeb:c765:ca73:5eef%10]) with mapi id
- 15.02.2562.056; Thu, 19 Nov 2026 13:20:11 +0800
+ 15.02.2562.056; Thu, 19 Nov 2026 13:22:09 +0800
 From: Ping-Ke Shih <pkshih@realtek.com>
-To: Mehmet Fide <mehmet.fide@gmail.com>
-CC: Luka Gejak <luka.gejak@linux.dev>, Bernie Huang <phhuang@realtek.com>,
-	Kalle Valo <kvalo@kernel.org>, "linux-wireless@vger.kernel.org"
-	<linux-wireless@vger.kernel.org>, "linux-kernel@vger.kernel.org"
-	<linux-kernel@vger.kernel.org>, "mehmet.fide@screeningeagle.com"
-	<mehmet.fide@screeningeagle.com>
-Subject: RE: [PATCH rtw-next] wifi: rtw88: find an associated station without
- allocating
-Thread-Topic: [PATCH rtw-next] wifi: rtw88: find an associated station without
- allocating
-Thread-Index: AQHdd0o+bjStWKX/JkO3+8ER2gvmqbc0sbJw
-Date: Thu, 19 Nov 2026 05:20:10 +0000
-Message-ID: <50ac2a659ca340dda44d63b02ffafac1@realtek.com>
-References: <20261118104738.2020747-1-mehmet.fide@gmail.com>
-In-Reply-To: <20261118104738.2020747-1-mehmet.fide@gmail.com>
+To: Abhishek Tamboli <abhishektamboli9@gmail.com>
+CC: "linux-wireless@vger.kernel.org" <linux-wireless@vger.kernel.org>,
+	"linux-kernel@vger.kernel.org" <linux-kernel@vger.kernel.org>
+Subject: RE: [PATCH] wifi: rtw89: 8852au: Add support for Mercusys MA72XH
+Thread-Topic: [PATCH] wifi: rtw89: 8852au: Add support for Mercusys MA72XH
+Thread-Index: AQHdEBhgIKLF4XCqRUOEqFLTRQ13TLZpIRHAgAUzM4CAxrmugIAAnW/Q
+Date: Thu, 19 Nov 2026 05:22:09 +0000
+Message-ID: <9a88c5da71314ce7ad7100d1c3e94a03@realtek.com>
+References: <20260710030055.57438-1-abhishektamboli9@gmail.com>
+ <9bfdb983981d4bb98a4692ac6f1711f6@realtek.com>
+ <8fb9ced500144618b7f43e54c12a25ff@realtek.com> <av5ztQNkWSsLE4NA@embed-PC>
+In-Reply-To: <av5ztQNkWSsLE4NA@embed-PC>
 Accept-Language: en-US, zh-TW
 Content-Language: zh-TW
 Content-Type: text/plain; charset="us-ascii"
@@ -86,31 +83,37 @@ List-Owner: <mailto:linux-wireless+owner@vger.kernel.org>
 Precedence: list
 MIME-Version: 1.0
 
-Mehmet Fide <mehmet.fide@gmail.com> wrote:
-> From: Mehmet Fide <mehmet.fide@screeningeagle.com>
+Abhishek Tamboli <abhishektamboli9@gmail.com> wrote:
+> On Wed, Jul 15, 2026 at 09:16:09AM +0000, Ping-Ke Shih wrote:
+> > Ping-Ke Shih <pkshih@realtek.com> wrote:
+> > > Abhishek Tamboli <abhishektamboli9@gmail.com> wrote:
+> > > > Add the ID 2c4e:0124 to the rtw_8852au_id_table to
+> > > > support the Mercusys MA72XH usb adapter.
+> > > >
+> > > > Link: https://bugzilla.kernel.org/show_bug.cgi?id=3D221738
+> > >
+> > > Not sure why I have no permission to access this. Maybe it gets broke=
+n.
+> > > I'll wait a while to see if people will fix it.
+> >
+> > I seems that my Windows desktop can't access this link, but
+> > Ubuntu is fine. I have not idea why.
+> >
+> > Anyway, the reporter is still not confirmed if this patch works.
+> > Can you post the update here when getting acked?
 >=20
-> rtw_core_check_sta_active() collects the interfaces with
-> rtw_iterate_vifs(), which allocates an entry per interface with
-> GFP_ATOMIC and skips the interface when that fails. A station skipped
-> this way counts as not active: on BSS_CHANGED_BSSID and in
-> rtw_ops_stop_ap() rtw_clear_op_chan() then drops the operating channel
-> saved for it, and a later hardware scan no longer goes back to that
-> channel between the channels it scans.
+> Hi Ping-Ke,
 >=20
-> Both callers hold the wiphy mutex. Walk the active interfaces with
-> for_each_active_interface(), which does not allocate.
+> Update on the Mercusys MA72XH (2c4e:0124) report: the bugzilla
+> reporter confirmed that the adapter works with the 8852AU code path once
+> the ID is present (tested with morrownr's out-of-tree driver, which has
+> the ID). The earlier failure on his system came from the rtw88 DKMS
+> rtw_8821au module claiming the same ID, which is unrelated to this
+> patch.
 >=20
-> Fixes: 96fbb84de4ff ("wifi: rtw88: handle station mode concurrent scan wi=
-th AP mode")
+> I asked him to test the mainline rtw89_8852au with the patch, but he
+> hasn't responded for several weeks.
 
-I'd remove this Fixes, as my comment in Closes link.
-
-> Reported-by: Luka Gejak <luka.gejak@linux.dev>
-> Closes: https://lore.kernel.org/linux-wireless/9BC4FC13-5723-4711-9798-11=
-E3C285C7F1@linux.dev/
-> Suggested-by: Ping-Ke Shih <pkshih@realtek.com>
-> Signed-off-by: Mehmet Fide <mehmet.fide@screeningeagle.com>
-
-Acked-by: Ping-Ke Shih <pkshih@realtek.com>
+So you think I can merge this patch, right?
 
 
