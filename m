@@ -1,72 +1,92 @@
-Authentication-Results: smtp.subspace.kernel.org; arc=none smtp.remote-ip=74.125.82.197
+Authentication-Results: smtp.subspace.kernel.org; arc=none smtp.remote-ip=209.85.221.52
 ARC-Seal: i=1; d=subspace.kernel.org; s=arc20261015; a=rsa-sha256; cv=none;
-	t=1795108208;
-	b=kFRRorAJJRKkYzq5gjPsmo+a1t91hCVggNVdzSLz6Vs4fA4oPuPdlirUf/35vhxTfcpU
-	 jVn8FwPcmDXfWSYiC561zjcYaWSjeP2kdM5Rq0Krz54+ClZ6ajknBxjrX8hpQwBsoKXC9
-	 8d024YzZmNBZo3OJ/GAcWycCmszjuLcINA/KPk6qosx2YaHYZ/xTZzzmAlUj4B4IaDkwb
-	 a4VYUDXMd+ywT9lO9gFZiDtQETa3RXngn90fK95Zxw3kC/2ANJpM+L2CYNSFyUd7myhJf
-	 MzETMOEi1+0n9JFmT8dtioVcI9aVtuxqLlRiBj69Dkff+zBXp3+H1s8ShXKnUka7kRQ==
+	t=1795108465;
+	b=OYmLCCuIEeAlFJe1rKDvpA54abExoaCs7ojWHGtWefU4Y+VxjnzmArNpE1l3FK9Fq8MS
+	 NPWsT1MZvY2Gv0NcFQLZWzbM+adpFTRsYTeK1M3mM5blqtINoLTYNgwMpr/TRZqfYxIFD
+	 DinZUG7ba+m2GPIEVh6FKmgiXJkJpkESH+Tukh2vCJMCN+2C81HxowgEKTAHI2PwW2gm+
+	 InP5gxuVKRUB1e9yvgnGmbda1QA0a7zbKARjdZ9UDQoDKWJT/BGx7ZTLnY8XniPoaEGjV
+	 YRWde1YS7AW8K8HoHbshIjaAk3t0I+uvBp0dUXS7kVujG0KMrJVnZfZG90/GJ2d8kLQ==
 ARC-Message-Signature: i=1; d=subspace.kernel.org; s=arc20261015;
-	a=rsa-sha256; c=relaxed/relaxed; t=1795108208;
+	a=rsa-sha256; c=relaxed/relaxed; t=1795108465;
 	h=DMARC-Filter:Received:DKIM-Signature:X-Google-DKIM-Signature:
-	 X-Forwarded-Encrypted:X-Gm-Message-State:X-Received:Date:Mime-Version:
-	 X-Mailer:Message-ID:Subject:From:To:Cc:Content-Type;
-	bh=7rjsvuE5Z5xtUgwxRQYW4DMUqOYVY8VlBsT0TOMfduE=;
-	b=bfRHBZnjzipEori8NMYIbeUnl7+GrXvON5g1vid44JLVwu5aeSDeOxc7GD7PtcvaprC+
-	 abqyVxKOzvy3Zz4YdxwogtirymdrmR09XH4yrzKNV+EfvvFe1HAFGS0JwR1iEAw9IBPR9
-	 sjPJiPg2b/w//0423MrrXtcrx9qP4xwcnIdqDabOZpdaTuaUcrCgGoSAoG/Ta2P5HMMv7
-	 f8hB0YP109sJX2Jdg2GzwmCfdWCzPVLDJk4gfv3fTTLXhBJ/wi2Js0dAVQSp+0XYTWoyw
-	 W+Que6wP8+wP7FHVoZjo+ZliRppz/NsteQmWeNVb8nlya1NBk8+o/POMwowqEFKORgA==
+	 X-Forwarded-Encrypted:X-Gm-Message-State:X-Gm-Gg:X-Received:Received:
+	 From:To:Cc:Subject:Date:Message-ID:X-Mailer:MIME-Version:
+	 Content-Transfer-Encoding;
+	bh=HhZGlNLLUFACUzqnlk8PPKTHaglC19lgiNotXjp/ynI=;
+	b=l+w9DZzd+ziHepErW55jQjgVL5mKP7vrGCYopNlghOVW50hv4zLb90bb/Re7PA0gPkO3
+	 zWcdSvnS1DljLdxc1tPQBWCwZ5lFCMOgzzFoB4ePSE8WM6ayC8GgCmdnTI/aL6+Waq4p3
+	 L8G7A9zlQCxUsIx8ZG/lC/7w0RkZIF/qv0iPwdmOI9PxraO7JHqvi0j/0+gZ/e+8NzRWD
+	 qlkVoiYBUp8tnTgesejNwXR0kaLLOsBG+EtKUvseUlcubf2Cv83w9kUxOPhwrtw6oWbSR
+	 EOT0062zsMhr/wgWF+wIlNU3kHB4P99cPNHUmxNa+QmV0eqzG1yqDHtYXehew49N1TA==
 ARC-Authentication-Results: i=1; smtp.subspace.kernel.org; 
-	dmarc=pass header.from=google.com;
-	spf=pass smtp.mailfrom=flex--irogers.bounces.google.com;
-	dkim=pass header.d=google.com header.i=@google.com header.a=rsa-sha256 header.s=20260707 header.b=ns6d0KZg;
-	arc=none smtp.remote-ip=74.125.82.197
-Received: from mail-dy1-f197.google.com (mail-dy1-f197.google.com [74.125.82.197])
+	dmarc=pass header.from=cloudlinux.com;
+	spf=pass smtp.mailfrom=cloudlinux.com;
+	dkim=pass header.d=cloudlinux.com header.i=@cloudlinux.com header.a=rsa-sha256 header.s=google header.b=TQPFaJn7;
+	arc=none smtp.remote-ip=209.85.221.52
+Received: from mail-wr1-f52.google.com (mail-wr1-f52.google.com [209.85.221.52])
 	(using TLSv1.3 with cipher TLS_AES_128_GCM_SHA256 (128/128 bits)
 	 key-exchange X25519 server-signature ECDSA (prime256v1) server-digest SHA256)
 	(No client certificate requested)
-	by smtp.subspace.kernel.org (Postfix) with ESMTPS id 6B71460A261D
-	for <linux-wireless@vger.kernel.org>; Thu, 19 Nov 2026 17:10:08 +0000 (UTC)
-DMARC-Filter: OpenDMARC Filter v1.4.2 smtp.subspace.kernel.org 6B71460A261D
-Authentication-Results: smtp.subspace.kernel.org; dmarc=pass (p=reject dis=none) header.from=google.com
-Authentication-Results: smtp.subspace.kernel.org; spf=pass smtp.mailfrom=flex--irogers.bounces.google.com
+	by smtp.subspace.kernel.org (Postfix) with ESMTPS id EC4FE606A324
+	for <linux-wireless@vger.kernel.org>; Thu, 19 Nov 2026 17:14:24 +0000 (UTC)
+DMARC-Filter: OpenDMARC Filter v1.4.2 smtp.subspace.kernel.org EC4FE606A324
+Authentication-Results: smtp.subspace.kernel.org; dmarc=pass (p=quarantine dis=none) header.from=cloudlinux.com
+Authentication-Results: smtp.subspace.kernel.org; spf=pass smtp.mailfrom=cloudlinux.com
 Authentication-Results: smtp.subspace.kernel.org;
-	dkim=pass (2048-bit key) header.d=google.com header.i=@google.com header.a=rsa-sha256 header.s=20260707 header.b=ns6d0KZg
-Received: by mail-dy1-f197.google.com with SMTP id 5a478bee46e88-383ec96a7deso1422448eec.1
-        for <linux-wireless@vger.kernel.org>; Thu, 19 Nov 2026 09:10:08 -0800 (PST)
+	dkim=pass (2048-bit key, unprotected) header.d=cloudlinux.com header.i=@cloudlinux.com header.a=rsa-sha256 header.s=google header.b=TQPFaJn7
+Received: by mail-wr1-f52.google.com with SMTP id ffacd0b85a97d-48e20ed3b9dso2361091f8f.2
+        for <linux-wireless@vger.kernel.org>; Thu, 19 Nov 2026 09:14:24 -0800 (PST)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=google.com; s=20260707; t=1795108207; x=1795713007; darn=vger.kernel.org;
-        h=content-type:cc:to:from:subject:message-id:mime-version:date:from
-         :to:cc:subject:date:message-id:reply-to:content-type;
-        bh=7rjsvuE5Z5xtUgwxRQYW4DMUqOYVY8VlBsT0TOMfduE=;
-        b=ns6d0KZgmoG3shz7t8bomVBFuR5qLUx5+J6Venfm2qzQaWqg/PcsxqRmkHyjQo8Xsn
-         6pCEmors5VGh4rCFN5eqY242w2Zt7g+cWq9qAkP5CrVt2lBWrS2Go7cUcLLd82HVXpKt
-         gfyeuzR6qGQxeH2Z4R0TrAScVXxVC9DXzlEvnkLkPUDcU+lMVwTKnq6bpZT6p6xhDaSv
-         3V95AsR9vds56FDaFnHiE2aGtxjwOja7I5sigRn6c1CMGfn8F30csjfkG4XnzBpsKXAI
-         jHyWXqWWAhZdks+RNEzCilG7svNwBWvvJTfKbDUip1BrPfPBiIK1MogUbwxn+ychwQML
-         hJcg==
+        d=cloudlinux.com; s=google; t=1795108463; x=1795713263; darn=vger.kernel.org;
+        h=content-transfer-encoding:mime-version:message-id:date:subject:cc
+         :to:from:from:to:cc:subject:date:message-id:reply-to:content-type;
+        bh=HhZGlNLLUFACUzqnlk8PPKTHaglC19lgiNotXjp/ynI=;
+        b=TQPFaJn7mE09goYV3+Xo8kUI/DygA1uaiFmHcXdW6I5NBDQXrr8J1t9AjPMEkS4TA4
+         LoKDClkSBELPS28po3Y63QjJ+xaFpApUCrmbZeaaulgDJRKd5ILCidwwYqYwbXnWIpPr
+         9b78y+4rgNrf/kN31Brr1P/2DgzLKjcStk2Z9OV31LyuPoQkh1uibGFzXPBeXiRuyFxa
+         Jjt697hpVN4viiVTzBoMnQ5i+ddMRU1E9UGjMTOKeOFlFyV9wW/FA8vAGyN3O64aDVkg
+         W89zZbxxPry+Ke0qfxFH0xOp87vWdjy6KaOUR53VqqAfthC9dGM+2pYzaXxgK0UNO/Dn
+         0Jgg==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=1e100.net; s=20260707; t=1795108207; x=1795713007;
-        h=content-type:cc:to:from:subject:message-id:mime-version:date
-         :x-gm-message-state:from:to:cc:subject:date:message-id:reply-to
-         :content-type;
-        bh=7rjsvuE5Z5xtUgwxRQYW4DMUqOYVY8VlBsT0TOMfduE=;
-        b=zz6K4LBmbOueIpTZeplSv1cjKkWB5ErtQnQxhybUqE6MzokGKtCr7wQ5UiaUNDR4Iv
-         0dLWyZNi4CaY+zBTh4i5gUnyD3HMV2v9o3M0eZrfJJ0jSegHf3Ce6rUyQ7sQNdX4yZ3K
-         qpuTxqC52nG1pCudFso0fMXrrGs7LwSMe5UNEnHEVFWFz17Q0rK8D9H7gXP1UueuMPcF
-         U7VcksD1rE8VLtpSgrmPzKX6n3hN/H+4RB13TwlV/pzkHMhhcOvy2/hfXfwWMl2Hiz5w
-         JwePRYJbA67/WIXjYrEBn0TImvUBZcmyeBlPn3OrnNcUCgQWKeu8STHUW30+vCSQwrzd
-         UtTw==
-X-Forwarded-Encrypted: i=1; AL+hErH5k7koSFqujUQnc895tc1Ug4CbV+URioUKY7eY8BGVTW43yDc7xezfTra0f5jgDxEVNizMmnL4lmHlYXR40g==@vger.kernel.org
-X-Gm-Message-State: APuU4Z/Va2xqK+TSmcrnjlBFuY6XmZTCHDYp79CDFQmtN31u4gsofisz
-	dUu595ab+B/V/I/A99Y+SOFQxUMIsHkY6NtBDS2RZlBKsT73xlcKkDo80GP245ZVvNtscoySHhl
-	r/9G74KIiog==
-X-Received: from dycuc2.prod.google.com ([2002:a05:693c:3f02:b0:385:6092:b1e0])
- (user=irogers job=prod-delivery.src-stubby-dispatcher) by 2002:a05:7300:8288:b0:384:6487:b155
- with SMTP id 5a478bee46e88-3846487bba9mr2183037eec.29.1795108207046; Thu, 19
- Nov 2026 09:10:07 -0800 (PST)
-Date: Thu, 19 Nov 2026 09:09:27 -0800
+        d=1e100.net; s=20260707; t=1795108463; x=1795713263;
+        h=content-transfer-encoding:mime-version:message-id:date:subject:cc
+         :to:from:x-gm-gg:x-gm-message-state:from:to:cc:subject:date
+         :message-id:reply-to:content-type;
+        bh=HhZGlNLLUFACUzqnlk8PPKTHaglC19lgiNotXjp/ynI=;
+        b=wxrdyVNikhvnCvoG3iajwSs426LypVudT7YXwn8kwfd3Y+XIy0KBtXB13hiQN/8IYG
+         qirdCuwe2Yp+daQCSJ4q9viRCZCzhJHr6xFIULCPtbEgQAwg9JSR3yaDxMjtn3YOHr5W
+         dlBMRcAsVzM0L2CbEfVH4zpWcqkR7PS+bZirhknnAfH0JWe4G5oAFFJyDVX6nbQuS9xN
+         8lbupU5Yt/D9+HgR2Nqi4iu60ZH2oL393pKvBUDB23AP3789Wt1YOGqriNOAm+/sWMW1
+         eNdlkvRkQVEHvMsS21mzVpN/IvGG7zOk0RpYg/+vaVB7poBdYM/ewXkaOzdO6IzIpkJC
+         TM/Q==
+X-Forwarded-Encrypted: i=1; AL+hErHoT/jiEq0NITRFrTGuTWnRlYdPOCEVSi4pukzVwEn1pi3XwUTsvFpPalhlfnWEwPk1IkXV2G+qkJmptDWjPQ==@vger.kernel.org
+X-Gm-Message-State: APuU4Z+5WmvYlB+16+BQljl1uQ+Xa1/ndOvMCvnJwXcT4aRBWzoCMuyU
+	H/9PuMH3Y0s8SDn7198+g7dcGIgWSWOR3EmzWkOTCtcCTHCM5i9IQpEqwbaVspbjlbo=
+X-Gm-Gg: AYBFou2eDweNf0zdaHCJQBsaB6QZLKAxX7AXjlYsc6QTLErTUb6R/LE6ZRSTiTgvT79
+	IIYatKCQzkRvO0KQI4wB/5a6xBhjUFxWFjdgpnHQTfLjZw/VQTGDeUdFa1xp3vNaWtqaRjTMpxg
+	j+XP1U96ytC3o+XLBxUl4dgc9Q4S8xSzZiVjSBMMK0Vx52epwSsMr1UX749TbafxSr1b4lnGmQ2
+	n8fhgqVn9ioiGbDksJiZv81o8q7q91c5pw6FcMK/+0NKFDMXKXj34sJKpCvaOh/JF0CkfbJPs3s
+	gBzoBAqPxdgUcgOZqrr2cobsdtDXaeuae7/Rums+sbP8Y8rOIT6Yfn4sjCBHB4FCvnRzCCS4tYZ
+	xK3qEtr3dFqnFRAh45SDyG1VpdVxSgMldVOwrkwdyxb8YflvJezjkRNWCIHQoSEjpE50ZitIwa3
+	dDBMgEms7sY8CX9DS7n3NpDlFXrw/G1hyc74yWTxwdXlQCiWylRQgSyUUOGjZb1cnkrBlNO/MGi
+	vQSzV6cX7Rwqqye5VOCdpnLzF3vRqbr15VEguWSsEiGX04DkDKmpYkAXpCP8Z5x0WBmXX6PztpQ
+	wVrX2KOlwG44AfpvuwZlF4ho
+X-Received: by 2002:a05:600c:8287:b0:4a1:6992:f861 with SMTP id 5b1f17b1804b1-4bb887e064dmr4530775e9.1.1795108463295;
+        Thu, 19 Nov 2026 09:14:23 -0800 (PST)
+Received: from dev1.kernelcare.com ([2a01:4f8:172:1c85::2])
+        by smtp.gmail.com with ESMTPSA id 5b1f17b1804b1-4bb84cc09b1sm44392685e9.0.2026.11.19.09.14.21
+        (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
+        Thu, 19 Nov 2026 09:14:22 -0800 (PST)
+From: Andrey Misiurov <amisiurov@cloudlinux.com>
+To: Johannes Berg <johannes@sipsolutions.net>
+Cc: =?UTF-8?q?Toke=20H=C3=B8iland-J=C3=B8rgensen?= <toke@toke.dk>,
+	linux-wireless@vger.kernel.org,
+	linux-kernel@vger.kernel.org,
+	Andrey Misiurov <amisiurov@cloudlinux.com>
+Subject: [PATCH] wifi: mac80211: reject zero or oversized fq_quantum in aqm debugfs
+Date: Thu, 19 Nov 2026 18:14:07 +0100
+Message-ID: <20261119171407.1975535-1-amisiurov@cloudlinux.com>
+X-Mailer: git-send-email 2.43.7
 X-Mailing-List: linux-wireless@vger.kernel.org
 List-Id: <linux-wireless.vger.kernel.org>
 List-Post: <mailto:linux-wireless@vger.kernel.org>
@@ -75,51 +95,84 @@ List-Subscribe: <mailto:linux-wireless+subscribe@vger.kernel.org>
 List-Unsubscribe: <mailto:linux-wireless+unsubscribe@vger.kernel.org>
 List-Owner: <mailto:linux-wireless+owner@vger.kernel.org>
 Precedence: list
-Mime-Version: 1.0
-X-Mailer: git-send-email 2.56.1.708.g77570a6a1d-goog
-Message-ID: <20261119170927.1532076-1-irogers@google.com>
-Subject: [PATCH] wifi: mt76: mt7925: Initialize err in mt7925_set_key()
-From: Ian Rogers <irogers@google.com>
-To: Felix Fietkau <nbd@nbd.name>, Lorenzo Bianconi <lorenzo@kernel.org>, Ryder Lee <ryder.lee@mediatek.com>, 
-	Matthias Brugger <matthias.bgg@gmail.com>, 
-	AngeloGioacchino Del Regno <angelogioacchino.delregno@collabora.com>
-Cc: Shayne Chen <shayne.chen@mediatek.com>, Sean Wang <sean.wang@mediatek.com>, 
-	linux-wireless@vger.kernel.org, linux-kernel@vger.kernel.org, 
-	linux-arm-kernel@lists.infradead.org, linux-mediatek@lists.infradead.org, 
-	llvm@lists.linux.dev, Elkin Cruz <elkin@google.com>, Ian Rogers <irogers@google.com>
-Content-Type: text/plain; charset="UTF-8"
+MIME-Version: 1.0
+Content-Transfer-Encoding: 8bit
 
-In mt7925_set_key(), when configuring a key on an MLD interface with
-key->link_id == -1 and msta->valid_links == 0 (for example during link
-teardown or key removal), for_each_set_bit() executes zero iterations
-and mt7925_set_key() returns an uninitialized stack variable err.
+The aqm debugfs file lets you set fq.quantum, the byte budget a flow gets
+each round in the transmit scheduler. aqm_write() accepts any u32 with no
+check.
 
-Initialize err to 0, matching mt7996_set_key().
+The scheduler keeps draining a flow until its budget runs out. A quantum of
+0, or one above INT_MAX, makes that budget never go positive -- it stays 0,
+or wraps negative in the signed counter. The loop then never moves on: it
+spins forever holding fq->lock, and the first frame sent hangs the CPU:
 
-Found via Clang -Wconditional-uninitialized on an x86_64 allyesconfig
-build. Verified by building drivers/net/wireless/mediatek/mt76/mt7925/
-with LLVM=1 W=1 (-Werror) and -Wconditional-uninitialized; not
-runtime-tested on MT7925 hardware.
+  watchdog: BUG: soft lockup - CPU#1 stuck for 145s! [kworker/1:1]
+  CPU: 1 PID: 22249 Comm: kworker/1:1
+  Workqueue: mld mld_ifc_work
+  RIP: 0010:__list_del_entry_valid+0x21/0x100
+  Call Trace:
+   fq_tin_dequeue.constprop.0+0x426/0x8d0 [mac80211]
+   ieee80211_tx_dequeue+0x817/0x15d0 [mac80211]
+   ieee80211_handle_wake_tx_queue+0x1ae/0x2a0 [mac80211]
+   drv_wake_tx_queue+0x1a3/0x350 [mac80211]
+   ieee80211_queue_skb+0x302/0x610 [mac80211]
+   ieee80211_tx+0x261/0x3e0 [mac80211]
+   ieee80211_xmit+0x18c/0x280 [mac80211]
+   __ieee80211_subif_start_xmit+0x5a3/0xb90 [mac80211]
+   ieee80211_subif_start_xmit+0xe2/0x7f0 [mac80211]
+   dev_hard_start_xmit+0x157/0x420
+   __dev_queue_xmit+0x1116/0x1770
+   neigh_resolve_output+0x472/0x9c0
+   ip6_finish_output2+0x87f/0x1320
+   ip6_output+0x1dd/0x630
+   mld_sendpack+0x94c/0xd40
+   mld_ifc_work+0x42/0x270
+   process_one_work+0x830/0x1330
+   worker_thread+0x4f3/0xb40
+   kthread+0x32a/0x410
+   ret_from_fork+0x2c/0x50
 
-Fixes: 3e758e9f777c ("wifi: mt76: mt7925: add link handling in mt7925_set_key")
-Signed-off-by: Ian Rogers <irogers@google.com>
+The same lockup was fixed for the netlink knob by d1cba2ea8121, which caps it
+at INT_MAX; the debugfs knob was left unchecked (netlink also cannot set 0,
+where 0 means "keep"). The file is root-only (0600), so this is hardening.
+
+Fix: read the value into a local and accept only 1..INT_MAX.
+
+Fixes: 9399b86c0e9a ("mac80211: add debug knobs for fair queuing")
+Signed-off-by: Andrey Misiurov <amisiurov@cloudlinux.com>
 ---
- drivers/net/wireless/mediatek/mt76/mt7925/main.c | 2 +-
- 1 file changed, 1 insertion(+), 1 deletion(-)
+Found while reviewing a backport.
 
-diff --git a/drivers/net/wireless/mediatek/mt76/mt7925/main.c b/drivers/net/wireless/mediatek/mt76/mt7925/main.c
-index 8d591f265260..e39e4674e26d 100644
---- a/drivers/net/wireless/mediatek/mt76/mt7925/main.c
-+++ b/drivers/net/wireless/mediatek/mt76/mt7925/main.c
-@@ -735,7 +735,7 @@ static int mt7925_set_key(struct ieee80211_hw *hw, enum set_key_cmd cmd,
- 	struct mt792x_sta *msta = sta ? (struct mt792x_sta *)sta->drv_priv :
- 				  &mvif->sta;
- 	struct mt792x_link_sta *mlink;
--	int err;
-+	int err = 0;
+Reproduced on almalinux9 5.14.0-503.11.1 debug over mac80211_hwsim: writing
+'fq_quantum 0' is accepted and the next TX wedges a CPU as above; with the
+fix 'fq_quantum 0' and 2147483648 both return -EINVAL and TX keeps running.
+
+ net/mac80211/debugfs.c | 7 ++++++-
+ 1 file changed, 6 insertions(+), 1 deletion(-)
+
+diff --git a/net/mac80211/debugfs.c b/net/mac80211/debugfs.c
+--- a/net/mac80211/debugfs.c
++++ b/net/mac80211/debugfs.c
+@@ -117,6 +117,7 @@
+ {
+ 	struct ieee80211_local *local = file->private_data;
+ 	char buf[100];
++	u32 quantum;
  
- 	/* The hardware does not support per-STA RX GTK, fallback
- 	 * to software mode for these.
--- 
-2.56.1.708.g77570a6a1d-goog
-
+ 	if (count >= sizeof(buf))
+ 		return -EINVAL;
+@@ -133,8 +134,12 @@
+ 		return count;
+ 	else if (sscanf(buf, "fq_memory_limit %u", &local->fq.memory_limit) == 1)
+ 		return count;
+-	else if (sscanf(buf, "fq_quantum %u", &local->fq.quantum) == 1)
++	else if (sscanf(buf, "fq_quantum %u", &quantum) == 1) {
++		if (!quantum || quantum > INT_MAX)
++			return -EINVAL;
++		local->fq.quantum = quantum;
+ 		return count;
++	}
+ 
+ 	return -EINVAL;
+ }
