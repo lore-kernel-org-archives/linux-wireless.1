@@ -1,62 +1,99 @@
-Authentication-Results: smtp.subspace.kernel.org; arc=none smtp.remote-ip=46.4.11.11
+Authentication-Results: smtp.subspace.kernel.org; arc=none smtp.remote-ip=74.125.82.170
 ARC-Seal: i=1; d=subspace.kernel.org; s=arc20261015; a=rsa-sha256; cv=none;
-	t=1795092249;
-	b=fsbB0VKua5GbPy5I+hpA6l+s7+mUxbzuZ0N+ReXVggrbUHPjirKrP/03MIEUXWsZRwwc
-	 4XAi3AijYytQ320cgVJ07YVq2VwpxusduRPd8TXAhBRM9/jh2OwYQCz5vR0dTnPUTqHuC
-	 f1vByDZiiIaqo6EGwhniJp/xPfxq0SygNcV47QBXGH9UAfTvYQULqTWw9XAH/XI6pUdHO
-	 /dD2XgygWf1Rbp1JsLVMkG9Ly3/V+QRitn9FpTriDQ0QgxTt5DS72S2sCqPI9JCcAnuzD
-	 0LELHQAVYOT7gUEwGHmTn7sgx/5qPKQTnnx/W+vT38kPoP1WRsiGt8RnOTRpxo2CwIA==
+	t=1795092574;
+	b=ajGseGL+0Yf7CCzcgc1Cv4j3haJlweOegysT0RTiEqDx7PKsI6lQJE6AhO0+ZgchVaej
+	 T+IMqlOCLWj8anB2NMAQ8jvosVMpvS9EQkHIwfOQsYKvNoqdT41cSjrd3Gc+pMNygnrrR
+	 kUICXm5bLO+W8DZiqWuEDZMOFHajo+GOSNW5kdihgD7McmOaRGrz2yDVfxViTls9ji/0a
+	 X3n6Ke/+vvX6j6zP0ei0egIe9IaKzdAFX1XHJI83BIqc1Dlgim6C6D76p6lgsNZg0SmHv
+	 XMp5AXPrOqcPpE/vpKn7dpic5CVWQD5Ggt4kQnbl0/5Q/k9xoiYb3YqDyxH37Xcix7g==
 ARC-Message-Signature: i=1; d=subspace.kernel.org; s=arc20261015;
-	a=rsa-sha256; c=relaxed/relaxed; t=1795092249;
-	h=DMARC-Filter:DKIM-Signature:Received:From:To:Subject:Date:Message-ID:
-	 X-Mailer:In-Reply-To:References:MIME-Version:
+	a=rsa-sha256; c=relaxed/relaxed; t=1795092574;
+	h=DMARC-Filter:Received:DKIM-Signature:X-Google-DKIM-Signature:
+	 X-Forwarded-Encrypted:X-Gm-Message-State:X-Gm-Gg:X-Received:Received:
+	 From:To:Cc:Subject:Date:Message-Id:X-Mailer:MIME-Version:
 	 Content-Transfer-Encoding;
-	bh=mTW8+mleSg/5G/y6ewlyPPtijcUvVcWCNBm4YH3NSRU=;
-	b=yxLWkBVZlRjN+FQRAbdE6mA8XTxdBV3IBZ2Az1vFPR3bfHNwfInd3VPKuqpU83KQlfa+
-	 ER281Q5PyLyZrBEUmMAW0Bc/rqEnWMBfMAz4yqQ6GhZYR1X3HsaYrnSnMh3CankuWzMdF
-	 yXjWDvH2fnXsQ0j9qMPsr3QEQQ4EZhQN99dzUyctY/RsBxl2uA7soIrEvICXPWsc5RSD6
-	 WIniGh3TOeuJbIRy4oheaaqQ2Cz1+vmxKTXaASuSq3b4NasYWIL3dF6GIA5Y9LHNn+8x9
-	 5VGUNwzUT8/Qd43Is0HIIUnnuhskqZF1o2MFPhRhpSocyzjkpczna6j8Vtrjdm8GZWA==
+	bh=Jl9oyBMBlY4JXOrQAW23CuXlJczhQJcy241+h238qgg=;
+	b=GQYk1NPTdtme90KGLDkJ72KttBSxlCqO2IjcI/yipDxjT2xHv1pQefQtBrJObBTBMNyd
+	 WbwyAxsmquqWrnwOmIfVSOp8yFJXLJn6vDohQQ6MMgygO/90z6h88ZZhtTjaFgWOxa4F/
+	 2cK996H500hrOeAAnIAsYemxk6aYWiMPZNrPQbN0e0PaTn/3/Ebp2B2tuajRJtz5bK/Zd
+	 ZIxAqZ9y/QQ/Rj4HyzLPJc+qSViWDI76kJHDUFeFU7bSeln6Ob22DGdHHzDw9T+SsFqmu
+	 5X2WiKPwBUcjlfFV1u5coMKUhWvdO8ibKPVB7sehkwaQUVaeOC8gX5/oKqX2N3ncEbw==
 ARC-Authentication-Results: i=1; smtp.subspace.kernel.org; 
-	dmarc=pass header.from=nbd.name;
-	spf=pass smtp.mailfrom=nbd.name;
-	dkim=pass header.d=nbd.name header.i=@nbd.name header.a=rsa-sha256 header.s=20160729 header.b=J0Axp8x+;
-	arc=none smtp.remote-ip=46.4.11.11
-Received: from nbd.name (nbd.name [46.4.11.11])
-	(using TLSv1.3 with cipher TLS_AES_256_GCM_SHA384 (256/256 bits)
-	 key-exchange ECDHE (prime256v1) server-signature ECDSA (prime256v1) server-digest SHA256)
+	dmarc=pass header.from=gmail.com;
+	spf=pass smtp.mailfrom=gmail.com;
+	dkim=pass header.d=gmail.com header.i=@gmail.com header.a=rsa-sha256 header.s=20260707 header.b=qHPvpXlb;
+	arc=none smtp.remote-ip=74.125.82.170
+Received: from mail-dy1-f170.google.com (mail-dy1-f170.google.com [74.125.82.170])
+	(using TLSv1.3 with cipher TLS_AES_128_GCM_SHA256 (128/128 bits)
+	 key-exchange X25519 server-signature ECDSA (prime256v1) server-digest SHA256)
 	(No client certificate requested)
-	by smtp.subspace.kernel.org (Postfix) with ESMTPS id 185F460A2600
-	for <linux-wireless@vger.kernel.org>; Thu, 19 Nov 2026 12:44:08 +0000 (UTC)
-DMARC-Filter: OpenDMARC Filter v1.4.2 smtp.subspace.kernel.org 185F460A2600
-Authentication-Results: smtp.subspace.kernel.org; dmarc=pass (p=none dis=none) header.from=nbd.name
-Authentication-Results: smtp.subspace.kernel.org; spf=pass smtp.mailfrom=nbd.name
+	by smtp.subspace.kernel.org (Postfix) with ESMTPS id 5E1FE606A324
+	for <linux-wireless@vger.kernel.org>; Thu, 19 Nov 2026 12:49:34 +0000 (UTC)
+DMARC-Filter: OpenDMARC Filter v1.4.2 smtp.subspace.kernel.org 5E1FE606A324
+Authentication-Results: smtp.subspace.kernel.org; dmarc=pass (p=none dis=none) header.from=gmail.com
+Authentication-Results: smtp.subspace.kernel.org; spf=pass smtp.mailfrom=gmail.com
 Authentication-Results: smtp.subspace.kernel.org;
-	dkim=pass (1024-bit key) header.d=nbd.name header.i=@nbd.name header.a=rsa-sha256 header.s=20160729 header.b=J0Axp8x+
-DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed; d=nbd.name;
-	s=20160729; h=Content-Transfer-Encoding:MIME-Version:References:In-Reply-To:
-	Message-ID:Date:Subject:To:From:Sender:Reply-To:Cc:Content-Type:Content-ID:
-	Content-Description:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc
-	:Resent-Message-ID:List-Id:List-Help:List-Unsubscribe:List-Subscribe:
-	List-Post:List-Owner:List-Archive;
-	bh=mTW8+mleSg/5G/y6ewlyPPtijcUvVcWCNBm4YH3NSRU=; b=J0Axp8x+IC2CjVNoJ/b3JqonsU
-	BvkpxLw+kNRfe0z6h4ZsxknWNSsSRQkQbjV2D5GZbIHsdO7hOOWz9epu2WQmdrkRM+3w1jxla5ktG
-	TeTQMGavIWTDuYuMbKPJkXYCV6wSzmkeDbrSiefrq9MZdYKJYOccCDK8VFeHwXWG2Jw4=;
-Received: from p200300cadf12920000000000000005bb.dip0.t-ipconnect.de ([2003:ca:df12:9200::5bb] helo=localhost.localdomain)
-	by ds12 with esmtpsa  (TLS1.3) tls TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384
-	(Exim 4.96)
-	(envelope-from <nbd@nbd.name>)
-	id 1xU1Uf-005VJk-1m
-	for linux-wireless@vger.kernel.org;
-	Thu, 19 Nov 2026 13:44:01 +0100
-From: Felix Fietkau <nbd@nbd.name>
-To: linux-wireless@vger.kernel.org
-Subject: [PATCH mt76-next 11/20] wifi: mt76: mt7996: drop the TWT agreements at a full reset
-Date: Thu, 19 Nov 2026 13:43:43 +0100
-Message-ID: <20261119124352.1842164-11-nbd@nbd.name>
-X-Mailer: git-send-email 2.47.3
-In-Reply-To: <20261119124352.1842164-1-nbd@nbd.name>
-References: <20261119124352.1842164-1-nbd@nbd.name>
+	dkim=pass (2048-bit key) header.d=gmail.com header.i=@gmail.com header.a=rsa-sha256 header.s=20260707 header.b=qHPvpXlb
+Received: by mail-dy1-f170.google.com with SMTP id 5a478bee46e88-381d542bc29so4017049eec.1
+        for <linux-wireless@vger.kernel.org>; Thu, 19 Nov 2026 04:49:34 -0800 (PST)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+        d=gmail.com; s=20260707; t=1795092573; x=1795697373; darn=vger.kernel.org;
+        h=content-transfer-encoding:mime-version:message-id:date:subject:cc
+         :to:from:from:to:cc:subject:date:message-id:reply-to:content-type;
+        bh=Jl9oyBMBlY4JXOrQAW23CuXlJczhQJcy241+h238qgg=;
+        b=qHPvpXlbIhX6l5QoRi3WKlIpWEpfRc1OTafFYafo8n1ZlnpmXKLNMPRPXKNrmuufPp
+         hzIeG09r1p0ytIZrctJBtcxF4iErP1nVvzksg59PYdnjOIlbEZjpSKWlZoqEXiUhX95a
+         dw3a7z2+9bvdYH+t6i6J6+mlpZtFQhoFarTQayDm7paKto2P45Um3dtPYTv+ZwTeaBox
+         GeMAi7y8o2h48ljsXlmRei1G07l+vvPdLPI1h0xqajBpQ2NrzVSukAW29/o4upJiQxeM
+         GrQ5BXdrQ6C4yTp6GxXhbJRk7N4WJouEktR30jYIrW5JFMbXRZ0C+oZiMQC9wNfdbNpt
+         OoSA==
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+        d=1e100.net; s=20260707; t=1795092573; x=1795697373;
+        h=content-transfer-encoding:mime-version:message-id:date:subject:cc
+         :to:from:x-gm-gg:x-gm-message-state:from:to:cc:subject:date
+         :message-id:reply-to:content-type;
+        bh=Jl9oyBMBlY4JXOrQAW23CuXlJczhQJcy241+h238qgg=;
+        b=uVaiiyHuV1xiA1MSFGE5mBDyQdi+eoAezjCcninIrL+cZPb3Q2C3rf62+HYKjvd9VF
+         MJJb9jxNbfbQ5s37jld15bZ/mTBJjc/M7WoX7PuIKpPo79TBM9g7Wa4Nc16nCck222av
+         AcbSb9LeMkd+Wp+xrBG7UzZIpEW1VmbLCqPm/2wVv4ZjWYfRoePzgUJOun4fYWlrW8KW
+         +JZ+aQcX1FhjPpeMw3nkNVATTQb3pMRCpfInwamkefzw6kFR5HdmtRqoVxtb8bSEDxD1
+         96bUesvyL5IBRek77Urvg/kCty+f6DphngaMR4UwiEwhx532zW1kfb/XIPN//EL7MPc3
+         Af3A==
+X-Forwarded-Encrypted: i=1; AL+hErEcIUnBnSn0bLtl+fpGxmKUpDK2mqcqYWKD4cDp/pPJzd537mADqKMcl17ED1kluj/3HW8l3Fq4r2wMKbw0Jw==@vger.kernel.org
+X-Gm-Message-State: APuU4Z+vLSPJ6GAqWYhDUrWtyi+bqH5oiZtMZFuH2JeGtDouAkqMafF8
+	3wynLRY0WEj+CjZwVpuSaiT2B/6OeZI63hcHH/J/AP8h8QqHo7AJjGO4
+X-Gm-Gg: AZFdTZeC2MUUxvvZR+QKXKHhpYDGkxNHRc25wrVdh4mEb6YBTdj4sbJdrv3nanrtEsF
+	LlOS94+Qg/GsIVopAkZhfpWa6j4lZfk9M7U+EgKyAE+gfEvtBZQKreWnpDaFwI/g/60SDJxQYb0
+	tJDXg4+Y31N84lDOr87FzCIHBxjiwrTW1oNaPx2LBpx3wESsKmVPQLhF4XfLLix044OZqlrxQXw
+	0sMBlYzLNBUqIxrA+iXVk05dovYEB7swbPJeTmU/oi5yMjbl0khe5Hdce8/C6fPg1egcVRXptY9
+	q6OiJWLUCpXPW7CggqP7Y+a3GuTuN49NDSZqwh2wxAFBs34HdvpffHTum/L2ex2bQDepOyH7L5L
+	hS6Z1U0joMJBYjPB6RoVmhS07GA4vg2QGFdJby633YWRyZYpdyq4Q6g44SJqafDnYgCMmSMlfkx
+	Ksf9RznnrNvCCvBV9OG3bCXK9QwMX685BnQVJyl8hsiFrE6z4CATAuo2/REpAPF9EH/For+Tx47
+	+q7FqJyktuSJmwz/X/Xb01YFrd+14wmv4uuvXzm+2eGj05AhsAf1R8RbQhUCnoBemSFNOQv+qMc
+	bzlEAj5xhsGFXLxIiaf3FFbhhvpT8iLuW8+yNYU3uggHBO8Yrb0XNJ2vgkCred+0lyGewsmynfQ
+	=
+X-Received: by 2002:a05:7301:1a14:b0:382:5dd0:3bb2 with SMTP id 5a478bee46e88-3827fe7882bmr4750485eec.9.1795092573428;
+        Thu, 19 Nov 2026 04:49:33 -0800 (PST)
+Received: from csl-conti-dell7858.ntu.edu.sg ([155.69.195.57])
+        by smtp.gmail.com with ESMTPSA id 5a478bee46e88-382a7bc05cfsm17909542eec.26.2026.11.19.04.49.30
+        (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
+        Thu, 19 Nov 2026 04:49:32 -0800 (PST)
+From: Maoyi Xie <maoyixie.tju@gmail.com>
+To: Felix Fietkau <nbd@nbd.name>,
+	Lorenzo Bianconi <lorenzo@kernel.org>,
+	Ryder Lee <ryder.lee@mediatek.com>
+Cc: Shayne Chen <shayne.chen@mediatek.com>,
+	Sean Wang <sean.wang@mediatek.com>,
+	Matthias Brugger <matthias.bgg@gmail.com>,
+	AngeloGioacchino Del Regno <angelogioacchino.delregno@collabora.com>,
+	linux-wireless@vger.kernel.org,
+	linux-arm-kernel@lists.infradead.org,
+	linux-mediatek@lists.infradead.org,
+	stable@vger.kernel.org
+Subject: [PATCH] wifi: mt76: sdio: check the RX packet length in mt76s_rx_run_queue()
+Date: Thu, 19 Nov 2026 20:49:28 +0800
+Message-Id: <20261119124928.1398520-1-maoyixie.tju@gmail.com>
+X-Mailer: git-send-email 2.34.1
 X-Mailing-List: linux-wireless@vger.kernel.org
 List-Id: <linux-wireless.vger.kernel.org>
 List-Post: <mailto:linux-wireless@vger.kernel.org>
@@ -68,50 +105,44 @@ Precedence: list
 MIME-Version: 1.0
 Content-Transfer-Encoding: 8bit
 
-The firmware that a full reset reloads holds no TWT agreement, but
-mt7996_mac_full_reset() keeps those of the driver and only runs
-INIT_LIST_HEAD() on dev->twt_list. The disassociation or the removal of
-a station with a flow then corrupts the list.
+mt76s_rx_run_queue() reads the packets that the chip announced in the
+interrupt status into one buffer. It then takes the length of each
+packet from the first word of the packet and does not compare it with
+the bytes read. A larger length can make the driver read TX status
+records past the end of the buffer and build an skb that extends past
+it.
 
-Drop the TWT agreements of the driver at a full reset as well.
+Stop at a packet that does not fit in the bytes read.
 
-Fixes: 27015b6fbcca ("wifi: mt76: mt7996: enable full system reset support")
-Fixes: ace5d3b6b49e ("wifi: mt76: mt7996: improve hardware restart reliability")
-Signed-off-by: Felix Fietkau <nbd@nbd.name>
+Found with a CodeQL-based static analysis tool that we are developing.
+Reproduced in a userspace harness under ASan, which reports no such
+read with this patch. Not tested on hardware, only compile-tested with
+W=1 on next-20261116.
+
+Fixes: dacf0acfe2ce ("mt76: sdio: extend sdio module to support CONNAC2")
+Cc: stable@vger.kernel.org
+Signed-off-by: Maoyi Xie <maoyixie.tju@gmail.com>
 ---
- drivers/net/wireless/mediatek/mt76/mt7996/mac.c | 12 +++++++++++-
- 1 file changed, 11 insertions(+), 1 deletion(-)
+I used an LLM to help write the harness and this patch.
 
-diff --git a/drivers/net/wireless/mediatek/mt76/mt7996/mac.c b/drivers/net/wireless/mediatek/mt76/mt7996/mac.c
-index eb0f2dd7bb7f..db8ebbcafe13 100644
---- a/drivers/net/wireless/mediatek/mt76/mt7996/mac.c
-+++ b/drivers/net/wireless/mediatek/mt76/mt7996/mac.c
-@@ -2493,6 +2493,7 @@ static void
- mt7996_mac_full_reset(struct mt7996_dev *dev)
- {
- 	struct ieee80211_hw *hw = mt76_hw(dev);
-+	struct mt7996_twt_flow *flow, *tmp;
- 	struct mt7996_phy *phy;
- 	LIST_HEAD(list);
- 	int i;
-@@ -2537,7 +2538,16 @@ mt7996_mac_full_reset(struct mt7996_dev *dev)
- 		list_del_init(dev->sta_rc_list.next);
- 	spin_unlock_bh(&dev->mt76.sta_poll_lock);
+ drivers/net/wireless/mediatek/mt76/sdio_txrx.c | 2 ++
+ 1 file changed, 2 insertions(+)
+
+diff --git a/drivers/net/wireless/mediatek/mt76/sdio_txrx.c b/drivers/net/wireless/mediatek/mt76/sdio_txrx.c
+index 3f314e8e1e69f92..86dd1165d2c7f1f 100644
+--- a/drivers/net/wireless/mediatek/mt76/sdio_txrx.c
++++ b/drivers/net/wireless/mediatek/mt76/sdio_txrx.c
+@@ -127,6 +127,8 @@ mt76s_rx_run_queue(struct mt76_dev *dev, enum mt76_rxq_id qid,
  
--	INIT_LIST_HEAD(&dev->twt_list);
-+	list_for_each_entry_safe(flow, tmp, &dev->twt_list, list) {
-+		struct mt7996_sta_link *msta_link;
-+
-+		msta_link = container_of(flow, struct mt7996_sta_link,
-+					 twt.flow[flow->id]);
-+		msta_link->twt.flowid_mask &= ~BIT(flow->id);
-+		list_del_init(&flow->list);
-+	}
-+	dev->twt.table_mask = 0;
-+	dev->twt.n_agrt = 0;
+ 		/* parse rxd to get the actual packet length */
+ 		len = le32_get_bits(rxd[0], GENMASK(15, 0));
++		if (len > end - buf)
++			break;
  
- 	spin_lock_bh(&dev->wed_rro.lock);
- 	list_splice_init(&dev->wed_rro.poll_list, &list);
+ 		/* Optimized path for TXS */
+ 		if (!dev->drv->rx_check || dev->drv->rx_check(dev, buf, len)) {
+
+base-commit: 7e1392a42ea288d70a266f6553fe06f57f8647ea
 -- 
-2.47.3
+2.34.1
 
