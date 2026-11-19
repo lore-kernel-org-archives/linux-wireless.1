@@ -1,83 +1,85 @@
-Authentication-Results: smtp.subspace.kernel.org; arc=none smtp.remote-ip=209.85.221.41
+Authentication-Results: smtp.subspace.kernel.org; arc=none smtp.remote-ip=209.85.128.48
 ARC-Seal: i=1; d=subspace.kernel.org; s=arc20261015; a=rsa-sha256; cv=none;
-	t=1795110611;
-	b=XVi6EWAXNTPUJgYhFWXiMe09KHhyOQ20zsV8hdudvZKFFCyYPGRmwxa5emvSEro8+EQ0
-	 ofTICCDjWj17U0Md76zpwmoSZytJ0RgHSnMzHvCYdoTHGyPNUpQQGVV6wwALvzPFIsx3E
-	 8e6EcsTMNg3QZSYIBLJSRIHlkt0F8WftItkmdcdjA+ZMP97lVNQhs2YUuRjEd/O/9m+zL
-	 db6aJdxw0yBxQR9z9c3NJ5XGOnaI6k4R+f48xt1Vx/f3Axqz3upeJz5b+TKSCAUImXl95
-	 1GVi24C86HBmte0cusA5OmiVHqF3sj/kyC5NMTy9xF8wW3/wCY+QmN3QffRU4oh3opg==
+	t=1795110612;
+	b=BxpDbJ0oeWPRomG8nAzSWZX8Z+ePxcrMEYzrgCUX8qdD3kkgVY8i9wv688YYOTaj/oMS
+	 CSB3oSeyLLNv/N5aOInChWdKYybPKU3Bm3vysOCt9JOPrjMrB8kgfPqG4ugh8G8QmTuTI
+	 kHcIZib4vtVEkKar2Av/m/B8JW1NF6OhBn+Tyh+Oy1YLP4FMvSd1iFXyWvlql4Q208OAI
+	 IrUeQe9Tt91hhGnmeSEgowSiYa27nwQx6bpXLV72yohVpcNNGDdUrG50u2Qu4JLl/Ae4v
+	 jiCT+P4peX4mc2Qss30vEHL3j+2NN1ts9QnYn3kRNaFl34ZtDWcj8PtCDDsHEgtWQvQ==
 ARC-Message-Signature: i=1; d=subspace.kernel.org; s=arc20261015;
-	a=rsa-sha256; c=relaxed/relaxed; t=1795110611;
+	a=rsa-sha256; c=relaxed/relaxed; t=1795110612;
 	h=DMARC-Filter:Received:DKIM-Signature:X-Google-DKIM-Signature:
 	 X-Gm-Message-State:X-Gm-Gg:X-Received:Received:From:To:Cc:Subject:
-	 Date:Message-ID:X-Mailer:MIME-Version:Content-Transfer-Encoding;
-	bh=mnejhq/H/SZQPdPa/LlelAnqIjEaiLVH9BdFcNoAYWY=;
-	b=16/0wUEtYAMuQ9mUZF8CHYrFUdc+TfSBMZ4Zm5d5umflZ1Zgs+j9/xnGuxK8dZ4Bs24k
-	 E82j1xlsv3n4RWdzteSDt3qVgltVHm9FdZ/nj9pG5qDNHZ+SZFGhnxJO0xEDSy3oDN37U
-	 b0y/5Yex3OYt7XafJqrBSn0r/x3NIexoEkPzfI1ePDw/ghd8ffaalMwIRYniKKhpPvlME
-	 HPw/0gxU7fzrhjU3xZywvjrnOxRGk4q/DSCEKEpvW3+R8DIYmui+QVRLEGDYWGlknEC8Q
-	 grqF24s0L4E6q3ihsC6IJxQDnUGZml1G4KFK/mz8/rjWVjPYfgCMRYrPIDOuZRcb3wg==
+	 Date:Message-ID:X-Mailer:In-Reply-To:References:MIME-Version:
+	 Content-Transfer-Encoding;
+	bh=5m08k+pWTgZ26W4H99NIdw305iHAopUdzj3Kg8DMx8c=;
+	b=yVU1OU0ee3s/PBqlOF8uOeWXYDWNnrrZ/vgzPQb5IkI0nCterlt3BHqxbeAWxgZTlXWf
+	 4Sc+LPapKjK6CrRLmjE/T2QBab9P5Z+Nvlgbxo9VF5ZuCmyZC6ZzNFhBzon2ftOrSJYtj
+	 9pK23P+csBgOeAOF3Hfy0E0KlSxewvVHlev63BCLKKkszKs4ojAjh25tF/Mi0/ebYcLlf
+	 1/KE0kuDdDqJqSeC4rKAa7Cg6NQ2WsVZj29po0OCA0yuTPhc6uIOFK+5JE6Wf3fe3ckvn
+	 ttczkZ8bp7gcboEgX/WgMJD2l7AWRoUm1+y9td15Et+zXwWQbbXLrOXVoumZP5KJHNA==
 ARC-Authentication-Results: i=1; smtp.subspace.kernel.org; 
 	dmarc=pass header.from=aheymans.xyz;
 	spf=pass smtp.mailfrom=aheymans.xyz;
-	dkim=pass header.d=aheymans-xyz.20260707.gappssmtp.com header.i=@aheymans-xyz.20260707.gappssmtp.com header.a=rsa-sha256 header.s=20260707 header.b=huRUedH5;
-	arc=none smtp.remote-ip=209.85.221.41
-Received: from mail-wr1-f41.google.com (mail-wr1-f41.google.com [209.85.221.41])
+	dkim=pass header.d=aheymans-xyz.20260707.gappssmtp.com header.i=@aheymans-xyz.20260707.gappssmtp.com header.a=rsa-sha256 header.s=20260707 header.b="fvJykZ/n";
+	arc=none smtp.remote-ip=209.85.128.48
+Received: from mail-wm1-f48.google.com (mail-wm1-f48.google.com [209.85.128.48])
 	(using TLSv1.3 with cipher TLS_AES_128_GCM_SHA256 (128/128 bits)
 	 key-exchange X25519 server-signature ECDSA (prime256v1) server-digest SHA256)
 	(No client certificate requested)
-	by smtp.subspace.kernel.org (Postfix) with ESMTPS id B6B3B606A33A
-	for <linux-wireless@vger.kernel.org>; Thu, 19 Nov 2026 17:50:10 +0000 (UTC)
-DMARC-Filter: OpenDMARC Filter v1.4.2 smtp.subspace.kernel.org B6B3B606A33A
+	by smtp.subspace.kernel.org (Postfix) with ESMTPS id B61DA606A33D
+	for <linux-wireless@vger.kernel.org>; Thu, 19 Nov 2026 17:50:11 +0000 (UTC)
+DMARC-Filter: OpenDMARC Filter v1.4.2 smtp.subspace.kernel.org B61DA606A33D
 Authentication-Results: smtp.subspace.kernel.org; dmarc=pass (p=none dis=none) header.from=aheymans.xyz
 Authentication-Results: smtp.subspace.kernel.org; spf=pass smtp.mailfrom=aheymans.xyz
 Authentication-Results: smtp.subspace.kernel.org;
-	dkim=pass (2048-bit key, unprotected) header.d=aheymans-xyz.20260707.gappssmtp.com header.i=@aheymans-xyz.20260707.gappssmtp.com header.a=rsa-sha256 header.s=20260707 header.b=huRUedH5
-Received: by mail-wr1-f41.google.com with SMTP id ffacd0b85a97d-492f563d1c6so1033663f8f.3
-        for <linux-wireless@vger.kernel.org>; Thu, 19 Nov 2026 09:50:10 -0800 (PST)
+	dkim=pass (2048-bit key) header.d=aheymans-xyz.20260707.gappssmtp.com header.i=@aheymans-xyz.20260707.gappssmtp.com header.a=rsa-sha256 header.s=20260707 header.b=fvJykZ/n
+Received: by mail-wm1-f48.google.com with SMTP id 5b1f17b1804b1-4a35d5d4a20so27644825e9.2
+        for <linux-wireless@vger.kernel.org>; Thu, 19 Nov 2026 09:50:11 -0800 (PST)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=aheymans-xyz.20260707.gappssmtp.com; s=20260707; t=1795110609; x=1795715409; darn=vger.kernel.org;
-        h=content-transfer-encoding:mime-version:message-id:date:subject:cc
-         :to:from:from:to:cc:subject:date:message-id:reply-to:content-type;
-        bh=mnejhq/H/SZQPdPa/LlelAnqIjEaiLVH9BdFcNoAYWY=;
-        b=huRUedH5MibOxkehNlG9X86upNwlh2yY054K0zSCkbHorUAG1/sTdpr0DFiqI2bMeA
-         GB85882arLtlgYsCzGXGg+K7fCb8FQdr8p+4VNWkQc7RvCTdcbIzYp4+YipQ9DKf4efs
-         i3HefOUdJe5i+wbBv/dQzxFY8Hdq/q+6fbRIyiKgckOsdV6slVrrSlSTdUkTILjCkjgr
-         BCfZm4ULxdHCewa70HX2FyQRANBvX8+lJqCy/o3X5pJqHQQ71Ede7f92O9B/q2M0hall
-         e0TmmXuJwtKezdFTLl73iAaGv1canePJ1JW0TNpYKCGkexisWiqehwaqD8qyAxOwrM2L
-         nr+w==
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=1e100.net; s=20260707; t=1795110609; x=1795715409;
-        h=content-transfer-encoding:mime-version:message-id:date:subject:cc
-         :to:from:x-gm-gg:x-gm-message-state:from:to:cc:subject:date
+        d=aheymans-xyz.20260707.gappssmtp.com; s=20260707; t=1795110610; x=1795715410; darn=vger.kernel.org;
+        h=content-transfer-encoding:mime-version:references:in-reply-to
+         :message-id:date:subject:cc:to:from:from:to:cc:subject:date
          :message-id:reply-to:content-type;
-        bh=mnejhq/H/SZQPdPa/LlelAnqIjEaiLVH9BdFcNoAYWY=;
-        b=Xnar2WENxtpovJUSc5h9LOHtVw3KVMCouJpMsWKHwkdSxHLzqTkIoNiGr5oeGKrJVM
-         q3LENykjB1ZUYg/k0Jo9DPULofbryB/wjUaB6MCBHh93z4xtNJGFwBB1JLKYIjxrWp6E
-         ea5ya7dzefWF5Ou84ThuyR/61gvsNgESfaPZyGu9ZacAeJ1IKKyZRsr4TfhpIHvlPTob
-         dH3JIiyqd8S9CBgVcDFUIbonE1WLgytSJ9zhgcUuAXXqXRDd1oJ6AsfYOfHO4Y//+yaB
-         am/sgmobKZBJzFQ3TLZGLjpV6TkHu8nW+POYlnU0ZJ6IMT+osp3Zkus1JO6AU70st2Or
-         YQlA==
-X-Gm-Message-State: APuU4Z8VFEO6/OdurTeqkrH25/c55+MYdG4Nk2YB3OHdpVyfUAxq+H3r
-	D4KAccrSK475V2CZbOgmaWmkA4qIu+iI8AyRKEJ3XR1pWbfInQVjVDmUHXMaDl2vBUsWZAGbRJM
-	rhA+b7X8=
-X-Gm-Gg: AYBFou3rK2ZQaK8gR3pzGHyC0sie5AxNfjRkcPyFT6xvsqAwZtEpwMKa6s62dkhJJzm
-	e4ywCt35+cLHeYTya40neY1UPq0/37//bnhZ4jfmXHZk1DYAmLTeuIC4uJdNd2WrDPSNtKCDMjU
-	qA7CshgFLltiSn2yrEHrEl8do/azvxBrze2WWLJ5v/8BMq1Az80VpQQa+7Z1RI3b5oRFVm3eH8H
-	7C/CNtO/9P7pPEeOjURhNsN0737EKM08MaeSIop9GRJq4jykzdpDMMO3tfMGcb910T0oE31q9yl
-	l0cU8inmS334fl81NlVfUFCtSeBGwin1PpFlQDD2jm0I7lUdUFLfvsujHwV4mop1IQgONzSUqDl
-	JqT+mRMJNXd72kBrBoAG+8fmeWFDqR06p4ZZqIPwLDMleyiEX4YDKFF3wPZPoQEQZDytUf8LkX2
-	C7ydkVFD+sXfgYfm2DP8ZRfwhmD0SEXcutEjlgV+RnUuT/BV00JIsrjA/clDGnMmMB2U/NkoFJu
-	WIZ9tYNJktaOuhsTJKrs1cshRXWLG0xBfDbva0B7MIUT2tDxrh+egzAlBG69njvPx1UEkz9PFI1
-	EabCg2Z+SAItKixV43DSedp1Cc/L3prj6FzKxDao8j9iR19RfP+PdWjgYbOZWq//6Y6I3LnYE0c
-	Q54eVyA+Bfg516t3A7ns8GeD+Cp8HjyCITF1lfCrjZPsjZbfyue+EEelSAG3BOItbXEIjhcEtP1
-	/wPOGnGYzRNJQvnpl8L/+ktIk=
-X-Received: by 2002:a05:600c:5246:b0:4a7:9006:b176 with SMTP id 5b1f17b1804b1-4bb887fe892mr6623085e9.7.1795110608655;
-        Thu, 19 Nov 2026 09:50:08 -0800 (PST)
+        bh=5m08k+pWTgZ26W4H99NIdw305iHAopUdzj3Kg8DMx8c=;
+        b=fvJykZ/neLyVItFEhBuAi0WmfnkNb8Y4jIVy1xZB3JP5mhV0QHRRKZuIo/1ChInedQ
+         ozTOCjI7wfcchmNYhF669sue2/HmF0Uy6XdyhIrtktpdEYN3CyMnTTIufpcXJDebi4CY
+         eOcOpBits2EoRc6ryq8QttSom5epvDHt7vHgHeTqiMIJNN1aOJRK0GQFL1Y5FTfzhkXE
+         yyYVP4MJRF9EH1kSLVrO+m0Yi0PYAKmgSL7sGRfB1YTQtsDia+DoKocrsqZHpJoqUY59
+         n+XiF6L3WfCtONnXjhitg2wRYLsXpW8Si8BnzO+aQ5aVv6QnbUq+c4PNY+/Od58FQ+4z
+         HSow==
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+        d=1e100.net; s=20260707; t=1795110610; x=1795715410;
+        h=content-transfer-encoding:mime-version:references:in-reply-to
+         :message-id:date:subject:cc:to:from:x-gm-gg:x-gm-message-state:from
+         :to:cc:subject:date:message-id:reply-to:content-type;
+        bh=5m08k+pWTgZ26W4H99NIdw305iHAopUdzj3Kg8DMx8c=;
+        b=AAOgVGkhP2ZLfZzZTHRdqV7Z7TQE4RZEhj9/4SGKSFSechxcY0gTmHyLXRtGiwSA3Y
+         e+/NH2QuSw51uDkw7jQKVQs1SDiR+dIA5BdKfX8rKlD2iyiOHZ1j2pQ8uyn3JE0FW51X
+         1basZl5MCC1Q/Cj1sKpoa3ViKxnQ78ecma2tlN5ru4lPA+x6ofwctlincR4ReSSonnlu
+         fVLeEdlsagsMwFadc4/w7oRwXnNUygJpHk4RlHodJEtszDOohBw1k9kv1fq9//jWe1rc
+         9OX9ikDNFZ2iKFPk2Toh3rtqcb8nwndKEKPiNraWZ4MaGOtzmGpf6pyr9ChrNtsNKb4P
+         fOog==
+X-Gm-Message-State: APuU4Z8e3g3tS8+RjRier18J0tfSubm2Bk2spC8Qv63yhyYH84w2MkU0
+	J3AC2hIB+nPWkc9gbqA4cW9N0VC46CTIrnVqXB6IBlfnt5G/Ulju6OE8dfcxPZ7vEbQIBLzOVxT
+	cNkpLwnM=
+X-Gm-Gg: AYBFou1pwtogpHLdRwcxQP3yAgCn8LIVZFzXGg+6JiUDIqh/xAAQSuGmqVjnq17tCZQ
+	zlc1Z58FXpbY4c5SQPK3DcXUtTipxemPIlEyRrc0fqaqnp5yMMtpNpPaH3N/YkIwAjCebn6FPsn
+	pN+eHSwKDislzs2o65dkiJO6fm1+kbtkjoLZt4az60/WsVyiMeLkygfFn88tiVhpdixwHM667ne
+	MpTlWTupc8qDcDgTiF4neqgdh1t4Qaf9gggy9zZukmtkY2YkbfR9fDWDbBYpscRroNi2wprHbnJ
+	0RwiI2dlAYzjUhlEQQC2G88226yxMPBL/M87NSN+bUCPyVVfvO1GKiIvLq1KVB4xv/FGxqAHP9u
+	rlpMKddqJh3T9kai5LztSd9U2hlArP+eVQB+cy47NCDGxeB33jvit8sMJe+QUKakWhYMPtBkPFn
+	jOUnfVEusfFP9odyAqM2hZKOZFzkBxfI9fKJJ2lvYHLYvhC+VkIYuTiy+5zlRZKsG/a4r0aQSp6
+	duS54BS8uD+rOWI28GRSNVwoF2MQpsx5RVN+XTpW/lP5+BTCZh4esr5hcnCruBfQp3w3HtQkHYf
+	IX8IRqhK0uNBIzuVOU3EkwTgDwvCSLkw4N0PlkOfdmGUAa0Ywr4h6pPvURreN/IxLBnmu8pWAxQ
+	4ACNDTsR0hxVhhijC+N+U03B483AiL4DmXsdgfh5fSyEvKC0p9gN6uKbuK0zodAWEBNfvg9bcVT
+	JIDls=
+X-Received: by 2002:a05:600c:64c7:b0:4bb:68c4:2044 with SMTP id 5b1f17b1804b1-4bb887fe725mr6329465e9.11.1795110610075;
+        Thu, 19 Nov 2026 09:50:10 -0800 (PST)
 Received: from localhost (2a02-1810-b422-d400-611-84c9-252f-74ad.ip6.access.telenet.be. [2a02:1810:b422:d400:611:84c9:252f:74ad])
-        by smtp.gmail.com with ESMTPSA id 5b1f17b1804b1-4bb884ab091sm19205815e9.11.2026.11.19.09.50.08
+        by smtp.gmail.com with ESMTPSA id 5b1f17b1804b1-4bb853b2437sm68993685e9.13.2026.11.19.09.50.09
         (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
-        Thu, 19 Nov 2026 09:50:08 -0800 (PST)
+        Thu, 19 Nov 2026 09:50:09 -0800 (PST)
 From: Arthur Heymans <arthur@aheymans.xyz>
 To: linux-wireless@vger.kernel.org,
 	Johannes Berg <johannes@sipsolutions.net>
@@ -90,10 +92,12 @@ Cc: Rob Herring <robh@kernel.org>,
 	Solomon Peachy <pizza@shaftnet.org>,
 	linux-kernel@vger.kernel.org,
 	Arthur Heymans <arthur@aheymans.xyz>
-Subject: [PATCH wireless-next 00/10] wifi: cw1200: add XRadio XR819 support
-Date: Thu, 19 Nov 2026 18:49:52 +0100
-Message-ID: <20261119175002.458988-1-arthur@aheymans.xyz>
+Subject: [PATCH wireless-next 02/10] wifi: cw1200: check SDD element lengths before reading them
+Date: Thu, 19 Nov 2026 18:49:54 +0100
+Message-ID: <20261119175002.458988-3-arthur@aheymans.xyz>
 X-Mailer: git-send-email 2.56.0
+In-Reply-To: <20261119175002.458988-1-arthur@aheymans.xyz>
+References: <20261119175002.458988-1-arthur@aheymans.xyz>
 X-Mailing-List: linux-wireless@vger.kernel.org
 List-Id: <linux-wireless.vger.kernel.org>
 List-Post: <mailto:linux-wireless@vger.kernel.org>
@@ -105,102 +109,85 @@ Precedence: list
 MIME-Version: 1.0
 Content-Transfer-Encoding: 8bit
 
-The XRadio XR819 is a 2.4 GHz 802.11b/g/n SDIO chip found on Allwinner
-boards such as the Orange Pi Zero. XRadio likely bought the IP from
-ST-Ericsson: the XR819's host interface is based on the WSM interface
-of the CW1x60, and it reports the CW1x60 hardware revision. This series
-therefore adds it to cw1200 rather than adding a new driver.
+SDD elements have byte alignment. Read the PTA and reference clock
+fields with get_unaligned_le16() and reject short elements instead of
+using incomplete board configuration data.
 
-Patches 1-5 fix existing cw1200 bugs. They do not depend on the XR819
-changes and carry Fixes: tags:
+Prepared with OpenAI Codex.
 
-  1  a double debugfs removal on unbind
-  2  SDD elements read without length checks or unaligned access
-  3  SDIO transfers from stack buffers
-  4  GPIO interrupt setup not unwound on error
-  5  mac80211 unregistered after the interrupt is freed, so every
-     unbind of an associated device ends with "stuck in firmware,
-     killing BH"
+Fixes: a910e4a94f69 ("cw1200: add driver for the ST-E CW1100 & CW1200 WLAN chipsets")
+Signed-off-by: Arthur Heymans <arthur@aheymans.xyz>
+---
+ drivers/net/wireless/st/cw1200/sta.c | 26 +++++++++++++++++++-------
+ 1 file changed, 19 insertions(+), 7 deletions(-)
 
-Patches 6-7 add the vendor prefix and a binding for the SDIO function,
-with an optional GPIO interrupt and MAC address. Patches 8-9 add the
-XR819: a first-stage loader written to SRAM before the usual firmware
-download, the SDIO ID 0020:2281, and a card reset on probe so that the
-device can be bound again after an unbind. Patch 10 takes over the
-orphaned driver as Odd Fixes, as I presume someone needs to do it?
-
-Firmware
---------
-The vendor firmware is not redistributable, and it speaks a dialect of
-WSM that cw1200 does not: it reads bits 6-7 of the message ID as an
-interface number where cw1200 puts a link ID, and its TX confirmations
-carry per-rate retry counts in place of the media and queue delays.
-The firmware these patches are tested with therefore comes from a
-reverse-engineering project and speaks the WSM that cw1200 expects.
-The firmware is written in rust and runs on a ARM966E-S core. It
-is licensed MIT OR Apache-2.0 and builds the three files the driver
-requests, xr819/boot_xr819.bin, xr819/fw_xr819.bin and
-xr819/sdd_xr819.bin (this one is pure calibration data).
-Code repo:
-
-  https://github.com/ArthurHeymans/xradio-open-firmware
-
-Documentation on the hardware obtained through reverse engineering and
-black box testing.
-
-  https://arthurheymans.github.io/xradio-open-firmware/
-
-I plan to submit them to linux-firmware once the driver side is
-settled.
-
-Testing
--------
-Tested on an Orange Pi Zero against an Intel peer with WPA2: station,
-access point, a 10-minute traffic soak, and repeated unbind and bind
-with both the SDIO and a GPIO interrupt. SPI is build-tested only, and
-without CW1200 hardware, patches 1-5 are tested on the XR819 only.
-Details:
-https://arthurheymans.github.io/xradio-open-firmware/orange-pi-zero-smoke.html
-
-Tools
------
-The patches were written with AI coding assistants from my instructions:
-OpenAI Codex for patches 1-4 and 6-9, Anthropic Claude for patches 5
-and 10. The assistants also ran the board tests above on my hardware.
-I have reviewed every patch and take responsibility for them.
-
-Arthur Heymans (10):
-  wifi: cw1200: avoid removing the debugfs directory twice
-  wifi: cw1200: check SDD element lengths before reading them
-  wifi: cw1200: bounce SDIO transfers that use stack buffers
-  wifi: cw1200: unwind GPIO interrupt setup on error
-  wifi: cw1200: unregister from mac80211 before freeing the interrupt
-  dt-bindings: vendor-prefixes: add XRadio
-  dt-bindings: net: wireless: add XRadio XR819
-  wifi: cw1200: load the XR819 bootloader into SRAM
-  wifi: cw1200: add XR819 SDIO support
-  MAINTAINERS: add myself for the cw1200 driver
-
- .../bindings/net/wireless/xradio,xr819.yaml   |  49 +++++
- .../devicetree/bindings/vendor-prefixes.yaml  |   2 +
- MAINTAINERS                                   |   4 +-
- drivers/net/wireless/st/cw1200/Kconfig        |   6 +-
- drivers/net/wireless/st/cw1200/cw1200.h       |   9 +
- drivers/net/wireless/st/cw1200/cw1200_sdio.c  | 200 ++++++++++++++----
- drivers/net/wireless/st/cw1200/cw1200_spi.c   |   2 +
- drivers/net/wireless/st/cw1200/debug.c        |  19 +-
- drivers/net/wireless/st/cw1200/debug.h        |   1 -
- drivers/net/wireless/st/cw1200/fwio.c         |  67 +++++-
- drivers/net/wireless/st/cw1200/fwio.h         |   3 +
- drivers/net/wireless/st/cw1200/hwio.h         |   1 +
- drivers/net/wireless/st/cw1200/main.c         |  50 ++++-
- drivers/net/wireless/st/cw1200/sta.c          |  26 ++-
- include/linux/mmc/sdio_ids.h                  |   1 +
- 15 files changed, 361 insertions(+), 79 deletions(-)
- create mode 100644 Documentation/devicetree/bindings/net/wireless/xradio,xr819.yaml
-
-
-base-commit: e1dd8486807c1acf9551250b7f81e116a21e6ad6
+diff --git a/drivers/net/wireless/st/cw1200/sta.c b/drivers/net/wireless/st/cw1200/sta.c
+index 5d8eaa700779..db9f0c4a07aa 100644
+--- a/drivers/net/wireless/st/cw1200/sta.c
++++ b/drivers/net/wireless/st/cw1200/sta.c
+@@ -11,6 +11,7 @@
+ #include <linux/firmware.h>
+ #include <linux/module.h>
+ #include <linux/etherdevice.h>
++#include <linux/unaligned.h>
+ 
+ #include "cw1200.h"
+ #include "sta.h"
+@@ -1072,28 +1073,34 @@ static int cw1200_parse_sdd_file(struct cw1200_common *priv)
+ 	while (p + 2 <= priv->sdd->data + priv->sdd->size) {
+ 		if (p + p[1] + 2 > priv->sdd->data + priv->sdd->size) {
+ 			pr_warn("Malformed sdd structure\n");
+-			return -1;
++			return -EINVAL;
+ 		}
+ 		switch (p[0]) {
+ 		case SDD_PTA_CFG_ELT_ID: {
+ 			u16 v;
++
+ 			if (p[1] < 4) {
+ 				pr_warn("SDD_PTA_CFG_ELT_ID malformed\n");
+-				ret = -1;
+-				break;
++				return -EINVAL;
+ 			}
+-			v = le16_to_cpu(*((__le16 *)(p + 2)));
++			v = get_unaligned_le16(p + 2);
+ 			if (!v)  /* non-zero means this is enabled */
+ 				break;
+ 
+-			v = le16_to_cpu(*((__le16 *)(p + 4)));
++			v = get_unaligned_le16(p + 4);
+ 			priv->conf_listen_interval = (v >> 7) & 0x1F;
+ 			pr_debug("PTA found; Listen Interval %d\n",
+ 				 priv->conf_listen_interval);
+ 			break;
+ 		}
+ 		case SDD_REFERENCE_FREQUENCY_ELT_ID: {
+-			u16 clk = le16_to_cpu(*((__le16 *)(p + 2)));
++			u16 clk;
++
++			if (p[1] < sizeof(clk)) {
++				pr_warn("SDD reference frequency malformed\n");
++				return -EINVAL;
++			}
++			clk = get_unaligned_le16(p + 2);
+ 			if (clk != priv->hw_refclk)
+ 				pr_warn("SDD file doesn't match configured refclk (%d vs %d)\n",
+ 					clk, priv->hw_refclk);
+@@ -1147,7 +1154,12 @@ int cw1200_setup_mac(struct cw1200_common *priv)
+ 			pr_err("Can't load sdd file %s.\n", priv->sdd_path);
+ 			return ret;
+ 		}
+-		cw1200_parse_sdd_file(priv);
++		ret = cw1200_parse_sdd_file(priv);
++		if (ret) {
++			release_firmware(priv->sdd);
++			priv->sdd = NULL;
++			return ret;
++		}
+ 	}
+ 
+ 	cfg.dpdData = priv->sdd->data;
 -- 
 2.56.0
 
