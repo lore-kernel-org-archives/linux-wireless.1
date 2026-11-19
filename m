@@ -1,17 +1,17 @@
 Authentication-Results: smtp.subspace.kernel.org; arc=pass header.oldest-pass=0 smtp.remote-ip=205.220.184.10
 ARC-Seal: i=2; d=subspace.kernel.org; s=arc20261015; a=rsa-sha256; cv=pass;
 	t=1795080234;
-	b=BAuBK+2Eo5v1BSnXH3vXNRw9dJHkByxW9eJS2boScFFPe8NNyX79wVITZY3PnAc+v5jC
-	 K9PO5CKjjuFUrpnNauY4NICBJ9OBDm4lJsOc5oPjDSVr8S0XwHgiZJ0lCrv21KxE9d1nR
-	 o//BngauKnYa3earVIJMziivlJfOdiFbkzESayn+06oPT6rSBfxabaO+ighH8itEIoVnT
-	 OPuG22S+4FW4PXHPx8ud1SvNHkkvTrngyMR7d46Xz1o/JW8m9gK1NOz87vOirc7SHNgi5
-	 H0Oif35Axc3hjU7WEUpjMYE4GWl1YyM842JIVaWAxB9VZr1ntYh7e8FdsxWLg3NNv+Q==
+	b=YJQrxNaxvIs8KoDssXYbVUghtIMmOlK5Nt234uqO0yfm9IBgJhB4keWFfWsU7LI9q+Im
+	 c+Y6TxiH5GfO3b6PbgDAoD1HnRDIVMGooZ2mnNm1UvGqtz0iIdOqi3BdVv6iFb5FDZPMo
+	 X5f/pAlQKvudozy0qkGE91XxTbqK+a34wfi4EEn3n4WK+trNBUOBhgUdxj9HWWuaPRhZA
+	 xaykglbYHuoHSOZHuPMSuUrytKlLbI6OPtNApYUcfJg345qiZ3gSqpLd3Lg8IYIIzgHfP
+	 MnoDnIh9UnICVzDrPguCUj8shzeS5gAgQRZIo0bfrMXIf1Q0DwALuBgHIsatJmtDN+Q==
 ARC-Message-Signature: i=2; d=subspace.kernel.org; s=arc20261015;
 	a=rsa-sha256; c=relaxed/relaxed; t=1795080234;
 	h=DMARC-Filter:Received:DKIM-Signature:Received:DKIM-Signature:
-	 Received:Received:From:Subject:Date:Message-Id:In-Reply-To:References:
-	 Content-Type:Content-Transfer-Encoding:X-B4-Tracking:X-Change-ID:To:
-	 Cc:X-Mailer:X-ClientProxiedBy:MIME-Version:X-MS-PublicTrafficType:
+	 Received:Received:From:Date:Subject:Content-Type:
+	 Content-Transfer-Encoding:Message-Id:References:In-Reply-To:To:Cc:
+	 X-Mailer:X-ClientProxiedBy:MIME-Version:X-MS-PublicTrafficType:
 	 X-MS-TrafficTypeDiagnostic:X-MS-Office365-Filtering-Correlation-Id:
 	 X-MS-Exchange-SenderADCheck:X-MS-Exchange-AntiSpam-Relay:
 	 X-Microsoft-Antispam:X-Microsoft-Antispam-Message-Info:
@@ -41,54 +41,54 @@ ARC-Message-Signature: i=2; d=subspace.kernel.org; s=arc20261015;
 	 X-OrganizationHeadersPreserved:X-Proofpoint-GUID:
 	 X-Proofpoint-Spam-Info:X-Proofpoint-Spam-Details-Enc:
 	 X-Authority-Analysis:X-Proofpoint-ORIG-GUID;
-	bh=eSOkzvHvLkZlOkjNS5gKigfq3xQy7ScxxB1Ud4OJl3Q=;
-	b=A6eHK8b8kP/304OsE7HVoKcblN9TY3YvLHDHrYWq+g5LlK/lz/TiApV5o4AeNcCbGU4Z
-	 n0doFlrOLZJ+9xEN7RQDdOSg7f4EJTF1Cqcvwjl66gVWfoUWCR9KoEz/vC/+niJD2EFIS
-	 LPi25tAQxLjnDbl8pofDsS6mnPybxwl4iMEUUrbQa5LzTE+XKDjrBc2/AL9Iy5ywHLarX
-	 Ji4gAAMa/cTQoCRXZUNTcduQeeGw1H6xPWmaOpaJk+OpzJPGlQwd1xXYwA+J3C0tks3ma
-	 pbaTj8SLOtEJXpqZ/9Bco7ZSKusc8/jfZjCxVtf5dwyv4VcSB0nSbImXNS/kcMlT8kg==
+	bh=0Bmgp71NLgnnd3bTOWoVyAlw6YFw8FFfsZ5hubjs1JY=;
+	b=th2gZMkwBMVFve4fNVfIFXvZoLqW3Mj9jKmkiXU0qQnQlkRYl2yumjRd9eW1GzwyL46B
+	 zjZWchfTKwYFGkZjFhdBJD8XYvpWCdf5JTaF5qzHQpWb42ceQkp6chDqOqaB3rzxLLivW
+	 HYaGxzQg77z8wlf0sgTNKPE8BAQVdP07Ui8Bdz8TLs1W+IOHImmI2yPX5NyuM35PP70/d
+	 GrG57gzBXYWtvijRJ3mOG9N61xBFuIKKLdMsTppSq6n2IM20rAexlq0aWuIO/eurMv7p6
+	 Vs3zgs/vCgub9dIzUWVlp4wwkil37bfxXUMT72+IzAai6qSPqnZSXQ3S95wlMygd3OA==
 ARC-Authentication-Results: i=2; smtp.subspace.kernel.org; 
 	dmarc=pass header.from=westermo.com;
 	spf=pass smtp.mailfrom=westermo.com;
-	dkim=pass header.d=westermo.com header.i=@westermo.com header.a=rsa-sha256 header.s=270620241 header.b=rqlJcjNZ;
-	dkim=pass header.d=beijerelectronicsab.onmicrosoft.com header.i=@beijerelectronicsab.onmicrosoft.com header.a=rsa-sha256 header.s=selector1-beijerelectronicsab-onmicrosoft-com header.b=Kzx6XCuA;
+	dkim=pass header.d=westermo.com header.i=@westermo.com header.a=rsa-sha256 header.s=270620241 header.b="hp/+48Uf";
+	dkim=pass header.d=beijerelectronicsab.onmicrosoft.com header.i=@beijerelectronicsab.onmicrosoft.com header.a=rsa-sha256 header.s=selector1-beijerelectronicsab-onmicrosoft-com header.b="LFKkZn/X";
 	arc=pass header.oldest-pass=0 smtp.remote-ip=205.220.184.10
 Received: from mx07-0057a101.pphosted.com (mx07-0057a101.pphosted.com [205.220.184.10])
 	(using TLSv1.3 with cipher TLS_AES_256_GCM_SHA384 (256/256 bits)
 	 key-exchange X25519 server-signature ECDSA (prime256v1) server-digest SHA256)
 	(No client certificate requested)
-	by smtp.subspace.kernel.org (Postfix) with ESMTPS id B7BED606A324
-	for <linux-wireless@vger.kernel.org>; Thu, 19 Nov 2026 09:23:52 +0000 (UTC)
-DMARC-Filter: OpenDMARC Filter v1.4.2 smtp.subspace.kernel.org B7BED606A324
+	by smtp.subspace.kernel.org (Postfix) with ESMTPS id 9B92B606A32C
+	for <linux-wireless@vger.kernel.org>; Thu, 19 Nov 2026 09:23:53 +0000 (UTC)
+DMARC-Filter: OpenDMARC Filter v1.4.2 smtp.subspace.kernel.org 9B92B606A32C
 Authentication-Results: smtp.subspace.kernel.org; dmarc=pass (p=quarantine dis=none) header.from=westermo.com
 Authentication-Results: smtp.subspace.kernel.org; spf=pass smtp.mailfrom=westermo.com
 Authentication-Results: smtp.subspace.kernel.org;
-	dkim=pass (2048-bit key) header.d=westermo.com header.i=@westermo.com header.a=rsa-sha256 header.s=270620241 header.b=rqlJcjNZ;
-	dkim=pass (1024-bit key) header.d=beijerelectronicsab.onmicrosoft.com header.i=@beijerelectronicsab.onmicrosoft.com header.a=rsa-sha256 header.s=selector1-beijerelectronicsab-onmicrosoft-com header.b=Kzx6XCuA
+	dkim=pass (2048-bit key) header.d=westermo.com header.i=@westermo.com header.a=rsa-sha256 header.s=270620241 header.b=hp/+48Uf;
+	dkim=pass (1024-bit key) header.d=beijerelectronicsab.onmicrosoft.com header.i=@beijerelectronicsab.onmicrosoft.com header.a=rsa-sha256 header.s=selector1-beijerelectronicsab-onmicrosoft-com header.b=LFKkZn/X
 Received: from pps.filterd (m0214197.ppops.net [127.0.0.1])
-	by mx07-0057a101.pphosted.com (8.18.1.12/8.18.1.12) with ESMTP id 6AJ6veSI459461;
-	Thu, 19 Nov 2026 10:23:43 +0100
+	by mx07-0057a101.pphosted.com (8.18.1.12/8.18.1.12) with ESMTP id 6AJ6vbmM459417;
+	Thu, 19 Nov 2026 10:23:45 +0100
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=westermo.com; h=
 	cc:content-transfer-encoding:content-type:date:from:in-reply-to
 	:message-id:mime-version:references:subject:to; s=270620241; bh=
-	eSOkzvHvLkZlOkjNS5gKigfq3xQy7ScxxB1Ud4OJl3Q=; b=rqlJcjNZP4qw2uVK
-	CJv1FbdxFaHheUUtaDxa73+iLsbU6T6HZAfj1fRmoAJzlePvQ5zQ3w4xGpDO+EDv
-	2ToDmqleIGN8vDSOTad217GDFSaLz3En5odqTiPa6fpFXRxtTaN4Hccpb2vNPTSN
-	wYPHyZivt4Ya0ndZuWfmSGJFf+u1XT3uKvEMJbkePaPgF06V+ciJAC0YND6Au23l
-	QuJqcfzIy+1Ke2ZPAvy488xu+1iUIQ/zM5w1uULBRjYqRHv1sziZ7LgFMOY1ePgb
-	CKVAcJQTqNebhOomvSTbilKFPYNwl1rtH1CuVlisEk41Ngt0340Rk7S9Ai3m4m/K
-	hPPkFA==
-Received: from duzpr83cu001.outbound.protection.outlook.com (mail-northeuropeazon11022112.outbound.protection.outlook.com [52.101.66.112])
-	by mx07-0057a101.pphosted.com (PPS) with ESMTPS id 4j1qgbgdfc-1
+	0Bmgp71NLgnnd3bTOWoVyAlw6YFw8FFfsZ5hubjs1JY=; b=hp/+48UfRiEJBMDE
+	NQHlQ7EejRUO9Q1kJyhxzGfFdLoMp6X9noL4ZuGkB7aDH1GosSMlkirbn1b9g/OR
+	j1zXDkao6UzUklwqRqhek9QPX5dqrK/iQ9CjxwL3augdXFZbak1Q9kC5nPfxWcAP
+	Hnb+JfevwrSxkpads9ErEzvi2/NhW63FLgcdUrNuBGYuQA0at4PfZt4gpR+yCKJ2
+	1o+TzIaG0JS+b7jAVeJBd8SHhiNJ7NDkc0J+2WA8kEQomb8nMoIMpopLRSa5E2kM
+	BYR6h2ufdvsNMXTL06ERg0TwbfzkogbyInGYUGiOF1T5dzEh69Zl/kvKj0isuxgu
+	jTkJzg==
+Received: from am0pr83cu005.outbound.protection.outlook.com (mail-westeuropeazon11020112.outbound.protection.outlook.com [52.101.69.112])
+	by mx07-0057a101.pphosted.com (PPS) with ESMTPS id 4j1qgbgdff-1
 	(version=TLSv1.3 cipher=TLS_AES_256_GCM_SHA384 bits=256 verify=NOT key_exchange=secp256r1);
-	Thu, 19 Nov 2026 10:23:42 +0100 (CET)
+	Thu, 19 Nov 2026 10:23:45 +0100 (CET)
 ARC-Seal: i=1; a=rsa-sha256; s=arcselector10001; d=microsoft.com; cv=none;
- b=bZGG4hae9/qRqlIcqundFK7PupDAJALvdl7+BhNmxp0KkNoCAo8jz5cjQgAi2I4fW7vjG8QL2A96rvTaxjQvC3SN4CGhem68W5L1sKiX7v2D0BWpMQDQC3D+/KLASZDLT+f003Ffx6Tj9eMO5PPkKKEcuNYMHlVLvGKzmkqihBSCf93MuHYUrd5ZmzzYNbigqUVSegjuQFpjDo+0x1kIsT8OUoRWhBls0fgvqqunEsBoPMkOyV3GaG9ah6e3ngRoWXxom/rL8YYBe8soQt5gEXawIjgoGyNYZKiCJGrrZqFbq1bP5fp0RYsJL2zG0RRSLmVzSpAZsSjqpMZbUzDAFA==
+ b=DvP0USB+BbgezEzkNc07uBQadRE6uOd/uOpFyJra3zp6LwCfvWDFS2S0uDsFd7SoBikcVdVxWrLDNljiSXz3FY5KU7moVgzNhwLJvIvTy/NPuD6vOjhbhqzgPL79Bfwgu0pdXiR1zP/gT6jYpY1hwEtvz3gcztpX+aL7CzX4iCRsWTIKpKbVZTjkEDnSt1+kh+lvqmf7mzcmW/+jFbHTGqUfpBoy7t+6lNRtKY9QtXWVZhy0DCRIU3U+aU+Hjp8mWfc9K3Jd2rvUAl5ijLSjG3KMEN5K1IwusNITyujCNYjimEyTcQX1SSbhD67/FXYqc43u1pRYdoYCHleio3HWiA==
 ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=microsoft.com;
  s=arcselector10001;
  h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-AntiSpam-MessageData-ChunkCount:X-MS-Exchange-AntiSpam-MessageData-0:X-MS-Exchange-AntiSpam-MessageData-1;
- bh=eSOkzvHvLkZlOkjNS5gKigfq3xQy7ScxxB1Ud4OJl3Q=;
- b=XiRKsjHpgb7DP+zu/ULnd8gHI42f/CYKw5dkNDNpIJ36RE+FiG3y+Kclwy0Qpb1k3Q2PYuJZBSFlLUHI+9uVtwZF7WH/EqegADvdJdByCS3i0uhybIfXH6WBlLN88UhOLlBEaT7N38PKx4U9tr6BAJWKWj6Xw98x3SiCypGJ27ydDnKXYoTdjRhBTPrIIAcWiOysuuOOACaJlvmZJtgOD5qjSGgeiNOiFAD5HiFDc5WyOcdHUs1QiJDW7B58/pA4+rZscNxuYcIwc716wXLFEDprnEggTPWUnENHQAnLK2Hl8rVHlO8ZvtZMNTQ5iRgCK0X+Jj2wan0Tc0+fafj21w==
+ bh=0Bmgp71NLgnnd3bTOWoVyAlw6YFw8FFfsZ5hubjs1JY=;
+ b=gzHR0A+1ciEPPxF87QDwwSSag6jX31oc4Hqe9tRaNbbimFhx5tBKshxdOpjFQXqBeOWCBHel+ltmS9SIxKcYSI738/B1HnYhy5JjxqQvspDIq474NRg5VYO1Vp7eRypEzYNLT+kUNVKZRkqG4yXGIA/oH/w96hLR8foeCsOi4XcgUcWTL3cnujMsaokOAYpnRfqTuo2zS19b/catuh2KQMT7JOh8f8oe7/HzBGPb9W01UoGNf1uARjCfig450uE3tGwGEI3CFDJqjOsoFginlg6wkYEjqcm0349rUfD0Ua5bZwaAMIO55R+VpzdNQXCtTMFesum37Bq8CNxDug310A==
 ARC-Authentication-Results: i=1; mx.microsoft.com 1; spf=pass
  smtp.mailfrom=westermo.com; dmarc=pass action=none header.from=westermo.com;
  dkim=pass header.d=westermo.com; arc=none
@@ -96,37 +96,34 @@ DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=beijerelectronicsab.onmicrosoft.com;
  s=selector1-beijerelectronicsab-onmicrosoft-com;
  h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
- bh=eSOkzvHvLkZlOkjNS5gKigfq3xQy7ScxxB1Ud4OJl3Q=;
- b=Kzx6XCuASGsnuIxzxZtkbN1Sm+3lZ+UEpbNVURO0Zm9nXroqp39yt6WYY0dIXet6GfHRHejAeD+nThhOqy8SF4wR+9Ijc/VyVVMCnvfMl7Txs1yGRQsu1qb+wWU8dSQ3r6nrFns2iyEstUMDWjDe7bwmgEB7QYeZT87Z6BOqP4c=
+ bh=0Bmgp71NLgnnd3bTOWoVyAlw6YFw8FFfsZ5hubjs1JY=;
+ b=LFKkZn/XBHCkok4UjQkaiPTULsW4snQSeJHKM/PElTb7BIdEvGEUJuJ454VVtsRWQHCNSPPrDYDBwkZZ2tL4l9kFyj/YSR7LMzRxcMhjED2agDQSF5O0c0brOnsJ8OLR0v/q00tTDaEVWR+UkQMV8mhV5JKPMDZHhrU+yrUFM58=
 Authentication-Results: mx.microsoft.com 1; dkim=none (message not signed)
  header.d=none;dmarc=none action=none header.from=westermo.com;
 Received: from DB9P192MB3090.EURP192.PROD.OUTLOOK.COM (2603:10a6:10:5e2::11)
  by PR3P192MB0893.EURP192.PROD.OUTLOOK.COM (2603:10a6:102:ac::6) with
  Microsoft SMTP Server (version=TLS1_2,
  cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id 15.21.615.14; Thu, 19 Nov
- 2026 09:23:38 +0000
+ 2026 09:23:44 +0000
 Received: from DB9P192MB3090.EURP192.PROD.OUTLOOK.COM
  ([fe80::656d:42d4:bdce:a46b]) by DB9P192MB3090.EURP192.PROD.OUTLOOK.COM
  ([fe80::656d:42d4:bdce:a46b%6]) with mapi id 15.21.0615.015; Thu, 19 Nov 2026
- 09:23:38 +0000
+ 09:23:44 +0000
 From: Alexander Wilhelm <alexander.wilhelm@westermo.com>
-Subject: [PATCH RFC 0/7] wifi: ath11k: support big endian hosts
-Date: Thu, 19 Nov 2026 10:17:52 +0100
-Message-Id: <20261119-ath11k-support-big-endian-hosts-v1-0-c82fe63f9859@westermo.com>
-In-Reply-To: <akYnvuVkIQrPcjkO@FUE-ALEWI-WINX>
-References: <akYnvuVkIQrPcjkO@FUE-ALEWI-WINX>
+Date: Thu, 19 Nov 2026 10:17:54 +0100
+Subject: [PATCH RFC 2/7] wifi: ath11k: convert HTC messages to little
+ endian types
 Content-Type: text/plain; charset="utf-8"
 Content-Transfer-Encoding: 7bit
-X-B4-Tracking: v=1; b=H4sIAAAAAAAC/x3NQQrCMBBA0auUWTvQSbBYt4IH6FZcpHbSDEISM
- lGE0rsbunyb/zdQLsIK126Dwl9RSbGBTh28gosroyzNYHozENGIrgaiN+on51QqzrIix0VcxJC
- 0Ko7e0mWwpvdnC62SC3v5HYcHTPcbPPf9D4E3m5V2AAAA
-X-Change-ID: 20261119-ath11k-support-big-endian-hosts-9f3186320f53
+Message-Id: <20261119-ath11k-support-big-endian-hosts-v1-2-c82fe63f9859@westermo.com>
+References: <akYnvuVkIQrPcjkO@FUE-ALEWI-WINX> <20261119-ath11k-support-big-endian-hosts-v1-0-c82fe63f9859@westermo.com>
+In-Reply-To: <20261119-ath11k-support-big-endian-hosts-v1-0-c82fe63f9859@westermo.com>
 To: Jeff Johnson <jjohnson@kernel.org>
 Cc: linux-wireless@vger.kernel.org, ath11k@lists.infradead.org,
         Alexander Wilhelm <alexander.wilhelm@westermo.com>
 X-Mailer: b4 0.14.3
-X-ClientProxiedBy: OS6P279CA0142.NORP279.PROD.OUTLOOK.COM
- (2603:10a6:e10:3a::16) To DB9P192MB3090.EURP192.PROD.OUTLOOK.COM
+X-ClientProxiedBy: GV3PEPF0001DBF6.SWEP280.PROD.OUTLOOK.COM
+ (2603:10a6:158:400::306) To DB9P192MB3090.EURP192.PROD.OUTLOOK.COM
  (2603:10a6:10:5e2::11)
 X-Mailing-List: linux-wireless@vger.kernel.org
 List-Id: <linux-wireless.vger.kernel.org>
@@ -139,71 +136,71 @@ Precedence: list
 MIME-Version: 1.0
 X-MS-PublicTrafficType: Email
 X-MS-TrafficTypeDiagnostic: DB9P192MB3090:EE_|PR3P192MB0893:EE_
-X-MS-Office365-Filtering-Correlation-Id: 00515112-a871-4912-d071-08df461ecafd
+X-MS-Office365-Filtering-Correlation-Id: 908378a4-4a3f-4986-a819-08df461ece97
 X-MS-Exchange-SenderADCheck: 1
 X-MS-Exchange-AntiSpam-Relay: 0
 X-Microsoft-Antispam:
-	BCL:0;ARA:13230040|23010399003|376014|366016|1800799024|261102123227099003|10067099003|260925021911599003|261026121527099003|11063799006|56012099006|260925022911599003|261026140227099003|261021123027099003|261022105027099003|261021121427099003|260925021311599003|261022075727099003|261028144727099003|261009223027099003|6133799003|22082099003|18002099003;
+	BCL:0;ARA:13230040|23010399003|376014|366016|1800799024|261102123227099003|10067099003|4143699003|11063799006|56012099006|261026140227099003|261021123027099003|261022105027099003|261021121427099003|261028144727099003|261009223027099003|261009221227099003|22082099003|18002099003;
 X-Microsoft-Antispam-Message-Info:
-	pc8HciRS70/FMPUdibPc6yCyqBzZMV8oFSrMlTBxbNCVFtmUVOzVeYED0503wtPujBZJw/PDGz/EPc7lz2FVPa4s0U4NMSAursC1O7Ei1mClBW673LtYIhniDpAuVgkQfhYLXP72rxtJltEM7iaspUaO9+kzluaFJI+q5ydnHsGcg9olE8QWXBGlpzNheWf8Rj6OwhaxCJmnhWWlVkssWau9pKjZElA2tLuZ+2K6ie5VcBD3CS4crrLNUcla3AOQm0GO0wWJOn2yUa9s6LjRRV2EJT94cvYinLJIMnpm7Wnde+r4sUfEq0cADer3+IXhrpy7czR3nEj9TPY2SdbihZLivVTfBqnPIE5s/6kGfseWAAIYxMEwJFM91k6M0OXfvhSg8mQklP1ZEa1qgEcnOvvaJ7IsuqRVO9kZFjbBd/J9/7284IF2ktHmDn7mmPvPzGa/bhNBgJkfCvEHjuggQQRRzMCwL9IASoAvIo4nRyzxKJ7T/vK0WzD/3je3sto4lPYXNlUsiH5v/75TsAKkdPIDn37AoRujsw/E9rzrqJOLqCTCZnHo4UnKrQfktHZoPaI+l+BpvrM+5gYaAuFZvsCx+thKZ4zX4Vu4RwV8N7g=
+	7cxmnITnTClhIZyajBDfsPTTThamdZum63UCxOdYTyigaq1vupHAoOVX8jp6XtGwDGT9BUoLI4BuQbshFSMWcyCLNlgo7n8M8d+5GxVkSQvzXkbhS3V4eW0+w3v9LKIt7YxFlENXhdx/ls39CtvsXzj/j5Ub53cQTF8iNX0AKussF9+T3omWxx0kSN0xA/LSgJFOPaB6M3rGHGjgtvIpxHmH1UESppcDurbWz/vPAmrgzbIb8MMnQSDgnYXljEd4thDq3ylQ5HhPKMDRIhhtdt+54QtLhJbrqDq1tS4q2ImAeFP3uvoTqJ4Bz5E2v9W6/VZXAF58uSFluT58kzR3g/gaeK/MLHeS/Tc3Bsemxium7thYW8BZN7VoJ/euLSN2pMIrh7DGtY/UgcVlCXX7javj8BQOM8RgSpgp8ZaSuINzlHJDMfKbzlJwi+vKWgNaco/Rt1fsCzl1hvRVbHdX4hi8DdhtNn1JrgkRiuwr1wqFZvdNQccILNyWKCFmr+9CCWUF+haAMgnfH5/dHNDBZdYeMHl3n/XSUyT71XeYzZzFtJwi4qSgrviW6qGayCuW9huw9pxUnZvfMRwO5C2sJhQyXSOL1iREM7e2PumhBHREjUWwiTXR9UzD2+ZDFZrwPyG4OJH6Pl6IeqgGTttwElo91XaO4v4ejOAf7X11VxI=
 X-Forefront-Antispam-Report:
-	CIP:255.255.255.255;CTRY:;LANG:en;SCL:1;SRV:;IPV:NLI;SFV:NSPM;H:DB9P192MB3090.EURP192.PROD.OUTLOOK.COM;PTR:;CAT:NONE;SFS:(13230040)(23010399003)(376014)(366016)(1800799024)(261102123227099003)(10067099003)(260925021911599003)(261026121527099003)(11063799006)(56012099006)(260925022911599003)(261026140227099003)(261021123027099003)(261022105027099003)(261021121427099003)(260925021311599003)(261022075727099003)(261028144727099003)(261009223027099003)(6133799003)(22082099003)(18002099003);DIR:OUT;SFP:1102;
+	CIP:255.255.255.255;CTRY:;LANG:en;SCL:1;SRV:;IPV:NLI;SFV:NSPM;H:DB9P192MB3090.EURP192.PROD.OUTLOOK.COM;PTR:;CAT:NONE;SFS:(13230040)(23010399003)(376014)(366016)(1800799024)(261102123227099003)(10067099003)(4143699003)(11063799006)(56012099006)(261026140227099003)(261021123027099003)(261022105027099003)(261021121427099003)(261028144727099003)(261009223027099003)(261009221227099003)(22082099003)(18002099003);DIR:OUT;SFP:1102;
 X-MS-Exchange-AntiSpam-MessageData-ChunkCount: 1
 X-MS-Exchange-AntiSpam-MessageData-0:
-	=?utf-8?B?M2o2bDRodGVERTluVU1NRE16bzl4WG1GQW1EdWJsWU9tZElpOEI2ZFI5RDNJ?=
- =?utf-8?B?U0RtMjlhbFR1WnlseTJsZkdWQWdCdFBLQXR1VXd6akhoZXlEQmsyN2JQb1kx?=
- =?utf-8?B?Rk5JaTBvSGQxcHh3UVd5R0F6YVRnTFlrdUJIQ01CSnRWVGRQVVNRV081M3B4?=
- =?utf-8?B?VmpFZGxzdlR2N1hiT3U0R0VrNGVvdmIrYnBjelgvMGtHWjI2VytUYXFOdFJS?=
- =?utf-8?B?ZStLYzgxYTJqVXNreUltQ2ZCN1gvYkpQTjkvdjNySkpjWUUwOWpsYUNWU1BT?=
- =?utf-8?B?ekdyUW9vZEFZd2FzTXB0ckpzN0JZcHY1TGd1K29sV2JydVJOTnZPVkFxbGdC?=
- =?utf-8?B?RksvZkJlRTRVbVc4VXlMcStjTTJGNlpKVkhUMHpyR2FmYnJsd21icjVwbHVH?=
- =?utf-8?B?NFRmbFd4MldPd3JRY3EwYWsvRlg3WlJZbGk3dHdEbUk5eG13VExQOUtoWHVL?=
- =?utf-8?B?UmViSDFJS1JuMTlCUjdOcWlXQ1ZVelplV1pja28yOGpLMmYraXJvOWZkYzQ0?=
- =?utf-8?B?eCtHZFdZRG5saUJHaUhwT21GOHpVeTBmeXNvYklNZ0RFQ2d6bmtUekcwTUdj?=
- =?utf-8?B?VFJvUU5SSXNLZGhaYnNRZmZDakllaE11b1o5aWhISEFvZmxubktCa3VZM2xl?=
- =?utf-8?B?NHhlT2cwRzJuU0ZpSjJ5Q09CWndXZEdFYnN3UllEanVaZmlyNlNaMDZOSkU4?=
- =?utf-8?B?dEluOFZ0ZmlOTnNzdnpHVGZNRlNMQ2VVY1FONVYvM0R3QkpGdzk5VGpoUGFV?=
- =?utf-8?B?SnNwWVdrNjUzYTdkUkRxUzlZM1pyZHVtUjI0YjFkajByWFdFRGxKekZKa3FP?=
- =?utf-8?B?U1RhTDczSTZRclZFWlhoRXB5QkYveTdQU242WkJIRUZYZlpPZlFJWURkRVJx?=
- =?utf-8?B?SVgzclRidnVyQW1vamlURDF0RFpiYUhtU2tSUzN5RWlGZysxNE04MmlaaUVt?=
- =?utf-8?B?UUZacUZyc3JETnpaNWdZVHlOSkU5RnR6UGMraWZtb2F0SWkzdStOamR3eW5x?=
- =?utf-8?B?akl2M2FiUjZZUngxYXk3MmpDNjNlSkF1WVJjOXQwRzlTMEFKUldOd1RLRFZI?=
- =?utf-8?B?Q0d3YlE3OGYrdFR2SzJpRTFZOWpPVGNwZmJjSHdvR29oSFJ3SGdFTlZRM1py?=
- =?utf-8?B?V05jQS92aUd4MU1FVTI2bXo5SkovWlNzRVFORTk3ZFBRQmtFOWtGZGFVZGRZ?=
- =?utf-8?B?bTM5MncxWlV6YWFXelN4TU8zd2ZtM0Jod2hsTjM3VXVYMG1GMHJJMTdtUitx?=
- =?utf-8?B?WitGY000ck1kWURNRGVhME1PT3Y4TklLTVZ4alR3TTJzUkNuN3cySWFVdzFt?=
- =?utf-8?B?K3hBckpidWVldjZNdEJHTWpNMjBHV09mYlpMdW9aYVdjUzBxMXVZcldETmd4?=
- =?utf-8?B?dUFKdHJxditYN3YyaEV0NEk4U0ZmRDgzTXc4YWxzVkZMV0JYTFZGeVAzZE9B?=
- =?utf-8?B?V2U3U3NOMGpTbUFYUEQzWUlBOGczc1k2Z0xMQlYxL1RDSEEvV0tRZXk0dUY2?=
- =?utf-8?B?Zlg2U0p6dkRWSWNqRituU25kYWlEckJwemtQNngra3IvZTdlOXUwYzNXNmdI?=
- =?utf-8?B?RmtPNUdWYTFIYzFwUTZ1SnpwWHpVR0JhdUJPRWhsTmZnMFo4NnFpeUJ1WGtX?=
- =?utf-8?B?UlpUVFVwODlXclkrejBVQ1FTNU5ueXhaU1lQQnNmZVFSZm1XNTFWU1Jva00w?=
- =?utf-8?B?bzFiR3hxWU1TYnlZd2oybm1IZVBUaWp0OXduVExDbUJJNENxRHNiSWFSUjBz?=
- =?utf-8?B?TC9rNWNxV3VheHBlWDFSWWpKUnFvb0s2Yi90OFdQSXFRajdGTzY2emxvbTNa?=
- =?utf-8?B?cUhvbThVRFBqOVpNR2N3WFBiNmVvMG9iTlhKZUNtTzkyS3FIYkpVWWk4SEtV?=
- =?utf-8?B?TmVIbU5NVUZMQTRCN3d5b1pqTjgrTm9HRFA1Q2ZyM3UvaUZWbnRxOG9OVFdM?=
- =?utf-8?B?WE9Yd0d5YzJSOXgxUVZieFcwK0ZqVUY0dHMvMlRZYUdDSEZUNjZIYWw1cjBY?=
- =?utf-8?B?aU00S3d5NDBuZ01KNGpXMTFxcHZXSE9zc3JIZ3R4cHpieWxjMEcyNCtIVTNH?=
- =?utf-8?B?NjF5akg4ZTlCSjJZb3NPZ2o1eWdMaGJ1RGdublVNZnd2ZUJtSlJ6YzZWdFIv?=
- =?utf-8?B?S2NSRGh0U2M0TmZsZWhscDBzUnd3NXR3SERvbThlRTNjeHNObnFEMjRKWEpz?=
- =?utf-8?B?a2l1WlY3Mm5XZXdPTmZQZVRnQkhXZ3RiNnVUTnNPZUovVXpMRTRnTEJBQ25Y?=
- =?utf-8?B?NE9NMXZYSDd4M1VnNjV2YWRhQWZuRVJROExaVnNXM09VeUNoaW1GZmg4U2VJ?=
- =?utf-8?B?SnA3MkZFWUJXNHYwaHVBNDNyY1VNVXd5MCtSYjdiUnNubVo0bE4wZz09?=
+	=?utf-8?B?TVBobFo4cmU5U2svZTROZ0VsNTNVUTlqSkNmNlF3WFNvNkVjZkpYbFhyMnBM?=
+ =?utf-8?B?TUpLK0ZNbDhNVXl3NVdFSVZoRUNHTG52S3R3dlphY2xpRDhTUmNocGIwNUk5?=
+ =?utf-8?B?clIrZEZyQUhrK2ZzeFhLbjY3Zng5c0FQTDZ6VE03eWo3aHU0SHhNNVdIalFr?=
+ =?utf-8?B?WWc0cFJyOHFrRC8ycTZWM2Z4eU4xeGVDV1JyWHZLVGFmbERJOFRMZ1FzWFRJ?=
+ =?utf-8?B?MGtSRlNRcG1EQVgwU0x0UnNKbWNMcVZucWMzZzRTd0xRaTF2VGhkR01TaW9o?=
+ =?utf-8?B?Y1Vna09IcjFhclJnMmlwazJmZFYrNFV6MDZVYWVmMmdWdk02Sk8rWkp6NzU0?=
+ =?utf-8?B?NE9ZeG8ybXd0a2l0Q1lGMXpiMEJ6aDhudjdBZVF2bFhwdFVPRllRdllta0dT?=
+ =?utf-8?B?djgwL05vT29RNnFvOVpsVk5PSzRkeEVWUExCV3Jacm9rMlY0WXNaV1lPNU1N?=
+ =?utf-8?B?dldqUHdsV0FzWkRKdnAzdlhEOHh1SkV4NjN3WjNRaHdLRGd4cHNDdm5ZcVJF?=
+ =?utf-8?B?YUQ4T3BxeHNxaTRGV0ZEWXpSckhqRi9BS2tuanBSWXdma3VXQ2RFMzFvMlpD?=
+ =?utf-8?B?SmhUOWp4TUhiUUd3YXVaL2hSbVlUREwvVTJJU1dvNTA4aWhDaVdYM2YwTnVa?=
+ =?utf-8?B?cjV2VWlOazh5Y3JnaWx4aDI5WjE4K2ZqNGJXRURpWmxBWE04SlpVQnJxSVEx?=
+ =?utf-8?B?eFp5QzVSTGJhREZkMVhxRExCWktVNUEwZU1ZTGQvMzM0N3VNeUx2c085RnM4?=
+ =?utf-8?B?cXJVWmJqZTZCOWt3a2k5SGV3OEtOb3pROGJ5OEdUZGtKN1RuTG54bGtvNHo2?=
+ =?utf-8?B?QTJjSTRUbHU3MVhqNFc3TUhaUnBLVGtGT0lLanB5cFpTOWZjN0NEUnNLVkRY?=
+ =?utf-8?B?MTFaNUJXQXc3K0Y4K2hWRGV2K2FSSmE4QktNakQ4L3J5bmlqTTJYWjZSYVhw?=
+ =?utf-8?B?Z0ZLQ1VCd1NJenZ6NVkya0cwc0Z1b1ZPeXlyK21RbzVDdmNudlJ2SklSS2RK?=
+ =?utf-8?B?TjhyVUhBMHJsQzRsZWZhRGNhSWg3Z3diK1k2eFdDOHlsQmoxa3UwcEpGVlEy?=
+ =?utf-8?B?dUJRSE5mY1lLRkphRVVMSitLa1U5d0dhL2lxN0V2TnJId2hSS1R2bEJhdWVF?=
+ =?utf-8?B?dzUyQ3I5M0sza3I3UXQvVVpUeWFHRnlmd2hxYjFkcGIrSno3S2J5cUpmWG9B?=
+ =?utf-8?B?RGxVNjAzcDY4VCtyM2xVTTdIRnRKRUorbFAyZkE0cG5hNmVvQVhCQis3UUh5?=
+ =?utf-8?B?ZHJ3SEZQMTc3TnpKd3lBTFViRllEbDF2UjFPNUVyblV5SEN4K1lEWXJnUHI1?=
+ =?utf-8?B?U1ZjTTRaSnhwSHhVRFh1UWtmb29RNk1pTm5GZFZldnh5Q2dxb3VyMGVXd2w5?=
+ =?utf-8?B?MzNZZnBDVXcwdzZ3Z2hQSlZsL1ZUT2V5dzRTbUM5RUJMa0hmVzRNUzlCejh3?=
+ =?utf-8?B?RzhRRVJBSldRSm41UnJSQ2FHYk5KVWRmanhMWmdFWVJtYXBKbUxYRnpzOHQy?=
+ =?utf-8?B?V3hUZWg4MUJSMGRFdTg5QVo5WnJrUHVtNm1rT1hsZ3VLbHhBSjdPUGQycDJR?=
+ =?utf-8?B?alE2TXZGTDdLVThoWDV4anBMV3ZHamlCOUtOLzA5Y1JOZUtBc0xMVmF5US9K?=
+ =?utf-8?B?d2tQTDZaNUswQWNiRlFoNmJ3NndQVXMzTTdDZUZkc3BQa21yblpGZ0JjMmc3?=
+ =?utf-8?B?RU5sdVVVODJsUkxGWTBzd1ozUzU3dXBjdE15K3JQMTRaNmg2RWl0MWtuQmFQ?=
+ =?utf-8?B?RGtnU2haN2tXNlhmbklWaTBhcnNmMit4REFjd2dHSHNESUR4NzZpOU1qOE5Q?=
+ =?utf-8?B?S0pwNUdKWVd1L1V1cFNXcEp5YTROOFovTmRoVVpwVnhKbktUNC83NlB0TjN6?=
+ =?utf-8?B?eElhUEVyK3E5L1BMQVcwQkw1aGZQdUlFY0YyKzBGNFFXQmgzT252YWN2YndD?=
+ =?utf-8?B?T3c5Y0tQcm5mV09UYXBDYW9kZzJKOWMxWFVaT3luQWE1a2lWeVRSR1RWbG96?=
+ =?utf-8?B?eWxTUkRKaVI1OHJyaUpVUm4rM0JKMDY2RnFPV3BRaWxScitYaFB4Y05CN0NF?=
+ =?utf-8?B?U3RZRE9rSlpxd2xYVTg1YXlhVlk5U2pQcWpGVVVoZWtKeG0wT0ZHYXlmYml0?=
+ =?utf-8?B?Tjk4VU5JSnVXREpwdFpUSStXcENJYjJKdFhMVjh0clk1MDdYY0NkanQ4Sk9O?=
+ =?utf-8?B?cStkajZHZVZOL0hLZmZnS3FWSnJzM2N6ZnhtdnNFL3I3NTIxc0JadkJ4TFJT?=
+ =?utf-8?B?Ukd3djdsT211NGM1ejZYMmtEVWJQdm1mSDhoU05EcWEySGJraUF6QTdzUjJ0?=
+ =?utf-8?B?SFluU2NRK0tlc2JZQm1MSWtsUmNCdTdSVDBmVlgzUEsxaVNUaUljQT09?=
 X-Exchange-RoutingPolicyChecked:
-	keJ6PGKKtQ9XfLk1ur0ERl2qUjgxefOyHOk1Y9aXcELdRrzABiOnLe/yzdBXiJ/cnIW8tNoxQ5XhjdNXOFBMVsPMlHcArnKDOp8/PzR/H0RYdzW/ba+1s9bXN4uBntYZWBw/3nCTQkj1v1PNzXGR6tUnv6c6SxFZl9QyxvRR8s/fTDKkXTCx7s+K+6ChU8nKvoppbr9Y4Yw2Qe7Vb2dK/NBbtHNCN0q/dfzR52yIwu4jRRyP+aNLPbeiyNhaZzlUKYS7Y9ssj6BC7YV5X//82ewXg27vfMkcvL5/+N4caNGpy/MX3oVoCgwjLAeypqkw1QGw5lwToc/QxYyaB+zbXg==
+	fmHOMaEfWW8C3jXQQmayVjOa1LY6WVf16j7SDT0iEpgGhYgGcJaAVEvwxYsdua4HzktHG69RTAzu4KDnmmt5G2BblE/+qJ7SCbZIgKRzAihy0/OZrvCSORDr4bNtBUaZx5Da3xujSpl2E5gjZQnz7zY0Pd4cqdudqhx/Pwbl8yGZEaSJOe+kjxD24eFavMGfA/wYNiOItPG4s6SGmUz8h3xgD1xlPEzxTfZ+Sccotcc0xni5uEOccgpEzP9V+VZ9oYrNgL4egWiCkp0mInrxFvNrus+FdsFopEj26MwtaEM+nHS2Vu5Ly/YmrLh8U9V36SCjIP7taEAGCb5Db9eRsg==
 X-MS-Exchange-AntiSpam-ExternalHop-MessageData-ChunkCount: 1
 X-MS-Exchange-AntiSpam-ExternalHop-MessageData-0:
-	0O0TYaz0lKAb38UXcIAJ/lSZh88eDfjFCCsWo+oMFRb+NOH07N6xiauBTTpB0tKpdShp0wHvGLXRQXGoFFCRYdESKMASAyFehfNfyFpbNc5Ijenp/kj4woToeu2zX9IAaPugmD7FfH9694hBkVF/H05Q+o45vHMjqEB7pJ0pVcluUWvrhpCD+1VxWOK1iAZgcbAj/WjvAVPNA7jO6U8lwAob2FxUYDasv0zaTYlkghGty9fDZD9r2Z3UuixnV9sp597SusaSCMSBWKJ3xMSeLIf82X1tEu/8z1rR1ijlHFGABIObGTPkKc3/Ejl2kOdUAHG4gQsdFZUDBa4t9Tg37cr1gfIgC64qrl7FfJtukUVhCmKh1E/8FqXBoj5U0rexCEFnTQGtPbRPpZcXtDsnsc+RUoLHDXqFyVm5d6P80t3iDejEp8wtEJ8qwWcAf17dGLfj494i6XV55ZrFa/3mlHAzSzu98RV29xYIYkgqCtBnNcUt8hpwQPW0Z4xq1BrkGcNJgkJn+YDi7Tfn8/D1K80sT6lqnRn0VZCKS2qBVeZ+kkIkQ3TrPMCt0FftBMzAF3tLMmj/GW7pflc7r4DdmvergaK20nAz1Lm/AR93yGIKtIU2rj8usEZOE6ZK6l/m
+	iHSQJEC7tw3EtYyR73qvttQhnSmY/axLiLi/AM10D73PzbSOrgLJDMUADAWNW/SeCsVzIuysf8ZFZMYDWBawEtMLSBlwexDaFkZU1hkneAVuNyLDjM3jbMRrZqX3SCL16cAgBZt/vAkoVupZb8oc8slLzh+sJ5F8cRemCZN7YC0Nv/X7GZ3L89r1AcTqOWl13olrp4WkwTsYjicCsqciN3/pLV3Zgiui/ga/bBtA3/3NtBJcwcFffX/eQSHlWsnlr5G6SQsbEni8xSUPZczmIWXDJcI1B2mleTew7qB9SgG33Xwky2t7VHB0lkLLeTnBVGJ0Pew3zApL9xMQImgjj43Jg/pthL8MEZUXVn565fI1WMkss9J0Sxc+wditn8FCRyj1CcCw1omqon+hn6yWLp/gQMCn/SCxcaH6Bpy3O6RZQdtKgx1sKTbjXLEW9SbaI9s2y4skCJOAB/sz4cOh1UX+NrTPhhoYATkyduaWwig6Sd94bmokIig8gVPJhN0bp+FpxvI1jJe6FMxhLKncSi3VUc0IJqVRESzHXXd+YxjVxDiJL6ktV0ml8SZJhIFl9gl/0ffTzhuJGKu8oRvOS7aIvUDcxatl7M0/c/enSt1zZtnFoKeKEPH33Z8+Bh4K
 X-OriginatorOrg: westermo.com
-X-MS-Exchange-CrossTenant-Network-Message-Id: 00515112-a871-4912-d071-08df461ecafd
+X-MS-Exchange-CrossTenant-Network-Message-Id: 908378a4-4a3f-4986-a819-08df461ece97
 X-MS-Exchange-CrossTenant-AuthSource: DB9P192MB3090.EURP192.PROD.OUTLOOK.COM
 X-MS-Exchange-CrossTenant-AuthAs: Internal
-X-MS-Exchange-CrossTenant-OriginalArrivalTime: 19 Nov 2026 09:23:37.9737
+X-MS-Exchange-CrossTenant-OriginalArrivalTime: 19 Nov 2026 09:23:44.0426
  (UTC)
 X-MS-Exchange-CrossTenant-FromEntityHeader: Hosted
 X-MS-Exchange-CrossTenant-Id: 4b2e9b91-de77-4ca7-8130-c80faee67059
 X-MS-Exchange-CrossTenant-MailboxType: HOSTED
-X-MS-Exchange-CrossTenant-UserPrincipalName: UMcmdeyG0dOo/gJVfxvHiw6OX8gwxL2RlkTTyGe0DUqFGNsCLgCiOVJAdSGDILbadYvKpve1cfWXU/yMxKD78g==
+X-MS-Exchange-CrossTenant-UserPrincipalName: 9XPWoZOr2DNuCqQKwNlI8OssSAQq2m7TKdh34RuhvPsC8L5E9Bitj0pDvrfILMjbjGNJuyNZg3EPxYTXb+m+nA==
 X-MS-Exchange-Transport-CrossTenantHeadersStamped: PR3P192MB0893
 X-MS-Exchange-CrossPremises-AuthSource: DB9P192MB3090.EURP192.PROD.OUTLOOK.COM
 X-MS-Exchange-CrossPremises-AuthAs: Internal
@@ -218,103 +215,318 @@ X-MS-Exchange-CrossPremises-Antispam-ScanContext:
 X-MS-Exchange-CrossPremises-SCL: 1
 X-MS-Exchange-CrossPremises-Processed-By-Journaling: Journal Agent
 X-OrganizationHeadersPreserved: PR3P192MB0893.EURP192.PROD.OUTLOOK.COM
-X-Proofpoint-GUID: SdVqk4UIsZSEKkkn898J-m5ytxOYXfhU
-X-Proofpoint-Spam-Info: AW1haW4tMjYxMTE5MDAzNyBTYWx0ZWRfXzikWmqKtK3iw
- GmVHKSSgqyKBoV+vT5EKuGH0TEr35dSYte1HCLTFJVCoNsGb1T/8ZP7cf3A/TJbO4kqSBHUQySw
- PZl6Jq4SQELHjkWsRDUken9Wz/2J8B8=
-X-Proofpoint-Spam-Details-Enc: AW1haW4tMjYxMTE5MDAzNyBTYWx0ZWRfX0EYRIeBNvyZB
- tr7vVW2EB4zEAmMf3lht0dgIs8NCylkE67sizr6aipVVYc45aV/gTWy7MhdWgq0nUfhf1B2mpFR
- k00ho0CV0zqOmT7zcyzrHk0mipzVncaF/+EXz92mpLvw6aRAeZaMa2n9irYd4+2ViweetGgaoPm
- HOQZkrjre0r2PQA3Xd92jZcez3zxGJbLMpAk/yeEQk0peHncleRp00k/TGj5hkXwEPXFidPA3py
- /knwnYsAA/qQXQH+XzUGtmyIpzVwFU4zsJfdUNSqdl0d5QAfpPMs9XXuSGv2GIkNtYvAH+GyqGj
- pWQz50z1Fuya2t312schfcmDUn9Fpv9XMfhFXTGOrmU9xyF6OCub+LY3G2mqr9qkOLx6jqG+xB+
- F8RXd3vXSSemyjmBy5Nt2WmhyQt0XA0qaALiBzJtJMDyjnCJq94AtT8onc84hIObPDiLOLc2+6i
- mBP/dfHkMb2OKZ3k2ZA==
-X-Authority-Analysis: v=2.4 cv=e6KT2qp/ c=1 sm=1 tr=0 ts=6afec01e cx=c_pps
- a=yfNaQ/2DOX43yGgd4xgpDA==:117 a=6eWqkTHjU83fiwn7nKZWdM+Sl24=:19
+X-Proofpoint-GUID: aHk0JV1ATuZD-FWmwuCZ70SxFA6eaifF
+X-Proofpoint-Spam-Info: AW1haW4tMjYxMTE5MDAzNyBTYWx0ZWRfX/qedaMofVngF
+ P4ANO1yzer7cYZ+WFHWqbQiAs4MYI/pQASp9sJ9sX3RgfHyHF35qew5IB8YauatWWlKAEiEiKSv
+ rKSPC53zD/cK9S8l3zhNwiWVH306mCI=
+X-Proofpoint-Spam-Details-Enc: AW1haW4tMjYxMTE5MDAzNyBTYWx0ZWRfX9LHV03rQdpFD
+ lby23IRIJ1ixkvMCDOJsj4ffRsxwEA+dR7sL5QAu5XJugQRubtrBXoFv2t3jheNp1HAXNuDxaCM
+ T72FXUdwGl2L8XQxwThmZU6SlneFNH5pyrTPlqVhBcMUO7H2ryB+HfdMoVxy/+qRVzy3UpwH9jd
+ bTGv12AfFdJqAphu7pS5t4XnJGxEbn3d5V2iwYT1nTKnlZnmVw+QlJQ4OplIM180ScnXzEvc91+
+ npjusJYJcCAvyZPx7l0pCDDncitkTyQpYFUTpi93Yu7hY+VjLDw6GXfq7LO8uDk6Rjg4+t1+8Gv
+ LwXAw+HdfSI1qyXNBxGUbCIm5QcMeDFSb2oNOz/cdnzIb4aouZhpTR/WN8CYEKF2XZ4ejH8pet9
+ EPVRCM8wC8SBpofla2EhK7BvWHupBjZc8cQNBAFDVqGBM92CJUbF/JEJwMpRpm+2qM0MyO/1RZA
+ 6M/OONdpBh46r1oNjKg==
+X-Authority-Analysis: v=2.4 cv=e6KT2qp/ c=1 sm=1 tr=0 ts=6afec021 cx=c_pps
+ a=Wl/vruDC58w1PVykjF/zIA==:117 a=6eWqkTHjU83fiwn7nKZWdM+Sl24=:19
  a=z/mQ4Ysz8XfWz/Q5cLBRGdckG28=:19 a=lCpzRmAYbLLaTzLvsPZ7Mbvzbb8=:19
  a=xqWC_Br6kY4A:10 a=IkcTkHD0fZMA:10 a=zJRp6_cAMcgA:10 a=8gLI3H-aZtYA:10
  a=VkNPw1HP01LnGYTKEx00:22 a=tr3XZvuDWTETL0Uaxejn:22 a=8ys4xmT3Mru1TjC2zVq1:22
- a=VwQbUJbxAAAA:8 a=N9GNhs4bAAAA:8 a=wzxbn169AbrpDypWWU0A:9 a=QEXdDO2ut3YA:10
+ a=N9GNhs4bAAAA:8 a=eCwy-lng9wtVnUzYFvkA:9 a=QEXdDO2ut3YA:10
  a=PZhj9NlD-CKO8hVp7yCs:22
-X-Proofpoint-ORIG-GUID: SdVqk4UIsZSEKkkn898J-m5ytxOYXfhU
+X-Proofpoint-ORIG-GUID: aHk0JV1ATuZD-FWmwuCZ70SxFA6eaifF
 
-This RFC series follows up on the discussion in [1]. It moves all byte
-swapping for big endian hosts from the target into the ath11k host driver,
-the same approach ath12k already uses.
+The HTC header and control messages exchanged with the firmware are defined
+as little endian, but the corresponding structures use host endian u32
+fields accessed with FIELD_PREP()/FIELD_GET(). On big endian hosts this
+results in wrong endpoint IDs, payload lengths and message IDs, so HTC
+setup with the firmware fails.
 
-Today ath11k asks the target to swap copy engine data
-(CE_ATTR_BYTE_SWAP_DATA) and SRNG ring contents (HAL_SRNG_FLAGS_*_SWAP). In
-my tests this did not work, and I could not find the root cause. As Kalle
-mentioned in [1], the firmware branches seem to handle the swapping
-differently. In practice the upstream driver never worked on big endian
-hosts.
-
-The series disables the hardware swapping and converts all host/target
-structures to __le32 types, using the le32_{get,encode}_bits() and
-{cpu,le32}_to_cpu() helpers. On little endian hosts the conversions are
-no-ops, so the generated code should not change:
-
-  1. remove the CE byte swap
-  2. HTC messages
-  3. HAL CE descriptors
-  4. remaining HAL descriptors and SRNG swap flags
-  5. DP and HTT messages
-  6. WMI and testmode messages
-  7. QMI target CE and service configuration
-
-I am aware of the concerns raised in [1]: the risk of regressions, the
-impact on downstream projects such as QSDK and OpenWrt that carry patches
-on top of ath11k, and the possible performance cost compared to hardware
-swapping. I am sending this as an RFC to discuss whether this direction is
-acceptable for ath11k. I have split the series by subsystem to make the
-review and any downstream rebasing easier.
-
-[1] https://lore.kernel.org/linux-wireless/akYnvuVkIQrPcjkO@FUE-ALEWI-WINX/
+Convert the HTC structures to __le32 and use le32_encode_bits(),
+le32_get_bits() and cpu_to_le32() for all accesses. Adjust the format
+specifiers in the debug and warning messages accordingly, since
+le32_get_bits() returns u32 instead of unsigned long.
 
 Signed-off-by: Alexander Wilhelm <alexander.wilhelm@westermo.com>
 ---
-Alexander Wilhelm (7):
-      wifi: ath11k: remove CE byte swap for big endian hosts
-      wifi: ath11k: convert HTC messages to little endian types
-      wifi: ath11k: convert HAL CE descriptors to little endian types
-      wifi: ath11k: convert remaining HAL descriptors to little endian types
-      wifi: ath11k: convert DP and HTT messages to little endian types
-      wifi: ath11k: convert WMI and testmode messages to little endian types
-      wifi: ath11k: fix endianness of QMI target CE and service configuration
+ drivers/net/wireless/ath/ath11k/htc.c | 83 +++++++++++++++++++++++++++++++++++++++++------------------------------------------
+ drivers/net/wireless/ath/ath11k/htc.h | 30 +++++++++++++++---------------
+ 2 files changed, 56 insertions(+), 57 deletions(-)
 
- drivers/net/wireless/ath/ath11k/ce.c                |   19 -
- drivers/net/wireless/ath/ath11k/ce.h                |    6 -
- drivers/net/wireless/ath/ath11k/core.h              |    4 +-
- drivers/net/wireless/ath/ath11k/dbring.c            |   44 +-
- drivers/net/wireless/ath/ath11k/debugfs.c           |    2 +-
- drivers/net/wireless/ath/ath11k/debugfs_htt_stats.c | 2229 +++++++++++++++++++++++++++++++++++++++++------------------------------------
- drivers/net/wireless/ath/ath11k/debugfs_htt_stats.h | 1638 +++++++++++++++++++++++++++++----------------------------
- drivers/net/wireless/ath/ath11k/dp.h                |  200 +++----
- drivers/net/wireless/ath/ath11k/dp_rx.c             |  270 +++++-----
- drivers/net/wireless/ath/ath11k/dp_tx.c             |  217 ++++----
- drivers/net/wireless/ath/ath11k/hal.c               |   96 ++--
- drivers/net/wireless/ath/ath11k/hal.h               |    8 +-
- drivers/net/wireless/ath/ath11k/hal_desc.h          |  258 ++++-----
- drivers/net/wireless/ath/ath11k/hal_rx.c            |  712 +++++++++++++------------
- drivers/net/wireless/ath/ath11k/hal_rx.h            |   14 +-
- drivers/net/wireless/ath/ath11k/hal_tx.c            |  106 ++--
- drivers/net/wireless/ath/ath11k/htc.c               |   83 ++-
- drivers/net/wireless/ath/ath11k/htc.h               |   30 +-
- drivers/net/wireless/ath/ath11k/hw.c                |    9 +-
- drivers/net/wireless/ath/ath11k/p2p.c               |   30 +-
- drivers/net/wireless/ath/ath11k/qmi.c               |   24 +-
- drivers/net/wireless/ath/ath11k/qmi.h               |   16 +-
- drivers/net/wireless/ath/ath11k/spectral.c          |    8 +-
- drivers/net/wireless/ath/ath11k/testmode.c          |   42 +-
- drivers/net/wireless/ath/ath11k/wmi.c               | 2834 ++++++++++++++++++++++++++++++++++++++++++++++++++++----------------------------------------------
- drivers/net/wireless/ath/ath11k/wmi.h               | 2013 ++++++++++++++++++++++++++++++++++-----------------------------------
- 26 files changed, 5635 insertions(+), 5277 deletions(-)
----
-base-commit: e7f0f07b3267676087a62949a35ae919a9a8e218
-change-id: 20261119-ath11k-support-big-endian-hosts-9f3186320f53
+diff --git a/drivers/net/wireless/ath/ath11k/htc.c b/drivers/net/wireless/ath/ath11k/htc.c
+index 07fc959ed74c..99d4dd3fc5dd 100644
+--- a/drivers/net/wireless/ath/ath11k/htc.c
++++ b/drivers/net/wireless/ath/ath11k/htc.c
+@@ -58,16 +58,16 @@ static void ath11k_htc_prepare_tx_skb(struct ath11k_htc_ep *ep,
+ 	hdr = (struct ath11k_htc_hdr *)skb->data;
+ 
+ 	memset(hdr, 0, sizeof(*hdr));
+-	hdr->htc_info = FIELD_PREP(HTC_HDR_ENDPOINTID, ep->eid) |
+-			FIELD_PREP(HTC_HDR_PAYLOADLEN,
+-				   (skb->len - sizeof(*hdr)));
++	hdr->htc_info = le32_encode_bits(ep->eid, HTC_HDR_ENDPOINTID) |
++			le32_encode_bits((skb->len - sizeof(*hdr)),
++					 HTC_HDR_PAYLOADLEN);
+ 
+ 	if (ep->tx_credit_flow_enabled)
+-		hdr->htc_info |= FIELD_PREP(HTC_HDR_FLAGS,
+-					    ATH11K_HTC_FLAG_NEED_CREDIT_UPDATE);
++		hdr->htc_info |= le32_encode_bits(ATH11K_HTC_FLAG_NEED_CREDIT_UPDATE,
++						  HTC_HDR_FLAGS);
+ 
+ 	spin_lock_bh(&ep->htc->tx_lock);
+-	hdr->ctrl_info = FIELD_PREP(HTC_HDR_CONTROLBYTES1, ep->seq_no++);
++	hdr->ctrl_info = le32_encode_bits(ep->seq_no++, HTC_HDR_CONTROLBYTES1);
+ 	spin_unlock_bh(&ep->htc->tx_lock);
+ }
+ 
+@@ -295,7 +295,7 @@ void ath11k_htc_rx_completion_handler(struct ath11k_base *ab,
+ 	hdr = (struct ath11k_htc_hdr *)skb->data;
+ 	skb_pull(skb, sizeof(*hdr));
+ 
+-	eid = FIELD_GET(HTC_HDR_ENDPOINTID, hdr->htc_info);
++	eid = le32_get_bits(hdr->htc_info, HTC_HDR_ENDPOINTID);
+ 
+ 	if (eid >= ATH11K_HTC_EP_COUNT) {
+ 		ath11k_warn(ab, "HTC Rx: invalid eid %d\n", eid);
+@@ -304,7 +304,7 @@ void ath11k_htc_rx_completion_handler(struct ath11k_base *ab,
+ 
+ 	ep = &htc->endpoint[eid];
+ 
+-	payload_len = FIELD_GET(HTC_HDR_PAYLOADLEN, hdr->htc_info);
++	payload_len = le32_get_bits(hdr->htc_info, HTC_HDR_PAYLOADLEN);
+ 
+ 	if (payload_len + sizeof(*hdr) > ATH11K_HTC_MAX_LEN) {
+ 		ath11k_warn(ab, "HTC rx frame too long, len: %zu\n",
+@@ -319,7 +319,7 @@ void ath11k_htc_rx_completion_handler(struct ath11k_base *ab,
+ 	}
+ 
+ 	/* get flags to check for trailer */
+-	trailer_present = (FIELD_GET(HTC_HDR_FLAGS, hdr->htc_info)) &
++	trailer_present = le32_get_bits(hdr->htc_info, HTC_HDR_FLAGS) &
+ 			  ATH11K_HTC_FLAG_TRAILER_PRESENT;
+ 
+ 	ath11k_dbg(ab, ATH11K_DBG_HTC, "rx ep %d skb %p trailer_present %d\n",
+@@ -328,7 +328,7 @@ void ath11k_htc_rx_completion_handler(struct ath11k_base *ab,
+ 	if (trailer_present) {
+ 		u8 *trailer;
+ 
+-		trailer_len = FIELD_GET(HTC_HDR_CONTROLBYTES0, hdr->ctrl_info);
++		trailer_len = le32_get_bits(hdr->ctrl_info, HTC_HDR_CONTROLBYTES0);
+ 		min_len = sizeof(struct ath11k_htc_record_hdr);
+ 
+ 		if ((trailer_len < min_len) ||
+@@ -357,7 +357,7 @@ void ath11k_htc_rx_completion_handler(struct ath11k_base *ab,
+ 	if (eid == ATH11K_HTC_EP_0) {
+ 		struct ath11k_htc_msg *msg = (struct ath11k_htc_msg *)skb->data;
+ 
+-		message_id = FIELD_GET(HTC_MSG_MESSAGEID, msg->msg_svc_id);
++		message_id = le32_get_bits(msg->msg_svc_id, HTC_MSG_MESSAGEID);
+ 
+ 		ath11k_dbg(ab, ATH11K_DBG_HTC, "rx ep %d skb %p message_id %d\n",
+ 			   eid, skb, message_id);
+@@ -394,8 +394,8 @@ void ath11k_htc_rx_completion_handler(struct ath11k_base *ab,
+ 			ath11k_htc_wakeup_from_suspend(ab);
+ 			break;
+ 		default:
+-			ath11k_warn(ab, "ignoring unsolicited htc ep0 event %ld\n",
+-				    FIELD_GET(HTC_MSG_MESSAGEID, msg->msg_svc_id));
++			ath11k_warn(ab, "ignoring unsolicited htc ep0 event %u\n",
++				    le32_get_bits(msg->msg_svc_id, HTC_MSG_MESSAGEID));
+ 			break;
+ 		}
+ 		goto out;
+@@ -556,10 +556,10 @@ int ath11k_htc_wait_target(struct ath11k_htc *htc)
+ 	}
+ 
+ 	ready = (struct ath11k_htc_ready *)htc->control_resp_buffer;
+-	message_id   = FIELD_GET(HTC_MSG_MESSAGEID, ready->id_credit_count);
+-	credit_count = FIELD_GET(HTC_READY_MSG_CREDITCOUNT,
+-				 ready->id_credit_count);
+-	credit_size  = FIELD_GET(HTC_READY_MSG_CREDITSIZE, ready->size_ep);
++	message_id   = le32_get_bits(ready->id_credit_count, HTC_MSG_MESSAGEID);
++	credit_count = le32_get_bits(ready->id_credit_count,
++				     HTC_READY_MSG_CREDITCOUNT);
++	credit_size  = le32_get_bits(ready->size_ep, HTC_READY_MSG_CREDITSIZE);
+ 
+ 	if (message_id != ATH11K_HTC_MSG_READY_ID) {
+ 		ath11k_warn(ab, "Invalid HTC ready msg: 0x%x\n", message_id);
+@@ -635,8 +635,8 @@ int ath11k_htc_connect_service(struct ath11k_htc *htc,
+ 	memset(skb->data, 0, length);
+ 
+ 	req_msg = (struct ath11k_htc_conn_svc *)skb->data;
+-	req_msg->msg_svc_id = FIELD_PREP(HTC_MSG_MESSAGEID,
+-					 ATH11K_HTC_MSG_CONNECT_SERVICE_ID);
++	req_msg->msg_svc_id = le32_encode_bits(ATH11K_HTC_MSG_CONNECT_SERVICE_ID,
++					       HTC_MSG_MESSAGEID);
+ 
+ 	flags |= FIELD_PREP(ATH11K_HTC_CONN_FLAGS_RECV_ALLOC, tx_alloc);
+ 
+@@ -653,9 +653,9 @@ int ath11k_htc_connect_service(struct ath11k_htc *htc,
+ 		disable_credit_flow_ctrl = true;
+ 	}
+ 
+-	req_msg->flags_len = FIELD_PREP(HTC_SVC_MSG_CONNECTIONFLAGS, flags);
+-	req_msg->msg_svc_id |= FIELD_PREP(HTC_SVC_MSG_SERVICE_ID,
+-					  conn_req->service_id);
++	req_msg->flags_len = le32_encode_bits(flags, HTC_SVC_MSG_CONNECTIONFLAGS);
++	req_msg->msg_svc_id |= le32_encode_bits(conn_req->service_id,
++						HTC_SVC_MSG_SERVICE_ID);
+ 
+ 	reinit_completion(&htc->ctl_resp);
+ 
+@@ -675,9 +675,9 @@ int ath11k_htc_connect_service(struct ath11k_htc *htc,
+ 
+ 	/* we controlled the buffer creation, it's aligned */
+ 	resp_msg = (struct ath11k_htc_conn_svc_resp *)htc->control_resp_buffer;
+-	message_id = FIELD_GET(HTC_MSG_MESSAGEID, resp_msg->msg_svc_id);
+-	service_id = FIELD_GET(HTC_SVC_RESP_MSG_SERVICEID,
+-			       resp_msg->msg_svc_id);
++	message_id = le32_get_bits(resp_msg->msg_svc_id, HTC_MSG_MESSAGEID);
++	service_id = le32_get_bits(resp_msg->msg_svc_id,
++				   HTC_SVC_RESP_MSG_SERVICEID);
+ 
+ 	if ((message_id != ATH11K_HTC_MSG_CONNECT_SERVICE_RESP_ID) ||
+ 	    (htc->control_resp_len < sizeof(*resp_msg))) {
+@@ -686,13 +686,13 @@ int ath11k_htc_connect_service(struct ath11k_htc *htc,
+ 	}
+ 
+ 	ath11k_dbg(ab, ATH11K_DBG_HTC,
+-		   "service %s connect response status 0x%lx assigned ep 0x%lx\n",
++		   "service %s connect response status 0x%x assigned ep 0x%x\n",
+ 		   htc_service_name(service_id),
+-		   FIELD_GET(HTC_SVC_RESP_MSG_STATUS, resp_msg->flags_len),
+-		   FIELD_GET(HTC_SVC_RESP_MSG_ENDPOINTID, resp_msg->flags_len));
++		   le32_get_bits(resp_msg->flags_len, HTC_SVC_RESP_MSG_STATUS),
++		   le32_get_bits(resp_msg->flags_len, HTC_SVC_RESP_MSG_ENDPOINTID));
+ 
+-	conn_resp->connect_resp_code = FIELD_GET(HTC_SVC_RESP_MSG_STATUS,
+-						 resp_msg->flags_len);
++	conn_resp->connect_resp_code = le32_get_bits(resp_msg->flags_len,
++						     HTC_SVC_RESP_MSG_STATUS);
+ 
+ 	/* check response status */
+ 	if (conn_resp->connect_resp_code != ATH11K_HTC_CONN_SVC_STATUS_SUCCESS) {
+@@ -702,12 +702,11 @@ int ath11k_htc_connect_service(struct ath11k_htc *htc,
+ 		return -EPROTO;
+ 	}
+ 
+-	assigned_eid = (enum ath11k_htc_ep_id)FIELD_GET(
+-						HTC_SVC_RESP_MSG_ENDPOINTID,
+-						resp_msg->flags_len);
++	assigned_eid = le32_get_bits(resp_msg->flags_len,
++				     HTC_SVC_RESP_MSG_ENDPOINTID);
+ 
+-	max_msg_size = FIELD_GET(HTC_SVC_RESP_MSG_MAXMSGSIZE,
+-				 resp_msg->flags_len);
++	max_msg_size = le32_get_bits(resp_msg->flags_len,
++				     HTC_SVC_RESP_MSG_MAXMSGSIZE);
+ 
+ setup:
+ 
+@@ -725,14 +724,14 @@ int ath11k_htc_connect_service(struct ath11k_htc *htc,
+ 
+ 	/* return assigned endpoint to caller */
+ 	conn_resp->eid = assigned_eid;
+-	conn_resp->max_msg_len = FIELD_GET(HTC_SVC_RESP_MSG_MAXMSGSIZE,
+-					   resp_msg->flags_len);
++	conn_resp->max_msg_len = le32_get_bits(resp_msg->flags_len,
++					       HTC_SVC_RESP_MSG_MAXMSGSIZE);
+ 
+ 	/* setup the endpoint */
+ 	ep->service_id = conn_req->service_id;
+ 	ep->max_tx_queue_depth = conn_req->max_send_queue_depth;
+-	ep->max_ep_message_len = FIELD_GET(HTC_SVC_RESP_MSG_MAXMSGSIZE,
+-					   resp_msg->flags_len);
++	ep->max_ep_message_len = le32_get_bits(resp_msg->flags_len,
++					       HTC_SVC_RESP_MSG_MAXMSGSIZE);
+ 	ep->tx_credits = tx_alloc;
+ 
+ 	/* copy all the callbacks */
+@@ -775,13 +774,13 @@ int ath11k_htc_start(struct ath11k_htc *htc)
+ 	memset(skb->data, 0, skb->len);
+ 
+ 	msg = (struct ath11k_htc_setup_complete_extended *)skb->data;
+-	msg->msg_id = FIELD_PREP(HTC_MSG_MESSAGEID,
+-				 ATH11K_HTC_MSG_SETUP_COMPLETE_EX_ID);
++	msg->msg_id = le32_encode_bits(ATH11K_HTC_MSG_SETUP_COMPLETE_EX_ID,
++				       HTC_MSG_MESSAGEID);
+ 
+ 	if (ab->hw_params.credit_flow)
+ 		ath11k_dbg(ab, ATH11K_DBG_HTC, "using tx credit flow control\n");
+ 	else
+-		msg->flags |= ATH11K_GLOBAL_DISABLE_CREDIT_FLOW;
++		msg->flags |= cpu_to_le32(ATH11K_GLOBAL_DISABLE_CREDIT_FLOW);
+ 
+ 	status = ath11k_htc_send(htc, ATH11K_HTC_EP_0, skb);
+ 	if (status) {
+diff --git a/drivers/net/wireless/ath/ath11k/htc.h b/drivers/net/wireless/ath/ath11k/htc.h
+index 945c409bc08f..76a8fdb3d480 100644
+--- a/drivers/net/wireless/ath/ath11k/htc.h
++++ b/drivers/net/wireless/ath/ath11k/htc.h
+@@ -56,8 +56,8 @@ enum ath11k_htc_rx_flags {
+ };
+ 
+ struct ath11k_htc_hdr {
+-	u32 htc_info;
+-	u32 ctrl_info;
++	__le32 htc_info;
++	__le32 ctrl_info;
+ } __packed __aligned(4);
+ 
+ enum ath11k_htc_msg_id {
+@@ -97,37 +97,37 @@ enum ath11k_htc_conn_svc_status {
+ };
+ 
+ struct ath11k_htc_ready {
+-	u32 id_credit_count;
+-	u32 size_ep;
++	__le32 id_credit_count;
++	__le32 size_ep;
+ } __packed;
+ 
+ struct ath11k_htc_ready_extended {
+ 	struct ath11k_htc_ready base;
+-	u32 ver_bundle;
++	__le32 ver_bundle;
+ } __packed;
+ 
+ struct ath11k_htc_conn_svc {
+-	u32 msg_svc_id;
+-	u32 flags_len;
++	__le32 msg_svc_id;
++	__le32 flags_len;
+ } __packed;
+ 
+ struct ath11k_htc_conn_svc_resp {
+-	u32 msg_svc_id;
+-	u32 flags_len;
+-	u32 svc_meta_pad;
++	__le32 msg_svc_id;
++	__le32 flags_len;
++	__le32 svc_meta_pad;
+ } __packed;
+ 
+ #define ATH11K_GLOBAL_DISABLE_CREDIT_FLOW BIT(1)
+ 
+ struct ath11k_htc_setup_complete_extended {
+-	u32 msg_id;
+-	u32 flags;
+-	u32 max_msgs_per_bundled_recv;
++	__le32 msg_id;
++	__le32 flags;
++	__le32 max_msgs_per_bundled_recv;
+ } __packed;
+ 
+ struct ath11k_htc_msg {
+-	u32 msg_svc_id;
+-	u32 flags_len;
++	__le32 msg_svc_id;
++	__le32 flags_len;
+ } __packed __aligned(4);
+ 
+ enum ath11k_htc_record_id {
 
-Best regards,
 -- 
-Alexander Wilhelm <alexander.wilhelm@westermo.com>
+2.53.0
 
