@@ -1,100 +1,96 @@
-Authentication-Results: smtp.subspace.kernel.org; arc=pass header.oldest-pass=0 smtp.remote-ip=74.125.82.171
-ARC-Seal: i=2; d=subspace.kernel.org; s=arc20261015; a=rsa-sha256; cv=pass;
-	t=1795045699;
-	b=p293w2NlBQUJqcSfKPBEe+CLgYvrqRZnW684OI9u7I0HYptVqN9baRp24Qx6UOwC5hQq
-	 v+xb+OHkmv7on+KW5PYbyYnkBukegWT6aQShGaEMxhUJ4CzlIbBs366F+TRVhQ9xuBQyI
-	 V7VuknOenoSFnhT0QQeCxJMMKeoHFhiDVWWkrjj5NwC33Qb7kNAiZ+DwdaAiIWM3/CWSe
-	 XAIlfeX1oAzYd5jTtnERhrsGf0ySAYCRMSRtCQjSWliUx42iKkLDU4PEqhMKLJt/BhgKc
-	 kjOiYYFVpfjJ345uAQ0gzVct7RKR/KlKogaG3gPUPYo1Uv44qzFm9Yr5U05GMCgmnzQ==
-ARC-Message-Signature: i=2; d=subspace.kernel.org; s=arc20261015;
-	a=rsa-sha256; c=relaxed/relaxed; t=1795045699;
+Authentication-Results: smtp.subspace.kernel.org; arc=none smtp.remote-ip=209.85.219.52
+ARC-Seal: i=1; d=subspace.kernel.org; s=arc20261015; a=rsa-sha256; cv=none;
+	t=1795048147;
+	b=lIEi6Mqj3HKDlXKu6UggaO+yQFoG24H/D+QvxknR8C5O6t+MeBodsB7zVxXa1NCgXkNF
+	 pT4zXA9ZyO8K7KDqsHI+oF7lE+UEoDKTJZ2tMmMZR1OlKFPhZctMMFspxURnVA61X7Vld
+	 bD3SBp6pzQZs+Ri+tNvVoleKKaUX3VN2lveHEnVhYYeYxUIStby5Ee0vF77kU+5N9enX+
+	 e+x40rTboTezveWG1M85l2mx0kcX6yyAZIBWvz0juI0o1RT8GJFV5DeyVDGa/b5pWyBdp
+	 OFfYBVYZMEstLkcQ6Fh8Qg0Wq4a2HoYh1aroqoFx+um8hB88pmMA0pZ9LfH6KrrDazw==
+ARC-Message-Signature: i=1; d=subspace.kernel.org; s=arc20261015;
+	a=rsa-sha256; c=relaxed/relaxed; t=1795048147;
 	h=DMARC-Filter:Received:DKIM-Signature:X-Google-DKIM-Signature:
-	 X-Forwarded-Encrypted:X-Gm-Message-State:X-Gm-Gg:X-Received:
-	 MIME-Version:References:In-Reply-To:From:Date:X-Gm-Features:
-	 Message-ID:Subject:To:Cc:Content-Type;
-	bh=XbA3v0tCDqlnhwaDPt+MfMvUsXTto+/3lQOwBsOTkYU=;
-	b=DpIIdCS5GejlbSZvtbcoXjsCGNt0rBQerB/Ya+p7G3JRP1eMaXJ3kU9N/l7CEZmG2wL6
-	 X5eOrvKLOEzwWoX0rSoe3OrbkyZg259mocO8jTX5Av+JpMjwSv5/fNr30QluqlSpuIt3G
-	 hFxXVZr6VCWZj/4V3Xsb7vbTa9pRQBnyqf9M70gBNHHyk1TlFWXCA2M7pzt8pq3wAaBQW
-	 nCnmD9fmMXU5etE/CpaO4CaYxOctzCsaTXz8BgQlLj/WX8qwssqGPZ5ZczwejSaTU/r3I
-	 /f+c5vqQrGFJ2dNglOebUdKXqxInAZcYrfz42Wb7EBR2aiuedcc+dWa58DtGvixOB8Q==
-ARC-Authentication-Results: i=2; smtp.subspace.kernel.org; 
+	 X-Gm-Message-State:X-Gm-Gg:X-Received:Received:From:To:Cc:Subject:
+	 Date:Message-ID:X-Mailer:In-Reply-To:References:MIME-Version:
+	 Content-Transfer-Encoding;
+	bh=/aJxpNGDocOFUdmsrM2zfm3uFoQrrqPBVAxJfScRpLA=;
+	b=zCki/ziM8VDMhORC5SmQdGgyB6ymF7LqTlMPYOZExqwPipJ6KhsY+fGImul3wcGr57qV
+	 JcjfOQ+2tgQfWex2X3uObrRul71sxyxAbW3m3Jb9juijml1M0p5B/PCznm2bJElPPwwNR
+	 RLLRAnndHyf/NNWIyxjcqRmZNksuMyVrPAKNLHDnmJ2kHao+TIGpquviSxTI07DhEsO4Z
+	 BtWP7eCONEuO5GmLj0edai++RJw4uDuX+GN+ycrP1HrB6HHD2ZEUvSA0gEpr84TGobAw8
+	 6MvvYnaeqmw3KOCxmFIeCsFYUiaYUgNHUSAd05a4PhJ8aunEzH11zTO/C833NhPWMag==
+ARC-Authentication-Results: i=1; smtp.subspace.kernel.org; 
 	dmarc=pass header.from=gmail.com;
 	spf=pass smtp.mailfrom=gmail.com;
-	dkim=pass header.d=gmail.com header.i=@gmail.com header.a=rsa-sha256 header.s=20260707 header.b=qYBkx8us;
-	arc=pass header.oldest-pass=0 smtp.remote-ip=74.125.82.171
-Received: from mail-dy1-f171.google.com (mail-dy1-f171.google.com [74.125.82.171])
+	dkim=pass header.d=gmail.com header.i=@gmail.com header.a=rsa-sha256 header.s=20260707 header.b="FcSNu/61";
+	arc=none smtp.remote-ip=209.85.219.52
+Received: from mail-qv1-f52.google.com (mail-qv1-f52.google.com [209.85.219.52])
 	(using TLSv1.3 with cipher TLS_AES_128_GCM_SHA256 (128/128 bits)
 	 key-exchange X25519 server-signature ECDSA (prime256v1) server-digest SHA256)
 	(No client certificate requested)
-	by smtp.subspace.kernel.org (Postfix) with ESMTPS id 84612606A330
-	for <linux-wireless@vger.kernel.org>; Wed, 18 Nov 2026 23:48:19 +0000 (UTC)
-DMARC-Filter: OpenDMARC Filter v1.4.2 smtp.subspace.kernel.org 84612606A330
+	by smtp.subspace.kernel.org (Postfix) with ESMTPS id 3CDA6606A31C
+	for <linux-wireless@vger.kernel.org>; Thu, 19 Nov 2026 00:29:07 +0000 (UTC)
+DMARC-Filter: OpenDMARC Filter v1.4.2 smtp.subspace.kernel.org 3CDA6606A31C
 Authentication-Results: smtp.subspace.kernel.org; dmarc=pass (p=none dis=none) header.from=gmail.com
 Authentication-Results: smtp.subspace.kernel.org; spf=pass smtp.mailfrom=gmail.com
 Authentication-Results: smtp.subspace.kernel.org;
-	dkim=pass (2048-bit key) header.d=gmail.com header.i=@gmail.com header.a=rsa-sha256 header.s=20260707 header.b=qYBkx8us
-Received: by mail-dy1-f171.google.com with SMTP id 5a478bee46e88-36eb1cb7aabso2467948eec.0
-        for <linux-wireless@vger.kernel.org>; Wed, 18 Nov 2026 15:48:19 -0800 (PST)
-ARC-Seal: i=1; a=rsa-sha256; t=1795045699; cv=none;
-        d=google.com; s=arc-20260327;
-        b=dvKAf4qZwnV1e4clgpm0YMSZwYo6Pe+SBro0Znn9CWJkx50tJWSbkJIA/n8QJGtzrs
-         p0HwUfMNvWfLDVQhAR4iMumSeQqvvnRjpO6iTvKZTPLCwmMlqbb8UYURCuvyiFpGw/Jb
-         mUC+XC76GTJNNDqC+m5pEZRfwFEOFAuNeTImpSNQm0LkLF/OisTLatlMg2dc2/bVLWfR
-         EVcabO/eFZd8MoVeBl3HkUAf0D1vjHrtS8Z+KFXN7kv/Df+UoDkgr9gEqcpWoX9vLGSC
-         7H2Yr+jDritGgMQgG2yJ8QSFrpAYBecY7wuakxJwCjHQRmcRb9+GTjmm11colTJyr+IC
-         X5sA==
-ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=google.com; s=arc-20260327;
-        h=cc:to:subject:message-id:date:from:in-reply-to:references
-         :mime-version:dkim-signature;
-        bh=XbA3v0tCDqlnhwaDPt+MfMvUsXTto+/3lQOwBsOTkYU=;
-        fh=VI2SguVvahl/iLOoxkmeOwuX/uCXnqo41TPqGZlPCj4=;
-        b=fOlISJ713nj1VJHf2gMZiyy2rbE8804xDAwW1/ONFiISGlMS3bXJTaO1DeypKa7yYz
-         4wD42cZBm9YyRqCiM0lG4hjG2T11fjMkAvGJsj6Vq27uYP3mjbK1fT6aNPLFrAfP2hN8
-         yy+gXgfi4oZj3eRiBLsTDu1S56sGTUgD3wahvJOCoYS3TGUDG2yXDB1j3zSOE9RDFIJn
-         5CPtmu4c59ngR7EwRpjqarkb8OUx41o81JFpm89c2j8NN1P2ThVM/jFXuEombfSjpHqT
-         +Jgelci1zetZWs60pnnOHMfJuOl9PXOp5na1YfNx0MN7TbZ1ZXLjVJ9IxXQQvQJfYrFk
-         jCjg==;
-        darn=vger.kernel.org
-ARC-Authentication-Results: i=1; mx.google.com; arc=none
+	dkim=pass (2048-bit key) header.d=gmail.com header.i=@gmail.com header.a=rsa-sha256 header.s=20260707 header.b=FcSNu/61
+Received: by mail-qv1-f52.google.com with SMTP id 6a1803df08f44-91eb3fea2a9so14878946d6.3
+        for <linux-wireless@vger.kernel.org>; Wed, 18 Nov 2026 16:29:07 -0800 (PST)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=gmail.com; s=20260707; t=1795045699; x=1795650499; darn=vger.kernel.org;
-        h=content-type:cc:to:subject:message-id:date:from:in-reply-to
-         :references:mime-version:from:to:cc:subject:date:message-id:reply-to
-         :content-type;
-        bh=XbA3v0tCDqlnhwaDPt+MfMvUsXTto+/3lQOwBsOTkYU=;
-        b=qYBkx8usCC08AHPWPC4qIYdkng3T2Gg1i9lu7IDjzAA+ByGAjaeQeddOHoQBk+6yTM
-         b2t4VG0/8OtWiYw1e3z0DBh0UE2hIzg/eCA826Pp10ZZIrUjnX86EeJD7tyQcDhthkwo
-         +4OqXT/ZL0d8+iGG1/WYb0j74sKipMw1NnlRZW9pNZ+g8ltMRp2ck5hc30sghpAZt707
-         Er42Z+GpUeSQyyXDV3zLf9CyT05UHWfHNQ3/oP6RFCfxceibFKk4uVVWQ7XIbhow7Kvt
-         Hz/EV0VJHNZ3Q+leOu6eFyaAUYZpSs0BYeWqhUTcRFjWaD7jaf18sVjCRD/C4weZ1lD8
-         rtiQ==
+        d=gmail.com; s=20260707; t=1795048146; x=1795652946; darn=vger.kernel.org;
+        h=content-transfer-encoding:mime-version:references:in-reply-to
+         :message-id:date:subject:cc:to:from:from:to:cc:subject:date
+         :message-id:reply-to:content-type;
+        bh=/aJxpNGDocOFUdmsrM2zfm3uFoQrrqPBVAxJfScRpLA=;
+        b=FcSNu/61jCMNPrOtKUwgp6kZv3gWcLIy2clz/mjA5E5lu3XlY8fYLpyAjxaVgv4tAF
+         EwM83UUQK0Mj5NkhAkQmcUx8gqQOK+mx0kEn0A+Fh2PfIgqtd+LzwsXjJCMEjR6ZPue6
+         jH3u39YDBP9EXUIx3H/D7MCEdFUKSGMEsNZ2NZ3ygkhJY4sQ6nppfpzSM4H0eavbd1qj
+         kM0L4TvWleapXT6HWdWjafWXmx0wABbjqb/c4YMsGnaXqHbKNfVqpJou9hdzfY5gXsv1
+         X8OXp4vTQX0ZY1T8zO2+UgGvKL/shaLYI7m+iYzAnUnLY+20yeXSNSbmkWfE3z/IBPfO
+         vO7Q==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=1e100.net; s=20260707; t=1795045699; x=1795650499;
-        h=content-type:cc:to:subject:message-id:date:from:in-reply-to
-         :references:mime-version:x-gm-gg:x-gm-message-state:from:to:cc
-         :subject:date:message-id:reply-to:content-type;
-        bh=XbA3v0tCDqlnhwaDPt+MfMvUsXTto+/3lQOwBsOTkYU=;
-        b=1w0RJlIcmgTIYMtLutLPWvHbaXAL3Gr7YsKORYa5/LE4uBv+GotjmP4A2jXkWCGsCo
-         EsLkruO3v7ajC02n3b9STh1wdrr43zfLfret7M0n3kHvJmxq2oaM25YUQIsxuaPum6Q8
-         0FZFr/Auxm+rX7FXoQdwlG3n9M1T3VU+enPukHRWKz3SWUnyXX+SYPjqBsTKlRfJF80Z
-         Fd1MWbTaeZFIx3p3YAr8K3gL2DgtUUQ1FK6Ygi5V1W1pt5vpd5HjRHo/likmVo6+f30A
-         PGHV7MFh1e1SqCEnSHRVQHjUCSY8AT909t9FIcYZ8bAVOH8nZCIzzL/t+gFPj2aQD7z8
-         lmfw==
-X-Forwarded-Encrypted: i=1; AL+hErEchDvHQ2aApNbF7WI8qmuuLgFbFe2K+KILJi0KnaxoxHJM14X/o0Vs88w/4HyvBS+g5ms6DZ+1d0aO9AQnKQ==@vger.kernel.org
-X-Gm-Message-State: APuU4Z+r1p6Q5qO+hobxs+P4uVFdvXeFj+C9yEjrT/aI1/kSkxu2AcuP
-	WpsEbLuwfTGDTp3CP3IgvTEgApv2C2cRHtguFJS7+dPqrdzS5WbmdpESZ4M5IrPjnElCyIv28r0
-	jBstjEtCYfDiN8GTUVVI/le4fOlAgjD4=
-X-Gm-Gg: AZFdTZfTt04wCqPr2JG9aqh0d79qASJOyQ7IvXmmwFf3pgJDfw/NZNeWCaXcgYbNT+a
-	wyBM8numzBwT3/lr4cyM9AjTlNETq/U/V0lIyHQMFu6WNevyDIbCmz18IiCj6BfijcnJSkkr+b5
-	soDmMyL4stQN+jF0ygTHlBH7donE7sMfD8L5OrfAwdbc2ZWwsaXwBBIDr6YcSozJK8X009NLzl7
-	AJcVw1Tqt/EaIYNjpa2KbykMZaG1n1OaUO2BPsOaHDJRzbka9WIsSyymVRd+N07w0/ihzWXClY2
-	lMHNcdmwxxrf2/6IEeB+dieSCrkwBsF5uouwxsX/rwkDbTmCQA0MmBAgWHcopoguDD/98PfLjKR
-	129EPeL5MT09PDncAIYGwnb5nKDDrSe/1iEhoL2VSjOtn6eeQe21tFqkbtop9d61gbjzL6DZXEM
-	J0seApp3LMuw4yEuVtxQ==
-X-Received: by 2002:a05:7300:d210:b0:380:f8fd:d19c with SMTP id
- 5a478bee46e88-3828181369cmr4316220eec.35.1795045698347; Wed, 18 Nov 2026
- 15:48:18 -0800 (PST)
+        d=1e100.net; s=20260707; t=1795048146; x=1795652946;
+        h=content-transfer-encoding:mime-version:references:in-reply-to
+         :message-id:date:subject:cc:to:from:x-gm-gg:x-gm-message-state:from
+         :to:cc:subject:date:message-id:reply-to:content-type;
+        bh=/aJxpNGDocOFUdmsrM2zfm3uFoQrrqPBVAxJfScRpLA=;
+        b=aiE79OyZocKlnfpecgclZ7PiYW684hzNh9DE65u99cq6H5QhXwPV2NtPf11U6YgZcd
+         Qa2HvzYcrRzELcHW/IWn7e+Yjne8hnKeI42v2HTs9ciPf6OHP6gkXauQ8kEw7EIxEiVt
+         FO6xQ8PFVcAXLjN/qQXFH5ohKkeB4PwXmEwvjnOriHNPmQzbO1RxjAm7V2nwRwXX3wGg
+         WsoMshsgaOP2xDpbGDc/5Z1GmB4I7DapD5Hngg0C1xVOwbZUz8QMiaDo6NJV+InDkpma
+         eU343yWLo4WUJzBgsXq4tsY14fJzT+Q1Ca2sS6+YqQ+UF1+D/EAkUaoJe7+O4M46WG/f
+         pKIw==
+X-Gm-Message-State: APuU4Z93DiqTUTYiWd5QMB8BIL/vZC/uqDvhZxf0MP+boQq1zTdGPYMX
+	6GliNsZys6/VXoTl0/Tjm1pzMMZoZD6y56Gbh3mVifCa89QShWCqVqv0
+X-Gm-Gg: AZFdTZdGnbcCPxMJkexkwBkofLXv589PBdkbYuyvDLTddzJY+Z8TQIE/ZJto8oosXoK
+	d18pEXcAbyCwNUiSf1ZQQtz1XB0STOBfyOgEIbM0vcY3R368NLV5efxL3pCBIlJKMk0I0cwQ7AT
+	gDt41vA1Aej1cLkcftX2P3JOsg/GYkenZg1MJS+FUK1E2UznNZQXDwTym7lt+del3GVUunWb1F5
+	bLkAx/OxlthgYQM5lXJr+4Oplu960nWLdn1FRoe6XMUDd9cAxDUC+bR8OXKDWZr2b116ZyM+WaO
+	/fiPP1dhBmR5c/nceQgGmgAokzTxOcUhyHgOU+lZbLNvO3lF8mGnYhY1xSXGARGC/lq/XYH2g4w
+	TsBsOlMEDqZMxGufj0MY+tRqAi0Sh5qqmNYTKw18laUF+jjP1B4CW7AflnYXKumhh3YHp/s1sCZ
+	EElfuhJeg95AKtUx38YGuQapd/IbMHEMJ486NXiATEJXjLSLwKX0QN7zi8v5FWuPFM8QDw++3QE
+	VmKJBFlb1cazc1jZmOGmRW4G4EtstohjR3egVi33GCRa9Y4BP0bbduiKSXUV3PCQlYgwUcBEjg8
+	NS0y2ohl7V437hkCe3wrev0S0SA48FscLxRrvIZ1I67I2b//RrHrwD1zDBbeeRHjLd3CTqWAObj
+	HKRHWoDnHI/7GzrvUGoP3
+X-Received: by 2002:a05:6214:460e:b0:91c:8fa6:1789 with SMTP id 6a1803df08f44-92114f8e9b8mr64253386d6.28.1795048146119;
+        Wed, 18 Nov 2026 16:29:06 -0800 (PST)
+Received: from linux.. ([8.34.174.240])
+        by smtp.gmail.com with ESMTPSA id 6a1803df08f44-92114d16bafsm34925086d6.7.2026.11.18.16.29.05
+        (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
+        Wed, 18 Nov 2026 16:29:05 -0800 (PST)
+From: Changyul Lee <lcy8047@gmail.com>
+To: Jeff Johnson <jjohnson@kernel.org>,
+	Loic Poulain <loic.poulain@oss.qualcomm.com>
+Cc: linux-wireless@vger.kernel.org,
+	ath10k@lists.infradead.org,
+	linux-kernel@vger.kernel.org,
+	Changyul Lee <lcy8047@gmail.com>
+Subject: [PATCH ath-current v2 1/2] wifi: ath10k: free msdu_id when HL TX fails
+Date: Wed, 18 Nov 2026 19:28:57 -0500
+Message-ID: <20261119002858.425666-2-lcy8047@gmail.com>
+X-Mailer: git-send-email 2.43.0
+In-Reply-To: <20261119002858.425666-1-lcy8047@gmail.com>
+References: <20261119002858.425666-1-lcy8047@gmail.com>
 X-Mailing-List: linux-wireless@vger.kernel.org
 List-Id: <linux-wireless.vger.kernel.org>
 List-Post: <mailto:linux-wireless@vger.kernel.org>
@@ -104,24 +100,33 @@ List-Unsubscribe: <mailto:linux-wireless+unsubscribe@vger.kernel.org>
 List-Owner: <mailto:linux-wireless+owner@vger.kernel.org>
 Precedence: list
 MIME-Version: 1.0
-References: <20261118052116.3901761-1-lcy8047@gmail.com> <CAFEp6-1h0iwXtPr0HXVMceSDdQ09KPYomt58Nme_AzXy+V043Q@mail.gmail.com>
- <CAKefsHuNpdkSG4m90qavkXD+80TyuX89gTVR-WhBsWX4m7-3Qg@mail.gmail.com> <29634240-17a6-4f61-8cf8-a73e10c8d0f4@oss.qualcomm.com>
-In-Reply-To: <29634240-17a6-4f61-8cf8-a73e10c8d0f4@oss.qualcomm.com>
-From: Changyul Lee <lcy8047@gmail.com>
-Date: Wed, 18 Nov 2026 18:48:07 -0500
-X-Gm-Features: Aa3M54rd6z901o4jFDdX9BIXR6e1rb-3tXX1SIFSQ_6Oa5HFj9_O_6QAwqOnrbg
-Message-ID: <CAKefsHusjRX+jo4DAywmVTEqn_Ypb5VUBMfZq2VbsEPNSeTq6A@mail.gmail.com>
-Subject: Re: [PATCH ath-next] wifi: ath10k: free msdu_id and skb reference
- when HL TX fails
-To: Jeff Johnson <jeff.johnson@oss.qualcomm.com>
-Cc: Loic Poulain <loic.poulain@oss.qualcomm.com>, Jeff Johnson <jjohnson@kernel.org>, 
-	Wentao Liang <vulab@iscas.ac.cn>, linux-wireless@vger.kernel.org, 
-	ath10k@lists.infradead.org, linux-kernel@vger.kernel.org
-Content-Type: text/plain; charset="UTF-8"
+Content-Transfer-Encoding: 8bit
 
-Thanks for the explanation. I will split this into two patches and
-send them.
-(I accidentally replied only to one person, sorry for the duplicate.)
+Free the msdu_id if ath10k_htc_send_hl() fails. Repeated failures can
+otherwise exhaust the IDs and block further data transmissions.
 
-Thank you,
-Changyul
+Fixes: 8ea51e409eb0 ("ath10k: htt: support MSDU ids with SDIO")
+Signed-off-by: Changyul Lee <lcy8047@gmail.com>
+---
+ drivers/net/wireless/ath/ath10k/htt_tx.c | 5 +++++
+ 1 file changed, 5 insertions(+)
+
+diff --git a/drivers/net/wireless/ath/ath10k/htt_tx.c b/drivers/net/wireless/ath/ath10k/htt_tx.c
+index efaea150025b..298e6a092101 100644
+--- a/drivers/net/wireless/ath/ath10k/htt_tx.c
++++ b/drivers/net/wireless/ath/ath10k/htt_tx.c
+@@ -1378,6 +1378,11 @@ static int ath10k_htt_tx_hl(struct ath10k_htt *htt, enum ath10k_hw_txrx_mode txm
+ 	tx_desc->peerid = __cpu_to_le32(HTT_INVALID_PEERID);
+ 
+ 	res = ath10k_htc_send_hl(&htt->ar->htc, htt->eid, msdu);
++	if (res && ar->bus_param.hl_msdu_ids) {
++		spin_lock_bh(&htt->tx_lock);
++		ath10k_htt_tx_free_msdu_id(htt, msdu_id);
++		spin_unlock_bh(&htt->tx_lock);
++	}
+ 
+ out:
+ 	return res;
+-- 
+2.43.0
+
