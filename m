@@ -1,67 +1,83 @@
-Authentication-Results: smtp.subspace.kernel.org; arc=none smtp.remote-ip=100.103.45.18
+Authentication-Results: smtp.subspace.kernel.org; arc=none smtp.remote-ip=211.75.126.72
 ARC-Seal: i=1; d=subspace.kernel.org; s=arc20261015; a=rsa-sha256; cv=none;
-	t=1795049422;
-	b=QEeEyy7WQTXoBwJrpMo9HOgfp8oXB9gfzsBNuBk2IjJbgySlFf/WMhvVkjjbO4WQRqXX
-	 3t9f5OkG5S6H58alMM8xFNUVyrhihFZHe+GKx+nWSipNUYupFl4InEmoV3PtyoP37MUks
-	 wJzxw+Fsl2rlLwTS8lWbZc3ElGhdUHEKujoxOLGUmfcyomX4hPQ7gj1xg2ziTR1hlM1u+
-	 qs+aWAT1In7/Xy7brbzcnjeoxaXHzV1Icy0w9cU6B9uZAGuGSYUS89wBHF4sVDoU7JP8Y
-	 TkqpCPw6L8LCNH7whX6QH6s/L9+A9d/W7ZJeZMrgJbN3HWiA6UMCBkVHrzIPOiF/SjQ==
+	t=1795049485;
+	b=o8ZXnTZHEu/uLp5BCJ/wbsbHQucPyVEdx7RtIVe7wDbouRvcQbVt+y6mhv3N6sZQKlo3
+	 Xa9FeesQUJpKp5JYPpcDfJKEoDf/KtD2UM4SiQpgZDL5v7Je6XbJx8ewdx3TypVA2e/5z
+	 1ZZwwBOG9w+4+ZAvoWPFwwxPets7agYpVA5iKL6KjQRrXmE1MDIsqIkjEcW1zZmcKm7KZ
+	 FKiEWME6HWmkBhlY8754DBUsMaPmaLpuE3FwDVImyjLtZ4JYu/R69u/yFmHZI3YDhdg87
+	 NJDHgyXTlRB4aLnnXzJCwovA5gjFR6ENtrZGEvCCiyFt/GPJl+x1RLs6K76kEdLU6YA==
 ARC-Message-Signature: i=1; d=subspace.kernel.org; s=arc20261015;
-	a=rsa-sha256; c=relaxed/relaxed; t=1795049422;
-	h=Received:DKIM-Signature:From:To:Cc:Subject:Date:Message-ID:X-Mailer:
-	 In-Reply-To:References:User-Agent:X-stable:X-Patchwork-Hint:
-	 MIME-Version:Content-Transfer-Encoding;
-	bh=oy5ALarL/4nLWwgSv3U2fEUsvPQULQiWYyD2WaUnfO8=;
-	b=T/1ob2BIWbdaolIDY5WQp2mHP2ynaPuq5YypjvOfu8H1eG9tbH85zZDWB1KLRoDRJssP
-	 ZaD1asuSby+IsYhsOK6A+x6IEirzoG6WESzGrPGjUoAbwcBU4G+hoAEZXCnqx0YzEo/ky
-	 Vr0igHBbfQS5iZBAB8mL1XV/BXUGpMWDpy92rXlbcitMIHqQesxLkulXzf5FJfm6XL86c
-	 /RJDejFPBDd8MbdOeBesOcWw+Ol/+hc8Kuj3Cqcas6/GqaNhTGxfNB7/og5V6CE+oOvn+
-	 r4Iv/V+1FVki3T8lNpfwvRgCCFwstWCOkB/kpGSo+y/3gc6ZvhtR3I3WVmCONhT3pkw==
+	a=rsa-sha256; c=relaxed/relaxed; t=1795049485;
+	h=DMARC-Filter:X-SpamFilter-By:DKIM-Signature:Received:Received:
+	 Received:From:To:CC:Subject:Thread-Topic:Thread-Index:Date:Message-ID:
+	 References:In-Reply-To:Accept-Language:Content-Language:
+	 x-originating-ip:Content-Type:Content-Transfer-Encoding:MIME-Version;
+	bh=5bHAPuS5qC0QXYjC19aRRZyyyVQrrAo7XwVIBbMCNW8=;
+	b=uaKuOgP1CjI7Wx14armsAtJCdOYqffRQ5gbhl1dfOACDF1g//lgW0qeKIommKcJ7j8NU
+	 68HY7FIun5X0KhIYyydkpKU7bADe6zdxAuH+LqxPgXLMfGPwLl1u6Pm6QjCHafSgYpBvH
+	 rVFaj/EzXvGqa3faOmRjT8zaxXRm+FxSJm36mOfwA9CTZTIHG6Zj1wcKIIaoP/+7TefKP
+	 ylrsyFRqBghC276IGcsMjW/tYm2fUqUqp6GWsKlYvSaeCwBbMS0e0zo1Vmyj4hJfbD7dx
+	 2L+xggXgD3Ks51Hsd1eb+Bob2cbKsLxm5slQBQspV7d+3n7lKcwCh14WfvxGZU5wWxA==
 ARC-Authentication-Results: i=1; smtp.subspace.kernel.org; 
-	dkim=pass header.d=linuxfoundation.org header.i=@linuxfoundation.org header.a=rsa-sha256 header.s=korg header.b=eJB8Z0K8;
-	arc=none smtp.remote-ip=100.103.45.18
-Received: from smtp.kernel.org (quasi.space.kernel.org [100.103.45.18])
+	dmarc=pass header.from=realtek.com;
+	spf=pass smtp.mailfrom=realtek.com;
+	dkim=pass header.d=realtek.com header.i=@realtek.com header.a=rsa-sha256 header.s=dkim header.b=dI5tH3pI;
+	arc=none smtp.remote-ip=211.75.126.72
+Received: from rtits2.realtek.com.tw (rtits2.realtek.com [211.75.126.72])
 	(using TLSv1.3 with cipher TLS_AES_256_GCM_SHA384 (256/256 bits)
-	 key-exchange X25519 server-signature ECDSA (prime256v1))
+	 key-exchange X25519 server-signature ECDSA (prime256v1) server-digest SHA256)
 	(No client certificate requested)
-	by smtp.subspace.kernel.org (Postfix) with ESMTPS id 9C165606A32A;
-	Thu, 19 Nov 2026 00:50:22 +0000 (UTC)
+	by smtp.subspace.kernel.org (Postfix) with ESMTPS id 9B40D606A31C;
+	Thu, 19 Nov 2026 00:51:24 +0000 (UTC)
+DMARC-Filter: OpenDMARC Filter v1.4.2 smtp.subspace.kernel.org 9B40D606A31C
+Authentication-Results: smtp.subspace.kernel.org; dmarc=pass (p=none dis=none) header.from=realtek.com
+Authentication-Results: smtp.subspace.kernel.org; spf=pass smtp.mailfrom=realtek.com
 Authentication-Results: smtp.subspace.kernel.org;
-	dkim=pass (1024-bit key) header.d=linuxfoundation.org header.i=@linuxfoundation.org header.a=rsa-sha256 header.s=korg header.b=eJB8Z0K8
-Received: by smtp.kernel.org (Postfix) with ESMTPSA id EFB761F000C5;
-	Thu, 19 Nov 2026 00:50:21 +0000 (UTC)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=linuxfoundation.org;
-	s=korg; t=1795049422;
-	bh=oy5ALarL/4nLWwgSv3U2fEUsvPQULQiWYyD2WaUnfO8=;
-	h=From:To:Cc:Subject:Date:In-Reply-To:References;
-	b=eJB8Z0K8vKLIwXTkpwj6WVwMNPLxMfDWwnkZzoTGFarSbyOkg8Po7kf4zOwHoQYfN
-	 rLDev4mmvSjaMl2Y52emvEdC4efesyA4C6ZPEFcthoO6CvxE8E1gCmZP+yt1NK6+yQ
-	 2QrfkV8EeyIPCxGJSGtUvYJZ1lL+OZjajIqbFgSQ=
-From: Greg Kroah-Hartman <gregkh@linuxfoundation.org>
-To: stable@vger.kernel.org
-Cc: Greg Kroah-Hartman <gregkh@linuxfoundation.org>,
-	patches@lists.linux.dev,
-	Randy Dunlap <rdunlap@infradead.org>,
-	Johannes Berg <johannes@sipsolutions.net>,
-	Kalle Valo <kvalo@kernel.org>,
-	linux-wireless@vger.kernel.org,
-	"David S. Miller" <davem@davemloft.net>,
-	Eric Dumazet <edumazet@google.com>,
-	Jakub Kicinski <kuba@kernel.org>,
-	Paolo Abeni <pabeni@redhat.com>,
-	netdev@vger.kernel.org,
-	Simon Horman <horms@kernel.org>,
-	Johannes Berg <johannes.berg@intel.com>,
-	Sasha Levin <sashal@kernel.org>
-Subject: [PATCH 6.1 2345/2857] wifi: cfg80211: fix header kernel-doc typos
-Date: Wed, 18 Nov 2026 15:56:19 +0100
-Message-ID: <20261118150325.962779487@linuxfoundation.org>
-X-Mailer: git-send-email 2.56.0
-In-Reply-To: <20261118150201.293410965@linuxfoundation.org>
-References: <20261118150201.293410965@linuxfoundation.org>
-User-Agent: quilt/0.69
-X-stable: review
-X-Patchwork-Hint: ignore
+	dkim=pass (2048-bit key, unprotected) header.d=realtek.com header.i=@realtek.com header.a=rsa-sha256 header.s=dkim header.b=dI5tH3pI
+X-SpamFilter-By: ArmorX SpamTrap 5.80 with qID 6AJ0p6qsD1892998, This message is accepted by code: ctloc85258
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=realtek.com; s=dkim;
+	t=1795049467; bh=5bHAPuS5qC0QXYjC19aRRZyyyVQrrAo7XwVIBbMCNW8=;
+	h=From:To:CC:Subject:Date:Message-ID:References:In-Reply-To:
+	 Content-Type:Content-Transfer-Encoding:MIME-Version;
+	b=dI5tH3pI1alvyJ+E++CrlB7Asyzle3KT+t93YfK4tVHm6Z4PEqCsGrCNnLukVEJ/u
+	 4EvTNNXc3KY2Sz2Wkz9AAIF/5AP/bHvChW4yPs4EX5S3VGU7lhZtAN4tN7cArXkkEM
+	 mJQ7X+WsVgRqQ7tA6/j0atNY7toW6f+BP12zPdZmE4K1udCGUOZF+NdumQ7G9Fvtb7
+	 H0tPFJIwMFWdR1iZ97fHco64hh6VaYdeZRYA+FsCvS7kU41faH7pZwbgQp/KYNHszB
+	 uW3jMRCxJRiYBmI7yrHQVt7JoCPupLy1I4M8c2t2yYdx7jUEujuuzzRR8XtfLyIhmn
+	 CRdkPilFwL5tg==
+Received: from mail.realtek.com (rtkexhmbs03.realtek.com.tw[10.21.1.53])
+	by rtits2.realtek.com.tw (8.15.2/3.29/5.94) with ESMTPS id 6AJ0p6qsD1892998
+	(version=TLSv1.2 cipher=ECDHE-RSA-AES256-GCM-SHA384 bits=256 verify=FAIL);
+	Thu, 19 Nov 2026 08:51:06 +0800
+Received: from RTKEXHMBS06.realtek.com.tw (10.21.1.56) by
+ RTKEXHMBS03.realtek.com.tw (10.21.1.53) with Microsoft SMTP Server
+ (version=TLS1_2, cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id
+ 15.2.2562.56; Thu, 19 Nov 2026 08:51:07 +0800
+Received: from RTKEXHMBS06.realtek.com.tw ([fe80::eeeb:c765:ca73:5eef]) by
+ RTKEXHMBS06.realtek.com.tw ([fe80::eeeb:c765:ca73:5eef%10]) with mapi id
+ 15.02.2562.056; Thu, 19 Nov 2026 08:51:07 +0800
+From: Ping-Ke Shih <pkshih@realtek.com>
+To: Luka Gejak <luka.gejak@linux.dev>, Mehmet Fide <mehmet.fide@gmail.com>
+CC: Bitterblue Smith <rtl8821cerfe2@gmail.com>,
+	"linux-wireless@vger.kernel.org" <linux-wireless@vger.kernel.org>,
+	"linux-kernel@vger.kernel.org" <linux-kernel@vger.kernel.org>,
+	"mehmet.fide@screeningeagle.com" <mehmet.fide@screeningeagle.com>
+Subject: RE: [PATCH rtw-next v12 2/3] wifi: rtw88: support channel switch in
+ AP mode
+Thread-Topic: [PATCH rtw-next v12 2/3] wifi: rtw88: support channel switch in
+ AP mode
+Thread-Index: AQHddusUlFkb3JLAC0icESyq6ktwKbcy9ygAgAAD3QCAAJC3wP//hh0AgAF9CuA=
+Date: Thu, 19 Nov 2026 00:51:06 +0000
+Message-ID: <9340ef0716924e229396aa1b595aa458@realtek.com>
+References: <9BC4FC13-5723-4711-9798-11E3C285C7F1@linux.dev>
+ <20261118083328.1984956-1-mehmet.fide@gmail.com>
+ <d55a09e0accd42f39f476d3abba1cdca@realtek.com>
+ <658FDA93-1E44-45D3-BBAA-37FBBAF9954A@linux.dev>
+In-Reply-To: <658FDA93-1E44-45D3-BBAA-37FBBAF9954A@linux.dev>
+Accept-Language: en-US, zh-TW
+Content-Language: zh-TW
+Content-Type: text/plain; charset="utf-8"
+Content-Transfer-Encoding: base64
 X-Mailing-List: linux-wireless@vger.kernel.org
 List-Id: <linux-wireless.vger.kernel.org>
 List-Post: <mailto:linux-wireless@vger.kernel.org>
@@ -71,126 +87,35 @@ List-Unsubscribe: <mailto:linux-wireless+unsubscribe@vger.kernel.org>
 List-Owner: <mailto:linux-wireless+owner@vger.kernel.org>
 Precedence: list
 MIME-Version: 1.0
-Content-Transfer-Encoding: 8bit
 
-6.1-stable review patch.  If anyone has any objections, please let me know.
-
-------------------
-
-From: Randy Dunlap <rdunlap@infradead.org>
-
-[ Upstream commit 98e0c7f85773ab161d804103649b33f8a97cf1b3 ]
-
-Correct spelling of several words.
-
-Signed-off-by: Randy Dunlap <rdunlap@infradead.org>
-Cc: Johannes Berg <johannes@sipsolutions.net>
-Cc: Kalle Valo <kvalo@kernel.org>
-Cc: linux-wireless@vger.kernel.org
-Cc: "David S. Miller" <davem@davemloft.net>
-Cc: Eric Dumazet <edumazet@google.com>
-Cc: Jakub Kicinski <kuba@kernel.org>
-Cc: Paolo Abeni <pabeni@redhat.com>
-Cc: netdev@vger.kernel.org
-Reviewed-by: Simon Horman <horms@kernel.org>
-Link: https://lore.kernel.org/r/20231001191633.19090-1-rdunlap@infradead.org
-Signed-off-by: Johannes Berg <johannes.berg@intel.com>
-Stable-dep-of: 298618f28bd3 ("wifi: cfg80211: reg: protect regdb pointer with RCU")
-Signed-off-by: Sasha Levin <sashal@kernel.org>
----
- include/net/cfg80211.h | 20 ++++++++++----------
- 1 file changed, 10 insertions(+), 10 deletions(-)
-
-diff --git a/include/net/cfg80211.h b/include/net/cfg80211.h
-index 691d328e0507f..636fb2a77f996 100644
---- a/include/net/cfg80211.h
-+++ b/include/net/cfg80211.h
-@@ -2407,7 +2407,7 @@ struct mesh_config {
-  * @user_mpm: userspace handles all MPM functions
-  * @dtim_period: DTIM period to use
-  * @beacon_interval: beacon interval to use
-- * @mcast_rate: multicat rate for Mesh Node [6Mbps is the default for 802.11a]
-+ * @mcast_rate: multicast rate for Mesh Node [6Mbps is the default for 802.11a]
-  * @basic_rates: basic rates to use when creating the mesh
-  * @beacon_rate: bitrate to be used for beacons
-  * @userspace_handles_dfs: whether user space controls DFS operation, i.e.
-@@ -2678,7 +2678,7 @@ struct cfg80211_bss_select_adjust {
-  * @match_sets: sets of parameters to be matched for a scan result
-  *	entry to be considered valid and to be passed to the host
-  *	(others are filtered out).
-- *	If ommited, all results are passed.
-+ *	If omitted, all results are passed.
-  * @n_match_sets: number of match sets
-  * @report_results: indicates that results were reported for this request
-  * @wiphy: the wiphy this was for
-@@ -2712,7 +2712,7 @@ struct cfg80211_bss_select_adjust {
-  *	to the specified band while deciding whether a better BSS is reported
-  *	using @relative_rssi. If delta is a negative number, the BSSs that
-  *	belong to the specified band will be penalized by delta dB in relative
-- *	comparisions.
-+ *	comparisons.
-  */
- struct cfg80211_sched_scan_request {
- 	u64 reqid;
-@@ -3548,7 +3548,7 @@ struct cfg80211_update_ft_ies_params {
-  * This structure provides information needed to transmit a mgmt frame
-  *
-  * @chan: channel to use
-- * @offchan: indicates wether off channel operation is required
-+ * @offchan: indicates whether off channel operation is required
-  * @wait: duration for ROC
-  * @buf: buffer to transmit
-  * @len: buffer length
-@@ -3666,7 +3666,7 @@ struct cfg80211_nan_func_filter {
-  * @publish_bcast: if true, the solicited publish should be broadcasted
-  * @subscribe_active: if true, the subscribe is active
-  * @followup_id: the instance ID for follow up
-- * @followup_reqid: the requestor instance ID for follow up
-+ * @followup_reqid: the requester instance ID for follow up
-  * @followup_dest: MAC address of the recipient of the follow up
-  * @ttl: time to live counter in DW.
-  * @serv_spec_info: Service Specific Info
-@@ -6642,7 +6642,7 @@ static inline const u8 *cfg80211_find_ie(u8 eid, const u8 *ies, int len)
-  * @ies: data consisting of IEs
-  * @len: length of data
-  *
-- * Return: %NULL if the etended element could not be found or if
-+ * Return: %NULL if the extended element could not be found or if
-  * the element is invalid (claims to be longer than the given
-  * data) or if the byte array doesn't match; otherwise return the
-  * requested element struct.
-@@ -6767,7 +6767,7 @@ int regulatory_hint(struct wiphy *wiphy, const char *alpha2);
- /**
-  * regulatory_set_wiphy_regd - set regdom info for self managed drivers
-  * @wiphy: the wireless device we want to process the regulatory domain on
-- * @rd: the regulatory domain informatoin to use for this wiphy
-+ * @rd: the regulatory domain information to use for this wiphy
-  *
-  * Set the regulatory domain information for self-managed wiphys, only they
-  * may use this function. See %REGULATORY_WIPHY_SELF_MANAGED for more
-@@ -6858,7 +6858,7 @@ bool regulatory_pre_cac_allowed(struct wiphy *wiphy);
-  * Regulatory self-managed driver can use it to proactively
-  *
-  * @alpha2: the ISO/IEC 3166 alpha2 wmm rule to be queried.
-- * @freq: the freqency(in MHz) to be queried.
-+ * @freq: the frequency (in MHz) to be queried.
-  * @rule: pointer to store the wmm rule from the regulatory db.
-  *
-  * Self-managed wireless drivers can use this function to  query
-@@ -9066,9 +9066,9 @@ bool cfg80211_iftype_allowed(struct wiphy *wiphy, enum nl80211_iftype iftype,
- 
- /**
-  * cfg80211_assoc_comeback - notification of association that was
-- * temporarly rejected with a comeback
-+ * temporarily rejected with a comeback
-  * @netdev: network device
-- * @ap_addr: AP (MLD) address that rejected the assocation
-+ * @ap_addr: AP (MLD) address that rejected the association
-  * @timeout: timeout interval value TUs.
-  *
-  * this function may sleep. the caller must hold the corresponding wdev's mutex.
--- 
-2.53.0
-
-
-
+THVrYSBHZWphayA8bHVrYS5nZWpha0BsaW51eC5kZXY+IHdyb3RlOg0KPiBPbiBOb3ZlbWJlciAx
+OCwgMjAyNiAxMDoxNDoxNyBBTSBHTVQrMDE6MDAsIFBpbmctS2UgU2hpaA0KPiA8cGtzaGloQHJl
+YWx0ZWsuY29tPiB3cm90ZToNCj4gPk1laG1ldCBGaWRlIDxtZWhtZXQuZmlkZUBnbWFpbC5jb20+
+IHdyb3RlOg0KPiA+PiA+IEkgdGhpbmsgdGhlIHByZXNlbmNlIGNoZWNrIGlzIGJldHRlciBmaXhl
+ZCBpbg0KPiA+PiA+IHJ0d19jb3JlX2NoZWNrX3N0YV9hY3RpdmUoKS4gSXRzIGNhbGxiYWNrIG9u
+bHkgcmVhZHMgaW50ZXJmYWNlIHN0YXRlLA0KPiA+c28NCj4gPj4gPiBjb3VsZCBpdCB1c2UgYW4g
+YXRvbWljIGludGVyZmFjZSBpdGVyYXRvciB3aXRob3V0IGFsbG9jYXRpbmcgZW50cmllcz8NCj4g
+Pj4NCj4gPj4gUmlnaHQsIHRoZSBjYWxsYmFjayBkb2VzIG5vdCBzbGVlcCwgc28gcnR3X2l0ZXJh
+dGVfdmlmc19hdG9taWMoKSB3b3Jrcw0KPiA+PiB0aGVyZS4gVGhlIGNoZWNrIGlzIG9sZGVyIHRo
+YW4gdGhpcyBzZXJpZXM6IHNpbmNlIGNvbW1pdCA5NmZiYjg0ZGU0ZmYNCj4gPj4gKCJ3aWZpOiBy
+dHc4ODogaGFuZGxlIHN0YXRpb24gbW9kZSBjb25jdXJyZW50IHNjYW4gd2l0aCBBUCBtb2RlIikg
+YQ0KPiA+PiBmYWlsZWQgYWxsb2NhdGlvbiBhbHNvIG1ha2VzIHJ0d19jbGVhcl9vcF9jaGFuKCkg
+ZHJvcCB0aGUgb3BlcmF0aW5nDQo+ID4+IGNoYW5uZWwgb2YgYW4gYXNzb2NpYXRlZCBzdGF0aW9u
+LCBvbiBCU1NfQ0hBTkdFRF9CU1NJRCBhbmQgaW4NCj4gPj4gcnR3X29wc19zdG9wX2FwKCkuDQo+
+ID4+DQo+ID4+IFBpbmctS2UsIEx1a2E6IHdvdWxkIHlvdSB0YWtlIHRoYXQgYXMgYSBzZXBhcmF0
+ZSBmaXggZm9yIHJ0dy1uZXh0LCBvciBhcw0KPiA+PiBhIHBhdGNoIGJlZm9yZSB0aGlzIG9uZSBp
+biB2MTM/DQo+ID4NCj4gPkkgdGhpbmsgcnR3X2NvcmVfY2hlY2tfc3RhX2FjdGl2ZSgpIGlzIHVz
+ZWQgdW5kZXIgd2lwaHkgbG9jaywgd2UgY2FuDQo+ID5taWdyYXRlIHRvIHVzZSBmb3JfZWFjaF9h
+Y3RpdmVfaW50ZXJmYWNlKCkgd2l0aCBsb2NrZGVwX2Fzc2VydF93aXBoeSgpDQo+ID5hcyBhIHNl
+cGFyYXRlIHBhdGNoLg0KPiA+DQo+IA0KPiBXb3JrcyBmb3IgbWUuDQoNClRoaW5rIG1vcmUgYWJv
+dXQgZmFpbGluZyB0byBhbGxvY2F0ZS4gSSBzdXBwb3NlIGtlcm5lbCB3aWxsIHRocm93IG91dA0K
+YSBPT00gbWVzc2FnZSwgc28gd2UgY2FuIGp1c3QgaGFuZGxlIHRoZSByZXR1cm4gTlVMTCBwb2lu
+dGVyIHRvIHByZXZlbnQNCmNyYXNoLiBUbyBlbnN1cmUgZnVuY3Rpb24gc3RpbGwgd29ya3MgYXMg
+bm9ybWFsIHVuZGVyIE9PTSBzaXR1YXRpb24sDQppdCBpcyBub3Qgc28gZWFzeS4gSSBndWVzcyB3
+ZSBuZWVkIHRvIGFkZCBtYW55ICJzcGVjaWFsIGNvbmRpdGlvbnMiLA0KYW5kIGRyaXZlciBiZWNv
+bWVzIGhhcmQgdG8gcmVhZC4gDQoNClNvLCBteSBvcGluaW9uIGlzIHRvIGRvIG91ciBiZXN0IHRv
+IGtlZXAgZnVuY3Rpb24gd29yayB1bmRlciBPT00uDQpObyBuZWVkIHRvIGVuc3VyZSBldmVyeXRo
+aW5nIHdvcmsgcGVyZmVjdC4gDQoNCkZvciB0aGlzIGNhc2UsIGl0IGlzIG5vdCB0b28gaGFyZCB0
+byBhdm9pZCB0aGUgT09NIGNhc2UsIHNvIEkgYWdyZWUNCnRoZSBjaGFuZ2UuIEJ1dCB3ZSBkb24n
+dCBhbHdheXMgbmVlZCB0byBoYW5kbGUgdGhlIGNhc2UgZm91bmQgYnkgTExNLg0KDQpQaW5nLUtl
+DQoNCg==
