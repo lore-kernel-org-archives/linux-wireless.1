@@ -1,48 +1,60 @@
-Authentication-Results: smtp.subspace.kernel.org; arc=none smtp.remote-ip=154.81.10.150
+Authentication-Results: smtp.subspace.kernel.org; arc=none smtp.remote-ip=79.135.106.26
 ARC-Seal: i=1; d=subspace.kernel.org; s=arc20261015; a=rsa-sha256; cv=none;
-	t=1795090336;
-	b=HBk8/cG7m52I8c8ol0GIE2C6lgJJ68tLYrnMJQsbEN6CEeOQrrpMHUl8We7rBl6hFgq5
-	 RVCoU9t0ebhBggWXcEmcIMvV5tHMfLwynDj1DYhYXSSeYk/zrAWk9MutRyVVZmKqrR4fE
-	 KQfQ3iULEANXF0q6YY+gA5yhZ10xHvbabeUk9PW4LnUw5bpeKmxhWnNDxVNBFArs4UbCT
-	 J+ONRoale/KylqviOLYJ27bcLBMwOlcKv1PAmIwZkC08hh2eVW3H9i9NSdInm0EqSieeu
-	 bNgdDJo/864MkJ5LG/+A533E/7NFghEfUUGPAHJFttnZqRLYydFYhxp+fdzkJyvznJA==
+	t=1795090797;
+	b=ZEeVL7ffiVIL82cfJhpFyUgfu4sWHtXRnLqaTPRE5al8M+orLW5Q0FW9numiTNN22adG
+	 upCjfHw7utH5InKmp88VhSwMA20jDEYzaLl6jsxtvd1MUmYcXmw9Jj5cQdPG+6qBLSvPa
+	 HRgzSU+8TVWRwq+6TQIfTAvIoj0wGsq5MxhbWDQdVD1N2W5gY8V9OTl0DRfkHu+uXJz9b
+	 /aYMkKpqevX/S3qObL3ITjmiMck1V98uW0wZThxW25DyhHneYq2fd4EqxSkdfQQ/P50kf
+	 Iy6/MmvSPROA4Ovm3g/Q40h3eE4uLXuMG+OOVi+M6oGhIZn+wSG01SwAMmnEW+d0qqQ==
 ARC-Message-Signature: i=1; d=subspace.kernel.org; s=arc20261015;
-	a=rsa-sha256; c=relaxed/relaxed; t=1795090336;
-	h=DMARC-Filter:Content-Type:Content-Transfer-Encoding:Message-ID:To:Cc:
-	 Subject:X-Priority:X-Mailer:X-Originating-IP:MIME-Version:Received:
-	 From:Date:X-HM-Tid:X-HM-MType:X-HM-NTES-SC:X-HM-Spam-Status:
-	 DKIM-Signature;
-	bh=yynbW/DlMBNzkWW4z9UkacyU4uLoNJIDEFOjK4ES0J4=;
-	b=oHXMm/cNSi5/kF/CbwAnW2NLKT7fa+5BKtm1mrfU+SAC/cCmNgC+a28d4GSwNH2/hvmJ
-	 TMrL/20d3y6J7tmpM1CtnCw/CrPWOy+XLjfN5KemNJsKQ0ddmxNs2RIlRjt3QzstiYEoJ
-	 5k+rBfkVNqBjnAIUlCTfy0rKs4yALqS/UwBVznj28B8xzIvTOjpyScy6hyNt+/6/uYOaX
-	 bvnLCm7Up7rkQBaw2DXqOJ525GFzq5jH7gRJElfJ1PZekKJVa7RSBAwqvMESMbdt8PzXb
-	 k70FHvoU9dLPh8xAtBL7+54i+BItfd0NSdmvFhsiHSjAl2qSUTWmP36xwL8C+4CXHUA==
+	a=rsa-sha256; c=relaxed/relaxed; t=1795090797;
+	h=DMARC-Filter:DKIM-Signature:Date:To:From:Cc:Subject:Message-ID:
+	 In-Reply-To:References:Feedback-ID:X-Pm-Message-ID:MIME-Version:
+	 Content-Type:Content-Transfer-Encoding;
+	bh=3gmccjYqj54OpQwxCx6BodGClmmljqO/sWD6CyVyKWM=;
+	b=PDysfVDv6QnCQDlKW86etGgGu7ZGNTuRyOmiIKdegKA1W9qc45axfW0nwdh6SUlrIBd/
+	 vUBCG+PjNpfzOOCvRpsujESQHF5e2xiKBKnLKgc5cHX2Vf9XmiEVbDZ+4/PYukVanqOcE
+	 YyeNMqnNwYyo+vnqr3J/hH+h3pnNd/Wl/X/kCN8zLIUY93ECiWWC/S5DlbOoACr1SHDs7
+	 LpPvgMj+MBNhYvWHvUUJxoLmnvZ2nT6b4shg/IDGNiGcBN12izm7MTDtFU1MvNyfyDCt1
+	 t+oBbFi2fgBsor6aNVbq6ItDEBLEHstsSNMMmBS4tF3fEI5KQdC9laOhpRLavU0GFQw==
 ARC-Authentication-Results: i=1; smtp.subspace.kernel.org; 
-	dmarc=pass header.from=mail.sdu.edu.cn;
-	spf=pass smtp.mailfrom=mail.sdu.edu.cn;
-	dkim=pass header.d=mail.sdu.edu.cn header.i=@mail.sdu.edu.cn header.a=rsa-sha256 header.s=default header.b=M4jgnbgy;
-	arc=none smtp.remote-ip=154.81.10.150
-Received: from mail-m10150.netease.com (mail-m10150.netease.com [154.81.10.150])
+	dmarc=pass header.from=becholey.ch;
+	spf=pass smtp.mailfrom=becholey.ch;
+	dkim=pass header.d=becholey.ch header.i=@becholey.ch header.a=rsa-sha256 header.s=protonmail header.b=lngVNG7p;
+	arc=none smtp.remote-ip=79.135.106.26
+Received: from mail-10626.protonmail.ch (mail-10626.protonmail.ch [79.135.106.26])
 	(using TLSv1.3 with cipher TLS_AES_256_GCM_SHA384 (256/256 bits)
 	 key-exchange X25519 server-signature ECDSA (prime256v1) server-digest SHA256)
 	(No client certificate requested)
-	by smtp.subspace.kernel.org (Postfix) with ESMTPS id 3F88C606A32F;
-	Thu, 19 Nov 2026 12:12:11 +0000 (UTC)
-DMARC-Filter: OpenDMARC Filter v1.4.2 smtp.subspace.kernel.org 3F88C606A32F
-Authentication-Results: smtp.subspace.kernel.org; dmarc=pass (p=none dis=none) header.from=mail.sdu.edu.cn
-Authentication-Results: smtp.subspace.kernel.org; spf=pass smtp.mailfrom=mail.sdu.edu.cn
+	by smtp.subspace.kernel.org (Postfix) with ESMTPS id 74752606A325
+	for <linux-wireless@vger.kernel.org>; Thu, 19 Nov 2026 12:19:56 +0000 (UTC)
+DMARC-Filter: OpenDMARC Filter v1.4.2 smtp.subspace.kernel.org 74752606A325
+Authentication-Results: smtp.subspace.kernel.org; dmarc=pass (p=quarantine dis=none) header.from=becholey.ch
+Authentication-Results: smtp.subspace.kernel.org; spf=pass smtp.mailfrom=becholey.ch
 Authentication-Results: smtp.subspace.kernel.org;
-	dkim=pass (1024-bit key, unprotected) header.d=mail.sdu.edu.cn header.i=@mail.sdu.edu.cn header.a=rsa-sha256 header.s=default header.b=M4jgnbgy
-Content-Type: text/plain; charset="UTF-8"
-Content-Transfer-Encoding: base64
-Message-ID: <AKkArwCmLES49KBl-vFi9qpQ.1.1795090322414.Hmail.202321181@mail.sdu.edu.cn>
-To: Loic Poulain <loic.poulain@oss.qualcomm.com>
-Cc: Jeff Johnson <jjohnson@kernel.org>, linux-wireless@vger.kernel.org, 
-	ath10k@lists.infradead.org, linux-kernel@vger.kernel.org
-Subject: =?UTF-8?B?UmU6UmU6IFtQQVRDSF0gd2lmaTogYXRoMTBrOiBGaXggcG90ZW50aWFsIENFIGNvbmZpZ3VyYXRpb24gbGVha3Mgb24gUENJIHByb2JlIGZhaWx1cmU=?=
-X-Priority: 3
-X-Mailer: HMail Webmail Server V2.0 Copyright (c) 2016-163.com web
+	dkim=pass (2048-bit key, unprotected) header.d=becholey.ch header.i=@becholey.ch header.a=rsa-sha256 header.s=protonmail header.b=lngVNG7p
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=becholey.ch;
+	s=protonmail; t=1795090794; x=1795349994;
+	bh=3gmccjYqj54OpQwxCx6BodGClmmljqO/sWD6CyVyKWM=;
+	h=Date:To:From:Cc:Subject:Message-ID:In-Reply-To:References:
+	 Feedback-ID:From:To:Cc:Date:Subject:Reply-To:Feedback-ID:
+	 Message-ID:BIMI-Selector;
+	b=lngVNG7pEMG4K45iTe7eiKh/1sa6U5XYZ990dG0Vy5AXVpxaEOpsBp61YJ6KKpJsM
+	 vsIz++Y2ODbFfEHjYH80bdn8EEH8Rn8/dFXWOFrW/6PKXO3pZYk9jzsGHN4dOe2eSc
+	 24DuQV4X1xK/ItTxMvGIMvskbrw+VwkyeTim/HhnGRbqQKHScYNe3AxZss2xVINMU0
+	 9N8yPKk1siDAGBg/EGdwCtf+cbh2ngTkeFPjN/gN+LOsp0zyoR7GNker5OAVlgZ8ZF
+	 aErW2NPktn2ZogSyYYoXJC4EIZ78+m/7vuSRcUcCf0gi/N1kUQ8hvWL0STlPlHrZ1W
+	 w4kDndW/tCTOw==
+Date: Thu, 19 Nov 2026 12:19:47 +0000
+To: Christian Lamparter <chunkeey@gmail.com>
+From: Alexandre Becholey <alex@becholey.ch>
+Cc: linux-wireless@vger.kernel.org
+Subject: Re: [PATCH] wifi: carl9170: take the URB reference before queueing the TX frame
+Message-ID: <Tsg4m0noYosUHea-XtmwgWHk7P-OYoNucvGSMmGqJf13jq7kfKHe_3YoAw8zXDeZMr-hL8lfTUyd4fsd1bLrytdW2M_aiq5VgbGy5f2WgN4=@becholey.ch>
+In-Reply-To: <2b4f5359-096b-4add-b2d5-6b2d5705081c@gmail.com>
+References: <20261119093511.558151-1-alex@becholey.ch> <2b4f5359-096b-4add-b2d5-6b2d5705081c@gmail.com>
+Feedback-ID: 60743817:user:proton
+X-Pm-Message-ID: 50bf1d52f6dcde81316f7883b1498701c7a53751
 X-Mailing-List: linux-wireless@vger.kernel.org
 List-Id: <linux-wireless.vger.kernel.org>
 List-Post: <mailto:linux-wireless@vger.kernel.org>
@@ -52,86 +64,160 @@ List-Unsubscribe: <mailto:linux-wireless+unsubscribe@vger.kernel.org>
 List-Owner: <mailto:linux-wireless+owner@vger.kernel.org>
 Precedence: list
 MIME-Version: 1.0
-Received: from 202321181@mail.sdu.edu.cn( [101.76.249.61] ) by ajax-webmail ( [127.0.0.1] ) ; Thu, 19 Nov 2026 20:12:02 +0800 (GMT+08:00)
-From: =?UTF-8?B?5p2O5bm/56GV?= <liguangshuo@mail.sdu.edu.cn>
-Date: Thu, 19 Nov 2026 20:12:02 +0800 (GMT+08:00)
-X-HM-Tid: 0aa1f3b826e5d0cdkusy47eba70515f57
-X-HM-MType: 1
-X-HM-NTES-SC: AL0_4z5B86Wr4Tz9jdMF+bhXMVHpP02bZAKsMEiErRSAekjx+ys+KNZNl0PLwl
-	f2MeqR5lbiqKsoq8sm3hZVy9q3VVBNOjIUwfWq1GfV2NBR9WJV5pp9Gwt04oeFjraKOA9zaWoBi2
-	nAAG80yDIj2vqDR+BK0Ob1gW1HTqO8T3q701Y=
-X-HM-Spam-Status: e1kfGhgUHx5ZQUpXWQgPGg8OCBgUHx5ZQUlOS1dZFg8aDwILHllBWSg2Ly
-	tZV1koWUFITzdXWRgWCB1ZQUpXWS1ZQUlXWQ8JGhUIEh9ZQVkZTkNPVktMGUJLS08fHR5DTFYVFA
-	kWGhdVEwETFhoSFyQUDg9ZV1kYEgtZQVlKS0pVTE1VSU9CVU1KWVdZFhoPEhUdFFlBWU9LSFVKS0
-	lCTUhKVUpLS1VLWQY+
-DKIM-Signature: a=rsa-sha256;
-	b=M4jgnbgyBbT/zCtM99LG5ruJDn0UOgjetmjDPjJ9KVHCuAyHswRqsXSMZgLhvmbAJ1lSMuUeQyD2rX1X+HauARg7DpfI1TJ8NDC2S0Jc1rOFgZU05K+KYOa3noM+RWj/BDPcHYY8xR6gEn72AOcQ18Gb7Oc9I6+2UyhqwVQ5GqU=; c=relaxed/relaxed; s=default; d=mail.sdu.edu.cn; v=1;
-	bh=yynbW/DlMBNzkWW4z9UkacyU4uLoNJIDEFOjK4ES0J4=;
-	h=date:mime-version:subject:message-id:from;
+Content-Type: text/plain; charset=utf-8
+Content-Transfer-Encoding: quoted-printable
 
-CgoKSGkgTG9pYywKCgpUaGFua3MgZm9yIHRoZSByZXZpZXcuCgrlj5Hku7bkurrvvJpMb2ljIFBv
-dWxhaW4gPGxvaWMucG91bGFpbkBvc3MucXVhbGNvbW0uY29tPgrlj5HpgIHml6XmnJ/vvJoyMDI2
-LTExLTA0IDIwOjIyOjQwCuaUtuS7tuS6uu+8mkd1YW5nc2h1byBMaSA8bGlndWFuZ3NodW9AbWFp
-bC5zZHUuZWR1LmNuPgrmioTpgIHkurrvvJpKZWZmIEpvaG5zb24gPGpqb2huc29uQGtlcm5lbC5v
-cmc+LGxpbnV4LXdpcmVsZXNzQHZnZXIua2VybmVsLm9yZyxhdGgxMGtAbGlzdHMuaW5mcmFkZWFk
-Lm9yZyxsaW51eC1rZXJuZWxAdmdlci5rZXJuZWwub3JnCuS4u+mimO+8mlJlOiBbUEFUQ0hdIHdp
-Zmk6IGF0aDEwazogRml4IHBvdGVudGlhbCBDRSBjb25maWd1cmF0aW9uIGxlYWtzIG9uIFBDSSBw
-cm9iZSBmYWlsdXJlPkhpIEd1YW5nc2h1bywKPgo+T24gV2VkLCBOb3YgNCwgMjAyNiBhdCAzOjM0
-4oCvQU0gR3VhbmdzaHVvIExpIDxsaWd1YW5nc2h1b0BtYWlsLnNkdS5lZHUuY24+IHdyb3RlOgo+
-Pgo+PiBQQ0kgY2xhaW0sIHdha2V1cCBvciBJUlEgaW5pdGlhbGl6YXRpb24gZmFpbHVyZXMgYnlw
-YXNzCj4+IGF0aDEwa19wY2lfcmVsZWFzZV9yZXNvdXJjZSgpLCBsZWFraW5nIHRoZSB0aHJlZSBj
-b25maWd1cmF0aW9uIGFycmF5cwo+PiBhbGxvY2F0ZWQgYnkgYXRoMTBrX3BjaV9zZXR1cF9yZXNv
-dXJjZSgpLgo+Pgo+PiBGcmVlIHRoZSBhcnJheXMgd2l0aCB0aGUgQ0UgcGlwZXMgb24gdGhlIGNv
-bW1vbiB1bndpbmQgcGF0aC4gS2VlcAo+PiB0aGUgbGF0ZXIgaGFyZHdhcmUgY2xlYW51cCBzZXBh
-cmF0ZSBzbyB0aGUgYXJyYXlzIGFyZSBmcmVlZCBvbmNlLgo+Pgo+PiBUaGlzIGlzc3VlIHdhcyBm
-b3VuZCBieSBvdXIgc3RhdGljIGFuYWx5c2lzIHRvb2wgdW5kZXIgZGV2ZWxvcG1lbnQuCj4+Cj4+
-IEZpeGVzOiAxY2ZkMzQyNmVmOTggKCJhdGgxMGs6IEZpeCBOVUxMIHBvaW50ZXIgZGVyZWZlcmVu
-Y2UgaW4gQUhCIGRldmljZSBwcm9iZSIpCj4+IFNpZ25lZC1vZmYtYnk6IEd1YW5nc2h1byBMaSA8
-bGlndWFuZ3NodW9AbWFpbC5zZHUuZWR1LmNuPgo+PiAtLS0KPj4gVmFsaWRhdGlvbjogeDg2LTY0
-IENsYW5nIFc9MSBjaGFuZ2VkLW9iamVjdCBidWlsZHMgcGFzc2VkIHdpdGgKPj4gYWxsbW9kY29u
-ZmlnIGFuZCBhbGx5ZXNjb25maWcuIE5vIGhhcmR3YXJlL2tlcm5lbCBydW50aW1lIHRlc3Qgb3Ig
-ZnVsbAo+PiBsaW5rZWQta2VybmVsIGJ1aWxkLgo+PiBPcGVuQUkgQ29kZXggYXNzaXN0ZWQgd2l0
-aCBzb3VyY2UgcmV2aWV3LCBwYXRjaCBpbXBsZW1lbnRhdGlvbiBhbmQKPj4gY29tbWl0LW1lc3Nh
-Z2UgZHJhZnRpbmcuIFRoZSBzdWJtaXR0ZXIgaGFzIHJldmlld2VkIHRoZSBjaGFuZ2VzLgo+Pgo+
-PiAgZHJpdmVycy9uZXQvd2lyZWxlc3MvYXRoL2F0aDEway9wY2kuYyB8IDcgKysrKysrLQo+PiAg
-MSBmaWxlIGNoYW5nZWQsIDYgaW5zZXJ0aW9ucygrKSwgMSBkZWxldGlvbigtKQo+Pgo+PiBkaWZm
-IC0tZ2l0IGEvZHJpdmVycy9uZXQvd2lyZWxlc3MvYXRoL2F0aDEway9wY2kuYyBiL2RyaXZlcnMv
-bmV0L3dpcmVsZXNzL2F0aC9hdGgxMGsvcGNpLmMKPj4gaW5kZXggMzM1YmM3YzQ4OGU0Li5mM2M0
-ZmUxM2Y3NmIgMTAwNjQ0Cj4+IC0tLSBhL2RyaXZlcnMvbmV0L3dpcmVsZXNzL2F0aC9hdGgxMGsv
-cGNpLmMKPj4gKysrIGIvZHJpdmVycy9uZXQvd2lyZWxlc3MvYXRoL2F0aDEway9wY2kuYwo+PiBA
-QCAtMzcxNiw3ICszNzE2LDkgQEAgc3RhdGljIGludCBhdGgxMGtfcGNpX3Byb2JlKHN0cnVjdCBw
-Y2lfZGV2ICpwZGV2LAo+PiAgICAgICAgIGF0aDEwa19wY2lfZnJlZV9pcnEoYXIpOwo+Pgo+PiAg
-ZXJyX2RlaW5pdF9pcnE6Cj4+IC0gICAgICAgYXRoMTBrX3BjaV9yZWxlYXNlX3Jlc291cmNlKGFy
-KTsKPj4gKyAgICAgICBhdGgxMGtfcGNpX3J4X3JldHJ5X3N5bmMoYXIpOwo+PiArICAgICAgIG5l
-dGlmX25hcGlfZGVsKCZhci0+bmFwaSk7Cj4+ICsgICAgICAgYXRoMTBrX3BjaV9jZV9kZWluaXQo
-YXIpOwo+Pgo+PiAgZXJyX3NsZWVwOgo+PiAgICAgICAgIGF0aDEwa19wY2lfc2xlZXBfc3luYyhh
-cik7Cj4+IEBAIC0zNzI0LDYgKzM3MjYsOSBAQCBzdGF0aWMgaW50IGF0aDEwa19wY2lfcHJvYmUo
-c3RydWN0IHBjaV9kZXYgKnBkZXYsCj4+Cj4+ICBlcnJfZnJlZV9waXBlczoKPj4gICAgICAgICBh
-dGgxMGtfcGNpX2ZyZWVfcGlwZXMoYXIpOwo+PiArICAgICAgIGtmcmVlKGFyX3BjaS0+YXR0cik7
-Cj4+ICsgICAgICAga2ZyZWUoYXJfcGNpLT5waXBlX2NvbmZpZyk7Cj4+ICsgICAgICAga2ZyZWUo
-YXJfcGNpLT5zZXJ2X3RvX3BpcGUpOwo+Cj5JIHVuZGVyc3RhbmQgdGhhdCBhdGgxMGtfcGNpX3Jl
-bGVhc2VfcmVzb3VyY2UoKSBpcyBub3QgZW50aXJlbHkKPnN5bW1ldHJpY2FsIHRvIGF0aDEwa19w
-Y2lfc2V0dXBfcmVzb3VyY2UoKSBhbmQgdGVhcnMgZG93biBtb3JlIHRoYW4KPndoYXQgaGFzIGJl
-ZW4gaW5pdGlhbGl6ZWQgYXQgdGhpcyBwb2ludC4gSG93ZXZlciwgd291bGQgaXQgYWN0dWFsbHkg
-YmUKPnByb2JsZW1hdGljIHRvIHVzZSBhdGgxMGtfcGNpX3JlbGVhc2VfcmVzb3VyY2UoKSBpbiB0
-aGVzZSBlcnJvciBwYXRocz8KPkZvciBleGFtcGxlLCBpcyB0aGVyZSBhbnkgaXNzdWUgd2l0aCBj
-YWxsaW5nIGF0aDEwa19wY2lfY2VfZGVpbml0KCkKPndoZW4gdGhlIENFIGxheWVyIGhhcyBub3Qg
-YmVlbiBmdWxseSBpbml0aWFsaXplZCB5ZXQ/IFVzaW5nIHRoZQo+ZXhpc3RpbmcgaGVscGVyIHdv
-dWxkIGF2b2lkIGR1cGxpY2F0aW5nIHRoZSBjbGVhbnVwIGxvZ2ljIGFuZCBrZWVwIHRoZQo+cmVz
-b3VyY2UgdGVhcmRvd24gY2VudHJhbGl6ZWQuCj4KPj4KPj4gIGVycl9jb3JlX2Rlc3Ryb3k6Cj4+
-ICAgICAgICAgYXRoMTBrX2NvcmVfZGVzdHJveShhcik7Cj4+Cj4+IGJhc2UtY29tbWl0OiAwNTQ0
-MWQ2OTdmN2Y5YTkyNzI2NGY0MDU4Y2JiYzZhMDNkZmNhYzlkCj4+Cgo+CgpJIGNoZWNrZWQgdGhl
-IGV4aXN0aW5nIGhlbHBlcnM6CmF0aDEwa19wY2lfZnJlZV9waXBlcygpIG9ubHkgZnJlZXMgdGhl
-IHBpcGVzOyB0aGUgdGhyZWUgYXJyYXlzIGFyZQpmcmVlZCBzZXBhcmF0ZWx5IGJ5IGF0aDEwa19w
-Y2lfcmVsZWFzZV9yZXNvdXJjZSgpLgoKVGhlIGNvbmNyZXRlIGlzc3VlIHdpdGggcmV1c2luZyB0
-aGUgbGF0dGVyIHVuY2hhbmdlZCBpcyBNTUlPIGFjY2VzczoKYXRoMTBrX3BjaV9jZV9kZWluaXQo
-KSByZWFkcyBhbmQgd3JpdGVzIENFIHJlZ2lzdGVycyB0aHJvdWdoCmF0aDEwa19jZV9kZWluaXRf
-cGlwZSgpLiBJZiBwY2lfaW9tYXAoKSBmYWlscyBpbiBhdGgxMGtfcGNpX2NsYWltKCksCnRoZXJl
-IGlzIG5vIHZhbGlkIG1hcHBpbmcuIFBhdGhzIHRocm91Z2ggZXJyX3NsZWVwIGhhdmUgYWxzbyBh
-bHJlYWR5CnVubWFwcGVkIHRoZSBCQVIgYmVmb3JlIHJlYWNoaW5nIGVycl9mcmVlX3BpcGVzLgoK
-SSBhZ3JlZSB0aGF0IHRlYXJkb3duIHNob3VsZCBzdGF5IGNlbnRyYWxpemVkLiBJIHByb3Bvc2Ug
-ZXh0cmFjdGluZwp0aGUgcGlwZSBhbmQgYXJyYXkgZnJlZXMgaW50byBhIG1lbW9yeS1vbmx5IGhl
-bHBlciwgc2hhcmVkIGJ5CmF0aDEwa19wY2lfcmVsZWFzZV9yZXNvdXJjZSgpIGFuZCB0aGUgZWFy
-bHkgZXJyb3IgcGF0aHMsIHdoaWxlCnByZXNlcnZpbmcgdGhlIGV4aXN0aW5nIGhhcmR3YXJlIGNs
-ZWFudXAgb3JkZXJpbmcuCgpXb3VsZCB0aGlzIGFwcHJvYWNoIHdvcmsgZm9yIHlvdT8gSWYgc28s
-IEknbGwgc2VuZCB2Mi4KCkJlc3QgcmVnYXJkcywKR3VhbmdzaHVv
+On Thursday, November 19th, 2026 at 12:36 PM, Christian Lamparter <chunkeey=
+@gmail.com> wrote:
+
+> On 11/19/26 10:35 AM, Alexandre Becholey wrote:
+> > carl9170_tx() puts a frame on ar->tx_status[] while it holds only its
+> > initial reference and takes the reference for the URB afterwards. A TX
+> > status for the frame's cookie that is processed on another CPU in
+> > between drops the only reference, and mac80211 frees the frame. The
+> > driver then increments the dead refcount and submits the freed skb as
+> > URB buffer and context.
+>=20
+> Ok, so you have virtual AR9170 (as in USB-emulated device or did you
+> make a custom firmware) that is injecting/generating tx_statuses with
+> potential "future" cookies to arrive even before the driver gets to
+> fully assign the cookie?
+>=20
+> Yeah, I think I can see what you are doing there and why.
+
+Yes, a USB-emulated device, no custom firmware. It is a userspace
+program on raw-gadget with dummy_hcd, or attached to QEMU's xHCI
+through usb-redir. It accepts the firmware download and then answers
+the way the carl9170 firmware does: BOOT trap, command responses, the
+EEPROM through register reads, and a TXCOMP trap for each uploaded
+frame. For this bug it also sends TXCOMP for cookies 1..4 while the
+host is transmitting.
+
+>=20
+> > A device can hit this window by reporting TX status for the small,
+> > predictable cookies while the host transmits, which gives a KASAN
+> > slab-use-after-free in carl9170_usb_tx() and carl9170_tx_callback().
+> >
+> > Take the reference before the frame is queued, as the driver did
+> > before commit caf1eae20668 ("carl9170: improve unicast PS buffering").
+> >
+> > The bug was found, and the reproducer and this fix were written, by AI
+> > agents (Claude Mythos and Claude Opus models). The analysis and the
+> > patch were reviewed by a human.
+> >
+> > Fixes: caf1eae20668 ("carl9170: improve unicast PS buffering")
+> > Cc: stable@vger.kernel.org
+> Acked-by: Christian Lamparter <chunkeey@gmail.com>
+>=20
+> > Signed-off-by: Alexandre Becholey <alex@becholey.ch>
+> > ---
+> > An emulated AR9170 that answers TX status for cookies 1..4 while the
+>=20
+> Do you really have emulated AR9170 like something similar to mac80211_hws=
+im? Cool!
+> I'm not interested in the reproducer, but a even a semi-working simulator=
+ for the
+> AR9170: Now that would be sick!
+
+Not that far. It plays an open access point, so the host can bring
+wlan0 up, associate and send traffic, including ADDBA and A-MPDU, but
+there is no PHY behind it and it only covers what the tests need.
+It is about 1500 lines of C; I can send it to you off-list if it is
+useful.
+
+>=20
+> > host sends traffic (an unprivileged UDP socket is enough) triggers
+> > "refcount_t: addition on 0" and KASAN use-after-free on v7.3.1 and
+> > "kernel BUG at lib/refcount.c:34" on master 666539eecdf4. With the fix:
+> > no report in 68 patched trigger boots (9 on xHCI, 9 on master); traffic
+> > with a well-behaved device (also HT/A-MPDU) is unchanged.
+>=20
+> Am I reading this correctly? You have access to a real AR9170 hardware de=
+vice too
+> and this patch was tested there as well? If that's the case, why did you =
+not add
+> this to the commit message above? Because I think this belongs into the c=
+ommit
+> message. This is the "best" way to show everyone that you really did
+> "dotted the i's and crossed the t's".
+
+No, sorry, that was unclear. The "well-behaved device" is the same
+emulator in a mode where it reports TX status only after the frame was
+uploaded, as the firmware does. The patch has not been tested on real
+hardware.
+
+>=20
+> Question: What do you mean with (9 on xHCI, 9 on master)?
+
+All 68 boots were QEMU virtual machines (arm64) running a kernel with
+the patch. 9 of them attached the emulated device to QEMU's xHCI
+controller instead of dummy_hcd, and 9 ran torvalds/master
+666539eecdf4 with the patch instead of v7.3.1. None of them showed the
+refcount warning or a KASAN report, while the same reproducer triggers
+it in most boots without the patch. On an instrumented build we also
+checked that the early TX status really arrives in the window between
+queueing and carl9170_usb_tx() with the patch applied.
+
+Thanks for the review and the ack.
+Alexandre
+
+>=20
+> Do you mean 9 tests where successfully performed on real hardware (connec=
+ted to a xHCI controller)
+> And "9 on master" means that a patched linux on top of 666539eecdf4 [1] s=
+urvived without
+> triggering a use-after-free?
+>=20
+> Cheers,
+> Christian
+>=20
+> [1] <https://git.kernel.org/pub/scm/linux/kernel/git/torvalds/linux.git/c=
+ommit/?id=3D666539eecdf4db623f5e3c3e55cf9f2dfad24aa4>
+>=20
+>=20
+> > Reproducer available on request.
+> > Applies to master 4405c18c95d2 (tx.c unchanged since the tests).
+> >   drivers/net/wireless/ath/carl9170/tx.c | 16 +++++++++-------
+> >   1 file changed, 9 insertions(+), 7 deletions(-)
+> >
+> >
+> > diff --git a/drivers/net/wireless/ath/carl9170/tx.c b/drivers/net/wirel=
+ess/ath/carl9170/tx.c
+> > index 06aaf281655b..46d8bc6647e3 100644
+> > --- a/drivers/net/wireless/ath/carl9170/tx.c
+> > +++ b/drivers/net/wireless/ath/carl9170/tx.c
+> > @@ -1364,13 +1364,6 @@ static void carl9170_tx(struct ar9170 *ar)
+> >
+> >   =09=09=09atomic_inc(&ar->tx_total_pending);
+> >
+> > -=09=09=09q =3D __carl9170_get_queue(ar, i);
+> > -=09=09=09/*
+> > -=09=09=09 * NB: tx_status[i] vs. tx_status[q],
+> > -=09=09=09 * TODO: Move into pick_skb or alloc_dev_space.
+> > -=09=09=09 */
+> > -=09=09=09skb_queue_tail(&ar->tx_status[q], skb);
+> > -
+> >   =09=09=09/*
+> >   =09=09=09 * increase ref count to "2".
+> >   =09=09=09 * Ref counting is the easiest way to solve the
+> > @@ -1378,9 +1371,18 @@ static void carl9170_tx(struct ar9170 *ar)
+> >   =09=09=09 *=09carl9170_tx_callback
+> >   =09=09=09 * and wlan tx status functions:
+> >   =09=09=09 *=09carl9170_tx_status/janitor.
+> > +=09=09=09 * It must be taken before the frame is queued on
+> > +=09=09=09 * tx_status[], where the status path can find it.
+> >   =09=09=09 */
+> >   =09=09=09carl9170_tx_get_skb(skb);
+> >
+> > +=09=09=09q =3D __carl9170_get_queue(ar, i);
+> > +=09=09=09/*
+> > +=09=09=09 * NB: tx_status[i] vs. tx_status[q],
+> > +=09=09=09 * TODO: Move into pick_skb or alloc_dev_space.
+> > +=09=09=09 */
+> > +=09=09=09skb_queue_tail(&ar->tx_status[q], skb);
+> > +
+> >   =09=09=09carl9170_usb_tx(ar, skb);
+> >   =09=09=09schedule_garbagecollector =3D true;
+> >   =09=09}
+>=20
+> 
