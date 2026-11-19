@@ -1,69 +1,81 @@
-Authentication-Results: smtp.subspace.kernel.org; arc=none smtp.remote-ip=91.218.175.151
+Authentication-Results: smtp.subspace.kernel.org; arc=none smtp.remote-ip=211.75.126.72
 ARC-Seal: i=1; d=subspace.kernel.org; s=arc20261015; a=rsa-sha256; cv=none;
-	t=1795049833;
-	b=PgHsfLxIqlcOCLzSvqcPm5jRtczDp5ZgxV3zoKykw36CAW4bh43tkexH6dpTMbu2Jt47
-	 WoS+HOIRq4AB6SCxHva3/2wRLqlZrgQBP2rOhwLoBSmS8pewcJRNpIk4ctS7eY4TPlTKQ
-	 jL29pERgsA1yfgVfiso3t13WmjMVOhOkJ8sxF4ch4HrhiEQQrZOTqO07fJ20CFrmBc/aK
-	 epajMcGFxWVX11BQvSuwEdKOdWnCIfs2EyoAy+/TT16POzfI3DL72i0CstGj+pgUiUbSY
-	 0+/7xYxOu92PAARklznSY0P9SqkAWDHZFkSQ6w/nI4h6AmTQy4t6W7rDWAk0NH1IKVQ==
+	t=1795055415;
+	b=j7R2iEWOj1Mp2o0EJFeXCD8cUtO3K1Qur4ycTjEHHNMYbuonun0moDHyoPOicPRHU1OJ
+	 72hL94VIBsE5CtD0goa8NH7G40TOE4+qRdhuhKH3aNS3o8qY7ZUuHFbTXK7WMDIhfMKAq
+	 1zvUcPFXzC+tJsxmhMSYpt6I1ZhMx641I2yNHWXHYHX9y+6E+9tXxRN15wJZNiWuoYU+5
+	 IJSsTENogXdVxCBFLEYt+DQFqzztYFRfsh/4U6/Gx9u+fH1ThCXSWut/eMCG5YI3FMbiN
+	 QOB0e1ZkHqn4K2utn+DqeVKeefz88xUFYDULz/L0crOaB1PIxxIMkoLpd1KLZiqf0AQ==
 ARC-Message-Signature: i=1; d=subspace.kernel.org; s=arc20261015;
-	a=rsa-sha256; c=relaxed/relaxed; t=1795049833;
-	h=DMARC-Filter:X-Envelope-To:DKIM-Signature:X-Envelope-To:Received:
-	 X-Mizu-Trace-ID:X-Migadu-Flow:From:To:Cc:Subject:Date:Message-ID:
-	 X-Mailer:MIME-Version:Content-Transfer-Encoding;
-	bh=xWgtswuu5voegshuaN7lrRpgJMW8L3MRLlTeWqoC8wQ=;
-	b=TCKBBHx4qDj+7Qs1uj6uKZ4/LOCU9JznhvvCZk6PcuU22MbaH69f4T/fBG7OVqbEs54E
-	 2erjZtlZoS5dg3YRu3+5cL9fZTyMZcdDOm4DHoIZfZuBHJe8T2X4rllneadqcVRqrd7E7
-	 iGWgrfyv4e3BkG1qUSXd5hg0Tln3JKq8lrxN9XaziQ4VmKFL1w2tIhqTlAI2hZh+8Gy82
-	 p+Q9HTZC06k0sjMXQDqfiWI7p6EfapdOXcxnqgXNQycvwrb6JpinpNnpI83GT5VaJh698
-	 688fzr9pL/f9nGLRNMjYSS4n+mBsSX369Nt7qAzlFuMYzGjMvOSDE7PO3OtTHwSLecQ==
+	a=rsa-sha256; c=relaxed/relaxed; t=1795055415;
+	h=DMARC-Filter:X-SpamFilter-By:DKIM-Signature:Received:Received:
+	 Received:Received:From:To:CC:Subject:Thread-Topic:Thread-Index:Date:
+	 Message-ID:References:In-Reply-To:Accept-Language:Content-Language:
+	 x-originating-ip:Content-Type:Content-Transfer-Encoding:MIME-Version;
+	bh=9fAbtoyPi3c3+kicDgJNOEHhcPYnrZ8MUupquQq/pxk=;
+	b=kOOXehURE9IXd6LtuHY9nxae74o1871gFd8us6mRlFv+qVO5sDshXtDIRa4P23sK76rl
+	 2dBPRJgoFjbMc4/QlLbqjySpkZ6TyhVIv3814bd90bUgI0nxvtn7IJTO5n9GheFW2eWF6
+	 CQD+w4SD3LBR5MLK/R/C8FjBo+cC8DZg7RAhV8TXPIjAd9SI8Qu0uVuK5DIOwkzvIzcuB
+	 yfJ4e8Wj2dkktObSJ6rhPxtrxKfHuoVdALNt0nfIJ/uhYH1W1rgtPJ9Xk3TGe0pcoC0Ie
+	 vqCnLn44X+AyOJYA2jHg/PuW1D0/+QkQe/BqDAA4PBsK8TIcRt/3S1cvbclbCgQjAKA==
 ARC-Authentication-Results: i=1; smtp.subspace.kernel.org; 
-	dmarc=pass header.from=justthetip.ca;
-	spf=pass smtp.mailfrom=justthetip.ca;
-	dkim=pass header.d=justthetip.ca header.i=@justthetip.ca header.a=rsa-sha256 header.s=key1 header.b="CpcNuJ/w";
-	arc=none smtp.remote-ip=91.218.175.151
-Received: from mta0.migadu.com (out-151.mta0.migadu.com [91.218.175.151])
-	(using TLSv1.3 with cipher TLS_AES_128_GCM_SHA256 (128/128 bits)
+	dmarc=pass header.from=realtek.com;
+	spf=pass smtp.mailfrom=realtek.com;
+	dkim=pass header.d=realtek.com header.i=@realtek.com header.a=rsa-sha256 header.s=dkim header.b=SPX0cA+a;
+	arc=none smtp.remote-ip=211.75.126.72
+Received: from rtits2.realtek.com.tw (rtits2.realtek.com [211.75.126.72])
+	(using TLSv1.3 with cipher TLS_AES_256_GCM_SHA384 (256/256 bits)
 	 key-exchange X25519 server-signature ECDSA (prime256v1) server-digest SHA256)
 	(No client certificate requested)
-	by smtp.subspace.kernel.org (Postfix) with ESMTPS id 8DF11606A320
-	for <linux-wireless@vger.kernel.org>; Thu, 19 Nov 2026 00:57:12 +0000 (UTC)
-DMARC-Filter: OpenDMARC Filter v1.4.2 smtp.subspace.kernel.org 8DF11606A320
-Authentication-Results: smtp.subspace.kernel.org; dmarc=pass (p=quarantine dis=none) header.from=justthetip.ca
-Authentication-Results: smtp.subspace.kernel.org; spf=pass smtp.mailfrom=justthetip.ca
+	by smtp.subspace.kernel.org (Postfix) with ESMTPS id 3BFE4606A31C;
+	Thu, 19 Nov 2026 02:30:13 +0000 (UTC)
+DMARC-Filter: OpenDMARC Filter v1.4.2 smtp.subspace.kernel.org 3BFE4606A31C
+Authentication-Results: smtp.subspace.kernel.org; dmarc=pass (p=none dis=none) header.from=realtek.com
+Authentication-Results: smtp.subspace.kernel.org; spf=pass smtp.mailfrom=realtek.com
 Authentication-Results: smtp.subspace.kernel.org;
-	dkim=pass (2048-bit key, unprotected) header.d=justthetip.ca header.i=@justthetip.ca header.a=rsa-sha256 header.s=key1 header.b=CpcNuJ/w
-X-Envelope-To: linux-wireless@vger.kernel.org
-DKIM-Signature: a=rsa-sha256; bh=Xfkh/Wtbxs9DzeSqhMzPOXb3vEgBrjD1S7FQ0ecCs/E=;
- c=simple/simple; d=justthetip.ca;
- h=from:to:subject:date:message-id:mime-version:content-type; s=key1;
- t=1795049830; v=1; x=1795654630;
- b=CpcNuJ/wbL7oXaEIttpFzz0OSRlpCcTQdvE7YzYRc+/iyBbeA3b9sdMabc7aAznaUEYcQu1i
- BD6iU3+KMjlVF2cuwBWvdVxhSPGfVFOWU15HiwClxAP/WGHH0LsoTtURtfLMbhPY4LdNR3i0ihx
- T6PE/7riIcAsiNFwOFP9bVYsihYx/OTN8f+fW4/1kOM2LLFOuXu/ySm8H9HWwzoJUG74gG1/Xho
- 2VE8n3IXdsH7JRoDYlySlMDKHeDjo00G23FPUrDhOc8fkz2rLuUDuE5fwGf/kp+TmtcY3RxZi9H
- lX6QVdEQSsnPjAVHaaAuBO0QdT8Eizjb2wjnt0ERycZpw==
-X-Envelope-To: linux-wireless@vger.kernel.org
-Received: by smtp.migadu.com with ESMTPS id 11d9fcbaf7dca7b1;
-	Thu, 19 Nov 2026 00:57:10 +0000
-X-Mizu-Trace-ID: 11d9fcbaf7dca7b1
-X-Migadu-Flow: FLOW_OUT
-From: Devin Wittmayer <lucid_duck@justthetip.ca>
-To: Felix Fietkau <nbd@nbd.name>,
-	Lorenzo Bianconi <lorenzo@kernel.org>,
-	Ryder Lee <ryder.lee@mediatek.com>
-Cc: Deren Wu <deren.wu@mediatek.com>,
-	Sean Wang <sean.wang@mediatek.com>,
-	Shayne Chen <shayne.chen@mediatek.com>,
-	Quan Zhou <quan.zhou@mediatek.com>,
-	Michael Lo <michael.lo@mediatek.com>,
-	James-LY Huang <james-ly.huang@mediatek.com>,
-	linux-wireless@vger.kernel.org,
-	linux-mediatek@lists.infradead.org
-Subject: [PATCH mt76-next v3] wifi: mt76: mt792x: tell mac80211 when a disconnect cancels its ROC
-Date: Wed, 18 Nov 2026 17:57:01 -0700
-Message-ID: <20261119005701.8154-1-lucid_duck@justthetip.ca>
-X-Mailer: git-send-email 2.56.1
+	dkim=pass (2048-bit key, unprotected) header.d=realtek.com header.i=@realtek.com header.a=rsa-sha256 header.s=dkim header.b=SPX0cA+a
+X-SpamFilter-By: ArmorX SpamTrap 5.80 with qID 6AJ2TsU421947007, This message is accepted by code: ctloc85258
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=realtek.com; s=dkim;
+	t=1795055394; bh=9fAbtoyPi3c3+kicDgJNOEHhcPYnrZ8MUupquQq/pxk=;
+	h=From:To:CC:Subject:Date:Message-ID:References:In-Reply-To:
+	 Content-Type:Content-Transfer-Encoding:MIME-Version;
+	b=SPX0cA+ahNcSvS5+Ax5Nh1EW3Q6qjClRQEexZ476kDdHRJ0ZEKTF8sg6ZxVkexAES
+	 oILgUeX0Sfof5daHOhX5JjKDBko9WHer4IujmiwPLaij+ON7tONg6gEcYjpzvwFZe+
+	 ceGRn52oPQIw2E0EoYzlEv37BdTfvifOIcRJJS/q+1Zb39AFfxB6S0i5AsOQwAU6/O
+	 a9ZR539l7RlNwlEV0O0e1MwjAYzm8Ry1icIC3OYItw5/ehUZp1f1C6Gp2UmTP5WWr3
+	 5iNaIPt80wpNRgSE0XMx1XvkfpCaerWagP88FH8+CHrFC+QXKRD9KsfpddCbB+h+5S
+	 lp92w/Iem6Mtg==
+Received: from mail.realtek.com (rtkexhmbs02.realtek.com.tw[172.21.6.41])
+	by rtits2.realtek.com.tw (8.15.2/3.29/5.94) with ESMTPS id 6AJ2TsU421947007
+	(version=TLSv1.2 cipher=ECDHE-RSA-AES256-GCM-SHA384 bits=256 verify=FAIL);
+	Thu, 19 Nov 2026 10:29:54 +0800
+Received: from RTKEXHMBS05.realtek.com.tw (10.21.1.55) by
+ RTKEXHMBS02.realtek.com.tw (172.21.6.41) with Microsoft SMTP Server
+ (version=TLS1_2, cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id
+ 15.2.2562.56; Thu, 19 Nov 2026 10:29:54 +0800
+Received: from RTKEXHMBS06.realtek.com.tw (10.21.1.56) by
+ RTKEXHMBS05.realtek.com.tw (10.21.1.55) with Microsoft SMTP Server
+ (version=TLS1_2, cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id
+ 15.2.2562.56; Thu, 19 Nov 2026 10:29:54 +0800
+Received: from RTKEXHMBS06.realtek.com.tw ([fe80::eeeb:c765:ca73:5eef]) by
+ RTKEXHMBS06.realtek.com.tw ([fe80::eeeb:c765:ca73:5eef%10]) with mapi id
+ 15.02.2562.056; Thu, 19 Nov 2026 10:29:54 +0800
+From: Ping-Ke Shih <pkshih@realtek.com>
+To: Shirong Zhao <shxzhaosr@163.com>
+CC: "linux-wireless@vger.kernel.org" <linux-wireless@vger.kernel.org>,
+	Johannes Berg <johannes@sipsolutions.net>, "linux-kernel@vger.kernel.org"
+	<linux-kernel@vger.kernel.org>
+Subject: RE: [PATCH] wifi: rtw89: read the beacon header from the frame data
+Thread-Topic: [PATCH] wifi: rtw89: read the beacon header from the frame data
+Thread-Index: AQHddyAr0Znqcf5uMkiTIyGfdYmn2rc0oOOg
+Date: Thu, 19 Nov 2026 02:29:54 +0000
+Message-ID: <18e2bb0a73414b528db9741eb2e2e1e3@realtek.com>
+References: <20261118134625.801221-1-shxzhaosr@163.com>
+In-Reply-To: <20261118134625.801221-1-shxzhaosr@163.com>
+Accept-Language: en-US, zh-TW
+Content-Language: zh-TW
+Content-Type: text/plain; charset="us-ascii"
+Content-Transfer-Encoding: quoted-printable
 X-Mailing-List: linux-wireless@vger.kernel.org
 List-Id: <linux-wireless.vger.kernel.org>
 List-Post: <mailto:linux-wireless@vger.kernel.org>
@@ -73,150 +85,52 @@ List-Unsubscribe: <mailto:linux-wireless+unsubscribe@vger.kernel.org>
 List-Owner: <mailto:linux-wireless+owner@vger.kernel.org>
 Precedence: list
 MIME-Version: 1.0
-Content-Transfer-Encoding: 8bit
 
-A disconnect during a remain-on-channel (ROC) cancels the ROC in
-firmware without telling mac80211, which then waits for a ROC that is
-already gone. Scans fail, and after an AP deauth the station does not
-reconnect.
+Shirong Zhao <shxzhaosr@163.com> wrote:
+> rtw89_fw_h2c_update_beacon() and rtw89_fw_h2c_update_beacon_be()
+> cast the sk_buff pointer itself to struct ieee80211_hdr to compute the
+> TIM offset:
+>=20
+>         hdr =3D (struct ieee80211_hdr *)skb_beacon;
+>=20
+> The 802.11 header lives in the frame data returned by
+> ieee80211_beacon_get_tim(), not at the start of struct sk_buff, so the
+> cast reads sk_buff metadata instead of frame_control.
+>=20
+> For a freshly allocated skb skb->next is NULL, the value read is 0 and
+> ieee80211_hdrlen() happens to return the same 24 bytes as a real beacon
+> header, which masks the bug.  As soon as the skb is on a list the
+> computed header length is garbage and the Group IE offset passed to the
+> firmware is wrong.
+>=20
+> Point hdr at skb_beacon->data instead.
 
-Tell mac80211 when the driver cancels a ROC that mac80211 started.
+This is key point, so I'd rephrase subject and commit message as:
 
-Fixes: 41ac53c899bd ("wifi: mt76: mt7921: introduce chanctx support")
-Fixes: 5ed54896b6bd ("wifi: mt76: mt7921: fix a potential scan no APs")
-Fixes: c948b5da6bbe ("wifi: mt76: mt7925: add Mediatek Wi-Fi7 driver for mt7925 chips")
-Fixes: 45064d19fd3a ("wifi: mt76: mt7925: fix a potential association failure upon resuming")
-Signed-off-by: Devin Wittmayer <lucid_duck@justthetip.ca>
----
-v3: rebased on Felix's mt76 branch, where v2 no longer applies after
-"wifi: mt76: mt7925: do not take iflist_mtx under the mutex".
+subject: wifi: rtw89: read the beacon header from the skb data
 
-Tested on that branch with an MT7922, an MT7927 and an MT7925U, the
-MT7925U at USB 2.0 and 3.0:
+message:
+Point hdr at skb_beacon->data instead of skb_beacon pointer itself, to
+get correct header length for TIM offset for firmware.
 
-  disconnect while a ROC is held   without this         with it
-  AP deauth                        no reconnect, scans  back in 3.4 to
-                                   fail                 4.5 s
-  the station disconnects          scans fail           scan in 3.1 to
-                                                        3.5 s
-  the same, MT7925U on two links   no reconnect, scans  back in 9.0 to
-                                   fail                 9.6 s, 34 of 34
+Fortunately, original (wrong) header fc is 0x0000, so header length is
+recognized as 24 bytes, which is almost the same as AP mode application.
 
-Each cancelled ROC is reported once, and a P2P find ends its ROCs as
-before on all three chips.
+>=20
+> Found by code inspection; not observed at runtime.
 
-v2: https://lore.kernel.org/all/20261110005846.38432-1-lucid_duck@justthetip.ca/
-v1: https://lore.kernel.org/all/20261023014827.57411-1-lucid_duck@justthetip.ca/
+I tested with real hardware.
 
- drivers/net/wireless/mediatek/mt76/mt7921/main.c | 14 +++++++++++++-
- drivers/net/wireless/mediatek/mt76/mt7925/main.c | 13 ++++++++++++-
- 2 files changed, 25 insertions(+), 2 deletions(-)
+Tested-by: Ping-Ke Shih <pkshih@realtek.com>
 
-diff --git a/drivers/net/wireless/mediatek/mt76/mt7921/main.c b/drivers/net/wireless/mediatek/mt76/mt7921/main.c
-index 09574d4417cd..58df080a342e 100644
---- a/drivers/net/wireless/mediatek/mt76/mt7921/main.c
-+++ b/drivers/net/wireless/mediatek/mt76/mt7921/main.c
-@@ -381,6 +381,9 @@ void mt7921_roc_abort_sync(struct mt792x_dev *dev)
- 	ieee80211_iterate_interfaces(mt76_hw(dev),
- 				     IEEE80211_IFACE_ITER_RESUME_ALL,
- 				     mt7921_roc_iter, (void *)phy);
-+
-+	if (phy->roc_notify)
-+		ieee80211_remain_on_channel_expired(mt76_hw(dev));
- }
- EXPORT_SYMBOL_GPL(mt7921_roc_abort_sync);
- 
-@@ -405,16 +408,21 @@ void mt7921_roc_work(struct work_struct *work)
- 
- static int mt7921_abort_roc(struct mt792x_phy *phy, struct mt792x_vif *vif)
- {
-+	bool aborted;
- 	int err = 0;
- 
- 	timer_delete_sync(&phy->roc_timer);
- 	cancel_work_sync(&phy->roc_work);
- 
- 	mt792x_mutex_acquire(phy->dev);
--	if (test_and_clear_bit(MT76_STATE_ROC, &phy->mt76->state))
-+	aborted = test_and_clear_bit(MT76_STATE_ROC, &phy->mt76->state);
-+	if (aborted)
- 		err = mt7921_mcu_abort_roc(phy, vif, phy->roc_token_id);
- 	mt792x_mutex_release(phy->dev);
- 
-+	if (aborted && phy->roc_notify)
-+		ieee80211_remain_on_channel_expired(phy->mt76->hw);
-+
- 	return err;
- }
- 
-@@ -430,6 +438,7 @@ static int mt7921_set_roc(struct mt792x_phy *phy,
- 		return -EBUSY;
- 
- 	phy->roc_grant = false;
-+	phy->roc_notify = type == MT7921_ROC_REQ_ROC;
- 
- 	err = mt7921_mcu_set_roc(phy, vif, chan, duration, type,
- 				 ++phy->roc_token_id);
-@@ -471,6 +480,9 @@ static int mt7921_cancel_remain_on_channel(struct ieee80211_hw *hw,
- 	struct mt792x_vif *mvif = (struct mt792x_vif *)vif->drv_priv;
- 	struct mt792x_phy *phy = mt792x_hw_phy(hw);
- 
-+	/* mac80211 ends this ROC itself */
-+	phy->roc_notify = false;
-+
- 	return mt7921_abort_roc(phy, mvif);
- }
- 
-diff --git a/drivers/net/wireless/mediatek/mt76/mt7925/main.c b/drivers/net/wireless/mediatek/mt76/mt7925/main.c
-index 975c564236f9..7ff95683d268 100644
---- a/drivers/net/wireless/mediatek/mt76/mt7925/main.c
-+++ b/drivers/net/wireless/mediatek/mt76/mt7925/main.c
-@@ -569,6 +569,9 @@ void mt7925_roc_abort_sync(struct mt792x_dev *dev)
- 	cancel_work(&phy->roc_work);
- 
- 	mt7925_roc_abort_all(phy, phy->roc_token_id);
-+
-+	if (phy->roc_notify)
-+		ieee80211_remain_on_channel_expired(mt76_hw(dev));
- }
- EXPORT_SYMBOL_GPL(mt7925_roc_abort_sync);
- 
-@@ -596,17 +599,22 @@ void mt7925_roc_work(struct work_struct *work)
- static int mt7925_abort_roc(struct mt792x_phy *phy,
- 			    struct mt792x_bss_conf *mconf)
- {
-+	bool aborted;
- 	int err = 0;
- 
- 	timer_delete_sync(&phy->roc_timer);
- 	cancel_work_sync(&phy->roc_work);
- 
- 	mt792x_mutex_acquire(phy->dev);
--	if (test_and_clear_bit(MT76_STATE_ROC, &phy->mt76->state))
-+	aborted = test_and_clear_bit(MT76_STATE_ROC, &phy->mt76->state);
-+	if (aborted)
- 		err = mt7925_mcu_abort_roc(phy, mconf->mt76.idx,
- 					   phy->roc_token_id);
- 	mt792x_mutex_release(phy->dev);
- 
-+	if (aborted && phy->roc_notify)
-+		ieee80211_remain_on_channel_expired(phy->mt76->hw);
-+
- 	return err;
- }
- 
-@@ -721,6 +729,9 @@ static int mt7925_cancel_remain_on_channel(struct ieee80211_hw *hw,
- 	struct mt792x_vif *mvif = (struct mt792x_vif *)vif->drv_priv;
- 	struct mt792x_phy *phy = mt792x_hw_phy(hw);
- 
-+	/* mac80211 ends this ROC itself */
-+	phy->roc_notify = false;
-+
- 	return mt7925_abort_roc(phy, &mvif->bss_conf);
- }
- 
+Fixes: 69466b979a72 ("wifi: rtw89: use struct to fill H2C command to downlo=
+ad beacon frame")
+Fixes: a880b9283009 ("wifi: rtw89: add H2C command to download beacon frame=
+ for WiFi 7 chips")
 
-base-commit: e1b736d305e903b8a3e961d77bc392cab23ebc6a
--- 
-2.56.1
+> Signed-off-by: Shirong Zhao <shxzhaosr@163.com>
+
+Acked-by: Ping-Ke Shih <pkshih@realtek.com>
+
+
 
