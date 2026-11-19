@@ -1,81 +1,83 @@
-Authentication-Results: smtp.subspace.kernel.org; arc=none smtp.remote-ip=209.85.219.43
+Authentication-Results: smtp.subspace.kernel.org; arc=none smtp.remote-ip=209.85.160.174
 ARC-Seal: i=1; d=subspace.kernel.org; s=arc20261015; a=rsa-sha256; cv=none;
-	t=1795048143;
-	b=EmB/DRRcFd31vSb8ZKdY4XLib7nIBdtyzciyR6n4pS5MJV4BFgEou/u5BjgpCqz6ISlt
-	 XkunK+1icEGjQ3ecZE6hbJdgg91505xEjcOmsG4jOFuqPwmo5fte+CqAXY239z71WGRuf
-	 aCy7DzUGq12kXuvbnRk1Aj2qrhWwYfaNkiqE2le/4719nc3RYVHa70DJ116W1Jg8RyuhF
-	 AoqfYBNQlYPaUylZp/gTUEDHjRG1QLevyarn2W2NO5BeFMfM53W751sRpd7qczYEG2Yv5
-	 ynbIXOos0c0J5GrBNmyQuKFA02l6Djbj1rKYMaSo6w4nMAhOisycJuil1a45Dto+kRg==
+	t=1795048149;
+	b=NURGQ+LQ83j5In1oKSZladq+hY4L42AlKu42VorzIK4yTaZV2gfrX/mHl0vsddrqxuPD
+	 n9cJqjl+OqO3ucfvZG84otziz793EMJf3fMPOTOHPlz/z38TjnB+y3txDbV/zHbqmRI25
+	 T2XNCuUjXuOO2LgQh+Hoo6i6/x4TBlnW85Dt4k3LIJM82w2gS84CrEVYM0oEQXT6/gNx5
+	 xbafRzsVzS3/x2QUxaM8bPr7+1CTQZrVswdIwmdRQXtORZo5lz6kpUosrXd6I7TepY1Ln
+	 zJKt92FZ8qvcz9nGH+9G85RruPmMj/RjY6yQxKJVUITQ1p53iIHz+VsWBwn/PM2+5BQ==
 ARC-Message-Signature: i=1; d=subspace.kernel.org; s=arc20261015;
-	a=rsa-sha256; c=relaxed/relaxed; t=1795048143;
+	a=rsa-sha256; c=relaxed/relaxed; t=1795048149;
 	h=DMARC-Filter:Received:DKIM-Signature:X-Google-DKIM-Signature:
 	 X-Gm-Message-State:X-Gm-Gg:X-Received:Received:From:To:Cc:Subject:
-	 Date:Message-ID:X-Mailer:MIME-Version:Content-Transfer-Encoding;
-	bh=NneEHT9afGNlYm0ZfBjltKXbYGbaj4NHU2mtTyQ52S8=;
-	b=LNRR3TEqLrygZoOetj4f884T56PMHrb1+BBXFAx34Z/lzsPj9nCsBtFX4joTzUnOKdmF
-	 fBifEaMeZupl+k/3y4f1Ln1UuQ9yn0ObG5SY97MJLBa/xc2r6LZGYpPg9irXbchabVzgl
-	 F/nAiZss/bcnv1NtC7Z4AFLB1y7vBDK4M5skg6HOHgoAyDTn+dT5cVh8UVzHsIrDfPPXx
-	 O0MoMtTmaz0BqlczmdGZqlV+RcxS7vpbnCOpdL57aQz77NMVKg/C/btEA/fEAJGBfQB3D
-	 5rMIBB5KONg+YSqBRDYAbff2qWHhSkQIf080keRfGNeQ7ukYlFngTsFTRdGkH9uC4dg==
+	 Date:Message-ID:X-Mailer:In-Reply-To:References:MIME-Version:
+	 Content-Transfer-Encoding;
+	bh=DjXdfM9Xk6dJXeJxolWhgQCA3DIf/b/Pn3vsuXj+pJI=;
+	b=kLqwnHa9UjgcItQTkLsYPKAhAFwA5r6eAPdONVi4q4xrQb/v1lXpmIRw9TQTaLA0Rokm
+	 +Hn7EzcnYjsJDnm4ug2gPbmD/QAiqqRa+t8Kr5ptCzbGAXIQNPbhbGIuKyegOzytqsiql
+	 CrTPIvZgSvvnkItlj90BhhXRCnglxa1PuX9AJICYuIKYARN2Qk71E5lTjXrTJbiqncV2y
+	 VLMdXcTnrySygpl0LgfksX86sZOFfFzAT2sdXxoShty2bz50gCL5CyJHHEL/XQCN3qkT8
+	 2MoH/MfqKzKl6biY0USA2Nyb95uLtw7lSFXORMQSFtDCBnIQNj/WhGfu4g0UuWDmd3Q==
 ARC-Authentication-Results: i=1; smtp.subspace.kernel.org; 
 	dmarc=pass header.from=gmail.com;
 	spf=pass smtp.mailfrom=gmail.com;
-	dkim=pass header.d=gmail.com header.i=@gmail.com header.a=rsa-sha256 header.s=20260707 header.b=XlNcw2xn;
-	arc=none smtp.remote-ip=209.85.219.43
-Received: from mail-qv1-f43.google.com (mail-qv1-f43.google.com [209.85.219.43])
+	dkim=pass header.d=gmail.com header.i=@gmail.com header.a=rsa-sha256 header.s=20260707 header.b=LNosMmSY;
+	arc=none smtp.remote-ip=209.85.160.174
+Received: from mail-qt1-f174.google.com (mail-qt1-f174.google.com [209.85.160.174])
 	(using TLSv1.3 with cipher TLS_AES_128_GCM_SHA256 (128/128 bits)
 	 key-exchange X25519 server-signature ECDSA (prime256v1) server-digest SHA256)
 	(No client certificate requested)
-	by smtp.subspace.kernel.org (Postfix) with ESMTPS id 2052C606A320
-	for <linux-wireless@vger.kernel.org>; Thu, 19 Nov 2026 00:29:02 +0000 (UTC)
-DMARC-Filter: OpenDMARC Filter v1.4.2 smtp.subspace.kernel.org 2052C606A320
+	by smtp.subspace.kernel.org (Postfix) with ESMTPS id 1CCEF606A33A
+	for <linux-wireless@vger.kernel.org>; Thu, 19 Nov 2026 00:29:09 +0000 (UTC)
+DMARC-Filter: OpenDMARC Filter v1.4.2 smtp.subspace.kernel.org 1CCEF606A33A
 Authentication-Results: smtp.subspace.kernel.org; dmarc=pass (p=none dis=none) header.from=gmail.com
 Authentication-Results: smtp.subspace.kernel.org; spf=pass smtp.mailfrom=gmail.com
 Authentication-Results: smtp.subspace.kernel.org;
-	dkim=pass (2048-bit key) header.d=gmail.com header.i=@gmail.com header.a=rsa-sha256 header.s=20260707 header.b=XlNcw2xn
-Received: by mail-qv1-f43.google.com with SMTP id 6a1803df08f44-91e7fc8265aso16520536d6.0
-        for <linux-wireless@vger.kernel.org>; Wed, 18 Nov 2026 16:29:02 -0800 (PST)
+	dkim=pass (2048-bit key) header.d=gmail.com header.i=@gmail.com header.a=rsa-sha256 header.s=20260707 header.b=LNosMmSY
+Received: by mail-qt1-f174.google.com with SMTP id d75a77b69052e-5364042eecfso19581591cf.2
+        for <linux-wireless@vger.kernel.org>; Wed, 18 Nov 2026 16:29:08 -0800 (PST)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=gmail.com; s=20260707; t=1795048142; x=1795652942; darn=vger.kernel.org;
-        h=content-transfer-encoding:mime-version:message-id:date:subject:cc
-         :to:from:from:to:cc:subject:date:message-id:reply-to:content-type;
-        bh=NneEHT9afGNlYm0ZfBjltKXbYGbaj4NHU2mtTyQ52S8=;
-        b=XlNcw2xnk/10XWBzLzdXEK7gMeMIwJgcUvEof6sAs3/o0Dti94lREoWLuPJmVHFKBh
-         thLgGEHsU0jWV9CsPdGD5tv4ohGiCWu3vfdNptKaDo+Odw2w3Z4Ar5hbc3rgWGfazpby
-         8FWPwOD09yursNaClJ3mEKsGwe6iORWfhSdpJS5K1mIBtqt1SYKRYBT6MtsvEYleatld
-         SV7pM4BFIsoEsoJQ/HUDMMvYLWQNV+seVFtllDYgmMIAAa5JwhswoFnoaw+2RaIYhSZB
-         eE/O/hw2eVNBDjhSQX5q2HpbX37SR/l2ZH5+/UMw/3igKAH3I6DbAdfjbxwEOoRvqMM+
-         TS1w==
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=1e100.net; s=20260707; t=1795048142; x=1795652942;
-        h=content-transfer-encoding:mime-version:message-id:date:subject:cc
-         :to:from:x-gm-gg:x-gm-message-state:from:to:cc:subject:date
+        d=gmail.com; s=20260707; t=1795048148; x=1795652948; darn=vger.kernel.org;
+        h=content-transfer-encoding:mime-version:references:in-reply-to
+         :message-id:date:subject:cc:to:from:from:to:cc:subject:date
          :message-id:reply-to:content-type;
-        bh=NneEHT9afGNlYm0ZfBjltKXbYGbaj4NHU2mtTyQ52S8=;
-        b=Iex29ISFU7tjWxmwkrCu6eqmbmIXMP0KmrZlyEPHU+EQDZ2z6XAFcEoYxSFDSi5Kj7
-         yYqf4bsPqHTbd2J6aqAj2J1nG4agiZoBlYpLCZVfSu8vRRBHCbKYkXT+b2kxwWlNLtbz
-         uPuzze9pfrrMewNEEd8rBc1aZMkIzumPDevk8R5E9e6LcSyi37GkQjZdiTGEXEHrcOXF
-         KR/jMORByTqlmnkuUe67vWTxpHHKbiYVdOYrJlBbpAV050637ZajjDZ5MBB+fFO4mi/1
-         wHNLVChgGLN+ZETvk0xKPtEIoQ7jgIesJf0ifNihI1TFMEEwxyw4OAsOPCqS6LTbS2mP
-         4V4A==
-X-Gm-Message-State: APuU4Z8k+fiPj9hmp8AUxCQiugK8yU57tgb37VDKGuVjKNnSDxCM2A3t
-	0b4nPFsFrHBRtbur1MDm++aguEpsX+6C0eU/eufb7nHDUL83oPhK29Kl5G+FqcTD
-X-Gm-Gg: AZFdTZeII58gDNexBbHBBSt0TexxcRgtp2/xGhfs0Vo1koh0uhFsYLHIhRA6D+LjCoe
-	GpjjzYo5/LIEh184W2nr1YoNa4zBYf4cqm80A94mZw2GBtX4I5YnrzuXaIgwCSZ5iEuAgnnD7ba
-	ik8GoPim6WiJjd6s7TL7Pp+UIBaj285+77jz5mPub9OY/w3nIjGv1lrCsOO5BdzeU4/VpW0SCY6
-	XfXuMBLCivi4HdVWRs1MqhC/l6xSpXHP4Wx7d2PqLyeE8q+dMKbLjTztCY5eKAJpZIp/6CRIK0a
-	yhZtpegehzRqjYNYrUh8CEuT0+zvekZrz0zNT9Vr44tTVr9khZ/Iwa4uwj9olQeoVjpwQtverR6
-	VygKHiDgvbLWJT+io9FiCUuIxrZzEw8M8esv5RGsnxg+ESzqv/RZhVu3ibHGnznEwJGIlag8QyO
-	7R9H5VxW7vk9GtdwQHrJb5XReAjKbAFendif3Mkh+sAF+sj+vwvYnVDLu7+3EusQ68WSUvnyACy
-	TLbbVoCVJTSEjIKFTEn8ry8VTXgu/WtPDkQJkfURBqCFCp5NXHkUdB5m7FBm+ufqUBfHp8VZf1s
-	h7i09K2QE8LkDQC77K3sQRdvddmvgEOGq9OHlE6Pfy2Xem+ZCu1L4ZU7bcUdZbjxAC8NBTW70PI
-	mVPMk1K0tUOG69pKH1u4E
-X-Received: by 2002:a05:6214:4306:b0:921:122b:80f0 with SMTP id 6a1803df08f44-92114f90a80mr69392036d6.46.1795048141981;
-        Wed, 18 Nov 2026 16:29:01 -0800 (PST)
+        bh=DjXdfM9Xk6dJXeJxolWhgQCA3DIf/b/Pn3vsuXj+pJI=;
+        b=LNosMmSYVWnJETNENXouh3pSxSOcixqfbVhjtJFB4W4x7If/33+aNHIddZVsFFbdGZ
+         WJLKx5XKzdzp79zwfIzhKaVdDqJ9xW8YaDzT5Goc03+rhDMuHU/sVKfeRl91f8HQx/bU
+         2RAAKG1Phd5ZQtIVBcNBxE019+G4lGoWqy/J2tOXkoqcOgyOn75bysQFaqD1edQIv3A2
+         FKJ6iMJZkzFS0z6zDa+IfoKGFW1ytliU50KTxI0dW2DOMRUGWmaK+VJbLJkCXO2+tD81
+         wtfPAxQdXqKA+U5tciIsFvE6/Tk/yq74Hfo/IKJa5NuA8udDB4/G+AJYUeOm1uofhQ4g
+         +kZg==
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+        d=1e100.net; s=20260707; t=1795048148; x=1795652948;
+        h=content-transfer-encoding:mime-version:references:in-reply-to
+         :message-id:date:subject:cc:to:from:x-gm-gg:x-gm-message-state:from
+         :to:cc:subject:date:message-id:reply-to:content-type;
+        bh=DjXdfM9Xk6dJXeJxolWhgQCA3DIf/b/Pn3vsuXj+pJI=;
+        b=G0N2eH6ORdaiVAeMGJZr9b/cdMCDdCP4rYNoGI5jFEfce0E226PfrEPK2ddUCT39t1
+         MYk5ODPn67dgSI2cdt4n+VGGjYDEInQ0KijTAvpbwJuEYn16ylIymOVuT7pqFol8/ofo
+         k1U/oqFvrlzFNxGylBJBW9xUty1FXFtXIP3UtJ1RHmTcHHG142ze2DsGP/nVf9wZcGJS
+         Q7pgBp/lOgx8rthtcrx1io5fNv9tWOiQDxPvDoY2+bKKH3aFm+rWzwy8Sb1EiUm6T1OC
+         06OFYutvs04szZkv1WNPhS82P4bc83L2lK1gotcSZ94o14dxixHqXTcaB/Ykn6u9YeMk
+         Bqrw==
+X-Gm-Message-State: APuU4Z+FsVoO3M8VEbfgzPGZ3QvO214UeBB19a6o0psJwGtamZ74MloF
+	gIJq7m8UqzIjRhXbm0N0/SeocuUD4jpkztJsqs0vMbq+CFWcIFD2kqbD
+X-Gm-Gg: AYBFou31ShTU8LtQVf5AUp7UoDIZPcjh6/HcVj9stF8Y/RFj47mA6qroA/h+olUJEyb
+	AaOZksihSYaOEcpF2WyCbyUA8TgOBBXF9W0x2WMddi2mBCLS5QiATvNLkIj72h/ulkGQA8f8/yB
+	vzUYxFh3M/PaDXAXgamORK/Mn2+j5NrnOefB5GutDJ5ftjA1jAegDm/pzDMTswJTiNJ2rfsUWuD
+	WEzugrT7tktZ4Q6Z7KPQwclgikeK8Dt+7RSVj0cfeTymrCa91frF9BdbTCWipFOazB7Z3VVcwhi
+	NhDgh72oUj5D5uZh7nteQThZeDaPbJjwzW0YWP7wrbyYaMco3cEVDbUbQFDrpanJT4QpRHHQuXw
+	0yYcXBHDf3pza93427m/VvUQg+xfZhJtuKBMjwKtZS+icqaaB6eEdyxEvtyIawegBhOwzkVnr5R
+	82OKRwEYKXb6daMluf1kDJRwl38HxFbp8uh+gdrmWBj7cTJJ4V5JeHt3Ck2tQjzJvb33wQs7kVo
+	ftJZO9Wkci/LVQCzFRjiWLta0kj2LyQ9spGL9D8fhTKXFf8LuTP4Jxh+sQWySO4y34Ahq/m1DI7
+	1h1J4tzVtJoMlQP11Vq18cq18BqjDZV/fdGunNgpHlx2sFN02FqS3uftYekBalUAzvds+6YOmlw
+	=
+X-Received: by 2002:a05:622a:2b0b:b0:55d:33e2:a351 with SMTP id d75a77b69052e-55d5a537aabmr69062431cf.15.1795048148019;
+        Wed, 18 Nov 2026 16:29:08 -0800 (PST)
 Received: from linux.. ([8.34.174.240])
-        by smtp.gmail.com with ESMTPSA id 6a1803df08f44-92114d16bafsm34925086d6.7.2026.11.18.16.29.01
+        by smtp.gmail.com with ESMTPSA id 6a1803df08f44-92114d16bafsm34925086d6.7.2026.11.18.16.29.07
         (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
-        Wed, 18 Nov 2026 16:29:01 -0800 (PST)
+        Wed, 18 Nov 2026 16:29:07 -0800 (PST)
 From: Changyul Lee <lcy8047@gmail.com>
 To: Jeff Johnson <jjohnson@kernel.org>,
 	Loic Poulain <loic.poulain@oss.qualcomm.com>
@@ -83,10 +85,12 @@ Cc: linux-wireless@vger.kernel.org,
 	ath10k@lists.infradead.org,
 	linux-kernel@vger.kernel.org,
 	Changyul Lee <lcy8047@gmail.com>
-Subject: [PATCH ath-current v2 0/2] wifi: ath10k: fix leaks when HL TX fails
-Date: Wed, 18 Nov 2026 19:28:56 -0500
-Message-ID: <20261119002858.425666-1-lcy8047@gmail.com>
+Subject: [PATCH ath-current v2 2/2] wifi: ath10k: drop extra skb reference when HL TX fails
+Date: Wed, 18 Nov 2026 19:28:58 -0500
+Message-ID: <20261119002858.425666-3-lcy8047@gmail.com>
 X-Mailer: git-send-email 2.43.0
+In-Reply-To: <20261119002858.425666-1-lcy8047@gmail.com>
+References: <20261119002858.425666-1-lcy8047@gmail.com>
 X-Mailing-List: linux-wireless@vger.kernel.org
 List-Id: <linux-wireless.vger.kernel.org>
 List-Post: <mailto:linux-wireless@vger.kernel.org>
@@ -98,28 +102,28 @@ Precedence: list
 MIME-Version: 1.0
 Content-Transfer-Encoding: 8bit
 
-For SDIO and USB devices, ath10k_htt_tx_hl() leaks the msdu_id and an
-skb reference when ath10k_htc_send_hl() fails. v2 splits them into one
-patch per Fixes tag.
+If ath10k_htc_send_hl() fails, drop the reference taken by skb_get()
+so the skb can be freed.
 
-Found with a static analysis tool we are developing. Compile-tested
-only, with x86_64_defconfig plus ATH10K_SDIO, ATH10K_USB and W=1.
-
+Fixes: 30382dd1cf3a ("ath10k: fix use-after-free on SDIO data frames")
+Signed-off-by: Changyul Lee <lcy8047@gmail.com>
 ---
-Changes in v2:
-- Split into two patches, one per Fixes tag
-- Target ath-current instead of ath-next
-- Link to v1: https://lore.kernel.org/all/20261118052116.3901761-1-lcy8047@gmail.com/
+ drivers/net/wireless/ath/ath10k/htt_tx.c | 2 ++
+ 1 file changed, 2 insertions(+)
 
-Changyul Lee (2):
-  wifi: ath10k: free msdu_id when HL TX fails
-  wifi: ath10k: drop extra skb reference when HL TX fails
-
- drivers/net/wireless/ath/ath10k/htt_tx.c | 7 +++++++
- 1 file changed, 7 insertions(+)
-
-
-base-commit: aebb7274476403040d582c61478df8f4a7bf9cd3
+diff --git a/drivers/net/wireless/ath/ath10k/htt_tx.c b/drivers/net/wireless/ath/ath10k/htt_tx.c
+index 298e6a092101..7142dc1c4eb9 100644
+--- a/drivers/net/wireless/ath/ath10k/htt_tx.c
++++ b/drivers/net/wireless/ath/ath10k/htt_tx.c
+@@ -1383,6 +1383,8 @@ static int ath10k_htt_tx_hl(struct ath10k_htt *htt, enum ath10k_hw_txrx_mode txm
+ 		ath10k_htt_tx_free_msdu_id(htt, msdu_id);
+ 		spin_unlock_bh(&htt->tx_lock);
+ 	}
++	if (res)
++		dev_kfree_skb_any(msdu);
+ 
+ out:
+ 	return res;
 -- 
 2.43.0
 
