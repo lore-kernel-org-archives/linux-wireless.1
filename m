@@ -1,71 +1,71 @@
-Authentication-Results: smtp.subspace.kernel.org; arc=none smtp.remote-ip=74.125.82.198
+Authentication-Results: smtp.subspace.kernel.org; arc=none smtp.remote-ip=209.85.167.198
 ARC-Seal: i=1; d=subspace.kernel.org; s=arc20261015; a=rsa-sha256; cv=none;
-	t=1795108079;
-	b=Ods/6KBphHUjXC8tO4gkLjkP2F+/YLfhRZi4iG63FkAuesm8dDC6Js/8Yq8SJx4q3VqS
-	 26rcGLFyR2KeUoSq7pGrQ5nZw2RqHor4/vZ8TYg3RB4VTGm2AhwnNHD3whAIz9Mmn5XqL
-	 kZnNtcDh4SZq+yNdax0bnBYobWV/ZW4dlPSkhB8kL4dwQe0rsigHadxqYP/f1IkfDrXgJ
-	 9rcJg5vpb9QegjI1kp3zBvUXOIfQpDmqn4CPlCKfRzisDp85MSwaUL10nxsKcLjb2kQu9
-	 bYJqUnOcmts79NIAVM9iy2osl6drDyUcqMBf9mbivyUI184AZGyZ7+QqnWsWNufCYKA==
+	t=1795108159;
+	b=CpvJEjQEr/ARtUbypZw2is/wRpPUkmQZf/6If7ebCWZyexxHKkaEKFcTcrA2Hmd8xZak
+	 ZiszdQH/BV5rShsUXYE2dJYN57Imh3OXMFs+PQS/YbnnWzDHO2bPvnrGPX0SgdCq4jGyh
+	 hcEI9du0NxCy3Z5j8gVPozwOFa69nrqGvrwx6+Y4XmPLZGPEy5AltN7leITmx0S2Vo1tC
+	 ZAQNp5I3NKevbAjd1x1QUHpLSrYv6X8BkyAcpELcnMq4UtdDqy0JSz2F+kMegizpUpFdK
+	 ULglavxYC6dA0iedjMnB1xWFWoeQCpT7sZokY9nvxdKhbEu/1G6FaAep2L2trm/Rg/w==
 ARC-Message-Signature: i=1; d=subspace.kernel.org; s=arc20261015;
-	a=rsa-sha256; c=relaxed/relaxed; t=1795108079;
+	a=rsa-sha256; c=relaxed/relaxed; t=1795108159;
 	h=DMARC-Filter:Received:DKIM-Signature:X-Google-DKIM-Signature:
 	 X-Gm-Message-State:X-Received:Date:Mime-Version:X-Mailer:Message-ID:
 	 Subject:From:To:Cc:Content-Type;
-	bh=qSSvwSzjsPxY7MUI7K379bqPT4XfxGjV3jqJ9Ia2v10=;
-	b=4MCpQizZSbA98+PigccRVKhYbdpd89OLf63QA58yF28jKsshdEVcAX7VxxPqqwNYJOJp
-	 j4WzPlvT19KJlEWpNaTRkivDDNrI4O0zbhfbBy8xSJVEKqQGpekKNDiObC5p6tkLKxBLb
-	 r5WRN6Zzzz/fw7qItPX09pkhn5acFI4c1pwJz7ew8DSC5+xOzoamxXEdhJ+axkR3PnXnb
-	 7D7ZNnpjqYrOO4M74r4Hshlj8+9+AlKzoWPNHvjnzAyjHvFjxkiB3bF6kjk4N6osHy1i7
-	 t6iL0ZmJ06MoCTvcwfG3kLAZjv4BvlrB3rKKT1XoUTidMedCIpha+Hc7jLzK+AQnytg==
+	bh=reI4hG36wSTlZBZHqaQMIOTRXTTK6qV6ma9NRye/4cg=;
+	b=bzkQhDUJjoQPFpoo5jMoyMfABV5m0b0Gh0ftJZQYCFtvjWji45h8ck96eolsDd3kCpep
+	 exlz7B23YPjv180WxTBiKD+MORxQMwiPaZUHPwwZUelGEiIpFMPbBkBbjDhCsldhmjajr
+	 YYzz4FVJTpxg5d4QtY8gksqry0ODwRFqWKf//9hkcsMo0C89d+h6bLzdjeGJwn/STcOhq
+	 FhbQPIvyKrSFXVw5QMaPbWYXtXonyv4QaYhccA2cUXuncV7zHM5CrYWNEJCwD3jz+GEAU
+	 U4E5boVV+33lLHy8MAeOWY57qu3L73K/fqpggUD2EOcyNF+n+lhwJD4k0YC7DScxmzA==
 ARC-Authentication-Results: i=1; smtp.subspace.kernel.org; 
 	dmarc=pass header.from=google.com;
 	spf=pass smtp.mailfrom=flex--irogers.bounces.google.com;
-	dkim=pass header.d=google.com header.i=@google.com header.a=rsa-sha256 header.s=20260707 header.b=TTvmgVHD;
-	arc=none smtp.remote-ip=74.125.82.198
-Received: from mail-dy1-f198.google.com (mail-dy1-f198.google.com [74.125.82.198])
+	dkim=pass header.d=google.com header.i=@google.com header.a=rsa-sha256 header.s=20260707 header.b=IKQzNMeT;
+	arc=none smtp.remote-ip=209.85.167.198
+Received: from mail-oi1-f198.google.com (mail-oi1-f198.google.com [209.85.167.198])
 	(using TLSv1.3 with cipher TLS_AES_128_GCM_SHA256 (128/128 bits)
 	 key-exchange X25519 server-signature ECDSA (prime256v1) server-digest SHA256)
 	(No client certificate requested)
-	by smtp.subspace.kernel.org (Postfix) with ESMTPS id 15695606A32F
-	for <linux-wireless@vger.kernel.org>; Thu, 19 Nov 2026 17:07:57 +0000 (UTC)
-DMARC-Filter: OpenDMARC Filter v1.4.2 smtp.subspace.kernel.org 15695606A32F
+	by smtp.subspace.kernel.org (Postfix) with ESMTPS id B5D05606A337
+	for <linux-wireless@vger.kernel.org>; Thu, 19 Nov 2026 17:09:18 +0000 (UTC)
+DMARC-Filter: OpenDMARC Filter v1.4.2 smtp.subspace.kernel.org B5D05606A337
 Authentication-Results: smtp.subspace.kernel.org; dmarc=pass (p=reject dis=none) header.from=google.com
 Authentication-Results: smtp.subspace.kernel.org; spf=pass smtp.mailfrom=flex--irogers.bounces.google.com
 Authentication-Results: smtp.subspace.kernel.org;
-	dkim=pass (2048-bit key) header.d=google.com header.i=@google.com header.a=rsa-sha256 header.s=20260707 header.b=TTvmgVHD
-Received: by mail-dy1-f198.google.com with SMTP id 5a478bee46e88-3821eb27024so3090374eec.1
-        for <linux-wireless@vger.kernel.org>; Thu, 19 Nov 2026 09:07:57 -0800 (PST)
+	dkim=pass (2048-bit key) header.d=google.com header.i=@google.com header.a=rsa-sha256 header.s=20260707 header.b=IKQzNMeT
+Received: by mail-oi1-f198.google.com with SMTP id 5614622812f47-4b597558c4cso37095b6e.1
+        for <linux-wireless@vger.kernel.org>; Thu, 19 Nov 2026 09:09:18 -0800 (PST)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=google.com; s=20260707; t=1795108077; x=1795712877; darn=vger.kernel.org;
+        d=google.com; s=20260707; t=1795108157; x=1795712957; darn=vger.kernel.org;
         h=content-type:cc:to:from:subject:message-id:mime-version:date:from
          :to:cc:subject:date:message-id:reply-to:content-type;
-        bh=qSSvwSzjsPxY7MUI7K379bqPT4XfxGjV3jqJ9Ia2v10=;
-        b=TTvmgVHDNHKMuCCpFioq684nUSVdthmULWTpF2K0HCmsU5KRxTQXg0RxBmFTIUq9Md
-         IWiIANFH7iAbaurlbdR7HBR8TjljgOCldeyV+4cF8niYRaM6VbDIS2J2P9zVkBYoDDIH
-         RM43e9NORuGJy1RWBiftDngOhT1xtbJNcxt8Aqx7fTslhTeHXLqlgQcgeSY5S258BNr/
-         O1wGI1FiWqbrXwTltorpokE+tmjK3BEgULhfeWLUuUVVcmZpmuDBO6hXMKXviW+TX9FQ
-         +T4M6fYBKtfLISnJuqaujxg2sBoEixoKmEQ3eA6hP0n1EXgguG99fhv3g5wik0Zb77Zl
-         TGYg==
+        bh=reI4hG36wSTlZBZHqaQMIOTRXTTK6qV6ma9NRye/4cg=;
+        b=IKQzNMeT6Ak0BL4jb88pzyRKvZPt4detlG21tIIvxMTeBEEorg9Ei69gJFzmeP5E+x
+         rSaHsPhAU4qiV7tMtF0Ule7KuLv65cTBB7oXqmxR+SoWTVJ2C5hxc4B0k7KQW3/vS/z+
+         qYHqmWXsX7VrJklf6Hs+nJc2Dzz9Zz1Br0jkCrgHbKRjjSuqBxKwtmvPvXYRfj1gGtHC
+         3A06Eb5RYizI2MxDqzyZs1V9gHfAzR4z2pTq+IEAViy+zzk0D0mh+M/pApZDIYvQanoI
+         QnA3N7FtE9ZwJrgiltuzLDrzEuoiawejaTYHP55jxHtamX/tycqFakpd72KYLkyxVciu
+         8yIw==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=1e100.net; s=20260707; t=1795108077; x=1795712877;
+        d=1e100.net; s=20260707; t=1795108157; x=1795712957;
         h=content-type:cc:to:from:subject:message-id:mime-version:date
          :x-gm-message-state:from:to:cc:subject:date:message-id:reply-to
          :content-type;
-        bh=qSSvwSzjsPxY7MUI7K379bqPT4XfxGjV3jqJ9Ia2v10=;
-        b=KpCY+EjCj8tEwyCqTKLdFpDa6J9a4twxFl6dnqjqg0OzhaWSPQYCtw+W7lBx8jaKkX
-         7JtPsWKOtrjqXzX/FYPAODQWtPXcQFz47HNfX68ztdDud4JPKa3PCkWSXyUV+5yFH5pk
-         Tp2u98TbePT1MGMmmHAk10RXvcngXmWIIGcjVoVkTvXwbKX1gfq9SQoN0DZM8H/zgne5
-         gf/NyEYEMguf/cklOMyNo74ojwj8hxTmvZvcZphX+Q1JGXaZymu2Ms9Sd/ihncNBNxLs
-         nH4lvI+3XOSCeUNpVSjkyYPy56kQefXJG/g+/0YzzqcN51Fxg682IjuFZZETsjqM0Z2j
-         Tliw==
-X-Gm-Message-State: APuU4Z+YS42ZoUAlwrNCl89IoUDFaEvbUanV5/YXbzwiHFfGlbkQn3nI
-	O1Hb08DWQS2Tc8zRBa4Fi1K//G8wJQlCWv4PrcZbNU7zU7Zt8gF/XhOceEmzdgY4WzT5VHewgKf
-	uZgd3hWceUg==
-X-Received: from dyjp21.prod.google.com ([2002:a05:7300:4615:b0:351:1933:2028])
- (user=irogers job=prod-delivery.src-stubby-dispatcher) by 2002:a05:7300:dc05:b0:36d:4560:dd38
- with SMTP id 5a478bee46e88-38281cf6398mr7088098eec.37.1795108076745; Thu, 19
- Nov 2026 09:07:56 -0800 (PST)
-Date: Thu, 19 Nov 2026 09:07:53 -0800
+        bh=reI4hG36wSTlZBZHqaQMIOTRXTTK6qV6ma9NRye/4cg=;
+        b=j3gDkZRb5PhRspqxZ5CE9q9nXkjkXXa0KjydSWfMmTu0G7VzaPEIYhskrv83Texeyf
+         IenRbVusht1rxx4VS8Xg000YshpXXNabvfXHmMBQPLZm68gS8dcfiiZIP9zh281JAM+p
+         27kirUjq8MI1WLWWBwF6xRV4S/IsbyyWoaPZCjK6WLENcuK4U9l7AHVWTd0UV8u2fuJ/
+         BCiERIJTyql4UaStiTbXKcs0NTkXTDTwmqSzife0JHTqHdTC1iHe2obXyXz5DohgGnX3
+         3W2Gbitdu4QNSEZEwnS00w1ivYTwp9muVOHH3YlPnQm2mAJsJ7MKbJKQe7IC0fH0oD1E
+         JrYA==
+X-Gm-Message-State: APuU4Z9G5dyABhQVKLwTpGxFfceGReFyGhZqaQut4AkBErIxIKQf3LYC
+	NY8SpeBrMp2eu4XelAndv/duQjJv+8N+ZJbowKYebkd9jyL9dy4A9+VANLfnmF0D7wpIA0h+/K7
+	d3g0zQGVGJw==
+X-Received: from ioi25-n2.prod.google.com ([2002:a05:6602:c659:20b0:9e0:f209:1acb])
+ (user=irogers job=prod-delivery.src-stubby-dispatcher) by 2002:a05:6808:14c3:b0:4fa:8d48:3a5a
+ with SMTP id 5614622812f47-57a0b44ccfemr598788b6e.38.1795108157215; Thu, 19
+ Nov 2026 09:09:17 -0800 (PST)
+Date: Thu, 19 Nov 2026 09:09:09 -0800
 X-Mailing-List: linux-wireless@vger.kernel.org
 List-Id: <linux-wireless.vger.kernel.org>
 List-Post: <mailto:linux-wireless@vger.kernel.org>
@@ -76,78 +76,34 @@ List-Owner: <mailto:linux-wireless+owner@vger.kernel.org>
 Precedence: list
 Mime-Version: 1.0
 X-Mailer: git-send-email 2.56.1.708.g77570a6a1d-goog
-Message-ID: <20261119170753.1526210-1-irogers@google.com>
-Subject: [PATCH] wifi: rtlwifi: Fix octal 024 typo in P2P_PS_OFFLOAD H2C
- command IDs
+Message-ID: <cover.1795106967.git.irogers@google.com>
+Subject: [PATCH 0/2] wifi: mac80211: Two return-value fixes from Clang warning audit
 From: Ian Rogers <irogers@google.com>
-To: Ping-Ke Shih <pkshih@realtek.com>
+To: Johannes Berg <johannes@sipsolutions.net>
 Cc: linux-wireless@vger.kernel.org, linux-kernel@vger.kernel.org, 
 	llvm@lists.linux.dev, Elkin Cruz <elkin@google.com>, Ian Rogers <irogers@google.com>
 Content-Type: text/plain; charset="UTF-8"
 
-In rtl8821ae, rtl8192ee, and rtl8188ee, the H2C power-save command enums
-define 0x20, 0x21, 0x22, 0x23 followed by 'H2C_*_P2P_PS_OFFLOAD = 024'.
-The missing 'x' makes 024 an octal constant (decimal 20, 0x14) instead of
-0x24 (decimal 36, matching H2C_8723B_P2P_PS_OFFLOAD = 0x24 in rtl8723be
-and rtl8xxxu), sending the wrong H2C command ID to firmware during Wi-Fi
-Direct P2P power-save offload updates.
+Two return-value fixes in mac80211 found while auditing Clang
+warnings (-Wconditional-uninitialized and -Wimplicit-int-enum-cast)
+on an x86_64 allyesconfig build:
 
-Change 024 to 0x24 in all three headers.
+1. Return 0 instead of uninitialized res at the end of
+   ieee80211_reconfig_nan_offload_de().
+2. Return NEG_TTLM_RES_REJECT instead of -EIO in
+   drv_can_activate_links() when sdata is not in driver.
 
-Found via inspection of H2C command enums during an x86_64 LLVM=1
-(Clang 21.1.8) allyesconfig warning audit; fix and changelog drafted with
-an AI coding assistant. Build-tested under LLVM=1 W=1 (-Werror); not
-tested on Realtek Wi-Fi hardware.
+Build-tested with LLVM=1 W=1 (-Werror); not runtime-tested on
+wireless hardware.
 
-Fixes: f0eb856e0b6c ("rtlwifi: rtl8188ee: Add new driver")
-Fixes: 21e4b0726dc6 ("rtlwifi: rtl8821ae: Move driver from staging to regular tree")
-Fixes: b1a3bfc97cd9 ("rtlwifi: rtl8192ee: Move driver from staging to the regular tree")
-Signed-off-by: Ian Rogers <irogers@google.com>
----
- drivers/net/wireless/realtek/rtlwifi/rtl8188ee/fw.h | 2 +-
- drivers/net/wireless/realtek/rtlwifi/rtl8192ee/fw.h | 2 +-
- drivers/net/wireless/realtek/rtlwifi/rtl8821ae/fw.h | 2 +-
- 3 files changed, 3 insertions(+), 3 deletions(-)
+Ian Rogers (2):
+  wifi: mac80211: Return 0 from ieee80211_reconfig_nan_offload_de()
+  wifi: mac80211: Return NEG_TTLM_RES_REJECT when sdata is not in driver
 
-diff --git a/drivers/net/wireless/realtek/rtlwifi/rtl8188ee/fw.h b/drivers/net/wireless/realtek/rtlwifi/rtl8188ee/fw.h
-index 79f095e47d71..583e1c51c5c9 100644
---- a/drivers/net/wireless/realtek/rtlwifi/rtl8188ee/fw.h
-+++ b/drivers/net/wireless/realtek/rtlwifi/rtl8188ee/fw.h
-@@ -127,7 +127,7 @@ enum rtl8188e_h2c_cmd {
- 	H2C_88E_PS_TUNING_PARA = 0x21,
- 	H2C_88E_PS_TUNING_PARA2 = 0x22,
- 	H2C_88E_PS_LPS_PARA = 0x23,
--	H2C_88E_P2P_PS_OFFLOAD = 024,
-+	H2C_88E_P2P_PS_OFFLOAD = 0x24,
- 
- #if (USE_OLD_WOWLAN_DEBUG_FW == 0)
- 	H2C_88E_WO_WLAN = 0x80,
-diff --git a/drivers/net/wireless/realtek/rtlwifi/rtl8192ee/fw.h b/drivers/net/wireless/realtek/rtlwifi/rtl8192ee/fw.h
-index 27ac4f8b9a9b..e485d6f8b6bc 100644
---- a/drivers/net/wireless/realtek/rtlwifi/rtl8192ee/fw.h
-+++ b/drivers/net/wireless/realtek/rtlwifi/rtl8192ee/fw.h
-@@ -89,7 +89,7 @@ enum rtl8192e_h2c_cmd {
- 	H2C_92E_PS_TUNING_PARA = 0x21,
- 	H2C_92E_PS_TUNING_PARA2 = 0x22,
- 	H2C_92E_PS_LPS_PARA = 0x23,
--	H2C_92E_P2P_PS_OFFLOAD = 024,
-+	H2C_92E_P2P_PS_OFFLOAD = 0x24,
- 
- #if (USE_OLD_WOWLAN_DEBUG_FW == 0)
- 	H2C_92E_WO_WLAN = 0x80,
-diff --git a/drivers/net/wireless/realtek/rtlwifi/rtl8821ae/fw.h b/drivers/net/wireless/realtek/rtlwifi/rtl8821ae/fw.h
-index af8d17b9e012..d5e65186fc85 100644
---- a/drivers/net/wireless/realtek/rtlwifi/rtl8821ae/fw.h
-+++ b/drivers/net/wireless/realtek/rtlwifi/rtl8821ae/fw.h
-@@ -131,7 +131,7 @@ enum rtl8821a_h2c_cmd {
- 	H2C_8821AE_PS_TUNING_PARA = 0x21,
- 	H2C_8821AE_PS_TUNING_PARA2 = 0x22,
- 	H2C_8821AE_PS_LPS_PARA = 0x23,
--	H2C_8821AE_P2P_PS_OFFLOAD = 024,
-+	H2C_8821AE_P2P_PS_OFFLOAD = 0x24,
- 
- 	H2C_8821AE_WO_WLAN = 0x80,
- 	H2C_8821AE_REMOTE_WAKE_CTRL = 0x81,
+ net/mac80211/driver-ops.h | 2 +-
+ net/mac80211/util.c       | 2 +-
+ 2 files changed, 2 insertions(+), 2 deletions(-)
+
 -- 
 2.56.1.708.g77570a6a1d-goog
 
