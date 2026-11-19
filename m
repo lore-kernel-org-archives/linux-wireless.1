@@ -1,83 +1,69 @@
-Authentication-Results: smtp.subspace.kernel.org; arc=none smtp.remote-ip=211.75.126.72
+Authentication-Results: smtp.subspace.kernel.org; arc=none smtp.remote-ip=91.218.175.151
 ARC-Seal: i=1; d=subspace.kernel.org; s=arc20261015; a=rsa-sha256; cv=none;
-	t=1795049485;
-	b=o8ZXnTZHEu/uLp5BCJ/wbsbHQucPyVEdx7RtIVe7wDbouRvcQbVt+y6mhv3N6sZQKlo3
-	 Xa9FeesQUJpKp5JYPpcDfJKEoDf/KtD2UM4SiQpgZDL5v7Je6XbJx8ewdx3TypVA2e/5z
-	 1ZZwwBOG9w+4+ZAvoWPFwwxPets7agYpVA5iKL6KjQRrXmE1MDIsqIkjEcW1zZmcKm7KZ
-	 FKiEWME6HWmkBhlY8754DBUsMaPmaLpuE3FwDVImyjLtZ4JYu/R69u/yFmHZI3YDhdg87
-	 NJDHgyXTlRB4aLnnXzJCwovA5gjFR6ENtrZGEvCCiyFt/GPJl+x1RLs6K76kEdLU6YA==
+	t=1795049833;
+	b=PgHsfLxIqlcOCLzSvqcPm5jRtczDp5ZgxV3zoKykw36CAW4bh43tkexH6dpTMbu2Jt47
+	 WoS+HOIRq4AB6SCxHva3/2wRLqlZrgQBP2rOhwLoBSmS8pewcJRNpIk4ctS7eY4TPlTKQ
+	 jL29pERgsA1yfgVfiso3t13WmjMVOhOkJ8sxF4ch4HrhiEQQrZOTqO07fJ20CFrmBc/aK
+	 epajMcGFxWVX11BQvSuwEdKOdWnCIfs2EyoAy+/TT16POzfI3DL72i0CstGj+pgUiUbSY
+	 0+/7xYxOu92PAARklznSY0P9SqkAWDHZFkSQ6w/nI4h6AmTQy4t6W7rDWAk0NH1IKVQ==
 ARC-Message-Signature: i=1; d=subspace.kernel.org; s=arc20261015;
-	a=rsa-sha256; c=relaxed/relaxed; t=1795049485;
-	h=DMARC-Filter:X-SpamFilter-By:DKIM-Signature:Received:Received:
-	 Received:From:To:CC:Subject:Thread-Topic:Thread-Index:Date:Message-ID:
-	 References:In-Reply-To:Accept-Language:Content-Language:
-	 x-originating-ip:Content-Type:Content-Transfer-Encoding:MIME-Version;
-	bh=5bHAPuS5qC0QXYjC19aRRZyyyVQrrAo7XwVIBbMCNW8=;
-	b=uaKuOgP1CjI7Wx14armsAtJCdOYqffRQ5gbhl1dfOACDF1g//lgW0qeKIommKcJ7j8NU
-	 68HY7FIun5X0KhIYyydkpKU7bADe6zdxAuH+LqxPgXLMfGPwLl1u6Pm6QjCHafSgYpBvH
-	 rVFaj/EzXvGqa3faOmRjT8zaxXRm+FxSJm36mOfwA9CTZTIHG6Zj1wcKIIaoP/+7TefKP
-	 ylrsyFRqBghC276IGcsMjW/tYm2fUqUqp6GWsKlYvSaeCwBbMS0e0zo1Vmyj4hJfbD7dx
-	 2L+xggXgD3Ks51Hsd1eb+Bob2cbKsLxm5slQBQspV7d+3n7lKcwCh14WfvxGZU5wWxA==
+	a=rsa-sha256; c=relaxed/relaxed; t=1795049833;
+	h=DMARC-Filter:X-Envelope-To:DKIM-Signature:X-Envelope-To:Received:
+	 X-Mizu-Trace-ID:X-Migadu-Flow:From:To:Cc:Subject:Date:Message-ID:
+	 X-Mailer:MIME-Version:Content-Transfer-Encoding;
+	bh=xWgtswuu5voegshuaN7lrRpgJMW8L3MRLlTeWqoC8wQ=;
+	b=TCKBBHx4qDj+7Qs1uj6uKZ4/LOCU9JznhvvCZk6PcuU22MbaH69f4T/fBG7OVqbEs54E
+	 2erjZtlZoS5dg3YRu3+5cL9fZTyMZcdDOm4DHoIZfZuBHJe8T2X4rllneadqcVRqrd7E7
+	 iGWgrfyv4e3BkG1qUSXd5hg0Tln3JKq8lrxN9XaziQ4VmKFL1w2tIhqTlAI2hZh+8Gy82
+	 p+Q9HTZC06k0sjMXQDqfiWI7p6EfapdOXcxnqgXNQycvwrb6JpinpNnpI83GT5VaJh698
+	 688fzr9pL/f9nGLRNMjYSS4n+mBsSX369Nt7qAzlFuMYzGjMvOSDE7PO3OtTHwSLecQ==
 ARC-Authentication-Results: i=1; smtp.subspace.kernel.org; 
-	dmarc=pass header.from=realtek.com;
-	spf=pass smtp.mailfrom=realtek.com;
-	dkim=pass header.d=realtek.com header.i=@realtek.com header.a=rsa-sha256 header.s=dkim header.b=dI5tH3pI;
-	arc=none smtp.remote-ip=211.75.126.72
-Received: from rtits2.realtek.com.tw (rtits2.realtek.com [211.75.126.72])
-	(using TLSv1.3 with cipher TLS_AES_256_GCM_SHA384 (256/256 bits)
+	dmarc=pass header.from=justthetip.ca;
+	spf=pass smtp.mailfrom=justthetip.ca;
+	dkim=pass header.d=justthetip.ca header.i=@justthetip.ca header.a=rsa-sha256 header.s=key1 header.b="CpcNuJ/w";
+	arc=none smtp.remote-ip=91.218.175.151
+Received: from mta0.migadu.com (out-151.mta0.migadu.com [91.218.175.151])
+	(using TLSv1.3 with cipher TLS_AES_128_GCM_SHA256 (128/128 bits)
 	 key-exchange X25519 server-signature ECDSA (prime256v1) server-digest SHA256)
 	(No client certificate requested)
-	by smtp.subspace.kernel.org (Postfix) with ESMTPS id 9B40D606A31C;
-	Thu, 19 Nov 2026 00:51:24 +0000 (UTC)
-DMARC-Filter: OpenDMARC Filter v1.4.2 smtp.subspace.kernel.org 9B40D606A31C
-Authentication-Results: smtp.subspace.kernel.org; dmarc=pass (p=none dis=none) header.from=realtek.com
-Authentication-Results: smtp.subspace.kernel.org; spf=pass smtp.mailfrom=realtek.com
+	by smtp.subspace.kernel.org (Postfix) with ESMTPS id 8DF11606A320
+	for <linux-wireless@vger.kernel.org>; Thu, 19 Nov 2026 00:57:12 +0000 (UTC)
+DMARC-Filter: OpenDMARC Filter v1.4.2 smtp.subspace.kernel.org 8DF11606A320
+Authentication-Results: smtp.subspace.kernel.org; dmarc=pass (p=quarantine dis=none) header.from=justthetip.ca
+Authentication-Results: smtp.subspace.kernel.org; spf=pass smtp.mailfrom=justthetip.ca
 Authentication-Results: smtp.subspace.kernel.org;
-	dkim=pass (2048-bit key, unprotected) header.d=realtek.com header.i=@realtek.com header.a=rsa-sha256 header.s=dkim header.b=dI5tH3pI
-X-SpamFilter-By: ArmorX SpamTrap 5.80 with qID 6AJ0p6qsD1892998, This message is accepted by code: ctloc85258
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=realtek.com; s=dkim;
-	t=1795049467; bh=5bHAPuS5qC0QXYjC19aRRZyyyVQrrAo7XwVIBbMCNW8=;
-	h=From:To:CC:Subject:Date:Message-ID:References:In-Reply-To:
-	 Content-Type:Content-Transfer-Encoding:MIME-Version;
-	b=dI5tH3pI1alvyJ+E++CrlB7Asyzle3KT+t93YfK4tVHm6Z4PEqCsGrCNnLukVEJ/u
-	 4EvTNNXc3KY2Sz2Wkz9AAIF/5AP/bHvChW4yPs4EX5S3VGU7lhZtAN4tN7cArXkkEM
-	 mJQ7X+WsVgRqQ7tA6/j0atNY7toW6f+BP12zPdZmE4K1udCGUOZF+NdumQ7G9Fvtb7
-	 H0tPFJIwMFWdR1iZ97fHco64hh6VaYdeZRYA+FsCvS7kU41faH7pZwbgQp/KYNHszB
-	 uW3jMRCxJRiYBmI7yrHQVt7JoCPupLy1I4M8c2t2yYdx7jUEujuuzzRR8XtfLyIhmn
-	 CRdkPilFwL5tg==
-Received: from mail.realtek.com (rtkexhmbs03.realtek.com.tw[10.21.1.53])
-	by rtits2.realtek.com.tw (8.15.2/3.29/5.94) with ESMTPS id 6AJ0p6qsD1892998
-	(version=TLSv1.2 cipher=ECDHE-RSA-AES256-GCM-SHA384 bits=256 verify=FAIL);
-	Thu, 19 Nov 2026 08:51:06 +0800
-Received: from RTKEXHMBS06.realtek.com.tw (10.21.1.56) by
- RTKEXHMBS03.realtek.com.tw (10.21.1.53) with Microsoft SMTP Server
- (version=TLS1_2, cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id
- 15.2.2562.56; Thu, 19 Nov 2026 08:51:07 +0800
-Received: from RTKEXHMBS06.realtek.com.tw ([fe80::eeeb:c765:ca73:5eef]) by
- RTKEXHMBS06.realtek.com.tw ([fe80::eeeb:c765:ca73:5eef%10]) with mapi id
- 15.02.2562.056; Thu, 19 Nov 2026 08:51:07 +0800
-From: Ping-Ke Shih <pkshih@realtek.com>
-To: Luka Gejak <luka.gejak@linux.dev>, Mehmet Fide <mehmet.fide@gmail.com>
-CC: Bitterblue Smith <rtl8821cerfe2@gmail.com>,
-	"linux-wireless@vger.kernel.org" <linux-wireless@vger.kernel.org>,
-	"linux-kernel@vger.kernel.org" <linux-kernel@vger.kernel.org>,
-	"mehmet.fide@screeningeagle.com" <mehmet.fide@screeningeagle.com>
-Subject: RE: [PATCH rtw-next v12 2/3] wifi: rtw88: support channel switch in
- AP mode
-Thread-Topic: [PATCH rtw-next v12 2/3] wifi: rtw88: support channel switch in
- AP mode
-Thread-Index: AQHddusUlFkb3JLAC0icESyq6ktwKbcy9ygAgAAD3QCAAJC3wP//hh0AgAF9CuA=
-Date: Thu, 19 Nov 2026 00:51:06 +0000
-Message-ID: <9340ef0716924e229396aa1b595aa458@realtek.com>
-References: <9BC4FC13-5723-4711-9798-11E3C285C7F1@linux.dev>
- <20261118083328.1984956-1-mehmet.fide@gmail.com>
- <d55a09e0accd42f39f476d3abba1cdca@realtek.com>
- <658FDA93-1E44-45D3-BBAA-37FBBAF9954A@linux.dev>
-In-Reply-To: <658FDA93-1E44-45D3-BBAA-37FBBAF9954A@linux.dev>
-Accept-Language: en-US, zh-TW
-Content-Language: zh-TW
-Content-Type: text/plain; charset="utf-8"
-Content-Transfer-Encoding: base64
+	dkim=pass (2048-bit key, unprotected) header.d=justthetip.ca header.i=@justthetip.ca header.a=rsa-sha256 header.s=key1 header.b=CpcNuJ/w
+X-Envelope-To: linux-wireless@vger.kernel.org
+DKIM-Signature: a=rsa-sha256; bh=Xfkh/Wtbxs9DzeSqhMzPOXb3vEgBrjD1S7FQ0ecCs/E=;
+ c=simple/simple; d=justthetip.ca;
+ h=from:to:subject:date:message-id:mime-version:content-type; s=key1;
+ t=1795049830; v=1; x=1795654630;
+ b=CpcNuJ/wbL7oXaEIttpFzz0OSRlpCcTQdvE7YzYRc+/iyBbeA3b9sdMabc7aAznaUEYcQu1i
+ BD6iU3+KMjlVF2cuwBWvdVxhSPGfVFOWU15HiwClxAP/WGHH0LsoTtURtfLMbhPY4LdNR3i0ihx
+ T6PE/7riIcAsiNFwOFP9bVYsihYx/OTN8f+fW4/1kOM2LLFOuXu/ySm8H9HWwzoJUG74gG1/Xho
+ 2VE8n3IXdsH7JRoDYlySlMDKHeDjo00G23FPUrDhOc8fkz2rLuUDuE5fwGf/kp+TmtcY3RxZi9H
+ lX6QVdEQSsnPjAVHaaAuBO0QdT8Eizjb2wjnt0ERycZpw==
+X-Envelope-To: linux-wireless@vger.kernel.org
+Received: by smtp.migadu.com with ESMTPS id 11d9fcbaf7dca7b1;
+	Thu, 19 Nov 2026 00:57:10 +0000
+X-Mizu-Trace-ID: 11d9fcbaf7dca7b1
+X-Migadu-Flow: FLOW_OUT
+From: Devin Wittmayer <lucid_duck@justthetip.ca>
+To: Felix Fietkau <nbd@nbd.name>,
+	Lorenzo Bianconi <lorenzo@kernel.org>,
+	Ryder Lee <ryder.lee@mediatek.com>
+Cc: Deren Wu <deren.wu@mediatek.com>,
+	Sean Wang <sean.wang@mediatek.com>,
+	Shayne Chen <shayne.chen@mediatek.com>,
+	Quan Zhou <quan.zhou@mediatek.com>,
+	Michael Lo <michael.lo@mediatek.com>,
+	James-LY Huang <james-ly.huang@mediatek.com>,
+	linux-wireless@vger.kernel.org,
+	linux-mediatek@lists.infradead.org
+Subject: [PATCH mt76-next v3] wifi: mt76: mt792x: tell mac80211 when a disconnect cancels its ROC
+Date: Wed, 18 Nov 2026 17:57:01 -0700
+Message-ID: <20261119005701.8154-1-lucid_duck@justthetip.ca>
+X-Mailer: git-send-email 2.56.1
 X-Mailing-List: linux-wireless@vger.kernel.org
 List-Id: <linux-wireless.vger.kernel.org>
 List-Post: <mailto:linux-wireless@vger.kernel.org>
@@ -87,35 +73,150 @@ List-Unsubscribe: <mailto:linux-wireless+unsubscribe@vger.kernel.org>
 List-Owner: <mailto:linux-wireless+owner@vger.kernel.org>
 Precedence: list
 MIME-Version: 1.0
+Content-Transfer-Encoding: 8bit
 
-THVrYSBHZWphayA8bHVrYS5nZWpha0BsaW51eC5kZXY+IHdyb3RlOg0KPiBPbiBOb3ZlbWJlciAx
-OCwgMjAyNiAxMDoxNDoxNyBBTSBHTVQrMDE6MDAsIFBpbmctS2UgU2hpaA0KPiA8cGtzaGloQHJl
-YWx0ZWsuY29tPiB3cm90ZToNCj4gPk1laG1ldCBGaWRlIDxtZWhtZXQuZmlkZUBnbWFpbC5jb20+
-IHdyb3RlOg0KPiA+PiA+IEkgdGhpbmsgdGhlIHByZXNlbmNlIGNoZWNrIGlzIGJldHRlciBmaXhl
-ZCBpbg0KPiA+PiA+IHJ0d19jb3JlX2NoZWNrX3N0YV9hY3RpdmUoKS4gSXRzIGNhbGxiYWNrIG9u
-bHkgcmVhZHMgaW50ZXJmYWNlIHN0YXRlLA0KPiA+c28NCj4gPj4gPiBjb3VsZCBpdCB1c2UgYW4g
-YXRvbWljIGludGVyZmFjZSBpdGVyYXRvciB3aXRob3V0IGFsbG9jYXRpbmcgZW50cmllcz8NCj4g
-Pj4NCj4gPj4gUmlnaHQsIHRoZSBjYWxsYmFjayBkb2VzIG5vdCBzbGVlcCwgc28gcnR3X2l0ZXJh
-dGVfdmlmc19hdG9taWMoKSB3b3Jrcw0KPiA+PiB0aGVyZS4gVGhlIGNoZWNrIGlzIG9sZGVyIHRo
-YW4gdGhpcyBzZXJpZXM6IHNpbmNlIGNvbW1pdCA5NmZiYjg0ZGU0ZmYNCj4gPj4gKCJ3aWZpOiBy
-dHc4ODogaGFuZGxlIHN0YXRpb24gbW9kZSBjb25jdXJyZW50IHNjYW4gd2l0aCBBUCBtb2RlIikg
-YQ0KPiA+PiBmYWlsZWQgYWxsb2NhdGlvbiBhbHNvIG1ha2VzIHJ0d19jbGVhcl9vcF9jaGFuKCkg
-ZHJvcCB0aGUgb3BlcmF0aW5nDQo+ID4+IGNoYW5uZWwgb2YgYW4gYXNzb2NpYXRlZCBzdGF0aW9u
-LCBvbiBCU1NfQ0hBTkdFRF9CU1NJRCBhbmQgaW4NCj4gPj4gcnR3X29wc19zdG9wX2FwKCkuDQo+
-ID4+DQo+ID4+IFBpbmctS2UsIEx1a2E6IHdvdWxkIHlvdSB0YWtlIHRoYXQgYXMgYSBzZXBhcmF0
-ZSBmaXggZm9yIHJ0dy1uZXh0LCBvciBhcw0KPiA+PiBhIHBhdGNoIGJlZm9yZSB0aGlzIG9uZSBp
-biB2MTM/DQo+ID4NCj4gPkkgdGhpbmsgcnR3X2NvcmVfY2hlY2tfc3RhX2FjdGl2ZSgpIGlzIHVz
-ZWQgdW5kZXIgd2lwaHkgbG9jaywgd2UgY2FuDQo+ID5taWdyYXRlIHRvIHVzZSBmb3JfZWFjaF9h
-Y3RpdmVfaW50ZXJmYWNlKCkgd2l0aCBsb2NrZGVwX2Fzc2VydF93aXBoeSgpDQo+ID5hcyBhIHNl
-cGFyYXRlIHBhdGNoLg0KPiA+DQo+IA0KPiBXb3JrcyBmb3IgbWUuDQoNClRoaW5rIG1vcmUgYWJv
-dXQgZmFpbGluZyB0byBhbGxvY2F0ZS4gSSBzdXBwb3NlIGtlcm5lbCB3aWxsIHRocm93IG91dA0K
-YSBPT00gbWVzc2FnZSwgc28gd2UgY2FuIGp1c3QgaGFuZGxlIHRoZSByZXR1cm4gTlVMTCBwb2lu
-dGVyIHRvIHByZXZlbnQNCmNyYXNoLiBUbyBlbnN1cmUgZnVuY3Rpb24gc3RpbGwgd29ya3MgYXMg
-bm9ybWFsIHVuZGVyIE9PTSBzaXR1YXRpb24sDQppdCBpcyBub3Qgc28gZWFzeS4gSSBndWVzcyB3
-ZSBuZWVkIHRvIGFkZCBtYW55ICJzcGVjaWFsIGNvbmRpdGlvbnMiLA0KYW5kIGRyaXZlciBiZWNv
-bWVzIGhhcmQgdG8gcmVhZC4gDQoNClNvLCBteSBvcGluaW9uIGlzIHRvIGRvIG91ciBiZXN0IHRv
-IGtlZXAgZnVuY3Rpb24gd29yayB1bmRlciBPT00uDQpObyBuZWVkIHRvIGVuc3VyZSBldmVyeXRo
-aW5nIHdvcmsgcGVyZmVjdC4gDQoNCkZvciB0aGlzIGNhc2UsIGl0IGlzIG5vdCB0b28gaGFyZCB0
-byBhdm9pZCB0aGUgT09NIGNhc2UsIHNvIEkgYWdyZWUNCnRoZSBjaGFuZ2UuIEJ1dCB3ZSBkb24n
-dCBhbHdheXMgbmVlZCB0byBoYW5kbGUgdGhlIGNhc2UgZm91bmQgYnkgTExNLg0KDQpQaW5nLUtl
-DQoNCg==
+A disconnect during a remain-on-channel (ROC) cancels the ROC in
+firmware without telling mac80211, which then waits for a ROC that is
+already gone. Scans fail, and after an AP deauth the station does not
+reconnect.
+
+Tell mac80211 when the driver cancels a ROC that mac80211 started.
+
+Fixes: 41ac53c899bd ("wifi: mt76: mt7921: introduce chanctx support")
+Fixes: 5ed54896b6bd ("wifi: mt76: mt7921: fix a potential scan no APs")
+Fixes: c948b5da6bbe ("wifi: mt76: mt7925: add Mediatek Wi-Fi7 driver for mt7925 chips")
+Fixes: 45064d19fd3a ("wifi: mt76: mt7925: fix a potential association failure upon resuming")
+Signed-off-by: Devin Wittmayer <lucid_duck@justthetip.ca>
+---
+v3: rebased on Felix's mt76 branch, where v2 no longer applies after
+"wifi: mt76: mt7925: do not take iflist_mtx under the mutex".
+
+Tested on that branch with an MT7922, an MT7927 and an MT7925U, the
+MT7925U at USB 2.0 and 3.0:
+
+  disconnect while a ROC is held   without this         with it
+  AP deauth                        no reconnect, scans  back in 3.4 to
+                                   fail                 4.5 s
+  the station disconnects          scans fail           scan in 3.1 to
+                                                        3.5 s
+  the same, MT7925U on two links   no reconnect, scans  back in 9.0 to
+                                   fail                 9.6 s, 34 of 34
+
+Each cancelled ROC is reported once, and a P2P find ends its ROCs as
+before on all three chips.
+
+v2: https://lore.kernel.org/all/20261110005846.38432-1-lucid_duck@justthetip.ca/
+v1: https://lore.kernel.org/all/20261023014827.57411-1-lucid_duck@justthetip.ca/
+
+ drivers/net/wireless/mediatek/mt76/mt7921/main.c | 14 +++++++++++++-
+ drivers/net/wireless/mediatek/mt76/mt7925/main.c | 13 ++++++++++++-
+ 2 files changed, 25 insertions(+), 2 deletions(-)
+
+diff --git a/drivers/net/wireless/mediatek/mt76/mt7921/main.c b/drivers/net/wireless/mediatek/mt76/mt7921/main.c
+index 09574d4417cd..58df080a342e 100644
+--- a/drivers/net/wireless/mediatek/mt76/mt7921/main.c
++++ b/drivers/net/wireless/mediatek/mt76/mt7921/main.c
+@@ -381,6 +381,9 @@ void mt7921_roc_abort_sync(struct mt792x_dev *dev)
+ 	ieee80211_iterate_interfaces(mt76_hw(dev),
+ 				     IEEE80211_IFACE_ITER_RESUME_ALL,
+ 				     mt7921_roc_iter, (void *)phy);
++
++	if (phy->roc_notify)
++		ieee80211_remain_on_channel_expired(mt76_hw(dev));
+ }
+ EXPORT_SYMBOL_GPL(mt7921_roc_abort_sync);
+ 
+@@ -405,16 +408,21 @@ void mt7921_roc_work(struct work_struct *work)
+ 
+ static int mt7921_abort_roc(struct mt792x_phy *phy, struct mt792x_vif *vif)
+ {
++	bool aborted;
+ 	int err = 0;
+ 
+ 	timer_delete_sync(&phy->roc_timer);
+ 	cancel_work_sync(&phy->roc_work);
+ 
+ 	mt792x_mutex_acquire(phy->dev);
+-	if (test_and_clear_bit(MT76_STATE_ROC, &phy->mt76->state))
++	aborted = test_and_clear_bit(MT76_STATE_ROC, &phy->mt76->state);
++	if (aborted)
+ 		err = mt7921_mcu_abort_roc(phy, vif, phy->roc_token_id);
+ 	mt792x_mutex_release(phy->dev);
+ 
++	if (aborted && phy->roc_notify)
++		ieee80211_remain_on_channel_expired(phy->mt76->hw);
++
+ 	return err;
+ }
+ 
+@@ -430,6 +438,7 @@ static int mt7921_set_roc(struct mt792x_phy *phy,
+ 		return -EBUSY;
+ 
+ 	phy->roc_grant = false;
++	phy->roc_notify = type == MT7921_ROC_REQ_ROC;
+ 
+ 	err = mt7921_mcu_set_roc(phy, vif, chan, duration, type,
+ 				 ++phy->roc_token_id);
+@@ -471,6 +480,9 @@ static int mt7921_cancel_remain_on_channel(struct ieee80211_hw *hw,
+ 	struct mt792x_vif *mvif = (struct mt792x_vif *)vif->drv_priv;
+ 	struct mt792x_phy *phy = mt792x_hw_phy(hw);
+ 
++	/* mac80211 ends this ROC itself */
++	phy->roc_notify = false;
++
+ 	return mt7921_abort_roc(phy, mvif);
+ }
+ 
+diff --git a/drivers/net/wireless/mediatek/mt76/mt7925/main.c b/drivers/net/wireless/mediatek/mt76/mt7925/main.c
+index 975c564236f9..7ff95683d268 100644
+--- a/drivers/net/wireless/mediatek/mt76/mt7925/main.c
++++ b/drivers/net/wireless/mediatek/mt76/mt7925/main.c
+@@ -569,6 +569,9 @@ void mt7925_roc_abort_sync(struct mt792x_dev *dev)
+ 	cancel_work(&phy->roc_work);
+ 
+ 	mt7925_roc_abort_all(phy, phy->roc_token_id);
++
++	if (phy->roc_notify)
++		ieee80211_remain_on_channel_expired(mt76_hw(dev));
+ }
+ EXPORT_SYMBOL_GPL(mt7925_roc_abort_sync);
+ 
+@@ -596,17 +599,22 @@ void mt7925_roc_work(struct work_struct *work)
+ static int mt7925_abort_roc(struct mt792x_phy *phy,
+ 			    struct mt792x_bss_conf *mconf)
+ {
++	bool aborted;
+ 	int err = 0;
+ 
+ 	timer_delete_sync(&phy->roc_timer);
+ 	cancel_work_sync(&phy->roc_work);
+ 
+ 	mt792x_mutex_acquire(phy->dev);
+-	if (test_and_clear_bit(MT76_STATE_ROC, &phy->mt76->state))
++	aborted = test_and_clear_bit(MT76_STATE_ROC, &phy->mt76->state);
++	if (aborted)
+ 		err = mt7925_mcu_abort_roc(phy, mconf->mt76.idx,
+ 					   phy->roc_token_id);
+ 	mt792x_mutex_release(phy->dev);
+ 
++	if (aborted && phy->roc_notify)
++		ieee80211_remain_on_channel_expired(phy->mt76->hw);
++
+ 	return err;
+ }
+ 
+@@ -721,6 +729,9 @@ static int mt7925_cancel_remain_on_channel(struct ieee80211_hw *hw,
+ 	struct mt792x_vif *mvif = (struct mt792x_vif *)vif->drv_priv;
+ 	struct mt792x_phy *phy = mt792x_hw_phy(hw);
+ 
++	/* mac80211 ends this ROC itself */
++	phy->roc_notify = false;
++
+ 	return mt7925_abort_roc(phy, &mvif->bss_conf);
+ }
+ 
+
+base-commit: e1b736d305e903b8a3e961d77bc392cab23ebc6a
+-- 
+2.56.1
+
