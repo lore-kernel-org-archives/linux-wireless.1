@@ -1,75 +1,80 @@
-Authentication-Results: smtp.subspace.kernel.org; arc=none smtp.remote-ip=91.218.175.245
-ARC-Seal: i=1; d=subspace.kernel.org; s=arc20261015; a=rsa-sha256; cv=none;
-	t=1795119765;
-	b=k9DdMlpBGAJQjsziDZui9q/dm4uAW5/4poNUnwzoxXBYyfFkOh87QRwBztODcsxmO0iC
-	 pdJfT7hBu8epT14sbtPn7jl/cbIPIu5fyAmDLfwnIzBx2zwD7o5yOFdReQV4Yd1JWptwG
-	 PSCtzVnqrVuKA+AI1QjyLORw25B+mlNk77QWzExTsihzsg6ELtZ1RCL7PYu4FFfE715OY
-	 +6hNc9+GyxXXGwrHeWvsCB5ldzXIY7vdb/cS2D9qu99d/5caPZE5fUWa8f/9fBzyqkqDx
-	 R+OT3PJihMFINrg7vq5Axu4YryeGsRP/flmEg6FhyCWJkHIQ02kMTb+NTmMGIRB8b3g==
-ARC-Message-Signature: i=1; d=subspace.kernel.org; s=arc20261015;
-	a=rsa-sha256; c=relaxed/relaxed; t=1795119765;
-	h=DMARC-Filter:X-Envelope-To:DKIM-Signature:X-Envelope-To:Received:
-	 X-Mizu-Trace-ID:X-Migadu-Flow:From:To:Cc:Subject:Date:Message-ID:
-	 X-Mailer:In-Reply-To:References:MIME-Version:
-	 Content-Transfer-Encoding;
-	bh=mgVpFkBiyzs2DPlioXUTpvfQdmQUI4RfrR5rU4gK4FQ=;
-	b=p/+vn70TyYsoE1B9YcGFc2i3lTH/4hMlPh+iq8GEYoPD8JST7gy4CVSUWFlovNHn5nud
-	 eF0DLiEtDxMYEU/BUxZfOO3SJqbMdcdAplz34yrWZSPJFUmwSl4N/RNxcUacCA0W07+1s
-	 WJoh8tflu+xqkq06oXyIrDxvqcy278i+ZCbhfOQcWezayYRT7lrQFIPo8HBjzaThr1V7R
-	 I3NMNvmjvQ0pV2bk9FieVLrGLyyrNAITad2QvJZflentgat352nOMO5lX8fR+CLAYj3PN
-	 C86GMmbtnJSzIlkQnMHprFjyqjeUpbxwbFcfn6G8/meSe6OMiIjvTRhN94sf6N0QjAA==
-ARC-Authentication-Results: i=1; smtp.subspace.kernel.org; 
-	dmarc=pass header.from=justthetip.ca;
-	spf=pass smtp.mailfrom=justthetip.ca;
-	dkim=pass header.d=justthetip.ca header.i=@justthetip.ca header.a=rsa-sha256 header.s=key1 header.b=EAMgXLdj;
-	arc=none smtp.remote-ip=91.218.175.245
-Received: from mta0.migadu.com (out-245.mta0.migadu.com [91.218.175.245])
-	(using TLSv1.3 with cipher TLS_AES_128_GCM_SHA256 (128/128 bits)
+Authentication-Results: smtp.subspace.kernel.org; arc=pass header.oldest-pass=0 smtp.remote-ip=100.103.45.18
+ARC-Seal: i=2; d=subspace.kernel.org; s=arc20261015; a=rsa-sha256; cv=pass;
+	t=1795126171;
+	b=1kJf/XPBJ36mk12JA1rCL5o8HAIPlO11wK0+JDeRprfPBzH6uaCeOVl40qjGJ4m7YC8n
+	 BHrsWkrFjQ7IyEK4Gij6dXkoG9mtVOsG7HM6gIxp59tGEoSDUEZTJI96UbzTO2IcfDLWK
+	 oz7BrvQBzxd1M1NnnaIb4Fcnnopfik0vg0MEnVqSoTCLhZfHwJ2GjN4mRIvGXYEKtDaW4
+	 7yDb+CZXhEhj7sfarC9C++RWHCjc77+pjXDKoSYhkiwPcwj/4IfnT+ISIo7kM/V0dROeI
+	 awjgByDX3qyppKIP8mf1wh68tOtgAtW6xGTRgWckc8TegRm1IKIFVLc1UeKYpHuckEQ==
+ARC-Message-Signature: i=2; d=subspace.kernel.org; s=arc20261015;
+	a=rsa-sha256; c=relaxed/relaxed; t=1795126171;
+	h=Received:DKIM-Signature:Received:From:Subject:Date:Message-Id:
+	 MIME-Version:Content-Type:Content-Transfer-Encoding:X-B4-Tracking:
+	 X-Change-ID:To:Cc:X-Mailer:X-Developer-Signature:X-Developer-Key:
+	 X-Endpoint-Received:X-Original-From:Reply-To;
+	bh=XPxvPb39NSvD3D9zrezUHpugHTXqKDOU24ae3AqQY3Y=;
+	b=LmasF4q2agKYwiTlkbLcnKKZeAK2bThVRvXZ1x/PNSoLgIAo9VTwurpo0oNV1EXuCHHv
+	 Yy2+FNUwCYD/Xf4tw31nfCxIducnNje+v+Znildqs5qG8amcoIsJekq/+6PB5Ve/BPumx
+	 OZpPRk8QsBCF/IDcxeQJXsm/vYeHNfCd6EbcDvXBlKlkD4DvlQWyi0ADdyLy2T4+Or/hN
+	 7PvFcqNlxA+LBNY3gNu9i8tb6Yex+BqCHuRykYa4NAOXO2JMhdyhzecf5CUiYVKts0W0n
+	 e7iPGwWIAD4+rRQNbEfiwStZdUAODT07HCb3UWRbIlfhKY9FlUI5pcrXcg7yhQ7izLw==
+ARC-Authentication-Results: i=2; smtp.subspace.kernel.org; 
+	dkim=pass header.d=kernel.org header.i=@kernel.org header.a=rsa-sha256 header.s=k20260515 header.b=KFJssR9O;
+	arc=pass header.oldest-pass=0 smtp.remote-ip=100.103.45.18
+Received: from smtp.kernel.org (quasi.space.kernel.org [100.103.45.18])
+	(using TLSv1.3 with cipher TLS_AES_256_GCM_SHA384 (256/256 bits)
+	 key-exchange X25519 server-signature ECDSA (prime256v1))
+	(No client certificate requested)
+	by smtp.subspace.kernel.org (Postfix) with ESMTPS id 03EE5606A33C;
+	Thu, 19 Nov 2026 22:09:31 +0000 (UTC)
+Authentication-Results: smtp.subspace.kernel.org;
+	dkim=pass (2048-bit key) header.d=kernel.org header.i=@kernel.org header.a=rsa-sha256 header.s=k20260515 header.b=KFJssR9O
+Authentication-Results: smtp.kernel.org; arc=none smtp.remote-ip=100.80.115.77
+ARC-Seal: i=1; d=kernel.org; s=arc20260519; a=rsa-sha256; cv=none;
+	t=1795126170;
+	b=rNKqSyoaEqtBGNWorgg4Z5f4woLVp3aL15mJgNs1pdy2cW6HpuZujrRbYGU9RhN0pQ1S
+	 cJdkoLfVf6kdgF6BB/nFxSSmJRDDG5ctdvth5++zM5sMgGAa9r6oH9A7IlRNs3HYbj2TC
+	 r9zlnpCCsEtsNi9RLt6h7u2nCI1txPR1BGbYiaY50Jofa3p2MOK+XdITX5rjlAMRzVfHG
+	 D7l/vF2U3kTvQ2YrcqgqB442kqzrAn3YZv1zcLZQqNKUivEMPhi3uLOftVKHYVKfcvt45
+	 MwtDM2ijpcixpU2Jly1xCoJGq3dpYzkPsr3Jyz7/ye3jAAjSazZgh9tZ4hdCb2N8OQQ==
+ARC-Message-Signature: i=1; d=kernel.org; s=arc20260519; a=rsa-sha256;
+	c=relaxed/relaxed; t=1795126170;
+	h=DKIM-Signature:Received:From:Subject:Date:Message-Id:MIME-Version:
+	 Content-Type:Content-Transfer-Encoding:X-B4-Tracking:X-Change-ID:To:
+	 Cc:X-Mailer:X-Developer-Signature:X-Developer-Key:X-Endpoint-Received:
+	 X-Original-From:Reply-To;
+	bh=XPxvPb39NSvD3D9zrezUHpugHTXqKDOU24ae3AqQY3Y=;
+	b=Ee59ppaIbzJCAS1Q19K1Uq/GSoSaR4yfFAPMbkIHbGUHIY5QQKJ9wCGuQCGJKi4lN3uW
+	 YlDXh959wwg5kchXjcxjgJ+0lhGVxGCXQbycug9lTTlB+Pin2g6CZEFuaegTH5i3xlPVD
+	 Wj5EYAa81NWFlO79LfYUx0twBlgMb+OwowTT7WTrT5+XUlu2l1Srd5tAJAyq7o3bgI5zr
+	 p7+m3CDXMl9I4aMzv9zgaiPtPHNF7a/r2vztmQfQbBqSCguJwy6PnNu057XjPEJKnUAds
+	 Gzh2GXbQt6hxb9ESZHP8U7khwE8UKDqnQhJmoq+fdrh4JnB94PefFpZm1tMP0slHNDA==
+ARC-Authentication-Results: i=1; smtp.kernel.org; 
+	arc=none smtp.remote-ip=100.80.115.77
+Received: from lkml.kernel.org (nexus.subspace.kernel.org [100.80.115.77])
+	(using TLSv1.3 with cipher TLS_AES_256_GCM_SHA384 (256/256 bits)
 	 key-exchange X25519 server-signature ECDSA (prime256v1) server-digest SHA256)
 	(No client certificate requested)
-	by smtp.subspace.kernel.org (Postfix) with ESMTPS id 70609606E4C9
-	for <linux-wireless@vger.kernel.org>; Thu, 19 Nov 2026 20:22:44 +0000 (UTC)
-DMARC-Filter: OpenDMARC Filter v1.4.2 smtp.subspace.kernel.org 70609606E4C9
-Authentication-Results: smtp.subspace.kernel.org; dmarc=pass (p=quarantine dis=none) header.from=justthetip.ca
-Authentication-Results: smtp.subspace.kernel.org; spf=pass smtp.mailfrom=justthetip.ca
-Authentication-Results: smtp.subspace.kernel.org;
-	dkim=pass (2048-bit key, unprotected) header.d=justthetip.ca header.i=@justthetip.ca header.a=rsa-sha256 header.s=key1 header.b=EAMgXLdj
-X-Envelope-To: linux-wireless@vger.kernel.org
-DKIM-Signature: a=rsa-sha256; bh=q96NL1S2dvdtT4JxbppSch+QLobZqj7yWTN8oU6f9xM=;
- c=simple/simple; d=justthetip.ca;
- h=from:to:subject:date:message-id:mime-version:content-type; s=key1;
- t=1795119762; v=1; x=1795724562;
- b=EAMgXLdjv8XLc/w9HINIl4KOdCUW3oowuctYznZYirkxYzkgSO1RmQZdO9BXVpOVK/y8DGt7
- EAWM2GmYFp67uBTpuGa7P+2/ueYrwp5S7EKdrwSqP4qQ81c9q5Mtn3nQSJpFqKFBBv7vkgRt0PD
- LWrYcVY7l5Uofj0T9TQiBrqTc1xUs6befcr0Ki55ywNXHLgOciQV/zGOSjatd7KRhr2DPxXGG2i
- 2gOE2z6ghVXe89kCqko2/cuwJtlqJcHChTdOOFVghJSAufwfODMrEtv6fDWZvIyi8qqX9VWdWaq
- P6q+3hmnobYIr2+XFm3+IIU6L2VxzEmYXLpOlAwMB7anw==
-X-Envelope-To: linux-wireless@vger.kernel.org
-Received: by smtp.migadu.com with ESMTPS id d0be6c136bf3c826;
-	Thu, 19 Nov 2026 20:22:42 +0000
-X-Mizu-Trace-ID: d0be6c136bf3c826
-X-Migadu-Flow: FLOW_OUT
-From: Devin Wittmayer <lucid_duck@justthetip.ca>
-To: JB Tsai <jb.tsai@mediatek.com>
-Cc: jwboyer@kernel.org,
-	dwmw2@infradead.org,
-	ben@decadent.org.uk,
-	Felix Fietkau <nbd@nbd.name>,
-	Lorenzo Bianconi <lorenzo@kernel.org>,
-	linux-firmware@kernel.org,
-	linux-wireless@vger.kernel.org,
-	linux-mediatek@lists.infradead.org,
-	linux-kernel@vger.kernel.org,
-	Sean Wang <sean.wang@mediatek.com>,
-	Chris Lu <chris.lu@mediatek.com>,
-	Quan Zhou <quan.zhou@mediatek.com>,
-	litien.chang@mediatek.com
-Subject: Re: [PATCH] linux-firmware: update firmware for MT7925 WiFi device
-Date: Thu, 19 Nov 2026 13:22:29 -0700
-Message-ID: <20261119202229.150946-1-lucid_duck@justthetip.ca>
-X-Mailer: git-send-email 2.56.1
-In-Reply-To: <20261020013839.523295-1-jb.tsai@mediatek.com>
-References: <20261020013839.523295-1-jb.tsai@mediatek.com>
+	by smtp.kernel.org (Postfix) with ESMTPS id 67F3B1F000C0;
+	Thu, 19 Nov 2026 22:09:30 +0000 (UTC)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=kernel.org;
+	s=k20260515; t=1795126170;
+	bh=XPxvPb39NSvD3D9zrezUHpugHTXqKDOU24ae3AqQY3Y=;
+	h=From:Subject:Date:To:Cc:Reply-To;
+	b=KFJssR9O/TyFAY2wr9gkBpB+GZR+Snv1f0WZX0oDv/rX9s2GkO3vsYB+2WuIeRl6j
+	 Su8LwS1t3jG5mEIw+v2t6AI7Wlq16MO/dBausXFzrZh3PdbaBMck3h8zWctMHz7p1c
+	 s6CEJ2pfwNzoXTZPgK2vvUabG7upZ1UUbZAMBnNBAsiqDaSqbEBL25P+4sKFh0IC/s
+	 ggEi82/54jVIoUjD1a/zKPr/WQTbs1MfOrgce4/8F453Ee8jw17JOrtLOvgxPs+B62
+	 tCtDAHxPKZERK7+UmkaC72m7UCztFQHvHDBJlwhxtHS1K/vJqDZhs6xgQp7Y2C4pH7
+	 k4YURIDA2mGiA==
+Received: from nexus.subspace.kernel.org (localhost [IPv6:::1])
+	by lkml.kernel.org (Postfix) with ESMTP id D7DFF41B07;
+	Thu, 19 Nov 2026 22:09:29 +0000 (UTC)
+From: Ahmet Zeren via B4 Relay <devnull+niko3x.proton.me@kernel.org>
+Subject: [PATCH rtw-next 0/3] wifi: rtl8xxxu: honour rate, retries and
+ bandwidth of injected frames
+Date: Fri, 20 Nov 2026 01:09:27 +0300
+Message-Id: <20261120-b4-inject-v1-0-1e1693af0c6b@proton.me>
 X-Mailing-List: linux-wireless@vger.kernel.org
 List-Id: <linux-wireless.vger.kernel.org>
 List-Post: <mailto:linux-wireless@vger.kernel.org>
@@ -79,28 +84,80 @@ List-Unsubscribe: <mailto:linux-wireless+unsubscribe@vger.kernel.org>
 List-Owner: <mailto:linux-wireless+owner@vger.kernel.org>
 Precedence: list
 MIME-Version: 1.0
-Content-Transfer-Encoding: 8bit
+Content-Type: text/plain; charset="utf-8"
+Content-Transfer-Encoding: 7bit
+X-B4-Tracking: v=1; b=H4sIAAAAAAAC/yWMMQ6DMBAEv4K2zknYIAj5SpQiNme4FCayHUBC/
+ D0GytHuzIbIQTjiUWwIPEuUyWdQtwJ2fPuBSfrM0KVulNIlmZrEf9gmco2rjb23VdVp5P83sJP
+ 1bD0R0kKe14TXtcSfOaQjhX3/AzUvjSp3AAAA
+X-Change-ID: 20261120-b4-inject-f6f4bc873392
+To: Jes Sorensen <Jes.Sorensen@gmail.com>
+Cc: linux-wireless@vger.kernel.org, linux-kernel@vger.kernel.org, 
+ Ping-Ke Shih <pkshih@realtek.com>, Ahmet Zeren <niko3x@proton.me>
+X-Mailer: b4 0.15.2
+X-Developer-Signature: v=1; a=ed25519-sha256; t=1795126169; l=2447;
+ i=niko3x@proton.me; s=20261119; h=from:subject:message-id;
+ bh=wIWSBvsZagGyK7K273K72Z/OcMBhty/IqhzJyzOyBko=;
+ b=U3R2Pco+Xmj2bsVNtdyeC5YzFxciqXsIvMCA9n6bMXQ5sdbxrZFdNciMSslAs3hDRiYThUjuS
+ AzKpAyYQ95OBt05gufLlm5wxDi+5I/mgnAJRo0fhS9q4Yrb8R1OEDE8
+X-Developer-Key: i=niko3x@proton.me; a=ed25519;
+ pk=J4zNm2pudzQ/wF+pQ8xO+wW6jpcNa9EJ2C1g4DUAjhM=
+X-Endpoint-Received: by B4 Relay for niko3x@proton.me/20261119 with
+ auth_id=1575
+X-Original-From: Ahmet Zeren <niko3x@proton.me>
+Reply-To: niko3x@proton.me
 
-On Tue, 20 Oct 2026 09:38:38 +0800, JB Tsai wrote:
-> File: mediatek/mt7925/WIFI_RAM_CODE_MT7925_1_1.bin
-> Version: 20261016233029
+rtl8xxxu ignores most of the radiotap header of injected frames. On a
+RTL8192CU every injected frame went out at MCS 7 and 20 MHz whatever was
+requested, the retry count was ignored, and NOACK frames were retried up
+to 48 times. That makes the driver unusable for tools that rely on
+fixed-rate injection.
 
-With this version, a NETGEAR A9000 (MT7925, USB 3.0) sometimes stops
-sending partway through an upload. Within about a minute the driver
-resets the chip and the connection drops.
+Patch 1 makes gen1 chips (RTL8188CU, RTL8192CU, RTL8723AU) use the
+injected rate and guard interval, without rate fallback.
 
-    one-minute uploads at USB 3.0    stalled
-    20261016                         6 of 21
-    20260813                         0 of 26
+Patch 2 makes the radiotap retry count and NOACK work. max_rate_tries is
+0 today, so mac80211 clamps injected retries to zero, and the hardware
+default of 48 retries is used instead: unicast frames to an absent
+station then stalled injection for over 100 s in my tests.
 
-That is on two machines, an AMD mini PC and a Raspberry Pi 5. Only the
-firmware file changed between the two rows. On 20260813 we have seen
-the transmit queue stop like this only when an AP switched off one link
-of an MLO connection, never in a plain upload.
+Patch 3 sends injected frames at 40 MHz when they ask for it. Only QoS
+data frames get the 40 MHz descriptor bits today.
 
-When the driver gives up, it logs:
+Frames without radiotap rate information are not affected.
 
-    mt7925u_git 6-1:1.0: Message 00020016 (seq 5) timeout
-    mt7925u_git 6-1:1.0: timed out waiting for pending tx
+Gen2 chips and the RTL8188EU use other descriptor formats. Patches for
+them follow as a separate RFT series, since I cannot test them.
 
-Devin
+Testing, all on RTL8192CU (0bda:8178) in monitor mode, received by a
+second radio:
+- 1, 5.5, 6 and 54 Mbps and MCS 0/7/8/15 with long and short GI arrive
+  at the requested rate (stock driver: all MCS 7).
+- Unicast frames to an absent station: drain time grows with the
+  requested retry count, NOACK frames are sent once.
+- Channel 6 HT40+ and HT40-: MCS 0 and 7 requested at 40 MHz arrive at
+  40 MHz (stock driver: 20 MHz).
+- checkpatch --strict, W=1 and sparse are clean for each patch.
+
+AI tool use (Documentation/process/generated-content.rst): the patches
+were written with help from Claude Code (Claude Opus 5.5). It was asked
+to find why injected frames ignore the radiotap rate, retry count and
+bandwidth, write the fixes, and run the over-the-air tests above. I have
+reviewed and tested the changes and take responsibility for them.
+
+---
+Ahmet Zeren (3):
+      wifi: rtl8xxxu: honour the rate of injected frames on gen1 chips
+      wifi: rtl8xxxu: honour the retry count of injected frames on gen1 chips
+      wifi: rtl8xxxu: honour the bandwidth of injected frames on gen1 chips
+
+ drivers/net/wireless/realtek/rtl8xxxu/core.c | 78 +++++++++++++++++++++++++---
+ 1 file changed, 70 insertions(+), 8 deletions(-)
+---
+base-commit: 0bdc579dbfc251a6b6838ee9459b6771b948c617
+change-id: 20261120-b4-inject-f6f4bc873392
+
+Best regards,
+--  
+Ahmet Zeren <niko3x@proton.me>
+
+
