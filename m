@@ -1,94 +1,97 @@
-Authentication-Results: smtp.subspace.kernel.org; arc=pass header.oldest-pass=0 smtp.remote-ip=52.101.70.69
-ARC-Seal: i=2; d=subspace.kernel.org; s=arc20261015; a=rsa-sha256; cv=pass;
-	t=1795074714;
-	b=Ruv6PHCffDINuKqu0ytJY8+o7Vw+EwCnZoGtEdHYivHnBkhE203VG3TtOjtdRlUWvjkx
-	 AQWevUyiQmK/umDEXNw7G+XvDnyDJgHL9Rc6upceqUGIBcurv8RJ4ai+Z8DSi0PUIgIv0
-	 /mIuLaD2FBeXor2f8oqPatl1jRd7pmlOjoQlXhj2tAz/JAtI3MoNe64Ev/eK6i9hGeN6k
-	 GxMyOdZOdE7Uu9MmbDOZ4cIAZv4qn9W+Erm51J5EZ0/fag0h+HWj2k3FxFDpcF4743IgG
-	 hZGsFP3x88+OJeGEMlC871xl30agbqY7cfAIMAOwyO0rzgsHpU4o0CCY9WoU3C9ExOA==
-ARC-Message-Signature: i=2; d=subspace.kernel.org; s=arc20261015;
-	a=rsa-sha256; c=relaxed/relaxed; t=1795074714;
-	h=DMARC-Filter:DKIM-Signature:Received:Received:From:To:Cc:Subject:
-	 Date:Message-Id:X-Mailer:In-Reply-To:References:
-	 Content-Transfer-Encoding:Content-Type:X-ClientProxiedBy:MIME-Version:
-	 X-MS-PublicTrafficType:X-MS-TrafficTypeDiagnostic:
-	 X-MS-Office365-Filtering-Correlation-Id:X-MS-Exchange-SenderADCheck:
-	 X-MS-Exchange-AntiSpam-Relay:X-Microsoft-Antispam:
-	 X-Microsoft-Antispam-Message-Info:X-Forefront-Antispam-Report:
-	 X-MS-Exchange-AntiSpam-MessageData-ChunkCount:
-	 X-MS-Exchange-AntiSpam-MessageData-0:X-OriginatorOrg:
-	 X-MS-Exchange-CrossTenant-Network-Message-Id:
-	 X-MS-Exchange-CrossTenant-AuthSource:X-MS-Exchange-CrossTenant-AuthAs:
-	 X-MS-Exchange-CrossTenant-OriginalArrivalTime:
-	 X-MS-Exchange-CrossTenant-FromEntityHeader:
-	 X-MS-Exchange-CrossTenant-Id:X-MS-Exchange-CrossTenant-MailboxType:
-	 X-MS-Exchange-CrossTenant-UserPrincipalName:
-	 X-MS-Exchange-Transport-CrossTenantHeadersStamped;
-	bh=Cko5yJ9zarCkRRSiqkx1APKoAml9H5V79k5xqK9m1GY=;
-	b=chmcSn4jlxuDQBrKhBsy7RsQrG/PXsOo3pmLyKy6mlR+iUWIfcMKFKoKs2dRu29s9OXh
-	 Sf8iVX0xllHyqBk+XcbWfS39skH9QCNpB3idQEIW49tUTN6l9R0ocq1nFGT0RD1LNHc7V
-	 PbrnFaDhOFTN/pc4XIM0bY6SDd9xr+U78NGOozHRGYTax5AZ55Fbh0iTqrOp25iZtos5l
-	 yRV0bt0Vdm7hFljGBQ1fv8jPeiLhb+SnsSoqDm+MA2AgiX/HqtZm2LwCAER+Lq01bBCZU
-	 B59O4G0oH4NSnukP/u5i/WUKZJ2DuubiHMG2hKJtr5vQ51y4vlFMcavU/MUQlqZqgzw==
-ARC-Authentication-Results: i=2; smtp.subspace.kernel.org; 
-	dmarc=pass header.from=oss.nxp.com;
-	spf=pass smtp.mailfrom=oss.nxp.com;
-	dkim=pass header.d=NXP1.onmicrosoft.com header.i=@NXP1.onmicrosoft.com header.a=rsa-sha256 header.s=selector1-NXP1-onmicrosoft-com header.b=rFGrJLnX;
-	arc=pass header.oldest-pass=0 smtp.remote-ip=52.101.70.69
-Received: from AS8PR04CU009.outbound.protection.outlook.com (mail-westeuropeazon11011069.outbound.protection.outlook.com [52.101.70.69])
-	(using TLSv1.3 with cipher TLS_AES_256_GCM_SHA384 (256/256 bits)
-	 key-exchange ECDHE (secp384r1) server-signature ECDSA (prime256v1) server-digest SHA256)
+Authentication-Results: smtp.subspace.kernel.org; arc=none smtp.remote-ip=209.85.214.173
+ARC-Seal: i=1; d=subspace.kernel.org; s=arc20261015; a=rsa-sha256; cv=none;
+	t=1795074988;
+	b=kWfc5KTjACHN23v5ebdVbHeF84ih+4ypRzhbTR0914ay69V2FaNah4P3UCnVwTA5U0TK
+	 yozhb9I8FThs/NvruNm33zocV4T6EkemEPT+nsASsKRXvraq9P2pswYTS2LiSOuv3kGr3
+	 FjEDJfUQolBZX99YTk0tEibmLHoynxjDFhB7aTTfwMWXhiub/cgy8rq4EWwAlQ/k3JH5y
+	 fDU5byp8j6M7yGnK0uhCm54LrWkCvEVUXvygvhaovfk39RG9l70Bw/Sj0WL6h+A2JFEbP
+	 mR1zpOLUMESuKy+0hormkDDajkl2LZ71hCEzUl7T0x4V3qbd4Sg6Tteyv/Wuj9yyNgg==
+ARC-Message-Signature: i=1; d=subspace.kernel.org; s=arc20261015;
+	a=rsa-sha256; c=relaxed/relaxed; t=1795074988;
+	h=DMARC-Filter:Received:DKIM-Signature:X-Google-DKIM-Signature:
+	 X-Forwarded-Encrypted:X-Gm-Message-State:X-Gm-Gg:X-Received:Received:
+	 From:To:Cc:Subject:Date:Message-ID:X-Mailer:MIME-Version:
+	 Content-Transfer-Encoding;
+	bh=zD4vWVrzj0m5l3wwaVzmZX6fctqf45aDG3D9ksl4C6c=;
+	b=GqznCJFzaycFjXFAhRoJqLKj7TmuriMstVTcDhNSBKd+NwrZNbaI42cAf9lq12O+4+Ve
+	 kEP7y7wyQON311ul6doJh4hdGA6ANiG5iJ+ea+YUKzTlegLwM4Oq6wcm1YajolnyDfwPA
+	 U8yQO9DvPhY6IcLpVwvKbnv4pXJa7GrxcRRhvh8gIQ18+4ivqkZ45Pl797Zji+w/eOdsV
+	 AiaeoW/audPamCtELXmt4am0PxTWPwV77PRtz8xw6ftBpIkMVttthMZAeS3tOf9zUt/qE
+	 NR7E2Bw1G1OQJt+psEtDOLD8T1GXJgis51MU3FRl6hap232Z2pwL/Lhi7hPN7nVeCmw==
+ARC-Authentication-Results: i=1; smtp.subspace.kernel.org; 
+	dmarc=pass header.from=gmail.com;
+	spf=pass smtp.mailfrom=gmail.com;
+	dkim=pass header.d=gmail.com header.i=@gmail.com header.a=rsa-sha256 header.s=20260707 header.b=YB4Hwqg0;
+	arc=none smtp.remote-ip=209.85.214.173
+Received: from mail-pl1-f173.google.com (mail-pl1-f173.google.com [209.85.214.173])
+	(using TLSv1.3 with cipher TLS_AES_128_GCM_SHA256 (128/128 bits)
+	 key-exchange X25519 server-signature ECDSA (prime256v1) server-digest SHA256)
 	(No client certificate requested)
-	by smtp.subspace.kernel.org (Postfix) with ESMTPS id D153F606A320
-	for <linux-wireless@vger.kernel.org>; Thu, 19 Nov 2026 07:51:53 +0000 (UTC)
-DMARC-Filter: OpenDMARC Filter v1.4.2 smtp.subspace.kernel.org D153F606A320
-Authentication-Results: smtp.subspace.kernel.org; dmarc=pass (p=none dis=none) header.from=oss.nxp.com
-Authentication-Results: smtp.subspace.kernel.org; spf=pass smtp.mailfrom=oss.nxp.com
+	by smtp.subspace.kernel.org (Postfix) with ESMTPS id 4F9AB606A324
+	for <linux-wireless@vger.kernel.org>; Thu, 19 Nov 2026 07:56:28 +0000 (UTC)
+DMARC-Filter: OpenDMARC Filter v1.4.2 smtp.subspace.kernel.org 4F9AB606A324
+Authentication-Results: smtp.subspace.kernel.org; dmarc=pass (p=none dis=none) header.from=gmail.com
+Authentication-Results: smtp.subspace.kernel.org; spf=pass smtp.mailfrom=gmail.com
 Authentication-Results: smtp.subspace.kernel.org;
-	dkim=pass (2048-bit key) header.d=NXP1.onmicrosoft.com header.i=@NXP1.onmicrosoft.com header.a=rsa-sha256 header.s=selector1-NXP1-onmicrosoft-com header.b=rFGrJLnX
-ARC-Seal: i=1; a=rsa-sha256; s=arcselector10001; d=microsoft.com; cv=none;
- b=nw/4j4OKKuTsbHX7MwQXAr7IM99ve7qToPLJNH0tsF1rLA5X6Nlfjyp4kvBwdEdnfTx+mh/kV3ZHZ2JO0s8c118dCqyLXUtjurzK/BcasZ44qAriLyheW0e78zGTBrB5vL7gXW72F2qZOaCAUmsrOByTkl7uFAIQJorT5jBqRoFbltEEkUKbAAwGULQcIVP+fkP/6aXMh45uV3VE2wS1Kb/pgmM8uMoPqqzxWNmL9QDinPZy3SEYQui8Ak7f0atnoVt40iS3lufjeW2Vjlkm4dwb7PNrBI9KXsMWUipus7lrt6KEN+XahMsHWbZYIWcpqE0X7KhPL7KN5pmBA9JPZA==
-ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=microsoft.com;
- s=arcselector10001;
- h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-AntiSpam-MessageData-ChunkCount:X-MS-Exchange-AntiSpam-MessageData-0:X-MS-Exchange-AntiSpam-MessageData-1;
- bh=Cko5yJ9zarCkRRSiqkx1APKoAml9H5V79k5xqK9m1GY=;
- b=hEsfyCm/lbqtuEh8EjNhFXAmf4FTbrYTlbS59/Z0ncljwFQUe5i2fkw+7AaosHo2trKziTdPWkUqMR7TBYycmdxkM6BVmiPAnnhUkcXXJYvH2KJv2hBeq28R8eHJ94ymqiJHmoM4w0aTHecMf6CbT7I917D6wH6LBLcbaWmKI82GnExEVzEeGTaDeqecvPoAPg4482h4kawdmfk0+Eeas0sqKlemXiiV+yhHaLnalAfQ8peznNzhsqzFbVEz//xdS/9ZmrQi/GyfyJkofbdK8p3u6+fmQdvR2HCbIT/kf+IHEDn0Oz3/HM11bFU3IE8Wf2Axo8HhybF7rM1eSJLAkQ==
-ARC-Authentication-Results: i=1; mx.microsoft.com 1; spf=pass
- smtp.mailfrom=oss.nxp.com; dmarc=pass action=none header.from=oss.nxp.com;
- dkim=pass header.d=oss.nxp.com; arc=none
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=NXP1.onmicrosoft.com;
- s=selector1-NXP1-onmicrosoft-com;
- h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
- bh=Cko5yJ9zarCkRRSiqkx1APKoAml9H5V79k5xqK9m1GY=;
- b=rFGrJLnXbsoezjmkPCNhwFx8MuVrDdH+72iD1q7S3m06hDZ+TCQ9N801rzk8iXIXcvidSly/xYqMTSdvaNt9Opbo/nOF6MZG52EYwGwAzlaFhWJzY7r9SSJPqzDd8ApG4sqH6RZOpZsrUADG/bVh0qKEEBzKY4JkEJaHHAajku7Am7egf+k3uQ9gjEv0gb060wtADxZ0ZjV18ssKFW19tGWy9ZN2jZmRVKo/k5VyyuwmkyrWDPYdXj7v8RHteOJgxgJ3cxt8C5tFvGeneFRWeUjC26cxlTtQ//LxeKwU6adlmI47AUZ7SJOK3bgljzVFxHoiTld4Unx4+ekTJb8sgA==
-Authentication-Results: mx.microsoft.com 1; dkim=none (message not signed)
- header.d=none;dmarc=none action=none header.from=oss.nxp.com;
-Received: from VE1PR04MB7280.eurprd04.prod.outlook.com (2603:10a6:800:1af::22)
- by AMBPR04MB644081.eurprd04.prod.outlook.com (2603:10a6:20b:7da::19) with
- Microsoft SMTP Server (version=TLS1_2,
- cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id 15.21.639.10; Thu, 19 Nov
- 2026 07:51:51 +0000
-Received: from VE1PR04MB7280.eurprd04.prod.outlook.com
- ([fe80::92fd:f75a:a302:f859]) by VE1PR04MB7280.eurprd04.prod.outlook.com
- ([fe80::92fd:f75a:a302:f859%4]) with mapi id 15.21.0615.015; Thu, 19 Nov 2026
- 07:51:50 +0000
-From: jeff.chen_1@oss.nxp.com
-To: Paulneja <paulnejacontacto@gmail.com>
-Cc: Jeff Chen <jeff.chen_1@oss.nxp.com>,
-	Jeff Chen <jeff.chen_1@nxp.com>,
-	Johannes Berg <johannes@sipsolutions.net>,
-	Francesco Dolcini <francesco@dolcini.it>,
-	linux-wireless@vger.kernel.org
-Subject: Re: [PATCH wireless] wifi: nxpwifi: bound the pairwise-cipher OUI walk to the IE length
-Date: Thu, 19 Nov 2026 15:51:00 +0800
-Message-Id: <20261119075100.559056-1-jeff.chen_1@oss.nxp.com>
-X-Mailer: git-send-email 2.34.1
-In-Reply-To: <20261111205917.449230-1-paulnejacontacto@gmail.com>
-References: <20261111205917.449230-1-paulnejacontacto@gmail.com>
-Content-Transfer-Encoding: 8bit
-Content-Type: text/plain
-X-ClientProxiedBy: SI2P153CA0023.APCP153.PROD.OUTLOOK.COM (2603:1096:4:190::6)
- To VE1PR04MB7280.eurprd04.prod.outlook.com (2603:10a6:800:1af::22)
+	dkim=pass (2048-bit key) header.d=gmail.com header.i=@gmail.com header.a=rsa-sha256 header.s=20260707 header.b=YB4Hwqg0
+Received: by mail-pl1-f173.google.com with SMTP id d9443c01a7336-2eb18f4da15so8493515ad.1
+        for <linux-wireless@vger.kernel.org>; Wed, 18 Nov 2026 23:56:28 -0800 (PST)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+        d=gmail.com; s=20260707; t=1795074987; x=1795679787; darn=vger.kernel.org;
+        h=content-transfer-encoding:mime-version:message-id:date:subject:cc
+         :to:from:from:to:cc:subject:date:message-id:reply-to:content-type;
+        bh=zD4vWVrzj0m5l3wwaVzmZX6fctqf45aDG3D9ksl4C6c=;
+        b=YB4Hwqg0DiuGEH09AUeOt3wJvoIWEDxxJr+bQEPUE/yv227htIMm1ypFAL/7XjQ0EC
+         J9gBdTDOEvnceKo4pbdKyyWEFpAK26KWd3jIEpCzqgtuH8WqzcmY3YIWcwtdImFwI/sx
+         fdJqpu3MCWQh8i7Qf306MWqM8NGl1LGE8eH144xnFUqZxtRpzvijTgq6D5x96Okrk1cI
+         guKoL1BhmJ+UxI2nPcwqW7/OSf0CfaESi0dfvz0vei89aoRLQe2t13Y0HO9jqHcZQc4f
+         +r7WrTosr0CblSIzkDrWu0yJJQlL/y7Xj22sxCPh9KCQeL7v2F0EXBw/LIXHK7W3l+cI
+         PnMA==
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+        d=1e100.net; s=20260707; t=1795074987; x=1795679787;
+        h=content-transfer-encoding:mime-version:message-id:date:subject:cc
+         :to:from:x-gm-gg:x-gm-message-state:from:to:cc:subject:date
+         :message-id:reply-to:content-type;
+        bh=zD4vWVrzj0m5l3wwaVzmZX6fctqf45aDG3D9ksl4C6c=;
+        b=di71GfW3qxKd7NsK0p35GsbQYC6KhdHxa3US9oG3GrBJ05HCVRsW+dj/Qq0599hjVX
+         xsG4TP3UECpoykCluZteqTWAtIeI9IOne2weZ5hvqz01Xmi/9sYvkqME9/M7hAdraf0g
+         qfXObEKikRQnmnCRBucoQsU/2XH21gUTtQX3lvEqYZS0JcPmmMydnpLhAliMGIPp/tWP
+         jbw2sqvaWbvw+8IcnhgSSK9Z6qtm/BtrVJrejm7BMWK6QnfXPYKT8pO6JZoaEoTkkqd4
+         CJ5Rf1DW6l3PBT3u9pOU6UN32v5h9OvbYLjvQXy2ktbBIrDoSuQ4yLUrBilMOMeK0/9s
+         6eRA==
+X-Forwarded-Encrypted: i=1; AL+hErGCjYX5CYWR8Ar4L6FPBfQ9So5/fiV8XlYkCKWT503E2QMG+6KP72NgyavbKdeOXAyHP5jsOYDf9siCQyifpA==@vger.kernel.org
+X-Gm-Message-State: APuU4Z/2Kwe1LMUPxaIuHq+1jKTH4TqsFlICLNbWf0qomODbsyejrc1U
+	ErfjiwVaod/iSEiJDp2tUQ/AnG1keXsGqTFVwd73pu5i1ZeFlMRgQ6/f
+X-Gm-Gg: AZFdTZfmR7p3vDNak4syaRl2b//SIxCNetXK5albhThALHgMTruIqvosZNW4d6fWD4F
+	9iq4PZUIusB6bGsPiulKWYIZXjq2s5IMb9KrUZ8aDLO1r6tiemjAbioHgLQNEnixc+BTJ3nDqWB
+	GNMrrhJc23Z4VFAIx61SlTkj8JhlmrWgPl9UY/pOG8ylcBteMwq7J8pDaz9tSp24wK8t4WTG9xX
+	jqfIt1UTPmyk45BuoRLW9DJSCg52pWqeIF9up9p/Ue3zHswFkb0uGZ7cU4bslFWc3+tZMS6BDzZ
+	R6OABzzku1sW63LPhYUq4+fs7ai4DmLupzrMVkp9Kb6ZJJwxHVUO3SIVpQjJYhhHUpnQEfOE6tk
+	1RZZ4iN6HBXb/3YOk9axBy29N/MpssXk1nhUgvvRxyeYFR/pEXkV/U3vdHB9AFz+dCPaXbHQWWt
+	V/NS0zpBXSNPZV7ndRw5ADtSarXxQvbWAESbs1534BTuksrDLSpQGQNx2EtmB7JiizuuTpQ2o1w
+	CKTc8XVagN6FewNvKO8MV2PKpYkRUfOj4wtOoJiAZEyPEWgG+TQLPJcdpDqHgKE2J1nAoeUU+ot
+	c/JlbPgXSahK/mOEeBoqQJPjGiRWwKWmjGvNWplY8dfdEoYgZstXxT1rvekj
+X-Received: by 2002:a17:902:ea03:b0:2df:90d4:7758 with SMTP id d9443c01a7336-2eff72f4385mr44649885ad.23.1795074987036;
+        Wed, 18 Nov 2026 23:56:27 -0800 (PST)
+Received: from G7XWH7K1F3 ([2408:8256:2e80:7371:84c0:a687:3d35:47b0])
+        by smtp.gmail.com with ESMTPSA id d9443c01a7336-2eff6183f8csm25817825ad.31.2026.11.18.23.56.16
+        (version=TLS1_3 cipher=TLS_CHACHA20_POLY1305_SHA256 bits=256/256);
+        Wed, 18 Nov 2026 23:56:26 -0800 (PST)
+From: Zhao Li <enderaoelyther@gmail.com>
+To: Jeff Johnson <jjohnson@kernel.org>
+Cc: Pradeep Kumar Chitrapu <quic_pradeepc@quicinc.com>,
+	Karthikeyan Periyasamy <quic_periyasa@quicinc.com>,
+	John Crispin <john@phrozen.org>,
+	Kalle Valo <kvalo@kernel.org>,
+	linux-wireless@vger.kernel.org,
+	ath11k@lists.infradead.org,
+	linux-kernel@vger.kernel.org,
+	stable@vger.kernel.org,
+	Zhao Li <enderaoelyther@gmail.com>
+Subject: [PATCH ath-current] wifi: ath11k: fail the start when a service ready event fails
+Date: Thu, 19 Nov 2026 15:55:59 +0800
+Message-ID: <20261119075559.10177-1-enderaoelyther@gmail.com>
+X-Mailer: git-send-email 2.56.1
 X-Mailing-List: linux-wireless@vger.kernel.org
 List-Id: <linux-wireless.vger.kernel.org>
 List-Post: <mailto:linux-wireless@vger.kernel.org>
@@ -98,82 +101,140 @@ List-Unsubscribe: <mailto:linux-wireless+unsubscribe@vger.kernel.org>
 List-Owner: <mailto:linux-wireless+owner@vger.kernel.org>
 Precedence: list
 MIME-Version: 1.0
-X-MS-PublicTrafficType: Email
-X-MS-TrafficTypeDiagnostic: VE1PR04MB7280:EE_|AMBPR04MB644081:EE_
-X-MS-Office365-Filtering-Correlation-Id: ea535773-1122-4d67-d80b-08df4611f828
-X-MS-Exchange-SenderADCheck: 1
-X-MS-Exchange-AntiSpam-Relay: 0
-X-Microsoft-Antispam:
-	BCL:0;ARA:13230040|1800799024|19092799006|23010399003|376014|366016|18002099003|22082099003|11063799006|261022105027099003|261026140227099003|261021121427099003|56012099006|261102123227099003|261009223027099003|261028144727099003|10067099003;
-X-Microsoft-Antispam-Message-Info:
-	Tp0s3Ir2JskVLgD+LT2jtla4iJACcOee1HN+NZvYwRTIoYHeL/x1aaGvi4hEtkMGNXFVWIfqPsTijYrRhimU1R9BDR/NkkMOzeKnZOIdTJatQQBA3qQ17Kl7PE+xXb8HqxnYEhGm3lz87oFM4lNvmODrGzNIcBj+UQJrhlp5GX64MS/0MhlV7/pcONdXdrBBSoYmqtDXAtYDEJFHBzbr38xeVx1d68WnxqdgKtpGY85j+3tQkXaTTIODUEtJnFjR3dgJw1Ru/fBf+Z1cuVFdmoeO43ls9tDrjcnbvArg+LBrvUxlGlie6ZVD8DFIawEmT6qG5bBqQlmNtRmkc/TYsnYEYewBk07o3vi8ZtkRxEiHZudOZhyVB0F/OH0cO5as/Hpnwx8Jw/JmsPP5peO8Av2P1e5Mzo6p2xfYRDaTi/DkXM2oPgma5p1zD3TdtL7qC98SU7TicIWdsAVTcwbDXC/yggyFkl75nptucCdiSBzYahpyoqNLfOTAW25x+jzbNvn+0ZUzlbUhSEyzoyMuTLjHyymH3AL4AO507lkYMCv4qn551k0kHNDLIGG82k1d0w9bPnTvxRlO4zTb2TMaigzcg/EACFPN4uKSqDdlVtdA/zebvCG/WqKsKBSVI//YztDJsOBSuJQhyWJLDeZHEA==
-X-Forefront-Antispam-Report:
-	CIP:255.255.255.255;CTRY:;LANG:en;SCL:1;SRV:;IPV:NLI;SFV:NSPM;H:VE1PR04MB7280.eurprd04.prod.outlook.com;PTR:;CAT:NONE;SFS:(13230040)(1800799024)(19092799006)(23010399003)(376014)(366016)(18002099003)(22082099003)(11063799006)(261022105027099003)(261026140227099003)(261021121427099003)(56012099006)(261102123227099003)(261009223027099003)(261028144727099003)(10067099003);DIR:OUT;SFP:1101;
-X-MS-Exchange-AntiSpam-MessageData-ChunkCount: 1
-X-MS-Exchange-AntiSpam-MessageData-0:
-	=?us-ascii?Q?qkz8uU88ZgABUpk2Sph8lM++Agb7tvxdvJKop/lotoWiHXlpPB/bgAkr3PJn?=
- =?us-ascii?Q?D4QmSM8ONQg0M9YU9U6I6LrLB1XtPBXST9mGb8BtZeiG/HSakc9hxBKDXCYv?=
- =?us-ascii?Q?m9dRJGeH42OHqqqD8zi3hH/59Cp2PRtcadJysfego6t6OlqUuS/QpiFVzNkO?=
- =?us-ascii?Q?byfj42jlBnf/qPrris9xe/BIEXLhbzfIn3B4GnOIcd31tyskH6xbcG0TOJ72?=
- =?us-ascii?Q?RRLwBIqnCQ3znmu1TY8Pa4bDCu0lnW0vv4DDJWXGDRMy6AUEMvSthvUD8t7R?=
- =?us-ascii?Q?ns+C09P465bwHPLnQpK9pLP3IRzH5s0EgjDYpoLiXJDuVUgt4p1WQcXA/Pmy?=
- =?us-ascii?Q?R7NObDNuGSgyji3tNz5qvBHdO+BARAPtr3fttxw8qUtZw4aLMiQ9CkPrlFzS?=
- =?us-ascii?Q?fJKkHunGFsfdpoCu/DbT80r3CaOqz5RELviyvaztMu7+hVKwjjcGubo5/4pW?=
- =?us-ascii?Q?YPZxWofgmAMZxbSm9rccl9o8hlHhUlEM0XtvZdxl951F5vTmCPaJSgpuoGup?=
- =?us-ascii?Q?UuINazR+Yg7Kpt+9Z0BzXyhBmblTPElcEiwqzgFPFEvkGcYd/D4TGUrJem6G?=
- =?us-ascii?Q?0D9mxPWyOvQ4UXhcg9J6786JywqRNoFOICLDbgzIwjMPc1n+RtfC9PcBynw8?=
- =?us-ascii?Q?NIJFgg5Ea9hy6S5K3154v/ui/hMThlQWkehAYeU9u/JaH+EF5/iFPSmlcUYz?=
- =?us-ascii?Q?cPCQ03dLaHCZaPhbKZd2MyfHXkpTV8evCYyVMcvyj+kXah0rXfs/1MWaFrAh?=
- =?us-ascii?Q?i0JvY58ZGyMEfCoNvAHpCywnKH4tGEDT9AZQXkYvBxUTk85ZBI8t9uG9QzKX?=
- =?us-ascii?Q?bMvvgOCeOc04Y/jWvPf+2FsqsiBWSbuswmhYA/K+rvk5GLtiksoSo07wlnKO?=
- =?us-ascii?Q?na3hLxuRA2oZHatwwM2hX8o36hkA/xrHDMJmhehWdNj0PYYOJHhsV7ZorM9L?=
- =?us-ascii?Q?9K7LeHu//HM9OnrdisBxQIOambL+yjzehG5tRP70oHvDzRPAMwSO90mKVTB2?=
- =?us-ascii?Q?zRnuhbzZLnHbaAi6XNGXc8k2cmm7t5/rpggYeU/HrjLYuUGaI/uX8KT0uER3?=
- =?us-ascii?Q?OMbIeGKUSH/F0MDGwJVQlUVLrjhtseTnzH7wUwQhshGYPfhGPS1so7R7aXIB?=
- =?us-ascii?Q?kEdlc/nQ+r7ndZJm+1yRT5gEnFT81W7yVjObPr2HZGZlPql2BM2uZhKBIzSH?=
- =?us-ascii?Q?iNmOnJrGFabHWF7gcXa2fFEOimw1PM5XOBOqUVpvPkcF7ZlxWny5ZeKJEUtS?=
- =?us-ascii?Q?tl4xMkEi2jDdMwHoQCcG8eQ2YBJ0U1sM0VrXZFFXquo4xK7tbQakiR0qupnm?=
- =?us-ascii?Q?XHPx7idSTUvOKxXYNHPgVhaBfa1LOOqoxTFB1r51/LSkNqoryodN1+7yRNIP?=
- =?us-ascii?Q?av1tcKo6JpAewPxhhdNnrVZnJLaxo7Vs/ulSR3g4qfc/pCm+wo7CmONgGqZk?=
- =?us-ascii?Q?NH4RSfLDCQ7XzglPSRPM0ajlQgAHTW2iLG0KMclU4U5a3Uq2MGeRED39uQFf?=
- =?us-ascii?Q?fjeZC5Cca8gi/eamxO9WwwXnRoD1VQo1VQLajwpkCuzkZic0oqz6AMKh4U9v?=
- =?us-ascii?Q?bqj8m7bfMmeeT6/YNr0QvlztKWkU/YdSOqIorkMPiISbPJc+97+XMiQNXvdA?=
- =?us-ascii?Q?jgTJNprbsGc8uy3A5J8YTj0K+/RzXi3FPK+Dn3VxeSoIaJY6vxPIFq2FUGys?=
- =?us-ascii?Q?t0k/zJ6vmrX2NvA6GMV8mFt3GU+WvZegafNEjDFBpskAUz4Q1GQWcmYyFKUv?=
- =?us-ascii?Q?0czzQuiL9a3HYXFe/h1ulCa8AsC8VSjWlnHkMCAmPgoV5E8BAKRe?=
-X-OriginatorOrg: oss.nxp.com
-X-MS-Exchange-CrossTenant-Network-Message-Id: ea535773-1122-4d67-d80b-08df4611f828
-X-MS-Exchange-CrossTenant-AuthSource: VE1PR04MB7280.eurprd04.prod.outlook.com
-X-MS-Exchange-CrossTenant-AuthAs: Internal
-X-MS-Exchange-CrossTenant-OriginalArrivalTime: 19 Nov 2026 07:51:50.4970
- (UTC)
-X-MS-Exchange-CrossTenant-FromEntityHeader: Hosted
-X-MS-Exchange-CrossTenant-Id: 686ea1d3-bc2b-4c6f-a92c-d99c5c301635
-X-MS-Exchange-CrossTenant-MailboxType: HOSTED
-X-MS-Exchange-CrossTenant-UserPrincipalName: qMSLKLb2wuEaJ31zT41UJl5AHJcMlfYSsb7iyWPKrwMfnZx8p6EcZ1hpl3nOenqIFCx43COaBDJ5uxLzObwbzXc1bJDSgiZrsdom+O+AsKZToBrbmIDkHbgqVcU0kEfu
-X-MS-Exchange-Transport-CrossTenantHeadersStamped: AMBPR04MB644081
+Content-Transfer-Encoding: 8bit
 
-From: Jeff Chen <jeff.chen_1@oss.nxp.com>
+ath11k_core_start() waits for the service ready handshake, in which the
+firmware sends SERVICE_READY, SERVICE_READY_EXT and, if it supports it,
+SERVICE_READY_EXT2. Only the last of these events completes the wait,
+whenever its own TLVs parse, so the start goes on after an earlier event
+failed (for example, on -ENOMEM or a malformed TLV), with capabilities
+that were only partly extracted. An event that arrives again, even after
+the start, is handled again and rewrites the capabilities under a
+running driver.
 
-On Wed, Nov 11, 2026 at 05:59:17 PM -0300, Paulneja wrote:
-> nxpwifi_search_oui_in_ie() takes the pairwise cipher suite count from the
-> RSN or WPA element of a beacon or probe response and compares that many
-> 4-byte suite selectors against the wanted one. The count is not checked
-> against the length of the element, and the beacon parser records the
-> element on its ID alone (the RSN case in nxpwifi_update_bss_desc_with_ie()
-> has no length check at all, the WPA one only requires the OUI and type).
+Track the next service ready event that this start accepts. Each handler
+takes only its own event in turn, closes the handshake before parsing
+and opens it for the next event only on success. A failed event then
+makes ath11k_wmi_wait_for_service_ready() time out, and any event out of
+turn, including one after the handshake completed, is ignored.
 
-Hi Paulneja,
-The patch looks good to me.
+Fixes: d5c65159f289 ("ath11k: driver for Qualcomm IEEE 802.11ax devices")
+Fixes: bd6478559e27 ("ath11k: Add direct buffer ring support")
+Cc: stable@vger.kernel.org # needs adjustments for <= 6.1
+Signed-off-by: Zhao Li <enderaoelyther@gmail.com>
+---
+Found by code review. Tested in a QEMU guest with KASAN and a test hook
+that feeds service ready events to a synthetic device: without this
+change the start completed after a failed SERVICE_READY or
+SERVICE_READY_EXT, and duplicate or out-of-turn events were parsed again
+after the handshake; with it the failed start timed out and those events
+were dropped before parsing.
 
-The commit message is too long. Two short paragraphs are enough:
-what the bug is, and how the patch fixes it.
+No new W=1, sparse or smatch warnings.
 
-> Assisted-by: LLM
+AI assistance was used.
 
-checkpatch fails here. Please drop this line. If you want to keep
-the note, you can put it below the "---" line.
+ drivers/net/wireless/ath/ath11k/wmi.c | 22 +++++++++++++++++++++-
+ drivers/net/wireless/ath/ath11k/wmi.h |  9 +++++++++
+ 2 files changed, 30 insertions(+), 1 deletion(-)
 
-> Signed-off-by: Paulneja <paulnejacontacto@gmail.com>
-> ---
+diff --git a/drivers/net/wireless/ath/ath11k/wmi.c b/drivers/net/wireless/ath/ath11k/wmi.c
+index 08fd6795ed9e..5f9b18338478 100644
+--- a/drivers/net/wireless/ath/ath11k/wmi.c
++++ b/drivers/net/wireless/ath/ath11k/wmi.c
+@@ -612,6 +612,11 @@ static int ath11k_service_ready_event(struct ath11k_base *ab, struct sk_buff *sk
+ 	struct wmi_tlv_svc_ready_parse svc_ready = { };
+ 	int ret;
+ 
++	if (ab->wmi_ab.svc_rdy_next != ATH11K_WMI_SVC_RDY)
++		return -EPROTO;
++
++	ab->wmi_ab.svc_rdy_next = ATH11K_WMI_SVC_RDY_NONE;
++
+ 	ret = ath11k_wmi_tlv_iter(ab, skb->data, skb->len,
+ 				  ath11k_wmi_tlv_svc_rdy_parse,
+ 				  &svc_ready);
+@@ -622,6 +627,8 @@ static int ath11k_service_ready_event(struct ath11k_base *ab, struct sk_buff *sk
+ 
+ 	ath11k_dbg(ab, ATH11K_DBG_WMI, "event service ready");
+ 
++	ab->wmi_ab.svc_rdy_next = ATH11K_WMI_SVC_RDY_EXT;
++
+ 	return 0;
+ }
+ 
+@@ -5118,6 +5125,11 @@ static int ath11k_service_ready_ext_event(struct ath11k_base *ab,
+ 	struct wmi_tlv_svc_rdy_ext_parse svc_rdy_ext = { };
+ 	int ret;
+ 
++	if (ab->wmi_ab.svc_rdy_next != ATH11K_WMI_SVC_RDY_EXT)
++		return -EPROTO;
++
++	ab->wmi_ab.svc_rdy_next = ATH11K_WMI_SVC_RDY_NONE;
++
+ 	ret = ath11k_wmi_tlv_iter(ab, skb->data, skb->len,
+ 				  ath11k_wmi_tlv_svc_rdy_ext_parse,
+ 				  &svc_rdy_ext);
+@@ -5128,7 +5140,9 @@ static int ath11k_service_ready_ext_event(struct ath11k_base *ab,
+ 
+ 	ath11k_dbg(ab, ATH11K_DBG_WMI, "event service ready ext");
+ 
+-	if (!test_bit(WMI_TLV_SERVICE_EXT2_MSG, ab->wmi_ab.svc_map))
++	if (test_bit(WMI_TLV_SERVICE_EXT2_MSG, ab->wmi_ab.svc_map))
++		ab->wmi_ab.svc_rdy_next = ATH11K_WMI_SVC_RDY_EXT2;
++	else
+ 		complete(&ab->wmi_ab.service_ready);
+ 
+ 	kfree(svc_rdy_ext.mac_phy_caps);
+@@ -5180,6 +5194,11 @@ static int ath11k_service_ready_ext2_event(struct ath11k_base *ab,
+ 	struct wmi_tlv_svc_rdy_ext2_parse svc_rdy_ext2 = { };
+ 	int ret;
+ 
++	if (ab->wmi_ab.svc_rdy_next != ATH11K_WMI_SVC_RDY_EXT2)
++		return -EPROTO;
++
++	ab->wmi_ab.svc_rdy_next = ATH11K_WMI_SVC_RDY_NONE;
++
+ 	ret = ath11k_wmi_tlv_iter(ab, skb->data, skb->len,
+ 				  ath11k_wmi_tlv_svc_rdy_ext2_parse,
+ 				  &svc_rdy_ext2);
+@@ -9315,6 +9334,7 @@ int ath11k_wmi_attach(struct ath11k_base *ab)
+ 	/* TODO: Init remaining wmi soc resources required */
+ 	init_completion(&ab->wmi_ab.service_ready);
+ 	init_completion(&ab->wmi_ab.unified_ready);
++	ab->wmi_ab.svc_rdy_next = ATH11K_WMI_SVC_RDY;
+ 
+ 	return 0;
+ }
+diff --git a/drivers/net/wireless/ath/ath11k/wmi.h b/drivers/net/wireless/ath/ath11k/wmi.h
+index b2dade0516ac..c69037c8a114 100644
+--- a/drivers/net/wireless/ath/ath11k/wmi.h
++++ b/drivers/net/wireless/ath/ath11k/wmi.h
+@@ -5849,6 +5849,13 @@ struct wmi_peer_sta_ps_state_chg_event {
+ 	u32 peer_ps_timestamp;
+ } __packed;
+ 
++enum ath11k_wmi_svc_rdy {
++	ATH11K_WMI_SVC_RDY_NONE,
++	ATH11K_WMI_SVC_RDY,
++	ATH11K_WMI_SVC_RDY_EXT,
++	ATH11K_WMI_SVC_RDY_EXT2,
++};
++
+ struct ath11k_wmi_base {
+ 	struct ath11k_base *ab;
+ 	struct ath11k_pdev_wmi wmi[MAX_RADIOS];
+@@ -5857,6 +5864,8 @@ struct ath11k_wmi_base {
+ 
+ 	struct completion service_ready;
+ 	struct completion unified_ready;
++	/* Next service ready event this start accepts */
++	enum ath11k_wmi_svc_rdy svc_rdy_next;
+ 	DECLARE_BITMAP(svc_map, WMI_MAX_EXT2_SERVICE);
+ 	wait_queue_head_t tx_credits_wq;
+ 	u32 num_mem_chunks;
+
+base-commit: b1ed5a45b994a6473ca1cf34f35a1bf87f1d8e2a
+-- 
+2.56.1
 
