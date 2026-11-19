@@ -1,85 +1,85 @@
-Authentication-Results: smtp.subspace.kernel.org; arc=none smtp.remote-ip=209.85.128.41
+Authentication-Results: smtp.subspace.kernel.org; arc=none smtp.remote-ip=209.85.128.45
 ARC-Seal: i=1; d=subspace.kernel.org; s=arc20261015; a=rsa-sha256; cv=none;
-	t=1795110612;
-	b=FSsahFfnxXfEHfqmbu4dCPQON0v3VDITXaXGsVqSrhVgEtNhW5tu0Y2RI+A/oTDmZ1+n
-	 IBseFuUYnbpyylexmqQxwOQ+Brd2G78Rwu68SUuEfk6RtyMH1hhmhO+lsWnqwxwvIQ0AZ
-	 B430ss7qr7ydCeNGT61DkldqdUAig5VtVvyBKF9hD0Rgx0wMQZjtI7eEzYQM74XOmaxUQ
-	 KCFJYMLC2ch7HrrvjLBo56OIZbd6OHPyzgC4FAr/Z4Zy4UpZoXYwOfcbWWlWGT0EinhBp
-	 wc3yvBNF8+xe2eSgAs6CrqRTMjnupl8GSirH8MBWr8QyEwKgykAe1eQtKV3ug2XsMag==
+	t=1795110613;
+	b=idGOfP1ylDK0Rh8hyEzs89umlR5j5B+gvDJLEGjKf9G67VUwdldc/7VRiOYBYa4BRSmC
+	 qcUTi4z4ETAk1Hz+JQfvP0eYygYnJnoqCawRAihsPcgGNtrJA8FiUc6strfTJmaZfgwsU
+	 +NrRA4OR7ZYLm1KYpNj9Mf3claKFbDIrnREzUXjJ0a7se3j//7mz04UYvDNgeA5Z8xQ/Y
+	 oeAAvedfSN53j9qqxL8KzDgshjvMB4GnhgqImltJ+d/KzWo/oxylCBtKBt3FiDmcT3DfR
+	 5Jt09YV3GsrXV0Et5yv4j8w/jVnfj0255/tDKlms14ZepE4G/Z9X4GXUXTzzqGXsXUg==
 ARC-Message-Signature: i=1; d=subspace.kernel.org; s=arc20261015;
-	a=rsa-sha256; c=relaxed/relaxed; t=1795110612;
+	a=rsa-sha256; c=relaxed/relaxed; t=1795110613;
 	h=DMARC-Filter:Received:DKIM-Signature:X-Google-DKIM-Signature:
 	 X-Gm-Message-State:X-Gm-Gg:X-Received:Received:From:To:Cc:Subject:
 	 Date:Message-ID:X-Mailer:In-Reply-To:References:MIME-Version:
 	 Content-Transfer-Encoding;
-	bh=+y4Dhz36GBPfKNKm/OZQCyp1F0ego1607MuK1Oaddis=;
-	b=H90MjHoooa2nVSoJGO8yb9bb7YHqa1mNeMaT6AAkQUfJb0ETxeTTFKdUzwJ05VRrYvE1
-	 K12d788Lcq2AqwJlgrq6kaPUlSypwDrFcRvFLRNxejHeoLAmhBtFPLIvHOQImTijzkMnP
-	 DarrwG2tpJ8lwV2FJnCtiFwZ2BFw8kYhHokd29QNiJCaGBd0MqTqOhMyEKUKEbI+gNvuk
-	 ZEPX7AGzdTuQ6jLNheUaLBvT+SQBnSiaT6jZqTNYWO+R07xEbr8NnqTTbbC9vkBGXC3z9
-	 DG6WS0ZgQBWJqnaip0+C20yBNgtZfW/fbrbU7GAk/HeJdlHb5fNJIUEbjr9QgLcL34A==
+	bh=uMvJgUgIWQ9UB+m69mwQOPyQAv9bwycAqVzJU4J35gk=;
+	b=i/ncU2A3dR779SgCxAerArhvOyXU1IK4mFoMtP3zQdb0RYBE3PEkoPBcqkbP7nTSCae4
+	 PMWHfY7ivrBWQYiTQo2uZYOoAONikpD4JoA4mzVjNoQD9zkzJckH0J5HAf+0YnWVltJWa
+	 MlAgFT8C2X3kkCk4G1BmD0v4QWeGtgOFcKq3wSYBsbo6awmz4iykTSPcwLYL+QhcfEb7A
+	 lb+CV1KDdP3enWWcenZjtVaWeP8QLxgGYTpD2WTgkq8ee1z/EFPhCruvoZxQy2f43MK13
+	 P6HQ4o7jZ/6YEav8HyoYrmdwxTuPGzcXDJZKPc7YWvxnD/NYnGCa6JExzGk73K2Ko+Q==
 ARC-Authentication-Results: i=1; smtp.subspace.kernel.org; 
 	dmarc=pass header.from=aheymans.xyz;
 	spf=pass smtp.mailfrom=aheymans.xyz;
-	dkim=pass header.d=aheymans-xyz.20260707.gappssmtp.com header.i=@aheymans-xyz.20260707.gappssmtp.com header.a=rsa-sha256 header.s=20260707 header.b=noXf1rHX;
-	arc=none smtp.remote-ip=209.85.128.41
-Received: from mail-wm1-f41.google.com (mail-wm1-f41.google.com [209.85.128.41])
+	dkim=pass header.d=aheymans-xyz.20260707.gappssmtp.com header.i=@aheymans-xyz.20260707.gappssmtp.com header.a=rsa-sha256 header.s=20260707 header.b=pipCExca;
+	arc=none smtp.remote-ip=209.85.128.45
+Received: from mail-wm1-f45.google.com (mail-wm1-f45.google.com [209.85.128.45])
 	(using TLSv1.3 with cipher TLS_AES_128_GCM_SHA256 (128/128 bits)
 	 key-exchange X25519 server-signature ECDSA (prime256v1) server-digest SHA256)
 	(No client certificate requested)
-	by smtp.subspace.kernel.org (Postfix) with ESMTPS id 0FC26606A32A
-	for <linux-wireless@vger.kernel.org>; Thu, 19 Nov 2026 17:50:10 +0000 (UTC)
-DMARC-Filter: OpenDMARC Filter v1.4.2 smtp.subspace.kernel.org 0FC26606A32A
+	by smtp.subspace.kernel.org (Postfix) with ESMTPS id B35D260A260E
+	for <linux-wireless@vger.kernel.org>; Thu, 19 Nov 2026 17:50:12 +0000 (UTC)
+DMARC-Filter: OpenDMARC Filter v1.4.2 smtp.subspace.kernel.org B35D260A260E
 Authentication-Results: smtp.subspace.kernel.org; dmarc=pass (p=none dis=none) header.from=aheymans.xyz
 Authentication-Results: smtp.subspace.kernel.org; spf=pass smtp.mailfrom=aheymans.xyz
 Authentication-Results: smtp.subspace.kernel.org;
-	dkim=pass (2048-bit key) header.d=aheymans-xyz.20260707.gappssmtp.com header.i=@aheymans-xyz.20260707.gappssmtp.com header.a=rsa-sha256 header.s=20260707 header.b=noXf1rHX
-Received: by mail-wm1-f41.google.com with SMTP id 5b1f17b1804b1-4bb70074ab2so27641555e9.0
-        for <linux-wireless@vger.kernel.org>; Thu, 19 Nov 2026 09:50:10 -0800 (PST)
+	dkim=pass (2048-bit key) header.d=aheymans-xyz.20260707.gappssmtp.com header.i=@aheymans-xyz.20260707.gappssmtp.com header.a=rsa-sha256 header.s=20260707 header.b=pipCExca
+Received: by mail-wm1-f45.google.com with SMTP id 5b1f17b1804b1-4bb64c99d2fso28733795e9.3
+        for <linux-wireless@vger.kernel.org>; Thu, 19 Nov 2026 09:50:12 -0800 (PST)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=aheymans-xyz.20260707.gappssmtp.com; s=20260707; t=1795110609; x=1795715409; darn=vger.kernel.org;
+        d=aheymans-xyz.20260707.gappssmtp.com; s=20260707; t=1795110611; x=1795715411; darn=vger.kernel.org;
         h=content-transfer-encoding:mime-version:references:in-reply-to
          :message-id:date:subject:cc:to:from:from:to:cc:subject:date
          :message-id:reply-to:content-type;
-        bh=+y4Dhz36GBPfKNKm/OZQCyp1F0ego1607MuK1Oaddis=;
-        b=noXf1rHXHVA5Bo4zBqtRn+YjTYtHNXGVE83xggHGKpOWjneiUdG5LTFmE9tzs3PcFi
-         QDgwMI0eZzahFKbbUHQxOzro7v4Hw3kiJ4m3AYRUtEkI7RUatHAETc/wADxUDy48QzWy
-         NltjoUQNyPz91+WrQGjtvuHrtGTA7HQakwoozd0ncQc5831PnXftOw4lhkDLw/7sDU2A
-         5cF+ssEbbYVFSUwmA53rpP3GVOutHQ/72+f9fJqIRZo1Deuv6sQUSQjSD1ZU8RhziwLX
-         M6YNfnpf2S1ZK5CHuPW2PZYCZ/XVkE7wLBdZJYg1Er631mnNtAF3hoy2QVU+0gJo2z8X
-         JXag==
+        bh=uMvJgUgIWQ9UB+m69mwQOPyQAv9bwycAqVzJU4J35gk=;
+        b=pipCExcaAkgn33Jj+6XRGBrNhCc+5e9sj5XWlJo6lmJ/sjHGiZAeX5r2xVCdiCNUfI
+         IIWErUWiAWY+B3j7mrp99xi/YrTIjNUJmkgtKvMfFAjEQ6Sd2c/u5fSE42jeEhPhMuKf
+         T8/lzLvWPyKKXU1B0LGYaxfIjgAtb7+6pcaSd1U9NNSHH3gq+AEMHQ4/k4LhsUlyBHP4
+         3ALctnth2LWKxHQHdzsj9TEau7rdpUow+TvP/1XU2wF2xnLb0txNfNYpf8LiZpbZOyI0
+         zwyGZcgeIuEYEsujTM+NBjqz+fMizNvqzmEZdGcaxL3JqO3Mzt50eiIn30KmzBfM0KzR
+         rNsw==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=1e100.net; s=20260707; t=1795110609; x=1795715409;
+        d=1e100.net; s=20260707; t=1795110611; x=1795715411;
         h=content-transfer-encoding:mime-version:references:in-reply-to
          :message-id:date:subject:cc:to:from:x-gm-gg:x-gm-message-state:from
          :to:cc:subject:date:message-id:reply-to:content-type;
-        bh=+y4Dhz36GBPfKNKm/OZQCyp1F0ego1607MuK1Oaddis=;
-        b=moW/n6Y8hdnEvYuhpVdkvz45rShnN3xP3pzML3xqcWDXXWgVbM6QX9lwKmho8i5TmI
-         p3etxLj8hlXh5UEnSWH5R116p2hJ7HToAoOmYJ43Mnq6tu0NroyIBynvqCWbLZVyVo7O
-         wk+Fg8gIrRfgrZXzb0nZsYeReHeHYCWccZejYklflUovVEgaTBzafwSMtR31V8vf5ltr
-         +x0CB4vCaUPT7jN5oA8HEyfbiCy5RcUU8ZzNxAQWVlJRrp+Z31UHsPielZXSazasZi2X
-         M5GXS4Qy7El3dsX7jVKCb7HC05VD3ZTKfa+lqXAALprYbIolT7nIOrWhzPtiIcG/W0kZ
-         K+lw==
-X-Gm-Message-State: APuU4Z/+mSt9qN+SxFBfU4ExsejWgj6tdKP9daXSX1ckaJoSI1QLGpIy
-	oEkfj7+9u5q5l1qN7v6i0d1kgRTPFDiyFuJh4Ewnw14ireaPkSVm4FIU/Hl1Stg2EjgvSDOgDHw
-	jXmsnOAA=
-X-Gm-Gg: AYBFou21uUWgl9MiOGq1yra9LcF54l+XJSoA4lxz2SIKlbz2cNclntpzX6OvfKmzePI
-	2Fhz6vWVr2SkZ0mildOUVN4AhqiNaTiIWMLeHtXbWanLT9APO9SV1av6KGmLv8C7AvJoz5kpd41
-	37qvQw++ya19oYAQiNSg05Sra8THHEwBQzMdxpqBiZBjqQy9hz+djNCsPLRQBdGxPsFgnDpeMIo
-	JyUuO2AkDslF9hR3g/j54QKWQJ4Xsn9S3Ps90RWZKpwA75UAr8QMheIXJtvRCFy6RMtgJ8tzNhz
-	MZT58+6gxGIrKcaym+xVlNtirXeBdoBoY1qy8BK/Y58D8appJ9X44dNiYTfqncC4b1TbqC04fJO
-	WNwfmEZRZwx3IpwtHeoOvNie36bmahdruMs612Ykk7VQVtQbHL8Q+8KxAluAumR1tTWwr7s0XwX
-	BU/NzsCpJeNPxoxNS5soUkoAHTOkys71DzS91tL8GGfu1KYX58ueRTk39ng8O7KHtoXOVg5UMzU
-	4/VclpcSEaQ62vpj6Oa6y3qDtBMNCvoRFVGFV8Nagl1/eD5h6LbLXZNcJWpcjqddIBnl5wlzzVT
-	PZH1tUs66aELckYM1MawedL5HGQhV+39ktLt3xh6zKNn/cJ3X3f1vop2qm/y1If2YANsr1gpKYL
-	3fgtLXi80yvwHc5oq7+0fYjgIKKd1+l/5iJ23xZzh+/qxlajVFFOXTEtMgKhJ8XrrNnh2hgth2A
-	8Hfw==
-X-Received: by 2002:a05:600c:6290:b0:4a3:59c9:a743 with SMTP id 5b1f17b1804b1-4bb8882a21amr5216045e9.27.1795110609383;
-        Thu, 19 Nov 2026 09:50:09 -0800 (PST)
+        bh=uMvJgUgIWQ9UB+m69mwQOPyQAv9bwycAqVzJU4J35gk=;
+        b=OiMOSodoYY16qa6xnqg1T2Inu4g93h3xv7kZF/n3CL7PXk3xmB1QDUrR8mlskDegto
+         JKcTVoJw99txEWF+mShDHgFCk1xicYomViSfsv/JAY2MmeNudn8u27iu7qIsl+1HA92+
+         1/xG3xJU0D1bWWf1geSRjCnetkqSWII80K5e6naN2U2s+owkMmkBcWMwsOw/uVJoWv7J
+         1MZ1k4eikNXfVn4OCiWxUJ7EhlpQJXHJdZah/GGu/8YGOrc895F9KZDN7/xf8JLZqYsN
+         0Osnsg/LGBJ6++C1dw+tXMPzwUXyWWV3OyHx//s2fqr4DVwg6M752IycljnSNc9Dvxx/
+         cjMw==
+X-Gm-Message-State: APuU4Z9dBF8nlVkeq1zqT39qeiBUntFd1W59rYAFQ6HbHyNAPS+5f9l9
+	jh2Fzi06eg8XelwEeF3WCAsaAmg6z44jW6WZjw79lPW7qcVEm/SnKbtWhiXe41GA4wh5ASTbBSV
+	MiHpjoow=
+X-Gm-Gg: AYBFou1OVdN0YFg03rPVm+v/lFzJSwlTozL/OuosPOhEx3Vx0K+tNJa0qQNM7w0In14
+	eZkLTZbsT7K0va+4Z2dPW1CNXvmzL9GTv6qayY2VEP+Jl6I8Ao+DBbGVXIYf8DTzPMFMUcaYBRG
+	UrXhL0Dj4/7RHVVkgc1QHss5meNTcIMSlv2wH3BdAFBXLn3l0XavLHYJTMi1psOmYKokx+yZpbk
+	opfj2YdhS8LBjYYOpUN6dFEqgmaGKhX2bdGid6FshRDNg6Fx0XJThINUwhr3SG0z3zo9CLv+dvU
+	Mo9cLRd/impf8C3PRL3SvAQIS4SGSizEV6GxtYqsC/kHEgUAykRrxK9T9AppKsWG0/s8jLOnvcp
+	gp7pNIcr75m0IENIoYVDxuvDrhlM4OzCv5q44UXEhquJNvmszAwitYmbHUK1k1dK+MiJ7cZT4Dy
+	+eGYy8hL1BtRvc4KWsw+Xn0rMHbcTST1bHHh6+TtAwxW3Ii9FYKP1sM14VRaNfMiWS+eVn5Kp2n
+	pj0L9glmmtBP01nhRP3IxeUDSBIJE79sL4kgaV2Qa2HTePMIloJ0JL886a69Pbp/EOZg+XHvyrp
+	7mZzxAek/QuJSXxOw/ufIrnOQvI904eapxPSohwqyS9JLHxAPObPqF/VMQ9ONH4Zh2B/SXSf0pw
+	+UZce9qEnUhFsKgrYZw4HGB2VFut421S5bz2NkY376iATLhz6iS1QVGOdLNEqt5kzAquta+qwHg
+	LiB8o=
+X-Received: by 2002:a05:600c:5306:b0:4bb:6ac0:6dc1 with SMTP id 5b1f17b1804b1-4bb887c994cmr8080595e9.2.1795110610855;
+        Thu, 19 Nov 2026 09:50:10 -0800 (PST)
 Received: from localhost (2a02-1810-b422-d400-611-84c9-252f-74ad.ip6.access.telenet.be. [2a02:1810:b422:d400:611:84c9:252f:74ad])
-        by smtp.gmail.com with ESMTPSA id 5b1f17b1804b1-4bb84e06c73sm90730215e9.2.2026.11.19.09.50.09
+        by smtp.gmail.com with ESMTPSA id 5b1f17b1804b1-4bb853ca452sm53032625e9.15.2026.11.19.09.50.10
         (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
-        Thu, 19 Nov 2026 09:50:09 -0800 (PST)
+        Thu, 19 Nov 2026 09:50:10 -0800 (PST)
 From: Arthur Heymans <arthur@aheymans.xyz>
 To: linux-wireless@vger.kernel.org,
 	Johannes Berg <johannes@sipsolutions.net>
@@ -92,9 +92,9 @@ Cc: Rob Herring <robh@kernel.org>,
 	Solomon Peachy <pizza@shaftnet.org>,
 	linux-kernel@vger.kernel.org,
 	Arthur Heymans <arthur@aheymans.xyz>
-Subject: [PATCH wireless-next 01/10] wifi: cw1200: avoid removing the debugfs directory twice
-Date: Thu, 19 Nov 2026 18:49:53 +0100
-Message-ID: <20261119175002.458988-2-arthur@aheymans.xyz>
+Subject: [PATCH wireless-next 03/10] wifi: cw1200: bounce SDIO transfers that use stack buffers
+Date: Thu, 19 Nov 2026 18:49:55 +0100
+Message-ID: <20261119175002.458988-4-arthur@aheymans.xyz>
 X-Mailer: git-send-email 2.56.0
 In-Reply-To: <20261119175002.458988-1-arthur@aheymans.xyz>
 References: <20261119175002.458988-1-arthur@aheymans.xyz>
@@ -109,74 +109,77 @@ Precedence: list
 MIME-Version: 1.0
 Content-Transfer-Encoding: 8bit
 
-Unregistering the wiphy removes its cw1200 debugfs directory. On SDIO
-unbind, cw1200_debug_release() then tries to remove the stale dentry.
-Leave directory removal to the wiphy and free the counters as before.
+Register accesses pass stack words to sdio_memcpy_fromio() and
+sdio_memcpy_toio(). Use a heap buffer for stack and non-linear
+addresses; keep the direct path for ordinary packet buffers.
 
 Prepared with OpenAI Codex.
 
-Fixes: fa8eeae10257 ("cw1200: Remove "ITP" debug subsystem.")
+Fixes: a910e4a94f69 ("cw1200: add driver for the ST-E CW1100 & CW1200 WLAN chipsets")
 Signed-off-by: Arthur Heymans <arthur@aheymans.xyz>
 ---
- drivers/net/wireless/st/cw1200/debug.c | 19 ++++++++-----------
- drivers/net/wireless/st/cw1200/debug.h |  1 -
- 2 files changed, 8 insertions(+), 12 deletions(-)
+ drivers/net/wireless/st/cw1200/cw1200_sdio.c | 35 ++++++++++++++++++--
+ 1 file changed, 33 insertions(+), 2 deletions(-)
 
-diff --git a/drivers/net/wireless/st/cw1200/debug.c b/drivers/net/wireless/st/cw1200/debug.c
-index 7dad6d3ba239..6b8b6ca35103 100644
---- a/drivers/net/wireless/st/cw1200/debug.c
-+++ b/drivers/net/wireless/st/cw1200/debug.c
-@@ -359,19 +359,20 @@ static const struct file_operations fops_wsm_dumps = {
- 
- int cw1200_debug_init(struct cw1200_common *priv)
+diff --git a/drivers/net/wireless/st/cw1200/cw1200_sdio.c b/drivers/net/wireless/st/cw1200/cw1200_sdio.c
+index 2b6afe221268..1894359ee9b4 100644
+--- a/drivers/net/wireless/st/cw1200/cw1200_sdio.c
++++ b/drivers/net/wireless/st/cw1200/cw1200_sdio.c
+@@ -10,6 +10,9 @@
+ #include <linux/interrupt.h>
+ #include <linux/gpio/consumer.h>
+ #include <linux/delay.h>
++#include <linux/mm.h>
++#include <linux/slab.h>
++#include <linux/sched/task_stack.h>
+ #include <linux/mmc/host.h>
+ #include <linux/mmc/sdio_func.h>
+ #include <linux/mmc/card.h>
+@@ -61,14 +64,42 @@ static int cw1200_sdio_memcpy_fromio(struct hwbus_priv *self,
+ 				     unsigned int addr,
+ 				     void *dst, int count)
  {
-+	struct dentry *dir;
- 	int ret = -ENOMEM;
- 	struct cw1200_debug_priv *d = kzalloc_obj(struct cw1200_debug_priv);
- 	priv->debug = d;
- 	if (!d)
- 		return ret;
- 
--	d->debugfs_phy = debugfs_create_dir("cw1200",
--					    priv->hw->wiphy->debugfsdir);
--	debugfs_create_file("status", 0400, d->debugfs_phy, priv,
-+	/* wiphy_unregister() removes the whole subtree. */
-+	dir = debugfs_create_dir("cw1200", priv->hw->wiphy->debugfsdir);
-+	debugfs_create_file("status", 0400, dir, priv,
- 			    &cw1200_status_fops);
--	debugfs_create_file("counters", 0400, d->debugfs_phy, priv,
-+	debugfs_create_file("counters", 0400, dir, priv,
- 			    &cw1200_counters_fops);
--	debugfs_create_file("wsm_dumps", 0200, d->debugfs_phy, priv,
-+	debugfs_create_file("wsm_dumps", 0200, dir, priv,
- 			    &fops_wsm_dumps);
- 
- 	return 0;
-@@ -379,10 +380,6 @@ int cw1200_debug_init(struct cw1200_common *priv)
- 
- void cw1200_debug_release(struct cw1200_common *priv)
- {
--	struct cw1200_debug_priv *d = priv->debug;
--	if (d) {
--		debugfs_remove_recursive(d->debugfs_phy);
--		priv->debug = NULL;
--		kfree(d);
--	}
-+	kfree(priv->debug);
-+	priv->debug = NULL;
+-	return sdio_memcpy_fromio(self->func, dst, addr, count);
++	void *bounce;
++	int ret;
++
++	if (virt_addr_valid(dst) && !object_is_on_stack(dst))
++		return sdio_memcpy_fromio(self->func, dst, addr, count);
++
++	bounce = kmalloc(count, GFP_KERNEL);
++	if (!bounce)
++		return -ENOMEM;
++
++	ret = sdio_memcpy_fromio(self->func, bounce, addr, count);
++	if (!ret)
++		memcpy(dst, bounce, count);
++	kfree(bounce);
++
++	return ret;
  }
-diff --git a/drivers/net/wireless/st/cw1200/debug.h b/drivers/net/wireless/st/cw1200/debug.h
-index 80bc1567533a..339a375b4c18 100644
---- a/drivers/net/wireless/st/cw1200/debug.h
-+++ b/drivers/net/wireless/st/cw1200/debug.h
-@@ -10,7 +10,6 @@
- #define CW1200_DEBUG_H_INCLUDED
  
- struct cw1200_debug_priv {
--	struct dentry *debugfs_phy;
- 	int tx;
- 	int tx_agg;
- 	int rx;
+ static int cw1200_sdio_memcpy_toio(struct hwbus_priv *self,
+ 				   unsigned int addr,
+ 				   const void *src, int count)
+ {
+-	return sdio_memcpy_toio(self->func, addr, (void *)src, count);
++	void *bounce;
++	int ret;
++
++	if (virt_addr_valid(src) && !object_is_on_stack(src))
++		return sdio_memcpy_toio(self->func, addr, (void *)src, count);
++
++	bounce = kmemdup(src, count, GFP_KERNEL);
++	if (!bounce)
++		return -ENOMEM;
++
++	ret = sdio_memcpy_toio(self->func, addr, bounce, count);
++	kfree(bounce);
++
++	return ret;
+ }
+ 
+ static void cw1200_sdio_lock(struct hwbus_priv *self)
 -- 
 2.56.0
 
