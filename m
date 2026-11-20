@@ -1,95 +1,116 @@
-Authentication-Results: smtp.subspace.kernel.org; arc=none smtp.remote-ip=74.125.82.174
-ARC-Seal: i=1; d=subspace.kernel.org; s=arc20261015; a=rsa-sha256; cv=none;
-	t=1795174302;
-	b=FXOveKK3oTlaIJqRJoxdOH3u4pl74QFUoScAJzIil8N59b3Es4mJw5CdiV6iNBUfBb3J
-	 M/ib0f2+lbY72ig4DCQdUO8VxZU3uU4mZgUm5UZK4X6X/xWhBjiIueTp30imZby+zc8YV
-	 QhyHfqszWHqaB3cqXznwSbUVT0g+/ky3B46Oj2pw6TOHxYDq3j2ODP+C+04qsinwY71QJ
-	 jW7drGfeNBJsWVXsx1xMQl1+CzXBKeCxMy/ElCwZR/E1Y1lBTZt5ISrb6k6K0+HWFTcum
-	 Zfi3U9klw9kQOGHemd4YOPa3rOWfb1KBy7mJUsrQnYYeGgycC+D/eimiGscQsWtu6pA==
-ARC-Message-Signature: i=1; d=subspace.kernel.org; s=arc20261015;
-	a=rsa-sha256; c=relaxed/relaxed; t=1795174302;
-	h=DMARC-Filter:Received:DKIM-Signature:X-Google-DKIM-Signature:
-	 X-Forwarded-Encrypted:X-Gm-Message-State:X-Gm-Gg:X-Received:Received:
-	 From:To:Cc:Subject:Date:Message-ID:X-Mailer:In-Reply-To:References:
-	 MIME-Version:Content-Transfer-Encoding;
-	bh=r/Zl64b5uRZMFqhO7EABjxKJLKRPSycq38m/Nb5ViAw=;
-	b=GwNbRefPQVrm+2xGHZEkxZyPSd5AEcNBaMwAbkbaxEvs9SmvtnTKSrLud3V+McNlY2Qu
-	 2FGKx7qEoQiqAoHqmFapo2wNLfBAcKCYy2XEcruqs9YHHyf9I54IWVkvEY50y2g8ZEy83
-	 FiHeYapsr6OsZ+78pu9ReIWbnFpm0VhXq5dCrdFgkYZJNiRjtSAt8I4qWh/q2jSkS1O9S
-	 mulCtTSlM1TXdtyHdP6eEEjZPXDObldMHHB9F1gyFADh82PlU6XxHYZ6E3S67cp0HeCp1
-	 9AvAQ5Ju1yADyceqo0B4nCW6U7Ln3t5h8tOFLdYFTfk9bq1/QqRu7ct9AuxYwIXfIfQ==
-ARC-Authentication-Results: i=1; smtp.subspace.kernel.org; 
-	dmarc=pass header.from=gmail.com;
-	spf=pass smtp.mailfrom=gmail.com;
-	dkim=pass header.d=gmail.com header.i=@gmail.com header.a=rsa-sha256 header.s=20260707 header.b=K31j6YOs;
-	arc=none smtp.remote-ip=74.125.82.174
-Received: from mail-dy1-f174.google.com (mail-dy1-f174.google.com [74.125.82.174])
-	(using TLSv1.3 with cipher TLS_AES_128_GCM_SHA256 (128/128 bits)
-	 key-exchange X25519 server-signature ECDSA (prime256v1) server-digest SHA256)
+Authentication-Results: smtp.subspace.kernel.org; arc=pass header.oldest-pass=0 smtp.remote-ip=52.101.65.62
+ARC-Seal: i=2; d=subspace.kernel.org; s=arc20261015; a=rsa-sha256; cv=pass;
+	t=1795174712;
+	b=3uLMM7pShtuQ3g+wBVY4OQr1vQcldbnsgNkt1KEXA/KejreSeOLuWMIABtjFtfD9I+7r
+	 MxZcuoqW0CWO32mR9eF7aDZx83QQEzMNdg3jRHyrdOWltL4OOuuVOVzKD1FLAVdIAHxjF
+	 46j1OQ4AChTp1p6RyVqaTBCHNEzsQkQ+8z6vjq8LPfOFHTQX43Opi14oE2ClPEftakZkg
+	 EtZA6wcqaPJvTx9B1moPzkcJDaUKItjyJ62FNL677R5qPQlTTTfc+V22PI7AZ98Sy1ED9
+	 mWldJMexcVa92hJMRokAa0lUby2rtGbcwGz69ozVw3aA1pTGQFiQtXmIvrLagvLVSPA==
+ARC-Message-Signature: i=2; d=subspace.kernel.org; s=arc20261015;
+	a=rsa-sha256; c=relaxed/relaxed; t=1795174712;
+	h=DMARC-Filter:DKIM-Signature:Received:Received:
+	 X-MS-Exchange-Authentication-Results:Received-SPF:Received:Received:
+	 Received:X-CLAM-Verdict:X-CLAM-Score:X-CLAM-Description:Received:
+	 Received:From:To:Cc:Subject:Date:Message-ID:X-Mailer:MIME-Version:
+	 Content-Transfer-Encoding:X-EOPAttributedMessage:
+	 X-MS-PublicTrafficType:X-MS-TrafficTypeDiagnostic:Content-Type:
+	 X-MS-Office365-Filtering-Correlation-Id:X-MS-Exchange-SenderADCheck:
+	 X-MS-Exchange-AntiSpam-Relay:X-Microsoft-Antispam:
+	 X-Microsoft-Antispam-Message-Info:X-Forefront-Antispam-Report:
+	 X-MS-Exchange-AntiSpam-MessageData-ChunkCount:
+	 X-MS-Exchange-AntiSpam-MessageData-0:X-OriginatorOrg:
+	 X-MS-Exchange-CrossTenant-OriginalArrivalTime:
+	 X-MS-Exchange-CrossTenant-Network-Message-Id:
+	 X-MS-Exchange-CrossTenant-Id:
+	 X-MS-Exchange-CrossTenant-OriginalAttributedTenantConnectingIp:
+	 X-MS-Exchange-CrossTenant-AuthSource:X-MS-Exchange-CrossTenant-AuthAs:
+	 X-MS-Exchange-CrossTenant-FromEntityHeader:
+	 X-MS-Exchange-Transport-CrossTenantHeadersStamped;
+	bh=hiCRmoij9JJsnm+BsxGpp9JuhSl9u6krRPLDyg/pLTo=;
+	b=ZOmJVDSaqij4bkJVBIzGWZ/NrGD7vQjP7MiGv8p118jq72wLd/lRq6P1bXABWWRkf20y
+	 9obBQh5HRj4jDUYmbLQNbgQsk/cvEGrcolx/sgR0ObaMQBZUA9/sYya4obCQbOvkA+931
+	 366xNi90oXTHHFbWtsgjiaXxTQDypLOBGe/T6acoQH25Fem7LDsz3Qghhpzn3HXb6tNhG
+	 ueBXQcGvu0BtEJjOlv8eulULqaYWd31jInctExUGkJkFqdtt116SBUqwYLTVMsDajCsZc
+	 u7v1DkkuW+J1e0nv0FOrvY7RziNlrdLWh9+40wzpBlVuefJeoZ8b9F2lsn2I9V+sVGA==
+ARC-Authentication-Results: i=2; smtp.subspace.kernel.org; 
+	dmarc=pass header.from=philips.com;
+	spf=pass smtp.mailfrom=bbl.ms.philips.com;
+	dkim=pass header.d=philips.com header.i=@philips.com header.a=rsa-sha256 header.s=selector1 header.b="DJW/PEsI";
+	arc=pass header.oldest-pass=0 smtp.remote-ip=52.101.65.62
+Received: from DU2PR03CU002.outbound.protection.outlook.com (mail-northeuropeazon11011062.outbound.protection.outlook.com [52.101.65.62])
+	(using TLSv1.3 with cipher TLS_AES_256_GCM_SHA384 (256/256 bits)
+	 key-exchange ECDHE (secp384r1) server-signature ECDSA (prime256v1) server-digest SHA256)
 	(No client certificate requested)
-	by smtp.subspace.kernel.org (Postfix) with ESMTPS id 43A0F60A3829
-	for <linux-wireless@vger.kernel.org>; Fri, 20 Nov 2026 11:31:42 +0000 (UTC)
-DMARC-Filter: OpenDMARC Filter v1.4.2 smtp.subspace.kernel.org 43A0F60A3829
-Authentication-Results: smtp.subspace.kernel.org; dmarc=pass (p=none dis=none) header.from=gmail.com
-Authentication-Results: smtp.subspace.kernel.org; spf=pass smtp.mailfrom=gmail.com
+	by smtp.subspace.kernel.org (Postfix) with ESMTPS id 6BCFA606A336
+	for <linux-wireless@vger.kernel.org>; Fri, 20 Nov 2026 11:38:31 +0000 (UTC)
+DMARC-Filter: OpenDMARC Filter v1.4.2 smtp.subspace.kernel.org 6BCFA606A336
+Authentication-Results: smtp.subspace.kernel.org; dmarc=pass (p=reject dis=none) header.from=philips.com
+Authentication-Results: smtp.subspace.kernel.org; spf=pass smtp.mailfrom=bbl.ms.philips.com
 Authentication-Results: smtp.subspace.kernel.org;
-	dkim=pass (2048-bit key) header.d=gmail.com header.i=@gmail.com header.a=rsa-sha256 header.s=20260707 header.b=K31j6YOs
-Received: by mail-dy1-f174.google.com with SMTP id 5a478bee46e88-380b40312e2so306543eec.1
-        for <linux-wireless@vger.kernel.org>; Fri, 20 Nov 2026 03:31:42 -0800 (PST)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=gmail.com; s=20260707; t=1795174301; x=1795779101; darn=vger.kernel.org;
-        h=content-transfer-encoding:mime-version:references:in-reply-to
-         :message-id:date:subject:cc:to:from:from:to:cc:subject:date
-         :message-id:reply-to:content-type;
-        bh=r/Zl64b5uRZMFqhO7EABjxKJLKRPSycq38m/Nb5ViAw=;
-        b=K31j6YOs95IyG0QTJMmxOL2GCA0yai8HBZK4FJAOQmMFmhQkGyUrEl/Fx9Uc2EneUO
-         9+GzQUgFRTymN7XThgVKVpYperPcD1P9alf31tdqzgleMgnmSViIkzJikSZDe+Kq12J3
-         F6087Z9vJQL67MQEqOwP/cmfXMqTx45p31iH6QY24Lb11n6Tjx1FOm+hG+BgjxmGaSca
-         ymB02MXEo3M0p5V3/V9Rmy77EmJxDW32iE0e/mK3PVX3QnRyOnfeE/rAlYnAwO7rcTTu
-         NpGBe0qRJXZg6qM0DXlDfkBV9mgYb76FfLnX0+IeaqV4n9Mj2T/QtuhpzwWCqViNe4f+
-         ElNA==
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=1e100.net; s=20260707; t=1795174301; x=1795779101;
-        h=content-transfer-encoding:mime-version:references:in-reply-to
-         :message-id:date:subject:cc:to:from:x-gm-gg:x-gm-message-state:from
-         :to:cc:subject:date:message-id:reply-to:content-type;
-        bh=r/Zl64b5uRZMFqhO7EABjxKJLKRPSycq38m/Nb5ViAw=;
-        b=RCZ+xMCOcQolu2X2+eeLVz/guqRY8SpaqK+t3NcZIxD3tVeAu8o8UmQM2e3U9yMWKW
-         Fq42bMFXk7MHX+Ku6tmdNtTswI+PX2buuRvWL0Lq8r0Wm29V0Qu+eEOeDv14JCXiEiJD
-         C/DJ7dppcES3ukH5mOoRHStVmmOCNLPD9m50OQTj2kQB/XC5oh4JgaTPzfM9EW9YtSMa
-         4QLuS2i/okf5RSAJlt3bHPsr6yzcdKg5jkN/wuHXcBXN8kJvdKP5oJ7SNPYQ+Q/2cz0V
-         oGZUxu8+M7xNzqZw0bjUfLVe46VR9PCaC3St+tXGJxPYUTk+qvXmrqFxRvsRypbQAyAN
-         RUuA==
-X-Forwarded-Encrypted: i=1; AL+hErG5d94s8K93Vq/K42Qyt5YeTWCd9bAonQd5vot/lELvLdv2jsOwVaajC4GzAzIy6m5rMT9y8irllUrTcX0w8A==@vger.kernel.org
-X-Gm-Message-State: APuU4Z/8oWFcZD86gyTAZWYDnOaEyjgHoo2oph5O7S2VYTLqfI3Umh+v
-	bRp9NvHD7r6iFBAow5bjegQes97lNWtbpBKtCHWRJRK4R5d/v1Jv9FLt
-X-Gm-Gg: AZFdTZfCVD/3Ge/8kge3mOC82ulwVRtFgSMaHxpJcasjyV+7G4K6RRX9rhM2homeK4R
-	g2bRLaYzUeaSB15XIBPQR51pjlp3juUlSjCWMoVPy1gqJpQr8Fp2S0SwPUFtUcdHeOrziJ3w1ce
-	vk8ypxGfkLQftV3nFWvQBdr58/Lb81E7x5T5tdUsEAXancl9x5RIZaeuY/NDIBOttXwF56GNUxq
-	BQ5UlXE1VhCE4bpEuM5F9CRwRTkOeT/aOmhTPSklgUPGlM0kCl8BitGblxauRfIVBp7KC4CLbbg
-	MTMBvKFfGTiqpt9R8pH9AGDKZDsd8g1VcLMGtTmhIvVEzexIvoojJ9BwJ8jJnmHhmdiaftYjbn2
-	U70hYWL9VMLdzAat+8FDkM1XcKCP5zTK4Z5VdNL9juXDkYDNrtkjiFIQ3Db3TRD8uqUE/8379WB
-	Du7ICfqiGSR/g2d0tnG5exEUk8hhF43zCUt5J1MiJhLD+AAp6YLF80dur9gt4mpCZjSDatQOvJk
-	bN2/LmOm5tr2QITwwvyrQxaIYLg9cA3y0gMU4WHUg/lk5mAACRgU+3D5A03y+Sp3uPDT/c46Ybc
-	aLh/2kidFcz2fPV72Hs5//BUFQJA+ntutH2nIvOmopdhi4dDkj11/z0UNbnuuvolSSJP+irMqgW
-	k9IxUOW6dSl26LVPfDNsRkwrb8GXeuNCtLrrV46kaWABZ6I0UcrMiOIK+O79OvCz+Sw==
-X-Received: by 2002:a05:7301:182b:b0:381:2f5d:a696 with SMTP id 5a478bee46e88-38571414835mr2600667eec.34.1795174301099;
-        Fri, 20 Nov 2026 03:31:41 -0800 (PST)
-Received: from acemagic-m1.tail4fb79.ts.net ([2401:7400:c804:b668:fe98:6351:c2cf:22c3])
-        by smtp.gmail.com with ESMTPSA id 5a478bee46e88-385672ce402sm7134347eec.16.2026.11.20.03.31.39
-        (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
-        Fri, 20 Nov 2026 03:31:40 -0800 (PST)
-From: Ho Jie Feng <hjf3108@gmail.com>
-To: Ping-Ke Shih <pkshih@realtek.com>,
-	linux-wireless@vger.kernel.org
-Cc: Bitterblue Smith <rtl8821cerfe2@gmail.com>,
-	linux-kernel@vger.kernel.org
-Subject: [PATCH rtw-next v3 5/5] wifi: rtlwifi: rtl8192du: enable USB RX aggregation
-Date: Fri, 20 Nov 2026 19:31:14 +0800
-Message-ID: <20261120113116.153232-6-hjf3108@gmail.com>
-X-Mailer: git-send-email 2.53.0
-In-Reply-To: <20261120113116.153232-1-hjf3108@gmail.com>
-References: <20261120113116.153232-1-hjf3108@gmail.com>
+	dkim=pass (1024-bit key, unprotected) header.d=philips.com header.i=@philips.com header.a=rsa-sha256 header.s=selector1 header.b=DJW/PEsI
+ARC-Seal: i=1; a=rsa-sha256; s=arcselector10001; d=microsoft.com; cv=none;
+ b=E0Uer27mRgYZBWF1oAoqNT4PgzkKWD/L+WIq/ZBXZx8254XSi1PXghKcNaZEkVROZi5zTseyNmhyCd3hiYHE7uJoSArxGUKkJiSZJqMbBE+tXruqoyVbe4J/NivZRES4TQ0Xh/d41T6PwNTsy5FNvOusaeLTpU5CoEsGxRQQJxWQpzWIpxrPdPtRpZx2Qx06qKvb7KTJK5i5CrAF1CVHrvrkpIsVmxypdt5R+8E4OCjfpZ9hC9LnpvutcMtn0JYu0lvF1b9BwHrnwOD//4PzJK+Rke5xJyQWNMAa+mZzeJJF7vFwM5sfkLcxn+6vQ8mCGC+qkPFMaD380VGlS/defw==
+ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=microsoft.com;
+ s=arcselector10001;
+ h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-AntiSpam-MessageData-ChunkCount:X-MS-Exchange-AntiSpam-MessageData-0:X-MS-Exchange-AntiSpam-MessageData-1;
+ bh=hiCRmoij9JJsnm+BsxGpp9JuhSl9u6krRPLDyg/pLTo=;
+ b=GH3zz/atHGvzcVCWRKiVUMq56XgGC9GSUhNKSvOdmN0KVz6DAbvJvLW0hf9P1pm9AkgWh1PX70OShbcpacqnAi2GQUSUmvd6tyK1+wYInOnY4/heDofMYyqatv0DJIRR5dKPhj3YExvxgB9MMHOz97FxB6NtQlMTLjdkYN8p3wie3W0WSPETl/R8+BrsL5tcjAsb1f8nhlEhIIHlcMJJjvglIr6oFvV/wGF1C++0c5L8yuUt0fWFIAfWLhPugcBVh10P1pPFYtiMdetOsdhs25u/drJSWV1aTD2GIxMKPwZYEG+t8oEsmzE0+cZt+FoaXdD4jLRKwzsKVYIyq+bjsA==
+ARC-Authentication-Results: i=1; mx.microsoft.com 1; spf=pass (sender ip is
+ 3.248.88.141) smtp.rcpttodomain=vger.kernel.org
+ smtp.mailfrom=bbl.ms.philips.com; dmarc=pass (p=reject sp=reject pct=100)
+ action=none header.from=philips.com; dkim=none (message not signed); arc=none
+ (0)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=philips.com;
+ s=selector1;
+ h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
+ bh=hiCRmoij9JJsnm+BsxGpp9JuhSl9u6krRPLDyg/pLTo=;
+ b=DJW/PEsIOMLFIEslHbysWLyP2lElU3n5at5dls7t5gcmsY++btwvSdST/lkIM2iRY1MVrDjF+if4dIVzGvJFBAZYqfYQXB4LdUssQQs3Rmwd+tMt4oQMOJtxnBbGTANjg6Z5YHl9XHJdGf4eW6oKz1+/sn9sj/ZZ21JJcDgqChA=
+Received: from DUZPR01CA0270.eurprd01.prod.exchangelabs.com
+ (2603:10a6:10:4b9::22) by VI0PR10MB8981.EURPRD10.PROD.OUTLOOK.COM
+ (2603:10a6:800:23a::20) with Microsoft SMTP Server (version=TLS1_2,
+ cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id 15.21.662.2; Fri, 20 Nov
+ 2026 11:38:24 +0000
+Received: from DB1PEPF000509E8.eurprd03.prod.outlook.com
+ (2603:10a6:10:4b9:cafe::19) by DUZPR01CA0270.outlook.office365.com
+ (2603:10a6:10:4b9::22) with Microsoft SMTP Server (version=TLS1_3,
+ cipher=TLS_AES_256_GCM_SHA384) id 15.21.639.12 via Frontend Transport; Fri,
+ 20 Nov 2026 11:38:22 +0000
+X-MS-Exchange-Authentication-Results: mx.microsoft.com 1; spf=pass (sender IP
+ is 3.248.88.141) smtp.mailfrom=bbl.ms.philips.com; dkim=none (message not
+ signed) header.d=none;dmarc=pass action=none header.from=philips.com;
+Received-SPF: Pass (protection.outlook.com: domain of bbl.ms.philips.com
+ designates 3.248.88.141 as permitted sender) receiver=protection.outlook.com;
+ client-ip=3.248.88.141; helo=ext-eur1.smtp.philips.com; pr=C
+Received: from ext-eur1.smtp.philips.com (3.248.88.141) by
+ DB1PEPF000509E8.mail.protection.outlook.com (10.167.242.58) with Microsoft
+ SMTP Server (version=TLS1_2, cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id
+ 15.21.639.5 via Frontend Transport; Fri, 20 Nov 2026 11:38:21 +0000
+Received: from smtprelay-eur1.philips.com ([130.138.84.184])
+	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 256/256 bits)
+	(Client did not present a certificate)
+	by ext-eur1.smtp.philips.com with ESMTPS
+	id UDIMxpLoFf0UDUMwfx0Sn8; Fri, 20 Nov 2026 12:38:21 +0100
+Received: from mail.bbl.ms.philips.com ([130.143.87.230])
+	by smtprelay-eur1.philips.com with ESMTP
+	id UMwfxTcvDbtn9UMwfxpfog; Fri, 20 Nov 2026 12:38:21 +0100
+X-CLAM-Verdict: legit
+X-CLAM-Score: ??
+X-CLAM-Description: ??
+Received: from bbl2xvg1.bbl.ms.philips.com (bbl2xvg1.bbl.ms.philips.com [130.143.220.100])
+	by mail.bbl.ms.philips.com (Postfix) with ESMTP id 8C8CD1803CB;
+	Fri, 20 Nov 2026 12:38:21 +0100 (CET)
+Received: by bbl2xvg1.bbl.ms.philips.com (Postfix, from userid 2884)
+	id 8A2AEFE023B; Fri, 20 Nov 2026 12:38:21 +0100 (CET)
+From: Vishal Gupta <vishal.gupta_1@philips.com>
+To: linux-wireless@vger.kernel.org
+Cc: briannorris@chromium.org,
+	francesco@dolcini.it,
+	linux-kernel@vger.kernel.org,
+	Vishal Gupta <vishal.gupta_1@philips.com>
+Subject: [PATCH 1/1] wifi: mwifiex: fix race on scan_processing in mwifiex_scan_networks()
+Date: Fri, 20 Nov 2026 12:38:11 +0100
+Message-ID: <20261120113811.36916-1-vishal.gupta_1@philips.com>
+X-Mailer: git-send-email 2.43.0
 X-Mailing-List: linux-wireless@vger.kernel.org
 List-Id: <linux-wireless.vger.kernel.org>
 List-Post: <mailto:linux-wireless@vger.kernel.org>
@@ -100,177 +121,90 @@ List-Owner: <mailto:linux-wireless+owner@vger.kernel.org>
 Precedence: list
 MIME-Version: 1.0
 Content-Transfer-Encoding: 8bit
+X-EOPAttributedMessage: 0
+X-MS-PublicTrafficType: Email
+X-MS-TrafficTypeDiagnostic: DB1PEPF000509E8:EE_|VI0PR10MB8981:EE_
+Content-Type: text/plain
+X-MS-Office365-Filtering-Correlation-Id: b361fdcc-6973-4360-f67d-08df46fac7e2
+X-MS-Exchange-SenderADCheck: 1
+X-MS-Exchange-AntiSpam-Relay: 0
+X-Microsoft-Antispam:
+	BCL:0;ARA:13230040|23010399003|376014|36860700016|1800799024|82310400026|56012099006|10067099003|11063799006|5023799004|261026121527099003|261026140227099003|261022105027099003|261022075727099003|261028144727099003|261021123027099003|261021121427099003|261102123227099003|261009223027099003|18002099003|3023799007;
+X-Microsoft-Antispam-Message-Info:
+	T47XIGm2KmEP3GzUZ7i6UMhEHDZyCJqfNCZ5uTxwmuRugE8L53at2ihqE69t/TCu1I7y62YomPFtvmsVZqWX3C5NVznM+z13ILzTWE0DbdJiqqrtQkRVS3z5OikwVEl70zHwevFZfec9RAbu0GIIiFaYnUTzsiNPeQe1qrv39r+psw8UhVupCMOVlXeg9Ff/zG4/mTTpWflUXQNNpqJpEQ7VuRRzzytWTvhhjbGa3nouvRd7zO/uLdq4syeiJqdkMOezhLHQ6SwjF0BQTguW4frccHGZiBbW1OKeBoL49tSmNbme91hEKsFakC5Qp4mdhNI9ZxA/DoGsGHpTqahHteBe9JVN++GEO1g14bohdvYc8ox/V77ITdaWKPs74dixoHrXhXgQN+659dZFWGsgi/koxM7yqJM9g0TCTjUUfnOlzvfCKQ863a7xhv0XZJRftMznY0FZ22NjjhOzlESi1dWjS/L5ptIcfE7foTYVbzZJsc4gDEGZjEAl3CtLRkoifPr3Rm7Hi68S3d9I1XpVW7fPv4fBAapqXSusVF68NyFCaPrwCiFSDAvofjmcxTdDCOVesqI6gqPbEjS458f7iT0bfX2wN/JcMFyBMXoya1wE//6FW1C72t8O8/gTT4hTuMzVDstfxATuiFpB3JBaIo/7XxmBrUTGCToen8+yK8jZ2OG9MLtakjyd/PQKTOfRmFiJRJXEdls0cwl8CTAMfg==
+X-Forefront-Antispam-Report:
+	CIP:3.248.88.141;CTRY:IE;LANG:en;SCL:1;SRV:;IPV:NLI;SFV:NSPM;H:ext-eur1.smtp.philips.com;PTR:ext-eur1.smtp.philips.com;CAT:NONE;SFS:(13230040)(23010399003)(376014)(36860700016)(1800799024)(82310400026)(56012099006)(10067099003)(11063799006)(5023799004)(261026121527099003)(261026140227099003)(261022105027099003)(261022075727099003)(261028144727099003)(261021123027099003)(261021121427099003)(261102123227099003)(261009223027099003)(18002099003)(3023799007);DIR:OUT;SFP:1101;
+X-MS-Exchange-AntiSpam-MessageData-ChunkCount: 1
+X-MS-Exchange-AntiSpam-MessageData-0:
+	6OTEL84jFIV22IHGix7P5SfxjoY5gZ+Mo9pK+wH4FqPI5DXoJGxlWpFEgdyfsQZa7I46l+tt4xjKqzQcPVDeQf4KZkRokXlEH3We+QZpyfgHLelkxXYKGAYWvbkTx+Ijnvf+9AytIJ94rdmDt3KWADeVoalDYnoiLEZxjNPQPwRHJezaiDtfNIVYqPKOyxtm8N9YWrebwqYNhiq47+1F4dgN6duN9XHf8kVG8oVTIsNjuDdhPlLGnRb57YHJT1S4QLsKjDDNMqPSJPxOfwiDk31gIM/wGdszcpf45U00emV6hIP4X6NYRDN59aBljhzdBz8NyPMFTvKcf8vqkLlEraUMuMJA59eQNsAv4leN+2HiJCEqltQPtj6Uj0inxd9CEfKWR2y2orlUNlKDEHYk3O3gR6ANvZaB0Z8meK3fs/XYvd9WaZQPEThUHzxKByt2
+X-OriginatorOrg: philips.com
+X-MS-Exchange-CrossTenant-OriginalArrivalTime: 20 Nov 2026 11:38:21.9165
+ (UTC)
+X-MS-Exchange-CrossTenant-Network-Message-Id: b361fdcc-6973-4360-f67d-08df46fac7e2
+X-MS-Exchange-CrossTenant-Id: 1a407a2d-7675-4d17-8692-b3ac285306e4
+X-MS-Exchange-CrossTenant-OriginalAttributedTenantConnectingIp: TenantId=1a407a2d-7675-4d17-8692-b3ac285306e4;Ip=[3.248.88.141];Helo=[ext-eur1.smtp.philips.com]
+X-MS-Exchange-CrossTenant-AuthSource:
+	DB1PEPF000509E8.eurprd03.prod.outlook.com
+X-MS-Exchange-CrossTenant-AuthAs: Anonymous
+X-MS-Exchange-CrossTenant-FromEntityHeader: HybridOnPrem
+X-MS-Exchange-Transport-CrossTenantHeadersStamped: VI0PR10MB8981
 
-Allow RX aggregation of up to 48 pages of 128 bytes or 24 with two MACs.
+mwifiex_scan_networks() tests adapter->scan_processing without holding
+any lock and only sets it later under mwifiex_cmd_lock. The test and the
+set are not atomic, so two callers can both observe the flag clear and
+both start a scan.
 
-In an aggregated transfer, rtl92du_rx_segregate_hdl() copies each
-frame into a new skb with room for the radiotap header like in usb.c.
-The last frame reuses the original skb by pulling it to the frame's start
-and trimmed to its length.
+This is reachable because callers of this function run in different
+contexts: mwifiex_cfg80211_scan() runs from a cfg80211 operation, while
+mwifiex_active_scan_req_for_passive_chan() runs from the driver's main
+work via mwifiex_check_next_scan_command(), which is not serialized
+against cfg80211 operations.
 
-Test results (2.4 GHz):
-   before after
-TX 5.2    6.4
-RX 27.1   32.0
+After the last scan command completes, mwifiex_check_next_scan_command()
+clears scan_processing and then starts the follow-up hidden SSID scan;
+a scan request from user space arriving in that window passes the unlocked
+check as well. Both scans then queue commands on scan_pending_q and share
+priv->scan_request, so one can clear scan_processing or call
+cfg80211_scan_done() while the other is still running.
 
-Signed-off-by: Ho Jie Feng <hjf3108@gmail.com>
-Acked-by: Ping-Ke Shih <pkshih@realtek.com>
+Move the scan_processing check under mwifiex_cmd_lock, in the same
+critical section that sets it, so that test and set are atomic.
+
+Signed-off-by: Vishal Gupta <vishal.gupta_1@philips.com>
 ---
- .../wireless/realtek/rtlwifi/rtl8192d/reg.h   |  4 ++
- .../wireless/realtek/rtlwifi/rtl8192du/hw.c   | 18 +++++++-
- .../wireless/realtek/rtlwifi/rtl8192du/sw.c   |  2 +-
- .../wireless/realtek/rtlwifi/rtl8192du/trx.c  | 45 +++++++++++++++++++
- .../wireless/realtek/rtlwifi/rtl8192du/trx.h  |  4 ++
- 5 files changed, 71 insertions(+), 2 deletions(-)
+ drivers/net/wireless/marvell/mwifiex/scan.c | 12 ++++++------
+ 1 file changed, 6 insertions(+), 6 deletions(-)
 
-diff --git a/drivers/net/wireless/realtek/rtlwifi/rtl8192d/reg.h b/drivers/net/wireless/realtek/rtlwifi/rtl8192d/reg.h
-index 639aa0d92e..7cc46f411a 100644
---- a/drivers/net/wireless/realtek/rtlwifi/rtl8192d/reg.h
-+++ b/drivers/net/wireless/realtek/rtlwifi/rtl8192d/reg.h
-@@ -329,6 +329,7 @@
+diff --git a/drivers/net/wireless/marvell/mwifiex/scan.c b/drivers/net/wireless/marvell/mwifiex/scan.c
+index bdd4b8465863b..c99c5378b8486 100644
+--- a/drivers/net/wireless/marvell/mwifiex/scan.c
++++ b/drivers/net/wireless/marvell/mwifiex/scan.c
+@@ -1499,12 +1499,6 @@ int mwifiex_scan_networks(struct mwifiex_private *priv,
+ 	u8 scan_current_chan_only;
+ 	u8 max_chan_per_scan;
  
- #define REG_USB_Queue_Select_MAC0	0xFE44
- #define REG_USB_Queue_Select_MAC1	0xFE47
-+#define REG_USB_DMA_AGG_TO		0xFE5B
+-	if (adapter->scan_processing) {
+-		mwifiex_dbg(adapter, WARN,
+-			    "cmd: Scan already in process...\n");
+-		return -EBUSY;
+-	}
+-
+ 	if (priv->scan_block) {
+ 		mwifiex_dbg(adapter, WARN,
+ 			    "cmd: Scan is blocked during association...\n");
+@@ -1519,6 +1513,12 @@ int mwifiex_scan_networks(struct mwifiex_private *priv,
+ 	}
  
- /* ----------------------------------------------------- */
- /*	Redifine 8192C register definition for compatibility */
-@@ -940,6 +941,9 @@
- #define ENSWBCN					BIT(8)
- #define ENSEC					BIT(9)
- 
-+/* REG_TRXDMA_CTRL */
-+#define RXDMA_AGG_EN				BIT(2)
-+
- #define HQSEL_VOQ				BIT(0)
- #define HQSEL_VIQ				BIT(1)
- #define HQSEL_BEQ				BIT(2)
-diff --git a/drivers/net/wireless/realtek/rtlwifi/rtl8192du/hw.c b/drivers/net/wireless/realtek/rtlwifi/rtl8192du/hw.c
-index ff458fb851..3edd5bc432 100644
---- a/drivers/net/wireless/realtek/rtlwifi/rtl8192du/hw.c
-+++ b/drivers/net/wireless/realtek/rtlwifi/rtl8192du/hw.c
-@@ -489,6 +489,22 @@ static void _rtl92du_init_retry_function(struct ieee80211_hw *hw)
- 	rtl_write_byte(rtlpriv, REG_ACKTO, 0x40);
- }
- 
-+static void _rtl92du_init_usb_aggregation(struct ieee80211_hw *hw)
-+{
-+	struct rtl_priv *rtlpriv = rtl_priv(hw);
-+	u8 page_count = 48;
-+
-+	if (rtlpriv->rtlhal.macphymode != SINGLEMAC_SINGLEPHY)
-+		page_count = 24;
-+
-+	rtl_write_byte(rtlpriv, REG_TRXDMA_CTRL,
-+		       rtl_read_byte(rtlpriv, REG_TRXDMA_CTRL) | RXDMA_AGG_EN);
-+	/* unit: 128 bytes */
-+	rtl_write_byte(rtlpriv, REG_RXDMA_AGG_PG_TH, page_count);
-+	/* A larger value is a shorter timeout. */
-+	rtl_write_byte(rtlpriv, REG_USB_DMA_AGG_TO, 6);
-+}
-+
- static void _rtl92du_init_operation_mode(struct ieee80211_hw *hw)
- {
- 	struct rtl_priv *rtlpriv = rtl_priv(hw);
-@@ -712,7 +728,7 @@ int rtl92du_hw_init(struct ieee80211_hw *hw)
- 	rtl_write_dword(rtlpriv, REG_RARFRC + 4, 0x08070605);
- 
- 	_rtl92du_init_retry_function(hw);
--	/* _InitUsbAggregationSetting(padapter); no aggregation for now */
-+	_rtl92du_init_usb_aggregation(hw);
- 	_rtl92du_init_operation_mode(hw);
- 	_rtl92du_init_beacon_parameters(hw);
- 	_rtl92du_init_ampdu_aggregation(hw);
-diff --git a/drivers/net/wireless/realtek/rtlwifi/rtl8192du/sw.c b/drivers/net/wireless/realtek/rtlwifi/rtl8192du/sw.c
-index 88e8cc590c..6b90002b69 100644
---- a/drivers/net/wireless/realtek/rtlwifi/rtl8192du/sw.c
-+++ b/drivers/net/wireless/realtek/rtlwifi/rtl8192du/sw.c
-@@ -238,7 +238,7 @@ static const struct rtl_hal_usbint_cfg rtl92du_interface_cfg = {
- 	.rx_urb_num = 8,
- 	.rx_max_size = 15360,
- 	.usb_rx_hdl = NULL,
--	.usb_rx_segregate_hdl = NULL,
-+	.usb_rx_segregate_hdl = rtl92du_rx_segregate_hdl,
- 	/* tx */
- 	.usb_tx_cleanup = rtl92du_tx_cleanup,
- 	.usb_tx_post_hdl = rtl92du_tx_post_hdl,
-diff --git a/drivers/net/wireless/realtek/rtlwifi/rtl8192du/trx.c b/drivers/net/wireless/realtek/rtlwifi/rtl8192du/trx.c
-index c608c51f1b..1641099368 100644
---- a/drivers/net/wireless/realtek/rtlwifi/rtl8192du/trx.c
-+++ b/drivers/net/wireless/realtek/rtlwifi/rtl8192du/trx.c
-@@ -19,6 +19,51 @@ int rtl92du_tx_post_hdl(struct ieee80211_hw *hw, struct urb *urb,
- 	return 0;
- }
- 
-+void rtl92du_rx_segregate_hdl(struct ieee80211_hw *hw, struct sk_buff *skb,
-+			      struct sk_buff_head *queue)
-+{
-+	struct rtl_priv *rtlpriv = rtl_priv(hw);
-+	unsigned int offset = 0, pkt_size;
-+	struct sk_buff *new_skb;
-+	__le32 *rxdesc;
-+
-+	while (skb->len - offset >= RTL_RX_DESC_SIZE) {
-+		rxdesc = (__le32 *)(skb->data + offset);
-+		pkt_size = RTL_RX_DESC_SIZE +
-+			   get_rx_desc_drv_info_size(rxdesc) *
-+			   RX_DRV_INFO_SIZE_UNIT +
-+			   get_rx_desc_shift(rxdesc) +
-+			   get_rx_desc_pkt_len(rxdesc);
-+
-+		if (get_rx_desc_pkt_len(rxdesc) == 0 ||
-+		    pkt_size > skb->len - offset) {
-+			rtl_dbg(rtlpriv, COMP_RECV, DBG_WARNING,
-+				"bad frame at %u of %u, size %u\n",
-+				offset, skb->len, pkt_size);
-+			break;
-+		}
-+
-+		/* The last frame keeps the original skb. */
-+		if (ALIGN(pkt_size, RTL92DU_RX_AGG_ALIGN) >= skb->len - offset) {
-+			skb_pull(skb, offset);
-+			skb_trim(skb, pkt_size);
-+			__skb_queue_tail(queue, skb);
-+			return;
-+		}
-+
-+		new_skb = dev_alloc_skb(pkt_size + RTL_RADIO_TAP_SIZE_RSV);
-+		if (!new_skb)
-+			break;
-+		skb_reserve(new_skb, RTL_RADIO_TAP_SIZE_RSV);
-+		skb_put_data(new_skb, rxdesc, pkt_size);
-+		__skb_queue_tail(queue, new_skb);
-+
-+		offset += ALIGN(pkt_size, RTL92DU_RX_AGG_ALIGN);
+ 	spin_lock_bh(&adapter->mwifiex_cmd_lock);
++	if (adapter->scan_processing) {
++		spin_unlock_bh(&adapter->mwifiex_cmd_lock);
++		mwifiex_dbg(adapter, WARN,
++			    "cmd: Scan already in process...\n");
++		return -EBUSY;
 +	}
-+
-+	dev_kfree_skb_any(skb);
-+}
-+
- struct sk_buff *rtl92du_tx_aggregate_hdl(struct ieee80211_hw *hw,
- 					 struct sk_buff_head *list)
- {
-diff --git a/drivers/net/wireless/realtek/rtlwifi/rtl8192du/trx.h b/drivers/net/wireless/realtek/rtlwifi/rtl8192du/trx.h
-index 8c3d24622f..47d7d6ad8c 100644
---- a/drivers/net/wireless/realtek/rtlwifi/rtl8192du/trx.h
-+++ b/drivers/net/wireless/realtek/rtlwifi/rtl8192du/trx.h
-@@ -18,6 +18,8 @@
+ 	adapter->scan_processing = true;
+ 	spin_unlock_bh(&adapter->mwifiex_cmd_lock);
  
- #define WMM_NORMAL_TX_TOTAL_PAGE_NUMBER			0xF5
- 
-+#define RTL92DU_RX_AGG_ALIGN				128
-+
- #define WMM_NORMAL_PAGE_NUM_PUBQ_92D			0x65
- #define WMM_NORMAL_PAGE_NUM_HPQ_92D			0x30
- #define WMM_NORMAL_PAGE_NUM_LPQ_92D			0x30
-@@ -56,5 +58,7 @@ struct sk_buff *rtl92du_tx_aggregate_hdl(struct ieee80211_hw *hw,
- void rtl92du_tx_cleanup(struct ieee80211_hw *hw, struct sk_buff  *skb);
- int rtl92du_tx_post_hdl(struct ieee80211_hw *hw, struct urb *urb,
- 			struct sk_buff *skb);
-+void rtl92du_rx_segregate_hdl(struct ieee80211_hw *hw, struct sk_buff *skb,
-+			      struct sk_buff_head *queue);
- 
- #endif
 -- 
-2.53.0
+2.43.0
 
