@@ -1,118 +1,91 @@
-Authentication-Results: smtp.subspace.kernel.org; arc=pass header.oldest-pass=0 smtp.remote-ip=52.101.69.33
-ARC-Seal: i=2; d=subspace.kernel.org; s=arc20261015; a=rsa-sha256; cv=pass;
-	t=1795171720;
-	b=e1N1VGNtPQiA71EvqLCzLFeAqLKG5k9x/BX1JrmpRSWn0dARYllxKOJQWd65xDiLApYj
-	 EKpAbiU/x8jNJY+jFifVt6di7Hmst8Bgh4zlafJC+krSO16g5lN1B2jaYsJKs/w0B31IO
-	 /8IkdPqZemXGL2grdOy3gkI0lMkUUWeqYvF7rV/41x0tfwF2/ytPmPgb0aQC8RpoR+o7x
-	 3spANM830ODW+OPEOAfanHvMAG1stf4MZ8hFluqlypH8K88A7J2rSJQaIsD4tIpybDwRq
-	 gEra1KK20YzUbWYSsRKXC2Mn97wul7rKKGtYxWuus5E/Yc64ZPgWHDtEdUPCY9dGkqQ==
-ARC-Message-Signature: i=2; d=subspace.kernel.org; s=arc20261015;
-	a=rsa-sha256; c=relaxed/relaxed; t=1795171720;
-	h=DMARC-Filter:DKIM-Signature:Received:Received:
-	 X-MS-Exchange-Authentication-Results:Received-SPF:Received:Received:
-	 Received:X-CLAM-Verdict:X-CLAM-Score:X-CLAM-Description:Received:
-	 Received:From:To:Cc:Subject:Date:Message-ID:X-Mailer:In-Reply-To:
-	 References:MIME-Version:Content-Type:Content-Transfer-Encoding:
-	 X-EOPAttributedMessage:X-MS-PublicTrafficType:
-	 X-MS-TrafficTypeDiagnostic:X-MS-Office365-Filtering-Correlation-Id:
-	 X-MS-Exchange-SenderADCheck:X-MS-Exchange-AntiSpam-Relay:
-	 X-Microsoft-Antispam:X-Microsoft-Antispam-Message-Info:
-	 X-Forefront-Antispam-Report:
-	 X-MS-Exchange-AntiSpam-MessageData-ChunkCount:
-	 X-MS-Exchange-AntiSpam-MessageData-0:X-OriginatorOrg:
-	 X-MS-Exchange-CrossTenant-OriginalArrivalTime:
-	 X-MS-Exchange-CrossTenant-Network-Message-Id:
-	 X-MS-Exchange-CrossTenant-Id:
-	 X-MS-Exchange-CrossTenant-OriginalAttributedTenantConnectingIp:
-	 X-MS-Exchange-CrossTenant-AuthSource:X-MS-Exchange-CrossTenant-AuthAs:
-	 X-MS-Exchange-CrossTenant-FromEntityHeader:
-	 X-MS-Exchange-Transport-CrossTenantHeadersStamped;
-	bh=t/cJOtF5zbScuECBrYmxwbl4rj8yw8OSUnkcnO4Cg7s=;
-	b=K/jcV8FbUgxSRgviQjma3uE9TitzA9+pToELL1p5QAAN/2IBGPvmYN9J0X6t5sxouKS1
-	 IMFidlKf2gpoiHj8p+VU4W8Te5FTABsyq14nHEZj5/x6MPSCJ+H491+iAUOlwBoL75LEC
-	 AzSyhNvB9ghcetuvD2uz0TAlC2Eu50fvfhE3qgjFwz9Yl9W16BSTa6z4TOhxPFw36Fg5h
-	 llq/qU06gvFdmlSV6xMH6JXvX0mFsBJbRvnkUs3btNmRoSF2T2f6K94YafdNPZ85R9vt5
-	 TnavDgpnLSOzd/ezF8zPtxVxwa4ZWs1B3Gqvf1l3QmOeBAfWGn1QKd2M523q49nNrUA==
-ARC-Authentication-Results: i=2; smtp.subspace.kernel.org; 
-	dmarc=pass header.from=philips.com;
-	spf=pass smtp.mailfrom=bbl.ms.philips.com;
-	dkim=pass header.d=philips.com header.i=@philips.com header.a=rsa-sha256 header.s=selector1 header.b=P1Uz81S7;
-	arc=pass header.oldest-pass=0 smtp.remote-ip=52.101.69.33
-Received: from AM0PR83CU005.outbound.protection.outlook.com (mail-westeuropeazon11010033.outbound.protection.outlook.com [52.101.69.33])
-	(using TLSv1.3 with cipher TLS_AES_256_GCM_SHA384 (256/256 bits)
-	 key-exchange ECDHE (secp384r1) server-signature ECDSA (prime256v1) server-digest SHA256)
+Authentication-Results: smtp.subspace.kernel.org; arc=none smtp.remote-ip=74.125.82.177
+ARC-Seal: i=1; d=subspace.kernel.org; s=arc20261015; a=rsa-sha256; cv=none;
+	t=1795174291;
+	b=1v67wlgMldm/xn62gv1dBCm0WyrFzrfcvbd4IvSa8HnVPbX7gIXeuc5qUWWghKatp1ec
+	 Jk/fJg4Xh+onyuK5bps0HRdlrYp5oZ7rv1MaNv2fOAcgrDF9SPxZ/jeaTxkdAjSKVdwCz
+	 aWFJW3Mu6llZdfzikmwL7KKG0NjPls8E4wT7/OyLYP1Dowe7BoM7g6v6BcK2J/BG4aUcS
+	 qh/4KEzhVl577Y2mtwR2TJXgxThB8QZ8yhhTp7fhl/hlQn7cGSg6PUa/uOsMqYdz8puMl
+	 cMHKRQvwTcoOrcPbdCKAxORBY1eUTSccdfPmnOsOsfKS9z+WhV2pxcycROHCIggBScA==
+ARC-Message-Signature: i=1; d=subspace.kernel.org; s=arc20261015;
+	a=rsa-sha256; c=relaxed/relaxed; t=1795174291;
+	h=DMARC-Filter:Received:DKIM-Signature:X-Google-DKIM-Signature:
+	 X-Forwarded-Encrypted:X-Gm-Message-State:X-Gm-Gg:X-Received:Received:
+	 From:To:Cc:Subject:Date:Message-ID:X-Mailer:MIME-Version:
+	 Content-Transfer-Encoding;
+	bh=61pgidgMOlKV3QTNf/1zYqiDzNU8aZjvjx2edtSfpjg=;
+	b=pTdouD5N0zN1eSDODDBPozJykmkv+RK9g6Wsod8FK/hbe9J/jDCG+wKPsjEncZIIL6W/
+	 2li/miVVfzlcOTM+RpSsurR2qmNqxFFggdFn/Ef7dnO1o6SreYskilMIc003AnoOnmxkQ
+	 LJudxwJCyhP393sLdrvnvUZD4AfwtPH2coLPYiEXOzh/hhen5gFbNmU7tQy1lNdmHPuGN
+	 6BMGxVLXwG9kM+xLVhRu4ch+CtHAdhqsGyTKt8GBNS6C1vAF6TxlunCe3w90odoz5aVwn
+	 ROxmwuRd8y6zhL5MKUequvXiePdLvH/RfeLdWQOY6qS/1HNSfeM845vr/29XGfG85EQ==
+ARC-Authentication-Results: i=1; smtp.subspace.kernel.org; 
+	dmarc=pass header.from=gmail.com;
+	spf=pass smtp.mailfrom=gmail.com;
+	dkim=pass header.d=gmail.com header.i=@gmail.com header.a=rsa-sha256 header.s=20260707 header.b=KP4UWxih;
+	arc=none smtp.remote-ip=74.125.82.177
+Received: from mail-dy1-f177.google.com (mail-dy1-f177.google.com [74.125.82.177])
+	(using TLSv1.3 with cipher TLS_AES_128_GCM_SHA256 (128/128 bits)
+	 key-exchange X25519 server-signature ECDSA (prime256v1) server-digest SHA256)
 	(No client certificate requested)
-	by smtp.subspace.kernel.org (Postfix) with ESMTPS id 14625606A333
-	for <linux-wireless@vger.kernel.org>; Fri, 20 Nov 2026 10:48:39 +0000 (UTC)
-DMARC-Filter: OpenDMARC Filter v1.4.2 smtp.subspace.kernel.org 14625606A333
-Authentication-Results: smtp.subspace.kernel.org; dmarc=pass (p=reject dis=none) header.from=philips.com
-Authentication-Results: smtp.subspace.kernel.org; spf=pass smtp.mailfrom=bbl.ms.philips.com
+	by smtp.subspace.kernel.org (Postfix) with ESMTPS id 2CA2F60A2600
+	for <linux-wireless@vger.kernel.org>; Fri, 20 Nov 2026 11:31:30 +0000 (UTC)
+DMARC-Filter: OpenDMARC Filter v1.4.2 smtp.subspace.kernel.org 2CA2F60A2600
+Authentication-Results: smtp.subspace.kernel.org; dmarc=pass (p=none dis=none) header.from=gmail.com
+Authentication-Results: smtp.subspace.kernel.org; spf=pass smtp.mailfrom=gmail.com
 Authentication-Results: smtp.subspace.kernel.org;
-	dkim=pass (1024-bit key, unprotected) header.d=philips.com header.i=@philips.com header.a=rsa-sha256 header.s=selector1 header.b=P1Uz81S7
-ARC-Seal: i=1; a=rsa-sha256; s=arcselector10001; d=microsoft.com; cv=none;
- b=dujr+DRQY9WDApFUY+lRr2KwdzeHgBpSAkQs5BVWAv6U2MWUG3fCklFOgZjg87PpHwvGXG8Cf0pv6NKDqy6zROE1HtpbX/jgPAY/mey3BlfJ/fkMljeGPAtnT0KdKMhPO0zxS8uYu0IDzIs3JSetX0U74/VBvEPVy/gknCl4sdpZbuNPFzNdMOb0cZHkVOKUl/bGFBk1XnEWH2gN2XXi7akXczlwA/eWc/LJLE5XFnT6aINpZgBQa1jYV4VuGEVn7+ChZ+pTXDH5owVKYm/oLATSmtMDmhEqZFrY0cTCyqlIP+cDuaw59RsZGEW4Mje1RyJ+VMp1erguaczIV7SGBw==
-ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=microsoft.com;
- s=arcselector10001;
- h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-AntiSpam-MessageData-ChunkCount:X-MS-Exchange-AntiSpam-MessageData-0:X-MS-Exchange-AntiSpam-MessageData-1;
- bh=t/cJOtF5zbScuECBrYmxwbl4rj8yw8OSUnkcnO4Cg7s=;
- b=eN9iddBgclp0TYFw0fyepXnqIcYRKz5v8cw98mQes+8JYdP8Xj5wm/4T79/oGYXbvOj+U+B0baES/jq3BcEMQ2Vr/ymHp7c0kUIBZgzEU+WirYNlnPJma+kgZYTnV/HVn7hN9r0k8Z3sTLcObdk/yk6chp3Z+QVxiagQL+vJZRlG6Wcp4/319JZ/iryqqH36HYp9ntWbNcALpzed2IiWtv0bxB8gFTJceWk25AFR8jNSARa8UDCK1BeykEpWNjMOCCRx2w1pLT0tAzSlpNAsjrlpRXS8+VfcU9PzMoQ1wBzcC7WLIYETBUCg82k514jag7YUI3Y+qWlPK7JCFKngdQ==
-ARC-Authentication-Results: i=1; mx.microsoft.com 1; spf=pass (sender ip is
- 3.248.88.141) smtp.rcpttodomain=vger.kernel.org
- smtp.mailfrom=bbl.ms.philips.com; dmarc=pass (p=reject sp=reject pct=100)
- action=none header.from=philips.com; dkim=none (message not signed); arc=none
- (0)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=philips.com;
- s=selector1;
- h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
- bh=t/cJOtF5zbScuECBrYmxwbl4rj8yw8OSUnkcnO4Cg7s=;
- b=P1Uz81S7Dc3tdsLiZbkZmDJKJA6iugmYuasuFIarnSSTqHRXzqa0UuYcRhvPBnjjbJBfRE4V/1HkSwCJGmHtvhHPhAPWWnFqLpDuHu6ZJgVFNcFAk8Q8IZSA4n/C9L0abm9An1vyapvUAgwBLUWAnzr/qZipwS8JIjxf4Nn6wuo=
-Received: from AS9PR05CA0026.eurprd05.prod.outlook.com (2603:10a6:20b:488::31)
- by GV2PR10MB9929.EURPRD10.PROD.OUTLOOK.COM (2603:10a6:150:342::20) with
- Microsoft SMTP Server (version=TLS1_2,
- cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id 15.21.662.1; Fri, 20 Nov
- 2026 10:48:36 +0000
-Received: from AMS1EPF00000091.eurprd05.prod.outlook.com
- (2603:10a6:20b:488:cafe::82) by AS9PR05CA0026.outlook.office365.com
- (2603:10a6:20b:488::31) with Microsoft SMTP Server (version=TLS1_3,
- cipher=TLS_AES_256_GCM_SHA384) id 15.21.639.10 via Frontend Transport; Fri,
- 20 Nov 2026 10:48:35 +0000
-X-MS-Exchange-Authentication-Results: mx.microsoft.com 1; spf=pass (sender IP
- is 3.248.88.141) smtp.mailfrom=bbl.ms.philips.com; dkim=none (message not
- signed) header.d=none;dmarc=pass action=none header.from=philips.com;
-Received-SPF: Pass (protection.outlook.com: domain of bbl.ms.philips.com
- designates 3.248.88.141 as permitted sender) receiver=protection.outlook.com;
- client-ip=3.248.88.141; helo=ext-eur1.smtp.philips.com; pr=C
-Received: from ext-eur1.smtp.philips.com (3.248.88.141) by
- AMS1EPF00000091.mail.protection.outlook.com (10.167.242.88) with Microsoft
- SMTP Server (version=TLS1_2, cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id
- 15.21.639.5 via Frontend Transport; Fri, 20 Nov 2026 10:48:35 +0000
-Received: from smtprelay-eur1.philips.com ([130.138.84.184])
-	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 256/256 bits)
-	(Client did not present a certificate)
-	by ext-eur1.smtp.philips.com with ESMTPS
-	id UARzxpEhhf0UDUMAVx0G3E; Fri, 20 Nov 2026 11:48:35 +0100
-Received: from mail.bbl.ms.philips.com ([130.143.87.230])
-	by smtprelay-eur1.philips.com with ESMTP
-	id UMAVxTZA2btn9UMAVxpUQM; Fri, 20 Nov 2026 11:48:35 +0100
-X-CLAM-Verdict: legit
-X-CLAM-Score: ??
-X-CLAM-Description: ??
-Received: from bbl2xvg1.bbl.ms.philips.com (bbl2xvg1.bbl.ms.philips.com [130.143.220.100])
-	by mail.bbl.ms.philips.com (Postfix) with ESMTP id 9177B180025;
-	Fri, 20 Nov 2026 11:48:35 +0100 (CET)
-Received: by bbl2xvg1.bbl.ms.philips.com (Postfix, from userid 2884)
-	id 914C0FE023B; Fri, 20 Nov 2026 11:48:35 +0100 (CET)
-From: Vishal Gupta <vishal.gupta_1@philips.com>
-To: vishal.gupta_1@philips.com
-Cc: jeff.johnson@oss.qualcomm.com,
-	linux-wireless@vger.kernel.org,
-	uwe.schnick@philips.com
-Subject: Re: [PATCH 1/1] wifi: mwifiex: synchronize scan cancellation state
-Date: Fri, 20 Nov 2026 11:48:34 +0100
-Message-ID: <20261120104835.8055-1-vishal.gupta_1@philips.com>
-X-Mailer: git-send-email 2.43.0
-In-Reply-To: <20261111143037.688461-1-vishal.gupta_1@philips.com>
-References: <20261111143037.688461-1-vishal.gupta_1@philips.com>
+	dkim=pass (2048-bit key) header.d=gmail.com header.i=@gmail.com header.a=rsa-sha256 header.s=20260707 header.b=KP4UWxih
+Received: by mail-dy1-f177.google.com with SMTP id 5a478bee46e88-3712b6d9843so684743eec.1
+        for <linux-wireless@vger.kernel.org>; Fri, 20 Nov 2026 03:31:30 -0800 (PST)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+        d=gmail.com; s=20260707; t=1795174290; x=1795779090; darn=vger.kernel.org;
+        h=content-transfer-encoding:mime-version:message-id:date:subject:cc
+         :to:from:from:to:cc:subject:date:message-id:reply-to:content-type;
+        bh=61pgidgMOlKV3QTNf/1zYqiDzNU8aZjvjx2edtSfpjg=;
+        b=KP4UWxihzvVM55PTAofrXE3wN+/3/sPq1+KjLO10W2v18mRXZ3l3BZiHykmTLY6PIq
+         leQbBl6etURW4z46/2aygqSCMj58/13nLBGzZQxrsNpM1og+ZuF+ynohumLbKU6DlpV0
+         4KQm7W3/sXBDFX4eXHQ+xk1i9qsVoCzpReafODlIm8wnY1xuK3wQVbi7rUc9+0vspcKW
+         gVvg0+axDFdrtqRhxGPHbSg7jcbBmxoAb5l6g55tJ9QSBpJyhSpRPh/wERSv6Qw17rTS
+         j/MK8XtVrfOusARxMThZP7NTDqYw0hOZh/EWZeh47TWoZUSuG4l2HaYp7x2XtLAhergf
+         ZY6A==
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+        d=1e100.net; s=20260707; t=1795174290; x=1795779090;
+        h=content-transfer-encoding:mime-version:message-id:date:subject:cc
+         :to:from:x-gm-gg:x-gm-message-state:from:to:cc:subject:date
+         :message-id:reply-to:content-type;
+        bh=61pgidgMOlKV3QTNf/1zYqiDzNU8aZjvjx2edtSfpjg=;
+        b=dcaXnihYERL5wz6qKJSsSmVLFUnOHg/D32APBEwhgrM2keay6lGxlM3D/6IhCtPOuh
+         uO+92LYhA3osPeXqMVAzM4P+HmSqOcIxw5T6MUEiAnFIzI0nIvQUJK6mjismf1/452mn
+         mFVqjy1wdO4T4vQfmd9R+1OQUdIR+Bb1fWVQ1XIzWNWrFW3FF3nhHjEJSrSu8H8onmuO
+         jpd63bZrQuezAlhkOsbzk/SQwrlllMQ5ezYZgR+WNfHYks1bGBdzmdcmLoo7SWFIOr1G
+         pRx96DAW7zgmOqLK4o51eCuHaDE8151STKsOX8y/hhEhKmbvJ8UszgOBB/vY9aOX9nSs
+         OcjA==
+X-Forwarded-Encrypted: i=1; AL+hErEJ9Kq/q8/EFj3yeZR/Uc02Zc2nmsXyKKMmOP5ChB/IytoOYbpqoL/NoAQK6K1w6Xjbq8KHAIz1tdFaTiy2Ww==@vger.kernel.org
+X-Gm-Message-State: APuU4Z8+SwOJGmhIhFZJHt9wanTBI8mQX7MJwuFgpcu9Bsoqdn6j6kc8
+	iJLwx7bPFIb84Q4YqpARKIEZb6xCM2AypfRB8IRiqWfkTtKOLKTGyUeahE1xszK543I=
+X-Gm-Gg: AZFdTZcCQ+j7I9YGBY8L5mw5vSZ0zvtdlXG/Fnuh9cl8EMncbkc5z30ertKLPk9wsWt
+	k2JWpZnr24UQ1OqzM+Mx4kyjO8p+jqRrl3N9N34xKfyZmK4K+AtwRk3BKoD+JmJ41lgdav6Dp9d
+	IP8FadK++VDJVD6r7s7t+Sqb4Aw4ND+Y1eGqBCxPnGbAkYHvzgNCenYij8zTlpopIsZX/3jCNjs
+	C0fttoE+6IaApda3CIfw9JB+611f2vJSvmv6Qu6jReBsHNKmShdV/gMMJJPr+ohtCAJ92FCzRcW
+	j/PJq0MWNlROSQMCausCjUSEAJn7f2NiTEll6hIB20mL6W3XXJSdPubmn23o5clQINtTgoE2oKP
+	L7l9f32lnK2vDptWHKoAcbwp5UIy//g7Hgy170482Q+nQZ/aiNK76Col5M71WKKpG9DZGI50pYe
+	73E9oXdU8BQy9UR/8rXVj302Fyki90FltRp1DHR1lnRW25pWhiIqldA6dYwf1b2oOPA6Ca4KZ0h
+	+iqUky1n0XeJR2+jZc0bLhlyJllSeVq1vASHPfzlNUnVvCeoUqJciHk/KK7P/O+LgnHXuUYWVVP
+	W/Mh05p0OwbRbiqiRJB9i00iiq4VkoHqvlNtAmEGK/b9VwGzIVR+dELQSLPlOxD6bshBwG5EubH
+	hA7+D0d3LlBytzqdQGzaqSpbghd0jMPTR4uDUioqPDJ+ETuxLzJFp5VBGS3Xp8aC7fg==
+X-Received: by 2002:a05:7301:85cb:b0:381:edba:caba with SMTP id 5a478bee46e88-3856fd5cceamr2623199eec.17.1795174290231;
+        Fri, 20 Nov 2026 03:31:30 -0800 (PST)
+Received: from acemagic-m1.tail4fb79.ts.net ([2401:7400:c804:b668:fe98:6351:c2cf:22c3])
+        by smtp.gmail.com with ESMTPSA id 5a478bee46e88-385672ce402sm7134347eec.16.2026.11.20.03.31.28
+        (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
+        Fri, 20 Nov 2026 03:31:29 -0800 (PST)
+From: Ho Jie Feng <hjf3108@gmail.com>
+To: Ping-Ke Shih <pkshih@realtek.com>,
+	linux-wireless@vger.kernel.org
+Cc: Bitterblue Smith <rtl8821cerfe2@gmail.com>
+Subject: [PATCH rtw-next v3 0/5] wifi: rtlwifi: rtl8192du fixes and additional support
+Date: Fri, 20 Nov 2026 19:31:09 +0800
+Message-ID: <20261120113116.153232-1-hjf3108@gmail.com>
+X-Mailer: git-send-email 2.53.0
 X-Mailing-List: linux-wireless@vger.kernel.org
 List-Id: <linux-wireless.vger.kernel.org>
 List-Post: <mailto:linux-wireless@vger.kernel.org>
@@ -122,38 +95,56 @@ List-Unsubscribe: <mailto:linux-wireless+unsubscribe@vger.kernel.org>
 List-Owner: <mailto:linux-wireless+owner@vger.kernel.org>
 Precedence: list
 MIME-Version: 1.0
-Content-Type: text/plain; charset=UTF-8
 Content-Transfer-Encoding: 8bit
-X-EOPAttributedMessage: 0
-X-MS-PublicTrafficType: Email
-X-MS-TrafficTypeDiagnostic: AMS1EPF00000091:EE_|GV2PR10MB9929:EE_
-X-MS-Office365-Filtering-Correlation-Id: d8dfb3c8-f40c-4b5d-98d6-08df46f3d41a
-X-MS-Exchange-SenderADCheck: 1
-X-MS-Exchange-AntiSpam-Relay: 0
-X-Microsoft-Antispam:
-	BCL:0;ARA:13230040|36860700016|23010399003|376014|1800799024|82310400026|30052699003|10067099003|11063799006|56012099006|18002099003|22082099003;
-X-Microsoft-Antispam-Message-Info:
-	mMYuwflwVCgQxdWynf4uU5vDC4Yzw+ZlN4BQeCVBrom3uBdfpkaD4THfTPS219aKC8lPTgfBiDLWV6LJvgeZDBg2D+SeT/N/vk6RT9rl/m+34pmwE1n9xwvTYbaRmkTsguEO61HnBYQeTJJEkvjbToP8hzPkqN0+tPAxS9W5qQDFIjrj9iiQ+xqDBd+NeXHBXiuAloZvT/Hi16CeLDQtEWSy+9Q7PQtTOFsPsenBkaH6kA0cY5uOQNXCdeTaGewKXGyfnTy/Fd6EhOVOmFOMruPcprI5E5efwUgXA9oJlajnYG1mtkGLfWjIp+nyEOVpX70LXbA/pUev5XRjBzAbBcyZR82QnzHpMcgQAMHz3WJ5+JOO2XTN9+kG0tD3GELybPCXwtcWfsKoAmarwLc3DDmtNx3kacoQQWpVPO5y4Gz5vsuU+xYgdpCY64/XEKQ9X78OIYOdl9c5Kh664Dt4FmN/PWafTSDBHtv6Hcn0549lXpPMEHoncURNJYZlvRcn/fXFFi93zD3B/Qcl3sfe60tRHZRKKKLEMwQDyVCZs490YdG3umlhnh448qfKu0cGM5sHOoEL3NpNqS5iaXC4qTRYms6wx7RlMHWJ22fBO4gQ4L7W+k04lxg2pu6E/1z8G4kChnI3pkn7JitRIGub4zvlIwPkfQWv8dd8AhJxyXLV2dHeZXJTWdHCAdRBJpIXq0fCKtni9XT8oNoFusGiyA==
-X-Forefront-Antispam-Report:
-	CIP:3.248.88.141;CTRY:IE;LANG:en;SCL:1;SRV:;IPV:NLI;SFV:NSPM;H:ext-eur1.smtp.philips.com;PTR:ext-eur1.smtp.philips.com;CAT:NONE;SFS:(13230040)(36860700016)(23010399003)(376014)(1800799024)(82310400026)(30052699003)(10067099003)(11063799006)(56012099006)(18002099003)(22082099003);DIR:OUT;SFP:1101;
-X-MS-Exchange-AntiSpam-MessageData-ChunkCount: 1
-X-MS-Exchange-AntiSpam-MessageData-0:
-	y6NZNzEqablqOygsrj5yoPJrQ3TJIkf3mdCzspyj9fct/Ax7sgQeIcAqe4QHNw6Fhe36SIn4LpNr49CzyPZeJe4FclMMmN8pdkoyvIUKohVrrOoyfguE4lRUbjlXRN38ReiGun7acOuUtH33D2B1RFP7eYYXeLOXUl+i6kWbHjiro03hz/t8Dcg6cPnMm7QAuDpvO58ufPia6C6b4uQawcZZlR0nFqGCJWmaU3rLcpUnvTpOm2ARJ690dZUA/4PE2LoOYCLycge9Hmefz6KyO0D0D19oa9dDayiiR4Crqa+4Q6S1fKXymhCr7fWqMu3ZA9X7JwYxF/UY//AyEadbFXiUek60+TETGHO1JK8dvLOUMjADOP8OCqXVfOW54Q6zZjTLJl3GLGHaN2XJZHpqkAZSQS+ZepcocMSXSD9ff5120lhUiO885FDQSzq4XZSz
-X-OriginatorOrg: philips.com
-X-MS-Exchange-CrossTenant-OriginalArrivalTime: 20 Nov 2026 10:48:35.8935
- (UTC)
-X-MS-Exchange-CrossTenant-Network-Message-Id: d8dfb3c8-f40c-4b5d-98d6-08df46f3d41a
-X-MS-Exchange-CrossTenant-Id: 1a407a2d-7675-4d17-8692-b3ac285306e4
-X-MS-Exchange-CrossTenant-OriginalAttributedTenantConnectingIp: TenantId=1a407a2d-7675-4d17-8692-b3ac285306e4;Ip=[3.248.88.141];Helo=[ext-eur1.smtp.philips.com]
-X-MS-Exchange-CrossTenant-AuthSource:
-	AMS1EPF00000091.eurprd05.prod.outlook.com
-X-MS-Exchange-CrossTenant-AuthAs: Anonymous
-X-MS-Exchange-CrossTenant-FromEntityHeader: HybridOnPrem
-X-MS-Exchange-Transport-CrossTenantHeadersStamped: GV2PR10MB9929
 
-Hi,
+Fixes
+- BA sessions started for QoS null frames
+- signal of A-MPDU frames without PHY status
 
-Just checking whether you’ve had a chance to review this patch. I am happy to address any feedback.
+Implements
+- USB RX aggregation
 
-Regards
-Vishal Gupta
+Changes in v3:
+- QoS null BA: explain the benefit and the impact
+- usb.h: align RTL_RADIO_TAP_SIZE_RSV with RTL_RX_DESC_SIZE
+- Add Acked-by from Ping-Ke to patches 2 and 4
+
+Changes in v2:
+- Drop "let the firmware use all rates"
+- Drop the test results from the bug fixes
+- Add "usb: move the radiotap headroom size to usb.h", used by RX
+  aggregation instead of its own define
+- RX aggregation: describe how the frames are split
+- Add Acked-by from Ping-Ke to patches 3 and 5
+
+Tested on RTL8192DU 2.4 GHz with iperf3.
+Testing on 5 GHz did not show any changes.
+
+   before after
+TX 7.0    6.4
+RX 28.3   32.0
+
+Ho Jie Feng (5):
+  wifi: rtlwifi: rc: start no BA session for QoS null frames
+  wifi: rtlwifi: rtl8192d: report no signal for frames without PHY
+    status
+  wifi: rtlwifi: usb: unify the RX code path
+  wifi: rtlwifi: usb: move the radiotap headroom size to usb.h
+  wifi: rtlwifi: rtl8192du: enable USB RX aggregation
+
+ drivers/net/wireless/realtek/rtlwifi/rc.c     |  2 +-
+ .../wireless/realtek/rtlwifi/rtl8192d/reg.h   |  4 ++
+ .../realtek/rtlwifi/rtl8192d/trx_common.c     |  2 +
+ .../wireless/realtek/rtlwifi/rtl8192du/hw.c   | 18 +++++-
+ .../wireless/realtek/rtlwifi/rtl8192du/sw.c   |  2 +-
+ .../wireless/realtek/rtlwifi/rtl8192du/trx.c  | 45 ++++++++++++++
+ .../wireless/realtek/rtlwifi/rtl8192du/trx.h  |  4 ++
+ drivers/net/wireless/realtek/rtlwifi/usb.c    | 60 ++-----------------
+ drivers/net/wireless/realtek/rtlwifi/usb.h    |  1 +
+ 9 files changed, 80 insertions(+), 58 deletions(-)
+
+
+base-commit: 0bdc579dbfc251a6b6838ee9459b6771b948c617
+-- 
+2.53.0
+
