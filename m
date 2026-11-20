@@ -1,100 +1,93 @@
-Authentication-Results: smtp.subspace.kernel.org; arc=none smtp.remote-ip=209.85.221.52
+Authentication-Results: smtp.subspace.kernel.org; arc=none smtp.remote-ip=209.85.221.172
 ARC-Seal: i=1; d=subspace.kernel.org; s=arc20261015; a=rsa-sha256; cv=none;
-	t=1795209874;
-	b=sa0/5RoVnA8Qknb3Ym+091og6wo7GhfLNa60Z0H+T+vMEyNNi+xkOY2teQktpqUhWCvI
-	 IE0YZuCNf9yuishRYfXlTS5u7LL77YKv1vEdq/urTWyFJ3o5jRnSXxcmB5vhqp485byYb
-	 8guB0ysMogEtVOVB7zdGhFWvjxxaZ1WJgeUGjwEpPxbW6NU6vP6TqMC+ffIUKQs0yNMRX
-	 L+xIkbL6EblHIDK4wS2t7LJoIunCYgG+H+oNmkT9XGTLjhQXTZbPVLAzBSL9YYr0Uz953
-	 CLy1ejcyhtgigPS/poGF6N+OKo+K3EHCM1yv9uWWBVEVyUF4azYc1a/wwdOFzfb9hlg==
+	t=1795210153;
+	b=YzKwCUZ5Q9VZoMWEib1bgXSXN2MLVYFyKVswTIrcbIpBP/+sPn1aeR2qIzi6K2buhFYp
+	 lJ/q4M4cgpJjXXGR2SLP9UTK2mo/d/YjTUT1lBrTnqoonwGAcLq6sq4J0GptVxhnCI7NI
+	 ZX46v+mWM3hOAKG+IypZuFsGNggzzgMj7GAEJJu0ypztHb83Bhhn3r5nPPfP7TDsSrpIu
+	 XZCgO60TKZBvWNmoN2/RwdnUZlr/OXr1nr1TVF59ns3KBXQSMl+zym659F9pEbE92hUz1
+	 ADC4RXuXnacw5+325dO2hu0E2cCr6h76EiFDceHxbdIoLwCK28ZvvZkhzZUHaEpMG0w==
 ARC-Message-Signature: i=1; d=subspace.kernel.org; s=arc20261015;
-	a=rsa-sha256; c=relaxed/relaxed; t=1795209874;
+	a=rsa-sha256; c=relaxed/relaxed; t=1795210153;
 	h=DMARC-Filter:Received:DKIM-Signature:X-Google-DKIM-Signature:
-	 X-Gm-Message-State:X-Gm-Gg:X-Received:Received:From:To:Cc:Subject:
-	 In-Reply-To:References:Message-ID:Date:Content-Type:
-	 Content-Transfer-Encoding:MIME-Version;
-	bh=u8bUyFA7YT2lcTdvO+H/Nub7pWzKQa3TSCcWmE29nrc=;
-	b=gka9NXejSspndNXE+dKXuWPbbFfYv/TgwlAP95SvJyDE8Aol7svPoxgzfVieMts7cE55
-	 unnWF6fTaoFL7EmwHy0V1waV5eusofXyGxUFk9Cfawuo5kA2ETt8egitDGOqlCItyHBS/
-	 Eh0T1H4cvGbeaYlCexMVZAALpMfsBQMGfOssvWECTxrCYzj9xwf/dTVq5oWvrKYUA2RCi
-	 +4Cp4QrEdPfBZeXlo/Y/ke/HpXs7Hy1cgnSReaDsGKYn9UKR9kEPYwcsLqDqKIZuuYygq
-	 Xnky3/HW48/qQXYp94doUl6qr6iL8/XKw8pp2Zs2MFhStBy1G07znNPI9Pczh4/BcvA==
+	 X-Forwarded-Encrypted:X-Gm-Message-State:X-Gm-Gg:X-Received:Received:
+	 From:To:Cc:Subject:Date:Message-ID:X-Mailer:MIME-Version:
+	 Content-Transfer-Encoding;
+	bh=RtJF5VKE8u91+dvBTPTeMcNPvnfKxdIIH3R4flqEr6s=;
+	b=E2uuPRHnD+AUZXptgEhuW7iGFgMyQi/7urPXls6qC97uumiQTXaICwuf4iKxJQBU0/CV
+	 BF8D20x7hHioFQeZbZVCHZs467EQq424cAqj14XCz5iWbwNi6BDCu2+u3IynSSXBF0eqy
+	 ru16scY8djrNSwre6GqDzNDQ9PEdfXjj2zLOfhewLO8B4qpJoKNIF3OfKk4z7w0KQGMQ8
+	 +sqeY7nQJqGf5VIdrkxEsh3ps8bROoYWVdJvWfTyJY4tYW1xuh6Jp/T7Ps3pOAt5+R0C+
+	 SG8Y8MWrD8prRUDJFTphANc/RFLZHTIPggp61psXKand04ql/iIQIsrvFrze3B9DP/w==
 ARC-Authentication-Results: i=1; smtp.subspace.kernel.org; 
-	dmarc=none header.from=louisremi.com;
-	spf=pass smtp.mailfrom=louisremi.com;
-	dkim=pass header.d=louisremi-com.20260707.gappssmtp.com header.i=@louisremi-com.20260707.gappssmtp.com header.a=rsa-sha256 header.s=20260707 header.b=ENTxBx1A;
-	arc=none smtp.remote-ip=209.85.221.52
-Received: from mail-wr1-f52.google.com (mail-wr1-f52.google.com [209.85.221.52])
+	dmarc=pass header.from=gmail.com;
+	spf=pass smtp.mailfrom=gmail.com;
+	dkim=pass header.d=gmail.com header.i=@gmail.com header.a=rsa-sha256 header.s=20260707 header.b=GuQAj3sa;
+	arc=none smtp.remote-ip=209.85.221.172
+Received: from mail-vk1-f172.google.com (mail-vk1-f172.google.com [209.85.221.172])
 	(using TLSv1.3 with cipher TLS_AES_128_GCM_SHA256 (128/128 bits)
 	 key-exchange X25519 server-signature ECDSA (prime256v1) server-digest SHA256)
 	(No client certificate requested)
-	by smtp.subspace.kernel.org (Postfix) with ESMTPS id DD4B6606A685
-	for <linux-wireless@vger.kernel.org>; Fri, 20 Nov 2026 21:24:33 +0000 (UTC)
-DMARC-Filter: OpenDMARC Filter v1.4.2 smtp.subspace.kernel.org DD4B6606A685
-Authentication-Results: smtp.subspace.kernel.org; dmarc=none (p=none dis=none) header.from=louisremi.com
-Authentication-Results: smtp.subspace.kernel.org; spf=pass smtp.mailfrom=louisremi.com
+	by smtp.subspace.kernel.org (Postfix) with ESMTPS id 26582606A684
+	for <linux-wireless@vger.kernel.org>; Fri, 20 Nov 2026 21:29:07 +0000 (UTC)
+DMARC-Filter: OpenDMARC Filter v1.4.2 smtp.subspace.kernel.org 26582606A684
+Authentication-Results: smtp.subspace.kernel.org; dmarc=pass (p=none dis=none) header.from=gmail.com
+Authentication-Results: smtp.subspace.kernel.org; spf=pass smtp.mailfrom=gmail.com
 Authentication-Results: smtp.subspace.kernel.org;
-	dkim=pass (2048-bit key, unprotected) header.d=louisremi-com.20260707.gappssmtp.com header.i=@louisremi-com.20260707.gappssmtp.com header.a=rsa-sha256 header.s=20260707 header.b=ENTxBx1A
-Received: by mail-wr1-f52.google.com with SMTP id ffacd0b85a97d-4a34ffd3e39so772612f8f.0
-        for <linux-wireless@vger.kernel.org>; Fri, 20 Nov 2026 13:24:33 -0800 (PST)
+	dkim=pass (2048-bit key) header.d=gmail.com header.i=@gmail.com header.a=rsa-sha256 header.s=20260707 header.b=GuQAj3sa
+Received: by mail-vk1-f172.google.com with SMTP id 71dfb90a1353d-5eac7220e9cso516590e0c.3
+        for <linux-wireless@vger.kernel.org>; Fri, 20 Nov 2026 13:29:07 -0800 (PST)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=louisremi-com.20260707.gappssmtp.com; s=20260707; t=1795209872; x=1795814672; darn=vger.kernel.org;
-        h=mime-version:content-transfer-encoding:content-type:date:message-id
-         :references:in-reply-to:subject:cc:to:from:from:to:cc:subject:date
-         :message-id:reply-to:content-type;
-        bh=u8bUyFA7YT2lcTdvO+H/Nub7pWzKQa3TSCcWmE29nrc=;
-        b=ENTxBx1A66B6DkhmVzvmUkUl/qfG8HcMLTubgU66iiptp6v54x4ZzijRAde1k0ZJdu
-         ofu2Z6LFyG3ttX3n9z1r6K2bsGth/uRtu832wWB8RG+DqIwdvkY9fafapH3vAETT4tyJ
-         mSgcl7vHenDTxwFwSQzjzeDuT3H3Z7BiDGpJXmF47zi2v/xNaGgSAfKeqVK7IIoj1xnM
-         s2TIgClaoUWXRUWeER4HXq25tG7dMK1ULiEJMOZI6ZqXMMJ5ImroGFjvh00iqHwp4xp/
-         GrIJ61lsCtaAfYmjMlN2Qqc+95A2Px6h3W1eecGlu/xZlv2Qyh1pJ3OJR1sarA+qMxFu
-         lfeQ==
+        d=gmail.com; s=20260707; t=1795210147; x=1795814947; darn=vger.kernel.org;
+        h=content-transfer-encoding:mime-version:message-id:date:subject:cc
+         :to:from:from:to:cc:subject:date:message-id:reply-to:content-type;
+        bh=RtJF5VKE8u91+dvBTPTeMcNPvnfKxdIIH3R4flqEr6s=;
+        b=GuQAj3saQdXCDa9aobPR2y7rJ1ST8tMdTFd9D9LRo+H/hjqGMY5/LQGUIWb/r+jxFA
+         z+rvM8ElYpoaTxdwei476vbYYWpbwIgrU19fIzFT76zqhVnoads2aM5Ffv26F3PuMyw6
+         KFSVSRSLFkw9OeT2+/2fT2YnpxQByTfJeJSskmqJZ0m38817C1+m7ReZ4sBQQYWvqbip
+         0lGtd+ps+lSFBHSL3pPNovOZsiaJzpyznOLuhqnjudnA4Lz28YWTTuQjKo+ERugCKxH8
+         bc6N5XCBM1H3Gui2xqbSn3rW4nOlnGjkiM3YfKnE1ncOUr+qe6askR3Xz6U+kcCNwXfq
+         nqlQ==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=1e100.net; s=20260707; t=1795209872; x=1795814672;
-        h=mime-version:content-transfer-encoding:content-type:date:message-id
-         :references:in-reply-to:subject:cc:to:from:x-gm-gg
-         :x-gm-message-state:from:to:cc:subject:date:message-id:reply-to
-         :content-type;
-        bh=u8bUyFA7YT2lcTdvO+H/Nub7pWzKQa3TSCcWmE29nrc=;
-        b=jr73k9lM1hoNVqYzYoft1c5ptaNlarZNU1NYEP8r0acjRPJ+TY4kZxG+a1ZR3IAHZV
-         C7kpnecEnY9JfoWMCSllefrFaabp63o8k8ZmyMM0gZWDGSMv7sWA5XabSkJSlg7Is4hl
-         qT0al10BCEySR1ONHV1rxYvPWslmIcFWTAm7EX6dPKWsMEacDOnXyhJEt319WNSL8ZbE
-         zxupzxP6HMRRi2Jeq0bc2sBL2HE/ekQpjV+hbHtFxvA7SdrMqJJCPl9r9pqs0nRgynhK
-         9OfzaDiAzpS5JvhTfPU+9gdyToS9GYhnUof5YB73NJGp2v5lO+ooHdf0dcnUQ1cfiisR
-         GX0A==
-X-Gm-Message-State: APuU4Z/mBnho40VgYDdKAFjKo/KE011xb/QolsvoDtT641A4UcIxDFxw
-	n1vmUdNDl+BgYcxJwSu0BOpw4bpBrz9kWp8I+MLdT4Wo9D0U7bha40cHCRGKwNewJ45y1Vm1dQa
-	PPXv1whv+fQ==
-X-Gm-Gg: AZFdTZc7v824enwTagOVla5jE0LmaA2RoLzmRlNZMp5Bpj2U0PO8DG8gwITgAiyrhum
-	pXv/cWMcFbwwEFKdwS7MJo1AsXt5rq4dhkavkoy/COpZaf5Z5O9T3QhSOfrvsZ71vChA+UMjD9Z
-	EHc69PCueO/bk0YfVBCCCUz036YN+aQTBKrYHJfYPCjSrH0y+a4EOghAmW0BALGor9ieib/e860
-	DM8QvCk7DcO5J3Wf5+kJ7UB7YqFakWPrLho/MyZLuxHri5IlrpSExFPnBX/BBIa0H0gQwV0ss5L
-	T9TwLExvtEXeIyVAJvrrq4Z4hjCsD5UfMGW9ko/vZfoCqeOH9/YTGG/jF7gXbX70aPnE0FVFIXa
-	RBkwdpUKe5ceKxpw5e33xJCstW0HtIs5qtF74DKWmhOAynbqz8uAexyGVb8hLgr25IQ2bIrFOSB
-	cGuWJzwuDchu4ps2E9iEaVJ/o5FBK6wGn/+VRCZfYWg+ZGYo+BqqJ1HIv0CoXEwfkMIWyn+cH8+
-	qam/3FlHMRN9VlSn7Y7k9OcYgMO5zflgucL84z8CCWZCY2LsOp3qZxAeDVZgY0ZzcdN73myejvr
-	F0qgvhkJ9dPHYHgXmNtKw6ychUwOHrngj7Wbdnkf16UCt4BwbnPCX13l1MB4aYKKBVZkFpHociv
-	tuKNLH0SvnEQAx0YoWolsInqNxM6FhlurUGXd4Cn7+2hif6uncq+8Kcx77ApkT9WK4ScAURSFZA
-	yetgZXzIw5y9lNyViDrCcN1SMvpH9i3CZ7jfG2Zce8K81VQq9JgDWLc4tkySEZA219B0yue5bd4
-	MELfOkVihO1P3wCxjMIU8zjvoZ3v2+77AT27mhpAwP2eAir4baEnJM2b0reL/evV2fbdREkUf2F
-	xzl8Axo=
-X-Received: by 2002:a05:6000:2b8e:b0:4a4:7dd0:2177 with SMTP id ffacd0b85a97d-4abb55185b5mr5436539f8f.49.1795209871787;
-        Fri, 20 Nov 2026 13:24:31 -0800 (PST)
-Received: from [172.19.0.4] (rom10-h02-176-169-75-238.dsl.sta.abo.bbox.fr. [176.169.75.238])
-        by smtp.gmail.com with ESMTPSA id ffacd0b85a97d-4ab6baa397asm7610812f8f.48.2026.11.20.13.24.29
+        d=1e100.net; s=20260707; t=1795210147; x=1795814947;
+        h=content-transfer-encoding:mime-version:message-id:date:subject:cc
+         :to:from:x-gm-gg:x-gm-message-state:from:to:cc:subject:date
+         :message-id:reply-to:content-type;
+        bh=RtJF5VKE8u91+dvBTPTeMcNPvnfKxdIIH3R4flqEr6s=;
+        b=l6ZyUstVC+w1+o7HMhlPTVeggU0/KAY7eLoPFSR4k/WRP/EKXWYsu+t136cpze5Fke
+         uCxdhszJ9jSTfDw6Vs5mMbyM9UyCdAzilgp64YvV7GsA0SpG1cmXcrhWD9Cj8ijlqMW0
+         Wn0gUe4Ji6sqQ5GPXO37NQvvKMNNgFUpM4ZBRB3d6mHXmKrs2eX7lpoIWIKP+2QZrllB
+         a2msDHtIwQN7cHSQMHY7g/7dyvJgvHKcfEwthlCME7N3R48kFwHoVHiW7hYe6LOzVujr
+         Bjmd2mwlykJ+gjzPEZFoGO5u5m1VUcLYGHVEtZTbH5nHRdyD4UCFB0z6+QhdK4yfaIDU
+         DCTA==
+X-Forwarded-Encrypted: i=1; AL+hErEMLkYXTi48DB8WL/OkWl7tIYGlOyfeNS4TmgSVEJ8Fye4+9CXskZIdHjAmjoZJUBX7Wrh9istzMUIqDcsFeA==@vger.kernel.org
+X-Gm-Message-State: APuU4Z8hRae7RXQ0y/xamM76gZKrK9s+lOvYQ2fGigQPlgHiHNN2dIZ4
+	3Kw+hIhKKMG18P/4pcLG1AZ8UGF7CpSbM/LUxERycorvG8DBQMcRgy+d3GisuvTiesLMRg==
+X-Gm-Gg: AZFdTZdj5J2xoIBheqabW2+FxIGfm4yVsIdKGvQGiBG4TgO6Rm2nvqs1PR6/3kISnLJ
+	6MTDoYT5q/TaLG3j6k4yq0ej2OI4FuwcWJi6IcpOhpnuzO0q9t1yUCH4ktN+XmDV4iicdUTfsoK
+	WV/mBhnms8uNCra4FW4kecK9AV81vpMNvkIQzkCIhNsw66ygkza4fJM+Tu5arVqmGRuZnluDuK0
+	Xedo+notZYkfD9eEC0VDIn5Nw+dvPBfeRIqrwAzA2nJV95ymzJiXUZ/GxTfiMW5m9O64GlZXa0O
+	CEiO/VlVRXG1X1Y+Y7Wb7KQxtg85nDalY5dSWrT5Mhu+KNuLCfHexX2ytiBCJrQU8eRyYIosgq7
+	uqU/Tv/7c2MBc9BXhoSwUoOBt6+CUNla1tO6xVdDY3CWqubktSwO7CS8BxOl1ZqDKiS0mRrDTDu
+	6lE1NppU9l2w/B9bqCgAFDElcOAGQHgJbzrxasbIt+m8v72eZ8DKdfimkcvOZIT+96uO+103Lru
+	nNSYia9NFN2m4jqxfDG9q0Fe9UGeyRFFbqRI9N5BY3W/7ivZfQ3DiAipqBV2waCGCjRhNVwZKEq
+	/zwVN+aGad52Pc55+DfFigYEqNeJ4SdNGo6R3qPdGkk=
+X-Received: by 2002:a05:6122:7ca:b0:5ea:fae8:e69e with SMTP id 71dfb90a1353d-5ee8aefbc08mr2508517e0c.11.1795210146967;
+        Fri, 20 Nov 2026 13:29:06 -0800 (PST)
+Received: from arch.localdomain ([181.80.89.146])
+        by smtp.gmail.com with ESMTPSA id 71dfb90a1353d-5ee8b4335e1sm3709291e0c.1.2026.11.20.13.29.05
         (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
-        Fri, 20 Nov 2026 13:24:31 -0800 (PST)
-From: =?utf-8?q?Louis-R=C3=A9mi_Bab=C3=A9?= <pro@louisremi.com>
-To: linux-wireless@vger.kernel.org
-Cc: Yanli Yang <yanli.yang@bedmex.com>,
- Johannes Berg <johannes@sipsolutions.net>, Kalle Valo <kvalo@kernel.org>
-Subject: Re: [PATCH wireless-next v5 0/4] wifi: aic: Add AIC8800D80 and D80N
- SDIO FullMAC driver
-In-Reply-To: <179481380235.4.7388336477392853157@bedmex.com>
-References: <179481380235.4.7388336477392853157@bedmex.com>
-Message-ID: <179519070695.4.10313907452014228522@louisremi.com>
-Date: Fri, 20 Nov 2026 17:05:06 +0100
-Content-Type: text/plain; charset="utf-8"
-Content-Transfer-Encoding: 8bit
+        Fri, 20 Nov 2026 13:29:06 -0800 (PST)
+From: Paulneja <paulnejacontacto@gmail.com>
+To: Jeff Chen <jeff.chen_1@oss.nxp.com>,
+	Johannes Berg <johannes@sipsolutions.net>
+Cc: Francesco Dolcini <francesco@dolcini.it>,
+	linux-wireless@vger.kernel.org,
+	linux-kernel@vger.kernel.org,
+	stable@vger.kernel.org
+Subject: [PATCH wireless v2] wifi: nxpwifi: bound the pairwise-cipher OUI walk to the IE length
+Date: Fri, 20 Nov 2026 18:28:54 -0300
+Message-ID: <20261120212854.25239-1-paulnejacontacto@gmail.com>
+X-Mailer: git-send-email 2.56.0
 X-Mailing-List: linux-wireless@vger.kernel.org
 List-Id: <linux-wireless.vger.kernel.org>
 List-Post: <mailto:linux-wireless@vger.kernel.org>
@@ -104,85 +97,100 @@ List-Unsubscribe: <mailto:linux-wireless+unsubscribe@vger.kernel.org>
 List-Owner: <mailto:linux-wireless+owner@vger.kernel.org>
 Precedence: list
 MIME-Version: 1.0
+Content-Transfer-Encoding: 8bit
 
-Hi,
+nxpwifi_search_oui_in_ie() walks as many 4-byte cipher suites as the
+pairwise count in the RSN or WPA element of a beacon says, without
+checking the count against the element length. An AP can send a short
+element with a large count and make the walk read up to 1020 bytes past
+the end of the kmemdup()ed beacon buffer.
 
-while getting monitor mode working on an AIC8800D80 USB dongle with the
-out-of-tree driver this series is based on, I hit a bug in the monitor RX
-status handling that also appears in aic8800_fdrv/rwnx_rx.c as added by
-3/4 of this series. Reporting it before it lands seems cheaper than fixing
-it afterwards.
+Pass the number of element bytes available at the suite list and reject
+a count that does not fit, as commit e667aee1c192 ("wifi: mwifiex: bound
+the pairwise-cipher OUI walk to the IE length") did for mwifiex.
 
-In rwnx_rxdataind_aicwf():
+Fixes: 73b01e57ed3e ("wifi: nxp: add nxpwifi driver for IW61x")
+Cc: stable@vger.kernel.org
+Signed-off-by: Paulneja <paulnejacontacto@gmail.com>
+---
 
-	if(hw_rxhdr->is_monitor_vif)
-		status  = RX_STAT_MONITOR;
-	if(hw_rxhdr->flags_upload)
-		status |= RX_STAT_FORWARD;
+Notes:
+    v2: shortened the commit message and dropped the Assisted-by tag, as Jeff
+    asked. No code change.
+    
+    An LLM was used to locate the bug and to draft the patch. I reviewed it by
+    hand against struct ie_body and struct ieee80211_vendor_ie and against the
+    mwifiex fix.
+    
+    Testing: no IW61x hardware here. The three functions were run verbatim in a
+    userspace harness under AddressSanitizer with a short RSN element and a
+    pairwise count of 255. It reports a heap-buffer-overflow read before the
+    patch and is clean after it. scan.o builds without warnings with W=1.
 
-	...
+ drivers/net/wireless/nxp/nxpwifi/scan.c | 23 ++++++++++++++++++++---
+ 1 file changed, 20 insertions(+), 3 deletions(-)
 
-	if (status & RX_STAT_MONITOR) {
-		...
-		if (status == RX_STAT_MONITOR) {
-			...
-		} else {
-			skb->data = (void *)hw_rxhdr;
-			wiphy_err(aicwf_hw->wiphy,
-				  "RX status %d is invalid when MON_DATA is disabled\n",
-				  status);
-			goto check_len_update;
-		}
+diff --git a/drivers/net/wireless/nxp/nxpwifi/scan.c b/drivers/net/wireless/nxp/nxpwifi/scan.c
+index 4eeba6700aa7..33779e21336b 100644
+--- a/drivers/net/wireless/nxp/nxpwifi/scan.c
++++ b/drivers/net/wireless/nxp/nxpwifi/scan.c
+@@ -79,12 +79,20 @@ _dbg_security_flags(int log_level, const char *func, const char *desc,
+ 
+ /* Parse a WPA/RSN element and check whether its PTK list contains the OUI */
+ static u8
+-nxpwifi_search_oui_in_ie(struct ie_body *iebody, u8 *oui)
++nxpwifi_search_oui_in_ie(struct ie_body *iebody, u8 *oui, int ie_len)
+ {
++	const size_t ptk_body_offset = offsetof(struct ie_body, ptk_body);
+ 	u8 count;
+ 
++	/* ie_len is the number of element bytes available at iebody */
++	if (ie_len < 0 || (size_t)ie_len < ptk_body_offset)
++		return NXPWIFI_OUI_NOT_PRESENT;
++
+ 	count = iebody->ptk_cnt[0];
+ 
++	if (ptk_body_offset + count * sizeof(iebody->ptk_body) > (size_t)ie_len)
++		return NXPWIFI_OUI_NOT_PRESENT;
++
+ 	/*
+ 	 * PTK may contain multiple OUIs; iterate through the list and compare
+ 	 * each one
+@@ -113,10 +121,13 @@ nxpwifi_is_rsn_oui_present(struct nxpwifi_bssdescriptor *bss_desc,
+ 	__be32 oui = cpu_to_be32(cipher);
+ 
+ 	if (bss_desc->bcn_rsn_ie) {
++		int ie_len = (int)bss_desc->bcn_rsn_ie->datalen -
++			     RSN_GTK_OUI_OFFSET;
++
+ 		iebody = (struct ie_body *)
+ 			 (((u8 *)bss_desc->bcn_rsn_ie->data) +
+ 			  RSN_GTK_OUI_OFFSET);
+-		ret = nxpwifi_search_oui_in_ie(iebody, (u8 *)&oui);
++		ret = nxpwifi_search_oui_in_ie(iebody, (u8 *)&oui, ie_len);
+ 		if (ret)
+ 			return ret;
+ 	}
+@@ -132,9 +143,15 @@ nxpwifi_is_wpa_oui_present(struct nxpwifi_bssdescriptor *bss_desc, u32 cipher)
+ 	__be32 oui = cpu_to_be32(cipher);
+ 
+ 	if (bss_desc->bcn_wpa_ie) {
++		/* data[] starts after the OUI and OUI type */
++		int ie_len = (int)bss_desc->bcn_wpa_ie->vend_hdr.len -
++			     (int)sizeof(bss_desc->bcn_wpa_ie->vend_hdr.oui) -
++			     (int)sizeof(bss_desc->bcn_wpa_ie->vend_hdr.oui_type) -
++			     WPA_GTK_OUI_OFFSET;
++
+ 		iebody = (struct ie_body *)((u8 *)bss_desc->bcn_wpa_ie->data +
+ 					    WPA_GTK_OUI_OFFSET);
+-		ret = nxpwifi_search_oui_in_ie(iebody, (u8 *)&oui);
++		ret = nxpwifi_search_oui_in_ie(iebody, (u8 *)&oui, ie_len);
+ 		if (ret)
+ 			return ret;
+ 	}
 
-The outer test is a bit test, the inner one is an equality test. A monitor
-frame that also carries flags_upload therefore ends up with
-RX_STAT_MONITOR | RX_STAT_FORWARD, fails the equality test, and is dropped
-with the "RX status ... is invalid when MON_DATA is disabled" message -
-even though it is a perfectly valid monitor frame and MON_DATA has nothing
-to do with delivering it. With CONFIG_RWNX_MON_DATA=n (the default in the
-vendor tree) monitor mode then comes up and silently captures nothing.
+base-commit: dcf495789037ab78d8ddf5844239cf85d92ac5f1
+-- 
+2.56.0
 
-In the out-of-tree USB tree the same equality test is worse: that else arm
-only has a body under #ifdef CONFIG_RWNX_MON_DATA, so skb_monitor is still
-NULL when it is dereferenced a few lines later and the RX thread oopses:
 
-	rwnx_fw_assert_ind: ASSERT (pd != NULL) at rxl_payload_transfer_usb:628
-	pc : rwnx_rxdataind_aicwf+0x2a0/0x1dc0 [aic8800_fdrv]
-	Code: ... (a94c0001)          /* ldp x1, x0, [x0, #192], x0 = NULL */
-
-followed by a firmware assert and a USB reset.
-
-Making the monitor status win over the forward bit fixes both: a monitor
-frame always carries exactly RX_STAT_MONITOR, which is what the rest of the
-block already assumes.
-
-	-	if(hw_rxhdr->is_monitor_vif)
-	-		status = RX_STAT_MONITOR;
-	-
-		if(hw_rxhdr->flags_upload)
-			status |= RX_STAT_FORWARD;
-	+
-	+	if(hw_rxhdr->is_monitor_vif)
-	+		status = RX_STAT_MONITOR;
-
-(A guard before the dereference is worth having anyway, since
-skb_copy_expand() can return NULL there too.)
-
-Tested on the out-of-tree tree: Raspberry Pi 5, kernel 6.18.39, AIC8800D80
-USB (368b:8d88), firmware "la Dec 05 2025 19:45:42 - g586bc1e8". Before the
-change, monitor mode delivered zero frames on every channel. After it,
-tcpdump shows beacons with signal levels on both channels tested
-(three nearby APs, -45dBm on ch1 and -50/-64dBm on ch6).
-
-I have not tested the SDIO variant, so I cannot say whether its firmware
-ever hits that else arm in practice - if MON_DATA is always enabled there
-the drop may be unreachable. The equality test still looks wrong either
-way, and the vendor-tree crash shows what happens when it is reachable.
-
-The same finding, with the vendor-tree crash details, is on the radxa
-tracker: https://github.com/radxa-pkg/aic8800/issues/39
-
-Happy to send a proper patch against the series if you would prefer that
-to a bug report.
-
-Thanks,
