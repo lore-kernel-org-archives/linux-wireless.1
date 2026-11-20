@@ -1,59 +1,59 @@
 Authentication-Results: smtp.subspace.kernel.org; arc=none smtp.remote-ip=46.4.11.11
 ARC-Seal: i=1; d=subspace.kernel.org; s=arc20261015; a=rsa-sha256; cv=none;
 	t=1795196706;
-	b=bwwP9z2gFpyyiOEEmJQsAIdm4D/5qj8HZU56rkn32In8ONLOy0cNLYIiVa8dtgPndC91
-	 FqpccgOiG3FbLGTM4XcFII73t9z5FD3ifJxrgztFIcFcFNcxJjpF9sdrVSL2XNHJp9ZIg
-	 7uv5IHNVTmDdPkdXPVQ+Y0+4ztR5Zwoo3jRSVEAQihIEAEAfWyDMmel+skMueicgBjAYk
-	 gLChqDLDCXD43Ge4nJ/m6HtbUyNHjio07b6zlcG7i9Mqp2T7aazX0mqYcK48T4VpmKWeJ
-	 yyRrmekUBTve+Vy4gQk/EOpUkLUVPMPweqvHSa1iZjdyjaWYN+iV5TuDFvD/t0AIx4g==
+	b=5JX7ZzNFZDefBOLivkMmzJmZOJnTtDo5Z7qqtXyjkpDf6aCt9L/Zu0CGZDbAyiwpHwTv
+	 gbhZghQ3RN1PuudkJAnv57sSkEBDp5dBjDHxpk0AL/7ayvELvsfzCeL3KWR3J7jXo61Bc
+	 3MzfSBHF85E0ofWYNppi1QsRgFNJBOsKKXWvST34kzJ6WED/u7opmhTGaQ9AzS+5dMz5H
+	 zge/earcd4eorZ73H/3M9MxUnkW2tObjuBYq3wZCRuPPBSXyffwUFDAML65gDvwZQZLkZ
+	 u52NRFUcgTZ8j+8isR102N/Gf5fueDPIYRl7L/P5cB+fhUEIgk9XvdyJhpKhQ1/EZ4w==
 ARC-Message-Signature: i=1; d=subspace.kernel.org; s=arc20261015;
 	a=rsa-sha256; c=relaxed/relaxed; t=1795196706;
 	h=DMARC-Filter:DKIM-Signature:Received:From:To:Subject:Date:Message-ID:
 	 X-Mailer:In-Reply-To:References:MIME-Version:
 	 Content-Transfer-Encoding;
-	bh=s/uv69kdZ4C8REFi8CYd8WU2TBL//5ZWN/Fxues86ns=;
-	b=D+cHquoJ6HRoizItZnyH2zvSUFn4H3Xja4huWtqEATFis+3IjntzpBhVrAX5e8y3u19T
-	 9p5JO5Lbw43Ptw6lNvy9+Bz7QPETd2+ah8QADPP1/mE6tJrQGj/wBDk8Ut+xGQeCezyBW
-	 E/6aWL9vCQLGmB/P+OEz57hBcPoU+n2IB+/Bcm4/jgLusxAl8jOSB0SmFLLGhm0MFZeUd
-	 jfwGm1glwE1VxXfVPHgaLhEQ4TRXyQDwn0tKI+W+6e3AEXCi5sqFlbd9NTV8gzLDrRMFB
-	 Bq+NEA7diqBv2ZkWl1c5bGKFr4GknCxdJlbZMBv4vdSRvTha3tzTNbKFLVXsPW2dBjw==
+	bh=I5AKps6/Sctid9b60VNoKd/+fSQuRGIjlGYl01w9KrE=;
+	b=NTFad1pY+HeZAgehUwB76T07yonnQtDAQ3lpWSNnOXaLObEfErlF7rQZWrk3pBSgSloz
+	 57t1zvHbwnfavHBcgewc3GHouva+skDAL8JIBed+LhoTFXeFZkWXI8KXxN9V/o9QaHGUw
+	 pdAueQrnjkJDZTEjenFYuNWZbpVLVozAXdterGjmRjU2KxglrCq4YMwziOBTQMK8FRGAj
+	 F15L9nmka/dWOQGHOaLbplWuNX1erWer4M8cz6sCeKOKQgc9qHU+s+ZjT8LB2aQ2wNGzQ
+	 VPxfjS8mijS1TNoV0Y6PO4RCzcEX/Zc2ObDZfwNJtuYerWySKdH/E02tltnr01Rg4oQ==
 ARC-Authentication-Results: i=1; smtp.subspace.kernel.org; 
 	dmarc=pass header.from=nbd.name;
 	spf=pass smtp.mailfrom=nbd.name;
-	dkim=pass header.d=nbd.name header.i=@nbd.name header.a=rsa-sha256 header.s=20160729 header.b=OHFNngqz;
+	dkim=pass header.d=nbd.name header.i=@nbd.name header.a=rsa-sha256 header.s=20160729 header.b=N8HHcbFU;
 	arc=none smtp.remote-ip=46.4.11.11
 Received: from nbd.name (nbd.name [46.4.11.11])
 	(using TLSv1.3 with cipher TLS_AES_256_GCM_SHA384 (256/256 bits)
 	 key-exchange ECDHE (prime256v1) server-signature ECDSA (prime256v1) server-digest SHA256)
 	(No client certificate requested)
-	by smtp.subspace.kernel.org (Postfix) with ESMTPS id 7943160A262B
-	for <linux-wireless@vger.kernel.org>; Fri, 20 Nov 2026 17:45:06 +0000 (UTC)
-DMARC-Filter: OpenDMARC Filter v1.4.2 smtp.subspace.kernel.org 7943160A262B
+	by smtp.subspace.kernel.org (Postfix) with ESMTPS id EF34960A2624
+	for <linux-wireless@vger.kernel.org>; Fri, 20 Nov 2026 17:45:05 +0000 (UTC)
+DMARC-Filter: OpenDMARC Filter v1.4.2 smtp.subspace.kernel.org EF34960A2624
 Authentication-Results: smtp.subspace.kernel.org; dmarc=pass (p=none dis=none) header.from=nbd.name
 Authentication-Results: smtp.subspace.kernel.org; spf=pass smtp.mailfrom=nbd.name
 Authentication-Results: smtp.subspace.kernel.org;
-	dkim=pass (1024-bit key) header.d=nbd.name header.i=@nbd.name header.a=rsa-sha256 header.s=20160729 header.b=OHFNngqz
+	dkim=pass (1024-bit key) header.d=nbd.name header.i=@nbd.name header.a=rsa-sha256 header.s=20160729 header.b=N8HHcbFU
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed; d=nbd.name;
 	s=20160729; h=Content-Transfer-Encoding:MIME-Version:References:In-Reply-To:
 	Message-ID:Date:Subject:To:From:Sender:Reply-To:Cc:Content-Type:Content-ID:
 	Content-Description:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc
 	:Resent-Message-ID:List-Id:List-Help:List-Unsubscribe:List-Subscribe:
 	List-Post:List-Owner:List-Archive;
-	bh=s/uv69kdZ4C8REFi8CYd8WU2TBL//5ZWN/Fxues86ns=; b=OHFNngqzsMMrVtWvAi+HaTRbMn
-	B7vam1jwgbFmkueOHEL32giF+mkcuhmGP01kolD3hjQd91YLJOyLtI+DwkE4CUr8nWal9bh2X4jqZ
-	2pfUHxeyGnnIxTEFiH5V/VWB1rYhGUkNHRIZqi7kdhVZqGFMG/bMakipVpphv0Co7Ssw=;
+	bh=I5AKps6/Sctid9b60VNoKd/+fSQuRGIjlGYl01w9KrE=; b=N8HHcbFUA4GLcZ+tE/O84TrA+L
+	asB6qfo9wb1tvQ4Y1s5urBV6SMDAKjUB3ecAVztU95ApDlhtKTJJJhQPjxYRWXWQ9dgYpfk0ccdCl
+	ew+4ZLGmR/pEUJkhyHWEUPbNdbpyzg57zaM3Ii8Kv+8vsXXGrGkXphix1GzLVfS8tOMg=;
 Received: from p200300cadf12920000000000000005bb.dip0.t-ipconnect.de ([2003:ca:df12:9200::5bb] helo=localhost.localdomain)
 	by ds12 with esmtpsa  (TLS1.3) tls TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384
 	(Exim 4.96)
 	(envelope-from <nbd@nbd.name>)
-	id 1xUSfZ-0065GI-0K
+	id 1xUSfY-0065GI-1y
 	for linux-wireless@vger.kernel.org;
-	Fri, 20 Nov 2026 18:45:05 +0100
+	Fri, 20 Nov 2026 18:45:04 +0100
 From: Felix Fietkau <nbd@nbd.name>
 To: linux-wireless@vger.kernel.org
-Subject: [PATCH mt76-next 10/20] wifi: mt76: usb: do not park the TX worker again under MT76_RESET
-Date: Fri, 20 Nov 2026 18:44:49 +0100
-Message-ID: <20261120174459.1657382-10-nbd@nbd.name>
+Subject: [PATCH mt76-next 07/20] wifi: mt76: mt7925: skip a polled link without a station
+Date: Fri, 20 Nov 2026 18:44:46 +0100
+Message-ID: <20261120174459.1657382-7-nbd@nbd.name>
 X-Mailer: git-send-email 2.47.3
 In-Reply-To: <20261120174459.1657382-1-nbd@nbd.name>
 References: <20261120174459.1657382-1-nbd@nbd.name>
@@ -68,73 +68,33 @@ Precedence: list
 MIME-Version: 1.0
 Content-Transfer-Encoding: 8bit
 
-When the wait for pending TX in mt76u_stop_tx() times out, its cleanup
-parks the TX worker also where the caller parked it already. This is the
-case for mt792xu_disconnect(), which reaches mt76u_stop_tx() through
-mt76_unregister_device(), and for mt7921u_mac_reset() and
-mt7925u_mac_reset(). The second park triggers a WARN, and the cleanup
-then unparks the worker, which runs again during the teardown or the
-chip reset:
+Since the WCID teardown moved into mt7925_mac_link_sta_remove(),
+mt7925_mac_sta_remove_links() clears mlink->sta of a removed link while
+the link is still on sta_poll_list. On PCIe, mt7925_mac_sta_poll() runs
+from the TX free event without dev->mt76.mutex. It can thus take such a
+link off the list and dereference the NULL station.
 
-  mt7925u 2-4:1.0: timed out waiting for pending tx
-  WARNING: CPU: 1 PID: 15805 at kthread_park+0x73/0x90
-  Call Trace:
-   ...
-   mt792xu_stop+0x15/0x30 [mt792x_usb]
-   ...
-   drv_stop+0x33/0xd0 [mac80211]
-   ...
-   ieee80211_unregister_hw+0x45/0x140 [mac80211]
-   mt76_unregister_device+0x70/0xf0 [mt76]
-   mt792xu_disconnect+0x7a/0x1c0 [mt792x_usb]
-   ...
+Skip a polled link without a station.
 
-Park and unpark the worker in the cleanup only while MT76_RESET is
-clear, as mt792x_flush() does. Every caller that holds MT76_RESET has
-parked the worker already, or runs before mt76_register_device() starts
-it.
-
-Fixes: 7910bd565d8b ("wifi: mt76: mt792x: quiesce USB paths on disconnect")
-Fixes: 0d2afe09fad5 ("mt76: mt7921: add mt7921u driver")
-Fixes: c948b5da6bbe ("wifi: mt76: mt7925: add Mediatek Wi-Fi7 driver for mt7925 chips")
+Fixes: 52f088a2e6bf ("wifi: mt76: mt7925: move WCID teardown into link_sta_remove()")
 Signed-off-by: Felix Fietkau <nbd@nbd.name>
 ---
- drivers/net/wireless/mediatek/mt76/usb.c | 8 ++++++--
- 1 file changed, 6 insertions(+), 2 deletions(-)
+ drivers/net/wireless/mediatek/mt76/mt7925/mac.c | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
 
-diff --git a/drivers/net/wireless/mediatek/mt76/usb.c b/drivers/net/wireless/mediatek/mt76/usb.c
-index be48a88a3ad0..9a701840d23a 100644
---- a/drivers/net/wireless/mediatek/mt76/usb.c
-+++ b/drivers/net/wireless/mediatek/mt76/usb.c
-@@ -1070,6 +1070,7 @@ void mt76u_stop_tx(struct mt76_dev *dev)
- 	if (!ret) {
- 		struct mt76_queue_entry entry;
- 		struct mt76_queue *q;
-+		bool park;
- 		int i, j;
- 
- 		dev_err(dev->dev, "timed out waiting for pending tx\n");
-@@ -1083,7 +1084,9 @@ void mt76u_stop_tx(struct mt76_dev *dev)
- 				usb_kill_urb(q->entry[j].urb);
+diff --git a/drivers/net/wireless/mediatek/mt76/mt7925/mac.c b/drivers/net/wireless/mediatek/mt76/mt7925/mac.c
+index 30deb675c5ff..ca54d71db4c7 100644
+--- a/drivers/net/wireless/mediatek/mt76/mt7925/mac.c
++++ b/drivers/net/wireless/mediatek/mt76/mt7925/mac.c
+@@ -90,7 +90,7 @@ static void mt7925_mac_sta_poll(struct mt792x_dev *dev)
+ 			memset(mlink->airtime_ac, 0, sizeof(mlink->airtime_ac));
  		}
  
--		mt76_worker_disable(&dev->tx_worker);
-+		park = !test_bit(MT76_RESET, &dev->phy.state);
-+		if (park)
-+			mt76_worker_disable(&dev->tx_worker);
+-		if (!mlink->wcid.sta)
++		if (!msta || !mlink->wcid.sta)
+ 			continue;
  
- 		/* On device removal we maight queue skb's, but mt76u_tx_kick()
- 		 * will fail to submit urb, cleanup those skb's manually.
-@@ -1100,7 +1103,8 @@ void mt76u_stop_tx(struct mt76_dev *dev)
- 			}
- 		}
- 
--		mt76_worker_enable(&dev->tx_worker);
-+		if (park)
-+			mt76_worker_enable(&dev->tx_worker);
- 	}
- 
- 	cancel_work_sync(&dev->usb.stat_work);
+ 		sta = container_of((void *)msta, struct ieee80211_sta,
 -- 
 2.47.3
 
