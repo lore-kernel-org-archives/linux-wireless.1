@@ -1,59 +1,59 @@
 Authentication-Results: smtp.subspace.kernel.org; arc=none smtp.remote-ip=46.4.11.11
 ARC-Seal: i=1; d=subspace.kernel.org; s=arc20261015; a=rsa-sha256; cv=none;
-	t=1795196714;
-	b=czHYUMcEovA6734AxIlaKms5ruBlNAc+VZJ0tbAo4qXOvqWMOcIarwwf/Zock4t/p/g/
-	 0wV3nvIqJ8TXDeC6L748eOPu1IcScsfgcW2oJ4oc92VJYCpeDC68xo7F6Fb2Mw1HEvofy
-	 aAsmfQuopB9s8NskiETWo+JHQwWtdhgaK2SwX4b8w1xdX5Z99ztrXDEIRC9kWRRcvxjxm
-	 g/zn/8t0p/KiDehi9Lp+Zy0XWoo8w1O05qf0S4uPAoj/pGk/BYXNOJuGk4/Gk59p9ATzA
-	 4xY3UwQi/h2aZeVrOPVejSzXXoGrvNZjkyC+PPz9UNxM3ctv32tv2g332dQBaZOzP/g==
+	t=1795196715;
+	b=N1KHou1lD0EyHOUcvsGWaS6W4sAb/qPGVTa1+OmaH3SUk+6sNWP/v9jP9CEI7FH5ttdq
+	 548L6TJCwwu3MWRoYEQ67FylhRuIeM2bYRi38aMC1nwtCGukpAWlI5RcXRC58YjWv7s4x
+	 rEfCK2cBPA/EmspZh8fCv8MA7Rw1b92W6oTG5e1YBPLbAGZ8FXRq/QtnLAwZT4rzrbDyl
+	 LjYfMMIRjDALWlpkCEYVP87TRii2y9dErTXLPdxj+WlKcSVReVBS3wx8lYIEI+iAwIRDR
+	 z68UnuHdfrjyDiVKo6vC1Qiwat1VP/0u4i+/efk/vWIJIifHJwh5PpafcxRMUduYf4w==
 ARC-Message-Signature: i=1; d=subspace.kernel.org; s=arc20261015;
-	a=rsa-sha256; c=relaxed/relaxed; t=1795196714;
+	a=rsa-sha256; c=relaxed/relaxed; t=1795196715;
 	h=DMARC-Filter:DKIM-Signature:Received:From:To:Subject:Date:Message-ID:
 	 X-Mailer:In-Reply-To:References:MIME-Version:
 	 Content-Transfer-Encoding;
-	bh=hmf/hL1eJsuAMDGpfnH9hLfFpFFJjsZsE/eUa7PsTNc=;
-	b=QiqJITj7w/rGUayKzTC4/e2CSMU2RVqai/aW74t6rpj2DL6Sybnn8Xdgb3MlUNqY5h7Y
-	 kZnFrVdi8Tm2L7ZPlWDRrcvxrVPAwep9UIfBsl+SzMfPgPfuaIFHPatgIy7i3uL/vEM13
-	 gsvCeI3JSFMRmUwSpxc9CdGJrsMQs3ULWm5SPaFDktS5Go7ZBjSw2pdiyIzSyM8AtbA/2
-	 nG2/WS5O25czZxKLYYXX3LvxRQMd5Z5O/JcqgjlgVknipw4kGTYW1964B+b7ApsGOMJ3W
-	 XND1rTwU+nnzI/tgBVr4nwFn3NHF+YaKBOJG+ya/mNp6pG2wFliZpp7TJcqUpW6BxOA==
+	bh=x+WGBWLhGY+OdGFd4ky6l5kH4UnsyRwj2sDQFNy2myk=;
+	b=0USzuws5WOH+piITG1ZsTfZH12W77cyglMsGgACGH48oDrwHXQjjDG9VarQTl79a9mLt
+	 DBjQNQDa+YColA0L9rWlBtosz9yuT2DHNEN9zO3u+lXQu8oXR69ExG7btMV+d/Qokhp4Y
+	 LQTD0ycJ68E6qMDjrHp7z83BTwgOt0rgxD5Bhz2dTDSCMUt3j71DatNSivVuZa8Es8X7K
+	 QU+xrw6uNJL5p1AKmH3ZOjDyDDkOrA6M86nAPijUK5ahDuIGqU1vfi5KeDjpJ+jkJRqfv
+	 OcwHhGqSkJZRE0OyJH9wFC4Hh6qNKJNOxZCvi5/HXvPho8TPemvEVyDmXqpRC07PT7A==
 ARC-Authentication-Results: i=1; smtp.subspace.kernel.org; 
 	dmarc=pass header.from=nbd.name;
 	spf=pass smtp.mailfrom=nbd.name;
-	dkim=pass header.d=nbd.name header.i=@nbd.name header.a=rsa-sha256 header.s=20160729 header.b=kFn3Wkov;
+	dkim=pass header.d=nbd.name header.i=@nbd.name header.a=rsa-sha256 header.s=20160729 header.b=k7bzyC41;
 	arc=none smtp.remote-ip=46.4.11.11
 Received: from nbd.name (nbd.name [46.4.11.11])
 	(using TLSv1.3 with cipher TLS_AES_256_GCM_SHA384 (256/256 bits)
 	 key-exchange ECDHE (prime256v1) server-signature ECDSA (prime256v1) server-digest SHA256)
 	(No client certificate requested)
-	by smtp.subspace.kernel.org (Postfix) with ESMTPS id 2442A60A380F
-	for <linux-wireless@vger.kernel.org>; Fri, 20 Nov 2026 17:45:08 +0000 (UTC)
-DMARC-Filter: OpenDMARC Filter v1.4.2 smtp.subspace.kernel.org 2442A60A380F
+	by smtp.subspace.kernel.org (Postfix) with ESMTPS id 80EBD60A261F
+	for <linux-wireless@vger.kernel.org>; Fri, 20 Nov 2026 17:45:05 +0000 (UTC)
+DMARC-Filter: OpenDMARC Filter v1.4.2 smtp.subspace.kernel.org 80EBD60A261F
 Authentication-Results: smtp.subspace.kernel.org; dmarc=pass (p=none dis=none) header.from=nbd.name
 Authentication-Results: smtp.subspace.kernel.org; spf=pass smtp.mailfrom=nbd.name
 Authentication-Results: smtp.subspace.kernel.org;
-	dkim=pass (1024-bit key) header.d=nbd.name header.i=@nbd.name header.a=rsa-sha256 header.s=20160729 header.b=kFn3Wkov
+	dkim=pass (1024-bit key) header.d=nbd.name header.i=@nbd.name header.a=rsa-sha256 header.s=20160729 header.b=k7bzyC41
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed; d=nbd.name;
 	s=20160729; h=Content-Transfer-Encoding:MIME-Version:References:In-Reply-To:
 	Message-ID:Date:Subject:To:From:Sender:Reply-To:Cc:Content-Type:Content-ID:
 	Content-Description:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc
 	:Resent-Message-ID:List-Id:List-Help:List-Unsubscribe:List-Subscribe:
 	List-Post:List-Owner:List-Archive;
-	bh=hmf/hL1eJsuAMDGpfnH9hLfFpFFJjsZsE/eUa7PsTNc=; b=kFn3Wkovg/1nulkgII7WzwtMzh
-	604nrArEbuw+GrK7/rkNXX6K2A9YEWLZZLL+oD7IsSXuk5k94fZOlwrCsDOlPsOy0+lVIDL5ABtwr
-	oJLb0XNOjgMAiOgBP6EPAXa2slJXr/VschDeGhWO4nEdVTvBNxYjTA9ZRR5TZUZOIs3s=;
+	bh=x+WGBWLhGY+OdGFd4ky6l5kH4UnsyRwj2sDQFNy2myk=; b=k7bzyC41sp1BPUZp0qw0J8u6MB
+	FOxSiVlVJ6Vsv3j/irfQZIcjrKwv1h0dEFUmOgOoXClCBrZQ9RkRdN+7huABb1FOIi8yzzZ0PR4nm
+	vokKFkQthZDQ8BDsOvQahDJ9FXooWte2M1T8ITFItVpBJ/GiiwuQUOsgOro21hI+8oNM=;
 Received: from p200300cadf12920000000000000005bb.dip0.t-ipconnect.de ([2003:ca:df12:9200::5bb] helo=localhost.localdomain)
 	by ds12 with esmtpsa  (TLS1.3) tls TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384
 	(Exim 4.96)
 	(envelope-from <nbd@nbd.name>)
-	id 1xUSfa-0065GI-2D
+	id 1xUSfX-0065GI-37
 	for linux-wireless@vger.kernel.org;
-	Fri, 20 Nov 2026 18:45:06 +0100
+	Fri, 20 Nov 2026 18:45:04 +0100
 From: Felix Fietkau <nbd@nbd.name>
 To: linux-wireless@vger.kernel.org
-Subject: [PATCH mt76-next 19/20] wifi: mt76: mt7996: keep the firmware log settings across a reload
-Date: Fri, 20 Nov 2026 18:44:58 +0100
-Message-ID: <20261120174459.1657382-19-nbd@nbd.name>
+Subject: [PATCH mt76-next 03/20] wifi: mt76: remove a replayed station from the driver before the add
+Date: Fri, 20 Nov 2026 18:44:42 +0100
+Message-ID: <20261120174459.1657382-3-nbd@nbd.name>
 X-Mailer: git-send-email 2.47.3
 In-Reply-To: <20261120174459.1657382-1-nbd@nbd.name>
 References: <20261120174459.1657382-1-nbd@nbd.name>
@@ -68,191 +68,184 @@ Precedence: list
 MIME-Version: 1.0
 Content-Transfer-Encoding: 8bit
 
-mt7996_mcu_init_firmware() turns the WM and WA firmware log off after
-each firmware load, while dev->fw_debug_wm, dev->fw_debug_wa and
-dev->fw_debug_bin keep the debugfs settings. Since the full system reset
-loads the firmware again, a reset silently stops firmware logging, and
-the debugfs files still report it as enabled.
+A write to the mac80211 debugfs file "reset" leaves the stations of
+every interface other than a managed one in place.
+ieee80211_reconfig() then adds them again on their old drv_priv, and
+the sta_add of most drivers allocates a new WLAN index for them. The
+old index leaks, and its dev->wcid[] entry still points at the station
+after the station is freed.
 
-Send the stored settings at each firmware load, and, where WM or WA
-logging is enabled, the other commands that the debugfs write sends.
-With logging off a load sends the same commands as before, so probe is
-unchanged.
+Treat the replay of a station that the driver still holds as a removal
+followed by a fresh add. The driver holds a station whose sta flag is
+set or whose wcid is published, since a new station has a zeroed
+drv_priv. Unpublish the wcid for an RCU grace period first, as for a
+station that mac80211 destroys. The station keeps its count, since
+mac80211 removes it through the driver later, also if the add fails.
+mt76x0 and mt76x2 opt out, since their sta_add restores a replayed
+station.
 
-Fixes: 27015b6fbcca ("wifi: mt76: mt7996: enable full system reset support")
+Fixes: c8846e101502 ("mt76: add driver for MT7603E and MT7628/7688")
 Signed-off-by: Felix Fietkau <nbd@nbd.name>
 ---
- .../wireless/mediatek/mt76/mt7996/debugfs.c   | 47 +-------------
- .../net/wireless/mediatek/mt76/mt7996/mcu.c   | 61 ++++++++++++++++++-
- .../wireless/mediatek/mt76/mt7996/mt7996.h    |  1 +
- 3 files changed, 62 insertions(+), 47 deletions(-)
+ drivers/net/wireless/mediatek/mt76/mac80211.c | 58 ++++++++++++++-----
+ drivers/net/wireless/mediatek/mt76/mt76.h     |  1 +
+ .../net/wireless/mediatek/mt76/mt76x0/pci.c   |  3 +-
+ .../net/wireless/mediatek/mt76/mt76x0/usb.c   |  3 +-
+ .../net/wireless/mediatek/mt76/mt76x2/pci.c   |  3 +-
+ .../net/wireless/mediatek/mt76/mt76x2/usb.c   |  3 +-
+ 6 files changed, 52 insertions(+), 19 deletions(-)
 
-diff --git a/drivers/net/wireless/mediatek/mt76/mt7996/debugfs.c b/drivers/net/wireless/mediatek/mt76/mt7996/debugfs.c
-index 8f1ef19c3876..2ca594618f3b 100644
---- a/drivers/net/wireless/mediatek/mt76/mt7996/debugfs.c
-+++ b/drivers/net/wireless/mediatek/mt76/mt7996/debugfs.c
-@@ -306,47 +306,10 @@ static int
- mt7996_fw_debug_wm_set(void *data, u64 val)
- {
- 	struct mt7996_dev *dev = data;
--	enum {
--		DEBUG_TXCMD = 62,
--		DEBUG_CMD_RPT_TX,
--		DEBUG_CMD_RPT_TRIG,
--		DEBUG_SPL,
--		DEBUG_RPT_RX,
--		DEBUG_RPT_RA = 68,
--	} debug;
--	bool tx, rx, en;
--	int ret;
- 
- 	dev->fw_debug_wm = val ? MCU_FW_LOG_TO_HOST : 0;
- 
--	if (dev->fw_debug_bin)
--		val = MCU_FW_LOG_RELAY;
--	else
--		val = dev->fw_debug_wm;
--
--	tx = dev->fw_debug_wm || (dev->fw_debug_bin & BIT(1));
--	rx = dev->fw_debug_wm || (dev->fw_debug_bin & BIT(2));
--	en = dev->fw_debug_wm || (dev->fw_debug_bin & BIT(0));
--
--	ret = mt7996_mcu_fw_log_2_host(dev, MCU_FW_LOG_WM, val);
--	if (ret)
--		return ret;
--
--	for (debug = DEBUG_TXCMD; debug <= DEBUG_RPT_RA; debug++) {
--		if (debug == 67)
--			continue;
--
--		if (debug == DEBUG_RPT_RX)
--			val = en && rx;
--		else
--			val = en && tx;
--
--		ret = mt7996_mcu_fw_dbg_ctrl(dev, debug, val);
--		if (ret)
--			return ret;
--	}
--
--	return 0;
-+	return mt7996_mcu_fw_debug_set(dev, MCU_FW_LOG_WM, false);
+diff --git a/drivers/net/wireless/mediatek/mt76/mac80211.c b/drivers/net/wireless/mediatek/mt76/mac80211.c
+index 2957f5694dc2..b8a568e0ae27 100644
+--- a/drivers/net/wireless/mediatek/mt76/mac80211.c
++++ b/drivers/net/wireless/mediatek/mt76/mac80211.c
+@@ -1713,6 +1713,42 @@ void mt76_rx_poll_complete(struct mt76_dev *dev, enum mt76_rxq_id q,
  }
+ EXPORT_SYMBOL_GPL(mt76_rx_poll_complete);
  
- static int
-@@ -366,16 +329,10 @@ static int
- mt7996_fw_debug_wa_set(void *data, u64 val)
- {
- 	struct mt7996_dev *dev = data;
--	int ret;
- 
- 	dev->fw_debug_wa = val ? MCU_FW_LOG_TO_HOST : 0;
- 
--	ret = mt7996_mcu_fw_log_2_host(dev, MCU_FW_LOG_WA, dev->fw_debug_wa);
--	if (ret)
--		return ret;
--
--	return mt7996_mcu_wa_cmd(dev, MCU_WA_PARAM_CMD(SET), MCU_WA_PARAM_PDMA_RX,
--				 !!dev->fw_debug_wa, 0);
-+	return mt7996_mcu_fw_debug_set(dev, MCU_FW_LOG_WA, false);
- }
- 
- static int
-diff --git a/drivers/net/wireless/mediatek/mt76/mt7996/mcu.c b/drivers/net/wireless/mediatek/mt76/mt7996/mcu.c
-index 627ca3e93e51..d82a1f659366 100644
---- a/drivers/net/wireless/mediatek/mt76/mt7996/mcu.c
-+++ b/drivers/net/wireless/mediatek/mt76/mt7996/mcu.c
-@@ -3885,6 +3885,63 @@ int mt7996_mcu_fw_dbg_ctrl(struct mt7996_dev *dev, u32 module, u8 level)
- 				 sizeof(data), false);
- }
- 
-+int mt7996_mcu_fw_debug_set(struct mt7996_dev *dev, u8 type, bool load)
++static void
++mt76_sta_teardown(struct mt76_phy *phy, struct ieee80211_vif *vif,
++		  struct ieee80211_sta *sta)
 +{
-+	enum {
-+		DEBUG_TXCMD = 62,
-+		DEBUG_CMD_RPT_TX,
-+		DEBUG_CMD_RPT_TRIG,
-+		DEBUG_SPL,
-+		DEBUG_RPT_RX,
-+		DEBUG_RPT_RA = 68,
-+	} debug;
-+	bool tx, rx, en;
-+	u8 ctrl;
-+	int ret;
++	struct mt76_dev *dev = phy->dev;
++	struct mt76_wcid *wcid = (struct mt76_wcid *)sta->drv_priv;
++	int i, idx = wcid->idx;
 +
-+	if (type == MCU_FW_LOG_WA) {
-+		ret = mt7996_mcu_fw_log_2_host(dev, MCU_FW_LOG_WA,
-+					       dev->fw_debug_wa);
-+		if (ret || (load && !dev->fw_debug_wa))
-+			return ret;
++	for (i = 0; i < ARRAY_SIZE(wcid->aggr); i++)
++		mt76_rx_aggr_stop(dev, wcid, i);
 +
-+		return mt7996_mcu_wa_cmd(dev, MCU_WA_PARAM_CMD(SET),
-+					 MCU_WA_PARAM_PDMA_RX,
-+					 !!dev->fw_debug_wa, 0);
-+	}
++	if (dev->drv->sta_remove)
++		dev->drv->sta_remove(dev, vif, sta);
 +
-+	if (dev->fw_debug_bin)
-+		ctrl = MCU_FW_LOG_RELAY;
-+	else
-+		ctrl = dev->fw_debug_wm;
++	mt76_wcid_cleanup(dev, wcid);
 +
-+	tx = dev->fw_debug_wm || (dev->fw_debug_bin & BIT(1));
-+	rx = dev->fw_debug_wm || (dev->fw_debug_bin & BIT(2));
-+	en = dev->fw_debug_wm || (dev->fw_debug_bin & BIT(0));
-+
-+	ret = mt7996_mcu_fw_log_2_host(dev, MCU_FW_LOG_WM, ctrl);
-+	if (ret || (load && !en))
-+		return ret;
-+
-+	for (debug = DEBUG_TXCMD; debug <= DEBUG_RPT_RA; debug++) {
-+		u8 level;
-+
-+		if (debug == 67)
-+			continue;
-+
-+		if (debug == DEBUG_RPT_RX)
-+			level = en && rx;
-+		else
-+			level = en && tx;
-+
-+		ret = mt7996_mcu_fw_dbg_ctrl(dev, debug, level);
-+		if (ret)
-+			return ret;
-+	}
-+
-+	return 0;
++	mt76_wcid_mask_clear(dev->wcid_mask, idx);
 +}
 +
- static int mt7996_mcu_set_mwds(struct mt7996_dev *dev, bool enabled)
- {
- 	struct {
-@@ -3963,12 +4020,12 @@ int mt7996_mcu_init_firmware(struct mt7996_dev *dev)
- 		return ret;
++static void
++mt76_sta_replay_drop(struct mt76_phy *phy, struct ieee80211_vif *vif,
++		     struct ieee80211_sta *sta)
++{
++	struct mt76_wcid *wcid = (struct mt76_wcid *)sta->drv_priv;
++	struct mt76_dev *dev = phy->dev;
++
++	spin_lock_bh(&dev->status_lock);
++	if (rcu_access_pointer(dev->wcid[wcid->idx]) == wcid)
++		rcu_assign_pointer(dev->wcid[wcid->idx], NULL);
++	spin_unlock_bh(&dev->status_lock);
++	synchronize_net();
++
++	mt76_sta_teardown(phy, vif, sta);
++	wcid->sta = 0;
++}
++
+ static int
+ mt76_sta_add(struct mt76_phy *phy, struct ieee80211_vif *vif,
+ 	     struct ieee80211_sta *sta)
+@@ -1726,8 +1762,12 @@ mt76_sta_add(struct mt76_phy *phy, struct ieee80211_vif *vif,
  
- 	set_bit(MT76_STATE_MCU_RUNNING, &dev->mphy.state);
--	ret = mt7996_mcu_fw_log_2_host(dev, MCU_FW_LOG_WM, 0);
-+	ret = mt7996_mcu_fw_debug_set(dev, MCU_FW_LOG_WM, true);
+ 	mutex_lock(&dev->mutex);
+ 
+-	/* drv_priv of a new station is zeroed, so only a replay has it set */
+-	registered = wcid->sta;
++	published = rcu_dereference_protected(dev->wcid[wcid->idx],
++					      lockdep_is_held(&dev->mutex));
++	registered = wcid->sta || published == wcid;
++	if (registered && !(dev->drv->drv_flags & MT_DRV_KEEP_REPLAYED_STA))
++		mt76_sta_replay_drop(phy, vif, sta);
++
+ 	ret = dev->drv->sta_add(dev, vif, sta);
  	if (ret)
- 		return ret;
+ 		goto out;
+@@ -1765,19 +1805,7 @@ mt76_sta_add(struct mt76_phy *phy, struct ieee80211_vif *vif,
+ void __mt76_sta_remove(struct mt76_phy *phy, struct ieee80211_vif *vif,
+ 		       struct ieee80211_sta *sta)
+ {
+-	struct mt76_dev *dev = phy->dev;
+-	struct mt76_wcid *wcid = (struct mt76_wcid *)sta->drv_priv;
+-	int i, idx = wcid->idx;
+-
+-	for (i = 0; i < ARRAY_SIZE(wcid->aggr); i++)
+-		mt76_rx_aggr_stop(dev, wcid, i);
+-
+-	if (dev->drv->sta_remove)
+-		dev->drv->sta_remove(dev, vif, sta);
+-
+-	mt76_wcid_cleanup(dev, wcid);
+-
+-	mt76_wcid_mask_clear(dev->wcid_mask, idx);
++	mt76_sta_teardown(phy, vif, sta);
+ 	phy->num_sta--;
+ }
+ EXPORT_SYMBOL_GPL(__mt76_sta_remove);
+diff --git a/drivers/net/wireless/mediatek/mt76/mt76.h b/drivers/net/wireless/mediatek/mt76/mt76.h
+index 548632fe884a..ddada6834170 100644
+--- a/drivers/net/wireless/mediatek/mt76/mt76.h
++++ b/drivers/net/wireless/mediatek/mt76/mt76.h
+@@ -541,6 +541,7 @@ struct mt76_hw_cap {
+ #define MT_DRV_AMSDU_OFFLOAD		BIT(5)
+ #define MT_DRV_IGNORE_TXS_FAILED	BIT(6)
+ #define MT_DRV_HW_PS_BUFFERING		BIT(7)
++#define MT_DRV_KEEP_REPLAYED_STA	BIT(8)
  
- 	if (mt7996_has_wa(dev)) {
--		ret = mt7996_mcu_fw_log_2_host(dev, MCU_FW_LOG_WA, 0);
-+		ret = mt7996_mcu_fw_debug_set(dev, MCU_FW_LOG_WA, true);
- 		if (ret)
- 			return ret;
- 
-diff --git a/drivers/net/wireless/mediatek/mt76/mt7996/mt7996.h b/drivers/net/wireless/mediatek/mt76/mt7996/mt7996.h
-index 24048a5ede31..c50fd3c15728 100644
---- a/drivers/net/wireless/mediatek/mt76/mt7996/mt7996.h
-+++ b/drivers/net/wireless/mediatek/mt76/mt7996/mt7996.h
-@@ -835,6 +835,7 @@ int mt7996_mcu_set_rro(struct mt7996_dev *dev, u16 tag, u16 val);
- int mt7996_mcu_wa_cmd(struct mt7996_dev *dev, int cmd, u32 a1, u32 a2, u32 a3);
- int mt7996_mcu_fw_log_2_host(struct mt7996_dev *dev, u8 type, u8 ctrl);
- int mt7996_mcu_fw_dbg_ctrl(struct mt7996_dev *dev, u32 module, u8 level);
-+int mt7996_mcu_fw_debug_set(struct mt7996_dev *dev, u8 type, bool load);
- int mt7996_mcu_trigger_assert(struct mt7996_dev *dev);
- void mt7996_mcu_rx_event(struct mt7996_dev *dev, struct sk_buff *skb);
- void mt7996_mcu_exit(struct mt7996_dev *dev);
+ struct mt76_driver_ops {
+ 	u32 drv_flags;
+diff --git a/drivers/net/wireless/mediatek/mt76/mt76x0/pci.c b/drivers/net/wireless/mediatek/mt76/mt76x0/pci.c
+index 3c4948522c5b..49ff52fe2ccb 100644
+--- a/drivers/net/wireless/mediatek/mt76/mt76x0/pci.c
++++ b/drivers/net/wireless/mediatek/mt76/mt76x0/pci.c
+@@ -158,7 +158,8 @@ mt76x0e_probe(struct pci_dev *pdev, const struct pci_device_id *id)
+ 		.txwi_size = sizeof(struct mt76x02_txwi),
+ 		.drv_flags = MT_DRV_TX_ALIGNED4_SKBS |
+ 			     MT_DRV_SW_RX_AIRTIME |
+-			     MT_DRV_IGNORE_TXS_FAILED,
++			     MT_DRV_IGNORE_TXS_FAILED |
++			     MT_DRV_KEEP_REPLAYED_STA,
+ 		.survey_flags = SURVEY_INFO_TIME_TX,
+ 		.update_survey = mt76x02_update_channel,
+ 		.set_channel = mt76x0_set_channel,
+diff --git a/drivers/net/wireless/mediatek/mt76/mt76x0/usb.c b/drivers/net/wireless/mediatek/mt76/mt76x0/usb.c
+index 2acce121fb14..f51a7e0d147f 100644
+--- a/drivers/net/wireless/mediatek/mt76/mt76x0/usb.c
++++ b/drivers/net/wireless/mediatek/mt76/mt76x0/usb.c
+@@ -215,7 +215,8 @@ static int mt76x0u_probe(struct usb_interface *usb_intf,
+ {
+ 	static const struct mt76_driver_ops drv_ops = {
+ 		.drv_flags = MT_DRV_SW_RX_AIRTIME |
+-			     MT_DRV_IGNORE_TXS_FAILED,
++			     MT_DRV_IGNORE_TXS_FAILED |
++			     MT_DRV_KEEP_REPLAYED_STA,
+ 		.survey_flags = SURVEY_INFO_TIME_TX,
+ 		.update_survey = mt76x02_update_channel,
+ 		.set_channel = mt76x0_set_channel,
+diff --git a/drivers/net/wireless/mediatek/mt76/mt76x2/pci.c b/drivers/net/wireless/mediatek/mt76/mt76x2/pci.c
+index 491a32921a06..6df9f5110b7b 100644
+--- a/drivers/net/wireless/mediatek/mt76/mt76x2/pci.c
++++ b/drivers/net/wireless/mediatek/mt76/mt76x2/pci.c
+@@ -23,7 +23,8 @@ mt76x2e_probe(struct pci_dev *pdev, const struct pci_device_id *id)
+ 		.txwi_size = sizeof(struct mt76x02_txwi),
+ 		.drv_flags = MT_DRV_TX_ALIGNED4_SKBS |
+ 			     MT_DRV_SW_RX_AIRTIME |
+-			     MT_DRV_IGNORE_TXS_FAILED,
++			     MT_DRV_IGNORE_TXS_FAILED |
++			     MT_DRV_KEEP_REPLAYED_STA,
+ 		.survey_flags = SURVEY_INFO_TIME_TX,
+ 		.update_survey = mt76x02_update_channel,
+ 		.set_channel = mt76x2e_set_channel,
+diff --git a/drivers/net/wireless/mediatek/mt76/mt76x2/usb.c b/drivers/net/wireless/mediatek/mt76/mt76x2/usb.c
+index ade15bddefc5..23b4e020c5b7 100644
+--- a/drivers/net/wireless/mediatek/mt76/mt76x2/usb.c
++++ b/drivers/net/wireless/mediatek/mt76/mt76x2/usb.c
+@@ -34,7 +34,8 @@ static int mt76x2u_probe(struct usb_interface *intf,
+ {
+ 	static const struct mt76_driver_ops drv_ops = {
+ 		.drv_flags = MT_DRV_SW_RX_AIRTIME |
+-			     MT_DRV_IGNORE_TXS_FAILED,
++			     MT_DRV_IGNORE_TXS_FAILED |
++			     MT_DRV_KEEP_REPLAYED_STA,
+ 		.survey_flags = SURVEY_INFO_TIME_TX,
+ 		.update_survey = mt76x02_update_channel,
+ 		.set_channel = mt76x2u_set_channel,
 -- 
 2.47.3
 
