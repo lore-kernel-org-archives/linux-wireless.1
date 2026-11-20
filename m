@@ -1,78 +1,95 @@
-Authentication-Results: smtp.subspace.kernel.org; arc=none smtp.remote-ip=156.67.10.101
-ARC-Seal: i=1; d=subspace.kernel.org; s=arc20261015; a=rsa-sha256; cv=none;
-	t=1795204587;
-	b=y/cUXjBSelRxS//Kw8iH6qYxALSx8T43cvs74IBmIxQZKq1IZGnEVGRgXVAbykoNQdxd
-	 Q1hF9w2ygTWcB0cZHlDpaQOtH0aIeKl7z6PHwik/lHGzVcxHtT86pUJ+NxwApskhQIdTm
-	 aXb7Isks3DpbbY8zYzcpsKSAHQav1iT7bQBJzVUmKwAQmLqlvY//Z5MeodFLc5Pb8QWw9
-	 0swm4C3l2MAakWTO/R8N71ptguEKcso4ntreVFnpicjFopbTRV6Ft8ZpjYqGhvR/d7VgD
-	 yaCt2bGBn237gV04NOGbX8v+O71GiyK+EkKwuXwXF5BcRV3GZgdCtTYfcmZUeTdL8GQ==
-ARC-Message-Signature: i=1; d=subspace.kernel.org; s=arc20261015;
-	a=rsa-sha256; c=relaxed/relaxed; t=1795204587;
-	h=DMARC-Filter:DKIM-Signature:Received:Date:From:To:Cc:Subject:
-	 Message-ID:References:MIME-Version:Content-Type:Content-Disposition:
-	 In-Reply-To;
-	bh=jttWHcN3Lx/YqX8MrbxqckD48EazTafTDyqhRLhuIs0=;
-	b=2rngTLZpyiQT/KMFoWNsP2sz5Q0UeKdtLbtYk4u4aHiUI9o6L7hprfBZdVwZqoibi/Om
-	 JaMUhA0AlmKw79zD8ivcVW9MYXY2l6oCG/OV/7GXrnZZxpxSDCbdWFn8OEO/Q7Mc4Howd
-	 igPeWTVESKVc6BHJaXwcayZOa4/c6dITiVvgsh6rOzaWXMyJ+/jpHdjsp2N2H1/1BlEBw
-	 pIjY62V5tAK9feduibrZYMiyDyVGAhcY6n5xtqQyqBiEFeIvmFYDWGSWtRan9EpZWPC+c
-	 t4dG+/pwVwb9gFGgs5WBe3a54OnC4GFfimSORyjQc7y8Glz1JQeLCzeA0b0f2h2LXZg==
-ARC-Authentication-Results: i=1; smtp.subspace.kernel.org; 
-	dmarc=pass header.from=lunn.ch;
-	spf=pass smtp.mailfrom=lunn.ch;
-	dkim=pass header.d=lunn.ch header.i=@lunn.ch header.a=rsa-sha256 header.s=20171124 header.b=56QyAMft;
-	arc=none smtp.remote-ip=156.67.10.101
-Received: from vps0.lunn.ch (vps0.lunn.ch [156.67.10.101])
-	(using TLSv1.3 with cipher TLS_AES_256_GCM_SHA384 (256/256 bits)
-	 key-exchange ECDHE (prime256v1) server-signature ECDSA (prime256v1) server-digest SHA256)
+Authentication-Results: smtp.subspace.kernel.org; arc=pass header.oldest-pass=0 smtp.remote-ip=74.125.82.180
+ARC-Seal: i=2; d=subspace.kernel.org; s=arc20261015; a=rsa-sha256; cv=pass;
+	t=1795204725;
+	b=MFYX9aNSWX+RzaN6HDUaWIltQ5aM0f8DzkYcJiVHA6N7B2H2DlRp4cSWzmuI9eX571u5
+	 KABfFL15ZcxTAA1tSNPcqQyqw9pDam7QhYiLpsNw10qLeKExjm3gqV3UhTYVd3W1gMhGg
+	 oaIrrxsbY1Zsra4iUdNoszw0qqkL6wlYfq3lVAbHGKYWE251jJEVFx/CJwiqfDoLVjKl8
+	 +XHDnkgMTeVC+lHl/i4s1a9VzaqrTP1RF+hqotUOXcu4vlKFylhfhTfstsFoazqQBLVtZ
+	 eisgKhkAsii6zcigojSrbyUfi0TqGr3vI6FRtXU32plDReGL4KdBVgBaN5bLa7tD1Yg==
+ARC-Message-Signature: i=2; d=subspace.kernel.org; s=arc20261015;
+	a=rsa-sha256; c=relaxed/relaxed; t=1795204725;
+	h=DMARC-Filter:Received:DKIM-Signature:X-Google-DKIM-Signature:
+	 X-Gm-Message-State:X-Gm-Gg:X-Received:MIME-Version:From:Date:
+	 X-Gm-Features:Message-ID:Subject:To:Cc:Content-Type;
+	bh=6ZfkfiTkvYQEtJ2yl27NdEzpS6SevTD5r7NaYNoF6K8=;
+	b=okRsKDns7JBgs9LJ09Lvb/9hm9Btkqjlc6pEFMtvfp0zfxA+1/sn4IPLEI+cX38ydXyg
+	 J+NykV+5kuLmD9dRTBlke4Fm9L8j9Y3wn50ZaYPitcDIj1bb7aNmth+0coIA4WO2T+QiR
+	 XKfzv0wTbT+UqiToXul0mAIl3750Vel4b5f58wTW999xdUg7QWXYETbweskjpncYNxXT4
+	 ZbFqw9I1H5tZk4O4JiT9sZf08kY4UKu/usZulZwYxZ8CQI150gIyvp/GKP78PNzCzlmgM
+	 wfQi98dvn4m7k6JKXbWT9U/jxMlu49Ma1lRY19ga0NiKTwYTfeYR9B+Z3OnWPUUJJrA==
+ARC-Authentication-Results: i=2; smtp.subspace.kernel.org; 
+	dmarc=pass header.from=gmail.com;
+	spf=pass smtp.mailfrom=gmail.com;
+	dkim=pass header.d=gmail.com header.i=@gmail.com header.a=rsa-sha256 header.s=20260707 header.b=T7GR0Dzs;
+	arc=pass header.oldest-pass=0 smtp.remote-ip=74.125.82.180
+Received: from mail-dy1-f180.google.com (mail-dy1-f180.google.com [74.125.82.180])
+	(using TLSv1.3 with cipher TLS_AES_128_GCM_SHA256 (128/128 bits)
+	 key-exchange X25519 server-signature ECDSA (prime256v1) server-digest SHA256)
 	(No client certificate requested)
-	by smtp.subspace.kernel.org (Postfix) with ESMTPS id 4E841606A6E8;
-	Fri, 20 Nov 2026 19:56:26 +0000 (UTC)
-DMARC-Filter: OpenDMARC Filter v1.4.2 smtp.subspace.kernel.org 4E841606A6E8
-Authentication-Results: smtp.subspace.kernel.org; dmarc=pass (p=none dis=none) header.from=lunn.ch
-Authentication-Results: smtp.subspace.kernel.org; spf=pass smtp.mailfrom=lunn.ch
+	by smtp.subspace.kernel.org (Postfix) with ESMTPS id 9775B606A6D6
+	for <linux-wireless@vger.kernel.org>; Fri, 20 Nov 2026 19:58:44 +0000 (UTC)
+DMARC-Filter: OpenDMARC Filter v1.4.2 smtp.subspace.kernel.org 9775B606A6D6
+Authentication-Results: smtp.subspace.kernel.org; dmarc=pass (p=none dis=none) header.from=gmail.com
+Authentication-Results: smtp.subspace.kernel.org; spf=pass smtp.mailfrom=gmail.com
 Authentication-Results: smtp.subspace.kernel.org;
-	dkim=pass (1024-bit key) header.d=lunn.ch header.i=@lunn.ch header.a=rsa-sha256 header.s=20171124 header.b=56QyAMft
-DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed; d=lunn.ch;
-	s=20171124; h=In-Reply-To:Content-Disposition:Content-Type:MIME-Version:
-	References:Message-ID:Subject:Cc:To:From:Date:From:Sender:Reply-To:Subject:
-	Date:Message-ID:To:Cc:MIME-Version:Content-Type:Content-Transfer-Encoding:
-	Content-ID:Content-Description:Content-Disposition:In-Reply-To:References;
-	bh=jttWHcN3Lx/YqX8MrbxqckD48EazTafTDyqhRLhuIs0=; b=56QyAMfteX5gb32fdPnkmUy7fY
-	DMW8mpXWCenxb+reYE9o2DxAL4Fhmrwq82GeG3M8wCnKAiUcNDSyZgAycBlyNIX7lx63ydcyLMnsL
-	Htzvj0bKh+YG+4fMXw7FVaqJs+bQ5HoSMbtwYWgcW2JBatuVFihlxLpBIKU2c+21CsgI=;
-Received: from andrew by vps0.lunn.ch with local (Exim 4.94.2)
-	(envelope-from <andrew@lunn.ch>)
-	id 1xUUi5-000MvO-DG; Fri, 20 Nov 2026 20:55:49 +0100
-Date: Fri, 20 Nov 2026 20:55:49 +0100
-From: Andrew Lunn <andrew@lunn.ch>
-To: David Heidelberg <david@ixit.cz>
-Cc: Karel Balej <balejk@matfyz.cz>, Brian Norris <briannorris@chromium.org>,
-	Johannes Berg <johannes@sipsolutions.net>,
-	Johannes Berg <johannes.berg@intel.com>,
-	Francesco Dolcini <francesco@dolcini.it>,
-	Rob Herring <robh@kernel.org>,
-	Krzysztof Kozlowski <krzk+dt@kernel.org>,
-	Conor Dooley <conor+dt@kernel.org>,
-	Duje =?utf-8?Q?Mihanovi=C4=87?= <duje@dujemihanovic.xyz>,
-	Gregory Clement <gregory.clement@bootlin.com>,
-	Sebastian Hesselbarth <sebastian.hesselbarth@gmail.com>,
-	Ulf Hansson <ulf.hansson@linaro.org>, Frank Li <Frank.Li@nxp.com>,
-	linux-wireless@vger.kernel.org, devicetree@vger.kernel.org,
-	linux-kernel@vger.kernel.org, linux-arm-kernel@lists.infradead.org,
-	linux-mmc@vger.kernel.org, ~postmarketos/upstreaming@lists.sr.ht,
-	phone-devel@vger.kernel.org, Jeff Chen <jeff.chen_1@nxp.com>,
-	Peng Fan <peng.fan@nxp.com>
-Subject: Re: [DONOTAPPLY RFC PATCH v2 0/4] WiFi support for
- samsung,coreprimevelte
-Message-ID: <20374af8-2f50-4637-b92a-4fa5c5192c20@lunn.ch>
-References: <20251026182602.26464-1-balejk@matfyz.cz>
- <DEJL1ATTQMVE.120JV9YW59I27@matfyz.cz>
- <aSnWYS2g5slVFaSk@gaggiata.pivistrello.it>
- <DI5L100Q1RKO.1A68EJIPWYSRC@matfyz.cz>
- <afI8y70U7wFT_07h@google.com>
- <DLQ9LXDE2P29.248MPYCJMT0DL@matfyz.cz>
- <787950f1-ff2f-4b49-b164-61da3c9971c6@ixit.cz>
+	dkim=pass (2048-bit key) header.d=gmail.com header.i=@gmail.com header.a=rsa-sha256 header.s=20260707 header.b=T7GR0Dzs
+Received: by mail-dy1-f180.google.com with SMTP id 5a478bee46e88-38431138772so1639415eec.1
+        for <linux-wireless@vger.kernel.org>; Fri, 20 Nov 2026 11:58:44 -0800 (PST)
+ARC-Seal: i=1; a=rsa-sha256; t=1795204724; cv=none;
+        d=google.com; s=arc-20260327;
+        b=jZyYHEa+Cveo3aYi63z2KmWgdc0D7QpGP3bYTQ+pip50Pr4XsDSm/mO2DaIrBi2ALA
+         hqxog4uvZ0mNPlYE8uOIKwPG9wVsqSrZN7HiXn8Zg4qcfNufB3TOzIyyb2Y4+BDgPS84
+         Hwr5tG4e9OXiCk1f/lecGd5KwIywxQrq/A3DbxC+2jfDbxRqggPyq7LfzBVk480jzYAB
+         WDEBHT/s2eS6VPu2dDIM5ZXt/hL1cGkMNmlNK4/mivIjPZhM6V8W7AxqU7j908ekzxoj
+         CfKw/hPuy7hpInBNQGrr4rikDUptfoic///B/baHDeHL162nWd/loRvwr05EZA85HIRN
+         5NHQ==
+ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=google.com; s=arc-20260327;
+        h=cc:to:subject:message-id:date:from:mime-version:dkim-signature;
+        bh=6ZfkfiTkvYQEtJ2yl27NdEzpS6SevTD5r7NaYNoF6K8=;
+        fh=9WldBRlRtbXZDyFR8AAB0r3m1QxMTnrA0PJPmHd+ThE=;
+        b=RrRWIm+6JEEcAHW5stSE//4Qrkf+zSJCO76J3A+bBIOHhbliXCz5xufUmeUZSCb21F
+         6CACAZjIpxg9POIzVr9Mm60dfHBsUBtW5zzU9+Ta60gmJToDEhSJzXmwqQJzTicJMin3
+         N2Ov48vhXyo7ePtmVuQBXP/4ikk92sM19tXmTKY0EfSvrIKd1DqzaJBWw3pp/3kd7JX3
+         pvZB4sm1zzP5h6Cswh2Z5ciSaUYaq3DLQf05221VUJz5J6TXy9B/Af2z9UH1wFls0/+p
+         lTpJyB2rhEcBmJSi/Wl9RsLsI0guHVLk8SWC+yBIQodzVTWssp3zlCXQ+mwOVOqxAYxd
+         0bDA==;
+        darn=vger.kernel.org
+ARC-Authentication-Results: i=1; mx.google.com; arc=none
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+        d=gmail.com; s=20260707; t=1795204724; x=1795809524; darn=vger.kernel.org;
+        h=content-type:cc:to:subject:message-id:date:from:mime-version:from
+         :to:cc:subject:date:message-id:reply-to:content-type;
+        bh=6ZfkfiTkvYQEtJ2yl27NdEzpS6SevTD5r7NaYNoF6K8=;
+        b=T7GR0DzsNqN+dih903jftSQim6kDS8GIoSwNpMGgequZrrw3mCKHCgT1ml6CTsMmku
+         HD2s4m3NkZl9W7QWbRsAZHl5vdzoYKZg3IFFKCpWtPKJmUAnNmcibfxnWaiCWC7TZkVf
+         8pBl+qVoMr5K0ByhdOtDJNZb5IQDiybce/gLVrUlltD9UjW2LzksClMw3gu0J7URxEn1
+         wJnCtgeSdjQPdO1ePbsWuqlRypbXG5UCq54TIf+ZnzXZoUPoaeaH0yEIwgCTO/cPWP9r
+         u3+ELBN7C22lSficERqJX3cjIC64cbrFhB7pyjjrrn9VSB1gc/kgNl8b7aVg8EXhglJT
+         Bx+g==
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+        d=1e100.net; s=20260707; t=1795204724; x=1795809524;
+        h=content-type:cc:to:subject:message-id:date:from:mime-version
+         :x-gm-gg:x-gm-message-state:from:to:cc:subject:date:message-id
+         :reply-to:content-type;
+        bh=6ZfkfiTkvYQEtJ2yl27NdEzpS6SevTD5r7NaYNoF6K8=;
+        b=QXhWB90NCEL8hh64KC94u7+R5CrFWdFYTVkwwwCYQGDB65cw+Kr7kmIMYnyCf8LftY
+         aNYDThQ+dokWIIYN5HqoxsV5CUabH34tP47Lb6vUWt19n44oMJexuyV0l/F3lzKEe0LU
+         8rmxWIKfiFNcYm3m4kkm5o81LsFaGsyStvU1gwjhJBe0NgPNGzemIq1mKI3VgdlIBZEI
+         H8yQUEAs5uTi8pLyxGjkaylh22+2n/dXOXPPuWuhb7ZhhD8ajTRIt7+0re1e8aHB5YVv
+         rZ/0yp0Oe8ZjTtnqY2UUg75St1YHQLcy2eV8Xxck3bu0ia2yyEHjJ4D+CP3Pb6dcdq81
+         zoZg==
+X-Gm-Message-State: APuU4Z/JVbC9DNn7hkhXOrQ5gaThYQJHS1VqW6Ek53J1+Du1uHLiF84e
+	0vGCrQDHGbNEJGk2dmVoNiB1vMpsW1iChGRDZCpR3CPiK7YmVC1cnbXJre1GaiVC1VJ7eedm7K8
+	Dg7kQsQJx7uAm5RLLy9fkGspL9PENQ1AtU/yLaOl74GK+18o=
+X-Gm-Gg: AZFdTZeiaslTObiQ8LaiEgHJDbd4JDs9iPJX+Lqnrx/QYarf3RdMxS1nvQeqywNMOLx
+	EKVmpgDxfnoP/WR1txVa0laPOAmWn8p7XQ57ipDkkfd1Z+d74GOGEyIU6IjWMWGb4oLn1oaGW2M
+	QTpNEeZDuCPlBYPcMAmLbPvQg4mJ+XUS4jVxbzRfp3DK4Cyf9lkCyGftfM74a5nkBxnTYXhpIV5
+	O5ecsN/18vLt1zk4CU2CmN5+kOgz+JayY4KKGqP/H+Yhq8eYC8tj8H6EXnJv067WBytKZa1XOKM
+	U1CQRYVLRcMV2yKGdkfq3tbCE8xOY0tnmZfcRMxLa2gyU7JF/4S0MpNUDhjGhpGrtcAtKy4ghDV
+	0CjUzASQxFxdDYuo4/M059oc=
+X-Received: by 2002:a05:7301:fc02:b0:384:c043:c5c with SMTP id
+ 5a478bee46e88-3856c6b3470mr3420982eec.3.1795204723745; Fri, 20 Nov 2026
+ 11:58:43 -0800 (PST)
 X-Mailing-List: linux-wireless@vger.kernel.org
 List-Id: <linux-wireless.vger.kernel.org>
 List-Post: <mailto:linux-wireless@vger.kernel.org>
@@ -82,27 +99,101 @@ List-Unsubscribe: <mailto:linux-wireless+unsubscribe@vger.kernel.org>
 List-Owner: <mailto:linux-wireless+owner@vger.kernel.org>
 Precedence: list
 MIME-Version: 1.0
-Content-Type: text/plain; charset=us-ascii
-Content-Disposition: inline
-In-Reply-To: <787950f1-ff2f-4b49-b164-61da3c9971c6@ixit.cz>
+From: Daniel <dani069xp@gmail.com>
+Date: Fri, 20 Nov 2026 14:58:32 -0500
+X-Gm-Features: Aa3M54rBu4_N7C0-LGUYa09BI85d1orAI8slD5WRrHhkAjBfKbk_1QWPNL86d5Y
+Message-ID: <CALovXdg6sOyK9orNrXSRSoSkVf7Adqa8xNC8Q=ESw4f0YEryaQ@mail.gmail.com>
+Subject: [Bug report] rtw89: 8851be: WiFi disconnect (reason=4, beacon loss)
+ 1-2 s after A2DP stream start on the card's own Bluetooth, 5 GHz 80 MHz
+To: linux-wireless@vger.kernel.org
+Cc: pkshih@realtek.com
+Content-Type: text/plain; charset="UTF-8"
 
-On Fri, Nov 20, 2026 at 03:47:48PM +0100, David Heidelberg wrote:
-> On 27/09/2026 19:12, Karel Balej wrote:
-> > Brian,
-> > 
-> > Brian Norris, 2026-04-29T10:15:55-07:00:
-> > > > Brian, what are the options here now? Would it be possible to make an
-> > > > exception and accept the patches without the firmware being in
-> > > > linux-firmware? This is an old device with no mainstream audience
+Hi,
 
-Why even bother, if it has no users?
+On an RTL8851BE combo card, starting an A2DP audio stream on the card's own
+Bluetooth reliably makes the WiFi link drop within 1-2 seconds. The station is
+disconnected locally with reason=4 and the AP then ignores re-authentication
+for 50-90 s.
 
-We have to look at it from the perspective of Maintenance. If it gets
-merged, you have to expect a hoard of LLM script kids descending on it
-and submitting patch after patch fixing theoretical problems. Is
-reviewing and merging such patches a good use of time for a driver
-with no mainstream users?
+Hardware / software
+- WiFi: Realtek RTL8851BE PCIe 802.11ax [10ec:b851], driver rtw89_8851be
+- Bluetooth: USB 0bda:b850 (btusb, rtl_bt/rtl8851bu_fw.bin) on the same card
+- Firmware: rtw89/rtw8851b_fw-1.bin, version 0.29.41.5 (4bd6ebac)
+- linux-firmware 20261019
+- Kernel 7.3.5-zen1-1-zen (also seen on 7.3.4-zen2-1 and zen2-2), Arch Linux
+- NetworkManager 1.58.1, wpa_supplicant 2.12, bluez 5.88, PipeWire 1.6.11
+- Module options: rtw89_core disable_ps_mode=y,
+  rtw89_pci disable_aspm_l1=y disable_aspm_l1ss=y disable_clkreq=y (no effect)
+- NM: wifi.powersave=2, MAC randomization "stable"
+- AP: 5 GHz, channel 157, 80 MHz VHT; signal about -58 to -61 dBm, 1x1
+- BT audio: A2DP SBC to a headset (sink)
 
-Does openwrt support it? How do they solve the firmware problem?
+Observed
+bluetoothd logs "fd(N) ready" when the A2DP transport starts. In every case
+wpa_supplicant reports CTRL-EVENT-DISCONNECTED reason=4 locally_generated=1
+within 1-2 s:
 
-     Andrew
+  2026-11-14 13:08:32 BT stream  -> 13:08:34 WiFi drop (12 more drops
+while streaming)
+  2026-11-20 13:06:56 BT connect -> 13:07:04 WiFi drop; another at 13:47:54
+  2026-11-20 13:53:37 BT stream  -> 13:53:38 WiFi drop, reconnected 13:54:28
+
+"iw dev wlp4s0 station dump" shows the beacon loss counter increasing with each
+event. ICMP loss to the AP is 0% outside these events and TX retries/failures
+are 0. Other devices on the same AP are not affected.
+
+Width dependence
+- 80 MHz: 4 of 4 stream starts dropped the link.
+- 40 MHz (same AP, kernel, signal): 1 drop in 3 stream starts (2 were clean
+  over several days of use).
+- With Bluetooth off, 80 MHz showed no drops in the short test afterwards.
+  A USB-tethered phone on the same machine did not show the problem.
+
+Not the cause (tested): browser/GPU, NetworkManager config, MAC randomization,
+power save, ASPM options, kernel 7.3.4 -> 7.3.5.
+
+Expected: a stable WiFi link while Bluetooth A2DP streams, as it does on the
+same card with a narrower channel.
+
+Coex trace around one drop (debugfs btc_info sampled every 0.5 s, local time,
+5 GHz ch155 center, bw=2, 80 MHz; "iw event -t" in parallel)
+
+  14:20:54.975  BT connect:Y (A2DP_active:Y from 14:20:55.5)
+  14:20:57.994  BT low-priority requests jump: Lo-rx/Lo-tx 0-3 -> 3064
+  14:20:59.504  BT profile:A2DP (bluetoothd: transport fd ready at 14:20:59)
+  14:21:00.830  iw event: CQM event: beacon loss
+  14:21:00.958  iw event: deauth reason 4 "Disassociated due to inactivity"
+                (disconnected, local request)
+  14:21:01.020  coex: WL connect=NO_LINK, reason NTFY_POWEROFF, action WL_OFF
+
+Second, independent capture of the same event (same setup, raw files kept):
+
+  14:49:31.4    BT connect:Y
+  14:49:34.434  BT Lo-rx/Lo-tx requests jump 0-239 -> 3229
+  14:49:35      bluetoothd: A2DP transport fd ready
+  14:49:35.945  BT profile:A2DP
+  14:49:36.797  iw event: CQM event: beacon loss
+  14:49:36.910  iw event: deauth reason 4 "Disassociated due to inactivity"
+  14:49:36.952  coex: WL NO_LINK, action WL_OFF
+  14:50:13      WiFi connected again (about 36 s; "auth: timed out" x4 before)
+
+In both captures the coex state is action:WL_5G, ant_path:FDD, tdma type:0
+right up to the last sample before the drop.
+
+From 14:20:50 up to the drop the coex manager stays in action:WL_5G,
+ant_path:FDD, tdma type:0 the whole time, i.e. it does not arbitrate WL/BT
+while the BT traffic ramps up. hw_info reports ant_iso:10, rfe_type:0x2,
+tx_num:1, rx_num:1. WL_FW_coex 7.9.0 (desired 6.0.0, "Match"), BT_FW_coex 7.
+rssi was -54 dBm at the last sample before the drop (VHT MCS 9, 80 MHz).
+
+For comparison, when the same station is on 2.4 GHz (ch 6, 20 MHz), A2DP
+streaming works for me without drops (user observation, not traced).
+The failing case is only 5 GHz + BT A2DP, and it is worse with 80 MHz than
+with 40 MHz.
+
+Full btc_info trace, ser_counters (all 0) and the iw event log are available;
+I can send them or try patches/debug_mask settings. Thanks for any pointers.
+
+Thanks,
+Dani
