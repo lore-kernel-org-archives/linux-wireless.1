@@ -1,110 +1,66 @@
-Authentication-Results: smtp.subspace.kernel.org; arc=none smtp.remote-ip=205.220.168.131
+Authentication-Results: smtp.subspace.kernel.org; arc=none smtp.remote-ip=95.215.58.34
 ARC-Seal: i=1; d=subspace.kernel.org; s=arc20261015; a=rsa-sha256; cv=none;
-	t=1795181192;
-	b=Yw86lluHBd8VkRrL7ckYLZFzqcQSHk1s0W17jUfYlJ9cakaf51zNOb1BnwmU5+gRzk23
-	 0Qxa/Tgd2CVEzA6d4444HWVtsUfqSonPjc9gq5DAaWQ+85h/n7iAVTP2bIVrwU7pL2+NJ
-	 b/lnPss0sG/HA9Gn0qHjHxqNE94oax1xOgGao4HvAf2Moe1xaojnqFpHTLO0FImEKzbQw
-	 WsK/NbwbRe2v1rq3VJ+OtPSTI5ixYdzKDW3W3HwbdNu0qmKgkv2X0QCR+q2q5ywGCIZH8
-	 22HEZryx9hoGWrjtSB6b4TyxJOQk/nRCCYCIJ2B8x7nM/LYjifjDYme+bnxKkYaGJ6Q==
+	t=1795184158;
+	b=2wwah6dOgm57WHvVJ9dF4gp7zc5v1DbUh9jH+6L/PBtERB012PBfcAZhoamj1xChdsOt
+	 KPvPqMFjATUKlC2TG621ayhLtIIr7zhkI0AIFclItr89bH+I2hvkx4AXT6myxq8Zx+xqZ
+	 o8IGtD/l+Vpq98xrGDt3MKDhEU/WMTvrYqVwKZIfy6brzBJ+Jv68EGQtVDhg3bZEmtyg6
+	 wsUhsVSir98IQ4K4v7leQ518dwzU6OhTJejy9QUlJSxXY5wLL3hNe1tN4Zo1qV3fitDHQ
+	 PVsNvOLgmuA0LUXgJBjwdL+zhiwVICByoAG2AP3XlpnmPqkVxLxCF0+SySkrKz/zHkQ==
 ARC-Message-Signature: i=1; d=subspace.kernel.org; s=arc20261015;
-	a=rsa-sha256; c=relaxed/relaxed; t=1795181192;
-	h=DMARC-Filter:Received:DKIM-Signature:Received:Received:
-	 DKIM-Signature:X-Google-DKIM-Signature:X-Forwarded-Encrypted:
-	 X-Gm-Message-State:X-Gm-Gg:X-Received:X-Received:Received:Message-ID:
-	 Date:MIME-Version:User-Agent:Subject:To:Cc:References:From:
-	 Content-Language:In-Reply-To:Content-Type:Content-Transfer-Encoding:
-	 X-Proofpoint-Spam-Details-Enc:X-Proofpoint-GUID:
-	 X-Proofpoint-ORIG-GUID:X-Proofpoint-Spam-Info:X-Authority-Analysis:
-	 X-Proofpoint-Virus-Version:X-Proofpoint-Spam-Details;
-	bh=guyr94lwtT4HUWbL32yj9P2Kvwo+CvFhkMLt90cotQw=;
-	b=fT1aWL5LIVcmOxwGdv5k/ThClLhpNc8cur/pevxNA7MHJQCpAXcJrUpZu/AnCceqSLUB
-	 iQtvLH5mXegsRczBUDUdFekIeZD+Szj2B3eVC3auQCF8sGvsGVxXf7ZKTu0LlpIo9P9gL
-	 hyJ08DoZ/X9hsPmfVWp3AzKPuylKwRBPvY1IO6/7JmolQYpOFLEkL9DJBZHLXmCaHrAgY
-	 459kJ9QhRGqRG7R91r0UurPMJyQkPqOeFh7AWhRL0Uq4eVuSfFIQJXOEM9yjV8I3vUbmu
-	 V4/S80mokzUdxY7+XEqnMl/IVrAT+1xCojkt91c5aGQ3RnbIqc1sGY08vhtG9jzdZhg==
+	a=rsa-sha256; c=relaxed/relaxed; t=1795184158;
+	h=DMARC-Filter:X-Envelope-To:DKIM-Signature:X-Envelope-To:Received:
+	 X-Mizu-Trace-ID:X-Migadu-Flow:From:To:Cc:Subject:Date:Message-ID:
+	 X-Mailer:In-Reply-To:References:Content-Type:MIME-Version:
+	 Content-Transfer-Encoding;
+	bh=djB2H3+AUQ9UAbVwoV3xtP+1jF+PYLRTPsj+L9Q3i1M=;
+	b=zUglmb2U+ezge9hziKB/qTl7QwdFUUn5zgIeILBW+p6Y506rf3wKbCNBJCPpGN8QWg1i
+	 kEPnUHPVqsN0A3j6KqcQFKRZOSc53GMrD9+vzKxhuvd6BtIhoJfi/5W4V29FETrD+3GL6
+	 Ub0ENu4hbzkxwfrLLp9d5AFg3m8hJdhjrH4Bmwhh0JLST0Wh2LHyjih5CYRA3NTp8wHZg
+	 H9J8ow6q1cyxP7en5PARHL3Zxw+Pp8yld/YjiGCEqBTltUTB9v947oUJ5wKZ98dnq2/zN
+	 GrB4T71snK0BcJG2bse9wFLchcOqCf2o9stjY5CdzDTn3jgwY98yq3DM5aXH4CbTEPQ==
 ARC-Authentication-Results: i=1; smtp.subspace.kernel.org; 
-	dmarc=pass header.from=oss.qualcomm.com;
-	spf=pass smtp.mailfrom=oss.qualcomm.com;
-	dkim=pass header.d=qualcomm.com header.i=@qualcomm.com header.a=rsa-sha256 header.s=qcppdkim1 header.b=CwQDXvg0;
-	dkim=pass header.d=oss.qualcomm.com header.i=@oss.qualcomm.com header.a=rsa-sha256 header.s=google header.b=jaE1MJe6;
-	arc=none smtp.remote-ip=205.220.168.131
-Received: from mx0a-0031df01.pphosted.com (mx0a-0031df01.pphosted.com [205.220.168.131])
-	(using TLSv1.3 with cipher TLS_AES_256_GCM_SHA384 (256/256 bits)
+	dmarc=pass header.from=linux.dev;
+	spf=pass smtp.mailfrom=linux.dev;
+	dkim=pass header.d=linux.dev header.i=@linux.dev header.a=rsa-sha256 header.s=key1 header.b=nA4LPU4z;
+	arc=none smtp.remote-ip=95.215.58.34
+Received: from mta1.migadu.com (out-34.mta1.migadu.com [95.215.58.34])
+	(using TLSv1.3 with cipher TLS_AES_128_GCM_SHA256 (128/128 bits)
 	 key-exchange X25519 server-signature ECDSA (prime256v1) server-digest SHA256)
 	(No client certificate requested)
-	by smtp.subspace.kernel.org (Postfix) with ESMTPS id 951FE606A335
-	for <linux-wireless@vger.kernel.org>; Fri, 20 Nov 2026 13:26:31 +0000 (UTC)
-DMARC-Filter: OpenDMARC Filter v1.4.2 smtp.subspace.kernel.org 951FE606A335
-Authentication-Results: smtp.subspace.kernel.org; dmarc=pass (p=none dis=none) header.from=oss.qualcomm.com
-Authentication-Results: smtp.subspace.kernel.org; spf=pass smtp.mailfrom=oss.qualcomm.com
+	by smtp.subspace.kernel.org (Postfix) with ESMTPS id 8FA29606A325
+	for <linux-wireless@vger.kernel.org>; Fri, 20 Nov 2026 14:15:57 +0000 (UTC)
+DMARC-Filter: OpenDMARC Filter v1.4.2 smtp.subspace.kernel.org 8FA29606A325
+Authentication-Results: smtp.subspace.kernel.org; dmarc=pass (p=none dis=none) header.from=linux.dev
+Authentication-Results: smtp.subspace.kernel.org; spf=pass smtp.mailfrom=linux.dev
 Authentication-Results: smtp.subspace.kernel.org;
-	dkim=pass (2048-bit key) header.d=qualcomm.com header.i=@qualcomm.com header.a=rsa-sha256 header.s=qcppdkim1 header.b=CwQDXvg0;
-	dkim=pass (2048-bit key) header.d=oss.qualcomm.com header.i=@oss.qualcomm.com header.a=rsa-sha256 header.s=google header.b=jaE1MJe6
-Received: from pps.filterd (m0279862.ppops.net [127.0.0.1])
-	by mx0a-0031df01.pphosted.com (8.18.1.11/8.18.1.11) with ESMTP id 6AKAkHpC1017120
-	for <linux-wireless@vger.kernel.org>; Fri, 20 Nov 2026 13:26:31 GMT
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=qualcomm.com; h=
-	cc:content-transfer-encoding:content-type:date:from:in-reply-to
-	:message-id:mime-version:references:subject:to; s=qcppdkim1; bh=
-	guyr94lwtT4HUWbL32yj9P2Kvwo+CvFhkMLt90cotQw=; b=CwQDXvg0LyggqihZ
-	EyN2KmQUQhw66VZ49OxeSUVN/TqOt0ZcSx1f4gw0PY0q/82LuDcuVE8jqPBvul0b
-	uiQcuGiqbpfRauwwMXlrUw2SkkRLVsG4sorz7h4dkXE61+eRxRPAHqNJYrGR0J27
-	d+5Yu67PRZB9GCq61m1Z4iaGbS3IFPDSolYr4FGizg25R94HAHf+aGInvtNklSUX
-	wLELFTcMXE3CUv/b9bPYsXpZiKmFsPlJ7YZ8nDvFxyum02NxmPB0cdBXJ7JaiVBd
-	EhHvwRlyEIxinHhX2NPr74fyN324/jh+Pb714TwlMqUSUEeyKjfGIW7P0KE3WxRm
-	0dEFQQ==
-Received: from mail-dy1-f200.google.com (mail-dy1-f200.google.com [74.125.82.200])
-	by mx0a-0031df01.pphosted.com (PPS) with ESMTPS id 4j2ggqsrga-1
-	(version=TLSv1.3 cipher=TLS_AES_128_GCM_SHA256 bits=128 verify=NOT)
-	for <linux-wireless@vger.kernel.org>; Fri, 20 Nov 2026 13:26:30 +0000 (GMT)
-Received: by mail-dy1-f200.google.com with SMTP id 5a478bee46e88-3846d5f54c1so1129822eec.1
-        for <linux-wireless@vger.kernel.org>; Fri, 20 Nov 2026 05:26:30 -0800 (PST)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=oss.qualcomm.com; s=google; t=1795181190; x=1795785990; darn=vger.kernel.org;
-        h=content-transfer-encoding:content-type:in-reply-to:content-language
-         :from:references:cc:to:subject:user-agent:mime-version:date
-         :message-id:from:to:cc:subject:date:message-id:reply-to:content-type;
-        bh=guyr94lwtT4HUWbL32yj9P2Kvwo+CvFhkMLt90cotQw=;
-        b=jaE1MJe6XPob0wZLVOHHhXBJIvH+cVG35D6csv15NqERrHpvPl5Pjzj/Ez4mpnsGwp
-         /lkMgFmJ3qE7dxd7TisodYRM1v2MAirnusxrB4y7xFbebzUoklxtJNymiWgaC2aeIH8P
-         N/2DrOi0vOV04z+aMPQaf5T9eyGgtywmdvEGeSAb0pXstwDXqPCSD7j4c59n6yz+X4Di
-         ct2lP/DX/fYhDjA0pnhMmc++lQirNNlG3SWIXJ5sbpUULDmnXjmb0lY94u1c07RYnVkY
-         yvbRwnOb7wePU0Hg+XYkpowvkn23lvCCx9hasI23gn8Ww7TCtt90hRWJu74tCGYCZ6Hi
-         b7ow==
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=1e100.net; s=20260707; t=1795181190; x=1795785990;
-        h=content-transfer-encoding:content-type:in-reply-to:content-language
-         :from:references:cc:to:subject:user-agent:mime-version:date
-         :message-id:x-gm-gg:x-gm-message-state:from:to:cc:subject:date
-         :message-id:reply-to:content-type;
-        bh=guyr94lwtT4HUWbL32yj9P2Kvwo+CvFhkMLt90cotQw=;
-        b=fza+MN6QF7w9WBCfAiwMPUCtjHTLkw4D0faNmD82RagUp6vgKCUmXHLbc/pFwgguIU
-         DfO8PaAXdmQm/SDSm+1ph3JQmFOg9VOMBfB1sYIdmB49iOSxBN9D9WflzRPzI+BiJrTs
-         BuZ5GKyOkPjZBctkxTm+FdCPBB6cK70PWQOJBBONIea6IQaduch6rN1unAJ/XxqC1U2G
-         6hk3HhubUbQNdWALq+lP6djpL8kez5QCqGhO2IYOkBsGQSs2R2oESDNALVgGsvcc3UwL
-         CVjQPA83cVBtjh3p7Ppzt+xPv+xJ0SrqyaKeDiCgkMAWWWzGEl5ZESDJ4MsXSFlrB1wW
-         T9nw==
-X-Forwarded-Encrypted: i=1; AL+hErHLVIER8NrqUw9GdR7trGGULC7iaTUFRFsRe3M10R2RpzLti1+c3ItBxqYmb+aSN71s3yR2loFcNBiQRuTJ4g==@vger.kernel.org
-X-Gm-Message-State: APuU4Z9eTNJSnGINh/VCNcymgGqyFZu/wh1FitrCMVtkdbS0G6ETDsYb
-	SS0y+R/Ilp61PRIzN/mHfzekQDOpDgA0bL4V2JYok0A2/QBVihtlPkmO4JxCD3cfpuS7gDTKQH1
-	T0GN3NnCRx4QIRNt+VVj2SLxLrNeLL+T9+y7LzOQb1+ID75rX7DLXbUwr4q1y9MOOzH3cqQ==
-X-Gm-Gg: AZFdTZdetdjD6yA05uoF/Z4wkt+6+js3D7Xc+l0Asz80iOtIpkpuST/dLUd2vPLK/Rb
-	TFeYIoeawqjF2SDVqscAaZe5mgxXP40Bp4UsMANJL6CR9kVobTL7tZiFEz7I54RxvV1A2G1rIEh
-	X8Pb3oritDrVigg3qCJQiLEwJMdjLSSvPecZUkaMZ3T4BTC3LTINc7N4KsklRvETgKsZzsEKSaA
-	Yzh5lEOZbUkSsGikC1lFTfQUmyuiCYXACCJMCoOLo5joMFVYnXPbgidWvhRD4ZSu16V7PrI9oEH
-	TIvU/8yvfrOMbgs7VdmnrzuF69WoFqfpMKxENZVqDVbBv3wfYkHBzWh5y/W6TaWUdgzpubo5UMr
-	/6fA2oQEjyaVqVTm9eEISMnraQ4NgvrDLlJXMYIGYXXI4nnkCRBBUhx8j5O6B+p56BkFGt44zO2
-	HQ4R8JU3K86XouHo2r
-X-Received: by 2002:a05:7301:929:b0:376:37a2:87f3 with SMTP id 5a478bee46e88-38570f25262mr2562919eec.31.1795181190020;
-        Fri, 20 Nov 2026 05:26:30 -0800 (PST)
-X-Received: by 2002:a05:7301:929:b0:376:37a2:87f3 with SMTP id 5a478bee46e88-38570f25262mr2562890eec.31.1795181189475;
-        Fri, 20 Nov 2026 05:26:29 -0800 (PST)
-Received: from [192.168.11.103] ([124.123.81.254])
-        by smtp.gmail.com with ESMTPSA id 5a478bee46e88-38567daaf70sm9479753eec.28.2026.11.20.05.26.26
-        (version=TLS1_3 cipher=TLS_AES_128_GCM_SHA256 bits=128/128);
-        Fri, 20 Nov 2026 05:26:29 -0800 (PST)
-Message-ID: <6c91ec31-d17b-4ab1-9031-f61932c57dfa@oss.qualcomm.com>
-Date: Fri, 20 Nov 2026 18:56:24 +0530
+	dkim=pass (1024-bit key, unprotected) header.d=linux.dev header.i=@linux.dev header.a=rsa-sha256 header.s=key1 header.b=nA4LPU4z
+X-Envelope-To: linux-wireless@vger.kernel.org
+DKIM-Signature: a=rsa-sha256; bh=lE8gxDYPl0F/rxqZxvrtd0Gp/XDxMqiQ0Whg2ioVnuA=;
+ c=simple/simple; d=linux.dev;
+ h=from:to:subject:date:message-id:mime-version:content-type; s=key1;
+ t=1795184155; v=1; x=1795788955;
+ b=nA4LPU4zgSNZ/8YONIIRsAmATpGC0SV6lZjguc0uHGLMmNC/ZVmIqb2gU7X3a7u6BhX5R+Kj
+ adk8TixfE0Umnoia9Xu78YFac8Pte6cGP901GVw3m4+wHyFhU7FwC3xVYycSuWxGOcCURjEzmve
+ RYvWIh+bQVVFziSRpqPAJA2Y=
+X-Envelope-To: linux-wireless@vger.kernel.org
+Received: by smtp.migadu.com with ESMTPS id 1121a40b1b8ff3b8;
+	Fri, 20 Nov 2026 14:15:55 +0000
+X-Mizu-Trace-ID: 1121a40b1b8ff3b8
+X-Migadu-Flow: FLOW_OUT
+From: Luka Gejak <luka.gejak@linux.dev>
+To: Mehmet Fide <mehmet.fide@gmail.com>,
+	Ping-Ke Shih <pkshih@realtek.com>
+Cc: Bitterblue Smith <rtl8821cerfe2@gmail.com>,
+	linux-wireless@vger.kernel.org,
+	linux-kernel@vger.kernel.org,
+	mehmet.fide@screeningeagle.com
+Subject: Re: [PATCH rtw-next v13 2/3] wifi: rtw88: support channel switch in AP mode
+Date: Fri, 20 Nov 2026 15:15:52 +0100
+Message-ID: <20261120141554.68116-1-luka.gejak@linux.dev>
+X-Mailer: git-send-email 2.56.1
+In-Reply-To: <20261118231940.3950-3-mehmet.fide@gmail.com>
+References: <20261118231940.3950-1-mehmet.fide@gmail.com> <20261118231940.3950-3-mehmet.fide@gmail.com>
+Content-Type: text/plain; charset="us-ascii"
 X-Mailing-List: linux-wireless@vger.kernel.org
 List-Id: <linux-wireless.vger.kernel.org>
 List-Post: <mailto:linux-wireless@vger.kernel.org>
@@ -114,128 +70,94 @@ List-Unsubscribe: <mailto:linux-wireless+unsubscribe@vger.kernel.org>
 List-Owner: <mailto:linux-wireless+owner@vger.kernel.org>
 Precedence: list
 MIME-Version: 1.0
-User-Agent: Mozilla Thunderbird
-Subject: Re: [PATCH ath-current] wifi: ath12k: report TX status for broadcast
- and multicast frames
-To: Vitor Soares <ivitro@gmail.com>, Jeff Johnson <jjohnson@kernel.org>
-Cc: Vitor Soares <vitor.soares@toradex.com>, linux-wireless@vger.kernel.org,
-        ath12k@lists.infradead.org, linux-kernel@vger.kernel.org,
-        Nithyanantham Paramasivam <nithyanantham.paramasivam@oss.qualcomm.com>,
-        Vasanthakumar Thiagarajan <vasanthakumar.thiagarajan@oss.qualcomm.com>
-References: <20261116230250.369383-2-ivitro@gmail.com>
-From: Rameshkumar Sundaram <rameshkumar.sundaram@oss.qualcomm.com>
-Content-Language: en-US
-In-Reply-To: <20261116230250.369383-2-ivitro@gmail.com>
-Content-Type: text/plain; charset=UTF-8; format=flowed
-Content-Transfer-Encoding: 7bit
-X-Proofpoint-Spam-Details-Enc: AW1haW4tMjYxMTIwMDA1MyBTYWx0ZWRfX6318pPr3WER4
- bi1U17Gko+dAvg8JAJzAYVymx0qS/4m2gfRyefIzlFVp96IVY6PEl6OucSayzW6CPiPGrLEoLYr
- ZanNb1f7BhGrH1eG7ckH39AFacYXaC/WGXurOV1W1p3jBNGJSaFaxVFjDYiUu7mxDYcpeVmH3eC
- ce+i6rZxHWpSvXnAdravZHzapagpXGIy9OOhIzOa1BFXa0/S/94NLnRK4htF2Ty5OLqsRpz03Cq
- Ihf9MX2NJPwGr6dHOjE/nZWZr4cBVDthnyidR9RwwNjx1K1xBzuefWtXfnly0HbE99VnQTwCcjs
- LjpRJ3eJ+j33n1dcuUmHUxhpN5lO3qRTpyPNDLN70TjyfZD2QTJy7YWIuubefG0IwC1r6t8ImG9
- 9/VuXhxdL1bskSqG5A0trztj4a4lTyZpWx4giKtKuC1WFJ3Gj3J9IXLec89SNZhmrqJ3HK6TABL
- Flkj3AyoRgdTcPNKJkg==
-X-Proofpoint-GUID: 3bkhJeyA15n_zK5rPAEk8BIbKR6Va943
-X-Proofpoint-ORIG-GUID: 3bkhJeyA15n_zK5rPAEk8BIbKR6Va943
-X-Proofpoint-Spam-Info: AW1haW4tMjYxMTIwMDA1MyBTYWx0ZWRfX6GPS90NsLwZs
- Uh6KxomSr8InZx6cYiCtWz+Uzx+949e5Ie22MKVed5KCxT4IBQSTaHR2njM6rWty2c9aszp6ijZ
- EXVLhaPmoo32Ys9axVmxCd6r2MskL3E=
-X-Authority-Analysis: v=2.4 cv=CNy/zhrD c=1 sm=1 tr=0 ts=6b004a86 cx=c_pps
- a=PfFC4Oe2JQzmKTvty2cRDw==:117 a=WcLwt0pvHDAIUQ3iVSLIEw==:17
- a=IkcTkHD0fZMA:10 a=zJRp6_cAMcgA:10 a=s4-Qcg_JpJYA:10
- a=VkNPw1HP01LnGYTKEx00:22 a=u7WPNUs3qKkmUXheDGA7:22 a=_K5XuSEh1TEqbUxoQ0s3:22
- a=m8ToADvmAAAA:8 a=5RRWBY4WAAAA:8 a=bIduEeDIxUt9zr8lqoUA:9 a=QEXdDO2ut3YA:10
- a=6Ab_bkdmUrQuMsNx7PHu:22 a=kCrBFHLFDAq2jDEeoMj9:22 a=drtMOSl5Q_Tsf-UZi3mY:22
-X-Proofpoint-Virus-Version: vendor=baseguard
- engine=ICAP:2.0.293,Aquarius:18.0.1176,Hydra:6.1.138,FMLib:17.12.100.49
- definitions=2026-11-20_04,2026-11-19_01,2025-10-01_01
-X-Proofpoint-Spam-Details: rule=outbound_notspam policy=outbound score=0
- phishscore=0 clxscore=1015 malwarescore=0 adultscore=0 spamscore=0
- bulkscore=0 impostorscore=0 lowpriorityscore=0 suspectscore=0
- priorityscore=1501 classifier=typeunknown authscore=0 authtc= authcc=
- route=outbound adjust=0 reason=mlx scancount=1 engine=8.22.0-2611040001
- definitions=main-2611200053
+Content-Transfer-Encoding: 8bit
 
-On 11/17/2026 4:32 AM, Vitor Soares wrote:
-> From: Vitor Soares <vitor.soares@toradex.com>
-> 
-> In AP mode, once a station is associated, broadcast and multicast frames
-> sent by the AP log:
-> 
->    ath12k_wifi7_pci 0003:01:00.0: dp_tx: failed to find the peer with peer_id 2
-> 
-> These frames complete against the AP's own peer. That peer has no
-> station, and since commit 981050b918fc ("wifi: ath12k: Fix TX status
-> reporting to mac80211 when offload is enabled") a missing station is
-> treated as a missing peer: the frame is dropped and an error is logged.
-> Before that commit, the TX status of these frames was reported without a
-> station.
-> 
-> Report the TX status without a station when the peer has none, and add
-> rate information only when a station is present. Only drop the frame
-> when the peer is not found, and log that case at debug level, as the
-> HTT completion path does.
-> 
-> Tested-on: WCN7850 hw2.0 PCI WLAN.HMT.1.1.c7-00108-QCAHMTSWPL_V1.0_V2.0_SILICONZ_UPSTREAM-3
-> 
-> Fixes: 981050b918fc ("wifi: ath12k: Fix TX status reporting to mac80211 when offload is enabled")
-> Signed-off-by: Vitor Soares <vitor.soares@toradex.com>
-> ---
-> This conflicts with c752394249f8 ("wifi: ath12k: store station pointer
-> only in dp_peer") in ath-next; the resolution uses
-> ath12k_dp_link_peer_get_sta(peer) in place of peer->sta.
-> 
->   drivers/net/wireless/ath/ath12k/wifi7/dp_tx.c | 23 +++++++++++--------
->   1 file changed, 13 insertions(+), 10 deletions(-)
-> 
-> diff --git a/drivers/net/wireless/ath/ath12k/wifi7/dp_tx.c b/drivers/net/wireless/ath/ath12k/wifi7/dp_tx.c
-> index 41abf1865702..794d85d9dbaf 100644
-> --- a/drivers/net/wireless/ath/ath12k/wifi7/dp_tx.c
-> +++ b/drivers/net/wireless/ath/ath12k/wifi7/dp_tx.c
-> @@ -856,24 +856,27 @@ static void ath12k_wifi7_dp_tx_complete_msdu(struct ath12k_pdev_dp *dp_pdev,
->   	ath12k_wifi7_dp_tx_update_txcompl(dp_pdev, ts);
->   
->   	peer = ath12k_dp_link_peer_find_by_peerid(dp_pdev, ts->peer_id);
-> -	if (!peer || !peer->sta) {
-> -		ath12k_err(ab,
-> +	if (!peer) {
-> +		ath12k_dbg(ab, ATH12K_DBG_DATA,
->   			   "dp_tx: failed to find the peer with peer_id %d\n",
->   			   ts->peer_id);
+Hi Mehmet,
 
-I'd still keep this in ath12k_err to catch the frames that get TX 
-completion without a valid peer.
+Thanks for the v13. Four comments below.
 
->   		ieee80211_free_txskb(ath12k_pdev_dp_to_hw(dp_pdev), msdu);
->   		goto exit;
->   	}
->   
-> -	status.sta = peer->sta;
-> -	status.info = info;
-> -	status.skb = msdu;
-> -	rate = peer->last_txrate;
-> +	if (peer->sta) {
-> +		status.sta = peer->sta;
-> +		rate = peer->last_txrate;
->   
-> -	status_rate.rate_idx = rate;
-> -	status_rate.try_count = 1;
-> +		status_rate.rate_idx = rate;
-> +		status_rate.try_count = 1;
->   
-> -	status.rates = &status_rate;
-> -	status.n_rates = 1;
-> +		status.rates = &status_rate;
-> +		status.n_rates = 1;
+On November 19, 2026 12:19:39 AM GMT+01:00, Mehmet Fide
+<mehmet.fide@gmail.com> wrote:
+
+> diff --git a/drivers/net/wireless/realtek/rtw88/fw.c b/drivers/net/wireless/realtek/rtw88/fw.c
+> index e0f3e1adb13f..9d5df3e65b97 100644
+> --- a/drivers/net/wireless/realtek/rtw88/fw.c
+> +++ b/drivers/net/wireless/realtek/rtw88/fw.c
+
+[ ... ]
+
+> +	rtwdev->csa_due = ktime_add_us(rtwdev->csa_due, interval);
+> +	delay = ktime_us_delta(rtwdev->csa_due, ktime_get());
+> +	ieee80211_queue_delayed_work(rtwdev->hw, &rtwdev->csa_beacon_work,
+> +				     usecs_to_jiffies(max(delay, 0)));
+
+I think this can finish before the last count gets a TBTT if the work
+runs a full interval late. With a count of 2, the work installs count 1
+and queues the finish immediately because csa_due has already passed.
+
+Patch 3 measures the next TBTT after the download. Could the countdown
+use that pacing from the commit that enables CSA?
+
+[ ... ]
+
+> +	rtwdev->csa_retry = !!rtw_fw_download_rsvd_page(rtwdev);
+> +	if (!rtwdev->csa_retry)
+> +		rtw_send_rsvd_page_h2c(rtwdev);
+> +	rtw_fw_csa_queue(rtwdev, vif);
+
+What happens if the page can never fit? On RTL8821C the driver has
+eight 128 byte pages. A beacon that fits before the switch can exceed
+that space after adding the CSA element. The builder then returns an
+error every time, so the switch stays pending and a request with
+block_tx keeps the queues stopped.
+
+Could we reject a template that cannot fit before committing to the
+switch, or give up and stop the AP if the download keeps failing?
+
+[ ... ]
+
+> diff --git a/drivers/net/wireless/realtek/rtw88/mac80211.c b/drivers/net/wireless/realtek/rtw88/mac80211.c
+> index 3029fbdb288a..c9ac2685437e 100644
+> --- a/drivers/net/wireless/realtek/rtw88/mac80211.c
+> +++ b/drivers/net/wireless/realtek/rtw88/mac80211.c
+
+[ ... ]
+
+>  	if (changed & BSS_CHANGED_BEACON) {
+>  		rtw_set_dtim_period(rtwdev, conf->dtim_period);
+> -		rtw_fw_download_rsvd_page(rtwdev);
+> +		ret = rtw_fw_download_rsvd_page(rtwdev);
+>  		rtw_send_rsvd_page_h2c(rtwdev);
+
+[ ... ]
+
+> +		if (conf->csa_active)
+> +			rtw_fw_csa_start(rtwdev, vif, !!ret);
+> +		else
+> +			rtw_fw_csa_stop(rtwdev, vif);
+
+Could we retry the first beacon download after the switch too?
+mac80211 has already changed the channel when it hands us that beacon.
+If the page buffer allocation fails here, the old page still holds the
+last CSA beacon. As far as I can see, the switch can be reported complete
+while the new beacon is still waiting for another update.
+
+[ ... ]
+
+> +	} else {
+> +		/* what a countdown may have held back */
+> +		rtw_fw_download_rsvd_page(rtwdev);
+> +		rtw_send_rsvd_page_h2c(rtwdev);
 > +	}
-> +
-> +	status.info = info;
-> +	status.skb = msdu;
->   	ieee80211_tx_status_ext(ath12k_pdev_dp_to_hw(dp_pdev), &status);
->   
->   exit:
 
+There seems to be a similar case when the AP stops. If the station
+associates during the countdown and the AP stops before the next step,
+this is the first chance to install the station's new reserved page
+contents. A failed allocation here can leave a PS Poll template with
+the AID it had before the association, even though the station stays
+connected.
 
--- 
-Ramesh
+Could we queue a retry for the station if this refresh fails?
+
+Best regards,
+Luka Gejak
