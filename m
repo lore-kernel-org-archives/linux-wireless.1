@@ -1,92 +1,92 @@
-Authentication-Results: smtp.subspace.kernel.org; arc=none smtp.remote-ip=74.125.82.173
+Authentication-Results: smtp.subspace.kernel.org; arc=none smtp.remote-ip=74.125.82.174
 ARC-Seal: i=1; d=subspace.kernel.org; s=arc20261015; a=rsa-sha256; cv=none;
-	t=1795174300;
-	b=KVGnGvit+8+kYU7N2aZLRMrtx2DfKIFFWP84UB13raCLHOFyfMzyBv6yXXfNeNDJh+Oi
-	 ILPzRy0CKvt/yuoE9BPNp2QJqna7wa1Pvziym5Ic3Uz3jZBY27QKMYsyU1rbUaqHK+0N2
-	 xK2A9S6NqUqe6r1IJYs/opf9ZieKINR5itwDe2zykVmrSMGMEwg6Nw0kRkDDCEurAyteJ
-	 7TvyMzfnDPjaBZVyqU8CNX7uLaNBpNhcFpRV1JlMfE9hAQR3FflQBjf7pAjWwyHixKYoA
-	 3wOCHO5kTfHzDOkBXe69jz3O6VMXv1iuO7Ls4ZZQTMwEyjKVLqJMnsSzXqKnMCWe1pQ==
+	t=1795174302;
+	b=FXOveKK3oTlaIJqRJoxdOH3u4pl74QFUoScAJzIil8N59b3Es4mJw5CdiV6iNBUfBb3J
+	 M/ib0f2+lbY72ig4DCQdUO8VxZU3uU4mZgUm5UZK4X6X/xWhBjiIueTp30imZby+zc8YV
+	 QhyHfqszWHqaB3cqXznwSbUVT0g+/ky3B46Oj2pw6TOHxYDq3j2ODP+C+04qsinwY71QJ
+	 jW7drGfeNBJsWVXsx1xMQl1+CzXBKeCxMy/ElCwZR/E1Y1lBTZt5ISrb6k6K0+HWFTcum
+	 Zfi3U9klw9kQOGHemd4YOPa3rOWfb1KBy7mJUsrQnYYeGgycC+D/eimiGscQsWtu6pA==
 ARC-Message-Signature: i=1; d=subspace.kernel.org; s=arc20261015;
-	a=rsa-sha256; c=relaxed/relaxed; t=1795174300;
+	a=rsa-sha256; c=relaxed/relaxed; t=1795174302;
 	h=DMARC-Filter:Received:DKIM-Signature:X-Google-DKIM-Signature:
 	 X-Forwarded-Encrypted:X-Gm-Message-State:X-Gm-Gg:X-Received:Received:
 	 From:To:Cc:Subject:Date:Message-ID:X-Mailer:In-Reply-To:References:
 	 MIME-Version:Content-Transfer-Encoding;
-	bh=677whf195NLsgFLCzjEzru0i4Z+4+NkynuJcgslET6o=;
-	b=2KuQH87yf6pPEvrDHraP6XByd7lBQxqGkbThFyKJY5iSTe7Vd13ZaUALDZlisksmnz5v
-	 ilti0fNZPgiTMqW/nnnSpOlLOlqVbQPqmYtJNWcuWXgaD0EZP7qZX16s0NkdXC8a0rlg6
-	 hqOmbqN+d1Y8OZPELlZuYhuLznW7DY4GMOhR+2w9CcRJuRHv2zXMmU7vLL9WpaC2Khkvp
-	 41SXxGwK5nwLN0p86oNMa95ZBBljsl6KSnahUzZbBMjYEwEJavV5MIJxlY8PP09TgUs3i
-	 udTHNpWSKeMcMNurEC7h06JOiGtruTsk5I27tYG1NCH3sq3ue8+xAZI/mNonZfoTqfA==
+	bh=r/Zl64b5uRZMFqhO7EABjxKJLKRPSycq38m/Nb5ViAw=;
+	b=GwNbRefPQVrm+2xGHZEkxZyPSd5AEcNBaMwAbkbaxEvs9SmvtnTKSrLud3V+McNlY2Qu
+	 2FGKx7qEoQiqAoHqmFapo2wNLfBAcKCYy2XEcruqs9YHHyf9I54IWVkvEY50y2g8ZEy83
+	 FiHeYapsr6OsZ+78pu9ReIWbnFpm0VhXq5dCrdFgkYZJNiRjtSAt8I4qWh/q2jSkS1O9S
+	 mulCtTSlM1TXdtyHdP6eEEjZPXDObldMHHB9F1gyFADh82PlU6XxHYZ6E3S67cp0HeCp1
+	 9AvAQ5Ju1yADyceqo0B4nCW6U7Ln3t5h8tOFLdYFTfk9bq1/QqRu7ct9AuxYwIXfIfQ==
 ARC-Authentication-Results: i=1; smtp.subspace.kernel.org; 
 	dmarc=pass header.from=gmail.com;
 	spf=pass smtp.mailfrom=gmail.com;
-	dkim=pass header.d=gmail.com header.i=@gmail.com header.a=rsa-sha256 header.s=20260707 header.b=BNoWSv+u;
-	arc=none smtp.remote-ip=74.125.82.173
-Received: from mail-dy1-f173.google.com (mail-dy1-f173.google.com [74.125.82.173])
+	dkim=pass header.d=gmail.com header.i=@gmail.com header.a=rsa-sha256 header.s=20260707 header.b=K31j6YOs;
+	arc=none smtp.remote-ip=74.125.82.174
+Received: from mail-dy1-f174.google.com (mail-dy1-f174.google.com [74.125.82.174])
 	(using TLSv1.3 with cipher TLS_AES_128_GCM_SHA256 (128/128 bits)
 	 key-exchange X25519 server-signature ECDSA (prime256v1) server-digest SHA256)
 	(No client certificate requested)
-	by smtp.subspace.kernel.org (Postfix) with ESMTPS id 9C78C60A3815
-	for <linux-wireless@vger.kernel.org>; Fri, 20 Nov 2026 11:31:39 +0000 (UTC)
-DMARC-Filter: OpenDMARC Filter v1.4.2 smtp.subspace.kernel.org 9C78C60A3815
+	by smtp.subspace.kernel.org (Postfix) with ESMTPS id 43A0F60A3829
+	for <linux-wireless@vger.kernel.org>; Fri, 20 Nov 2026 11:31:42 +0000 (UTC)
+DMARC-Filter: OpenDMARC Filter v1.4.2 smtp.subspace.kernel.org 43A0F60A3829
 Authentication-Results: smtp.subspace.kernel.org; dmarc=pass (p=none dis=none) header.from=gmail.com
 Authentication-Results: smtp.subspace.kernel.org; spf=pass smtp.mailfrom=gmail.com
 Authentication-Results: smtp.subspace.kernel.org;
-	dkim=pass (2048-bit key) header.d=gmail.com header.i=@gmail.com header.a=rsa-sha256 header.s=20260707 header.b=BNoWSv+u
-Received: by mail-dy1-f173.google.com with SMTP id 5a478bee46e88-380b40319bdso983124eec.1
-        for <linux-wireless@vger.kernel.org>; Fri, 20 Nov 2026 03:31:39 -0800 (PST)
+	dkim=pass (2048-bit key) header.d=gmail.com header.i=@gmail.com header.a=rsa-sha256 header.s=20260707 header.b=K31j6YOs
+Received: by mail-dy1-f174.google.com with SMTP id 5a478bee46e88-380b40312e2so306543eec.1
+        for <linux-wireless@vger.kernel.org>; Fri, 20 Nov 2026 03:31:42 -0800 (PST)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=gmail.com; s=20260707; t=1795174299; x=1795779099; darn=vger.kernel.org;
+        d=gmail.com; s=20260707; t=1795174301; x=1795779101; darn=vger.kernel.org;
         h=content-transfer-encoding:mime-version:references:in-reply-to
          :message-id:date:subject:cc:to:from:from:to:cc:subject:date
          :message-id:reply-to:content-type;
-        bh=677whf195NLsgFLCzjEzru0i4Z+4+NkynuJcgslET6o=;
-        b=BNoWSv+uGI1UPoC2rwjghY63rtirDaiZPwabATfulMbPmoyFylEC+Y4hEBnJc2AO4O
-         dIXomubMCgsdYj5RkqcNMAUJII9Jiwo57bsCCNHAGfedPkoPCvRNtutvm8qoR7TY/JDT
-         h5RNpf+Xb/i97qkWVgXNBSJ38ArJ7qWXGV4nuvsW32LKEwNeTfOxS90Qa7bMuklKTaHp
-         o5ysHa44+++y7CoiEE8ikhDBPFjMuaxZ4sgeY7vJBayw5fFPKVqT6a1fnJ+H+VQeXuNB
-         s4ePHoNEIpyTApsX3KHiXljddXwyeiA0UZocKOMnMvuSmfx0iT1DdWUxOkrXG6hcPs/Z
-         TWvQ==
+        bh=r/Zl64b5uRZMFqhO7EABjxKJLKRPSycq38m/Nb5ViAw=;
+        b=K31j6YOs95IyG0QTJMmxOL2GCA0yai8HBZK4FJAOQmMFmhQkGyUrEl/Fx9Uc2EneUO
+         9+GzQUgFRTymN7XThgVKVpYperPcD1P9alf31tdqzgleMgnmSViIkzJikSZDe+Kq12J3
+         F6087Z9vJQL67MQEqOwP/cmfXMqTx45p31iH6QY24Lb11n6Tjx1FOm+hG+BgjxmGaSca
+         ymB02MXEo3M0p5V3/V9Rmy77EmJxDW32iE0e/mK3PVX3QnRyOnfeE/rAlYnAwO7rcTTu
+         NpGBe0qRJXZg6qM0DXlDfkBV9mgYb76FfLnX0+IeaqV4n9Mj2T/QtuhpzwWCqViNe4f+
+         ElNA==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=1e100.net; s=20260707; t=1795174299; x=1795779099;
+        d=1e100.net; s=20260707; t=1795174301; x=1795779101;
         h=content-transfer-encoding:mime-version:references:in-reply-to
          :message-id:date:subject:cc:to:from:x-gm-gg:x-gm-message-state:from
          :to:cc:subject:date:message-id:reply-to:content-type;
-        bh=677whf195NLsgFLCzjEzru0i4Z+4+NkynuJcgslET6o=;
-        b=OmrtecS91KcMZSVHPTmq79jmX0zE+l+aoUl79kR2P67OnZmSgIGuy03mCR9gZPyc2U
-         cyP2EtbJfjX+5QxdsELM3mzXrll5Mv952dR5MYmtMd4MSnAkI3tR256duC3cspJWP+pl
-         uzt1tY2/2SAsJ+LI/Vv/sE3MTnbNxlUfIItDAP6VWasjeVpRO0GNy5a90t+8AoErJzIF
-         NXt6nyNxCkQYYow7XZ0qA7tjPHSG194doPmpmd04Wda9RzWIFtgR6xnkgK65vQSZgqnR
-         nIdatKDC4W0NBGYsmTORag9OUEqLLkCmb12A4Blvm37wrpZCikUoVXFbHsgF19MaGxoi
-         HlgA==
-X-Forwarded-Encrypted: i=1; AL+hErEPpKdX/Gcv3qH/8WyIYJ8yyxarkURLh0WEfHvOAHjF3YktLODL80oeG2IkTxTFqoN3Boc2U63XBmbqgYVVdA==@vger.kernel.org
-X-Gm-Message-State: APuU4Z/JxpFZc7KX775Pm87Kg92YnnTFq4zhAVLMhds9mcZdF8h1bfwv
-	y0XaMCSYdyhBV5VtafZHZe0YvolFiZsPaznM6bJcwwEAGxZy0gk3GceX
-X-Gm-Gg: AZFdTZeS+3LWledR8o/o6avJS5mH0PUHBOtXniCVm9h+gr4/Nh9BUhVE/zBDtp+MfW2
-	Lr6qDkB2P7Dh1JNtjydYB2aeXvwCaErx4ZzS7g+mS8EGiN1tVxY0FD0ZfbyfQC68dbM7pSsqB3X
-	DFN5IHntlB6Pk2/a9ZoaG4GyQgpGHOUzReG0B0rEGV8T9YSzgqd//0+QgiFp7AMjYH5oB9Fi/Bc
-	MD377GGaa2zwQ2YoFLXHhSSOrS4ULvEHlVTseVrGctTiwnZSHIHEzQODodVJc3V1VwlSg+7E+Fa
-	nzp0jcpjYyfiTIm/GGhedH8QEZAA1IDBRihCad+2nMjlJKUJuzLBt5ZIykp2B2dEbBo2Vq7/kjl
-	1MG4CD1WLvy+Bo2ZuAaAbSeXW9N7dTFDqwznzleBi9Kb/30AFAqs8KUXh1hedLtgz2X4GlsUnQY
-	jZ41cdZx8ncOdtUYW9bghFMVFLpRlKrHkjw3NeOx0ueogS6nU0X4xgZrCDcD/14TdQtty8LAJLU
-	U6AjCljSlfpG8DibDr1XYQYNw8oDYf3t625WaZJS4jBfNgaLgJTSwvg1OjdJwP9BMmOIhadeDT6
-	Nw9JYaO7S46rRYKoU7Xk4ykUWschEeQheZoAFk65OFuQMwU9sXbMe6HanXyUTD5G9q08QWMC+R4
-	FtONZiLkeXL8JCl80u3QPdREDpvCR6nD1DEuTqTozn5gg
-X-Received: by 2002:a05:693c:829b:20b0:376:552d:402d with SMTP id 5a478bee46e88-38570f29044mr3045263eec.34.1795174298523;
-        Fri, 20 Nov 2026 03:31:38 -0800 (PST)
+        bh=r/Zl64b5uRZMFqhO7EABjxKJLKRPSycq38m/Nb5ViAw=;
+        b=RCZ+xMCOcQolu2X2+eeLVz/guqRY8SpaqK+t3NcZIxD3tVeAu8o8UmQM2e3U9yMWKW
+         Fq42bMFXk7MHX+Ku6tmdNtTswI+PX2buuRvWL0Lq8r0Wm29V0Qu+eEOeDv14JCXiEiJD
+         C/DJ7dppcES3ukH5mOoRHStVmmOCNLPD9m50OQTj2kQB/XC5oh4JgaTPzfM9EW9YtSMa
+         4QLuS2i/okf5RSAJlt3bHPsr6yzcdKg5jkN/wuHXcBXN8kJvdKP5oJ7SNPYQ+Q/2cz0V
+         oGZUxu8+M7xNzqZw0bjUfLVe46VR9PCaC3St+tXGJxPYUTk+qvXmrqFxRvsRypbQAyAN
+         RUuA==
+X-Forwarded-Encrypted: i=1; AL+hErG5d94s8K93Vq/K42Qyt5YeTWCd9bAonQd5vot/lELvLdv2jsOwVaajC4GzAzIy6m5rMT9y8irllUrTcX0w8A==@vger.kernel.org
+X-Gm-Message-State: APuU4Z/8oWFcZD86gyTAZWYDnOaEyjgHoo2oph5O7S2VYTLqfI3Umh+v
+	bRp9NvHD7r6iFBAow5bjegQes97lNWtbpBKtCHWRJRK4R5d/v1Jv9FLt
+X-Gm-Gg: AZFdTZfCVD/3Ge/8kge3mOC82ulwVRtFgSMaHxpJcasjyV+7G4K6RRX9rhM2homeK4R
+	g2bRLaYzUeaSB15XIBPQR51pjlp3juUlSjCWMoVPy1gqJpQr8Fp2S0SwPUFtUcdHeOrziJ3w1ce
+	vk8ypxGfkLQftV3nFWvQBdr58/Lb81E7x5T5tdUsEAXancl9x5RIZaeuY/NDIBOttXwF56GNUxq
+	BQ5UlXE1VhCE4bpEuM5F9CRwRTkOeT/aOmhTPSklgUPGlM0kCl8BitGblxauRfIVBp7KC4CLbbg
+	MTMBvKFfGTiqpt9R8pH9AGDKZDsd8g1VcLMGtTmhIvVEzexIvoojJ9BwJ8jJnmHhmdiaftYjbn2
+	U70hYWL9VMLdzAat+8FDkM1XcKCP5zTK4Z5VdNL9juXDkYDNrtkjiFIQ3Db3TRD8uqUE/8379WB
+	Du7ICfqiGSR/g2d0tnG5exEUk8hhF43zCUt5J1MiJhLD+AAp6YLF80dur9gt4mpCZjSDatQOvJk
+	bN2/LmOm5tr2QITwwvyrQxaIYLg9cA3y0gMU4WHUg/lk5mAACRgU+3D5A03y+Sp3uPDT/c46Ybc
+	aLh/2kidFcz2fPV72Hs5//BUFQJA+ntutH2nIvOmopdhi4dDkj11/z0UNbnuuvolSSJP+irMqgW
+	k9IxUOW6dSl26LVPfDNsRkwrb8GXeuNCtLrrV46kaWABZ6I0UcrMiOIK+O79OvCz+Sw==
+X-Received: by 2002:a05:7301:182b:b0:381:2f5d:a696 with SMTP id 5a478bee46e88-38571414835mr2600667eec.34.1795174301099;
+        Fri, 20 Nov 2026 03:31:41 -0800 (PST)
 Received: from acemagic-m1.tail4fb79.ts.net ([2401:7400:c804:b668:fe98:6351:c2cf:22c3])
-        by smtp.gmail.com with ESMTPSA id 5a478bee46e88-385672ce402sm7134347eec.16.2026.11.20.03.31.37
+        by smtp.gmail.com with ESMTPSA id 5a478bee46e88-385672ce402sm7134347eec.16.2026.11.20.03.31.39
         (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
-        Fri, 20 Nov 2026 03:31:38 -0800 (PST)
+        Fri, 20 Nov 2026 03:31:40 -0800 (PST)
 From: Ho Jie Feng <hjf3108@gmail.com>
 To: Ping-Ke Shih <pkshih@realtek.com>,
 	linux-wireless@vger.kernel.org
 Cc: Bitterblue Smith <rtl8821cerfe2@gmail.com>,
 	linux-kernel@vger.kernel.org
-Subject: [PATCH rtw-next v3 4/5] wifi: rtlwifi: usb: move the radiotap headroom size to usb.h
-Date: Fri, 20 Nov 2026 19:31:13 +0800
-Message-ID: <20261120113116.153232-5-hjf3108@gmail.com>
+Subject: [PATCH rtw-next v3 5/5] wifi: rtlwifi: rtl8192du: enable USB RX aggregation
+Date: Fri, 20 Nov 2026 19:31:14 +0800
+Message-ID: <20261120113116.153232-6-hjf3108@gmail.com>
 X-Mailer: git-send-email 2.53.0
 In-Reply-To: <20261120113116.153232-1-hjf3108@gmail.com>
 References: <20261120113116.153232-1-hjf3108@gmail.com>
@@ -101,71 +101,176 @@ Precedence: list
 MIME-Version: 1.0
 Content-Transfer-Encoding: 8bit
 
-Let drivers use the same define to add headroom for the frames
-split out of aggregated transfers.
+Allow RX aggregation of up to 48 pages of 128 bytes or 24 with two MACs.
 
-Move __RADIO_TAP_SIZE_RSV to usb.h as RTL_RADIO_TAP_SIZE_RSV
-so chip specific code can use it.
+In an aggregated transfer, rtl92du_rx_segregate_hdl() copies each
+frame into a new skb with room for the radiotap header like in usb.c.
+The last frame reuses the original skb by pulling it to the frame's start
+and trimmed to its length.
+
+Test results (2.4 GHz):
+   before after
+TX 5.2    6.4
+RX 27.1   32.0
 
 Signed-off-by: Ho Jie Feng <hjf3108@gmail.com>
 Acked-by: Ping-Ke Shih <pkshih@realtek.com>
 ---
- drivers/net/wireless/realtek/rtlwifi/usb.c | 8 ++------
- drivers/net/wireless/realtek/rtlwifi/usb.h | 1 +
- 2 files changed, 3 insertions(+), 6 deletions(-)
+ .../wireless/realtek/rtlwifi/rtl8192d/reg.h   |  4 ++
+ .../wireless/realtek/rtlwifi/rtl8192du/hw.c   | 18 +++++++-
+ .../wireless/realtek/rtlwifi/rtl8192du/sw.c   |  2 +-
+ .../wireless/realtek/rtlwifi/rtl8192du/trx.c  | 45 +++++++++++++++++++
+ .../wireless/realtek/rtlwifi/rtl8192du/trx.h  |  4 ++
+ 5 files changed, 71 insertions(+), 2 deletions(-)
 
-diff --git a/drivers/net/wireless/realtek/rtlwifi/usb.c b/drivers/net/wireless/realtek/rtlwifi/usb.c
-index d7b3192262..5aca1a49ca 100644
---- a/drivers/net/wireless/realtek/rtlwifi/usb.c
-+++ b/drivers/net/wireless/realtek/rtlwifi/usb.c
-@@ -488,8 +488,6 @@ static unsigned int _rtl_rx_get_padding(struct ieee80211_hdr *hdr,
- #endif
+diff --git a/drivers/net/wireless/realtek/rtlwifi/rtl8192d/reg.h b/drivers/net/wireless/realtek/rtlwifi/rtl8192d/reg.h
+index 639aa0d92e..7cc46f411a 100644
+--- a/drivers/net/wireless/realtek/rtlwifi/rtl8192d/reg.h
++++ b/drivers/net/wireless/realtek/rtlwifi/rtl8192d/reg.h
+@@ -329,6 +329,7 @@
+ 
+ #define REG_USB_Queue_Select_MAC0	0xFE44
+ #define REG_USB_Queue_Select_MAC1	0xFE47
++#define REG_USB_DMA_AGG_TO		0xFE5B
+ 
+ /* ----------------------------------------------------- */
+ /*	Redifine 8192C register definition for compatibility */
+@@ -940,6 +941,9 @@
+ #define ENSWBCN					BIT(8)
+ #define ENSEC					BIT(9)
+ 
++/* REG_TRXDMA_CTRL */
++#define RXDMA_AGG_EN				BIT(2)
++
+ #define HQSEL_VOQ				BIT(0)
+ #define HQSEL_VIQ				BIT(1)
+ #define HQSEL_BEQ				BIT(2)
+diff --git a/drivers/net/wireless/realtek/rtlwifi/rtl8192du/hw.c b/drivers/net/wireless/realtek/rtlwifi/rtl8192du/hw.c
+index ff458fb851..3edd5bc432 100644
+--- a/drivers/net/wireless/realtek/rtlwifi/rtl8192du/hw.c
++++ b/drivers/net/wireless/realtek/rtlwifi/rtl8192du/hw.c
+@@ -489,6 +489,22 @@ static void _rtl92du_init_retry_function(struct ieee80211_hw *hw)
+ 	rtl_write_byte(rtlpriv, REG_ACKTO, 0x40);
  }
  
--#define __RADIO_TAP_SIZE_RSV	32
--
- static void _rtl_rx_completed(struct urb *_urb)
- {
- 	struct rtl_usb *rtlusb = (struct rtl_usb *)_urb->context;
-@@ -521,7 +519,7 @@ static void _rtl_rx_completed(struct urb *_urb)
- 		hdr = (void *)(_urb->transfer_buffer + RTL_RX_DESC_SIZE);
- 		padding = _rtl_rx_get_padding(hdr, size - RTL_RX_DESC_SIZE);
- 
--		skb = dev_alloc_skb(size + __RADIO_TAP_SIZE_RSV + padding);
-+		skb = dev_alloc_skb(size + RTL_RADIO_TAP_SIZE_RSV + padding);
- 		if (!skb) {
- 			pr_err("Can't allocate skb for bulk IN!\n");
- 			goto resubmit;
-@@ -533,7 +531,7 @@ static void _rtl_rx_completed(struct urb *_urb)
- 		skb_reserve(skb, padding);
- 
- 		/* reserve some space for mac80211's radiotap */
--		skb_reserve(skb, __RADIO_TAP_SIZE_RSV);
-+		skb_reserve(skb, RTL_RADIO_TAP_SIZE_RSV);
- 
- 		skb_put_data(skb, _urb->transfer_buffer, size);
- 
-@@ -570,8 +568,6 @@ static void _rtl_rx_completed(struct urb *_urb)
- 	usb_anchor_urb(_urb, &rtlusb->rx_cleanup_urbs);
- }
- 
--#undef __RADIO_TAP_SIZE_RSV
--
- static void _rtl_usb_cleanup_rx(struct ieee80211_hw *hw)
++static void _rtl92du_init_usb_aggregation(struct ieee80211_hw *hw)
++{
++	struct rtl_priv *rtlpriv = rtl_priv(hw);
++	u8 page_count = 48;
++
++	if (rtlpriv->rtlhal.macphymode != SINGLEMAC_SINGLEPHY)
++		page_count = 24;
++
++	rtl_write_byte(rtlpriv, REG_TRXDMA_CTRL,
++		       rtl_read_byte(rtlpriv, REG_TRXDMA_CTRL) | RXDMA_AGG_EN);
++	/* unit: 128 bytes */
++	rtl_write_byte(rtlpriv, REG_RXDMA_AGG_PG_TH, page_count);
++	/* A larger value is a shorter timeout. */
++	rtl_write_byte(rtlpriv, REG_USB_DMA_AGG_TO, 6);
++}
++
+ static void _rtl92du_init_operation_mode(struct ieee80211_hw *hw)
  {
  	struct rtl_priv *rtlpriv = rtl_priv(hw);
-diff --git a/drivers/net/wireless/realtek/rtlwifi/usb.h b/drivers/net/wireless/realtek/rtlwifi/usb.h
-index b873bbc9c4..a7ffff2d7c 100644
---- a/drivers/net/wireless/realtek/rtlwifi/usb.h
-+++ b/drivers/net/wireless/realtek/rtlwifi/usb.h
-@@ -7,6 +7,7 @@
- #include <linux/skbuff.h>
+@@ -712,7 +728,7 @@ int rtl92du_hw_init(struct ieee80211_hw *hw)
+ 	rtl_write_dword(rtlpriv, REG_RARFRC + 4, 0x08070605);
  
- #define RTL_RX_DESC_SIZE		24
-+#define RTL_RADIO_TAP_SIZE_RSV		32
+ 	_rtl92du_init_retry_function(hw);
+-	/* _InitUsbAggregationSetting(padapter); no aggregation for now */
++	_rtl92du_init_usb_aggregation(hw);
+ 	_rtl92du_init_operation_mode(hw);
+ 	_rtl92du_init_beacon_parameters(hw);
+ 	_rtl92du_init_ampdu_aggregation(hw);
+diff --git a/drivers/net/wireless/realtek/rtlwifi/rtl8192du/sw.c b/drivers/net/wireless/realtek/rtlwifi/rtl8192du/sw.c
+index 88e8cc590c..6b90002b69 100644
+--- a/drivers/net/wireless/realtek/rtlwifi/rtl8192du/sw.c
++++ b/drivers/net/wireless/realtek/rtlwifi/rtl8192du/sw.c
+@@ -238,7 +238,7 @@ static const struct rtl_hal_usbint_cfg rtl92du_interface_cfg = {
+ 	.rx_urb_num = 8,
+ 	.rx_max_size = 15360,
+ 	.usb_rx_hdl = NULL,
+-	.usb_rx_segregate_hdl = NULL,
++	.usb_rx_segregate_hdl = rtl92du_rx_segregate_hdl,
+ 	/* tx */
+ 	.usb_tx_cleanup = rtl92du_tx_cleanup,
+ 	.usb_tx_post_hdl = rtl92du_tx_post_hdl,
+diff --git a/drivers/net/wireless/realtek/rtlwifi/rtl8192du/trx.c b/drivers/net/wireless/realtek/rtlwifi/rtl8192du/trx.c
+index c608c51f1b..1641099368 100644
+--- a/drivers/net/wireless/realtek/rtlwifi/rtl8192du/trx.c
++++ b/drivers/net/wireless/realtek/rtlwifi/rtl8192du/trx.c
+@@ -19,6 +19,51 @@ int rtl92du_tx_post_hdl(struct ieee80211_hw *hw, struct urb *urb,
+ 	return 0;
+ }
  
- #define RTL_USB_DEVICE(vend, prod, cfg) \
- 	.match_flags = USB_DEVICE_ID_MATCH_DEVICE, \
++void rtl92du_rx_segregate_hdl(struct ieee80211_hw *hw, struct sk_buff *skb,
++			      struct sk_buff_head *queue)
++{
++	struct rtl_priv *rtlpriv = rtl_priv(hw);
++	unsigned int offset = 0, pkt_size;
++	struct sk_buff *new_skb;
++	__le32 *rxdesc;
++
++	while (skb->len - offset >= RTL_RX_DESC_SIZE) {
++		rxdesc = (__le32 *)(skb->data + offset);
++		pkt_size = RTL_RX_DESC_SIZE +
++			   get_rx_desc_drv_info_size(rxdesc) *
++			   RX_DRV_INFO_SIZE_UNIT +
++			   get_rx_desc_shift(rxdesc) +
++			   get_rx_desc_pkt_len(rxdesc);
++
++		if (get_rx_desc_pkt_len(rxdesc) == 0 ||
++		    pkt_size > skb->len - offset) {
++			rtl_dbg(rtlpriv, COMP_RECV, DBG_WARNING,
++				"bad frame at %u of %u, size %u\n",
++				offset, skb->len, pkt_size);
++			break;
++		}
++
++		/* The last frame keeps the original skb. */
++		if (ALIGN(pkt_size, RTL92DU_RX_AGG_ALIGN) >= skb->len - offset) {
++			skb_pull(skb, offset);
++			skb_trim(skb, pkt_size);
++			__skb_queue_tail(queue, skb);
++			return;
++		}
++
++		new_skb = dev_alloc_skb(pkt_size + RTL_RADIO_TAP_SIZE_RSV);
++		if (!new_skb)
++			break;
++		skb_reserve(new_skb, RTL_RADIO_TAP_SIZE_RSV);
++		skb_put_data(new_skb, rxdesc, pkt_size);
++		__skb_queue_tail(queue, new_skb);
++
++		offset += ALIGN(pkt_size, RTL92DU_RX_AGG_ALIGN);
++	}
++
++	dev_kfree_skb_any(skb);
++}
++
+ struct sk_buff *rtl92du_tx_aggregate_hdl(struct ieee80211_hw *hw,
+ 					 struct sk_buff_head *list)
+ {
+diff --git a/drivers/net/wireless/realtek/rtlwifi/rtl8192du/trx.h b/drivers/net/wireless/realtek/rtlwifi/rtl8192du/trx.h
+index 8c3d24622f..47d7d6ad8c 100644
+--- a/drivers/net/wireless/realtek/rtlwifi/rtl8192du/trx.h
++++ b/drivers/net/wireless/realtek/rtlwifi/rtl8192du/trx.h
+@@ -18,6 +18,8 @@
+ 
+ #define WMM_NORMAL_TX_TOTAL_PAGE_NUMBER			0xF5
+ 
++#define RTL92DU_RX_AGG_ALIGN				128
++
+ #define WMM_NORMAL_PAGE_NUM_PUBQ_92D			0x65
+ #define WMM_NORMAL_PAGE_NUM_HPQ_92D			0x30
+ #define WMM_NORMAL_PAGE_NUM_LPQ_92D			0x30
+@@ -56,5 +58,7 @@ struct sk_buff *rtl92du_tx_aggregate_hdl(struct ieee80211_hw *hw,
+ void rtl92du_tx_cleanup(struct ieee80211_hw *hw, struct sk_buff  *skb);
+ int rtl92du_tx_post_hdl(struct ieee80211_hw *hw, struct urb *urb,
+ 			struct sk_buff *skb);
++void rtl92du_rx_segregate_hdl(struct ieee80211_hw *hw, struct sk_buff *skb,
++			      struct sk_buff_head *queue);
+ 
+ #endif
 -- 
 2.53.0
 
