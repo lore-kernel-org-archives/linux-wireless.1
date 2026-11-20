@@ -1,99 +1,79 @@
-Authentication-Results: smtp.subspace.kernel.org; arc=pass header.oldest-pass=0 smtp.remote-ip=209.85.221.53
+Authentication-Results: smtp.subspace.kernel.org; arc=pass header.oldest-pass=0 smtp.remote-ip=100.103.45.18
 ARC-Seal: i=2; d=subspace.kernel.org; s=arc20261015; a=rsa-sha256; cv=pass;
-	t=1795159414;
-	b=W94mnJ/5W7hJO1usRWn/drHw94cWG39Vjec65+C28elnMapeMcjix4k+csQmLiPhZNf6
-	 q04N/4Sq63pzLEadstBz5dOemmcArSWtc7sumys/ro5qLCC16doLrI8jNQA0RCk3+9XfO
-	 DoO7wnf1Cka28DG+fQvOwk6W2GJypAMkfic0TPZ70OtaVkrWm4uGMc5oN7WyegCeR0R5b
-	 lI3H/u6lJfzsTjjYpSYbE1i1Vhj/KFR304plxFKtpsmd3VflaYJBUJnT4MNGO/H59gBUg
-	 09XYkUgqk31/LbQVAiekTUUl+E16i+DVGq7AxD5ecllrkPy8cogV+V9l9BLlymo91kQ==
+	t=1795161947;
+	b=a+As4N+aBm3mJY7ohFCDy5UqMeUZwDqvFLgtAkyy6SoHOUZ/1TeXINRh92GZoJC1Cnf5
+	 UExZOHPrJB3yWO9PsAe+h4bJ3OqTiW70hl/18PqVRkbY0kanBhYus0X1SkYy9kKoDtSlX
+	 mQfTxxiHETQszVbqFxQaRVDGWPyOC8y4hXmbfwkk8WaQoQ1qYu+l2WAl3wy5sGFXlN9MS
+	 BfDZeICONI7JwmfRZ9BQqsnRtf1LX312UOTGC+//OZP54pWmFWPw4F9h2BH39YPtQSJ7K
+	 x/IXm6tZ2MhB+6qzAxyzcJIw9d2W+3aa8rwcNZbT/Y6Hxl4hoiv4/K90QDr+8pCGZTQ==
 ARC-Message-Signature: i=2; d=subspace.kernel.org; s=arc20261015;
-	a=rsa-sha256; c=relaxed/relaxed; t=1795159414;
-	h=DMARC-Filter:Received:DKIM-Signature:X-Google-DKIM-Signature:
-	 X-Forwarded-Encrypted:X-Gm-Message-State:X-Gm-Gg:X-Received:
-	 MIME-Version:References:In-Reply-To:From:Date:X-Gm-Features:
-	 Message-ID:Subject:To:Cc:Content-Type;
-	bh=NOjguDHiGpliPje8lgUyj591MMGA2gJ6nq9lkIN3/BM=;
-	b=BfCCv9gIWaT6x06m+4yPQ88dL5gNuf96ELCbvEnJHOsZ96w8n5We5WNXgI47dHPVb7HC
-	 hrG84z6OKxIZuXudJr4cnnSem+QbKYww6HiVKSG7RAekxgP4cnNseCc+QMKnjInyPjxXy
-	 ilcISzmE0oJtfUr40ap54R9sZc3ApgD4ulolVfeBYrE+bROaI+4pKMSgqEjtTm6cPs4N5
-	 FF0BJCa9JQptpheAz5LW43hs34DNI4Zbnn0LPEqspllb9Hkt/F2zjvrPuDdd1FmQngayu
-	 pLh52Cd/W3eKrhriBHHEO8JW7aouXcI4eTDlVK3rtyvFtjslIE93giVeRkGgu4X/W8Q==
+	a=rsa-sha256; c=relaxed/relaxed; t=1795161947;
+	h=Received:DKIM-Signature:Received:From:Date:Subject:MIME-Version:
+	 Content-Type:Message-Id:References:In-Reply-To:To:Cc:X-Mailer:
+	 X-Developer-Signature:X-Developer-Key:X-Endpoint-Received:
+	 X-Original-From:Reply-To:Content-Transfer-Encoding;
+	bh=1CCLLifsL2Rt/fNIsbk4fz19PYiaB/uBdRSC29MqK5Y=;
+	b=p2WRjOJHiE03H9VJgCWN7IHpjn9orKU84Iq1icb59gQ68LWBm3PwizyN3oVJiT6GvIZt
+	 1Q2mcWdC4N/x98Qwz+e8Osj3Wa2wAR4bcWkQdMhEjL95DnoLf5VX32Cnh4pjqTJIZXdTH
+	 lsmdN45YTJUNEVCIdnXgl/1F2XHSluQavWZpwpEtImZOur+xBAOu8GkziBxIsj04a/g9H
+	 XfhrNZGvGpbKBexjMih6JMVHo4GbvDG05z8mKncZOyv+rLuIWL/VczLbR84tfRhqfikfQ
+	 3ZkgUqe+UMsvNXtfutwrT4Nq3i6xcnHseGqNXhwFIdSPTxJjWc3LHI8uF1ETgb3dg0g==
 ARC-Authentication-Results: i=2; smtp.subspace.kernel.org; 
-	dmarc=pass header.from=gmail.com;
-	spf=pass smtp.mailfrom=gmail.com;
-	dkim=pass header.d=gmail.com header.i=@gmail.com header.a=rsa-sha256 header.s=20260707 header.b=C0Z2a3k4;
-	arc=pass header.oldest-pass=0 smtp.remote-ip=209.85.221.53
-Received: from mail-wr1-f53.google.com (mail-wr1-f53.google.com [209.85.221.53])
-	(using TLSv1.3 with cipher TLS_AES_128_GCM_SHA256 (128/128 bits)
+	dkim=pass header.d=kernel.org header.i=@kernel.org header.a=rsa-sha256 header.s=k20260515 header.b=eYtf0b52;
+	arc=pass header.oldest-pass=0 smtp.remote-ip=100.103.45.18
+Received: from smtp.kernel.org (quasi.space.kernel.org [100.103.45.18])
+	(using TLSv1.3 with cipher TLS_AES_256_GCM_SHA384 (256/256 bits)
+	 key-exchange X25519 server-signature ECDSA (prime256v1))
+	(No client certificate requested)
+	by smtp.subspace.kernel.org (Postfix) with ESMTPS id BE6B5606A337;
+	Fri, 20 Nov 2026 08:05:47 +0000 (UTC)
+Authentication-Results: smtp.subspace.kernel.org;
+	dkim=pass (2048-bit key) header.d=kernel.org header.i=@kernel.org header.a=rsa-sha256 header.s=k20260515 header.b=eYtf0b52
+Authentication-Results: smtp.kernel.org; arc=none smtp.remote-ip=100.80.115.77
+ARC-Seal: i=1; d=kernel.org; s=arc20260519; a=rsa-sha256; cv=none;
+	t=1795161947;
+	b=M/eZaaIpP3NO38aJR6vLEXvmEUbz1XyWW6XQQHiaqcuX14uqSMTCP0TccUdH80zYfABe
+	 VPGOnU3rrNH+rgfMtj7rTgYlXLF3mVAO7Dzr/+8ZlbG6m6Dn340/M8TI+3xRGjEZTmuaw
+	 sNbh3buEBglnZqv/pDXKt/sGJEs+nP4/Q6ofVXVzgN/hywG+gqpdP3ubpTXmtsFIHopge
+	 5Vg8KJXMpx+s7aojd6dLNmjpRSPoPTVN2Df2M4wlY1cU2gQoHC7CEZwzUz71+22DvJVO0
+	 bYjzszDP7q4M3bHk/mgwJbusj76Q9ZbMgZbc0m1cBrAQ3fEZ5j3Mu1jwiXYKhLVJb6Q==
+ARC-Message-Signature: i=1; d=kernel.org; s=arc20260519; a=rsa-sha256;
+	c=relaxed/relaxed; t=1795161947;
+	h=DKIM-Signature:Received:From:Date:Subject:MIME-Version:Content-Type:
+	 Message-Id:References:In-Reply-To:To:Cc:X-Mailer:
+	 X-Developer-Signature:X-Developer-Key:X-Endpoint-Received:
+	 X-Original-From:Reply-To:Content-Transfer-Encoding;
+	bh=1CCLLifsL2Rt/fNIsbk4fz19PYiaB/uBdRSC29MqK5Y=;
+	b=uslirGbI42j2Z3NCxeEd+s/CpAHI8FLf7HeK5wmhBpMSy21//4Vb8AHIPokVYRnvWJzF
+	 XBKkV7VZnW8xL5g53j0CLSQHd2bm2agHEyWcBeA0KZAdfg5g0vR6BfFJcUaa6g3efKdWD
+	 gRD53doeCY8otr8NUlJNaq/mZ0NBKZmHbckhcrUGbmGhUwAWSZp+Mqn6wIkwMvyxIgfEu
+	 PWL6JxvfTc5yDpccM+bmetVF6pSfNCim59PhfwYABH+tkjtjX53OPUmyBRGI4CtVEUSyi
+	 5i33vX+dZxz5BQq6n9FTzOLWEAj8OuQcAKeDj1iADsRY6bPL2ROfX0fyfMYlWryZH+w==
+ARC-Authentication-Results: i=1; smtp.kernel.org; 
+	arc=none smtp.remote-ip=100.80.115.77
+Received: from lkml.kernel.org (nexus.subspace.kernel.org [100.80.115.77])
+	(using TLSv1.3 with cipher TLS_AES_256_GCM_SHA384 (256/256 bits)
 	 key-exchange X25519 server-signature ECDSA (prime256v1) server-digest SHA256)
 	(No client certificate requested)
-	by smtp.subspace.kernel.org (Postfix) with ESMTPS id 72F77606A325
-	for <linux-wireless@vger.kernel.org>; Fri, 20 Nov 2026 07:23:34 +0000 (UTC)
-DMARC-Filter: OpenDMARC Filter v1.4.2 smtp.subspace.kernel.org 72F77606A325
-Authentication-Results: smtp.subspace.kernel.org; dmarc=pass (p=none dis=none) header.from=gmail.com
-Authentication-Results: smtp.subspace.kernel.org; spf=pass smtp.mailfrom=gmail.com
-Authentication-Results: smtp.subspace.kernel.org;
-	dkim=pass (2048-bit key) header.d=gmail.com header.i=@gmail.com header.a=rsa-sha256 header.s=20260707 header.b=C0Z2a3k4
-Received: by mail-wr1-f53.google.com with SMTP id ffacd0b85a97d-498f5fa5103so271266f8f.2
-        for <linux-wireless@vger.kernel.org>; Thu, 19 Nov 2026 23:23:34 -0800 (PST)
-ARC-Seal: i=1; a=rsa-sha256; t=1795159413; cv=none;
-        d=google.com; s=arc-20260327;
-        b=CYPdl2xN5Ci4nxwbHQbngyjJsqsjFWqQjvMxq4j2ELzUDaTe32cFd7/PLTwLIofHkU
-         M14LcSpVWpUTwbTPHN3shMDiad4hJCTJDBLk7ukdeOHNYEVmo6SGIfKve0kR9azmz5iJ
-         7NMWEOO2xyX5WfOQprh4TpGoeoIQUz1pQ8k30E5Hg9AI3AlkOFixZRMHRbPiXGnXNM3L
-         fkYistZ5gTCnIQDl8HfgeBN6gIRhalLhdeZaz3aRvQb+rA2CzXFI/iWt2QAbAJCjhJoH
-         ktl8ik/8a5BpXgt/qxxjEZwjZMme2oZ9D+Rgzbm/pluT4EP3rEObND6ppCAc+cr9AQFQ
-         oP8w==
-ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=google.com; s=arc-20260327;
-        h=cc:to:subject:message-id:date:from:in-reply-to:references
-         :mime-version:dkim-signature;
-        bh=NOjguDHiGpliPje8lgUyj591MMGA2gJ6nq9lkIN3/BM=;
-        fh=fOyuiisQD+dqWdzPBk8JrDgETJ00t4YkoWf3STHISXU=;
-        b=pQBCn+jKkVt3oglCcQ2NqhC8YEUyGx6/rfUXjeDdczWsUrh56jKidSGLxmqQkXQa6H
-         SHiT2hY8Cpx5P4rJL197f90DO8Dc8LK5eNymKxedOduD+s6bGiXC+jS1d4ivsnYBwzYS
-         kU54qW3vMW9A6x6MzNvMvKOLIQoiaWiV947DK/zX0XnsuIFpUyyB1UYEsDMcZdwLF/R9
-         Ikqyhe+sXXBz6pPjyIuXnK7czEo+5nQPyPhlolItE126jYIFWn511/dR5b9LFPa9rfTC
-         iwMg0Z1y9k9EVsoQi2frBCWlAak/9W9UhTbXymkJazdJD80zS9pZsOoQNbyrHQmjv7hl
-         GhGg==;
-        darn=vger.kernel.org
-ARC-Authentication-Results: i=1; mx.google.com; arc=none
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=gmail.com; s=20260707; t=1795159413; x=1795764213; darn=vger.kernel.org;
-        h=content-type:cc:to:subject:message-id:date:from:in-reply-to
-         :references:mime-version:from:to:cc:subject:date:message-id:reply-to
-         :content-type;
-        bh=NOjguDHiGpliPje8lgUyj591MMGA2gJ6nq9lkIN3/BM=;
-        b=C0Z2a3k4h9LGR5OCECjXLMezJNKkzAAyjBN6mS26BgF0GZamujoIU8xhVlsorWEPCF
-         jDMeCNrmbUxmZLDFW1Emi9PI0jP/y90t4PwrXqwrwvq8Td4n0mK/dMxTOmSvZqhpUSzZ
-         CMan7JvHXLPvAlGubdfhqt6RvN31/Fgt+nUseWYQ76RbvUb7Njf7MirILJ7gNjLAHeZ+
-         OzxSy+wrY+yzTH3Bpu4HzrW/2tYB36XJKJnfqcmZRAhLWwyWnzowWTcFE4sLrOLYfWv7
-         N+GtzES1pHOypKwF0NL4s4YNPrJr60exo2MceoFl5jzZ+wX9Dv+fzDJXW9zft/2rqoQT
-         88Fw==
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=1e100.net; s=20260707; t=1795159413; x=1795764213;
-        h=content-type:cc:to:subject:message-id:date:from:in-reply-to
-         :references:mime-version:x-gm-gg:x-gm-message-state:from:to:cc
-         :subject:date:message-id:reply-to:content-type;
-        bh=NOjguDHiGpliPje8lgUyj591MMGA2gJ6nq9lkIN3/BM=;
-        b=G+m2NbbzcVFhQFaSlynpYCNt8jNgg9AnozHjqt8exHNP+vfkXGQTHC7pPY+btmGi/R
-         hThvPSXWW82/MRXDNmi6yESBZM3rG7d3lbz+gSKWmrnyuMX7X1Gi1z2vuS+dIkOzN5oD
-         xBBtNBfaaWU1+TpasiKoMTh4v6ZfLPjaiBxcNF3JCy1rgoSyC7POR/kfLBXnySoQ/YIh
-         SF7xEQ/UbEe1p68T/lZj7ULJCoUg4QqHzUT5sV4l8iNXKmXTu6WNO1AzwZ6HGuweESHu
-         rhAcFFr4k8A128Z2ANK0SrIpivIa6XorPWeafXKUiX2VyWpo9BH6umghVLjBgrto4Xcy
-         ntYQ==
-X-Forwarded-Encrypted: i=1; AL+hErFgaWUfEkkdI3RTY4QEMRaZcxF4fJK2a9T++UzaoUXzTGhEaa92Z58oi2iyHmSA4FzGPjprR78+b9mgtnXm3Q==@vger.kernel.org
-X-Gm-Message-State: APuU4Z/mtigsQWOIOm3/ximdATHN3Ac23Xl41ohKZrFy4TtcVxp/Alq3
-	7FijC8uu2yaTcV72cbadfwe0nNU44D4eRKHym4pqKnC8Dq6ttdWqEW9MbOgzOq5MOfZ7Xu26x4R
-	Nkc8g7qhjzjYLZmybIjBdetgjYSVcgwc=
-X-Gm-Gg: AZFdTZexGtZ2T55YKDmfVndl39v+YqfMN+yGFkyWuoMfBGjV+9qZgj1dWhb47SCEqn3
-	cVbp6eUZXzOP7tpyTyFO8EzRzQSWaduW69xbmwbDS70QO0h9RThnYpHuEUtn1FG864q03KebolA
-	Il9wEpQ298AKHUihjcPtPm+yQUhpi7blmhY4iFigPkjKuOBUQ3FNRDgn3HMs6HNewl/ViVJfSt2
-	VWPgit9XSk7zwUX05RCIgMsOs7OIJxRI3nL/aBcDh0H82qPz6RhEncp66cgw7dwvAm1PZyZzK6B
-	iu6KGvTE6eM1KLr8HM3j5hwMlKuxsMwVCkqyMB3kV/IjRyfn1NZWIOzSkHqJhEDtfKZ39fzzE5o
-	WjOYQwobTqMHsKaMVCuackT9D1jVQrgSZC153rBZ0afSSqikQHCqzl/SYaQ==
-X-Received: by 2002:a5d:5888:0:b0:490:a481:7ac8 with SMTP id
- ffacd0b85a97d-4abb532ea79mr3553673f8f.29.1795159412630; Thu, 19 Nov 2026
- 23:23:32 -0800 (PST)
+	by smtp.kernel.org (Postfix) with ESMTPS id C78131F000C4;
+	Fri, 20 Nov 2026 08:05:46 +0000 (UTC)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=kernel.org;
+	s=k20260515; t=1795161947;
+	bh=1CCLLifsL2Rt/fNIsbk4fz19PYiaB/uBdRSC29MqK5Y=;
+	h=From:Date:Subject:References:In-Reply-To:To:Cc:Reply-To;
+	b=eYtf0b52jFiOyCB6bG+MFsa+Mleqj8cResw8rScAkMFwe4oqNRZQP1KrfKnkyr1uc
+	 bWixMM9R7yJUdaV8QLTToACIdvIvyX8R+W6igG5FbY4cTCBHkE+AyaRRLs+PjNNUNR
+	 jU2OVL+iAIPFngHgvv8K8CmyI+WBEbddislSHj7/nhn3ND5h+8DXxgSSHGu/vdlVsx
+	 OCyoyUHlB/oukTyPWoS4wBdsIgxbZqFCa4kK2shjmsjSWWUt9uLy08n8rt693LZ/Wb
+	 BhS8yFzlnZEqmHWUqCttlYHZ7OmlmYcZWogGp7i2KA6Y8IqL9GM8whdmA+q8ivgu6l
+	 6Y88EZ397GUjw==
+Received: from nexus.subspace.kernel.org (localhost [IPv6:::1])
+	by lkml.kernel.org (Postfix) with ESMTP id 545854976C;
+	Fri, 20 Nov 2026 08:05:46 +0000 (UTC)
+From: Alexandre Rapaille via B4 Relay <devnull+arapaille.atlr-engineering.com@kernel.org>
+Date: Fri, 20 Nov 2026 09:05:45 +0100
+Subject: [PATCH v2 1/3] ARM: dts: qcom: msm8974: Fix WCNSS wifi interrupt
+ trigger type
 X-Mailing-List: linux-wireless@vger.kernel.org
 List-Id: <linux-wireless.vger.kernel.org>
 List-Post: <mailto:linux-wireless@vger.kernel.org>
@@ -103,50 +83,66 @@ List-Unsubscribe: <mailto:linux-wireless+unsubscribe@vger.kernel.org>
 List-Owner: <mailto:linux-wireless+owner@vger.kernel.org>
 Precedence: list
 MIME-Version: 1.0
-References: <20261119124928.1398520-1-maoyixie.tju@gmail.com> <av8osemFMD6C2EdK@lore-qca>
-In-Reply-To: <av8osemFMD6C2EdK@lore-qca>
-From: Maoyi Xie <maoyixie.tju@gmail.com>
-Date: Fri, 20 Nov 2026 15:23:21 +0800
-X-Gm-Features: Aa3M54qvLIAoTLXhSwpuxxRmvv68nNUsPxUUak29GDrjI45vtYhuyOcNNPOYrRw
-Message-ID: <CAHPEe=FFgzM3L9aiBNczg2AQ4JiG-p+eFKLemjrOMzekuBmHpg@mail.gmail.com>
-Subject: Re: [PATCH] wifi: mt76: sdio: check the RX packet length in mt76s_rx_run_queue()
-To: Lorenzo Bianconi <lorenzo@kernel.org>
-Cc: Felix Fietkau <nbd@nbd.name>, Ryder Lee <ryder.lee@mediatek.com>, 
-	Shayne Chen <shayne.chen@mediatek.com>, Sean Wang <sean.wang@mediatek.com>, 
-	Matthias Brugger <matthias.bgg@gmail.com>, 
-	AngeloGioacchino Del Regno <angelogioacchino.delregno@collabora.com>, linux-wireless@vger.kernel.org, 
-	linux-arm-kernel@lists.infradead.org, linux-mediatek@lists.infradead.org, 
-	stable@vger.kernel.org
-Content-Type: text/plain; charset="UTF-8"
+Content-Type: text/plain; charset="utf-8"
+Message-Id: <20261120-wcnss-series-v1-v2-1-3fed518decfb@atlr-engineering.com>
+References: <20261120-wcnss-series-v1-v2-0-3fed518decfb@atlr-engineering.com>
+In-Reply-To: <20261120-wcnss-series-v1-v2-0-3fed518decfb@atlr-engineering.com>
+To: Bjorn Andersson <andersson@kernel.org>, 
+ Konrad Dybcio <konradybcio@kernel.org>, Abel Vesa <abelvesa@kernel.org>, 
+ Rob Herring <robh@kernel.org>, Krzysztof Kozlowski <krzk+dt@kernel.org>, 
+ Conor Dooley <conor+dt@kernel.org>, 
+ Loic Poulain <loic.poulain@oss.qualcomm.com>, 
+ Luca Weiss <luca@lucaweiss.eu>, Eugene Krasnikov <k.eugene.e@gmail.com>
+Cc: linux-arm-msm@vger.kernel.org, devicetree@vger.kernel.org, 
+ linux-kernel@vger.kernel.org, wcn36xx@lists.infradead.org, 
+ linux-wireless@vger.kernel.org, 
+ Alexandre Rapaille <arapaille@atlr-engineering.com>, stable@vger.kernel.org, 
+ Luca Weiss <luca.weiss@fairphone.com>
+X-Mailer: b4 0.16.0
+X-Developer-Signature: v=1; a=ed25519-sha256; t=1795161947; l=1213;
+ i=arapaille@atlr-engineering.com; s=20261118; h=from:subject:message-id;
+ bh=6q+rKn/BSVI/TfNaPILBloVMSgiRR3L4xqWRbPuJa0Q=;
+ b=47cxJFlzFiTDcHUZs6zuR4YijCZcCkSb+iNkKof2I4Z7LlabC4BrCArM3sCmR109I/b5BsTSl
+ 9S67jRxwE4GAeWqfqP9n0rVGb4lc9tzsmDSVIqJNvoQe9ykzTeUYEoW
+X-Developer-Key: i=arapaille@atlr-engineering.com; a=ed25519;
+ pk=xskH/sIiNU/aZCeGeBB1TK/AuiG3MXlX0m2wMlbMl08=
+X-Endpoint-Received: by B4 Relay for
+ arapaille@atlr-engineering.com/20261118 with auth_id=1560
+X-Original-From: Alexandre Rapaille <arapaille@atlr-engineering.com>
+Reply-To: arapaille@atlr-engineering.com
+Content-Transfer-Encoding: 7bit
 
-Hi Lorenzo,
+From: Alexandre Rapaille <arapaille@atlr-engineering.com>
 
-On Thu, Nov 19, 2026 at 05:49:53PM +0100, Lorenzo Bianconi wrote:
-> I do not think this patch is correct since we actually consume just len -
-> MT_SKB_HEAD_LEN bytes at most, right? I guess we should add something similar
-> to the patch below, what do you think?
+wcn36xx requests tx/rx as IRQF_TRIGGER_HIGH, overriding this edge type, so
+the re-probe after a WCNSS restart fails ("type mismatch, failed to map
+hwirq-177") and wlan0 never returns. Use level high like other WCNSS SoCs.
 
-Thanks for looking at this.
+Fixes: c7c0edecfba8 ("ARM: dts: msm8974: Introduce the wcnss remoteproc node")
+Cc: stable@vger.kernel.org
+Reviewed-by: Luca Weiss <luca.weiss@fairphone.com>
+Signed-off-by: Alexandre Rapaille <arapaille@atlr-engineering.com>
+---
+ arch/arm/boot/dts/qcom/qcom-msm8974.dtsi | 4 ++--
+ 1 file changed, 2 insertions(+), 2 deletions(-)
 
-The fragment is len - MT_SKB_HEAD_LEN bytes, yes. But
-mt76s_build_rx_skb() first copies up to MT_SKB_HEAD_LEN bytes from buf
-into the skb head, so a frame still needs all len bytes between buf and
-end.
+diff --git a/arch/arm/boot/dts/qcom/qcom-msm8974.dtsi b/arch/arm/boot/dts/qcom/qcom-msm8974.dtsi
+index f300de74c4..b9666feb8b 100644
+--- a/arch/arm/boot/dts/qcom/qcom-msm8974.dtsi
++++ b/arch/arm/boot/dts/qcom/qcom-msm8974.dtsi
+@@ -814,8 +814,8 @@ bluetooth {
+ 					wifi {
+ 						compatible = "qcom,wcnss-wlan";
+ 
+-						interrupts = <GIC_SPI 145 IRQ_TYPE_EDGE_RISING>,
+-							     <GIC_SPI 146 IRQ_TYPE_EDGE_RISING>;
++						interrupts = <GIC_SPI 145 IRQ_TYPE_LEVEL_HIGH>,
++							     <GIC_SPI 146 IRQ_TYPE_LEVEL_HIGH>;
+ 						interrupt-names = "tx", "rx";
+ 
+ 						qcom,smem-states = <&apps_smsm 10>, <&apps_smsm 9>;
 
-> +     if (data_len > len && data_len - len > buf_len)
-> +             return NULL;
+-- 
+2.43.0
 
-The caller passes buf_len = round_up(data_len + 4, 4), so this check
-never triggers. With it applied, my harness still reports the same
-reads past the buffer.
 
-Also, rx_check() runs before mt76s_build_rx_skb(). For a TXS frame,
-mt7921_rx_check() and mt7615_rx_check() walk the records up to
-rxd + len / 4, which a check in mt76s_build_rx_skb() cannot cover.
-
-So I think we should keep the check before rx_check(), as in this
-patch. Frames that fit are not affected, and the loop already ends at
-a frame that does not fit.
-
-Thanks,
-Maoyi
