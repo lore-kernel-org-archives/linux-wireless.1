@@ -1,83 +1,83 @@
-Authentication-Results: smtp.subspace.kernel.org; arc=none smtp.remote-ip=209.85.128.47
+Authentication-Results: smtp.subspace.kernel.org; arc=none smtp.remote-ip=209.85.128.51
 ARC-Seal: i=1; d=subspace.kernel.org; s=arc20261015; a=rsa-sha256; cv=none;
-	t=1795215588;
-	b=pH9AlEi5s3f8NKRC2ZODj4cHcSOq/PO1iq3XIcrW26/b+0raDFMWTHiGXH8KKu5u/GPy
-	 vx6O/wODWxKl2z+LzcwCSGbjDlAYVW+CVGUt/8na7MP7lJKaPF+M5vGgCLlvE6Cspv7Xj
-	 4v6jEk5lZqysZtNBQn452bY6NJh6x9xx1yi9e9NYp6jj8Ij1kZxAid3jU3SP9/BxHhqdn
-	 WXJLhzHWQ8eMLgzhz7FFJc2EmeG2+LT79t3MV0NMxHhHU1vTzp+7/OIHfXbhi2zPVR6Wo
-	 AnOReDdwgWcVLVdutO0MrbSoIpEAvrvX+ukjyqkBlfDVDiuwbQYY+k+VaNGNas6tSDw==
+	t=1795215593;
+	b=ZBAVZc8udF66Snb9/ITAiU0mnAFVZCyjxjzNgqy6Ui3d2ODZDEyXf8+P8vWu7VbV/7iO
+	 pIylPdKwKbP7kD1GZf6yC3/eIi9efYgcpqGdQL3OISnzcC50c0zrj1qXI+cbLFT5BGa7H
+	 1r3oqu3mXdaa2Py0LU0t67hB0XrFIo78UGVgjy9TdysVlgk5/Dc6CF4WLUMoZhM6ib6UB
+	 d7QTQUNQOZYyozt0e2Dtdxgv22J7DcBJOlIPFMYIjcKTAoNuDui/19PfI6xbGhkk70tkD
+	 ojd6LPlSnx0cWH2YNdowHWNX/0YddR/aGNdPfCkLVFypNWDmMz06HrN/DSNzocf2VGg==
 ARC-Message-Signature: i=1; d=subspace.kernel.org; s=arc20261015;
-	a=rsa-sha256; c=relaxed/relaxed; t=1795215588;
+	a=rsa-sha256; c=relaxed/relaxed; t=1795215593;
 	h=DMARC-Filter:Received:DKIM-Signature:X-Google-DKIM-Signature:
 	 X-Forwarded-Encrypted:X-Gm-Message-State:X-Gm-Gg:X-Received:Received:
 	 From:X-Google-Original-From:To:Cc:Subject:Date:Message-ID:X-Mailer:
 	 In-Reply-To:References:MIME-Version:Content-Transfer-Encoding;
-	bh=SVSQbGh8zYpL/nm46MbvuON7rY9JKSGB3zTi9I6pqNg=;
-	b=1QsU4uRU8AXQ6yIzhDKEQDpN3qIvyngEnHDZRtYr5a+k3+MMDQkjcV/qG/lLeIUs6zge
-	 FSqsXW5ztYnT1zqVyRTMT3aJasL8owVXeyDH1x72BOu30/3QFLsmnQy8JUm7AZrhI5O0M
-	 E6b5BVjn1AhdG5F8hVNnaFcfq/Ps1PpP3LrchjF1kqGaA7HWHjS60Sm/URIQqjjaAIwCL
-	 XQegjUf8frjiig4bkh41t/+95SyRWsR4sPVz/4kSozwH9gfcQliYKOqVM2nn002vC68wb
-	 ksjL77hSYXlyuZ4EM983VkOWN+74zWgLsHXU4gUxZHzZy4/tPtlebkFeQY+1vymif8A==
+	bh=YPDsvFkr4i8FkAzmO1aMvRKcZ2VOzq57ruv3ddaJg+E=;
+	b=muwz7IosaAXEpeO8FrcR565l1zLskAr8YdUEyYQ6v9kdoyj/IkkRngLrpMea0eI2ASBW
+	 lD/Q25s1CjqIH5LhS5Mpi0p3cx3XwJ4JPTi8IoyC7HClw57sPSQH0nC3ZvWKNW6RG2Fxc
+	 zd6bFeQacaj9O122jg7cyUpiSXhaXZFu3rddRMtG36vS6I/nCQjSYJF8VgTW0mIV3bXaL
+	 io0iqQ+fOBAdzcyIXjCpQC7VpCRCVFcYtXfVWQnOwRkxm8nEJ81Dr5B0M4ZhJ1WWImv/6
+	 fIU6zohds39JxCxWoH2Fk/hQoAqzzolNroDqS4LAkcguzAkOuNEB4OoPb/fhZ2cQtfQ==
 ARC-Authentication-Results: i=1; smtp.subspace.kernel.org; 
 	dmarc=pass header.from=gmail.com;
 	spf=pass smtp.mailfrom=gmail.com;
-	dkim=pass header.d=gmail.com header.i=@gmail.com header.a=rsa-sha256 header.s=20260707 header.b=IDDwoLwM;
-	arc=none smtp.remote-ip=209.85.128.47
-Received: from mail-wm1-f47.google.com (mail-wm1-f47.google.com [209.85.128.47])
+	dkim=pass header.d=gmail.com header.i=@gmail.com header.a=rsa-sha256 header.s=20260707 header.b="Q/CunrUC";
+	arc=none smtp.remote-ip=209.85.128.51
+Received: from mail-wm1-f51.google.com (mail-wm1-f51.google.com [209.85.128.51])
 	(using TLSv1.3 with cipher TLS_AES_128_GCM_SHA256 (128/128 bits)
 	 key-exchange X25519 server-signature ECDSA (prime256v1) server-digest SHA256)
 	(No client certificate requested)
-	by smtp.subspace.kernel.org (Postfix) with ESMTPS id E7348606A69E
+	by smtp.subspace.kernel.org (Postfix) with ESMTPS id 7A76B606A69B
 	for <linux-wireless@vger.kernel.org>; Fri, 20 Nov 2026 22:59:44 +0000 (UTC)
-DMARC-Filter: OpenDMARC Filter v1.4.2 smtp.subspace.kernel.org E7348606A69E
+DMARC-Filter: OpenDMARC Filter v1.4.2 smtp.subspace.kernel.org 7A76B606A69B
 Authentication-Results: smtp.subspace.kernel.org; dmarc=pass (p=none dis=none) header.from=gmail.com
 Authentication-Results: smtp.subspace.kernel.org; spf=pass smtp.mailfrom=gmail.com
 Authentication-Results: smtp.subspace.kernel.org;
-	dkim=pass (2048-bit key) header.d=gmail.com header.i=@gmail.com header.a=rsa-sha256 header.s=20260707 header.b=IDDwoLwM
-Received: by mail-wm1-f47.google.com with SMTP id 5b1f17b1804b1-4a5177d78c7so13535825e9.2
+	dkim=pass (2048-bit key) header.d=gmail.com header.i=@gmail.com header.a=rsa-sha256 header.s=20260707 header.b=Q/CunrUC
+Received: by mail-wm1-f51.google.com with SMTP id 5b1f17b1804b1-4bb606491faso8117485e9.3
         for <linux-wireless@vger.kernel.org>; Fri, 20 Nov 2026 14:59:44 -0800 (PST)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
         d=gmail.com; s=20260707; t=1795215583; x=1795820383; darn=vger.kernel.org;
         h=content-transfer-encoding:mime-version:references:in-reply-to
          :message-id:date:subject:cc:to:from:from:to:cc:subject:date
          :message-id:reply-to:content-type;
-        bh=SVSQbGh8zYpL/nm46MbvuON7rY9JKSGB3zTi9I6pqNg=;
-        b=IDDwoLwM+AcdFg5sxUKH41H46H4Hrx2xTaUMauB/92+3oqndlAdNyVy9t5GwuvMglb
-         b3HC/oIB0sejpbWCH4y7db7Gz3mZmcoxvVZ/j0/72IVl/h3eeSZxIFE206s9ISURrZ7j
-         sFtSUsFNwkdUUe9I2k/efF9/7x/cAuzCkOGrgFutCYXSizqDerT7JVVcUKicCZJqplq9
-         XTu/glDvJg2p9abIvQDL4MS5xkBd5GM7/N2OGARPNyk1V1rozu7ScFmSPfyXCkpGsIdu
-         EEliXWfo4ZgGRALY0m/LovSoUTI1YQCXqyi/yPJgk0Y8YPsH0pfspyQT1XpWvH+5EmgR
-         4RZg==
+        bh=YPDsvFkr4i8FkAzmO1aMvRKcZ2VOzq57ruv3ddaJg+E=;
+        b=Q/CunrUCCCYy0T/k7VAhBD+gvhvoI6xzmbTMZXnbbhVp5ChLwSQfU2l7Wz0KBndhln
+         dWXqyuwyBILR2yxInR0MFYB/i7IwSYkVJBiAKVcJhRmUJ+Sqj3AIxWLjsfw0QiZolztd
+         +Jeu7N0slmqGNw0/xosPOIqYKKloP9tzBRmidT9jJoKtUvJYcaWKHM8vavk599QYsGjO
+         fj/GbtPfq4Dg8FefkuAuM1vu0MPE5amntWtjqWcLWto8vqmnVaRn19zpLfuF8m4uQqgt
+         7SagGCceJ7UTZvlhsfxATzJrSzgfltOtUM4yT8Mtd11p110Hneho5GPUP3RK3m5WMDYk
+         r0Yw==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
         d=1e100.net; s=20260707; t=1795215583; x=1795820383;
         h=content-transfer-encoding:mime-version:references:in-reply-to
          :message-id:date:subject:cc:to:from:x-gm-gg:x-gm-message-state:from
          :to:cc:subject:date:message-id:reply-to:content-type;
-        bh=SVSQbGh8zYpL/nm46MbvuON7rY9JKSGB3zTi9I6pqNg=;
-        b=AXH9DU/hQooJ/yw19ywXXQBwYe4JUPu3DOSCrA1wtp8+01j2rQv9czXM99tl8/44vY
-         m7I5We/QhAPY7YTe5bTgXZKsZmc5zQ1ZxrzkohiCX4HhJGrk0+S0CzEroMz596oVJvKb
-         pRqfFMQHTHt5cyMGqirEgB4LPgG8HoP1sdMhGaX/FkiwUlsKWlxVtbBg4zt9On5mjVeD
-         2v8NX+UT5ut6Xu5K5b8zHku9ue6tSVaUU42PSHrG0HpgP29uqzs6rKoPw2SxZ+6MW5DL
-         K/eWCEO0rWjZgS4AgGzcDYGI1zJnRSL8KJTS2V5JX8WUsErmxcPhvEMdu1ZvaRZhYYd0
-         Ea+Q==
-X-Forwarded-Encrypted: i=1; AL+hErFg6VJ8kZSxRaWBaqynAGeiI5btRJBgUpuVLy6EcfxOlyAGp5HShktv8In1s6RtjEp9uEqJmMeayWC8KHU6Qg==@vger.kernel.org
-X-Gm-Message-State: APuU4Z/lgK9UqnGOREY1D7QavWA7ayAbd2xH+Bduy0TIFyCB28S6cZzD
-	5dtJqw/zPtXeHSHrdYdPkvU/+EMXjWQAuQ4dcrLtVsLfNJkAR8fVFBg=
-X-Gm-Gg: AYBFou3yf2J8ZcrzcdW5Q7q3bNpC6sEfgkdiVibxE8+6Sq0BNDAtF8cPg4cskMujOC9
-	Jo+ksQ7eXd9U4maofAktd+jhfaPZgNlGPUezzV2md6Uvxh83DTmmFlz7U78GA4nWA+BeRMbZLZt
-	4jNHCt1K0m+rv2Ab4W2WL0lrJWIhrQ8yMN+DJ28dTn1uuNzGP6CfvSwN0m9ET/7/UV1hi+F99eg
-	+rq1Sg9WGDlirsGn5bgA0v5Md5NyAChl7jxvh7by/rHq7zXWV9+G4/H4BDwIXtri3z8PU7nSfqU
-	EY98JoAIyd3kVA3XzjkyY0hWiEgTo4k5TNfnms03Icyy42OJMuhqtuaZ+WadGL+nDBqj6C8FroA
-	1y8J+noGaFyEvIlof4Unfyu+3fD+H8uCBCB5M7LdspZDf1oZvs+wi+2rP/0866IXtabFCbektER
-	9vAjstl6Hmr9i1MyxSvkftxOzGxHpisi/9eVPa9mmlhoyhWyOoInRDUJAKKnWEXfuHJw0YQa6BK
-	+x5Wsj7IkzcX5P0OG/ItQRhcbrF+Dgs7fxmAV/o9kRgufyzHDwptscBhFdxhdseMtgvileXdWdC
-	xgsu/hB/M2OHUcvVxVX05SP9vTKX
-X-Received: by 2002:a05:600c:1548:b0:4a3:59c9:a756 with SMTP id 5b1f17b1804b1-4bb88800013mr112919255e9.6.1795215583402;
+        bh=YPDsvFkr4i8FkAzmO1aMvRKcZ2VOzq57ruv3ddaJg+E=;
+        b=NfaEvX6HoXYhkd5mzOpDDUxrovOonWJhlosLOHfEI7gavcFHLKjlqQQwITaG14dyOp
+         8bioQ/y9FqsjCqQroLZxoFjSPJSV84POzlWcUTFuO4RD6cEWe1mXW0pc3kLi25zwI2Gg
+         RjtJAJ9CCYGJTzFkYbb+x3L7gWDPGFssJzKnjKyzoEtBYl7WKSMTYO5sTzVDbze564at
+         FN/3rTopAvHGcvMRzvkLHXbo4ZljiqOHjhzu+048Dy2Wd6MrQ1Izl/PzNaZxLXKwQFIu
+         bqcF/tdWpF/Jpo6T9Y+M2eS7OwK8+zATOBrpovbgLj9SjhB1sNafjFmk/hF1KySl4B4z
+         AZ4g==
+X-Forwarded-Encrypted: i=1; AL+hErFMh9+3CGf4yTiKK5/7MSJtjOQexs3kJtzr+vNN1o8uVvxg5CmQhbDnluecqlxoeAx19Vjh4sjES2b1rtPuMQ==@vger.kernel.org
+X-Gm-Message-State: APuU4Z/nNjesFa7cdgoX9JGhtF91S93aIuXK0igVWnxLexKkQdkYL3Rj
+	ulYymHYbmV8FafZaV0Wb24SxX3J9JbslsvyJW5CKPwwwds93ILGWPtY=
+X-Gm-Gg: AYBFou3UaKM65ll65P41tNp8W3vPvgzKH0H9dEvQg1UQwvMLfAFeHAU/zfnYISoGqu8
+	K2othHeBU6P60zA7hkb4xrf2RvNFc2N4wI5ZRmuUk2cmY2DOvkEC6+WtoPozhhvqvd8688iyoJW
+	7hOsYAgLzpCerQ0wBQOMvxdLlql1mTGA85EXtx9NwYtmJsyRksRf29lq/bEs3QEvI/vcF3YW6Z1
+	R7dLhzqcnR5cSCT0VwpBZF0lCVtHgTrfxS4Hm59Vv6YdeD99iPeYZyjMr4fz5Qs6KOAZRYFi2/W
+	lS/viDH/w4PsP+c5YhHvdV3RJb91hByL7pW9DX8hqA/cMB6G7Lqg2Agw91+4sFBtDamAw/90rSu
+	IPPEPDGzJ/ueXHE6PMIj5JCl81f3un6Sxt6NEml1N5mBsju/oMkvmMCW4jNYs6intOCtvmKbkqn
+	VDCTUJZ0gii2/n0mjmI6/vgXW5z8R7HSY8PtS2+d7zzQCaxOTE9jsTv14K8ee6OjfdOA8zLHQvB
+	k6M2P6pKkhHycwLwLaIlz2K7m6//VwkTbRiMMSR4uuFCrc3gaxrp08H1VUQ9ShbPjveU94LhzHQ
+	Q3VBzoQ48p0Xf8BRGAVuBb1RR1KH
+X-Received: by 2002:a05:600c:37c6:b0:4bb:7033:c938 with SMTP id 5b1f17b1804b1-4bb888147b7mr102309785e9.14.1795215583026;
         Fri, 20 Nov 2026 14:59:43 -0800 (PST)
 Received: from localhost.localdomain ([2001:41d0:303:db6b::])
-        by smtp.gmail.com with ESMTPSA id 5b1f17b1804b1-4bb88442995sm128863475e9.2.2026.11.20.14.59.43
+        by smtp.gmail.com with ESMTPSA id 5b1f17b1804b1-4bb88442995sm128863475e9.2.2026.11.20.14.59.42
         (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
-        Fri, 20 Nov 2026 14:59:43 -0800 (PST)
+        Fri, 20 Nov 2026 14:59:42 -0800 (PST)
 From: Tristan Madani <tristmd@gmail.com>
 X-Google-Original-From: Tristan Madani <tristan@talencesecurity.com>
 To: Jeff Chen <jeff.chen_1@nxp.com>
@@ -86,9 +86,9 @@ Cc: Francesco Dolcini <francesco@dolcini.it>,
 	linux-kernel@vger.kernel.org,
 	stable@vger.kernel.org,
 	Tristan Madani <tristan@talencesecurity.com>
-Subject: [PATCH v2 wireless 2/2] wifi: nxpwifi: validate command response size against buffer length
-Date: Fri, 20 Nov 2026 22:59:33 +0000
-Message-ID: <20261120225933.1148680-3-tristan@talencesecurity.com>
+Subject: [PATCH v2 wireless 1/2] wifi: nxpwifi: validate ext_scan buf_size against event buffer length
+Date: Fri, 20 Nov 2026 22:59:32 +0000
+Message-ID: <20261120225933.1148680-2-tristan@talencesecurity.com>
 X-Mailer: git-send-email 2.47.3
 In-Reply-To: <20261120225933.1148680-1-tristan@talencesecurity.com>
 References: <20261120225933.1148680-1-tristan@talencesecurity.com>
@@ -103,50 +103,41 @@ Precedence: list
 MIME-Version: 1.0
 Content-Transfer-Encoding: 8bit
 
-nxpwifi_process_cmdresp() reads the firmware-provided resp->size field
-and passes it to individual command handlers that use it to determine
-how much data to process, but never validates it against the actual
-response buffer length. A firmware response with an inflated size
-field causes subsequent handlers to read past the buffer.
+nxpwifi_handle_event_ext_scan_report() uses the firmware-provided
+buf_size to determine how much scan response data to parse, but never
+checks it against the actual event buffer length. A firmware response
+with an inflated buf_size causes reads past the event buffer.
 
-Add a check early in command response processing that validates the
-declared response size fits within the response skb.
+Add a check that the declared buf_size plus the event header does not
+exceed the event skb length before parsing scan results.
 
 Fixes: 73b01e57ed3e ("wifi: nxp: add nxpwifi driver for IW61x")
 Cc: stable@vger.kernel.org
 Signed-off-by: Tristan Madani <tristan@talencesecurity.com>
 ---
-Changes in v2:
-- Move the response size check after timer_delete_sync() so the command
-  timer is properly cancelled before the early return (Jeff Chen)
+ drivers/net/wireless/nxp/nxpwifi/scan.c | 9 +++++++++
+ 1 file changed, 9 insertions(+)
 
- drivers/net/wireless/nxp/nxpwifi/cmdevt.c | 14 ++++++++++++++
- 1 file changed, 14 insertions(+)
-
-diff --git a/drivers/net/wireless/nxp/nxpwifi/cmdevt.c b/drivers/net/wireless/nxp/nxpwifi/cmdevt.c
-index fc1950a125b65..ebcfee8cb3872 100644
---- a/drivers/net/wireless/nxp/nxpwifi/cmdevt.c
-+++ b/drivers/net/wireless/nxp/nxpwifi/cmdevt.c
-@@ -732,6 +732,20 @@ int nxpwifi_process_cmdresp(struct nxpwifi_adapter *adapter)
- 	timer_delete_sync(&adapter->cmd_timer);
- 	clear_bit(NXPWIFI_IS_CMD_TIMEDOUT, &adapter->work_flags);
+diff --git a/drivers/net/wireless/nxp/nxpwifi/scan.c b/drivers/net/wireless/nxp/nxpwifi/scan.c
+index 4eeba6700aa72..398c3f8ec0781 100644
+--- a/drivers/net/wireless/nxp/nxpwifi/scan.c
++++ b/drivers/net/wireless/nxp/nxpwifi/scan.c
+@@ -2443,6 +2443,15 @@ int nxpwifi_handle_event_ext_scan_report(struct nxpwifi_private *priv,
+ 	u8 *scan_resp = buf + sizeof(struct nxpwifi_event_scan_result);
+ 	u16 scan_resp_size = le16_to_cpu(event_scan->buf_size);
  
-+	if (le16_to_cpu(resp->size) > adapter->curr_cmd->resp_skb->len) {
++	if (sizeof(struct nxpwifi_event_scan_result) + scan_resp_size >
++	    adapter->event_skb->len) {
 +		nxpwifi_dbg(adapter, ERROR,
-+			    "CMD_RESP: resp size %u exceeds buffer %u\n",
-+			    le16_to_cpu(resp->size),
-+			    adapter->curr_cmd->resp_skb->len);
-+		if (adapter->curr_cmd->wait_q_enabled)
-+			adapter->cmd_wait_q.status = -EINVAL;
-+		nxpwifi_recycle_cmd_node(adapter, adapter->curr_cmd);
-+		spin_lock_bh(&adapter->nxpwifi_cmd_lock);
-+		adapter->curr_cmd = NULL;
-+		spin_unlock_bh(&adapter->nxpwifi_cmd_lock);
-+		return -EINVAL;
++			    "EXT_SCAN: buf_size %u exceeds event length %u\n",
++			    scan_resp_size, adapter->event_skb->len);
++		ret = -EINVAL;
++		goto check_next_scan;
 +	}
 +
- 	if (adapter->curr_cmd->cmd_flag & CMD_F_HOSTCMD) {
- 		/* Copy original response back to response buffer */
- 		struct nxpwifi_ds_misc_cmd *hostcmd;
+ 	if (num_of_set > NXPWIFI_MAX_AP) {
+ 		nxpwifi_dbg(adapter, ERROR,
+ 			    "EXT_SCAN: Invalid number of AP returned (%d)!!\n",
 -- 
 2.47.3
+
