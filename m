@@ -1,56 +1,101 @@
-Authentication-Results: smtp.subspace.kernel.org; arc=none smtp.remote-ip=46.4.11.11
+Authentication-Results: smtp.subspace.kernel.org; arc=none smtp.remote-ip=209.85.221.43
 ARC-Seal: i=1; d=subspace.kernel.org; s=arc20261015; a=rsa-sha256; cv=none;
-	t=1795192070;
-	b=bZuP5vpged/B2rOYvIobTbnAYplHjk09DQe9ptXMdqG9UVSCl4MP7NH/D/cIjPpPREGF
-	 vNU+04wEn7nMiNs+/G1wCT4NxQB653gclSSM47zk/0b4hLwGeSTwj+awN9uykYw2mYIkL
-	 HheYHEzRLM49DivBCezoexDD3yelFtRq7o85bj7yji4+3WjPErtgJ+BJE/sGrRiJgie2O
-	 VMolJYIGpPLJh91C47tGhYUt2QFr917KTndwI73LYyb1/Q3VBa+KaI0iB6Tg5JB1VRng4
-	 amIsOgquLvdZgAAabvgcAeclib6w8HCHkTtfNFvcPBWnBov0X/FN5Qz/1F9u/Bzsk+g==
+	t=1795194119;
+	b=jyI/Qd8F3UUAyb4oN4VoU4Kw0OSTN0/0PcbunqUgUhtLOZJIHAmRsG4y6+crLkbEuW0C
+	 LiZMzuIRF3HFIJM18fEgk+FSBgWkeNCLvKGH717Cmlntiem3MiHSTPuJYWonlDEpqFSsi
+	 rC10maXdjnLrr+T5G4x/V69rYnPp+C7KqzzmanoaDDzwHd8sge3H2FMoncvjbXzSY0KJX
+	 WK5EWzqNxy0kR5nIQEbDyR7RxUii1Zw+U9vctlQNL7PomGOi02BBMMBIZzUn18byzaE0p
+	 X9mZ1LeBPs4yYuwqkfChdOLccmozgPazHDXa5b3sC6358bIIyEtmQrUBNg66aIaM9Iw==
 ARC-Message-Signature: i=1; d=subspace.kernel.org; s=arc20261015;
-	a=rsa-sha256; c=relaxed/relaxed; t=1795192070;
-	h=DMARC-Filter:DKIM-Signature:Received:Message-ID:Date:MIME-Version:
-	 User-Agent:Subject:To:References:Content-Language:From:Autocrypt:
-	 In-Reply-To:Content-Type:Content-Transfer-Encoding;
-	bh=VuNrpoEqCf2iRboSaQUiPjYdxY0fShrY35UGsZM8klQ=;
-	b=KbuDi8DTw8BYq1WlvZp1i8ua3d9c3rb3DFxtAGmOPUocbENuadLsKz51nAiSp40Ek+bk
-	 QzukqSfkumgSjWCcDccivgQndavI7fEdA0h+sPr07sZiP4GBO47DI6Si6bij8aDbqI+jD
-	 qG9A1GUCvOxJb8/8uNnsusbSCc3roV6E7sIpbHNoCpnZrsH0hW/DFqFKXeyY2hAfdEyt8
-	 enuRqZS0hcOHrFZQUaK2JEOFZDk9/n/28uctjRhzvrEsgKPm9VAvrnqCTJVEbnM/I2b0X
-	 jqhPnMiMLOq7muIYJFT5lTY64cyqH44g7a3/GF3eMCI5Rs3fj0oDLt21d3B0rTEeC6A==
+	a=rsa-sha256; c=relaxed/relaxed; t=1795194119;
+	h=DMARC-Filter:Received:DKIM-Signature:X-Google-DKIM-Signature:
+	 X-Forwarded-Encrypted:X-Gm-Message-State:X-Gm-Gg:X-Received:Received:
+	 From:To:Cc:Subject:Date:Message-ID:X-Mailer:In-Reply-To:References:
+	 MIME-Version:Content-Transfer-Encoding;
+	bh=1j3X9XK7TxGWPCUqQo1mBVdD/rjsvwmzSCwLMfVCvYQ=;
+	b=byRBVR60t1fQa6nyjZdprHzerWOwJXN+DbU/SgQcdNJjTpwBpLUSr07FSA12Qq46zN2x
+	 Big6tTdhcx55cnD6ZXCs5lyIeiZ6f9O663jHmcioa720kYHR9abODi1sZg35h43oiJZdS
+	 GMuRXLEvF+P2PWu9uwKOyfFlq4XiqYcyQ6gmhYKzkD7BepZuusIZGpOhfqMVT9yW4iQgh
+	 estrY3TAmt0nG6RxASdw4ctArWTtW7TX9hAY5RmptWorP49Ic6bL0thbox1dAPuCqR28E
+	 lq3rBsEMWkHuhnea5YgE3lEK5woDf02fafFfcLmjxCHb/Y6yqj4awji8FP6ngKDznZA==
 ARC-Authentication-Results: i=1; smtp.subspace.kernel.org; 
-	dmarc=pass header.from=nbd.name;
-	spf=pass smtp.mailfrom=nbd.name;
-	dkim=pass header.d=nbd.name header.i=@nbd.name header.a=rsa-sha256 header.s=20160729 header.b=iwvXeJD3;
-	arc=none smtp.remote-ip=46.4.11.11
-Received: from nbd.name (nbd.name [46.4.11.11])
-	(using TLSv1.3 with cipher TLS_AES_256_GCM_SHA384 (256/256 bits)
-	 key-exchange ECDHE (prime256v1) server-signature ECDSA (prime256v1) server-digest SHA256)
+	dmarc=pass header.from=gmail.com;
+	spf=pass smtp.mailfrom=gmail.com;
+	dkim=pass header.d=gmail.com header.i=@gmail.com header.a=rsa-sha256 header.s=20260707 header.b="v52Q9+/8";
+	arc=none smtp.remote-ip=209.85.221.43
+Received: from mail-wr1-f43.google.com (mail-wr1-f43.google.com [209.85.221.43])
+	(using TLSv1.3 with cipher TLS_AES_128_GCM_SHA256 (128/128 bits)
+	 key-exchange X25519 server-signature ECDSA (prime256v1) server-digest SHA256)
 	(No client certificate requested)
-	by smtp.subspace.kernel.org (Postfix) with ESMTPS id 578B3606A32A
-	for <linux-wireless@vger.kernel.org>; Fri, 20 Nov 2026 16:27:50 +0000 (UTC)
-DMARC-Filter: OpenDMARC Filter v1.4.2 smtp.subspace.kernel.org 578B3606A32A
-Authentication-Results: smtp.subspace.kernel.org; dmarc=pass (p=none dis=none) header.from=nbd.name
-Authentication-Results: smtp.subspace.kernel.org; spf=pass smtp.mailfrom=nbd.name
+	by smtp.subspace.kernel.org (Postfix) with ESMTPS id DB0B260A2602
+	for <linux-wireless@vger.kernel.org>; Fri, 20 Nov 2026 17:01:58 +0000 (UTC)
+DMARC-Filter: OpenDMARC Filter v1.4.2 smtp.subspace.kernel.org DB0B260A2602
+Authentication-Results: smtp.subspace.kernel.org; dmarc=pass (p=none dis=none) header.from=gmail.com
+Authentication-Results: smtp.subspace.kernel.org; spf=pass smtp.mailfrom=gmail.com
 Authentication-Results: smtp.subspace.kernel.org;
-	dkim=pass (1024-bit key, unprotected) header.d=nbd.name header.i=@nbd.name header.a=rsa-sha256 header.s=20160729 header.b=iwvXeJD3
-DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed; d=nbd.name;
-	s=20160729; h=Content-Transfer-Encoding:Content-Type:In-Reply-To:From:
-	References:To:Subject:MIME-Version:Date:Message-ID:Sender:Reply-To:Cc:
-	Content-ID:Content-Description:Resent-Date:Resent-From:Resent-Sender:
-	Resent-To:Resent-Cc:Resent-Message-ID:List-Id:List-Help:List-Unsubscribe:
-	List-Subscribe:List-Post:List-Owner:List-Archive;
-	bh=VuNrpoEqCf2iRboSaQUiPjYdxY0fShrY35UGsZM8klQ=; b=iwvXeJD3aCBrlSxt7u2+nRo6WI
-	jSEboxxMaJ6G1U33iNVEyPed3118A6EPrVp8wtmI923PpOqog3DhnyOXIsfPOT1iljmRSWRYPQa0a
-	jHRumIq2CNhfBh7QaXF81pRG1hTpp9HOAWchoR+v2Rsvl0xJ3kDXst9SEPSfCE4VRF9E=;
-Received: from p54a4360c.dip0.t-ipconnect.de ([84.164.54.12] helo=nf.local)
-	by ds12 with esmtpsa  (TLS1.3) tls TLS_ECDHE_RSA_WITH_AES_128_GCM_SHA256
-	(Exim 4.96)
-	(envelope-from <nbd@nbd.name>)
-	id 1xURSh-0064ND-1Q
-	for linux-wireless@vger.kernel.org;
-	Fri, 20 Nov 2026 17:27:43 +0100
-Message-ID: <c983f41c-ee0e-43e3-b578-cab9738d8da6@nbd.name>
-Date: Fri, 20 Nov 2026 17:27:43 +0100
+	dkim=pass (2048-bit key) header.d=gmail.com header.i=@gmail.com header.a=rsa-sha256 header.s=20260707 header.b=v52Q9+/8
+Received: by mail-wr1-f43.google.com with SMTP id ffacd0b85a97d-4a34ffd3e39so627042f8f.0
+        for <linux-wireless@vger.kernel.org>; Fri, 20 Nov 2026 09:01:58 -0800 (PST)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+        d=gmail.com; s=20260707; t=1795194117; x=1795798917; darn=vger.kernel.org;
+        h=content-transfer-encoding:mime-version:references:in-reply-to
+         :message-id:date:subject:cc:to:from:from:to:cc:subject:date
+         :message-id:reply-to:content-type;
+        bh=1j3X9XK7TxGWPCUqQo1mBVdD/rjsvwmzSCwLMfVCvYQ=;
+        b=v52Q9+/8Dklb6h02lKEf1SbWbT7qXj1sPUSjeRePBdYsWDrv5030oWp+fe6R+VE85r
+         Orw9/7uklJxMq0jYh6yZ6pLxbNZSH7GKfKKYwAFtGE2skG9QrgMqotXOrikTd2eYb1Lw
+         RhAHS/B8cVgqpXEwOLAeYM/I/Bk7uzb8YNH0F6d3K396nLDQDe0y9hJBS/59EsjHARJb
+         PCIdjISJLpGQ8WHicipYKBW7z+3wXaugJG8UfGpwNlidzRvV3r3J4JXdmKS2yWv2QCEq
+         QyJr2JvC4U4gStYRPGDmhOJjzshERYia5wT1Q4dvjpOI2uvXGiSg/xWadSeGbkjYFDdb
+         KzYA==
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+        d=1e100.net; s=20260707; t=1795194117; x=1795798917;
+        h=content-transfer-encoding:mime-version:references:in-reply-to
+         :message-id:date:subject:cc:to:from:x-gm-gg:x-gm-message-state:from
+         :to:cc:subject:date:message-id:reply-to:content-type;
+        bh=1j3X9XK7TxGWPCUqQo1mBVdD/rjsvwmzSCwLMfVCvYQ=;
+        b=n97fa34RkxasHvcLYnLVdnzn59UwRS7AzryGhy8UnAZTujLgGqh4NuSEjcO7j5pOX9
+         yhR/KhD9zfYFtCCxplviRfS1c4LLXcDcSd5Xuf7pZJzh9ekLSzo/DYWC0o4kUvmWusXB
+         u7jbqb8Kfkt0IJGnyrGbfaqO7FZ3Z4bBLnnFC5u4VVvJUkon2JvWvSej+3FJHSt+BFR+
+         posuEN6wg63RTVGFn9sBZ9SUf9Z7NSXWiIA+593qsKXuGBD1nJgLzCCz56fPcxtCvDFk
+         /4tdYZ1kxEE07lMj2hl9xbesNeY/6eULKno3Bos/70arkIXp6HERtvgcbxYV15TwvpoO
+         EPQA==
+X-Forwarded-Encrypted: i=1; AL+hErHzS/jP4rD9cJ0I93PEQUPLmGG+Qwj2F7llzSX3gWND5/TYjlzcSuEQVzEzD58zl8AmqKEnkyfTKYvGrwKU1Q==@vger.kernel.org
+X-Gm-Message-State: APuU4Z9S3HbvsoDe9UKAsd+eBsWqLHjJ5vUvo8z1zfb6mWwrMvWg9O9p
+	6pzJCugd1kyarV+PC4IUgyFUU+XOHhV+VHURwzMzCDtdiN2k+51MDH9W
+X-Gm-Gg: AYBFou2SeR9QaSIX4mUalMcwBxFfZhDsGKACZxIbNKLxgeIDYELjO59gr/T0ToUVi8q
+	lW0b5xBbcN9BgydLlO8YmtClItHDhz9Nds27ikOqjUoCwcy2QVjPGdlyAFqkeksVcGPJKM5WIYQ
+	YH7Tm1uAo0E1nnCandGUMiOH4OjMh8SazJgQxFf9SYCgFYIaqINjR8WtTsuJ6uDdi/VFSRIuyKS
+	UAJkxeICyMWELHvM40OmqHJ2QLTBuYN5g4+OIRbzzPybhdh+Fou7PBRSb71Prt6lD3VpgZIkwYc
+	i/3HZDSAJ3Mm8bbSlw8U+8N8/9hEpc4H/l5jU7H6Kq20pCCrMVluhl4F4rbEUrH4DdvmPH+PyZb
+	MWYQJvqyG7pYoFBJXWqrd1o3oykHCXHxKPv/f2/gppniwdVwN3UGRpnyybil3LQzvtuMXxdsXsE
+	4jtePDbbFQSUMAhlct84XbEZQhxRQMn4hvkQ4Nxm9Arh9/dPwKzoLlVTvXU0e+3TiGBgjEz/1Kl
+	Qn7D+ftOPDY6s88//5FmzK6CShVSYTFEdiPCTwDDGdtFCdbHOyA6wOOAmKDWtGYidCRH/Nehoj+
+	8RdH9yAAbn0FrWEiG+V5y0a4kIBfH5CX+Nw=
+X-Received: by 2002:a05:600c:530f:b0:4bb:68b9:f615 with SMTP id 5b1f17b1804b1-4bb88810b22mr81948685e9.17.1795194117022;
+        Fri, 20 Nov 2026 09:01:57 -0800 (PST)
+Received: from deb05.proceq.com ([213.160.61.66])
+        by smtp.gmail.com with ESMTPSA id 5b1f17b1804b1-4bb8538b3a7sm146540045e9.3.2026.11.20.09.01.55
+        (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
+        Fri, 20 Nov 2026 09:01:55 -0800 (PST)
+From: Mehmet Fide <mehmet.fide@gmail.com>
+To: Luka Gejak <luka.gejak@linux.dev>,
+	Zong-Zhe Yang <kevin_yang@realtek.com>
+Cc: Ping-Ke Shih <pkshih@realtek.com>,
+	Tzu-En Huang <tehuang@realtek.com>,
+	Yan-Hsuan Chuang <yhchuang@realtek.com>,
+	Kalle Valo <kvalo@kernel.org>,
+	Stanislaw Gruszka <sgruszka@redhat.com>,
+	Brian Norris <briannorris@chromium.org>,
+	linux-wireless@vger.kernel.org,
+	linux-kernel@vger.kernel.org,
+	mehmet.fide@screeningeagle.com
+Subject: Re: [PATCH rtw-next v3 1/5] wifi: rtw88: free the reserved pages of an interface on firmware recovery
+Date: Fri, 20 Nov 2026 18:01:54 +0100
+Message-ID: <20261120170154.374502-1-mehmet.fide@gmail.com>
+X-Mailer: git-send-email 2.56.0
+In-Reply-To: <20261120131000.33858-1-luka.gejak@linux.dev>
+References: 
 X-Mailing-List: linux-wireless@vger.kernel.org
 List-Id: <linux-wireless.vger.kernel.org>
 List-Post: <mailto:linux-wireless@vger.kernel.org>
@@ -60,49 +105,30 @@ List-Unsubscribe: <mailto:linux-wireless+unsubscribe@vger.kernel.org>
 List-Owner: <mailto:linux-wireless+owner@vger.kernel.org>
 Precedence: list
 MIME-Version: 1.0
-User-Agent: Mozilla Thunderbird
-Subject: Re: [PATCH wireless] wifi: mt76: mt7921: let monitors see other
- stations' unicast
-To: linux-wireless@vger.kernel.org
-References: <20261026220346.601314-1-lucid_duck@justthetip.ca>
-Content-Language: en-US
-From: Felix Fietkau <nbd@nbd.name>
-Autocrypt: addr=nbd@nbd.name; keydata=
- xsDiBEah5CcRBADIY7pu4LIv3jBlyQ/2u87iIZGe6f0f8pyB4UjzfJNXhJb8JylYYRzIOSxh
- ExKsdLCnJqsG1PY1mqTtoG8sONpwsHr2oJ4itjcGHfn5NJSUGTbtbbxLro13tHkGFCoCr4Z5
- Pv+XRgiANSpYlIigiMbOkide6wbggQK32tC20QxUIwCg4k6dtV/4kwEeiOUfErq00TVqIiEE
- AKcUi4taOuh/PQWx/Ujjl/P1LfJXqLKRPa8PwD4j2yjoc9l+7LptSxJThL9KSu6gtXQjcoR2
- vCK0OeYJhgO4kYMI78h1TSaxmtImEAnjFPYJYVsxrhay92jisYc7z5R/76AaELfF6RCjjGeP
- wdalulG+erWju710Bif7E1yjYVWeA/9Wd1lsOmx6uwwYgNqoFtcAunDaMKi9xVQW18FsUusM
- TdRvTZLBpoUAy+MajAL+R73TwLq3LnKpIcCwftyQXK5pEDKq57OhxJVv1Q8XkA9Dn1SBOjNB
- l25vJDFAT9ntp9THeDD2fv15yk4EKpWhu4H00/YX8KkhFsrtUs69+vZQwc0cRmVsaXggRmll
- dGthdSA8bmJkQG5iZC5uYW1lPsJgBBMRAgAgBQJGoeQnAhsjBgsJCAcDAgQVAggDBBYCAwEC
- HgECF4AACgkQ130UHQKnbvXsvgCgjsAIIOsY7xZ8VcSm7NABpi91yTMAniMMmH7FRenEAYMa
- VrwYTIThkTlQzsFNBEah5FQQCACMIep/hTzgPZ9HbCTKm9xN4bZX0JjrqjFem1Nxf3MBM5vN
- CYGBn8F4sGIzPmLhl4xFeq3k5irVg/YvxSDbQN6NJv8o+tP6zsMeWX2JjtV0P4aDIN1pK2/w
- VxcicArw0VYdv2ZCarccFBgH2a6GjswqlCqVM3gNIMI8ikzenKcso8YErGGiKYeMEZLwHaxE
- Y7mTPuOTrWL8uWWRL5mVjhZEVvDez6em/OYvzBwbkhImrryF29e3Po2cfY2n7EKjjr3/141K
- DHBBdgXlPNfDwROnA5ugjjEBjwkwBQqPpDA7AYPvpHh5vLbZnVGu5CwG7NAsrb2isRmjYoqk
- wu++3117AAMFB/9S0Sj7qFFQcD4laADVsabTpNNpaV4wAgVTRHKV/kC9luItzwDnUcsZUPdQ
- f3MueRJ3jIHU0UmRBG3uQftqbZJj3ikhnfvyLmkCNe+/hXhPu9sGvXyi2D4vszICvc1KL4RD
- aLSrOsROx22eZ26KqcW4ny7+va2FnvjsZgI8h4sDmaLzKczVRIiLITiMpLFEU/VoSv0m1F4B
- FtRgoiyjFzigWG0MsTdAN6FJzGh4mWWGIlE7o5JraNhnTd+yTUIPtw3ym6l8P+gbvfoZida0
- TspgwBWLnXQvP5EDvlZnNaKa/3oBes6z0QdaSOwZCRA3QSLHBwtgUsrT6RxRSweLrcabwkkE
- GBECAAkFAkah5FQCGwwACgkQ130UHQKnbvW2GgCeMncXpbbWNT2AtoAYICrKyX5R3iMAoMhw
- cL98efvrjdstUfTCP2pfetyN
-In-Reply-To: <20261026220346.601314-1-lucid_duck@justthetip.ca>
-Content-Type: text/plain; charset=UTF-8; format=flowed
-Content-Transfer-Encoding: 7bit
+Content-Transfer-Encoding: 8bit
 
-On 26.10.26 23:03, Devin Wittmayer wrote:
-> After an mt7921 has scanned or connected, its firmware drops unicast
-> frames meant for other stations even with the sniffer on. A monitor
-> then gets the AP's beacons but none of the unicast between the AP and
-> its clients, so it never catches a handshake.
-> 
-> Clear that filter whenever the sniffer is enabled.
-Does the filter get set again when monitor mode is disabled?
+Hi Luka,
 
-Thanks,
+> Could this skip a download that WoWLAN needs? If suspend flushes the
+> recovery work while it holds RTNL, ieee80211_restart_work() cannot add
+> the interfaces back before rtw_wow_suspend() runs.
 
-- Felix
+Yes. On an RTL8822CE with net detect configured, a firmware crash
+forced right before suspend made rtw_wow_suspend() run with no port in
+use. The download was skipped and the driver logged "failed to get
+probe_req rsvd loc".
+
+> I think the empty list warning can still happen with AP and station
+> interfaces on the RTL8822C.
+
+It can. With the window widened by a test build, a station interface
+brought up during the recovery got port 0, and a queued beacon update
+then hit "Should not have an empty reserved page".
+
+v4 follows Zong-Zhe's suggestion: the reset no longer frees the pages,
+rtw_ops_add_interface() frees the old pages of an interface that was
+already initialized, and both port checks go away. The lists then stay
+filled through the recovery, and the TIM update you raised on v2 is
+not skipped. I will run both tests above again on v4.
+
+Mehmet
