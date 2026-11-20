@@ -1,96 +1,62 @@
-Authentication-Results: smtp.subspace.kernel.org; arc=none smtp.remote-ip=209.85.221.53
+Authentication-Results: smtp.subspace.kernel.org; arc=none smtp.remote-ip=100.103.45.18
 ARC-Seal: i=1; d=subspace.kernel.org; s=arc20261015; a=rsa-sha256; cv=none;
-	t=1795194227;
-	b=JTYRKFFAAfhPmQaZ1VgCViGn9dbhnnMyBOv8/hQAtWBcTNzAIZcyKWIumCREpWJI445E
-	 vZfr73SJM1sTBJX/+8lXlFoGNOUNoclR4KvAe/RwIQaW5ksY9ixYmLgK8WWDh8xozLTYj
-	 Xj2lmuyAnFrMFZMq2AgNiTZ4foik3mP886GLb7vRSXSUqEnZLHOMxgNODX0LOOuUgS9V7
-	 SOnbwc/CA5X58b2u+jPxQul6kAFgNoObdsGmXbkSB1Z8tC35+uIOeon2nTpW+tYdS43F3
-	 iwg6V9/GmUfeHHZWxNaD2zmINm3NTMMz6DzBY8zOh9nx1uTh4HmlY/RtWOglAMN2HTw==
+	t=1795194446;
+	b=R0MOTJFYkiAr/uLclSHVF4xaXs9yBwfoPev9y6L32P0BREoGOjN5IwYPwZ8ypAx2oTrk
+	 B2qu3hl/USE+4DIGXUDoYujV+zsEG6uu84LLrFJjrj8xI8Ytu0WXkDqlZoKbIUAk59vMh
+	 gWiv9kDwEQ6pS/sKP/HZyx8ujm9UMGLS0qEaI98NIdZIEblmqkxoM318SUvlcbBg2WVfH
+	 grKOwzrKzjItlEYnGqnTBMNlk4XI/9fttgd+znT3Cxe8UA5TfY7fXLOsrtyi1XVuTwdMv
+	 X/hFnVh2uiy3WXh/GTC6ZEqYwhbhYIZeIOJemW48KGFlFBqZtyJO8r+ed2nVsNWvafA==
 ARC-Message-Signature: i=1; d=subspace.kernel.org; s=arc20261015;
-	a=rsa-sha256; c=relaxed/relaxed; t=1795194227;
-	h=DMARC-Filter:Received:DKIM-Signature:X-Google-DKIM-Signature:
-	 X-Forwarded-Encrypted:X-Gm-Message-State:X-Gm-Gg:X-Received:Received:
-	 From:To:Cc:Subject:Date:Message-ID:X-Mailer:In-Reply-To:References:
-	 MIME-Version:Content-Transfer-Encoding;
-	bh=JTH1xnpcvnrctSSv/KSrYetey6/zuHKQ0nr2UJcfCNM=;
-	b=GRbsH3hw0DFJ2R1WwlIAdDNPqx83vmE1WhNHRuJhsXdp65YW1kcNRFK+W9aZ2Fxo8a/S
-	 PvwHjVF737HRFGWj3p9ZS+a/RT72VVYpetNc4fIDCjYviTe37XTOHHBiPp1fjWYcQWhsS
-	 QGbqZVqcQMN7Un1agpldsLzkmvbCMT/gOUbIPrHCCm8YF/Zxofki92Dr7wkvXzvyeEFPV
-	 O/Ubmh/3sGsr0jPuRuodW96ySWWJH1KfvHygbRqblhWeAC4tHNdIbQzWABALvjPpxaXFA
-	 ktOo/OjqTkAmxeSdeGCb/Hci6Otk3osP3DN6NC1JzQvnR2F+siL9hmnmZdsNPbcWKfw==
+	a=rsa-sha256; c=relaxed/relaxed; t=1795194446;
+	h=Received:DKIM-Signature:Date:From:To:Cc:Subject:Message-ID:
+	 MIME-Version:Content-Type:Content-Disposition:In-Reply-To;
+	bh=phOjL0w+VRiN+NhcbEJ2zR/nluvM+fUE8X10MN17x2s=;
+	b=DFXJxo0/TI516+v1EHThjtzB9vp27iTZsyvdV4LW1OAsUZg0AKUxkdIMGGxTpVsefGzM
+	 QBe7LGGlIt5A9PDuD9E0bB2SxtvBR40oDaVvRzWCLFWPnkslxHLbxMGJBGBkoB1Qyy91h
+	 Bd582gRYBpphKFFSusJb2PTYTYKjtUDJr4BG2COMyqhe5hKAIfprb+2U9fkIpz/gK9r37
+	 dyw5eZjComai3NOcktgph0IoB9AXm296/oWozreCVOHqBq9IVXZB85p629CbKNCVJ62v2
+	 ZyJKwEcTvH3dmWxqWuWFJ/QbpeycJEYMmfyZGpuSfON7bg1BCN/7Z/ljV72nkvao6AQ==
 ARC-Authentication-Results: i=1; smtp.subspace.kernel.org; 
-	dmarc=pass header.from=gmail.com;
-	spf=pass smtp.mailfrom=gmail.com;
-	dkim=pass header.d=gmail.com header.i=@gmail.com header.a=rsa-sha256 header.s=20260707 header.b=FEoHfiAe;
-	arc=none smtp.remote-ip=209.85.221.53
-Received: from mail-wr1-f53.google.com (mail-wr1-f53.google.com [209.85.221.53])
-	(using TLSv1.3 with cipher TLS_AES_128_GCM_SHA256 (128/128 bits)
-	 key-exchange X25519 server-signature ECDSA (prime256v1) server-digest SHA256)
+	dkim=pass header.d=kernel.org header.i=@kernel.org header.a=rsa-sha256 header.s=k20260515 header.b=Da7eOPDc;
+	arc=none smtp.remote-ip=100.103.45.18
+Received: from smtp.kernel.org (quasi.space.kernel.org [100.103.45.18])
+	(using TLSv1.3 with cipher TLS_AES_256_GCM_SHA384 (256/256 bits)
+	 key-exchange X25519 server-signature ECDSA (prime256v1))
 	(No client certificate requested)
-	by smtp.subspace.kernel.org (Postfix) with ESMTPS id 316C2606A325
-	for <linux-wireless@vger.kernel.org>; Fri, 20 Nov 2026 17:03:46 +0000 (UTC)
-DMARC-Filter: OpenDMARC Filter v1.4.2 smtp.subspace.kernel.org 316C2606A325
-Authentication-Results: smtp.subspace.kernel.org; dmarc=pass (p=none dis=none) header.from=gmail.com
-Authentication-Results: smtp.subspace.kernel.org; spf=pass smtp.mailfrom=gmail.com
+	by smtp.subspace.kernel.org (Postfix) with ESMTPS id 28AA0606A320;
+	Fri, 20 Nov 2026 17:07:26 +0000 (UTC)
 Authentication-Results: smtp.subspace.kernel.org;
-	dkim=pass (2048-bit key) header.d=gmail.com header.i=@gmail.com header.a=rsa-sha256 header.s=20260707 header.b=FEoHfiAe
-Received: by mail-wr1-f53.google.com with SMTP id ffacd0b85a97d-492690dd5daso824258f8f.1
-        for <linux-wireless@vger.kernel.org>; Fri, 20 Nov 2026 09:03:46 -0800 (PST)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=gmail.com; s=20260707; t=1795194225; x=1795799025; darn=vger.kernel.org;
-        h=content-transfer-encoding:mime-version:references:in-reply-to
-         :message-id:date:subject:cc:to:from:from:to:cc:subject:date
-         :message-id:reply-to:content-type;
-        bh=JTH1xnpcvnrctSSv/KSrYetey6/zuHKQ0nr2UJcfCNM=;
-        b=FEoHfiAeXbTKoKcTTWjrudkgxZzqoFkjZFkDIve6OKHhNkR8t40F0+k7OmcIhmDvBB
-         0LsZw9KCH8472aTWAt1Ca31aHng6zbhHJW80OH38qQkR8IX0gOY6J00MtxCZ3hTo7R6/
-         SkON/RnTrD6W2StjPTcHVS8puS7NiW/uiYWuSlK5+CSYoqmhDLBIcGULW0SOcyzRRQVm
-         fvnBCaGDpZzqwN6pU4tCU4TpbW/FN+Hku6/x0SSQTwl8ZMXF4W9VqsSH6h7PgGlJEr1t
-         +tYTTPHWpKKXL8hdH+0wpWVIqGqR4JGAWVLG6uvgukfFeOUi4rN90EkVHAl9B1xugkia
-         Mb3Q==
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=1e100.net; s=20260707; t=1795194225; x=1795799025;
-        h=content-transfer-encoding:mime-version:references:in-reply-to
-         :message-id:date:subject:cc:to:from:x-gm-gg:x-gm-message-state:from
-         :to:cc:subject:date:message-id:reply-to:content-type;
-        bh=JTH1xnpcvnrctSSv/KSrYetey6/zuHKQ0nr2UJcfCNM=;
-        b=1IDrnhD7AASGJks+q5nYdlO0zQArT6KGhHHxZHbjU5vjQ/oIswPegtdtxzOpXNgxn/
-         6HdmNrjueU7JDsG9uSaWPhrV0oefKPhcyFlXT9hAkhVioZDCPIn9G3sXhs/etTTFspr0
-         59UK8vpciaS8151J0mtwc7Zk6WaPvRXGSQDmWF1pHSPUncjvLjorxz5SuJYITRPIhLUX
-         9Ai6zodLdQzeUTcenud0GOe7MPPg+acMkr+IUK8ZH+4cXsTVo2DAylbLmYUlzmE/w0vM
-         BEVY9T/in70QXhi9+QpwG7+CM6ax2n4o4ZxH/9jgfONPeQeGakv0AMMaq79GcidpAJQ1
-         F7dg==
-X-Forwarded-Encrypted: i=1; AL+hErFoqM6+zXn+6S6ypWWK0DgEoYXlumn8ZuKxhWscs7EATmxYFAiZQnbQUdWxQXbsbGecI5N/bzKEe2NvWDDOyA==@vger.kernel.org
-X-Gm-Message-State: APuU4Z8BzYLHS43G0MZurl6WXE86ASSZjEin7QIOxefkp8W+6wGen79J
-	wGS7J/1YifftSSvtCY6RSeikqiXH++tWfbISE9dftBThPyIal1GEzM/G
-X-Gm-Gg: AYBFou3vAKnOTfF5XNtC5mTTEKPh9PWuZ+uw0O7z/3C/D7sv2CmPLtEaZRd9ZsgQRPW
-	W1CD2948AdEIDvi97h5VstsXGLJ0sljyz1JGVaeQSNWW9CO/UAnqx1qpQ5ZxDWXHwRYaZipLHie
-	n6W/TW4rUpjfvKARjxeLAp8zD1ESC1+MucQZDhNj5gtrUsAPtdYsNPKHVJJCNiTPGoukeDPZBFG
-	HBZJQinBZO64s+x/v0FBjmoIt0xo8069zvEsV7BU7qRZommSgyePQre6NqJ2vgRZzxFrEXdK5Tn
-	+TDk0brG22qRUgA5yTEmXn28vRUjgx1H1VBGvKWIoLgiMK71Wh0EMXhRB32Paatm6Is//RKEfTO
-	yvHxYre5JisitAJmhN6ID2xnDXhVJ2G7Ss/saGbHUzG+/NB0N9UDtM78hqVK7+RUEKfXag/Q6GX
-	6RXnfpSsc/peCjpZCktd6EWBHpPNF124sr1lap74I/Ge9mszzsDumDEoEpTHWrVtFPeQoHgkjfF
-	g9xGxJBH+LnolAIgUE7KAGlBq18jGtRoVmCVA169G39np1WL7SBFKgBggfqaEqdZUwrItLfAViV
-	rbAXjI3RAH3Ugv7ZI3rLuB3yGEGjuXTbxYE=
-X-Received: by 2002:a05:600c:a09:b0:4a2:1a:a129 with SMTP id 5b1f17b1804b1-4bb88829115mr82707195e9.35.1795194225495;
-        Fri, 20 Nov 2026 09:03:45 -0800 (PST)
-Received: from deb05.proceq.com ([213.160.61.66])
-        by smtp.gmail.com with ESMTPSA id 5b1f17b1804b1-4bb88402ce9sm79704635e9.0.2026.11.20.09.03.44
-        (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
-        Fri, 20 Nov 2026 09:03:45 -0800 (PST)
-From: Mehmet Fide <mehmet.fide@gmail.com>
-To: Luka Gejak <luka.gejak@linux.dev>,
-	Ping-Ke Shih <pkshih@realtek.com>
-Cc: Bitterblue Smith <rtl8821cerfe2@gmail.com>,
-	linux-wireless@vger.kernel.org,
-	linux-kernel@vger.kernel.org,
-	mehmet.fide@screeningeagle.com
-Subject: Re: [PATCH rtw-next v13 3/3] wifi: rtw88: time the countdown downloads from the TBTT
-Date: Fri, 20 Nov 2026 18:03:44 +0100
-Message-ID: <20261120170344.375569-1-mehmet.fide@gmail.com>
-X-Mailer: git-send-email 2.56.0
-In-Reply-To: <20261120141554.68116-2-luka.gejak@linux.dev>
-References: 
+	dkim=pass (2048-bit key) header.d=kernel.org header.i=@kernel.org header.a=rsa-sha256 header.s=k20260515 header.b=Da7eOPDc
+Received: by smtp.kernel.org (Postfix) with ESMTPSA id 8EB201F000C6;
+	Fri, 20 Nov 2026 17:07:25 +0000 (UTC)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=kernel.org;
+	s=k20260515; t=1795194445;
+	bh=phOjL0w+VRiN+NhcbEJ2zR/nluvM+fUE8X10MN17x2s=;
+	h=Date:From:To:Cc:Subject:In-Reply-To;
+	b=Da7eOPDchXz2Kj3exn9wy+clU1mj33INfXEXB8ylea+f2OvZrSHNdgtxpKwQNSSWW
+	 uAKHXidzc7d6LAMV4oYvljXMhyLCRT47HEQQMcYSbPz+1kttrMdd6G4v5wfZ0UITVf
+	 eOwBtH8Ln/DwSgxnQXZZWDDRnRP71OSc8sj9DOvH6Xq+vshEZBlk8wZ7CTSBJcSKV4
+	 WVK1ntZnq/5L02Vzle4vy0CzpF0qoupHIkEObrEwm/dni7AFXPiO472N+R5j94qF94
+	 gmo7zhl5IS9PMk39p/O5BzH9813fi2RGInHrUjBUY8cU3q5KRgRUZJNQARg/1HBz4f
+	 c7wxZc87suYPA==
+Date: Fri, 20 Nov 2026 11:07:24 -0600
+From: Bjorn Helgaas <helgaas@kernel.org>
+To: Krishna Chaitanya Chundru <krishna.chundru@oss.qualcomm.com>
+Cc: Bjorn Helgaas <bhelgaas@google.com>,
+	Ilpo =?utf-8?B?SsOkcnZpbmVu?= <ilpo.jarvinen@linux.intel.com>,
+	Jingoo Han <jingoohan1@gmail.com>,
+	Lorenzo Pieralisi <lpieralisi@kernel.org>,
+	Rob Herring <robh@kernel.org>, Jeff Johnson <jjohnson@kernel.org>,
+	Bartosz Golaszewski <brgl@bgdev.pl>,
+	Manivannan Sadhasivam <mani@kernel.org>,
+	Krzysztof =?utf-8?Q?Wilczy=C5=84ski?= <kwilczynski@kernel.org>,
+	linux-pci@vger.kernel.org, linux-kernel@vger.kernel.org,
+	linux-arm-msm@vger.kernel.org, mhi@lists.linux.dev,
+	linux-wireless@vger.kernel.org, ath11k@lists.infradead.org,
+	qiang.yu@oss.qualcomm.com, Val Packett <val@packett.cool>
+Subject: Re: [PATCH v6 1/7] PCI/bwctrl: Set host bridge OPP and optionally
+ disable ASPM around link retraining
+Message-ID: <20261120170724.GA889135@bhelgaas>
 X-Mailing-List: linux-wireless@vger.kernel.org
 List-Id: <linux-wireless.vger.kernel.org>
 List-Post: <mailto:linux-wireless@vger.kernel.org>
@@ -100,15 +66,184 @@ List-Unsubscribe: <mailto:linux-wireless+unsubscribe@vger.kernel.org>
 List-Owner: <mailto:linux-wireless+owner@vger.kernel.org>
 Precedence: list
 MIME-Version: 1.0
-Content-Transfer-Encoding: 8bit
+Content-Type: text/plain; charset=us-ascii
+Content-Disposition: inline
+In-Reply-To: <20261119-bwscale-v6-1-9a9a715fcb46@oss.qualcomm.com>
 
-Hi Luka,
+On Thu, Nov 19, 2026 at 06:26:33PM +0530, Krishna Chaitanya Chundru wrote:
+> PCIe host bridge devices may need their operating point raised before
+> retraining to a higher link speed so that hardware resources (e.g., RPMh
+> votes on Qualcomm platforms) are available at the requested data rate.
+> After retraining, the operating point must be updated to reflect the
+> actual negotiated speed.
+> 
+> Add pcie_set_opp() to look up an OPP on the host bridge parent device
+> using a key of (total link rate in kHz, LNKCTL2 Target Link Speed
+> level). The total link rate is the per-lane rate multiplied by the
+> link width, so that OPP tables can carry separate entries per generation
+> and width, e.g. Gen 3 x1 and Gen 3 x2.
+> 
+> In pcie_set_target_speed(), call pcie_set_opp() before retraining only
+> when upscaling (speed_req > cur_bus_speed), since only raising the
+> operating point requires pre-staging hardware.  After retraining, call
+> pcie_set_opp() unconditionally with the actual cur_bus_speed to settle
+> the votes.  Both calls are skipped for downstream ports of PCIe switches,
+> as those are outside the host controller's scope.
+> 
+> Some controllers also require ASPM to be disabled around link retraining.
+> Add a disable_aspm_for_retrain flag to pci_host_bridge; when set,
+> pcie_set_target_speed() saves the child device's ASPM state, disables
+> all ASPM link states before retraining, and restores them afterward. The
+> child device is used because the ASPM core ignores requests made on the
+> Root Port itself and configures the link through its downstream device.
+> The states are restored with pci_force_enable_link_state(), as a
+> plain enable does not undo pci_disable_link_state().
 
-> Does the short interval case need a smaller margin here as well?
+This ASPM part looks like it should be split into a separate patch.
+Apparently the ASPM retrain issue is controller errata, not PCIe spec
+behavior, so it should be separated and described that way.
 
-Yes. With a beacon interval of 19 TU and a count of 10, counts went out
-two to four times each in all three runs. At 100 TU each count went out
-once. v14 will size the margin to the beacon interval in the queue and
-hold paths, and I will repeat the 19 TU test with it.
+> Signed-off-by: Krishna Chaitanya Chundru <krishna.chundru@oss.qualcomm.com>
+> Tested-by: Val Packett <val@packett.cool> # x1e80100-dell-latitude-7455
+> ---
+>  drivers/pci/pcie/bwctrl.c | 65 ++++++++++++++++++++++++++++++++++++++++++++++-
+>  include/linux/pci.h       |  1 +
+>  2 files changed, 65 insertions(+), 1 deletion(-)
+> 
+> diff --git a/drivers/pci/pcie/bwctrl.c b/drivers/pci/pcie/bwctrl.c
+> index 3b1122461ffd..c1e749df5bbe 100644
+> --- a/drivers/pci/pcie/bwctrl.c
+> +++ b/drivers/pci/pcie/bwctrl.c
+> @@ -28,9 +28,11 @@
+>  #include <linux/mutex.h>
+>  #include <linux/pci.h>
+>  #include <linux/pci-bwctrl.h>
+> +#include <linux/pm_opp.h>
+>  #include <linux/rwsem.h>
+>  #include <linux/slab.h>
+>  #include <linux/types.h>
+> +#include <linux/units.h>
+>  
+>  #include "../pci.h"
+>  #include "portdrv.h"
+> @@ -98,6 +100,37 @@ static int pcie_bwctrl_change_speed(struct pci_dev *port, u16 target_speed, bool
+>  	return pcie_retrain_link(port, use_lt);
+>  }
+>  
+> +static int pcie_set_opp(struct pci_dev *pdev, struct pci_host_bridge *host,
+> +			enum pci_bus_speed speed)
+> +{
+> +	struct device *dev = host->dev.parent;
+> +	struct dev_pm_opp_key key = {};
+> +	int ret, freq_mbps, width;
+> +	unsigned long freq_kbps;
+> +	struct dev_pm_opp *opp;
+> +	u16 lnksta;
+> +
+> +	pcie_capability_read_word(pdev, PCI_EXP_LNKSTA, &lnksta);
+> +	width = FIELD_GET(PCI_EXP_LNKSTA_NLW, lnksta);
+> +
+> +	freq_mbps = pcie_dev_speed_mbps(speed);
+> +	if (freq_mbps < 0)
+> +		return -EINVAL;
+> +
+> +	freq_kbps = freq_mbps * KILO * width;
+> +	key.freq = freq_kbps;
+> +	key.level = pci_bus_speed2lnkctl2(speed);
+> +	opp = dev_pm_opp_find_key_exact(dev, &key, true);
+> +	if (!IS_ERR(opp)) {
+> +		ret = dev_pm_opp_set_opp(dev, opp);
+> +		if (ret)
+> +			dev_err(dev, "Failed to set OPP for freq (%lu): %d\n",
+> +				freq_kbps, ret);
+> +		dev_pm_opp_put(opp);
+> +	}
+> +	return 0;
+> +}
+> +
+>  /**
+>   * pcie_set_target_speed - Set downstream Link Speed for PCIe Port
+>   * @port:	PCIe Port
+> @@ -118,9 +151,12 @@ static int pcie_bwctrl_change_speed(struct pci_dev *port, u16 target_speed, bool
+>  int pcie_set_target_speed(struct pci_dev *port, enum pci_bus_speed speed_req,
+>  			  bool use_lt)
+>  {
+> +	struct pci_host_bridge *host = pci_find_host_bridge(port->bus);
+> +	bool is_rootbus = pci_is_root_bus(port->bus);
+>  	struct pci_bus *bus = port->subordinate;
+> +	struct pci_dev *child = NULL, *dev;
+> +	int aspm_state = 0, ret;
+>  	u16 target_speed;
+> -	int ret;
+>  
+>  	if (WARN_ON_ONCE(!pcie_valid_speed(speed_req)))
+>  		return -EINVAL;
+> @@ -130,6 +166,27 @@ int pcie_set_target_speed(struct pci_dev *port, enum pci_bus_speed speed_req,
+>  
+>  	target_speed = pcie_bwctrl_select_speed(port, speed_req);
+>  
+> +	/*
+> +	 * Host Bridge resources may need to be scaled for targeted speed
+> +	 * otherwise link might not come up at requested speed.
+> +	 */
+> +	if (bus && is_rootbus && host) {
+> +		/* Get function 0 of downstream device */
+> +		list_for_each_entry(dev, &bus->devices, bus_list) {
+> +			if (PCI_FUNC(dev->devfn) == 0) {
+> +				child = dev;
+> +				break;
+> +			}
+> +		}
+> +
+> +		if (child && host->disable_aspm_for_retrain) {
+> +			aspm_state = pcie_aspm_enabled(child);
+> +			pci_disable_link_state(child, PCIE_LINK_STATE_ALL);
+> +		}
 
-Mehmet
+The current pci_disable_link_state() only works when called for the
+downstream device, but it's sort of weird to have to look up a
+downstream function 0 here.  I wish we had a way to say "this device
+(either a Downstream Port or an Upstream Port (an endpoint)) doesn't
+support this link state; please configure the link accordingly".  But
+I don't think we have that today, so this is probably the best thing
+we can do.
+
+> +		if (speed_req > bus->cur_bus_speed)
+> +			pcie_set_opp(port, host, speed_req);
+> +	}
+> +
+>  	scoped_guard(rwsem_read, &pcie_bwctrl_setspeed_rwsem) {
+>  		struct pcie_bwctrl_data *data = port->link_bwctrl;
+>  
+> @@ -154,6 +211,12 @@ int pcie_set_target_speed(struct pci_dev *port, enum pci_bus_speed speed_req,
+>  	    !list_empty(&bus->devices))
+>  		ret = -EAGAIN;
+>  
+> +	if (bus && is_rootbus && host) {
+> +		if (child && host->disable_aspm_for_retrain)
+> +			pci_force_enable_link_state(child, aspm_state);
+> +		pcie_set_opp(port, host, bus->cur_bus_speed);
+> +	}
+> +
+>  	return ret;
+>  }
+>  
+> diff --git a/include/linux/pci.h b/include/linux/pci.h
+> index 9cbcadd08f3d..352079393edb 100644
+> --- a/include/linux/pci.h
+> +++ b/include/linux/pci.h
+> @@ -673,6 +673,7 @@ struct pci_host_bridge {
+>  	unsigned int	msi_domain:1;		/* Bridge wants MSI domain */
+>  	unsigned int	broken_l1ss_resume:1;	/* Resuming from L1SS during
+>  						   system suspend is broken */
+> +	unsigned int	disable_aspm_for_retrain:1; /* Disable ASPM before link retain */
+
+s/retain/retrain/
+
+>  
+>  	/* Resource alignment requirements */
+>  	resource_size_t (*align_resource)(struct pci_dev *dev,
+> 
+> -- 
+> 2.34.1
+> 
