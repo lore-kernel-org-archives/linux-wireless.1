@@ -1,52 +1,48 @@
-Authentication-Results: smtp.subspace.kernel.org; arc=none smtp.remote-ip=95.215.58.88
+Authentication-Results: smtp.subspace.kernel.org; arc=none smtp.remote-ip=101.71.155.101
 ARC-Seal: i=1; d=subspace.kernel.org; s=arc20261015; a=rsa-sha256; cv=none;
-	t=1795195878;
-	b=vnJpxRv3+XUUmceSe3Q9RQmmajB+6tOcSB4sA2AivtOnYfNJonTDRXOeHCIkYdaqa+7p
-	 jPHdvVNXDvGc6LVVmMZe8IqmWco3i1l0J2hF4bB+L/WrXRAjRbRkVtVkd53lRsPSRu88x
-	 YRxR5jRMwHSNYtCcDIFrOsyo4qs+Wah1gxSgImFmX7TEcCStInn9aD7BbkyqxKyJMfT+O
-	 qGmSQFcPGvdMkFpJmz2GhPrGGyOEqGQywTCitZ83koRIlsd7IsI6rasMPWHbtvLvQXyBV
-	 /AK0EDT2vNfQb2x+qF6VBLe16cp1OWmqn9pyGjzgn0MXn7iQzjWs1UxcELkv5QXp0gg==
+	t=1795196126;
+	b=PR88ubfRR0kJ/N0NCNbJTyRb6BH4Tq0W0h5NLoaO6KMm3c2hwhmtMaBbb9WXBnQDjqEm
+	 dVtBu/tk/J8xe9uae53UnG+2FwTpwVM9UnWUrMG/ABAQ5Uzz5mKfQgmldWcxjj7wJouBd
+	 qYPTmHZ5SnmWgdKXuzFniFWfpSW7JiootwuPCGez7kFHL/Gfy0eSYonU7+GM9HlzJi4vv
+	 tSsF4AozsXL0Lnt4YPcJKcogEFjOUqdbjL3JxDLQP47za7k1pwFlS++gx2O56ARxr3aAw
+	 zTf4E6l2NTg8KI3RfUjx8td5TP9wGmDiL/ROMZZC660XarrKawYI6hMWAhmiGAbIvwA==
 ARC-Message-Signature: i=1; d=subspace.kernel.org; s=arc20261015;
-	a=rsa-sha256; c=relaxed/relaxed; t=1795195878;
-	h=DMARC-Filter:X-Envelope-To:DKIM-Signature:X-Envelope-To:Received:
-	 X-Mizu-Trace-ID:X-Migadu-Flow:MIME-Version:Date:Content-Type:
-	 Content-Transfer-Encoding:From:Message-ID:TLS-Required:Subject:To:Cc:
-	 In-Reply-To:References;
-	bh=Tpg2yEVyeRnZ2Za6/tg+vLxymPWoZ4TpmqYR5yfnLlw=;
-	b=VLDhTLkowJ+xSvK/mcrOgFJ7UZrRvWCLwM673HsPpKINrBa5anafcD6FgYvOC+F6stJ8
-	 U+2DQO7L0ivmJgzAIrZMaj4Ek5z8j2o791yu0GaSkPXTNxZC9dNkas9/lPlHV9OuJpBJ2
-	 Lh8PXPIAn0E3PneHEIjs09pmT7YoyPpUCNs7Hh0O3/DE5CbXmlUyxoxesK7H3B9stWJgD
-	 E/fM5seLU1PV2ohFOAUpFJr3ucsrdfH4MA6xruE6aQYtGyH8IEUvMX/W+Z1+Rfghsc633
-	 gSoDKS4j1SFNjfwgyyXp0R5xOTqvU070b7KXgbymeKQHEVBheaMZzs2qg+rWgcgTawg==
+	a=rsa-sha256; c=relaxed/relaxed; t=1795196126;
+	h=DMARC-Filter:Received:From:To:Cc:Subject:Date:Message-ID:X-Mailer:
+	 MIME-Version:Content-Type:Content-Transfer-Encoding:X-HM-Tid:
+	 X-HM-MType:X-HM-Spam-Status:DKIM-Signature;
+	bh=4fqyV+IxCSlliAT75SUkyH3zRm7PqSfjFRkVtWXmgZM=;
+	b=n0rY29nvgp+uMX5cbASmMUhxtZKIFMDOAJ0WiSSQzxS6acbNUG6UuQporLBTejYbBR7t
+	 o1PSVbhqz7zkSGbEgejvXFC25R4T4Dr33FCrQbb3jF3hS0nFr6lqOvwTBz72Ve14DATbR
+	 wgtNlzy34pmAZKE2IJ3iF0vt7J/RHCG924SpjnrDqo66tBg2LCRCGoi706KGdDXDAWjSE
+	 AttGPVUwPF/WkWehqV/OP9j+/HUGEO3o/c4Brk+nQ47vAPI3A/AWxaZTpR3zXmrUvbd9B
+	 PrrV120gODWSgXGrxDkpctODkbYuS5Lcok59nZBGPkpuN0ximJJd1QBb1+xk1/h30iA==
 ARC-Authentication-Results: i=1; smtp.subspace.kernel.org; 
-	dmarc=pass header.from=linux.dev;
-	spf=pass smtp.mailfrom=linux.dev;
-	dkim=pass header.d=linux.dev header.i=@linux.dev header.a=rsa-sha256 header.s=key1 header.b=Pt4crqP2;
-	arc=none smtp.remote-ip=95.215.58.88
-Received: from mta1.migadu.com (out-88.mta1.migadu.com [95.215.58.88])
-	(using TLSv1.3 with cipher TLS_AES_128_GCM_SHA256 (128/128 bits)
+	dmarc=pass header.from=mail.sdu.edu.cn;
+	spf=pass smtp.mailfrom=mail.sdu.edu.cn;
+	dkim=pass header.d=mail.sdu.edu.cn header.i=@mail.sdu.edu.cn header.a=rsa-sha256 header.s=default header.b=hItw551M;
+	arc=none smtp.remote-ip=101.71.155.101
+Received: from mail-m155101.qiye.163.com (mail-m155101.qiye.163.com [101.71.155.101])
+	(using TLSv1.3 with cipher TLS_AES_256_GCM_SHA384 (256/256 bits)
 	 key-exchange X25519 server-signature ECDSA (prime256v1) server-digest SHA256)
 	(No client certificate requested)
-	by smtp.subspace.kernel.org (Postfix) with ESMTPS id 91469606A320
-	for <linux-wireless@vger.kernel.org>; Fri, 20 Nov 2026 17:31:16 +0000 (UTC)
-DMARC-Filter: OpenDMARC Filter v1.4.2 smtp.subspace.kernel.org 91469606A320
-Authentication-Results: smtp.subspace.kernel.org; dmarc=pass (p=none dis=none) header.from=linux.dev
-Authentication-Results: smtp.subspace.kernel.org; spf=pass smtp.mailfrom=linux.dev
+	by smtp.subspace.kernel.org (Postfix) with ESMTPS id 011BA60A2602;
+	Fri, 20 Nov 2026 17:35:20 +0000 (UTC)
+DMARC-Filter: OpenDMARC Filter v1.4.2 smtp.subspace.kernel.org 011BA60A2602
+Authentication-Results: smtp.subspace.kernel.org; dmarc=pass (p=none dis=none) header.from=mail.sdu.edu.cn
+Authentication-Results: smtp.subspace.kernel.org; spf=pass smtp.mailfrom=mail.sdu.edu.cn
 Authentication-Results: smtp.subspace.kernel.org;
-	dkim=pass (1024-bit key, unprotected) header.d=linux.dev header.i=@linux.dev header.a=rsa-sha256 header.s=key1 header.b=Pt4crqP2
-X-Envelope-To: linux-wireless@vger.kernel.org
-DKIM-Signature: a=rsa-sha256; bh=IZrAa4SoFoqBjr7u1Tj8Wi9+vNHMC5vGhVqZrPFCXNw=;
- c=simple/simple; d=linux.dev;
- h=from:to:subject:date:message-id:mime-version:content-type; s=key1;
- t=1795195874; v=1; x=1795800674;
- b=Pt4crqP2BYskDr/kj99C8eN9VWAN6b6+CX51anHwOP/UemQOthxnLIbAuDvgnfSo5WzphEsn
- zQAtL85dAxm+TmcdQtFtLK3rJYrAK4N3oNLGyutmwVZNtNJornyya0fcc5xHT1+Lp1y0TOy+hls
- eKi0sS6Zn02dQ9pQCyAROXX8=
-X-Envelope-To: linux-wireless@vger.kernel.org
-Received: by smtp.migadu.com with ESMTPS id 07b9f6c2dc59ba5f;
-	Fri, 20 Nov 2026 17:31:13 +0000
-X-Mizu-Trace-ID: 07b9f6c2dc59ba5f
-X-Migadu-Flow: FLOW_OUT
+	dkim=pass (1024-bit key) header.d=mail.sdu.edu.cn header.i=@mail.sdu.edu.cn header.a=rsa-sha256 header.s=default header.b=hItw551M
+Received: from lgs.. (unknown [101.76.249.61])
+	by smtp.qiye.163.com (Hmail) with ESMTP id 5573c0abb;
+	Sat, 21 Nov 2026 01:35:18 +0800 (GMT+08:00)
+From: Guangshuo Li <liguangshuo@mail.sdu.edu.cn>
+To: linux-wireless@vger.kernel.org
+Cc: linux-kernel@vger.kernel.org
+Subject: [PATCH] wifi: ath6kl: Fix potential firmware leaks on initialization failure
+Date: Sat, 21 Nov 2026 01:35:15 +0800
+Message-ID: <20261120173516.3923881-1-liguangshuo@mail.sdu.edu.cn>
+X-Mailer: git-send-email 2.43.0
 X-Mailing-List: linux-wireless@vger.kernel.org
 List-Id: <linux-wireless.vger.kernel.org>
 List-Post: <mailto:linux-wireless@vger.kernel.org>
@@ -56,96 +52,83 @@ List-Unsubscribe: <mailto:linux-wireless+unsubscribe@vger.kernel.org>
 List-Owner: <mailto:linux-wireless+owner@vger.kernel.org>
 Precedence: list
 MIME-Version: 1.0
-Date: Fri, 20 Nov 2026 17:31:13 +0000
-Content-Type: text/plain; charset="utf-8"
-Content-Transfer-Encoding: quoted-printable
-From: "Luka Gejak" <luka.gejak@linux.dev>
-Message-ID: <95610ac92e284b3b7b32981e14c380fcda09fcb7@linux.dev>
-TLS-Required: No
-Subject: Re: [PATCH RFC rtw-next] wifi: rtw88: raise the TBTT hold time while
- beaconing
-To: "Mehmet Fide" <mehmet.fide@gmail.com>, "Ping-Ke Shih"
- <pkshih@realtek.com>
-Cc: linux-wireless@vger.kernel.org, linux-kernel@vger.kernel.org,
- mehmet.fide@screeningeagle.com
-In-Reply-To: <20261119102953.4035731-1-mehmet.fide@gmail.com>
-References: <20261119102953.4035731-1-mehmet.fide@gmail.com>
+Content-Type: text/plain; charset=UTF-8
+Content-Transfer-Encoding: 8bit
+X-HM-Tid: 0aa1fa06e40303a1kunme848b2bf238b70
+X-HM-MType: 10
+X-HM-Spam-Status: e1kfGhgUHx5ZQUpXWQgPGg8OCBgUHx5ZQUlOS1dZFg8aDwILHllBWSg2Ly
+	tZV1koWUFITzdXWRgWCB1ZQUpXWS1ZQUlXWQ8JGhUIEh9ZQVkaSkpIVk0aHh9NS0gfTBgdTVYeHw
+	5VEwETFhoSFyQUDg9ZV1kYEgtZQVlKS0pVTE1VSU9CVU1KWVdZFhoPEhUdFFlBWU9LSFVKS0lCQ0
+	NMVUpLS1VLWQY+
+DKIM-Signature: a=rsa-sha256;
+	b=hItw551M9tjpHakqQ/ocqdgQdO1oZPXKMS26kpaXejLrYaJs67r1BZh+YBE/ti0TroQi7eqO8SSW33X7IsGSaVJjETW5zDKbPAEGoXllgSfTQGhTwrPEyyHlTRP+HOpMpCEjzZetheE2nyJjhjY0de0HGAcL3HSGeY8Brz5NU+A=; c=relaxed/relaxed; s=default; d=mail.sdu.edu.cn; v=1;
+	bh=4fqyV+IxCSlliAT75SUkyH3zRm7PqSfjFRkVtWXmgZM=;
+	h=date:mime-version:subject:message-id:from;
 
-Hi Mehmet,
+Firmware loading can leave allocated images in the core before a later
+initialization step fails. The initialization error path destroys the
+core without releasing these images.
 
-Thanks for looking into this. Below are my thoughts.
+Share firmware cleanup between the initialization error path and normal
+teardown.
 
-November 19, 2026 at 11:29 AM, "Mehmet Fide" <mehmet.fide@gmail.com> wrot=
-e:
+This issue was found by our static analysis tool under development.
 
-[ ... ]
+Fixes: bdcd81707973 ("Add ath6kl cleaned up driver")
+Signed-off-by: Guangshuo Li <liguangshuo@mail.sdu.edu.cn>
+---
+ drivers/net/wireless/ath/ath6kl/core.c | 18 +++++++++++-------
+ 1 file changed, 11 insertions(+), 7 deletions(-)
 
-> 1. The captures suggest the MAC drops a beacon that cannot start
->    within the hold time. Is that how it works, and does a longer hold
->    time delay any other TX? iperf3 and ping through the AP were the
->    same with 0x064, 0x0ff and 0x400.
+diff --git a/drivers/net/wireless/ath/ath6kl/core.c b/drivers/net/wireless/ath/ath6kl/core.c
+index 648110cd313f..fec0e1ad9752 100644
+--- a/drivers/net/wireless/ath/ath6kl/core.c
++++ b/drivers/net/wireless/ath/ath6kl/core.c
+@@ -63,6 +63,15 @@ void ath6kl_core_rx_complete(struct ath6kl *ar, struct sk_buff *skb, u8 pipe)
+ }
+ EXPORT_SYMBOL(ath6kl_core_rx_complete);
+ 
++static void ath6kl_core_free_firmwares(struct ath6kl *ar)
++{
++	kfree(ar->fw_board);
++	kfree(ar->fw_otp);
++	vfree(ar->fw);
++	kfree(ar->fw_patch);
++	kfree(ar->fw_testscript);
++}
++
+ int ath6kl_core_init(struct ath6kl *ar, enum ath6kl_htc_type htc_type)
+ {
+ 	struct ath6kl_bmi_target_info targ_info;
+@@ -123,8 +132,6 @@ int ath6kl_core_init(struct ath6kl *ar, enum ath6kl_htc_type htc_type)
+ 	if (ret)
+ 		goto err_htc_cleanup;
+ 
+-	/* FIXME: we should free all firmwares in the error cases below */
+-
+ 	/*
+ 	 * Backwards compatibility support for older ar6004 firmware images
+ 	 * which do not set these feature flags.
+@@ -252,6 +259,7 @@ int ath6kl_core_init(struct ath6kl *ar, enum ath6kl_htc_type htc_type)
+ 	clear_bit(WMI_ENABLED, &ar->flag);
+ 	ar->wmi = NULL;
+ err_htc_cleanup:
++	ath6kl_core_free_firmwares(ar);
+ 	ath6kl_htc_cleanup(ar->htc_target);
+ err_power_off:
+ 	ath6kl_hif_power_off(ar);
+@@ -346,11 +354,7 @@ void ath6kl_core_cleanup(struct ath6kl *ar)
+ 
+ 	ath6kl_debug_cleanup(ar);
+ 
+-	kfree(ar->fw_board);
+-	kfree(ar->fw_otp);
+-	vfree(ar->fw);
+-	kfree(ar->fw_patch);
+-	kfree(ar->fw_testscript);
++	ath6kl_core_free_firmwares(ar);
+ 
+ 	ath6kl_cfg80211_cleanup(ar);
+ }
 
-Your captures fit a beacon transmit deadline. The RTL8822CU vendor
-header says data queues can also wait during the hold, so I'd measure
-latency around TBTT under load.
-
-> 2. Which value do you recommend while beaconing: a fixed one, or one
->    derived from the beacon interval? With 0x0ff an RTL8821CU, a second
->    RTL8821CU and an RTL8822CU had no such seconds either, but an
->    RTL8822CE still had 6: its beacons were cut off at 8.2 ms.
-
-I'd start with 0x0ff and cap it for short beacon intervals. At 10 TU
-that leaves 2.08 ms before the next TBTT. I'd measure beacon loss and
-data latency before raising it on RTL8822CE.
-
-> 3. The CSA series [1] downloads each countdown beacon 10 ms after TBTT,
->    so a hold time above about 9 ms needs a later download there. If
->    the reserved page is rewritten while a beacon still waits in the
->    hold window, which beacon goes out, the old or the new one?
-
-I'd expect the old template if the MAC has already fetched it and
-still sends. Your v13 tests also saw missed beacons during a write.
-
-At 100 TU a late CSA worker can pass rtw_fw_csa_hold() at 6 ms after
-TBTT, inside the 8.16 ms window. Could the guard account for the hold
-and beacon airtime before a rewrite or switch completion? It currently
-skips intervals of 20 ms or less.
-
-[ ... ]
-
-> diff --git a/drivers/net/wireless/realtek/rtw88/mac80211.c b/drivers/ne=
-t/wireless/realtek/rtw88/mac80211.c
-> index 3029fbdb288a..cb1deeffef71 100644
-> --- a/drivers/net/wireless/realtek/rtw88/mac80211.c
-> +++ b/drivers/net/wireless/realtek/rtw88/mac80211.c
-> @@ -449,12 +449,19 @@ static void rtw_ops_bss_info_changed(struct ieee8=
-0211_hw *hw,
->  	}
->
->  	if (changed & BSS_CHANGED_BEACON_ENABLED) {
-> -		if (conf->enable_beacon)
-> +		if (conf->enable_beacon) {
->  			rtw_write32_set(rtwdev, REG_FWHW_TXQ_CTRL,
->  					BIT_EN_BCNQ_DL);
-> -		else
-> +			rtw_write32_mask(rtwdev, REG_TBTT_PROHIBIT,
-> +					 BIT_MASK_TBTT_HOLD_TIME_AP,
-> +					 TBTT_HOLD_TIME_BCN);
-> +		} else {
->  			rtw_write32_clr(rtwdev, REG_FWHW_TXQ_CTRL,
->  					BIT_EN_BCNQ_DL);
-> +			rtw_write32_mask(rtwdev, REG_TBTT_PROHIBIT,
-> +					 BIT_MASK_TBTT_HOLD_TIME_AP,
-> +					 TBTT_HOLD_TIME_STOP_BCN);
-> +		}
->  	}
->  	if (changed & BSS_CHANGED_CQM)
->  		rtw_fw_beacon_filter_config(rtwdev, true, vif);
-
-To me it looks like a station scan on RTL8822C can pause AP beacons
-through rtw_hw_scan_chan_switch() and rtw_core_enable_beacon(), leaving
-0xff programmed. The vendor driver restores 0x64 on scan pause. Could
-we update the hold on scan pause and resume too?
-
-Best regards,
-Luka Gejak
+base-commit: 6628e7d4c6b25c8d18f1345e3a20d21829aae7e4
