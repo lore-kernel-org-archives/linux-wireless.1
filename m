@@ -1,113 +1,113 @@
 Authentication-Results: smtp.subspace.kernel.org; arc=none smtp.remote-ip=205.220.168.131
 ARC-Seal: i=1; d=subspace.kernel.org; s=arc20261015; a=rsa-sha256; cv=none;
-	t=1795164183;
-	b=KOhBy9WABC482yzuEqunrvvXptpanCi2h0wWzc+Nl++kaui3sMc/QHHPnxvLV4sjYfMg
-	 nldRR9vWRg4qhtjJDPjQW7bzR15snZxla2CDtTnTvGHo6uOwLETGQKJycDi/jK8Nre6cw
-	 cBVnhO6BZxaq6t1MUTv+5r3M8OKJCz+mygTSoUj3utq4QnCpBX0cWtkcINGSeQeoh95pF
-	 FusfXC4N8HXwej3LqM2eFdXtK13D+B4mzOFJIGY/AVGCQt7JHl8CHWUvI/64/YA+csB6z
-	 ve3toFnwaMIf9X8yk2297nBF2XCqK7dcktuoYij6f9c+TqZxE+5dXDJ2UCcx53ke9JA==
+	t=1795164185;
+	b=gc/i194s2I9t0hPcx3B/X+52psZlRu6l5jUKlcfI2aYED2iky8qfU5M5aaTnVv0zGEUq
+	 CtT1fj3budu38NpCKYiOPfUMrCjjmfHCqLBohcODngkY1gjhyo7zsbeUrmKKTOvD0MCy8
+	 0ZGmwTG4TrxaFZU6DlEHwG6OTeAXuV/MDNC0A6q+1k9DPxpWFedzTTyrBkxfVju9T5aNm
+	 MBvuH4LpjlB/V3dG3GxEzlLoRBznnyGkeQpMm0lZeOFC16fNCR9wd+ZEKlQ3lA3MbcQrx
+	 IuQdU72aWBDTrRFKAxOIHMWjUnAsxAZPsSCgALQO1oCC6tpuO5BDrouAJEwlxnC9IHw==
 ARC-Message-Signature: i=1; d=subspace.kernel.org; s=arc20261015;
-	a=rsa-sha256; c=relaxed/relaxed; t=1795164183;
+	a=rsa-sha256; c=relaxed/relaxed; t=1795164185;
 	h=DMARC-Filter:Received:DKIM-Signature:Received:Received:
 	 DKIM-Signature:X-Google-DKIM-Signature:X-Forwarded-Encrypted:
 	 X-Gm-Message-State:X-Gm-Gg:X-Received:X-Received:Received:From:Date:
 	 Subject:MIME-Version:Content-Type:Content-Transfer-Encoding:
 	 Message-Id:References:In-Reply-To:To:Cc:X-Mailer:
-	 X-Developer-Signature:X-Developer-Key:X-Authority-Analysis:
-	 X-Proofpoint-GUID:X-Proofpoint-Spam-Details-Enc:
-	 X-Proofpoint-Spam-Info:X-Proofpoint-ORIG-GUID:
-	 X-Proofpoint-Virus-Version:X-Proofpoint-Spam-Details;
-	bh=tNtJdgVbX3slZatS7ZEsC34JpdhhpMQzsODk0CveR/s=;
-	b=SkOYT41ohB16DZYtBR99HhTW7NjKgK7yKtT53zBdJJR7qAXQV8ePZTQbIgIppCr7xXMm
-	 xLeEbrpGOCS1unbmNyPySWUGDsDhpS+Pm/6HT97NJl4jWfs0QqGf5Km9EdXWxnvTNzUTr
-	 cy7+eTTEgPySt8naZUuALiIA3by8zGLZxRy0eH9EzyzR/F+qjN/6qBsksHIk1YzrF5mL/
-	 4Q7dd2K8vgW/G9+aUa0IGpSNNMRQi59VbULdlXPsMDLoht38nKH3ej+YNhtf+o+Shf0j+
-	 7Br0ZbTk9WTgFBcuaRmgIft1WPe7+lQjBXTY2d7Gl3HJjDAR/eOiQX4TzjxVqDINv+Q==
+	 X-Developer-Signature:X-Developer-Key:X-Proofpoint-Spam-Details-Enc:
+	 X-Authority-Analysis:X-Proofpoint-ORIG-GUID:X-Proofpoint-Spam-Info:
+	 X-Proofpoint-GUID:X-Proofpoint-Virus-Version:
+	 X-Proofpoint-Spam-Details;
+	bh=Bk74ZT+MJ+JGKowULWayQu2LJp4VvyfuIMp2TvysVmg=;
+	b=3f7AiVRyLENIxVtwpn0032/qWe0IUlaQZj6vP/TrQJ0xDa3DMCyNsgZBUjgqvL/kZ8Og
+	 O/3XrirNmFM0KvbK+qtyNHl48uIOLR64l2lyWbOplIH5GLtt4Jq5ZSasfFsA2hlTxbuEr
+	 +4PnOneE7vq0/5HSO2toGijzZcvze7CVhblcADI9Z6V3Rb6YiPqC2P4vo4pDsLBP0hX8y
+	 TT+qKhQTjbf8mG+IElHurNTkFLshgpQBT50ZHBRv9UPWlEJJdlCwC/nO/ORSg1fIr7Id+
+	 hQL7OfVBk46J+nV0q54kH1VptXjhnfcF5Oi5fU2NXLWEEF8tNM+6mHnNGA3Wd9VZ+uA==
 ARC-Authentication-Results: i=1; smtp.subspace.kernel.org; 
 	dmarc=pass header.from=oss.qualcomm.com;
 	spf=pass smtp.mailfrom=oss.qualcomm.com;
-	dkim=pass header.d=qualcomm.com header.i=@qualcomm.com header.a=rsa-sha256 header.s=qcppdkim1 header.b=NHX1EORn;
-	dkim=pass header.d=oss.qualcomm.com header.i=@oss.qualcomm.com header.a=rsa-sha256 header.s=google header.b=gxoeJzSv;
+	dkim=pass header.d=qualcomm.com header.i=@qualcomm.com header.a=rsa-sha256 header.s=qcppdkim1 header.b=Ue88hfMy;
+	dkim=pass header.d=oss.qualcomm.com header.i=@oss.qualcomm.com header.a=rsa-sha256 header.s=google header.b=I3CVA0Hx;
 	arc=none smtp.remote-ip=205.220.168.131
 Received: from mx0a-0031df01.pphosted.com (mx0a-0031df01.pphosted.com [205.220.168.131])
 	(using TLSv1.3 with cipher TLS_AES_256_GCM_SHA384 (256/256 bits)
 	 key-exchange X25519 server-signature ECDSA (prime256v1) server-digest SHA256)
 	(No client certificate requested)
-	by smtp.subspace.kernel.org (Postfix) with ESMTPS id 4D7EA606A889
-	for <linux-wireless@vger.kernel.org>; Fri, 20 Nov 2026 08:43:03 +0000 (UTC)
-DMARC-Filter: OpenDMARC Filter v1.4.2 smtp.subspace.kernel.org 4D7EA606A889
+	by smtp.subspace.kernel.org (Postfix) with ESMTPS id C57B960A5BCB
+	for <linux-wireless@vger.kernel.org>; Fri, 20 Nov 2026 08:43:04 +0000 (UTC)
+DMARC-Filter: OpenDMARC Filter v1.4.2 smtp.subspace.kernel.org C57B960A5BCB
 Authentication-Results: smtp.subspace.kernel.org; dmarc=pass (p=none dis=none) header.from=oss.qualcomm.com
 Authentication-Results: smtp.subspace.kernel.org; spf=pass smtp.mailfrom=oss.qualcomm.com
 Authentication-Results: smtp.subspace.kernel.org;
-	dkim=pass (2048-bit key) header.d=qualcomm.com header.i=@qualcomm.com header.a=rsa-sha256 header.s=qcppdkim1 header.b=NHX1EORn;
-	dkim=pass (2048-bit key) header.d=oss.qualcomm.com header.i=@oss.qualcomm.com header.a=rsa-sha256 header.s=google header.b=gxoeJzSv
-Received: from pps.filterd (m0279865.ppops.net [127.0.0.1])
-	by mx0a-0031df01.pphosted.com (8.18.1.11/8.18.1.11) with ESMTP id 6AK7eqQF1268338
-	for <linux-wireless@vger.kernel.org>; Fri, 20 Nov 2026 08:43:02 GMT
+	dkim=pass (2048-bit key) header.d=qualcomm.com header.i=@qualcomm.com header.a=rsa-sha256 header.s=qcppdkim1 header.b=Ue88hfMy;
+	dkim=pass (2048-bit key) header.d=oss.qualcomm.com header.i=@oss.qualcomm.com header.a=rsa-sha256 header.s=google header.b=I3CVA0Hx
+Received: from pps.filterd (m0279864.ppops.net [127.0.0.1])
+	by mx0a-0031df01.pphosted.com (8.18.1.11/8.18.1.11) with ESMTP id 6AK7ewjX3575749
+	for <linux-wireless@vger.kernel.org>; Fri, 20 Nov 2026 08:43:04 GMT
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=qualcomm.com; h=
 	cc:content-transfer-encoding:content-type:date:from:in-reply-to
 	:message-id:mime-version:references:subject:to; s=qcppdkim1; bh=
-	tNtJdgVbX3slZatS7ZEsC34JpdhhpMQzsODk0CveR/s=; b=NHX1EORnDeB7UJza
-	zA78agMW5kBPecBVqSsp69Imv9knGhjE+l05QQMFSYq1toKpFVt7bYCcwGfLqxHJ
-	MxfSGKZ2jLdm7o9M7rGGVqPerYYV76itWAy9SXrup7utZ7x0xxpXzUpg4yS2BCgk
-	k/jJpse2SMm8kSJLqKYMquD7gjb52QYWYPogcaIQyJmHSNuWqarEH+QJDfQ3rV7X
-	09pgNxaOt+DdsJCAIMtCtO5Yn3Lz5sa6P7Wt4KqFAgmVqBrpRKw/nODwAasfW54T
-	mx4A6wCs0lN3A7Kfrdr3HLYOq/VRpxe2DDgpNcBKJJGnfnzuHuLA11o3a0Ly11Fg
-	/w0wdg==
+	Bk74ZT+MJ+JGKowULWayQu2LJp4VvyfuIMp2TvysVmg=; b=Ue88hfMyeyknN/Na
+	PMcVAuY6z/eVD7hdpBhtiSFXvWLmepbDDK+2kluueZs0ldsuAjGKKgajgMcAPnN5
+	3GGCg6zrsh5VtnNUkzyyRIvg/w7Amzf8lc88YURAHkAcaALBqasggJHJRE43FbnI
+	aCThIZHTcmUaCgFICApibpQ9UbUh8BLGTdrzaRwoBict1bPlD6H1iggg72y62N2W
+	f2qdpEjeAbvqPD6IazEjLZG22RjKyJ88fMk9N+5oqFacHd4/57oXw2SDB5oocdlp
+	9lqH2y3j9DbklWN23u7WEqXW4eOqlCEG9d4ybGISgSaxfLSAznabbJDBMX5cwLMj
+	CFrPqw==
 Received: from mail-dy1-f198.google.com (mail-dy1-f198.google.com [74.125.82.198])
-	by mx0a-0031df01.pphosted.com (PPS) with ESMTPS id 4j2cd1sgv8-1
+	by mx0a-0031df01.pphosted.com (PPS) with ESMTPS id 4j2gu80hsx-1
 	(version=TLSv1.3 cipher=TLS_AES_128_GCM_SHA256 bits=128 verify=NOT)
-	for <linux-wireless@vger.kernel.org>; Fri, 20 Nov 2026 08:43:02 +0000 (GMT)
-Received: by mail-dy1-f198.google.com with SMTP id 5a478bee46e88-382af5cfc58so1881498eec.0
-        for <linux-wireless@vger.kernel.org>; Fri, 20 Nov 2026 00:43:02 -0800 (PST)
+	for <linux-wireless@vger.kernel.org>; Fri, 20 Nov 2026 08:43:04 +0000 (GMT)
+Received: by mail-dy1-f198.google.com with SMTP id 5a478bee46e88-383165e9b0fso707488eec.0
+        for <linux-wireless@vger.kernel.org>; Fri, 20 Nov 2026 00:43:03 -0800 (PST)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=oss.qualcomm.com; s=google; t=1795164182; x=1795768982; darn=vger.kernel.org;
+        d=oss.qualcomm.com; s=google; t=1795164183; x=1795768983; darn=vger.kernel.org;
         h=cc:to:in-reply-to:references:message-id:content-transfer-encoding
          :content-type:mime-version:subject:date:from:from:to:cc:subject:date
          :message-id:reply-to:content-type;
-        bh=tNtJdgVbX3slZatS7ZEsC34JpdhhpMQzsODk0CveR/s=;
-        b=gxoeJzSveI+obu+re/wcoZs1G8uVoWtz0te0K792ahWcj9ep/9y1xG1yD6m1urWWRr
-         bvjnR2daNyk+ys/J406b4R9ld91UUWXwoFJ9nKqZflc9rCLamSM/fRCp5Pn4wHHXJ/iY
-         Y/P0HIfJtR1p54agMzLbFU9LK95u6n39rKbBOKlPwXnHVfexyMDk5Qar0OU0hx7EIx7i
-         wO6LB1N1klTbjhzahBXuONPH2iyKs4xHgB1z7la4I+0bjNMBIj3MdDSGf0+4PxXco5OK
-         /KEkybAbJ/oRFsz7yJfqqKIRDsNPN9npm40Yv3RBnV8ZfwyMq0nSggfC2Vcid+6ZPLUL
-         Zc3w==
+        bh=Bk74ZT+MJ+JGKowULWayQu2LJp4VvyfuIMp2TvysVmg=;
+        b=I3CVA0HxGwLqEj2qUvidHrobjDWkjLSAXHXdFIzOqh+kffUFcN4bVSPaHC2o3mjGKN
+         /CTjKCOUXGfO12M4Hi89+8ilu/GGIepnFM4fY0X5G4ltVFw3b/Yv4qdyTL1klTwsMFcI
+         FsJI0Cs0qypAzWxufv+oHI2c555d2erFIaw5GMoOAJWc0t5hb+AaGL9oRND9LCp5H+UV
+         tM9SibNlY3nRjpjraVNSB8YBKrRsEuWwICifmjosREX+imGfqRhotUmpYw+WCDDnMhNl
+         VG2nge8nsXMIl3WkBwYZOyk8rk+TacKh7qiAplif5de90hhFKlPYaNfRs//gg+49oRZY
+         fIfQ==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=1e100.net; s=20260707; t=1795164182; x=1795768982;
+        d=1e100.net; s=20260707; t=1795164183; x=1795768983;
         h=cc:to:in-reply-to:references:message-id:content-transfer-encoding
          :content-type:mime-version:subject:date:from:x-gm-gg
          :x-gm-message-state:from:to:cc:subject:date:message-id:reply-to
          :content-type;
-        bh=tNtJdgVbX3slZatS7ZEsC34JpdhhpMQzsODk0CveR/s=;
-        b=uXF9ndFva/8d3Ue1ViSSoOTxe/yVuB3U5SRRrM++ndpQvTjwMJnDRwikrPaEdjA+02
-         wumERkvVgeZ5tDJlZDA2Z+FVpa/AiV5JCFnyFBv4kjHGZpVrZR9hoT1QP9HJafH3JOVk
-         JwoSU08qAe17hJ4OxNczT7BRHhRWmg94XIxD/aGeDmfzhpUcnwBXbkHBlHKGMVX8bkDP
-         6urVUgu31a53nvf10LAXCp1Lc/EjPvuX5d4DFl4H5FuDVdC1xSMhIE8Nfa6VfvPufFVE
-         TESCaIEp7kM1vFWmYWUMmE0XRijpJmbcAN67Gayfuy6aFAZsfWp3jQVMM7N6ubSRrBFx
-         7Y6g==
-X-Forwarded-Encrypted: i=1; AL+hErFAEHnJKwL/YOAKQhnKuuBIYeU5Gq7ZASO4BGOqDLfVaxpzmpcBvdalaZAK/pi38i1iASW39OO60Xk6gVHrNA==@vger.kernel.org
-X-Gm-Message-State: APuU4Z9//bqjj8/VmrpUY9JqJq0FMILWZGNB0I3R0FmjGsmup7vYWtwb
-	tVzZ3F2uMki5DVSE20yrQmB/EwooBYWa3hJy3CjKlhTXZQ6ZaoBBWki8afur4qyH/qXAE8xGRrR
-	kNr/0FPRvzJgOS+D+tGXdBiizjT+0Ci5uFnUKOst/LTEoZ7+Zs8DOjpV21nV8SBC8m6uChw==
-X-Gm-Gg: AZFdTZeF4VFhe0hhKDu88h/3s3vVlINkH0uh+1sCgZbc5As2xIJolyXNCYmBd5lzOlw
-	E84TS4iwrABXf4aGpa4hQWLP9Cil6xgQRcb7v/28pecgsRgcYZ1LHV9NaWmBEMjtY0ER6qn/Gex
-	7pP6SLQ0hq0jIH9PG5vqaqYrUhHeDI3feeL/3t7XqbIdJMOL2UGPWRWzc0M4OXYqq00zwknEToq
-	zg2waH+b1sg4PUx+R+xgMMVVYaK2Bf8ylvRSfpVcWyTkl8djOfKHg4bOe95PX8Ttem9Tjyf76v6
-	pY+imyBuPq4ipYepWXcfxNRx9K5ng0wTjnBSWxL9EkWvnmgwaBMrlmQ2fHHNKi4Wtcz49bpdYcy
-	TPeYzuO+49u69miSXw9ZHZV1zgDGgy/T9VFCZx8rRVXH/CEM8NFFtlRlSVYIwt7ZU/7NpJFzoZt
-	mTprXXJrrfi6b8zcFOMAVPxGw=
-X-Received: by 2002:a05:7300:ce11:b0:381:a037:b060 with SMTP id 5a478bee46e88-3856e63b3dfmr2114198eec.9.1795164182123;
+        bh=Bk74ZT+MJ+JGKowULWayQu2LJp4VvyfuIMp2TvysVmg=;
+        b=ShQ/U3urYZQ04PbuerTmp9KIWwZNUnYdscYM2OpHpA4tlsxqEyaCIYNF4HGZHY5XJ0
+         2fa05j02Gzb7QgPJHcDQFHywZW2o4kEHDUs7PoePom5Dm/k7LCLFZvBd85HZ3zoVAJEu
+         hkA0noExC2dy9J/vAOY9sbhGW9bNY+LF4J9sfLwl51TqE/uTfgVB4zIZeFKMX9uMiZ7d
+         GFvklekPML6981sLFAtA3IcDYNknu8V+9eNJH60nBCj8GEFm1iwUByqzbK2xwwW0dKyO
+         Mu4BkX0DPP9A8ASK13/ONRPngPc50AG+Or6uYFNSaChP8TetISTTnh7UNu2DyPAyM/u8
+         akww==
+X-Forwarded-Encrypted: i=1; AL+hErF6dkE4q17nuKnF73+k8F+ZVclrqKL03tzsDef+Ut3NLhpWaJgQRUMv9ZIEVOhTZibcBKSTZCm45gnFFuCRDQ==@vger.kernel.org
+X-Gm-Message-State: APuU4Z/7fHu8WkaByHcNxg76hjArf9ObKS16ReKdJlkQLq3gPfNFVTX4
+	zLd0f4Yrj4DAg0t9UD+2YhtIbjDMNEYslJc1ido2Y3E2DUfsfHFRClvFo3MwH9Yr/0hC4PwqHax
+	d3Mpm6y1k56um+HE5x/ClGNFStjmZHHnmuFN9l2cOMblQ/YflXaDBUAL7KlZY9bwT64FjAQ==
+X-Gm-Gg: AZFdTZevwMLB/u+foJDWZjn7U1tBSgQxxCVcr2rgs9yGPbDsl6deYKbwd9ag+AdntrN
+	Cv/Jl5Du1xcORh19AqzZHypeqQJ6MO2TifztghuS8PfDeF0OP85SeCKi2qTtqvdMHC0rGmkhWtL
+	tZ/eIVPMZ2ftMB8aCBdP9onJy3WU1MWrQgsWd9WyWV0jWAzpLDlKzkHaAgAbwNXIM4esbIoSQU5
+	TInswADuuQo+DLX1NU+24W3tM/Ugzx1FB96M8K1X/i949oa4ExVzSu6rTb0QQnRSq7T4rQZdxkb
+	sRlAB5EfyK6F0DotDV9BtBNYKGotFbb+zB5vXYCfP+QDdjiQpd6KPRDUhBJi4ug2UvqT84I2Non
+	R0m29Os16PTeqkuupI9qtJ3UMbNAvBofpwTZNBo+vLnKE8+vCGH8Z1Y0CshKwU3W+z8EddSQsDv
+	aeR35Fymh301hc8je3iM6PvbA=
+X-Received: by 2002:a05:7301:391c:b0:384:df31:69fd with SMTP id 5a478bee46e88-3856fb6a672mr2356575eec.14.1795164183269;
+        Fri, 20 Nov 2026 00:43:03 -0800 (PST)
+X-Received: by 2002:a05:7301:391c:b0:384:df31:69fd with SMTP id 5a478bee46e88-3856fb6a672mr2356546eec.14.1795164182667;
         Fri, 20 Nov 2026 00:43:02 -0800 (PST)
-X-Received: by 2002:a05:7300:ce11:b0:381:a037:b060 with SMTP id 5a478bee46e88-3856e63b3dfmr2114176eec.9.1795164181606;
-        Fri, 20 Nov 2026 00:43:01 -0800 (PST)
 Received: from hu-kangyang-lv.qualcomm.com (Global_NAT1.qualcomm.com. [129.46.96.20])
-        by smtp.gmail.com with ESMTPSA id 5a478bee46e88-385666e99fdsm7326352eec.5.2026.11.20.00.43.00
+        by smtp.gmail.com with ESMTPSA id 5a478bee46e88-385666e99fdsm7326352eec.5.2026.11.20.00.43.01
         (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
-        Fri, 20 Nov 2026 00:43:01 -0800 (PST)
+        Fri, 20 Nov 2026 00:43:02 -0800 (PST)
 From: Kang Yang <kang.yang@oss.qualcomm.com>
-Date: Fri, 20 Nov 2026 00:41:34 -0800
-Subject: [PATCH ath-next v4 09/10] wifi: ath10k: reject scan requests while
- the device is not running
+Date: Fri, 20 Nov 2026 00:41:35 -0800
+Subject: [PATCH ath-next v4 10/10] wifi: ath10k: drop async writes and
+ sleep timer across power cycles
 X-Mailing-List: linux-wireless@vger.kernel.org
 List-Id: <linux-wireless.vger.kernel.org>
 List-Post: <mailto:linux-wireless@vger.kernel.org>
@@ -119,7 +119,7 @@ Precedence: list
 MIME-Version: 1.0
 Content-Type: text/plain; charset="utf-8"
 Content-Transfer-Encoding: 7bit
-Message-Id: <20261120-recovery-v4-v4-9-53d6a04490e0@oss.qualcomm.com>
+Message-Id: <20261120-recovery-v4-v4-10-53d6a04490e0@oss.qualcomm.com>
 References: <20261120-recovery-v4-v4-0-53d6a04490e0@oss.qualcomm.com>
 In-Reply-To: <20261120-recovery-v4-v4-0-53d6a04490e0@oss.qualcomm.com>
 To: Jeff Johnson <jjohnson@kernel.org>,
@@ -129,90 +129,232 @@ Cc: Jeff Johnson <jeff.johnson@oss.qualcomm.com>,
         linux-wireless@vger.kernel.org, ath10k@lists.infradead.org,
         linux-kernel@vger.kernel.org, Kang Yang <kang.yang@oss.qualcomm.com>
 X-Mailer: b4 0.15.2
-X-Developer-Signature: v=1; a=ed25519-sha256; t=1795164171; l=1791;
+X-Developer-Signature: v=1; a=ed25519-sha256; t=1795164171; l=6759;
  i=kang.yang@oss.qualcomm.com; s=20260921; h=from:subject:message-id;
- bh=jQsKbkB5iyun7y2BOXmT/QxNJpkL/SdMSLPjVlc9s6k=;
- b=gm8m30oMVR4PS6QT+wGJNAXS5+0xMygQHX+c0M2iRnz8dfDU1d27y8H3tBkmEFkm1SOU5HwKo
- qv58cg4sTXpDBOmutJmCo3JM8CnChohPXMme5NTvcsYa8eICfUeQlfR
+ bh=z8KYkGdqkhnSqr83Tg566e7vp6z6Rom1upSnLJcwUrM=;
+ b=gRtoor9TRTWzrmnfB+uBtwKOMsYIpI2xFukls4ziPH6sEoB1Cyv/Kv7iUvqOJ55edvYom3YHg
+ 57/Zei/6pebAGLqX5ZFa7jcPsdfxRT9g1DRfIzCNH6PkeL4IC3bK9nL
 X-Developer-Key: i=kang.yang@oss.qualcomm.com; a=ed25519;
  pk=qz684ZqyU2kfjPKl3UVYeUcHg1oCLfFIhi0n3vK+MFk=
-X-Authority-Analysis: v=2.4 cv=Dt/Da2/+ c=1 sm=1 tr=0 ts=6b000816 cx=c_pps
+X-Proofpoint-Spam-Details-Enc: AW1haW4tMjYxMTIwMDAzNCBTYWx0ZWRfX/TKEnTfYPn+Z
+ Vuo5+j8rpBQKinoKoQRqvpnxu2tut85PNmcJZzowttA/Yf3MJkiLICyelZFX0UcYJRvFuuc4n2b
+ TYjz5jT+VcN1kdvq1wNrqLuWqjsHpbAJwuDJQ93XL6Y+zMYXc5gzXY1WtgNuXLxdMMQn6B5bZh4
+ dZuBFO3AbTW5KMnciVrkbVOouq/aAnN2pSegXIFxbDMVAOVvwCiyzDToHqNwYqPJKa0DvgAFgnp
+ Le+0upqOAC8a5ISEdhsFjdlhochyhp5Vk0WoEkJQnQ5cWlVm7uEYYp0n9cFqP3H6XJCS1Q2QU8h
+ n95eb+oe38j8L57vH750vgQlMc5XBgUZ2cPnE7wZYJzVMD0ikKt4n9cle55cCXmZ5hUy1UWlhhp
+ 4bGOwGJeJJ5+XBom449tKJChAokERzGtJBr/MltND0KxzKAb9kk+BhLES6MDnU0EIdOhxMerjzw
+ 2kRmXrzxWcCtDSMBY1w==
+X-Authority-Analysis: v=2.4 cv=bLeDs/+Z c=1 sm=1 tr=0 ts=6b000818 cx=c_pps
  a=wEP8DlPgTf/vqF+yE6f9lg==:117 a=ouPCqIW2jiPt+lZRy3xVPw==:17
  a=IkcTkHD0fZMA:10 a=zJRp6_cAMcgA:10 a=s4-Qcg_JpJYA:10
- a=VkNPw1HP01LnGYTKEx00:22 a=u7WPNUs3qKkmUXheDGA7:22 a=Um2Pa8k9VHT-vaBCBUpS:22
- a=EUspDBNiAAAA:8 a=bVNB9YUvG8vYEfrUsegA:9 a=QEXdDO2ut3YA:10
+ a=VkNPw1HP01LnGYTKEx00:22 a=u7WPNUs3qKkmUXheDGA7:22 a=DJpcGTmdVt4CTyJn9g5Z:22
+ a=EUspDBNiAAAA:8 a=fr4EAzCGZu4FAUfOKUQA:9 a=QEXdDO2ut3YA:10
  a=bBxd6f-gb0O0v-kibOvt:22
-X-Proofpoint-GUID: rcScFlgHnXZ1OZxkjSPyaYaRkH-IIHte
-X-Proofpoint-Spam-Details-Enc: AW1haW4tMjYxMTIwMDAzNCBTYWx0ZWRfX24jouGfqVoia
- +IaRF/6VNjpyxdX8vh1UR2QgJoA+gCSOLVz1QgttxxXQQtVjAeQyaebT9fp6HqVhF2QkKebnUzT
- r0/IP6Ts3V97QI2XZp/g00qKmObBUG4HtdhXBC0uW2itoDRFr7V8XIPM6yvNheoH/3MA0uEGjDB
- 2HdXM338WUM30lZ8nbTSI6ILEtxAyOnYEDlmr5rhOVtcHwv0nJZaev3Pf06PFLmQR3t6qRDt58p
- VmqVGrNbEirNGOSbBD+giEomVYjoGne81YmnilxBgZJxrGNnbMH177y0cddExKlJh3adXWOw64b
- BhXUHOsOUur9w94GxA1EWPGeMJvVH0+/9eBrbB4Gx8EQQ/WhlKxRCe0y6qvnf4upC7CmnR3U54y
- iCPbeR1wTWOA239KMQqqMu41vKKe2oa/ziwcdk2pdh+NaucF/P74SFcT163jpYgSUxiQ+Zix2UE
- rzkuq0xFxL+ctxiWbxw==
-X-Proofpoint-Spam-Info: AW1haW4tMjYxMTIwMDAzNCBTYWx0ZWRfXxr75TKku5/TM
- ozxkDtCKqbSzcTrYIM1jCaH6wzavXSQcTPv/IjOSTEdB0tgIpbmHmviEPFU7VR+O3dAlkyowtT7
- fKQvzOjXo/cBEtoLQYqueSajscwP2g0=
-X-Proofpoint-ORIG-GUID: rcScFlgHnXZ1OZxkjSPyaYaRkH-IIHte
+X-Proofpoint-ORIG-GUID: H9jwZYBP0gtbf3mtriMF6DyRqoSrDOjT
+X-Proofpoint-Spam-Info: AW1haW4tMjYxMTIwMDAzNCBTYWx0ZWRfX6SFRxLGRYGv3
+ YEHGFFX4ZyaMNunofRQ1jsGRo3NJPgjv5aVtP81RcipJnTTfLh4xBO1SESsh/AaSciDw0PSfgqM
+ 3hWSZ4zmeR2mlX2ZwtrSh1Pv+pZRrqA=
+X-Proofpoint-GUID: H9jwZYBP0gtbf3mtriMF6DyRqoSrDOjT
 X-Proofpoint-Virus-Version: vendor=baseguard
  engine=ICAP:2.0.293,Aquarius:18.0.1176,Hydra:6.1.138,FMLib:17.12.100.49
  definitions=2026-11-20_03,2026-11-19_01,2025-10-01_01
 X-Proofpoint-Spam-Details: rule=outbound_notspam policy=outbound score=0
- spamscore=0 priorityscore=1501 phishscore=0 lowpriorityscore=0 bulkscore=0
- malwarescore=0 adultscore=0 impostorscore=0 suspectscore=0 clxscore=1015
+ bulkscore=0 phishscore=0 priorityscore=1501 lowpriorityscore=0 spamscore=0
+ malwarescore=0 adultscore=0 clxscore=1015 suspectscore=0 impostorscore=0
  classifier=typeunknown authscore=0 authtc= authcc= route=outbound adjust=0
  reason=mlx scancount=1 engine=8.22.0-2611040001 definitions=main-2611200034
 
-ath10k_core_restart() releases ar->conf_mutex after halting the
-device, and ath10k_start() later takes it again while powering the
-device back up. ath10k_hw_scan() does not check ar->state, so a scan
-request may enter between these operations and be sent while the
-device is powered down.
+ath10k_sdio_hif_tx_sg() queues writes on ar_sdio->wr_asyncq and
+schedules wr_async_work. The SDIO sleep timer also schedules this
+work, and the work may re-arm the timer.
 
-On SDIO, ath10k_wmi_cmd_send_nowait() queues the command on
-ar_sdio->wr_async_work and returns success. The queued mailbox write
-may then run while ath10k_start() is initializing the chip in BMI
-mode, resulting in errors such as:
+The current shutdown sequence does not prevent this activity from
+surviving an SDIO power cycle:
 
-  failed to stop wmi scan: -108
-  failed to start hw scan: -110
-  failed to read from address 0x868: -110
-  bmi communication timeout
-  could not write board data (-110)
+  - ath10k_sdio_hif_stop() drains wr_asyncq once, but new writes may
+    still be queued before the card is marked disabled.
 
-The BMI initialization then fails and the driver may enter the
-WEDGED state.
+  - ath10k_sdio_hif_power_down() deletes the sleep timer but does not
+    cancel wr_async_work.
 
-Reject scan requests with -EBUSY unless the device is in
-ATH10K_STATE_ON or ATH10K_STATE_RESTARTED, matching the state check
-already used by __ath10k_set_antenna().
+  - ath10k_sdio_hif_power_up() does not clear work or requests left
+    from the previous power cycle.
+
+As a result, stale work may access the SDIO bus while the device is
+being reinitialized in BMI mode, causing errors such as:
+
+      failed to read from address 0x868: -110
+      failed to read fifo/chip control register: -110
+      bmi communication timeout
+      could not write board data (-110)
+
+Mark the card disabled before power-down begins so new asynchronous
+transfers are rejected. Make wr_async_work drop requests that raced
+with the state change instead of accessing the bus.
+
+Synchronize the sleep timer and wr_async_work, then drain wr_asyncq
+during both power-down and power-up so no request from an earlier
+power cycle can run during BMI initialization. Factor the queue
+cleanup into a helper shared with ath10k_sdio_hif_stop().
+
+A dropped request is completed the same way as a written one, only
+without the bus access. HTC messages go through
+ath10k_htc_notify_tx_completion(), which lets the endpoint release the
+skb. The IRQ disable request signals its completion and leaves the skb
+to the waiter, which frees it. Every bus request is returned to the
+free pool, so nothing is leaked.
+
+As a result, ath10k_sdio_hif_stop() no longer frees the skb of a
+non-HTC request itself. The IRQ disable request is the only such
+request, and its skb is owned by its waiter.
 
 Tested-on: QCA6174 hw3.2 PCI WLAN.RM.4.4.1-00288-QCARMSWPZ-1
 Tested-on: QCA6174 hw3.2 SDIO WLAN.RMH.4.4.1-00189
 
 Signed-off-by: Kang Yang <kang.yang@oss.qualcomm.com>
 ---
- drivers/net/wireless/ath/ath10k/mac.c | 6 ++++++
- 1 file changed, 6 insertions(+)
+ drivers/net/wireless/ath/ath10k/sdio.c | 78 ++++++++++++++++++++++++----------
+ 1 file changed, 56 insertions(+), 22 deletions(-)
 
-diff --git a/drivers/net/wireless/ath/ath10k/mac.c b/drivers/net/wireless/ath/ath10k/mac.c
-index a213d8c2a8e8..5d3f331950a9 100644
---- a/drivers/net/wireless/ath/ath10k/mac.c
-+++ b/drivers/net/wireless/ath/ath10k/mac.c
-@@ -6415,6 +6415,12 @@ static int ath10k_hw_scan(struct ieee80211_hw *hw,
+diff --git a/drivers/net/wireless/ath/ath10k/sdio.c b/drivers/net/wireless/ath/ath10k/sdio.c
+index fdf19ce4b55b..f0e1feacb629 100644
+--- a/drivers/net/wireless/ath/ath10k/sdio.c
++++ b/drivers/net/wireless/ath/ath10k/sdio.c
+@@ -1461,6 +1461,33 @@ static void ath10k_sdio_sleep_timer_handler(struct timer_list *t)
+ 	queue_work(ar_sdio->workqueue, &ar_sdio->wr_async_work);
+ }
  
- 	mutex_lock(&ar->conf_mutex);
- 
-+	if (ar->state != ATH10K_STATE_ON &&
-+	    ar->state != ATH10K_STATE_RESTARTED) {
-+		ret = -EBUSY;
-+		goto exit;
++/* Drop any requests still queued on wr_asyncq without touching the bus.
++ * Caller must ensure wr_async_work is not running concurrently.
++ */
++static void ath10k_sdio_drop_wr_async_reqs(struct ath10k *ar)
++{
++	struct ath10k_sdio *ar_sdio = ath10k_sdio_priv(ar);
++	struct ath10k_sdio_bus_request *req, *tmp_req;
++
++	spin_lock_bh(&ar_sdio->wr_async_lock);
++
++	list_for_each_entry_safe(req, tmp_req, &ar_sdio->wr_asyncq, list) {
++		struct ath10k_htc_ep *ep;
++
++		list_del(&req->list);
++
++		if (req->htc_msg) {
++			ep = &ar->htc.endpoint[req->eid];
++			ath10k_htc_notify_tx_completion(ep, req->skb);
++		} else if (req->comp) {
++			complete(req->comp);
++		}
++		ath10k_sdio_free_bus_req(ar, req);
 +	}
 +
- 	if (ath10k_mac_tdls_vif_stations_count(hw, vif) > 0) {
- 		ret = -EBUSY;
- 		goto exit;
++	spin_unlock_bh(&ar_sdio->wr_async_lock);
++}
++
+ static void ath10k_sdio_write_async_work(struct work_struct *work)
+ {
+ 	struct ath10k_sdio *ar_sdio = container_of(work, struct ath10k_sdio,
+@@ -1469,6 +1496,15 @@ static void ath10k_sdio_write_async_work(struct work_struct *work)
+ 	struct ath10k_sdio_bus_request *req, *tmp_req;
+ 	struct ath10k_mbox_info *mbox_info = &ar_sdio->mbox_info;
+ 
++	/* The card is powered down; drop pending requests instead of
++	 * touching the bus. Prevents stale writes from racing with a
++	 * concurrent BMI power-up on the next recovery cycle.
++	 */
++	if (ar_sdio->is_disabled) {
++		ath10k_sdio_drop_wr_async_reqs(ar);
++		return;
++	}
++
+ 	spin_lock_bh(&ar_sdio->wr_async_lock);
+ 
+ 	list_for_each_entry_safe(req, tmp_req, &ar_sdio->wr_asyncq, list) {
+@@ -1586,6 +1622,13 @@ static int ath10k_sdio_hif_power_up(struct ath10k *ar,
+ 	if (!ar_sdio->is_disabled)
+ 		return 0;
+ 
++	/* Flush any sleep timer or async work left over from the previous
++	 * cycle so they cannot fire during BMI and poke the bus.
++	 */
++	timer_delete_sync(&ar_sdio->sleep_timer);
++	cancel_work_sync(&ar_sdio->wr_async_work);
++	ath10k_sdio_drop_wr_async_reqs(ar);
++
+ 	ath10k_dbg(ar, ATH10K_DBG_BOOT, "sdio power on\n");
+ 
+ 	ret = ath10k_sdio_config(ar);
+@@ -1629,7 +1672,16 @@ static void ath10k_sdio_hif_power_down(struct ath10k *ar)
+ 
+ 	ath10k_dbg(ar, ATH10K_DBG_BOOT, "sdio power off\n");
+ 
++	/* Reject new async writes from ath10k_sdio_hif_tx_sg() and make
++	 * ath10k_sdio_write_async_work() drop any already-queued
++	 * requests before they touch the bus.
++	 */
++	ar_sdio->is_disabled = true;
++
+ 	timer_delete_sync(&ar_sdio->sleep_timer);
++	cancel_work_sync(&ar_sdio->wr_async_work);
++	ath10k_sdio_drop_wr_async_reqs(ar);
++
+ 	ath10k_sdio_set_mbox_sleep(ar, true);
+ 
+ 	/* Disable the card */
+@@ -1647,8 +1699,6 @@ static void ath10k_sdio_hif_power_down(struct ath10k *ar)
+ 		ath10k_warn(ar, "unable to reset sdio: %d\n", ret);
+ 
+ 	sdio_release_host(ar_sdio->func);
+-
+-	ar_sdio->is_disabled = true;
+ }
+ 
+ static int ath10k_sdio_hif_tx_sg(struct ath10k *ar, u8 pipe_id,
+@@ -1659,6 +1709,9 @@ static int ath10k_sdio_hif_tx_sg(struct ath10k *ar, u8 pipe_id,
+ 	struct sk_buff *skb;
+ 	int ret, i;
+ 
++	if (ar_sdio->is_disabled)
++		return -ESHUTDOWN;
++
+ 	eid = pipe_id_to_eid(pipe_id);
+ 
+ 	for (i = 0; i < n_items; i++) {
+@@ -1972,7 +2025,6 @@ static void ath10k_sdio_irq_disable(struct ath10k *ar)
+ 
+ static void ath10k_sdio_hif_stop(struct ath10k *ar)
+ {
+-	struct ath10k_sdio_bus_request *req, *tmp_req;
+ 	struct ath10k_sdio *ar_sdio = ath10k_sdio_priv(ar);
+ 	struct sk_buff *skb;
+ 
+@@ -1984,25 +2036,7 @@ static void ath10k_sdio_hif_stop(struct ath10k *ar)
+ 		dev_kfree_skb_any(skb);
+ 
+ 	cancel_work_sync(&ar_sdio->wr_async_work);
+-
+-	spin_lock_bh(&ar_sdio->wr_async_lock);
+-
+-	/* Free all bus requests that have not been handled */
+-	list_for_each_entry_safe(req, tmp_req, &ar_sdio->wr_asyncq, list) {
+-		struct ath10k_htc_ep *ep;
+-
+-		list_del(&req->list);
+-
+-		if (req->htc_msg) {
+-			ep = &ar->htc.endpoint[req->eid];
+-			ath10k_htc_notify_tx_completion(ep, req->skb);
+-		} else if (req->skb) {
+-			kfree_skb(req->skb);
+-		}
+-		ath10k_sdio_free_bus_req(ar, req);
+-	}
+-
+-	spin_unlock_bh(&ar_sdio->wr_async_lock);
++	ath10k_sdio_drop_wr_async_reqs(ar);
+ 
+ 	ath10k_core_napi_sync_disable(ar);
+ }
 
 -- 
 2.34.1
