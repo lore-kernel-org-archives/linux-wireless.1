@@ -1,88 +1,88 @@
 Authentication-Results: smtp.subspace.kernel.org; arc=none smtp.remote-ip=209.85.218.41
 ARC-Seal: i=1; d=subspace.kernel.org; s=arc20261015; a=rsa-sha256; cv=none;
-	t=1795302474;
-	b=WDBcgFDm1jzkJSF6N8C5vI3aoSg5AWRkCGv2EqXXJylVroHNMNmFvGi3powGYrIIBrgI
-	 vh1WTkXb2NhYWYrI6Tr5QWDFB/dVqM4txrBv+ez/aRQ7xtrCapq+84s1DP3LYvn4ouBpU
-	 xW2zS7vsuQeNGbnAIweL2fh3XdFhMQlV6EPS3u8l/qQmawnX396g3O2+TezmjPYCpjCNK
-	 c5rGXEqmy+cuI9I5CbLz2FMHdg6RmNAy26W528E+oefFJTgPvw4IOzSlJ+a7u/zEFtUjh
-	 ID58oeEcugEuph7NB8GDKNN5U2sRZxYAvGOMg1WBAlFJIzuX89hzK64/KEXQX+g020Q==
+	t=1795302475;
+	b=254g0UFy1iUbvsmyM+LYLDXsE4bPANzP+z+AR6iKjQZX93BZCtbA0Owu4QTA3c6aChjT
+	 bDpI/LiGWDLqefH1/9XXa/nepyxVLp1wr3ZBvkMSgYDT7fCbWYUELqnnHslgIJgOkTlRf
+	 70BN9SVgY8xIVaQgZFeZhkjl2k09omdAqjfnJJ5KKMm5Kl4LCyIIJMx1WbY8sETJxGGPr
+	 mOS/otwYm30llJJ7sgztJhUqDLtQ3Dptm97NO1Z5/VHQ+uIb6eNymRSGVavX2TzFiAJ5Q
+	 DR+dtN6bEtlRO9y+fFIVRDX/PyIt0Oxcr8dJUlvouOFdiNOpbdoQO0xI5os3pR0pMBA==
 ARC-Message-Signature: i=1; d=subspace.kernel.org; s=arc20261015;
-	a=rsa-sha256; c=relaxed/relaxed; t=1795302474;
+	a=rsa-sha256; c=relaxed/relaxed; t=1795302475;
 	h=DMARC-Filter:Received:DKIM-Signature:X-Google-DKIM-Signature:
 	 X-Forwarded-Encrypted:X-Gm-Message-State:X-Gm-Gg:X-Received:Received:
 	 From:To:Cc:Subject:Date:Message-ID:X-Mailer:In-Reply-To:References:
 	 MIME-Version:Content-Transfer-Encoding;
-	bh=70WNgqL5GZRExFkcGtbsYLJh4cOMmVFtlMmJCmnLrEM=;
-	b=q3yhJ6szZBIPLB3NE816ZljfLuw2d8vXZUZiv8YHP6UEmTuNxb+7cJ48S0aaFEGSo9MZ
-	 EFQn+06dlTAFfwpzHnFdYvknNDdwfC5WOoyfPVphSMNzgK5N+hrHrflPB99akJD0fSxzf
-	 QUxax3S4UntHCq/MaDDA1jFa7w9vTIRNwVRIKful4Qkylqpd/LasxMir0Q86RHkzUD5Tp
-	 7CKtNf0p61Wgdxb/rgyvK/l972C/m3abuzQ0wch3u13hjDfA/4wJp4E2LslCd18pczJK4
-	 0OEC+IvvN3LU7Biu56Pr/6w+sLulH4mUnMkA70B+/i7ZU4cx+dCb5QKVCJq0NPdSJFg==
+	bh=s88wbEfs1LyrsI8Y5Ny0Pr/96EyRBnxWAeHAPxpjPjY=;
+	b=x5fSnd37vBfpZ27jIF9IaGMHYSXYwTdAvXQViaH9SZ2Ibc9pqj5OPIcluxyVrvEMxAkE
+	 o8RwegaP+BJznL2BneZnM6IUyXrLguCPhYy6HZ/6Fh3xcbPaKmBWA7shpbFJ/voVI9N3X
+	 EEZ0h6q68MPIDX+Vz+fHDbX2WsGBM4kB8YCXRdJhoXRVf+ePU/bSPZgUlkZzmPYjOTdEN
+	 /RAxF/Elj8Sg4bSpqU/jzOV9LCMoM7zgV5ONFkKg2iQZvFhK5MPRd6t2NDS70XgiCtG5J
+	 JUj/7BjN85NbhVELLYYXwqjVg1b2uBMkqNMKt/A7kap4D+ySo1Jwn4JSCROv+5jDpwA==
 ARC-Authentication-Results: i=1; smtp.subspace.kernel.org; 
 	dmarc=pass header.from=bairaktaris.de;
 	spf=pass smtp.mailfrom=bairaktaris.de;
-	dkim=pass header.d=bairaktaris.de header.i=@bairaktaris.de header.a=rsa-sha256 header.s=google header.b="iAn/gKCe";
+	dkim=pass header.d=bairaktaris.de header.i=@bairaktaris.de header.a=rsa-sha256 header.s=google header.b=UXsXM8VU;
 	arc=none smtp.remote-ip=209.85.218.41
 Received: from mail-ej1-f41.google.com (mail-ej1-f41.google.com [209.85.218.41])
 	(using TLSv1.3 with cipher TLS_AES_128_GCM_SHA256 (128/128 bits)
 	 key-exchange X25519 server-signature ECDSA (prime256v1) server-digest SHA256)
 	(No client certificate requested)
-	by smtp.subspace.kernel.org (Postfix) with ESMTPS id 9E54C60A3803
-	for <linux-wireless@vger.kernel.org>; Sat, 21 Nov 2026 23:07:53 +0000 (UTC)
-DMARC-Filter: OpenDMARC Filter v1.4.2 smtp.subspace.kernel.org 9E54C60A3803
+	by smtp.subspace.kernel.org (Postfix) with ESMTPS id 6F94360A3832
+	for <linux-wireless@vger.kernel.org>; Sat, 21 Nov 2026 23:07:55 +0000 (UTC)
+DMARC-Filter: OpenDMARC Filter v1.4.2 smtp.subspace.kernel.org 6F94360A3832
 Authentication-Results: smtp.subspace.kernel.org; dmarc=pass (p=reject dis=none) header.from=bairaktaris.de
 Authentication-Results: smtp.subspace.kernel.org; spf=pass smtp.mailfrom=bairaktaris.de
 Authentication-Results: smtp.subspace.kernel.org;
-	dkim=pass (2048-bit key) header.d=bairaktaris.de header.i=@bairaktaris.de header.a=rsa-sha256 header.s=google header.b=iAn/gKCe
-Received: by mail-ej1-f41.google.com with SMTP id a640c23a62f3a-c505b2e1cb9so391308566b.2
-        for <linux-wireless@vger.kernel.org>; Sat, 21 Nov 2026 15:07:53 -0800 (PST)
+	dkim=pass (2048-bit key) header.d=bairaktaris.de header.i=@bairaktaris.de header.a=rsa-sha256 header.s=google header.b=UXsXM8VU
+Received: by mail-ej1-f41.google.com with SMTP id a640c23a62f3a-c4203bbb1e9so337990866b.3
+        for <linux-wireless@vger.kernel.org>; Sat, 21 Nov 2026 15:07:55 -0800 (PST)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=bairaktaris.de; s=google; t=1795302472; x=1795907272; darn=vger.kernel.org;
+        d=bairaktaris.de; s=google; t=1795302474; x=1795907274; darn=vger.kernel.org;
         h=content-transfer-encoding:mime-version:references:in-reply-to
          :message-id:date:subject:cc:to:from:from:to:cc:subject:date
          :message-id:reply-to:content-type;
-        bh=70WNgqL5GZRExFkcGtbsYLJh4cOMmVFtlMmJCmnLrEM=;
-        b=iAn/gKCeDVxoppGDtERRfbQtMG3UyulV8/ug+KryZz+U+gatkxGk/JS19etoExrH2k
-         AQDxCI1HLDqRdvHjeTjkJcwJnA/EC9FBoQ+J04FXLfTGwjnIrW6hMev3wb3CFzIIDd8N
-         LSfHhbvgmEAdprpqNr4KUJFCCL4gjwqobaNVo5RKM8ppN1ru9ZI2afW/1XWVGu8EJUGV
-         3ZK/Z7DNajvIBLzox6xzSvxQc6RrYW1PxER/wpwslJmmaAn+DI5sxDD7RjPBUFBmvhSb
-         RPuAACm4PImYIPWTSquQPsmGxBfcFdsFfwpR3jnWEV2VwAF9THfKW0fTfUAp4hjNcjB7
-         5PCA==
+        bh=s88wbEfs1LyrsI8Y5Ny0Pr/96EyRBnxWAeHAPxpjPjY=;
+        b=UXsXM8VUxKGW99RINHuFf7j8UKpu+ylu5fmYvOWf8Api27Hx8/jxc3tK0a268TsKTv
+         62N3C6BGhJBREMSW5Mc22tx58eaeWDD6YJc+e/iO/u1SoGqF0825XqGBOIirAyCPZssB
+         JxgxQfdB+0gReyZkQmPM6oY+XLU8Pr3iIpGfKxdgaKWnTkGHUI2MZabNGFQCgDK83Ovx
+         1cAMenaxZaMx45dQ9xGQ+3XTHk/bUo+onKlscg0oV7jE0PvGo4HBPAGCfXwMLTjsWnYv
+         tVP1CAQqwNT1afmJXpXQXJTcyr1jLVh6nI+zLUdgmXXU9uZ2cOfGBcUADaj71SZt9xb2
+         w9tQ==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=1e100.net; s=20260707; t=1795302472; x=1795907272;
+        d=1e100.net; s=20260707; t=1795302474; x=1795907274;
         h=content-transfer-encoding:mime-version:references:in-reply-to
          :message-id:date:subject:cc:to:from:x-gm-gg:x-gm-message-state:from
          :to:cc:subject:date:message-id:reply-to:content-type;
-        bh=70WNgqL5GZRExFkcGtbsYLJh4cOMmVFtlMmJCmnLrEM=;
-        b=mjCubM21ds4n+/3uiLKv1u3wsqAi09qX4mhiZcMEle+qCG3Ez0JOnAwBLncX55EJUQ
-         hk7ZQ925jpxf7brNTxvIhwcoDIofHqrB6uPwGohxCKp7HhOYVO2DvlLt4ZWfV9bzfBHC
-         FPSxTUkaB8d2/xmVFH92h22+iosh30V47AglPPSnOpj3P+TmFAnnbLuVh7+OD98TkfxS
-         AIwyJICmQV52WCZ5rRSMUVQziPCzJLTSywcs1z7rJZc3f10GvZhZwTfp+74JDf39Nwd4
-         QEbNKIaPVQKL9wOKwebSdoWU6OyNl+bXsnNC3uvfzH2zBWCYWUyrSTZNfhjCC3Ce5Jmo
-         D/kg==
-X-Forwarded-Encrypted: i=1; AL+hErHOA9PnBY/mGcuiNHrm09VbtBP361mIJo+HG5L4164DF2rvZHiNgAi46/AZfAjpuN+7IB+jVCGUgtKfviHS9w==@vger.kernel.org
-X-Gm-Message-State: APuU4Z9RCqHxx4o4A5w8EPKOFuxWDHcu7s3QdFqr2zTp/jgs5MpPcYiz
-	UBnExtO9ROYLmQPvo2xg3SxdDFpAH9pOLZndx1JoOYfNbweMW0IRzn1KT6fDbBkwug==
-X-Gm-Gg: AZFdTZcTDGV2arAAGVQ5wM/U3Ox202RKtRYD1NQZCq8cLfZ/ZZuB4xsNfI1uG4tauzC
-	bD2ILd/e6a9L6PDIRLh1ghIi+jKAyQTtTPASNlHXXV8h89dcqT7kFMrwSO96R9YwUyDQFOt503/
-	26Xa78uiOQvjbUfJO1rQuStJdfoAZq7TQNPkRl7g6iZcSuo4YYo8JBlLpTcZTiBFMM31cR36cmK
-	D6sgI04gxeEQzAshP8htff9cQPLxz39/Pw0rLFKsjOyvtqzeSa7N5vbDBtDrvnjWtmGr4w6p3EJ
-	De7+tdKMhGH4QYgIKo8PnsBVAh9EhfdFms3+iAStD+xlvrpSfIc7qWH9c+J3mj5vHGPOpSMw3sC
-	qpDYYye8t2njtMxHdmUcvPIWNLFVFNftVmBvRSqKiPzL2OIGglRn/+Dn9b8AnESPNu5PgHQCB1Q
-	GiHH9RsSl5hdl/Y2Me7dr7cP0mVzAcPRAO6e5S+O9yhYYiaGgdKghCEUfkagtBSD9/4+eQqnzQe
-	1KhbcN2EYpL9HstPoK9D3hvYz4xUkpJiChOnc0tNyb9BKcEne5kLH8mhhPIsDq+wF2q7TvVpOk5
-	1j0E8lY78YSsdCChsrChdjWrhS/7t7wtr5C+Nn9n2CJ9YVoPa4K/XVdVqWBk6CcBxlquq6YbOso
-	s8YFvCgpu8Ta9EweOULH4OtBaVYncCvFxbr1AvyQ4FCDKJGd7eIuBtl48Q4IufBKfASvpZzRhBp
-	Q4XmxBcSBrnizme1mjRlUP+lyOo5bwzX2CWb5l9Cd4I6d3lZgGAaQeOR+DZIsNQN0gHjM/r5bOP
-	TlNE1bc87s2BQ8sJLMGeWjN4uRGaIuUStXPFJZkHCSvhVSs0T5iEp+lvT/R0ZADEScjW1ig6mpS
-	UrNIpmeKQFbM/grm3dBQDv5PZ+wsc130toBNHywgkvi8BIuXmV+JTbENak90CdQNWRyZnz9FGXU
+        bh=s88wbEfs1LyrsI8Y5Ny0Pr/96EyRBnxWAeHAPxpjPjY=;
+        b=d7PbNAAiB2z7qDfTwVGwYJu0Jovz/FOhACwHWu8ZDNArfVwSidvwzRHhEt4NreqhSo
+         J5yBXipSU77A4Ec5axZPqQlrGz+1u36Xo5j7ZDRn0bwC9CT8AaN5WL7ZE3XRwEjItYLM
+         ZH0TwKdpekzY+RtIBV4EYxs4PBTk5IRuQkqaSaPCF8UmpiQ51SMcjLGW365O2zep+v1K
+         5CVWMkKU2STvryDKacBYM9a0cXfw6Mv7d93eETXMnZQGQUJDp4lb8zpCCzgRM5ujo9FO
+         7f9vzG9rBFRcUe6gfQxqYZ68V1u1tyKGqwgdh2BFxlUGIhoZDzdBkmpNIdbcT7Bc4FpG
+         bQpA==
+X-Forwarded-Encrypted: i=1; AL+hErGwi68O8GFhW4L6uRz36dw72fC/WGXvJndIPzD0LdLzW0b1I78vmJ5V5xB+D9al7xYo4VjqTj38+wjkDvrXzQ==@vger.kernel.org
+X-Gm-Message-State: APuU4Z9T+iDSV9tlPobAlpabtgmkIKIA0uYyhlIdZr5c7+gPqrKryvZm
+	IOv8Eof6h6wuU/zi2V90+M2h6mwzXgG9w8JhgBPGbRZBEqNIzBLR1Nr1WzAS4g//7g==
+X-Gm-Gg: AZFdTZcpHlcN5gST7RPGiLX4mk4tXU9Lf+l+9FD36ubzSygSQxzHHDTqkirwk1RxrZo
+	Fvkf4VXH05UsIbYwLqw/qdUGrTq8XvKnzR67ww3Pv11r6AAgc6wYEJAN36mHNJmj9qSRYaYxPpI
+	JAcNQmcwIDa0T6iS0nCt7aIapKVej8iH2DPWm+yG+mlUJUufX0/qAA8Z6hWyt8HWyk/l0OeVuUE
+	B1Tl6JVi+aWwgwtQ6tFoXBfXDi+Svp8X+1kkGfsy2tFqkUDI6lFk6Q9ofyIYnPohnfwnGwCIFtc
+	JBfMBD07elybIsJIpg668Cg5gFUXGVb9x7S1ML44a98ikCW2S/9cxbBaphPMYkW6+WB7/QO5uUq
+	AS8+u4mvD6XEbkYfjDo8KGNAPN4I4fta5HqoxGASr7bc/ME0qKI6KG11lWTsvlHTdHY2HeEuKMO
+	6wIMHHuyAsCmHOvhrh2A2RK/mVGuOoow4lPl/lanK+lz8ONndUZ5rwVvZF81SazZG39R7sUsn/q
+	eGizgF+TzdvRvYBNH7vC5yVy66sBOB0Trk89M3Eq20X/aFWZkhfALmFp4EB1+ybYVi/T65OfOOR
+	yFyQqMNJN4k5KLKUyi4q7m4SBFJZNS1wYm29IjGfYawBTiAmr0bCXUrxajzBGS+YBGTJdhxv51j
+	MH+U/nTvhAXTxeIXY5gEO61zI+RYY+X/+6m8BnwjpTncgi1ZJYEnVzSROk+8Q0rB1HgexzOdA7N
+	k1U+rFLijc7jD4/k1bFGUqTBR+8lrT1NDBbRXgZ0N5JUHHrbORKj6icIJBnqpUY0ahUQFKeW4yj
+	XJfvMCg3MNYkWie6VjCccameewd9iLoV/XXOFrW+DL+T+/WqS3JXWOtlQKl83E7iMg+iBQvCSdF
+	gfB7vjJ3wu7B0R/8FcT5SYvejKY5CH8H4oy+VJCwhOyij/Txe1Cng7sLKWxr7H+AtW5AaA+DG5k
 	=
-X-Received: by 2002:a17:907:1396:b0:c48:a838:c16d with SMTP id a640c23a62f3a-c513ab4925bmr425452666b.30.1795302471991;
-        Sat, 21 Nov 2026 15:07:51 -0800 (PST)
+X-Received: by 2002:a17:906:f5a9:b0:c41:4c20:5a80 with SMTP id a640c23a62f3a-c513aadb0femr716344166b.44.1795302473838;
+        Sat, 21 Nov 2026 15:07:53 -0800 (PST)
 Received: from Desktop.tail070c67.ts.net (p200300f2470edf0034412c7e8f5a5e7a.dip0.t-ipconnect.de. [2003:f2:470e:df00:3441:2c7e:8f5a:5e7a])
-        by smtp.gmail.com with ESMTPSA id a640c23a62f3a-c513afc1b40sm242721466b.54.2026.11.21.15.07.49
+        by smtp.gmail.com with ESMTPSA id a640c23a62f3a-c513afc1b40sm242721466b.54.2026.11.21.15.07.52
         (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
-        Sat, 21 Nov 2026 15:07:50 -0800 (PST)
+        Sat, 21 Nov 2026 15:07:53 -0800 (PST)
 From: Julius Bairaktaris <julius@bairaktaris.de>
 To: Jeff Johnson <jjohnson@kernel.org>
 Cc: ath11k@lists.infradead.org,
@@ -107,9 +107,9 @@ Cc: ath11k@lists.infradead.org,
 	Pradeep Kumar Chitrapu <quic_pradeepc@quicinc.com>,
 	Sathishkumar Muruganandam <quic_murugana@quicinc.com>,
 	Muna Sinada <quic_msinada@quicinc.com>
-Subject: [PATCH ath-next v3 10/13] wifi: ath11k: ahb: configure the IRQs before the firmware is booted
-Date: Sun, 22 Nov 2026 00:07:28 +0100
-Message-ID: <20261121230731.1206043-11-julius@bairaktaris.de>
+Subject: [PATCH ath-next v3 11/13] wifi: ath11k: free the queued QMI events when the QMI service is torn down
+Date: Sun, 22 Nov 2026 00:07:29 +0100
+Message-ID: <20261121230731.1206043-12-julius@bairaktaris.de>
 X-Mailer: git-send-email 2.53.0
 In-Reply-To: <20261121230731.1206043-1-julius@bairaktaris.de>
 References: <20261121230731.1206043-1-julius@bairaktaris.de>
@@ -124,77 +124,48 @@ Precedence: list
 MIME-Version: 1.0
 Content-Transfer-Encoding: 8bit
 
-ath11k_ahb_probe() calls ath11k_ahb_config_irq() after ath11k_core_init(),
-which has already initialised the QMI client, created the debugfs
-directory, registered the PM notifier and booted the remote processor.
-When the IRQ configuration fails, the error path only unregisters the
-SSR notifier and frees the CE pipes and the resources below them, then
-frees ab: the firmware keeps running and the QMI client, whose callbacks
-post events into ab->qmi, the debugfs files and the PM notifier stay
-behind.
+ath11k_qmi_deinit_service() releases the QMI handle, cancels the event
+work and destroys its workqueue, but frees no event still on
+qmi->event_list. Releasing the handle reports the exit of every server
+it knew, so ath11k_qmi_ops_del_server() queues a SERVER_EXIT event there
+on every removal with a known server, and the event work stops early
+once ATH11K_FLAG_UNREGISTERING is set and leaves the rest of the list.
+These events are leaked.
 
-The order was swapped by commit 166e22b38aa3 ("ath11k: ahb: call
-ath11k_core_init() before irq configuration") because the ext IRQ setup
-needs hw_params.max_radios. hw_params is now set in
-ath11k_core_pre_init(), which ath11k_ahb_probe() calls before it maps
-the resources, so configure the IRQs before ath11k_core_init() again,
-as ath11k_pci_probe() does, and free them when ath11k_core_init() fails.
-Nothing can fail after the firmware is booted then. The SSR notifier is
-now registered after the IRQ setup, which it disables on a shutdown, and
-unregistered in the new err_free_irq path.
+Free the events left on the list once the handle is released and the
+work is cancelled, when nothing can add or take one any more.
 
-Tested-on: IPQ8074 hw2.0 AHB WLAN.HK.2.12-01460-QCAHKSWPL_SILICONZ-1
-
-Fixes: 166e22b38aa3 ("ath11k: ahb: call ath11k_core_init() before irq configuration")
+Fixes: d5c65159f289 ("ath11k: driver for Qualcomm IEEE 802.11ax devices")
 Signed-off-by: Julius Bairaktaris <julius@bairaktaris.de>
 ---
 v3: new.
 
- drivers/net/wireless/ath/ath11k/ahb.c | 19 +++++++++++--------
- 1 file changed, 11 insertions(+), 8 deletions(-)
+ drivers/net/wireless/ath/ath11k/qmi.c | 9 +++++++++
+ 1 file changed, 9 insertions(+)
 
-diff --git a/drivers/net/wireless/ath/ath11k/ahb.c b/drivers/net/wireless/ath/ath11k/ahb.c
-index 893a3270394e..736fd368f8c6 100644
---- a/drivers/net/wireless/ath/ath11k/ahb.c
-+++ b/drivers/net/wireless/ath/ath11k/ahb.c
-@@ -1285,26 +1285,29 @@ static int ath11k_ahb_probe(struct platform_device *pdev)
- 	if (ret)
- 		goto err_ce_free;
+diff --git a/drivers/net/wireless/ath/ath11k/qmi.c b/drivers/net/wireless/ath/ath11k/qmi.c
+index 3ce7c4e5c51c..4a3837958e01 100644
+--- a/drivers/net/wireless/ath/ath11k/qmi.c
++++ b/drivers/net/wireless/ath/ath11k/qmi.c
+@@ -3361,9 +3361,18 @@ int ath11k_qmi_init_service(struct ath11k_base *ab)
  
--	ath11k_ahb_register_ssr_notifier(ab);
--
--	ret = ath11k_core_init(ab);
-+	ret = ath11k_ahb_config_irq(ab);
- 	if (ret) {
--		ath11k_err(ab, "failed to init core: %d\n", ret);
-+		ath11k_err(ab, "failed to configure irq: %d\n", ret);
- 		goto err_ce_free;
- 	}
- 
--	ret = ath11k_ahb_config_irq(ab);
-+	ath11k_ahb_register_ssr_notifier(ab);
+ void ath11k_qmi_deinit_service(struct ath11k_base *ab)
+ {
++	struct ath11k_qmi_driver_event *event, *tmp;
 +
-+	ret = ath11k_core_init(ab);
- 	if (ret) {
--		ath11k_err(ab, "failed to configure irq: %d\n", ret);
--		goto err_ce_free;
-+		ath11k_err(ab, "failed to init core: %d\n", ret);
-+		goto err_free_irq;
- 	}
- 
- 	ath11k_qmi_fwreset_from_cold_boot(ab);
- 
- 	return 0;
- 
--err_ce_free:
-+err_free_irq:
- 	ath11k_ahb_unregister_ssr_notifier(ab);
-+	ath11k_ahb_free_irq(ab);
+ 	qmi_handle_release(&ab->qmi.handle);
+ 	cancel_work_sync(&ab->qmi.event_work);
+ 	destroy_workqueue(ab->qmi.event_wq);
 +
-+err_ce_free:
- 	ath11k_ce_free_pipes(ab);
- 
- err_hal_srng_deinit:
++	/* The handle is released and the work gone: free what is left */
++	list_for_each_entry_safe(event, tmp, &ab->qmi.event_list, list) {
++		list_del(&event->list);
++		kfree(event);
++	}
++
+ 	ath11k_qmi_m3_free(ab);
+ 	ath11k_qmi_free_target_mem_chunk(ab);
+ }
 -- 
 2.53.0
 
