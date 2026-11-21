@@ -1,56 +1,98 @@
-Authentication-Results: smtp.subspace.kernel.org; arc=none smtp.remote-ip=162.243.164.118
-ARC-Seal: i=1; d=subspace.kernel.org; s=arc20261015; a=rsa-sha256; cv=none;
-	t=1795277805;
-	b=oCShDGw+R/E5an9Nxn59Tbd9v12Ja+O1bDIu9ixxlRsvtk7Wfz3jvNCTpl1mUG2sKlvs
-	 BXHIBQ0JFCF3NCP6axCnAYOSX2SbwpjYoDHJ/yzS+oHt+2u1bLjEKWZRNAxjB81rhEhcX
-	 zAH8e94wAHRxNizOog9lAkp+A4yVYB0maqT8PbWLppsQtY5tKZBjqJmQD2wMPafp93bFY
-	 LwgAGecHHaURlbtntF5Zaf0IclktbM69jSPk917m+lr2bg+iWryY2ipKJ8HzA91e4E9gP
-	 5FY3+qgKV96K6/1L71eBFoijcelHo7qh+zDTLMN+DJ4aQyxf55WheN/jOAnQRtzkBJQ==
-ARC-Message-Signature: i=1; d=subspace.kernel.org; s=arc20261015;
-	a=rsa-sha256; c=relaxed/relaxed; t=1795277805;
-	h=DMARC-Filter:DKIM-Signature:Received:From:To:Cc:Subject:Date:
-	 Message-Id:X-Mailer:MIME-Version:Content-Transfer-Encoding:
-	 X-CM-TRANSID:X-Coremail-Antispam:X-CM-SenderInfo;
-	bh=ZElA5s/21HS1XF60gGGTbmjKeurE3z0LWPC8MyE6+Ew=;
-	b=AZ2mxHxez1R50/IIHT+7U17CNWs/KziBnzmCJglha86opAAzghaZhRAFYLRJH9QR4ptT
-	 +NwIsT+Zf2Cis5TRWzyHkcEoByPlo5QhGEDquEHixWL8ojl2xP+SDf0kRtF81FQfmDMSL
-	 pi8VoDpJfp0EkP5TolvbWfGNa0Idb6dXUgYqBt0+ZoTs/IAWK0b79rEJBLhwg5gvgcZ+V
-	 lBubLNjD4klWyO9F7QrzoTyCBFc2mNz4QzDOzd+Bk8hl4QdXb7WVcg2eWTLqQZCRKi7jb
-	 0UrDvm/KKqwN1cCX9CKqi65XGYKqDEuj0ElYrF9ubdUcEh2C5e5tAMLrdW+JvJQSaBw==
-ARC-Authentication-Results: i=1; smtp.subspace.kernel.org; 
-	dmarc=pass header.from=stu.xidian.edu.cn;
-	spf=pass smtp.mailfrom=stu.xidian.edu.cn;
-	arc=none smtp.remote-ip=162.243.164.118
-Received: from zg8tmtyylji0my4xnjqumte4.icoremail.net (zg8tmtyylji0my4xnjqumte4.icoremail.net [162.243.164.118])
-	by smtp.subspace.kernel.org (Postfix) with ESMTP id EBEFC606A32A;
-	Sat, 21 Nov 2026 16:16:41 +0000 (UTC)
-DMARC-Filter: OpenDMARC Filter v1.4.2 smtp.subspace.kernel.org EBEFC606A32A
-Authentication-Results: smtp.subspace.kernel.org; dmarc=pass (p=quarantine dis=none) header.from=stu.xidian.edu.cn
-Authentication-Results: smtp.subspace.kernel.org; spf=pass smtp.mailfrom=stu.xidian.edu.cn
+Authentication-Results: smtp.subspace.kernel.org; arc=pass header.oldest-pass=0 smtp.remote-ip=209.85.221.181
+ARC-Seal: i=2; d=subspace.kernel.org; s=arc20261015; a=rsa-sha256; cv=pass;
+	t=1795278864;
+	b=CjXttaQ9bL+LXzoRwUjIP0itj5d7NiwE1HTkVqxgHz6ku5xmdfoGgz81NPgBNR7ufsk7
+	 edZT1+EsuzsiLJNJ2wZ+bEc/jKOsZoWluN0nO4xeYgZ3ZZq+ma2/GtjqSlCxy8vz99UPV
+	 4p1giserb9M5B97mjhphaE2771Kcd0V+RT4LqsRiNE+xf5n/+o6sPHo1AOuO1/unLZxPu
+	 BWhVwe0KKrBA4lqp36YMHsEjeJz1UWjDYcSYRkTQfzL6bgMhAHNUMLuV8ro/bTNlgAdFI
+	 vKBo0PSlspIlh28oRvw0SEdMLgb+BNM2mM9Pj+r/r8FWQ0h0bv2CGFcA+/3pBlfMG9A==
+ARC-Message-Signature: i=2; d=subspace.kernel.org; s=arc20261015;
+	a=rsa-sha256; c=relaxed/relaxed; t=1795278864;
+	h=DMARC-Filter:Received:DKIM-Signature:X-Google-DKIM-Signature:
+	 X-Gm-Message-State:X-Gm-Gg:X-Received:Received:MIME-Version:From:Date:
+	 X-Gm-Features:Message-ID:Subject:To:Content-Type;
+	bh=Lz7tsmSYM0hUhccTl923sx6zcb3KnBzfEFLZA9i4GLI=;
+	b=AmPNGLGv5bTHlpre6O95rMkKuvcs8MpXUe0MbuOQiZ26CKV9NG75cEl8Bub5/hAwWdF3
+	 J9zSxDcuA6Lgq/vVDPvOTNAaS5LV0RFwzoJXfjQ0nNNYZfLOyaPUeDLSCt8+IsxlaV7w1
+	 gspdGDI4lA/bS+pcranW/H7o2yeYimkC1jFiMEKJGPsUEXy/z2bDjh4LXc62qDV2gxWbi
+	 fM0MYvm8QKI3qZKfz2tLKQaru08ehF+gc6s35WmWEsZASoRqTNB2EJ80BvcD2P+e2IDSc
+	 8HgasF5x/Vpld44rO2IuILAL2f//1Pu31Iw0wSNyfisBx54qbSpmq6sMt0JqsV0Hv9A==
+ARC-Authentication-Results: i=2; smtp.subspace.kernel.org; 
+	dmarc=pass header.from=gmail.com;
+	spf=pass smtp.mailfrom=gmail.com;
+	dkim=pass header.d=gmail.com header.i=@gmail.com header.a=rsa-sha256 header.s=20260707 header.b=ds8uIXKh;
+	arc=pass header.oldest-pass=0 smtp.remote-ip=209.85.221.181
+Received: from mail-vk1-f181.google.com (mail-vk1-f181.google.com [209.85.221.181])
+	(using TLSv1.3 with cipher TLS_AES_128_GCM_SHA256 (128/128 bits)
+	 key-exchange X25519 server-signature ECDSA (prime256v1) server-digest SHA256)
+	(No client certificate requested)
+	by smtp.subspace.kernel.org (Postfix) with ESMTPS id A17D7606A320
+	for <linux-wireless@vger.kernel.org>; Sat, 21 Nov 2026 16:34:23 +0000 (UTC)
+DMARC-Filter: OpenDMARC Filter v1.4.2 smtp.subspace.kernel.org A17D7606A320
+Authentication-Results: smtp.subspace.kernel.org; dmarc=pass (p=none dis=none) header.from=gmail.com
+Authentication-Results: smtp.subspace.kernel.org; spf=pass smtp.mailfrom=gmail.com
+Authentication-Results: smtp.subspace.kernel.org;
+	dkim=pass (2048-bit key) header.d=gmail.com header.i=@gmail.com header.a=rsa-sha256 header.s=20260707 header.b=ds8uIXKh
+Received: by mail-vk1-f181.google.com with SMTP id 71dfb90a1353d-5eae12762c9so771241e0c.1
+        for <linux-wireless@vger.kernel.org>; Sat, 21 Nov 2026 08:34:23 -0800 (PST)
+ARC-Seal: i=1; a=rsa-sha256; t=1795278862; cv=none;
+        d=google.com; s=arc-20260327;
+        b=MpbryswSy1sRHCqETlQmI87iSQ4UhRZILGDMMlHDjrReX3nq22Q+SbGFoxV7Hmve9p
+         j3pTnKWEgAgZk1a2VJODecDEfXxZ1++1X6jqIQg1AUWjmMl+N5LVO4GQ07gA0gOPnUkN
+         61CNaDRhGJstupz8BnbmEKE8MR53IJD/OcgJ4yFS+ecWcw3yI/ZyT7r8HfHYLLtTBt2C
+         5tjEaq0JlbwpPn5rcWGyjT4VwJiWaA3LE0pkZEfrlJgVlLrQfX8uKdKZWQfRe0cBUX1f
+         5/5VfuKJC88gO2XKoicx3R4pBm07jANQ3OJzS3Si5MnzmtxGC18muyG0iKM2dP4mzIOg
+         ic7Q==
+ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=google.com; s=arc-20260327;
+        h=to:subject:message-id:date:from:mime-version:dkim-signature;
+        bh=Lz7tsmSYM0hUhccTl923sx6zcb3KnBzfEFLZA9i4GLI=;
+        fh=qW0phhq3fb3oiohK/Mu9j1KY1zyRNiiioKFc5anvatM=;
+        b=rXH4upj5VJdk/k3KZ2+wb0UHywWRmBzeRpoDaV4DlNBwCYcEf+hdowf0fcFWX7zFTF
+         EiO5r6XPO+4TOkLzvHfQbJB4IOx5CSTmEXs7jpiquuh8l32OCdX1Nd4Yq5JbgWbHf9YM
+         vX3rSuQe0UBQfKSQnvDwjq9PkydEEPDyTRHve7UXxcxUIHp2OBo6sfdygzx/OLP0e6Uj
+         E+nk0SvVewDHUEZVEu3LamyizNYWGwgAypaSHn/qYR7nQFVjuMyBkB684Pu34ssU4uwa
+         cYhBYK3YWIV3q+HTvyv4RKlFkCyuuwWVUcGMFDldDJB0xJqiVI21twZjnu4XHi4v3EMU
+         9GiA==;
+        darn=vger.kernel.org
+ARC-Authentication-Results: i=1; mx.google.com; arc=none
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-	d=stu.xidian.edu.cn; s=dkim; h=Received:From:To:Cc:Subject:Date:
-	Message-Id:MIME-Version:Content-Transfer-Encoding; bh=ZElA5s/21H
-	S1XF60gGGTbmjKeurE3z0LWPC8MyE6+Ew=; b=Mftu4QvyDpsxjqimkG9O9vc82z
-	Br6ovLe8d6kfAWzddNo928RzckxX61MEyvdnCmQ/R+OEginAj21OAXRzoknIuwCL
-	N9Xk4KmkseSdwtJRFmUWzmIrSlUo2O2UmICiblIfOOF8Tru/Pt1BVxSpoosPNETP
-	ry3Cpyeg/HDYti0Rc=
-Received: from user-virtual-machine.localdomain (unknown [113.200.174.70])
-	by hzbj-edu-front-3.icoremail.net (Coremail) with UTF8SMTPA id BbQMCkDm6fzfwwFrIHEEAg--.57256S2;
-	Sun, 22 Nov 2026 00:16:32 +0800 (CST)
-From: YuanZhe Liu <25031212351@stu.xidian.edu.cn>
-To: Lachlan Hodges <lachlan.hodges@morsemicro.com>,
-	Dan Callaghan <dan.callaghan@morsemicro.com>,
-	Johannes Berg <johannes@sipsolutions.net>
-Cc: Arien Judge <arien.judge@morsemicro.com>,
-	linux-wireless@vger.kernel.org,
-	linux-kernel@vger.kernel.org,
-	stable@vger.kernel.org,
-	Bin Yu <byu@xidian.edu.cn>,
-	Cheng Wen <wencheng@xidian.edu.cn>
-Subject: [PATCH] wifi: mm81x: kill the bulk URB when the wait is interrupted
-Date: Sun, 22 Nov 2026 00:16:31 +0800
-Message-Id: <20261121161631.2552-1-25031212351@stu.xidian.edu.cn>
-X-Mailer: git-send-email 2.34.1
+        d=gmail.com; s=20260707; t=1795278862; x=1795883662; darn=vger.kernel.org;
+        h=content-type:to:subject:message-id:date:from:mime-version:from:to
+         :cc:subject:date:message-id:reply-to:content-type;
+        bh=Lz7tsmSYM0hUhccTl923sx6zcb3KnBzfEFLZA9i4GLI=;
+        b=ds8uIXKhQiIIOwMu4FJWU/GNmjoDZXaDIkcKmHI3x7mCYKGBlVIKZpBnXZjPIfIDGj
+         FznjsvS8Sz92Sw101sZVGnLCGyEVbJX/aVvEtO540Xeag+gUq3v8WMin9VESO2bdTrqY
+         +hV7EFeI9uqs7V/SwjSFCieifzUIZSnNVbP8QAX57jP5M+ZtgqxxNCBL+bs2PHOkfIHF
+         KagLCLI8MFD4VhaeFDyfJgqPBsY8eu8jRI9iCnwIxpGu5a3Mf5o4KuYAOnpADZkBGvbV
+         Sr2JEaL/WkNo4UEJvBwNpSzZKBKnkej/z3eLakdLzvF1SnrJJ1D5Eei5vN1IwnKK802q
+         0s7w==
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+        d=1e100.net; s=20260707; t=1795278862; x=1795883662;
+        h=content-type:to:subject:message-id:date:from:mime-version:x-gm-gg
+         :x-gm-message-state:from:to:cc:subject:date:message-id:reply-to
+         :content-type;
+        bh=Lz7tsmSYM0hUhccTl923sx6zcb3KnBzfEFLZA9i4GLI=;
+        b=a0esPKRmFSYRvy3jCeKFekgfLsDOu0SUiY/hlSHcp0ar/TJsbMK4f6VpYRlGKDbdfq
+         pnpTryL2LvOoCQ8o0jztjyD34r6Dh1F+NxmqtdnlxHxesovHqTTfrUX862m5Ax153fHm
+         jm6G+fqraiOltG93Z4AWP9Vcy+eDop3004rtGH046e1YpxoJxZu2sg6LnUAp/kDl2OTj
+         +g7+VcbHu1eiKb1LzuR0CcZ36xG2rvRL6JAwHKyFXR7nMqMmkzPTamcdZ78GjO7O0x1w
+         U5PC/9FVRzT6ctvBNMFA3pBifCPnuLDKdAo7Wh9oTbHnsOodt2ad3zrNGNsEfqADlM0c
+         cTvg==
+X-Gm-Message-State: APuU4Z/5mQjRqPLDIowVWzHMQ06W9J/rH9u/fiKSk/gBNtmeqqCKTpPD
+	fej2hlMuuE8A5hBgUObnHtf2UXyx4v+PmHud0gwnxDVud/D3Qu1jsu/DxQ7i+qz/TelVyqNmMgG
+	qjduHH/1e5PBH5W7C+kHjByFP4ZSg8sobHg==
+X-Gm-Gg: AZFdTZe0X4e7YhWGTAk9qyJTVpWXvKZInfczEzMOty2HyXhHRyr9/ArNBMomQ6vZiwQ
+	WPLTTltJc65vkmNiw9zCFWsfnm1q+yAuCh7xhCXl4v8qmn97tBmMBhOPNW+ppC99DFkMk2kwkZT
+	hq2W759AzdG5CsctZiEh8Ai4nkBt64ZCR+s3KoRVutvhOx+SSislVWPwbIBiRVYAIYq6N0SOgU+
+	Loxg8GbOWzYloiJTyHkU61ucYDIji/fkL7sSzEv4NtPfhV0eWXahZLUjs/QkpEa2QG+SlHRxnpX
+	3EkdTtNf5yDbuTCpGaK+BC17amuTF0H8TR+EXkpR10nSJmbjwSEA8nG9pUeaRtKKRi7KOqVNbnF
+	S4cOlLH2yoC/IGeK6z2wUod5S2uZPxaKNx1DJxX3d4ByubQvD5h28yS3M0zMOojMdUhIg/0tCSV
+	p8S3ErZfMs/ipYHEfSdg9p9DeFY2rzV9nsOGhfZxHpl8k20gVayILamYF6bTs=
+X-Received: by 2002:a05:6122:2226:b0:5ea:8e0c:1f8b with SMTP id
+ 71dfb90a1353d-5ee8aeaa9b5mr3157161e0c.5.1795278862502; Sat, 21 Nov 2026
+ 08:34:22 -0800 (PST)
+Received: from 77377267392 named unknown by gmailapi.google.com with HTTPREST;
+ Sat, 21 Nov 2026 08:34:21 -0800
 X-Mailing-List: linux-wireless@vger.kernel.org
 List-Id: <linux-wireless.vger.kernel.org>
 List-Post: <mailto:linux-wireless@vger.kernel.org>
@@ -60,80 +102,38 @@ List-Unsubscribe: <mailto:linux-wireless+unsubscribe@vger.kernel.org>
 List-Owner: <mailto:linux-wireless+owner@vger.kernel.org>
 Precedence: list
 MIME-Version: 1.0
-Content-Transfer-Encoding: 8bit
-X-CM-TRANSID:BbQMCkDm6fzfwwFrIHEEAg--.57256S2
-X-Coremail-Antispam: 1UD129KBjvJXoW7Aw47tFWrtw17KFWxuFy8Krg_yoW5JF1xpF
-	48u34jkrZ8tr1qkw4kGwsF9r18Aa12qa9rCFs5Kwn5Crn8twn3CFy0gFWYgF1vkw1kZa42
-	vr4YqFyUWr9xCw7anT9S1TB71UUUUU7qnTZGkaVYY2UrUUUUjbIjqfuFe4nvWSU5nxnvy2
-	9KBjDU0xBIdaVrnRJUUU9Fb7Iv0xC_tr1lb4IE77IF4wAFF20E14v26r4j6ryUM7CY07I2
-	0VC2zVCF04k26cxKx2IYs7xG6rWj6s0DM7CIcVAFz4kK6r1j6r18M28lY4IEw2IIxxk0rw
-	A2F7IY1VAKz4vEj48ve4kI8wA2z4x0Y4vE2Ix0cI8IcVAFwI0_Jr0_JF4l84ACjcxK6xII
-	jxv20xvEc7CjxVAFwI0_Jr0_Gr1l84ACjcxK6I8E87Iv67AKxVWUJVW8JwA2z4x0Y4vEx4
-	A2jsIEc7CjxVAFwI0_Jr0_Gr1lnxkEFVAIw20F6cxK64vIFxWle2I262IYc4CY6c8Ij28I
-	cVAaY2xG8wAqx4xG64xvF2IEw4CE5I8CrVC2j2WlYx0E2Ix0cI8IcVAFwI0_Jr0_Jr4lYx
-	0Ex4A2jsIE14v26r1j6r4UMcvjeVCFs4IE7xkEbVWUJVW8JwACjcxG0xvY0x0EwIxGrwCY
-	1x0262kKe7AKxVWUtVW8ZwCY02Avz4vE14v_JwCF04k20xvY0x0EwIxGrwCFx2IqxVCFs4
-	IE7xkEbVWUJVW8JwC20s026c02F40E14v26r1j6r18MI8I3I0E7480Y4vE14v26r106r1r
-	MI8E67AF67kF1VAFwI0_Jw0_GFylIxkGc2Ij64vIr41lIxAIcVC0I7IYx2IY67AKxVWUJV
-	WUCwCI42IY6xIIjxv20xvEc7CjxVAFwI0_Jr0_Gr1lIxAIcVCF04k26cxKx2IYs7xG6r1j
-	6r1xMIIF0xvEx4A2jsIE14v26r1j6r4UMIIF0xvEx4A2jsIEc7CjxVAFwI0_Jr0_GrUvcS
-	sGvfC2KfnxnUUI43ZEXa7IU0qjg7UUUUU==
-X-CM-SenderInfo: ysvqjiysrsjkur6v33wo0lvxldqovvfxof0/1tbiAQUED2sAYljOOwADso
+From: NASEEM <nsmmjn1@gmail.com>
+Date: Sat, 21 Nov 2026 08:34:21 -0800
+X-Gm-Features: Aa3M54pKJsO3YdC46ZItXMsrySGFyZncL2QzPEtH6XuQLE_doYRn8p__j2sCJc4
+Message-ID: <CANsZi5CvsogtJLoEOP+0+GjQAEr7UtFmaOv3pOCw0EhDncbJLA@mail.gmail.com>
+Subject: [BUG] iwlwifi: Intel 8260 firmware crashes on Dell Latitude E5470
+To: linux-wireless@vger.kernel.org
+Content-Type: text/plain; charset="UTF-8"
 
-The driver waits for each bulk transfer with
-wait_event_interruptible_timeout() so that a signal can abort the wait.
-Only the timeout path kills the URB; when the wait returns -ERESTARTSYS
-the function returns with the URB still submitted.
+Hello Linux Wireless maintainers,
 
-The URB then stays in flight on the endpoint and the next transfer on the
-same endpoint calls usb_submit_urb() on it again. The USB core rejects
-this with the "URB submitted while active" warning and -EBUSY, so every
-later register or memory access fails and the driver gives up on the
-device. The late completion can also clear the shared busy flag and wake
-a subsequent transfer, which then reads a stale buffer.
+I'm reporting intermittent Wi-Fi disconnects on a Dell Latitude E5470
+running Linux Mint 22.3 (Ubuntu 24.04 base). They can start shortly
+after boot.
 
-Kill the URB on the interrupted path as well, so that a transfer is
-never left active once these helpers return.
+Adapter: Intel Wireless-AC 8260 [8086:24f3], rev 3a
+Driver: iwlwifi/iwlmvm
+Firmware: 36.c8e8e144.0 (8000C-36.ucode)
 
-Fixes: b1906cea00b0 ("wifi: mm81x: add mm81x Wi-Fi HaLow driver")
-Cc: stable@vger.kernel.org
-Co-developed-by: Bin Yu <byu@xidian.edu.cn>
-Signed-off-by: Bin Yu <byu@xidian.edu.cn>
-Co-developed-by: Cheng Wen <wencheng@xidian.edu.cn>
-Signed-off-by: Cheng Wen <wencheng@xidian.edu.cn>
-Signed-off-by: YuanZhe Liu <25031212351@stu.xidian.edu.cn>
----
- drivers/net/wireless/morsemicro/mm81x/usb.c | 3 +++
- 1 file changed, 3 insertions(+)
+On 6.8.0-149-generic, the kernel journal logged 181 firmware crash
+messages in one boot, beginning about 27 seconds after firmware load.
+The adapter was removed and rediscovered during that boot. Crashes
+also occurred on 7.0.0-42-generic and 7.0.0-43-generic. The installed
+6.8.0-151-generic build remains unverified. Disabling NetworkManager
+Wi-Fi power saving did not prevent recurrence.
 
-diff --git a/drivers/net/wireless/morsemicro/mm81x/usb.c b/drivers/net/wireless/morsemicro/mm81x/usb.c
-index ec94936b157b..3b3ffd94e4d6 100644
---- a/drivers/net/wireless/morsemicro/mm81x/usb.c
-+++ b/drivers/net/wireless/morsemicro/mm81x/usb.c
-@@ -257,6 +257,7 @@ static int mm81x_usb_cmd(struct mm81x_usb *musb,
- 		msecs_to_jiffies(URB_TIMEOUT_MS));
- 	if (retval < 0) {
- 		dev_err(mors->dev, "error waiting for urb %d", retval);
-+		usb_kill_urb(ep->urb);
- 		goto error;
- 	} else if (retval == 0) {
- 		dev_err(mors->dev, "timed out waiting for urb");
-@@ -366,6 +367,7 @@ static int mm81x_usb_mem_read(struct mm81x_usb *musb, u32 address, u8 *data,
- 		msecs_to_jiffies(URB_TIMEOUT_MS));
- 	if (ret < 0) {
- 		dev_err(mors->dev, "wait_event_interruptible: error %d", ret);
-+		usb_kill_urb(musb->endpoints[MM81X_EP_MEM_RD].urb);
- 		goto error;
- 	} else if (ret == 0) {
- 		/* Timed out. */
-@@ -436,6 +438,7 @@ static int mm81x_usb_mem_write(struct mm81x_usb *musb, u32 address, u8 *data,
- 		msecs_to_jiffies(URB_TIMEOUT_MS));
- 	if (ret < 0) {
- 		dev_err(mors->dev, "error %d", ret);
-+		usb_kill_urb(musb->endpoints[MM81X_EP_MEM_WR].urb);
- 		goto error;
- 	} else if (ret == 0) {
- 		/* Timed out. */
--- 
-2.34.1
+Representative kernel messages:
+iwlwifi 0000:02:00.0: Microcode SW error detected.  Restarting 0x2000000.
+iwlwifi 0000:02:00.0: Microcode SW error detected.  Restarting 0x82000000.
 
+Is there a known workaround or an existing issue to follow? If further
+diagnostics are needed, please let me know what to collect and how to
+share a firmware dump privately.
+
+Thanks,
+Naseem
