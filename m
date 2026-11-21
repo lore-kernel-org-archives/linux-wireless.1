@@ -1,104 +1,59 @@
-Authentication-Results: smtp.subspace.kernel.org; arc=none smtp.remote-ip=209.85.218.51
+Authentication-Results: smtp.subspace.kernel.org; arc=none smtp.remote-ip=162.243.164.118
 ARC-Seal: i=1; d=subspace.kernel.org; s=arc20261015; a=rsa-sha256; cv=none;
-	t=1795279601;
-	b=mlDVcfGdK50/w1ic9JHR/hWCh/AL6XVNPAHSaiieHAcTI7LtM1zIa+zTpe8trPmcAS52
-	 7LNRAi1cswv61LhuYVBV4D6CaeDsA3JCRjuqkCnbIn9YFzKdUeTEgPXOj1Im42qjfkJAz
-	 l11a0qQlXpcvptzmSYbJg5dOxdXjjbI/rXMZiomIv59k+o9vaZ9PIu64h51+uyqT/QRTQ
-	 ttdGtWip1mxIrL32S3oA5h2cUm972HH+9Tg/0y656neyb6l35COMERQFfnX1s/MRf7GYJ
-	 RfpbI8byl71sZXth+CSfWmL4utu2hgqJ69JcscPb3dPxSqhE+O+l7O8uXurLleiFw+Q==
+	t=1795279777;
+	b=2SwukDHf28Y5XOSPG64PZ38V59cTuoN1Y+uQJlvvmLulZWG/vCaiaflTRs2noaYd68dD
+	 l5q4XR76tra2QFqVKyLsaLMWUxH/mLNxQFONksyLxF120M29DtEwBhwjYrnb2YoizvVP4
+	 /e9Y6JojaanR0JPU/Dcqsa/LH2h9BHovsQj3jUoxdTE+qEfMLtqvgoMK6t6ij1Rk/12XI
+	 wIU+DIXb0xcZ34vKB0SHMTltCf7RI0x0Oi418MGb0Yk674UwP3CpUdC/JYmWAxZT7gth+
+	 urGrf4xOrrqhVKyEIAj5D6UMJ9NZO0m16isgm/faxWgMUuget0g1h0K9lvxE+p0msig==
 ARC-Message-Signature: i=1; d=subspace.kernel.org; s=arc20261015;
-	a=rsa-sha256; c=relaxed/relaxed; t=1795279601;
-	h=DMARC-Filter:Received:DKIM-Signature:X-Google-DKIM-Signature:
-	 X-Forwarded-Encrypted:X-Gm-Message-State:X-Gm-Gg:X-Received:Received:
-	 From:To:Cc:Subject:Date:Message-ID:X-Mailer:In-Reply-To:References:
-	 MIME-Version:Content-Transfer-Encoding;
-	bh=P/gSH84W9nTAHSSAJ/t1/ktXrTVBa/4q/QfiolBhcqw=;
-	b=fsOW6Dz2tdBzqagn1KSteOAE6MsHNzy5JvDVbNhHCBDue+0j9coYWfzQ2tF7yABeNKki
-	 H3IeRo89DhE6xSDhN7IJlXfvsL0CY/XNGdTwZIUIuesxQFf0b0lsWzrcxz1onjNlDdEIr
-	 YSfg697mOqH+PKzrA7YSq78/sehVk+U/iOVG1xPGesiAiLycaXmydKur9PFc5+a2ObEsC
-	 +add//YmaLGhO3ihWF6NVrrrUPPrvlBs4c/OG8fM2s9WE67CvgelNxW9GjUdzWHr4kXFd
-	 u+sB9YC1icSfAjqh3cTQnUuBbzQjEVKLuWDfUCc+/cNv7aWcZmImO9T4oY616/k2yyg==
+	a=rsa-sha256; c=relaxed/relaxed; t=1795279777;
+	h=DMARC-Filter:DKIM-Signature:Received:From:To:Cc:Subject:Date:
+	 Message-Id:X-Mailer:In-Reply-To:References:MIME-Version:
+	 Content-Transfer-Encoding:X-CM-TRANSID:X-Coremail-Antispam:
+	 X-CM-SenderInfo;
+	bh=5G+9ewNfiZuudG7vEE+47Lp1fAf9KEyf5+kMjiFZROY=;
+	b=VhWdpTZLp4LTl4G6Ib34J/IBxqWI0CrQ4y9j+yEuJemg0wcA5EBGPsTfJuULcfhb7GaG
+	 MCH+pTKvSlhixNOmUz0DnOH5L4dNUVSqsDd1MDtnWSKLaowo0FYx+kxk8YOolqw+GHcXA
+	 TrgdL3uB4fm4QH9tNDHk/nl3xKzgHJM+/PQKvPIHS2bb+kSpnvQarUmQxhQMjsNRQ/o8+
+	 YZ+bICY8G0xl/b7A6dtpfq5rWDbGc2ESdc+P6qH7lD6KlZUGoMV92lPy+0rgU136CIFJE
+	 XErI7bAgrzP31Ip+h60VGWoSzdrV0RKb9xD3nKr+Mld8ZmnAECPzB62qPE8H2mLZe8w==
 ARC-Authentication-Results: i=1; smtp.subspace.kernel.org; 
-	dmarc=pass header.from=bairaktaris.de;
-	spf=pass smtp.mailfrom=bairaktaris.de;
-	dkim=pass header.d=bairaktaris.de header.i=@bairaktaris.de header.a=rsa-sha256 header.s=google header.b=JuGADNsl;
-	arc=none smtp.remote-ip=209.85.218.51
-Received: from mail-ej1-f51.google.com (mail-ej1-f51.google.com [209.85.218.51])
-	(using TLSv1.3 with cipher TLS_AES_128_GCM_SHA256 (128/128 bits)
-	 key-exchange X25519 server-signature ECDSA (prime256v1) server-digest SHA256)
-	(No client certificate requested)
-	by smtp.subspace.kernel.org (Postfix) with ESMTPS id A6175606A330
-	for <linux-wireless@vger.kernel.org>; Sat, 21 Nov 2026 16:46:40 +0000 (UTC)
-DMARC-Filter: OpenDMARC Filter v1.4.2 smtp.subspace.kernel.org A6175606A330
-Authentication-Results: smtp.subspace.kernel.org; dmarc=pass (p=reject dis=none) header.from=bairaktaris.de
-Authentication-Results: smtp.subspace.kernel.org; spf=pass smtp.mailfrom=bairaktaris.de
-Authentication-Results: smtp.subspace.kernel.org;
-	dkim=pass (2048-bit key, unprotected) header.d=bairaktaris.de header.i=@bairaktaris.de header.a=rsa-sha256 header.s=google header.b=JuGADNsl
-Received: by mail-ej1-f51.google.com with SMTP id a640c23a62f3a-c5133831027so282593466b.2
-        for <linux-wireless@vger.kernel.org>; Sat, 21 Nov 2026 08:46:40 -0800 (PST)
+	dmarc=pass header.from=stu.xidian.edu.cn;
+	spf=pass smtp.mailfrom=stu.xidian.edu.cn;
+	arc=none smtp.remote-ip=162.243.164.118
+Received: from zg8tmtyylji0my4xnjqumte4.icoremail.net (zg8tmtyylji0my4xnjqumte4.icoremail.net [162.243.164.118])
+	by smtp.subspace.kernel.org (Postfix) with ESMTP id 91DC1606A32C;
+	Sat, 21 Nov 2026 16:49:32 +0000 (UTC)
+DMARC-Filter: OpenDMARC Filter v1.4.2 smtp.subspace.kernel.org 91DC1606A32C
+Authentication-Results: smtp.subspace.kernel.org; dmarc=pass (p=quarantine dis=none) header.from=stu.xidian.edu.cn
+Authentication-Results: smtp.subspace.kernel.org; spf=pass smtp.mailfrom=stu.xidian.edu.cn
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=bairaktaris.de; s=google; t=1795279599; x=1795884399; darn=vger.kernel.org;
-        h=content-transfer-encoding:mime-version:references:in-reply-to
-         :message-id:date:subject:cc:to:from:from:to:cc:subject:date
-         :message-id:reply-to:content-type;
-        bh=P/gSH84W9nTAHSSAJ/t1/ktXrTVBa/4q/QfiolBhcqw=;
-        b=JuGADNsl9TUMT7yDaFS/ab9hGycHQVyzfEYELymbXEuLx0NmeYYvhpljikqtxMqPPG
-         ZGqNweZLvfa8mMiCL8QCfUjjJ+UuTrCqgC48uZKPlb9mr0daTQ6yQ56Lq/jq7xZlIhkS
-         gO/WOYZovZ/nmV94m+BnEMbh+bqFQiIKCnl6umDl9QNIrepWA4yLc1MkPQCoe0WbH/RZ
-         oYDkChPQGNiPzjoYuy7iQP85D5S3sZyW1GsHTC5+9MrD5UUTQlDRD0/J4HZT1XuoBLEc
-         l74DhbY+RM1PA98AMIBjHE6CCOt2EQVvI5BrlIE3NPlQWPkpmRV9Nx3csGCgrLiDpGBD
-         618Q==
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=1e100.net; s=20260707; t=1795279599; x=1795884399;
-        h=content-transfer-encoding:mime-version:references:in-reply-to
-         :message-id:date:subject:cc:to:from:x-gm-gg:x-gm-message-state:from
-         :to:cc:subject:date:message-id:reply-to:content-type;
-        bh=P/gSH84W9nTAHSSAJ/t1/ktXrTVBa/4q/QfiolBhcqw=;
-        b=DB0ZhSRjmK05CuIcEFyBs2xq0ufEORAgu+xByd4DiByuRyqWcByBtvN2vPBBqhNdXR
-         LE9SYP7ElTE2ivFoSesnJQacAJ2twYmV76ZVj0WbsZpIamLFB7HKa91AR9mmhALZozh8
-         vT5MzoK+YoNy6wAGIctPNDh+6Bfln1+n6sXEdbov6ADuN1kRXDx9sIw0zWME0u002Abw
-         m5s2acVkwxSj0pmLEVGDM8rgryHJFm/tRK/1P2N+AhpP8VtyWeJ5jEy5qN+M/NdgtCG3
-         XBHIhoViyRQPHXVILnUlWuThXXt//Bbpse/YP4gr8+5egyrgZ9o3yvMPa+7wNiASAAZk
-         cRhg==
-X-Forwarded-Encrypted: i=1; AL+hErHmWVKNngHWltVMpTHXT8ngRRE6mkCw9Sud5q7F5gxy1aJiZ9M2Jm1Z+HMxA1ksGvNgqoaFN6/SLbolWvjrzA==@vger.kernel.org
-X-Gm-Message-State: APuU4Z+37WD+ydwUKNyLsmqTozJyXL6NHMs007SiZuN43UrvZDenOObP
-	4y4OzPy/t/cKgYKDmxg8XEyijJHAwibrhaX9P/R4m9t9rO3dRa7efXQzq20Y4wKEX8YPyVpzRwG
-	0yNwaAw==
-X-Gm-Gg: AZFdTZcA1Rq1mIAdA4Zx1iEd5QbPcuwWDQcPb9y/RIwquN5N2P7Veo0NeYrKpnQ0R6V
-	VP/OVegBqRcMcgX+0FBmeEwaQ3QN8B2BXIG5vUIwMFNN4VS3HsMWRhI5THGlCVL9ZBH5m2OTqJk
-	biE3Qcn5d/rAnzPDuqj4MORFxlOy4cl/d9ky9YJ+BTCH4LhDlXWaeZpuVszGUXcMDW4WoKeW9ox
-	w0hCa0H8nWMSS9IKZ6WT4ZaOjMifv9goU8FOzhAfT7rR2nIIBQpzKXgSgM/QDvLsuqViYfJJaUM
-	cd1WUOQMmz2i37gIaa0+iZlGUH+GkfevrAMKRXVmlieO2Upm/+438Cg2B/8QGrWuGjXJRtqtzEL
-	WlcCSX3XjD9GG944FhQE7yc3ElRAN2F0ReGHYK4ZJaaQq3azby9KDH+0Uz2DfAr/8aJJ5NJM08z
-	fKrCBu1wEfdq/hpEqivGuDVRoIDBxi/5X8GdViFr5/RSVP3Y2XonDeYd/NffSOxmrhw68SVfnkk
-	FfytJp6gpu3wkrUaTiKtJjKZ1PknoGjoAGoqfEPUKIMbEgYJSpfVr44CPO3SKgZAbowx105Z0IR
-	XScZBsihzDKwpBXEbmtTiVLLbU/gHkL6/OfWWuTw6frDwYmeZbCui0PO9HJk2DZc+/ppnATkfBF
-	YswEeUwBg33ON1JijtQHG4aMnRy9PVvkRidw2RUB/Uc8uRyGNr5/Jt5eV++XoKb3XjzId2I3Dqp
-	oy9X8qOLlzTFrw7VmAixmgjWWT/waYeShNBkcEPVOX134HZLHAkyv9rSXdGycA3kybMd5cmAr9l
-	fl4fkaWt4ilQtN6UFM6gZRX1FtdJjmQ1qqfWYgW/BTaPUXTyLb4e706XLOT2Ud/irsix+TYJxHl
-	open/hDKl77ImTzxY9xBbvbe/ey8EPAoW20phMbyTZjs4trAojv0zm3S9BjHLq/2Qjjv6SCJooq
-	cMg==
-X-Received: by 2002:a17:906:3e1b:b0:c50:93b6:52ed with SMTP id a640c23a62f3a-c513aab27ccmr426031766b.40.1795279598346;
-        Sat, 21 Nov 2026 08:46:38 -0800 (PST)
-Received: from Desktop.tail070c67.ts.net (p200300f2470da3000000000000000a27.dip0.t-ipconnect.de. [2003:f2:470d:a300::a27])
-        by smtp.gmail.com with ESMTPSA id a640c23a62f3a-c513ae8f70fsm213796366b.40.2026.11.21.08.46.36
-        (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
-        Sat, 21 Nov 2026 08:46:37 -0800 (PST)
-From: Julius Bairaktaris <julius@bairaktaris.de>
-To: jjohnson@kernel.org
-Cc: ath11k@lists.infradead.org,
+	d=stu.xidian.edu.cn; s=dkim; h=Received:From:To:Cc:Subject:Date:
+	Message-Id:In-Reply-To:References:MIME-Version:
+	Content-Transfer-Encoding; bh=5G+9ewNfiZuudG7vEE+47Lp1fAf9KEyf5+
+	kMjiFZROY=; b=JroaGme853vLP1sT/wKM2HmyyD/Dg86J1UdphcnBwbVaijUYF8
+	LNs4DJuJnvOyp+s1MWYWeKfbT4Jy8f5vr7Ou5IhxwG6mCFrAp80N2ddyCZdkLqMZ
+	m70eAoREgMCSdgl7QxESN1Txm2pw3lUVrDQ3I1bNW3hNQ7zru7KdkYLSE=
+Received: from user-virtual-machine.localdomain (unknown [113.200.174.70])
+	by hzbj-edu-front-2.icoremail.net (Coremail) with UTF8SMTPA id BLQMCkCGyP2UywFrA1QFAg--.46581S3;
+	Sun, 22 Nov 2026 00:49:29 +0800 (CST)
+From: YuanZhe Liu <25031212351@stu.xidian.edu.cn>
+To: Lachlan Hodges <lachlan.hodges@morsemicro.com>,
+	Dan Callaghan <dan.callaghan@morsemicro.com>,
+	Johannes Berg <johannes@sipsolutions.net>
+Cc: Arien Judge <arien.judge@morsemicro.com>,
 	linux-wireless@vger.kernel.org,
 	linux-kernel@vger.kernel.org,
-	baochen.qiang@oss.qualcomm.com,
-	vasanthakumar.thiagarajan@oss.qualcomm.com,
-	rameshkumar.sundaram@oss.qualcomm.com,
-	kvalo@kernel.org
-Subject: Re: [PATCH RFC ath-next] wifi: ath11k: advance the TX PN of keys reinstalled after a firmware restart
-Date: Sat, 21 Nov 2026 17:46:36 +0100
-Message-ID: <20261121164636.3949260-1-julius@bairaktaris.de>
-X-Mailer: git-send-email 2.53.0
-In-Reply-To: <20261018210212.1926073-1-julius@bairaktaris.de>
-References: <20261018210212.1926073-1-julius@bairaktaris.de>
+	stable@vger.kernel.org,
+	Bin Yu <byu@xidian.edu.cn>,
+	Cheng Wen <wencheng@xidian.edu.cn>
+Subject: [PATCH 1/2] wifi: mm81x: report a failed command urb to the caller
+Date: Sun, 22 Nov 2026 00:49:22 +0800
+Message-Id: <20261121164923.8862-2-25031212351@stu.xidian.edu.cn>
+X-Mailer: git-send-email 2.34.1
+In-Reply-To: <20261121164923.8862-1-25031212351@stu.xidian.edu.cn>
+References: <20261121164923.8862-1-25031212351@stu.xidian.edu.cn>
 X-Mailing-List: linux-wireless@vger.kernel.org
 List-Id: <linux-wireless.vger.kernel.org>
 List-Post: <mailto:linux-wireless@vger.kernel.org>
@@ -109,14 +64,64 @@ List-Owner: <mailto:linux-wireless+owner@vger.kernel.org>
 Precedence: list
 MIME-Version: 1.0
 Content-Transfer-Encoding: 8bit
+X-CM-TRANSID:BLQMCkCGyP2UywFrA1QFAg--.46581S3
+X-Coremail-Antispam: 1UD129KBjvJXoW7tF4UAw1Utw18Aw4xCw45KFg_yoW8ArWrpF
+	45Zr9Fk3s8KryDCw43CFWI9Fy5A3Zxta9IkFyvvws8urn8JwsakFyYga1agFn0v34Iya42
+	vFWYyry7GF9xG37anT9S1TB71UUUUU7qnTZGkaVYY2UrUUUUjbIjqfuFe4nvWSU5nxnvy2
+	9KBjDU0xBIdaVrnRJUUUm2b7Iv0xC_Cr1lb4IE77IF4wAFF20E14v26ryj6rWUM7CY07I2
+	0VC2zVCF04k26cxKx2IYs7xG6rWj6s0DM7CIcVAFz4kK6r1j6r18M28IrcIa0xkI8VA2jI
+	8067AKxVWUGwA2048vs2IY020Ec7CjxVAFwI0_JFI_Gr1l8cAvFVAK0II2c7xJM28CjxkF
+	64kEwVA0rcxSw2x7M28EF7xvwVC0I7IYx2IY67AKxVWUCVW8JwA2z4x0Y4vE2Ix0cI8IcV
+	CY1x0267AKxVW8JVWxJwA2z4x0Y4vEx4A2jsIE14v26r1j6r4UM28EF7xvwVC2z280aVCY
+	1x0267AKxVW8JVW8Jr1lnxkEFVAIw20F6cxK64vIFxWle2I262IYc4CY6c8Ij28IcVAaY2
+	xG8wAqx4xG64xvF2IEw4CE5I8CrVC2j2WlYx0E2Ix0cI8IcVAFwI0_Jr0_Jr4lYx0Ex4A2
+	jsIE14v26r1j6r4UMcvjeVCFs4IE7xkEbVWUJVW8JwACjcxG0xvY0x0EwIxGrwCY1x0262
+	kKe7AKxVWUtVW8ZwCY02Avz4vE14v_JwCF04k20xvY0x0EwIxGrwCFx2IqxVCFs4IE7xkE
+	bVWUJVW8JwC20s026c02F40E14v26r1j6r18MI8I3I0E7480Y4vE14v26r106r1rMI8E67
+	AF67kF1VAFwI0_Jw0_GFylIxkGc2Ij64vIr41lIxAIcVC0I7IYx2IY67AKxVWUJVWUCwCI
+	42IY6xIIjxv20xvEc7CjxVAFwI0_Gr0_Cr1lIxAIcVCF04k26cxKx2IYs7xG6r1j6r1xMI
+	IF0xvEx4A2jsIE14v26r1j6r4UMIIF0xvEx4A2jsIEc7CjxVAFwI0_Gr0_Gr1UYxBIdaVF
+	xhVjvjDU0xZFpf9x07jTiifUUUUU=
+X-CM-SenderInfo: ysvqjiysrsjkur6v33wo0lvxldqovvfxof0/1tbiAQUED2sAYljOOwAFsu
 
-On Sun, 18 Oct 2026 23:02:12 +0200 Julius Bairaktaris wrote:
-> Which command or field sets the TX PN of an installed key on this
-> firmware? Without one the stations need new keys after a restart.
+mm81x_usb_cmd() waits for the command urb and takes the return value of
+wait_event_interruptible_timeout() as the command result. The completion
+callback stores the urb status in musb->errors, but the wait only tells
+whether the callback ran, not whether the transfer succeeded, so a command
+that completed with -EPIPE or -EPROTO is reported as successful.
 
-Please drop this RFC. With key_tsc_counter set in
-WMI_VDEV_INSTALL_KEY_CMDID, WLAN.HK.2.9.0.1-02146 still started the data
-frames at PN 0 after the restart (1 run), so the patch does not do what
-its subject says.
+mm81x_usb_mem_read() and mm81x_usb_mem_write() then submit the data urb
+even though the command that programs its address, direction and length
+never reached the device. On top of the useless transfer, the device can
+interpret the data phase in the context of the previous command.
 
-Julius
+Return musb->errors from mm81x_usb_cmd() so that both callers stop before
+the data phase.
+
+Fixes: b1906cea00b0 ("wifi: mm81x: add mm81x Wi-Fi HaLow driver")
+Cc: stable@vger.kernel.org
+Co-developed-by: Bin Yu <byu@xidian.edu.cn>
+Signed-off-by: Bin Yu <byu@xidian.edu.cn>
+Co-developed-by: Cheng Wen <wencheng@xidian.edu.cn>
+Signed-off-by: Cheng Wen <wencheng@xidian.edu.cn>
+Signed-off-by: YuanZhe Liu <25031212351@stu.xidian.edu.cn>
+---
+ drivers/net/wireless/morsemicro/mm81x/usb.c | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+diff --git a/drivers/net/wireless/morsemicro/mm81x/usb.c b/drivers/net/wireless/morsemicro/mm81x/usb.c
+index ec94936b157b..98ca9575b990 100644
+--- a/drivers/net/wireless/morsemicro/mm81x/usb.c
++++ b/drivers/net/wireless/morsemicro/mm81x/usb.c
+@@ -266,7 +266,7 @@ static int mm81x_usb_cmd(struct mm81x_usb *musb,
+ 	}
+ 
+ 	musb->ongoing_cmd = false;
+-	return writesize;
++	return musb->errors ? musb->errors : writesize;
+ 
+ error:
+ 	musb->ongoing_cmd = false;
+-- 
+2.34.1
+
