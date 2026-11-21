@@ -1,98 +1,104 @@
-Authentication-Results: smtp.subspace.kernel.org; arc=none smtp.remote-ip=209.85.216.54
+Authentication-Results: smtp.subspace.kernel.org; arc=none smtp.remote-ip=209.85.218.51
 ARC-Seal: i=1; d=subspace.kernel.org; s=arc20261015; a=rsa-sha256; cv=none;
-	t=1795279003;
-	b=vBXC3Zcgbbexi9TI5WXJw7gj4JIbL4usX8XhDnDN5BzITmaorJwX9z/krRlYm7vG3TD+
-	 VMnjiQvUUbYeNt/pyQiXjDj+JDeQoptfril5LjKMLdzXH4ylW5btAqIKt0eB7Q2P2dra0
-	 R5gWMvMBvQoinapXQkTjRGRXbFLgJKEV+GQoS82V7+qVPMeeKx1gOlJsnU3QyXlMeFR2v
-	 MeEJzAKw1GRWFvM4GiNuNeRZr/zgtEaf4P7BDdRezEVsQOt0PcCk+mzyiWdZTcmtxvpwU
-	 x+b56qF1y4HhlwVOT1CuuosmiZzEExxqjVxnVXG+ilopEaAZ28hDgoRU+mZHA8ebveg==
+	t=1795279601;
+	b=mlDVcfGdK50/w1ic9JHR/hWCh/AL6XVNPAHSaiieHAcTI7LtM1zIa+zTpe8trPmcAS52
+	 7LNRAi1cswv61LhuYVBV4D6CaeDsA3JCRjuqkCnbIn9YFzKdUeTEgPXOj1Im42qjfkJAz
+	 l11a0qQlXpcvptzmSYbJg5dOxdXjjbI/rXMZiomIv59k+o9vaZ9PIu64h51+uyqT/QRTQ
+	 ttdGtWip1mxIrL32S3oA5h2cUm972HH+9Tg/0y656neyb6l35COMERQFfnX1s/MRf7GYJ
+	 RfpbI8byl71sZXth+CSfWmL4utu2hgqJ69JcscPb3dPxSqhE+O+l7O8uXurLleiFw+Q==
 ARC-Message-Signature: i=1; d=subspace.kernel.org; s=arc20261015;
-	a=rsa-sha256; c=relaxed/relaxed; t=1795279003;
+	a=rsa-sha256; c=relaxed/relaxed; t=1795279601;
 	h=DMARC-Filter:Received:DKIM-Signature:X-Google-DKIM-Signature:
 	 X-Forwarded-Encrypted:X-Gm-Message-State:X-Gm-Gg:X-Received:Received:
 	 From:To:Cc:Subject:Date:Message-ID:X-Mailer:In-Reply-To:References:
 	 MIME-Version:Content-Transfer-Encoding;
-	bh=hn7c/Dz84tJJhV+0Auq9iY8AybuWUE55EkzU/GyhEek=;
-	b=ofXtUA58Bny/PzfnEJzhZqGIqUXutPoVmf1FT48vOUBMa+atML7tZRt7xYliFXa02wIj
-	 jJQ5EQPdo5d3k5X3P8ez6bY9LeTERDMc63DQm60tyvA/Ocft0jD/ycb4ajRCAFzAo2UoC
-	 xgNe3lCNeGT8pXEPmNS0hLTjXs88NnJi716Ic8dAL31/8usZkGydbXtvB10klUV58WVd9
-	 RF4jNDCrsyQ8Qm9+X33iWDrDuQS5YLlegzERFpGU0R5P0O8MKPeBG8PPAJkZ3HSf9Tj5X
-	 re7eR6VXflYFkiw2+ijNg/kkz3r7QK50FI9qbhUIS0utq6euMWOAsg4RkbfOYdtTZUA==
+	bh=P/gSH84W9nTAHSSAJ/t1/ktXrTVBa/4q/QfiolBhcqw=;
+	b=fsOW6Dz2tdBzqagn1KSteOAE6MsHNzy5JvDVbNhHCBDue+0j9coYWfzQ2tF7yABeNKki
+	 H3IeRo89DhE6xSDhN7IJlXfvsL0CY/XNGdTwZIUIuesxQFf0b0lsWzrcxz1onjNlDdEIr
+	 YSfg697mOqH+PKzrA7YSq78/sehVk+U/iOVG1xPGesiAiLycaXmydKur9PFc5+a2ObEsC
+	 +add//YmaLGhO3ihWF6NVrrrUPPrvlBs4c/OG8fM2s9WE67CvgelNxW9GjUdzWHr4kXFd
+	 u+sB9YC1icSfAjqh3cTQnUuBbzQjEVKLuWDfUCc+/cNv7aWcZmImO9T4oY616/k2yyg==
 ARC-Authentication-Results: i=1; smtp.subspace.kernel.org; 
-	dmarc=pass header.from=gmail.com;
-	spf=pass smtp.mailfrom=gmail.com;
-	dkim=pass header.d=gmail.com header.i=@gmail.com header.a=rsa-sha256 header.s=20260707 header.b=NEvYbR1k;
-	arc=none smtp.remote-ip=209.85.216.54
-Received: from mail-pj1-f54.google.com (mail-pj1-f54.google.com [209.85.216.54])
+	dmarc=pass header.from=bairaktaris.de;
+	spf=pass smtp.mailfrom=bairaktaris.de;
+	dkim=pass header.d=bairaktaris.de header.i=@bairaktaris.de header.a=rsa-sha256 header.s=google header.b=JuGADNsl;
+	arc=none smtp.remote-ip=209.85.218.51
+Received: from mail-ej1-f51.google.com (mail-ej1-f51.google.com [209.85.218.51])
 	(using TLSv1.3 with cipher TLS_AES_128_GCM_SHA256 (128/128 bits)
 	 key-exchange X25519 server-signature ECDSA (prime256v1) server-digest SHA256)
 	(No client certificate requested)
-	by smtp.subspace.kernel.org (Postfix) with ESMTPS id 20FD4606A68A
-	for <linux-wireless@vger.kernel.org>; Sat, 21 Nov 2026 16:36:42 +0000 (UTC)
-DMARC-Filter: OpenDMARC Filter v1.4.2 smtp.subspace.kernel.org 20FD4606A68A
-Authentication-Results: smtp.subspace.kernel.org; dmarc=pass (p=none dis=none) header.from=gmail.com
-Authentication-Results: smtp.subspace.kernel.org; spf=pass smtp.mailfrom=gmail.com
+	by smtp.subspace.kernel.org (Postfix) with ESMTPS id A6175606A330
+	for <linux-wireless@vger.kernel.org>; Sat, 21 Nov 2026 16:46:40 +0000 (UTC)
+DMARC-Filter: OpenDMARC Filter v1.4.2 smtp.subspace.kernel.org A6175606A330
+Authentication-Results: smtp.subspace.kernel.org; dmarc=pass (p=reject dis=none) header.from=bairaktaris.de
+Authentication-Results: smtp.subspace.kernel.org; spf=pass smtp.mailfrom=bairaktaris.de
 Authentication-Results: smtp.subspace.kernel.org;
-	dkim=pass (2048-bit key) header.d=gmail.com header.i=@gmail.com header.a=rsa-sha256 header.s=20260707 header.b=NEvYbR1k
-Received: by mail-pj1-f54.google.com with SMTP id 98e67ed59e1d1-3ae1da332bcso979102a91.2
-        for <linux-wireless@vger.kernel.org>; Sat, 21 Nov 2026 08:36:42 -0800 (PST)
+	dkim=pass (2048-bit key, unprotected) header.d=bairaktaris.de header.i=@bairaktaris.de header.a=rsa-sha256 header.s=google header.b=JuGADNsl
+Received: by mail-ej1-f51.google.com with SMTP id a640c23a62f3a-c5133831027so282593466b.2
+        for <linux-wireless@vger.kernel.org>; Sat, 21 Nov 2026 08:46:40 -0800 (PST)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=gmail.com; s=20260707; t=1795279002; x=1795883802; darn=vger.kernel.org;
+        d=bairaktaris.de; s=google; t=1795279599; x=1795884399; darn=vger.kernel.org;
         h=content-transfer-encoding:mime-version:references:in-reply-to
          :message-id:date:subject:cc:to:from:from:to:cc:subject:date
          :message-id:reply-to:content-type;
-        bh=hn7c/Dz84tJJhV+0Auq9iY8AybuWUE55EkzU/GyhEek=;
-        b=NEvYbR1k9Cv3Ee/WcKYPovFDDTagOL9m7pCRpFexMh07IbJqbozQHwlm0WguF1dgm5
-         G3VbQUt/2UMowNrA5HXshcI1ni6YBVp4dc0ZcIzJcLl5XR7F+sIGTOVKVLdV9SRgzmum
-         mTfmrAmBftSSImEIP2fdUFfS8vPzCuDcIYjClGyfQGlE/T874D6ZzLWzNuh4rUNXn0R7
-         QkjOB6hcOJLFtLdWO1kwQmU8VwCkhyPoKUglkRx5FiQsrVNMtgSEg1/XedT/9/4U/8zR
-         tcEOWZvzZEBnoozKrc+YZWLSSIcPRcM6LxwUTFjJj7WluuoiINubGErjJ2G8amP3T3Qk
-         ORBw==
+        bh=P/gSH84W9nTAHSSAJ/t1/ktXrTVBa/4q/QfiolBhcqw=;
+        b=JuGADNsl9TUMT7yDaFS/ab9hGycHQVyzfEYELymbXEuLx0NmeYYvhpljikqtxMqPPG
+         ZGqNweZLvfa8mMiCL8QCfUjjJ+UuTrCqgC48uZKPlb9mr0daTQ6yQ56Lq/jq7xZlIhkS
+         gO/WOYZovZ/nmV94m+BnEMbh+bqFQiIKCnl6umDl9QNIrepWA4yLc1MkPQCoe0WbH/RZ
+         oYDkChPQGNiPzjoYuy7iQP85D5S3sZyW1GsHTC5+9MrD5UUTQlDRD0/J4HZT1XuoBLEc
+         l74DhbY+RM1PA98AMIBjHE6CCOt2EQVvI5BrlIE3NPlQWPkpmRV9Nx3csGCgrLiDpGBD
+         618Q==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=1e100.net; s=20260707; t=1795279002; x=1795883802;
+        d=1e100.net; s=20260707; t=1795279599; x=1795884399;
         h=content-transfer-encoding:mime-version:references:in-reply-to
          :message-id:date:subject:cc:to:from:x-gm-gg:x-gm-message-state:from
          :to:cc:subject:date:message-id:reply-to:content-type;
-        bh=hn7c/Dz84tJJhV+0Auq9iY8AybuWUE55EkzU/GyhEek=;
-        b=ADptyccf+nK8KGYWLmoyXTmolkPxUVkjVOmivt9HUWY67SPJQVTBFIGj5aWwdoJYfy
-         kvyY+q8eIcFnfMZE6vUWMxpLyaY4/uf1iZnPNdcKnphAq/5VRjlokc0OBSvZZeyGOqZ9
-         uUT6oNjhfMPFXkNx8euZHdjbqVpir5Jmh7QlP7KyO31RAmAolg59v0oOLIxokUT0Ftlv
-         6EBaNPNcWfn6w7AML6ib1JxXueNPWaB/f4ZLQOfK1j2iFt13K/hjPBz+AFUvArTFXqvA
-         NRXOAgWulFrupMm2329FRzVv5yJEcxOwaxqTBpce2M1HvrCk4uw2SY47XjYCc8wFNyzb
-         NGtg==
-X-Forwarded-Encrypted: i=1; AL+hErGgxmEqmiC+APdXg12oESpLEVZzRX9zQzHXb8eMOh/SptxcccJzHb1DuBdnwKSJYRI2TKdzTMokG/sCgPyarg==@vger.kernel.org
-X-Gm-Message-State: APuU4Z+ZQS8tdVuTj5+HMWWg04aB4JC9nQ/FkL1fd9qld1iDTHMiIRpF
-	WzyrXoWANF/E8c3SyJk4CaNAFF4/feakkuppVGz/3YZ6oou05rRD9aRz
-X-Gm-Gg: AZFdTZdsgaAu+ExWw2JEfBVGPPB7rCtY+gc3jMPKyt6jV30cYEfEeGeIRkbe5KdJQqu
-	+Pbn1stj7FEYPGr979Uj49E3jcKKJzbsidnQkB0mawr8fSJDpDl3vZDONUToU8ABIlB4m97nfqJ
-	sxh+NfX1bD5ZP8jhxxvxVsPKGOaxDBYeIwYNaM8BrTwv2aHj/he2cF3Xsf1BYf8FOUa7oTYmnjo
-	suC+9DjwiMQjcWogBZtdddYrtl/FevIw0ZutpsqBQicG2IWoaqBU5ngtZTacEM6pFQaoMtJkUil
-	Umw9v5Zs7jEzBW8948hUQ1SEKSKcgQwgOm3YLfzI1oZ7hCFJI2CrVVB1/EgwM1RnXiWRPel/u7V
-	38yaASlQXkDSBj4NHQZ4euxuLmO728pwWH7775AStDdvi0CYOLAHGtN9taFtngYx7r72Rmf4xvI
-	+eEe/fLRqTUcM+uPS7sEEGbPq+gVq5gV/XeasyBHPGndJPo2O6NelCZBmtwv1xaU7wT9pbOYq06
-	XAmsa23Bcpq08RcPIUdWsND8KzjJi0AwdriFgzMn/v2AAY2pxFxaaSuzX5kUgnAi19T/G6BkbZh
-	9gdTXsfZUSz3kist3IwGiGFhQlmyDiINNasx7knFe4ZvDYidBVP0yvSolZHr7WErgfnv6UOga6/
-	JQ/OE
-X-Received: by 2002:a17:90b:17cd:b0:3ae:6fda:78b1 with SMTP id 98e67ed59e1d1-3b41c95b6bcmr5815185a91.43.1795279002278;
-        Sat, 21 Nov 2026 08:36:42 -0800 (PST)
-Received: from G7XWH7K1F3 ([2408:8256:2e80:7371:8549:3fe7:526f:af9])
-        by smtp.gmail.com with ESMTPSA id 98e67ed59e1d1-3b405d11753sm12357403a91.5.2026.11.21.08.36.35
-        (version=TLS1_3 cipher=TLS_CHACHA20_POLY1305_SHA256 bits=256/256);
-        Sat, 21 Nov 2026 08:36:41 -0800 (PST)
-From: Zhao Li <enderaoelyther@gmail.com>
-To: Ping-Ke Shih <pkshih@realtek.com>
-Cc: Hemanth Selam <hemanth.selam@gmail.com>,
-	Morning Star <alexbestoso@gmail.com>,
+        bh=P/gSH84W9nTAHSSAJ/t1/ktXrTVBa/4q/QfiolBhcqw=;
+        b=DB0ZhSRjmK05CuIcEFyBs2xq0ufEORAgu+xByd4DiByuRyqWcByBtvN2vPBBqhNdXR
+         LE9SYP7ElTE2ivFoSesnJQacAJ2twYmV76ZVj0WbsZpIamLFB7HKa91AR9mmhALZozh8
+         vT5MzoK+YoNy6wAGIctPNDh+6Bfln1+n6sXEdbov6ADuN1kRXDx9sIw0zWME0u002Abw
+         m5s2acVkwxSj0pmLEVGDM8rgryHJFm/tRK/1P2N+AhpP8VtyWeJ5jEy5qN+M/NdgtCG3
+         XBHIhoViyRQPHXVILnUlWuThXXt//Bbpse/YP4gr8+5egyrgZ9o3yvMPa+7wNiASAAZk
+         cRhg==
+X-Forwarded-Encrypted: i=1; AL+hErHmWVKNngHWltVMpTHXT8ngRRE6mkCw9Sud5q7F5gxy1aJiZ9M2Jm1Z+HMxA1ksGvNgqoaFN6/SLbolWvjrzA==@vger.kernel.org
+X-Gm-Message-State: APuU4Z+37WD+ydwUKNyLsmqTozJyXL6NHMs007SiZuN43UrvZDenOObP
+	4y4OzPy/t/cKgYKDmxg8XEyijJHAwibrhaX9P/R4m9t9rO3dRa7efXQzq20Y4wKEX8YPyVpzRwG
+	0yNwaAw==
+X-Gm-Gg: AZFdTZcA1Rq1mIAdA4Zx1iEd5QbPcuwWDQcPb9y/RIwquN5N2P7Veo0NeYrKpnQ0R6V
+	VP/OVegBqRcMcgX+0FBmeEwaQ3QN8B2BXIG5vUIwMFNN4VS3HsMWRhI5THGlCVL9ZBH5m2OTqJk
+	biE3Qcn5d/rAnzPDuqj4MORFxlOy4cl/d9ky9YJ+BTCH4LhDlXWaeZpuVszGUXcMDW4WoKeW9ox
+	w0hCa0H8nWMSS9IKZ6WT4ZaOjMifv9goU8FOzhAfT7rR2nIIBQpzKXgSgM/QDvLsuqViYfJJaUM
+	cd1WUOQMmz2i37gIaa0+iZlGUH+GkfevrAMKRXVmlieO2Upm/+438Cg2B/8QGrWuGjXJRtqtzEL
+	WlcCSX3XjD9GG944FhQE7yc3ElRAN2F0ReGHYK4ZJaaQq3azby9KDH+0Uz2DfAr/8aJJ5NJM08z
+	fKrCBu1wEfdq/hpEqivGuDVRoIDBxi/5X8GdViFr5/RSVP3Y2XonDeYd/NffSOxmrhw68SVfnkk
+	FfytJp6gpu3wkrUaTiKtJjKZ1PknoGjoAGoqfEPUKIMbEgYJSpfVr44CPO3SKgZAbowx105Z0IR
+	XScZBsihzDKwpBXEbmtTiVLLbU/gHkL6/OfWWuTw6frDwYmeZbCui0PO9HJk2DZc+/ppnATkfBF
+	YswEeUwBg33ON1JijtQHG4aMnRy9PVvkRidw2RUB/Uc8uRyGNr5/Jt5eV++XoKb3XjzId2I3Dqp
+	oy9X8qOLlzTFrw7VmAixmgjWWT/waYeShNBkcEPVOX134HZLHAkyv9rSXdGycA3kybMd5cmAr9l
+	fl4fkaWt4ilQtN6UFM6gZRX1FtdJjmQ1qqfWYgW/BTaPUXTyLb4e706XLOT2Ud/irsix+TYJxHl
+	open/hDKl77ImTzxY9xBbvbe/ey8EPAoW20phMbyTZjs4trAojv0zm3S9BjHLq/2Qjjv6SCJooq
+	cMg==
+X-Received: by 2002:a17:906:3e1b:b0:c50:93b6:52ed with SMTP id a640c23a62f3a-c513aab27ccmr426031766b.40.1795279598346;
+        Sat, 21 Nov 2026 08:46:38 -0800 (PST)
+Received: from Desktop.tail070c67.ts.net (p200300f2470da3000000000000000a27.dip0.t-ipconnect.de. [2003:f2:470d:a300::a27])
+        by smtp.gmail.com with ESMTPSA id a640c23a62f3a-c513ae8f70fsm213796366b.40.2026.11.21.08.46.36
+        (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
+        Sat, 21 Nov 2026 08:46:37 -0800 (PST)
+From: Julius Bairaktaris <julius@bairaktaris.de>
+To: jjohnson@kernel.org
+Cc: ath11k@lists.infradead.org,
 	linux-wireless@vger.kernel.org,
 	linux-kernel@vger.kernel.org,
-	stable@vger.kernel.org,
-	Zhao Li <enderaoelyther@gmail.com>
-Subject: [PATCH rtw-next 3/3] wifi: rtlwifi: rtl8192cu: don't mark undecrypted frames as decrypted
-Date: Sun, 22 Nov 2026 00:35:47 +0800
-Message-ID: <20261121163547.37019-4-enderaoelyther@gmail.com>
-X-Mailer: git-send-email 2.56.1
-In-Reply-To: <20261121163547.37019-1-enderaoelyther@gmail.com>
-References: <20261121163547.37019-1-enderaoelyther@gmail.com>
+	baochen.qiang@oss.qualcomm.com,
+	vasanthakumar.thiagarajan@oss.qualcomm.com,
+	rameshkumar.sundaram@oss.qualcomm.com,
+	kvalo@kernel.org
+Subject: Re: [PATCH RFC ath-next] wifi: ath11k: advance the TX PN of keys reinstalled after a firmware restart
+Date: Sat, 21 Nov 2026 17:46:36 +0100
+Message-ID: <20261121164636.3949260-1-julius@bairaktaris.de>
+X-Mailer: git-send-email 2.53.0
+In-Reply-To: <20261018210212.1926073-1-julius@bairaktaris.de>
+References: <20261018210212.1926073-1-julius@bairaktaris.de>
 X-Mailing-List: linux-wireless@vger.kernel.org
 List-Id: <linux-wireless.vger.kernel.org>
 List-Post: <mailto:linux-wireless@vger.kernel.org>
@@ -104,88 +110,13 @@ Precedence: list
 MIME-Version: 1.0
 Content-Transfer-Encoding: 8bit
 
-The receive descriptor's SWDEC bit is set when a frame still needs
-software decryption. It is also clear for a frame that was never
-encrypted, and for a protected robust management frame, which the
-hardware leaves for software to decrypt. rtl92cu_rx_query_desc()
-nevertheless sets RX_FLAG_DECRYPTED for every frame with SWDEC clear,
-in two places.
+On Sun, 18 Oct 2026 23:02:12 +0200 Julius Bairaktaris wrote:
+> Which command or field sets the TX PN of an installed key on this
+> firmware? Without one the stations need new keys after a restart.
 
-mac80211 then accepts an unprotected unicast data frame although a
-pairwise key is installed, and unprotected deauthentication and
-disassociation frames on a connection that uses management frame
-protection. For a protected robust management frame it skips software
-decryption and MIC verification, so a forged frame is accepted and a
-genuine encrypted one, such as an SA Query from the peer, reaches
-mac80211 still encrypted. A station in radio range can therefore inject
-plaintext data into an encrypted connection, or end a protected one, by
-spoofing the peer's address.
+Please drop this RFC. With key_tsc_counter set in
+WMI_VDEV_INSTALL_KEY_CMDID, WLAN.HK.2.9.0.1-02146 still started the data
+frames at PN 0 after the restart (1 run), so the patch does not do what
+its subject says.
 
-Set the flag only for a protected frame that is not a robust management
-frame, as the rtl8188ee, rtl8192ee, rtl8723ae, rtl8723be and rtl8821ae
-drivers do. rtl8xxxu, which supports the same chip, stopped trusting
-SWDEC alone in commit cbfbb4ddbc85 ("wifi: rtl8xxxu: enable MFP support
-with security flag of RX descriptor"). The header is read before the
-receive path strips the driver info, so test the Protected bit first,
-which needs only the frame control field, and read that only when the
-URB holds it. When Protected is set, _ieee80211_is_robust_mgmt_frame()
-also reads only frame_control.
-
-Found by code review. Compile-tested with W=1.
-
-Fixes: 29d00a3e46bb ("rtlwifi: rtl8192cu: Add routine trx")
-Cc: stable@vger.kernel.org
-Signed-off-by: Zhao Li <enderaoelyther@gmail.com>
----
-No new W=1, sparse or smatch warnings.
-
-AI assistance was used.
-
- .../net/wireless/realtek/rtlwifi/rtl8192cu/trx.c   | 14 ++++++++++----
- 1 file changed, 10 insertions(+), 4 deletions(-)
-
-diff --git a/drivers/net/wireless/realtek/rtlwifi/rtl8192cu/trx.c b/drivers/net/wireless/realtek/rtlwifi/rtl8192cu/trx.c
-index d6c35e8d02a5..aceedc37e5d2 100644
---- a/drivers/net/wireless/realtek/rtlwifi/rtl8192cu/trx.c
-+++ b/drivers/net/wireless/realtek/rtlwifi/rtl8192cu/trx.c
-@@ -295,11 +295,14 @@ bool rtl92cu_rx_query_desc(struct ieee80211_hw *hw,
- 	struct rx_desc_92c *p_desc = (struct rx_desc_92c *)pdesc8;
- 	__le32 *pdesc = (__le32 *)pdesc8;
- 	u32 phystatus = get_rx_desc_phy_status(pdesc);
-+	struct ieee80211_hdr *hdr;
-+	unsigned int hdr_off;
- 
- 	stats->length = (u16)get_rx_desc_pkt_len(pdesc);
- 	stats->rx_drvinfo_size = (u8)get_rx_desc_drvinfo_size(pdesc) *
- 				 RX_DRV_INFO_SIZE_UNIT;
- 	stats->rx_bufshift = (u8)(get_rx_desc_shift(pdesc) & 0x03);
-+	hdr_off = stats->rx_drvinfo_size + stats->rx_bufshift;
- 	stats->icv = (u16)get_rx_desc_icv(pdesc);
- 	stats->crc = (u16)get_rx_desc_crc32(pdesc);
- 	stats->hwerror = (stats->crc | stats->icv);
-@@ -316,15 +319,18 @@ bool rtl92cu_rx_query_desc(struct ieee80211_hw *hw,
- 	rx_status->band = hw->conf.chandef.chan->band;
- 	if (get_rx_desc_crc32(pdesc))
- 		rx_status->flag |= RX_FLAG_FAILED_FCS_CRC;
--	if (!get_rx_desc_swdec(pdesc))
--		rx_status->flag |= RX_FLAG_DECRYPTED;
- 	if (get_rx_desc_bw(pdesc))
- 		rx_status->bw = RATE_INFO_BW_40;
- 	if (get_rx_desc_rx_ht(pdesc))
- 		rx_status->encoding = RX_ENC_HT;
- 	rx_status->flag |= RX_FLAG_MACTIME_START;
--	if (stats->decrypted)
--		rx_status->flag |= RX_FLAG_DECRYPTED;
-+	if (stats->decrypted &&
-+	    skb->len >= hdr_off + sizeof(hdr->frame_control)) {
-+		hdr = (struct ieee80211_hdr *)(skb->data + hdr_off);
-+		if (ieee80211_has_protected(hdr->frame_control) &&
-+		    !_ieee80211_is_robust_mgmt_frame(hdr))
-+			rx_status->flag |= RX_FLAG_DECRYPTED;
-+	}
- 	rx_status->rate_idx = rtlwifi_rate_mapping(hw, stats->is_ht,
- 						   false, stats->rate);
- 	rx_status->mactime = get_rx_desc_tsfl(pdesc);
--- 
-2.56.1
-
+Julius
