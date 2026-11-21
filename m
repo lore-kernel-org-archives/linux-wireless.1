@@ -1,88 +1,88 @@
-Authentication-Results: smtp.subspace.kernel.org; arc=none smtp.remote-ip=209.85.218.53
+Authentication-Results: smtp.subspace.kernel.org; arc=none smtp.remote-ip=209.85.218.49
 ARC-Seal: i=1; d=subspace.kernel.org; s=arc20261015; a=rsa-sha256; cv=none;
-	t=1795302467;
-	b=kYL9cRERUmyPd7o+0hsRmkA66Q5qQ+5EVSZEKDB2ft5IyF1m4ykDwEuCn6nVmC+I8C4Z
-	 In7XivsMaLsmVY9HhD2xg+9LCcZuY40snNKF8p4qRWf/gIhEVw9+Fcf9/296vmUV3OQAO
-	 DghG66bpl1+FmKM0FFIsInXyScKQyia5c0lfX4b7kFATxr4R3IxO0fsQHmgjD91ouAFU7
-	 dOfhjuNTnyYjuywFVM6180DKTMLeVWXLuTCR5QWIQsjJQZaPtUFpuNzb0qB4x5vzDFYXH
-	 jashT4q7SO7bsrC2yAbPveO7XOuSCpmcwLk/lUXD+mwA6aX+LQSyH4SHge6ZMeTaiCg==
+	t=1795302462;
+	b=mxnOJknuvOGBIZA1uOHfWAnOFidNdS2oYTL1p1+bG/S/eFTESKY8ulJySsr/miJGj9pF
+	 +V4forkszCnyW8OyD7mN2NV3QyL3dVZR27YNJh0cbioVRc6crmzOHscry/1gbv+NbF1tV
+	 43TAVJcUr4sJf3taOPiLJkMTyjenn1uBdHiexus6aAxXPLHehC92Z77mKOD4zK5w5djN5
+	 /0ZZblKmr+LZhFBDzpdecNvq7PpBZdan06nCsvZrlHUeYXOXiqMjn1lC2fReOJUHPoqqB
+	 mxXO4GsBNZ6lpkMWUgPzYc4DwaWNCFL/0q2V+RbBHHxrgxxIe6FUpx2NbkdbC4luz3w==
 ARC-Message-Signature: i=1; d=subspace.kernel.org; s=arc20261015;
-	a=rsa-sha256; c=relaxed/relaxed; t=1795302467;
+	a=rsa-sha256; c=relaxed/relaxed; t=1795302462;
 	h=DMARC-Filter:Received:DKIM-Signature:X-Google-DKIM-Signature:
 	 X-Forwarded-Encrypted:X-Gm-Message-State:X-Gm-Gg:X-Received:Received:
 	 From:To:Cc:Subject:Date:Message-ID:X-Mailer:In-Reply-To:References:
 	 MIME-Version:Content-Transfer-Encoding;
-	bh=6btR2aaFXry8/+OvCG761RoKG42Ek6YtGx/y9HYL3Ck=;
-	b=kv8aqfcsDLr09ZvrYIEOkgzN+UA0NDexH/8qkT6dl5Y5MFrq/7S51PfpGF1YdeNBJ9Ak
-	 ZMoLNcsoUInL13vJHj14GrV94ZEKxJmfhY/IGHkBcFtxljtPQ101uuj64FzW7EyycWgKN
-	 mMYpPxCwpj8gWoCnY3mttbj+Je0XUIVu0VyjE1H/T7hSja96wpBw5h+PX8BYCdmG6cPcX
-	 WBzg7+9R5N3n2U30TkTgLRZboLqp632IPV3Gwa8B/mPcIflMNyS8bziq4m16Gyoc1TdjC
-	 CahSGgqdtN5U45oeW4tbBPnh5dtRbiXWkmO2uw0leVGdYUBjSMZSDn5IG0hZuZjUV3w==
+	bh=RzF4XgzG+OFQFl38cVbBCWJ0+gCFYYh6ZK+opbkd1ps=;
+	b=Mpve8LCPlJ471Ek/0Jp62sqLBUTwdRtInOYFaDTWlQfdTNeUVfQTg5DIt5cM1Ys0pBlu
+	 nHswb6dygDmEHqx6Fps4hTdPpS1JYwtCEI6Jn6u8SVN5N7G1tRgskFd0zdukqVQjJl58S
+	 DqVg5OvjHeUCRx+ao/f+or/qTm5Ga2g555b0VbRwB9C8fmh9+nLGdwDR64s1OS4SOawdf
+	 HAoo0S5PifPMLKkjiZzeC7rcE0vRSdLvhVzw/kZwzO0OhkGE8AcL4MlSL8tEBwpjxGWhy
+	 C1/fQ2+5D0r86roNEtNNQztvTX5p8lgO6zD50/PClrV73Yp8Wbm8bwzSdH5WMsYdY0Q==
 ARC-Authentication-Results: i=1; smtp.subspace.kernel.org; 
 	dmarc=pass header.from=bairaktaris.de;
 	spf=pass smtp.mailfrom=bairaktaris.de;
-	dkim=pass header.d=bairaktaris.de header.i=@bairaktaris.de header.a=rsa-sha256 header.s=google header.b=HVjAoiGm;
-	arc=none smtp.remote-ip=209.85.218.53
-Received: from mail-ej1-f53.google.com (mail-ej1-f53.google.com [209.85.218.53])
+	dkim=pass header.d=bairaktaris.de header.i=@bairaktaris.de header.a=rsa-sha256 header.s=google header.b=perZYWZG;
+	arc=none smtp.remote-ip=209.85.218.49
+Received: from mail-ej1-f49.google.com (mail-ej1-f49.google.com [209.85.218.49])
 	(using TLSv1.3 with cipher TLS_AES_128_GCM_SHA256 (128/128 bits)
 	 key-exchange X25519 server-signature ECDSA (prime256v1) server-digest SHA256)
 	(No client certificate requested)
-	by smtp.subspace.kernel.org (Postfix) with ESMTPS id 3D6B560A261F
-	for <linux-wireless@vger.kernel.org>; Sat, 21 Nov 2026 23:07:47 +0000 (UTC)
-DMARC-Filter: OpenDMARC Filter v1.4.2 smtp.subspace.kernel.org 3D6B560A261F
+	by smtp.subspace.kernel.org (Postfix) with ESMTPS id 82E42606A688
+	for <linux-wireless@vger.kernel.org>; Sat, 21 Nov 2026 23:07:42 +0000 (UTC)
+DMARC-Filter: OpenDMARC Filter v1.4.2 smtp.subspace.kernel.org 82E42606A688
 Authentication-Results: smtp.subspace.kernel.org; dmarc=pass (p=reject dis=none) header.from=bairaktaris.de
 Authentication-Results: smtp.subspace.kernel.org; spf=pass smtp.mailfrom=bairaktaris.de
 Authentication-Results: smtp.subspace.kernel.org;
-	dkim=pass (2048-bit key) header.d=bairaktaris.de header.i=@bairaktaris.de header.a=rsa-sha256 header.s=google header.b=HVjAoiGm
-Received: by mail-ej1-f53.google.com with SMTP id a640c23a62f3a-c511cdd5a82so245951366b.3
-        for <linux-wireless@vger.kernel.org>; Sat, 21 Nov 2026 15:07:47 -0800 (PST)
+	dkim=pass (2048-bit key) header.d=bairaktaris.de header.i=@bairaktaris.de header.a=rsa-sha256 header.s=google header.b=perZYWZG
+Received: by mail-ej1-f49.google.com with SMTP id a640c23a62f3a-c247f6687dcso317403966b.2
+        for <linux-wireless@vger.kernel.org>; Sat, 21 Nov 2026 15:07:42 -0800 (PST)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=bairaktaris.de; s=google; t=1795302466; x=1795907266; darn=vger.kernel.org;
+        d=bairaktaris.de; s=google; t=1795302461; x=1795907261; darn=vger.kernel.org;
         h=content-transfer-encoding:mime-version:references:in-reply-to
          :message-id:date:subject:cc:to:from:from:to:cc:subject:date
          :message-id:reply-to:content-type;
-        bh=6btR2aaFXry8/+OvCG761RoKG42Ek6YtGx/y9HYL3Ck=;
-        b=HVjAoiGmKzeE58aE4rLmdcQ/r4u75DFDxLTKLE054NvRD91UQDoWR3Pc5gR+is2KIa
-         D6oh0FYI2e5QMZYOYn2AakT269LA8bNEYuLZ4ffcTfDsKvOtbQTCDC4o0LwczQ958b1I
-         5uMi1gDDnMdV2AzsLMmGdYDxWp75IWZoTcWQNRVIloP/7or1u3IOSErK+aeSVw8LAeeY
-         PRnA5h4LY4EjaGnGN1fD+IibMcXBFlJL6VEEplQspXY3FYClObVGgeSRQDSSId6r0/Xx
-         GP+E6ZRWE5owkMPpND4PsJImNhbVcixE/YmfRTFdsEN+Ip+6zYXBCSCd1TiAWdEMlU+v
-         jHFQ==
+        bh=RzF4XgzG+OFQFl38cVbBCWJ0+gCFYYh6ZK+opbkd1ps=;
+        b=perZYWZGTcIuDNxZ1nNcXbkGt1MfSRoIGXrDThH6wtSW1YycsyCGWdVYa+8OuBNXO6
+         ByG7Yz1v6eqxlhboGR+icRKs0jVlLpigyx6mYblj2e9H3NWI6bTyM7mAMa//h1PbvvqN
+         qbdp8HCTVlfjOYtvRI7owdNEzwYziZUVpRt4bLhY+hrcUIqUl6wov4QxDpDOOIl6j6+U
+         WYYXYWCtDJc5+IibQH7Y0li79LmE+YD62U6UiWoeKUUCgvcMXX+WbJ+d2qVAieGmPTKb
+         ButlWGnvBQD02CRn72fKLE3d+3CT9ArjqFmVNGuWUzQDYYE3ZHSowxpPVCUXd6mXEvwm
+         J7GQ==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=1e100.net; s=20260707; t=1795302466; x=1795907266;
+        d=1e100.net; s=20260707; t=1795302461; x=1795907261;
         h=content-transfer-encoding:mime-version:references:in-reply-to
          :message-id:date:subject:cc:to:from:x-gm-gg:x-gm-message-state:from
          :to:cc:subject:date:message-id:reply-to:content-type;
-        bh=6btR2aaFXry8/+OvCG761RoKG42Ek6YtGx/y9HYL3Ck=;
-        b=w447L7My7CnivHjf7dU6CQcXT+1NGiNppPPPlRsKEzHmoAURvhYUxgDL3MNeS2b8IC
-         P8szzgKTGGLWv22kLLcPZIZUYQ3hdgQa6RCk5WGMqxwn/hjLNQcoEiO+eFarf5KFvF77
-         QaFua/brpcK0HGZn1FVKgD+vAumwnMggQS4NbVj/kBAe+xl/CniQNWK1oez+PXWDJC+n
-         xgzGjqDLVbWVTY7MXZf/uxAUdyFIpuIGdwOtLGMdTpx5gyZw0gRZmlD3tq0oFgQ0pxFa
-         M64zYJ4MPfIa30tpM4MuPhzo+vEu5oFi1eWfzrEI32xVAitPnSnGZTtsBhF8NYVICsf+
-         AclA==
-X-Forwarded-Encrypted: i=1; AL+hErGlTg3D/1TDotCXySDZ3OEU5QIY1WTY+irqRIYHLg3YXo1uedjnIK9JFbPIb5Wl1ECH8rOcO0B/ZFsgHKyfUg==@vger.kernel.org
-X-Gm-Message-State: APuU4Z/P8V7SfqPeznK0hzs/PkLeDvVk7J9P33PtcvkyGA4OL5FiqzZH
-	v0dLWZnYR6kM0w+N8cUgZPZedXkT63HgAMld0mGtYWjblAJmfeVTC36tnMOcsBpTfg==
-X-Gm-Gg: AZFdTZfXCeKx24rW4qBXEhOB4rfBR5Xdos4SguLa6Mq1zw3iDqKyukXbL6VzthxZlAv
-	qVSml0Pco2+yzZkekPJA0pKnCSBadG2oaPUY24Tf+X0d2osDMlJjp/uHeNlA7lm2hweb79pWz38
-	cbSVSVR5aPw4LjAH0kpqpbtjbd80AfbhqLReWqEaJM5TyY/F4KP/conDHIpvxINNPWCX00J+jBX
-	tW10JQ3mG7ALy4kUG6ITvjvVq7JdJh71/Tuo78FIarY+pjHJ8QhBaqUqrvdzPDvvsRN4HmPp++d
-	grtoPjKLAZHJj5+BYw+y/4gEkIzqA1U6nZM3mbfGTEEAuXR6vdOIyDV0XDTB1P6G7R2buKd/XkD
-	AsPD7pQrKNj7yRrHA7XVbR9tGImupnFCsU3lRFPgY8mRluhLESv9WLMjDuRNu7+rx6jlgbBtPAT
-	lcTYN6Gfjs/xgWx8dQNxl3iXS0rLFHFDLJGGFTGtDf5vbrynMvrYyPdHa5hGQWO2zWHTN1xJu42
-	G64/+WN/Z4im2khtLiLl+I4EGLp55nhPbjDtuMjqmRfja2aPUIq6RuOXSUwO9VMhIHozCJhOtA+
-	zrBQCAHhT970wgNv7EwcKgfwXRnuYQWO4c7JH6mUNDs/67VUFABCAd2n/b2VbDe6PU+lR3c8ucF
-	e2qKUCUMI0f67Hgc9kBq0VhZ2OMGLCTflFcm3WiTP8xzMuDHZRvs2W7gesOTxnnnlhU6VBI5sl0
-	VOFO6CNtP5xBSMRFDvdi520pI57vAx1TZ0Bv+5cQPpWSyI0BOIfoCbSd3dyUwc2yDjfSQQqC4gS
-	SVet1XPhTAczTDwPPDR5kZ2GCtUm7MiyldYqsnXoepJDAmmXzXlwNB3MVa7squw82D1h48XelEh
-	nHLdAOWXu9RbD/CGXMvoxQuv/WKy6980aDyhQhp2fntvNst7aexWn19/dWycEpJfRwm55yP0jW0
+        bh=RzF4XgzG+OFQFl38cVbBCWJ0+gCFYYh6ZK+opbkd1ps=;
+        b=h3gU4QeDsyAjX97NoHJ15Zn2fp4Ifqp9zj/yYJ4EPSghJQEN3i+Y8DJMPwv2YbYJ6G
+         uFkGS/Oum+3XN4422OZmKEiANWZYvUMTmHH4NH7ZCkHIQ4UEsXgHywP5wyl9Kk3yn2KM
+         1F/xpu8ORTXNKcD/8WVgMhiIHkPVxuz4wnmVlVjelJus0mFbpw/kGxLqGSSmLy3Cf6/v
+         prw1tTQAbdpwrAk44+ktpIhdEEAJf6Ko7DwPbRkSfqCNTChTy3Za1QsrLZs4zpxjicde
+         327nz8z2Go8oNgWTGKv2rF2p5MzGCho1XzUQmbooI6AHjhSdZ9IiUtvQzjodNfe+XHrU
+         0kyg==
+X-Forwarded-Encrypted: i=1; AL+hErFaLPR/q46gEzXBG80x1A5Ux+Emi2ykbQO/f6f+suXHUs6PJS30QMfw6Mu8TqF0O3U5hWRxMJNQf4Bvnba3qw==@vger.kernel.org
+X-Gm-Message-State: APuU4Z9yw/f/vRDylvDxawUxWw343hyGmSsqd3IF6g1Z/XPeZTsZMwoP
+	FvZBi1ZJzRi/495i9stV/tXdFOD4p/Yzx0Fl4zlMTeyoenaX7nK05a0AwAIgOubdiQ==
+X-Gm-Gg: AZFdTZeUyuaXDCSlPUylfU74VpFMZZsI0nt13ul8UhgXBz1iU+HXxcQyjx5ZAXEfEXX
+	u2+okV7uKfh0lch/ZOqPOKyYrYpuryV/xfkffFe4kbyasWMqaLeYk0AFohbVEdJsqtCArt0duY5
+	/YzEDtFwA6Z8259vf+fuFTBtMoX+i/WfbGnC02X4MnSfN3ZSnY0IChUAEg+2wC4LM+9NPJyP1tl
+	bGOhSsjQw6IBiElisLCDWDwCSUEh/VfQ1cqGbcU4uftR/bb35IgnHXwNME6XIs7gVmxJl+g1+iE
+	OeisgrKocG9BRzsxRg3eTyE2AK2PTSs7TDdG18WlGHMqE0q1AfMv60JIoVF7Evy6LvX7fyUfOmC
+	/0wSrMcqYhJn16pnXNfPlxUR2tOOQlKmf1Io+2fUFYRDBLSJlem6qveGPLb8BbJeVwzbAMsCxER
+	qcaGUVlUtsc/evbZyhj1+lUTEFQBk8hYmlb0X7Gm+DhR+T1QDyJ8yrkkaS5KrQdla8KEbzkUeQl
+	cgYJNiTlK6mChNZRpY4UhutpuLCeJlZ2NnmJgTuIeyRxtsnewyNvjb+HmXetgeRkQE9vO7FSnxD
+	48omNA3P0qThTNc8xTuAZf3wUwk0/M/rfQJFDvsvTRDdca8UGbUNyWSMRNEE9MQzYaUsoIuH/Ft
+	LkPEuqvIhu7heqa+Pw2KKselqO+CglNjlsUcoQnQPv3cauJOF/ahl2QpBiSw3gpivJo+NqHuy0j
+	PR6+Qc0NsWdzG7WGDdw7UARAuQoDRLsxwnH0pWUhtIBdvSWCprCgKt5CKd0De5AVWgURsDxFOck
+	CYqRK+mmuPeCfZ9G374Al4lrh4gmQBAYnc6W2IZ7SGKjHRD2M/EUPr+GaOuXrgs3VqNytyoDi75
+	YT3A0IcfnqNRucnn5HRvRUZqJpcTW+HNF9WYyBPm47wvmStJl34MMFMv1XXI80JXzx8gjFCP4Jc
 	=
-X-Received: by 2002:a17:906:694f:b0:c50:ff1c:22be with SMTP id a640c23a62f3a-c513aace676mr469413066b.16.1795302465698;
-        Sat, 21 Nov 2026 15:07:45 -0800 (PST)
+X-Received: by 2002:a17:906:4750:b0:c3f:dce3:20d5 with SMTP id a640c23a62f3a-c513a88a462mr502393666b.22.1795302460965;
+        Sat, 21 Nov 2026 15:07:40 -0800 (PST)
 Received: from Desktop.tail070c67.ts.net (p200300f2470edf0034412c7e8f5a5e7a.dip0.t-ipconnect.de. [2003:f2:470e:df00:3441:2c7e:8f5a:5e7a])
-        by smtp.gmail.com with ESMTPSA id a640c23a62f3a-c513afc1b40sm242721466b.54.2026.11.21.15.07.44
+        by smtp.gmail.com with ESMTPSA id a640c23a62f3a-c513afc1b40sm242721466b.54.2026.11.21.15.07.39
         (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
-        Sat, 21 Nov 2026 15:07:44 -0800 (PST)
+        Sat, 21 Nov 2026 15:07:39 -0800 (PST)
 From: Julius Bairaktaris <julius@bairaktaris.de>
 To: Jeff Johnson <jjohnson@kernel.org>
 Cc: ath11k@lists.infradead.org,
@@ -107,9 +107,9 @@ Cc: ath11k@lists.infradead.org,
 	Pradeep Kumar Chitrapu <quic_pradeepc@quicinc.com>,
 	Sathishkumar Muruganandam <quic_murugana@quicinc.com>,
 	Muna Sinada <quic_msinada@quicinc.com>
-Subject: [PATCH ath-next v3 07/13] wifi: ath11k: depend on RPMSG instead of selecting it
-Date: Sun, 22 Nov 2026 00:07:25 +0100
-Message-ID: <20261121230731.1206043-8-julius@bairaktaris.de>
+Subject: [PATCH ath-next v3 04/13] wifi: ath11k: clear CRASH_FLUSH only after recovery rebuilds the rings
+Date: Sun, 22 Nov 2026 00:07:22 +0100
+Message-ID: <20261121230731.1206043-5-julius@bairaktaris.de>
 X-Mailer: git-send-email 2.53.0
 In-Reply-To: <20261121230731.1206043-1-julius@bairaktaris.de>
 References: <20261121230731.1206043-1-julius@bairaktaris.de>
@@ -124,48 +124,98 @@ Precedence: list
 MIME-Version: 1.0
 Content-Transfer-Encoding: 8bit
 
-From: Florian Maurer <fmaurer@disroot.org>
+ath11k_core_reconfigure_on_crash() clears ATH11K_FLAG_CRASH_FLUSH right
+after ath11k_hal_srng_clear() zeroes the rings, but
+ath11k_ce_init_pipes() and ath11k_dp_alloc() rebuild them only later. A
+WMI command sent in between passes the CRASH_FLUSH check in
+ath11k_ce_send() and dereferences the NULL tail pointer of the cleared
+ring:
 
-Commit 32ec8488d75d ("wifi: ath11k: fix sporadic WLAN initialization
-failures") made ATH11K_AHB select RPMSG, QRTR and QRTR_SMD. Selecting
-RPMSG makes it impossible for ATH11K_AHB to depend on
-QCOM_RPROC_COMMON, which is needed to use the remoteproc SSR notifier
-when ath11k_ahb is built in. Adding that dependency gives a recursive
-dependency error:
+  Unable to handle kernel read from unreadable memory at virtual address 0
+  pc : ath11k_hal_srng_access_begin+0xc/0x60 [ath11k]
+  lr : ath11k_ce_send+0x114/0x350 [ath11k]
+  Call trace:
+   ath11k_hal_srng_access_begin+0xc/0x60 [ath11k] (P)
+   ath11k_htc_send+0x188/0x3c8 [ath11k]
+   ath11k_wmi_cmd_send+0xc8/0x2f4 [ath11k]
+   ath11k_wmi_send_peer_create_cmd+0x78/0xe0 [ath11k]
+   ath11k_peer_create+0x138/0x500 [ath11k]
 
-  symbol RPMSG is selected by ATH11K_AHB
-  symbol ATH11K_AHB depends on QCOM_RPROC_COMMON
-  symbol QCOM_RPROC_COMMON is selected by QCOM_Q6V5_ADSP
-  symbol QCOM_Q6V5_ADSP depends on QCOM_SYSMON
-  symbol QCOM_SYSMON depends on RPMSG
+Clear the flag once the rings are rebuilt, before ath11k_core_start()
+sends the first HTC message.
 
-RPMSG has no prompt and is selected by the rpmsg bus drivers (GLINK,
-SMD, virtio). ath11k_ahb needs one of these transports anyway, so it
-can depend on RPMSG like QRTR_SMD and QCOM_SYSMON do. QRTR and QRTR_SMD
-are still selected.
+If ath11k_core_start() or ath11k_core_pdev_create() then fails, the error
+path frees the data path rings with the flag clear. The stations stay in
+ab->peers, so removing one later, or removing the driver, makes
+ath11k_dp_tx_send_reo_cmd() write a REO command into the freed REO
+command ring. Set the flag again before ath11k_dp_free().
 
-Signed-off-by: Florian Maurer <fmaurer@disroot.org>
+On targets that do not restart the firmware after the cold boot
+calibration, the QMI FW_READY handler clears the flag as well, also
+during a recovery. FW_READY follows the firmware start, so it arrives
+while the restart work is still rebuilding the rings. Clear the flag
+there only on the first boot, before that handler starts the firmware
+itself.
+
+Tested-on: IPQ8074 hw2.0 AHB WLAN.HK.2.12-01460-QCAHKSWPL_SILICONZ-1
+
+Fixes: d5c65159f289 ("ath11k: driver for Qualcomm IEEE 802.11ax devices")
 Signed-off-by: Julius Bairaktaris <julius@bairaktaris.de>
 ---
-v3: new in this series, from Florian Maurer's series [1], unchanged.
-[1] https://lore.kernel.org/r/cover.1793531790.git.fmaurer@disroot.org
+v3: set CRASH_FLUSH again before ath11k_dp_free() in the error path; clear it
+in the FW_READY handler only on the first boot.
 
- drivers/net/wireless/ath/ath11k/Kconfig | 2 +-
- 1 file changed, 1 insertion(+), 1 deletion(-)
+ drivers/net/wireless/ath/ath11k/core.c | 5 +++--
+ drivers/net/wireless/ath/ath11k/qmi.c  | 4 ++--
+ 2 files changed, 5 insertions(+), 4 deletions(-)
 
-diff --git a/drivers/net/wireless/ath/ath11k/Kconfig b/drivers/net/wireless/ath/ath11k/Kconfig
-index 99f625b82fe1..2b608d4ed263 100644
---- a/drivers/net/wireless/ath/ath11k/Kconfig
-+++ b/drivers/net/wireless/ath/ath11k/Kconfig
-@@ -13,7 +13,7 @@ config ATH11K_AHB
- 	tristate "Atheros ath11k AHB support"
- 	depends on ATH11K
- 	depends on REMOTEPROC
--	select RPMSG
-+	depends on RPMSG
- 	select QRTR
- 	select QRTR_SMD
- 	help
+diff --git a/drivers/net/wireless/ath/ath11k/core.c b/drivers/net/wireless/ath/ath11k/core.c
+index d6346e0ee047..7456a8422654 100644
+--- a/drivers/net/wireless/ath/ath11k/core.c
++++ b/drivers/net/wireless/ath/ath11k/core.c
+@@ -2298,6 +2298,8 @@ int ath11k_core_qmi_firmware_ready(struct ath11k_base *ab)
+ 		goto err_firmware_stop;
+ 	}
+ 
++	clear_bit(ATH11K_FLAG_CRASH_FLUSH, &ab->dev_flags);
++
+ 	if (ath11k_frame_mode == ATH11K_HW_TXRX_RAW)
+ 		set_bit(ATH11K_FLAG_RAW_MODE, &ab->dev_flags);
+ 
+@@ -2323,6 +2325,7 @@ int ath11k_core_qmi_firmware_ready(struct ath11k_base *ab)
+ 	if (!test_bit(ATH11K_FLAG_REGISTERED, &ab->dev_flags))
+ 		ath11k_mac_destroy(ab);
+ err_dp_free:
++	set_bit(ATH11K_FLAG_CRASH_FLUSH, &ab->dev_flags);
+ 	ath11k_dp_free(ab);
+ 	mutex_unlock(&ab->core_lock);
+ err_firmware_stop:
+@@ -2354,8 +2357,6 @@ static int ath11k_core_reconfigure_on_crash(struct ath11k_base *ab)
+ 
+ 	ab->free_vdev_map = (1LL << (ab->num_radios * TARGET_NUM_VDEVS(ab))) - 1;
+ 
+-	clear_bit(ATH11K_FLAG_CRASH_FLUSH, &ab->dev_flags);
+-
+ 	ret = ath11k_core_qmi_firmware_ready(ab);
+ 	if (ret)
+ 		return ret;
+diff --git a/drivers/net/wireless/ath/ath11k/qmi.c b/drivers/net/wireless/ath/ath11k/qmi.c
+index 7dc07339b957..a176e6498ec9 100644
+--- a/drivers/net/wireless/ath/ath11k/qmi.c
++++ b/drivers/net/wireless/ath/ath11k/qmi.c
+@@ -3291,10 +3291,10 @@ static void ath11k_qmi_driver_event_work(struct work_struct *work)
+ 			if (ab->hw_params.cbcal_restart_fw)
+ 				break;
+ 
+-			clear_bit(ATH11K_FLAG_CRASH_FLUSH,
+-				  &ab->dev_flags);
+ 			clear_bit(ATH11K_FLAG_RECOVERY, &ab->dev_flags);
+ 			if (!test_bit(ATH11K_FLAG_REGISTERED, &ab->dev_flags)) {
++				clear_bit(ATH11K_FLAG_CRASH_FLUSH,
++					  &ab->dev_flags);
+ 				ret = ath11k_core_qmi_firmware_ready(ab);
+ 				if (ret) {
+ 					set_bit(ATH11K_FLAG_QMI_FAIL, &ab->dev_flags);
 -- 
 2.53.0
 
