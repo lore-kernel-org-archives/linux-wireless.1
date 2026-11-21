@@ -1,88 +1,101 @@
-Authentication-Results: smtp.subspace.kernel.org; arc=none smtp.remote-ip=74.125.229.0
+Authentication-Results: smtp.subspace.kernel.org; arc=none smtp.remote-ip=209.85.218.49
 ARC-Seal: i=1; d=subspace.kernel.org; s=arc20261015; a=rsa-sha256; cv=none;
-	t=1795281367;
-	b=M3jfDgLkENAXjJebEAwc2rCQbWKNDIL05GIdrOH9eHJemZVXQ/S2cVtMW7gLFH4bAtsI
-	 SN0TWXWJU0VJsKkdK7230zJ4YWguE6vXTHQEN9f6nRtuG2toH4U4gSVFW12Af9nWl97t/
-	 fYAYCOs9XiQ/Ach/fOb3fcCsLFXiBGrFu1dhEg8TnQnkO7pw+8aGszuPFyz4CwftTpd+y
-	 RS8XMkLNypUXGCZhASlXjK8nz8w4n8sg9/d80wurJRysFSs0fLQnuQAg1VzCDSLQVfQoV
-	 bEddqID4Q1mOErTxSohWT3MxLYk+GHyjFmBvXyyVmTPiVBIAm9PQfNO1fTo+JYFvdzw==
+	t=1795283644;
+	b=Pf1QcFXFTK/sDNEaNbY5i+JNDyfjD1vOwMc2KJBUw12d2wi8dXOujWR2vb2AiyrSWnY0
+	 ddvUSjFOAbNPHpPrcBo+W8N6zDjul+EPz2pqrDEXNbqbctz4y/weccGTWAi22n4pPmKOy
+	 m3k1fwZc3eztE3GS0wyzeLxdfBEfBvY3UnmDTliFshOvsBSJb+GE0nB2yCr88S9G9bG5A
+	 +GQkJ5A2qzjGwS2vwjeBhiR7OH1r7NPmqqHz1TXhLyHLkoda3yIkh2mSLl4Po7b/0gjG+
+	 L6PTOKutg6AiXUQgShqrTDypNyUF4R9AwDWudN3CK2Nw1FGH+4VSbUhDzY8lc1GmiHw==
 ARC-Message-Signature: i=1; d=subspace.kernel.org; s=arc20261015;
-	a=rsa-sha256; c=relaxed/relaxed; t=1795281367;
+	a=rsa-sha256; c=relaxed/relaxed; t=1795283644;
 	h=DMARC-Filter:Received:DKIM-Signature:X-Google-DKIM-Signature:
-	 X-Gm-Message-State:X-Gm-Gg:X-Received:Received:From:To:Cc:Subject:
-	 Date:Message-ID:X-Mailer:MIME-Version:Content-Transfer-Encoding;
-	bh=YeMemw7z3zkrZgQdMLY4+GZ8sJMULo49HzUbi5WBgXg=;
-	b=aWt0JjUic4AXvcdPY2vq3bHdAeqY7FtnI8arxOoXUuvYHyqEbr1TSMyncmay+XVB1VPn
-	 /+9rsOvQM9EJvHeycdNbIdZw0PcKtpiRWW/P473/wMpuM+8Jx0Lgk0JULNA642qREzt8J
-	 8lqdFqUxlVzGTZ/Cj3RxO8T7izoWAeagoGLC8GGC2Ihm3RlkpPVI9EEnX3ouHeA0Ufmkb
-	 vQmWKFwgss1QAtvl5EBC4hNVI2sNs2YUbfGivgbTIpHOH2bAwaDMOddpYAJT0Tht9E5oG
-	 KfX2KAvvCkRQ+a1JpyXAHuqWHZgsvE/7j72E/gXo7mx4S/V6E6pASwS9Bgf/uAZ5wEg==
+	 X-Forwarded-Encrypted:X-Gm-Message-State:X-Gm-Gg:X-Received:Received:
+	 From:To:Cc:Subject:Date:Message-ID:X-Mailer:MIME-Version:
+	 Content-Transfer-Encoding;
+	bh=wjDHCOnpzBN9eKZwwUbpNTzSGVofhKbk9Tp6cgxSwKk=;
+	b=G9QMuUBaEujNhdJ+hADscvQsTrvxO8k3yxa/nuznunrqDSR+l7QV0HntxgMpUf2qjN3G
+	 /TEOyfn/i7Z1/1Cti7sFU+zInhOFUVZu86O9MoS+eXhdYex8m92SfnmcW2B13QKly1d8J
+	 Q7L5tYgWEFH7xiuW3bf2F+qufwsIWHSvEcloGfjygJGcv45W1TPNvlT65HmOflVqOXmht
+	 inB/5dao+Sk358izZj8ahvF9cfccR+cSY/WsXQgEjy1KwEQTCHbb+lcCGQiUmzpRm8caA
+	 dI9evoy4EZI+rxFXrccLV43EE/eb01XUVqBNAfzTyAV8miWMm6yJCvydqZs9XC9zwkw==
 ARC-Authentication-Results: i=1; smtp.subspace.kernel.org; 
-	dmarc=pass header.from=gmail.com;
-	spf=pass smtp.mailfrom=gmail.com;
-	dkim=pass header.d=gmail.com header.i=@gmail.com header.a=rsa-sha256 header.s=20260707 header.b=wGDc0lBY;
-	arc=none smtp.remote-ip=74.125.229.0
-Received: from mail-dy2-f0.google.com (mail-dy2-f0.google.com [74.125.229.0])
+	dmarc=pass header.from=bairaktaris.de;
+	spf=pass smtp.mailfrom=bairaktaris.de;
+	dkim=pass header.d=bairaktaris.de header.i=@bairaktaris.de header.a=rsa-sha256 header.s=google header.b=difM9R6W;
+	arc=none smtp.remote-ip=209.85.218.49
+Received: from mail-ej1-f49.google.com (mail-ej1-f49.google.com [209.85.218.49])
 	(using TLSv1.3 with cipher TLS_AES_128_GCM_SHA256 (128/128 bits)
 	 key-exchange X25519 server-signature ECDSA (prime256v1) server-digest SHA256)
 	(No client certificate requested)
-	by smtp.subspace.kernel.org (Postfix) with ESMTPS id DF830606A320
-	for <linux-wireless@vger.kernel.org>; Sat, 21 Nov 2026 17:16:06 +0000 (UTC)
-DMARC-Filter: OpenDMARC Filter v1.4.2 smtp.subspace.kernel.org DF830606A320
-Authentication-Results: smtp.subspace.kernel.org; dmarc=pass (p=none dis=none) header.from=gmail.com
-Authentication-Results: smtp.subspace.kernel.org; spf=pass smtp.mailfrom=gmail.com
+	by smtp.subspace.kernel.org (Postfix) with ESMTPS id 5B2B5606A320
+	for <linux-wireless@vger.kernel.org>; Sat, 21 Nov 2026 17:54:04 +0000 (UTC)
+DMARC-Filter: OpenDMARC Filter v1.4.2 smtp.subspace.kernel.org 5B2B5606A320
+Authentication-Results: smtp.subspace.kernel.org; dmarc=pass (p=reject dis=none) header.from=bairaktaris.de
+Authentication-Results: smtp.subspace.kernel.org; spf=pass smtp.mailfrom=bairaktaris.de
 Authentication-Results: smtp.subspace.kernel.org;
-	dkim=pass (2048-bit key) header.d=gmail.com header.i=@gmail.com header.a=rsa-sha256 header.s=20260707 header.b=wGDc0lBY
-Received: by mail-dy2-f0.google.com with SMTP id 5a478bee46e88-3117f9b9e64so197784eec.0
-        for <linux-wireless@vger.kernel.org>; Sat, 21 Nov 2026 09:16:06 -0800 (PST)
+	dkim=pass (2048-bit key, unprotected) header.d=bairaktaris.de header.i=@bairaktaris.de header.a=rsa-sha256 header.s=google header.b=difM9R6W
+Received: by mail-ej1-f49.google.com with SMTP id a640c23a62f3a-c50e26763a4so363308366b.1
+        for <linux-wireless@vger.kernel.org>; Sat, 21 Nov 2026 09:54:04 -0800 (PST)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=gmail.com; s=20260707; t=1795281366; x=1795886166; darn=vger.kernel.org;
+        d=bairaktaris.de; s=google; t=1795283643; x=1795888443; darn=vger.kernel.org;
         h=content-transfer-encoding:mime-version:message-id:date:subject:cc
          :to:from:from:to:cc:subject:date:message-id:reply-to:content-type;
-        bh=YeMemw7z3zkrZgQdMLY4+GZ8sJMULo49HzUbi5WBgXg=;
-        b=wGDc0lBYGMLNqVMOrpCd7OwIYxmfQVKgrW78HLjyJ/anzGWJdwQQVZa6RNQVlZ3iC3
-         GIbE4Js4Of1xkFB4NcTmSYeGVdbKjturW1hupFBhfZNCdX5ySzVZHabq2im0KcbTtXuX
-         6eFDQR4EgePCbxzkzGospHkQuIGNY0t9BAUDhdMEAnFI/lRhfOJLm4Fj0XsGACkLV0+y
-         hMyKLK2AzIAx4dMkFlIhvo4z1+UkFuAGNgl33xyTz3fSLhAvm65JNqF0g1lsYqBTCGDu
-         30wNmQr3yJ5fyxq9ekZEOv31RWvB8NeWUwWAOz6jrt512oPTylg9RfbU1pwLOHTKNYIy
-         VAdg==
+        bh=wjDHCOnpzBN9eKZwwUbpNTzSGVofhKbk9Tp6cgxSwKk=;
+        b=difM9R6WtjkaXqPokPHEiFfoqPVwzPzDzeUcXK4igqkM/VPZGlVVGUyYPF5HbbLhEk
+         fj+R+Lj32nRSFmX83jEuGltmTBy1sCZ9moNDAjAsvjyjd3Zbn7W0eltOrQ82hH11cfeg
+         KdC1YrTJEjoKPj+hiQ5YNSnIAMETpGRvFu0hsjRsI+89KAwgRB38zwlj8PaPPxQcdn1n
+         ACu2ATkDwXWuidsLv/jGSVaYWBP7zLshD/Qsdjxyh554h3k3CUIDj+UWvv+8MKnOY92d
+         kQjCv/Tp+6ANuquz09OG7ocT7eSyNda6kLuhprwWm5KOx4w1Uw9zc7qnhH/9eXEMFLPM
+         9CEg==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=1e100.net; s=20260707; t=1795281366; x=1795886166;
+        d=1e100.net; s=20260707; t=1795283643; x=1795888443;
         h=content-transfer-encoding:mime-version:message-id:date:subject:cc
          :to:from:x-gm-gg:x-gm-message-state:from:to:cc:subject:date
          :message-id:reply-to:content-type;
-        bh=YeMemw7z3zkrZgQdMLY4+GZ8sJMULo49HzUbi5WBgXg=;
-        b=P40pDS+ZBusUHryjz1INbdpTi/LqrI8kuBcdHgLRHWVeei6WG8fGHdpjvlm6cIbfKI
-         Jz8YhD7J4gNBggwH4cp7fJxI2D59OKe+mAYG7xMKl/s/BY7x8MPzA7Lp4qvZ3vxXfqOD
-         SgBDJipJF2TSIwMYk8Iy+uW5OzG7wcQ6+HFX7WtP3tJTF0/GwAgGaXwRZOmWIGMqoGw0
-         9Bik2R705kpwMjFdurYUgXO4x3gV29SWnaMVVzW/8VIwUF3nmydEis5X2ZklFFZNMIIn
-         4mt/JL44Az2EpTMPOailiW55uqfj0wpH6SPuz+LJLTPjRZZXVqjJhkDIp1gcuOmcvnEU
-         QD/g==
-X-Gm-Message-State: APuU4Z/L/2a/ML1HGQhTsLJrhPF4o14nnzkmUMxSx+5KD+FbPdurZTmK
-	iW+nqP+5yIFghw0tjLfIfSYjQSLNvQOMBkMT5C3DsbQQF9+f1zykgSI=
-X-Gm-Gg: AZFdTZdR0WpaIuqb2mUtihmqnF3TZBSpHQ3JvrJV2GJ6ENWuVwnJ4e3D1oDiTWLn4u7
-	2csma8Aquwg3WpqLbn2weRiOa/r8QDDMtEXQJkAJbUuDuIEblTl/OlgAgqLP3q86S2TZQe0MusS
-	bqkg5EtztIpJh5WG9ex6LuRY8a7QWPxy7Dvbbulq06OiRoFa8ONZVw5BfqPgsBA52buJ6CW4g/2
-	g8OlQjVOo6FB5s3fDu0QsGAoA8vgZ0ru1Wb7ieKjC954Bd4rjmZa33lwn5Zc5h+Z4PZjDHDKRMS
-	g2KAUnQdJwDZzR8CA/os+MkNAbLeKQtgheqiBzh8m774fw+a6KSU3dWxmTTohW3VvHjQRqqkS10
-	aswWUyqs4CAyJqwEm9XVMb7NA+trrYzu4sGOtYwxsegmDqwE2LpyuYPOFuT5Q5mmjj3qWif+Ff1
-	ud8vWppBrUwDxDCTGShy7rUQ/XiOd3qAzW3leUjhVE92cfsHs0iKed1Dw6Y8x42eT13Yk0MCl9l
-	Z4Qj4NzRPYYdTmx3/kc9SjnX2p/0vo0vnU+C8clbKFe2bdVawwKzwuvQSGO7W7H7WOUksu5waVF
-	/DwWm9YSkoZNElbTiUpjhShH3bVeSwhCairGWEA=
-X-Received: by 2002:a05:7301:fd07:b0:36d:be15:2dd6 with SMTP id 5a478bee46e88-38570844f7cmr6701963eec.11.1795281365872;
-        Sat, 21 Nov 2026 09:16:05 -0800 (PST)
-Received: from archlinux ([2405:201:ac01:5300:df48:a6ff:13cf:24ab])
-        by smtp.gmail.com with ESMTPSA id 5a478bee46e88-3866f299d0bsm12537988eec.19.2026.11.21.09.16.03
+        bh=wjDHCOnpzBN9eKZwwUbpNTzSGVofhKbk9Tp6cgxSwKk=;
+        b=mDC01Krb+wPwuBdiZMvlxmBATD49aEiFFY7FU988N0XWMmZ7lmpNvrOtLsyfCzf+iG
+         DmF8RA61KJlgUUjXRwParrBSo/Dmroxr+ZVAgu7JIgYWAKOHQPuXSqW31soMQ1YExQpD
+         rcUhztyBHy0+h0843CIX5OsOgqv7RatHnnM47ONQAV/yDJxbK0GZfqlO/+E9TORc1ytq
+         /MW+BbUayX5ZxBCCfZC4K5ogu1e2TLa4WqXYLbmzrhaAO7Itnxsg+1E34ktEjTyQRy1E
+         MF8YeXdgoDWGZP8drld7Y+dKu6UmtAzI54fnMtwrqQgZpCcszoSjdvomQn8AB3hb2PWf
+         VuOg==
+X-Forwarded-Encrypted: i=1; AL+hErGuKTN9IGns04vKnbDvvzrZQpVamtw2aedYWnhTE/tpGPknwGv8+TjqiV60c47smwD1e7ZQZw/+Wka1+kP5Rg==@vger.kernel.org
+X-Gm-Message-State: APuU4Z+mzYJCZe1sDJacbcV6GcpbatOOLb+U02RqTxhWdR3sXmYC/HBA
+	DNASMtmlha/Usqo80XbsME4ZnyjU5DIepM0Udeuy/666rKBOVGO1gSZoqmhBGxycuQ==
+X-Gm-Gg: AZFdTZe01nvyDlv4aJWB1jVmiucAE3ZpPHd+7bea0eSc4jZvO9D0HiQ9NfIrhkmJ8YY
+	nJnwqV914PhgpOFaqjJNloilYZXKs/hvo9SquFnJmPlUtkpYKuSdV7U1x/fzPWGJ6G2PrODVKHM
+	OmX3WBFUVcBkZqePFOv4L5uLujfGy7GzJwGwUPw3XBJYbJFRhqlZ7Xlvi5oW7j/6C7ROjAWrzjQ
+	kNeeostwx4aMg2RkIjUIhOmIgdseZBkUEmJXDJERo8YHzuwgQSaT9z9SjYoTNTBSRDbE+UaD7Lq
+	t1ajwvrL35OvQFdamd63f39Qx15u1Ny5QDxLtP5N7kVBYWPXay7POFhIW0WRypSgROn/s9PL38I
+	SonZKWag2lnnuqQv3kXZoXOWEieDBrxAzu/LSsMEbMKBP5SpsNa4GRPj2WE0ndXjklldzBwMPGU
+	Nc4E08EsAy8Og0x1rWT5ngsiuTpEcg+toyW/L/XtC/hr1gwYNaWa0Nopvioh3NHP9Zba4dc22f3
+	kMKHQMYTGTWC6+zd1qQClozqqtWdLOnIkumWfRh1e5MywOZqwO5unIbFi+uaTIH8Kcm/jjgNM/k
+	HA1S3lv9INE1wxrDX4EH0DV5DsafEitvuJTWenbBJy8v9eAhhl0GDCEZmm86VZe2WT7sy5a5XNZ
+	Wpe+wkoc2bnyIL8XX6//A7FYbXwL3j3F2dptlRFJBGRXpRMIRqMPJntY2b7GKQUwBFD4/yAXCM+
+	M+jVhxHquD1nU/dy0zJ5CfL9gk+p25AA8mUat9hKjvypspfzJuCE5gCN77iHAvCBH7Kh4y04fED
+	ROLpVQV/9muv3qmmdN6bjzG4C1ne6vp0agfSbwNzp4EaZbgiSfWe6O1QWSlvQtNCdKaeCvYUNuh
+	eonYYd+E8Z9EpfsWKzgDIhl4TEQIWITUbSZ9Bzc9EwO405DZmRpy04nUMIl/cdnHeFWBE5m77ie
+	P
+X-Received: by 2002:a17:907:1b1a:b0:c50:52b4:eb04 with SMTP id a640c23a62f3a-c513a99a675mr589342866b.16.1795283642275;
+        Sat, 21 Nov 2026 09:54:02 -0800 (PST)
+Received: from Desktop.tail070c67.ts.net (p200300f2470dfa000000000000000a27.dip0.t-ipconnect.de. [2003:f2:470d:fa00::a27])
+        by smtp.gmail.com with ESMTPSA id a640c23a62f3a-c513aea8063sm220167466b.45.2026.11.21.09.54.01
         (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
-        Sat, 21 Nov 2026 09:16:05 -0800 (PST)
-From: Anvik Loitongbam <permissiontogallop@gmail.com>
-To: Jes Sorensen <Jes.Sorensen@gmail.com>
-Cc: linux-wireless@vger.kernel.org,
-	Anvik Loitongbam <permissiontogallop@gmail.com>
-Subject: [PATCH] wifi: rtl8xxxu: validate firmware size before parsing
-Date: Sat, 21 Nov 2026 22:35:59 +0530
-Message-ID: <20261121170559.149274-1-permissiontogallop@gmail.com>
-X-Mailer: git-send-email 2.56.1
+        Sat, 21 Nov 2026 09:54:01 -0800 (PST)
+From: Julius Bairaktaris <julius@bairaktaris.de>
+To: Jeff Johnson <jjohnson@kernel.org>,
+	Loic Poulain <loic.poulain@oss.qualcomm.com>
+Cc: ath10k@lists.infradead.org,
+	linux-wireless@vger.kernel.org,
+	linux-kernel@vger.kernel.org,
+	Kalle Valo <kvalo@kernel.org>,
+	Hauke Mehrtens <hauke@hauke-m.de>,
+	Baochen Qiang <baochen.qiang@oss.qualcomm.com>,
+	Jeff Johnson <jeff.johnson@oss.qualcomm.com>
+Subject: [PATCH ath-next v2 0/2] wifi: ath10k: spread the PCI copy engine interrupts over the CPUs
+Date: Sat, 21 Nov 2026 18:54:00 +0100
+Message-ID: <20261121175402.644803-1-julius@bairaktaris.de>
+X-Mailer: git-send-email 2.53.0
 X-Mailing-List: linux-wireless@vger.kernel.org
 List-Id: <linux-wireless.vger.kernel.org>
 List-Post: <mailto:linux-wireless@vger.kernel.org>
@@ -94,53 +107,81 @@ Precedence: list
 MIME-Version: 1.0
 Content-Transfer-Encoding: 8bit
 
-rtl8xxxu_load_firmware() copies fw->size bytes and then subtracts the
-fixed firmware header size from fw->size without checking that the file
-is large enough.  A short firmware file with a valid signature makes
-fw_size wrap to a huge size_t; the revision logging then reads the
-header fields out of bounds, and the download path derives an
-out-of-bounds data pointer.
+The PCI ath10k devices are capable of multiple MSI, and with all
+their vectors the firmware interrupt and each copy engine have one of
+their own. ath10k has asked for a single vector since commit
+cfe9011a05a8 ("ath10k: remove MSI range support"), so all the copy
+engine interrupts and the NAPI they schedule run on one CPU.
 
-A 2-byte rtlwifi/rtl8192eu_nic.bin containing the 0x92c0 signature,
-loaded while the driver probes a Foxin RTL8192EU (0bda:818b) passed
-through to a KASAN guest, reproduces it:
+That commit dropped per copy engine handlers and tasklets along with
+the vector block. 2/2 brings back only the block: every vector keeps
+the one handler that schedules the NAPI for all copy engines, so the
+copy engine locking and NAPI stay as they are and only the CPU the
+interrupts land on changes.
 
-  BUG: KASAN: slab-out-of-bounds in rtl8xxxu_load_firmware+0x238/0x2ae
-  Read of size 1
-  ...
-  The buggy address is located 4 bytes to the right of
-  allocated 2-byte region
-  ...
-  kmemdup_noprof
-  rtl8xxxu_load_firmware
-  rtl8192eu_load_firmware
-  rtl8xxxu_probe
+Only the chips used in access points take the block (QCA988X, QCA9887,
+QCA99X0, QCA9984, QCA9888). QCA6174, QCA6164 and QCA9377, the Wi-Fi and
+Bluetooth combination chips, keep one vector and no affinity hint, as
+now.
 
-Reject firmware smaller than struct rtl8xxxu_firmware_header before
-copying or parsing it.  With this change the probe fails with -EINVAL
-and KASAN reports nothing.
+1/2 fixes the probe error path, which leaves MSI enabled on the device
+after a failed probe. 2/2 requests the vector block the copy engine
+layout needs, or one vector, and spreads the vectors over the CPUs.
 
-The issue and the initial fix were tested on a Foxin
-RTL8192EU (0bda:818b) passed through to a KASAN guest.
-I would be happy to provide the reproducer on request.
+On the AX3600, uploading 83-84 Mbit/s over the QCA9889, the HTT copy
+engine's 37326-37927 interrupts in 14 s moved from CPU0 (21-22% busy,
+37957-38630 interrupts without the patch) to its vector on CPU2 (21-23%
+busy), and downloading 87-88 Mbit/s CPU2 was 8-13% busy against 15-17%
+for CPU0 without the patch; the system total stays within the spread of
+idle priority spinners, 16-33% of one CPU with and 16-34% without (3
+runs each). With the block not granted one vector is used and carries
+38285 interrupts in 14 s at 84 Mbit/s, and a firmware crash forced
+through debugfs recovers with the vectors on the same CPUs (1 run each).
+Without 1/2 an injected probe failure gave a WARNING in
+msi_device_data_release() (kernel/irq/msi.c:294), and the router then
+stopped answering; with 1/2 there was no WARNING and the rebind used 8
+MSI vectors (1 run each).
 
-Fixes: 26f1fad29ad9 ("New driver: rtl8xxxu (mac80211)")
-Signed-off-by: Anvik Loitongbam <permissiontogallop@gmail.com>
----
+Changes in v2:
+- 1/2 is new: the err_deinit_irq label of ath10k_pci_probe() did not
+  release the interrupt mode, so a failed probe left MSI enabled on the
+  device.
+- 2/2: Jeff Johnson pointed out that mobile clients want their
+  interrupts on as few CPUs as possible. Only QCA988X, QCA9887,
+  QCA99X0, QCA9984 and QCA9888 take the vector block now; QCA6174,
+  QCA6164 and QCA9377 keep one vector and no affinity hint.
+- 2/2: Loic Poulain asked to say why cfe9011a05a8 removed the vector
+  block and how this differs; the commit message does, and the comment
+  above ath10k_pci_interrupt_handler() that still described per copy
+  engine handlers is updated.
+- 2/2: Sashiko pointed out that the maximum of CE_COUNT_MAX + 1 vectors
+  is not a power of two, which multi-MSI cannot encode and some MSI
+  controllers do not accept. v2 requests exactly
+  roundup_pow_of_two(MSI_ASSIGN_CE_MAX + 1) vectors, and one vector if
+  the block is not granted.
+- 2/2: Loic Poulain asked why pci_alloc_irq_vectors_affinity() is not
+  used. The answer is at
+  https://lore.kernel.org/all/20261114210506.787342-1-julius@bairaktaris.de/
+  and the commit message now says why PCI_IRQ_AFFINITY is not used.
+- Rebased onto ath-next-20261118.
 
-diff --git a/drivers/net/wireless/realtek/rtl8xxxu/core.c b/drivers/net/wireless/realtek/rtl8xxxu/core.c
-index 3d0c22db30a8..c85b746c8e4e 100644
---- a/drivers/net/wireless/realtek/rtl8xxxu/core.c
-+++ b/drivers/net/wireless/realtek/rtl8xxxu/core.c
-@@ -2124,6 +2124,11 @@ int rtl8xxxu_load_firmware(struct rtl8xxxu_priv *priv, const char *fw_name)
- 		goto exit;
- 	}
- 
-+	if (fw->size < sizeof(struct rtl8xxxu_firmware_header)) {
-+		ret = -EINVAL;
-+		goto exit;
-+	}
-+
- 	priv->fw_data = kmemdup(fw->data, fw->size, GFP_KERNEL);
- 	if (!priv->fw_data) {
- 		ret = -ENOMEM;
+v1:
+https://lore.kernel.org/all/20261101164247.258200-1-julius@bairaktaris.de/
+
+I used Claude (Anthropic) to help write these patches.
+
+Julius Bairaktaris (2):
+  wifi: ath10k: release the PCI interrupt mode when probe fails
+  wifi: ath10k: spread the PCI copy engine interrupts over the CPUs
+
+ drivers/net/wireless/ath/ath10k/hw.c  |  3 +
+ drivers/net/wireless/ath/ath10k/hw.h  |  2 +
+ drivers/net/wireless/ath/ath10k/pci.c | 87 ++++++++++++++++++++++-----
+ drivers/net/wireless/ath/ath10k/pci.h |  3 +
+ 4 files changed, 79 insertions(+), 16 deletions(-)
+
+
+base-commit: 1983b40acfcb3c3464b291c85977290a785bcfdc
+-- 
+2.53.0
+
