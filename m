@@ -1,48 +1,49 @@
 Authentication-Results: smtp.subspace.kernel.org; arc=none smtp.remote-ip=194.36.144.171
 ARC-Seal: i=1; d=subspace.kernel.org; s=arc20261015; a=rsa-sha256; cv=none;
-	t=1795269707;
-	b=XuTuxgszEfz7vw1uxvBq3X6tHKRJzWs3HijrpVE4qwfw6cn1gj57iN7sqdIz1zTy3J3H
-	 q8ZmKHRGTLPDM69D5t4Mjw1YbAT4odKJmuGF4CthzLETUFYnMIq41P6w6V87CfMlpQENg
-	 dJmZFh6bXbB3ygvslx/dwMFRA5BHXOAsakCloo8UncsTy3qS6+TeliDJD66jO8xk+zlB7
-	 nc47Xgc46wGKCHviT003o0Qx8mdtOSQj6FWZosU8kjWhP5mfkWT8ufaYWbbs2camQ8niY
-	 hG2RaGmFola5EEwyP5IsL5C4pD60miPlIOG4RFvTBE2OK1fdlhiV4a4HVolRAxzfiRg==
+	t=1795269709;
+	b=ItSK8lcDv0EOkl79qu7+a+76SZ1hUTz7YH0ijeAWJPfh9POcSV6IqCcPzHNLlp346/XH
+	 y6Wnfb3wd7HUjn5ExnaW5/js2usMyaLygdb2dOCePeaQfO1LdRs8VA96gADxv1iJ1QXYV
+	 XVcAIYiqtxPZVLsTuGC5rSdyX6fjgeX9XRTUpvB+31nPMD2P3+Xzvvqx4IT6a0kjiXHCS
+	 B8rk/in5ZC11DcHGbkDz1c8yTq4U8H2fPrXUm0aQwsSxlUPQOiWL8Vwbd+pjwM+JRxeJV
+	 QlXP3cj1hge5FNH7sttQi9JvKpujFhMqT3nAx++s9droaLoKE1vAGIpxZuDBrNPsEpA==
 ARC-Message-Signature: i=1; d=subspace.kernel.org; s=arc20261015;
-	a=rsa-sha256; c=relaxed/relaxed; t=1795269707;
+	a=rsa-sha256; c=relaxed/relaxed; t=1795269709;
 	h=DMARC-Filter:Received:DKIM-Signature:From:To:Cc:Subject:Date:
-	 Message-ID:X-Mailer:MIME-Version:Content-Transfer-Encoding:
-	 X-Last-TLS-Session-Version;
-	bh=hEkF63gs4U7QMi2VnllvXbPgoLAsxJ4Dgn1yye3Nmhg=;
-	b=lzmEmpfQtyiSYFdE0q8W68FfEc4P27mDkiYanIFY0SqU3bmgXZwfOPY7P1zaYeE5E24H
-	 bjGxqWz7ppCHw5OeDpMmbVZcJYOXR2oCYOgsDrDdyJ50OqoFiEBaw1EzEUo93IPtXHRex
-	 YaPTWwbzqcoo9lj3d6x6UBXADqllDkVDFw9Mo6cbbSsgvQ72O6xsxF0iWpoPuPx/KKpQ6
-	 Pj5TWByOKJ5SUB4oSCZc+uOVp51Li2c9/sqKxNOkvCA860L7zazrhzGpSMn6HBeswl16v
-	 qSuNZh7GxjDS5DQte9vENEswkb/BpiMLV+w7V47dQdp5yMVR+6oDMwirerVJA9SHkYg==
+	 Message-ID:X-Mailer:In-Reply-To:References:MIME-Version:
+	 Content-Transfer-Encoding:X-Last-TLS-Session-Version;
+	bh=K/Wo0R+OjnTrHGNQDSRAHLdJd0werIg4nBYa+IDEEyk=;
+	b=zzCWzBOWpF9/lCqZS8a1lxBOwnbM5O+GwgrLe/eb/HJyOHiNFyRXPtN099sGgjh5taiX
+	 0uZWTFEP9FhIbK+UL6pl1rzG0hRDQbgjR0VN4MOOLcfUzIvW0n1UMJy0SokBsLBQDDYLD
+	 HZpGFu7I1qzOkBo9NOKcdRkvJzdkaGO7FVlE1FBUDS0V3Nu6IHUoKSISneai5Gud59SLV
+	 vphaSpqPdrL6NO8cKl9usIiDjKIO/Jlw5rUZlWRJFKSVTqt3HwtJ3y6JWQLOFmXdA5zzo
+	 FoVTijtpJ6c1bj1MNnReWuvMkvg4JTC+LxwbaPe2cGRJX2FRZka95X1fKp8bqR8hg0w==
 ARC-Authentication-Results: i=1; smtp.subspace.kernel.org; 
 	dmarc=pass header.from=yoxcu.de;
 	spf=pass smtp.mailfrom=yoxcu.de;
-	dkim=pass header.d=yoxcu.de header.i=@yoxcu.de header.a=rsa-sha256 header.s=dkim header.b=ZFaAlwLS;
+	dkim=pass header.d=yoxcu.de header.i=@yoxcu.de header.a=rsa-sha256 header.s=dkim header.b=spEedUmo;
 	arc=none smtp.remote-ip=194.36.144.171
 Received: from morty.yoxcu.de (morty.yoxcu.de [194.36.144.171])
 	(using TLSv1.3 with cipher TLS_AES_256_GCM_SHA384 (256/256 bits)
-	 key-exchange X25519 server-signature ECDSA (prime256v1) server-digest SHA256)
+	 key-exchange X25519 server-signature ECDSA (prime256v1))
 	(No client certificate requested)
-	by smtp.subspace.kernel.org (Postfix) with ESMTPS id 9E51C606A331;
-	Sat, 21 Nov 2026 14:01:46 +0000 (UTC)
-DMARC-Filter: OpenDMARC Filter v1.4.2 smtp.subspace.kernel.org 9E51C606A331
+	by smtp.subspace.kernel.org (Postfix) with ESMTPS id DDAA5606A68B;
+	Sat, 21 Nov 2026 14:01:48 +0000 (UTC)
+DMARC-Filter: OpenDMARC Filter v1.4.2 smtp.subspace.kernel.org DDAA5606A68B
 Authentication-Results: smtp.subspace.kernel.org; dmarc=pass (p=quarantine dis=none) header.from=yoxcu.de
 Authentication-Results: smtp.subspace.kernel.org; spf=pass smtp.mailfrom=yoxcu.de
 Authentication-Results: smtp.subspace.kernel.org;
-	dkim=pass (2048-bit key) header.d=yoxcu.de header.i=@yoxcu.de header.a=rsa-sha256 header.s=dkim header.b=ZFaAlwLS
-Received: from [127.0.0.1] (localhost [127.0.0.1]) by localhost (Mailerdaemon) with ESMTPSA id 930651D827A6;
-	Sat, 21 Nov 2026 15:01:41 +0100 (CET)
+	dkim=pass (2048-bit key) header.d=yoxcu.de header.i=@yoxcu.de header.a=rsa-sha256 header.s=dkim header.b=spEedUmo
+Received: from [127.0.0.1] (localhost [127.0.0.1]) by localhost (Mailerdaemon) with ESMTPSA id 0E5BE1D87228;
+	Sat, 21 Nov 2026 15:01:46 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=yoxcu.de; s=dkim;
-	t=1795269704; h=from:subject:date:message-id:to:cc:mime-version:
-	 content-transfer-encoding; bh=hEkF63gs4U7QMi2VnllvXbPgoLAsxJ4Dgn1yye3Nmhg=;
-	b=ZFaAlwLSl7RdIxrSsi7ZvmgZJ+Ibx4yg1CsARE3Zs5ABWTS58DvBIaN4YlheUHX0ts4qDt
-	kx80B8Ha4F773xB/LaVXd3wt7psjb+lDb4Bo0IN5beZs6y4E9paNhQmJTIHRlsfIUBQ84z
-	Yo35M66YomF8TKuvdpqTRP5ajhTLggBgujss3C0pUZjS/NipvCMGM7S2vJoTeHeb1WuPf4
-	Gn+XUOZAtOPO0Scl+3inu1bjM4O8t7yMWILHq3GZZkmLb89n2wuNlfU1KCbj1kwxg4CSLz
-	VBP7WQ2EduDVNnTu39MwC0Btj1+zzSSx4S6oW6Fu0OqRYR78OuZvRQrMhKh+mw==
+	t=1795269707; h=from:subject:date:message-id:to:cc:mime-version:
+	 content-transfer-encoding:in-reply-to:references;
+	bh=K/Wo0R+OjnTrHGNQDSRAHLdJd0werIg4nBYa+IDEEyk=;
+	b=spEedUmoUZAYXL8Vos3lxelbHdCGMz2UZIAvcCacGD0UtAdTaqmPZG7vX7QSboPtXXIPg4
+	+d3cbN0gB2T5OwFL9l9U6nKmKtzK4I/pieAFdpp+UYGin4MtEwHeOUWa/Jeu2/l56qiWWY
+	omQY0eF7y+sVQFJK/k4ZIZZQe9qWucacnMtuPAY9oz9Ql/OUIF5+y3Aa5RoC3p0dv6JHjd
+	LjAAGoSpvUY9LYgjewY/q3ZxY9z+tGR1AGwixlbFEp00HNqe1BVhDJ+Q0it3ZDP/TZZrBu
+	mzpAmx+E6mkpEVVT4GhBCuorkXSehnEs/mm00T1Hz3lvTcXBqqGglb1KHYG2xQ==
 From: Michael Auer <mick@yoxcu.de>
 To: Jeff Johnson <jjohnson@kernel.org>,
 	Loic Poulain <loic.poulain@oss.qualcomm.com>
@@ -50,10 +51,12 @@ Cc: linux-wireless@vger.kernel.org,
 	ath10k@lists.infradead.org,
 	linux-kernel@vger.kernel.org,
 	Michael Auer <mick@yoxcu.de>
-Subject: [PATCH v2 0/2] wifi: ath10k: Fix WoW wakeups on WCN3990
-Date: Sat, 21 Nov 2026 15:01:33 +0100
-Message-ID: <20261121140135.709615-1-mick@yoxcu.de>
+Subject: [PATCH v2 2/2] wifi: ath10k: report WoW wakeups to the PM core
+Date: Sat, 21 Nov 2026 15:01:35 +0100
+Message-ID: <20261121140135.709615-3-mick@yoxcu.de>
 X-Mailer: git-send-email 2.55.0
+In-Reply-To: <20261121140135.709615-1-mick@yoxcu.de>
+References: <20261121140135.709615-1-mick@yoxcu.de>
 X-Mailing-List: linux-wireless@vger.kernel.org
 List-Id: <linux-wireless.vger.kernel.org>
 List-Post: <mailto:linux-wireless@vger.kernel.org>
@@ -66,46 +69,64 @@ MIME-Version: 1.0
 Content-Transfer-Encoding: 8bit
 X-Last-TLS-Session-Version: TLSv1.3
 
-With WoWLAN enabled, WCN3990 firmware wakes the host on action frames
-right after every WoW entry, so the system hardly stays suspended. And
-when the firmware does wake the host for a real reason, user space
-cannot see that it was a network wakeup.
+ath10k does not report a WoW wakeup to the PM core, so the wakeup
+source of the device never counts it, and user space cannot tell a
+network wakeup from other resumes. Plasma's powerdevil, for example,
+checks the wakeup_count of each wakeup source after resume. It keeps
+the display off after a network wakeup and turns it on otherwise.
 
-Patch 1 sets the action frame wakeup filter that Qualcomm's own host
-drivers set. Patch 2 reports WoW wakeups to the PM core.
+Call pm_wakeup_event() when the firmware reports a wake reason other
+than WOW_REASON_UNSPECIFIED, which it uses when the host resumed for
+another reason. iwlwifi does the same since commit 06ae2ad413d2
+("iwlwifi: mvm: report wakeup for wowlan").
 
-Both are in daily use on a OnePlus 6 (sdm845) since late September,
-with an sdm845-mainline 7.1-rc1 based kernel. On ath-next they were
-only build tested (W=1). I could not test QCA6174 or QCA9377.
-qcacld-2.0, the vendor driver for QCA6174, sends the same command, so
-I expect their firmware to know it.
+Report it before completing wow.wakeup_completed. Once the resume path
+continues, the system resume can finish and stop counting wakeup
+events before the report.
 
-Tool use: the analysis, the code and the commit messages were
-written with an LLM coding assistant (Claude Code). I reviewed all
-of it and tested it on my phone as described above.
+On a OnePlus 6 the wakeup source of the WLAN device now counts WoW
+wakeups, and powerdevil keeps the display off for them.
 
-Changes in v2:
-- Patch 2: report the wakeup before completing wow.wakeup_completed,
-  so the system resume cannot finish before the report (found by the
-  sashiko review of v1). Tested again on the OnePlus 6.
-- Patch 1: unchanged.
+Tested-on: WCN3990 hw1.0 SNOC WLAN.HL.2.0.c8-00050-QCAHLSWMTPLZ-1
 
-v1: https://lore.kernel.org/linux-wireless/20261120202652.344435-1-mick@yoxcu.de/
+Signed-off-by: Michael Auer <mick@yoxcu.de>
+---
+v2: report the wakeup before complete(), also on the parse error path
 
-Michael Auer (2):
-  wifi: ath10k: configure the WoW action frame wakeup filter
-  wifi: ath10k: report WoW wakeups to the PM core
+ drivers/net/wireless/ath/ath10k/wmi.c | 13 ++++++++++---
+ 1 file changed, 10 insertions(+), 3 deletions(-)
 
- drivers/net/wireless/ath/ath10k/wmi-ops.h | 19 +++++++++
- drivers/net/wireless/ath/ath10k/wmi-tlv.c | 47 +++++++++++++++++++++++
- drivers/net/wireless/ath/ath10k/wmi-tlv.h | 32 +++++++++++++++
- drivers/net/wireless/ath/ath10k/wmi.c     | 17 +++++---
- drivers/net/wireless/ath/ath10k/wmi.h     | 23 +++++++++++
- drivers/net/wireless/ath/ath10k/wow.c     | 10 +++++
- 6 files changed, 143 insertions(+), 5 deletions(-)
-
-
-base-commit: 1983b40acfcb3c3464b291c85977290a785bcfdc
+diff --git a/drivers/net/wireless/ath/ath10k/wmi.c b/drivers/net/wireless/ath/ath10k/wmi.c
+index eca6bb189577..e12fdd5aabc8 100644
+--- a/drivers/net/wireless/ath/ath10k/wmi.c
++++ b/drivers/net/wireless/ath/ath10k/wmi.c
+@@ -4665,16 +4665,23 @@ void ath10k_wmi_event_wow_wakeup_host(struct ath10k *ar, struct sk_buff *skb)
+ 	struct wmi_wow_ev_arg ev = {};
+ 	int ret;
+ 
+-	complete(&ar->wow.wakeup_completed);
+-
+ 	ret = ath10k_wmi_pull_wow_event(ar, skb, &ev);
+ 	if (ret) {
+ 		ath10k_warn(ar, "failed to parse wow wakeup event: %d\n", ret);
+-		return;
++		goto out;
+ 	}
+ 
+ 	ath10k_dbg(ar, ATH10K_DBG_WMI, "wow wakeup host reason %d %s\n",
+ 		   ev.wake_reason, wow_reason(ev.wake_reason));
++
++	/* UNSPECIFIED: the host resumed for another reason. Report before
++	 * the completion, so the system resume cannot finish first.
++	 */
++	if (ev.wake_reason != WOW_REASON_UNSPECIFIED)
++		pm_wakeup_event(ar->dev, 0);
++
++out:
++	complete(&ar->wow.wakeup_completed);
+ }
+ 
+ void ath10k_wmi_event_dcs_interference(struct ath10k *ar, struct sk_buff *skb)
 -- 
 2.43.0
 
