@@ -1,57 +1,53 @@
-Authentication-Results: smtp.subspace.kernel.org; arc=none smtp.remote-ip=185.70.43.20
+Authentication-Results: smtp.subspace.kernel.org; arc=none smtp.remote-ip=100.103.45.18
 ARC-Seal: i=1; d=subspace.kernel.org; s=arc20261015; a=rsa-sha256; cv=none;
-	t=1795253283;
-	b=bhcCRe/Kn31WZf/3tY89Uf+azXBYUCpO6BCmldQvml/Ac7Fnz+7U0FNVNq+q8ks8OAsn
-	 ji0zrUWTUm2laqSzBQh8RATGF1qAaWrR1v8cbcowC+2qtIF+WNhfDDU5x0JFH6hDrCPtj
-	 IfUVfLC0sNvuFLqkTYLM0neSCzPbVCQ1DxFJtBI4uPl5MppbCivcujV5NdFsmGr6rpPAy
-	 rk6jgbxhC36btzFexeFALzp/+quoO33fY618iUgHLX8iBt5idZUiHnGCX0DdH0soAVNSs
-	 c4/5YXQastQSIagc7C3vMEzghdZWXBid5rPYKOUejoZsn+E0e0GqzyRObgHYukVTY8Q==
+	t=1795255751;
+	b=KU7xF59KPozVEzd1LIPeG8gtMdlSffu5EIWbBdu0VYquJTGZx/EtSxjoxcqHqbMRnEMb
+	 SD5juXpk/sjQ7XW8Y3vAAnCWORydFxBGbW+tAxiRyxuAPuUXzMic36n09DezHMf8fOpGM
+	 djj5gD/1ewZCiBKK6tTH0WNanUum7xKXgP61BSxXZx0oNHqIBM5pvp0mh37UxY8qvCA/g
+	 QkgbS0gGtcsdJflW94BN2cSorDaIatksJmvq64PuaQ/Pe3O6V7huitxJFAQRg1aSr4GTz
+	 wIMGxT84GIepOozHB91ysU/7Xe2VoW0C3ZAXwtV4FLis4XUOGai2zhwZtPuabmAAijg==
 ARC-Message-Signature: i=1; d=subspace.kernel.org; s=arc20261015;
-	a=rsa-sha256; c=relaxed/relaxed; t=1795253283;
-	h=DMARC-Filter:DKIM-Signature:Date:To:From:Cc:Subject:Message-ID:
-	 Feedback-ID:X-Pm-Message-ID:MIME-Version:Content-Type:
-	 Content-Transfer-Encoding;
-	bh=0bSx2JclMF4MRpUkB5cyQcV3F1zjv1EmvhDRj9fFHOM=;
-	b=2ja0nfbFSlaYR67xuC6dh5IUX+jPIaw2Z8OPoG3+Xt5fbMuR3asqfS+x/Y8VAvbJa875
-	 Noa0zSQtnKmqMfhXgNLRm7lA9klKglkZy2parCPrygZQygzfJ6vlNl49A73/tneHezLm+
-	 mtbTy4jHAwKc/2FUkmCwsi57YTP8qtPiU5B7TH6P0eVIbyyDxm67ZGTczxvSBr7MdWF6c
-	 SYb3/jtS8lp2lZqLyhRu95/AupS06NEed9psBf+PdjrRNBqXkNGy5hqWiLwY7kbUDZxdf
-	 EOXsIjJ+zoK/Z2+O2oPQz/q98bvWWeT5fUfQ72LV06ujO90q548mjFgOHeZ8NrbqmNg==
+	a=rsa-sha256; c=relaxed/relaxed; t=1795255751;
+	h=Received:DKIM-Signature:Date:From:To:Cc:Subject:Message-ID:
+	 References:MIME-Version:Content-Type:Content-Disposition:In-Reply-To;
+	bh=X2e3jcyAKL/IlXQY/dX1/0BfOjh8IFLz7Z4WGvwnzAk=;
+	b=rf3yO9TzrMvSQ8N1U52unsf3GN6KQjMnaVfFv9nNoDUupzlAyQfgsOH8tzDoqwar2zeT
+	 jZddQhaJi6NHF3hQMNoCpXNLxigEAUAtA4MqAsGnaOxyM1D3qCr1nG0Z/bfeFiTFj8Ffw
+	 e+MUSW9aO0F6kkvRBRrx6m3jMzVcku0nm0kyFK71BtYuA8LWSRYay1d1vfwQ8hZK9sF07
+	 qiLUUVISHU/XgECX5rLRW56xxga1VhzNj2i90NGpl+Gi6f1XkUgzlB84hTCVwV/mMGhGO
+	 rYQhNG1qtslzc6bBqGu0i11XvfodySCJtuuGDBvUNTzFYMpOs96rdvfXyF9+eLlTRHg==
 ARC-Authentication-Results: i=1; smtp.subspace.kernel.org; 
-	dmarc=pass header.from=modelmiser.com;
-	spf=pass smtp.mailfrom=modelmiser.com;
-	dkim=pass header.d=modelmiser.com header.i=@modelmiser.com header.a=rsa-sha256 header.s=protonmail header.b=QDr60wB2;
-	arc=none smtp.remote-ip=185.70.43.20
-Received: from mail-4320.protonmail.ch (mail-4320.protonmail.ch [185.70.43.20])
+	dkim=pass header.d=kernel.org header.i=@kernel.org header.a=rsa-sha256 header.s=k20260515 header.b=b4WFiL6o;
+	arc=none smtp.remote-ip=100.103.45.18
+Received: from smtp.kernel.org (quasi.space.kernel.org [100.103.45.18])
 	(using TLSv1.3 with cipher TLS_AES_256_GCM_SHA384 (256/256 bits)
-	 key-exchange X25519 server-signature ECDSA (prime256v1) server-digest SHA256)
+	 key-exchange X25519 server-signature ECDSA (prime256v1))
 	(No client certificate requested)
-	by smtp.subspace.kernel.org (Postfix) with ESMTPS id 2164B606A320;
-	Sat, 21 Nov 2026 09:28:01 +0000 (UTC)
-DMARC-Filter: OpenDMARC Filter v1.4.2 smtp.subspace.kernel.org 2164B606A320
-Authentication-Results: smtp.subspace.kernel.org; dmarc=pass (p=quarantine dis=none) header.from=modelmiser.com
-Authentication-Results: smtp.subspace.kernel.org; spf=pass smtp.mailfrom=modelmiser.com
+	by smtp.subspace.kernel.org (Postfix) with ESMTPS id 4F7F9606A320
+	for <linux-wireless@vger.kernel.org>; Sat, 21 Nov 2026 10:09:11 +0000 (UTC)
 Authentication-Results: smtp.subspace.kernel.org;
-	dkim=pass (2048-bit key, unprotected) header.d=modelmiser.com header.i=@modelmiser.com header.a=rsa-sha256 header.s=protonmail header.b=QDr60wB2
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=modelmiser.com;
-	s=protonmail; t=1795253280; x=1795512480;
-	bh=0bSx2JclMF4MRpUkB5cyQcV3F1zjv1EmvhDRj9fFHOM=;
-	h=Date:To:From:Cc:Subject:Message-ID:Feedback-ID:From:To:Cc:Date:
-	 Subject:Reply-To:Feedback-ID:Message-ID:BIMI-Selector;
-	b=QDr60wB20CgBUF7pMQfUcjrMG7OUeSpzXSersWUnx/xquzjBmnBAwqsZCT2ezmb0S
-	 LN2JfEWgEUG8Yn4Zz+NQ3y1D1tgaSRv1vioeOfE9EcMvdANdPohMWa32M/lLYpsvwa
-	 JUsVnp2lCo3kUAfh422+CTNO3E1qfez8mmOBG0/xn/7Dg5BM512+LembbA23C77o4V
-	 LVDJvb/7W/G9loP/eez+k7ZEORauR65ClCVhmMkjp7UpS1FFtmdCBwEVfGNTXHQxPT
-	 ASLOVdMtjVmMBDcwtDgmUK5/+oxZgcUIr28LZ/BGrwtLPuqORZCN4bI6jNQrRfbmXt
-	 /U4quOkgqpMOQ==
-Date: Sat, 21 Nov 2026 09:27:54 +0000
-To: Arend van Spriel <arend.vanspriel@broadcom.com>
-From: Chad Aldreda <ca@modelmiser.com>
-Cc: Johannes Berg <johannes@sipsolutions.net>, linux-wireless@vger.kernel.org, brcm80211@lists.linux.dev, brcm80211-dev-list.pdl@broadcom.com, linux-kernel@vger.kernel.org, stable@vger.kernel.org
-Subject: [PATCH wireless] wifi: brcmfmac: fix join parameter length in IBSS join
-Message-ID: <20261121092746.2917397-2-ca@modelmiser.com>
-Feedback-ID: 232753253:user:proton
-X-Pm-Message-ID: 34466270bf4f03036581e02031ff89cba1ae6c7e
+	dkim=pass (2048-bit key) header.d=kernel.org header.i=@kernel.org header.a=rsa-sha256 header.s=k20260515 header.b=b4WFiL6o
+Received: by smtp.kernel.org (Postfix) with ESMTPSA id 5CF301F000C0;
+	Sat, 21 Nov 2026 10:09:10 +0000 (UTC)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=kernel.org;
+	s=k20260515; t=1795255750;
+	bh=X2e3jcyAKL/IlXQY/dX1/0BfOjh8IFLz7Z4WGvwnzAk=;
+	h=Date:From:To:Cc:Subject:References:In-Reply-To;
+	b=b4WFiL6oXCwKSZNj5Bahoilt/oTAbx3PM07nuEex5oKwSmneCrQ3C+H1VUPxazpqj
+	 nGhVvKvrJHy+F1dxKnD5i2gmd0Lo4IVHbdvKH4XsVG0WSZa+mR4hqM5oY/3bS9N9t1
+	 jRI0SvpsG6IfP2qQV76BfAxAxWg0U6J3PKb8voZ6h+QthAL9aTS/yhfhV7aWmxD8yR
+	 ycj6IEh1CdlnXB8kbkezTKlvdfPx+3ZIPJgu8k09d2C5UoAjuSOorbsVEpz+887+dG
+	 /5YgbbhDq+cD98jNUb+jz5fLxiSG/9+Jp31Gcws9n0Zdi3WFgZFoJtXF1mf6OQ/DuB
+	 oXMsCxkRNz0yg==
+Date: Sat, 21 Nov 2026 11:09:08 +0100
+From: Lorenzo Bianconi <lorenzo@kernel.org>
+To: Felix Fietkau <nbd@nbd.name>
+Cc: linux-wireless@vger.kernel.org
+Subject: Re: [PATCH mt76-next 10/20] wifi: mt76: usb: do not park the TX
+ worker again under MT76_RESET
+Message-ID: <awFtxEeHjhUobcTN@lore-desk>
+References: <20261120174459.1657382-1-nbd@nbd.name>
+ <20261120174459.1657382-10-nbd@nbd.name>
 X-Mailing-List: linux-wireless@vger.kernel.org
 List-Id: <linux-wireless.vger.kernel.org>
 List-Post: <mailto:linux-wireless@vger.kernel.org>
@@ -61,85 +57,103 @@ List-Unsubscribe: <mailto:linux-wireless+unsubscribe@vger.kernel.org>
 List-Owner: <mailto:linux-wireless+owner@vger.kernel.org>
 Precedence: list
 MIME-Version: 1.0
-Content-Type: text/plain; charset=utf-8
+Content-Type: multipart/signed; micalg=pgp-sha512;
+	protocol="application/pgp-signature"; boundary="N15Iwce8pNlFlHn4"
+Content-Disposition: inline
+In-Reply-To: <20261120174459.1657382-10-nbd@nbd.name>
+
+--N15Iwce8pNlFlHn4
+Content-Type: text/plain; charset=us-ascii
+Content-Disposition: inline
 Content-Transfer-Encoding: quoted-printable
 
-brcmf_cfg80211_join_ibss() builds the length of the SET_SSID payload in
-steps. It starts with the SSID record (36 bytes), adds
-BRCMF_ASSOC_PARAMS_FIXED_SIZE (14) when a BSSID is given, and adds
-sizeof(join_params.params_le) (16) when the channel is fixed. With both a
-BSSID and a fixed channel the result is 66, but struct brcmf_join_params
-is 52 bytes (sizes as on x86-64, where __le32 is 4-byte aligned). The
-length is passed unchanged to the protocol layer, which copies that many
-bytes from the on-stack record (brcmf_proto_bcdc_msg(),
-brcmf_msgbuf_tx_ioctl()), so 14 bytes of kernel stack beyond it are sent
-to the firmware.
+> When the wait for pending TX in mt76u_stop_tx() times out, its cleanup
+> parks the TX worker also where the caller parked it already. This is the
+> case for mt792xu_disconnect(), which reaches mt76u_stop_tx() through
+> mt76_unregister_device(), and for mt7921u_mac_reset() and
+> mt7925u_mac_reset(). The second park triggers a WARN, and the cleanup
+> then unparks the worker, which runs again during the teardown or the
+> chip reset:
+>=20
+>   mt7925u 2-4:1.0: timed out waiting for pending tx
+>   WARNING: CPU: 1 PID: 15805 at kthread_park+0x73/0x90
+>   Call Trace:
+>    ...
+>    mt792xu_stop+0x15/0x30 [mt792x_usb]
+>    ...
+>    drv_stop+0x33/0xd0 [mac80211]
+>    ...
+>    ieee80211_unregister_hw+0x45/0x140 [mac80211]
+>    mt76_unregister_device+0x70/0xf0 [mt76]
+>    mt792xu_disconnect+0x7a/0x1c0 [mt792x_usb]
+>    ...
+>=20
+> Park and unpark the worker in the cleanup only while MT76_RESET is
+> clear, as mt792x_flush() does. Every caller that holds MT76_RESET has
+> parked the worker already, or runs before mt76_register_device() starts
+> it.
+>=20
+> Fixes: 7910bd565d8b ("wifi: mt76: mt792x: quiesce USB paths on disconnect=
+")
+> Fixes: 0d2afe09fad5 ("mt76: mt7921: add mt7921u driver")
+> Fixes: c948b5da6bbe ("wifi: mt76: mt7925: add Mediatek Wi-Fi7 driver for =
+mt7925 chips")
+> Signed-off-by: Felix Fietkau <nbd@nbd.name>
 
-When the channel is fixed the whole record is in use whether or not a
-BSSID was given, so set the length to sizeof(join_params) in that branch.
-The other three cases (36, 50 and 52 bytes) are unchanged.
+Reviewed-by: Lorenzo Bianconi <lorenzo@kernel.org>
 
-The double count dates from the commit that added this calculation: the
-BSSID case counted WL_ASSOC_PARAMS_FIXED_SIZE, and the existing
-wl_ch_to_chanspec(), which that commit called after the BSSID case,
-added WL_ASSOC_PARAMS_FIXED_SIZE plus one chanspec again.
+> ---
+>  drivers/net/wireless/mediatek/mt76/usb.c | 8 ++++++--
+>  1 file changed, 6 insertions(+), 2 deletions(-)
+>=20
+> diff --git a/drivers/net/wireless/mediatek/mt76/usb.c b/drivers/net/wirel=
+ess/mediatek/mt76/usb.c
+> index be48a88a3ad0..9a701840d23a 100644
+> --- a/drivers/net/wireless/mediatek/mt76/usb.c
+> +++ b/drivers/net/wireless/mediatek/mt76/usb.c
+> @@ -1070,6 +1070,7 @@ void mt76u_stop_tx(struct mt76_dev *dev)
+>  	if (!ret) {
+>  		struct mt76_queue_entry entry;
+>  		struct mt76_queue *q;
+> +		bool park;
+>  		int i, j;
+> =20
+>  		dev_err(dev->dev, "timed out waiting for pending tx\n");
+> @@ -1083,7 +1084,9 @@ void mt76u_stop_tx(struct mt76_dev *dev)
+>  				usb_kill_urb(q->entry[j].urb);
+>  		}
+> =20
+> -		mt76_worker_disable(&dev->tx_worker);
+> +		park =3D !test_bit(MT76_RESET, &dev->phy.state);
+> +		if (park)
+> +			mt76_worker_disable(&dev->tx_worker);
+> =20
+>  		/* On device removal we maight queue skb's, but mt76u_tx_kick()
+>  		 * will fail to submit urb, cleanup those skb's manually.
+> @@ -1100,7 +1103,8 @@ void mt76u_stop_tx(struct mt76_dev *dev)
+>  			}
+>  		}
+> =20
+> -		mt76_worker_enable(&dev->tx_worker);
+> +		if (park)
+> +			mt76_worker_enable(&dev->tx_worker);
+>  	}
+> =20
+>  	cancel_work_sync(&dev->usb.stat_work);
+> --=20
+> 2.47.3
+>=20
+>=20
 
-Fixes: 69274f020a92 ("staging: brcm80211: Fixed ibss join/leave functionali=
-ty in brcmfmac driver")
-Cc: stable@vger.kernel.org
-Signed-off-by: Chad Aldreda <ca@modelmiser.com>
----
-Not run on hardware, and no reproducer was run. Reaching the line
-needs a brcmfmac device in IBSS mode and a join with both a BSSID and
-a fixed frequency:
-  iw dev wlan0 ibss join <ssid> <freq> fixed-freq <bssid>
-The four lengths (36, 50, 52, 66) were checked at compile time against
-the driver's headers on x86-64, and cfg80211.o builds with W=3D1.
+--N15Iwce8pNlFlHn4
+Content-Type: application/pgp-signature; name=signature.asc
 
-Not checked: that firmware accepts 52 bytes in this case. It is the
-length the driver already sends for a fixed channel without a BSSID,
-from the SET_SSID fallback in brcmf_cfg80211_connect() when a channel
-is known, and from the AP start and stop paths.
+-----BEGIN PGP SIGNATURE-----
 
-Also not checked: on msgbuf the same length bounds the copy of the
-firmware's response back into the record (brcmf_msgbuf_query_dcmd()),
-so a response longer than 52 bytes would be written up to 14 bytes
-past it. Whether firmware returns data for SET_SSID is not known here.
+iHUEABYKAB0WIQTquNwa3Txd3rGGn7Y6cBh0uS2trAUCawFtxAAKCRA6cBh0uS2t
+rNNmAQD2ny+N/VFAcRjF0oUOAp8I8509KYBNq8X1Sq6NVPHv6AEAgmoyYD2k72wc
+iN6mLh36cnlom5MDXRQ++uoWDWmjAgA=
+=2mak
+-----END PGP SIGNATURE-----
 
-The BSSID-only length (50) is left alone to keep this a pure fix.
-
-Based on wireless/main dcf495789037. It also applies unchanged to
-wireless-next/main e1dd8486807c, where the length goes through
-brcmf_set_ssid() (39cae1c203a3) and is still passed on as is when the
-firmware does not use versioned join requests.
-
-Tools: the over-length was flagged by an AI model (Grok 4.7) asked to
-check notes on the driver's firmware interface against the source,
-and confirmed by an AI assistant (Claude Fable 5.2) reading the code.
-The patch, this description, the size check and the build were done
-by that assistant.
-
- drivers/net/wireless/broadcom/brcm80211/brcmfmac/cfg80211.c | 2 +-
- 1 file changed, 1 insertion(+), 1 deletion(-)
-
-diff --git a/drivers/net/wireless/broadcom/brcm80211/brcmfmac/cfg80211.c b/=
-drivers/net/wireless/broadcom/brcm80211/brcmfmac/cfg80211.c
-index 46714d871260..9e5955a98051 100644
---- a/drivers/net/wireless/broadcom/brcm80211/brcmfmac/cfg80211.c
-+++ b/drivers/net/wireless/broadcom/brcm80211/brcmfmac/cfg80211.c
-@@ -1901,7 +1901,7 @@ brcmf_cfg80211_join_ibss(struct wiphy *wiphy, struct =
-net_device *ndev,
- =09=09=09join_params.params_le.chanspec_list[0] =3D
- =09=09=09=09cpu_to_le16(chanspec);
- =09=09=09join_params.params_le.chanspec_num =3D cpu_to_le32(1);
--=09=09=09join_params_size +=3D sizeof(join_params.params_le);
-+=09=09=09join_params_size =3D sizeof(join_params);
- =09=09}
-=20
- =09=09/* set channel for starter */
-
-base-commit: dcf495789037ab78d8ddf5844239cf85d92ac5f1
---=20
-2.43.0
-
-
+--N15Iwce8pNlFlHn4--
