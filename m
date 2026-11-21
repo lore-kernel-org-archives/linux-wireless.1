@@ -1,64 +1,69 @@
-Authentication-Results: smtp.subspace.kernel.org; arc=none smtp.remote-ip=194.36.144.171
+Authentication-Results: smtp.subspace.kernel.org; arc=none smtp.remote-ip=95.215.58.241
 ARC-Seal: i=1; d=subspace.kernel.org; s=arc20261015; a=rsa-sha256; cv=none;
-	t=1795292665;
-	b=3sxI5cJQUMZSKOu+GywVf8rY+hikXjt3WXvhnAbzQvwGe04OC5jQzik/fRZJYzoyLnVn
-	 iKECfBRn6A/rGXg7/mq67Rp/K2dTAZaoqklUAchQsnj1yqSfb8gn9ndYRbARClyJa16Ni
-	 i1TyZ78NJjtT8TlCgaC4pCZZ6EZxhwVbHUBrJKBF+dC3mtpqVd0eUrcVNHeSfQ82OAWRt
-	 w2KNkCTzLENVUP6tknz5TUpJ6yyGVCBMUKMMAPkFMPb/osWiJh6LG2e9wPt1VKlWRfk95
-	 Y4PYKDMyYx+XWYEoInyn+LDM9eXXND6GKHeqeGF0km+y5IAauBKpsYRs/TULMxgjquQ==
+	t=1795293208;
+	b=moVuyQXkV0TbjNYf59NHg7YUfCookCN6K6yexhzTv3lJBWjUiPJcOx2OuNUsdm8qZ99Y
+	 fU8UUGj77cm21CCblf6qpznDiEzu6EnXxfTZYfxgE4u8bQ9A7ZQDGHOv7BFUeVUiECP0O
+	 PjU7GRl/ah3vAn0ITzyaYlP6sxZ9TUHZ+iTjF1elRUA9tD+gNoj+paqCuBtcXO7U/XOkt
+	 7SRyP9euHRAkPVy1LTibEn4CI2UjB7AnQ1QOOdcFv3zXaCHb02papC6a5r/UdBFYaqXhB
+	 Jyl7XwReo/UyotGVdgmLsuYyQuNQHSrZwOMwTM8z8TjHe9kL9iKFH0jzm6AaqJz0vqQ==
 ARC-Message-Signature: i=1; d=subspace.kernel.org; s=arc20261015;
-	a=rsa-sha256; c=relaxed/relaxed; t=1795292665;
-	h=DMARC-Filter:Received:DKIM-Signature:From:To:Cc:Subject:Date:
-	 Message-ID:X-Mailer:In-Reply-To:References:MIME-Version:Content-Type:
-	 Content-Transfer-Encoding:X-Last-TLS-Session-Version;
-	bh=qVTGOF0g2lYLUrQkFxW8jn3nURBAzDjEGsnctCt4OlI=;
-	b=tc2oj0Fk0d1FoTD4pk4dXee0lG1tnQQ2Ixo1L0XI1uU51FVRVlGWquIyIfteovylpMo+
-	 xjFNTLqrLjCRQv0d2VOUpOjhL2ZZrUb7t6rnAxW5/8YIa1pHNu1nwYoBVRKdy7qfSzfNp
-	 d1I5hiVWrT1R0Se3I/zG1Yl0jUjPiChyzTtcSvQmMzV13h5V2laR4M+rq6qs32m3GJbZY
-	 3LhkfJeta9LutAFRToJJzn0aTa1NsurNuJx80KQg03BaHEkDNq9Cs1lrEy0cGu4lbSQ8z
-	 uMH7d9H0Y+ofF/bgNeo29rwiqEg3zWBPvQwNTyQTskwU91bytBHWfpFdSMCqO8iOk3w==
+	a=rsa-sha256; c=relaxed/relaxed; t=1795293208;
+	h=DMARC-Filter:X-Envelope-To:DKIM-Signature:X-Envelope-To:Received:
+	 X-Mizu-Trace-ID:X-Migadu-Flow:From:To:Cc:Subject:Date:Message-ID:
+	 X-Mailer:In-Reply-To:References:MIME-Version:
+	 Content-Transfer-Encoding;
+	bh=GfcLwl9nMD3abzI9ow/CG21oWQfTAnmOPJtYxXca7Rw=;
+	b=mQyCV/aCiztsMQBphgjpnY2AeBjMtKapK41tXEeS3xPHHWhHPx0SkmdPNvCHRs4p4dtU
+	 htPqafVwNqFjTV+kmJQdEXOIOhE3jCfZtPwyrzfJxBYSQXmaeXbw0lnkxKdG+/cypuJ9i
+	 AKkkZc7Z1aJpwZxjPV9ZOTLb4OZzAxtOOyIHG8hj+jNLJ4anh/CpjDqDOOaDBkXdz5jpG
+	 rBkBKRo4L3XQSasAAfBPlKkE+9YnUqwm329Qw5dwkvUgkHRboxxZS0XFLYNBsgiSLjQzs
+	 UonbuVGF87112a2VEpDyyQtPGEJ66VHnDOTWh4MIx2Fkn4Hfo33iZNZvuWKcs9LgX4g==
 ARC-Authentication-Results: i=1; smtp.subspace.kernel.org; 
-	dmarc=pass header.from=yoxcu.de;
-	spf=pass smtp.mailfrom=yoxcu.de;
-	dkim=pass header.d=yoxcu.de header.i=@yoxcu.de header.a=rsa-sha256 header.s=dkim header.b=r53HDp9s;
-	arc=none smtp.remote-ip=194.36.144.171
-Received: from morty.yoxcu.de (morty.yoxcu.de [194.36.144.171])
-	(using TLSv1.3 with cipher TLS_AES_256_GCM_SHA384 (256/256 bits)
-	 key-exchange X25519 server-signature ECDSA (prime256v1))
+	dmarc=pass header.from=justthetip.ca;
+	spf=pass smtp.mailfrom=justthetip.ca;
+	dkim=pass header.d=justthetip.ca header.i=@justthetip.ca header.a=rsa-sha256 header.s=key1 header.b="do6kPe9/";
+	arc=none smtp.remote-ip=95.215.58.241
+Received: from mta1.migadu.com (out-241.mta1.migadu.com [95.215.58.241])
+	(using TLSv1.3 with cipher TLS_AES_128_GCM_SHA256 (128/128 bits)
+	 key-exchange X25519 server-signature ECDSA (prime256v1) server-digest SHA256)
 	(No client certificate requested)
-	by smtp.subspace.kernel.org (Postfix) with ESMTPS id 4A942606A320;
-	Sat, 21 Nov 2026 20:24:25 +0000 (UTC)
-DMARC-Filter: OpenDMARC Filter v1.4.2 smtp.subspace.kernel.org 4A942606A320
-Authentication-Results: smtp.subspace.kernel.org; dmarc=pass (p=quarantine dis=none) header.from=yoxcu.de
-Authentication-Results: smtp.subspace.kernel.org; spf=pass smtp.mailfrom=yoxcu.de
+	by smtp.subspace.kernel.org (Postfix) with ESMTPS id 93210606A320
+	for <linux-wireless@vger.kernel.org>; Sat, 21 Nov 2026 20:33:27 +0000 (UTC)
+DMARC-Filter: OpenDMARC Filter v1.4.2 smtp.subspace.kernel.org 93210606A320
+Authentication-Results: smtp.subspace.kernel.org; dmarc=pass (p=quarantine dis=none) header.from=justthetip.ca
+Authentication-Results: smtp.subspace.kernel.org; spf=pass smtp.mailfrom=justthetip.ca
 Authentication-Results: smtp.subspace.kernel.org;
-	dkim=pass (2048-bit key) header.d=yoxcu.de header.i=@yoxcu.de header.a=rsa-sha256 header.s=dkim header.b=r53HDp9s
-Received: from [127.0.0.1] (localhost [127.0.0.1]) by localhost (Mailerdaemon) with ESMTPSA id 3F4B51D87176;
-	Sat, 21 Nov 2026 21:24:20 +0100 (CET)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=yoxcu.de; s=dkim;
-	t=1795292662; h=from:subject:date:message-id:to:cc:mime-version:content-type:
-	 content-transfer-encoding:in-reply-to:references;
-	bh=qVTGOF0g2lYLUrQkFxW8jn3nURBAzDjEGsnctCt4OlI=;
-	b=r53HDp9sQ+A2FMFvgrbb5uczUG7JsVKJDWMx9Uy4h9TFRbnnXRCv0RvsKJy9rNZCCaN3t5
-	ftNh+JJaCtBrKBx4Pb0GY4bk90mUqryzHfjG69AIVW2qP5cFs3Dz0ST6oZ0hHxRaIic3cj
-	XaCriiwMaL90OTJWIfxI5pY98XWxufTXl8l4hZpzXH78dTvVkCklQGyI2H2gIA7HoscI1J
-	+Jh+I9aP+ShykT3SVi7auCtv8BcOUCZjVDg59Rs6w8XANigf0XnFNJp1L9ixgBZ5XNJJSL
-	iK0EJAleQq3tUaQWN57yMkqhHIcu/N8nGXAlK06Re/uyIM4h5lLaChmURvHXCQ==
-From: Michael Auer <mick@yoxcu.de>
-To: shunsuke@nagashi.ma,
-	Jeff Johnson <jjohnson@kernel.org>
-Cc: Loic Poulain <loic.poulain@oss.qualcomm.com>,
+	dkim=pass (2048-bit key, unprotected) header.d=justthetip.ca header.i=@justthetip.ca header.a=rsa-sha256 header.s=key1 header.b=do6kPe9/
+X-Envelope-To: linux-wireless@vger.kernel.org
+DKIM-Signature: a=rsa-sha256; bh=1+y3BvArKssnZYEujMUPhUqX1+rxcd5R0sMwYG3j6uo=;
+ c=simple/simple; d=justthetip.ca;
+ h=from:to:subject:date:message-id:mime-version:content-type; s=key1;
+ t=1795293205; v=1; x=1795898005;
+ b=do6kPe9/Bn6UTVidyQIaIpZc8AtauxqWEkzl/J+gM+Hdwff4qbBAY8ujFqemQ8bD1i9l0hoS
+ nuhK+a3gQseJMvjXfmQpMqk7qLzYY16vF92f3XmfT6Sx8YxDLugswU602c+XoCpPdcuneslbY6F
+ sfR/yaiipha7+4TbE55ebXertKF8VwO/tu6XdLbdzOTXpAAgb89a3u8gXwOuX2kUp76NFp43vPT
+ DM4cKw56wcIMnKpylYtoVhMiL1OY8IRy9rNcMctrHT1U2RDQiQm3buNblZnzsUxFX+kF0NqEqHq
+ L10fI3WtLFkWJ9oOXLqVVWnECTIj1aiPSQ7SMwhikD48A==
+X-Envelope-To: linux-wireless@vger.kernel.org
+Received: by smtp.migadu.com with ESMTPS id 743bb9bf1fbf2c97;
+	Sat, 21 Nov 2026 20:33:25 +0000
+X-Mizu-Trace-ID: 743bb9bf1fbf2c97
+X-Migadu-Flow: FLOW_OUT
+From: Devin Wittmayer <lucid_duck@justthetip.ca>
+To: Felix Fietkau <nbd@nbd.name>
+Cc: Lorenzo Bianconi <lorenzo@kernel.org>,
+	Ryder Lee <ryder.lee@mediatek.com>,
+	Deren Wu <deren.wu@mediatek.com>,
+	Sean Wang <sean.wang@mediatek.com>,
+	Shayne Chen <shayne.chen@mediatek.com>,
 	linux-wireless@vger.kernel.org,
-	ath10k@lists.infradead.org,
-	linux-kernel@vger.kernel.org,
-	David Heidelberg <david@ixit.cz>,
-	Fabricio Akio <fabricioakio@gmail.com>
-Subject: Re: [PATCH ath-next 3/3] wifi: ath10k: bring down a station vdev that never came up
-Date: Sat, 21 Nov 2026 21:24:15 +0100
-Message-ID: <20261121202416.841461-1-mick@yoxcu.de>
-X-Mailer: git-send-email 2.55.0
-In-Reply-To: <20261016-ath10k-series-v1-send-v1-3-c847697b3558@nagashi.ma>
-References: <20261016-ath10k-series-v1-send-v1-0-c847697b3558@nagashi.ma> <20261016-ath10k-series-v1-send-v1-3-c847697b3558@nagashi.ma>
+	linux-mediatek@lists.infradead.org
+Subject: Re: [PATCH wireless] wifi: mt76: mt7921: let monitors see other stations' unicast
+Date: Sat, 21 Nov 2026 13:33:17 -0700
+Message-ID: <20261121203317.13422-1-lucid_duck@justthetip.ca>
+X-Mailer: git-send-email 2.56.1
+In-Reply-To: <c983f41c-ee0e-43e3-b578-cab9738d8da6@nbd.name>
+References: <20261026220346.601314-1-lucid_duck@justthetip.ca> <c983f41c-ee0e-43e3-b578-cab9738d8da6@nbd.name>
 X-Mailing-List: linux-wireless@vger.kernel.org
 List-Id: <linux-wireless.vger.kernel.org>
 List-Post: <mailto:linux-wireless@vger.kernel.org>
@@ -68,26 +73,27 @@ List-Unsubscribe: <mailto:linux-wireless+unsubscribe@vger.kernel.org>
 List-Owner: <mailto:linux-wireless+owner@vger.kernel.org>
 Precedence: list
 MIME-Version: 1.0
-Content-Type: text/plain; charset=UTF-8
 Content-Transfer-Encoding: 8bit
-X-Last-TLS-Session-Version: TLSv1.3
 
-Hi Shunsuke,
+On Fri, 20 Nov 2026 17:27:43 +0100, Felix Fietkau wrote:
+> On 26.10.26 23:03, Devin Wittmayer wrote:
+>> Clear that filter whenever the sniffer is enabled.
+> Does the filter get set again when monitor mode is disabled?
 
-I tested patches 2 and 3 on a OnePlus 6 (WCN3990,
-WLAN.HL.2.0.c8-00050-QCAHLSWMTPLZ-1) on a 7.1-rc1 based kernel.
+Yes, though not always right away.
 
-Aborting a connect before association (Station.Disconnect right after
-Network.Connect in iwd) now logs "down (never up)" after the vdev stop.
-In the 20 minutes of suspend after it, the modem was in sleep 77 % of
-the time. Without a fix it never slept after such an abort (0 %, the
-phone drew 103 to 205 mA in suspend instead of about 20 mA).
+If a station stays connected, the filter is set again when the monitor
+is deleted. If the monitor was the only interface, the radio stops with
+the filter still clear, and it's set again once the radio next scans
+or connects.
 
-Tested-by: Michael Auer <mick@yoxcu.de> # OnePlus 6 (WCN3990)
+I read the register after each step of the runs behind the table in the
+patch. Same on the MT7921AU and the MT7922 in every round:
 
-Normal disconnects still keep the modem awake on this phone until the
-next connect (0 % modem sleep in the same test). As your cover letter
-says, the series does not change them. I have a separate fix for that
-and can send it on top of your series.
+    after deleting the monitor     filter
+    with a station connected       set
+    with no other interface up     clear
+      then a scan                  set
+      then a connect               set
 
-Michael
+Devin
