@@ -1,88 +1,88 @@
-Authentication-Results: smtp.subspace.kernel.org; arc=none smtp.remote-ip=209.85.218.48
+Authentication-Results: smtp.subspace.kernel.org; arc=none smtp.remote-ip=209.85.218.43
 ARC-Seal: i=1; d=subspace.kernel.org; s=arc20261015; a=rsa-sha256; cv=none;
-	t=1795302459;
-	b=ijQtormTYOwddtPgk8kghHUwsrKuIkcphPzK9CeI5Vd/ACj76Sx4A57y+6owketZpnG7
-	 BJ4EJ9LVwmPXXF07whVcycHtUVk8mWGiCoBV1LoJVB64ZeooqrQ/BePeoGCVwOuZV3Wrz
-	 RM4xz37Oby+khFfrOyuz6xG4xmHWtJZtdANEyiPplyS9cJv1IlOKCkkKWmYlWEyg4HRP0
-	 7x3DUwRiVlEjMVvXGLZZb+/j3f7io53w/hBvZl5KlLyGyBOxlZH6oFec4Rigvom6kD8Hk
-	 aPlLJT1O1GC1ELA0pwX3d5q73f+0ljffl8FUvPQi2Ha7kJvy6RUGMO4zgc/EzAFCcqA==
+	t=1795302461;
+	b=HGvHuvjVjJqw0A/brN+ie5YLPHGwTaKKQKUCmhAjEEsVxrS7mdgujbldpr1dTJ6JC7aW
+	 NQpTGaAEio8WQkfimzvmDjFqUpHo91YdWbayoIU6lnKbVtrj5eyo8eX6rS/7dM+F/3Ro7
+	 dPWm732SdukgxDv9GTvY2MFEBvcPGZeQAUv4g8StEVQbWKgElCyM6+MWjUrsjQg7WXeIt
+	 7PRKXJFKv58FkyOhYri7bQLGhNEIp2ZGWWkTdWaQZ3yXOjKNEks5eLt/5S9N7mNLsxgPq
+	 WvUso8adp7r02zMTg5ppt19yu4wVlWxumJT1mHO8+jOv1i7D9mAT24IxZCgWnn9wMag==
 ARC-Message-Signature: i=1; d=subspace.kernel.org; s=arc20261015;
-	a=rsa-sha256; c=relaxed/relaxed; t=1795302459;
+	a=rsa-sha256; c=relaxed/relaxed; t=1795302461;
 	h=DMARC-Filter:Received:DKIM-Signature:X-Google-DKIM-Signature:
 	 X-Forwarded-Encrypted:X-Gm-Message-State:X-Gm-Gg:X-Received:Received:
 	 From:To:Cc:Subject:Date:Message-ID:X-Mailer:In-Reply-To:References:
 	 MIME-Version:Content-Transfer-Encoding;
-	bh=OPsfghuAOvZXGmgP8YNMyy86FtkIG7/XEGKOG2j+8RA=;
-	b=Iw36qsR2RDQIN4iTvyDjM5qa641L7jcW98R8+GZseHmJ/WymTnTqVC81z4DE3srW1Wcy
-	 OFIjqoIhsTY+HPXDU3X2sEzy243NjxZLv64Hf6G31gmr+olc56Iu85fLiEneSmfhWeuju
-	 wmydGQVgBgn+snamxKyz1+oFQHFIY1lpSX0ZY4kBOL33Vr7sN6iG6hmGy+6mZphuFk3dr
-	 LawJT7vHKs5gFa7ZedEeBrRP/HVvQpSkRdcuSLbNKDO6bMHEMB0WStSb6oWD6ktJKKHk+
-	 ELnVzZAP1Gp4YUC9JiqQVFNCYCBslWqaiNouMsA1wJG9lGilvPAH0LD1aSt0uf0Qm0A==
+	bh=zcSc726+ApkS3y0S6C44eyfA/ilxfVvvD1+ezXLb36Q=;
+	b=Ypl3qDv2hW59o6cR9fEiLfx04tLRuBQExxT/8qcgqZrMcLGr4B+sIj0KXkZlYkizf3Yy
+	 JiZDv9LyZsRF7RwwpnTWpHFFUy4SXA9mzYhA5vIz0yXmfr928QsYHx6ouRNZCKyO5N6XM
+	 vhUEkJaHScA1IICwmgTmaDGPeBqhokpUxl52laQo9TpeihCef7Cc3ziORyUS0mYM9RlNj
+	 6shhAKOsfwDrT7T9cTTMueNkN8Giy2cvWuYXEQ/BqwUTAYS7drXcmTizoc+papsRVAl+5
+	 5WDzOjIAqC95ZDU8MoeBLlc/0bnYQzRnEqdcnHQUq33zAeZl9iDN9o7UYiccWcUdrFQ==
 ARC-Authentication-Results: i=1; smtp.subspace.kernel.org; 
 	dmarc=pass header.from=bairaktaris.de;
 	spf=pass smtp.mailfrom=bairaktaris.de;
-	dkim=pass header.d=bairaktaris.de header.i=@bairaktaris.de header.a=rsa-sha256 header.s=google header.b=W0X2B71Z;
-	arc=none smtp.remote-ip=209.85.218.48
-Received: from mail-ej1-f48.google.com (mail-ej1-f48.google.com [209.85.218.48])
+	dkim=pass header.d=bairaktaris.de header.i=@bairaktaris.de header.a=rsa-sha256 header.s=google header.b=r9MGaone;
+	arc=none smtp.remote-ip=209.85.218.43
+Received: from mail-ej1-f43.google.com (mail-ej1-f43.google.com [209.85.218.43])
 	(using TLSv1.3 with cipher TLS_AES_128_GCM_SHA256 (128/128 bits)
 	 key-exchange X25519 server-signature ECDSA (prime256v1) server-digest SHA256)
 	(No client certificate requested)
-	by smtp.subspace.kernel.org (Postfix) with ESMTPS id 2DC45606A69A
-	for <linux-wireless@vger.kernel.org>; Sat, 21 Nov 2026 23:07:39 +0000 (UTC)
-DMARC-Filter: OpenDMARC Filter v1.4.2 smtp.subspace.kernel.org 2DC45606A69A
+	by smtp.subspace.kernel.org (Postfix) with ESMTPS id E1142606A69A
+	for <linux-wireless@vger.kernel.org>; Sat, 21 Nov 2026 23:07:40 +0000 (UTC)
+DMARC-Filter: OpenDMARC Filter v1.4.2 smtp.subspace.kernel.org E1142606A69A
 Authentication-Results: smtp.subspace.kernel.org; dmarc=pass (p=reject dis=none) header.from=bairaktaris.de
 Authentication-Results: smtp.subspace.kernel.org; spf=pass smtp.mailfrom=bairaktaris.de
 Authentication-Results: smtp.subspace.kernel.org;
-	dkim=pass (2048-bit key) header.d=bairaktaris.de header.i=@bairaktaris.de header.a=rsa-sha256 header.s=google header.b=W0X2B71Z
-Received: by mail-ej1-f48.google.com with SMTP id a640c23a62f3a-c505b2e1cb9so391287866b.2
-        for <linux-wireless@vger.kernel.org>; Sat, 21 Nov 2026 15:07:38 -0800 (PST)
+	dkim=pass (2048-bit key) header.d=bairaktaris.de header.i=@bairaktaris.de header.a=rsa-sha256 header.s=google header.b=r9MGaone
+Received: by mail-ej1-f43.google.com with SMTP id a640c23a62f3a-c516a160d24so21072966b.2
+        for <linux-wireless@vger.kernel.org>; Sat, 21 Nov 2026 15:07:40 -0800 (PST)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=bairaktaris.de; s=google; t=1795302457; x=1795907257; darn=vger.kernel.org;
+        d=bairaktaris.de; s=google; t=1795302459; x=1795907259; darn=vger.kernel.org;
         h=content-transfer-encoding:mime-version:references:in-reply-to
          :message-id:date:subject:cc:to:from:from:to:cc:subject:date
          :message-id:reply-to:content-type;
-        bh=OPsfghuAOvZXGmgP8YNMyy86FtkIG7/XEGKOG2j+8RA=;
-        b=W0X2B71ZJTucaJ/Bp6BW0FMPpswkNXe4wtLaX7UfB//Om+KNYhFCIsdtFFLNxndHNm
-         YICs20ngVo+8diCreK2LjrLJTAbZ7PCPdp8dZiKlQTyHMnDuCrG+lvCS/Lqnd7jIG9Cq
-         9WGjq/2cqeeKNZFwVhX+IV9woP6jsBZ14CQl9Bl7coqT9WdJhbYwoKl3vpOJdG0Y2RFI
-         pmBlYZp6sWSu/FozQH2LPoAlmt0wYD0f9mObmQO9KSOPsYwQseRdN6qrOBl4aRI0man7
-         4CndfXdHLLitu3Ew3tJPmK27nJAoO8lr7QNJJuNvy/KrmQ8rhBAl0IgOhfxL6K/Dl7KB
-         q4jg==
+        bh=zcSc726+ApkS3y0S6C44eyfA/ilxfVvvD1+ezXLb36Q=;
+        b=r9MGaoneRTSQq9HFtbgu5rMg05/5EDN0/4cGpdIzKtxTjj/jtlvEHTiJJjJOWnNMrf
+         MD0kRgWKGukySP9etwtLKPPxHc1jG8SRvw5oRGSsrIbtxVsoV+N+KFjZX86QH1vU5Hua
+         rw3tok7JW9P1qvpxD6PONN8SytZarfGveuM3Yi7GMTC2Wnig0nmjI5BfVTSCZZXjf174
+         JOKhGT/5bseaLvHl4Op4wA5KAMm0C7WIYjFg5e/K+e6J3z5ZPtkxMP0EUgmB2Pd5cuGk
+         jR8STs+QgPYnjLFNfRFT48+XMNo0Oibe+Z3WxaR0m/lFCSdOPkdXLWGp5/WBFElyZAp6
+         fG/A==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=1e100.net; s=20260707; t=1795302457; x=1795907257;
+        d=1e100.net; s=20260707; t=1795302459; x=1795907259;
         h=content-transfer-encoding:mime-version:references:in-reply-to
          :message-id:date:subject:cc:to:from:x-gm-gg:x-gm-message-state:from
          :to:cc:subject:date:message-id:reply-to:content-type;
-        bh=OPsfghuAOvZXGmgP8YNMyy86FtkIG7/XEGKOG2j+8RA=;
-        b=pP2Dnp+9wpI4Qmaabe73+a4T0cNRhqT/rNhUKXCzMgJ+KYShcXUTyw/v0taBFwtsce
-         5hVSv53/hRJ0fXvyOKjsb7m6XuN56HnaROqGN6yIhXLWXKagQipWWYF2MfwGVe3fiQXk
-         293x59bTKGHtIqdChTNSc0oJ3XjFiXLWB/xVgYEzDTtf1m1KMb0QFRNGfYcnYgPBStPl
-         zezuFBCoD8271ObGbsE1G06nmhF63A0x5o53+ac5/HmLqjKT+5s7rI9YwaDKOj36PBWt
-         0Gk2DG3Ca3ux/6w1PcyvDxPwwqxvGbZ4Nz5AsExvEpqa1dSN/maXuDnn8BXE5AUAU4+c
-         mucQ==
-X-Forwarded-Encrypted: i=1; AL+hErHsFbBifuqODrEO6w0adQY3pBVPS3IrHfixpkgRs9w+2r2AljfWuQV+xb2yQZhhzCo6tzeQNwriod2CVXfxiA==@vger.kernel.org
-X-Gm-Message-State: APuU4Z/1pativun7HRSKnsQ5tYX14LN3IP7pboA/hd5YUFI7Qz6kxwUl
-	1zj3WilowGTz8CBCnC6+qW1rbzXlDUQT4WO0phE9b7sZl97Tr6wDzpGArkAxRusWdQ==
-X-Gm-Gg: AZFdTZczjBsqSf3WNupebkYrK1ZLjz4vG68AD0+v9UJU0rXTGlPHrg82zOJT0Kq9CVu
-	86tC9PRxVooOjoKoIsHxPLafmgX4ViMQVhLDdOXnaKF7gkH1VSosXuT86UimtHWQifw2rXGQ8o2
-	KiZSBq7eKzOAdNT7z7kN9O7+0HrTJFh/+uW7hAmCVxged4IlY4Rb/4uh11iFSvyO/Yjmhbi5q0b
-	s+il7Y/jIsoakA0mJTx71Ubvs060JrbJSeGEsCg8uQaI+SUVSfZZ3GqnaEJde0OvsHjmB7A3Suj
-	rWnfTYmQ0RMALPGdhhqVISdgJH9r37kokZJyCRq5gCOz6qubq6ENJ9Rxafk0Iq7k7slHBhTlG+R
-	sKvogZy1853m5PqidAgsWDgL9YeYX24mgR0ujCykhGtGsfKGxbe/PMZ+1zNGxqav053KXvZLuel
-	3i/nfb/cAVgl7X5/idL/gwlkbjgTIRmzzYlhKotl/FA5MO6A59jep2yKlWY+YfzaTj1wva/vSMA
-	30ELfLHzuI/PEYfbgstAR0W2WTCwLKLGGq1F81N90w9X7dc+ROJccnakmNQzV6diCQmdoqPRg6Z
-	IY1sxPtwYElEpr1wBa2wCopOYZQ8/lNpyLKegAdX8rdkTxv6VcS8cKuMTK1748OxHdxQpueSRxW
-	v9lKebfyONbX6u3EKYwjqcs3dcZ691673W0yLA3KXYOjVmdCu4pqvkZRNqZ+1X4ZY1Ci6AE4BLH
-	1dtNtSAdNokKcf4QPUnWC6sXr6LYuH44XdOdUNEgfBRxUCgG+FaFo6IHM5w7E3l5uWxT4jmKxuA
-	/1nRXqRVMfixooKVm0GZ84R1bXA3PJfbkyyfgtkOizcYdLMPyjiu0IDVxmgKO3ogXb3VjopG2dw
-	vNqpmZbj6NdJumZ2iP2mrNhCkP3uQlqbVf0FuUSGSJi7L7XcST9IX8H0LSLyqT/wxYz6km1JtL4
+        bh=zcSc726+ApkS3y0S6C44eyfA/ilxfVvvD1+ezXLb36Q=;
+        b=rE9ATpi+k+guKfcABm5TkSf+vzYPABLAA0g6mzg9jZqR+re+Sus3OgpX8fhbymrosW
+         JbnjL6ig754i9ytWYCqz9ReT1FP/rlhizOu9622qsecWSfXbxju+Xk1xBhG03r3A0x6P
+         g5Di0zTa2gzC4y1o0vCBDnCnmCsdYFMpPv7bqvQpmW6VYUMITwYbGkOkLCh6x9/KVRmi
+         LXFgAUPnS3CXeIi043Gc3eTbxFk8ESaVHirF0DvwpPkxP5KSQc1A/UhOc508j47e5jBe
+         Q9SDx1UuEoWVgSfaOX59aRoShf9+Zb4p5TolnuOiJcDZ7GZ4gpdjvM+Leur3VZyOG91L
+         ezyw==
+X-Forwarded-Encrypted: i=1; AL+hErG3iJAZsdTCr8jVK3C6G6l6bL/yrOVcjcP/NazvnBS8aACaRBriz7f5qITcoQhUNq9YyZhVfso1rHIhliAAug==@vger.kernel.org
+X-Gm-Message-State: APuU4Z+L/UkfhG10gEmhnQNF9ojz+Unh/1B4EBHj0YjLPEG9Lx7y572N
+	YI5X/+3adq6j/vymPnfZTngiUV+vLcG/XinXvpZJpx2WHiUANnAYlwcutu6ahjLdGA==
+X-Gm-Gg: AZFdTZcmv+2v+VQh4Y3BwaFKpP7A2J2dYkrRpPZCMSdwo31p38Km88B4qBZYC1ShsQy
+	/7zID0DMtSndAMhJ6BUulYvda0woCy5NHdaO66FMS+RkPLupTz3P1Hjwd7yKmohfk5nku06nLwD
+	b5F17MrERQEg6OA4dlknA8ivhDAwvTPgxK+QLONW0BpIQ4BTKTpvqv7XzQBr5+sUXdkSCqAdkd/
+	ugHS+FLbaInMDoLeQ82Y0KfBFg2uDtd/yW/VUbZO6b9Z2xCecrRw+BPBONeIu2aHSs50IAHIk+M
+	lTZiYHpIemfCAUXiOU1ynVS/RmiARyIZblR5A4w7LRgWFq8IklOR46NGdBlMAmOCvHsIFinUaZu
+	8bdlGHxdSG7iPnm19G6Ogc3S93dNGVAxVAuYsVdOfhcv3tzslWfttXXXPjCGj1Eoqd5Da+zxX4R
+	q3UCF22+oRvweQdDkIPNRYgliq4eoqgnrt5g/+rwmoxG8OHcZtPlbTE5DDjAXjRiPIP99tlTrwr
+	4+TriRccZ3MjFQp1FLio6FDoKG6z6zWpGC3adu5psA9wr56khnwBVYstVJwjGCIUhgl2EcYVTXz
+	l8Vs4KVDn/S5VgnYU9Qfh9rGWprn06pdGqwUu+32uy/DUeihnPps7xKWSRhbln7m9GdJ15FBBni
+	6Qzm3JX1PCIEHC0a/wQEBMGkClauWbDQrrla0Ktg6K+0ZYbCwpO447ST8012BNR90CsqNnEcute
+	9GpIRPfwc9SaFqr/reCxufJWhLpUG40vyqyUKpHBAEz1+j7YG+Ge25VGmHxizi3Rfr/VvWNmife
+	Qs8kalQD84t36pismzqu1ojM1Y4UTGnHUI3kqEquqvVy3SlM2ybVKUEKy4xWIE9F8n/I1mbQBk3
+	+yRhpkn6OevterYOm5Jmer+PzmTODFzjMnow9q2LMThapAq2PskgOStUx7fKJ5jMc/BghJOJIV8
 	=
-X-Received: by 2002:a17:906:1911:b0:c41:b94c:4538 with SMTP id a640c23a62f3a-c513acd297fmr440901566b.47.1795302457248;
-        Sat, 21 Nov 2026 15:07:37 -0800 (PST)
+X-Received: by 2002:a17:906:b009:b0:c29:4fcb:2886 with SMTP id a640c23a62f3a-c513ab47ff7mr440549966b.39.1795302459360;
+        Sat, 21 Nov 2026 15:07:39 -0800 (PST)
 Received: from Desktop.tail070c67.ts.net (p200300f2470edf0034412c7e8f5a5e7a.dip0.t-ipconnect.de. [2003:f2:470e:df00:3441:2c7e:8f5a:5e7a])
-        by smtp.gmail.com with ESMTPSA id a640c23a62f3a-c513afc1b40sm242721466b.54.2026.11.21.15.07.35
+        by smtp.gmail.com with ESMTPSA id a640c23a62f3a-c513afc1b40sm242721466b.54.2026.11.21.15.07.37
         (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
-        Sat, 21 Nov 2026 15:07:36 -0800 (PST)
+        Sat, 21 Nov 2026 15:07:37 -0800 (PST)
 From: Julius Bairaktaris <julius@bairaktaris.de>
 To: Jeff Johnson <jjohnson@kernel.org>
 Cc: ath11k@lists.infradead.org,
@@ -107,9 +107,9 @@ Cc: ath11k@lists.infradead.org,
 	Pradeep Kumar Chitrapu <quic_pradeepc@quicinc.com>,
 	Sathishkumar Muruganandam <quic_murugana@quicinc.com>,
 	Muna Sinada <quic_msinada@quicinc.com>
-Subject: [PATCH ath-next v3 02/13] wifi: ath11k: keep the radios when a firmware recovery fails
-Date: Sun, 22 Nov 2026 00:07:20 +0100
-Message-ID: <20261121230731.1206043-3-julius@bairaktaris.de>
+Subject: [PATCH ath-next v3 03/13] wifi: ath11k: keep the srng allocations when a firmware recovery fails
+Date: Sun, 22 Nov 2026 00:07:21 +0100
+Message-ID: <20261121230731.1206043-4-julius@bairaktaris.de>
 X-Mailer: git-send-email 2.53.0
 In-Reply-To: <20261121230731.1206043-1-julius@bairaktaris.de>
 References: <20261121230731.1206043-1-julius@bairaktaris.de>
@@ -124,103 +124,151 @@ Precedence: list
 MIME-Version: 1.0
 Content-Transfer-Encoding: 8bit
 
-On a firmware crash recovery ath11k_mac_allocate() keeps the registered
-radios, but the error paths of ath11k_core_start() and
-ath11k_core_qmi_firmware_ready() still call ath11k_mac_destroy(). A
-failed recovery thus frees an ieee80211_hw that mac80211 still uses and
-leaves ab->pdevs[i].ar NULL. A frame bridged to the radio then follows
-the freed hw:
+Since commit 32be3ca4cf78 ("wifi: ath11k: HAL SRNG: don't deinitialize
+and re-initialize again") recovery zeroes the hal state instead of
+freeing and reallocating it, but a failed recovery still calls
+ath11k_hal_srng_deinit(). This frees the ring pointer buffers and the
+ring configuration, which only probe allocates, while the rings still
+point into them. Driver removal then walks the copy engine rings through
+the freed buffers:
 
+  ath11k c000000.wifi: failed to reconfigure driver on crash recovery
+  ...
   Unable to handle kernel paging request at virtual address
-  ffffff8316cfd480
-  pc : sta_info_hash_lookup+0x4c/0xe4 [mac80211]
+  ffffffc080ee5090
+  pc : ath11k_hal_srng_access_begin+0xc/0x60 [ath11k]
   Call trace:
-   sta_info_hash_lookup+0x4c/0xe4 [mac80211] (P)
-   sta_info_get_bss+0x1c/0x78 [mac80211]
-   ieee80211_lookup_ra_sta+0x124/0x14c [mac80211]
-   __ieee80211_subif_start_xmit+0xb8/0x3a0 [mac80211]
-   ieee80211_subif_start_xmit+0x50/0x750 [mac80211]
-   dev_hard_start_xmit+0x98/0x120
-
-and driver removal dereferences the NULL ar:
-
-  Unable to handle kernel access to user memory outside uaccess routines
-  at virtual address 0000000000000000
-  pc : ath11k_dp_rx_pdev_free+0x34/0x12c [ath11k]
-  Call trace:
-   ath11k_dp_rx_pdev_free+0x34/0x12c [ath11k] (P)
-   ath11k_dp_pdev_free+0x4c/0x84 [ath11k]
-   ath11k_core_deinit+0xdc/0x168 [ath11k]
+   ath11k_hal_srng_access_begin+0xc/0x60 [ath11k] (P)
+   ath11k_ce_cleanup_pipes+0x16c/0x4cc [ath11k]
+   ath11k_ahb_stop+0x2c/0x3c [ath11k_ahb]
+   ath11k_core_deinit+0xec/0x168 [ath11k]
    ath11k_ahb_remove+0x30/0x90 [ath11k_ahb]
 
-Destroy the radios only when ATH11K_FLAG_REGISTERED is clear, as
-ath11k_mac_allocate() does.
+Return the error and keep the allocations for ath11k_ahb_remove() and
+ath11k_pci_remove() to free.
 
-ath11k_core_pdev_create() has the same problem with the registration.
-During a recovery ath11k_mac_register() and ath11k_debugfs_pdev_create()
-return early, but when a later step such as ath11k_spectral_init() or
-ath11k_cfr_init() fails, the error path calls ath11k_mac_unregister()
-and ath11k_debugfs_pdev_destroy(). The first unregisters the radios
-from mac80211 while ATH11K_FLAG_REGISTERED stays set, so driver removal
-unregisters them a second time. The second removes the debugfs tree of
-the device with the macN directories, while ar->debug.debugfs_pdev
-keeps pointing to the removed directory; the next recovery's
-ath11k_spectral_init() and ath11k_cfr_init() create their files under
-it. Undo both there only when ATH11K_FLAG_REGISTERED is clear as well,
-which is when this call did them.
+A recovery that fails before ath11k_ce_init_pipes() rebuilds the rings
+leaves them as ath11k_hal_srng_clear() zeroed them, lock included, and
+the same walk then reads the NULL tail pointer in
+ath11k_ce_completed_send_next(), at removal or in the next recovery.
+Nothing in dev_flags tells such a recovery from one that failed after
+the rings were rebuilt. Set ATH11K_FLAG_CE_RINGS_SETUP once
+ath11k_ce_init_pipes() has set the rings up, clear it where
+ath11k_hal_srng_clear() zeroes them, and let ath11k_ce_cleanup_pipes(),
+which every copy engine teardown goes through, return while it is clear.
+
+The rx_replenish_retry timer posts buffers to the copy engine rings and
+ath11k_core_reconfigure_on_crash() does not stop it, so it can fire on
+the zeroed rings too. Stop it before the copy engine cleanup, as
+ath11k_ahb_stop() does. Also test ATH11K_FLAG_CRASH_FLUSH in
+ath11k_ce_send() before it reaps a ring rather than after.
 
 Tested-on: IPQ8074 hw2.0 AHB WLAN.HK.2.12-01460-QCAHKSWPL_SILICONZ-1
 
-Fixes: 0366f42640a4 ("ath11k: Move mac80211 hw allocation before wmi_init command")
+Fixes: 32be3ca4cf78 ("wifi: ath11k: HAL SRNG: don't deinitialize and re-initialize again")
 Signed-off-by: Julius Bairaktaris <julius@bairaktaris.de>
 ---
-v3: also skip ath11k_mac_unregister() and ath11k_debugfs_pdev_destroy() in the
-error path of ath11k_core_pdev_create() while the device stays registered.
-Florian's Tested-by dropped, as the code changed.
+v3: record whether the CE rings are set up in ATH11K_FLAG_CE_RINGS_SETUP and
+let ath11k_ce_cleanup_pipes() return while it is clear, instead of testing HAL
+srng fields in the CE layer (Baochen Qiang, v1); stop rx_replenish_retry before
+the CE cleanup; test CRASH_FLUSH in ath11k_ce_send() before reaping.
 
- drivers/net/wireless/ath/ath11k/core.c | 12 ++++++++----
- 1 file changed, 8 insertions(+), 4 deletions(-)
+ drivers/net/wireless/ath/ath11k/ce.c   |  9 ++++++---
+ drivers/net/wireless/ath/ath11k/core.c | 10 +++++-----
+ drivers/net/wireless/ath/ath11k/core.h |  1 +
+ 3 files changed, 12 insertions(+), 8 deletions(-)
 
+diff --git a/drivers/net/wireless/ath/ath11k/ce.c b/drivers/net/wireless/ath/ath11k/ce.c
+index 1e08b0970b14..af08a2a24c6d 100644
+--- a/drivers/net/wireless/ath/ath11k/ce.c
++++ b/drivers/net/wireless/ath/ath11k/ce.c
+@@ -718,6 +718,9 @@ int ath11k_ce_send(struct ath11k_base *ab, struct sk_buff *skb, u8 pipe_id,
+ 	u8 byte_swap_data = 0;
+ 	int num_used;
+ 
++	if (test_bit(ATH11K_FLAG_CRASH_FLUSH, &ab->dev_flags))
++		return -ESHUTDOWN;
++
+ 	/* Check if some entries could be regained by handling tx completion if
+ 	 * the CE has interrupts disabled and the used entries is more than the
+ 	 * defined usage threshold.
+@@ -740,9 +743,6 @@ int ath11k_ce_send(struct ath11k_base *ab, struct sk_buff *skb, u8 pipe_id,
+ 			ath11k_ce_poll_send_completed(ab, pipe->pipe_num);
+ 	}
+ 
+-	if (test_bit(ATH11K_FLAG_CRASH_FLUSH, &ab->dev_flags))
+-		return -ESHUTDOWN;
+-
+ 	spin_lock_bh(&ab->ce.ce_lock);
+ 
+ 	write_index = pipe->src_ring->write_index;
+@@ -866,6 +866,9 @@ void ath11k_ce_cleanup_pipes(struct ath11k_base *ab)
+ 	struct ath11k_ce_pipe *pipe;
+ 	int pipe_num;
+ 
++	if (!test_bit(ATH11K_FLAG_CE_RINGS_SETUP, &ab->dev_flags))
++		return;
++
+ 	ath11k_ce_stop_shadow_timers(ab);
+ 
+ 	for (pipe_num = 0; pipe_num < ab->hw_params.ce_count; pipe_num++) {
 diff --git a/drivers/net/wireless/ath/ath11k/core.c b/drivers/net/wireless/ath/ath11k/core.c
-index 8e4dab61a300..5f4e7fbe0b25 100644
+index 5f4e7fbe0b25..d6346e0ee047 100644
 --- a/drivers/net/wireless/ath/ath11k/core.c
 +++ b/drivers/net/wireless/ath/ath11k/core.c
-@@ -2073,11 +2073,13 @@ static int ath11k_core_pdev_create(struct ath11k_base *ab)
- err_thermal_unregister:
- 	ath11k_thermal_unregister(ab);
- err_mac_unregister:
--	ath11k_mac_unregister(ab);
-+	if (!test_bit(ATH11K_FLAG_REGISTERED, &ab->dev_flags))
-+		ath11k_mac_unregister(ab);
- err_dp_pdev_free:
+@@ -2290,6 +2290,8 @@ int ath11k_core_qmi_firmware_ready(struct ath11k_base *ab)
+ 		goto err_firmware_stop;
+ 	}
+ 
++	set_bit(ATH11K_FLAG_CE_RINGS_SETUP, &ab->dev_flags);
++
+ 	ret = ath11k_dp_alloc(ab);
+ 	if (ret) {
+ 		ath11k_err(ab, "failed to init DP: %d\n", ret);
+@@ -2340,12 +2342,14 @@ static int ath11k_core_reconfigure_on_crash(struct ath11k_base *ab)
  	ath11k_dp_pdev_free(ab);
- err_pdev_debug:
--	ath11k_debugfs_pdev_destroy(ab);
-+	if (!test_bit(ATH11K_FLAG_REGISTERED, &ab->dev_flags))
-+		ath11k_debugfs_pdev_destroy(ab);
- 
- 	return ret;
- }
-@@ -2231,7 +2233,8 @@ static int ath11k_core_start(struct ath11k_base *ab)
- err_reo_cleanup:
+ 	ath11k_cfr_deinit(ab);
+ 	ath11k_spectral_deinit(ab);
++	timer_delete_sync(&ab->rx_replenish_retry);
+ 	ath11k_ce_cleanup_pipes(ab);
+ 	ath11k_wmi_detach(ab);
  	ath11k_dp_pdev_reo_cleanup(ab);
- err_mac_destroy:
--	ath11k_mac_destroy(ab);
-+	if (!test_bit(ATH11K_FLAG_REGISTERED, &ab->dev_flags))
-+		ath11k_mac_destroy(ab);
- err_hif_stop:
- 	ath11k_hif_stop(ab);
- err_wmi_detach:
-@@ -2315,7 +2318,8 @@ int ath11k_core_qmi_firmware_ready(struct ath11k_base *ab)
- 
- err_core_stop:
- 	ath11k_core_stop(ab);
--	ath11k_mac_destroy(ab);
-+	if (!test_bit(ATH11K_FLAG_REGISTERED, &ab->dev_flags))
-+		ath11k_mac_destroy(ab);
- err_dp_free:
- 	ath11k_dp_free(ab);
  	mutex_unlock(&ab->core_lock);
+ 
+ 	ath11k_dp_free(ab);
++	clear_bit(ATH11K_FLAG_CE_RINGS_SETUP, &ab->dev_flags);
+ 	ath11k_hal_srng_clear(ab);
+ 
+ 	ab->free_vdev_map = (1LL << (ab->num_radios * TARGET_NUM_VDEVS(ab))) - 1;
+@@ -2354,15 +2358,11 @@ static int ath11k_core_reconfigure_on_crash(struct ath11k_base *ab)
+ 
+ 	ret = ath11k_core_qmi_firmware_ready(ab);
+ 	if (ret)
+-		goto err_hal_srng_deinit;
++		return ret;
+ 
+ 	clear_bit(ATH11K_FLAG_RECOVERY, &ab->dev_flags);
+ 
+ 	return 0;
+-
+-err_hal_srng_deinit:
+-	ath11k_hal_srng_deinit(ab);
+-	return ret;
+ }
+ 
+ void ath11k_core_halt(struct ath11k *ar)
+diff --git a/drivers/net/wireless/ath/ath11k/core.h b/drivers/net/wireless/ath/ath11k/core.h
+index a0d725923ef2..593e54c59737 100644
+--- a/drivers/net/wireless/ath/ath11k/core.h
++++ b/drivers/net/wireless/ath/ath11k/core.h
+@@ -288,6 +288,7 @@ enum ath11k_dev_flags {
+ 	ATH11K_FLAG_DEVICE_INIT_DONE,
+ 	ATH11K_FLAG_MULTI_MSI_VECTORS,
+ 	ATH11K_FLAG_FTM_SEGMENTED,
++	ATH11K_FLAG_CE_RINGS_SETUP,
+ };
+ 
+ enum ath11k_monitor_flags {
 -- 
 2.53.0
 
