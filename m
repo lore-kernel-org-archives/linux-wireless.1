@@ -1,88 +1,88 @@
-Authentication-Results: smtp.subspace.kernel.org; arc=none smtp.remote-ip=209.85.218.43
+Authentication-Results: smtp.subspace.kernel.org; arc=none smtp.remote-ip=209.85.218.49
 ARC-Seal: i=1; d=subspace.kernel.org; s=arc20261015; a=rsa-sha256; cv=none;
-	t=1795302461;
-	b=HGvHuvjVjJqw0A/brN+ie5YLPHGwTaKKQKUCmhAjEEsVxrS7mdgujbldpr1dTJ6JC7aW
-	 NQpTGaAEio8WQkfimzvmDjFqUpHo91YdWbayoIU6lnKbVtrj5eyo8eX6rS/7dM+F/3Ro7
-	 dPWm732SdukgxDv9GTvY2MFEBvcPGZeQAUv4g8StEVQbWKgElCyM6+MWjUrsjQg7WXeIt
-	 7PRKXJFKv58FkyOhYri7bQLGhNEIp2ZGWWkTdWaQZ3yXOjKNEks5eLt/5S9N7mNLsxgPq
-	 WvUso8adp7r02zMTg5ppt19yu4wVlWxumJT1mHO8+jOv1i7D9mAT24IxZCgWnn9wMag==
+	t=1795302466;
+	b=aBwImskesXPicA8o+Cpy8m+BIWFvAu6/NwzGQESCSnshvFlitSto+WYFS88sx6sfzvQS
+	 77kZV/EzYuyNvINIKRMPI2VHX1UB9uYp5yoouaJUfjgbhyYwzVhORsjgZjJWuScItkMgq
+	 eNbwSAO+h8kVIA05maFJzYqZS/1V+8FtLvFhdxdTnsuBkcCwDKBLacg4ZTWCHDsUrNTy+
+	 CRSgByqWcI3lel3xjmcuicU8IdpCoJfAPZZtszfdG1WEL7cmoLNKzl6/eb/TDPaAnK/tI
+	 qIEKe3H8RrCsCYsBLm4eGrXif7lS7MdKb/XLRPR82jWL2Fs0j31MOqMfYvFb39kKMbg==
 ARC-Message-Signature: i=1; d=subspace.kernel.org; s=arc20261015;
-	a=rsa-sha256; c=relaxed/relaxed; t=1795302461;
+	a=rsa-sha256; c=relaxed/relaxed; t=1795302466;
 	h=DMARC-Filter:Received:DKIM-Signature:X-Google-DKIM-Signature:
 	 X-Forwarded-Encrypted:X-Gm-Message-State:X-Gm-Gg:X-Received:Received:
 	 From:To:Cc:Subject:Date:Message-ID:X-Mailer:In-Reply-To:References:
 	 MIME-Version:Content-Transfer-Encoding;
-	bh=zcSc726+ApkS3y0S6C44eyfA/ilxfVvvD1+ezXLb36Q=;
-	b=Ypl3qDv2hW59o6cR9fEiLfx04tLRuBQExxT/8qcgqZrMcLGr4B+sIj0KXkZlYkizf3Yy
-	 JiZDv9LyZsRF7RwwpnTWpHFFUy4SXA9mzYhA5vIz0yXmfr928QsYHx6ouRNZCKyO5N6XM
-	 vhUEkJaHScA1IICwmgTmaDGPeBqhokpUxl52laQo9TpeihCef7Cc3ziORyUS0mYM9RlNj
-	 6shhAKOsfwDrT7T9cTTMueNkN8Giy2cvWuYXEQ/BqwUTAYS7drXcmTizoc+papsRVAl+5
-	 5WDzOjIAqC95ZDU8MoeBLlc/0bnYQzRnEqdcnHQUq33zAeZl9iDN9o7UYiccWcUdrFQ==
+	bh=F8ANKK5K18HEbCqMKoJNZuWBCRpXtLBYrpTOrUncVlM=;
+	b=xVoKNhQ1znz3kA9Bb7yYwECpbok8j4YGmjH3H5J/KHfLs+8a/sQch15/KgWJd1HMpQ8m
+	 NWScW9OTa78PhGlfQBxuEQWtA42Tto6DySOcQwcfZtP8KF25FONmKjKo1Y2OJ3c/ZhSJc
+	 bId9BfMXe0wiSl3L5Sx6m9d55LTdGf1vkEmE7+3JyEZZktr5l29IOcSipJt0TUzOkMA7q
+	 ld5Fvvhnd/6GNaMuNZNZQZ9CldsXRj29DgJu/WBcG+ZalLZCmogYQMaSPcjIzqWWcCT0Z
+	 VtJ/8DbR1mp7JSmNWc/rGRm0h6KAv6cbpqd5vCJUjGuXm4TAymgBprr0MK7B3daQulg==
 ARC-Authentication-Results: i=1; smtp.subspace.kernel.org; 
 	dmarc=pass header.from=bairaktaris.de;
 	spf=pass smtp.mailfrom=bairaktaris.de;
-	dkim=pass header.d=bairaktaris.de header.i=@bairaktaris.de header.a=rsa-sha256 header.s=google header.b=r9MGaone;
-	arc=none smtp.remote-ip=209.85.218.43
-Received: from mail-ej1-f43.google.com (mail-ej1-f43.google.com [209.85.218.43])
+	dkim=pass header.d=bairaktaris.de header.i=@bairaktaris.de header.a=rsa-sha256 header.s=google header.b=YLxvM9lO;
+	arc=none smtp.remote-ip=209.85.218.49
+Received: from mail-ej1-f49.google.com (mail-ej1-f49.google.com [209.85.218.49])
 	(using TLSv1.3 with cipher TLS_AES_128_GCM_SHA256 (128/128 bits)
 	 key-exchange X25519 server-signature ECDSA (prime256v1) server-digest SHA256)
 	(No client certificate requested)
-	by smtp.subspace.kernel.org (Postfix) with ESMTPS id E1142606A69A
-	for <linux-wireless@vger.kernel.org>; Sat, 21 Nov 2026 23:07:40 +0000 (UTC)
-DMARC-Filter: OpenDMARC Filter v1.4.2 smtp.subspace.kernel.org E1142606A69A
+	by smtp.subspace.kernel.org (Postfix) with ESMTPS id 9253360A2609
+	for <linux-wireless@vger.kernel.org>; Sat, 21 Nov 2026 23:07:45 +0000 (UTC)
+DMARC-Filter: OpenDMARC Filter v1.4.2 smtp.subspace.kernel.org 9253360A2609
 Authentication-Results: smtp.subspace.kernel.org; dmarc=pass (p=reject dis=none) header.from=bairaktaris.de
 Authentication-Results: smtp.subspace.kernel.org; spf=pass smtp.mailfrom=bairaktaris.de
 Authentication-Results: smtp.subspace.kernel.org;
-	dkim=pass (2048-bit key) header.d=bairaktaris.de header.i=@bairaktaris.de header.a=rsa-sha256 header.s=google header.b=r9MGaone
-Received: by mail-ej1-f43.google.com with SMTP id a640c23a62f3a-c516a160d24so21072966b.2
-        for <linux-wireless@vger.kernel.org>; Sat, 21 Nov 2026 15:07:40 -0800 (PST)
+	dkim=pass (2048-bit key) header.d=bairaktaris.de header.i=@bairaktaris.de header.a=rsa-sha256 header.s=google header.b=YLxvM9lO
+Received: by mail-ej1-f49.google.com with SMTP id a640c23a62f3a-c4d21051042so360321366b.0
+        for <linux-wireless@vger.kernel.org>; Sat, 21 Nov 2026 15:07:45 -0800 (PST)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=bairaktaris.de; s=google; t=1795302459; x=1795907259; darn=vger.kernel.org;
+        d=bairaktaris.de; s=google; t=1795302464; x=1795907264; darn=vger.kernel.org;
         h=content-transfer-encoding:mime-version:references:in-reply-to
          :message-id:date:subject:cc:to:from:from:to:cc:subject:date
          :message-id:reply-to:content-type;
-        bh=zcSc726+ApkS3y0S6C44eyfA/ilxfVvvD1+ezXLb36Q=;
-        b=r9MGaoneRTSQq9HFtbgu5rMg05/5EDN0/4cGpdIzKtxTjj/jtlvEHTiJJjJOWnNMrf
-         MD0kRgWKGukySP9etwtLKPPxHc1jG8SRvw5oRGSsrIbtxVsoV+N+KFjZX86QH1vU5Hua
-         rw3tok7JW9P1qvpxD6PONN8SytZarfGveuM3Yi7GMTC2Wnig0nmjI5BfVTSCZZXjf174
-         JOKhGT/5bseaLvHl4Op4wA5KAMm0C7WIYjFg5e/K+e6J3z5ZPtkxMP0EUgmB2Pd5cuGk
-         jR8STs+QgPYnjLFNfRFT48+XMNo0Oibe+Z3WxaR0m/lFCSdOPkdXLWGp5/WBFElyZAp6
-         fG/A==
+        bh=F8ANKK5K18HEbCqMKoJNZuWBCRpXtLBYrpTOrUncVlM=;
+        b=YLxvM9lOh51yCpThdfwiEFEza0K0dYbM6wXgu35tDqk9pJVZNurcEdUfrHAG4KdW8i
+         gy5WSOOJvTnPQ41t+JSOFPdJYQw4hpfyYHN1QuhZTB2kej81RiBecSKNfnDBiqgRr50F
+         BXHpDMdSGvkIAPbNE4ACf4GvtnnobbyjMmF1WNBfdENu9zbuPPex9TXn0r7uZ2f87EzU
+         X1P/6ouOx8XRqmo1yxiyj66XUXmLsBI4rXm0e9blG7WAWds60nLD9Oe/lTJg8ysm/NdY
+         CxOWBaiyBE4CO82RyRRyZTuXRvjCyebss6snAqmtRR9ktbqGmR/FTMTWqdBd2uHWQmWt
+         F0pQ==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=1e100.net; s=20260707; t=1795302459; x=1795907259;
+        d=1e100.net; s=20260707; t=1795302464; x=1795907264;
         h=content-transfer-encoding:mime-version:references:in-reply-to
          :message-id:date:subject:cc:to:from:x-gm-gg:x-gm-message-state:from
          :to:cc:subject:date:message-id:reply-to:content-type;
-        bh=zcSc726+ApkS3y0S6C44eyfA/ilxfVvvD1+ezXLb36Q=;
-        b=rE9ATpi+k+guKfcABm5TkSf+vzYPABLAA0g6mzg9jZqR+re+Sus3OgpX8fhbymrosW
-         JbnjL6ig754i9ytWYCqz9ReT1FP/rlhizOu9622qsecWSfXbxju+Xk1xBhG03r3A0x6P
-         g5Di0zTa2gzC4y1o0vCBDnCnmCsdYFMpPv7bqvQpmW6VYUMITwYbGkOkLCh6x9/KVRmi
-         LXFgAUPnS3CXeIi043Gc3eTbxFk8ESaVHirF0DvwpPkxP5KSQc1A/UhOc508j47e5jBe
-         Q9SDx1UuEoWVgSfaOX59aRoShf9+Zb4p5TolnuOiJcDZ7GZ4gpdjvM+Leur3VZyOG91L
-         ezyw==
-X-Forwarded-Encrypted: i=1; AL+hErG3iJAZsdTCr8jVK3C6G6l6bL/yrOVcjcP/NazvnBS8aACaRBriz7f5qITcoQhUNq9YyZhVfso1rHIhliAAug==@vger.kernel.org
-X-Gm-Message-State: APuU4Z+L/UkfhG10gEmhnQNF9ojz+Unh/1B4EBHj0YjLPEG9Lx7y572N
-	YI5X/+3adq6j/vymPnfZTngiUV+vLcG/XinXvpZJpx2WHiUANnAYlwcutu6ahjLdGA==
-X-Gm-Gg: AZFdTZcmv+2v+VQh4Y3BwaFKpP7A2J2dYkrRpPZCMSdwo31p38Km88B4qBZYC1ShsQy
-	/7zID0DMtSndAMhJ6BUulYvda0woCy5NHdaO66FMS+RkPLupTz3P1Hjwd7yKmohfk5nku06nLwD
-	b5F17MrERQEg6OA4dlknA8ivhDAwvTPgxK+QLONW0BpIQ4BTKTpvqv7XzQBr5+sUXdkSCqAdkd/
-	ugHS+FLbaInMDoLeQ82Y0KfBFg2uDtd/yW/VUbZO6b9Z2xCecrRw+BPBONeIu2aHSs50IAHIk+M
-	lTZiYHpIemfCAUXiOU1ynVS/RmiARyIZblR5A4w7LRgWFq8IklOR46NGdBlMAmOCvHsIFinUaZu
-	8bdlGHxdSG7iPnm19G6Ogc3S93dNGVAxVAuYsVdOfhcv3tzslWfttXXXPjCGj1Eoqd5Da+zxX4R
-	q3UCF22+oRvweQdDkIPNRYgliq4eoqgnrt5g/+rwmoxG8OHcZtPlbTE5DDjAXjRiPIP99tlTrwr
-	4+TriRccZ3MjFQp1FLio6FDoKG6z6zWpGC3adu5psA9wr56khnwBVYstVJwjGCIUhgl2EcYVTXz
-	l8Vs4KVDn/S5VgnYU9Qfh9rGWprn06pdGqwUu+32uy/DUeihnPps7xKWSRhbln7m9GdJ15FBBni
-	6Qzm3JX1PCIEHC0a/wQEBMGkClauWbDQrrla0Ktg6K+0ZYbCwpO447ST8012BNR90CsqNnEcute
-	9GpIRPfwc9SaFqr/reCxufJWhLpUG40vyqyUKpHBAEz1+j7YG+Ge25VGmHxizi3Rfr/VvWNmife
-	Qs8kalQD84t36pismzqu1ojM1Y4UTGnHUI3kqEquqvVy3SlM2ybVKUEKy4xWIE9F8n/I1mbQBk3
-	+yRhpkn6OevterYOm5Jmer+PzmTODFzjMnow9q2LMThapAq2PskgOStUx7fKJ5jMc/BghJOJIV8
+        bh=F8ANKK5K18HEbCqMKoJNZuWBCRpXtLBYrpTOrUncVlM=;
+        b=DbxZKkjrP8aIrwrYkMzs73gs3yNQuivvOw1J21HW3nYdtFxXibppLutmQoz0rRD6p8
+         4TDk08ZvAWG3MRvZ66tzLCkuP5jCAOxFLE+jEvhSpznK7JaDNC6hFU0wVr7Wqpz/zJX+
+         rwTh1SOVaRgotRcmAo0UhSq6Wf2xYc3W2aJnAq3kZV9hJrh0saoEkjlb1oxdG+RO53rB
+         NSTSSX3dLIZX7BZpIrv1xAs3WpCtrfplAmjgMWrHNTcsUR6lP+afie48WMCiZCspEOdv
+         h4H0ndMP0pG6Vs/+3pbr9Cj0a/3iNi2TwZPYHEWcPGTzygpLtIcCJ2lBNsYzzknrAX9N
+         Z6mQ==
+X-Forwarded-Encrypted: i=1; AL+hErElv3qAxfo0g7nWVWCdB2HgGrBp7ar0gimEwrVcKfMQEwVsWcVO47UyQSBGdlijSZB9U8ysoWONes7OKPVmfw==@vger.kernel.org
+X-Gm-Message-State: APuU4Z9H4UqfnEMPyLeMhtev/Lb4L+SN9xZS6aIlKgSw38lU21yUlOC0
+	/cLMiEGoslqNnfar1JJczD50yLG1WtyrjCvFnHm+0Qq6KlEn+WkpX8/+Jbkg9ozFrQ==
+X-Gm-Gg: AZFdTZcYForOJjgvE0swNZ52Fc0TNrsiKKbVvq/35DkMOSHzCy2Od4swAMxnR8fJGwM
+	/AnJZ3/DzXnQwzGeG2ANleEinT5/I0631qwW3F/3bVlB24Wyh4gJppNN+tXafx/cuHCHOsm9GB9
+	18swXYTGHx7ACSoPHrHLFELAUHO11uTRTjhZ17xOOO8+VQcPjPBnM06gpFaR2AARdOOnItNP4Kr
+	d2+rFCRGA7feOKSzzLigefWZ0xEVk8lhKFYGEmv4Bws8nCHTv7KUf4sNGvtS/YDc82OFMstVF/z
+	LxbDwrhKgT8Dkz6hCWw/J4ZtVGhQPosC//chMKopLgzFOhuJqZlcTQCpuuweFX2KajChtb0Mtlh
+	MIT0mYvdSBL6PUWxUTK1nSKVNdA2zkA3poBYaOpCz2hA1Z5BIWQ0RsjxIkPE0VzegJt5wWeD8+H
+	kaYXAOJFEqjAAiE4qd9HYbOJlra7GmYSueODuSn6cglD5fDCVwhXT9YR9P56LmNHoXoMapAIRpR
+	H5ZOwj1ASmwIrA1Ccz8H50chAOaBR7QrpLDWQEz3TAqIyw4Nn2BookBNkTRYXDbRjJEDRgXHh5a
+	BMC4z+ZdLF2MUc+bjGnujwNjxf09tNiUGytTRuOwtYarTS0OYijBZWMEdcMXEaF+BY5Dfwdhb6x
+	6ifkoM1IJ/xetqXMNAp6l9D/t19j1Yd5KzO2ubIextgklhoXoofi3HaWHSrmtXjBFg7GwsSuMmI
+	ntKvxyHmjRYA7AXLtG9ePPIlPYjRLt1aKZQe5+DEPaRUxwM4eJSpqVOmrieSQPPNw37oyWPQu5i
+	QFznGGFc4Raa//WNp1RzXnPo/iWULev1wpvAKdBmQTDi35X1ypCiFe/974SSMBJFS7P1rpwA/EE
+	EAEOVHXiTXZktXpENzioEZGlhLl5WdgSvgKvS50pzIvEZmQ5Bu7lsCt5BZd6oNYOkc41YeP98Fg
 	=
-X-Received: by 2002:a17:906:b009:b0:c29:4fcb:2886 with SMTP id a640c23a62f3a-c513ab47ff7mr440549966b.39.1795302459360;
-        Sat, 21 Nov 2026 15:07:39 -0800 (PST)
+X-Received: by 2002:a17:907:6ea9:b0:c2e:856:2a08 with SMTP id a640c23a62f3a-c513a3a6598mr657443866b.1.1795302464094;
+        Sat, 21 Nov 2026 15:07:44 -0800 (PST)
 Received: from Desktop.tail070c67.ts.net (p200300f2470edf0034412c7e8f5a5e7a.dip0.t-ipconnect.de. [2003:f2:470e:df00:3441:2c7e:8f5a:5e7a])
-        by smtp.gmail.com with ESMTPSA id a640c23a62f3a-c513afc1b40sm242721466b.54.2026.11.21.15.07.37
+        by smtp.gmail.com with ESMTPSA id a640c23a62f3a-c513afc1b40sm242721466b.54.2026.11.21.15.07.41
         (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
-        Sat, 21 Nov 2026 15:07:37 -0800 (PST)
+        Sat, 21 Nov 2026 15:07:42 -0800 (PST)
 From: Julius Bairaktaris <julius@bairaktaris.de>
 To: Jeff Johnson <jjohnson@kernel.org>
 Cc: ath11k@lists.infradead.org,
@@ -107,9 +107,9 @@ Cc: ath11k@lists.infradead.org,
 	Pradeep Kumar Chitrapu <quic_pradeepc@quicinc.com>,
 	Sathishkumar Muruganandam <quic_murugana@quicinc.com>,
 	Muna Sinada <quic_msinada@quicinc.com>
-Subject: [PATCH ath-next v3 03/13] wifi: ath11k: keep the srng allocations when a firmware recovery fails
-Date: Sun, 22 Nov 2026 00:07:21 +0100
-Message-ID: <20261121230731.1206043-4-julius@bairaktaris.de>
+Subject: [PATCH ath-next v3 06/13] wifi: ath11k: don't disable ext IRQs twice
+Date: Sun, 22 Nov 2026 00:07:24 +0100
+Message-ID: <20261121230731.1206043-7-julius@bairaktaris.de>
 X-Mailer: git-send-email 2.53.0
 In-Reply-To: <20261121230731.1206043-1-julius@bairaktaris.de>
 References: <20261121230731.1206043-1-julius@bairaktaris.de>
@@ -124,151 +124,80 @@ Precedence: list
 MIME-Version: 1.0
 Content-Transfer-Encoding: 8bit
 
-Since commit 32be3ca4cf78 ("wifi: ath11k: HAL SRNG: don't deinitialize
-and re-initialize again") recovery zeroes the hal state instead of
-freeing and reallocating it, but a failed recovery still calls
-ath11k_hal_srng_deinit(). This frees the ring pointer buffers and the
-ring configuration, which only probe allocates, while the rings still
-point into them. Driver removal then walks the copy engine rings through
-the freed buffers:
+From: Florian Maurer <fmaurer@disroot.org>
 
-  ath11k c000000.wifi: failed to reconfigure driver on crash recovery
-  ...
-  Unable to handle kernel paging request at virtual address
-  ffffffc080ee5090
-  pc : ath11k_hal_srng_access_begin+0xc/0x60 [ath11k]
-  Call trace:
-   ath11k_hal_srng_access_begin+0xc/0x60 [ath11k] (P)
-   ath11k_ce_cleanup_pipes+0x16c/0x4cc [ath11k]
-   ath11k_ahb_stop+0x2c/0x3c [ath11k_ahb]
-   ath11k_core_deinit+0xec/0x168 [ath11k]
-   ath11k_ahb_remove+0x30/0x90 [ath11k_ahb]
+ath11k_core_reconfigure_on_crash() disables the IRQs at the start of
+every firmware recovery and ath11k_core_qmi_firmware_ready() enables
+them again at its end. If a recovery fails, they stay disabled. The
+next recovery disables them again, so the disable depth of the ext
+IRQs goes to two and the single enable_irq() leaves them masked. The
+DP rings would then not be serviced after an otherwise successful
+recovery.
 
-Return the error and keep the allocations for ath11k_ahb_remove() and
-ath11k_pci_remove() to free.
+This is the same kind of imbalance as the one fixed for suspend/resume
+by commit e56c9d429ba0 ("wifi: ath11k: fix unbalanced IRQ enable/disable
+during suspend/resume"), but caused by a failed recovery.
 
-A recovery that fails before ath11k_ce_init_pipes() rebuilds the rings
-leaves them as ath11k_hal_srng_clear() zeroed them, lock included, and
-the same walk then reads the NULL tail pointer in
-ath11k_ce_completed_send_next(), at removal or in the next recovery.
-Nothing in dev_flags tells such a recovery from one that failed after
-the rings were rebuilt. Set ATH11K_FLAG_CE_RINGS_SETUP once
-ath11k_ce_init_pipes() has set the rings up, clear it where
-ath11k_hal_srng_clear() zeroes them, and let ath11k_ce_cleanup_pipes(),
-which every copy engine teardown goes through, return while it is clear.
+NAPI already handles this: it is only disabled if it is enabled. The
+ext IRQs are only enabled together with NAPI, so only disable them if
+NAPI is enabled as well. The pcic ext IRQ code has the same pattern, so
+change it there too. The PCI CE IRQs (ath11k_pcic_ce_irqs_disable())
+can have the same imbalance after a failed recovery; they are not
+changed here. The AHB CE IRQs are not affected, as they are enabled
+and disabled through register bits without a disable depth.
 
-The rx_replenish_retry timer posts buffers to the copy engine rings and
-ath11k_core_reconfigure_on_crash() does not stop it, so it can fire on
-the zeroed rings too. Stop it before the copy engine cleanup, as
-ath11k_ahb_stop() does. Also test ATH11K_FLAG_CRASH_FLUSH in
-ath11k_ce_send() before it reaps a ring rather than after.
+On IPQ8074 (AHB) this shows up when a failed recovery (forced with a
+test patch) is followed by another firmware crash: the recovery reports
+success, but TX completions stop, TX fails with "failed to transmit
+frame -12" and the firmware asserts again repeatedly. With this change
+the same sequence recovered 3 out of 3 times. The pcic change is
+compile-tested only.
 
-Tested-on: IPQ8074 hw2.0 AHB WLAN.HK.2.12-01460-QCAHKSWPL_SILICONZ-1
+Tested-on: IPQ8074 hw2.0 AHB WLAN.HK.2.9.0.1-02146-QCAHKSWPL_SILICONZ-1
 
-Fixes: 32be3ca4cf78 ("wifi: ath11k: HAL SRNG: don't deinitialize and re-initialize again")
+Fixes: f7a74e131d3f ("wifi: ath11k: disable interrupts during firmware crash recovery")
+Signed-off-by: Florian Maurer <fmaurer@disroot.org>
 Signed-off-by: Julius Bairaktaris <julius@bairaktaris.de>
 ---
-v3: record whether the CE rings are set up in ATH11K_FLAG_CE_RINGS_SETUP and
-let ath11k_ce_cleanup_pipes() return while it is clear, instead of testing HAL
-srng fields in the CE layer (Baochen Qiang, v1); stop rx_replenish_retry before
-the CE cleanup; test CRASH_FLUSH in ath11k_ce_send() before reaping.
+v3: new in this series, from Florian Maurer's series [1], unchanged.
+[1] https://lore.kernel.org/r/cover.1793531790.git.fmaurer@disroot.org
 
- drivers/net/wireless/ath/ath11k/ce.c   |  9 ++++++---
- drivers/net/wireless/ath/ath11k/core.c | 10 +++++-----
- drivers/net/wireless/ath/ath11k/core.h |  1 +
- 3 files changed, 12 insertions(+), 8 deletions(-)
+ drivers/net/wireless/ath/ath11k/ahb.c  | 4 ++--
+ drivers/net/wireless/ath/ath11k/pcic.c | 4 ++--
+ 2 files changed, 4 insertions(+), 4 deletions(-)
 
-diff --git a/drivers/net/wireless/ath/ath11k/ce.c b/drivers/net/wireless/ath/ath11k/ce.c
-index 1e08b0970b14..af08a2a24c6d 100644
---- a/drivers/net/wireless/ath/ath11k/ce.c
-+++ b/drivers/net/wireless/ath/ath11k/ce.c
-@@ -718,6 +718,9 @@ int ath11k_ce_send(struct ath11k_base *ab, struct sk_buff *skb, u8 pipe_id,
- 	u8 byte_swap_data = 0;
- 	int num_used;
+diff --git a/drivers/net/wireless/ath/ath11k/ahb.c b/drivers/net/wireless/ath/ath11k/ahb.c
+index 27d01411b6e9..3ff7d5f27f5e 100644
+--- a/drivers/net/wireless/ath/ath11k/ahb.c
++++ b/drivers/net/wireless/ath/ath11k/ahb.c
+@@ -235,9 +235,9 @@ static void __ath11k_ahb_ext_irq_disable(struct ath11k_base *ab)
+ 	for (i = 0; i < ATH11K_EXT_IRQ_GRP_NUM_MAX; i++) {
+ 		struct ath11k_ext_irq_grp *irq_grp = &ab->ext_irq_grp[i];
  
-+	if (test_bit(ATH11K_FLAG_CRASH_FLUSH, &ab->dev_flags))
-+		return -ESHUTDOWN;
-+
- 	/* Check if some entries could be regained by handling tx completion if
- 	 * the CE has interrupts disabled and the used entries is more than the
- 	 * defined usage threshold.
-@@ -740,9 +743,6 @@ int ath11k_ce_send(struct ath11k_base *ab, struct sk_buff *skb, u8 pipe_id,
- 			ath11k_ce_poll_send_completed(ab, pipe->pipe_num);
- 	}
- 
--	if (test_bit(ATH11K_FLAG_CRASH_FLUSH, &ab->dev_flags))
--		return -ESHUTDOWN;
+-		ath11k_ahb_ext_grp_disable(irq_grp);
 -
- 	spin_lock_bh(&ab->ce.ce_lock);
++		/* The IRQs are only enabled together with NAPI */
+ 		if (irq_grp->napi_enabled) {
++			ath11k_ahb_ext_grp_disable(irq_grp);
+ 			napi_synchronize(&irq_grp->napi);
+ 			napi_disable(&irq_grp->napi);
+ 			irq_grp->napi_enabled = false;
+diff --git a/drivers/net/wireless/ath/ath11k/pcic.c b/drivers/net/wireless/ath/ath11k/pcic.c
+index 2259adc3bbdc..2e7dfa8388b0 100644
+--- a/drivers/net/wireless/ath/ath11k/pcic.c
++++ b/drivers/net/wireless/ath/ath11k/pcic.c
+@@ -455,9 +455,9 @@ static void __ath11k_pcic_ext_irq_disable(struct ath11k_base *ab)
+ 	for (i = 0; i < ATH11K_EXT_IRQ_GRP_NUM_MAX; i++) {
+ 		struct ath11k_ext_irq_grp *irq_grp = &ab->ext_irq_grp[i];
  
- 	write_index = pipe->src_ring->write_index;
-@@ -866,6 +866,9 @@ void ath11k_ce_cleanup_pipes(struct ath11k_base *ab)
- 	struct ath11k_ce_pipe *pipe;
- 	int pipe_num;
- 
-+	if (!test_bit(ATH11K_FLAG_CE_RINGS_SETUP, &ab->dev_flags))
-+		return;
-+
- 	ath11k_ce_stop_shadow_timers(ab);
- 
- 	for (pipe_num = 0; pipe_num < ab->hw_params.ce_count; pipe_num++) {
-diff --git a/drivers/net/wireless/ath/ath11k/core.c b/drivers/net/wireless/ath/ath11k/core.c
-index 5f4e7fbe0b25..d6346e0ee047 100644
---- a/drivers/net/wireless/ath/ath11k/core.c
-+++ b/drivers/net/wireless/ath/ath11k/core.c
-@@ -2290,6 +2290,8 @@ int ath11k_core_qmi_firmware_ready(struct ath11k_base *ab)
- 		goto err_firmware_stop;
- 	}
- 
-+	set_bit(ATH11K_FLAG_CE_RINGS_SETUP, &ab->dev_flags);
-+
- 	ret = ath11k_dp_alloc(ab);
- 	if (ret) {
- 		ath11k_err(ab, "failed to init DP: %d\n", ret);
-@@ -2340,12 +2342,14 @@ static int ath11k_core_reconfigure_on_crash(struct ath11k_base *ab)
- 	ath11k_dp_pdev_free(ab);
- 	ath11k_cfr_deinit(ab);
- 	ath11k_spectral_deinit(ab);
-+	timer_delete_sync(&ab->rx_replenish_retry);
- 	ath11k_ce_cleanup_pipes(ab);
- 	ath11k_wmi_detach(ab);
- 	ath11k_dp_pdev_reo_cleanup(ab);
- 	mutex_unlock(&ab->core_lock);
- 
- 	ath11k_dp_free(ab);
-+	clear_bit(ATH11K_FLAG_CE_RINGS_SETUP, &ab->dev_flags);
- 	ath11k_hal_srng_clear(ab);
- 
- 	ab->free_vdev_map = (1LL << (ab->num_radios * TARGET_NUM_VDEVS(ab))) - 1;
-@@ -2354,15 +2358,11 @@ static int ath11k_core_reconfigure_on_crash(struct ath11k_base *ab)
- 
- 	ret = ath11k_core_qmi_firmware_ready(ab);
- 	if (ret)
--		goto err_hal_srng_deinit;
-+		return ret;
- 
- 	clear_bit(ATH11K_FLAG_RECOVERY, &ab->dev_flags);
- 
- 	return 0;
+-		ath11k_pcic_ext_grp_disable(irq_grp);
 -
--err_hal_srng_deinit:
--	ath11k_hal_srng_deinit(ab);
--	return ret;
- }
- 
- void ath11k_core_halt(struct ath11k *ar)
-diff --git a/drivers/net/wireless/ath/ath11k/core.h b/drivers/net/wireless/ath/ath11k/core.h
-index a0d725923ef2..593e54c59737 100644
---- a/drivers/net/wireless/ath/ath11k/core.h
-+++ b/drivers/net/wireless/ath/ath11k/core.h
-@@ -288,6 +288,7 @@ enum ath11k_dev_flags {
- 	ATH11K_FLAG_DEVICE_INIT_DONE,
- 	ATH11K_FLAG_MULTI_MSI_VECTORS,
- 	ATH11K_FLAG_FTM_SEGMENTED,
-+	ATH11K_FLAG_CE_RINGS_SETUP,
- };
- 
- enum ath11k_monitor_flags {
++		/* The IRQs are only enabled together with NAPI */
+ 		if (irq_grp->napi_enabled) {
++			ath11k_pcic_ext_grp_disable(irq_grp);
+ 			napi_synchronize(&irq_grp->napi);
+ 			napi_disable(&irq_grp->napi);
+ 			irq_grp->napi_enabled = false;
 -- 
 2.53.0
 
