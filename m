@@ -1,87 +1,88 @@
-Authentication-Results: smtp.subspace.kernel.org; arc=none smtp.remote-ip=209.85.218.43
+Authentication-Results: smtp.subspace.kernel.org; arc=none smtp.remote-ip=209.85.218.44
 ARC-Seal: i=1; d=subspace.kernel.org; s=arc20261015; a=rsa-sha256; cv=none;
-	t=1795302456;
-	b=DdsfGN3Afu9Ip034kmutdWYF2fCk5W7tvaYdv4oeKYqyWR6bIQHgYq7FvBQ8csBu/NwU
-	 Fwb7Cz/Zj7oyKjODySuyiXi10KXBoNE85DVe2ZwdUuYbuaSQubWXW2ox3inJVva3f8Bx+
-	 Q3g4Jwh2Px+SnmMkS9m3qRHGmI79m6u6oB+juGvxDRdw76zI8aQ6tgKuL25s0WvGyH7PH
-	 /pD/ZYaWkcTUPgxSloIxr+NQNl5HOSNv+St4+aIl1ymo2EahlWu+kuCCc4+LsDSxbZbIw
-	 3r096WgVUGstyKmaHULUIT0HT8YqWHp1xVIF7fveB96eQ5VfYOLKBlxc9hiaN4uK5zg==
+	t=1795302457;
+	b=EqysU9EhmXtMzNDAEwtdEFanYK8jWISsva/hTTqz/M5AoRlgucCqjoENcyNKfE2hTGNg
+	 +REw6TR0A9KaWPTyBLs53U/v57itiWmqtOgMMLwFtxYayDLQUUrjVA5yeKy0bfjj7BcWe
+	 BZrQ9NMfCKWlPwGHDYGLoUBATYbdq+GMFn8kU8dqWrFeejiiSr7RtPZUr0NSWipJnXsTr
+	 QuHewHhsQKOs9G/a3aLm9LoyIBxjyHT+ERDNCMDUvKkj0wBWHMophopi9WjM3r0XRo4+5
+	 MZhKKb7qguCAxa0BzOmIWxN+2DmarmQq/fBU4dOP0bYKAifor4/yjtloj++dgnwzSAg==
 ARC-Message-Signature: i=1; d=subspace.kernel.org; s=arc20261015;
-	a=rsa-sha256; c=relaxed/relaxed; t=1795302456;
+	a=rsa-sha256; c=relaxed/relaxed; t=1795302457;
 	h=DMARC-Filter:Received:DKIM-Signature:X-Google-DKIM-Signature:
 	 X-Forwarded-Encrypted:X-Gm-Message-State:X-Gm-Gg:X-Received:Received:
-	 From:To:Cc:Subject:Date:Message-ID:X-Mailer:MIME-Version:
-	 Content-Transfer-Encoding;
-	bh=igKYQHJVDDl0zX8yUvthZX0km4xkBGZbqrADIe6BmoI=;
-	b=3iA07FNyJCJ0FtCxJUGWXsl9SJnOPJowdiTVkAPSuo8EX6Bxjy5kZtsGqhwmhMIwnyTK
-	 1Qno8Lj111d2W5PI17/vidsnZkdDexegkjzYixZCzhHEv9Op/HQtordtumXNVZzmpZG9A
-	 EAMYanGrNtQZpo89Z6lgNc1FfqGIvuH2FE+tPT3qG1HnOOILbLnES0fNmZxwZx0F8Ro7i
-	 r3H72JMZz2iLWc4bWF5yhZzebBsL2sdqFHOhx1Nv1gjrTB3ji7LDIMmBvTihQ0p2Tj85U
-	 iZByEEnSO3xU5yYQXZ8aMDiH3STfYY9RrgHfm6xNPRmGIQK5tYvIWj7D6ua0U/EAEbg==
+	 From:To:Cc:Subject:Date:Message-ID:X-Mailer:In-Reply-To:References:
+	 MIME-Version:Content-Transfer-Encoding;
+	bh=gI3U6dUlp30v59HKfCtRqIsiBkmd37Mua00ns5/+cmw=;
+	b=b7u6jyrexshE74RccOsU8qesQcUrA7rlMhLnMp/DSskGui2VKyBF55WtB3zVhEJeHI/F
+	 5ZaGqkcAEshVfMiPFuidZTr2uLVD/t1VKwugBKITBxeFlnll5/IT+akN37u7SQwjysW16
+	 pPRecz8GpagNOgelXpeSBljIaJteUHgc8w8Ow6Pv4RhHqynex4EHRAuKUVepZBVJ4/jH4
+	 KeKzad7APBi4dBTNGSPFNmJ/ttvSjOz9Voqbkw8KV7tu5pZLLHkipZCO/YQyanw4n4P82
+	 BeRZsmYXMHOThPEmejOm2oJc53sdYxnBEVSzHwAicBfkSSfl/SZagdq34t3AMod5YMw==
 ARC-Authentication-Results: i=1; smtp.subspace.kernel.org; 
 	dmarc=pass header.from=bairaktaris.de;
 	spf=pass smtp.mailfrom=bairaktaris.de;
-	dkim=pass header.d=bairaktaris.de header.i=@bairaktaris.de header.a=rsa-sha256 header.s=google header.b=hPeTQGbz;
-	arc=none smtp.remote-ip=209.85.218.43
-Received: from mail-ej1-f43.google.com (mail-ej1-f43.google.com [209.85.218.43])
+	dkim=pass header.d=bairaktaris.de header.i=@bairaktaris.de header.a=rsa-sha256 header.s=google header.b=AKZubi4o;
+	arc=none smtp.remote-ip=209.85.218.44
+Received: from mail-ej1-f44.google.com (mail-ej1-f44.google.com [209.85.218.44])
 	(using TLSv1.3 with cipher TLS_AES_128_GCM_SHA256 (128/128 bits)
 	 key-exchange X25519 server-signature ECDSA (prime256v1) server-digest SHA256)
 	(No client certificate requested)
-	by smtp.subspace.kernel.org (Postfix) with ESMTPS id BA85C606A32A
-	for <linux-wireless@vger.kernel.org>; Sat, 21 Nov 2026 23:07:35 +0000 (UTC)
-DMARC-Filter: OpenDMARC Filter v1.4.2 smtp.subspace.kernel.org BA85C606A32A
+	by smtp.subspace.kernel.org (Postfix) with ESMTPS id 4286C606A33F
+	for <linux-wireless@vger.kernel.org>; Sat, 21 Nov 2026 23:07:37 +0000 (UTC)
+DMARC-Filter: OpenDMARC Filter v1.4.2 smtp.subspace.kernel.org 4286C606A33F
 Authentication-Results: smtp.subspace.kernel.org; dmarc=pass (p=reject dis=none) header.from=bairaktaris.de
 Authentication-Results: smtp.subspace.kernel.org; spf=pass smtp.mailfrom=bairaktaris.de
 Authentication-Results: smtp.subspace.kernel.org;
-	dkim=pass (2048-bit key) header.d=bairaktaris.de header.i=@bairaktaris.de header.a=rsa-sha256 header.s=google header.b=hPeTQGbz
-Received: by mail-ej1-f43.google.com with SMTP id a640c23a62f3a-c40e30c26a4so691884166b.0
-        for <linux-wireless@vger.kernel.org>; Sat, 21 Nov 2026 15:07:35 -0800 (PST)
+	dkim=pass (2048-bit key) header.d=bairaktaris.de header.i=@bairaktaris.de header.a=rsa-sha256 header.s=google header.b=AKZubi4o
+Received: by mail-ej1-f44.google.com with SMTP id a640c23a62f3a-c516a574bffso21143966b.3
+        for <linux-wireless@vger.kernel.org>; Sat, 21 Nov 2026 15:07:37 -0800 (PST)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=bairaktaris.de; s=google; t=1795302454; x=1795907254; darn=vger.kernel.org;
-        h=content-transfer-encoding:mime-version:message-id:date:subject:cc
-         :to:from:from:to:cc:subject:date:message-id:reply-to:content-type;
-        bh=igKYQHJVDDl0zX8yUvthZX0km4xkBGZbqrADIe6BmoI=;
-        b=hPeTQGbz8hGHSFMLSylMHUdV0yOWh2Gp+4awl/dtbq1M0dC5IfwIdIcBXCF31qDv9+
-         uf1eIWK9EaUPLJL4ch+99OyznrYhJorBTLmHyz3+SoDv0A6ctMPXOQsAAJCQENYKb+Ag
-         uo3HVGef4YJ0NKHJ9/dqipoJ1dCncherFnnfbkNEQlzn9peiyPK6/Hju80fJIAZHFbRD
-         ql4EQgathdA9CywhrqEQkZsb7oH+nM4OBqcu9oZI0hqjc7aSsAVM34IIuXNMvPKLtEzT
-         ht3cxxn0gPMXA56142cipeDiPq9IPwv4FuurLAs6BbQwcGkpsZ9U3/SeIdzI/gZqtG3w
-         OcqA==
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=1e100.net; s=20260707; t=1795302454; x=1795907254;
-        h=content-transfer-encoding:mime-version:message-id:date:subject:cc
-         :to:from:x-gm-gg:x-gm-message-state:from:to:cc:subject:date
+        d=bairaktaris.de; s=google; t=1795302455; x=1795907255; darn=vger.kernel.org;
+        h=content-transfer-encoding:mime-version:references:in-reply-to
+         :message-id:date:subject:cc:to:from:from:to:cc:subject:date
          :message-id:reply-to:content-type;
-        bh=igKYQHJVDDl0zX8yUvthZX0km4xkBGZbqrADIe6BmoI=;
-        b=bHxVVTJl3Fibflt1a6G4jG8JVPLPkMGF+AYKzX125qCuclsxwBGCBfQKmkMEoFBHtJ
-         kMdN7bdF5j1kOYUuFhpQxd3niQEHwTEiGQzsGjO9dMtWCGA3Yms7Auj4JiNzTJNX09n4
-         /KKn3hRRz/gNdIeT2D7pWFJzlQ/DEtzLyk6K/5tCTb4yZpfokuie/bLiHninB76NkgZs
-         4aehkrZjf3Ff1kiA0EGU3xqNDHQZCd71+35ufEy22Zneph6DfFTK1kfJUwq79x2gdgtM
-         MKZ5R1DeI1krQMIpVODep8Qwym8rHKAcJtL8SQgaWQ43NPimzkJba9QUrAPHe20sFRUl
-         BqXw==
-X-Forwarded-Encrypted: i=1; AL+hErGslAtiiCqntKeHIK/TXWeVQApJWSAimwoULcHA3KB7qINUWN7SXjmSuA/WRqtoAAE2PZcCi32zyz0szORPKg==@vger.kernel.org
-X-Gm-Message-State: APuU4Z8YfVcdgb56FU8s+icDFTD4PsPTqzckfNjW3OebVWQa25lM+6qe
-	PR2UeH/RWF0k2tk4zEIQtLIYS+UPohoJXrhwFdGGI9Q0u4OdpCGVW/KFMxul4E6Crw==
-X-Gm-Gg: AZFdTZcVPy5PHFyAf1h2MvbnDLHVXYi8qJ48RkzFL2tGwn+tNV71WTxX36ARs2Ah9Qs
-	/G9Xrp//fouTQTLY0KDTEJMNuTFdKMve5glSMI/aq4EGLMhC5XlEDxu45LOs7ApgvaZoJAEl5sg
-	Y0uMmPOr7FNpp+1J9Vv6VgH0nbXTQKF0dEYZ4GVMktb/PVNsBBYmRjWNo5onN6WNSdWLjC7opgE
-	aXhZiUp0duPrefnzX+Lz3YXx0u6Te+AMqDpDmYBrSxm6m0WNS/f18XkvnlhcnIe/eGo+DCyj+Ba
-	vwusVaErU4iT4TXC8/rDJRClRSV6JVsANreb8kxNPTn9PkaFlO4597UhbcrN7sOPSpB9Doyooc/
-	jkRizM9cwvNc2JoFpnjdTcFdDNYPb1IXozdUfLSmpe8vbCaKhYfww3xA03Kbk0oylkBg4i3lV5m
-	9K6DmMMMOH8RnhJCs3oaMIpcamfg3BvLXzJRIDP8kFtQ8WTPX3sC4R5faBAIOaOrnl1/4idLwQk
-	nPOCwBrp7AJXTx+qLu6nVHPUMlicnSQh+NB56ORw/blkNvcCY1E7VhtiI8I0oTHdTOLZAO2l8Qg
-	Kci07OgQXGTqnaDq5iU2XpeqjplTxa+l/GWG3nGfl7eT4BoU+z3z7mjplMCjBfZ6TA/iSD+YAaA
-	b+IVHk43Z6a6j4Mr/b3dGQFeMY+HXcs/PLAQBOxZ3nQOlQ2+mE4wQGfauf6WMisKzBcBKMcUScK
-	bQrBGzf7P9KtznfiFk/9Scj5SYFmEpwZs4Ox1L6THYVSkPkq6bcPijCuvlI8/DoSUaDF98QLR8T
-	ilfNdFlQZHV4dWGsIb7G5MKMfKobAkZBoAZKSfJDNRHNyQ67xdpySGYNCHNHZ6DQd6CH/QykQ3G
-	QNOAvasI2yGRlKNtRFvRcbO6AtPHWF88lPz0ue249GxwD4BYBe+Y9fwuD1uEKVPR252a3tReK2c
+        bh=gI3U6dUlp30v59HKfCtRqIsiBkmd37Mua00ns5/+cmw=;
+        b=AKZubi4otobKsA3C7KNDJTnh2xGTU6QkmoaLoeya3i0adiyTgnlv/EAJdwbueF2IYQ
+         C9ChBOEaPMStkaQe4K/JWdNFSSdc3t/XjyZJdagWdnM6VjOlSGbYa/dwyHkfDuxuCJRF
+         3Tf++Hn2NFeU8zgvkjtMKTD+KHlly8/2vLa1aiVtSZp7kd6peIjTKroQVeMKQ+1xEnRs
+         0Y9uAPRtWvTMMI0cGmKetxwHQViblVZDN+8HfcyNB2ctGfnZvzDn2HXFkYmwJ4h20Um8
+         LfMpDTgZ1s0BeqOoZAb0s8+5h4WtN0pw+oUh3/Y44NGLBU4GLcKbskB/zCI9f0tkpZoa
+         kWhg==
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+        d=1e100.net; s=20260707; t=1795302455; x=1795907255;
+        h=content-transfer-encoding:mime-version:references:in-reply-to
+         :message-id:date:subject:cc:to:from:x-gm-gg:x-gm-message-state:from
+         :to:cc:subject:date:message-id:reply-to:content-type;
+        bh=gI3U6dUlp30v59HKfCtRqIsiBkmd37Mua00ns5/+cmw=;
+        b=0ddnR5sg/86bo/GzbBEuGUovmTJn+rw/tafHy1ndVJ0bP3YOw+jPhdru/ZOqgi1J7z
+         mCzLAonq+iBs+Mqc47vyq4orjDstWvxZwpsZfzpUOg19kEd57KR1xPYaJMcT9CnqizPD
+         YApy1Wu4+vAPE0BpUzMk3F4mnkwgqqhYFyT0DjXvFrookurVgifLge7jgynKi9MOzpHd
+         8I3A09vOuhTxbnbh+NuaU7byTlNwOamvJ78TuY1H6RyyCRufNnj6OgXdYuR/McsXtD7c
+         KUh83a+Sm4TWv/Elr79eayM1U1UiaNTNARRmPpZv0Vaay9y/azSHDcjR9RTzPXsIxd+d
+         p1iA==
+X-Forwarded-Encrypted: i=1; AL+hErHNsp5Gqfx735VSbldh+KyaPUozNAZ9i7lFYmcjye+XI2xCuPHNuKtu8syyLAIX6768wwwBaPU5LXHWDTGjYQ==@vger.kernel.org
+X-Gm-Message-State: APuU4Z/dVUTryl3gxnihk3SvOtbArFbKGbTUGxferH4nKCXSyMzFAGLh
+	gWr24hPMHpsaC6TLMoNrHC3NeBUQzEY2qeZy87smp64eMBp10EsfXhzzjrq158qjbA==
+X-Gm-Gg: AZFdTZcrShZ7LrkhwgikHaQjXpp/0Tz+MIAlQz4yD/6AXblZtLw9gdd0jjUvjl4hLgs
+	YuVVeqBA0Ws8jRU7cGjsTFiu5tBqh02LMjKJtLS3YXQVfct7IphzO1IunB4gHaLiFtZGfLIe1xT
+	0DUgXrmbZLSr7RDWj3ZfZptE8mXmEPBi4Az93LyUWDYhirlvg5mdAmZ5vtgPupvObX0CNKsx1zg
+	EUulYPFYf7oHsHcb3iybRrFNZe9MVUhVxmAZY94Ir36UQj4TIMLojBUsNryPrprDd4mYbcq6t8v
+	BAj9zAS98KVFrGe9dRcl7YHpmXHy1WbD4Je/izLcuFQIoiw1mzlE3xCTfP3EVfyTF1ewyb6YxJp
+	XAaGAuLWHpFcp6Onkt6MUCuYISQNt+2Fr5EaBGh3FRAuyCzRThkDmi6cz6aCKEgsWqQ3M56D3UE
+	ssGIZIU7d02Fxu5ZSC7ap9J8I9RJH4Nsjg/VU4DYVFWj/D/R9NAsm1CQJjqWTSVFwoMLdg74d2y
+	XF7FTXODcM6BH5BmvKbNdLjWXBFTLq3z50sYGQjvfwMnzA6N4dcvNHBZMZH8LpRdeYfLd0xW/oF
+	E2xUpywIk9iO60LzlRHHUhqMF2TPx7u1U2m0I+ahvl6wX2OIbIBO5yex/JdlCo+vJQOLEMygV5j
+	cI7G4emc+9PfXG+fD01Z2mBl0qnXNvk1yeset53qGV4lsaLBTIW9jeKMD0cnTVOJXYapfJPibe+
+	NQ8eh3nStRKrIKKFiQ212LiTNxOK0j6AaaXGFdAVk21jjPvxMXaipGET6u0c/5KH6FW2UFhRjUp
+	fVFvs3IcDgRl/zpzqyFQI+bl2vlNWd68wCv70ZyynpaV6luS+0CnL5HvbvU0+TCvwR0y8OJitfM
+	c0iVEKa0PBHK7IQgHdXo5dpOD7XwP4L9iKC35C4qGm1c4iRWUnMT71iuGgFzVfrdhVD5BdudYQc
 	=
-X-Received: by 2002:a17:906:4fd1:b0:c46:7de7:e41d with SMTP id a640c23a62f3a-c51318a03d9mr792763466b.18.1795302453260;
-        Sat, 21 Nov 2026 15:07:33 -0800 (PST)
+X-Received: by 2002:a17:907:d406:b0:c41:8e21:4d5a with SMTP id a640c23a62f3a-c513a47e37fmr603561966b.5.1795302455657;
+        Sat, 21 Nov 2026 15:07:35 -0800 (PST)
 Received: from Desktop.tail070c67.ts.net (p200300f2470edf0034412c7e8f5a5e7a.dip0.t-ipconnect.de. [2003:f2:470e:df00:3441:2c7e:8f5a:5e7a])
-        by smtp.gmail.com with ESMTPSA id a640c23a62f3a-c513afc1b40sm242721466b.54.2026.11.21.15.07.30
+        by smtp.gmail.com with ESMTPSA id a640c23a62f3a-c513afc1b40sm242721466b.54.2026.11.21.15.07.33
         (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
-        Sat, 21 Nov 2026 15:07:31 -0800 (PST)
+        Sat, 21 Nov 2026 15:07:34 -0800 (PST)
 From: Julius Bairaktaris <julius@bairaktaris.de>
 To: Jeff Johnson <jjohnson@kernel.org>
 Cc: ath11k@lists.infradead.org,
@@ -106,10 +107,12 @@ Cc: ath11k@lists.infradead.org,
 	Pradeep Kumar Chitrapu <quic_pradeepc@quicinc.com>,
 	Sathishkumar Muruganandam <quic_murugana@quicinc.com>,
 	Muna Sinada <quic_msinada@quicinc.com>
-Subject: [PATCH ath-next v3 00/13] wifi: ath11k: firmware crash recovery fixes
-Date: Sun, 22 Nov 2026 00:07:18 +0100
-Message-ID: <20261121230731.1206043-1-julius@bairaktaris.de>
+Subject: [PATCH ath-next v3 01/13] wifi: ath11k: initialise the CE descriptor waitqueue once per device
+Date: Sun, 22 Nov 2026 00:07:19 +0100
+Message-ID: <20261121230731.1206043-2-julius@bairaktaris.de>
 X-Mailer: git-send-email 2.53.0
+In-Reply-To: <20261121230731.1206043-1-julius@bairaktaris.de>
+References: <20261121230731.1206043-1-julius@bairaktaris.de>
 X-Mailing-List: linux-wireless@vger.kernel.org
 List-Id: <linux-wireless.vger.kernel.org>
 List-Post: <mailto:linux-wireless@vger.kernel.org>
@@ -121,115 +124,78 @@ Precedence: list
 MIME-Version: 1.0
 Content-Transfer-Encoding: 8bit
 
-Firmware crash recovery on IPQ8074 resets a waitqueue under a sleeping
-WMI sender (1/13), frees radios and ring memory still in use when it
-fails (2/13, 3/13), sends on rings it has not rebuilt yet (4/13), and
-lets cfg80211 commands crash the restarting firmware again (5/13).
+Firmware crash recovery reinitialises tx_ce_desc_wq in
+ath11k_connect_pdev_htc_service(), reached through ath11k_core_start()
+and ath11k_wmi_connect(), while a WMI command on a device without credit
+flow can still sleep on it in ath11k_wmi_cmd_send(). finish_wait() then
+unlinks the waiter from the reset list head:
 
-6/13 to 8/13 are Florian Maurer's AHB recovery fixes [1], kept with his
-authorship and sign-off: ext IRQs disabled twice after a failed
-recovery, the RPMSG Kconfig dependency the SSR notifier needs, and TX
-stopped in the QCOM_SSR_BEFORE_SHUTDOWN notification.
+  list_del corruption. prev->next should be ffffffc084293648, but was
+  ffffff80075109a8. (prev=ffffff80075109a8)
+  WARNING: CPU: 2 PID: 1782 at lib/list_debug.c:62
+  __list_del_entry_valid_or_report+0x134/0x174
+  CPU: 2 UID: 101 PID: 1782 Comm: hostapd
+  Call trace:
+   __list_del_entry_valid_or_report+0x134/0x174 (P)
+   finish_wait+0x68/0xb8
+   ath11k_wmi_cmd_send+0x150/0x2f4 [ath11k]
+   ath11k_wmi_vdev_set_param_cmd+0x64/0xd8 [ath11k]
+   ath11k_mac_op_bss_info_changed+0xe8/0xf6c [ath11k]
+   drv_link_info_changed+0x128/0x180 [mac80211]
+   ieee80211_link_info_change_notify+0xe0/0x100 [mac80211]
+   ieee80211_change_bss+0x1bc/0x250 [mac80211]
+   nl80211_set_bss+0x1a0/0x328 [cfg80211]
 
-9/13 to 11/13 fix error and teardown paths of the QMI service and the
-AHB probe that the following patch relies on. 12/13 stops the restart
-work of an earlier crash before remoteproc takes WCSS down: a crash
-while that work sets up the rings ends in an asynchronous SError, and a
-restart work that outlives its firmware waits for the dead firmware and
-then talks to the next one. 13/13 keeps the thermal cooling devices
-across a recovery.
+Initialise the queues once in ath11k_core_alloc().
 
-Tested on a Xiaomi AX3600 (IPQ8074 hw2.0, firmware
-WLAN.HK.2.12-01460-QCAHKSWPL_SILICONZ-1) running both radios as APs,
-with the series on OpenWrt's 6.18 kernel and wireless backports. One
-run crashes the firmware once through simulate_fw_crash; eight more
-force a second crash through the remoteproc debugfs "crash" file at
-growing delays after "remote processor q6wcss is now up", so that it
-arrives before the QMI handshake, while the host capabilities are sent,
-during the board file download, during the ring setup and during the
-mac80211 reconfiguration. In all nine runs the router kept running, both
-radios came back and the firmware took the next simulate_fw_crash
-command; stations were associated again after the last run. In the run
-whose second crash arrives during ieee80211_reconfig(), mac80211 warns
-once in ieee80211_reconfig_stations(), as the station state cannot be
-set while the firmware is down, and the restart that follows recovers.
-After the 17 crashes both cooling devices are still registered and the
-hwmon temperatures read.
+Tested-on: IPQ8074 hw2.0 AHB WLAN.HK.2.12-01460-QCAHKSWPL_SILICONZ-1
 
-I used Claude (Anthropic) to help write these patches.
+Fixes: f951380a6022 ("ath11k: Disabling credit flow for WMI path")
+Reviewed-by: Baochen Qiang <baochen.qiang@oss.qualcomm.com>
+Tested-by: Florian Maurer <fmaurer@disroot.org> # IPQ8074 hw2.0 AHB WLAN.HK.2.9.0.1-02146 (backport to 6.18)
+Signed-off-by: Julius Bairaktaris <julius@bairaktaris.de>
+---
+v3: no change.
 
-v3:
-- 2/13: also leave the mac80211 registration and the debugfs tree alone
-  in the error path of ath11k_core_pdev_create() during a recovery
-  (found in review).
-- 3/13: Baochen Qiang pointed out on v1 that testing HAL srng fields in
-  the CE layer is a layer violation. A recovery that fails before
-  ath11k_ce_init_pipes() still leaves the CE rings zeroed, and Florian
-  reproduced the resulting NULL dereference in ath11k_ce_cleanup_pipes()
-  on v2. The ring state is now core state: ATH11K_FLAG_CE_RINGS_SETUP is
-  set after ath11k_ce_init_pipes() and cleared where
-  ath11k_hal_srng_clear() zeroes the rings, and ath11k_ce_cleanup_pipes()
-  returns while it is clear. The rx_replenish_retry timer is stopped
-  before the CE cleanup, and ath11k_ce_send() tests CRASH_FLUSH before it
-  reaps a ring.
-- 4/13: the error path sets CRASH_FLUSH again before ath11k_dp_free();
-  the QMI FW_READY handler clears CRASH_FLUSH only on the first boot
-  (found in review).
-- 5/13: RECOVERY is tested on every try of the send loops, the CE
-  descriptor waiters are woken when the recovery starts, and FW_READY
-  clears RECOVERY only on the first boot (found in review).
-- 6/13 to 8/13: new, Florian Maurer's series [1].
-- 9/13: new, the QMI handle leaked when the QMI service init fails
-  (found in review).
-- 10/13: new, a failing IRQ setup in the AHB probe left the booted
-  firmware and the QMI client behind (found in review).
-- 11/13: new, queued QMI events leaked at teardown (found in review).
-- 12/13: new; an earlier version gated the register accessors while WCSS
-  was down, which review showed left the restart work running into the
-  next firmware.
-- 13/13: new, the cooling devices were unregistered on every recovery
-  and never registered again.
-- Rebased on ath-next.
+ drivers/net/wireless/ath/ath11k/core.c | 5 +++++
+ drivers/net/wireless/ath/ath11k/wmi.c  | 1 -
+ 2 files changed, 5 insertions(+), 1 deletion(-)
 
-v2: https://lore.kernel.org/r/20261018210153.1925962-1-julius@bairaktaris.de
-v1: https://lore.kernel.org/r/20260805192129.61113-1-julius@bairaktaris.de
-[1] https://lore.kernel.org/r/cover.1793531790.git.fmaurer@disroot.org
-
-Florian Maurer (3):
-  wifi: ath11k: don't disable ext IRQs twice
-  wifi: ath11k: depend on RPMSG instead of selecting it
-  wifi: ath11k: ahb: stop TX before WCSS is reset on a firmware crash
-
-Julius Bairaktaris (10):
-  wifi: ath11k: initialise the CE descriptor waitqueue once per device
-  wifi: ath11k: keep the radios when a firmware recovery fails
-  wifi: ath11k: keep the srng allocations when a firmware recovery fails
-  wifi: ath11k: clear CRASH_FLUSH only after recovery rebuilds the rings
-  wifi: ath11k: hold back WMI commands while the firmware restarts
-  wifi: ath11k: release the QMI handle when the QMI service init fails
-  wifi: ath11k: ahb: configure the IRQs before the firmware is booted
-  wifi: ath11k: free the queued QMI events when the QMI service is torn
-    down
-  wifi: ath11k: stop the restart work before WCSS goes down
-  wifi: ath11k: keep the cooling device across a firmware recovery
-
- drivers/net/wireless/ath/ath11k/Kconfig |   3 +-
- drivers/net/wireless/ath/ath11k/ahb.c   | 135 +++++++-
- drivers/net/wireless/ath/ath11k/ahb.h   |   4 +
- drivers/net/wireless/ath/ath11k/ce.c    |  16 +-
- drivers/net/wireless/ath/ath11k/core.c  | 114 ++++++-
- drivers/net/wireless/ath/ath11k/core.h  |   5 +
- drivers/net/wireless/ath/ath11k/dp_tx.c |  11 +-
- drivers/net/wireless/ath/ath11k/htc.c   |  22 +-
- drivers/net/wireless/ath/ath11k/hw.h    |   1 +
- drivers/net/wireless/ath/ath11k/pcic.c  |   4 +-
- drivers/net/wireless/ath/ath11k/qmi.c   | 391 ++++++++++++++++++++----
- drivers/net/wireless/ath/ath11k/qmi.h   |  38 ++-
- drivers/net/wireless/ath/ath11k/wmi.c   |  44 ++-
- 13 files changed, 672 insertions(+), 116 deletions(-)
-
-
-base-commit: 1983b40acfcb3c3464b291c85977290a785bcfdc
+diff --git a/drivers/net/wireless/ath/ath11k/core.c b/drivers/net/wireless/ath/ath11k/core.c
+index 766ae27306f4..8e4dab61a300 100644
+--- a/drivers/net/wireless/ath/ath11k/core.c
++++ b/drivers/net/wireless/ath/ath11k/core.c
+@@ -2743,6 +2743,7 @@ struct ath11k_base *ath11k_core_alloc(struct device *dev, size_t priv_size,
+ 				      enum ath11k_bus bus)
+ {
+ 	struct ath11k_base *ab;
++	int i;
+ 
+ 	ab = kzalloc(sizeof(*ab) + priv_size, GFP_KERNEL);
+ 	if (!ab)
+@@ -2769,6 +2770,10 @@ struct ath11k_base *ath11k_core_alloc(struct device *dev, size_t priv_size,
+ 	INIT_LIST_HEAD(&ab->peers);
+ 	init_waitqueue_head(&ab->peer_mapping_wq);
+ 	init_waitqueue_head(&ab->wmi_ab.tx_credits_wq);
++
++	for (i = 0; i < ARRAY_SIZE(ab->wmi_ab.wmi); i++)
++		init_waitqueue_head(&ab->wmi_ab.wmi[i].tx_ce_desc_wq);
++
+ 	init_waitqueue_head(&ab->qmi.cold_boot_waitq);
+ 	INIT_WORK(&ab->restart_work, ath11k_core_restart);
+ 	INIT_WORK(&ab->update_11d_work, ath11k_update_11d);
+diff --git a/drivers/net/wireless/ath/ath11k/wmi.c b/drivers/net/wireless/ath/ath11k/wmi.c
+index 82f85df481cb..5f2412982229 100644
+--- a/drivers/net/wireless/ath/ath11k/wmi.c
++++ b/drivers/net/wireless/ath/ath11k/wmi.c
+@@ -9102,7 +9102,6 @@ static int ath11k_connect_pdev_htc_service(struct ath11k_base *ab,
+ 	ab->wmi_ab.wmi_endpoint_id[pdev_idx] = conn_resp.eid;
+ 	ab->wmi_ab.wmi[pdev_idx].eid = conn_resp.eid;
+ 	ab->wmi_ab.max_msg_len[pdev_idx] = conn_resp.max_msg_len;
+-	init_waitqueue_head(&ab->wmi_ab.wmi[pdev_idx].tx_ce_desc_wq);
+ 
+ 	return 0;
+ }
 -- 
 2.53.0
 
