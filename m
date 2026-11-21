@@ -1,88 +1,88 @@
-Authentication-Results: smtp.subspace.kernel.org; arc=none smtp.remote-ip=209.85.218.44
+Authentication-Results: smtp.subspace.kernel.org; arc=none smtp.remote-ip=209.85.218.48
 ARC-Seal: i=1; d=subspace.kernel.org; s=arc20261015; a=rsa-sha256; cv=none;
-	t=1795302457;
-	b=EqysU9EhmXtMzNDAEwtdEFanYK8jWISsva/hTTqz/M5AoRlgucCqjoENcyNKfE2hTGNg
-	 +REw6TR0A9KaWPTyBLs53U/v57itiWmqtOgMMLwFtxYayDLQUUrjVA5yeKy0bfjj7BcWe
-	 BZrQ9NMfCKWlPwGHDYGLoUBATYbdq+GMFn8kU8dqWrFeejiiSr7RtPZUr0NSWipJnXsTr
-	 QuHewHhsQKOs9G/a3aLm9LoyIBxjyHT+ERDNCMDUvKkj0wBWHMophopi9WjM3r0XRo4+5
-	 MZhKKb7qguCAxa0BzOmIWxN+2DmarmQq/fBU4dOP0bYKAifor4/yjtloj++dgnwzSAg==
+	t=1795302459;
+	b=ijQtormTYOwddtPgk8kghHUwsrKuIkcphPzK9CeI5Vd/ACj76Sx4A57y+6owketZpnG7
+	 BJ4EJ9LVwmPXXF07whVcycHtUVk8mWGiCoBV1LoJVB64ZeooqrQ/BePeoGCVwOuZV3Wrz
+	 RM4xz37Oby+khFfrOyuz6xG4xmHWtJZtdANEyiPplyS9cJv1IlOKCkkKWmYlWEyg4HRP0
+	 7x3DUwRiVlEjMVvXGLZZb+/j3f7io53w/hBvZl5KlLyGyBOxlZH6oFec4Rigvom6kD8Hk
+	 aPlLJT1O1GC1ELA0pwX3d5q73f+0ljffl8FUvPQi2Ha7kJvy6RUGMO4zgc/EzAFCcqA==
 ARC-Message-Signature: i=1; d=subspace.kernel.org; s=arc20261015;
-	a=rsa-sha256; c=relaxed/relaxed; t=1795302457;
+	a=rsa-sha256; c=relaxed/relaxed; t=1795302459;
 	h=DMARC-Filter:Received:DKIM-Signature:X-Google-DKIM-Signature:
 	 X-Forwarded-Encrypted:X-Gm-Message-State:X-Gm-Gg:X-Received:Received:
 	 From:To:Cc:Subject:Date:Message-ID:X-Mailer:In-Reply-To:References:
 	 MIME-Version:Content-Transfer-Encoding;
-	bh=gI3U6dUlp30v59HKfCtRqIsiBkmd37Mua00ns5/+cmw=;
-	b=b7u6jyrexshE74RccOsU8qesQcUrA7rlMhLnMp/DSskGui2VKyBF55WtB3zVhEJeHI/F
-	 5ZaGqkcAEshVfMiPFuidZTr2uLVD/t1VKwugBKITBxeFlnll5/IT+akN37u7SQwjysW16
-	 pPRecz8GpagNOgelXpeSBljIaJteUHgc8w8Ow6Pv4RhHqynex4EHRAuKUVepZBVJ4/jH4
-	 KeKzad7APBi4dBTNGSPFNmJ/ttvSjOz9Voqbkw8KV7tu5pZLLHkipZCO/YQyanw4n4P82
-	 BeRZsmYXMHOThPEmejOm2oJc53sdYxnBEVSzHwAicBfkSSfl/SZagdq34t3AMod5YMw==
+	bh=OPsfghuAOvZXGmgP8YNMyy86FtkIG7/XEGKOG2j+8RA=;
+	b=Iw36qsR2RDQIN4iTvyDjM5qa641L7jcW98R8+GZseHmJ/WymTnTqVC81z4DE3srW1Wcy
+	 OFIjqoIhsTY+HPXDU3X2sEzy243NjxZLv64Hf6G31gmr+olc56Iu85fLiEneSmfhWeuju
+	 wmydGQVgBgn+snamxKyz1+oFQHFIY1lpSX0ZY4kBOL33Vr7sN6iG6hmGy+6mZphuFk3dr
+	 LawJT7vHKs5gFa7ZedEeBrRP/HVvQpSkRdcuSLbNKDO6bMHEMB0WStSb6oWD6ktJKKHk+
+	 ELnVzZAP1Gp4YUC9JiqQVFNCYCBslWqaiNouMsA1wJG9lGilvPAH0LD1aSt0uf0Qm0A==
 ARC-Authentication-Results: i=1; smtp.subspace.kernel.org; 
 	dmarc=pass header.from=bairaktaris.de;
 	spf=pass smtp.mailfrom=bairaktaris.de;
-	dkim=pass header.d=bairaktaris.de header.i=@bairaktaris.de header.a=rsa-sha256 header.s=google header.b=AKZubi4o;
-	arc=none smtp.remote-ip=209.85.218.44
-Received: from mail-ej1-f44.google.com (mail-ej1-f44.google.com [209.85.218.44])
+	dkim=pass header.d=bairaktaris.de header.i=@bairaktaris.de header.a=rsa-sha256 header.s=google header.b=W0X2B71Z;
+	arc=none smtp.remote-ip=209.85.218.48
+Received: from mail-ej1-f48.google.com (mail-ej1-f48.google.com [209.85.218.48])
 	(using TLSv1.3 with cipher TLS_AES_128_GCM_SHA256 (128/128 bits)
 	 key-exchange X25519 server-signature ECDSA (prime256v1) server-digest SHA256)
 	(No client certificate requested)
-	by smtp.subspace.kernel.org (Postfix) with ESMTPS id 4286C606A33F
-	for <linux-wireless@vger.kernel.org>; Sat, 21 Nov 2026 23:07:37 +0000 (UTC)
-DMARC-Filter: OpenDMARC Filter v1.4.2 smtp.subspace.kernel.org 4286C606A33F
+	by smtp.subspace.kernel.org (Postfix) with ESMTPS id 2DC45606A69A
+	for <linux-wireless@vger.kernel.org>; Sat, 21 Nov 2026 23:07:39 +0000 (UTC)
+DMARC-Filter: OpenDMARC Filter v1.4.2 smtp.subspace.kernel.org 2DC45606A69A
 Authentication-Results: smtp.subspace.kernel.org; dmarc=pass (p=reject dis=none) header.from=bairaktaris.de
 Authentication-Results: smtp.subspace.kernel.org; spf=pass smtp.mailfrom=bairaktaris.de
 Authentication-Results: smtp.subspace.kernel.org;
-	dkim=pass (2048-bit key) header.d=bairaktaris.de header.i=@bairaktaris.de header.a=rsa-sha256 header.s=google header.b=AKZubi4o
-Received: by mail-ej1-f44.google.com with SMTP id a640c23a62f3a-c516a574bffso21143966b.3
-        for <linux-wireless@vger.kernel.org>; Sat, 21 Nov 2026 15:07:37 -0800 (PST)
+	dkim=pass (2048-bit key) header.d=bairaktaris.de header.i=@bairaktaris.de header.a=rsa-sha256 header.s=google header.b=W0X2B71Z
+Received: by mail-ej1-f48.google.com with SMTP id a640c23a62f3a-c505b2e1cb9so391287866b.2
+        for <linux-wireless@vger.kernel.org>; Sat, 21 Nov 2026 15:07:38 -0800 (PST)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=bairaktaris.de; s=google; t=1795302455; x=1795907255; darn=vger.kernel.org;
+        d=bairaktaris.de; s=google; t=1795302457; x=1795907257; darn=vger.kernel.org;
         h=content-transfer-encoding:mime-version:references:in-reply-to
          :message-id:date:subject:cc:to:from:from:to:cc:subject:date
          :message-id:reply-to:content-type;
-        bh=gI3U6dUlp30v59HKfCtRqIsiBkmd37Mua00ns5/+cmw=;
-        b=AKZubi4otobKsA3C7KNDJTnh2xGTU6QkmoaLoeya3i0adiyTgnlv/EAJdwbueF2IYQ
-         C9ChBOEaPMStkaQe4K/JWdNFSSdc3t/XjyZJdagWdnM6VjOlSGbYa/dwyHkfDuxuCJRF
-         3Tf++Hn2NFeU8zgvkjtMKTD+KHlly8/2vLa1aiVtSZp7kd6peIjTKroQVeMKQ+1xEnRs
-         0Y9uAPRtWvTMMI0cGmKetxwHQViblVZDN+8HfcyNB2ctGfnZvzDn2HXFkYmwJ4h20Um8
-         LfMpDTgZ1s0BeqOoZAb0s8+5h4WtN0pw+oUh3/Y44NGLBU4GLcKbskB/zCI9f0tkpZoa
-         kWhg==
+        bh=OPsfghuAOvZXGmgP8YNMyy86FtkIG7/XEGKOG2j+8RA=;
+        b=W0X2B71ZJTucaJ/Bp6BW0FMPpswkNXe4wtLaX7UfB//Om+KNYhFCIsdtFFLNxndHNm
+         YICs20ngVo+8diCreK2LjrLJTAbZ7PCPdp8dZiKlQTyHMnDuCrG+lvCS/Lqnd7jIG9Cq
+         9WGjq/2cqeeKNZFwVhX+IV9woP6jsBZ14CQl9Bl7coqT9WdJhbYwoKl3vpOJdG0Y2RFI
+         pmBlYZp6sWSu/FozQH2LPoAlmt0wYD0f9mObmQO9KSOPsYwQseRdN6qrOBl4aRI0man7
+         4CndfXdHLLitu3Ew3tJPmK27nJAoO8lr7QNJJuNvy/KrmQ8rhBAl0IgOhfxL6K/Dl7KB
+         q4jg==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=1e100.net; s=20260707; t=1795302455; x=1795907255;
+        d=1e100.net; s=20260707; t=1795302457; x=1795907257;
         h=content-transfer-encoding:mime-version:references:in-reply-to
          :message-id:date:subject:cc:to:from:x-gm-gg:x-gm-message-state:from
          :to:cc:subject:date:message-id:reply-to:content-type;
-        bh=gI3U6dUlp30v59HKfCtRqIsiBkmd37Mua00ns5/+cmw=;
-        b=0ddnR5sg/86bo/GzbBEuGUovmTJn+rw/tafHy1ndVJ0bP3YOw+jPhdru/ZOqgi1J7z
-         mCzLAonq+iBs+Mqc47vyq4orjDstWvxZwpsZfzpUOg19kEd57KR1xPYaJMcT9CnqizPD
-         YApy1Wu4+vAPE0BpUzMk3F4mnkwgqqhYFyT0DjXvFrookurVgifLge7jgynKi9MOzpHd
-         8I3A09vOuhTxbnbh+NuaU7byTlNwOamvJ78TuY1H6RyyCRufNnj6OgXdYuR/McsXtD7c
-         KUh83a+Sm4TWv/Elr79eayM1U1UiaNTNARRmPpZv0Vaay9y/azSHDcjR9RTzPXsIxd+d
-         p1iA==
-X-Forwarded-Encrypted: i=1; AL+hErHNsp5Gqfx735VSbldh+KyaPUozNAZ9i7lFYmcjye+XI2xCuPHNuKtu8syyLAIX6768wwwBaPU5LXHWDTGjYQ==@vger.kernel.org
-X-Gm-Message-State: APuU4Z/dVUTryl3gxnihk3SvOtbArFbKGbTUGxferH4nKCXSyMzFAGLh
-	gWr24hPMHpsaC6TLMoNrHC3NeBUQzEY2qeZy87smp64eMBp10EsfXhzzjrq158qjbA==
-X-Gm-Gg: AZFdTZcrShZ7LrkhwgikHaQjXpp/0Tz+MIAlQz4yD/6AXblZtLw9gdd0jjUvjl4hLgs
-	YuVVeqBA0Ws8jRU7cGjsTFiu5tBqh02LMjKJtLS3YXQVfct7IphzO1IunB4gHaLiFtZGfLIe1xT
-	0DUgXrmbZLSr7RDWj3ZfZptE8mXmEPBi4Az93LyUWDYhirlvg5mdAmZ5vtgPupvObX0CNKsx1zg
-	EUulYPFYf7oHsHcb3iybRrFNZe9MVUhVxmAZY94Ir36UQj4TIMLojBUsNryPrprDd4mYbcq6t8v
-	BAj9zAS98KVFrGe9dRcl7YHpmXHy1WbD4Je/izLcuFQIoiw1mzlE3xCTfP3EVfyTF1ewyb6YxJp
-	XAaGAuLWHpFcp6Onkt6MUCuYISQNt+2Fr5EaBGh3FRAuyCzRThkDmi6cz6aCKEgsWqQ3M56D3UE
-	ssGIZIU7d02Fxu5ZSC7ap9J8I9RJH4Nsjg/VU4DYVFWj/D/R9NAsm1CQJjqWTSVFwoMLdg74d2y
-	XF7FTXODcM6BH5BmvKbNdLjWXBFTLq3z50sYGQjvfwMnzA6N4dcvNHBZMZH8LpRdeYfLd0xW/oF
-	E2xUpywIk9iO60LzlRHHUhqMF2TPx7u1U2m0I+ahvl6wX2OIbIBO5yex/JdlCo+vJQOLEMygV5j
-	cI7G4emc+9PfXG+fD01Z2mBl0qnXNvk1yeset53qGV4lsaLBTIW9jeKMD0cnTVOJXYapfJPibe+
-	NQ8eh3nStRKrIKKFiQ212LiTNxOK0j6AaaXGFdAVk21jjPvxMXaipGET6u0c/5KH6FW2UFhRjUp
-	fVFvs3IcDgRl/zpzqyFQI+bl2vlNWd68wCv70ZyynpaV6luS+0CnL5HvbvU0+TCvwR0y8OJitfM
-	c0iVEKa0PBHK7IQgHdXo5dpOD7XwP4L9iKC35C4qGm1c4iRWUnMT71iuGgFzVfrdhVD5BdudYQc
+        bh=OPsfghuAOvZXGmgP8YNMyy86FtkIG7/XEGKOG2j+8RA=;
+        b=pP2Dnp+9wpI4Qmaabe73+a4T0cNRhqT/rNhUKXCzMgJ+KYShcXUTyw/v0taBFwtsce
+         5hVSv53/hRJ0fXvyOKjsb7m6XuN56HnaROqGN6yIhXLWXKagQipWWYF2MfwGVe3fiQXk
+         293x59bTKGHtIqdChTNSc0oJ3XjFiXLWB/xVgYEzDTtf1m1KMb0QFRNGfYcnYgPBStPl
+         zezuFBCoD8271ObGbsE1G06nmhF63A0x5o53+ac5/HmLqjKT+5s7rI9YwaDKOj36PBWt
+         0Gk2DG3Ca3ux/6w1PcyvDxPwwqxvGbZ4Nz5AsExvEpqa1dSN/maXuDnn8BXE5AUAU4+c
+         mucQ==
+X-Forwarded-Encrypted: i=1; AL+hErHsFbBifuqODrEO6w0adQY3pBVPS3IrHfixpkgRs9w+2r2AljfWuQV+xb2yQZhhzCo6tzeQNwriod2CVXfxiA==@vger.kernel.org
+X-Gm-Message-State: APuU4Z/1pativun7HRSKnsQ5tYX14LN3IP7pboA/hd5YUFI7Qz6kxwUl
+	1zj3WilowGTz8CBCnC6+qW1rbzXlDUQT4WO0phE9b7sZl97Tr6wDzpGArkAxRusWdQ==
+X-Gm-Gg: AZFdTZczjBsqSf3WNupebkYrK1ZLjz4vG68AD0+v9UJU0rXTGlPHrg82zOJT0Kq9CVu
+	86tC9PRxVooOjoKoIsHxPLafmgX4ViMQVhLDdOXnaKF7gkH1VSosXuT86UimtHWQifw2rXGQ8o2
+	KiZSBq7eKzOAdNT7z7kN9O7+0HrTJFh/+uW7hAmCVxged4IlY4Rb/4uh11iFSvyO/Yjmhbi5q0b
+	s+il7Y/jIsoakA0mJTx71Ubvs060JrbJSeGEsCg8uQaI+SUVSfZZ3GqnaEJde0OvsHjmB7A3Suj
+	rWnfTYmQ0RMALPGdhhqVISdgJH9r37kokZJyCRq5gCOz6qubq6ENJ9Rxafk0Iq7k7slHBhTlG+R
+	sKvogZy1853m5PqidAgsWDgL9YeYX24mgR0ujCykhGtGsfKGxbe/PMZ+1zNGxqav053KXvZLuel
+	3i/nfb/cAVgl7X5/idL/gwlkbjgTIRmzzYlhKotl/FA5MO6A59jep2yKlWY+YfzaTj1wva/vSMA
+	30ELfLHzuI/PEYfbgstAR0W2WTCwLKLGGq1F81N90w9X7dc+ROJccnakmNQzV6diCQmdoqPRg6Z
+	IY1sxPtwYElEpr1wBa2wCopOYZQ8/lNpyLKegAdX8rdkTxv6VcS8cKuMTK1748OxHdxQpueSRxW
+	v9lKebfyONbX6u3EKYwjqcs3dcZ691673W0yLA3KXYOjVmdCu4pqvkZRNqZ+1X4ZY1Ci6AE4BLH
+	1dtNtSAdNokKcf4QPUnWC6sXr6LYuH44XdOdUNEgfBRxUCgG+FaFo6IHM5w7E3l5uWxT4jmKxuA
+	/1nRXqRVMfixooKVm0GZ84R1bXA3PJfbkyyfgtkOizcYdLMPyjiu0IDVxmgKO3ogXb3VjopG2dw
+	vNqpmZbj6NdJumZ2iP2mrNhCkP3uQlqbVf0FuUSGSJi7L7XcST9IX8H0LSLyqT/wxYz6km1JtL4
 	=
-X-Received: by 2002:a17:907:d406:b0:c41:8e21:4d5a with SMTP id a640c23a62f3a-c513a47e37fmr603561966b.5.1795302455657;
-        Sat, 21 Nov 2026 15:07:35 -0800 (PST)
+X-Received: by 2002:a17:906:1911:b0:c41:b94c:4538 with SMTP id a640c23a62f3a-c513acd297fmr440901566b.47.1795302457248;
+        Sat, 21 Nov 2026 15:07:37 -0800 (PST)
 Received: from Desktop.tail070c67.ts.net (p200300f2470edf0034412c7e8f5a5e7a.dip0.t-ipconnect.de. [2003:f2:470e:df00:3441:2c7e:8f5a:5e7a])
-        by smtp.gmail.com with ESMTPSA id a640c23a62f3a-c513afc1b40sm242721466b.54.2026.11.21.15.07.33
+        by smtp.gmail.com with ESMTPSA id a640c23a62f3a-c513afc1b40sm242721466b.54.2026.11.21.15.07.35
         (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
-        Sat, 21 Nov 2026 15:07:34 -0800 (PST)
+        Sat, 21 Nov 2026 15:07:36 -0800 (PST)
 From: Julius Bairaktaris <julius@bairaktaris.de>
 To: Jeff Johnson <jjohnson@kernel.org>
 Cc: ath11k@lists.infradead.org,
@@ -107,9 +107,9 @@ Cc: ath11k@lists.infradead.org,
 	Pradeep Kumar Chitrapu <quic_pradeepc@quicinc.com>,
 	Sathishkumar Muruganandam <quic_murugana@quicinc.com>,
 	Muna Sinada <quic_msinada@quicinc.com>
-Subject: [PATCH ath-next v3 01/13] wifi: ath11k: initialise the CE descriptor waitqueue once per device
-Date: Sun, 22 Nov 2026 00:07:19 +0100
-Message-ID: <20261121230731.1206043-2-julius@bairaktaris.de>
+Subject: [PATCH ath-next v3 02/13] wifi: ath11k: keep the radios when a firmware recovery fails
+Date: Sun, 22 Nov 2026 00:07:20 +0100
+Message-ID: <20261121230731.1206043-3-julius@bairaktaris.de>
 X-Mailer: git-send-email 2.53.0
 In-Reply-To: <20261121230731.1206043-1-julius@bairaktaris.de>
 References: <20261121230731.1206043-1-julius@bairaktaris.de>
@@ -124,78 +124,103 @@ Precedence: list
 MIME-Version: 1.0
 Content-Transfer-Encoding: 8bit
 
-Firmware crash recovery reinitialises tx_ce_desc_wq in
-ath11k_connect_pdev_htc_service(), reached through ath11k_core_start()
-and ath11k_wmi_connect(), while a WMI command on a device without credit
-flow can still sleep on it in ath11k_wmi_cmd_send(). finish_wait() then
-unlinks the waiter from the reset list head:
+On a firmware crash recovery ath11k_mac_allocate() keeps the registered
+radios, but the error paths of ath11k_core_start() and
+ath11k_core_qmi_firmware_ready() still call ath11k_mac_destroy(). A
+failed recovery thus frees an ieee80211_hw that mac80211 still uses and
+leaves ab->pdevs[i].ar NULL. A frame bridged to the radio then follows
+the freed hw:
 
-  list_del corruption. prev->next should be ffffffc084293648, but was
-  ffffff80075109a8. (prev=ffffff80075109a8)
-  WARNING: CPU: 2 PID: 1782 at lib/list_debug.c:62
-  __list_del_entry_valid_or_report+0x134/0x174
-  CPU: 2 UID: 101 PID: 1782 Comm: hostapd
+  Unable to handle kernel paging request at virtual address
+  ffffff8316cfd480
+  pc : sta_info_hash_lookup+0x4c/0xe4 [mac80211]
   Call trace:
-   __list_del_entry_valid_or_report+0x134/0x174 (P)
-   finish_wait+0x68/0xb8
-   ath11k_wmi_cmd_send+0x150/0x2f4 [ath11k]
-   ath11k_wmi_vdev_set_param_cmd+0x64/0xd8 [ath11k]
-   ath11k_mac_op_bss_info_changed+0xe8/0xf6c [ath11k]
-   drv_link_info_changed+0x128/0x180 [mac80211]
-   ieee80211_link_info_change_notify+0xe0/0x100 [mac80211]
-   ieee80211_change_bss+0x1bc/0x250 [mac80211]
-   nl80211_set_bss+0x1a0/0x328 [cfg80211]
+   sta_info_hash_lookup+0x4c/0xe4 [mac80211] (P)
+   sta_info_get_bss+0x1c/0x78 [mac80211]
+   ieee80211_lookup_ra_sta+0x124/0x14c [mac80211]
+   __ieee80211_subif_start_xmit+0xb8/0x3a0 [mac80211]
+   ieee80211_subif_start_xmit+0x50/0x750 [mac80211]
+   dev_hard_start_xmit+0x98/0x120
 
-Initialise the queues once in ath11k_core_alloc().
+and driver removal dereferences the NULL ar:
+
+  Unable to handle kernel access to user memory outside uaccess routines
+  at virtual address 0000000000000000
+  pc : ath11k_dp_rx_pdev_free+0x34/0x12c [ath11k]
+  Call trace:
+   ath11k_dp_rx_pdev_free+0x34/0x12c [ath11k] (P)
+   ath11k_dp_pdev_free+0x4c/0x84 [ath11k]
+   ath11k_core_deinit+0xdc/0x168 [ath11k]
+   ath11k_ahb_remove+0x30/0x90 [ath11k_ahb]
+
+Destroy the radios only when ATH11K_FLAG_REGISTERED is clear, as
+ath11k_mac_allocate() does.
+
+ath11k_core_pdev_create() has the same problem with the registration.
+During a recovery ath11k_mac_register() and ath11k_debugfs_pdev_create()
+return early, but when a later step such as ath11k_spectral_init() or
+ath11k_cfr_init() fails, the error path calls ath11k_mac_unregister()
+and ath11k_debugfs_pdev_destroy(). The first unregisters the radios
+from mac80211 while ATH11K_FLAG_REGISTERED stays set, so driver removal
+unregisters them a second time. The second removes the debugfs tree of
+the device with the macN directories, while ar->debug.debugfs_pdev
+keeps pointing to the removed directory; the next recovery's
+ath11k_spectral_init() and ath11k_cfr_init() create their files under
+it. Undo both there only when ATH11K_FLAG_REGISTERED is clear as well,
+which is when this call did them.
 
 Tested-on: IPQ8074 hw2.0 AHB WLAN.HK.2.12-01460-QCAHKSWPL_SILICONZ-1
 
-Fixes: f951380a6022 ("ath11k: Disabling credit flow for WMI path")
-Reviewed-by: Baochen Qiang <baochen.qiang@oss.qualcomm.com>
-Tested-by: Florian Maurer <fmaurer@disroot.org> # IPQ8074 hw2.0 AHB WLAN.HK.2.9.0.1-02146 (backport to 6.18)
+Fixes: 0366f42640a4 ("ath11k: Move mac80211 hw allocation before wmi_init command")
 Signed-off-by: Julius Bairaktaris <julius@bairaktaris.de>
 ---
-v3: no change.
+v3: also skip ath11k_mac_unregister() and ath11k_debugfs_pdev_destroy() in the
+error path of ath11k_core_pdev_create() while the device stays registered.
+Florian's Tested-by dropped, as the code changed.
 
- drivers/net/wireless/ath/ath11k/core.c | 5 +++++
- drivers/net/wireless/ath/ath11k/wmi.c  | 1 -
- 2 files changed, 5 insertions(+), 1 deletion(-)
+ drivers/net/wireless/ath/ath11k/core.c | 12 ++++++++----
+ 1 file changed, 8 insertions(+), 4 deletions(-)
 
 diff --git a/drivers/net/wireless/ath/ath11k/core.c b/drivers/net/wireless/ath/ath11k/core.c
-index 766ae27306f4..8e4dab61a300 100644
+index 8e4dab61a300..5f4e7fbe0b25 100644
 --- a/drivers/net/wireless/ath/ath11k/core.c
 +++ b/drivers/net/wireless/ath/ath11k/core.c
-@@ -2743,6 +2743,7 @@ struct ath11k_base *ath11k_core_alloc(struct device *dev, size_t priv_size,
- 				      enum ath11k_bus bus)
- {
- 	struct ath11k_base *ab;
-+	int i;
+@@ -2073,11 +2073,13 @@ static int ath11k_core_pdev_create(struct ath11k_base *ab)
+ err_thermal_unregister:
+ 	ath11k_thermal_unregister(ab);
+ err_mac_unregister:
+-	ath11k_mac_unregister(ab);
++	if (!test_bit(ATH11K_FLAG_REGISTERED, &ab->dev_flags))
++		ath11k_mac_unregister(ab);
+ err_dp_pdev_free:
+ 	ath11k_dp_pdev_free(ab);
+ err_pdev_debug:
+-	ath11k_debugfs_pdev_destroy(ab);
++	if (!test_bit(ATH11K_FLAG_REGISTERED, &ab->dev_flags))
++		ath11k_debugfs_pdev_destroy(ab);
  
- 	ab = kzalloc(sizeof(*ab) + priv_size, GFP_KERNEL);
- 	if (!ab)
-@@ -2769,6 +2770,10 @@ struct ath11k_base *ath11k_core_alloc(struct device *dev, size_t priv_size,
- 	INIT_LIST_HEAD(&ab->peers);
- 	init_waitqueue_head(&ab->peer_mapping_wq);
- 	init_waitqueue_head(&ab->wmi_ab.tx_credits_wq);
-+
-+	for (i = 0; i < ARRAY_SIZE(ab->wmi_ab.wmi); i++)
-+		init_waitqueue_head(&ab->wmi_ab.wmi[i].tx_ce_desc_wq);
-+
- 	init_waitqueue_head(&ab->qmi.cold_boot_waitq);
- 	INIT_WORK(&ab->restart_work, ath11k_core_restart);
- 	INIT_WORK(&ab->update_11d_work, ath11k_update_11d);
-diff --git a/drivers/net/wireless/ath/ath11k/wmi.c b/drivers/net/wireless/ath/ath11k/wmi.c
-index 82f85df481cb..5f2412982229 100644
---- a/drivers/net/wireless/ath/ath11k/wmi.c
-+++ b/drivers/net/wireless/ath/ath11k/wmi.c
-@@ -9102,7 +9102,6 @@ static int ath11k_connect_pdev_htc_service(struct ath11k_base *ab,
- 	ab->wmi_ab.wmi_endpoint_id[pdev_idx] = conn_resp.eid;
- 	ab->wmi_ab.wmi[pdev_idx].eid = conn_resp.eid;
- 	ab->wmi_ab.max_msg_len[pdev_idx] = conn_resp.max_msg_len;
--	init_waitqueue_head(&ab->wmi_ab.wmi[pdev_idx].tx_ce_desc_wq);
- 
- 	return 0;
+ 	return ret;
  }
+@@ -2231,7 +2233,8 @@ static int ath11k_core_start(struct ath11k_base *ab)
+ err_reo_cleanup:
+ 	ath11k_dp_pdev_reo_cleanup(ab);
+ err_mac_destroy:
+-	ath11k_mac_destroy(ab);
++	if (!test_bit(ATH11K_FLAG_REGISTERED, &ab->dev_flags))
++		ath11k_mac_destroy(ab);
+ err_hif_stop:
+ 	ath11k_hif_stop(ab);
+ err_wmi_detach:
+@@ -2315,7 +2318,8 @@ int ath11k_core_qmi_firmware_ready(struct ath11k_base *ab)
+ 
+ err_core_stop:
+ 	ath11k_core_stop(ab);
+-	ath11k_mac_destroy(ab);
++	if (!test_bit(ATH11K_FLAG_REGISTERED, &ab->dev_flags))
++		ath11k_mac_destroy(ab);
+ err_dp_free:
+ 	ath11k_dp_free(ab);
+ 	mutex_unlock(&ab->core_lock);
 -- 
 2.53.0
 
