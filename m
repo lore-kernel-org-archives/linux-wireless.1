@@ -1,59 +1,59 @@
 Authentication-Results: smtp.subspace.kernel.org; arc=none smtp.remote-ip=46.4.11.11
 ARC-Seal: i=1; d=subspace.kernel.org; s=arc20261015; a=rsa-sha256; cv=none;
 	t=1795262971;
-	b=FDxO/ZxSvE20BIGw4yfUNDstLUU85EKXfYKqVQTtl4twlWty61qbJwO3OnmmQ7GAKIgK
-	 VmsP6tLSk2kckTyTYEWuPRiEDjMQ2WGALYB1HH98E3+0g9lbTEyQi+oHSQbUz6POZWvEk
-	 JNH7vBQdE5A3uXrf30sMgusWXi/CgVhBSzEcuE7oMGQUfySbjCxQ627Wa4SXR7xp7YDlD
-	 4fzBlHj+yhafeZ7qxoVTR3CCM0BdvoHfsxC1ZA9rWb41Y88M/Vmy/TeCd88Ej3T88H+jo
-	 Qocwhnl9q9HhxTuEUflMVgtNzrIoHMSaGaElO3dHCQy6roB7UvvYmcKg9wYCS7xkzKg==
+	b=BPU6/KtygaM/N1HFLmECgJIG+m+8oQzCT7F5HQkIum91Ic0kzLkvnrDSmdOMH5rgSSTs
+	 suJL2/Cc7j5z1A6/4yo5LzgRpfmrl3UrtnQg8WGeyNGmTI2EJngf/G+w7Z0OsdLYFJx/N
+	 H6/86quzq6X/KtpOKvWYLEWN/BZy7CHPizb4DJFv5yoztCgG1JH9GUJvk3VSFVff0hlZK
+	 YRL+hf4U51nPdCgK5rU+UXDFEFRWnpAt3pfg/4UlhnOrlJi8GBdk/leMykV4g6yOTawr0
+	 iZTdYTTwvL6wxq06y/ZrMOxlx9+Gys+hyXqOsZjS+ASpIEOxg8s4s1WL+jlR7SGG1AQ==
 ARC-Message-Signature: i=1; d=subspace.kernel.org; s=arc20261015;
 	a=rsa-sha256; c=relaxed/relaxed; t=1795262971;
 	h=DMARC-Filter:DKIM-Signature:Received:From:To:Subject:Date:Message-ID:
 	 X-Mailer:In-Reply-To:References:MIME-Version:
 	 Content-Transfer-Encoding;
-	bh=TqtduEAWIT4N//BJunJdmv3uqzjvRPrYCDzoVBx+3uU=;
-	b=3e84IfY5laaaF4NU42A8+rVkIcTwfWePgrjNhM7kylqQaFqEM78dpkjpvQdLgujKCWV3
-	 uleYIumADblcPp7jX42Qx4YjaOOY2VSLpd4xGZcBLJAdUyrkkV0cabaubXFd+EU4lAEGW
-	 di1wy1NsF5LEcsyZImCnSRcnHdm2HoccEmmuRPxBqFy6dIXSTiw86tj9WIQXJP6SUu50U
-	 qEqaIgvOfCwHHjO2DvV06FqVd6gxv3kBLiYh2LH75U3SH7pPiW5F3o8IIn1/lZeU5u9zo
-	 4qWMP5om4WxQMOhmyWVXtBmw0lxks8lx8sxl0m4i8+VCSKHeutaZsf3LYAauL0DxXag==
+	bh=0fCn3i8ISCP/qYWLpNAX71sHbkVViVHM3figbVBIWz4=;
+	b=5Fci0FB0zmrtR8A+GNRDy6NBj1SZmLmf59YwKZO2sqQa9anAQnx/gcZvjHWeSITxYa3f
+	 VmXwq8HCmac35tQxZ1PAnoEUY6NSSU6/iqE+eNfMwkS5OOscjby47H1rWbgZx0bhI/lCw
+	 v/NPMvDb0TZrpFY4hWtpakQS25RnKmNdQCBQjnNn4uaBMPTWPbEdTgQz195jWuUVe6QHF
+	 t98aRrGAZAqk/ZMvr1Mc1+jxKiTAJ0uO5dimnLwxrOBsJxA8RzcyjrxWouLlH+TvoI5nc
+	 17llGbCdmkPBwUzSCcvm927G4/Cg+6QGbh8u0ZPNVu370UxfarBhiXgHmFpFGagjQcg==
 ARC-Authentication-Results: i=1; smtp.subspace.kernel.org; 
 	dmarc=pass header.from=nbd.name;
 	spf=pass smtp.mailfrom=nbd.name;
-	dkim=pass header.d=nbd.name header.i=@nbd.name header.a=rsa-sha256 header.s=20160729 header.b=XPpWsc2W;
+	dkim=pass header.d=nbd.name header.i=@nbd.name header.a=rsa-sha256 header.s=20160729 header.b=bJ9qTdB9;
 	arc=none smtp.remote-ip=46.4.11.11
 Received: from nbd.name (nbd.name [46.4.11.11])
 	(using TLSv1.3 with cipher TLS_AES_256_GCM_SHA384 (256/256 bits)
 	 key-exchange ECDHE (prime256v1) server-signature ECDSA (prime256v1) server-digest SHA256)
 	(No client certificate requested)
-	by smtp.subspace.kernel.org (Postfix) with ESMTPS id CD4D6606A335
-	for <linux-wireless@vger.kernel.org>; Sat, 21 Nov 2026 12:09:30 +0000 (UTC)
-DMARC-Filter: OpenDMARC Filter v1.4.2 smtp.subspace.kernel.org CD4D6606A335
+	by smtp.subspace.kernel.org (Postfix) with ESMTPS id 156DD606A33B
+	for <linux-wireless@vger.kernel.org>; Sat, 21 Nov 2026 12:09:31 +0000 (UTC)
+DMARC-Filter: OpenDMARC Filter v1.4.2 smtp.subspace.kernel.org 156DD606A33B
 Authentication-Results: smtp.subspace.kernel.org; dmarc=pass (p=none dis=none) header.from=nbd.name
 Authentication-Results: smtp.subspace.kernel.org; spf=pass smtp.mailfrom=nbd.name
 Authentication-Results: smtp.subspace.kernel.org;
-	dkim=pass (1024-bit key) header.d=nbd.name header.i=@nbd.name header.a=rsa-sha256 header.s=20160729 header.b=XPpWsc2W
+	dkim=pass (1024-bit key) header.d=nbd.name header.i=@nbd.name header.a=rsa-sha256 header.s=20160729 header.b=bJ9qTdB9
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed; d=nbd.name;
 	s=20160729; h=Content-Transfer-Encoding:MIME-Version:References:In-Reply-To:
 	Message-ID:Date:Subject:To:From:Sender:Reply-To:Cc:Content-Type:Content-ID:
 	Content-Description:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc
 	:Resent-Message-ID:List-Id:List-Help:List-Unsubscribe:List-Subscribe:
 	List-Post:List-Owner:List-Archive;
-	bh=TqtduEAWIT4N//BJunJdmv3uqzjvRPrYCDzoVBx+3uU=; b=XPpWsc2W2fPT0CF1nedJQkkwNd
-	l9o6ueLp6VND+WxpSYqn4N3VhXXAbd9iO0Gzu4d1Zeqs5/gw6ifvYLpbztbt+6KiCabXh38yzJpMD
-	KsHYajNseaV426Ls4v7Hx6lCqEPHTNWtyd2eM96n7povHiAUms+ybaiJqIfBI8yDZdcg=;
+	bh=0fCn3i8ISCP/qYWLpNAX71sHbkVViVHM3figbVBIWz4=; b=bJ9qTdB9ehcA1eIT2hYH3KFoiK
+	kpEmJnCcd+vjrEn2DvImEzMgVGKdF8AJ+9m+nzudIT9KNAJWyQznl5dtnl0UPaE6uMVUNnx3ATBWY
+	DSB2mvnLHMbD5SvckIu4/s6uz6zSRt7J9Buv7ixiIVAPMVB77XXZEyfUJbEhgAK1TqnA=;
 Received: from p200300cadf12920000000000000005bb.dip0.t-ipconnect.de ([2003:ca:df12:9200::5bb] helo=localhost.localdomain)
 	by ds12 with esmtpsa  (TLS1.3) tls TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384
 	(Exim 4.96)
 	(envelope-from <nbd@nbd.name>)
-	id 1xUjuL-006Q1I-1U
+	id 1xUjuL-006Q1I-24
 	for linux-wireless@vger.kernel.org;
 	Sat, 21 Nov 2026 13:09:29 +0100
 From: Felix Fietkau <nbd@nbd.name>
 To: linux-wireless@vger.kernel.org
-Subject: [PATCH mt76-next 07/17] wifi: mt76: mt7925: abort a ROC on the BSS that requested it
-Date: Sat, 21 Nov 2026 13:09:16 +0100
-Message-ID: <20261121120926.3603979-7-nbd@nbd.name>
+Subject: [PATCH mt76-next 08/17] wifi: mt76: mt7925: take the link conf of a removed link from old[]
+Date: Sat, 21 Nov 2026 13:09:17 +0100
+Message-ID: <20261121120926.3603979-8-nbd@nbd.name>
 X-Mailer: git-send-email 2.47.3
 In-Reply-To: <20261121120926.3603979-1-nbd@nbd.name>
 References: <20261121120926.3603979-1-nbd@nbd.name>
@@ -68,110 +68,140 @@ Precedence: list
 MIME-Version: 1.0
 Content-Transfer-Encoding: 8bit
 
-mt7925_start_ap() requests the channel on the BSS of the link that it
-starts. mt7925_roc_work() aborts an expired request only on the default
-BSS of each running interface. If the request of a non-default link of
-an AP MLD expires before mt7925_start_ap() aborts it, the firmware gets
-no abort for that BSS. The comment in mt7925_start_ap() notes that the
-firmware then asserts.
+mt7925_change_vif_links() deactivates a removed link through
+mt792x_mac_link_bss_remove(), which looks up the link conf in
+vif->link_conf[]. ieee80211_vif_update_links() clears that entry before
+it calls the driver. If an AP MLD removes a non-default link while
+another link stays, the lookup returns NULL, and
+mt76_connac_mcu_uni_add_dev() dereferences it. When a non-AP MLD
+disassociates, mac80211 removes all links, so the DEV_INFO deactivation
+of a non-default link carries the MLD address of vif->bss_conf.
 
-Record the BSS of each request, and abort on it as well.
+Take the link conf of a removed link from old[], as the
+.change_vif_links text in include/net/mac80211.h describes: "The @old
+array contains pointers to the old bss_conf structures that were
+already removed, in case they're needed." The DEV_INFO deactivation
+then carries the link address of its activation. Whether the firmware
+reads that address at a deactivation is not known.
 
-This is currently not reachable, because mt7925_change_vif_links()
-fails the second ADD_LINK of an AP MLD. Found by inspection.
+The NULL dereference is currently not reachable, because
+mt7925_change_vif_links() fails the second ADD_LINK of an AP MLD. Found
+by inspection.
 
 Signed-off-by: Felix Fietkau <nbd@nbd.name>
 ---
- drivers/net/wireless/mediatek/mt76/mt7925/main.c | 16 +++++++++-------
- drivers/net/wireless/mediatek/mt76/mt792x.h      |  1 +
- 2 files changed, 10 insertions(+), 7 deletions(-)
+ .../net/wireless/mediatek/mt76/mt7925/main.c  | 15 ++++++-----
+ drivers/net/wireless/mediatek/mt76/mt792x.h   |  4 +++
+ .../net/wireless/mediatek/mt76/mt792x_core.c  | 25 +++++++++++++------
+ 3 files changed, 30 insertions(+), 14 deletions(-)
 
 diff --git a/drivers/net/wireless/mediatek/mt76/mt7925/main.c b/drivers/net/wireless/mediatek/mt76/mt7925/main.c
-index b78823e161ee..ec4f3db23c07 100644
+index ec4f3db23c07..27a622beb147 100644
 --- a/drivers/net/wireless/mediatek/mt76/mt7925/main.c
 +++ b/drivers/net/wireless/mediatek/mt76/mt7925/main.c
-@@ -547,10 +547,9 @@ static void mt7925_roc_iter(void *priv, u8 *mac,
- 	*bss_mask |= BIT_ULL(mvif->bss_conf.mt76.idx);
- }
+@@ -2550,14 +2550,15 @@ static void mt7925_link_info_changed(struct ieee80211_hw *hw,
  
--static void mt7925_roc_abort_all(struct mt792x_phy *phy, u8 token)
-+static void mt7925_roc_abort_all(struct mt792x_phy *phy, u8 token, u8 bss_idx)
+ static void
+ mt7925_vif_link_remove(struct mt792x_dev *dev, struct mt792x_vif *mvif,
+-		       unsigned int link_id, struct mt792x_bss_conf *mconf,
++		       unsigned int link_id, struct ieee80211_bss_conf *link_conf,
++		       struct mt792x_bss_conf *mconf,
+ 		       struct mt792x_link_sta *mlink, bool bss_remove)
  {
--	u64 bss_mask = 0;
--	u8 bss_idx;
-+	u64 bss_mask = BIT_ULL(bss_idx);
+ 	rcu_assign_pointer(mvif->link_conf[link_id], NULL);
+ 	rcu_assign_pointer(mvif->sta.link[link_id], NULL);
  
- 	ieee80211_iterate_active_interfaces_atomic(phy->mt76->hw,
- 						   IEEE80211_IFACE_ITER_RESUME_ALL,
-@@ -574,19 +573,20 @@ void mt7925_roc_abort_sync(struct mt792x_dev *dev)
+ 	if (bss_remove)
+-		mt792x_mac_link_bss_remove(dev, mconf, mlink);
++		__mt792x_mac_link_bss_remove(dev, link_conf, mconf, mlink);
  
- 	cancel_work(&phy->roc_work);
+ 	if (mconf != &mvif->bss_conf) {
+ 		mt7925_p2p_bmc_remove(dev, mconf);
+@@ -2596,8 +2597,8 @@ mt7925_change_vif_links(struct ieee80211_hw *hw, struct ieee80211_vif *vif,
+ 		if (!mconf || !mlink)
+ 			continue;
  
--	mt7925_roc_abort_all(phy, phy->roc_token_id);
-+	mt7925_roc_abort_all(phy, phy->roc_token_id, phy->roc_bss_idx);
- }
- EXPORT_SYMBOL_GPL(mt7925_roc_abort_sync);
+-		mt7925_vif_link_remove(dev, mvif, link_id, mconf, mlink,
+-				       mconf != &mvif->bss_conf);
++		mt7925_vif_link_remove(dev, mvif, link_id, old[link_id], mconf,
++				       mlink, mconf != &mvif->bss_conf);
+ 	}
  
- void mt7925_roc_work(struct work_struct *work)
- {
- 	struct mt792x_phy *phy;
--	u8 token;
-+	u8 token, bss_idx;
+ 	for_each_set_bit(link_id, &add, IEEE80211_MLD_MAX_NUM_LINKS) {
+@@ -2671,8 +2672,10 @@ mt7925_change_vif_links(struct ieee80211_hw *hw, struct ieee80211_vif *vif,
  
- 	phy = (struct mt792x_phy *)container_of(work, struct mt792x_phy,
- 						roc_work);
+ free:
+ 	for_each_set_bit(link_id, &add, IEEE80211_MLD_MAX_NUM_LINKS)
+-		mt7925_vif_link_remove(dev, mvif, link_id, mconfs[link_id],
+-				       mlinks[link_id], added & BIT(link_id));
++		mt7925_vif_link_remove(dev, mvif, link_id,
++				       mt792x_vif_to_bss_conf(vif, link_id),
++				       mconfs[link_id], mlinks[link_id],
++				       added & BIT(link_id));
+ 	goto out;
  
- 	token = phy->roc_token_id;
-+	bss_idx = phy->roc_bss_idx;
- 
- 	if (!test_and_clear_bit(MT76_STATE_ROC, &phy->mt76->state))
- 		return;
-@@ -595,7 +595,7 @@ void mt7925_roc_work(struct work_struct *work)
- 	ieee80211_remain_on_channel_expired(phy->mt76->hw);
- 
- 	mt792x_mutex_acquire(phy->dev);
--	mt7925_roc_abort_all(phy, token);
-+	mt7925_roc_abort_all(phy, token, bss_idx);
- 	mt792x_mutex_release(phy->dev);
- }
- 
-@@ -631,7 +631,7 @@ static void mt7925_roc_stale_reclaim(struct mt792x_phy *phy)
- 	if (!test_and_clear_bit(MT76_STATE_ROC, &phy->mt76->state))
- 		return;
- 
--	mt7925_roc_abort_all(phy, token);
-+	mt7925_roc_abort_all(phy, token, phy->roc_bss_idx);
- 
- 	if (phy->roc_notify)
- 		ieee80211_remain_on_channel_expired(phy->mt76->hw);
-@@ -652,6 +652,7 @@ static int mt7925_set_roc(struct mt792x_phy *phy,
- 		return -EBUSY;
- 
- 	token = ++phy->roc_token_id;
-+	phy->roc_bss_idx = mconf->mt76.idx;
- 	phy->roc_grant = false;
- 	phy->roc_notify = type == MT7925_ROC_REQ_ROC;
- 
-@@ -683,6 +684,7 @@ static int mt7925_set_mlo_roc(struct mt792x_phy *phy,
- 		return -EBUSY;
- 
- 	token = ++phy->roc_token_id;
-+	phy->roc_bss_idx = mconf->mt76.idx;
- 	phy->roc_grant = false;
- 	phy->roc_notify = false;
- 
+ free_unpublished:
 diff --git a/drivers/net/wireless/mediatek/mt76/mt792x.h b/drivers/net/wireless/mediatek/mt76/mt792x.h
-index 3604f02a5376..07c5e67db8cd 100644
+index 07c5e67db8cd..260abdc978f8 100644
 --- a/drivers/net/wireless/mediatek/mt76/mt792x.h
 +++ b/drivers/net/wireless/mediatek/mt76/mt792x.h
-@@ -305,6 +305,7 @@ struct mt792x_phy {
- 	u8 roc_token_id;
- 	bool roc_grant;
- 	bool roc_notify; /* mac80211 expects the expiry of this ROC */
-+	u8 roc_bss_idx;
- };
+@@ -661,6 +661,10 @@ mt792x_get_mac80211_ops(struct device *dev,
+ int mt792x_init_wcid(struct mt792x_dev *dev);
+ int mt792x_mcu_drv_pmctrl(struct mt792x_dev *dev);
+ int mt792x_mcu_fw_pmctrl(struct mt792x_dev *dev);
++void __mt792x_mac_link_bss_remove(struct mt792x_dev *dev,
++				  struct ieee80211_bss_conf *link_conf,
++				  struct mt792x_bss_conf *mconf,
++				  struct mt792x_link_sta *mlink);
+ void mt792x_mac_link_bss_remove(struct mt792x_dev *dev,
+ 				struct mt792x_bss_conf *mconf,
+ 				struct mt792x_link_sta *mlink);
+diff --git a/drivers/net/wireless/mediatek/mt76/mt792x_core.c b/drivers/net/wireless/mediatek/mt76/mt792x_core.c
+index 5babfc00dee1..6a9c0e92cd1a 100644
+--- a/drivers/net/wireless/mediatek/mt76/mt792x_core.c
++++ b/drivers/net/wireless/mediatek/mt76/mt792x_core.c
+@@ -281,17 +281,13 @@ void mt792x_stop(struct ieee80211_hw *hw, bool suspend)
+ }
+ EXPORT_SYMBOL_GPL(mt792x_stop);
  
- struct mt792x_irq_map {
+-void mt792x_mac_link_bss_remove(struct mt792x_dev *dev,
+-				struct mt792x_bss_conf *mconf,
+-				struct mt792x_link_sta *mlink)
++void __mt792x_mac_link_bss_remove(struct mt792x_dev *dev,
++				  struct ieee80211_bss_conf *link_conf,
++				  struct mt792x_bss_conf *mconf,
++				  struct mt792x_link_sta *mlink)
+ {
+-	struct ieee80211_vif *vif = container_of((void *)mconf->vif,
+-						 struct ieee80211_vif, drv_priv);
+-	struct ieee80211_bss_conf *link_conf;
+ 	int idx = mlink->wcid.idx;
+ 
+-	link_conf = mt792x_vif_to_bss_conf(vif, mconf->link_id);
+-
+ 	mt76_connac_free_pending_tx_skbs(&dev->pm, &mlink->wcid);
+ 	mt76_connac_mcu_uni_add_dev(&dev->mphy, link_conf, &mconf->mt76,
+ 				    &mlink->wcid, false);
+@@ -308,6 +304,19 @@ void mt792x_mac_link_bss_remove(struct mt792x_dev *dev,
+ 
+ 	mt76_wcid_cleanup(&dev->mt76, &mlink->wcid);
+ }
++EXPORT_SYMBOL_GPL(__mt792x_mac_link_bss_remove);
++
++void mt792x_mac_link_bss_remove(struct mt792x_dev *dev,
++				struct mt792x_bss_conf *mconf,
++				struct mt792x_link_sta *mlink)
++{
++	struct ieee80211_vif *vif = container_of((void *)mconf->vif,
++						 struct ieee80211_vif, drv_priv);
++
++	__mt792x_mac_link_bss_remove(dev,
++				     mt792x_vif_to_bss_conf(vif, mconf->link_id),
++				     mconf, mlink);
++}
+ EXPORT_SYMBOL_GPL(mt792x_mac_link_bss_remove);
+ 
+ void mt792x_remove_interface(struct ieee80211_hw *hw,
 -- 
 2.47.3
 
