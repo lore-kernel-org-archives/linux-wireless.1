@@ -1,54 +1,88 @@
-Authentication-Results: smtp.subspace.kernel.org; arc=none smtp.remote-ip=162.243.164.118
+Authentication-Results: smtp.subspace.kernel.org; arc=none smtp.remote-ip=74.125.229.0
 ARC-Seal: i=1; d=subspace.kernel.org; s=arc20261015; a=rsa-sha256; cv=none;
-	t=1795280643;
-	b=kIDLb0ZrdY9/ppZfVFjQNJCuGt1yHjnTHZ4izap6uHHsW9XUY/fxpfVliGwSa16z6mPp
-	 1Hdx6v9hJbBWWbIVb7d2nviBxk6QDqr+nbRSGGEeY+RltVqWpFekVL4WY4+RgGq2YfR/8
-	 iXXawKGtqXgemtMnx8pUuAGYfy5zeNcz/nQYuckOuFhmCKca9eqZKz3XcfmR8Q88vi0U+
-	 +COxDH+SQtDfnYKJVTidYttKKGUOhLRt9aBmwDcCbq4X3p1p3tIYHTl6wpUNyMSvhVUcu
-	 BW/B/8uGzMseaA04lvWyqTMKqvg0GTYZYt7AjtyRCMW2uBM+Yrw7bzVJ+c1NaAXM0ew==
+	t=1795281367;
+	b=M3jfDgLkENAXjJebEAwc2rCQbWKNDIL05GIdrOH9eHJemZVXQ/S2cVtMW7gLFH4bAtsI
+	 SN0TWXWJU0VJsKkdK7230zJ4YWguE6vXTHQEN9f6nRtuG2toH4U4gSVFW12Af9nWl97t/
+	 fYAYCOs9XiQ/Ach/fOb3fcCsLFXiBGrFu1dhEg8TnQnkO7pw+8aGszuPFyz4CwftTpd+y
+	 RS8XMkLNypUXGCZhASlXjK8nz8w4n8sg9/d80wurJRysFSs0fLQnuQAg1VzCDSLQVfQoV
+	 bEddqID4Q1mOErTxSohWT3MxLYk+GHyjFmBvXyyVmTPiVBIAm9PQfNO1fTo+JYFvdzw==
 ARC-Message-Signature: i=1; d=subspace.kernel.org; s=arc20261015;
-	a=rsa-sha256; c=relaxed/relaxed; t=1795280643;
-	h=DMARC-Filter:DKIM-Signature:Received:From:To:Cc:Subject:Date:
-	 Message-Id:X-Mailer:MIME-Version:Content-Transfer-Encoding:
-	 X-CM-TRANSID:X-Coremail-Antispam:X-CM-SenderInfo;
-	bh=KTEtV2d4YF3n94PQnGD8s33mCr1ytjNd6hJOzFbWZg0=;
-	b=M0wOM2iyADxSwDMu7+/iGoJAbuUopK2qgMlS9rkjFIqZhsjMu5FgXJoTn2KiuLr4/yo8
-	 y7rOh3Z5AdS3kuQs19ulFHVDfCZY+0TEjN4ZshSl1qmnVQJ4o3uT7ytOc+nTRsQFwGHxS
-	 oXlULq65/X4eIXQ4UM5HousfVCuEwozutAYKKO9iHB5UNSV9q4IElylSx6D6oxfipGV3R
-	 ReV8QRRCtdBKTKrNeBMnUTnaUygYucfP3rELtx2dvhNDqMAp5wSHSoRMxcm5gGYorVhbl
-	 sHFRZSebvl8M9TE5+oUpkfnJBn9Oq7JMHlxPzY59Al1SbIYDCXuyYcLlS6cTroQZz1Q==
+	a=rsa-sha256; c=relaxed/relaxed; t=1795281367;
+	h=DMARC-Filter:Received:DKIM-Signature:X-Google-DKIM-Signature:
+	 X-Gm-Message-State:X-Gm-Gg:X-Received:Received:From:To:Cc:Subject:
+	 Date:Message-ID:X-Mailer:MIME-Version:Content-Transfer-Encoding;
+	bh=YeMemw7z3zkrZgQdMLY4+GZ8sJMULo49HzUbi5WBgXg=;
+	b=aWt0JjUic4AXvcdPY2vq3bHdAeqY7FtnI8arxOoXUuvYHyqEbr1TSMyncmay+XVB1VPn
+	 /+9rsOvQM9EJvHeycdNbIdZw0PcKtpiRWW/P473/wMpuM+8Jx0Lgk0JULNA642qREzt8J
+	 8lqdFqUxlVzGTZ/Cj3RxO8T7izoWAeagoGLC8GGC2Ihm3RlkpPVI9EEnX3ouHeA0Ufmkb
+	 vQmWKFwgss1QAtvl5EBC4hNVI2sNs2YUbfGivgbTIpHOH2bAwaDMOddpYAJT0Tht9E5oG
+	 KfX2KAvvCkRQ+a1JpyXAHuqWHZgsvE/7j72E/gXo7mx4S/V6E6pASwS9Bgf/uAZ5wEg==
 ARC-Authentication-Results: i=1; smtp.subspace.kernel.org; 
-	dmarc=pass header.from=stu.xidian.edu.cn;
-	spf=pass smtp.mailfrom=stu.xidian.edu.cn;
-	arc=none smtp.remote-ip=162.243.164.118
-Received: from zg8tmtyylji0my4xnjqumte4.icoremail.net (zg8tmtyylji0my4xnjqumte4.icoremail.net [162.243.164.118])
-	by smtp.subspace.kernel.org (Postfix) with ESMTP id E50BC606A320;
-	Sat, 21 Nov 2026 17:03:59 +0000 (UTC)
-DMARC-Filter: OpenDMARC Filter v1.4.2 smtp.subspace.kernel.org E50BC606A320
-Authentication-Results: smtp.subspace.kernel.org; dmarc=pass (p=quarantine dis=none) header.from=stu.xidian.edu.cn
-Authentication-Results: smtp.subspace.kernel.org; spf=pass smtp.mailfrom=stu.xidian.edu.cn
+	dmarc=pass header.from=gmail.com;
+	spf=pass smtp.mailfrom=gmail.com;
+	dkim=pass header.d=gmail.com header.i=@gmail.com header.a=rsa-sha256 header.s=20260707 header.b=wGDc0lBY;
+	arc=none smtp.remote-ip=74.125.229.0
+Received: from mail-dy2-f0.google.com (mail-dy2-f0.google.com [74.125.229.0])
+	(using TLSv1.3 with cipher TLS_AES_128_GCM_SHA256 (128/128 bits)
+	 key-exchange X25519 server-signature ECDSA (prime256v1) server-digest SHA256)
+	(No client certificate requested)
+	by smtp.subspace.kernel.org (Postfix) with ESMTPS id DF830606A320
+	for <linux-wireless@vger.kernel.org>; Sat, 21 Nov 2026 17:16:06 +0000 (UTC)
+DMARC-Filter: OpenDMARC Filter v1.4.2 smtp.subspace.kernel.org DF830606A320
+Authentication-Results: smtp.subspace.kernel.org; dmarc=pass (p=none dis=none) header.from=gmail.com
+Authentication-Results: smtp.subspace.kernel.org; spf=pass smtp.mailfrom=gmail.com
+Authentication-Results: smtp.subspace.kernel.org;
+	dkim=pass (2048-bit key) header.d=gmail.com header.i=@gmail.com header.a=rsa-sha256 header.s=20260707 header.b=wGDc0lBY
+Received: by mail-dy2-f0.google.com with SMTP id 5a478bee46e88-3117f9b9e64so197784eec.0
+        for <linux-wireless@vger.kernel.org>; Sat, 21 Nov 2026 09:16:06 -0800 (PST)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-	d=stu.xidian.edu.cn; s=dkim; h=Received:From:To:Cc:Subject:Date:
-	Message-Id:MIME-Version:Content-Transfer-Encoding; bh=KTEtV2d4YF
-	3n94PQnGD8s33mCr1ytjNd6hJOzFbWZg0=; b=Enj6AZuKBa/UapxRxzFaB5au62
-	W26lkb2650zTbQgxVx64XxFzRzDz9lfpd6gVvO085yYH6d1sRRvWDEpQxYnyTazU
-	jb6asFBSNg7FKVIXipIwnHFwdjbRxIGyLZLTncq6LI4+ZzP1u7SYPIo0WV9EVSFz
-	q4hLIhbqDo6TmdIaQ=
-Received: from user-virtual-machine.localdomain (unknown [113.200.174.70])
-	by hzbj-edu-front-3.icoremail.net (Coremail) with UTF8SMTPA id BbQMCkBGSv3zzgFrpPIEAg--.58518S2;
-	Sun, 22 Nov 2026 01:03:47 +0800 (CST)
-From: YuanZhe Liu <25031212351@stu.xidian.edu.cn>
-To: Johannes Berg <johannes@sipsolutions.net>
+        d=gmail.com; s=20260707; t=1795281366; x=1795886166; darn=vger.kernel.org;
+        h=content-transfer-encoding:mime-version:message-id:date:subject:cc
+         :to:from:from:to:cc:subject:date:message-id:reply-to:content-type;
+        bh=YeMemw7z3zkrZgQdMLY4+GZ8sJMULo49HzUbi5WBgXg=;
+        b=wGDc0lBYGMLNqVMOrpCd7OwIYxmfQVKgrW78HLjyJ/anzGWJdwQQVZa6RNQVlZ3iC3
+         GIbE4Js4Of1xkFB4NcTmSYeGVdbKjturW1hupFBhfZNCdX5ySzVZHabq2im0KcbTtXuX
+         6eFDQR4EgePCbxzkzGospHkQuIGNY0t9BAUDhdMEAnFI/lRhfOJLm4Fj0XsGACkLV0+y
+         hMyKLK2AzIAx4dMkFlIhvo4z1+UkFuAGNgl33xyTz3fSLhAvm65JNqF0g1lsYqBTCGDu
+         30wNmQr3yJ5fyxq9ekZEOv31RWvB8NeWUwWAOz6jrt512oPTylg9RfbU1pwLOHTKNYIy
+         VAdg==
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+        d=1e100.net; s=20260707; t=1795281366; x=1795886166;
+        h=content-transfer-encoding:mime-version:message-id:date:subject:cc
+         :to:from:x-gm-gg:x-gm-message-state:from:to:cc:subject:date
+         :message-id:reply-to:content-type;
+        bh=YeMemw7z3zkrZgQdMLY4+GZ8sJMULo49HzUbi5WBgXg=;
+        b=P40pDS+ZBusUHryjz1INbdpTi/LqrI8kuBcdHgLRHWVeei6WG8fGHdpjvlm6cIbfKI
+         Jz8YhD7J4gNBggwH4cp7fJxI2D59OKe+mAYG7xMKl/s/BY7x8MPzA7Lp4qvZ3vxXfqOD
+         SgBDJipJF2TSIwMYk8Iy+uW5OzG7wcQ6+HFX7WtP3tJTF0/GwAgGaXwRZOmWIGMqoGw0
+         9Bik2R705kpwMjFdurYUgXO4x3gV29SWnaMVVzW/8VIwUF3nmydEis5X2ZklFFZNMIIn
+         4mt/JL44Az2EpTMPOailiW55uqfj0wpH6SPuz+LJLTPjRZZXVqjJhkDIp1gcuOmcvnEU
+         QD/g==
+X-Gm-Message-State: APuU4Z/L/2a/ML1HGQhTsLJrhPF4o14nnzkmUMxSx+5KD+FbPdurZTmK
+	iW+nqP+5yIFghw0tjLfIfSYjQSLNvQOMBkMT5C3DsbQQF9+f1zykgSI=
+X-Gm-Gg: AZFdTZdR0WpaIuqb2mUtihmqnF3TZBSpHQ3JvrJV2GJ6ENWuVwnJ4e3D1oDiTWLn4u7
+	2csma8Aquwg3WpqLbn2weRiOa/r8QDDMtEXQJkAJbUuDuIEblTl/OlgAgqLP3q86S2TZQe0MusS
+	bqkg5EtztIpJh5WG9ex6LuRY8a7QWPxy7Dvbbulq06OiRoFa8ONZVw5BfqPgsBA52buJ6CW4g/2
+	g8OlQjVOo6FB5s3fDu0QsGAoA8vgZ0ru1Wb7ieKjC954Bd4rjmZa33lwn5Zc5h+Z4PZjDHDKRMS
+	g2KAUnQdJwDZzR8CA/os+MkNAbLeKQtgheqiBzh8m774fw+a6KSU3dWxmTTohW3VvHjQRqqkS10
+	aswWUyqs4CAyJqwEm9XVMb7NA+trrYzu4sGOtYwxsegmDqwE2LpyuYPOFuT5Q5mmjj3qWif+Ff1
+	ud8vWppBrUwDxDCTGShy7rUQ/XiOd3qAzW3leUjhVE92cfsHs0iKed1Dw6Y8x42eT13Yk0MCl9l
+	Z4Qj4NzRPYYdTmx3/kc9SjnX2p/0vo0vnU+C8clbKFe2bdVawwKzwuvQSGO7W7H7WOUksu5waVF
+	/DwWm9YSkoZNElbTiUpjhShH3bVeSwhCairGWEA=
+X-Received: by 2002:a05:7301:fd07:b0:36d:be15:2dd6 with SMTP id 5a478bee46e88-38570844f7cmr6701963eec.11.1795281365872;
+        Sat, 21 Nov 2026 09:16:05 -0800 (PST)
+Received: from archlinux ([2405:201:ac01:5300:df48:a6ff:13cf:24ab])
+        by smtp.gmail.com with ESMTPSA id 5a478bee46e88-3866f299d0bsm12537988eec.19.2026.11.21.09.16.03
+        (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
+        Sat, 21 Nov 2026 09:16:05 -0800 (PST)
+From: Anvik Loitongbam <permissiontogallop@gmail.com>
+To: Jes Sorensen <Jes.Sorensen@gmail.com>
 Cc: linux-wireless@vger.kernel.org,
-	linux-kernel@vger.kernel.org,
-	stable@vger.kernel.org,
-	James Prestwood <prestwoj@gmail.com>,
-	Bin Yu <byu@xidian.edu.cn>,
-	Cheng Wen <wencheng@xidian.edu.cn>
-Subject: [PATCH v2] wifi: mac80211: handle failure to re-add interface on address change
-Date: Sun, 22 Nov 2026 01:03:46 +0800
-Message-Id: <20261121170346.12440-1-25031212351@stu.xidian.edu.cn>
-X-Mailer: git-send-email 2.34.1
+	Anvik Loitongbam <permissiontogallop@gmail.com>
+Subject: [PATCH] wifi: rtl8xxxu: validate firmware size before parsing
+Date: Sat, 21 Nov 2026 22:35:59 +0530
+Message-ID: <20261121170559.149274-1-permissiontogallop@gmail.com>
+X-Mailer: git-send-email 2.56.1
 X-Mailing-List: linux-wireless@vger.kernel.org
 List-Id: <linux-wireless.vger.kernel.org>
 List-Post: <mailto:linux-wireless@vger.kernel.org>
@@ -59,138 +93,54 @@ List-Owner: <mailto:linux-wireless+owner@vger.kernel.org>
 Precedence: list
 MIME-Version: 1.0
 Content-Transfer-Encoding: 8bit
-X-CM-TRANSID:BbQMCkBGSv3zzgFrpPIEAg--.58518S2
-X-Coremail-Antispam: 1UD129KBjvJXoWxXryxXr1DJw1kXr48Zr45GFg_yoWrWFy5pF
-	WUG398tryDJr43Ww43Ar47uFyrCF48JFWrCFnrAa15uF1Ygry7urW0ka429FyFkFW8Aw42
-	yrZ0yr45Wa98CrJanT9S1TB71UUUUU7qnTZGkaVYY2UrUUUUjbIjqfuFe4nvWSU5nxnvy2
-	9KBjDU0xBIdaVrnRJUUU9Ib7Iv0xC_Kw4lb4IE77IF4wAFF20E14v26r4j6ryUM7CY07I2
-	0VC2zVCF04k26cxKx2IYs7xG6rWj6s0DM7CIcVAFz4kK6r1j6r18M28lY4IEw2IIxxk0rw
-	A2F7IY1VAKz4vEj48ve4kI8wA2z4x0Y4vE2Ix0cI8IcVAFwI0_JFI_Gr1l84ACjcxK6xII
-	jxv20xvEc7CjxVAFwI0_Gr0_Cr1l84ACjcxK6I8E87Iv67AKxVW8JVWxJwA2z4x0Y4vEx4
-	A2jsIEc7CjxVAFwI0_Gr0_Gr1UM2vYz4IE04k24VAvwVAKI4IrM2AIxVAIcxkEcVAq07x2
-	0xvEncxIr21l5I8CrVACY4xI64kE6c02F40Ex7xfMcIj6xIIjxv20xvE14v26r106r15Mc
-	Ij6I8E87Iv67AKxVWUJVW8JwAm72CE4IkC6x0Yz7v_Jr0_Gr1lF7xvr2IYc2Ij64vIr41l
-	c7CjxVAaw2AFwI0_JF0_Jw1lc2xSY4AK67AK6r4l42xK82IYc2Ij64vIr41l4I8I3I0E4I
-	kC6x0Yz7v_Jr0_Gr1lx2IqxVAqx4xG67AKxVWUJVWUGwC20s026x8GjcxK67AKxVWUGVWU
-	WwC2zVAF1VAY17CE14v26r126r1DMIIYrxkI7VAKI48JMIIF0xvE2Ix0cI8IcVAFwI0_Jr
-	0_JF4lIxAIcVC0I7IYx2IY6xkF7I0E14v26r4j6F4UMIIF0xvE42xK8VAvwI8IcIk0rVWU
-	JVWUCwCI42IY6I8E87Iv67AKxVWUJVW8JwCI42IY6I8E87Iv6xkF7I0E14v26r4j6r4UJb
-	IYCTnIWIevJa73UjIFyTuYvjxUy-zVDUUUU
-X-CM-SenderInfo: ysvqjiysrsjkur6v33wo0lvxldqovvfxof0/1tbiAQUED2sBs9gOtgAAs2
 
-Changing the MAC address of a running station interface makes mac80211
-remove the interface from the driver and add it back with the new
-address.  The code assumes that adding it back cannot fail and only warns
-if it does, which is not true: drivers may legitimately refuse to add the
-interface, for example a USB driver that has concluded its device has
-disappeared.  rt2x00 returns -ENODEV from ->add_interface() once it has
-seen too many consecutive -EPROTO errors and marked the device as gone,
-which produces
+rtl8xxxu_load_firmware() copies fw->size bytes and then subtracts the
+fixed firmware header size from fw->size without checking that the file
+is large enough.  A short firmware file with a valid signature makes
+fw_size wrap to a huge size_t; the revision logging then reads the
+header fields out of bounds, and the download path derives an
+out-of-bounds data pointer.
 
-  WARNING: net/mac80211/iface.c:306 at ieee80211_change_mac
+A 2-byte rtlwifi/rtl8192eu_nic.bin containing the 0x92c0 signature,
+loaded while the driver probes a Foxin RTL8192EU (0bda:818b) passed
+through to a KASAN guest, reproduces it:
 
-and, worse, the address change still returns success to userspace even
-though the interface is now running but no longer present in the driver.
-Any further address change then attempts to remove the interface from the
-driver again and trips the check_sdata_in_driver() warning.
+  BUG: KASAN: slab-out-of-bounds in rtl8xxxu_load_firmware+0x238/0x2ae
+  Read of size 1
+  ...
+  The buggy address is located 4 bytes to the right of
+  allocated 2-byte region
+  ...
+  kmemdup_noprof
+  rtl8xxxu_load_firmware
+  rtl8192eu_load_firmware
+  rtl8xxxu_probe
 
-Handle the error properly: keep the remove/add sequence, but propagate
-the driver's error to userspace instead of warning about it, restore the
-previous address so that the failed change is not visible to userspace,
-and reject further address changes on an interface that the driver no
-longer knows about.
+Reject firmware smaller than struct rtl8xxxu_firmware_header before
+copying or parsing it.  With this change the probe fails with -EINVAL
+and KASAN reports nothing.
 
-Fixes: 3c06e91b40db6 ("wifi: mac80211: Support POWERED_ADDR_CHANGE feature")
-Cc: stable@vger.kernel.org
-Co-developed-by: Bin Yu <byu@xidian.edu.cn>
-Signed-off-by: Bin Yu <byu@xidian.edu.cn>
-Co-developed-by: Cheng Wen <wencheng@xidian.edu.cn>
-Signed-off-by: Cheng Wen <wencheng@xidian.edu.cn>
-Signed-off-by: YuanZhe Liu <25031212351@stu.xidian.edu.cn>
+The issue and the initial fix were tested on a Foxin
+RTL8192EU (0bda:818b) passed through to a KASAN guest.
+I would be happy to provide the reproducer on request.
+
+Fixes: 26f1fad29ad9 ("New driver: rtl8xxxu (mac80211)")
+Signed-off-by: Anvik Loitongbam <permissiontogallop@gmail.com>
 ---
-v2:
- - Restore the previous address when the driver refuses to add the
-   interface back, so that the failed change is not left in
-   dev->dev_addr; otherwise a retry with the same address would be
-   filtered out by netif_set_mac_address() and never reach mac80211.
----
- net/mac80211/iface.c | 40 ++++++++++++++++++++++++++++++++++++----
- 1 file changed, 36 insertions(+), 4 deletions(-)
 
-diff --git a/net/mac80211/iface.c b/net/mac80211/iface.c
-index b6ed6541bc42..c45b42019d69 100644
---- a/net/mac80211/iface.c
-+++ b/net/mac80211/iface.c
-@@ -272,6 +272,7 @@ static int _ieee80211_change_mac(struct ieee80211_sub_if_data *sdata,
- 	struct sockaddr *sa = addr;
- 	bool check_dup = true;
- 	bool live = false;
-+	u8 old_addr[ETH_ALEN];
- 	int ret;
- 
- 	if (ieee80211_sdata_running(sdata)) {
-@@ -279,6 +280,15 @@ static int _ieee80211_change_mac(struct ieee80211_sub_if_data *sdata,
- 		if (ret)
- 			return ret;
- 
-+		/*
-+		 * The driver may have refused to add the interface back
-+		 * after a previous address change, e.g. because the device
-+		 * disappeared. In that case the interface is not in the
-+		 * driver, so don't try to remove/add it again.
-+		 */
-+		if (!(sdata->flags & IEEE80211_SDATA_IN_DRIVER))
-+			return -ENODEV;
-+
- 		live = true;
+diff --git a/drivers/net/wireless/realtek/rtl8xxxu/core.c b/drivers/net/wireless/realtek/rtl8xxxu/core.c
+index 3d0c22db30a8..c85b746c8e4e 100644
+--- a/drivers/net/wireless/realtek/rtl8xxxu/core.c
++++ b/drivers/net/wireless/realtek/rtl8xxxu/core.c
+@@ -2124,6 +2124,11 @@ int rtl8xxxu_load_firmware(struct rtl8xxxu_priv *priv, const char *fw_name)
+ 		goto exit;
  	}
  
-@@ -290,8 +300,10 @@ static int _ieee80211_change_mac(struct ieee80211_sub_if_data *sdata,
- 	if (ret)
- 		return ret;
- 
--	if (live)
-+	if (live) {
-+		ether_addr_copy(old_addr, sdata->dev->dev_addr);
- 		drv_remove_interface(local, sdata);
++	if (fw->size < sizeof(struct rtl8xxxu_firmware_header)) {
++		ret = -EINVAL;
++		goto exit;
 +	}
- 	ret = eth_mac_addr(sdata->dev, sa);
- 
- 	if (ret == 0) {
-@@ -300,10 +312,30 @@ static int _ieee80211_change_mac(struct ieee80211_sub_if_data *sdata,
- 	}
- 
- 	/* Regardless of eth_mac_addr() return we still want to add the
--	 * interface back. This should not fail...
-+	 * interface back, but the driver may refuse, e.g. if the device
-+	 * disappeared in the meantime.
- 	 */
--	if (live)
--		WARN_ON(drv_add_interface(local, sdata));
-+	if (live) {
-+		int err = drv_add_interface(local, sdata);
 +
-+		if (err && !ret) {
-+			struct sockaddr old_sa = {
-+				.sa_family = sdata->dev->type,
-+			};
-+
-+			/*
-+			 * Undo the address update, the change didn't happen.
-+			 * This also makes sure that a retry with the same
-+			 * address reaches us again instead of being filtered
-+			 * out by netif_set_mac_address().
-+			 */
-+			ether_addr_copy(old_sa.sa_data, old_addr);
-+			eth_mac_addr(sdata->dev, &old_sa);
-+			memcpy(sdata->vif.addr, old_addr, ETH_ALEN);
-+			ether_addr_copy(sdata->vif.bss_conf.addr, old_addr);
-+			ret = err;
-+		}
-+	}
- 
- 	return ret;
- }
--- 
-2.34.1
-
+ 	priv->fw_data = kmemdup(fw->data, fw->size, GFP_KERNEL);
+ 	if (!priv->fw_data) {
+ 		ret = -ENOMEM;
