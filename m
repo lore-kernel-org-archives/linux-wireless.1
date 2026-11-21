@@ -1,88 +1,88 @@
-Authentication-Results: smtp.subspace.kernel.org; arc=none smtp.remote-ip=209.85.218.41
+Authentication-Results: smtp.subspace.kernel.org; arc=none smtp.remote-ip=209.85.218.49
 ARC-Seal: i=1; d=subspace.kernel.org; s=arc20261015; a=rsa-sha256; cv=none;
-	t=1795302475;
-	b=254g0UFy1iUbvsmyM+LYLDXsE4bPANzP+z+AR6iKjQZX93BZCtbA0Owu4QTA3c6aChjT
-	 bDpI/LiGWDLqefH1/9XXa/nepyxVLp1wr3ZBvkMSgYDT7fCbWYUELqnnHslgIJgOkTlRf
-	 70BN9SVgY8xIVaQgZFeZhkjl2k09omdAqjfnJJ5KKMm5Kl4LCyIIJMx1WbY8sETJxGGPr
-	 mOS/otwYm30llJJ7sgztJhUqDLtQ3Dptm97NO1Z5/VHQ+uIb6eNymRSGVavX2TzFiAJ5Q
-	 DR+dtN6bEtlRO9y+fFIVRDX/PyIt0Oxcr8dJUlvouOFdiNOpbdoQO0xI5os3pR0pMBA==
+	t=1795302478;
+	b=0DLWwLfyiaS8EaykB8X8ArvAYaOQuKFECQQsUTytfpS2DFaQptxDsFy7fPAp5KigphFF
+	 5Itua/cGbxCkrbJ9h5KLZpxQ1Yj+/0PdyDWlBlbls3XH1/mp9Eh7+fghrvM4mYiwsQvbb
+	 Xe40+26l1iqxTOEkkBC76R0C5TxpPV6ip6ZwhPNcWzXGQmU/2e7PSgxb0ChFIW6TYcEaE
+	 N3c7AbCl6p0AUsPQqCY0T5NjZX0/yKmqkAXtiuUDGuJdCXpJtRU7HvrmENg1nyy5UDWie
+	 F4QSQw5rgXoqc+xQbUbRCX93S4dTkhovWqXwg/+iu+oLd3KgAPgOAwFepGJ8jaMFqhw==
 ARC-Message-Signature: i=1; d=subspace.kernel.org; s=arc20261015;
-	a=rsa-sha256; c=relaxed/relaxed; t=1795302475;
+	a=rsa-sha256; c=relaxed/relaxed; t=1795302478;
 	h=DMARC-Filter:Received:DKIM-Signature:X-Google-DKIM-Signature:
 	 X-Forwarded-Encrypted:X-Gm-Message-State:X-Gm-Gg:X-Received:Received:
 	 From:To:Cc:Subject:Date:Message-ID:X-Mailer:In-Reply-To:References:
 	 MIME-Version:Content-Transfer-Encoding;
-	bh=s88wbEfs1LyrsI8Y5Ny0Pr/96EyRBnxWAeHAPxpjPjY=;
-	b=x5fSnd37vBfpZ27jIF9IaGMHYSXYwTdAvXQViaH9SZ2Ibc9pqj5OPIcluxyVrvEMxAkE
-	 o8RwegaP+BJznL2BneZnM6IUyXrLguCPhYy6HZ/6Fh3xcbPaKmBWA7shpbFJ/voVI9N3X
-	 EEZ0h6q68MPIDX+Vz+fHDbX2WsGBM4kB8YCXRdJhoXRVf+ePU/bSPZgUlkZzmPYjOTdEN
-	 /RAxF/Elj8Sg4bSpqU/jzOV9LCMoM7zgV5ONFkKg2iQZvFhK5MPRd6t2NDS70XgiCtG5J
-	 JUj/7BjN85NbhVELLYYXwqjVg1b2uBMkqNMKt/A7kap4D+ySo1Jwn4JSCROv+5jDpwA==
+	bh=Jfrh1uIU+/waSgkZCGYbAyxAmQdxTwCrEPYnNRV069U=;
+	b=lq/G127O30hIU8TSOJ/Ken6MfqRVtjW1C7FnzQ5Q8iUsR1uhghWEAMYn9DXbHq8swIVs
+	 m5j8wEmMOrNl1hWekc8XjKRzaqGAkhwN2pn2wNfH4KTletU7W74hhaH4jeOwbnlkNng5S
+	 EzJWGkAtVH1iL9+dK/3tLDHPVP9k252HBKIkR7MnNPr0XlkqSUUzhL7oxhNozvaNd1C5e
+	 2tyPcnM4n6hxgKTUvXfu9GA7ehZqQAbf32PGfUvg96pPWs/KvIiy6MQYlaV+rAA1XC8db
+	 uo2/g67pNk86m2LBHoBeM/a7ydK/38giOwDSGLW/P5fdyu0xMvzcoW8Bre8WkJrC2TA==
 ARC-Authentication-Results: i=1; smtp.subspace.kernel.org; 
 	dmarc=pass header.from=bairaktaris.de;
 	spf=pass smtp.mailfrom=bairaktaris.de;
-	dkim=pass header.d=bairaktaris.de header.i=@bairaktaris.de header.a=rsa-sha256 header.s=google header.b=UXsXM8VU;
-	arc=none smtp.remote-ip=209.85.218.41
-Received: from mail-ej1-f41.google.com (mail-ej1-f41.google.com [209.85.218.41])
+	dkim=pass header.d=bairaktaris.de header.i=@bairaktaris.de header.a=rsa-sha256 header.s=google header.b=Y4DSGDzW;
+	arc=none smtp.remote-ip=209.85.218.49
+Received: from mail-ej1-f49.google.com (mail-ej1-f49.google.com [209.85.218.49])
 	(using TLSv1.3 with cipher TLS_AES_128_GCM_SHA256 (128/128 bits)
 	 key-exchange X25519 server-signature ECDSA (prime256v1) server-digest SHA256)
 	(No client certificate requested)
-	by smtp.subspace.kernel.org (Postfix) with ESMTPS id 6F94360A3832
-	for <linux-wireless@vger.kernel.org>; Sat, 21 Nov 2026 23:07:55 +0000 (UTC)
-DMARC-Filter: OpenDMARC Filter v1.4.2 smtp.subspace.kernel.org 6F94360A3832
+	by smtp.subspace.kernel.org (Postfix) with ESMTPS id 13B7B60A3832
+	for <linux-wireless@vger.kernel.org>; Sat, 21 Nov 2026 23:07:57 +0000 (UTC)
+DMARC-Filter: OpenDMARC Filter v1.4.2 smtp.subspace.kernel.org 13B7B60A3832
 Authentication-Results: smtp.subspace.kernel.org; dmarc=pass (p=reject dis=none) header.from=bairaktaris.de
 Authentication-Results: smtp.subspace.kernel.org; spf=pass smtp.mailfrom=bairaktaris.de
 Authentication-Results: smtp.subspace.kernel.org;
-	dkim=pass (2048-bit key) header.d=bairaktaris.de header.i=@bairaktaris.de header.a=rsa-sha256 header.s=google header.b=UXsXM8VU
-Received: by mail-ej1-f41.google.com with SMTP id a640c23a62f3a-c4203bbb1e9so337990866b.3
-        for <linux-wireless@vger.kernel.org>; Sat, 21 Nov 2026 15:07:55 -0800 (PST)
+	dkim=pass (2048-bit key) header.d=bairaktaris.de header.i=@bairaktaris.de header.a=rsa-sha256 header.s=google header.b=Y4DSGDzW
+Received: by mail-ej1-f49.google.com with SMTP id a640c23a62f3a-c4d5b2db4bbso477296266b.0
+        for <linux-wireless@vger.kernel.org>; Sat, 21 Nov 2026 15:07:57 -0800 (PST)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=bairaktaris.de; s=google; t=1795302474; x=1795907274; darn=vger.kernel.org;
+        d=bairaktaris.de; s=google; t=1795302476; x=1795907276; darn=vger.kernel.org;
         h=content-transfer-encoding:mime-version:references:in-reply-to
          :message-id:date:subject:cc:to:from:from:to:cc:subject:date
          :message-id:reply-to:content-type;
-        bh=s88wbEfs1LyrsI8Y5Ny0Pr/96EyRBnxWAeHAPxpjPjY=;
-        b=UXsXM8VUxKGW99RINHuFf7j8UKpu+ylu5fmYvOWf8Api27Hx8/jxc3tK0a268TsKTv
-         62N3C6BGhJBREMSW5Mc22tx58eaeWDD6YJc+e/iO/u1SoGqF0825XqGBOIirAyCPZssB
-         JxgxQfdB+0gReyZkQmPM6oY+XLU8Pr3iIpGfKxdgaKWnTkGHUI2MZabNGFQCgDK83Ovx
-         1cAMenaxZaMx45dQ9xGQ+3XTHk/bUo+onKlscg0oV7jE0PvGo4HBPAGCfXwMLTjsWnYv
-         tVP1CAQqwNT1afmJXpXQXJTcyr1jLVh6nI+zLUdgmXXU9uZ2cOfGBcUADaj71SZt9xb2
-         w9tQ==
+        bh=Jfrh1uIU+/waSgkZCGYbAyxAmQdxTwCrEPYnNRV069U=;
+        b=Y4DSGDzWNrPyJqrxTJ0lhKrSAz5dkggFsvVp8ZiyzuBH4JqzRQmwoc6DgZHpcvehiL
+         iUbMNef6MIxzHOfL11EFzsKVrP/M0aBGWJxaeUgmj4dz4xDbAbzDU1C5z5ZJFEyLDEJQ
+         s6zvSZBRqCks5EQt29Vj9H2Z/7m7LmteMeEGqMc2xdWPde0/DhJHeoGGIkQQbENhRf8Q
+         9vUKu9rps8MXskdv36TFGMaGe1/xABojop4Nx8y9mSw0VQ+KSYu3u9MjkRg78OR8GDhi
+         3WTWfVCqRFUswal7fmVf6OYDCBrUSg5h+ZadrvugMkkYfeHptfu8t17sWuf0nWah84Zy
+         mXHg==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=1e100.net; s=20260707; t=1795302474; x=1795907274;
+        d=1e100.net; s=20260707; t=1795302476; x=1795907276;
         h=content-transfer-encoding:mime-version:references:in-reply-to
          :message-id:date:subject:cc:to:from:x-gm-gg:x-gm-message-state:from
          :to:cc:subject:date:message-id:reply-to:content-type;
-        bh=s88wbEfs1LyrsI8Y5Ny0Pr/96EyRBnxWAeHAPxpjPjY=;
-        b=d7PbNAAiB2z7qDfTwVGwYJu0Jovz/FOhACwHWu8ZDNArfVwSidvwzRHhEt4NreqhSo
-         J5yBXipSU77A4Ec5axZPqQlrGz+1u36Xo5j7ZDRn0bwC9CT8AaN5WL7ZE3XRwEjItYLM
-         ZH0TwKdpekzY+RtIBV4EYxs4PBTk5IRuQkqaSaPCF8UmpiQ51SMcjLGW365O2zep+v1K
-         5CVWMkKU2STvryDKacBYM9a0cXfw6Mv7d93eETXMnZQGQUJDp4lb8zpCCzgRM5ujo9FO
-         7f9vzG9rBFRcUe6gfQxqYZ68V1u1tyKGqwgdh2BFxlUGIhoZDzdBkmpNIdbcT7Bc4FpG
-         bQpA==
-X-Forwarded-Encrypted: i=1; AL+hErGwi68O8GFhW4L6uRz36dw72fC/WGXvJndIPzD0LdLzW0b1I78vmJ5V5xB+D9al7xYo4VjqTj38+wjkDvrXzQ==@vger.kernel.org
-X-Gm-Message-State: APuU4Z9T+iDSV9tlPobAlpabtgmkIKIA0uYyhlIdZr5c7+gPqrKryvZm
-	IOv8Eof6h6wuU/zi2V90+M2h6mwzXgG9w8JhgBPGbRZBEqNIzBLR1Nr1WzAS4g//7g==
-X-Gm-Gg: AZFdTZcpHlcN5gST7RPGiLX4mk4tXU9Lf+l+9FD36ubzSygSQxzHHDTqkirwk1RxrZo
-	Fvkf4VXH05UsIbYwLqw/qdUGrTq8XvKnzR67ww3Pv11r6AAgc6wYEJAN36mHNJmj9qSRYaYxPpI
-	JAcNQmcwIDa0T6iS0nCt7aIapKVej8iH2DPWm+yG+mlUJUufX0/qAA8Z6hWyt8HWyk/l0OeVuUE
-	B1Tl6JVi+aWwgwtQ6tFoXBfXDi+Svp8X+1kkGfsy2tFqkUDI6lFk6Q9ofyIYnPohnfwnGwCIFtc
-	JBfMBD07elybIsJIpg668Cg5gFUXGVb9x7S1ML44a98ikCW2S/9cxbBaphPMYkW6+WB7/QO5uUq
-	AS8+u4mvD6XEbkYfjDo8KGNAPN4I4fta5HqoxGASr7bc/ME0qKI6KG11lWTsvlHTdHY2HeEuKMO
-	6wIMHHuyAsCmHOvhrh2A2RK/mVGuOoow4lPl/lanK+lz8ONndUZ5rwVvZF81SazZG39R7sUsn/q
-	eGizgF+TzdvRvYBNH7vC5yVy66sBOB0Trk89M3Eq20X/aFWZkhfALmFp4EB1+ybYVi/T65OfOOR
-	yFyQqMNJN4k5KLKUyi4q7m4SBFJZNS1wYm29IjGfYawBTiAmr0bCXUrxajzBGS+YBGTJdhxv51j
-	MH+U/nTvhAXTxeIXY5gEO61zI+RYY+X/+6m8BnwjpTncgi1ZJYEnVzSROk+8Q0rB1HgexzOdA7N
-	k1U+rFLijc7jD4/k1bFGUqTBR+8lrT1NDBbRXgZ0N5JUHHrbORKj6icIJBnqpUY0ahUQFKeW4yj
-	XJfvMCg3MNYkWie6VjCccameewd9iLoV/XXOFrW+DL+T+/WqS3JXWOtlQKl83E7iMg+iBQvCSdF
-	gfB7vjJ3wu7B0R/8FcT5SYvejKY5CH8H4oy+VJCwhOyij/Txe1Cng7sLKWxr7H+AtW5AaA+DG5k
+        bh=Jfrh1uIU+/waSgkZCGYbAyxAmQdxTwCrEPYnNRV069U=;
+        b=2b+jPITlE7YLhh2Q8/REdhYJuQMalFtfGM8CXxiD/vOK7DorjaoPjvNyven2DQRRne
+         hUha8VICzc3/b2y63F10oQruP13kvibumAQFRSTz+ZsxSIMIRFW6kq4L16A61DhQD4Pq
+         KuCs/29LvvfLmdhhjJHXTD4C/lWuVFxWT8hKZ3RlV5uDJaqcavMQ/kI9jtJwd0Ab61+s
+         Gnmv4ZKkyCAbGsgEngQtr7qWNlNObJxfJ/nJ+U+X3EGjdXyDJJr2kiFz/MYhp4ZdcpAv
+         DcikfbQUO2kbXL/YmHqyDpUZYMlpgy1LThIyf2EsKiPx7oEmit20XtbHYoySskZy4pqh
+         2Qnw==
+X-Forwarded-Encrypted: i=1; AL+hErEI6u9p5yhbomko1tO1IeeRtrBgw7ENvwU4tOsSg0w97si2bOtRuFWEIu+iAs+qfhGd6gC9Bzhvfgb6iOR29A==@vger.kernel.org
+X-Gm-Message-State: APuU4Z+450Y/6fMGvVYnJPtBFTg0++w0G7RfbmDdycnsKaEF3YRSkuwU
+	AAzLAZ0yWGcQ4McVLpSCaP3LZhKsSz8XeMbdFlDPEGZaAqm8GqlKytjGYz5Yx+OVJw==
+X-Gm-Gg: AZFdTZerBz+MxxREBij0RnSPXhx1SU+CaEHSWJ8cJU2CkA1QE9NEz2U8nZ/5G8XhD/Y
+	lCBRssUM0u6p4f49RWJvqpIR/oDkbpCBGtWPFBq+6Vr/U0k8Ew/e26RBCvipFhHI4HqbuSj5oyy
+	dFdBmAl29qvJy7ZuwaBuw3652pPICY9y62EjTAsTEyLFFHUjp3PKXHpSZbioYyUtlB9b5tlvqVo
+	HCkddsogEDKUdmokAI0Myl7rTFFsaMECZq4CWelu7/IYEcF1orLhJzFtzPdNrIbfnHliGbgCCpB
+	4xG5+/d/82aOwu9ovmRudZsIUkRzfkJtC36Ic0Po8WD8dZqpNEouYIVkITYcU2cmIaIL/4mWPiN
+	5Y7xq7NzMEi/uPKmsYX6ZvApYvmrnQ60hnZRI4y+twu/fRTz1hOlyBgO7uvI1kEtKF/H5Ooo5vD
+	Yd1usYPTkysmkBveDrLQXbS8MllgbOnTsTUebUhgOG+hx+rvgyr4+VcSA76Ss6J6pj4QRupoweQ
+	yBWGsPi6p1pM5wBA9U7VJFB+e98Lkp2dVaVkRlsA4WRhTmT+riLATUJjo6SUXctuKHz6korV6Xq
+	rDXqagiOK/Y5mvjap3yrho/1XYntNJlSePrdfue1VK0CSLsyrFCEIHsu642QMaShAFGmyJXnjV8
+	6+LQiGNUup71qGRPqfmICUGw0A3TCqdf/xzLjnFL6Z/x2jkxrFPdJRHEbHG1mmUwxpRDV2bhfEy
+	gOKp1NqbUOdOu1ejSkT0lvf0S5ruW1BOj33XSNNhbH+yMzF17sKBu6J0gEV/VxJbH1/ZNHhrazx
+	3jn3cOGnIXDBBoe80TIBsrNnTBHUselZ23VOq9Q6X+LLDu7BkP1c47vNe1Phd3OmTuargFlQuiq
+	lEJ7iBo2LNi2fyWqCafplc82jddvXG6z42fuWoqQiMz/tnTNrZJlU3ToznhVu9BNA3GT+z7d8Dg
 	=
-X-Received: by 2002:a17:906:f5a9:b0:c41:4c20:5a80 with SMTP id a640c23a62f3a-c513aadb0femr716344166b.44.1795302473838;
-        Sat, 21 Nov 2026 15:07:53 -0800 (PST)
+X-Received: by 2002:a17:907:3f0f:b0:c41:9a35:17a2 with SMTP id a640c23a62f3a-c5131a6ef04mr809669266b.31.1795302476575;
+        Sat, 21 Nov 2026 15:07:56 -0800 (PST)
 Received: from Desktop.tail070c67.ts.net (p200300f2470edf0034412c7e8f5a5e7a.dip0.t-ipconnect.de. [2003:f2:470e:df00:3441:2c7e:8f5a:5e7a])
-        by smtp.gmail.com with ESMTPSA id a640c23a62f3a-c513afc1b40sm242721466b.54.2026.11.21.15.07.52
+        by smtp.gmail.com with ESMTPSA id a640c23a62f3a-c513afc1b40sm242721466b.54.2026.11.21.15.07.54
         (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
-        Sat, 21 Nov 2026 15:07:53 -0800 (PST)
+        Sat, 21 Nov 2026 15:07:56 -0800 (PST)
 From: Julius Bairaktaris <julius@bairaktaris.de>
 To: Jeff Johnson <jjohnson@kernel.org>
 Cc: ath11k@lists.infradead.org,
@@ -107,9 +107,9 @@ Cc: ath11k@lists.infradead.org,
 	Pradeep Kumar Chitrapu <quic_pradeepc@quicinc.com>,
 	Sathishkumar Muruganandam <quic_murugana@quicinc.com>,
 	Muna Sinada <quic_msinada@quicinc.com>
-Subject: [PATCH ath-next v3 11/13] wifi: ath11k: free the queued QMI events when the QMI service is torn down
-Date: Sun, 22 Nov 2026 00:07:29 +0100
-Message-ID: <20261121230731.1206043-12-julius@bairaktaris.de>
+Subject: [PATCH ath-next v3 13/13] wifi: ath11k: keep the cooling device across a firmware recovery
+Date: Sun, 22 Nov 2026 00:07:31 +0100
+Message-ID: <20261121230731.1206043-14-julius@bairaktaris.de>
 X-Mailer: git-send-email 2.53.0
 In-Reply-To: <20261121230731.1206043-1-julius@bairaktaris.de>
 References: <20261121230731.1206043-1-julius@bairaktaris.de>
@@ -124,48 +124,61 @@ Precedence: list
 MIME-Version: 1.0
 Content-Transfer-Encoding: 8bit
 
-ath11k_qmi_deinit_service() releases the QMI handle, cancels the event
-work and destroys its workqueue, but frees no event still on
-qmi->event_list. Releasing the handle reports the exit of every server
-it knew, so ath11k_qmi_ops_del_server() queues a SERVER_EXIT event there
-on every removal with a known server, and the event work stops early
-once ATH11K_FLAG_UNREGISTERING is set and leaves the rest of the list.
-These events are leaked.
+ath11k_core_reconfigure_on_crash() unregisters the thermal cooling
+devices of all radios, but ath11k_thermal_register() returns early once
+ATH11K_FLAG_REGISTERED is set, so the recovery never registers them
+again. After the first recovery the cooling devices and the phy's
+cooling_device link are gone, and ar->thermal.cdev still points to the
+freed cooling device.
 
-Free the events left on the list once the handle is released and the
-work is cancelled, when nothing can add or take one any more.
+The next ath11k_thermal_unregister(), from the second recovery or from
+driver removal, passes that pointer to
+thermal_cooling_device_unregister(). With CONFIG_THERMAL_DEBUGFS,
+thermal_debug_cdev_remove() takes cdev->lock in the freed object. Without
+it, thermal_cooling_device_exit() only compares the pointer with the
+registered cooling devices, so it unregisters a cooling device that was
+registered since and allocated at the same address.
 
-Fixes: d5c65159f289 ("ath11k: driver for Qualcomm IEEE 802.11ax devices")
+Since ath11k_thermal_register() is a no-op during recovery, the cooling
+devices stay registered like the radios: do not unregister them in
+ath11k_core_reconfigure_on_crash(), and unwind them in
+ath11k_core_pdev_create() only when this call registered them. Their
+callbacks do not reach the firmware while it restarts:
+ath11k_thermal_set_throttling() and ath11k_thermal_show_temp() return
+early unless the radio is in ATH11K_STATE_ON.
+
+Tested-on: IPQ8074 hw2.0 AHB WLAN.HK.2.12-01460-QCAHKSWPL_SILICONZ-1
+
+Fixes: 50556081e09b ("wifi: ath11k: thermal: don't try to register multiple times")
 Signed-off-by: Julius Bairaktaris <julius@bairaktaris.de>
 ---
 v3: new.
 
- drivers/net/wireless/ath/ath11k/qmi.c | 9 +++++++++
- 1 file changed, 9 insertions(+)
+ drivers/net/wireless/ath/ath11k/core.c | 4 ++--
+ 1 file changed, 2 insertions(+), 2 deletions(-)
 
-diff --git a/drivers/net/wireless/ath/ath11k/qmi.c b/drivers/net/wireless/ath/ath11k/qmi.c
-index 3ce7c4e5c51c..4a3837958e01 100644
---- a/drivers/net/wireless/ath/ath11k/qmi.c
-+++ b/drivers/net/wireless/ath/ath11k/qmi.c
-@@ -3361,9 +3361,18 @@ int ath11k_qmi_init_service(struct ath11k_base *ab)
- 
- void ath11k_qmi_deinit_service(struct ath11k_base *ab)
- {
-+	struct ath11k_qmi_driver_event *event, *tmp;
-+
- 	qmi_handle_release(&ab->qmi.handle);
- 	cancel_work_sync(&ab->qmi.event_work);
- 	destroy_workqueue(ab->qmi.event_wq);
-+
-+	/* The handle is released and the work gone: free what is left */
-+	list_for_each_entry_safe(event, tmp, &ab->qmi.event_list, list) {
-+		list_del(&event->list);
-+		kfree(event);
-+	}
-+
- 	ath11k_qmi_m3_free(ab);
- 	ath11k_qmi_free_target_mem_chunk(ab);
- }
+diff --git a/drivers/net/wireless/ath/ath11k/core.c b/drivers/net/wireless/ath/ath11k/core.c
+index 0795ba7e038c..4aaac5200ed2 100644
+--- a/drivers/net/wireless/ath/ath11k/core.c
++++ b/drivers/net/wireless/ath/ath11k/core.c
+@@ -2072,7 +2072,8 @@ static int ath11k_core_pdev_create(struct ath11k_base *ab)
+ err_spectral_unregister:
+ 	ath11k_spectral_deinit(ab);
+ err_thermal_unregister:
+-	ath11k_thermal_unregister(ab);
++	if (!test_bit(ATH11K_FLAG_REGISTERED, &ab->dev_flags))
++		ath11k_thermal_unregister(ab);
+ err_mac_unregister:
+ 	if (!test_bit(ATH11K_FLAG_REGISTERED, &ab->dev_flags))
+ 		ath11k_mac_unregister(ab);
+@@ -2342,7 +2343,6 @@ static int ath11k_core_reconfigure_on_crash(struct ath11k_base *ab)
+ 	mutex_lock(&ab->core_lock);
+ 	ath11k_hif_irq_disable(ab);
+ 	ath11k_hif_ce_irq_disable(ab);
+-	ath11k_thermal_unregister(ab);
+ 	ath11k_dp_pdev_free(ab);
+ 	ath11k_cfr_deinit(ab);
+ 	ath11k_spectral_deinit(ab);
 -- 
 2.53.0
 
