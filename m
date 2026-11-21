@@ -1,62 +1,59 @@
-Authentication-Results: smtp.subspace.kernel.org; arc=none smtp.remote-ip=46.4.11.11
+Authentication-Results: smtp.subspace.kernel.org; arc=none smtp.remote-ip=100.103.45.18
 ARC-Seal: i=1; d=subspace.kernel.org; s=arc20261015; a=rsa-sha256; cv=none;
-	t=1795262971;
-	b=pB4e3o7m2gavRjfFEDbV4CcbP3IwaFbdzYMNiPcWoLWVlNiCr+2M1c+ynuhZfkfz/UCe
-	 cpI21gslph0VkSor44TnD5RtFVWwkMVsC5fwuYHNHGYihezdGbE7hY/I+ed0f76ECozoK
-	 vL8UyJvplH6Gy+FwCrdVfsR29n/LgOamuIh3sgOiexxE8ITUQfblLiDqL/i9s5oIQ1TRA
-	 ftZjyaubIguRONj0NBw2eYQO9c86lIa64o3hkgQVj98Z0k6IXIDLKYV7SOMo4DOd4YVvS
-	 +HSRlnBInxEJWNYZjfuar7pJybrBolKTxivhNjE7FUyA/OCjtp2qaCTa4M+BOhs4iSQ==
+	t=1795264100;
+	b=QWlBOfwnbmAiWjNlDreFdPpzw0wDQCGVashedCmUwU8arRLVz2TdFyKDIWqJBpo/CiP0
+	 dmsA1JHaB1YpNsp1HXloNn5445SfNJ9f8wcZ/svaRDkf3e1yTCAiqEhLWcOFBtm2PJI1V
+	 /BnPpbVuH22yl80rj+Ekb58dG+dNEanbSSPWINoDIvcuI2DlCCV0gdhdgAgk+j8RR329w
+	 7m3fqVLxD+HqrxE9R730jq905xD/gQs++LsnscJDD+7NUwMo50u0RArz5KRClbs6ESYbk
+	 G57f3Gd4VwrkxDJqHk0caKVvcC0W3zIA8lHNqpp2R8jfQzXNuIFitRyDi80qZnygcQg==
 ARC-Message-Signature: i=1; d=subspace.kernel.org; s=arc20261015;
-	a=rsa-sha256; c=relaxed/relaxed; t=1795262971;
-	h=DMARC-Filter:DKIM-Signature:Received:From:To:Subject:Date:Message-ID:
-	 X-Mailer:In-Reply-To:References:MIME-Version:
-	 Content-Transfer-Encoding;
-	bh=4G6R/ul7xTBRJk8bilDD/PpsaRNGVDQzW0SXeG/keXk=;
-	b=CgWeFKLREwto0r2rdnygNAdwyYCUG7avLUveehls//yBojztAbwPHMHOxjYl4CgaGf5j
-	 /8tWFN3+vPHM2oCJcufyrih/klKGCqH700xfHKYfeb258g19cD9gW4gxNDnxdjuSBhX8+
-	 d5j9IGrfEGz8fUYDNfNoHHiZivP/Lc3CSWxrhxEHoR17+ygPxjBXzes3nzCGQpBLd4qs+
-	 7dfR95pBJhS6RoM85K+yFCApOpYfVEWjNi5l04l9Ob7il6eaW2icozpEITMg80/PAtODE
-	 /UNdmXpHtEwf/Zj1Gq7LSJ0fPhL/5thJRGcyz0MtzkgQhP3DWGPSCU6gkGYOeA10G0w==
+	a=rsa-sha256; c=relaxed/relaxed; t=1795264100;
+	h=Received:DKIM-Signature:Date:From:To:Cc:Subject:Message-ID:
+	 References:MIME-Version:Content-Type:Content-Disposition:In-Reply-To;
+	bh=7H6yTJgiXVjurwuVwDh2bU2c+2wm8uECQPTv4Fe2SXA=;
+	b=fmxgws+/NLKIOAC4YhPc9nxBat99vY524jJmvVgbQWJirb4KzfK+a2BWWlR/SA1wUL8H
+	 iWU8xxLyJyCQVOGmqFXtGMemyhZSIAMSSJfpluIJqfFlOVIkLCFvvLH8QiiHvW6UlME8v
+	 hq3E1Bahy4tEDftw/IMLRmYDL/WDezvpTFA1/TsH/JukgW0FilvAgO4bRcN1pV9OdYnmr
+	 V2VebIOVp/Nu1GqwMrfA+WFmtwK164yJpSv5PzKO9iC3vG9bXmkCcSMfZ+Rha5RbOE+4W
+	 3MOUagaD/6Q5BvI8k1TvjIeZsdwGKuT6GM2fX6vTH9F5kbrIsAq6YcUQNcj5APgqjfw==
 ARC-Authentication-Results: i=1; smtp.subspace.kernel.org; 
-	dmarc=pass header.from=nbd.name;
-	spf=pass smtp.mailfrom=nbd.name;
-	dkim=pass header.d=nbd.name header.i=@nbd.name header.a=rsa-sha256 header.s=20160729 header.b=i623hfZ7;
-	arc=none smtp.remote-ip=46.4.11.11
-Received: from nbd.name (nbd.name [46.4.11.11])
+	dkim=pass header.d=kernel.org header.i=@kernel.org header.a=rsa-sha256 header.s=k20260515 header.b=FwLhBHfu;
+	arc=none smtp.remote-ip=100.103.45.18
+Received: from smtp.kernel.org (quasi.space.kernel.org [100.103.45.18])
 	(using TLSv1.3 with cipher TLS_AES_256_GCM_SHA384 (256/256 bits)
-	 key-exchange ECDHE (prime256v1) server-signature ECDSA (prime256v1) server-digest SHA256)
+	 key-exchange X25519 server-signature ECDSA (prime256v1))
 	(No client certificate requested)
-	by smtp.subspace.kernel.org (Postfix) with ESMTPS id 7675F606A68A
-	for <linux-wireless@vger.kernel.org>; Sat, 21 Nov 2026 12:09:31 +0000 (UTC)
-DMARC-Filter: OpenDMARC Filter v1.4.2 smtp.subspace.kernel.org 7675F606A68A
-Authentication-Results: smtp.subspace.kernel.org; dmarc=pass (p=none dis=none) header.from=nbd.name
-Authentication-Results: smtp.subspace.kernel.org; spf=pass smtp.mailfrom=nbd.name
+	by smtp.subspace.kernel.org (Postfix) with ESMTPS id 24329606A320;
+	Sat, 21 Nov 2026 12:28:19 +0000 (UTC)
 Authentication-Results: smtp.subspace.kernel.org;
-	dkim=pass (1024-bit key) header.d=nbd.name header.i=@nbd.name header.a=rsa-sha256 header.s=20160729 header.b=i623hfZ7
-DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed; d=nbd.name;
-	s=20160729; h=Content-Transfer-Encoding:MIME-Version:References:In-Reply-To:
-	Message-ID:Date:Subject:To:From:Sender:Reply-To:Cc:Content-Type:Content-ID:
-	Content-Description:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc
-	:Resent-Message-ID:List-Id:List-Help:List-Unsubscribe:List-Subscribe:
-	List-Post:List-Owner:List-Archive;
-	bh=4G6R/ul7xTBRJk8bilDD/PpsaRNGVDQzW0SXeG/keXk=; b=i623hfZ7VveawhH4gnwU4yWq7x
-	jUcXbRbYJRQ81ghZiPFSIJu8dAkzSScrjzof9t8iFaaMLFP1hIJz3HaTpbkuAOl56cAiHzCHL2Evq
-	6BMNSIWDp9nytOowFC4RPSSw3DmQobZjHAdTRvOXx1uS7o1mHtrW0ORLDLOoHwvXtA+Q=;
-Received: from p200300cadf12920000000000000005bb.dip0.t-ipconnect.de ([2003:ca:df12:9200::5bb] helo=localhost.localdomain)
-	by ds12 with esmtpsa  (TLS1.3) tls TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384
-	(Exim 4.96)
-	(envelope-from <nbd@nbd.name>)
-	id 1xUjuM-006Q1I-0P
-	for linux-wireless@vger.kernel.org;
-	Sat, 21 Nov 2026 13:09:30 +0100
-From: Felix Fietkau <nbd@nbd.name>
-To: linux-wireless@vger.kernel.org
-Subject: [PATCH mt76-next 11/17] wifi: mt76: mt7996: restore the operating channel after an L1 SER
-Date: Sat, 21 Nov 2026 13:09:20 +0100
-Message-ID: <20261121120926.3603979-11-nbd@nbd.name>
-X-Mailer: git-send-email 2.47.3
-In-Reply-To: <20261121120926.3603979-1-nbd@nbd.name>
-References: <20261121120926.3603979-1-nbd@nbd.name>
+	dkim=pass (2048-bit key) header.d=kernel.org header.i=@kernel.org header.a=rsa-sha256 header.s=k20260515 header.b=FwLhBHfu
+Received: by smtp.kernel.org (Postfix) with ESMTPSA id E8C5C1F000C4;
+	Sat, 21 Nov 2026 12:28:18 +0000 (UTC)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=kernel.org;
+	s=k20260515; t=1795264099;
+	bh=7H6yTJgiXVjurwuVwDh2bU2c+2wm8uECQPTv4Fe2SXA=;
+	h=Date:From:To:Cc:Subject:References:In-Reply-To;
+	b=FwLhBHfufqwXZeNQ6Ov4B6OaGsVBAJ7XCHmXMbe+iEf3NnGJNqugTCNnCqhTQoYAb
+	 BBJp9SNsbW6yhDKVEJ6/M/hBR73MRngtUM1/NljbzqQvRj6n7crSDUsPfgMX/4eVTK
+	 jV7+LrLJwBAe4skUxuniF7o5VLOvOgLLlBO6ViiFZsG+hhgRLcpEFHLKBUjSQDDmGk
+	 L4Fh3bTgM354j6HGyg4U40vIUnu0IGVPRJ4Fs9vivT+LojFuv7a/Ff82Olf3RxtMKF
+	 ts2RqWuYnMTRfEfKclwTJSoFxVWJ1701Bek1Vgt8Uz1SODFtG4+KtBrH9xBQyD6p18
+	 BfLyZtdUxyjIA==
+Date: Sat, 21 Nov 2026 13:28:16 +0100
+From: Krzysztof Kozlowski <krzk@kernel.org>
+To: Madhavan Ganesan <madhavan.ganesan@oss.qualcomm.com>
+Cc: Johannes Berg <johannes@sipsolutions.net>, 
+	Rob Herring <robh@kernel.org>, Krzysztof Kozlowski <krzk+dt@kernel.org>, 
+	Conor Dooley <conor+dt@kernel.org>, Jeff Johnson <jjohnson@kernel.org>, 
+	Nathan Chancellor <nathan@kernel.org>, Nick Desaulniers <ndesaulniers@google.com>, 
+	Bill Wendling <morbo@google.com>, Justin Stitt <justinstitt@google.com>, 
+	linux-wireless@vger.kernel.org, devicetree@vger.kernel.org, ath12k@lists.infradead.org, 
+	linux-kernel@vger.kernel.org, llvm@lists.linux.dev
+Subject: Re: [PATCH ath-next v3 15/15] wifi: ath12k: add Wi-Fi 8 PCI driver
+ scaffolding for QCN9575
+Message-ID: <20261121-astute-calculating-hippogriff-69ecfc@quoll>
+References: <20261118-wifi8_qcn9575_bringup-v3-0-9875d2a3953f@oss.qualcomm.com>
+ <20261118-wifi8_qcn9575_bringup-v3-15-9875d2a3953f@oss.qualcomm.com>
 X-Mailing-List: linux-wireless@vger.kernel.org
 List-Id: <linux-wireless.vger.kernel.org>
 List-Post: <mailto:linux-wireless@vger.kernel.org>
@@ -66,173 +63,127 @@ List-Unsubscribe: <mailto:linux-wireless+unsubscribe@vger.kernel.org>
 List-Owner: <mailto:linux-wireless+owner@vger.kernel.org>
 Precedence: list
 MIME-Version: 1.0
-Content-Transfer-Encoding: 8bit
+Content-Type: text/plain; charset=utf-8
+Content-Disposition: inline
+In-Reply-To: <20261118-wifi8_qcn9575_bringup-v3-15-9875d2a3953f@oss.qualcomm.com>
 
-Since commit b36d55610215 ("wifi: mt76: abort scan/roc on hw restart"),
-the L1 SER aborts a running ROC or scan with MT76_MCU_RESET set. Neither
-the completion nor the rest of the recovery then sets a channel, so the
-firmware stays on the off-channel in its scan state. In that state the
-firmware keeps the station queues of the band stopped until the next
-channel switch. A ROC or scan that ends between the SER interrupt and
-the reset work has the same effect. A scan of a DFS operating channel
-also leaves radar detection off, since only the channel set that the
-aborted completion skips would start it again.
+On Wed, Nov 18, 2026 at 01:45:38PM +0530, Madhavan Ganesan wrote:
+> Add QCN9575 PCI window register constants (WINDOW_VALUE_MASK [25:19],
+> WINDOW_STATIC_MASK [31:7], CE_WINDOW_MASK [13:7], UMAC_WINDOW_MASK
+> [20:14]) and a Wi-Fi 8 reg_base instance (ath12k_wifi8_reg_base) for
+> per-device window selection. Implement ath12k_wifi8_pci_probe() to
+> configure QCN9575-specific PCI settings: MSI vector layout (3 MHI, 5 CE,
+> 8 DP vectors), static window mapping, window register address (0x3278),
+> and hardware revision. Call ath12k_wifi8_hw_init() at the end of probe
+> to complete hardware initialization. Define the Wi-Fi 8 PCI driver
+> struct with the probe callback, and register it with
+> ath12k_pci_register_driver() in ath12k_wifi8_pci_init().
+> 
+> This series only adds Wi-Fi 8 platform scaffolding; QCN9575's CP, DP,
+> and MAC datapath support will be posted as a follow-up series.
+> QCN9575_DEVICE_ID is intentionally left out of
+> ath12k_wifi8_pci_id_table for now, so no physical device can match and
+> probe until that follow-up series lands. The id_table entry will be
+> added in the final patch of that series, once QCN9575 is actually
+> functional.
+> 
+> Tested-on: QCN9274 hw2.0 PCI WLAN.WBE.1.6-01243-QCAHKSWPL_SILICONZ-1
+> Tested-on: WCN7850 hw2.0 PCI WLAN.HMT.1.1.c7-00108-QCAHMTSWPL_V1.0_V2.0_SILICONZ_UPSTREAM-3
+> 
+> Signed-off-by: Madhavan Ganesan <madhavan.ganesan@oss.qualcomm.com>
+> ---
+>  drivers/net/wireless/ath/ath12k/hal.h       |  2 +
+>  drivers/net/wireless/ath/ath12k/wifi7/hal.h |  2 -
+>  drivers/net/wireless/ath/ath12k/wifi8/hal.h |  1 +
+>  drivers/net/wireless/ath/ath12k/wifi8/pci.c | 89 ++++++++++++++++++++++++++++-
+>  4 files changed, 91 insertions(+), 3 deletions(-)
+> 
+> diff --git a/drivers/net/wireless/ath/ath12k/hal.h b/drivers/net/wireless/ath/ath12k/hal.h
+> index 9e88bdf4a93b..b30a8039b2ec 100644
+> --- a/drivers/net/wireless/ath/ath12k/hal.h
+> +++ b/drivers/net/wireless/ath/ath12k/hal.h
+> @@ -11,6 +11,8 @@
+>  
+>  struct ath12k_base;
+>  
+> +#define HAL_CE_WFSS_CE_REG_BASE			0x01b80000
+> +
+>  #define HAL_DESC_REO_NON_QOS_TID	16
+>  
+>  #define HAL_INVALID_PEERID	0x3fff
+> diff --git a/drivers/net/wireless/ath/ath12k/wifi7/hal.h b/drivers/net/wireless/ath/ath12k/wifi7/hal.h
+> index 19e02bb16ff2..fe880b0befcb 100644
+> --- a/drivers/net/wireless/ath/ath12k/wifi7/hal.h
+> +++ b/drivers/net/wireless/ath/ath12k/wifi7/hal.h
+> @@ -31,8 +31,6 @@
+>  	((hal)->regs->umac_ce1_dest_reg_base)
+>  #define HAL_SEQ_WCSS_UMAC_WBM_REG		0x00a34000
+>  
+> -#define HAL_CE_WFSS_CE_REG_BASE			0x01b80000
+> -
+>  #define HAL_TCL_SW_CONFIG_BANK_ADDR		0x00a4408c
+>  
+>  /* SW2TCL(x) R0 ring configuration address */
+> diff --git a/drivers/net/wireless/ath/ath12k/wifi8/hal.h b/drivers/net/wireless/ath/ath12k/wifi8/hal.h
+> index c99521abdcb3..89fa9a7f3fd9 100644
+> --- a/drivers/net/wireless/ath/ath12k/wifi8/hal.h
+> +++ b/drivers/net/wireless/ath/ath12k/wifi8/hal.h
+> @@ -11,6 +11,7 @@
+>  #include "hal_desc.h"
+>  
+>  /* WCSS Relative address */
+> +#define HAL_SEQ_WCSS_UMAC_OFFSET		0xf00000
+>  #define HAL_SEQ_WCSS_UMAC_CE0_SRC_REG(hal) \
+>  	((hal)->regs->umac_ce0_src_reg_base)
+>  #define HAL_SEQ_WCSS_UMAC_CE0_DST_REG(hal) \
+> diff --git a/drivers/net/wireless/ath/ath12k/wifi8/pci.c b/drivers/net/wireless/ath/ath12k/wifi8/pci.c
+> index 3975081d167b..fd0489f8333f 100644
+> --- a/drivers/net/wireless/ath/ath12k/wifi8/pci.c
+> +++ b/drivers/net/wireless/ath/ath12k/wifi8/pci.c
+> @@ -5,14 +5,101 @@
+>  
+>  #include <linux/pci.h>
+>  
+> +#include "../core.h"
+> +#include "../hal.h"
+> +#include "../hif.h"
+> +#include "../mhi.h"
+> +#include "../pci.h"
+> +#include "hal.h"
+> +#include "hw.h"
+> +#include "mhi.h"
+>  #include "pci.h"
+>  
+> +#define QCN9575_DEVICE_ID		0x1113
+> +#define WINDOW_REG_ADDRESS		0x3278
+> +
+> +#define WINDOW_VALUE_MASK		GENMASK(25, 19)
+> +#define WINDOW_STATIC_MASK		GENMASK(31, 7)
+> +#define CE_WINDOW_MASK			GENMASK(13, 7)
+> +#define UMAC_WINDOW_MASK		GENMASK(20, 14)
+> +
+> +static const struct pci_device_id ath12k_wifi8_pci_id_table[] = {
+> +	{}
 
-After the recovery, switch each band that the firmware still holds in
-the scan state back to its operating channel. Also switch back a band
-whose DFS state the aborted scan left stale. Count a scan switch as
-soon as it is sent, since the firmware can act on a switch whose answer
-the reset loses.
+Why do you need an empty table?
 
-Fixes: b36d55610215 ("wifi: mt76: abort scan/roc on hw restart")
-Signed-off-by: Felix Fietkau <nbd@nbd.name>
----
- drivers/net/wireless/mediatek/mt76/mac80211.c |  1 +
- .../net/wireless/mediatek/mt76/mt7996/mac.c   | 46 +++++++++++++++++--
- .../net/wireless/mediatek/mt76/mt7996/mcu.c   | 17 ++++++-
- .../wireless/mediatek/mt76/mt7996/mt7996.h    |  1 +
- 4 files changed, 58 insertions(+), 7 deletions(-)
+> +};
+> +
+> +MODULE_DEVICE_TABLE(pci, ath12k_wifi8_pci_id_table);
 
-diff --git a/drivers/net/wireless/mediatek/mt76/mac80211.c b/drivers/net/wireless/mediatek/mt76/mac80211.c
-index db604ffde216..77116d9f4125 100644
---- a/drivers/net/wireless/mediatek/mt76/mac80211.c
-+++ b/drivers/net/wireless/mediatek/mt76/mac80211.c
-@@ -1179,6 +1179,7 @@ int __mt76_set_channel(struct mt76_phy *phy, struct cfg80211_chan_def *chandef,
- 
- 	return ret;
- }
-+EXPORT_SYMBOL_GPL(__mt76_set_channel);
- 
- int mt76_set_channel(struct mt76_phy *phy, struct cfg80211_chan_def *chandef,
- 		     bool offchannel)
-diff --git a/drivers/net/wireless/mediatek/mt76/mt7996/mac.c b/drivers/net/wireless/mediatek/mt76/mt7996/mac.c
-index 7873b87c74d7..62f3ac2b2cd2 100644
---- a/drivers/net/wireless/mediatek/mt76/mt7996/mac.c
-+++ b/drivers/net/wireless/mediatek/mt76/mt7996/mac.c
-@@ -2263,19 +2263,50 @@ void mt7996_mac_update_beacons(struct mt7996_phy *phy)
- }
- 
- static void
--mt7996_update_beacons(struct mt7996_dev *dev)
-+mt7996_update_band_beacons(struct mt7996_phy *phy, unsigned long skip)
-+{
-+	if (!test_bit(phy->mt76->band_idx, &skip))
-+		mt7996_mac_update_beacons(phy);
-+}
-+
-+static void
-+mt7996_update_beacons(struct mt7996_dev *dev, unsigned long skip)
- {
- 	struct mt76_phy *phy2, *phy3;
- 
--	mt7996_mac_update_beacons(&dev->phy);
-+	mt7996_update_band_beacons(&dev->phy, skip);
- 
- 	phy2 = dev->mt76.phys[MT_BAND1];
- 	if (phy2)
--		mt7996_mac_update_beacons(phy2->priv);
-+		mt7996_update_band_beacons(phy2->priv, skip);
- 
- 	phy3 = dev->mt76.phys[MT_BAND2];
- 	if (phy3)
--		mt7996_mac_update_beacons(phy3->priv);
-+		mt7996_update_band_beacons(phy3->priv, skip);
-+}
-+
-+static bool
-+mt7996_mac_reset_channel_restore(struct mt7996_phy *phy)
-+{
-+	bool bcn_stopped = phy->offchan_bcn_stopped;
-+	bool offchannel = phy->fw_offchannel;
-+	struct mt76_phy *mphy = phy->mt76;
-+
-+	if (!mphy->chanctx)
-+		return false;
-+
-+	if (!offchannel &&
-+	    (mt7996_get_rdd_idx(phy, false) < 0 ||
-+	     mphy->dfs_state == mt76_phy_dfs_state(mphy)))
-+		return false;
-+
-+	if (__mt76_set_channel(mphy, &mphy->main_chandef, false))
-+		return false;
-+
-+	if (offchannel)
-+		mt76_offchannel_notify(mphy, false);
-+
-+	return bcn_stopped;
- }
- 
- void mt7996_tx_token_put(struct mt7996_dev *dev)
-@@ -2579,6 +2610,7 @@ mt7996_mac_full_reset(struct mt7996_dev *dev)
- 
- void mt7996_mac_reset_work(struct work_struct *work)
- {
-+	unsigned long bcn_restored = 0;
- 	struct ieee80211_hw *hw;
- 	struct mt7996_dev *dev;
- 	struct mt7996_phy *phy;
-@@ -2724,8 +2756,12 @@ void mt7996_mac_reset_work(struct work_struct *work)
- 	napi_schedule(&dev->mt76.tx_napi);
- 	local_bh_enable();
- 
-+	mt7996_for_each_phy(dev, phy)
-+		if (mt7996_mac_reset_channel_restore(phy))
-+			bcn_restored |= BIT(phy->mt76->band_idx);
-+
- 	ieee80211_wake_queues(hw);
--	mt7996_update_beacons(dev);
-+	mt7996_update_beacons(dev, bcn_restored);
- 
- 	mutex_unlock(&dev->mt76.mutex);
- 
-diff --git a/drivers/net/wireless/mediatek/mt76/mt7996/mcu.c b/drivers/net/wireless/mediatek/mt76/mt7996/mcu.c
-index 0eeac9084de7..e4f52cb81470 100644
---- a/drivers/net/wireless/mediatek/mt76/mt7996/mcu.c
-+++ b/drivers/net/wireless/mediatek/mt76/mt7996/mcu.c
-@@ -4394,6 +4394,8 @@ int mt7996_mcu_set_chan_info(struct mt7996_phy *phy, u16 tag)
- 	struct cfg80211_chan_def *chandef = &phy->mt76->chandef;
- 	int freq1 = chandef->center_freq1;
- 	u8 band_idx = phy->mt76->band_idx;
-+	bool scan;
-+	int ret;
- 	struct {
- 		/* fixed field */
- 		u8 __rsv[4];
-@@ -4448,8 +4450,19 @@ int mt7996_mcu_set_chan_info(struct mt7996_phy *phy, u16 tag)
- 		req.center_ch2 = ieee80211_frequency_to_channel(freq2);
- 	}
- 
--	return mt76_mcu_send_msg(&dev->mt76, MCU_WMWA_UNI_CMD(CHANNEL_SWITCH),
--				 &req, sizeof(req), true);
-+	/* the firmware stops the station queues of the band at a scan switch
-+	 * and starts them again only at a normal or DFS switch
-+	 */
-+	scan = req.switch_reason == CH_SWITCH_SCAN_BYPASS_DPD;
-+	if (tag == UNI_CHANNEL_SWITCH && scan)
-+		phy->fw_offchannel = true;
-+
-+	ret = mt76_mcu_send_msg(&dev->mt76, MCU_WMWA_UNI_CMD(CHANNEL_SWITCH),
-+				&req, sizeof(req), true);
-+	if (!ret && tag == UNI_CHANNEL_SWITCH && !scan)
-+		phy->fw_offchannel = false;
-+
-+	return ret;
- }
- 
- int mt7996_mcu_set_punct(struct mt7996_phy *phy)
-diff --git a/drivers/net/wireless/mediatek/mt76/mt7996/mt7996.h b/drivers/net/wireless/mediatek/mt76/mt7996/mt7996.h
-index 5ee8bf12f73b..1e01e6075193 100644
---- a/drivers/net/wireless/mediatek/mt76/mt7996/mt7996.h
-+++ b/drivers/net/wireless/mediatek/mt76/mt7996/mt7996.h
-@@ -421,6 +421,7 @@ struct mt7996_phy {
- 	bool counter_reset;
- 	bool rdd_tx_paused;
- 	bool offchan_bcn_stopped;
-+	bool fw_offchannel;
- };
- 
- struct mt7996_dev {
--- 
-2.47.3
+...
+
+> +static struct ath12k_pci_driver ath12k_wifi8_pci_driver = {
+> +	.name = "ath12k_wifi8_pci",
+> +	.id_table = ath12k_wifi8_pci_id_table,
+
+I actually wonder how does it work with such table - what is its
+purpose?
+
+> +	.ops.probe = ath12k_wifi8_pci_probe,
+> +	.reg_base = &ath12k_wifi8_reg_base,
+> +};
+
+Best regards,
+Krzysztof
 
