@@ -1,98 +1,93 @@
-Authentication-Results: smtp.subspace.kernel.org; arc=pass header.oldest-pass=0 smtp.remote-ip=209.85.221.181
-ARC-Seal: i=2; d=subspace.kernel.org; s=arc20261015; a=rsa-sha256; cv=pass;
-	t=1795278864;
-	b=CjXttaQ9bL+LXzoRwUjIP0itj5d7NiwE1HTkVqxgHz6ku5xmdfoGgz81NPgBNR7ufsk7
-	 edZT1+EsuzsiLJNJ2wZ+bEc/jKOsZoWluN0nO4xeYgZ3ZZq+ma2/GtjqSlCxy8vz99UPV
-	 4p1giserb9M5B97mjhphaE2771Kcd0V+RT4LqsRiNE+xf5n/+o6sPHo1AOuO1/unLZxPu
-	 BWhVwe0KKrBA4lqp36YMHsEjeJz1UWjDYcSYRkTQfzL6bgMhAHNUMLuV8ro/bTNlgAdFI
-	 vKBo0PSlspIlh28oRvw0SEdMLgb+BNM2mM9Pj+r/r8FWQ0h0bv2CGFcA+/3pBlfMG9A==
-ARC-Message-Signature: i=2; d=subspace.kernel.org; s=arc20261015;
-	a=rsa-sha256; c=relaxed/relaxed; t=1795278864;
+Authentication-Results: smtp.subspace.kernel.org; arc=none smtp.remote-ip=209.85.214.172
+ARC-Seal: i=1; d=subspace.kernel.org; s=arc20261015; a=rsa-sha256; cv=none;
+	t=1795278974;
+	b=VPj4juOWtKUrD/fpK2IU41a7t/A1+y7wreg/vtkLP7rsPV7NuUfh9DqLtSBaeg/h+3cO
+	 2iNOXa1R9y2WK+QjoQAw+tv0PB/+SUnAZoq+FQi0xR3SDi7/V8Q5E8NaGC7Vkx2ni4UAu
+	 h1+dALcRNqlJV/QECKPbOSbnuvVDqtDaWnrXO++oTjrQzIrSJTOY0L37MH5lPygXywzZx
+	 43tD2k897d1/Rx30B9Y8XDaCg2VRqXA4LXgMs6DfQYHfvjdkXBt+aZLJ+Y3OmEviTEIk3
+	 cviCbOv9H7OSgnjPEFVge+uFSTgi2XJZt1vBE6D+f1JA8mWSKjnh2t9JyZ9UPYAGOew==
+ARC-Message-Signature: i=1; d=subspace.kernel.org; s=arc20261015;
+	a=rsa-sha256; c=relaxed/relaxed; t=1795278974;
 	h=DMARC-Filter:Received:DKIM-Signature:X-Google-DKIM-Signature:
-	 X-Gm-Message-State:X-Gm-Gg:X-Received:Received:MIME-Version:From:Date:
-	 X-Gm-Features:Message-ID:Subject:To:Content-Type;
-	bh=Lz7tsmSYM0hUhccTl923sx6zcb3KnBzfEFLZA9i4GLI=;
-	b=AmPNGLGv5bTHlpre6O95rMkKuvcs8MpXUe0MbuOQiZ26CKV9NG75cEl8Bub5/hAwWdF3
-	 J9zSxDcuA6Lgq/vVDPvOTNAaS5LV0RFwzoJXfjQ0nNNYZfLOyaPUeDLSCt8+IsxlaV7w1
-	 gspdGDI4lA/bS+pcranW/H7o2yeYimkC1jFiMEKJGPsUEXy/z2bDjh4LXc62qDV2gxWbi
-	 fM0MYvm8QKI3qZKfz2tLKQaru08ehF+gc6s35WmWEsZASoRqTNB2EJ80BvcD2P+e2IDSc
-	 8HgasF5x/Vpld44rO2IuILAL2f//1Pu31Iw0wSNyfisBx54qbSpmq6sMt0JqsV0Hv9A==
-ARC-Authentication-Results: i=2; smtp.subspace.kernel.org; 
+	 X-Forwarded-Encrypted:X-Gm-Message-State:X-Gm-Gg:X-Received:Received:
+	 From:To:Cc:Subject:Date:Message-ID:X-Mailer:MIME-Version:
+	 Content-Transfer-Encoding;
+	bh=CN2TDQcri811lkCR+dibSRTuGc/getXYtioaM5I9ehA=;
+	b=InIEWqakvuJ4eZUC2xHYGEW/Q/oP1iJV4+DH3dPWTPCOJ6eRGD261j5ErTszccUPbzDF
+	 5uDiSfVTqEKIXzCAlAURmNCU2eu5xYyVRqFPYJrSKUpQMeJIyeSYf/n5LpDJacTbU/RnV
+	 O/p5iTcFI3u64OEjNcX+ABP+W91MaI0QFLJkgI0Ty3OsQUE9Rxd5c9lE+EIw25qGtXQfo
+	 sqKpxn+IyoZE0192AcPsRr6+RnJ2EoIV7/+uplBHmOUWzJVg9izPoB/eCfGJTOkak5Lcj
+	 xocvSjbZDFirXq+SRnZ9+garcVnb9L5rvpUr1IrP9uMZGPw6ht2gXqptFId2jO48oeQ==
+ARC-Authentication-Results: i=1; smtp.subspace.kernel.org; 
 	dmarc=pass header.from=gmail.com;
 	spf=pass smtp.mailfrom=gmail.com;
-	dkim=pass header.d=gmail.com header.i=@gmail.com header.a=rsa-sha256 header.s=20260707 header.b=ds8uIXKh;
-	arc=pass header.oldest-pass=0 smtp.remote-ip=209.85.221.181
-Received: from mail-vk1-f181.google.com (mail-vk1-f181.google.com [209.85.221.181])
+	dkim=pass header.d=gmail.com header.i=@gmail.com header.a=rsa-sha256 header.s=20260707 header.b=F3opAT5u;
+	arc=none smtp.remote-ip=209.85.214.172
+Received: from mail-pl1-f172.google.com (mail-pl1-f172.google.com [209.85.214.172])
 	(using TLSv1.3 with cipher TLS_AES_128_GCM_SHA256 (128/128 bits)
 	 key-exchange X25519 server-signature ECDSA (prime256v1) server-digest SHA256)
 	(No client certificate requested)
-	by smtp.subspace.kernel.org (Postfix) with ESMTPS id A17D7606A320
-	for <linux-wireless@vger.kernel.org>; Sat, 21 Nov 2026 16:34:23 +0000 (UTC)
-DMARC-Filter: OpenDMARC Filter v1.4.2 smtp.subspace.kernel.org A17D7606A320
+	by smtp.subspace.kernel.org (Postfix) with ESMTPS id 0E62560A2629
+	for <linux-wireless@vger.kernel.org>; Sat, 21 Nov 2026 16:36:13 +0000 (UTC)
+DMARC-Filter: OpenDMARC Filter v1.4.2 smtp.subspace.kernel.org 0E62560A2629
 Authentication-Results: smtp.subspace.kernel.org; dmarc=pass (p=none dis=none) header.from=gmail.com
 Authentication-Results: smtp.subspace.kernel.org; spf=pass smtp.mailfrom=gmail.com
 Authentication-Results: smtp.subspace.kernel.org;
-	dkim=pass (2048-bit key) header.d=gmail.com header.i=@gmail.com header.a=rsa-sha256 header.s=20260707 header.b=ds8uIXKh
-Received: by mail-vk1-f181.google.com with SMTP id 71dfb90a1353d-5eae12762c9so771241e0c.1
-        for <linux-wireless@vger.kernel.org>; Sat, 21 Nov 2026 08:34:23 -0800 (PST)
-ARC-Seal: i=1; a=rsa-sha256; t=1795278862; cv=none;
-        d=google.com; s=arc-20260327;
-        b=MpbryswSy1sRHCqETlQmI87iSQ4UhRZILGDMMlHDjrReX3nq22Q+SbGFoxV7Hmve9p
-         j3pTnKWEgAgZk1a2VJODecDEfXxZ1++1X6jqIQg1AUWjmMl+N5LVO4GQ07gA0gOPnUkN
-         61CNaDRhGJstupz8BnbmEKE8MR53IJD/OcgJ4yFS+ecWcw3yI/ZyT7r8HfHYLLtTBt2C
-         5tjEaq0JlbwpPn5rcWGyjT4VwJiWaA3LE0pkZEfrlJgVlLrQfX8uKdKZWQfRe0cBUX1f
-         5/5VfuKJC88gO2XKoicx3R4pBm07jANQ3OJzS3Si5MnzmtxGC18muyG0iKM2dP4mzIOg
-         ic7Q==
-ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=google.com; s=arc-20260327;
-        h=to:subject:message-id:date:from:mime-version:dkim-signature;
-        bh=Lz7tsmSYM0hUhccTl923sx6zcb3KnBzfEFLZA9i4GLI=;
-        fh=qW0phhq3fb3oiohK/Mu9j1KY1zyRNiiioKFc5anvatM=;
-        b=rXH4upj5VJdk/k3KZ2+wb0UHywWRmBzeRpoDaV4DlNBwCYcEf+hdowf0fcFWX7zFTF
-         EiO5r6XPO+4TOkLzvHfQbJB4IOx5CSTmEXs7jpiquuh8l32OCdX1Nd4Yq5JbgWbHf9YM
-         vX3rSuQe0UBQfKSQnvDwjq9PkydEEPDyTRHve7UXxcxUIHp2OBo6sfdygzx/OLP0e6Uj
-         E+nk0SvVewDHUEZVEu3LamyizNYWGwgAypaSHn/qYR7nQFVjuMyBkB684Pu34ssU4uwa
-         cYhBYK3YWIV3q+HTvyv4RKlFkCyuuwWVUcGMFDldDJB0xJqiVI21twZjnu4XHi4v3EMU
-         9GiA==;
-        darn=vger.kernel.org
-ARC-Authentication-Results: i=1; mx.google.com; arc=none
+	dkim=pass (2048-bit key) header.d=gmail.com header.i=@gmail.com header.a=rsa-sha256 header.s=20260707 header.b=F3opAT5u
+Received: by mail-pl1-f172.google.com with SMTP id d9443c01a7336-2f04ad2c46dso8831825ad.2
+        for <linux-wireless@vger.kernel.org>; Sat, 21 Nov 2026 08:36:13 -0800 (PST)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=gmail.com; s=20260707; t=1795278862; x=1795883662; darn=vger.kernel.org;
-        h=content-type:to:subject:message-id:date:from:mime-version:from:to
-         :cc:subject:date:message-id:reply-to:content-type;
-        bh=Lz7tsmSYM0hUhccTl923sx6zcb3KnBzfEFLZA9i4GLI=;
-        b=ds8uIXKhQiIIOwMu4FJWU/GNmjoDZXaDIkcKmHI3x7mCYKGBlVIKZpBnXZjPIfIDGj
-         FznjsvS8Sz92Sw101sZVGnLCGyEVbJX/aVvEtO540Xeag+gUq3v8WMin9VESO2bdTrqY
-         +hV7EFeI9uqs7V/SwjSFCieifzUIZSnNVbP8QAX57jP5M+ZtgqxxNCBL+bs2PHOkfIHF
-         KagLCLI8MFD4VhaeFDyfJgqPBsY8eu8jRI9iCnwIxpGu5a3Mf5o4KuYAOnpADZkBGvbV
-         Sr2JEaL/WkNo4UEJvBwNpSzZKBKnkej/z3eLakdLzvF1SnrJJ1D5Eei5vN1IwnKK802q
-         0s7w==
+        d=gmail.com; s=20260707; t=1795278973; x=1795883773; darn=vger.kernel.org;
+        h=content-transfer-encoding:mime-version:message-id:date:subject:cc
+         :to:from:from:to:cc:subject:date:message-id:reply-to:content-type;
+        bh=CN2TDQcri811lkCR+dibSRTuGc/getXYtioaM5I9ehA=;
+        b=F3opAT5uT5WeMpA6P9ZDThjTkKAhTq/Mnv0NZsfDqtIu0emfdrxSLVpLNN/gaIuX+t
+         gMcR963thMg0lWqpESd6MKIkd9xJ1pqbTBeyAmoYoFn9pONNSzC6ksgqxnPgfLHGnX2q
+         9d2yuU/Q/BXx7wtUONmetVltMTL2LOK44Tv22Z2QL7DNJyMnbbuVOlEfej733ZP4g7eF
+         9101yyJpqRyqldECZOBJkhGsD7Eyl1Ah+ZhOD1Hwzh2iMrVo48n7SaUyJzcW5YVhl5wn
+         zJAPhHmIc4L2zC9m/KwG1oDH5FvqS9IJaFxLavNUzqp9J2MiFKu50paDxeMSVnyMGurS
+         IcXw==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=1e100.net; s=20260707; t=1795278862; x=1795883662;
-        h=content-type:to:subject:message-id:date:from:mime-version:x-gm-gg
-         :x-gm-message-state:from:to:cc:subject:date:message-id:reply-to
-         :content-type;
-        bh=Lz7tsmSYM0hUhccTl923sx6zcb3KnBzfEFLZA9i4GLI=;
-        b=a0esPKRmFSYRvy3jCeKFekgfLsDOu0SUiY/hlSHcp0ar/TJsbMK4f6VpYRlGKDbdfq
-         pnpTryL2LvOoCQ8o0jztjyD34r6Dh1F+NxmqtdnlxHxesovHqTTfrUX862m5Ax153fHm
-         jm6G+fqraiOltG93Z4AWP9Vcy+eDop3004rtGH046e1YpxoJxZu2sg6LnUAp/kDl2OTj
-         +g7+VcbHu1eiKb1LzuR0CcZ36xG2rvRL6JAwHKyFXR7nMqMmkzPTamcdZ78GjO7O0x1w
-         U5PC/9FVRzT6ctvBNMFA3pBifCPnuLDKdAo7Wh9oTbHnsOodt2ad3zrNGNsEfqADlM0c
-         cTvg==
-X-Gm-Message-State: APuU4Z/5mQjRqPLDIowVWzHMQ06W9J/rH9u/fiKSk/gBNtmeqqCKTpPD
-	fej2hlMuuE8A5hBgUObnHtf2UXyx4v+PmHud0gwnxDVud/D3Qu1jsu/DxQ7i+qz/TelVyqNmMgG
-	qjduHH/1e5PBH5W7C+kHjByFP4ZSg8sobHg==
-X-Gm-Gg: AZFdTZe0X4e7YhWGTAk9qyJTVpWXvKZInfczEzMOty2HyXhHRyr9/ArNBMomQ6vZiwQ
-	WPLTTltJc65vkmNiw9zCFWsfnm1q+yAuCh7xhCXl4v8qmn97tBmMBhOPNW+ppC99DFkMk2kwkZT
-	hq2W759AzdG5CsctZiEh8Ai4nkBt64ZCR+s3KoRVutvhOx+SSislVWPwbIBiRVYAIYq6N0SOgU+
-	Loxg8GbOWzYloiJTyHkU61ucYDIji/fkL7sSzEv4NtPfhV0eWXahZLUjs/QkpEa2QG+SlHRxnpX
-	3EkdTtNf5yDbuTCpGaK+BC17amuTF0H8TR+EXkpR10nSJmbjwSEA8nG9pUeaRtKKRi7KOqVNbnF
-	S4cOlLH2yoC/IGeK6z2wUod5S2uZPxaKNx1DJxX3d4ByubQvD5h28yS3M0zMOojMdUhIg/0tCSV
-	p8S3ErZfMs/ipYHEfSdg9p9DeFY2rzV9nsOGhfZxHpl8k20gVayILamYF6bTs=
-X-Received: by 2002:a05:6122:2226:b0:5ea:8e0c:1f8b with SMTP id
- 71dfb90a1353d-5ee8aeaa9b5mr3157161e0c.5.1795278862502; Sat, 21 Nov 2026
- 08:34:22 -0800 (PST)
-Received: from 77377267392 named unknown by gmailapi.google.com with HTTPREST;
- Sat, 21 Nov 2026 08:34:21 -0800
+        d=1e100.net; s=20260707; t=1795278973; x=1795883773;
+        h=content-transfer-encoding:mime-version:message-id:date:subject:cc
+         :to:from:x-gm-gg:x-gm-message-state:from:to:cc:subject:date
+         :message-id:reply-to:content-type;
+        bh=CN2TDQcri811lkCR+dibSRTuGc/getXYtioaM5I9ehA=;
+        b=rAKuPFW4Dwa/JyXAj2ABMvJFgVM2VsAfnsz5urZeg/92MJeUb5ONWNykeNZYkvgPlF
+         7jfyAQqYuei6B+p1/JwXfygAPLE14LDx19Qsa4qNB96clklTbeFhi31lIi9OkPK14r4m
+         3+ufkvJLKkeWVZVJqXOaJ4W2jU0OVK1d4Kh4fHHb6G9EO0jnlSA2WuyIZArlL1LEDMvT
+         aBYoGRdSWh6A/ygszYIBMbvFfdevFDzOV38zjGtIB8BZRFanUA3IEzfQtUPg32l27Ece
+         ZdazLpSf2+F1977IqjVSuiO9ioZ0dk8shv8h0UnrakaR8mQrQSnwvgBppdJaILhx7X+4
+         n2rA==
+X-Forwarded-Encrypted: i=1; AL+hErGPIR2iTOpwsvZC+FF2pz0JpdFTMyQB/NZLA/jyaw0MenZH4M5isbU7H1L1lo47f0zr61MOdX5Sqzt91tAtNg==@vger.kernel.org
+X-Gm-Message-State: APuU4Z+jHMwbPTdAyC/pyM0AKuHhD0Gw4lPcy6fqrssS4wHxcHHI/q9I
+	yFactBpZbdKoV9XAL0/8FGOe5A624nfHiLXbtOVqWfu2is9OmJQQnLLH
+X-Gm-Gg: AZFdTZdOoO0BianSiofrAbLy075k0/UOJZfvm4zp9DkUgOJ70D5RkRHzB1mCVpVAmNH
+	tj8AwYF3wJewBiMio73m470izLY0rPzFfw5Idz9vjxzbMmQYkpt/wqnTFifN001vEqcPC1XyD8N
+	OipC7cI6HYnKqMLxCwL91y4tzQj3UKiHeTta1yYwkusS9qefImwlo/jPokXKodykLag7+1Kc9YM
+	9tlVFT3MZ/oVRhCIhCHfm1nyG7wjAanyCSg1MxPJHsdFMu7kGq9+WnvgPwg6dc0OtdzLNSGM9Eb
+	tIwBiIE9iMpyKTkkkoVYUGhv7BToNsU8gugd4O0zx9DUDlsu0yjI5zmBqDng4Jpi9bb2TA2E6Jv
+	ywNs1SpqSwufziYSjQFNTH/EDQTNYFoKlsOWCvwaX94GXtTiSCWHpbwhKqYNNqhOz0F5MR815GO
+	6gkipgyhw5LQ2m5BRfDpjvA0tpa5/viHSSWu6z46tzLvkWakwRPYdLK10+FofMreP0F/a4qKkCy
+	Fe+YKJ0pOsKKdkkIMfV6gk9qABBPEM7RZIjgIDBzuxT9OHeTfUexOzFmAd1b1dyfD/uJVlYCssO
+	n1UFwFYNVXDZy/1ElI5yKDJ/2oX+HZ9FXoFmzZrGeuaKsp+pzVDkqJRQpiHo/utUv1VvkcNSzty
+	p8lDc
+X-Received: by 2002:a17:90b:1802:b0:3b0:c11a:9026 with SMTP id 98e67ed59e1d1-3b41c95fa0cmr6410192a91.55.1795278973307;
+        Sat, 21 Nov 2026 08:36:13 -0800 (PST)
+Received: from G7XWH7K1F3 ([2408:8256:2e80:7371:8549:3fe7:526f:af9])
+        by smtp.gmail.com with ESMTPSA id 98e67ed59e1d1-3b405d11753sm12357403a91.5.2026.11.21.08.36.08
+        (version=TLS1_3 cipher=TLS_CHACHA20_POLY1305_SHA256 bits=256/256);
+        Sat, 21 Nov 2026 08:36:13 -0800 (PST)
+From: Zhao Li <enderaoelyther@gmail.com>
+To: Ping-Ke Shih <pkshih@realtek.com>
+Cc: Hemanth Selam <hemanth.selam@gmail.com>,
+	Morning Star <alexbestoso@gmail.com>,
+	linux-wireless@vger.kernel.org,
+	linux-kernel@vger.kernel.org
+Subject: [PATCH rtw-next 0/3] wifi: rtlwifi: don't mark unencrypted frames as decrypted
+Date: Sun, 22 Nov 2026 00:35:44 +0800
+Message-ID: <20261121163547.37019-1-enderaoelyther@gmail.com>
+X-Mailer: git-send-email 2.56.1
 X-Mailing-List: linux-wireless@vger.kernel.org
 List-Id: <linux-wireless.vger.kernel.org>
 List-Post: <mailto:linux-wireless@vger.kernel.org>
@@ -102,38 +97,51 @@ List-Unsubscribe: <mailto:linux-wireless+unsubscribe@vger.kernel.org>
 List-Owner: <mailto:linux-wireless+owner@vger.kernel.org>
 Precedence: list
 MIME-Version: 1.0
-From: NASEEM <nsmmjn1@gmail.com>
-Date: Sat, 21 Nov 2026 08:34:21 -0800
-X-Gm-Features: Aa3M54pKJsO3YdC46ZItXMsrySGFyZncL2QzPEtH6XuQLE_doYRn8p__j2sCJc4
-Message-ID: <CANsZi5CvsogtJLoEOP+0+GjQAEr7UtFmaOv3pOCw0EhDncbJLA@mail.gmail.com>
-Subject: [BUG] iwlwifi: Intel 8260 firmware crashes on Dell Latitude E5470
-To: linux-wireless@vger.kernel.org
-Content-Type: text/plain; charset="UTF-8"
+Content-Transfer-Encoding: 8bit
 
-Hello Linux Wireless maintainers,
+The SWDEC bit of an rtlwifi receive descriptor is set when a frame still
+needs software decryption. It is also clear for a frame that was never
+encrypted, so a driver that sets RX_FLAG_DECRYPTED from it alone tells
+mac80211 that plaintext was decrypted. mac80211 then accepts an
+unprotected unicast data frame although a pairwise key is installed, and
+unprotected deauthentication and disassociation frames on a connection
+that uses management frame protection.
 
-I'm reporting intermittent Wi-Fi disconnects on a Dell Latitude E5470
-running Linux Mint 22.3 (Ubuntu 24.04 base). They can start shortly
-after boot.
+Patches 1 and 2 set the flag only for a protected frame that is not a
+robust management frame in rtl8192ce and rtl8192se, as the newer rtlwifi
+chips do, and replace the vendor comment above the test, which no longer
+matches. Patch 3 does the same for rtl8192cu, which also set the flag
+for protected robust management frames and so skipped their software
+decryption and MIC verification. It reads the header only when the URB
+holds the frame control field.
 
-Adapter: Intel Wireless-AC 8260 [8086:24f3], rev 3a
-Driver: iwlwifi/iwlmvm
-Firmware: 36.c8e8e144.0 (8000C-36.ucode)
+The other rtlwifi receive descriptor parsers do not mark plaintext
+frames as decrypted. rtl8188ee, rtl8192ee, rtl8723ae, rtl8723be and
+rtl8821ae already use the same test. rtlwifi's process_agg_start()
+marks only the DELBA frame it builds itself. The usb_rx_hdl hook of
+rtl8192cu, whose _rtl_rx_process() sets the flag from SWDEC alone, is
+never called.
 
-On 6.8.0-149-generic, the kernel journal logged 181 firmware crash
-messages in one boot, beginning about 27 seconds after firmware load.
-The adapter was removed and rediscovered during that boot. Crashes
-also occurred on 7.0.0-42-generic and 7.0.0-43-generic. The installed
-6.8.0-151-generic build remains unverified. Disabling NetworkManager
-Wi-Fi power saving did not prevent recurrence.
+rtl8192d (rtl8192de/rtl8192du) is intentionally left untouched here:
+it checks the cipher reported in the RX descriptor, so unencrypted
+frames are not marked as decrypted. However, when a cipher is reported
+and SWDEC is clear, it still sets RX_FLAG_DECRYPTED for protected
+robust management frames. Ping-Ke, does RTL8192D decrypt those in
+hardware (or set SWDEC / report no cipher for them), or does it need a
+robust management frame exclusion too?
 
-Representative kernel messages:
-iwlwifi 0000:02:00.0: Microcode SW error detected.  Restarting 0x2000000.
-iwlwifi 0000:02:00.0: Microcode SW error detected.  Restarting 0x82000000.
+Zhao Li (3):
+  wifi: rtlwifi: rtl8192ce: don't mark unencrypted frames as decrypted
+  wifi: rtlwifi: rtl8192se: don't mark unencrypted frames as decrypted
+  wifi: rtlwifi: rtl8192cu: don't mark undecrypted frames as decrypted
 
-Is there a known workaround or an existing issue to follow? If further
-diagnostics are needed, please let me know what to collect and how to
-share a firmware dump privately.
+ .../wireless/realtek/rtlwifi/rtl8192ce/trx.c    | 17 +++++------------
+ .../wireless/realtek/rtlwifi/rtl8192cu/trx.c    | 14 ++++++++++----
+ .../wireless/realtek/rtlwifi/rtl8192se/trx.c    | 16 +++++-----------
+ 3 files changed, 20 insertions(+), 27 deletions(-)
 
-Thanks,
-Naseem
+
+base-commit: 0bdc579dbfc251a6b6838ee9459b6771b948c617
+-- 
+2.56.1
+
