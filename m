@@ -1,58 +1,55 @@
-Authentication-Results: smtp.subspace.kernel.org; arc=none smtp.remote-ip=185.223.33.25
+Authentication-Results: smtp.subspace.kernel.org; arc=none smtp.remote-ip=46.4.11.11
 ARC-Seal: i=1; d=subspace.kernel.org; s=arc20261015; a=rsa-sha256; cv=none;
-	t=1795239645;
-	b=WYSxrZyqBwTCIvobHF831Pmd1bZvqq5ROxfaYQC/psN0M0Ht8a31Ow/9rV6/v/riJf00
-	 HCW2SKGKtu5NtLkW2xPWPVZNvhfL4xWw75Gtn7/NhvInNXfjuVvqFlQuhc4z6hTy+Cb++
-	 HWpRNdMyDpkhgMDFUJbwSE21CimRZtpSzecdmW9Pa/ougoN7y2IhoJkogxe6aVQs2MzzA
-	 Tr2yPAV/UPQ0oqEOfJjMkddsJ+toht7vg39PaGhvIeY+UGgPIMlMLjo6Zl6iXtGftfG8F
-	 ZukxifvBGe9Gly/5G+WlHCqOtnEwitJndcvDOz/jkbWVz2ntsKp8aGPoqNH71MaQX9Q==
+	t=1795248860;
+	b=BkToZXYNUFdmeAWafmKTJyFoJCqllC5YB8iNSjyoDGyVcwak8TkAPvYu/7ahKVfgXtWz
+	 xgKVHH6La2fQT3QjcUaNjZehnCsczHOpNaf8ktHdZk2JHWSVN7sIGbrQDhfMw5HstzFGY
+	 LvQ7aiqD4PXVdmCx5mvF0Qw7+lQ4WDin1HvVd9TzO3UxGMXwzqHmhy2GmLtUsMYkbJW4i
+	 pG3Gqy4kC/2XlD7/WOVMpOjvBC3YYJYNxuklouGVsehJSTDdk1LdR8sNdD/DV4kLIDsdy
+	 0opPal5oiPaHyKEynBfaB+9ohYQQ2nkl+LRm4eMGA1afSjuxxteOYclAPa4enr43QVg==
 ARC-Message-Signature: i=1; d=subspace.kernel.org; s=arc20261015;
-	a=rsa-sha256; c=relaxed/relaxed; t=1795239645;
-	h=DMARC-Filter:DKIM-Signature:Message-ID:Subject:From:To:Date:
-	 Content-Type:Content-Transfer-Encoding:User-Agent:MIME-Version:
-	 X-PPP-Message-ID:X-PPP-Vhost:X-Originating-IP:X-SpamExperts-Domain:
-	 X-SpamExperts-Username:X-SpamExperts-Outgoing-Class:
-	 X-SpamExperts-Outgoing-Evidence:X-Recommended-Action:X-Filter-ID:
-	 X-Report-Abuse-To:X-Complaints-To;
-	bh=7EzdwExqFSYlEGobJRQFVqMjGoqXyJI7K0vzgKnzhU8=;
-	b=SwRr1Cs2eSpMMkw973t39+QnKxIoCpr2pQi8UlJfPFFHBDTQETg0fMy6xBbMdSgsqSo0
-	 omwnxyyNZVajTUQY750NTauO1wdLuh5q3ahdImeptS5/GJ+dyRGgdYlFuO1QwS/Iic1sJ
-	 H8W3BQYR+ifBu0Y2uSf0MTAxWuKbe/PTpUY0tHDfxiem8nqD+D6hLtcp/hiJdbJsuAOjY
-	 Epoa8dwjm/jeyY7WuqtKZp5uF+obcVl/la7efRTtiMRH9pnUNCx5hw7eeGlGf1Ya7gtUX
-	 +GwgqvpyNN8ziDlQEdymzBH411c6VJ+SVNYnxjP8viwfv1c9rys3fYR/H/BF07BGsyg==
+	a=rsa-sha256; c=relaxed/relaxed; t=1795248860;
+	h=DMARC-Filter:DKIM-Signature:Received:Message-ID:Date:MIME-Version:
+	 User-Agent:Subject:To:Cc:References:Content-Language:From:Autocrypt:
+	 In-Reply-To:Content-Type:Content-Transfer-Encoding;
+	bh=G8kM3IXtzBlumi5aSFxeLf8NDbduYmaDZ2j3BGuqdWM=;
+	b=yq1CNCcvdAhtqv5ifeibUPrCh66Zy4+AWdGmAS0G7QQaoO6568+altvGB9V1tbnCc2AD
+	 AHqAjZOM7EzzSg+0MDdZWxwFsACFHtlqZzsuDpXZEsJH2K+vMGL0lgnaqTRrd7ggWWU+s
+	 +/GfxfaWbeuPIGPGH1y3M0FClTB6D9SLxAzuj35PnFPMl7fZ9wzV33j7NwlIHHFnJ3U12
+	 xl8dIb7iwjuCic60FKxcAuU4rbFNIS58eVr6whoesKf0SE4JHXV97OAiRiZrpXB3rs70v
+	 hoDa3tjBoD6gSfwOWyy8CWhuCKNLzQEbUJW5BtZ9K+uwFcd9Mn4gp7cxmh+EqdhUkzg==
 ARC-Authentication-Results: i=1; smtp.subspace.kernel.org; 
-	dmarc=pass header.from=ellarik.com;
-	spf=pass smtp.mailfrom=ellarik.com;
-	dkim=pass header.d=ellarik.com header.i=@ellarik.com header.a=rsa-sha256 header.s=default header.b=qi4vogQS;
-	arc=none smtp.remote-ip=185.223.33.25
-Received: from se21-yh.route25.eu (se21-yh.route25.eu [185.223.33.25])
+	dmarc=pass header.from=nbd.name;
+	spf=pass smtp.mailfrom=nbd.name;
+	dkim=pass header.d=nbd.name header.i=@nbd.name header.a=rsa-sha256 header.s=20160729 header.b=i1Z7SAYu;
+	arc=none smtp.remote-ip=46.4.11.11
+Received: from nbd.name (nbd.name [46.4.11.11])
 	(using TLSv1.3 with cipher TLS_AES_256_GCM_SHA384 (256/256 bits)
-	 key-exchange X25519 server-signature ECDSA (prime256v1) server-digest SHA256)
+	 key-exchange ECDHE (prime256v1) server-signature ECDSA (prime256v1) server-digest SHA256)
 	(No client certificate requested)
-	by smtp.subspace.kernel.org (Postfix) with ESMTPS id D25D0606A68A
-	for <linux-wireless@vger.kernel.org>; Sat, 21 Nov 2026 05:40:43 +0000 (UTC)
-DMARC-Filter: OpenDMARC Filter v1.4.2 smtp.subspace.kernel.org D25D0606A68A
-Authentication-Results: smtp.subspace.kernel.org; dmarc=pass (p=quarantine dis=none) header.from=ellarik.com
-Authentication-Results: smtp.subspace.kernel.org; spf=pass smtp.mailfrom=ellarik.com
+	by smtp.subspace.kernel.org (Postfix) with ESMTPS id 1DDBB606A320;
+	Sat, 21 Nov 2026 08:14:19 +0000 (UTC)
+DMARC-Filter: OpenDMARC Filter v1.4.2 smtp.subspace.kernel.org 1DDBB606A320
+Authentication-Results: smtp.subspace.kernel.org; dmarc=pass (p=none dis=none) header.from=nbd.name
+Authentication-Results: smtp.subspace.kernel.org; spf=pass smtp.mailfrom=nbd.name
 Authentication-Results: smtp.subspace.kernel.org;
-	dkim=pass (2048-bit key, unprotected) header.d=ellarik.com header.i=@ellarik.com header.a=rsa-sha256 header.s=default header.b=qi4vogQS
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=ellarik.com;
-	s=default; t=1795239631;
-	bh=7EzdwExqFSYlEGobJRQFVqMjGoqXyJI7K0vzgKnzhU8=; h=Subject:From:To;
-	b=qi4vogQSpuu8fZLTBmHW6P+fKZyeGkwttWJdGvp7f8zn04e9FoMOVgb98nq/Zh8Be
-	 boitxdANCor+04pOFs9xnayM001Bfz+e4aT2KhDpK5bcYGke1yGPIVi5yUJotHwPnn
-	 AAK9FFjiAzvQm6ZO3B64ED6lkFYX7bCC/HYwRsuxsJCiO2LC1t4FUdNYwM61sAcsVX
-	 v3H62YriTpiQ7fEfhl9tUh6SKrx6VcjGUl4Cy0WDRI9c9mT81iRZyJjgfscY1qVdMJ
-	 kNZYy2bQ77etRTuK17tYgFVpD9Qs/n+73zMKn1wUdKGgYx8In0fQIypEGl0CjRly2U
-	 MV5PQDH+IB6xQ==
-Message-ID: <1dc9a6271147c88c7179d55b469372bdb5c8fdbf.camel@ellarik.com>
-Subject: Bug report: Realtek RTL8851BE Wi-Fi does not recover from suspend
-From: Rik van Westendorp <rik@ellarik.com>
-To: linux-wireless@vger.kernel.org
-Date: Sat, 21 Nov 2026 12:39:55 +0700
-Content-Type: text/plain; charset="UTF-8"
-Content-Transfer-Encoding: quoted-printable
-User-Agent: Evolution 3.56.2-9
+	dkim=pass (1024-bit key, unprotected) header.d=nbd.name header.i=@nbd.name header.a=rsa-sha256 header.s=20160729 header.b=i1Z7SAYu
+DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed; d=nbd.name;
+	s=20160729; h=Content-Transfer-Encoding:Content-Type:In-Reply-To:From:
+	References:Cc:To:Subject:MIME-Version:Date:Message-ID:Sender:Reply-To:
+	Content-ID:Content-Description:Resent-Date:Resent-From:Resent-Sender:
+	Resent-To:Resent-Cc:Resent-Message-ID:List-Id:List-Help:List-Unsubscribe:
+	List-Subscribe:List-Post:List-Owner:List-Archive;
+	bh=G8kM3IXtzBlumi5aSFxeLf8NDbduYmaDZ2j3BGuqdWM=; b=i1Z7SAYuObv8aNbiUEG9UYOdnJ
+	9sj2/Rl4wxb9fKIKkCnvpB0Y9iHiB/o+iHeemDW/SGxSZvU7O9GkGeOgpOVrufLE8CwMTAeWtL/MQ
+	J1uRRpfTi4FN2eFvlsFhWjMphCEnMk2d6Y/Q5XYiO8MCA/P6jJz0FkzjJXbzScc6Mjho=;
+Received: from p54a4360c.dip0.t-ipconnect.de ([84.164.54.12] helo=nf.local)
+	by ds12 with esmtpsa  (TLS1.3) tls TLS_ECDHE_RSA_WITH_AES_128_GCM_SHA256
+	(Exim 4.96)
+	(envelope-from <nbd@nbd.name>)
+	id 1xUgEb-006LOx-0N;
+	Sat, 21 Nov 2026 09:14:09 +0100
+Message-ID: <a89222e1-8795-4c89-907d-38ebeb49e2a9@nbd.name>
+Date: Sat, 21 Nov 2026 09:14:08 +0100
 X-Mailing-List: linux-wireless@vger.kernel.org
 List-Id: <linux-wireless.vger.kernel.org>
 List-Post: <mailto:linux-wireless@vger.kernel.org>
@@ -62,157 +59,57 @@ List-Unsubscribe: <mailto:linux-wireless+unsubscribe@vger.kernel.org>
 List-Owner: <mailto:linux-wireless+owner@vger.kernel.org>
 Precedence: list
 MIME-Version: 1.0
-X-PPP-Message-ID: 
- <179523963123.2395752.2226053486416840794@web-1125.yourhosting.nl>
-X-PPP-Vhost: ellarik.com
-X-SpamExperts-Domain: out.yourhosting.nl
-X-SpamExperts-Username: 92.63.174.241
-Authentication-Results: route25.eu; auth=pass smtp.auth=92.63.174.241@out.yourhosting.nl
-X-SpamExperts-Outgoing-Class: ham
-X-SpamExperts-Outgoing-Evidence: Combined (0.04)
-X-Recommended-Action: accept
-X-Filter-ID: 9kzQTOBWQUFZTohSKvQbgI7ZDo5ubYELi59AwcWUnuUjdGJ7Hmjk70M6VEd8yUngqKZGhFjCGfvE
- +aOMqWab4iu2SmbhJN1U9FKs8X3+Nt08vHb8nbKbJjqE4jpc4fX4H1XfVn4bX3C5WEBxzW8NgP3U
- G/ZDDYnMocOqHgLfwqXilbHtbFYVmmyNP/jzd7CC/1Co8nyDpMGpKMnWLT/M28QYiTpLCsrpI++d
- V3X+sU8j/cY2oirhNZm7m6wh7Iqz7eibU04JcTWQKv3WukWvpM7C3136a365LSB3jzgrkGO5tsip
- JSrP8cFfJBPbeO2YmTmYf9felIf8Q0lvYJANy1im26jqdSLearSSTVIJyNKROUzReCS8EpKh0It9
- L25JS816nuiE0t5pG6MLXGczoTQJqA/o+t3Ea0E0Ube9kHXDIs+XnBNIfh5zMQdp2DJwyCvN3Vbg
- xD0/9G1wETYb71dAw+pKUNW1n03s4Dq5bQNAJf3d6GivlcLHRpT7/3B0pzi4JDWEiJuf4ysgNjLZ
- YAmGZionQ8jFfz1/t0tMyqzHMkD6FRF7VJW6mpBnE/ZkPZla/rT07rpnmNGb4JCTlRmZu2cicrxa
- qiqFMmVRKBqtI4g+l6rCWbY0MZcgnbHsJfMkJrb2kroNbkL+wM74TDTfCsoyLtX6kMRdvGOfPLOP
- 33mJ55W70osiZSx/UtKBCAObPxF4XWWMm7b1nigsq5a0MriId+3NggpgCThPl0yhSFRdPgGo2MZV
- r7kox676wxx7NztRJeY5QrqeCaSFwXC9Qe7k3PAAB6oQaycVBGqWHSLsIohx7Rh+T35C/vwPNJ4P
- PTQyQV8F8AJLqeUeO/6PEB3K/5h7czMNRmRubN1Gh06k7oYvgODR0yOycCBRwD/3EaCPu1onFa0d
- n3u5il5UVYfMwIzpLASsIWP0b9zDqcigOvSxdRnthmhn8Zn6GcQHjUeyK9mmg+8efc3/fEk2jl3e
- 21SNdaJ1xf8MyzvvpZLSAr3jBzAtGBhZHAsUCYZmKidDyMV/PX+3S0zKrE9wSbzS5rEObsfJ+MGx
- EcdWWvwGn7UMvvWRueuZvUQzYx7elnKg3LLG4yTJ6k2Z+zEvuGslKTrRIXcXpFg5ivY=
-X-Report-Abuse-To: spam@semaster01.route25.eu
-X-Complaints-To: abuse@semaster01.route25.eu
+User-Agent: Mozilla Thunderbird
+Subject: Re: [PATCH 2/2] wifi: mt76: connac: correct rate power limit logic
+To: Shiji Yang <yangshiji66@outlook.com>, linux-wireless@vger.kernel.org
+Cc: Lorenzo Bianconi <lorenzo@kernel.org>, Ryder Lee
+ <ryder.lee@mediatek.com>, Shayne Chen <shayne.chen@mediatek.com>,
+ Sean Wang <sean.wang@mediatek.com>, Matthias Brugger
+ <matthias.bgg@gmail.com>,
+ AngeloGioacchino Del Regno <angelogioacchino.delregno@collabora.com>,
+ Mark Brown <broonie@kernel.org>, linux-kernel@vger.kernel.org,
+ linux-arm-kernel@lists.infradead.org, linux-mediatek@lists.infradead.org,
+ stable@vger.kernel.org
+References: <OSCPR01MB15019FDE88A442FBC74081EAABC782@OSCPR01MB15019.jpnprd01.prod.outlook.com>
+ <OSCPR01MB150191A858729F9D98B404F6ABC782@OSCPR01MB15019.jpnprd01.prod.outlook.com>
+Content-Language: en-US
+From: Felix Fietkau <nbd@nbd.name>
+Autocrypt: addr=nbd@nbd.name; keydata=
+ xsDiBEah5CcRBADIY7pu4LIv3jBlyQ/2u87iIZGe6f0f8pyB4UjzfJNXhJb8JylYYRzIOSxh
+ ExKsdLCnJqsG1PY1mqTtoG8sONpwsHr2oJ4itjcGHfn5NJSUGTbtbbxLro13tHkGFCoCr4Z5
+ Pv+XRgiANSpYlIigiMbOkide6wbggQK32tC20QxUIwCg4k6dtV/4kwEeiOUfErq00TVqIiEE
+ AKcUi4taOuh/PQWx/Ujjl/P1LfJXqLKRPa8PwD4j2yjoc9l+7LptSxJThL9KSu6gtXQjcoR2
+ vCK0OeYJhgO4kYMI78h1TSaxmtImEAnjFPYJYVsxrhay92jisYc7z5R/76AaELfF6RCjjGeP
+ wdalulG+erWju710Bif7E1yjYVWeA/9Wd1lsOmx6uwwYgNqoFtcAunDaMKi9xVQW18FsUusM
+ TdRvTZLBpoUAy+MajAL+R73TwLq3LnKpIcCwftyQXK5pEDKq57OhxJVv1Q8XkA9Dn1SBOjNB
+ l25vJDFAT9ntp9THeDD2fv15yk4EKpWhu4H00/YX8KkhFsrtUs69+vZQwc0cRmVsaXggRmll
+ dGthdSA8bmJkQG5iZC5uYW1lPsJgBBMRAgAgBQJGoeQnAhsjBgsJCAcDAgQVAggDBBYCAwEC
+ HgECF4AACgkQ130UHQKnbvXsvgCgjsAIIOsY7xZ8VcSm7NABpi91yTMAniMMmH7FRenEAYMa
+ VrwYTIThkTlQzsFNBEah5FQQCACMIep/hTzgPZ9HbCTKm9xN4bZX0JjrqjFem1Nxf3MBM5vN
+ CYGBn8F4sGIzPmLhl4xFeq3k5irVg/YvxSDbQN6NJv8o+tP6zsMeWX2JjtV0P4aDIN1pK2/w
+ VxcicArw0VYdv2ZCarccFBgH2a6GjswqlCqVM3gNIMI8ikzenKcso8YErGGiKYeMEZLwHaxE
+ Y7mTPuOTrWL8uWWRL5mVjhZEVvDez6em/OYvzBwbkhImrryF29e3Po2cfY2n7EKjjr3/141K
+ DHBBdgXlPNfDwROnA5ugjjEBjwkwBQqPpDA7AYPvpHh5vLbZnVGu5CwG7NAsrb2isRmjYoqk
+ wu++3117AAMFB/9S0Sj7qFFQcD4laADVsabTpNNpaV4wAgVTRHKV/kC9luItzwDnUcsZUPdQ
+ f3MueRJ3jIHU0UmRBG3uQftqbZJj3ikhnfvyLmkCNe+/hXhPu9sGvXyi2D4vszICvc1KL4RD
+ aLSrOsROx22eZ26KqcW4ny7+va2FnvjsZgI8h4sDmaLzKczVRIiLITiMpLFEU/VoSv0m1F4B
+ FtRgoiyjFzigWG0MsTdAN6FJzGh4mWWGIlE7o5JraNhnTd+yTUIPtw3ym6l8P+gbvfoZida0
+ TspgwBWLnXQvP5EDvlZnNaKa/3oBes6z0QdaSOwZCRA3QSLHBwtgUsrT6RxRSweLrcabwkkE
+ GBECAAkFAkah5FQCGwwACgkQ130UHQKnbvW2GgCeMncXpbbWNT2AtoAYICrKyX5R3iMAoMhw
+ cL98efvrjdstUfTCP2pfetyN
+In-Reply-To: <OSCPR01MB150191A858729F9D98B404F6ABC782@OSCPR01MB15019.jpnprd01.prod.outlook.com>
+Content-Type: text/plain; charset=UTF-8; format=flowed
+Content-Transfer-Encoding: 7bit
 
-Bug report: Realtek RTL8851BE Wi-Fi does not recover from suspend
+On 20.11.26 05:40, Shiji Yang wrote:
+> When mac80211 sets the power to 0, it does not make sense to change
+> the tx power to the maximum value. The original purpose should be to
+> limit the tx power to not exceed the hardware limit.
+> 
+> Fixes: 8225816d2974 ("mt76: mt7921: limit txpower according to userlevel power")
+> Cc: stable@vger.kernel.org
+> Signed-off-by: Shiji Yang <yangshiji66@outlook.com>
+I think in some cases (e.g. on mt792x), hw->conf.power_level is always 
+0, so this might cause regressions there.
 
-Summary
-
-On an ASUS Vivobook 14 X1404MA, the Wi-Fi adapter (Realtek RTL8851BE)
-does not come back after resuming from suspend (s2idle). After resume,
-the wireless interface (wlp1s0) disappears completely from
-NetworkManager (nmcli device shows only lo), no wireless networks are
-visible, and a full reboot is required to restore Wi-Fi. Wired
-networking is not available on this laptop, so the machine is
-effectively offline until reboot.
-
-Hardware
-
-Laptop: ASUS Vivobook 14 X1404MA (Intel Core 5 315 platform, brand new,
-2026)
-
-Wi-Fi/Bluetooth combo: Realtek RTL8851BE PCIe 802.11ax (subsystem:
-Foxconn International, Inc.)
-
-Kernel driver: rtw89_8851be
-
-Bluetooth part (RTL8851BU over USB/SDIO): also reloads firmware after
-resume and appears affected
-
-Software
-
-OS: Ubuntu 26.04 LTS (Resolute), fully updated as of 2026-11-21 (apt
-full-upgrade clean, no phasing issues relevant)
-
-Kernel: 6.x/7.0 series - 7.0.0-44-generic (issue also present on 7.0.0-
-30-generic before update)
-
-NetworkManager: 1.54.3
-
-Firmware: rtw89/rtw8851b_fw.bin, firmware version reported at boot:
-0.29.41.5 (4bd6ebac)
-
-Symptoms and dmesg evidence
-
-Immediately after resume, the kernel logs (dmesg) show the driver
-failing to reinitialize the chip:
-
-rtw89_8851be 0000:01:00.0: failed to write DBI register, addr=3D0xB48
-rtw89_8851be 0000:01:00.0: failed to write DBI register, addr=3D0xB48
-rtw89_8851be 0000:01:00.0: failed to read PCI cap, ret=3D134
-rtw89_8851be 0000:01:00.0: loaded firmware rtw89/rtw8851b_fw.bin
-rtw89_8851be 0000:01:00.0: xtal si not ready(R): offset=3D41
-rtw89_8851be 0000:01:00.0: xtal si not ready(W): offset=3D90 val=3D10
-mask=3D10
-rtw89_8851be 0000:01:00.0: failed to power on
-rtw89_8851be 0000:01:00.0: failed to setup chip information
-rtw89_8851be 0000:01:00.0: probe with driver rtw89_8851be failed with
-error -110
-
-Additional recurring warnings while the system is running (before
-suspend, sometimes after heavy traffic):
-
-rtw89_8851be 0000:01:00.0: timed out to flush queues
-
-NetworkManager logs meanwhile show the device moving to unmanaged and
-the rfkill device for the adapter disappearing (radio killswitch
-/sys/devices/.../rfkill3 disappeared), after which the Wi-Fi device is
-gone. A cold boot restores everything: firmware loads, chip powers on,
-connection succeeds. This is a power-state problem, not a general
-driver-failure problem.
-
-Workarounds attempted (all without success)
-
-Full system update (apt full-upgrade), including kernel upgrade from
-7.0.0-30 to 7.0.0-44: issue persists.
-
-Disable Wi-Fi power saving in NetworkManager (wifi.powersave =3D 2): no
-effect.
-
-Kill and re-enable Wi-Fi radio via nmcli radio wifi off/on after
-resume: device does not return.
-
-Manual driver reload after resume (modprobe -r rtw89_8851be && modprobe
-rtw89_8851be): fails with the failed to power on / error -110 messages
-above.
-
-Resume hook in /usr/lib/systemd/system-sleep/ unloading and reloading
-the module and restarting NetworkManager: no effect (same driver
-failure).
-
-Module options rtw89_pci disable_clkreq=3Dy and rtw89_core
-disable_lps_deep=3Dy (verified active via sysfs): issue persists.
-
-Kernel parameter pcie_aspm=3Doff (verified active via /proc/cmdline):
-issue persists.
-
-Switching suspend mode to deep (mem_sleep_default=3Ddeep): made things
-worse, system failed to wake at all from suspend and required a 10-15 s
-power-button hard shutdown; reverted. Platform apparently only supports
-s2idle properly.
-
-Manual PCI remove/rescan after a failed resume (echo 1 >
-/sys/bus/pci/devices/0000:01:00.0/remove, then echo 1 >
-/sys/bus/pci/rescan) was not yet tested successfully.
-
-Current status
-
-All configuration changes have been reverted to stock. Laptop boots and
-works normally, Wi-Fi works normally after a cold boot. Suspend remains
-unusable: after resume there is no Wi-Fi at all, and the only recourse
-is a full reboot. As a result, suspend cannot be used on this machine.
-
-Request
-
-This appears to be a power-management state bug in the rtw89 driver /
-the RTL8851BE firmware suspend path (PCIe device fails to power on
-after resume, error -110 =3D ETIMEDOUT at probe). The chip seems to
-remain wedged in a low-power state that the driver cannot recover from,
-even after full module reload.
-
-Requested: investigation of the rtw89 suspend/resume path for RTL8851BE
-on s2idle, ideally fixed in a future kernel/firmware update. Happy to
-provide full logs (dmesg, NetworkManager journal, lspci -vv, uname -a)
-on request. Please let me know if additional debugging output would
-help (e.g. dynamic debug traces of rtw89 suspend).
-
-Reporter
-
-Rik van Westendorp, ThailandDate: 21 November 2026
---=20
-sent from Ubuntu / Evolution
+- Felix
