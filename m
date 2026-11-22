@@ -1,90 +1,90 @@
-Authentication-Results: smtp.subspace.kernel.org; arc=none smtp.remote-ip=209.85.210.176
+Authentication-Results: smtp.subspace.kernel.org; arc=none smtp.remote-ip=209.85.215.172
 ARC-Seal: i=1; d=subspace.kernel.org; s=arc20261015; a=rsa-sha256; cv=none;
-	t=1795331045;
-	b=YONOH4nPEI6AmFvZTOIWEIaTl/cjCmreBpzvUmCp8fCeqCUdR7hThYsr/Ai5LsKWk65v
-	 X6g7y3AoKQpa4TLdGxlXHMcWSob16m5jrs4OpzebEW4Lo7/RQ4I5HKQUT+77574ztXGOq
-	 xD/QPgq+7FWrhvbXr5oSAnw7xJZTK6E7aSbYHXiBMZPrlr0u1YriFURtNaPIV5z99/v2y
-	 Pu38sSGvD4Rqer62s9lfXyDProPrSGHpWbdYrs0MHfKcF7YUb7ZeuvZOP4YbNaDC/vNRh
-	 izBEjBLdCmurW8fi7t3MGqOfEygAcVXhfiGAZquVvJduyZ35Qg2dpDtU79Bq/7cT86w==
+	t=1795331048;
+	b=hFUbFcbFShnEWKUfL0iOEvGAjJtS6gNg99+iM+kcbvaJPMzPqq+1g67WTzAHpPDW5OQx
+	 hzoTD8uypi1sZGwhTgGgj9fqt9vLmyBpuzNH/qozlpn6cwe8STzyVLJlfRX2TE13eB6vQ
+	 YsXwtcWLq4X5cvWtO0SZqtRr+cIsPTcx4BwrAJbv6bClHOyQkAkuf0iKwP00czzDg8yVx
+	 pcnBYieVJVu7fBOvE+EToB5OLE4gSu25LW1YT5aRdSiXx5oPCKpbSzvLdvOLimhsizW49
+	 Zgdniq3r2HsKUz/jiuYR18Jenm/giy3puj7InNztmcydH97IowDdGDjjOtldv2iBuyQ==
 ARC-Message-Signature: i=1; d=subspace.kernel.org; s=arc20261015;
-	a=rsa-sha256; c=relaxed/relaxed; t=1795331045;
+	a=rsa-sha256; c=relaxed/relaxed; t=1795331048;
 	h=DMARC-Filter:Received:DKIM-Signature:X-Google-DKIM-Signature:
 	 X-Gm-Message-State:X-Gm-Gg:X-Received:Received:From:To:Cc:Subject:
 	 Date:Message-ID:X-Mailer:In-Reply-To:References:MIME-Version:
 	 Content-Transfer-Encoding;
-	bh=7Nfxpr+xvHBYS96AE31oj/ATLceXgGgUOhq7pzqdcoI=;
-	b=wf3fRU9ArO4/uylB19zL+X+8IYi3TvZkQdZ7ziD2HPiH2sY8YD3JslCkcRjXciKwpfpy
-	 54OqBdmlApM6j7orUGekqvwsixsTkO5HLPmlGdsSZocfT690+n5C6ePwVLAFiMuuPvNIp
-	 LaTkA5jTICz09D5QaiJPNUSbFj+QjlKHDIvYDmwC08fDZ7UEz5Koqz/Iew92jiacR2tez
-	 bzN/cX1JV0OHLLZaiJSPTSLYdFizlJ6XOTVzsF/Rh/6LxLiAp+rxvw3eL1DsLQIJBOIE5
-	 fXnEeXH35PVOloaMFCqdPlU7NbRPboCo8QMCDKaO7fsLg0TKeCviEKxwLZIeYtVNTuw==
+	bh=I3pBK1zk3PgL7FtPm0azOHVG4m57HtPDUlylND/2Rfg=;
+	b=B8aHo0jbIaWhwb4EjQ7iccPPVVHfAMIL1dFVQ/1RElCoo2kd0oRIpW/mACMkXuSizqoP
+	 0RMjBFrqk39SPzLQ9mfx1skPkMKoHUFbP/CK0I5ZmBjF4plvhyoqQho9e4onj/PsWGlLl
+	 0Kdvilaeijc72UoiF8UsQtpGhUmdCTPA4PFzhWBfoZGITVfqJh8f7Sn2FURFSqycFBSxf
+	 GnMG3UHwMF2x0nYCO/yHr2IcQJvVgMxRW9C736ct1+ML0oT+Vv8E+RrZNRyLVi/s9EYT/
+	 HfIjn6UB2mMqvxfgFnltCsTctaUQNMhMSPi3nqQtWKfzGuOa04w+1eCzrXAMVVvWeRQ==
 ARC-Authentication-Results: i=1; smtp.subspace.kernel.org; 
 	dmarc=pass header.from=gmail.com;
 	spf=pass smtp.mailfrom=gmail.com;
-	dkim=pass header.d=gmail.com header.i=@gmail.com header.a=rsa-sha256 header.s=20260707 header.b=tf60kPJ5;
-	arc=none smtp.remote-ip=209.85.210.176
-Received: from mail-pf1-f176.google.com (mail-pf1-f176.google.com [209.85.210.176])
+	dkim=pass header.d=gmail.com header.i=@gmail.com header.a=rsa-sha256 header.s=20260707 header.b=YUcuNYtd;
+	arc=none smtp.remote-ip=209.85.215.172
+Received: from mail-pg1-f172.google.com (mail-pg1-f172.google.com [209.85.215.172])
 	(using TLSv1.3 with cipher TLS_AES_128_GCM_SHA256 (128/128 bits)
 	 key-exchange X25519 server-signature ECDSA (prime256v1) server-digest SHA256)
 	(No client certificate requested)
-	by smtp.subspace.kernel.org (Postfix) with ESMTPS id DABCC606A32A
-	for <linux-wireless@vger.kernel.org>; Sun, 22 Nov 2026 07:04:04 +0000 (UTC)
-DMARC-Filter: OpenDMARC Filter v1.4.2 smtp.subspace.kernel.org DABCC606A32A
+	by smtp.subspace.kernel.org (Postfix) with ESMTPS id B4CD2606A320
+	for <linux-wireless@vger.kernel.org>; Sun, 22 Nov 2026 07:04:07 +0000 (UTC)
+DMARC-Filter: OpenDMARC Filter v1.4.2 smtp.subspace.kernel.org B4CD2606A320
 Authentication-Results: smtp.subspace.kernel.org; dmarc=pass (p=none dis=none) header.from=gmail.com
 Authentication-Results: smtp.subspace.kernel.org; spf=pass smtp.mailfrom=gmail.com
 Authentication-Results: smtp.subspace.kernel.org;
-	dkim=pass (2048-bit key) header.d=gmail.com header.i=@gmail.com header.a=rsa-sha256 header.s=20260707 header.b=tf60kPJ5
-Received: by mail-pf1-f176.google.com with SMTP id d2e1a72fcca58-8b5e5e64494so1259817b3a.1
-        for <linux-wireless@vger.kernel.org>; Sat, 21 Nov 2026 23:04:04 -0800 (PST)
+	dkim=pass (2048-bit key) header.d=gmail.com header.i=@gmail.com header.a=rsa-sha256 header.s=20260707 header.b=YUcuNYtd
+Received: by mail-pg1-f172.google.com with SMTP id 41be03b00d2f7-cc4aa18f9afso855464a12.3
+        for <linux-wireless@vger.kernel.org>; Sat, 21 Nov 2026 23:04:07 -0800 (PST)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=gmail.com; s=20260707; t=1795331044; x=1795935844; darn=vger.kernel.org;
+        d=gmail.com; s=20260707; t=1795331047; x=1795935847; darn=vger.kernel.org;
         h=content-transfer-encoding:mime-version:references:in-reply-to
          :message-id:date:subject:cc:to:from:from:to:cc:subject:date
          :message-id:reply-to:content-type;
-        bh=7Nfxpr+xvHBYS96AE31oj/ATLceXgGgUOhq7pzqdcoI=;
-        b=tf60kPJ5PZ9guVcyIRt9usGOczeHORo461nktZ+77UVIbzk5DMCqBEgMnGcVRukUMw
-         PwHjLizJ+QF3xuxuB/EQl7omu/ADcUGvNQCkWr8jNbYdxmNZu7ksrjnlytAycgAp82Ai
-         5kRE4JcpeFYloYXB5poXr9F/4NCgQezrBIPJBHOENohBXuYaGROe2yyyHWBLH3OiLF7X
-         K9YipSltw5B5KVaza1Sd7ccxvMOOPhwLe47DUtgfwncSCPZ8gdyJJE3i0R/4ERdRCw5m
-         RdMW7D15LcV2Zg3xaH2uGnAzrauGxAJXw2nZaIYKboJdftspIbZ9CFVlgVPQmHLF6lMK
-         SlCQ==
+        bh=I3pBK1zk3PgL7FtPm0azOHVG4m57HtPDUlylND/2Rfg=;
+        b=YUcuNYtdJFYPgMeEi5xDGa/4YJNftqmTvS5vcuZ+rh01Zzzcqhi877EurpWKnlKfqd
+         peKQ7Q1/aCkFCvOvUfwp8oO7AnUpf27cHOYK0cKUmWXQesVDNPWsVaF9DBOo4J7R4gk9
+         bX9dJZ9lhg0d+c9UY5oCH3ZGLW0uL6MItYF+aSjyjtekqGV5mJTGaETzf8jwkSJqk0f6
+         mOvLuXEYD9ciJ+TB6aDYnbVHOzEbLaXRQYB6QqgZuTLezbBVL3VUNepLG81HeZRi1RTD
+         lM5TzZsNTlXz9iATR4tedBKJsyPtcnwyroZt+qTvuriOmTxYdmM8GkUqkhT6N61GCYIC
+         6MeQ==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=1e100.net; s=20260707; t=1795331044; x=1795935844;
+        d=1e100.net; s=20260707; t=1795331047; x=1795935847;
         h=content-transfer-encoding:mime-version:references:in-reply-to
          :message-id:date:subject:cc:to:from:x-gm-gg:x-gm-message-state:from
          :to:cc:subject:date:message-id:reply-to:content-type;
-        bh=7Nfxpr+xvHBYS96AE31oj/ATLceXgGgUOhq7pzqdcoI=;
-        b=ZkfEP/h/4Kv4I31F3SE95WzY4GdoENDnAKYhiWi2pg9JYmYAKqQUF9f2sqzF6TyKPO
-         OXf8t65zBvO1lD0vr87eBZy2ULYgEno16UdxQimpinXqy0Nkwv4R6jwTdZXlSU6+TOpM
-         DC35r79jxF/GFFBpZZ/eloA7Sv1/6/1VV+3lZ2wWsgHk5W7J71OlsQlsrnADMIs2qZ90
-         uBVBGu4deV6KXXrxJlrd77RKtFlMwyBs6GK7bWSHdexamUb4S8okRhD1oIlBsr1+7cyV
-         jMA7AW61ZgOlfSQr2XS+B5Vq+HOUPkpOAee8FumesriTHtmUFLoj166/BmD5npvbJnvl
-         X2lw==
-X-Gm-Message-State: APuU4Z91XI67UQHBGKvZWEdNWNJJfJqebYle+bYFP7mvpMQjlVS+RzQC
-	mzcPnYTujXD7Lo1wKJnR6nfMbRJd8JONqnuhj1+04b79GYt3mj9YS96947LeQw==
-X-Gm-Gg: AZFdTZfY4cfLNwVyGvHk0Lg2nnbUQ6HjoaV+nJl4EN5mnRQKChv4DL2XxHXk2Ff0Gvc
-	IavaPznvnnv+MsT1FGFwSUHW+mcjaKfEiLheoxyRMMISLcKIRK0mIQMyJpz4RbqpT0jg+kD0tAE
-	TyW4x6B//1ujIDo8TyA8FudVHYb42XQLhk4kC3IQnkNQag5YTHFRMU9Sm398DSJC/UlOs4/kgVI
-	eaACt9SexlsKPFq1YgCFf0tRM0EJLYgpId06dZBVzh5enEQFVnUZ11zMMSBTrs32mD5mQkaa/zX
-	WQFRkHtI6/H5dNKhou6c8bmkhqjkcFXs5yc/xTAnz2af9OBjMsbD3HqXQF7eztelYRASAr30YX4
-	6BQfR4ijX5Vu68OEY1cZlW+XC4tYNHkSBlURBDVquui/GV06etBbpsz52Q+Tk4b2F3rDvuTteHz
-	eJqWUpPRTk39NQ20zRgFBHqYqwztc8Q6VBgAu0wtvQcHHkl+RTt3AkQuJ5dCJ/zuETQkkM6JsAh
-	IlQXXokwPlyyK/FU8WDKvecG7ELRS0jYyn10jRLB5tC/0RRoQgqv5E6t89zFX2Ywac9NrS1GPly
-	r1Soy97w0j27k/BgGmz4T5QklUxygoZsUMzKzC0iCRs7hpItYMUFA0RqJy6cy5BuAECSzp/7+m2
-	fabgtb0GMDDRQHIjbynjS94wiTpb/c+Cwez3DrtK03WRT51mFvrCIqUazo1dIghg6g8tSXyW6F6
-	VMfQkwlucqlR0j0LuEpw==
-X-Received: by 2002:a05:6a20:7d9b:b0:3eb:ad13:50fa with SMTP id adf61e73a8af0-4014bc4711dmr7345799637.30.1795331043706;
-        Sat, 21 Nov 2026 23:04:03 -0800 (PST)
+        bh=I3pBK1zk3PgL7FtPm0azOHVG4m57HtPDUlylND/2Rfg=;
+        b=K6psS5H922ms/1Ung4YA2vP62CTP6nj6EhggWY2JQehSqq5rmI0emCRZiFJlQ9Q8ku
+         wB0eTWi/5dJA6Y2TPLl9m9GdKV5rhflYGuajxsdYNyZHLz+Vj4ab4Hto8IQ83G6g45xc
+         ZsJnYO5LjP3H3U5FJE/5pEd7j9V46ijqgvuefUkahOTRJ9UqeyzMz1PpsZ/6BiHs16vk
+         bsS6B4wmf3rcLSID03xtVC1nLwnef3EXyC9Q0CItyoEPk2rG+hs4Pqwr219ozIsuDGNI
+         Pf9qwddLQQwB9LFsZd0omMC1og5+bY9xjfxgt1f9FLpmmkb6kuLtP+h4f9Y2VHZub1gt
+         Lx/Q==
+X-Gm-Message-State: APuU4Z+LBDhuOmsDcjnKN6zogdoQpZozyni9hppQbQLnnBFGn/KzUCrj
+	45s12ckF65NmGLSzF6OwQXVSWzZNM+SlsYvzgXR8vc+1IxAyZbwZOMow9YCbfA==
+X-Gm-Gg: AZFdTZdZZf9SgnVYLqw8z++tiILE2N7A+wtkupAW7zI4bIrVtok9qQPmedBL9HPnusd
+	aizhHJPRzThKdLiZCS9td5/lZa/cJBcrG1DctPPR6sAZPLKUoNElU4CJ98V8nwaC2LAjYOvjuu9
+	dTzf/cQ5GD+188kUFBxmpZhgZlf5kzcmshGDxTfY6goxFb/ZNMXgGB8NJHFThPHr81oJ5ZxdAL6
+	qg550HGma8Qu04dFR+T33K18Mv2OpMUA3w0o0jRfQ2lPP0U/xJl8m31M3p7Z0lkP/A4gQw35xYk
+	cRkuoHZAR6J1c6ApJ+UblsmN8iM+U9oN+iTu60zzqZS0EsjKvFgfRCNUGSWyXrWCEGmSiTQ4+PS
+	ciUbWScN+qpUunG53dry8sXI4J84WnhRcSuM/adk+6yoa6bTbdwrCwExUU0PtA3CjDq6EDxuobA
+	x8a3ATv+Ox3Co1YsVX4YqkTfzqeihYEdUjZ6BEXOO1hAj3WZ+phzF3Y8wTQ6s3EAaxvw9/WpeDZ
+	SvToSI7IZOHjZi/xyPtCQbAHo14HbWiYpYykA1x9joTB2LJ0AYfRr59zttGEDFn0BZ7ypwHi9hK
+	PPOSofI1EcDftxpc9tQWqDlsQKIhshnCtd3wjgsq2HSZ+xv+ACx4mN/B5hWKoo/Z3Mvk+w6wn45
+	J6qv7inMeT5MnoJ/2yIpc4SKQZ2tjnSfX5SDUo/K9AyP4nmn+s6LBXW+Xy7gt5JZ76aJYpB8VfU
+	Q3KszP/kEnt4VdnyZ8+g==
+X-Received: by 2002:a05:6a00:a01:b0:893:4980:630e with SMTP id d2e1a72fcca58-8c87c38b5d7mr6704971b3a.31.1795331046842;
+        Sat, 21 Nov 2026 23:04:06 -0800 (PST)
 Received: from ryzen ([2601:644:8000:37f::e34])
-        by smtp.gmail.com with ESMTPSA id d2e1a72fcca58-8c872e45756sm3609721b3a.27.2026.11.21.23.04.01
+        by smtp.gmail.com with ESMTPSA id d2e1a72fcca58-8c872e45756sm3609721b3a.27.2026.11.21.23.04.03
         (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
-        Sat, 21 Nov 2026 23:04:03 -0800 (PST)
+        Sat, 21 Nov 2026 23:04:05 -0800 (PST)
 From: Rosen Penev <rosenp@gmail.com>
 To: Stanislaw Gruszka <stf_xl@wp.pl>
 Cc: linux-wireless@vger.kernel.org
-Subject: [PATCH wireless-next 1/3] wifi: rt2x00: add a mode that doesn't wait for every TX status
-Date: Sat, 21 Nov 2026 23:03:40 -0800
-Message-ID: <20261122070342.101054-2-rosenp@gmail.com>
+Subject: [PATCH wireless-next 2/3] wifi: rt2800: support TX status sampling
+Date: Sat, 21 Nov 2026 23:03:41 -0800
+Message-ID: <20261122070342.101054-3-rosenp@gmail.com>
 X-Mailer: git-send-email 2.56.1
 In-Reply-To: <20261122070342.101054-1-rosenp@gmail.com>
 References: <20261122070342.101054-1-rosenp@gmail.com>
@@ -99,373 +99,281 @@ Precedence: list
 MIME-Version: 1.0
 Content-Transfer-Encoding: 8bit
 
-Drivers with REQUIRE_TXSTATUS_FIFO keep each TX queue entry until the
-hardware has reported the TX status of its frame. On USB, reading that
-report is a control transfer, so the TX rate is bounded by the rate of
-control transfers.
+Implement REQUIRE_TXSTATUS_SAMPLING in rt2800lib.
 
-Add REQUIRE_TXSTATUS_SAMPLING for drivers that can tell the hardware
-which frames to report. With it, only frames that need their status
-wait for it: those mac80211 asked a status for and BARs, which are
-tracked on the BAR list. These are counted per queue. All other frames
-are marked ENTRY_DATA_NO_TXSTATUS and completed as soon as the DMA is
-done, through rt2x00lib_txdone_unreported(), which hands the frame back
-to mac80211 without a station so that rate control and the ACK
-tracking are not fed made up results.
+A TXWI packet id of 0 tells the hardware not to report a TX status for
+the frame. Frames that wait for their report keep the queue in the
+packet id, with entry 1. Rate control samples carry RT2800_PID_SAMPLE
+and the low three bits of the requested MCS: every MPDU of an A-MPDU is
+reported with the packet id of the first frame, so a sample can't be
+matched to a queue entry, but the requested MCS lets the number of
+retries be worked out from the report alone, as rt2800_txdone_entry()
+does from the TXWI. The MCS group (stream count, short preamble) comes
+from the MCS in the report.
 
-Some of the other frames, unicast frames to a station that expect an
-ACK, still ask the hardware for a report (ENTRY_DATA_TXSTATUS_SAMPLE),
-which only feeds rate control through rt2x00lib_txdone_sample(). At
-most eight samples are sent until the driver next finds the status
-FIFO empty, a sample in an A-MPDU (whose frames may all be reported)
-takes all eight, and no samples are sent while a tracked frame is
-pending, so the hardware status FIFO is unlikely to overflow and lose
-a report that a frame waits for.
+A report with a packet id that doesn't match the first waiting entry of
+its queue, which can happen for an A-MPDU led by a waiting frame, is
+ignored instead of being given to the wrong entry. Before a report is
+matched, the entries at the head of the queue that don't wait for one
+are completed.
 
-As unreported frames come back without a station, a frame that failed
-because its station went to power save is no longer filtered and
-requeued by mac80211, and such frames would not give back their
-airtime if AQL were enabled (rt2x00 doesn't enable it).
+Waiting frames of a queue all carry the same packet id, as the sample
+bit leaves no room for the entry index, so a lost report can't be told
+apart from the report of the next waiting frame. A waiting frame that
+the hardware aggregates behind a frame with packet id 0 gets no report
+and is completed by the TX status timeout. That is unlikely for EAPOL,
+which goes out on VO, where mac80211 doesn't start BA sessions itself.
 
 Signed-off-by: Rosen Penev <rosenp@gmail.com>
 ---
- drivers/net/wireless/ralink/rt2x00/rt2x00.h   | 22 +++++
- .../net/wireless/ralink/rt2x00/rt2x00dev.c    | 79 +++++++++++++++-
- .../net/wireless/ralink/rt2x00/rt2x00queue.c  | 93 +++++++++++++++++++
- .../net/wireless/ralink/rt2x00/rt2x00queue.h  | 13 +++
- 4 files changed, 202 insertions(+), 5 deletions(-)
+ drivers/net/wireless/ralink/rt2x00/rt2800.h   |   6 +
+ .../net/wireless/ralink/rt2x00/rt2800lib.c    | 175 +++++++++++++++++-
+ .../net/wireless/ralink/rt2x00/rt2800lib.h    |   1 +
+ 3 files changed, 180 insertions(+), 2 deletions(-)
 
-diff --git a/drivers/net/wireless/ralink/rt2x00/rt2x00.h b/drivers/net/wireless/ralink/rt2x00/rt2x00.h
-index babc04210a65..9b2aa86a048b 100644
---- a/drivers/net/wireless/ralink/rt2x00/rt2x00.h
-+++ b/drivers/net/wireless/ralink/rt2x00/rt2x00.h
-@@ -687,6 +687,7 @@ enum rt2x00_capability_flags {
- 	REQUIRE_COPY_IV,
- 	REQUIRE_L2PAD,
- 	REQUIRE_TXSTATUS_FIFO,
-+	REQUIRE_TXSTATUS_SAMPLING,
- 	REQUIRE_TASKLET_CONTEXT,
- 	REQUIRE_SW_SEQNO,
- 	REQUIRE_HT_TX_DESC,
-@@ -976,6 +977,13 @@ struct rt2x00_dev {
- 	 */
- 	DECLARE_KFIFO_PTR(txstatus_fifo, u32);
+diff --git a/drivers/net/wireless/ralink/rt2x00/rt2800.h b/drivers/net/wireless/ralink/rt2x00/rt2800.h
+index 8930589b4967..9348fb87c64d 100644
+--- a/drivers/net/wireless/ralink/rt2x00/rt2800.h
++++ b/drivers/net/wireless/ralink/rt2x00/rt2800.h
+@@ -3116,6 +3116,12 @@ enum rt2800_eeprom_word {
+ #define TXWI_W1_PACKETID_QUEUE		FIELD32(0x30000000)
+ #define TXWI_W1_PACKETID_ENTRY		FIELD32(0xc0000000)
  
-+	/*
-+	 * Rate control sample slots taken since the TX status FIFO was
-+	 * last seen empty (REQUIRE_TXSTATUS_SAMPLING). A sample sent in an
-+	 * A-MPDU takes all of them.
-+	 */
-+	atomic_t txstatus_samples;
++/*
++ * PACKETID bit of rate control samples (REQUIRE_TXSTATUS_SAMPLING), see
++ * rt2800_tx_packet_id().
++ */
++#define RT2800_PID_SAMPLE		0x8
 +
- 	/*
- 	 * Timer to ensure tx status reports are read (rt2800usb).
- 	 */
-@@ -1403,6 +1411,15 @@ void rt2x00queue_stop_queues(struct rt2x00_dev *rt2x00dev);
+ /*
+  * Word2
   */
- void rt2x00queue_flush_queues(struct rt2x00_dev *rt2x00dev, bool drop);
+diff --git a/drivers/net/wireless/ralink/rt2x00/rt2800lib.c b/drivers/net/wireless/ralink/rt2x00/rt2800lib.c
+index f15533c5be9b..c65243f3d062 100644
+--- a/drivers/net/wireless/ralink/rt2x00/rt2800lib.c
++++ b/drivers/net/wireless/ralink/rt2x00/rt2800lib.c
+@@ -793,6 +793,36 @@ int rt2800_load_firmware(struct rt2x00_dev *rt2x00dev,
+ }
+ EXPORT_SYMBOL_GPL(rt2800_load_firmware);
  
-+/**
-+ * rt2x00queue_txstatus_tracked - Check for frames waiting for a TX status
-+ * @rt2x00dev: Pointer to &struct rt2x00_dev.
++/*
++ * PACKETID 0 tells the hardware not to report a TX status for a frame.
++ * In sampling mode, frames that wait for their report carry the queue and
++ * entry 1, and rate control samples carry RT2800_PID_SAMPLE and the low
++ * bits of the requested MCS, so the number of retries can be worked out
++ * from the report alone. Note that every frame in an A-MPDU is reported
++ * with the packet id of the first frame.
 + *
-+ * With %REQUIRE_TXSTATUS_SAMPLING, return true if any TX queue holds a
-+ * frame that waits for its TX status report.
++ * With RT2800_PID_SAMPLE taking the top bit, all waiting frames of a
++ * queue share one packet id, so a lost report can't be told apart from
++ * the report of the next waiting frame of the queue. A waiting frame
++ * that the hardware puts in an A-MPDU behind a frame with packet id 0
++ * gets no report and is completed by the TX status timeout.
 + */
-+bool rt2x00queue_txstatus_tracked(struct rt2x00_dev *rt2x00dev);
++static u8 rt2800_tx_packet_id(struct queue_entry *entry,
++			      struct txentry_desc *txdesc)
++{
++	if (!rt2x00_has_cap_flag(entry->queue->rt2x00dev,
++				 REQUIRE_TXSTATUS_SAMPLING))
++		return ((entry->entry_idx % 3) + 1) << 2 | entry->queue->qid;
 +
- /*
-  * Debugfs handlers.
-  */
-@@ -1442,6 +1459,11 @@ void rt2x00lib_txdone(struct queue_entry *entry,
- void rt2x00lib_txdone_nomatch(struct queue_entry *entry,
- 			      struct txdone_entry_desc *txdesc);
- void rt2x00lib_txdone_noinfo(struct queue_entry *entry, u32 status);
-+void rt2x00lib_txdone_unreported(struct queue_entry *entry);
-+void rt2x00lib_txdone_sample(struct rt2x00_dev *rt2x00dev,
-+			     struct ieee80211_sta *sta,
-+			     struct skb_frame_desc *skbdesc,
-+			     struct txdone_entry_desc *txdesc);
- void rt2x00lib_rxdone(struct queue_entry *entry, gfp_t gfp);
- 
- /*
-diff --git a/drivers/net/wireless/ralink/rt2x00/rt2x00dev.c b/drivers/net/wireless/ralink/rt2x00/rt2x00dev.c
-index ec1bb61a54b6..14598e67df6a 100644
---- a/drivers/net/wireless/ralink/rt2x00/rt2x00dev.c
-+++ b/drivers/net/wireless/ralink/rt2x00/rt2x00dev.c
-@@ -387,6 +387,9 @@ static void rt2x00lib_clear_entry(struct rt2x00_dev *rt2x00dev,
- 	/*
- 	 * Make this entry available for reuse.
- 	 */
-+	if (test_bit(ENTRY_DATA_TXSTATUS_ACCT, &entry->flags))
-+		atomic_dec(&entry->queue->txstatus_inflight);
++	if (test_bit(ENTRY_DATA_TXSTATUS_SAMPLE, &entry->flags))
++		return RT2800_PID_SAMPLE | (txdesc->u.ht.mcs & 0x7);
 +
- 	entry->skb = NULL;
- 	entry->flags = 0;
- 
-@@ -457,15 +460,11 @@ void rt2x00lib_txdone_nomatch(struct queue_entry *entry,
- }
- EXPORT_SYMBOL_GPL(rt2x00lib_txdone_nomatch);
- 
--void rt2x00lib_txdone(struct queue_entry *entry,
--		      struct txdone_entry_desc *txdesc)
-+static void rt2x00lib_txdone_restore_skb(struct queue_entry *entry)
- {
- 	struct rt2x00_dev *rt2x00dev = entry->queue->rt2x00dev;
--	struct ieee80211_tx_info *tx_info = IEEE80211_SKB_CB(entry->skb);
- 	struct skb_frame_desc *skbdesc = get_skb_frame_desc(entry->skb);
--	u8 skbdesc_flags = skbdesc->flags;
- 	unsigned int header_length;
--	bool success;
- 
- 	/*
- 	 * Unmap the skb.
-@@ -507,6 +506,18 @@ void rt2x00lib_txdone(struct queue_entry *entry,
- 	 * we are going to overwrite the skb->cb array.
- 	 */
- 	rt2x00debug_dump_frame(rt2x00dev, DUMP_FRAME_TXDONE, entry);
++	if (test_bit(ENTRY_DATA_NO_TXSTATUS, &entry->flags))
++		return 0;
++
++	return 1 << 2 | entry->queue->qid;
 +}
 +
-+void rt2x00lib_txdone(struct queue_entry *entry,
-+		      struct txdone_entry_desc *txdesc)
-+{
-+	struct rt2x00_dev *rt2x00dev = entry->queue->rt2x00dev;
-+	struct ieee80211_tx_info *tx_info = IEEE80211_SKB_CB(entry->skb);
-+	struct skb_frame_desc *skbdesc = get_skb_frame_desc(entry->skb);
-+	u8 skbdesc_flags = skbdesc->flags;
-+	bool success;
-+
-+	rt2x00lib_txdone_restore_skb(entry);
+ void rt2800_write_tx_data(struct queue_entry *entry,
+ 			  struct txentry_desc *txdesc)
+ {
+@@ -836,8 +866,8 @@ void rt2800_write_tx_data(struct queue_entry *entry,
+ 			   txdesc->key_idx : txdesc->u.ht.wcid);
+ 	rt2x00_set_field32(&word, TXWI_W1_MPDU_TOTAL_BYTE_COUNT,
+ 			   txdesc->length);
+-	rt2x00_set_field32(&word, TXWI_W1_PACKETID_QUEUE, entry->queue->qid);
+-	rt2x00_set_field32(&word, TXWI_W1_PACKETID_ENTRY, (entry->entry_idx % 3) + 1);
++	rt2x00_set_field32(&word, TXWI_W1_PACKETID,
++			   rt2800_tx_packet_id(entry, txdesc));
+ 	rt2x00_desc_write(txwi, 1, word);
  
  	/*
- 	 * Determine if the frame has been successfully transmitted and
-@@ -545,6 +556,64 @@ void rt2x00lib_txdone(struct queue_entry *entry,
+@@ -1119,6 +1149,137 @@ void rt2800_txdone_entry(struct queue_entry *entry, u32 status, __le32 *txwi,
  }
- EXPORT_SYMBOL_GPL(rt2x00lib_txdone);
+ EXPORT_SYMBOL_GPL(rt2800_txdone_entry);
  
 +/*
-+ * Complete a frame for which the hardware was asked not to report a TX
-+ * status (see %REQUIRE_TXSTATUS_SAMPLING). Nothing is known about the
-+ * transmission, so the frame is given back without a station: mac80211
-+ * then frees it without feeding rate control or the ACK tracking.
++ * Complete the entries at the head of the queue that are done with DMA
++ * and for which the hardware will not report a TX status.
 + */
-+void rt2x00lib_txdone_unreported(struct queue_entry *entry)
++static void rt2800_txdone_unreported_queue(struct data_queue *queue)
 +{
-+	struct rt2x00_dev *rt2x00dev = entry->queue->rt2x00dev;
-+	struct ieee80211_tx_info *tx_info = IEEE80211_SKB_CB(entry->skb);
-+	struct skb_frame_desc *skbdesc = get_skb_frame_desc(entry->skb);
-+	struct ieee80211_tx_status status = {
-+		.skb = entry->skb,
-+		.info = tx_info,
-+	};
-+	u8 skbdesc_flags = skbdesc->flags;
++	struct queue_entry *entry;
 +
-+	rt2x00lib_txdone_restore_skb(entry);
++	while (!rt2x00queue_empty(queue)) {
++		entry = rt2x00queue_get_entry(queue, Q_INDEX_DONE);
 +
-+	if (!(skbdesc_flags & SKBDESC_NOT_MAC80211)) {
-+		memset(&tx_info->status, 0, sizeof(tx_info->status));
-+		tx_info->status.rates[0].idx = -1;
++		if (test_bit(ENTRY_OWNER_DEVICE_DATA, &entry->flags) ||
++		    !test_bit(ENTRY_DATA_STATUS_PENDING, &entry->flags) ||
++		    !test_bit(ENTRY_DATA_NO_TXSTATUS, &entry->flags))
++			break;
 +
-+		if (rt2x00_has_cap_flag(rt2x00dev, REQUIRE_TASKLET_CONTEXT)) {
-+			ieee80211_tx_status_ext(rt2x00dev->hw, &status);
-+		} else {
-+			local_bh_disable();
-+			ieee80211_tx_status_ext(rt2x00dev->hw, &status);
-+			local_bh_enable();
-+		}
-+	} else {
-+		dev_kfree_skb_any(entry->skb);
++		if (test_bit(ENTRY_DATA_IO_FAILED, &entry->flags))
++			rt2x00lib_txdone_noinfo(entry, TXDONE_FAILURE);
++		else
++			rt2x00lib_txdone_unreported(entry);
 +	}
-+
-+	rt2x00lib_clear_entry(rt2x00dev, entry);
 +}
-+EXPORT_SYMBOL_GPL(rt2x00lib_txdone_unreported);
 +
-+/*
-+ * Report a TX status that belongs to no queue entry (any more), only to
-+ * update rate control and the station statistics.
-+ */
-+void rt2x00lib_txdone_sample(struct rt2x00_dev *rt2x00dev,
-+			     struct ieee80211_sta *sta,
-+			     struct skb_frame_desc *skbdesc,
-+			     struct txdone_entry_desc *txdesc)
-+{
-+	struct ieee80211_tx_info txinfo = {};
-+	bool success = test_bit(TXDONE_SUCCESS, &txdesc->flags);
-+
-+	rt2x00dev->link.qual.tx_success += success;
-+	rt2x00dev->link.qual.tx_failed += !success;
-+
-+	rt2x00lib_fill_tx_status(rt2x00dev, &txinfo, skbdesc, txdesc, success);
-+	ieee80211_tx_status_noskb(rt2x00dev->hw, sta, &txinfo);
-+}
-+EXPORT_SYMBOL_GPL(rt2x00lib_txdone_sample);
-+
- void rt2x00lib_txdone_noinfo(struct queue_entry *entry, u32 status)
- {
- 	struct txdone_entry_desc txdesc;
-diff --git a/drivers/net/wireless/ralink/rt2x00/rt2x00queue.c b/drivers/net/wireless/ralink/rt2x00/rt2x00queue.c
-index 4b842497653c..de3387243b86 100644
---- a/drivers/net/wireless/ralink/rt2x00/rt2x00queue.c
-+++ b/drivers/net/wireless/ralink/rt2x00/rt2x00queue.c
-@@ -596,6 +596,96 @@ static void rt2x00queue_bar_check(struct queue_entry *entry)
- 	spin_unlock_bh(&rt2x00dev->bar_list_lock);
- }
- 
-+/*
-+ * Upper bound of rate control samples sent between two times the
-+ * hardware TX status FIFO, which holds 16 reports, is seen empty.
-+ */
-+#define RT2X00_TXSTATUS_MAX_SAMPLES	8
-+
-+bool rt2x00queue_txstatus_tracked(struct rt2x00_dev *rt2x00dev)
++void rt2800_txdone_unreported(struct rt2x00_dev *rt2x00dev)
 +{
 +	struct data_queue *queue;
 +
-+	tx_queue_for_each(rt2x00dev, queue) {
-+		if (atomic_read(&queue->txstatus_inflight))
-+			return true;
-+	}
-+	return false;
++	tx_queue_for_each(rt2x00dev, queue)
++		rt2800_txdone_unreported_queue(queue);
 +}
-+EXPORT_SYMBOL_GPL(rt2x00queue_txstatus_tracked);
++EXPORT_SYMBOL_GPL(rt2800_txdone_unreported);
 +
 +/*
-+ * Take a rate control sample slot. The hardware reports every MPDU of an
-+ * A-MPDU with the packet id of the first one, so a sample sent as part of
-+ * an A-MPDU can produce as many reports as the aggregate has frames: it
-+ * takes all remaining slots.
++ * Feed a TX status report of a rate control sample (or of a frame that
++ * went out in an A-MPDU behind one) to rate control. The requested MCS
++ * comes from the packet id, see rt2800_tx_packet_id().
 + */
-+static bool rt2x00queue_txstatus_take_sample(struct rt2x00_dev *rt2x00dev,
-+					     bool ampdu)
++static void rt2800_txdone_sample(struct rt2x00_dev *rt2x00dev, u32 status)
 +{
-+	int samples = atomic_read(&rt2x00dev->txstatus_samples);
++	struct rt2800_drv_data *drv_data = rt2x00dev->drv_data;
++	struct skb_frame_desc skbdesc = {};
++	struct txdone_entry_desc txdesc = {};
++	struct ieee80211_sta *sta;
++	u8 real_mcs, mcs;
++	int wcid;
 +
-+	do {
-+		if (samples >= RT2X00_TXSTATUS_MAX_SAMPLES)
-+			return false;
-+	} while (!atomic_try_cmpxchg(&rt2x00dev->txstatus_samples, &samples,
-+				     ampdu ? RT2X00_TXSTATUS_MAX_SAMPLES :
-+					     samples + 1));
-+
-+	return true;
-+}
-+
-+/*
-+ * With REQUIRE_TXSTATUS_SAMPLING only frames that need a TX status
-+ * (mac80211 asked for one, or BARs which are tracked on the BAR list)
-+ * wait for their report. All other frames are completed as soon as they
-+ * are handed to the hardware, so they don't wait for a status report that
-+ * is slow to fetch over USB. Some of those still ask the hardware for a
-+ * report, which only feeds rate control; they are not sent while a
-+ * tracked frame is pending, and only a few are sent until the status
-+ * FIFO is seen empty, so the FIFO is unlikely to overflow and lose the
-+ * report of a tracked frame.
-+ */
-+static void rt2x00queue_txstatus_select(struct queue_entry *entry,
-+					struct ieee80211_tx_info *tx_info,
-+					struct ieee80211_sta *sta)
-+{
-+	struct data_queue *queue = entry->queue;
-+	struct rt2x00_dev *rt2x00dev = queue->rt2x00dev;
-+	struct ieee80211_hdr *hdr = (struct ieee80211_hdr *)entry->skb->data;
-+	bool ampdu;
-+
-+	if (!rt2x00_has_cap_flag(rt2x00dev, REQUIRE_TXSTATUS_SAMPLING))
++	wcid = rt2x00_get_field32(status, TX_STA_FIFO_WCID);
++	if (wcid < WCID_START || wcid > WCID_END)
 +		return;
 +
-+	if ((tx_info->flags & IEEE80211_TX_CTL_REQ_TX_STATUS) ||
-+	    ieee80211_is_back_req(hdr->frame_control)) {
-+		atomic_inc(&queue->txstatus_inflight);
-+		set_bit(ENTRY_DATA_TXSTATUS_ACCT, &entry->flags);
++	real_mcs = rt2x00_get_field32(status, TX_STA_FIFO_MCS);
++	mcs = (real_mcs & ~0x7) |
++	      (rt2x00_get_field32(status, TX_STA_FIFO_PID_TYPE) & 0x7);
++
++	rt2800_rate_from_status(&skbdesc, status, rt2x00dev->curr_band);
++
++	if (rt2x00_get_field32(status, TX_STA_FIFO_TX_AGGRE))
++		__set_bit(TXDONE_AMPDU, &txdesc.flags);
++
++	if (!rt2x00_get_field32(status, TX_STA_FIFO_TX_ACK_REQUIRED))
++		__set_bit(TXDONE_NO_ACK_REQ, &txdesc.flags);
++
++	/* See rt2800_txdone_entry() for how the retries are counted. */
++	if (rt2x00_get_field32(status, TX_STA_FIFO_TX_SUCCESS)) {
++		__set_bit(TXDONE_SUCCESS, &txdesc.flags);
++		txdesc.retry = mcs > real_mcs ? mcs - real_mcs : 0;
++	} else {
++		__set_bit(TXDONE_FAILURE, &txdesc.flags);
++		txdesc.retry = rt2x00dev->long_retry;
++	}
++
++	if (txdesc.retry)
++		__set_bit(TXDONE_FALLBACK, &txdesc.flags);
++
++	/* rt2x00lib_fill_tx_status() wants the first rate that was tried. */
++	if (mcs > real_mcs)
++		skbdesc.tx_rate_idx += mcs - real_mcs;
++
++	rcu_read_lock();
++	sta = drv_data->wcid_to_sta[wcid - WCID_START];
++	if (sta)
++		rt2x00lib_txdone_sample(rt2x00dev, sta, &skbdesc, &txdesc);
++	rcu_read_unlock();
++}
++
++static void rt2800_txdone_sampling(struct rt2x00_dev *rt2x00dev, u32 reg)
++{
++	struct data_queue *queue;
++	struct queue_entry *entry;
++	__le32 *txwi;
++	u8 pid;
++
++	pid = rt2x00_get_field32(reg, TX_STA_FIFO_PID_TYPE);
++	if (pid & RT2800_PID_SAMPLE) {
++		rt2800_txdone_sample(rt2x00dev, reg);
 +		return;
 +	}
 +
-+	set_bit(ENTRY_DATA_NO_TXSTATUS, &entry->flags);
++	queue = rt2x00queue_get_tx_queue(rt2x00dev,
++					 rt2x00_get_field32(reg, TX_STA_FIFO_PID_QUEUE));
 +
-+	/* Rate control can only use reports of acked unicast frames. */
-+	if (!sta || (tx_info->flags & IEEE80211_TX_CTL_NO_ACK) ||
-+	    is_multicast_ether_addr(hdr->addr1))
-+		return;
++	/* The report is for the first entry that waits for one. */
++	rt2800_txdone_unreported_queue(queue);
 +
-+	ampdu = tx_info->flags & IEEE80211_TX_CTL_AMPDU;
-+	if (!rt2x00queue_txstatus_tracked(rt2x00dev) &&
-+	    rt2x00queue_txstatus_take_sample(rt2x00dev, ampdu))
-+		set_bit(ENTRY_DATA_TXSTATUS_SAMPLE, &entry->flags);
++	if (rt2x00queue_empty(queue))
++		goto unexpected;
++
++	entry = rt2x00queue_get_entry(queue, Q_INDEX_DONE);
++	if (test_bit(ENTRY_OWNER_DEVICE_DATA, &entry->flags) ||
++	    !test_bit(ENTRY_DATA_STATUS_PENDING, &entry->flags) ||
++	    test_bit(ENTRY_DATA_NO_TXSTATUS, &entry->flags))
++		goto unexpected;
++
++	/*
++	 * Unlike rt2800_txdone_entry_check(), also check the packet id of
++	 * an A-MPDU report: it can belong to another frame of the aggregate.
++	 */
++	txwi = rt2800_drv_get_txwi(entry);
++	if (pid != rt2x00_get_field32(rt2x00_desc_read(txwi, 1),
++				      TXWI_W1_PACKETID) ||
++	    !rt2800_txdone_entry_check(entry, reg))
++		goto unexpected;
++
++	rt2800_txdone_entry(entry, reg, txwi, true);
++	return;
++
++unexpected:
++	rt2x00_dbg(rt2x00dev, "Unexpected TX status %08x for queue %u\n",
++		   reg, queue->qid);
 +}
 +
-+static void rt2x00queue_txstatus_unselect(struct queue_entry *entry)
-+{
-+	clear_bit(ENTRY_DATA_NO_TXSTATUS, &entry->flags);
-+	clear_bit(ENTRY_DATA_TXSTATUS_SAMPLE, &entry->flags);
-+	if (test_and_clear_bit(ENTRY_DATA_TXSTATUS_ACCT, &entry->flags))
-+		atomic_dec(&entry->queue->txstatus_inflight);
-+}
-+
- int rt2x00queue_write_tx_frame(struct data_queue *queue, struct sk_buff *skb,
- 			       struct ieee80211_sta *sta, bool local)
+ void rt2800_txdone(struct rt2x00_dev *rt2x00dev, unsigned int quota)
  {
-@@ -681,12 +771,15 @@ int rt2x00queue_write_tx_frame(struct data_queue *queue, struct sk_buff *skb,
+ 	struct data_queue *queue;
+@@ -1128,6 +1289,11 @@ void rt2800_txdone(struct rt2x00_dev *rt2x00dev, unsigned int quota)
+ 	bool match;
  
- 	entry->skb = skb;
- 
-+	rt2x00queue_txstatus_select(entry, tx_info, sta);
+ 	while (quota-- > 0 && kfifo_get(&rt2x00dev->txstatus_fifo, &reg)) {
++		if (rt2x00_has_cap_flag(rt2x00dev, REQUIRE_TXSTATUS_SAMPLING)) {
++			rt2800_txdone_sampling(rt2x00dev, reg);
++			continue;
++		}
 +
- 	/*
- 	 * It could be possible that the queue was corrupted and this
- 	 * call failed. Since we always return NETDEV_TX_OK to mac80211,
- 	 * this frame will simply be dropped.
- 	 */
- 	if (unlikely(rt2x00queue_write_tx_data(entry, &txdesc))) {
-+		rt2x00queue_txstatus_unselect(entry);
- 		clear_bit(ENTRY_OWNER_DEVICE_DATA, &entry->flags);
- 		entry->skb = NULL;
- 		ret = -EIO;
-diff --git a/drivers/net/wireless/ralink/rt2x00/rt2x00queue.h b/drivers/net/wireless/ralink/rt2x00/rt2x00queue.h
-index 23739dd0bc9b..99478ae7f57d 100644
---- a/drivers/net/wireless/ralink/rt2x00/rt2x00queue.h
-+++ b/drivers/net/wireless/ralink/rt2x00/rt2x00queue.h
-@@ -342,6 +342,12 @@ struct txentry_desc {
-  * @ENTRY_DATA_STATUS_PENDING: The entry has been send to the device and
-  *	returned. It is now waiting for the status reporting before the
-  *	entry can be reused again.
-+ * @ENTRY_DATA_NO_TXSTATUS: The entry does not wait for a TX status report;
-+ *	it is completed as soon as the DMA is done.
-+ * @ENTRY_DATA_TXSTATUS_SAMPLE: The hardware reports a TX status for this
-+ *	%ENTRY_DATA_NO_TXSTATUS entry, used only to feed rate control.
-+ * @ENTRY_DATA_TXSTATUS_ACCT: The entry waits for its TX status report and
-+ *	is counted in &data_queue.txstatus_inflight.
-  */
- enum queue_entry_flags {
- 	ENTRY_BCN_ASSIGNED,
-@@ -350,6 +356,9 @@ enum queue_entry_flags {
- 	ENTRY_DATA_PENDING,
- 	ENTRY_DATA_IO_FAILED,
- 	ENTRY_DATA_STATUS_PENDING,
-+	ENTRY_DATA_NO_TXSTATUS,
-+	ENTRY_DATA_TXSTATUS_SAMPLE,
-+	ENTRY_DATA_TXSTATUS_ACCT,
- };
+ 		/*
+ 		 * TX_STA_FIFO_PID_QUEUE is a 2-bit field, thus qid is
+ 		 * guaranteed to be one of the TX QIDs .
+@@ -1201,6 +1367,11 @@ bool rt2800_txstatus_pending(struct rt2x00_dev *rt2x00dev)
+ {
+ 	struct data_queue *queue;
  
- /**
-@@ -438,6 +447,8 @@ enum data_queue_flags {
-  * @wd_count: watchdog counter number of times entry does change
-  *      in the queue
-  * @wd_idx: index of queue entry saved by watchdog
-+ * @txstatus_inflight: number of entries for which a TX status report is
-+ *	expected (only with %REQUIRE_TXSTATUS_SAMPLING).
-  * @txop: maximum burst time.
-  * @aifs: The aifs value for outgoing frames (field ignored in RX queue).
-  * @cw_min: The cw min value for outgoing frames (field ignored in RX queue).
-@@ -468,6 +479,8 @@ struct data_queue {
- 	unsigned short wd_count;
- 	unsigned int wd_idx;
- 
-+	atomic_t txstatus_inflight;
++	if (rt2x00_has_cap_flag(rt2x00dev, REQUIRE_TXSTATUS_SAMPLING)) {
++		return atomic_read(&rt2x00dev->txstatus_samples) ||
++		       rt2x00queue_txstatus_tracked(rt2x00dev);
++	}
 +
- 	unsigned short txop;
- 	unsigned short aifs;
- 	unsigned short cw_min;
+ 	tx_queue_for_each(rt2x00dev, queue) {
+ 		if (rt2x00queue_get_entry(queue, Q_INDEX_DMA_DONE) !=
+ 		    rt2x00queue_get_entry(queue, Q_INDEX_DONE))
+diff --git a/drivers/net/wireless/ralink/rt2x00/rt2800lib.h b/drivers/net/wireless/ralink/rt2x00/rt2800lib.h
+index c9d0417dc292..9774fcbff467 100644
+--- a/drivers/net/wireless/ralink/rt2x00/rt2800lib.h
++++ b/drivers/net/wireless/ralink/rt2x00/rt2800lib.h
+@@ -204,6 +204,7 @@ void rt2800_txdone_entry(struct queue_entry *entry, u32 status, __le32 *txwi,
+ 			 bool match);
+ void rt2800_txdone(struct rt2x00_dev *rt2x00dev, unsigned int quota);
+ void rt2800_txdone_nostatus(struct rt2x00_dev *rt2x00dev);
++void rt2800_txdone_unreported(struct rt2x00_dev *rt2x00dev);
+ bool rt2800_txstatus_timeout(struct rt2x00_dev *rt2x00dev);
+ bool rt2800_txstatus_pending(struct rt2x00_dev *rt2x00dev);
+ 
 -- 
 2.56.1
 
