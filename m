@@ -1,57 +1,49 @@
-Authentication-Results: smtp.subspace.kernel.org; arc=none smtp.remote-ip=185.70.43.19
+Authentication-Results: smtp.subspace.kernel.org; arc=none smtp.remote-ip=100.103.45.18
 ARC-Seal: i=1; d=subspace.kernel.org; s=arc20261015; a=rsa-sha256; cv=none;
-	t=1795345670;
-	b=FKJUGmBLCmGX+l2YLbnF7AQMmZY+ZgdcnrDAiss+mmho3u9+UYN6IK415TjU9rhy525q
-	 OcY/kwGap8yIKHjSSKhqbqSbnICfOyMNep5h4I+06HdImS5oEzS+j+l8xAl6Jmif0/oSY
-	 Zwo5FqXU48pjmKVK+TcR5R6mQ+/NPKxl9l7UiwPAiikA/96HfkWO7kIHtDgoy7IHtKozv
-	 8On4YxwaaqLqtsCG1g9jl1z7n9nPaBlLeMixFqLpjgONX+i9JeQaxy362R83v3DIGCWUa
-	 0fHRNO0SK2QaMU7WrIRbfkp6j8140tDowCBRxoUP7ATwnTB6M09F+MsUmeXZYyCrpAg==
+	t=1795345783;
+	b=IvTZOcTlLEsMAu2x84rTQRApD+mfV7Opml5Qcn4vGgbXtGThMn64JQo+fTk9s9fqwH2o
+	 73LiH6xOJy379VvkUSo0ItVRPUAINgUQuwK2KYRBdlg1NYK2pTd+A8Jx1CsxDicG4gL1Q
+	 3kVtZPIAL7H2Yt8b5SYIq1GJosUaNrGiV7oOLoEluj5KE5YoHsjcxBMh2lWxZCrzjVlZ3
+	 Xm1QdeFc/MUWrxnvCXk1+fHA8tvnU7S1WzJn/t+KUM2f785Fj4vAHIEvCTV4ZpFswlFJn
+	 OG0Nri7G80FSXLH8/Hpp457vBXAQ75eX3XeSwdCbKY84xQid7yIgXgh9cjD70TaN1kg==
 ARC-Message-Signature: i=1; d=subspace.kernel.org; s=arc20261015;
-	a=rsa-sha256; c=relaxed/relaxed; t=1795345670;
-	h=DMARC-Filter:DKIM-Signature:Date:To:From:Cc:Subject:Message-ID:
-	 Feedback-ID:X-Pm-Message-ID:MIME-Version:Content-Type:
-	 Content-Transfer-Encoding;
-	bh=PBmX0gymUfN6gygF+scb6Yb2OHU0W7WRU+BamkOLXMc=;
-	b=HizQa8esgpA7be0P3XpY2AeYliAOxy67cYgdKWauG78172KodJgyB2u/nd2/yo0oyQ33
-	 DSN5HoiDjhgiI1xKV9XHngoPDzE3Dt63ulo+bOdI80P0JbzoGpoUYGvRVJrewHJm+gJKc
-	 dPMSJFQ162Zq3HTfF6wl4q0ljpTGFSGkxghz4T7A5GcghIuDtiK+PuQg6/uCun57J8iLr
-	 63g/h+TxtfsfLtWhj8kxrXQWc2gQ8U+Qbrdrup0gtB53KekPL0KpeeFkbQmhZUrgm+JYH
-	 aOcImzmMTpCu9ProP3a97UjBex39NgdfBlh2WVWPCtxG8U2MsczkhuPUiZXzF1lcabw==
+	a=rsa-sha256; c=relaxed/relaxed; t=1795345783;
+	h=Received:DKIM-Signature:From:Subject:Date:Message-Id:MIME-Version:
+	 Content-Type:Content-Transfer-Encoding:X-B4-Tracking:X-Change-ID:To:
+	 Cc:X-Mailer;
+	bh=s2sjkD46NcJDT+xDH/ZdCg+OR/C0xaYg39VFaMApPuE=;
+	b=FZBAuGahNSj0jlMsbQTc73cxRfaVGu8zjKppNcinlgcL8hd27sfPSY5Sdp/aonuhOpxB
+	 t90AMmhdQTiL6Bh+b61W1NNIHUf3A7obfu342f1oA8e/SV96nETh/UrBfCoNPASK/ayBz
+	 +AxIh02Bd1ZWLBDqT+mASG32h/pCpekqWefL/IsdW59azkMbMZMjy3fxzetEFOXeS0fDy
+	 qnc41uhI9MHFmkcNo7MbUe+is/77dNjg5Rj81SBOwLf+gGtpXk13n1vwdLpxJxLno8DHx
+	 JPijJdiF7oaiKIXHtbUcTGzJQ2WurXvrvihG7nSfiuDCYKQByNnYl3VXH9NgeJJ18hA==
 ARC-Authentication-Results: i=1; smtp.subspace.kernel.org; 
-	dmarc=pass header.from=proton.me;
-	spf=pass smtp.mailfrom=proton.me;
-	dkim=pass header.d=proton.me header.i=@proton.me header.a=rsa-sha256 header.s=protonmail2 header.b=y7oNN+Wo;
-	arc=none smtp.remote-ip=185.70.43.19
-Received: from mail-4319.protonmail.ch (mail-4319.protonmail.ch [185.70.43.19])
+	dkim=pass header.d=kernel.org header.i=@kernel.org header.a=rsa-sha256 header.s=k20260515 header.b="L2EcyR/6";
+	arc=none smtp.remote-ip=100.103.45.18
+Received: from smtp.kernel.org (quasi.space.kernel.org [100.103.45.18])
 	(using TLSv1.3 with cipher TLS_AES_256_GCM_SHA384 (256/256 bits)
-	 key-exchange X25519 server-signature ECDSA (prime256v1) server-digest SHA256)
+	 key-exchange X25519 server-signature ECDSA (prime256v1))
 	(No client certificate requested)
-	by smtp.subspace.kernel.org (Postfix) with ESMTPS id B6FE2606A32A
-	for <linux-wireless@vger.kernel.org>; Sun, 22 Nov 2026 11:07:49 +0000 (UTC)
-DMARC-Filter: OpenDMARC Filter v1.4.2 smtp.subspace.kernel.org B6FE2606A32A
-Authentication-Results: smtp.subspace.kernel.org; dmarc=pass (p=quarantine dis=none) header.from=proton.me
-Authentication-Results: smtp.subspace.kernel.org; spf=pass smtp.mailfrom=proton.me
+	by smtp.subspace.kernel.org (Postfix) with ESMTPS id 1D584606A320
+	for <linux-wireless@vger.kernel.org>; Sun, 22 Nov 2026 11:09:42 +0000 (UTC)
 Authentication-Results: smtp.subspace.kernel.org;
-	dkim=pass (2048-bit key, unprotected) header.d=proton.me header.i=@proton.me header.a=rsa-sha256 header.s=protonmail2 header.b=y7oNN+Wo
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=proton.me;
-	s=protonmail2; t=1795345668; x=1795604868;
-	bh=PBmX0gymUfN6gygF+scb6Yb2OHU0W7WRU+BamkOLXMc=;
-	h=Date:To:From:Cc:Subject:Message-ID:Feedback-ID:From:To:Cc:Date:
-	 Subject:Reply-To:Feedback-ID:Message-ID:BIMI-Selector;
-	b=y7oNN+Wotb35ShYE/eizEcKUZiUCh8E6bFEccBuZxXAFEMwIJKeZbLMTSMlv9T7K4
-	 YDUNOBegX2Cy86ObbR87S0M3VhuMzzeT1IXlT+v8rglbHDy+5jmy+cKn9ZvqdtAapP
-	 QOJ9r1CKSKLkIUKsPzjU55MhFsl5kch1f2ug5ksP8FlHpFXzEc/UhNtH3ibkqPSG0e
-	 VsH0ctHDnRKGbkSRVKFX5ejlsAlTivwGwpsLXxW+3KPnCxr2jiXtka+QNIxOjKWD7Y
-	 Ry5Zg7U+qJG88q5aF+KpSkLZWJpN1AxlE85f5ehplR2OFcW9Qk4DtXWo1JfT8UlWTO
-	 C+uiiCmuutXSg==
-Date: Sun, 22 Nov 2026 11:07:45 +0000
-To: "pkshih@realtek.com" <pkshih@realtek.com>
-From: Falconet3 <Falconet3@proton.me>
-Cc: "linux-wireless@vger.kernel.org" <linux-wireless@vger.kernel.org>, "linux-kernel@vger.kernel.org" <linux-kernel@vger.kernel.org>
-Subject: Re: [PATCH v3 2/2] wifi: rtw89: fix u32 overflow in board element offset check
-Message-ID: <p7rw-XuXkRXg0R2mJ5S-HUUy3IwDD0iXcY11AzTDIvfIj3ofQsJ5exatm_1V-mlBCzsd_s0xhJSBvZz4zWCYaso5-ylUw9JMV3AoiPUZZ3o=@proton.me>
-Feedback-ID: 48740069:user:proton
-X-Pm-Message-ID: 960f38f365011122a7bbcc77aede9c3c84d1d3ad
+	dkim=pass (2048-bit key) header.d=kernel.org header.i=@kernel.org header.a=rsa-sha256 header.s=k20260515 header.b=L2EcyR/6
+Received: by smtp.kernel.org (Postfix) with ESMTPSA id 3588F1F000C0;
+	Sun, 22 Nov 2026 11:09:42 +0000 (UTC)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=kernel.org;
+	s=k20260515; t=1795345782;
+	bh=s2sjkD46NcJDT+xDH/ZdCg+OR/C0xaYg39VFaMApPuE=;
+	h=From:Subject:Date:To:Cc;
+	b=L2EcyR/6BQbQhMQAK3fmapE/EsR42+v9yn66RrsTF/7ARasFsF1H3wShKs+/KfhGZ
+	 vrRSsv26t+ciftptMm8UQbYTu1IFCgr3GSWx4xrGtUhcO3QzSM+ShBE0+ahapj7lrI
+	 bWEZTDHjgPS7Lxk2P+18Q1z2aLxsMI7mJJ5tT9eQg0qrpUnf7loeqIO2JuOq/dODwX
+	 150b3SzcIWDjVxYvmooocD9iXustSa1Ey4qWf/Od4A5CNnNq17EicxCa3MAiRq06HJ
+	 KMGMWCanSIZJedhYwOM0WQ93h6761AmP4rMqaerRcrFsMxVal7o5doCIuKiI/xTknL
+	 9xntSt9XnqdQw==
+From: Lorenzo Bianconi <lorenzo@kernel.org>
+Subject: [PATCH 0/2] wifi: mt76: add some npu missing fixes
+Date: Sun, 22 Nov 2026 12:09:13 +0100
+Message-Id: <20261122-mt76-npu-fixes-v1-0-8d8876b91970@kernel.org>
 X-Mailing-List: linux-wireless@vger.kernel.org
 List-Id: <linux-wireless.vger.kernel.org>
 List-Post: <mailto:linux-wireless@vger.kernel.org>
@@ -61,58 +53,35 @@ List-Unsubscribe: <mailto:linux-wireless+unsubscribe@vger.kernel.org>
 List-Owner: <mailto:linux-wireless+owner@vger.kernel.org>
 Precedence: list
 MIME-Version: 1.0
-Content-Type: text/plain; charset=utf-8
-Content-Transfer-Encoding: quoted-printable
+Content-Type: text/plain; charset="utf-8"
+Content-Transfer-Encoding: 7bit
+X-B4-Tracking: v=1; b=H4sIAAAAAAAC/x3LQQqAIBBA0avIrBtIM6WuEi2ipppFJloRiHdPW
+ j4+P0GkwBShFwkCPRz5dAWyEjDvk9sIeSkGVSsjpVJ4XNag8zeu/FLERutJr60ksh2UyQf6Q3m
+ GMecPhEtf+2AAAAA=
+X-Change-ID: 20261122-mt76-npu-fixes-344a4f51ee79
+To: Felix Fietkau <nbd@nbd.name>, Ryder Lee <ryder.lee@mediatek.com>, 
+ Shayne Chen <shayne.chen@mediatek.com>, Sean Wang <sean.wang@mediatek.com>, 
+ Matthias Brugger <matthias.bgg@gmail.com>, 
+ AngeloGioacchino Del Regno <angelogioacchino.delregno@collabora.com>
+Cc: linux-wireless@vger.kernel.org, linux-arm-kernel@lists.infradead.org, 
+ linux-mediatek@lists.infradead.org, Lorenzo Bianconi <lorenzo@kernel.org>
+X-Mailer: b4 0.14.3
 
-rtw89_board_elm_seek() validates the selected entry against the board
-element file with
+Hold queue spinlock during mt76 npu napi callback.
+Do not run mt76_npu_queue_cleanup() for not allocated queues.
 
-=09if (unlikely(board_elm->size < ofst + size))
-
-where ofst and size are u32 values read from the file. The addition
-wraps in u32, so a crafted file with, for example,
-ofst =3D 0xffffff00 and size =3D 0x200 passes the check and
-pseudo_fw->data is set to board_elm->data + 0xffffff00 with
-pseudo_fw->size =3D 0x200. The element walk then dereferences that
-pointer and reads out of bounds.
-
-Use remainder arithmetic against board_elm->size, which cannot wrap on
-any architecture. The helper is new in v7.4-rc1, so only the current
-cycle is affected.
-
-Fixes: af5905e22a43 ("wifi: rtw89: support variants of FW elements")
-Assisted-by: LLM Mistral Vibe
-Signed-off-by: Falconet3 <Falconet3@proton.me>
 ---
-v3: resend of the series with the correct subjects and version label; no
-    code change since v2.
-v2: new. Found while fixing the element walk bounds check; split out as
-    an independent caller. Compile- and sparse-tested on x86_64; no
-    reproducer available.
+Lorenzo Bianconi (2):
+      wifi: mt76: npu: acquire queue lock running npu napi
+      wifi: mt76: npu: do not run mt76_npu_queue_cleanup() for not allocated queues
 
- drivers/net/wireless/realtek/rtw89/fw.c | 3 ++-
- 1 file changed, 2 insertions(+), 1 deletion(-)
+ drivers/net/wireless/mediatek/mt76/npu.c | 45 ++++++++++++++++++++++++--------
+ 1 file changed, 34 insertions(+), 11 deletions(-)
+---
+base-commit: 7ec7ce74c41551aa39e0c1d6a69c4a2c66377c32
+change-id: 20261122-mt76-npu-fixes-344a4f51ee79
 
-diff --git a/drivers/net/wireless/realtek/rtw89/fw.c b/drivers/net/wireless=
-/realtek/rtw89/fw.c
-index 0000000..0000000 100644
---- a/drivers/net/wireless/realtek/rtw89/fw.c
-+++ b/drivers/net/wireless/realtek/rtw89/fw.c
-@@ -1734,12 +1734,13 @@ static int rtw89_board_elm_seek(const struct firmwa=
-re *board_elm,
- =09if (num <=3D board_id)
- =09=09return -ENOENT;
-=20
- =09ent =3D &hdr->ents[board_id];
-=20
- =09ofst =3D le32_to_cpu(ent->ofst);
- =09size =3D le32_to_cpu(ent->size);
-=20
--=09if (unlikely(board_elm->size < ofst + size))
-+=09if (unlikely(ofst > board_elm->size ||
-+=09=09     size > board_elm->size - ofst))
- =09=09return -EFAULT;
-=20
- =09memset(pseudo_fw, 0, sizeof(*pseudo_fw));
---=20
-2.53.0
+Best regards,
+-- 
+Lorenzo Bianconi <lorenzo@kernel.org>
+
