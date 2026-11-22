@@ -1,49 +1,98 @@
-Authentication-Results: smtp.subspace.kernel.org; arc=none smtp.remote-ip=81.177.160.4
+Authentication-Results: smtp.subspace.kernel.org; arc=none smtp.remote-ip=209.85.216.100
 ARC-Seal: i=1; d=subspace.kernel.org; s=arc20261015; a=rsa-sha256; cv=none;
-	t=1795371251;
-	b=OXa+GnZnAWIfymxbWUs67bq/XD3Vn4ED/xUY+KiJ74OUaY/uIkIo7nT7HNjhQwWKIm4z
-	 1RbLg6t02bTbL5OrW0qQAH72i8wjXVm0S0B+EmKfqQ0cg9Cf91K0YzgByasOCLBqYnPJo
-	 18qyuXaYoUfERiXNBS0lU5I1H1XvefDkYZ3TFSwHRr3jbwSwPee0gSz98mEMRcC8eeYCA
-	 +erg0OaxyqShYmjDmDrfdB2cDbPlo6+7+5nAku3f0cdknQoEaQRArZdwKL6vB8LpvDfRD
-	 uMANzzBa+rhvZ+9FzEXoATO8WCi/SNkY5S163/yCEbbKvYK0ln2pbv91kwKN9kh0gbg==
+	t=1795378148;
+	b=2MbyvaTUjY+KCFg34ZzxOEBeXFNZ21LAQIhviW9pF205IONfP1FKme9hwwTaEOxcq3OD
+	 yT/Cyzk1S0vzpPgMgN6rqidDrXwPNB6GgdHeaGzXVL2Dmd3AUjN4DlvaKnxJHePBxddlg
+	 9E0FHFrr047C4wiPWgpcTyU00R0tEcsduoGfnhnpOaP+Ak7JgMij4g0FvU5abJrk0oFr1
+	 yYjVuOoY2ZLzDzJb+xWlsuSUtgf90zoGjhFXBYVaxUcktCErU3cjDK4wRW/QOHinwvXkE
+	 wxpHA8pHUEeWTDtG/lXL/FDG1VygLIktCHDerKwLkCqIpu23t6pIzJeseokuptY5G3A==
 ARC-Message-Signature: i=1; d=subspace.kernel.org; s=arc20261015;
-	a=rsa-sha256; c=relaxed/relaxed; t=1795371251;
-	h=DMARC-Filter:Received:Received:Received:Received:Received:Received:
-	 Date:From:To:CC:Subject:User-Agent:Message-ID:MIME-Version:
-	 Content-Type:Content-Transfer-Encoding:X-CC-Diagnostic;
-	bh=B1LYigBhkSDFrcBB7bxoVvP2C8fiwp42ASiu1+urQAo=;
-	b=C2pZYYKW94SJv1XTyxTZiBUo+gr5MryhZMN+92IFK1IRjhRt4jCpDTFBfqMVD6BNncv9
-	 rgPMyAFWup+RmZU/8riwGh0qo7PDYPxFDWAMlocpSK5tAOksOqoJyPa7LJBW9wyJp+7ym
-	 8CyGQW5TZLcVjOqy20q2+zPEnHFYt/AC4dLuTqp+8TLxPyEbDbTxaCYFAg/liKYpVmX3H
-	 RtZc/47PwifMuz67uLLLkWxOc1Wx0dgc5OISk1VCcnX+i2BEL91pNsh0btVR//QIWHBJl
-	 C9VUalYleLKugn/MiuBI6stWIedK4DAeO9EhI7F/FE1w3yi+Gym5VwkcnesYs09K76g==
+	a=rsa-sha256; c=relaxed/relaxed; t=1795378148;
+	h=DMARC-Filter:Received:X-Google-DKIM-Signature:X-Gm-Message-State:
+	 X-Gm-Gg:X-Received:Received:X-Relaying-Domain:X-CFilter-Loop:Received:
+	 DKIM-Signature:X-Received:X-Received:Received:Message-ID:Date:
+	 MIME-Version:User-Agent:Subject:From:To:Cc:References:
+	 Content-Language:In-Reply-To:Content-Type:Content-Transfer-Encoding:
+	 X-DetectorID-Processed;
+	bh=D0daDH5HLqNQ6RtLqLSp0TJc+PTT+VjlTZzQwFmEgXk=;
+	b=fwk5sGeSmbpzWVDpTDFCd+2JCX70I+Ie7mfCDL7GoNRaa3XYHELuKE57UaIS26J+kr4B
+	 U/oi8HPWjyWQSOAIs53XtSFU41yqs2d1HvnEaK+tkzsgvxguSZjLdWxo08uIm8TaJe0Kw
+	 CVyuKjzJlgt9VGM2KT0MJMmLE2IvPWw74vrR6XCevSHjuqbs0WepPhj7TZae76H37pG0h
+	 LKW46SbXl+6aoOuCgbU7WmLgpRy022tlG3MsILinVLSzkDUQpoZPs9vihSd8wK70P8LVT
+	 xG9GMPrRBjIyq31RpQo0y1F1REvgu+YTbI/+TcXPdCL3baIXdORFpwKiUwIFDROSyOw==
 ARC-Authentication-Results: i=1; smtp.subspace.kernel.org; 
-	dmarc=none header.from=rfareas.com;
-	spf=pass smtp.mailfrom=rfareas.com;
-	arc=none smtp.remote-ip=81.177.160.4
-Received: from s24fifth.in-solve.ru (s24fifth.in-solve.ru [81.177.160.4])
-	by smtp.subspace.kernel.org (Postfix) with ESMTP id 7FD5D606A320
-	for <linux-wireless@vger.kernel.org>; Sun, 22 Nov 2026 18:14:09 +0000 (UTC)
-DMARC-Filter: OpenDMARC Filter v1.4.2 smtp.subspace.kernel.org 7FD5D606A320
-Authentication-Results: smtp.subspace.kernel.org; dmarc=none (p=none dis=none) header.from=rfareas.com
-Authentication-Results: smtp.subspace.kernel.org; spf=pass smtp.mailfrom=rfareas.com
-Received: from Spooler by s24fifth.in-solve.ru (Mercury/32 v4.52) ID MO00041E;
-    22 Nov 2026 21:14:09 +0300
-Received: from spooler by mail-aux1.in-solve.hidden (Mercury/32 v4.52); 22 Nov 2026 21:14:05 +0300
-Received: from mail-s22 (10.0.1.22) by mail-s24-t.1gb.ru (Mercury/32 v4.52) with ESMTP ID MG00041D;
-   22 Nov 2026 21:14:04 +0300
-Received: from Spooler by mail-s22 (Mercury/32 v4.52) ID MO00004D;
-  22 Nov 2026 21:14:00 +0300
-Received: from spooler by mail-s22-aux3.in-solve.hidden (Mercury/32 v4.52); 22 Nov 2026 21:13:58 +0300
-Received: from ehlo.thunderbird.net (128.204.79.33) by mail-s22.1gb.ru (Mercury/32 v4.52) with ESMTP ID MG00004C;
-   22 Nov 2026 21:13:56 +0300
-Date: Sun, 22 Nov 2026 21:13:58 +0300
-From: RFAREAS Support <support@rfareas.com>
-To: linux-wireless@vger.kernel.org
-CC: wireless-regdb@lists.infradead.org, wens@kernel.org
-Subject: [PATCH] wireless-regdb: Update regulatory info for Belarus (BY)
-User-Agent: K-9 Mail for Android
-Message-ID: <5DB6FB38-A5F9-4CD4-8AAE-7A3FCFF90520@rfareas.com>
+	dmarc=pass header.from=broadcom.com;
+	spf=fail smtp.mailfrom=broadcom.com;
+	dkim=pass header.d=broadcom.com header.i=@broadcom.com header.a=rsa-sha256 header.s=google header.b=PtDyBzu9;
+	arc=none smtp.remote-ip=209.85.216.100
+Received: from mail-pj1-f100.google.com (mail-pj1-f100.google.com [209.85.216.100])
+	(using TLSv1.3 with cipher TLS_AES_128_GCM_SHA256 (128/128 bits)
+	 key-exchange X25519 server-signature ECDSA (prime256v1) server-digest SHA256)
+	(No client certificate requested)
+	by smtp.subspace.kernel.org (Postfix) with ESMTPS id C6D9D606A31D
+	for <linux-wireless@vger.kernel.org>; Sun, 22 Nov 2026 20:09:02 +0000 (UTC)
+DMARC-Filter: OpenDMARC Filter v1.4.2 smtp.subspace.kernel.org C6D9D606A31D
+Authentication-Results: smtp.subspace.kernel.org; dmarc=pass (p=reject dis=none) header.from=broadcom.com
+Authentication-Results: smtp.subspace.kernel.org; spf=fail smtp.mailfrom=broadcom.com
+Authentication-Results: smtp.subspace.kernel.org;
+	dkim=pass (1024-bit key, unprotected) header.d=broadcom.com header.i=@broadcom.com header.a=rsa-sha256 header.s=google header.b=PtDyBzu9
+Received: by mail-pj1-f100.google.com with SMTP id 98e67ed59e1d1-3b0e0e65adbso1065515a91.3
+        for <linux-wireless@vger.kernel.org>; Sun, 22 Nov 2026 12:09:02 -0800 (PST)
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+        d=1e100.net; s=20260707; t=1795378142; x=1795982942;
+        h=content-transfer-encoding:content-type:in-reply-to:content-language
+         :references:cc:to:from:subject:user-agent:mime-version:date
+         :message-id:dkim-signature:x-gm-gg:x-gm-message-state:from:to:cc
+         :subject:date:message-id:reply-to:content-type;
+        bh=D0daDH5HLqNQ6RtLqLSp0TJc+PTT+VjlTZzQwFmEgXk=;
+        b=w8tFWjJV5R5o8wvxuvDVOPikH9iIlNoORWCZBT3jXmWwDF+pjfTicmSPVLz4jFSxg/
+         iGRHQJ2CwzgZwkyD4sKjq8uDTosHATkMuUv1NTa+K7rCGZb/xeEShGNpNkgoxjUrFT2U
+         yo3PmNpW6TV1gL2yGReo0d//dwQ2FnRB7h3B4TR5nOfDcOfb4SSLjdWwlzE42IdemL6n
+         RU8l/2kCSrXriOtr8WnBp4ZelvoL4YKL1iIi3KJu+JveYtZi6QTomv+vFC1Zo/xPPfnz
+         IX9nncr2F4MwmPy7SEv4Q8aHWyEmQCd79kD2TYVszfYNMp8QruHjOh7CyHLOj8kMS6cL
+         lM1Q==
+X-Gm-Message-State: APuU4Z+C+aqCUcCCDkyCWQgF+vTALpsIMcLxoHcHxp2usotp0CEQeZqh
+	jlUC2wCQTjjYPuQiJutttGXyLe8zHild3471TgKEFKQjzRtHDR1ew0OUj2JsruMAmyxnliKyMPZ
+	YEJMVKnYVr+JXCP4BoS+2yBLb2U0H7iFrsFdMWgmBzcoVDqvGda7U5uE0LLZWLG7q8i6M0Ok/IJ
+	bTkjiQqJaNYZcVUrRSPhsOPgG5VBPf7kxkcLhXUW+HZbhR9bfv8j9UT5x0M3ZfaANghkjI9Gn2H
+	9w0g/JvbpeHEAlIgo8HJqUZ2Ydq
+X-Gm-Gg: AZFdTZcibCXXrEKLwshX+TU1meyMJZW5igEQe5eHxvGpRx0ZLvTN84zsjPmkjiGZZaC
+	2PqpitJNQjyoiKtEd5MNAeWamXM7M6WGMT8bMfz5gQhwSsXi6XyG3pAjrN/T4GP4OYJFm/4DOkl
+	XkUpGiCxvEHRwA14MN1CthbjPVh1ZaDOGQ6A2c+qDyCwB3+21Xz/gzYGqS14KOQhDLLOOpiu05m
+	hwDrcwOTX9rkWJ2kqXCXKzON7Z6S7l6bN3ncCZbhDbK/QdRYXzYonZpLEasjofPAgTvqR1aPbXE
+	qx+acmO+rjSGnlFzNb4Ng6oY5vKvZsNdlplDcSLYWe28UpwBnNqb7+2HDCcQu5D/gRnZmZUrkaT
+	hH3WYeeXV9Y7T6hdgp3c6I89vH4VtcaOPnI9/eKMSRLEIMX1zjkwYXlD6I5/wLstRuSd18QZGc1
+	F31KyUjDJXBlfupU4JXAPKrbdHjz4BglLcXKHkq5M=
+X-Received: by 2002:a17:90b:17cd:b0:3b0:ce1c:e74f with SMTP id 98e67ed59e1d1-3b41c8fe346mr8398802a91.27.1795378142020;
+        Sun, 22 Nov 2026 12:09:02 -0800 (PST)
+Received: from smtp-us-east1-p01-i01-si01.dlp.protect.broadcom.com (address-144-49-247-28.dlp.protect.broadcom.com. [144.49.247.28])
+        by smtp-relay.gmail.com with ESMTPS id 98e67ed59e1d1-3b4062e6c29sm7943362a91.7.2026.11.22.12.09.01
+        for <linux-wireless@vger.kernel.org>
+        (version=TLS1_2 cipher=ECDHE-ECDSA-AES128-GCM-SHA256 bits=128/128);
+        Sun, 22 Nov 2026 12:09:02 -0800 (PST)
+X-Relaying-Domain: broadcom.com
+X-CFilter-Loop: Reflected
+Received: by mail-dl1-f72.google.com with SMTP id a92af1059eb24-1383723dfddso2679381c88.0
+        for <linux-wireless@vger.kernel.org>; Sun, 22 Nov 2026 12:09:00 -0800 (PST)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+        d=broadcom.com; s=google; t=1795378140; x=1795982940; darn=vger.kernel.org;
+        h=content-transfer-encoding:content-type:in-reply-to:content-language
+         :references:cc:to:from:subject:user-agent:mime-version:date
+         :message-id:from:to:cc:subject:date:message-id:reply-to:content-type;
+        bh=D0daDH5HLqNQ6RtLqLSp0TJc+PTT+VjlTZzQwFmEgXk=;
+        b=PtDyBzu9q/pTHMeMXE8peI8UEK07iI3v8t+WNlIkQO9kXFw6k+7OYNgLFdofWxBgsE
+         Xf7fgo09Y2ZvHfZ7XUZTMgIndXSCO+hCICgItiZG3z/PtTzMMfMj6KSQrWjPbMebThuk
+         dOdyzMFpFitWEXbjwajE7BdsE8vY0Uu1L7IeE=
+X-Received: by 2002:a05:7022:f106:b0:1b3:afa2:2d7e with SMTP id a92af1059eb24-1b5567dab3cmr8092090c88.1.1795378139975;
+        Sun, 22 Nov 2026 12:08:59 -0800 (PST)
+X-Received: by 2002:a05:7022:f106:b0:1b3:afa2:2d7e with SMTP id a92af1059eb24-1b5567dab3cmr8092063c88.1.1795378139246;
+        Sun, 22 Nov 2026 12:08:59 -0800 (PST)
+Received: from [10.229.42.90] ([192.19.176.227])
+        by smtp.gmail.com with ESMTPSA id a92af1059eb24-1b5566c3052sm22632889c88.1.2026.11.22.12.08.55
+        (version=TLS1_3 cipher=TLS_AES_128_GCM_SHA256 bits=128/128);
+        Sun, 22 Nov 2026 12:08:58 -0800 (PST)
+Message-ID: <68def4e1-3429-45eb-b025-dd0fa10cb58c@broadcom.com>
+Date: Sun, 22 Nov 2026 21:08:55 +0100
 X-Mailing-List: linux-wireless@vger.kernel.org
 List-Id: <linux-wireless.vger.kernel.org>
 List-Post: <mailto:linux-wireless@vger.kernel.org>
@@ -53,154 +102,83 @@ List-Unsubscribe: <mailto:linux-wireless+unsubscribe@vger.kernel.org>
 List-Owner: <mailto:linux-wireless+owner@vger.kernel.org>
 Precedence: list
 MIME-Version: 1.0
-Content-Type: multipart/mixed;
- boundary=----4CJO01DI4FY2841TTXLCLLQSOSUUWM
+User-Agent: Mozilla Thunderbird
+Subject: Re: [PATCH 0/7] wifi: brcmfmac: AWDL for AirDrop on Apple T2 Macs
+From: Arend van Spriel <arend.vanspriel@broadcom.com>
+To: Aditya Garg <gargaditya08@live.com>, Andre Eikmeyer <dev@deq.rocks>,
+ Johannes Berg <johannes@sipsolutions.net>
+Cc: linux-wireless@vger.kernel.org, brcm80211@lists.linux.dev,
+ brcm80211-dev-list.pdl@broadcom.com, linux-kernel@vger.kernel.org,
+ Sasha Finkelstein <k@chaosmail.tech>, Sven Peter <sven@kernel.org>,
+ Janne Grunau <j@jannau.net>
+References: <20261104151547.70333-1-dev@deq.rocks>
+ <c93fa1b2-9d05-4536-9025-6c4d1e6e6b5f@broadcom.com>
+ <PN2PPFCAA8F915813E84B62E1B2B919F11BB8712@PN2PPFCAA8F9158.INDPRD01.PROD.OUTLOOK.COM>
+ <84585c89-9f57-42ce-8127-6a4b2da205c6@broadcom.com>
+Content-Language: en-US
+In-Reply-To: <84585c89-9f57-42ce-8127-6a4b2da205c6@broadcom.com>
+Content-Type: text/plain; charset=UTF-8; format=flowed
 Content-Transfer-Encoding: 7bit
-X-CC-Diagnostic: Header RECEIVED matches "*([0-9]+.[0-9]+.[0-9]+.[0-9]+)*" (0)
+X-DetectorID-Processed: b00c1d49-9d2e-4205-b15f-d015386d3d5e
 
-------4CJO01DI4FY2841TTXLCLLQSOSUUWM
-Content-Type: text/plain;
- charset=utf-8
-Content-Transfer-Encoding: quoted-printable
+On 18/11/2026 11:52, Arend van Spriel wrote:
+> On 11/11/2026 15:28, Aditya Garg wrote:
+>> Hi Arend
+>>
+>>> I really have no idea how to deal with this series. AWDL is not part 
+>>> of the IEEE 802.11 so I can imagine the kernel wireless subsystem 
+>>> does not care to support this. From driver perspective I am not keen 
+>>> on supporting this upstream either. My limited understanding of AWDL 
+>>> was that it was Apple's variant of TDLS (802.11z).
+>>>
+>>> So what does AWDL provide to user-space and could the same be 
+>>> accomplished by TDLS? From the explanation above it seems AWDL 
+>>> provides more knobs to user-space, but not sure whether the awdl%d 
+>>> interface is merely a control interface or actually passing data 
+>>> through it (patch 5 implies it does). If my memory does not fail me 
+>>> then adding vendor commands is generally pushed back.
+>>>
+>>> Regards,
+>>> Arend
+>>
+>> There has been a lot of Apple specific code in the kernel, be it HID, 
+>> DRM, EFI etc. So why not a small bit of code in brcmfmac. We have 
+>> never faced complaints from those maintainers in getting code 
+>> upstreamed which is different from the standards, but is needed for 
+>> the hardware to work. While the concern of unable the understand the 
+>> code is valid, I believe the author can be questioned to clear doubts 
+>> before upstreaming. Getting code rejected just because of inability to 
+>> maintain is heartbreaking when people work hard to make something 
+>> good. Also the patches are just for Apple Macs, and not for supporting 
+>> AirDrop on random hardware, so it shouldn't be that difficult to 
+>> maintain.
+> 
+> You are reading stuff between the lines that are not there. My concern 
+> was mostly related to the new vendor commands. The vendor commands are 
+> out of favor as it was used to avoid defining an generic nl80211 command 
+> and thus avoid true collaboration in building a device independent 
+> wireless subsystem. In brcmfmac we currently have one vendor command 
+> which allows user-space to interact directly with firmware for debugging 
+> purposes.
+> 
+> Also AWDL support is not about making the hardware work. It is a 
+> software feature providing the transport layer for AirDrop (and 
+> apparently t2-drop). I would say the same experience could be provided 
+> with another transport layer, eg. by using NAN or P2P. I get that 
+> downstream users are happy with the AirDrop-like experience, but that 
+> does not make it a must-have in upstream linux.
+This has taken a bit longer to decide what to do with it. Adding support 
+for AWDL for some Apple wireless devices does not feel like the 
+collaborative work that makes my heart skip a few beats in excitement. A 
+vendor agnostic solution would have it racing.
 
-From: Valery Belousov <support@rfareas=2Ecom>
+I had a short discussion with Johannes and in general vendor commands 
+are banned. However, for this feature we do not want to push for a 
+solution with nl80211 commands. Hence I have review the AWDL series. 
+Patch 1 was already rejected because of a similar fix that was already 
+applied to wireless-next. So a v2 is needed. The patches 4, 6 and 7 need 
+changes. patches 2, 3 and 5 may carry the Acked-by into v2 as they look 
+fine to me.
 
-The BY entry has no source and allows 5490-5710 MHz at 27 dBm, which
-is not permitted for licence-exempt use in Belarus=2E
-
-Licence-exempt Wi-Fi is set out in Resolution No=2E 9 of the Ministry
-of Communications and Informatization of 1 July 2013, the list of radio
-equipment operated without a frequency assignment permit=2E Items 7 and 8
-were replaced by Resolution No=2E 13 of 29 August 2016; Resolution No=2E 1
-of 10 January 2018 changed "output power" in item 7 to "e=2Ei=2Er=2Ep=2E"=
-=2E
-All three acts are published on the National Legal Internet Portal
-pravo=2Eby=2E
-
-Limits as stated in the resolution:
-  item 7, 2400-2483=2E5 MHz: 100 mW e=2Ei=2Er=2Ep=2E
-  item 8, 5150-5350 MHz and 5650-5725 MHz: 200 mW e=2Ei=2Er=2Ep=2E
-Both items: IEEE 802=2E11 equipment installed inside buildings,
-structures and vehicles, not using antennas installed outside them=2E
-
-Changes:
- * 2=2E4 GHz: 2400-2483=2E5 MHz, 100 mW, NO-OUTDOOR=2E
- * 5150-5350 MHz: 200 mW (was 20 dBm), NO-OUTDOOR; DFS is kept for
-   5250-5350 MHz=2E
- * Replace 5490-5710 MHz with 5650-5725 MHz, 200 mW, NO-OUTDOOR, DFS=2E
-   The band is 75 MHz wide, so the maximum bandwidth is 40 MHz=2E
- * Add the sources=2E
-
-Item 18, added by Resolution No=2E 2 of 24 January 2019, also lists
-5785-5875 MHz, but only for use in Minsk during the II European Games
-2019, so it is not included=2E
-
-Signed-off-by: Valery Belousov <support@rfareas=2Ecom>
----
-Found while cross-checking wireless-regdb against the national acts for th=
-e
-RFAREAS Wi-Fi regulatory map (https://rfareas=2Ecom/blog/tools/wifimap/)=
-=2E
-
- db=2Etxt | 18 ++++++++++++++----
- 1 file changed, 14 insertions(+), 4 deletions(-)
-
-diff --git a/db=2Etxt b/db=2Etxt
-index 43dc0b3=2E=2Ee416c54 100644
---- a/db=2Etxt
-+++ b/db=2Etxt
-@@ -386,11 +386,21 @@ country BW: DFS-ETSI
- 	(5470 - 5725 @ 160), (250 mW), DFS
- 	(5725 - 5850 @ 80), (24), DFS
-=20
-+# Source:
-+# Resolution of the Ministry of Communications and Informatization No=2E =
-9
-+# of 1 July 2013 (radio equipment operated without a frequency assignment
-+# permit), items 7 and 8, as amended by Resolution No=2E 13 of 29 August =
-2016
-+# and Resolution No=2E 1 of 10 January 2018:
-+# https://pravo=2Eby/document/?guid=3D3961&p0=3DW21327720
-+# https://pravo=2Eby/document/?guid=3D3961&p0=3DW21631260
-+# https://pravo=2Eby/document/?guid=3D3961&p0=3DW21832737
-+# Both items allow use only inside buildings, structures and vehicles,
-+# without antennas outside them=2E
- country BY: DFS-ETSI
--	(2402 - 2482 @ 40), (20)
--	(5170 - 5250 @ 80), (20), AUTO-BW
--	(5250 - 5330 @ 80), (20), DFS, AUTO-BW
--	(5490 - 5710 @ 160), (27), DFS
-+	(2400 - 2483=2E5 @ 40), (100 mW), NO-OUTDOOR
-+	(5150 - 5250 @ 80), (200 mW), NO-OUTDOOR, AUTO-BW
-+	(5250 - 5350 @ 80), (200 mW), NO-OUTDOOR, DFS, AUTO-BW
-+	(5650 - 5725 @ 40), (200 mW), NO-OUTDOOR, DFS
-=20
- country BZ: DFS-JP
- 	(2402 - 2482 @ 40), (30)
---=20
-2=2E43=2E0
-
-
-------4CJO01DI4FY2841TTXLCLLQSOSUUWM
-Content-Type: text/x-diff;
- name=wireless-regdb-BY.patch
-Content-Transfer-Encoding: base64
-Content-Disposition: attachment;
- filename=wireless-regdb-BY.patch;
- size=2966
-
-RnJvbSA0ODhhODY4Nzk5NjYxZDZmNThkMmRjZGVkOTZkNjhlMDcwYzNlYTk5IE1vbiBTZXAgMTcg
-MDA6MDA6MDAgMjAwMQpGcm9tOiBWYWxlcnkgQmVsb3Vzb3YgPHN1cHBvcnRAcmZhcmVhcy5jb20+
-CkRhdGU6IFN1biwgMjIgTm92IDIwMjYgMTc6NDc6NTcgKzAwMDAKU3ViamVjdDogW1BBVENIXSB3
-aXJlbGVzcy1yZWdkYjogVXBkYXRlIHJlZ3VsYXRvcnkgaW5mbyBmb3IgQmVsYXJ1cyAoQlkpCgpU
-aGUgQlkgZW50cnkgaGFzIG5vIHNvdXJjZSBhbmQgYWxsb3dzIDU0OTAtNTcxMCBNSHogYXQgMjcg
-ZEJtLCB3aGljaAppcyBub3QgcGVybWl0dGVkIGZvciBsaWNlbmNlLWV4ZW1wdCB1c2UgaW4gQmVs
-YXJ1cy4KCkxpY2VuY2UtZXhlbXB0IFdpLUZpIGlzIHNldCBvdXQgaW4gUmVzb2x1dGlvbiBOby4g
-OSBvZiB0aGUgTWluaXN0cnkKb2YgQ29tbXVuaWNhdGlvbnMgYW5kIEluZm9ybWF0aXphdGlvbiBv
-ZiAxIEp1bHkgMjAxMywgdGhlIGxpc3Qgb2YgcmFkaW8KZXF1aXBtZW50IG9wZXJhdGVkIHdpdGhv
-dXQgYSBmcmVxdWVuY3kgYXNzaWdubWVudCBwZXJtaXQuIEl0ZW1zIDcgYW5kIDgKd2VyZSByZXBs
-YWNlZCBieSBSZXNvbHV0aW9uIE5vLiAxMyBvZiAyOSBBdWd1c3QgMjAxNjsgUmVzb2x1dGlvbiBO
-by4gMQpvZiAxMCBKYW51YXJ5IDIwMTggY2hhbmdlZCAib3V0cHV0IHBvd2VyIiBpbiBpdGVtIDcg
-dG8gImUuaS5yLnAuIi4KQWxsIHRocmVlIGFjdHMgYXJlIHB1Ymxpc2hlZCBvbiB0aGUgTmF0aW9u
-YWwgTGVnYWwgSW50ZXJuZXQgUG9ydGFsCnByYXZvLmJ5LgoKTGltaXRzIGFzIHN0YXRlZCBpbiB0
-aGUgcmVzb2x1dGlvbjoKICBpdGVtIDcsIDI0MDAtMjQ4My41IE1IejogMTAwIG1XIGUuaS5yLnAu
-CiAgaXRlbSA4LCA1MTUwLTUzNTAgTUh6IGFuZCA1NjUwLTU3MjUgTUh6OiAyMDAgbVcgZS5pLnIu
-cC4KQm90aCBpdGVtczogSUVFRSA4MDIuMTEgZXF1aXBtZW50IGluc3RhbGxlZCBpbnNpZGUgYnVp
-bGRpbmdzLApzdHJ1Y3R1cmVzIGFuZCB2ZWhpY2xlcywgbm90IHVzaW5nIGFudGVubmFzIGluc3Rh
-bGxlZCBvdXRzaWRlIHRoZW0uCgpDaGFuZ2VzOgogKiAyLjQgR0h6OiAyNDAwLTI0ODMuNSBNSHos
-IDEwMCBtVywgTk8tT1VURE9PUi4KICogNTE1MC01MzUwIE1IejogMjAwIG1XICh3YXMgMjAgZEJt
-KSwgTk8tT1VURE9PUjsgREZTIGlzIGtlcHQgZm9yCiAgIDUyNTAtNTM1MCBNSHouCiAqIFJlcGxh
-Y2UgNTQ5MC01NzEwIE1IeiB3aXRoIDU2NTAtNTcyNSBNSHosIDIwMCBtVywgTk8tT1VURE9PUiwg
-REZTLgogICBUaGUgYmFuZCBpcyA3NSBNSHogd2lkZSwgc28gdGhlIG1heGltdW0gYmFuZHdpZHRo
-IGlzIDQwIE1Iei4KICogQWRkIHRoZSBzb3VyY2VzLgoKSXRlbSAxOCwgYWRkZWQgYnkgUmVzb2x1
-dGlvbiBOby4gMiBvZiAyNCBKYW51YXJ5IDIwMTksIGFsc28gbGlzdHMKNTc4NS01ODc1IE1Ieiwg
-YnV0IG9ubHkgZm9yIHVzZSBpbiBNaW5zayBkdXJpbmcgdGhlIElJIEV1cm9wZWFuIEdhbWVzCjIw
-MTksIHNvIGl0IGlzIG5vdCBpbmNsdWRlZC4KClNpZ25lZC1vZmYtYnk6IFZhbGVyeSBCZWxvdXNv
-diA8c3VwcG9ydEByZmFyZWFzLmNvbT4KLS0tCkZvdW5kIHdoaWxlIGNyb3NzLWNoZWNraW5nIHdp
-cmVsZXNzLXJlZ2RiIGFnYWluc3QgdGhlIG5hdGlvbmFsIGFjdHMgZm9yIHRoZQpSRkFSRUFTIFdp
-LUZpIHJlZ3VsYXRvcnkgbWFwIChodHRwczovL3JmYXJlYXMuY29tL2Jsb2cvdG9vbHMvd2lmaW1h
-cC8pLgoKIGRiLnR4dCB8IDE4ICsrKysrKysrKysrKysrLS0tLQogMSBmaWxlIGNoYW5nZWQsIDE0
-IGluc2VydGlvbnMoKyksIDQgZGVsZXRpb25zKC0pCgpkaWZmIC0tZ2l0IGEvZGIudHh0IGIvZGIu
-dHh0CmluZGV4IDQzZGMwYjMuLmU0MTZjNTQgMTAwNjQ0Ci0tLSBhL2RiLnR4dAorKysgYi9kYi50
-eHQKQEAgLTM4NiwxMSArMzg2LDIxIEBAIGNvdW50cnkgQlc6IERGUy1FVFNJCiAJKDU0NzAgLSA1
-NzI1IEAgMTYwKSwgKDI1MCBtVyksIERGUwogCSg1NzI1IC0gNTg1MCBAIDgwKSwgKDI0KSwgREZT
-CiAKKyMgU291cmNlOgorIyBSZXNvbHV0aW9uIG9mIHRoZSBNaW5pc3RyeSBvZiBDb21tdW5pY2F0
-aW9ucyBhbmQgSW5mb3JtYXRpemF0aW9uIE5vLiA5CisjIG9mIDEgSnVseSAyMDEzIChyYWRpbyBl
-cXVpcG1lbnQgb3BlcmF0ZWQgd2l0aG91dCBhIGZyZXF1ZW5jeSBhc3NpZ25tZW50CisjIHBlcm1p
-dCksIGl0ZW1zIDcgYW5kIDgsIGFzIGFtZW5kZWQgYnkgUmVzb2x1dGlvbiBOby4gMTMgb2YgMjkg
-QXVndXN0IDIwMTYKKyMgYW5kIFJlc29sdXRpb24gTm8uIDEgb2YgMTAgSmFudWFyeSAyMDE4Ogor
-IyBodHRwczovL3ByYXZvLmJ5L2RvY3VtZW50Lz9ndWlkPTM5NjEmcDA9VzIxMzI3NzIwCisjIGh0
-dHBzOi8vcHJhdm8uYnkvZG9jdW1lbnQvP2d1aWQ9Mzk2MSZwMD1XMjE2MzEyNjAKKyMgaHR0cHM6
-Ly9wcmF2by5ieS9kb2N1bWVudC8/Z3VpZD0zOTYxJnAwPVcyMTgzMjczNworIyBCb3RoIGl0ZW1z
-IGFsbG93IHVzZSBvbmx5IGluc2lkZSBidWlsZGluZ3MsIHN0cnVjdHVyZXMgYW5kIHZlaGljbGVz
-LAorIyB3aXRob3V0IGFudGVubmFzIG91dHNpZGUgdGhlbS4KIGNvdW50cnkgQlk6IERGUy1FVFNJ
-Ci0JKDI0MDIgLSAyNDgyIEAgNDApLCAoMjApCi0JKDUxNzAgLSA1MjUwIEAgODApLCAoMjApLCBB
-VVRPLUJXCi0JKDUyNTAgLSA1MzMwIEAgODApLCAoMjApLCBERlMsIEFVVE8tQlcKLQkoNTQ5MCAt
-IDU3MTAgQCAxNjApLCAoMjcpLCBERlMKKwkoMjQwMCAtIDI0ODMuNSBAIDQwKSwgKDEwMCBtVyks
-IE5PLU9VVERPT1IKKwkoNTE1MCAtIDUyNTAgQCA4MCksICgyMDAgbVcpLCBOTy1PVVRET09SLCBB
-VVRPLUJXCisJKDUyNTAgLSA1MzUwIEAgODApLCAoMjAwIG1XKSwgTk8tT1VURE9PUiwgREZTLCBB
-VVRPLUJXCisJKDU2NTAgLSA1NzI1IEAgNDApLCAoMjAwIG1XKSwgTk8tT1VURE9PUiwgREZTCiAK
-IGNvdW50cnkgQlo6IERGUy1KUAogCSgyNDAyIC0gMjQ4MiBAIDQwKSwgKDMwKQotLSAKMi40My4w
-Cgo=
-
-------4CJO01DI4FY2841TTXLCLLQSOSUUWM--
+Regards,
+Arend
