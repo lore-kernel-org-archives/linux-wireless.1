@@ -1,95 +1,60 @@
-Authentication-Results: smtp.subspace.kernel.org; arc=pass header.oldest-pass=0 smtp.remote-ip=52.101.84.65
-ARC-Seal: i=2; d=subspace.kernel.org; s=arc20261015; a=rsa-sha256; cv=pass;
-	t=1795332162;
-	b=OdJLfYUxAVumiIhMZEKxUpJFFg/gNyi1chiVogBgW0OWNoUFO/mKWfgf+EOQmpdINQZu
-	 WvL653ALRTw9rPs6heyVK+UxAOYIewA6bd/DOduV7E/8ma7HKOn5rzkm7U4BOxDqTsAKH
-	 /kjXQVUIeaHTvyvT9RhGLACXCaQAm/O5veTk104rbIDa/FXFQwbWyTkzlnCYksQVmRe3i
-	 tXTsx2fysP4S/v0eM/PFHfCH/vL2e0HnLRIXeOzsHUNfco1O3NB0agUz5IjBTnTbttT8x
-	 eKVQGiSAqWTnUs59q/jIiqxdgHPoZoLDmcd6yzx9Vh9NqibvQCC84cxnv+EVnlcjJIw==
-ARC-Message-Signature: i=2; d=subspace.kernel.org; s=arc20261015;
-	a=rsa-sha256; c=relaxed/relaxed; t=1795332162;
-	h=DMARC-Filter:DKIM-Signature:Received:Received:From:To:Cc:Subject:
-	 Date:Message-Id:X-Mailer:In-Reply-To:References:
-	 Content-Transfer-Encoding:Content-Type:X-ClientProxiedBy:MIME-Version:
-	 X-MS-PublicTrafficType:X-MS-TrafficTypeDiagnostic:
-	 X-MS-Office365-Filtering-Correlation-Id:X-MS-Exchange-SenderADCheck:
-	 X-MS-Exchange-AntiSpam-Relay:X-Microsoft-Antispam:
-	 X-Microsoft-Antispam-Message-Info:X-Forefront-Antispam-Report:
-	 X-MS-Exchange-AntiSpam-MessageData-ChunkCount:
-	 X-MS-Exchange-AntiSpam-MessageData-0:X-OriginatorOrg:
-	 X-MS-Exchange-CrossTenant-Network-Message-Id:
-	 X-MS-Exchange-CrossTenant-AuthSource:X-MS-Exchange-CrossTenant-AuthAs:
-	 X-MS-Exchange-CrossTenant-OriginalArrivalTime:
-	 X-MS-Exchange-CrossTenant-FromEntityHeader:
-	 X-MS-Exchange-CrossTenant-Id:X-MS-Exchange-CrossTenant-MailboxType:
-	 X-MS-Exchange-CrossTenant-UserPrincipalName:
-	 X-MS-Exchange-Transport-CrossTenantHeadersStamped;
-	bh=h5X3QP82Tn3qD4/No/c/3R9K02zsWTZPDNQlYzhaTqo=;
-	b=FNonP2sK1I400a38tyjLsQtQy10rM8xd3mZh6bakhIv1EJtnkZpJEdmt6UqHKS+xGXk3
-	 BZ6CdiXp41KLVp1KGcS779OuwUZ5s55sL81YixMBcl9kK00/hHNTpBl0MXex6cfCgZom3
-	 2idbDp2ISE5KO5rglwwxfRsduQJesETqKcy8mnJEht/od0JuTOJ5kZl1nj3/EMmyOOOlO
-	 9/7d9BeLZHyhqQyVU7aPy0o3cqgjE7/c1yPl1D8OrDY9j7aIqap6Nt4cMN0psm+lZmwMX
-	 8YwLBakOAKP9SpnKNVEydujCU3IjWpbUviY2scJv9isvqS2H+Es+iP76F+PvdbKU2bg==
-ARC-Authentication-Results: i=2; smtp.subspace.kernel.org; 
-	dmarc=pass header.from=oss.nxp.com;
-	spf=pass smtp.mailfrom=oss.nxp.com;
-	dkim=pass header.d=NXP1.onmicrosoft.com header.i=@NXP1.onmicrosoft.com header.a=rsa-sha256 header.s=selector1-NXP1-onmicrosoft-com header.b=D7jVRH2Q;
-	arc=pass header.oldest-pass=0 smtp.remote-ip=52.101.84.65
-Received: from DB3PR0202CU003.outbound.protection.outlook.com (mail-northeuropeazon11010065.outbound.protection.outlook.com [52.101.84.65])
+Authentication-Results: smtp.subspace.kernel.org; arc=none smtp.remote-ip=79.135.106.99
+ARC-Seal: i=1; d=subspace.kernel.org; s=arc20261015; a=rsa-sha256; cv=none;
+	t=1795345223;
+	b=BxAhwel72dMon9HUd+wraBpeSMIdAJ6pZtEjJVfEDcwyVZQcGlZi3rOecg8aIudbK53F
+	 /3KeErUIm5la58uVxmCpSTvlhB//Non2zRppYuvqBcwkGj0Okq5fWQ1ptTQdJB329viEz
+	 U1PfXKsO9sXi1dTkwLDLplwp3RpM/tu0xB+67rBmeF5GC63nO+JGYYSmsYJITQ9BnSUIf
+	 RFOPmYHhz7mEftsjbT3d3B8WmUo7ljE8WFRdYAzWX7iFbkYdxnWFUzkdgHvLBDFIb8HXy
+	 Coe7u+BWc8pARPhTNXnE0wDdMUWgb8kO3yMzDB8UY/Ow/u7TLcy5indQr+Dq95iQRfw==
+ARC-Message-Signature: i=1; d=subspace.kernel.org; s=arc20261015;
+	a=rsa-sha256; c=relaxed/relaxed; t=1795345223;
+	h=DMARC-Filter:DKIM-Signature:Date:To:From:Cc:Subject:Message-ID:
+	 In-Reply-To:References:Feedback-ID:X-Pm-Message-ID:MIME-Version:
+	 Content-Type:Content-Transfer-Encoding;
+	bh=OEQj/h6TR8OikHam/xppwe4USyzjAi95iXiUPY1O/JU=;
+	b=VyBwN12lFEk+OlX2qXTJnREOF3LzOj5HbTcXLu+XMZT88oS0O9h4ZLbVd9gETEPcL+qY
+	 C7s1hMKqP4l0D/JCbaOi4LhOof8qL8KrO6Pl70/+Nz0PR6OM+YEJHAUkdRCyJMeEvxAoQ
+	 DM+BicKxgFDLIqXM82Ifww0zXCciKGesly48+0st+Rb7FDFiBmY53hwcl0PEjYBD8qPCB
+	 5mAYmWpByUq7NgR9ptzHrl/pN4LptwqDPNm87OL2SwF0S7CyiJcM0Deky1dmROOZwvJrx
+	 VZOU4c9OpgWPgLLoQ4VnPSSVKYFSpuZVZCZLjJMPqi5jLRwq7PEL+RK7nxYfjc2mE2w==
+ARC-Authentication-Results: i=1; smtp.subspace.kernel.org; 
+	dmarc=pass header.from=proton.me;
+	spf=pass smtp.mailfrom=proton.me;
+	dkim=pass header.d=proton.me header.i=@proton.me header.a=rsa-sha256 header.s=protonmail2 header.b=WVZAVvDJ;
+	arc=none smtp.remote-ip=79.135.106.99
+Received: from mail-10699.protonmail.ch (mail-10699.protonmail.ch [79.135.106.99])
 	(using TLSv1.3 with cipher TLS_AES_256_GCM_SHA384 (256/256 bits)
-	 key-exchange ECDHE (secp384r1) server-signature ECDSA (prime256v1) server-digest SHA256)
+	 key-exchange X25519 server-signature ECDSA (prime256v1) server-digest SHA256)
 	(No client certificate requested)
-	by smtp.subspace.kernel.org (Postfix) with ESMTPS id 3167D606A32A
-	for <linux-wireless@vger.kernel.org>; Sun, 22 Nov 2026 07:22:42 +0000 (UTC)
-DMARC-Filter: OpenDMARC Filter v1.4.2 smtp.subspace.kernel.org 3167D606A32A
-Authentication-Results: smtp.subspace.kernel.org; dmarc=pass (p=none dis=none) header.from=oss.nxp.com
-Authentication-Results: smtp.subspace.kernel.org; spf=pass smtp.mailfrom=oss.nxp.com
+	by smtp.subspace.kernel.org (Postfix) with ESMTPS id 1E448606A334
+	for <linux-wireless@vger.kernel.org>; Sun, 22 Nov 2026 11:00:22 +0000 (UTC)
+DMARC-Filter: OpenDMARC Filter v1.4.2 smtp.subspace.kernel.org 1E448606A334
+Authentication-Results: smtp.subspace.kernel.org; dmarc=pass (p=quarantine dis=none) header.from=proton.me
+Authentication-Results: smtp.subspace.kernel.org; spf=pass smtp.mailfrom=proton.me
 Authentication-Results: smtp.subspace.kernel.org;
-	dkim=pass (2048-bit key, unprotected) header.d=NXP1.onmicrosoft.com header.i=@NXP1.onmicrosoft.com header.a=rsa-sha256 header.s=selector1-NXP1-onmicrosoft-com header.b=D7jVRH2Q
-ARC-Seal: i=1; a=rsa-sha256; s=arcselector10001; d=microsoft.com; cv=none;
- b=D0h4EA2r+BOL3QbYIQu4/8nStuVJTbuG0Dm0SERiKNkDiEzk1lkYKI862KPv93oSNHbqRoTdG78HCmqYGuvZEgsNeA7F9eMDAp6cs5sAaFu7IGB3RZVPRbYnj8YIGOjhIWYfzIwWM7YvB/pBrbCwlpKUy0rXSufjmUT0E5wBV32us+HX3hN9RQVX638cSV2rBKySm3TCEOUTRW7Rct1KG9PvGWE6R9Vp8H5mvYalo9+f8+EoQw2ujmh0yQsLZLrqxnDkK52WTQ74EGu82EdyFZGdfZZCRewmSB4uj3Es2TvpXpehgHHWmc7MTqE7Bm1YvjNFWxdDRX06VDx4FlzqYA==
-ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=microsoft.com;
- s=arcselector10001;
- h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-AntiSpam-MessageData-ChunkCount:X-MS-Exchange-AntiSpam-MessageData-0:X-MS-Exchange-AntiSpam-MessageData-1;
- bh=h5X3QP82Tn3qD4/No/c/3R9K02zsWTZPDNQlYzhaTqo=;
- b=uqfDgVEQHUE5Yx8aHm8ec6zj1QUKih5/wCwWTsUwZ1bj+DHlJS6i5iKq+QC3NoOkWxCz056DTYRsi39jD4sSlMW0fbRvETuAtLIEDwwCipJhR812aqk4dGL6zpKdNZ0zgW5I0kU4Fsv5stm1e0szPuhisUk/F/q4mC0pQFzfZmVF6N/DSKNoLebKKOeyDC8anh0Yz9TX06XMwAZMWQN5yBMaeeKqOblw09JMyCuMEzyR50YhCMPb3wcPekJw8lIPTt6h2tmDLfzkcBH61t6EPrOcOsX+JCq5qIZXGuTf3qoJmYTYe1mPnTIYUPwjWLBojw95d0F3mqD8D6s11uQ2bQ==
-ARC-Authentication-Results: i=1; mx.microsoft.com 1; spf=pass
- smtp.mailfrom=oss.nxp.com; dmarc=pass action=none header.from=oss.nxp.com;
- dkim=pass header.d=oss.nxp.com; arc=none
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=NXP1.onmicrosoft.com;
- s=selector1-NXP1-onmicrosoft-com;
- h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
- bh=h5X3QP82Tn3qD4/No/c/3R9K02zsWTZPDNQlYzhaTqo=;
- b=D7jVRH2Q9xKSJLQAfRLz+g6XicE0y+O3tZ/B0LY4azrUfbQLnmYIsAQ9VYPWzqwl4mL0qU2nx4Z+h9Jf9tHUODZPVqXHrhtqaXHeY12yXIYE05c2ISB67IgZzguqexlwJUcaZa22w4IwpI7VJNDLFkhnEzgtZRLkxx5ksQY0xORwLmYMsYc8Ksu8MBDZA98PbuBHCG8U5h6Wde9n47qpNMgCFRaKekXVd1PZeCWapKVzxYjopnne0xlky/2c3nrGPOVV/TaZgIHmL9N84/Kqx3vaG2HZx/7qGVKfLODmQEEilalRW+jEtLTiYgI0FWwBVpemaGXwyKsGg6Qa5/IpHg==
-Authentication-Results: mx.microsoft.com 1; dkim=none (message not signed)
- header.d=none;dmarc=none action=none header.from=oss.nxp.com;
-Received: from VE1PR04MB7280.eurprd04.prod.outlook.com (2603:10a6:800:1af::22)
- by DBBPR04MB7737.eurprd04.prod.outlook.com (2603:10a6:10:1e5::22) with
- Microsoft SMTP Server (version=TLS1_2,
- cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id 15.21.639.13; Sun, 22 Nov
- 2026 07:22:38 +0000
-Received: from VE1PR04MB7280.eurprd04.prod.outlook.com
- ([fe80::92fd:f75a:a302:f859]) by VE1PR04MB7280.eurprd04.prod.outlook.com
- ([fe80::92fd:f75a:a302:f859%4]) with mapi id 15.21.0639.012; Sun, 22 Nov 2026
- 07:22:38 +0000
-From: jeff.chen_1@oss.nxp.com
-To: Tristan Madani <tristmd@gmail.com>
-Cc: Jeff Chen <jeff.chen_1@oss.nxp.com>,
-	Jeff Chen <jeff.chen_1@nxp.com>,
-	Francesco Dolcini <francesco@dolcini.it>,
-	linux-wireless@vger.kernel.org,
-	Tristan Madani <tristan@talencesecurity.com>
-Subject: Re: [PATCH v2 wireless 0/2] wifi: nxpwifi: firmware response validation fixes
-Date: Sun, 22 Nov 2026 15:21:38 +0800
-Message-Id: <20261122072139.712789-1-jeff.chen_1@oss.nxp.com>
-X-Mailer: git-send-email 2.34.1
-In-Reply-To: <20261120225933.1148680-1-tristan@talencesecurity.com>
-References: <20261120225933.1148680-1-tristan@talencesecurity.com>
-Content-Transfer-Encoding: 8bit
-Content-Type: text/plain
-X-ClientProxiedBy: AS4P191CA0016.EURP191.PROD.OUTLOOK.COM
- (2603:10a6:20b:5d9::11) To VE1PR04MB7280.eurprd04.prod.outlook.com
- (2603:10a6:800:1af::22)
+	dkim=pass (2048-bit key, unprotected) header.d=proton.me header.i=@proton.me header.a=rsa-sha256 header.s=protonmail2 header.b=WVZAVvDJ
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=proton.me;
+	s=protonmail2; t=1795345220; x=1795604420;
+	bh=OEQj/h6TR8OikHam/xppwe4USyzjAi95iXiUPY1O/JU=;
+	h=Date:To:From:Cc:Subject:Message-ID:In-Reply-To:References:
+	 Feedback-ID:From:To:Cc:Date:Subject:Reply-To:Feedback-ID:
+	 Message-ID:BIMI-Selector;
+	b=WVZAVvDJveQ8FnhKO9QNPFzS8Gn2z/wlJ5hU/ZwP5BGUzzpaphQKHHiAnDwr7ywC8
+	 Wdnx1k69BJ0wWiUPHg2fm57zelrnxooNjQQcK79apJ1l5eHNW8yz7NGPlaRXDUDNbf
+	 QDnL/ajdD4qxSeL8yVzSZO1u6ruj9DQRLs7KmQb1MSLojqUYxPHFkXLKhIKXFwXyOh
+	 YDn5WRpJxVpaxyikNY3DQHqySQyKYS9l/8qfMjtjmZrQsx5IkgfVeGHVD/Fntd04QQ
+	 Bjow4zX9D69lc2hjzm7xk6O0zcFnJh/uS6o6hwgxYdeC8P5pu5VKvu4nWtEQHO+OKX
+	 BREWnZ901j8ow==
+Date: Sun, 22 Nov 2026 11:00:16 +0000
+To: "pkshih@realtek.com" <pkshih@realtek.com>
+From: Falconet3 <Falconet3@proton.me>
+Cc: "linux-wireless@vger.kernel.org" <linux-wireless@vger.kernel.org>, "linux-kernel@vger.kernel.org" <linux-kernel@vger.kernel.org>
+Subject: Re: [PATCH v2 1/2] wifi: rtw89: fix OOB read past firmware buffer when duplicating elements
+Message-ID: <ycKOLfq3sWokgWxf1yMxmqtns2Sjh90xRG46gH7U89uffkJrcs4pUZPAjONVr20rfG0FJ6kLNFTW_YT-Z02z5ZNLGo8h3RS9t1WSMJFrw4E=@proton.me>
+In-Reply-To: <ONBhkh_B7hyKoHNRpjYgxy7da68QOa8cWUqztT-I1nW-KukOKE30FIYFLkX1Tm_TrXlBjse5d-AFRwsyzfxBdMGKvyIEoVsjyZQqxzUkRQk=@proton.me>
+References: <ONBhkh_B7hyKoHNRpjYgxy7da68QOa8cWUqztT-I1nW-KukOKE30FIYFLkX1Tm_TrXlBjse5d-AFRwsyzfxBdMGKvyIEoVsjyZQqxzUkRQk=@proton.me>
+Feedback-ID: 48740069:user:proton
+X-Pm-Message-ID: f5057802730493c971ed7f36e5aa9484c3a78ff7
 X-Mailing-List: linux-wireless@vger.kernel.org
 List-Id: <linux-wireless.vger.kernel.org>
 List-Post: <mailto:linux-wireless@vger.kernel.org>
@@ -99,98 +64,78 @@ List-Unsubscribe: <mailto:linux-wireless+unsubscribe@vger.kernel.org>
 List-Owner: <mailto:linux-wireless+owner@vger.kernel.org>
 Precedence: list
 MIME-Version: 1.0
-X-MS-PublicTrafficType: Email
-X-MS-TrafficTypeDiagnostic: VE1PR04MB7280:EE_|DBBPR04MB7737:EE_
-X-MS-Office365-Filtering-Correlation-Id: 7e33e8b0-48d0-4360-4620-08df486962a4
-X-MS-Exchange-SenderADCheck: 1
-X-MS-Exchange-AntiSpam-Relay: 0
-X-Microsoft-Antispam:
-	BCL:0;ARA:13230040|19092799006|23010399003|1800799024|366016|376014|261102123227099003|261028144727099003|261021121427099003|261021123027099003|261022105027099003|261026121527099003|261026140227099003|11063799006|56012099006|10067099003|22082099003|18002099003|261009223027099003;
-X-Microsoft-Antispam-Message-Info:
-	vc9x7+oBRY0ZIADKdY8Iy48Gn+MH/fMKpRQPSbzQ+VAFr73nrKsHk9CmhtycQM1YiSrNztvXL8R5gPjyAhHE4n+D/M3lGEE6liusLVRNZY3AtRqi6pc6IQcxmxW87pr/URbSGh7XOQ3OvV7gYMTP8i1zR0XQfqT2gggAKaYa9KP7gw8U7CYkO4xCohLJHOfx+Rk/FrckBeFGSzeCZMizi8X9Ae6ea25+9J36QKgIlGPJOmIgLAlmoWwey1JW/ZlMlECA7a1j7rdcRcxOA4PgM6P6pY0xpnUHZVEbburxmZtIUOtGwbidKv2bXl3syHaeukUlQBVxaFiyVfcefxDwp2638Ah6E5+WYKyv0JW6aIxOsXLrwKNSUiKO5meZKBN7/eaEjXbNniRLL2HjAdXlIumNpkCEMPby0aQW8yjcgGEDS2sdGE2X7C7zE638BuwoaZ+246A5+aCVrnIiQH7m4AgC3tlZAWN5WLt5AKPp2bIBH8hhL81odbzOxyHTDU88W73RxoAhiZJW0iEsty8iqDruEq0siGGc9HNyrLv8Zhvh0lBo3KBP5Yv8ipdey77HwI25jsrqUfQYwgLW3UCSHVxAIviyz4ObXhZIu1EHQl4BObTiz0AoJgeG2VtHRAbz8AUfZeBK3oN15o7CGTenYqg+H6ldoYlSa06rQvtZldE=
-X-Forefront-Antispam-Report:
-	CIP:255.255.255.255;CTRY:;LANG:en;SCL:1;SRV:;IPV:NLI;SFV:NSPM;H:VE1PR04MB7280.eurprd04.prod.outlook.com;PTR:;CAT:NONE;SFS:(13230040)(19092799006)(23010399003)(1800799024)(366016)(376014)(261102123227099003)(261028144727099003)(261021121427099003)(261021123027099003)(261022105027099003)(261026121527099003)(261026140227099003)(11063799006)(56012099006)(10067099003)(22082099003)(18002099003)(261009223027099003);DIR:OUT;SFP:1101;
-X-MS-Exchange-AntiSpam-MessageData-ChunkCount: 1
-X-MS-Exchange-AntiSpam-MessageData-0:
-	=?us-ascii?Q?HArPWoS0t5ubtgIOv8O2AxrVHDZrQ4CUi17tx/fG41EEuliMeVDs4E+VGvJf?=
- =?us-ascii?Q?3XiU6dqBmr3e1WZnSAAR95TlsuuJTtvQ3KC7jpqEObLIPL0JAA2i4IAeGXfl?=
- =?us-ascii?Q?cGUox/lEQo2zQlqOzqnK/XAmXGdBK3gxpjPOs72/v3PCBAjKuFd4oRZ56rP1?=
- =?us-ascii?Q?qAhC5fuWSOh5+wqJOjnNza0iHVbE4LSc4w45tOSICZ3BKmZNJljXoSzM0pOO?=
- =?us-ascii?Q?7t1a/m17wSroiFzK9mGKVS7Ow1vZvLT8JDbf/CKg+FOL0+yij5DTyWo32iY9?=
- =?us-ascii?Q?Zo3p9HZXKAKGYFBs2AulZH/XiKGfTkKoqojftVqYgQQCTnMrm0L3xYjsBThj?=
- =?us-ascii?Q?Q/VIEbeAvak+wYATxHdmncJz1n+d2yMGv4x5/ov+tp2F5qWM3WFozy2SvJfg?=
- =?us-ascii?Q?JmVHuITvcVxNuXjk4MCuXt5Sh9GmlFfE6YBhGdc4dnuP1OhiKXmKTuIjOM1S?=
- =?us-ascii?Q?rWaNaDXtT0JHSwqNz9yAAcfDhBT1T3/MWLec08iod5TDADcA4fllAhaba6aV?=
- =?us-ascii?Q?/zFlYZ2AucWkn26hvQ3D3ux224+dh7uxRB5okk6QXmIy72ACveZahxzYiZe5?=
- =?us-ascii?Q?IjkrBtPOBjzeYgn44o4qZXeHH7egqZoh0Au5H75B1I+17JOBfEnhJPVaYwrM?=
- =?us-ascii?Q?pJtRS8Tr0BiSuLCkssKdMcsH54NUZv/AQyPujltl+Jbozrvn2eUCkZHKS8FJ?=
- =?us-ascii?Q?Z6P9yyWh7Kb/Oz84yvOCuXDlDNGF1bhzVFoGM/EggQdIKpBZj2dYC2lZZZkM?=
- =?us-ascii?Q?tqzsRetQPLFmeZrFu3WGDsfLYyxaBhGESZ8H3N+98yTRyTfrS7TlBBBzgrL6?=
- =?us-ascii?Q?qoereqx1OBLSi7totYgzTu18Xwzuvsttx6XCr76Rr3HHSiuGGdQ/gamunwu8?=
- =?us-ascii?Q?GzxDc5zkNw1shQ9GN2xn6c6tYIH9wG4qS1FsMAg0J9eyrzDIDz4iBj5Ky/do?=
- =?us-ascii?Q?ZSRBR4RTlYBWUQFb+/2MY1wdNcJRtRaVv28hL7bfg4fQxcaKBx9x/VatJx8m?=
- =?us-ascii?Q?ra8b6YcYmrvHd/B42Fh8MIq1T7lvbzuZBKJiE0SJu83PyNrMQQ5V95iL/7Ij?=
- =?us-ascii?Q?ka3gnSP5QhDC2Sh7vNpEZrv7lg6UJtYdoF585PKLj4ENlZqyBLe/d0mpSlRF?=
- =?us-ascii?Q?ZTXMEw92TNATHQGnDJ8ZmPFGzOUrFZ5lO0IFuH91wq5OIQRiaM2eyacDkS2w?=
- =?us-ascii?Q?iWENpnNtDAiQMdcXbj63F2UPvBAHEhn+0QzDEsiKBIDsOjpJPVZp3gbjPOxB?=
- =?us-ascii?Q?OVG7mfmacWcPV8h1iF3sNpgvqQQ9SKtY+s2fmpK0b9c8y7c/vqDGYekG4EMW?=
- =?us-ascii?Q?kO1ELo9MQTWTGFTSlCM19C+2BaNUfg7k72k6YGr9n0S4OYSE5Bgq4y5x+9YN?=
- =?us-ascii?Q?/ltND8S6CJD/WgCqpFDRl1J2IuU7PybEpJBixXExHSnzX6gTxt1ALBPrIg8s?=
- =?us-ascii?Q?AhBertdTxVQMIvt7Jipod/+fGNk7TUGadlHXSxoMfvmDlpVS60iUbH3f+GCs?=
- =?us-ascii?Q?8Ny4olcRFPMzdJSdKFDlokTg2ptxxbzoJ8pWD8VMOkKg+grDxgUBa930LEbR?=
- =?us-ascii?Q?WKNn/fxlbGxcsE/0s+4NadZpsmMHqCkREQpY6n0EcdfswdWJggsR4TxZs2yB?=
- =?us-ascii?Q?mhTPb/h9hDSwSLvHMTb0u5dpP47ENaODRbhjBCFfOU3OVCfD+0LiCZo8EN1X?=
- =?us-ascii?Q?aNl7xlH9v+6u9E/pcqSagMB5A0nZc7c99YwFqweSPoLXIHCicuAfawVQTBqS?=
- =?us-ascii?Q?bM2uUEPR9RBCgRNTgsmscVT/w86bcXSYai+UY1JgNwmCt0WM+UMf?=
-X-OriginatorOrg: oss.nxp.com
-X-MS-Exchange-CrossTenant-Network-Message-Id: 7e33e8b0-48d0-4360-4620-08df486962a4
-X-MS-Exchange-CrossTenant-AuthSource: VE1PR04MB7280.eurprd04.prod.outlook.com
-X-MS-Exchange-CrossTenant-AuthAs: Internal
-X-MS-Exchange-CrossTenant-OriginalArrivalTime: 22 Nov 2026 07:22:38.3107
- (UTC)
-X-MS-Exchange-CrossTenant-FromEntityHeader: Hosted
-X-MS-Exchange-CrossTenant-Id: 686ea1d3-bc2b-4c6f-a92c-d99c5c301635
-X-MS-Exchange-CrossTenant-MailboxType: HOSTED
-X-MS-Exchange-CrossTenant-UserPrincipalName: SLyl34IPbtw69sWiosNdyxikRANQy1R/3OE0pxAASerLnrxV0TBPfz1xxodABJp18osxITbkOh0Id3xYJjvSE1s6Q5vAXBH0Un1zNwLZO7ocDoNaA6KKqZk4kwccOiyJ
-X-MS-Exchange-Transport-CrossTenantHeadersStamped: DBBPR04MB7737
+Content-Type: text/plain; charset=utf-8
+Content-Transfer-Encoding: quoted-printable
 
-From: Jeff Chen <jeff.chen_1@oss.nxp.com>
+__rtw89_fw_recognize_elements() checks only the element body against
+firmware->size, omitting the 32-byte struct rtw89_fw_element_hdr:
 
-On Fri, Nov 20, 2026 at 10:59:31 PM +0000, Tristan Madani wrote:
-> The nxpwifi driver trusts several size fields from firmware responses
-> without validating them against actual buffer lengths. This series
-> adds bounds checks to prevent reads past the buffer when firmware
-> provides inflated sizes.
-> 
-> Changes in v2:
-> - Dropped the HE capability TLV length patch (was 1/3), superseded by
->   commit f17e2eda1630a ("wifi: nxpwifi: bound the TLV lengths in the
->   11AX_CFG response")
-> - Patch 2/2: moved the response size check after timer_delete_sync()
->   so the command timer is properly cancelled before the early return,
->   as pointed out by Jeff Chen
-> 
-> Tristan Madani (2):
->   wifi: nxpwifi: validate ext_scan buf_size against event buffer length
->   wifi: nxpwifi: validate command response size against buffer length
-> 
->  drivers/net/wireless/nxp/nxpwifi/cmdevt.c | 14 ++++++++++++++
->  drivers/net/wireless/nxp/nxpwifi/scan.c   |  9 +++++++++
->  2 files changed, 23 insertions(+)
-> 
+=09while (offset + sizeof(*hdr) < firmware->size) {
+=09=09...
+=09=09elm_size =3D le32_to_cpu(hdr->size);
+=09=09if (offset + elm_size >=3D firmware->size)
 
-Hi Tristan,
+The element handlers, and rtw89_fw_elem_dup_if_needed() when it copies
+elements, read both header and body. A crafted element with
+offset + elm_size =3D=3D firmware->size - 1 passes the check and is read up
+to sizeof(struct rtw89_fw_element_hdr) - 1 =3D 31 bytes past
+firmware->data. For firmware larger than 2 MB the copy path also stores
+those bytes in a persistent devm_ buffer.
 
-Thanks for the v2. I will take it this time.
+The walk start offset is not validated either: rtw89_mfw_get_size()
+returns le32_to_cpu(mfw_info->shift) + le32_to_cpu(mfw_info->size), and
+rtw89_mfw_validate_hdr() only checks that the info array fits in the
+buffer. On 32-bit (sizeof(size_t) =3D=3D 4) an aligned offset >=3D 0xffffff=
+e0
+wraps "offset + sizeof(*hdr)" in the loop guard, so hdr->size is
+dereferenced out of bounds before any check runs.
 
-For future patches, please note:
+Check the start offset before dereferencing hdr and use size_t remainder
+arithmetic for both bounds checks, which cannot wrap on any
+architecture. An element whose header and body end exactly at
+firmware->size is then accepted; it is fully in bounds, while such exact
+fits were rejected before.
 
-- checkpatch warns that your From: (tristmd@gmail.com) does not match
-  your Signed-off-by (tristan@talencesecurity.com). Please make them
-  match.
-- cc_maintainers: some maintainers were not Cc'd. Please use
-  scripts/get_maintainer.pl to build the Cc list.
+Fixes: a337d4331fd6 ("wifi: rtw89: introduce infrastructure of firmware ele=
+ments")
+Cc: stable@vger.kernel.org
+Assisted-by: LLM Mistral Vibe
+Signed-off-by: Falconet3 <Falconet3@proton.me>
+---
+v2: validate the walk start offset before dereferencing hdr (fixes the
+    32-bit wrap), use size_t remainder arithmetic, note the exact-fit
+    acceptance, correct Fixes: and the affected range, add Cc: stable.
+    Compile- and sparse-tested on x86_64; no reproducer available.
 
-Thanks,
-Jeff
+ drivers/net/wireless/realtek/rtw89/fw.c | 5 +++--
+ 1 file changed, 3 insertions(+), 2 deletions(-)
 
+diff --git a/drivers/net/wireless/realtek/rtw89/fw.c b/drivers/net/wireless=
+/realtek/rtw89/fw.c
+index 0000000..0000000 100644
+--- a/drivers/net/wireless/realtek/rtw89/fw.c
++++ b/drivers/net/wireless/realtek/rtw89/fw.c
+@@ -1668,16 +1668,17 @@ static int __rtw89_fw_recognize_elements(struct rtw=
+89_dev *rtwdev,
+ =09const struct rtw89_fw_element_handler *handler;
+ =09const struct rtw89_fw_element_hdr *hdr;
+ =09u32 elm_size;
+ =09u32 elem_id;
+ =09int ret;
+=20
+-=09while (offset + sizeof(*hdr) < firmware->size) {
++=09while (offset < firmware->size &&
++=09       firmware->size - offset > sizeof(*hdr)) {
+ =09=09hdr =3D (const struct rtw89_fw_element_hdr *)(firmware->data + offse=
+t);
+=20
+ =09=09elm_size =3D le32_to_cpu(hdr->size);
+-=09=09if (offset + elm_size >=3D firmware->size) {
++=09=09if (elm_size > firmware->size - offset - sizeof(*hdr)) {
+ =09=09=09rtw89_warn(rtwdev, "firmware element size exceeds\n");
+ =09=09=09break;
+ =09=09}
+=20
+ =09=09elem_id =3D le32_to_cpu(hdr->id);
+--=20
+2.53.0
