@@ -1,56 +1,61 @@
-Authentication-Results: smtp.subspace.kernel.org; arc=none smtp.remote-ip=109.224.244.31
+Authentication-Results: smtp.subspace.kernel.org; arc=none smtp.remote-ip=178.21.23.139
 ARC-Seal: i=1; d=subspace.kernel.org; s=arc20261015; a=rsa-sha256; cv=none;
-	t=1795305987;
-	b=WUSIL3D1t1ecq2UWh7Iz9A1Cc02auNyc698jUsXThPf7wYzzzaVbsiOhHin2crgUNrB8
-	 ECCeUrgCHqtoXqSanA07iuaX27viv4HnCUeovyOEoihH8gACQCDo/3kOuRp+Kdff3m0pJ
-	 YqKagBVP0pUPZLyknmM1WIP+YwEU7UMbYfkkzDBoUvvkkkS63KvetF3CAopx7bUhkd23G
-	 bcjQ7Ke/x8X+skM76OoxzQ3n69boLdj/10oFH5Lh9YgWBpvMqYch8CBIMU+suHieVX8Yl
-	 Fzs4txaGEuWHSUZurobha77rpbROWWGIAUSaxXUPBO8e925WYmeppbqC+RspeFkMyvg==
+	t=1795306497;
+	b=Oy/81MD7Zm1YJJXH49mfVE5eBJFmg/pW2PKPjw/2P4sIWQqvseopkD0yn8eNqpZq1DGd
+	 vCZBVZ0q7tdWxbjEZM4AzTDNvQfQW1ALKU0ApxPf28qxRiaDtTJc7h3y5enLyIR37w5mQ
+	 rAEdqXiF1HrF61fVvhv8nKmXb9ea6KStlrA58a1uR2LmNG6lbxTgcWrSTUnqZYBo/R6sU
+	 Pp3jpDTMTODyPTilnOcc2ARA6h9FpaJtnvXllutqpdGd+lAkkoUV5yfMBe8HmjXVg2Udp
+	 AId5Q29ysMkRoB0/W2fCxSANmccXd4iUfHnZz7t1CkZLS/46UBGjteP4HFI+dCe7FrQ==
 ARC-Message-Signature: i=1; d=subspace.kernel.org; s=arc20261015;
-	a=rsa-sha256; c=relaxed/relaxed; t=1795305987;
-	h=DMARC-Filter:DKIM-Signature:Date:To:From:Cc:Subject:Message-ID:
-	 Feedback-ID:X-Pm-Message-ID:MIME-Version:Content-Type;
-	bh=+ygAcHjKwYZt6gv+LO1NiJjlVE7nOKUZ7es/DwRgpRE=;
-	b=yog0CvQOsBo6aG+2HmLS1t8LRkwhUdQdNmCOxCe5K9BbKMceaa+pe7VPsRLQqP/Knref
-	 U5PNoWWF9kegDL/6Wtxa4iN9ei7PVJdIwAJJi4oxL7+mY0F0+wKfTfcQ1opqP3YCaHVKy
-	 ik7NYbdNf36sFzZg52ncU5FggOsPFV5v2G6xNLRxpIMIyEXQfdsvtJyWIKJe0yrRRWfCt
-	 TdjG/rq0+bqdclCO42BGUOrpxt/zWwewjJ9vujZ7QHqz52z1Tkw5VYJExt7wkPW5TYOfD
-	 VqBuZCEsFY/rfcePmq7Ska2fx1U4/B6LvapyoWQMFzk8dMWgVCmRUud31tJLd519WBA==
+	a=rsa-sha256; c=relaxed/relaxed; t=1795306497;
+	h=DMARC-Filter:Received:X-Virus-Scanned:Received:DKIM-Signature:From:
+	 To:Cc:Subject:Date:Message-ID:MIME-Version:Content-Transfer-Encoding;
+	bh=eWSedapFvl0DW+ZPixdBSDVBH8dvACW7Wj+MSIJiI7c=;
+	b=4Dz0ZccP4vL55beyRyjUayFOcCva1MXxF6SsnnIB9QK9ZSSbyFMasXmLNKn2ZFPPuKfk
+	 tl5pY31L2sn2IuDsjrbkxY+mDHBDdvyjqonx4MgQ6lHT3fjZTKHVkOPhjm3+eKX9WjTrM
+	 V2FJSSFIi4LOpmJoxDUhPBmDDofl2vMZsmKbgplxx4RcW6zdx3TTaIQ7w3GDJC68u/V50
+	 wIif5+1pvy81ILjH/OL3T/s2vxhUQaPWtMc3aLSI8PPKWhpn7Ye92QAs5OTaroj8OnfEY
+	 Rw9pdg+QiWbviWBj1ziu1H52uBon9XCX+12f1e+BvB5JSA7TtZINu23/0uRKSjRR/QQ==
 ARC-Authentication-Results: i=1; smtp.subspace.kernel.org; 
-	dmarc=pass header.from=proton.me;
-	spf=pass smtp.mailfrom=proton.me;
-	dkim=pass header.d=proton.me header.i=@proton.me header.a=rsa-sha256 header.s=protonmail2 header.b=zeB9YasO;
-	arc=none smtp.remote-ip=109.224.244.31
-Received: from mail-24431.protonmail.ch (mail-24431.protonmail.ch [109.224.244.31])
+	dmarc=pass header.from=disroot.org;
+	spf=pass smtp.mailfrom=disroot.org;
+	dkim=pass header.d=disroot.org header.i=@disroot.org header.a=rsa-sha256 header.s=mail header.b=Undc862Y;
+	arc=none smtp.remote-ip=178.21.23.139
+Received: from layka.disroot.org (layka.disroot.org [178.21.23.139])
 	(using TLSv1.3 with cipher TLS_AES_256_GCM_SHA384 (256/256 bits)
-	 key-exchange X25519 server-signature ECDSA (prime256v1) server-digest SHA256)
+	 key-exchange X25519 server-signature ECDSA (prime256v1))
 	(No client certificate requested)
-	by smtp.subspace.kernel.org (Postfix) with ESMTPS id 44A33606A32C
-	for <linux-wireless@vger.kernel.org>; Sun, 22 Nov 2026 00:06:27 +0000 (UTC)
-DMARC-Filter: OpenDMARC Filter v1.4.2 smtp.subspace.kernel.org 44A33606A32C
-Authentication-Results: smtp.subspace.kernel.org; dmarc=pass (p=quarantine dis=none) header.from=proton.me
-Authentication-Results: smtp.subspace.kernel.org; spf=pass smtp.mailfrom=proton.me
+	by smtp.subspace.kernel.org (Postfix) with ESMTPS id 81130606A320
+	for <linux-wireless@vger.kernel.org>; Sun, 22 Nov 2026 00:14:56 +0000 (UTC)
+DMARC-Filter: OpenDMARC Filter v1.4.2 smtp.subspace.kernel.org 81130606A320
+Authentication-Results: smtp.subspace.kernel.org; dmarc=pass (p=reject dis=none) header.from=disroot.org
+Authentication-Results: smtp.subspace.kernel.org; spf=pass smtp.mailfrom=disroot.org
 Authentication-Results: smtp.subspace.kernel.org;
-	dkim=pass (2048-bit key, unprotected) header.d=proton.me header.i=@proton.me header.a=rsa-sha256 header.s=protonmail2 header.b=zeB9YasO
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=proton.me;
-	s=protonmail2; t=1795305985; x=1795565185;
-	bh=+ygAcHjKwYZt6gv+LO1NiJjlVE7nOKUZ7es/DwRgpRE=;
-	h=Date:To:From:Cc:Subject:Message-ID:Feedback-ID:From:To:Cc:Date:
-	 Subject:Reply-To:Feedback-ID:Message-ID:BIMI-Selector;
-	b=zeB9YasOlJgPXHyqy+H6pycaS0xted/v9f/arNnUR+5vTgMO2aQgcmwz94Qq741MW
-	 CRp8aO312W+CmSkxvwNaKHIUoo1PiSy1egYeWfStd2JWQQulUHYeN9x2UAfq26ezhd
-	 AdWdtioGnyVtC8yTAUpsNJ4D3spt016IaAA4yKWsMAV8xi+yVLZItDqTALW5wZ6AGp
-	 H+DEsAL1B7atfaJ05tbweYgK6mxcWJ68OzAeJsrlANhwwW0EIWW5ZZsVzcmIHxXB+b
-	 Pt3nrd3s9hc5WZDmVcoLa0zirmXlotX1SDmBNeo5MJqIeYrxkE4H0RUMZGDsMs8P3z
-	 z8v5QYfWfP/gg==
-Date: Sun, 22 Nov 2026 00:06:21 +0000
-To: "pkshih@realtek.com" <pkshih@realtek.com>
-From: Falconet3 <Falconet3@proton.me>
-Cc: "linux-wireless@vger.kernel.org" <linux-wireless@vger.kernel.org>, "linux-kernel@vger.kernel.org" <linux-kernel@vger.kernel.org>
-Subject: [PATCH] wifi: rtw89: fix OOB read past firmware buffer when duplicating elements
-Message-ID: <ONBhkh_B7hyKoHNRpjYgxy7da68QOa8cWUqztT-I1nW-KukOKE30FIYFLkX1Tm_TrXlBjse5d-AFRwsyzfxBdMGKvyIEoVsjyZQqxzUkRQk=@proton.me>
-Feedback-ID: 48740069:user:proton
-X-Pm-Message-ID: 0635a80f4961a221e1b01f4791f9468df6223cb0
+	dkim=pass (2048-bit key, unprotected) header.d=disroot.org header.i=@disroot.org header.a=rsa-sha256 header.s=mail header.b=Undc862Y
+Received: from mail01.layka.lan (localhost [127.0.0.1])
+	by disroot.org (Postfix) with ESMTP id 045F182EC1;
+	Sun, 22 Nov 2026 01:14:55 +0100 (CET)
+X-Virus-Scanned: SPAM Filter at disroot.org
+Received: from layka.disroot.org ([127.0.0.1])
+ by localhost (disroot.org [127.0.0.1]) (amavis, port 10024) with ESMTP
+ id qTig8uYSp_Im; Sun, 22 Nov 2026 01:14:54 +0100 (CET)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=disroot.org; s=mail;
+	t=1795306494; bh=2zyGN6LWA4TaW1GtuYKAslGUAfbn7RsSooxDzfw1GN8=;
+	h=From:To:Cc:Subject:Date;
+	b=Undc862YOZSKVSQ1uyxQHgKguGxgRyma12+/mydSd2Uk1Gpy5g1vHvMHMfYDmiQ0F
+	 Vhws1W8T6ScOSzYCBvvweT50yXOoUguBCB0Q5witbRqTs6/5UK0AUa8BQjhHFtvjLx
+	 NhWeu1jQAf+uatbHWM9w0Dyb1ZDafRN2q0c8uayD3bQoIRpt3LlFinPzOyYyISQNmu
+	 hhgPdLWPz5MnHIuwVUQ68tg+NGwtsS2h2vM1XWdX1tQxPy/O6R9zHRwYt2QVVzSF2J
+	 3Qovbkt3QkrQ1ilwzf3ALvPtAggJAM4iI7Xa8ICxXA0JXMA0oaPBs2bE1WxJ+bheUU
+	 7HiFxVV2Aob7Q==
+From: Florian Maurer <fmaurer@disroot.org>
+To: johannes@sipsolutions.net
+Cc: linux-wireless@vger.kernel.org,
+	Florian Maurer <fmaurer@disroot.org>,
+	Benjamin Berg <benjamin@sipsolutions.net>
+Subject: [PATCH wireless-next v2] wifi: mac80211: mesh: drop frames received on another channel
+Date: Sun, 22 Nov 2026 00:14:24 +0000
+Message-ID: <20261122001424.3276331-1-fmaurer@disroot.org>
 X-Mailing-List: linux-wireless@vger.kernel.org
 List-Id: <linux-wireless.vger.kernel.org>
 List-Post: <mailto:linux-wireless@vger.kernel.org>
@@ -60,69 +65,71 @@ List-Unsubscribe: <mailto:linux-wireless+unsubscribe@vger.kernel.org>
 List-Owner: <mailto:linux-wireless+owner@vger.kernel.org>
 Precedence: list
 MIME-Version: 1.0
-Content-Type: multipart/mixed;
- boundary="b1=_PKZXEg47bP4vmjaknY9EiYCMjB40SwT4aWAeErJEx8"
+Content-Transfer-Encoding: 8bit
 
---b1=_PKZXEg47bP4vmjaknY9EiYCMjB40SwT4aWAeErJEx8
-Content-Type: text/plain; charset=utf-8
-Content-Transfer-Encoding: quoted-printable
+Frames from a known station are only passed to it if they were received
+on the channel of its link. Frames without a matching station, such as
+beacons and peering frames of a new neighbour, reach every interface
+regardless of the channel they were received on.
 
-Fix for an OOB read (up to 31 bytes past the firmware buffer) introduced in=
- v7.4-rc1 by the fw-element copy-on-parse rework. Patch attached, applies t=
-o v7.4-rc3. Thanks!
---b1=_PKZXEg47bP4vmjaknY9EiYCMjB40SwT4aWAeErJEx8
-Content-Type: text/x-patch; name=0001-wifi-rtw89-fix-OOB-read-in-fw-element-dup.patch
-Content-Transfer-Encoding: base64
-Content-Disposition: attachment; filename=0001-wifi-rtw89-fix-OOB-read-in-fw-element-dup.patch
+On a wiphy with multiple radios, a mesh interface therefore peers with
+mesh points on the channels of the other radios. With mac80211_hwsim
+(multi_radio=1), a 2.4 GHz mesh interface ends up with an established
+peering to the 5 GHz mesh interface of another wiphy, and no traffic
+gets through it. As mesh_matches_local() requires matching basic rates,
+this only happens if the 2.4 GHz mesh does not use the 802.11b rates.
 
-RnJvbTogRmFsY29uZXQzIDxGYWxjb25ldDNAcHJvdG9uLm1lPgpEYXRlOiBTYXQsIDIxIE5vdiAy
-MDI2IDIxOjAwOjAwICswMDAwClN1YmplY3Q6IFtQQVRDSF0gd2lmaTogcnR3ODk6IGZpeCBPT0Ig
-cmVhZCBwYXN0IGZpcm13YXJlIGJ1ZmZlciB3aGVuIGR1cGxpY2F0aW5nIGVsZW1lbnRzCgpTaW5j
-ZSB2Ny40LXJjMSwgcnR3ODkgY29waWVzIGZpcm13YXJlIGVsZW1lbnRzIGF0IHBhcnNlIHRpbWUg
-c28gdGhlCnN0cnVjdCBmaXJtd2FyZSBjYW4gYmUgcmVsZWFzZWQgYWZ0ZXIgcHJvYmUKKHJ0dzg5
-X2Z3X2VsZW1fZHVwX2lmX25lZWRlZCgpLCBmdy5jOjE2OCkuIFRoZSBjb3B5IGxlbmd0aCBpcwpz
-aXplb2YoKmVsbSkgKyBsZTMyX3RvX2NwdShlbG0tPnNpemUpICh0aGUgZWxlbWVudCBoZWFkZXIg
-aXMgMzIgYnl0ZXMsCmZ3Lmg6NDY0NiksIGJ1dCB0aGUgZWxlbWVudCB3YWxrIGluIF9fcnR3ODlf
-ZndfcmVjb2duaXplX2VsZW1lbnRzKCkKb25seSB2YWxpZGF0ZXMgIm9mZnNldCArIGVsbV9zaXpl
-IDwgZmlybXdhcmUtPnNpemUiIChmdy5jOjE2NzgpLApvbWl0dGluZyB0aGUgaGVhZGVyIHNpemUu
-CgpBIGNyYWZ0ZWQgZmlybXdhcmUgZWxlbWVudCB3aXRoIG9mZnNldCArIGVsbV9zaXplID09IGZp
-cm13YXJlLT5zaXplIC0gMQp0aGVyZWZvcmUgcGFzc2VzIHRoZSBjaGVjaywgYW5kIGRldm1fa21l
-bWR1cCgpL3ZtYWxsb2MrbWVtY3B5IGluCl9fcnR3ODlfZndfZWxlbV9kdXBfaWZfbmVlZGVkKCkg
-KGZ3LmM6MTQxLTE2MCwgY2FsbGVkIGZyb20gZncuYzoxMzYxLAoxNDE3LCAxNTI0LCAxNTM2LCAx
-NTYyKSByZWFkcyB1cCB0byBzaXplb2Yoc3RydWN0IHJ0dzg5X2Z3X2VsZW1lbnRfaGRyKS0xCj0g
-MzEgYnl0ZXMgcGFzdCB0aGUgZW5kIG9mIGZpcm13YXJlLT5kYXRhLgoKSW1wYWN0OiBoZWFwL3Zt
-YWxsb2MgT09CIHJlYWQgb2YgdXAgdG8gMzEgYnl0ZXMgYXQgZHJpdmVyIHByb2JlLApjb3BpZWQg
-aW50byBhIHBlcnNpc3RlbnQgZGV2bV8gYnVmZmVyOyBvbiBleGFjdC1zaXplIHZtYWxsb2MgZmly
-bXdhcmUKYnVmZmVycyB0aGUgcmVhZCBjYW4gaGl0IHRoZSBndWFyZCBwYWdlIChwcm9iZS10aW1l
-IG9vcHMvRG9TKS4KVGhyZWF0IG1vZGVsOiBtYWxpY2lvdXMvcmVwbGFjZWQgZmlybXdhcmUgZmls
-ZSAocm9vdCBvciBzdXBwbHkgY2hhaW4pLgpBZmZlY3RzIHY3LjQtcmMxLi52Ny40LXJjMyBvbmx5
-IChpbiB2Ny4zLjUgYW5kIGVhcmxpZXIgdGhlIGhhbmRsZXJzCnN0b3JlZCBwb2ludGVycyBpbnRv
-IHRoZSBmaXJtd2FyZSBpbnN0ZWFkIG9mIGNvcHlpbmcsIGZ3LmM6MTM0NikuCgpGaXggdGhlIHdh
-bGsgdG8gdmFsaWRhdGUgaGVhZGVyICsgYm9keSwgb3ZlcmZsb3ctc2FmZS4KCkZpeCB3YXMgdmVy
-aWZpZWQgd2l0aCBnaXQgYXBwbHkgLS1jaGVjayBhZ2FpbnN0IHY3LjQtcmMzOyBub3QKYnVpbGQt
-dGVzdGVkIGFuZCBubyByZXByb2R1Y2VyIGF2YWlsYWJsZSBpbiB0aGlzIGVudmlyb25tZW50LgoK
-Rml4ZXM6IEZJTEwtSU4tU0hBICgid2lmaTogcnR3ODk6IC4uLiIpCkFzc2lzdGVkLWJ5OiBMTE0g
-TWlzdHJhbCBWaWJlClNpZ25lZC1vZmYtYnk6IEZhbGNvbmV0MyA8RmFsY29uZXQzQHByb3Rvbi5t
-ZT4KLS0tCiBkcml2ZXJzL25ldC93aXJlbGVzcy9yZWFsdGVrL3J0dzg5L2Z3LmMgfCA1ICsrKyst
-CiAxIGZpbGUgY2hhbmdlZCwgNCBpbnNlcnRpb25zKCspLCAxIGRlbGV0aW9uKC0pCgpkaWZmIC0t
-Z2l0IGEvZHJpdmVycy9uZXQvd2lyZWxlc3MvcmVhbHRlay9ydHc4OS9mdy5jIGIvZHJpdmVycy9u
-ZXQvd2lyZWxlc3MvcmVhbHRlay9ydHc4OS9mdy5jCmluZGV4IDAwMDAwMDAuLjAwMDAwMDAgMTAw
-NjQ0Ci0tLSBhL2RyaXZlcnMvbmV0L3dpcmVsZXNzL3JlYWx0ZWsvcnR3ODkvZncuYworKysgYi9k
-cml2ZXJzL25ldC93aXJlbGVzcy9yZWFsdGVrL3J0dzg5L2Z3LmMKQEAgLTE2NjgsNiArMTY2OCw3
-IEBAIHN0YXRpYyBpbnQgX19ydHc4OV9md19yZWNvZ25pemVfZWxlbWVudHMoc3RydWN0IHJ0dzg5
-X2RldiAqcnR3ZGV2LAogCWNvbnN0IHN0cnVjdCBydHc4OV9md19lbGVtZW50X2hhbmRsZXIgKmhh
-bmRsZXI7CiAJY29uc3Qgc3RydWN0IHJ0dzg5X2Z3X2VsZW1lbnRfaGRyICpoZHI7CiAJdTMyIGVs
-bV9zaXplOwogCXUzMiBlbGVtX2lkOworCXUzMiBlbmQ7CiAJaW50IHJldDsKIApAQCAtMTY3NCw4
-ICsxNjc1LDEwIEBAIHN0YXRpYyBpbnQgX19ydHc4OV9md19yZWNvZ25pemVfZWxlbWVudHMoc3Ry
-dWN0IHJ0dzg5X2RldiAqcnR3ZGV2LAogCXdoaWxlIChvZmZzZXQgKyBzaXplb2YoKmhkcikgPCBm
-aXJtd2FyZS0+c2l6ZSkgewogCQloZHIgPSAoY29uc3Qgc3RydWN0IHJ0dzg5X2Z3X2VsZW1lbnRf
-aGRyICopKGZpcm13YXJlLT5kYXRhICsgb2Zmc2V0KTsKIAogCQllbG1fc2l6ZSA9IGxlMzJfdG9f
-Y3B1KGhkci0+c2l6ZSk7Ci0JCWlmIChvZmZzZXQgKyBlbG1fc2l6ZSA+PSBmaXJtd2FyZS0+c2l6
-ZSkgeworCQlpZiAoY2hlY2tfYWRkX292ZXJmbG93KG9mZnNldCwgKHUzMilzaXplb2YoKmhkciks
-ICZlbmQpIHx8CisJCSAgICBjaGVja19hZGRfb3ZlcmZsb3coZW5kLCBlbG1fc2l6ZSwgJmVuZCkg
-fHwKKwkJICAgIGVuZCA+IGZpcm13YXJlLT5zaXplKSB7CiAJCQlydHc4OV93YXJuKHJ0d2Rldiwg
-ImZpcm13YXJlIGVsZW1lbnQgc2l6ZSBleGNlZWRzXG4iKTsKIAkJCWJyZWFrOwogCQl9Ci0tIAoy
-LjUzLjAK
+Drop these frames in ieee80211_mesh_rx_queued_mgmt() unless they were
+received on the channel of the mesh. No other frames are accepted from
+a neighbour without an established peering. A mesh interface is never
+an MLD, so bss_conf holds its channel.
 
---b1=_PKZXEg47bP4vmjaknY9EiYCMjB40SwT4aWAeErJEx8--
+Suggested-by: Benjamin Berg <benjamin@sipsolutions.net>
+---
+v2:
+- Moved the check from __ieee80211_rx_handle_packet() to
+  ieee80211_mesh_rx_queued_mgmt(), as only mesh needs it. rx.c is not
+  changed any more.
+- Shortened the commit message, dropped the unconfirmed scan case.
+- v1: https://lore.kernel.org/linux-wireless/20261121012149.1506406-1-fmaurer@disroot.org/
+
+Tested on wireless-next (e1dd848680) in qemu with mac80211_hwsim
+radios=3 multi_radio=1 regtest=5: mesh "test" with basic-rates 6,12,24
+on 2412 and 5180 MHz on phy0 and phy1, and on 5240 MHz on phy2.
+
+Without the patch, each of the four interfaces on phy0/phy1 has two
+ESTAB peerings, one with each interface of the other wiphy, and unicast
+over the cross-band peering does not get through. With it, each has
+only the peer on its own channel. Link-local pings on both bands: 20/20
+before and after a CSA of the 5 GHz mesh from 5180 to 5200 MHz
+(iw dev ... switch freq 5200 beacons 5), the peerings stay ESTAB. No
+lockdep or RCU splats (PROVE_LOCKING, PROVE_RCU).
+
+The problem was seen on an mt7996 board (three radios on one wiphy)
+running a mesh on 2.4 and 5 GHz.
+
+ net/mac80211/mesh.c | 6 ++++++
+ 1 file changed, 6 insertions(+)
+
+diff --git a/net/mac80211/mesh.c b/net/mac80211/mesh.c
+index e93303dce6..40a618cfd1 100644
+--- a/net/mac80211/mesh.c
++++ b/net/mac80211/mesh.c
+@@ -1696,6 +1696,12 @@ void ieee80211_mesh_rx_queued_mgmt(struct ieee80211_sub_if_data *sdata,
+ 		return;
+ 
+ 	rx_status = IEEE80211_SKB_RXCB(skb);
++
++	/* a mesh only peers on its own channel, not via other radios */
++	if (rx_status->freq !=
++	    sdata->vif.bss_conf.chanreq.oper.chan->center_freq)
++		return;
++
+ 	mgmt = (struct ieee80211_mgmt *) skb->data;
+ 	stype = le16_to_cpu(mgmt->frame_control) & IEEE80211_FCTL_STYPE;
+ 
+
+base-commit: e1dd8486807c1acf9551250b7f81e116a21e6ad6
+-- 
+2.39.5
 
