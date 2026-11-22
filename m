@@ -1,75 +1,71 @@
 Authentication-Results: smtp.subspace.kernel.org; arc=none smtp.remote-ip=211.75.126.72
 ARC-Seal: i=1; d=subspace.kernel.org; s=arc20261015; a=rsa-sha256; cv=none;
-	t=1795320909;
-	b=pAW+vYK6CwU3piRvyqiGq2qs0Re+fk7JPDXIaRcw4hdWP2HH4+Qd9fLzeiXSSO7xjOqR
-	 YLxpA9gI5O5PTGx9Zrjr9u6mtpvdyEoM22J8uFvLjug+FxKU1F85aIxoDhzd5aQqcE6cX
-	 qM2tEyHa4I0Fph54nV5rLGCTVsBDj2OfIon31aFsM5l8s2P0N9y73vvokbE/VVqMGIaUe
-	 qpinY7IwrnAtyhDnBPfH7TZLxbmXyNT+FWATV8qWRH0yMNK/GcTqHgvrdzqxIOqE8o6sc
-	 sj//ObNIAJgh3wq3l1+NnsuZhVrDRrqKJobiAAoW75gGmBNVoKLsiRUkEgGTDfS14eg==
+	t=1795321118;
+	b=MvDjFT2n4u6boVlpYg/A1lct61tXfcoF1WW4dvhFf1yCcNALhuJ9+uAkFva2/E0AMriy
+	 4bLCcxPxiRa+8c5Qh+fL8nZBbyMkfq7mrLE/Ip+6UC25kUej4h85p++YdYLENl5uTCQKh
+	 IuwUKQW920thDMebFdXOtrwGI0HAWRBnKH6qMoM/Kf3MjCjnIp9cMgaOFX02aVbSzqxdP
+	 sT18TdMXEKoy/HPsjBEikKJg7saEvyKfZCQFOQu6vZz78JEDI/53w+AWvThCGYFpNtFBv
+	 ZZkgeEEwpGNXZ/il3060wo8ONTfO5+rczfmINSO8TliYlHzWYbHU0x3mp64mb8wbJjw==
 ARC-Message-Signature: i=1; d=subspace.kernel.org; s=arc20261015;
-	a=rsa-sha256; c=relaxed/relaxed; t=1795320909;
+	a=rsa-sha256; c=relaxed/relaxed; t=1795321118;
 	h=DMARC-Filter:X-SpamFilter-By:DKIM-Signature:Received:Received:
-	 Received:Received:From:To:CC:Subject:In-Reply-To:References:
-	 Message-ID:Date:MIME-Version:Content-Type;
-	bh=xBb72HO1pvi/quYz7ygtDn+gbk+xkVVdd8it6HzzL6U=;
-	b=qGnvNSJGXt6FtQv6vVsaVR8tK6VmQWBVlQRKSF9/VmtR0R5ZfCsIDLVg8mMwhtfl1r79
-	 60rvkWgzlBQ5SovQ6J6U+eLnQvLy6LJk8TpBxh8G0nkdfPimzhU6D90snCfqzKUvxcSRl
-	 f5iOzzg+mAG7SqGrPkR27UPn+crbOuLW5rgBDkpIVE2tAGwRnUzJ8S/5B3Z5ThlIw4lgU
-	 Z/3bRG84W6o76tXVn6QjR7INT+e9OEcDk8iztZYheI+Q7kq0OMy3WikOeteImJNNJhduz
-	 onwS1PH6OPcbbpenTSjKT8JPnI98CSNhiF7vqOWKEWCsvWjDD4PAAjTiYTztBHB1oWQ==
+	 Received:From:To:CC:Subject:In-Reply-To:References:Message-ID:Date:
+	 MIME-Version:Content-Type;
+	bh=fac/KNOQ0/j/4UQ1Z5/+n3/sT765ULivuStqwVxbL9k=;
+	b=kzToeQuErGGFHqz6Re18kQ+GOtgItQI1sEycorHvUq4HMz6MVhsCEY/uLw+zzrZ2a9IE
+	 Cs4ZABJtbzUq32I0wLyi/00UluF8acMagHyoH5xo6Box9EmxA4t1lzKJSDtH9iITggqSS
+	 60V7wca53SI42m1T/akjsyrmLYHl/6kz47p/0trK9QuCImjWcmPOtc6eISf/ZbFeA/6HO
+	 ZeHGY7ro8PI+yUOaugj24VNyxiY3cxNk3EMUCB+eKBLn0ckJqSSrMxqeNrTBHGwLr7tk7
+	 u5T8AdV1IhDhbXrG2G8Lg6Z8Oz1SWHMH0aaGGXOJaStJNOlAH5oD4A2wPOnckCyWaNw==
 ARC-Authentication-Results: i=1; smtp.subspace.kernel.org; 
 	dmarc=pass header.from=realtek.com;
 	spf=pass smtp.mailfrom=realtek.com;
-	dkim=pass header.d=realtek.com header.i=@realtek.com header.a=rsa-sha256 header.s=dkim header.b="k/3YAR0Q";
+	dkim=pass header.d=realtek.com header.i=@realtek.com header.a=rsa-sha256 header.s=dkim header.b=qiBWDgIc;
 	arc=none smtp.remote-ip=211.75.126.72
 Received: from rtits2.realtek.com.tw (rtits2.realtek.com [211.75.126.72])
 	(using TLSv1.3 with cipher TLS_AES_256_GCM_SHA384 (256/256 bits)
 	 key-exchange X25519 server-signature ECDSA (prime256v1) server-digest SHA256)
 	(No client certificate requested)
-	by smtp.subspace.kernel.org (Postfix) with ESMTPS id 3E4D5606A331;
-	Sun, 22 Nov 2026 04:15:08 +0000 (UTC)
-DMARC-Filter: OpenDMARC Filter v1.4.2 smtp.subspace.kernel.org 3E4D5606A331
+	by smtp.subspace.kernel.org (Postfix) with ESMTPS id F119D606A32A;
+	Sun, 22 Nov 2026 04:18:37 +0000 (UTC)
+DMARC-Filter: OpenDMARC Filter v1.4.2 smtp.subspace.kernel.org F119D606A32A
 Authentication-Results: smtp.subspace.kernel.org; dmarc=pass (p=none dis=none) header.from=realtek.com
 Authentication-Results: smtp.subspace.kernel.org; spf=pass smtp.mailfrom=realtek.com
 Authentication-Results: smtp.subspace.kernel.org;
-	dkim=pass (2048-bit key) header.d=realtek.com header.i=@realtek.com header.a=rsa-sha256 header.s=dkim header.b=k/3YAR0Q
-X-SpamFilter-By: ArmorX SpamTrap 5.80 with qID 6AM4ExKO2553871, This message is accepted by code: ctloc85258
+	dkim=pass (2048-bit key) header.d=realtek.com header.i=@realtek.com header.a=rsa-sha256 header.s=dkim header.b=qiBWDgIc
+X-SpamFilter-By: ArmorX SpamTrap 5.80 with qID 6AM4IVzD4554653, This message is accepted by code: ctloc85258
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=realtek.com; s=dkim;
-	t=1795320899; bh=xBb72HO1pvi/quYz7ygtDn+gbk+xkVVdd8it6HzzL6U=;
+	t=1795321111; bh=fac/KNOQ0/j/4UQ1Z5/+n3/sT765ULivuStqwVxbL9k=;
 	h=From:To:CC:Subject:In-Reply-To:References:Message-ID:Date:
 	 MIME-Version:Content-Type;
-	b=k/3YAR0Qg/Zxm1b5TetAts1PRZY82B2iDWKgqYACc3/pkYu7lq1zm1a8JttUsY6Fk
-	 AJLHfQ5n3iDU/JinfHov3VfsZ2wA6jxrocM970W6dpSP7wo2xUuF/wngXsdHqpvpgu
-	 hYPGsIXEycZARcBG9ADvFYnf/QjeWDCmsg/+GJ+OJ8jGi+i1O7nUHj4UymzsneXoTf
-	 KP8xk782O/1SwPsUJLtHqRMJ/hd79lmXHiSVEp7tbnawi/+QcEw/Tizp+DaTZc7U7z
-	 +dQQzfuEfR1Buq83N9lJhf3tr4Yftk68pUYNVPsooP5+gW/d3t7d5lgULnVAhlfMQH
-	 C1DRexI66oEog==
+	b=qiBWDgIcBii6xnVq2YlT12ur0kx4p2yw16cY2PpejfksEZrtaCLwN2y6Hxppkeb6G
+	 ix6I0ApsVuobYcZ5eTCQVMCIKHEcbB5Lv5yXCrRGhGtISkkpARdbLz6aG9lX3QEGMp
+	 qWbiaxmDtgvB/gF+PiE3qrZNiMMD/5V3zMHVxJoPyg+Lhm52UrevPxHv8E5kyghIZT
+	 76LK8g54cV1nbrxVxtMUz3Oi3cNcPGG8OfaYvLDwrFeB204tsgi5d4/9BOUfasKjAs
+	 0DGTUmF3P4+taorhJ3mKCdeu+wiDvV2g0AdApIw4vR+vYuJ6q9iQ4hLikZxOO8eVSE
+	 P9pjvSg6GGhsA==
 Received: from mail.realtek.com (rtkexhmbs04.realtek.com.tw[10.21.1.54])
-	by rtits2.realtek.com.tw (8.15.2/3.29/5.94) with ESMTPS id 6AM4ExKO2553871
+	by rtits2.realtek.com.tw (8.15.2/3.29/5.94) with ESMTPS id 6AM4IVzD4554653
 	(version=TLSv1.2 cipher=ECDHE-RSA-AES256-GCM-SHA384 bits=256 verify=FAIL);
-	Sun, 22 Nov 2026 12:14:59 +0800
-Received: from RTKEXHMBS01.realtek.com.tw (172.21.6.40) by
+	Sun, 22 Nov 2026 12:18:31 +0800
+Received: from RTKEXHMBS05.realtek.com.tw (10.21.1.55) by
  RTKEXHMBS04.realtek.com.tw (10.21.1.54) with Microsoft SMTP Server
  (version=TLS1_2, cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id
- 15.2.2562.56; Sun, 22 Nov 2026 12:15:00 +0800
-Received: from RTKEXHMBS05.realtek.com.tw (10.21.1.55) by
- RTKEXHMBS01.realtek.com.tw (172.21.6.40) with Microsoft SMTP Server
- (version=TLS1_2, cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id
- 15.2.2562.56; Sun, 22 Nov 2026 12:14:59 +0800
+ 15.2.2562.56; Sun, 22 Nov 2026 12:18:32 +0800
 Received: from [127.0.1.1] (172.21.40.75) by RTKEXHMBS05.realtek.com.tw
  (10.21.1.55) with Microsoft SMTP Server (version=TLS1_2,
  cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id 15.2.2562.56 via Frontend
- Transport; Sun, 22 Nov 2026 12:14:59 +0800
+ Transport; Sun, 22 Nov 2026 12:18:27 +0800
 From: Ping-Ke Shih <pkshih@realtek.com>
-To: Enver Ikromov <owner@ph4ntom-rev.uz>, Ping-Ke Shih <pkshih@realtek.com>,
-	Zong-Zhe Yang <kevin_yang@realtek.com>
+To: Ian Rogers <irogers@google.com>, Ping-Ke Shih <pkshih@realtek.com>
 CC: <linux-wireless@vger.kernel.org>, <linux-kernel@vger.kernel.org>,
-	<stable@vger.kernel.org>
-Subject: Re: [PATCH rtw-next v8 1/5] wifi: rtw89: avoid NULL vif dereference in rtw89_ops_tx()
-In-Reply-To: <20261119080328.391-2-owner@ph4ntom-rev.uz>
-References: <20261119080328.391-1-owner@ph4ntom-rev.uz> <20261119080328.391-2-owner@ph4ntom-rev.uz>
-Message-ID: <63269466-8c67-461e-a29b-f64bb0d47f6a@RTKEXHMBS05.realtek.com.tw>
-Date: Sun, 22 Nov 2026 12:14:59 +0800
+	<llvm@lists.linux.dev>, Elkin Cruz <elkin@google.com>, Ian Rogers
+	<irogers@google.com>
+Subject: Re: [PATCH] wifi: rtlwifi: Fix octal 024 typo in P2P_PS_OFFLOAD H2C command IDs
+In-Reply-To: <20261119170753.1526210-1-irogers@google.com>
+References: <20261119170753.1526210-1-irogers@google.com>
+Message-ID: <de6975cb-ebe4-4cf0-ba22-5058526691eb@RTKEXHMBS05.realtek.com.tw>
+Date: Sun, 22 Nov 2026 12:18:27 +0800
 X-Mailing-List: linux-wireless@vger.kernel.org
 List-Id: <linux-wireless.vger.kernel.org>
 List-Post: <mailto:linux-wireless@vger.kernel.org>
@@ -81,28 +77,31 @@ Precedence: list
 MIME-Version: 1.0
 Content-Type: text/plain
 
-Enver Ikromov <owner@ph4ntom-rev.uz> wrote:
+Ian Rogers <irogers@google.com> wrote:
 
-> Injecting a raw frame on a passive monitor interface while a station or
-> AP interface is also up causes a kernel NULL pointer dereference,
-> because mac80211 has no virtual monitor vif in concurrent mode and
-> passes a NULL vif to the driver TX path.
+> In rtl8821ae, rtl8192ee, and rtl8188ee, the H2C power-save command enums
+> define 0x20, 0x21, 0x22, 0x23 followed by 'H2C_*_P2P_PS_OFFLOAD = 024'.
+> The missing 'x' makes 024 an octal constant (decimal 20, 0x14) instead of
+> 0x24 (decimal 36, matching H2C_8723B_P2P_PS_OFFLOAD = 0x24 in rtl8723be
+> and rtl8xxxu), sending the wrong H2C command ID to firmware during Wi-Fi
+> Direct P2P power-save offload updates.
 > 
-> Check the vif pointer with vif_to_rtwvif_safe() and drop frames without
-> a vif.
+> Change 024 to 0x24 in all three headers.
 > 
-> Fixes: e3ec7017f6a2 ("rtw89: add Realtek 802.11ax driver")
-> Cc: stable@vger.kernel.org
-> Signed-off-by: Enver Ikromov <owner@ph4ntom-rev.uz>
+> Found via inspection of H2C command enums during an x86_64 LLVM=1
+> (Clang 21.1.8) allyesconfig warning audit; fix and changelog drafted with
+> an AI coding assistant. Build-tested under LLVM=1 W=1 (-Werror); not
+> tested on Realtek Wi-Fi hardware.
+> 
+> Fixes: f0eb856e0b6c ("rtlwifi: rtl8188ee: Add new driver")
+> Fixes: 21e4b0726dc6 ("rtlwifi: rtl8821ae: Move driver from staging to regular tree")
+> Fixes: b1a3bfc97cd9 ("rtlwifi: rtl8192ee: Move driver from staging to the regular tree")
+> Signed-off-by: Ian Rogers <irogers@google.com>
 > Acked-by: Ping-Ke Shih <pkshih@realtek.com>
 
-5 patch(es) applied to rtw-next branch of rtw.git, thanks.
+1 patch(es) applied to rtw-next branch of rtw.git, thanks.
 
-0202cb50fe9f wifi: rtw89: avoid NULL vif dereference in rtw89_ops_tx()
-260247bfbc5b wifi: rtw89: handle negative rate index for injected frames
-e07c9af7bbc8 wifi: rtw89: restore channel when leaving idle on non-chanctx devices
-4175fc84dbe9 wifi: rtw89: avoid reading seq_ctrl on control frames
-92608bb5f14f wifi: rtw89: honor ASSIGN_SEQ, retries, and NO_ACK for injected frames
+931e49022fb6 wifi: rtlwifi: Fix octal 024 typo in P2P_PS_OFFLOAD H2C command IDs
 
 ---
 https://github.com/pkshih/rtw.git
