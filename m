@@ -1,60 +1,57 @@
-Authentication-Results: smtp.subspace.kernel.org; arc=none smtp.remote-ip=185.70.43.25
+Authentication-Results: smtp.subspace.kernel.org; arc=none smtp.remote-ip=185.70.43.19
 ARC-Seal: i=1; d=subspace.kernel.org; s=arc20261015; a=rsa-sha256; cv=none;
-	t=1795345610;
-	b=ZiE1XJrhQOM5WXJcHAE6JR/OCb8EpX2rEYhtL1/EgO/3HsnfdqzElcyiU/1ApoTsxQ8A
-	 bdE1V58XK7KVyx0gPmlTBPWf3VRIzcOwgPEEV6ilNgGnTmWuh00Kc6LfqPYXAqSDz/NBN
-	 xkQqbf7vVi8vUjmvS9p4Sb06dU/MuDX2nna/4vGqtTtCfOybJxpbOyfv99gnLDeejQpMe
-	 4dg0Vz4VkBg2jyAmfkkT6C7SfCpUIbO2Fc7ZB82qw43bofpMhpRF8N5bwAuKDR1O/MMVw
-	 QW7MUcfpdclqWlryk7NY3BTm1gdtnMyznlfWmgRogIdQkBFjZH2//itsPmI6Z9/D5ww==
+	t=1795345670;
+	b=FKJUGmBLCmGX+l2YLbnF7AQMmZY+ZgdcnrDAiss+mmho3u9+UYN6IK415TjU9rhy525q
+	 OcY/kwGap8yIKHjSSKhqbqSbnICfOyMNep5h4I+06HdImS5oEzS+j+l8xAl6Jmif0/oSY
+	 Zwo5FqXU48pjmKVK+TcR5R6mQ+/NPKxl9l7UiwPAiikA/96HfkWO7kIHtDgoy7IHtKozv
+	 8On4YxwaaqLqtsCG1g9jl1z7n9nPaBlLeMixFqLpjgONX+i9JeQaxy362R83v3DIGCWUa
+	 0fHRNO0SK2QaMU7WrIRbfkp6j8140tDowCBRxoUP7ATwnTB6M09F+MsUmeXZYyCrpAg==
 ARC-Message-Signature: i=1; d=subspace.kernel.org; s=arc20261015;
-	a=rsa-sha256; c=relaxed/relaxed; t=1795345610;
+	a=rsa-sha256; c=relaxed/relaxed; t=1795345670;
 	h=DMARC-Filter:DKIM-Signature:Date:To:From:Cc:Subject:Message-ID:
-	 In-Reply-To:References:Feedback-ID:X-Pm-Message-ID:MIME-Version:
-	 Content-Type:Content-Transfer-Encoding;
-	bh=eoTBL8naQxqRhoWKRiBqWEJLYKaWOa0d/pKvBKhfWXI=;
-	b=OUyvL4EIaW43WeB/40S3R6DuIsVm/4k6M8aBEO4m5AyDo0S3gkS2/+0ZdVUtTGfHAne3
-	 i6KRGb3YZI7Mh1uNiSR0qMoxy7b+gkm8wRNmG8t0FWP4p9tTzMfB883TIeYN6gl/jkGSj
-	 1vWDiTySUm+cwLVwD71NHCbdJAFzyxOkpMLAM5/8hdveg9JgHDSReRWVOVmU8AYqlnFp3
-	 Be8fRJ7vuQ5ZD/xvu7DwBmJ6jGKGZJucBz/kETb54KRqHu8x3cJOpOtdFwWBjBNv3bgSJ
-	 IimkDnzfLE7m8KYIzEPSlDGuRh8xiCK9e8F+JVa4LCrTjmhJe8lkAmBf/4zpzf6GPkA==
+	 Feedback-ID:X-Pm-Message-ID:MIME-Version:Content-Type:
+	 Content-Transfer-Encoding;
+	bh=PBmX0gymUfN6gygF+scb6Yb2OHU0W7WRU+BamkOLXMc=;
+	b=HizQa8esgpA7be0P3XpY2AeYliAOxy67cYgdKWauG78172KodJgyB2u/nd2/yo0oyQ33
+	 DSN5HoiDjhgiI1xKV9XHngoPDzE3Dt63ulo+bOdI80P0JbzoGpoUYGvRVJrewHJm+gJKc
+	 dPMSJFQ162Zq3HTfF6wl4q0ljpTGFSGkxghz4T7A5GcghIuDtiK+PuQg6/uCun57J8iLr
+	 63g/h+TxtfsfLtWhj8kxrXQWc2gQ8U+Qbrdrup0gtB53KekPL0KpeeFkbQmhZUrgm+JYH
+	 aOcImzmMTpCu9ProP3a97UjBex39NgdfBlh2WVWPCtxG8U2MsczkhuPUiZXzF1lcabw==
 ARC-Authentication-Results: i=1; smtp.subspace.kernel.org; 
 	dmarc=pass header.from=proton.me;
 	spf=pass smtp.mailfrom=proton.me;
-	dkim=pass header.d=proton.me header.i=@proton.me header.a=rsa-sha256 header.s=protonmail2 header.b=RJhUwe0M;
-	arc=none smtp.remote-ip=185.70.43.25
-Received: from mail-4325.protonmail.ch (mail-4325.protonmail.ch [185.70.43.25])
+	dkim=pass header.d=proton.me header.i=@proton.me header.a=rsa-sha256 header.s=protonmail2 header.b=y7oNN+Wo;
+	arc=none smtp.remote-ip=185.70.43.19
+Received: from mail-4319.protonmail.ch (mail-4319.protonmail.ch [185.70.43.19])
 	(using TLSv1.3 with cipher TLS_AES_256_GCM_SHA384 (256/256 bits)
 	 key-exchange X25519 server-signature ECDSA (prime256v1) server-digest SHA256)
 	(No client certificate requested)
-	by smtp.subspace.kernel.org (Postfix) with ESMTPS id B76F8606A32C;
-	Sun, 22 Nov 2026 11:06:49 +0000 (UTC)
-DMARC-Filter: OpenDMARC Filter v1.4.2 smtp.subspace.kernel.org B76F8606A32C
+	by smtp.subspace.kernel.org (Postfix) with ESMTPS id B6FE2606A32A
+	for <linux-wireless@vger.kernel.org>; Sun, 22 Nov 2026 11:07:49 +0000 (UTC)
+DMARC-Filter: OpenDMARC Filter v1.4.2 smtp.subspace.kernel.org B6FE2606A32A
 Authentication-Results: smtp.subspace.kernel.org; dmarc=pass (p=quarantine dis=none) header.from=proton.me
 Authentication-Results: smtp.subspace.kernel.org; spf=pass smtp.mailfrom=proton.me
 Authentication-Results: smtp.subspace.kernel.org;
-	dkim=pass (2048-bit key, unprotected) header.d=proton.me header.i=@proton.me header.a=rsa-sha256 header.s=protonmail2 header.b=RJhUwe0M
+	dkim=pass (2048-bit key, unprotected) header.d=proton.me header.i=@proton.me header.a=rsa-sha256 header.s=protonmail2 header.b=y7oNN+Wo
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=proton.me;
-	s=protonmail2; t=1795345606; x=1795604806;
-	bh=eoTBL8naQxqRhoWKRiBqWEJLYKaWOa0d/pKvBKhfWXI=;
-	h=Date:To:From:Cc:Subject:Message-ID:In-Reply-To:References:
-	 Feedback-ID:From:To:Cc:Date:Subject:Reply-To:Feedback-ID:
-	 Message-ID:BIMI-Selector;
-	b=RJhUwe0Mo+ReZG8ffirCHx3ajjFcgjiaodiDeVXJiB8k5P+ZBlC/FiQPY8Vv6ZHXY
-	 NirITPVZVVBvuCi0hxrwZjzBJAojNLc+Zk52quFnbc45ei6iAuq7Jsx99G0VxLVVCO
-	 IDd1JNROo9IMCiQf2+oXS+HRv74FWyM23sOTApGkezt9j9aqYK7oG/pH3WVtiUlL18
-	 AnKDtbmDFd74EVKvcxY4fiXR9wlM8RsUpndq7UbGrE4ZO/sDyIQerkvEIDIvXpYMfY
-	 YofcvyD9niQsPXs1zT24ir1rjVYitxM1gwDTFaY65ROZsLKxVR6kppSx+8ehvI2jxw
-	 xri01+qyEsSHQ==
-Date: Sun, 22 Nov 2026 11:06:42 +0000
+	s=protonmail2; t=1795345668; x=1795604868;
+	bh=PBmX0gymUfN6gygF+scb6Yb2OHU0W7WRU+BamkOLXMc=;
+	h=Date:To:From:Cc:Subject:Message-ID:Feedback-ID:From:To:Cc:Date:
+	 Subject:Reply-To:Feedback-ID:Message-ID:BIMI-Selector;
+	b=y7oNN+Wotb35ShYE/eizEcKUZiUCh8E6bFEccBuZxXAFEMwIJKeZbLMTSMlv9T7K4
+	 YDUNOBegX2Cy86ObbR87S0M3VhuMzzeT1IXlT+v8rglbHDy+5jmy+cKn9ZvqdtAapP
+	 QOJ9r1CKSKLkIUKsPzjU55MhFsl5kch1f2ug5ksP8FlHpFXzEc/UhNtH3ibkqPSG0e
+	 VsH0ctHDnRKGbkSRVKFX5ejlsAlTivwGwpsLXxW+3KPnCxr2jiXtka+QNIxOjKWD7Y
+	 Ry5Zg7U+qJG88q5aF+KpSkLZWJpN1AxlE85f5ehplR2OFcW9Qk4DtXWo1JfT8UlWTO
+	 C+uiiCmuutXSg==
+Date: Sun, 22 Nov 2026 11:07:45 +0000
 To: "pkshih@realtek.com" <pkshih@realtek.com>
 From: Falconet3 <Falconet3@proton.me>
 Cc: "linux-wireless@vger.kernel.org" <linux-wireless@vger.kernel.org>, "linux-kernel@vger.kernel.org" <linux-kernel@vger.kernel.org>
-Subject: Re: [PATCH v3 1/2] wifi: rtw89: fix OOB read past firmware buffer when duplicating elements
-Message-ID: <KlRh4e6FRTtCI4Bz5ud7DGu8PZ_UpSZVxnaX5LiDce7Nt1H62sIkB-sflM6iY4ypalkRtptn72_FqWSFzaDwCvpYJblbfyROwwZxmRq2BfI=@proton.me>
-In-Reply-To: <ytQySf18yumsCuJ_PpQ09dii9Z-w5E-HcJ02et8LQe5uxa1wIRWZc1zTjV1666LGjed06fu-J1Vv5M6TZPnt2iCSoaXamBkN0rG0S_BvO3o=@proton.me>
-References: <ONBhkh_B7hyKoHNRpjYgxy7da68QOa8cWUqztT-I1nW-KukOKE30FIYFLkX1Tm_TrXlBjse5d-AFRwsyzfxBdMGKvyIEoVsjyZQqxzUkRQk=@proton.me> <ycKOLfq3sWokgWxf1yMxmqtns2Sjh90xRG46gH7U89uffkJrcs4pUZPAjONVr20rfG0FJ6kLNFTW_YT-Z02z5ZNLGo8h3RS9t1WSMJFrw4E=@proton.me> <ytQySf18yumsCuJ_PpQ09dii9Z-w5E-HcJ02et8LQe5uxa1wIRWZc1zTjV1666LGjed06fu-J1Vv5M6TZPnt2iCSoaXamBkN0rG0S_BvO3o=@proton.me>
+Subject: Re: [PATCH v3 2/2] wifi: rtw89: fix u32 overflow in board element offset check
+Message-ID: <p7rw-XuXkRXg0R2mJ5S-HUUy3IwDD0iXcY11AzTDIvfIj3ofQsJ5exatm_1V-mlBCzsd_s0xhJSBvZz4zWCYaso5-ylUw9JMV3AoiPUZZ3o=@proton.me>
 Feedback-ID: 48740069:user:proton
-X-Pm-Message-ID: 607f734fb5d611765fa50a7cf249344afa69eabe
+X-Pm-Message-ID: 960f38f365011122a7bbcc77aede9c3c84d1d3ad
 X-Mailing-List: linux-wireless@vger.kernel.org
 List-Id: <linux-wireless.vger.kernel.org>
 List-Post: <mailto:linux-wireless@vger.kernel.org>
@@ -67,77 +64,55 @@ MIME-Version: 1.0
 Content-Type: text/plain; charset=utf-8
 Content-Transfer-Encoding: quoted-printable
 
-__rtw89_fw_recognize_elements() checks only the element body against
-firmware->size, omitting the 32-byte struct rtw89_fw_element_hdr:
+rtw89_board_elm_seek() validates the selected entry against the board
+element file with
 
-=09while (offset + sizeof(*hdr) < firmware->size) {
-=09=09...
-=09=09elm_size =3D le32_to_cpu(hdr->size);
-=09=09if (offset + elm_size >=3D firmware->size)
+=09if (unlikely(board_elm->size < ofst + size))
 
-The element handlers, and rtw89_fw_elem_dup_if_needed() when it copies
-elements, read both header and body. A crafted element with
-offset + elm_size =3D=3D firmware->size - 1 passes the check and is read up
-to sizeof(struct rtw89_fw_element_hdr) - 1 =3D 31 bytes past
-firmware->data. For firmware larger than 2 MB the copy path also stores
-those bytes in a persistent devm_ buffer.
+where ofst and size are u32 values read from the file. The addition
+wraps in u32, so a crafted file with, for example,
+ofst =3D 0xffffff00 and size =3D 0x200 passes the check and
+pseudo_fw->data is set to board_elm->data + 0xffffff00 with
+pseudo_fw->size =3D 0x200. The element walk then dereferences that
+pointer and reads out of bounds.
 
-The walk start offset is not validated either: rtw89_mfw_get_size()
-returns le32_to_cpu(mfw_info->shift) + le32_to_cpu(mfw_info->size), and
-rtw89_mfw_validate_hdr() only checks that the info array fits in the
-buffer. On 32-bit (sizeof(size_t) =3D=3D 4) an aligned offset >=3D 0xffffff=
-e0
-wraps "offset + sizeof(*hdr)" in the loop guard, so hdr->size is
-dereferenced out of bounds before any check runs.
+Use remainder arithmetic against board_elm->size, which cannot wrap on
+any architecture. The helper is new in v7.4-rc1, so only the current
+cycle is affected.
 
-Check the start offset before dereferencing hdr and use size_t remainder
-arithmetic for both bounds checks, which cannot wrap on any
-architecture. An element whose header and body end exactly at
-firmware->size is then accepted; it is fully in bounds, while such exact
-fits were rejected before.
-
-Fixes: a337d4331fd6 ("wifi: rtw89: introduce infrastructure of firmware ele=
-ments")
-Cc: stable@vger.kernel.org
+Fixes: af5905e22a43 ("wifi: rtw89: support variants of FW elements")
 Assisted-by: LLM Mistral Vibe
 Signed-off-by: Falconet3 <Falconet3@proton.me>
 ---
 v3: resend of the series with the correct subjects and version label; no
     code change since v2.
-v2: validate the walk start offset before dereferencing hdr (fixes the
-    32-bit wrap), use size_t remainder arithmetic, note the exact-fit
-    acceptance, correct Fixes: and the affected range, add Cc: stable.
-    Compile- and sparse-tested on x86_64; no reproducer available.
+v2: new. Found while fixing the element walk bounds check; split out as
+    an independent caller. Compile- and sparse-tested on x86_64; no
+    reproducer available.
 
- drivers/net/wireless/realtek/rtw89/fw.c | 5 +++--
- 1 file changed, 3 insertions(+), 2 deletions(-)
+ drivers/net/wireless/realtek/rtw89/fw.c | 3 ++-
+ 1 file changed, 2 insertions(+), 1 deletion(-)
 
 diff --git a/drivers/net/wireless/realtek/rtw89/fw.c b/drivers/net/wireless=
 /realtek/rtw89/fw.c
 index 0000000..0000000 100644
 --- a/drivers/net/wireless/realtek/rtw89/fw.c
 +++ b/drivers/net/wireless/realtek/rtw89/fw.c
-@@ -1668,16 +1668,17 @@ static int __rtw89_fw_recognize_elements(struct rtw=
-89_dev *rtwdev,
- =09const struct rtw89_fw_element_handler *handler;
- =09const struct rtw89_fw_element_hdr *hdr;
- =09u32 elm_size;
- =09u32 elem_id;
- =09int ret;
+@@ -1734,12 +1734,13 @@ static int rtw89_board_elm_seek(const struct firmwa=
+re *board_elm,
+ =09if (num <=3D board_id)
+ =09=09return -ENOENT;
 =20
--=09while (offset + sizeof(*hdr) < firmware->size) {
-+=09while (offset < firmware->size &&
-+=09       firmware->size - offset > sizeof(*hdr)) {
- =09=09hdr =3D (const struct rtw89_fw_element_hdr *)(firmware->data + offse=
-t);
+ =09ent =3D &hdr->ents[board_id];
 =20
- =09=09elm_size =3D le32_to_cpu(hdr->size);
--=09=09if (offset + elm_size >=3D firmware->size) {
-+=09=09if (elm_size > firmware->size - offset - sizeof(*hdr)) {
- =09=09=09rtw89_warn(rtwdev, "firmware element size exceeds\n");
- =09=09=09break;
- =09=09}
+ =09ofst =3D le32_to_cpu(ent->ofst);
+ =09size =3D le32_to_cpu(ent->size);
 =20
- =09=09elem_id =3D le32_to_cpu(hdr->id);
+-=09if (unlikely(board_elm->size < ofst + size))
++=09if (unlikely(ofst > board_elm->size ||
++=09=09     size > board_elm->size - ofst))
+ =09=09return -EFAULT;
+=20
+ =09memset(pseudo_fw, 0, sizeof(*pseudo_fw));
 --=20
 2.53.0
