@@ -1,122 +1,102 @@
-Authentication-Results: smtp.subspace.kernel.org; arc=none smtp.remote-ip=209.85.218.41
+Authentication-Results: smtp.subspace.kernel.org; arc=none smtp.remote-ip=209.85.218.51
 ARC-Seal: i=1; d=subspace.kernel.org; s=arc20261015; a=rsa-sha256; cv=none;
-	t=1795381535;
-	b=2jXTtXXLBkIhPPGh0DKNXrb4XC2fVWKBRIvGSDAGpmSUACZwFysMwXXBPiExG/JKsIPO
-	 YZc+rKGgL87zAmm3xwSyv5BR2oMoXOjMEVnAMAMpd9cv4LaFUGnhf1FBRpbgI3Giv/+aC
-	 DY/n82vImTSUCJ41AqAMgdm5nshORtEqOFlXXSTAsQLhGUcCoHZi4HwgyEoiJ86ObI4SH
-	 B8pGbsN8ypZ9+MqnSwL3JVVerlhfQ5M51GwiFbNU/WiNDFkHWjFcYjrNjI73q/BBAHo1h
-	 wX7j2arhKkuEaQRzNfh9j1FTUzmJ42XLbdctqhTO0So6J0hgcqo4SyhFIUv/9wiJXbg==
+	t=1795381690;
+	b=UtjFuZH/faCG0vTBMta739meJSQsYVZLUOPfRMwEdOoQHoW32aGaf9us5Hms4HcFEADQ
+	 cOCgH7GhEf/Xgze8jLVIrrNRr0qBj/0JE2gG8At0O7d1H0TZrm3FpVrhR6Nmv4JezOhfr
+	 /eA1j4Qkqg6kxhVPMHourUiOu4ZYc2nm3y3BuCYLE1BSSKizcz4wPup03a9CmICRPhMak
+	 90fp02m0UPXINmRUULQbPM5qFZWfQX2p7N7XEFqh45mH5ip+hbkgUWlhJVFG4JB6lxV2t
+	 FqWQ74GVe+N6FJsu+PCqM5iz7g1feM6OQrXbwzpQzpIFGqCala/frtZe6ozEkjIu9/Q==
 ARC-Message-Signature: i=1; d=subspace.kernel.org; s=arc20261015;
-	a=rsa-sha256; c=relaxed/relaxed; t=1795381535;
+	a=rsa-sha256; c=relaxed/relaxed; t=1795381690;
 	h=DMARC-Filter:Received:DKIM-Signature:X-Google-DKIM-Signature:
 	 X-Gm-Message-State:X-Gm-Gg:X-Received:Received:From:To:Cc:Subject:
-	 Date:Message-ID:X-Mailer:In-Reply-To:References:MIME-Version:
-	 Content-Transfer-Encoding;
-	bh=ZrC17kLP85VhrLnJZWnSDitIpYddK+4irtfGQwA3Jes=;
-	b=KcklU4qHW+/h5f4Qu2eLhu6A0f543YrbjFIQLv3ubV81Zuuy6Tl82jjE/5OTZz3JyI2P
-	 R3nx25g02+y/sl4T1WDUymxMR3uAv+bta5IqrEmpb6BAMqN03JIIXrnthAGWmQL10Xe8u
-	 7QdcLt1/G7oEMWJLzkfFMFu/Lj72puzET/KB1n+7Ngrs6GU8WrYjOUNBNxaWXSydM5i/R
-	 0wIkUIPuvblMzcBtDMNa2J9HZTYyeerokF+WTk8KllYmtIrFzbuHEPqN7GspDSkkD15yS
-	 WV40M/DzEMYJCMiFtlHUGvfbPVrS6lsM9l6jUgk4/cBY8vm1GRtFJJvmRT84LQ35HMQ==
+	 Date:Message-ID:X-Mailer:MIME-Version:Content-Transfer-Encoding;
+	bh=aflJJ38bjdZjg38SRGXSXCVpGppEVOtqLz1Kzz0bSiw=;
+	b=pV+QF5NhZeQU0DbgPkUeKHvR5xGSds7PTxN+HeGE3/PHLOwnSjBNojFY0q2I3R4QN2ai
+	 Rt6IusRjYpJ3ocRxSQYM+rNXLZZwETsR0Qifc0ZBY9LGahHUrb6kHk92aBh0HUE7v8v00
+	 MdzbhgnwldoiBHwbYK2ar2Gqu9xWE2IP2Pyj9ChhZ6yZ7sWbLmbAP+ZwwgOKyZT9FgQbs
+	 G1ntvFewjsVOQEpwhfDindSdX+Tb6u/7o0a42lPCRi3N2BUOvypqcIpA5UQrphqrlbd+E
+	 TH/NLHyN6/LdI6vKakja0nZ/Y5fjCHk24fWG0Db36f19RIA3ykjARwj2f2vdhaxkh9A==
 ARC-Authentication-Results: i=1; smtp.subspace.kernel.org; 
 	dmarc=pass header.from=bairaktaris.de;
 	spf=pass smtp.mailfrom=bairaktaris.de;
-	dkim=pass header.d=bairaktaris.de header.i=@bairaktaris.de header.a=rsa-sha256 header.s=google header.b=HN0ND8QR;
-	arc=none smtp.remote-ip=209.85.218.41
-Received: from mail-ej1-f41.google.com (mail-ej1-f41.google.com [209.85.218.41])
+	dkim=pass header.d=bairaktaris.de header.i=@bairaktaris.de header.a=rsa-sha256 header.s=google header.b=PIgVIzCK;
+	arc=none smtp.remote-ip=209.85.218.51
+Received: from mail-ej1-f51.google.com (mail-ej1-f51.google.com [209.85.218.51])
 	(using TLSv1.3 with cipher TLS_AES_128_GCM_SHA256 (128/128 bits)
 	 key-exchange X25519 server-signature ECDSA (prime256v1) server-digest SHA256)
 	(No client certificate requested)
-	by smtp.subspace.kernel.org (Postfix) with ESMTPS id 2BD38606A68C
-	for <linux-wireless@vger.kernel.org>; Sun, 22 Nov 2026 21:05:35 +0000 (UTC)
-DMARC-Filter: OpenDMARC Filter v1.4.2 smtp.subspace.kernel.org 2BD38606A68C
+	by smtp.subspace.kernel.org (Postfix) with ESMTPS id 85644606A31D
+	for <linux-wireless@vger.kernel.org>; Sun, 22 Nov 2026 21:08:09 +0000 (UTC)
+DMARC-Filter: OpenDMARC Filter v1.4.2 smtp.subspace.kernel.org 85644606A31D
 Authentication-Results: smtp.subspace.kernel.org; dmarc=pass (p=reject dis=none) header.from=bairaktaris.de
 Authentication-Results: smtp.subspace.kernel.org; spf=pass smtp.mailfrom=bairaktaris.de
 Authentication-Results: smtp.subspace.kernel.org;
-	dkim=pass (2048-bit key) header.d=bairaktaris.de header.i=@bairaktaris.de header.a=rsa-sha256 header.s=google header.b=HN0ND8QR
-Received: by mail-ej1-f41.google.com with SMTP id a640c23a62f3a-c505b2e1cb9so495959166b.2
-        for <linux-wireless@vger.kernel.org>; Sun, 22 Nov 2026 13:05:34 -0800 (PST)
+	dkim=pass (2048-bit key) header.d=bairaktaris.de header.i=@bairaktaris.de header.a=rsa-sha256 header.s=google header.b=PIgVIzCK
+Received: by mail-ej1-f51.google.com with SMTP id a640c23a62f3a-c4d21051042so436764366b.0
+        for <linux-wireless@vger.kernel.org>; Sun, 22 Nov 2026 13:08:09 -0800 (PST)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=bairaktaris.de; s=google; t=1795381533; x=1795986333; darn=vger.kernel.org;
-        h=content-transfer-encoding:mime-version:references:in-reply-to
-         :message-id:date:subject:cc:to:from:from:to:cc:subject:date
-         :message-id:reply-to:content-type;
-        bh=ZrC17kLP85VhrLnJZWnSDitIpYddK+4irtfGQwA3Jes=;
-        b=HN0ND8QRSBaFe+F0WIe1MfhEOVdpH7a1/ny4TCw1Zr3RzkpVNbbUM2lQZxFiqXPGlF
-         eMR20Ypet8DN2WMRtCuihJN4Fo4uglp3vMxBSLc2x+gsGFMhHOD9YhUHv6lFPfPWuTFQ
-         wK6E19ouh5DEjQkdZTVVrV+1jQHflH9xjranXUsrdKFK7L+aoDxYG3LpcxiC/pZCUnvC
-         QQv+DbwFpCd0XF835ib6C0FTGEqHMoKKN7iXAhw5Jkz0NOkxSFMLaUHt+B2gc1VKA3n5
-         fGEZGbmvQG0ufw7qC+MC5O+qOXVLxVRJAZl/AHiIf/Wd1aIQPbVEjLIh3HX1Rliwh+xK
-         fHBw==
+        d=bairaktaris.de; s=google; t=1795381688; x=1795986488; darn=vger.kernel.org;
+        h=content-transfer-encoding:mime-version:message-id:date:subject:cc
+         :to:from:from:to:cc:subject:date:message-id:reply-to:content-type;
+        bh=aflJJ38bjdZjg38SRGXSXCVpGppEVOtqLz1Kzz0bSiw=;
+        b=PIgVIzCKE6SJkmg6efpInkthL3unvMpL2cFeRF2f1s6ildvJKUgFG0S91ZN7LziRlo
+         plLyGAWAuAMQmMSfaWD9i+vRJd9+5MLvSFEQGS8J2wcR2kjUpnIztPTbmgh1oXbHQtFi
+         BP0Dv4cbvuTElln7+pZIq/a2B6yfoM0jjygfw9BPZpXzAl0MxRjeAzljgRS1/i48gXJn
+         yHA+qUNDUgADSWwdcyZCKl14yNR5FoogL9vzUTq2NBVj1Tc2ZQzEKTUVIY/7ru8v/xUC
+         2Z3qKyUH21QP6CHwrVJADbXze5UJa4vGqmEIvaDuhLKq/CXSnKJIHx9xgWazA9iaU2Ez
+         F/9Q==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=1e100.net; s=20260707; t=1795381533; x=1795986333;
-        h=content-transfer-encoding:mime-version:references:in-reply-to
-         :message-id:date:subject:cc:to:from:x-gm-gg:x-gm-message-state:from
-         :to:cc:subject:date:message-id:reply-to:content-type;
-        bh=ZrC17kLP85VhrLnJZWnSDitIpYddK+4irtfGQwA3Jes=;
-        b=Ulofp8BfS8UbPERK+yTTtvuINLB/RHliQuv9bdPll2jHm8iF/eTNupLR7PIHx6i+gu
-         EgoiZJ0qndX7w69D27F42bcy/sK56y0YiKTgJCTZ1YLHa6C3s1Q8aTa+q1ZbrQ8S90cp
-         i/eJg5dIhBUPyxO9oQy+TtybMRz3omYxBornUKFIvgthPkDYZhb4stjXlQ6zMQw517l5
-         3kAKw8xLteaWC8vNHqHJjulBDBOTuMVBNFmq+VxyQfQD5pAMYWW4zthtXHKlIxKxm3Dw
-         a7S0R00C/KxSTj7qzYBLgO0W/c0VFixV7FDNVjuPoOU+ruYJZIdnvDaWOxxZ5bDa/MyS
-         CsKw==
-X-Gm-Message-State: APuU4Z/CzfsYUpfMKPRL89820R/Fex0lZKNd1R/g4ZswbSNCcZw+PVUD
-	yxjlN96OJ3+qBwO9K61YCKL2iwcFne5BAOn23V7cXILn3C9RUWHwQW/WizaG16UcRQ==
-X-Gm-Gg: AZFdTZd/42iLpPhfoaU72S+kgwo9U7XSOHlTGN9ANzDxJKymtiSqGRKDm04XWQrehS6
-	W0DVXhpKea1Exopy7rHmHzNxK0+JI+mIq6Gdzmp9ELdc89mmXBAOOnXJto1FvfFuqAM41gEvoz5
-	b/XM0KPYITrVifNn2QOOJTEtHXvETohbc5D+feZv4jw7NG0+qr48pB8tJL8B9Ewmxs80RjeKq9M
-	LSQsNMjFzu/kPZDiaDStaunrdd1Rn5tXYa5X/0PuRYMCqtmNEhIhVpRYv8L4TqfFgtsYfPpsHN5
-	p2CF/4o2C8LZuVHPJSVuvPhZV66strHf1hddTiBaEUupgXBvX926xYc8eA0oOJKd4K1QEmVhiXL
-	pjANfw349JYALQ0v36xZzU3KxNzxfqAqkvxo2le84bxyt/piwWRogbf8x07aOv+W7qo/h63QD+/
-	9Z9CCnIDujtmrZeaPmKqEWw4JehUxkpgKcWJIsO5Gj0Aca3QYoBOjSpAEDnAsHq+tu7ozt/B6gx
-	fbOOstNOB6XAyVZMYAn16Wov13Ns7RteT2drI4T48mr4sKNpH3qyqf/3/0B3u4MPTa0WYW3U3ed
-	DJ1BgYK51nCQpDdrcfZq5BQlVUV3YCgEMjYdSIFOhOl6QPI4ONweRJN24qrsEpmEcrOIKrLOPP0
-	+yRBPL1LdLEJBkcOfHFR6cTRV+K4FRUyJnLzNtkoPIX1RpuZ2pWV4lgAJ92JbBdDEcgGtd15NJO
-	UiWaYZU64egyr+TbJjII++iugVIeSFVq5xDo1B1Jt7030w65C7/cV44KCnsGbbnprq5+ptHf5eE
-	gUC9okx+a9Son6s83GjvRg5XpJ+Rwv5o45FVN/VV2Bu+ikNzjLXmP5KHMiSv1L9V+929iak62pc
-	zOfUXSn0Pz+Uus6wiwPJQE9s1ItU4yMD8ko/URDqQKi6WuTTvlYOEE59Q3GeD/bX2tOcFTaa3Bg
-	=
-X-Received: by 2002:a17:907:6e89:b0:c51:59c8:a4ec with SMTP id a640c23a62f3a-c5159c8dc3bmr396957066b.1.1795381533567;
-        Sun, 22 Nov 2026 13:05:33 -0800 (PST)
-Received: from Desktop.tail070c67.ts.net (p200300f24713d300ad8e04c1718a6e78.dip0.t-ipconnect.de. [2003:f2:4713:d300:ad8e:4c1:718a:6e78])
-        by smtp.gmail.com with ESMTPSA id a640c23a62f3a-c513afc2455sm339935766b.57.2026.11.22.13.05.32
+        d=1e100.net; s=20260707; t=1795381688; x=1795986488;
+        h=content-transfer-encoding:mime-version:message-id:date:subject:cc
+         :to:from:x-gm-gg:x-gm-message-state:from:to:cc:subject:date
+         :message-id:reply-to:content-type;
+        bh=aflJJ38bjdZjg38SRGXSXCVpGppEVOtqLz1Kzz0bSiw=;
+        b=scXf02H4BVHpldKbd05VKUkoJkJEiL5EwdMu0WJyrq3Dm1zrKZp+ClpPcXxy4DPGHp
+         jtxWvEFgGWYNG+TFu0LQ9yjJV4ywdMK3L8o8FgC+aYwRlET82it5kMY4ZL/GfwMYH5qu
+         n3BmIVqZRVHCSZ03DYylZU8G4gWbKttQiPHctoglfPMci68hLETsIhLrsJy3NA1D9lRg
+         FbLa7uq0Xsog/K8J54c/Llt3aofaavYC01u+9ggE3IghpMjRFnEU23WRM0DdEeTdGRGK
+         5DRglIkv9nxvi6CL42g62NSGf/YgJyBPRmIYwy6BhWSMoTDeTaziquExV2LPlrT6hXRX
+         GQ6Q==
+X-Gm-Message-State: APuU4Z+hyougbhcG50zyFEmHB9ZHbzmgJXoUJXUWiL9iPFppxLI5uWvF
+	YKtCcxTctorThzQ56sGZXkUB4GwmBveiE8og6I54I739rE/5+q73Y/AzSQTJy8nj/knjHk2+eQU
+	1FTfOJA==
+X-Gm-Gg: AZFdTZcDfgXW/CKuIqfL0V+eIoJY4DJ5nEEIANWGrnNgVHn2ObjuHJwooD8hkMSHzKD
+	3bxA39asL3WRtEG5nTw9TyyvhSUvBq2uyc3yij+xDp5uj+frAtkY6Ns5u1H6i8VXckSxFSj8DdF
+	61Nl2QOehe1wPbYmp1JaT93bMUCP4uFZRozfSVDT+kmNxgUrMpnfDzprjKntCqA05s3eHrxJ//L
+	L72leHFUwWiat9gwb7bmVkve3lsFSyKUS8jQLAcnbIyI9SmejvflwxDQTe6n0sX3USSIxNR0tae
+	xxQz2QkOLLUhyUX7Ed7zlKSsog6SoCygcxvvBHEsia9Slviwsjw9Jh1Ojp0/5Fgmm24tJwBe2bj
+	OXU1NGlfQ3/SDefULyYIXqlmXsB5ZVT4kFf4uweepfGqVn4nyIP6Dz4TNdgrjkDiZfv5klADoVS
+	qIy57ve8PEgbgsbgIRTzB/z5Aihl6CDG4x0DcaK9AmiWmO/w0qx8dhKjsOc0Pf+D5btBiO0DCri
+	z+38/uMcEmJnhqqVcDcbPC3AQzREPm8ZpMbffwfBSYKKj8cRKsDteoczmeQf5aP1b0eG7OGhTkY
+	9MdOTA8xRptJYlh49+KU63gINnbYBY1+pKGUyGeF1ANGHWOtum6vM/IjQpeF3HOxzmGcwUvX8Wk
+	kVzfZQygjjqEeU5vzUjtfAJlf0fcNGuJC7pKHFO14eS4Np0Z+s6Z7slMVnQQXEEKFaPPomK7MeS
+	ddanaFlwzweVozgzojLjp17qlR333itXPyiJP7guGHHAxA1Nv4SZ4kuNkMPn804yDr3uPUWUMx/
+	zkPpXy9lHpy/9NnCM1jQerQWH6gHDj8dVRxWXKUh1K1yFo3WFu+yYv3ysvBzBcFFhL/MUqR6m6x
+	gFE9r3qpjxm01caRVp9ARtt0wL5MEISU2n24gzFRWW1RHLkc+JFrPqdIt2NVs0HODCx2v5OIn2f
+	rFZmvcJGeSEHTnoDa8J8=
+X-Received: by 2002:a17:906:b7d2:b0:c2e:52d6:1fb7 with SMTP id a640c23a62f3a-c513a82d478mr572934466b.22.1795381687920;
+        Sun, 22 Nov 2026 13:08:07 -0800 (PST)
+Received: from Desktop.tail070c67.ts.net (p200300f24713d50069697652bafd0866.dip0.t-ipconnect.de. [2003:f2:4713:d500:6969:7652:bafd:866])
+        by smtp.gmail.com with ESMTPSA id a640c23a62f3a-c513ae9f705sm345077966b.42.2026.11.22.13.08.07
         (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
-        Sun, 22 Nov 2026 13:05:33 -0800 (PST)
+        Sun, 22 Nov 2026 13:08:07 -0800 (PST)
 From: Julius Bairaktaris <julius@bairaktaris.de>
 To: Jeff Johnson <jjohnson@kernel.org>
 Cc: linux-wireless@vger.kernel.org,
-	ath11k@lists.infradead.org,
 	ath12k@lists.infradead.org,
 	linux-kernel@vger.kernel.org,
-	Baochen Qiang <baochen.qiang@oss.qualcomm.com>,
 	Rameshkumar Sundaram <rameshkumar.sundaram@oss.qualcomm.com>,
-	Vasanthakumar Thiagarajan <vasanthakumar.thiagarajan@oss.qualcomm.com>,
-	Karthikeyan Periyasamy <karthikeyan.periyasamy@oss.qualcomm.com>,
-	Aaradhana Sahu <aaradhana.sahu@oss.qualcomm.com>,
-	P Praneesh <praneesh.p@oss.qualcomm.com>,
-	Sriram R <sriram.ramachandran@oss.qualcomm.com>,
-	Tamizh Chelvam Raja <tamizh.raja@oss.qualcomm.com>,
-	Kalle Valo <kvalo@kernel.org>,
-	John Crispin <john@phrozen.org>,
-	Manikanta Pubbisetty <quic_mpubbise@quicinc.com>,
-	Pradeep Kumar Chitrapu <quic_pradeepc@quicinc.com>,
-	Venkateswara Naralasetty <quic_vnaralas@quicinc.com>,
-	Muna Sinada <quic_msinada@quicinc.com>,
-	Sowmiya Sree Elavalagan <quic_ssreeela@quicinc.com>,
-	Bhagavathi Perumal S <quic_bperumal@quicinc.com>,
-	Wen Gong <quic_wgong@quicinc.com>,
-	Balamurugan Selvarajan <quic_bselvara@quicinc.com>,
-	Jouni Malinen <quic_jouni@quicinc.com>,
-	Ramya Gnanasekar <quic_rgnanase@quicinc.com>,
+	Baochen Qiang <baochen.qiang@oss.qualcomm.com>,
 	Carl Huang <quic_cjhuang@quicinc.com>,
-	Maharaja Kennadyrajan <quic_mkenna@quicinc.com>,
-	Govindaraj Saminathan <quic_gsamin@quicinc.com>
-Subject: [PATCH ath-next 6/6] wifi: ath12k: clear RX_FLAG_8023 of the receive status for each MSDU
-Date: Sun, 22 Nov 2026 22:05:25 +0100
-Message-ID: <20261122210525.2076058-7-julius@bairaktaris.de>
+	Vasanthakumar Thiagarajan <vasanthakumar.thiagarajan@oss.qualcomm.com>,
+	Bhagavathi Perumal S <quic_bperumal@quicinc.com>,
+	Kalle Valo <kvalo@kernel.org>,
+	Pradeep Kumar Chitrapu <quic_pradeepc@quicinc.com>
+Subject: [PATCH ath-next] wifi: ath12k: drop decapped frames with a source other than the station
+Date: Sun, 22 Nov 2026 22:08:09 +0100
+Message-ID: <20261122210809.2087836-1-julius@bairaktaris.de>
 X-Mailer: git-send-email 2.53.0
-In-Reply-To: <20261122210525.2076058-1-julius@bairaktaris.de>
-References: <20261122210525.2076058-1-julius@bairaktaris.de>
 X-Mailing-List: linux-wireless@vger.kernel.org
 List-Id: <linux-wireless.vger.kernel.org>
 List-Post: <mailto:linux-wireless@vger.kernel.org>
@@ -128,49 +108,98 @@ Precedence: list
 MIME-Version: 1.0
 Content-Transfer-Encoding: 8bit
 
-Since commit c4aa897fe234 ("wifi: ath12k: Handle DP_RX_DECAP_TYPE_8023
-type in Rx path"), ath12k_dp_rx_h_undecap() sets RX_FLAG_8023 in the
-receive status that ath12k_wifi7_dp_rx_process_received_packets()
-keeps for all MSDUs of a REO reap. Before, ath12k_dp_rx_deliver_msdu()
-set it in the copy it hands to mac80211. Nothing clears it, so every
-MSDU after the first one delivered as 802.3 reaches mac80211 with
-RX_FLAG_8023, including those that carry an 802.11 header:
-ath12k_dp_rx_h_undecap() rebuilds one for EAPOL frames, for decrypted
-group-addressed frames and for frames from a 3-address peer with both
-DS bits set, and native Wi-Fi decap delivers one.
+With Ethernet decap, ath12k hands mac80211 an MSDU with the Ethernet
+source the hardware took from the frame, which for an A-MSDU subframe
+is whatever its subframe header carries, and mac80211's 802.3 receive
+path takes it as the station's address. When mac80211 deaggregates an
+A-MSDU itself, ieee80211_amsdu_to_8023s() drops a subframe whose source
+is not the station on an access point; the decap path has no such
+check.
 
-mac80211 hands such a frame to __ieee80211_rx_handle_8023(), which
-drops it when the station has no fast-RX state, as before its 4-way
-handshake completes, and otherwise handles it as an Ethernet frame
-whose addresses and EtherType are bytes of the 802.11 header. An EAPOL
-frame that follows a data frame of any station in the same reap is lost
-this way, and so is a decrypted group-addressed frame.
+Drop such an MSDU on an AP for a station that does not use four
+addresses, as ath11k does. The address compared with is that of the
+ieee80211_sta, which for a multi-link station is its MLD address, the
+one mac80211 compares with too. A four-address MPDU from such a station
+passes: ath12k_dp_rx_h_undecap() hands it to mac80211 as an 802.11
+frame, from which mac80211 reports the station for dynamic WDS.
 
-Clear RX_FLAG_8023 with the other per-MPDU flags in
-ath12k_wifi7_dp_rx_h_mpdu(), before ath12k_dp_rx_h_undecap() sets it.
+Found by reading the code.
 
-Found by reading the code with an AI review tool.
-
-Fixes: c4aa897fe234 ("wifi: ath12k: Handle DP_RX_DECAP_TYPE_8023 type in Rx path")
+Fixes: d889913205cf ("wifi: ath12k: driver for Qualcomm Wi-Fi 7 devices")
 Signed-off-by: Julius Bairaktaris <julius@bairaktaris.de>
 ---
- drivers/net/wireless/ath/ath12k/wifi7/dp_rx.c | 3 ++-
- 1 file changed, 2 insertions(+), 1 deletion(-)
+Applies on top of "wifi: ath11k, ath12k: RX correctness fixes",
+which changes the same function:
+https://lore.kernel.org/all/20261122210525.2076058-1-julius@bairaktaris.de/
+
+I used Claude (Anthropic) to help write these patches.
+
+ drivers/net/wireless/ath/ath12k/wifi7/dp_rx.c | 37 +++++++++++++++++++
+ 1 file changed, 37 insertions(+)
 
 diff --git a/drivers/net/wireless/ath/ath12k/wifi7/dp_rx.c b/drivers/net/wireless/ath/ath12k/wifi7/dp_rx.c
-index fac60041d3ec..1d52eab418a1 100644
+index 1d52eab418a1..abc3b6d197f1 100644
 --- a/drivers/net/wireless/ath/ath12k/wifi7/dp_rx.c
 +++ b/drivers/net/wireless/ath/ath12k/wifi7/dp_rx.c
-@@ -414,7 +414,8 @@ static int ath12k_wifi7_dp_rx_h_mpdu(struct ath12k_pdev_dp *dp_pdev,
- 			     RX_FLAG_MMIC_STRIPPED |
- 			     RX_FLAG_MIC_STRIPPED |
- 			     RX_FLAG_ICV_STRIPPED |
--			     RX_FLAG_PN_VALIDATED);
-+			     RX_FLAG_PN_VALIDATED |
-+			     RX_FLAG_8023);
+@@ -354,6 +354,40 @@ static void ath12k_wifi7_dp_rx_h_csum_offload(struct sk_buff *msdu,
+ 			   CHECKSUM_NONE : CHECKSUM_UNNECESSARY;
+ }
  
- 	if (err_bitmap & HAL_RX_MPDU_ERR_FCS)
- 		rx_status->flag |= RX_FLAG_FAILED_FCS_CRC;
++/*
++ * With Ethernet decap the hardware passes on the source address of the frame,
++ * which the header of an A-MSDU subframe sets, and mac80211's 802.3 path takes
++ * it as the address of the station. An access point takes no other source from
++ * a station that does not use four addresses: mac80211 drops such a subframe
++ * in ieee80211_amsdu_to_8023s() when it deaggregates the A-MSDU itself. The
++ * address it compares with is the station's, its MLD address for a multi-link
++ * station. A four-address frame from such a station is left alone:
++ * ath12k_dp_rx_h_undecap() hands it to mac80211 as an 802.11 frame, from which
++ * mac80211 reports the station for dynamic WDS.
++ */
++static bool ath12k_wifi7_dp_rx_h_eth_sa_valid(struct ath12k_dp_peer *peer,
++					      struct hal_rx_desc_data *rx_info,
++					      struct sk_buff *msdu)
++{
++	struct ath12k_sta *ahsta;
++	struct ethhdr *eth;
++
++	if (rx_info->decap_type != DP_RX_DECAP_TYPE_ETHERNET2_DIX ||
++	    !peer->sta || peer->use_4addr ||
++	    (rx_info->is_from_ds && rx_info->is_to_ds))
++		return true;
++
++	ahsta = ath12k_sta_to_ahsta(peer->sta);
++	if (ahsta->ahvif->vdev_type != WMI_VDEV_TYPE_AP)
++		return true;
++
++	if (msdu->len < ETH_HLEN)
++		return false;
++
++	eth = (struct ethhdr *)msdu->data;
++	return ether_addr_equal(eth->h_source, peer->sta->addr);
++}
++
+ static int ath12k_wifi7_dp_rx_h_mpdu(struct ath12k_pdev_dp *dp_pdev,
+ 				     struct sk_buff *msdu,
+ 				     struct hal_rx_desc_data *rx_info)
+@@ -390,6 +424,9 @@ static int ath12k_wifi7_dp_rx_h_mpdu(struct ath12k_pdev_dp *dp_pdev,
+ 				return -EINVAL;
+ 		}
+ 
++		if (!ath12k_wifi7_dp_rx_h_eth_sa_valid(peer, rx_info, msdu))
++			return -EINVAL;
++
+ 		/* resetting mcbc bit because mcbc packets are unicast
+ 		 * packets only for AP as STA sends unicast packets.
+ 		 */
+
+base-commit: 1983b40acfcb3c3464b291c85977290a785bcfdc
+prerequisite-patch-id: ed566369a9bbda0ac9a48357261e8cfe1cc0f1d1
+prerequisite-patch-id: 726d7737c833da0842192eccececad4a0dedb1a6
+prerequisite-patch-id: cf0b8ff1ac6cef681433247e4b937a3e23af78a3
+prerequisite-patch-id: 03c89df01745ac9a80653431261f9a003dbca7db
+prerequisite-patch-id: cb48c0eddbe0c2fe176e8edc94c6bc40be3c48a9
+prerequisite-patch-id: 1956ec85ad80b68868538070fc0e89c29603467a
 -- 
 2.53.0
 
