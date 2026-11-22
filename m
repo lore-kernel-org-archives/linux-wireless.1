@@ -1,96 +1,97 @@
-Authentication-Results: smtp.subspace.kernel.org; arc=none smtp.remote-ip=209.85.128.48
+Authentication-Results: smtp.subspace.kernel.org; arc=none smtp.remote-ip=209.85.218.48
 ARC-Seal: i=1; d=subspace.kernel.org; s=arc20261015; a=rsa-sha256; cv=none;
-	t=1795353830;
-	b=F8JtBDA971nv1V2qqMGlfy99c50L1beO8oW0YfAMXiKvDpO33QoFsRzV1Qv9319zPlSB
-	 Fe1BSLOYH989sCOVui1ZWlcmxYvq8g8yYhOOwYjLvOwVRaNpYX5ip2UAN/lt2zX4Gytew
-	 j8dfVVLsXja2lwjScM1vFJzGj9SpdnauueWMl8btvUIon1MqaIIlrBMoom1V3Nyop7OqZ
-	 kVraEUBiiNHD+z7cHJpJc1i0iR8s0liGmH5vd8+tW/eJe2yjGAkCSBzJxMyvdycX6/AAv
-	 qlBgWqjA/yVnvxOsysBZ5ir/nXXJpko/Djj06hz+0hJyIaKMy4P3V/jHuLhd9Ex92DQ==
+	t=1795354950;
+	b=HBOl146CTzwBOLM+KL5mrXcweuWJ1LWsLiPqyqms3ceBtxk/WdeFXlbA4GXUI9+OfSdz
+	 xg5ZnY1rnjtuorSU/+PbAlidYhBD+AYbbppP4OTlTnUg6o9C72ZruQLpwl9FwBqy8VA1q
+	 gC8NZJXqMsN2O+CdIEqcr79kC47fAdODTlo3xHrXm8pRSuTCVQCWj0DhNquyGLAQ4esHZ
+	 SoB3qtrF6vLkwHYU4SOJgTpwJlewHIvw2hR9fiJfx/BzoHaYdkRWSlLUNrw6B448DzgR9
+	 /z7DYqCY7eZDkZjyEyZxbuR4YjIrKflyQhwxeXmsoE+eKDTtCCLq6Id0lN0kVciwR9Q==
 ARC-Message-Signature: i=1; d=subspace.kernel.org; s=arc20261015;
-	a=rsa-sha256; c=relaxed/relaxed; t=1795353830;
+	a=rsa-sha256; c=relaxed/relaxed; t=1795354950;
 	h=DMARC-Filter:Received:DKIM-Signature:X-Google-DKIM-Signature:
-	 X-Forwarded-Encrypted:X-Gm-Message-State:X-Gm-Gg:X-Received:Received:
-	 From:To:Cc:Subject:Date:Message-ID:X-Mailer:In-Reply-To:References:
-	 MIME-Version:Content-Transfer-Encoding;
-	bh=jzqGpr5s49CrPSQcG6fEVlkuwOk32UJMwbrZ+G/YviA=;
-	b=l4hjsabEPqkCpYcnpGQAPB+oKeM2KBf0KPYx0hn+aAGHPQsxBmbSvbfZgoeEgJ5demUy
-	 X/D9zBXqyKTfKbTgdTYDNeQeRIe2xBvT+AmcH+5BY9696OyNttAaBc50bmVf3OPH8AQVu
-	 WW7uPOYCoaYyBH/zN3xyVno3Zw4/F2JP9prDvhmDmxj9/cnim+ljOFzz6LVJVIk/sDIUL
-	 O7cP9892Y8be9DeZcVOPxN/NHLc8dRULXGTNa5YX1KuUpVISaJ80cR1sGbtpDfx4SjCdI
-	 6td8XxH/qW4riKdFXRZSlmvgLVAHVoEqUuqnX3CPajdP8frcN2w2sfRNHZVsDl0/LFw==
+	 X-Gm-Message-State:X-Gm-Gg:X-Received:Received:From:To:Cc:Subject:
+	 Date:Message-ID:X-Mailer:MIME-Version:Content-Transfer-Encoding;
+	bh=j9qJb/G70CWhRDyDOXO3PSTyr68Kfj29Z7JRpthaS1o=;
+	b=YtQg+qMI3sYyKpgDwDtM5zi1uczg3zwZRpfSSzJGPopyS8XRDE5p8LTHsOAGEmBp7Vrj
+	 vjONE3qYo6hxT7brp0zj/r6JpTdrjOssL8mnAsgWuDkeGefoGRUYk0viekRh2allUKPcW
+	 DGlw7lRf3jdLqlnDN4jQUtQ4fmoBsjGUBS6Jyo5DktOhY7LLKzkdUeBVDkORmyXWhpjHg
+	 iANqai6eh0AHTHh0H0N5IGC/doGIebmjaly8Ag6XhRQfghTfV8OqxhbrvWzP8NAoX26Ya
+	 n1ga8gX8cE5zo7Tq4c2RbqfO0u5E4umEVnkhXi2x4A9zfCx/5NkoOUQMl0RhJTdI7hA==
 ARC-Authentication-Results: i=1; smtp.subspace.kernel.org; 
-	dmarc=pass header.from=gmail.com;
-	spf=pass smtp.mailfrom=gmail.com;
-	dkim=pass header.d=gmail.com header.i=@gmail.com header.a=rsa-sha256 header.s=20260707 header.b="Cj1J/LmI";
-	arc=none smtp.remote-ip=209.85.128.48
-Received: from mail-wm1-f48.google.com (mail-wm1-f48.google.com [209.85.128.48])
+	dmarc=pass header.from=bairaktaris.de;
+	spf=pass smtp.mailfrom=bairaktaris.de;
+	dkim=pass header.d=bairaktaris.de header.i=@bairaktaris.de header.a=rsa-sha256 header.s=google header.b=i0OqwT1R;
+	arc=none smtp.remote-ip=209.85.218.48
+Received: from mail-ej1-f48.google.com (mail-ej1-f48.google.com [209.85.218.48])
 	(using TLSv1.3 with cipher TLS_AES_128_GCM_SHA256 (128/128 bits)
 	 key-exchange X25519 server-signature ECDSA (prime256v1) server-digest SHA256)
 	(No client certificate requested)
-	by smtp.subspace.kernel.org (Postfix) with ESMTPS id 6B848606A32C
-	for <linux-wireless@vger.kernel.org>; Sun, 22 Nov 2026 13:23:50 +0000 (UTC)
-DMARC-Filter: OpenDMARC Filter v1.4.2 smtp.subspace.kernel.org 6B848606A32C
-Authentication-Results: smtp.subspace.kernel.org; dmarc=pass (p=none dis=none) header.from=gmail.com
-Authentication-Results: smtp.subspace.kernel.org; spf=pass smtp.mailfrom=gmail.com
+	by smtp.subspace.kernel.org (Postfix) with ESMTPS id 1D5B4606A32A
+	for <linux-wireless@vger.kernel.org>; Sun, 22 Nov 2026 13:42:28 +0000 (UTC)
+DMARC-Filter: OpenDMARC Filter v1.4.2 smtp.subspace.kernel.org 1D5B4606A32A
+Authentication-Results: smtp.subspace.kernel.org; dmarc=pass (p=reject dis=none) header.from=bairaktaris.de
+Authentication-Results: smtp.subspace.kernel.org; spf=pass smtp.mailfrom=bairaktaris.de
 Authentication-Results: smtp.subspace.kernel.org;
-	dkim=pass (2048-bit key) header.d=gmail.com header.i=@gmail.com header.a=rsa-sha256 header.s=20260707 header.b=Cj1J/LmI
-Received: by mail-wm1-f48.google.com with SMTP id 5b1f17b1804b1-4bb666304fdso30288325e9.0
-        for <linux-wireless@vger.kernel.org>; Sun, 22 Nov 2026 05:23:50 -0800 (PST)
+	dkim=pass (2048-bit key) header.d=bairaktaris.de header.i=@bairaktaris.de header.a=rsa-sha256 header.s=google header.b=i0OqwT1R
+Received: by mail-ej1-f48.google.com with SMTP id a640c23a62f3a-c50ac25cdd4so330285566b.1
+        for <linux-wireless@vger.kernel.org>; Sun, 22 Nov 2026 05:42:28 -0800 (PST)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=gmail.com; s=20260707; t=1795353829; x=1795958629; darn=vger.kernel.org;
-        h=content-transfer-encoding:mime-version:references:in-reply-to
-         :message-id:date:subject:cc:to:from:from:to:cc:subject:date
-         :message-id:reply-to:content-type;
-        bh=jzqGpr5s49CrPSQcG6fEVlkuwOk32UJMwbrZ+G/YviA=;
-        b=Cj1J/LmIEmV0dSxW9U6IsK29QDH979sYXuqsCC48V/vyX/SnsE19qbVYnsFzmDKp+W
-         MNKpeLp0MIr4KLOtrwbjiIjnwsVLeFE5sqS9yG4w7kbNKgo4v3AMESqnUa+1nq7E9Gsc
-         RMIKfGM035hyNmWzkmNtA90C0iFA6t3MsZHJEOuBQbDwzxQW9NRa7qyqsPSjWN7Cek8U
-         QWa6rjKU7waQU6nnbOa3/EY9JiIWTEpQcyESwSnYyCDMvkWDFNoQjfD8Z1ltaC2nft6B
-         YxwxaeEXYBYlSI0xwyvScStdm+YPJTaqJHwI2WpKnjWCKloSAqLkxaHZczAA82tTWNiw
-         JYXw==
+        d=bairaktaris.de; s=google; t=1795354947; x=1795959747; darn=vger.kernel.org;
+        h=content-transfer-encoding:mime-version:message-id:date:subject:cc
+         :to:from:from:to:cc:subject:date:message-id:reply-to:content-type;
+        bh=j9qJb/G70CWhRDyDOXO3PSTyr68Kfj29Z7JRpthaS1o=;
+        b=i0OqwT1R6zYF2OL3SBIIAuFU+nCBkGYR3qh45rJl6KbcfUll0eHwJdHv1yOsLgVYi+
+         Dt3xywdYmXGyVqHJF4zwX/bu0HJ3KsYpoXSKNN78OXdrP86wwzp0m5ZbBQ8LvW2oYFJm
+         qJRnyK6SWSq3BUc6yb0vaY0VfaMQtF66GtQRAPWlubfpanDjdJGdjHXBojD9flhV5sap
+         dkFM62xeGnEpzoGZGrHDWaP+Dcbf7DqrjaRbx6i8yAcXvOuPgg53MPWjzVapHlhJVDre
+         wk2g9yXHq1XTD8WzhPcApvFrILHzLqkYRjF2+tcSc/ndwFssZ3eqben/o6LGcAY6mZ1Q
+         OBMg==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=1e100.net; s=20260707; t=1795353829; x=1795958629;
-        h=content-transfer-encoding:mime-version:references:in-reply-to
-         :message-id:date:subject:cc:to:from:x-gm-gg:x-gm-message-state:from
-         :to:cc:subject:date:message-id:reply-to:content-type;
-        bh=jzqGpr5s49CrPSQcG6fEVlkuwOk32UJMwbrZ+G/YviA=;
-        b=w5wOR1AmLoXn1MZnYpjUFbToyJ3IuZhFyxWwJ8we3s5ZLso3Y8LXWc3oH0NHqxtlQn
-         HCke4bM1O/pyYJda9OxkEZKoGNBf2/mIvpvFZ9RrHG0Jzcj1ZnXwxrpv1au/E2fVpwIM
-         nUAqUaNuAODNjJSQU+HVNNiPdsBurFSdFy2RD42eN0SgMX69OHcQgKEQthInPsp0Z0mw
-         3Ow3cA3o1W147EQQ/URM7JsSyVm4Lzel56sJiAcoW4ByX6zsk8Ce2NyyrqLc4GuFMsvJ
-         QqxIE892dpDtp4tBLJ2w2oI63RdOY5Qf5lxkcfe8k8yYf6LIfD60sU6MndzzYdp3WL+t
-         v/Ug==
-X-Forwarded-Encrypted: i=1; AL+hErHfWA6H43n9FZwR2E/cJ+e8JNDmxksk0A1s1PqsCO+Mix9bjQitwUGVTWzY+/DpMbez9bz+KrGoH64St9XeJw==@vger.kernel.org
-X-Gm-Message-State: APuU4Z+Rn4BmcVpDVfDx279SVzS9UNZPZ3jofhSW4gvjp86mGvUd/ZKx
-	9uQ9PQ3VpAjlcIOYNwY6Icw2Xt//vNrDKUu3ui92/v/EOCqzjU8zBfrd
-X-Gm-Gg: AZFdTZer6Gt6whzMZEpH54RC9/DENmJv23mP19Q6Z8mmjz4eOoZDFyMj1bBVIC5B9tl
-	GT+MyrilZj1aNrB3xCo2XMM4FGgDh/zH8m+5wkWawx4oV7CugvX/OxMgz7UCWug8rVjSvCsVds4
-	2sj5D7EwQ/XZKs3dXnYH/pZVDRDuKSZePcbSulfrYi8Cey05jEO2n+QxC1DT7UnTHlb3u1CAQR+
-	gJemL3VyORE+zfJqCGMXP2JA6NmTk1KtvfJ69oangsOcFB/BsPstf1tEgvwRpAz7Da912JFGnvk
-	PJdT1H26FjMn/ThOBvRxaspluDQQePG9X458AwysMFCMn421lKVgQf2vjaoL9lK1PxWGpEgf6Yj
-	oG9Mzsu76L3HcWlR2vLpGvppjVyWA5qFR2hNXE9RshiRhz1XC7GGeaJTpbDLpImZyslKbMNDhIE
-	hFkEaG4xd+2ban+YYJ4OlK5mo2pgBZrSP31Piu0Ju9GKcRv/Qcm0dxenjmwXy1vsy1LDV72tOew
-	NVM+miryflLAk2psqpG2bac4W+DnM3qcDTbHqwAgUAY40Sj0QTxeEKpb2fH4jhVCq8jQgrjf1ax
-	6T1ZabDLs8CB/mYfFPqoaiWuhhAigSJt5mZFN0DFbmehRteM1hVjC5gGOWvkjzj4XlC12BmkbAS
-	58kQiGRZ5nZwxnTWPf9UkPQDLDUkVbH5AyfCZKZydsPA/9X1qLK6sK622U2bThx/wJY8Ax9+L0E
-	XZ3btRL3Rgg+ALVsqbEKYlg4aHrUccBCpv+tFpM+j/UhHM32cCR8IzWQ==
-X-Received: by 2002:a05:600c:4313:b0:4bb:643e:3b8a with SMTP id 5b1f17b1804b1-4bb86162fc5mr148179735e9.17.1795353828613;
-        Sun, 22 Nov 2026 05:23:48 -0800 (PST)
-Received: from localhost.localdomain (dynamic-2a00-1028-8388-a84e-20fd-ec9f-e3f8-60d4.ipv6.o2.cz. [2a00:1028:8388:a84e:20fd:ec9f:e3f8:60d4])
-        by smtp.gmail.com with ESMTPSA id ffacd0b85a97d-4ab6c61f558sm16729671f8f.58.2026.11.22.05.23.46
-        (version=TLS1_3 cipher=TLS_CHACHA20_POLY1305_SHA256 bits=256/256);
-        Sun, 22 Nov 2026 05:23:48 -0800 (PST)
-From: Josef Schlehofer <pepe.schlehofer@gmail.com>
-To: stable@vger.kernel.org
-Cc: Ping-Ke Shih <pkshih@realtek.com>,
-	Bitterblue Smith <rtl8821cerfe2@gmail.com>,
-	linux-wireless@vger.kernel.org
-Subject: [PATCH 6.18.y] wifi: rtw89: usb: Avoid crash with dynamically added device ID
-Date: Sun, 22 Nov 2026 14:23:46 +0100
-Message-ID: <20261122132346.53002-1-pepe.schlehofer@gmail.com>
-X-Mailer: git-send-email 2.54.0
-In-Reply-To: <20261122132329.52933-1-pepe.schlehofer@gmail.com>
-References: <20261122132329.52933-1-pepe.schlehofer@gmail.com>
+        d=1e100.net; s=20260707; t=1795354947; x=1795959747;
+        h=content-transfer-encoding:mime-version:message-id:date:subject:cc
+         :to:from:x-gm-gg:x-gm-message-state:from:to:cc:subject:date
+         :message-id:reply-to:content-type;
+        bh=j9qJb/G70CWhRDyDOXO3PSTyr68Kfj29Z7JRpthaS1o=;
+        b=F2vj8bzO25S0gJlWnwDhALxujL0jL72j9Loee23Eh3ehXVJId6ySgtxITXXSe8wUN7
+         T01RQjKogF6OobXxtEAon7KaZ0WfJIawFFlTbrW+fm8+MQtTRrjHKZpsN9irbAs20ny7
+         7f3MtkGso79EmEJBpCNYGrH+Tgm4clqiVko3E3T5rJ2/DjstOuLheBQ+2Z/FDyv5LFM+
+         dreTBPUiTLM83ZX69O4Mf+jwDUd4Sbcu1WvQDEUzMhR0IxTI7PwKgK5JLdP/3Q61ICha
+         FGCEz4hhdYaE1XbVnzXe++K137M3D75GrfKEqzxstTytpcYdzk23kC1B3s6HWSZM4nwl
+         L22g==
+X-Gm-Message-State: APuU4Z9Xa3SyddUiirTleAXBIPf/nlYU6SL6wn5xuiLlYUfkA4lIG7RC
+	hWw20Sshuq3TScso43BinVAJDkw1756f7mrlQuBAexDuQv62DMbFLqGrKGulcisWqw==
+X-Gm-Gg: AZFdTZeSRLlUAcGJOGgXtFbd4fG3GslzmImrwYQMOqIuh1lNCDLlIm6hJmhI9qcb4yw
+	3ioyr94axUnsoE6r5TGxmZksFaqW6FtaQtysPoKrC3ip6P+BFcAdDj5tX4JjjvRJzOFGgikDHzy
+	TVD8+eSg9UWIUTcC3WNVhR5IPOKLbgFGRSbP5PvwuwPtAUQPO1qVLE+vTy+jf33YD7/cZiSPrFe
+	1iy04BhCNx70E5VXqUBabM8/MX7LAqL2GZywt6ofcEaxsk1l14XuAPlERhYwkQD7UsBNPAzhvEG
+	v/Ozg6hIoebwlpvHhr/RpPAXvg+9Z4Xh63Hq36swef+4F+ANAm0whgCs2ul6mawQI6usbBj1W7k
+	mzapNAMySb/r3vsVhGt+tR5JyVY+1djJu0l6mnTHsaElNktc6EmrCUi15J4YeewZmAC/D3Cj5KY
+	EHIko1Uq0I1XLU0zZOtjEtHNFfLYzbZ4wtNlKWmnNdTav++gh44RsFs0lv4H9BiqV0evcQHlg1g
+	eVxGerWwFDTCEhYo/ElN9LCYeHcassDkDC+f0H+j4IdXj+4KqeIoo6B14zP6CLkHnJIj8INaxrA
+	JoJhIoBhuVyNhOelysmUdhR9HihnF+ED8DTlarBKRSOrSaTVF76El6yIKyei+Eo7vD+mu4PqCPr
+	KD651S7V9zTFtbKG8klL5GQxGO63ey0s9HNvyLaGCm59GMYcgkjcXOsSIgKxvRTzE4ZrlxMMI4a
+	A6PROnGSzg+vNt8Em86362M/ALQzJ517ZpKd6Wg1VnYIpsF7Vf+nw0kWdZ6pC8kX3avd3ie60OD
+	V9HBIZb9F8cdf4ruGvfucSAXM5v2i05UdY7nEK2YMct6mLRlTByMsJgPTeY3CLSfrWm1/kzgu4/
+	xc0cfuNlpRi7ML8Fhzbkqxu5vL1852AQ/tN1tckPUSD/CaHXDI7Pewo=
+X-Received: by 2002:a17:906:6690:b0:c4d:167d:dcee with SMTP id a640c23a62f3a-c513aabb216mr555094366b.40.1795354947374;
+        Sun, 22 Nov 2026 05:42:27 -0800 (PST)
+Received: from Desktop.tail070c67.ts.net (p200300f24712e3000000000000000a27.dip0.t-ipconnect.de. [2003:f2:4712:e300::a27])
+        by smtp.gmail.com with ESMTPSA id a640c23a62f3a-c513ad010bcsm326020566b.1.2026.11.22.05.42.26
+        (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
+        Sun, 22 Nov 2026 05:42:26 -0800 (PST)
+From: Julius Bairaktaris <julius@bairaktaris.de>
+To: Johannes Berg <johannes@sipsolutions.net>
+Cc: linux-wireless@vger.kernel.org,
+	Jeff Johnson <jjohnson@kernel.org>,
+	Felix Fietkau <nbd@nbd.name>,
+	=?UTF-8?q?Toke=20H=C3=B8iland-J=C3=B8rgensen?= <toke@toke.dk>,
+	ath11k@lists.infradead.org,
+	ath12k@lists.infradead.org,
+	linux-kernel@vger.kernel.org
+Subject: [PATCH wireless-next 0/4] wifi: mac80211: TSO and SG for encap offload, and the TID of 802.3 RX frames
+Date: Sun, 22 Nov 2026 14:42:24 +0100
+Message-ID: <20261122134228.956044-1-julius@bairaktaris.de>
+X-Mailer: git-send-email 2.53.0
 X-Mailing-List: linux-wireless@vger.kernel.org
 List-Id: <linux-wireless.vger.kernel.org>
 List-Post: <mailto:linux-wireless@vger.kernel.org>
@@ -102,116 +103,40 @@ Precedence: list
 MIME-Version: 1.0
 Content-Transfer-Encoding: 8bit
 
-From: Bitterblue Smith <rtl8821cerfe2@gmail.com>
+Patch 1 lets a driver offer TSO and scatter-gather on the netdevs that
+send with 802.3 encap offload, without offering them on the 802.11
+path. ath11k uses it on IPQ8074 in a series for ath-next that lets the
+TCL segment TCP batches, which depends on this patch.
 
-[ Upstream commit b1827227176821af9bba0cb643728d23328f3660 ]
+Patches 2 to 4 count frames received in 802.3 format on their TID: the
+802.3 receive path counted all of them on TID 0. Patch 2 adds the field,
+3 and 4 fill it in ath11k and ath12k.
 
-Adding a device ID via sysfs causes a crash when the device is plugged
-in, because the driver_info pointer is null.
+Patches 1 to 3 ran on a Xiaomi AX3600 (IPQ8074 hw2.0, firmware
+WLAN.HK.2.12-01460) as part of OpenWrt's 6.18 kernel with wireless
+backports 7.2, as an AP with Ethernet encap and decap.
 
-Check for null driver_info in rtw89_usb_probe() and add a wrapper in
-each driver to pass it a reasonable default value.
+I used Claude (Anthropic) to help write these patches.
+I have reviewed the commit messages and the cover letter myself and
+edited them where needed.
 
-Signed-off-by: Bitterblue Smith <rtl8821cerfe2@gmail.com>
-Acked-by: Ping-Ke Shih <pkshih@realtek.com>
-Signed-off-by: Ping-Ke Shih <pkshih@realtek.com>
-Link: https://patch.msgid.link/7a537b2e-67d2-40fb-8ef2-fcbc7bbc93af@gmail.com
-[ Dropped the hunks for rtw8852au.c, rtw8852cu.c and rtw8922au.c,
-  these drivers are not in 6.18. ]
-Signed-off-by: Josef Schlehofer <pepe.schlehofer@gmail.com>
----
-Compile tested on 6.18.64 (arm64 defconfig with the rtw89 USB drivers,
-W=1, no warnings). The probe through an ID added with new_id was
-exercised with the upstream version of this fix in backports 7.2 on an
-RTL8922AU. The commit is requested for 7.3.y as well.
+Julius Bairaktaris (4):
+  wifi: mac80211: advertise TSO and SG for encap offloaded frames
+  wifi: mac80211: take the TID of an 802.3 frame from the driver
+  wifi: ath11k: pass the TID of a received 802.3 frame to mac80211
+  wifi: ath12k: pass the TID of a received 802.3 frame to mac80211
 
- drivers/net/wireless/realtek/rtw89/rtw8851bu.c | 8 +++++++-
- drivers/net/wireless/realtek/rtw89/rtw8852bu.c | 8 +++++++-
- drivers/net/wireless/realtek/rtw89/usb.c       | 5 ++++-
- drivers/net/wireless/realtek/rtw89/usb.h       | 3 ++-
- 4 files changed, 20 insertions(+), 4 deletions(-)
+ drivers/net/wireless/ath/ath11k/dp_rx.c |  1 +
+ drivers/net/wireless/ath/ath12k/dp_rx.c |  1 +
+ include/net/mac80211.h                  | 19 +++++++++
+ net/mac80211/iface.c                    | 14 +++++++
+ net/mac80211/main.c                     |  3 +-
+ net/mac80211/rx.c                       |  3 ++
+ net/mac80211/tx.c                       | 53 ++++++++++++++++++++++++-
+ 7 files changed, 91 insertions(+), 3 deletions(-)
 
-diff --git a/drivers/net/wireless/realtek/rtw89/rtw8851bu.c b/drivers/net/wireless/realtek/rtw89/rtw8851bu.c
-index 10fcfade615..f9078923bba 100644
---- a/drivers/net/wireless/realtek/rtw89/rtw8851bu.c
-+++ b/drivers/net/wireless/realtek/rtw89/rtw8851bu.c
-@@ -32,10 +32,16 @@ static const struct usb_device_id rtw_8851bu_id_table[] = {
- };
- MODULE_DEVICE_TABLE(usb, rtw_8851bu_id_table);
- 
-+static int rtw8851bu_probe(struct usb_interface *intf,
-+			   const struct usb_device_id *id)
-+{
-+	return rtw89_usb_probe(intf, id, &rtw89_8851bu_info);
-+}
-+
- static struct usb_driver rtw_8851bu_driver = {
- 	.name = KBUILD_MODNAME,
- 	.id_table = rtw_8851bu_id_table,
--	.probe = rtw89_usb_probe,
-+	.probe = rtw8851bu_probe,
- 	.disconnect = rtw89_usb_disconnect,
- };
- module_usb_driver(rtw_8851bu_driver);
-diff --git a/drivers/net/wireless/realtek/rtw89/rtw8852bu.c b/drivers/net/wireless/realtek/rtw89/rtw8852bu.c
-index add5987110b..fbeb3f5b737 100644
---- a/drivers/net/wireless/realtek/rtw89/rtw8852bu.c
-+++ b/drivers/net/wireless/realtek/rtw89/rtw8852bu.c
-@@ -46,10 +46,16 @@ static const struct usb_device_id rtw_8852bu_id_table[] = {
- };
- MODULE_DEVICE_TABLE(usb, rtw_8852bu_id_table);
- 
-+static int rtw8852bu_probe(struct usb_interface *intf,
-+			   const struct usb_device_id *id)
-+{
-+	return rtw89_usb_probe(intf, id, &rtw89_8852bu_info);
-+}
-+
- static struct usb_driver rtw_8852bu_driver = {
- 	.name = KBUILD_MODNAME,
- 	.id_table = rtw_8852bu_id_table,
--	.probe = rtw89_usb_probe,
-+	.probe = rtw8852bu_probe,
- 	.disconnect = rtw89_usb_disconnect,
- };
- module_usb_driver(rtw_8852bu_driver);
-diff --git a/drivers/net/wireless/realtek/rtw89/usb.c b/drivers/net/wireless/realtek/rtw89/usb.c
-index 512a46dd9d0..faf1e471e30 100644
---- a/drivers/net/wireless/realtek/rtw89/usb.c
-+++ b/drivers/net/wireless/realtek/rtw89/usb.c
-@@ -931,7 +931,8 @@ static void rtw89_usb_intf_deinit(struct rtw89_dev *rtwdev,
- }
- 
- int rtw89_usb_probe(struct usb_interface *intf,
--		    const struct usb_device_id *id)
-+		    const struct usb_device_id *id,
-+		    const struct rtw89_driver_info *default_info)
- {
- 	const struct rtw89_driver_info *info;
- 	struct rtw89_dev *rtwdev;
-@@ -939,6 +940,8 @@ int rtw89_usb_probe(struct usb_interface *intf,
- 	int ret;
- 
- 	info = (const struct rtw89_driver_info *)id->driver_info;
-+	if (!info)
-+		info = default_info;
- 
- 	rtwdev = rtw89_alloc_ieee80211_hw(&intf->dev,
- 					  sizeof(struct rtw89_usb),
-diff --git a/drivers/net/wireless/realtek/rtw89/usb.h b/drivers/net/wireless/realtek/rtw89/usb.h
-index c1b4bfa2097..fe0f86dc779 100644
---- a/drivers/net/wireless/realtek/rtw89/usb.h
-+++ b/drivers/net/wireless/realtek/rtw89/usb.h
-@@ -59,7 +59,8 @@ static inline struct rtw89_usb *rtw89_usb_priv(struct rtw89_dev *rtwdev)
- }
- 
- int rtw89_usb_probe(struct usb_interface *intf,
--		    const struct usb_device_id *id);
-+		    const struct usb_device_id *id,
-+		    const struct rtw89_driver_info *default_info);
- void rtw89_usb_disconnect(struct usb_interface *intf);
- 
- #endif
+
+base-commit: e1dd8486807c1acf9551250b7f81e116a21e6ad6
 -- 
-2.54.0 (Apple Git-157)
+2.53.0
 
