@@ -1,87 +1,87 @@
-Authentication-Results: smtp.subspace.kernel.org; arc=none smtp.remote-ip=209.85.208.51
+Authentication-Results: smtp.subspace.kernel.org; arc=none smtp.remote-ip=209.85.208.52
 ARC-Seal: i=1; d=subspace.kernel.org; s=arc20261015; a=rsa-sha256; cv=none;
-	t=1795371140;
-	b=rjePNr1kuepw+NAjGPHbpQcr530f4cGdntaqK1hO9hQpp66ttey1nlZ22+IQ1vzO5JjU
-	 gE/SElUCl76ujlWe1u73Ud6mmyK40DSgxSmbn/YFQhPIHAnbUJ7Yx9m5ITugBxCX9dEN0
-	 2KVkpyks9PRnFynSr8ijzoqKebn8cCjfAdYK/f9I8DsrGTL4+c/Nl4Omtw0VoiNqG8CSq
-	 oNPP+bdUdDoArapveMMcP3hNO5i2JaJq9083lWXWuQKT30dTqxQukeW35OkEMxI8XZOJO
-	 bO/W+KMRmbvUQeiDHwk0jA7B6Zuudf04WCG9gcyiL7Ng1m4NWGXO23BcLAVzaqT+nsg==
+	t=1795371143;
+	b=dwafBMilPzstrzyr4hEPVl00NuDwTLQzHHunShCJ4mIF2GXSoGYkU4QoDg0UF7noSvpw
+	 V+Ak0j9txw9pcLfRasRzILtG3F5uVNIhuRRBgJF0qUq/rv9UA+egl9IZnzWIU+UJ0f/C+
+	 4khXF1CWrU/h6XbDjrU1xnqvBhydDwtoRA+brt/4zV/oqbxPRKX/zL1mo8SmeogIGB/Wk
+	 y6PjClTXiff5NBNXOnf4aDDzXMrkEz/yLbEZw+v9zpIGvvk+LKNHO5LeRfE3TKm8v9xmV
+	 0C2jPPa82BhtnGEJzZSucHAzrAB6hVgQ9zDSc4+8fLH6eNs/PE7PwZZqxXEatqbTxRw==
 ARC-Message-Signature: i=1; d=subspace.kernel.org; s=arc20261015;
-	a=rsa-sha256; c=relaxed/relaxed; t=1795371140;
+	a=rsa-sha256; c=relaxed/relaxed; t=1795371143;
 	h=DMARC-Filter:Received:DKIM-Signature:X-Google-DKIM-Signature:
 	 X-Forwarded-Encrypted:X-Gm-Message-State:X-Gm-Gg:X-Received:Received:
 	 From:To:Cc:Subject:Date:Message-ID:X-Mailer:In-Reply-To:References:
 	 MIME-Version:Content-Transfer-Encoding;
-	bh=AwHV/L47aIX6I1PhoJ/2X4nEmV7D+cw1ick7Wr6dTv4=;
-	b=z6T1dpn3v6a8Mk0Umr/1vQ2cJxa5hg/KFrwrIObnfmBkqHzJf+vTLYVHeXlbU1KmBnWM
-	 O5uXZpjTZ8wJwsuTrfnWg8ofkwafUxTZMcqMh1UUckl1rTDYJJ1wPZ4yIkAsj5y+vCagx
-	 SefYGCSIG5qtbEp+9EjXRaUHCGgw6GVLNBkPuT2IPFBTZPRPmSIYmAK5yg3xoXYJtukIp
-	 DUnmgsc4lM8AyMPSQvY6xVSEFQqvA/7vHugSP3AoeJofi0X6AwsWVsBzc/8AzTV9+CBL9
-	 UVtvOblHt3SUqxo55s0MhfIHcsCvyuyF3nipKHdVXBx0wOvLHGrWx4Vq2I7aHv5uHGw==
+	bh=GAq4IkIOet4Pk0GS2U/anQiFA+lR+8Je61Jyy7n2K/w=;
+	b=lJ6lob/6EWBBcNl8RFfW8Bq5dCGmpf3ZmRfYxJIVfM1NY+yHXD3VkYrobvQdx0CmPLFv
+	 tGQ9zGZ9e1O2AczZEZtH/p+AuE/XV4MCSit8erOC32MQBxQO875TDm/MA9BHJ7bzJDFi8
+	 ue5R3e+7bpzD42n/cpvHs1mh7kUK99c6ItEnlgJFoemfqkpnPDROE2dfYd4dsb0+RphiP
+	 5N20hhLS+ooJNeM1PGGfE8hk5JAt2xsEBI9LvpeW/H7XwvNfZMb8zgXmx/ivYYPvvkbfu
+	 /h77qfLv6CK4oEVhpMe4sNEQ2NEJnk+LULNyHY3vrhHc7d+rv6OeJCyXZ24nH7QUyHQ==
 ARC-Authentication-Results: i=1; smtp.subspace.kernel.org; 
 	dmarc=pass header.from=bairaktaris.de;
 	spf=pass smtp.mailfrom=bairaktaris.de;
-	dkim=pass header.d=bairaktaris.de header.i=@bairaktaris.de header.a=rsa-sha256 header.s=google header.b="yJC7eV/R";
-	arc=none smtp.remote-ip=209.85.208.51
-Received: from mail-ed1-f51.google.com (mail-ed1-f51.google.com [209.85.208.51])
+	dkim=pass header.d=bairaktaris.de header.i=@bairaktaris.de header.a=rsa-sha256 header.s=google header.b=H5BEZRBF;
+	arc=none smtp.remote-ip=209.85.208.52
+Received: from mail-ed1-f52.google.com (mail-ed1-f52.google.com [209.85.208.52])
 	(using TLSv1.3 with cipher TLS_AES_128_GCM_SHA256 (128/128 bits)
 	 key-exchange X25519 server-signature ECDSA (prime256v1) server-digest SHA256)
 	(No client certificate requested)
-	by smtp.subspace.kernel.org (Postfix) with ESMTPS id 4AAAB606A335
-	for <linux-wireless@vger.kernel.org>; Sun, 22 Nov 2026 18:12:20 +0000 (UTC)
-DMARC-Filter: OpenDMARC Filter v1.4.2 smtp.subspace.kernel.org 4AAAB606A335
+	by smtp.subspace.kernel.org (Postfix) with ESMTPS id 985DF606A334
+	for <linux-wireless@vger.kernel.org>; Sun, 22 Nov 2026 18:12:22 +0000 (UTC)
+DMARC-Filter: OpenDMARC Filter v1.4.2 smtp.subspace.kernel.org 985DF606A334
 Authentication-Results: smtp.subspace.kernel.org; dmarc=pass (p=reject dis=none) header.from=bairaktaris.de
 Authentication-Results: smtp.subspace.kernel.org; spf=pass smtp.mailfrom=bairaktaris.de
 Authentication-Results: smtp.subspace.kernel.org;
-	dkim=pass (2048-bit key) header.d=bairaktaris.de header.i=@bairaktaris.de header.a=rsa-sha256 header.s=google header.b=yJC7eV/R
-Received: by mail-ed1-f51.google.com with SMTP id 4fb4d7f45d1cf-6b88bc47e23so3051962a12.2
-        for <linux-wireless@vger.kernel.org>; Sun, 22 Nov 2026 10:12:20 -0800 (PST)
+	dkim=pass (2048-bit key) header.d=bairaktaris.de header.i=@bairaktaris.de header.a=rsa-sha256 header.s=google header.b=H5BEZRBF
+Received: by mail-ed1-f52.google.com with SMTP id 4fb4d7f45d1cf-6b8a2518f7cso2889600a12.2
+        for <linux-wireless@vger.kernel.org>; Sun, 22 Nov 2026 10:12:22 -0800 (PST)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=bairaktaris.de; s=google; t=1795371139; x=1795975939; darn=vger.kernel.org;
+        d=bairaktaris.de; s=google; t=1795371141; x=1795975941; darn=vger.kernel.org;
         h=content-transfer-encoding:mime-version:references:in-reply-to
          :message-id:date:subject:cc:to:from:from:to:cc:subject:date
          :message-id:reply-to:content-type;
-        bh=AwHV/L47aIX6I1PhoJ/2X4nEmV7D+cw1ick7Wr6dTv4=;
-        b=yJC7eV/RcrD0X62aZ6misJv5IOVhVL3maz0KjDgU7SMO9Qn6WDPmdNNJNh0QmoVKBs
-         8OkeSW7aYMCWUwED+IUQxU+nJEwbT/A0KPLyEeq8opTBOai/s9Jo02ReAgi1wZyJyB6F
-         MZxKT+ut5wrndXzBRbon5WyPjBVjaQsBS23vWiPCitMeNh2JYteqtNW67qbiUfGMX4eq
-         7MMOYyEINdi9FQFZ1Q9JSdCvhs6mKJ31q7ow6cpP1zyHpvf3AC96P1cQKX3TEEEjYYeL
-         pSWqsiCFvsgWXO+GgE/irM0zCLko5Y/O7LIZFblbyx1Rb8OqUaDJ2ekTeDkYANa3jUBx
-         pEyQ==
+        bh=GAq4IkIOet4Pk0GS2U/anQiFA+lR+8Je61Jyy7n2K/w=;
+        b=H5BEZRBFT+OdKFNfXM/uAqjRb+jVSC73Wq89Fe4NH1/hwnKuz2/hovcjDL2mmFNM2A
+         sPnOzN6viQnzAK7FseYSbLZjKdmaPL6ttKiDG4b1iux0bRplsz48CaVtTT5ytn7xXjHl
+         7QHXHEQaebxMKfU5JOXOd3t/B/qcvO3lm8tR1hPVvx07Ul9hhcb3hIMRfb+qY0QcG1y0
+         +gGqtYYTMWRGAiNdwAx1Oglf3lwnetQM59UqKVNx7ZA3Kion2oSs0brnPkzo1ZFQ3paH
+         u4r8DZFxOgl19IE9LFGsvLHNttCXt3XaXtMesJO9NYtKANlhhFYBg2sBEeRSAL5mEY1u
+         pMBA==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=1e100.net; s=20260707; t=1795371139; x=1795975939;
+        d=1e100.net; s=20260707; t=1795371141; x=1795975941;
         h=content-transfer-encoding:mime-version:references:in-reply-to
          :message-id:date:subject:cc:to:from:x-gm-gg:x-gm-message-state:from
          :to:cc:subject:date:message-id:reply-to:content-type;
-        bh=AwHV/L47aIX6I1PhoJ/2X4nEmV7D+cw1ick7Wr6dTv4=;
-        b=tSoLEpZQN108rCd3LJa4tiUS+92DxBeh3yOwm00eXCrD6vQ2VM4XUeUUYYAs2Uws40
-         mnkShGtFJkobUTeNuysyCiEQ7081c1J/R7Zm5rBnTvMJMXHLhwJJLTUW/ktW66Bprraq
-         YfwWRbuQmMW8U1uw8Djqj/+JM0hjmf0JytvcyZ1KplA9KMl21I1paLSoJLwKa31sPHzf
-         Ql162sRqPpp0I+OAU+kXLmLER+HWhPGSH49VBFw2Wj10kfJR4P8g6xmoAsQsWeU8Y6r8
-         ZR1PzsFMFco5LBsb/jaijhehghfMefKdpgNA77jdn/LTzlhe6tueH/hZq1MyawZ1cgq1
-         Y07w==
-X-Forwarded-Encrypted: i=1; AL+hErGTvKg+DCRhWBN9ncNB/polS2KKOZ3LI/cB0Eum9RNFLtLaau0BZ5EFES6uYUWrxPYBxtgN838fsQAdJAyS9g==@vger.kernel.org
-X-Gm-Message-State: APuU4Z+h8yTaBz86RuzsBvLBPs8Hfm6Ls89v/QRcvVYMQ5+Bh7tnvqrb
-	SW7dZP2o6hpw4F7fbIlwD/nEd1/wy2V7dRDaaQy5PskOtMLKIghYz+ISgHw7mqSa0Q==
-X-Gm-Gg: AZFdTZdJesmPpjZMQMD6V5ScstEQjDU+xb/VkjeWZ46EpHO7ecp6BCxfIk2VmHeeDFh
-	tjLwMoaqptis1zBQrPfBEaXXCskMZ3cpWdv23KXbMjQBtBLCxiXBwBfTvpqXEvshQ1qHhHSqBHj
-	PlJ8W/XpbHY2kYoQjJ8ZtrqdCAUPwlwignTRIV0c0W5diZ2hoT7bQq2cT7RRyCRr8/soe5K6A14
-	WLKvg+VwyC1lEYc3UDJk/DOGzZbi6BHkrsB8N0cUm4zOopDN7avIW+ocYGX4NaHI/fqROQzYJZt
-	YYXD28+oY1Y/RIYzOO8dYTrlrthUeqNVNTwGFz/WBtHAVEyILAq7nQ6RJF2emanzPxhU3InLS1w
-	4lFM6Gh0Hi0/nc/+m0TZbcICoaB0b0/mOH/zXJcuOr3Igy+e598SgxlbnslYed/pLMDCedNzpG7
-	iJr9wniGMUyaOdRxq8EaGIWTxmZmocZPe/WqLbZL0sJ1946vj9P1Ld+b8RCPjtJeDOFKe3a+2bb
-	cvYZtNL907l0O3LFIEFe1gq7XX5jA2dK0dw0x1jnD7Wyx5pV2gBHbUs5uq1hjSWXKuxDwK5kSHD
-	f8ZXucX57IazgcDTpaQy7nR8rUdXKjThbLh5x4HFj2xtmYKmVy6Xbgff1X+X5Fjf4heST55Rdcp
-	Drlp6jjtB+G54+H1nUftCvwCgF4ru6NtsqwgLlnPtY9RAB0KoHtmV5626hP+k95lpKtG6hqAxTF
-	Nv+JFMiYPlzH0k+8XoGe0W2pGdURBK6kEThGAWZIYaNopHzj2S6f1CT1kHmBN++6c32xI+uLb/C
-	IH+oT6AKwA4EVYC2pgEPs7reJkmUw6toCfawLYOPnnAY5wc1UMYMTeX7VGBLKSts3n8xlHC1cPr
-	u/JsixspYzXWi7VutHIW9VrcFJUV8zr+emUeFU8oK/dCwQLDmm6jZT7nHiEzjdxObNuJWvuH
-X-Received: by 2002:a05:6402:569a:b0:6b7:5712:b6c1 with SMTP id 4fb4d7f45d1cf-6ba37ac6db2mr4318502a12.0.1795371138807;
-        Sun, 22 Nov 2026 10:12:18 -0800 (PST)
+        bh=GAq4IkIOet4Pk0GS2U/anQiFA+lR+8Je61Jyy7n2K/w=;
+        b=NBb9a4k+W0DANQ1jdqqhzKOGFcXnHuEVYpVA9Bw+gJMGKs16S2lp/j0JQ+Csm/RH9h
+         HKQai/xERSPKDxUfFk+jCvPZZ1zz+MUr2e1blq3c/8n0UmWOZd1ImjI8k1SZg3SRRgz4
+         8+HUBPoJbAEidssIafFlPlrqcjWQhoiy05QgISB+pAsy7JNaRylYV+ffb9n0tfa8kWhs
+         ZfUiPHpHcGP1OUkQVKGka7WbM1kWyS121dcPRIptwnejMOG9dPVJgb/Q8RLIJ0MZ22h8
+         sUNMytCjiHQoy0f8tAIgystWtL1y0pjAHbKn9CHqh7LK6gUvDw/ogl05lMeWebpEjSHL
+         EtKA==
+X-Forwarded-Encrypted: i=1; AL+hErHUzfT29fcP0X0D/BJaQlJr514xhvOVO4cCRi7QRZWMQ3NOVOWAjRHp1E40wlJqjEmRa7nsMH2DDrBHteIt1A==@vger.kernel.org
+X-Gm-Message-State: APuU4Z+T8H5teGeNtQJcx1IDt5AbntR9OShur5CyLjz73jw/8z2yafeZ
+	N02bIm6ACHuBfhLbw8BKqG5l0BDMzAjIjaVJ1oQzfD2jATqUlZMvlyG0fGLciMqEhg==
+X-Gm-Gg: AZFdTZfTqIgiIL+Jwom+w97+HxKLcytmgjlIkqBYuiNW/KRIHCge/1Zz1JUKR+QAIt3
+	oBFErwPwQeCvDelzG68N7Dq/U4elqdhRTYmJjb9PtJmsYyBTGxL6SYuAZH+xVkji4od/D9Q6Htd
+	bPQSlVoPMXaqTs3Qyv8sXFHrMYQO4Le8Xq9RcPNEwfwqsmuZw+4oS7h8v8Og3j1+K553cmna701
+	deGqAQ/0BB/78r3DRHr2I1HiVWYNLlEoF2kJMJhtOZb3DNScoTm4mULNN0UGY5kkRfa4F4zQHC3
+	tnnOj3GJHCtO3eOB1Qhya5mSPBoMaTPPifSWFwi9DAcqn/7f63JGd+bnKyy6WtEQVJunsaJj1G1
+	RzguV5+ikOSFzK80mpmVQCKYuFeikg21oSSHaqQN12aEDNoAgIHYWS2ZHSvxvn8y+PNvu2W+PFC
+	qDXgG0/M1nvTMuFAJ22XTyiUImEvkeQk35/+I2/Ax5cOsfLai2iXRdFPRYTCRUXKl/s6HvbkJfB
+	lCistYcltlH05oET/Fkq7YohG67So3BRv1i/qVG1FgmaTDnco/BwDKjF/3iGm3T0HwSGUmFMJKm
+	fYfWtgOzibYOhulVugpmZbSIyiub/Qpk5BTmIPO5Ix20xIWHR3lik5tAMjAE100y+bAKGgWMPjP
+	BjmY/YlTOrpZTq4MLWdaAWuWO0aUg4Cd6AfM6LMDyYAbmP9wlODLleXGhj0jYbCJW62VlxUPUdv
+	2qEVGS23Kgeysnv2iVh+fkyQurNH1GkV0XF6JvFzsfzA02HHpCwTFSLADFKzPAgXu07O8KaE+7O
+	PeAnVeIS9JAuM1CDlX/kLwSsf/gQt0NYnG43bFe3OuNbpy86m0+iZg93uhE0n/2+oHSIiQu4hu+
+	BdAbV+0U7Bx1OTTY2peCDipYnlL4B7LYO1lEzZwHvyqxI/pAgY0C8PxHOrDTwJH7YJbXYGY/
+X-Received: by 2002:aa7:d819:0:b0:6b8:a703:8ffe with SMTP id 4fb4d7f45d1cf-6ba37c7ba68mr5099318a12.5.1795371140985;
+        Sun, 22 Nov 2026 10:12:20 -0800 (PST)
 Received: from Desktop.tail070c67.ts.net (p200300f24713a700f1770d5b08d979ed.dip0.t-ipconnect.de. [2003:f2:4713:a700:f177:d5b:8d9:79ed])
-        by smtp.gmail.com with ESMTPSA id 4fb4d7f45d1cf-6ba370cc257sm4052567a12.13.2026.11.22.10.12.16
+        by smtp.gmail.com with ESMTPSA id 4fb4d7f45d1cf-6ba370cc257sm4052567a12.13.2026.11.22.10.12.18
         (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
-        Sun, 22 Nov 2026 10:12:17 -0800 (PST)
+        Sun, 22 Nov 2026 10:12:19 -0800 (PST)
 From: Julius Bairaktaris <julius@bairaktaris.de>
 To: Jeff Johnson <jjohnson@kernel.org>
 Cc: ath11k@lists.infradead.org,
@@ -90,9 +90,9 @@ Cc: ath11k@lists.infradead.org,
 	Baochen Qiang <baochen.qiang@oss.qualcomm.com>,
 	Jose Ignacio Tornos Martinez <jtornosm@redhat.com>,
 	Johannes Berg <johannes@sipsolutions.net>
-Subject: [PATCH ath-next 3/9] wifi: ath11k: push TXQs from BH work
-Date: Sun, 22 Nov 2026 19:12:07 +0100
-Message-ID: <20261122181213.1016590-4-julius@bairaktaris.de>
+Subject: [PATCH ath-next 4/9] wifi: ath11k: replace the TX buffer IDR with a table
+Date: Sun, 22 Nov 2026 19:12:08 +0100
+Message-ID: <20261122181213.1016590-5-julius@bairaktaris.de>
 X-Mailer: git-send-email 2.53.0
 In-Reply-To: <20261122181213.1016590-1-julius@bairaktaris.de>
 References: <20261122181213.1016590-1-julius@bairaktaris.de>
@@ -107,87 +107,332 @@ Precedence: list
 MIME-Version: 1.0
 Content-Transfer-Encoding: 8bit
 
-Each frame that the network stack queues from a receive poll wakes its
-TXQ on its own, and the wake ran a scheduling round at once, so a round
-handed the hardware a single frame and paid for the ring access, the
-locks and the scheduler per frame. Record the woken access categories
-and run their rounds from BH work, which runs after the poll and takes
-every frame it queued in one round.
+Every transmitted frame took a buffer id from an IDR when it was queued
+and gave it back on completion. Keep the ids of each TCL ring in a table
+indexed by id with a stack of the free ones, so both steps take constant
+time. The id range stays the one the IDR handed out.
+The recovery path that returns the frames a crashed firmware holds walks
+the table as well.
 
 Tested-on: IPQ8074 hw2.0 AHB WLAN.HK.2.12-01460-QCAHKSWPL_SILICONZ-1
 
+ath11k_dp_tx_idr_has_room() now reads the count of free ids, and the
+num_txbuf counter it read until now goes away.
+
 Signed-off-by: Julius Bairaktaris <julius@bairaktaris.de>
 ---
- drivers/net/wireless/ath/ath11k/core.h |  3 +++
- drivers/net/wireless/ath/ath11k/mac.c  | 24 +++++++++++++++++++++++-
- 2 files changed, 26 insertions(+), 1 deletion(-)
+ drivers/net/wireless/ath/ath11k/dp.c    |  30 ++++---
+ drivers/net/wireless/ath/ath11k/dp.h    |  11 ++-
+ drivers/net/wireless/ath/ath11k/dp_tx.c | 104 ++++++++++++++++++------
+ drivers/net/wireless/ath/ath11k/dp_tx.h |   2 +
+ drivers/net/wireless/ath/ath11k/mac.c   |  20 +++--
+ 5 files changed, 115 insertions(+), 52 deletions(-)
 
-diff --git a/drivers/net/wireless/ath/ath11k/core.h b/drivers/net/wireless/ath/ath11k/core.h
-index 8b7bfb0cefcf..74fbff296b60 100644
---- a/drivers/net/wireless/ath/ath11k/core.h
-+++ b/drivers/net/wireless/ath/ath11k/core.h
-@@ -715,6 +715,9 @@ struct ath11k {
- 	spinlock_t txq_lock[IEEE80211_NUM_ACS];
- 	/* access categories whose round ended for lack of room */
- 	unsigned long txq_starved;
-+	/* access categories woken since txq_work last ran */
-+	unsigned long txq_woken;
-+	struct work_struct txq_work;
- 
- 	struct list_head arvifs;
- 	/* should never be NULL; needed for regular htt rx */
-diff --git a/drivers/net/wireless/ath/ath11k/mac.c b/drivers/net/wireless/ath/ath11k/mac.c
-index 090df2f1cadf..0af4f2fe27bb 100644
---- a/drivers/net/wireless/ath/ath11k/mac.c
-+++ b/drivers/net/wireless/ath/ath11k/mac.c
-@@ -6791,6 +6791,7 @@ static void ath11k_mac_op_stop(struct ieee80211_hw *hw, bool suspend)
- 	cancel_work_sync(&ar->channel_update_work);
- 	cancel_work_sync(&ar->regd_update_work);
- 	cancel_work_sync(&ar->ab->update_11d_work);
-+	cancel_work_sync(&ar->txq_work);
- 
- 	if (ar->state_11d == ATH11K_11D_PREPARING) {
- 		ar->state_11d = ATH11K_11D_IDLE;
-@@ -10211,10 +10212,30 @@ static void ath11k_mac_schedule_txq(struct ath11k *ar, u8 ac)
- 	spin_unlock_bh(&ar->txq_lock[ac]);
+diff --git a/drivers/net/wireless/ath/ath11k/dp.c b/drivers/net/wireless/ath/ath11k/dp.c
+index 833feb981cfc..e7eab9857f29 100644
+--- a/drivers/net/wireless/ath/ath11k/dp.c
++++ b/drivers/net/wireless/ath/ath11k/dp.c
+@@ -1015,17 +1015,21 @@ void ath11k_dp_vdev_tx_attach(struct ath11k *ar, struct ath11k_vif *arvif)
+ 	ath11k_dp_update_vdev_search(arvif);
  }
  
+-static int ath11k_dp_tx_pending_cleanup(int buf_id, void *skb, void *ctx)
++static void ath11k_dp_tx_pending_cleanup(struct ath11k_base *ab,
++					 struct dp_tx_ring *tx_ring)
+ {
+-	struct ath11k_base *ab = ctx;
+-	struct sk_buff *msdu = skb;
++	struct sk_buff *msdu;
++	u32 id;
+ 
+-	dma_unmap_single(ab->dev, ATH11K_SKB_CB(msdu)->paddr, msdu->len,
+-			 DMA_TO_DEVICE);
+-
+-	dev_kfree_skb_any(msdu);
++	for (id = 0; tx_ring->bufs && id < DP_TX_IDR_SIZE - 1; id++) {
++		msdu = tx_ring->bufs[id];
++		if (!msdu)
++			continue;
+ 
+-	return 0;
++		dma_unmap_single(ab->dev, ATH11K_SKB_CB(msdu)->paddr,
++				 msdu->len, DMA_TO_DEVICE);
++		dev_kfree_skb_any(msdu);
++	}
+ }
+ 
+ void ath11k_dp_free(struct ath11k_base *ab)
+@@ -1042,9 +1046,8 @@ void ath11k_dp_free(struct ath11k_base *ab)
+ 
+ 	for (i = 0; i < ab->hw_params.hal_params->num_tx_rings; i++) {
+ 		spin_lock_bh(&dp->tx_ring[i].tx_idr_lock);
+-		idr_for_each(&dp->tx_ring[i].txbuf_idr,
+-			     ath11k_dp_tx_pending_cleanup, ab);
+-		idr_destroy(&dp->tx_ring[i].txbuf_idr);
++		ath11k_dp_tx_pending_cleanup(ab, &dp->tx_ring[i]);
++		ath11k_dp_tx_bufs_free(&dp->tx_ring[i]);
+ 		spin_unlock_bh(&dp->tx_ring[i].tx_idr_lock);
+ 		kfree(dp->tx_ring[i].tx_status);
+ 		dp->tx_ring[i].tx_status = NULL;
+@@ -1093,8 +1096,9 @@ int ath11k_dp_alloc(struct ath11k_base *ab)
+ 	size = sizeof(struct hal_wbm_release_ring) * DP_TX_COMP_RING_SIZE;
+ 
+ 	for (i = 0; i < ab->hw_params.hal_params->num_tx_rings; i++) {
+-		idr_init(&dp->tx_ring[i].txbuf_idr);
+-		atomic_set(&dp->tx_ring[i].num_txbuf, 0);
++		ret = ath11k_dp_tx_bufs_init(&dp->tx_ring[i]);
++		if (ret)
++			goto fail_cmn_srng_cleanup;
+ 		spin_lock_init(&dp->tx_ring[i].tx_idr_lock);
+ 		spin_lock_init(&dp->tx_ring[i].wake_tx_lock);
+ 		dp->tx_ring[i].tcl_data_ring_id = i;
+diff --git a/drivers/net/wireless/ath/ath11k/dp.h b/drivers/net/wireless/ath/ath11k/dp.h
+index bf7439e8b37d..f3dcba777a34 100644
+--- a/drivers/net/wireless/ath/ath11k/dp.h
++++ b/drivers/net/wireless/ath/ath11k/dp.h
+@@ -84,13 +84,12 @@ struct dp_tx_ring {
+ 	u8 tcl_data_ring_id;
+ 	struct dp_srng tcl_data_ring;
+ 	struct dp_srng tcl_comp_ring;
+-	struct idr txbuf_idr;
+-	/* Protects txbuf_idr; num_txbuf changes with it and is read without */
++	/* Buffers by the id their descriptor carries, and the ids not in use */
++	struct sk_buff **bufs;
++	u32 *free_ids;
++	u32 num_free;
++	/* Protects bufs and free_ids */
+ 	spinlock_t tx_idr_lock;
+-	/* MSDU ids in use, one per frame between ath11k_dp_tx() and its
+-	 * completion
+-	 */
+-	atomic_t num_txbuf;
+ 	/* Serializes wake_tx_queue operations for this ring */
+ 	spinlock_t wake_tx_lock;
+ 	struct hal_wbm_release_ring *tx_status;
+diff --git a/drivers/net/wireless/ath/ath11k/dp_tx.c b/drivers/net/wireless/ath/ath11k/dp_tx.c
+index bd5edab32a1f..feeaba575966 100644
+--- a/drivers/net/wireless/ath/ath11k/dp_tx.c
++++ b/drivers/net/wireless/ath/ath11k/dp_tx.c
+@@ -79,33 +79,88 @@ enum hal_encrypt_type ath11k_dp_tx_get_encrypt_type(u32 cipher)
+ 	}
+ }
+ 
+-/* The caller holds tx_ring->tx_idr_lock. */
+-static struct sk_buff *ath11k_dp_tx_idr_remove(struct dp_tx_ring *tx_ring,
+-					       int msdu_id)
 +/*
-+ * A frame queued from a receive poll wakes its TXQ on its own, so pushing
-+ * from the wake would hand the hardware one frame per round. The rounds run
-+ * from BH work instead, after the poll, and take every frame it queued.
++ * The ids a ring hands out, as a table indexed by id with a stack of the free
++ * ones: the completion's cookie names the buffer directly. Callers of the id
++ * helpers hold tx_idr_lock.
 + */
-+static void ath11k_mac_txq_work(struct work_struct *work)
-+{
-+	struct ath11k *ar = container_of(work, struct ath11k, txq_work);
-+	unsigned long woken = xchg(&ar->txq_woken, 0);
-+	u8 ac;
++int ath11k_dp_tx_bufs_init(struct dp_tx_ring *tx_ring)
+ {
+-	struct sk_buff *msdu;
++	u32 id;
 +
-+	rcu_read_lock();
-+	for_each_set_bit(ac, &woken, IEEE80211_NUM_ACS)
-+		ath11k_mac_schedule_txq(ar, ac);
-+	rcu_read_unlock();
++	tx_ring->bufs = kvcalloc(DP_TX_IDR_SIZE - 1, sizeof(*tx_ring->bufs),
++				 GFP_KERNEL);
++	tx_ring->free_ids = kvcalloc(DP_TX_IDR_SIZE - 1,
++				     sizeof(*tx_ring->free_ids), GFP_KERNEL);
++	if (!tx_ring->bufs || !tx_ring->free_ids) {
++		ath11k_dp_tx_bufs_free(tx_ring);
++		return -ENOMEM;
++	}
++
++	tx_ring->num_free = 0;
++	for (id = DP_TX_IDR_SIZE - 1; id--;)
++		tx_ring->free_ids[tx_ring->num_free++] = id;
++
++	return 0;
 +}
 +
- static void ath11k_mac_op_wake_tx_queue(struct ieee80211_hw *hw,
- 					struct ieee80211_txq *txq)
- {
--	ath11k_mac_schedule_txq(hw->priv, txq->ac);
-+	struct ath11k *ar = hw->priv;
++void ath11k_dp_tx_bufs_free(struct dp_tx_ring *tx_ring)
++{
++	kvfree(tx_ring->bufs);
++	kvfree(tx_ring->free_ids);
++	tx_ring->bufs = NULL;
++	tx_ring->free_ids = NULL;
++	tx_ring->num_free = 0;
++}
 +
-+	set_bit(txq->ac, &ar->txq_woken);
-+	queue_work(system_bh_wq, &ar->txq_work);
++static int ath11k_dp_tx_buf_get_id(struct dp_tx_ring *tx_ring,
++				   struct sk_buff *skb)
++{
++	u32 id;
++
++	if (unlikely(!tx_ring->num_free))
++		return -ENOSPC;
++
++	id = tx_ring->free_ids[--tx_ring->num_free];
++	tx_ring->bufs[id] = skb;
++
++	return id;
++}
++
++static struct sk_buff *ath11k_dp_tx_buf_put_id(struct dp_tx_ring *tx_ring,
++					       u32 id)
++{
++	struct sk_buff *skb;
++
++	if (unlikely(id >= DP_TX_IDR_SIZE - 1))
++		return NULL;
++
++	skb = tx_ring->bufs[id];
++	if (unlikely(!skb))
++		return NULL;
+ 
+-	msdu = idr_remove(&tx_ring->txbuf_idr, msdu_id);
+-	if (msdu)
+-		atomic_dec(&tx_ring->num_txbuf);
++	tx_ring->bufs[id] = NULL;
++	tx_ring->free_ids[tx_ring->num_free++] = id;
+ 
+-	return msdu;
++	return skb;
  }
  
- void ath11k_mac_tx_push_pending(struct ath11k *ar, u8 ac)
-@@ -10953,6 +10974,7 @@ int ath11k_mac_allocate(struct ath11k_base *ab)
+ /**
+  * ath11k_dp_tx_idr_has_room() - tell whether ath11k_dp_tx() can take a frame
+  * @tx_ring: the ring the frame would go to first
+  *
+- * ath11k_dp_tx() allocates the frame's MSDU id from the ring's idr, which
+- * holds DP_TX_IDR_SIZE - 1 ids and frees one when the frame completes. A
+- * caller that takes a frame from mac80211 only to have it refused for a full
+- * idr loses the frame, so it checks first.
++ * ath11k_dp_tx() takes the frame's MSDU id from the ring's free ids, of which
++ * there are DP_TX_IDR_SIZE - 1, and the frame's completion returns it. A caller
++ * that takes a frame from mac80211 only to have it refused for want of an id
++ * loses the frame, so it checks first. The count is read without tx_idr_lock:
++ * an id taken in between costs that one frame, as before the check.
+  *
+- * Return: true if the idr has an id free.
++ * Return: true if an id is free.
+  */
+ bool ath11k_dp_tx_idr_has_room(struct dp_tx_ring *tx_ring)
+ {
+-	return atomic_read(&tx_ring->num_txbuf) < DP_TX_IDR_SIZE - 1;
++	/* Read without tx_idr_lock: a stale count costs at most one frame. */
++	return data_race(tx_ring->num_free) != 0;
+ }
  
- 		for (j = 0; j < IEEE80211_NUM_ACS; j++)
- 			spin_lock_init(&ar->txq_lock[j]);
-+		INIT_WORK(&ar->txq_work, ath11k_mac_txq_work);
- 		INIT_LIST_HEAD(&ar->arvifs);
- 		INIT_LIST_HEAD(&ar->ppdu_stats_info);
- 		mutex_init(&ar->conf_mutex);
+ /*
+@@ -158,10 +213,7 @@ int ath11k_dp_tx(struct ath11k *ar, struct ath11k_vif *arvif,
+ 	tx_ring = &dp->tx_ring[ti.ring_id];
+ 
+ 	spin_lock_bh(&tx_ring->tx_idr_lock);
+-	ret = idr_alloc(&tx_ring->txbuf_idr, skb, 0,
+-			DP_TX_IDR_SIZE - 1, GFP_ATOMIC);
+-	if (likely(ret >= 0))
+-		atomic_inc(&tx_ring->num_txbuf);
++	ret = ath11k_dp_tx_buf_get_id(tx_ring, skb);
+ 	spin_unlock_bh(&tx_ring->tx_idr_lock);
+ 
+ 	if (unlikely(ret < 0)) {
+@@ -320,7 +372,7 @@ int ath11k_dp_tx(struct ath11k *ar, struct ath11k_vif *arvif,
+ 
+ fail_remove_idr:
+ 	spin_lock_bh(&tx_ring->tx_idr_lock);
+-	ath11k_dp_tx_idr_remove(tx_ring,
++	ath11k_dp_tx_buf_put_id(tx_ring,
+ 				FIELD_GET(DP_TX_DESC_ID_MSDU_ID, ti.desc_id));
+ 	spin_unlock_bh(&tx_ring->tx_idr_lock);
+ 
+@@ -340,7 +392,7 @@ static void ath11k_dp_tx_free_txbuf(struct ath11k_base *ab, u8 mac_id,
+ 	struct ath11k_skb_cb *skb_cb;
+ 
+ 	spin_lock(&tx_ring->tx_idr_lock);
+-	msdu = ath11k_dp_tx_idr_remove(tx_ring, msdu_id);
++	msdu = ath11k_dp_tx_buf_put_id(tx_ring, msdu_id);
+ 	spin_unlock(&tx_ring->tx_idr_lock);
+ 
+ 	if (unlikely(!msdu)) {
+@@ -383,9 +435,11 @@ void ath11k_dp_tx_free_pending(struct ath11k_base *ab)
+ 		tx_ring = &ab->dp.tx_ring[i];
+ 
+ 		spin_lock_bh(&tx_ring->tx_idr_lock);
+-		idr_for_each_entry(&tx_ring->txbuf_idr, msdu, msdu_id) {
+-			ath11k_dp_tx_idr_remove(tx_ring, msdu_id);
+-			__skb_queue_tail(&pending, msdu);
++		for (msdu_id = 0; tx_ring->bufs && msdu_id < DP_TX_IDR_SIZE - 1;
++		     msdu_id++) {
++			msdu = ath11k_dp_tx_buf_put_id(tx_ring, msdu_id);
++			if (msdu)
++				__skb_queue_tail(&pending, msdu);
+ 		}
+ 		spin_unlock_bh(&tx_ring->tx_idr_lock);
+ 	}
+@@ -412,7 +466,7 @@ ath11k_dp_tx_htt_tx_complete_buf(struct ath11k_base *ab,
+ 	struct ath11k_peer *peer;
+ 
+ 	spin_lock(&tx_ring->tx_idr_lock);
+-	msdu = ath11k_dp_tx_idr_remove(tx_ring, ts->msdu_id);
++	msdu = ath11k_dp_tx_buf_put_id(tx_ring, ts->msdu_id);
+ 	spin_unlock(&tx_ring->tx_idr_lock);
+ 
+ 	if (unlikely(!msdu)) {
+@@ -862,7 +916,7 @@ int ath11k_dp_tx_completion_handler(struct ath11k_base *ab, int ring_id,
+ 		}
+ 
+ 		spin_lock(&tx_ring->tx_idr_lock);
+-		msdu = ath11k_dp_tx_idr_remove(tx_ring, msdu_id);
++		msdu = ath11k_dp_tx_buf_put_id(tx_ring, msdu_id);
+ 		if (unlikely(!msdu)) {
+ 			ath11k_warn(ab, "tx completion for unknown msdu_id %d\n",
+ 				    msdu_id);
+diff --git a/drivers/net/wireless/ath/ath11k/dp_tx.h b/drivers/net/wireless/ath/ath11k/dp_tx.h
+index 380e35e354f5..50b6178ceb38 100644
+--- a/drivers/net/wireless/ath/ath11k/dp_tx.h
++++ b/drivers/net/wireless/ath/ath11k/dp_tx.h
+@@ -22,6 +22,8 @@ int ath11k_dp_tx_htt_h2t_ver_req_msg(struct ath11k_base *ab);
+ int ath11k_dp_tx(struct ath11k *ar, struct ath11k_vif *arvif,
+ 		 struct ath11k_sta *arsta, struct sk_buff *skb, int held_ring);
+ bool ath11k_dp_tx_idr_has_room(struct dp_tx_ring *tx_ring);
++int ath11k_dp_tx_bufs_init(struct dp_tx_ring *tx_ring);
++void ath11k_dp_tx_bufs_free(struct dp_tx_ring *tx_ring);
+ int ath11k_dp_tx_completion_handler(struct ath11k_base *ab, int ring_id,
+ 				    int budget);
+ void ath11k_dp_tx_free_pending(struct ath11k_base *ab);
+diff --git a/drivers/net/wireless/ath/ath11k/mac.c b/drivers/net/wireless/ath/ath11k/mac.c
+index 0af4f2fe27bb..513559585371 100644
+--- a/drivers/net/wireless/ath/ath11k/mac.c
++++ b/drivers/net/wireless/ath/ath11k/mac.c
+@@ -7361,15 +7361,20 @@ static int ath11k_mac_op_add_interface(struct ieee80211_hw *hw,
+ 	return ret;
+ }
+ 
+-static int ath11k_mac_vif_unref(int buf_id, void *skb, void *ctx)
++static void ath11k_mac_vif_unref(struct dp_tx_ring *tx_ring,
++				 struct ieee80211_vif *vif)
+ {
+-	struct ieee80211_vif *vif = ctx;
+-	struct ath11k_skb_cb *skb_cb = ATH11K_SKB_CB(skb);
++	struct ath11k_skb_cb *skb_cb;
++	u32 id;
+ 
+-	if (skb_cb->vif == vif)
+-		skb_cb->vif = NULL;
++	for (id = 0; id < DP_TX_IDR_SIZE - 1; id++) {
++		if (!tx_ring->bufs[id])
++			continue;
+ 
+-	return 0;
++		skb_cb = ATH11K_SKB_CB(tx_ring->bufs[id]);
++		if (skb_cb->vif == vif)
++			skb_cb->vif = NULL;
++	}
+ }
+ 
+ static void ath11k_mac_op_remove_interface(struct ieee80211_hw *hw,
+@@ -7434,8 +7439,7 @@ static void ath11k_mac_op_remove_interface(struct ieee80211_hw *hw,
+ 
+ 	for (i = 0; i < ab->hw_params.hal_params->num_tx_rings; i++) {
+ 		spin_lock_bh(&ab->dp.tx_ring[i].tx_idr_lock);
+-		idr_for_each(&ab->dp.tx_ring[i].txbuf_idr,
+-			     ath11k_mac_vif_unref, vif);
++		ath11k_mac_vif_unref(&ab->dp.tx_ring[i], vif);
+ 		spin_unlock_bh(&ab->dp.tx_ring[i].tx_idr_lock);
+ 	}
+ 
 -- 
 2.53.0
 
