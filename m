@@ -1,87 +1,87 @@
-Authentication-Results: smtp.subspace.kernel.org; arc=none smtp.remote-ip=209.85.218.46
+Authentication-Results: smtp.subspace.kernel.org; arc=none smtp.remote-ip=209.85.218.41
 ARC-Seal: i=1; d=subspace.kernel.org; s=arc20261015; a=rsa-sha256; cv=none;
-	t=1795381534;
-	b=1VhvPeDthiMhU1A/QpQIlfcJB6Gq03wKqwJaWFA8Fq73umzc+rWDMxqBXTJmxZD/VIuX
-	 rxsWVX5J2nNp1J59bL0QOcYfp2N1tQgxbnX2gX4cV9g/dVJqOcGzB102LAs5zVbI8HR06
-	 8cg9OeEATqW4Uzy2lzNdoumgnOAczae0KWxzg/ZadxtJ4OKez6LVRhlgI/cu2H8Yi2a4u
-	 ZA3HNSzr8F7n2y5ylGHFTKT9nZM72K86+L0zQk/orI4ow1r9M00mVYnNrgDgmQeIiTA4i
-	 kZwah89mTJJEzSH+sl/34tSTQyHcvIQYVUh8mvuou0G9rRd4yHgta64oo5uT0qjhKTQ==
+	t=1795381535;
+	b=2jXTtXXLBkIhPPGh0DKNXrb4XC2fVWKBRIvGSDAGpmSUACZwFysMwXXBPiExG/JKsIPO
+	 YZc+rKGgL87zAmm3xwSyv5BR2oMoXOjMEVnAMAMpd9cv4LaFUGnhf1FBRpbgI3Giv/+aC
+	 DY/n82vImTSUCJ41AqAMgdm5nshORtEqOFlXXSTAsQLhGUcCoHZi4HwgyEoiJ86ObI4SH
+	 B8pGbsN8ypZ9+MqnSwL3JVVerlhfQ5M51GwiFbNU/WiNDFkHWjFcYjrNjI73q/BBAHo1h
+	 wX7j2arhKkuEaQRzNfh9j1FTUzmJ42XLbdctqhTO0So6J0hgcqo4SyhFIUv/9wiJXbg==
 ARC-Message-Signature: i=1; d=subspace.kernel.org; s=arc20261015;
-	a=rsa-sha256; c=relaxed/relaxed; t=1795381534;
+	a=rsa-sha256; c=relaxed/relaxed; t=1795381535;
 	h=DMARC-Filter:Received:DKIM-Signature:X-Google-DKIM-Signature:
 	 X-Gm-Message-State:X-Gm-Gg:X-Received:Received:From:To:Cc:Subject:
 	 Date:Message-ID:X-Mailer:In-Reply-To:References:MIME-Version:
 	 Content-Transfer-Encoding;
-	bh=Sfonz9sz93lcK5gtS/Li+RwUHjpeRem/YyxXweufjn0=;
-	b=YScBrNtAtY10aEIAn/9D+WjZT7rSXuAICNB6AY9eYUSXe6ZbtMVZ1Ts3JKBIHB/jj53k
-	 UmHM0LAXIIdWbM1LPG7SmpbicyEh7wnNityaIW+DJvTsemQksYnlcjdJP2YQX4abtnqAO
-	 WgVOFuLu5YAbQ/FTr1BCIC6//LsMSozqnhaKtOu9BsdSfCtOzjGzUoRZuZfG+7Tmtajqt
-	 fJJrhYIrQoqm9qxDKuOJd0p7AyJn94SoqRJX+3bL+aUU9O22rjSCl4vyJREQ4iwIAj3Rh
-	 LevfVAych+UcspHgAbK0PK40luEjtZQlT/mz8YL4V5ASJ8jd74fupFj/YAld1T5Qxvw==
+	bh=ZrC17kLP85VhrLnJZWnSDitIpYddK+4irtfGQwA3Jes=;
+	b=KcklU4qHW+/h5f4Qu2eLhu6A0f543YrbjFIQLv3ubV81Zuuy6Tl82jjE/5OTZz3JyI2P
+	 R3nx25g02+y/sl4T1WDUymxMR3uAv+bta5IqrEmpb6BAMqN03JIIXrnthAGWmQL10Xe8u
+	 7QdcLt1/G7oEMWJLzkfFMFu/Lj72puzET/KB1n+7Ngrs6GU8WrYjOUNBNxaWXSydM5i/R
+	 0wIkUIPuvblMzcBtDMNa2J9HZTYyeerokF+WTk8KllYmtIrFzbuHEPqN7GspDSkkD15yS
+	 WV40M/DzEMYJCMiFtlHUGvfbPVrS6lsM9l6jUgk4/cBY8vm1GRtFJJvmRT84LQ35HMQ==
 ARC-Authentication-Results: i=1; smtp.subspace.kernel.org; 
 	dmarc=pass header.from=bairaktaris.de;
 	spf=pass smtp.mailfrom=bairaktaris.de;
-	dkim=pass header.d=bairaktaris.de header.i=@bairaktaris.de header.a=rsa-sha256 header.s=google header.b=Gd+gO5Hq;
-	arc=none smtp.remote-ip=209.85.218.46
-Received: from mail-ej1-f46.google.com (mail-ej1-f46.google.com [209.85.218.46])
+	dkim=pass header.d=bairaktaris.de header.i=@bairaktaris.de header.a=rsa-sha256 header.s=google header.b=HN0ND8QR;
+	arc=none smtp.remote-ip=209.85.218.41
+Received: from mail-ej1-f41.google.com (mail-ej1-f41.google.com [209.85.218.41])
 	(using TLSv1.3 with cipher TLS_AES_128_GCM_SHA256 (128/128 bits)
 	 key-exchange X25519 server-signature ECDSA (prime256v1) server-digest SHA256)
 	(No client certificate requested)
-	by smtp.subspace.kernel.org (Postfix) with ESMTPS id 50226606A6B1
-	for <linux-wireless@vger.kernel.org>; Sun, 22 Nov 2026 21:05:34 +0000 (UTC)
-DMARC-Filter: OpenDMARC Filter v1.4.2 smtp.subspace.kernel.org 50226606A6B1
+	by smtp.subspace.kernel.org (Postfix) with ESMTPS id 2BD38606A68C
+	for <linux-wireless@vger.kernel.org>; Sun, 22 Nov 2026 21:05:35 +0000 (UTC)
+DMARC-Filter: OpenDMARC Filter v1.4.2 smtp.subspace.kernel.org 2BD38606A68C
 Authentication-Results: smtp.subspace.kernel.org; dmarc=pass (p=reject dis=none) header.from=bairaktaris.de
 Authentication-Results: smtp.subspace.kernel.org; spf=pass smtp.mailfrom=bairaktaris.de
 Authentication-Results: smtp.subspace.kernel.org;
-	dkim=pass (2048-bit key) header.d=bairaktaris.de header.i=@bairaktaris.de header.a=rsa-sha256 header.s=google header.b=Gd+gO5Hq
-Received: by mail-ej1-f46.google.com with SMTP id a640c23a62f3a-c4322d310e7so467910766b.0
+	dkim=pass (2048-bit key) header.d=bairaktaris.de header.i=@bairaktaris.de header.a=rsa-sha256 header.s=google header.b=HN0ND8QR
+Received: by mail-ej1-f41.google.com with SMTP id a640c23a62f3a-c505b2e1cb9so495959166b.2
         for <linux-wireless@vger.kernel.org>; Sun, 22 Nov 2026 13:05:34 -0800 (PST)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=bairaktaris.de; s=google; t=1795381532; x=1795986332; darn=vger.kernel.org;
+        d=bairaktaris.de; s=google; t=1795381533; x=1795986333; darn=vger.kernel.org;
         h=content-transfer-encoding:mime-version:references:in-reply-to
          :message-id:date:subject:cc:to:from:from:to:cc:subject:date
          :message-id:reply-to:content-type;
-        bh=Sfonz9sz93lcK5gtS/Li+RwUHjpeRem/YyxXweufjn0=;
-        b=Gd+gO5HqqcCuFR32X+85Ydy0Qi5kmm3KErC4ttV0moc5Y/10hlYXNxrnB3Iut+Cf/u
-         xHklT8nv6iZTQ8NnwemSf7KyihF6vzXad/e/m7rKuBwAlvEBLHscDiggZnPMqJZoSfJx
-         J7Z6yVkRFTREbwrIt/5ljNB7hP3QZI9io8lFeDffsDzd5RNPo35A11y/P6zUj1+JmuR/
-         C4RGOdt17NS6xGE98diIyH/zNZI7iiLQ4m022bBMU4BYt34oSKASY1fQ/xX8l5pPfGSB
-         kAtQzoY7qEbY+5cAFRwXQHbCGVR8qQc1+DVMi808Qs1WzM4w9CAVWXjs1w5kH0ARq0Q8
-         ylOw==
+        bh=ZrC17kLP85VhrLnJZWnSDitIpYddK+4irtfGQwA3Jes=;
+        b=HN0ND8QRSBaFe+F0WIe1MfhEOVdpH7a1/ny4TCw1Zr3RzkpVNbbUM2lQZxFiqXPGlF
+         eMR20Ypet8DN2WMRtCuihJN4Fo4uglp3vMxBSLc2x+gsGFMhHOD9YhUHv6lFPfPWuTFQ
+         wK6E19ouh5DEjQkdZTVVrV+1jQHflH9xjranXUsrdKFK7L+aoDxYG3LpcxiC/pZCUnvC
+         QQv+DbwFpCd0XF835ib6C0FTGEqHMoKKN7iXAhw5Jkz0NOkxSFMLaUHt+B2gc1VKA3n5
+         fGEZGbmvQG0ufw7qC+MC5O+qOXVLxVRJAZl/AHiIf/Wd1aIQPbVEjLIh3HX1Rliwh+xK
+         fHBw==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=1e100.net; s=20260707; t=1795381532; x=1795986332;
+        d=1e100.net; s=20260707; t=1795381533; x=1795986333;
         h=content-transfer-encoding:mime-version:references:in-reply-to
          :message-id:date:subject:cc:to:from:x-gm-gg:x-gm-message-state:from
          :to:cc:subject:date:message-id:reply-to:content-type;
-        bh=Sfonz9sz93lcK5gtS/Li+RwUHjpeRem/YyxXweufjn0=;
-        b=OCS/tvZ4YMzbpPdjipVTwvLjHjet5IKnYgei7y+aZ4kndSFn3tMtsn8thGJnqXnw78
-         r4VvHT1v3X/xiCoDu3pnoFQAA0QZYPhNlvXKWv6Sc9nno73JLk7vNWxsY2Z3tI0mHIll
-         hxkxYcZQ/j6lspfyKLHpJ6LwZc7vxZeZxNAETONCWS5+vHYWjzjRkFxL/oYXDc6VFUbK
-         JskhHeG25kILQrbQBXk7MssYpP5MghJBH6uUaYpNby3pITjnUC4/03pP64zbGdW8Ag2q
-         0ARqUzgtr+gwYJqzmozmNszoGNECrQrh13HtTvpEBYlsMo+gWOh6HVZdi2qZWNAOIU67
-         STQw==
-X-Gm-Message-State: APuU4Z/RXsrX2e2CZcbenXTDzAnO9icvQCmrHjAYeFH4t++CZ7jeadiu
-	7eqyCu78B3k6j0DFGlkDu6MGPFtiW4AqdmhFQ5s0Pj2yODSQ9SuSVBa/uH/NZ7Zaog==
-X-Gm-Gg: AZFdTZcMe6S1vrWsdBpLxHRp6q7JHFgoxAY5t09Twz9sVtCLkFcKdsOsFhIuraZglyp
-	6Ristf3YEff13ZSIGJMo7leeF8cjwC5KQ4LD2HsjYZMPV95YcL0JzWf+uFr6xoONTmeg64kHc/X
-	g1CJuE5RFrPIX8X0+GJE0dJ48DhHw2U+07Xubl6OAPX6n4iuffYbhLc+bRihdXO4YGXCSPV3AjF
-	a5bFoL/3/TtzZ3pDnhldGakXh6vpoBc/YShRO/QHVPnP1UTn/73W8MI6RVGahgr4Ed11GriqdNh
-	h2MOBMzuTXukdqvHIILr8kGkXUQjWAot+/D/rvitpkCJ7NA2mYJBVzHtJt4fs+gXYcXvgZHiNcG
-	ung+F4mbBuzVcuqP1rldNZDiJU4w15koF/jT0+u2NXynreM49pN+OVA2YssMOyVUBeWqpBoIQzI
-	7ScK/Gg4BWKaQDJEB7WvQBK45V4VQK1ihstwIV6labckzaLcdmCbUAvYupzWsNLO0KB+HgHQ35v
-	1oPRfIJUyrNmXyA73xbNRuAT+aVF8Gz3cjrFcfASUlMGZFkEoU/SQGMHzK3RUbDqaPih+277UF0
-	sspMNxFqSmptMWvcEkp9E0wv3/GX1JYLKX+S4uj9TUwCtk0IJVF53617QjJuJrGppaoDpmfV7Ak
-	MBcjUEClm3os6cxxmruJe1f3xQvTIKPcOPNG10GnSnggd+0FgAONGeOKPPX4hRPQH7z78B79CvG
-	NaMk6kGWGRtXB2uh3eWpSZ3AvL+pSGrpYR0CRDrR3YEdyrR2Ej2VCKktXIdqW5KuO3/s7Nc6OfR
-	0AWkLsqZE8EPiqhUzGgd/no3He50/frXot4ply9gzisTOi5HK83v5oB/PUzLRejlD3jnRg723s/
-	UoP2ogzBVbesKyv0CugcJr6nDVpiPnw0Mhls1XmTvVVV6ypBWbb3uA9L9q3k3b1TeMO6wlTymA=
+        bh=ZrC17kLP85VhrLnJZWnSDitIpYddK+4irtfGQwA3Jes=;
+        b=Ulofp8BfS8UbPERK+yTTtvuINLB/RHliQuv9bdPll2jHm8iF/eTNupLR7PIHx6i+gu
+         EgoiZJ0qndX7w69D27F42bcy/sK56y0YiKTgJCTZ1YLHa6C3s1Q8aTa+q1ZbrQ8S90cp
+         i/eJg5dIhBUPyxO9oQy+TtybMRz3omYxBornUKFIvgthPkDYZhb4stjXlQ6zMQw517l5
+         3kAKw8xLteaWC8vNHqHJjulBDBOTuMVBNFmq+VxyQfQD5pAMYWW4zthtXHKlIxKxm3Dw
+         a7S0R00C/KxSTj7qzYBLgO0W/c0VFixV7FDNVjuPoOU+ruYJZIdnvDaWOxxZ5bDa/MyS
+         CsKw==
+X-Gm-Message-State: APuU4Z/CzfsYUpfMKPRL89820R/Fex0lZKNd1R/g4ZswbSNCcZw+PVUD
+	yxjlN96OJ3+qBwO9K61YCKL2iwcFne5BAOn23V7cXILn3C9RUWHwQW/WizaG16UcRQ==
+X-Gm-Gg: AZFdTZd/42iLpPhfoaU72S+kgwo9U7XSOHlTGN9ANzDxJKymtiSqGRKDm04XWQrehS6
+	W0DVXhpKea1Exopy7rHmHzNxK0+JI+mIq6Gdzmp9ELdc89mmXBAOOnXJto1FvfFuqAM41gEvoz5
+	b/XM0KPYITrVifNn2QOOJTEtHXvETohbc5D+feZv4jw7NG0+qr48pB8tJL8B9Ewmxs80RjeKq9M
+	LSQsNMjFzu/kPZDiaDStaunrdd1Rn5tXYa5X/0PuRYMCqtmNEhIhVpRYv8L4TqfFgtsYfPpsHN5
+	p2CF/4o2C8LZuVHPJSVuvPhZV66strHf1hddTiBaEUupgXBvX926xYc8eA0oOJKd4K1QEmVhiXL
+	pjANfw349JYALQ0v36xZzU3KxNzxfqAqkvxo2le84bxyt/piwWRogbf8x07aOv+W7qo/h63QD+/
+	9Z9CCnIDujtmrZeaPmKqEWw4JehUxkpgKcWJIsO5Gj0Aca3QYoBOjSpAEDnAsHq+tu7ozt/B6gx
+	fbOOstNOB6XAyVZMYAn16Wov13Ns7RteT2drI4T48mr4sKNpH3qyqf/3/0B3u4MPTa0WYW3U3ed
+	DJ1BgYK51nCQpDdrcfZq5BQlVUV3YCgEMjYdSIFOhOl6QPI4ONweRJN24qrsEpmEcrOIKrLOPP0
+	+yRBPL1LdLEJBkcOfHFR6cTRV+K4FRUyJnLzNtkoPIX1RpuZ2pWV4lgAJ92JbBdDEcgGtd15NJO
+	UiWaYZU64egyr+TbJjII++iugVIeSFVq5xDo1B1Jt7030w65C7/cV44KCnsGbbnprq5+ptHf5eE
+	gUC9okx+a9Son6s83GjvRg5XpJ+Rwv5o45FVN/VV2Bu+ikNzjLXmP5KHMiSv1L9V+929iak62pc
+	zOfUXSn0Pz+Uus6wiwPJQE9s1ItU4yMD8ko/URDqQKi6WuTTvlYOEE59Q3GeD/bX2tOcFTaa3Bg
 	=
-X-Received: by 2002:a17:907:d1d:b0:c3f:8c92:3b51 with SMTP id a640c23a62f3a-c513a47e325mr894924966b.4.1795381532562;
-        Sun, 22 Nov 2026 13:05:32 -0800 (PST)
+X-Received: by 2002:a17:907:6e89:b0:c51:59c8:a4ec with SMTP id a640c23a62f3a-c5159c8dc3bmr396957066b.1.1795381533567;
+        Sun, 22 Nov 2026 13:05:33 -0800 (PST)
 Received: from Desktop.tail070c67.ts.net (p200300f24713d300ad8e04c1718a6e78.dip0.t-ipconnect.de. [2003:f2:4713:d300:ad8e:4c1:718a:6e78])
-        by smtp.gmail.com with ESMTPSA id a640c23a62f3a-c513afc2455sm339935766b.57.2026.11.22.13.05.30
+        by smtp.gmail.com with ESMTPSA id a640c23a62f3a-c513afc2455sm339935766b.57.2026.11.22.13.05.32
         (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
-        Sun, 22 Nov 2026 13:05:31 -0800 (PST)
+        Sun, 22 Nov 2026 13:05:33 -0800 (PST)
 From: Julius Bairaktaris <julius@bairaktaris.de>
 To: Jeff Johnson <jjohnson@kernel.org>
 Cc: linux-wireless@vger.kernel.org,
@@ -111,9 +111,9 @@ Cc: linux-wireless@vger.kernel.org,
 	Carl Huang <quic_cjhuang@quicinc.com>,
 	Maharaja Kennadyrajan <quic_mkenna@quicinc.com>,
 	Govindaraj Saminathan <quic_gsamin@quicinc.com>
-Subject: [PATCH ath-next 5/6] wifi: ath12k: clear the crypto flags of the receive status for each MSDU
-Date: Sun, 22 Nov 2026 22:05:24 +0100
-Message-ID: <20261122210525.2076058-6-julius@bairaktaris.de>
+Subject: [PATCH ath-next 6/6] wifi: ath12k: clear RX_FLAG_8023 of the receive status for each MSDU
+Date: Sun, 22 Nov 2026 22:05:25 +0100
+Message-ID: <20261122210525.2076058-7-julius@bairaktaris.de>
 X-Mailer: git-send-email 2.53.0
 In-Reply-To: <20261122210525.2076058-1-julius@bairaktaris.de>
 References: <20261122210525.2076058-1-julius@bairaktaris.de>
@@ -128,46 +128,46 @@ Precedence: list
 MIME-Version: 1.0
 Content-Transfer-Encoding: 8bit
 
-ath12k_wifi7_dp_rx_process_received_packets() keeps one
-ieee80211_rx_status for all MSDUs that a REO reap returns, and
-ath12k_wifi7_dp_rx_h_mpdu() fills it for each of them. As in ath11k, it
-clears RX_FLAG_DECRYPTED, RX_FLAG_IV_STRIPPED and RX_FLAG_MMIC_STRIPPED
-of the MSDU before, but not RX_FLAG_MIC_STRIPPED, RX_FLAG_ICV_STRIPPED
-and RX_FLAG_PN_VALIDATED, which it also sets for a decrypted MSDU.
+Since commit c4aa897fe234 ("wifi: ath12k: Handle DP_RX_DECAP_TYPE_8023
+type in Rx path"), ath12k_dp_rx_h_undecap() sets RX_FLAG_8023 in the
+receive status that ath12k_wifi7_dp_rx_process_received_packets()
+keeps for all MSDUs of a REO reap. Before, ath12k_dp_rx_deliver_msdu()
+set it in the copy it hands to mac80211. Nothing clears it, so every
+MSDU after the first one delivered as 802.3 reaches mac80211 with
+RX_FLAG_8023, including those that carry an 802.11 header:
+ath12k_dp_rx_h_undecap() rebuilds one for EAPOL frames, for decrypted
+group-addressed frames and for frames from a 3-address peer with both
+DS bits set, and native Wi-Fi decap delivers one.
 
-ath12k_get_dot11_hdr_from_rx_desc() drops RX_FLAG_PN_VALIDATED from a
-group-addressed MSDU that was decapped to Ethernet, but a decrypted
-group-addressed MSDU in native Wi-Fi decap that follows a decrypted
-unicast MSDU in one reap would reach mac80211 with
-RX_FLAG_PN_VALIDATED, and ieee80211_crypto_ccmp_decrypt() and
-ieee80211_crypto_gcmp_decrypt() then skip the replay check of the
-group key. Whether a reap holds such a pair depends, as in ath11k, on
-whether the firmware delivers group-addressed MSDUs through the REO
-destination ring.
+mac80211 hands such a frame to __ieee80211_rx_handle_8023(), which
+drops it when the station has no fast-RX state, as before its 4-way
+handshake completes, and otherwise handles it as an Ethernet frame
+whose addresses and EtherType are bytes of the 802.11 header. An EAPOL
+frame that follows a data frame of any station in the same reap is lost
+this way, and so is a decrypted group-addressed frame.
 
-Clear the three flags with the other per-MPDU flags.
+Clear RX_FLAG_8023 with the other per-MPDU flags in
+ath12k_wifi7_dp_rx_h_mpdu(), before ath12k_dp_rx_h_undecap() sets it.
 
 Found by reading the code with an AI review tool.
 
-Fixes: d889913205cf ("wifi: ath12k: driver for Qualcomm Wi-Fi 7 devices")
+Fixes: c4aa897fe234 ("wifi: ath12k: Handle DP_RX_DECAP_TYPE_8023 type in Rx path")
 Signed-off-by: Julius Bairaktaris <julius@bairaktaris.de>
 ---
- drivers/net/wireless/ath/ath12k/wifi7/dp_rx.c | 5 ++++-
- 1 file changed, 4 insertions(+), 1 deletion(-)
+ drivers/net/wireless/ath/ath12k/wifi7/dp_rx.c | 3 ++-
+ 1 file changed, 2 insertions(+), 1 deletion(-)
 
 diff --git a/drivers/net/wireless/ath/ath12k/wifi7/dp_rx.c b/drivers/net/wireless/ath/ath12k/wifi7/dp_rx.c
-index 4a57d89669ab..fac60041d3ec 100644
+index fac60041d3ec..1d52eab418a1 100644
 --- a/drivers/net/wireless/ath/ath12k/wifi7/dp_rx.c
 +++ b/drivers/net/wireless/ath/ath12k/wifi7/dp_rx.c
-@@ -411,7 +411,10 @@ static int ath12k_wifi7_dp_rx_h_mpdu(struct ath12k_pdev_dp *dp_pdev,
- 			     RX_FLAG_MMIC_ERROR |
- 			     RX_FLAG_DECRYPTED |
- 			     RX_FLAG_IV_STRIPPED |
--			     RX_FLAG_MMIC_STRIPPED);
-+			     RX_FLAG_MMIC_STRIPPED |
-+			     RX_FLAG_MIC_STRIPPED |
-+			     RX_FLAG_ICV_STRIPPED |
-+			     RX_FLAG_PN_VALIDATED);
+@@ -414,7 +414,8 @@ static int ath12k_wifi7_dp_rx_h_mpdu(struct ath12k_pdev_dp *dp_pdev,
+ 			     RX_FLAG_MMIC_STRIPPED |
+ 			     RX_FLAG_MIC_STRIPPED |
+ 			     RX_FLAG_ICV_STRIPPED |
+-			     RX_FLAG_PN_VALIDATED);
++			     RX_FLAG_PN_VALIDATED |
++			     RX_FLAG_8023);
  
  	if (err_bitmap & HAL_RX_MPDU_ERR_FCS)
  		rx_status->flag |= RX_FLAG_FAILED_FCS_CRC;
