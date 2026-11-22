@@ -1,84 +1,76 @@
 Authentication-Results: smtp.subspace.kernel.org; arc=none smtp.remote-ip=211.75.126.72
 ARC-Seal: i=1; d=subspace.kernel.org; s=arc20261015; a=rsa-sha256; cv=none;
-	t=1795316368;
-	b=M9mGSjHsCSzB/3e8KXMEOnDM0ypF6CGOmNHtf/PFeXKS6/7LE+sKqY1jWhDAci1xjkyB
-	 Znyupu6Bbk7ZhN7S3HtATz5l0Pk63+VgYLEQLCOpQXL5N8R4aZ/qwrjAtcUkGO10daxHV
-	 J4rstW57h47RnzNz0/neNCF1KpLAugChsBcAAxutTC0xVOKN3xyKroYT2IZ5tcM0K0z9V
-	 5U8K4mohcj4gPfs+CFBRADks37lQcMW9ptS0D5+wSrKJBgwRqNPY/2+vwX0IbqvEYp2zd
-	 wMNFfsLzYogZmvOTp6+K/MeX/Kjk0el6NJ+UMMxqwCYh5Bh6hlWJMSNGMkBFw4dkpkg==
+	t=1795316891;
+	b=uAzd24DpUSYUvWn6dUxlrAJ2oe75ix24lzNH4lsmpSLYsX9y+cFrjaQvnSLuNalJ5XZb
+	 5iFYlExJYCKBhkQm3l6sxXH7Smt6mh7YZdOjKVacbAfgVf/E2wVILUChOjl60/nbfHcrL
+	 OQemd2TTyxx+EjsQKnK8UI6Us2CGGZUhc5Y/9ggKZPiFX33DdtWBAv/edyZgecQVubir7
+	 3iH5L74lvYq3BL/0oIrCPW5KNqSzyt1a0vg32sG2zSOHR8cFerDU3jBi/JU+wDfsQVWd7
+	 UyvwaBqYEjbwWnv+m0o5LomNWbeY4JN/wrZG5dddZ7zAZkze8UFT09WC4aJLnqrxXDQ==
 ARC-Message-Signature: i=1; d=subspace.kernel.org; s=arc20261015;
-	a=rsa-sha256; c=relaxed/relaxed; t=1795316368;
+	a=rsa-sha256; c=relaxed/relaxed; t=1795316891;
 	h=DMARC-Filter:X-SpamFilter-By:DKIM-Signature:Received:Received:
-	 Received:Received:From:To:CC:Subject:Thread-Topic:Thread-Index:Date:
-	 Message-ID:References:In-Reply-To:Accept-Language:Content-Language:
+	 Received:From:To:CC:Subject:Thread-Topic:Thread-Index:Date:Message-ID:
+	 References:In-Reply-To:Accept-Language:Content-Language:
 	 x-originating-ip:Content-Type:Content-Transfer-Encoding:MIME-Version;
-	bh=yYeJQEscc2TA+KV1k2VlRtn2U3s34MESL1yXvefpdxU=;
-	b=estfsIvlUorcT1h2pg4s5DAob1LqT5nAjF30dnyaZjGBQFd5YCHxIr8/7qvJtjsjsbZu
-	 6GpxcoHUIUlqj/4hKjvB+1ibTdZIYzME84A6lXnBoUrfJkTOxXu10iNtFQ7cnLlTlbPXk
-	 7qnWj2alFx0pamukAXbJG1TYzqOweJFM2QsU3anHS5202eamhQfvaYqMK3ZEWLg2j2G38
-	 7uxxj14lUe7Y/SY+m4VxPkEVJyFOcGPecYoMnXDbb5EaLWh0xIVkQQvp1EBTce61aFBVU
-	 JyHHux6XcbomAl8BnVJu8DVodGoZhKewZf3CKQnUg+2GKxn3mhnVn28iPKReWSyC41w==
+	bh=p4rn/j1aFkKLkcjb+I+46qsh3r/NDIidwKQ4N2v33tw=;
+	b=x85d4Lf/tc6MpA24W1cx3pS4aJyXxzpOAHkujPlKTpr1W6r3glhH4d0DGKJMmuUSNvY8
+	 8MXxLkuC4WcCsVlj8Z2hQq2E1VzHH2WePAhv1u4zYdlHBujhe5CY+KqAZNlx57irI3cnE
+	 FxFAVCCPZcAzN4/C0LX8KKeXiq3+vxNFSSpC3tqY4vkniHn4QmcxvKrCnjQe6kFx/sLi8
+	 0irK+FnepcTZsUxHEO3tI3bAnF7MEk2byUbE7wRbJLbVCrhcXwlPvyx+qBhUsxpEA8LbS
+	 /qPa47RtZHEFxu7ru/QqTvkEt/5HXdKAEF0X4FM749FdN0hAHDqujMEYcBMcdgdyFRQ==
 ARC-Authentication-Results: i=1; smtp.subspace.kernel.org; 
 	dmarc=pass header.from=realtek.com;
 	spf=pass smtp.mailfrom=realtek.com;
-	dkim=pass header.d=realtek.com header.i=@realtek.com header.a=rsa-sha256 header.s=dkim header.b=DNGSLDUz;
+	dkim=pass header.d=realtek.com header.i=@realtek.com header.a=rsa-sha256 header.s=dkim header.b=rjiwZ82s;
 	arc=none smtp.remote-ip=211.75.126.72
 Received: from rtits2.realtek.com.tw (rtits2.realtek.com [211.75.126.72])
 	(using TLSv1.3 with cipher TLS_AES_256_GCM_SHA384 (256/256 bits)
 	 key-exchange X25519 server-signature ECDSA (prime256v1) server-digest SHA256)
 	(No client certificate requested)
-	by smtp.subspace.kernel.org (Postfix) with ESMTPS id B451F606A320;
-	Sun, 22 Nov 2026 02:59:27 +0000 (UTC)
-DMARC-Filter: OpenDMARC Filter v1.4.2 smtp.subspace.kernel.org B451F606A320
+	by smtp.subspace.kernel.org (Postfix) with ESMTPS id 119FF606A320
+	for <linux-wireless@vger.kernel.org>; Sun, 22 Nov 2026 03:08:09 +0000 (UTC)
+DMARC-Filter: OpenDMARC Filter v1.4.2 smtp.subspace.kernel.org 119FF606A320
 Authentication-Results: smtp.subspace.kernel.org; dmarc=pass (p=none dis=none) header.from=realtek.com
 Authentication-Results: smtp.subspace.kernel.org; spf=pass smtp.mailfrom=realtek.com
 Authentication-Results: smtp.subspace.kernel.org;
-	dkim=pass (2048-bit key, unprotected) header.d=realtek.com header.i=@realtek.com header.a=rsa-sha256 header.s=dkim header.b=DNGSLDUz
-X-SpamFilter-By: ArmorX SpamTrap 5.80 with qID 6AM2wsAY3533307, This message is accepted by code: ctloc85258
+	dkim=pass (2048-bit key) header.d=realtek.com header.i=@realtek.com header.a=rsa-sha256 header.s=dkim header.b=rjiwZ82s
+X-SpamFilter-By: ArmorX SpamTrap 5.80 with qID 6AM385Hc8536540, This message is accepted by code: ctloc85258
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=realtek.com; s=dkim;
-	t=1795316334; bh=yYeJQEscc2TA+KV1k2VlRtn2U3s34MESL1yXvefpdxU=;
+	t=1795316885; bh=p4rn/j1aFkKLkcjb+I+46qsh3r/NDIidwKQ4N2v33tw=;
 	h=From:To:CC:Subject:Date:Message-ID:References:In-Reply-To:
 	 Content-Type:Content-Transfer-Encoding:MIME-Version;
-	b=DNGSLDUzcSMPNfbNJMM2JtvGbRJURWUmoJR6TtBlA2r7q8KDNOM/LAlBxx0SlM6I5
-	 RfuEwm+AzQUWkPmRkmPQhkqFRR1l6mJCiNNhjp6VrNGV4ZEPTe0xZz9dPfHIJnBhgr
-	 HaWNL+9+7LAvNV1JmGwhnBWe1O9ytrmLyeOQ5Igv2eXSm6QVO8sjFAvMsoLDkCbLWe
-	 /yPJC/ljNYxB58Zy0lZ9lfDSaW0nOqY7A6FE5sYrQVyck0jFHg4RScm00ZGHYCjwfj
-	 uUwAC3wkYxNT7tifTKNYu6Sgnvn+2ChQZhGcKnigwHR7pmvYJxH14M0aTihryGjg/F
-	 eQb+H1m9Ykm9w==
-Received: from mail.realtek.com (rtkexhmbs02.realtek.com.tw[172.21.6.41])
-	by rtits2.realtek.com.tw (8.15.2/3.29/5.94) with ESMTPS id 6AM2wsAY3533307
+	b=rjiwZ82s60DmRPPSQjUFpTyLSwzi7xlox01NOegA4ZOgTZdaHuOHulbhXnVbISNy8
+	 uATkXeALDzOJpIdH+I7xxbhdR8GL0RNhEbcQzWrjaP7VVUnKX7KtmzFZ6rUjBGW5eY
+	 0J+Z3pataEJM5R/80p2EuV6JWA/jJJncEdud5bynLydwqEfs3HzNRGCNvRhzC1rf13
+	 9iyxBu67cghZjQWo+UtHf5koGKGbpscTv/hOtZVUy2y3Jc+HBYe0iWHeKZhAfJHcz9
+	 r3AbOv8a8c9TQ7R4afFfwXTHiqD/1mUJ7gJWi9s3X3DgyOxXbHGkJ1tETRLPMnO6QZ
+	 fgyesGNwN5spw==
+Received: from mail.realtek.com (rtkexhmbs03.realtek.com.tw[10.21.1.53])
+	by rtits2.realtek.com.tw (8.15.2/3.29/5.94) with ESMTPS id 6AM385Hc8536540
 	(version=TLSv1.2 cipher=ECDHE-RSA-AES256-GCM-SHA384 bits=256 verify=FAIL);
-	Sun, 22 Nov 2026 10:58:54 +0800
-Received: from RTKEXHMBS01.realtek.com.tw (172.21.6.40) by
- RTKEXHMBS02.realtek.com.tw (172.21.6.41) with Microsoft SMTP Server
- (version=TLS1_2, cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id
- 15.2.2562.56; Sun, 22 Nov 2026 10:58:54 +0800
+	Sun, 22 Nov 2026 11:08:05 +0800
 Received: from RTKEXHMBS06.realtek.com.tw (10.21.1.56) by
- RTKEXHMBS01.realtek.com.tw (172.21.6.40) with Microsoft SMTP Server
+ RTKEXHMBS03.realtek.com.tw (10.21.1.53) with Microsoft SMTP Server
  (version=TLS1_2, cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id
- 15.2.2562.56; Sun, 22 Nov 2026 10:58:54 +0800
+ 15.2.2562.56; Sun, 22 Nov 2026 11:08:05 +0800
 Received: from RTKEXHMBS06.realtek.com.tw ([fe80::eeeb:c765:ca73:5eef]) by
  RTKEXHMBS06.realtek.com.tw ([fe80::eeeb:c765:ca73:5eef%10]) with mapi id
- 15.02.2562.056; Sun, 22 Nov 2026 10:58:54 +0800
+ 15.02.2562.056; Sun, 22 Nov 2026 11:08:05 +0800
 From: Ping-Ke Shih <pkshih@realtek.com>
-To: "niko3x@proton.me" <niko3x@proton.me>, Jes Sorensen
+To: Anvik Loitongbam <permissiontogallop@gmail.com>, Jes Sorensen
 	<Jes.Sorensen@gmail.com>
-CC: "linux-wireless@vger.kernel.org" <linux-wireless@vger.kernel.org>,
-	"linux-kernel@vger.kernel.org" <linux-kernel@vger.kernel.org>
-Subject: RE: [PATCH rtw-next 2/2] wifi: rtl8xxxu: report real TX status on
- RTL8188CU/RTL8192CU
-Thread-Topic: [PATCH rtw-next 2/2] wifi: rtl8xxxu: report real TX status on
- RTL8188CU/RTL8192CU
-Thread-Index: AQHdeHMhg+5NsNHWPEW0tvIoEIFEvrc5XnCQ
-Date: Sun, 22 Nov 2026 02:58:54 +0000
-Message-ID: <87a031c8ede14efd9c83bc8206fd2aac@realtek.com>
-References: <20261120-b4-tx-status-v1-0-abdab21c77fe@proton.me>
- <20261120-b4-tx-status-v1-2-abdab21c77fe@proton.me>
-In-Reply-To: <20261120-b4-tx-status-v1-2-abdab21c77fe@proton.me>
+CC: "linux-wireless@vger.kernel.org" <linux-wireless@vger.kernel.org>
+Subject: RE: [PATCH] wifi: rtl8xxxu: validate firmware size before parsing
+Thread-Topic: [PATCH] wifi: rtl8xxxu: validate firmware size before parsing
+Thread-Index: AQHdedwHDEwOXjHDR0ahvlL+iBapcbc5aCpw
+Date: Sun, 22 Nov 2026 03:08:05 +0000
+Message-ID: <6fad320e93974775b64f35460df423f8@realtek.com>
+References: <20261121170559.149274-1-permissiontogallop@gmail.com>
+In-Reply-To: <20261121170559.149274-1-permissiontogallop@gmail.com>
 Accept-Language: en-US, zh-TW
 Content-Language: zh-TW
-Content-Type: text/plain; charset="utf-8"
-Content-Transfer-Encoding: base64
+Content-Type: text/plain; charset="us-ascii"
+Content-Transfer-Encoding: quoted-printable
 X-Mailing-List: linux-wireless@vger.kernel.org
 List-Id: <linux-wireless.vger.kernel.org>
 List-Post: <mailto:linux-wireless@vger.kernel.org>
@@ -89,148 +81,51 @@ List-Owner: <mailto:linux-wireless+owner@vger.kernel.org>
 Precedence: list
 MIME-Version: 1.0
 
-QWhtZXQgWmVyZW4gdmlhIEI0IFJlbGF5IDxkZXZudWxsK25pa28zeC5wcm90b24ubWVAa2VybmVs
-Lm9yZz4gd3JvdGU6DQoNClsuLi5dDQoNCj4gZGlmZiAtLWdpdCBhL2RyaXZlcnMvbmV0L3dpcmVs
-ZXNzL3JlYWx0ZWsvcnRsOHh4eHUvODE5MmMuYw0KPiBiL2RyaXZlcnMvbmV0L3dpcmVsZXNzL3Jl
-YWx0ZWsvcnRsOHh4eHUvODE5MmMuYw0KPiBpbmRleCA1MDgzMjJhOGYzLi40MDFjYzFmNmRhIDEw
-MDY0NA0KPiAtLS0gYS9kcml2ZXJzL25ldC93aXJlbGVzcy9yZWFsdGVrL3J0bDh4eHh1LzgxOTJj
-LmMNCj4gKysrIGIvZHJpdmVycy9uZXQvd2lyZWxlc3MvcmVhbHRlay9ydGw4eHh4dS84MTkyYy5j
-DQo+IEBAIC03MjYsNiArNzI2LDcgQEAgc3RydWN0IHJ0bDh4eHh1X2ZpbGVvcHMgcnRsODE5MmN1
-X2ZvcHMgPSB7DQoNCm1vdmUgLmhhc19jMmhldnRfdHhfcmVwb3J0IGhlcmUgdG8gYmUgYWxtb3N0
-IHRoZSBzYW1lIG9yZGVyIGFzDQpkZWZpbml0aW9uIGluIHN0cnVjdCBydGw4eHh4dV9maWxlb3Bz
-Lg0KDQo+ICAgICAgICAgLmh3X2ZlYXR1cmVfcmVwb3J0ID0gMCwNCj4gICAgICAgICAubWF4X21h
-Y2lkX251bSA9IDMyLA0KPiAgICAgICAgIC5tYXhfc2VjX2NhbV9udW0gPSAzMiwNCj4gKyAgICAg
-ICAuaGFzX2MyaGV2dF90eF9yZXBvcnQgPSAxLA0KPiAgICAgICAgIC5hZGRhXzF0X2luaXQgPSAw
-eDBiMWIyNWEwLA0KPiAgICAgICAgIC5hZGRhXzF0X3BhdGhfb24gPSAweDBiZGIyNWEwLA0KPiAg
-ICAgICAgIC5hZGRhXzJ0X3BhdGhfb25fYSA9IDB4MDRkYjI1YTQsDQo+IGRpZmYgLS1naXQgYS9k
-cml2ZXJzL25ldC93aXJlbGVzcy9yZWFsdGVrL3J0bDh4eHh1L2NvcmUuYw0KPiBiL2RyaXZlcnMv
-bmV0L3dpcmVsZXNzL3JlYWx0ZWsvcnRsOHh4eHUvY29yZS5jDQo+IGluZGV4IGFiMjgxODk4NmMu
-LjM2ZjBhMjY2YWYgMTAwNjQ0DQo+IC0tLSBhL2RyaXZlcnMvbmV0L3dpcmVsZXNzL3JlYWx0ZWsv
-cnRsOHh4eHUvY29yZS5jDQo+ICsrKyBiL2RyaXZlcnMvbmV0L3dpcmVsZXNzL3JlYWx0ZWsvcnRs
-OHh4eHUvY29yZS5jDQo+IEBAIC01MTQ4LDYgKzUxNDgsMTA1IEBAIHN0YXRpYyB2b2lkIHJ0bDh4
-eHh1X2ZyZWVfdHhfdXJiKHN0cnVjdCBydGw4eHh4dV9wcml2ICpwcml2LA0KPiAgICAgICAgIHNw
-aW5fdW5sb2NrX2lycXJlc3RvcmUoJnByaXYtPnR4X3VyYl9sb2NrLCBmbGFncyk7DQo+ICB9DQo+
-IA0KPiArLyoNCj4gKyAqIEdlbjEgY2hpcHMgY2FuIHJlcG9ydCB0aGUgQUNLIHN0YXR1cyBvZiBh
-IGZyYW1lIHRocm91Z2ggdGhlIEMySCBldmVudA0KPiArICogbWFpbGJveC4gVGhlcmUgaXMgbm8g
-d2F5IHRvIHRlbGwgd2hpY2ggZnJhbWUgYSByZXBvcnQgYmVsb25ncyB0bywgc28NCj4gKyAqIG9u
-bHkgb25lIGZyYW1lIGF0IGEgdGltZSBhc2tzIGZvciBvbmUsIHVudGlsIGl0cyByZXBvcnQgYXJy
-aXZlcy4gVGhlDQo+ICsgKiByZXBvcnQgY29tZXMgd2hlbiB0aGUgZnJhbWUgaXMgZG9uZSwgd2hp
-Y2ggY2FuIHRha2Ugc2Vjb25kcyB3aXRoIG1hbnkNCj4gKyAqIHJldHJpZXMsIHNvIHdhaXQgZm9y
-IGl0IHJhdGhlciB0aGFuIHJpc2sgdGFraW5nIGl0IGZvciB0aGUgbmV4dCBmcmFtZS4NCj4gKyAq
-Lw0KPiArI2RlZmluZSBSVEw4WFhYVV9UWF9SRVBPUlRfVElNRU9VVCAgICAgbXNlY3NfdG9famlm
-ZmllcygxMDAwMCkNCj4gKw0KPiArc3RhdGljIGJvb2wgcnRsOHh4eHVfdHhfcmVwb3J0X2NsYWlt
-KHN0cnVjdCBydGw4eHh4dV9wcml2ICpwcml2LA0KPiArICAgICAgICAgICAgICAgICAgICAgICAg
-ICAgICAgICAgICAgc3RydWN0IHNrX2J1ZmYgKnNrYikNCj4gK3sNCj4gKyAgICAgICBzdHJ1Y3Qg
-aWVlZTgwMjExX3R4X2luZm8gKnR4X2luZm8gPSBJRUVFODAyMTFfU0tCX0NCKHNrYik7DQo+ICsg
-ICAgICAgc3RydWN0IGllZWU4MDIxMV9oZHIgKmhkciA9IChzdHJ1Y3QgaWVlZTgwMjExX2hkciAq
-KXNrYi0+ZGF0YTsNCj4gKyAgICAgICB1bnNpZ25lZCBsb25nIGZsYWdzOw0KPiArICAgICAgIGJv
-b2wgY2xhaW1lZCA9IGZhbHNlOw0KDQpJbiByZXZlcnNlIFgnbWFzIG9yZGVyLg0KDQo+ICsNCj4g
-KyAgICAgICBpZiAoIXByaXYtPmZvcHMtPmhhc19jMmhldnRfdHhfcmVwb3J0IHx8DQo+ICsgICAg
-ICAgICAgICEodHhfaW5mby0+ZmxhZ3MgJiBJRUVFODAyMTFfVFhfQ1RMX1JFUV9UWF9TVEFUVVMp
-IHx8DQo+ICsgICAgICAgICAgICh0eF9pbmZvLT5mbGFncyAmIElFRUU4MDIxMV9UWF9DVExfTk9f
-QUNLKSB8fA0KPiArICAgICAgICAgICBpc19tdWx0aWNhc3RfZXRoZXJfYWRkcihoZHItPmFkZHIx
-KSkNCj4gKyAgICAgICAgICAgICAgIHJldHVybiBmYWxzZTsNCj4gKw0KPiArICAgICAgIHNwaW5f
-bG9ja19pcnFzYXZlKCZwcml2LT50eF9yZXBvcnRfbG9jaywgZmxhZ3MpOw0KPiArICAgICAgIGlm
-ICghcHJpdi0+dHhfcmVwb3J0X3NrYikgew0KPiArICAgICAgICAgICAgICAgcHJpdi0+dHhfcmVw
-b3J0X3NrYiA9IHNrYjsNCj4gKyAgICAgICAgICAgICAgIGNsYWltZWQgPSB0cnVlOw0KPiArICAg
-ICAgIH0NCj4gKyAgICAgICBzcGluX3VubG9ja19pcnFyZXN0b3JlKCZwcml2LT50eF9yZXBvcnRf
-bG9jaywgZmxhZ3MpOw0KPiArDQo+ICsgICAgICAgcmV0dXJuIGNsYWltZWQ7DQo+ICt9DQo+ICsN
-Cj4gK3N0YXRpYyBib29sIHJ0bDh4eHh1X3R4X3JlcG9ydF9yZWxlYXNlKHN0cnVjdCBydGw4eHh4
-dV9wcml2ICpwcml2LA0KPiArICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICBz
-dHJ1Y3Qgc2tfYnVmZiAqc2tiKQ0KPiArew0KPiArICAgICAgIHVuc2lnbmVkIGxvbmcgZmxhZ3M7
-DQo+ICsgICAgICAgYm9vbCBjbGFpbWVkOw0KPiArDQo+ICsgICAgICAgc3Bpbl9sb2NrX2lycXNh
-dmUoJnByaXYtPnR4X3JlcG9ydF9sb2NrLCBmbGFncyk7DQo+ICsgICAgICAgY2xhaW1lZCA9IHBy
-aXYtPnR4X3JlcG9ydF9za2IgPT0gc2tiOw0KPiArICAgICAgIGlmIChjbGFpbWVkKQ0KPiArICAg
-ICAgICAgICAgICAgcHJpdi0+dHhfcmVwb3J0X3NrYiA9IE5VTEw7DQo+ICsgICAgICAgc3Bpbl91
-bmxvY2tfaXJxcmVzdG9yZSgmcHJpdi0+dHhfcmVwb3J0X2xvY2ssIGZsYWdzKTsNCj4gKw0KPiAr
-ICAgICAgIHJldHVybiBjbGFpbWVkOw0KPiArfQ0KPiArDQo+ICtzdGF0aWMgdm9pZCBydGw4eHh4
-dV90eF9yZXBvcnRfd29yayhzdHJ1Y3Qgd29ya19zdHJ1Y3QgKndvcmspDQoNCkknZCBwb2ludCBv
-dXQgdGhpcyBpcyBhIHBvbGxpbmcgd29yay4gSG93IGFib3V0IG5hbWluZyBydGw4eHh4dV90eF9y
-ZXBvcnRfcG9sbF93b3JrKCk/IA0KDQo+ICt7DQo+ICsgICAgICAgc3RydWN0IHJ0bDh4eHh1X3By
-aXYgKnByaXYgPSBjb250YWluZXJfb2Yod29yaywgc3RydWN0IHJ0bDh4eHh1X3ByaXYsDQo+ICsg
-ICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgdHhfcmVwb3J0
-X3dvcmsud29yayk7DQo+ICsgICAgICAgc3RydWN0IGllZWU4MDIxMV90eF9pbmZvICp0eF9pbmZv
-Ow0KPiArICAgICAgIHVuc2lnbmVkIGxvbmcgZmxhZ3MsIGVsYXBzZWQ7DQo+ICsgICAgICAgdTgg
-cmV0cnkgPSAwLCBzdGF0dXMgPSAwOw0KPiArICAgICAgIGJvb2wgcmVwb3J0ZWQgPSBmYWxzZTsN
-Cj4gKyAgICAgICBzdHJ1Y3Qgc2tfYnVmZiAqc2tiOw0KPiArDQo+ICsgICAgICAgaWYgKHJ0bDh4
-eHh1X3JlYWQ4KHByaXYsIFJFR19DMkhFVlRfQ0xFQVIpID09IEMySF9FVlRfRldfQ0xPU0UpIHsN
-Cj4gKyAgICAgICAgICAgICAgIHU4IGlkID0gcnRsOHh4eHVfcmVhZDgocHJpdiwgUkVHX0MySEVW
-VF9NU0dfTk9STUFMKTsNCj4gKw0KPiArICAgICAgICAgICAgICAgaWYgKChpZCAmIEMySF9FVlRf
-SURfTUFTSykgPT0gQzJIX0VWVF9DQ1hfVFhfUlBUKSB7DQo+ICsgICAgICAgICAgICAgICAgICAg
-ICAgIHJldHJ5ID0gcnRsOHh4eHVfcmVhZDgocHJpdiwgUkVHX0MySEVWVF9NU0dfTk9STUFMICsg
-MiArDQo+ICsgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAg
-ICAgQ0NYX1RYX1JQVF9SRVRSWSk7DQo+ICsgICAgICAgICAgICAgICAgICAgICAgIHN0YXR1cyA9
-IHJ0bDh4eHh1X3JlYWQ4KHByaXYsIFJFR19DMkhFVlRfTVNHX05PUk1BTCArIDIgKw0KPiArICAg
-ICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICBDQ1hfVFhf
-UlBUX1NUQVRVUyk7DQo+ICsgICAgICAgICAgICAgICAgICAgICAgIHJlcG9ydGVkID0gdHJ1ZTsN
-Cj4gKyAgICAgICAgICAgICAgIH0NCj4gKyAgICAgICAgICAgICAgIHJ0bDh4eHh1X3dyaXRlOChw
-cml2LCBSRUdfQzJIRVZUX0NMRUFSLCBDMkhfRVZUX0hPU1RfQ0xPU0UpOw0KPiArICAgICAgIH0N
-Cj4gKw0KPiArICAgICAgIGVsYXBzZWQgPSBqaWZmaWVzIC0gcHJpdi0+dHhfcmVwb3J0X3N0YXJ0
-Ow0KPiArICAgICAgIGlmICghcmVwb3J0ZWQgJiYgZWxhcHNlZCA8IFJUTDhYWFhVX1RYX1JFUE9S
-VF9USU1FT1VUKSB7DQo+ICsgICAgICAgICAgICAgICAvKiBNb3N0IGZyYW1lcyBhcmUgZG9uZSB3
-aXRoaW4gYSBmZXcgbXMsIHBvbGwgb2Z0ZW4gYXQgZmlyc3QgKi8NCj4gKyAgICAgICAgICAgICAg
-IGllZWU4MDIxMV9xdWV1ZV9kZWxheWVkX3dvcmsocHJpdi0+aHcsICZwcml2LT50eF9yZXBvcnRf
-d29yaywNCj4gKyAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgZWxh
-cHNlZCA8IG1zZWNzX3RvX2ppZmZpZXMoMjApID8NCj4gKyAgICAgICAgICAgICAgICAgICAgICAg
-ICAgICAgICAgICAgICAgICAgICAgMSA6IG1zZWNzX3RvX2ppZmZpZXMoMTApKTsNCj4gKyAgICAg
-ICAgICAgICAgIHJldHVybjsNCj4gKyAgICAgICB9DQo+ICsNCj4gKyAgICAgICBzcGluX2xvY2tf
-aXJxc2F2ZSgmcHJpdi0+dHhfcmVwb3J0X2xvY2ssIGZsYWdzKTsNCj4gKyAgICAgICBza2IgPSBw
-cml2LT50eF9yZXBvcnRfc2tiOw0KPiArICAgICAgIHByaXYtPnR4X3JlcG9ydF9za2IgPSBOVUxM
-Ow0KPiArICAgICAgIHNwaW5fdW5sb2NrX2lycXJlc3RvcmUoJnByaXYtPnR4X3JlcG9ydF9sb2Nr
-LCBmbGFncyk7DQo+ICsNCj4gKyAgICAgICBpZiAoIXNrYikNCj4gKyAgICAgICAgICAgICAgIHJl
-dHVybjsNCj4gKw0KPiArICAgICAgIHR4X2luZm8gPSBJRUVFODAyMTFfU0tCX0NCKHNrYik7DQo+
-ICsgICAgICAgaWVlZTgwMjExX3R4X2luZm9fY2xlYXJfc3RhdHVzKHR4X2luZm8pOw0KPiArICAg
-ICAgIGlmICghKHR4X2luZm8tPmZsYWdzICYgSUVFRTgwMjExX1RYX0NUTF9JTkpFQ1RFRCkpDQo+
-ICsgICAgICAgICAgICAgICB0eF9pbmZvLT5zdGF0dXMucmF0ZXNbMF0uaWR4ID0gLTE7DQo+ICsg
-ICAgICAgdHhfaW5mby0+c3RhdHVzLnJhdGVzWzBdLmNvdW50ID0gKHJldHJ5ICYgQ0NYX1RYX1JQ
-VF9SRVRSWV9DTlQpICsgMTsNCj4gKyAgICAgICBpZiAoc3RhdHVzICYgQ0NYX1RYX1JQVF9QS1Rf
-T0spDQo+ICsgICAgICAgICAgICAgICB0eF9pbmZvLT5mbGFncyB8PSBJRUVFODAyMTFfVFhfU1RB
-VF9BQ0s7DQo+ICsNCj4gKyAgICAgICBpZWVlODAyMTFfdHhfc3RhdHVzX2lycXNhZmUocHJpdi0+
-aHcsIHNrYik7DQo+ICt9DQo+ICsNCj4gIHN0YXRpYyB2b2lkIHJ0bDh4eHh1X3R4X2NvbXBsZXRl
-KHN0cnVjdCB1cmIgKnVyYikNCj4gIHsNCj4gICAgICAgICBzdHJ1Y3Qgc2tfYnVmZiAqc2tiID0g
-KHN0cnVjdCBza19idWZmICopdXJiLT5jb250ZXh0Ow0KDQpbLi4uXQ0KDQo+IGRpZmYgLS1naXQg
-YS9kcml2ZXJzL25ldC93aXJlbGVzcy9yZWFsdGVrL3J0bDh4eHh1L3J0bDh4eHh1LmgNCj4gYi9k
-cml2ZXJzL25ldC93aXJlbGVzcy9yZWFsdGVrL3J0bDh4eHh1L3J0bDh4eHh1LmgNCj4gaW5kZXgg
-OGNiYWRjZjcxOS4uMzg3ZmZkYzk3MCAxMDA2NDQNCj4gLS0tIGEvZHJpdmVycy9uZXQvd2lyZWxl
-c3MvcmVhbHRlay9ydGw4eHh4dS9ydGw4eHh4dS5oDQo+ICsrKyBiL2RyaXZlcnMvbmV0L3dpcmVs
-ZXNzL3JlYWx0ZWsvcnRsOHh4eHUvcnRsOHh4eHUuaA0KPiBAQCAtMTU0Niw2ICsxNTQ2LDE3IEBA
-IGVudW0gYzJoX2V2dF84NzIzYiB7DQo+ICAgICAgICAgQzJIXzg3MjNCX0ZXX0RFQlVHID0gMHhm
-ZiwNCj4gIH07DQo+IA0KPiArLyogR2VuMSBDMkggZXZlbnRzIGFyZSByZWFkIGZyb20gdGhlIFJF
-R19DMkhFVlRfTVNHX05PUk1BTCBtYWlsYm94ICovDQo+ICsjZGVmaW5lIEMySF9FVlRfSE9TVF9D
-TE9TRSAgICAgICAgICAgICAweDAwDQo+ICsjZGVmaW5lIEMySF9FVlRfRldfQ0xPU0UgICAgICAg
-ICAgICAgICAweGZmDQoNCm1vdmUgdGhlc2UgdG9nZXRoZXIgd2l0aCBSRUdfQzJIRVZUX0NMRUFS
-DQoNCj4gKyNkZWZpbmUgQzJIX0VWVF9JRF9NQVNLICAgICAgICAgICAgICAgICAgICAgICAgR0VO
-TUFTSygzLCAwKQ0KPiArI2RlZmluZSBDMkhfRVZUX0NDWF9UWF9SUFQgICAgICAgICAgICAgMw0K
-DQptb3ZlIHRoZXNlIHRvZ2V0aGVyIHdpdGggUkVHX0MySEVWVF9NU0dfTk9STUFMDQoNCj4gKy8q
-IE9mZnNldHMgaW4gdGhlIENDWCBUWCByZXBvcnQgcGF5bG9hZCwgYWZ0ZXIgdGhlIDIgYnl0ZSBl
-dmVudCBoZWFkZXIgKi8NCg0KQWRkIGEgZGVmaW5pdGlvbiBmb3IgMiBieXRlcz8NCg0KPiArI2Rl
-ZmluZSBDQ1hfVFhfUlBUX1JFVFJZICAgICAgICAgICAgICAgMA0KPiArI2RlZmluZSAgQ0NYX1RY
-X1JQVF9SRVRSWV9DTlQgICAgICAgICAgR0VOTUFTSyg1LCAwKQ0KPiArI2RlZmluZSBDQ1hfVFhf
-UlBUX1NUQVRVUyAgICAgICAgICAgICAgNw0KPiArI2RlZmluZSAgQ0NYX1RYX1JQVF9QS1RfT0sg
-ICAgICAgICAgICAgQklUKDYpDQoNCldpdGggaGllcmFyY2h5Og0KDQojZGVmaW5lIFJFR19DMkhF
-VlRfTVNHX05PUk1BTAkJMHgwMWEwDQojZGVmaW5lICBDMkhfRVZUX0lEX01BU0sJCQlHRU5NQVNL
-KDMsIDApDQojZGVmaW5lICAgQzJIX0VWVF9DQ1hfVFhfUlBUCQkzDQovLyB0aGUgbW9kaWZpZWQg
-bmFtaW5nIGlzIHN0aWxsIG5vdCBnb29kLiBBY3R1YWxseSBpdCBpcyBvZmZzZXQgZnJvbSAweDAx
-YTANCiNkZWZpbmUgIEMySEVWVF9NU0dfQ0NYX1RYX1JQVF9SRVRSWQkJMA0KLy8gdGhlIG1vZGlm
-aWVkIG5hbWluZyBpcyBhbHNvIG5vdCBnb29kLiBDYW4geW91IHRoaW5rIG9mIGl0IGEgYml0Pw0K
-I2RlZmluZSAgIENDWF9UWF9SUFRfUkVUUllfQ05UX01BU0sJCUdFTk1BU0soNSwgMCkNCg0KPiAr
-DQo+ICBlbnVtIGJ0X2luZm9fc3JjXzg3MjNiIHsNCj4gICAgICAgICBCVF9JTkZPX1NSQ184NzIz
-Ql9XSUZJX0ZXID0gMHgwLA0KPiAgICAgICAgICBCVF9JTkZPX1NSQ184NzIzQl9CVF9SU1AgPSAw
-eDEsDQo+IEBAIC0xOTE5LDYgKzE5MzAsMTEgQEAgc3RydWN0IHJ0bDh4eHh1X3ByaXYgew0KPiAg
-ICAgICAgIHN0cnVjdCB3b3JrX3N0cnVjdCBjMmhjbWRfd29yazsNCj4gICAgICAgICBzdHJ1Y3Qg
-c2tfYnVmZl9oZWFkIGMyaGNtZF9xdWV1ZTsNCj4gICAgICAgICBzdHJ1Y3QgZGVsYXllZF93b3Jr
-IHVwZGF0ZV9iZWFjb25fd29yazsNCj4gKyAgICAgICAvKiBGcmFtZSB3YWl0aW5nIGZvciBpdHMg
-VFggcmVwb3J0IGluIHRoZSBDMkggZXZlbnQgbWFpbGJveCAqLw0KPiArICAgICAgIHN0cnVjdCBz
-a19idWZmICp0eF9yZXBvcnRfc2tiOw0KPiArICAgICAgIHNwaW5sb2NrX3QgdHhfcmVwb3J0X2xv
-Y2s7IC8qIHByb3RlY3RzIHR4X3JlcG9ydF9za2IgKi8NCj4gKyAgICAgICBzdHJ1Y3QgZGVsYXll
-ZF93b3JrIHR4X3JlcG9ydF93b3JrOw0KPiArICAgICAgIHVuc2lnbmVkIGxvbmcgdHhfcmVwb3J0
-X3N0YXJ0Ow0KDQpQdXQgaW4gYSBzbWFsbCBncm91cCBsaWtlIHNwaW5sb2NrX3QgdHhfdXJiX2xv
-Y2svcnhfdXJiX2xvY2suDQoNCj4gICAgICAgICBzdHJ1Y3QgcnRsOHh4eHVfYnRjb2V4IGJ0X2Nv
-ZXg7DQo+ICAgICAgICAgc3RydWN0IHJ0bDh4eHh1X3JhX3JlcG9ydCByYV9yZXBvcnQ7DQo+ICAg
-ICAgICAgc3RydWN0IHJ0bDh4eHh1X2Nmb190cmFja2luZyBjZm9fdHJhY2tpbmc7DQo+IEBAIC0y
-MDA5LDYgKzIwMjUsNyBAQCBzdHJ1Y3QgcnRsOHh4eHVfZmlsZW9wcyB7DQo+ICAgICAgICAgY2hh
-ciByeF9kZXNjX3NpemU7DQo+ICAgICAgICAgdTggaGFzX3MwczE6MTsNCj4gICAgICAgICB1OCBo
-YXNfdHhfcmVwb3J0OjE7DQo+ICsgICAgICAgdTggaGFzX2MyaGV2dF90eF9yZXBvcnQ6MTsNCj4g
-ICAgICAgICB1OCBnZW4yX3RoZXJtYWxfbWV0ZXI6MTsNCj4gICAgICAgICB1OCBuZWVkc19mdWxs
-X2luaXQ6MTsNCj4gICAgICAgICB1OCBpbml0X3JlZ19yeGZsdG1hcDoxOw0KPiANCj4gLS0NCj4g
-Mi41Ni4xDQo+IA0KDQpwdy1ib3Q6IGNyDQoNCg0K
+Anvik Loitongbam <permissiontogallop@gmail.com> wrote:
+> rtl8xxxu_load_firmware() copies fw->size bytes and then subtracts the
+> fixed firmware header size from fw->size without checking that the file
+> is large enough.  A short firmware file with a valid signature makes
+> fw_size wrap to a huge size_t; the revision logging then reads the
+> header fields out of bounds, and the download path derives an
+> out-of-bounds data pointer.
+>=20
+> A 2-byte rtlwifi/rtl8192eu_nic.bin containing the 0x92c0 signature,
+
+It looks like you make a fake firmware to trigger KASAN?
+
+> loaded while the driver probes a Foxin RTL8192EU (0bda:818b) passed
+> through to a KASAN guest, reproduces it:
+>=20
+>   BUG: KASAN: slab-out-of-bounds in rtl8xxxu_load_firmware+0x238/0x2ae
+>   Read of size 1
+>   ...
+>   The buggy address is located 4 bytes to the right of
+>   allocated 2-byte region
+>   ...
+>   kmemdup_noprof
+>   rtl8xxxu_load_firmware
+>   rtl8192eu_load_firmware
+>   rtl8xxxu_probe
+>=20
+> Reject firmware smaller than struct rtl8xxxu_firmware_header before
+> copying or parsing it.  With this change the probe fails with -EINVAL
+> and KASAN reports nothing.
+>=20
+> The issue and the initial fix were tested on a Foxin
+> RTL8192EU (0bda:818b) passed through to a KASAN guest.
+> I would be happy to provide the reproducer on request.
+>=20
+> Fixes: 26f1fad29ad9 ("New driver: rtl8xxxu (mac80211)")
+
+If this isn't a real case, I don't want the tag.=20
+
+> Signed-off-by: Anvik Loitongbam <permissiontogallop@gmail.com>
+
+Also, the subject has clearly pointed out the purpose of this
+commit, so reduce the commit message as what it is actually needed.
+Recently, we have a lot of patches to validate boundary. They are
+fine to me, but I don't want much commit message, which is not
+very useful.=20
+
+pw-bot: cr
+
