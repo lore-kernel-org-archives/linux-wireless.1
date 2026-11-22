@@ -1,74 +1,75 @@
 Authentication-Results: smtp.subspace.kernel.org; arc=none smtp.remote-ip=211.75.126.72
 ARC-Seal: i=1; d=subspace.kernel.org; s=arc20261015; a=rsa-sha256; cv=none;
-	t=1795319862;
-	b=YrMyQwRYZMyV6M7kmbnhDpZNxKEii8q//9H4+NGy7G+MLKeg3CdAJ+iIKA+N2vrbseIc
-	 hL4p2pmvhNW7nzyCvP/vVJebM98nhL9kh0du9J4FhRDlXuOOWK1SPyViY2pMoG707d/zJ
-	 O+s96YE/QvUFsAvZfU5fYmJ5zdOl92yZaT5yRBDdt6dOy8/oYWaA5l+/eec3OnFUxqu+v
-	 +pbnUhnO0BY0zcrQRV0P71JydKqEfGezego2c7YGF3RTk4NW+5MQNW/4+4J9Jic4CqjUN
-	 tt3OYKITxplm+0ouqU28uQqmsiKIiNrN8ardCH2iH6gw3/lE16jNKQAmcNkonLJNAcg==
+	t=1795320046;
+	b=Y6g+i+wvpLGtmTi0lKFE/v8q2+u31tstSDJyfG4VY+jX2RRSDWbFFEVIZ99WYeZNZnWM
+	 T7eo43J5ng/Smlgq54eRln01H0tqlqSDzuz24geGIRZJgpG7E4eH91+wFfbA8xMVcHkGI
+	 GF/nZZyKftLwwU6KuSn27CNFgfzyeaXzcVpPRvv/hjjzJQwIOuh841nXI6+rom4Xkwh1F
+	 udR7IyVn1duUaGkJi+OS86g9qatcYE1XXXQxDxELTM6wsWjkPUVju9SiM2LwR85gfSlPs
+	 +VAaJVDdA5/tdiCRvPwTl0Ec6I9KB94eqdJbMNLCmol36MXN8VgocabXtLG+pMfX7FA==
 ARC-Message-Signature: i=1; d=subspace.kernel.org; s=arc20261015;
-	a=rsa-sha256; c=relaxed/relaxed; t=1795319862;
+	a=rsa-sha256; c=relaxed/relaxed; t=1795320046;
 	h=DMARC-Filter:X-SpamFilter-By:DKIM-Signature:Received:Received:
 	 Received:Received:From:To:CC:Subject:In-Reply-To:References:
 	 Message-ID:Date:MIME-Version:Content-Type;
-	bh=kQa4NpVMnO4d9VCkBVxW+Ui76e28zDYBy/qZfk0y2mo=;
-	b=Mes47pIfLGgGVRrULRqeT/05OUWQ7sQLHc8GV3GUqRAkFjVQEoCS5zsr0jLMEgIT0i+C
-	 JSjSMkCri/NRHaHA75XtiRLe2v1eYUFIt+NKSD0U0OLkAJoPVZQrpJELeA/9VnbYuKktf
-	 xIfFpM5lOSVEsfREFZV+JZjJU5ad0HkW+MQLQwyl05wcinsR82vS7FSEb4PJtUyeX/sD+
-	 l6DN+/k8esU/+IhWkXw4NDSBb2VkW30pUR38q2f1v8e2aYNFXd60RKiTfjooJa6t7iRhK
-	 Zu67LwuCy45Bpv9odw42DILaroWVlhxV4ebyDFzYNdsG1xPVAwVp6dYp4oahA7ZZzHA==
+	bh=PdlNbyp9OoCYu3aDlgi4XHynmvr5+VbQ8qEaL7vS2Yw=;
+	b=Mn4q2F/hhZMW688BkjU5JXFZnftLS47+8JSpu7ncxtXLDP+yvga3mhMeVRnA890qyhfF
+	 HR7ZXP8cJWGC4sQnDH/l2nULic4OxT8TRbXhXM8qYIt6eM7gLn5nPpx0wquyS/HE+TGk1
+	 jjmyy3dJpSSVCY+YQ0sMeu834tJZ2njTHRf/GlQTH4yk+sFmhbLGd12Q0uy1gJFNDmP2s
+	 29Ct70THRCnoUpplbyA/k4TkCilkwOOkFtS+a0tm+vkqkZOHwHbFb2UA2oS09B2mSec07
+	 uL7Fa1hp8Skq+2EBy2BVSvKfo6sprr4fzxzbuS6yTnKJ0lDdloyn9nW8CAy0HnOlccQ==
 ARC-Authentication-Results: i=1; smtp.subspace.kernel.org; 
 	dmarc=pass header.from=realtek.com;
 	spf=pass smtp.mailfrom=realtek.com;
-	dkim=pass header.d=realtek.com header.i=@realtek.com header.a=rsa-sha256 header.s=dkim header.b=J6PFsWKI;
+	dkim=pass header.d=realtek.com header.i=@realtek.com header.a=rsa-sha256 header.s=dkim header.b=uigVdpZJ;
 	arc=none smtp.remote-ip=211.75.126.72
 Received: from rtits2.realtek.com.tw (rtits2.realtek.com [211.75.126.72])
 	(using TLSv1.3 with cipher TLS_AES_256_GCM_SHA384 (256/256 bits)
 	 key-exchange X25519 server-signature ECDSA (prime256v1) server-digest SHA256)
 	(No client certificate requested)
-	by smtp.subspace.kernel.org (Postfix) with ESMTPS id C55D5606A320;
-	Sun, 22 Nov 2026 03:57:41 +0000 (UTC)
-DMARC-Filter: OpenDMARC Filter v1.4.2 smtp.subspace.kernel.org C55D5606A320
+	by smtp.subspace.kernel.org (Postfix) with ESMTPS id 6ABEC606A32A;
+	Sun, 22 Nov 2026 04:00:44 +0000 (UTC)
+DMARC-Filter: OpenDMARC Filter v1.4.2 smtp.subspace.kernel.org 6ABEC606A32A
 Authentication-Results: smtp.subspace.kernel.org; dmarc=pass (p=none dis=none) header.from=realtek.com
 Authentication-Results: smtp.subspace.kernel.org; spf=pass smtp.mailfrom=realtek.com
 Authentication-Results: smtp.subspace.kernel.org;
-	dkim=pass (2048-bit key) header.d=realtek.com header.i=@realtek.com header.a=rsa-sha256 header.s=dkim header.b=J6PFsWKI
-X-SpamFilter-By: ArmorX SpamTrap 5.80 with qID 6AM3vPk25548712, This message is accepted by code: ctloc85258
+	dkim=pass (2048-bit key, unprotected) header.d=realtek.com header.i=@realtek.com header.a=rsa-sha256 header.s=dkim header.b=uigVdpZJ
+X-SpamFilter-By: ArmorX SpamTrap 5.80 with qID 6AM40MRK0549783, This message is accepted by code: ctloc85258
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=realtek.com; s=dkim;
-	t=1795319845; bh=kQa4NpVMnO4d9VCkBVxW+Ui76e28zDYBy/qZfk0y2mo=;
+	t=1795320022; bh=PdlNbyp9OoCYu3aDlgi4XHynmvr5+VbQ8qEaL7vS2Yw=;
 	h=From:To:CC:Subject:In-Reply-To:References:Message-ID:Date:
 	 MIME-Version:Content-Type;
-	b=J6PFsWKIz/8wNa0r1FlzuZWiqt7j1WQill2EjkXyCltQ5/nV1Dm2hVFnoG6ch+H0H
-	 p1SYEvdiX5/JhXpkVS6+/rauI7+dnXbeaRrIeY4/iIaG3t/kIJrIY7Q6U5auGjsECv
-	 3XImmwsscI7cqhMcS5CVMWJsH8FXPHHhY5fB1w6rA69zWQ/ryha4vZttqV1hEJbe8D
-	 cYlW59dzOrTYAJipGMsXR1PlgYOaNxFWCwXgQ5zzMm4dREYUtiJHeeK1Pfe02vPCwp
-	 cfQTblFkPvaGD3y40fykZS8SE8eFhAd0FMVWaShSlxvu1XhRf6SA1ot3GICigFp1Bw
-	 GzzAX2l7YSd/A==
+	b=uigVdpZJY7Hky0EF7UuNbPkDmMiQscAYhEUSEzA+o6bKuMXHFeLuWAELEd1Wtkwcp
+	 L4bpxXdihdb1vKPVYLjPhYw1IunOD1EzPO5dLXrAK5XXRyN3Kinx6gRMd54MZuV7/2
+	 4kMTbllRkGSboAP5OOPoA1Eu09oVp7gYkJuAAstyXWnm0/oRUM+rayAud23/LVdp0S
+	 58VKweUeNGxnvLPyf3enoPaXzUczjaNOIrTY3MYjWdScarA8nEwfqW2J/lmbbz+iE+
+	 0tv9TlsqeLziI8hGBsg3Mm7M3ickpBGfD7FIKH9rw9Izb3x787tpYcfWrcL026hjy2
+	 GXcePSVNUEOtw==
 Received: from mail.realtek.com (rtkexhmbs02.realtek.com.tw[172.21.6.41])
-	by rtits2.realtek.com.tw (8.15.2/3.29/5.94) with ESMTPS id 6AM3vPk25548712
+	by rtits2.realtek.com.tw (8.15.2/3.29/5.94) with ESMTPS id 6AM40MRK0549783
 	(version=TLSv1.2 cipher=ECDHE-RSA-AES256-GCM-SHA384 bits=256 verify=FAIL);
-	Sun, 22 Nov 2026 11:57:25 +0800
+	Sun, 22 Nov 2026 12:00:22 +0800
 Received: from RTKEXHMBS05.realtek.com.tw (10.21.1.55) by
  RTKEXHMBS02.realtek.com.tw (172.21.6.41) with Microsoft SMTP Server
  (version=TLS1_2, cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id
- 15.2.2562.56; Sun, 22 Nov 2026 11:57:26 +0800
+ 15.2.2562.56; Sun, 22 Nov 2026 12:00:23 +0800
 Received: from RTKEXHMBS05.realtek.com.tw (10.21.1.55) by
  RTKEXHMBS05.realtek.com.tw (10.21.1.55) with Microsoft SMTP Server
  (version=TLS1_2, cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id
- 15.2.2562.56; Sun, 22 Nov 2026 11:57:26 +0800
+ 15.2.2562.56; Sun, 22 Nov 2026 12:00:23 +0800
 Received: from [127.0.1.1] (172.21.40.75) by RTKEXHMBS05.realtek.com.tw
  (10.21.1.55) with Microsoft SMTP Server (version=TLS1_2,
  cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id 15.2.2562.56 via Frontend
- Transport; Sun, 22 Nov 2026 11:57:26 +0800
+ Transport; Sun, 22 Nov 2026 12:00:23 +0800
 From: Ping-Ke Shih <pkshih@realtek.com>
-To: Shirong Zhao <shxzhaosr@163.com>, Ping-Ke Shih <pkshih@realtek.com>
-CC: <linux-wireless@vger.kernel.org>, Johannes Berg
-	<johannes@sipsolutions.net>, <linux-kernel@vger.kernel.org>
-Subject: Re: [PATCH] wifi: rtw89: read the beacon header from the frame data
-In-Reply-To: <20261118134625.801221-1-shxzhaosr@163.com>
-References: <20261118134625.801221-1-shxzhaosr@163.com>
-Message-ID: <9a5e8c64-9e63-4c94-928d-08dd2e0a2285@RTKEXHMBS05.realtek.com.tw>
-Date: Sun, 22 Nov 2026 11:57:26 +0800
+To: Mehmet Fide <mehmet.fide@gmail.com>, Ping-Ke Shih <pkshih@realtek.com>
+CC: Luka Gejak <luka.gejak@linux.dev>, Po-Hao Huang <phhuang@realtek.com>,
+	Kalle Valo <kvalo@kernel.org>, <linux-wireless@vger.kernel.org>,
+	<linux-kernel@vger.kernel.org>, <mehmet.fide@screeningeagle.com>
+Subject: Re: [PATCH rtw-next] wifi: rtw88: find an associated station without allocating
+In-Reply-To: <20261118104738.2020747-1-mehmet.fide@gmail.com>
+References: <20261118104738.2020747-1-mehmet.fide@gmail.com>
+Message-ID: <99284daa-7c2c-4b5b-a9e5-771b18334aec@RTKEXHMBS05.realtek.com.tw>
+Date: Sun, 22 Nov 2026 12:00:23 +0800
 X-Mailing-List: linux-wireless@vger.kernel.org
 List-Id: <linux-wireless.vger.kernel.org>
 List-Post: <mailto:linux-wireless@vger.kernel.org>
@@ -80,34 +81,32 @@ Precedence: list
 MIME-Version: 1.0
 Content-Type: text/plain
 
-Shirong Zhao <shxzhaosr@163.com> wrote:
+Mehmet Fide <mehmet.fide@gmail.com> wrote:
 
-> rtw89_fw_h2c_update_beacon() and rtw89_fw_h2c_update_beacon_be()
-> cast the sk_buff pointer itself to struct ieee80211_hdr to compute the
-> TIM offset:
+> From: Mehmet Fide <mehmet.fide@screeningeagle.com>
 > 
-> 	hdr = (struct ieee80211_hdr *)skb_beacon;
+> rtw_core_check_sta_active() collects the interfaces with
+> rtw_iterate_vifs(), which allocates an entry per interface with
+> GFP_ATOMIC and skips the interface when that fails. A station skipped
+> this way counts as not active: on BSS_CHANGED_BSSID and in
+> rtw_ops_stop_ap() rtw_clear_op_chan() then drops the operating channel
+> saved for it, and a later hardware scan no longer goes back to that
+> channel between the channels it scans.
 > 
-> The 802.11 header lives in the frame data returned by
-> ieee80211_beacon_get_tim(), not at the start of struct sk_buff, so the
-> cast reads sk_buff metadata instead of frame_control.
+> Both callers hold the wiphy mutex. Walk the active interfaces with
+> for_each_active_interface(), which does not allocate.
 > 
-> For a freshly allocated skb skb->next is NULL, the value read is 0 and
-> ieee80211_hdrlen() happens to return the same 24 bytes as a real beacon
-> header, which masks the bug.  As soon as the skb is on a list the
-> computed header length is garbage and the Group IE offset passed to the
-> firmware is wrong.
-> 
-> Point hdr at skb_beacon->data instead.
-> 
-> Found by code inspection; not observed at runtime.
-> Signed-off-by: Shirong Zhao <shxzhaosr@163.com>
-> Tested-by: Ping-Ke Shih <pkshih@realtek.com>
+> Fixes: 96fbb84de4ff ("wifi: rtw88: handle station mode concurrent scan with AP mode")
+> Reported-by: Luka Gejak <luka.gejak@linux.dev>
+> Closes: https://lore.kernel.org/linux-wireless/9BC4FC13-5723-4711-9798-11E3C285C7F1@linux.dev/
+> Suggested-by: Ping-Ke Shih <pkshih@realtek.com>
+> Signed-off-by: Mehmet Fide <mehmet.fide@screeningeagle.com>
+> Reviewed-by: Luka Gejak <luka.gejak@linux.dev>
 > Acked-by: Ping-Ke Shih <pkshih@realtek.com>
 
 1 patch(es) applied to rtw-next branch of rtw.git, thanks.
 
-3e303ccc30f2 wifi: rtw89: read the beacon header from the skb data
+2edf54bca623 wifi: rtw88: find an associated station without allocating
 
 ---
 https://github.com/pkshih/rtw.git
