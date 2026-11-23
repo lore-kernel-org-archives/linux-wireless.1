@@ -1,47 +1,99 @@
-Authentication-Results: smtp.subspace.kernel.org; arc=none smtp.remote-ip=100.103.45.18
-ARC-Seal: i=1; d=subspace.kernel.org; s=arc20261015; a=rsa-sha256; cv=none;
-	t=1795449550;
-	b=IEiYm4CLyluWX/1q0ttsvE7aN+qoUMld4N73IJtFJrsx2A8GTLhVIdFN+2YfAr42qyBz
-	 i33Afv8ObuuwuBD7x+et47ljPJ9NjinkGX+AanTJP4iH8A25+yzlEWN3dxdrLZDEECPbR
-	 zJBOOzBSiiwDM/TppYPwTwilkcREA/7tF/gQhVEos/y8TcDcBt+PICq64UQJXUU9AhAC6
-	 CbHXrO34+mnHj2cH3YQ7ZEoSOgJGAfWYHdpClpfWAEeo5hme8j+BxCj9AQINxm9RRkx9N
-	 CNpa1hQibeifyluvMZfeV0WriHk8u+MuKWAprEHJNkQFm9Sv4QZUeOboAih+xXv6lww==
-ARC-Message-Signature: i=1; d=subspace.kernel.org; s=arc20261015;
-	a=rsa-sha256; c=relaxed/relaxed; t=1795449550;
-	h=Received:DKIM-Signature:Message-ID:Date:MIME-Version:User-Agent:
-	 Subject:To:Cc:References:From:Content-Language:Autocrypt:In-Reply-To:
-	 Content-Type:Content-Transfer-Encoding;
-	bh=5T3kLA/R/0xtFF9nFDh0Ria4cdzh2STsxbalTTV9D7U=;
-	b=QR1GbrXKIiDKbKV30rb2lGVziinX433lKRmw8vrj2S2vxlInlE2dqpKSiHfjI2r8Stiu
-	 VwrUFY516UFmLB0BrhdyokBjeKJpI56sNnLR7/NLcTns4KD1+7/b5Lh4VVHeo88ENM97b
-	 XnLcry3oAfKzjLwBKqlv/g6OaRV3fz42J0WjCIm80fq96vBpS9nzTMx8cyO9oz8sEd3Ta
-	 D5WCb1HeA8it39b4NKFBHYSJsS+39M4woblV3JzNRdWu4ALuuUay2SDTI3SbXj5mMlP1H
-	 +jFb2M+nJKA6CA4TDYN+8ISWWIoSgQnv53CGa2ZZXVsG/QgxjAti6UvBbPpi4Lrjp6A==
-ARC-Authentication-Results: i=1; smtp.subspace.kernel.org; 
-	dkim=pass header.d=kernel.org header.i=@kernel.org header.a=rsa-sha256 header.s=k20260515 header.b=UI43AN56;
-	arc=none smtp.remote-ip=100.103.45.18
-Received: from smtp.kernel.org (quasi.space.kernel.org [100.103.45.18])
-	(using TLSv1.3 with cipher TLS_AES_256_GCM_SHA384 (256/256 bits)
-	 key-exchange X25519 server-signature ECDSA (prime256v1))
+Authentication-Results: smtp.subspace.kernel.org; arc=fail smtp.remote-ip=209.85.160.49
+ARC-Seal: i=2; d=subspace.kernel.org; s=arc20261015; a=rsa-sha256; cv=fail;
+	t=1795453767;
+	b=XDxorxALQ9eV6e784bW6v3DLjtHbLXXR69aqHJ3JhROwzovfPV4oyyx02TeJPvSvoL9Y
+	 MahB1/2DIf7mKKWuVF92rO4EwdBa8X8yOYtDikJYRLmuKq5KnaMPxixdwm9l5rmGS8m8f
+	 JMB1fu31SiMSQURiljofDWo0HsX675XrRAany2OUHso7JBaHqaGq6xKVAEBEwFqaBpqo4
+	 B7TAvw/24ajF39kyiCnJOu0lh3mx0+YIWzbyYP8aVTO1ez6iC4I/1Zf0RQX4XSHV7QUIa
+	 hpSzI+6OoIOQrlmyy1BiFTdxwnlUah4zpug92AFuUgxQ/5eo874SVFArWPLBLwQkHLg==
+ARC-Message-Signature: i=2; d=subspace.kernel.org; s=arc20261015;
+	a=rsa-sha256; c=relaxed/relaxed; t=1795453767;
+	h=DMARC-Filter:Received:DKIM-Signature:X-Google-DKIM-Signature:
+	 X-Gm-Message-State:X-Gm-Gg:X-Received:MIME-Version:References:
+	 In-Reply-To:From:Date:X-Gm-Features:Message-ID:Subject:To:Cc:
+	 Content-Type;
+	bh=5t5JP4GO9Laq1Lv8Hq7DQj1ZPWjPnYaLMekX3WEbiFg=;
+	b=KeKlyEAyAB3uiKZSJJpm+pi0OG+Hn/5P9XH9oice3v/oNhA4oALAVDp1+EJkt04qqAvw
+	 C9JmqXmIPhTCGr5Z5EiyZyVFAw+5K+uTNpMk/rPIFKmM4H/4nk2+HF/a7aCNgd2mPo8Aw
+	 tdGao8uTOuKFo10j/SScW4+/WhnH/UJp9x7X3tfvYxiGxxRgzrtUH6jJJNYiuv7qodvBP
+	 kTEia5807KL48pLhbsTmbDowzzRZPavEyYcSOeW6+T1wHIgGMdNIBfCesbhPECd51XRQG
+	 n3u0e5U+1SkEcZlkHfCp43nH15swsd8bvgMRM0Z1pieRZXsI4aTCtfn7KeWbHPC8+iA==
+ARC-Authentication-Results: i=2; smtp.subspace.kernel.org; 
+	dmarc=pass header.from=gmail.com;
+	spf=pass smtp.mailfrom=gmail.com;
+	dkim=pass header.d=gmail.com header.i=@gmail.com header.a=rsa-sha256 header.s=20260707 header.b=qlOPitY2;
+	arc=fail smtp.remote-ip=209.85.160.49
+Received: from mail-oa1-f49.google.com (mail-oa1-f49.google.com [209.85.160.49])
+	(using TLSv1.3 with cipher TLS_AES_128_GCM_SHA256 (128/128 bits)
+	 key-exchange X25519 server-signature ECDSA (prime256v1) server-digest SHA256)
 	(No client certificate requested)
-	by smtp.subspace.kernel.org (Postfix) with ESMTPS id 1B1B7606A31A;
-	Mon, 23 Nov 2026 15:59:09 +0000 (UTC)
+	by smtp.subspace.kernel.org (Postfix) with ESMTPS id A70C2606A31E
+	for <linux-wireless@vger.kernel.org>; Mon, 23 Nov 2026 17:09:26 +0000 (UTC)
+DMARC-Filter: OpenDMARC Filter v1.4.2 smtp.subspace.kernel.org A70C2606A31E
+Authentication-Results: smtp.subspace.kernel.org; dmarc=pass (p=none dis=none) header.from=gmail.com
+Authentication-Results: smtp.subspace.kernel.org; spf=pass smtp.mailfrom=gmail.com
 Authentication-Results: smtp.subspace.kernel.org;
-	dkim=pass (2048-bit key) header.d=kernel.org header.i=@kernel.org header.a=rsa-sha256 header.s=k20260515 header.b=UI43AN56
-Received: by smtp.kernel.org (Postfix) with ESMTPSA id DEA261F000C6;
-	Mon, 23 Nov 2026 15:59:03 +0000 (UTC)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=kernel.org;
-	s=k20260515; t=1795449549;
-	bh=5T3kLA/R/0xtFF9nFDh0Ria4cdzh2STsxbalTTV9D7U=;
-	h=Date:Subject:To:Cc:References:From:In-Reply-To;
-	b=UI43AN56Jrf+bRXL7nqszjrCRyxwb/xXhy/+ErQp6gKI8Z565GoghPhYsAwGsPG4F
-	 ik8zT3hvYqUF6Cnn+PMZyM16ROyVqkrqVSVbL2D4dmPkikLDKhuz3DkUTCWY5/Sado
-	 +TaIBoYEUHJ9CkhRkScAwxzeF/4eXlXQt4kA/cLMXitcheQHtjEbLMAamXuZ4Z+ZxH
-	 X8QKQYiqhXRqVemqyanRIFnQM165yHI4LgzN+99MPGitbLc95+VBjmH9Sd9nehwkDS
-	 ElCkgDWKkmN6jjFKsb66y+fbgRFtwj4jW/3rNQHF113lLsi1osBBmS8WUEIePjBj9B
-	 gCmA7hyvt/GSQ==
-Message-ID: <f513c601-ef8b-4524-9c56-d3d121c8df2a@kernel.org>
-Date: Mon, 23 Nov 2026 16:59:01 +0100
+	dkim=pass (2048-bit key) header.d=gmail.com header.i=@gmail.com header.a=rsa-sha256 header.s=20260707 header.b=qlOPitY2
+Received: by mail-oa1-f49.google.com with SMTP id 586e51a60fabf-48e9476e26aso1191342fac.3
+        for <linux-wireless@vger.kernel.org>; Mon, 23 Nov 2026 09:09:26 -0800 (PST)
+ARC-Seal: i=1; a=rsa-sha256; t=1795453765; cv=none;
+        d=google.com; s=arc-20260327;
+        b=lcVURRiqpp2J/lKhc14tbbhQVHAZ9ZiEaW5bDgIn8xlJK/NctoVcTEPmEiSNx4OFn9
+         40BS2D7lP4Aiiux7sEQsa7XTkqSxfjKxo+5Z8un9bQyLcGB+UWOOY3Pm2i/PW2IUsPZf
+         KP/o5COrP9rqm9whNq9aLe8vQD7BLlQuBM4FC2EPygsR6XlJZPcHNURaaxMQkGmhvkt/
+         K0vZ1E7xMp8dNn0X9zf01f0cStwZdkAzppU3mM/XqlPS3tFgrnTFEvSaZ9K4LUFx72Lj
+         C+UwoI1h7gBqWD8B0jd+YNhifKGzp6T1ljjNlyhbfL36RmNUPZoubSaYVZCPuOFGsXva
+         vu5A==
+ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=google.com; s=arc-20260327;
+        h=cc:to:subject:message-id:date:from:in-reply-to:references
+         :mime-version:dkim-signature;
+        bh=5t5JP4GO9Laq1Lv8Hq7DQj1ZPWjPnYaLMekX3WEbiFg=;
+        fh=9SKooS7Xh0GP2ZXb44mApRJQgiMw5tYrdvl4iuXS9XY=;
+        b=cK1oo8ZKS3C2lxzKjbVSOk0yNL10WhoUbAhpNu0xGDtXSwWagNVDQKMsLcMm5C1xKN
+         XYRBUNdv+KIeJBGqhctQ5b0vuoLj3BM2toa50pTPurrhwYXItQZ9XkIPf1XQ2BLcm3j2
+         YSCFfk3nOsJE4ys6gs4P2ZU1FUUvT1tkfhTI8hW6+7wzujenRBTGjCJs3COMM2J/C5ex
+         AdIsVUmbntFS+kwV/ORbWPt9bBbLUgBV4r3b2OTVCPrnXfDGDibtQe5F961wJbW2cIdI
+         dtyRd+8VUISabeaRl7MusuoYoeHD5vylu2XHGd1NbkcL8dt/CSz7gbcdbcXFq7AVu8W7
+         fQHA==;
+        darn=vger.kernel.org
+ARC-Authentication-Results: i=1; mx.google.com; arc=none
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+        d=gmail.com; s=20260707; t=1795453765; x=1796058565; darn=vger.kernel.org;
+        h=content-type:cc:to:subject:message-id:date:from:in-reply-to
+         :references:mime-version:from:to:cc:subject:date:message-id:reply-to
+         :content-type;
+        bh=5t5JP4GO9Laq1Lv8Hq7DQj1ZPWjPnYaLMekX3WEbiFg=;
+        b=qlOPitY2Buuta2NKhfIC8ihTl5lKc/rmhPKb+O41MmVX1/G9X5LG0SwJ0wHRTm/ECo
+         bnXFRpCgzSn5WpxzEKapeCXNqCTyJcZ6Z7gg6yHJnRYLGk42l5ojm56PBBhR8Kmi2MF1
+         cxy1oj4FkbzW2dTONKs9ymlri8fFlP2evX9jIeqdAnQHl1a7+FRPyVLTfyXWaB1MAftd
+         n1xAxUcPqNpPpKxhn6sfFMhgZAIIUT+zYic9WAa3S/cDP9S3wCWvc7cOMZpgqzfM2JQh
+         YpZgCqCzQZbCCaPnUhG60VTzB6V2N4TKxJv5rgHTzc1heE5JusBz7bDg0Oq/2hSZVM40
+         BqTg==
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+        d=1e100.net; s=20260707; t=1795453765; x=1796058565;
+        h=content-type:cc:to:subject:message-id:date:from:in-reply-to
+         :references:mime-version:x-gm-gg:x-gm-message-state:from:to:cc
+         :subject:date:message-id:reply-to:content-type;
+        bh=5t5JP4GO9Laq1Lv8Hq7DQj1ZPWjPnYaLMekX3WEbiFg=;
+        b=Nm0R0EFbcNOUoXcWcfYrhMyY2A6tTDwoED7NCabggbUYdPuKm/C5zM9M2/EHwm8XCm
+         8cWHxG7T+JUY34xfMpymuxTG3KdyOe1COoWT+0/KL74JchnDZW9edvqmXldYV5IBwHg5
+         xSbdURnpE4F3O4LUaWBCEnRGdLxyCn2DGKxA9+ksXTPoaI52r7z2Z5o2gXBiNf8m/StK
+         4BJ9GjTmuxS1mcKSeDOXAoyEzYrW7qGi0C3jh0/unFoSQ526Zn54BDWbrhoaoMcEwr5a
+         w6qEvw9YMRA6iDWQNtuKBi22Gtm4njBD1udJMnIRCg/XS4e+3hLu0XqTuO1WIE0xovFo
+         vJBg==
+X-Gm-Message-State: APuU4Z9jEsgnkPW0GTrRzgNBEO8e42MaGxv+/AoM+43fsAWrlqug3zRg
+	qZMuW+LzOSHSxkdR7qccQGGhy/fZlI6xEehvG5AbuKbQf6AGSmGEgnk3rXxgS4tAFCQysOJ5nrY
+	mYgas6yA3haVeHFaNVQNJma+Rppdzuwc=
+X-Gm-Gg: AZFdTZfw5CDP67jJBFe9nYLN5bFh5tqIMxo3xm4LdqQgJH2HaYEXCDtbyOhublAI2DC
+	bso20i5S0CjViIplrqPrc1IzBkwCzL1ebMvS6Y0rFCLPUaByb9yajFWugfp0hFb/uOqPMkiOLCQ
+	Ba5Sq731yGXrcQbkkYDt6We8vQXhisL1VkU9DplEfue9+r/au0YdIW7mn0kBBGW4RX/zoIyDCfV
+	GuGUM+k8Ay1CZDbL1jnjBjpMNRP6dAo+3wGlCBxEZXgdCw4WkTLIIcfLnlZdi4b/eGXk8TfObkG
+	z0pSUc2vS8rRWFDE6+JjThuU5Cdps1IzYDQxZWHJZa0RwpdB2/2isC0IZ67qZ+J8QslVB+yBwod
+	jkXLjxUs+PB1p65m2PSO2MdZvyNwMoImi1Dr58c4+JZ23+bBqoDZ3zarygYGpZC5jiPhJnkO60V
+	BdgjPmp4+EgMnE/RXyu2lk0WMIHc9MATk=
+X-Received: by 2002:a05:6870:4cc6:b0:4ad:8800:b277 with SMTP id
+ 586e51a60fabf-4bc82c96091mr11693060fac.24.1795453765399; Mon, 23 Nov 2026
+ 09:09:25 -0800 (PST)
 X-Mailing-List: linux-wireless@vger.kernel.org
 List-Id: <linux-wireless.vger.kernel.org>
 List-Post: <mailto:linux-wireless@vger.kernel.org>
@@ -51,132 +103,36 @@ List-Unsubscribe: <mailto:linux-wireless+unsubscribe@vger.kernel.org>
 List-Owner: <mailto:linux-wireless+owner@vger.kernel.org>
 Precedence: list
 MIME-Version: 1.0
-User-Agent: Mozilla Thunderbird
-Subject: Re: [PATCH ath-next v3 01/15] dt-bindings: net: wireless: add ath12k
- wifi device QCN9575
-To: Jeff Johnson <jeff.johnson@oss.qualcomm.com>,
- Madhavan Ganesan <madhavan.ganesan@oss.qualcomm.com>
-Cc: Johannes Berg <johannes@sipsolutions.net>, Rob Herring <robh@kernel.org>,
- Krzysztof Kozlowski <krzk+dt@kernel.org>, Conor Dooley
- <conor+dt@kernel.org>, Jeff Johnson <jjohnson@kernel.org>,
- Nathan Chancellor <nathan@kernel.org>,
- Nick Desaulniers <ndesaulniers@google.com>, Bill Wendling
- <morbo@google.com>, Justin Stitt <justinstitt@google.com>,
- linux-wireless@vger.kernel.org, devicetree@vger.kernel.org,
- ath12k@lists.infradead.org, linux-kernel@vger.kernel.org,
- llvm@lists.linux.dev
-References: <20261118-wifi8_qcn9575_bringup-v3-0-9875d2a3953f@oss.qualcomm.com>
- <20261118-wifi8_qcn9575_bringup-v3-1-9875d2a3953f@oss.qualcomm.com>
- <20261121-lobster-of-unearthly-variation-e75ea9@quoll>
- <f2f50403-fa42-4ee2-bb22-c78309590196@oss.qualcomm.com>
-From: Krzysztof Kozlowski <krzk@kernel.org>
-Content-Language: en-US
-Autocrypt: addr=krzk@kernel.org; keydata=
- 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
-In-Reply-To: <f2f50403-fa42-4ee2-bb22-c78309590196@oss.qualcomm.com>
-Content-Type: text/plain; charset=UTF-8
-Content-Transfer-Encoding: 7bit
+References: <20261120113116.153232-1-hjf3108@gmail.com> <20261120113116.153232-2-hjf3108@gmail.com>
+ <1f9ad0fcc61446fb8ce49ef98d5292e8@realtek.com>
+In-Reply-To: <1f9ad0fcc61446fb8ce49ef98d5292e8@realtek.com>
+From: Jie Feng <hjf3108@gmail.com>
+Date: Tue, 24 Nov 2026 01:08:48 +0800
+X-Gm-Features: Aa3M54oVM5aty3xWPhSZL5u0WDH31EPxrmoQScFCe11fczaCvx4o9mUEUFn49LQ
+Message-ID: <CABOQOSV-vbUazUTwb_Lt11Wv3-47P91OswOsH6r2=ngxOUcAKA@mail.gmail.com>
+Subject: Re: [PATCH rtw-next v3 1/5] wifi: rtlwifi: rc: start no BA session
+ for QoS null frames
+To: Ping-Ke Shih <pkshih@realtek.com>
+Cc: "linux-wireless@vger.kernel.org" <linux-wireless@vger.kernel.org>, 
+	Bitterblue Smith <rtl8821cerfe2@gmail.com>, 
+	"linux-kernel@vger.kernel.org" <linux-kernel@vger.kernel.org>
+Content-Type: text/plain; charset="UTF-8"
 
-On 23/11/2026 16:54, Jeff Johnson wrote:
-> On 11/21/2026 4:37 AM, Krzysztof Kozlowski wrote:
->> On Wed, Nov 18, 2026 at 01:45:24PM +0530, Madhavan Ganesan wrote:
->>> -  The ath12k devices (QCN9274) feature WSI support. WSI stands for
->>> -  WLAN Serial Interface. It is used for the exchange of specific
->>> +  Some ath12k devices (QCN9274 and QCN9575) feature WSI support. WSI stands
->>> +  for WLAN Serial Interface. It is used for the exchange of specific
->>>    control information across radios based on the doorbell mechanism.
->>>    This WSI connection is essential to exchange control information
->>>    among these devices.
->>> @@ -48,6 +48,7 @@ properties:
->>>    compatible:
->>>      enum:
->>>        - pci17cb,1109  # QCN9274
->>> +      - pci17cb,1113  # QCN9575
->>
->> I do not see any user of this (see submitting patches in DT directory
->> for explanation).
-> 
-> For this and the other patches you had comments on, the cover letter describes
-> the approach being taken. What the cover letter is missing is the scope: The
+On Sun, 22 Nov 2026 at 11:28, Ping-Ke Shih <pkshih@realtek.com> wrote:
+>
+>
+> Ho Jie Feng <hjf3108@gmail.com> wrote:
+> > rtl_tx_status() starts a TX BA session for any QoS null data frames,
+> > so these polls start a session even though they do not carry data.
+> > That costs an ADDBA exchange.
+>
+> Will ieee80211_is_data_qos() be more suitable?
 
-No one reads cover letters :), but I skimmed it now and did not find the
-explanation for bindings without user.
+ieee80211_is_data_qos() only tests the QoS bit (0x80), which is also set
+for QoS null (0xC0), so the BA session would still be started.
 
-
-
-> QCN9575 device support plus all of the Wi-Fi 8 functionality is roughly 160
-> patches which have been split into 23 reviewable patchsets with 40K+ LOC. This
-> is just the first patchset in the series.
-> 
-> This is similar to the approach taken when refactoring the original ath12k
-> driver to create the wifi7 folder and wifi generation abstraction. That
-> refactoring was also done as a series of small patchset due to the large
-> number of code changes (102 patches, 20K+ LOC). This was requested by members
-> of the community who wanted to digest the code at a reviewable rate.
-> 
-> One key difference in the wifi8 approach is that for the wifi7 refactor we
-> used a separate branch, ath12k-ng, but for wifi8 we want to directly submit to
-> ath-next. The reason the development team wanted to take this approach is to
-> avoid the pain that was encountered where there was a "big bang" merge of the
-> ath12k-ng feature branch with the ath-next branch at the very end of the
-> development cycle which resulted in a large number of merge conflicts with
-> parallel development and bug fixing. Some of those conflicts were
-> unfortunately not initially resolved correctly, leading to instability in the
-> driver. The hope is that introducing the feature directly into the ath-next
-> branch in an ongoing manner will avoid those issues since each subject matter
-> expert will need to resolve their individual conflicts as their pieces land.
-> 
-> As ath12k maintainer, this approach to incrementally introduce the pieces
-> directly into ath-next, but only enabling them at the end, seems like a better
-> approach than the ath12k-ng approach.
-> 
-> Specifically for the DT issue, the original version of this series vetted
-> internally did have a patch to add the device in the PCI registration table,
-> but it was decided to drop it from this patchset when posting to public. We
-> can also drop the DT patch until the point the PCI registration comes.
-
-Still does not explain why do we want bindings without users...
-
-Best regards,
-Krzysztof
+> >
+> > Check ieee80211_is_data_present() instead, so only frames that carry
+> > data start a BA session.
+>
+>
