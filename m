@@ -1,59 +1,59 @@
 Authentication-Results: smtp.subspace.kernel.org; arc=none smtp.remote-ip=46.4.11.11
 ARC-Seal: i=1; d=subspace.kernel.org; s=arc20261015; a=rsa-sha256; cv=none;
-	t=1795441764;
-	b=aLBHGhJjrhPALA7n9iLshtzUY8yI6QuShMoLJHDVFAciXtrY9kPQEMdMd1PILd1n4VRj
-	 2NTX4PAVje4pI9uaFJ5BSS0vwdBleWHUnu3NUDPDc1efI3drqeHzrU3hYzItpgVOsE9mc
-	 Nx0ouboehvaY41nsJCytTHpETydRZy3CgBj6zxZUT9hteSLbO6HwHff1hnwUyHDOHb6M/
-	 2uCQMQh13oZXwQvC1FR3YpeRXVdHCKg4d6PInfVWIN6OYBaCLMH97HFIBh8GLKJPznF8p
-	 BrO5jw3BgDlviBxDIyREl41Z2RLFu6n4EBFfyXKp6EQx37PiRa2HiVsBJcbOdkZnz1Q==
+	t=1795441765;
+	b=ovqxZwnb1OSn8Zfw0qeOrsyS4+PunwWLFtdjhQD3iKJY+xJeWnb2q5QRb0KBNYFVM1Wq
+	 k70fON40s+hD+XBuVf4PuuOmcxtDdKKJMsaLNPVQHWTWtKt61ONlpDoTEGlyuE4ulMKA3
+	 +c7kap9GLq+doa+cp3fWgOtL5o1BkuiTmK470MhgbEJZ5WBXKKyM15sL8X0TPjkMN4/U8
+	 CgjfqitkN8iCuSnPdXgZX332vjToP4+BxQxEjvNnIbOBJBUPtGINp8vbs4klwnLOQUmSZ
+	 K75n4bVWp5ikM+PkQqk3pc82DXsGAP0XPwpW5V0RJlpReHfwR9F7RHBqLMizmpJ/M0A==
 ARC-Message-Signature: i=1; d=subspace.kernel.org; s=arc20261015;
-	a=rsa-sha256; c=relaxed/relaxed; t=1795441764;
+	a=rsa-sha256; c=relaxed/relaxed; t=1795441765;
 	h=DMARC-Filter:DKIM-Signature:Received:From:To:Subject:Date:Message-ID:
 	 X-Mailer:In-Reply-To:References:MIME-Version:
 	 Content-Transfer-Encoding;
-	bh=78/p+E9vIPfTxPrwIvkOloR19qGfKiTeRWMYxbMsMRY=;
-	b=TMsHg5RNSUHF3gRiB8N3lDMWQl1rMMQ1cGiMAGLhGNccrF3BkW9/F7S1bkL+321hIIuc
-	 karcOaa819arlHoQEC1fmDxpzXkUJg+CAxhfliLiC1+r5gh1IKtVNj39WyZVl81yszLVV
-	 0RBo3CHPN4QyO+sYds8NRzFP3gwGcUIDVioE5JLrN0YeZLuPeG2eisgcd5PMU7qU028+b
-	 VijP/Qof3rlgEBOxyQRyWCBkIWdn5yweHvNGJEs0Pq639iqlX91cIdnXIHgWcFeupjK6z
-	 5x5peOOfkdn+BQZOZuccuE4Wd/1vxhnAphgVElxRobJgFQCNrL+pUot9OZI6QEzw7Gg==
+	bh=W9XIQf5WO4PEAWNjD1poHpKZ6Je6CSNQUG+XksB14gM=;
+	b=SHk6Z3W8UTFxpvpibuG7Vw4Yt4/Pp9q33O30c61oJpCtLyEvTdg4p65qOp2DQfiL3HXQ
+	 /z5Mzz8esJy2NQXe4vRAWT/H01an748U8WuwXsCP5jA14Ciirru51j4DhKw+qW2NvjWbB
+	 pHOt4+xuq2PzM7odZDmFgPN5t5s6XkpOrrEgqDUhIA0/zCCQrtz3bp+AEB+XrHbrCTf1T
+	 QaGmJXy3/N39HuZAUdoSAoowykrLMs8n75EhUj1I/lBm+7e5F1hyN1DARSfpHT6iVOhMS
+	 sqz8+TO2ESGCzGJxdCEPbzHoywjQ4wqZy+W9PaDreQdoh+VBPgQUMeifzyXSn6fyDeA==
 ARC-Authentication-Results: i=1; smtp.subspace.kernel.org; 
 	dmarc=pass header.from=nbd.name;
 	spf=pass smtp.mailfrom=nbd.name;
-	dkim=pass header.d=nbd.name header.i=@nbd.name header.a=rsa-sha256 header.s=20160729 header.b=evna1hCN;
+	dkim=pass header.d=nbd.name header.i=@nbd.name header.a=rsa-sha256 header.s=20160729 header.b=B7kws+yQ;
 	arc=none smtp.remote-ip=46.4.11.11
 Received: from nbd.name (nbd.name [46.4.11.11])
 	(using TLSv1.3 with cipher TLS_AES_256_GCM_SHA384 (256/256 bits)
 	 key-exchange ECDHE (prime256v1) server-signature ECDSA (prime256v1) server-digest SHA256)
 	(No client certificate requested)
-	by smtp.subspace.kernel.org (Postfix) with ESMTPS id EBB3C606A32A
-	for <linux-wireless@vger.kernel.org>; Mon, 23 Nov 2026 13:49:23 +0000 (UTC)
-DMARC-Filter: OpenDMARC Filter v1.4.2 smtp.subspace.kernel.org EBB3C606A32A
+	by smtp.subspace.kernel.org (Postfix) with ESMTPS id 2D370606A32C
+	for <linux-wireless@vger.kernel.org>; Mon, 23 Nov 2026 13:49:24 +0000 (UTC)
+DMARC-Filter: OpenDMARC Filter v1.4.2 smtp.subspace.kernel.org 2D370606A32C
 Authentication-Results: smtp.subspace.kernel.org; dmarc=pass (p=none dis=none) header.from=nbd.name
 Authentication-Results: smtp.subspace.kernel.org; spf=pass smtp.mailfrom=nbd.name
 Authentication-Results: smtp.subspace.kernel.org;
-	dkim=pass (1024-bit key) header.d=nbd.name header.i=@nbd.name header.a=rsa-sha256 header.s=20160729 header.b=evna1hCN
+	dkim=pass (1024-bit key) header.d=nbd.name header.i=@nbd.name header.a=rsa-sha256 header.s=20160729 header.b=B7kws+yQ
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed; d=nbd.name;
 	s=20160729; h=Content-Transfer-Encoding:MIME-Version:References:In-Reply-To:
 	Message-ID:Date:Subject:To:From:Sender:Reply-To:Cc:Content-Type:Content-ID:
 	Content-Description:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc
 	:Resent-Message-ID:List-Id:List-Help:List-Unsubscribe:List-Subscribe:
 	List-Post:List-Owner:List-Archive;
-	bh=78/p+E9vIPfTxPrwIvkOloR19qGfKiTeRWMYxbMsMRY=; b=evna1hCNjGNYa3AJIkC+STcGNH
-	/FWJOju7/rypZnY+Fige1UCet/5287ZK+ur65SUDEquajFGfYhTY4TRLtrVCIjNfSS6Mjdyl7EFDw
-	GA++Z1DRV9mk+wv7rOOh2aQYNudkmHcMz7inPTVcTksgrVdwlF95PiNdh7pK1wf+R92s=;
+	bh=W9XIQf5WO4PEAWNjD1poHpKZ6Je6CSNQUG+XksB14gM=; b=B7kws+yQQr6QO5oYaQ8YLFRnGU
+	YE0rhH0yOYgL4/lElw97lbUrChnDTjQjJsSQ2LyjygJCpunmpSNjeEb61SsTFX+vjy9m16f9h1QQq
+	f/VCAJZOEp/383gGxW3sZ+PslNoOT/NSbtxQAxWSQa5JJwHBoS6J2dWRmlk0vzBivoaY=;
 Received: from p200300cadf1ed20000000000000005bb.dip0.t-ipconnect.de ([2003:ca:df1e:d200::5bb] helo=localhost.localdomain)
 	by ds12 with esmtpsa  (TLS1.3) tls TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384
 	(Exim 4.96)
 	(envelope-from <nbd@nbd.name>)
-	id 1xVUQ6-007NFk-0f
+	id 1xVUQ6-007NFk-2G
 	for linux-wireless@vger.kernel.org;
 	Mon, 23 Nov 2026 14:49:22 +0100
 From: Felix Fietkau <nbd@nbd.name>
 To: linux-wireless@vger.kernel.org
-Subject: [PATCH mt76-next 03/20] wifi: mt76: mt7915: read the PS sync state of mt7986 and mt7981
-Date: Mon, 23 Nov 2026 14:49:02 +0100
-Message-ID: <20261123134920.154270-3-nbd@nbd.name>
+Subject: [PATCH mt76-next 06/20] wifi: mt76: mt7925: leave the BIP check of a group frame to mac80211
+Date: Mon, 23 Nov 2026 14:49:05 +0100
+Message-ID: <20261123134920.154270-6-nbd@nbd.name>
 X-Mailer: git-send-email 2.47.3
 In-Reply-To: <20261123134920.154270-1-nbd@nbd.name>
 References: <20261123134920.154270-1-nbd@nbd.name>
@@ -68,84 +68,60 @@ Precedence: list
 MIME-Version: 1.0
 Content-Transfer-Encoding: 8bit
 
-mt7915_mcu_rx_ps_sync() reads the PS state at payload byte 1, as the
-mt7915 firmware sends it. The mt7986 and mt7981 firmware send a longer
-event. It holds the index as two 16-bit words and the state at payload
-byte 6. Byte 1 is always 0 in that layout.
+mt7925_mac_fill_rx() sets RX_FLAG_DECRYPTED and RX_FLAG_IV_STRIPPED
+for every frame whose RXD carries a cipher. That includes a group
+addressed robust Management frame that the hardware matched with the
+IGTK. The MME of such a frame stays in place, and the driver installs
+the IGTK without an IPN.
 
-Every event of these chips thus clears MT_WCID_FLAG_PS. The host then
-never throttles the TX of a station in power save.
+With both flags, ieee80211_rx_h_decrypt() takes the frame as verified
+and checks neither the MIC nor the IPN. No check of the IPN in the
+hardware is known. A station with PMF can thus accept a replayed group
+Deauthentication or Disassociation of its AP.
 
-Take the layout from the event length of the firmware, and drop an
-event that the buffer does not hold.
+Do not report a frame with a BIP cipher as decrypted. mac80211 then
+selects the IGTK by the key id of the MME, and checks the IPN and the
+MIC. It also removes the MME. For an offloaded IGTK, it uses the CMAC
+key that it keeps.
 
-Fixes: dc930cf883c8 ("wifi: mt76: mt7915: handle MCU PS sync events")
+Fixes: c948b5da6bbe ("wifi: mt76: mt7925: add Mediatek Wi-Fi7 driver for mt7925 chips")
 Signed-off-by: Felix Fietkau <nbd@nbd.name>
 ---
- .../net/wireless/mediatek/mt76/mt7915/mcu.c   | 20 +++++++++++++++++--
- .../net/wireless/mediatek/mt76/mt7915/mcu.h   | 10 ++++++++++
- 2 files changed, 28 insertions(+), 2 deletions(-)
+ drivers/net/wireless/mediatek/mt76/mt7925/mac.c | 7 +++++--
+ 1 file changed, 5 insertions(+), 2 deletions(-)
 
-diff --git a/drivers/net/wireless/mediatek/mt76/mt7915/mcu.c b/drivers/net/wireless/mediatek/mt76/mt7915/mcu.c
-index 6e1c3e5e2fe9..02426feb6182 100644
---- a/drivers/net/wireless/mediatek/mt76/mt7915/mcu.c
-+++ b/drivers/net/wireless/mediatek/mt76/mt7915/mcu.c
-@@ -411,16 +411,32 @@ mt7915_mcu_rx_bcc_notify(struct mt7915_dev *dev, struct sk_buff *skb)
- static void
- mt7915_mcu_rx_ps_sync(struct mt7915_dev *dev, struct sk_buff *skb)
- {
-+	struct mt7915_mcu_ps_notify_v2 *p2 = (void *)skb->data;
- 	struct mt7915_mcu_ps_notify *p = (void *)skb->data;
- 	struct mt76_wcid *wcid;
- 	u16 wcid_idx;
-+	bool v2, ps;
-+
-+	/* the mt7986 and mt7981 firmware send the longer v2 layout */
-+	v2 = le16_to_cpu(p->rxd.len) >=
-+	     sizeof(*p2) - offsetof(struct mt76_connac2_mcu_rxd_hdr, len);
-+	if (skb->len < (v2 ? sizeof(*p2) : sizeof(*p)))
-+		return;
-+
-+	if (v2) {
-+		wcid_idx = le16_to_cpu(p2->wtbl_lower) |
-+			   (le16_to_cpu(p2->wtbl_higher) << 8);
-+		ps = p2->ps_bit;
-+	} else {
-+		wcid_idx = p->wtbl_lower | (p->wtbl_higher << 8);
-+		ps = p->ps_bit;
-+	}
+diff --git a/drivers/net/wireless/mediatek/mt76/mt7925/mac.c b/drivers/net/wireless/mediatek/mt76/mt7925/mac.c
+index a99a2c497458..cc8ea0d37430 100644
+--- a/drivers/net/wireless/mediatek/mt76/mt7925/mac.c
++++ b/drivers/net/wireless/mediatek/mt76/mt7925/mac.c
+@@ -423,6 +423,7 @@ mt7925_mac_fill_rx(struct mt792x_dev *dev, struct sk_buff *skb)
+ 	u8 mode = 0; /* , band_idx; */
+ 	u16 seq_ctrl = 0;
+ 	__le16 fc = 0;
++	u8 sec_mode;
+ 	int idx;
  
--	wcid_idx = p->wtbl_lower | (p->wtbl_higher << 8);
- 	wcid = mt76_wcid_ptr(dev, wcid_idx);
- 	if (!wcid || !wcid_to_sta(wcid))
- 		return;
+ 	memset(status, 0, sizeof(*status));
+@@ -478,7 +479,9 @@ mt7925_mac_fill_rx(struct mt792x_dev *dev, struct sk_buff *skb)
+ 	if (rxd1 & MT_RXD1_NORMAL_TKIP_MIC_ERR)
+ 		status->flag |= RX_FLAG_MMIC_ERROR;
  
--	mt76_sta_ps_transition(&dev->mt76, wcid, !!p->ps_bit);
-+	mt76_sta_ps_transition(&dev->mt76, wcid, ps);
- }
+-	if (FIELD_GET(MT_RXD2_NORMAL_SEC_MODE, rxd2) != 0 &&
++	/* a BIP frame keeps its MME, for mac80211 to check MIC and IPN */
++	sec_mode = FIELD_GET(MT_RXD2_NORMAL_SEC_MODE, rxd2);
++	if (sec_mode != 0 && sec_mode != MT_CIPHER_BIP_CMAC_128 &&
+ 	    !(rxd1 & (MT_RXD1_NORMAL_CLM | MT_RXD1_NORMAL_CM))) {
+ 		status->flag |= RX_FLAG_DECRYPTED;
+ 		status->flag |= RX_FLAG_IV_STRIPPED;
+@@ -509,7 +512,7 @@ mt7925_mac_fill_rx(struct mt792x_dev *dev, struct sk_buff *skb)
+ 		u8 *data = (u8 *)rxd;
  
- static void
-diff --git a/drivers/net/wireless/mediatek/mt76/mt7915/mcu.h b/drivers/net/wireless/mediatek/mt76/mt7915/mcu.h
-index 76e39e899797..7dbe43200fb4 100644
---- a/drivers/net/wireless/mediatek/mt76/mt7915/mcu.h
-+++ b/drivers/net/wireless/mediatek/mt76/mt7915/mcu.h
-@@ -63,6 +63,16 @@ struct mt7915_mcu_ps_notify {
- 	u8 rsv;
- } __packed;
- 
-+struct mt7915_mcu_ps_notify_v2 {
-+	struct mt76_connac2_mcu_rxd_hdr rxd;
-+
-+	__le16 wtbl_lower;
-+	__le16 wtbl_higher;
-+	__le16 rsv;
-+	u8 ps_bit;
-+	u8 rsv2;
-+} __packed;
-+
- struct mt7915_mcu_rdd_report {
- 	struct mt76_connac2_mcu_rxd_hdr rxd;
- 
+ 		if (status->flag & RX_FLAG_DECRYPTED) {
+-			switch (FIELD_GET(MT_RXD2_NORMAL_SEC_MODE, rxd2)) {
++			switch (sec_mode) {
+ 			case MT_CIPHER_AES_CCMP:
+ 			case MT_CIPHER_CCMP_CCX:
+ 			case MT_CIPHER_CCMP_256:
 -- 
 2.47.3
 
