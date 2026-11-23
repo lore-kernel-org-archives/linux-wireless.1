@@ -1,50 +1,49 @@
 Authentication-Results: smtp.subspace.kernel.org; arc=none smtp.remote-ip=81.177.160.4
 ARC-Seal: i=1; d=subspace.kernel.org; s=arc20261015; a=rsa-sha256; cv=none;
-	t=1795429078;
-	b=GbS1q9KaZ4fmEux9aE51JWJVxMF8lbWj+NeYSnFf9/SFSAySGgnu1YZIdPyMvhmTgNdb
-	 tW/CexSyIKJstHSnn0yHUhTQaUDsJ2NN8HrJ4ObANaeb9f+1T2BKNn/hWyMc6t1AAvG5U
-	 B5vJQM4lAVzSaY9nJE+QdSFFTO4PUVpXmwnCun3PYdFYokoDW353jPd4iZSWcISDIStXD
-	 i6/XTYxZ6GZIYo1XuvOXK3qXDuNnFaE8CbGjGLO8RxhY+poiTvlMf/r9ZswAmhn8lP75g
-	 o+uxFm1PQui5CaQffzFKISWjfX79JBIZ436TO8q4arEkNcdU48RhKWzEIVzfTAgpoTg==
+	t=1795429360;
+	b=nSSZEzF7eImer9gBQjZvAsZDZI2E80HIGDZCgPGUpbeq+vCFT4pBK2/I1c/snYCuhwn6
+	 Xf7bMuha5WfMtatgl2qHVsDjNO97Bskux/CDaNQPe4LiytorVT8DXCCQ4Pj+ni0g3pe8G
+	 PqORf4azaUvhb8WGZFQp4O4uNcB3zPQ3cvI6Gd3Xjm66k7C6qxxNAQKUCLV8hcIsLHvk/
+	 aw1YyVbshU6IEcJufCvwiok0MJUIz0XLtI8toFt30cjOyK1HDJDmQpdVOPVDg/lrr+/lO
+	 hpYqAuCoAGl4Z3jQmh4NBGSFmd8yeNZmitvT1DHyzz4dGUmqdTz4Tkrh0N/aNIVaEtw==
 ARC-Message-Signature: i=1; d=subspace.kernel.org; s=arc20261015;
-	a=rsa-sha256; c=relaxed/relaxed; t=1795429078;
+	a=rsa-sha256; c=relaxed/relaxed; t=1795429360;
 	h=DMARC-Filter:Received:Received:Received:Received:Received:Received:
 	 Date:From:To:CC:Subject:User-Agent:Message-ID:MIME-Version:
 	 Content-Type:Content-Transfer-Encoding:X-CC-Diagnostic;
-	bh=StHyQ2d7AcnzznKh2Uvz/szM6IaNt8yRCVDpV+U5dWo=;
-	b=iTErkJ0iGlWN1dZXQMOEXF0UJFJ0f9FT/mTSnJwxBYMn2Enwnq8T4aq2FSBcccUYtRFK
-	 zaUg3zJwY+rK6r68TTH/5JvNac1jCEuPgZWUcWMUrhbjYICkglzr4NkBorQsax3R4Qsqy
-	 MHCeDz8vAufxNlJswmVe7bhxBCQB7Kcs49Pz5D4Udo+yLiq6ggRVE03JXh5+eAo/P5xdn
-	 cxSRxiLdDwHcjIN8VFAwhCOiI1fEGNywhUZcze660l+GtxXavxhakmxm9rXEiJNrSOoMD
-	 5IfVZC7114CsyJ3E/0ElckJJkaJs+5QMXNG/3YjO+vN+4alW9EmVKzFipeOgWgx/d/w==
+	bh=R9THjgpuvABTM8Wxex1Yp+3V5Z4qPyoJ2aRaF3usfMU=;
+	b=qPUWHT+u/PCOwYYkNHs9VDzU3rblrPoHtbcevATIRUN/hJqM34svT8Cb719+BHvxGkk8
+	 Zv52V8jtGjqvgfD09hes3qqQ24lHLc9Ifj8Ere+/piJxPZr0MXzHO2M969W28jrukLa3u
+	 dTcvb6Eqw3IPgvibkoSRhiErhpy9hF6lqFZqz3yvFiB1FVgYpnsc4eSlhiuqA0bLoONgX
+	 4Ap7E8jkxyIv2BpPnV4zNvcw90Ak0zlbGw+oZB7qQRb5KWo0wfIS45tcvBc8DhWIl4nM1
+	 cFXuuzbIjiOjHWrgDJnsJPG8eGsfPsV4UzPIOnkz6OpSL3r78E7R44Vy87RH6XrrroQ==
 ARC-Authentication-Results: i=1; smtp.subspace.kernel.org; 
 	dmarc=none header.from=rfareas.com;
 	spf=pass smtp.mailfrom=rfareas.com;
 	arc=none smtp.remote-ip=81.177.160.4
 Received: from s24fifth.in-solve.ru (s24fifth.in-solve.ru [81.177.160.4])
-	by smtp.subspace.kernel.org (Postfix) with ESMTP id 81019606A31A
-	for <linux-wireless@vger.kernel.org>; Mon, 23 Nov 2026 10:17:55 +0000 (UTC)
-DMARC-Filter: OpenDMARC Filter v1.4.2 smtp.subspace.kernel.org 81019606A31A
+	by smtp.subspace.kernel.org (Postfix) with ESMTP id C868F606A31E
+	for <linux-wireless@vger.kernel.org>; Mon, 23 Nov 2026 10:22:39 +0000 (UTC)
+DMARC-Filter: OpenDMARC Filter v1.4.2 smtp.subspace.kernel.org C868F606A31E
 Authentication-Results: smtp.subspace.kernel.org; dmarc=none (p=none dis=none) header.from=rfareas.com
 Authentication-Results: smtp.subspace.kernel.org; spf=pass smtp.mailfrom=rfareas.com
-Received: from Spooler by s24fifth.in-solve.ru (Mercury/32 v4.52) ID MO000BB1;
-    23 Nov 2026 13:17:58 +0300
-Received: from spooler by mail-aux1.in-solve.hidden (Mercury/32 v4.52); 23 Nov 2026 13:17:55 +0300
-Received: from mail-s22 (10.0.1.22) by mail-s24-t.1gb.ru (Mercury/32 v4.52) with ESMTP ID MG000BB0;
-   23 Nov 2026 13:17:53 +0300
-Received: from Spooler by mail-s22 (Mercury/32 v4.52) ID MO000CA3;
-  23 Nov 2026 13:17:42 +0300
-Received: from spooler by mail-s22.in-solve.hidden (Mercury/32 v4.52); 23 Nov 2026 13:17:40 +0300
-Received: from ehlo.thunderbird.net (128.204.79.23) by mail-s22.1gb.ru (Mercury/32 v4.52) with ESMTP ID MG000CA2;
-   23 Nov 2026 13:17:38 +0300
-Date: Mon, 23 Nov 2026 13:17:46 +0300
+Received: from Spooler by s24fifth.in-solve.ru (Mercury/32 v4.52) ID MO000BF3;
+    23 Nov 2026 13:22:41 +0300
+Received: from spooler by mail-aux1.in-solve.hidden (Mercury/32 v4.52); 23 Nov 2026 13:22:38 +0300
+Received: from mail-s22 (10.0.1.22) by mail-s24-t.1gb.ru (Mercury/32 v4.52) with ESMTP ID MG000BF2;
+   23 Nov 2026 13:22:37 +0300
+Received: from Spooler by mail-s22 (Mercury/32 v4.52) ID MO000CC1;
+  23 Nov 2026 13:22:33 +0300
+Received: from spooler by mail-s22.in-solve.hidden (Mercury/32 v4.52); 23 Nov 2026 13:22:30 +0300
+Received: from ehlo.thunderbird.net (128.204.79.23) by mail-s22.1gb.ru (Mercury/32 v4.52) with ESMTP ID MG000CC0;
+   23 Nov 2026 13:22:28 +0300
+Date: Mon, 23 Nov 2026 13:22:29 +0300
 From: RFAREAS Support <support@rfareas.com>
 To: linux-wireless@vger.kernel.org
 CC: wireless-regdb@lists.infradead.org, wens@kernel.org
-Subject: =?US-ASCII?Q?=5BPATCH_v2_1/2=5D_wireless-regdb=3A_Updat?=
- =?US-ASCII?Q?e_regulatory_info_for_Kazakhstan_=28KZ=29?=
+Subject: [PATCH v2 2/2] wireless-regdb: Allow channel 144 for Kazakhstan (KZ)
 User-Agent: K-9 Mail for Android
-Message-ID: <2855A6B0-E021-41E9-8062-93FC37CE0F00@rfareas.com>
+Message-ID: <8BB6488B-D0B9-4ECB-9740-E892DDA3F4C1@rfareas.com>
 X-Mailing-List: linux-wireless@vger.kernel.org
 List-Id: <linux-wireless.vger.kernel.org>
 List-Post: <mailto:linux-wireless@vger.kernel.org>
@@ -61,89 +60,43 @@ X-CC-Diagnostic: Header RECEIVED matches "*([0-9]+.[0-9]+.[0-9]+.[0-9]+)*" (0)
 
 From: Valery Belousov <support@rfareas=2Ecom>
 
-The KZ entry cites the 2015 versions of the Rules for the assignment
-of frequency bands (Order No=2E 34 of 21 January 2015)=2E Item 24 "WAS/RLA=
-N"
-of Annex 1 to these Rules, the list of radio equipment that may be
-operated without a permit, was replaced by Order No=2E 564/NK of the
-Ministry of Digital Development, Innovation and Aerospace Industry of
-19 September 2024 (registered with the Ministry of Justice under
-No=2E 35100 on 23 September 2024, in force ten days after its first
-official publication)=2E The consolidated text of the Rules on the
-official legal portal adilet=2Ezan=2Ekz contains the same item=2E
+Channel 144 (5710-5730 MHz) straddles the 5725 MHz boundary between
+the 5470-5725 MHz and 5725-5850 MHz rules, so it cannot be used=2E
 
-Limits as stated in item 24 (all e=2Ei=2Er=2Ep=2E):
-  2400-2483=2E5 MHz: 100 mW, 10 mW/MHz for wideband modulations
-  5150-5350 MHz:   200 mW, 10 mW/MHz, indoor use only
-  5470-5725 MHz:   100 mW, 10 mW/MHz, indoor use only
-  5725-5850 MHz:   100 mW, 10 mW/MHz, indoor use only
-  5925-6425 MHz:   200 mW, 10 mW/MHz, indoor use only
-  57-66 GHz:       40 dBm, 13 dBm/MHz mean, indoor use only
+Both ranges have the same limits in item 24 of Annex 1 to the Rules
+(100 mW e=2Ei=2Er=2Ep=2E, indoor use only); 5725-5850 MHz has no DFS flag =
+and
+is the less restrictive one=2E Extend the lower range to 5730 MHz and
+start the upper one there, as done for the US=2E 5725-5730 MHz then
+requires DFS, which is more restrictive than before=2E
 
-Footnote 5=2E446A of the national table of frequency allocations requires
-ITU-R Resolution 229 in 5150-5350 MHz and 5470-5725 MHz, so 5250-5350
-MHz needs TPC and stays at 20 dBm without it=2E
-
-Changes:
- * 57-66 GHz: add NO-OUTDOOR ("only for use inside a building")=2E
- * Update the source links to the current consolidated Rules, the
-   amending order and the allocation table, using https, and note why
-   5250-5350 MHz is limited to 20 dBm=2E
-
-The other rules already match the item=2E The power spectral density
-limits cannot be expressed in db=2Etxt=2E
-
+Suggested-by: Chen-Yu Tsai <wens@kernel=2Eorg>
 Signed-off-by: Valery Belousov <support@rfareas=2Ecom>
 ---
-v2: keep 20 dBm in 5250-5350 MHz: footnote 5=2E446A of the allocation
-table applies ITU-R Resolution 229, so TPC is required (thanks, Chen-Yu)=
-=2E
-Cite the allocation table footnote in the comments=2E
+New in v2, as requested in the review of v1=2E
 
-Found while cross-checking wireless-regdb against the national acts for th=
-e
-RFAREAS Wi-Fi regulatory map (https://rfareas=2Ecom/blog/tools/wifimap/)=
-=2E
-
- db=2Etxt | 14 +++++++++++---
- 1 file changed, 11 insertions(+), 3 deletions(-)
+ db=2Etxt | 8 ++++++--
+ 1 file changed, 6 insertions(+), 2 deletions(-)
 
 diff --git a/db=2Etxt b/db=2Etxt
-index 43dc0b3=2E=2E3e1921d 100644
+index 3e1921d=2E=2Eae49c0c 100644
 --- a/db=2Etxt
 +++ b/db=2Etxt
-@@ -1194,16 +1194,24 @@ country KY: DFS-FCC
- 	(57000 - 71000 @ 2160), (40)
-=20
- # Source:
--# http://adilet=2Ezan=2Ekz/rus/docs/V1500010730
--# http://adilet=2Ezan=2Ekz/rus/docs/V1500010375
-+# Rules for the assignment of frequency bands =2E=2E=2E (Order No=2E 34 o=
-f
-+# 21 January 2015), Annex 1 (radio equipment that needs no permit),
-+# item 24 "WAS/RLAN", as amended by Order No=2E 564/NK of 19 September 20=
-24:
-+# https://adilet=2Ezan=2Ekz/rus/docs/V1500010730
-+# https://adilet=2Ezan=2Ekz/rus/docs/V2400035100
-+# Table of frequency band allocations (Order No=2E 22 of 20 January 2015)=
-;
-+# its footnote 5=2E446A requires ITU-R Resolution 229 in 5150-5350 MHz an=
-d
-+# 5470-5725 MHz:
-+# https://adilet=2Ezan=2Ekz/rus/docs/V1500010375
- country KZ: DFS-ETSI
- 	(2400 - 2483=2E5 @ 40), (100 mW)
+@@ -1208,8 +1208,12 @@ country KZ: DFS-ETSI
  	(5150 - 5250 @ 80), (200 mW), NO-OUTDOOR, AUTO-BW
-+	# 200 mW with TPC (ITU-R Resolution 229); Linux has no TPC, so 3 dB less
+ 	# 200 mW with TPC (ITU-R Resolution 229); Linux has no TPC, so 3 dB less
  	(5250 - 5350 @ 80), (20), NO-OUTDOOR, DFS, AUTO-BW
- 	(5470 - 5725 @ 160), (100 mW), NO-OUTDOOR, DFS
- 	(5725 - 5850 @ 80), (100 mW), NO-OUTDOOR
+-	(5470 - 5725 @ 160), (100 mW), NO-OUTDOOR, DFS
+-	(5725 - 5850 @ 80), (100 mW), NO-OUTDOOR
++	# This range ends at 5725 MHz, but channel 144 extends to 5730 MHz=2E
++	# Since 5725 ~ 5730 MHz belongs to the next range which has looser
++	# requirements, we can extend the range by 5 MHz to make the kernel
++	# happy and be able to use channel 144=2E
++	(5470 - 5730 @ 160), (100 mW), NO-OUTDOOR, DFS
++	(5730 - 5850 @ 80), (100 mW), NO-OUTDOOR
  	(5925 - 6425 @ 320), (200 mW), NO-OUTDOOR
--	(57000 - 66000 @ 2160), (40)
-+	(57000 - 66000 @ 2160), (40), NO-OUTDOOR
+ 	(57000 - 66000 @ 2160), (40), NO-OUTDOOR
 =20
- country LB: DFS-FCC
- 	(2402 - 2482 @ 40), (20)
 --=20
 2=2E43=2E0
 
