@@ -1,55 +1,55 @@
 Authentication-Results: smtp.subspace.kernel.org; arc=none smtp.remote-ip=46.4.11.11
 ARC-Seal: i=1; d=subspace.kernel.org; s=arc20261015; a=rsa-sha256; cv=none;
-	t=1795423544;
-	b=BHJV3LM1TE8O6ft+7yduQIKiT3bJV3dbpeSBgGf+B6IhBBTL8ZmnAI/Rkot0qxE7hFbk
-	 ciA/CKY+sqnpsBC3IQEO8rgBRvmq2ia+CJaxmPH8OpWeQtpvBL8x5bL0pgwbpi1rpSbOF
-	 HOiUYM0pvrjgZ7MuwelR7XGbzZWHs/y3/S/R8gbgJ/OhtwDQ5XKiBZ8g+izrzl18TwmZI
-	 XArd+RdoK8Misf/56pnyvZYuvLy+eM0LSvrrfg0dgX7x2xYpTWoPMLXVmbl9+O0FHQPl/
-	 4sFVR4jk6geGYGD1TXwgQAwH4cHgmIlwi6RBm7TdfwvwG69oN7yjMbNer+CiyLk3WKQ==
+	t=1795423624;
+	b=DxtBTJmfuv5Ko2MpYtR6qV8y8udYisjmTZClseFYxoVCVnMY1dAtCCCaUeJhbV/XHtMQ
+	 KQINgpbT4eK592NVlt1Mihk2pJ3kvaldTGyaStjLB+13VTDZ/nN0xppkttX6hA6fng/QO
+	 5AE+zoYrjGIDibOKfkEFkI/5AUAdPVkJ8N5wh+UQROjqtmAQAwi1sON1Z0eGazQX5PBVG
+	 K6XJbRnKCA+SU9XCtmd9ZhnNe1mRwiyw3drzrluByYe6kl7aNpo3KtFqeYqhlcgVdjrHa
+	 jWIHR0QSiUbM7uO+X/ObOTqU2dONtGmd/k8QcZ6dNYoYRfa5zhH8o5eUCH+PyLHBGkQ==
 ARC-Message-Signature: i=1; d=subspace.kernel.org; s=arc20261015;
-	a=rsa-sha256; c=relaxed/relaxed; t=1795423544;
+	a=rsa-sha256; c=relaxed/relaxed; t=1795423624;
 	h=DMARC-Filter:DKIM-Signature:Received:Message-ID:Date:MIME-Version:
 	 User-Agent:Subject:To:Cc:References:Content-Language:From:Autocrypt:
 	 In-Reply-To:Content-Type:Content-Transfer-Encoding;
-	bh=Y3QMdMpFMgK3EVjAqDcg1fG0QoSWT2UZUwUtf9p9kOg=;
-	b=jDXyysSp/nGFDRXfn2K1k5jT0uJrEZnAX6F9OyDpIZ5AT3AyO+RUExilOfrab5xiBkNi
-	 1auyNlFQ/OyTsPVz+EusLcoMXx8VCJbA5noQaFmtkQVSFrNdVO6Bamx3CwsdIo1AyJVf7
-	 xkXhpDyZ+HPzQ6FDNEhd1v1ipudV5BA7vY5pUQEzV5K64/BL+DPU1eQTmPRthckk4ADba
-	 LFsT2skX2DlH5iELfLYdIldoEfnlnajqVDQdPQqK+LJsheM7QISmdj7eCpREPNKVGafRL
-	 XdZeWNfs4dmPVVD+WqpVVl0Wc80YtHX5Lc4CCYeSW4pif9I7BazB9hfYcasTmLLTPlQ==
+	bh=q9Z3O6yfcgBjQ7vEhYrAXsXPQNhY9aYapqQ3cuQVdvo=;
+	b=KtAWiP5Nj5CBou3lEbXAv1cz3E6NQjtnhsOVXU3qch9O8nKTcTmjaEIWKWcRdOycZA/7
+	 xC1zpIF2adK2Tcs0yJyN4f+vieNG2VAa+ieQ4IXLi+gfpyGCR975aYYJo/UnWEZCIIJc1
+	 u2ltQWNHRgY9linZjjFZh/+RNUsbbMv92mtmUECSJ9Go8ani08maPj/B7v81re6LkBoSZ
+	 zc3eGWLqiQbc2rtqgbw34JHh+GUPf8E2NYitd3BpIerxNr0IPGpWfRA21pkbw29H862KC
+	 DdJ/INhIq4ibYp4g00AafFDP1pr43Ath0mcOFuKrW5jLovlojjKeLiiPkdLok/ztUTw==
 ARC-Authentication-Results: i=1; smtp.subspace.kernel.org; 
 	dmarc=pass header.from=nbd.name;
 	spf=pass smtp.mailfrom=nbd.name;
-	dkim=pass header.d=nbd.name header.i=@nbd.name header.a=rsa-sha256 header.s=20160729 header.b=V2XcBbaq;
+	dkim=pass header.d=nbd.name header.i=@nbd.name header.a=rsa-sha256 header.s=20160729 header.b=Z58J3fSK;
 	arc=none smtp.remote-ip=46.4.11.11
 Received: from nbd.name (nbd.name [46.4.11.11])
 	(using TLSv1.3 with cipher TLS_AES_256_GCM_SHA384 (256/256 bits)
 	 key-exchange ECDHE (prime256v1) server-signature ECDSA (prime256v1) server-digest SHA256)
 	(No client certificate requested)
-	by smtp.subspace.kernel.org (Postfix) with ESMTPS id BF53C606A31A;
-	Mon, 23 Nov 2026 08:45:43 +0000 (UTC)
-DMARC-Filter: OpenDMARC Filter v1.4.2 smtp.subspace.kernel.org BF53C606A31A
+	by smtp.subspace.kernel.org (Postfix) with ESMTPS id B70D4606A32A
+	for <linux-wireless@vger.kernel.org>; Mon, 23 Nov 2026 08:47:03 +0000 (UTC)
+DMARC-Filter: OpenDMARC Filter v1.4.2 smtp.subspace.kernel.org B70D4606A32A
 Authentication-Results: smtp.subspace.kernel.org; dmarc=pass (p=none dis=none) header.from=nbd.name
 Authentication-Results: smtp.subspace.kernel.org; spf=pass smtp.mailfrom=nbd.name
 Authentication-Results: smtp.subspace.kernel.org;
-	dkim=pass (1024-bit key, unprotected) header.d=nbd.name header.i=@nbd.name header.a=rsa-sha256 header.s=20160729 header.b=V2XcBbaq
+	dkim=pass (1024-bit key) header.d=nbd.name header.i=@nbd.name header.a=rsa-sha256 header.s=20160729 header.b=Z58J3fSK
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed; d=nbd.name;
 	s=20160729; h=Content-Transfer-Encoding:Content-Type:In-Reply-To:From:
 	References:Cc:To:Subject:MIME-Version:Date:Message-ID:Sender:Reply-To:
 	Content-ID:Content-Description:Resent-Date:Resent-From:Resent-Sender:
 	Resent-To:Resent-Cc:Resent-Message-ID:List-Id:List-Help:List-Unsubscribe:
 	List-Subscribe:List-Post:List-Owner:List-Archive;
-	bh=Y3QMdMpFMgK3EVjAqDcg1fG0QoSWT2UZUwUtf9p9kOg=; b=V2XcBbaqiu+zVbkJ3aMarZfrc/
-	Art2r0nG/3M06RGVTab7OgNEW/MlRg6uQ9DqR1obga3EOcftHG2vfeb//QqYH2oYiTa/7gR2TecNy
-	svdX2uvlQz6N+ANineBDjNbo0MSoDtq69tfzVklOTqVqkKADYDri8PLu7ieDThhA6xRc=;
+	bh=q9Z3O6yfcgBjQ7vEhYrAXsXPQNhY9aYapqQ3cuQVdvo=; b=Z58J3fSK+nPEshfA+XJ8phby3w
+	eSqBaqmbtmUW9nsSODph9SIw/LwOFv6RPe1dJwONv19njP2B/8nGlgUQtzcNanBJOV1NsoMv0+yEJ
+	7gJBHJUyLSr5DWpWfouwHEDulohJwaSDyRWTlgMFho6DBZjePM+r4IkQZpDHbo5bhcU8=;
 Received: from p54a43aa5.dip0.t-ipconnect.de ([84.164.58.165] helo=nf.local)
 	by ds12 with esmtpsa  (TLS1.3) tls TLS_ECDHE_RSA_WITH_AES_128_GCM_SHA256
 	(Exim 4.96)
 	(envelope-from <nbd@nbd.name>)
-	id 1xVPfz-007Fz9-1F;
-	Mon, 23 Nov 2026 09:45:27 +0100
-Message-ID: <8d674f7c-68db-474f-8cb1-5645542db0ac@nbd.name>
-Date: Mon, 23 Nov 2026 09:45:26 +0100
+	id 1xVPhU-007G1G-01;
+	Mon, 23 Nov 2026 09:47:00 +0100
+Message-ID: <2712203a-9b38-476e-80fa-b0c8f222e01c@nbd.name>
+Date: Mon, 23 Nov 2026 09:46:59 +0100
 X-Mailing-List: linux-wireless@vger.kernel.org
 List-Id: <linux-wireless.vger.kernel.org>
 List-Post: <mailto:linux-wireless@vger.kernel.org>
@@ -60,16 +60,25 @@ List-Owner: <mailto:linux-wireless+owner@vger.kernel.org>
 Precedence: list
 MIME-Version: 1.0
 User-Agent: Mozilla Thunderbird
-Subject: Re: [PATCH wireless-next] wifi: mac80211: find the station of a freed
- 802.3 frame for AQL
-To: Julius Bairaktaris <julius@bairaktaris.de>,
- Johannes Berg <johannes@sipsolutions.net>
-Cc: linux-wireless@vger.kernel.org, linux-kernel@vger.kernel.org,
- John Crispin <john@phrozen.org>,
- Vasanthakumar Thiagarajan <vasanthakumar.thiagarajan@oss.qualcomm.com>,
- Vasanthakumar Thiagarajan <vthiagar@qti.qualcomm.com>,
- =?UTF-8?Q?Toke_H=C3=B8iland-J=C3=B8rgensen?= <toke@toke.dk>
-References: <20261122150541.3117507-1-julius@bairaktaris.de>
+Subject: Re: [PATCH v3] wifi: mt76: mt7928: Add MTK OUI support for nl80211
+ (ALOS support for wpa_supplicant to get MTK OUI)
+To: =?UTF-8?B?TWljaGFlbCBTaGloICjlj7LlkJvku7Ip?= <Michael.Shih@mediatek.com>,
+ "lorenzo@kernel.org" <lorenzo@kernel.org>
+Cc: =?UTF-8?B?RWFzb24gTGFpICjos7TmmJPogZYp?= <Eason.Lai@mediatek.com>,
+ =?UTF-8?B?S3VuIFd1ICjlkLPorLnoh7Mp?= <kun.wu@mediatek.com>,
+ Ryder Lee <Ryder.Lee@mediatek.com>, =?UTF-8?B?UXVhbiBaaG91ICjlkajlhagp?=
+ <Quan.Zhou@mediatek.com>, =?UTF-8?B?RGVyZW4gV3UgKOatpuW+t+S7gSk=?=
+ <Deren.Wu@mediatek.com>, =?UTF-8?B?TGl0aWVuIENoYW5nICjlvLXnq4vlhbgp?=
+ <Litien.Chang@mediatek.com>,
+ "linux-wireless@vger.kernel.org" <linux-wireless@vger.kernel.org>,
+ Sean Wang <Sean.Wang@mediatek.com>, =?UTF-8?B?TGVvbiBZZW4gKOmhj+iJr+WEkik=?=
+ <Leon.Yen@mediatek.com>,
+ "linux-mediatek@lists.infradead.org" <linux-mediatek@lists.infradead.org>,
+ =?UTF-8?B?SkIgVHNhaSAo6JSh5b+X5b2sKQ==?= <Jb.Tsai@mediatek.com>
+References: <20261118010310.1044193-1-michael.shih@mediatek.com>
+ <20261118011758.1049815-1-michael.shih@mediatek.com>
+ <c28aba9d-9401-4834-8d45-b0156012a670@nbd.name>
+ <5a8a96eece9925010a7bb4d9f7657afd2c0e15e6.camel@mediatek.com>
 Content-Language: en-US
 From: Felix Fietkau <nbd@nbd.name>
 Autocrypt: addr=nbd@nbd.name; keydata=
@@ -95,31 +104,43 @@ Autocrypt: addr=nbd@nbd.name; keydata=
  TspgwBWLnXQvP5EDvlZnNaKa/3oBes6z0QdaSOwZCRA3QSLHBwtgUsrT6RxRSweLrcabwkkE
  GBECAAkFAkah5FQCGwwACgkQ130UHQKnbvW2GgCeMncXpbbWNT2AtoAYICrKyX5R3iMAoMhw
  cL98efvrjdstUfTCP2pfetyN
-In-Reply-To: <20261122150541.3117507-1-julius@bairaktaris.de>
+In-Reply-To: <5a8a96eece9925010a7bb4d9f7657afd2c0e15e6.camel@mediatek.com>
 Content-Type: text/plain; charset=UTF-8; format=flowed
-Content-Transfer-Encoding: 7bit
+Content-Transfer-Encoding: 8bit
 
-On 22.11.26 16:05, Julius Bairaktaris wrote:
-> ieee80211_report_used_skb() returns a frame's pending airtime to the
-> station found from the 802.11 header. An encap offloaded frame starts
-> with its 802.3 header instead, so the lookup finds no station, the
-> station keeps the charge, and once its leaked airtime exceeds its limit
-> ieee80211_txq_airtime_check() stops scheduling it until it reassociates.
-> Drivers with AQL and encap offload reach this through
-> ieee80211_free_txskb() wherever they drop a frame without knowing its
-> station, for example when firmware recovery returns the frames it held.
-> 
-> Look up an encap offloaded frame's station with
-> ieee80211_lookup_ra_sta(), as ieee80211_subif_start_xmit_8023() did on
-> transmit.
-> 
-> Fixes: 50ff477a8639 ("mac80211: add 802.11 encapsulation offloading support")
-> Signed-off-by: Julius Bairaktaris <julius@bairaktaris.de>
-I think this is the wrong approach. The driver reporting tx status for 
-802.3 frames without a station pointer cannot possibly work in 4 address 
-mode (since the Ethernet addresses do not identify the sta).
-Please fix the driver instead to keep track of the sta and pass it to 
-mac80211 on tx status. This has the extra benefit of being more 
-efficient by avoiding an extra lookup.
+Hi Michael,
+
+What functionality sits behind this call, and is it something that might 
+be worth implementing through a proper nl80211 API?
+
+Thanks,
 
 - Felix
+
+On 23.11.26 00:49, Michael Shih (史君仲) wrote:
+> Hi Felix,
+> This is a driver patch that supports advertising MediaTek OUI vendor
+> command in the mt76 driver for WPA supplicant.
+> This support feature will only be triggered intentionally.
+> 
+> Therefore, I have added build flag in Kconfig so that it will not be
+> enabled in upstream if not required, it is supposed to be used in
+> Android platforms.
+> 
+> I hope this will clarify your question.
+> 
+> Thanks,
+> Michael.
+> 
+>> Hi,
+>> 
+>> On 18.11.26 02:17, Michael Shih wrote:
+>> > Customer request MTK to support OUI for wpa supplicant.
+>> > 
+>> > Signed-off-by: Michael Shih <michael.shih@mediatek.com>
+>> What is this supposed to be used for?
+>> 
+>> Thanks,
+>> 
+>> - Felix
+
