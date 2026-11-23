@@ -1,54 +1,96 @@
-Authentication-Results: smtp.subspace.kernel.org; arc=none smtp.remote-ip=100.103.45.18
+Authentication-Results: smtp.subspace.kernel.org; arc=none smtp.remote-ip=74.125.82.181
 ARC-Seal: i=1; d=subspace.kernel.org; s=arc20261015; a=rsa-sha256; cv=none;
-	t=1795426579;
-	b=JoCoE6II2jEsCXN0X2kdx/EM/oNAFEf6kJoytzAY1Q+pRlzowI7SfXYVWvl+Pv3CkwYy
-	 b4o/gyVy5aySHvVhHIuodPrHbDQid0nFZ44zaAH1T9lsiPtHFX2SroNmoXPkyWryGa/Rw
-	 QTm2fjNAL6RxTE1GUkE90dhW6KUU2yo35BiZtIgs2dUzmt2GzGQusLYR58mM+5tGEpxHt
-	 IsaKJA9LQRUTlNRv2jQ6VRHrRQESkkRo2uuIOOfRwsALuBofRmWdfP0t1CJSDJG5tjnp9
-	 5eNgyYx0VLwT1iDCmYPl8FWG11VgQzBJstbSnQikTMLUbNlr17xSCSBXbgv/h6Jp5aw==
+	t=1795428663;
+	b=DUvyAoOOHDqGUiB+wKoV+tNnk8PQ2rS4VgwGYSs1f0LB/QbGibXBQkXC69eWbnBUfqh/
+	 z2dPaK1rJlbG6X3g2kNGRQqtbt151DE/IuLwnIxonMfBm+TRJXYjxYV4+LpeSOIut6iE1
+	 xH7rhXsPZrj9MJbtllo41jW1pkt0mBpVKP4bmT5jj99/30H939bkqOnTaMwcQVTFIgPIV
+	 sZrg+dKYZErFIWmeZA10ozdLpIRoVJTqenex+4w4GgY+puL48z6YF/Vj+8VUrRsK1g4fT
+	 451GkneK5LSXF3gSKf8Iu5/L29P9+YtopoE71d3Yid9hpoGajs/LiVO2Vh3QziQ7cGQ==
 ARC-Message-Signature: i=1; d=subspace.kernel.org; s=arc20261015;
-	a=rsa-sha256; c=relaxed/relaxed; t=1795426579;
-	h=Received:DKIM-Signature:Received:X-Gm-Message-State:X-Received:
-	 MIME-Version:References:In-Reply-To:Reply-To:From:Date:
-	 X-Gmail-Original-Message-ID:X-Gm-Features:Message-ID:Subject:To:Cc:
-	 Content-Type:Content-Transfer-Encoding;
-	bh=Lk6mDG2mByNoEFbOZq7k0USMrITJPKdvFgnA68Y58aM=;
-	b=ZPx2FgyZqIfPbcYaPZDEOaAdZ7j7TrL0i6SCSuDZNC8bKC7xyPiC2+iHitB0IgTg6Bcm
-	 URnOdPi5CRX1r5tZhm8AmQS6HTusZUBogksXZOm3iCyvPLbfyBwEJz+BfMk0x11rmY8+3
-	 3lYYz+3+rulEub3Y679h1IQ/bdB1SGYLytMfpyYGKeAjh+Pk1/D6xGGJCgIojP/dwEjDH
-	 qYzZu09foyGAQ2eys9oGnnbIpfgPZ4gSevHkMTTQcddxsKVQYfKkuyvFE0DKdtY4AFiQ3
-	 0l9ldT2K2Jmn2K4ic8JmaUq6Id1N789m0i0xC3eib4zlQBLROzWzfzK13Ofx4D2OJng==
+	a=rsa-sha256; c=relaxed/relaxed; t=1795428663;
+	h=DMARC-Filter:Received:DKIM-Signature:X-Google-DKIM-Signature:
+	 X-Forwarded-Encrypted:X-Gm-Message-State:X-Gm-Gg:X-Received:Received:
+	 From:To:Cc:Subject:Date:Message-ID:X-Mailer:MIME-Version:Content-Type:
+	 Content-Transfer-Encoding;
+	bh=9gNZbnnmQRSiLzFBbi7kiD8rhc4SFZm5dcIY5DLITj4=;
+	b=ePUpUjEm+BImnnqLnHoCjnCHWUFzSFyI9dYHnDF5R2caz/hubmkeIy4Qjhfie7jcjMai
+	 zcc3YQJxH1d1YOQZN8xCJouH4TJtrggH6fhaaTN022iP6/rDH57gSZV3tCYmeHwni6ifS
+	 eQJYt/Nvr2ys8cFgg6np0a9Y5ZI5HC8gSbcCv7RbSJ2SVj5sChI2T7yIquRfTkZo58upR
+	 CnH6E3PxoZL4NlH3QEDgfsBp+btqTqeIYM4Gbd7BACIOEvZf3Nyr3NjPhmayCXKfwnUxv
+	 FaPl2qfGG3KtfDgz6hvBBT7n00rl3MWk4K9mnGAPpavZiyz1WvG6mturjOpAnW0dtNA==
 ARC-Authentication-Results: i=1; smtp.subspace.kernel.org; 
-	dkim=pass header.d=kernel.org header.i=@kernel.org header.a=rsa-sha256 header.s=k20260515 header.b=knfc6I1w;
-	arc=none smtp.remote-ip=100.103.45.18
-Received: from smtp.kernel.org (quasi.space.kernel.org [100.103.45.18])
-	(using TLSv1.3 with cipher TLS_AES_256_GCM_SHA384 (256/256 bits)
-	 key-exchange X25519 server-signature ECDSA (prime256v1))
+	dmarc=pass header.from=gmail.com;
+	spf=pass smtp.mailfrom=gmail.com;
+	dkim=pass header.d=gmail.com header.i=@gmail.com header.a=rsa-sha256 header.s=20260707 header.b=FytuutyS;
+	arc=none smtp.remote-ip=74.125.82.181
+Received: from mail-dy1-f181.google.com (mail-dy1-f181.google.com [74.125.82.181])
+	(using TLSv1.3 with cipher TLS_AES_128_GCM_SHA256 (128/128 bits)
+	 key-exchange X25519 server-signature ECDSA (prime256v1) server-digest SHA256)
 	(No client certificate requested)
-	by smtp.subspace.kernel.org (Postfix) with ESMTPS id A9239606A31A
-	for <linux-wireless@vger.kernel.org>; Mon, 23 Nov 2026 09:36:19 +0000 (UTC)
+	by smtp.subspace.kernel.org (Postfix) with ESMTPS id 2678C606A32D
+	for <linux-wireless@vger.kernel.org>; Mon, 23 Nov 2026 10:11:03 +0000 (UTC)
+DMARC-Filter: OpenDMARC Filter v1.4.2 smtp.subspace.kernel.org 2678C606A32D
+Authentication-Results: smtp.subspace.kernel.org; dmarc=pass (p=none dis=none) header.from=gmail.com
+Authentication-Results: smtp.subspace.kernel.org; spf=pass smtp.mailfrom=gmail.com
 Authentication-Results: smtp.subspace.kernel.org;
-	dkim=pass (2048-bit key) header.d=kernel.org header.i=@kernel.org header.a=rsa-sha256 header.s=k20260515 header.b=knfc6I1w
-Received: by smtp.kernel.org (Postfix) with ESMTPSA id D56641F000D2
-	for <linux-wireless@vger.kernel.org>; Mon, 23 Nov 2026 09:36:18 +0000 (UTC)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=kernel.org;
-	s=k20260515; t=1795426578;
-	bh=Lk6mDG2mByNoEFbOZq7k0USMrITJPKdvFgnA68Y58aM=;
-	h=References:In-Reply-To:Reply-To:From:Date:Subject:To:Cc;
-	b=knfc6I1woKhjm5lrajdBpt2tCx0IEHgRV03fTMn6KGfNqQF9IQBEiGo4NsCFbC/EA
-	 lZ5UNdltr/zINytU0AIvQy54ebB/BFInLNN8O6+M510+dAnJlMvYkOBFwr1P+X00w6
-	 pFDTmSTUkU3EuRz2JPM7nI2H4ToWcrN2JcX7WvfiDmRxGmHRF2WResr0l/xwzBSOh7
-	 MTb3WUsEL0rJJ6dKmKpptLfaEHxM82BC73TUaOFNMmbKpEOBI69BCbt2LHVCQ5XN+9
-	 zzdFoEQBTqYU+wSuQAg2KaAXklZA+Ni/fRmec9c2+CLheA41UdtQpsLAC05xm2Pjp6
-	 xlyLzqwEhaFnQ==
-Received: by mail-lj1-f175.google.com with SMTP id 38308e7fff4ca-3ada7d53082so34131181fa.0
-        for <linux-wireless@vger.kernel.org>; Mon, 23 Nov 2026 01:36:18 -0800 (PST)
-X-Gm-Message-State: APuU4Z+/ELi0Eu/x0GTQ1sIRwxr+kFh2Y6znB9pJVgf1j8lsLTQ05NY2
-	184/tIYBcmlwmKfXyrnCBajAMI/4EwaLx0lJOKUqGTawspsU9YsUx3/wTNiOBXzLQO1avBmyrPx
-	fyEtLXn0mcJb4TSrXE3++3mnalLzaMEo=
-X-Received: by 2002:a05:651c:1a25:b0:3ac:f9f5:c73 with SMTP id
- 38308e7fff4ca-3ae7b71ba1cmr25052601fa.3.1795426577272; Mon, 23 Nov 2026
- 01:36:17 -0800 (PST)
+	dkim=pass (2048-bit key) header.d=gmail.com header.i=@gmail.com header.a=rsa-sha256 header.s=20260707 header.b=FytuutyS
+Received: by mail-dy1-f181.google.com with SMTP id 5a478bee46e88-33fb4680717so8592688eec.1
+        for <linux-wireless@vger.kernel.org>; Mon, 23 Nov 2026 02:11:03 -0800 (PST)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+        d=gmail.com; s=20260707; t=1795428662; x=1796033462; darn=vger.kernel.org;
+        h=content-transfer-encoding:content-type:mime-version:message-id:date
+         :subject:cc:to:from:from:to:cc:subject:date:message-id:reply-to
+         :content-type;
+        bh=9gNZbnnmQRSiLzFBbi7kiD8rhc4SFZm5dcIY5DLITj4=;
+        b=FytuutyStG27HQ68T38Uo20BX65xGHkEC48ZM7pnWfhEZ18aL1f6Pa2bB2antaeo+s
+         DIyvY7D31/o3uAKQmlHFDV7hT9jOkWsah4ud5V+/zSQGZeJMx40hLRDJN24qNVD8z7bb
+         gNTsltcTy3e3hyNM3AS3Dm1NPT5DSZme7VcRO7T2wBWZGZrFHsDzlUvJFqkJmKCnZjyf
+         kxM1IngOEA9sGcKU5ECoqUa0b4/LZMysB5Qm14p5jtqDWS8MZks3o9YT0EMDb5wpm5XF
+         t3KErKVzNWuU1m7p6DrSb6M5NuuPavE+t5GarFCUlL/sU/k9HUWDQMTDJOxR3BC7D/by
+         XYBw==
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+        d=1e100.net; s=20260707; t=1795428662; x=1796033462;
+        h=content-transfer-encoding:content-type:mime-version:message-id:date
+         :subject:cc:to:from:x-gm-gg:x-gm-message-state:from:to:cc:subject
+         :date:message-id:reply-to:content-type;
+        bh=9gNZbnnmQRSiLzFBbi7kiD8rhc4SFZm5dcIY5DLITj4=;
+        b=23i2wKat6sabaOxacegJFlKZQI6UsXUfztQbPqnFvhU04Ta9t6xsw7Alsrrm0dYPyt
+         sS7ukgyVH277mW0x2fYebMGKUwcd3cOgb1Fq9r2Dc9Hhhp/ai82nmdxpxdsG38csexCL
+         Rc9Ew+eOQ14/V20gIgz7a1cvHf8dtsIW+OJLjxkB4kH/S0buuruieQv1crYHPc+d3CtY
+         HqpfMiTJJn0iGdyksh3RJ7l9gOHOyGvxLp6QiB4Fp++dBP78bjAGKXBi0Myy3ICoPmeF
+         4yPNcP1jU4HryMLJnts6RXWUXL/HjlPt6kVJdFqyKvs11ia4ISs+NPj+1z3tE5mukdUx
+         d00w==
+X-Forwarded-Encrypted: i=1; AL+hErHp5ZN+2EXeEYSSSvibCD5Imj4o0w09T3kOCE/Q90EzQH0RmLuhmloDeyhWSYFnaDmA1ccnHV3XlpNkNByE4A==@vger.kernel.org
+X-Gm-Message-State: APuU4Z8Q2kP88fUcXqHQGRhdy7R5Q99dFuZnYR6Y81RfS3PcEz9qBrTF
+	+a8dJUjQZ6ZxCx9LHbueoyuRhKpWAypof+Z+Tp+NRVuJsW1hUfjucAzA
+X-Gm-Gg: AZFdTZeEgPR69bb9Q+S9Cuh/CfyP1D1faOzlsDZktRvwrcK+xsS+XqUgAgglW5mASUD
+	6BSSr9M9zuTCLdrf440l/V9n1yZCOHS8RAGz4zlsGH3O1SHV88nRsMF4NzVFdRf2I5yfCI5d1Sh
+	HxAsi9sEgCYdvV4N0+0bOAxMEb5LjK9PnvLZMeF4gGpTJMfgj1kzcJj8pdWzlsc5Cr38Lho4GaR
+	vOQf8pZpy8iWcMpc8Fiq1oVDgrhj7t9mRC7nPPwx6EN3tiSHkFg34Vh8DLkRCUZZulRgwPe34Al
+	1bY33vyLGpDXgU5nkvNGElXZqGq90+9D6LEOn3GIAt7eAGRW+FiHsEn7cjsaJAnKzQicpcM+Y3o
+	DNGjNM7+ri+9e/laE0zSD45msW0g2gJUo6eW0fKNd/Lkq0ptPmy5mblEiNgygZks4ukUprbCYP5
+	l6LQvmMbLzAWvkioLeGAwn8t4Rvkp9BluHmfug/30xQAIYugV5s+vu8pQmVK9J8bf3yTNzbV5vD
+	czojCLrISn+8T6pddaOlNTpidKN7ceStkhSm1Lr/bzST3VBnK4NkF6LWCQr/PN46aHqPDLPLWAG
+	l6O/HeECUJIIYSB0PjfZNk3N5zKpSlqiZeoffZ7vM9qhvYHRY9fr2y/yZl56XZlLEsL3YeWdjpK
+	EDV1Xu2aZRj1KEwIgvg==
+X-Received: by 2002:a05:693c:80cd:b0:385:b8f4:756a with SMTP id 5a478bee46e88-385b8f47b36mr11502093eec.12.1795428662292;
+        Mon, 23 Nov 2026 02:11:02 -0800 (PST)
+Received: from ip-192-168-31-150.ap-south-1.compute.internal ([2409:40d2:2009:6412:a5f6:d81:c3c7:7d8b])
+        by smtp.gmail.com with ESMTPSA id 5a478bee46e88-38566cd4efesm36011834eec.12.2026.11.23.02.10.58
+        (version=TLS1_3 cipher=TLS_CHACHA20_POLY1305_SHA256 bits=256/256);
+        Mon, 23 Nov 2026 02:11:01 -0800 (PST)
+From: Tanuj Sharma <ertanuj96@gmail.com>
+To: security@kernel.org
+Cc: pkshih@realtek.com,
+	kvalo@kernel.org,
+	phhuang@realtek.com,
+	gary.chang@realtek.com,
+	linux-wireless@vger.kernel.org,
+	Tanuj Sharma <ertanuj96@gmail.com>
+Subject: [SECURITY] wifi: rtw89: OOB read in beacon/probe-resp IE parsing (OTA, pre-auth)
+Date: Mon, 23 Nov 2026 15:40:21 +0530
+Message-ID: <20261123101028.58146-1-ertanuj96@gmail.com>
+X-Mailer: git-send-email 2.54.0
 X-Mailing-List: linux-wireless@vger.kernel.org
 List-Id: <linux-wireless.vger.kernel.org>
 List-Post: <mailto:linux-wireless@vger.kernel.org>
@@ -58,175 +100,134 @@ List-Unsubscribe: <mailto:linux-wireless+unsubscribe@vger.kernel.org>
 List-Owner: <mailto:linux-wireless+owner@vger.kernel.org>
 Precedence: list
 MIME-Version: 1.0
-References: <20250924022156.8435-1-pkshih@gmail.com> <CAGb2v66MZpd8QWYptLrh5O5qf-DWAnqxf3d692JWZoF3jCRj0g@mail.gmail.com>
- <CAHrRpuknX-Ptz990dqKpPAN71k_fNdJT5aX3CcmckyeOgC9MJA@mail.gmail.com> <CAGb2v64Q1OAKhE3FWHJm1OeEoJuo=tXet7kgRDdgb=nLqbNVCw@mail.gmail.com>
-In-Reply-To: <CAGb2v64Q1OAKhE3FWHJm1OeEoJuo=tXet7kgRDdgb=nLqbNVCw@mail.gmail.com>
-Reply-To: wens@kernel.org
-From: Chen-Yu Tsai <wens@kernel.org>
-Date: Mon, 23 Nov 2026 17:36:02 +0800
-X-Gmail-Original-Message-ID: <CAGb2v65W_4seSpoqKt+AhZ4CHBD59dBenBb2Bj85hYmQ33=z7w@mail.gmail.com>
-X-Gm-Features: Aa3M54qv6CSY0ftXtfi0J2Ou-HMSnIOrNuZZTVCfrrrVxEMfmMPl-1AhcqAxWJY
-Message-ID: <CAGb2v65W_4seSpoqKt+AhZ4CHBD59dBenBb2Bj85hYmQ33=z7w@mail.gmail.com>
-Subject: Re: [PATCH] wireless-regdb: Update regulatory info including
- bandwidth for Trinidad and Tobago (TT) for 2025
-To: Ping-Ke Shih <pkshih@gmail.com>
-Cc: linux-wireless@vger.kernel.org, wireless-regdb@lists.infradead.org
-Content-Type: text/plain; charset="UTF-8"
-Content-Transfer-Encoding: quoted-printable
+Content-Type: text/plain; charset=UTF-8
+Content-Transfer-Encoding: 8bit
 
 Hi,
 
-On Wed, Oct 8, 2025 at 2:17=E2=80=AFPM Chen-Yu Tsai <wens@kernel.org> wrote=
-:
->
-> On Wed, Oct 8, 2025 at 11:32=E2=80=AFAM Ping-Ke Shih <pkshih@gmail.com> w=
-rote:
-> >
-> > Chen-Yu Tsai <wens@kernel.org> wrote:
-> > >
-> > > Hi,
-> > >
-> > > On Wed, Sep 24, 2025 at 10:22=E2=80=AFAM Ping-Ke Shih <pkshih@gmail.c=
-om> wrote:
-> > > >
-> > > > From: Ping-Ke Shih <pkshih@realtek.com>
-> > > >
-> > > > The Telecommunications Authority of Trinidad and Tobago [1] provide=
-s
-> > > > Schedule of Devices Eligible for Use under a Class Licence [2]. The
-> > > > type 1 (End-user devices or customer premise equipment) with Schedu=
-le B.1
-> > > > and B.2 shows
-> > > >
-> > > >  - 2400 - 2483.5 MHz
-> > > >    * 30 dBm
-> > > >  - 5150 - 5250 MHz
-> > > >    * 24 dBm
-> > > >  - 5250 - 5350 MHz
-> > > >    * 24 dBm
-> > > >  - 5470 - 5725 MHz
-> > > >    * 24 dBm
-> > >
-> > > For these bands, the rules specify ERP, or effective radiated power.
-> > > However it states "Maximum Effective Radiated Power ERP (from RF
-> > > transmitter)", so I think it is meant to "maximum conducted output
-> > > power" as seen in FCC rules?
-> > >
-> > > This is not the same as EIRP, or effective isotropic radiated power.
-> > > AFAIK the latter is what is supposed to be used in the database. This
-> > > discrepancy is found in many rules originating from the FCC rules. Th=
-e
-> > > FCC rules specify maximum conducted power (TX power) plus max antenna
-> > > gain in dBi.
-> > >
-> > > So there is some conversion involved. I think the values should be
-> > > "max conducted power" + "max gain in dBi". This assumes no cable loss=
-.
-> > >
-> > > I think we would also need to revisit the US rules.
-> >
-> > Thanks for the detail, but I still not clear if I should use ERP +
-> > antenna gain as
-> > EIRP, or should I apply FCC requirements as hard power limit?
->
-> This old slide deck [1'] from the FCC (?) suggests that EIRP is max
-> conducted power + 6 dBi antenna gain.
+I am reporting an out-of-bounds read vulnerability in the rtw89 WiFi driver
+that is exploitable over-the-air without authentication. Any device scanning
+for networks with an rtw89-based WiFi adapter will parse attacker-controlled
+beacon frames, triggering the OOB read with no user interaction required.
 
-So it seems that TATT updated the schedule in 2026, and it now has explicit
-EIRP values. Could you respin the patch?
+Severity:    HIGH — over-the-air, pre-authentication, zero user interaction
+Attack:      Attacker broadcasts a crafted beacon; any device scanning with
+             rtw89 parses it. No association required.
+Affected:    v6.4+ (core.c), v6.4+ (wow.c — verify merge of 92790c4e50d2)
+Fixes:       c6aa9a9c4725 ("wifi: rtw89: add RNR support for 6 GHz scan")
+Fixes:       92790c4e50d2 ("wifi: rtw89: wow: parsing Auth Key Management from associate request")
 
+Impact
+------
+This is a remotely triggerable kernel heap out-of-bounds read requiring
+zero user interaction:
 
-Thanks
-ChenYu
+  1. Remote denial of service: The overread accesses memory past the
+     skb's allocated slab object. If adjacent memory is unmapped or a
+     KASAN/SLUB redzone, the result is a kernel oops or panic — a
+     remotely triggered system crash. The victim only needs WiFi
+     scanning active (which runs automatically and periodically).
 
-> > By [1], it also mentioned limits of maximum power spectral density, if =
-we also
-> > apply the limits, the values will be almost what I wrote, which are als=
-o almost
-> > the same as US country in db.txt.
->
-> The PSD requirements also translate to the wording for some of the bands:
->
-> For the 5.25-5.35 GHz and 5.47-5.725 GHz bands, the maximum conducted
-> output power over the frequency bands of operation shall not exceed the
-> lesser of 250 mW or 11 dBm + 10 log B, where B is the 26 dB emission
-> bandwidth in megahertz. In addition, the maximum power spectral density
-> shall not exceed 11 dBm in any 1 megahertz band.
->
-> "11 dBm + 10 log B" is basically describing the PSD limit.
->
-> If in doubt, maybe you could ask how certification labs interpret the
-> text? I think that doubly applies to the Trinidad and Tobago case, where
-> the text is somewhat mixing the terms ERP and max conducted power.
->
->
-> Thanks
-> ChenYu
->
-> P.S. The FCC website seems to be more or less unavailable due to the gov'=
-t
-> shutdown, so it's hard to dig up more information at this time.
->
-> [1'] https://transition.fcc.gov/bureaus/oet/ea/presentations/files/oct14/=
-51-New-Rules-for-UNII-Bands,-Oct-2014-TN.pdf
->
->
->
-> > [1] https://www.law.cornell.edu/cfr/text/47/15.407
-> >
-> > >
-> > > >    * extend 5 MHz to 5730 MHz for channel 144
-> > > >  - 5725 - 5850 MHz
-> > > >    * 30 dBm
-> > > >  - 5925 - 6425 MHz
-> > > >    * 24 dBm
-> > >
-> > > These two bands have 0 dBi for max antenna gain, so max TX power =3D=
-=3D
-> > > max EIRP.
-> > >
-> > >
-> > > ChenYu
-> > >
-> > > > [1] https://tatt.org.tt/licensing/class-license/
-> > > > [2] https://tatt.org.tt/wp-content/uploads/2025/07/Schedule-B_Sched=
-ule-of-Devices-Eligible-for-Use-under-a-Class-Licence-25th-July-2025.pdf
-> > > >
-> > > > Signed-off-by: Ping-Ke Shih <pkshih@realtek.com>
-> > > > ---
-> > > > Hints to find these entries: by searching "Wi-Fi" with type 1 in [2=
-].
-> > > > ---
-> > > >  db.txt | 13 ++++++++-----
-> > > >  1 file changed, 8 insertions(+), 5 deletions(-)
-> > > >
-> > > > diff --git a/db.txt b/db.txt
-> > > > index 6e1ad30222a4..90ffa4e0d5d7 100644
-> > > > --- a/db.txt
-> > > > +++ b/db.txt
-> > > > @@ -1946,12 +1946,15 @@ country TR: DFS-ETSI
-> > > >         # 60 GHz band channels 1-4, ref: Etsi En 302 567
-> > > >         (57000 - 66000 @ 2160), (40)
-> > > >
-> > > > +# Source:
-> > > > +# https://tatt.org.tt/wp-content/uploads/2025/07/Schedule-B_Schedu=
-le-of-Devices-Eligible-for-Use-under-a-Class-Licence-25th-July-2025.pdf
-> > > >  country TT: DFS-FCC
-> > > > -       (2402 - 2482 @ 40), (20)
-> > > > -       (5170 - 5250 @ 80), (17), AUTO-BW
-> > > > -       (5250 - 5330 @ 80), (24), DFS, AUTO-BW
-> > > > -       (5490 - 5730 @ 160), (24), DFS
-> > > > -       (5735 - 5835 @ 80), (30)
-> > > > +       (2400 - 2483.5 @ 40), (30)
-> > > > +       (5150 - 5250 @ 80), (24), AUTO-BW
-> > > > +       (5250 - 5350 @ 80), (24), DFS, AUTO-BW
-> > > > +       (5470 - 5730 @ 160), (24), DFS
-> > > > +       (5730 - 5850 @ 80), (30)
-> > > > +       (5925 - 6425 @ 320), (24)
-> > > >
-> > > >  # Source:
-> > > >  # Table of Frequency Allocations of Republic of China (Taiwan) / F=
-eb 2017:
-> > > > --
-> > > > 2.25.1
-> > > >
+  2. Driver logic corruption: The overread bytes are fed into
+     cfg80211_find_ie() which scans them as if they were valid
+     Information Elements. If adjacent heap data contains bytes that
+     match an IE tag ID, the driver may act on garbage data — affecting
+     scan decisions (core.c path: 6 GHz probe cancellation) or WoWLAN
+     AKM parsing (wow.c path: authentication key management selection).
+
+  3. No user interaction: The victim does not need to connect to any
+     network — passive scanning of beacons is sufficient. 802.11
+     management frames are unauthenticated even under WPA3. The
+     attacker only needs physical proximity (WiFi range, ~100m outdoor).
+
+  4. Widespread exposure: rtw89 covers Realtek WiFi 6/6E chipsets
+     (RTL8852AE, RTL8852BE, RTL8852CE, RTL8922AE) used in many modern
+     laptops and desktops since v6.4.
+
+Root cause
+----------
+Two callsites compute the IE search region length incorrectly:
+
+In rtw89_core_cancel_6ghz_probe_tx()
+(drivers/net/wireless/realtek/rtw89/core.c):
+
+    const u8 *ies = mgmt->u.beacon.variable;
+    ssid_ie = cfg80211_find_ie(WLAN_EID_SSID, ies, skb->len);
+                                                    ^^^^^^^^^
+
+`ies` points 36 bytes into the skb (past the 24-byte 802.11 header +
+12-byte beacon fixed fields), but `skb->len` is the total frame length
+including those 36 bytes. This means cfg80211_find_ie() searches 36
+bytes past the end of the actual IE data.
+
+In rtw89_wow_parse_akm()
+(drivers/net/wireless/realtek/rtw89/wow.c):
+
+    const u8 *ies = mgmt->u.assoc_req.variable;
+    rsn = cfg80211_find_ie(WLAN_EID_RSN, ies, skb->len);
+                                               ^^^^^^^^^
+
+Here `ies` points 28 bytes into the skb (24-byte header + 4-byte
+assoc_req fixed fields), causing a 28-byte overread.
+
+Verification (kernel 6.12.115, KASAN generic)
+----------------------------------------------
+Code audit: The root cause is mechanically verifiable from source alone —
+cfg80211_find_ie() receives `skb->len` (total frame) rather than
+`skb->len - ies_offset` (IE region), causing the IE parser to scan
+36 bytes (core.c) or 28 bytes (wow.c) past the actual IE data.
+
+Production trigger requires a physical Realtek rtw89 WiFi adapter
+receiving a crafted beacon; verified instead with a kernel test module
+that calls cfg80211_find_ie() with the same incorrect length calculation
+applied to a kmalloc'd buffer sized to the IE region:
+
+  BUG: KASAN: slab-out-of-bounds in find_ie_kern.constprop.0+0xe0/0x100
+  Read of size 1 at addr ffff88810e1ab864 by task insmod/1901
+
+  CPU: 3 UID: 0 PID: 1901 Comm: insmod Tainted: G           O       6.12.115 #1
+  Call Trace:
+    dump_stack_lvl+0x93/0xd0
+    print_report+0xce/0x660
+    kasan_report+0xe0/0x110
+    find_ie_kern.constprop.0+0xe0/0x100
+
+The function cfg80211_find_ie() is a production kernel API in
+net/wireless/scan.c (unmodified). The OOB is in the IE length
+calculation in the rtw89 driver, not in cfg80211 itself.
+
+Proposed patch
+--------------
+Replace `skb->len` with the actual IE region length, with a guard
+against underflow from malformed/truncated skbs:
+
+--- a/drivers/net/wireless/realtek/rtw89/core.c
++++ b/drivers/net/wireless/realtek/rtw89/core.c
+@@ rtw89_core_cancel_6ghz_probe_tx()
+ 	const u8 *ies = mgmt->u.beacon.variable;
++	size_t ies_offset = ies - skb->data;
++
++	if (skb->len < ies_offset)
++		return;
+
+-	ssid_ie = cfg80211_find_ie(WLAN_EID_SSID, ies, skb->len);
++	ssid_ie = cfg80211_find_ie(WLAN_EID_SSID, ies, skb->len - ies_offset);
+
+--- a/drivers/net/wireless/realtek/rtw89/wow.c
++++ b/drivers/net/wireless/realtek/rtw89/wow.c
+@@ rtw89_wow_parse_akm()
+ 	const u8 *ies = mgmt->u.assoc_req.variable;
++	size_t ies_offset = ies - skb->data;
++
++	if (skb->len < ies_offset)
++		return;
+
+-	rsn = cfg80211_find_ie(WLAN_EID_RSN, ies, skb->len);
++	rsn = cfg80211_find_ie(WLAN_EID_RSN, ies, skb->len - ies_offset);
+
+I have not shared this finding publicly. Happy to work with the WiFi
+maintainers on the patch if any changes are needed.
+
+Best regards,
+Tanuj Sharma
+ertanuj96@gmail.com
