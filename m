@@ -1,59 +1,59 @@
 Authentication-Results: smtp.subspace.kernel.org; arc=none smtp.remote-ip=46.4.11.11
 ARC-Seal: i=1; d=subspace.kernel.org; s=arc20261015; a=rsa-sha256; cv=none;
 	t=1795441765;
-	b=Nu0Ie9fJLJHws4gkSzwTUVxlh580C4TscgDwTs4jwq8P3vJ0WUaCxCFUPbltZ6Rp/mKn
-	 ftaaAzfniBJVk2rKgME79ypaXzmrJ4pC75itpWaAN2c9GcN1bp8BYpdQgvEjF/aNS/LZd
-	 vInWin90+MtiXHIjcd3MA8pLuV/0UzDjoTeiOhjG+gHHz7ecexZT7TAoOrl0bhPgoYZ3l
-	 CumQX5ws7ovqFtumUVCDB+X0E0DOQ8MZ6GoH3dboHjMannS9nXZK/3MmzoCIh2dpkEw6z
-	 eX81t9f2b9TPqUhpGnElBhLo3DXTTgh83vFxaa51/1NnuCMB2ZL8kDnnxLjmK5dH/Ow==
+	b=eMb2JCFwsfhwSFtEvmTr8BSnIZJBQIfcQ4LtBI+UVUpuM2YRUgMDr9uL5UWe90N5nKJh
+	 OuUPYJMNUO+8UUiagLkGTBvR39r2aPKKxMxwYlnjebIg2dkmq31Uir1NFzIAphy8DAKet
+	 Pz6ux+X33serX90Nk409d9lU5BJNkaizttp9ZW2L2ISeJTytQTNBYHWNvGU2M9knP91A1
+	 O0/aVkUbZlyfw16DwN1tfLYP1eFNs8+0Fwg+cXAN4GwADeEc84UnLky1El9n8rgy2MPLL
+	 pX7Adlgc2gGC7hORZGu8nClg/rqJ6vjJYIpwr4q2w11weXV/oCk7KuQ6r6AKmh5R4Uw==
 ARC-Message-Signature: i=1; d=subspace.kernel.org; s=arc20261015;
 	a=rsa-sha256; c=relaxed/relaxed; t=1795441765;
 	h=DMARC-Filter:DKIM-Signature:Received:From:To:Subject:Date:Message-ID:
 	 X-Mailer:In-Reply-To:References:MIME-Version:
 	 Content-Transfer-Encoding;
-	bh=mrklqxY1RcZSByGNB5Rj1arGOix+6/HcC6Uv8l14KH0=;
-	b=rQczBfpxBOSmtOHOE3s+gm6BppmJeWO9NdKkS+P60ZpWMkPSUuj0Gb83G0YODvl3yHrb
-	 aRew0Adycm/qnOx79fqkdrqkFilxzjHBWFlIQId/YOnxXtiownF0HFiKN1C1014d9sExJ
-	 avdwWP+z2G6eYYDHfh43JhDH4YopmlUrgrba7Ok+T5CDdbWpy+Lw3e9wqdWg/ekSzgRo/
-	 OPADfxj2psitWonJ4g3KJ2ulYedwfSAHCr2VoD65asl/menrL4sy8a74D/X6H2mwRKhiw
-	 K/YlOjeBZvCaux7Q5caZjQ+F2vYY9v2rg9ZNtUsi07eQ82juABUK0IiVYjKBBRsGy8w==
+	bh=0AFszxbJqqLJrzohz45yn8oL7A6quIg16F7Kb0kyATk=;
+	b=C3cVeKeBtsrtgjGx+qMI98UZp/O5Wew0btpwX2dgcfQdNC17eZAgcyjV+uwDFrgR84rD
+	 2Lfp6nbL/mGLGU+a5geG0klAIhdJgmrix4aJmtB3UXcheAF/E3ptrH5ueG0BCImKrPz/t
+	 wGpyTzjk/fuYORYB/sJfo9z1dbTjlFll/nD8htFlYY2j0A0QHwpC4laQEjqqbhg/VhHoq
+	 m5argywO88zGrkgZe8hhZi/GtkgNJskP5yURh6Me3GH0USEDKrygZk4593BOsu9EfCD6f
+	 tdIXTjCUvpFrZ6YATICUoK8z3GUIhyfMEqf0JdIeRRm+02dtfJQ4sSA94539Skj95gg==
 ARC-Authentication-Results: i=1; smtp.subspace.kernel.org; 
 	dmarc=pass header.from=nbd.name;
 	spf=pass smtp.mailfrom=nbd.name;
-	dkim=pass header.d=nbd.name header.i=@nbd.name header.a=rsa-sha256 header.s=20160729 header.b=WqzN9R+6;
+	dkim=pass header.d=nbd.name header.i=@nbd.name header.a=rsa-sha256 header.s=20160729 header.b=VcZnkWsI;
 	arc=none smtp.remote-ip=46.4.11.11
 Received: from nbd.name (nbd.name [46.4.11.11])
 	(using TLSv1.3 with cipher TLS_AES_256_GCM_SHA384 (256/256 bits)
 	 key-exchange ECDHE (prime256v1) server-signature ECDSA (prime256v1) server-digest SHA256)
 	(No client certificate requested)
-	by smtp.subspace.kernel.org (Postfix) with ESMTPS id E1ED4606A336
-	for <linux-wireless@vger.kernel.org>; Mon, 23 Nov 2026 13:49:24 +0000 (UTC)
-DMARC-Filter: OpenDMARC Filter v1.4.2 smtp.subspace.kernel.org E1ED4606A336
+	by smtp.subspace.kernel.org (Postfix) with ESMTPS id 91DAA606A690
+	for <linux-wireless@vger.kernel.org>; Mon, 23 Nov 2026 13:49:25 +0000 (UTC)
+DMARC-Filter: OpenDMARC Filter v1.4.2 smtp.subspace.kernel.org 91DAA606A690
 Authentication-Results: smtp.subspace.kernel.org; dmarc=pass (p=none dis=none) header.from=nbd.name
 Authentication-Results: smtp.subspace.kernel.org; spf=pass smtp.mailfrom=nbd.name
 Authentication-Results: smtp.subspace.kernel.org;
-	dkim=pass (1024-bit key) header.d=nbd.name header.i=@nbd.name header.a=rsa-sha256 header.s=20160729 header.b=WqzN9R+6
+	dkim=pass (1024-bit key) header.d=nbd.name header.i=@nbd.name header.a=rsa-sha256 header.s=20160729 header.b=VcZnkWsI
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed; d=nbd.name;
 	s=20160729; h=Content-Transfer-Encoding:MIME-Version:References:In-Reply-To:
 	Message-ID:Date:Subject:To:From:Sender:Reply-To:Cc:Content-Type:Content-ID:
 	Content-Description:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc
 	:Resent-Message-ID:List-Id:List-Help:List-Unsubscribe:List-Subscribe:
 	List-Post:List-Owner:List-Archive;
-	bh=mrklqxY1RcZSByGNB5Rj1arGOix+6/HcC6Uv8l14KH0=; b=WqzN9R+6SB5GyNx/Egpcb3Mf69
-	oaADMm6U1B9/H4p2a2DF96AaYTGoPEZj2K2zKmkRrmujfxnfQnRb3XYSJs3tFN87QhAAfPlhM3SyV
-	b1wXkdwgMhUte9/xfj/XRqWGZoVB5Tdz2hu/4XGSLePll576wydyWiB6qmII44q5i5c8=;
+	bh=0AFszxbJqqLJrzohz45yn8oL7A6quIg16F7Kb0kyATk=; b=VcZnkWsInO7kX1TKjedxNPXszG
+	YI88SiMowSWqEnpDy6ReSVC146aRE7BfZed34TtL+CzlQ6tI9eeJfVZkdIpFPES/mJJ9ZrVQ6nAMR
+	eeFvevv+bcvjGBfJ+fefCqsOvUJvCMyD8ZS51oIKJxL1MHakQeyHP4GS/4hfJQ/UZmvM=;
 Received: from p200300cadf1ed20000000000000005bb.dip0.t-ipconnect.de ([2003:ca:df1e:d200::5bb] helo=localhost.localdomain)
 	by ds12 with esmtpsa  (TLS1.3) tls TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384
 	(Exim 4.96)
 	(envelope-from <nbd@nbd.name>)
-	id 1xVUQ7-007NFk-1m
+	id 1xVUQ8-007NFk-0j
 	for linux-wireless@vger.kernel.org;
-	Mon, 23 Nov 2026 14:49:23 +0100
+	Mon, 23 Nov 2026 14:49:24 +0100
 From: Felix Fietkau <nbd@nbd.name>
 To: linux-wireless@vger.kernel.org
-Subject: [PATCH mt76-next 11/20] wifi: mt76: mt7915: send mt7981 only the group units its firmware holds
-Date: Mon, 23 Nov 2026 14:49:10 +0100
-Message-ID: <20261123134920.154270-11-nbd@nbd.name>
+Subject: [PATCH mt76-next 15/20] wifi: mt76: mt7996: resume the radar TX stop at an operating channel set
+Date: Mon, 23 Nov 2026 14:49:14 +0100
+Message-ID: <20261123134920.154270-15-nbd@nbd.name>
 X-Mailer: git-send-email 2.47.3
 In-Reply-To: <20261123134920.154270-1-nbd@nbd.name>
 References: <20261123134920.154270-1-nbd@nbd.name>
@@ -68,91 +68,86 @@ Precedence: list
 MIME-Version: 1.0
 Content-Transfer-Encoding: 8bit
 
-Since the mt7981 group pre-calibration size follows the vendor flash
-layout, mt7915_mcu_apply_group_cal() sends 144 units of 1024 bytes on
-mt7981. The group store of the mt7981 firmware holds 94 units, as on
-mt7986. Its handler checks neither the index nor the length of a chunk.
+After a radar detection the firmware stops the data TX of every BSS of
+the band. mt7996_mcu_rdd_resume_tx() lifts the stop only after a
+completed channel switch announcement or when the last interface goes
+down. A radar hit during a CAC ends with a new channel context and no
+CSA. Stations then associate on the new channel, but no EAPOL frame
+leaves, and a station interface on the band loses its data as well.
 
-The units with index 94 to 143 thus overwrite 50 KiB of firmware memory
-behind the store. This happens at each probe of a board with group
-pre-calibration data.
+Send the resume when the driver sets the band to an operating channel
+where no subchannel is unavailable after a radar detection. The MediaTek
+feed sends it at the same place in its channel set. An off-channel set
+for a scan or a ROC sends none, since the resume also lifts the station
+pause of the firmware scan state. A scan or ROC set on the operating
+channel sends it. A failed resume keeps phy->rdd_tx_paused set, so a
+later channel set, channel switch or the removal of the last interface
+sends it again. A chandef with an unavailable subchannel sends none, so
+the band does not transmit on the channel of the hit again.
 
-Send only the units that the firmware stores. Keep the trailer and the
-DPD data at their offsets of the flash layout.
+The test misses the time from the detection event until the mac80211
+radar work marks the channel unavailable. The radar work does that after
+it cancels the CAC.
 
-Fixes: 2b660ee10a0c ("wifi: mt76: mt7915: fix mt7981 pre-calibration")
+Fixes: 45a09251d610 ("wifi: mt76: mt7996: fix the behavior of radar detection")
 Signed-off-by: Felix Fietkau <nbd@nbd.name>
 ---
- .../wireless/mediatek/mt76/mt7915/eeprom.h    |  2 ++
- .../net/wireless/mediatek/mt76/mt7915/mcu.c   | 28 ++++++++++---------
- 2 files changed, 17 insertions(+), 13 deletions(-)
+ .../net/wireless/mediatek/mt76/mt7996/main.c  | 35 +++++++++++++++++++
+ 1 file changed, 35 insertions(+)
 
-diff --git a/drivers/net/wireless/mediatek/mt76/mt7915/eeprom.h b/drivers/net/wireless/mediatek/mt76/mt7915/eeprom.h
-index 1dc285c72991..bfba4fce3f6d 100644
---- a/drivers/net/wireless/mediatek/mt76/mt7915/eeprom.h
-+++ b/drivers/net/wireless/mediatek/mt76/mt7915/eeprom.h
-@@ -51,6 +51,8 @@ enum mt7915_eeprom_field {
- #define MT_EE_CAL_GROUP_SIZE_7976		(94 * MT_EE_CAL_UNIT + 16)
- #define MT_EE_CAL_GROUP_SIZE_7916_6G		(94 * MT_EE_CAL_UNIT + 16)
- #define MT_EE_CAL_GROUP_SIZE_7981		(144 * MT_EE_CAL_UNIT + 16)
-+/* the mt7981 firmware stores fewer group units than its flash layout holds */
-+#define MT_EE_CAL_GROUP_FW_UNITS_7981		94
- #define MT_EE_CAL_DPD_SIZE_V1			(54 * MT_EE_CAL_UNIT)
- #define MT_EE_CAL_DPD_SIZE_V2			(300 * MT_EE_CAL_UNIT)
- 
-diff --git a/drivers/net/wireless/mediatek/mt76/mt7915/mcu.c b/drivers/net/wireless/mediatek/mt76/mt7915/mcu.c
-index 02426feb6182..e9a10606c6aa 100644
---- a/drivers/net/wireless/mediatek/mt76/mt7915/mcu.c
-+++ b/drivers/net/wireless/mediatek/mt76/mt7915/mcu.c
-@@ -3105,33 +3105,35 @@ static int mt7915_mcu_set_pre_cal(struct mt7915_dev *dev, u8 idx,
- 
- int mt7915_mcu_apply_group_cal(struct mt7915_dev *dev)
- {
--	u8 idx = 0, *cal = dev->cal, *eep = dev->mt76.eeprom.data;
--	u32 total = mt7915_get_cal_group_size(dev);
-+	u8 idx, units, *cal = dev->cal, *eep = dev->mt76.eeprom.data;
-+	u32 size = mt7915_get_cal_group_size(dev);
- 	u32 offs = is_mt7915(&dev->mt76) ? MT_EE_DO_PRE_CAL : MT_EE_DO_PRE_CAL_V2;
-+	u32 trailer = size % MT_EE_CAL_UNIT;
-+	int ret;
- 
- 	if (!(eep[offs] & MT_EE_WIFI_CAL_GROUP))
- 		return 0;
- 
-+	units = size / MT_EE_CAL_UNIT;
-+	if (is_mt7981(&dev->mt76))
-+		units = MT_EE_CAL_GROUP_FW_UNITS_7981;
-+
- 	/*
- 	 * Items: Rx DCOC, RSSI DCOC, Tx TSSI DCOC, Tx LPFG
- 	 * Tx FDIQ, Tx DCIQ, Rx FDIQ, Rx FIIQ, ADCDCOC
- 	 */
--	while (total > 0) {
--		int ret, len;
--
--		len = min_t(u32, total, MT_EE_CAL_UNIT);
--
--		ret = mt7915_mcu_set_pre_cal(dev, idx, cal, len,
-+	for (idx = 0; idx < units; idx++) {
-+		ret = mt7915_mcu_set_pre_cal(dev, idx,
-+					     cal + idx * MT_EE_CAL_UNIT,
-+					     MT_EE_CAL_UNIT,
- 					     MCU_EXT_CMD(GROUP_PRE_CAL_INFO));
- 		if (ret)
- 			return ret;
--
--		total -= len;
--		cal += len;
--		idx++;
+diff --git a/drivers/net/wireless/mediatek/mt76/mt7996/main.c b/drivers/net/wireless/mediatek/mt76/mt7996/main.c
+index 5676379b2ca1..65b5012a0017 100644
+--- a/drivers/net/wireless/mediatek/mt76/mt7996/main.c
++++ b/drivers/net/wireless/mediatek/mt76/mt7996/main.c
+@@ -754,6 +754,32 @@ static void mt7996_remove_interface(struct ieee80211_hw *hw,
  	}
- 
--	return 0;
-+	/* the trailer follows all units of the flash layout */
-+	return mt7915_mcu_set_pre_cal(dev, idx, cal + size - trailer, trailer,
-+				      MCU_EXT_CMD(GROUP_PRE_CAL_INFO));
  }
  
- static int mt7915_find_freq_idx(const u16 *freqs, int n_freqs, u16 cur)
++static bool mt7996_chan_unavailable(struct ieee80211_channel *chan)
++{
++	return chan && (chan->flags & IEEE80211_CHAN_RADAR) &&
++	       chan->dfs_state == NL80211_DFS_UNAVAILABLE;
++}
++
++static bool
++mt7996_chandef_unavailable(struct wiphy *wiphy,
++			   const struct cfg80211_chan_def *chandef)
++{
++	int center[] = { chandef->center_freq1, chandef->center_freq2 };
++	int width = cfg80211_chandef_get_width(chandef);
++	int i, freq;
++
++	for (i = 0; i < ARRAY_SIZE(center) && center[i]; i++) {
++		for (freq = center[i] - width / 2 + 10;
++		     freq < center[i] + width / 2; freq += 20) {
++			if (mt7996_chan_unavailable(ieee80211_get_channel(wiphy,
++									  freq)))
++				return true;
++		}
++	}
++
++	return false;
++}
++
+ int mt7996_set_channel(struct mt76_phy *mphy)
+ {
+ 	struct mt7996_phy *phy = mphy->priv;
+@@ -778,6 +804,15 @@ int mt7996_set_channel(struct mt76_phy *mphy)
+ 	if (ret)
+ 		goto out;
+ 
++	if (!mphy->offchannel && mphy->chanctx &&
++	    !mt7996_chandef_unavailable(mphy->hw->wiphy, &mphy->chandef)) {
++		ret = mt7996_mcu_rdd_resume_tx(phy);
++		if (ret)
++			dev_warn_once(phy->dev->mt76.dev,
++				      "failed to resume TX after radar: %d\n",
++				      ret);
++	}
++
+ 	ret = mt7996_dfs_init_radar_detector(phy);
+ 	mt7996_mac_cca_stats_reset(phy);
+ 
 -- 
 2.47.3
 
