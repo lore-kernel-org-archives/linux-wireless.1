@@ -1,99 +1,94 @@
-Authentication-Results: smtp.subspace.kernel.org; arc=none smtp.remote-ip=74.125.82.41
+Authentication-Results: smtp.subspace.kernel.org; arc=none smtp.remote-ip=74.125.82.175
 ARC-Seal: i=1; d=subspace.kernel.org; s=arc20261015; a=rsa-sha256; cv=none;
-	t=1795431613;
-	b=yOrPLKxwfVyLl7HhZBAIHasQYxDkI3MquOG8hKj6VtCK9h/bx61ZB1vWrQY6+MYqYNGT
-	 FWqA2NTDtXQyyX+pp98/hcE3eRzTEhiGJKxq4VmfHRibpazA7cfnVnZtWZ+htalwI5xY3
-	 /gMfl41dQn5Cj+CzMRiQWuptZ3qb3Fowao/67iVV0rR/CFktBnIzQeg6bBcdc3Meh5Lsi
-	 l2x3xpCndlgn4oBspI5rvVxCIFkfZk1XNG26sX/0PjiOx14y1HVH54cd/yicvdhQGf7mn
-	 wE1gNKnRyjf24YtQKTSHR+qdgELHb7oLR0cpKSMva6hE6fY/IKiHDbk4FHP1yLIGzLA==
+	t=1795431873;
+	b=Tuh9sH1vb2u6+8nqjr/ukl7Nfc4P7R2FCq0pyfil8tKxdVyO6F6whUbTdzO8vBU/OqFd
+	 ipPUM2eRc3pSmOAdPOAFwhP3ztOVgD2nk6nLzc6VtT+JOZI70iF5mD85g+VPmTNQMmfBZ
+	 UyOye5v4AD2ScHoJ+L37k7zcRFq504FVlfDz24/p9obqCGFXyb/nkSRghd0vHjkstxgaz
+	 VhOhVPoH+JGUoaEphltEoIHfZx7fpd3Ob5GE7TJtgKsgBsfHPR9He62D/q/SGwm3FH3np
+	 VcnyiHH8ZrdRKSh4sb7E78T1jhObVVAaDTlC/OChVY0HVuFgiVeNOEnp0vHkPLCfNBg==
 ARC-Message-Signature: i=1; d=subspace.kernel.org; s=arc20261015;
-	a=rsa-sha256; c=relaxed/relaxed; t=1795431613;
+	a=rsa-sha256; c=relaxed/relaxed; t=1795431873;
 	h=DMARC-Filter:Received:DKIM-Signature:X-Google-DKIM-Signature:
 	 X-Forwarded-Encrypted:X-Gm-Message-State:X-Gm-Gg:X-Received:Received:
-	 From:To:Cc:Subject:Date:Message-ID:X-Mailer:In-Reply-To:References:
-	 MIME-Version:Content-Type:Content-Transfer-Encoding;
-	bh=ECfYoY8F+lCFkeZwCo4IjOYP/BenjEtPYMmwZCiag6s=;
-	b=YBzUnzt/49EBVWY8KCM1Y4egHjdIakzZ0m01+127jYXTewfukcS7pW57+ak6rjRzbVmw
-	 f9p90/H20/zYoY9Jq81O9CnhiYD1361fvZtBr6Qs5OPIE96nBP+bOcurgCasAzBTrQDKM
-	 TsT+A3m57ttuCmvwyAaADWFQylCriTOR2EEb5XZVgPYE5yimw9j5A4VOEdcakN+AW3nZd
-	 DF6dcgnFFPlGI32eGSg3cGMEGC8PfTs027mfgQ6e6JIC8HYj0IxSZ4YzWrnQTn/i7hOD4
-	 XuFpjjUDWy/A++Pi7Ded/HRLGCxWoPTvvUiGil790hI8Q/ko7cpX05mJnuYuQGxvWmA==
+	 From:To:Cc:Subject:Date:Message-ID:X-Mailer:MIME-Version:Content-Type:
+	 Content-Transfer-Encoding;
+	bh=GvGsxvmb9/V6ftdi1SXPdiM1HYZ4VihhjKY+1NaySvo=;
+	b=ENYATTpBt06TwCX/a0N9L6ZhrxktNGWsoET6BSuET6WXXeex0kjq7plNT4PT7mKtzwHH
+	 3HLpdj4p2iwyaq3VhasQCw/Qfh1qo3iwA418yR6yyV+CrDB17ROj/EPMGt0/vKD86FPSK
+	 DX71DM89nLv5c5Dmb2EpF7tKP0GLmwbk+d3wYqIYKxxSdKQPHKYA8jrc44KGan72jnn1j
+	 SRIfKPxL/IANB4Hv1cUznLTjbiyYRO85Kk1lqc/H6E/fCDdFq7oFd0Cx0gJEo09TNTtoa
+	 ZObp1Bun8uY8MREC+2aDHmyEXjw3jJqa9wFqhhZlXAXqR+WKQxXII3nZgtvQGMm05VA==
 ARC-Authentication-Results: i=1; smtp.subspace.kernel.org; 
 	dmarc=pass header.from=gmail.com;
 	spf=pass smtp.mailfrom=gmail.com;
-	dkim=pass header.d=gmail.com header.i=@gmail.com header.a=rsa-sha256 header.s=20260707 header.b="iaa/zBv4";
-	arc=none smtp.remote-ip=74.125.82.41
-Received: from mail-dl1-f41.google.com (mail-dl1-f41.google.com [74.125.82.41])
+	dkim=pass header.d=gmail.com header.i=@gmail.com header.a=rsa-sha256 header.s=20260707 header.b="ygRhx/l9";
+	arc=none smtp.remote-ip=74.125.82.175
+Received: from mail-dy1-f175.google.com (mail-dy1-f175.google.com [74.125.82.175])
 	(using TLSv1.3 with cipher TLS_AES_128_GCM_SHA256 (128/128 bits)
 	 key-exchange X25519 server-signature ECDSA (prime256v1) server-digest SHA256)
 	(No client certificate requested)
-	by smtp.subspace.kernel.org (Postfix) with ESMTPS id C780A606A31E
-	for <linux-wireless@vger.kernel.org>; Mon, 23 Nov 2026 11:00:12 +0000 (UTC)
-DMARC-Filter: OpenDMARC Filter v1.4.2 smtp.subspace.kernel.org C780A606A31E
+	by smtp.subspace.kernel.org (Postfix) with ESMTPS id 5B059606A32E
+	for <linux-wireless@vger.kernel.org>; Mon, 23 Nov 2026 11:04:33 +0000 (UTC)
+DMARC-Filter: OpenDMARC Filter v1.4.2 smtp.subspace.kernel.org 5B059606A32E
 Authentication-Results: smtp.subspace.kernel.org; dmarc=pass (p=none dis=none) header.from=gmail.com
 Authentication-Results: smtp.subspace.kernel.org; spf=pass smtp.mailfrom=gmail.com
 Authentication-Results: smtp.subspace.kernel.org;
-	dkim=pass (2048-bit key) header.d=gmail.com header.i=@gmail.com header.a=rsa-sha256 header.s=20260707 header.b=iaa/zBv4
-Received: by mail-dl1-f41.google.com with SMTP id a92af1059eb24-1b3a05f8b5bso3920820c88.1
-        for <linux-wireless@vger.kernel.org>; Mon, 23 Nov 2026 03:00:12 -0800 (PST)
+	dkim=pass (2048-bit key) header.d=gmail.com header.i=@gmail.com header.a=rsa-sha256 header.s=20260707 header.b=ygRhx/l9
+Received: by mail-dy1-f175.google.com with SMTP id 5a478bee46e88-3863db981d4so4162318eec.0
+        for <linux-wireless@vger.kernel.org>; Mon, 23 Nov 2026 03:04:33 -0800 (PST)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=gmail.com; s=20260707; t=1795431612; x=1796036412; darn=vger.kernel.org;
-        h=content-transfer-encoding:content-type:mime-version:references
-         :in-reply-to:message-id:date:subject:cc:to:from:from:to:cc:subject
-         :date:message-id:reply-to:content-type;
-        bh=ECfYoY8F+lCFkeZwCo4IjOYP/BenjEtPYMmwZCiag6s=;
-        b=iaa/zBv4ZxD4e02VGB+gofIFtiBaCgfFWKqayI8RE0gNU/5IPMRizuSn6ccN3mybRP
-         IsLNYM9MCekVCcLudYHJl8B7fLlRwRRyFkg0X+a3DXlPawXApgEcdlswRKe3QSP9G/XW
-         Yy5OxctgBtW+Lsjmo26SCtQk7YhOc149q33m4Fith45I/9SCMf2CKYRVC2CeSSoJeld0
-         LANU9TW29CrHhoa1ibFdI8vtx+P4kjHcabUkAcAnOrwWJqfcmKe2KYoXHoEUpEOuMh0Q
-         D9Z2Qtv5HWrppqGu7AULQe+YvKtENyE3KmaETwdQNj7KW/TMG07Y+57spL6K1NXoCgDx
-         HHlQ==
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=1e100.net; s=20260707; t=1795431612; x=1796036412;
-        h=content-transfer-encoding:content-type:mime-version:references
-         :in-reply-to:message-id:date:subject:cc:to:from:x-gm-gg
-         :x-gm-message-state:from:to:cc:subject:date:message-id:reply-to
+        d=gmail.com; s=20260707; t=1795431872; x=1796036672; darn=vger.kernel.org;
+        h=content-transfer-encoding:content-type:mime-version:message-id:date
+         :subject:cc:to:from:from:to:cc:subject:date:message-id:reply-to
          :content-type;
-        bh=ECfYoY8F+lCFkeZwCo4IjOYP/BenjEtPYMmwZCiag6s=;
-        b=D4IZk/B8EijbqONUjWBcNkIDXAjx1ZR48ZYi7up9Ymh+MJuyv+6ISr9HTiGx5l4y1c
-         60w/Hq5EziMkM/hJpZxl/bcEyxODCjEkXVHwJncN8q1CCAya/ZtxSTyUE7Ij7H1/koa7
-         Z1d0eI9mOgxHYF5kKnZv7fXPktkMKHg6fCB58mfPLmIYCUWq1ScTVbifsQeLUzTLtDkf
-         BSNSPbopGP3MJWsb/ku1jN/6GQQSgKiScfC6VcrXHhl55sPij93uHmMoU9ej05W/Kou+
-         hIIkJ4yBgYveTQ6A3lmDSOezKhFR10hr+L8cTjPg6bkaOdSWhKaD+MTKRSjbJaXEtC38
-         we4A==
-X-Forwarded-Encrypted: i=1; AL+hErFIug4Dv6dwp0217LaknZgceVPdI2pMJbzO2o61hm+IJ/+LlaICbjIVwZn61sE7admaI2quUxsqwC36kCziWA==@vger.kernel.org
-X-Gm-Message-State: APuU4Z+EwCeoDJfk0HJLL0vxHF3zBVmkbKTTH56UVyyxm2xXMnOnis9X
-	D6v8ucVvOsNmhAWkwUS+hIWEgpPCUKsBVB1AgruP8ojO7glV6xgBSgs1
-X-Gm-Gg: AZFdTZc5SatrGXthe4qWJWFXxjpWf0boOqtnim6KwVbFx7vxsIx/xVPEO3TsEQBOWiC
-	FKDRntrPbQHSm/iNyLort0s/aA8tulvEXNQ7Ay+J65K8XtDnyzE6qn3WYW2kOF2MxVPX2sQILvo
-	qxfrdP20HUfgISWiHVXwu6pIlhMA9sUod3lNWim6IZ7WKesVri9cq7i20RztEPMTRtALly9ogVY
-	sQ7pXWxu5rSagozdZk0C/tqWNm2ZbpyajvazfYBd3C3zqAtxtHsXLFYuW6LVpcxj0+DWN5LdXg1
-	5hjuEklYqVn96utQ9CSy5t+NVCMU6MLFMUMdHm9xd4sgzTlM2HJHq9tVkSlyPhSUG4G0cJljSmx
-	CPLIC9vIhSMA1jjd5eeNq9/aQPbdD2oCTxjy0FNCgS3/HR/xw2Dndk8mn4+nMkqfQJ26fJ+KIST
-	WYwxFcMozw4lgve6xsvq6LkBBtp+NPkFoA56tvKCy7gI8SA3TuNDE4wAIrFBUMWRqENCH6dfGV6
-	mLbNDNapiU0MSwASyi+VMBaikU/IO5c8KwjSP59SH65j0hbx0w4ccfhnRPPIX43YYscOpjbUi/P
-	2A/jyCkzWdRsBB6yeBzNu3KK4gn05gowSfE3zt+RZJf7e3szTNnf8EXdiLF83FOjVsnDg8LTqkr
-	XX75M0bZ5c34xHjYEF6SdA0BrRDeOoUThugAbFxf2RHfgog==
-X-Received: by 2002:a05:701b:260e:b0:1a7:e1c6:6f33 with SMTP id a92af1059eb24-1b5568d3ca9mr11253795c88.30.1795431611509;
-        Mon, 23 Nov 2026 03:00:11 -0800 (PST)
+        bh=GvGsxvmb9/V6ftdi1SXPdiM1HYZ4VihhjKY+1NaySvo=;
+        b=ygRhx/l9xMNmCkFDTWmY5q52d4lHqBgIQo9wRIoZxnyfFf2W8Yl5mZz/5pikwtXVGg
+         01q4RrAUZnkFpYdUnZRUoO4h9jyKauNVm5vmdh37boX+xbNxkNk00tieKQQyZa50YNl8
+         N/J6J3KZsaHSA3YCDv4ASYWopV+qccTegqisUCQ/Wns9L9CAQIxdK7NgJuFd5Et5EKfT
+         EVjaMIrpoX2myidtQxS8JWUtdsR9IPflufv068xI7EaLg3uyVzLf+eqFRb3Xxw40249g
+         hEfBY0oklX1B4YPJOCpuPCJ1+2CQijXKONVn33oLvEoQba8Z1VpeSwBNKoJhfNErr8IB
+         8btw==
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+        d=1e100.net; s=20260707; t=1795431872; x=1796036672;
+        h=content-transfer-encoding:content-type:mime-version:message-id:date
+         :subject:cc:to:from:x-gm-gg:x-gm-message-state:from:to:cc:subject
+         :date:message-id:reply-to:content-type;
+        bh=GvGsxvmb9/V6ftdi1SXPdiM1HYZ4VihhjKY+1NaySvo=;
+        b=tlHcn8omhl8nrfHWYyu1vUd13HrkWWgrRhBX6Yrz6XQvrgOG7AGIA+Lr8nhafVQW73
+         9QpBJ/5rm0urdnwGaafXbvcjsmEBe+LDdyVqnDeg9ZJkS2nCTPs+sv1uSrvTwI+Xs/tr
+         kPJaNHg7tOXEku0emn1m+ZMgAsOOoWd58TzLw5Ov16HUDovxBHhwk4XyKuJjKVRm3PfJ
+         KJXDF/7co3iSDGIt1gNhS4bZcoVbfubJPbj0PvitBrkMMnNK9bOqE+VLfyoGXtUxO/rc
+         moHVUs0qjxCgOLctBzsyG6kHpAHS7zU4ew6EMCdjYu5JsYObda4fD3M5ARyyn1vfUB4Y
+         od+g==
+X-Forwarded-Encrypted: i=1; AL+hErH53bUUdrIO2xE+kZXetCUxdttoEG9X9a5gMBZoBG037pEnP4cWOk6P617BJCPDVQ+0mM+p9hqK0vyRBBFyQA==@vger.kernel.org
+X-Gm-Message-State: APuU4Z8jvLzYgoqPxViSNgo0UvMcJmWioQbIOKfxj5TfgltvulHITesc
+	ThrzoX/e12k0c1p56I2wislSI1SiV/xVYDhxWN+PyfrhWiejy7sI42YleClNCsFuVPg=
+X-Gm-Gg: AZFdTZdrFJozU7/my8JHFJIDZT6tYJabhH940T6/c0qN3bFYm8TdRgdd3SsWSUH+vq+
+	XrRzVjSCydhUYwXqdyGjXdvIdi3+EYxsUzg4MStxDyUEqFAIDMcVeKLcjaPppSKj9QE2f/W2W7l
+	duCTfYoKTUd2eVGCt5URVcjBWhSVlk6s9k9VfVlutxJx5onJbOqVKb/KzTBxmESf+i5rG1kUKI5
+	byFr97U5Fb1x0BMR43F136wQJmt8+crR6PWLIVhn87pFmdyFnxFyvCwi1deCF7HdaYFXFxxB8bD
+	QJM35qnHEQJSP2GWGd2vcbKQJJxB0epS39d9E/PYxuc/71N8Y9rSk3MemT2vvdvAvoQ/6K/futo
+	iURZJFTllSw/4OJ/kITsjK9sm0Vg2041qDKSu00ejxus2adGRX/Eftq4cA0Ht6oRGeNt0OpKOUW
+	KTyDuSzKtOZ6xaSH2tldxiQW/W4rNbtw7rmXp3/gxMOBE3Tq/+8CyKIlxY16xIbrowkHL8KFb8p
+	fAdvyR2mKgpxo4Ooi2S9tRNx1GJHC2Jkj4lwNYo7aJuICc+FTKNYN9old1/JhCKABipThbh5xxP
+	62zsM55kzDlG4AiuOn095rXH/nim4uDrnPsK+o1eQk6pGmFpH/P/Qxqw1/1mbXjcqBDWnAOf2lk
+	1F8tRuGm3kUzG7T2ZqvQjbhQsuQ==
+X-Received: by 2002:a05:7301:d81c:b0:386:b7d2:a279 with SMTP id 5a478bee46e88-386b7d2aba6mr937265eec.34.1795431872327;
+        Mon, 23 Nov 2026 03:04:32 -0800 (PST)
 Received: from ip-192-168-31-150.ap-south-1.compute.internal ([2409:40d2:2011:872e:6565:a2df:e6e1:88c7])
-        by smtp.gmail.com with ESMTPSA id a92af1059eb24-1b55ff0e4e6sm20501075c88.11.2026.11.23.03.00.08
+        by smtp.gmail.com with ESMTPSA id 5a478bee46e88-385666e7fc3sm31475136eec.8.2026.11.23.03.04.28
         (version=TLS1_3 cipher=TLS_CHACHA20_POLY1305_SHA256 bits=256/256);
-        Mon, 23 Nov 2026 03:00:10 -0800 (PST)
+        Mon, 23 Nov 2026 03:04:31 -0800 (PST)
 From: Tanuj Sharma <ertanuj96@gmail.com>
 To: security@kernel.org
 Cc: pkshih@realtek.com,
 	kvalo@kernel.org,
-	phhuang@realtek.com,
-	gary.chang@realtek.com,
 	linux-wireless@vger.kernel.org,
 	Tanuj Sharma <ertanuj96@gmail.com>
-Subject: Re: [SECURITY] wifi: rtw89: OOB read in beacon/probe-resp IE parsing (OTA, pre-auth)
-Date: Mon, 23 Nov 2026 16:29:56 +0530
-Message-ID: <20261123105958.75875-1-ertanuj96@gmail.com>
+Subject: [SECURITY] wifi: rtlwifi: OOB read in P2P NoA IE parsing (OTA, spoofed BSSID)
+Date: Mon, 23 Nov 2026 16:34:13 +0530
+Message-ID: <20261123110419.76740-1-ertanuj96@gmail.com>
 X-Mailer: git-send-email 2.54.0
-In-Reply-To: <20261123101028.58146-1-ertanuj96@gmail.com>
-References: <20261123101028.58146-1-ertanuj96@gmail.com>
 X-Mailing-List: linux-wireless@vger.kernel.org
 List-Id: <linux-wireless.vger.kernel.org>
 List-Post: <mailto:linux-wireless@vger.kernel.org>
@@ -106,232 +101,316 @@ MIME-Version: 1.0
 Content-Type: text/plain; charset=UTF-8
 Content-Transfer-Encoding: 8bit
 
-Attaching the proof-of-concept source code, full KASAN crash log, and a note
-on why the production code path cannot be triggered on our test environment.
+Hi,
 
-==========================================================================
-1. Why no production KASAN crash
-==========================================================================
+I am reporting an out-of-bounds read vulnerability in the rtlwifi WiFi driver
+that is exploitable over-the-air by spoofing the BSSID of the victim's
+associated access point and injecting crafted P2P NoA content in beacon frames.
 
-The production code path in rtw89 is triggered ONLY when a physical
-Realtek rtw89 WiFi adapter (RTL8852AE/BE/CE/RTL8922AE) receives a
-beacon or probe response frame over the air. Our test environment is
-a bare Linode VM (kernel 6.12.115, KASAN generic) with no WiFi hardware
-— the rtw89 driver cannot be loaded without a PCI device match, and
-there is no way to inject 802.11 management frames without a real
-wireless interface.
+Severity:    MEDIUM — over-the-air via spoofed BSSID, requires P2P mode
+Attack:      Spoof the BSSID of the victim's associated AP and inject a
+             crafted beacon with malicious P2P NoA content. Requires the
+             victim to have P2P mode enabled (mac->p2p) and be associated
+             to an AP (MAC80211_LINKED state).
+Affected:    v5.4+ (all kernels with the incomplete P2P overflow fix)
+Fixes:       8c55dedb795b ("rtlwifi: Fix potential overflow on P2P code")
 
-The root cause is mechanically verifiable from source alone:
-cfg80211_find_ie() receives `skb->len` (total frame length) instead
-of `skb->len - ies_offset` (IE region length). This is an arithmetic
-fact, not a behavioral claim — the OOB read is unavoidable when the
-IE search reaches the end of the valid IE region and continues scanning
-the remaining `ies_offset` bytes (36 for beacon, 28 for assoc_req)
-past the skb data.
+Impact
+------
+This is an over-the-air kernel heap out-of-bounds read via WiFi:
 
-Verification approach: kernel test module that allocates a kmalloc(100)
-buffer simulating an skb, places valid non-SSID IEs in the IE region
-(offset 36..99), and calls the SAME cfg80211_find_ie() logic with the
-SAME incorrect length calculation (skb->len instead of skb->len - 36).
-KASAN fires when the scan crosses byte 100 (the allocation boundary).
+  1. Memory safety violation: The bounds check uses only the low byte
+     of a 16-bit length field, allowing the driver to bypass validation.
+     Although P2P_MAX_NOA_NUM (2) caps the descriptor loop to 2
+     iterations of 13 bytes each, the actual out-of-bounds access is
+     ~26 bytes past the validated region — reading adjacent kernel heap
+     data as NoA descriptor fields (count, duration, interval,
+     start_time) which are stored into driver-internal structures.
 
-==========================================================================
-2. PoC — kernel test module (rtw89_kasan_trigger.c)
-==========================================================================
+  2. Denial of service: On kernels with KASAN enabled, the OOB access
+     triggers an immediate kernel panic. On production kernels, the
+     overread typically stays within skb tailroom or adjacent data,
+     but corrupted NoA scheduling parameters from heap garbage can
+     cause the driver to make incorrect power-save decisions.
 
+  3. Preconditions: The victim must have P2P mode enabled (mac->p2p)
+     and be associated to an AP (MAC80211_LINKED). P2P mode is not
+     enabled by default on most Linux systems, limiting the attack
+     surface. The attacker spoofs the BSSID of the associated AP —
+     trivial since 802.11 management frames are unauthenticated even
+     with WPA3.
+
+  4. Widespread hardware: rtlwifi covers Realtek WiFi chipsets
+     (RTL8192CE/CU, RTL8723BE, RTL8821AE, etc.) used in millions of
+     laptops. All kernels v5.4+ are affected.
+
+Root cause
+----------
+In rtl_p2p_noa_ie() and rtl_p2p_action_ie()
+(drivers/net/wireless/realtek/rtlwifi/ps.c), the loop entry condition
+and bounds check have two distinct bugs:
+
+  while (ie + 1 < end) {
+      noa_len = le16_to_cpu(*((__le16 *)&ie[1]));
+      if (ie + 3 + ie[1] > end)
+          return;
+
+Bug 1 — insufficient loop guard:
+  `ie + 1 < end` guarantees only 2 bytes are accessible (ie[0] and the
+  byte at ie[1]). But `le16_to_cpu(*((__le16 *)&ie[1]))` reads a 16-bit
+  value from ie[1] AND ie[2], requiring at least 3 accessible bytes.
+  When exactly 2 bytes remain, ie[2] is a 1-byte OOB read.
+
+Bug 2 — truncated length in bounds check:
+  `ie[1]` is only the LOW byte of the 16-bit NoA length field. When the
+  high byte (ie[2]) is nonzero, the actual length `noa_len` is much larger
+  than `ie[1]`. The bounds check `ie + 3 + ie[1] > end` passes, but the
+  subsequent code accesses NoA descriptors based on a noa_num computed
+  from the full noa_len, reading past the validated boundary.
+
+  Example: ie[1]=2, ie[2]=1 -> noa_len=258, but bounds check uses 2.
+
+  Note: P2P_MAX_NOA_NUM (2) caps noa_num to at most 2 descriptors,
+  limiting the actual overread to ~26 bytes rather than the full noa_len.
+  The root cause (bypassed bounds check) is the same regardless.
+
+Proposed patch
+--------------
+Change `ie + 1 < end` to `ie + 3 <= end` (require 3 bytes for the
+type + 16-bit length), and use `noa_len` instead of `ie[1]` in the
+bounds check. Applied to both rtl_p2p_noa_ie() and rtl_p2p_action_ie():
+
+--- a/drivers/net/wireless/realtek/rtlwifi/ps.c
++++ b/drivers/net/wireless/realtek/rtlwifi/ps.c
+@@ -719,9 +719,9 @@
+ 	ie = pos + index;
+ 	end = data + len;
+
+-	while (ie + 1 < end) {
++	while (ie + 3 <= end) {
+ 		noa_len = le16_to_cpu(*((__le16 *)&ie[1]));
+-		if (ie + 3 + ie[1] > end)
++		if (ie + 3 + noa_len > end)
+ 			return;
+
+(Same change in rtl_p2p_action_ie() at line ~798)
+
+Verification
+============
+
+Environment: kernel 6.12.115, KASAN generic, Linode VM (bare metal, no
+WiFi hardware)
+
+Why no production KASAN crash
+-----------------------------
+The production code path in rtlwifi is triggered ONLY when a physical
+Realtek rtlwifi WiFi adapter (RTL8192CE/CU, RTL8723BE, RTL8821AE, etc.)
+receives a beacon frame while in P2P mode (mac->p2p) and associated to
+an AP (MAC80211_LINKED state). Our test environment is a bare Linode VM
+with no WiFi hardware — the rtlwifi driver cannot be loaded without a
+PCI/USB device match, and there is no way to inject 802.11 management
+frames without a real wireless interface.
+
+The root cause is mechanically verifiable from source:
+  - `ie[1]` (1 byte, max 255) is used in the bounds check
+  - `noa_len` (2 bytes, le16_to_cpu) is used for actual data access
+  - When ie[2] > 0, noa_len > ie[1] and the bounds check is bypassed
+
+Verification approach: kernel test module
+-----------------------------------------
+To produce a KASAN trace, we loaded a kernel test module on 6.12.115
+(KASAN generic) that reproduces the exact vulnerable parsing logic from
+rtl_p2p_noa_ie() with a crafted 10-byte kmalloc buffer containing a
+P2P NoA sub-element with ie[1]=2, ie[2]=1 (noa_len=258). The buggy
+bounds check passes (ie+3+2 <= end) but the NOA descriptor loop reads
+up to ie[30], which is 21 bytes past the 10-byte buffer.
+
+PoC — kernel test module source
+--------------------------------
 Build: make -C /lib/modules/$(uname -r)/build M=$PWD modules
-Load:  insmod rtw89_kasan_trigger.ko
+Load:  insmod rtlwifi_kasan_trigger.ko
 Check: dmesg | grep -A30 "BUG: KASAN"
 
-Makefile:
-  obj-m += rtw89_kasan_trigger.o
-
---- cut here: rtw89_kasan_trigger.c ---
-
+--- rtlwifi_kasan_trigger.c ---
 #include <linux/module.h>
 #include <linux/kernel.h>
 #include <linux/slab.h>
 
-#define WLAN_EID_SSID 0
-#define BEACON_VARIABLE_OFFSET 36
+#define P2P_MAX_NOA_NUM 2
 
-/*
- * Exact reimplementation of cfg80211_find_ie from
- * include/net/cfg80211.h — scans 802.11 IEs: [type][len][data...]
+/* Reproduces the vulnerable parsing from rtl_p2p_noa_ie()
+ * at drivers/net/wireless/realtek/rtlwifi/ps.c:720-760
  */
-static noinline const u8 *find_ie_kern(u8 eid, const u8 *ies, int len)
+static noinline void noa_parse_buggy(u8 *data, unsigned int len)
 {
-	while (len >= 2 && ies[0] != eid) {
-		int ie_len = 2 + ies[1];
-		len -= ie_len;
-		ies += ie_len;
+	u8 *ie = data;
+	u8 *end = data + len;
+	u16 noa_len;
+	int noa_num, i;
+
+	while (ie + 1 < end) {
+		noa_len = le16_to_cpu(*((__le16 *)&ie[1]));
+
+		pr_info("rtlwifi_kasan: ie[1]=%u noa_len=%u\n",
+			ie[1], noa_len);
+
+		/* BUGGY: uses ie[1] (low byte only) */
+		if (ie + 3 + ie[1] > end) {
+			pr_info("rtlwifi_kasan: Bounds check rejected\n");
+			return;
+		}
+		pr_info("rtlwifi_kasan: BUGGY bounds check PASSED "
+			"(ie+3+%u <= end, but noa_len=%u)\n",
+			(unsigned)ie[1], noa_len);
+
+		if (ie[0] == 12) {
+			noa_num = (noa_len - 2) / 13;
+			if (noa_num > P2P_MAX_NOA_NUM)
+				noa_num = P2P_MAX_NOA_NUM;
+
+			pr_info("rtlwifi_kasan: NOA noa_num=%d\n", noa_num);
+			pr_info("rtlwifi_kasan: ie[3]=0x%02x ie[4]=0x%02x\n",
+				ie[3], ie[4]);
+
+			for (i = 0; i < noa_num; i++) {
+				int base = 5 + i * 13;
+				volatile u8 v;
+				int j;
+				pr_info("rtlwifi_kasan: "
+					"desc %d: ie[%d..%d]\n",
+					i, base, base + 12);
+				for (j = base; j <= base + 12; j++)
+					v = ie[j]; /* KASAN fires here */
+			}
+		}
+		break;
 	}
-	if (len < 2)
-		return NULL;
-	if (len < 2 + ies[1])
-		return NULL;
-	return ies;
 }
 
-static int __init rtw89_kasan_init(void)
+static int __init rtlwifi_kasan_init(void)
 {
-	int skb_len = 100;
-	u8 *skb_data;
-	const u8 *ies;
-	const u8 *result;
-	int ie_region_len;
-	int off;
+	int buf_len = 10;
+	u8 *buf;
 
-	pr_info("rtw89_kasan: === OOB Read KASAN Trigger ===\n");
+	pr_info("rtlwifi_kasan: === P2P NoA OOB KASAN Trigger ===\n");
 
-	skb_data = kmalloc(skb_len, GFP_KERNEL);
-	if (!skb_data)
+	buf = kmalloc(buf_len, GFP_KERNEL);
+	if (!buf)
 		return -ENOMEM;
-	memset(skb_data, 0, skb_len);
+	memset(buf, 0x41, buf_len);
 
-	ies = skb_data + BEACON_VARIABLE_OFFSET;
-	ie_region_len = skb_len - BEACON_VARIABLE_OFFSET;
+	buf[0] = 12;  /* NOA attribute ID */
+	buf[1] = 2;   /* low byte of length */
+	buf[2] = 1;   /* high byte -> noa_len = 258 */
+	buf[3] = 0;   /* noa_index */
+	buf[4] = 0;   /* ctwindow */
 
-	/* Fill valid IE region with non-SSID IEs to force scan past buffer */
-	off = 0;
-	while (off + 2 < ie_region_len) {
-		int remaining = ie_region_len - off;
-		int ie_data_len = (remaining - 2 > 30) ? 30 : remaining - 2;
-		skb_data[BEACON_VARIABLE_OFFSET + off] = 1;
-		skb_data[BEACON_VARIABLE_OFFSET + off + 1] = ie_data_len;
-		memset(skb_data + BEACON_VARIABLE_OFFSET + off + 2,
-		       0x88, ie_data_len);
-		off += 2 + ie_data_len;
-	}
+	pr_info("rtlwifi_kasan: buf=%px len=%d\n", buf, buf_len);
+	pr_info("rtlwifi_kasan: ie[1]=%u (low byte), "
+		"noa_len=%u (full 16-bit)\n", buf[1],
+		le16_to_cpu(*((__le16 *)&buf[1])));
 
-	pr_info("rtw89_kasan: skb_data=%px len=%d ies=%px ie_region=%d\n",
-		skb_data, skb_len, ies, ie_region_len);
+	noa_parse_buggy(buf, buf_len);
 
-	/* CORRECT call — stays within bounds */
-	pr_info("rtw89_kasan: CORRECT: find_ie(SSID, ies, %d)\n",
-		ie_region_len);
-	result = find_ie_kern(WLAN_EID_SSID, ies, ie_region_len);
-	pr_info("rtw89_kasan: CORRECT result: %s\n",
-		result ? "FOUND" : "NOT FOUND (expected)");
-
-	/* BUGGY call — passes skb->len, reads 36 bytes OOB */
-	pr_info("rtw89_kasan: BUGGY: find_ie(SSID, ies, skb->len=%d)\n",
-		skb_len);
-	pr_info("rtw89_kasan: Will read %d bytes past kmalloc end!\n",
-		BEACON_VARIABLE_OFFSET);
-
-	result = find_ie_kern(WLAN_EID_SSID, ies, skb_len);
-	/* KASAN fires: reads past skb_data[0..99] */
-
-	pr_info("rtw89_kasan: BUGGY result: %s\n",
-		result ? "FOUND" : "NOT FOUND");
-
-	kfree(skb_data);
-	pr_info("rtw89_kasan: === Done ===\n");
+	kfree(buf);
+	pr_info("rtlwifi_kasan: === Done ===\n");
 	return 0;
 }
 
-static void __exit rtw89_kasan_exit(void)
+static void __exit rtlwifi_kasan_exit(void)
 {
-	pr_info("rtw89_kasan: Module unloaded\n");
+	pr_info("rtlwifi_kasan: Module unloaded\n");
 }
 
-module_init(rtw89_kasan_init);
-module_exit(rtw89_kasan_exit);
+module_init(rtlwifi_kasan_init);
+module_exit(rtlwifi_kasan_exit);
 MODULE_LICENSE("GPL");
-MODULE_DESCRIPTION("rtw89 OOB read KASAN trigger - defensive research");
+MODULE_DESCRIPTION("rtlwifi P2P NoA OOB KASAN trigger - defensive research");
+--- end rtlwifi_kasan_trigger.c ---
 
---- end cut ---
+KASAN output (kernel 6.12.115, insmod rtlwifi_kasan_trigger.ko)
+----------------------------------------------------------------
+[  150.768871] rtlwifi_kasan_trigger: loading out-of-tree module taints kernel.
+[  150.770760] rtlwifi_kasan: === P2P NoA OOB KASAN Trigger ===
+[  150.770777] rtlwifi_kasan: buf=ffff88811174bf40 len=10
+[  150.770788] rtlwifi_kasan: ie[1]=2 (low byte), noa_len=258 (full 16-bit)
+[  150.770846] rtlwifi_kasan: ie[1]=2 noa_len=258
+[  150.770856] rtlwifi_kasan: BUGGY bounds check PASSED (ie+3+2 <= end, but noa_len=258)
+[  150.770866] rtlwifi_kasan: NOA noa_num=2
+[  150.770876] rtlwifi_kasan: ie[3]=0x00 ie[4]=0x00
+[  150.770888] rtlwifi_kasan: desc 0: ie[5..17]
+[  150.770902] ==================================================================
+[  150.772854] BUG: KASAN: slab-out-of-bounds in noa_parse_buggy.constprop.0+0x3d1/0x430 [rtlwifi_kasan_trigger]
+[  150.775386] Read of size 1 at addr ffff88811174bf4a by task insmod/1513
 
-==========================================================================
-3. Full KASAN crash log (dmesg, kernel 6.12.115)
-==========================================================================
+[  150.777694] CPU: 1 UID: 0 PID: 1513 Comm: insmod Tainted: G           O       6.12.115 #1
+[  150.777707] Tainted: [O]=OOT_MODULE
+[  150.777711] Hardware name: Linode Compute Instance/Standard PC (Q35 + ICH9, 2009), BIOS Not Specified
+[  150.777717] Call Trace:
+[  150.777722]  <TASK>
+[  150.777726]  dump_stack_lvl+0x93/0xd0
+[  150.777753]  print_report+0xce/0x660
+[  150.777769]  ? noa_parse_buggy.constprop.0+0x3d1/0x430 [rtlwifi_kasan_trigger]
+[  150.777782]  ? __virt_addr_valid+0x208/0x410
+[  150.777793]  ? noa_parse_buggy.constprop.0+0x3d1/0x430 [rtlwifi_kasan_trigger]
+[  150.777806]  kasan_report+0xe0/0x110
+[  150.777818]  ? noa_parse_buggy.constprop.0+0x3d1/0x430 [rtlwifi_kasan_trigger]
+[  150.777832]  noa_parse_buggy.constprop.0+0x3d1/0x430 [rtlwifi_kasan_trigger]
+[  150.777846]  ? __pfx_noa_parse_buggy.constprop.0+0x10/0x10 [rtlwifi_kasan_trigger]
+[  150.777860]  rtlwifi_kasan_init+0x1d1/0xff0 [rtlwifi_kasan_trigger]
+[  150.777873]  ? __pfx_rtlwifi_kasan_init+0x10/0x10 [rtlwifi_kasan_trigger]
+[  150.777885]  do_one_initcall+0xf2/0x4d0
+[  150.778108]  do_init_module+0x233/0x6d0
+[  150.778120]  load_module+0x5a71/0x6730
+[  150.778232]  init_module_from_file+0xcc/0x130
+[  150.778266]  idempotent_init_module+0x232/0x770
+[  150.778299]  __x64_sys_finit_module+0xaf/0x100
+[  150.778310]  do_syscall_64+0xc1/0x1e0
+[  150.778350]  entry_SYSCALL_64_after_hwframe+0x77/0x7f
+[  150.778421]  </TASK>
 
-[  222.600479] rtw89_kasan_trigger: loading out-of-tree module taints kernel.
-[  222.604268] rtw89_kasan: === OOB Read KASAN Trigger ===
-[  222.604294] rtw89_kasan: skb_data=ffff88810e1ab800 len=100 ies=ffff88810e1ab824 ie_region=64
-[  222.604308] rtw89_kasan: CORRECT: find_ie(SSID, ies, 64)
-[  222.604316] rtw89_kasan: CORRECT result: NOT FOUND (expected)
-[  222.604325] rtw89_kasan: BUGGY: find_ie(SSID, ies, skb->len=100)
-[  222.604333] rtw89_kasan: Will read 36 bytes past kmalloc end!
-[  222.604341] ==================================================================
-[  222.605840] BUG: KASAN: slab-out-of-bounds in find_ie_kern.constprop.0+0xe0/0x100 [rtw89_kasan_trigger]
-[  222.607760] Read of size 1 at addr ffff88810e1ab864 by task insmod/1901
+[  150.835327] Allocated by task 1513:
+[  150.836172]  kasan_save_stack+0x33/0x60
+[  150.836196]  kasan_save_track+0x14/0x30
+[  150.836209]  __kasan_kmalloc+0x8f/0xa0
+[  150.836221]  rtlwifi_kasan_init+0x4c/0xff0 [rtlwifi_kasan_trigger]
+[  150.836240]  do_one_initcall+0xf2/0x4d0
+[  150.836253]  do_init_module+0x233/0x6d0
+[  150.836265]  load_module+0x5a71/0x6730
+[  150.836276]  init_module_from_file+0xcc/0x130
+[  150.836287]  idempotent_init_module+0x232/0x770
+[  150.836298]  __x64_sys_finit_module+0xaf/0x100
+[  150.836309]  do_syscall_64+0xc1/0x1e0
+[  150.836324]  entry_SYSCALL_64_after_hwframe+0x77/0x7f
 
-[  222.609503] CPU: 3 UID: 0 PID: 1901 Comm: insmod Tainted: G           O       6.12.115 #1
-[  222.609515] Tainted: [O]=OOT_MODULE
-[  222.609519] Hardware name: Linode Compute Instance/Standard PC (Q35 + ICH9, 2009), BIOS Not Specified
-[  222.609525] Call Trace:
-[  222.609529]  <TASK>
-[  222.609533]  dump_stack_lvl+0x93/0xd0
-[  222.609563]  print_report+0xce/0x660
-[  222.609583]  ? find_ie_kern.constprop.0+0xe0/0x100 [rtw89_kasan_trigger]
-[  222.609600]  ? __virt_addr_valid+0x208/0x410
-[  222.609613]  ? find_ie_kern.constprop.0+0xe0/0x100 [rtw89_kasan_trigger]
-[  222.609625]  kasan_report+0xe0/0x110
-[  222.609637]  ? find_ie_kern.constprop.0+0xe0/0x100 [rtw89_kasan_trigger]
-[  222.609651]  find_ie_kern.constprop.0+0xe0/0x100 [rtw89_kasan_trigger]
-[  222.609665]  rtw89_kasan_init+0x1bf/0xff0 [rtw89_kasan_trigger]
-[  222.609678]  ? __pfx_rtw89_kasan_init+0x10/0x10 [rtw89_kasan_trigger]
-[  222.609690]  do_one_initcall+0xf2/0x4d0
-[  222.609702]  ? __pfx_do_one_initcall+0x10/0x10
-[  222.609713]  ? kasan_unpoison+0x27/0x60
-[  222.609724]  do_init_module+0x233/0x6d0
-[  222.609736]  load_module+0x5a71/0x6730
-[  222.609745]  ? __vmalloc_node_range_noprof+0xc50/0x1170
-[  222.609763]  ? __pfx_load_module+0x10/0x10
-[  222.609856]  init_module_from_file+0xcc/0x130
-[  222.609882]  idempotent_init_module+0x232/0x770
-[  222.609917]  __x64_sys_finit_module+0xaf/0x100
-[  222.609930]  do_syscall_64+0xc1/0x1e0
-[  222.609946]  entry_SYSCALL_64_after_hwframe+0x77/0x7f
-[  222.609962]  </TASK>
+[  150.836719] The buggy address belongs to the object at ffff88811174bf40
+                which belongs to the cache kmalloc-16 of size 16
+[  150.839809] The buggy address is located 0 bytes to the right of
+                allocated 10-byte region [ffff88811174bf40, ffff88811174bf4a)
 
-[  222.664801] Allocated by task 1901:
-[  222.665605]  kasan_save_stack+0x33/0x60
-[  222.665629]  kasan_save_track+0x14/0x30
-[  222.665642]  __kasan_kmalloc+0x8f/0xa0
-[  222.665654]  rtw89_kasan_init+0x58/0xff0 [rtw89_kasan_trigger]
-[  222.665674]  do_one_initcall+0xf2/0x4d0
-[  222.665688]  do_init_module+0x233/0x6d0
-[  222.665700]  load_module+0x5a71/0x6730
-[  222.665711]  init_module_from_file+0xcc/0x130
-[  222.665722]  idempotent_init_module+0x232/0x770
-[  222.665733]  __x64_sys_finit_module+0xaf/0x100
-[  222.665744]  do_syscall_64+0xc1/0x1e0
-[  222.665759]  entry_SYSCALL_64_after_hwframe+0x77/0x7f
+[  150.844879] Memory state around the buggy address:
+[  150.845862]  ffff88811174be00: fa fb fc fc fa fb fc fc fa fb fc fc fa fb fc fc
+[  150.847361]  ffff88811174be80: fa fb fc fc fa fb fc fc 00 03 fc fc 00 04 fc fc
+[  150.848830] >ffff88811174bf00: 00 07 fc fc 00 04 fc fc 00 02 fc fc fa fb fc fc
+[  150.850312]                                               ^
+[  150.851457]  ffff88811174bf80: fa fb fc fc fa fb fc fc fa fb fc fc fa fb fc fc
+[  150.852988]  ffff88811174c000: fa fb fb fb fc fc fc fc fa fb fb fb fc fc fc fc
+[  150.854510] ==================================================================
+[  150.856225] rtlwifi_kasan: desc 1: ie[18..30]
+[  150.856241] rtlwifi_kasan: === Done ===
 
-[  222.666137] The buggy address belongs to the object at ffff88810e1ab800
-                which belongs to the cache kmalloc-128 of size 128
-[  222.668819] The buggy address is located 0 bytes to the right of
-                allocated 100-byte region [ffff88810e1ab800, ffff88810e1ab864)
+Notes
+-----
+- kmalloc(10) → kmalloc-16 slab. KASAN fires at byte 10 (0 bytes past
+  the right edge of the allocated 10-byte region).
+- The buggy bounds check passes because ie+3+ie[1]=ie+3+2=ie+5 <= end=ie+10.
+- But noa_len=258, so noa_num=(258-2)/13=19, capped to P2P_MAX_NOA_NUM=2.
+- Descriptor 0 reads ie[5..17], descriptor 1 reads ie[18..30] — 21 bytes OOB.
+- The vulnerable code is in the unmodified production driver at
+  drivers/net/wireless/realtek/rtlwifi/ps.c.
 
-[  222.673603] Memory state around the buggy address:
-[  222.674615]  ffff88810e1ab700: fa fb fb fb fb fb fb fb fb fb fb fb fb fb fb fb
-[  222.676093]  ffff88810e1ab780: fc fc fc fc fc fc fc fc fc fc fc fc fc fc fc fc
-[  222.677636] >ffff88810e1ab800: 00 00 00 00 00 00 00 00 00 00 00 00 04 fc fc fc
-[  222.679082]                                                        ^
-[  222.680507]  ffff88810e1ab880: fc fc fc fc fc fc fc fc fc fc fc fc fc fc fc fc
-[  222.682106]  ffff88810e1ab900: 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00
-[  222.683706] ==================================================================
-[  222.685432] rtw89_kasan: BUGGY result: FOUND
-[  222.685460] rtw89_kasan: === Done ===
-
-==========================================================================
-4. Notes
-==========================================================================
-
-- The 100-byte allocation (kmalloc-128 slab) holds the simulated skb data.
-  KASAN correctly detects the read at byte 100 (0 bytes past the right edge).
-- The CORRECT call (ie_region_len=64) finds nothing and stays in bounds.
-- The BUGGY call (skb->len=100) scans 36 bytes past the IE region, hits
-  the slab redzone, and KASAN fires.
-- cfg80211_find_ie() is a production kernel API in net/wireless/scan.c
-  (unmodified). The test module reimplements it identically to avoid a
-  build dependency on cfg80211.ko; the logic (tag scan with 2-byte IE
-  header) is byte-identical to the kernel's implementation.
-- Anyone with a physical rtw89 adapter can reproduce this by broadcasting
-  a crafted beacon with no SSID IE and total frame length > IE region.
+I have not shared this finding publicly. Happy to work with the WiFi
+maintainers on the patch if any changes are needed.
 
 Best regards,
 Tanuj Sharma
