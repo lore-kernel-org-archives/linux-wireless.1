@@ -1,51 +1,57 @@
-Authentication-Results: smtp.subspace.kernel.org; arc=none smtp.remote-ip=100.103.45.18
+Authentication-Results: smtp.subspace.kernel.org; arc=none smtp.remote-ip=185.136.64.227
 ARC-Seal: i=1; d=subspace.kernel.org; s=arc20261015; a=rsa-sha256; cv=none;
-	t=1795435721;
-	b=xYAHXMOyqI9nY6tfPxDmonIM0y7lOQD93UAAY554xBDaO90xLwXEgWTlm7T5xs9IcZnq
-	 Uu0I3CWqBHOmvG5LZQnXdUeC3pHUU3KMP82+KPptUESJ/tcmFLjIRDxC+bwRlX/Ys0zo0
-	 YjkwtFfPhVJAyxr1bE4bMVSiVxml/3oQ7vnwgrmBI+Ll9A4siqWRnzDm8jBuBZgW9Nvq9
-	 pbCZOcaGQw6mjEH9xugKtIDp+9durYRlYeCzsnvgtStxV7zzW1KDRg5+Pk9G92r7cELxg
-	 PNMaLk8RULYl4cXMIxLjLQe+y1vG+W0+d96G/A1xlXjH+qgi/dQ5N3uEVyTM234Khgg==
+	t=1795437114;
+	b=yI+wKUrBBYOQihh3HeXtPQL9aIV3CuIzgGN6BRHnGgzqUkHl+9xADfgas1PeHHUA7mL9
+	 lVjeZeovAe2k6kcHS7RoVkdUDwCZw0llEme1IpCyfic4pnHKSC2f1uOUMAFJDPEHqw6PX
+	 8dLNKU6yye9A5U9cl5MiO+N+BrGWTbkAY4+0oFERQkKHnx5zTWYkCWTZ1fEPxc7eQySFg
+	 cfGAnKCZim5fDeNiQH+7wblbBOdG6QXaAUFJrD+oDPXmioECkDTkfwZI3+lp79ZZp5Qyx
+	 DFsVaE5Czu6TCMyrgB5qK4H1bTVYc3RcS4yuxpeB2AdyfPYg8a520Z/Offdtb17jnlA==
 ARC-Message-Signature: i=1; d=subspace.kernel.org; s=arc20261015;
-	a=rsa-sha256; c=relaxed/relaxed; t=1795435721;
-	h=Received:DKIM-Signature:Date:From:To:Cc:Subject:Message-ID:
-	 References:MIME-Version:Content-Type:Content-Disposition:In-Reply-To;
-	bh=37RP2//ETdXvis/FKEopE5VBwAcSJOzA2N8HY3jTRV0=;
-	b=VTOljmAljV73S0EiqKrwYVbVPHuF52KQiLTu0BbeHZ1VXdvd6jinZJ2ybq6HDvWhP1mg
-	 YBWujf0f/qA2xSZ+c+5xQlUwTC5nv+9ULNv0h3eK/g5iDAbQJFHe1gr1rpoVdEkERxdG2
-	 4Xv7ktcfVqsSjDa+0ywyruHJTkhDAeZsr3iRrWa7wfBl8tLacj/0dBdnE4PHqyk83h4qc
-	 aVp/m0w8CVwgLq/tqdWSDgLoGjYPa/TJ9ukSGi5rGCRb46YxIzuYmJ0VRk1ze1foVfPNG
-	 P3hyOWwjzPPWPRvfMQefgqtuhKE0JESQRhlFmUgzlcnZW7k/ugXsRJNoqZK4Am77RmA==
+	a=rsa-sha256; c=relaxed/relaxed; t=1795437114;
+	h=DMARC-Filter:Received:DKIM-Signature:From:To:Cc:Subject:Date:
+	 Message-ID:MIME-Version:Content-Transfer-Encoding:
+	 X-Flowmailer-Platform:Feedback-ID;
+	bh=6z14FG/qUkB0TQqSYTw0EB97zf0sS3cRoV0rPbDMpjw=;
+	b=jxCpVK6AxU54mRgyMHF5wGPikgLEvSvaPsT9aKVbOXj+zXf8pYOoW2cSYMmczOLaA/uC
+	 QGZ8IxuOEt8hGZx2muIMttQU2WrUBHSib9gnhLtG+9SBFWAyhhSPys04OMrZMR1Wc30Co
+	 XWotR8wGZtiNgg/z9lZj6gcmhuCKQmW6z+/iqnEMQFpydo6HWmVHKVqtGuh7peZ5ZQXpT
+	 Nv7XYQk7efBEAeCx3StcBeLq43MUZ9ernrikfh7KFi0K7BKaOl22bWvCISpB6nttx+chq
+	 5QLaL4Jr5mZkR4mMEEw2yEJIHLqf02y4cXbErsQLXAZe1eVUw/EqrOxiXNN6pXyt6aA==
 ARC-Authentication-Results: i=1; smtp.subspace.kernel.org; 
-	dkim=pass header.d=linuxfoundation.org header.i=@linuxfoundation.org header.a=rsa-sha256 header.s=korg header.b=zFM5ca0r;
-	arc=none smtp.remote-ip=100.103.45.18
-Received: from smtp.kernel.org (quasi.space.kernel.org [100.103.45.18])
-	(using TLSv1.3 with cipher TLS_AES_256_GCM_SHA384 (256/256 bits)
-	 key-exchange X25519 server-signature ECDSA (prime256v1))
+	dmarc=pass header.from=siemens.com;
+	spf=pass smtp.mailfrom=rts-flowmailer.siemens.com;
+	dkim=pass header.d=siemens.com header.i=alexander.sverdlin@siemens.com header.a=rsa-sha256 header.s=fm1 header.b=ghdABsEd;
+	arc=none smtp.remote-ip=185.136.64.227
+Received: from mta-64-227.siemens.flowmailer.net (mta-64-227.siemens.flowmailer.net [185.136.64.227])
+	(using TLSv1.2 with cipher ECDHE-ECDSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.subspace.kernel.org (Postfix) with ESMTPS id 4790C606A31A
-	for <linux-wireless@vger.kernel.org>; Mon, 23 Nov 2026 12:08:41 +0000 (UTC)
+	by smtp.subspace.kernel.org (Postfix) with ESMTPS id 40976606A31E
+	for <linux-wireless@vger.kernel.org>; Mon, 23 Nov 2026 12:31:51 +0000 (UTC)
+DMARC-Filter: OpenDMARC Filter v1.4.2 smtp.subspace.kernel.org 40976606A31E
+Authentication-Results: smtp.subspace.kernel.org; dmarc=pass (p=reject dis=none) header.from=siemens.com
+Authentication-Results: smtp.subspace.kernel.org; spf=pass smtp.mailfrom=rts-flowmailer.siemens.com
 Authentication-Results: smtp.subspace.kernel.org;
-	dkim=pass (1024-bit key) header.d=linuxfoundation.org header.i=@linuxfoundation.org header.a=rsa-sha256 header.s=korg header.b=zFM5ca0r
-Received: by smtp.kernel.org (Postfix) with ESMTPSA id D9CA61F000C0;
-	Mon, 23 Nov 2026 12:08:39 +0000 (UTC)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=linuxfoundation.org;
-	s=korg; t=1795435720;
-	bh=37RP2//ETdXvis/FKEopE5VBwAcSJOzA2N8HY3jTRV0=;
-	h=Date:From:To:Cc:Subject:References:In-Reply-To;
-	b=zFM5ca0rlStRsg4egxfUVLuOV8p4eUNrF2VQ3j3zO6P0VbpURGqbXk1USQLD9nTTl
-	 eondpKYNdGYopYhUATSko0ng4eGfwTz56J4x2NssIz6ZJYQmzWK+gsvKkJadsdtB6x
-	 fm75L4ccCGVte03mFuCaulCsXyUslC0ypYK6h3wo=
-Date: Mon, 23 Nov 2026 13:09:01 +0100
-From: Greg KH <gregkh@linuxfoundation.org>
-To: Tanuj Sharma <ertanuj96@gmail.com>
-Cc: security@kernel.org, pkshih@realtek.com, kvalo@kernel.org,
-	phhuang@realtek.com, gary.chang@realtek.com,
-	linux-wireless@vger.kernel.org
-Subject: Re: [SECURITY] wifi: rtw89: OOB read in beacon/probe-resp IE parsing
- (OTA, pre-auth)
-Message-ID: <2026112334-undermost-sizable-be65@gregkh>
-References: <20261123101028.58146-1-ertanuj96@gmail.com>
+	dkim=pass (2048-bit key, unprotected) header.d=siemens.com header.i=alexander.sverdlin@siemens.com header.a=rsa-sha256 header.s=fm1 header.b=ghdABsEd
+Received: by mta-64-227.siemens.flowmailer.net with ESMTPSA id 2026112312314348b5311fe9000207b9
+        for <linux-wireless@vger.kernel.org>;
+        Mon, 23 Nov 2026 13:31:43 +0100
+DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed; s=fm1;
+ d=siemens.com; i=alexander.sverdlin@siemens.com;
+ h=Date:From:Subject:To:Message-ID:MIME-Version:Content-Type:Content-Transfer-Encoding:Cc;
+ bh=6z14FG/qUkB0TQqSYTw0EB97zf0sS3cRoV0rPbDMpjw=;
+ b=ghdABsEdjBCdTaD7ZOaG5XaD9pcnV//vmStcvsOHL3M0ksQ2/q0LFLfx8duC9XMZ2LYN4d
+ cj1OY+2tdxGNxaZ+m3nLzKnT8EHBBcUbjvDrGmlCp+CSPNqHzG2vKL/LAwnHszQKHk3jtSJg
+ 5KDZIP97wFK8kIngym56ScmOBG0jBAV+47H59Jx66DlqnVtK6vrtKx4ul3FXKw+kxWQZ5MHu
+ B1wVqQ0tUSHGHio0suY+ypxMfLcxCqHNpFjsnlhUmEt8WbvMZSTerysDwltgrMYbSrOz/i5X
+ WEmvG/t3/UrRSEWjJE7E7W2h7ChuEETL0DqwLCUVleTqKOqw5KOukYzQ==;
+From: "A. Sverdlin" <alexander.sverdlin@siemens.com>
+To: linux-wireless@vger.kernel.org
+Cc: Alexander Sverdlin <alexander.sverdlin@siemens.com>,
+	=?UTF-8?q?J=C3=A9r=C3=B4me=20Pouiller?= <jerome.pouiller@silabs.com>,
+	linux-kernel@vger.kernel.org
+Subject: [PATCH wireless-next] wifi: wfx: drop redundant outer loop in offchan queue search
+Date: Mon, 23 Nov 2026 13:31:38 +0100
+Message-ID: <20261123123140.952143-1-alexander.sverdlin@siemens.com>
 X-Mailing-List: linux-wireless@vger.kernel.org
 List-Id: <linux-wireless.vger.kernel.org>
 List-Post: <mailto:linux-wireless@vger.kernel.org>
@@ -55,20 +61,68 @@ List-Unsubscribe: <mailto:linux-wireless+unsubscribe@vger.kernel.org>
 List-Owner: <mailto:linux-wireless+owner@vger.kernel.org>
 Precedence: list
 MIME-Version: 1.0
-Content-Type: text/plain; charset=us-ascii
-Content-Disposition: inline
-In-Reply-To: <20261123101028.58146-1-ertanuj96@gmail.com>
+Content-Transfer-Encoding: 8bit
+X-Flowmailer-Platform: Siemens
+Feedback-ID: 519:519-456497:519-21489:flowmailer
 
-On Mon, Nov 23, 2026 at 03:40:21PM +0530, Tanuj Sharma wrote:
-> Proposed patch
-> --------------
-> Replace `skb->len` with the actual IE region length, with a guard
-> against underflow from malformed/truncated skbs:
+From: Alexander Sverdlin <alexander.sverdlin@siemens.com>
 
-Please send this in a way it can be applied.
+At this point the queues of all interfaces have already been collected
+and sorted into queues[], and the search over them doesn't use wvif. The
+surrounding loop over the interfaces merely repeats the same search once
+per interface. Drop it.
 
-> I have not shared this finding publicly. Happy to work with the WiFi
-> maintainers on the patch if any changes are needed.
+The loop came with commit f7385a20249e ("wifi: wfx: allow to send frames
+during ROC"), apparently modelled on the cab queue search below, which
+does need the interface.
 
-You sent this to a public list.
+No functional change.
+
+Signed-off-by: Alexander Sverdlin <alexander.sverdlin@siemens.com>
+---
+ drivers/net/wireless/silabs/wfx/queue.c | 27 +++++++++++--------------
+ 1 file changed, 12 insertions(+), 15 deletions(-)
+
+diff --git a/drivers/net/wireless/silabs/wfx/queue.c b/drivers/net/wireless/silabs/wfx/queue.c
+index e61b86f211e53..6471564345a86 100644
+--- a/drivers/net/wireless/silabs/wfx/queue.c
++++ b/drivers/net/wireless/silabs/wfx/queue.c
+@@ -250,21 +250,18 @@ static struct sk_buff *wfx_tx_queues_get_skb(struct wfx_dev *wdev)
+ 		}
+ 	}
+ 
+-	wvif = NULL;
+-	while ((wvif = wvif_iterate(wdev, wvif)) != NULL) {
+-		for (i = 0; i < num_queues; i++) {
+-			skb = skb_dequeue(&queues[i]->offchan);
+-			if (!skb)
+-				continue;
+-			hif = (struct wfx_hif_msg *)skb->data;
+-			/* Offchan frames are assigned to a special interface.
+-			 * The only interface allowed to send data during scan.
+-			 */
+-			WARN_ON(hif->interface != 2);
+-			atomic_inc(&queues[i]->pending_frames);
+-			trace_queues_stats(wdev, queues[i]);
+-			return skb;
+-		}
++	for (i = 0; i < num_queues; i++) {
++		skb = skb_dequeue(&queues[i]->offchan);
++		if (!skb)
++			continue;
++		hif = (struct wfx_hif_msg *)skb->data;
++		/* Offchan frames are assigned to a special interface.
++		 * The only interface allowed to send data during scan.
++		 */
++		WARN_ON(hif->interface != 2);
++		atomic_inc(&queues[i]->pending_frames);
++		trace_queues_stats(wdev, queues[i]);
++		return skb;
+ 	}
+ 
+ 	if (mutex_is_locked(&wdev->scan_lock))
+
+base-commit: 24630ff92eff08500ec4772728d4b1fa08c28f47
+-- 
+2.56.1
 
