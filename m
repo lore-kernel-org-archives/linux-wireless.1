@@ -1,56 +1,56 @@
 Authentication-Results: smtp.subspace.kernel.org; arc=none smtp.remote-ip=100.103.45.18
 ARC-Seal: i=1; d=subspace.kernel.org; s=arc20261015; a=rsa-sha256; cv=none;
 	t=1795430310;
-	b=bhN4Cf3jfYXXYogB+7RZa73EMrdTsBpsMkKEpK0msdPe5rRMsUo5X/mTLQaNhSkbl6Sx
-	 Ta68eQymxevikGSxeUM6kaJHDBuKIcTawpK/L0EfxeQ9EDEo0xzAxRXjW9MH1pvH5qJRb
-	 tXcPHb7e+Yi4N+H9fhfnSmypYCtXDQAILE7T5FjSKhR5qwVjeA3T1oVyUkcpkkSRUSOFP
-	 zz+qmLhht6ZlVGnA3CBghB0KNo9BVJZVytnzKgvvekOZSV8cZHHV5K8/ddWoMKUr2ZMk3
-	 3NKf0VvJwKZNoimAYUtK5Xx6O5k7ECPl7HxkGsBsMln8WhJLRcDCNxlRNAgNwOs9hnA==
+	b=xxHEeYxwr9u/G1mmH5onhtGPcDrkR1oIhPFLjYOFgIjhXAeEFT97lisKdBup0W6Jhry/
+	 kgmqqzXDZNv9KsEPw+7ElYvxmiRnxxJ6cPJpU1HCyK4CiBemPmvzohtd6Qz5uL9CqWmmC
+	 UOa7ueqbuSmMnzmTIcyU90EPbSGcUS+rGQbHhKTIIO4KHKwUIplRMwp66D2Zo2GJ4kM3L
+	 5HrwO2wz98kUuMJLh8qlZVI2lilqJp0RhovRyz+ukOoCQ7/wRsfryEZ+tV33x04PmycvS
+	 3QaMFKQhNe6KL4lNldwYsKfpAg50ouqOeiDitlS+RzouV5DqMYZm0KPtPg4bCU8y0lA==
 ARC-Message-Signature: i=1; d=subspace.kernel.org; s=arc20261015;
 	a=rsa-sha256; c=relaxed/relaxed; t=1795430310;
 	h=Received:DKIM-Signature:Received:From:To:Cc:In-Reply-To:References:
 	 Subject:Message-Id:Date:MIME-Version:Content-Type:
 	 Content-Transfer-Encoding:X-Mailer;
-	bh=X8IJJMHUTDpjknUZvu438mfHH0D2MrFt7jxIxN8kIFA=;
-	b=nJPc2jG+TXorWVFTso5ujsI/F9399YXp3WglsE0VP8f0yvP3OzPuHkVcGnQG0FbMOLM0
-	 goCS/fZmxitxcTwA9lAyoQIPd9g+yFOO8jrw2ztu71TTIBigWo1qxOt6+XsaDj8xFqlwU
-	 eCDuGLkvGn77v0SznraSVYN05p70WhYEZ/hswUMEy+CLnpzpMz54ir7CVouTZpwZ0vRAo
-	 nXfVlJG6V5+oe9ntDHDoAIekbOPFxqHnexO0UaZHp9gXXaaEw1PNpLTJzThKPQtTtsCiX
-	 0RlKDlFuO32yXHIs+Gf/sIDlB2Md+EIRvobmZLlUWTPcXSTUwf9emb8un5NG4Ywr8/w==
+	bh=RAnEO8/Qdhkb1cmdMFzU3CHoAJo95PrugKm4CPHlkHY=;
+	b=AlHkBODlxP1y9Xh/YvYLZXfU6OpzljT6nNjLUnxPpPqMxjlkFDuEnCZh7911kGpwiYP3
+	 OYByhz4AH1TCIS0kZ0Eu7uG+EgjBXBSHCjUZdcdnUob0AGwV9CIQsGz+BMGbncQLT0qjH
+	 V9NJnGf52jYLmJq+bA8NEtTQAQALme1+KCVb1XGN8HkbKKsZ2BQNNSIkzdHB6+kiQmtCi
+	 8rsXoiQZX/8gLTxzkMU9GLOYxuxa0wb7udS0wVk8nK/pv70pCLp62sE5eBf1ZFUHmZPV8
+	 xjdHgyi6rFXJ8M/eqdp7bThG9k1QPeRur//tetlUM4AGPrqHH/EHKaCxsGSQLrFCbZg==
 ARC-Authentication-Results: i=1; smtp.subspace.kernel.org; 
-	dkim=pass header.d=kernel.org header.i=@kernel.org header.a=rsa-sha256 header.s=k20260515 header.b="oz/l00JG";
+	dkim=pass header.d=kernel.org header.i=@kernel.org header.a=rsa-sha256 header.s=k20260515 header.b=flakoFA+;
 	arc=none smtp.remote-ip=100.103.45.18
 Received: from smtp.kernel.org (quasi.space.kernel.org [100.103.45.18])
 	(using TLSv1.3 with cipher TLS_AES_256_GCM_SHA384 (256/256 bits)
 	 key-exchange X25519 server-signature ECDSA (prime256v1))
 	(No client certificate requested)
-	by smtp.subspace.kernel.org (Postfix) with ESMTPS id 7110D606A327
+	by smtp.subspace.kernel.org (Postfix) with ESMTPS id 711A5606A32C
 	for <linux-wireless@vger.kernel.org>; Mon, 23 Nov 2026 10:38:30 +0000 (UTC)
 Authentication-Results: smtp.subspace.kernel.org;
-	dkim=pass (2048-bit key) header.d=kernel.org header.i=@kernel.org header.a=rsa-sha256 header.s=k20260515 header.b=oz/l00JG
-Received: by smtp.kernel.org (Postfix) with ESMTPSA id 96A601F000D3;
+	dkim=pass (2048-bit key) header.d=kernel.org header.i=@kernel.org header.a=rsa-sha256 header.s=k20260515 header.b=flakoFA+
+Received: by smtp.kernel.org (Postfix) with ESMTPSA id 8D48F1F000D1;
 	Mon, 23 Nov 2026 10:38:29 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=kernel.org;
 	s=k20260515; t=1795430309;
-	bh=X8IJJMHUTDpjknUZvu438mfHH0D2MrFt7jxIxN8kIFA=;
+	bh=RAnEO8/Qdhkb1cmdMFzU3CHoAJo95PrugKm4CPHlkHY=;
 	h=From:To:Cc:In-Reply-To:References:Subject:Date;
-	b=oz/l00JGwaysTrNgoybulVPPLowtDIVKEvFt2jnp+z8nDtvxF95ok29cP6fEAojEX
-	 RVgqWWohdFd+1a8id9ITdht2V1EDrvpALXOfkOj+auoQfARoB+/wQCmhwuZa1Td7JN
-	 YMDpdm5jzb2PRVzKwujP1OkSKg10n/KrOd7uWAt039HFC7iLahAnrvTR14g8WFrFEm
-	 v/10xBr5/sReAgzzz8hneukqFHQY5FA2ZVfljy4X7rBswVaP/vaSrD9hAPXVHFaSm9
-	 NgAqppq8oqsGdsSl+/t6hsOJPL0vYfWMRcg9TT03LSINXnxMPHuAD7rEy+rn2eVOXe
-	 ZzMJn+SnFUuBw==
+	b=flakoFA+bU7yWX/F/IOCGMS7LruQd4puGwMDHj2KejOyhltzXHW3lMKavGxA++zL6
+	 dW3q315fSC/3Lqf8Wo8GbnrevIokLM8HxftgddfhEG6Vz58nK3rKHluM2q71ZSWLGo
+	 R/IvJ2ocITqUf+YtuNEjuOmxiqCIk23AQdDRMPHJxv2vNqunjIf1U7zdQ1eQhSZC53
+	 2ulsRZXczB57XFtfcCjfH1jUwuXLFZfrBuoRvi+Rn+Lgu55nub1OdqwFXV6asm1y4H
+	 Uix3L4ooyw/Dj9W1Y+w1AV80eSIvN+/ZdlBDx0cKrBjwmAwy8dxVpXCJcJ8ZznDs7H
+	 dudEtyTY8WSWA==
 Received: from wens.tw (localhost [127.0.0.1])
-	by wens.tw (Postfix) with ESMTP id 922F35FF3F;
+	by wens.tw (Postfix) with ESMTP id 88B965FED9;
 	Mon, 23 Nov 2026 18:38:27 +0800 (CST)
 From: Chen-Yu Tsai <wens@kernel.org>
 To: linux-wireless@vger.kernel.org, RFAREAS Support <support@rfareas.com>
 Cc: wireless-regdb@lists.infradead.org
-In-Reply-To: <2855A6B0-E021-41E9-8062-93FC37CE0F00@rfareas.com>
-References: <2855A6B0-E021-41E9-8062-93FC37CE0F00@rfareas.com>
-Subject: Re: [PATCH v2 1/2] wireless-regdb: Update regulatory info for
- Kazakhstan (KZ)
-Message-Id: <179543030759.976281.8642865055174093269.b4-ty@b4>
+In-Reply-To: <78DCED16-8799-423B-BC5D-91690821B766@rfareas.com>
+References: <78DCED16-8799-423B-BC5D-91690821B766@rfareas.com>
+Subject: Re: [PATCH v2] wireless-regdb: Update regulatory info for Belarus
+ (BY)
+Message-Id: <179543030755.976281.3457870716585281409.b4-ty@b4>
 Date: Mon, 23 Nov 2026 18:38:27 +0800
 X-Mailing-List: linux-wireless@vger.kernel.org
 List-Id: <linux-wireless.vger.kernel.org>
@@ -65,23 +65,24 @@ Content-Type: text/plain; charset="utf-8"
 Content-Transfer-Encoding: 7bit
 X-Mailer: b4 0.15.2
 
-On Mon, 23 Nov 2026 13:17:46 +0300, RFAREAS Support wrote:
-> The KZ entry cites the 2015 versions of the Rules for the assignment
-> of frequency bands (Order No. 34 of 21 January 2015). Item 24 "WAS/RLAN"
-> of Annex 1 to these Rules, the list of radio equipment that may be
-> operated without a permit, was replaced by Order No. 564/NK of the
-> Ministry of Digital Development, Innovation and Aerospace Industry of
-> 19 September 2024 (registered with the Ministry of Justice under
-> No. 35100 on 23 September 2024, in force ten days after its first
-> official publication). The consolidated text of the Rules on the
-> official legal portal adilet.zan.kz contains the same item.
+On Mon, 23 Nov 2026 13:24:12 +0300, RFAREAS Support wrote:
+> The BY entry has no source and allows 5490-5710 MHz at 27 dBm, which
+> is not permitted for licence-exempt use in Belarus.
+> 
+> Licence-exempt Wi-Fi is set out in Resolution No. 9 of the Ministry
+> of Communications and Informatization of 1 July 2013, the list of radio
+> equipment operated without a frequency assignment permit. Items 7 and 8
+> were replaced by Resolution No. 13 of 29 August 2016; Resolution No. 1
+> of 10 January 2018 changed "output power" in item 7 to "e.i.r.p.".
+> All three acts are published on the National Legal Internet Portal
+> pravo.by.
 > 
 > [...]
 
 Applied to master in wens/wireless-regdb.git, thanks!
 
-[1/2] wireless-regdb: Update regulatory info for Kazakhstan (KZ)
-      https://git.kernel.org/wens/wireless-regdb/c/3cca5d20b17f
+[1/1] wireless-regdb: Update regulatory info for Belarus (BY)
+      https://git.kernel.org/wens/wireless-regdb/c/5ead4f45c79a
 
 Best regards,
 -- 
