@@ -1,74 +1,76 @@
-Authentication-Results: smtp.subspace.kernel.org; arc=none smtp.remote-ip=68.232.154.123
+Authentication-Results: smtp.subspace.kernel.org; arc=none smtp.remote-ip=68.232.153.233
 ARC-Seal: i=1; d=subspace.kernel.org; s=arc20261015; a=rsa-sha256; cv=none;
-	t=1795441291;
-	b=nKEgRUpZ1XeQtv0ajzdElIyCsQH1sUOg+X7d8p1s7O4nawGSOKsFs2hWr/SiD9vG4c6H
-	 JAoCopw/yNBlrMsyuTTyHafmZEV7XADj5v33uPY88WBnjT7EvugkuLecEEWehq0uJE/KH
-	 GOiaAZe2ZohM2tJjrDqOZD68w923oFcaXs7evb3ByGGlHOHZtkKEJtTiw5WpsGX6VZLML
-	 Wnfb+FlGR9vMuW3WPjC+QhYGenpmfRbGF1DTGGnWhAD86+F41pY2G9M9MmpaGSIzRazla
-	 yP43xT5i6+NW56PkHlAoxMqIk6oDVdJuHpxgTFbnJMsTGfe8FjaQR7OLi6UFKZFUnsw==
+	t=1795441293;
+	b=KW8FVsfrmKB/JaJfKtJoXMghByxs/P4R+GWvbzUGseSMXFsHcEBr2UWFlTrSPyFx2Zdn
+	 Fv2gPWHx1dpk9LbZNbr0H2KO4K7vCfjyycFGwNWXIv6X4eyzhn2XPPPktcz9rhtSxIMBX
+	 uvS5IbmBtv5GsXkkbXSHy1Rn4aqtWTdYaEB5fyCPU2WWkDLLAJBU3vCcdr/m4/bX+H5j+
+	 hm+ihoqLEJwXo0/WfiJrvwxuqXmVOPC+XPDL/MlMNZiKbLT05IYiRsMpif/E2m1woOkX4
+	 3YiiXVUXdeIL6oqJzm4BCbgr9D31uQ5xBIAnD+G75vZPeUHJQ/mtOwuXfWe+u82ghPQ==
 ARC-Message-Signature: i=1; d=subspace.kernel.org; s=arc20261015;
-	a=rsa-sha256; c=relaxed/relaxed; t=1795441291;
+	a=rsa-sha256; c=relaxed/relaxed; t=1795441293;
 	h=DMARC-Filter:DKIM-Signature:X-CSE-ConnectionGUID:X-CSE-MsgGUID:
 	 X-IronPort-AV:X-Amp-Result:Received:Received:Received:From:To:CC:
-	 Subject:Date:Message-ID:X-Mailer:MIME-Version:
+	 Subject:Date:Message-ID:X-Mailer:In-Reply-To:References:MIME-Version:
 	 Content-Transfer-Encoding:Content-Type;
-	bh=iWanZeU7LTm51pxByej/4aVWIB/4zgNtfe8FZR7mzdY=;
-	b=jAEDnCgFVqqTqfJPqqkbCdTp9cgxlN738wpHaZEuXUxFAk8PpGveP6B1XJaH6u+aUbyR
-	 mj3Yld49MfNnrrvNJVmxKmXlOAEjCLyi3tyTpvYEufmEAVWy5zWWYe2siznPCPHBQ9Mn2
-	 wbPRdN4iGjg04VDtGUjCWG1qMIXt6W/ZMuG0QhsjMsKALdCxPl1YakTDOT+hIwqDa3Ced
-	 9J2ir+9/uNmkwODGbYs8aZD9T7MLip3O1r1FLnyUC78KTKSKal2QjR2oaKi6B7XgirEUH
-	 AyGyQy/c/cKS2Pq9raSLGerZB+cXb9zs7TxkhqdQxRJJcu3z9mYcn9TY4BPiQBcb+hQ==
+	bh=kk0O6FsUbI6IqSxRML7AdB9JDL8H3GMtqKaOXf3PK5Q=;
+	b=nxeT9hBNr/WZe0LVU1B430xFkDOLvOeLHJoPA90PVzltbKaWg1NpGktGU4rxUFAMhEhe
+	 e5OVfgJfMxenK68/VEm+h94d0JcOhAhb2gNIWl3NAkM6YYOOKmn+FytRdeUYLlbr3eUlR
+	 IR8vLUQljHGJJmW59XV0DJVi1aGi8GL5XDQPj0/H68dBkbjBZ12YgT0PJcDXPHk7Yp0yr
+	 wpcwWTNx+01I7rbR9s0KLC0wTjIgFgvi8BYrL02A9pu1Ooo2DmewIK309RIxFVU79hpVL
+	 5S/qnLQXKjVGzNC3ZqacajcTSIr/pQSOQWpiiS/bUVjkd67b8KOElC1wostOOQZ5T1A==
 ARC-Authentication-Results: i=1; smtp.subspace.kernel.org; 
 	dmarc=pass header.from=microchip.com;
 	spf=pass smtp.mailfrom=microchip.com;
-	dkim=pass header.d=microchip.com header.i=@microchip.com header.a=rsa-sha256 header.s=mchp header.b=wpMXUfnO;
-	arc=none smtp.remote-ip=68.232.154.123
-Received: from esa.microchip.iphmx.com (esa.microchip.iphmx.com [68.232.154.123])
+	dkim=pass header.d=microchip.com header.i=@microchip.com header.a=rsa-sha256 header.s=mchp header.b=Dkv0QSR3;
+	arc=none smtp.remote-ip=68.232.153.233
+Received: from esa.microchip.iphmx.com (esa.microchip.iphmx.com [68.232.153.233])
 	(using TLSv1.3 with cipher TLS_AES_256_GCM_SHA384 (256/256 bits)
 	 key-exchange X25519 server-signature ECDSA (prime256v1) server-digest SHA256)
 	(No client certificate requested)
-	by smtp.subspace.kernel.org (Postfix) with ESMTPS id F40F8606A695;
-	Mon, 23 Nov 2026 13:41:30 +0000 (UTC)
-DMARC-Filter: OpenDMARC Filter v1.4.2 smtp.subspace.kernel.org F40F8606A695
+	by smtp.subspace.kernel.org (Postfix) with ESMTPS id 8EB4A606A33F;
+	Mon, 23 Nov 2026 13:41:32 +0000 (UTC)
+DMARC-Filter: OpenDMARC Filter v1.4.2 smtp.subspace.kernel.org 8EB4A606A33F
 Authentication-Results: smtp.subspace.kernel.org; dmarc=pass (p=reject dis=none) header.from=microchip.com
 Authentication-Results: smtp.subspace.kernel.org; spf=pass smtp.mailfrom=microchip.com
 Authentication-Results: smtp.subspace.kernel.org;
-	dkim=pass (2048-bit key) header.d=microchip.com header.i=@microchip.com header.a=rsa-sha256 header.s=mchp header.b=wpMXUfnO
+	dkim=pass (2048-bit key) header.d=microchip.com header.i=@microchip.com header.a=rsa-sha256 header.s=mchp header.b=Dkv0QSR3
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple;
   d=microchip.com; i=@microchip.com; q=dns/txt; s=mchp;
-  t=1795441290; x=1826977290;
-  h=from:to:cc:subject:date:message-id:mime-version:
-   content-transfer-encoding;
-  bh=eVpxiM74E0jv/ba3E36gcvCjexfRk4yunfnT9TJgCrU=;
-  b=wpMXUfnOXP6sixbNjioME/K581EdY3Xa/GRNcWMSacRGLD+wNTJTsDAl
-   8CO8A/FA9FHI3js9Ohl/NUIYOkZGCMTRbT+tyKwU9aI+MPOneUuppPABn
-   /l07deSwcza82uKfFR6vHAJ1TuPEUF1uz1eyESqqbODUSV2r/NzED4ETu
-   gDdEhfPomw8lrpenXHFig3fFIeut/nEQ1I2Myxl01gUOzMQP44/Udx3r/
-   /VZOQhO5ZzUs8dQEuNo8wJUgLwm+AxzFAcicL9Q7SpgeU51IYwB8iuZix
-   E0aj0CB6Jbps2OBz3dxeGmhX/xOQnn0w6711hMZhRtKyfeJPZL80KAUuU
-   Q==;
-X-CSE-ConnectionGUID: cqkpM756Tjym68nEXjVYXQ==
-X-CSE-MsgGUID: QE02FaWIRE+ohC89YWUu1Q==
+  t=1795441293; x=1826977293;
+  h=from:to:cc:subject:date:message-id:in-reply-to:
+   references:mime-version:content-transfer-encoding;
+  bh=3D66E9ZFkiuAsMOtY7kx4YXj6uhi0UO5gbC6qaimW38=;
+  b=Dkv0QSR31sOFQ7ba7Kv8sNsqAF8FqZ85qjZak0WqUzKbWnJmqfSt75IR
+   6FrDEQOwuG7T9yCDvB6YmpBwbHlWfjMZa1xYj56ZcBQFEejYaeyKN4dXH
+   mAepbQorQ+mKioXdRbM7Wx7Tty/S8/tBSEu+hX4V/kBNn3WXaiYPgzIbf
+   ueP/StyNMnWckShRnreA1mF+vUuH0sai+vVAdNaUgdJePw1+dAfewUcpc
+   LslhYuyvt/vrZKVu0Zy1bJLex24/3vIjbbGzVHJ/Q2LitqftLC4u4uuPn
+   ULvg+KuS2/AiHu5/xgc6rD0bQkJfU6EjTabXvpj41LXRGBsj5timkLIW2
+   g==;
+X-CSE-ConnectionGUID: GRBpJNWVSmaz84NzQVCckA==
+X-CSE-MsgGUID: wyx8iKpZSueRL9sjMirEKA==
 X-IronPort-AV: E=Sophos;i="6.27,227,1787036400"; 
-   d="scan'208";a="233970283"
+   d="scan'208";a="298331362"
 X-Amp-Result: SKIPPED(no attachment in message)
 Received: from unknown (HELO email.microchip.com) ([170.129.1.10])
-  by esa6.microchip.iphmx.com with ESMTP/TLS/ECDHE-RSA-AES128-GCM-SHA256; 23 Nov 2026 06:41:30 -0700
-Received: from chn-vm-ex03.mchp-main.com (10.10.85.151) by
- chn-vm-ex03.mchp-main.com (10.10.85.151) with Microsoft SMTP Server
+  by esa5.microchip.iphmx.com with ESMTP/TLS/ECDHE-RSA-AES256-GCM-SHA384; 23 Nov 2026 06:41:32 -0700
+Received: from chn-vm-ex03.mchp-main.com (10.10.87.152) by
+ chn-vm-ex4.mchp-main.com (10.10.87.33) with Microsoft SMTP Server
  (version=TLS1_2, cipher=TLS_ECDHE_RSA_WITH_AES_128_GCM_SHA256) id
- 15.1.2507.58; Mon, 23 Nov 2026 06:41:29 -0700
+ 15.2.2562.56; Mon, 23 Nov 2026 06:41:31 -0700
 Received: from archlinux.mchp-main.com (10.10.85.11) by
  chn-vm-ex03.mchp-main.com (10.10.85.151) with Microsoft SMTP Server id
- 15.1.2507.58 via Frontend Transport; Mon, 23 Nov 2026 06:41:28 -0700
+ 15.1.2507.58 via Frontend Transport; Mon, 23 Nov 2026 06:41:30 -0700
 From: Mihai Sain <mihai.sain@microchip.com>
 To: <ajay.kathat@microchip.com>, <claudiu.beznea@tuxon.dev>
 CC: <linux-wireless@vger.kernel.org>, <linux-kernel@vger.kernel.org>, "Mihai
  Sain" <mihai.sain@microchip.com>
-Subject: [PATCH 0/6] wifi: wilc1000: Improve error logging
-Date: Mon, 23 Nov 2026 15:41:14 +0200
-Message-ID: <20261123134120.32638-1-mihai.sain@microchip.com>
+Subject: [PATCH 1/6] wifi: wilc1000: Use netdev_err() for WoWLAN trigger errors
+Date: Mon, 23 Nov 2026 15:41:15 +0200
+Message-ID: <20261123134120.32638-2-mihai.sain@microchip.com>
 X-Mailer: git-send-email 2.56.1
+In-Reply-To: <20261123134120.32638-1-mihai.sain@microchip.com>
+References: <20261123134120.32638-1-mihai.sain@microchip.com>
 X-Mailing-List: linux-wireless@vger.kernel.org
 List-Id: <linux-wireless.vger.kernel.org>
 List-Post: <mailto:linux-wireless@vger.kernel.org>
@@ -81,30 +83,30 @@ MIME-Version: 1.0
 Content-Transfer-Encoding: 8bit
 Content-Type: text/plain
 
-This patch series improves error logging in the wilc1000 driver by replacing generic
-logging calls with device-specific logging helpers.
+Use netdev_err() instead of pr_err() when reporting failures to
+send the WoWLAN trigger configuration packet.
 
-This makes error messages more informative and easier to identify when debugging issues,
-while improving consistency with kernel logging conventions.
+This associates the error message with the relevant network
+interface, making diagnostics more informative.
 
-Mihai Sain (6):
-  wifi: wilc1000: Use netdev_err() for WoWLAN trigger errors
-  wifi: wilc1000: Use wiphy_err() for interface limit error
-  wifi: wilc1000: Use device-specific logging for interrupt errors
-  wifi: wilc1000: Use device-specific error logging
-  wifi: wilc1000: Use device-specific error logging for MAC address retrieval failure
-  wifi: wilc1000: Use device-specific logging
+Signed-off-by: Mihai Sain <mihai.sain@microchip.com>
+---
+ drivers/net/wireless/microchip/wilc1000/hif.c | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
 
- .../wireless/microchip/wilc1000/cfg80211.c    |  2 +-
- drivers/net/wireless/microchip/wilc1000/hif.c |  2 +-
- .../net/wireless/microchip/wilc1000/netdev.c  |  4 ++--
- .../net/wireless/microchip/wilc1000/sdio.c    |  2 +-
- drivers/net/wireless/microchip/wilc1000/spi.c |  2 +-
- .../net/wireless/microchip/wilc1000/wlan.c    | 20 ++++++++++---------
- 6 files changed, 17 insertions(+), 15 deletions(-)
-
-
-base-commit: e1dd8486807c1acf9551250b7f81e116a21e6ad6
+diff --git a/drivers/net/wireless/microchip/wilc1000/hif.c b/drivers/net/wireless/microchip/wilc1000/hif.c
+index 60fe5f08964f..3b7d42ebf59a 100644
+--- a/drivers/net/wireless/microchip/wilc1000/hif.c
++++ b/drivers/net/wireless/microchip/wilc1000/hif.c
+@@ -1031,7 +1031,7 @@ void wilc_set_wowlan_trigger(struct wilc_vif *vif, bool enabled)
+ 
+ 	ret = wilc_send_config_pkt(vif, WILC_SET_CFG, &wid, 1);
+ 	if (ret)
+-		pr_err("Failed to send wowlan trigger config packet\n");
++		netdev_err(vif->ndev, "Failed to send wowlan trigger config packet\n");
+ }
+ 
+ int wilc_set_external_auth_param(struct wilc_vif *vif,
 -- 
 2.56.1
 
