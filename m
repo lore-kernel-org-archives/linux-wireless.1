@@ -1,49 +1,94 @@
-Authentication-Results: smtp.subspace.kernel.org; arc=none smtp.remote-ip=81.177.160.4
+Authentication-Results: smtp.subspace.kernel.org; arc=none smtp.remote-ip=209.85.221.182
 ARC-Seal: i=1; d=subspace.kernel.org; s=arc20261015; a=rsa-sha256; cv=none;
-	t=1795464899;
-	b=XbBJmaeOODHAnRWxX5xAe9Qx4OfP4PW2MR0HN2w3KGhW57QwpH8ZTnfktCnpXEWKH5xq
-	 kSFpT8jiFz3g0EtrjxRc1K5H8bYNSWejwctEqGV6aEaDhCYNUZD6z4M9B/Y+hInCbHKcU
-	 eBHaU9yMn7iB+q3Sm5/xKhsbpOpeBmspQqa15M8zzN07+fsqLbjhcxWtRa4OPJtXEk9g6
-	 PY0cvL37D6kOyy4s8kve5cFpMaP9Ohrg9UUJKhFZaCb5JoJlMFvC8t4KM9nvZAgkgve00
-	 jf95K/eb5ULa53r85+jrzBRalgxnan9oPL/D0SyrpEvXY2UrYJThgvOAP6V+EnpqPeQ==
+	t=1795468137;
+	b=iRoULnEl543HJ4Mw2iMSw/UYCk1qnKnHN4JcSh97FAijtHebEcnnIQHKCwD4COla7Haq
+	 85Atc5bj3+MivvQmdHOOTYEHH+RiJGZHpIsCYyX7A459vHp3JJ3oNuayji6tjcgNUg3aw
+	 rA4vPs/Mb6jGadHU3Noco5Sc2wMrhsOyyV0YWZg2h33Is5HZlHaMuighTVJecVeXHtjpg
+	 l8ziiISpQ9oq3AFTVMQvB2+pbYnUmTjp8mOukTPuCHnvVFHyOdrc9BqoHx/lEhgTMLkYq
+	 CJNkCtjpvyG/GiIbqt80Fy0vhbNLT+adS+eUXYQXIYTigAZGubgwnOnzFJ9kCIJMB1w==
 ARC-Message-Signature: i=1; d=subspace.kernel.org; s=arc20261015;
-	a=rsa-sha256; c=relaxed/relaxed; t=1795464899;
-	h=DMARC-Filter:Received:Received:Received:Received:Received:Received:
-	 Date:From:To:CC:Subject:User-Agent:Message-ID:MIME-Version:
-	 Content-Type:Content-Transfer-Encoding:X-CC-Diagnostic;
-	bh=eM+N0pRNw56oYj8mhCbTBxnx9bPCLxXhM3kU/ZHjQKE=;
-	b=owbhiTym3rv7CvfC03fciKJffVPG6DXZroOvXYDlztSSAnZo7i3L6rPmXvhaY71MMZdO
-	 TwkAkHabi9KtNeyiXKGGpLLxAbVLN7L9+Cm1NwwltGECk3l5Il1DgHZFPdmWTeno/Nddk
-	 FufHAB1DtL5miRTlOmayb9j3OofWQ9yeYUD72fO5+xyB3p2c1FQWQPcaVL465iXnW8HM4
-	 TJHKXDTWFPWxLd/7scFatX1J0yzelXdGReop6bvUbBrirpfm/GCaGV4oPGMz7YQwEr+9q
-	 PnEQm0SDBM7/t3sfrkCT7Ce2HA6whYjv72dVUsh/jRBnWWroVPlqwrmdXL7C8ybVryQ==
+	a=rsa-sha256; c=relaxed/relaxed; t=1795468137;
+	h=DMARC-Filter:Received:DKIM-Signature:X-Google-DKIM-Signature:
+	 X-Forwarded-Encrypted:X-Gm-Message-State:X-Gm-Gg:X-Received:Received:
+	 From:To:Cc:Subject:Date:Message-Id:X-Mailer:In-Reply-To:References:
+	 MIME-Version:Content-Transfer-Encoding;
+	bh=f2NG2KJ42BFW151H0tBsjv0FAQmpfGgM1WHrS6CgImI=;
+	b=bJC9k+Pr/7uMjgZ/etjDhp+B5WdTjJSo/ryiXaKKqIzvoeN+xTSOq3G6oT2g3Q6OEJSc
+	 qViGVLIv7JSC37BiesbTNHXcJmIUMN0lT5pn494Kz70N047HSLTZHgo/weYuMiF+Vizgm
+	 G8CoINXQy5R6IEnJZetvKM+1/IMo0h9PALM8+o82cmi7BlY2dgnjwivl2Ws43zfepPmeh
+	 zHh1CPua0oPkeVnewzfLhp3OR3FCo1c/XDtfY9IbWbHBdCSi18NKKoKgq4Y2FZzK06tqm
+	 +6Hf34WbpLTyh5BywH41I/nh0avruiNMxgwcwBmcx+cyE+78a4Vs+iBxOi91GvTVuWA==
 ARC-Authentication-Results: i=1; smtp.subspace.kernel.org; 
-	dmarc=none header.from=rfareas.com;
-	spf=pass smtp.mailfrom=rfareas.com;
-	arc=none smtp.remote-ip=81.177.160.4
-Received: from s24fifth.in-solve.ru (s24fifth.in-solve.ru [81.177.160.4])
-	by smtp.subspace.kernel.org (Postfix) with ESMTP id CC89F606A31E
-	for <linux-wireless@vger.kernel.org>; Mon, 23 Nov 2026 20:14:58 +0000 (UTC)
-DMARC-Filter: OpenDMARC Filter v1.4.2 smtp.subspace.kernel.org CC89F606A31E
-Authentication-Results: smtp.subspace.kernel.org; dmarc=none (p=none dis=none) header.from=rfareas.com
-Authentication-Results: smtp.subspace.kernel.org; spf=pass smtp.mailfrom=rfareas.com
-Received: from Spooler by s24fifth.in-solve.ru (Mercury/32 v4.52) ID MO0016DA;
-    23 Nov 2026 23:15:00 +0300
-Received: from spooler by mail-aux1.in-solve.hidden (Mercury/32 v4.52); 23 Nov 2026 23:14:39 +0300
-Received: from mail-s22 (10.0.1.22) by mail-s24-t.1gb.ru (Mercury/32 v4.52) with ESMTP ID MG0016D9;
-   23 Nov 2026 23:14:39 +0300
-Received: from Spooler by mail-s22 (Mercury/32 v4.52) ID MO0000F0;
-  23 Nov 2026 23:14:25 +0300
-Received: from spooler by mail-s22-aux2.in-solve.hidden (Mercury/32 v4.52); 23 Nov 2026 23:14:23 +0300
-Received: from ehlo.thunderbird.net (128.204.79.160) by mail-s22.1gb.ru (Mercury/32 v4.52) with ESMTP ID MG0000EF;
-   23 Nov 2026 23:14:21 +0300
-Date: Mon, 23 Nov 2026 23:14:32 +0300
-From: RFAREAS Support <support@rfareas.com>
-To: linux-wireless@vger.kernel.org
-CC: wireless-regdb@lists.infradead.org, wens@kernel.org
-Subject: [PATCH] wireless-regdb: Update 60 GHz rule for Ukraine (UA)
-User-Agent: K-9 Mail for Android
-Message-ID: <2D65518A-EBD5-4E6C-B4D2-7819D488B374@rfareas.com>
+	dmarc=pass header.from=gmail.com;
+	spf=pass smtp.mailfrom=gmail.com;
+	dkim=pass header.d=gmail.com header.i=@gmail.com header.a=rsa-sha256 header.s=20260707 header.b=oiI5kZU0;
+	arc=none smtp.remote-ip=209.85.221.182
+Received: from mail-vk1-f182.google.com (mail-vk1-f182.google.com [209.85.221.182])
+	(using TLSv1.3 with cipher TLS_AES_128_GCM_SHA256 (128/128 bits)
+	 key-exchange X25519 server-signature ECDSA (prime256v1) server-digest SHA256)
+	(No client certificate requested)
+	by smtp.subspace.kernel.org (Postfix) with ESMTPS id BCCA2606A321
+	for <linux-wireless@vger.kernel.org>; Mon, 23 Nov 2026 21:08:56 +0000 (UTC)
+DMARC-Filter: OpenDMARC Filter v1.4.2 smtp.subspace.kernel.org BCCA2606A321
+Authentication-Results: smtp.subspace.kernel.org; dmarc=pass (p=none dis=none) header.from=gmail.com
+Authentication-Results: smtp.subspace.kernel.org; spf=pass smtp.mailfrom=gmail.com
+Authentication-Results: smtp.subspace.kernel.org;
+	dkim=pass (2048-bit key) header.d=gmail.com header.i=@gmail.com header.a=rsa-sha256 header.s=20260707 header.b=oiI5kZU0
+Received: by mail-vk1-f182.google.com with SMTP id 71dfb90a1353d-5eadef147ffso3037388e0c.3
+        for <linux-wireless@vger.kernel.org>; Mon, 23 Nov 2026 13:08:56 -0800 (PST)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+        d=gmail.com; s=20260707; t=1795468136; x=1796072936; darn=vger.kernel.org;
+        h=content-transfer-encoding:mime-version:references:in-reply-to
+         :message-id:date:subject:cc:to:from:from:to:cc:subject:date
+         :message-id:reply-to:content-type;
+        bh=f2NG2KJ42BFW151H0tBsjv0FAQmpfGgM1WHrS6CgImI=;
+        b=oiI5kZU0M/CSCMWIUjZyRof20DyKoyF5/VR/yYWVQme9mZI8H3Z0CAAuC6VSAs0mhu
+         Vz4/3TIQkcvrx50KP4OaWCty4OmoP7zYQzgLCz8spTS0R8VoqkzgL7pGuz9UKt0tD2Co
+         6APcqnKSewL1hDgGMV+p8m8UBq1n9wSdMDHdNuq77JKj7ZX6HKX1jKwjJWtRlmISdZmb
+         iGuKEJy+QKR57O8NsMkEiFKvbCKL+lz2qrNwAcdX2di9WLDbLTf8EYRiEVGHbt/93xni
+         HkNCQhChoG5tqIkAmPbgmqvm2akFH7oSTDdDcDLJv2blMXVusccK2RGQFz05V0SLpzZy
+         6SfQ==
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+        d=1e100.net; s=20260707; t=1795468136; x=1796072936;
+        h=content-transfer-encoding:mime-version:references:in-reply-to
+         :message-id:date:subject:cc:to:from:x-gm-gg:x-gm-message-state:from
+         :to:cc:subject:date:message-id:reply-to:content-type;
+        bh=f2NG2KJ42BFW151H0tBsjv0FAQmpfGgM1WHrS6CgImI=;
+        b=jSHrXkDdO1+0zyTWq3bkKQ0fIYSgx2RdZ6aZQeJv7PA5GzYhu3h5z5eZBjET3nuZ8G
+         KtOyX1FzZR7o60aLwK+RaSST5DLofUfbrMMmVwqj0x4v66TrBD+P07HlOhnF/nRHM45n
+         6PoCLw3fWAP34KDR7SCVk94Shv+kNMyB3wYpKdAQy6DpSLzuhvmbUt5qa7KTfqWeAuY8
+         x7q9Iu4xkXcvRDnkYjR4cide7cmeCuVXWVNR8z23sWjJGPlB+gm13oCKvBljME6SWYUy
+         09flOj3SbxcskLtUP1JIATYwgE9YswErkrcPBwTnF6ICkFLnXi0yu3kFzQPatewa+b01
+         FZ2w==
+X-Forwarded-Encrypted: i=1; AL+hErHwkRP/xNbYzfD7fPGRVt8+24VWX74BOruoh9Z1RakEbkCYNp6CveT7/KMy+QZc4jxGrpNMmUOc9WEPzAclrQ==@vger.kernel.org
+X-Gm-Message-State: APuU4Z+8lmOgNdq2rM6LsPhSa4lIp7eHSTxtfqMGjjb6pH8zYEtbqAdA
+	nrE6jUWKoT8KjTEcV///ZV8OgVWyRzzipHb605bf54vlACGec1gAblM0
+X-Gm-Gg: AZFdTZfU9N/qKqRwBGUFGCfFceHcjtdjL61KEPGzWBLodhVzperU6ct+x4ND8zQ+yas
+	usYZnQ3hIkQnVjhPi80fAoNVAbGHzASbJq9PFWOj4FedgRy/dz5BOfZ1drnm+z2z502J6BkU2P0
+	jiuIYe6KB89csbLIEaHf7xzaaJ29zQ2DY2mVClsOPcPLw+LcVIUhcTPjTtO4E7XdibADpfreQEN
+	4mLgbM3cc6bgxxpp0yPsgjH2uMIq7PAmOcjj78LvAFdlmGUie2gMcKErG8nTHwV7/EkjvH19mdl
+	Zj5vuu0LpyjOxLIq6UyGf5TkSIYu5Bg7jR4tEw6nQmlE2/pLRcyjuMUBpPv8oq+hmCLYiZyhQu5
+	OASm5yHiItrn/OCNrjkofT2nx/hxfd/rMQp2Y/rRMQ9b5imYdgL6NFWwhTUsw27kBdaiuS5BEMn
+	itEqBiEgFTFJomnV3w8S6Ia5gA91MKFw0t7tD2ChoGBIySJ3dllabAlXvt4AP/XKpsauyYOb8Gd
+	6NLMmL23zVySuV7JkcYFfC60qZd9nz9hReVUc+fNtF80mXWeA+E0O9zKy9dX8BldCXZXvPvYiIH
+	oAFCHNlY3o1Ttf5goLK8rFbf7mi+gU9z6nQBCDFpb3ebgzEFfPV7eq8IAcR5cOU68KXRlwAwqCt
+	u9Utt5xPcsO16y2z4QQ==
+X-Received: by 2002:a05:6122:62b1:b0:5ee:40e0:482d with SMTP id 71dfb90a1353d-5ee8adf0fd9mr6950729e0c.3.1795468135671;
+        Mon, 23 Nov 2026 13:08:55 -0800 (PST)
+Received: from tuxmobile.lan ([181.230.232.62])
+        by smtp.gmail.com with ESMTPSA id 71dfb90a1353d-5ee8b555147sm11839376e0c.6.2026.11.23.13.08.53
+        (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
+        Mon, 23 Nov 2026 13:08:55 -0800 (PST)
+From: Gaston Guevara <guevara.gaston@gmail.com>
+To: =?UTF-8?q?Toke=20H=C3=B8iland-J=C3=B8rgensen?= <toke@toke.dk>,
+	linux-wireless@vger.kernel.org
+Cc: Gaston Guevara <guevara.gaston@gmail.com>
+Subject: [PATCH ath-next] wifi: ath9k: don't check CSA completion on station interfaces
+Date: Mon, 23 Nov 2026 18:08:15 -0300
+Message-Id: <20261123210815.25770-1-guevara.gaston@gmail.com>
+X-Mailer: git-send-email 2.39.5
+In-Reply-To: <87mrqzeets.fsf@toke.dk>
+References: <87mrqzeets.fsf@toke.dk>
 X-Mailing-List: linux-wireless@vger.kernel.org
 List-Id: <linux-wireless.vger.kernel.org>
 List-Post: <mailto:linux-wireless@vger.kernel.org>
@@ -53,70 +98,45 @@ List-Unsubscribe: <mailto:linux-wireless+unsubscribe@vger.kernel.org>
 List-Owner: <mailto:linux-wireless+owner@vger.kernel.org>
 Precedence: list
 MIME-Version: 1.0
-Content-Type: text/plain;
- charset=utf-8
-Content-Transfer-Encoding: quoted-printable
-X-CC-Diagnostic: Header RECEIVED matches "*([0-9]+.[0-9]+.[0-9]+.[0-9]+)*" (0)
+Content-Transfer-Encoding: 8bit
 
-From: Valery Belousov <support@rfareas=2Ecom>
+ath9k_csa_update() iterates over all active interfaces and calls
+ath9k_csa_is_finished() for each of them. mac80211 also sets
+bss_conf.csa_active on a station interface while it follows a channel
+switch announced by its AP, so when an AP and a station share an ath9k
+radio, ath9k_csa_is_finished() calls ieee80211_beacon_cntdwn_is_complete()
+for the station vif. That function only handles AP, ad-hoc and mesh
+interfaces and hits WARN_ON(1) for any other type, producing a burst of
+warnings (about one per beacon interval) on every upstream CSA.
 
-The UA entry allows 40 dBm in 57-66 GHz=2E The current list of radio
-equipment used under general authorisation in Ukraine, NKEK Resolution
-No=2E 361 of 3 July 2024, allows MGWS (WAS/RLAN) equipment in 57-66 GHz
-under item 78 with a maximum mean e=2Ei=2Er=2Ep=2E density of 13 dBm in an=
-y 1 MHz,
-a maximum e=2Ei=2Er=2Ep=2E of 20 dBm and indoor use only (ETSI EN 302 567)=
-=2E
-The amendments to the list adopted since then (Resolution No=2E 32 of
-28 January 2026, current consolidated version of 18 March 2026) do not
-change this item=2E
+Skip station interfaces in ath9k_csa_is_finished(). Ad-hoc and mesh
+interfaces keep their current behaviour.
 
-Change 57-66 GHz from 40 dBm to 20 dBm (NO-OUTDOOR is kept) and add
-the source=2E
+Tested on a TP-Link Archer C60 v3 (QCA9561) with an AP and a station
+on the same radio: twelve consecutive upstream channel switches with
+no warnings, whereas every logged switch produced them before.
 
-The source cited for the 2=2E4 and 5 GHz rules (z0201-15) was repealed by
-Resolution No=2E 361 on 16 August 2024=2E Those rules are not changed here=
-=2E
-
-Signed-off-by: Valery Belousov <support@rfareas=2Ecom>
+Fixes: 4effc6fda7ab ("ath9k: prepare for multi-interface CSA support")
+Link: https://lore.kernel.org/linux-wireless/CABMxrRyvsFy7qGXky-OF1KE3c04z0xO_XMGnJC28L0WHE9AF9Q@mail.gmail.com/
+Signed-off-by: Gaston Guevara <guevara.gaston@gmail.com>
 ---
-Found while cross-checking wireless-regdb against the national acts for th=
-e
-RFAREAS Wi-Fi regulatory map (https://rfareas=2Ecom/blog/tools/wifimap/)=
-=2E
+ drivers/net/wireless/ath/ath9k/beacon.c | 3 ++-
+ 1 file changed, 2 insertions(+), 1 deletion(-)
 
- db=2Etxt | 6 +++++-
- 1 file changed, 5 insertions(+), 1 deletion(-)
+diff --git a/drivers/net/wireless/ath/ath9k/beacon.c b/drivers/net/wireless/ath/ath9k/beacon.c
+index 4a27e3753c03..ff72f231be5d 100644
+--- a/drivers/net/wireless/ath/ath9k/beacon.c
++++ b/drivers/net/wireless/ath/ath9k/beacon.c
+@@ -362,7 +362,8 @@ static void ath9k_set_tsfadjust(struct ath_softc *sc,
+ 
+ bool ath9k_csa_is_finished(struct ath_softc *sc, struct ieee80211_vif *vif)
+ {
+-	if (!vif || !vif->bss_conf.csa_active)
++	if (!vif || vif->type == NL80211_IFTYPE_STATION ||
++	    !vif->bss_conf.csa_active)
+ 		return false;
+ 
+ 	if (!ieee80211_beacon_cntdwn_is_complete(vif, 0))
+-- 
+2.39.5
 
-diff --git a/db=2Etxt b/db=2Etxt
-index f5b7cc1=2E=2E07c3ef9 100644
---- a/db=2Etxt
-+++ b/db=2Etxt
-@@ -2097,6 +2097,10 @@ country TZ: DFS-ETSI
- # 2=2E4 GHz band channels can be used outdoors when some requirements are=
- met=2E
- # 5 GHz band channels must be used only indoors in some cases=2E They are=
- neither
- # permitted nor denied outdoors in others=2E
-+# 60 GHz: NKEK Resolution No=2E 361 of 3 July 2024, list of radio equipme=
-nt
-+# used under general authorisation, item 78 (MGWS, 57-66 GHz): 20 dBm
-+# e=2Ei=2Er=2Ep=2E, 13 dBm/MHz, indoor use only=2E
-+#  https://zakon=2Erada=2Egov=2Eua/laws/show/z1175-24
- # Harmonized CEPT countries for 6 GHz (ECC Decision (20)01)
- #  https://docdb=2Ecept=2Eorg/implementation/16737
- #  https://docdb=2Ecept=2Eorg/download/4685
-@@ -2108,7 +2112,7 @@ country UA: DFS-ETSI
- 	(5725 - 5850 @ 80), (100 mW), NO-OUTDOOR
- 	(5945 - 6425 @ 320), (23), NO-OUTDOOR
- 	# 60 GHz band channels 1-4, ref: Etsi En 302 567
--	(57000 - 66000 @ 2160), (40), NO-OUTDOOR
-+	(57000 - 66000 @ 2160), (20), NO-OUTDOOR
-=20
- country UG: DFS-FCC
- 	(2402 - 2482 @ 40), (20)
---=20
-2=2E43=2E0
-
---=20
-RFAREAS Support
