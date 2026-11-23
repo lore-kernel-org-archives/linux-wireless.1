@@ -1,54 +1,55 @@
-Authentication-Results: smtp.subspace.kernel.org; arc=none smtp.remote-ip=100.103.45.18
+Authentication-Results: smtp.subspace.kernel.org; arc=none smtp.remote-ip=46.4.11.11
 ARC-Seal: i=1; d=subspace.kernel.org; s=arc20261015; a=rsa-sha256; cv=none;
-	t=1795423249;
-	b=fyNARdocdBaSlt1ncqUhvBERBTgY/qOBpOX+77liXnkbwfzS1OWMe0taBYriKsKX0Zp5
-	 WHY80UiTUxpdF63woyoopevgV5aYrr3es+nLQlIw7MqbHmq0ShFbYA2r5UFodgyLDlPUy
-	 KsjF98ARWihREIvCZH/2DUxFW5kbKHj95e2EmK+2jlCQ1mJFGhU367JWJlyyh6UIrr0m7
-	 fwgVJfAlXwg1GQyk/JLZX3vTLI8DNPB7j2RcLc7TEJsYCWfYftsKPmJUPIhj7jg/myxLB
-	 uwQbIviK9Hti8YT8bjO1AHYIaQ5t66bBNPzF7Dgd+nnNRWNoFfii8GT0LSRpSGTlTIw==
+	t=1795423544;
+	b=BHJV3LM1TE8O6ft+7yduQIKiT3bJV3dbpeSBgGf+B6IhBBTL8ZmnAI/Rkot0qxE7hFbk
+	 ciA/CKY+sqnpsBC3IQEO8rgBRvmq2ia+CJaxmPH8OpWeQtpvBL8x5bL0pgwbpi1rpSbOF
+	 HOiUYM0pvrjgZ7MuwelR7XGbzZWHs/y3/S/R8gbgJ/OhtwDQ5XKiBZ8g+izrzl18TwmZI
+	 XArd+RdoK8Misf/56pnyvZYuvLy+eM0LSvrrfg0dgX7x2xYpTWoPMLXVmbl9+O0FHQPl/
+	 4sFVR4jk6geGYGD1TXwgQAwH4cHgmIlwi6RBm7TdfwvwG69oN7yjMbNer+CiyLk3WKQ==
 ARC-Message-Signature: i=1; d=subspace.kernel.org; s=arc20261015;
-	a=rsa-sha256; c=relaxed/relaxed; t=1795423249;
-	h=Received:DKIM-Signature:Received:X-Gm-Message-State:X-Received:
-	 MIME-Version:References:In-Reply-To:Reply-To:From:Date:
-	 X-Gmail-Original-Message-ID:X-Gm-Features:Message-ID:Subject:To:Cc:
-	 Content-Type:Content-Transfer-Encoding;
-	bh=QRXBPA2aMQnEWk1htW5qbPs6cG9+tctAn+xKJ5Wtsfs=;
-	b=1455pE8soZsRHQ8Cb3uRq0Z85N86FePOfo4J2l8t35g+LjF5inDT6gT6QNKTz5iGr9OL
-	 fCOaTwY3t8IoVTdxeHIHQCZnX8C80baJ8nr5bysWqF531ngqt4uOi2S2rrbIprLVLqcKl
-	 4YtF6LLu7nD5MwJrmzmizRqirCsRqr4Ykv+qARsdR3l0LanY3Kw/7Phnxe6oWqE4nxPdU
-	 pPnGVFM2MdRY6hwUR31tQrBAmr15Ukb1qIQCzDtkNISKdP7IQIA7mak3T7IE7M/HKtI+j
-	 X3Kj4dLBSCsdwELC5c/hPEEsLgo7M53FT4kD5xnfRmaALbQ7lKv7yCgSh3v5RkrgaSg==
+	a=rsa-sha256; c=relaxed/relaxed; t=1795423544;
+	h=DMARC-Filter:DKIM-Signature:Received:Message-ID:Date:MIME-Version:
+	 User-Agent:Subject:To:Cc:References:Content-Language:From:Autocrypt:
+	 In-Reply-To:Content-Type:Content-Transfer-Encoding;
+	bh=Y3QMdMpFMgK3EVjAqDcg1fG0QoSWT2UZUwUtf9p9kOg=;
+	b=jDXyysSp/nGFDRXfn2K1k5jT0uJrEZnAX6F9OyDpIZ5AT3AyO+RUExilOfrab5xiBkNi
+	 1auyNlFQ/OyTsPVz+EusLcoMXx8VCJbA5noQaFmtkQVSFrNdVO6Bamx3CwsdIo1AyJVf7
+	 xkXhpDyZ+HPzQ6FDNEhd1v1ipudV5BA7vY5pUQEzV5K64/BL+DPU1eQTmPRthckk4ADba
+	 LFsT2skX2DlH5iELfLYdIldoEfnlnajqVDQdPQqK+LJsheM7QISmdj7eCpREPNKVGafRL
+	 XdZeWNfs4dmPVVD+WqpVVl0Wc80YtHX5Lc4CCYeSW4pif9I7BazB9hfYcasTmLLTPlQ==
 ARC-Authentication-Results: i=1; smtp.subspace.kernel.org; 
-	dkim=pass header.d=kernel.org header.i=@kernel.org header.a=rsa-sha256 header.s=k20260515 header.b=Q03lgtU1;
-	arc=none smtp.remote-ip=100.103.45.18
-Received: from smtp.kernel.org (quasi.space.kernel.org [100.103.45.18])
+	dmarc=pass header.from=nbd.name;
+	spf=pass smtp.mailfrom=nbd.name;
+	dkim=pass header.d=nbd.name header.i=@nbd.name header.a=rsa-sha256 header.s=20160729 header.b=V2XcBbaq;
+	arc=none smtp.remote-ip=46.4.11.11
+Received: from nbd.name (nbd.name [46.4.11.11])
 	(using TLSv1.3 with cipher TLS_AES_256_GCM_SHA384 (256/256 bits)
-	 key-exchange X25519 server-signature ECDSA (prime256v1))
+	 key-exchange ECDHE (prime256v1) server-signature ECDSA (prime256v1) server-digest SHA256)
 	(No client certificate requested)
-	by smtp.subspace.kernel.org (Postfix) with ESMTPS id 764BE606A31A
-	for <linux-wireless@vger.kernel.org>; Mon, 23 Nov 2026 08:40:49 +0000 (UTC)
+	by smtp.subspace.kernel.org (Postfix) with ESMTPS id BF53C606A31A;
+	Mon, 23 Nov 2026 08:45:43 +0000 (UTC)
+DMARC-Filter: OpenDMARC Filter v1.4.2 smtp.subspace.kernel.org BF53C606A31A
+Authentication-Results: smtp.subspace.kernel.org; dmarc=pass (p=none dis=none) header.from=nbd.name
+Authentication-Results: smtp.subspace.kernel.org; spf=pass smtp.mailfrom=nbd.name
 Authentication-Results: smtp.subspace.kernel.org;
-	dkim=pass (2048-bit key) header.d=kernel.org header.i=@kernel.org header.a=rsa-sha256 header.s=k20260515 header.b=Q03lgtU1
-Received: by smtp.kernel.org (Postfix) with ESMTPSA id E4C8E1F000E6
-	for <linux-wireless@vger.kernel.org>; Mon, 23 Nov 2026 08:40:48 +0000 (UTC)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=kernel.org;
-	s=k20260515; t=1795423248;
-	bh=QRXBPA2aMQnEWk1htW5qbPs6cG9+tctAn+xKJ5Wtsfs=;
-	h=References:In-Reply-To:Reply-To:From:Date:Subject:To:Cc;
-	b=Q03lgtU1WJyaSuO1vflp5VgUGcutvC8WG2puydargr0YHOAXePIjV9HaRgfzA1gor
-	 +4wrZ+OpANP6ecohEnAgDZ7vaWQfyQxs2aN7B4X3AcM2N+rxPTy/FHAonUW7zsYKLw
-	 tSnsRJrVeXllhJlGiVo+Ewsk356Xpy/zCr00fYbFnDbFG8VsjZHEQJqhWbNf9QYUAW
-	 FByK47Jil2D45Q5lrrUmlX8jo1xxlIlgX+iuVkAla4Cq6uX/em5JIKulqn/IYdwEAx
-	 oOmmBNsav68awIL6QikL+uiT6Ywmblzbt2NHNDSWqrWxFKSv7I0b5dKtV+fhj5Lre/
-	 tYjFXm0K5Dh7A==
-Received: by mail-lj1-f179.google.com with SMTP id 38308e7fff4ca-3ae5ab4fcdcso19031471fa.3
-        for <linux-wireless@vger.kernel.org>; Mon, 23 Nov 2026 00:40:48 -0800 (PST)
-X-Gm-Message-State: APuU4Z+7N+4tt2ITwi8UzDfFEF9gHASGA9M/s8gOa63RbARiC5oJlHaP
-	P7t9by+OREvxuZuKrgaAyBd8JKyyLDMn21SAIZcal3MEUWIkC+MbnE4TebxqSBY+uiLX09ZAkgJ
-	OJM5QKtE6cTIWUhaCg8hypRd1Gt4JxJk=
-X-Received: by 2002:a2e:be26:0:b0:3ae:25c9:f5d1 with SMTP id
- 38308e7fff4ca-3ae7f9d255cmr28773671fa.11.1795423247354; Mon, 23 Nov 2026
- 00:40:47 -0800 (PST)
+	dkim=pass (1024-bit key, unprotected) header.d=nbd.name header.i=@nbd.name header.a=rsa-sha256 header.s=20160729 header.b=V2XcBbaq
+DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed; d=nbd.name;
+	s=20160729; h=Content-Transfer-Encoding:Content-Type:In-Reply-To:From:
+	References:Cc:To:Subject:MIME-Version:Date:Message-ID:Sender:Reply-To:
+	Content-ID:Content-Description:Resent-Date:Resent-From:Resent-Sender:
+	Resent-To:Resent-Cc:Resent-Message-ID:List-Id:List-Help:List-Unsubscribe:
+	List-Subscribe:List-Post:List-Owner:List-Archive;
+	bh=Y3QMdMpFMgK3EVjAqDcg1fG0QoSWT2UZUwUtf9p9kOg=; b=V2XcBbaqiu+zVbkJ3aMarZfrc/
+	Art2r0nG/3M06RGVTab7OgNEW/MlRg6uQ9DqR1obga3EOcftHG2vfeb//QqYH2oYiTa/7gR2TecNy
+	svdX2uvlQz6N+ANineBDjNbo0MSoDtq69tfzVklOTqVqkKADYDri8PLu7ieDThhA6xRc=;
+Received: from p54a43aa5.dip0.t-ipconnect.de ([84.164.58.165] helo=nf.local)
+	by ds12 with esmtpsa  (TLS1.3) tls TLS_ECDHE_RSA_WITH_AES_128_GCM_SHA256
+	(Exim 4.96)
+	(envelope-from <nbd@nbd.name>)
+	id 1xVPfz-007Fz9-1F;
+	Mon, 23 Nov 2026 09:45:27 +0100
+Message-ID: <8d674f7c-68db-474f-8cb1-5645542db0ac@nbd.name>
+Date: Mon, 23 Nov 2026 09:45:26 +0100
 X-Mailing-List: linux-wireless@vger.kernel.org
 List-Id: <linux-wireless.vger.kernel.org>
 List-Post: <mailto:linux-wireless@vger.kernel.org>
@@ -58,65 +59,67 @@ List-Unsubscribe: <mailto:linux-wireless+unsubscribe@vger.kernel.org>
 List-Owner: <mailto:linux-wireless+owner@vger.kernel.org>
 Precedence: list
 MIME-Version: 1.0
-References: <1844356607.822318.1792144991919.ref@mail.yahoo.com> <1844356607.822318.1792144991919@mail.yahoo.com>
-In-Reply-To: <1844356607.822318.1792144991919@mail.yahoo.com>
-Reply-To: wens@kernel.org
-From: Chen-Yu Tsai <wens@kernel.org>
-Date: Mon, 23 Nov 2026 16:40:33 +0800
-X-Gmail-Original-Message-ID: <CAGb2v64NdP_SrBjrUZaBuMAB5EwsacnZH=YV7i+Jk9L2vm+0TQ@mail.gmail.com>
-X-Gm-Features: Aa3M54qwH1whWvhObfYe-WlNsYmELQW_9kYghPU4lMJs_TVptLWBzvkVAJVVsXY
-Message-ID: <CAGb2v64NdP_SrBjrUZaBuMAB5EwsacnZH=YV7i+Jk9L2vm+0TQ@mail.gmail.com>
-Subject: Re: [PATCH] wireless-regdb: update regulatory rules for Bangladesh
- (BD) to allow 6 GHz (UNII-5)
-To: blackbird <jewel_boss_m@yahoo.com>
-Cc: "linux-wireless@vger.kernel.org" <linux-wireless@vger.kernel.org>, 
-	"wireless-regdb@lists.infradead.org" <wireless-regdb@lists.infradead.org>
-Content-Type: text/plain; charset="UTF-8"
-Content-Transfer-Encoding: quoted-printable
+User-Agent: Mozilla Thunderbird
+Subject: Re: [PATCH wireless-next] wifi: mac80211: find the station of a freed
+ 802.3 frame for AQL
+To: Julius Bairaktaris <julius@bairaktaris.de>,
+ Johannes Berg <johannes@sipsolutions.net>
+Cc: linux-wireless@vger.kernel.org, linux-kernel@vger.kernel.org,
+ John Crispin <john@phrozen.org>,
+ Vasanthakumar Thiagarajan <vasanthakumar.thiagarajan@oss.qualcomm.com>,
+ Vasanthakumar Thiagarajan <vthiagar@qti.qualcomm.com>,
+ =?UTF-8?Q?Toke_H=C3=B8iland-J=C3=B8rgensen?= <toke@toke.dk>
+References: <20261122150541.3117507-1-julius@bairaktaris.de>
+Content-Language: en-US
+From: Felix Fietkau <nbd@nbd.name>
+Autocrypt: addr=nbd@nbd.name; keydata=
+ xsDiBEah5CcRBADIY7pu4LIv3jBlyQ/2u87iIZGe6f0f8pyB4UjzfJNXhJb8JylYYRzIOSxh
+ ExKsdLCnJqsG1PY1mqTtoG8sONpwsHr2oJ4itjcGHfn5NJSUGTbtbbxLro13tHkGFCoCr4Z5
+ Pv+XRgiANSpYlIigiMbOkide6wbggQK32tC20QxUIwCg4k6dtV/4kwEeiOUfErq00TVqIiEE
+ AKcUi4taOuh/PQWx/Ujjl/P1LfJXqLKRPa8PwD4j2yjoc9l+7LptSxJThL9KSu6gtXQjcoR2
+ vCK0OeYJhgO4kYMI78h1TSaxmtImEAnjFPYJYVsxrhay92jisYc7z5R/76AaELfF6RCjjGeP
+ wdalulG+erWju710Bif7E1yjYVWeA/9Wd1lsOmx6uwwYgNqoFtcAunDaMKi9xVQW18FsUusM
+ TdRvTZLBpoUAy+MajAL+R73TwLq3LnKpIcCwftyQXK5pEDKq57OhxJVv1Q8XkA9Dn1SBOjNB
+ l25vJDFAT9ntp9THeDD2fv15yk4EKpWhu4H00/YX8KkhFsrtUs69+vZQwc0cRmVsaXggRmll
+ dGthdSA8bmJkQG5iZC5uYW1lPsJgBBMRAgAgBQJGoeQnAhsjBgsJCAcDAgQVAggDBBYCAwEC
+ HgECF4AACgkQ130UHQKnbvXsvgCgjsAIIOsY7xZ8VcSm7NABpi91yTMAniMMmH7FRenEAYMa
+ VrwYTIThkTlQzsFNBEah5FQQCACMIep/hTzgPZ9HbCTKm9xN4bZX0JjrqjFem1Nxf3MBM5vN
+ CYGBn8F4sGIzPmLhl4xFeq3k5irVg/YvxSDbQN6NJv8o+tP6zsMeWX2JjtV0P4aDIN1pK2/w
+ VxcicArw0VYdv2ZCarccFBgH2a6GjswqlCqVM3gNIMI8ikzenKcso8YErGGiKYeMEZLwHaxE
+ Y7mTPuOTrWL8uWWRL5mVjhZEVvDez6em/OYvzBwbkhImrryF29e3Po2cfY2n7EKjjr3/141K
+ DHBBdgXlPNfDwROnA5ugjjEBjwkwBQqPpDA7AYPvpHh5vLbZnVGu5CwG7NAsrb2isRmjYoqk
+ wu++3117AAMFB/9S0Sj7qFFQcD4laADVsabTpNNpaV4wAgVTRHKV/kC9luItzwDnUcsZUPdQ
+ f3MueRJ3jIHU0UmRBG3uQftqbZJj3ikhnfvyLmkCNe+/hXhPu9sGvXyi2D4vszICvc1KL4RD
+ aLSrOsROx22eZ26KqcW4ny7+va2FnvjsZgI8h4sDmaLzKczVRIiLITiMpLFEU/VoSv0m1F4B
+ FtRgoiyjFzigWG0MsTdAN6FJzGh4mWWGIlE7o5JraNhnTd+yTUIPtw3ym6l8P+gbvfoZida0
+ TspgwBWLnXQvP5EDvlZnNaKa/3oBes6z0QdaSOwZCRA3QSLHBwtgUsrT6RxRSweLrcabwkkE
+ GBECAAkFAkah5FQCGwwACgkQ130UHQKnbvW2GgCeMncXpbbWNT2AtoAYICrKyX5R3iMAoMhw
+ cL98efvrjdstUfTCP2pfetyN
+In-Reply-To: <20261122150541.3117507-1-julius@bairaktaris.de>
+Content-Type: text/plain; charset=UTF-8; format=flowed
+Content-Transfer-Encoding: 7bit
 
-On Fri, Oct 16, 2026 at 6:03=E2=80=AFPM blackbird <jewel_boss_m@yahoo.com> =
-wrote:
->
-> Dear Maintainers,
->
->
-> The Bangladesh Telecommunication Regulatory Commission (BTRC) has officia=
-lly approved the lower portion of the 6 GHz frequency band (5925=E2=80=9364=
-25 MHz) for shared, unlicensed use including Wi-Fi 6E/7, IoT, and Wireless =
-LAN (WLAN) devices.
->
->
-> Please update the database rules for Bangladesh (BD) to permit indoor tra=
-nsmissions on the UNII-5 band up to a 160 MHz channel width.
->
->
-> Official Regulatory References and Direct Circular Evidence:
-> - Official Announcement Notice Page:
-> https://btrc.gov.bd/pages/notices/6922ee00dbfbab28ce0c438d
-> - Direct Source Regulatory PDF Document:
-> https://objectstorage.ap-dcc-gazipur-1.oraclecloud15.com/n/axvjbnqprylg/b=
-/V2Ministry/o/office-btrc/2024/12/18337854ab6c487fa749464c7672c8a8.pdf
+On 22.11.26 16:05, Julius Bairaktaris wrote:
+> ieee80211_report_used_skb() returns a frame's pending airtime to the
+> station found from the 802.11 header. An encap offloaded frame starts
+> with its 802.3 header instead, so the lookup finds no station, the
+> station keeps the charge, and once its leaked airtime exceeds its limit
+> ieee80211_txq_airtime_check() stops scheduling it until it reassociates.
+> Drivers with AQL and encap offload reach this through
+> ieee80211_free_txskb() wherever they drop a frame without knowing its
+> station, for example when firmware recovery returns the frames it held.
+> 
+> Look up an encap offloaded frame's station with
+> ieee80211_lookup_ra_sta(), as ieee80211_subif_start_xmit_8023() did on
+> transmit.
+> 
+> Fixes: 50ff477a8639 ("mac80211: add 802.11 encapsulation offloading support")
+> Signed-off-by: Julius Bairaktaris <julius@bairaktaris.de>
+I think this is the wrong approach. The driver reporting tx status for 
+802.3 frames without a station pointer cannot possibly work in 4 address 
+mode (since the Ethernet addresses do not identify the sta).
+Please fix the driver instead to keep track of the sta and pass it to 
+mac80211 on tx status. This has the extra benefit of being more 
+efficient by avoiding an extra lookup.
 
-The announcement does not say what the power limits are. Without supporting
-evidence, we cannot add it.
-
-
-ChenYu
-
-
->
-> Proposed database block update for db.txt:
->
->
-> country BD: DFS-FCC
-> (2402 - 2482 @ 40), (20)
-> (5170 - 5250 @ 80), (23)
-> (5735 - 5835 @ 80), (30)
-> # 6 GHz band (UNII-5) approved by BTRC circular on Sept 15, 2024
-> # Shared unlicensed indoor use for Wi-Fi, IoT, and WLAN
-> (5925 - 6425 @ 160), (23), NO-OUTDOOR
->
->
-> Signed-off-by: Syed Mubashir <jewel_boss_m@yahoo.com>
->
->
+- Felix
