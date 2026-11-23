@@ -1,73 +1,73 @@
 Authentication-Results: smtp.subspace.kernel.org; arc=none smtp.remote-ip=68.232.154.123
 ARC-Seal: i=1; d=subspace.kernel.org; s=arc20261015; a=rsa-sha256; cv=none;
-	t=1795441294;
-	b=fi9wBtX+oZTs0cE9LiQO09wMgbS12+RuU4JbwFys7wINRDxsZsiPY79hYACEjVZu7v21
-	 sVe8x/wKSKjFcq26bFGBRJ4XezgvLHKWJEtxCJDI9aHXOAfjUILl3mI8jdRQ97tqiQ78z
-	 kwciMepQIGjcdmFaKLWtF2p+7t4m4eoEqVkb/3LIL46MAU5KIal6DuOrFOTMHu3mEsoDq
-	 Rs3bW/Qh1cvAF7XnigxcaTbKXHZA/UsDJneXsbyJsisWTxJWOF36jaRL9wAU1HUPU5XFJ
-	 dGWRqc/J78m+oBmPGO4sHuvRqCuCG3wbPHf0enTlEqpRJN6AaVBNowzqOBM5gE2jhkg==
+	t=1795441296;
+	b=QOCPuSddHj51A7+IT4+HpFy6h3QnJoHSm8TpS0NKZAmJeXOTpUinLzTGOU7ync00vLgk
+	 G4jryMMoEcGD4qh7mdBDEL5KouzjTfybTgnfrKRzgUOTEDOnb5ibjkkhnYPJIM4Rpn0nZ
+	 qvHDE9ppG2lgwgkLQkw5nXkwHIi3OPXZ/lQKd9pmvLHJJG/rPtjqouVhFnbAgNlxIhyDD
+	 v3SK7TE8SvnOTPnsIXKk3TKdwlRXIW+dMjLa/rpkKbA4BiN4Rnjo199ML4KMY/W8Q06ZV
+	 eAtxlXpBAt6qGk2FJEWevTRWzUPSQRa1CYniqmtYCyCxcFeFctLJys938vxiexsKETw==
 ARC-Message-Signature: i=1; d=subspace.kernel.org; s=arc20261015;
-	a=rsa-sha256; c=relaxed/relaxed; t=1795441294;
+	a=rsa-sha256; c=relaxed/relaxed; t=1795441296;
 	h=DMARC-Filter:DKIM-Signature:X-CSE-ConnectionGUID:X-CSE-MsgGUID:
 	 X-IronPort-AV:X-Amp-Result:Received:Received:Received:From:To:CC:
 	 Subject:Date:Message-ID:X-Mailer:In-Reply-To:References:MIME-Version:
 	 Content-Transfer-Encoding:Content-Type;
-	bh=pdnfcq5RI1JqTvZbBG490/RGDC68ZzHIR3Joh7aJQ1w=;
-	b=tW2tD2TdoPZeRP/LFCx1GZ3yQktADO2HeXIvjP8wigPEn6s8zVMTc5efe8BXG0tSiu/Y
-	 EHHuen/cFASFX1/7vibsJLnW+5yrk+08ltp7D04/q6WUGoGas8cZmZfaIq9M9xAMfsKXU
-	 FipNTMRIt+fOCnLwzDihwEbC9h6yiQ2KHOrvBQpdiZ+YjwGUj6s4XdYZz15Yty7Vrm0qt
-	 /b58ppb6I2rgwIIHqxs6AFvi+py3a21N7XT5lQyd+ml54mfFRycZEYBUX6812F7SYQjWd
-	 kKR3LkxA1Ix+OV7U5Yubj6JoiOxGsBQCNbBc00E2I4QbaqcUCWkEdvQvcoKNebBhRAA==
+	bh=Ay1L+FYMTI7HGMKuXjbygThQxB2EdrvQ0AtkOKJscYU=;
+	b=wMo7p26fZTsP17zWlaI8sKkX5ybarkPN+Eh25MY+yG12mTgDKDCMISP8Mfu3JtwB8nZg
+	 r5gwAhTafhF+EICTDzm0lQx1JbrvM1XUAyK4Y4vnMR5Y2scD4v+8BM/9Pm0v0tKu3Q4tp
+	 T6OXrNgTWkfAbY3m5CX/Est+mZ7LBVrrc4ZDjRX45DEJzi+ZS2K8pTRALoGkEHb40PTBg
+	 DIVXjKlidVjj3dJ7HlJOg5tB9Co1wZf+Wh3m1UM4EKGSeb72ZwUeFoYzMtA+X0RhFQbQ6
+	 +wLOv+phoRxrtpAE5wbqvJ9ErYkXXz93H/rxHaiAjtPd/l2EfqNJI7KPKzUiuNkfdeg==
 ARC-Authentication-Results: i=1; smtp.subspace.kernel.org; 
 	dmarc=pass header.from=microchip.com;
 	spf=pass smtp.mailfrom=microchip.com;
-	dkim=pass header.d=microchip.com header.i=@microchip.com header.a=rsa-sha256 header.s=mchp header.b=WmDlpJAj;
+	dkim=pass header.d=microchip.com header.i=@microchip.com header.a=rsa-sha256 header.s=mchp header.b=TP6bAKaY;
 	arc=none smtp.remote-ip=68.232.154.123
 Received: from esa.microchip.iphmx.com (esa.microchip.iphmx.com [68.232.154.123])
 	(using TLSv1.3 with cipher TLS_AES_256_GCM_SHA384 (256/256 bits)
 	 key-exchange X25519 server-signature ECDSA (prime256v1) server-digest SHA256)
 	(No client certificate requested)
-	by smtp.subspace.kernel.org (Postfix) with ESMTPS id 7243C606A6A7;
-	Mon, 23 Nov 2026 13:41:33 +0000 (UTC)
-DMARC-Filter: OpenDMARC Filter v1.4.2 smtp.subspace.kernel.org 7243C606A6A7
+	by smtp.subspace.kernel.org (Postfix) with ESMTPS id 703E360A3818;
+	Mon, 23 Nov 2026 13:41:36 +0000 (UTC)
+DMARC-Filter: OpenDMARC Filter v1.4.2 smtp.subspace.kernel.org 703E360A3818
 Authentication-Results: smtp.subspace.kernel.org; dmarc=pass (p=reject dis=none) header.from=microchip.com
 Authentication-Results: smtp.subspace.kernel.org; spf=pass smtp.mailfrom=microchip.com
 Authentication-Results: smtp.subspace.kernel.org;
-	dkim=pass (2048-bit key) header.d=microchip.com header.i=@microchip.com header.a=rsa-sha256 header.s=mchp header.b=WmDlpJAj
+	dkim=pass (2048-bit key) header.d=microchip.com header.i=@microchip.com header.a=rsa-sha256 header.s=mchp header.b=TP6bAKaY
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple;
   d=microchip.com; i=@microchip.com; q=dns/txt; s=mchp;
-  t=1795441293; x=1826977293;
+  t=1795441296; x=1826977296;
   h=from:to:cc:subject:date:message-id:in-reply-to:
    references:mime-version:content-transfer-encoding;
-  bh=WGjy/xn7xEUUcyeN3JMHQROL32dDt0oK/oU6xAh8qJw=;
-  b=WmDlpJAj+TkaWfye/6OcaWL2dALB/TqRrbX25l/lzbCRlYheOScthKh8
-   6vW22Hp6b7PJEQNK6YW9PCyxxhxr0/YswpIuixQyl/y4lo3fGtM32j9Wk
-   L8fjzohKPMK5rsTv1cAY4zRiQG+yq5myJZNkt3hqUQ4x01kvJWVSP/OM1
-   RcLsBmVKwt8QlvONiwlckY59RJKjG9/OEf9ZlMBlEBxIxR5QSxjG074VC
-   oCGgpVxK9TonPUL4UbZV/CiUVNjjH/TmVomebdjHOWp3IUQANAcIT6m+K
-   MukDtsr21qMZdoF40MBEQn7Lv8WkuvbicmrkI2yEAF3cHpLq/Bu80hFBK
-   g==;
-X-CSE-ConnectionGUID: ahilTgDtRKuto0Mg0lZgag==
-X-CSE-MsgGUID: lLO9uKWGTKyZMErUL8WkyA==
+  bh=w8N5AFoWQMMdzwaV+j3MmtZn18lre8Pl/IetgOAxtJ8=;
+  b=TP6bAKaYqqs1wtl3NVM+NHoti+ybHutkxQ8Bfcvqafw0MJ+mou22VWoc
+   poytai4mRz+JjqFsa0gQlxwnzkk9+APlkOYdOuytWE/BX/zypEFJ53/ea
+   fk45nT2ztgzklnqJxMrV2mrCv4+BbFxIqzmJZK6qiwK1ZbTbyUPNqgtm4
+   YRqkgM3U3WEyhpjUSEN4/j91Mlw7RgrEwDFAMAMssL15BPprzYOGL5+rA
+   0BDCz8qv/NdRNjeYLSdz87+LWz3eOci3/7ISxivltRa0YM2eXUhimhqyt
+   5qbIYg7sqDEiRp9CWzOrIxIyws39FwW7GVrMA6jrqX0MEfAWYBltUc1bf
+   w==;
+X-CSE-ConnectionGUID: dqhawuA0RnqsqIKTscc9TA==
+X-CSE-MsgGUID: JalPVXxBQc2T7TNScctHpw==
 X-IronPort-AV: E=Sophos;i="6.27,227,1787036400"; 
-   d="scan'208";a="233970289"
+   d="scan'208";a="67154924"
 X-Amp-Result: SKIPPED(no attachment in message)
 Received: from unknown (HELO email.microchip.com) ([170.129.1.10])
-  by esa6.microchip.iphmx.com with ESMTP/TLS/ECDHE-RSA-AES128-GCM-SHA256; 23 Nov 2026 06:41:33 -0700
+  by esa2.microchip.iphmx.com with ESMTP/TLS/ECDHE-RSA-AES128-GCM-SHA256; 23 Nov 2026 06:41:36 -0700
 Received: from chn-vm-ex03.mchp-main.com (10.10.85.151) by
  chn-vm-ex03.mchp-main.com (10.10.85.151) with Microsoft SMTP Server
  (version=TLS1_2, cipher=TLS_ECDHE_RSA_WITH_AES_128_GCM_SHA256) id
- 15.1.2507.58; Mon, 23 Nov 2026 06:41:32 -0700
+ 15.1.2507.58; Mon, 23 Nov 2026 06:41:35 -0700
 Received: from archlinux.mchp-main.com (10.10.85.11) by
  chn-vm-ex03.mchp-main.com (10.10.85.151) with Microsoft SMTP Server id
- 15.1.2507.58 via Frontend Transport; Mon, 23 Nov 2026 06:41:31 -0700
+ 15.1.2507.58 via Frontend Transport; Mon, 23 Nov 2026 06:41:34 -0700
 From: Mihai Sain <mihai.sain@microchip.com>
 To: <ajay.kathat@microchip.com>, <claudiu.beznea@tuxon.dev>
 CC: <linux-wireless@vger.kernel.org>, <linux-kernel@vger.kernel.org>, "Mihai
  Sain" <mihai.sain@microchip.com>
-Subject: [PATCH 2/6] wifi: wilc1000: Use wiphy_err() for interface limit error
-Date: Mon, 23 Nov 2026 15:41:16 +0200
-Message-ID: <20261123134120.32638-3-mihai.sain@microchip.com>
+Subject: [PATCH 4/6] wifi: wilc1000: Use device-specific error logging
+Date: Mon, 23 Nov 2026 15:41:18 +0200
+Message-ID: <20261123134120.32638-5-mihai.sain@microchip.com>
 X-Mailer: git-send-email 2.56.1
 In-Reply-To: <20261123134120.32638-1-mihai.sain@microchip.com>
 References: <20261123134120.32638-1-mihai.sain@microchip.com>
@@ -83,30 +83,30 @@ MIME-Version: 1.0
 Content-Transfer-Encoding: 8bit
 Content-Type: text/plain
 
-Use wiphy_err() instead of pr_err() when the maximum number of
-concurrent interfaces is reached.
+Use dev_err() instead of pr_err() when reporting a failure to
+retrieve the MAC address from the chip.
 
-This adds wireless PHY device context to the error message,
-making it easier to identify the device that triggered the error.
+This associates the error message with the SDIO device, making
+it easier to identify the source of the error in kernel logs.
 
 Signed-off-by: Mihai Sain <mihai.sain@microchip.com>
 ---
- drivers/net/wireless/microchip/wilc1000/cfg80211.c | 2 +-
+ drivers/net/wireless/microchip/wilc1000/sdio.c | 2 +-
  1 file changed, 1 insertion(+), 1 deletion(-)
 
-diff --git a/drivers/net/wireless/microchip/wilc1000/cfg80211.c b/drivers/net/wireless/microchip/wilc1000/cfg80211.c
-index 3db290875ff4..429889a2f5ed 100644
---- a/drivers/net/wireless/microchip/wilc1000/cfg80211.c
-+++ b/drivers/net/wireless/microchip/wilc1000/cfg80211.c
-@@ -1577,7 +1577,7 @@ static struct wireless_dev *add_virtual_intf(struct wiphy *wiphy,
- validate_interface:
- 	mutex_lock(&wl->vif_mutex);
- 	if (wl->vif_num == WILC_NUM_CONCURRENT_IFC) {
--		pr_err("Reached maximum number of interface\n");
-+		wiphy_err(wiphy, "Reached maximum number of interface\n");
- 		mutex_unlock(&wl->vif_mutex);
- 		return ERR_PTR(-EINVAL);
+diff --git a/drivers/net/wireless/microchip/wilc1000/sdio.c b/drivers/net/wireless/microchip/wilc1000/sdio.c
+index 67dea1360f0a..a328e1b6f5de 100644
+--- a/drivers/net/wireless/microchip/wilc1000/sdio.c
++++ b/drivers/net/wireless/microchip/wilc1000/sdio.c
+@@ -192,7 +192,7 @@ static int wilc_sdio_probe(struct sdio_func *func,
+ 
+ 	ret = wilc_load_mac_from_nv(wilc);
+ 	if (ret) {
+-		pr_err("Can not retrieve MAC address from chip\n");
++		dev_err(&func->dev, "Can not retrieve MAC address from chip\n");
+ 		goto unregister_wiphy;
  	}
+ 
 -- 
 2.56.1
 
