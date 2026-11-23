@@ -1,86 +1,65 @@
-Authentication-Results: smtp.subspace.kernel.org; arc=none smtp.remote-ip=211.75.126.72
+Authentication-Results: smtp.subspace.kernel.org; arc=none smtp.remote-ip=185.223.33.24
 ARC-Seal: i=1; d=subspace.kernel.org; s=arc20261015; a=rsa-sha256; cv=none;
-	t=1795414946;
-	b=oZh6yCpcnfV1tPoOSCgcPcdti6pch3rZHyVMellCM2hjDf5wEIpB/zOmI4cPUeQ04ZDe
-	 8QcI5rrWfuvwWY//xK5lvWCzYgDCTWlnQOBYvlvQSCy/umVCHImZ8eO52EXRb1BYDKUOt
-	 keT6oP8x29YNFbGRQpXRmKR0KvF+fy136I0kCPkEy412zOPUueN9VvG038wjZCT6K8KV0
-	 FDrj7S4gUCpnNo5ElcgWtZeOb7rfOmZG8H+77Un1JApl2R8/XfYJZMMXIqH31jCdMGuZu
-	 ++NWXMCtHxk3VfxHgx2ap/baIC+NXG8HxsGIB92yrgriWEBgRkwm/NXEok7GlFfb5PQ==
+	t=1795418907;
+	b=UAlm0IIVJJ/7KLUVbdt8DIVAJQtyOuA4LQgmgKsNQN9MOAeuIqie2hvNgmL6m6K4YCSE
+	 V5C6IsRHmkxa3SX9iV46OcDrI+OTuCTOhp6R5iewNV/b7Swal4fML4lqsjyu+2sHxezcJ
+	 gAY9iTJOJuGTmjGPUWRcEG3J+6rODnY+XZVRN+Ynb+wHcusLf4pP2tja+iYCtFmjftrvG
+	 OqTlMldGbQN6dR7UelKNjux9otnBtE/f3X62nqODLOoyrIHHyXd/pEdi6Cz8tAZ5f/35f
+	 APqXGydOqv6WZNnc3o7hbdZhdjP+0Haw9cL36vYbYmd518fnJfGxBURTH0U25w/CNdg==
 ARC-Message-Signature: i=1; d=subspace.kernel.org; s=arc20261015;
-	a=rsa-sha256; c=relaxed/relaxed; t=1795414946;
-	h=DMARC-Filter:X-SpamFilter-By:DKIM-Signature:Received:Received:
-	 Received:Received:From:To:CC:Subject:Thread-Topic:Thread-Index:Date:
-	 Message-ID:References:In-Reply-To:Accept-Language:Content-Language:
-	 x-originating-ip:Content-Type:Content-Transfer-Encoding:MIME-Version;
-	bh=Iuulysn4lb0jC1mnVffm2Qqxiyi30Og/058AoNcVATw=;
-	b=TbtU1WbXbPl2GvNb3zJ7Ym514QsJPUn2b9svll+UlZH8kuaFE17iLAs16u6qH36VZL9y
-	 1U+Uk49FxZDfHGmlJ5nO16ZScwLTCeSwQn1P6Y/IqNFgACSZ4sSMHzRTFEnG3w8QTItwd
-	 dNI3zrecwCbiw9aRCPi8+7D2t0u7e74w0cUuxSiXe5NFyHWmSNyJQYyE7J6GPTE8NB2LB
-	 aQWUPpsxl468ZOYeXU3G8i9uVjUnvcXpsHQWfMFEP4ih6lLwey3ewoS4mhj/FeXMVSxKL
-	 /B5WFUDkY+7I7VmLQYlUfvdpyirD1IKSlSErgNykT7Aa7/2FqUYvSlQyvs3rcdpGlyg==
+	a=rsa-sha256; c=relaxed/relaxed; t=1795418907;
+	h=DMARC-Filter:DKIM-Signature:Message-ID:Subject:From:To:Date:
+	 In-Reply-To:References:Content-Type:Content-Transfer-Encoding:
+	 User-Agent:MIME-Version:X-PPP-Message-ID:X-PPP-Vhost:X-Originating-IP:
+	 X-SpamExperts-Domain:X-SpamExperts-Username:
+	 X-SpamExperts-Outgoing-Class:X-SpamExperts-Outgoing-Evidence:
+	 X-Recommended-Action:X-Filter-ID:X-Report-Abuse-To:X-Complaints-To;
+	bh=31K3HYlnXle6+fyYq+8TBXbzagvVDzlnAnsQfEiTqGA=;
+	b=2DaJ2JK0kuJYC+FnoGUrtHqgBoEgI/CT5R8sKNH5Ntkrph3r7/JG6Qkfz1eh+16vyKd3
+	 xahwqP4T+lUJx2VEEi5E9qODkT2jtvYLZUU3vPJ3g0g/L2VSPe3+sW1WSLNgqwj/e8Zo4
+	 j+RYGRPLcoHI3lkW/JGvpMrLtL85DkZCZ9FojJZtIe8vZ/OgBvS+RfuLQSEK0HVsiYuyI
+	 /YsELm7nis5qT1iyX2FzPZVMGPjJsAto5zhybHNw2KxL/NmGgr97bnAKcLRgLE82MrfmU
+	 ERi8f5njc5F8es/YddOwjR+dJ/6FweKeinE+1na8D5yAzgSxESC1Tf00iasW9mWHpUw==
 ARC-Authentication-Results: i=1; smtp.subspace.kernel.org; 
-	dmarc=pass header.from=realtek.com;
-	spf=pass smtp.mailfrom=realtek.com;
-	dkim=pass header.d=realtek.com header.i=@realtek.com header.a=rsa-sha256 header.s=dkim header.b=kfJXl7Yz;
-	arc=none smtp.remote-ip=211.75.126.72
-Received: from rtits2.realtek.com.tw (rtits2.realtek.com [211.75.126.72])
+	dmarc=pass header.from=ellarik.com;
+	spf=pass smtp.mailfrom=ellarik.com;
+	dkim=pass header.d=ellarik.com header.i=@ellarik.com header.a=rsa-sha256 header.s=default header.b=jXPF0R93;
+	arc=none smtp.remote-ip=185.223.33.24
+Received: from se22-yh.route25.eu (se22-yh.route25.eu [185.223.33.24])
 	(using TLSv1.3 with cipher TLS_AES_256_GCM_SHA384 (256/256 bits)
 	 key-exchange X25519 server-signature ECDSA (prime256v1) server-digest SHA256)
 	(No client certificate requested)
-	by smtp.subspace.kernel.org (Postfix) with ESMTPS id 6FE4F606A31A;
-	Mon, 23 Nov 2026 06:22:25 +0000 (UTC)
-DMARC-Filter: OpenDMARC Filter v1.4.2 smtp.subspace.kernel.org 6FE4F606A31A
-Authentication-Results: smtp.subspace.kernel.org; dmarc=pass (p=none dis=none) header.from=realtek.com
-Authentication-Results: smtp.subspace.kernel.org; spf=pass smtp.mailfrom=realtek.com
+	by smtp.subspace.kernel.org (Postfix) with ESMTPS id 8338A606A31E
+	for <linux-wireless@vger.kernel.org>; Mon, 23 Nov 2026 07:28:25 +0000 (UTC)
+DMARC-Filter: OpenDMARC Filter v1.4.2 smtp.subspace.kernel.org 8338A606A31E
+Authentication-Results: smtp.subspace.kernel.org; dmarc=pass (p=quarantine dis=none) header.from=ellarik.com
+Authentication-Results: smtp.subspace.kernel.org; spf=pass smtp.mailfrom=ellarik.com
 Authentication-Results: smtp.subspace.kernel.org;
-	dkim=pass (2048-bit key) header.d=realtek.com header.i=@realtek.com header.a=rsa-sha256 header.s=dkim header.b=kfJXl7Yz
-X-SpamFilter-By: ArmorX SpamTrap 5.80 with qID 6AN6MLd441408909, This message is accepted by code: ctloc85258
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=realtek.com; s=dkim;
-	t=1795414941; bh=Iuulysn4lb0jC1mnVffm2Qqxiyi30Og/058AoNcVATw=;
-	h=From:To:CC:Subject:Date:Message-ID:References:In-Reply-To:
-	 Content-Type:Content-Transfer-Encoding:MIME-Version;
-	b=kfJXl7YzC/Q3C2Lag9IM0fsIBXKT5G/vXQiJ4DHGcgrUrKy1YO4UACBKRu+gisM6m
-	 co9dA1ceP/dnaM/AXftWQBZntUL+/PC1BH5CiLlj/OV1vQjmAAX4aIAfaVYSnr/6ir
-	 B7ix0sC0DTDdcjAd/ppreoGi4zpWkcVfdBJHXbhiX3KfAboom7vkDDXrVcr5N9wGyZ
-	 KAgTHXVcAMGpHCeKvSKPNvEPDsSeflH8Y+bbf4IvALYk5qbFQh/Ac0PchQ4to8uipW
-	 Np1pWWOMq6/oa8kBJ6EZ+FThWiOUk3uBAZyaRo8iOzSlC3DmsLJnw9ntPKA936xYBP
-	 gU1Om7A2SGdMA==
-Received: from mail.realtek.com (rtkexhmbs04.realtek.com.tw[10.21.1.54])
-	by rtits2.realtek.com.tw (8.15.2/3.29/5.94) with ESMTPS id 6AN6MLd441408909
-	(version=TLSv1.2 cipher=ECDHE-RSA-AES256-GCM-SHA384 bits=256 verify=FAIL);
-	Mon, 23 Nov 2026 14:22:21 +0800
-Received: from RTKEXHMBS06.realtek.com.tw (10.21.1.56) by
- RTKEXHMBS04.realtek.com.tw (10.21.1.54) with Microsoft SMTP Server
- (version=TLS1_2, cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id
- 15.2.2562.56; Mon, 23 Nov 2026 14:22:21 +0800
-Received: from RTKEXHMBS06.realtek.com.tw (10.21.1.56) by
- RTKEXHMBS06.realtek.com.tw (10.21.1.56) with Microsoft SMTP Server
- (version=TLS1_2, cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id
- 15.2.2562.56; Mon, 23 Nov 2026 14:22:21 +0800
-Received: from RTKEXHMBS06.realtek.com.tw ([fe80::eeeb:c765:ca73:5eef]) by
- RTKEXHMBS06.realtek.com.tw ([fe80::eeeb:c765:ca73:5eef%10]) with mapi id
- 15.02.2562.056; Mon, 23 Nov 2026 14:22:21 +0800
-From: Ping-Ke Shih <pkshih@realtek.com>
-To: Zhao Li <enderaoelyther@gmail.com>
-CC: Hemanth Selam <hemanth.selam@gmail.com>, Morning Star
-	<alexbestoso@gmail.com>, "linux-wireless@vger.kernel.org"
-	<linux-wireless@vger.kernel.org>, "linux-kernel@vger.kernel.org"
-	<linux-kernel@vger.kernel.org>, "stable@vger.kernel.org"
-	<stable@vger.kernel.org>
-Subject: RE: [PATCH rtw-next 3/3] wifi: rtlwifi: rtl8192cu: don't mark
- undecrypted frames as decrypted
-Thread-Topic: [PATCH rtw-next 3/3] wifi: rtlwifi: rtl8192cu: don't mark
- undecrypted frames as decrypted
-Thread-Index: AQHdedZ/5R97SfqA40GuX9ytRsKsmLc7MDbA
-Date: Mon, 23 Nov 2026 06:22:21 +0000
-Message-ID: <8954a1c1913d4f1bbc8c5bb52acf8b1c@realtek.com>
-References: <20261121163547.37019-1-enderaoelyther@gmail.com>
- <20261121163547.37019-4-enderaoelyther@gmail.com>
-In-Reply-To: <20261121163547.37019-4-enderaoelyther@gmail.com>
-Accept-Language: en-US, zh-TW
-Content-Language: zh-TW
-Content-Type: text/plain; charset="us-ascii"
+	dkim=pass (2048-bit key, unprotected) header.d=ellarik.com header.i=@ellarik.com header.a=rsa-sha256 header.s=default header.b=jXPF0R93
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=ellarik.com;
+	s=default; t=1795418894;
+	bh=31K3HYlnXle6+fyYq+8TBXbzagvVDzlnAnsQfEiTqGA=; h=Subject:From:To;
+	b=jXPF0R93u6JOEYRbBwHk3FvCquABbLYZ9GGBWfcQoQuzB/JTNAvuk3MclVRbW06ag
+	 jhqrYo18J5RGHvHiArSBDNo7e+ZDsGP9ENkJiNAdlIs2FMM2TDPk3eJXjrGZomCMn6
+	 f6q9ALqVUMV9onOVXVIWs7AcjgRGMm25oggzadyA7fDSkVxrNKo9jAirMO3DHmMnSi
+	 qeeaD/aHzV3I77oCvDShgXrFmATvJE1O2V/pwLVnn+9RPAe9QL3VVtcc6MEhO/gjQL
+	 I7WLDaf4+6HVzLRP2k6M28L5vQaHKyYMJjFXDGoL+qt7NpmjT5Pko+Z70cwnVEJWlr
+	 MOiKcbas6Uk2g==
+Message-ID: <7e47e43141ace3e769a30653b84228444e8235aa.camel@ellarik.com>
+Subject: Re: Bug report: Realtek RTL8851BE Wi-Fi does not recover from
+ suspend
+From: Rik van Westendorp <rik@ellarik.com>
+To: Ping-Ke Shih <pkshih@realtek.com>, "linux-wireless@vger.kernel.org"
+	 <linux-wireless@vger.kernel.org>
+Date: Mon, 23 Nov 2026 14:28:09 +0700
+In-Reply-To: <c873b08ae23a4e56884aa6139d5d8b6d@realtek.com>
+References: <1dc9a6271147c88c7179d55b469372bdb5c8fdbf.camel@ellarik.com>
+		 <7c49b984f5e24dcbadb391e0acdcda4a@realtek.com>
+	 <ff6a236dd11ef2f2cb00202b4a6856424b93974b.camel@ellarik.com>
+	 <c873b08ae23a4e56884aa6139d5d8b6d@realtek.com>
+Content-Type: text/plain; charset="UTF-8"
 Content-Transfer-Encoding: quoted-printable
+User-Agent: Evolution 3.56.2-9
 X-Mailing-List: linux-wireless@vger.kernel.org
 List-Id: <linux-wireless.vger.kernel.org>
 List-Post: <mailto:linux-wireless@vger.kernel.org>
@@ -90,102 +69,77 @@ List-Unsubscribe: <mailto:linux-wireless+unsubscribe@vger.kernel.org>
 List-Owner: <mailto:linux-wireless+owner@vger.kernel.org>
 Precedence: list
 MIME-Version: 1.0
+X-PPP-Message-ID: 
+ <179541889397.2202700.9978723447245522164@web-1125.yourhosting.nl>
+X-PPP-Vhost: ellarik.com
+X-SpamExperts-Domain: out.yourhosting.nl
+X-SpamExperts-Username: 92.63.174.241
+Authentication-Results: route25.eu; auth=pass smtp.auth=92.63.174.241@out.yourhosting.nl
+X-SpamExperts-Outgoing-Class: ham
+X-SpamExperts-Outgoing-Evidence: Combined (0.07)
+X-Recommended-Action: accept
+X-Filter-ID: 9kzQTOBWQUFZTohSKvQbgI7ZDo5ubYELi59AwcWUnuXUnHBx095/t0x5sXkwDpgJwfrC/bJMn/bO
+ y1T8LijPryu2SmbhJN1U9FKs8X3+Nt08vHb8nbKbJjqE4jpc4fX4H1XfVn4bX3C5WEBxzW8NgNA1
+ 7ZVkl74/VpUYGAb5rrTilbHtbFYVmmyNP/jzd7CC/1Co8nyDpMGpKMnWLT/M28QYiTpLCsrpI++d
+ V3X+sU8j/cY2oirhNZm7m6wh7Iqz7eibU04JcTWQKv3WukWvpId7B1GRNEYY1qZgjsaKY4y5tsip
+ JSrP8cFfJBPbeO2YmTmYf9felIf8Q0lvYJANy1im26jqdSLearSSTVIJyNKROUzReCS8EpKh0It9
+ L25JS816nuiE0t5pG6MLXGczobFzQXRJqOmlB1LhVJ2z/8zd5jix9e14HK9dUPUW6rQaZqRG+rOO
+ yTDVM/SDAeFZbksUSu7l0msnHQ+pnhu95fRQWPlOQmn7Bu2t2cSl3XQv6cTrAfIBtLJVe62uoyOA
+ Uj/BNM8813zogpOdGRAGcQsOFszc0Z5LrDe56l/41WpTidoKq2ttC7Gn7os4GVjTOSCv9TR+UxzL
+ ZWL8hwGBjhpH9IirPfISkaLRlEnUZkUTshp+lvcy5hFr8VakClsxPZ8yTUE5ABY7lZUQaTevIGEs
+ QB4/w5cFrNMxnKP28WyWoIR1E0eGyU1MJxP5mblDhweYUOp7A73HI6oJg7w/VodO81TYfzYF039/
+ u6uir+NLEHxPSJmF/UdFXLLGPnSOLNVPGvtbGZA8l4ghZ1axip3tMxCVaZa2i9hdxW3qPEusR8l6
+ 74wjeGMcQjucLBAYPOqZC4b6C1QtC/rI7+oQw6b6bjT0YLw9qyrrwthAFb2kP63Y61+ilqk6LovI
+ Hih3r1z1pRXWhjh9fdbl44I0Df1bFSGdp3wQniifzVfCzJZrnXFtc7sBHv+zHUekgwWq4kh7D/+t
+ zlDEKURS6x8Lq5HD5P7r9Wd8T8lEGQp7L133/XsUk0zRPurcn/+5FpebrmBj5TTaWIrVEh7nuat0
+ ZzsldBcVCmo5QZXczGvPyVZ59dLX6qBpW3U5Ey2lggFy2hrdPH8jgihiCLv/WYBSlj8B9OGgqEKC
+ 7nm3Plpx0AhD
+X-Report-Abuse-To: spam@semaster01.route25.eu
+X-Complaints-To: abuse@semaster01.route25.eu
 
-Zhao Li <enderaoelyther@gmail.com> wrote:
-> The receive descriptor's SWDEC bit is set when a frame still needs
-> software decryption. It is also clear for a frame that was never
-> encrypted, and for a protected robust management frame, which the
-> hardware leaves for software to decrypt. rtl92cu_rx_query_desc()
-> nevertheless sets RX_FLAG_DECRYPTED for every frame with SWDEC clear,
-> in two places.
->=20
-> mac80211 then accepts an unprotected unicast data frame although a
-> pairwise key is installed, and unprotected deauthentication and
-> disassociation frames on a connection that uses management frame
-> protection. For a protected robust management frame it skips software
-> decryption and MIC verification, so a forged frame is accepted and a
-> genuine encrypted one, such as an SA Query from the peer, reaches
-> mac80211 still encrypted. A station in radio range can therefore inject
-> plaintext data into an encrypted connection, or end a protected one, by
-> spoofing the peer's address.
->=20
-> Set the flag only for a protected frame that is not a robust management
-> frame, as the rtl8188ee, rtl8192ee, rtl8723ae, rtl8723be and rtl8821ae
-> drivers do. rtl8xxxu, which supports the same chip, stopped trusting
-> SWDEC alone in commit cbfbb4ddbc85 ("wifi: rtl8xxxu: enable MFP support
-> with security flag of RX descriptor"). The header is read before the
-> receive path strips the driver info, so test the Protected bit first,
-> which needs only the frame control field, and read that only when the
-> URB holds it. When Protected is set, _ieee80211_is_robust_mgmt_frame()
-> also reads only frame_control.
+Hi Ping-Ke,
 
-Need to reduce commit message generated by LLM.=20
+Here is the information:
 
->=20
-> Found by code review. Compile-tested with W=3D1.
->=20
-> Fixes: 29d00a3e46bb ("rtlwifi: rtl8192cu: Add routine trx")
-> Cc: stable@vger.kernel.org
-> Signed-off-by: Zhao Li <enderaoelyther@gmail.com>
-> ---
-> No new W=3D1, sparse or smatch warnings.
->=20
-> AI assistance was used.
->=20
->  .../net/wireless/realtek/rtlwifi/rtl8192cu/trx.c   | 14 ++++++++++----
->  1 file changed, 10 insertions(+), 4 deletions(-)
->=20
-> diff --git a/drivers/net/wireless/realtek/rtlwifi/rtl8192cu/trx.c
-> b/drivers/net/wireless/realtek/rtlwifi/rtl8192cu/trx.c
-> index d6c35e8d02a5..aceedc37e5d2 100644
-> --- a/drivers/net/wireless/realtek/rtlwifi/rtl8192cu/trx.c
-> +++ b/drivers/net/wireless/realtek/rtlwifi/rtl8192cu/trx.c
-> @@ -295,11 +295,14 @@ bool rtl92cu_rx_query_desc(struct ieee80211_hw *hw,
->         struct rx_desc_92c *p_desc =3D (struct rx_desc_92c *)pdesc8;
->         __le32 *pdesc =3D (__le32 *)pdesc8;
->         u32 phystatus =3D get_rx_desc_phy_status(pdesc);
-> +       struct ieee80211_hdr *hdr;
-> +       unsigned int hdr_off;
->=20
->         stats->length =3D (u16)get_rx_desc_pkt_len(pdesc);
->         stats->rx_drvinfo_size =3D (u8)get_rx_desc_drvinfo_size(pdesc) *
->                                  RX_DRV_INFO_SIZE_UNIT;
->         stats->rx_bufshift =3D (u8)(get_rx_desc_shift(pdesc) & 0x03);
-> +       hdr_off =3D stats->rx_drvinfo_size + stats->rx_bufshift;
->         stats->icv =3D (u16)get_rx_desc_icv(pdesc);
->         stats->crc =3D (u16)get_rx_desc_crc32(pdesc);
->         stats->hwerror =3D (stats->crc | stats->icv);
-> @@ -316,15 +319,18 @@ bool rtl92cu_rx_query_desc(struct ieee80211_hw *hw,
->         rx_status->band =3D hw->conf.chandef.chan->band;
->         if (get_rx_desc_crc32(pdesc))
->                 rx_status->flag |=3D RX_FLAG_FAILED_FCS_CRC;
-> -       if (!get_rx_desc_swdec(pdesc))
-> -               rx_status->flag |=3D RX_FLAG_DECRYPTED;
->         if (get_rx_desc_bw(pdesc))
->                 rx_status->bw =3D RATE_INFO_BW_40;
->         if (get_rx_desc_rx_ht(pdesc))
->                 rx_status->encoding =3D RX_ENC_HT;
->         rx_status->flag |=3D RX_FLAG_MACTIME_START;
-> -       if (stats->decrypted)
-> -               rx_status->flag |=3D RX_FLAG_DECRYPTED;
-> +       if (stats->decrypted &&
-> +           skb->len >=3D hdr_off + sizeof(hdr->frame_control)) {
-> +               hdr =3D (struct ieee80211_hdr *)(skb->data + hdr_off);
+baseboard manufacturer: ASUSTeK COMPUTER INC.
+baseboard product-name:  X1404MA
+system product-name:     Vivobook 14 X1404MA
+system version:          1.0
 
-Use the same style as other:
+lspci -nn for the card:
+01:00.0 Network controller [0280]: Realtek Semiconductor Co., Ltd.
+RTL8851BE PCIe 802.11ax Wireless Network Controller [10ec:b85b]
+        (subsystem: Foxconn International, Inc. Device [105b:e100])
 
-	hdr =3D (struct ieee80211_hdr *)(skb->data + status->rx_drvinfo_size
-			+ status->rx_bufshift);
+Let me know if you need anything else. Happy to test a patched
+driver if useful.
 
-> +               if (ieee80211_has_protected(hdr->frame_control) &&
-> +                   !_ieee80211_is_robust_mgmt_frame(hdr))
-> +                       rx_status->flag |=3D RX_FLAG_DECRYPTED;
-> +       }
->         rx_status->rate_idx =3D rtlwifi_rate_mapping(hw, stats->is_ht,
->                                                    false, stats->rate);
->         rx_status->mactime =3D get_rx_desc_tsfl(pdesc);
-> --
-> 2.56.1
+Rik
 
-pw-bot: cr
+On Mon, 2026-11-23 at 00:45 +0000, Ping-Ke Shih wrote:
+> Rik van Westendorp <rik@ellarik.com> wrote:
+> > Hi Ping-Ke,
+> >=20
+> > Confirmed: disabling D3cold before suspend fixes the issue.
+> > Wi-Fi comes back after resume with d3cold_allowed=3D0.
+> >=20
+> > One observation: the sysfs setting did not seem to persist across
+> > suspend cycles on my machine - after one successful resume, the
+> > next
+> > suspend failed again until I re-applied the echo. I have now
+> > automated
+> > it with a systemd sleep hook that writes d3cold_allowed=3D0 in the
+> > "pre" phase before every suspend, and that works reliably.
+>=20
+> Can you help to use 'dmidecode' to find the board name and fill an
+> entry like [1]? With the entry, the setting can be persistent.=20
+>=20
+> [1]
+> https://github.com/pkshih/rtw/blob/rtw-next/drivers/net/wireless/realtek/=
+rtw89/pci.c#L4774
+>=20
+>=20
+>=20
 
+--=20
+sent from Ubuntu / Evolution
