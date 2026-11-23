@@ -1,111 +1,84 @@
-Authentication-Results: smtp.subspace.kernel.org; arc=none smtp.remote-ip=103.168.172.150
+Authentication-Results: smtp.subspace.kernel.org; arc=none smtp.remote-ip=209.85.214.171
 ARC-Seal: i=1; d=subspace.kernel.org; s=arc20261015; a=rsa-sha256; cv=none;
-	t=1795447537;
-	b=EA4ncsmgZmuCACUASMPLJZaJcvQ7Ds3TzfuOnrR4fJC3QHG0Or0bv1Y+jKkgJXnh0uiU
-	 mzoUwx43mkEtw388ysO+eHHc8925gV+M+HiKnghu2hWM0bwrrvyTz2znnEP5N4Kmy+urc
-	 98/czaw8RZpz6c22fhUcOei1i7OXgbSHSQJAABPN4rcKcRH6LjGfMfbHjJ3PCKWKhUWmI
-	 X++qGjERlIPBU1Dl12MWBHL73QCaDABbzRlhBOWpEa8YD5of2t/NAH9G1PLWoSoy65++0
-	 zRyK1IjTtuQRHCxw0+vpEfIDgF3MTuLoij9ZNpz+PrfiAe8id8GFe2f5UY2dj+TmlBg==
+	t=1795447843;
+	b=DirOVi8MjJeTlyF6WiGhQRZPYgv1ZpulXB1D5wieX6Dtcn4FsmTkR17kD+yy96Ps2VhS
+	 x9LupOuZmtqQ4mFQSapaiqx6E5nU0HCNwQRI7CVGh+CuDGQJZwnU70nRXQ4PYTgfbIlxz
+	 gCGGs7bwD05EShOZF4Z/6DuVg9x0tmwUSPCANSG5pwY9wHDgG45cbYURXXa+n1Ofy+cFu
+	 XWT1eA6A72GK9tCKbL7LPBbEPokRprg2N16iXeq3Tqd6Snc6AEZzrrodcWiHwuhNmT0zs
+	 /zUHwujmPFFK9w4wKUML7WF+TJN/5ECuFZNrOjeSVSUwwxtH47XvaBh3gmH6IuBfnXg==
 ARC-Message-Signature: i=1; d=subspace.kernel.org; s=arc20261015;
-	a=rsa-sha256; c=relaxed/relaxed; t=1795447537;
-	h=DMARC-Filter:Received:Received:DKIM-Signature:DKIM-Signature:
-	 X-DKIM2-Info:DKIM2-Signature:X-DKIM2-Info:Message-Instance:
-	 X-ME-Sender:X-ME-Proxy-Cause:X-ME-Proxy:Feedback-ID:Received:X-Mailer:
-	 MIME-Version:X-ThreadId:Date:From:To:Cc:Message-Id:In-Reply-To:
-	 References:Subject:Content-Type:Content-Transfer-Encoding;
-	bh=0s4p6DQdNQlFaKL/LCIj9wFD1mYw+WEFw17qHB6S1I8=;
-	b=49yUi4bDLGPIvH59bgvYLh5xp+Kvbc7cip0UcsjWbmn4Zvhoeqm9EPAx+gYYA+co1zzf
-	 YfjpWLST66gTpOYI2ThOP5ixEzDWugWhmh0eKU9pSmiS9VlmXtoANygyhyEuwHugWMoIn
-	 +SdToLgqxpiS4VlBq8I3tUT6ei4bAy9sUG14GgG1r9rVWNUjk7v5Uua5AOw05AIVn57YA
-	 w6NCAQwt6EUWyEWSk+822HRcwAcRzgfxnJv3eycbnhiO+gvG9GHPfwpYolUzVqtHk2MEK
-	 RxFQ5yN7VOAcCL0KjUKMKAWkjC52j7s6bvUnT9F17f27RVHMcBD7AynXUbHi8+KovTA==
+	a=rsa-sha256; c=relaxed/relaxed; t=1795447843;
+	h=DMARC-Filter:Received:DKIM-Signature:X-Google-DKIM-Signature:
+	 X-Gm-Message-State:X-Gm-Gg:X-Received:Received:MIME-Version:
+	 Content-Type:Content-Transfer-Encoding:Subject:From:To:Cc:In-Reply-To:
+	 References:Date:Message-Id:X-Mailer:X-Developer-Signature:
+	 X-Developer-Key;
+	bh=sErmmbCd/7zkW4tnm5tJmTb2q3NnWPyBLOCt2pCMa9c=;
+	b=OFT2AvGe2mFB+nB4BK5o9rcHfhLJcO7vfN2706eX1XkGv/5T1ktHTTkMS9I7lixP6akE
+	 ReGgJXmibNZS1vu3V+oOv3weZYP4E93W3xR0GvRvJvwpjXttZ4n3Z8Ho8k3Tso3a1ryjB
+	 /TRMe4qIgxKRc2z3Z055FAq4/unvbbhbVQdsbcG6Z7GCHVFcOkOP+VH2WdTynU/RynvU9
+	 lFpktt9+4kWKaOsmUXQyB6Q+rMOT2fGRF61GKtniXHuAx93BuqlGGzr+tPR+apkV+hU+c
+	 QAzwGEl2LaIamTtUDG+S3ipPpC0Hxa48gq43iZDf35HRrKJ3hYpmWpfxUeRT5RE1CnA==
 ARC-Authentication-Results: i=1; smtp.subspace.kernel.org; 
-	dmarc=pass header.from=arndb.de;
-	spf=pass smtp.mailfrom=arndb.de;
-	dkim=pass header.d=arndb.de header.i=@arndb.de header.a=rsa-sha256 header.s=fm2 header.b=hRatJ6c0;
-	dkim=pass header.d=messagingengine.com header.i=@messagingengine.com header.a=rsa-sha256 header.s=fm3 header.b=tN6NiDhh;
-	arc=none smtp.remote-ip=103.168.172.150
-Received: from fout-a7-smtp.messagingengine.com (fout-a7-smtp.messagingengine.com [103.168.172.150])
-	(using TLSv1.3 with cipher TLS_AES_256_GCM_SHA384 (256/256 bits)
-	 key-exchange X25519 server-signature ECDSA (prime256v1))
+	dmarc=pass header.from=gmail.com;
+	spf=pass smtp.mailfrom=gmail.com;
+	dkim=pass header.d=gmail.com header.i=@gmail.com header.a=rsa-sha256 header.s=20260707 header.b=0E6SnJwm;
+	arc=none smtp.remote-ip=209.85.214.171
+Received: from mail-pl1-f171.google.com (mail-pl1-f171.google.com [209.85.214.171])
+	(using TLSv1.3 with cipher TLS_AES_128_GCM_SHA256 (128/128 bits)
+	 key-exchange X25519 server-signature ECDSA (prime256v1) server-digest SHA256)
 	(No client certificate requested)
-	by smtp.subspace.kernel.org (Postfix) with ESMTPS id 4CA9B606A6A2
-	for <linux-wireless@vger.kernel.org>; Mon, 23 Nov 2026 15:25:37 +0000 (UTC)
-DMARC-Filter: OpenDMARC Filter v1.4.2 smtp.subspace.kernel.org 4CA9B606A6A2
-Authentication-Results: smtp.subspace.kernel.org; dmarc=pass (p=none dis=none) header.from=arndb.de
-Authentication-Results: smtp.subspace.kernel.org; spf=pass smtp.mailfrom=arndb.de
+	by smtp.subspace.kernel.org (Postfix) with ESMTPS id 79A0D606A31E
+	for <linux-wireless@vger.kernel.org>; Mon, 23 Nov 2026 15:30:43 +0000 (UTC)
+DMARC-Filter: OpenDMARC Filter v1.4.2 smtp.subspace.kernel.org 79A0D606A31E
+Authentication-Results: smtp.subspace.kernel.org; dmarc=pass (p=none dis=none) header.from=gmail.com
+Authentication-Results: smtp.subspace.kernel.org; spf=pass smtp.mailfrom=gmail.com
 Authentication-Results: smtp.subspace.kernel.org;
-	dkim=pass (2048-bit key, unprotected) header.d=arndb.de header.i=@arndb.de header.a=rsa-sha256 header.s=fm2 header.b=hRatJ6c0;
-	dkim=pass (2048-bit key, unprotected) header.d=messagingengine.com header.i=@messagingengine.com header.a=rsa-sha256 header.s=fm3 header.b=tN6NiDhh
-Received: from ams-compute-02.internal (ams-compute-02.internal [10.64.2.62])
-	by mailfout.phl.internal (Postfix) with ESMTP id 6BD91EC0B3B
-	for <linux-wireless@vger.kernel.org>; Mon, 23 Nov 2026 10:25:36 -0500 (EST)
-Received: from ams-imap-03 ([10.64.2.23])
-  by ams-compute-02.internal (MEProxy); Mon, 23 Nov 2026 10:25:36 -0500
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=arndb.de; h=cc
-	:cc:content-transfer-encoding:content-type:content-type:date
-	:date:from:from:in-reply-to:in-reply-to:message-id:mime-version
-	:references:reply-to:subject:subject:to:to; s=fm2; t=1795447530;
-	 x=1795533930; bh=0s4p6DQdNQlFaKL/LCIj9wFD1mYw+WEFw17qHB6S1I8=; b=
-	hRatJ6c0MVwM7NsTQ6x16RX02Rx0p159f6m92t9bjLZojaWHX73t+PpdDLY8IdX0
-	FXtnTt9LaeOgh2GTmMPNoXmywag+DgygFub4WOIB1BBpZviH66e1pabC4Qig3ByD
-	bRzOmUaS1ko+L1WxYflybQZmhGWA5Xtz9freK5VgYwtAZcQm121LTq8dkQz8n3zV
-	Pl6mwgNH49AhmitMsuEt92oMHbyFDP63tbpeoCN92445NmrybNW9xtvDg34rLxyC
-	4Vaem388r75zgSuBHT16buqWx8kRk+QoriWKcCBd2GlCX5+qzG+ZHXhscsVMsOeg
-	R7jWCeTPSGBn/vmRykfuRg==
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=
-	messagingengine.com; h=cc:cc:content-transfer-encoding
-	:content-type:content-type:date:date:feedback-id:feedback-id
-	:from:from:in-reply-to:in-reply-to:message-id:mime-version
-	:references:reply-to:subject:subject:to:to:x-me-proxy
-	:x-me-sender:x-me-sender:x-sasl-enc; s=fm3; t=1795447530; x=
-	1795533930; bh=0s4p6DQdNQlFaKL/LCIj9wFD1mYw+WEFw17qHB6S1I8=; b=t
-	N6NiDhhcW8AYBmOQdzLi+LWlJ27uIWKTKaGllHVX0omOlAzIg0IwEDBcGcOIkEy8
-	foFbKzc4RjRqXVDBJ5Cfprrilkmo+9o6TN23RpgxhT2tvbyRXIGGHU89RXW+gcAc
-	2FIne5Vb0ktSvTeh0RqBmPfB7D0ZcDbo/P4NdDIf4RGZ/7eqibn4xE+7bziweyTL
-	qcHoca8Y7OOLAVRbn6hlC5oUOU1UUpRaXLFV/we7LNIIwwoYjJy8OtGnJYeRjgdV
-	p89X2TGDG+e4tnOqPoLMFpSkJk3ba7DgPi9yVVtxo1fXP6xWB3ZsQ9+OCfkYue8q
-	bHqliD/G3pcuNOeeILDMw==
-X-DKIM2-Info: draft=ietf-dkim-dkim2-spec-09;
-	repo=github.com/dkim2wg/interop; date=2026-11-03; sw=lmtpprox;
-	action=sign d=arndb.de a=rsa-sha256;
-DKIM2-Signature: i=1; m=1; t=1795447530; d=arndb.de;
-	mf=PGFybmRAYXJuZGIuZGU+;
-	rt=PGxpbnV4LXdpcmVsZXNzQHZnZXIua2VybmVsLm9yZz4=;
-	s=fm2:rsa-sha256:WALiLbfW56u1ei0R2KBLgpDHNcxyj3sOK/5WugUExVqrRLl
-	9BShma04MuzcDmpD3zQM8u1wbrpmVzzKgfAWy8Sx1jfovnKCfTZvx4rCgc3Eqdji
-	SXznAf5qPgkUZTaFPoL6LIC5dSUK89Riz8pNju8wkiM8PClooXpBnQoapDXQq0cf
-	avt9NLtXup77/iJGie+dQzoNAli7NyqBsgBvIF5Xzf/kx5uwndaRAuNjKyXhP7dO
-	4xzd0+0ffXgtqF2Vu6Ti9mcRFKfs/Hy2Ih24oW6usvi8zsr2MQZ4GhIkMQMKgj+v
-	r4U2c6XUNTQXfW/LOoa5+TV8axNBy2vpzesgJEA==;
-X-DKIM2-Info: draft=ietf-dkim-dkim2-spec-09;
-	repo=github.com/dkim2wg/interop; date=2026-11-03; sw=lmtpprox;
-	action=mi-m=1; hc=12;
-	hn=cc,content-transfer-encoding,content-type,date,feedback-id,
-	from,in-reply-to,message-id,mime-version,references,subject,to;
-Message-Instance: m=1; h=sha256:hUqZyAVIjmUUkC/sfGeVEaPi9086gM2/fvLEnQB4K6o=:W7TU2vHc9HvrqqySqenGm1r668UZd7I6KeO/+9zcev4=;
-X-ME-Sender: <xms:5VoEa9OCvxUI_HvsHrm31TiHj4gKDEbteEh3xVXb26WRlwJ-gMNcNg>
-    <xme:5VoEa6wZJ8LvPdcCGi3bInRNSZQx0lPWMMy5fjBEQE1_uSBkfx3FOZbgatTroQGen
-    AblVRlUV8Pw79_GiFqkz6gKoRIFKVjX5qtHeOFlsENECqPlXhZgR8E>
-X-ME-Proxy-Cause: dmFkZTEkA5fYjyH7DoRZ9fSXTSyQM3CMBbgSoOWT7DzEXbdLuI/xu+QbsCUwVDqp6cmeBG
-    rLSJyPAfNtppIjc2n9ISKm44YulXiHowpnhktIfScyFVw4u3iFGUP2/G/4ix+afnWqmBFI
-    GzKvKqe2Gc5DWEBgFP4sFAJA6wGOUu3obgqUrxUPp1/9SLzSrA3NED7r55E6ImKfZNFgK6
-    SbdNEW9MBID+uC34fbT5ngwFi3pkaLfFY9lszhY+r22v/RcSRobM25XjgNjlGeIb3pLrAb
-    FweC00Urn/1ywn3DLW3xzTx8xfHHygJhiPzyve4IRXncArRK+LbMZ7PLowts6/MwaLYHJA
-    1WehYI3RY3kD0LvS920puxloGptanWMjB4xGUhWNtwvah33c7v/VkLW1RhsZ4APfAYZNxe
-    1q8QQUosNdvlBk9bBOBGvLdAFBek4N7yKDbegWn/Slw4wQvFSC7dHkrfSLPbW+VoSPNS6b
-    03uTTkddiBSoDqGipOoT+98HOD4Xpuum1b6IuAUgcOW03bbXbhpiiNEyDdtvjD+zLScoNQ
-    xj5SiuXMpICr3Akn/GPeIRZEXEmlMM9FDFR5eKUlYgdy3WFDZrLYvSJNzubIvrk9OaJZfp
-    on1dYUgKQECyezlkKTPDfG0HzNxE1exvL/dLJ5dODoCg6MHeLI/7jCG2ynNg
-X-ME-Proxy: <xmx:51oEa99lfrDTIMjZgQUJUk604TPbSQm-4RCSYSw9Qa9E8eaaB7YGkQ>
-    <xmx:51oEa8HOIIjKm-knb9jwTcWGXBudJgcuuMDcOnZu8ypTY_vG8cU9NA>
-    <xmx:51oEaxIObBSy_6N3MiU6GEqjqvGnfkv8lDtzMSvZhGbJ4WK3VIJRxg>
-    <xmx:51oEa8lNpXYJ-7Dqd28CPM-ODpLeev6nDd7L6h-wLh3OKdQhZci16g>
-    <xmx:6loEawZKY2QNsiqawwKmBneikxjE7uLuFTqAmZPL0avagYW8BXRslAq6>
-Feedback-ID: i56a14606:Fastmail
-Received: by mailuser.ams.internal (Postfix, from userid 501)
-	id 2B80E32A009E; Mon, 23 Nov 2026 10:25:25 -0500 (EST)
-X-Mailer: MessagingEngine.com Webmail Interface
+	dkim=pass (2048-bit key) header.d=gmail.com header.i=@gmail.com header.a=rsa-sha256 header.s=20260707 header.b=0E6SnJwm
+Received: by mail-pl1-f171.google.com with SMTP id d9443c01a7336-2f0634667aaso9764245ad.0
+        for <linux-wireless@vger.kernel.org>; Mon, 23 Nov 2026 07:30:43 -0800 (PST)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+        d=gmail.com; s=20260707; t=1795447843; x=1796052643; darn=vger.kernel.org;
+        h=message-id:date:references:in-reply-to:cc:to:from:subject
+         :content-transfer-encoding:content-type:mime-version:from:to:cc
+         :subject:date:message-id:reply-to:content-type;
+        bh=sErmmbCd/7zkW4tnm5tJmTb2q3NnWPyBLOCt2pCMa9c=;
+        b=0E6SnJwmVmiELiSD06e7SW3fnALkoVfF5sGjAf4V/fk2jL5vpqu3CiDPoPO6fuTJdU
+         DroTj6gZ9CCR/eAwedd9C/9jQtKbUd3KMOXQUXl5ILGbt6j++pBIhAQz/Z3uzcKTUQIu
+         imhdP9W5TNYzX63ZwkYX3hraqwASiixtdYK90zP/HRbMU+pUnIPFkJ4xh9EcwZ6U3xH8
+         v7gOZgd52RNB8A9akq+H76HUF5gHlikYGFku8pokxByaKkMPQAGcprTFiVwhGn/0d1fB
+         NxvyI35GKB4Vem7nlBr/jHEnoaeCpbZG6cl/XSfmdYUtBExSfLDUly5LFRPBeKBTS7aL
+         OSPQ==
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+        d=1e100.net; s=20260707; t=1795447843; x=1796052643;
+        h=message-id:date:references:in-reply-to:cc:to:from:subject
+         :content-transfer-encoding:content-type:mime-version:x-gm-gg
+         :x-gm-message-state:from:to:cc:subject:date:message-id:reply-to
+         :content-type;
+        bh=sErmmbCd/7zkW4tnm5tJmTb2q3NnWPyBLOCt2pCMa9c=;
+        b=ofBQmlAUjYfEKYoGBv5BeQT4HZuYSvh3jkAUky3sSNj/gH9BNcBDi2AGYtl5Z3BX3Q
+         x6fKKXiddqJdCQN9LMdXUDFCJqgGUcyog91SUEl8RElEv3Y2pyCN0yJVmbZc+EvwqmV/
+         uh8zpWa1YZfV9u+rQse0PrkJv0nVIG4EZyJ3U3qVahqxgL8GMI+wyJjpveRwhZPu2jGh
+         utd4irp7/HRad6zgUW2UCcaUVHQLLLZCB38PnoKJNT6Tz+tYEovuk9C25fsm9idBWOmh
+         pDALvnvbukQMHaI8lX/1fX6/8aSNUXCR+P9Nr+5rl22x5BIXwq0KpH84+44ENCh0C+I2
+         T9dA==
+X-Gm-Message-State: APuU4Z+AovMl6MynYMMwxMaElGB/vekPphNhW/GsjSWN3fh2xMWotGKA
+	Kw0N1m/+vjdQ/pG7wQxKScd8Whg8iVLaTY/JhB8HLL64I43iiPnrRoUNCzoFj8FP
+X-Gm-Gg: AZFdTZfTHCvFbt+nhA3MEWgAjeN85RYOdYJumcc2t3o2dR17J4ljXJZe3HspI/Nvj9i
+	hbf9PgBQZldzpLPR4qo31JCpKI0VX4PDP+YUaLLqOiiTN9e6CroMMgAcnXcIwwAMovzxCUE++gu
+	U9I/gvS9Ugb8F+whNRMsvVXMtSL977h7DXs93PeNeawvc9j5dZKj4ndlKoqcD2I7rL2rNIcb2+k
+	Cbkic5cNXTpNy6kfUPR4kSdPAYjPOJPLl958p6GKvXUXXweqdLoUaHCss2v/qioXZT/IaFJMQLr
+	FbFUkUW8eEIS60YUlOgAQZDouE5U4s47dpwgCN1StoN5soH+nFBrUdFi/xylNi3TPFcTaHNM/im
+	0R23d90Mc8+f3+9j4+oc+7PAC4XVFPWBiaD6/Dw6BjizCp5ZkVrrXYw9lPrbz4Q7e4Shk/34GYl
+	6DVly9yqC58ia4wGBaandGdUz9xTHxKaLds54CmZbzTfkWmPS8QeS2IAErKCa5HBr9vQlMJZH5Y
+	ufuP8c+nlPHA5YRzPqZDZZw1NRVTi5VBl3Ij45kjpu77QHmSHGpgOT59JBaab/fUsIbJli+GnJl
+	DPMSUl8BR9fhK7mmjx6/TrNsp6ofP31bMbVN3Kd0FT0b8lMtEwm3usUyrZjZhs+v
+X-Received: by 2002:a17:903:2308:b0:2e7:67ad:8e9d with SMTP id d9443c01a7336-2f03f1ea592mr90164365ad.30.1795447842512;
+        Mon, 23 Nov 2026 07:30:42 -0800 (PST)
+Received: from [192.168.1.102] (59-127-145-64.hinet-ip.hinet.net. [59.127.145.64])
+        by smtp.gmail.com with ESMTPSA id d9443c01a7336-2f03f12028dsm54161655ad.60.2026.11.23.07.30.41
+        (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
+        Mon, 23 Nov 2026 07:30:42 -0800 (PST)
 X-Mailing-List: linux-wireless@vger.kernel.org
 List-Id: <linux-wireless.vger.kernel.org>
 List-Post: <mailto:linux-wireless@vger.kernel.org>
@@ -115,60 +88,50 @@ List-Unsubscribe: <mailto:linux-wireless+unsubscribe@vger.kernel.org>
 List-Owner: <mailto:linux-wireless+owner@vger.kernel.org>
 Precedence: list
 MIME-Version: 1.0
-X-ThreadId: AS3EG-ulzzHR
-Date: Mon, 23 Nov 2026 16:24:49 +0100
-From: "Arnd Bergmann" <arnd@arndb.de>
-To: "Bartosz Golaszewski" <brgl@kernel.org>, "Arnd Bergmann" <arnd@kernel.org>
-Cc: "Linus Walleij" <linusw@kernel.org>,
- "Dmitry Torokhov" <dmitry.torokhov@gmail.com>,
- "Johannes Berg" <johannes@sipsolutions.net>,
- "John Paul Adrian Glaubitz" <glaubitz@physik.fu-berlin.de>,
- "Kent Gibson" <warthog618@gmail.com>,
- "Thomas Bogendoerfer" <tsbogend@alpha.franken.de>,
- linux-kernel@vger.kernel.org, linux-mips@vger.kernel.org,
- linux-sh@vger.kernel.org,
- "open list:GPIO SUBSYSTEM" <linux-gpio@vger.kernel.org>,
- linux-wireless@vger.kernel.org
-Message-Id: <8296a5c2-0aa2-4fc7-b65b-9d336bc4dff6@app.fastmail.com>
-In-Reply-To: 
- <qvmy7iaxc7cjy2gkajqkr5ma6b4lwxz5ff64a5zsqrgewkxodr@odbjlv5x3hix>
-References: <20261123085723.156933-1-arnd@kernel.org>
- <tdc6h325jthjgyik2ne4oistkm563maoc2cpnffqu7hh34tpl7@oscripzv4dwq>
- <qvmy7iaxc7cjy2gkajqkr5ma6b4lwxz5ff64a5zsqrgewkxodr@odbjlv5x3hix>
-Subject: Re: [PATCH 0/2 v8] gpiolib: finish the legacy cleanup
-Content-Type: text/plain; charset=utf-8
-Content-Transfer-Encoding: quoted-printable
+Content-Type: text/plain; charset="utf-8"
+Content-Transfer-Encoding: 7bit
+Subject: Re: [PATCH mt76-next 11/20] wifi: mt76: mt7915: send mt7981 only
+ the group units its firmware holds
+From: Zhi-Jun You <hujy652@gmail.com>
+To: Felix Fietkau <nbd@nbd.name>
+Cc: linux-wireless@vger.kernel.org
+In-Reply-To: <20261123134920.154270-11-nbd@nbd.name>
+References: <20261123134920.154270-1-nbd@nbd.name>
+ <20261123134920.154270-11-nbd@nbd.name>
+Date: Mon, 23 Nov 2026 23:30:36 +0800
+Message-Id: <179544783624.713271.11609530250117945286.b4-review@b4>
+X-Mailer: b4 0.16.0
+X-Developer-Signature: v=1; a=ed25519-sha256; t=1795447841; l=883;
+ i=hujy652@gmail.com; s=20261123; h=from:subject:message-id;
+ bh=pdJ3XcjJpL4AfCsrEk1DMQCL9KXXuqL3LlQPI2LAVfw=;
+ b=AqN/GUxkD0zBkWt/SzWUlfH9FD8Y3/i+mRYm5MoegU05ZqCpSmjhmxUYQuxk/P4n/yGYiLWhw
+ +F46pxsO0QOAEXFL9YLYiWzc9B8LLI+OKfNfvZ+VfWEr87WX66j5eGX
+X-Developer-Key: i=hujy652@gmail.com; a=ed25519;
+ pk=MXiVj6rTyQLjK+RN0A0WiriSkqHj/WJPKnbDVaSWdgU=
 
-On Mon, Nov 23, 2026, at 16:08, Bartosz Golaszewski wrote:
-> On Mon, Nov 23, 2026 at 03:59:24PM +0100, Bartosz Golaszewski wrote:
->> On Mon, Nov 23, 2026 at 09:57:21AM +0100, Arnd Bergmann wrote:
->> >=20
->> > This was planned for 7.3 originally[1], but kept conflicting with
->> > ongoing cleanups for the broken rsk7203 board. I've skipped the
->> > oneline rsk change now, which will be fixed properly by Dmitry's
->> > patch [2].
->>=20
-> Sashiko is right:
->
->   CC      arch/sh/boards/mach-rsk/devices-rsk7203.o
-> arch/sh/boards/mach-rsk/devices-rsk7203.c: In function=20
-> =E2=80=98rsk7203_devices_setup=E2=80=99:
-> arch/sh/boards/mach-rsk/devices-rsk7203.c:127:9: error: implicit=20
-> declaration of function =E2=80=98gpio_request=E2=80=99; did you mean =E2=
-=80=98symbol_request=E2=80=99?=20
-> [-Wimplicit-function-declaration]
->   127 |         gpio_request(GPIO_FN_TXD0, NULL);
->       |         ^~~~~~~~~~~~
->       |         symbol_request
+> Since the mt7981 group pre-calibration size follows the vendor flash
+> layout, mt7915_mcu_apply_group_cal() sends 144 units of 1024 bytes on
+> mt7981. The group store of the mt7981 firmware holds 94 units, as on
+> mt7986. Its handler checks neither the index nor the length of a chunk.
+> 
+> The units with index 94 to 143 thus overwrite 50 KiB of firmware memory
+> behind the store. This happens at each probe of a board with group
+> pre-calibration data.
+> 
+> Send only the units that the firmware stores. Keep the trailer and the
+> DPD data at their offsets of the flash layout.
+> 
+> Fixes: 2b660ee10a0c ("wifi: mt76: mt7915: fix mt7981 pre-calibration")
+> Signed-off-by: Felix Fietkau <nbd@nbd.name>
 
-Yes, this just seemed the easiest way out to avoid clashing with Dmitry's
-patches again. If you want the version that doesn't break the build,
-you can still apply v7 [1], but that likely means his series has go
-through another revision to undo my change and remove the linux/gpio/leg=
-acy.h
-inclusion.
+Hi Felix,
 
-     Arnd
+Tested on Zyxel NWA50AX Pro(MT7981)
 
-[1] https://lore.kernel.org/all/20260907090956.2825703-1-arnd@kernel.org=
-/
+Tested-by: Zhi-Jun You <hujy652@gmail.com>
+
+Best regards,
+Zhi-Jun
+
+-- 
+Zhi-Jun You <hujy652@gmail.com>
