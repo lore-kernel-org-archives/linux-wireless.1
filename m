@@ -1,94 +1,86 @@
-Authentication-Results: smtp.subspace.kernel.org; arc=none smtp.remote-ip=209.85.221.182
+Authentication-Results: smtp.subspace.kernel.org; arc=none smtp.remote-ip=209.85.221.41
 ARC-Seal: i=1; d=subspace.kernel.org; s=arc20261015; a=rsa-sha256; cv=none;
-	t=1795468137;
-	b=iRoULnEl543HJ4Mw2iMSw/UYCk1qnKnHN4JcSh97FAijtHebEcnnIQHKCwD4COla7Haq
-	 85Atc5bj3+MivvQmdHOOTYEHH+RiJGZHpIsCYyX7A459vHp3JJ3oNuayji6tjcgNUg3aw
-	 rA4vPs/Mb6jGadHU3Noco5Sc2wMrhsOyyV0YWZg2h33Is5HZlHaMuighTVJecVeXHtjpg
-	 l8ziiISpQ9oq3AFTVMQvB2+pbYnUmTjp8mOukTPuCHnvVFHyOdrc9BqoHx/lEhgTMLkYq
-	 CJNkCtjpvyG/GiIbqt80Fy0vhbNLT+adS+eUXYQXIYTigAZGubgwnOnzFJ9kCIJMB1w==
+	t=1795468216;
+	b=j+plmGLBOUZbN7JEbvh78jUH4Po2Ng9vJBC2QM4m3PRASAcoo0w0Z3G1bW3XwLx0B6U4
+	 EH2vU7zYWzU7fcuD6mPzFpb2/kyWsbEyXGnjWWH9kd3FoBh1/R7LCoA4zG5do4/yGXUqF
+	 5kO42puvqpMMa2ggcjw6Pums8rJzMMrkQ0RaKdssglQhE30h4VGyTFULye9a9QfNcVgAF
+	 Ie+6qaY3rR2v+Cap5ej6R7ntmRqaaZ/goeAv516pSlAdfK6hzCnzzvrZzJN/SRuHDFfAa
+	 4j8xWRjvpTzgEBQAsv91lbfQkPmSYtJ/gkwe8KhVHpeMblPQ6dWhDnykZQVZm2D3t5A==
 ARC-Message-Signature: i=1; d=subspace.kernel.org; s=arc20261015;
-	a=rsa-sha256; c=relaxed/relaxed; t=1795468137;
+	a=rsa-sha256; c=relaxed/relaxed; t=1795468216;
 	h=DMARC-Filter:Received:DKIM-Signature:X-Google-DKIM-Signature:
 	 X-Forwarded-Encrypted:X-Gm-Message-State:X-Gm-Gg:X-Received:Received:
-	 From:To:Cc:Subject:Date:Message-Id:X-Mailer:In-Reply-To:References:
-	 MIME-Version:Content-Transfer-Encoding;
-	bh=f2NG2KJ42BFW151H0tBsjv0FAQmpfGgM1WHrS6CgImI=;
-	b=bJC9k+Pr/7uMjgZ/etjDhp+B5WdTjJSo/ryiXaKKqIzvoeN+xTSOq3G6oT2g3Q6OEJSc
-	 qViGVLIv7JSC37BiesbTNHXcJmIUMN0lT5pn494Kz70N047HSLTZHgo/weYuMiF+Vizgm
-	 G8CoINXQy5R6IEnJZetvKM+1/IMo0h9PALM8+o82cmi7BlY2dgnjwivl2Ws43zfepPmeh
-	 zHh1CPua0oPkeVnewzfLhp3OR3FCo1c/XDtfY9IbWbHBdCSi18NKKoKgq4Y2FZzK06tqm
-	 +6Hf34WbpLTyh5BywH41I/nh0avruiNMxgwcwBmcx+cyE+78a4Vs+iBxOi91GvTVuWA==
+	 Message-ID:Date:MIME-Version:User-Agent:From:Subject:To:References:
+	 Content-Language:In-Reply-To:Content-Type:Content-Transfer-Encoding;
+	bh=JGPk1jGj43xHjZVB7ZbHFktO3l1LVla7B3cwc4Ca4M8=;
+	b=r5azTiz6VpO5V1nn4xp0dxpEI+4jNYGRvobq10Q7dqvbxz/Wn+airDxdX67qEdgRkl2G
+	 Y4q2lhoQR2o1NJw+hyBknyewddXc6ZFmjTXrswfxqryGWfhEb8TTbkp7kFGaMyiIn4tZd
+	 Q/z3Rz496iYV+m7kFHxcXP5yPq6ktO3GBvONQlVwUimOlrrYCvOSk4q/O/o/wgu20nu7d
+	 jFIJrvwYw/HsZxYLIFR8Ww87xF/4h4tW0whmkHFCmmlue09RTg2WFkZr/hRInO6YjYGRM
+	 d/zRDz0SzZeAFTPLb1Mrq6KgfqwNtVOjU6TUJhpwp/uYAoTchPuILBrEqk2rEx7EwTA==
 ARC-Authentication-Results: i=1; smtp.subspace.kernel.org; 
 	dmarc=pass header.from=gmail.com;
 	spf=pass smtp.mailfrom=gmail.com;
-	dkim=pass header.d=gmail.com header.i=@gmail.com header.a=rsa-sha256 header.s=20260707 header.b=oiI5kZU0;
-	arc=none smtp.remote-ip=209.85.221.182
-Received: from mail-vk1-f182.google.com (mail-vk1-f182.google.com [209.85.221.182])
+	dkim=pass header.d=gmail.com header.i=@gmail.com header.a=rsa-sha256 header.s=20260707 header.b=OJU42Q4E;
+	arc=none smtp.remote-ip=209.85.221.41
+Received: from mail-wr1-f41.google.com (mail-wr1-f41.google.com [209.85.221.41])
 	(using TLSv1.3 with cipher TLS_AES_128_GCM_SHA256 (128/128 bits)
 	 key-exchange X25519 server-signature ECDSA (prime256v1) server-digest SHA256)
 	(No client certificate requested)
-	by smtp.subspace.kernel.org (Postfix) with ESMTPS id BCCA2606A321
-	for <linux-wireless@vger.kernel.org>; Mon, 23 Nov 2026 21:08:56 +0000 (UTC)
-DMARC-Filter: OpenDMARC Filter v1.4.2 smtp.subspace.kernel.org BCCA2606A321
+	by smtp.subspace.kernel.org (Postfix) with ESMTPS id 72882606A326
+	for <linux-wireless@vger.kernel.org>; Mon, 23 Nov 2026 21:10:16 +0000 (UTC)
+DMARC-Filter: OpenDMARC Filter v1.4.2 smtp.subspace.kernel.org 72882606A326
 Authentication-Results: smtp.subspace.kernel.org; dmarc=pass (p=none dis=none) header.from=gmail.com
 Authentication-Results: smtp.subspace.kernel.org; spf=pass smtp.mailfrom=gmail.com
 Authentication-Results: smtp.subspace.kernel.org;
-	dkim=pass (2048-bit key) header.d=gmail.com header.i=@gmail.com header.a=rsa-sha256 header.s=20260707 header.b=oiI5kZU0
-Received: by mail-vk1-f182.google.com with SMTP id 71dfb90a1353d-5eadef147ffso3037388e0c.3
-        for <linux-wireless@vger.kernel.org>; Mon, 23 Nov 2026 13:08:56 -0800 (PST)
+	dkim=pass (2048-bit key) header.d=gmail.com header.i=@gmail.com header.a=rsa-sha256 header.s=20260707 header.b=OJU42Q4E
+Received: by mail-wr1-f41.google.com with SMTP id ffacd0b85a97d-491f34b4e0fso1784285f8f.2
+        for <linux-wireless@vger.kernel.org>; Mon, 23 Nov 2026 13:10:16 -0800 (PST)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=gmail.com; s=20260707; t=1795468136; x=1796072936; darn=vger.kernel.org;
-        h=content-transfer-encoding:mime-version:references:in-reply-to
-         :message-id:date:subject:cc:to:from:from:to:cc:subject:date
-         :message-id:reply-to:content-type;
-        bh=f2NG2KJ42BFW151H0tBsjv0FAQmpfGgM1WHrS6CgImI=;
-        b=oiI5kZU0M/CSCMWIUjZyRof20DyKoyF5/VR/yYWVQme9mZI8H3Z0CAAuC6VSAs0mhu
-         Vz4/3TIQkcvrx50KP4OaWCty4OmoP7zYQzgLCz8spTS0R8VoqkzgL7pGuz9UKt0tD2Co
-         6APcqnKSewL1hDgGMV+p8m8UBq1n9wSdMDHdNuq77JKj7ZX6HKX1jKwjJWtRlmISdZmb
-         iGuKEJy+QKR57O8NsMkEiFKvbCKL+lz2qrNwAcdX2di9WLDbLTf8EYRiEVGHbt/93xni
-         HkNCQhChoG5tqIkAmPbgmqvm2akFH7oSTDdDcDLJv2blMXVusccK2RGQFz05V0SLpzZy
-         6SfQ==
+        d=gmail.com; s=20260707; t=1795468215; x=1796073015; darn=vger.kernel.org;
+        h=content-transfer-encoding:content-type:in-reply-to:content-language
+         :references:to:subject:from:user-agent:mime-version:date:message-id
+         :from:to:cc:subject:date:message-id:reply-to:content-type;
+        bh=JGPk1jGj43xHjZVB7ZbHFktO3l1LVla7B3cwc4Ca4M8=;
+        b=OJU42Q4EzLcmW05/pvpbjIt+qS62TCEuHVALNf4TYDlbzmZQKujPKMn+IcZOTTIvOK
+         Cy495l4Zs/1YWdV8UbKtIuxw3RuQEkHS0/E2yF3/WXhXfHzwpibkxyEJ1W/bd8qREkYP
+         meGI71y6WLdqdIj2KX+HRBcRAjji0O0R+evJsZJH2VbbN5NdozMoo6ebPXsIhlLbeh8t
+         CQUHdLaWBxizxxQgTcNdR8+Rjrk7bhoLJ+L7REO4FTvIn3xOXeER7vPOxLTcQBF2OvP2
+         3gMM6hBdFMR7DFYMhCkj89IPO4HP5U9qnBuwZnJeMLiONk04cxpWGPwaLjplYB/dY6EQ
+         VHjA==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=1e100.net; s=20260707; t=1795468136; x=1796072936;
-        h=content-transfer-encoding:mime-version:references:in-reply-to
-         :message-id:date:subject:cc:to:from:x-gm-gg:x-gm-message-state:from
-         :to:cc:subject:date:message-id:reply-to:content-type;
-        bh=f2NG2KJ42BFW151H0tBsjv0FAQmpfGgM1WHrS6CgImI=;
-        b=jSHrXkDdO1+0zyTWq3bkKQ0fIYSgx2RdZ6aZQeJv7PA5GzYhu3h5z5eZBjET3nuZ8G
-         KtOyX1FzZR7o60aLwK+RaSST5DLofUfbrMMmVwqj0x4v66TrBD+P07HlOhnF/nRHM45n
-         6PoCLw3fWAP34KDR7SCVk94Shv+kNMyB3wYpKdAQy6DpSLzuhvmbUt5qa7KTfqWeAuY8
-         x7q9Iu4xkXcvRDnkYjR4cide7cmeCuVXWVNR8z23sWjJGPlB+gm13oCKvBljME6SWYUy
-         09flOj3SbxcskLtUP1JIATYwgE9YswErkrcPBwTnF6ICkFLnXi0yu3kFzQPatewa+b01
-         FZ2w==
-X-Forwarded-Encrypted: i=1; AL+hErHwkRP/xNbYzfD7fPGRVt8+24VWX74BOruoh9Z1RakEbkCYNp6CveT7/KMy+QZc4jxGrpNMmUOc9WEPzAclrQ==@vger.kernel.org
-X-Gm-Message-State: APuU4Z+8lmOgNdq2rM6LsPhSa4lIp7eHSTxtfqMGjjb6pH8zYEtbqAdA
-	nrE6jUWKoT8KjTEcV///ZV8OgVWyRzzipHb605bf54vlACGec1gAblM0
-X-Gm-Gg: AZFdTZfU9N/qKqRwBGUFGCfFceHcjtdjL61KEPGzWBLodhVzperU6ct+x4ND8zQ+yas
-	usYZnQ3hIkQnVjhPi80fAoNVAbGHzASbJq9PFWOj4FedgRy/dz5BOfZ1drnm+z2z502J6BkU2P0
-	jiuIYe6KB89csbLIEaHf7xzaaJ29zQ2DY2mVClsOPcPLw+LcVIUhcTPjTtO4E7XdibADpfreQEN
-	4mLgbM3cc6bgxxpp0yPsgjH2uMIq7PAmOcjj78LvAFdlmGUie2gMcKErG8nTHwV7/EkjvH19mdl
-	Zj5vuu0LpyjOxLIq6UyGf5TkSIYu5Bg7jR4tEw6nQmlE2/pLRcyjuMUBpPv8oq+hmCLYiZyhQu5
-	OASm5yHiItrn/OCNrjkofT2nx/hxfd/rMQp2Y/rRMQ9b5imYdgL6NFWwhTUsw27kBdaiuS5BEMn
-	itEqBiEgFTFJomnV3w8S6Ia5gA91MKFw0t7tD2ChoGBIySJ3dllabAlXvt4AP/XKpsauyYOb8Gd
-	6NLMmL23zVySuV7JkcYFfC60qZd9nz9hReVUc+fNtF80mXWeA+E0O9zKy9dX8BldCXZXvPvYiIH
-	oAFCHNlY3o1Ttf5goLK8rFbf7mi+gU9z6nQBCDFpb3ebgzEFfPV7eq8IAcR5cOU68KXRlwAwqCt
-	u9Utt5xPcsO16y2z4QQ==
-X-Received: by 2002:a05:6122:62b1:b0:5ee:40e0:482d with SMTP id 71dfb90a1353d-5ee8adf0fd9mr6950729e0c.3.1795468135671;
-        Mon, 23 Nov 2026 13:08:55 -0800 (PST)
-Received: from tuxmobile.lan ([181.230.232.62])
-        by smtp.gmail.com with ESMTPSA id 71dfb90a1353d-5ee8b555147sm11839376e0c.6.2026.11.23.13.08.53
-        (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
-        Mon, 23 Nov 2026 13:08:55 -0800 (PST)
-From: Gaston Guevara <guevara.gaston@gmail.com>
-To: =?UTF-8?q?Toke=20H=C3=B8iland-J=C3=B8rgensen?= <toke@toke.dk>,
-	linux-wireless@vger.kernel.org
-Cc: Gaston Guevara <guevara.gaston@gmail.com>
-Subject: [PATCH ath-next] wifi: ath9k: don't check CSA completion on station interfaces
-Date: Mon, 23 Nov 2026 18:08:15 -0300
-Message-Id: <20261123210815.25770-1-guevara.gaston@gmail.com>
-X-Mailer: git-send-email 2.39.5
-In-Reply-To: <87mrqzeets.fsf@toke.dk>
-References: <87mrqzeets.fsf@toke.dk>
+        d=1e100.net; s=20260707; t=1795468215; x=1796073015;
+        h=content-transfer-encoding:content-type:in-reply-to:content-language
+         :references:to:subject:from:user-agent:mime-version:date:message-id
+         :x-gm-gg:x-gm-message-state:from:to:cc:subject:date:message-id
+         :reply-to:content-type;
+        bh=JGPk1jGj43xHjZVB7ZbHFktO3l1LVla7B3cwc4Ca4M8=;
+        b=r2QKJzcZqflcwVnyCdHSSEp3cM5R22ttGpGqIWNSyjPTCJXacWCCnyrT0eM1XDcTNx
+         Yy3LwwSVgCgLia9ey5sCmJHyfCeh3OB6FcV0N3PrUzJNSY+OcuOoq660hOze8CPS+O+j
+         DRb1fMGFG35w9VIULza7WXZGSrhO3rbHqCIWr6ishbXyXumH+rbOLdHnKgtuxY3hfDiv
+         8eu4XD8ldOsDPwGiOlynl64Y9Rr7upphnRf0dXOe0DA06B7Mlc/EIyFp+YlKlLHKXP9b
+         Os/a7TEFyFkLl0kTorgWDwq+zU+OalZIa3nGaVlSKumH8le8g+EL5yusanhDJ+fYeCd0
+         RxNA==
+X-Forwarded-Encrypted: i=1; AL+hErHao3s2zKXvRkRcFOW/sbE5ioocNug810DVglqcG0paj5YCsYfeuW3YQznzXzhIj6xEAUaAR6P3FYCkapECxA==@vger.kernel.org
+X-Gm-Message-State: APuU4Z/6eWt9RzBqIjDCWnJ2jbFWcHFRPG5Q6+lHPf369w9etkP+CLdh
+	F+LFKBzGSOLzL/MXsvQUO/nkXmo+XBJe4qTbLcpoVJ5XOllA+VtBIYNk
+X-Gm-Gg: AZFdTZcN5M4y1xJhsh9UHiWSgP6Oc5sgZrlcR+nYBZweyn4kgpWEdqt6D79IHU+wdnG
+	IWinUpKqlTBvFHxLiq1QBKoc0OEgec7O6jg3fx9B6XuhXM8BNHW6uZJuvzX5pt1FpIDpoO2uz2p
+	BSMdRSLZOZtxU0fOrLH9y1CdVNw2TxPiboQlCwEbSHT83e06CgUNJVNse4fC5UmlkkFD6ys4sox
+	Ibt3HL8z+qAL9ZAFVofvW6A7tQbuiOlQQhjgcejWHeFC9DXL67DNUUImsvQHkKYBmFkYeVSFQo+
+	r8TUdVT0ikW6O2oWOYXPCU0hDfiwezjh3D7N3M4qgcu1hjwmuxCtf0C+2oHjDsSaQSvMda6IpHO
+	5RR7BwKm+MJDrgGKHhcU6T8BTyYu7Zb1EJsbCeVMqMK+NsIZzNo5ghDbUF65L7stPDpuA55KJTY
+	iF3SBd9/CgpGb0sGWUmy9B9bNsy+LgJIkjgOQA8EsIs3lERkFry5gVT4AWjNGwkC31KNN4gO3Gr
+	dYt6scNJeshgN/+v/NFm7kgeoWai6t6x4Z8aOUNyRkzBQA5M3oonvxVrATpBy0xy5IQHNM8mlel
+	Ef02S8SkC0j/l8B7rDU7bXjOz/eFvQN66yXgtY8=
+X-Received: by 2002:a05:6000:2b8a:b0:4a7:b365:19dd with SMTP id ffacd0b85a97d-4abb4b85bcbmr16572843f8f.53.1795468214803;
+        Mon, 23 Nov 2026 13:10:14 -0800 (PST)
+Received: from [192.168.1.50] ([188.27.124.101])
+        by smtp.gmail.com with ESMTPSA id ffacd0b85a97d-4ab6b110c3csm23721755f8f.36.2026.11.23.13.10.13
+        (version=TLS1_3 cipher=TLS_AES_128_GCM_SHA256 bits=128/128);
+        Mon, 23 Nov 2026 13:10:14 -0800 (PST)
+Message-ID: <8226a69f-0c29-414b-8e2c-e01103819d6b@gmail.com>
+Date: Mon, 23 Nov 2026 23:10:13 +0200
 X-Mailing-List: linux-wireless@vger.kernel.org
 List-Id: <linux-wireless.vger.kernel.org>
 List-Post: <mailto:linux-wireless@vger.kernel.org>
@@ -98,45 +90,61 @@ List-Unsubscribe: <mailto:linux-wireless+unsubscribe@vger.kernel.org>
 List-Owner: <mailto:linux-wireless+owner@vger.kernel.org>
 Precedence: list
 MIME-Version: 1.0
-Content-Transfer-Encoding: 8bit
+User-Agent: Mozilla Thunderbird
+From: Bitterblue Smith <rtl8821cerfe2@gmail.com>
+Subject: Re: [PATCH rtw-next 0/5] wifi: rtw88: pci: Support an older design,
+ like RTL8821AE/RTL8812AE
+To: Ping-Ke Shih <pkshih@realtek.com>,
+ "linux-wireless@vger.kernel.org" <linux-wireless@vger.kernel.org>
+References: <2033f1b1-fb12-4a04-aef4-923590e64463@gmail.com>
+ <aaaeeef8-1d4b-4d31-9f70-fb7d781d7006@gmail.com>
+ <62b7f8e8d9784877ba8eda4bcde90cc6@realtek.com>
+ <08a6cf57-9c00-445d-bc91-9375e4ba2ef8@gmail.com>
+ <1c527c2ba8d64740a1b1df63b80f6ad7@realtek.com>
+Content-Language: en-US
+In-Reply-To: <1c527c2ba8d64740a1b1df63b80f6ad7@realtek.com>
+Content-Type: text/plain; charset=UTF-8
+Content-Transfer-Encoding: 7bit
 
-ath9k_csa_update() iterates over all active interfaces and calls
-ath9k_csa_is_finished() for each of them. mac80211 also sets
-bss_conf.csa_active on a station interface while it follows a channel
-switch announced by its AP, so when an AP and a station share an ath9k
-radio, ath9k_csa_is_finished() calls ieee80211_beacon_cntdwn_is_complete()
-for the station vif. That function only handles AP, ad-hoc and mesh
-interfaces and hits WARN_ON(1) for any other type, producing a burst of
-warnings (about one per beacon interval) on every upstream CSA.
+On 19/11/2026 07:48, Ping-Ke Shih wrote:
+> Bitterblue Smith <rtl8821cerfe2@gmail.com> wrote:
+>> On 16/11/2026 09:43, Ping-Ke Shih wrote:
+>>> Bitterblue Smith <rtl8821cerfe2@gmail.com> wrote:
+>>>> On 24/10/2026 01:57, Bitterblue Smith wrote:
+>>>>>
+>>>>> Theoretically rtlwifi supports WOWLAN, but it doesn't work for me with
+>>>>> RTL8821AE or RTL8812AE. rtw88 doesn't support WOWLAN with these chips.
+>>>>>
+>>>>
+>>>> Actually, this looks like my laptop's fault. I tried with RTL8822CE
+>>>> and RTL8852BE, and they don't work either. The wifi card doesn't have
+>>>> power while the laptop is suspended to RAM. There is no option for it in
+>>>> the BIOS, either.
+>>>
+>>> If you have an external PCIE adapter, it will be possible to connect
+>>> an external power to keep WiFi working. (Note this might damage your
+>>> laptop or WiFi card if connect extern power to wrong hardware pins)
+>>
+>> I don't have anything external, but you gave me an idea.
+>>
+>> I soldered two wires on the motherboard. One connects the M.2 slot to the
+>> 3.3V line which stays on in S3. The other connects the M.2 slot's PCIe
+>> WAKE pin to the laptop's power button. Now the laptop wakes up when
+>> I send the magic packet.
+> 
+> As the result, I think WoWLAN works fine when your platform in S3.
+> 
+>>
+>> I'm not sure it's working 100% correctly. RTL8821AE (with rtw88),
+>> RTL8822CE, and RTL8852BE all disconnect from the network after waking up.
+>> Isn't it supposed to stay connected?
+> 
+> It should stay connected. Have you tried connection without security?
+> Also, I think it'd be helpful to dig problem with air sniffer.
 
-Skip station interfaces in ath9k_csa_is_finished(). Ad-hoc and mesh
-interfaces keep their current behaviour.
+It's the same without security.
 
-Tested on a TP-Link Archer C60 v3 (QCA9561) with an AP and a station
-on the same radio: twelve consecutive upstream channel switches with
-no warnings, whereas every logged switch produced them before.
-
-Fixes: 4effc6fda7ab ("ath9k: prepare for multi-interface CSA support")
-Link: https://lore.kernel.org/linux-wireless/CABMxrRyvsFy7qGXky-OF1KE3c04z0xO_XMGnJC28L0WHE9AF9Q@mail.gmail.com/
-Signed-off-by: Gaston Guevara <guevara.gaston@gmail.com>
----
- drivers/net/wireless/ath/ath9k/beacon.c | 3 ++-
- 1 file changed, 2 insertions(+), 1 deletion(-)
-
-diff --git a/drivers/net/wireless/ath/ath9k/beacon.c b/drivers/net/wireless/ath/ath9k/beacon.c
-index 4a27e3753c03..ff72f231be5d 100644
---- a/drivers/net/wireless/ath/ath9k/beacon.c
-+++ b/drivers/net/wireless/ath/ath9k/beacon.c
-@@ -362,7 +362,8 @@ static void ath9k_set_tsfadjust(struct ath_softc *sc,
- 
- bool ath9k_csa_is_finished(struct ath_softc *sc, struct ieee80211_vif *vif)
- {
--	if (!vif || !vif->bss_conf.csa_active)
-+	if (!vif || vif->type == NL80211_IFTYPE_STATION ||
-+	    !vif->bss_conf.csa_active)
- 		return false;
- 
- 	if (!ieee80211_beacon_cntdwn_is_complete(vif, 0))
--- 
-2.39.5
-
+The sniffer shows that the client sends a deauthentication frame.
+I think it has something to do with NetworkManager, because if I stop
+the NetworkManager and wpa_supplicant services and run wpa_supplicant
+manually, the client stays connected after waking up.
