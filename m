@@ -1,96 +1,65 @@
-Authentication-Results: smtp.subspace.kernel.org; arc=none smtp.remote-ip=209.85.216.54
+Authentication-Results: smtp.subspace.kernel.org; arc=none smtp.remote-ip=95.215.58.183
 ARC-Seal: i=1; d=subspace.kernel.org; s=arc20261015; a=rsa-sha256; cv=none;
-	t=1795477051;
-	b=aRMIsREIn9g34lI8Ow/jPZu52ES9DRLsAkljBru44NT5XnbUgnhCn0Gv7JHfmX++ix5y
-	 9zveBaMgjZGDBEDhvobLWFsGpkMxfngGrQ1d7YV6QlmOKnexPzQIHvKziNauxe/4hnVkf
-	 MMZWSKZLWJEksPiNEbJ3FOTeu5Fitbt0ulGumkYJsWySqkNnHxOeJ6S1eVp3swbqjoPqF
-	 fBQawONbMZl7KfO3MXnj6i6DtTyphi/EtCVSARtgIFBxFvoGnSBgFvx4UWGzQtRavhpoe
-	 cK16HBe33eY+gL1Z4Q8/CVzlWOBH9bRX69mKlrngGEGFp8EPphSX2yw5MpEBaDcjtJw==
+	t=1795477075;
+	b=Vy1/WzuyfGao+WrBQruLzzIJWx+wnhj781JJwnG+XRGGeonYTwymoBuguB3oSsuIjV91
+	 bkdHyZ/H1wGSGof+r4lZuGbKyjuLf+j7FVt7HC+MSZyq3VroimG6n0cZx1+cYF51OQ7Cr
+	 ShoUYHVNGnJDWo03xU51GXOwqLA00zVncYzwNmvV8Up3R1/Cli9r+IacEcRupkQM3UEqi
+	 3NwGkiEoJyhv0LgvlYzMLakATe6ZThaQ3oGC4e53Zk9agwVSJoV6v3pMPXU8iLeCJUtIB
+	 tKR3NT4YAmJFka+JMixcbn3/svG7gFhqhc0NYy8hEYfcNB0IyrsbhpJL0bAwvQgOIsg==
 ARC-Message-Signature: i=1; d=subspace.kernel.org; s=arc20261015;
-	a=rsa-sha256; c=relaxed/relaxed; t=1795477051;
-	h=DMARC-Filter:Received:DKIM-Signature:X-Google-DKIM-Signature:
-	 X-Forwarded-Encrypted:X-Gm-Message-State:X-Gm-Gg:X-Received:Received:
-	 Date:From:To:Cc:Subject:Message-ID:References:MIME-Version:
-	 Content-Type:Content-Disposition:In-Reply-To;
-	bh=nCtOThlgIxlSduoLEYBHryFj9jT/Zq+67s7VxNMjkzk=;
-	b=nLV9NT3uZmJ3CpkaWjw2QBtlB6i8NPNVtOWlVUJg2Oa4dW0zZfiQ4wFVu6CJlt4nJ9yh
-	 ZuA0UcMiUtcd+hKy89YQV4r5QYIJI1PXEL0M+pBf3eLITkPbN2GQYn/Jgxhlxe+09JCrX
-	 1LqQavetHNc/uKRxhs1a18CXa95rhZgDjGIUvCh/O2a+foAuw2cJ5c35zO9XkCzJCNYdn
-	 AmfMI69+2RX9mxJZPxN5ihIcCrjLhZy/u6RwGd1TNKfz6M3KZsYVgz6in2FF6TDqYaJr7
-	 VeiJF4MrEI6NZqnhWYG65mQ+wYT62RjyYPjhKRwZx5EJNK+dx8IGQjrZsw54JKWe8Zw==
+	a=rsa-sha256; c=relaxed/relaxed; t=1795477075;
+	h=DMARC-Filter:X-Envelope-To:DKIM-Signature:X-Envelope-To:Received:
+	 X-Mizu-Trace-ID:X-Migadu-Flow:Date:From:To:CC:Subject:In-Reply-To:
+	 References:Message-ID:MIME-Version:Content-Type:
+	 Content-Transfer-Encoding;
+	bh=sE5nDKAHylHfXNljU8ESqvkfFS6Rp3ffmStIQMjK4pg=;
+	b=JwpzmVZdtCBoHDV47E79h9xAqtxW6MOYcaC++KKNZ3JswJiW4XphIpiKj3XPwTfukOcK
+	 9nFAk93L/TyPFSz/9oOgq8cZi3gtKJgqUU/dVCGjTRxh7/gmK9M7Y5c/V9DQL6UXpcqM6
+	 N+qkRUGaSevZbUMIUVOqUC9QofPx3WJWJYfqS1LnEYr23Sm3v7KF/+/ITXx1fjEyouIWc
+	 t2aefRJfEPb1MtWtGPl52E97Vk2BFDykvJrMuosU+NHuWhYWjTZMX0G1cd6kXmyV69XC6
+	 K3XUfo4oRiDPP5bUYqmg0vioDMNJW2osonVMcNYXonLXgdhKbBedon++afH41r0zLHA==
 ARC-Authentication-Results: i=1; smtp.subspace.kernel.org; 
-	dmarc=pass header.from=morsemicro.com;
-	spf=pass smtp.mailfrom=morsemicro.com;
-	dkim=pass header.d=morsemicro-com.20260707.gappssmtp.com header.i=@morsemicro-com.20260707.gappssmtp.com header.a=rsa-sha256 header.s=20260707 header.b=NHlkL+qI;
-	arc=none smtp.remote-ip=209.85.216.54
-Received: from mail-pj1-f54.google.com (mail-pj1-f54.google.com [209.85.216.54])
+	dmarc=pass header.from=linux.dev;
+	spf=pass smtp.mailfrom=linux.dev;
+	dkim=pass header.d=linux.dev header.i=@linux.dev header.a=rsa-sha256 header.s=key1 header.b=QrRjJa0d;
+	arc=none smtp.remote-ip=95.215.58.183
+Received: from mta1.migadu.com (out-183.mta1.migadu.com [95.215.58.183])
 	(using TLSv1.3 with cipher TLS_AES_128_GCM_SHA256 (128/128 bits)
 	 key-exchange X25519 server-signature ECDSA (prime256v1) server-digest SHA256)
 	(No client certificate requested)
-	by smtp.subspace.kernel.org (Postfix) with ESMTPS id AF61D606A31E
-	for <linux-wireless@vger.kernel.org>; Mon, 23 Nov 2026 23:37:30 +0000 (UTC)
-DMARC-Filter: OpenDMARC Filter v1.4.2 smtp.subspace.kernel.org AF61D606A31E
-Authentication-Results: smtp.subspace.kernel.org; dmarc=pass (p=none dis=none) header.from=morsemicro.com
-Authentication-Results: smtp.subspace.kernel.org; spf=pass smtp.mailfrom=morsemicro.com
+	by smtp.subspace.kernel.org (Postfix) with ESMTPS id 77BA4606A31E
+	for <linux-wireless@vger.kernel.org>; Mon, 23 Nov 2026 23:37:53 +0000 (UTC)
+DMARC-Filter: OpenDMARC Filter v1.4.2 smtp.subspace.kernel.org 77BA4606A31E
+Authentication-Results: smtp.subspace.kernel.org; dmarc=pass (p=none dis=none) header.from=linux.dev
+Authentication-Results: smtp.subspace.kernel.org; spf=pass smtp.mailfrom=linux.dev
 Authentication-Results: smtp.subspace.kernel.org;
-	dkim=pass (2048-bit key) header.d=morsemicro-com.20260707.gappssmtp.com header.i=@morsemicro-com.20260707.gappssmtp.com header.a=rsa-sha256 header.s=20260707 header.b=NHlkL+qI
-Received: by mail-pj1-f54.google.com with SMTP id 98e67ed59e1d1-3b421e8d111so2559302a91.3
-        for <linux-wireless@vger.kernel.org>; Mon, 23 Nov 2026 15:37:30 -0800 (PST)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=morsemicro-com.20260707.gappssmtp.com; s=20260707; t=1795477050; x=1796081850; darn=vger.kernel.org;
-        h=in-reply-to:content-disposition:content-type:mime-version
-         :references:message-id:subject:cc:to:from:date:from:to:cc:subject
-         :date:message-id:reply-to:content-type;
-        bh=nCtOThlgIxlSduoLEYBHryFj9jT/Zq+67s7VxNMjkzk=;
-        b=NHlkL+qIwXD8b1pC0f90rQnXIGTuE42Rd17hMdouo0VjxooaoGPJLXqj0mPM0dP0Uu
-         UQObb7iUBTm89PIsssTqdgIOZ5nIUzluWbEryuNEf4D03NOA9bUWJd4MdbihzEew2kM4
-         6qhFFyZxo3kz+fppgYOVZL/e0pxhA4LTdmp7TiWGdz7n/kr9g1fckW/XKLmovydGoPdx
-         jMNPDET4E4xfYQou6PQSQxVfL7hapvjtVavUM+vn3nqjzoVzQlPO3HFe+OlTB2nzZ22P
-         zPwGgHq0Xb/aSmdc6cP7GJd8MUE8hEmg1Yr/jE17BwVQhXLhmkYzVi5n4d62GyvcEl9Q
-         anaA==
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=1e100.net; s=20260707; t=1795477050; x=1796081850;
-        h=in-reply-to:content-disposition:content-type:mime-version
-         :references:message-id:subject:cc:to:from:date:x-gm-gg
-         :x-gm-message-state:from:to:cc:subject:date:message-id:reply-to
-         :content-type;
-        bh=nCtOThlgIxlSduoLEYBHryFj9jT/Zq+67s7VxNMjkzk=;
-        b=zK/bncWifSyf1gHNAg+tjxiUiQIAL494Tc3dwsJ2ZAZd5XyQ62OK/bxVyyEhCRnBzE
-         dFC2SzrLFwG46XL9CZofvaEfDr6IH5LP7PHJAXgSHZwJavEuAHCqIoLSa5d9iNTP7MS4
-         8Z5dGatyspVgfVisACgtjJWfu0IC/swfwslGzc+hwGCO+pxWie4N0UTN4uqPFH3jMwaN
-         GVahqEAfQQYa2xcIPq7nDmHcJHDZ8GSEyOp+vFUmpg4LDF7o1c4e75HeGBrgKDj0zdBU
-         +/A3vZfOeaxBkTuk+maMnjumxh1oyJC6DJ8BkFn7h7m/y/cLW+nJzrxUCgz8aM27szyn
-         fqjQ==
-X-Forwarded-Encrypted: i=1; AL+hErExM01DE2q7X9VLKy29CzEXALSBR18t5A/aeGggDhhBLqN0wxCVr8XwpSH0St0lxGar1BEI9xgbGpKxDx1Pcw==@vger.kernel.org
-X-Gm-Message-State: APuU4Z+77d5vdRNm5qI9P72HOYR/it1EqTmGxDFpreb5YVjlBSTAin+L
-	Jzuqkw7x4jGHPiApcblMzugwXZnp26j7rHLQLK2PwBSewK5T3tbgVZu4MjaDH16HuzI=
-X-Gm-Gg: AZFdTZdqwd2wD6ce/t4GRrcrYOb2Zp7swGQw3ilYBHEQcHKa1+HVe/zPLjumi3KAj7L
-	mP6ya41+7G+IY+JpTZs/r6q1ZD7biUdGvFsUq6zO+piqVGCbQC615XakLim7tdvK12QLTMoQu9m
-	kcAWTMQklJMe/z9eYbs/4G+5C9gzPKKLpBuBo1y7iSLjeSSM8R3r2f3SbZCNzH0/HpBf1tj7pMn
-	xdIPryumnK/3ZEL58oRYfCMV4IqnqR0U77kaOyURRqNriNfkpMRxgZfha2nQrRQbGiWB+QFYrZu
-	sWH046ytbzl4DLn6XeYBjqN7KUHEzuBx/NYJn2iNB/8T73qlulQqYLw2AN4utuw9pOBTkQ9ignt
-	7ezmdEziQfXNn5DyMjyJeQYA9SbcEglDr1iru+jFSr0CVO9r1qMJhiFcAIepIIfKHgZvfM7aT7K
-	TN4EGvSsYdc9RtSTgcitLM/J8A2EPSt87XMgGlsDexkLoG2DMm4/58gyLo3LS6mcW9pPyRDupMg
-	yMXODvYb0i4WzZIFqGS91T0ORG+S/HindMkNHU/o2pbOZJdynPq/2r5t3v1COQmVke/V1Ljk/Dy
-	xzDgWTBQKD4fM33ngsHIIpBVnfuzawm6oHVV9pWJ8ejN3vPYhFNPSzGxufIvYHf1LRAwMSD8iu5
-	kxqiga7+Pb0RV+UABbgs5vYF54w==
-X-Received: by 2002:a17:90a:d2cf:b0:3b0:9781:ee8b with SMTP id 98e67ed59e1d1-3b41c9e46b9mr11862740a91.26.1795477049685;
-        Mon, 23 Nov 2026 15:37:29 -0800 (PST)
-Received: from localhost (60-242-93-14.static.tpgi.com.au. [60.242.93.14])
-        by smtp.gmail.com with ESMTPSA id 98e67ed59e1d1-3b405ec698dsm22676475a91.14.2026.11.23.15.37.28
-        (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
-        Mon, 23 Nov 2026 15:37:28 -0800 (PST)
-Date: Tue, 24 Nov 2026 10:37:25 +1100
-From: Lachlan Hodges <lachlan.hodges@morsemicro.com>
-To: guohongyu <guohongyu@cmss.chinamobile.com>
-Cc: dan.callaghan@morsemicro.com, arien.judge@morsemicro.com, 
-	johannes@sipsolutions.net, linux-wireless@vger.kernel.org, linux-kernel@vger.kernel.org, 
-	13057616121@163.com
-Subject: Re: [PATCH v2 1/2] wifi: mm81x: clamp command-response copy to the
- received skb length
-Message-ID: <bpjumdldx5sj6ejkypglwajk7th245ppczedzmzj4rxjt2ug44@bgbijfc5smby>
-References: <20261117032227.154874-1-guohongyu@cmss.chinamobile.com>
- <20261120064905.192045-1-guohongyu@cmss.chinamobile.com>
+	dkim=pass (1024-bit key, unprotected) header.d=linux.dev header.i=@linux.dev header.a=rsa-sha256 header.s=key1 header.b=QrRjJa0d
+X-Envelope-To: linux-wireless@vger.kernel.org
+DKIM-Signature: a=rsa-sha256; bh=QkepU0YqvWHLf6nRIVGbSSor8TIXHFH03gy6YgNP/ns=;
+ c=simple/simple; d=linux.dev;
+ h=from:to:subject:date:message-id:mime-version:content-type; s=key1;
+ t=1795477071; v=1; x=1796081871;
+ b=QrRjJa0dFk7T4SQPmk1M9HOOHrG8Z72w8xtVPEHcVhFFrJ9YutGA8CAPtO4McMfsmtEcksbj
+ xs5gqltlH0qtQRy3IzF553EkMBCBtPIF4iaHMot2O0XCFDxZsP1TFOnN7RqxzV4QfT44N4ujrZQ
+ xMX10GnVER16eqnrPkwYgtos=
+X-Envelope-To: linux-wireless@vger.kernel.org
+Received: by smtp.migadu.com with ESMTPS id 58d118af36727f68;
+	Mon, 23 Nov 2026 23:37:51 +0000
+X-Mizu-Trace-ID: 58d118af36727f68
+X-Migadu-Flow: FLOW_OUT
+Date: Tue, 24 Nov 2026 00:37:49 +0100
+From: Luka Gejak <luka.gejak@linux.dev>
+To: Mehmet Fide <mehmet.fide@gmail.com>, Ping-Ke Shih <pkshih@realtek.com>
+CC: Sascha Hauer <s.hauer@pengutronix.de>, Zong-Zhe Yang <kevin_yang@realtek.com>,
+ Tzu-En Huang <tehuang@realtek.com>, Yan-Hsuan Chuang <yhchuang@realtek.com>,
+ Kalle Valo <kvalo@kernel.org>, Stanislaw Gruszka <sgruszka@redhat.com>,
+ Brian Norris <briannorris@chromium.org>, linux-wireless@vger.kernel.org,
+ linux-kernel@vger.kernel.org, mehmet.fide@screeningeagle.com
+Subject: =?US-ASCII?Q?Re=3A_=5BPATCH_rtw-next_v4_1/4=5D_wifi=3A_rtw88=3A_free_the_?=
+ =?US-ASCII?Q?reserved_pages_of_an_interface_on_firmware_recovery?=
+In-Reply-To: <20261121191528.591334-2-mehmet.fide@gmail.com>
+References: <20261121191528.591334-1-mehmet.fide@gmail.com> <20261121191528.591334-2-mehmet.fide@gmail.com>
+Message-ID: <38F350DD-D749-4754-AF9D-EBA4F8B430E6@linux.dev>
 X-Mailing-List: linux-wireless@vger.kernel.org
 List-Id: <linux-wireless.vger.kernel.org>
 List-Post: <mailto:linux-wireless@vger.kernel.org>
@@ -100,39 +69,42 @@ List-Unsubscribe: <mailto:linux-wireless+unsubscribe@vger.kernel.org>
 List-Owner: <mailto:linux-wireless+owner@vger.kernel.org>
 Precedence: list
 MIME-Version: 1.0
-Content-Type: text/plain; charset=us-ascii
-Content-Disposition: inline
-In-Reply-To: <20261120064905.192045-1-guohongyu@cmss.chinamobile.com>
+Content-Type: text/plain;
+ charset=utf-8
+Content-Transfer-Encoding: 8bit
 
-On Fri, Nov 20, 2026 at 02:49:04PM +0800, guohongyu wrote:
-> mm81x_cmd_resp_process() copies a synchronous command response from
-> the received skb into the caller-provided buffer:
-> 
-> 	length = min_t(int, length,
-> 		       le16_to_cpu(src_resp->hdr.len) +
-> 			       sizeof(struct host_cmd_header));
-> 	memcpy(dest_resp, src_resp, length);
-> 
-> src_resp->hdr.len is the inner host_cmd_header length of the firmware
-> response.  The skb, however, was sized by the *outer* mm81x_skb_hdr.len
-> (mm81x_yaps_read_pkt(), yaps.c:186-199: skb_len = sizeof(*hdr) +
-> hdr->offset + le16_to_cpu(hdr->len); skb_trim(skb, skb_len)), and
-> nothing ties the inner header length to the outer one.  A buggy or
-> malicious firmware can therefore declare an inner hdr.len far larger
-> than the payload actually present, and the memcpy reads past the end of
-> the skb's data into adjacent heap memory, leaking it into the command
-> response buffer.
-> 
-> Clamp the copy to skb->len so we never read past the data actually
-> received.
-> 
-> Fixes: b1906cea00b0 ("wifi: mm81x: add mm81x Wi-Fi HaLow driver")
-> Signed-off-by: guohongyu <guohongyu@cmss.chinamobile.com>
+On November 21, 2026 8:15:25 PM GMT+01:00, Mehmet Fide
+<mehmet.fide@gmail.com> wrote:
+>From: Mehmet Fide <mehmet.fide@screeningeagle.com>
+>
+>After a firmware crash, mac80211 adds the interfaces again without
+>removing them first. rtw_ops_add_interface() then reinitializes the
+>reserved page list, and the pages allocated before the crash leak:
+>
+>unreferenced object 0xffff0000cbe22c60 (size 96):
+>  comm "hostapd", pid 25545, jiffies 4296463067
+>  backtrace (crc cbdc21c4):
+>    kmemleak_alloc+0xcc/0xe4
+>    __kmalloc_cache_noprof+0x234/0x3bc
+>    rtw_add_rsvd_page+0x38/0xa8 [rtw88_core]
+>    rtw_add_rsvd_page_bcn+0x30/0x58 [rtw88_core]
+>    rtw_ops_add_interface+0x144/0x2cc [rtw88_core]
+>
+>mac80211 zeroes the driver data of a new and of a removed interface, so
+>track in struct rtw_vif whether the list was initialized, and free the
+>old pages when the interface is added again. Until then the pages stay
+>on the list, so a download before the reconfiguration, from the beacon
+>update work or a WoWLAN suspend, still finds them.
+>
+>Fixes: 5c831644e1f4 ("rtw88: handle and recover when firmware crash")
+>Suggested-by: Zong-Zhe Yang <kevin_yang@realtek.com>
+>Signed-off-by: Mehmet Fide <mehmet.fide@screeningeagle.com>
+>---
+>
 
-This has already been fixed by cd4335a9a41f ("validate response length
-in mm81x_cmd_resp_process()"). Make sure you base your work on the
-mm81x-next tree [1] (or -current).
+Looks good to me,
 
-[1] https://github.com/MorseMicro/linux-wireless
+Reviewed-by: Luka Gejak <luka.gejak@linux.dev>
 
-pw-bot: rejected
+Best regards,
+Luka Gejak
