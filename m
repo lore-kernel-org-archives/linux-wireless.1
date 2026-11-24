@@ -1,111 +1,99 @@
-Authentication-Results: smtp.subspace.kernel.org; arc=none smtp.remote-ip=202.12.124.152
-ARC-Seal: i=1; d=subspace.kernel.org; s=arc20261015; a=rsa-sha256; cv=none;
-	t=1795517654;
-	b=i4ifXJDvq4j8KZkwAaXQdqCKR2H6aKLmRgQ0/wub15s15kT5xeLrNMSQH3Q+HhWP+ZD2
-	 g0ee+SnQIVQounkYAqhOKtGpLSloAmUp9bCf+amuO6ef/xoNjLYQYyFbRMd1d0ar0eavW
-	 AvEDsNHdeFe7Qgf1oFrYbsWxjlWjYv/qkLNysgXPB/Colb0w03WLpiWT4f7IXSdTb1j52
-	 ANU7LwaWnWrnS2EWiX5bcyMtF3pwzq5Y+NpMXL6f/xORmd2jskki4Sg7Nyr4Fhue+Pql+
-	 HfhnJ9/v4TzXCu2tS1TRcG+vwxOfRwSDbnQi+OEwlA7EX0rEYyEWlPBsRwggACaJyOw==
-ARC-Message-Signature: i=1; d=subspace.kernel.org; s=arc20261015;
-	a=rsa-sha256; c=relaxed/relaxed; t=1795517654;
-	h=DMARC-Filter:Received:Received:DKIM-Signature:DKIM-Signature:
-	 X-DKIM2-Info:DKIM2-Signature:X-DKIM2-Info:Message-Instance:
-	 X-ME-Sender:X-ME-Proxy-Cause:X-ME-Proxy:Feedback-ID:Received:X-Mailer:
-	 MIME-Version:X-ThreadId:Date:From:To:Cc:Message-Id:In-Reply-To:
-	 References:Subject:Content-Type:Content-Transfer-Encoding;
-	bh=I/zIe5VWqw8+S0/CxPV6Xop+uxmy5kge68ZkVSiQml0=;
-	b=3/+6DX8l3zd7gRCmTYNHz1Wo5PM2iw9eizsDI1Z67T1UayuN8lIZvm2FUPAPQIGXlrlO
-	 hAzbN3/gjNg1UH429URs44ZEYorPB5eI/sKAfoH/oaIdNwSDPw1RZJrUsy/dWE7fkyKo5
-	 js1JGTGCdvrPPqiJa3stTHjXgXBmBdyJWr24ela7HC+NNgo4pGVnFl8OrmZpcK1OKdKoB
-	 MuZr+gRNdmTfsUPeLjxCob5bf9QvDTNB8DJNJOtIrXPiStfbymOHbGJbbDXmIG5hUUEmg
-	 XUbDQmDdoY4dgcfb2UDMT1i2WLeWAGtzydaa3nt/Ep9ogpQ8w4F5uJLdCEnV2G1bHMw==
-ARC-Authentication-Results: i=1; smtp.subspace.kernel.org; 
-	dmarc=pass header.from=arndb.de;
-	spf=pass smtp.mailfrom=arndb.de;
-	dkim=pass header.d=arndb.de header.i=@arndb.de header.a=rsa-sha256 header.s=fm2 header.b=Ottftt1B;
-	dkim=pass header.d=messagingengine.com header.i=@messagingengine.com header.a=rsa-sha256 header.s=fm3 header.b=N71Ui9Lb;
-	arc=none smtp.remote-ip=202.12.124.152
-Received: from fhigh-b1-smtp.messagingengine.com (fhigh-b1-smtp.messagingengine.com [202.12.124.152])
-	(using TLSv1.3 with cipher TLS_AES_256_GCM_SHA384 (256/256 bits)
-	 key-exchange X25519 server-signature ECDSA (prime256v1))
+Authentication-Results: smtp.subspace.kernel.org; arc=pass header.oldest-pass=0 smtp.remote-ip=209.85.160.46
+ARC-Seal: i=2; d=subspace.kernel.org; s=arc20261015; a=rsa-sha256; cv=pass;
+	t=1795522541;
+	b=mz+UzMUwwqix9w/SRK+HykNDCpSr0g71gVeKJyPIKzU+GLO7WzG6uY1G0jl8/U/sIn3Y
+	 HLy/7CT5lIXVniQqhb6Gg84dgiXOJmSNustOW0go5knG7BCmEqwiNYjNMWTw3132LQeK8
+	 PWFDLG0ihFO1do+/gdvdDwzndXSKLTS2L9YADpXFn8Dv+vH3Isu/wPYleHA9F1Lh5x6Ug
+	 h190ymSIlUPVDbAYacmL0qxwQfifKtJ3FBZ0g9Aaf8TaW5+sl1PxTlFUd0NAs/RNanRYM
+	 b8vYYun2dud8bRaVvvwnZxa3AD8T+93d+zWJoUdAHSfQE3sKuE/KGhlOsXCIs4otpUQ==
+ARC-Message-Signature: i=2; d=subspace.kernel.org; s=arc20261015;
+	a=rsa-sha256; c=relaxed/relaxed; t=1795522541;
+	h=DMARC-Filter:Received:DKIM-Signature:X-Google-DKIM-Signature:
+	 X-Gm-Message-State:X-Gm-Gg:X-Received:MIME-Version:References:
+	 In-Reply-To:From:Date:X-Gm-Features:Message-ID:Subject:To:Cc:
+	 Content-Type;
+	bh=a4KRBu8O1MrYd6R3hgRbpX15IJA5uu4rOWX5aVGMfOg=;
+	b=PeCDw5rpSEO3owzBhQqMdJrpDk+w28x2ZOmQE0ruV2ux6jBZH/jTABrd3k+pY3ny2fZw
+	 QCgWC9HZYgMyNRolwD2nDE88vWbeFTQr4ZPW59DNx2sKRFaBlL1cIuZPEEvyFw/KkhzXm
+	 pSKWE0D+Yh1vepgmyJ16FuhaOV9QCOBJ3tPOehqqZtHAUkuWWY3XI/MJ7NiyJgfLDUdpz
+	 xqhLv9Eju4BVHAqzA7ywHdeZXrGrLfJ1d5tgTNP3XGoeCN2ABh+aOll8ar0yHhx0nw0Av
+	 twaXEK8isdzy8mpIS6tNbTzyqlypNOZ58AZM4/JE1VWmNy52omywrjPSQQp2mn+WVNw==
+ARC-Authentication-Results: i=2; smtp.subspace.kernel.org; 
+	dmarc=pass header.from=gmail.com;
+	spf=pass smtp.mailfrom=gmail.com;
+	dkim=pass header.d=gmail.com header.i=@gmail.com header.a=rsa-sha256 header.s=20260707 header.b=GV9hfC1A;
+	arc=pass header.oldest-pass=0 smtp.remote-ip=209.85.160.46
+Received: from mail-oa1-f46.google.com (mail-oa1-f46.google.com [209.85.160.46])
+	(using TLSv1.3 with cipher TLS_AES_128_GCM_SHA256 (128/128 bits)
+	 key-exchange X25519 server-signature ECDSA (prime256v1) server-digest SHA256)
 	(No client certificate requested)
-	by smtp.subspace.kernel.org (Postfix) with ESMTPS id 5FD62606A31E
-	for <linux-wireless@vger.kernel.org>; Tue, 24 Nov 2026 10:54:14 +0000 (UTC)
-DMARC-Filter: OpenDMARC Filter v1.4.2 smtp.subspace.kernel.org 5FD62606A31E
-Authentication-Results: smtp.subspace.kernel.org; dmarc=pass (p=none dis=none) header.from=arndb.de
-Authentication-Results: smtp.subspace.kernel.org; spf=pass smtp.mailfrom=arndb.de
+	by smtp.subspace.kernel.org (Postfix) with ESMTPS id 3BCC2606A322
+	for <linux-wireless@vger.kernel.org>; Tue, 24 Nov 2026 12:15:41 +0000 (UTC)
+DMARC-Filter: OpenDMARC Filter v1.4.2 smtp.subspace.kernel.org 3BCC2606A322
+Authentication-Results: smtp.subspace.kernel.org; dmarc=pass (p=none dis=none) header.from=gmail.com
+Authentication-Results: smtp.subspace.kernel.org; spf=pass smtp.mailfrom=gmail.com
 Authentication-Results: smtp.subspace.kernel.org;
-	dkim=pass (2048-bit key, unprotected) header.d=arndb.de header.i=@arndb.de header.a=rsa-sha256 header.s=fm2 header.b=Ottftt1B;
-	dkim=pass (2048-bit key, unprotected) header.d=messagingengine.com header.i=@messagingengine.com header.a=rsa-sha256 header.s=fm3 header.b=N71Ui9Lb
-Received: from ams-compute-02.internal (ams-compute-02.internal [10.64.2.62])
-	by mailfhigh.stl.internal (Postfix) with ESMTP id 8E5A97A051B
-	for <linux-wireless@vger.kernel.org>; Tue, 24 Nov 2026 05:54:13 -0500 (EST)
-Received: from ams-imap-03 ([10.64.2.23])
-  by ams-compute-02.internal (MEProxy); Tue, 24 Nov 2026 05:54:13 -0500
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=arndb.de; h=cc
-	:cc:content-transfer-encoding:content-type:content-type:date
-	:date:from:from:in-reply-to:in-reply-to:message-id:mime-version
-	:references:reply-to:subject:subject:to:to; s=fm2; t=1795517645;
-	 x=1795604045; bh=I/zIe5VWqw8+S0/CxPV6Xop+uxmy5kge68ZkVSiQml0=; b=
-	Ottftt1BFIfOuEqCt8XeAUqMffBIJ+4igLf7CXsA/NdF1mCtbMtnpz/AHGyYpAJN
-	rVJM2Blz4cCY65pgR3cOkjgPEFqc1bQC19m80vqns0jLMmg3g/LCv+46LMkuXJyR
-	5DQDef7dDjqWhXK0ENKE+Zlr2+UCR86NlaKNZtykNEvXBwJA5QXAJG3ourCj++yF
-	D7zNhRvV3/AFQbJOZigeAc5dcw20+YivH5p5U/VodPQPDFdRn5Buc8FEg9cKNQSw
-	acfFxxGlqZ75c9BA/SGoXWoL5rjzk+W28V6UWppgQcvxaKgmTG7rCKamo/qGfdW2
-	coUlzQMVACK+f4HOxiBiCw==
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=
-	messagingengine.com; h=cc:cc:content-transfer-encoding
-	:content-type:content-type:date:date:feedback-id:feedback-id
-	:from:from:in-reply-to:in-reply-to:message-id:mime-version
-	:references:reply-to:subject:subject:to:to:x-me-proxy
-	:x-me-sender:x-me-sender:x-sasl-enc; s=fm3; t=1795517645; x=
-	1795604045; bh=I/zIe5VWqw8+S0/CxPV6Xop+uxmy5kge68ZkVSiQml0=; b=N
-	71Ui9LbvWGXzA5LjKPeM1OTlX40g48oBMmsfwmkA/CKb5YGpSMs9N1Zirgeew4i/
-	2bNVmXHEHFaw99558izOsvL7484Q2Xxo4wc0UbfzkMZE59ckgM3FqzBpFK8jNO1I
-	68yWbzhto+tbk9aKSeKOnM3BCVOggCGmTysFXwVHSwfQ9h4wV+5L577j1nNevPQA
-	8ixvAjNiuCVJn47eCHUMA7ubbGR/PFOXNBpmxEaxBYY1HTG3jVDs16GZIb0HdXQm
-	EXpYR9vIEAondYJrXlDMAC6QQUdjdqgcROzlKnzv83AEEpVPfqB6+ISZhevt6CCX
-	vQP6R8LatdG/+2tbRLCZg==
-X-DKIM2-Info: draft=ietf-dkim-dkim2-spec-09;
-	repo=github.com/dkim2wg/interop; date=2026-11-03; sw=lmtpprox;
-	action=sign d=arndb.de a=rsa-sha256;
-DKIM2-Signature: i=1; m=1; t=1795517645; d=arndb.de;
-	mf=PGFybmRAYXJuZGIuZGU+;
-	rt=PGxpbnV4LXdpcmVsZXNzQHZnZXIua2VybmVsLm9yZz4=;
-	s=fm2:rsa-sha256:d91GTqe9Ez7SOlFZVDTzTTnAMNr3jcLJnDbSycrIO0fOA7G
-	w5dpYjpWWZmmRDYnq12yK5S4VOBlagqgoP8qsA6+jM+SyckK5Ef00W8pzihZ1CsA
-	wRiS4P57/UlnDlKKXjobrijn3ThA6F1v9c+tUGc1TuKYmK8F4dF+dCYAxpODzWZE
-	x9nSD7k4aScl6xR9SVV7eUnibQq8qO008j6xF24ZvzpwklOQVXYeUrZHe4ol5Mpw
-	j8ZK5XREvqIGlmvxKT0R2xJU75e5YllFjAixnXVn/gm0A96CSrXxstW3RCZ/1xAf
-	mRSrB5Dtcdom1Xgoz5iXnxIaxTkgXzn8HscK4Vw==;
-X-DKIM2-Info: draft=ietf-dkim-dkim2-spec-09;
-	repo=github.com/dkim2wg/interop; date=2026-11-03; sw=lmtpprox;
-	action=mi-m=1; hc=12;
-	hn=cc,content-transfer-encoding,content-type,date,feedback-id,
-	from,in-reply-to,message-id,mime-version,references,subject,to;
-Message-Instance: m=1; h=sha256:qaUuqfRbwycq3sQmP4C2zJuSQHDasB36WmiAes4gQ5E=:99SLvjv94WBAtXwnVfHBivKj5m04d811A0daBUjI5ao=;
-X-ME-Sender: <xms:yWwFa55tJfFwBKcna9sOv-rxn8Y7Jmm6IGpBxblWTXL4PZOvyAAluA>
-    <xme:yWwFaxt0ojozunMiM_zaH7QfVbzKjf6qIOwLMv3GiBSyUDAfQTpBcb0DQILe_I8hz
-    wLgsixtmtEPbwV6pLRs4j2hqKG2RID9hDU1K_rYYMU8_TEA2tJYc6I>
-X-ME-Proxy-Cause: dmFkZTEXP003WlrYk1tyY402XwYF1VaFe/m4y62XO9fh81zbtJgx9Ny4RQkh2NSS+6DpfX
-    pkzDCkFstx/lBPnZY8i0hFxeXqJf85LQFHjIixebnbGtumOcJrTZ+rMPIolAIX3TbWsIkM
-    2PwaVFyIjLa+NqD+M308chQInLu3EV+vVDISnyhhr4/AsFkC4ExHE7J4wjtIegWmvXZ6In
-    W/xYbWBmwk0XhPNj3Caf0IDs+IcPeliFiBQC2oT4OicmsbSVjOAXJm4vo24uF1iMMtqchT
-    EpcT9FJj4O/m4crJADFfJxrNk1hEqh84+UoSB2IFqy3kW9AgEd/HSAaACZlBNOI2/I85gU
-    C6QwIPqJsnnTFaQcPiG6fI4DHtsUnvCD4wIxGZf8Rt+NfAJLtzTivCsK0/9trq4sUnKU3h
-    kJwfIiq0UGzM3of8atF/b17Z9zD/aR2Y2RfRNcP69fZNZzJ8f4Q4QHNNW64mRZpoWoZgdh
-    /AahtRVpc395rRPG1/OtrXkvJqEYfwmCuPUQwBOXhju77CdGGiyZNPIzOYauqBpd/CYD6u
-    QXNoKr7yokQrIS5r44KuN0r9MusNCg3jIjqw0EG1xYT0CA7VLjOOVyvmOqrcWHHKebNJ35
-    1xaEqLsbk+i0cOECvN/Vfdw/BfuFCGJd9EF+MkojNtmfmM0KAQqvThsPgdLA
-X-ME-Proxy: <xmx:y2wFa1jIiKbOTfqopUdM1aaoyclbSzCDfX6IKQrGkCUOD0voqvi26g>
-    <xmx:y2wFa139Inq-EvuaXM3J9VQmsfKly9Ps5hkO3Od3eQwX8Nxv5SAbPQ>
-    <xmx:y2wFa7iSqsMvURMY6DS_aqub-Jj5jc25AAMW_5GTlxdvfc39AbtlnQ>
-    <xmx:y2wFa2_NPPXHO8bHnrY-VHDlZhA2zZxyUqRQPBbPx15Q6PfNyYli_w>
-    <xmx:zWwFa-CgxWM_YwtnrxP4nF-0w0Xl-Ar2_FP-OzbT-xUn6eGY9w1f_--o>
-Feedback-ID: i56a14606:Fastmail
-Received: by mailuser.ams.internal (Postfix, from userid 501)
-	id 1F24332A009E; Tue, 24 Nov 2026 05:54:01 -0500 (EST)
-X-Mailer: MessagingEngine.com Webmail Interface
+	dkim=pass (2048-bit key) header.d=gmail.com header.i=@gmail.com header.a=rsa-sha256 header.s=20260707 header.b=GV9hfC1A
+Received: by mail-oa1-f46.google.com with SMTP id 586e51a60fabf-4bd734cf350so2310989fac.1
+        for <linux-wireless@vger.kernel.org>; Tue, 24 Nov 2026 04:15:41 -0800 (PST)
+ARC-Seal: i=1; a=rsa-sha256; t=1795522540; cv=none;
+        d=google.com; s=arc-20260327;
+        b=Lpb+eH2IwPm0ThehYHaAqWkQK0fE+unXfu8aDoyvqpQPlVC4Lwr1B0g0pXMaVp6r6u
+         WfCWDCoDoiVF0/a0AbXF3hSAGHcMcRq5ivnyG/xLp3IAYqMBw39rabtMXO2kDBJCH7zw
+         6c2Tf7oCYFkpzue+adv7Pd5A4hg7lfhwfUVzVim944q+W52fap6aitMecvIIJTesiyNe
+         D8nj0nZJd020QzNzekpXz6pP95lLSXmY19WXfGZCPLHyBPfUOz46xe5OLjxjyzSQOXxf
+         HLiqEbNG59BL6lZseGtx/Fa2hJ3k/SSmoO5kt7pOJsRFCwa8FNxULeMListIJ7xH2ciQ
+         hnYg==
+ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=google.com; s=arc-20260327;
+        h=cc:to:subject:message-id:date:from:in-reply-to:references
+         :mime-version:dkim-signature;
+        bh=a4KRBu8O1MrYd6R3hgRbpX15IJA5uu4rOWX5aVGMfOg=;
+        fh=9SKooS7Xh0GP2ZXb44mApRJQgiMw5tYrdvl4iuXS9XY=;
+        b=TkvDQij78VlktLy/69Oz2FvhDB0iubs2ANia64/tyS5u7AJQTmpzyxJUnW+KV7p51B
+         yWrtFJHtIRLP7NSD2HtUEgSSe2DgA0z6s9b3U9CHM1y3VGIHiw6b8EuuUgFY+PAylruP
+         AHeinHCSQAX11CF82UtDw0glYFAzsFON4fOVeNGcCqU48QGQfOqWl0yBaxYfPKa6qRr+
+         T6CmDjXR/ngt+8jzr7/OWmbhwrvTuFNEBhlxtUChsxZUT1eE1qkFxGrghnDA8cU90GQ/
+         UvWAw32VgbFtRd8OK4mecr+41e/NmYDWfgnoOcS6t6csWMeyhriulix6ANwwMVZfVH7j
+         Q9SQ==;
+        darn=vger.kernel.org
+ARC-Authentication-Results: i=1; mx.google.com; arc=none
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+        d=gmail.com; s=20260707; t=1795522540; x=1796127340; darn=vger.kernel.org;
+        h=content-type:cc:to:subject:message-id:date:from:in-reply-to
+         :references:mime-version:from:to:cc:subject:date:message-id:reply-to
+         :content-type;
+        bh=a4KRBu8O1MrYd6R3hgRbpX15IJA5uu4rOWX5aVGMfOg=;
+        b=GV9hfC1ATehJeDyuy1y/EFzduija5SmT4Uqp96QhyNOyhPHgaGQx1VSVxNVSVLN6DY
+         yrK878YgC5QWDRKZBIEyLETPrWmBxYFlwaIpHbZUmO8f42fqN2lMqmpzMp7ezbvgqEty
+         sAxgEgcUqTMeJ6MgY+zvk9KyhN3HlBdakJjHarafmJSO6uYnqt/GnXWKft1nhXKI5auL
+         jUnuwQlbp4dJu99/q4hUyECs8X28+2heHkXW/wSb8VBqDGdoCa7I0iV6iHL9PoWDDUJt
+         arZqZnLvNzl1/lSFuWpQSWDpPC+HbYyQISeckNzQJmnD13Mee3nvRXuBnWGl/Xqzv+qE
+         7NKA==
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+        d=1e100.net; s=20260707; t=1795522540; x=1796127340;
+        h=content-type:cc:to:subject:message-id:date:from:in-reply-to
+         :references:mime-version:x-gm-gg:x-gm-message-state:from:to:cc
+         :subject:date:message-id:reply-to:content-type;
+        bh=a4KRBu8O1MrYd6R3hgRbpX15IJA5uu4rOWX5aVGMfOg=;
+        b=e+yhxAEVGyl+Z90zFDB2RY/QKlPE0DrwWaBU81RGZ6oGSdha7axfba9C+7WIwgEoPa
+         Es3eXayFwkFd+o+I1uTDS20Lh/WNZN+SBPXRiuXc+/G6GDv9XvqMCLpdcp6VBBQViDNP
+         UNVG2JPH5IHEQPDcrRoEYLyduI9qZAjeYfOnuo7DcKJF5uWloYD1lREIjd0dLwUQhzGS
+         6XaTxMyX5mnuBGXwp3pdn5qSMm+uTDr2nS+g7kJ1bSMbYUC/0EJEHP6tfLMi6rwrPim3
+         bnE8miLiSO8gBDBHxPrNwnIu7cETELU+8+TYGfzDmJD2343oOT4hgbni2loiDEA95/OV
+         /ZZw==
+X-Gm-Message-State: APuU4Z94+PdBjSyRv9q6jews4GoIlc13mGWXptRHf5SXls3bCTbWbpOr
+	6B2xt5pkvWtpsnukIN/EJ9R8jMc8KQApStrzNfTetEDUhhjycarKloPJ4ICTS2Tg5fezqMb5WnP
+	2BAGhnIlxavOvwJim/GjYUMyTs8s9jR4=
+X-Gm-Gg: AZFdTZc24fNOUjOphp+BqNAFGWo7w4mpSneDbyE0kZcSP/rfLfLkZWM4ShZWafU3PVq
+	VNrx3BJ7Z7wvb2dF5w7S7Shy+srk+JTQ8r89F8hFJx3kttGh6xFGlWLLRcWSzDU7HVd3x1I0yoT
+	lqQu8uARZSYu5WRDQ9r2KlztWogf2mmZX2MjirSm/WqB3tKUf+AOpzYLx5QtVsfpZMNHJi4DEY+
+	L5mKFCZ5xMxdF+5UHlWmu+uG9FMoK7oTpa5YkICHFBV89E0/fbPOtg53XYcs0pqlcTAv3NybaI3
+	sGDueKEuCUdbUhx51Q+zeIw4IZ6CZOyxeARlGeQ6YpMfqswTThqltxdib+2WtNjvu86/p+5i6FV
+	YjuNEdboRJMzaPFuZzNf01ZPjadZM3xHDC8plw2i/HngZlwT7yfkpdTziONOVJI1fnlOG4cLnbq
+	9RZB45iZ3LuQE7W6BqwzoujpVQ7UCDmUc=
+X-Received: by 2002:a05:6870:1685:b0:4ad:5651:c0b4 with SMTP id
+ 586e51a60fabf-4bc84f1b6bemr12609810fac.48.1795522540016; Tue, 24 Nov 2026
+ 04:15:40 -0800 (PST)
 X-Mailing-List: linux-wireless@vger.kernel.org
 List-Id: <linux-wireless.vger.kernel.org>
 List-Post: <mailto:linux-wireless@vger.kernel.org>
@@ -115,54 +103,46 @@ List-Unsubscribe: <mailto:linux-wireless+unsubscribe@vger.kernel.org>
 List-Owner: <mailto:linux-wireless+owner@vger.kernel.org>
 Precedence: list
 MIME-Version: 1.0
-X-ThreadId: AS3EG-ulzzHR
-Date: Tue, 24 Nov 2026 11:53:40 +0100
-From: "Arnd Bergmann" <arnd@arndb.de>
-To: "Dmitry Torokhov" <dmitry.torokhov@gmail.com>,
- "Bartosz Golaszewski" <brgl@kernel.org>
-Cc: "Arnd Bergmann" <arnd@kernel.org>, "Linus Walleij" <linusw@kernel.org>,
- "Johannes Berg" <johannes@sipsolutions.net>,
- "John Paul Adrian Glaubitz" <glaubitz@physik.fu-berlin.de>,
- "Kent Gibson" <warthog618@gmail.com>,
- "Thomas Bogendoerfer" <tsbogend@alpha.franken.de>,
- linux-kernel@vger.kernel.org, linux-mips@vger.kernel.org,
- linux-sh@vger.kernel.org,
- "open list:GPIO SUBSYSTEM" <linux-gpio@vger.kernel.org>,
- linux-wireless@vger.kernel.org
-Message-Id: <7e04f3d1-df93-459c-85c5-9e57dc1c3cde@app.fastmail.com>
-In-Reply-To: <2f25009cbd67a8ee7b417f12b35374b1@gmail.com>
-References: <20261123085723.156933-1-arnd@kernel.org>
- <tdc6h325jthjgyik2ne4oistkm563maoc2cpnffqu7hh34tpl7@oscripzv4dwq>
- <qvmy7iaxc7cjy2gkajqkr5ma6b4lwxz5ff64a5zsqrgewkxodr@odbjlv5x3hix>
- <8296a5c2-0aa2-4fc7-b65b-9d336bc4dff6@app.fastmail.com>
- <7dpg3x3gkypkznzhuetjsqmk5fhqwuwkc6kupbs52zqh5mibgx@fjow6eodw4pf>
- <2f25009cbd67a8ee7b417f12b35374b1@gmail.com>
-Subject: Re: [PATCH 0/2 v8] gpiolib: finish the legacy cleanup
-Content-Type: text/plain
-Content-Transfer-Encoding: 7bit
+References: <20261120113116.153232-1-hjf3108@gmail.com> <20261120113116.153232-2-hjf3108@gmail.com>
+ <1f9ad0fcc61446fb8ce49ef98d5292e8@realtek.com> <CABOQOSV-vbUazUTwb_Lt11Wv3-47P91OswOsH6r2=ngxOUcAKA@mail.gmail.com>
+ <ecad59dfc02941058452cad1889523ce@realtek.com>
+In-Reply-To: <ecad59dfc02941058452cad1889523ce@realtek.com>
+From: Jie Feng <hjf3108@gmail.com>
+Date: Tue, 24 Nov 2026 20:15:03 +0800
+X-Gm-Features: Aa3M54rumIugBHapPMkYtKNTcW3pXPGQaBW-5e4HlxHknoEWfQ-UL4AU1PcySf8
+Message-ID: <CABOQOSVEG0+WvX04swuVAbUFG=Ga0HTcBJjzpaXB_eKZRwE35g@mail.gmail.com>
+Subject: Re: [PATCH rtw-next v3 1/5] wifi: rtlwifi: rc: start no BA session
+ for QoS null frames
+To: Ping-Ke Shih <pkshih@realtek.com>
+Cc: "linux-wireless@vger.kernel.org" <linux-wireless@vger.kernel.org>, 
+	Bitterblue Smith <rtl8821cerfe2@gmail.com>, 
+	"linux-kernel@vger.kernel.org" <linux-kernel@vger.kernel.org>
+Content-Type: text/plain; charset="UTF-8"
 
-On Tue, Nov 24, 2026, at 02:10, Dmitry Torokhov wrote:
-> Hi Bartosz,
+On Tue, 24 Nov 2026 at 08:59, Ping-Ke Shih <pkshih@realtek.com> wrote:
 >
-> On Mon, Nov 23, 2026 at 04:41:32PM +0100, Bartosz Golaszewski wrote:
->> Can I apply v7 and provide it to the SH maintainers on an immutable
->> branch?
+> Jie Feng <hjf3108@gmail.com> wrote:
+> > On Sun, 22 Nov 2026 at 11:28, Ping-Ke Shih <pkshih@realtek.com> wrote:
+> > >
+> > >
+> > > Ho Jie Feng <hjf3108@gmail.com> wrote:
+> > > > rtl_tx_status() starts a TX BA session for any QoS null data frames,
+> > > > so these polls start a session even though they do not carry data.
+> > > > That costs an ADDBA exchange.
+> > >
+> > > Will ieee80211_is_data_qos() be more suitable?
+> >
+> > ieee80211_is_data_qos() only tests the QoS bit (0x80), which is also set
+> > for QoS null (0xC0), so the BA session would still be started.
 >
-> BTW, I have the soc_button_array rework (converting it to software nodes
-> and dropping "select GPIOLIB_LEGACY") on an immutable branch based on
-> v7.4-rc2:
->
-> 	git://git.kernel.org/pub/scm/linux/kernel/git/dtor/input.git 
-> ib/7.4-rc2-soc-button-array
+> How about ieee80211_is_data_qos() && ieee80211_is_data_present() ?
 
-Nice to see that this is ready.
+ieee80211_is_data_qos() is already checked in rtl_tx_status():
+https://elixir.bootlin.com/linux/v7.4-rc1/source/drivers/net/wireless/realtek/rtlwifi/rc.c#L234
 
-> I recommend pulling it into the gpio tree before applying Arnd's work so
-> that x86 builds with INPUT_SOC_BUTTON_ARRAY enabled no longer pull in
-> CONFIG_GPIOLIB_LEGACY either.
-
-I don't think the order matters, my patch 1/2 just won't have an
-effect on configurations that enable INPUT_SOC_BUTTON_ARRAY until your
-patch is merged.
-
-     Arnd
+> >
+> > > >
+> > > > Check ieee80211_is_data_present() instead, so only frames that carry
+> > > > data start a BA session.
+> > >
+> > >
