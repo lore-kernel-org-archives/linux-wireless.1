@@ -1,79 +1,51 @@
-Authentication-Results: smtp.subspace.kernel.org; arc=pass header.oldest-pass=0 smtp.remote-ip=100.103.45.18
-ARC-Seal: i=2; d=subspace.kernel.org; s=arc20261015; a=rsa-sha256; cv=pass;
-	t=1795546769;
-	b=kfe/MTZsch50oY8S31vr4S0Dh6rTvhuM7jsQbHqIylUmpJzZa8wwRq7x1KTMxAhm2XRX
-	 3EHhlpQfCvLSpbgtaB25/wFp8LyHx8Yo37r4zLgUvgoXgUfgszFOnBszQ0yv/tXRlsa+M
-	 yx2S3NW6PXE8qbQZbrD7fyTPyCCOhwjcp6WravbRQF/XOgKiD3H7l+KdVEjD5caj1xZXa
-	 K2KXyoxsj+1eQH622oU3dtgTh+v0eI29Co52RJAEA9PcUMnCtQtZ7WVCShSet8hVS1JmV
-	 Gjiqmp7uCLKWizXswJ3llzz2TrKvv1jZ5abqODS5S/4fjMXnKt3SyIG7XxctLsqBaNw==
-ARC-Message-Signature: i=2; d=subspace.kernel.org; s=arc20261015;
-	a=rsa-sha256; c=relaxed/relaxed; t=1795546769;
-	h=Received:DKIM-Signature:Received:From:Date:Subject:MIME-Version:
-	 Content-Type:Message-Id:X-B4-Tracking:X-Change-ID:To:Cc:X-Mailer:
-	 X-Developer-Signature:X-Developer-Key:X-Endpoint-Received:
-	 X-Original-From:Reply-To:Content-Transfer-Encoding;
-	bh=HaK7GaUzVRzqUau5lX+fa82B7WYrvdJzpCw0apArCnw=;
-	b=CbR404gYESH62oAPDFtP46L8fNz4YeIEGxQNpY+jRx/pa02oaxsXL6HqrzJsqtH0jQuB
-	 f67VDG9qVTFb8sFDaI+n3G8vEQOdK7LVEMLR7R/FJXSfPhwDeyHg4ap4DjaLsyd/akNJQ
-	 ZDhlmmZaQFTx9wn/U0MvYT+HX4hiob427+P+78ppXgiEIefL9nI0pFBa2+JbWa6h7tLWR
-	 RhjSTRHjcYZ6E+f3cBMISrNMNDBsD8UR4bCbe876l1yfQ8OL7UBDTZBoilXgt0URQyEjO
-	 W45JVZOeUwLJ1ST/OZZzmHprgDbOjMbA8qsuMzs0p2lvNrMFIm/YGsNsz1Na0WDGbPw==
-ARC-Authentication-Results: i=2; smtp.subspace.kernel.org; 
-	dkim=pass header.d=kernel.org header.i=@kernel.org header.a=rsa-sha256 header.s=k20260515 header.b=dmxBGFVi;
-	arc=pass header.oldest-pass=0 smtp.remote-ip=100.103.45.18
-Received: from smtp.kernel.org (quasi.space.kernel.org [100.103.45.18])
-	(using TLSv1.3 with cipher TLS_AES_256_GCM_SHA384 (256/256 bits)
-	 key-exchange X25519 server-signature ECDSA (prime256v1))
-	(No client certificate requested)
-	by smtp.subspace.kernel.org (Postfix) with ESMTPS id 03F37606A323
-	for <linux-wireless@vger.kernel.org>; Tue, 24 Nov 2026 18:59:28 +0000 (UTC)
-Authentication-Results: smtp.subspace.kernel.org;
-	dkim=pass (2048-bit key) header.d=kernel.org header.i=@kernel.org header.a=rsa-sha256 header.s=k20260515 header.b=dmxBGFVi
-Authentication-Results: smtp.kernel.org; arc=none smtp.remote-ip=100.80.115.77
-ARC-Seal: i=1; d=kernel.org; s=arc20260519; a=rsa-sha256; cv=none;
-	t=1795546768;
-	b=A7sCCMz7c4a5QG35OsyTCJU1SPlwr7DSUUdeZjvISE5eWHC3ZpE2P8G9pG39GbZK2Kib
-	 0Eez9lSMY+gvyEwDJqgp7pccHx5Pd+Kf+tJrOcwXM7BgYiujhAVY5gmY8xtDZtJ+S+mlw
-	 GuPB7f2lBCbaz+VVMkQm0lGcqtGAohaap749MEBFCvOGm6xhbKiufE4HHN/LdPPQEpLEv
-	 wHXON/pThXt57tQHfIz+4kt5cLIC4MWgdL86Tg+CAX85FEhDDiYO1Q6hh7BR0k90O2D6a
-	 gSlmMl2bmcqZEoZiRL+vcTBV7to7L7GJXkpT+ja3krfbqYWvhfi5PdCJVRZ86AfGoAA==
-ARC-Message-Signature: i=1; d=kernel.org; s=arc20260519; a=rsa-sha256;
-	c=relaxed/relaxed; t=1795546768;
-	h=DKIM-Signature:Received:From:Date:Subject:MIME-Version:Content-Type:
-	 Message-Id:X-B4-Tracking:X-Change-ID:To:Cc:X-Mailer:
-	 X-Developer-Signature:X-Developer-Key:X-Endpoint-Received:
-	 X-Original-From:Reply-To:Content-Transfer-Encoding;
-	bh=HaK7GaUzVRzqUau5lX+fa82B7WYrvdJzpCw0apArCnw=;
-	b=hTIX1B1z30d0pQmrmjIunUG0ngMwu7Kp0kOLjZeCaqbSzVC/FtVJjqSF48w7RzbJb/Te
-	 1+W/DRXI4S1mLzntkujH/PUdxKgROw2uyLHzxE0Im5mBEmPHl3dd3uHl8e/Jj4mwf0btT
-	 JM/6kWNakZ7VN36RI6N0pCbKCnmNY97i7CWHPmQOvZOws/04ilCxVALsCIWKK9WXN3WYp
-	 IQyw5KZlC4wwNIqo04Ds0DPFDsGAUYMO5mt9wAIEsO0IxY2JHUGTDtff1AQAsY56xd3Jw
-	 QJDri9AeCRY3mJAylRETRXIGnXdR/0Q/bTi7q1rRsnz+Ilhuws32cDQecy9wmJ/WNIg==
-ARC-Authentication-Results: i=1; smtp.kernel.org; 
-	arc=none smtp.remote-ip=100.80.115.77
-Received: from lkml.kernel.org (nexus.subspace.kernel.org [100.80.115.77])
+Authentication-Results: smtp.subspace.kernel.org; arc=none smtp.remote-ip=34.202.193.197
+ARC-Seal: i=1; d=subspace.kernel.org; s=arc20261015; a=rsa-sha256; cv=none;
+	t=1795547632;
+	b=mqZ+YxhE87RrG1rAdkAUY/Lta8HFGR1JbRtpWm8RINXaH1s98tQ3161cZBpIviLDrjMG
+	 FPKcxIDyJrOdgGuLOje5pJoxMEiRKSSkrrd2caKE/0/YA9Y7OrObqPylNbgfMm9O6hQl6
+	 HFyNPkArStB6rFNblLFERnBzQHD+Gr1vWGp3uCr42781WCHfs3k983ZoHLFSHOI9ifJK4
+	 Txf245GJEiyWo+B241BQBQ+yMyyudCUnUIFtENC49jvR8ACqgbIJD7L+WPcZcM3HPfUw8
+	 ekME5fn8lbNRfdIHaCe0hT3k/RaCF1i6pwpPlJfgf4yDKXP2AWm+3xXi1p2ZOXJPBpg==
+ARC-Message-Signature: i=1; d=subspace.kernel.org; s=arc20261015;
+	a=rsa-sha256; c=relaxed/relaxed; t=1795547632;
+	h=DMARC-Filter:DKIM-Signature:DKIM-Signature:Feedback-ID:
+	 X-Pm-Original-To:Received:Message-ID:Date:MIME-Version:User-Agent:
+	 Subject:To:References:Content-Language:From:In-Reply-To:Content-Type:
+	 Content-Transfer-Encoding;
+	bh=nP/bTkY2+nX66KpAEykflHx9e11t3JGPeCdG9UHqwrk=;
+	b=vxtsgN3tUdTLjMY9eLokhzUU5NxhWp3/BTTdwRlM8o4s6xIN2S0soS8jlVyagKEAxuRh
+	 DvEdW8NnesINt2ZuVu0Zwbz36a4mJqcNSCg9yqVuKQOjzpMkAlMstvAUAg3WicDDlMLS8
+	 02Gm9nvNZmuUymdtLC9smhUTywdZpIlp1yIu5iy2Gp/t8IJ3+s1lrgUlM+G48HbICJxzr
+	 /ReIOxONFi46eKmwh9YMSKxQlr7d+gVlZxQOb2DdZMsDaM550bhnqidJ0NhV2dc/zvaAI
+	 xGHoT3UMk+7pokMJ1jKkU0FlgxgEZNIAJJ4wgFBWANM1TPP+lGJTs6eziASztsz8mHQ==
+ARC-Authentication-Results: i=1; smtp.subspace.kernel.org; 
+	dmarc=pass header.from=jimmycushnie.com;
+	spf=pass smtp.mailfrom=jimmycushnie.com;
+	dkim=pass header.d=jimmycushnie.com header.i=@jimmycushnie.com header.a=rsa-sha256 header.s=purelymail2 header.b=F+noWC8V;
+	dkim=pass header.d=purelymail.com header.i=@purelymail.com header.a=rsa-sha256 header.s=purelymail2 header.b="W/fGayg6";
+	arc=none smtp.remote-ip=34.202.193.197
+Received: from sendmail.purelymail.com (sendmail.purelymail.com [34.202.193.197])
 	(using TLSv1.3 with cipher TLS_AES_256_GCM_SHA384 (256/256 bits)
 	 key-exchange X25519 server-signature ECDSA (prime256v1) server-digest SHA256)
 	(No client certificate requested)
-	by smtp.kernel.org (Postfix) with ESMTPS id C68BF1F000D3;
-	Tue, 24 Nov 2026 18:59:19 +0000 (UTC)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=kernel.org;
-	s=k20260515; t=1795546768;
-	bh=HaK7GaUzVRzqUau5lX+fa82B7WYrvdJzpCw0apArCnw=;
-	h=From:Date:Subject:To:Cc:Reply-To;
-	b=dmxBGFVilp+z5Tw4kVBvHzm072YpJGXz59d3ot9GGrdDe9aMHuI0iPN/PKZS5gyIm
-	 jAPc45f4xDLyI5+FRNyt+H2QUssThifEXCackBKF4CY8sSmq+1XsoI0qRB6lqpiCjp
-	 uAKHphvHx0l4qWGz95YUHFf3qFdiklk+BvHG5hVM6XCnA5rtGWL/iIUqguW22WmsCe
-	 ZzuwSpjVZH8p2ujDTfQPuh9tvaAkRDaNDn9vWA2KOm7RN9QwkiWkRjKt+1fCmTWjpn
-	 zxGKnNGLBb6dpzFHk/XbHFXI999BHsfa2i6DVxlpSQQaK5ie77fco62N79SaH1jDgM
-	 /VzlykTWBBDLA==
-Received: from nexus.subspace.kernel.org (localhost [IPv6:::1])
-	by lkml.kernel.org (Postfix) with ESMTP id 253364CB45;
-	Tue, 24 Nov 2026 18:59:19 +0000 (UTC)
-From: Ofir Hadad via B4 Relay <devnull+ofear123.gmail.com@kernel.org>
-Date: Tue, 24 Nov 2026 20:59:19 +0200
-Subject: [PATCH RFC rtw-next] wifi: rtw89: coex: share air time with BT
- A2DP on 5GHz (shared antenna)
+	by smtp.subspace.kernel.org (Postfix) with ESMTPS id 6270D606A31E
+	for <linux-wireless@vger.kernel.org>; Tue, 24 Nov 2026 19:13:51 +0000 (UTC)
+DMARC-Filter: OpenDMARC Filter v1.4.2 smtp.subspace.kernel.org 6270D606A31E
+Authentication-Results: smtp.subspace.kernel.org; dmarc=pass (p=reject dis=none) header.from=jimmycushnie.com
+Authentication-Results: smtp.subspace.kernel.org; spf=pass smtp.mailfrom=jimmycushnie.com
+Authentication-Results: smtp.subspace.kernel.org;
+	dkim=pass (2048-bit key, unprotected) header.d=jimmycushnie.com header.i=@jimmycushnie.com header.a=rsa-sha256 header.s=purelymail2 header.b=F+noWC8V;
+	dkim=pass (2048-bit key, unprotected) header.d=purelymail.com header.i=@purelymail.com header.a=rsa-sha256 header.s=purelymail2 header.b=W/fGayg6
+DKIM-Signature: a=rsa-sha256; b=F+noWC8VeRt+G5N+rdLPkiflexSJ7AS6v5Tk/aM11jYi1rZcgn76zNa24vy/Ybj+QflWX9x2IwxTCYidyP4MitOkcJ+XPUHPtyEXDfHS6Kdg6tCkE6pgeT0emRTIowL1EMn8H1XvDKVQneYd7Io7WffIdz23/xgNkPUCoA1aahowXyO9YTylkAo6FNOQ1/8m2YSjfBODl12/bGO2a425WN6ihzkUeiUdystZcEWaOK/cnkI7md7lWb2YT9ibd8QhnbrHUhFPs/ebKq/+Po3NikZcwDW5nTXbgkyt2rWnWu91b26VGuvag00WhvtR2hAm1UbOcolj46etNf+I5kghmg==; s=purelymail2; d=jimmycushnie.com; v=1; bh=I8HR++gPZGG7wBhmKtZA2CK5TLrxhhF0aRESlUD7ucU=; h=Received:Message-ID:Date:Subject:To:From;
+DKIM-Signature: a=rsa-sha256; b=W/fGayg6WudPCH93Fb2QSFerjHBUQaL0nkI9sBdt5+LvCbifFY/hsI8PCgGRi7t33EWZUZy2uiEcBQmw08UzTQPTYde8CP0vG3cmdPZBmXFlRkRkhbl2fNOPMuqelMXub6IZoVuMei4f164/aAA6T2Md7D2b858pQVvJJCVkmgrz0W82Fjq4ySLvK2oFC2+EuRmYytISk4rpktvwdtsyP1EcVXlHbReLKgXaBB9ipD4SYD7lu7M4mE5Zx2DtVdLXNMy7sPws1D9Vf+yhW5dp+KyidqqKI2008wd/mUAI69YJVBhbS0Yppvm+DKSC1EtolBKwQhcYF+P1BjpMcTqzrQ==; s=purelymail2; d=purelymail.com; v=1; bh=I8HR++gPZGG7wBhmKtZA2CK5TLrxhhF0aRESlUD7ucU=; h=Feedback-ID:Received:Message-ID:Date:Subject:To:From;
+Feedback-ID: 708593:36671:null:purelymail
+X-Pm-Original-To: linux-wireless@vger.kernel.org
+Authentication-Results: purelymail.com; auth=pass
+Received: by smtp.purelymail.com (Purelymail SMTP) with ESMTPSA id -1872370940;
+          (version=TLSv1.3 cipher=TLS_AES_256_GCM_SHA384);
+          Tue, 24 Nov 2026 19:12:57 +0000 (UTC)
+Message-ID: <7530cda9-06c9-41af-885b-238eb20a66f2@jimmycushnie.com>
+Date: Tue, 24 Nov 2026 14:12:57 -0500
 X-Mailing-List: linux-wireless@vger.kernel.org
 List-Id: <linux-wireless.vger.kernel.org>
 List-Post: <mailto:linux-wireless@vger.kernel.org>
@@ -83,174 +55,64 @@ List-Unsubscribe: <mailto:linux-wireless+unsubscribe@vger.kernel.org>
 List-Owner: <mailto:linux-wireless+owner@vger.kernel.org>
 Precedence: list
 MIME-Version: 1.0
-Content-Type: text/plain; charset="utf-8"
-Message-Id: <20261124-rtw-next-v1-1-8f720c5cc759@gmail.com>
-X-B4-Tracking: v=1; b=H4sIAAAAAAAC/6tWKk4tykwtVrJSqFYqSi3LLM7MzwNyDHUUlJIzE
- vPSU3UzU4B8JSMDIzNDQyMT3aKSct281IoSXRNDE0PDpJQ081QTcyWg8oKi1LTMCrBR0UpBbs4
- gMZhipViIguLSpKzU5BKQgUq1tQDE09f6fQAAAA==
-X-Change-ID: 20261124-rtw-next-41411bdf7e47
-To: Ping-Ke Shih <pkshih@realtek.com>
-Cc: linux-wireless@vger.kernel.org, Ofir Hadad <ofear123@gmail.com>
-X-Mailer: b4 0.16.0
-X-Developer-Signature: v=1; a=openpgp-sha256; l=5127; i=ofear123@gmail.com;
- h=from:subject:message-id;
- bh=NNgYfZ9g/mREBsGWcmLCTnJ+55Db0Jgecf0O5lR1Yoc=;
- b=owGbwMvMwCXGFdcreWLOL3/G02pJDNms99qMdVfvDrqf0Vh6M+S0Q9RSh7Msj1mOWqhx1Kd8T
- WNVmXCoo5SFQYyLQVZMkSXCYv+PxR+fn/75dZYUzBxWJpAhDFycAjCRcAmG/4X3ZzYf/WV//3hy
- JuP5Gx0JOWuOJK34LZ/67LJC1M8EznaG/75nFkw/zbFfJze6pPVmpb7yxIB3ebprbCY8XrgvV8j
- NhhMA
-X-Developer-Key: i=ofear123@gmail.com; a=openpgp;
- fpr=5838BFF8A3F1E7CBF9F59A1A0A5E8D19C89CFA4F
-X-Endpoint-Received: by B4 Relay for ofear123@gmail.com/default with
- auth_id=1628
-X-Original-From: Ofir Hadad <ofear123@gmail.com>
-Reply-To: ofear123@gmail.com
+User-Agent: Mozilla Thunderbird
+Subject: Re: rtw89: 8922ae: ~80 Mbps TCP throughput vs ~600 Mbps on Windows
+ with the same hardware
+To: Ping-Ke Shih <pkshih@realtek.com>,
+ "linux-wireless@vger.kernel.org" <linux-wireless@vger.kernel.org>
+References: <a98a6666-1499-433f-8c3f-d7277224b334@jimmycushnie.com>
+ <c4513d04819e4b52b855e5a21c67b8d2@realtek.com>
+Content-Language: en-US
+From: Jimmy <kernel@jimmycushnie.com>
+In-Reply-To: <c4513d04819e4b52b855e5a21c67b8d2@realtek.com>
+Content-Type: text/plain; charset=UTF-8; format=flowed
 Content-Transfer-Encoding: 7bit
 
-From: Ofir Hadad <ofear123@gmail.com>
+Ping-Ke Shih <pkshih@realtek.com> wrote:
+ > Jimmy <kernel@jimmycushnie.com> wrote:
+ >> I have a RTL8922AE which only gets 60-120 Mbps TCP throughput on
+ >> Linux, even though the link reports 1200.9 MBit/s HE-MCS 11 NSS 2 in
+ >> both directions with a strong signal.
+ >
+ > It looks like PHY rate is normal. Please capture air packets and
+ > compare the difference between Windows and Linux.
 
-On RTL8852CE with a shared WiFi/BT antenna (ant_iso 10 dB, seen on a
-Lenovo Legion 7 16IRX9, subsystem 17aa:5852), Bluetooth A2DP audio
-drops out for 100-600 ms every few seconds while WiFi downloads on
-5 GHz. Video streaming triggers it: the player fetches a chunk at
-3-8 MB/s about every 4 seconds.
+Thank you for the debugging advice. I captured air traffic with my
+macbook's sniffer tool during a speed test on the PC, once on Linux and
+once on Windows. PHY rates look the same on both: data frames are at
+HE-MCS 10/11 (1080-1201 Mb/s), and Linux actually has fewer retries
+(0.2% of frames vs 1.6% on Windows).
 
-_action_wl_5g() always selects BTC_ANT_FDD + BTC_CXP_OFF_EQ0. That
-keeps the WiFi grant forced high (GNT_WL SW_HI), so BT never gets a
-protected slot. btc_info during a download shows gnt_wl:SW-1,
-tdma type:0, and bt_polut_wl_tx rising (0 -> 7 in 4 s).
+The main difference I could find is that Windows uses BlockAck way more
+than Linux:
 
-Add an opt-in module parameter, btc_5g_a2dp_tdma. When it is set,
-the chip is RTL8852C, the antenna is shared, A2DP is connected and
-WiFi is a single station, use hardware PTA (BTC_ANT_W25G) and the
-same TDMA policies the 2.4 GHz A2DP path uses:
-  - WiFi busy:              PAUTO_TDW1B1 (W1 20 ms, B1 max)
-  - WiFi busy + BT inquiry: PAUTO2_TD3050
-  - WiFi idle:              AUTO_TD20B1
-Other states (scan, connecting) keep the old FDD path. The idle case
-matters: gating on "busy" alone was tested and failed, because each
-video burst starts before state_map turns busy.
+                                   Linux     Windows
+   BlockAck frames sent by PC      0         30332
+   BlockAck frames sent by AP      0         16455
+   PC data MPDUs per A-MPDU        1.0       4.1
+   Normal ACKs sent to PC          52704     3875
 
-Measured on the laptop above (Ubuntu 7.0.0-43, same logic on the
-Ubuntu tree), BT ACK gaps while streaming A2DP silence:
-  - stock, full download:        8 gaps >150 ms per 15 s, max 422 ms
-  - patched, full download 60 s: 1 gap  >150 ms,          max 165 ms
-  - patched, 1.5 s bursts every 4 s, 60 s: 2 gaps >150 ms, max 178 ms
-The user reports the audible dropouts are gone.
-
-This version is ported to rtw-next and compile-tested only; the
-runtime numbers come from the same change on the Ubuntu 7.0 tree.
-Sent as RFC: is an opt-in parameter acceptable, or should this be
-the default for shared-antenna RTL8852C, or is it better solved in
-firmware?
-
-Signed-off-by: Ofir Hadad <ofear123@gmail.com>
----
-RFC: the patch adds an opt-in module parameter. Questions for the
-maintainer are at the end of the commit message.
-
-Runtime tests were done with the same logic on the Ubuntu 7.0.0-43
-tree (Lenovo Legion 7 16IRX9, RTL8852CE 17aa:5852, WiFi fw
-0.27.129.4). This rtw-next version is compile-tested only.
----
- drivers/net/wireless/realtek/rtw89/coex.c | 54 +++++++++++++++++++++++++++++++
- 1 file changed, 54 insertions(+)
-
-diff --git a/drivers/net/wireless/realtek/rtw89/coex.c b/drivers/net/wireless/realtek/rtw89/coex.c
-index 751ad0c..c50da67 100644
---- a/drivers/net/wireless/realtek/rtw89/coex.c
-+++ b/drivers/net/wireless/realtek/rtw89/coex.c
-@@ -11,6 +11,11 @@
- #include "ps.h"
- #include "reg.h"
- 
-+static bool rtw89_btc_5g_a2dp_tdma;
-+module_param_named(btc_5g_a2dp_tdma, rtw89_btc_5g_a2dp_tdma, bool, 0644);
-+MODULE_PARM_DESC(btc_5g_a2dp_tdma,
-+		 "Share air time with BT A2DP when WiFi is on 5GHz with a shared antenna (RTL8852C)");
-+
- #define RTW89_COEX_VERSION 0x09180213
- #define FCXDEF_STEP 50 /* MUST <= FCXMAX_STEP and match with wl fw*/
- #define BTC_E2G_LIMIT_DEF 80
-@@ -1017,6 +1022,7 @@ enum btc_reason_and_action {
- 	BTC_ACT_WL_2G_GO,
- 	BTC_ACT_WL_2G_GC,
- 	BTC_ACT_WL_2G_NAN,
-+	BTC_ACT_WL_5G_A2DP,
- 	BTC_ACT_LAST,
- 	BTC_ACT_NUM = BTC_ACT_LAST - BTC_ACT_NONE,
- 	BTC_ACT_EXT_BIT = BIT(14),
-@@ -6474,8 +6480,55 @@ static void _action_bt_a2dp_pan_hid(struct rtw89_dev *rtwdev)
- 	}
- }
- 
-+static bool _wl_is_station_only(struct rtw89_btc *btc)
-+{
-+	return btc->cx.wl.role_info.role_map[RTW89_MAC_0] ==
-+	       BIT(RTW89_WIFI_ROLE_STATION);
-+}
-+
-+static bool _need_5g_a2dp_tdma(struct rtw89_dev *rtwdev)
-+{
-+	struct rtw89_btc *btc = &rtwdev->btc;
-+
-+	return rtw89_btc_5g_a2dp_tdma &&
-+	       rtwdev->chip->chip_id == RTL8852C &&
-+	       btc->ant_type == BTC_ANT_SHARED &&
-+	       btc->cx.bt0.link_info.a2dp_desc.exist &&
-+	       _wl_is_station_only(btc);
-+}
-+
-+static bool _action_wl_5g_a2dp_tdma(struct rtw89_dev *rtwdev)
-+{
-+	struct rtw89_btc *btc = &rtwdev->btc;
-+	struct rtw89_btc_dm *dm = &btc->dm;
-+	u16 policy;
-+
-+	switch (btc->cx.state_map) {
-+	case BTC_WBUSY_BNOSCAN:
-+		policy = BTC_CXP_PAUTO_TDW1B1;
-+		break;
-+	case BTC_WBUSY_BSCAN:
-+		policy = BTC_CXP_PAUTO2_TD3050;
-+		break;
-+	case BTC_WIDLE:
-+		policy = BTC_CXP_AUTO_TD20B1;
-+		break;
-+	default:
-+		return false;
-+	}
-+
-+	_set_ant(rtwdev, NM_EXEC, BTC_PHY_ALL, BTC_ANT_W25G);
-+	dm->slot_dur[CXST_W1] = 20;
-+	dm->slot_dur[CXST_B1] = BTC_B1_MAX;
-+	_set_policy(rtwdev, policy, BTC_ACT_WL_5G_A2DP);
-+	return true;
-+}
-+
- static void _action_wl_5g(struct rtw89_dev *rtwdev)
- {
-+	if (_need_5g_a2dp_tdma(rtwdev) && _action_wl_5g_a2dp_tdma(rtwdev))
-+		return;
-+
- 	_set_ant(rtwdev, NM_EXEC, BTC_PHY_ALL, BTC_ANT_FDD);
- 	_set_policy(rtwdev, BTC_CXP_OFF_EQ0, BTC_ACT_WL_5G);
- }
-@@ -11287,6 +11340,7 @@ static const char *steps_to_str(u16 step)
- 	CASE_BTC_ACT_STR(WL_2G_GO);
- 	CASE_BTC_ACT_STR(WL_2G_GC);
- 	CASE_BTC_ACT_STR(WL_2G_NAN);
-+	CASE_BTC_ACT_STR(WL_5G_A2DP);
- 
- 	CASE_BTC_POLICY_STR(OFF_BT);
- 	CASE_BTC_POLICY_STR(OFF_WL);
-
----
-base-commit: 8b29fd95e2d3cb80564eb7cb34248b844422ba1e
-change-id: 20261124-rtw-next-41411bdf7e47
-
-Best regards,
---  
-Ofir Hadad <ofear123@gmail.com>
+I can send you the pcap files privately if you'd like to look at them.
 
 
+ >> Things I already tried:
+ >> - iw power_save off
+ >
+ > I think this can affect throughput significantly. Please use iw get
+ > to confirm again.
+
+Confirmed: `iw dev wlan0 get power_save` prints `Power save: off`, even
+after rebooting.
+
+ >> - rtw89_pci disable_aspm_l1=y disable_aspm_l1ss=y disable_clkreq=y,
+ >>     rtw89_core disable_ps_mode=y (confirmed active in sysfs)
+ >
+ > This should be added into /etc/modprobe.d/, and cold reboot to take
+ > effect. (Though I think this doesn't affect throughput too much)
+
+Yes, they're in /etc/modprobe.d/70-rtw89.conf. I did a cold boot (PSU
+switched off) and confirmed the values under
+/sys/module/rtw89_{pci,core}/parameters/ before testing. As you
+expected, they made no noticeable difference to throughput.
+
+Jimmy
