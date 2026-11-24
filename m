@@ -1,59 +1,59 @@
 Authentication-Results: smtp.subspace.kernel.org; arc=none smtp.remote-ip=46.4.11.11
 ARC-Seal: i=1; d=subspace.kernel.org; s=arc20261015; a=rsa-sha256; cv=none;
 	t=1795509796;
-	b=lSlIiMgbVf7YDz0e7atxV/cJpPGcPQpXcyUJwz5pPTTH0jY4FjOuQyHDyc28djSHmHlA
-	 ESc0NguYrhTfGa8xnHZRxKHP/ala826IolqelLHX8Zob+t5v0DYLUSY0viNJ4tHbFXxCG
-	 7voYjkAOSTkfe1yu+CD/9aLPyJlCrQw+Nt4MHTRTCcfmf70vnmb5bCIVYDTuD/trNh7ro
-	 zjNwoGm0fm66joBHNeB/rTyQIxjqs5Jh12njdbSR6T7Lft9tVOTYaaMeWb/hnBM9MgaMq
-	 OiwXjqopKfiWhjjV5KWwaxNgpT9P/kv712LHxdfWNRL7XIT5zecVGgG9wMIpxYUgOJw==
+	b=fd0jYZkoL5ud28hEWqZF3RGFSglaTqCegmlC+l08v0ysksskiYF5Ce4AssrxlkGJeAAd
+	 MMcW8ejjoXaBpCqa4jvsP3oWiyM+v3bVfRy1ltYdVVax+0RomMAz8zadnOIJiiylr06Z5
+	 vD9EXzvwk4JAbynz2ivb1dsQ7FjMCqSc6r4AZQVcLQvUyPfd6qC9kvy/SHleOaeIBSENX
+	 VvZ8Y6ypoctaUyL/Vl93LH6MAzU658jbiwKK/1z6ElOR68PtH37PtHVisvTHSgbV/mFM7
+	 SOx2k1XXkBq6Mx2EcIJSwCR+69jr+OoCMswimzjBthgdhQQq8LrQ6p2o+5j21WWV1ow==
 ARC-Message-Signature: i=1; d=subspace.kernel.org; s=arc20261015;
 	a=rsa-sha256; c=relaxed/relaxed; t=1795509796;
 	h=DMARC-Filter:DKIM-Signature:Received:From:To:Subject:Date:Message-ID:
 	 X-Mailer:In-Reply-To:References:MIME-Version:
 	 Content-Transfer-Encoding;
-	bh=nTmDO+S1XCzLKvPZtmhD0OJJUwRfXV8q/c37pQmQS8Y=;
-	b=LW7+ALaBGVTXfq2Vd/cKpe6xKAzCK8v9Q0B8u+OMVMZkF7wnVptZM/JFTkYfswzVeVPt
-	 QGGND14UkLJZZGtQ7ia2S2GVKV7pE83goMbmqdvyDvvssmBmL1cjf8QueB2QZ5rg91FMi
-	 vubKYg2Nkm/F5o1bago+soU6xNdt/ciXBnawAe7rFhB5Gbn/nS8KgebevBsgMvbVBQEnJ
-	 HXoJg5npb5L8D8cZj95HE1ZtdWuji80aey+i7qMAGHp+tbQLDnKI/obOZgI4DCFOR7uJO
-	 Gff2gvANsfK7X+5VKUuKypumOI1QmxyEvlAOpHdA9BJujMB1YRuyRITxH1RIALF8aKA==
+	bh=IOXlHeajwoUYisXlc2rU4eIAtHEqspD4H0c9oZwZaoo=;
+	b=ziFg848slmSYahmUby4om1o1X1Sx5H6yU949x0WOam+bdSFQ4ycO4K4k/LVCNhJa+7IS
+	 ynqsXspGeeoNvRIIq7zZauGxoZ1iD+sqt2IBdBMLK1CBAh8CUN/rY0kpgcwkPFm0/z2ZI
+	 SsqyyWhpdUip3GuDyCmtUaoywtb2KxTZUMvw7PNDvAzgKv3c4bvePC1r1uUXmdeal1ksh
+	 WOjix2aWV0rFKaNVUCTrqKaaWJc0kZ1w5v47PWnEFNiqXB1iglgqvBf4zIKY3xf2JmJXW
+	 nxNTcRtsZHfmCcrK7xpOzlNR4CYrIfmCR5cXHknslDs/+XFyC3o2bRre6s7+qu6Kx6w==
 ARC-Authentication-Results: i=1; smtp.subspace.kernel.org; 
 	dmarc=pass header.from=nbd.name;
 	spf=pass smtp.mailfrom=nbd.name;
-	dkim=pass header.d=nbd.name header.i=@nbd.name header.a=rsa-sha256 header.s=20160729 header.b=iJVjBfky;
+	dkim=pass header.d=nbd.name header.i=@nbd.name header.a=rsa-sha256 header.s=20160729 header.b=gDjrbHOg;
 	arc=none smtp.remote-ip=46.4.11.11
 Received: from nbd.name (nbd.name [46.4.11.11])
 	(using TLSv1.3 with cipher TLS_AES_256_GCM_SHA384 (256/256 bits)
 	 key-exchange ECDHE (prime256v1) server-signature ECDSA (prime256v1) server-digest SHA256)
 	(No client certificate requested)
-	by smtp.subspace.kernel.org (Postfix) with ESMTPS id B4DA5606A6B2
+	by smtp.subspace.kernel.org (Postfix) with ESMTPS id DFC5E606A6BD
 	for <linux-wireless@vger.kernel.org>; Tue, 24 Nov 2026 08:43:15 +0000 (UTC)
-DMARC-Filter: OpenDMARC Filter v1.4.2 smtp.subspace.kernel.org B4DA5606A6B2
+DMARC-Filter: OpenDMARC Filter v1.4.2 smtp.subspace.kernel.org DFC5E606A6BD
 Authentication-Results: smtp.subspace.kernel.org; dmarc=pass (p=none dis=none) header.from=nbd.name
 Authentication-Results: smtp.subspace.kernel.org; spf=pass smtp.mailfrom=nbd.name
 Authentication-Results: smtp.subspace.kernel.org;
-	dkim=pass (1024-bit key) header.d=nbd.name header.i=@nbd.name header.a=rsa-sha256 header.s=20160729 header.b=iJVjBfky
+	dkim=pass (1024-bit key) header.d=nbd.name header.i=@nbd.name header.a=rsa-sha256 header.s=20160729 header.b=gDjrbHOg
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed; d=nbd.name;
 	s=20160729; h=Content-Transfer-Encoding:MIME-Version:References:In-Reply-To:
 	Message-ID:Date:Subject:To:From:Sender:Reply-To:Cc:Content-Type:Content-ID:
 	Content-Description:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc
 	:Resent-Message-ID:List-Id:List-Help:List-Unsubscribe:List-Subscribe:
 	List-Post:List-Owner:List-Archive;
-	bh=nTmDO+S1XCzLKvPZtmhD0OJJUwRfXV8q/c37pQmQS8Y=; b=iJVjBfkyrJw9BspbJcL5m/H84d
-	IO5I37mHdf4V+88mgIc+vij9Gw5AMrGVt1+nPHZcAsrV+OEhRXsTR2ZUaziYCQBOcSWVL2a3nvRLC
-	MK3xD73uf9LuzIc5OY33xNntd2l2E/eNkoD3YVyAaUzFnCWqIK+ijS8LbZX6Jv7DbDOk=;
+	bh=IOXlHeajwoUYisXlc2rU4eIAtHEqspD4H0c9oZwZaoo=; b=gDjrbHOghi5CWGxc7u/q3itK7m
+	LdUhJtGsDrpZvvQF9stdGmpq8cz8LHxEufwXZUsh6y8JQHl4EFaskvtv52q8faRm9OygMeBb5gdeJ
+	Z4LeMQ0Zht8vd3EX6MNoLE6sFL096VRd9UJ7iVJCXxqpe10HAhFN20QE/ZORLjOcFIfk=;
 Received: from p200300cadf0ca80000000000000005bb.dip0.t-ipconnect.de ([2003:ca:df0c:a800::5bb] helo=localhost.localdomain)
 	by ds12 with esmtpsa  (TLS1.3) tls TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384
 	(Exim 4.96)
 	(envelope-from <nbd@nbd.name>)
-	id 1xVm7O-007dJf-0m
+	id 1xVm7O-007dJf-1T
 	for linux-wireless@vger.kernel.org;
 	Tue, 24 Nov 2026 09:43:14 +0100
 From: Felix Fietkau <nbd@nbd.name>
 To: linux-wireless@vger.kernel.org
-Subject: [PATCH mt76-next 18/20] wifi: mt76: mt7915: keep the TWT state out of the PS flag
-Date: Tue, 24 Nov 2026 09:43:07 +0100
-Message-ID: <20261124084309.1981968-18-nbd@nbd.name>
+Subject: [PATCH mt76-next 19/20] wifi: mt76: mt7915: clear the PS flag of a station at a reset
+Date: Tue, 24 Nov 2026 09:43:08 +0100
+Message-ID: <20261124084309.1981968-19-nbd@nbd.name>
 X-Mailer: git-send-email 2.47.3
 In-Reply-To: <20261124084309.1981968-1-nbd@nbd.name>
 References: <20261124084309.1981968-1-nbd@nbd.name>
@@ -68,102 +68,75 @@ Precedence: list
 MIME-Version: 1.0
 Content-Transfer-Encoding: 8bit
 
-The firmware also sends the PS sync event from its TWT agreement code.
-It sends state 1 when an agreement of a station starts, and state 0
-when its last agreement ends. mt7915_mcu_rx_ps_sync() writes that state
-into MT_WCID_FLAG_PS.
+MT_WCID_FLAG_PS survives a full reset. The replay of a station keeps
+wcid->flags. The reloaded firmware holds no PS state and reports no
+leave when the station wakes.
 
-The host thus holds the TX of a TWT station to the PS limit. That lasts
-until the agreement ends or a PS leave clears the flag. The end of the
-agreement also clears the flag of a station in power save.
+The station then gets one frame per AC per TX status until its next
+enter and leave. The L1 branch of the reset work writes no flag either.
 
-The PS limit is the wrong limit for a station that is not in power
-save. The WA firmware of mt7986 and mt7981 applies a frame limit of its
-own to the station.
-
-Tell the TWT events from the PS events by their path value. Do not
-write the TWT state into the flag.
-
-Clear the flag when an agreement starts. The firmware reports no PS
-enter of a TWT station, so a flag set before the agreement could stay
-set. This matches what mt7996 does for its TWT state.
+Clear the flag when a station is added, like mt7996_mac_sta_init_link()
+does. Also clear it for every station at the end of an L1 recovery,
+like mt7996_mac_reset_sta_ps(). A station that still sleeps gets a new
+enter from the firmware.
 
 Fixes: dc930cf883c8 ("wifi: mt76: mt7915: handle MCU PS sync events")
 Signed-off-by: Felix Fietkau <nbd@nbd.name>
 ---
- drivers/net/wireless/mediatek/mt76/mt7915/mcu.c | 10 +++++++++-
- drivers/net/wireless/mediatek/mt76/mt7915/mcu.h | 11 ++++++++---
- 2 files changed, 17 insertions(+), 4 deletions(-)
+ .../net/wireless/mediatek/mt76/mt7915/mac.c   | 20 +++++++++++++++++++
+ .../net/wireless/mediatek/mt76/mt7915/main.c  |  1 +
+ 2 files changed, 21 insertions(+)
 
-diff --git a/drivers/net/wireless/mediatek/mt76/mt7915/mcu.c b/drivers/net/wireless/mediatek/mt76/mt7915/mcu.c
-index 981135c23723..59042d043481 100644
---- a/drivers/net/wireless/mediatek/mt76/mt7915/mcu.c
-+++ b/drivers/net/wireless/mediatek/mt76/mt7915/mcu.c
-@@ -430,7 +430,7 @@ mt7915_mcu_rx_ps_sync(struct mt7915_dev *dev, struct sk_buff *skb)
- 	struct mt7915_mcu_ps_notify_v2 *p2 = (void *)skb->data;
- 	struct mt7915_mcu_ps_notify *p = (void *)skb->data;
- 	struct mt76_wcid *wcid;
--	u16 wcid_idx;
-+	u16 wcid_idx, path;
- 	bool v2, ps;
- 
- 	/* the mt7986 and mt7981 firmware send the longer v2 layout */
-@@ -443,15 +443,23 @@ mt7915_mcu_rx_ps_sync(struct mt7915_dev *dev, struct sk_buff *skb)
- 		wcid_idx = le16_to_cpu(p2->wtbl_lower) |
- 			   (le16_to_cpu(p2->wtbl_higher) << 8);
- 		ps = p2->ps_bit;
-+		path = le16_to_cpu(p2->path);
- 	} else {
- 		wcid_idx = p->wtbl_lower | (p->wtbl_higher << 8);
- 		ps = p->ps_bit;
-+		path = p->path;
- 	}
- 
- 	wcid = mt76_wcid_ptr(dev, wcid_idx);
- 	if (!wcid || !wcid_to_sta(wcid))
- 		return;
- 
-+	if (path == MT7915_PS_SYNC_TWT || path == MT7915_PS_SYNC_TWT_MANY) {
-+		if (ps)
-+			mt76_sta_ps_transition(&dev->mt76, wcid, false);
-+		return;
-+	}
-+
- 	mt76_sta_ps_transition(&dev->mt76, wcid, ps);
+diff --git a/drivers/net/wireless/mediatek/mt76/mt7915/mac.c b/drivers/net/wireless/mediatek/mt76/mt7915/mac.c
+index cc3ef641d1c1..84f75526da58 100644
+--- a/drivers/net/wireless/mediatek/mt76/mt7915/mac.c
++++ b/drivers/net/wireless/mediatek/mt76/mt7915/mac.c
+@@ -1511,6 +1511,24 @@ mt7915_mac_full_reset(struct mt7915_dev *dev)
+ 		ieee80211_restart_hw(ext_phy->hw);
  }
  
-diff --git a/drivers/net/wireless/mediatek/mt76/mt7915/mcu.h b/drivers/net/wireless/mediatek/mt76/mt7915/mcu.h
-index 456c452e07c1..175136dfafff 100644
---- a/drivers/net/wireless/mediatek/mt76/mt7915/mcu.h
-+++ b/drivers/net/wireless/mediatek/mt76/mt7915/mcu.h
-@@ -65,7 +65,7 @@ struct mt7915_mcu_ps_notify {
- 	u8 wtbl_lower;
- 	u8 ps_bit;
- 	u8 wtbl_higher;
--	u8 rsv;
-+	u8 path;
- } __packed;
- 
- struct mt7915_mcu_ps_notify_v2 {
-@@ -73,11 +73,16 @@ struct mt7915_mcu_ps_notify_v2 {
- 
- 	__le16 wtbl_lower;
- 	__le16 wtbl_higher;
--	__le16 rsv;
-+	__le16 path;
- 	u8 ps_bit;
--	u8 rsv2;
-+	u8 rsv;
- } __packed;
- 
-+enum {
-+	MT7915_PS_SYNC_TWT_MANY = 0x08,
-+	MT7915_PS_SYNC_TWT = 0x80,
-+};
++static void
++mt7915_mac_reset_sta_ps(struct mt7915_dev *dev)
++{
++	int i;
 +
- struct mt7915_mcu_rdd_report {
- 	struct mt76_connac2_mcu_rxd_hdr rxd;
++	rcu_read_lock();
++	for (i = 0; i < ARRAY_SIZE(dev->mt76.wcid); i++) {
++		struct mt76_wcid *wcid = mt76_wcid_ptr(dev, i);
++
++		if (!wcid_to_sta(wcid) ||
++		    !test_bit(MT_WCID_FLAG_PS, &wcid->flags))
++			continue;
++
++		mt76_sta_ps_transition(&dev->mt76, wcid, false);
++	}
++	rcu_read_unlock();
++}
++
+ static void
+ mt7915_mac_reset_napi_enable(struct mt7915_dev *dev)
+ {
+@@ -1641,6 +1659,8 @@ void mt7915_mac_reset_work(struct work_struct *work)
+ 	if (!mt7915_wait_reset_state(dev, MT_MCU_CMD_NORMAL_STATE))
+ 		goto abort;
  
++	mt7915_mac_reset_sta_ps(dev);
++
+ 	/* enable DMA Tx/Rx and interrupt */
+ 	mt7915_dma_start(dev, false, false);
+ 
+diff --git a/drivers/net/wireless/mediatek/mt76/mt7915/main.c b/drivers/net/wireless/mediatek/mt76/mt7915/main.c
+index 47796e0fa506..50e67a209693 100644
+--- a/drivers/net/wireless/mediatek/mt76/mt7915/main.c
++++ b/drivers/net/wireless/mediatek/mt76/mt7915/main.c
+@@ -759,6 +759,7 @@ int mt7915_mac_sta_add(struct mt76_dev *mdev, struct ieee80211_vif *vif,
+ 	msta->wcid.idx = idx;
+ 	msta->wcid.phy_idx = ext_phy;
+ 	msta->jiffies = jiffies;
++	clear_bit(MT_WCID_FLAG_PS, &msta->wcid.flags);
+ 
+ 	if (sta->tdls)
+ 		set_bit(MT_WCID_FLAG_TDLS_PEER, &msta->wcid.flags);
 -- 
 2.47.3
 
