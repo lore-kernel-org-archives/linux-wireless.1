@@ -1,85 +1,112 @@
-Authentication-Results: smtp.subspace.kernel.org; arc=none smtp.remote-ip=209.85.221.41
+Authentication-Results: smtp.subspace.kernel.org; arc=none smtp.remote-ip=209.85.215.226
 ARC-Seal: i=1; d=subspace.kernel.org; s=arc20261015; a=rsa-sha256; cv=none;
-	t=1795550086;
-	b=qMO/6hCJs6V4NdLSzEFYjfckxA0jAltxekPIPlYnSoo+xpcuZNWNYL21Agxio35nplpP
-	 L2EebYzYVf7ZVQbpfNdbdlwp+JCb1X8hdQ7QjrQGL+ABPcg7hIL1Udh2xjFalLBUSzs78
-	 mcUrfP2LGfToMaoXsY504UdSSnZHVeDao/Po17hkoVOckonlkTtwu96GaGrRm/sXiXxyG
-	 aiQS9lcDoc8iFajaCL/IWBe1wIUGsfUL5Yt12kghPFGaMN3BEk8EIE0FY4Gflx0R+YuPM
-	 4CF7FNjfEUFh4o03BZbwsCYaps7TMFp8Ilix1MfAcVLl/SQqvcA7AWDgHe1djmif5tw==
+	t=1795551214;
+	b=Sml7EgzlB4PMoVysAeqT+JZPl9chOhxykcGNeeWsEhHz82VOLnh34vUltEfdBibmViNs
+	 91rkKiTQA6nn4yJs5xP/Di5DvIocixdFs9DV6gq28TlfUR2C5I6qvUnwrvKv+7+A3P2fC
+	 omZdltKSyfKnheDVgvuyxMJBh+tIazudM6IYsSMmYXevWkIf2BADc1DGK9wsHi4V2L4rW
+	 2zVmwYS+ncNnC9rCvH+s/uL0AMvHeCMk8hKgjhRXvlzyySJj1M90WbZG3BwI8rgMO4bcG
+	 3vo4uGW1JfN1MqTS6m/b2q5JMeVcW4Q+RkNZbdlSgsP1MlxrwpgjkvEwi80YdXcxTSg==
 ARC-Message-Signature: i=1; d=subspace.kernel.org; s=arc20261015;
-	a=rsa-sha256; c=relaxed/relaxed; t=1795550086;
-	h=DMARC-Filter:Received:DKIM-Signature:X-Google-DKIM-Signature:
-	 X-Gm-Message-State:X-Gm-Gg:X-Received:Received:Message-ID:Date:
-	 MIME-Version:User-Agent:From:Subject:To:Cc:References:
-	 Content-Language:In-Reply-To:Content-Type:Content-Transfer-Encoding;
-	bh=BDVHI7DTLc1+JGkYVDzC7pa7UnD9siLvUvtQtAbIKnU=;
-	b=DA4aE2YlDG43pS9lPxVj3dDYNaY/jH31REcn+HMFt3WNkLnMIRXJdv01TrB6MvByyjdm
-	 wSu86fHWsPMAAue7b7eywDkRlHi406VclHgLuPJ3TbqCYDot/Y5VA88xWcCu0rpnNwIHs
-	 TZ6D+fG6t3S9uFTAeAoo+6ZFFV+yX0WRpCdcsXtCXtEemIx8XwB10lkNdopurkFMa9SB0
-	 7Ed7eI0/zXQbSwTB5eJ5TKig5bnQfBipHlx3C1rLcZ0h2kGCD2LrTsodwITOhp6tlJCjb
-	 xrMF1NhOG/TUtKgjGjOLjnhgJKh0alW8PGGfxFbwVJScwzQRGmU0HyaZIlLEi/IaK5g==
+	a=rsa-sha256; c=relaxed/relaxed; t=1795551214;
+	h=DMARC-Filter:Received:X-Google-DKIM-Signature:X-Forwarded-Encrypted:
+	 X-Gm-Message-State:X-Gm-Gg:X-Received:Received:X-Relaying-Domain:
+	 X-CFilter-Loop:Received:DKIM-Signature:X-Forwarded-Encrypted:
+	 X-Received:X-Received:Received:From:To:Cc:Subject:Date:Message-ID:
+	 X-Mailer:In-Reply-To:References:MIME-Version:
+	 Content-Transfer-Encoding:X-DetectorID-Processed;
+	bh=0BBHhcvcX0NmOlb5zn8lXYG+5JCH/df9UZnJ1qUIA4A=;
+	b=cWHw0ZApxlcnQkSIIYFGxgORjR3wkHOYZrRfG7twZV+3fb6+9ebS3WUMVbOHX/0MyN8v
+	 cT+tpEqZeQHJvUWUZyLpIkzkmrzTNa7wyoGvodBx8VLLD6df9V9ot6bOwKWtUxgB+7qA2
+	 GyBo605RBO2lx2thPQLADZ5J/J11brr5ESodhwgkq+iVMYYsFNalfvsAsBzW0dNoZz2vh
+	 iB/3LZYVTd1KAPoRtbBS5TxZUSNHn3O/QWhVZDammD24yWReqzXhRZOlnE/6+CxtN/yDt
+	 Zo7FmGu3QEyQ5RNGSfjtKwZFG73ln/bg+jTjO+j8ZrIb87Z0Z2qi0HKU1GDn6F8CJhA==
 ARC-Authentication-Results: i=1; smtp.subspace.kernel.org; 
-	dmarc=pass header.from=gmail.com;
-	spf=pass smtp.mailfrom=gmail.com;
-	dkim=pass header.d=gmail.com header.i=@gmail.com header.a=rsa-sha256 header.s=20260707 header.b=IZdHquAV;
-	arc=none smtp.remote-ip=209.85.221.41
-Received: from mail-wr1-f41.google.com (mail-wr1-f41.google.com [209.85.221.41])
+	dmarc=pass header.from=broadcom.com;
+	spf=fail smtp.mailfrom=broadcom.com;
+	dkim=pass header.d=broadcom.com header.i=@broadcom.com header.a=rsa-sha256 header.s=google header.b=iPER3Nu4;
+	arc=none smtp.remote-ip=209.85.215.226
+Received: from mail-pg1-f226.google.com (mail-pg1-f226.google.com [209.85.215.226])
 	(using TLSv1.3 with cipher TLS_AES_128_GCM_SHA256 (128/128 bits)
 	 key-exchange X25519 server-signature ECDSA (prime256v1) server-digest SHA256)
 	(No client certificate requested)
-	by smtp.subspace.kernel.org (Postfix) with ESMTPS id DAC7B606A329
-	for <linux-wireless@vger.kernel.org>; Tue, 24 Nov 2026 19:54:45 +0000 (UTC)
-DMARC-Filter: OpenDMARC Filter v1.4.2 smtp.subspace.kernel.org DAC7B606A329
-Authentication-Results: smtp.subspace.kernel.org; dmarc=pass (p=none dis=none) header.from=gmail.com
-Authentication-Results: smtp.subspace.kernel.org; spf=pass smtp.mailfrom=gmail.com
+	by smtp.subspace.kernel.org (Postfix) with ESMTPS id 7D88E606A31E
+	for <linux-wireless@vger.kernel.org>; Tue, 24 Nov 2026 20:13:33 +0000 (UTC)
+DMARC-Filter: OpenDMARC Filter v1.4.2 smtp.subspace.kernel.org 7D88E606A31E
+Authentication-Results: smtp.subspace.kernel.org; dmarc=pass (p=reject dis=none) header.from=broadcom.com
+Authentication-Results: smtp.subspace.kernel.org; spf=fail smtp.mailfrom=broadcom.com
 Authentication-Results: smtp.subspace.kernel.org;
-	dkim=pass (2048-bit key) header.d=gmail.com header.i=@gmail.com header.a=rsa-sha256 header.s=20260707 header.b=IZdHquAV
-Received: by mail-wr1-f41.google.com with SMTP id ffacd0b85a97d-48e3b22e971so2610822f8f.0
-        for <linux-wireless@vger.kernel.org>; Tue, 24 Nov 2026 11:54:45 -0800 (PST)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=gmail.com; s=20260707; t=1795550084; x=1796154884; darn=vger.kernel.org;
-        h=content-transfer-encoding:content-type:in-reply-to:content-language
-         :references:cc:to:subject:from:user-agent:mime-version:date
-         :message-id:from:to:cc:subject:date:message-id:reply-to:content-type;
-        bh=BDVHI7DTLc1+JGkYVDzC7pa7UnD9siLvUvtQtAbIKnU=;
-        b=IZdHquAVRVWq2fKL8lTU7N6QrUZevcsyO3KDvjtCD2V2llzvdnmfbR92j5n71j7IoR
-         0958kNSjkvYzDsGss5qmanvkBE1SeMjgeMrPqsA2bKaSfztmHEjReUewOuDu2uHQ9O4L
-         xdPn7rMw0PtimcNIzXJOJdX8WSFP83yVMJUlPmuTnpYXA2jwn+65anIL9fphsutELPUm
-         nRlfra8L6rrE7NkMY78NshIY7FCsXilG/zLpwT8YHv1SMnRjPTOM0bh+LnK4rhSJxHbQ
-         LOcDSw6EQ18OiSHozYU2jf0JVqDnyGT1NsrtnmqgZXn15LwaxmsKuBrGCh8MU3fS2dKW
-         0K3Q==
+	dkim=pass (1024-bit key) header.d=broadcom.com header.i=@broadcom.com header.a=rsa-sha256 header.s=google header.b=iPER3Nu4
+Received: by mail-pg1-f226.google.com with SMTP id 41be03b00d2f7-cdab8873d9dso2296132a12.1
+        for <linux-wireless@vger.kernel.org>; Tue, 24 Nov 2026 12:13:33 -0800 (PST)
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=1e100.net; s=20260707; t=1795550084; x=1796154884;
-        h=content-transfer-encoding:content-type:in-reply-to:content-language
-         :references:cc:to:subject:from:user-agent:mime-version:date
-         :message-id:x-gm-gg:x-gm-message-state:from:to:cc:subject:date
+        d=1e100.net; s=20260707; t=1795551213; x=1796156013;
+        h=content-transfer-encoding:mime-version:references:in-reply-to
+         :message-id:date:subject:cc:to:from:dkim-signature:x-gm-gg
+         :x-gm-message-state:from:to:cc:subject:date:message-id:reply-to
+         :content-type;
+        bh=0BBHhcvcX0NmOlb5zn8lXYG+5JCH/df9UZnJ1qUIA4A=;
+        b=LvaeUneKUhf13h0sdBMx3t9bv7/HO+f9R+InWAxJdPL5qZeP0lFIgE28/3kYk1aslG
+         QjeSyxXeVwntgv61KtGZJHs7s6JvE3OcvooFwGxMQjhcwprpfntdBlSx9fDOnlG8e3GX
+         Aho+gIgWRgah0mq1Ljpeg+4MJYiZk+NsxmjWJge0fmtwscUyrLoYRa5UkFTfw+oBL96O
+         5QEtTxHL44eFLMcrVziN2WCNmOtvpLmPFKMrMYLqfITVL6lquMVKN4E+KI1mVeaXHV+5
+         t5Dl/773J7IfY5JZJXO3Qm10G8fkkG8gwarPvFNg4yEUGP1FwlaypXGm2vl+904TXB0s
+         a+0g==
+X-Forwarded-Encrypted: i=1; AL+hErG2v1xG52043aszEEIs+tm6Dh2B0nKMXmTz+D5jFT81ANPEtQMQA0D34Pkl9S/33BrukffQFirLoGih+NAUdg==@vger.kernel.org
+X-Gm-Message-State: APuU4Z/MajswVtg2JsuE9C5T9o+U54scSVE1nz3xXfBCHyD8/GDniR0y
+	6UP2gYLzCodXxeX/xCE0p3aQl/RjSruyq1dWY16O2SK7SxSUVusMIPdLNucCtpSc9fjVonI2dQ3
+	mi8pZ4Cz/pJOi6ljBlAbYDJbZnDOVz8HThG9/a5jGiB4oEsREoHRlweNn8vn2WYkHiZr86HOb+E
+	FLCoxEH/t1oiwQ+88fNYYvMjXKaBuCcMrRPpGhM25eOKCNlp8dlPRoaHHOsQFiOhnq0bd0qth3+
+	OVm+jHcvRNOnqoj4LQZRlykXA==
+X-Gm-Gg: AZFdTZdYXKx5JrKuSzlODSK3Ggsar8wxOzt2WzIYZR4Al5SIFrd35XbtvszlIfNtUUE
+	3mc+Vc5jgV+OIfQs9mabFDZlX8ZtEuR3e7MHIjIPk7FW5Uyb/a6SDLxfltHFacb9G1RC1aTOZUz
+	xhUUV3G96xuRIs1yVw1F2tF1uHPKz914ZCyDbhdbjsLvY+BhiDg0z0uXyoRBMIa2P7TYzq9n74L
+	0SPe/ChajmaiXlLVBvIVYPVbgc+sY+zUkgXz4p9kV1A8NK+QixgTiqnKgXSpSMu0K7beXA4nY6k
+	e5odS88SCczeecTiahglMGeC8sKE1cCg0qXxSOIEVjcR7w4Ttqq5Sqpk04VrkJg+vGcP7b8I2KK
+	WrdoIwTyjT/ESNif4FNu8lmjXXzuQM6aGKuQ7s6pFLmwzNGOKA/zXwE9Aq7GizpFUsLp4/gmvkk
+	s6Okl7WS3A+v1C06hdjARf4BZSiFr+aYvGsTEC/Ag=
+X-Received: by 2002:a17:90b:4a47:b0:3b3:fc1f:a5c4 with SMTP id 98e67ed59e1d1-3b41c8dc821mr14673130a91.20.1795551212690;
+        Tue, 24 Nov 2026 12:13:32 -0800 (PST)
+Received: from smtp-us-east1-p01-i01-si01.dlp.protect.broadcom.com (address-144-49-247-28.dlp.protect.broadcom.com. [144.49.247.28])
+        by smtp-relay.gmail.com with ESMTPS id 98e67ed59e1d1-3b4ddf8baaesm1285997a91.4.2026.11.24.12.13.32
+        for <linux-wireless@vger.kernel.org>
+        (version=TLS1_2 cipher=ECDHE-ECDSA-AES128-GCM-SHA256 bits=128/128);
+        Tue, 24 Nov 2026 12:13:32 -0800 (PST)
+X-Relaying-Domain: broadcom.com
+X-CFilter-Loop: Reflected
+Received: by mail-qk1-f199.google.com with SMTP id af79cd13be357-94960131b4eso32803485a.3
+        for <linux-wireless@vger.kernel.org>; Tue, 24 Nov 2026 12:13:31 -0800 (PST)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+        d=broadcom.com; s=google; t=1795551211; x=1796156011; darn=vger.kernel.org;
+        h=content-transfer-encoding:mime-version:references:in-reply-to
+         :message-id:date:subject:cc:to:from:from:to:cc:subject:date
          :message-id:reply-to:content-type;
-        bh=BDVHI7DTLc1+JGkYVDzC7pa7UnD9siLvUvtQtAbIKnU=;
-        b=ctM0dIQXJD0UGkVbkdsDXuAFD4oe4FN6a5baDExD88kcaOIucUBLPDjfZq9Io92nAk
-         RCTguB4nOhEOi5k3/Y01u9RT/MExLxoDlizFyiUWQSMYjbG62sV01AQ8r33lMb12EML9
-         lEi7CEe+EdV3zmU4VWPlWrozwAOqp4RnqDKMHnX2UOqZkGyu/qln/FyXKxKXffpnEHt7
-         hcxcdkb5XTMaVQ6LWJqX/1m2/Euze+RU206ZqlH1I04HFXRgvJlNJgGz7ONiNppkCAsR
-         AhN1qcRYuyJeXVNGbdkS4uPEzpmMSNWW3Kpbax4fL3B/Ffrxf5CWutOuFtxs+vn7diIT
-         yVxQ==
-X-Gm-Message-State: APuU4Z9xsckoQZylyAabqzIPWfdwz120xdSvqLcyZYz1JZDnFQeqjjY7
-	ZKG51/x4okxU2dC0qSY6WrPpbrE9N4Vp1iGMJT0hGGv1iaCiWjKFu8obPXGrp12v
-X-Gm-Gg: AZFdTZc3ifZPlEnPNm1TM+O8nr4N49jqtZ6YLAvOv63nUj1GwH97Hyg8WbQ/C7ZupEz
-	XVUhE9h06LgdqVR/KI7eWk0+di3bLcWBJVT+LurDKFbVBIbUELv2zJrQg3Tu8Nq/ekYOvGfqJOi
-	ckyyETJIDvwGcasgWEpo/kG9il8oHZSldi4gbHi44hZJTpfyUhw++fT3/lIlbxQT+kDZB1eB7MU
-	4LaGXeT3adOHvvCvQhCfIEqj/hRbfUvMvzJCzhB9Bw6rbGZ3lDR7GE9RKZs0ZauavjSep3mtLN9
-	YsJgOo5l0xpt66Om9gNSrUhO6Jq+HcrsO/iJRhGbkdIzKK1KGnZ7aO4r0AiopZz7wqzTHB2880D
-	0644WNHoPvpzJvuEKgazKEEYy7PhBcHi4gJBGUKit/R3iPSMI3kE4ZoPgL5Mr4gii7bhUZFzmYp
-	fE+c0kNf2EBRkW+RLZx4cfpm2jPhpaHV2txR4nKkMGYTzAmMYFsMnys6CQbK+dhYh07knT23RtE
-	CIz805OxQSTBFiMyDO5zs3hsP028LCbHQ+GWxC0Q1fhdA8dpKqjAsmyl5Gt7Cig5UjHiLeGvF0V
-	BitcKE2r0YtMIC6oORu8Knaq1+ilC1g+7Z0QZg==
-X-Received: by 2002:a05:6000:3102:b0:4a8:9836:90c3 with SMTP id ffacd0b85a97d-4abaf7401f2mr30214194f8f.16.1795550084081;
-        Tue, 24 Nov 2026 11:54:44 -0800 (PST)
-Received: from [192.168.1.50] ([188.27.124.101])
-        by smtp.gmail.com with ESMTPSA id ffacd0b85a97d-4ab6ae2dd55sm28991862f8f.30.2026.11.24.11.54.43
-        (version=TLS1_3 cipher=TLS_AES_128_GCM_SHA256 bits=128/128);
-        Tue, 24 Nov 2026 11:54:43 -0800 (PST)
-Message-ID: <f7a9c585-3c3b-4818-a262-6c9f8103387a@gmail.com>
-Date: Tue, 24 Nov 2026 21:54:42 +0200
+        bh=0BBHhcvcX0NmOlb5zn8lXYG+5JCH/df9UZnJ1qUIA4A=;
+        b=iPER3Nu4r5LT6OZnZ6QsyFZ5zgc0WpUwgxprR8WKSlU7h9ggDx3fozfUwIWdjoqza8
+         3zlpPqddV5ACbN3iwC3eq0Vuk0XeqqY8XhpW5cGm05sKAg30VyElaJnhAOrzGajBlaje
+         ten1Jz0hfaQg6pxKOjcD7f43RO6BN3m8pNsVM=
+X-Forwarded-Encrypted: i=1; AL+hErEaHbKZSxJga1JxyaruWgdhRVfVNI3bP8DVyJp668nJgaWf66+gWp3vzmC7oc2Y2dNjFiXExwtIZMHGyoElDA==@vger.kernel.org
+X-Received: by 2002:a05:620a:4625:b0:949:6d95:f63c with SMTP id af79cd13be357-949bab4d95dmr2635395485a.56.1795551211462;
+        Tue, 24 Nov 2026 12:13:31 -0800 (PST)
+X-Received: by 2002:a05:620a:4625:b0:949:6d95:f63c with SMTP id af79cd13be357-949bab4d95dmr2635390885a.56.1795551211025;
+        Tue, 24 Nov 2026 12:13:31 -0800 (PST)
+Received: from bld-bun-02.bun.broadcom.net ([192.19.176.227])
+        by smtp.gmail.com with ESMTPSA id af79cd13be357-949bb34ac1esm1127270385a.15.2026.11.24.12.13.29
+        (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
+        Tue, 24 Nov 2026 12:13:30 -0800 (PST)
+From: Arend van Spriel <arend.vanspriel@broadcom.com>
+To: Shirong Zhao <shxzhaosr@163.com>
+Cc: Arend van Spriel <arend.vanspriel@broadcom.com>,
+	linux-wireless@vger.kernel.org,
+	brcm80211@lists.linux.dev,
+	brcm80211-dev-list.pdl@broadcom.com,
+	linux-kernel@vger.kernel.org,
+	stable@vger.kernel.org
+Subject: Re: [PATCH v3] wifi: brcmfmac: drop glom superframe on header parse failure
+Date: Tue, 24 Nov 2026 21:13:27 +0100
+Message-ID: <20261124201327.3491419-1-arend.vanspriel@broadcom.com>
+X-Mailer: git-send-email 2.54.0
+In-Reply-To: <20261116041534.24-1-shxzhaosr@163.com>
+References: <20261116041534.24-1-shxzhaosr@163.com>
 X-Mailing-List: linux-wireless@vger.kernel.org
 List-Id: <linux-wireless.vger.kernel.org>
 List-Post: <mailto:linux-wireless@vger.kernel.org>
@@ -89,174 +116,29 @@ List-Unsubscribe: <mailto:linux-wireless+unsubscribe@vger.kernel.org>
 List-Owner: <mailto:linux-wireless+owner@vger.kernel.org>
 Precedence: list
 MIME-Version: 1.0
-User-Agent: Mozilla Thunderbird
-From: Bitterblue Smith <rtl8821cerfe2@gmail.com>
-Subject: Re: [PATCH rtw-next 4/5] wifi: rtw88: pci: Add functions to support
- older chips
-To: "linux-wireless@vger.kernel.org" <linux-wireless@vger.kernel.org>
-Cc: Ping-Ke Shih <pkshih@realtek.com>
-References: <2033f1b1-fb12-4a04-aef4-923590e64463@gmail.com>
- <35e9d20a-4f0c-42c3-9d06-358a5620251c@gmail.com>
-Content-Language: en-US
-In-Reply-To: <35e9d20a-4f0c-42c3-9d06-358a5620251c@gmail.com>
-Content-Type: text/plain; charset=UTF-8
-Content-Transfer-Encoding: 7bit
+Content-Transfer-Encoding: 8bit
+X-DetectorID-Processed: b00c1d49-9d2e-4205-b15f-d015386d3d5e
 
-On 24/10/2026 02:02, Bitterblue Smith wrote:
-> Add pci_old.{c,h} to support older chips, like RTL8821AE and RTL8812AE.
-> They handle the PCI communications differently.
-> 
-> Signed-off-by: Bitterblue Smith <rtl8821cerfe2@gmail.com>
+On Mon, 16 Nov 2026 12:15:34 +0800, Shirong Zhao <shxzhaosr@163.com> wrote:
+> brcmf_sdio_rxglom() uses rd_new.len_nxtfrm and rd_new.dat_offset
+> right after the superframe brcmf_sdio_hdparse() without checking
+> errcode.  On parse failure those fields are either uninitialized
+> (the early -ENODATA/-EIO/-EPROTO returns) or hold a rejected value
+> (the -ENXIO bad-offset return), so bus->cur_read.len gets garbage
+> and skb_pull() runs with a garbage length.
+>
+> Check errcode first and drop the superframe with the same cleanup
+> used for a bad subframe below.
+>
+> Fixes: 9d7d6f95bda1 ("brcmfmac: streamline header parse code of sdio glom read")
+> Cc: stable@vger.kernel.org
+> Signed-off-by: Shirong Zhao <shxzhaosr@163.com>
+> Acked-by: Arend van Spriel <arend.vanspriel@broadcom.com>
 > ---
->  drivers/net/wireless/realtek/rtw88/Makefile  |   2 +-
->  drivers/net/wireless/realtek/rtw88/pci.c     |   9 +-
->  drivers/net/wireless/realtek/rtw88/pci.h     |   6 +
->  drivers/net/wireless/realtek/rtw88/pci_old.c | 522 +++++++++++++++++++
->  drivers/net/wireless/realtek/rtw88/pci_old.h |  39 ++
->  drivers/net/wireless/realtek/rtw88/reg.h     |   3 +
->  drivers/net/wireless/realtek/rtw88/rx.h      |   4 +
->  drivers/net/wireless/realtek/rtw88/tx.h      |   5 +
->  8 files changed, 584 insertions(+), 6 deletions(-)
->  create mode 100644 drivers/net/wireless/realtek/rtw88/pci_old.c
->  create mode 100644 drivers/net/wireless/realtek/rtw88/pci_old.h
-> 
-> diff --git a/drivers/net/wireless/realtek/rtw88/Makefile b/drivers/net/wireless/realtek/rtw88/Makefile
-> index 6889b3796449..d4007ca2b2ca 100644
-> --- a/drivers/net/wireless/realtek/rtw88/Makefile
-> +++ b/drivers/net/wireless/realtek/rtw88/Makefile
-> @@ -110,7 +110,7 @@ obj-$(CONFIG_RTW88_8814AU)	+= rtw88_8814au.o
->  rtw88_8814au-objs		:= rtw8814au.o
->  
->  obj-$(CONFIG_RTW88_PCI)		+= rtw88_pci.o
-> -rtw88_pci-objs			:= pci.o
-> +rtw88_pci-objs			:= pci.o pci_old.o
->  
->  obj-$(CONFIG_RTW88_SDIO)	+= rtw88_sdio.o
->  rtw88_sdio-objs			:= sdio.o
-> diff --git a/drivers/net/wireless/realtek/rtw88/pci.c b/drivers/net/wireless/realtek/rtw88/pci.c
-> index c51ad15cfba7..35f45e3ede81 100644
-> --- a/drivers/net/wireless/realtek/rtw88/pci.c
-> +++ b/drivers/net/wireless/realtek/rtw88/pci.c
-> @@ -16,7 +16,7 @@
->  #include "mac.h"
->  
->  static bool rtw_disable_msi;
-> -static bool rtw_pci_disable_aspm;
-> +bool rtw_pci_disable_aspm;
->  module_param_named(disable_msi, rtw_disable_msi, bool, 0644);
->  module_param_named(disable_aspm, rtw_pci_disable_aspm, bool, 0644);
->  MODULE_PARM_DESC(disable_msi, "Set Y to disable MSI interrupt support");
-> @@ -32,8 +32,7 @@ static const u32 rtw_pci_tx_queue_idx_addr[] = {
->  	[RTW_TX_QUEUE_H2C]	= RTK_PCI_TXBD_IDX_H2CQ,
->  };
->  
-> -static u8 rtw_pci_get_tx_qsel(struct sk_buff *skb,
-> -			      enum rtw_tx_queue_type queue)
-> +u8 rtw_pci_get_tx_qsel(struct sk_buff *skb, enum rtw_tx_queue_type queue)
->  {
->  	switch (queue) {
->  	case RTW_TX_QUEUE_BCN:
-> @@ -675,8 +674,8 @@ static void rtw_pci_deep_ps(struct rtw_dev *rtwdev, bool enter)
->  	spin_unlock_bh(&rtwpci->irq_lock);
->  }
->  
-> -static void rtw_pci_release_rsvd_page(struct rtw_pci *rtwpci,
-> -				      struct rtw_pci_tx_ring *ring)
-> +void rtw_pci_release_rsvd_page(struct rtw_pci *rtwpci,
-> +			       struct rtw_pci_tx_ring *ring)
->  {
->  	struct sk_buff *prev = skb_dequeue(&ring->queue);
->  	struct rtw_pci_tx_data *tx_data;
-> diff --git a/drivers/net/wireless/realtek/rtw88/pci.h b/drivers/net/wireless/realtek/rtw88/pci.h
-> index 5ab78ba3255d..92532f842ebc 100644
-> --- a/drivers/net/wireless/realtek/rtw88/pci.h
-> +++ b/drivers/net/wireless/realtek/rtw88/pci.h
-> @@ -144,6 +144,8 @@
->  /* IMR 3 */
->  #define IMR_H2CDOK		BIT(16)
->  
-> +extern bool rtw_pci_disable_aspm;
-> +
->  enum rtw_pci_flags {
->  	RTW_PCI_FLAG_NAPI_RUNNING,
->  
-> @@ -268,6 +270,10 @@ extern const struct dev_pm_ops rtw_pm_ops;
->  extern const struct pci_error_handlers rtw_pci_err_handler;
->  extern const struct rtw_pci_gen rtw_pci_gen_new;
->  
-> +u8 rtw_pci_get_tx_qsel(struct sk_buff *skb, enum rtw_tx_queue_type queue);
-> +void rtw_pci_release_rsvd_page(struct rtw_pci *rtwpci,
-> +			       struct rtw_pci_tx_ring *ring);
-> +
->  int rtw_pci_probe(struct pci_dev *pdev, const struct pci_device_id *id);
->  void rtw_pci_remove(struct pci_dev *pdev);
->  void rtw_pci_shutdown(struct pci_dev *pdev);
-> diff --git a/drivers/net/wireless/realtek/rtw88/pci_old.c b/drivers/net/wireless/realtek/rtw88/pci_old.c
-> new file mode 100644
-> index 000000000000..464b57d8a629
-> --- /dev/null
-> +++ b/drivers/net/wireless/realtek/rtw88/pci_old.c
-> @@ -0,0 +1,522 @@
+>  drivers/net/wireless/broadcom/brcm80211/brcmfmac/sdio.c | 11 +++++++++++
+>  1 file changed, 11 insertions(+)
 
-[...]
+Acked-by: Arend van Spriel <arend.vanspriel@broadcom.com>
 
-> +
-> +static void rtw_pci_old_clkreq_set(struct rtw_dev *rtwdev, bool enable)
-> +{
-> +}
-> +
-> +static void rtw_pci_old_aspm_set(struct rtw_dev *rtwdev, bool enable)
-> +{
-> +	struct rtw_pci *rtwpci = (struct rtw_pci *)rtwdev->priv;
-> +	struct pci_dev *pdev = rtwpci->pdev;
-> +
-> +	if (rtw_pci_disable_aspm)
-> +		return;
-> +
-> +	if (enable) {
-> +		pcie_capability_set_word(pdev, PCI_EXP_LNKCTL,
-> +			PCI_EXP_LNKCTL_CCC | PCI_EXP_LNKCTL_ASPMC);
-> +
-> +		pcie_capability_set_word(pdev, PCI_EXP_LNKCTL,
-> +					 PCI_EXP_LNKCTL_CLKREQ_EN);
-> +	} else {
-> +		pcie_capability_clear_word(pdev, PCI_EXP_LNKCTL,
-> +					   PCI_EXP_LNKCTL_CLKREQ_EN);
-> +
-> +		pcie_capability_clear_and_set_word(pdev, PCI_EXP_LNKCTL,
-> +			PCI_EXP_LNKCTL_CCC | PCI_EXP_LNKCTL_ASPMC,
-> +			PCI_EXP_LNKCTL_CCC);
-> +	}
-
-Is this the right way? rtw88 (pci.c) never writes PCI_EXP_LNKCTL,
-only reads it. Instead it uses DBI writes to RTK_PCIE_LINK_CFG to
-enable or disable BIT_L1_SW_EN and BIT_CLKREQ_SW_EN.
-
-rtlwifi writes PCI_EXP_LNKCTL as above, and additionally always
-writes RTK_PCIE_LINK_CFG to enable BIT_L1_SW_EN and BIT_CLKREQ_SW_EN
-in _rtl8821ae_enable_aspm_back_door().
-
-rtlwifi writes PCI_EXP_LNKCTL only when the device is probed, whereas
-rtw_pci_old_aspm_set() runs when LPS is enabled/disabled.
-
-Does the comment in rtw_pci_link_cfg() apply to this older design?
-
-	/* Though there is standard PCIE configuration space to set the
-	 * link control register, but by Realtek's design, driver should
-	 * check if host supports CLKREQ/ASPM to enable the HW module.
-	 *
-	 * These functions are implemented by two HW modules associated,
-	 * one is responsible to access PCIE configuration space to
-	 * follow the host settings, and another is in charge of doing
-	 * CLKREQ/ASPM mechanisms, it is default disabled. Because sometimes
-	 * the host does not support it, and due to some reasons or wrong
-	 * settings (ex. CLKREQ# not Bi-Direction), it could lead to device
-	 * loss if HW misbehaves on the link.
-	 *
-	 * Hence it's designed that driver should first check the PCIE
-	 * configuration space is sync'ed and enabled, then driver can turn
-	 * on the other module that is actually working on the mechanism.
-	 */
-
-(I'm looking at this again because BIT_CLKREQ_SW_EN is required
-for Wowlan. The card can't wake the laptop unless this bit is set.)
+Regards,
+Arend
