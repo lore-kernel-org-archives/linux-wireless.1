@@ -1,88 +1,110 @@
-Authentication-Results: smtp.subspace.kernel.org; arc=none smtp.remote-ip=209.85.128.54
+Authentication-Results: smtp.subspace.kernel.org; arc=none smtp.remote-ip=205.220.168.131
 ARC-Seal: i=1; d=subspace.kernel.org; s=arc20261015; a=rsa-sha256; cv=none;
-	t=1795530299;
-	b=iaDR0BYPcXLahgFSZHkss9YY9KB9qwmG5R254TfO9UYIirjoMnKTTA1jOtBVhYv5AJ82
-	 uU3pCpXTbg2HO8oE2PzJGygSY/kDS4sqHCuputZG32eIlEJz8NRHZ4b9qsQM3hDXB7Wk3
-	 UagphAIQeFL7y9bp2oZi9HqwNzgHJ4bk2gGil7aqknwJeuipFWD9+NUoqlV6xPCOziW19
-	 wdRsH2vBRVtW/DnSFGwXR3R7Qa2SS3Cqnl2nXOdydyufjvx/YCS/3EmvmbnqdXQu+p8ke
-	 qZLfpPa64GySbbwe87Aj6I3eNg4tH4FifVTL04uLJgvdzbYUKgGfq1tnJbdTpWjnJdA==
+	t=1795530481;
+	b=jqGhdp/dvGLYs4hWraOhK+tE8rLGWnAVgMbMVQflCaUTLbk0hb8jDg9kOma0ijATvnqP
+	 SLewbqkGjUEGSfiSWfhYv82P6LJdM44n7dJLrmo6N63E1aV3xpab1hooQr7vmL8vWeUmF
+	 WZ7n7V9Xu6uIHDKOULBVcFZxHbyOh2+Xfo1y1TIEdkE2kYkpJcrCR2fiioQTXDRkuvd0i
+	 +hmdXW7T1mbN38Bn1u1JYUtnxH6CSZJbtw+7mdrPcnEtpBgqkaEJKmE4xZhcbAFXUJ75a
+	 bmzfTx1lSGN0G3/Uapc/h54Kv779pI2VN0yTVcXo3XUJ8EKsAIwLx9fXiq4dKspArbQ==
 ARC-Message-Signature: i=1; d=subspace.kernel.org; s=arc20261015;
-	a=rsa-sha256; c=relaxed/relaxed; t=1795530299;
-	h=DMARC-Filter:Received:DKIM-Signature:X-Google-DKIM-Signature:
-	 X-Gm-Message-State:X-Gm-Gg:X-Received:Received:From:To:Cc:Subject:
-	 Date:Message-ID:X-Mailer:MIME-Version:Content-Transfer-Encoding;
-	bh=RCKrLkl5k99AJFpDDohI0CFzM+JQWzk+3RNc7Giamwc=;
-	b=Xmganmz+oDt/LHLgqAkVKFXpUxJe2vJhPuFwUrgXFjci5lfAUfs0vEW95wCTAVh/yz7s
-	 somFgU1Fuc6YqhmT/U9JVv9X9lGV2lkwWrJKCAhAMpQ5Cj+UMjP2GxFLnp+yFg2YGvyTz
-	 V4bCD2RGXe1lkcZngSQgrV3hox0eEa9cqD/5Mx4j46UfS1YSVSYUTQSgooEWgIDWqofN2
-	 2dRTrmvAfbTZdVzYhc+sp5TWdLCMUnuMhWRSluB4+DgEiXZVrAdsNFE5sfu1pLVXPHRd4
-	 QZA0e+DYlQ/7inbR95vVbOoGJnpwk4vW0k99tkBTux8Ctj/mBbMdMDKkN2S397+w3TA==
+	a=rsa-sha256; c=relaxed/relaxed; t=1795530481;
+	h=DMARC-Filter:Received:DKIM-Signature:Received:Received:
+	 DKIM-Signature:X-Google-DKIM-Signature:X-Forwarded-Encrypted:
+	 X-Gm-Message-State:X-Gm-Gg:X-Received:X-Received:Received:Message-ID:
+	 Date:MIME-Version:User-Agent:Subject:To:Cc:References:From:
+	 Content-Language:In-Reply-To:Content-Type:Content-Transfer-Encoding:
+	 X-Authority-Analysis:X-Proofpoint-Spam-Info:X-Proofpoint-GUID:
+	 X-Proofpoint-Spam-Details-Enc:X-Proofpoint-ORIG-GUID:
+	 X-Proofpoint-Virus-Version:X-Proofpoint-Spam-Details;
+	bh=2e1f8mH50dVq3zUP41WlpUgQLkq7jx1cCFUDQDKor2E=;
+	b=j1e2gJuBXGnLk7LR2D2xN7HU9LeWg427zTsJOB6CmJZZKqzdusNfZb21swSBYYznTR1C
+	 2xllSp5IMq6TME/PrAkoD/oDS5cERZ3XEkT2xFyG2MbaE31IvC5NkvDt3Rz6+/e1D52BW
+	 fMB5Iw4YcUF6ZJzxaE/nsgV8k2BA91bMva9Iyik+kuygutVClz7YgqqtA/W8G+6aqIOhr
+	 lN2uJQ2lHuH608pAJPYqs1gGADvM76+He0i9fmUcb3dLbHvYb/LTap9DQL4Br2sAavOX/
+	 JgIuwKiPQUN00HtBi2NjO5Wak6Gp0Ngp8I6xRt8UXiG0M2Ee0OHFxkqYVTUV6+stx2w==
 ARC-Authentication-Results: i=1; smtp.subspace.kernel.org; 
-	dmarc=pass header.from=schenkerlabs.com;
-	spf=pass smtp.mailfrom=schenkerlabs.com;
-	dkim=pass header.d=schenkerlabs.com header.i=@schenkerlabs.com header.a=rsa-sha256 header.s=google header.b=uXWOPgZq;
-	arc=none smtp.remote-ip=209.85.128.54
-Received: from mail-wm1-f54.google.com (mail-wm1-f54.google.com [209.85.128.54])
-	(using TLSv1.3 with cipher TLS_AES_128_GCM_SHA256 (128/128 bits)
+	dmarc=pass header.from=oss.qualcomm.com;
+	spf=pass smtp.mailfrom=oss.qualcomm.com;
+	dkim=pass header.d=qualcomm.com header.i=@qualcomm.com header.a=rsa-sha256 header.s=qcppdkim1 header.b=ehHEymiP;
+	dkim=pass header.d=oss.qualcomm.com header.i=@oss.qualcomm.com header.a=rsa-sha256 header.s=google header.b=PcmqU5zH;
+	arc=none smtp.remote-ip=205.220.168.131
+Received: from mx0a-0031df01.pphosted.com (mx0a-0031df01.pphosted.com [205.220.168.131])
+	(using TLSv1.3 with cipher TLS_AES_256_GCM_SHA384 (256/256 bits)
 	 key-exchange X25519 server-signature ECDSA (prime256v1) server-digest SHA256)
 	(No client certificate requested)
-	by smtp.subspace.kernel.org (Postfix) with ESMTPS id 562B5606A321
-	for <linux-wireless@vger.kernel.org>; Tue, 24 Nov 2026 14:24:59 +0000 (UTC)
-DMARC-Filter: OpenDMARC Filter v1.4.2 smtp.subspace.kernel.org 562B5606A321
-Authentication-Results: smtp.subspace.kernel.org; dmarc=pass (p=none dis=none) header.from=schenkerlabs.com
-Authentication-Results: smtp.subspace.kernel.org; spf=pass smtp.mailfrom=schenkerlabs.com
+	by smtp.subspace.kernel.org (Postfix) with ESMTPS id 7B5CA606A331
+	for <linux-wireless@vger.kernel.org>; Tue, 24 Nov 2026 14:28:01 +0000 (UTC)
+DMARC-Filter: OpenDMARC Filter v1.4.2 smtp.subspace.kernel.org 7B5CA606A331
+Authentication-Results: smtp.subspace.kernel.org; dmarc=pass (p=none dis=none) header.from=oss.qualcomm.com
+Authentication-Results: smtp.subspace.kernel.org; spf=pass smtp.mailfrom=oss.qualcomm.com
 Authentication-Results: smtp.subspace.kernel.org;
-	dkim=pass (2048-bit key, unprotected) header.d=schenkerlabs.com header.i=@schenkerlabs.com header.a=rsa-sha256 header.s=google header.b=uXWOPgZq
-Received: by mail-wm1-f54.google.com with SMTP id 5b1f17b1804b1-4bb6886d30aso44092505e9.3
-        for <linux-wireless@vger.kernel.org>; Tue, 24 Nov 2026 06:24:59 -0800 (PST)
+	dkim=pass (2048-bit key) header.d=qualcomm.com header.i=@qualcomm.com header.a=rsa-sha256 header.s=qcppdkim1 header.b=ehHEymiP;
+	dkim=pass (2048-bit key) header.d=oss.qualcomm.com header.i=@oss.qualcomm.com header.a=rsa-sha256 header.s=google header.b=PcmqU5zH
+Received: from pps.filterd (m0279864.ppops.net [127.0.0.1])
+	by mx0a-0031df01.pphosted.com (8.18.1.11/8.18.1.11) with ESMTP id 6AOAuMCp3541873
+	for <linux-wireless@vger.kernel.org>; Tue, 24 Nov 2026 14:28:00 GMT
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=qualcomm.com; h=
+	cc:content-transfer-encoding:content-type:date:from:in-reply-to
+	:message-id:mime-version:references:subject:to; s=qcppdkim1; bh=
+	2e1f8mH50dVq3zUP41WlpUgQLkq7jx1cCFUDQDKor2E=; b=ehHEymiP2vHy9XnQ
+	ME9obw6CtHFbeMT2Aw/3n6M3lSRaUO5J5xly4qxrWUub6qa6o/aDmymIFsNuD6rT
+	644KKRGOjTuyAx+fISCxw5uJzuDgb3429BOIaPk5s8uvOdXZDPyIGf5v6I5yrSpS
+	eG9gVyRdOpcHf/yHojuxyBpiDDGpjCk5RAvPmX2bWeNF/QXJQ2UH/KPhZ0stBiD8
+	+Q/roXCceCYAKGJzSpktDc9qmshL8ojn/FiFneH7pSJax52Y4G01J7aA9SwOoIlG
+	s4sH3UhufW4ODC3m8EcaIln+HSmK1V1JJPL6M8nKYx8fIf1NBfGrXRsu4TGJXOla
+	Of08Xw==
+Received: from mail-yx1-f71.google.com (mail-yx1-f71.google.com [74.125.224.71])
+	by mx0a-0031df01.pphosted.com (PPS) with ESMTPS id 4j54rha6g5-1
+	(version=TLSv1.3 cipher=TLS_AES_128_GCM_SHA256 bits=128 verify=NOT)
+	for <linux-wireless@vger.kernel.org>; Tue, 24 Nov 2026 14:28:00 +0000 (GMT)
+Received: by mail-yx1-f71.google.com with SMTP id 956f58d0204a3-6790b1d37e7so6814381d50.0
+        for <linux-wireless@vger.kernel.org>; Tue, 24 Nov 2026 06:28:00 -0800 (PST)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=schenkerlabs.com; s=google; t=1795530298; x=1796135098; darn=vger.kernel.org;
-        h=content-transfer-encoding:mime-version:message-id:date:subject:cc
-         :to:from:from:to:cc:subject:date:message-id:reply-to:content-type;
-        bh=RCKrLkl5k99AJFpDDohI0CFzM+JQWzk+3RNc7Giamwc=;
-        b=uXWOPgZqXDwIEN83d/T84ued3N5Br+vo3pUcq8iFupjM0jrveF2BKm3sqjAG2/jMcZ
-         NYnE6pSRQxVpL8GXmZwCYA/IMLlWhW8poV0ygltRHm1hDdUOrxbcUumd1jBitkSpAVEj
-         fv+AV4bZ07w3yxBOCL9nFkfa+xvNawYOLBJ2bupMliPZziqnopD519UN/5kUnOry9Bye
-         y8GfbWA/cjgfdAI+m00VkmOXcBnfob/qGhPZzQ4YtxKKG/XyUxZ3gFYjnqvtWs21A/yM
-         QwcCtYpk6Qbruq+cvsq9TbKcJL7VPnuO20juCmBZGVDAONfv2JQNAPL7p9ajBmpGgLye
-         dZtg==
+        d=oss.qualcomm.com; s=google; t=1795530479; x=1796135279; darn=vger.kernel.org;
+        h=content-transfer-encoding:content-type:in-reply-to:content-language
+         :from:references:cc:to:subject:user-agent:mime-version:date
+         :message-id:from:to:cc:subject:date:message-id:reply-to:content-type;
+        bh=2e1f8mH50dVq3zUP41WlpUgQLkq7jx1cCFUDQDKor2E=;
+        b=PcmqU5zHSjvRIMQaNxl7yItDrLmz18KHkmTGRDNXxKz2QDcq/YwLiNuiIwFk6c7qly
+         REZ6ldKYWxdRd4q1Oaq4+5qYxb/D7uS0fmLwVfDoa5aGzuQNttN2wcflolu79DE35VWT
+         i274p/5JosmQFRv6Sh7E0aOwlBWOubsNfDTVOso15lXWHb6gCfD8m/KXdkEFQqU46ljj
+         ydUSTtnuyEz/3fmNnAEHP4t618GIvSoSSXPs2m2+tede7nhT5uyZm4Jug7cWIFOKsCUK
+         dYw0C9bYhLSEmipDV8u8CKuinuk2pHYnOgCt8nXx8EI4oS3kj3RwAw/BmjW8clqAlzm3
+         jNDg==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=1e100.net; s=20260707; t=1795530298; x=1796135098;
-        h=content-transfer-encoding:mime-version:message-id:date:subject:cc
-         :to:from:x-gm-gg:x-gm-message-state:from:to:cc:subject:date
+        d=1e100.net; s=20260707; t=1795530479; x=1796135279;
+        h=content-transfer-encoding:content-type:in-reply-to:content-language
+         :from:references:cc:to:subject:user-agent:mime-version:date
+         :message-id:x-gm-gg:x-gm-message-state:from:to:cc:subject:date
          :message-id:reply-to:content-type;
-        bh=RCKrLkl5k99AJFpDDohI0CFzM+JQWzk+3RNc7Giamwc=;
-        b=WUaOEM4k6zL3ovsAiKkJXr05u9A30WWp5mpruFuqHvucaWK6pM9AeJa5XFX4RwMje6
-         NZU4WrgIxBGRivJn1uA6oDTIOmDkKPi5fmGNGDPS2kRAguwtM2T53b/9Xg9BtjvmoXXN
-         M8bIOQJgRz6LP8VPiItvR7IvKN46JSuxKPZcPycV5wX8oQFuo9Ftelt3U8MnZFm/CR5j
-         wKSnPvaYmCQpwJosqUrfcREj06duDjWW0rvZCA7HFXfN+wH01zcAWtHucnQ+dCUrO3tx
-         nYDOYvNm7lVS01e7tzjX1pb8iG0ZYhKLqv6xYc136+orPgKHAZqWFO+FjX7332N5TyrJ
-         2cPQ==
-X-Gm-Message-State: APuU4Z9Ak6vgcvntY+MR1uxPdPFCFE18j9ql/ivxGe83y4StU0XY0Ctn
-	6fBkD9dcJICPxfRfY8++IbIr0vdwaz6c/GMzeZoiCNwn2lUt4sTa5ttR/VSbky/+VgEs
-X-Gm-Gg: AZFdTZevMZbjgLOptNgbe7kLK6sHKyPFjXYaLO348T4wCUrRVUG9mS/N9SbzfL21f9K
-	2ZjWvmy2u90iJ8vg6Sfx5wl0luCpq+2jwy+/OyjFjXhIMrAXMfrPEmsT61jgGgWcdCAzKDw6rw9
-	reeZJKLcfsQNBYBFOyZAfQ78M+DWf5/Fm9AHrxAZ8mKwWmf908Ex/mUDGrKk4i6PyIn9afzeY87
-	BCDTuC2YSHfgQoy62qQy+IGFTiRN/tBW14iGw3a+C4MKlo1a5zus80qeTDPxatSfHCSevjsPO7y
-	ol1bOxorzkCgvKAOompbrsMPjVUehFHE0dDco6v3m+BWVL7dO2urLg7O1fQW3MyYYd24qkXcuh3
-	upUSCXjjJkie+S4AOKQUoCJAvrpi9B4Mdrdsk1Y0B8m3fVhhCHss3Mh+SZuCsOe8B+r8cTjptfe
-	cMq9d+cVyJ3/KWHmnO6AEpm03vRuPqBgqv7Yg0VuOSfC4iYMzt5HP+gNVLhje7YsyIwcQD9V6Td
-	ONlKEBNnupeG0rgo03P84dDBirB/aIni2flg74gWGkX4a90S6eda4jmds8SreNgb6LPixKmu6TZ
-	02S9v7I/NeAGiQZahfSkbfA8+C2CbK814qqMM6fogW+ObgekWSdYFkoKw3HN7ZewarEFCA==
-X-Received: by 2002:a05:600c:1d8c:b0:4a1:c5eb:b445 with SMTP id 5b1f17b1804b1-4bb88820436mr306545315e9.35.1795530297416;
-        Tue, 24 Nov 2026 06:24:57 -0800 (PST)
-Received: from jbs-XPS-13-9310.sus.lan ([83.144.243.242])
-        by smtp.gmail.com with ESMTPSA id 5b1f17b1804b1-4bb88442693sm386718825e9.1.2026.11.24.06.24.56
-        (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
-        Tue, 24 Nov 2026 06:24:56 -0800 (PST)
-From: "Joerg Schenker (Schenker Labs)" <joerg@schenkerlabs.com>
-To: Jeff Johnson <jjohnson@kernel.org>,
-	ath11k@lists.infradead.org
-Cc: linux-wireless@vger.kernel.org
-Subject: [PATCH ath-next] wifi: ath11k: clamp survey noise floor on QCA6390
-Date: Tue, 24 Nov 2026 15:24:38 +0100
-Message-ID: <20261124142438.106847-1-joerg@schenkerlabs.com>
-X-Mailer: git-send-email 2.53.0
+        bh=2e1f8mH50dVq3zUP41WlpUgQLkq7jx1cCFUDQDKor2E=;
+        b=UHTa5nAQUf2XbR9pcNj0Z+PSeD+ETKXUkQiE4UbpPAgg7Pudn5ypEarrr7U0YKDXAE
+         11gA/PargWDcGlhRS83vKgRj2FRnsGfHpS/jIXddrry8vlw9yt4jqM7qW0FfgyABG59C
+         /Z3JCsW70e6tSqw0Q/ggrCBwGPE/DSAE3QMg79JwyOYsZRO5LaQE7oTj6tLNn75Zi724
+         xH8UZ0VvP1Ipsh51khzTJ3FabyyCcJ1VvMR77dXFIaV/mOtkwEUaWWJMEXvpRdUOs1AK
+         9AOw3bX0xAiBzrdV3B/lujLWa6w9MdcW5Qrk6as93GlXzREXp+gxs5jklKUVIwIspFlu
+         6YLg==
+X-Forwarded-Encrypted: i=1; AL+hErGRqRe8xMQIC+fhjLewElUqMJ4UVfrTdlvhiof/JWeMV/xj5Dm6iYbq4tBRArmIHbGUcIkTUwDo8yVEbzVDbw==@vger.kernel.org
+X-Gm-Message-State: APuU4Z8eCFmByC0P0VWzbAsKObEmQXHUWZUjI6vGCApPf+1RImDWkfgR
+	C/eoN2WM6QfN1s5pFiqi7fXa8zEbQ4dtmlIjHqbObGR1hJ+q6izDCMjaT5I7JK4cOQWfwAXA2cG
+	jtb+EFICD3xzDN83I5QzK2nGg/nWam2IdNzzJLdriMAt2Uf2YdbzOjhW3GOVvhCgCSBtepw==
+X-Gm-Gg: AZFdTZcU9mnxmqK0cKXMEp3f3suOWzZET5fNlui1u18m3zDrCLta40ekn1PCRpAjTQQ
+	b1VoUEja8t32FX2oSRzGGsdpwVkaxWc7lWRPXPZz+WK4Zy7ycw5aa1YX5GD1YbTmZmpQb4g3ezC
+	ptBL5RML+3Kl5tqlJzTQLtW9s6r+m4/GA3J9X5C+5G2Qo+hWpJwuvH60U7JRwFczNz9ofvkV5s6
+	YGTFumORFgq2vVLrVib0kTzdBF+UOS/HlKefGJ67fxKohrOPbsz3ypYxGwqEQOdim5tDpSXfHm4
+	YVRc4AsUD9wL4j2UMsqobJwKm1QOrLivYdNQTUlZcAiBIvYSwp8wzXrmJIMXlLyHOk0KIi6unyi
+	8vZVzU0UV6oTEAEKmkkmPkjO6KKo7pgX/dpsore8+tADwPeRRNFjVEGmFmgi4jEN+phl9Kt4nRQ
+	m1EaAMIsSsGZzekGE84zbS2nuA0O97PA658g==
+X-Received: by 2002:a05:690e:801:10b0:67d:bbf9:11d4 with SMTP id 956f58d0204a3-67df44b7404mr4067700d50.78.1795530478708;
+        Tue, 24 Nov 2026 06:27:58 -0800 (PST)
+X-Received: by 2002:a05:690e:801:10b0:67d:bbf9:11d4 with SMTP id 956f58d0204a3-67df44b7404mr4067679d50.78.1795530478139;
+        Tue, 24 Nov 2026 06:27:58 -0800 (PST)
+Received: from [10.227.105.111] (i-global254.qualcomm.com. [199.106.103.254])
+        by smtp.gmail.com with ESMTPSA id 956f58d0204a3-67df33554b5sm7035521d50.13.2026.11.24.06.27.55
+        (version=TLS1_3 cipher=TLS_AES_128_GCM_SHA256 bits=128/128);
+        Tue, 24 Nov 2026 06:27:57 -0800 (PST)
+Message-ID: <748d38da-fb00-4f76-9b58-87ad0fe9b770@oss.qualcomm.com>
+Date: Tue, 24 Nov 2026 06:27:53 -0800
 X-Mailing-List: linux-wireless@vger.kernel.org
 List-Id: <linux-wireless.vger.kernel.org>
 List-Post: <mailto:linux-wireless@vger.kernel.org>
@@ -92,166 +114,69 @@ List-Unsubscribe: <mailto:linux-wireless+unsubscribe@vger.kernel.org>
 List-Owner: <mailto:linux-wireless+owner@vger.kernel.org>
 Precedence: list
 MIME-Version: 1.0
-Content-Transfer-Encoding: 8bit
+User-Agent: Mozilla Thunderbird
+Subject: Re: [PATCH ath-next v3 01/15] dt-bindings: net: wireless: add ath12k
+ wifi device QCN9575
+To: Krzysztof Kozlowski <krzk@kernel.org>,
+        Madhavan Ganesan <madhavan.ganesan@oss.qualcomm.com>
+Cc: Johannes Berg <johannes@sipsolutions.net>, Rob Herring <robh@kernel.org>,
+        Krzysztof Kozlowski <krzk+dt@kernel.org>,
+        Conor Dooley
+ <conor+dt@kernel.org>,
+        Jeff Johnson <jjohnson@kernel.org>,
+        Nathan Chancellor <nathan@kernel.org>,
+        Nick Desaulniers <ndesaulniers@google.com>,
+        Bill Wendling
+ <morbo@google.com>,
+        Justin Stitt <justinstitt@google.com>, linux-wireless@vger.kernel.org,
+        devicetree@vger.kernel.org, ath12k@lists.infradead.org,
+        linux-kernel@vger.kernel.org, llvm@lists.linux.dev
+References: <20261118-wifi8_qcn9575_bringup-v3-0-9875d2a3953f@oss.qualcomm.com>
+ <20261118-wifi8_qcn9575_bringup-v3-1-9875d2a3953f@oss.qualcomm.com>
+ <20261121-lobster-of-unearthly-variation-e75ea9@quoll>
+ <f2f50403-fa42-4ee2-bb22-c78309590196@oss.qualcomm.com>
+ <f513c601-ef8b-4524-9c56-d3d121c8df2a@kernel.org>
+From: Jeff Johnson <jeff.johnson@oss.qualcomm.com>
+Content-Language: en-US
+In-Reply-To: <f513c601-ef8b-4524-9c56-d3d121c8df2a@kernel.org>
+Content-Type: text/plain; charset=UTF-8
+Content-Transfer-Encoding: 7bit
+X-Authority-Analysis: v=2.4 cv=BKkmP1QG c=1 sm=1 tr=0 ts=6b059ef0 cx=c_pps
+ a=ngMg22mHWrP7m7pwYf9JkA==:117 a=JYp8KDb2vCoCEuGobkYCKw==:17
+ a=IkcTkHD0fZMA:10 a=zJRp6_cAMcgA:10 a=s4-Qcg_JpJYA:10
+ a=VkNPw1HP01LnGYTKEx00:22 a=u7WPNUs3qKkmUXheDGA7:22 a=DJpcGTmdVt4CTyJn9g5Z:22
+ a=UQl-3I4BsUNNjRoNwgMA:9 a=QEXdDO2ut3YA:10 a=yHXA93iunegOHmWoMUFd:22
+X-Proofpoint-Spam-Info: AW1haW4tMjYxMTI0MDA1NiBTYWx0ZWRfX3Le/zJLHpbpK
+ g/EpB4SLK3Yjne3L9VjpjNvVyClAJutO05KitZ/M4mnQeVhl0ze+qihlxFFYIQmj+JjFvZ+LH/F
+ bFwLZW+7wYMTdKj9DZQ0KvARQtx9GKM=
+X-Proofpoint-GUID: HPVZayjU1G1_DFVQVIR0s44Q-GaETT0z
+X-Proofpoint-Spam-Details-Enc: AW1haW4tMjYxMTI0MDA1NiBTYWx0ZWRfX+iRgCGp+LorR
+ fqkdfoHbTo4hW1ExgUAhF30kAyYVX8ay7g028cnOVlJwuhsaekg6vMeael9GTWEK8zd5qo3sGaG
+ sBrNUJTuFQN8ohe8sxqJhFI8/2CwLR90INnnBYfqvUyFCevSjioStFQAW507HESRYavlJzXkJqZ
+ bkwZbMXMCN8TB6wdRlXyshSIeaat/SKQwic3VryLNVQf68KfOHCmRxaMj9BtyT8Ffrk8OJnIOG5
+ 7TQJtAjbZJ8sSPDk1vMMM0cFRkC/s5mONBRXQcf3qRKbOsHgau4VDYLCoJjhgtsYK3XVfHUgRMH
+ /SseMAYHC89oyK5GufJB5Z9KqUb1QpBSuBgs60eNBVmm03d7gKdwZNZBWaIdF40MAXDC4AKdQlA
+ lMN4jTrNJZmgPjkGwHCsbeujpxJ6wHnxybOOT3HdVD4/3NvCHnJUYM5yVyCyLCT8oSE2dK8it8q
+ 17/gtAqJR8Z6ePeRNmg==
+X-Proofpoint-ORIG-GUID: HPVZayjU1G1_DFVQVIR0s44Q-GaETT0z
+X-Proofpoint-Virus-Version: vendor=baseguard
+ engine=ICAP:2.0.293,Aquarius:18.0.1176,Hydra:6.1.138,FMLib:17.12.100.49
+ definitions=2026-11-24_02,2026-11-23_01,2025-10-01_01
+X-Proofpoint-Spam-Details: rule=outbound_notspam policy=outbound score=0
+ priorityscore=1501 malwarescore=0 clxscore=1015 bulkscore=0 adultscore=0
+ phishscore=0 spamscore=0 lowpriorityscore=0 impostorscore=0 suspectscore=0
+ classifier=typeunknown authscore=0 authtc= authcc= route=outbound adjust=0
+ reason=mlx scancount=1 engine=8.22.0-2611040001 definitions=main-2611240056
 
-QCA6390 firmware reports channel noise floor values of -111 to -118 dBm
-in the chan info and pdev bss chan info events. The driver passes them
-unchanged to cfg80211 as the survey noise floor.
+On 11/23/2026 7:59 AM, Krzysztof Kozlowski wrote:
+> On 23/11/2026 16:54, Jeff Johnson wrote:
+>> Specifically for the DT issue, the original version of this series vetted
+>> internally did have a patch to add the device in the PCI registration table,
+>> but it was decided to drop it from this patchset when posting to public. We
+>> can also drop the DT patch until the point the PCI registration comes.
+> 
+> Still does not explain why do we want bindings without users...
+Concur, and I've asked him to drop the DT change until the series that
+introduces the user.
 
-These values don't match the signal levels reported by the driver. For
-management frames, ath11k_mgmt_rx_event() calculates the signal level as
-rx_ev.snr + ATH11K_DEFAULT_NOISE_FLOOR (-95 dBm). User space calculates
-the SNR of a scan result as signal level minus survey noise floor, so
-with a noise floor of -116 dBm, the SNR is 21 dB higher than the SNR
-reported by the firmware.
-
-The values are also far below the real noise floor. On an AP received
-at -88 dBm, the AP transmitted to the station at 6.5 Mbit/s (MCS 0), and
-the station transmitted at 13 to 27 Mbit/s. A noise floor of -116 dBm
-would mean an SNR of about 28 dB, which allows much higher rates.
-
-wpa_supplicant uses the SNR to calculate the estimated throughput of
-scan results, and roams within an ESS when another BSS has a higher
-estimated throughput. In an ESS with many APs, the station repeatedly
-roamed from an AP at -60 dBm to an AP at -90 dBm:
-
-  Current BSS:  ... freq=5580 level=-59 snr=57 est_throughput=180001
-  Selected BSS: ... freq=5180 level=-90 snr=26 est_throughput=263301
-  Allow reassociation - selected BSS has better estimated throughput
-
-The station roamed to that AP twice within 15 minutes. After the first
-roam, the connection was lost after about 100 seconds because of beacon
-loss.
-
-Add a hw_params flag to clamp the survey noise floor to
-ATH11K_DEFAULT_NOISE_FLOOR, and enable it for QCA6390. The noise floor
-is still reported, so users that require it, such as hostapd ACS, keep
-working. Other chips are not changed.
-
-With this change, the distant AP, received at -88 to -90 dBm, gets an
-SNR of 5 to 7 dB and an estimated throughput of 18 to 26 Mbit/s instead
-of 263 Mbit/s. In a one hour test at the same desk, the station stayed
-on an AP at about -68 dBm the whole time, with 0.2% ping loss. Directly
-afterwards, with the unpatched driver, the station connected to the
-distant AP at -89 dBm, with 53% ping loss, and the test had to be
-stopped after three minutes.
-
-The problem was analyzed and this patch was developed with the help of
-an AI coding assistant (Claude Code, model claude-opus-5-5). The
-assistant analyzed the debug logs and the driver code, and wrote the
-code and this commit message. I reviewed the change and tested it on my
-laptop as described above.
-
-Tested-on: QCA6390 hw2.0 PCI WLAN.HST.1.0.1-05266-QCAHSTSWPLZ_V2_TO_X86-1
-
-Fixes: 9de2ad43d46c ("ath11k: add hw_params entry for QCA6390")
-Signed-off-by: Joerg Schenker (Schenker Labs) <joerg@schenkerlabs.com>
----
-Notes:
-
-- Only QCA6390 is changed because it is the only chip I could test. I
-  don't know whether other chips (e.g. WCN6855) report similar values.
-  If they do, the flag can be enabled for them, or the clamp could be
-  made unconditional.
-
-- The noise floor is clamped instead of not reported, because hostapd
-  ACS ignores surveys without a noise floor (acs_survey_is_sufficient()).
-
-- ATH11K_DEFAULT_NOISE_FLOOR is used as the limit because it is the
-  noise floor that the driver already assumes for the signal level of
-  management frames. It also matches the link rates observed above.
-
-- The survey noise floor has been reported unchanged since the initial
-  driver commit d5c65159f289, which supported only IPQ8074. The Fixes
-  tag points to the commit that added QCA6390, because the problem was
-  observed there and the change only affects QCA6390.
-
-- I don't know what the chan info noise_floor value refers to in the
-  firmware. If there is a known conversion to dBm, using it would be
-  better than clamping.
-
-- AI assistance: I asked the assistant to find out why my laptop's WiFi
-  was unreliable in one office while it worked elsewhere. It collected
-  and analyzed wpa_supplicant/NetworkManager debug logs and per-second
-  link measurements, found the cause in the driver, and wrote the patch.
-  Over several iterations we changed the approach: from not reporting
-  the noise floor (would break hostapd ACS), to a generic clamp (would
-  affect chips I can't test), to this QCA6390-only clamp.
-
- drivers/net/wireless/ath/ath11k/core.c |  1 +
- drivers/net/wireless/ath/ath11k/hw.h   |  1 +
- drivers/net/wireless/ath/ath11k/wmi.c  | 20 ++++++++++++++++++--
- 3 files changed, 20 insertions(+), 2 deletions(-)
-
-diff --git a/drivers/net/wireless/ath/ath11k/core.c b/drivers/net/wireless/ath/ath11k/core.c
-index 766ae2730..8ffdd0a8f 100644
---- a/drivers/net/wireless/ath/ath11k/core.c
-+++ b/drivers/net/wireless/ath/ath11k/core.c
-@@ -306,6 +306,7 @@ static const struct ath11k_hw_params ath11k_hw_params[] = {
- 		.cfr_support = false,
- 		.cfr_num_stream_bufs = 0,
- 		.cfr_stream_buf_size = 0,
-+		.clamp_survey_noise_floor = true,
- 	},
- 	{
- 		.name = "qcn9074 hw1.0",
-diff --git a/drivers/net/wireless/ath/ath11k/hw.h b/drivers/net/wireless/ath/ath11k/hw.h
-index 4996536fb..ea66f26b7 100644
---- a/drivers/net/wireless/ath/ath11k/hw.h
-+++ b/drivers/net/wireless/ath/ath11k/hw.h
-@@ -231,6 +231,7 @@ struct ath11k_hw_params {
- 	bool cfr_support;
- 	u32 cfr_num_stream_bufs;
- 	u32 cfr_stream_buf_size;
-+	bool clamp_survey_noise_floor;
- };
- 
- struct ath11k_hw_ops {
-diff --git a/drivers/net/wireless/ath/ath11k/wmi.c b/drivers/net/wireless/ath/ath11k/wmi.c
-index 82f85df48..5db4ff346 100644
---- a/drivers/net/wireless/ath/ath11k/wmi.c
-+++ b/drivers/net/wireless/ath/ath11k/wmi.c
-@@ -7970,6 +7970,22 @@ static void ath11k_roam_event(struct ath11k_base *ab, struct sk_buff *skb)
- 	rcu_read_unlock();
- }
- 
-+/* The firmware of some chips reports channel noise floor values far below
-+ * the actual noise floor, e.g. -111 to -118 dBm on QCA6390. Signal levels
-+ * of received management frames are calculated as rx_ev.snr +
-+ * ATH11K_DEFAULT_NOISE_FLOOR in ath11k_mgmt_rx_event(), so user space
-+ * calculates a far too high SNR for scan results from such a noise floor.
-+ * On these chips, don't report noise floor values below
-+ * ATH11K_DEFAULT_NOISE_FLOOR.
-+ */
-+static s8 ath11k_wmi_survey_noise_floor(struct ath11k_base *ab, s32 noise_floor)
-+{
-+	if (ab->hw_params.clamp_survey_noise_floor)
-+		return max_t(s32, noise_floor, ATH11K_DEFAULT_NOISE_FLOOR);
-+
-+	return noise_floor;
-+}
-+
- static void ath11k_chan_info_event(struct ath11k_base *ab, struct sk_buff *skb)
- {
- 	struct wmi_chan_info_event ch_info_ev = {};
-@@ -8032,7 +8048,7 @@ static void ath11k_chan_info_event(struct ath11k_base *ab, struct sk_buff *skb)
- 	if (ch_info_ev.cmd_flags == WMI_CHAN_INFO_START_RESP) {
- 		survey = &ar->survey[idx];
- 		memset(survey, 0, sizeof(*survey));
--		survey->noise = ch_info_ev.noise_floor;
-+		survey->noise = ath11k_wmi_survey_noise_floor(ab, ch_info_ev.noise_floor);
- 		survey->filled = SURVEY_INFO_NOISE_DBM | SURVEY_INFO_TIME |
- 				 SURVEY_INFO_TIME_BUSY;
- 		survey->time = div_u64(ch_info_ev.cycle_count, cc_freq_hz);
-@@ -8099,7 +8115,7 @@ ath11k_pdev_bss_chan_info_event(struct ath11k_base *ab, struct sk_buff *skb)
- 
- 	survey = &ar->survey[idx];
- 
--	survey->noise     = bss_ch_info_ev.noise_floor;
-+	survey->noise     = ath11k_wmi_survey_noise_floor(ab, bss_ch_info_ev.noise_floor);
- 	survey->time      = div_u64(total, cc_freq_hz);
- 	survey->time_busy = div_u64(busy, cc_freq_hz);
- 	survey->time_rx   = div_u64(rx_bss, cc_freq_hz);
--- 
-2.53.0
-
+/jeff
