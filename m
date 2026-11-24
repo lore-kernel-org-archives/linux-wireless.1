@@ -1,96 +1,51 @@
-Authentication-Results: smtp.subspace.kernel.org; arc=pass header.oldest-pass=0 smtp.remote-ip=52.101.69.70
-ARC-Seal: i=2; d=subspace.kernel.org; s=arc20261015; a=rsa-sha256; cv=pass;
-	t=1795503490;
-	b=2OrK0zitDx6oah3rlTYl/KbnUCBRGys2AvwlLQVJPwtwTiZrvUNJI/IGEYR+DeRHgyFO
-	 ciJROUQD6+NUnJ4YUR9FolkFDzk9cEdsvh/aoqACefKNrchkn9ublsakoP9cz/5uIbWlV
-	 PojP542EQA1Yn8ulNK4e7519BhytzLWHPqKRWn5bbOsxvUNSL3Eb4yV4zCBlETG0wlL8A
-	 3yrZaQBks1CynpcVodsuMEVvryfmT/rPtwowcearZrIUlOCTgBLL/JvUIS0PAlqAte8ER
-	 BK1mOUIdZu1cNWL28ZcVCUELdyKjVEzTZaeeYEguFbaKOwxG1luuuZ+eZnkQNw4yZrQ==
-ARC-Message-Signature: i=2; d=subspace.kernel.org; s=arc20261015;
-	a=rsa-sha256; c=relaxed/relaxed; t=1795503490;
-	h=DMARC-Filter:DKIM-Signature:Received:Received:From:To:Cc:Subject:
-	 Date:Message-Id:X-Mailer:In-Reply-To:References:
-	 Content-Transfer-Encoding:Content-Type:X-ClientProxiedBy:MIME-Version:
-	 X-MS-PublicTrafficType:X-MS-TrafficTypeDiagnostic:
-	 X-MS-Office365-Filtering-Correlation-Id:X-MS-Exchange-SenderADCheck:
-	 X-MS-Exchange-AntiSpam-Relay:X-Microsoft-Antispam:
-	 X-Microsoft-Antispam-Message-Info:X-Forefront-Antispam-Report:
-	 X-MS-Exchange-AntiSpam-MessageData-ChunkCount:
-	 X-MS-Exchange-AntiSpam-MessageData-0:X-OriginatorOrg:
-	 X-MS-Exchange-CrossTenant-Network-Message-Id:
-	 X-MS-Exchange-CrossTenant-AuthSource:X-MS-Exchange-CrossTenant-AuthAs:
-	 X-MS-Exchange-CrossTenant-OriginalArrivalTime:
-	 X-MS-Exchange-CrossTenant-FromEntityHeader:
-	 X-MS-Exchange-CrossTenant-Id:X-MS-Exchange-CrossTenant-MailboxType:
-	 X-MS-Exchange-CrossTenant-UserPrincipalName:
-	 X-MS-Exchange-Transport-CrossTenantHeadersStamped;
-	bh=BgOt6vA+qeo4D27dnDU8VQHSPOMBdGrJFU17Ddr68tA=;
-	b=0DgHL4ZMtDnRylaqZzpJveTKfL8/RJKFKbderIfPgpw7XH3a3NcVFFUOmPL/YMK7BvPA
-	 P5Ny/g/T3+GqEbmsrUnFk26u5D6n9FJPwJICXGDSHgxox6w4qSnsB/91GFylRg5aTYPvq
-	 GbsSlms/nJnkcuXIKIz6kWq1U/CY71Pp+gQpJkTPfNCfbsOt4Yv1Pu8NDXlWHgNMjpv7T
-	 0dGFLcLuurv4EpR35autCZQQuEX0PTN9f2tgcpYjPLg/iBRbTYXB0KI0D3o50ZIJIf/Zo
-	 XzvIYzlmRaYHisn/0qg1bXZchNs4W1uuF3+CEWcAFVTC2dS+xN38PW4hlRR3Pu2skZA==
-ARC-Authentication-Results: i=2; smtp.subspace.kernel.org; 
-	dmarc=pass header.from=oss.nxp.com;
-	spf=pass smtp.mailfrom=oss.nxp.com;
-	dkim=pass header.d=NXP1.onmicrosoft.com header.i=@NXP1.onmicrosoft.com header.a=rsa-sha256 header.s=selector1-NXP1-onmicrosoft-com header.b=sIUVNJ+r;
-	arc=pass header.oldest-pass=0 smtp.remote-ip=52.101.69.70
-Received: from AM0PR83CU005.outbound.protection.outlook.com (mail-westeuropeazon11010070.outbound.protection.outlook.com [52.101.69.70])
+Authentication-Results: smtp.subspace.kernel.org; arc=none smtp.remote-ip=34.202.193.197
+ARC-Seal: i=1; d=subspace.kernel.org; s=arc20261015; a=rsa-sha256; cv=none;
+	t=1795504085;
+	b=BQ5SApocuWNH1DOFA7i4xzOtfppZcNZilOIGeBvdxDhavuxzSQPVx+P/a5IpJUWyu2pN
+	 60EOMo+j6KJTlRFoRRdqe1looeL/trmVdeQJEUvpCTaGvYnRcrq2X2OMbMlbmIbM9E9DN
+	 Bb3u3DGsOz/9njXLhSgET7NMA9cHR0oPX3N45wE3DzTvA6rQVy96964yh7WLed/w0EGrx
+	 V2qqDihCYN1j31wiP31gVpkv7wYKYQOijEY0yLeFHgD6iVpB+bJA84UVxhAYyFCGLn9Yc
+	 tcU6fKQKzoVdj9n8TbYqi//FvF1ZyXIj25+opSwi3Bd0VkiylkKykT8XqjYGrLDwQCg==
+ARC-Message-Signature: i=1; d=subspace.kernel.org; s=arc20261015;
+	a=rsa-sha256; c=relaxed/relaxed; t=1795504085;
+	h=DMARC-Filter:DKIM-Signature:DKIM-Signature:Feedback-ID:
+	 X-Pm-Original-To:Received:Message-ID:Date:MIME-Version:User-Agent:
+	 From:Subject:To:Cc:Content-Language:Content-Type:
+	 Content-Transfer-Encoding;
+	bh=Lj9j3ZvrwRx0Nejbw4yXp8DQLDpD+MS4f8ANucpuTNk=;
+	b=23ynhK6chFpnP6TifKEmDrVKXZoq5lcr8ui6R3lXvdZe6A10iXzpGmJCmynuRRaVy5ci
+	 mtOedKU1xQV+5RgYQ9MBuO51uv0YvD+AKZvPHUfFBUevTPmmiXvSG77Lz3oXPng+FnP9r
+	 9xIy8esImIts6NElCaQNahYxqN8vGqI29DO1DhfAegoPgFY4rxgFHq3HlIrE/i4eLcS5Z
+	 xx0ZiR8HlaSf2rGIhg8BCnNmtAin/usJ5AeRytL0oLQs5di5REd1dfj+9ygl/Vu1SOyQp
+	 A1OE1vNARnHk8853u+s78N2mCVK3sWq7dNwecxpfnMvf8pVOzTmFzOmCQiYaQwNy2JA==
+ARC-Authentication-Results: i=1; smtp.subspace.kernel.org; 
+	dmarc=pass header.from=jimmycushnie.com;
+	spf=pass smtp.mailfrom=jimmycushnie.com;
+	dkim=pass header.d=jimmycushnie.com header.i=@jimmycushnie.com header.a=rsa-sha256 header.s=purelymail2 header.b=TzybrUZ2;
+	dkim=pass header.d=purelymail.com header.i=@purelymail.com header.a=rsa-sha256 header.s=purelymail2 header.b=SDURzBNr;
+	arc=none smtp.remote-ip=34.202.193.197
+Received: from sendmail.purelymail.com (sendmail.purelymail.com [34.202.193.197])
 	(using TLSv1.3 with cipher TLS_AES_256_GCM_SHA384 (256/256 bits)
-	 key-exchange ECDHE (secp384r1) server-signature ECDSA (prime256v1) server-digest SHA256)
+	 key-exchange X25519 server-signature ECDSA (prime256v1) server-digest SHA256)
 	(No client certificate requested)
-	by smtp.subspace.kernel.org (Postfix) with ESMTPS id 0E097606A31E
-	for <linux-wireless@vger.kernel.org>; Tue, 24 Nov 2026 06:58:08 +0000 (UTC)
-DMARC-Filter: OpenDMARC Filter v1.4.2 smtp.subspace.kernel.org 0E097606A31E
-Authentication-Results: smtp.subspace.kernel.org; dmarc=pass (p=none dis=none) header.from=oss.nxp.com
-Authentication-Results: smtp.subspace.kernel.org; spf=pass smtp.mailfrom=oss.nxp.com
+	by smtp.subspace.kernel.org (Postfix) with ESMTPS id CF114606A32A
+	for <linux-wireless@vger.kernel.org>; Tue, 24 Nov 2026 07:08:04 +0000 (UTC)
+DMARC-Filter: OpenDMARC Filter v1.4.2 smtp.subspace.kernel.org CF114606A32A
+Authentication-Results: smtp.subspace.kernel.org; dmarc=pass (p=reject dis=none) header.from=jimmycushnie.com
+Authentication-Results: smtp.subspace.kernel.org; spf=pass smtp.mailfrom=jimmycushnie.com
 Authentication-Results: smtp.subspace.kernel.org;
-	dkim=pass (2048-bit key) header.d=NXP1.onmicrosoft.com header.i=@NXP1.onmicrosoft.com header.a=rsa-sha256 header.s=selector1-NXP1-onmicrosoft-com header.b=sIUVNJ+r
-ARC-Seal: i=1; a=rsa-sha256; s=arcselector10001; d=microsoft.com; cv=none;
- b=KY1duc6z54txpOackyOUNSmwLZCNkYbIqRwIVKLsez5g46gUUYMc/0LxxIWMKQpjHJTEcFvUOYoRg8fglHRWQkj6+7CEJXqU9cB9z4/neMzpTLDWM6OKqlZyHg2KkmdkqwlbyVI5WQ/ZLpYOAPnU+3h5hymjFknnHh9M18h6BbIjZgLq6KAIsbcIqiZItdEvhLYQ7bYCzoq/JXffKS2gRhxwUDQ0gBlKsOXQtElcZJzisSuM/RIX8BqExv6ATKf3E8vEj5ocT3ClCCxIXGTjAdNtzvm/WGIdfv/B3bbzl6fQBUj2Hdt8YtPC5VOBq5KZ/1vaoDUhjK6qXykUQiCcBQ==
-ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=microsoft.com;
- s=arcselector10001;
- h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-AntiSpam-MessageData-ChunkCount:X-MS-Exchange-AntiSpam-MessageData-0:X-MS-Exchange-AntiSpam-MessageData-1;
- bh=BgOt6vA+qeo4D27dnDU8VQHSPOMBdGrJFU17Ddr68tA=;
- b=HI91fG31TVx6HoAvqDbxAl468Tjg0InFTiqPvcmrEXL+hRRaURMmV7OJy5QEWDIfaVtZz35BrHY0OpgU/GQuWn0VQI9GQiifAJZ3JStwK5SwNlFuG6OzGWEcd17NkcUw0fMcyQlmRJsN/Nmbk7wDC2EF2WHwBQglOJ5jFZwsqXXuEWt1nApKyz49MVms+X2lVf11aZnfn06b5sYWnzWZOGFcosNuibbVCyjEvUidz28QQ8z1vyjb0ElIJy/CBc6o0A34Pg7Ka74r5j9/qPrs/Nohx5b8noQsPfvPlcQW0bXDTKPAvGc0aHRL5Cl67zf8jETdkO7GyOYCBonJARUqbA==
-ARC-Authentication-Results: i=1; mx.microsoft.com 1; spf=pass
- smtp.mailfrom=oss.nxp.com; dmarc=pass action=none header.from=oss.nxp.com;
- dkim=pass header.d=oss.nxp.com; arc=none
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=NXP1.onmicrosoft.com;
- s=selector1-NXP1-onmicrosoft-com;
- h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
- bh=BgOt6vA+qeo4D27dnDU8VQHSPOMBdGrJFU17Ddr68tA=;
- b=sIUVNJ+rK8QW6SNp/4IXJZZDMi3o6+w/NoGuR2B09oQPHyGauApnq9j3Dd6tOMhSP+b8CNqAtq8K14KBkrkUKanlNgb/2fnccqS/PaEeevhdZw2xsP1n6DGs1HlHQ2A8L36ROSqDX1em7vC2ymQUK7J3CRdsDHSZ69AmUgeIcveF9Eh7z86lk6EtWYwLofhUjfO8snq+ivcpukzoXvq8dcHiWPzMvc5+R+rKke1UaJaVQt0vdKQ/sUARyRjq2OghvVZHvLYoePe74CP4XrZiHajm9MCi2cU9dJzfRwuFoFwm0VQPk3mxzuwgWpL3mo7TtTJGQCejxeHdIeANDSm6iQ==
-Authentication-Results: mx.microsoft.com 1; dkim=none (message not signed)
- header.d=none;dmarc=none action=none header.from=oss.nxp.com;
-Received: from VE1PR04MB7280.eurprd04.prod.outlook.com (2603:10a6:800:1af::22)
- by AS5PR04MB9998.eurprd04.prod.outlook.com (2603:10a6:20b:67e::11) with
- Microsoft SMTP Server (version=TLS1_2,
- cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id 15.21.639.12; Tue, 24 Nov
- 2026 06:58:06 +0000
-Received: from VE1PR04MB7280.eurprd04.prod.outlook.com
- ([fe80::92fd:f75a:a302:f859]) by VE1PR04MB7280.eurprd04.prod.outlook.com
- ([fe80::92fd:f75a:a302:f859%4]) with mapi id 15.21.0639.012; Tue, 24 Nov 2026
- 06:58:06 +0000
-From: jeff.chen_1@oss.nxp.com
-To: Tristan Madani <tristmd@gmail.com>
-Cc: Jeff Chen <jeff.chen_1@oss.nxp.com>,
-	Brian Norris <briannorris@chromium.org>,
-	Francesco Dolcini <francesco@dolcini.it>,
-	linux-wireless@vger.kernel.org,
-	Tristan Madani <tristan@talencesecurity.com>,
-	Jeff Chen <jeff.chen_1@nxp.com>
-Subject: Re: [PATCH wireless 2/3] wifi: mwifiex: validate intf_num in multichannel event handler
-Date: Tue, 24 Nov 2026 14:57:09 +0800
-Message-Id: <20261124065709.803203-1-jeff.chen_1@oss.nxp.com>
-X-Mailer: git-send-email 2.34.1
-In-Reply-To: <20261101205802.2909524-3-tristmd@gmail.com>
-References: <20261101205802.2909524-1-tristmd@gmail.com> <20261101205802.2909524-3-tristmd@gmail.com>
-Content-Transfer-Encoding: 8bit
-Content-Type: text/plain
-X-ClientProxiedBy: FR4P281CA0132.DEUP281.PROD.OUTLOOK.COM
- (2603:10a6:d10:b9::10) To VE1PR04MB7280.eurprd04.prod.outlook.com
- (2603:10a6:800:1af::22)
+	dkim=pass (2048-bit key, unprotected) header.d=jimmycushnie.com header.i=@jimmycushnie.com header.a=rsa-sha256 header.s=purelymail2 header.b=TzybrUZ2;
+	dkim=pass (2048-bit key, unprotected) header.d=purelymail.com header.i=@purelymail.com header.a=rsa-sha256 header.s=purelymail2 header.b=SDURzBNr
+DKIM-Signature: a=rsa-sha256; b=TzybrUZ22rKhNLDcXROputqVq3Fjt57gaJaaC/LWQbGQySz229kRWdy4yJKpg0GGn3feeSCZimtnp9MOSuDZNzW42VUNoY6ygVpD6YCjNjXygyv94kcAdIET7poF54mUQ7wDocjjX6xHKJHKWCaB9i9s25dH0UEovvFjlpWJQ4uYrz1lJ2cPWdOkbFqrLjmYztOdlWTljZvojngQC1dNYz562Co67h0i3BXE+TbVACm/uhHjtWLQcVyzFgts24wA0a4m5yZ2QDlIiqAx1uWY7gqrhG+MzCsSBeua8UMl6BqEGcYXKPJbkd0jIMBO+YfgIf5jEV24hPg4jYAbcMGAcg==; s=purelymail2; d=jimmycushnie.com; v=1; bh=IttPsrvZksQs/43Y7DEGq/7nnt+fPpyWi2cclFe1Wyo=; h=Received:Message-ID:Date:From:Subject:To;
+DKIM-Signature: a=rsa-sha256; b=SDURzBNrSPIUjKyc6UoV4jzlPFMM1caZa7cR4LfnqW+blVZjWbRlYC2jnZFJ8QFowqLTRnMNiER01VmSI5RyzwF+rZnf8h/emuGG35kj3fHqnq15Pa1sgwBYT4HSlcsMgSW15sr4fNUZeu5ukx9P5LmnFW0ufugrWeAijJ7we7odLt3lO7V6/M416LDHCCK0miQtzyVNm5UxyR2r7MKJG3J9EE0/QpvObPONuYrkjRhW2dvowUF9MmMk93xm9eYDg/mcj+hAgHrc+vCSbJzGHWlcpJH77fMrKlNGR2eHDzR2hBjWLb0mGiMOKLK6l7JHPKF1NFQ8kyQkAXz4BhxIHw==; s=purelymail2; d=purelymail.com; v=1; bh=IttPsrvZksQs/43Y7DEGq/7nnt+fPpyWi2cclFe1Wyo=; h=Feedback-ID:Received:Message-ID:Date:From:Subject:To;
+Feedback-ID: 708593:36671:null:purelymail
+X-Pm-Original-To: linux-wireless@vger.kernel.org
+Authentication-Results: purelymail.com; auth=pass
+Received: by smtp.purelymail.com (Purelymail SMTP) with ESMTPSA id 1096830143;
+          (version=TLSv1.3 cipher=TLS_AES_256_GCM_SHA384);
+          Tue, 24 Nov 2026 07:07:57 +0000 (UTC)
+Message-ID: <a98a6666-1499-433f-8c3f-d7277224b334@jimmycushnie.com>
+Date: Tue, 24 Nov 2026 02:07:57 -0500
 X-Mailing-List: linux-wireless@vger.kernel.org
 List-Id: <linux-wireless.vger.kernel.org>
 List-Post: <mailto:linux-wireless@vger.kernel.org>
@@ -100,73 +55,77 @@ List-Unsubscribe: <mailto:linux-wireless+unsubscribe@vger.kernel.org>
 List-Owner: <mailto:linux-wireless+owner@vger.kernel.org>
 Precedence: list
 MIME-Version: 1.0
-X-MS-PublicTrafficType: Email
-X-MS-TrafficTypeDiagnostic: VE1PR04MB7280:EE_|AS5PR04MB9998:EE_
-X-MS-Office365-Filtering-Correlation-Id: 0d53630e-02f0-4c83-544b-08df49f84a75
-X-MS-Exchange-SenderADCheck: 1
-X-MS-Exchange-AntiSpam-Relay: 0
-X-Microsoft-Antispam:
-	BCL:0;ARA:13230040|366016|376014|19092799006|23010399003|1800799024|22082099003|18002099003|56012099006|11063799006|4143699003|261021121427099003|261102123227099003|261026140227099003|261026121527099003|261022105027099003|261028144727099003|10067099003|6133799003;
-X-Microsoft-Antispam-Message-Info:
-	I4izrM8p9Vkzj0TOylPq+EJZB7ZQybmY2Ri6TkA5EAXNbcdv0WxF9T+tw4nWTO5TnT+1sQsVYzUkTsczy+/wTooaJxp+my+7XiWExAZUNjOVJwDLcCy8SYDBkMEnO9EmZhQXP+mgloin5GIrvhQ5UsmknD0MKBH+EpN0O8SoKp69DAU5GnY6uwf/WqCLeLqYFDpCQuMqfnE1p0yvAKDG00U0WFEzJOTz5V+tocb7lxMWJyjMrRm4W6SCUMF/N11Aex7/ta+fHKVLrypcQfadIzBhN3eJTH5q642Z5CGMkOdGFa/mdMbK0obhewZaTcjd2opTMLZDHyUE++wPY/frC4F9pGNOBc3mNDRSGz/d/V+3WG5XvMqfouyYMaUfpuZ4+oCYcBPKyZtNXzAHDX40+2Av1lJGNyXNNUHBHzmozHko82+N4hn6v1hTCTcNlm1oQJ1KozBu0G9BMN9UVO7qBofST58BCQ5oxcTV/AbaPu06WNTghhH3iRqA/u4g/r14ITenT0B/jLURLOzsM0mDZJZgUV2VdS4sJGFKtIaDAqUH0G3PdcU8dLtwWaaoqoCjXZrJQwOdgSE2O+RWOT572ssTjuLEreJ/hvNllPO6acp9tR7WK933s4b2WLOVTTxzQreyIKMyQ+As4vfC4ZB/FfJlJ6rV2hD2Y78sP91OX9Y=
-X-Forefront-Antispam-Report:
-	CIP:255.255.255.255;CTRY:;LANG:en;SCL:1;SRV:;IPV:NLI;SFV:NSPM;H:VE1PR04MB7280.eurprd04.prod.outlook.com;PTR:;CAT:NONE;SFS:(13230040)(366016)(376014)(19092799006)(23010399003)(1800799024)(22082099003)(18002099003)(56012099006)(11063799006)(4143699003)(261021121427099003)(261102123227099003)(261026140227099003)(261026121527099003)(261022105027099003)(261028144727099003)(10067099003)(6133799003);DIR:OUT;SFP:1101;
-X-MS-Exchange-AntiSpam-MessageData-ChunkCount: 1
-X-MS-Exchange-AntiSpam-MessageData-0:
-	=?us-ascii?Q?CJP0fHNnTy4a4BhE+NMf/NwZ54LoTPKiWT9mbs6+Oc9oHD5PyrTpb0f7BRRv?=
- =?us-ascii?Q?bqf5CEppSIygfg2StOOVTkSroEjFlcAAIZbOINGkitigrY9l2+FfJeLX9wwB?=
- =?us-ascii?Q?PXPup2/5OxIAPIjGyLkjKfIqmDeWv1Cy2Vin215pgiS8rRD1tlAwxQ+pfdXA?=
- =?us-ascii?Q?igDxtJUH5UIbfh8gencax8wV5YAtvHwLugAzAs4CC6lIdN9niGH8fnKcOqpj?=
- =?us-ascii?Q?d1YTASj47JcVqQfuRTxfjDtLTY3CalV2rOFLJOcHscI4OY1btmsr4P2K4M49?=
- =?us-ascii?Q?HI9rfUlu71vjbVEWWjSA+aQ8PDXsSzaUEEU+cPcHgyf8PJRgG9uZNvRgjpgu?=
- =?us-ascii?Q?9Ht2sLwvSV2v4CefU+VJKst6jpifHS3pjsMBStsEI2EqawSpWAVD89b7Bjlg?=
- =?us-ascii?Q?UsJmdsNr3rFH1BvNPde4PiBS7nzJoYwXBFiPF/K0Bab17zs2GWRzTHSll6Jy?=
- =?us-ascii?Q?0Ud3iuk5pxpvfXP5JkkUiAJ8rpxf0LL4/Z4zO77N1hpS0tAzkLg7H3oJ+3Eh?=
- =?us-ascii?Q?AuvcmNDPIEMketY5TtkaDL5Jxh0xZGvT3Zkq/EYQVUhT4YpbBsWswTagaOOF?=
- =?us-ascii?Q?SUllRGGRI/xHWuoFiD16uNzdqz2+e9AO2ctKGcrj5UBxND6ptiGaZiEpTRms?=
- =?us-ascii?Q?2JSWncAZ9GLqE7nVuhTe8fuTtNXfxSlDJxc19r4/SzUzcf91jokeFuYhiGdL?=
- =?us-ascii?Q?mdxpCjRT7vBcHNgZSExhxitCt06vtuqUSbszzpliCAeQgAeKiHpOybD0jOun?=
- =?us-ascii?Q?JHC2SuUZVSylPzPZKfnQ494PrFW5jtMLEm3H0c9UPM8id7PggRCwC5cXCyXx?=
- =?us-ascii?Q?8hBp2ug5RRny4YWjpc5pl3of3twyoIrq87GkJysqIEea0vGZ7r4AfRECcxwT?=
- =?us-ascii?Q?VjfqCN3jTl1JflR19IEFtbNaPqQTGM+ZCWIOd9MwTEaP0De239hpCIj2++Wc?=
- =?us-ascii?Q?bcWEXaLti2vLeLXE/MDfxAtWy4YtGsYjG9wCqTtwD6/APs4LS/7ZLCn0fV7a?=
- =?us-ascii?Q?Fb0ocF0P61qO3Qz8VvbA5BjnZeBECvgzE+HoVx1BOYDSjg0monbqwTfKr0sd?=
- =?us-ascii?Q?zgLxs9YSCzO+8ObbDIagD7kJfLksD3/+7q1BLO5LL4cS1840hyJeICINuxAQ?=
- =?us-ascii?Q?ILszN53HBu53tA+QGGvHgvjaIvf6mRM2fZBzIQn/RYYfnRww1ixkYNm/7yfA?=
- =?us-ascii?Q?2twtFFbcqTFHuor78gtAAuF3fCNhD2E9UMCg45ZRw1wgNFH4/YzDJWG8Hj7N?=
- =?us-ascii?Q?3L+B3OAxYhDgRWvwMubNpvJvr0lKRmW8z4DCr/nO7kvw0U6SIrGc6TvucW5W?=
- =?us-ascii?Q?LOGCwL8v7HiriHzuXHKBorQaOYbJvuqbo8gmfN17cmRG9PQnK9RbVSyzIxQB?=
- =?us-ascii?Q?D2GoTaYIFo/UdONwxeWH+rnHEtjyEFmHllWbgw+RL7gWpsnVynEz1Tx649Rv?=
- =?us-ascii?Q?r/VO7gybo7k8NOYyinet0cxuIbQ7iLlztELy3P+QfW6SamIvgpXpn9A8tgMx?=
- =?us-ascii?Q?0cUrDcsDs8f3fD8TY5PMz/10jqNLlcBmi6HltOpJN+pz3GpkNaBdqXwh+Msu?=
- =?us-ascii?Q?UUSZPSb9FbouXzwmU1Yd2+ocAgIJ8BAq4gYgO9tZ74TZGdoreTjF01bpR/6N?=
- =?us-ascii?Q?zAmrOSMxc4cl56GvhzczIWlCnjsWzj+giHL/mq+IHi/xiZDBb/vMq7Iiq+aP?=
- =?us-ascii?Q?1ZhYHy2p24qr7bY71btPkShayYMBe5p/8ZSZTGyZ2PQQvxHN9TFauLUDo9WJ?=
- =?us-ascii?Q?0IGGkXGa/4v8BhytZcHzYFeERFs1smjgQXxlj5eYZITUiykknDS/?=
-X-OriginatorOrg: oss.nxp.com
-X-MS-Exchange-CrossTenant-Network-Message-Id: 0d53630e-02f0-4c83-544b-08df49f84a75
-X-MS-Exchange-CrossTenant-AuthSource: VE1PR04MB7280.eurprd04.prod.outlook.com
-X-MS-Exchange-CrossTenant-AuthAs: Internal
-X-MS-Exchange-CrossTenant-OriginalArrivalTime: 24 Nov 2026 06:58:06.1688
- (UTC)
-X-MS-Exchange-CrossTenant-FromEntityHeader: Hosted
-X-MS-Exchange-CrossTenant-Id: 686ea1d3-bc2b-4c6f-a92c-d99c5c301635
-X-MS-Exchange-CrossTenant-MailboxType: HOSTED
-X-MS-Exchange-CrossTenant-UserPrincipalName: v2XdLYxrOsTxK+DHdi3RVBc2ncVxqO2JEQNo/Yll78EILONo37TiCbc+m6QzbA01sxab9In2XONYVKLggK4IKSW2FQzd+l3Fl42V5zLPzlqwZ9c+zfDVjo6DFnKpu/Pd
-X-MS-Exchange-Transport-CrossTenantHeadersStamped: AS5PR04MB9998
+User-Agent: Mozilla Thunderbird
+From: Jimmy <kernel@jimmycushnie.com>
+Subject: rtw89: 8922ae: ~80 Mbps TCP throughput vs ~600 Mbps on Windows with
+ the same hardware
+To: linux-wireless@vger.kernel.org
+Cc: pkshih@realtek.com
+Content-Language: en-US
+Content-Type: text/plain; charset=UTF-8; format=flowed
+Content-Transfer-Encoding: 7bit
 
-From: Jeff Chen <jeff.chen_1@oss.nxp.com>
+Hello,
 
-On Sun, Nov 01, 2026 at 08:58:01 PM +0000, Tristan Madani wrote:
-> From: Tristan Madani <tristan@talencesecurity.com>
-> 
-> The intf_num field from the multichannel group info TLV indexes the
-> flexible array bss_type_numlist[] without checking whether it fits
-> the TLV data. An intf_num larger than the available data causes reads
-> past the TLV boundary.
-> 
-> Add a check that intf_num does not exceed the number of entries that
-> fit in the TLV data.
+I have a RTL8922AE which only gets 60-120 Mbps TCP throughput on Linux,
+even though the link reports 1200.9 MBit/s HE-MCS 11 NSS 2 in both
+directions with a strong signal. The same machine gets ~600 Mbps
+throughput when booted into Windows 11.
 
-Reviewed-by: Jeff Chen <jeff.chen_1@nxp.com>
+Issue is reproducible on:
+   - 7.3.5, in-kernel rtw89
+   - 6.18.60, in-kernel rtw89
+   - 7.3.5, morrownr/rtw89 at commit f2ce66e
 
+The Windows driver that works for me is 6102.24.143.0.
+
+My system:
+- Motherboard: Gigabyte X870 AORUS ELITE WIFI7 ICE (onboard RTL8922AE)
+- CPU: AMD Ryzen 9 9950X3D
+- 09:00.0 Network controller [0280]: Realtek RTL8922AE [10ec:8922]
+   (rev 01), subsystem [10ec:8922]
+- chip info CID: 71, CV: 2, AID: 6933, ACV: 1, RFE: 1
+- Firmware 0.35.80.3 (8ef4f0cf), rtw89/rtw8922a_fw-4.bin
+- Distro: CachyOS
+- AP: Rogers (Canada) gateway CGM4331COM, hardware revision 2.0, 5 GHz
+   channel 44, 80 MHz, 802.11ax, WPA2-PSK. Regulatory domain: country CA.
+
+Things I already tried:
+- iw power_save off
+- rtw89_pci disable_aspm_l1=y disable_aspm_l1ss=y disable_clkreq=y,
+   rtw89_core disable_ps_mode=y (confirmed active in sysfs)
+- LTS kernel and the latest driver from github
+- Blocking bluetooth via rfkill
+
+I have mostly been measuring speeds by using openspeedtest.com, but I
+also used iperf3 to test transfer speeds between my PC and a macbook on
+the same network.
+
+These are my iperf3 results. Both the PC and the MacBook are using wifi
+on the same AP. Windows numbers for iperf3 are about half of the
+Windows numbers on openspeedtest because in this setup each packet
+crosses the air twice.
+
+PC sending (iperf3 -c <macbook> -t 20):
+- Windows: ~297 Mbps
+- Linux:   ~156 Mbps, 205 TCP retransmits (bursts of ~100)
+
+PC receiving (iperf3 -c <macbook> -t 20 -R):
+- Windows: ~234 Mbps, 0 retransmits reported by the Mac
+- Linux:   ~69 Mbps. The Mac reported a single burst of ~830
+   retransmits at 1-2 s, then 0 for the rest of the run. Throughput
+   stays flat at ~70 Mbps with no further loss. Same pattern in
+   repeated runs.
+
+During transfers, iw station dump stays at 1200.9 MBit/s HE-MCS 11
+in both directions, signal around -43 dBm, and tx retries / tx failed
+stay at 0.
+
+The macbook itself gets ~500 Mbps on openspeedtest.
+
+Please let me know if I can do anything to help track down the issue.
+
+Jimmy
+
+P.S. this is my first time reporting a kernel issue. Please let me know
+if there's something I can do better in the future.
