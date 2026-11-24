@@ -1,93 +1,60 @@
-Authentication-Results: smtp.subspace.kernel.org; arc=none smtp.remote-ip=74.125.82.52
+Authentication-Results: smtp.subspace.kernel.org; arc=none smtp.remote-ip=212.42.244.119
 ARC-Seal: i=1; d=subspace.kernel.org; s=arc20261015; a=rsa-sha256; cv=none;
-	t=1795509218;
-	b=ihJO0gghDN86DAwSlqbePkGugowC5DhPOXSyPWF1+sZRSdt+zQwaHE3LAbHP4W/2efka
-	 yHDH0nbwWqEf9wf4T+cF76AGVMhTrIEvYOis32jVIjZ4aDDxp/NnN4fmGpoPkk23N523c
-	 WQRD+iVAhe4ulm2f84yUaN9F1T5QQ99m4lW11uc7ISpTJH2iOc23RbRQ4reXk1V6ZlI82
-	 LBmTwGVHdt2z8j+fHrBShGyLawwvuSY+pcfWy5Iga1bHXsZZAm6sf5Y0KKg7F3DkoPI3B
-	 o5dLt0cb9P2fzZ+Z7mVGHC6xxpiNjPddbbP4CHOPLSU4wgOHgqvuT9rUcwV38dSJfDA==
+	t=1795509415;
+	b=ZgL0bQRW1nFEgxwtfkQpYbmdTGtv8SGFIBe/vGli1lrLym4IM2MhqBPQ+BUZ6BUOOHo5
+	 Rf6F7MiOXDymm7WZ8s/TCELsejX1JO5b+N/BEDmiTzoZBgR+DNVncS7x+OIbr+AtxwBmq
+	 uK7F0ykLEmbG+l288lNTtr2pjN55UaIu0gPAWq4E/Lsob96l8/Mn/40UgYufeTFQVZsHt
+	 g7Mhy19vyDD43P/y8rwS4kKLmG/ATvUBf4CYkW3N82QMhzyM0nuc2Lu12PNAOBPftcKL8
+	 4Vrt66DZngI/RHcFwwj8rtjzjAjzKNkk6CN2qDENnWeBaGl2vouaTootWNqwusrhKdw==
 ARC-Message-Signature: i=1; d=subspace.kernel.org; s=arc20261015;
-	a=rsa-sha256; c=relaxed/relaxed; t=1795509218;
-	h=DMARC-Filter:Received:DKIM-Signature:X-Google-DKIM-Signature:
-	 X-Gm-Message-State:X-Gm-Gg:X-Received:Received:From:To:Cc:Subject:
-	 Date:Message-ID:X-Mailer:MIME-Version:Content-Transfer-Encoding;
-	bh=IHaPZxvGPPauklr++9jBux27Uh1MCS1CpxGOkczFd/A=;
-	b=p1pGOEQtwHOg3mM3N/RsB5xaYOE1NzWlDfvkwnHzUKoWtv4KWtFE6DhQk4lA84SanNFG
-	 AwAQnXPSQ5y6OpZq0zJMUYWUnXFgafAYvLM/wk861BcSwnnMuhRp7SJyWjOUyvWTendcu
-	 rN+s3b5OA8wkqba2aORL0ykkoaJxROM4FEfwIAIVKSWA696gB7GgtxtNU5SkLCxcSx9wx
-	 VFBVwd6EJv81fgQT16Y4adVLJsS5JHKMPUs2jqId7lDgTNB6o7rb70lyFBkoQcGVBLnkB
-	 efpdXhNxZtxscO1ZAU9obdMeei91PIU6iRxWYB6pgJj8QKwuJhqK4bSkE4J3867spig==
+	a=rsa-sha256; c=relaxed/relaxed; t=1795509415;
+	h=DMARC-Filter:DKIM-Signature:Received:Received:From:Date:Subject:
+	 MIME-Version:Content-Type:Content-Transfer-Encoding:Message-Id:
+	 X-B4-Tracking:X-Change-ID:To:Cc:X-Developer-Signature:X-Developer-Key:
+	 X-purgate-ID:X-purgate-type:X-purgate-size:X-Notice:X-purgate:
+	 X-purgate:X-pfmilter;
+	bh=hY+zeHIx/M6C9GplM3SSMVPogyQn9jbysYgMHbvj/zk=;
+	b=Jaz9Y2XvIgTeF/lj72LHXLD8kA17M/d4paEwL5UBbtnpBC6olbzY/PcqweqsyPuw9wlg
+	 ZoYmeFSRHnsl+8d3zFy1fVuXKt9RbvCXMO5CAzJWsj9ziNeTQrA5uSbPsGyYS5gGNDzEw
+	 puwSl8DoG93vgqdnhKvVcyX+kndJ8m0Z8ntot01liNIiWbx0EgCO5XoJUowGS9j7aGcq8
+	 GIctvPHF1cSjvQBhFHW2xknZ9jE5xUE/DFvPdLTrJyWr8fy7hIeSw++MkqQ4trb4rITBo
+	 V2oEMzMS1mK4OshJ5slHsUei1a7rUue9o5CyX12tpTGG9nmnb89kSxCfuh0ldywdiIw==
 ARC-Authentication-Results: i=1; smtp.subspace.kernel.org; 
-	dmarc=pass header.from=asu.edu;
-	spf=pass smtp.mailfrom=asu.edu;
-	dkim=pass header.d=asu.edu header.i=@asu.edu header.a=rsa-sha256 header.s=google header.b="bkH3c/n/";
-	arc=none smtp.remote-ip=74.125.82.52
-Received: from mail-dl1-f52.google.com (mail-dl1-f52.google.com [74.125.82.52])
-	(using TLSv1.3 with cipher TLS_AES_128_GCM_SHA256 (128/128 bits)
+	dmarc=pass header.from=fritz.com;
+	spf=pass smtp.mailfrom=fritz.com;
+	dkim=pass header.d=fritz.com header.i=@fritz.com header.a=rsa-sha256 header.s=mail header.b=FJDT2xWG;
+	arc=none smtp.remote-ip=212.42.244.119
+Received: from mail.avm.de (mail.avm.de [212.42.244.119])
+	(using TLSv1.3 with cipher TLS_AES_256_GCM_SHA384 (256/256 bits)
 	 key-exchange X25519 server-signature ECDSA (prime256v1) server-digest SHA256)
 	(No client certificate requested)
-	by smtp.subspace.kernel.org (Postfix) with ESMTPS id 8D574606A691
-	for <linux-wireless@vger.kernel.org>; Tue, 24 Nov 2026 08:33:37 +0000 (UTC)
-DMARC-Filter: OpenDMARC Filter v1.4.2 smtp.subspace.kernel.org 8D574606A691
-Authentication-Results: smtp.subspace.kernel.org; dmarc=pass (p=none dis=none) header.from=asu.edu
-Authentication-Results: smtp.subspace.kernel.org; spf=pass smtp.mailfrom=asu.edu
+	by smtp.subspace.kernel.org (Postfix) with ESMTPS id 20091606A33E;
+	Tue, 24 Nov 2026 08:36:52 +0000 (UTC)
+DMARC-Filter: OpenDMARC Filter v1.4.2 smtp.subspace.kernel.org 20091606A33E
+Authentication-Results: smtp.subspace.kernel.org; dmarc=pass (p=quarantine dis=none) header.from=fritz.com
+Authentication-Results: smtp.subspace.kernel.org; spf=pass smtp.mailfrom=fritz.com
 Authentication-Results: smtp.subspace.kernel.org;
-	dkim=pass (2048-bit key, unprotected) header.d=asu.edu header.i=@asu.edu header.a=rsa-sha256 header.s=google header.b=bkH3c/n/
-Received: by mail-dl1-f52.google.com with SMTP id a92af1059eb24-170135e43c7so6141254c88.0
-        for <linux-wireless@vger.kernel.org>; Tue, 24 Nov 2026 00:33:37 -0800 (PST)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=asu.edu; s=google; t=1795509217; x=1796114017; darn=vger.kernel.org;
-        h=content-transfer-encoding:mime-version:message-id:date:subject:cc
-         :to:from:from:to:cc:subject:date:message-id:reply-to:content-type;
-        bh=IHaPZxvGPPauklr++9jBux27Uh1MCS1CpxGOkczFd/A=;
-        b=bkH3c/n/jScsSPF0AtfJbwWKG3EGbh3eR9Oq9iW56tUWHAbE05TTA/jlR1Yzn1QKzW
-         XVSWmcE95xz1B+mjnPaFbEVRwZqUeV5l7eqy52+L3OQYoNfHS+k5g5sMRwm6NZPd004i
-         YVXHAspEaC1j6oJhKgUcSADHuBJFdX6QG34QwaNrkOYXntwP4VITflsxiOKvcGhnZubl
-         vVHd/s546Os+2lu8fBGolT1yJP54gDwIQwj31laVTe+Bcwl7ook9mE5KHxJqtJ7xMUpr
-         zHW4MSVddUNFrVz2cN1pUzQg9GYnHByCCQt+TqJ+Lff6JMDj+dMOa4zPC7l3blNlWrBs
-         TgSQ==
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=1e100.net; s=20260707; t=1795509217; x=1796114017;
-        h=content-transfer-encoding:mime-version:message-id:date:subject:cc
-         :to:from:x-gm-gg:x-gm-message-state:from:to:cc:subject:date
-         :message-id:reply-to:content-type;
-        bh=IHaPZxvGPPauklr++9jBux27Uh1MCS1CpxGOkczFd/A=;
-        b=qtxOYiJonsePUo71+9O4q/ARvQTv4mE96ntTcL3E8AXpfV1Nhs7InnH6szhEIsteW4
-         nWYOEXArP82+cG31j1Y9cdD6OkYiwaeNPzF9X6ONxpA5J260ZCDlCzGnOA5QsRRmiMMi
-         MwCWeh00bejUAXqkyjh6Zb6IfCxpdOP2VazZh5lyYSh1cD9Y3F4yx50L5+CQ+JHdFXSE
-         k6pjPc0IsWKQq745xZXdonA0zDhL6RGmefcwIeUE2MD4qmey6TR3v5wvPjhxvjmZ7H3y
-         OWOq/9hF9R4ZpB1PbfEd7T9yzWcV+zHbVNuc9MXlk0coz/dfEEUQu4k2ueBZjF4KCpdp
-         pbig==
-X-Gm-Message-State: APuU4Z/XcvSzGEb5535R4gOCE/feyBL/mZbzhwIE/+u5fmuzKp9fmAJl
-	8vSvkIhUNuhBmrXoOZL1mwNqnOmJaVBmeOrRe1q3sgRiKRBYe4cWffgYfX66lBW74A==
-X-Gm-Gg: AZFdTZctVKL1Ipr2GAgAdL+U7MxEZhc9tHIep3fITs6kGPqD1DJLcJk2KWjd8Q8w8WV
-	j+fHu/19bD0ixDigzhdgpw8p3rMiKi5nFwPwFqxIKlpY/8cLho7qXj3+tFKLGhBmxx452ppweSv
-	t7udHEENOv9yIqKJCy5pGRBOzrph8d0sXP74W3ympWUPtAo0iyDwq0ra5UkijMc+UZ3KyXNpqQr
-	DODxUr9MImoA+vZzliERBWLjoFom/2TMxVQ7T7gRIp1OKOrhvc8kxWxeH5vU+lc0BUWuxv4Zg/u
-	Hyu8G/a3B/o0DhsxogrEf2eiUn7bj9BIT6P+rWuFQVKPJAGRsdlOWUH4CQjjE6Ahxn5UmfCi200
-	cSrfZF9UuXNinErOunPugruZIbzYl+V8c2lOChddnQKX0za+bnvlLIFB3f/c1tVDzGCnEsg8fhY
-	qCZQ4vc6OSHc5XfXtmdR6a+vgnCaMvrD4PweNuBi+8yK/iNtTd4r1MOwl5pPDZb5oTmkoKEJBur
-	kCbKH5VbxI4d2W5hDDts2sd92+Jr/Cefn677Imos/OcUGHeo9fRXp3tB4M4IL/WFFcXzN20nTcl
-	PnS5zTVCWUepQ3e7kPNzZrATK995yjbe+6KIiXQzJ3x0xTdp+kqTY9fru8AxJiEg8rPu0oicl3b
-	O8yFKWA9pp/OB/Q==
-X-Received: by 2002:a05:7022:7f12:b0:1b5:4dff:8b67 with SMTP id a92af1059eb24-1b5568eeba1mr14216791c88.29.1795509216390;
-        Tue, 24 Nov 2026 00:33:36 -0800 (PST)
-Received: from p1.. (209-147-138-4.nat.asu.edu. [209.147.138.4])
-        by smtp.gmail.com with ESMTPSA id a92af1059eb24-1b5568592adsm32784012c88.15.2026.11.24.00.33.35
-        (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
-        Tue, 24 Nov 2026 00:33:36 -0800 (PST)
-From: Xiang Mei <xmei5@asu.edu>
-To: Johannes Berg <johannes@sipsolutions.net>
-Cc: linux-wireless@vger.kernel.org,
-	linux-kernel@vger.kernel.org,
-	stable@vger.kernel.org,
-	syzbot+3d9e2c65bdd43a254924@syzkaller.appspotmail.com,
-	co+0b5d5f4d3472df53@bugs.sh,
-	Xiang Mei <xmei5@asu.edu>
-Subject: [PATCH wireless] wifi: cfg80211: don't parse the SNAP header of a too-short A-MSDU subframe
-Date: Tue, 24 Nov 2026 01:33:27 -0700
-Message-ID: <20261124083327.2037092-1-xmei5@asu.edu>
-X-Mailer: git-send-email 2.43.0
+	dkim=pass (2048-bit key, unprotected) header.d=fritz.com header.i=@fritz.com header.a=rsa-sha256 header.s=mail header.b=FJDT2xWG
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=fritz.com; s=mail;
+	t=1795509404; bh=oxbfzJWttGTwZXBilbg4huLt/V+17xV0C78VuQnWVvY=;
+	h=From:Date:Subject:To:Cc:From;
+	b=FJDT2xWGwBJzTLjRBz7IkbrG26UmUkbA705z9mcGFzZBTWqIaRHwJb5HIzIO8QZs/
+	 0QHExZlULL03qwDpPu/6wiBsw1/HpvGvcsyc2sFTqRj0qX+6x9emHjjXg93P5+Ae2l
+	 a/mMd8B7KcFF2uPmALH7dTbXDASP22b1CoBIU/X1DDM7EalVJd76Q6IpPvs96zgsod
+	 Caz4Ts5Ia5eAVw7BrYEKJGluqN18BZ7BzH6493A/kW3l9vr7WOf/ETh8/ghqx0N7A6
+	 FKOsFGaYY+eAg35dxwZVwoXYi2uc6eKVm07rmYOfdpNuBhz33+aYNIumXx+WaKbstz
+	 V/nyg9MToukTg==
+Received: from [212.42.244.78] (helo=mail.avm.de)
+	by mail.avm.de with ESMTP (eXpurgate 4.57.1)
+	(envelope-from <n.schier@fritz.com>)
+	id 6b054c9c-9684-7f0000032729-7f000001bb88-1
+	for <multiple-recipients>; Tue, 24 Nov 2026 09:36:44 +0100
+Received: from mail-auth.fritz.com (unknown [212.42.244.78])
+	by mail.avm.de (Postfix) with ESMTPS;
+	Tue, 24 Nov 2026 09:36:44 +0100 (CET)
+From: Nicolas Schier <n.schier@fritz.com>
+Date: Tue, 24 Nov 2026 09:36:38 +0100
+Subject: [PATCH] wifi: rtw89: Add support for FRITZ!WLAN Stick 6700
 X-Mailing-List: linux-wireless@vger.kernel.org
 List-Id: <linux-wireless.vger.kernel.org>
 List-Post: <mailto:linux-wireless@vger.kernel.org>
@@ -97,55 +64,72 @@ List-Unsubscribe: <mailto:linux-wireless+unsubscribe@vger.kernel.org>
 List-Owner: <mailto:linux-wireless+owner@vger.kernel.org>
 Precedence: list
 MIME-Version: 1.0
-Content-Transfer-Encoding: 8bit
+Content-Type: text/plain; charset="utf-8"
+Content-Transfer-Encoding: 7bit
+Message-Id: <20261124-add-device-ids-for-fritz-wlan-6700-v1-1-f1a23c5df0fc@fritz.com>
+X-B4-Tracking: v=1; b=H4sIAAAAAAAC/y2NQQ6CMBBFr0Jm7ZgWGzBexbAo7VTHCOi0oJFwd
+ 4u4fPkv788QSZginIoZhCaOPPQZ9K4Ad7X9hZB9ZihVWWldHtB6jz6Lbl0ihkEwCKcPvu62x6p
+ WCo2rjyoYa9qgIYceQoHfv5Nzs3Ec2xu5tJb/htBzzO9p06C1kdANXcfpVEz13qA4Dc2yfAHhh
+ 3TbsgAAAA==
+X-Change-ID: 20261123-add-device-ids-for-fritz-wlan-6700-4c780f4a4bf1
+To: Ping-Ke Shih <pkshih@realtek.com>
+Cc: linux-wireless@vger.kernel.org, linux-kernel@vger.kernel.org, 
+ Florian Held <f.held@fritz.com>, Robert Sperling <r.sperling@fritz.com>, 
+ Nicolas Schier <n.schier@fritz.com>
+X-Developer-Signature: v=1; a=openpgp-sha256; l=1414; i=n.schier@fritz.com;
+ h=from:subject:message-id; bh=oxbfzJWttGTwZXBilbg4huLt/V+17xV0C78VuQnWVvY=;
+ b=owEBbQKS/ZANAwAIAYjGvJyImm24AcsmYgBrBUybn1LWcAqASSRzHGv477skUQjjBBrYxTb66
+ mhiWcl4wcqJAjMEAAEIAB0WIQQO/4WJ63TpgecLpGmIxryciJptuAUCawVMmwAKCRCIxryciJpt
+ uE2SD/9emLhbTOWH6fwr1m316h3ZXKLBjwxGb12AAVtmUL9J6DahOEofaDASen0BkDzH2KXVRsJ
+ Skq4a4d+UdnI7Ad1pFLhPauU9+2U4D40MOKKbd9h9BQYL2MC56JXnzm/dyxTmmb3Kapa+gvX/1h
+ 3plMbs86jpBo0K3VEiqi61P8KiJdcdsKubFKw46+bXyof4KUN3lxwq62q+4CR1YgKDwyxPwzr//
+ 8bVEMNNn+sviVbV8NwfoNcV3oalVEVlAiCA9da9/qcYJa4FuRVaZ5Vfs/PaOmll9YqmLkam7LOH
+ mod7DGo4aDBbTQrYzd1XvHMjiVOxArRwi/VOQQPXAj+2YxnTNwvfhXTR7G2OYEwumLhAchoUaOx
+ ZkinT4ucmd2RIhX8jS+rrsJkt1OiMWsrsPL26BZmlBqn4uTeqUTXSvgJTiUQFLL0V3JDkpJk0fG
+ sKUVv+MNZCeArgj3q+DHcnUKMBiOjyDwBqJyeT0Mj+vkatCj93/gGO+iuLg96AeFzIs/sHgTn3X
+ yGDF6MVXOtJKxyUd/sIzUj0iFCHdTF/b3utPFj41cvPPvkWuAtcZzAxqTNsnRED708aOlhcLuvD
+ BccAIvabItTSWlt2YNy/9P/4HFhNx7/xRod9XcFJJ1o3qLwuGieO9mVjgutx5y4eLJBmR6hnHY8
+ 1/QIsSmbz5SFdzA==
+X-Developer-Key: i=n.schier@fritz.com; a=openpgp;
+ fpr=7CF67EF8868721AFE53D73FDBDE3A6CC4E333CC8
+X-purgate-ID: 149429::1795509404-DFD8CB72-B6F8D590/0/0
+X-purgate-type: clean
+X-purgate-size: 1416
+X-Notice: Whitelisted
+X-purgate: This mail is considered clean (visit https://www.eleven.de for further information)
+X-purgate: clean
+X-pfmilter: host: postfix-mx-02  mail-id: 83948A0393  external: no
 
-ieee80211_amsdu_to_8023s() bounds a subframe only from above
-(subframe_len > remaining), so an associated peer can declare a payload
-Length of 0..7, yet ieee80211_get_8023_tunnel_proto() always reads 8
-bytes from frame->data. With Length = 6 and payload aa aa 03 00 00 00,
-the rfc1042_header match succeeds on the peer's own bytes, and the two
-bytes past the frame are copied into h_proto and delivered up the stack.
-The frame length sets where they sit in the skb head, so the read is
-aimable and repeatable. Injected over mac80211_hwsim (init_on_alloc=0),
-the delivered EtherType is stale heap content instead of the declared
-0x0006:
+Add device ID for FRITZ!WLAN Stick 6700 USB-A adapter.
+Originally added and tested via [1].
 
-  aimed at object offset 410 -> leaked 7372
-  aimed at object offset 410 -> leaked 3d31
-  aimed at object offset 414 -> leaked 225f
-  aimed at object offset 418 -> leaked 7573
-
-With this patch the same frames deliver 0006. syzbot reported the same
-read as a KMSAN uninit-value.
-
-Only parse the header when the subframe holds those 8 bytes; a shorter
-one keeps the 802.3 length semantics it already gets on a SNAP mismatch.
-
-Cc: stable@vger.kernel.org
-Fixes: eaf85ca7fecb ("wireless: add ieee80211_amsdu_to_8023s")
-Reported-by: syzbot+3d9e2c65bdd43a254924@syzkaller.appspotmail.com
-Closes: https://syzkaller.appspot.com/bug?extid=3d9e2c65bdd43a254924
-Reported-by: co+0b5d5f4d3472df53@bugs.sh
-Signed-off-by: Xiang Mei <xmei5@asu.edu>
+Suggested-by: Robert Sperling <r.sperling@fritz.com>
+Link: https://github.com/morrownr/rtw89/pull/100 # [1]
+Reviewed-by: Florian Held <f.held@fritz.com>
+Signed-off-by: Nicolas Schier <n.schier@fritz.com>
 ---
- net/wireless/util.c | 4 +++-
- 1 file changed, 3 insertions(+), 1 deletion(-)
+ drivers/net/wireless/realtek/rtw89/rtw8922au.c | 2 ++
+ 1 file changed, 2 insertions(+)
 
-diff --git a/net/wireless/util.c b/net/wireless/util.c
-index ebb1f6ec7efc..0a0823d1d517 100644
---- a/net/wireless/util.c
-+++ b/net/wireless/util.c
-@@ -1034,7 +1034,9 @@ void ieee80211_amsdu_to_8023s(struct sk_buff *skb, struct sk_buff_head *list,
- 		frame->priority = skb->priority;
- 
- 		if (likely(iftype != NL80211_IFTYPE_MESH_POINT &&
--			   ieee80211_get_8023_tunnel_proto(frame->data, &hdr.eth.h_proto)))
-+			   pskb_may_pull(frame, ETH_ALEN + 2) &&
-+			   ieee80211_get_8023_tunnel_proto(frame->data,
-+							   &hdr.eth.h_proto)))
- 			skb_pull(frame, ETH_ALEN + 2);
- 
- 		memcpy(skb_push(frame, sizeof(hdr.eth)), &hdr.eth, sizeof(hdr.eth));
--- 
-2.43.0
+diff --git a/drivers/net/wireless/realtek/rtw89/rtw8922au.c b/drivers/net/wireless/realtek/rtw89/rtw8922au.c
+index b146bd79c675..4a2bc1b2037f 100644
+--- a/drivers/net/wireless/realtek/rtw89/rtw8922au.c
++++ b/drivers/net/wireless/realtek/rtw89/rtw8922au.c
+@@ -48,6 +48,8 @@ static const struct usb_device_id rtw_8922au_id_table[] = {
+ 	  .driver_info = (kernel_ulong_t)&rtw89_8922au_info },
+ 	{ USB_DEVICE_AND_INTERFACE_INFO(0x056e, 0x4026, 0xff, 0xff, 0xff),
+ 	  .driver_info = (kernel_ulong_t)&rtw89_8922au_info },
++	{ USB_DEVICE_AND_INTERFACE_INFO(0x057c, 0x8701, 0xff, 0xff, 0xff),
++	  .driver_info = (kernel_ulong_t)&rtw89_8922au_info },
+ 	{ USB_DEVICE_AND_INTERFACE_INFO(0x0b05, 0x1bcf, 0xff, 0xff, 0xff),
+ 	  .driver_info = (kernel_ulong_t)&rtw89_8922au_info },
+ 	{ USB_DEVICE_AND_INTERFACE_INFO(0x0b05, 0x1bd2, 0xff, 0xff, 0xff),
+
+---
+base-commit: bc71431221f5ba8bb33918399552636e059c2c45
+change-id: 20261123-add-device-ids-for-fritz-wlan-6700-4c780f4a4bf1
+
+Best regards,
+--  
+Nicolas
 
