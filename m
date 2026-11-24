@@ -1,90 +1,90 @@
-Authentication-Results: smtp.subspace.kernel.org; arc=none smtp.remote-ip=74.125.82.54
+Authentication-Results: smtp.subspace.kernel.org; arc=none smtp.remote-ip=209.85.214.180
 ARC-Seal: i=1; d=subspace.kernel.org; s=arc20261015; a=rsa-sha256; cv=none;
-	t=1795485964;
-	b=RaEZSUcS05H57GHmYA7K6se96y6zHn0DTJZZ+1AOGzRLeAXgpPex66KbVITTE18I8TCS
-	 zEeChGnH0ej0okr8crlrE1pRRKqplP4tqOF5ajK+f3VBl5XGQf0RicbRmoav2TuHRFZUC
-	 VtLO1D5/2Mw0pjC6DpmyertLUHLZLmaN0z0xUEWdpM3Vzik4zkOcj0SEpQTzwRgWzxQfv
-	 riKRevwwD4tQUCWgFMBtqCd7ao9F5sApdxgY/JGdqNcItLfloqAzhBLyTj9Ptjjxtx5iG
-	 shkWJuUlIQyKb50PGFJzPebz1lBqVR8UAK+A77igClx1UdiqaDygCVF7wGJCkOsVf9g==
+	t=1795486667;
+	b=jskz2yxyMqhjxsGYzu1qt63Ur6cnkEHxc9EC2uWdbHxiWZiafvTWimiQTs6DX8ScjBHW
+	 sCp2GNS6dd0bNcLS2depIltr85Slw7sRdGPAtbyzCTTL8pU3rZz4XRZV0Wfe6LMHSZJTv
+	 qIu8pwuSsHbD+o+Zt0H3gIOYc36mvrYzGvwGfFgsdsdWnORA6WzUkHqOQxtSEaCf5WlrC
+	 gzJg5DuP8mqPCidB0WvcmAlmsLsr8WcEzgMzLkZC1FKVkydvN3LvpB27w9/11Ewf0rqiW
+	 ptCknyWrorZqiH46ZRcan491PCNtwskaFfF0ae9sk/7OHsaVbiFFbdAXXV/gbIof63g==
 ARC-Message-Signature: i=1; d=subspace.kernel.org; s=arc20261015;
-	a=rsa-sha256; c=relaxed/relaxed; t=1795485964;
+	a=rsa-sha256; c=relaxed/relaxed; t=1795486667;
 	h=DMARC-Filter:Received:DKIM-Signature:X-Google-DKIM-Signature:
 	 X-Gm-Message-State:X-Gm-Gg:X-Received:Received:From:To:Cc:Subject:
 	 Date:Message-ID:X-Mailer:MIME-Version:Content-Transfer-Encoding;
-	bh=oNydO2SzkAYs5DK03LxQ5roF10I5Ez36bfBcDGkOKnM=;
-	b=tWIRazbR4t3Tbmdh94FT/1U9KZqiPusNTql/ElQh7kUNgSV34Dyw04ml40Qbmajx+3BS
-	 uJuDhmhSSyXZslDDP98ZpsqL0/rk/fbjfWLxBpwsNximpAaztMWdphYO5ESq/CL/shmpS
-	 VXbIInkpIHle9zhJRemFM53RsTV1TkWARE07es+VUn8xHIQGjtv/pR0wkzaSHKxRufJnm
-	 2xbM58YCVMmtkA/QPzL1jFCuHzaAGJ/vvtAlxnHWDhhKA3mluEPJOHp8umnGECyRKQ9q6
-	 x1d3Och18wzLSiS6ybBZX7e3pAef0sgE9rV0efoMgZQgk5cTbM9vgRwV1CAElFb3vQg==
+	bh=4mYa0VMJdDE9fIyEhSr0hjnjYrzdVICDltC34NkQu9c=;
+	b=boTiPhNFSFFF39RXG1e8kuvNrRD60gxHSk60FupvnFZbYeSJYkuEF7TInJmB5NUgg+9n
+	 YdG/297EBJMFqTig3yRz6aBZgz2tL9wqXQtBcH373JxU0cY7yaZw6+/o12dZ8HbAwDGGR
+	 FdBQCR3KZjoit8hRViuQGwBRr+bEeTSeGOxZD8Ta88GGxkmtHdQEQzl0P1+dWX3xFhIp9
+	 nYGSdDcFjYS1SPVudUdoDIWo7NNKRivqOM2SjzL8fgspVMGEc/4jxhtps8SsxIz7EG22X
+	 wtrOCzertR4X8isTU7X7KXeWfhWCmYj5HftNpqPizQp7uAf+f3Tb1aL+TJaIS3r91Vw==
 ARC-Authentication-Results: i=1; smtp.subspace.kernel.org; 
-	dmarc=pass header.from=asu.edu;
-	spf=pass smtp.mailfrom=asu.edu;
-	dkim=pass header.d=asu.edu header.i=@asu.edu header.a=rsa-sha256 header.s=google header.b=TRpzuK1K;
-	arc=none smtp.remote-ip=74.125.82.54
-Received: from mail-dl1-f54.google.com (mail-dl1-f54.google.com [74.125.82.54])
+	dmarc=pass header.from=morsemicro.com;
+	spf=pass smtp.mailfrom=morsemicro.com;
+	dkim=pass header.d=morsemicro-com.20260707.gappssmtp.com header.i=@morsemicro-com.20260707.gappssmtp.com header.a=rsa-sha256 header.s=20260707 header.b=dMEHWWaE;
+	arc=none smtp.remote-ip=209.85.214.180
+Received: from mail-pl1-f180.google.com (mail-pl1-f180.google.com [209.85.214.180])
 	(using TLSv1.3 with cipher TLS_AES_128_GCM_SHA256 (128/128 bits)
 	 key-exchange X25519 server-signature ECDSA (prime256v1) server-digest SHA256)
 	(No client certificate requested)
-	by smtp.subspace.kernel.org (Postfix) with ESMTPS id E04A8606A321
-	for <linux-wireless@vger.kernel.org>; Tue, 24 Nov 2026 02:06:03 +0000 (UTC)
-DMARC-Filter: OpenDMARC Filter v1.4.2 smtp.subspace.kernel.org E04A8606A321
-Authentication-Results: smtp.subspace.kernel.org; dmarc=pass (p=none dis=none) header.from=asu.edu
-Authentication-Results: smtp.subspace.kernel.org; spf=pass smtp.mailfrom=asu.edu
+	by smtp.subspace.kernel.org (Postfix) with ESMTPS id 9494A606A31E
+	for <linux-wireless@vger.kernel.org>; Tue, 24 Nov 2026 02:17:46 +0000 (UTC)
+DMARC-Filter: OpenDMARC Filter v1.4.2 smtp.subspace.kernel.org 9494A606A31E
+Authentication-Results: smtp.subspace.kernel.org; dmarc=pass (p=none dis=none) header.from=morsemicro.com
+Authentication-Results: smtp.subspace.kernel.org; spf=pass smtp.mailfrom=morsemicro.com
 Authentication-Results: smtp.subspace.kernel.org;
-	dkim=pass (2048-bit key, unprotected) header.d=asu.edu header.i=@asu.edu header.a=rsa-sha256 header.s=google header.b=TRpzuK1K
-Received: by mail-dl1-f54.google.com with SMTP id a92af1059eb24-15ea896ddc8so6696926c88.0
-        for <linux-wireless@vger.kernel.org>; Mon, 23 Nov 2026 18:06:03 -0800 (PST)
+	dkim=pass (2048-bit key, unprotected) header.d=morsemicro-com.20260707.gappssmtp.com header.i=@morsemicro-com.20260707.gappssmtp.com header.a=rsa-sha256 header.s=20260707 header.b=dMEHWWaE
+Received: by mail-pl1-f180.google.com with SMTP id d9443c01a7336-2f04ad2c46dso21942005ad.2
+        for <linux-wireless@vger.kernel.org>; Mon, 23 Nov 2026 18:17:46 -0800 (PST)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=asu.edu; s=google; t=1795485963; x=1796090763; darn=vger.kernel.org;
+        d=morsemicro-com.20260707.gappssmtp.com; s=20260707; t=1795486666; x=1796091466; darn=vger.kernel.org;
         h=content-transfer-encoding:mime-version:message-id:date:subject:cc
          :to:from:from:to:cc:subject:date:message-id:reply-to:content-type;
-        bh=oNydO2SzkAYs5DK03LxQ5roF10I5Ez36bfBcDGkOKnM=;
-        b=TRpzuK1KGHFTa7IuuH6VGVWcrYyDMV5xnup5+ktyk2OPGk6ey7bAIEVyru10LE5LDE
-         NiDRegbvx6TKTOFSr1UFHLfl4MepVpYGqNp+DvEXcyINCG1mo2Li2fi9kBH2UCb3sCq3
-         sq13UQopbb/DYqrKROJPNw6MV1j+2z/OP4/tkJMbCUaYibpEZ4IQ1mF88vJOcO7mCHx8
-         s+hJHHeLtGEH4j1ut7tP8Ys/HsEXh/JRm93EgDxk/umWutTZ2JdQFnHJlc5Pe+bh+Dht
-         UddV4oYDjYzwkJNif78lNNiUJ6erll7V5l2mUOfG3JCw3R0IYjV3F9n1nfxiOo/rI3lg
-         LWFA==
+        bh=4mYa0VMJdDE9fIyEhSr0hjnjYrzdVICDltC34NkQu9c=;
+        b=dMEHWWaEbh1j+x8fkZIhF2PS3oFYXCkU4Pnum3B4LdVMFag4ny3Ur0ZEIhJR1TA3fC
+         2RdqmVXBr72wUMOK8qoDLi3YOFoZL74NnkIZzneNC7MduHmJI4JX2Eq0oM2MNQWGDYj4
+         NvloInvMqnh3hT42vTFt86HLxnsuxYSWNXvCHllxgPclKweVCGgdmukzlEkK8v71jKlV
+         U8jCRcThknXREotXZBERXkekVZ2JJqg/PAbJgiLvTDa/tjDCxx3fdMHUg2hTPVvOOg65
+         D6/CoiUtwVc2jGDIuCfnI7y8E04V/N4JG/u49f1497B0gAuNG2o92Mwfqv6Ht5jnJ0z9
+         OcDw==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=1e100.net; s=20260707; t=1795485963; x=1796090763;
+        d=1e100.net; s=20260707; t=1795486666; x=1796091466;
         h=content-transfer-encoding:mime-version:message-id:date:subject:cc
          :to:from:x-gm-gg:x-gm-message-state:from:to:cc:subject:date
          :message-id:reply-to:content-type;
-        bh=oNydO2SzkAYs5DK03LxQ5roF10I5Ez36bfBcDGkOKnM=;
-        b=hlePiRuTlcyW60l3FDducoXerM42kdcsjLgu1abxl3ynyqXVAvUWEVGK+E7Xu69L5e
-         KGjpSDz6AUUmfvQY8vk0Uk3HeumgdxSSArcocsn2aNPiaNChSdHnPWCejcxTziwI07bW
-         nnmNdwiTLlHqjDcAIdJUSIYF4HBlfNn2JJ9n093NQypfUAOyI3PIGRvDMfeWc/zXFqRp
-         01+VTuEzJet4aZb7WXvJQI1R93UhlLoYrmSq5qcssh7PoB6utp5fMkwS+MspkcPapn+Y
-         l7Fk7fgbtA0q8mDk785f1w689it72Pre7OvXrWH+kCtvYoOF2pMjHz6bbOMnpClgqNF7
-         uYbg==
-X-Gm-Message-State: APuU4Z8PBn4/RmjJHESmaRRJovM4oJQLjs1/x4lLZ3yqYtPiyvDJM46V
-	5IGJ0VP6xKrlm2AQahqeO7acI30JE94Xe5cdSHDYrJn1skvNfHcReOiuYt3X0ECVuw==
-X-Gm-Gg: AZFdTZel6hmQ3V9wZBXBam1HfQcQuxAag9HCSogIaifqYJ0tTQ/34t8Qcj5E1/rpT/U
-	MZieu0tq/sIvqTUUlUrjN6ydY6q3zj6TYuk2Cm/eU8+8D4+xa+MG4wrhOGJMG0zzqCUFYS2XRno
-	VfHrqnkdQvpIe1mS7fpSDVJ9MwcMYdOmpdJNy1slPEW35GpSpvbQlceQdx1nOZmgb5zlAzCJqm4
-	xjfeN2PW5r1ISHlctvFYd0gfpY9AFvJW6kcDWNLBgvA3l6eYuG/hcvcrm2OlszIcrqXkUkALJ++
-	W5/1nQjYSyhk65HLLWZF0mijP4/6HJnZFTEHg397lTYaJLcxXK0N4wOr+jUiZtwMSaTa2kuJib/
-	9s9qePGQfYQZNHwDoZM3AEh+gwVQ34/4+Hztwko45zOKYLAs+CKPa6KLl563FJIQiC/Ocm3knwo
-	LHohbij8BmRaQyP5VMVfsfV3F0rmflBpRJK6Ed7ud2rYjhMUnkcd12NY9CuqY2zO/d2/eqLCsKQ
-	cUTnS1NWCxWtnp8KeYQYLU/o7RANEDT92aObFW1KeUohiiDzCydBnj96EhRa03PPbRoB9igYgy2
-	OblvUvqReFYjhs9KuxeUPFfvDVPAr79SR2ijQ+piwCSs7uBMvfZalEE4eDkkswgBqKlx
-X-Received: by 2002:a05:701a:cc95:20b0:144:fa57:c617 with SMTP id a92af1059eb24-1b5568f1200mr12546693c88.34.1795485962869;
-        Mon, 23 Nov 2026 18:06:02 -0800 (PST)
-Received: from p1.. (209-147-138-4.nat.asu.edu. [209.147.138.4])
-        by smtp.gmail.com with ESMTPSA id a92af1059eb24-1b5567e2bd1sm30515502c88.3.2026.11.23.18.06.02
+        bh=4mYa0VMJdDE9fIyEhSr0hjnjYrzdVICDltC34NkQu9c=;
+        b=FxrizJlhNnnpFZWe1WMfNxE5W3srmK4PGG6obtfnTvgXJtLbUUR+/d8eb5jWHErX9+
+         GvGtxhKVguZGA/W5i2JT/LMABZHHmBbD2aViu8F+d3DZWdR3cijAhzGn2mG0L4U8z8Ke
+         Ggd9k9n2V/1yrlQ04BMgP4UwiXb6Uk6HODshSARmUfD4vZQgSA/PjiUU/7jRhRUrnvYf
+         S0SbUQ1gSl6v3/dKMqQf4XVxAA2is6+I1ABs5Qfa+VnDnQSDLdI+JTWE/Ytd5i/6MhEO
+         UURYMgYwziskMRGvynoTuUXySfkMec15FWrZoqq4VCHZW/r336Avlclyx7eLTUvyvyac
+         1mgg==
+X-Gm-Message-State: APuU4Z9holmdXrGGfkv53/2TG7/2xpeVZkc305eq/lw9txsQ8a/iu4f5
+	KHrfmE7OIoPFrU6IUTVzdq/9Odxd75TUcVhW8Fm5U43doIdOkLiOqcyIT7VFoFF39ZQ=
+X-Gm-Gg: AZFdTZcedpGqFPUMiYvZu1GVZJBplF6wF5tTwGpTIkUTIGXzfmRbBj8qGqMC8tZOvPM
+	Ng71zgt2gTwwASobhkmLdyCc2S1apNsg6r/ff+o7HJBtjYszkEFSYBKXQtni/oLpSXTKHksTjex
+	MU1OYv/GpE9Noy5jGRPzwoaD1N1/dZtJD171gOhMXI+KwZd2CCYOh0MmiIFrGDqSqx0FfOxb03h
+	9Oi3Ug6oXdZUSy0mlHdVik79DmlzQG12GEsVVbEq40siDFwsIoDtTYiuSGwPc4RvJeQuFKMBsty
+	qFkYxvY6uW7N6ltQ5RtyXSFg5BTSpFRXwXZi3MafOPLhbbFYU3+YPj64VJ9uaGbamXQTzth+a0X
+	aVHezChPlP7DQuxfpZYob1/PLgB53qUvEMZnixqup6y9Knxco+D0NjGBKvw0i1Y5AEJPJkDsVWw
+	QAHqbl8p5/oVPiTGRqSZwRwSRwRXh2N7M5YZvTvmwLwY/sFtQSPkl3wxIiWVjsNpkiJ6sNZ2/lq
+	eR/dPHY5eNvCAcss6gc7Rsa221JvtpTAqUfMySBdkYenI1iEU/s0tOHoxET0bhW7KQzfS3wzJPL
+	gtg+FDS1ZA6r3hM+Bei+wEkCWsY48o6Ql7dfu9el9ymOt3Ke5KC09HCCyz5RTXhEwxlwP4pz9lQ
+	CbbZmLB4kxmvOZd5H6fioIG6nfUH1mBmkBV304GQpPEQkLCw=
+X-Received: by 2002:a17:903:2b0f:b0:2ed:cb6b:8b96 with SMTP id d9443c01a7336-2f03f1971c1mr125598005ad.23.1795486665890;
+        Mon, 23 Nov 2026 18:17:45 -0800 (PST)
+Received: from mma-H9MHD44.sydney.mm.lcl (60-242-93-14.static.tpgi.com.au. [60.242.93.14])
+        by smtp.gmail.com with ESMTPSA id d9443c01a7336-2f0b58fce71sm7798645ad.45.2026.11.23.18.17.43
         (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
-        Mon, 23 Nov 2026 18:06:02 -0800 (PST)
-From: Xiang Mei <xmei5@asu.edu>
-To: Johannes Berg <johannes@sipsolutions.net>
+        Mon, 23 Nov 2026 18:17:45 -0800 (PST)
+From: Lachlan Hodges <lachlan.hodges@morsemicro.com>
+To: johannes@sipsolutions.net
 Cc: linux-wireless@vger.kernel.org,
-	linux-kernel@vger.kernel.org,
-	stable@vger.kernel.org,
-	co+1bf8a8f813116ec5@bugs.sh,
-	Xiang Mei <xmei5@asu.edu>
-Subject: [PATCH wireless] wifi: nl80211: reject ADD_LINK for an already valid link ID
-Date: Mon, 23 Nov 2026 19:05:59 -0700
-Message-ID: <20261124020559.1701707-1-xmei5@asu.edu>
+	dan.callaghan@morsemicro.com,
+	arien.judge@morsemicro.com,
+	Lachlan Hodges <lachlan.hodges@morsemicro.com>
+Subject: [PATCH wireless-next] MAINTAINERS: wifi: add git tree for mm81x driver
+Date: Tue, 24 Nov 2026 13:17:33 +1100
+Message-ID: <20261124021733.653141-1-lachlan.hodges@morsemicro.com>
 X-Mailer: git-send-email 2.43.0
 X-Mailing-List: linux-wireless@vger.kernel.org
 List-Id: <linux-wireless.vger.kernel.org>
@@ -97,56 +97,25 @@ Precedence: list
 MIME-Version: 1.0
 Content-Transfer-Encoding: 8bit
 
-nl80211_add_link() does not check whether the link ID is already in
-wdev->valid_links.  Re-adding a live link overwrites its address behind
-mac80211's back, leaving two links with the same address.  An AP_VLAN
-on that AP then fails to set up its links, and
-ieee80211_update_apvlan_links() dereferences the missing VLAN link:
+Add a T: entry for the git tree used to manage the mm81x driver.
 
-  Oops: general protection fault, probably for non-canonical address ...
-  KASAN: null-ptr-deref in range [0x0000000000000000-0x0000000000000007]
-  RIP: 0010:ieee80211_link_vlan_copy_chanctx (net/mac80211/chan.c:2530)
-  Call Trace:
-   ieee80211_vif_update_links (net/mac80211/link.c:54 ...)
-   ieee80211_vif_set_links (net/mac80211/link.c:473)
-   nl80211_add_link (net/wireless/nl80211.c:19681)
-   genl_family_rcv_msg_doit (net/netlink/genetlink.c:1114)
-   genl_rcv_msg (net/netlink/genetlink.c:1194 net/netlink/genetlink.c:1209)
-   netlink_rcv_skb (net/netlink/af_netlink.c:2585)
-   genl_rcv (net/netlink/genetlink.c:1218)
-   netlink_unicast (net/netlink/af_netlink.c:1362)
-   netlink_sendmsg (net/netlink/af_netlink.c:1921)
-   __sock_sendmsg (net/socket.c:800 net/socket.c:818)
-   __sys_sendto (net/socket.c:2283)
-   __x64_sys_sendto (net/socket.c:2290 net/socket.c:2286)
-   do_syscall_64 (arch/x86/entry/syscall_64.c:89)
-   entry_SYSCALL_64_after_hwframe (arch/x86/entry/entry_64.S:121)
-  Kernel panic - not syncing: Fatal exception
-
-Reject adding a link that already exists.
-
-Cc: stable@vger.kernel.org
-Fixes: 7b0a0e3c3a88 ("wifi: cfg80211: do some rework towards MLO link APIs")
-Reported-by: co+1bf8a8f813116ec5@bugs.sh
-Signed-off-by: Xiang Mei <xmei5@asu.edu>
+Signed-off-by: Lachlan Hodges <lachlan.hodges@morsemicro.com>
 ---
- net/wireless/nl80211.c | 3 +++
- 1 file changed, 3 insertions(+)
+ MAINTAINERS | 1 +
+ 1 file changed, 1 insertion(+)
 
-diff --git a/net/wireless/nl80211.c b/net/wireless/nl80211.c
-index e7dd32880598..1059c4aa539f 100644
---- a/net/wireless/nl80211.c
-+++ b/net/wireless/nl80211.c
-@@ -19670,6 +19670,9 @@ static int nl80211_add_link(struct sk_buff *skb, struct genl_info *info)
- 		return -EINVAL;
- 	}
+diff --git a/MAINTAINERS b/MAINTAINERS
+index 0cf311e6c4be..6657eb5d0b7c 100644
+--- a/MAINTAINERS
++++ b/MAINTAINERS
+@@ -18928,6 +18928,7 @@ M:	Dan Callaghan <dan.callaghan@morsemicro.com>
+ R:	Arien Judge <arien.judge@morsemicro.com>
+ L:	linux-wireless@vger.kernel.org
+ S:	Supported
++T:	git https://github.com/MorseMicro/linux-wireless.git
+ F:	drivers/net/wireless/morsemicro/
  
-+	if (wdev->valid_links & BIT(link_id))
-+		return -EALREADY;
-+
- 	if (!info->attrs[NL80211_ATTR_MAC] ||
- 	    !is_valid_ether_addr(nla_data(info->attrs[NL80211_ATTR_MAC])))
- 		return -EINVAL;
+ MOST(R) TECHNOLOGY DRIVER
 -- 
 2.43.0
 
