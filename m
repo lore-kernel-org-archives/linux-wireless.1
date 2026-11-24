@@ -1,59 +1,72 @@
-Authentication-Results: smtp.subspace.kernel.org; arc=none smtp.remote-ip=162.243.164.118
+Authentication-Results: smtp.subspace.kernel.org; arc=none smtp.remote-ip=211.75.126.72
 ARC-Seal: i=1; d=subspace.kernel.org; s=arc20261015; a=rsa-sha256; cv=none;
-	t=1795508192;
-	b=ZvKAKLLpLdWyvX3RNbyHcUBSw93gwPFt9JqPNMJQ3S77+wdIBFnZwDUKzf04Tgk9JYPh
-	 ANgGooxHLqfRDhOc4msAW5J09zK+fm3uY1TsBKTzNsHIlTvMNtxXCxj2AnFlSkLr8elNm
-	 5bWERf4NI98Qy9quU/OWrAjLxL4cS0QNCxgrURRSYozolgc1X6sipgk6CuOc+iLJ/M4/b
-	 Lg8PLmYTotO5+dC7jeKcS7mRpWrXbJmJB+n0NL9EpcW/TE0e/zU9A4L/I7Xbcmtl7FqGz
-	 TTqab33tL8jiY8HRUPQYSLxuH/Qb2RuVe/upkEwDpqo8ACJG9/eIYa80vjpH6wVqikw==
+	t=1795508864;
+	b=wcRZ0M7q6fVxlJyZmD62MmubWKKbf6wcmxJeQFML++/lSPyaCfEcY7jljzez1DqyqK47
+	 lc+yEweKI4ozZ0D5Euxz61N21gYwVvXJtNn+iz0Cyl2iqewhshRFbOWzyB+XhjjO6fEf5
+	 /zWiAsdJRkKFh7A8wJTZTokgow1W+5Sq/kkAA8vjMDeJM58FgLVW5T/2IUp9lBgwK3Qim
+	 qMoF1XOHf2WX1H7tuhW7TtfdDfhURPkzZHV/Zmio/IFbVRPwz6Qo7Y5IcGQjxUSRAxThD
+	 mHFHUt9ELsFxAOxc27mt7l01ES5XtGHdYHHOvujbw2hCGiCdKbngxxMKnbV9MkUrzvg==
 ARC-Message-Signature: i=1; d=subspace.kernel.org; s=arc20261015;
-	a=rsa-sha256; c=relaxed/relaxed; t=1795508192;
-	h=DMARC-Filter:DKIM-Signature:Received:From:To:Cc:Subject:Date:
-	 Message-Id:X-Mailer:In-Reply-To:References:MIME-Version:
-	 Content-Transfer-Encoding:X-CM-TRANSID:X-Coremail-Antispam:
-	 X-CM-SenderInfo;
-	bh=gtfdC/ZGiUD1rSEakWBvxpLMWFjLacariuNQPtc6NHo=;
-	b=uY7A+9tLPtG2EfKQD717XwduHND4VndV9oQw8qDqOUHxy/A/OSTyeFYzfjll2L7oP2Sk
-	 ImoS5Ye96Qf3hxF6ORD56ilcRljtIudUjddEQH6B6XCffKMT6H8GXUSy//X9bWYZnhUs8
-	 mcXdU2mjK9ecAcA8QGu3ynPpJuPQBTXTTIKkqp02d9KErpWdXX6syfNiU0FwlDsoDLmxL
-	 3HhY6vR1xi+30ULva48rjMrSnPQ3kgu3a1zJK6q2VB33pEzeMXJL6rYqQjAUhYeedkQ0x
-	 PKgoiIeD9ta+FuguBvEiGeq/AxLC4bvMFKugq95hDdebNNEGvQFxEDXMXn0kcEJ9DFA==
+	a=rsa-sha256; c=relaxed/relaxed; t=1795508864;
+	h=DMARC-Filter:X-SpamFilter-By:DKIM-Signature:Received:Received:
+	 Received:Received:From:To:CC:Subject:Date:Message-ID:X-Mailer:
+	 MIME-Version:Content-Transfer-Encoding:Content-Type;
+	bh=3OQ1PYe+/UtQxIO8ojP6HJWgK1PNjS8B93gaMwsFnLk=;
+	b=IbbKUo4XfoMLhuuErvYqONGlWZTPLqN9H+nXl3ou5iaf5pRtWw31gsIHpXzQmG2pQlkB
+	 VwH+/jxrRZdyhYTUP3e8mEiBFv39z10Hit+bA38d4u6T7BNoC67JronxTPRcB7+WUIpUQ
+	 +XCtQNTytMtf9RuQtE3odyVdsqlq8EuX1+/qKCrpNVU0vLGBSDSbUIlH/RxexZ4gPG3v0
+	 VJHR0INjWOMHfL2cg4PkNzo5Zim6KKagtaIODXJY9qFluCW2r5rmkbCNlHP/kSDc2zU8V
+	 QsCCSaZhiJo+Ta7eEpFvvzdE4MXUnV6kATpiagpI0rZTrWFsOrAukLvvhqrzmAf6wbw==
 ARC-Authentication-Results: i=1; smtp.subspace.kernel.org; 
-	dmarc=pass header.from=stu.xidian.edu.cn;
-	spf=pass smtp.mailfrom=stu.xidian.edu.cn;
-	arc=none smtp.remote-ip=162.243.164.118
-Received: from zg8tmtyylji0my4xnjqumte4.icoremail.net (zg8tmtyylji0my4xnjqumte4.icoremail.net [162.243.164.118])
-	by smtp.subspace.kernel.org (Postfix) with ESMTP id 720F4606A321;
-	Tue, 24 Nov 2026 08:16:27 +0000 (UTC)
-DMARC-Filter: OpenDMARC Filter v1.4.2 smtp.subspace.kernel.org 720F4606A321
-Authentication-Results: smtp.subspace.kernel.org; dmarc=pass (p=quarantine dis=none) header.from=stu.xidian.edu.cn
-Authentication-Results: smtp.subspace.kernel.org; spf=pass smtp.mailfrom=stu.xidian.edu.cn
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-	d=stu.xidian.edu.cn; s=dkim; h=Received:From:To:Cc:Subject:Date:
-	Message-Id:In-Reply-To:References:MIME-Version:
-	Content-Transfer-Encoding; bh=gtfdC/ZGiUD1rSEakWBvxpLMWFjLacariu
-	NQPtc6NHo=; b=U60AGqju8XH/SNHj7POOxLFRH9tyoUT6c8KGsuLezccyJrJ/Jw
-	B6kUoLYydOel2C3P/JO5XBBysO88J07KjJbsCBN1XTHnG129Q9oPpVOm2nW0zBQx
-	NYaFZF8HNy71Kd0syxcQydwDSWgxDAIbEIesxd+ETCM+Pz+hf3k6NXINA=
-Received: from user-virtual-machine.localdomain (unknown [113.200.174.70])
-	by hzbj-edu-front-3.icoremail.net (Coremail) with UTF8SMTPA id BbQMCkC2u_7RRwVr66wkAg--.46263S2;
-	Tue, 24 Nov 2026 16:16:18 +0800 (CST)
-From: YuanZhe Liu <25031212351@stu.xidian.edu.cn>
-To: Lachlan Hodges <lachlan.hodges@morsemicro.com>
-Cc: Dan Callaghan <dan.callaghan@morsemicro.com>,
-	Johannes Berg <johannes@sipsolutions.net>,
-	Arien Judge <arien.judge@morsemicro.com>,
-	linux-wireless@vger.kernel.org,
-	linux-kernel@vger.kernel.org,
-	stable@vger.kernel.org,
-	Bin Yu <byu@xidian.edu.cn>,
-	Cheng Wen <wencheng@xidian.edu.cn>
-Subject: Re: [PATCH 2/2] wifi: mm81x: clear a stalled bulk endpoint before the next transfer
-Date: Tue, 24 Nov 2026 16:16:15 +0800
-Message-Id: <20261124081615.3496-1-25031212351@stu.xidian.edu.cn>
-X-Mailer: git-send-email 2.34.1
-In-Reply-To: <vshptwv5idooqjvdirp5ssf2ofiff6tjhgjnzqgptte556uzem@f7kec5a632s7>
-References: <vshptwv5idooqjvdirp5ssf2ofiff6tjhgjnzqgptte556uzem@f7kec5a632s7>
+	dmarc=pass header.from=realtek.com;
+	spf=pass smtp.mailfrom=realtek.com;
+	dkim=pass header.d=realtek.com header.i=@realtek.com header.a=rsa-sha256 header.s=dkim header.b=fO07U+UW;
+	arc=none smtp.remote-ip=211.75.126.72
+Received: from rtits2.realtek.com.tw (rtits2.realtek.com [211.75.126.72])
+	(using TLSv1.3 with cipher TLS_AES_256_GCM_SHA384 (256/256 bits)
+	 key-exchange X25519 server-signature ECDSA (prime256v1) server-digest SHA256)
+	(No client certificate requested)
+	by smtp.subspace.kernel.org (Postfix) with ESMTPS id 89931606A331
+	for <linux-wireless@vger.kernel.org>; Tue, 24 Nov 2026 08:27:43 +0000 (UTC)
+DMARC-Filter: OpenDMARC Filter v1.4.2 smtp.subspace.kernel.org 89931606A331
+Authentication-Results: smtp.subspace.kernel.org; dmarc=pass (p=none dis=none) header.from=realtek.com
+Authentication-Results: smtp.subspace.kernel.org; spf=pass smtp.mailfrom=realtek.com
+Authentication-Results: smtp.subspace.kernel.org;
+	dkim=pass (2048-bit key) header.d=realtek.com header.i=@realtek.com header.a=rsa-sha256 header.s=dkim header.b=fO07U+UW
+X-SpamFilter-By: ArmorX SpamTrap 5.80 with qID 6AO8Raa962381512, This message is accepted by code: ctloc85258
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=realtek.com; s=dkim;
+	t=1795508857; bh=3OQ1PYe+/UtQxIO8ojP6HJWgK1PNjS8B93gaMwsFnLk=;
+	h=From:To:CC:Subject:Date:Message-ID:MIME-Version:
+	 Content-Transfer-Encoding:Content-Type;
+	b=fO07U+UWuXv3i2YeB9aY9Xu8QKhoiP2ePuALYAAqzQQ9WsO+qsBz8fEi6C73u79ZV
+	 J1Msk7T5qLkCa7QxzANFyalhH0J62IT/XnIZYuYy0tU2/ARTsOvbCvzli51VcnlzuM
+	 FXb1GYowiKDq3UJh/UujkR4mRTgTAONVrwHxhoCHRmft3u0ZJxDy3gPML4mbEhvsUL
+	 Clpcyi3U8WHnsCkk2wPISHWV3wzmtfj/ur3Qria3r6W24dXQKbzeKtE05omXU0Db5w
+	 nLJ8mHe5qPHUKtHk8lUQwtLMofNksSHGtRbM34GD04Jc2WTZsDQTjG52Qsq0LQggpT
+	 4wQGEvet+zULQ==
+Received: from mail.realtek.com (rtkexhmbs02.realtek.com.tw[172.21.6.41])
+	by rtits2.realtek.com.tw (8.15.2/3.29/5.94) with ESMTPS id 6AO8Raa962381512
+	(version=TLSv1.2 cipher=ECDHE-RSA-AES256-GCM-SHA384 bits=256 verify=FAIL);
+	Tue, 24 Nov 2026 16:27:36 +0800
+Received: from RTKEXHMBS06.realtek.com.tw (10.21.1.56) by
+ RTKEXHMBS02.realtek.com.tw (172.21.6.41) with Microsoft SMTP Server
+ (version=TLS1_2, cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id
+ 15.2.2562.56; Tue, 24 Nov 2026 16:27:36 +0800
+Received: from RTKEXHMBS05.realtek.com.tw (10.21.1.55) by
+ RTKEXHMBS06.realtek.com.tw (10.21.1.56) with Microsoft SMTP Server
+ (version=TLS1_2, cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id
+ 15.2.2562.56; Tue, 24 Nov 2026 16:27:35 +0800
+Received: from [127.0.1.1] (172.21.40.75) by RTKEXHMBS05.realtek.com.tw
+ (10.21.1.55) with Microsoft SMTP Server (version=TLS1_2,
+ cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id 15.2.2562.56 via Frontend
+ Transport; Tue, 24 Nov 2026 16:27:35 +0800
+From: Ping-Ke Shih <pkshih@realtek.com>
+To: <linux-wireless@vger.kernel.org>
+CC: <gary.chang@realtek.com>, <spam@acio.nl>
+Subject: [PATCH rtw-next] wifi: rtw89: support TX of BIP-CMAC-128 management frames
+Date: Tue, 24 Nov 2026 16:27:17 +0800
+Message-ID: <20261124082717.27780-1-pkshih@realtek.com>
+X-Mailer: git-send-email 2.53.0
 X-Mailing-List: linux-wireless@vger.kernel.org
 List-Id: <linux-wireless.vger.kernel.org>
 List-Post: <mailto:linux-wireless@vger.kernel.org>
@@ -64,78 +77,229 @@ List-Owner: <mailto:linux-wireless+owner@vger.kernel.org>
 Precedence: list
 MIME-Version: 1.0
 Content-Transfer-Encoding: 8bit
-X-CM-TRANSID:BbQMCkC2u_7RRwVr66wkAg--.46263S2
-X-Coremail-Antispam: 1UD129KBjvJXoW7Ar18tw45uF4Utr15KFWktFb_yoW8KF4kpF
-	WagrZ8tr4DtrW2y3WfZr1UtF1rAw4rJa47GF15K39xZ3W5GrySyr1FgFWYvFyUCrnag34Y
-	vanIq34Y9a4DZrJanT9S1TB71UUUUU7qnTZGkaVYY2UrUUUUjbIjqfuFe4nvWSU5nxnvy2
-	9KBjDU0xBIdaVrnRJUUU9qb7Iv0xC_Kw4lb4IE77IF4wAFF20E14v26r4j6ryUM7CY07I2
-	0VC2zVCF04k26cxKx2IYs7xG6rWj6s0DM7CIcVAFz4kK6r1j6r18M28lY4IEw2IIxxk0rw
-	A2F7IY1VAKz4vEj48ve4kI8wA2z4x0Y4vE2Ix0cI8IcVAFwI0_Gr0_Xr1l84ACjcxK6xII
-	jxv20xvEc7CjxVAFwI0_Gr0_Cr1l84ACjcxK6I8E87Iv67AKxVW8Jr0_Cr1UM28EF7xvwV
-	C2z280aVCY1x0267AKxVW8Jr0_Cr1UM2vYz4IE04k24VAvwVAKI4IrM2AIxVAIcxkEcVAq
-	07x20xvEncxIr21l5I8CrVACY4xI64kE6c02F40Ex7xfMcIj6xIIjxv20xvE14v26r1j6r
-	18McIj6I8E87Iv67AKxVW8JVWxJwAm72CE4IkC6x0Yz7v_Jr0_Gr1lF7xvr2IYc2Ij64vI
-	r41lc7CjxVAaw2AFwI0_Jw0_GFylc2xSY4AK67AK6r43MxAIw28IcxkI7VAKI48JMxC20s
-	026xCaFVCjc4AY6r1j6r4UMI8I3I0E5I8CrVAFwI0_Jr0_Jr4lx2IqxVCjr7xvwVAFwI0_
-	JrI_JrWlx4CE17CEb7AF67AKxVWUtVW8ZwCIc40Y0x0EwIxGrwCI42IY6xIIjxv20xvE14
-	v26r1j6r1xMIIF0xvE2Ix0cI8IcVCY1x0267AKxVWUJVW8JwCI42IY6xAIw20EY4v20xva
-	j40_Jr0_JF4lIxAIcVC2z280aVAFwI0_Jr0_Gr1lIxAIcVC2z280aVCY1x0267AKxVWUJV
-	W8JbIYCTnIWIevJa73UjIFyTuYvjxUyQB_DUUUU
-X-CM-SenderInfo: ysvqjiysrsjkur6v33wo0lvxldqovvfxof0/1tbiAQUHD2sEVtikXAAAsV
+Content-Type: text/plain
 
-> I applied patch #1, but this one seems .. interesting. Have you run
-> into this problem? Do you have a reproducer?
+From: Chih-Kang Chang <gary.chang@realtek.com>
 
-Hi Lachlan,
+Flag software generate MMIC header but excluding 8-byte MIC space to
+support hardware TX encryption of BIP-CMAC-128 for WiFi 7 and later chips.
+For WiFi 6 chips, return not support for non-station mode to fallback
+software crypto.
 
-Thanks for taking patch 1.
+Reported-by: Vincent Schurink <spam@acio.nl>
+Closes: https://github.com/morrownr/rtw89/pull/135
+Signed-off-by: Chih-Kang Chang <gary.chang@realtek.com>
+Signed-off-by: Ping-Ke Shih <pkshih@realtek.com>
+---
+ drivers/net/wireless/realtek/rtw89/cam.c      |  3 ++
+ drivers/net/wireless/realtek/rtw89/core.c     | 33 +++++++++++++++++--
+ drivers/net/wireless/realtek/rtw89/core.h     |  1 +
+ drivers/net/wireless/realtek/rtw89/rtw8851b.c |  1 +
+ drivers/net/wireless/realtek/rtw89/rtw8852a.c |  1 +
+ drivers/net/wireless/realtek/rtw89/rtw8852b.c |  1 +
+ .../net/wireless/realtek/rtw89/rtw8852bt.c    |  1 +
+ drivers/net/wireless/realtek/rtw89/rtw8852c.c |  1 +
+ drivers/net/wireless/realtek/rtw89/rtw8922a.c |  1 +
+ drivers/net/wireless/realtek/rtw89/rtw8922d.c |  1 +
+ 10 files changed, 42 insertions(+), 2 deletions(-)
 
-No - not on a real MM81x, and I do not have a reproducer. I should have
-been explicit about that in the cover letter. Let me describe what we
-actually saw, so you can judge whether the patch makes sense.
+diff --git a/drivers/net/wireless/realtek/rtw89/cam.c b/drivers/net/wireless/realtek/rtw89/cam.c
+index 22f21a04a96d..f657a90425b8 100644
+--- a/drivers/net/wireless/realtek/rtw89/cam.c
++++ b/drivers/net/wireless/realtek/rtw89/cam.c
+@@ -514,7 +514,10 @@ int rtw89_cam_sec_key_add(struct rtw89_dev *rtwdev,
+ 		ext_key = true;
+ 		break;
+ 	case WLAN_CIPHER_SUITE_AES_CMAC:
++		if (!chip->hw_bip_tx_encrypt && vif->type != NL80211_IFTYPE_STATION)
++			return -EOPNOTSUPP;
+ 		hw_key_type = RTW89_SEC_KEY_TYPE_BIP_CCMP128;
++		key->flags |= IEEE80211_KEY_FLAG_GENERATE_MMIE;
+ 		break;
+ 	default:
+ 		return -EOPNOTSUPP;
+diff --git a/drivers/net/wireless/realtek/rtw89/core.c b/drivers/net/wireless/realtek/rtw89/core.c
+index 0f36185c19bd..14e3bbd0bef3 100644
+--- a/drivers/net/wireless/realtek/rtw89/core.c
++++ b/drivers/net/wireless/realtek/rtw89/core.c
+@@ -716,6 +716,7 @@ rtw89_core_tx_update_sec_key(struct rtw89_dev *rtwdev,
+ 	struct rtw89_tx_desc_info *desc_info = &tx_req->desc_info;
+ 	struct sk_buff *skb = tx_req->skb;
+ 	u8 sec_type = RTW89_SEC_KEY_TYPE_NONE;
++	bool inc_pn = true;
+ 	u8 sec_cam_idx;
+ 	u64 pn64;
+ 
+@@ -750,6 +751,10 @@ rtw89_core_tx_update_sec_key(struct rtw89_dev *rtwdev,
+ 	case WLAN_CIPHER_SUITE_GCMP_256:
+ 		sec_type = RTW89_SEC_KEY_TYPE_GCMP256;
+ 		break;
++	case WLAN_CIPHER_SUITE_AES_CMAC:
++		sec_type = RTW89_SEC_KEY_TYPE_BIP_CCMP128;
++		inc_pn = false;
++		break;
+ 	default:
+ 		rtw89_warn(rtwdev, "key cipher not supported %d\n", key->cipher);
+ 		return;
+@@ -763,7 +768,11 @@ rtw89_core_tx_update_sec_key(struct rtw89_dev *rtwdev,
+ 	if (!chip->hw_sec_hdr)
+ 		return;
+ 
+-	pn64 = atomic64_inc_return(&key->tx_pn);
++	if (inc_pn)
++		pn64 = atomic64_inc_return(&key->tx_pn);
++	else
++		pn64 = atomic64_read(&key->tx_pn);
++
+ 	desc_info->sec_seq[0] = pn64;
+ 	desc_info->sec_seq[1] = pn64 >> 8;
+ 	desc_info->sec_seq[2] = pn64 >> 16;
+@@ -926,6 +935,20 @@ u8 rtw89_core_get_ch_dma_v2(struct rtw89_dev *rtwdev, u8 qsel)
+ }
+ EXPORT_SYMBOL(rtw89_core_get_ch_dma_v2);
+ 
++static void rtw89_core_tx_trim_bip_mic(struct rtw89_dev *rtwdev,
++				       struct rtw89_core_tx_request *tx_req,
++				       struct ieee80211_key_conf *key)
++{
++	const size_t mic_len = sizeof_field(struct ieee80211_mmie, mic);
++	struct sk_buff *skb = tx_req->skb;
++
++	if (key->cipher != WLAN_CIPHER_SUITE_AES_CMAC)
++		return;
++
++	skb_trim(skb, skb->len - mic_len);
++	tx_req->desc_info.pkt_size = skb->len;
++}
++
+ static void
+ rtw89_core_tx_update_mgmt_info(struct rtw89_dev *rtwdev,
+ 			       struct rtw89_core_tx_request *tx_req)
+@@ -936,6 +959,7 @@ rtw89_core_tx_update_mgmt_info(struct rtw89_dev *rtwdev,
+ 	const struct rtw89_chan *chan = rtw89_chan_get(rtwdev,
+ 						       rtwvif_link->chanctx_idx);
+ 	struct sk_buff *skb = tx_req->skb;
++	struct ieee80211_key_conf *key;
+ 	u8 qsel, ch_dma;
+ 
+ 	qsel = rtw89_core_get_qsel_mgmt(rtwdev, tx_req);
+@@ -955,11 +979,16 @@ rtw89_core_tx_update_mgmt_info(struct rtw89_dev *rtwdev,
+ 	desc_info->dis_data_fb = true;
+ 	desc_info->data_rate = rtw89_core_get_mgmt_rate(rtwdev, tx_req, chan);
+ 
+-	if (chip->hw_mgmt_tx_encrypt && IEEE80211_SKB_CB(skb)->control.hw_key) {
++	key = IEEE80211_SKB_CB(skb)->control.hw_key;
++
++	if (chip->hw_mgmt_tx_encrypt && key) {
+ 		rtw89_core_tx_update_sec_key(rtwdev, tx_req);
+ 		rtw89_core_tx_update_llc_hdr(rtwdev, desc_info, skb);
+ 	}
+ 
++	if (chip->hw_bip_tx_encrypt && key)
++		rtw89_core_tx_trim_bip_mic(rtwdev, tx_req, key);
++
+ 	rtw89_debug(rtwdev, RTW89_DBG_TXRX,
+ 		    "tx mgmt frame with rate 0x%x on channel %d (band %d, bw %d)\n",
+ 		    desc_info->data_rate, chan->channel, chan->band_type,
+diff --git a/drivers/net/wireless/realtek/rtw89/core.h b/drivers/net/wireless/realtek/rtw89/core.h
+index 87a832b5c290..8425bd0b3b83 100644
+--- a/drivers/net/wireless/realtek/rtw89/core.h
++++ b/drivers/net/wireless/realtek/rtw89/core.h
+@@ -5861,6 +5861,7 @@ struct rtw89_chip_info {
+ 	bool rx_freq_from_ie;
+ 	bool hw_sec_hdr;
+ 	bool hw_mgmt_tx_encrypt;
++	bool hw_bip_tx_encrypt;
+ 	bool hw_tkip_crypto;
+ 	bool hw_mlo_bmc_crypto;
+ 	u8 rf_path_num;
+diff --git a/drivers/net/wireless/realtek/rtw89/rtw8851b.c b/drivers/net/wireless/realtek/rtw89/rtw8851b.c
+index a80e51916da2..a089af82aca1 100644
+--- a/drivers/net/wireless/realtek/rtw89/rtw8851b.c
++++ b/drivers/net/wireless/realtek/rtw89/rtw8851b.c
+@@ -2655,6 +2655,7 @@ const struct rtw89_chip_info rtw8851b_chip_info = {
+ 	.rx_freq_from_ie	= true,
+ 	.hw_sec_hdr		= false,
+ 	.hw_mgmt_tx_encrypt	= false,
++	.hw_bip_tx_encrypt	= false,
+ 	.hw_tkip_crypto		= false,
+ 	.hw_mlo_bmc_crypto	= false,
+ 	.rf_path_num		= 1,
+diff --git a/drivers/net/wireless/realtek/rtw89/rtw8852a.c b/drivers/net/wireless/realtek/rtw89/rtw8852a.c
+index b0f30b88cc08..5ff73cfde329 100644
+--- a/drivers/net/wireless/realtek/rtw89/rtw8852a.c
++++ b/drivers/net/wireless/realtek/rtw89/rtw8852a.c
+@@ -2426,6 +2426,7 @@ const struct rtw89_chip_info rtw8852a_chip_info = {
+ 	.rx_freq_from_ie	= true,
+ 	.hw_sec_hdr		= false,
+ 	.hw_mgmt_tx_encrypt	= false,
++	.hw_bip_tx_encrypt	= false,
+ 	.hw_tkip_crypto		= false,
+ 	.hw_mlo_bmc_crypto	= false,
+ 	.rf_path_num		= 2,
+diff --git a/drivers/net/wireless/realtek/rtw89/rtw8852b.c b/drivers/net/wireless/realtek/rtw89/rtw8852b.c
+index af4be6f4a5ed..82f131ac77a5 100644
+--- a/drivers/net/wireless/realtek/rtw89/rtw8852b.c
++++ b/drivers/net/wireless/realtek/rtw89/rtw8852b.c
+@@ -1033,6 +1033,7 @@ const struct rtw89_chip_info rtw8852b_chip_info = {
+ 	.rx_freq_from_ie	= true,
+ 	.hw_sec_hdr		= false,
+ 	.hw_mgmt_tx_encrypt	= false,
++	.hw_bip_tx_encrypt	= false,
+ 	.hw_tkip_crypto		= false,
+ 	.hw_mlo_bmc_crypto	= false,
+ 	.rf_path_num		= 2,
+diff --git a/drivers/net/wireless/realtek/rtw89/rtw8852bt.c b/drivers/net/wireless/realtek/rtw89/rtw8852bt.c
+index d3c7f3e4a30f..00c4cde28be9 100644
+--- a/drivers/net/wireless/realtek/rtw89/rtw8852bt.c
++++ b/drivers/net/wireless/realtek/rtw89/rtw8852bt.c
+@@ -873,6 +873,7 @@ const struct rtw89_chip_info rtw8852bt_chip_info = {
+ 	.rx_freq_from_ie	= true,
+ 	.hw_sec_hdr		= false,
+ 	.hw_mgmt_tx_encrypt     = false,
++	.hw_bip_tx_encrypt	= false,
+ 	.hw_tkip_crypto		= true,
+ 	.hw_mlo_bmc_crypto	= false,
+ 	.rf_path_num		= 2,
+diff --git a/drivers/net/wireless/realtek/rtw89/rtw8852c.c b/drivers/net/wireless/realtek/rtw89/rtw8852c.c
+index ff2a1ff13604..5ad1bef0f3ea 100644
+--- a/drivers/net/wireless/realtek/rtw89/rtw8852c.c
++++ b/drivers/net/wireless/realtek/rtw89/rtw8852c.c
+@@ -3230,6 +3230,7 @@ const struct rtw89_chip_info rtw8852c_chip_info = {
+ 	.rx_freq_from_ie	= false,
+ 	.hw_sec_hdr		= true,
+ 	.hw_mgmt_tx_encrypt	= true,
++	.hw_bip_tx_encrypt	= false,
+ 	.hw_tkip_crypto		= true,
+ 	.hw_mlo_bmc_crypto	= false,
+ 	.rf_path_num		= 2,
+diff --git a/drivers/net/wireless/realtek/rtw89/rtw8922a.c b/drivers/net/wireless/realtek/rtw89/rtw8922a.c
+index 37eb5ed3659b..d8c7675e413c 100644
+--- a/drivers/net/wireless/realtek/rtw89/rtw8922a.c
++++ b/drivers/net/wireless/realtek/rtw89/rtw8922a.c
+@@ -3278,6 +3278,7 @@ const struct rtw89_chip_info rtw8922a_chip_info = {
+ 	.rx_freq_from_ie	= false,
+ 	.hw_sec_hdr		= true,
+ 	.hw_mgmt_tx_encrypt	= true,
++	.hw_bip_tx_encrypt	= true,
+ 	.hw_tkip_crypto		= true,
+ 	.hw_mlo_bmc_crypto	= false,
+ 	.rf_path_num		= 2,
+diff --git a/drivers/net/wireless/realtek/rtw89/rtw8922d.c b/drivers/net/wireless/realtek/rtw89/rtw8922d.c
+index 2c568bd67747..f86bc0657c60 100644
+--- a/drivers/net/wireless/realtek/rtw89/rtw8922d.c
++++ b/drivers/net/wireless/realtek/rtw89/rtw8922d.c
+@@ -3849,6 +3849,7 @@ const struct rtw89_chip_info rtw8922d_chip_info = {
+ 	.rx_freq_from_ie	= false,
+ 	.hw_sec_hdr		= true,
+ 	.hw_mgmt_tx_encrypt	= true,
++	.hw_bip_tx_encrypt	= true,
+ 	.hw_tkip_crypto		= true,
+ 	.hw_mlo_bmc_crypto	= true,
+ 	.rf_path_num		= 2,
 
-The path involved is the register/memory access path:
-
-  mm81x_hw_otp_read() -> mm81x_reg32_read() -> mm81x_usb_mem_read()
-    mm81x_usb_cmd()          cmd urb on the bulk OUT endpoint, wait
-    usb_submit_urb()         data urb on the bulk IN endpoint
-    wait_event_interruptible_timeout()
-    completion callback      musb->errors = urb->status
-
-We drove this against a USB device model that can answer an individual
-transfer with STALL or IOERROR instead of data. On the guest side those
-complete as -EPIPE and -EPROTO on the data urb; the driver stores the
-status in musb->errors and reports it up the stack, and that is the
-"nonzero write bulk status received: -32" line in our logs.
-
-The important part is what the model does next: it answers every
-transfer independently. The next transfer either gets a freshly injected
-status or completes normally, so the endpoint is never left in a halted
-state. The model therefore cannot exhibit the failure this patch is
-about - after -EPIPE its endpoint simply works again.
-
-So the statement that the endpoint stays halted is from the USB spec, not
-from observation: a bulk endpoint that returned STALL remains halted
-until the host sends CLEAR_FEATURE(ENDPOINT_HALT), and on xHCI a stall
-only resets the host-side ring. Whether MM8108 can leave these endpoints
-in that state, or whether a STALL on this interface always means the link
-is gone, is something you would know much better than we can tell from
-here - so we would rather leave the decision to you.
-
-Any of these is fine with us:
-
- - drop 2/2; patch 1 stands on its own and we can resend this one if a
-   stall ever shows up in the field;
-
- - keep it if you consider a bulk STALL reachable and want the driver to
-   recover instead of failing every later transfer on that endpoint;
-
- - or go the other way and treat -EPIPE on the bulk pipes the same way
-   mm81x_usb_urb_status_is_disconnect() already treats the status
-   interrupt: mark the chip unresponsive and stop retrying.
-
-Just tell us which direction you prefer and we will follow it.
-
-Thanks,
-YuanZhe
+base-commit: 8b29fd95e2d3cb80564eb7cb34248b844422ba1e
+prerequisite-patch-id: 0a9a3112f7131bc3bf6949a25a08f301b7867a7b
+-- 
+2.53.0
 
