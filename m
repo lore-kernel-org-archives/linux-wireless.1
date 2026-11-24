@@ -1,95 +1,91 @@
-Authentication-Results: smtp.subspace.kernel.org; arc=none smtp.remote-ip=209.85.128.42
+Authentication-Results: smtp.subspace.kernel.org; arc=none smtp.remote-ip=74.125.82.175
 ARC-Seal: i=1; d=subspace.kernel.org; s=arc20261015; a=rsa-sha256; cv=none;
-	t=1795542392;
-	b=r+wPWTJTgU/BDNNbytsVfWGwySqZM2qGaiY/cmS16NIUV1dloa1mYoSpKbGv9muehvPp
-	 FgplSemReETQWYDnGF72+RGBGPNZ+NTw7dOnjk2MOwuDBtg3ueo7irIrgycEEvhh/BJG2
-	 fU5fVYJp1F372blXfYC/k6S3cLbyI5lPEIQ/mqr/J1BFFyaXv0/rGMM9uplWxSfFooKdy
-	 COf9rDlETZ8ssvYKZupLZyK7qipq3M+39tZXdsvnR659G6X2xT2G8UTjuQsz1R0SVao6T
-	 Y8YkG+vGJfcBYTVJ8bE6i6gh4LkGzlgqbYL27v2oM8iUoFNlqafTeuuf9FS1kv4lIIA==
+	t=1795543209;
+	b=TxcG90kJD7djdsK3kXPnuYfigNeTXOfZ6O5SQG15kRss0Aw5cE0ZxgABU4UPb4MX+ezx
+	 nNehT0mj7lcQLN/SovUDpgL8RYvO4CAe1Qztiyorg3xFu/ffT3PyYS2T7p2Rid4S6KXYm
+	 q5uiNQxfIRbd0HKwb4AmIMBfC2h0DZF373gv7ZUq8bdzoAOYwblLFB00+NMTSBWm1N6KX
+	 F5Wz5mMWdQ35agkR7Xcd9svKVFmDkU69x9M13hnAjyN0cc+2J8m7OW+VSxsKXCC5hU+mB
+	 oAF5SI+ITxr/0Hjxa26ic00rcxXZIDh+5Wzmp3eN7BTtuz65T6VADm8M6TW0644XziQ==
 ARC-Message-Signature: i=1; d=subspace.kernel.org; s=arc20261015;
-	a=rsa-sha256; c=relaxed/relaxed; t=1795542392;
+	a=rsa-sha256; c=relaxed/relaxed; t=1795543209;
 	h=DMARC-Filter:Received:DKIM-Signature:X-Google-DKIM-Signature:
 	 X-Forwarded-Encrypted:X-Gm-Message-State:X-Gm-Gg:X-Received:Received:
-	 From:To:Cc:Subject:Date:Message-ID:X-Mailer:In-Reply-To:References:
-	 MIME-Version:Content-Transfer-Encoding;
-	bh=eJ45RhdWQYaNGviQo8DZFSlW6V3bfg/JFh/lL6cjCXc=;
-	b=h+2PMQafiT9gYtFMwxUpCCz1OfW3eBpe0lPNBN3roM3ZUhsnG+YpkzXYwicBfegt5hzk
-	 y3oPwB5AG/glcW881D21wy7Ce25DOnv05na0TtOYG5sLd2zGr8xDx8mbt8e7wwWlTxIJV
-	 9Vv0m8loXi6fSA8xGnvlnfOefx19ktwWCAnTmDkoZqwLS6CCXws5CpAau7bp5Kv0ghDfZ
-	 S6gpI0dUi8Z/d/wesg6ktf8sCEPrQ72yTdiIyINOQ6eVrzPW98bAo4FXGqOCRhWAGqIeH
-	 lrfYxB7tAKlfeVuomNgX02acRV9xQWb0IXMuJwDDZrlJII8V7x2/m9g+PM+xjVVnlgg==
+	 Date:From:To:Cc:Subject:Message-ID:References:MIME-Version:
+	 Content-Type:Content-Disposition:In-Reply-To;
+	bh=8qQL2cawsszFVZraQt84ZZ5nw8FyEzyGMVtNWkN8uGM=;
+	b=g+WEA4FrBo5cqPtttvUpkzgw2CHdWvxr+Jq5E7Z8k68wfSx6iOPsg0akVehn96m7ZpvD
+	 V8XqPCwRGfPOfAsrSOwwyBMrY3GNg8xP8kuf1pPfq8t294mmmrDSCGvskUQWTQSi1Fvag
+	 qlVZ0Qt6Npo5l8YNzI87Yo2OXj70pu3DyaPAOKic8OEtzg1Z35wAmHgpwwFw+7hCyVAGW
+	 jjnopin4MsfI+Um34FtMHcuc9o20JOWP35uhYyd/X3BVimE5kmFDqBCzV3knIM6Iku5vT
+	 PA32AjYwOO1m5iKWgkEgzcKS4IlDUk6SVNBwTfa41MiE5K6CTHkOLFHA6giCdS/TObg==
 ARC-Authentication-Results: i=1; smtp.subspace.kernel.org; 
-	dmarc=pass header.from=gmail.com;
-	spf=pass smtp.mailfrom=gmail.com;
-	dkim=pass header.d=gmail.com header.i=@gmail.com header.a=rsa-sha256 header.s=20260707 header.b=bphLsgMU;
-	arc=none smtp.remote-ip=209.85.128.42
-Received: from mail-wm1-f42.google.com (mail-wm1-f42.google.com [209.85.128.42])
+	dmarc=pass header.from=chromium.org;
+	spf=pass smtp.mailfrom=chromium.org;
+	dkim=pass header.d=chromium.org header.i=@chromium.org header.a=rsa-sha256 header.s=google header.b=ECcRAnAB;
+	arc=none smtp.remote-ip=74.125.82.175
+Received: from mail-dy1-f175.google.com (mail-dy1-f175.google.com [74.125.82.175])
 	(using TLSv1.3 with cipher TLS_AES_128_GCM_SHA256 (128/128 bits)
 	 key-exchange X25519 server-signature ECDSA (prime256v1) server-digest SHA256)
 	(No client certificate requested)
-	by smtp.subspace.kernel.org (Postfix) with ESMTPS id EEFD2606A327
-	for <linux-wireless@vger.kernel.org>; Tue, 24 Nov 2026 17:46:31 +0000 (UTC)
-DMARC-Filter: OpenDMARC Filter v1.4.2 smtp.subspace.kernel.org EEFD2606A327
-Authentication-Results: smtp.subspace.kernel.org; dmarc=pass (p=none dis=none) header.from=gmail.com
-Authentication-Results: smtp.subspace.kernel.org; spf=pass smtp.mailfrom=gmail.com
+	by smtp.subspace.kernel.org (Postfix) with ESMTPS id 0DE0A606A321
+	for <linux-wireless@vger.kernel.org>; Tue, 24 Nov 2026 18:00:08 +0000 (UTC)
+DMARC-Filter: OpenDMARC Filter v1.4.2 smtp.subspace.kernel.org 0DE0A606A321
+Authentication-Results: smtp.subspace.kernel.org; dmarc=pass (p=none dis=none) header.from=chromium.org
+Authentication-Results: smtp.subspace.kernel.org; spf=pass smtp.mailfrom=chromium.org
 Authentication-Results: smtp.subspace.kernel.org;
-	dkim=pass (2048-bit key) header.d=gmail.com header.i=@gmail.com header.a=rsa-sha256 header.s=20260707 header.b=bphLsgMU
-Received: by mail-wm1-f42.google.com with SMTP id 5b1f17b1804b1-4bb702a7548so41494865e9.1
-        for <linux-wireless@vger.kernel.org>; Tue, 24 Nov 2026 09:46:31 -0800 (PST)
+	dkim=pass (1024-bit key, unprotected) header.d=chromium.org header.i=@chromium.org header.a=rsa-sha256 header.s=google header.b=ECcRAnAB
+Received: by mail-dy1-f175.google.com with SMTP id 5a478bee46e88-380c28f9e35so5989680eec.1
+        for <linux-wireless@vger.kernel.org>; Tue, 24 Nov 2026 10:00:08 -0800 (PST)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=gmail.com; s=20260707; t=1795542390; x=1796147190; darn=vger.kernel.org;
-        h=content-transfer-encoding:mime-version:references:in-reply-to
-         :message-id:date:subject:cc:to:from:from:to:cc:subject:date
-         :message-id:reply-to:content-type;
-        bh=eJ45RhdWQYaNGviQo8DZFSlW6V3bfg/JFh/lL6cjCXc=;
-        b=bphLsgMUcTwPkjB8anUJ99p+2VGCLqKqRkqXlsXy+lJpPFTBWwtNrZbN43+4vIEd7h
-         lJCzArjzpNkZnTQqhPei8hZCob7DexbkSPZcoDrOKH67Laytffz+gAsY0a9pzy4gzQLp
-         U0sHfaCRzSKgqWYjQf171AVeHpCbJZyXUXNHUHHZ5mb1HuvpPpwpVYiyk4qlI8g+NxGi
-         QixorEntJmNC7QJbhyET2CSBtHhaOXJlc/57xXCULfx+fxzpdyFJZelq4GjemFr6zju8
-         WPqdLtY/7DxoMutiY62Cs4EH6kDNXxxDpBr3cMvKs5Nk0LNSW2fi2cHELw2/jVukN49O
-         4//Q==
+        d=chromium.org; s=google; t=1795543208; x=1796148008; darn=vger.kernel.org;
+        h=in-reply-to:content-disposition:content-type:mime-version
+         :references:message-id:subject:cc:to:from:date:from:to:cc:subject
+         :date:message-id:reply-to:content-type;
+        bh=8qQL2cawsszFVZraQt84ZZ5nw8FyEzyGMVtNWkN8uGM=;
+        b=ECcRAnABWXwZzPSUNLbCIrMIZxmCOEpitBrAoStUYbzHFiLrOCqNcx1nIqubcarSTM
+         r1xMwZgi6imT4Y/IC1o1axRvxuhWHIj2/kg4RvWZb2w0Lut3XVQmVpGHQDsMHKwetW1p
+         6WFUy42y6LaJIWnMa1Qcg7kW7TpmyRVYjWRg8=
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=1e100.net; s=20260707; t=1795542390; x=1796147190;
-        h=content-transfer-encoding:mime-version:references:in-reply-to
-         :message-id:date:subject:cc:to:from:x-gm-gg:x-gm-message-state:from
-         :to:cc:subject:date:message-id:reply-to:content-type;
-        bh=eJ45RhdWQYaNGviQo8DZFSlW6V3bfg/JFh/lL6cjCXc=;
-        b=T24jaYgh+hNZbdD1+mzxgI6Jke8GsYZ1mN03nwcOeTVh9m4IZX8uJjtdhtt/f9R+lE
-         mfTcOEoqc2QkkWE4y8DkyGzz3/baJbpmnfHfqFbs2DXcGZjbSoY4Rp5i9x1HtY7UC8Rj
-         SMwDL4Wca4t8ldNBxDLaKJHFkfhi6KPoJDCVVkxrDjfPsZcb9P+rlwBWxhurmCHmlWs7
-         TKOsrDpiw/2fhikUCxtIImrLR+Q/WuIpNeutN6EJRYKMqWOriiJJSTxPSyx37B+/dh8V
-         KosR7QgBWqITymHl7BgccnifgDeb4rX7cd3hI9354l/mq3iHDhbozVScAtz21S+67Xf/
-         1kiQ==
-X-Forwarded-Encrypted: i=1; AL+hErE2asPVwF73p5dFIkILFLZmuHaBRm+mPGTm+dyj95A43w8J3TIHXFa6z4JZgXqqKsPx1lOhqUDRTNhNjWHNSg==@vger.kernel.org
-X-Gm-Message-State: APuU4Z8ZClQ8lEoof8pd6gSr/1UFWseJRMtXtgNEQkIcPrSY7Agh2851
-	CuKRIx/E4TQeMUfuYw65f9Yxb/T9dpLQnuXBZPUmdYlojAWbRJ3RfD0=
-X-Gm-Gg: AZFdTZcVTyvK0kuI5J5E2QJcrkSkvZkb54lS/LS3HK5mfRDAihQW+NeylqtTYLXLaRi
-	uQWO3WeO9tH7AkSmnBxsZep5J5Y3yGYiMhUo9w4b/7t5NW3AE5HwHsTUi3Qr8LT256ahADcHtC9
-	W09JwvoU6wrvqLKiz0zxKEOnvtYYludY4B3xQLtRXpTMJOQrAR+iY+u1FYTKkrvFYPzJAfUXJL0
-	ejmv9KZ7YugznWkEYQtrs9Cd950Wu1kshde7gQip+V6M72c99CCJke2ETCMW+kfjCQp+NgSZygE
-	1f5Rcs3iyTTw3RZmN+Gr6zmy0HkYXSo+S7LMgukdkjehbp2U/dqHMrkx3fytmEYtLjrX1dgj7mW
-	OjOFafdNYxByFKYtE/8ptr55PhfpX8DiSY2AQ5Ihr+Qmd9ecvO0eI5RSTCM7OnSL56cZdcsSPI+
-	ttk5TyAh2xmQo9zn/DE9VIfAEDKH/HSxAC4tSPLenpH8W3dd/MPyywRw2njM3B5ToI5G20xdcGe
-	jJ0fV0wMxm8Nvnkp/QxbV0UYIiCdb9LgrFydeCUwn/GDU0a0vMOPQ2uI8/ZuRTAYoJ/ZJvA4I4o
-	IyQRr3hziXWrVhU=
-X-Received: by 2002:a05:600c:3b8a:b0:4ba:761:c0c5 with SMTP id 5b1f17b1804b1-4bb8880f0e0mr316226585e9.5.1795542390429;
-        Tue, 24 Nov 2026 09:46:30 -0800 (PST)
-Received: from localhost.localdomain ([2001:41d0:303:db6b::])
-        by smtp.gmail.com with ESMTPSA id 5b1f17b1804b1-4bb884b39b6sm413261165e9.12.2026.11.24.09.46.30
-        (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
-        Tue, 24 Nov 2026 09:46:30 -0800 (PST)
-From: Tristan Madani <tristmd@gmail.com>
-To: Brian Norris <briannorris@chromium.org>,
-	Francesco Dolcini <francesco@dolcini.it>
-Cc: Jeff Chen <jeff.chen_1@nxp.com>,
-	linux-wireless@vger.kernel.org,
+        d=1e100.net; s=20260707; t=1795543208; x=1796148008;
+        h=in-reply-to:content-disposition:content-type:mime-version
+         :references:message-id:subject:cc:to:from:date:x-gm-gg
+         :x-gm-message-state:from:to:cc:subject:date:message-id:reply-to
+         :content-type;
+        bh=8qQL2cawsszFVZraQt84ZZ5nw8FyEzyGMVtNWkN8uGM=;
+        b=fN/ai8tb/xh/T39tsy322mC1NUzMsWcNbM9GnGZwkr78ANPtlba0ghyu+BwaL7p5Ty
+         C7HuQAo73tyUcgpdYIu3W4qn3dm0B41QoFYRuVEObA15mk7b6CzamZLpWwM130/5NBLV
+         3uX0GMQVaWpVs99OyQgtQRUkgsoUxcXB5PFmwNbLIKDbky19/g7UEMrmSVkxu0I9RuBn
+         gDkvFKUOKAj8k1Delgz7v1RcoTfxd1WNVd/oviMMoSOwH2gQL+nzj7kfLdSwABY4lK2f
+         rjTQ7Y06ZXRJm7N3YT8NOtk5DPYwBiptBfVPgdm3puiWMxpH2Vx0d/3l2VsE1xGUkhhp
+         A3+w==
+X-Forwarded-Encrypted: i=1; AL+hErGp61z9jayU2HZXzDfWt1E2FLMnisn+CICnk++drCdzM28crFxRARjt3TAme/DD3DwYEWrw1XwBSDmu5Tl7uw==@vger.kernel.org
+X-Gm-Message-State: APuU4Z+voxFxOJRJF21nD+iFuw22p8cHkmhwOBaDOAA1QlVUHO4qLBfK
+	sLqEductaSsfAxJeQJuahTDZOt85PQAdJFyLT7vWdBm7C0nJI8sF3ODPABVrHhMHjw==
+X-Gm-Gg: AZFdTZfvysy13SGj2iD0PftDjEaadMtlv5OVdYj1lDWmeEBpa6lGzGSo2VbTKUj5X7J
+	OYdv7AZpNF4j2EPeeVe//yLpy5K1HCp44euur7WoK46zwLVssb4irt928n3AppaFldIya+m4JLg
+	XzwrMZMY24Fn0mEyi0g570oZXcxJ3nqhHc3Gv9FLsTiSCySPtUzZ7WTrnT/VAi6RwzpAQgP52Qo
+	cFJqTyJo+aHaceL3J9aRKFZw27qwx+dvaXutQUsHWWZnLxSF55qJJPEoMUOOSPIOAh/m0cWqk8V
+	JMZbZLw9QbhBEhwirO1YawCrQGrBd6m+yDI4Sr5HR5yWBWyP/srljqZQbxjUUk+nfa3JJCUYk7J
+	eXhMxeRZrB1Hv8g6+EhMAhMG0EYz4t9iNYNxcZngnYx/YeOfotgONDFMI2eslsOoWSCXBb7DX/R
+	RrbWl/KOzbWLlGukZnSbWHkyn1zVD5zwSNv71KOZ/Pw+3BVUPAApWj9G5wCcrDV2LUGRh0ALKxj
+	taT01R/fGY1Et66+kODOKkRJamfZq5FXM/MBnZ+Dxa2+aEwBW1qreYQSeiC7eb1cGmygSg/aiKI
+	9HaWDEG19ttm+aa7lFMOG5DsmR2nCYTuqICFK3AlKvyaObj7BWI2aSkK9oIA5A7l2A0n
+X-Received: by 2002:a05:7300:51d4:b0:384:fef7:5876 with SMTP id 5a478bee46e88-384fef75c78mr18248122eec.24.1795543207990;
+        Tue, 24 Nov 2026 10:00:07 -0800 (PST)
+Received: from localhost ([2a00:79e0:2e7c:8:6ad2:8ba0:aedd:5a84])
+        by smtp.gmail.com with UTF8SMTPSA id 5a478bee46e88-385666e96bdsm43845676eec.7.2026.11.24.10.00.06
+        (version=TLS1_3 cipher=TLS_AES_128_GCM_SHA256 bits=128/128);
+        Tue, 24 Nov 2026 10:00:07 -0800 (PST)
+Date: Tue, 24 Nov 2026 10:00:05 -0800
+From: Brian Norris <briannorris@chromium.org>
+To: Tristan Madani <tristmd@gmail.com>
+Cc: Francesco Dolcini <francesco@dolcini.it>,
+	Jeff Chen <jeff.chen_1@nxp.com>, linux-wireless@vger.kernel.org,
 	stable@vger.kernel.org,
 	Tristan Madani <tristan@talencesecurity.com>
-Subject: [PATCH v2 wireless 3/3] wifi: mwifiex: cap TLV length in IBSS connected event handler
-Date: Tue, 24 Nov 2026 17:46:20 +0000
-Message-ID: <20261124174620.1572200-4-tristmd@gmail.com>
-X-Mailer: git-send-email 2.47.3
-In-Reply-To: <20261124174620.1572200-1-tristmd@gmail.com>
+Subject: Re: [PATCH v2 wireless 0/3] wifi: mwifiex: fix three
+ firmware-triggered validation issues
+Message-ID: <awXQpeeRwME1kVFs@google.com>
 References: <20261124174620.1572200-1-tristmd@gmail.com>
 X-Mailing-List: linux-wireless@vger.kernel.org
 List-Id: <linux-wireless.vger.kernel.org>
@@ -100,41 +96,32 @@ List-Unsubscribe: <mailto:linux-wireless+unsubscribe@vger.kernel.org>
 List-Owner: <mailto:linux-wireless+owner@vger.kernel.org>
 Precedence: list
 MIME-Version: 1.0
-Content-Transfer-Encoding: 8bit
+Content-Type: text/plain; charset=us-ascii
+Content-Disposition: inline
+In-Reply-To: <20261124174620.1572200-1-tristmd@gmail.com>
 
-From: Tristan Madani <tristan@talencesecurity.com>
+On Tue, Nov 24, 2026 at 05:46:17PM +0000, Tristan Madani wrote:
+> From: Tristan Madani <tristan@talencesecurity.com>
+> 
+> Three validation fixes for firmware-provided data in mwifiex:
+> 
+> Patch 1 bounds-checks the TID extracted from ADDBA responses before
+> indexing aggr_prio_tbl[].
+> 
+> Patch 2 validates intf_num in multichannel group info TLVs against
+> the available TLV data length.
+> 
+> Patch 3 caps the TLV-derived length in IBSS connected events at the
+> remaining event buffer size, with an additional guard against
+> unsigned underflow when the fixed-size header advance overshoots
+> the buffer.
+> 
+> v2:
+>   - Patch 3: add underflow guard before computing remaining length,
+>     as pointed out by Jeff Chen: when the header advance overshoots
+>     the buffer, the unsigned subtraction wraps (Jeff Chen)
 
-In the IBSS connected event handler, the buffer-bounded evt_len is
-replaced with the TLV header length from the firmware. An inflated
-value drives the IE parsing loop past the event buffer.
+Please include information about how you're testing these. (You're
+testing this, right?)
 
-After the fixed-size header advance, check that curr has not overshot
-the event data before computing the remaining length -- the
-subtraction wraps when curr is past the end because event->len is
-unsigned. Then cap the TLV-derived length at the remaining data size.
-
-Fixes: 432da7d243da ("mwifiex: add HT aggregation support for adhoc mode")
-Cc: stable@vger.kernel.org
-Signed-off-by: Tristan Madani <tristan@talencesecurity.com>
----
- drivers/net/wireless/marvell/mwifiex/sta_event.c | 4 ++++
- 1 file changed, 4 insertions(+)
-
-diff --git a/drivers/net/wireless/marvell/mwifiex/sta_event.c b/drivers/net/wireless/marvell/mwifiex/sta_event.c
-index 1f746e8f6b3e1..98f33ec186e63 100644
---- a/drivers/net/wireless/marvell/mwifiex/sta_event.c
-+++ b/drivers/net/wireless/marvell/mwifiex/sta_event.c
-@@ -45,6 +45,10 @@ static int mwifiex_check_ibss_peer_capabilities(struct mwifiex_private *priv,
- 		 */
- 		evt_len = le16_to_cpu(tlv_mgmt_frame->header.len);
- 		curr += (sizeof(*tlv_mgmt_frame) + 12);
-+		if (curr > event->data + event->len)
-+			return 0;
-+		if (evt_len > event->len - (curr - event->data))
-+			evt_len = event->len - (curr - event->data);
- 	} else {
- 		mwifiex_dbg(priv->adapter, MSG,
- 			    "management frame tlv not found!\n");
--- 
-2.47.3
-
+Brian
