@@ -1,77 +1,72 @@
-Authentication-Results: smtp.subspace.kernel.org; arc=none smtp.remote-ip=211.75.126.72
+Authentication-Results: smtp.subspace.kernel.org; arc=none smtp.remote-ip=170.10.133.124
 ARC-Seal: i=1; d=subspace.kernel.org; s=arc20261015; a=rsa-sha256; cv=none;
-	t=1795512005;
-	b=XY0alau32ctYDh1a7XLX6r3ZKEaeQQn+eHTF0CeG/+R8aCpKAaj0mCq6O+uIY2P6Crgq
-	 LZ2QaMTqJECRub22KyMYfrPTwhJ8QA09yfWbItXaeFSuunTqA08yxgglFOmPf47S3p7VI
-	 Y1RxOpH2R9PGlL0L7nz4wH1dNgnfMhCu2yHgSLoLzTp+tgoZEcmqKPRLtuBV8byHi1fSi
-	 ozmTw+D7ClLXP09EmxlpJ9dStSaH19FYM6ags/Z0zEebB0H0RVg65DKCGnX9SpChWXmeS
-	 9kzOV/D2DK91a208C8hsTGta310kA5voVjxQF+r4Mt6RlEUF6GjdoMyvbP79gJp75qA==
+	t=1795512059;
+	b=Xz9PaZT0r4j3bP7ekOQ0CSkZZQz1gWUPFD3TWFKlIPynvvSCCzAJ9QPB/3pZ7YhjkI7y
+	 BbWBef/x4dCWl1UzrhR+yd9+6V7MB2U2pxXRneP2UsaRDLovYTyFmCGlVZiiA2JHCrnJY
+	 QlT6n1S/TWTtB+1FbjK+ITBJwLxnmqVh/3YwIg+pKjmkCa/cfgbKQl6n5r3+wOKjtwGAH
+	 xY9FR5R17Nn1vGHfIElFVVupivb5+kJgLq0Q+7E9Kjlq4canekGbSeYoJGGSr5Z1Pn6o4
+	 Ho1w5LdGwy1LXpDCDKrpk9y7vx48OsYveXZx5aNh5URY7PCjwhP688q0IPq4AcXhqow==
 ARC-Message-Signature: i=1; d=subspace.kernel.org; s=arc20261015;
-	a=rsa-sha256; c=relaxed/relaxed; t=1795512005;
-	h=DMARC-Filter:X-SpamFilter-By:DKIM-Signature:Received:Received:
-	 Received:From:To:Subject:Thread-Topic:Thread-Index:Date:Message-ID:
-	 References:In-Reply-To:Accept-Language:Content-Language:
-	 x-originating-ip:Content-Type:Content-Transfer-Encoding:MIME-Version;
-	bh=NqW9qBlJNDh8qdSOKk35usq/AwR4fbdMdCFn+b6t+Xc=;
-	b=Z3vr734le9Zcnw5aJPpTEzz1hGhpHvSzmoiIwsGU8eCmWlGezguZnmR7plmJ8t9otBPm
-	 zTZWzIfs8h26FhcXxo2hL/7doUIAAXHKZoPFn9k6Rw6XtF9/7VYhO0zxfRTAo9WYJVxjR
-	 Lt+6jMXVpLvY5+8I9Ajs9o+z9uQk7BJJtF03v0Kl5qIL35a1+mUiNerckA8r9XM+QfMow
-	 lydv/FrAnDjGwf0BHVvG/CYQy5fME8NynNfKZzGuyC743umR5PuWGggHBHZAqpn6Rq1ZM
-	 j4xW8YyH1cHos+GmXRq1bKCqIqgykO1bvDqugNM6wrfCiJR5ktcCWSbKaEdgdnDHSMg==
+	a=rsa-sha256; c=relaxed/relaxed; t=1795512059;
+	h=DMARC-Filter:DKIM-Signature:Received:X-MC-Unique:
+	 X-Mimecast-MFC-AGG-ID:Received:Received:From:To:Cc:Subject:Date:
+	 Message-ID:MIME-Version:Content-Transfer-Encoding:X-Scanned-By;
+	bh=A4qNjXr7gru+en691Xh7tZguWdeIUYdmSdX45dTKY3E=;
+	b=hyK0FxOfohim0xnKYL+bpS/IjV3RcTBB3dDpQiYiq+ltNpGukiPW9m/2rVwjWcogi9th
+	 fnQ1Lp85EcportVq05WDuyLZMZpuyeJm5XMaHXZl87G0nio51uNtFodhTEXs+I9HUT0L1
+	 +Ecj/4Z7vsMqM6IcYzh+9/t2XJsuW2OyahGiQxQsudCWF0MUFXt7rmGPEJBc34C48X5GB
+	 /NV4mD0mu64ug06G1m+nKJUjpPWj94oxyMnAwA9UmJotNg6u4yjPuENd9W3V6RJMFBgSF
+	 Fr5FcMrLy8hj63EaQwAjALLTGsRHxwnoyJcImHq5g6q9GpqPg+uKkscMRLdqdIqS5ig==
 ARC-Authentication-Results: i=1; smtp.subspace.kernel.org; 
-	dmarc=pass header.from=realtek.com;
-	spf=pass smtp.mailfrom=realtek.com;
-	dkim=pass header.d=realtek.com header.i=@realtek.com header.a=rsa-sha256 header.s=dkim header.b=oXjE7eIx;
-	arc=none smtp.remote-ip=211.75.126.72
-Received: from rtits2.realtek.com.tw (rtits2.realtek.com [211.75.126.72])
+	dmarc=pass header.from=redhat.com;
+	spf=pass smtp.mailfrom=redhat.com;
+	dkim=pass header.d=redhat.com header.i=@redhat.com header.a=rsa-sha256 header.s=mimecast20190719 header.b=aYzXLk79;
+	arc=none smtp.remote-ip=170.10.133.124
+Received: from us-smtp-delivery-124.mimecast.com (us-smtp-delivery-124.mimecast.com [170.10.133.124])
 	(using TLSv1.3 with cipher TLS_AES_256_GCM_SHA384 (256/256 bits)
 	 key-exchange X25519 server-signature ECDSA (prime256v1) server-digest SHA256)
 	(No client certificate requested)
-	by smtp.subspace.kernel.org (Postfix) with ESMTPS id 8FCDE606A332
-	for <linux-wireless@vger.kernel.org>; Tue, 24 Nov 2026 09:20:04 +0000 (UTC)
-DMARC-Filter: OpenDMARC Filter v1.4.2 smtp.subspace.kernel.org 8FCDE606A332
-Authentication-Results: smtp.subspace.kernel.org; dmarc=pass (p=none dis=none) header.from=realtek.com
-Authentication-Results: smtp.subspace.kernel.org; spf=pass smtp.mailfrom=realtek.com
+	by smtp.subspace.kernel.org (Postfix) with ESMTPS id 39F76606A33D
+	for <linux-wireless@vger.kernel.org>; Tue, 24 Nov 2026 09:20:56 +0000 (UTC)
+DMARC-Filter: OpenDMARC Filter v1.4.2 smtp.subspace.kernel.org 39F76606A33D
+Authentication-Results: smtp.subspace.kernel.org; dmarc=pass (p=quarantine dis=none) header.from=redhat.com
+Authentication-Results: smtp.subspace.kernel.org; spf=pass smtp.mailfrom=redhat.com
 Authentication-Results: smtp.subspace.kernel.org;
-	dkim=pass (2048-bit key) header.d=realtek.com header.i=@realtek.com header.a=rsa-sha256 header.s=dkim header.b=oXjE7eIx
-X-SpamFilter-By: ArmorX SpamTrap 5.80 with qID 6AO9JwviE2404311, This message is accepted by code: ctloc85258
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=realtek.com; s=dkim;
-	t=1795511999; bh=NqW9qBlJNDh8qdSOKk35usq/AwR4fbdMdCFn+b6t+Xc=;
-	h=From:To:Subject:Date:Message-ID:References:In-Reply-To:
-	 Content-Type:Content-Transfer-Encoding:MIME-Version;
-	b=oXjE7eIx31p/RlKql032e9NbcKw0r6rjincnB0Z12D+oVS3i6LrGiS0iQLEl0yiM6
-	 iUAhYiVzXNVM69v7lyTCEBBt2RTZRy3kLcGGMMNH0gnsNmfhGapGNzrz4seOgeJLOH
-	 OMGzylf57+PcNqtjD4WAxtwBcnaMIFPNvrzzRrxpGrCd5ikhOsp1LA+bb8qyzPrKR5
-	 bF0kwkxKuHYGFtpsoTNZIzbri9q6NAkV1Q4DBo3a8dTaOdR2BEXC/dZB4GTQ1NyG7Z
-	 QEX5+BotXdviF47//0RuLXeTaEP0hRMTC6PXwY15ZwOxw4qSfDoFgP/WASzJH1aUWL
-	 WYZqTzM1Vid3g==
-Received: from mail.realtek.com (rtkexhmbs03.realtek.com.tw[10.21.1.53])
-	by rtits2.realtek.com.tw (8.15.2/3.29/5.94) with ESMTPS id 6AO9JwviE2404311
-	(version=TLSv1.2 cipher=ECDHE-RSA-AES256-GCM-SHA384 bits=256 verify=FAIL);
-	Tue, 24 Nov 2026 17:19:58 +0800
-Received: from RTKEXHMBS06.realtek.com.tw (10.21.1.56) by
- RTKEXHMBS03.realtek.com.tw (10.21.1.53) with Microsoft SMTP Server
- (version=TLS1_2, cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id
- 15.2.2562.56; Tue, 24 Nov 2026 17:19:59 +0800
-Received: from RTKEXHMBS06.realtek.com.tw ([fe80::eeeb:c765:ca73:5eef]) by
- RTKEXHMBS06.realtek.com.tw ([fe80::eeeb:c765:ca73:5eef%10]) with mapi id
- 15.02.2562.056; Tue, 24 Nov 2026 17:19:59 +0800
-From: Ping-Ke Shih <pkshih@realtek.com>
-To: Jimmy <kernel@jimmycushnie.com>, "linux-wireless@vger.kernel.org"
-	<linux-wireless@vger.kernel.org>
-Subject: RE: rtw89: 8922ae: ~80 Mbps TCP throughput vs ~600 Mbps on Windows
- with the same hardware
-Thread-Topic: rtw89: 8922ae: ~80 Mbps TCP throughput vs ~600 Mbps on Windows
- with the same hardware
-Thread-Index: AQHde+qVS/GIpZ76Fk61c4tbPwE3arc88Gyg
-Date: Tue, 24 Nov 2026 09:19:58 +0000
-Message-ID: <c4513d04819e4b52b855e5a21c67b8d2@realtek.com>
-References: <a98a6666-1499-433f-8c3f-d7277224b334@jimmycushnie.com>
-In-Reply-To: <a98a6666-1499-433f-8c3f-d7277224b334@jimmycushnie.com>
-Accept-Language: en-US, zh-TW
-Content-Language: zh-TW
-Content-Type: text/plain; charset="utf-8"
-Content-Transfer-Encoding: base64
+	dkim=pass (1024-bit key, unprotected) header.d=redhat.com header.i=@redhat.com header.a=rsa-sha256 header.s=mimecast20190719 header.b=aYzXLk79
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=redhat.com;
+	s=mimecast20190719; t=1795512056;
+	h=from:from:reply-to:subject:subject:date:date:message-id:message-id:
+	 to:to:cc:cc:mime-version:mime-version:
+	 content-transfer-encoding:content-transfer-encoding;
+	bh=A4qNjXr7gru+en691Xh7tZguWdeIUYdmSdX45dTKY3E=;
+	b=aYzXLk79MkbPQjlJV8yID/fQCu5eRoUjEMDhv4M4QGz7z2jZQSzT4o0Imcik/Uz9sNbM3f
+	Ve0i8I8ECLyn+YyBgmljoatn9JdpopM3WGdlo7/S075tPZkg9GvpMuVc3eh9ReaCg+3rEM
+	+bR15BCtMdgDDnFJNl2cToiq3+xJvFc=
+Received: from mx-prod-mc-03.mail-002.prod.us-west-2.aws.redhat.com
+ (ec2-54-186-198-63.us-west-2.compute.amazonaws.com [54.186.198.63]) by
+ relay.mimecast.com with ESMTP with STARTTLS (version=TLSv1.3,
+ cipher=TLS_AES_256_GCM_SHA384) id us-mta-640-0fETCUzCOmuz2edAQ9kvrw-1; Tue,
+ 24 Nov 2026 09:20:54 +0000
+X-MC-Unique: 0fETCUzCOmuz2edAQ9kvrw-1
+X-Mimecast-MFC-AGG-ID: 0fETCUzCOmuz2edAQ9kvrw_1795512053
+Received: from mx-prod-int-10.mail-002.prod.us-west-2.aws.redhat.com (mx-prod-int-10.mail-002.prod.us-west-2.aws.redhat.com [10.30.177.95])
+	(using TLSv1.3 with cipher TLS_AES_256_GCM_SHA384 (256/256 bits)
+	 key-exchange X25519 server-signature RSA-PSS (2048 bits) server-digest SHA256)
+	(No client certificate requested)
+	by mx-prod-mc-03.mail-002.prod.us-west-2.aws.redhat.com (Postfix) with ESMTPS id 416AB1944B03;
+	Tue, 24 Nov 2026 09:20:53 +0000 (UTC)
+Received: from fballuch-thinkpadx1carbongen13.redhat.corp (headnet04.pony-001.prod.iad2.dc.redhat.com [10.2.32.116])
+	by mx-prod-int-10.mail-002.prod.us-west-2.aws.redhat.com (Postfix) with ESMTP id C45B841F;
+	Tue, 24 Nov 2026 09:20:51 +0000 (UTC)
+From: Filip Balluch <fballuch@redhat.com>
+To: johannes@sipsolutions.net
+Cc: linux-wireless@vger.kernel.org,
+	linux-kernel@vger.kernel.org,
+	jtornosm@redhat.com,
+	Filip Balluch <fballuch@redhat.com>
+Subject: [PATCH] mac80211: fix missing crypto tailroom in fast-xmit
+Date: Tue, 24 Nov 2026 10:20:47 +0100
+Message-ID: <20261124092047.452491-1-fballuch@redhat.com>
 X-Mailing-List: linux-wireless@vger.kernel.org
 List-Id: <linux-wireless.vger.kernel.org>
 List-Post: <mailto:linux-wireless@vger.kernel.org>
@@ -81,32 +76,70 @@ List-Unsubscribe: <mailto:linux-wireless+unsubscribe@vger.kernel.org>
 List-Owner: <mailto:linux-wireless+owner@vger.kernel.org>
 Precedence: list
 MIME-Version: 1.0
+Content-Transfer-Encoding: 8bit
+X-Scanned-By: MIMEDefang 3.6 on 10.30.177.95
 
-SmltbXkgPGtlcm5lbEBqaW1teWN1c2huaWUuY29tPiB3cm90ZToNCj4gSGVsbG8sDQo+IA0KPiBJ
-IGhhdmUgYSBSVEw4OTIyQUUgd2hpY2ggb25seSBnZXRzIDYwLTEyMCBNYnBzIFRDUCB0aHJvdWdo
-cHV0IG9uIExpbnV4LA0KPiBldmVuIHRob3VnaCB0aGUgbGluayByZXBvcnRzIDEyMDAuOSBNQml0
-L3MgSEUtTUNTIDExIE5TUyAyIGluIGJvdGgNCj4gZGlyZWN0aW9ucyB3aXRoIGEgc3Ryb25nIHNp
-Z25hbC4gDQoNCkl0IGxvb2tzIGxpa2UgUEhZIHJhdGUgaXMgbm9ybWFsLiBQbGVhc2UgY2FwdHVy
-ZSBhaXIgcGFja2V0cyBhbmQgY29tcGFyZQ0KdGhlIGRpZmZlcmVuY2UgYmV0d2VlbiBXaW5kb3dz
-IGFuZCBMaW51eC4gDQoNCj4gVGhlIHNhbWUgbWFjaGluZSBnZXRzIH42MDAgTWJwcw0KPiB0aHJv
-dWdocHV0IHdoZW4gYm9vdGVkIGludG8gV2luZG93cyAxMS4NCj4gDQo+IElzc3VlIGlzIHJlcHJv
-ZHVjaWJsZSBvbjoNCj4gICAgLSA3LjMuNSwgaW4ta2VybmVsIHJ0dzg5DQo+ICAgIC0gNi4xOC42
-MCwgaW4ta2VybmVsIHJ0dzg5DQo+ICAgIC0gNy4zLjUsIG1vcnJvd25yL3J0dzg5IGF0IGNvbW1p
-dCBmMmNlNjZlDQo+IA0KPiBUaGUgV2luZG93cyBkcml2ZXIgdGhhdCB3b3JrcyBmb3IgbWUgaXMg
-NjEwMi4yNC4xNDMuMC4NCj4gDQo+IE15IHN5c3RlbToNCj4gLSBNb3RoZXJib2FyZDogR2lnYWJ5
-dGUgWDg3MCBBT1JVUyBFTElURSBXSUZJNyBJQ0UgKG9uYm9hcmQgUlRMODkyMkFFKQ0KPiAtIENQ
-VTogQU1EIFJ5emVuIDkgOTk1MFgzRA0KPiAtIDA5OjAwLjAgTmV0d29yayBjb250cm9sbGVyIFsw
-MjgwXTogUmVhbHRlayBSVEw4OTIyQUUgWzEwZWM6ODkyMl0NCj4gICAgKHJldiAwMSksIHN1YnN5
-c3RlbSBbMTBlYzo4OTIyXQ0KPiAtIGNoaXAgaW5mbyBDSUQ6IDcxLCBDVjogMiwgQUlEOiA2OTMz
-LCBBQ1Y6IDEsIFJGRTogMQ0KPiAtIEZpcm13YXJlIDAuMzUuODAuMyAoOGVmNGYwY2YpLCBydHc4
-OS9ydHc4OTIyYV9mdy00LmJpbg0KPiAtIERpc3RybzogQ2FjaHlPUw0KPiAtIEFQOiBSb2dlcnMg
-KENhbmFkYSkgZ2F0ZXdheSBDR000MzMxQ09NLCBoYXJkd2FyZSByZXZpc2lvbiAyLjAsIDUgR0h6
-DQo+ICAgIGNoYW5uZWwgNDQsIDgwIE1IeiwgODAyLjExYXgsIFdQQTItUFNLLiBSZWd1bGF0b3J5
-IGRvbWFpbjogY291bnRyeSBDQS4NCj4gDQo+IFRoaW5ncyBJIGFscmVhZHkgdHJpZWQ6DQo+IC0g
-aXcgcG93ZXJfc2F2ZSBvZmYNCg0KSSB0aGluayB0aGlzIGNhbiBhZmZlY3QgdGhyb3VnaHB1dCBz
-aWduaWZpY2FudGx5LiBQbGVhc2UgdXNlIGl3IGdldA0KdG8gY29uZmlybSBhZ2Fpbi4NCg0KPiAt
-IHJ0dzg5X3BjaSBkaXNhYmxlX2FzcG1fbDE9eSBkaXNhYmxlX2FzcG1fbDFzcz15IGRpc2FibGVf
-Y2xrcmVxPXksDQo+ICAgIHJ0dzg5X2NvcmUgZGlzYWJsZV9wc19tb2RlPXkgKGNvbmZpcm1lZCBh
-Y3RpdmUgaW4gc3lzZnMpDQoNClRoaXMgc2hvdWxkIGJlIGFkZGVkIGludG8gL2V0Yy9tb2Rwcm9i
-ZS5kLywgYW5kIGNvbGQgcmVib290IHRvIHRha2UNCmVmZmVjdC4gKFRob3VnaCBJIHRoaW5rIHRo
-aXMgZG9lc24ndCBhZmZlY3QgdGhyb3VnaHB1dCB0b28gbXVjaCkNCg0KUGluZy1LZQ0KDQoNCg==
+A key uploaded to hardware with the IEEE80211_KEY_FLAG_RESERVE_TAILROOM
+flag set tells mac80211 that the driver will handle the encryption
+itself but needs MIC tailroom reserved in the skb. The regular TX path
+honors this through crypto_tx_tailroom_needed_cnt in
+ieee80211_skb_resize(), but the fast-xmit path always passes ENCRYPT_NO
+and never reserves tailroom for such keys.
+
+mac80211_hwsim claims CCMP/GCMP keys as hardware keys while encrypting
+in software at TX time, so with full-MSS TCP segments the CCMP code
+finds an skb without the required tailroom.
+dmesg logs:
+
+WARNING: CPU: 0 PID: 0 at net/mac80211/wpa.c:462 ccmp_encrypt_skb.isra.0+0x73/0x1f0 [mac80211]
+RIP: 0010:ccmp_encrypt_skb.isra.0+0x73/0x1f0 [mac80211]
+Call Trace:
+ <IRQ>
+ ieee80211_crypto_ccmp_encrypt+0x3c/0x60 [mac80211]
+ ieee80211_encrypt_tx_skb+0x91/0x110 [mac80211]
+ mac80211_hwsim_tx+0x1cc/0x7f0 [mac80211_hwsim]
+ ieee80211_handle_wake_tx_queue+0x74/0xc0 [mac80211]
+ ieee80211_queue_skb+0x204/0x430 [mac80211]
+ __ieee80211_xmit_fast+0x206/0x3b0 [mac80211]
+
+and the frame is dropped. The same combination of fast-xmit and a
+RESERVE_TAILROOM key is reachable on ath11k and ath12k in raw mode,
+where the firmware expects the reserved MIC space to be present.
+
+Pass ENCRYPT_DATA instead so that tailroom is reserved whenever a
+driver requested it. For drivers without any RESERVE_TAILROOM keys the
+counter is zero and the resize behaves exactly as before.
+
+Fixes: 17c18bf880b2 ("mac80211: add TX fastpath")
+
+Signed-off-by: Filip Balluch <fballuch@redhat.com>
+---
+ net/mac80211/tx.c | 8 ++++----
+ 1 file changed, 4 insertions(+), 4 deletions(-)
+
+diff --git a/net/mac80211/tx.c b/net/mac80211/tx.c
+index 91b14112e24f..760da3114956 100644
+--- a/net/mac80211/tx.c
++++ b/net/mac80211/tx.c
+@@ -3753,14 +3753,14 @@ void __ieee80211_xmit_fast(struct ieee80211_sub_if_data *sdata,
+ 	    ieee80211_amsdu_aggregate(sdata, sta, fast_tx, skb, da, sa))
+ 		return;
+ 
+-	/* will not be crypto-handled beyond what we do here, so use false
+-	 * as the may-encrypt argument for the resize to not account for
+-	 * more room than we already have in 'extra_head'
++	/* the key may require tailroom to be reserved, e.g. when the
++	 * driver encrypts in software (IEEE80211_KEY_FLAG_RESERVE_TAILROOM),
++	 * so ask for encryption tailroom even though we don't encrypt here
+ 	 */
+ 	if (unlikely(ieee80211_skb_resize(sdata, skb,
+ 					  max_t(int, extra_head + hw_headroom -
+ 						     skb_headroom(skb), 0),
+-					  ENCRYPT_NO)))
++					  ENCRYPT_DATA)))
+ 		goto free;
+ 
+ 	hdr = skb_push(skb, extra_head);
+-- 
+2.56.0
+
