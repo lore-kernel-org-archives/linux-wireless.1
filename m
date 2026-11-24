@@ -1,104 +1,86 @@
-Authentication-Results: smtp.subspace.kernel.org; arc=none smtp.remote-ip=74.125.82.49
+Authentication-Results: smtp.subspace.kernel.org; arc=none smtp.remote-ip=211.75.126.72
 ARC-Seal: i=1; d=subspace.kernel.org; s=arc20261015; a=rsa-sha256; cv=none;
-	t=1795482660;
-	b=Ld2Y27sAojxZrCbfKbHX9KOqTT46itpz8L3/6r4RWnqDBp1conJV8gJvovKMJe0Nf+fv
-	 r7jfAVSOI1XgdK/SMUyvrbSEBUSCS1dyYTPn6+pxoz3jOcXi9ujbQb/E+nATozUzVdQlN
-	 72qf03zGNLj5LPs7dhZtqpPLviPNirLye8SArm9R8aKoDad0Y95pSdbCYynLG/0vgBKZI
-	 F9VyxBhe9BEJ+NuMj2vhH/iJH+ZeWwv3POxrUg/ebuaYB8uevy+ib8zYZzoKIX26BHLxI
-	 Ldoxd7l7hgnMtShim7AVu0RGP01iFyLwq6OhcyOtFRAmdbzKFrQN1mZjOuHcAvryoiw==
+	t=1795483945;
+	b=D3JvyBZ9ZRnwTtyhyMugz7Yjc+zHanwRNpjNeHkctgYM76OSBt5M0APN3II2yALn4Uxa
+	 T2gDCEmcbRe3SB2mdiD78ryVsjnJFHicALn3URluyikZqkLKY5uhuN/MSsq4P8ZhaNFLO
+	 ADZiBDUQogtitAN8tnO0IWiKE9/eVT442RWs54zvOqwYwH4HZzJAg7R/5zemtKcRomtQA
+	 6iQRPw62V3EMgApM1B+QbNFcQuRw8aVH2VHa4kFyO5f8uIHsquSYzcRQ/jD48lCGfWJ5U
+	 tbMN20FsUUPMt2PcYz94dE0kg8uFBWxeW4m17Svi0eXU6xM1++H2MC1LKssBaRK+4KA==
 ARC-Message-Signature: i=1; d=subspace.kernel.org; s=arc20261015;
-	a=rsa-sha256; c=relaxed/relaxed; t=1795482660;
-	h=DMARC-Filter:Received:DKIM-Signature:X-Google-DKIM-Signature:
-	 X-Forwarded-Encrypted:X-Gm-Message-State:X-Gm-Gg:X-Received:Received:
-	 Date:Message-ID:From:To:Cc:Subject:In-Reply-To:References:
-	 MIME-Version:Content-Type:Content-Transfer-Encoding:
-	 Content-Disposition;
-	bh=CwEMPI7Nv8Y4G/uSjVrKaLXUsD6jBVuvooxioPWLmTc=;
-	b=jbU54C+YOLNT7hMiKNkRtY7B8EUzqCJ9BmrHbSH1uOZCBuybGOnszLPAbFq09JzYujmY
-	 CD9L+KFXgIr2WMX2DykCSUel5mmBW9TnAXZ/m15w62e6D3XDVYKkD5iERknSgQ7zUpjU8
-	 iVpgMKdGt2icACnfspTo1KZwaIw+KnrO/xIM0WpVRwcgS35O/i1U+DSZgAbqxNImDNjfZ
-	 YRQG78LzVfLLW9eugiJgU0yFwwjbDj/dnYlnchujbEh8kXoteXUt4QAgbZrGvXhFj21g6
-	 S9azURbrrhEJzPGqV0GLzucGhYhUz0t1nC8FEaZbxW2cUpDfiyF3NO60BgKbJRA2BEA==
+	a=rsa-sha256; c=relaxed/relaxed; t=1795483945;
+	h=DMARC-Filter:X-SpamFilter-By:DKIM-Signature:Received:Received:
+	 Received:Received:From:To:Subject:Thread-Topic:Thread-Index:Date:
+	 Message-ID:References:In-Reply-To:Accept-Language:Content-Language:
+	 x-originating-ip:Content-Type:Content-Transfer-Encoding:MIME-Version;
+	bh=WmNs17brmFUXawNtsJcYIcN5Fniy0KN/gwCLKHTNXsQ=;
+	b=5HTrztFcy2Wyg0AC5/z4DRAP4bOi/lkhT6v64tZwf3idhZg2pw/yOVCXYHw9Khb/y0h5
+	 9wevSIL+D5Y8UbxrPe67Z4ITfoRQYPtipcPb37CHvLcDq/XQiraDYQtXaxSG4ilhyJkV3
+	 t+jzQkEdngfuIQhHnLAoG6imjuj3XfuT7RtUZ7fIHqNgMq9ZI5rNegLRQ+/QaYUJgvshj
+	 Ll/NCVNeAAOQIZaBeMq/h1aF1OAVm5PEJewqoDDEXNanDjeIByONYCa4Se880LJYi/csK
+	 HpDCGVdFDs5/hd/F8HyEnTXflmGVEw18dULfht6otHtR7Gf0FmF+7U7OT6ks6HwIaUg==
 ARC-Authentication-Results: i=1; smtp.subspace.kernel.org; 
-	dmarc=pass header.from=gmail.com;
-	spf=pass smtp.mailfrom=gmail.com;
-	dkim=pass header.d=gmail.com header.i=@gmail.com header.a=rsa-sha256 header.s=20260707 header.b=kKG19Co9;
-	arc=none smtp.remote-ip=74.125.82.49
-Received: from mail-dl1-f49.google.com (mail-dl1-f49.google.com [74.125.82.49])
-	(using TLSv1.3 with cipher TLS_AES_128_GCM_SHA256 (128/128 bits)
+	dmarc=pass header.from=realtek.com;
+	spf=pass smtp.mailfrom=realtek.com;
+	dkim=pass header.d=realtek.com header.i=@realtek.com header.a=rsa-sha256 header.s=dkim header.b=X1rdOoR0;
+	arc=none smtp.remote-ip=211.75.126.72
+Received: from rtits2.realtek.com.tw (rtits2.realtek.com [211.75.126.72])
+	(using TLSv1.3 with cipher TLS_AES_256_GCM_SHA384 (256/256 bits)
 	 key-exchange X25519 server-signature ECDSA (prime256v1) server-digest SHA256)
 	(No client certificate requested)
-	by smtp.subspace.kernel.org (Postfix) with ESMTPS id BE3C9606A32A
-	for <linux-wireless@vger.kernel.org>; Tue, 24 Nov 2026 01:10:59 +0000 (UTC)
-DMARC-Filter: OpenDMARC Filter v1.4.2 smtp.subspace.kernel.org BE3C9606A32A
-Authentication-Results: smtp.subspace.kernel.org; dmarc=pass (p=none dis=none) header.from=gmail.com
-Authentication-Results: smtp.subspace.kernel.org; spf=pass smtp.mailfrom=gmail.com
+	by smtp.subspace.kernel.org (Postfix) with ESMTPS id 4526F606A32A
+	for <linux-wireless@vger.kernel.org>; Tue, 24 Nov 2026 01:32:23 +0000 (UTC)
+DMARC-Filter: OpenDMARC Filter v1.4.2 smtp.subspace.kernel.org 4526F606A32A
+Authentication-Results: smtp.subspace.kernel.org; dmarc=pass (p=none dis=none) header.from=realtek.com
+Authentication-Results: smtp.subspace.kernel.org; spf=pass smtp.mailfrom=realtek.com
 Authentication-Results: smtp.subspace.kernel.org;
-	dkim=pass (2048-bit key) header.d=gmail.com header.i=@gmail.com header.a=rsa-sha256 header.s=20260707 header.b=kKG19Co9
-Received: by mail-dl1-f49.google.com with SMTP id a92af1059eb24-170135e43c7so5626873c88.0
-        for <linux-wireless@vger.kernel.org>; Mon, 23 Nov 2026 17:10:59 -0800 (PST)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=gmail.com; s=20260707; t=1795482659; x=1796087459; darn=vger.kernel.org;
-        h=content-disposition:content-transfer-encoding:content-type
-         :mime-version:references:in-reply-to:subject:cc:to:from:message-id
-         :date:from:to:cc:subject:date:message-id:reply-to:content-type;
-        bh=CwEMPI7Nv8Y4G/uSjVrKaLXUsD6jBVuvooxioPWLmTc=;
-        b=kKG19Co9tDWF2kSXK9dKvmLlvSosMXN5A+fjtmNUuhQN82VGIHKHSt7hl60KkIuTqu
-         OTELZTKud2yzTtGpJ7YssH7XaqMzCZGWMYDkBuT+NcCO6f/J1jqPT0iyZQqXfdWQVo+7
-         NpL+BVzS/nn6KT8iZArKwzuxRvPxz7vHEFH6/T2KHs/4S02PCeK1dyecPiT3ra5J0+fQ
-         /fgxtsqz+bypFUe4822LHXZAKII+1BrHRYFU9BpYbk+8Uqr0d9LvdyqMqVFfzPKr5ne0
-         gjqbIHRdr1UAU+rh9u1Qy9nf2cgwwJCw8nbQvW/s9TlQ/Z33NtjHLWdZggyn3wfRzLHS
-         ZRZg==
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=1e100.net; s=20260707; t=1795482659; x=1796087459;
-        h=content-disposition:content-transfer-encoding:content-type
-         :mime-version:references:in-reply-to:subject:cc:to:from:message-id
-         :date:x-gm-gg:x-gm-message-state:from:to:cc:subject:date:message-id
-         :reply-to:content-type;
-        bh=CwEMPI7Nv8Y4G/uSjVrKaLXUsD6jBVuvooxioPWLmTc=;
-        b=MRFxNEoJgXHBXR40QIHKaLGpu/9TojV1iFXmHUDNsWC0sHvVkUl2HNxkRE2REpJF59
-         sTunGPMhLQlPT5nstLT0vkm5NWySZ2Ia2GkO/fCOR7zEh/qg5Hg5dAFnX6AvJ78/52uV
-         D42w9Uf0JGNBaRG0BlUACXibcFXFfFvmUspryYOGlkNjmKcsE0v/SkNLm/6NlGqY7Rbm
-         hYnQIYgwhdgYxJQ/RHkpc62M9rssekZ8YLyrwLjXYKqKf+Hv7pZ8UmV533gUXchDIz0F
-         ymD2Uc7b17kHqVz9lmjcA3YwksL0wqGdtCt/zk7W3QxR7VMKYK4hSW/nXAYUdSt5udxk
-         uLUw==
-X-Forwarded-Encrypted: i=1; AL+hErGKxWUnOr1LsovH9xokW6ahhasX8hYuYDnsy/8axSolzXUC99wy+ggfZ1K8KFDpkq2qQgiZbbOPOKIDjy0RRw==@vger.kernel.org
-X-Gm-Message-State: APuU4Z8wC5a/Kga7DD/w82lEPBLVtFDUCfkxxkDIswcbgGXBVdC8swu6
-	sIhbYxQHvrzWU45RDHQOqF3alH+30yHcbHPiiuCbPZW5HvMXdB2NBqXN
-X-Gm-Gg: AZFdTZfiUNgtfoV2dtccUr2kcU9g56GibGg39mHL8OtzAH87BuC+Kik2Q0faETVqaqw
-	+CK2N6aZl+cAKLKmoIloHkTVIxZN4BasNb57ISJiuPMIj4IjKGtJy2iMYaAojiv8FaLyTZ/T/BO
-	LFXNNf6Gjqzwvz4VEKDDPM4DEKxcor0bycyk/F44pb489gGLjFS/Sk5Pvp7BUBxivGznrvF8BjM
-	I4muPI3IKhNmEU9kvcByXm2hDaUqHOCYs5dEQ2QgUUv0UKVolPHU0IpyTas0B+zm0YeC+Ihih5E
-	Yvy86e24unusfVz9Yp9TRv21BbrCmBGM99uRVuYYB/r3ulDj0HtP3A9b6P+IEiEunP8rRABnfxb
-	3xBXkATsqPe28CamXrZwY6EvyoMWXtLB1o7p11fuziNll3QO7QMBq/t6xwWH1EOnJ2Rjewqi09M
-	7dDucc60WwgJpqNNWbElh9c7TZuslC4ncUemNwLgmbRG2IR2TMTTGcQm3Mgf3JbEJpccOqByA53
-	ccYb5vkfr6q5gAJAQueSOBDx2NAIUPm753QkYm19hnl903yef+41OKvsuOW0aAlxtq8dYadIW/O
-	qJfUEiG2EVWOdmEBY9HH2ld/j45RV3FadlQYtVxt1HV1RMNOYX43d/Dfl5DzTukmp63y3g==
-X-Received: by 2002:a05:7300:c695:b0:37f:73f9:aee7 with SMTP id 5a478bee46e88-3856c9a6408mr15050898eec.5.1795482658749;
-        Mon, 23 Nov 2026 17:10:58 -0800 (PST)
-Received: from localhost ([2a00:79e0:2ebe:8:4121:d698:201c:9274])
-        by smtp.gmail.com with ESMTPSA id 5a478bee46e88-386aaae4960sm15816977eec.18.2026.11.23.17.10.57
-        (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
-        Mon, 23 Nov 2026 17:10:57 -0800 (PST)
-Date: Mon, 23 Nov 2026 17:10:56 -0800
-Message-ID: <2f25009cbd67a8ee7b417f12b35374b1@gmail.com>
-From: Dmitry Torokhov <dmitry.torokhov@gmail.com>
-To: Bartosz Golaszewski <brgl@kernel.org>
-Cc: Arnd Bergmann <arnd@arndb.de>,
-	Arnd Bergmann <arnd@kernel.org>,
-	Linus Walleij <linusw@kernel.org>,
-	Johannes Berg <johannes@sipsolutions.net>,
-	John Paul Adrian Glaubitz <glaubitz@physik.fu-berlin.de>,
-	Kent Gibson <warthog618@gmail.com>,
-	Thomas Bogendoerfer <tsbogend@alpha.franken.de>,
-	linux-kernel@vger.kernel.org,
-	linux-mips@vger.kernel.org,
-	linux-sh@vger.kernel.org,
-	"open list:GPIO SUBSYSTEM" <linux-gpio@vger.kernel.org>,
-	linux-wireless@vger.kernel.org
-Subject: Re: [PATCH 0/2 v8] gpiolib: finish the legacy cleanup
-In-Reply-To: <7dpg3x3gkypkznzhuetjsqmk5fhqwuwkc6kupbs52zqh5mibgx@fjow6eodw4pf>
-References: <20261123085723.156933-1-arnd@kernel.org> <tdc6h325jthjgyik2ne4oistkm563maoc2cpnffqu7hh34tpl7@oscripzv4dwq> <qvmy7iaxc7cjy2gkajqkr5ma6b4lwxz5ff64a5zsqrgewkxodr@odbjlv5x3hix> <8296a5c2-0aa2-4fc7-b65b-9d336bc4dff6@app.fastmail.com> <7dpg3x3gkypkznzhuetjsqmk5fhqwuwkc6kupbs52zqh5mibgx@fjow6eodw4pf>
+	dkim=pass (2048-bit key) header.d=realtek.com header.i=@realtek.com header.a=rsa-sha256 header.s=dkim header.b=X1rdOoR0
+X-SpamFilter-By: ArmorX SpamTrap 5.80 with qID 6AO1WKaF42105401, This message is accepted by code: ctloc85258
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=realtek.com; s=dkim;
+	t=1795483940; bh=WmNs17brmFUXawNtsJcYIcN5Fniy0KN/gwCLKHTNXsQ=;
+	h=From:To:Subject:Date:Message-ID:References:In-Reply-To:
+	 Content-Type:Content-Transfer-Encoding:MIME-Version;
+	b=X1rdOoR09V3kZHpAPCTb36CJBsPY9UBoIlmamx3QGARA4Y6LYpsmBLlCZpWdEF9lw
+	 de+gvG+3JdNnwPyeB2ggHB8ZxV/LfYqQA/q01vtym8YKM+ghkdeFC9IRhpxXM2LEk3
+	 mg04WSpr7iBh6XSrwDJrG0T2REDIyFtcdK0FMaBlllIzkibeQVeOQyPAT5/JkgtBqS
+	 uw1xKfFZFbibs8DvUSVh6Fkwi53p2MmZMOKd2MP+tLXqXJUnxabcwC47xE+DLDZEuU
+	 532cLrQfLYYUSCayhyKMurZpLnGXHHk6EeVlXKxuiUD83R5hrtNMrs4fgusTsAxfhG
+	 UVFmIJ/JhY/yw==
+Received: from mail.realtek.com (rtkexhmbs02.realtek.com.tw[172.21.6.41])
+	by rtits2.realtek.com.tw (8.15.2/3.29/5.94) with ESMTPS id 6AO1WKaF42105401
+	(version=TLSv1.2 cipher=ECDHE-RSA-AES256-GCM-SHA384 bits=256 verify=FAIL);
+	Tue, 24 Nov 2026 09:32:20 +0800
+Received: from RTKEXHMBS06.realtek.com.tw (10.21.1.56) by
+ RTKEXHMBS02.realtek.com.tw (172.21.6.41) with Microsoft SMTP Server
+ (version=TLS1_2, cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id
+ 15.2.2562.56; Tue, 24 Nov 2026 09:32:20 +0800
+Received: from RTKEXHMBS06.realtek.com.tw (10.21.1.56) by
+ RTKEXHMBS06.realtek.com.tw (10.21.1.56) with Microsoft SMTP Server
+ (version=TLS1_2, cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id
+ 15.2.2562.56; Tue, 24 Nov 2026 09:32:20 +0800
+Received: from RTKEXHMBS06.realtek.com.tw ([fe80::eeeb:c765:ca73:5eef]) by
+ RTKEXHMBS06.realtek.com.tw ([fe80::eeeb:c765:ca73:5eef%10]) with mapi id
+ 15.02.2562.056; Tue, 24 Nov 2026 09:32:20 +0800
+From: Ping-Ke Shih <pkshih@realtek.com>
+To: Bitterblue Smith <rtl8821cerfe2@gmail.com>,
+	"linux-wireless@vger.kernel.org" <linux-wireless@vger.kernel.org>
+Subject: RE: [PATCH rtw-next 0/5] wifi: rtw88: pci: Support an older design,
+ like RTL8821AE/RTL8812AE
+Thread-Topic: [PATCH rtw-next 0/5] wifi: rtw88: pci: Support an older design,
+ like RTL8821AE/RTL8812AE
+Thread-Index: AQHdY0HfQGIda1zW60KKJQiEj21Ec7cra++AgAUI04CAAvLMgIABpDIQgAbFr4CAAM7HgA==
+Date: Tue, 24 Nov 2026 01:32:20 +0000
+Message-ID: <56caa561389c432db383b962f86c9b82@realtek.com>
+References: <2033f1b1-fb12-4a04-aef4-923590e64463@gmail.com>
+ <aaaeeef8-1d4b-4d31-9f70-fb7d781d7006@gmail.com>
+ <62b7f8e8d9784877ba8eda4bcde90cc6@realtek.com>
+ <08a6cf57-9c00-445d-bc91-9375e4ba2ef8@gmail.com>
+ <1c527c2ba8d64740a1b1df63b80f6ad7@realtek.com>
+ <8226a69f-0c29-414b-8e2c-e01103819d6b@gmail.com>
+In-Reply-To: <8226a69f-0c29-414b-8e2c-e01103819d6b@gmail.com>
+Accept-Language: en-US, zh-TW
+Content-Language: zh-TW
+Content-Type: text/plain; charset="utf-8"
+Content-Transfer-Encoding: base64
 X-Mailing-List: linux-wireless@vger.kernel.org
 List-Id: <linux-wireless.vger.kernel.org>
 List-Post: <mailto:linux-wireless@vger.kernel.org>
@@ -108,27 +90,42 @@ List-Unsubscribe: <mailto:linux-wireless+unsubscribe@vger.kernel.org>
 List-Owner: <mailto:linux-wireless+owner@vger.kernel.org>
 Precedence: list
 MIME-Version: 1.0
-Content-Type: text/plain; charset=us-ascii
-Content-Transfer-Encoding: 7bit
-Content-Disposition: inline
 
-Hi Bartosz,
-
-On Mon, Nov 23, 2026 at 04:41:32PM +0100, Bartosz Golaszewski wrote:
-> Can I apply v7 and provide it to the SH maintainers on an immutable
-> branch?
-
-BTW, I have the soc_button_array rework (converting it to software nodes
-and dropping "select GPIOLIB_LEGACY") on an immutable branch based on
-v7.4-rc2:
-
-	git://git.kernel.org/pub/scm/linux/kernel/git/dtor/input.git ib/7.4-rc2-soc-button-array
-
-I recommend pulling it into the gpio tree before applying Arnd's work so
-that x86 builds with INPUT_SOC_BUTTON_ARRAY enabled no longer pull in
-CONFIG_GPIOLIB_LEGACY either.
-
-Thanks.
-
--- 
-Dmitry
+Qml0dGVyYmx1ZSBTbWl0aCA8cnRsODgyMWNlcmZlMkBnbWFpbC5jb20+IHdyb3RlOg0KPiBPbiAx
+OS8xMS8yMDI2IDA3OjQ4LCBQaW5nLUtlIFNoaWggd3JvdGU6DQo+ID4gQml0dGVyYmx1ZSBTbWl0
+aCA8cnRsODgyMWNlcmZlMkBnbWFpbC5jb20+IHdyb3RlOg0KPiA+PiBPbiAxNi8xMS8yMDI2IDA5
+OjQzLCBQaW5nLUtlIFNoaWggd3JvdGU6DQo+ID4+PiBCaXR0ZXJibHVlIFNtaXRoIDxydGw4ODIx
+Y2VyZmUyQGdtYWlsLmNvbT4gd3JvdGU6DQo+ID4+Pj4gT24gMjQvMTAvMjAyNiAwMTo1NywgQml0
+dGVyYmx1ZSBTbWl0aCB3cm90ZToNCj4gPj4+Pj4NCj4gPj4+Pj4gVGhlb3JldGljYWxseSBydGx3
+aWZpIHN1cHBvcnRzIFdPV0xBTiwgYnV0IGl0IGRvZXNuJ3Qgd29yayBmb3IgbWUgd2l0aA0KPiA+
+Pj4+PiBSVEw4ODIxQUUgb3IgUlRMODgxMkFFLiBydHc4OCBkb2Vzbid0IHN1cHBvcnQgV09XTEFO
+IHdpdGggdGhlc2UgY2hpcHMuDQo+ID4+Pj4+DQo+ID4+Pj4NCj4gPj4+PiBBY3R1YWxseSwgdGhp
+cyBsb29rcyBsaWtlIG15IGxhcHRvcCdzIGZhdWx0LiBJIHRyaWVkIHdpdGggUlRMODgyMkNFDQo+
+ID4+Pj4gYW5kIFJUTDg4NTJCRSwgYW5kIHRoZXkgZG9uJ3Qgd29yayBlaXRoZXIuIFRoZSB3aWZp
+IGNhcmQgZG9lc24ndCBoYXZlDQo+ID4+Pj4gcG93ZXIgd2hpbGUgdGhlIGxhcHRvcCBpcyBzdXNw
+ZW5kZWQgdG8gUkFNLiBUaGVyZSBpcyBubyBvcHRpb24gZm9yIGl0IGluDQo+ID4+Pj4gdGhlIEJJ
+T1MsIGVpdGhlci4NCj4gPj4+DQo+ID4+PiBJZiB5b3UgaGF2ZSBhbiBleHRlcm5hbCBQQ0lFIGFk
+YXB0ZXIsIGl0IHdpbGwgYmUgcG9zc2libGUgdG8gY29ubmVjdA0KPiA+Pj4gYW4gZXh0ZXJuYWwg
+cG93ZXIgdG8ga2VlcCBXaUZpIHdvcmtpbmcuIChOb3RlIHRoaXMgbWlnaHQgZGFtYWdlIHlvdXIN
+Cj4gPj4+IGxhcHRvcCBvciBXaUZpIGNhcmQgaWYgY29ubmVjdCBleHRlcm4gcG93ZXIgdG8gd3Jv
+bmcgaGFyZHdhcmUgcGlucykNCj4gPj4NCj4gPj4gSSBkb24ndCBoYXZlIGFueXRoaW5nIGV4dGVy
+bmFsLCBidXQgeW91IGdhdmUgbWUgYW4gaWRlYS4NCj4gPj4NCj4gPj4gSSBzb2xkZXJlZCB0d28g
+d2lyZXMgb24gdGhlIG1vdGhlcmJvYXJkLiBPbmUgY29ubmVjdHMgdGhlIE0uMiBzbG90IHRvIHRo
+ZQ0KPiA+PiAzLjNWIGxpbmUgd2hpY2ggc3RheXMgb24gaW4gUzMuIFRoZSBvdGhlciBjb25uZWN0
+cyB0aGUgTS4yIHNsb3QncyBQQ0llDQo+ID4+IFdBS0UgcGluIHRvIHRoZSBsYXB0b3AncyBwb3dl
+ciBidXR0b24uIE5vdyB0aGUgbGFwdG9wIHdha2VzIHVwIHdoZW4NCj4gPj4gSSBzZW5kIHRoZSBt
+YWdpYyBwYWNrZXQuDQo+ID4NCj4gPiBBcyB0aGUgcmVzdWx0LCBJIHRoaW5rIFdvV0xBTiB3b3Jr
+cyBmaW5lIHdoZW4geW91ciBwbGF0Zm9ybSBpbiBTMy4NCj4gPg0KPiA+Pg0KPiA+PiBJJ20gbm90
+IHN1cmUgaXQncyB3b3JraW5nIDEwMCUgY29ycmVjdGx5LiBSVEw4ODIxQUUgKHdpdGggcnR3ODgp
+LA0KPiA+PiBSVEw4ODIyQ0UsIGFuZCBSVEw4ODUyQkUgYWxsIGRpc2Nvbm5lY3QgZnJvbSB0aGUg
+bmV0d29yayBhZnRlciB3YWtpbmcgdXAuDQo+ID4+IElzbid0IGl0IHN1cHBvc2VkIHRvIHN0YXkg
+Y29ubmVjdGVkPw0KPiA+DQo+ID4gSXQgc2hvdWxkIHN0YXkgY29ubmVjdGVkLiBIYXZlIHlvdSB0
+cmllZCBjb25uZWN0aW9uIHdpdGhvdXQgc2VjdXJpdHk/DQo+ID4gQWxzbywgSSB0aGluayBpdCdk
+IGJlIGhlbHBmdWwgdG8gZGlnIHByb2JsZW0gd2l0aCBhaXIgc25pZmZlci4NCj4gDQo+IEl0J3Mg
+dGhlIHNhbWUgd2l0aG91dCBzZWN1cml0eS4NCj4gDQo+IFRoZSBzbmlmZmVyIHNob3dzIHRoYXQg
+dGhlIGNsaWVudCBzZW5kcyBhIGRlYXV0aGVudGljYXRpb24gZnJhbWUuDQo+IEkgdGhpbmsgaXQg
+aGFzIHNvbWV0aGluZyB0byBkbyB3aXRoIE5ldHdvcmtNYW5hZ2VyLCBiZWNhdXNlIGlmIEkgc3Rv
+cA0KPiB0aGUgTmV0d29ya01hbmFnZXIgYW5kIHdwYV9zdXBwbGljYW50IHNlcnZpY2VzIGFuZCBy
+dW4gd3BhX3N1cHBsaWNhbnQNCj4gbWFudWFsbHksIHRoZSBjbGllbnQgc3RheXMgY29ubmVjdGVk
+IGFmdGVyIHdha2luZyB1cC4NCg0KR29vZCB0byBrbm93IHRoYXQsIGJ1dCBJIGRvbid0IGhhdmUg
+ZXhwZXJpZW5jZSB3aXRoIE5ldHdvcmtNYW5hZ2VyLCBzb3JyeS4NCg0KDQo=
