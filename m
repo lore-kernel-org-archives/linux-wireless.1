@@ -1,60 +1,62 @@
-Authentication-Results: smtp.subspace.kernel.org; arc=none smtp.remote-ip=212.42.244.119
+Authentication-Results: smtp.subspace.kernel.org; arc=none smtp.remote-ip=46.4.11.11
 ARC-Seal: i=1; d=subspace.kernel.org; s=arc20261015; a=rsa-sha256; cv=none;
-	t=1795509415;
-	b=ZgL0bQRW1nFEgxwtfkQpYbmdTGtv8SGFIBe/vGli1lrLym4IM2MhqBPQ+BUZ6BUOOHo5
-	 Rf6F7MiOXDymm7WZ8s/TCELsejX1JO5b+N/BEDmiTzoZBgR+DNVncS7x+OIbr+AtxwBmq
-	 uK7F0ykLEmbG+l288lNTtr2pjN55UaIu0gPAWq4E/Lsob96l8/Mn/40UgYufeTFQVZsHt
-	 g7Mhy19vyDD43P/y8rwS4kKLmG/ATvUBf4CYkW3N82QMhzyM0nuc2Lu12PNAOBPftcKL8
-	 4Vrt66DZngI/RHcFwwj8rtjzjAjzKNkk6CN2qDENnWeBaGl2vouaTootWNqwusrhKdw==
+	t=1795509793;
+	b=0k9Gx9yuLPtc8wTWsRsGNoTtN2f7kO2Hs0ldnRQ7bEl2fZsldXk9j1/kN3rpETor09cW
+	 uYPHSQXWbs+G217yYtq2xThtRscM+YVfyxalvv+PiqUjGo9nu9tVFDQdJBkF8klkok3v7
+	 hrAWJ3JyVMM2vDYUoDP/OWAGiah639/qUnCKF/xCSPv+f8xHwxglhNQuztUzrZnyKgcIH
+	 vvGhMcDAW6JUiIprzBExN+kTW/LjRd0xUIfS4pLbAIt3ELAhPjZTSdPinrpZZoE5/c5N7
+	 NBLM/SWgmR1Sa4PUEz/SOaqkMzfhTagdTXz70tA0BxwBdqG3uL5IFh6qGFOk1sQc70g==
 ARC-Message-Signature: i=1; d=subspace.kernel.org; s=arc20261015;
-	a=rsa-sha256; c=relaxed/relaxed; t=1795509415;
-	h=DMARC-Filter:DKIM-Signature:Received:Received:From:Date:Subject:
-	 MIME-Version:Content-Type:Content-Transfer-Encoding:Message-Id:
-	 X-B4-Tracking:X-Change-ID:To:Cc:X-Developer-Signature:X-Developer-Key:
-	 X-purgate-ID:X-purgate-type:X-purgate-size:X-Notice:X-purgate:
-	 X-purgate:X-pfmilter;
-	bh=hY+zeHIx/M6C9GplM3SSMVPogyQn9jbysYgMHbvj/zk=;
-	b=Jaz9Y2XvIgTeF/lj72LHXLD8kA17M/d4paEwL5UBbtnpBC6olbzY/PcqweqsyPuw9wlg
-	 ZoYmeFSRHnsl+8d3zFy1fVuXKt9RbvCXMO5CAzJWsj9ziNeTQrA5uSbPsGyYS5gGNDzEw
-	 puwSl8DoG93vgqdnhKvVcyX+kndJ8m0Z8ntot01liNIiWbx0EgCO5XoJUowGS9j7aGcq8
-	 GIctvPHF1cSjvQBhFHW2xknZ9jE5xUE/DFvPdLTrJyWr8fy7hIeSw++MkqQ4trb4rITBo
-	 V2oEMzMS1mK4OshJ5slHsUei1a7rUue9o5CyX12tpTGG9nmnb89kSxCfuh0ldywdiIw==
+	a=rsa-sha256; c=relaxed/relaxed; t=1795509793;
+	h=DMARC-Filter:DKIM-Signature:Received:From:To:Subject:Date:Message-ID:
+	 X-Mailer:In-Reply-To:References:MIME-Version:
+	 Content-Transfer-Encoding;
+	bh=3imTHwnV7xt7WH1GGl6/TRUmG638htICWP4LDAiKgnI=;
+	b=2D52gw3M87Wif+Itb7pDgycuyDce+nO4I4Lf7Xp2eXr0cRgPWxzSTdBod9We7k+fejAD
+	 1AZTURkIbCbQVIubCBoSun/702z8ci+zqm5Thaj7xZB02eFweLdPoGcc+IfMfYJ2+jKWc
+	 nTfzLfup4LmhlGauoxNrqkEQ837R3hpBvcRdg7Tdmc+kGJ2OueHfsOE7Qphh9nL9kfTRb
+	 YXH7ErJzW5SL5G+ghwpC804bG6d9wtF9u25zLU67KswVn4vUVl+VU0hSbD4XxJrWvo4gG
+	 FaGG4hk6/ro8pAnLY+UJDzdyqWVvjR/8FnyO+L3TLj2x0HNNJ/crp6b/J5pN5Y347wg==
 ARC-Authentication-Results: i=1; smtp.subspace.kernel.org; 
-	dmarc=pass header.from=fritz.com;
-	spf=pass smtp.mailfrom=fritz.com;
-	dkim=pass header.d=fritz.com header.i=@fritz.com header.a=rsa-sha256 header.s=mail header.b=FJDT2xWG;
-	arc=none smtp.remote-ip=212.42.244.119
-Received: from mail.avm.de (mail.avm.de [212.42.244.119])
+	dmarc=pass header.from=nbd.name;
+	spf=pass smtp.mailfrom=nbd.name;
+	dkim=pass header.d=nbd.name header.i=@nbd.name header.a=rsa-sha256 header.s=20160729 header.b="TsUOfW/q";
+	arc=none smtp.remote-ip=46.4.11.11
+Received: from nbd.name (nbd.name [46.4.11.11])
 	(using TLSv1.3 with cipher TLS_AES_256_GCM_SHA384 (256/256 bits)
-	 key-exchange X25519 server-signature ECDSA (prime256v1) server-digest SHA256)
+	 key-exchange ECDHE (prime256v1) server-signature ECDSA (prime256v1) server-digest SHA256)
 	(No client certificate requested)
-	by smtp.subspace.kernel.org (Postfix) with ESMTPS id 20091606A33E;
-	Tue, 24 Nov 2026 08:36:52 +0000 (UTC)
-DMARC-Filter: OpenDMARC Filter v1.4.2 smtp.subspace.kernel.org 20091606A33E
-Authentication-Results: smtp.subspace.kernel.org; dmarc=pass (p=quarantine dis=none) header.from=fritz.com
-Authentication-Results: smtp.subspace.kernel.org; spf=pass smtp.mailfrom=fritz.com
+	by smtp.subspace.kernel.org (Postfix) with ESMTPS id 48966606A321
+	for <linux-wireless@vger.kernel.org>; Tue, 24 Nov 2026 08:43:13 +0000 (UTC)
+DMARC-Filter: OpenDMARC Filter v1.4.2 smtp.subspace.kernel.org 48966606A321
+Authentication-Results: smtp.subspace.kernel.org; dmarc=pass (p=none dis=none) header.from=nbd.name
+Authentication-Results: smtp.subspace.kernel.org; spf=pass smtp.mailfrom=nbd.name
 Authentication-Results: smtp.subspace.kernel.org;
-	dkim=pass (2048-bit key, unprotected) header.d=fritz.com header.i=@fritz.com header.a=rsa-sha256 header.s=mail header.b=FJDT2xWG
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=fritz.com; s=mail;
-	t=1795509404; bh=oxbfzJWttGTwZXBilbg4huLt/V+17xV0C78VuQnWVvY=;
-	h=From:Date:Subject:To:Cc:From;
-	b=FJDT2xWGwBJzTLjRBz7IkbrG26UmUkbA705z9mcGFzZBTWqIaRHwJb5HIzIO8QZs/
-	 0QHExZlULL03qwDpPu/6wiBsw1/HpvGvcsyc2sFTqRj0qX+6x9emHjjXg93P5+Ae2l
-	 a/mMd8B7KcFF2uPmALH7dTbXDASP22b1CoBIU/X1DDM7EalVJd76Q6IpPvs96zgsod
-	 Caz4Ts5Ia5eAVw7BrYEKJGluqN18BZ7BzH6493A/kW3l9vr7WOf/ETh8/ghqx0N7A6
-	 FKOsFGaYY+eAg35dxwZVwoXYi2uc6eKVm07rmYOfdpNuBhz33+aYNIumXx+WaKbstz
-	 V/nyg9MToukTg==
-Received: from [212.42.244.78] (helo=mail.avm.de)
-	by mail.avm.de with ESMTP (eXpurgate 4.57.1)
-	(envelope-from <n.schier@fritz.com>)
-	id 6b054c9c-9684-7f0000032729-7f000001bb88-1
-	for <multiple-recipients>; Tue, 24 Nov 2026 09:36:44 +0100
-Received: from mail-auth.fritz.com (unknown [212.42.244.78])
-	by mail.avm.de (Postfix) with ESMTPS;
-	Tue, 24 Nov 2026 09:36:44 +0100 (CET)
-From: Nicolas Schier <n.schier@fritz.com>
-Date: Tue, 24 Nov 2026 09:36:38 +0100
-Subject: [PATCH] wifi: rtw89: Add support for FRITZ!WLAN Stick 6700
+	dkim=pass (1024-bit key, unprotected) header.d=nbd.name header.i=@nbd.name header.a=rsa-sha256 header.s=20160729 header.b=TsUOfW/q
+DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed; d=nbd.name;
+	s=20160729; h=Content-Transfer-Encoding:MIME-Version:References:In-Reply-To:
+	Message-ID:Date:Subject:To:From:Sender:Reply-To:Cc:Content-Type:Content-ID:
+	Content-Description:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc
+	:Resent-Message-ID:List-Id:List-Help:List-Unsubscribe:List-Subscribe:
+	List-Post:List-Owner:List-Archive;
+	bh=3imTHwnV7xt7WH1GGl6/TRUmG638htICWP4LDAiKgnI=; b=TsUOfW/qdwPvdsixju69FcDz+D
+	S8fSROtdzqowSMr4SUwgAgSw1K5FWyXhlTychEUcY388Q9qle/yoKLHQB7Ppp8ZKtjx/UqOd8qsGc
+	QyYSK776uCCvmlfO4QmpU/xF3e2oA2s4+8ejo2EfUW79uz3CXNEZwmDJZcu/S4qTL9UE=;
+Received: from p200300cadf0ca80000000000000005bb.dip0.t-ipconnect.de ([2003:ca:df0c:a800::5bb] helo=localhost.localdomain)
+	by ds12 with esmtpsa  (TLS1.3) tls TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384
+	(Exim 4.96)
+	(envelope-from <nbd@nbd.name>)
+	id 1xVm7L-007dJf-22
+	for linux-wireless@vger.kernel.org;
+	Tue, 24 Nov 2026 09:43:11 +0100
+From: Felix Fietkau <nbd@nbd.name>
+To: linux-wireless@vger.kernel.org
+Subject: [PATCH mt76-next 03/20] wifi: mt76: fail an MCU command started during an MCU reset
+Date: Tue, 24 Nov 2026 09:42:52 +0100
+Message-ID: <20261124084309.1981968-3-nbd@nbd.name>
+X-Mailer: git-send-email 2.47.3
+In-Reply-To: <20261124084309.1981968-1-nbd@nbd.name>
+References: <20261124084309.1981968-1-nbd@nbd.name>
 X-Mailing-List: linux-wireless@vger.kernel.org
 List-Id: <linux-wireless.vger.kernel.org>
 List-Post: <mailto:linux-wireless@vger.kernel.org>
@@ -64,72 +66,59 @@ List-Unsubscribe: <mailto:linux-wireless+unsubscribe@vger.kernel.org>
 List-Owner: <mailto:linux-wireless+owner@vger.kernel.org>
 Precedence: list
 MIME-Version: 1.0
-Content-Type: text/plain; charset="utf-8"
-Content-Transfer-Encoding: 7bit
-Message-Id: <20261124-add-device-ids-for-fritz-wlan-6700-v1-1-f1a23c5df0fc@fritz.com>
-X-B4-Tracking: v=1; b=H4sIAAAAAAAC/y2NQQ6CMBBFr0Jm7ZgWGzBexbAo7VTHCOi0oJFwd
- 4u4fPkv788QSZginIoZhCaOPPQZ9K4Ad7X9hZB9ZihVWWldHtB6jz6Lbl0ihkEwCKcPvu62x6p
- WCo2rjyoYa9qgIYceQoHfv5Nzs3Ec2xu5tJb/htBzzO9p06C1kdANXcfpVEz13qA4Dc2yfAHhh
- 3TbsgAAAA==
-X-Change-ID: 20261123-add-device-ids-for-fritz-wlan-6700-4c780f4a4bf1
-To: Ping-Ke Shih <pkshih@realtek.com>
-Cc: linux-wireless@vger.kernel.org, linux-kernel@vger.kernel.org, 
- Florian Held <f.held@fritz.com>, Robert Sperling <r.sperling@fritz.com>, 
- Nicolas Schier <n.schier@fritz.com>
-X-Developer-Signature: v=1; a=openpgp-sha256; l=1414; i=n.schier@fritz.com;
- h=from:subject:message-id; bh=oxbfzJWttGTwZXBilbg4huLt/V+17xV0C78VuQnWVvY=;
- b=owEBbQKS/ZANAwAIAYjGvJyImm24AcsmYgBrBUybn1LWcAqASSRzHGv477skUQjjBBrYxTb66
- mhiWcl4wcqJAjMEAAEIAB0WIQQO/4WJ63TpgecLpGmIxryciJptuAUCawVMmwAKCRCIxryciJpt
- uE2SD/9emLhbTOWH6fwr1m316h3ZXKLBjwxGb12AAVtmUL9J6DahOEofaDASen0BkDzH2KXVRsJ
- Skq4a4d+UdnI7Ad1pFLhPauU9+2U4D40MOKKbd9h9BQYL2MC56JXnzm/dyxTmmb3Kapa+gvX/1h
- 3plMbs86jpBo0K3VEiqi61P8KiJdcdsKubFKw46+bXyof4KUN3lxwq62q+4CR1YgKDwyxPwzr//
- 8bVEMNNn+sviVbV8NwfoNcV3oalVEVlAiCA9da9/qcYJa4FuRVaZ5Vfs/PaOmll9YqmLkam7LOH
- mod7DGo4aDBbTQrYzd1XvHMjiVOxArRwi/VOQQPXAj+2YxnTNwvfhXTR7G2OYEwumLhAchoUaOx
- ZkinT4ucmd2RIhX8jS+rrsJkt1OiMWsrsPL26BZmlBqn4uTeqUTXSvgJTiUQFLL0V3JDkpJk0fG
- sKUVv+MNZCeArgj3q+DHcnUKMBiOjyDwBqJyeT0Mj+vkatCj93/gGO+iuLg96AeFzIs/sHgTn3X
- yGDF6MVXOtJKxyUd/sIzUj0iFCHdTF/b3utPFj41cvPPvkWuAtcZzAxqTNsnRED708aOlhcLuvD
- BccAIvabItTSWlt2YNy/9P/4HFhNx7/xRod9XcFJJ1o3qLwuGieO9mVjgutx5y4eLJBmR6hnHY8
- 1/QIsSmbz5SFdzA==
-X-Developer-Key: i=n.schier@fritz.com; a=openpgp;
- fpr=7CF67EF8868721AFE53D73FDBDE3A6CC4E333CC8
-X-purgate-ID: 149429::1795509404-DFD8CB72-B6F8D590/0/0
-X-purgate-type: clean
-X-purgate-size: 1416
-X-Notice: Whitelisted
-X-purgate: This mail is considered clean (visit https://www.eleven.de for further information)
-X-purgate: clean
-X-pfmilter: host: postfix-mx-02  mail-id: 83948A0393  external: no
+Content-Transfer-Encoding: 8bit
 
-Add device ID for FRITZ!WLAN Stick 6700 USB-A adapter.
-Originally added and tested via [1].
+While MT76_MCU_RESET is set, mt76_dma_tx_queue_skb_raw() drops a
+command with the error of a full ring or a failed DMA mapping. The SDIO
+path queues the command, reports success and skips it. The USB path
+sends it. The caller thus cannot tell such a command from one whose
+answer the reset cut off.
 
-Suggested-by: Robert Sperling <r.sperling@fritz.com>
-Link: https://github.com/morrownr/rtw89/pull/100 # [1]
-Reviewed-by: Florian Held <f.held@fritz.com>
-Signed-off-by: Nicolas Schier <n.schier@fritz.com>
+Do not send a command that starts while the bit is set. Return an error
+that no other step of the send gives. The interrupt path can set the
+bit after this test. Return the same error from the raw TX of the DMA
+path for that case.
+
+Signed-off-by: Felix Fietkau <nbd@nbd.name>
 ---
- drivers/net/wireless/realtek/rtw89/rtw8922au.c | 2 ++
- 1 file changed, 2 insertions(+)
+ drivers/net/wireless/mediatek/mt76/dma.c | 6 ++++--
+ drivers/net/wireless/mediatek/mt76/mcu.c | 6 ++++++
+ 2 files changed, 10 insertions(+), 2 deletions(-)
 
-diff --git a/drivers/net/wireless/realtek/rtw89/rtw8922au.c b/drivers/net/wireless/realtek/rtw89/rtw8922au.c
-index b146bd79c675..4a2bc1b2037f 100644
---- a/drivers/net/wireless/realtek/rtw89/rtw8922au.c
-+++ b/drivers/net/wireless/realtek/rtw89/rtw8922au.c
-@@ -48,6 +48,8 @@ static const struct usb_device_id rtw_8922au_id_table[] = {
- 	  .driver_info = (kernel_ulong_t)&rtw89_8922au_info },
- 	{ USB_DEVICE_AND_INTERFACE_INFO(0x056e, 0x4026, 0xff, 0xff, 0xff),
- 	  .driver_info = (kernel_ulong_t)&rtw89_8922au_info },
-+	{ USB_DEVICE_AND_INTERFACE_INFO(0x057c, 0x8701, 0xff, 0xff, 0xff),
-+	  .driver_info = (kernel_ulong_t)&rtw89_8922au_info },
- 	{ USB_DEVICE_AND_INTERFACE_INFO(0x0b05, 0x1bcf, 0xff, 0xff, 0xff),
- 	  .driver_info = (kernel_ulong_t)&rtw89_8922au_info },
- 	{ USB_DEVICE_AND_INTERFACE_INFO(0x0b05, 0x1bd2, 0xff, 0xff, 0xff),
-
----
-base-commit: bc71431221f5ba8bb33918399552636e059c2c45
-change-id: 20261123-add-device-ids-for-fritz-wlan-6700-4c780f4a4bf1
-
-Best regards,
---  
-Nicolas
+diff --git a/drivers/net/wireless/mediatek/mt76/dma.c b/drivers/net/wireless/mediatek/mt76/dma.c
+index 8c0403820299..f5203f39e6b1 100644
+--- a/drivers/net/wireless/mediatek/mt76/dma.c
++++ b/drivers/net/wireless/mediatek/mt76/dma.c
+@@ -637,8 +637,10 @@ mt76_dma_tx_queue_skb_raw(struct mt76_dev *dev, struct mt76_queue *q,
+ 	struct mt76_queue_buf buf = {};
+ 	dma_addr_t addr;
+ 
+-	if (test_bit(MT76_MCU_RESET, &dev->phy.state))
+-		goto error;
++	if (test_bit(MT76_MCU_RESET, &dev->phy.state)) {
++		dev_kfree_skb(skb);
++		return -ESHUTDOWN;
++	}
+ 
+ 	if (q->queued + 1 >= q->ndesc - 1)
+ 		goto error;
+diff --git a/drivers/net/wireless/mediatek/mt76/mcu.c b/drivers/net/wireless/mediatek/mt76/mcu.c
+index 7149b2f7aafd..e19fd1bbd911 100644
+--- a/drivers/net/wireless/mediatek/mt76/mcu.c
++++ b/drivers/net/wireless/mediatek/mt76/mcu.c
+@@ -91,6 +91,12 @@ int mt76_mcu_skb_send_and_get_msg(struct mt76_dev *dev, struct sk_buff *skb,
+ 		goto out;
+ 	}
+ 
++	if (test_bit(MT76_MCU_RESET, &dev->phy.state)) {
++		orig_skb = skb;
++		ret = -ESHUTDOWN;
++		goto out;
++	}
++
+ 	if (dev->mcu_ops->mcu_skb_prepare_msg) {
+ 		orig_skb = skb;
+ 		ret = dev->mcu_ops->mcu_skb_prepare_msg(dev, skb, cmd, &seq);
+-- 
+2.47.3
 
