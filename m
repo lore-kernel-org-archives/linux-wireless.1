@@ -1,80 +1,93 @@
-Authentication-Results: smtp.subspace.kernel.org; arc=pass header.oldest-pass=0 smtp.remote-ip=100.103.45.18
-ARC-Seal: i=2; d=subspace.kernel.org; s=arc20261015; a=rsa-sha256; cv=pass;
-	t=1795509165;
-	b=0HFsGYg7cBfca3fUJEjd3Sp9lPnWU62dniU5qIbObcg7ppP7teWCEeoz63GA+8dL8Gu4
-	 AfyCUI9ZynHc1ZpeFB1g5oFArqgFnFJoR13VR6Tp7DISGKUo2HYJTwVrMZJ90+2yeE5Zp
-	 XAAN6PhqsSGrj/oFyMAnnxI6vx0hS1NwyJRHqOqOxf4m75fIfVF9IOHS7mC59IE2wRNpg
-	 fNNIPu0Lo0KpHhClB12KK6j6FOiprHIyz+GmgqBcEKVtdb5VWoXBcpxRhej/WD1NgLo3T
-	 dBv4jE4e888Eak7toqtpPUAZJYdqeTsRQIfZ+HgzP02VsXyLLQj2ffltW/KLItXgSMg==
-ARC-Message-Signature: i=2; d=subspace.kernel.org; s=arc20261015;
-	a=rsa-sha256; c=relaxed/relaxed; t=1795509165;
-	h=Received:DKIM-Signature:Received:From:Subject:Date:Message-Id:
-	 MIME-Version:Content-Type:Content-Transfer-Encoding:X-B4-Tracking:
-	 X-Change-ID:To:Cc:X-Mailer:X-Developer-Signature:X-Developer-Key:
-	 X-Endpoint-Received:X-Original-From:Reply-To;
-	bh=/XAAjHiTESZDBNmn1ytEsZHRFiHOgw+dZR5ob6jM43k=;
-	b=rnYxmEPBU3KdnWtDg1pBAFYAYqAQOE1o3JxVUuIpLuznxHVlWsHLLPQwaiLQwE0iuQfN
-	 AycmjznfSJTeZunm+4q81Je70u1fyyCMdk/FL5uYKor6a6oeRH5/avxiQVsbiUaI8sgG6
-	 +VODQPTFmSjl1UFUvx7CtQFWIrYmYV7i+yW2H5MK+YMiXu9U8NUcaijinpytxBLDZ+Tko
-	 /zXztwxvC0l6W2dntzA1u/N1JS65O/LmMytD7737cXenhCQI4Fq8LoO55fH9QdY5/OWTC
-	 +kaaH4HcKee/XMde8qR7jpst5Le6phX1GYGlMGJcSfVYn/ieWsB69lz73jG796QyK4A==
-ARC-Authentication-Results: i=2; smtp.subspace.kernel.org; 
-	dkim=pass header.d=kernel.org header.i=@kernel.org header.a=rsa-sha256 header.s=k20260515 header.b=crsMHA6A;
-	arc=pass header.oldest-pass=0 smtp.remote-ip=100.103.45.18
-Received: from smtp.kernel.org (quasi.space.kernel.org [100.103.45.18])
-	(using TLSv1.3 with cipher TLS_AES_256_GCM_SHA384 (256/256 bits)
-	 key-exchange X25519 server-signature ECDSA (prime256v1))
-	(No client certificate requested)
-	by smtp.subspace.kernel.org (Postfix) with ESMTPS id CEF05606A33E;
-	Tue, 24 Nov 2026 08:32:45 +0000 (UTC)
-Authentication-Results: smtp.subspace.kernel.org;
-	dkim=pass (2048-bit key) header.d=kernel.org header.i=@kernel.org header.a=rsa-sha256 header.s=k20260515 header.b=crsMHA6A
-Authentication-Results: smtp.kernel.org; arc=none smtp.remote-ip=100.80.115.77
-ARC-Seal: i=1; d=kernel.org; s=arc20260519; a=rsa-sha256; cv=none;
-	t=1795509165;
-	b=qecKbuXo803ib1JyIzIOF7qfueMq/MxUpQwO29fSmah1CG7MzsGQeV4KwVxXuu3o80Pz
-	 /fw4Hu4vrg9nEpBWiGAwNl7KRXdveb8Hje2t67e0BGobMwpY8rW08mbg+eeqfhCYCwzPi
-	 AKQYp2T2CMJlmWKn+M9+nxAVmCw8WTf5vlxdcPtaP2vzCxPzWBp+GZzVXVJ2QXl3PWmgw
-	 ZK26pcGXbuCJafomMeBSjYZw6nFCBspZaDOgK9dXgmcVs6F8IGjYnPprNWaGv8oge+GQT
-	 kt1TusfrWziFkOl9gk8z6bFt0YY6jnW6/3Ve5jSM72yOv72WnGbqm6GQwcg0B0JsDXg==
-ARC-Message-Signature: i=1; d=kernel.org; s=arc20260519; a=rsa-sha256;
-	c=relaxed/relaxed; t=1795509165;
-	h=DKIM-Signature:Received:From:Subject:Date:Message-Id:MIME-Version:
-	 Content-Type:Content-Transfer-Encoding:X-B4-Tracking:X-Change-ID:To:
-	 Cc:X-Mailer:X-Developer-Signature:X-Developer-Key:X-Endpoint-Received:
-	 X-Original-From:Reply-To;
-	bh=/XAAjHiTESZDBNmn1ytEsZHRFiHOgw+dZR5ob6jM43k=;
-	b=3uxxn4BDvQAI3ZCFB6feTRZ9WpvNYjhp7q+3oeNMS9wg6l9IP2/N8hQVi5YeWZMsxujr
-	 6yvmvAqKKEO167Yd/QZTi0jpQNKwLNoUydNapnJJD7n2WsoTrRs5FujYWqpCFhAcXkYAa
-	 h4FWbWaffh4YySrWKWOAmr79eAXzF0D+TgIfdeOx2uJX4Urbimw8DxVZaE5xTztyho0++
-	 h9/8Zrjl7BHNJPPdElLlyaP99QVwDhDUcpIVa1VCv6DDCZiPfbflQzIZb7uhxliJJQ6ft
-	 2mx2OhLoNtfeC4DgwTu9ofOPHYMrTUraT+Syzpsd6M3+emoZ3k+1qFJXgbNkn7mtSlA==
-ARC-Authentication-Results: i=1; smtp.kernel.org; 
-	arc=none smtp.remote-ip=100.80.115.77
-Received: from lkml.kernel.org (nexus.subspace.kernel.org [100.80.115.77])
-	(using TLSv1.3 with cipher TLS_AES_256_GCM_SHA384 (256/256 bits)
+Authentication-Results: smtp.subspace.kernel.org; arc=none smtp.remote-ip=74.125.82.52
+ARC-Seal: i=1; d=subspace.kernel.org; s=arc20261015; a=rsa-sha256; cv=none;
+	t=1795509218;
+	b=ihJO0gghDN86DAwSlqbePkGugowC5DhPOXSyPWF1+sZRSdt+zQwaHE3LAbHP4W/2efka
+	 yHDH0nbwWqEf9wf4T+cF76AGVMhTrIEvYOis32jVIjZ4aDDxp/NnN4fmGpoPkk23N523c
+	 WQRD+iVAhe4ulm2f84yUaN9F1T5QQ99m4lW11uc7ISpTJH2iOc23RbRQ4reXk1V6ZlI82
+	 LBmTwGVHdt2z8j+fHrBShGyLawwvuSY+pcfWy5Iga1bHXsZZAm6sf5Y0KKg7F3DkoPI3B
+	 o5dLt0cb9P2fzZ+Z7mVGHC6xxpiNjPddbbP4CHOPLSU4wgOHgqvuT9rUcwV38dSJfDA==
+ARC-Message-Signature: i=1; d=subspace.kernel.org; s=arc20261015;
+	a=rsa-sha256; c=relaxed/relaxed; t=1795509218;
+	h=DMARC-Filter:Received:DKIM-Signature:X-Google-DKIM-Signature:
+	 X-Gm-Message-State:X-Gm-Gg:X-Received:Received:From:To:Cc:Subject:
+	 Date:Message-ID:X-Mailer:MIME-Version:Content-Transfer-Encoding;
+	bh=IHaPZxvGPPauklr++9jBux27Uh1MCS1CpxGOkczFd/A=;
+	b=p1pGOEQtwHOg3mM3N/RsB5xaYOE1NzWlDfvkwnHzUKoWtv4KWtFE6DhQk4lA84SanNFG
+	 AwAQnXPSQ5y6OpZq0zJMUYWUnXFgafAYvLM/wk861BcSwnnMuhRp7SJyWjOUyvWTendcu
+	 rN+s3b5OA8wkqba2aORL0ykkoaJxROM4FEfwIAIVKSWA696gB7GgtxtNU5SkLCxcSx9wx
+	 VFBVwd6EJv81fgQT16Y4adVLJsS5JHKMPUs2jqId7lDgTNB6o7rb70lyFBkoQcGVBLnkB
+	 efpdXhNxZtxscO1ZAU9obdMeei91PIU6iRxWYB6pgJj8QKwuJhqK4bSkE4J3867spig==
+ARC-Authentication-Results: i=1; smtp.subspace.kernel.org; 
+	dmarc=pass header.from=asu.edu;
+	spf=pass smtp.mailfrom=asu.edu;
+	dkim=pass header.d=asu.edu header.i=@asu.edu header.a=rsa-sha256 header.s=google header.b="bkH3c/n/";
+	arc=none smtp.remote-ip=74.125.82.52
+Received: from mail-dl1-f52.google.com (mail-dl1-f52.google.com [74.125.82.52])
+	(using TLSv1.3 with cipher TLS_AES_128_GCM_SHA256 (128/128 bits)
 	 key-exchange X25519 server-signature ECDSA (prime256v1) server-digest SHA256)
 	(No client certificate requested)
-	by smtp.kernel.org (Postfix) with ESMTPS id 825A41F000C0;
-	Tue, 24 Nov 2026 08:32:33 +0000 (UTC)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=kernel.org;
-	s=k20260515; t=1795509165;
-	bh=/XAAjHiTESZDBNmn1ytEsZHRFiHOgw+dZR5ob6jM43k=;
-	h=From:Subject:Date:To:Cc:Reply-To;
-	b=crsMHA6A6Iu78mSySA3OJL6Cbz5ollyvh8dq/49nhy9OPGz7ESnWXsiZwg5f//vTb
-	 dHI2lQOoyLBuRPogePOeDWa4uiXzoIqQCUvN3oCJ/rgYujkntujmuq/WmwV7pJxRxu
-	 DEGkOGSfs1tXh5UFS5CrCExOIWrgTDr4kW8vrv07pHAj3LNTH9Hf/YCj1wHzIyJ4BO
-	 rmAlz11JiRoIbGV/Xl+u0j4w37yHxAT48aQupk5/zbtueoV7Xj2Y6DAvzFSLRz0yQE
-	 yaSnaMtl4z/wPLK/y2TYkoUmbIJZrdME7V7D/Lv4+hNT7FQYAoDFQFvz2HCEiJ/7ff
-	 sU0bjsl8FPE6A==
-Received: from nexus.subspace.kernel.org (localhost [IPv6:::1])
-	by lkml.kernel.org (Postfix) with ESMTP id D7C674C945;
-	Tue, 24 Nov 2026 08:32:32 +0000 (UTC)
-From: Ahmet Zeren via B4 Relay <devnull+niko3x.proton.me@kernel.org>
-Subject: [PATCH RFT rtw-next 0/2] wifi: rtw88: honour rate, retries and
- bandwidth of injected frames
-Date: Tue, 24 Nov 2026 11:32:29 +0300
-Message-Id: <20261124-b4-rtw88-inject-v1-0-f7457e496924@proton.me>
+	by smtp.subspace.kernel.org (Postfix) with ESMTPS id 8D574606A691
+	for <linux-wireless@vger.kernel.org>; Tue, 24 Nov 2026 08:33:37 +0000 (UTC)
+DMARC-Filter: OpenDMARC Filter v1.4.2 smtp.subspace.kernel.org 8D574606A691
+Authentication-Results: smtp.subspace.kernel.org; dmarc=pass (p=none dis=none) header.from=asu.edu
+Authentication-Results: smtp.subspace.kernel.org; spf=pass smtp.mailfrom=asu.edu
+Authentication-Results: smtp.subspace.kernel.org;
+	dkim=pass (2048-bit key, unprotected) header.d=asu.edu header.i=@asu.edu header.a=rsa-sha256 header.s=google header.b=bkH3c/n/
+Received: by mail-dl1-f52.google.com with SMTP id a92af1059eb24-170135e43c7so6141254c88.0
+        for <linux-wireless@vger.kernel.org>; Tue, 24 Nov 2026 00:33:37 -0800 (PST)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+        d=asu.edu; s=google; t=1795509217; x=1796114017; darn=vger.kernel.org;
+        h=content-transfer-encoding:mime-version:message-id:date:subject:cc
+         :to:from:from:to:cc:subject:date:message-id:reply-to:content-type;
+        bh=IHaPZxvGPPauklr++9jBux27Uh1MCS1CpxGOkczFd/A=;
+        b=bkH3c/n/jScsSPF0AtfJbwWKG3EGbh3eR9Oq9iW56tUWHAbE05TTA/jlR1Yzn1QKzW
+         XVSWmcE95xz1B+mjnPaFbEVRwZqUeV5l7eqy52+L3OQYoNfHS+k5g5sMRwm6NZPd004i
+         YVXHAspEaC1j6oJhKgUcSADHuBJFdX6QG34QwaNrkOYXntwP4VITflsxiOKvcGhnZubl
+         vVHd/s546Os+2lu8fBGolT1yJP54gDwIQwj31laVTe+Bcwl7ook9mE5KHxJqtJ7xMUpr
+         zHW4MSVddUNFrVz2cN1pUzQg9GYnHByCCQt+TqJ+Lff6JMDj+dMOa4zPC7l3blNlWrBs
+         TgSQ==
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+        d=1e100.net; s=20260707; t=1795509217; x=1796114017;
+        h=content-transfer-encoding:mime-version:message-id:date:subject:cc
+         :to:from:x-gm-gg:x-gm-message-state:from:to:cc:subject:date
+         :message-id:reply-to:content-type;
+        bh=IHaPZxvGPPauklr++9jBux27Uh1MCS1CpxGOkczFd/A=;
+        b=qtxOYiJonsePUo71+9O4q/ARvQTv4mE96ntTcL3E8AXpfV1Nhs7InnH6szhEIsteW4
+         nWYOEXArP82+cG31j1Y9cdD6OkYiwaeNPzF9X6ONxpA5J260ZCDlCzGnOA5QsRRmiMMi
+         MwCWeh00bejUAXqkyjh6Zb6IfCxpdOP2VazZh5lyYSh1cD9Y3F4yx50L5+CQ+JHdFXSE
+         k6pjPc0IsWKQq745xZXdonA0zDhL6RGmefcwIeUE2MD4qmey6TR3v5wvPjhxvjmZ7H3y
+         OWOq/9hF9R4ZpB1PbfEd7T9yzWcV+zHbVNuc9MXlk0coz/dfEEUQu4k2ueBZjF4KCpdp
+         pbig==
+X-Gm-Message-State: APuU4Z/XcvSzGEb5535R4gOCE/feyBL/mZbzhwIE/+u5fmuzKp9fmAJl
+	8vSvkIhUNuhBmrXoOZL1mwNqnOmJaVBmeOrRe1q3sgRiKRBYe4cWffgYfX66lBW74A==
+X-Gm-Gg: AZFdTZctVKL1Ipr2GAgAdL+U7MxEZhc9tHIep3fITs6kGPqD1DJLcJk2KWjd8Q8w8WV
+	j+fHu/19bD0ixDigzhdgpw8p3rMiKi5nFwPwFqxIKlpY/8cLho7qXj3+tFKLGhBmxx452ppweSv
+	t7udHEENOv9yIqKJCy5pGRBOzrph8d0sXP74W3ympWUPtAo0iyDwq0ra5UkijMc+UZ3KyXNpqQr
+	DODxUr9MImoA+vZzliERBWLjoFom/2TMxVQ7T7gRIp1OKOrhvc8kxWxeH5vU+lc0BUWuxv4Zg/u
+	Hyu8G/a3B/o0DhsxogrEf2eiUn7bj9BIT6P+rWuFQVKPJAGRsdlOWUH4CQjjE6Ahxn5UmfCi200
+	cSrfZF9UuXNinErOunPugruZIbzYl+V8c2lOChddnQKX0za+bnvlLIFB3f/c1tVDzGCnEsg8fhY
+	qCZQ4vc6OSHc5XfXtmdR6a+vgnCaMvrD4PweNuBi+8yK/iNtTd4r1MOwl5pPDZb5oTmkoKEJBur
+	kCbKH5VbxI4d2W5hDDts2sd92+Jr/Cefn677Imos/OcUGHeo9fRXp3tB4M4IL/WFFcXzN20nTcl
+	PnS5zTVCWUepQ3e7kPNzZrATK995yjbe+6KIiXQzJ3x0xTdp+kqTY9fru8AxJiEg8rPu0oicl3b
+	O8yFKWA9pp/OB/Q==
+X-Received: by 2002:a05:7022:7f12:b0:1b5:4dff:8b67 with SMTP id a92af1059eb24-1b5568eeba1mr14216791c88.29.1795509216390;
+        Tue, 24 Nov 2026 00:33:36 -0800 (PST)
+Received: from p1.. (209-147-138-4.nat.asu.edu. [209.147.138.4])
+        by smtp.gmail.com with ESMTPSA id a92af1059eb24-1b5568592adsm32784012c88.15.2026.11.24.00.33.35
+        (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
+        Tue, 24 Nov 2026 00:33:36 -0800 (PST)
+From: Xiang Mei <xmei5@asu.edu>
+To: Johannes Berg <johannes@sipsolutions.net>
+Cc: linux-wireless@vger.kernel.org,
+	linux-kernel@vger.kernel.org,
+	stable@vger.kernel.org,
+	syzbot+3d9e2c65bdd43a254924@syzkaller.appspotmail.com,
+	co+0b5d5f4d3472df53@bugs.sh,
+	Xiang Mei <xmei5@asu.edu>
+Subject: [PATCH wireless] wifi: cfg80211: don't parse the SNAP header of a too-short A-MSDU subframe
+Date: Tue, 24 Nov 2026 01:33:27 -0700
+Message-ID: <20261124083327.2037092-1-xmei5@asu.edu>
+X-Mailer: git-send-email 2.43.0
 X-Mailing-List: linux-wireless@vger.kernel.org
 List-Id: <linux-wireless.vger.kernel.org>
 List-Post: <mailto:linux-wireless@vger.kernel.org>
@@ -84,89 +97,55 @@ List-Unsubscribe: <mailto:linux-wireless+unsubscribe@vger.kernel.org>
 List-Owner: <mailto:linux-wireless+owner@vger.kernel.org>
 Precedence: list
 MIME-Version: 1.0
-Content-Type: text/plain; charset="utf-8"
-Content-Transfer-Encoding: 7bit
-X-B4-Tracking: v=1; b=H4sIAAAAAAAC/yWMQQ7CIBBFr9L8tZMUJAY9gAcw3RkXpQw6LtAAa
- pOmdxd0+X7+ewsyJ+GMQ7cg8VuyPGIFtekw3cZ4ZRJfGbrXO6W0IWcolY+1JPHOUyEf3Db0e+1
- HY1GtZ+Ig8694xuk4tK0KFHkuuPwP+eWa27pY1y8yCr2zhAAAAA==
-X-Change-ID: 20261124-b4-rtw88-inject-dfb3f092da48
-To: Ping-Ke Shih <pkshih@realtek.com>
-Cc: linux-wireless@vger.kernel.org, Luka Gejak <luka.gejak@linux.dev>, 
- Bitterblue Smith <rtl8821cerfe2@gmail.com>, linux-kernel@vger.kernel.org, 
- Ahmet Zeren <niko3x@proton.me>
-X-Mailer: b4 0.15.2
-X-Developer-Signature: v=1; a=ed25519-sha256; t=1795509151; l=2902;
- i=niko3x@proton.me; s=20261119; h=from:subject:message-id;
- bh=418Z9+5osAr5Zw2V0Hv6Br6WPMtAU3n8k5065gZHPgc=;
- b=mRUq7T0abH37TpK3Ri9sWXmIHYHnlOvjuV3C0QdBqgHJz1jhlGjbxCDSzw0oPS0A8I3TryjNd
- WtW+RjnefEpCchMEGCd1pYYpH8nfZ2QNPns3ZkVAKlrhUnxrfAf0nxv
-X-Developer-Key: i=niko3x@proton.me; a=ed25519;
- pk=J4zNm2pudzQ/wF+pQ8xO+wW6jpcNa9EJ2C1g4DUAjhM=
-X-Endpoint-Received: by B4 Relay for niko3x@proton.me/20261119 with
- auth_id=1575
-X-Original-From: Ahmet Zeren <niko3x@proton.me>
-Reply-To: niko3x@proton.me
+Content-Transfer-Encoding: 8bit
 
-rtw88 ignores most of the radiotap header of injected frames: the
-firmware rate adaptation picks the rate, the frames are sent at 20 MHz,
-and the radiotap retry count and NO_ACK have no effect. The same was
-recently fixed in rtw89, and Ping-Ke agreed to take similar patches for
-rtw88 in the thread "rtw88: injected frames ignore radiotap rate and
-retry count".
+ieee80211_amsdu_to_8023s() bounds a subframe only from above
+(subframe_len > remaining), so an associated peer can declare a payload
+Length of 0..7, yet ieee80211_get_8023_tunnel_proto() always reads 8
+bytes from frame->data. With Length = 6 and payload aa aa 03 00 00 00,
+the rfc1042_header match succeeds on the peer's own bytes, and the two
+bytes past the frame are copied into h_proto and delivered up the stack.
+The frame length sets where they sit in the skb head, so the read is
+aimable and repeatable. Injected over mac80211_hwsim (init_on_alloc=0),
+the delivered EtherType is stale heap content instead of the declared
+0x0006:
 
-Patch 1 uses the injected legacy, HT or VHT rate, bandwidth and guard
-interval, without rate fallback.
+  aimed at object offset 410 -> leaked 7372
+  aimed at object offset 410 -> leaked 3d31
+  aimed at object offset 414 -> leaked 225f
+  aimed at object offset 418 -> leaked 7573
 
-Patch 2 programs the TX descriptor retry limit for injected frames, sets
-max_rate_tries so the radiotap retry count is no longer clamped to zero,
-and reports NO_ACK frames as such.
+With this patch the same frames deliver 0006. syzbot reported the same
+read as a KMSAN uninit-value.
 
-Non-injected frames are not affected. Injected frames without a radiotap
-rate keep the current rate selection. Keeping the sequence number of
-injected management frames (IEEE80211_TX_CTL_ASSIGN_SEQ, also done in
-rtw89) is not covered here.
+Only parse the header when the subframe holds those 8 bytes; a shorter
+one keeps the 802.3 length semantics it already gets on a SNAP mismatch.
 
-These are compile tested only, I have no rtw88 hardware. Luka offered to
-test. A way to test, with the rtw88 device in monitor mode and a second
-radio sniffing the same channel:
-- inject data frames with a radiotap rate, HT MCS or VHT MCS, with and
-  without short GI, and check they arrive at that rate
-- set the monitor interface to a 40 or 80 MHz channel first (e.g.
-  "iw dev wlan0 set freq 5180 80 5210"; mac80211 drops frames asking for
-  more than the channel width), then inject frames asking for 40 or
-  80 MHz and check the bandwidth on the sniffer
-- inject unicast frames to an absent station with a radiotap rate and
-  retries 0 and 6: the sniffer should see 1 and 7 copies of each frame
-  (mac80211 ignores the retry count without a rate, and caps it at 30);
-  with the NO_ACK flag it should see 1 copy
-- a quick check that normal station mode still works
-Please mention the chip, the bus and the band you tested.
-
-checkpatch --strict, W=1 and sparse are clean for each patch.
-
-AI tool use (Documentation/process/generated-content.rst): the patches
-were written with help from Claude Code (Claude Opus 5.5). It was asked
-to apply the rtl8xxxu injection fixes to rtw88, using the rtw89
-changes as a model, check the descriptor bits against rtl8xxxu, and
-review the result. I have reviewed the changes and take responsibility
-for them.
-
+Cc: stable@vger.kernel.org
+Fixes: eaf85ca7fecb ("wireless: add ieee80211_amsdu_to_8023s")
+Reported-by: syzbot+3d9e2c65bdd43a254924@syzkaller.appspotmail.com
+Closes: https://syzkaller.appspot.com/bug?extid=3d9e2c65bdd43a254924
+Reported-by: co+0b5d5f4d3472df53@bugs.sh
+Signed-off-by: Xiang Mei <xmei5@asu.edu>
 ---
-Ahmet Zeren (2):
-      wifi: rtw88: use the rate, bandwidth and GI of injected frames
-      wifi: rtw88: honour the retry count and NO_ACK of injected frames
+ net/wireless/util.c | 4 +++-
+ 1 file changed, 3 insertions(+), 1 deletion(-)
 
- drivers/net/wireless/realtek/rtw88/main.c |  1 +
- drivers/net/wireless/realtek/rtw88/main.h |  2 ++
- drivers/net/wireless/realtek/rtw88/tx.c   | 49 ++++++++++++++++++++++++++++++-
- drivers/net/wireless/realtek/rtw88/tx.h   |  2 ++
- 4 files changed, 53 insertions(+), 1 deletion(-)
----
-base-commit: 8b29fd95e2d3cb80564eb7cb34248b844422ba1e
-change-id: 20261124-b4-rtw88-inject-dfb3f092da48
-
-Best regards,
---  
-Ahmet Zeren <niko3x@proton.me>
-
+diff --git a/net/wireless/util.c b/net/wireless/util.c
+index ebb1f6ec7efc..0a0823d1d517 100644
+--- a/net/wireless/util.c
++++ b/net/wireless/util.c
+@@ -1034,7 +1034,9 @@ void ieee80211_amsdu_to_8023s(struct sk_buff *skb, struct sk_buff_head *list,
+ 		frame->priority = skb->priority;
+ 
+ 		if (likely(iftype != NL80211_IFTYPE_MESH_POINT &&
+-			   ieee80211_get_8023_tunnel_proto(frame->data, &hdr.eth.h_proto)))
++			   pskb_may_pull(frame, ETH_ALEN + 2) &&
++			   ieee80211_get_8023_tunnel_proto(frame->data,
++							   &hdr.eth.h_proto)))
+ 			skb_pull(frame, ETH_ALEN + 2);
+ 
+ 		memcpy(skb_push(frame, sizeof(hdr.eth)), &hdr.eth, sizeof(hdr.eth));
+-- 
+2.43.0
 
