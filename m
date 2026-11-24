@@ -1,83 +1,83 @@
-Authentication-Results: smtp.subspace.kernel.org; arc=none smtp.remote-ip=209.85.221.49
+Authentication-Results: smtp.subspace.kernel.org; arc=none smtp.remote-ip=209.85.128.42
 ARC-Seal: i=1; d=subspace.kernel.org; s=arc20261015; a=rsa-sha256; cv=none;
 	t=1795542392;
-	b=SpFZ74deb2FUC6Oorhwt9O6gd9KNr4qWJNnB9z1Gzr5yX/ghWtgl6w0Cb3ygEPSfzOI1
-	 /E36ITvbCeZGoWlktkYCLMhieakRJOkFJZiG6JmQdY+mEB2VFYbg6AxK7k/mwKUC/zvIn
-	 mfpuyA22LADBsXL9hMGDLHxs4aDd/SCr7IHB5M249GJBFdjqzbIqfOfaFB8cwV8Gg9xvn
-	 yLyTbEdVmojDK18fCgILmrWrRuL/4+kF3VwvCYmUZsI7Za/8k/a7Hubi34odL+HxTjS+C
-	 5SK+edJXUdmrDfeybmuWvyGRiee9uah6Z3KJ3whOipRu8jGU/TGFpTvyDBEtyZ9kl0Q==
+	b=r+wPWTJTgU/BDNNbytsVfWGwySqZM2qGaiY/cmS16NIUV1dloa1mYoSpKbGv9muehvPp
+	 FgplSemReETQWYDnGF72+RGBGPNZ+NTw7dOnjk2MOwuDBtg3ueo7irIrgycEEvhh/BJG2
+	 fU5fVYJp1F372blXfYC/k6S3cLbyI5lPEIQ/mqr/J1BFFyaXv0/rGMM9uplWxSfFooKdy
+	 COf9rDlETZ8ssvYKZupLZyK7qipq3M+39tZXdsvnR659G6X2xT2G8UTjuQsz1R0SVao6T
+	 Y8YkG+vGJfcBYTVJ8bE6i6gh4LkGzlgqbYL27v2oM8iUoFNlqafTeuuf9FS1kv4lIIA==
 ARC-Message-Signature: i=1; d=subspace.kernel.org; s=arc20261015;
 	a=rsa-sha256; c=relaxed/relaxed; t=1795542392;
 	h=DMARC-Filter:Received:DKIM-Signature:X-Google-DKIM-Signature:
 	 X-Forwarded-Encrypted:X-Gm-Message-State:X-Gm-Gg:X-Received:Received:
 	 From:To:Cc:Subject:Date:Message-ID:X-Mailer:In-Reply-To:References:
 	 MIME-Version:Content-Transfer-Encoding;
-	bh=J7dP3VXODxvOhlIhNJe3oI07fAUOlBnY4o0etILQ0Qc=;
-	b=iH/q2q4/tET9m+UDvjPySTDbnjcMoc6GTUql6YAAX8gIPQCWU9iJR4uRQ4g01kYrEaKH
-	 zxVKo+kld4pnDEnugDc4ll33lfQb7dxrKjg9K1NN2BpnNDi76ktjDaB4soIWnl4cGLFlF
-	 n8Tk323VmpDQIIu2podjuYmMJ2hKGAKi2tr/cyC1or2bPFE8Zb8AltsQpmF1IgOeqsEUJ
-	 QXXgBZC94O7P4+VzgADLlTGR/lAs9AE0iylQc5otfQSxUsMwazAuKAkS0PHqL3dCpv1fZ
-	 YvuE9NsHX3bclSq9s1Zn7gnn719aYD1ELgsmEJ9i/gm67RqR4hcdpTCSXmdG7c5Xhtw==
+	bh=eJ45RhdWQYaNGviQo8DZFSlW6V3bfg/JFh/lL6cjCXc=;
+	b=h+2PMQafiT9gYtFMwxUpCCz1OfW3eBpe0lPNBN3roM3ZUhsnG+YpkzXYwicBfegt5hzk
+	 y3oPwB5AG/glcW881D21wy7Ce25DOnv05na0TtOYG5sLd2zGr8xDx8mbt8e7wwWlTxIJV
+	 9Vv0m8loXi6fSA8xGnvlnfOefx19ktwWCAnTmDkoZqwLS6CCXws5CpAau7bp5Kv0ghDfZ
+	 S6gpI0dUi8Z/d/wesg6ktf8sCEPrQ72yTdiIyINOQ6eVrzPW98bAo4FXGqOCRhWAGqIeH
+	 lrfYxB7tAKlfeVuomNgX02acRV9xQWb0IXMuJwDDZrlJII8V7x2/m9g+PM+xjVVnlgg==
 ARC-Authentication-Results: i=1; smtp.subspace.kernel.org; 
 	dmarc=pass header.from=gmail.com;
 	spf=pass smtp.mailfrom=gmail.com;
-	dkim=pass header.d=gmail.com header.i=@gmail.com header.a=rsa-sha256 header.s=20260707 header.b="NDTZVDK/";
-	arc=none smtp.remote-ip=209.85.221.49
-Received: from mail-wr1-f49.google.com (mail-wr1-f49.google.com [209.85.221.49])
+	dkim=pass header.d=gmail.com header.i=@gmail.com header.a=rsa-sha256 header.s=20260707 header.b=bphLsgMU;
+	arc=none smtp.remote-ip=209.85.128.42
+Received: from mail-wm1-f42.google.com (mail-wm1-f42.google.com [209.85.128.42])
 	(using TLSv1.3 with cipher TLS_AES_128_GCM_SHA256 (128/128 bits)
 	 key-exchange X25519 server-signature ECDSA (prime256v1) server-digest SHA256)
 	(No client certificate requested)
-	by smtp.subspace.kernel.org (Postfix) with ESMTPS id B1817606A333
+	by smtp.subspace.kernel.org (Postfix) with ESMTPS id EEFD2606A327
 	for <linux-wireless@vger.kernel.org>; Tue, 24 Nov 2026 17:46:31 +0000 (UTC)
-DMARC-Filter: OpenDMARC Filter v1.4.2 smtp.subspace.kernel.org B1817606A333
+DMARC-Filter: OpenDMARC Filter v1.4.2 smtp.subspace.kernel.org EEFD2606A327
 Authentication-Results: smtp.subspace.kernel.org; dmarc=pass (p=none dis=none) header.from=gmail.com
 Authentication-Results: smtp.subspace.kernel.org; spf=pass smtp.mailfrom=gmail.com
 Authentication-Results: smtp.subspace.kernel.org;
-	dkim=pass (2048-bit key) header.d=gmail.com header.i=@gmail.com header.a=rsa-sha256 header.s=20260707 header.b=NDTZVDK/
-Received: by mail-wr1-f49.google.com with SMTP id ffacd0b85a97d-48e47347279so2876105f8f.1
+	dkim=pass (2048-bit key) header.d=gmail.com header.i=@gmail.com header.a=rsa-sha256 header.s=20260707 header.b=bphLsgMU
+Received: by mail-wm1-f42.google.com with SMTP id 5b1f17b1804b1-4bb702a7548so41494865e9.1
         for <linux-wireless@vger.kernel.org>; Tue, 24 Nov 2026 09:46:31 -0800 (PST)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
         d=gmail.com; s=20260707; t=1795542390; x=1796147190; darn=vger.kernel.org;
         h=content-transfer-encoding:mime-version:references:in-reply-to
          :message-id:date:subject:cc:to:from:from:to:cc:subject:date
          :message-id:reply-to:content-type;
-        bh=J7dP3VXODxvOhlIhNJe3oI07fAUOlBnY4o0etILQ0Qc=;
-        b=NDTZVDK/M5vxdxtSwP1Li0Hjpknc1RCM8i347pZflqzsX3rbzen9SBKedF6t5ycs4L
-         9xCS3UYx0vbppq+XARgVPXY6aZZis+xzthTdyPY8Iv+t2j7iLeb0TCFNJcGy5pDNbKFx
-         yDxcoSbA7eqzxJ9ad5jCJ1LrAOasagqN3IobL/Rxr3IxEABRULBkm6azD+uWDi1mbCen
-         8jUuqkOlW41DxMW/LZFRql8b6kfFHqU+vKRfuOpLYBIWNKjGsx7Ixg1dCdKZnmLZIzxZ
-         07ddZfHucLNb5RPxYYmfv/iJarHOb36oGlim9wcWauLGbodI8R1y0E/8WLhJyQ8xacgZ
-         xMMg==
+        bh=eJ45RhdWQYaNGviQo8DZFSlW6V3bfg/JFh/lL6cjCXc=;
+        b=bphLsgMUcTwPkjB8anUJ99p+2VGCLqKqRkqXlsXy+lJpPFTBWwtNrZbN43+4vIEd7h
+         lJCzArjzpNkZnTQqhPei8hZCob7DexbkSPZcoDrOKH67Laytffz+gAsY0a9pzy4gzQLp
+         U0sHfaCRzSKgqWYjQf171AVeHpCbJZyXUXNHUHHZ5mb1HuvpPpwpVYiyk4qlI8g+NxGi
+         QixorEntJmNC7QJbhyET2CSBtHhaOXJlc/57xXCULfx+fxzpdyFJZelq4GjemFr6zju8
+         WPqdLtY/7DxoMutiY62Cs4EH6kDNXxxDpBr3cMvKs5Nk0LNSW2fi2cHELw2/jVukN49O
+         4//Q==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
         d=1e100.net; s=20260707; t=1795542390; x=1796147190;
         h=content-transfer-encoding:mime-version:references:in-reply-to
          :message-id:date:subject:cc:to:from:x-gm-gg:x-gm-message-state:from
          :to:cc:subject:date:message-id:reply-to:content-type;
-        bh=J7dP3VXODxvOhlIhNJe3oI07fAUOlBnY4o0etILQ0Qc=;
-        b=LQzpmM3Q/T45sp+57gMhaXsJN4ulPD+R9z3IZfJtVXetfQZBB3sDODMPPOA0g5kbty
-         PtdyhIES9DccMzNVsEFhrZkZLbPBBSbaVBZ4LwhGPzELCQ0nI02+LNwKfTqh0fk8AJS2
-         OJEUSDFPLE2QkfpTM6V0AS+l4oWnbLwieOJcgej8Lk9+su4Z9VqJVp9xZrMLJQAs4Ogs
-         Hc+tLwHTRCikW2PLjFfZfzlGWmoRfpwEDtHO6t7iGJNFBaeGeul8ZdYTORj5KlFNmjYj
-         wXQItd0esUpMRaYwLzRjlvlftBCbnkTObeVyZG97OV8G8+UNeNKy6gskrT7Zg7AQ9Oa2
-         NQMA==
-X-Forwarded-Encrypted: i=1; AL+hErFDjQdsgoUp97SAe0ngbmMo3eo5X9SinCdVRp0We5F7T+DcGcY+4D6G7cGaFK0/FiWrwdkrXpyapeGGcGwOTQ==@vger.kernel.org
-X-Gm-Message-State: APuU4Z+X4gFk+uQOh4XpC3eCVE3mOrCk8+ziJWYF4t1PMmKxFkbGtxWy
-	O7WzDyb8vNpjqvkBFhyOO064CQh5hhH8kYO4PZ+mP1Ant5JAreC/jIA=
-X-Gm-Gg: AZFdTZd7zQvj7sg2R0SeGB0LGnXLG0x6VFhfcuAYYhf9WGOYep95iT3bmJECgi0XXdF
-	WEtwC1yfIesuIC+sOW/diyZON2Ro7yKL7/Mknx/pe5yeIwcWLGqihWNo4v+HJ5B1irDftGxfHIK
-	/lmdDgrXRdRx3AejoCx/yxkPYngm1wI1UV0J3DSbLdKZvkfdr75sOnreqQDziiCfzOCZUq35D6Q
-	vN+zRfi8VRpurnVNRLfd1SCNeOTpBginfghrLEawmLkYZlDcvlC+aahUxcYlQ54nGQUzVeoDP2+
-	WLMU7uZhOUVPqhND0+8EbCXqB336gjcCaL5R669hzn8A67m/OM3rybg8CHyvjyPJFU1Hw3py6DF
-	2gHsJq0U5245BK3nSq5Omz6dF9HYD26e6yQM+nViewbHmn/ihJF8AaSNLhNx+Bxa91oHXJc05bV
-	L94NCKDRX5RKZ+YUk5VSZ0vE3n0gjKGB6Il0L5u7t37QsUd9dsvyE9wSm0FCVmQqRuMCYCh/XPz
-	76Vd4Zi5eSyNk6RYZJLeR9tr7eoS6umBf3nw6HTSJyuPRs1AJl1ZANsfw3bqYe9YOkiUTXLC+SP
-	i8yTXqplbnV2jD8=
-X-Received: by 2002:a05:600c:468c:b0:4bb:6d61:af7c with SMTP id 5b1f17b1804b1-4bb88944bf5mr305609045e9.35.1795542389963;
-        Tue, 24 Nov 2026 09:46:29 -0800 (PST)
+        bh=eJ45RhdWQYaNGviQo8DZFSlW6V3bfg/JFh/lL6cjCXc=;
+        b=T24jaYgh+hNZbdD1+mzxgI6Jke8GsYZ1mN03nwcOeTVh9m4IZX8uJjtdhtt/f9R+lE
+         mfTcOEoqc2QkkWE4y8DkyGzz3/baJbpmnfHfqFbs2DXcGZjbSoY4Rp5i9x1HtY7UC8Rj
+         SMwDL4Wca4t8ldNBxDLaKJHFkfhi6KPoJDCVVkxrDjfPsZcb9P+rlwBWxhurmCHmlWs7
+         TKOsrDpiw/2fhikUCxtIImrLR+Q/WuIpNeutN6EJRYKMqWOriiJJSTxPSyx37B+/dh8V
+         KosR7QgBWqITymHl7BgccnifgDeb4rX7cd3hI9354l/mq3iHDhbozVScAtz21S+67Xf/
+         1kiQ==
+X-Forwarded-Encrypted: i=1; AL+hErE2asPVwF73p5dFIkILFLZmuHaBRm+mPGTm+dyj95A43w8J3TIHXFa6z4JZgXqqKsPx1lOhqUDRTNhNjWHNSg==@vger.kernel.org
+X-Gm-Message-State: APuU4Z8ZClQ8lEoof8pd6gSr/1UFWseJRMtXtgNEQkIcPrSY7Agh2851
+	CuKRIx/E4TQeMUfuYw65f9Yxb/T9dpLQnuXBZPUmdYlojAWbRJ3RfD0=
+X-Gm-Gg: AZFdTZcVTyvK0kuI5J5E2QJcrkSkvZkb54lS/LS3HK5mfRDAihQW+NeylqtTYLXLaRi
+	uQWO3WeO9tH7AkSmnBxsZep5J5Y3yGYiMhUo9w4b/7t5NW3AE5HwHsTUi3Qr8LT256ahADcHtC9
+	W09JwvoU6wrvqLKiz0zxKEOnvtYYludY4B3xQLtRXpTMJOQrAR+iY+u1FYTKkrvFYPzJAfUXJL0
+	ejmv9KZ7YugznWkEYQtrs9Cd950Wu1kshde7gQip+V6M72c99CCJke2ETCMW+kfjCQp+NgSZygE
+	1f5Rcs3iyTTw3RZmN+Gr6zmy0HkYXSo+S7LMgukdkjehbp2U/dqHMrkx3fytmEYtLjrX1dgj7mW
+	OjOFafdNYxByFKYtE/8ptr55PhfpX8DiSY2AQ5Ihr+Qmd9ecvO0eI5RSTCM7OnSL56cZdcsSPI+
+	ttk5TyAh2xmQo9zn/DE9VIfAEDKH/HSxAC4tSPLenpH8W3dd/MPyywRw2njM3B5ToI5G20xdcGe
+	jJ0fV0wMxm8Nvnkp/QxbV0UYIiCdb9LgrFydeCUwn/GDU0a0vMOPQ2uI8/ZuRTAYoJ/ZJvA4I4o
+	IyQRr3hziXWrVhU=
+X-Received: by 2002:a05:600c:3b8a:b0:4ba:761:c0c5 with SMTP id 5b1f17b1804b1-4bb8880f0e0mr316226585e9.5.1795542390429;
+        Tue, 24 Nov 2026 09:46:30 -0800 (PST)
 Received: from localhost.localdomain ([2001:41d0:303:db6b::])
-        by smtp.gmail.com with ESMTPSA id 5b1f17b1804b1-4bb884b39b6sm413261165e9.12.2026.11.24.09.46.29
+        by smtp.gmail.com with ESMTPSA id 5b1f17b1804b1-4bb884b39b6sm413261165e9.12.2026.11.24.09.46.30
         (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
-        Tue, 24 Nov 2026 09:46:29 -0800 (PST)
+        Tue, 24 Nov 2026 09:46:30 -0800 (PST)
 From: Tristan Madani <tristmd@gmail.com>
 To: Brian Norris <briannorris@chromium.org>,
 	Francesco Dolcini <francesco@dolcini.it>
@@ -85,9 +85,9 @@ Cc: Jeff Chen <jeff.chen_1@nxp.com>,
 	linux-wireless@vger.kernel.org,
 	stable@vger.kernel.org,
 	Tristan Madani <tristan@talencesecurity.com>
-Subject: [PATCH v2 wireless 2/3] wifi: mwifiex: validate intf_num in multichannel event handler
-Date: Tue, 24 Nov 2026 17:46:19 +0000
-Message-ID: <20261124174620.1572200-3-tristmd@gmail.com>
+Subject: [PATCH v2 wireless 3/3] wifi: mwifiex: cap TLV length in IBSS connected event handler
+Date: Tue, 24 Nov 2026 17:46:20 +0000
+Message-ID: <20261124174620.1572200-4-tristmd@gmail.com>
 X-Mailer: git-send-email 2.47.3
 In-Reply-To: <20261124174620.1572200-1-tristmd@gmail.com>
 References: <20261124174620.1572200-1-tristmd@gmail.com>
@@ -104,37 +104,37 @@ Content-Transfer-Encoding: 8bit
 
 From: Tristan Madani <tristan@talencesecurity.com>
 
-The intf_num field from the multichannel group info TLV indexes the
-flexible array bss_type_numlist[] without checking whether it fits
-the TLV data. An intf_num larger than the available data causes reads
-past the TLV boundary.
+In the IBSS connected event handler, the buffer-bounded evt_len is
+replaced with the TLV header length from the firmware. An inflated
+value drives the IE parsing loop past the event buffer.
 
-Add a check that intf_num does not exceed the number of entries that
-fit in the TLV data.
+After the fixed-size header advance, check that curr has not overshot
+the event data before computing the remaining length -- the
+subtraction wraps when curr is past the end because event->len is
+unsigned. Then cap the TLV-derived length at the remaining data size.
 
-Fixes: 8d6b538a5eac ("mwifiex: handle multichannel event")
+Fixes: 432da7d243da ("mwifiex: add HT aggregation support for adhoc mode")
 Cc: stable@vger.kernel.org
-Reviewed-by: Jeff Chen <jeff.chen_1@nxp.com>
 Signed-off-by: Tristan Madani <tristan@talencesecurity.com>
 ---
  drivers/net/wireless/marvell/mwifiex/sta_event.c | 4 ++++
  1 file changed, 4 insertions(+)
 
 diff --git a/drivers/net/wireless/marvell/mwifiex/sta_event.c b/drivers/net/wireless/marvell/mwifiex/sta_event.c
-index fecd88967ceb8..1f746e8f6b3e1 100644
+index 1f746e8f6b3e1..98f33ec186e63 100644
 --- a/drivers/net/wireless/marvell/mwifiex/sta_event.c
 +++ b/drivers/net/wireless/marvell/mwifiex/sta_event.c
-@@ -450,6 +450,10 @@ void mwifiex_process_multi_chan_event(struct mwifiex_private *priv,
- 
- 		grp_info = (struct mwifiex_ie_types_mc_group_info *)tlv;
- 		intf_num = grp_info->intf_num;
-+		if (tlv_len < sizeof(*grp_info) - sizeof(grp_info->header) ||
-+		    intf_num > tlv_len - (sizeof(*grp_info) - sizeof(grp_info->header)))
-+			break;
-+
- 		for (i = 0; i < intf_num; i++) {
- 			bss_type = grp_info->bss_type_numlist[i] >> 4;
- 			bss_num = grp_info->bss_type_numlist[i] & BSS_NUM_MASK;
+@@ -45,6 +45,10 @@ static int mwifiex_check_ibss_peer_capabilities(struct mwifiex_private *priv,
+ 		 */
+ 		evt_len = le16_to_cpu(tlv_mgmt_frame->header.len);
+ 		curr += (sizeof(*tlv_mgmt_frame) + 12);
++		if (curr > event->data + event->len)
++			return 0;
++		if (evt_len > event->len - (curr - event->data))
++			evt_len = event->len - (curr - event->data);
+ 	} else {
+ 		mwifiex_dbg(priv->adapter, MSG,
+ 			    "management frame tlv not found!\n");
 -- 
 2.47.3
 
