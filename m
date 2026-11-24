@@ -1,94 +1,54 @@
-Authentication-Results: smtp.subspace.kernel.org; arc=pass header.oldest-pass=0 smtp.remote-ip=52.101.69.22
-ARC-Seal: i=2; d=subspace.kernel.org; s=arc20261015; a=rsa-sha256; cv=pass;
-	t=1795501597;
-	b=3gzgEpKxBbH9cqdXNR4NS/WBD+SPnJZDK5qbOX0HAbwB9PG7fjSQNtPJFKP7h6jD5oWh
-	 BX2OqLOMk+A1wZ3Sb8NqXij1Jsj7AlXl45H20p669ZhiSzG2t9G5cWbZkssKEIeA+h1e4
-	 8K3YQF3Rl/iIUi6371k4R1DJqaXlKRtyk1Ma5XJNhvC1UOfov6x46HX/XT6/MqlEzUb+4
-	 IC08wY7WAHDzuIUZjhVDvCRP2pejrYtnCZ8GBy1eYAFVYouf0UroMzp+PF3jliWsj14RF
-	 ODOOHUsmTTUD+NueZbi5mrenaWMmaax1kP4zBO4TbYGaAPP75jFpQEvkjKxxLYE8N1w==
-ARC-Message-Signature: i=2; d=subspace.kernel.org; s=arc20261015;
-	a=rsa-sha256; c=relaxed/relaxed; t=1795501597;
-	h=DMARC-Filter:DKIM-Signature:Received:Received:From:To:Cc:Subject:
-	 Date:Message-Id:X-Mailer:In-Reply-To:References:
-	 Content-Transfer-Encoding:Content-Type:X-ClientProxiedBy:MIME-Version:
-	 X-MS-PublicTrafficType:X-MS-TrafficTypeDiagnostic:
-	 X-MS-Office365-Filtering-Correlation-Id:X-MS-Exchange-SenderADCheck:
-	 X-MS-Exchange-AntiSpam-Relay:X-Microsoft-Antispam:
-	 X-Microsoft-Antispam-Message-Info:X-Forefront-Antispam-Report:
-	 X-MS-Exchange-AntiSpam-MessageData-ChunkCount:
-	 X-MS-Exchange-AntiSpam-MessageData-0:X-OriginatorOrg:
-	 X-MS-Exchange-CrossTenant-Network-Message-Id:
-	 X-MS-Exchange-CrossTenant-AuthSource:X-MS-Exchange-CrossTenant-AuthAs:
-	 X-MS-Exchange-CrossTenant-OriginalArrivalTime:
-	 X-MS-Exchange-CrossTenant-FromEntityHeader:
-	 X-MS-Exchange-CrossTenant-Id:X-MS-Exchange-CrossTenant-MailboxType:
-	 X-MS-Exchange-CrossTenant-UserPrincipalName:
-	 X-MS-Exchange-Transport-CrossTenantHeadersStamped;
-	bh=0SS2HKaCpzT/qfA5bSI2Q1528A30f8GwIdZUtzpTzMY=;
-	b=G5K/Zir+dn3XxwiycwX4+eD7Zrlnc1dptKS85WqCx9T36OMbk67285/EvwSSdy2WDThf
-	 LuGBggvykuBRITP2b7ZwJEspg20Q6ICNwj/VR7jPg1fstTmqlB85ms0oiDazW4BTe3AWH
-	 2eiHpP8gs40cXRXD95YdHMpsYyakqUsJmj55Pg6h9NQCSQTwmf2ZNMySeHMKC18CZ16lL
-	 ZKkLOK6M5loj5tPhfz8QTqn6L0DNvrZ0EfsCnr3gE6J54wFwm6hLLA7NE2XFag5Rdqen9
-	 TRjZbMgVPDcnbjQAreQLjvwbSo76HWgYGlRqyiB7kVRNZKroGaGra6icg2PSEaG2LtA==
-ARC-Authentication-Results: i=2; smtp.subspace.kernel.org; 
-	dmarc=pass header.from=oss.nxp.com;
-	spf=pass smtp.mailfrom=oss.nxp.com;
-	dkim=pass header.d=NXP1.onmicrosoft.com header.i=@NXP1.onmicrosoft.com header.a=rsa-sha256 header.s=selector1-NXP1-onmicrosoft-com header.b=ubiwhRLd;
-	arc=pass header.oldest-pass=0 smtp.remote-ip=52.101.69.22
-Received: from AM0PR83CU005.outbound.protection.outlook.com (mail-westeuropeazon11010022.outbound.protection.outlook.com [52.101.69.22])
+Authentication-Results: smtp.subspace.kernel.org; arc=none smtp.remote-ip=100.103.45.18
+ARC-Seal: i=1; d=subspace.kernel.org; s=arc20261015; a=rsa-sha256; cv=none;
+	t=1795502467;
+	b=XxV0HImMprZ3z99LJOt2+8VzDZWYcndGIajf2CqHSocJf5fINXgk+akf68AzmoZDcn/e
+	 9nZlrBEXQC7GPL+1zBaLvbj3vtD0F2bPXeYZYXSbvWj5hLqDR/e6fh3RGXDYby1bxc/ob
+	 +zbDLTgdGKkO+ijvhz3Hsb22XxRxft+TFCkcjyrMc2SH1VydLB4mJmp0Zr37AVS5fOljg
+	 TDy6nogbnnWiW6eI0VLDPqs1MWJY86KP+gIuvRVqQLRxtyFKwMe2syXJkWimgl1EXZ0fq
+	 D+f8aGjTN25k999136REl560XOJ+wXINO/iP7jdaeDLS/yDlGU+CNP6jXdmTvPhuFhw==
+ARC-Message-Signature: i=1; d=subspace.kernel.org; s=arc20261015;
+	a=rsa-sha256; c=relaxed/relaxed; t=1795502467;
+	h=Received:DKIM-Signature:Received:X-Gm-Message-State:X-Received:
+	 MIME-Version:References:In-Reply-To:Reply-To:From:Date:
+	 X-Gmail-Original-Message-ID:X-Gm-Features:Message-ID:Subject:To:Cc:
+	 Content-Type:Content-Transfer-Encoding;
+	bh=RRfQhKttchyTzL2DUDqatrik9XZiWt92JJ2q1y9Xqto=;
+	b=txEaUyhclEobYhON12q6WntvgvNx3DKmgXmDf5XHnPlTVHKoBQrulvxCo7C1upF1qo1b
+	 G89m0yLH3wS6j1YfFPCtZ/4CLizuIPHXpcpkwOp29p7C9AIGUQeq3N1MDlb1nS7G36QZp
+	 HgKthQHJWZ0XMvoJCfCsz3SWvzBzJXGzkEJ2yzhQHp36cP6yekYHNPhb544FOX5xbpU7m
+	 JWEp/dR+ZkM6Hov/Tzt2J+qkLCGFnp76YU6V2p+wXS69/gZAYjHP7kGgo+1R50DE6lvED
+	 SezFAvFE3ySv5Iww7fNN8JcAcpQQVZu7RDIuHHiwBIrnUHAYQo0zHv3ngJq4TlMFp7w==
+ARC-Authentication-Results: i=1; smtp.subspace.kernel.org; 
+	dkim=pass header.d=kernel.org header.i=@kernel.org header.a=rsa-sha256 header.s=k20260515 header.b=nSFb3ReJ;
+	arc=none smtp.remote-ip=100.103.45.18
+Received: from smtp.kernel.org (quasi.space.kernel.org [100.103.45.18])
 	(using TLSv1.3 with cipher TLS_AES_256_GCM_SHA384 (256/256 bits)
-	 key-exchange ECDHE (secp384r1) server-signature ECDSA (prime256v1) server-digest SHA256)
+	 key-exchange X25519 server-signature ECDSA (prime256v1))
 	(No client certificate requested)
-	by smtp.subspace.kernel.org (Postfix) with ESMTPS id 8265F606A32C
-	for <linux-wireless@vger.kernel.org>; Tue, 24 Nov 2026 06:26:36 +0000 (UTC)
-DMARC-Filter: OpenDMARC Filter v1.4.2 smtp.subspace.kernel.org 8265F606A32C
-Authentication-Results: smtp.subspace.kernel.org; dmarc=pass (p=none dis=none) header.from=oss.nxp.com
-Authentication-Results: smtp.subspace.kernel.org; spf=pass smtp.mailfrom=oss.nxp.com
+	by smtp.subspace.kernel.org (Postfix) with ESMTPS id 3686F606A31E
+	for <linux-wireless@vger.kernel.org>; Tue, 24 Nov 2026 06:41:06 +0000 (UTC)
 Authentication-Results: smtp.subspace.kernel.org;
-	dkim=pass (2048-bit key) header.d=NXP1.onmicrosoft.com header.i=@NXP1.onmicrosoft.com header.a=rsa-sha256 header.s=selector1-NXP1-onmicrosoft-com header.b=ubiwhRLd
-ARC-Seal: i=1; a=rsa-sha256; s=arcselector10001; d=microsoft.com; cv=none;
- b=QWrGWgqq+HzaBl22H6nc4w6O80lE5sUnG9xxhRlHJ1UHw05C+zGPbVzL4Zq2oSyQ//1cJVSkXA8FKAzMnmKkDW2eafUUkej/Qiz+15wNL2V8VcGnK2HKoUonasd5NDZ93CFmzG8cHbGU4yVCDo5aDbXJ/+ikJlpqPMjvVzN+a38ri1yuvn1GtyfS03JqnUxjbXnVZph/cx/kat+xTNaW2oaa2k9KuV3hRL96xtcW7PWWMnc+cgsGjwwX5wW5AFtk5A3WxMWfChemLBjAGbj5wD8wltrCWFDiGOf7p+WZQgxlZgbhIaH4628MBwizgK2ZI90NtOQ058eDzlcjLRSC9Q==
-ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=microsoft.com;
- s=arcselector10001;
- h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-AntiSpam-MessageData-ChunkCount:X-MS-Exchange-AntiSpam-MessageData-0:X-MS-Exchange-AntiSpam-MessageData-1;
- bh=0SS2HKaCpzT/qfA5bSI2Q1528A30f8GwIdZUtzpTzMY=;
- b=TiyOIE8Uu3h6DHRufx61PHg4AoMxPEbciVz0KzaPpOef8AXGDUPIkJ/Ia7xZ2iXtISrdeSsleNSd6koZ6li9xq2iOGwm8mB8bKbDkmxFqJ0HO/sTUcnJOfm7pzy7wRoPV0CufcwDkZQ7m6ceX6NsFkPMOsqjLpBk64We+t9g575FJzjT4Vv6BW+kokfpGJNzUwHkqw5YT3dr87LuYqL824EgCkqW0TaKNt/cG+D41HpVopNGORUtrtemUVhS4FKm7nERuU23yWymlG3YlypI0I1XLeWEY4mXcds7CflQ0bcik9CBXIEbDwEWW8JiAtr1leHPw0RzeBz9Dr+envnsuA==
-ARC-Authentication-Results: i=1; mx.microsoft.com 1; spf=pass
- smtp.mailfrom=oss.nxp.com; dmarc=pass action=none header.from=oss.nxp.com;
- dkim=pass header.d=oss.nxp.com; arc=none
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=NXP1.onmicrosoft.com;
- s=selector1-NXP1-onmicrosoft-com;
- h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
- bh=0SS2HKaCpzT/qfA5bSI2Q1528A30f8GwIdZUtzpTzMY=;
- b=ubiwhRLdaoyPmddQbsJIQgJlefgfKdeqMcaaHp1811jLC3AnXblUejUvDeN7sgHK0oSuJxrfaSBDVTyO+B+Ujynynd7SsOJbjv78emhWmEliMmyisAkPDkzUKz08OA/L1JOICX8foDaohed2MBpD8tsNpI48acMQqB1mX45R1RjJ7bprTmHr8CBigM3W3xJLFwZeo0hpRPyGKTT5C5vtDx5Df40hus8TgBwmtQ1odsmINViTHJFinLztktf4ntVhE7JlhJqKHzDreVESjkC9gZjWK1kie+ELttZd84Op6ijEoKT+eH9kfdRQBZKgc5I4AiwmtSFsdGw+cUupqd3dOA==
-Authentication-Results: mx.microsoft.com 1; dkim=none (message not signed)
- header.d=none;dmarc=none action=none header.from=oss.nxp.com;
-Received: from VE1PR04MB7280.eurprd04.prod.outlook.com (2603:10a6:800:1af::22)
- by PA4PR04MB8014.eurprd04.prod.outlook.com (2603:10a6:102:c7::10) with
- Microsoft SMTP Server (version=TLS1_2,
- cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id 15.21.639.13; Tue, 24 Nov
- 2026 06:26:33 +0000
-Received: from VE1PR04MB7280.eurprd04.prod.outlook.com
- ([fe80::92fd:f75a:a302:f859]) by VE1PR04MB7280.eurprd04.prod.outlook.com
- ([fe80::92fd:f75a:a302:f859%4]) with mapi id 15.21.0639.012; Tue, 24 Nov 2026
- 06:26:33 +0000
-From: jeff.chen_1@oss.nxp.com
-To: Tristan Madani <tristmd@gmail.com>
-Cc: Jeff Chen <jeff.chen_1@oss.nxp.com>,
-	linux-wireless@vger.kernel.org,
-	briannorris@chromium.org,
-	Jeff Chen <jeff.chen_1@nxp.com>
-Subject: Re: [PATCH wireless] wifi: mwifiex: validate scan response TLV sizes before indexed access
-Date: Tue, 24 Nov 2026 14:25:39 +0800
-Message-Id: <20261124062539.801946-1-jeff.chen_1@oss.nxp.com>
-X-Mailer: git-send-email 2.34.1
-In-Reply-To: <20261025181130.3711823-1-tristan@talencesecurity.com>
-References: <20261025181130.3711823-1-tristan@talencesecurity.com>
-Content-Transfer-Encoding: 8bit
-Content-Type: text/plain
-X-ClientProxiedBy: FR4P281CA0064.DEUP281.PROD.OUTLOOK.COM
- (2603:10a6:d10:ce::16) To VE1PR04MB7280.eurprd04.prod.outlook.com
- (2603:10a6:800:1af::22)
+	dkim=pass (2048-bit key) header.d=kernel.org header.i=@kernel.org header.a=rsa-sha256 header.s=k20260515 header.b=nSFb3ReJ
+Received: by smtp.kernel.org (Postfix) with ESMTPSA id AE64F1F000CF
+	for <linux-wireless@vger.kernel.org>; Tue, 24 Nov 2026 06:41:06 +0000 (UTC)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=kernel.org;
+	s=k20260515; t=1795502466;
+	bh=RRfQhKttchyTzL2DUDqatrik9XZiWt92JJ2q1y9Xqto=;
+	h=References:In-Reply-To:Reply-To:From:Date:Subject:To:Cc;
+	b=nSFb3ReJp2I9t3CQ03x82mNhDgZ8qN/wCnwOlvQ+LfBf1LZxxNhq9quXrrgNZyql1
+	 9GRKbOn/2hqiSnMYAYw33hiD0/nA4fE6mCbr9L5ZMa63OQkv3c1fGrQO/tC6jpNLe3
+	 IWae5OAVDf3XGj4x9vYDd+G+fH0pEbhnGZqNcxTMryiWQJQ5CQ4J+hkga69FbLzLAD
+	 Sn05G8NWccx65T5osb8cIv7EignnYnBS4IqzOExT31Lox0fOFizxocsae5IkBtmvof
+	 YVyxh5aSZHHUkcGNx2Bu5fy3OBb2mgFTNtQsvpM0h1t1R7eyZtgzQJD4sW7bn/P1Vj
+	 Ke8aAoEY2dVjw==
+Received: by mail-lf1-f54.google.com with SMTP id 2adb3069b0e04-5c1a3374400so3315735e87.2
+        for <linux-wireless@vger.kernel.org>; Mon, 23 Nov 2026 22:41:06 -0800 (PST)
+X-Gm-Message-State: APuU4Z8Pj6oAnjQT9KVAkwwcZHw+7o09NpX8k9XOvrIpOT+tbG3VTqtG
+	VZRD56bR8Yalfs/YZQIPizIBG6Y9Q1njn9nVZ5f+8bV+jd3d4Pxlts1VJCWkZfuDEG5oLi6bYsv
+	vxd6CRvwsbxYt3cuAdKN6VQuE7mFB4z8=
+X-Received: by 2002:a05:6512:131e:b0:5c1:ac60:71fa with SMTP id
+ 2adb3069b0e04-5c1bc81cf71mr3704573e87.49.1795502465109; Mon, 23 Nov 2026
+ 22:41:05 -0800 (PST)
 X-Mailing-List: linux-wireless@vger.kernel.org
 List-Id: <linux-wireless.vger.kernel.org>
 List-Post: <mailto:linux-wireless@vger.kernel.org>
@@ -98,70 +58,115 @@ List-Unsubscribe: <mailto:linux-wireless+unsubscribe@vger.kernel.org>
 List-Owner: <mailto:linux-wireless+owner@vger.kernel.org>
 Precedence: list
 MIME-Version: 1.0
-X-MS-PublicTrafficType: Email
-X-MS-TrafficTypeDiagnostic: VE1PR04MB7280:EE_|PA4PR04MB8014:EE_
-X-MS-Office365-Filtering-Correlation-Id: f488a286-48c7-4293-5bcb-08df49f3e206
-X-MS-Exchange-SenderADCheck: 1
-X-MS-Exchange-AntiSpam-Relay: 0
-X-Microsoft-Antispam:
-	BCL:0;ARA:13230040|1800799024|376014|366016|23010399003|19092799006|22082099003|18002099003|261021121427099003|261102123227099003|56012099006|10067099003|11063799006;
-X-Microsoft-Antispam-Message-Info:
-	HprcgbBbBcKiRYe3fbpKkmWCNQ5WUHaQGVh00i0ZwSZw+xc9UWGkKjADGHVc0D+jUOumkrJB/EiJFlBQmAtIhKm7qoojWKu0BGh0mcy9iTTcoe+1xt+MFnXgnVDw1MjJXlRNECfPaHFK382jjMQHP2kXdNRUlNl98HZypDF3EPuKzkuaUOFHWvmEiy/ztMp7UI74HJWTd6DSC1O4niGvIarZH8iXlh6A6WkSbY9X4AUU50xxndNJ07I+zPjZbwldZEA7L1Vco8evn141QiCZRuf0axzQaT3aFWXqSq909fs4VuSR/I3NuJX2DcLc7MxhGa2dkj8ji6Nmk8YsJrOdlwlRpc+D2yjvdH6vgZEukgv0fWlD4m7olrbVH05sFrW6EGWuuHDQ4Pe0ibKh7vQ3g/IrvxujdRj/RGOBQtX5GLfDavxLVGPN8wHau9otAgavCReATJ1omQ6/dgS8p6UnVBY3LO00aR6nLTicr+ZES2HT6pob19CABaGxQhd6G3DEIt+YT2Htr1kAB3dqq1jhNmRFAwISt6Kpovf95mYWHx8AopBsmrA82Y95i6F9mwS+rx0KdQhkzddvLI+fYlIIY3FIlH7vw32PvihDfl1evUnlxFom1MevMwyAYMyhxM8OywSeXH7LLSUWHSi2CPgnd6mdXtHVNpLJ1VW0YZ6AA1M=
-X-Forefront-Antispam-Report:
-	CIP:255.255.255.255;CTRY:;LANG:en;SCL:1;SRV:;IPV:NLI;SFV:NSPM;H:VE1PR04MB7280.eurprd04.prod.outlook.com;PTR:;CAT:NONE;SFS:(13230040)(1800799024)(376014)(366016)(23010399003)(19092799006)(22082099003)(18002099003)(261021121427099003)(261102123227099003)(56012099006)(10067099003)(11063799006);DIR:OUT;SFP:1101;
-X-MS-Exchange-AntiSpam-MessageData-ChunkCount: 1
-X-MS-Exchange-AntiSpam-MessageData-0:
-	=?us-ascii?Q?1i2x4shVAVs4LUj93R1HVSZZ8Ud6XUOnUeG3gvu+wyBiDALFYh8XgMqvwSPr?=
- =?us-ascii?Q?YFNn1xsvRioCpYDEuKVXPjAzRJ1fT3VlZ9jQPHn6ACa+686Wdapggym1iBIE?=
- =?us-ascii?Q?edRvGXn5LJldjxpMGk6i7OwS9d4GdZ57K8NWiPPWy9UhaDpUeBqwsr+Vy/mI?=
- =?us-ascii?Q?JRKJ37+KTkvpo9bvSAGzWRF5I2mKWiAbeIQAMllMQzirvvYTYbRY+99pDFDn?=
- =?us-ascii?Q?RmiDFVj0EblRNecudPek9UdpEynHGzYFsOFU9aTzqw5zkSQIqcX0zIFOolP9?=
- =?us-ascii?Q?Fp63LMtVVqkDp9UreA9SGlaZkcZWCrSTEAEYtBGkez+lzm0VWWxGWonI6orP?=
- =?us-ascii?Q?Y99mdrSJh+CJ1tyYuk9q9VEvGGytbjxYayv1+zcEF5cqyo+YmkYfY7BbYdeH?=
- =?us-ascii?Q?VrkImAJIXbLTOXTFqrWJVKfD8x3iN6zrZ/PC++zLw5Znhtiu+1PYZElWxxMm?=
- =?us-ascii?Q?dCegVobMxkGJSRVvJmGH0PzefOA5+tUR+Ih6XUMelQOt5mWmk+ZEosqIKGGZ?=
- =?us-ascii?Q?tepaOIj40KoeoQd0BXdPz/DZINJzdL5gK3zfccl+icHue/vm00SmIoCm9aEe?=
- =?us-ascii?Q?7DkIXLF+VUeCJAbKiow52oxcmJb/flV2RMRoXqh7ruRwkuUiGOMZxtiUdaGS?=
- =?us-ascii?Q?kGIHqEcXzzqgMmf9omNufKPwb28LYc5LBekPGnPyaoc5nDAnJNP/peCPjbKJ?=
- =?us-ascii?Q?Nz3Ik4SZfDj++duht8Ua7FR3JBK4bf58tpDRfAQvoQeV7twchXgyhDmuVDMe?=
- =?us-ascii?Q?21zldg/JtkyfN0dnkxa/AL4JGsBlUnkpCxLBYea+ws8CYsJnA3G9GplDdNQJ?=
- =?us-ascii?Q?izcxjcuKabPCGX2BjVlcPwcwww7JAO2Sde2pacMWHV7XQ2kS2sn7EuBAw7Qc?=
- =?us-ascii?Q?uYdLMZuVhYAKZeDW1kH81HkwhDScI4RCrz2QX2/Swgdg9+AtGLBadTLgcKBz?=
- =?us-ascii?Q?RfhXq9UunQIlXOhEFISfpH6PAQHMc8AU0EeNXNfMUg6N8sWK/AvocPLFa9Ei?=
- =?us-ascii?Q?K7J9ANZxjFf/2wUcU/JJF2Au544g5oQzgwi6XEPeIKDErOK1Qg1MQ7hAwoAi?=
- =?us-ascii?Q?BoENBz70yZkeoJMjKb+TkHjnJvIAIlBkI85g6DD9rzAGb9wJPJpRt8lmlCys?=
- =?us-ascii?Q?soU5h9L0UWsU5tjVjDDrMyy94e3bLrEOaA0mhjwTAAOpxWz9uFzcESTkhaqA?=
- =?us-ascii?Q?jTgzLptgxhdCisfeVciqNW0IH/XdM7sVbGnKgKpD0IejLdvHWHmK6+ZLCJSo?=
- =?us-ascii?Q?tTd5wp7eNcCm10XFs9f2T4LS0tKfuoQa3YKT2sByYmzLJjPmFNTdRFgLyyMI?=
- =?us-ascii?Q?DbwztrAgltNwJJ3UzB0B7tCpXtFkQ+VrrRTOBVCv4sAWTaORUDtmKst0xP1O?=
- =?us-ascii?Q?1npt7249rxYty5GDxzkDdlcuHcgxmfWs/m8AceuD1aEY2GoGihiS7+6EOYFy?=
- =?us-ascii?Q?gUzofqetRTQwEpAJR0qvR/0GmvrbESX0zVYJWC2jHgCroNCJP8bIXp4hO86X?=
- =?us-ascii?Q?LKsuPRq4B9UJ3U6aTdkplY9yX8NvCW/dWII2hF0hivYl1KlGSY/3UYSE8yHT?=
- =?us-ascii?Q?06RVEbjwOQrM3kLoXPJ/SBBqxvauMf0PQl+AGzouAzbsaTnBBPTe5RAWTUMs?=
- =?us-ascii?Q?tf/tiYIsq/reCZKQmuYzFphji/TkTw/u6d4y3k+SjM4n4MTyKNbhvk2l62Gz?=
- =?us-ascii?Q?4eZXEkqeCGyHVus8L9w6PuasEOwlQ6a0Dgb7lThomvaQBJuEhbVQLScddOM/?=
- =?us-ascii?Q?ursbZ2zZciaSHQVwyDs07saxdyK7LNxGCKZnuxRX7dRjYwwGNsIF?=
-X-OriginatorOrg: oss.nxp.com
-X-MS-Exchange-CrossTenant-Network-Message-Id: f488a286-48c7-4293-5bcb-08df49f3e206
-X-MS-Exchange-CrossTenant-AuthSource: VE1PR04MB7280.eurprd04.prod.outlook.com
-X-MS-Exchange-CrossTenant-AuthAs: Internal
-X-MS-Exchange-CrossTenant-OriginalArrivalTime: 24 Nov 2026 06:26:32.9759
- (UTC)
-X-MS-Exchange-CrossTenant-FromEntityHeader: Hosted
-X-MS-Exchange-CrossTenant-Id: 686ea1d3-bc2b-4c6f-a92c-d99c5c301635
-X-MS-Exchange-CrossTenant-MailboxType: HOSTED
-X-MS-Exchange-CrossTenant-UserPrincipalName: tLSUCbZ0j6R7dhDgFf7BiCxuFCugmFochibz8HAjT+JxNMEjoNGs/E776+/S9lTOmUqXtBZcCXYQ5UFbJP6oTNUkkYEnwRZoUiv8g8+2xL6ihwBWSuOMLFdr+DpmgvAX
-X-MS-Exchange-Transport-CrossTenantHeadersStamped: PA4PR04MB8014
+References: <C1FB55C5-D453-4358-856A-54D0097561C8@rfareas.com>
+In-Reply-To: <C1FB55C5-D453-4358-856A-54D0097561C8@rfareas.com>
+Reply-To: wens@kernel.org
+From: Chen-Yu Tsai <wens@kernel.org>
+Date: Tue, 24 Nov 2026 14:40:52 +0800
+X-Gmail-Original-Message-ID: <CAGb2v67-2yV6oUA--fnG=ndHrOy4Li7pdZrNf954AwSm_Xk+dw@mail.gmail.com>
+X-Gm-Features: Aa3M54pCqL-6FHjaHOCn2xkt_WlcGPIc4N3tNLpgWQluXE2A3PzhWX7zgI70xjo
+Message-ID: <CAGb2v67-2yV6oUA--fnG=ndHrOy4Li7pdZrNf954AwSm_Xk+dw@mail.gmail.com>
+Subject: Re: [PATCH] wireless-regdb: Update regulatory info for Georgia (GE)
+To: RFAREAS Support <support@rfareas.com>
+Cc: linux-wireless@vger.kernel.org, wireless-regdb@lists.infradead.org
+Content-Type: text/plain; charset="UTF-8"
+Content-Transfer-Encoding: quoted-printable
 
-From: Jeff Chen <jeff.chen_1@oss.nxp.com>
+On Tue, Nov 24, 2026 at 4:04=E2=80=AFAM RFAREAS Support <support@rfareas.co=
+m> wrote:
+>
+> From: Valery Belousov <support@rfareas.com>
+>
+> The GE entry has no source for the 2.4 and 5 GHz rules and does not
+> allow 5470-5725 MHz, which is permitted for licence-exempt use in
+> Georgia.
+>
+> Licence-exempt WAS/RLAN is set out in Table 3 of Annex 1 to the
+> National Radio Frequency Spectrum Allocation Plan (GNCC Resolution
+> No. 6 of 30 June 2006), as amended by GNCC Resolution No. 9 of
+> 25 July 2024, published on the official legislative portal matsne.gov.ge.
+>
+> Limits as stated in Table 3 (all e.i.r.p.):
+>   2400-2483.5 MHz: 100 mW, 10 mW/MHz for wideband modulations
+>   5150-5350 MHz:   200 mW mean, 10 mW/MHz, indoor use only
+>   5470-5725 MHz:   1 W mean, 50 mW/MHz
+>   5945-6425 MHz:   200 mW mean
+>   57-71 GHz:       40 dBm mean, 23 dBm/MHz, fixed outdoor excluded
+> Note 3.2 requires DFS (as in EN 301 893) in 5250-5350 MHz and
+> 5470-5725 MHz. Note 3.3 requires TPC in the same bands and lowers the
+> e.i.r.p. limits by 3 dB if TPC is not used.
+>
+> Changes:
+>  * 2.4 GHz: 2400-2483.5 MHz, 100 mW.
+>  * 5150-5250 MHz: 200 mW (was 18 dBm), NO-OUTDOOR.
+>  * 5250-5350 MHz: 100 mW (was 18 dBm, 5250-5330 MHz), NO-OUTDOOR, DFS
+>    (200 mW with TPC).
+>  * Add 5470-5725 MHz, 500 mW, DFS (1 W with TPC).
+>  * 60 GHz: extend to 71 GHz as in the table.
+>  * Add the source and the TPC note.
+>
+> 5725-5875 MHz is listed in the table only for EN 302 502 (fixed
+> broadband data transmission systems), not for WAS/RLAN under
+> EN 301 893, so it is not added. The 6 GHz rule already matches.
 
-On Sun, Oct 25, 2026 at 06:11:30 PM +0000, Tristan Madani wrote:
-> The scan response handler indexes into TSF and channel-band TLV arrays
-> using a loop counter derived from the number of BSS entries, but never
-> checks whether the TLV data is large enough. A firmware response with
-> fewer TLV entries than BSS entries leads to reads past the TLV buffer.
+There is also a non-specific SRD entry for this range limited at 25mW.
+Would that be usable? If so, please send a follow-up patch.
 
-Reviewed-by: Jeff Chen <jeff.chen_1@nxp.com>
+I will apply this patch for now.
 
-Please check the checkpatch warnings.
-
+> Signed-off-by: Valery Belousov <support@rfareas.com>
+> ---
+> Found while cross-checking wireless-regdb against the national acts for t=
+he
+> RFAREAS Wi-Fi regulatory map (https://rfareas.com/blog/tools/wifimap/).
+>
+>  db.txt | 20 +++++++++++++++-----
+>  1 file changed, 15 insertions(+), 5 deletions(-)
+>
+> diff --git a/db.txt b/db.txt
+> index f5b7cc1..ac9aad5 100644
+> --- a/db.txt
+> +++ b/db.txt
+> @@ -808,16 +808,26 @@ country GD: DFS-FCC
+>         (5735 - 5835 @ 80), (30)
+>
+>  # Source:
+> +# National Radio Frequency Spectrum Allocation Plan (GNCC Resolution No.=
+ 6
+> +# of 30 June 2006), Annex 1, Table 3 (wideband data transmission systems=
+,
+> +# including WAS/RLAN), as amended by GNCC Resolution No. 9 of 25 July 20=
+24:
+> +#  https://matsne.gov.ge/ka/document/view/6234066
+> +# Note 3.3 of the table requires TPC in 5250-5350 MHz and 5470-5725 MHz =
+and
+> +# lowers the limits by 3 dB without it. 5725-5875 MHz is listed only for
+> +# EN 302 502 (fixed broadband data transmission), not for WAS/RLAN.
+>  # Harmonized CEPT countries for 6 GHz (ECC Decision (20)01)
+>  #  https://docdb.cept.org/implementation/16737
+>  #  https://docdb.cept.org/download/4685
+>  country GE: DFS-ETSI
+> -       (2402 - 2482 @ 40), (20)
+> -       (5170 - 5250 @ 80), (18), AUTO-BW
+> -       (5250 - 5330 @ 80), (18), DFS, AUTO-BW
+> +       (2400 - 2483.5 @ 40), (100 mW)
+> +       (5150 - 5250 @ 80), (200 mW), NO-OUTDOOR, AUTO-BW
+> +       # 200 mW with TPC (note 3.3); Linux has no TPC, so 3 dB less
+> +       (5250 - 5350 @ 80), (100 mW), NO-OUTDOOR, DFS, AUTO-BW
+> +       # 1 W with TPC (note 3.3); Linux has no TPC, so 3 dB less
+> +       (5470 - 5725 @ 160), (500 mW), DFS
+>         (5945 - 6425 @ 320), (23), NO-OUTDOOR
+> -       # 60 GHz band channels 1-4, ref: Etsi En 302 567
+> -       (57000 - 66000 @ 2160), (40)
+> +       # 60 GHz band channels 1-6, ref: ETSI EN 302 567
+> +       (57000 - 71000 @ 2160), (40)
+>
+>  country GF: DFS-ETSI
+>         (2402 - 2482 @ 40), (20)
+> --
+> 2.43.0
+>
+>
+> --
+> RFAREAS Support
+>
