@@ -1,51 +1,94 @@
-Authentication-Results: smtp.subspace.kernel.org; arc=none smtp.remote-ip=34.202.193.197
+Authentication-Results: smtp.subspace.kernel.org; arc=none smtp.remote-ip=74.125.82.172
 ARC-Seal: i=1; d=subspace.kernel.org; s=arc20261015; a=rsa-sha256; cv=none;
-	t=1795547632;
-	b=mqZ+YxhE87RrG1rAdkAUY/Lta8HFGR1JbRtpWm8RINXaH1s98tQ3161cZBpIviLDrjMG
-	 FPKcxIDyJrOdgGuLOje5pJoxMEiRKSSkrrd2caKE/0/YA9Y7OrObqPylNbgfMm9O6hQl6
-	 HFyNPkArStB6rFNblLFERnBzQHD+Gr1vWGp3uCr42781WCHfs3k983ZoHLFSHOI9ifJK4
-	 Txf245GJEiyWo+B241BQBQ+yMyyudCUnUIFtENC49jvR8ACqgbIJD7L+WPcZcM3HPfUw8
-	 ekME5fn8lbNRfdIHaCe0hT3k/RaCF1i6pwpPlJfgf4yDKXP2AWm+3xXi1p2ZOXJPBpg==
+	t=1795547654;
+	b=3k153zyJEN0qNJ7tkwfMWLwoyHfsEJSf6q6mnWwLGrqjXmwHcEeJ/y8b7AC3sbcdonum
+	 EFR2QfFqN6gjGLElwpcObREY0OZpTSvnHtTNzv4iOW2jwYdyxcOuW4O7+vwhv/dsMMt2s
+	 nS/zegs4augM/e4kVGiH+FzyHBUkcCYMfzg9C6mf9abn9diDNaUK/C5fLY2+Xsdfv1+eV
+	 Nk37EvKAA/vYhnBGsS1EQSZKY6Aiv7RtdpFJC+3n1G2pled/dy4JxFj3abv1lis6gQrfc
+	 EdexChfZe2s0qlz1+a5k+BU7nKwLvp7W69rPSMic9zQpgnt0qNWSqhEgMWLfBK4c4kw==
 ARC-Message-Signature: i=1; d=subspace.kernel.org; s=arc20261015;
-	a=rsa-sha256; c=relaxed/relaxed; t=1795547632;
-	h=DMARC-Filter:DKIM-Signature:DKIM-Signature:Feedback-ID:
-	 X-Pm-Original-To:Received:Message-ID:Date:MIME-Version:User-Agent:
-	 Subject:To:References:Content-Language:From:In-Reply-To:Content-Type:
-	 Content-Transfer-Encoding;
-	bh=nP/bTkY2+nX66KpAEykflHx9e11t3JGPeCdG9UHqwrk=;
-	b=vxtsgN3tUdTLjMY9eLokhzUU5NxhWp3/BTTdwRlM8o4s6xIN2S0soS8jlVyagKEAxuRh
-	 DvEdW8NnesINt2ZuVu0Zwbz36a4mJqcNSCg9yqVuKQOjzpMkAlMstvAUAg3WicDDlMLS8
-	 02Gm9nvNZmuUymdtLC9smhUTywdZpIlp1yIu5iy2Gp/t8IJ3+s1lrgUlM+G48HbICJxzr
-	 /ReIOxONFi46eKmwh9YMSKxQlr7d+gVlZxQOb2DdZMsDaM550bhnqidJ0NhV2dc/zvaAI
-	 xGHoT3UMk+7pokMJ1jKkU0FlgxgEZNIAJJ4wgFBWANM1TPP+lGJTs6eziASztsz8mHQ==
+	a=rsa-sha256; c=relaxed/relaxed; t=1795547654;
+	h=DMARC-Filter:Received:DKIM-Signature:X-Google-DKIM-Signature:
+	 X-Forwarded-Encrypted:X-Gm-Message-State:X-Gm-Gg:X-Received:Received:
+	 Date:From:To:Cc:Subject:Message-ID:References:MIME-Version:
+	 Content-Type:Content-Disposition:In-Reply-To;
+	bh=IxgAQ7l2unL63k66568C5pCDtenSdnWni9wrXJ1IJsU=;
+	b=0LZGYbRoDLem+RuSal/MCO9/JnlqTKnN+uMs1D2euiCiyWMLGFMTTeYp//f2dXPPwSNi
+	 T0r/DthibHG+KsNi/qphWCOKqcVfvPYR7w4zw7M6Y57vwdmNuItd9cNc4tkUhjzzWO6aF
+	 BBBP5dIbqtwymdbPG0DZK5mNN7v41SiBJmDZkUEHjo3gectHpOkHeo8yXisfs/kr1xT35
+	 vPnj5+5hmD8Q0PyLDjHKWh1f1Wi3nld+2tS0tWfZqD0vSQ0rKJDcNnpp/j8F211Upy7Q8
+	 wHugP2TFajNLbfAkuJq3bOSOattGKNyTyRzj/T3pzX+XxPhBQ6RaSz1Re2fyLpeOQ+g==
 ARC-Authentication-Results: i=1; smtp.subspace.kernel.org; 
-	dmarc=pass header.from=jimmycushnie.com;
-	spf=pass smtp.mailfrom=jimmycushnie.com;
-	dkim=pass header.d=jimmycushnie.com header.i=@jimmycushnie.com header.a=rsa-sha256 header.s=purelymail2 header.b=F+noWC8V;
-	dkim=pass header.d=purelymail.com header.i=@purelymail.com header.a=rsa-sha256 header.s=purelymail2 header.b="W/fGayg6";
-	arc=none smtp.remote-ip=34.202.193.197
-Received: from sendmail.purelymail.com (sendmail.purelymail.com [34.202.193.197])
-	(using TLSv1.3 with cipher TLS_AES_256_GCM_SHA384 (256/256 bits)
+	dmarc=pass header.from=chromium.org;
+	spf=pass smtp.mailfrom=chromium.org;
+	dkim=pass header.d=chromium.org header.i=@chromium.org header.a=rsa-sha256 header.s=google header.b=bJRy9l+i;
+	arc=none smtp.remote-ip=74.125.82.172
+Received: from mail-dy1-f172.google.com (mail-dy1-f172.google.com [74.125.82.172])
+	(using TLSv1.3 with cipher TLS_AES_128_GCM_SHA256 (128/128 bits)
 	 key-exchange X25519 server-signature ECDSA (prime256v1) server-digest SHA256)
 	(No client certificate requested)
-	by smtp.subspace.kernel.org (Postfix) with ESMTPS id 6270D606A31E
-	for <linux-wireless@vger.kernel.org>; Tue, 24 Nov 2026 19:13:51 +0000 (UTC)
-DMARC-Filter: OpenDMARC Filter v1.4.2 smtp.subspace.kernel.org 6270D606A31E
-Authentication-Results: smtp.subspace.kernel.org; dmarc=pass (p=reject dis=none) header.from=jimmycushnie.com
-Authentication-Results: smtp.subspace.kernel.org; spf=pass smtp.mailfrom=jimmycushnie.com
+	by smtp.subspace.kernel.org (Postfix) with ESMTPS id 1FFB6606A321
+	for <linux-wireless@vger.kernel.org>; Tue, 24 Nov 2026 19:14:13 +0000 (UTC)
+DMARC-Filter: OpenDMARC Filter v1.4.2 smtp.subspace.kernel.org 1FFB6606A321
+Authentication-Results: smtp.subspace.kernel.org; dmarc=pass (p=none dis=none) header.from=chromium.org
+Authentication-Results: smtp.subspace.kernel.org; spf=pass smtp.mailfrom=chromium.org
 Authentication-Results: smtp.subspace.kernel.org;
-	dkim=pass (2048-bit key, unprotected) header.d=jimmycushnie.com header.i=@jimmycushnie.com header.a=rsa-sha256 header.s=purelymail2 header.b=F+noWC8V;
-	dkim=pass (2048-bit key, unprotected) header.d=purelymail.com header.i=@purelymail.com header.a=rsa-sha256 header.s=purelymail2 header.b=W/fGayg6
-DKIM-Signature: a=rsa-sha256; b=F+noWC8VeRt+G5N+rdLPkiflexSJ7AS6v5Tk/aM11jYi1rZcgn76zNa24vy/Ybj+QflWX9x2IwxTCYidyP4MitOkcJ+XPUHPtyEXDfHS6Kdg6tCkE6pgeT0emRTIowL1EMn8H1XvDKVQneYd7Io7WffIdz23/xgNkPUCoA1aahowXyO9YTylkAo6FNOQ1/8m2YSjfBODl12/bGO2a425WN6ihzkUeiUdystZcEWaOK/cnkI7md7lWb2YT9ibd8QhnbrHUhFPs/ebKq/+Po3NikZcwDW5nTXbgkyt2rWnWu91b26VGuvag00WhvtR2hAm1UbOcolj46etNf+I5kghmg==; s=purelymail2; d=jimmycushnie.com; v=1; bh=I8HR++gPZGG7wBhmKtZA2CK5TLrxhhF0aRESlUD7ucU=; h=Received:Message-ID:Date:Subject:To:From;
-DKIM-Signature: a=rsa-sha256; b=W/fGayg6WudPCH93Fb2QSFerjHBUQaL0nkI9sBdt5+LvCbifFY/hsI8PCgGRi7t33EWZUZy2uiEcBQmw08UzTQPTYde8CP0vG3cmdPZBmXFlRkRkhbl2fNOPMuqelMXub6IZoVuMei4f164/aAA6T2Md7D2b858pQVvJJCVkmgrz0W82Fjq4ySLvK2oFC2+EuRmYytISk4rpktvwdtsyP1EcVXlHbReLKgXaBB9ipD4SYD7lu7M4mE5Zx2DtVdLXNMy7sPws1D9Vf+yhW5dp+KyidqqKI2008wd/mUAI69YJVBhbS0Yppvm+DKSC1EtolBKwQhcYF+P1BjpMcTqzrQ==; s=purelymail2; d=purelymail.com; v=1; bh=I8HR++gPZGG7wBhmKtZA2CK5TLrxhhF0aRESlUD7ucU=; h=Feedback-ID:Received:Message-ID:Date:Subject:To:From;
-Feedback-ID: 708593:36671:null:purelymail
-X-Pm-Original-To: linux-wireless@vger.kernel.org
-Authentication-Results: purelymail.com; auth=pass
-Received: by smtp.purelymail.com (Purelymail SMTP) with ESMTPSA id -1872370940;
-          (version=TLSv1.3 cipher=TLS_AES_256_GCM_SHA384);
-          Tue, 24 Nov 2026 19:12:57 +0000 (UTC)
-Message-ID: <7530cda9-06c9-41af-885b-238eb20a66f2@jimmycushnie.com>
-Date: Tue, 24 Nov 2026 14:12:57 -0500
+	dkim=pass (1024-bit key, unprotected) header.d=chromium.org header.i=@chromium.org header.a=rsa-sha256 header.s=google header.b=bJRy9l+i
+Received: by mail-dy1-f172.google.com with SMTP id 5a478bee46e88-36a315ed211so5985241eec.0
+        for <linux-wireless@vger.kernel.org>; Tue, 24 Nov 2026 11:14:13 -0800 (PST)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+        d=chromium.org; s=google; t=1795547653; x=1796152453; darn=vger.kernel.org;
+        h=in-reply-to:content-disposition:content-type:mime-version
+         :references:message-id:subject:cc:to:from:date:from:to:cc:subject
+         :date:message-id:reply-to:content-type;
+        bh=IxgAQ7l2unL63k66568C5pCDtenSdnWni9wrXJ1IJsU=;
+        b=bJRy9l+ifqlBZvnnK3syMqfd2PA5rw6Ep5pgJJWiB22iIdzqBPW1FgCKjAXRRVj7ku
+         56hLaGwDqmZvT+YljgtOtHIvcBdSZX2e8MhcEP30G/KUez7TefOxcbGCgEyLZvWXjVmr
+         994Cz2AwycG/BeQO/sENk6YCAU0/tIpeh3Hw0=
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+        d=1e100.net; s=20260707; t=1795547653; x=1796152453;
+        h=in-reply-to:content-disposition:content-type:mime-version
+         :references:message-id:subject:cc:to:from:date:x-gm-gg
+         :x-gm-message-state:from:to:cc:subject:date:message-id:reply-to
+         :content-type;
+        bh=IxgAQ7l2unL63k66568C5pCDtenSdnWni9wrXJ1IJsU=;
+        b=jzbpZXooQPNdQGSCce+zb+AStaI5ZsgDtgn+Y/YgV9VQimg7i7r1Hd26kJMjEywXP0
+         iczRJp95YfDUUZD1JxglnMkS3nQuRNUe38N9xuS1EWwsUTud73K1ucdnINzwqZ/cY2ws
+         DTpP1SAVaHPxuA2vjH4BJ8w9BJjdrqXQhESKLZfG5t24S1IiSGuubf+Y8urrIEbZqzrP
+         x2TdlQXnIamsenccoHAQVvgvlQ2xXado1z94381SG6vVl3E+x5BR9klMteBaC17QzIno
+         s2EZsubxaJhSuwK32Lv44B7jTNoznRRWaUs7A5YRKVs8pPMxWMgjWrBskfJTukz/IMF1
+         xVYQ==
+X-Forwarded-Encrypted: i=1; AL+hErGD8P34DcfGL3AW9uKi648HlMO9TH8DA79F0klwyefNUgt2Rqtcv4IdPziNpbDFa/o7fWUR2nd3b8k6Or1Vdw==@vger.kernel.org
+X-Gm-Message-State: APuU4Z+CXCH3zYZpa0icsbw7oSaERvTSwCaGeHN0s52Gi+DARsIxA3kA
+	rxLJIDLM3NNg6XqW6tPDpuUGFzpg/Zwu5sH3RBsjMVZxi3xJy0fEgCA/6+En0ARL8w==
+X-Gm-Gg: AZFdTZfLDM3lFwErfHe8x+ObvOHWI6qCb0zIuG8ySO2oZ2M/eOgMU5aiVj9eS7N+aQQ
+	QNyBZhxMmnWL8j8RrLkDaHgW2qiCVteYOy4vJ5PKxCmTYPLvaG0oe3fRV33yw9niBt60Vs968ro
+	yGkxqka4kVG25J7/2hUw2ddcd/1U69pYaNHVg2D5Uj68frI6+ySZOMQlXcXo7pXTFFUJUxbDg28
+	0vGv3JlrIQxqT4+uUH9mfle5niQi+UhaW/VxBGsmGyALgiU0auqH9BmoTu15wtbvVcx8PH03TXe
+	djkSzMVNDpiU29IInyMAUmFUkcyH6xO4bFVaEXQOrJUZCRHK1emWR2ZxZl2S++ts/rULO92xgw2
+	jM7qO/q31q+OjZVL1RZOSvet3aotuxjkNfndzIeBziRnZ8IqsYnSVxfkNThOcmoiC0Hg71X2dTz
+	JczwS0eJ0Te9kgLgdrxUESRB14QimWUPwhzaXcom2YPmE0+Ty+h42G6Os7SemA5VyqOvOyE36ZS
+	T8FldKzFDqlPPBH0Nx5qAQc0LgYr0gEdbMngEZgWy7u5dESNUw2ziRIKqzGRcskE15az9C9TKxk
+	Q3EyB8quLMn3qWW8YwpUDBzvs/lOgNwO4LmRlH/CyL2klmaxghknBm3aljOnGBvRsZt8
+X-Received: by 2002:a05:7300:50fa:b0:383:9f52:e54d with SMTP id 5a478bee46e88-3856ff52e83mr17384863eec.8.1795547653055;
+        Tue, 24 Nov 2026 11:14:13 -0800 (PST)
+Received: from localhost ([2a00:79e0:2e7c:8:ea9b:d8a3:ba44:2d0a])
+        by smtp.gmail.com with UTF8SMTPSA id 5a478bee46e88-38566cd4efesm48805462eec.12.2026.11.24.11.14.11
+        (version=TLS1_3 cipher=TLS_AES_128_GCM_SHA256 bits=128/128);
+        Tue, 24 Nov 2026 11:14:12 -0800 (PST)
+Date: Tue, 24 Nov 2026 11:14:10 -0800
+From: Brian Norris <briannorris@chromium.org>
+To: Tristan Madani <tristmd@gmail.com>
+Cc: Tristan Madani <tristan@talencesecurity.com>,
+	linux-wireless@vger.kernel.org,
+	Francesco Dolcini <francesco@dolcini.it>,
+	Jeff Chen <jeff.chen_1@nxp.com>
+Subject: Re: [PATCH v2 wireless 0/3] wifi: mwifiex: fix three
+ firmware-triggered validation issues
+Message-ID: <awXiAu5V0QIICHoc@google.com>
+References: <20261124174620.1572200-1-tristmd@gmail.com>
+ <awXQpeeRwME1kVFs@google.com>
+ <6b05e143.d1b7c3f5.1f3f2b.3fa3@mx.google.com>
 X-Mailing-List: linux-wireless@vger.kernel.org
 List-Id: <linux-wireless.vger.kernel.org>
 List-Post: <mailto:linux-wireless@vger.kernel.org>
@@ -55,64 +98,27 @@ List-Unsubscribe: <mailto:linux-wireless+unsubscribe@vger.kernel.org>
 List-Owner: <mailto:linux-wireless+owner@vger.kernel.org>
 Precedence: list
 MIME-Version: 1.0
-User-Agent: Mozilla Thunderbird
-Subject: Re: rtw89: 8922ae: ~80 Mbps TCP throughput vs ~600 Mbps on Windows
- with the same hardware
-To: Ping-Ke Shih <pkshih@realtek.com>,
- "linux-wireless@vger.kernel.org" <linux-wireless@vger.kernel.org>
-References: <a98a6666-1499-433f-8c3f-d7277224b334@jimmycushnie.com>
- <c4513d04819e4b52b855e5a21c67b8d2@realtek.com>
-Content-Language: en-US
-From: Jimmy <kernel@jimmycushnie.com>
-In-Reply-To: <c4513d04819e4b52b855e5a21c67b8d2@realtek.com>
-Content-Type: text/plain; charset=UTF-8; format=flowed
-Content-Transfer-Encoding: 7bit
+Content-Type: text/plain; charset=us-ascii
+Content-Disposition: inline
+In-Reply-To: <6b05e143.d1b7c3f5.1f3f2b.3fa3@mx.google.com>
 
-Ping-Ke Shih <pkshih@realtek.com> wrote:
- > Jimmy <kernel@jimmycushnie.com> wrote:
- >> I have a RTL8922AE which only gets 60-120 Mbps TCP throughput on
- >> Linux, even though the link reports 1200.9 MBit/s HE-MCS 11 NSS 2 in
- >> both directions with a strong signal.
- >
- > It looks like PHY rate is normal. Please capture air packets and
- > compare the difference between Windows and Linux.
+Please reply-all. And especially don't exclude the mailing list. Fixing
+that for you.
 
-Thank you for the debugging advice. I captured air traffic with my
-macbook's sniffer tool during a speed test on the PC, once on Linux and
-once on Windows. PHY rates look the same on both: data frames are at
-HE-MCS 10/11 (1080-1201 Mb/s), and Linux actually has fewer retries
-(0.2% of frames vs 1.6% on Windows).
+On Tue, Nov 24, 2026 at 08:10:58PM +0100, Tristan Madani wrote:
+> On Tue, Nov 24, 2026 at 10:00:05 AM -0800, Brian Norris wrote:
+> > Please include information about how you're testing these. (You're
+> > testing this, right?)
+> 
+> These are hardening patches for firmware-provided fields found by
+> code inspection. Direct runtime testing would require injecting
+> crafted firmware responses, which is not practical without a device
+> emulator or modified firmware.
 
-The main difference I could find is that Windows uses BlockAck way more
-than Linux:
+Testing is not only for the purpose of triggering your alleged security
+issues. It's for ensuring you don't regress real users.
 
-                                   Linux     Windows
-   BlockAck frames sent by PC      0         30332
-   BlockAck frames sent by AP      0         16455
-   PC data MPDUs per A-MPDU        1.0       4.1
-   Normal ACKs sent to PC          52704     3875
+If you can't be bothered to test, we can't be bothered to take your
+"fixes".
 
-I can send you the pcap files privately if you'd like to look at them.
-
-
- >> Things I already tried:
- >> - iw power_save off
- >
- > I think this can affect throughput significantly. Please use iw get
- > to confirm again.
-
-Confirmed: `iw dev wlan0 get power_save` prints `Power save: off`, even
-after rebooting.
-
- >> - rtw89_pci disable_aspm_l1=y disable_aspm_l1ss=y disable_clkreq=y,
- >>     rtw89_core disable_ps_mode=y (confirmed active in sysfs)
- >
- > This should be added into /etc/modprobe.d/, and cold reboot to take
- > effect. (Though I think this doesn't affect throughput too much)
-
-Yes, they're in /etc/modprobe.d/70-rtw89.conf. I did a cold boot (PSU
-switched off) and confirmed the values under
-/sys/module/rtw89_{pci,core}/parameters/ before testing. As you
-expected, they made no noticeable difference to throughput.
-
-Jimmy
+Brian
