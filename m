@@ -1,51 +1,57 @@
-Authentication-Results: smtp.subspace.kernel.org; arc=none smtp.remote-ip=81.177.160.4
+Authentication-Results: smtp.subspace.kernel.org; arc=none smtp.remote-ip=100.103.45.18
 ARC-Seal: i=1; d=subspace.kernel.org; s=arc20261015; a=rsa-sha256; cv=none;
-	t=1795505085;
-	b=xmFxnAnSmHryeAJMeTVXxsUDTJiiqCFzrmmSLrj6MUeYkxMNKMsIdPVrq3i02wMBv3wj
-	 UJTNZZoosXgjCHsMiyYz+McRDPn5zn64rkAoe+yuoztmRmoa6YqtFp0z6BbYH2GBuMF5y
-	 YUcUmCPNNPOXSs9J0/wf4e+TrzPCW/+A8KTBOAThYNGYObWEcCkLUaCpiUR68X33MLANr
-	 re4ZwAhJRBnO/QDMck0grXmeKGSq4aO5fmWqfPEoiCv4UbJ9HaKWkXkyHcStwYtyq5I7A
-	 i4qlLAV1lHUK4Lisvy4pMZDLbV4hZB0INutrGsnHIgLV+E7R8OLGlE3woqfpmA0Cd0A==
+	t=1795506034;
+	b=rxpFYEWaUufF7ImxG03ePG+zt5YhsgqXC9+uiMmduPmm7rQf4wo1z1FbAr6aPtFQQml5
+	 uefHzje508/J0Y+UhS4tngdQ1JktpM+8X8u66SyP2h7tId1yiepnS2KyuSO8vkSVWAYvF
+	 EzT0EUEN2tSmGeIw5UKsvQEGgz66nJaOnCGKDXP8sywvM42rCZTc+6yXum/kfzciAfxO0
+	 6RfAutHD7HG8c8hGdeYwbyyYlOgby8We5sMoCpRU+3PKDUBI4OOHs95pW9bwZf4rR6Jaw
+	 jwt/BViaQFeKfK6AHU1fSvkGyWea94panhk82tmgGf+qASNSrgvRQEZ+H2sJ3iaOXsg==
 ARC-Message-Signature: i=1; d=subspace.kernel.org; s=arc20261015;
-	a=rsa-sha256; c=relaxed/relaxed; t=1795505085;
-	h=DMARC-Filter:Received:Received:Received:Received:Received:Received:
-	 Date:From:To:CC:Subject:User-Agent:In-Reply-To:References:Message-ID:
-	 MIME-Version:Content-Type:Content-Transfer-Encoding:X-CC-Diagnostic;
-	bh=lu3TBw/WM/urq3xDHmNn1XSEBmwlI+PkHSfcimE0uNI=;
-	b=k0ub6zY8okQndXwUGnsMs/zgbqpVbk3/j+LFA5HPcC9nBJCYSWKNv6gAZVidq+NDPmFM
-	 +e1pXY0d2WloQXst1Nja9h69YHRrVmFHFp20X1Z1MPgSabExmvcq0ykzqi9N/iw4C9log
-	 3nR+FISbpVO+2LkBPTcDZTbxEamixo2/+jTMSO72P/0quBRRN9M8aSbLtXLvhqA+yPqyG
-	 RWaf1gcDKoFhB+P6JnSLHlLNxE7/Dcb1N0Tv2Nh5KktAeRIZYMuUK2igA0hFyrkVuSshb
-	 SlwGeQzXOIQK2KVb4NsurgHOFL1aMBSe9eIJn9ckwj1fm1+HVCak12Sk6dn/WDlUDEw==
+	a=rsa-sha256; c=relaxed/relaxed; t=1795506034;
+	h=Received:DKIM-Signature:Received:From:To:Cc:In-Reply-To:References:
+	 Subject:Message-Id:Date:MIME-Version:Content-Type:
+	 Content-Transfer-Encoding:X-Mailer;
+	bh=e4+sGCCv9a1UDa7tbuCu/ptweMZKBIyQH0q7JFAxVsw=;
+	b=xNcBr6M7fQCXDybYgJIMQxApbRbUZA6VcWr5teV2x2kEeUfYyXY/03k614GcSGyAFcgv
+	 Z5Us1OUinymYNyCVyb0tf5zBQdKV9BGtzaWEmVlQ2V3ATh/Cq0V/cTQ3dKUHFL6ORQ27E
+	 aQ+x5l4EtRy+9Y5bQolToQz7+QrahsHfc6WT2cW/KQ32RlaQUbJlU0jUix3lJld/rCKLT
+	 LZUDScBCzMkTIZJr6rcGF/xp+pgKW2duZu6+1FEWFoK6ESzcnmPlEjAecy4qNwMA/eoQO
+	 DzP7al+cmq/8WpnS3UtBUSiQp5/idHYrzAjmWsjI4OC7m/HdhokS+92msI/UE/sGpXg==
 ARC-Authentication-Results: i=1; smtp.subspace.kernel.org; 
-	dmarc=none header.from=rfareas.com;
-	spf=pass smtp.mailfrom=rfareas.com;
-	arc=none smtp.remote-ip=81.177.160.4
-Received: from s24fifth.in-solve.ru (s24fifth.in-solve.ru [81.177.160.4])
-	by smtp.subspace.kernel.org (Postfix) with ESMTP id 5257A606A326
-	for <linux-wireless@vger.kernel.org>; Tue, 24 Nov 2026 07:24:44 +0000 (UTC)
-DMARC-Filter: OpenDMARC Filter v1.4.2 smtp.subspace.kernel.org 5257A606A326
-Authentication-Results: smtp.subspace.kernel.org; dmarc=none (p=none dis=none) header.from=rfareas.com
-Authentication-Results: smtp.subspace.kernel.org; spf=pass smtp.mailfrom=rfareas.com
-Received: from Spooler by s24fifth.in-solve.ru (Mercury/32 v4.52) ID MO0006A0;
-    24 Nov 2026 10:24:44 +0300
-Received: from spooler by mail-aux1.in-solve.hidden (Mercury/32 v4.52); 24 Nov 2026 10:24:27 +0300
-Received: from mail-s22 (10.0.1.22) by mail-s24-t.1gb.ru (Mercury/32 v4.52) with ESMTP ID MG00069F;
-   24 Nov 2026 10:24:27 +0300
-Received: from Spooler by mail-s22 (Mercury/32 v4.52) ID MO000516;
-  24 Nov 2026 10:24:05 +0300
-Received: from spooler by mail-s22-aux1.in-solve.hidden (Mercury/32 v4.52); 24 Nov 2026 10:24:02 +0300
-Received: from ehlo.thunderbird.net (128.204.79.160) by mail-s22.1gb.ru (Mercury/32 v4.52) with ESMTP ID MG000515;
-   24 Nov 2026 10:24:00 +0300
-Date: Tue, 24 Nov 2026 10:24:21 +0300
-From: RFAREAS Support <support@rfareas.com>
-To: wens@kernel.org, Chen-Yu Tsai <wens@kernel.org>
-CC: linux-wireless@vger.kernel.org, wireless-regdb@lists.infradead.org
-Subject: Re: [PATCH] wireless-regdb: Update 60 GHz rule for Ukraine (UA)
-User-Agent: K-9 Mail for Android
-In-Reply-To: <CAGb2v64HFxk90gUKbtf-MbZX1dhYrpH5RT_JCWRzpUxOwpnxnQ@mail.gmail.com>
-References: <2D65518A-EBD5-4E6C-B4D2-7819D488B374@rfareas.com> <CAGb2v64HFxk90gUKbtf-MbZX1dhYrpH5RT_JCWRzpUxOwpnxnQ@mail.gmail.com>
-Message-ID: <C1FBB771-40F4-40A9-AECF-7D1F45088C36@rfareas.com>
+	dkim=pass header.d=kernel.org header.i=@kernel.org header.a=rsa-sha256 header.s=k20260515 header.b=bE6Ga1S9;
+	arc=none smtp.remote-ip=100.103.45.18
+Received: from smtp.kernel.org (quasi.space.kernel.org [100.103.45.18])
+	(using TLSv1.3 with cipher TLS_AES_256_GCM_SHA384 (256/256 bits)
+	 key-exchange X25519 server-signature ECDSA (prime256v1))
+	(No client certificate requested)
+	by smtp.subspace.kernel.org (Postfix) with ESMTPS id B8190606A332
+	for <linux-wireless@vger.kernel.org>; Tue, 24 Nov 2026 07:40:34 +0000 (UTC)
+Authentication-Results: smtp.subspace.kernel.org;
+	dkim=pass (2048-bit key) header.d=kernel.org header.i=@kernel.org header.a=rsa-sha256 header.s=k20260515 header.b=bE6Ga1S9
+Received: by smtp.kernel.org (Postfix) with ESMTPSA id B70801F000E0;
+	Tue, 24 Nov 2026 07:40:33 +0000 (UTC)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=kernel.org;
+	s=k20260515; t=1795506034;
+	bh=e4+sGCCv9a1UDa7tbuCu/ptweMZKBIyQH0q7JFAxVsw=;
+	h=From:To:Cc:In-Reply-To:References:Subject:Date;
+	b=bE6Ga1S92LdT8Vt6LSkWG5m6cSbZUBm8k+Djoo6JpC41jEPBM8K/Kxb8JBriQAk3H
+	 6bAF2ccSoWAEaIrht7uKGZmmp+EWbx2Fccvw220EqPj9mtlLhLv/CCG0xVe25UdBP0
+	 ZzwoDMRMteskYLHU06D1zk46YYGPnLHYWmztvB00oOhwHM3uylIbdnvZKpCutP4k4O
+	 8biA4SeDssfwUv1O55sToMNoaTsUFtjEAYdmizQDgylTCYR63zn1Xwip9B4Tciwp5T
+	 zMaywjlBb+Vg4M5hDyp5MLdKn8XOd0UGl3H4wbdYo6E01B/oZUN4Bct1Ak8yl0WKkp
+	 8AYKtq2J8IHvA==
+Received: from wens.tw (localhost [127.0.0.1])
+	by wens.tw (Postfix) with ESMTP id 7342D5FD11;
+	Tue, 24 Nov 2026 15:40:18 +0800 (CST)
+From: Chen-Yu Tsai <wens@kernel.org>
+To: linux-wireless@vger.kernel.org, RFAREAS Support <support@rfareas.com>
+Cc: wireless-regdb@lists.infradead.org
+In-Reply-To: <119360F5-6878-4218-AB28-D56C4E76C999@rfareas.com>
+References: <119360F5-6878-4218-AB28-D56C4E76C999@rfareas.com>
+Subject: Re: [PATCH] wireless-regdb: Allow outdoor use of 2.4 GHz for
+ Ukraine (UA)
+Message-Id: <179550601844.1353826.1904895525883818530.b4-ty@b4>
+Date: Tue, 24 Nov 2026 15:40:18 +0800
 X-Mailing-List: linux-wireless@vger.kernel.org
 List-Id: <linux-wireless.vger.kernel.org>
 List-Post: <mailto:linux-wireless@vger.kernel.org>
@@ -55,34 +61,27 @@ List-Unsubscribe: <mailto:linux-wireless+unsubscribe@vger.kernel.org>
 List-Owner: <mailto:linux-wireless+owner@vger.kernel.org>
 Precedence: list
 MIME-Version: 1.0
-Content-Type: text/plain;
- charset=utf-8
-Content-Transfer-Encoding: quoted-printable
-X-CC-Diagnostic: Header RECEIVED matches "*([0-9]+.[0-9]+.[0-9]+.[0-9]+)*" (0)
+Content-Type: text/plain; charset="utf-8"
+Content-Transfer-Encoding: 7bit
+X-Mailer: b4 0.15.2
 
-> I couldn't open this one, but my LLM agent says it matches=2E
+On Tue, 24 Nov 2026 10:21:40 +0300, RFAREAS Support wrote:
+> The UA entry marks 2400-2483.5 MHz NO-OUTDOOR. In the current list of
+> radio equipment used under general authorisation (NKEK Resolution
+> No. 361 of 3 July 2024), item 53 allows Wi-Fi access points in
+> 2400-2483.5 MHz at 100 mW e.i.r.p. "inside and outside premises", with
+> the antenna at most 6 m above ground, and item 52 (RLAN terminal
+> equipment, 100 mW e.i.r.p., 10 mW/MHz) has no indoor-only condition.
+> Resolution No. 32 of 28 January 2026 does not change these items.
+> 
+> [...]
 
-In case zakon=2Erada=2Egov=2Eua does not open from your side, the regulato=
-r
-publishes the original text of the list as well:
-https://nkek=2Egov=2Eua/static-objects/nkek-october-prod/sites/1/%D0%A0%D0=
-%9E%20%D1%82%D0%B0%20%D0%92%D0%9F/dodatok-do-postanovy-361-03072024=2Epdf
-Item 78 is not changed by the later amendments=2E
+Applied to master in wens/wireless-regdb.git, thanks!
 
-> It also noticed that the 2=2E4 GHz indoor-only restriction was removed=
-=2E
-> Could you check? If that is true, please send a follow-up patch if you
-> can=2E
+[1/1] wireless-regdb: Allow outdoor use of 2.4 GHz for Ukraine (UA)
+      https://git.kernel.org/wens/wireless-regdb/c/96a1346fbfef
 
-Confirmed=2E Item 53 allows 2=2E4 GHz Wi-Fi access points "inside and
-outside premises", with the antenna at most 6 m above ground, and
-item 52 (RLAN terminals) has no indoor-only condition=2E Follow-up sent:
+Best regards,
+-- 
+Chen-Yu Tsai <wens@kernel.org>
 
-  [PATCH] wireless-regdb: Allow outdoor use of 2=2E4 GHz for Ukraine (UA)
-
-Thanks,
-Valery
-
-
---=20
-RFAREAS Support
