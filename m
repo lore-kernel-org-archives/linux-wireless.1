@@ -1,97 +1,55 @@
-Authentication-Results: smtp.subspace.kernel.org; arc=none smtp.remote-ip=100.103.45.18
+Authentication-Results: smtp.subspace.kernel.org; arc=none smtp.remote-ip=46.4.11.11
 ARC-Seal: i=1; d=subspace.kernel.org; s=arc20261015; a=rsa-sha256; cv=none;
-	t=1795593986;
-	b=wSltgDbsAccVdwEGEHnb3TFBQLgkll374jz6AxmLTBR5q7/JemsgkOXX8Y/a7kz7W9Yd
-	 lvjjrdNXmAdvwL7AtvJRpLgS+fcXjRY0JzkXqTBtzVNrWecqx2Wm1fHAZST+wHGViE4Cz
-	 FaUDAJFa3R3tdi5eHHBcQXBPCGREn7Q/FJ8IDNKshhoEXWAasEUy1pYeZoDjtILRakBFA
-	 jX1QNlb4SaRSi4hzuQ/EovSBZmgEPQKuCGU1H7qTJJn9FlgYFyoedCbd8bWaut08FaZkt
-	 DOTFPJhDDOtdyEmgNBNwW2K6UENez7kfiDrBw3ECn1SXDqn9BjnfKMNVvlGv496SpJQ==
+	t=1795595107;
+	b=XDwpiPv9YMEXar1YmF77ifOvKex+rCOsjgcchvxcrplDB2JhbjmDPZu9pz135BehctQu
+	 3L+4DpkhZbeK5rJbfv3OnvWeWyS4pYwUPDc7qOGq9dGO23mJlOyKcFccTy4PY4RfLpOns
+	 aXa0IKefELNDQ2EyFYFUFuPGGqJfLQD0CAHsiUFyL8ZyRq44SwXU9d7aG5lf74aBittU4
+	 llu2DuaMLIDxHGe3GV5NPXjmOHOnkkCgwNlqi+kLKoF8Cyj1C5tryf5rW3teF60rHk8Mx
+	 JIX3E7uCm3PUMMZVlMa1Y0/gtTTiqpf+bYMNB7gaEi1Ur7ieM5TFAioNVNNl38Rik3Q==
 ARC-Message-Signature: i=1; d=subspace.kernel.org; s=arc20261015;
-	a=rsa-sha256; c=relaxed/relaxed; t=1795593986;
-	h=Received:DKIM-Signature:Date:From:To:Cc:Subject:Message-ID:
-	 References:MIME-Version:Content-Type:Content-Disposition:In-Reply-To;
-	bh=qtWuoC5FN2MELDFAKVm54MaDOVUHKz/6gxfQ29IMYEs=;
-	b=Hsfs2nAM1xkpvXqykcjYZ3W4PurNyQKOBM0CTsfEjnr5F3yE8G1pgnJCjp/9X1TXnDud
-	 uqnQtnpXkseVBGYplG5wJkOIgUDDfAg5xi5AeAFwr3WVrn40cAY9rkRvdj4gwIeejCAQK
-	 WsErRjR8R2BUEI9Xo8z+2uLOCCR1HsTJXfz7HuFFpnLgGKiKzN3qdPuTvP9uBzkdg8t38
-	 WMtl78VLWKrtU98/ImDF29S2l53/SxAvG5I8CwZp1hQdD6UdR8Ylchy9ln97rmbA+7v5B
-	 sXxjP/9S7VkH/ZBJIXQDuPMb/YHo5t3GHMdmFZdgCKiKtXXo2eZ7A03gIVGiP8IUYaw==
+	a=rsa-sha256; c=relaxed/relaxed; t=1795595107;
+	h=DMARC-Filter:DKIM-Signature:Received:Message-ID:Date:MIME-Version:
+	 User-Agent:From:Subject:To:Cc:Content-Language:Autocrypt:Content-Type:
+	 Content-Transfer-Encoding;
+	bh=gYElvk5ABWFSC22sY1vfwyrv8FEYgoLrGd9yZzYRu7I=;
+	b=BWk6xYZIQmF6UgXS03ambvW7oIH53N8BexVY3efe8QgzD2Uh29b/2i+oBVhHaeKGSgu/
+	 7ZOKvCMMYeU0pRwhPzJiAeUn+JwdKv4B8Q8Efj5/l38wcvRUS2m1WbWtSlARiEg/F2qSJ
+	 NDCyygou0KBb7F+7Spe3KIHkD3Apx17DC68EASuhNCFfxce+ysnLmnlzRyEstvj5IZ2Pi
+	 hAz1wL4Jz14vh8K2WSMABZaqcoMYWcTuhGkmqx8wQHFuP22ipMtwgrPJ1Wjx2PsvgqN+H
+	 S+/J+eNrceJ1Hz2vulN4kh4j6obWUekn6n43pz7SbrF3gfgVt7qGcfYh8As+Q9C2WRw==
 ARC-Authentication-Results: i=1; smtp.subspace.kernel.org; 
-	dkim=pass header.d=kernel.org header.i=@kernel.org header.a=rsa-sha256 header.s=k20260515 header.b=gUIFb+z3;
-	arc=none smtp.remote-ip=100.103.45.18
-Received: from smtp.kernel.org (quasi.space.kernel.org [100.103.45.18])
+	dmarc=pass header.from=nbd.name;
+	spf=pass smtp.mailfrom=nbd.name;
+	dkim=pass header.d=nbd.name header.i=@nbd.name header.a=rsa-sha256 header.s=20160729 header.b=Qn6p+jOq;
+	arc=none smtp.remote-ip=46.4.11.11
+Received: from nbd.name (nbd.name [46.4.11.11])
 	(using TLSv1.3 with cipher TLS_AES_256_GCM_SHA384 (256/256 bits)
-	 key-exchange X25519 server-signature ECDSA (prime256v1))
+	 key-exchange ECDHE (prime256v1) server-signature ECDSA (prime256v1) server-digest SHA256)
 	(No client certificate requested)
-	by smtp.subspace.kernel.org (Postfix) with ESMTPS id 3ED1C606A31E;
-	Wed, 25 Nov 2026 08:06:26 +0000 (UTC)
+	by smtp.subspace.kernel.org (Postfix) with ESMTPS id 8AD80606A331
+	for <linux-wireless@vger.kernel.org>; Wed, 25 Nov 2026 08:25:06 +0000 (UTC)
+DMARC-Filter: OpenDMARC Filter v1.4.2 smtp.subspace.kernel.org 8AD80606A331
+Authentication-Results: smtp.subspace.kernel.org; dmarc=pass (p=none dis=none) header.from=nbd.name
+Authentication-Results: smtp.subspace.kernel.org; spf=pass smtp.mailfrom=nbd.name
 Authentication-Results: smtp.subspace.kernel.org;
-	dkim=pass (2048-bit key) header.d=kernel.org header.i=@kernel.org header.a=rsa-sha256 header.s=k20260515 header.b=gUIFb+z3
-Received: by smtp.kernel.org (Postfix) with ESMTPSA id F0A421F000D4;
-	Wed, 25 Nov 2026 08:06:24 +0000 (UTC)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=kernel.org;
-	s=k20260515; t=1795593985;
-	bh=qtWuoC5FN2MELDFAKVm54MaDOVUHKz/6gxfQ29IMYEs=;
-	h=Date:From:To:Cc:Subject:References:In-Reply-To;
-	b=gUIFb+z3EoGY/k5hBc/4s5BAcJqoX9NRdGz5EQ6vBgq3rKgAr7rBRsJERd4dmZigO
-	 sgMEGylJulCdyIpDhHG6/2txMVQjqrlwfpZxIzCQD9ih0XAAV5jcvSffX4lkzrl50w
-	 cDOqkERHka2UohPOATjzjz7RQTUHWII6+yvEv/39m5kvL8wGeIVNx0KY9I4eCtkGIO
-	 7CyKz2J4/slnL7IdCSuRKiy7aSog5s+20Q6CNmFwovssbysi2Rs0WtFZQmgkhVyUTp
-	 WzzU5qaaMeAJRyM1mX5Ul3b1ERZi7ZWbYDbm/BGlP2UbP3Rj7THpZilyDmxSEyIYfZ
-	 j4WqRkjdYr7Qg==
-Date: Wed, 25 Nov 2026 10:06:21 +0200
-From: Leon Romanovsky <leon@kernel.org>
-To: Randy Dunlap <rdunlap@infradead.org>
-Cc: Greg Kroah-Hartman <gregkh@linuxfoundation.org>,
-	"Rafael J. Wysocki" <rafael@kernel.org>,
-	Danilo Krummrich <dakr@kernel.org>,
-	Dmitry Torokhov <dmitry.torokhov@gmail.com>,
-	Andrew Lunn <andrew@lunn.ch>,
-	Heiner Kallweit <hkallweit1@gmail.com>,
-	Russell King <linux@armlinux.org.uk>,
-	"David S. Miller" <davem@davemloft.net>,
-	Jakub Kicinski <kuba@kernel.org>, Paolo Abeni <pabeni@redhat.com>,
-	Johannes Berg <johannes@sipsolutions.net>,
-	Jonathan Corbet <corbet@lwn.net>,
-	Shuah Khan <skhan@linuxfoundation.org>,
-	Bjorn Helgaas <bhelgaas@google.com>,
-	"Joerg Roedel (AMD)" <joro@8bytes.org>,
-	Suravee Suthikulpanit <suravee.suthikulpanit@amd.com>,
-	Vasant Hegde <vasant.hegde@amd.com>, Will Deacon <will@kernel.org>,
-	Robin Murphy <robin.murphy@arm.com>,
-	David Woodhouse <dwmw2@infradead.org>,
-	Lu Baolu <baolu.lu@linux.intel.com>,
-	Johan Hovold <johan@kernel.org>, Eric Dumazet <edumazet@kernel.org>,
-	Marcel Holtmann <marcel@holtmann.org>,
-	Luiz Augusto von Dentz <luiz.dentz@gmail.com>,
-	Nipun Gupta <nipun.gupta@amd.com>,
-	Nikhil Agarwal <nikhil.agarwal@amd.com>,
-	Pieter Jansen van Vuuren <pieter.jansen-van-vuuren@amd.com>,
-	Chris Lu <chris.lu@mediatek.com>, Mans Rullgard <mans@mansr.com>,
-	Alan Stern <stern@rowland.harvard.edu>,
-	Jaroslav Kysela <perex@perex.cz>, Takashi Iwai <tiwai@suse.com>,
-	Andrew Morton <akpm@linux-foundation.org>,
-	Cornelia Huck <cornelia.huck@de.ibm.com>,
-	Andrew Morton <akpm@osdl.org>, Jeff Garzik <jeff@garzik.org>,
-	"Rafael J. Wysocki" <rafael.j.wysocki@intel.com>,
-	Bart Van Assche <bvanassche@acm.org>,
-	Alexander Duyck <alexander.h.duyck@linux.intel.com>,
-	Dan Williams <djbw@kernel.org>, linux-kernel@vger.kernel.org,
-	driver-core@lists.linux.dev, linux-input@vger.kernel.org,
-	netdev@vger.kernel.org, linux-wireless@vger.kernel.org,
-	linux-usb@vger.kernel.org, linux-bluetooth@vger.kernel.org,
-	linux-acpi@vger.kernel.org, linux-doc@vger.kernel.org,
-	linux-pci@vger.kernel.org, iommu@lists.linux.dev,
-	linux-coco@lists.linux.dev, Alexey Kardashevskiy <aik@amd.com>,
-	Luiz Augusto von Dentz <luiz.von.dentz@intel.com>,
-	Greg Kroah-Hartman <gregkh@suse.de>, linux-sound@vger.kernel.org,
-	Jason Gunthorpe <jgg@ziepe.ca>
-Subject: Re: [PATCH v4 21/33] driver core: Introduce a generic device trust
- level
-Message-ID: <20261125080621.GW14811@unreal>
-References: <20261124-device-trust-core-v4-0-037eb0d17b1f@nvidia.com>
- <20261124-device-trust-core-v4-21-037eb0d17b1f@nvidia.com>
- <1bc8f048-4d35-484b-af60-2d13541e683f@infradead.org>
+	dkim=pass (1024-bit key, unprotected) header.d=nbd.name header.i=@nbd.name header.a=rsa-sha256 header.s=20160729 header.b=Qn6p+jOq
+DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed; d=nbd.name;
+	s=20160729; h=Content-Transfer-Encoding:Content-Type:Cc:To:Subject:From:
+	MIME-Version:Date:Message-ID:Sender:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	In-Reply-To:References:List-Id:List-Help:List-Unsubscribe:List-Subscribe:
+	List-Post:List-Owner:List-Archive;
+	bh=gYElvk5ABWFSC22sY1vfwyrv8FEYgoLrGd9yZzYRu7I=; b=Qn6p+jOq/XnsBeH+qrnloVFsSO
+	fN995s15/V7M7cGInao+SZbUe32ZvAvKpIFlj1X5n7ug6Tm5+dYSdLRmQ3YlNqSdhf4Vzch15TjMM
+	/1Ji6TXWExb31eKBdF/vu/UG6QBo4OLGNbA3pROaUUycA59Z3l/PPMhmvA3FHJi/2k+8=;
+Received: from p54a43741.dip0.t-ipconnect.de ([84.164.55.65] helo=nf.local)
+	by ds12 with esmtpsa  (TLS1.3) tls TLS_ECDHE_RSA_WITH_AES_128_GCM_SHA256
+	(Exim 4.96)
+	(envelope-from <nbd@nbd.name>)
+	id 1xW8JM-0087ad-0r;
+	Wed, 25 Nov 2026 09:25:04 +0100
+Message-ID: <a5f535b9-f395-4620-9790-d98ec8de0e22@nbd.name>
+Date: Wed, 25 Nov 2026 09:25:03 +0100
 X-Mailing-List: linux-wireless@vger.kernel.org
 List-Id: <linux-wireless.vger.kernel.org>
 List-Post: <mailto:linux-wireless@vger.kernel.org>
@@ -101,52 +59,450 @@ List-Unsubscribe: <mailto:linux-wireless+unsubscribe@vger.kernel.org>
 List-Owner: <mailto:linux-wireless+owner@vger.kernel.org>
 Precedence: list
 MIME-Version: 1.0
-Content-Type: text/plain; charset=us-ascii
-Content-Disposition: inline
-In-Reply-To: <1bc8f048-4d35-484b-af60-2d13541e683f@infradead.org>
+User-Agent: Mozilla Thunderbird
+From: Felix Fietkau <nbd@nbd.name>
+Subject: pull request: mt76-next 2026-11-24 v2
+To: linux-wireless <linux-wireless@vger.kernel.org>
+Cc: Johannes Berg <johannes@sipsolutions.net>
+Content-Language: en-US
+Autocrypt: addr=nbd@nbd.name; keydata=
+ xsDiBEah5CcRBADIY7pu4LIv3jBlyQ/2u87iIZGe6f0f8pyB4UjzfJNXhJb8JylYYRzIOSxh
+ ExKsdLCnJqsG1PY1mqTtoG8sONpwsHr2oJ4itjcGHfn5NJSUGTbtbbxLro13tHkGFCoCr4Z5
+ Pv+XRgiANSpYlIigiMbOkide6wbggQK32tC20QxUIwCg4k6dtV/4kwEeiOUfErq00TVqIiEE
+ AKcUi4taOuh/PQWx/Ujjl/P1LfJXqLKRPa8PwD4j2yjoc9l+7LptSxJThL9KSu6gtXQjcoR2
+ vCK0OeYJhgO4kYMI78h1TSaxmtImEAnjFPYJYVsxrhay92jisYc7z5R/76AaELfF6RCjjGeP
+ wdalulG+erWju710Bif7E1yjYVWeA/9Wd1lsOmx6uwwYgNqoFtcAunDaMKi9xVQW18FsUusM
+ TdRvTZLBpoUAy+MajAL+R73TwLq3LnKpIcCwftyQXK5pEDKq57OhxJVv1Q8XkA9Dn1SBOjNB
+ l25vJDFAT9ntp9THeDD2fv15yk4EKpWhu4H00/YX8KkhFsrtUs69+vZQwc0cRmVsaXggRmll
+ dGthdSA8bmJkQG5iZC5uYW1lPsJgBBMRAgAgBQJGoeQnAhsjBgsJCAcDAgQVAggDBBYCAwEC
+ HgECF4AACgkQ130UHQKnbvXsvgCgjsAIIOsY7xZ8VcSm7NABpi91yTMAniMMmH7FRenEAYMa
+ VrwYTIThkTlQzsFNBEah5FQQCACMIep/hTzgPZ9HbCTKm9xN4bZX0JjrqjFem1Nxf3MBM5vN
+ CYGBn8F4sGIzPmLhl4xFeq3k5irVg/YvxSDbQN6NJv8o+tP6zsMeWX2JjtV0P4aDIN1pK2/w
+ VxcicArw0VYdv2ZCarccFBgH2a6GjswqlCqVM3gNIMI8ikzenKcso8YErGGiKYeMEZLwHaxE
+ Y7mTPuOTrWL8uWWRL5mVjhZEVvDez6em/OYvzBwbkhImrryF29e3Po2cfY2n7EKjjr3/141K
+ DHBBdgXlPNfDwROnA5ugjjEBjwkwBQqPpDA7AYPvpHh5vLbZnVGu5CwG7NAsrb2isRmjYoqk
+ wu++3117AAMFB/9S0Sj7qFFQcD4laADVsabTpNNpaV4wAgVTRHKV/kC9luItzwDnUcsZUPdQ
+ f3MueRJ3jIHU0UmRBG3uQftqbZJj3ikhnfvyLmkCNe+/hXhPu9sGvXyi2D4vszICvc1KL4RD
+ aLSrOsROx22eZ26KqcW4ny7+va2FnvjsZgI8h4sDmaLzKczVRIiLITiMpLFEU/VoSv0m1F4B
+ FtRgoiyjFzigWG0MsTdAN6FJzGh4mWWGIlE7o5JraNhnTd+yTUIPtw3ym6l8P+gbvfoZida0
+ TspgwBWLnXQvP5EDvlZnNaKa/3oBes6z0QdaSOwZCRA3QSLHBwtgUsrT6RxRSweLrcabwkkE
+ GBECAAkFAkah5FQCGwwACgkQ130UHQKnbvW2GgCeMncXpbbWNT2AtoAYICrKyX5R3iMAoMhw
+ cL98efvrjdstUfTCP2pfetyN
+Content-Type: text/plain; charset=UTF-8; format=flowed
+Content-Transfer-Encoding: 8bit
 
-On Tue, Nov 24, 2026 at 04:13:16PM -0800, Randy Dunlap wrote:
-> Hi Leon,
-> 
-> On 11/24/26 1:43 AM, Leon Romanovsky wrote:
-> > diff --git a/Documentation/admin-guide/kernel-parameters.txt b/Documentation/admin-guide/kernel-parameters.txt
-> > index 0b3c140babd94..8a94482f0b19b 100644
-> > --- a/Documentation/admin-guide/kernel-parameters.txt
-> > +++ b/Documentation/admin-guide/kernel-parameters.txt
-> > @@ -1259,6 +1259,20 @@ Kernel parameters
-> >  	dell_smm_hwmon.fan_max=
-> >  			[HW] Maximum configurable fan speed.
-> >  
-> > +	device_trust	[KNL]
-> > +			Enable device trust with blocked as the implicit default.
-> > +
-> > +	device_trust.default=
-> > +			[KNL] Set initial trust policy for all devices, including
-> > +			hotplugged devices.
-> > +			Format: { default | blocked | adversarial | unrestricted }
-> > +			No trust options selects legacy unrestricted mode, preserving
-> 
-> By "No trust options," do you mean using
-> 	"device_trust.default="
-> or just
-> 	"device_trust", which says above means "blocked"?
-> 
-> If I want the status quo (before generic trust levels), do I need to do
-> anything? If so, what?
+Hi,
 
-I mean that if you do nothing and do not write to any device_trust*
-knob, the system will continue to work exactly as it does now. That is
-what "No trust options" means.
+Here's the updated mt76 pull request for 7.5.
+It fixes the kernel-doc issues.
 
-Thanks
+- Felix
 
-> 
-> > +			bus policy and existing authorization. Otherwise blocked is the> +			implicit default. An explicit value wins regardless of option
-> > +			order. default preserves bus policy; other values replace it.
-> > +			unrestricted disables runtime policy changes.
-> > +			See Documentation/driver-api/driver-model/device-trust.rst.
-> 
-> thanks.
-> -- 
-> ~Randy
-> 
+The following changes since commit 24630ff92eff08500ec4772728d4b1fa08c28f47:
+
+   Merge git://git.kernel.org/pub/scm/linux/kernel/git/netdev/net (2026-11-19 10:02:10 -0800)
+
+are available in the Git repository at:
+
+   https://github.com/nbd168/wireless tags/mt76-next-2026-11-24
+
+for you to fetch changes up to 4ba328f0a246c7b355b4bd9493fe5d2c0266b3ea:
+
+   wifi: mt76: mt7603: remove dead WEP handling code (2026-11-24 14:40:39 +0100)
+
+----------------------------------------------------------------
+mt76 patches for 7.5
+
+- bounds checks for mcu messages
+- MLD fixes for 7996 + 7925
+- reset recovery improvements
+- mt7996 puncturing support
+- fixes and cleanups
+
+----------------------------------------------------------------
+Alexey Charkov (1):
+       wifi: mt76: mt7921u: Don't reset the USB device on probe
+
+Charlie-cy Wu (1):
+       wifi: mt76: mt7921: truncate the MTCL config to u8 explicitly
+
+Chengwei Yu (5):
+       wifi: mt76: mt7925: add NAN low power event control on suspend/resume
+       wifi: mt76: mt7925: implement NAN key management MCU command
+       wifi: mt76: mt7925: add per-peer RX IGTK/BIGTK and RX GTK WTBLs
+       wifi: mt76: mt7925: implement mt7925_nan_set_key for NAN security
+       wifi: mt76: mt7925: install NAN BIP keys standalone in sta_key_tlv
+
+Cristian Papa (3):
+       wifi: mt76: mt76x02: keep A-MSDU subframe buffers at even addresses
+       wifi: mt76: mt76x02: sync the group key PN before a restart
+       wifi: mt76: mt76x02: keep stations registered during watchdog recovery
+
+David Bauer (3):
+       wifi: mt76: mt76x02: only read QoS control for QoS data frames
+       wifi: mt76: mt7603: track consecutive failed PSE resets
+       wifi: mt76: mt7603: avoid deadlock on failed channel config
+
+Devin Wittmayer (1):
+       wifi: mt76: fix NULL dereference reading napi_threaded in debugfs
+
+Eason Lai (2):
+       wifi: mt76: flush a partial rx A-MSDU when its station is removed
+       wifi: mt76: free a partial rx A-MSDU when the phy is unregistered
+
+Emery Hsin (1):
+       wifi: mt76: mt792x: drop redundant MCU restart before firmware download
+
+Facundo Karanik (1):
+       wifi: mt76: mt7615: skip MT_TXD5_TX_STATUS_HOST for group frames
+
+Felix Fietkau (152):
+       wifi: mt76: bypass DPD on a scan channel while a monitor is active
+       wifi: mt76: honour the more-data flag when releasing buffered frames
+       wifi: mt76: mt76x02: serialise wcid drop mask updates
+       wifi: mt76: mt76x02: clear the wcid drop mask for all powersave responses
+       wifi: mt76: mt7921: validate CLC event length
+       wifi: mt76: mt7921: validate NIC capability TLV payload lengths
+       wifi: mt76: mt7925: validate NIC capability TLV lengths
+       wifi: mt76: mt7925: free the MCU event when linearising fails
+       wifi: mt76: mt7996: validate radar, thermal and WED RRO event lengths
+       wifi: mt76: connac: validate the RAM firmware region table
+       wifi: mt76: mt7996: validate the RAM firmware region table
+       wifi: mt76: mt7925: validate CLC firmware regions and records
+       wifi: mt76: connac: validate the ROM patch section table
+       wifi: mt76: mt7996: validate the ROM patch section table
+       wifi: mt76: mt792x: use mt76_connac2_fw_check()
+       wifi: mt76: mt7996: take the link of an 802.3 frame from its station
+       wifi: mt76: mt7996: do not update beacons while CSA is active
+       wifi: mt76: mt7996: only remove a BMC STA_REC that was added
+       wifi: mt76: mt7996: pass the puncturing bitmap to the firmware
+       wifi: mt76: abort a scan when the chanctx changes
+       wifi: mt76: set the channel again when the chanctx puncturing changes
+       wifi: mt76: mt7996: advertise preamble puncturing support
+       wifi: mt76: mt7996: keep scan and ROC links out of the MLD group
+       wifi: mt76: mt7996: factor the vif link teardown out of remove_interface
+       wifi: mt76: mt7996: destroy station links before the MLD group is freed
+       wifi: mt76: mt7996: send MLD link operations for an AP MLD only
+       wifi: mt76: mt7996: set up a vif link again on another radio
+       wifi: mt76: mt7996: describe an MLD peer with the PEER_MLD command
+       wifi: mt76: mt7915: honour the valid flag in efuse block reads
+       wifi: mt76: mt7996: skip MLD address translation for encap offload frames
+       wifi: mt76: mt7921: honour the valid flag in efuse block reads
+       wifi: mt76: mt7915: upload the CSA beacon only once
+       wifi: mt76: read the chanctx of a link once
+       wifi: mt76: restart the beacon monitor of a link that gets a chanctx again
+       wifi: mt76: publish the beacon monitor interval after its timestamp
+       wifi: mt76: mt7996: keep rx header translation off while a monitor runs
+       wifi: mt76: mt7996: apply monitor mode again after a full reset
+       wifi: mt76: check the RX PN of an MLD peer once per peer
+       wifi: mt76: mt7996: send no MLD_SETUP when station links only go away
+       wifi: mt76: mt7996: keep a unicast management frame on its MLO link
+       wifi: mt76: connac: bound the scan IEs in mt76_connac_mcu_hw_scan()
+       wifi: mt76: mt7925: disable NAN again if the PHY setting update fails
+       wifi: mt76: don't pin undrainable PS stations in the tx scheduler
+       wifi: mt76: mt7996: return a negative error for a firmware status
+       wifi: mt76: mt7996: use the default timeout for STA_REC and BSS_INFO
+       wifi: mt76: mt7915: use the default timeout for STA_REC and BSS_INFO
+       wifi: mt76: delete only the RX NAPIs that were added
+       wifi: mt76: mt7996: report radar on the channel context of its band
+       wifi: mt76: mt7996: stop WED before the DMA reset of a full reset
+       wifi: mt76: skip the radiotap TLVs in mt76_skb_get_hdr()
+       wifi: mt76: find the first A-MSDU subframe behind the radiotap data
+       wifi: mt76: mark all but the last subframe of an A-MSDU chain
+       wifi: mt76: mt7996: set qos_ctl of a frame that hardware reordered
+       wifi: mt76: check the PN of a BA session frame at its release
+       wifi: mt76: check the RX PN of CCMP-256, GCMP and GCMP-256 keys
+       wifi: mt76: connac: return a negative error for a firmware status
+       wifi: mt76: guard the tx_list of every phy with one lock
+       wifi: mt76: keep an unpublished wcid off the TX and poll lists
+       wifi: mt76: mt7925: do not take iflist_mtx under the mutex
+       wifi: mt76: mt7925: take each polled link under sta_poll_lock
+       wifi: mt76: mt7615: take each polled station under sta_poll_lock
+       wifi: mt76: mt7996: limit the SKU TX power to the current channel
+       wifi: mt76: use the link struct of a primary station link other than 0
+       wifi: mt76: refuse a scan or ROC on a radio during a channel switch
+       wifi: mt76: mt7996: keep RX running on a monitor with fcsfail
+       wifi: mt76: look up the BA session of a BlockAckReq on the primary link
+       wifi: mt76: free a replayed 802.3 frame with all its subframes
+       wifi: mt76: keep one remain-on-channel request per interface
+       wifi: mt76: mt7996: install station keys on a link without chanctx
+       wifi: mt76: keep mac_work running when a ROC request fails
+       wifi: mt76: keep mac_work running when a chanctx switch fails
+       wifi: mt76: mt7925: install pairwise keys on station links added later
+       wifi: mt76: wait for a ROC completion in progress on cancel
+       wifi: mt76: mt7925: keep the MLD record until the last link is removed
+       wifi: mt76: mt7996: read a new MIB baseline after the firmware reload
+       wifi: mt76: mt7915: read a new MIB baseline after the firmware reload
+       wifi: mt76: mt7921: skip the ND offload update of a vif not in the driver
+       wifi: mt76: mt7925: skip the ND offload update of a vif not in the driver
+       wifi: mt76: take the remaining wcids off the phy tx_list at reset
+       wifi: mt76: take the remaining wcids off sta_poll_list at reset
+       wifi: mt76: mt7915: take the remaining stations off sta_rc_list at reset
+       wifi: mt76: mt7996: list only published links on sta_rc_list
+       wifi: mt76: mt7996: take the remaining links off sta_rc_list at reset
+       wifi: mt76: mt7915: take the TWT flows of a removed station off twt_list
+       wifi: mt76: mt7996: take the TWT flows of a removed station off twt_list
+       wifi: mt76: mt7915: drop the TWT agreements at a full reset
+       wifi: mt76: mt7996: drop the TWT agreements at a full reset
+       wifi: mt76: mt7915: read twt_list under the mutex in twt_stats
+       wifi: mt76: mt7996: read twt_list under the mutex in twt_stats
+       wifi: mt76: mt7915: publish the global wcid again after a full reset
+       wifi: mt76: mt7996: publish the global wcid again after a full reset
+       wifi: mt76: mt7925: keep the antenna mask across a firmware reload
+       wifi: mt76: mt7925: remove mt7925_mcu_del_dev()
+       wifi: mt76: mt7921: keep the antenna mask across a firmware reload
+       wifi: mt76: mt792x: flush frames that still wait for the TX worker
+       wifi: mt76: mt7925: send the deauth of an MLD station on its AC queue
+       wifi: mt76: mt7925: free the vif links when all links go
+       wifi: mt76: mt7925: free removed vif links after an RCU grace period
+       wifi: mt76: remove a replayed station from the driver before the add
+       wifi: mt76: mt7925: run the reset link replay under the wiphy lock
+       wifi: mt76: mt7925: take the mutex before the link_info_changed lookup
+       wifi: mt76: mt7925: hold the mutex for the link lookup in conf_tx
+       wifi: mt76: mt7925: skip a polled link without a station
+       wifi: mt76: mt7925: skip a link without a link conf in the MLO PS update
+       wifi: mt76: mt7925: restore the beacon filter when monitor mode ends
+       wifi: mt76: usb: do not park the TX worker again under MT76_RESET
+       wifi: mt76: mt7925: keep the default link in the active links
+       wifi: mt76: mt7925: read the monitor state under the mutex for deep sleep
+       wifi: mt76: clear roc_link before the ROC link is freed
+       wifi: mt76: mt792x: handle all interfaces of a channel context
+       wifi: mt76: mt792x: set up the sniffer when a monitor gets its channel
+       wifi: mt76: buffer Disassociation frames for stations in power save
+       wifi: mt76: mt7921: read the monitor state under the mutex for deep sleep
+       wifi: mt76: mt7925: wake the device to unassign a channel context
+       wifi: mt76: mt7996: keep the firmware log settings across a reload
+       wifi: mt76: mt7915: keep the firmware log settings across a reload
+       wifi: mt76: mt7996: name a new secondary link to the firmware first
+       wifi: mt76: add a helper to point the TXQs of a station at a wcid
+       wifi: mt76: mt7925: move the default link to a remaining link
+       wifi: mt76: mt7925: keep the deflink wcid index until station removal
+       wifi: mt76: mt792x: look up the TX links under RCU
+       wifi: mt76: mt7925: read the links under RCU in the IPv6 notifier
+       wifi: mt76: mt7925: abort a ROC on the BSS that requested it
+       wifi: mt76: mt7925: take the link conf of a removed link from old[]
+       wifi: mt76: mt7925: send the MLO ROC only for a station vif
+       wifi: mt76: mt7996: send the Beacon rate table again after a full reset
+       wifi: mt76: mt7996: restore the operating channel after an L1 SER
+       wifi: mt76: reset the DFS state of a phy at a full reset
+       wifi: mt76: mt7996: abort a background CAC at a full reset
+       wifi: mt76: mt7915: abort a background CAC at a full reset
+       wifi: mt76: mt7996: clear the airtime counts with the WTBL counters
+       wifi: mt76: mt7996: drop the host WTBL write of a fixed GI
+       wifi: mt76: mt7925: don't reset the USB device on probe
+       wifi: mt76: mt7925: undo the BSS of a failed interface add
+       wifi: mt76: mt7915: read the PS sync state of mt7986 and mt7981
+       wifi: mt76: mt7915: leave the BIP check of a group frame to mac80211
+       wifi: mt76: mt7921: leave the BIP check of a group frame to mac80211
+       wifi: mt76: mt7925: leave the BIP check of a group frame to mac80211
+       wifi: mt76: mt7615: leave the BIP check of a group frame to mac80211
+       wifi: mt76: mt7925: use wcid_to_sta() in mt7925_mac_write_txwi_8023()
+       wifi: mt76: log the firmware status of a failed MCU command
+       wifi: mt76: mt7996: clear the ADM counters only in the airtime poll
+       wifi: mt76: mt7915: send mt7981 only the group units its firmware holds
+       wifi: mt76: take the DFS state from the off-channel flag
+       wifi: mt76: read roc_phy and roc_link once without the mutex
+       wifi: mt76: mt7996: add only the active links of a station MLD's peer
+       wifi: mt76: mt7996: resume the radar TX stop at an operating channel set
+       wifi: mt76: mt7996: divide by the full TWT wake interval
+       wifi: mt76: mt7915: divide by the full TWT wake interval
+       wifi: mt76: mt7996: send the SRG bitmaps in one block per band
+       wifi: mt76: connac: set the band of an RX block ack scoreboard reset
+       wifi: mt76: mt7915: reset the CCA statistics of band 1 on mt7916
+
+Jacobs Wu (14):
+       wifi: mt76: mt7925: send the common scan IEs and size the request
+       wifi: mt76: mt7925: assign the interface WTBL to the NAN management TXQ
+       wifi: mt76: mt7925: do not deactivate shared NAN BSS on peer STA removal
+       wifi: mt76: gate NAN unicast mgmt by peer availability via STA queues
+       wifi: mt76: mt7925: hold NAN mgmt TX to the discovery window
+       wifi: mt76: mt7925: double the retry budget for NAN unicast management
+       wifi: mt76: mt7925: let TX status of DW-held NAN frames outlive the DW period
+       wifi: mt76: mt7925: defer the NAN joined-cluster event out of NAN_START
+       wifi: mt76: mt7925: steer NAN handshake frames by committed-bitmap state
+       wifi: mt76: mt7925: disable only the RX NAPI instances that exist
+       wifi: mt76: mt7925: stop queueing resets once the device is being removed
+       wifi: mt76: mt7925: bound the lifetime of NAN unicast management frames
+       wifi: mt76: mt7925: always deliver the joined-cluster event through the deferred work
+       wifi: mt76: mt792x: allow three channels in the NAN combination
+
+Jared Huang (1):
+       wifi: mt76: mt7925: add 5.9G channel list and last batch size for sar update
+
+Jeff Hsu (1):
+       wifi: mt76: mt7925: do not reset WPDMA before stopping NAPI on reset
+
+Jiale Yao (29):
+       wifi: mt76: mt7603: validate MCU response length
+       wifi: mt76: mt7915: validate MCU response lengths
+       wifi: mt76: mt7915: validate MURU statistics response
+       wifi: mt76: mt7915: validate EEPROM response length
+       wifi: mt76: mt7915: validate free-block response length
+       wifi: mt76: mt7915: validate channel MIB response length
+       wifi: mt76: mt7915: validate RX rate response length
+       wifi: mt76: mt7915: validate WED TX statistics response
+       wifi: mt76: mt7915: validate RF register response length
+       wifi: mt76: mt7996: clamp VHT/HE beamforming NSS
+       wifi: mt76: mt7996: clamp EHT beamforming NSS
+       wifi: mt76: mt7921: validate MCU response lengths
+       wifi: mt76: mt7921: validate EEPROM response length
+       wifi: mt76: mt7921: validate TX power response length
+       wifi: mt76: mt7921: validate testmode query response
+       wifi: mt76: mt7925: validate MCU response lengths
+       wifi: mt76: mt7925: validate register query response
+       wifi: mt76: mt7925: validate EEPROM response length
+       wifi: mt76: mt7925: validate temperature response length
+       wifi: mt76: mt7925: validate TX power response length
+       wifi: mt76: mt7925: validate radio status response
+       wifi: mt76: mt792x: bound firmware release-info parsing
+       wifi: mt76: mt7996: validate MCU response lengths
+       wifi: mt76: mt7996: validate EEPROM response lengths
+       wifi: mt76: mt7996: validate free-block response length
+       wifi: mt76: mt7996: validate channel MIB response length
+       wifi: mt76: mt7996: validate temperature response length
+       wifi: mt76: mt7996: validate RF register response length
+       wifi: mt76: mt7996: stop radios after add failure
+
+Josef Schlehofer (2):
+       wifi: mt76: allow LEDs with only brightness_set_blocking
+       wifi: mt76: mt7925: add LED support for USB adapters
+
+Michał Mirosław (1):
+       wifi: mt76: mt7925: deduplicate MLD support code in mt7925_mac_link_sta_add
+
+Oleh Shcherba (1):
+       wifi: mt76: mt7603: remove dead WEP handling code
+
+Ryan Brue (4):
+       wifi: mt76: mt7663s: don't advertise random MAC address scans
+       wifi: mt76: mt7615: wait while Bluetooth downloads the MT7663 patch
+       wifi: mt76: sdio: use CMD52 to mask and unmask the interrupt
+       wifi: mt76: mt7663s: use RX enhance mode
+
+Shiji Yang (2):
+       wifi: mt76: simplify power calculation for mt7603 and mt7615
+       wifi: mt76: connac: remove useless tx_power calculation
+
+Thomas Fourier (1):
+       wifi: mt76: sdio: Fix possible data race when dequeuing skb
+
+Tony-TC Lee (3):
+       wifi: mt76: mt7925: zero the whole testmode command buffer
+       wifi: mt76: mt7925: report an error for an unknown testmode query id
+       wifi: mt76: mt7925: accept testmode replies shorter than the buffer
+
+Xiangwu Lai (1):
+       wifi: mt76: mt7915: fix clock leak in mt798x_wmac_init()
+
+Yin-Ming Li (3):
+       wifi: mt76: mt7921: quiesce work before unregistering
+       wifi: mt76: mt7921: drain PCIe activity before freeing queues
+       wifi: mt76: mt7921: disable SDIO work before bus teardown
+
+Zhao Li (1):
+       wifi: mt76: mt7996: check the RX WCID before using its station link
+
+Ziheng Wei (2):
+       wifi: mt76: mt7925: fix mt7925_reverse_frag0_hdr_trans() for MLO
+       wifi: mt76: connac: use wcid_to_sta() when dequeuing PM frames
+
+allen.chien (3):
+       wifi: mt76: mt7925: skip WoW ctrl for unassociated stations
+       wifi: mt76: mt7925: program the fixed rate table via MCU on MT7928
+       wifi: mt76: clamp channel power to the s8 range
+
+james-ly huang (8):
+       wifi: mt76: mt7925: drop probe frames received on a foreign channel
+       wifi: mt76: mt7925: bound the TX lifetime of P2P mgmt frames
+       wifi: mt76: mt7925: give every P2P interface a BMC wcid of its own
+       wifi: mt76: mt7925: harden the ROC channel-grant handshake
+       wifi: mt76: mt7925: describe the real chandef in ROC requests
+       wifi: mt76: mt7925: request the channel before programming a GO BSS
+       wifi: mt76: mt7925: inject the deauth for an aging-timeout SAP event
+       wifi: mt76: mt7925: track BSS absence and drop stale GO probe responses
+
+  drivers/net/wireless/mediatek/mt76/agg-rx.c          |  13 ++-
+  drivers/net/wireless/mediatek/mt76/channel.c         | 144 ++++++++++++++++++-----
+  drivers/net/wireless/mediatek/mt76/debugfs.c         |   3 +
+  drivers/net/wireless/mediatek/mt76/dma.c             |   3 +-
+  drivers/net/wireless/mediatek/mt76/mac80211.c        | 350 +++++++++++++++++++++++++++++++++++++------------------
+  drivers/net/wireless/mediatek/mt76/mt76.h            | 117 ++++++++++++++++++-
+  drivers/net/wireless/mediatek/mt76/mt7603/mac.c      |  27 ++---
+  drivers/net/wireless/mediatek/mt76/mt7603/main.c     |   8 +-
+  drivers/net/wireless/mediatek/mt76/mt7603/mcu.c      |   8 +-
+  drivers/net/wireless/mediatek/mt76/mt7603/mt7603.h   |   1 +
+  drivers/net/wireless/mediatek/mt76/mt7615/init.c     |   6 +
+  drivers/net/wireless/mediatek/mt76/mt7615/mac.c      |  20 +++-
+  drivers/net/wireless/mediatek/mt76/mt7615/mcu.c      |  33 ++++--
+  drivers/net/wireless/mediatek/mt76/mt7615/sdio.c     |  28 ++++-
+  drivers/net/wireless/mediatek/mt76/mt7615/usb.c      |   2 +-
+  drivers/net/wireless/mediatek/mt76/mt76_connac_mac.c |   3 +-
+  drivers/net/wireless/mediatek/mt76/mt76_connac_mcu.c |  94 ++++++++++++---
+  drivers/net/wireless/mediatek/mt76/mt76_connac_mcu.h |  30 ++++-
+  drivers/net/wireless/mediatek/mt76/mt76x0/pci.c      |   4 +-
+  drivers/net/wireless/mediatek/mt76/mt76x0/usb.c      |   3 +-
+  drivers/net/wireless/mediatek/mt76/mt76x02.h         |   2 +
+  drivers/net/wireless/mediatek/mt76/mt76x02_mac.c     |  22 +++-
+  drivers/net/wireless/mediatek/mt76/mt76x02_mmio.c    |  27 ++---
+  drivers/net/wireless/mediatek/mt76/mt76x02_txrx.c    |  25 +++-
+  drivers/net/wireless/mediatek/mt76/mt76x02_util.c    |  11 +-
+  drivers/net/wireless/mediatek/mt76/mt76x2/pci.c      |   3 +-
+  drivers/net/wireless/mediatek/mt76/mt76x2/pci_main.c |   1 +
+  drivers/net/wireless/mediatek/mt76/mt76x2/usb.c      |   3 +-
+  drivers/net/wireless/mediatek/mt76/mt7915/debugfs.c  |  55 +--------
+  drivers/net/wireless/mediatek/mt76/mt7915/eeprom.c   |   2 +-
+  drivers/net/wireless/mediatek/mt76/mt7915/eeprom.h   |   2 +
+  drivers/net/wireless/mediatek/mt76/mt7915/init.c     |  29 +++--
+  drivers/net/wireless/mediatek/mt76/mt7915/mac.c      |  51 ++++++--
+  drivers/net/wireless/mediatek/mt76/mt7915/main.c     |  27 +++--
+  drivers/net/wireless/mediatek/mt76/mt7915/mcu.c      | 164 ++++++++++++++++++++++----
+  drivers/net/wireless/mediatek/mt76/mt7915/mcu.h      |  10 ++
+  drivers/net/wireless/mediatek/mt76/mt7915/mt7915.h   |   3 +
+  drivers/net/wireless/mediatek/mt76/mt7915/soc.c      |   8 +-
+  drivers/net/wireless/mediatek/mt76/mt7921/debugfs.c  |   3 +-
+  drivers/net/wireless/mediatek/mt76/mt7921/init.c     |  31 +++++
+  drivers/net/wireless/mediatek/mt76/mt7921/mac.c      |   7 +-
+  drivers/net/wireless/mediatek/mt76/mt7921/main.c     |  56 ++++++---
+  drivers/net/wireless/mediatek/mt76/mt7921/mcu.c      | 143 +++++++++++++++++------
+  drivers/net/wireless/mediatek/mt76/mt7921/pci.c      |  40 +++++--
+  drivers/net/wireless/mediatek/mt76/mt7921/sdio.c     |  17 +--
+  drivers/net/wireless/mediatek/mt76/mt7921/testmode.c |   4 +
+  drivers/net/wireless/mediatek/mt76/mt7921/usb.c      |   3 -
+  drivers/net/wireless/mediatek/mt76/mt7925/Makefile   |   2 +-
+  drivers/net/wireless/mediatek/mt76/mt7925/debugfs.c  |   8 +-
+  drivers/net/wireless/mediatek/mt76/mt7925/init.c     |  54 +++++++++
+  drivers/net/wireless/mediatek/mt76/mt7925/mac.c      | 131 ++++++++++++++++++---
+  drivers/net/wireless/mediatek/mt76/mt7925/main.c     | 721 ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++-------------------------
+  drivers/net/wireless/mediatek/mt76/mt7925/mcu.c      | 485 +++++++++++++++++++++++++++++++++++++++++++++++++++-------------------------
+  drivers/net/wireless/mediatek/mt76/mt7925/mcu.h      |  13 ++-
+  drivers/net/wireless/mediatek/mt76/mt7925/mt7925.h   |  26 ++++-
+  drivers/net/wireless/mediatek/mt76/mt7925/nan.c      | 604 +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++---
+  drivers/net/wireless/mediatek/mt76/mt7925/nan.h      | 118 +++++++++++++++++++
+  drivers/net/wireless/mediatek/mt76/mt7925/p2p.c      | 534 +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+  drivers/net/wireless/mediatek/mt76/mt7925/p2p.h      |  82 +++++++++++++
+  drivers/net/wireless/mediatek/mt76/mt7925/pci.c      |  13 +++
+  drivers/net/wireless/mediatek/mt76/mt7925/pci_mac.c  |  63 ++++++++--
+  drivers/net/wireless/mediatek/mt76/mt7925/regs.h     |   8 ++
+  drivers/net/wireless/mediatek/mt76/mt7925/testmode.c |  15 ++-
+  drivers/net/wireless/mediatek/mt76/mt7925/usb.c      |   4 +-
+  drivers/net/wireless/mediatek/mt76/mt792x.h          | 154 +++++++++++++++++++++---
+  drivers/net/wireless/mediatek/mt76/mt792x_core.c     | 142 ++++++++++++++++-------
+  drivers/net/wireless/mediatek/mt76/mt792x_dma.c      |   3 +
+  drivers/net/wireless/mediatek/mt76/mt792x_usb.c      |   4 +
+  drivers/net/wireless/mediatek/mt76/mt7996/debugfs.c  |  53 +--------
+  drivers/net/wireless/mediatek/mt76/mt7996/dma.c      |  25 +++-
+  drivers/net/wireless/mediatek/mt76/mt7996/init.c     |  35 +++---
+  drivers/net/wireless/mediatek/mt76/mt7996/mac.c      | 147 ++++++++++++++++++-----
+  drivers/net/wireless/mediatek/mt76/mt7996/main.c     | 533 ++++++++++++++++++++++++++++++++++++++++++++++++++++++++---------------------------
+  drivers/net/wireless/mediatek/mt76/mt7996/mcu.c      | 415 +++++++++++++++++++++++++++++++++++++++++++++++++++++++++--------
+  drivers/net/wireless/mediatek/mt76/mt7996/mcu.h      |  63 +++++++++-
+  drivers/net/wireless/mediatek/mt76/mt7996/mt7996.h   |  14 +++
+  drivers/net/wireless/mediatek/mt76/mt7996/regs.h     |   6 +
+  drivers/net/wireless/mediatek/mt76/scan.c            |   7 +-
+  drivers/net/wireless/mediatek/mt76/sdio.c            |  20 +++-
+  drivers/net/wireless/mediatek/mt76/sdio_txrx.c       |  28 +++--
+  drivers/net/wireless/mediatek/mt76/tx.c              | 110 +++++++++++++++---
+  drivers/net/wireless/mediatek/mt76/usb.c             |   8 +-
+  82 files changed, 5077 insertions(+), 1217 deletions(-)
+  create mode 100644 drivers/net/wireless/mediatek/mt76/mt7925/p2p.c
+  create mode 100644 drivers/net/wireless/mediatek/mt76/mt7925/p2p.h
