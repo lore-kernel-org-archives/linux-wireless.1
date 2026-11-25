@@ -1,72 +1,71 @@
-Authentication-Results: smtp.subspace.kernel.org; arc=none smtp.remote-ip=74.125.82.200
+Authentication-Results: smtp.subspace.kernel.org; arc=none smtp.remote-ip=74.125.82.71
 ARC-Seal: i=1; d=subspace.kernel.org; s=arc20261015; a=rsa-sha256; cv=none;
-	t=1795644937;
-	b=BNGfQtpyMtwzA8Tci5R261nV0osx9DDq+zChJ+mX7jgcxCm1lxccwwzFW+U/ltREwzBU
-	 Ml1DCInoz528YJl1XHtIU1Xt2ZPLLzEPFM12BcH/Xg1AqTVVM3MSyLG3/ARp+S1XwrHOT
-	 LRDDymtdNI8VoI9D9KGRrPbkL+s0/qFgldarG12+9e8glO30/NDTpAaw7B/wI5kc2cxRG
-	 ePww1BmSFCOGyRW4Ah9KbTScBJL5na75ZvdxwWICqO4527gHYn7LsBjkTbxH5lyWbQWD+
-	 8+6hPkNr7tPsJOjPafsaYbgSXNoWdBls4idCY1Sog2NgHwouEPdMGBvrungqaRG50EA==
+	t=1795644988;
+	b=EDh3HkzDHUyNa58WOzXDQ6CTB3lrSFVEvWhK9ZmM6+ZfjpRG2P170NefabkWiBwvvMgZ
+	 bu30Q8bML6+1Z0XHj2bJl4F81P5+dhNoUHguvkMFr/ookR8Do9bMW9/LdxhV35cl+qLPW
+	 xBmDmHW9pMKMQfqyX75TdQte1x98UiCzJpMY6giJ3xXnXXajPajMXIyyXSUuDkQdwLR1s
+	 xR1LECL1vxuygA4/q8oXP9COlntb5dsIe0fSBLYglrLORghmf3I5O9uzjtir4NBTJ+LcW
+	 MGMUd83AAKdzT8j/C3cmJ8A0SSETwPFAWtyvj8RLnJTIB590FEJunuwEO9Kj84xnZQA==
 ARC-Message-Signature: i=1; d=subspace.kernel.org; s=arc20261015;
-	a=rsa-sha256; c=relaxed/relaxed; t=1795644937;
+	a=rsa-sha256; c=relaxed/relaxed; t=1795644988;
 	h=DMARC-Filter:Received:DKIM-Signature:X-Google-DKIM-Signature:
-	 X-Forwarded-Encrypted:X-Gm-Message-State:X-Received:Date:Mime-Version:
-	 X-Mailer:Message-ID:Subject:From:To:Cc:Content-Type;
-	bh=HoLpNZUPpAV0s/IN4AE3BuQqpTSM/yM+54mb7fzDFTw=;
-	b=aBDey7Zxqb7+5regeaCaAMpJhME2uqFSEAREdKuSZAWBeeLL9d9sUuY4MxJ69dRwDO68
-	 o+BivjkVjVxwvQs47MoBX9Djfd+DiET2aAEKzwmd+QiESy/mx2n4rmv3gGkj5ME09+TAk
-	 OYwt1w75zhXOvySeUztyoyxs6m/KeocO4Tym1wnygFMbNxhopDY3ab+gnPw/wpRO13oIr
-	 C/4hJlsY/6OpOrKOKALeGB1YfMb8IwqaDMUzkLBWjeMrj58BX9D+dtpbE9jPkRPfPGc/j
-	 Y8RN0lpr3jmXvC3hASoyycMo4QD/wlok90o5P/k0KB065L8JpcnjaCAa0Gv8biLrRUQ==
+	 X-Gm-Message-State:X-Received:Date:Mime-Version:X-Mailer:Message-ID:
+	 Subject:From:To:Cc:Content-Type;
+	bh=JWm3F65cTvbkSUDXl1Y/GIGqkgZqbiVzOvBBoT7EL0A=;
+	b=Cwpyf5auyxN3UqgaOK5Eo4WTrIcUHu6RjcVRqZ9qeU9GzL7qFQ9rxp+dWevx6FQe6IeQ
+	 7ihewUkOgrOy3Jn0/emnh7K1/1WuwQuVTQgaNt5iqlwlYM3ZBnS1dRNufW8AvlBv09r5Y
+	 8zU1qgFe9ym19tiaZKe0pTmFu/mCvGh+S+4QHd3p5hKbwMTMMzSxiF3AwDEDwb5V1r5Yl
+	 hhsXydCzvGD6hyGddDF/zELbrV1fpyYY1wnHU17AraQIS696D7JqQIMtPit69yjMwmSwf
+	 snnguneNdcWOa8h6L8sc5HeSu3UwhgPeESKrq7iOMuBJOfi2ufpaTAFDFXs6bzRrJ+w==
 ARC-Authentication-Results: i=1; smtp.subspace.kernel.org; 
 	dmarc=pass header.from=google.com;
 	spf=pass smtp.mailfrom=flex--elkin.bounces.google.com;
-	dkim=pass header.d=google.com header.i=@google.com header.a=rsa-sha256 header.s=20260707 header.b="eQN/XD6H";
-	arc=none smtp.remote-ip=74.125.82.200
-Received: from mail-dy1-f200.google.com (mail-dy1-f200.google.com [74.125.82.200])
+	dkim=pass header.d=google.com header.i=@google.com header.a=rsa-sha256 header.s=20260707 header.b=AK08crEq;
+	arc=none smtp.remote-ip=74.125.82.71
+Received: from mail-dl1-f71.google.com (mail-dl1-f71.google.com [74.125.82.71])
 	(using TLSv1.3 with cipher TLS_AES_128_GCM_SHA256 (128/128 bits)
 	 key-exchange X25519 server-signature ECDSA (prime256v1) server-digest SHA256)
 	(No client certificate requested)
-	by smtp.subspace.kernel.org (Postfix) with ESMTPS id BF1E6606A323
-	for <linux-wireless@vger.kernel.org>; Wed, 25 Nov 2026 22:15:36 +0000 (UTC)
-DMARC-Filter: OpenDMARC Filter v1.4.2 smtp.subspace.kernel.org BF1E6606A323
+	by smtp.subspace.kernel.org (Postfix) with ESMTPS id E723A606A31E
+	for <linux-wireless@vger.kernel.org>; Wed, 25 Nov 2026 22:16:27 +0000 (UTC)
+DMARC-Filter: OpenDMARC Filter v1.4.2 smtp.subspace.kernel.org E723A606A31E
 Authentication-Results: smtp.subspace.kernel.org; dmarc=pass (p=reject dis=none) header.from=google.com
 Authentication-Results: smtp.subspace.kernel.org; spf=pass smtp.mailfrom=flex--elkin.bounces.google.com
 Authentication-Results: smtp.subspace.kernel.org;
-	dkim=pass (2048-bit key, unprotected) header.d=google.com header.i=@google.com header.a=rsa-sha256 header.s=20260707 header.b=eQN/XD6H
-Received: by mail-dy1-f200.google.com with SMTP id 5a478bee46e88-386a0f79047so6672093eec.1
-        for <linux-wireless@vger.kernel.org>; Wed, 25 Nov 2026 14:15:36 -0800 (PST)
+	dkim=pass (2048-bit key) header.d=google.com header.i=@google.com header.a=rsa-sha256 header.s=20260707 header.b=AK08crEq
+Received: by mail-dl1-f71.google.com with SMTP id a92af1059eb24-16bc6f3fdb1so3932913c88.0
+        for <linux-wireless@vger.kernel.org>; Wed, 25 Nov 2026 14:16:27 -0800 (PST)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=google.com; s=20260707; t=1795644936; x=1796249736; darn=vger.kernel.org;
+        d=google.com; s=20260707; t=1795644987; x=1796249787; darn=vger.kernel.org;
         h=content-type:cc:to:from:subject:message-id:mime-version:date:from
          :to:cc:subject:date:message-id:reply-to:content-type;
-        bh=HoLpNZUPpAV0s/IN4AE3BuQqpTSM/yM+54mb7fzDFTw=;
-        b=eQN/XD6Hq8wMXIj1ecSVa1boHANg4KhmxmXSv42V30BijwxyKn9dP/cEnIHUx72yJm
-         mi66UrhqpqZGm7vA85JDOFVORQL5WAPpi4T0DPthelVppjHBX0ZnnD6BL8QR+u76L+Jv
-         mbpQmftPDARFAYpQDVayDuhbYa2gYjTLWuT3yCsw6i59uREfA5iajifhdYLcz6hApWm7
-         nbTvmDaVO94Mvqwyp/pEXzyTpceH9Gbog0Mr3ytJahErNL2HwY/aA00EmtYxkE4Ev+4u
-         TOJY0DqP+dQTbHeAlJ0in894XvDmVMA6Twnr6Q+EwGfk50WQ4zk3hAWNtneRFdvFO0ND
-         +VTQ==
+        bh=JWm3F65cTvbkSUDXl1Y/GIGqkgZqbiVzOvBBoT7EL0A=;
+        b=AK08crEqNBBrtaJJXY0S/ZfGdOYuGH/xEsV/EJyUJPtrXxziBKkMv6qstV+qiKlbtp
+         8/c4ffKg6rHGFZnzmbFi6B23K0X1cj3zkCIxC1DYSHyVkbeETSpP8BWNLojaJoAlGhnA
+         vws39xwMZ/O21nfvfDItAcWYsbNdWlLLNsEAEDTJCmd85luMiOgina4V4YJcxGYL3JpE
+         Oka44TNFUQVC4UrNmM+/+qrK+MUAHJWc7/nJ8R64Znaw/FkcVnGCLNwXoTPnCVBDFEm8
+         vYyft6PNS/PvM6PjytotrLR7TeWHlrMwRmspYydNnhKGm5GokZgJlvZ2Q79ROE9wBFUR
+         dFdQ==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=1e100.net; s=20260707; t=1795644936; x=1796249736;
+        d=1e100.net; s=20260707; t=1795644987; x=1796249787;
         h=content-type:cc:to:from:subject:message-id:mime-version:date
          :x-gm-message-state:from:to:cc:subject:date:message-id:reply-to
          :content-type;
-        bh=HoLpNZUPpAV0s/IN4AE3BuQqpTSM/yM+54mb7fzDFTw=;
-        b=fWJUfY0YXxPqG+HV4FXYPLqVNg8O91hAPVV96sfujJ+hqKETJbfAoEFFvkEay0RVyN
-         bPB5TvgKqCPGXmbqh1LBdEefxIun60ruM4p6O6lJvDqIBIIickhpS7+AZwQAPTjEKJ+6
-         sY+BO56h9lv0cMnxv2G9eAmduRPKiLsXheiRjbu3Bc19siwjTertITjYZ6pZXYpgW65d
-         p2LyUTXI1PloLsmCP116SVagYDqlyjZVW/Tekx/PP65HneAtQGg1flxsHFL4jZgKLz3D
-         c/XdoT/TY5bcdDetOFWta6HS8YFTezxN2hJ+4m4ZrD0ITwqNIOwn1hict4b0AiPm1ryU
-         PqIw==
-X-Forwarded-Encrypted: i=1; AL+hErGkatuolskuXcSOXq3yxmcyVN2vB8l5wcc0Yf+2V/5nV3MvT1EWrSqyoRMekGW4T4YACX+oNftO9++I4sZecg==@vger.kernel.org
-X-Gm-Message-State: APuU4Z/wsc9NesEM6zDxbDW+v+vm7atRnht6ubGm3jgJg9ce853fR7rP
-	phibHZH+HgUaJGO3FWvm528vE+90+izMeoAi11ea8h6EQrZv/4op46xC4K3840Bs9JZB0sHFVcB
-	t8g==
-X-Received: from dybqf1.prod.google.com ([2002:a05:7301:6481:b0:386:a9a2:8031])
- (user=elkin job=prod-delivery.src-stubby-dispatcher) by 2002:a05:693c:4143:10b0:36a:1f4f:3e9
- with SMTP id 5a478bee46e88-386b1067bf5mr12106547eec.20.1795644935493; Wed, 25
- Nov 2026 14:15:35 -0800 (PST)
-Date: Wed, 25 Nov 2026 22:13:22 +0000
+        bh=JWm3F65cTvbkSUDXl1Y/GIGqkgZqbiVzOvBBoT7EL0A=;
+        b=1PSYMRNQvX88QHM2crj7wyuhtHgziebqw2dsydPFd4IL570nO6Ku+D6F1Vq4J258/n
+         ZQK1Q83b2TTEBbgco+4opQ9KzW4EKmeOovrvrbr4I1YD/OUnVOE3AW/h/2UnKmoKqq97
+         mIOzmHIrXBCriUiR6qWjh8hCjbj3OGJvuuAAEWrRYgZuXcKttRKoCcvSDa68kWugcNda
+         oACWnk3J3xkcTLTsy5iVwWrmqZ1GxL0UISa7KMfKXKcs9IPLgq2Z3ANe0NwHQWBAgw2J
+         eKL2ds5sr8s9Qgk4WO3ub/ghYIRYqjgBK3W5D3O7zxHdhmSn1MDUbbeCYNHRIpP1aG0X
+         JnrQ==
+X-Gm-Message-State: APuU4Z/uSCXayZlLcJIqEDODXK6ICO0IgIabscNdZb6xiWayzCrUgxDf
+	Hyfmmc7/DTnEK73DKm03t3m4sZ5hWzddOjDQGwFD1lQZUIHQjE8q6s8UDtm1l3OJZZazKlybeN2
+	kLg==
+X-Received: from dleb17-n1.prod.google.com ([2002:a05:701b:4251:10b0:1a7:f7dd:f258])
+ (user=elkin job=prod-delivery.src-stubby-dispatcher) by 2002:a05:7023:a41:b0:1b5:4b48:b9ee
+ with SMTP id a92af1059eb24-1b5568c0ec9mr18863247c88.26.1795644986769; Wed, 25
+ Nov 2026 14:16:26 -0800 (PST)
+Date: Wed, 25 Nov 2026 22:15:36 +0000
 X-Mailing-List: linux-wireless@vger.kernel.org
 List-Id: <linux-wireless.vger.kernel.org>
 List-Post: <mailto:linux-wireless@vger.kernel.org>
@@ -77,32 +76,24 @@ List-Owner: <mailto:linux-wireless+owner@vger.kernel.org>
 Precedence: list
 Mime-Version: 1.0
 X-Mailer: git-send-email 2.56.1.839.g22a8290db9-goog
-Message-ID: <20261125221322.1412935-1-elkin@google.com>
-Subject: [PATCH wireless] wifi: mt76: mt7925: fix UAF and skb leak in mt7925_mcu_rx_event()
+Message-ID: <20261125221536.1417085-1-elkin@google.com>
+Subject: [PATCH wireless] wifi: mac80211: fix use-after-free in ieee80211_rx_h_data()
 From: Elkin Cruz <elkin@google.com>
-To: Felix Fietkau <nbd@nbd.name>, Lorenzo Bianconi <lorenzo@kernel.org>, Ryder Lee <ryder.lee@mediatek.com>
-Cc: Shayne Chen <shayne.chen@mediatek.com>, Sean Wang <sean.wang@mediatek.com>, 
-	linux-wireless@vger.kernel.org, linux-kernel@vger.kernel.org, 
+To: Johannes Berg <johannes@sipsolutions.net>
+Cc: linux-wireless@vger.kernel.org, linux-kernel@vger.kernel.org, 
 	llvm@lists.linux.dev, irogers@google.com, Elkin Cruz <elkin@google.com>, 
 	stable@vger.kernel.org
 Content-Type: text/plain; charset="UTF-8"
 
-mt7925_mcu_rx_event() caches rxd = (struct mt7925_mcu_rxd *)skb->data
-before calling skb_linearize(skb). When skb is non-linear,
-skb_linearize() reallocates skb->head via pskb_expand_head() and frees
-the old packet buffer, leaving rxd dangling into freed memory when
-rxd->option is subsequently dereferenced.
+In ieee80211_rx_h_data(), tf caches rx->skb->data before calling
+pskb_may_pull(). When pskb_may_pull() reallocates rx->skb->head to pull
+nonlinear fragments, tf->payload_type, tf->category, and
+tf->action_code dereference freed memory.
 
-In addition, mt7925_queue_rx_skb() transfers full ownership of skb to
-mt7925_mcu_rx_event(), so returning directly when skb_linearize() fails
-leaks skb.
+Ensure pskb_may_pull() succeeds before reading through tf, and derive
+tf from rx->skb->data only after pulling.
 
-Free skb on skb_linearize() failure and assign rxd from skb->data only
-after skb_linearize() succeeds, matching sibling mt7921_mcu_rx_event()
-after commit 4361f1660101 ("wifi: mt76: mt7921: fix memory leak when
-skb_linearize fails in mcu rx event").
-
-Fixes: c948b5da6bbe ("wifi: mt76: mt7925: add Mediatek Wi-Fi7 driver for mt7925 chips")
+Fixes: 8a4d32f30d11 ("mac80211: add TDLS channel-switch Rx flow")
 Cc: stable@vger.kernel.org
 Signed-off-by: Elkin Cruz <elkin@google.com>
 ---
@@ -115,30 +106,29 @@ then checked against linux-next (not runtime-tested on hardware).
 Thanks,
 Elkin
 
- drivers/net/wireless/mediatek/mt76/mt7925/mcu.c | 8 ++++++--
- 1 file changed, 6 insertions(+), 2 deletions(-)
+ net/mac80211/rx.c | 7 +++----
+ 1 file changed, 3 insertions(+), 4 deletions(-)
 
-diff --git a/drivers/net/wireless/mediatek/mt76/mt7925/mcu.c b/drivers/net/wireless/mediatek/mt76/mt7925/mcu.c
-index bfc1660d1c6f..42af38941aed 100644
---- a/drivers/net/wireless/mediatek/mt76/mt7925/mcu.c
-+++ b/drivers/net/wireless/mediatek/mt76/mt7925/mcu.c
-@@ -715,10 +715,14 @@ mt7925_mcu_uni_rx_unsolicited_event(struct mt792x_dev *dev,
+diff --git a/net/mac80211/rx.c b/net/mac80211/rx.c
+index a2356cd17691..f97d7f4daa79 100644
+--- a/net/mac80211/rx.c
++++ b/net/mac80211/rx.c
+@@ -3292,12 +3292,11 @@ ieee80211_rx_h_data(struct ieee80211_rx_data *rx)
  
- void mt7925_mcu_rx_event(struct mt792x_dev *dev, struct sk_buff *skb)
- {
--	struct mt7925_mcu_rxd *rxd = (struct mt7925_mcu_rxd *)skb->data;
-+	struct mt7925_mcu_rxd *rxd;
+ 	/* directly handle TDLS channel switch requests/responses */
+ 	if (unlikely(((struct ethhdr *)rx->skb->data)->h_proto ==
+-						cpu_to_be16(ETH_P_TDLS))) {
++						cpu_to_be16(ETH_P_TDLS)) &&
++	    pskb_may_pull(rx->skb, offsetof(struct ieee80211_tdls_data, u))) {
+ 		struct ieee80211_tdls_data *tf = (void *)rx->skb->data;
  
--	if (skb_linearize(skb))
-+	if (skb_linearize(skb)) {
-+		dev_kfree_skb(skb);
- 		return;
-+	}
-+
-+	rxd = (struct mt7925_mcu_rxd *)skb->data;
- 
- 	if (rxd->option & MCU_UNI_CMD_UNSOLICITED_EVENT) {
- 		mt7925_mcu_uni_rx_unsolicited_event(dev, skb);
+-		if (pskb_may_pull(rx->skb,
+-				  offsetof(struct ieee80211_tdls_data, u)) &&
+-		    tf->payload_type == WLAN_TDLS_SNAP_RFTYPE &&
++		if (tf->payload_type == WLAN_TDLS_SNAP_RFTYPE &&
+ 		    tf->category == WLAN_CATEGORY_TDLS &&
+ 		    (tf->action_code == WLAN_TDLS_CHANNEL_SWITCH_REQUEST ||
+ 		     tf->action_code == WLAN_TDLS_CHANNEL_SWITCH_RESPONSE)) {
 -- 
 2.56.1.839.g22a8290db9-goog
 
