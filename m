@@ -1,98 +1,152 @@
-Authentication-Results: smtp.subspace.kernel.org; arc=fail smtp.remote-ip=209.85.208.49
-ARC-Seal: i=2; d=subspace.kernel.org; s=arc20261015; a=rsa-sha256; cv=fail;
-	t=1795583216;
-	b=rfshvRm1+JfGCzaupMKG0nA7TE28kutrHrdAEkje0WaqCyBSZUmq5y15/BdhQ3vjlFSG
-	 r7nLqs/80kpuzMlaVNv9CdD8mBwRN42noW2LQk8+0ux0pptW+9HU+b4xIFnwc03I4HeVn
-	 yQhFgEfPqcbyGC2Bwz1IsEIaYVvgTx4c0bsLDcrRp/JVPAfiGuNI+3zalULPvzjj8muE4
-	 WbK+lqHLjXDLZQwqEU4JJAtXcEboVk5gNZCi6C33XLx28RXDMDN2bYnAlM7/Pkzwqneme
-	 HPwX8AttlITwfQEGeCuQ7liFEGh0k4FKVpJfkbb+I73Ai40GSTinn+M71BDIeGCQRGw==
+Authentication-Results: smtp.subspace.kernel.org; arc=pass header.oldest-pass=0 smtp.remote-ip=52.101.72.121
+ARC-Seal: i=2; d=subspace.kernel.org; s=arc20261015; a=rsa-sha256; cv=pass;
+	t=1795585230;
+	b=5QaZCy6qmqJeVKehG8zTllQdqJ/6VJ9gweN7mfErUVBQcPuCGVRcT/0NxfF2aE4+l/YV
+	 P32fw/R3PkxVgGx2Mde44AyIx3tQrXm6frDlpF6oCTHCwwy/W3nS6MYNdgKMl+bLX+4Iq
+	 /lNXgTTORqbEg9vFN3yB5GEA8PF5ey+1PVepKF+5+RYngeJxAkaydD4lfrsOsmgSM3q0z
+	 7wwSi7Fpl2FHPjeNR92gDpmLsO+32DaoanBvmWZq+mdbjiTrDPG9FsZuINPXmw5tm/d1/
+	 XeEUx5vJA+y4Soh3Z80Kn9Sjp2BfIEeH1LQ4MkA33lwdVQD3oZ6vCKUcJjlnzTsIZMQ==
 ARC-Message-Signature: i=2; d=subspace.kernel.org; s=arc20261015;
-	a=rsa-sha256; c=relaxed/relaxed; t=1795583216;
-	h=DMARC-Filter:Received:DKIM-Signature:X-Google-DKIM-Signature:
-	 X-Forwarded-Encrypted:X-Gm-Message-State:X-Gm-Gg:X-Received:
-	 MIME-Version:References:In-Reply-To:From:Date:X-Gm-Features:
-	 Message-ID:Subject:To:Cc:Content-Type:Content-Transfer-Encoding;
-	bh=St9qGG3raKOdkDcDbquwSocgYR27/42BAaGi49zTWXE=;
-	b=xDz6bCHX4GZ0DxKth+JLiml0ZRRX1LgrIEytHoT+lQUGs1eCjr5Rt+XYIKjj6yFBbCDu
-	 iNFOYbbIVLXosvyg5RXlq56nh916aSwTsImS/l4dJ72Vxtv+upXu/+w1FZSR/i5LH6Ipa
-	 uroqFuN1ANWSs6p7cR9yxLz/Al5N9Tae0S8Se0+osfXyfVx3e3BZEg/zrG88ssxznK73C
-	 KyhLuK9jHa5obAXHZai3gp4p4sttzFw+KxCj2fZi2jjd+cglAew4RegoSCWXt7PEj3eDN
-	 QCR+NWCEr2UDKQYcIGZEvj+F3ZxZzXy2rJ/Wr600zbXbCjbgAZYEKGaVIZWEonoVPCg==
+	a=rsa-sha256; c=relaxed/relaxed; t=1795585230;
+	h=DMARC-Filter:Received:Received:From:To:CC:Subject:Thread-Topic:
+	 Thread-Index:Date:Message-ID:References:In-Reply-To:Accept-Language:
+	 Content-Language:X-MS-Has-Attach:X-MS-TNEF-Correlator:msip_labels:
+	 x-ms-publictraffictype:x-ms-traffictypediagnostic:
+	 x-ms-office365-filtering-correlation-id:x-ms-exchange-senderadcheck:
+	 x-ms-exchange-antispam-relay:x-microsoft-antispam:
+	 x-microsoft-antispam-message-info:x-forefront-antispam-report:
+	 x-ms-exchange-antispam-messagedata-chunkcount:
+	 x-ms-exchange-antispam-messagedata-0:
+	 x-ms-exchange-antispam-messagedata-1:Content-Type:
+	 Content-Transfer-Encoding:MIME-Version:X-OriginatorOrg:
+	 X-MS-Exchange-CrossTenant-AuthAs:X-MS-Exchange-CrossTenant-AuthSource:
+	 X-MS-Exchange-CrossTenant-Network-Message-Id:
+	 X-MS-Exchange-CrossTenant-originalarrivaltime:
+	 X-MS-Exchange-CrossTenant-fromentityheader:
+	 X-MS-Exchange-CrossTenant-id:X-MS-Exchange-CrossTenant-mailboxtype:
+	 X-MS-Exchange-CrossTenant-userprincipalname:
+	 X-MS-Exchange-Transport-CrossTenantHeadersStamped;
+	bh=ttoR9PRDJaBhGp3KDccIJTBoBfcd2Mo97HPtcBnyf9E=;
+	b=wMLKpG7BNOfvVJLElqXrUX5J5IhtD56VhDw8A7y364eLertNc4nYCJu6s6C0qr1tKO1w
+	 H5nTrSfs2cPjpP980Q6jx75oPY9TZYh9I3HY1ux5i3DCAeqYWg8bmtBsUrwYEEJeLLleJ
+	 wsIgX8UNCzhhQJEoyGRNNx4Y9SQXtAPP726VPbFDfGroKOCT8seJKoVGorBFe1b/uWdbT
+	 wbp53aTf+FMp48SiVUUJAY5RTphhpMZ5y/Tdrull8YO98s3b4MY4+6XvirO2KUjrbxMbo
+	 8DAZrxPh72F4f2MMKBwz5yTC6CZCmYEYqU3+PF3uCpwYVdgPD5d4DO4EHomTb0qC1xQ==
 ARC-Authentication-Results: i=2; smtp.subspace.kernel.org; 
-	dmarc=none header.from=iiitd.ac.in;
-	spf=pass smtp.mailfrom=iiitd.ac.in;
-	dkim=pass header.d=iiitd.ac.in header.i=@iiitd.ac.in header.a=rsa-sha256 header.s=google header.b=WvCW1Bg4;
-	arc=fail smtp.remote-ip=209.85.208.49
-Received: from mail-ed1-f49.google.com (mail-ed1-f49.google.com [209.85.208.49])
-	(using TLSv1.3 with cipher TLS_AES_128_GCM_SHA256 (128/128 bits)
-	 key-exchange X25519 server-signature ECDSA (prime256v1) server-digest SHA256)
+	dmarc=pass header.from=atlr-engineering.com;
+	spf=pass smtp.mailfrom=atlr-engineering.com;
+	arc=pass header.oldest-pass=0 smtp.remote-ip=52.101.72.121
+Received: from AM0PR02CU008.outbound.protection.outlook.com (mail-westeuropeazon11023121.outbound.protection.outlook.com [52.101.72.121])
+	(using TLSv1.3 with cipher TLS_AES_256_GCM_SHA384 (256/256 bits)
+	 key-exchange ECDHE (secp384r1) server-signature ECDSA (prime256v1) server-digest SHA256)
 	(No client certificate requested)
-	by smtp.subspace.kernel.org (Postfix) with ESMTPS id A04C4606A323
-	for <linux-wireless@vger.kernel.org>; Wed, 25 Nov 2026 05:06:43 +0000 (UTC)
-DMARC-Filter: OpenDMARC Filter v1.4.2 smtp.subspace.kernel.org A04C4606A323
-Authentication-Results: smtp.subspace.kernel.org; dmarc=none (p=none dis=none) header.from=iiitd.ac.in
-Authentication-Results: smtp.subspace.kernel.org; spf=pass smtp.mailfrom=iiitd.ac.in
-Authentication-Results: smtp.subspace.kernel.org;
-	dkim=pass (1024-bit key) header.d=iiitd.ac.in header.i=@iiitd.ac.in header.a=rsa-sha256 header.s=google header.b=WvCW1Bg4
-Received: by mail-ed1-f49.google.com with SMTP id 4fb4d7f45d1cf-6b7ddb99db4so6957640a12.0
-        for <linux-wireless@vger.kernel.org>; Tue, 24 Nov 2026 21:06:43 -0800 (PST)
-ARC-Seal: i=1; a=rsa-sha256; t=1795583202; cv=none;
-        d=google.com; s=arc-20260327;
-        b=CO/2hQDrfcKQvcMmSoGNDKd332rS9FFOGuA2lYyN4G4jZ0zx4opF0kq0bFqp6Y+aVc
-         eHT2vXPQ4Wm5/tBRvtDxC7cjtpY0/iVgscV4Yzijha++ml/QPrQY+Q0NeYQ7urhI7guX
-         MR4EQ245QGOWNdveqjFks5VN0mkP9LpTOILq9Jfaubx7zDDtwk2EpO5f1eVdu+HwpKGn
-         bKrzn/oEtsnrgf3vhVSewbBGf3cPMTNm/LFUvEHyIkJBCllfKD92JiDQC4euYcgNGb0L
-         ak8bBk4XxpAz7Gsc777+zL4QXPxb7aCuYcnSQqyUGjPtCudAnAtiFoaiCKrNYin2iAGI
-         gOZQ==
-ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=google.com; s=arc-20260327;
-        h=content-transfer-encoding:cc:to:subject:message-id:date:from
-         :in-reply-to:references:mime-version:dkim-signature;
-        bh=St9qGG3raKOdkDcDbquwSocgYR27/42BAaGi49zTWXE=;
-        fh=/3VJFtJn3ae/9CmAUirthnHWabP06AMypOppg2JTND8=;
-        b=QIOg6HbVsEwXhF5lOrhdJLx9f7yWNq5GDrLf1Y4xcTueOqYMPfPGC5R2zbHc9PRkV6
-         ZOfFJ433mHFPpiKBiF4tZRfdGzrQlhm+CYC5IbQoXQjo9rbZptOQpdiv3W+VcyFkoL4P
-         1bMK1JT5VhJFNZDx9gZJ3fKS9ZSrG/whT/QZD9frgx0RQkWSWLLn/am6JV4yVHV+isws
-         W+19Kiw46XFdFe4JbDFMGGUkJKubS9AwE3nw+q3x2ZqJxQ3mhg5oRa6RPJ5spg+nSDPb
-         tEyasKq4f7qTc1kHYmqQLHc5OOQJY2HtellVTJAhJ09kwQ/6SGOUt9+WPXdPImaOxyWq
-         Ms7w==;
-        darn=vger.kernel.org
-ARC-Authentication-Results: i=1; mx.google.com; arc=none
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=iiitd.ac.in; s=google; t=1795583202; x=1796188002; darn=vger.kernel.org;
-        h=content-transfer-encoding:content-type:cc:to:subject:message-id
-         :date:from:in-reply-to:references:mime-version:from:to:cc:subject
-         :date:message-id:reply-to:content-type;
-        bh=St9qGG3raKOdkDcDbquwSocgYR27/42BAaGi49zTWXE=;
-        b=WvCW1Bg4ViJubZeAEI0wYclnYXwKcIfPWWaMc9ZYTHNFKwJAVdCHcNiTzHn6PetD/3
-         myrf5RFaZ2plYTw8GPMbuKPDxhjAr/O539xfOwB3qv4OIeo/63IuHPGAvb6uMnWgI4DO
-         0LoFQkv5PtCnVQ9jmUSzUtB/4qlHMRW3ijYiQ=
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=1e100.net; s=20260707; t=1795583202; x=1796188002;
-        h=content-transfer-encoding:content-type:cc:to:subject:message-id
-         :date:from:in-reply-to:references:mime-version:x-gm-gg
-         :x-gm-message-state:from:to:cc:subject:date:message-id:reply-to
-         :content-type;
-        bh=St9qGG3raKOdkDcDbquwSocgYR27/42BAaGi49zTWXE=;
-        b=MiwCSqgPIvmA1y/6LhiDeW8xC11S5+zdNzjyt0tJ00JFGbIz09s/+KUhrOY1j9sAZZ
-         ItIXtCXnP+8d4rMPRFgrOwkt0WqlO0tVYJ4jQzX5SalrTJ4CItnb5ib61Htd6SJ3gwhJ
-         XBWnAZR93pz1dq03JAJnBpWuV78Ltm5IOZmTSsYYy6zDsgtZesCu9uPquWrv3fSKoFm0
-         LsDHe5cfpdcHzWO4y02hzB8bpGZvjoliODijhJsVtnh+Rz/djPUOZwj4nk4frnawbDBo
-         JPcJ/n1E5U3GV0+VeOVZx3lqFOQ+PlTsa679JnLGYOkcH978qqD5QXWGdI+BIv5EPDhf
-         D5gw==
-X-Forwarded-Encrypted: i=1; AL+hErGoi07ahHi6ftamCquY11uTWahP/d2XehbAM77XH79gB1nzcmMRcbF1WJqppMFdgJVTep9S3PXvPnamhuS96Q==@vger.kernel.org
-X-Gm-Message-State: APuU4Z+N5xJCbWZgHrtWhfmkRxi0ABesUQL4GjbxlAYBpoRiIrz5Ekf2
-	fVg5JDYsu0qgZ93sD+P5m6Aj/pOD94f3mSkuAazf7gby2zPU7KUPazWqE4ucckCrXzNEtNca/9v
-	cGww5vSQ8Bn3+XZpJe+Kn/djPJatkSG13lDCpMezfcA==
-X-Gm-Gg: AZFdTZfylX4ChQhlHa2gKNP9S3WGa7wP3RMDllyejp5mUi/PI1pOnGm49/u3ERZM3tF
-	+8Qv9WJSY7Mzs9oHspbqMa5sS69b/C7O0NEHWxLSBLVKv0F7jf47xqj/XLb/kdK4yiMkk+ro7An
-	ACc6Dmd/TtjRA525M2FAFN8oMnysnERmauGXQcu2EHWv+04PeO9WyicImrlaIBTcIrvweiK8hrT
-	zpffTpPfX+HqFXftDminj7I6WZ3Giv72UXV2MNqzQq8ACdGECAqLikg3lrmd8XUaSF/FMZcRD3C
-	8unCwaCATaj19COrFn2zJx5frx6JQ1UCDyyZktCedlVs2Jo6isaL8HjYsxcsLDdK07G2dsgWXy6
-	wNiindmn1pkqu/vXR7bjjsA3T0bm6afjQtKLrBu4BPJlBQ9Gj8lrH6zd/1GFUEvZhj8bXzxxYxt
-	GxnJmcCit1GcR/5ldt5DAppOHwZ9h1mWwNIy8JuCxi3I+PJOhksPBB4fw=
-X-Received: by 2002:a05:6402:504:b0:6b7:1cd4:87d6 with SMTP id
- 4fb4d7f45d1cf-6ba37d17fc4mr8799911a12.13.1795583202056; Tue, 24 Nov 2026
- 21:06:42 -0800 (PST)
+	by smtp.subspace.kernel.org (Postfix) with ESMTPS id E5FD5606A31E;
+	Wed, 25 Nov 2026 05:40:29 +0000 (UTC)
+DMARC-Filter: OpenDMARC Filter v1.4.2 smtp.subspace.kernel.org E5FD5606A31E
+Authentication-Results: smtp.subspace.kernel.org; dmarc=pass (p=quarantine dis=none) header.from=atlr-engineering.com
+Authentication-Results: smtp.subspace.kernel.org; spf=pass smtp.mailfrom=atlr-engineering.com
+ARC-Seal: i=1; a=rsa-sha256; s=arcselector10001; d=microsoft.com; cv=none;
+ b=fREV3KMXS4jKe2PzODhu9I+Qkamzx1oziwba6p3bKezZA3FDTUjozACqMmNo2cRKyZsaEhGVBFfwLHJjbqdDzpf/an+hSLn8nD19iz1S8TW2aJGIoJUvKLj+jKlm46TpTRUSvYlQ6e3tlVv/jEzA4N8ztjLFbwsYLFP0/sODa2bgn2xkKoVAslIdLG3q1ZISK5EYcnKrJJhRoF2oC78/iJbGByRbk5gwBgT8ItqUv6PrNAOlCS1z5VcsTbRu5NcgDnw2E9Tp9ZF4M7w0rTYiSfcCac61pgg2pJ9Y/cmk3fMyNN1Pup5xj0tmRwYoSB3SIPcqFEyTs7q3+MtBB9DtTA==
+ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=microsoft.com;
+ s=arcselector10001;
+ h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-AntiSpam-MessageData-ChunkCount:X-MS-Exchange-AntiSpam-MessageData-0:X-MS-Exchange-AntiSpam-MessageData-1;
+ bh=ttoR9PRDJaBhGp3KDccIJTBoBfcd2Mo97HPtcBnyf9E=;
+ b=yxFNWynypB2kPSGkpBZVYYXbpc61IVjcKeEXRXOIVsx/9NLlc8bPmLa7Pxaf3dfGQdPWeXoWtuj/UICButyegP+JJ4LdslGBiFBU0vBiFRmdopw7L2uI7dkw5bB7ct3vrLWitXOGveuE9IKw7tNsRIh9Ln/sTGzFvY6WNptmzaoUT9ZXq/8t7tuprKJndou9CC3NtAjwRFKcpXB0zCAqH298la9StdOIkWAq8KK9Ac2t4sVr2fpgH7wK9ev3z68rvNUvYAGY/eoTIgK9B+1RkV37K5L7KL4Yi+ZPiiiVynWVxqgZgDaltvNUTX5pAnqgy5V0Igsf1XMvCnY6HVgknw==
+ARC-Authentication-Results: i=1; mx.microsoft.com 1; spf=pass
+ smtp.mailfrom=atlr-engineering.com; dmarc=pass action=none
+ header.from=atlr-engineering.com; dkim=pass header.d=atlr-engineering.com;
+ arc=none
+Received: from DB7PR06MB5324.eurprd06.prod.outlook.com (2603:10a6:10:73::22)
+ by AM7PR06MB6626.eurprd06.prod.outlook.com (2603:10a6:20b:1a0::21) with
+ Microsoft SMTP Server (version=TLS1_2,
+ cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id 15.21.639.14; Wed, 25 Nov
+ 2026 05:40:25 +0000
+Received: from DB7PR06MB5324.eurprd06.prod.outlook.com
+ ([fe80::b923:2ab6:f430:9f47]) by DB7PR06MB5324.eurprd06.prod.outlook.com
+ ([fe80::b923:2ab6:f430:9f47%2]) with mapi id 15.21.0662.004; Wed, 25 Nov 2026
+ 05:40:25 +0000
+From: Alexandre Rapaille <arapaille@atlr-engineering.com>
+To: Konrad Dybcio <konrad.dybcio@oss.qualcomm.com>, Bjorn Andersson
+	<andersson@kernel.org>, Konrad Dybcio <konradybcio@kernel.org>, Abel Vesa
+	<abelvesa@kernel.org>, Rob Herring <robh@kernel.org>, Krzysztof Kozlowski
+	<krzk+dt@kernel.org>, Conor Dooley <conor+dt@kernel.org>, Loic Poulain
+	<loic.poulain@oss.qualcomm.com>, Luca Weiss <luca@lucaweiss.eu>, Eugene
+ Krasnikov <k.eugene.e@gmail.com>
+CC: "linux-arm-msm@vger.kernel.org" <linux-arm-msm@vger.kernel.org>,
+	"devicetree@vger.kernel.org" <devicetree@vger.kernel.org>,
+	"linux-kernel@vger.kernel.org" <linux-kernel@vger.kernel.org>,
+	"wcn36xx@lists.infradead.org" <wcn36xx@lists.infradead.org>,
+	"linux-wireless@vger.kernel.org" <linux-wireless@vger.kernel.org>,
+	"stable@vger.kernel.org" <stable@vger.kernel.org>, Luca Weiss
+	<luca.weiss@fairphone.com>
+Subject: RE: [PATCH v2 1/3] ARM: dts: qcom: msm8974: Fix WCNSS wifi interrupt
+ trigger type
+Thread-Topic: [PATCH v2 1/3] ARM: dts: qcom: msm8974: Fix WCNSS wifi interrupt
+ trigger type
+Thread-Index: AQHdeMX2813u/DAARU+RFnC48SnXnbc7z+mAgAJ9LJY=
+Date: Wed, 25 Nov 2026 05:40:25 +0000
+Message-ID:
+ <DB7PR06MB5324CB68F21677A6C21B1E5F85432@DB7PR06MB5324.eurprd06.prod.outlook.com>
+References: <20261120-wcnss-series-v1-v2-0-3fed518decfb@atlr-engineering.com>
+ <20261120-wcnss-series-v1-v2-1-3fed518decfb@atlr-engineering.com>
+ <f6eec0d4-1d37-4bdc-b09f-8bec0dcb8dec@oss.qualcomm.com>
+In-Reply-To: <f6eec0d4-1d37-4bdc-b09f-8bec0dcb8dec@oss.qualcomm.com>
+Accept-Language: fr-FR, en-US
+Content-Language: fr-FR
+X-MS-Has-Attach:
+X-MS-TNEF-Correlator:
+msip_labels:
+authentication-results: mx.microsoft.com 1; dkim=none (message not signed)
+ header.d=none;dmarc=none action=none header.from=atlr-engineering.com;
+x-ms-publictraffictype: Email
+x-ms-traffictypediagnostic: DB7PR06MB5324:EE_|AM7PR06MB6626:EE_
+x-ms-office365-filtering-correlation-id: 054091b9-dfd8-48d1-078d-08df4ab69b20
+x-ms-exchange-senderadcheck: 1
+x-ms-exchange-antispam-relay: 0
+x-microsoft-antispam:
+ BCL:0;ARA:13230040|1800799024|366016|7416014|376014|23010399003|10070799003|6133799003|18002099003|22082099003|921020|56012099006|4143699003|261028144727099003|261022105027099003|261022075727099003|261026140227099003|261021121427099003|261009223027099003|261102123227099003|261026121527099003|38070700021|10067099003;
+x-microsoft-antispam-message-info:
+ WuTFpFfI14gfYI4099nww/uEAC6gv/K8mAtFOQuSIqw+G9bD4UbiccXeAtfPMdk43F6uk3UHkuJCaaWKSvu7z/R6oEEwc+Y/L1wJpfaQ0wQmbK7a7tkwmBrF9a3DyFVQJu9w7Fox4QJDxnVoK1/6io44okkKt1/K+0eNR/jnQupsihyYxdT8O+LoEERVXMYibuy4KxdWvNXnquj73XBEt1xvXsjZfgLd+zmmJ9wPi6lsd0MeLHL8vyc6PkRWcF7dQt95ABHLdvdpdS0BP7BBSBbVM7C99d2X+9u8fV2XkbWjO1cX2uM7NPDLpdxjua58/jo/3xMaob950Yw3ilDg1RbVya3txg02zra/5LtqXSSuSgOV3StCv+i0tLe64Xu/UIdnEExJ6YPD3sqaLP5FqhOYiWzOMRXaQEGymahRJctRjbdjw2MnzAaYDZwxfGKevBib8qNQ7CcBkGt757nDGrqnr/w7yUlx9bnrrGzsDQYg5S5+HlTF6KQjY9NQ3vb05XoaL4b4j6dykkwwPK8itbkxH+wxFZu3u5d+RcAHTcdRvxca4ql1l9acyfGaB0RHV7gjbKCxxmbxYCGHOmNRDRj6nkYtMhIUxaTh4aiP1NZpVWXhsDFFKRbREcAP/n4mwYI+LHOj0db3j7VZZQ19fbQvGS5qInC/xoeVRkD/DAqL+51GoS37u2fxYCpjQB/+gPZ7T2yQvAzFE0qzGK4ylV2FLHaaKfn29C8Ff+sFaQ77yJZSwXVtsm2nchKsyuHb
+x-forefront-antispam-report:
+ CIP:255.255.255.255;CTRY:;LANG:en;SCL:1;SRV:;IPV:NLI;SFV:NSPM;H:DB7PR06MB5324.eurprd06.prod.outlook.com;PTR:;CAT:NONE;SFS:(13230040)(1800799024)(366016)(7416014)(376014)(23010399003)(10070799003)(6133799003)(18002099003)(22082099003)(921020)(56012099006)(4143699003)(261028144727099003)(261022105027099003)(261022075727099003)(261026140227099003)(261021121427099003)(261009223027099003)(261102123227099003)(261026121527099003)(38070700021)(10067099003);DIR:OUT;SFP:1102;
+x-ms-exchange-antispam-messagedata-chunkcount: 2
+x-ms-exchange-antispam-messagedata-0:
+ =?iso-8859-1?Q?l9vPIYonSJzz2rrWLG6DBImqveKHd9HS+FKw3qXO2nT9J3HcwiIf9H9REo?=
+ =?iso-8859-1?Q?GPQeyt+Pjp/BWr7SO4hdGBOn2V8t/pq7peo4JTx6ouBHvt91g1kgh2FYfc?=
+ =?iso-8859-1?Q?XNulc7KjNjKxvbqWPdPi9MWe79UKDrZqKhbMRklQ5TyQIoMY9yMJTMIVKY?=
+ =?iso-8859-1?Q?O1W50gBrOP5h8ISY6I0G3w3uZSgnS7fTLjuxwrzITA2hoQEJL+QjyyjbSH?=
+ =?iso-8859-1?Q?10uu89xKnsTNNxmTzFv9+Zs7NzlBt9IZLDBu9CI+c/hRmpQcdpXC7zL8zP?=
+ =?iso-8859-1?Q?SX6OTsPJ1BU7BJSB5uW04RXtZ6uvC9w4sWM4hVESswZYDNBcoYGx3uNISe?=
+ =?iso-8859-1?Q?BjUwSY1l9J8FT0UpXNyFkubcS84T/SEYQ6AxaL2S/hH0DJ6u4SxcxzEl7R?=
+ =?iso-8859-1?Q?BakcgLfA1vmJshY6eedPQ5a3XtmWKCt94Ioh7sErv9k9W3XLZo3jYMntBh?=
+ =?iso-8859-1?Q?AdrMA3csMz7XyFiUvKmPV7Wh263QuoODzERe52sCLn6PI70z4M5sZOqTjC?=
+ =?iso-8859-1?Q?LsoNttiVsXuJhEsljrkIZEK1XBttmFZsTorzTHh/mJKMczmnUjr6GoH5z+?=
+ =?iso-8859-1?Q?pb164hIxxvlpyxq1dq00BXqnfX2UK/jzkfv03m4RWvu5i4zKrEi0haHiXu?=
+ =?iso-8859-1?Q?gJSGKozNlfEKZ9PU048pS+aRTuunnQhP4c6niNohnQK7bYqeinn2dnNDiy?=
+ =?iso-8859-1?Q?z764wFsA7ZZLZr69jcHQJnJshkkA4Tvv+9Sw5YtbukOLQMn8X+Do59+g08?=
+ =?iso-8859-1?Q?IhU3stHwHy9ksDNmGDgLfkNkxr5yWOvU4wxTzozfdqWH3Ozm7cB91RQMWW?=
+ =?iso-8859-1?Q?/1MyEOqFCHV+WoTmlUuehb07qD/aBnkmcIMH+ONQ0mYw1ImotLUNiy4Lcd?=
+ =?iso-8859-1?Q?1g3JSt6pfq5pjTDuhTes/eaTlNomnaq78j6Nyr0LYj48RXuU32Rq80klRm?=
+ =?iso-8859-1?Q?bFKbg+WidJBtrZYpYzhFzfWPEGI9c/9D9CQIH6Uhs8M6S4wFW3WNdScvKN?=
+ =?iso-8859-1?Q?K2b1lnH2fuynSQqjHYQwJzOsRuD/cUv5xcNobMuF8Rf/4dX8M3xesPYUtG?=
+ =?iso-8859-1?Q?65eP3bRh2g43iWBOwJBL4UBvSdvof3j4cofXPj1oKkHbEW41JYkIz/wk6u?=
+ =?iso-8859-1?Q?euXCb5EunzpwIOMdm1UwKjF8ck+aotafmrH0kj6Em08rPsdJGJh7JzJllM?=
+ =?iso-8859-1?Q?ltQDdBoE1rLRKQD7R6HOxRGnNfnXO+/rYmzBDtIZdefyxKDDx+Onn4eYJT?=
+ =?iso-8859-1?Q?pmJVaWFERb2IEYZIuvwDsIJWgKN7kgtPQ+g5U4m8u1E+PMrwkDRmwpS+xR?=
+ =?iso-8859-1?Q?wgvc/vSnKx3CKzkzmVXzzoR+8BXrN0k74M9BHo438ipZcK60tdjxo6C8Oi?=
+ =?iso-8859-1?Q?l5vqI2W7j7/Vdi6FnBF7g7lQ1rdzeKHkHarATxlsRpV+JitLwQpWH7xdsu?=
+ =?iso-8859-1?Q?awlNRafXSNfydlpUi7YSC0E2ags3abWrZp2c8sx8HEgkqRYXOJlmEIYLcS?=
+ =?iso-8859-1?Q?RuPDD09IzTYGerf6KjjMz9m+V3ZIBb9AOiWoFOXbM2kuk6wbLYCgGOZ61x?=
+ =?iso-8859-1?Q?9WM5SDS7uKq8sUTHTOgPxad4QTlmNsgS4eo9YRK1goSE9DnYad40GiNRGz?=
+ =?iso-8859-1?Q?6u/bFXgfcPXnu9zc+LYlnjiisFMNknCfrLvrPCgCAFbgJgwFj55ell6grk?=
+ =?iso-8859-1?Q?kMoNKJcEUsyME9lDowDcNv6slFKajvQmd2/iOd9nfJHXl9qM5zUqJtni6B?=
+ =?iso-8859-1?Q?t7l65+vmCYvyyfiw54r8P1FGsgXdVscmZhTxAhnLTS7KNiwaPkMKtihlkV?=
+ =?iso-8859-1?Q?po0f6EiQdWfCCfgbe6Mx2oj/Smn2CWzCJnOVrmCKI8pRWrpvSlhc64BRou?=
+ =?iso-8859-1?Q?53?=
+x-ms-exchange-antispam-messagedata-1:
+ uFgpMyRcb6hmFiIcpxYX+XO+yZ/h7Rp2ZLa82wyh0jwCIUK8FXsE7h8Q
+Content-Type: text/plain; charset="iso-8859-1"
+Content-Transfer-Encoding: quoted-printable
 X-Mailing-List: linux-wireless@vger.kernel.org
 List-Id: <linux-wireless.vger.kernel.org>
 List-Post: <mailto:linux-wireless@vger.kernel.org>
@@ -102,70 +156,66 @@ List-Unsubscribe: <mailto:linux-wireless+unsubscribe@vger.kernel.org>
 List-Owner: <mailto:linux-wireless+owner@vger.kernel.org>
 Precedence: list
 MIME-Version: 1.0
-References: <20261125043847.885053-1-piyus@iiitd.ac.in> <179558178888.3294.13943698848591637747@kernel.org>
-In-Reply-To: <179558178888.3294.13943698848591637747@kernel.org>
-From: Piyus Kedia <piyus@iiitd.ac.in>
-Date: Wed, 25 Nov 2026 10:36:30 +0530
-X-Gm-Features: Aa3M54oDWglR0iAUavzHNeiehG4Hg13FhPc-XMGjpMFLClMWzn6h4NFTqVwgfFs
-Message-ID: <CADq=QSx-7eYx93XbdGLTxHp4-O-=gO_6VyS6R4XgZzDXMG_ErA@mail.gmail.com>
-Subject: Re: [PATCH wireless v2] wifi: mac80211: store the mesh IE blob's
- length without truncating it
-To: netdev-bot+sinfo@kernel.org
-Cc: Johannes Berg <johannes@sipsolutions.net>, linux-wireless@vger.kernel.org, 
-	netdev@vger.kernel.org, linux-kernel@vger.kernel.org, 
-	Kapil Vaswani <kapil@presceralabs.ai>, stable@vger.kernel.org
-Content-Type: text/plain; charset="UTF-8"
-Content-Transfer-Encoding: quoted-printable
+X-OriginatorOrg: atlr-engineering.com
+X-MS-Exchange-CrossTenant-AuthAs: Internal
+X-MS-Exchange-CrossTenant-AuthSource: DB7PR06MB5324.eurprd06.prod.outlook.com
+X-MS-Exchange-CrossTenant-Network-Message-Id: 054091b9-dfd8-48d1-078d-08df4ab69b20
+X-MS-Exchange-CrossTenant-originalarrivaltime: 25 Nov 2026 05:40:25.6565
+ (UTC)
+X-MS-Exchange-CrossTenant-fromentityheader: Hosted
+X-MS-Exchange-CrossTenant-id: ba695f87-644d-4185-a9a0-94d2dfd2f6c9
+X-MS-Exchange-CrossTenant-mailboxtype: HOSTED
+X-MS-Exchange-CrossTenant-userprincipalname: +i7bTcoZhPBY1PjI8ccHJKp0fURnnbC72Q/LT3dDyy9vvIWONfCx1fvaqbcYszptKB+zMcF2zXiSqPOMvfwggUDjHFWJjulXddBHQlQ2uvI=
+X-MS-Exchange-Transport-CrossTenantHeadersStamped: AM7PR06MB6626
 
-Hi!
-
-The bot is right, and the information is in this posting - but under the --=
--
-line, where git am drops it, so it is missing from the commit message itsel=
-f.
-Stating it here as asked, rather than reposting:
-
-How it was found: by AI-driven fuzzing built on top of syzkaller.  A genera=
-ted
-program put a vendor element followed by an RSN element in
-NL80211_MESH_SETUP_IE on a mesh interface, and KASAN reported a
-slab-out-of-bounds write in ieee80211_mesh_build_beacon(), reproduced on
-mainline 7.4-rc3 and on 7.3.1.
-
-That run is what found the beacon-tail overflow fixed by the other patch of
-this series, "wifi: mac80211: do not copy the mesh RSN IE twice into the
-beacon".  The truncating "ifmsh->ie_len =3D setup->ie_len" that this patch =
-is
-about was found by reading the code around that crash, and by the review of
-v1 of this patch, which showed that v1 made the overflow reachable rather t=
-han
-fixing it.  The two routes the commit message describes - a blob length tha=
-t
-is a multiple of 256, and a 257-byte element behind a truncated stored leng=
-th
-- come from reading the code and have not been run here.
-
-If there is a v3 for other reasons, that paragraph will be in the commit
-message.
-
-On Wed, Nov 25, 2026 at 10:13=E2=80=AFAM <netdev-bot+sinfo@kernel.org> wrot=
-e:
->
-> Hi!
->
-> This is an automated message. This series looks like a fix, but its
-> commit messages seem to be missing some information:
->
->  - How the issue was discovered, e.g. hit in production, hit during
->    development, syzbot report, manual code inspection, LLM or static
->    analysis tool scan.
->
-> Please do not repost the series just to address the above. Instead,
-> reply to this email with the missing information, so that reviewers
-> can take it into account.
->
-> *IMPORTANT*: If you do repost (for other reasons) - please include
-> the relevant info in the cover letter or commit messages.
-> --
-> The evaluation is done by an LLM so it may be wrong, if you think
-> that is the case please reply and explain.
+> Docs say this is really a rising-edge interrupt - perhaps the driver=0A=
+> is wrong here?=0A=
+=0A=
+I tested that on a Fairphone 2 (DT at EDGE_RISING, patches 2-3 only).=0A=
+2 of 5 WCNSS crashes never recovered: wlan0 re-associated but no=0A=
+traffic passed, so the DXE interrupts got lost. With LEVEL_HIGH, 12/12=0A=
+recovered in ~20s.=0A=
+=0A=
+________________________________________=0A=
+De : Konrad Dybcio <konrad.dybcio@oss.qualcomm.com>=0A=
+Envoy=E9 : lundi 23 novembre 2026 16:38=0A=
+=C0 : Alexandre Rapaille <arapaille@atlr-engineering.com>; Bjorn Andersson =
+<andersson@kernel.org>; Konrad Dybcio <konradybcio@kernel.org>; Abel Vesa <=
+abelvesa@kernel.org>; Rob Herring <robh@kernel.org>; Krzysztof Kozlowski <k=
+rzk+dt@kernel.org>; Conor Dooley <conor+dt@kernel.org>; Loic Poulain <loic.=
+poulain@oss.qualcomm.com>; Luca Weiss <luca@lucaweiss.eu>; Eugene Krasnikov=
+ <k.eugene.e@gmail.com>=0A=
+Cc=A0: linux-arm-msm@vger.kernel.org <linux-arm-msm@vger.kernel.org>; devic=
+etree@vger.kernel.org <devicetree@vger.kernel.org>; linux-kernel@vger.kerne=
+l.org <linux-kernel@vger.kernel.org>; wcn36xx@lists.infradead.org <wcn36xx@=
+lists.infradead.org>; linux-wireless@vger.kernel.org <linux-wireless@vger.k=
+ernel.org>; stable@vger.kernel.org <stable@vger.kernel.org>; Luca Weiss <lu=
+ca.weiss@fairphone.com>=0A=
+Objet : Re: [PATCH v2 1/3] ARM: dts: qcom: msm8974: Fix WCNSS wifi interrup=
+t trigger type=0A=
+=A0=0A=
+[Vous ne recevez pas souvent de courriers de konrad.dybcio@oss.qualcomm.com=
+. D=E9couvrez pourquoi ceci est important =E0 https://aka.ms/LearnAboutSend=
+erIdentification ]=0A=
+=0A=
+On 11/20/26 9:05 AM, Alexandre Rapaille via B4 Relay wrote:=0A=
+> From: Alexandre Rapaille <arapaille@atlr-engineering.com>=0A=
+>=0A=
+> wcn36xx requests tx/rx as IRQF_TRIGGER_HIGH, overriding this edge type, s=
+o=0A=
+> the re-probe after a WCNSS restart fails ("type mismatch, failed to map=
+=0A=
+> hwirq-177") and wlan0 never returns. Use level high like other WCNSS SoCs=
+.=0A=
+>=0A=
+> Fixes: c7c0edecfba8 ("ARM: dts: msm8974: Introduce the wcnss remoteproc n=
+ode")=0A=
+> Cc: stable@vger.kernel.org=0A=
+> Reviewed-by: Luca Weiss <luca.weiss@fairphone.com>=0A=
+> Signed-off-by: Alexandre Rapaille <arapaille@atlr-engineering.com>=0A=
+> ---=0A=
+=0A=
+Docs say this is really a rising-edge interrupt - perhaps the driver=0A=
+is wrong here?=0A=
+=0A=
+Konrad=
