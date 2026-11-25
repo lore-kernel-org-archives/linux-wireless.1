@@ -1,81 +1,81 @@
-Authentication-Results: smtp.subspace.kernel.org; arc=none smtp.remote-ip=209.85.214.179
+Authentication-Results: smtp.subspace.kernel.org; arc=none smtp.remote-ip=209.85.210.169
 ARC-Seal: i=1; d=subspace.kernel.org; s=arc20261015; a=rsa-sha256; cv=none;
-	t=1795581538;
-	b=LG10PfQfW5znn9EicQvUteBIMH+oKH5PcF+S6xAGqsGNvvForyoVeGrwXMPzpmwO7W9M
-	 NIsl0RPwqDG7RnYuZy0jzY2Z7oAsfXGvGgGtpnhJXInjx5yfBPmTgCSAZGH3ut9MmbirW
-	 sEH1i8Egox6G5YaZa57SEb5+Drio3xHkW17sivOT+ABu54bAOf5CDqlYqTt+Ynf19pYu2
-	 OVxE3X5INof4+aMV/xDhB8f40ObIW5KsOlsLfoybtfGOi+WVk06yIR412ydFTEi8JkBaK
-	 27umz0nF+80xNwiOw4dMMA4aVIITDH9uDJfu94yJVUeTcvEa2J2NpSyrZWl4HiALHwQ==
+	t=1795581546;
+	b=DD1Eb3ExP/7sjunUKmrfgL8emwsQ71zgp7ai782OwtVzEnS6DSK8d91T/PSPWsq5d6Rp
+	 QJbC3FQbgA0I2QOqFVaH5mhpBkP0ScU3S9MefMsvkXklhmszHo9z8zmC0uJkxfn47lqKz
+	 KTHq6czR1AuSlz5IKKNIVAPXiXOPI16zxbbeZIFlwc/g4u2SkSQ2TvOkVFJWOBIA2mLZX
+	 cmiQncijZUcdfLmt33hovpz5u5ifwsvUxDkhWyFDcz4u/qjm6nzStCBECUMf8kUkrJZKJ
+	 pTXOPOSckCRuoWQCYO5kTDUezhgJSn+hRPzgPaAb6gSjp6kr8NAy/En4v1dzue3Oixg==
 ARC-Message-Signature: i=1; d=subspace.kernel.org; s=arc20261015;
-	a=rsa-sha256; c=relaxed/relaxed; t=1795581538;
+	a=rsa-sha256; c=relaxed/relaxed; t=1795581546;
 	h=DMARC-Filter:Received:DKIM-Signature:X-Google-DKIM-Signature:
 	 X-Forwarded-Encrypted:X-Gm-Message-State:X-Gm-Gg:X-Received:Received:
-	 From:To:Cc:Subject:Date:Message-Id:X-Mailer:MIME-Version:
-	 Content-Transfer-Encoding;
-	bh=Xqxp4hd5lpGFlJROYYWcFRii84BajA/8pPUPXDvAQR8=;
-	b=ZyqWrV9fB4UrTOKb4OCw0LNKdKoy0DTfHsT+PeHmOvOAkl0oKq+SuCcuvtyCmZCTTf1m
-	 1Egr4TGDGRtdRWhYxMZIpJUoxjRfCcrrKskAVN1b6cEu5tFtvazcgmB29z8RvQYrR7t4r
-	 8JF1qBU6zB+wZ2BmZ4G5hXSs8CTFXl7uYE5csVrqDyaEEmjP1FL5CrYgO8CgOEchWu6r2
-	 eHzZhR0OoNg+JmroH3tQgRe5kyh9UlL4DDU0xKtIZS9px7qFkqFTPRsoUPFNO70CWYoAi
-	 rvxZ6bxnvGJcadb5cQ/PVKLO+a6pWpoztBYgRolUYrpbN5hE3v+elebwwbwbJHeha1w==
+	 From:To:Cc:Subject:Date:Message-Id:X-Mailer:In-Reply-To:References:
+	 MIME-Version:Content-Transfer-Encoding;
+	bh=M1IwBh5fU8djxahihZYht6eqba9dhDsjvhjt56+O/p4=;
+	b=LALYFOdCwjV4JhiU0f7Stns2PEUhNeQ7TamXcHAXZDjoHppjTeQIPptRM70OWCDqE3Mp
+	 wVJOi3Fq3TjOQB0+XzSociDkj4FSyvyH4nCVB+krEihfCYd9hpIfg+bQWYIToVY/oQSd3
+	 Z2zBfFiOIebigcN/Y8dlTgIIWPhd8yEtWtW1vN5/pVObGegWSQ2ZzOxVAJBbULf80zoDI
+	 k/F448EZk+dF6mDG1s/0jk1hJeIrqfHvrhM99h+Gx0mIyMzX+GVRu0QoupAvCZTBLVea6
+	 lTNuxVHab/zkgnuRokM52gAZZNF+/vJszp3uT0WKolwJLsYvSJjj0DI/gC2C3B0wA9Q==
 ARC-Authentication-Results: i=1; smtp.subspace.kernel.org; 
 	dmarc=none header.from=iiitd.ac.in;
 	spf=pass smtp.mailfrom=iiitd.ac.in;
-	dkim=pass header.d=iiitd.ac.in header.i=@iiitd.ac.in header.a=rsa-sha256 header.s=google header.b=V681Bgc6;
-	arc=none smtp.remote-ip=209.85.214.179
-Received: from mail-pl1-f179.google.com (mail-pl1-f179.google.com [209.85.214.179])
+	dkim=pass header.d=iiitd.ac.in header.i=@iiitd.ac.in header.a=rsa-sha256 header.s=google header.b=hfx3jbvv;
+	arc=none smtp.remote-ip=209.85.210.169
+Received: from mail-pf1-f169.google.com (mail-pf1-f169.google.com [209.85.210.169])
 	(using TLSv1.3 with cipher TLS_AES_128_GCM_SHA256 (128/128 bits)
 	 key-exchange X25519 server-signature ECDSA (prime256v1) server-digest SHA256)
 	(No client certificate requested)
-	by smtp.subspace.kernel.org (Postfix) with ESMTPS id 88CFC606A326
-	for <linux-wireless@vger.kernel.org>; Wed, 25 Nov 2026 04:38:53 +0000 (UTC)
-DMARC-Filter: OpenDMARC Filter v1.4.2 smtp.subspace.kernel.org 88CFC606A326
+	by smtp.subspace.kernel.org (Postfix) with ESMTPS id 44172606A33E
+	for <linux-wireless@vger.kernel.org>; Wed, 25 Nov 2026 04:38:59 +0000 (UTC)
+DMARC-Filter: OpenDMARC Filter v1.4.2 smtp.subspace.kernel.org 44172606A33E
 Authentication-Results: smtp.subspace.kernel.org; dmarc=none (p=none dis=none) header.from=iiitd.ac.in
 Authentication-Results: smtp.subspace.kernel.org; spf=pass smtp.mailfrom=iiitd.ac.in
 Authentication-Results: smtp.subspace.kernel.org;
-	dkim=pass (1024-bit key) header.d=iiitd.ac.in header.i=@iiitd.ac.in header.a=rsa-sha256 header.s=google header.b=V681Bgc6
-Received: by mail-pl1-f179.google.com with SMTP id d9443c01a7336-2f04244c3d0so43444025ad.3
-        for <linux-wireless@vger.kernel.org>; Tue, 24 Nov 2026 20:38:53 -0800 (PST)
+	dkim=pass (1024-bit key) header.d=iiitd.ac.in header.i=@iiitd.ac.in header.a=rsa-sha256 header.s=google header.b=hfx3jbvv
+Received: by mail-pf1-f169.google.com with SMTP id d2e1a72fcca58-8a052aff9e9so3884154b3a.0
+        for <linux-wireless@vger.kernel.org>; Tue, 24 Nov 2026 20:38:59 -0800 (PST)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=iiitd.ac.in; s=google; t=1795581533; x=1796186333; darn=vger.kernel.org;
-        h=content-transfer-encoding:mime-version:message-id:date:subject:cc
-         :to:from:from:to:cc:subject:date:message-id:reply-to:content-type;
-        bh=Xqxp4hd5lpGFlJROYYWcFRii84BajA/8pPUPXDvAQR8=;
-        b=V681Bgc6qPFYjqmG0NtYlr4ry2IAle27e1weiA/EQZ6p5mn/BHTJWnVrZvvSm3SebG
-         Nw1ik97JbrQ1eqpQolnrleQOPUBcwhfkM71yqQiyVwCwGOIKAPyRFag5/9hDHjWNpXre
-         jxXBkgWdkXEiZ7mfrvsSJdAkOa4icqlggNKAg=
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=1e100.net; s=20260707; t=1795581533; x=1796186333;
-        h=content-transfer-encoding:mime-version:message-id:date:subject:cc
-         :to:from:x-gm-gg:x-gm-message-state:from:to:cc:subject:date
+        d=iiitd.ac.in; s=google; t=1795581539; x=1796186339; darn=vger.kernel.org;
+        h=content-transfer-encoding:mime-version:references:in-reply-to
+         :message-id:date:subject:cc:to:from:from:to:cc:subject:date
          :message-id:reply-to:content-type;
-        bh=Xqxp4hd5lpGFlJROYYWcFRii84BajA/8pPUPXDvAQR8=;
-        b=qnuRcI5wOy7/MVZGBXYzAfEt6Zz03XCSWKMHPJV3uUqzOuTQ7YHUEx3zxiS9LC77rT
-         9F3CnylKVBSfWp9Us9F1rTnaJe1M8SXBVXtZckIRh3KaNNTc1hoJUlPCOzC8Tp5M2q2Q
-         r/TBr4dmCx/XivQAez1FV4Wh8pkTc+NYIwRcr6qGxu7NzelZKZCzXYr6a9zdgjqB6N5a
-         bdk8XQi6a/rTMzRUyJ+Id16V+8ChF1rFQTqxpXZmpyXXh7WRK9zHcrgYz83e6PaDpkMY
-         nCuWzyIbfT+JGV2z6aZcjPC6Sie62LO3fH70rjDNrItAiCzHIkQgexgesMCv6IR68/1a
-         7nCQ==
-X-Forwarded-Encrypted: i=1; AL+hErGVwC7ZJU68wJKD83jlRDwcqQbzLSgTFB3x/8g82doisK9EGlwKpKInkMa32c9JVSKygKbMZvLWdQERVn0WpQ==@vger.kernel.org
-X-Gm-Message-State: APuU4Z+6/XPV+/SRJV3rhtAahPk23Zp+rVItShs5hAeZcmeAHU4ynZCr
-	y+hBl/MKEmQDO+h4N4AjVUF5PDTHSVaUeI4cA2JKnWdPU+QIDJ5GxPwKHz+iQbil7xA=
-X-Gm-Gg: AZFdTZd6qpp10l628pRkKAPHsOQxKGEcYFhySEqyKlZGLebl3Y2RqwEw9zrRPzx961c
-	ZwgNr0Nu9z492iStrwY5FGkG4vM3C1n+Ht1tqAqBpW011XBSoAyVyI0O/FUpHLthyS+sM2IagLO
-	hU8HvxXJ/JnH4YnCShN2w5tenKmb2h+WXjCZAb2ILA3pExSuqY1b7DSLI9yS/3LuWvAj6dNopVz
-	/e+8Y0RjxQb+XMRSpq7itMO6JwmVHmspLgubfkKZrX61QYa5V11swfhdhK9IWcqj8f7ZLMlHnJT
-	E7Zpe+0pyg2l+/+WK6YxPf+64TnbkOweYzsNfB8Fym0lGr8EAhHjfMQFE3y94KYm2JMX+68ujIP
-	BLe3LXLZYwSoqZcRyGR1LniizN2t87AH3XMwyGB/nfJrSYfDJ6Zkenv11MSE+I7ORlHTcDxOAwR
-	HEX8e4glfeXpDKGsT8dLfusZLS9msbMNJUg7UqZfsePLUUL6mpTKo3ixq8V66tSL7JRRbD4w99f
-	tdeh3Rsws/kUQ1/R8+1ANp4bilUhhOqNm9HtjH+C+Z/ccVRW8Kn8tvwKj97wVC+ilSC9WNwBjb1
-	gTiwyS7YsPyIhx1QmppSHAcjuxoHbQzEyTtqtGHI13K6idqMHAfVFvYqs71S6Nmpi6q9J8vDfUb
-	GkR9p9/9xxMO7OdAAplOEnHqYQwNBnano8ZaAgULJoesPyaal8vRFQHuwCRLrO4TCfnT3uFAuIx
-	reBJakRZFFuA==
-X-Received: by 2002:a17:902:e844:b0:2e8:4066:d247 with SMTP id d9443c01a7336-2f050c1e95emr142227635ad.33.1795581532788;
-        Tue, 24 Nov 2026 20:38:52 -0800 (PST)
+        bh=M1IwBh5fU8djxahihZYht6eqba9dhDsjvhjt56+O/p4=;
+        b=hfx3jbvvc4rSYQAIe5Rb9SK6R0KHMzfl/hf8WB3MQRrF33IztnXGYNVhuqXJmJAfnJ
+         k/xfschRWyB0NGuiAIXxCKvnsKB/xV75ulAkhF5H17+DCnsf2fQJa9UmrWLcjcXak4Q7
+         LTCdiXvGqDWxHbXZili8R2i5rjGn4CVmubxkM=
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+        d=1e100.net; s=20260707; t=1795581539; x=1796186339;
+        h=content-transfer-encoding:mime-version:references:in-reply-to
+         :message-id:date:subject:cc:to:from:x-gm-gg:x-gm-message-state:from
+         :to:cc:subject:date:message-id:reply-to:content-type;
+        bh=M1IwBh5fU8djxahihZYht6eqba9dhDsjvhjt56+O/p4=;
+        b=v6FsK9Le/9EMNUBTP/zBxcINlNuSPzVyKbdxSKKcEUxq17lWxmHNToPU0VmnhqGLp5
+         6MaBF2BGCzmtIV42GS27gWia4vZqo458KEiJwLdqrxP45OplspCCQxxeSYSBnt+eaMn9
+         ufc2kOvn3kYCyAAIrSd/anMabbQsKAGUxZCwquyOlsDP91UV+nzAbgUS21IqVLisggxE
+         C01jtT5LtU7nBdMdn/rteOCyDJ+NVbYhTkmMSExyXSjhMJl4iMA1PLLTY9ugILF0f+z/
+         zjaQVoNlGpGSnDfbwP6ZeocIGGz2rNrop/FN3YZyN14oRdNu99Bj8dUWy0hJbdOLzvI7
+         0Y+Q==
+X-Forwarded-Encrypted: i=1; AL+hErFlFdx1+s1ymoDL0iYMkXXCsMuJmONF7UJ3zst19psOEN3MEK9pykr8Czw8bxj8ewnS6GNXCrqJFShl54sDeQ==@vger.kernel.org
+X-Gm-Message-State: APuU4Z/n+o9JRlzTvTP675aaeAAI9K2QUmjVReFn9Pr+tea21/GI5fWx
+	rottYx4dthMKI/FNdgmBPjBl/EJcj3PAoOOIdEFVwOAAUn+5TP2I4m0LJCjmQmSc1Gg=
+X-Gm-Gg: AZFdTZfR+JCqzFETSaYcng47p8B7ZDVjfjJkd/dfnfuZvrgsR9iSNQdAZT/cuN7sBgv
+	ecLHxSSYd13tYq3V+UTsU1X6OhBGvVSIJETa+lIzZ1Em+XhJg+YZcdLMyEsYp5WWdD6OcjMWGAC
+	i+WmB9TsvqghC4oEFtRQMn1qLGmN9VkM3ULvio9UJrT4iV4IqXqjM9E4/Jz6a/WiBy2XRSqQLhY
+	VEu4FrCMrmmhnAQ7tUT2s88qck9qV62PkQqOA2WBAQ1TF38tS4bZpw53KL/IR3FYm7Ymmw5K0ks
+	9JJk0OtRMwFgmuT0Opwr1RIYpJ7I1eQp1O3ePePx7wnyI7HpVOri3weT+P4IkrGJxd6Iv0iwQ0O
+	WaAef3pLPk9oOtfC8uNaiNYjjixasyznS5xN7Qsy0sCMd17NvZ5at0LOnFNohSJES8HUnqWDa97
+	DJeJxhJMMNu8pS8ol2osvrRjI78l/JTzZORusLgOXBBQf8gy/to9Xx25rpTEOdC1lw5jyEhyvyi
+	rFRgw7KCGHanqf4/tJyu6EShTGuZ+62/uQt2xjEiHkoVkzv2bR2si6jCsju7fWw9wCCOPLs0DtF
+	oWQs1O4fIOcmBZn24Xsr4rLJqJ/YtGRfa/2IJoq1heSxRQUwGDge/Y96iv95uTWF1GIpSBBvFhI
+	ej0ikwNqa0dUpUimudmo8efjEZ7gb6IaBNcm7oHqQnkuo1rRrJgn7ui+SMDQlw5n4QA==
+X-Received: by 2002:a05:6a00:14c3:b0:89e:779b:d0f with SMTP id d2e1a72fcca58-8c87ce3165emr16054013b3a.37.1795581538541;
+        Tue, 24 Nov 2026 20:38:58 -0800 (PST)
 Received: from iiitd-S2600STB.iiitd.edu.in ([103.25.231.160])
-        by smtp.gmail.com with ESMTPSA id d9443c01a7336-2f03ee84027sm78575765ad.7.2026.11.24.20.38.50
+        by smtp.gmail.com with ESMTPSA id d2e1a72fcca58-8c872e485f5sm8318535b3a.22.2026.11.24.20.38.55
         (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
-        Tue, 24 Nov 2026 20:38:52 -0800 (PST)
+        Tue, 24 Nov 2026 20:38:58 -0800 (PST)
 From: Piyus Kedia <piyus@iiitd.ac.in>
 To: Johannes Berg <johannes@sipsolutions.net>,
 	linux-wireless@vger.kernel.org
@@ -83,10 +83,12 @@ Cc: netdev@vger.kernel.org,
 	linux-kernel@vger.kernel.org,
 	Kapil Vaswani <kapil@presceralabs.ai>,
 	stable@vger.kernel.org
-Subject: [PATCH wireless v2] wifi: mac80211: store the mesh IE blob's length without truncating it
-Date: Wed, 25 Nov 2026 10:08:47 +0530
-Message-Id: <20261125043847.885053-1-piyus@iiitd.ac.in>
+Subject: Re: [PATCH wireless 2/2] wifi: mac80211: widen the mesh IE offsets a u8 cannot hold
+Date: Wed, 25 Nov 2026 10:08:53 +0530
+Message-Id: <20261125043853.885152-1-piyus@iiitd.ac.in>
 X-Mailer: git-send-email 2.34.1
+In-Reply-To: <179557011887.3135.15766992632445342222@kernel.org>
+References: <179557011887.3135.15766992632445342222@kernel.org>
 X-Mailing-List: linux-wireless@vger.kernel.org
 List-Id: <linux-wireless.vger.kernel.org>
 List-Post: <mailto:linux-wireless@vger.kernel.org>
@@ -98,160 +100,132 @@ Precedence: list
 MIME-Version: 1.0
 Content-Transfer-Encoding: 8bit
 
-struct ieee80211_if_mesh keeps the length of the user's mesh IE blob in a
-u8, and copy_mesh_setup() assigns it from a size_t that the netlink policy
-allows to reach IEEE80211_MAX_DATA_LEN:
+Both findings are right, and the Critical one is right about the worst
+possible thing: this patch was not the no-op its commit message claimed, it
+removed a truncation that had been accidentally containing a copy, and it
+said "Neither is a memory-safety problem" while doing it.  Thank you.
 
-	[NL80211_MESH_SETUP_IE] =
-		NLA_POLICY_VALIDATE_FN(NLA_BINARY, validate_ie_attr,
-				       IEEE80211_MAX_DATA_LEN),
-	...
-	if (setup->ie_len) {
-		new_ie = kmemdup(setup->ie, setup->ie_len, GFP_KERNEL);
-	...
-	ifmsh->ie_len = setup->ie_len;
+Checked against wireless.git at af6737b90668.  v2 is posted as a separate
+thread:
 
-So the buffer holds the whole blob and the field holds the low eight bits
-of its length.  Three things follow, and none of them is cosmetic.
+  [PATCH wireless v2] wifi: mac80211: store the mesh IE blob's length
+                      without truncating it
 
-A blob whose length is a multiple of 256 stores a length of zero, and both
-builders return early on "!ifmsh->ie_len" - a secure mesh silently drops
-its RSN element, from a configuration the kernel accepted.
+It applies on top of the v2 of the other patch of this series, which is
+answered in its own thread.  The v2 changelog is under the --- line with a
+Link: back to this posting.
 
-The stored length also no longer describes the blob: it can fall inside an
-element.  ieee80211_ie_split_vendor() walks one whole element at a time,
+Point by point.
 
-	while (pos < ielen && ies[pos] != WLAN_EID_VENDOR_SPECIFIC)
-		pos += 2 + ies[pos + 1];
 
-so with a truncated ielen it steps over the element that crosses the
-truncated end and returns a position past ielen.  A 257-byte RSN element
-followed by a three-byte element gives nla_len 260 and ifmsh->ie_len 4,
-and the split returns 257.
+1. [Critical] The false premise, and what the widening cost
 
-And the beacon builder budgets the truncated length while copying what was
-actually assembled:
+> Is that accurate? struct ieee80211_if_mesh in net/mac80211/ieee80211_i.h
+> still declares:
+>     const u8 *ie;
+>     u8 ie_len;
 
-	tail_len = ... + ifmsh->ie_len;
-	bcn = kzalloc(sizeof(*bcn) + head_len + tail_len, GFP_KERNEL);
-	skb = __dev_alloc_skb(max(head_len, tail_len), GFP_KERNEL);
-	...
-	bcn->tail_len = skb->len;
-	memcpy(bcn->tail, skb->data, bcn->tail_len);
+It is not accurate.  ieee80211_i.h:829 is "u8 ie_len;", struct mesh_setup's
+is a size_t, and copy_mesh_setup() at cfg.c:3449 assigns one to the other.
+My commit message's "ifmsh->ie_len is a size_t" was simply false, and every
+conclusion I drew from it is worthless.
 
-The builders' skb_tailroom() checks bound only that scratch skb, whose head
-the allocator rounds up, so an emit larger than tail_len passes them and
-the memcpy writes past the kzalloc()ed block.  In the peering frames that
-mesh_plink_frame_tx() builds the skb IS the frame and is sized from the
-same u8 field, so there the same over-long emit is refused by the tailroom
-check and the frame is dropped - a failure, not a corruption.
+> ifmsh->ie_len is never above 255, so the vendor IE case in the commit
+> message (vendor IEs starting past byte 255) can't reach
+> mesh_add_vendor_ies() as described. The truncation still happens, just
+> earlier, at the struct field.
 
-Store the length as the size_t it is, and widen the two locals that derive
-from it: offset and len in mesh_add_vendor_ies(), and len in
-mesh_add_rsn_ie(), which truncated a 257-byte element to one byte and a
-256-byte element to zero.  With the field holding the real length, the
-length again describes the blob validate_ie_attr() framed, the split
-cannot overshoot it, and both the beacon budget and the peering-frame
-budget are the size of what the builders may emit.
+Right again, and that is the part I find most instructive: the patch widened
+the locals that read a field which had already thrown the information away,
+so it could not fix what it set out to fix even in principle.
 
-Fixes: 082ebb0c258d ("mac80211: fix mesh beacon format")
-Cc: stable@vger.kernel.org
-Signed-off-by: Kapil Vaswani <kapil@presceralabs.ai>
-Signed-off-by: Piyus Kedia <piyus@iiitd.ac.in>
----
-Link: https://lore.kernel.org/all/20261124003526.78471-3-piyus@iiitd.ac.in/
+> More importantly, can the wider len now overflow the beacon_data
+> allocation in ieee80211_mesh_build_beacon()?
+> Take a 257-byte RSN IE (length byte 255) followed by a 3-byte element.
+> That gives nla_len = 260, ifmsh->ie_len = 4 and prefix = 257. The RSN IE
+> is found, and with unsigned int len all 257 bytes are emitted. Before this
+> patch, the u8 len wrapped this to 1 (and 256 to 0).
 
-This applies on top of the v2 of the other patch of the v1 series, "wifi:
-mac80211: do not copy the mesh RSN IE twice into the beacon", which is posted
-in its own thread and answers its own review.  Each patch of the v1 series
-drew a review of its own, so each is respun separately.
+Yes.  Walked through it:
 
-Changes in v2, all from the review of v1:
+  validate_ie_attr()  frames the chain against the full nla_len, so a
+                      257-byte element followed by a 3-byte one is accepted.
+  copy_mesh_setup()   kmemdups 260 bytes and stores 4 as the length.
+  split_vendor()      "pos += 2 + ies[pos + 1]" from 0 with ielen 4 returns
+                      257, since it tests pos < ielen before stepping.
+  find_ie(.., 257)    returns the RSN element at offset 0.
+  u8 len              used to make that 257 & 0xff = 1.  unsigned int does
+                      not.
+  build_beacon()      budgeted ifmsh->ie_len = 4; bcn->tail_len = skb->len
+                      and the memcpy writes the rest past the kzalloc.
 
- - THE PREMISE WAS FALSE AND THE PATCH WAS UNSAFE WITHOUT IT.  v1 said "the
-   extra IE blob a mesh join carries is bounded by IEEE80211_MAX_DATA_LEN,
-   2304 bytes, and ifmsh->ie_len is a size_t", and the field is a u8.  The
-   review showed what that cost: widening the RSN length to unsigned int
-   REMOVED the truncation that had been accidentally containing the copy, so
-   a 257-byte RSN element behind a 4-byte stored length went from emitting
-   one byte to emitting all 257 into a four-byte budget.  v1's closing
-   "Neither is a memory-safety problem" was wrong in the one direction that
-   matters.
+So the widening is what makes it reachable, and the scratch skb's rounded-up
+tailroom is what lets it past the skb_tailroom() checks, exactly as you say.
+One distinction worth recording, since it is not symmetric: in the peering
+frames mesh_plink_frame_tx() builds, the skb IS the frame and is sized from
+the same u8 field, so there the same over-long emit is refused by the
+tailroom check and the frame is dropped.  A failure, not a corruption.
 
- - So v2 fixes the field rather than only the locals: struct
-   ieee80211_if_mesh::ie_len becomes the size_t that struct mesh_setup and
-   the nl80211 policy already use.  That is the first of the three remedies
-   the review offered, and it is the one that makes the stored length
-   describe the blob again - after which ieee80211_ie_split_vendor() cannot
-   overshoot it, the beacon budget is the size of what may be emitted, and
-   the peering-frame budget in mesh_plink_frame_tx(), which is sized from the
-   same field, is too.
+> Would it be better to make struct ieee80211_if_mesh::ie_len a size_t to
+> match mesh_setup and the nl80211 policy? Rejecting setup->ie_len > 255 in
+> copy_mesh_setup(), or clamping prefix to ifmsh->ie_len in
+> mesh_add_rsn_ie(), would also work.
 
- - The subject and the commit message are rewritten around that.  v1
-   described vendor elements starting past byte 255 reaching
-   mesh_add_vendor_ies(), which the review correctly points out cannot
-   happen - the truncation is at the struct field, earlier than v1 said.
+v2 takes the first, and the subject now says so: "store the mesh IE blob's
+length without truncating it".  The reason to prefer it over the other two is
+that it is the only one that makes the stored length describe the blob again.
+After it, the length is the one validate_ie_attr() framed, so the split
+cannot overshoot; the beacon budget and the peering-frame budget are both the
+size of what the builders may emit; and the two consequences you found below
+go away with it rather than being contained.
 
- - Two further consequences the review found are now stated: a blob whose
-   length is a multiple of 256 stores zero, so a secure mesh silently drops
-   its RSN element; and widening offset is not a no-op either, since the old
-   u8 wrapped on an overshooting split and copied a few bytes where nothing
-   is copied now.
+Rejecting setup->ie_len > 255 would be an ABI change - a configuration the
+kernel accepts today would start failing - for a field that has no reason to
+be a u8.  And clamping alone would leave the other two problems in place.
 
- - Fixes: is now 082ebb0c258d ("mac80211: fix mesh beacon format") rather
-   than 2b5e19677592 ("mac80211: cache mesh beacon").  Confirmed by reading
-   082ebb0c258d: it is the commit that added "u8 offset, len" to
-   mesh_add_vendor_ies() and "u8 len = 0" to mesh_add_rsn_ie(), and the
-   truncation predates the beacon caching and reaches the peering frames as
-   well.  The review is right that this decides which stable trees take it.
+> If the blob length is a multiple of 256, ie_len becomes 0. Both builders
+> then return early and a secure mesh drops its RSN IE.
 
-Measured, and not: the beacon overrun this series is about was reproduced on
-mainline 7.4-rc3 and on 7.3.1, with KASAN reporting a slab-out-of-bounds
-write in ieee80211_mesh_build_beacon().  The truncation routes the review
-found - the multiple-of-256 blob, and the 257-byte element with a four-byte
-stored length - come from reading the code and have NOT been run here.
-mesh.c, cfg.c and mesh_plink.c all build clean, and checkpatch --strict
-reports nothing.
----
- net/mac80211/ieee80211_i.h | 2 +-
- net/mac80211/mesh.c        | 4 ++--
- 2 files changed, 3 insertions(+), 3 deletions(-)
+Confirmed, and v2's commit message states it: the kernel accepts the
+configuration and then silently emits no RSN element, which for a secure mesh
+is a functional failure with no diagnostic. 2304/256 = 9 such lengths are
+reachable under the policy.
 
-diff --git a/net/mac80211/ieee80211_i.h b/net/mac80211/ieee80211_i.h
-index 7a64aef6890d..e0f1bc0a618f 100644
---- a/net/mac80211/ieee80211_i.h
-+++ b/net/mac80211/ieee80211_i.h
-@@ -826,7 +826,7 @@ struct ieee80211_if_mesh {
- 	int num_gates;
- 	struct beacon_data __rcu *beacon;
- 	const u8 *ie;
--	u8 ie_len;
-+	size_t ie_len;
- 	enum {
- 		IEEE80211_MESH_SEC_NONE = 0x0,
- 		IEEE80211_MESH_SEC_AUTHED = 0x1,
-diff --git a/net/mac80211/mesh.c b/net/mac80211/mesh.c
-index c86be97bc921..940af399343a 100644
---- a/net/mac80211/mesh.c
-+++ b/net/mac80211/mesh.c
-@@ -354,7 +354,7 @@ int mesh_add_vendor_ies(struct ieee80211_sub_if_data *sdata,
- 			struct sk_buff *skb)
- {
- 	struct ieee80211_if_mesh *ifmsh = &sdata->u.mesh;
--	u8 offset, len;
-+	size_t offset, len;
- 	const u8 *data;
- 
- 	if (!ifmsh->ie || !ifmsh->ie_len)
-@@ -378,7 +378,7 @@ int mesh_add_rsn_ie(struct ieee80211_sub_if_data *sdata, struct sk_buff *skb)
- {
- 	struct ieee80211_if_mesh *ifmsh = &sdata->u.mesh;
- 	size_t prefix;
--	u8 len = 0;
-+	unsigned int len;
- 	const u8 *data;
- 
- 	if (!ifmsh->ie || !ifmsh->ie_len)
--- 
-2.34.1
+> Widening offset is also not a complete no-op. When the vendor split
+> overshoots the truncated ie_len, the old u8 offset wrapped and a few bytes
+> got copied. Now nothing is copied.
 
+Also confirmed, and also now stated rather than left out.
+
+> The preceding patch ... argues that the split returns an element boundary
+> not past ifmsh->ie_len. That rests on the same assumption, so similar
+> layouts with smaller RSN IEs look like they already overflow there.
+
+They do, and that patch's own review found the same thing independently.  Its
+v2 clamps the bound to ifmsh->ie_len, which makes it safe on its own whatever
+the field's type is; with this patch applied as well the clamp becomes belt
+and braces rather than load-bearing.  The two are answered separately because
+they drew separate reviews, but they are the same mistake twice: a sentence
+in a commit message asserting a bound that the code does not have.
+
+
+2. [Low] The Fixes: tag
+
+> Should the tag be:
+>   Fixes: 082ebb0c258d ("mac80211: fix mesh beacon format")
+> instead? There is no runtime impact, but the tag decides which stable
+> trees pick this up.
+
+It should, and v2 carries that.  Confirmed by reading the commit: 082ebb0c258d
+is where "u8 offset, len" in mesh_add_vendor_ies() and "u8 len = 0" in
+mesh_add_rsn_ie() were introduced, in 2011.  2b5e19677592 moved the
+beacon-side calls into ieee80211_mesh_build_beacon() and left both helpers
+as they were, so it is the right tag for the double-copy patch and the wrong
+one for this.  Your point about the peering frames holds too: the truncation
+reaches mesh_plink_frame_tx(), which predates the beacon caching entirely.
+
+
+Thanks again.  Two reviews on two patches found the same false sentence from
+two directions, which is a fair verdict on how that series was written.
+
+pw-bot: cr
