@@ -1,72 +1,63 @@
-Authentication-Results: smtp.subspace.kernel.org; arc=none smtp.remote-ip=74.125.82.198
+Authentication-Results: smtp.subspace.kernel.org; arc=none smtp.remote-ip=91.218.175.34
 ARC-Seal: i=1; d=subspace.kernel.org; s=arc20261015; a=rsa-sha256; cv=none;
-	t=1795640585;
-	b=XJbMfxNEoxaOcZDM4TOkejww9czijrlK/TL3rjOt7vyzGP6RBdLjOdxHKy1j/cxKVfyD
-	 mGYSLRiYzGjs7fIREcVnhxEtGKJcMGjcrvRjeEFAqCyOho6HC40fWmQhvJEjmKe2tFssZ
-	 GJ7kUaUmKQ+TglQsGJpLEJLj2cVqOEszUbzCfrPObQmF3KNGDznAEWQapKL6UdCEke3iL
-	 5ixdjSW3FqvhXxrLqCHCDktrGA28HcfXw4/ndtTvzy0zu4qdppcmfm89pGsudYxjrARWo
-	 LkmX4GIBujgrW+xIDc8fnwbl0L6Oocw0yIC6RH2F5FJH3uxOQkWhN0PX5Mbh6ArgYtw==
+	t=1795641272;
+	b=bKISHvKZDPGK+iZ9wegPeQXV+dqEU054rjaat9NWNh+8QwvmHSG527WygVJ4w/i0oQiK
+	 eOzJXfXtsW9jw2GSkcENBl68W3pbFoXfNE0HHbHaXRXNhG6UMnriVEfrKl+RoUDTawXp4
+	 bPXgZj3AQYv0L9Ff+RtOi4+pw8tP2ebbdxwZ3MEqENYNX736AXVPxn1QKJOwuhoxefALY
+	 EHl1x52lz6ha0EKZN6wTrCDpZW8mvtdVP2h5amSKDkoV2+bPqgWL4H/4vU3G66bBzCz6B
+	 ObBYW7ylt98hylmi7AXRn496GpPQKWoyLhRmqx8SskEMyWQaBx2gkVtweCe48ow+c2g==
 ARC-Message-Signature: i=1; d=subspace.kernel.org; s=arc20261015;
-	a=rsa-sha256; c=relaxed/relaxed; t=1795640585;
-	h=DMARC-Filter:Received:DKIM-Signature:X-Google-DKIM-Signature:
-	 X-Forwarded-Encrypted:X-Gm-Message-State:X-Received:Date:Mime-Version:
-	 X-Mailer:Message-ID:Subject:From:To:Cc:Content-Type;
-	bh=Iq1LqV/I3EkKfuWXMTSw+B6TAIfUEFhKN+ETx366hf8=;
-	b=BkwWZ8xe9bkZWDTv4oGn3gMrL+4KI5jEQ1PSvWbvPOZbyCtEQkRKkcqXm7fqsau96IHk
-	 /nnV53D75/nom7YGhb0U1DXdYHyTs20Wq8n4zFRzA+t9gO/k/IxqfhTCFqgRA62sv/q6w
-	 5XQGNhz0+xlBhIjfwchC1XYvoBAU4Nv5YkKJ9vrpiWcLPzb6gfexNLmb5lexspx1Z2XXZ
-	 ULLl5e+jvOv3NAeA/mWSPpKABnYiEYGEa6lY4HIkkywygGJYjfoiJt6l5aVdEs/Pi5W+O
-	 pP64LVFgyAGkb3UEIrUlHob40RKaLMku4Hbj1CKRJWylJMMztFrsgoqlCffdgOyF+BA==
+	a=rsa-sha256; c=relaxed/relaxed; t=1795641272;
+	h=DMARC-Filter:X-Envelope-To:DKIM-Signature:X-Envelope-To:Received:
+	 X-Mizu-Trace-ID:X-Migadu-Flow:Date:From:To:CC:Subject:In-Reply-To:
+	 References:Message-ID:MIME-Version:Content-Type:
+	 Content-Transfer-Encoding;
+	bh=zUMdJPi51RnBiU2zfEycf5XIIbWugmRYe7gtZhzzZm8=;
+	b=o+Bbcv5B5GVbizsHXuj6Oo/+ehSLp+SvDGvbcrOGV91TLMCUklcNtKGrjmLhstM8Wn0V
+	 Gx5A2JGMjIG53m121doNZxTThBGCcJKpcszXNAKwvrvhhgDjoAJ0B5IChOYV4umavcx5E
+	 WKwxB5rJmmuKLj+WagcFYnwn5ro70TYa685hCRW5eXhOwzULpPcfrqvdt444Gca756ag2
+	 3EU+iHpS4GZAmAlJ+nhb8TB7uPZZcFcoif9tKgi9qqhOwdsSxyvdBrBr22VrQgLNn7lnQ
+	 EUxJ40Mz++jsKHnAUGvN0zPu3iOfh9whSPX+GQwldJHDLIK5za3LvcIElAqwfsTcSaA==
 ARC-Authentication-Results: i=1; smtp.subspace.kernel.org; 
-	dmarc=pass header.from=google.com;
-	spf=pass smtp.mailfrom=flex--elkin.bounces.google.com;
-	dkim=pass header.d=google.com header.i=@google.com header.a=rsa-sha256 header.s=20260707 header.b=XwAZ91mV;
-	arc=none smtp.remote-ip=74.125.82.198
-Received: from mail-dy1-f198.google.com (mail-dy1-f198.google.com [74.125.82.198])
+	dmarc=pass header.from=linux.dev;
+	spf=pass smtp.mailfrom=linux.dev;
+	dkim=pass header.d=linux.dev header.i=@linux.dev header.a=rsa-sha256 header.s=key1 header.b=C7Je3Wnu;
+	arc=none smtp.remote-ip=91.218.175.34
+Received: from mta0.migadu.com (out-34.mta0.migadu.com [91.218.175.34])
 	(using TLSv1.3 with cipher TLS_AES_128_GCM_SHA256 (128/128 bits)
 	 key-exchange X25519 server-signature ECDSA (prime256v1) server-digest SHA256)
 	(No client certificate requested)
-	by smtp.subspace.kernel.org (Postfix) with ESMTPS id B73E3606A323
-	for <linux-wireless@vger.kernel.org>; Wed, 25 Nov 2026 21:03:04 +0000 (UTC)
-DMARC-Filter: OpenDMARC Filter v1.4.2 smtp.subspace.kernel.org B73E3606A323
-Authentication-Results: smtp.subspace.kernel.org; dmarc=pass (p=reject dis=none) header.from=google.com
-Authentication-Results: smtp.subspace.kernel.org; spf=pass smtp.mailfrom=flex--elkin.bounces.google.com
+	by smtp.subspace.kernel.org (Postfix) with ESMTPS id 9CCD0606A31E
+	for <linux-wireless@vger.kernel.org>; Wed, 25 Nov 2026 21:14:31 +0000 (UTC)
+DMARC-Filter: OpenDMARC Filter v1.4.2 smtp.subspace.kernel.org 9CCD0606A31E
+Authentication-Results: smtp.subspace.kernel.org; dmarc=pass (p=none dis=none) header.from=linux.dev
+Authentication-Results: smtp.subspace.kernel.org; spf=pass smtp.mailfrom=linux.dev
 Authentication-Results: smtp.subspace.kernel.org;
-	dkim=pass (2048-bit key) header.d=google.com header.i=@google.com header.a=rsa-sha256 header.s=20260707 header.b=XwAZ91mV
-Received: by mail-dy1-f198.google.com with SMTP id 5a478bee46e88-30bcb065bfdso6603765eec.0
-        for <linux-wireless@vger.kernel.org>; Wed, 25 Nov 2026 13:03:04 -0800 (PST)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=google.com; s=20260707; t=1795640584; x=1796245384; darn=vger.kernel.org;
-        h=content-type:cc:to:from:subject:message-id:mime-version:date:from
-         :to:cc:subject:date:message-id:reply-to:content-type;
-        bh=Iq1LqV/I3EkKfuWXMTSw+B6TAIfUEFhKN+ETx366hf8=;
-        b=XwAZ91mV6BDDjfULap+4HLpf7UN3K43riB4F+rPMYpatSM5RDvKHlG3NraTX7GRAZF
-         Uw8zN+KKIqePwA4vRuokbht6I8KHTBYmNj4kjR9KbZRilKkTinvqCCZArC2hWcWuvoKH
-         ioVIkHbzwCc6gdXeD6IqpZirUfy19HzISgS7CLlmUmppOLGWxE00p3yYp4GT2cpjR93H
-         R0glvZHvMd5toauT/T//6E2J5n0xQcuFPpyJ0agRty/PSKrxUwtEYTuzwi95uCfzWZYB
-         XdeMFJLi6L47NRKE2sFxwI1gaXWvcGBdvBGxnEDhSwif5KrLk8o8uSHndCubh+JfDNdP
-         HRrA==
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=1e100.net; s=20260707; t=1795640584; x=1796245384;
-        h=content-type:cc:to:from:subject:message-id:mime-version:date
-         :x-gm-message-state:from:to:cc:subject:date:message-id:reply-to
-         :content-type;
-        bh=Iq1LqV/I3EkKfuWXMTSw+B6TAIfUEFhKN+ETx366hf8=;
-        b=AbRwPojXQivwTJqaWOuLB0ecbwGY2mcnVNMT9LpBa7RD33wrvM5FBPHizMy/RaJNYN
-         FlS9IN985m9nc2dAN/IH0d38YleOxLLlezQGV/ka8jD03UNT7x8D3y6k+8oQMfC39sp2
-         xyVmZEDmFZS5+t8XA6SAUXUiJfc+if7s3UZzqj09RdhRjVEh3LGaM+rhoKCnP/9m47uT
-         I568X/4v40DE5oFhtF2QaWyMa85yIb027VSaGSe2Dn66952aF6gl1m4nAE4MkLtPLDZ7
-         3VVoPaQ4sH/DY4iT42fCN0m2HboQa0s/01QeMICFN1GDLzFV01/DFeiDoF3ZBahG8+VG
-         upfw==
-X-Forwarded-Encrypted: i=1; AL+hErG/r7ofyyaSLAoQPUfXobbK3qq0xOKWBKvUupe0aJdG+MXRFzDriQxgHHkBgvT42rY4yZ7TYE48ZbuvQ5xpCg==@vger.kernel.org
-X-Gm-Message-State: APuU4Z8ynE66JTOQk6aSGpCgXFMBTE07YFL8nctsROfytks5wZfeugIa
-	UIPM/vaxjiIvGJtH3DVR0Ck9oaye7xTbXZPmEZtjimzAp8jHy/mcuvGiZQua0mw0nGIPcIAJn6w
-	0KA==
-X-Received: from dycmv8.prod.google.com ([2002:a05:693c:2808:b0:386:c2e4:36b6])
- (user=elkin job=prod-delivery.src-stubby-dispatcher) by 2002:a05:693c:8209:b0:383:e7af:c28d
- with SMTP id 5a478bee46e88-3856f14d5b2mr19627407eec.9.1795640583471; Wed, 25
- Nov 2026 13:03:03 -0800 (PST)
-Date: Wed, 25 Nov 2026 21:01:58 +0000
+	dkim=pass (1024-bit key, unprotected) header.d=linux.dev header.i=@linux.dev header.a=rsa-sha256 header.s=key1 header.b=C7Je3Wnu
+X-Envelope-To: linux-wireless@vger.kernel.org
+DKIM-Signature: a=rsa-sha256; bh=RKZsk0NS8mynIgA4hnJhFwJTH5k76SHJsDIZ2nxGxXM=;
+ c=simple/simple; d=linux.dev;
+ h=from:to:subject:date:message-id:mime-version:content-type; s=key1;
+ t=1795641269; v=1; x=1796246069;
+ b=C7Je3WnuHE8Y98SHkwZUrfJKYUnfOZXeMYoLAHGwJjkK6v06khzmmSQGEyrGc0SgVvvbQr6+
+ AX62rDUhwYSgtQ5HJQtnqfU+COlq9tW4nolsWe3/Jn7mQRkenYlULE6RFvA9y2e63uP0CpLEbew
+ o1G+SuUxx86FHzaE4cEuT7MY=
+X-Envelope-To: linux-wireless@vger.kernel.org
+Received: by smtp.migadu.com with ESMTPS id 125b1af2ac55a052;
+	Wed, 25 Nov 2026 21:14:28 +0000
+X-Mizu-Trace-ID: 125b1af2ac55a052
+X-Migadu-Flow: FLOW_OUT
+Date: Wed, 25 Nov 2026 22:14:25 +0100
+From: Luka Gejak <luka.gejak@linux.dev>
+To: Zeshan Ahmed Nobin <zeshanahmednobin@gmail.com>,
+ linux-wireless@vger.kernel.org
+CC: Ping-Ke Shih <pkshih@realtek.com>, Kalle Valo <kvalo@kernel.org>,
+ linux-kernel@vger.kernel.org
+Subject: =?US-ASCII?Q?Re=3A_=5BPATCH_rtw-next_v4=5D_wifi=3A_rtw88=3A_8822?=
+ =?US-ASCII?Q?c=3A_validate_bw_and_nrx_read_from_registers?=
+In-Reply-To: <20261125203753.428868-1-zeshanahmednobin@gmail.com>
+References: <20261125203753.428868-1-zeshanahmednobin@gmail.com>
+Message-ID: <E6ECB3B5-5DEE-49A5-BDDC-0F20CE84065F@linux.dev>
 X-Mailing-List: linux-wireless@vger.kernel.org
 List-Id: <linux-wireless.vger.kernel.org>
 List-Post: <mailto:linux-wireless@vger.kernel.org>
@@ -75,92 +66,50 @@ List-Subscribe: <mailto:linux-wireless+subscribe@vger.kernel.org>
 List-Unsubscribe: <mailto:linux-wireless+unsubscribe@vger.kernel.org>
 List-Owner: <mailto:linux-wireless+owner@vger.kernel.org>
 Precedence: list
-Mime-Version: 1.0
-X-Mailer: git-send-email 2.56.1.839.g22a8290db9-goog
-Message-ID: <20261125210158.1280227-1-elkin@google.com>
-Subject: [PATCH wireless] wifi: nxpwifi: fix UAF after skb_realloc_headroom()
- in bridged RX
-From: Elkin Cruz <elkin@google.com>
-To: Jeff Chen <jeff.chen_1@nxp.com>, Johannes Berg <johannes@sipsolutions.net>
-Cc: Francesco Dolcini <francesco@dolcini.it>, linux-wireless@vger.kernel.org, 
-	linux-kernel@vger.kernel.org, llvm@lists.linux.dev, irogers@google.com, 
-	Elkin Cruz <elkin@google.com>, stable@vger.kernel.org
-Content-Type: text/plain; charset="UTF-8"
+MIME-Version: 1.0
+Content-Type: text/plain;
+ charset=utf-8
+Content-Transfer-Encoding: 8bit
 
-In nxpwifi_uap_queue_bridged_pkt(), uap_rx_pd and rx_pkt_hdr point into
-the original skb->data buffer. If skb_headroom(skb) is less than
-NXPWIFI_MIN_DATA_HEADER_LEN, skb_realloc_headroom() allocates a new skb
-and kfree_skb() frees the old skb, leaving uap_rx_pd and rx_pkt_hdr
-dangling when updating station and bridge statistics (in addition to
-rx_pkt_hdr->eth803_hdr.h_source having been partially overwritten in the
-SNAP-to-Ethernet-II header move).
+On November 25, 2026 9:37:53 PM GMT+01:00, Zeshan Ahmed Nobin
+<zeshanahmednobin@gmail.com> wrote:
+>rtw8822c_phy_cck_pd_set() reads nrx and bw from the chip with
+>rtw_read32_mask() and uses them as indexes into dm_info->cck_pd_lv[][]
+>and rtw8822c_cck_pd_reg[][].
+>
+>When the chip stops responding on the PCIe bus, register reads return
+>all ones, so bw and nrx both become 3. bw = 3 is past the end of both
+>arrays.  When the chip stopped responding on Ubuntu's 7.0.0-43 kernel,
+>UBSAN reported:
+>
+>  UBSAN: array-index-out-of-bounds in .../rtw88/rtw8822c.c:4407:21
+>  index 3 is out of range for type 'u8 [2][4]'
+>  Workqueue: phy0 rtw_watch_dog_work [rtw88_core]
+>  Call Trace:
+>   rtw8822c_phy_cck_pd_set+0x33c/0x510 [rtw88_8822c]
+>   rtw_phy_dynamic_mechanism+0x310/0x330 [rtw88_core]
+>   rtw_watch_dog_work+0x217/0x330 [rtw88_core]
+>
+>nrx = 3 fits in cck_pd_lv[][], but rtw8822c_cck_pd_reg[][] only has
+>registers for nrx 0 and 1. The entry for nrx 3 is empty: register 0,
+>mask 0. If bw is valid and the level changes, the driver uses that
+>empty entry. rtw_read32_mask() then shifts by __ffs(0), which is
+>undefined; in a test that faked only nrx 3, UBSAN reported "shift
+>exponent 64 is too large".
+>
+>Return early if bw or nrx is out of range, before either is used as
+>an index.
+>
+>Fixes: 479c4ee931a6 ("rtw88: add dynamic cck pd mechanism")
+>Reported-by: Luka Gejak <luka.gejak@linux.dev>
+>Closes: https://lore.kernel.org/linux-wireless/f6a7d3272fe7635c6a83698dfab5d85500437ca6@linux.dev/
+>Cc: stable@vger.kernel.org
+>Signed-off-by: Zeshan Ahmed Nobin <zeshanahmednobin@gmail.com>
+>---
 
-Cache rx_rate and ht_info from uap_rx_pd once packet bounds are verified
-and read h_source and h_dest via p_ethhdr = (void *)skb->data after the
-headroom reallocation block.
+Looks good to me,
 
-Fixes: 73b01e57ed3e ("wifi: nxp: add nxpwifi driver for IW61x")
-Cc: stable@vger.kernel.org
-Signed-off-by: Elkin Cruz <elkin@google.com>
----
+Reviewed-by: Luka Gejak <luka.gejak@linux.dev>
 
-I am trying out new Clang static analysis checks for kernel bug
-classes, and they flagged this code as possibly buggy. The findings
-were triaged/fixed and commit descriptions were drafted with help of AI,
-then checked against linux-next (not runtime-tested on hardware).
-
-Thanks,
-Elkin
-
- drivers/net/wireless/nxp/nxpwifi/uap_txrx.c | 13 +++++++++----
- 1 file changed, 9 insertions(+), 4 deletions(-)
-
-diff --git a/drivers/net/wireless/nxp/nxpwifi/uap_txrx.c b/drivers/net/wireless/nxp/nxpwifi/uap_txrx.c
-index 840dddfc4f5a..c3191575db17 100644
---- a/drivers/net/wireless/nxp/nxpwifi/uap_txrx.c
-+++ b/drivers/net/wireless/nxp/nxpwifi/uap_txrx.c
-@@ -84,6 +84,7 @@ nxpwifi_uap_queue_bridged_pkt(struct nxpwifi_private *priv,
- 	int hdr_chop;
- 	struct ethhdr *p_ethhdr;
- 	struct nxpwifi_sta_node *src_node;
-+	u8 rx_rate, ht_info;
- 	int index;
- 
- 	uap_rx_pd = (struct uap_rxpd *)(skb->data);
-@@ -105,6 +106,9 @@ nxpwifi_uap_queue_bridged_pkt(struct nxpwifi_private *priv,
- 		return;
- 	}
- 
-+	rx_rate = uap_rx_pd->rx_rate;
-+	ht_info = uap_rx_pd->ht_info;
-+
- 	if ((!memcmp(&rx_pkt_hdr->rfc1042_hdr, bridge_tunnel_header,
- 		     sizeof(bridge_tunnel_header))) ||
- 	    (!memcmp(&rx_pkt_hdr->rfc1042_hdr, rfc1042_header,
-@@ -178,18 +182,19 @@ nxpwifi_uap_queue_bridged_pkt(struct nxpwifi_private *priv,
- 	tx_info->bss_type = priv->bss_type;
- 	tx_info->flags |= NXPWIFI_BUF_FLAG_BRIDGED_PKT;
- 
-+	p_ethhdr = (void *)skb->data;
- 	rcu_read_lock();
--	src_node = nxpwifi_get_sta_entry(priv, rx_pkt_hdr->eth803_hdr.h_source);
-+	src_node = nxpwifi_get_sta_entry(priv, p_ethhdr->h_source);
- 	if (src_node) {
- 		src_node->stats.last_rx = jiffies;
- 		src_node->stats.rx_bytes += skb->len;
- 		src_node->stats.rx_packets++;
--		src_node->stats.last_tx_rate = uap_rx_pd->rx_rate;
--		src_node->stats.last_tx_htinfo = uap_rx_pd->ht_info;
-+		src_node->stats.last_tx_rate = rx_rate;
-+		src_node->stats.last_tx_htinfo = ht_info;
- 	}
- 	rcu_read_unlock();
- 
--	if (is_unicast_ether_addr(rx_pkt_hdr->eth803_hdr.h_dest)) {
-+	if (is_unicast_ether_addr(p_ethhdr->h_dest)) {
- 		/*
- 		 * Update bridge packet statistics as the
- 		 * packet is not going to kernel/upper layer.
--- 
-2.56.1.839.g22a8290db9-goog
-
+Best regards,
+Luka Gejak
