@@ -1,87 +1,91 @@
-Authentication-Results: smtp.subspace.kernel.org; arc=none smtp.remote-ip=74.125.82.180
+Authentication-Results: smtp.subspace.kernel.org; arc=none smtp.remote-ip=74.125.82.46
 ARC-Seal: i=1; d=subspace.kernel.org; s=arc20261015; a=rsa-sha256; cv=none;
-	t=1795595867;
-	b=IL+691hn/4KtsfSp+XFxWEP8aSUrQdZhN4MCiNP4FfyEyMConi/xuMaiuZehtFLvGCxk
-	 jex86B9Awn4eeNKri16zDfVl6qCsM/IOnyDyUD3GRPxr/W8lU7nuKYslp464VNV+CfwW3
-	 yczysV+R922XfFcwjIROxQW71yRbmNEn0oKh4f02yQxxLdSW5iBW+17ITfklQLyYiJSOS
-	 DWyYIcdznDyy7vCKBtdcjpDrhbTYJfBeplb8mgLxa6A1wNtSsMlPLDCXY2ezo5eXEtVqG
-	 2a22VAg6/6vmN4x70mEJUO8gVYtRZ29dCVmvi0rt+Fzktt9HvPF25BOVqBNsidgZ9yA==
+	t=1795595869;
+	b=3z1DS8xnpBvURovx+4ge63RvEGivA9Zbf/o71dvfaAHKob0fty5TVghGERXfRLJT+b/1
+	 zHnMZjE0hp8vDO+avmq4SDhF5lWn6U10DFouzjSx2SBWaO51LyrxwVkgQp+rmPFrAwiHh
+	 6ty44Rlhuf9nFf8DDEpE0IDMULCnaVJgXs3p1zRiLzcZCc7c2+aaRLewqWzX2ynETdPeJ
+	 RRSGzLtkAv0JAa5pqQLJGZoA+VFZQzLE296lazuW1zHIjMh1fvZ7n2Ux+rrYi1OFqsbph
+	 fNhiQVYI3wStvAFaLphdGb9teNh/+rxSOlNYCSRjSFDDpPFWtouIGVpsR+59L+v9Cbw==
 ARC-Message-Signature: i=1; d=subspace.kernel.org; s=arc20261015;
-	a=rsa-sha256; c=relaxed/relaxed; t=1795595867;
+	a=rsa-sha256; c=relaxed/relaxed; t=1795595869;
 	h=DMARC-Filter:Received:DKIM-Signature:X-Google-DKIM-Signature:
 	 X-Gm-Message-State:X-Gm-Gg:X-Received:Received:From:To:Cc:Subject:
-	 Date:Message-Id:X-Mailer:MIME-Version:Content-Transfer-Encoding;
-	bh=dh8b5LXR3KiiLkuoiCOtiWjtpyywRUff5GPX2NXRZ1M=;
-	b=0rYXf/5GOk0inz0I9D+HASj9/CYGIhKeT7yBzuT5IN/GcSuTUby5NciV7NbKlwgNElkX
-	 ovwgurKOehAhI04LBNkjJckdHmmIqSPed6r/i2TSRRlSzcwvu+MkvR7tGnj8RtCVojF2f
-	 Ld0F17zQQG5gHkYkZDTqCHHXcuiVYS/frLTS7/EUhbACDOAcgh7LKMArlM/yBOsgNXVqx
-	 07XLloe7AIL5h6Nuh4uKnVe8V1XJwjNVmiJMf6eHBIsAls95SuO5ahFcrkzKm/TMJk11g
-	 e3Ny8zVijtHFh1yt90DLzJiFqdRXkif1eemyUqj63+xK+CbAB4CxovPT2mImqq7fJkg==
+	 Date:Message-Id:X-Mailer:In-Reply-To:References:MIME-Version:
+	 Content-Transfer-Encoding;
+	bh=mKicS48dhuS+kup1GJfFYDCP95jIxBfuRfIt0EplH08=;
+	b=ZImBRZZzIWebT6cDpTsR3MZLkiHa0tjJYh05EaIzys8PHcbypz5RTGM2aG1RqdOsviyQ
+	 Wre6CbokGSsJb9FJKrmJ6BOknfIA93CQSP7RlJzQjmSNuXbJVcACeLABxVFkE4+Nhcooq
+	 CCXy+wdooDuggGxfyjpYhct2hL/htAFzrNfM0bPNVyQDkDL+4Dm1RKpi/2Lmkgtda9JHn
+	 XtSRadrrgniZVQxj9idbf7GsP5KDHNXUKrguFlQTRTA5i+oLQbs+CYtwnK0CFysHIUuI+
+	 WHQI1FEw/yUPp+O2AXfTYF2TZYy8MIJGcosHkyCxs8iicNutqahn5vpLpg1vYWydlVA==
 ARC-Authentication-Results: i=1; smtp.subspace.kernel.org; 
 	dmarc=pass header.from=gmail.com;
 	spf=pass smtp.mailfrom=gmail.com;
-	dkim=pass header.d=gmail.com header.i=@gmail.com header.a=rsa-sha256 header.s=20260707 header.b=fnUBibtK;
-	arc=none smtp.remote-ip=74.125.82.180
-Received: from mail-dy1-f180.google.com (mail-dy1-f180.google.com [74.125.82.180])
+	dkim=pass header.d=gmail.com header.i=@gmail.com header.a=rsa-sha256 header.s=20260707 header.b=SFWZaOFu;
+	arc=none smtp.remote-ip=74.125.82.46
+Received: from mail-dl1-f46.google.com (mail-dl1-f46.google.com [74.125.82.46])
 	(using TLSv1.3 with cipher TLS_AES_128_GCM_SHA256 (128/128 bits)
 	 key-exchange X25519 server-signature ECDSA (prime256v1) server-digest SHA256)
 	(No client certificate requested)
-	by smtp.subspace.kernel.org (Postfix) with ESMTPS id 3F502606A31E
-	for <linux-wireless@vger.kernel.org>; Wed, 25 Nov 2026 08:37:47 +0000 (UTC)
-DMARC-Filter: OpenDMARC Filter v1.4.2 smtp.subspace.kernel.org 3F502606A31E
+	by smtp.subspace.kernel.org (Postfix) with ESMTPS id DD4CB606A332
+	for <linux-wireless@vger.kernel.org>; Wed, 25 Nov 2026 08:37:48 +0000 (UTC)
+DMARC-Filter: OpenDMARC Filter v1.4.2 smtp.subspace.kernel.org DD4CB606A332
 Authentication-Results: smtp.subspace.kernel.org; dmarc=pass (p=none dis=none) header.from=gmail.com
 Authentication-Results: smtp.subspace.kernel.org; spf=pass smtp.mailfrom=gmail.com
 Authentication-Results: smtp.subspace.kernel.org;
-	dkim=pass (2048-bit key) header.d=gmail.com header.i=@gmail.com header.a=rsa-sha256 header.s=20260707 header.b=fnUBibtK
-Received: by mail-dy1-f180.google.com with SMTP id 5a478bee46e88-38190551625so10968384eec.1
-        for <linux-wireless@vger.kernel.org>; Wed, 25 Nov 2026 00:37:47 -0800 (PST)
+	dkim=pass (2048-bit key) header.d=gmail.com header.i=@gmail.com header.a=rsa-sha256 header.s=20260707 header.b=SFWZaOFu
+Received: by mail-dl1-f46.google.com with SMTP id a92af1059eb24-1a3c08d6928so8041261c88.0
+        for <linux-wireless@vger.kernel.org>; Wed, 25 Nov 2026 00:37:48 -0800 (PST)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=gmail.com; s=20260707; t=1795595866; x=1796200666; darn=vger.kernel.org;
-        h=content-transfer-encoding:mime-version:message-id:date:subject:cc
-         :to:from:from:to:cc:subject:date:message-id:reply-to:content-type;
-        bh=dh8b5LXR3KiiLkuoiCOtiWjtpyywRUff5GPX2NXRZ1M=;
-        b=fnUBibtKjtkg62Ax2d5I2dz4bNfkualHt1VdGkQ7zd3khdys5mqOQM7OgzD8wN3cuM
-         mlHYuAgAweCup2Q6740w/XGlGyNQSocdvqTzKnSKWDBwYRbHo8POudFnfV/w/E1ceYPu
-         9hwmfm147zCEOy6AJRMWUOAyQcvaUmq65BJDnAzSG/O4+26j6lgfMIP3tUK3LlvBehrz
-         0GSEnp0YGdvTYyNcP1SwGhzVfJbgib5TDza3XQ29bWanBJv9wGivy9AjoJEz4he4xUiS
-         wYTxtku4VhsDJqrYKOoaSOuhvX5siJl5YYVbIaIg9camyHSst5QWhgMitzxel7ipndV/
-         qO4g==
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=1e100.net; s=20260707; t=1795595866; x=1796200666;
-        h=content-transfer-encoding:mime-version:message-id:date:subject:cc
-         :to:from:x-gm-gg:x-gm-message-state:from:to:cc:subject:date
+        d=gmail.com; s=20260707; t=1795595868; x=1796200668; darn=vger.kernel.org;
+        h=content-transfer-encoding:mime-version:references:in-reply-to
+         :message-id:date:subject:cc:to:from:from:to:cc:subject:date
          :message-id:reply-to:content-type;
-        bh=dh8b5LXR3KiiLkuoiCOtiWjtpyywRUff5GPX2NXRZ1M=;
-        b=uw+k+3j3vnANx6KEvnI577xsWmzlI9hWF0vRyHBZmEpRo7o2dJszjphsO1wIbUQOdN
-         UU6gkHC0BU6RJacdc1YUv9e1exFQxLML6z0WtLMwPAeDzpy4xnPAIugbBF4paqISVK63
-         X+Tkx+GZzwUQKH73I1dTGpqetAC05ac6j9DUK56CxECB5k4rhdce6yNDrXaqE3+U2Vut
-         7Zu9eTFIxsQMgFeNr1YBF/ygPJKnKeSgxaKSynBaBnqFxhT0JsUVLMQ5ILexSD7umwBv
-         HAQauVBvG6juFY8Ri71j1M9FxlvT2Sfr+bXnacwfeomo1YW/QdoKtJSBLGKdCuOsJIoz
-         128g==
-X-Gm-Message-State: APuU4Z/Qp0pi+MVZF6YA4Tm0b2Z64kaxsattlh5bXLoV3MUNHnwpSQ3i
-	POX2SYffT9SusajC0PgJuMXrnpppyERV5AGqp1mwOYC2pqziFbvB3ROu+DEhsQ==
-X-Gm-Gg: AZFdTZf2EcY+oV2VYeV66baOml8Qj8X3oi46EUILonhdmI9vXxVfgm2O9BDBc88ABu4
-	Zksz3d7/NjZCaB/apAAwETe9jEvw+deOSiW95mFRa9sBiQrQx+EJyDfRi75Z6sQQMAakyS5w4yi
-	LhwixculKbxERTtAmvM5DP4HDdS4FIL3khV3QqCcdKfWPo8wf/aDzdJZ94ajWmsdB7qXraSeqsV
-	NLyRMIoEiWXGxxHfiZJHXcNYsgLk/ON57KlW4I//78Avv7zhb1Lh0RlmO/ms+hEsIQgXeI7uH27
-	vvgUsNNHlhOSYrJqzRGijl/8Oxx33lV5HK2DLC/DckbHjAzNyr/DSXv7vSh9nxJ2ZHVFm4uI1nm
-	om75dnPPhWHQ7PaWzKf+vwCHfORLRpIN849I/sI3MCSDAZKzjWn+i4CNuR3rbaj05FMYzp4VpgB
-	+z6S49DOU1NjRITXKU0wUAzmD6lKDSLdWY260ZOxbJnhOwlsube3Ez+yLQhvyEUc/L9Os9H5zJe
-	/rWgp1zNPl55qWktzR2owJ/mas8ttgj/sZq9irzX6h9KQrXJkhIWZXiG9gowZx+32qMgQxehxyx
-	ek9CBqVs6Sly3QnZ6BZ0IrAn3jmMoSKczkgAxeIlaoGX88vFe1N6rA==
-X-Received: by 2002:a05:693c:8859:b0:386:b494:864e with SMTP id 5a478bee46e88-386b4948821mr6521731eec.15.1795595866205;
-        Wed, 25 Nov 2026 00:37:46 -0800 (PST)
+        bh=mKicS48dhuS+kup1GJfFYDCP95jIxBfuRfIt0EplH08=;
+        b=SFWZaOFu9qpubTwvgwBz5nB64wkLvIWj8UKXs6S6mXb5+mEQHD2LWmMAx/Swpa4fPo
+         SP60mO5V1VxfAJRVMPudYgO+bIB3n0LLmSemU7EjCb7iQ6fzMb29biQ3H/MQuLvBHr6p
+         MSTqaarqp835AVfvfuyG9auFwXNVLUQiNvLDZBJbtsrEOa1NYVoN5aMcRn7BBHVciPRC
+         dp9zvVo4gNYE9lbVISyrN9w5EoW9RqZoejcO1sxEBpHKf+D+cfdhSJ2/7UnwCISE4Izo
+         i/NiovJ2862honlrNXUujEfA1Jg/0Yqo255bDYgb5qUft2EjaOYcMfXIMsxjvCUvdQhN
+         TQzg==
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+        d=1e100.net; s=20260707; t=1795595868; x=1796200668;
+        h=content-transfer-encoding:mime-version:references:in-reply-to
+         :message-id:date:subject:cc:to:from:x-gm-gg:x-gm-message-state:from
+         :to:cc:subject:date:message-id:reply-to:content-type;
+        bh=mKicS48dhuS+kup1GJfFYDCP95jIxBfuRfIt0EplH08=;
+        b=uH0vhCTDAIPCKqZ3Dt1vTqwAvbW1fneqGbWMLDllyTbBvykFBIGrYtzeGDJU0AlKkE
+         7PsnEKmk0OEUyIIWXAfJwOZfVtwA6dtTz4X5u5OYqGVd21k9xckc217LoWOjzXtJg0Gd
+         kC3H7OXF0GpVjEDCdUM2dg1dxuEiKfIoqbOqc7nnI3uuhiae8v7pIxDepv/aqGlLDubl
+         Owi4C2zyaO+BqIoQXT5vAltdxiclI6tq9GunsK0nBX/wDNVeB9M2sGpz0AQ8BXwksu0b
+         rfmlLz+/+T/XVa+979HJTV7myc1IRHC8aKKEfgATxVmQFYO8ScraaKy7rrJB/6xZR0VL
+         y5Iw==
+X-Gm-Message-State: APuU4Z9uZZ3IjuqG93wsY9cMb0dcJJxofq0Ap0bsuxD6QEYC9ls4LmKa
+	l0qS6AFTywska8pqTCqrFEK8z8kEQ4nClRAoVYMCUDh+Fw45uf7YqWcibXaVgg==
+X-Gm-Gg: AZFdTZeHnjrk3MKk48cOrihYMUiwJPAQuE3Feu8O6+jTs2JwEGYLdBNP6lFy0zeH9tV
+	XIFz2kE9ZY95qq3t+gfxH2VgE8AR3wtrCEtc3NcQLBR2Rgtk5OfUNkuRSIaRnkZGYWOWL9VLAyt
+	0qio1jblp3NqlZDi6Gak1etbeCmrDqbpkKui6HgtudLNGH1N0HsqevuqOSVA1fnDJvPL213thMh
+	i41Tu3MVL0Q2LmUflTtUh6xSOqckuugewVV24v3kYwEjmRu+kLEXA8wlByL1WVuRYtDR8dOIm+y
+	J5iTF749c2GqGnQAgyPdgFSrp1F0FsWtJZNfoRFzUBJxSvuFhuzyHWLDKbXOREWqhluO/Sm25/r
+	YszcWbESrzIF18459MSvbQKKHy3nd4X/M4+4xmXrN+9Rm0/VPm4nBDig9iVh1XO4ZEzllaT8Ml7
+	RYTxVfOuTI/qMJH9CIisF9J5cICo0FpyY8GhwCeDUAaqRcMBVnP4MeIjpRc2HEWeKKxPBum1qxx
+	0NlLtBf3rV1xUwgYC4r9ZUATu9g5oMCy0SiFUVoB9qY+ZFuNLHd4H8HIg2Mme+AcN8PqKZFWlMv
+	QS7zyLDAEiVGynT3UsTer1TU9Lljzd57CKqs1uuj2VeOsf/KjzRz1Q==
+X-Received: by 2002:a05:7300:e91e:b0:384:2780:8757 with SMTP id 5a478bee46e88-38570a3e793mr19724901eec.22.1795595867818;
+        Wed, 25 Nov 2026 00:37:47 -0800 (PST)
 Received: from csl-conti-dell7858.ntu.edu.sg ([155.69.195.57])
-        by smtp.gmail.com with ESMTPSA id 5a478bee46e88-3866f299d0bsm43927422eec.19.2026.11.25.00.37.44
+        by smtp.gmail.com with ESMTPSA id 5a478bee46e88-3866f299d0bsm43927422eec.19.2026.11.25.00.37.46
         (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
-        Wed, 25 Nov 2026 00:37:45 -0800 (PST)
+        Wed, 25 Nov 2026 00:37:47 -0800 (PST)
 From: Maoyi Xie <maoyixie.tju@gmail.com>
 To: Miri Korenblit <miriam.rachel.korenblit@intel.com>
 Cc: linux-wireless@vger.kernel.org
-Subject: [PATCH iwlwifi-next 0/4] wifi: iwlwifi: validate more indices from the firmware
-Date: Wed, 25 Nov 2026 16:37:38 +0800
-Message-Id: <20261125083742.1355074-1-maoyixie.tju@gmail.com>
+Subject: [PATCH iwlwifi-next 1/4] wifi: iwlwifi: mvm: validate TID in TX response handlers
+Date: Wed, 25 Nov 2026 16:37:39 +0800
+Message-Id: <20261125083742.1355074-2-maoyixie.tju@gmail.com>
 X-Mailer: git-send-email 2.34.1
+In-Reply-To: <20261125083742.1355074-1-maoyixie.tju@gmail.com>
+References: <20261125083742.1355074-1-maoyixie.tju@gmail.com>
 X-Mailing-List: linux-wireless@vger.kernel.org
 List-Id: <linux-wireless.vger.kernel.org>
 List-Post: <mailto:linux-wireless@vger.kernel.org>
@@ -93,30 +97,49 @@ Precedence: list
 MIME-Version: 1.0
 Content-Transfer-Encoding: 8bit
 
-These patches add range checks for a TID, a BAID and a TX queue number
-that the firmware reports. Other code paths already have these checks.
-The patches are independent.
+iwl_mvm_rx_tx_cmd_single() and iwl_mvm_rx_tx_cmd_agg() index
+mvmsta->tid_data[] with the 4-bit TID from ra_tid. Only the first
+function skips IWL_MGMT_TID. A TID above 8 writes to the members that
+follow the array.
 
-The missing checks were found with a CodeQL-based static analysis tool
-that we are developing. Each out-of-range access was reproduced in a
-userspace harness under sanitizers, which report nothing with the
-patches. Nothing was tested on hardware. The patches were compile-tested
-with W=1 on next-20261116.
+Add the check that iwl_mvm_rx_ba_notif() has.
 
-I used an LLM to help write the harnesses and these patches.
+Found with a CodeQL-based static analysis tool.
+Reproduced in a userspace harness under UBSan. Not tested on hardware.
 
-Maoyi Xie (4):
-  wifi: iwlwifi: mvm: validate TID in TX response handlers
-  wifi: iwlwifi: mvm: validate BAID in the RX path
-  wifi: iwlwifi: mld: validate BAID in the RX timestamp update
-  wifi: iwlwifi: pcie: validate txq_id in reclaim
+Signed-off-by: Maoyi Xie <maoyixie.tju@gmail.com>
+---
+I used an LLM to help write the harness and this patch.
 
- drivers/net/wireless/intel/iwlwifi/mld/rx.c   | 4 ++++
- drivers/net/wireless/intel/iwlwifi/mvm/rxmq.c | 8 ++++++++
- drivers/net/wireless/intel/iwlwifi/mvm/tx.c   | 8 +++++++-
- drivers/net/wireless/intel/iwlwifi/pcie/tx.c  | 9 ++++++++-
- 4 files changed, 27 insertions(+), 2 deletions(-)
+ drivers/net/wireless/intel/iwlwifi/mvm/tx.c | 8 +++++++-
+ 1 file changed, 7 insertions(+), 1 deletion(-)
 
+diff --git a/drivers/net/wireless/intel/iwlwifi/mvm/tx.c b/drivers/net/wireless/intel/iwlwifi/mvm/tx.c
+index d3c2fe830477..d06ce3d1eb68 100644
+--- a/drivers/net/wireless/intel/iwlwifi/mvm/tx.c
++++ b/drivers/net/wireless/intel/iwlwifi/mvm/tx.c
+@@ -1731,7 +1731,9 @@ static void iwl_mvm_rx_tx_cmd_single(struct iwl_mvm *mvm,
+ 		    mvmsta->sta_state < IEEE80211_STA_AUTHORIZED)
+ 			iwl_mvm_toggle_tx_ant(mvm, &mvmsta->tx_ant);
+ 
+-		if (sta->wme && tid != IWL_MGMT_TID) {
++		if (sta->wme && tid != IWL_MGMT_TID &&
++		    !IWL_FW_CHECK(mvm, tid >= ARRAY_SIZE(mvmsta->tid_data),
++				  "invalid TID %d in TX response\n", tid)) {
+ 			struct iwl_mvm_tid_data *tid_data =
+ 				&mvmsta->tid_data[tid];
+ 			bool send_eosp_ndp = false;
+@@ -1865,6 +1867,10 @@ static void iwl_mvm_rx_tx_cmd_agg(struct iwl_mvm *mvm,
+ 			 (queue != IWL_MVM_DQA_BSS_CLIENT_QUEUE)))
+ 		return;
+ 
++	if (IWL_FW_CHECK(mvm, tid >= ARRAY_SIZE(mvmsta->tid_data),
++			 "invalid TID %d in agg TX response\n", tid))
++		return;
++
+ 	iwl_mvm_rx_tx_cmd_agg_dbg(mvm, pkt);
+ 
+ 	rcu_read_lock();
 -- 
 2.34.1
 
