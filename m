@@ -1,97 +1,124 @@
-Authentication-Results: smtp.subspace.kernel.org; arc=none smtp.remote-ip=209.85.128.48
-ARC-Seal: i=1; d=subspace.kernel.org; s=arc20261015; a=rsa-sha256; cv=none;
-	t=1795622781;
-	b=PECRFnn4RiqOS8Nvz8/n+aqO7QvMT0lfj6fDoOzJSxYWjfXKWc9s/rJhqqr02/xrb+td
-	 iKqK5x3KJcv/PFaWJjIBHsC3/2eKHJUmWA9K7xvTHvYa5dMYnwDnlNWk3INUjMUAWy9ZY
-	 ha+QSBT7mOBN5I+Qo9vBfLRM0rejmLcdQs01aVkMXyyZt0qOX1YuoSdV+JLUc2IrsTc4I
-	 45NsM8q6C/7ncowwsb4VBccLLvdY+lkn3sG6aD7NLjaAr5JlVEzCavatV1OLDCs2OfBoL
-	 A6v/A77h4kQXs4t+rlHMyuQHqpE4pDagtZ6RzK6PSOm/mawEm7Ob7h5ZrE6lsHYja9A==
-ARC-Message-Signature: i=1; d=subspace.kernel.org; s=arc20261015;
-	a=rsa-sha256; c=relaxed/relaxed; t=1795622781;
-	h=DMARC-Filter:Received:DKIM-Signature:X-Google-DKIM-Signature:
-	 X-Forwarded-Encrypted:X-Gm-Message-State:X-Gm-Gg:X-Received:Received:
-	 From:To:Cc:Subject:Date:Message-ID:X-Mailer:In-Reply-To:References:
-	 MIME-Version:Content-Transfer-Encoding;
-	bh=2Gq9YU/maKf0gmc7d1gIF7pc7KL6Wf9dUnlwKGyXxgs=;
-	b=KwmwbyTpy0vdzwwN4JMe0Y/8/7Z9e9sHtmnBAf3lIP9gtuBK7mji0F0knZ5RGE/54PP0
-	 aglsDWcSVRFWgcup1eeb7vc8PDfIDGjU+vcBBzcvW4GQ53DSJoy9ZSnl92Oy1yA/BLQwa
-	 QZNiUxAaEsjadUgoTeZzIIvBspscurGmHRnS2DOmSBkF0gxy/bDa55VAlKybDB2i7p1cE
-	 UcyaHJXgagOoFk0pzsbU2mlvFJJQm75w6wrhEs5EzqVopUkqPnQEzBdVRILCKDbttK7W3
-	 NtEEWiRDnSGPraVSx9yaIPsHRxgrLE9401bNoDODxvqe3hGhgHj1USPGYWsSgsm4MAg==
-ARC-Authentication-Results: i=1; smtp.subspace.kernel.org; 
-	dmarc=pass header.from=gmail.com;
-	spf=pass smtp.mailfrom=gmail.com;
-	dkim=pass header.d=gmail.com header.i=@gmail.com header.a=rsa-sha256 header.s=20260707 header.b=sIxh4Ln7;
-	arc=none smtp.remote-ip=209.85.128.48
-Received: from mail-wm1-f48.google.com (mail-wm1-f48.google.com [209.85.128.48])
-	(using TLSv1.3 with cipher TLS_AES_128_GCM_SHA256 (128/128 bits)
+Authentication-Results: smtp.subspace.kernel.org; arc=pass header.oldest-pass=0 smtp.remote-ip=205.220.168.131
+ARC-Seal: i=2; d=subspace.kernel.org; s=arc20261015; a=rsa-sha256; cv=pass;
+	t=1795624944;
+	b=LpaWffkV+Sn/yxNOB1I0rkGJIJfsLCmrfKnrhYmyGN3h25V5y7Ua6pFswuXTn8tTXAaM
+	 Doz3tmNZ8q2S3AB5vGLIiCu1oX1x5uqYishYXod+s+rkjLvPZrpG5w0piYkhI+obZn0jp
+	 dmh3Ca5RQjbtBLDw6yiKru9oTKOeTGBxSNtTS4FqI3y1n6NTa0uN98rRfa1gnorCRM8oY
+	 eHTv25FABVRvCjGdxcIYQTG5JjMVP5dAjadxKoudA50v0GfkPMZZT+s/tRAVz0FG5zvqz
+	 ZmBORLNdUMKcv4vg+OOAT5b2GHiFkN0Jqd/SKDjXrvaTgSD+4l1uuTCBcm1uDTwjxEw==
+ARC-Message-Signature: i=2; d=subspace.kernel.org; s=arc20261015;
+	a=rsa-sha256; c=relaxed/relaxed; t=1795624944;
+	h=DMARC-Filter:Received:DKIM-Signature:Received:Received:
+	 DKIM-Signature:X-Google-DKIM-Signature:X-Forwarded-Encrypted:
+	 X-Gm-Message-State:X-Gm-Gg:X-Received:X-Received:MIME-Version:
+	 References:In-Reply-To:From:Date:X-Gm-Features:Message-ID:Subject:To:
+	 Cc:Content-Type:Content-Transfer-Encoding:X-Proofpoint-Spam-Info:
+	 X-Proofpoint-ORIG-GUID:X-Proofpoint-GUID:X-Authority-Analysis:
+	 X-Proofpoint-Spam-Details-Enc:X-Proofpoint-Virus-Version:
+	 X-Proofpoint-Spam-Details;
+	bh=nkZEd21w22ytwfXvATd81Pem6F6SKIOvioc0T8Yq+UE=;
+	b=4kGF656L7XY14vDq+PSv4L3Cbg86HY07oha4F5ZsKpnJEtBraPdtYZ1KcbO4KHTfLX0p
+	 izW/NiXQ59Zs8mrGW657ikCNeX31tbJI2cQC0TG8gfOjN/GSAT2dWCf/CjmgVGU8zTbrQ
+	 eAcUCPI1ljOQ/twpIofTDPkkZjZQmo78DL9Ea1B41r5xkfjJ/IKY4DaBLbBvC3VUDzusW
+	 aT54SaXPojhtZTVGdtmHD9ohy7Z0bu3StLtPsUZtsT58XFsJ0cnUAySBaRlzkpbiBfGwO
+	 yvf55HY6QOWbFxJFMBlyljKfVduFIpeehuHKFW3rPwEGhuKwUqhrg7AKxYwXqDsLI/A==
+ARC-Authentication-Results: i=2; smtp.subspace.kernel.org; 
+	dmarc=pass header.from=oss.qualcomm.com;
+	spf=pass smtp.mailfrom=oss.qualcomm.com;
+	dkim=pass header.d=qualcomm.com header.i=@qualcomm.com header.a=rsa-sha256 header.s=qcppdkim1 header.b=drMVhEpn;
+	dkim=pass header.d=oss.qualcomm.com header.i=@oss.qualcomm.com header.a=rsa-sha256 header.s=google header.b=doUBacFS;
+	arc=pass header.oldest-pass=0 smtp.remote-ip=205.220.168.131
+Received: from mx0a-0031df01.pphosted.com (mx0a-0031df01.pphosted.com [205.220.168.131])
+	(using TLSv1.3 with cipher TLS_AES_256_GCM_SHA384 (256/256 bits)
 	 key-exchange X25519 server-signature ECDSA (prime256v1) server-digest SHA256)
 	(No client certificate requested)
-	by smtp.subspace.kernel.org (Postfix) with ESMTPS id 59FCE606A321
-	for <linux-wireless@vger.kernel.org>; Wed, 25 Nov 2026 16:06:20 +0000 (UTC)
-DMARC-Filter: OpenDMARC Filter v1.4.2 smtp.subspace.kernel.org 59FCE606A321
-Authentication-Results: smtp.subspace.kernel.org; dmarc=pass (p=none dis=none) header.from=gmail.com
-Authentication-Results: smtp.subspace.kernel.org; spf=pass smtp.mailfrom=gmail.com
+	by smtp.subspace.kernel.org (Postfix) with ESMTPS id E2552606A681
+	for <linux-wireless@vger.kernel.org>; Wed, 25 Nov 2026 16:42:23 +0000 (UTC)
+DMARC-Filter: OpenDMARC Filter v1.4.2 smtp.subspace.kernel.org E2552606A681
+Authentication-Results: smtp.subspace.kernel.org; dmarc=pass (p=none dis=none) header.from=oss.qualcomm.com
+Authentication-Results: smtp.subspace.kernel.org; spf=pass smtp.mailfrom=oss.qualcomm.com
 Authentication-Results: smtp.subspace.kernel.org;
-	dkim=pass (2048-bit key) header.d=gmail.com header.i=@gmail.com header.a=rsa-sha256 header.s=20260707 header.b=sIxh4Ln7
-Received: by mail-wm1-f48.google.com with SMTP id 5b1f17b1804b1-4a5177d78c7so59313065e9.2
-        for <linux-wireless@vger.kernel.org>; Wed, 25 Nov 2026 08:06:20 -0800 (PST)
+	dkim=pass (2048-bit key, unprotected) header.d=qualcomm.com header.i=@qualcomm.com header.a=rsa-sha256 header.s=qcppdkim1 header.b=drMVhEpn;
+	dkim=pass (2048-bit key) header.d=oss.qualcomm.com header.i=@oss.qualcomm.com header.a=rsa-sha256 header.s=google header.b=doUBacFS
+Received: from pps.filterd (m0279867.ppops.net [127.0.0.1])
+	by mx0a-0031df01.pphosted.com (8.18.1.11/8.18.1.11) with ESMTP id 6APGQ7c41670811
+	for <linux-wireless@vger.kernel.org>; Wed, 25 Nov 2026 16:42:23 GMT
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=qualcomm.com; h=
+	cc:content-transfer-encoding:content-type:date:from:in-reply-to
+	:message-id:mime-version:references:subject:to; s=qcppdkim1; bh=
+	nkZEd21w22ytwfXvATd81Pem6F6SKIOvioc0T8Yq+UE=; b=drMVhEpnFwL8Gqkt
+	7RKt53KLEyUkxcy60KNEQMpNgg9PXPsPJmE+lCJOHR9pHU05qKyqn1BijgW9VeAe
+	DEiNi0noA6y75xlwZTowj6AvFG1z9s9ikgpz0hxeGKCbMmNq1yUQk6goDRqgNA+1
+	J7S/jq5n/g6+FsHKSjpumJ6F5Zdz3yicYlT/52g9fXagqW/HgVbTxKREJLRx9Oe7
+	mnAx4egl/1KuLs72YqoaVts0ImHwr7IZSexY77XGi3vuUpU6JJjhtZiODlai9t2q
+	XkmP0SnUO57L36mNnEPN5jAI/vIxCpG2f5v4vvlI8TgHDQIMAbE0jKV5sFLFEtdC
+	tzzlyA==
+Received: from mail-qk1-f197.google.com (mail-qk1-f197.google.com [209.85.222.197])
+	by mx0a-0031df01.pphosted.com (PPS) with ESMTPS id 4j62var50f-1
+	(version=TLSv1.3 cipher=TLS_AES_128_GCM_SHA256 bits=128 verify=NOT)
+	for <linux-wireless@vger.kernel.org>; Wed, 25 Nov 2026 16:42:23 +0000 (GMT)
+Received: by mail-qk1-f197.google.com with SMTP id af79cd13be357-9495af07676so941260785a.2
+        for <linux-wireless@vger.kernel.org>; Wed, 25 Nov 2026 08:42:23 -0800 (PST)
+ARC-Seal: i=1; a=rsa-sha256; t=1795624942; cv=none;
+        d=google.com; s=arc-20260327;
+        b=hbE0IIf1ASbtGzOZiguCzV9EffAxB2vPKCfRdwE275C3AkDZgiIuYbnotIlEJXO1L+
+         cWYhzL4+Z0YPnfK5uFew2bYl/og5Z+Ztgk1ghg8wviHN68TvLjZ/UVCgT8BrNz7Xo4h6
+         R3tonHhw4PKn81V1F/5/bmcwr9TJnbOzMhocf/DBRLpcYcZKVdLpqsEdTO2bIJ8k7t10
+         yejV+/A/DaL27A+SzE4rjTk/fghcdEsqJBX+oSD85v3qslzPKKh8qQpwlcMJADau1dxE
+         SJSPfBlkDBi8uLXhGIPDp/TbvhaqqC6wg+79smwo4Nf7L4GP5mqqaccXt15neS15EeIV
+         ld0g==
+ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=google.com; s=arc-20260327;
+        h=content-transfer-encoding:cc:to:subject:message-id:date:from
+         :in-reply-to:references:mime-version:dkim-signature;
+        bh=nkZEd21w22ytwfXvATd81Pem6F6SKIOvioc0T8Yq+UE=;
+        fh=+hejQQBufXO4HxjV6GyUni6TNeiUkZRSTW9dZ0EtG54=;
+        b=BY1A08BhXgCG89qzTmy7gakX77Hq9DBQdoBFfZBblRyAqjVCa40VYuA2eL1BzdVmlZ
+         osS1WOWzBIdz13x49vIaKaSOH2dbwuyHQBzSu49UF64JE02lszT0TuXpk3eA1Dec+KZk
+         eQrC8S3GKJE6Jsm4GrCPbDUCNhKirt/feNPU+Sn35rHX5Sx9DIF7MuhqLIHcTZ4qN4X9
+         qAeCrdEI0XxLN7P4JRPNLab0/AgnuwenOdNBsBYXUoNHAmO0llOvzKgSE9xji0ptDERB
+         iCvjH4jDqgUv/X37ACTcdg3WyWvQj7hnRLUDvAyOwps26mpuNHC4lzJUbR1FbK9c61tx
+         2PiA==;
+        darn=vger.kernel.org
+ARC-Authentication-Results: i=1; mx.google.com; arc=none
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=gmail.com; s=20260707; t=1795622779; x=1796227579; darn=vger.kernel.org;
-        h=content-transfer-encoding:mime-version:references:in-reply-to
-         :message-id:date:subject:cc:to:from:from:to:cc:subject:date
-         :message-id:reply-to:content-type;
-        bh=2Gq9YU/maKf0gmc7d1gIF7pc7KL6Wf9dUnlwKGyXxgs=;
-        b=sIxh4Ln7V3s6nCU3L1xeATftD3c/Ro1RGMJZT5I/xMiBIMzUldEiA2C2IbscL3hECF
-         BDwRWdsJ/Db8Au65ovM16J5whhFZBy776Bxii5gPVCQ6v9y3otVzvG3/75X2gFIlPXhv
-         ylDQIRT/mSoULNWpQEPlCPNkklk5/228GmQwZaUhkyfl9DPgU4rZUsTnlvxWFVPmLc41
-         wOMAYMedGI2I2IN7hh2FQXZylnngaYqON3fYopQoXGdLaa55nNG9gLW6lH2Qw8VPqq2x
-         Ker3hLD3czJRi+DcjzBYOrwzdh0zMhVaNx8Fyh6r/xsgNThzZoZZPCBK275HGMGua6JD
-         zWMw==
+        d=oss.qualcomm.com; s=google; t=1795624942; x=1796229742; darn=vger.kernel.org;
+        h=content-transfer-encoding:content-type:cc:to:subject:message-id
+         :date:from:in-reply-to:references:mime-version:from:to:cc:subject
+         :date:message-id:reply-to:content-type;
+        bh=nkZEd21w22ytwfXvATd81Pem6F6SKIOvioc0T8Yq+UE=;
+        b=doUBacFSO3fHM9jm2mASyqKgxVBnSEdrleIXWx6gUzeGbHZP8hymE/gZE8e9eyq0Bc
+         WJB+btPKKFwlzTb+ul7G+6dNWnXZ6WU9wV/tnpCSdqP+KNZs8ACmYU+dcdRlkWMTAjrC
+         wGFaFP79ZcyAc0F2GTWFqkGcy0aLj4MurMXl7F+AsKmm93OmfBvIB5++vCoMW685Hkwq
+         VgqvHTYJSwOjyZh6QYz1z5aQX66mRXirOrq3jX6vpK275dgqMql1f7LwpGDqPgw0e8KJ
+         3s5ej+Ej/G05nBB9ryWghli1OLRpgDXQTEDIPKjTDWFAYbjx6LC5znEPymRMebEcV8+d
+         5WeA==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=1e100.net; s=20260707; t=1795622779; x=1796227579;
-        h=content-transfer-encoding:mime-version:references:in-reply-to
-         :message-id:date:subject:cc:to:from:x-gm-gg:x-gm-message-state:from
-         :to:cc:subject:date:message-id:reply-to:content-type;
-        bh=2Gq9YU/maKf0gmc7d1gIF7pc7KL6Wf9dUnlwKGyXxgs=;
-        b=M/1I0ioZuvpgfzYRE3u5FgS7fKSoHy+7G2g3F1n07NKZLizYoExZCR0fQTK9/Z8GEH
-         QAra0zRDAriU1xtc6ADGp0DudSny8LmJQ0VsoB5p+OO/YgNtaqvvCXcm0geuMUIGU7Wk
-         JjTsN5/7eGTQLTEADJJNaH85iASUL9fFF4Sya8DH9FFHo0pvGQ9i2n6aebH41dS60/LT
-         Bwi1CvDQcX5NVLCDLXGwnej5xncPaD2vp56WtC6wuwOUd7PV/Tb+ZNIyqbeZBY9cggfG
-         wgoaSi7QV9ymqW6YdHu2IoIc2aqceuAcnKpOCnupusswjE1wUt6oVq2FXOK/ZFMOTjcJ
-         /HDQ==
-X-Forwarded-Encrypted: i=1; AL+hErH1ltHJziJ2tgm8F6aefR1H7Wrx9jt4vr/3kuAO+YooeokoWQiJPbRM4E7V1YUpZx//0crfOrNKMEMMdqXLoQ==@vger.kernel.org
-X-Gm-Message-State: APuU4Z9XB1VI0ggt2xogx576AketfqFRHdy1FExN2PsTlqMb5q1YLa3a
-	f2VsBnLn52bs8MfmAB/huQ7eUHv/P3pYk7EVHGYXSg+i4F3i4yMFrNbz
-X-Gm-Gg: AZFdTZegkKX8DPCKIkLsyQHsaLsrCIgp/x66/iaRZ5cXaoCFuFlH+Pc7h0JYOTmpP7g
-	GQF63Vn5b5WpQyMnZWDPeST6dZjAuisXxgbTb1hwzVWeDXLflRifyHmFLX7KH3nsItPnXuR4lEu
-	h0AUypOH2ZR8tqZ6GXuKCXWYJsY0OSuwsacmWdhzW8y81wutQfCEs+9Jzep2TFLXPaxY2ry0RaM
-	DwfMWheVdZR4BzL4LMChm2bE9hoxRHXO6woiyjlLMbHdrrvWD/Z1H8kP9pdnOK0R8i15LChJX67
-	l0bvQ2SLv7M5j4k01rATE1vAyXerDHJ5cPGntSjfxqyo+nm11x4RdYQ7R5xGVjhXqHIYw2/N09G
-	LnKQIYizgyPHTJFetMyAUdjGlHkOFAbX/ogQAANtFN1eH1ypGcFKMKUKXGA4FDE+fbX8+8WWm2/
-	EMCLna19a+8D3Ay4iQOVjqn8fzHPEqFBDluZKOES9PALprRYCEkHmpmDZeg4oDS6o03guyuTFxk
-	KAtF6FuN3Mk7HrFwOBI+3DSPLgKk3wtSLXnEuFdY7xWijcI/22oKKSzBIfuOme0+IEeuyY9MN4m
-	9aETBTS3WQRCWofhaDC941bF+ZA7kVkf324=
-X-Received: by 2002:a05:600c:4e87:b0:4bb:534b:ada4 with SMTP id 5b1f17b1804b1-4bb8881e95dmr376484565e9.33.1795622778314;
-        Wed, 25 Nov 2026 08:06:18 -0800 (PST)
-Received: from deb05.proceq.com ([213.160.61.66])
-        by smtp.gmail.com with ESMTPSA id ffacd0b85a97d-4ab6b10b5f6sm33011838f8f.34.2026.11.25.08.06.17
-        (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
-        Wed, 25 Nov 2026 08:06:17 -0800 (PST)
-From: Mehmet Fide <mehmet.fide@gmail.com>
-To: =?UTF-8?q?Georg=20M=C3=BCller?= <georgmueller@gmx.net>
-Cc: Bitterblue Smith <rtl8821cerfe2@gmail.com>,
-	Jes Sorensen <Jes.Sorensen@gmail.com>,
-	Ping-Ke Shih <pkshih@realtek.com>,
-	linux-wireless@vger.kernel.org,
-	linux-kernel@vger.kernel.org,
-	mehmet.fide@screeningeagle.com
-Subject: Re: [RFC PATCH v3 0/4] wifi: rtl8xxxu: implement AP mode for 8188EU
-Date: Wed, 25 Nov 2026 17:06:16 +0100
-Message-ID: <20261125160616.1201001-1-mehmet.fide@gmail.com>
-X-Mailer: git-send-email 2.56.0
-In-Reply-To: <4161102f-dcdc-4780-9bf5-26961a1360c8@gmx.net>
-References: 
+        d=1e100.net; s=20260707; t=1795624942; x=1796229742;
+        h=content-transfer-encoding:content-type:cc:to:subject:message-id
+         :date:from:in-reply-to:references:mime-version:x-gm-gg
+         :x-gm-message-state:from:to:cc:subject:date:message-id:reply-to
+         :content-type;
+        bh=nkZEd21w22ytwfXvATd81Pem6F6SKIOvioc0T8Yq+UE=;
+        b=Q/tL8M8dwobjig1gRlJL3gKYDMXOfzJLX1HsIRdlfEsSKXDFFTQ86ltjDxPESBC2i/
+         VqKQc6mEvoE3arCtTJXBjoIVMoawbOYuBW/A4Mmfu9czUBvngIWR00elc3W+0VwaX4CD
+         9Wmn8HkFGYrNUzrPByXSxm0gr7wWqFpNpuJK9PHR0xjHx4u6FeIpOGkGhc9rmQjqFHHw
+         +YIRcLg/XhgVSnFJegOhkU/a8BzTIH2YzK4srK5450t2JVXd0ka46qDwBeh7DCA4qM+0
+         or49bR8/KGuLt/cpIzgiazo7+WO8ncAowsxjgGsMkR/GZbystkOOrFN2s+UpKGE+oi5h
+         LBsw==
+X-Forwarded-Encrypted: i=1; AL+hErF754jpb4CHTg7g//u2EABVFOUMSBKcrEWhf55sq7N/0i1Jj2SymrxamXM9IgvwcU2szcsAek8SaDbZkFsySg==@vger.kernel.org
+X-Gm-Message-State: APuU4Z9V67R3hDy1NJx6j8MxJNijgxDaF8BMn/6rxd4UBSCu7hhcnydT
+	JIjCgP1Np6DGdUj914qXVBX7Y3AbHH5YeyROz2SG1YruhrEpg35iB0Ht0JpHGn2OaNfabRIZlhq
+	PVmj9yNeSmxzEuGHHTHLNDXevfNoBVkqAbYJ13HDP6mgIym4q34PInR/w1Jjwj7waMfLENxbTVJ
+	ae3Ie7BZgpaIxcRruYzPBSqA1uQSOa8xi9UsyjBoH1tEwzTT3ymvgEEc+dSA==
+X-Gm-Gg: AZFdTZcSS4OwuRZIBFMYy6SpugHXsfnMpEme9c64M1xhdX3rKTqfoCDmJm3+UQyn8hA
+	ugIpRabX5TDkRisZeQTgw6aHGPEhIZMrNUTdvAkU5Tfeo2Mn/KFJK/4sZavao8x970Ewo/zd6vT
+	edqPtGgZNcqWFF+PKKQ4fCno9CoETxKFdjQ+Hl6M+BX/JqbzRB45SGRADl3QLldqCtHiX3ac9Gk
+	bRe6RwhEVTIaOxZvMQC414H33kznunXyBLAJECNbnG5qSqXhEVxZgM+iKXqO8zB/WjtSVqS0+w=
+X-Received: by 2002:a05:620a:4408:b0:945:d852:1618 with SMTP id af79cd13be357-949bab14280mr3203109585a.70.1795624942133;
+        Wed, 25 Nov 2026 08:42:22 -0800 (PST)
+X-Received: by 2002:a05:620a:4408:b0:945:d852:1618 with SMTP id
+ af79cd13be357-949bab14280mr3203103285a.70.1795624941624; Wed, 25 Nov 2026
+ 08:42:21 -0800 (PST)
 X-Mailing-List: linux-wireless@vger.kernel.org
 List-Id: <linux-wireless.vger.kernel.org>
 List-Post: <mailto:linux-wireless@vger.kernel.org>
@@ -101,125 +128,129 @@ List-Unsubscribe: <mailto:linux-wireless+unsubscribe@vger.kernel.org>
 List-Owner: <mailto:linux-wireless+owner@vger.kernel.org>
 Precedence: list
 MIME-Version: 1.0
-Content-Transfer-Encoding: 8bit
+References: <20261121194939.3647400-1-morf3089@gmail.com> <20261121194939.3647400-2-morf3089@gmail.com>
+In-Reply-To: <20261121194939.3647400-2-morf3089@gmail.com>
+From: Loic Poulain <loic.poulain@oss.qualcomm.com>
+Date: Wed, 25 Nov 2026 17:42:10 +0100
+X-Gm-Features: Aa3M54pON6Dg34vZZDiCdbMrAyUpRK1E1I1B8NNIa1Qr3eqV_CLiVHxkBaMNstA
+Message-ID: <CAFEp6-3cQBaC1Ob1B8v8ZmQcMd_KfyABXxV81M9u0RkBY=Z0Ng@mail.gmail.com>
+Subject: Re: [PATCH 1/3] wifi: ath10k: add firmware feature bit to skip
+ channel stats events
+To: Gianluca Boiano <morf3089@gmail.com>
+Cc: jjohnson@kernel.org, linux-wireless@vger.kernel.org,
+        ath10k@lists.infradead.org, linux-kernel@vger.kernel.org
+Content-Type: text/plain; charset="UTF-8"
+Content-Transfer-Encoding: quoted-printable
+X-Proofpoint-Spam-Info: AW1haW4tMjYxMTI1MDA2NiBTYWx0ZWRfX5yeeOpGyUNVT
+ FsJ+NeSskhhhrm2E4pVrbP+eb/iTTvL6I7Iju6cnTCy24RXKvAPVYN6qSLwWhpmF+Y0/ddAXIiR
+ /G8bjNjY0QbZ0ggU33Qre15MUh+K+OA=
+X-Proofpoint-ORIG-GUID: jQtlyGD0gVw0aUtDFJOfGvWAYr3l5Bba
+X-Proofpoint-GUID: jQtlyGD0gVw0aUtDFJOfGvWAYr3l5Bba
+X-Authority-Analysis: v=2.4 cv=QZPzLcbv c=1 sm=1 tr=0 ts=6b070fef cx=c_pps
+ a=50t2pK5VMbmlHzFWWp8p/g==:117 a=IkcTkHD0fZMA:10 a=zJRp6_cAMcgA:10
+ a=s4-Qcg_JpJYA:10 a=VkNPw1HP01LnGYTKEx00:22 a=u7WPNUs3qKkmUXheDGA7:22
+ a=eoimf2acIAo5FJnRuUoq:22 a=pGLkceISAAAA:8 a=Wc1NDcPGuWUPlOtgj-wA:9
+ a=QEXdDO2ut3YA:10 a=IoWCM6iH3mJn3m4BftBB:22
+X-Proofpoint-Spam-Details-Enc: AW1haW4tMjYxMTI1MDA2NiBTYWx0ZWRfX7BkuFePrj4wP
+ +UTttGJ0VoV/fo47pDqGd8aSGaHfdCQhKp4jSkRsT47yruPTLRqeaFzwNLkui4riagpeiylTU/8
+ gx8XMV6F98G9LPOvfI4QzTu8zFQpTROA/eOU0JRY7JiZsPrCJYI58rWpl1znKUnvy/+OD6QRxwq
+ JKbGVLygEi4yQooDo7PzVm5hgZyL5L+YnmJC5T7l8p+K/ucp+k2Vkvde1z1Ujq1qVEeIfqrgfpk
+ JsTr9zRK+m3FcbCrB+riKsw23Vt3IwMZRFFvH2Saf7V3zAnnlgqeAURdyAt0Exng1KX4Ww1dfxQ
+ j/Kna/nCNj3xLYrMVxg0cPkrKQ/1M69kJunUH7p3K7A85i+K9nJUP+IBTGrwgz8NhHh5wfces7N
+ TiMXmcaoIzpNSkS6lmuKZs9lQIuUZRwTtmvfL3xAZ8uLrmgXLwHrT+EeTKAE9C9D4ysWRM8r4Gn
+ cTVvWFvVKQvc4ohDUmw==
+X-Proofpoint-Virus-Version: vendor=baseguard
+ engine=ICAP:2.0.293,Aquarius:18.0.1176,Hydra:6.1.138,FMLib:17.12.100.49
+ definitions=2026-11-25_04,2026-11-25_01,2025-10-01_01
+X-Proofpoint-Spam-Details: rule=outbound_notspam policy=outbound score=0
+ clxscore=1015 priorityscore=1501 lowpriorityscore=0 bulkscore=0 phishscore=0
+ adultscore=0 malwarescore=0 impostorscore=0 spamscore=0 suspectscore=0
+ classifier=typeunknown authscore=0 authtc= authcc= route=outbound adjust=0
+ reason=mlx scancount=1 engine=8.22.0-2611040001 definitions=main-2611250066
 
-Hi Georg, Bitterblue,
+Hi Gianluca,
 
-I tested v3 on rtw-next (18d0bedbb5f0, context fixes in patches 2 and 4
-only) with an Edimax EW-7811Un V2 (RTL8188EUS rev D) as AP and a
-separate sniffer. I found three problems in the AP part, plus an older
-one that explains the duplicate pings.
+On Sat, Nov 21, 2026 at 8:50=E2=80=AFPM Gianluca Boiano <morf3089@gmail.com=
+> wrote:
+>
+> SDM660 WCN3990 firmware crashes during scan when the scan command
+> requests channel stats events (WMI_SCAN_CHAN_STAT_EVENT):
+>
+>   qcom-q6v5-mss 4080000.remoteproc: fatal error received:
+>     err_qdi.c:459:EX:wlan_process:1:WLAN RT:2073:PC=3Db00a5d88
+>
+> qcacld-3.0 only sets this flag when gEnableSNRMonitoring=3D1, which
+> defaults to 0 and is not set by the vendor WCNSS_qcom_cfg.ini, so the
+> vendor driver never exercises this path.
+>
+> Add ATH10K_FW_FEATURE_NO_CHAN_STAT_EVENT so affected firmware images
+> can opt out via firmware-N.bin. With the bit set the firmware no longer
+> reports per-channel statistics during scan, so survey data is not
+> updated on these devices.
 
-1. Beacons. After hostapd starts, the 8188e sends one beacon and then
-none. Probe responses go out, so clients still find the AP by active
-scanning, but association takes about 6 s and a passive scan sees
-nothing. BCN_VALID is set and the beacon function is enabled; the
-hardware clears the beacon queue after the first beacon. In AP mode the
-vendor driver (hw_var_set_opmode()) sets BIT(3) | BIT(4) in
-REG_MBID_NUM, commented "If set 0, hw will clr bcnq when tx becon
-ok/fail". With that there is a beacon at every TBTT and association
-takes 0.5 s.
+Are we handling or using the CHAN_STAT_EVENT data in the driver? If
+so, which event handler or function currently consumes it?
 
-2. TBTT hold time. rtl8xxxu_start_tx_beacon() writes 0x80 to
-REG_TBTT_PROHIBIT + 1 and clears bit 0 of + 2; the vendor
-ResumeTxBeacon() writes 0xff and sets bit 0. On channel 6 with several
-neighbour APs, 7 runs of about 120 TBTTs each: 2-5 % of the beacons
-missing (one run 42 %) with the rtl8xxxu value; with the vendor value
-0 % in 5 runs and 1-3 % in 2.
+Regards,
+Loic
 
-3. macid in the TX descriptor, which Bitterblue pointed out:
-rtl8xxxu_fill_txdesc_v3() still does not set it; the vendor driver puts
-mac_id & 0x3f into txdw1. The same function also indexes
-priv->ra_info[macid] now, but for group addressed frames with a key,
-rtl8xxxu_tx() replaces macid with the security CAM index, which can go
-past the 16 entries of ra_info.
-
-This is what I use on top of v3 for 1-3:
-
-diff --git a/drivers/net/wireless/realtek/rtl8xxxu/core.c b/drivers/net/wireless/realtek/rtl8xxxu/core.c
-index 49c167fd6ee4..9a297b077443 100644
---- a/drivers/net/wireless/realtek/rtl8xxxu/core.c
-+++ b/drivers/net/wireless/realtek/rtl8xxxu/core.c
-@@ -1154,6 +1154,14 @@ static void rtl8xxxu_start_tx_beacon(struct rtl8xxxu_priv *priv)
- 	val8 |= EN_BCNQ_DL >> 16;
- 	rtl8xxxu_write8(priv, REG_FWHW_TXQ_CTRL + 2, val8);
- 
-+	if (priv->rtl_chip == RTL8188E) {
-+		rtl8xxxu_write8(priv, REG_TBTT_PROHIBIT + 1, 0xff);
-+		val8 = rtl8xxxu_read8(priv, REG_TBTT_PROHIBIT + 2);
-+		val8 |= BIT(0);
-+		rtl8xxxu_write8(priv, REG_TBTT_PROHIBIT + 2, val8);
-+		return;
-+	}
-+
- 	rtl8xxxu_write8(priv, REG_TBTT_PROHIBIT + 1, 0x80);
- 	val8 = rtl8xxxu_read8(priv, REG_TBTT_PROHIBIT + 2);
- 	val8 &= 0xF0;
-@@ -5572,7 +5580,7 @@ rtl8xxxu_fill_txdesc_v3(struct ieee80211_hw *hw, struct ieee80211_hdr *hdr,
- {
- 	struct rtl8xxxu_priv *priv = hw->priv;
- 	struct device *dev = &priv->udev->dev;
--	struct rtl8xxxu_ra_info *ra = &priv->ra_info[macid];
-+	struct rtl8xxxu_ra_info *ra;
- 	u8 *qc = ieee80211_get_qos_ctl(hdr);
- 	u8 tid = qc[0] & IEEE80211_QOS_CTL_TID_MASK;
- 	u32 rate = 0;
-@@ -5580,6 +5588,10 @@ rtl8xxxu_fill_txdesc_v3(struct ieee80211_hw *hw, struct ieee80211_hdr *hdr,
- 
- 	seq_number = IEEE80211_SEQ_TO_SN(le16_to_cpu(hdr->seq_ctrl));
- 
-+	/* macid is the security CAM index for group addressed frames */
-+	ra = &priv->ra_info[macid < RTL8188E_MAX_MAC_ID_NUM ? macid : 0];
-+	tx_desc->txdw1 |= cpu_to_le32(macid & 0x3f);
-+
- 	if (ieee80211_is_data(hdr->frame_control)) {
- 		rate = ra->decision_rate;
- 		tx_desc->txdw5 = cpu_to_le32(rate);
-@@ -7002,6 +7014,13 @@ static int rtl8xxxu_add_interface(struct ieee80211_hw *hw,
- 		rtl8xxxu_write16(priv, REG_TSFTR_SYN_OFFSET, 0x7fff); /* ~32ms */
- 		rtl8xxxu_write8(priv, REG_DUAL_TSF_RST, DUAL_TSF_RESET_TSF0);
- 
-+		/* The 8188e clears the beacon queue after each beacon unless told not to */
-+		if (priv->rtl_chip == RTL8188E) {
-+			val8 = rtl8xxxu_read8(priv, REG_MBID_NUM);
-+			val8 |= BIT(3) | BIT(4);
-+			rtl8xxxu_write8(priv, REG_MBID_NUM, val8);
-+		}
-+
- 		/* enable BCN0 function */
- 		rtl8xxxu_write8(priv, REG_BEACON_CTRL,
- 				BEACON_DISABLE_TSF_UPDATE |
-
-With these, beacon loss is 0.5-3.4 % at the sniffer and association
-takes 0.5 s.
-
-4. Duplicate pings. I can reproduce them with two clients, on one of
-the two and in both directions, and not with one client. The captures
-show the client sending the same MSDU again with a new sequence number
-after its retry limit, because many of its frames are not acked: 62-73 %
-of the frames sent to the 8188e carry the retry bit.
-
-This is not AP specific. With the 8188e as a station of an rtw88 AP,
-same dongle, place and traffic, 63 % of the frames to the 8188e are
-retries with rtl8xxxu and 0 % with Realtek's v5.3.9 driver
-(aircrack-ng/rtl8188eus with kernel API fixes only, on a non-RT kernel;
-it crashes on PREEMPT_RT). I dumped the registers of both
-drivers while associated and wrote the vendor values into rtl8xxxu one
-group at a time. The difference is REG_OFDM0_XA_AGC_CORE1:
-rtl8xxxu_start() sets the IGI to 0x1e (see c8bc37602779 ("wifi:
-rtl8xxxu: Simplify setting the initial gain")) and nothing changes it
-later, while the vendor driver had 0x40 in that test. With IGI 0x40 alone the
-retries drop to 1 %.
-
-A fixed value does not solve it, though. In AP mode with the two
-clients at -44 and -52 dBm, IGI 0x40 removes the duplicates but loses
-35-65 % of the pings. The 8188e seems to need the vendor's dynamic
-initial gain (IGI from the lowest station RSSI and the false alarm
-count). Bitterblue, is there a reason rtl8xxxu has no DIG, or would a
-simple one for the 8188e be acceptable?
-
-Georg, do you plan a v4? I can send 1-3 as patches on top of your
-series, or include them in a v4 with your patches if you prefer.
-
-Best regards,
-Mehmet
+>
+> Tested on SDM660 (WCN3990).
+>
+> Signed-off-by: Gianluca Boiano <morf3089@gmail.com>
+> ---
+>  drivers/net/wireless/ath/ath10k/core.c | 1 +
+>  drivers/net/wireless/ath/ath10k/core.h | 3 +++
+>  drivers/net/wireless/ath/ath10k/wmi.c  | 4 +++-
+>  3 files changed, 7 insertions(+), 1 deletion(-)
+>
+> diff --git a/drivers/net/wireless/ath/ath10k/core.c b/drivers/net/wireles=
+s/ath/ath10k/core.c
+> index 2aa18adb3..d37add4cf 100644
+> --- a/drivers/net/wireless/ath/ath10k/core.c
+> +++ b/drivers/net/wireless/ath/ath10k/core.c
+> @@ -815,6 +815,7 @@ static const char *const ath10k_core_fw_feature_str[]=
+ =3D {
+>         [ATH10K_FW_FEATURE_SINGLE_CHAN_INFO_PER_CHANNEL] =3D "single-chan=
+-info-per-channel",
+>         [ATH10K_FW_FEATURE_PEER_FIXED_RATE] =3D "peer-fixed-rate",
+>         [ATH10K_FW_FEATURE_IRAM_RECOVERY] =3D "iram-recovery",
+> +       [ATH10K_FW_FEATURE_NO_CHAN_STAT_EVENT] =3D "no-chan-stat-event",
+>  };
+>
+>  static unsigned int ath10k_core_get_fw_feature_str(char *buf,
+> diff --git a/drivers/net/wireless/ath/ath10k/core.h b/drivers/net/wireles=
+s/ath/ath10k/core.h
+> index dfee43261..29a4c0d74 100644
+> --- a/drivers/net/wireless/ath/ath10k/core.h
+> +++ b/drivers/net/wireless/ath/ath10k/core.h
+> @@ -838,6 +838,9 @@ enum ath10k_fw_features {
+>         /* Firmware support IRAM recovery */
+>         ATH10K_FW_FEATURE_IRAM_RECOVERY =3D 22,
+>
+> +       /* Firmware crashes when asked for channel stats events during sc=
+an. */
+> +       ATH10K_FW_FEATURE_NO_CHAN_STAT_EVENT =3D 23,
+> +
+>         /* keep last */
+>         ATH10K_FW_FEATURE_COUNT,
+>  };
+> diff --git a/drivers/net/wireless/ath/ath10k/wmi.c b/drivers/net/wireless=
+/ath/ath10k/wmi.c
+> index e57588c19..adaf3c80f 100644
+> --- a/drivers/net/wireless/ath/ath10k/wmi.c
+> +++ b/drivers/net/wireless/ath/ath10k/wmi.c
+> @@ -7095,7 +7095,9 @@ void ath10k_wmi_start_scan_init(struct ath10k *ar,
+>                 | WMI_SCAN_EVENT_FOREIGN_CHANNEL
+>                 | WMI_SCAN_EVENT_FOREIGN_CHANNEL_EXIT
+>                 | WMI_SCAN_EVENT_DEQUEUED;
+> -       arg->scan_ctrl_flags |=3D WMI_SCAN_CHAN_STAT_EVENT;
+> +       if (!test_bit(ATH10K_FW_FEATURE_NO_CHAN_STAT_EVENT,
+> +                     ar->running_fw->fw_file.fw_features))
+> +               arg->scan_ctrl_flags |=3D WMI_SCAN_CHAN_STAT_EVENT;
+>         arg->n_bssids =3D 1;
+>         arg->bssids[0].bssid =3D "\xFF\xFF\xFF\xFF\xFF\xFF";
+>  }
+> --
+> 2.56.1
+>
