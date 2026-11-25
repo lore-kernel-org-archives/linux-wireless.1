@@ -1,59 +1,59 @@
 Authentication-Results: smtp.subspace.kernel.org; arc=none smtp.remote-ip=46.4.11.11
 ARC-Seal: i=1; d=subspace.kernel.org; s=arc20261015; a=rsa-sha256; cv=none;
 	t=1795628189;
-	b=Tjhs8Sx1BEbZpNUmVqQz80j87KOU7t8zukJdWzJgoAnU/dh/+C4GXblv4F4U1jY+mbl7
-	 q6UNf6Pk4dhEKFSWRj0LP+eBGV/4Iv1L8ahDVTBTtwsdWFftu6/xtLRmVKVqF3BjWbou3
-	 AgdkZbCnybGQt2RDDuaR6sUMWUVrWPAwWVMZq2GUUuvktqhnTB6wVNBd1w7UAXDXG8yqE
-	 l0EXTgpVVwrHBXcKk0zM2mxM1LEyWB7SecsRqfEj74kL58jDqYv1F4HwKhmu+yFQhvLmh
-	 8tUpPxzZ4xnnSZ0ps8d69MJkSVbvnrW/UFmj36beztwRl33sz2OIiRyRiQVeAZXeh/w==
+	b=gzll9jQXFEORYbzOCY5l8JXOoKmlMi06ceOr+z9FaGEsyOzPjfvKWc4HM7z1GtreglTN
+	 M5Yp+7B+yFVlgHD/FW0jGBAf5+X67uQTJ6hisQ/dInP21fszKSErnek6WjETlswbFOhIz
+	 ngFvwybuL9/vRjeXibKu3GIcD3fUv0pvLHMyAn3S3/sHWxsZ4n+3vYEm/0cEjtT8fYDjz
+	 ETq+RFPmyDvohnmyxTp2IPIB0cV7VLSrEHwcoNRj8F1NxErgY/jSICgI1QIqv4JMxXQJr
+	 oBl1ukoHYuGMiRpSrrlK/Xzr2nYKb73x9OszKUcAzOpfdRkPKen38th4wYHaNX5cAgg==
 ARC-Message-Signature: i=1; d=subspace.kernel.org; s=arc20261015;
 	a=rsa-sha256; c=relaxed/relaxed; t=1795628189;
 	h=DMARC-Filter:DKIM-Signature:Received:From:To:Subject:Date:Message-ID:
 	 X-Mailer:In-Reply-To:References:MIME-Version:
 	 Content-Transfer-Encoding;
-	bh=dSb3aQKphCPjjhkEl3LZZnbt9E1QwQX1H+buXzTt7xg=;
-	b=y4/LZWMCAOrbMW3i8FWLz2nQNyr3lIQvcsfwac2KNbopNoDxLEMmjhXutVSfiBXgIX8N
-	 nqHzvdfaupsm6kt2kRntdvkBu57A8/Y69EtldyYemPK/G3ng9S73te0SVQEOTp4ovYirs
-	 F/Bm508H7utOdRZikY5HrZ++3vyCbTlLe4rlJfWwxnMWRYzxaWUvSiMgTINLJ6GcQZXMq
-	 c+JSA2EeSwWD1AXII6zINBpXoIptWzZsNJKZtTknuHTifNJha2jDq6kksANjvOTHGqSK7
-	 2vocvaYRtrrYgrZ89LawfXc3oO58JMFFjBEPqH+05oVrffklAv45TY1UhI/G2xquK6Q==
+	bh=wKOVUq6W8HheetWzwP89zr+0Gm+Ep/r5D91wxIyfeEs=;
+	b=ImOmns16b7mZUvykFzWD5tcrbUy6bUWATymzdMACHHoPkkmlCzUJ42cYjegx/krfQgk/
+	 SxjxDAzWAmFP9RbXETFYED7ORsdhJkwQRsmV2zZ16GeHVXU5cOebXOT/SFOCQrAGTgOq2
+	 OeRersSTRA9frA1RXAG4QwfMCL7VY26Ov7i353TmyfUopkxgdzMChjhB7RGYRl8RnP/B3
+	 euQn4BzJtYttumd+g6HJMzBGki692rBU0ZaIUiSn5sh2Uiman/t/sn8wcBr0D1smYDcWb
+	 f4LRR/rfK+OIOZYYiitAO0pd1GxHE7FLjKTD1Srh/8Mt725AxCfn5aRsng3CZufAgxg==
 ARC-Authentication-Results: i=1; smtp.subspace.kernel.org; 
 	dmarc=pass header.from=nbd.name;
 	spf=pass smtp.mailfrom=nbd.name;
-	dkim=pass header.d=nbd.name header.i=@nbd.name header.a=rsa-sha256 header.s=20160729 header.b=rthbhL18;
+	dkim=pass header.d=nbd.name header.i=@nbd.name header.a=rsa-sha256 header.s=20160729 header.b="g/fgEzLe";
 	arc=none smtp.remote-ip=46.4.11.11
 Received: from nbd.name (nbd.name [46.4.11.11])
 	(using TLSv1.3 with cipher TLS_AES_256_GCM_SHA384 (256/256 bits)
 	 key-exchange ECDHE (prime256v1) server-signature ECDSA (prime256v1) server-digest SHA256)
 	(No client certificate requested)
-	by smtp.subspace.kernel.org (Postfix) with ESMTPS id B95F2606A68F
+	by smtp.subspace.kernel.org (Postfix) with ESMTPS id DE4EA606A693
 	for <linux-wireless@vger.kernel.org>; Wed, 25 Nov 2026 17:36:28 +0000 (UTC)
-DMARC-Filter: OpenDMARC Filter v1.4.2 smtp.subspace.kernel.org B95F2606A68F
+DMARC-Filter: OpenDMARC Filter v1.4.2 smtp.subspace.kernel.org DE4EA606A693
 Authentication-Results: smtp.subspace.kernel.org; dmarc=pass (p=none dis=none) header.from=nbd.name
 Authentication-Results: smtp.subspace.kernel.org; spf=pass smtp.mailfrom=nbd.name
 Authentication-Results: smtp.subspace.kernel.org;
-	dkim=pass (1024-bit key) header.d=nbd.name header.i=@nbd.name header.a=rsa-sha256 header.s=20160729 header.b=rthbhL18
+	dkim=pass (1024-bit key) header.d=nbd.name header.i=@nbd.name header.a=rsa-sha256 header.s=20160729 header.b=g/fgEzLe
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed; d=nbd.name;
 	s=20160729; h=Content-Transfer-Encoding:MIME-Version:References:In-Reply-To:
 	Message-ID:Date:Subject:To:From:Sender:Reply-To:Cc:Content-Type:Content-ID:
 	Content-Description:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc
 	:Resent-Message-ID:List-Id:List-Help:List-Unsubscribe:List-Subscribe:
 	List-Post:List-Owner:List-Archive;
-	bh=dSb3aQKphCPjjhkEl3LZZnbt9E1QwQX1H+buXzTt7xg=; b=rthbhL18NV/i57uyNATX/a3T+P
-	Lg60FofdEUfwgM1XChWL+DhFnOCMoKB56S+xlAIHYmxHwJJ4yhKAQyn2DL04Txxiq7QYGRzZiSmNd
-	UD1NP0FwiUL62Y1IBdgXJwbVlgzERQIO+8Icr1ska+7G+EptLZtDQ8MTuEV/Ss9nbqtg=;
+	bh=wKOVUq6W8HheetWzwP89zr+0Gm+Ep/r5D91wxIyfeEs=; b=g/fgEzLeQIz61BFLpeMH53yYww
+	qjY3Yc3PyMuscLY1/Htj3xt2CFZxg0+kiW1r6yCWKbw+eOTORchjn610HBSOmF6Lpr4EUij3wSx7Q
+	ScaoOVwT/mk9fSGHbSLFT+ymEJtqtrgT0IhD1miuXKqMoq1vOxqOYuN7aw4vR9et43rc=;
 Received: from p200300cadf00a300521515e4a5376631.dip0.t-ipconnect.de ([2003:ca:df00:a300:5215:15e4:a537:6631] helo=localhost.localdomain)
 	by ds12 with esmtpsa  (TLS1.3) tls TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384
 	(Exim 4.96)
 	(envelope-from <nbd@nbd.name>)
-	id 1xWGux-008IWP-1D
+	id 1xWGux-008IWP-1n
 	for linux-wireless@vger.kernel.org;
 	Wed, 25 Nov 2026 18:36:27 +0100
 From: Felix Fietkau <nbd@nbd.name>
 To: linux-wireless@vger.kernel.org
-Subject: [PATCH mt76-next 13/18] wifi: mt76: mt7915: mask the LDPC bits of STA_REC_HT and STA_REC_VHT
-Date: Wed, 25 Nov 2026 18:36:11 +0100
-Message-ID: <20261125173616.3776951-13-nbd@nbd.name>
+Subject: [PATCH mt76-next 14/18] wifi: mt76: mt7996: mask the LDPC bits of STA_REC_HT, _VHT and _HE_V2
+Date: Wed, 25 Nov 2026 18:36:12 +0100
+Message-ID: <20261125173616.3776951-14-nbd@nbd.name>
 X-Mailer: git-send-email 2.47.3
 In-Reply-To: <20261125173616.3776951-1-nbd@nbd.name>
 References: <20261125173616.3776951-1-nbd@nbd.name>
@@ -68,89 +68,131 @@ Precedence: list
 MIME-Version: 1.0
 Content-Transfer-Encoding: 8bit
 
-mt7915_mcu_sta_ht_tlv() and mt7915_mcu_sta_vht_tlv() send the HT and
-VHT capability words of the peer unchanged. The firmware picks LDPC for
-a TX rate from these words. Only STA_REC_RA masks them with the LDPC
-capability of the interface. Since commit 33eb14f10290 ("wifi: mt76:
-mt7915: use mac80211 .sta_state op"), the update at authorisation sends
-these TLVs again without STA_REC_RA. An AP configured without LDPC thus
-sends LDPC frames to an LDPC peer.
+mt7996_mcu_sta_ht_tlv(), mt7996_mcu_sta_vht_tlv() and
+mt7996_mcu_sta_he_tlv() send the capability words of the peer
+unchanged, but an AP keeps its own LDPC setting in link_conf. The
+firmware takes the HE LDPC bit of the station from STA_REC_HE_V2, and
+STA_REC_RA picks LDPC for HE and EHT rates from that bit. An AP
+configured without LDPC thus sends HE and EHT frames with LDPC to an
+LDPC peer. STA_REC_HT and STA_REC_VHT also set the HT and VHT LDPC
+flags of the WTBL entry from the raw words, and STA_REC_RA never clears
+them.
 
-Clear the LDPC bit of each word where the interface has no LDPC for that
-mode. The rate control and HE TLVs already do so.
+On an AP interface, clear the LDPC bit of each word where link_conf has
+no LDPC for that mode. mt7996_mcu_sta_rate_ctrl_tlv() does the same for
+the VHT flag, mt7915_mcu_sta_he_tlv() for the HE flag. The EHT
+capabilities have no LDPC bit of their own; an EHT peer uses the HE bit.
 
-Fixes: 33eb14f10290 ("wifi: mt76: mt7915: use mac80211 .sta_state op")
+Fixes: 98686cd21624 ("wifi: mt76: mt7996: add driver for MediaTek Wi-Fi 7 (802.11be) devices")
 Signed-off-by: Felix Fietkau <nbd@nbd.name>
 ---
- .../net/wireless/mediatek/mt76/mt7915/mcu.c   | 24 ++++++++++++++-----
- 1 file changed, 18 insertions(+), 6 deletions(-)
+ .../net/wireless/mediatek/mt76/mt7996/mcu.c   | 30 ++++++++++++++-----
+ 1 file changed, 22 insertions(+), 8 deletions(-)
 
-diff --git a/drivers/net/wireless/mediatek/mt76/mt7915/mcu.c b/drivers/net/wireless/mediatek/mt76/mt7915/mcu.c
-index 8ac595779f88..5da3bfaa5c53 100644
---- a/drivers/net/wireless/mediatek/mt76/mt7915/mcu.c
-+++ b/drivers/net/wireless/mediatek/mt76/mt7915/mcu.c
-@@ -1032,33 +1032,45 @@ mt7915_mcu_sta_muru_tlv(struct mt7915_dev *dev, struct sk_buff *skb,
+diff --git a/drivers/net/wireless/mediatek/mt76/mt7996/mcu.c b/drivers/net/wireless/mediatek/mt76/mt7996/mcu.c
+index 4e1164e3afa4..1c4bb5706d49 100644
+--- a/drivers/net/wireless/mediatek/mt76/mt7996/mcu.c
++++ b/drivers/net/wireless/mediatek/mt76/mt7996/mcu.c
+@@ -1639,6 +1639,7 @@ int mt7996_mcu_add_rx_ba(struct mt7996_dev *dev,
+ 
+ static void
+ mt7996_mcu_sta_he_tlv(struct sk_buff *skb,
++		      struct ieee80211_bss_conf *link_conf,
+ 		      struct ieee80211_link_sta *link_sta,
+ 		      struct mt7996_vif_link *link)
+ {
+@@ -1660,6 +1661,9 @@ mt7996_mcu_sta_he_tlv(struct sk_buff *skb,
+ 		he->he_phy_cap[i] = elem->phy_cap_info[i];
+ 	}
+ 
++	if (link_conf->vif->type == NL80211_IFTYPE_AP && !link_conf->he_ldpc)
++		he->he_phy_cap[1] &= ~IEEE80211_HE_PHY_CAP1_LDPC_CODING_IN_PAYLOAD;
++
+ 	mcs_map = link_sta->he_cap.he_mcs_nss_supp;
+ 	switch (link_sta->bandwidth) {
+ 	case IEEE80211_STA_RX_BW_160:
+@@ -1742,18 +1746,23 @@ mt7996_mcu_sta_eht_tlv(struct sk_buff *skb,
  }
  
  static void
--mt7915_mcu_sta_ht_tlv(struct sk_buff *skb, struct ieee80211_sta *sta)
-+mt7915_mcu_sta_ht_tlv(struct sk_buff *skb, struct ieee80211_vif *vif,
-+		      struct ieee80211_sta *sta)
+-mt7996_mcu_sta_ht_tlv(struct sk_buff *skb, struct ieee80211_link_sta *link_sta)
++mt7996_mcu_sta_ht_tlv(struct sk_buff *skb, struct ieee80211_bss_conf *link_conf,
++		      struct ieee80211_link_sta *link_sta)
  {
-+	struct mt7915_vif *mvif = (struct mt7915_vif *)vif->drv_priv;
-+	u16 cap = sta->deflink.ht_cap.cap;
- 	struct sta_rec_ht *ht;
++	u16 cap = link_sta->ht_cap.cap;
+ 	struct sta_rec_ht_uni *ht;
  	struct tlv *tlv;
  
- 	if (!sta->deflink.ht_cap.ht_supported)
+ 	if (!link_sta->ht_cap.ht_supported)
  		return;
  
-+	if (!mvif->cap.ht_ldpc)
++	if (link_conf->vif->type == NL80211_IFTYPE_AP && !link_conf->ht_ldpc)
 +		cap &= ~IEEE80211_HT_CAP_LDPC_CODING;
 +
  	tlv = mt76_connac_mcu_add_tlv(skb, STA_REC_HT, sizeof(*ht));
  
- 	ht = (struct sta_rec_ht *)tlv;
--	ht->ht_cap = cpu_to_le16(sta->deflink.ht_cap.cap);
+ 	ht = (struct sta_rec_ht_uni *)tlv;
+-	ht->ht_cap = cpu_to_le16(link_sta->ht_cap.cap);
 +	ht->ht_cap = cpu_to_le16(cap);
+ 	ht->ampdu_param = u8_encode_bits(link_sta->ht_cap.ampdu_factor,
+ 					 IEEE80211_HT_AMPDU_PARM_FACTOR) |
+ 			  u8_encode_bits(link_sta->ht_cap.ampdu_density,
+@@ -1761,8 +1770,10 @@ mt7996_mcu_sta_ht_tlv(struct sk_buff *skb, struct ieee80211_link_sta *link_sta)
  }
  
  static void
--mt7915_mcu_sta_vht_tlv(struct sk_buff *skb, struct ieee80211_sta *sta)
-+mt7915_mcu_sta_vht_tlv(struct sk_buff *skb, struct ieee80211_vif *vif,
-+		       struct ieee80211_sta *sta)
+-mt7996_mcu_sta_vht_tlv(struct sk_buff *skb, struct ieee80211_link_sta *link_sta)
++mt7996_mcu_sta_vht_tlv(struct sk_buff *skb, struct ieee80211_bss_conf *link_conf,
++		       struct ieee80211_link_sta *link_sta)
  {
-+	struct mt7915_vif *mvif = (struct mt7915_vif *)vif->drv_priv;
-+	u32 cap = sta->deflink.vht_cap.cap;
++	u32 cap = link_sta->vht_cap.cap;
  	struct sta_rec_vht *vht;
  	struct tlv *tlv;
  
- 	if (!sta->deflink.vht_cap.vht_supported)
+@@ -1770,10 +1781,13 @@ mt7996_mcu_sta_vht_tlv(struct sk_buff *skb, struct ieee80211_link_sta *link_sta)
+ 	if (!link_sta->he_6ghz_capa.capa && !link_sta->vht_cap.vht_supported)
  		return;
  
-+	if (!mvif->cap.vht_ldpc)
++	if (link_conf->vif->type == NL80211_IFTYPE_AP && !link_conf->vht_ldpc)
 +		cap &= ~IEEE80211_VHT_CAP_RXLDPC;
 +
  	tlv = mt76_connac_mcu_add_tlv(skb, STA_REC_VHT, sizeof(*vht));
  
  	vht = (struct sta_rec_vht *)tlv;
--	vht->vht_cap = cpu_to_le32(sta->deflink.vht_cap.cap);
+-	vht->vht_cap = cpu_to_le32(link_sta->vht_cap.cap);
 +	vht->vht_cap = cpu_to_le32(cap);
- 	vht->vht_rx_mcs_map = sta->deflink.vht_cap.vht_mcs.rx_mcs_map;
- 	vht->vht_tx_mcs_map = sta->deflink.vht_cap.vht_mcs.tx_mcs_map;
+ 	vht->vht_rx_mcs_map = link_sta->vht_cap.vht_mcs.rx_mcs_map;
+ 	vht->vht_tx_mcs_map = link_sta->vht_cap.vht_mcs.tx_mcs_map;
  }
-@@ -1805,9 +1817,9 @@ int mt7915_mcu_add_sta(struct mt7915_dev *dev, struct ieee80211_vif *vif,
- 		/* starec bfer */
- 		mt7915_mcu_sta_bfer_tlv(dev, skb, vif, sta);
+@@ -2691,7 +2705,7 @@ int mt7996_mcu_add_rate_ctrl(struct mt7996_dev *dev, struct mt7996_sta *msta,
+ 	 * update sta_rec_he here.
+ 	 */
+ 	if (changed)
+-		mt7996_mcu_sta_he_tlv(skb, link_sta, link);
++		mt7996_mcu_sta_he_tlv(skb, link_conf, link_sta, link);
+ 
+ 	/* sta_rec_ra accommodates BW, NSS and only MCS range format
+ 	 * i.e 0-{7,8,9} for VHT.
+@@ -3046,16 +3060,16 @@ int mt7996_mcu_add_sta(struct mt7996_dev *dev,
+ 						link);
+ 		}
  		/* starec ht */
--		mt7915_mcu_sta_ht_tlv(skb, sta);
-+		mt7915_mcu_sta_ht_tlv(skb, vif, sta);
+-		mt7996_mcu_sta_ht_tlv(skb, link_sta);
++		mt7996_mcu_sta_ht_tlv(skb, link_conf, link_sta);
  		/* starec vht */
--		mt7915_mcu_sta_vht_tlv(skb, sta);
-+		mt7915_mcu_sta_vht_tlv(skb, vif, sta);
+-		mt7996_mcu_sta_vht_tlv(skb, link_sta);
++		mt7996_mcu_sta_vht_tlv(skb, link_conf, link_sta);
  		/* starec uapsd */
- 		mt76_connac_mcu_sta_uapsd(skb, vif, sta);
- 	}
+ 		mt76_connac_mcu_sta_uapsd(skb, link_conf->vif, sta);
+ 		/* starec amsdu */
+ 		mt7996_mcu_sta_amsdu_tlv(dev, skb, link_conf->vif, link_sta,
+ 					 msta_link);
+ 		/* starec he */
+-		mt7996_mcu_sta_he_tlv(skb, link_sta, link);
++		mt7996_mcu_sta_he_tlv(skb, link_conf, link_sta, link);
+ 		/* starec he 6g*/
+ 		mt7996_mcu_sta_he_6g_tlv(skb, link_sta);
+ 		/* starec eht */
 -- 
 2.47.3
 
