@@ -1,94 +1,55 @@
-Authentication-Results: smtp.subspace.kernel.org; arc=none smtp.remote-ip=74.125.82.179
+Authentication-Results: smtp.subspace.kernel.org; arc=none smtp.remote-ip=46.4.11.11
 ARC-Seal: i=1; d=subspace.kernel.org; s=arc20261015; a=rsa-sha256; cv=none;
-	t=1795604634;
-	b=VYQVt064AhO5WcszwnPCDvi8L4RH+kAFTWts8eN4TkREOMktNREP/TuazLscHwIKcFy5
-	 /4km5cTHvLFbPTU0OqUKfyqZ+5eNhw3ohE3ADY0Hjy1JGSM36zffn8jr1B0iTAHkLfACO
-	 dut99Ggcq1XWx828U37UHZgtnXRz0S8fuaGlLMfCVNWPUL5OAw9vwR4U18Q02/oGo4i88
-	 AVjNehOp9w9GmkoHG2KN+iH5oPQBpUBGoG4zLWpgDWi7O5L+rBHeqBUi+3QzCSPwH65hp
-	 8pKsjcxp39mIcgC2rrTfXnXcoFq+n8BI2L0mFguvWH3DZ0vh1AZvGEnhCN/QXcj58Sw==
+	t=1795604668;
+	b=Vupq/TwuRovRtaa5vHgGxT+4RLTWpl1QJHq0OC3aMjl0rUI6tmgA+HmVIhfF3sopVUI4
+	 stX3nVvvulDneBbz1kB1l6PPzwR9dr74zGA3AJpBBX2j+Jj0gMGw8laLjA0wGw/Z//02s
+	 L6alMaTeD5E8KA2sLeg51lLLlcujn/Z+057KZRw/dHeDF1jmagnd6DVzU+lOVHysRm4Yq
+	 bolSB88GKXBYTRCLxjQcO3FNEMGQ+byuv+ktpCs05uIo8SO+Wwy3YXRQ+TlPMjKF+glee
+	 hCoqfsrQUgDDWN4/BvGu0BUiAaPQnB6fNWag9uePmJnD6lCamC2agSDNwTvvGNGkJWQ==
 ARC-Message-Signature: i=1; d=subspace.kernel.org; s=arc20261015;
-	a=rsa-sha256; c=relaxed/relaxed; t=1795604634;
-	h=DMARC-Filter:Received:DKIM-Signature:X-Google-DKIM-Signature:
-	 X-Gm-Message-State:X-Gm-Gg:X-Received:Received:From:To:Cc:Subject:
-	 Date:Message-ID:X-Mailer:MIME-Version:Content-Transfer-Encoding;
-	bh=0kNQWd4xFKVKn6MSVwE1lsRc4X4V5piL50Xtk3okz4Q=;
-	b=JaIWjpAyBgwLKtgg+BoZ90sMqdCaxzZ0gInwrAQp6NhRoITL6qbWKH3lb6OY8hrRgE1+
-	 Hvi3P78FpNth4F3Q1XD1aWazgBl9OWmqsjIlDnIWXkMdsM9DNukZdMrYDq/JJqdN5vg8Z
-	 KUA57mz0ag/d+ZKsS76s+geUNCW9Z+WszacZxmVKYfwMz/fqookDW/In2qI/97N5rGGga
-	 z5PxxdScJd5aqUKEmCWOjXRik+LOkGi5WOdnmWljprmDLE5dLGEMpZYDGv2J0WrpY5d6+
-	 88yeipXA/sj1+NyHyg2SsiHKssng1sx+GYcM4awbhuUbGD91TEDgd0/EhhLzwnLq/iA==
+	a=rsa-sha256; c=relaxed/relaxed; t=1795604668;
+	h=DMARC-Filter:DKIM-Signature:Received:Message-ID:Date:MIME-Version:
+	 User-Agent:Subject:To:Cc:References:Content-Language:From:Autocrypt:
+	 In-Reply-To:Content-Type:Content-Transfer-Encoding;
+	bh=lH9pAEfOzu1+G8D5WBcJiupE42glrYQ4vyzgeROIaKg=;
+	b=ewfEsMojZe1SlW2gqiG8Xmpg2e7eMDrntP62hINBIgnzsH5gudUIJ6VTI2hPiTdU3PGx
+	 GSM8zIagcACW8WNkUp5sUEyl6qqLM9lqVVSKyW3sNjcMcAB2zVeWENzGupuJliHoXxRWk
+	 ddjZA5gLiR0YiFB+XYOiVoILCVkFWf+gykuEaDPDYELL9HbHnyrdNQuW7OILGwBOlp6C0
+	 5MWufMqwmCAC3gTKktg/SSEy0k1Zp25tOLidXZ9Kx0xZbSr2ttDpomgG47YQ1MPzyOEG/
+	 7OK0n4Ibhj8OZFcHoaVvOVBUhJtJLVcOncI8PAQ4LAIXZSerRCiMcmetUyH0LwB12zg==
 ARC-Authentication-Results: i=1; smtp.subspace.kernel.org; 
-	dmarc=pass header.from=gmail.com;
-	spf=pass smtp.mailfrom=gmail.com;
-	dkim=pass header.d=gmail.com header.i=@gmail.com header.a=rsa-sha256 header.s=20260707 header.b=tEJETcDI;
-	arc=none smtp.remote-ip=74.125.82.179
-Received: from mail-dy1-f179.google.com (mail-dy1-f179.google.com [74.125.82.179])
-	(using TLSv1.3 with cipher TLS_AES_128_GCM_SHA256 (128/128 bits)
-	 key-exchange X25519 server-signature ECDSA (prime256v1) server-digest SHA256)
+	dmarc=pass header.from=nbd.name;
+	spf=pass smtp.mailfrom=nbd.name;
+	dkim=pass header.d=nbd.name header.i=@nbd.name header.a=rsa-sha256 header.s=20160729 header.b=fdJjCzdn;
+	arc=none smtp.remote-ip=46.4.11.11
+Received: from nbd.name (nbd.name [46.4.11.11])
+	(using TLSv1.3 with cipher TLS_AES_256_GCM_SHA384 (256/256 bits)
+	 key-exchange ECDHE (prime256v1) server-signature ECDSA (prime256v1) server-digest SHA256)
 	(No client certificate requested)
-	by smtp.subspace.kernel.org (Postfix) with ESMTPS id 8FAD3606A33B
-	for <linux-wireless@vger.kernel.org>; Wed, 25 Nov 2026 11:03:54 +0000 (UTC)
-DMARC-Filter: OpenDMARC Filter v1.4.2 smtp.subspace.kernel.org 8FAD3606A33B
-Authentication-Results: smtp.subspace.kernel.org; dmarc=pass (p=none dis=none) header.from=gmail.com
-Authentication-Results: smtp.subspace.kernel.org; spf=pass smtp.mailfrom=gmail.com
+	by smtp.subspace.kernel.org (Postfix) with ESMTPS id 39178606A327
+	for <linux-wireless@vger.kernel.org>; Wed, 25 Nov 2026 11:04:28 +0000 (UTC)
+DMARC-Filter: OpenDMARC Filter v1.4.2 smtp.subspace.kernel.org 39178606A327
+Authentication-Results: smtp.subspace.kernel.org; dmarc=pass (p=none dis=none) header.from=nbd.name
+Authentication-Results: smtp.subspace.kernel.org; spf=pass smtp.mailfrom=nbd.name
 Authentication-Results: smtp.subspace.kernel.org;
-	dkim=pass (2048-bit key) header.d=gmail.com header.i=@gmail.com header.a=rsa-sha256 header.s=20260707 header.b=tEJETcDI
-Received: by mail-dy1-f179.google.com with SMTP id 5a478bee46e88-386c71feeeaso1893378eec.0
-        for <linux-wireless@vger.kernel.org>; Wed, 25 Nov 2026 03:03:54 -0800 (PST)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=gmail.com; s=20260707; t=1795604634; x=1796209434; darn=vger.kernel.org;
-        h=content-transfer-encoding:mime-version:message-id:date:subject:cc
-         :to:from:from:to:cc:subject:date:message-id:reply-to:content-type;
-        bh=0kNQWd4xFKVKn6MSVwE1lsRc4X4V5piL50Xtk3okz4Q=;
-        b=tEJETcDI9nkCss/hKuXkAaC9GvIz08tJYkSrVU4Oe69bDT0B66YUaL+J69XjRnBVMD
-         Ahp9NLL1bEKf6C9NL6GGrrzrPU2zSHu3En0rsnhcf2usHpCDfyQWDyHFUGUQlLEetzte
-         /fgEt8ue46CS7/fi9c0QHCJ1zMmjpviN/o83uV9sIDP38eWQ+NO+kU0id6Gt41JKOQUs
-         1KurRA9D8cpc2/QU2eRf5F66A6AJ7/9niMKrjpiIg8pxK28Mg+Vbkx9/7HjPtkDqX+xO
-         C7i8OI7DcesHsNNnD+jgPDxNijanItWp8h0zKHYWDgHGLxptDPhsIfMFCd+PZCDXAwUR
-         ZnOQ==
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=1e100.net; s=20260707; t=1795604634; x=1796209434;
-        h=content-transfer-encoding:mime-version:message-id:date:subject:cc
-         :to:from:x-gm-gg:x-gm-message-state:from:to:cc:subject:date
-         :message-id:reply-to:content-type;
-        bh=0kNQWd4xFKVKn6MSVwE1lsRc4X4V5piL50Xtk3okz4Q=;
-        b=gYE8jwghwT12qcI+970zxK/6QHJt3U8YS5J3VsJEF7fIw/GOyxvifXSeRsn8Ju99I/
-         HTSAh0FuP+hkXZD77lYIbeRPD/yhj33XQXNoJLli97a08fyEyq3NBWwOhWSqiiy9CpOP
-         pb+yku4VnXhf7zCjWP9oIElXPj+XK16+wW0vHshaFtAyjNCn9t18Pwi8awZvzmt2r5jW
-         i5FTJ85WHwkzip4orOvb5sA2qRck7yQZ13bSpbEXy1CXFygWJiMz44ISVwDsfktxKcvG
-         o/vm0GrvPVXlc4+4A34os+YPeJ5hYkNuhtkKc3swFa65R4IUPznf4Ow9kNMK0NSkW2JJ
-         1+ng==
-X-Gm-Message-State: APuU4Z+9iDgkTR4iDNmqWmDBvOTOMBM9y7xE5h/9x7zf2DRQp5Wcxlcc
-	xw93Su0P3wU084odVNbx2dEYrDN3S3/GUV6kCusTHXlbkKPYRfBoanaT
-X-Gm-Gg: AZFdTZc6EJuGkei4dmFqxqJ8LMzYc6ESHOjnvwOxdX22XGAjGYqBzO+w36cU0MvHjqs
-	t9IApVEmkIai/PPk7h/YyB6b8fGS6SWl2BfHvhbUM69uScjjvisUfWUElJNU/trcNYRk+wIRI4P
-	FPds9oEtXl7tGuPfNPUviMugZeWAMnVrDr8BpGE61UAAmQaxb4e/usSS2VGoIkOUuNN+Bsg0XJ5
-	sA4ssmzC2vWrDqRE5hnuhp79t09RW6PXDdp278meRC0IjxILgnjcc5UIvFG1VjFSuP3zURwv49S
-	o+FMKVzF7eAy4Zvq65TzfiAoqJVWgHlL7/B/p0kCxTQ9iWQWC9EWFHCuhreUW3czefOUCueks9d
-	UkhiCpZZyJz3SlPCJfITiO9v8QAk5LjB12U4WEnIdtaOFGOX9x1XwbwWT/wRFZh3YGL6VcoeTUl
-	+j46S09dvA+df9a4QVjhL/A0VB25zgYRaDRuvWp9on2MpQZacys60yEP4GuH4o8IUlItQVylMIT
-	Vw0EpZzt6qWq3cmXvj/31YbgXGMiXV/+nzQDGBZTad4rJ84s7gAv8no9ydP/2XzoyYn0TG63l3p
-	oH6p+L2EJ2Ye91y93/Dt/TgXXfaYH4piT6Lb+4WIV6vnKKnsy+kVK7okuGIYLkELr/URx0yJcQ=
-	=
-X-Received: by 2002:a05:7300:ce8f:b0:375:7be3:1bbd with SMTP id 5a478bee46e88-38570b336f4mr16085568eec.23.1795604633460;
-        Wed, 25 Nov 2026 03:03:53 -0800 (PST)
-Received: from BenDellReactive ([117.20.154.221])
-        by smtp.gmail.com with ESMTPSA id 5a478bee46e88-385f68bc0adsm49317327eec.13.2026.11.25.03.03.50
-        (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
-        Wed, 25 Nov 2026 03:03:52 -0800 (PST)
-From: Benjamin Dornel <benjamindornel@gmail.com>
-To: Miri Korenblit <miriam.rachel.korenblit@intel.com>,
-	Johannes Berg <johannes@sipsolutions.net>
-Cc: linux-wireless@vger.kernel.org,
-	Kees Cook <kees@kernel.org>,
-	linux-hardening@vger.kernel.org,
-	linux-kernel@vger.kernel.org,
-	Benjamin Dornel <benjamindornel@gmail.com>,
-	stable@vger.kernel.org
-Subject: [PATCH wireless] wifi: iwlwifi: mld: fix net-detect wakeup report after kzalloc_flex()
-Date: Wed, 25 Nov 2026 19:03:47 +0800
-Message-ID: <20261125110347.884775-1-benjamindornel@gmail.com>
-X-Mailer: git-send-email 2.56.1
+	dkim=pass (1024-bit key, unprotected) header.d=nbd.name header.i=@nbd.name header.a=rsa-sha256 header.s=20160729 header.b=fdJjCzdn
+DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed; d=nbd.name;
+	s=20160729; h=Content-Transfer-Encoding:Content-Type:In-Reply-To:From:
+	References:Cc:To:Subject:MIME-Version:Date:Message-ID:Sender:Reply-To:
+	Content-ID:Content-Description:Resent-Date:Resent-From:Resent-Sender:
+	Resent-To:Resent-Cc:Resent-Message-ID:List-Id:List-Help:List-Unsubscribe:
+	List-Subscribe:List-Post:List-Owner:List-Archive;
+	bh=lH9pAEfOzu1+G8D5WBcJiupE42glrYQ4vyzgeROIaKg=; b=fdJjCzdn+Bro1cJSsKPn3eGo4e
+	XK7NGxMicLrHuWCbH8XVIgiHha6dIOu+8eDUI/hnsk4py7HNl9Uii0QvuibmR4yDqsKRP7BoQT7UK
+	G2Dt47ty4RERRXXYg9mNmZSJILEk14AuNP8wx/qjUiLa9oV/MLzddtW2mV65h0nKXMyw=;
+Received: from p54a43741.dip0.t-ipconnect.de ([84.164.55.65] helo=nf.local)
+	by ds12 with esmtpsa  (TLS1.3) tls TLS_ECDHE_RSA_WITH_AES_128_GCM_SHA256
+	(Exim 4.96)
+	(envelope-from <nbd@nbd.name>)
+	id 1xWAnQ-008A3F-1L;
+	Wed, 25 Nov 2026 12:04:16 +0100
+Message-ID: <f069fceb-a57a-467a-8ebf-5c947c34a03c@nbd.name>
+Date: Wed, 25 Nov 2026 12:04:15 +0100
 X-Mailing-List: linux-wireless@vger.kernel.org
 List-Id: <linux-wireless.vger.kernel.org>
 List-Post: <mailto:linux-wireless@vger.kernel.org>
@@ -98,106 +59,115 @@ List-Unsubscribe: <mailto:linux-wireless+unsubscribe@vger.kernel.org>
 List-Owner: <mailto:linux-wireless+owner@vger.kernel.org>
 Precedence: list
 MIME-Version: 1.0
+User-Agent: Mozilla Thunderbird
+Subject: Re: [PATCH 00/28] wifi: mt76: mt7925: add MLO hybrid and EMLSR
+ support
+To: Emery Hsin <emery.hsin@mediatek.com>, lorenzo@kernel.org
+Cc: Sean.Wang@mediatek.com, jb.tsai@mediatek.com, Quan.Zhou@mediatek.com,
+ linux-wireless@vger.kernel.org, linux-mediatek@lists.infradead.org
+References: <20261110031244.369014-1-emery.hsin@mediatek.com>
+Content-Language: en-US
+From: Felix Fietkau <nbd@nbd.name>
+Autocrypt: addr=nbd@nbd.name; keydata=
+ xsDiBEah5CcRBADIY7pu4LIv3jBlyQ/2u87iIZGe6f0f8pyB4UjzfJNXhJb8JylYYRzIOSxh
+ ExKsdLCnJqsG1PY1mqTtoG8sONpwsHr2oJ4itjcGHfn5NJSUGTbtbbxLro13tHkGFCoCr4Z5
+ Pv+XRgiANSpYlIigiMbOkide6wbggQK32tC20QxUIwCg4k6dtV/4kwEeiOUfErq00TVqIiEE
+ AKcUi4taOuh/PQWx/Ujjl/P1LfJXqLKRPa8PwD4j2yjoc9l+7LptSxJThL9KSu6gtXQjcoR2
+ vCK0OeYJhgO4kYMI78h1TSaxmtImEAnjFPYJYVsxrhay92jisYc7z5R/76AaELfF6RCjjGeP
+ wdalulG+erWju710Bif7E1yjYVWeA/9Wd1lsOmx6uwwYgNqoFtcAunDaMKi9xVQW18FsUusM
+ TdRvTZLBpoUAy+MajAL+R73TwLq3LnKpIcCwftyQXK5pEDKq57OhxJVv1Q8XkA9Dn1SBOjNB
+ l25vJDFAT9ntp9THeDD2fv15yk4EKpWhu4H00/YX8KkhFsrtUs69+vZQwc0cRmVsaXggRmll
+ dGthdSA8bmJkQG5iZC5uYW1lPsJgBBMRAgAgBQJGoeQnAhsjBgsJCAcDAgQVAggDBBYCAwEC
+ HgECF4AACgkQ130UHQKnbvXsvgCgjsAIIOsY7xZ8VcSm7NABpi91yTMAniMMmH7FRenEAYMa
+ VrwYTIThkTlQzsFNBEah5FQQCACMIep/hTzgPZ9HbCTKm9xN4bZX0JjrqjFem1Nxf3MBM5vN
+ CYGBn8F4sGIzPmLhl4xFeq3k5irVg/YvxSDbQN6NJv8o+tP6zsMeWX2JjtV0P4aDIN1pK2/w
+ VxcicArw0VYdv2ZCarccFBgH2a6GjswqlCqVM3gNIMI8ikzenKcso8YErGGiKYeMEZLwHaxE
+ Y7mTPuOTrWL8uWWRL5mVjhZEVvDez6em/OYvzBwbkhImrryF29e3Po2cfY2n7EKjjr3/141K
+ DHBBdgXlPNfDwROnA5ugjjEBjwkwBQqPpDA7AYPvpHh5vLbZnVGu5CwG7NAsrb2isRmjYoqk
+ wu++3117AAMFB/9S0Sj7qFFQcD4laADVsabTpNNpaV4wAgVTRHKV/kC9luItzwDnUcsZUPdQ
+ f3MueRJ3jIHU0UmRBG3uQftqbZJj3ikhnfvyLmkCNe+/hXhPu9sGvXyi2D4vszICvc1KL4RD
+ aLSrOsROx22eZ26KqcW4ny7+va2FnvjsZgI8h4sDmaLzKczVRIiLITiMpLFEU/VoSv0m1F4B
+ FtRgoiyjFzigWG0MsTdAN6FJzGh4mWWGIlE7o5JraNhnTd+yTUIPtw3ym6l8P+gbvfoZida0
+ TspgwBWLnXQvP5EDvlZnNaKa/3oBes6z0QdaSOwZCRA3QSLHBwtgUsrT6RxRSweLrcabwkkE
+ GBECAAkFAkah5FQCGwwACgkQ130UHQKnbvW2GgCeMncXpbbWNT2AtoAYICrKyX5R3iMAoMhw
+ cL98efvrjdstUfTCP2pfetyN
+In-Reply-To: <20261110031244.369014-1-emery.hsin@mediatek.com>
+Content-Type: text/plain; charset=UTF-8; format=flowed
 Content-Transfer-Encoding: 8bit
 
-Since commit 69050f8d6d07 ("treewide: Replace kmalloc with kmalloc_obj
-for non-scalar types"), the net-detect wakeup info and its matches are
-allocated with kzalloc_flex(). Both flexible arrays are annotated with
-__counted_by(), so on compilers that support __builtin_counted_by_ref()
-(clang >= 19, gcc >= 15) kzalloc_flex() also sets the counters,
-n_matches and n_channels, to the allocated sizes.
+Hi Emery,
 
-iwl_mld_set_netdetect_info() still uses those counters as the next free
-index, so every match and channel is written past the end of its
-allocation, matches[0..n-1] are left NULL, and the counters end up
-doubled. cfg80211_net_detect_results() then dereferences matches[0] on
-every net-detect wakeup that reports a match:
+On 10.11.26 04:12, Emery Hsin wrote:
+> This series adds station-mode multi-link operation to the mt7925 driver:
+> three-link hybrid MLO (one link per band) and EMLSR for APs on a vendor
+> OUI allowlist. Hybrid MLO and EMLSR are gated by the chip capabilities
+> the firmware reports.
+> 
+> Patches 1-8 fix the basic rate sent in the STA phy TLV and a sub-link
+> memory leak on disconnect, both with Fixes tags, then prepare the series
+> with no functional change: named constants for chip_cap, the DBDC band
+> and the HT secondary channel offset, a link STA wcid unwind helper, and
+> a gated mt792x_mcu_set_dev_active() also used by mt7921.
+> 
+> Patches 9-10 deactivate the DEV and BSS on disconnect and reactivate the
+> DEV before a reconnect, scan or off-channel operation. This covers the
+> MLO to legacy switch fixed by commit 8f9e5807671e ("wifi: mt76: mt7925:
+> restore the legacy BSS after MLO teardown") and replaces its BSS re-add.
+> 
+> Patches 11-19 add the firmware interfaces the link setup needs (the
+> third-link band limit, the EMLSR OUI allowlist and a multi-link
+> remain-on-channel) and keep the MLD consistent as links are added.
+> Patch 14 replaces the pending link parameter of commit dd3f17ef69ed
+> ("wifi: mt76: mt7925: keep MLD membership consistent during link add").
+> 
+> Patches 20-28 bring up all links at authorization with one MLO ROC,
+> install the existing keys on the added links, apply the link state the
+> firmware reports, remap hybrid MLO TX to the primary link OMAC, and add
+> a hm_alg_ctrl debugfs file to override the firmware link plan.
+> 
+> The series is based on mt76 commit 8739e5b44b23 ("wifi: mt76: connac:
+> bound the scan IEs in mt76_connac_mcu_hw_scan()").
+There are a few issues in the series that needs to be resolved:
 
-  Oops: general protection fault, kernel NULL pointer dereference 0x20
-  RIP: 0010:cfg80211_report_wowlan_wakeup+0x46a/0x680 [cfg80211]
-  Call Trace:
-   iwl_mld_wowlan_resume+0x9d9/0xe40 [iwlmld]
-   iwl_mld_resume+0x1d/0x50 [iwlmld]
-  Workqueue: async async_run_entry_fn
+1. There are bisection issues in the series:
+- 9 and 10: patch 9 deactivates the DEV on disconnect, and only patch 10 
+reactivates it. With patch 9 alone, a reconnect, scan or off-channel 
+operation fails.
+- 14 to 19: adding a second link sends the firmware an incomplete MLD 
+record. Patch 19 is the first to publish all links before any STA_REC.
+- 18 to 23: links added through mac80211 never get the associated-state 
+raise in firmware. Patch 18 also says the raise moves to the add-links 
+caller, which is not true at that commit.
+- 22: adds a static function that nothing calls until patch 23.
 
-(0x20 is the offset of ssid.ssid_len in struct cfg80211_wowlan_nd_match.)
-Without panic_on_oops the machine is left wedged mid-resume.
+2. Other bugs:
+- 1: NULL dereference when a NAN peer is added, because a NAN vif has no 
+channel. The Fixes: tag also names the wrong commit.
+- 2: besides the leak fix, it skips the BSS removal for station 
+sub-links. That leaves dev->mt76.wcid[] pointing at freed memory.
+- 9: sets the band to AUTO on mt7927 too, which keeps a fixed band 
+elsewhere.
+- 10: misses the WoWLAN net-detect path, which scans without 
+reactivating the DEV.
+- 13: a remain-on-channel takeover tells mac80211 that a ROC ended even 
+for join and GO requests, which mac80211 never started.
+- 14: the record's secondary link can be the primary link itself, 
+whenever the primary has the higher BSS index.
+- 15: the firmware link index from hweight16(old_links) can collide with 
+the index of a link that stays.
+- 19: on the error path of the primary re-add at authorization, the WTBL 
+index is freed twice.
+- 22: the key re-install skips the keyidx > 5 filter, so the BIGTK takes 
+the single IGTK slot.
+- 23:
+     - A TDLS peer's authorization reaches the link setup and crashes 
+(NULL link_sta).
+     - A second authorization allocates every link again: leak, and a 
+second teardown of the primary.
+     - If the AP removes a link that mac80211 had inactive, mac80211 
+never tells the driver. The result is a leak, then a NULL dereference at 
+the next disconnect.
 
-Fill both arrays using local indices and store the number of entries
-actually filled in, as iwlmvm already does. Also stop setting a match's
-channels when they can't be reported, rather than leaving n_channels at
-the allocated size, and report the matches found so far if an
-allocation fails instead of returning with n_matches unset.
+Thanks,
 
-Seen on an Intel BE200 (iwlmld) in a Dell Pro 14 Plus with kernel 7.3.5
-built with clang 23, with net-detect armed via
-"iw phy phy0 wowlan enable net-detect interval 10000 matches ssid <ssid>"
-and that SSID in range during s2idle (also with pm_test=devices). With
-this change the same setup reports the match and resumes normally.
-
-Fixes: 69050f8d6d07 ("treewide: Replace kmalloc with kmalloc_obj for non-scalar types")
-Cc: stable@vger.kernel.org
-Signed-off-by: Benjamin Dornel <benjamindornel@gmail.com>
----
- drivers/net/wireless/intel/iwlwifi/mld/d3.c | 19 +++++++++++--------
- 1 file changed, 11 insertions(+), 8 deletions(-)
-
-diff --git a/drivers/net/wireless/intel/iwlwifi/mld/d3.c b/drivers/net/wireless/intel/iwlwifi/mld/d3.c
-index 77e4850..e67a22a 100644
---- a/drivers/net/wireless/intel/iwlwifi/mld/d3.c
-+++ b/drivers/net/wireless/intel/iwlwifi/mld/d3.c
-@@ -1423,11 +1423,11 @@ iwl_mld_set_netdetect_info(struct iwl_mld *mld,
- 			   struct iwl_mld_netdetect_res *netdetect_res,
- 			   unsigned long matched_profiles)
- {
--	int i;
-+	int i, n_matches = 0;
- 
- 	for_each_set_bit(i, &matched_profiles, netdetect_cfg->n_match_sets) {
- 		struct cfg80211_wowlan_nd_match *match;
--		int idx, j, n_channels = 0;
-+		int idx, j, n_channels = 0, n_set = 0;
- 		struct iwl_scan_offload_profile_match *matches =
- 			(void *)netdetect_res->matches;
- 
-@@ -1436,10 +1436,9 @@ iwl_mld_set_netdetect_info(struct iwl_mld *mld,
- 				hweight8(matches[i].matching_channels[k]);
- 		match = kzalloc_flex(*match, channels, n_channels);
- 		if (!match)
--			return;
-+			break;
- 
--		netdetect_info->matches[netdetect_info->n_matches] = match;
--		netdetect_info->n_matches++;
-+		netdetect_info->matches[n_matches++] = match;
- 
- 		/* We inverted the order of the SSIDs in the scan
- 		 * request, so invert the index here.
-@@ -1451,17 +1450,21 @@ iwl_mld_set_netdetect_info(struct iwl_mld *mld,
- 		       netdetect_cfg->match_sets[idx].ssid.ssid,
- 		       match->ssid.ssid_len);
- 
--		if (netdetect_cfg->n_channels < n_channels)
-+		if (netdetect_cfg->n_channels < n_channels) {
-+			match->n_channels = 0;
- 			continue;
-+		}
- 
- 		for_each_set_bit(j,
- 				 (unsigned long *)&matches[i].matching_channels[0],
- 				 sizeof(matches[i].matching_channels)) {
--			match->channels[match->n_channels] =
-+			match->channels[n_set++] =
- 				netdetect_cfg->channels[j]->center_freq;
--			match->n_channels++;
- 		}
-+		match->n_channels = n_set;
- 	}
-+
-+	netdetect_info->n_matches = n_matches;
- }
- 
- static void
--- 
-2.56.1
-
+- Felix
