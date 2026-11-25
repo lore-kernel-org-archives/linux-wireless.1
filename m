@@ -1,88 +1,91 @@
-Authentication-Results: smtp.subspace.kernel.org; arc=none smtp.remote-ip=209.85.128.42
+Authentication-Results: smtp.subspace.kernel.org; arc=none smtp.remote-ip=209.85.216.51
 ARC-Seal: i=1; d=subspace.kernel.org; s=arc20261015; a=rsa-sha256; cv=none;
-	t=1795639036;
-	b=aQFENVB81Q+qSRIR9BsLSpZceAY2Hm/5Eu/Dby2eUgF17FRZ3Ka947dhWacUrDSk2qpg
-	 NymV9ZwxYg06KY1QTW5/5OU2DtK1o6pLetRmiUYEXF2tHNLsNh/q146H5dgu0qYBJlx4Y
-	 SBd6WUz/1qtvAPk8y88AwGh2T/B9EqmxRdE6eYm+SyB/fw2boh4O8tWtynBJImy6XWe7x
-	 qKbRhIlLz7V6pdGxSKvzupyZefBDMBFHuReZaXISQA0IHMjTfz6UhwF+nL2VNqUPRMSnc
-	 rT2guvWSiiABjB3W0+Ebgs1Rcd/brqdzcfU9npIhoDlA2hXrzOe5sakKGi0yAjBSRJA==
+	t=1795639094;
+	b=N8LVtbBSCIWcmCRB/v/E47i4T/vfn3YyZGEVoIYCD3F90KvnZtR1CCtSTJ5dp2SXgdxJ
+	 O922ScPdXr2F2NDyTJajPF7VsUNnYdeqog1yRRnOOy8gtDYVc7GJaGTsjflpZX3ES7TTV
+	 SiBgtNApRzsCHLDmnZ7dR7FUMTROyNi6qNqnqDOomiqkvfl/LbYPx5aNL/2OHHmdczGQG
+	 9vvUrpEfGHPQOjBvNieGZUZSIrJFEKcSSVxx+OPxEOLBnYFYSeX4ghWQKkGOh2KuuA2lx
+	 5Pdw9gJVQfLna3M1iTfjKnCQInx+6f2quOLUp16XbCzW5vUGxWwp0TC+H3LTeiWZPsg==
 ARC-Message-Signature: i=1; d=subspace.kernel.org; s=arc20261015;
-	a=rsa-sha256; c=relaxed/relaxed; t=1795639036;
+	a=rsa-sha256; c=relaxed/relaxed; t=1795639094;
 	h=DMARC-Filter:Received:DKIM-Signature:X-Google-DKIM-Signature:
-	 X-Forwarded-Encrypted:X-Gm-Message-State:X-Gm-Gg:X-Received:Received:
-	 Message-ID:Date:MIME-Version:User-Agent:Subject:To:Cc:References:
-	 Content-Language:From:In-Reply-To:Content-Type:
-	 Content-Transfer-Encoding;
-	bh=uM94QE0TYPNheB2ffRJOQ/kVY8aqAYYyvQIO+dm/dJ0=;
-	b=GpK+FdazU1G8YObxxYarFSDFwFWFO6VaBgZAM9Wgxy1vN0IKZpkzl+P9YYDDWkpl/1ja
-	 sCtwKDqPjouGh4WYBW30qDEeKGhyFLIBLfvl/iRt/vuojq51IPbvo8p2OHVjyutj68aqd
-	 KODhjJQV/GnXz41+F1EzJmQzeiIeHgYZMFp/rKxJyVPMlCXByRddmKYS47gPl7zHDwRfp
-	 /Dkrbwe4GmCP+Rm9+018OL4+nBqQDAeCxi4UVWEooq9T7NF+hTTwJOx1Yilkkmmq4Jjtd
-	 qH3hFzRAGiX4nqqe+2vBVZJnKzrPUU0JSd6KWKaP+DxSUHvyYZqYRZa21P07vFFlwsw==
+	 X-Gm-Message-State:X-Gm-Gg:X-Received:Received:From:To:Cc:Subject:
+	 Date:Message-ID:X-Mailer:MIME-Version:Content-Transfer-Encoding;
+	bh=MOLrrSGpfOvCRTdHbo19fWlRBL5HLF65kXhbZO1anXo=;
+	b=o30gl1hpqsg71LW8reJOAzr5ljfmC+yFmOWOOB0zw40zuKky3np51SvnIUY8u6ieh7XQ
+	 uAVIFtynf9O86XsU8+RcU2HmHqOYGaEGqJ5ZjDnAtME0n3VJA/Fki02HQW1HCqRdhMvWm
+	 gEpRZdc5V6H0peMkBMpWRbywV0Q/CD9tF9ZleIsV//qT6xeh4JF5qiTE7eaXmJ3xzGzZ6
+	 2ftf7bJUh89Civ7XR6gsXrhQAnxeOTWpAPZ6a1qt/EfO34ZxUVkp5Oqygs6noCHikN/Zv
+	 aw7ITPAaPIMwPUmXTI1CYvS7L9PniHr60bheqhtIrL2P2uNKwAUuyDd/Eou3HRjncvA==
 ARC-Authentication-Results: i=1; smtp.subspace.kernel.org; 
 	dmarc=pass header.from=gmail.com;
 	spf=pass smtp.mailfrom=gmail.com;
-	dkim=pass header.d=gmail.com header.i=@gmail.com header.a=rsa-sha256 header.s=20260707 header.b=Vya3+18A;
-	arc=none smtp.remote-ip=209.85.128.42
-Received: from mail-wm1-f42.google.com (mail-wm1-f42.google.com [209.85.128.42])
+	dkim=pass header.d=gmail.com header.i=@gmail.com header.a=rsa-sha256 header.s=20260707 header.b=wKaHkTYM;
+	arc=none smtp.remote-ip=209.85.216.51
+Received: from mail-pj1-f51.google.com (mail-pj1-f51.google.com [209.85.216.51])
 	(using TLSv1.3 with cipher TLS_AES_128_GCM_SHA256 (128/128 bits)
 	 key-exchange X25519 server-signature ECDSA (prime256v1) server-digest SHA256)
 	(No client certificate requested)
-	by smtp.subspace.kernel.org (Postfix) with ESMTPS id 2E25A606A330
-	for <linux-wireless@vger.kernel.org>; Wed, 25 Nov 2026 20:37:15 +0000 (UTC)
-DMARC-Filter: OpenDMARC Filter v1.4.2 smtp.subspace.kernel.org 2E25A606A330
+	by smtp.subspace.kernel.org (Postfix) with ESMTPS id 3E369606A321
+	for <linux-wireless@vger.kernel.org>; Wed, 25 Nov 2026 20:38:13 +0000 (UTC)
+DMARC-Filter: OpenDMARC Filter v1.4.2 smtp.subspace.kernel.org 3E369606A321
 Authentication-Results: smtp.subspace.kernel.org; dmarc=pass (p=none dis=none) header.from=gmail.com
 Authentication-Results: smtp.subspace.kernel.org; spf=pass smtp.mailfrom=gmail.com
 Authentication-Results: smtp.subspace.kernel.org;
-	dkim=pass (2048-bit key) header.d=gmail.com header.i=@gmail.com header.a=rsa-sha256 header.s=20260707 header.b=Vya3+18A
-Received: by mail-wm1-f42.google.com with SMTP id 5b1f17b1804b1-4ac95761c85so48922765e9.2
-        for <linux-wireless@vger.kernel.org>; Wed, 25 Nov 2026 12:37:14 -0800 (PST)
+	dkim=pass (2048-bit key) header.d=gmail.com header.i=@gmail.com header.a=rsa-sha256 header.s=20260707 header.b=wKaHkTYM
+Received: by mail-pj1-f51.google.com with SMTP id 98e67ed59e1d1-3b3d4d3bba3so3167093a91.3
+        for <linux-wireless@vger.kernel.org>; Wed, 25 Nov 2026 12:38:13 -0800 (PST)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=gmail.com; s=20260707; t=1795639033; x=1796243833; darn=vger.kernel.org;
-        h=content-transfer-encoding:content-type:in-reply-to:from
-         :content-language:references:cc:to:subject:user-agent:mime-version
-         :date:message-id:from:to:cc:subject:date:message-id:reply-to
-         :content-type;
-        bh=uM94QE0TYPNheB2ffRJOQ/kVY8aqAYYyvQIO+dm/dJ0=;
-        b=Vya3+18Aqgr6G+X7cLOi23Eeff1ZPhQw9F9AlBmLx8ByXjYvJpXHeR2/U/SxGDS7w0
-         W0L4vloGyAQ6RifY6OJA5E0KXH/42fR2yB1idRN2Qwptb+qYPpcFVkbbDd3JOyvaxyox
-         3FxJvyCGVp2dbxVdGc82w9xMCxZxSzL0BNSL/WX7yotN0LPoLDiOb7xxZYxEYi4wQiZb
-         Ol7DDP4b6LfY7D0AsxDRNWAqLZFAhxMUcEBIAFiueSSO54mVInISUIwjunJkVpnQX8l2
-         X+95gulqzvOKDl+mTAW1feMP6q0tkPLg11HTBMdcQbaSfQgDMNf4C/Mi568tVDToUQ8K
-         rWKQ==
+        d=gmail.com; s=20260707; t=1795639092; x=1796243892; darn=vger.kernel.org;
+        h=content-transfer-encoding:mime-version:message-id:date:subject:cc
+         :to:from:from:to:cc:subject:date:message-id:reply-to:content-type;
+        bh=MOLrrSGpfOvCRTdHbo19fWlRBL5HLF65kXhbZO1anXo=;
+        b=wKaHkTYMkPponA0AEVaZvEw7DJq5OaFNbRZiWtMwWb7w1iyF7+Dmo371gdqCFfcIXU
+         gPJjJnqiHKl5dpJyfoJMw3AZ1XyfrGUQUmY7ElnmJYtgJS4igNzJJVV8xuBXbFGXflEP
+         evdeYZTB321nf4kunLvxRNm0hpMCNbY81REs+X0udDjqmXKSxFTySEcFscOGxjygHWTL
+         Wqx80wxilWJ/3F3wJQ0u7/2H2BMJ1HRj95yw07brifloVBq9M7J65O7guZuj9RTeZJ+j
+         /0calMro9nDSMgjCocDQxnQh3g9Odxc59ra5RejW+0otU1g6VleXt6EEQ9de0Q4Ktux9
+         0TIw==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=1e100.net; s=20260707; t=1795639033; x=1796243833;
-        h=content-transfer-encoding:content-type:in-reply-to:from
-         :content-language:references:cc:to:subject:user-agent:mime-version
-         :date:message-id:x-gm-gg:x-gm-message-state:from:to:cc:subject:date
+        d=1e100.net; s=20260707; t=1795639092; x=1796243892;
+        h=content-transfer-encoding:mime-version:message-id:date:subject:cc
+         :to:from:x-gm-gg:x-gm-message-state:from:to:cc:subject:date
          :message-id:reply-to:content-type;
-        bh=uM94QE0TYPNheB2ffRJOQ/kVY8aqAYYyvQIO+dm/dJ0=;
-        b=gg6E3ePCkf73k0HoDh3KSaEmwUH9aYPUMmhiU8X8JnV47Y/UAkRnbICz61JJzt1sec
-         IEgUGBI8Cg0Vfz+iuxGN3TD5bV9sdgh09KW35oj/HJ8vqMfpX+BF8zu6FIBvrC7MaFIj
-         jfRITSvvcWfUpBqQkW4At6H3cuBw/rhJVNldHZzzRZPGAV18/kL7sy0TWeiRGU82Uu1B
-         0Ytu7Zg25saAq/+uRa2yPTuYqKBvO8KMjmDHji5k0SGBHki0P2uHDkj1VpjitLgvLpwk
-         tlOcS9hweLwRt8jjV3bPAdxnqtE2W5/tPmvGx609+tWCkfLa2wcRRgX3N003aCUoc8s/
-         Nuag==
-X-Forwarded-Encrypted: i=1; AL+hErHKX3Q9Yh7F58kPrK5p/VMpz6V/gu26gTB2sDMnEBq4V+roH6PpF1OOvvdbMr+cM7iAK7rYhqrjYYbu+G7qwA==@vger.kernel.org
-X-Gm-Message-State: APuU4Z+d53LGOjwpdZDjg3DhRKexOwZ1dqg2ggFeZm9+AwJ7dnVyXXGn
-	GI6ZpeKRMPD2Cmy5rpBYe2BHvhEGF1r4YuJjIpcCzCzx18l7F0iRLbEq
-X-Gm-Gg: AZFdTZeK/ZAG5Qx6zl7Tr1TX0beuST4SYP8C1cvcVbyjzxPWa59AHyTnAEwg4SxKZ8h
-	E2I6o5N6vTECydvsfCeoB4gE6btbo5iy7nfxuuNz6f0FQ2wlbSLBDb7I4fVMjceXvdVvkeTKrVD
-	wM2x6c/1StQc0U9OiJBQf0sOm1wp7QBcE87JtTIqyzJ/aAG+1kX3Z76toipXUmTKyvKHLmDM1IY
-	FpKRIPPktfO5msh0TMdIscTUPYYtQMP5ADAu+kccJFqGR1ngeYUbukco3oQjsoEv847qZKozqxY
-	ZPHNTHLf5wr/SF/r73TlYsgKxzFDY4lQtakjVGQgaCW5BmwzIx5owQchk7udR5KI2wRAO/YwL+3
-	M5zWxIJgImzdQcyDE+WNETehIZwE7tdyAbmfqtymUY9qotYEIJvviMlgn97nmWDdZP8NManAxtz
-	ESfEHNU9L2WmcqRxT4lNGeAH+xSCRr8rA3pa5iDb6niAbh2qlztwf4AmVyTEpb3At2ozCTYC7Fq
-	NdMbgVSTqnE6lSeUWbZ/tnz+LiedOiUh70HcUSxaWtRX2rCta1qZQfFUsGDYzdUWAM+fM1pJSJw
-	e2OGf3TcXnA9i83L6zy82Rn6VCXFalPB333jkA==
-X-Received: by 2002:a05:600d:18:b0:4bb:9001:1aa with SMTP id 5b1f17b1804b1-4bb900102b8mr266635275e9.10.1795639033378;
-        Wed, 25 Nov 2026 12:37:13 -0800 (PST)
-Received: from [192.168.1.50] ([188.27.124.101])
-        by smtp.gmail.com with ESMTPSA id 5b1f17b1804b1-4bb8538b09bsm1006004155e9.4.2026.11.25.12.37.12
-        (version=TLS1_3 cipher=TLS_AES_128_GCM_SHA256 bits=128/128);
-        Wed, 25 Nov 2026 12:37:13 -0800 (PST)
-Message-ID: <2db4b526-1809-4ef7-8fe9-87b6cfcea6c9@gmail.com>
-Date: Wed, 25 Nov 2026 22:37:10 +0200
+        bh=MOLrrSGpfOvCRTdHbo19fWlRBL5HLF65kXhbZO1anXo=;
+        b=BUNHeGbIAbKLJW9Q5yxFiQ/NO2srQ/S4VfwYqqZ37WXQf2PhiXRWQ/2ZdVJ6XnVxAz
+         zTsWB5KOqjIME9yLJYd7kM1wG/5B1MPhDcAu3xTYCfjg7r8dqznue4Roh0S0sXGeb5GQ
+         6Q44jTB/JEV6F3q2aMAf1DPKvpIGRqw3srp9I70ov7gP5ob7CL2hyTbQZa3sIWvHTQ74
+         +P1bxuHwyFn6pg0u52HgI/j/Lu2pK5Z9U/t2oCpgRCKklbEH3FzeM7mCrf9FT/ON8zs5
+         BtbFunCS5Zm9pmMoRvZivnn8Uc/gWC3kmbpfzR9DmC/jJvwe0hQ51MuxcCqzOJlMm5X0
+         mG/Q==
+X-Gm-Message-State: APuU4Z+r8SL3v/ZK7XOSnggwxedcG+s/FCpWBESIDSj/XfB7ywyG/7wt
+	9Tp2dBtiIX5PWs1nAMIXC1mkI9dMDmHjliMvAxpc5/oSFqrFXxg3qFKfQQI7H1scUUo=
+X-Gm-Gg: AZFdTZfZ48J2UpnewaXdS2bkBo7R3+pWXFo6Ij5bRD/EKoqCUha2UTXe/I1alfcQISH
+	HuAnpti6C3Vx9FEmtoxzyrTfV1pJR45Ho/eKtBxZFpqIYNxSzwunyTTS1CVoevO/erXK3rm0Ftr
+	ZfktQ0o25El5iwjZwfcV2ELyiBiMbinI3/CM20LFmF4M+E4t84yGcmVt+2ZatgYMSFHmwchRUD1
+	6hCRbRavnOZuItP331k/0QrVNLSHVwHKXuNWQjLFgh6C5yjVbpuOAlMqsty8T55ooWS10efY0+s
+	AItEFkVvdkXEgi/bfJikfIJzSo3loFpx7mS5InZJhgxyPUv3W7faip5k/027oMguk5qUZFJCqPa
+	DprFXbQxh/dmyH4082rZWkVkg+7R01j4dwhCxqF4gl0k7Aeck4hBMYPdbPYeCDji1Vl5c9pdhfv
+	WYo7GXPELu6zg9WR7RDMoOsEjt08NuwCZckb4EQjjC8GMTMbxKjB03s+e89sinhtn4vp8dk+IDy
+	fYDNnpGq5pZjp8WqazoK/rodsIpe0/DoKhL4PdR3wU/Y15QN97U1yu90B1duXAClDcd/AQF62OS
+	t/akjwhFkNACiX5AQL7lk6XcgiDfl0cOKTMhr4FFalrzxslFq/kMeiHRtPcDRTr3Y/0lCQMuAI4
+	fwXX5L88ctYFz5uqYTYd3/f07GrHrZ8fVRftEigul8YiE5Bscb8LV
+X-Received: by 2002:a17:90b:4a48:b0:3ad:eb15:aed9 with SMTP id 98e67ed59e1d1-3b41c7ac064mr16372116a91.9.1795639092455;
+        Wed, 25 Nov 2026 12:38:12 -0800 (PST)
+Received: from localhost.localdomain ([2401:f40:1397:25:846:8776:e78d:e6eb])
+        by smtp.gmail.com with ESMTPSA id 98e67ed59e1d1-3b41ad0b2c4sm28875632a91.4.2026.11.25.12.38.10
+        (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
+        Wed, 25 Nov 2026 12:38:12 -0800 (PST)
+From: Zeshan Ahmed Nobin <zeshanahmednobin@gmail.com>
+To: linux-wireless@vger.kernel.org
+Cc: Ping-Ke Shih <pkshih@realtek.com>,
+	Luka Gejak <luka.gejak@linux.dev>,
+	Kalle Valo <kvalo@kernel.org>,
+	linux-kernel@vger.kernel.org
+Subject: [PATCH rtw-next v4] wifi: rtw88: 8822c: validate bw and nrx read from registers
+Date: Thu, 26 Nov 2026 02:37:53 +0600
+Message-ID: <20261125203753.428868-1-zeshanahmednobin@gmail.com>
+X-Mailer: git-send-email 2.43.0
 X-Mailing-List: linux-wireless@vger.kernel.org
 List-Id: <linux-wireless.vger.kernel.org>
 List-Post: <mailto:linux-wireless@vger.kernel.org>
@@ -92,146 +95,101 @@ List-Unsubscribe: <mailto:linux-wireless+unsubscribe@vger.kernel.org>
 List-Owner: <mailto:linux-wireless+owner@vger.kernel.org>
 Precedence: list
 MIME-Version: 1.0
-User-Agent: Mozilla Thunderbird
-Subject: Re: [RFC PATCH v3 0/4] wifi: rtl8xxxu: implement AP mode for 8188EU
-To: Mehmet Fide <mehmet.fide@gmail.com>, =?UTF-8?Q?Georg_M=C3=BCller?=
- <georgmueller@gmx.net>
-Cc: Jes Sorensen <Jes.Sorensen@gmail.com>, Ping-Ke Shih <pkshih@realtek.com>,
- linux-wireless@vger.kernel.org, linux-kernel@vger.kernel.org,
- mehmet.fide@screeningeagle.com
-References: <20261125160616.1201001-1-mehmet.fide@gmail.com>
-Content-Language: en-US
-From: Bitterblue Smith <rtl8821cerfe2@gmail.com>
-In-Reply-To: <20261125160616.1201001-1-mehmet.fide@gmail.com>
-Content-Type: text/plain; charset=UTF-8
-Content-Transfer-Encoding: 7bit
+Content-Transfer-Encoding: 8bit
 
-On 25/11/2026 18:06, Mehmet Fide wrote:
-> Hi Georg, Bitterblue,
-> 
-> I tested v3 on rtw-next (18d0bedbb5f0, context fixes in patches 2 and 4
-> only) with an Edimax EW-7811Un V2 (RTL8188EUS rev D) as AP and a
-> separate sniffer. I found three problems in the AP part, plus an older
-> one that explains the duplicate pings.
-> 
-> 1. Beacons. After hostapd starts, the 8188e sends one beacon and then
-> none. Probe responses go out, so clients still find the AP by active
-> scanning, but association takes about 6 s and a passive scan sees
-> nothing. BCN_VALID is set and the beacon function is enabled; the
-> hardware clears the beacon queue after the first beacon. In AP mode the
-> vendor driver (hw_var_set_opmode()) sets BIT(3) | BIT(4) in
-> REG_MBID_NUM, commented "If set 0, hw will clr bcnq when tx becon
-> ok/fail". With that there is a beacon at every TBTT and association
-> takes 0.5 s.
-> 
-> 2. TBTT hold time. rtl8xxxu_start_tx_beacon() writes 0x80 to
-> REG_TBTT_PROHIBIT + 1 and clears bit 0 of + 2; the vendor
-> ResumeTxBeacon() writes 0xff and sets bit 0. On channel 6 with several
-> neighbour APs, 7 runs of about 120 TBTTs each: 2-5 % of the beacons
-> missing (one run 42 %) with the rtl8xxxu value; with the vendor value
-> 0 % in 5 runs and 1-3 % in 2.
-> 
-> 3. macid in the TX descriptor, which Bitterblue pointed out:
-> rtl8xxxu_fill_txdesc_v3() still does not set it; the vendor driver puts
-> mac_id & 0x3f into txdw1. The same function also indexes
-> priv->ra_info[macid] now, but for group addressed frames with a key,
-> rtl8xxxu_tx() replaces macid with the security CAM index, which can go
-> past the 16 entries of ra_info.
+rtw8822c_phy_cck_pd_set() reads nrx and bw from the chip with
+rtw_read32_mask() and uses them as indexes into dm_info->cck_pd_lv[][]
+and rtw8822c_cck_pd_reg[][].
 
-RTL8188E_MAX_MAC_ID_NUM should be 64 (hal_spec->macid_num = 64 in
-hal/rtl8188e/rtl8188e_hal_init.c).
+When the chip stops responding on the PCIe bus, register reads return
+all ones, so bw and nrx both become 3. bw = 3 is past the end of both
+arrays.  When the chip stopped responding on Ubuntu's 7.0.0-43 kernel,
+UBSAN reported:
 
-> 
-> This is what I use on top of v3 for 1-3:
-> 
-> diff --git a/drivers/net/wireless/realtek/rtl8xxxu/core.c b/drivers/net/wireless/realtek/rtl8xxxu/core.c
-> index 49c167fd6ee4..9a297b077443 100644
-> --- a/drivers/net/wireless/realtek/rtl8xxxu/core.c
-> +++ b/drivers/net/wireless/realtek/rtl8xxxu/core.c
-> @@ -1154,6 +1154,14 @@ static void rtl8xxxu_start_tx_beacon(struct rtl8xxxu_priv *priv)
->  	val8 |= EN_BCNQ_DL >> 16;
->  	rtl8xxxu_write8(priv, REG_FWHW_TXQ_CTRL + 2, val8);
->  
-> +	if (priv->rtl_chip == RTL8188E) {
-> +		rtl8xxxu_write8(priv, REG_TBTT_PROHIBIT + 1, 0xff);
-> +		val8 = rtl8xxxu_read8(priv, REG_TBTT_PROHIBIT + 2);
-> +		val8 |= BIT(0);
-> +		rtl8xxxu_write8(priv, REG_TBTT_PROHIBIT + 2, val8);
-> +		return;
-> +	}
-> +
->  	rtl8xxxu_write8(priv, REG_TBTT_PROHIBIT + 1, 0x80);
->  	val8 = rtl8xxxu_read8(priv, REG_TBTT_PROHIBIT + 2);
->  	val8 &= 0xF0;
-> @@ -5572,7 +5580,7 @@ rtl8xxxu_fill_txdesc_v3(struct ieee80211_hw *hw, struct ieee80211_hdr *hdr,
->  {
->  	struct rtl8xxxu_priv *priv = hw->priv;
->  	struct device *dev = &priv->udev->dev;
-> -	struct rtl8xxxu_ra_info *ra = &priv->ra_info[macid];
-> +	struct rtl8xxxu_ra_info *ra;
->  	u8 *qc = ieee80211_get_qos_ctl(hdr);
->  	u8 tid = qc[0] & IEEE80211_QOS_CTL_TID_MASK;
->  	u32 rate = 0;
-> @@ -5580,6 +5588,10 @@ rtl8xxxu_fill_txdesc_v3(struct ieee80211_hw *hw, struct ieee80211_hdr *hdr,
->  
->  	seq_number = IEEE80211_SEQ_TO_SN(le16_to_cpu(hdr->seq_ctrl));
->  
-> +	/* macid is the security CAM index for group addressed frames */
-> +	ra = &priv->ra_info[macid < RTL8188E_MAX_MAC_ID_NUM ? macid : 0];
-> +	tx_desc->txdw1 |= cpu_to_le32(macid & 0x3f);
-> +
->  	if (ieee80211_is_data(hdr->frame_control)) {
->  		rate = ra->decision_rate;
->  		tx_desc->txdw5 = cpu_to_le32(rate);
-> @@ -7002,6 +7014,13 @@ static int rtl8xxxu_add_interface(struct ieee80211_hw *hw,
->  		rtl8xxxu_write16(priv, REG_TSFTR_SYN_OFFSET, 0x7fff); /* ~32ms */
->  		rtl8xxxu_write8(priv, REG_DUAL_TSF_RST, DUAL_TSF_RESET_TSF0);
->  
-> +		/* The 8188e clears the beacon queue after each beacon unless told not to */
-> +		if (priv->rtl_chip == RTL8188E) {
-> +			val8 = rtl8xxxu_read8(priv, REG_MBID_NUM);
-> +			val8 |= BIT(3) | BIT(4);
-> +			rtl8xxxu_write8(priv, REG_MBID_NUM, val8);
-> +		}
-> +
->  		/* enable BCN0 function */
->  		rtl8xxxu_write8(priv, REG_BEACON_CTRL,
->  				BEACON_DISABLE_TSF_UPDATE |
-> 
-> With these, beacon loss is 0.5-3.4 % at the sniffer and association
-> takes 0.5 s.
-> 
-> 4. Duplicate pings. I can reproduce them with two clients, on one of
-> the two and in both directions, and not with one client. The captures
-> show the client sending the same MSDU again with a new sequence number
-> after its retry limit, because many of its frames are not acked: 62-73 %
-> of the frames sent to the 8188e carry the retry bit.
-> 
-> This is not AP specific. With the 8188e as a station of an rtw88 AP,
-> same dongle, place and traffic, 63 % of the frames to the 8188e are
-> retries with rtl8xxxu and 0 % with Realtek's v5.3.9 driver
-> (aircrack-ng/rtl8188eus with kernel API fixes only, on a non-RT kernel;
-> it crashes on PREEMPT_RT). I dumped the registers of both
-> drivers while associated and wrote the vendor values into rtl8xxxu one
-> group at a time. The difference is REG_OFDM0_XA_AGC_CORE1:
-> rtl8xxxu_start() sets the IGI to 0x1e (see c8bc37602779 ("wifi:
-> rtl8xxxu: Simplify setting the initial gain")) and nothing changes it
-> later, while the vendor driver had 0x40 in that test. With IGI 0x40 alone the
-> retries drop to 1 %.
-> 
-> A fixed value does not solve it, though. In AP mode with the two
-> clients at -44 and -52 dBm, IGI 0x40 removes the duplicates but loses
-> 35-65 % of the pings. The 8188e seems to need the vendor's dynamic
-> initial gain (IGI from the lowest station RSSI and the false alarm
-> count). Bitterblue, is there a reason rtl8xxxu has no DIG, or would a
-> simple one for the 8188e be acceptable?
+  UBSAN: array-index-out-of-bounds in .../rtw88/rtw8822c.c:4407:21
+  index 3 is out of range for type 'u8 [2][4]'
+  Workqueue: phy0 rtw_watch_dog_work [rtw88_core]
+  Call Trace:
+   rtw8822c_phy_cck_pd_set+0x33c/0x510 [rtw88_8822c]
+   rtw_phy_dynamic_mechanism+0x310/0x330 [rtw88_core]
+   rtw_watch_dog_work+0x217/0x330 [rtw88_core]
 
-I think the reason is just that nobody implemented it yet.
+nrx = 3 fits in cck_pd_lv[][], but rtw8822c_cck_pd_reg[][] only has
+registers for nrx 0 and 1. The entry for nrx 3 is empty: register 0,
+mask 0. If bw is valid and the level changes, the driver uses that
+empty entry. rtw_read32_mask() then shifts by __ffs(0), which is
+undefined; in a test that faked only nrx 3, UBSAN reported "shift
+exponent 64 is too large".
 
-> 
-> Georg, do you plan a v4? I can send 1-3 as patches on top of your
-> series, or include them in a v4 with your patches if you prefer.
-> 
-> Best regards,
-> Mehmet
+Return early if bw or nrx is out of range, before either is used as
+an index.
+
+Fixes: 479c4ee931a6 ("rtw88: add dynamic cck pd mechanism")
+Reported-by: Luka Gejak <luka.gejak@linux.dev>
+Closes: https://lore.kernel.org/linux-wireless/f6a7d3272fe7635c6a83698dfab5d85500437ca6@linux.dev/
+Cc: stable@vger.kernel.org
+Signed-off-by: Zeshan Ahmed Nobin <zeshanahmednobin@gmail.com>
+---
+v4:
+- One patch instead of two: check both values right after they are
+  read, as Ping-Ke suggested.
+- No code comment, and a shorter commit message.
+- Dropped Luka's Suggested-by and Reviewed-by from v3: this code is new.
+
+Tested on an RTL8822CE with Ubuntu 7.0.0-43. A debug-only patch made
+one or both reads return 0xffffffff for 30 s. cck_pd_set() runs every
+2 s; "stopped" means it returned at the new check. Each faked run also
+logged 2 or 3 normal calls before the fake began.
+
+  Test                      Calls  Stopped  Ran with a 3  UBSAN
+  healthy chip (60 s)          30        0             0      0
+  bw and nrx both faked        17       15             0      0
+  only bw faked                16       14             0      0
+  only nrx faked               18       16             0      0
+  both faked, without fix      18        -            15      4
+
+The nrx part was tested in v3 (Ubuntu 6.8.0-147, bw valid, nrx faked
+to 3), without the nrx check. UBSAN then reported, once in the read
+and once in the write:
+
+  UBSAN: shift-out-of-bounds in .../rtw88/hci.h:203:22
+  shift exponent 64 is too large for 32-bit type 'unsigned int'
+  Workqueue: phy0 rtw_watch_dog_work [rtw88_core]
+  Call Trace:
+   rtw8822c_phy_cck_pd_set.cold+0x15/0x36 [rtw88_8822c]
+   rtw_phy_dynamic_mechanism+0x322/0x6e0 [rtw88_core]
+   rtw_watch_dog_work+0x1e7/0x290 [rtw88_core]
+
+Not tested: the value 2 (the fake only gives 3), and the USB and SDIO
+versions of the 8822c.
+
+An AI assistant (Claude, by Anthropic) helped me read the code, write
+the debug-only fake reads and draft this message. I wrote the fix, ran
+every test and checked the results myself.
+
+v3: https://lore.kernel.org/all/20261115201826.181662-1-zeshanahmednobin@gmail.com/
+v2: https://lore.kernel.org/all/20261108182837.682661-1-zeshanahmednobin@gmail.com/
+v1: https://lore.kernel.org/linux-wireless/20261105113415.73184-1-zeshanahmednobin@gmail.com/
+---
+ drivers/net/wireless/realtek/rtw88/rtw8822c.c | 3 +++
+ 1 file changed, 3 insertions(+)
+
+diff --git a/drivers/net/wireless/realtek/rtw88/rtw8822c.c b/drivers/net/wireless/realtek/rtw88/rtw8822c.c
+index 09315d23e2c4..830dea8169c5 100644
+--- a/drivers/net/wireless/realtek/rtw88/rtw8822c.c
++++ b/drivers/net/wireless/realtek/rtw88/rtw8822c.c
+@@ -4406,6 +4406,9 @@ static void rtw8822c_phy_cck_pd_set(struct rtw_dev *rtwdev, u8 new_lvl)
+ 	nrx = (u8)rtw_read32_mask(rtwdev, 0x1a2c, 0x60000);
+ 	bw = (u8)rtw_read32_mask(rtwdev, 0x9b0, 0xc);
+ 
++	if (bw > RTW_CHANNEL_WIDTH_40 || nrx > RF_PATH_B)
++		return;
++
+ 	rtw_dbg(rtwdev, RTW_DBG_PHY, "lv: (%d) -> (%d) bw=%d nr=%d cck_fa_avg=%d\n",
+ 		dm_info->cck_pd_lv[bw][nrx], new_lvl, bw, nrx,
+ 		dm_info->cck_fa_avg);
+
+base-commit: 8b29fd95e2d3cb80564eb7cb34248b844422ba1e
+-- 
+2.43.0
 
