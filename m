@@ -1,87 +1,96 @@
-Authentication-Results: smtp.subspace.kernel.org; arc=none smtp.remote-ip=209.85.128.50
+Authentication-Results: smtp.subspace.kernel.org; arc=none smtp.remote-ip=209.85.221.46
 ARC-Seal: i=1; d=subspace.kernel.org; s=arc20261015; a=rsa-sha256; cv=none;
-	t=1795625671;
-	b=i+xbfAGkeqFoidAa2uMKQ5yoAovQYteabXJD+egbQtKdhp6yf7APVvPz7aG12WFftQkX
-	 7sFzSV2/ub6a3Y99aZNXliPN573dQtHrU6vyOADHRxrjfR4bLwsshvUaAt1SMvJW/LV6W
-	 9HHE52MCeGtxa5+/xBasPqrzel/irybiOy9mZxlEQm7gCMpur4PicYnJUpVXsXwbMGGHB
-	 dgg1fOyHPnps8WXsRQsYFv9DjIfdGFGEdSfOMhuvZ8bXmJQiBIKda4RI0TagDPmUih9Te
-	 fSEbjuHoFSJsYWleKoLLpTAzKk9duJXqTBOPj6cBN5yzAZ6ytvs/kOr3lMXQCsWkb0A==
+	t=1795626869;
+	b=COBs618JM3YOzB2iGH040wz1yYnZk3KX01wjqypiB5uiPScB1HvGd9U+ByjipaWjeOM7
+	 bc/Wx77ODxFoMyLsBU5gj1748BXaGmcfaHFfuIjwugRGLXZS+itQWECSl63Nz46kBNwlT
+	 PxDMX79hUd4lnMYeJcgDKI1MRKeP7d6ryO7lfK4ELA+XcRia1uOwxIuXPp9F202+XiHhw
+	 xMmNefL/nMLkIOtlLdLlQ71r3rYlsAszAN5vjqO6uAl7Trh8BGcUC3HDF3jjMEA+nxl6C
+	 vpgr9c4rRh6oKEAqa9OI1dOZnHGp2wDa7d8sUyfGHGC/yvgfJngj2YYALy7cPGsoyuw==
 ARC-Message-Signature: i=1; d=subspace.kernel.org; s=arc20261015;
-	a=rsa-sha256; c=relaxed/relaxed; t=1795625671;
+	a=rsa-sha256; c=relaxed/relaxed; t=1795626869;
 	h=DMARC-Filter:Received:DKIM-Signature:X-Google-DKIM-Signature:
-	 X-Gm-Message-State:X-Gm-Gg:X-Received:Received:Message-ID:Date:
-	 MIME-Version:User-Agent:Subject:To:Cc:References:Content-Language:
-	 From:Autocrypt:In-Reply-To:Content-Type:Content-Transfer-Encoding;
-	bh=aGk8wAfS7R1eyNshm0RicBAD911JxJNoMJ4VmyhbOCo=;
-	b=cRs3g9G03fQUljVJGzz8eE/6rd9L6f8erD8FLLOLRJlafn6RUBdmDCVuYN6+rssQxQKn
-	 hRR+xlnre/8IdBlHyd4lFKM1vQUrs4vlPeQwdINF3vuw1LSukfbhpdljj4HNjeVBOaK5v
-	 ifnGHbGl5z6iLNP8RUPYxK9dY+yevmvul3UmtYuJ6Wr7r+RrCKmao8aLcwHajUeiluqwf
-	 ymyO9mcmVqWJfAkZbSo4h3MgFZ/ix/UP2GntghAXvNgvM9dBJN33qMOCGPZKImPviWMOM
-	 fim6vYQh9hveUk6r/Z1d9fNZCbVRaD3NuOH/Vk781eq8I1c8Od8lY6oHmrSsS1XYXjA==
+	 X-Forwarded-Encrypted:X-Gm-Message-State:X-Gm-Gg:X-Received:Received:
+	 From:To:Cc:Subject:Date:Message-ID:X-Mailer:In-Reply-To:References:
+	 MIME-Version:Content-Type:Content-Transfer-Encoding;
+	bh=e41widtp5DMmdFFeX2AWf3mpay/8eXwXnXNPU/S4dOI=;
+	b=5GjZ3F8Oz9wwAtVW4+xi65XL78K3jnCzTB5rBXtUqzpDlyekl88MYuocTrYFDVJcI44o
+	 mll1IJkDPG/jIhicUuimbVnt1YPt9kJ5J8nfG+PqTBDcMD2VGEcGh3bfv/XHyG8xRmLvo
+	 feJi5INsvNGc37XbDI1KHqBhbe851ddFuc2KGeMVO6/uVnkE2+/bnxXn5fUWfwnhtXvwv
+	 NkEsfAtPeugVvyC2HlCYZP9XFKauxc8mvzR4cq7++kpfZ4HIQN3/4sV1a5sam6j/qy5Kt
+	 jmJNFoO7+wVHbDXrhGJoq4ZMEjhV0Nz3gkebOTKU2DxVjTEX1AKy2AEke2dgzb0xAhw==
 ARC-Authentication-Results: i=1; smtp.subspace.kernel.org; 
-	dmarc=pass header.from=mind.be;
-	spf=pass smtp.mailfrom=essensium.com;
-	dkim=pass header.d=mind.be header.i=@mind.be header.a=rsa-sha256 header.s=google header.b=BpUIuiKB;
-	arc=none smtp.remote-ip=209.85.128.50
-Received: from mail-wm1-f50.google.com (mail-wm1-f50.google.com [209.85.128.50])
+	dmarc=pass header.from=gmail.com;
+	spf=pass smtp.mailfrom=gmail.com;
+	dkim=pass header.d=gmail.com header.i=@gmail.com header.a=rsa-sha256 header.s=20260707 header.b=cpqd1Fhd;
+	arc=none smtp.remote-ip=209.85.221.46
+Received: from mail-wr1-f46.google.com (mail-wr1-f46.google.com [209.85.221.46])
 	(using TLSv1.3 with cipher TLS_AES_128_GCM_SHA256 (128/128 bits)
 	 key-exchange X25519 server-signature ECDSA (prime256v1) server-digest SHA256)
 	(No client certificate requested)
-	by smtp.subspace.kernel.org (Postfix) with ESMTPS id BBA1C606A31E
-	for <linux-wireless@vger.kernel.org>; Wed, 25 Nov 2026 16:54:29 +0000 (UTC)
-DMARC-Filter: OpenDMARC Filter v1.4.2 smtp.subspace.kernel.org BBA1C606A31E
-Authentication-Results: smtp.subspace.kernel.org; dmarc=pass (p=quarantine dis=none) header.from=mind.be
-Authentication-Results: smtp.subspace.kernel.org; spf=pass smtp.mailfrom=essensium.com
+	by smtp.subspace.kernel.org (Postfix) with ESMTPS id 931BF606A323
+	for <linux-wireless@vger.kernel.org>; Wed, 25 Nov 2026 17:14:29 +0000 (UTC)
+DMARC-Filter: OpenDMARC Filter v1.4.2 smtp.subspace.kernel.org 931BF606A323
+Authentication-Results: smtp.subspace.kernel.org; dmarc=pass (p=none dis=none) header.from=gmail.com
+Authentication-Results: smtp.subspace.kernel.org; spf=pass smtp.mailfrom=gmail.com
 Authentication-Results: smtp.subspace.kernel.org;
-	dkim=pass (2048-bit key, unprotected) header.d=mind.be header.i=@mind.be header.a=rsa-sha256 header.s=google header.b=BpUIuiKB
-Received: by mail-wm1-f50.google.com with SMTP id 5b1f17b1804b1-4a35a60499eso47668865e9.0
-        for <linux-wireless@vger.kernel.org>; Wed, 25 Nov 2026 08:54:29 -0800 (PST)
+	dkim=pass (2048-bit key) header.d=gmail.com header.i=@gmail.com header.a=rsa-sha256 header.s=20260707 header.b=cpqd1Fhd
+Received: by mail-wr1-f46.google.com with SMTP id ffacd0b85a97d-4ac109a8a12so3555724f8f.3
+        for <linux-wireless@vger.kernel.org>; Wed, 25 Nov 2026 09:14:29 -0800 (PST)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=mind.be; s=google; t=1795625668; x=1796230468; darn=vger.kernel.org;
-        h=content-transfer-encoding:content-type:in-reply-to:autocrypt:from
-         :content-language:references:cc:to:subject:user-agent:mime-version
-         :date:message-id:from:to:cc:subject:date:message-id:reply-to
-         :content-type;
-        bh=aGk8wAfS7R1eyNshm0RicBAD911JxJNoMJ4VmyhbOCo=;
-        b=BpUIuiKBHL5bSsFmwua8WTIqyZY3sBN4gTCNBZqhzvzSWNgFNcVw9UisPrRk2I/F0/
-         Fa6m50iHXaFOducfP65OS3cLVVMbU5l5PrewYyG5X4A+/Pl6551mCuvEORnhxBmo/ylK
-         CSwI9B5jUX9XDRtlf8+hs9iOuLUUVee5vEZ8UnpPENSqY2n3/k+86CXEkfH5VCdVoKaZ
-         9XHpl9LG4l/egln3vx4OD1e4ZwbG9dIwjAwWOzN/idIbKN2muDF1nJAfsRWcKKKi18Cb
-         lHwPuF+HSooB9XjJ7GcIA0U0oPeDs/suUGkSnhX1hKsPJJ6I937otmAUlj49fEDZKmE/
-         1j6w==
+        d=gmail.com; s=20260707; t=1795626868; x=1796231668; darn=vger.kernel.org;
+        h=content-transfer-encoding:content-type:mime-version:references
+         :in-reply-to:message-id:date:subject:cc:to:from:from:to:cc:subject
+         :date:message-id:reply-to:content-type;
+        bh=e41widtp5DMmdFFeX2AWf3mpay/8eXwXnXNPU/S4dOI=;
+        b=cpqd1Fhd0iLCuRWp2NcwkdW35Hhyb67oS243Wo5CL+D7EpVLQNMjTkNxQZzEzD+mWc
+         t/H1D9bV/+SjDhFI/hdSBf9hZ6XtVl3VFpxHamiCuqVr0wmQuVtRP/9Ax957AQG36KFs
+         W7d3qnEaTM5YYYkezQmB8cToYOZYmKxTie43HXmZYxwryHaZnQy0taHjGkQZ5D4onGnf
+         N7PB41DuniDrU+Xr3mlYL2Wob1Qzj2G/vjf94pfHiEpTCDQSf/2dsOb79T0DPABT2ZLl
+         9+aKmRFABSdtLriWYnIJWw3L2+14iE8L73rJ4g2+Bbrd2UtQtf6wNjgV/CKEPhcQHlg7
+         XbOA==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=1e100.net; s=20260707; t=1795625668; x=1796230468;
-        h=content-transfer-encoding:content-type:in-reply-to:autocrypt:from
-         :content-language:references:cc:to:subject:user-agent:mime-version
-         :date:message-id:x-gm-gg:x-gm-message-state:from:to:cc:subject:date
-         :message-id:reply-to:content-type;
-        bh=aGk8wAfS7R1eyNshm0RicBAD911JxJNoMJ4VmyhbOCo=;
-        b=2PcsTHF+gX25sn4CbEBGr/5qUwzu+NVU+wPWj07RX1SJ48gm2mdufBrT24hikmCWao
-         MVd2C7kL3tg6tO804EIkdBZcJWNL5/yx49t2cSYLNlFBK+sAAN+wUsqEWCdoNHOTyAQA
-         +fe1sQWM5d0YyehNnPlmkbVBxQ3yx3G8F3isTya577zZI3GPgQ78JsNRYgb4cMSoVuT2
-         ASecbYpiZzMnTgmekxUIswREcK3kC2IxV1pMCv/2rE7XO0KRxpNDeRvt4t05WIzC6dY/
-         vMD7jwtrHXnt7mp78FPA/9mKX1GBevrUBeUqtosqIbr4HHTwSbKG5mpD6n+s63VtFnlW
-         gXPg==
-X-Gm-Message-State: APuU4Z/Z32f/nA9obcYifWSk8SAeXiCebP5VxZ6YAwkKW+P8e5kEPqJP
-	zrJlFISOcY/xDFe8YmWq/h3wysB5MsmSZ/2QxLQRj6RxBLMGh90qSfnY5o7dEPLSi/2Ls+XXX6L
-	AlB/MGUo=
-X-Gm-Gg: AZFdTZcxeZwRlmWQ4+CEBLGHcUizkPNRHqRzrY8tRj/T6ZxEBWTPBymQO7tB663oKZl
-	eicGwaDkdc9PuPa/aeBLpzW1tQNmlaKuqP0UAo1TSs/MmEYFT6fvM2Og0FIKoWSfUir2QZAbvoy
-	5N7sZQmyXf7M1+X8mmkD0Ix237AKwOdqBMc5tcVG2JHexs6yYftfitjJ+5k+4QNA4oX5uQd/IPt
-	W4+CWn0neD34Ty7rZdFTFg3EYBwDI1BlVJILxMczyzvnxMTkXdjAZciEbrOTdfUALfzho+sIsQ3
-	+iNL5+N0COA4Axq125LGeu6k1xH7KoX+8KpSqj31D5Z5cHvDelg+tU0cz6KiFq8MBzPsm3pRk7s
-	jyG21M3POT6U0gfdrsT9Az5peSScjLxIYnRtDfv9UfwYIeV/feRDZnmPzemopVm17I/JfmjMdvq
-	kE4fV0Gt9w6k6LRQm/suS6QUlAQPoWiVW0suiJAgl6qmX06rxG5nEnW8Bo7dasQIRI3Xctt6nTb
-	I09zdCH0EjDBNaD3BoTaeTLZlGI8wXPfUmykAnhgHWxwiABbKMgNHEkS7qLS83sydMpASYIGbVX
-	kKhGWA4DwpimMlO3xAyaaf7MdHkynMEL/xNXew==
-X-Received: by 2002:a05:600c:1d09:b0:4bb:73d5:ab33 with SMTP id 5b1f17b1804b1-4bb88816acemr404825165e9.22.1795625667941;
-        Wed, 25 Nov 2026 08:54:27 -0800 (PST)
-Received: from [192.168.178.32] ([212.233.51.18])
-        by smtp.gmail.com with ESMTPSA id ffacd0b85a97d-4ad644140b5sm32021799f8f.17.2026.11.25.08.54.27
-        (version=TLS1_3 cipher=TLS_AES_128_GCM_SHA256 bits=128/128);
-        Wed, 25 Nov 2026 08:54:27 -0800 (PST)
-Message-ID: <82c360f0-eeaf-48e3-83f8-72dacf4877c5@mind.be>
-Date: Wed, 25 Nov 2026 17:54:27 +0100
+        d=1e100.net; s=20260707; t=1795626868; x=1796231668;
+        h=content-transfer-encoding:content-type:mime-version:references
+         :in-reply-to:message-id:date:subject:cc:to:from:x-gm-gg
+         :x-gm-message-state:from:to:cc:subject:date:message-id:reply-to
+         :content-type;
+        bh=e41widtp5DMmdFFeX2AWf3mpay/8eXwXnXNPU/S4dOI=;
+        b=LQt9iOoWRM9WOtn/jsl/zoPIGvPZ8pU57D9DNGXBbFkWihtj/zqzkosPvKxlO/G4a2
+         8PIMdMtiIoZE20yZquEZ6+k2itfJwZYyeM6hMtWFAXtDC0xKpdF7Yk0pVnu7xnWYU238
+         EloFsGlFoP4We1wcphLrTQGbxX555OyCqM+8yAn01Aa1xxYbQVG9wSDSz4U+IF/eqzSU
+         mecsPkicQUAm4pnh25rAiYD9GF301t54dnzVEkxOeLM65HCleu35l2r9HPGO4caNcEpj
+         uMlw8uGQm5t/lc/bBZIZDxkj7KpjGeo8wmv9dnHaI7DqzGds3eDeIpVLzxq3WfF0DOrX
+         uyqw==
+X-Forwarded-Encrypted: i=1; AL+hErEb2Qhp5ppvc2sq/o6yh4NqOHAoowcZGLo1EyMWoRnDVVDSwLIsGqO8bPPmeQ/lQ3cRG/wsdhCdV8dK46fWuw==@vger.kernel.org
+X-Gm-Message-State: APuU4Z9USOZfMoruB2tSEGltYyztLaIWYpKcFjkvWJ9UJbEOWrMeVWvt
+	cgPBkGon9SLRuk8ZXOKYilV2VvX+GcrvvFyp6JfySvvLO36WFbMDKc+8LKk6xw==
+X-Gm-Gg: AZFdTZeCJqQauDlf17/5M9HJlG2jNonyT5WBehGrBdMcQEX53nq2giBsWaRHkDAbgrC
+	vP0aAxfHJLQQImAyYG+5xXfuoVBEcDmwjA3oRwAcw2oe/UfL6qUhu9MG8m8RpsnwS4D+okvecn1
+	/DvLq1j0MHaQmt/zgoKyhnXQIgZzUPl5sFd1HkrTsqcPTXPiyq04k6RjbnpjMjqmAAsct0rYaG4
+	ZbfIRlDPfH7mKf7oE97dpU63ykulsfnfjd3s4aigZuaay+Q8MZWhX0Nmf5nWMcioNWXyznezyPq
+	n87rnMLlm2gsoEzdVn3iy5zVIu8ZaremjJmR8IxjU0QjROqb00xMVxZk7fr3k9m+KfIZJ2LiGtv
+	WrwSAH16HpFCi+CrtkW8KnrJBS5e0GK6HQo2uFfLHqpalR+kNCsQVjqEfM44UyII1r/aoI1bwMD
+	wR2kW+CDbKzGLFMjTKcRI0WTmb6ybN5d9b2dN/PidjL52ExiDxlKGQCvSH6rtmUXBYgZ/dBr8Ol
+	CUQJnshMo70+5ck7A17kOutAcCkLNmnaXNOMmTy1m46p2NsLiqFVFbgaX6QZ8rXm7oqxPf2WkG2
+	Xte62v6NfezoT0Wr2zuzKrN5gCbr6MTxJRscgb8=
+X-Received: by 2002:a05:600c:a085:b0:4bb:7bee:5496 with SMTP id 5b1f17b1804b1-4bb8880f04dmr398107485e9.13.1795626867730;
+        Wed, 25 Nov 2026 09:14:27 -0800 (PST)
+Received: from unknown.m0rf30.ray ([2a02:b027:11:8cbf:d366:a6fc:52dc:af7a])
+        by smtp.googlemail.com with ESMTPSA id 5b1f17b1804b1-4bb9066f6e6sm244377725e9.3.2026.11.25.09.14.26
+        (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
+        Wed, 25 Nov 2026 09:14:27 -0800 (PST)
+From: Gianluca Boiano <morf3089@gmail.com>
+To: Loic Poulain <loic.poulain@oss.qualcomm.com>
+Cc: jjohnson@kernel.org,
+	linux-wireless@vger.kernel.org,
+	ath10k@lists.infradead.org,
+	linux-kernel@vger.kernel.org
+Subject: Re: [PATCH 1/3] wifi: ath10k: add firmware feature bit to skip channel stats events
+Date: Wed, 25 Nov 2026 18:13:29 +0100
+Message-ID: <20261125171411.96431-1-morf3089@gmail.com>
+X-Mailer: git-send-email 2.56.1
+In-Reply-To: <CAFEp6-3cQBaC1Ob1B8v8ZmQcMd_KfyABXxV81M9u0RkBY=Z0Ng@mail.gmail.com>
+References: <20261121194939.3647400-1-morf3089@gmail.com> <20261121194939.3647400-2-morf3089@gmail.com> <CAFEp6-3cQBaC1Ob1B8v8ZmQcMd_KfyABXxV81M9u0RkBY=Z0Ng@mail.gmail.com>
 X-Mailing-List: linux-wireless@vger.kernel.org
 List-Id: <linux-wireless.vger.kernel.org>
 List-Post: <mailto:linux-wireless@vger.kernel.org>
@@ -91,63 +100,28 @@ List-Unsubscribe: <mailto:linux-wireless+unsubscribe@vger.kernel.org>
 List-Owner: <mailto:linux-wireless+owner@vger.kernel.org>
 Precedence: list
 MIME-Version: 1.0
-User-Agent: Mozilla Thunderbird
-Subject: Re: [PATCH wireless v2] wifi: mac80211: limit assoc mode by AP when
- there is no auth data
-To: Johannes Berg <johannes@sipsolutions.net>
-Cc: linux-wireless@vger.kernel.org, miriam.rachel.korenblit@intel.com
-References: <94c01af4b987ae7b04aab040d2683edc3262c35e.camel@sipsolutions.net>
- <20261022143943.1045238-1-raphael.melotte@mind.be>
- <3e2f80272a55cee22f52f1fae1f2eb6adb01695d.camel@sipsolutions.net>
-Content-Language: en-US
-From: =?UTF-8?B?UmFwaGHDq2wgTcOpbG90dGU=?= <raphael.melotte@mind.be>
-Autocrypt: addr=raphael.melotte@mind.be; keydata=
- xsBNBF9jhjsBCACmkrLRBR22D1FiSlmQGKiSPPLY0lAYe6/DnBT7OsgiGIOWqmQL1ryGJmxI
- 9PDMDGEBngJ6RyrsVlREt7ugoBEg75CrtYwXdTCB40fEPweceHtWwAQoOS3MDgFhdvd6uZvl
- YWenR6RcbCo/LZaV/novslE1eCnADNChMOkp8jTAA0K2jIlEYexrzO+G3CcrKmo6naVxn56r
- dn0kLnff4f/wvj+1l+J7m6GVL/8ckQ8fVQagLxQ5LHoxhIcOxKH1IEzf+gri/e+16gka7bWE
- 4QUCEeGo/pBYysLinUP/6ArAmWoZXfGH3S0HiLBc/Yf4klnJ1nd6vZmxYKppOmy814+tABEB
- AAHNK1JhcGhhw6tsIE3DqWxvdHRlIDxyYXBoYWVsLm1lbG90dGVAbWluZC5iZT7CwJQEEwEI
- AD4CGwMFCwkIBwIGFQoJCAsCBBYCAwECHgECF4AWIQSjAZBvHnwkHJEj52rDTCsxdUfmrAUC
- ak+EAAUJDM0xRQAKCRDDTCsxdUfmrAq+B/9jCJC+OUOxt3t4W/Iorf6qbMWf2LyX9fnhCwfJ
- j4D2n9sZZZQzhQWvbgadZdfRigt6G0CXbQeomPRpSqjiI03ZK949++CXnaOY8eUkyO9a+LcK
- ldAg0Tnn6b8Ctzmz26Ad92fgjXHGApyWlA8eOdlJq7v2QitsETy2WfW/W+OUU83eDpdE6x9k
- xQKWiCoxYEpRqBYrKY5gFS7gMC2SzjBoscuY2XZHpdWeTWjgJkPyJrsAsgL1m2Tqr1YFp0Sr
- A5oZDtUbL1pr/ds7s4t/hpnjFlFaVFmOsb43MeXV8fb8SVYEzKzYKY5Tf6oRgwiWVR6QphOl
- V0oUMxLmLT+TifE0zjgEak+FQBIKKwYBBAGXVQEFAQEHQBGpVdJ784oGuZ9UHdNMBh+D3Wxx
- Tuhm2m4PM12o6UluAwEIB8LAfAQYAQgAJhYhBKMBkG8efCQckSPnasNMKzF1R+asBQJqT4VA
- AhsMBQkB4TOAAAoJEMNMKzF1R+as9sAH/0u4E/aKnSsc2k82/mWbgEVhVtPuKHxF5vwbWEz2
- CcPluDN2VruhYXaEMhn6iIGHaiajq4/6vytdJowQZ4s1vlP4Jea5/iuIJOvQo9pKI1V2/l3S
- Ji1o934tEkF6F4wV2tLiPW19Iq0Rtgi0hlrdQfw9Iqx4Y1L8zH7iXNHdHQdEkzdg9f6o6Vn+
- e8MaeJfN31TxQEJWyJjRYa0mlWOLwmlUz14EYNgnXhv/hKHdBdyJ/9f6HWn6ZBRHQiS3+Tx6
- kt2XcCDBF9w5QI2xoVTyCUchbN7vSiEx8H5vhl5Pwjf9Jzw5ts5XsCZnWZEAVCyNjTb+UwfO
- 37Y2HGJAe9GA0kM=
-In-Reply-To: <3e2f80272a55cee22f52f1fae1f2eb6adb01695d.camel@sipsolutions.net>
-Content-Type: text/plain; charset=UTF-8; format=flowed
+Content-Type: text/plain; charset=UTF-8
 Content-Transfer-Encoding: 8bit
 
-On 11/24/26 2:44 PM, Johannes Berg wrote:
- > ...
- >
-> Why would this only be applicable to non-MLO?
-> 
-I've only encountered the connection failure with non-MLO, but 
-theoretically it also applies to MLO I think.
-I don't know if it can lead to any connection being rejected in that 
-case though.
+Hi Loic,
 
-I can see two possibilities to cover MLO as well:
+On Wed, Nov 25, 2026 Loic Poulain wrote:
+> Are we handling or using the CHAN_STAT_EVENT data in the driver? If
+> so, which event handler or function currently consumes it?
 
-(1) Do the same prep_channel() call in the MLO per-link loop (before the 
-EHT check and the HT/VHT lookup), and drop the later loop that computes 
-the mode for the other links.
+Yes. With WMI_SCAN_CHAN_STAT_EVENT set, the firmware sends
+WMI_TLV_CHAN_INFO_EVENTID for each scanned channel.
+ath10k_wmi_event_chan_info() handles it and parses it with
+ath10k_wmi_tlv_op_pull_ch_info_ev(). The default WCN3990
+firmware-5.bin doesn't set single-chan-info-per-channel, so on SDM660
+the event goes through ath10k_wmi_event_chan_info_paired(). That fills
+ar->survey[] with noise floor, active time and busy time.
 
-(2) Move the mode calculation and the HT/VHT lookup into one common loop 
-after the MLO/non-MLO split, but that's a bigger change.
+ath10k_get_survey() reports ar->survey[] to mac80211 for survey dump
+and ACS.
 
-Do you have a preference, or should I send a v3 with (1)?
+With the bit set, survey data for scanned channels isn't populated on
+these devices. I accept that to avoid the firmware crash on every scan.
 
-
-Kind regards,
-
-Raphaël
+Regards,
+Gianluca
