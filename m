@@ -1,59 +1,62 @@
 Authentication-Results: smtp.subspace.kernel.org; arc=none smtp.remote-ip=46.4.11.11
 ARC-Seal: i=1; d=subspace.kernel.org; s=arc20261015; a=rsa-sha256; cv=none;
 	t=1795628187;
-	b=s8kEHs6nR9fLhyhgWeNr7/vdbDl/XD4R2LIS4KCPxGxEqlJJrJmcDWX0JP8xBSKOd8z7
-	 o/5uYglFyq8BVu87zLU9ya7STrADq0IHwzg4A8LblLGHFdivK5QPu5gSu8y+HFItzrtNq
-	 2AiyRc033Xx0lsuCsDhUgqDTlwrwn4+J1eQZBUsik4RaZY0qZtgFUPtbkVs4BbCm3OGDg
-	 /09eWcsk2/gHFYh58Q4UHNeze6NS6tNJona6FoUpgtp9Ra2PbyUZ9sZnohyDJBI9qxaMD
-	 lG3ngMYb1vje8uw5uyLpX92WrqctKEXuVMujUZ6KxKTai5VdZtHz+9/SUwOipgQ4ACA==
+	b=VP2tTdWyZc2j4iKmnuQtHi+IHXDsIDDTCXLwGBl3d5h6KCPVcCBim/uTVPMBwMemWiP4
+	 ZbgNx5r00VgvygNL3hlFyEEBQ/Ld/qfU3bfOiTz+6vStiaB4DRnvupEw16Rtnu/xvj1gp
+	 5Diuq9oovIl2V9kTZXE4KPuhpQ+o4x3N+QqQ1jhSMVxFMj4DTO4SWf/zPDIGK9OdlYfbv
+	 9YdxXo/M5MT2CZwRwrq84QGkILZHf4vPpkdBAq14hgmPyagKd3hdHTuZwHg3CkZVZXaAI
+	 sYEKKekz87+bJvXPfKTtM6YJtymZIuZgimS1Bq0COZ5aL/Vs6Si/Y49gkiVpZlXlSbw==
 ARC-Message-Signature: i=1; d=subspace.kernel.org; s=arc20261015;
 	a=rsa-sha256; c=relaxed/relaxed; t=1795628187;
 	h=DMARC-Filter:DKIM-Signature:Received:From:To:Subject:Date:Message-ID:
-	 X-Mailer:MIME-Version:Content-Transfer-Encoding;
-	bh=+DtApF2scB6MNHAEUuEA9dfYND/6fpePNkQXCETb84w=;
-	b=H0xOWL7iV4L1WMxtGJd6yaWQSGLqWvbt/d5TmuOka1bwciW7EZOnjuB6inC0JSMqASZr
-	 LYjDjk0NLNTiDHuif2pWXXCQDD1aiGdc1jq/wpz4SDjAGUu/IlskHODtJmmDf9JzjKvVQ
-	 LiX8k3ygX+nmyGkem1ubjQNTNiQq8qSq1af3Bl4+qwzY2HMPzG3l95w8t3eTTmsG0wxrK
-	 yj13ML2hsEkLJ/xSS54vTHuu0et27XeHwNMIdjNO4yUc726hQUsbeZGsjeg1cOa3murw1
-	 qvBByPszX4EAbHrgdmeYT1Qg8MXzz48+k5YOrUmWBbNWZuwmXIsZu5xfrmXPErGS7Dg==
+	 X-Mailer:In-Reply-To:References:MIME-Version:
+	 Content-Transfer-Encoding;
+	bh=hxTCU1sgoNtp+vQLslWepVBEboysTYhjHeIwLomuak4=;
+	b=tUPr4RgtBc8wMs2QwldlVDFLT5aycIGXOb6S6ZEdjdqJB8cahZKPsLMqkzw7phxnCwcv
+	 cPnBNpgjDgPD9adDXAv4zuIEqMYVnnA5XpXOHuSlpu+C5Gq3ucjGuwhlaVTl/9Cg26jpG
+	 3GympFZGPC9As/JIklRzj6Dm32epCA02oADE95nebqH54oaJVFhCFv+VeCpsZolnxjjPc
+	 +0LQvwV9eU219k4DKZ7CEGAQ7cqvM8CdIkCf4k+PXAmrxY+Bekju/ZiLvrPu84oFMvRKw
+	 P49aeXuOSKQDaGrtKXCH9Ixnyy/bPLLf20Hem448M7WxzIc8yiBUD9fPTHkBeKcqjtg==
 ARC-Authentication-Results: i=1; smtp.subspace.kernel.org; 
 	dmarc=pass header.from=nbd.name;
 	spf=pass smtp.mailfrom=nbd.name;
-	dkim=pass header.d=nbd.name header.i=@nbd.name header.a=rsa-sha256 header.s=20160729 header.b=s+zcReZA;
+	dkim=pass header.d=nbd.name header.i=@nbd.name header.a=rsa-sha256 header.s=20160729 header.b=UUziejMG;
 	arc=none smtp.remote-ip=46.4.11.11
 Received: from nbd.name (nbd.name [46.4.11.11])
 	(using TLSv1.3 with cipher TLS_AES_256_GCM_SHA384 (256/256 bits)
 	 key-exchange ECDHE (prime256v1) server-signature ECDSA (prime256v1) server-digest SHA256)
 	(No client certificate requested)
-	by smtp.subspace.kernel.org (Postfix) with ESMTPS id 26F22606A326
+	by smtp.subspace.kernel.org (Postfix) with ESMTPS id 8DC19606A32A
 	for <linux-wireless@vger.kernel.org>; Wed, 25 Nov 2026 17:36:27 +0000 (UTC)
-DMARC-Filter: OpenDMARC Filter v1.4.2 smtp.subspace.kernel.org 26F22606A326
+DMARC-Filter: OpenDMARC Filter v1.4.2 smtp.subspace.kernel.org 8DC19606A32A
 Authentication-Results: smtp.subspace.kernel.org; dmarc=pass (p=none dis=none) header.from=nbd.name
 Authentication-Results: smtp.subspace.kernel.org; spf=pass smtp.mailfrom=nbd.name
 Authentication-Results: smtp.subspace.kernel.org;
-	dkim=pass (1024-bit key) header.d=nbd.name header.i=@nbd.name header.a=rsa-sha256 header.s=20160729 header.b=s+zcReZA
+	dkim=pass (1024-bit key) header.d=nbd.name header.i=@nbd.name header.a=rsa-sha256 header.s=20160729 header.b=UUziejMG
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed; d=nbd.name;
-	s=20160729; h=Content-Transfer-Encoding:MIME-Version:Message-ID:Date:Subject:
-	To:From:Sender:Reply-To:Cc:Content-Type:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	In-Reply-To:References:List-Id:List-Help:List-Unsubscribe:List-Subscribe:
+	s=20160729; h=Content-Transfer-Encoding:MIME-Version:References:In-Reply-To:
+	Message-ID:Date:Subject:To:From:Sender:Reply-To:Cc:Content-Type:Content-ID:
+	Content-Description:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc
+	:Resent-Message-ID:List-Id:List-Help:List-Unsubscribe:List-Subscribe:
 	List-Post:List-Owner:List-Archive;
-	bh=+DtApF2scB6MNHAEUuEA9dfYND/6fpePNkQXCETb84w=; b=s+zcReZAWniBJq2bi+9PW2xlBA
-	rGEIzwMRW3BIKOzphLv6Q9oimc9wIlbiUSXKxk6V0bxcVm1kb2mALZEAEGbM1oKx2dZMiBme+QL1Z
-	bhmrdfuOlV/SxnF5RmYio+WRoTxPQ1A1Rq8n9RusgUs8RuaDmG/L2lBkc5tBNQTd6mVg=;
+	bh=hxTCU1sgoNtp+vQLslWepVBEboysTYhjHeIwLomuak4=; b=UUziejMGKlDLFczMKNAW0oqt0J
+	dCHKOCqpWAgsDiASfuSh4yJFijV25zuU/agE/R/mxA71v2HrqewVafRDJhVkjcg3CuyAsekFOVWl6
+	C/ctWVeHjXPIeLgrp/n5bAMDLJjbX9pmLh/bIqQOBq0jYRORjN14YugYG3D/yrIwrPGk=;
 Received: from p200300cadf00a300521515e4a5376631.dip0.t-ipconnect.de ([2003:ca:df00:a300:5215:15e4:a537:6631] helo=localhost.localdomain)
 	by ds12 with esmtpsa  (TLS1.3) tls TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384
 	(Exim 4.96)
 	(envelope-from <nbd@nbd.name>)
-	id 1xWGuv-008IWP-0r
+	id 1xWGuw-008IWP-0R
 	for linux-wireless@vger.kernel.org;
-	Wed, 25 Nov 2026 18:36:25 +0100
+	Wed, 25 Nov 2026 18:36:26 +0100
 From: Felix Fietkau <nbd@nbd.name>
 To: linux-wireless@vger.kernel.org
-Subject: [PATCH mt76-next 01/18] wifi: mt76: mt7925: keep the RX PN state of a station across a rekey
-Date: Wed, 25 Nov 2026 18:35:59 +0100
-Message-ID: <20261125173616.3776951-1-nbd@nbd.name>
+Subject: [PATCH mt76-next 06/18] wifi: mt76: mt7996: refuse an RF register offset above 12 bits
+Date: Wed, 25 Nov 2026 18:36:04 +0100
+Message-ID: <20261125173616.3776951-6-nbd@nbd.name>
 X-Mailer: git-send-email 2.47.3
+In-Reply-To: <20261125173616.3776951-1-nbd@nbd.name>
+References: <20261125173616.3776951-1-nbd@nbd.name>
 X-Mailing-List: linux-wireless@vger.kernel.org
 List-Id: <linux-wireless.vger.kernel.org>
 List-Post: <mailto:linux-wireless@vger.kernel.org>
@@ -65,38 +68,55 @@ Precedence: list
 MIME-Version: 1.0
 Content-Transfer-Encoding: 8bit
 
-At a PTK rekey, mac80211 removes the old key before it sets the new one.
-mt7925_set_link_key() clears rx_check_pn at the removal of the old key.
-Until the new key arrives, mt76_check_ccmp_pn() thus skips the replay
-check for a frame that the hardware still decrypts.
+mt7996_mcu_rf_regval() sends bits 23:0 of the register index as the
+offset. The firmware masks that offset to 12 bits and reports success.
+A debugfs access to a larger offset thus reads or writes another
+register.
 
-Keep rx_check_pn of a station until its next key, like mt7996 does.
+Refuse an offset that the firmware cannot address, and correct the
+offset range in the debugfs comment.
 
-Fixes: c948b5da6bbe ("wifi: mt76: mt7925: add Mediatek Wi-Fi7 driver for mt7925 chips")
+Fixes: 98686cd21624 ("wifi: mt76: mt7996: add driver for MediaTek Wi-Fi 7 (802.11be) devices")
 Signed-off-by: Felix Fietkau <nbd@nbd.name>
 ---
- drivers/net/wireless/mediatek/mt76/mt7925/main.c | 6 +++---
- 1 file changed, 3 insertions(+), 3 deletions(-)
+ drivers/net/wireless/mediatek/mt76/mt7996/debugfs.c | 2 +-
+ drivers/net/wireless/mediatek/mt76/mt7996/mcu.c     | 5 ++++-
+ 2 files changed, 5 insertions(+), 2 deletions(-)
 
-diff --git a/drivers/net/wireless/mediatek/mt76/mt7925/main.c b/drivers/net/wireless/mediatek/mt76/mt7925/main.c
-index b7348e6f0290..c26d9982650f 100644
---- a/drivers/net/wireless/mediatek/mt76/mt7925/main.c
-+++ b/drivers/net/wireless/mediatek/mt76/mt7925/main.c
-@@ -804,11 +804,11 @@ static int mt7925_set_link_key(struct ieee80211_hw *hw, enum set_key_cmd cmd,
- 	else
- 		goto out;
+diff --git a/drivers/net/wireless/mediatek/mt76/mt7996/debugfs.c b/drivers/net/wireless/mediatek/mt76/mt7996/debugfs.c
+index 7c976ec20d10..175adbcc186f 100644
+--- a/drivers/net/wireless/mediatek/mt76/mt7996/debugfs.c
++++ b/drivers/net/wireless/mediatek/mt76/mt7996/debugfs.c
+@@ -879,7 +879,7 @@ mt7996_twt_stats(struct seq_file *s, void *data)
+ }
  
--	if (sta)
--		mt76_wcid_key_link_setup(wcid, cmd == SET_KEY ? key : NULL);
--	else
-+	if (!sta)
- 		mt76_wcid_key_setup(&dev->mt76, wcid,
- 				    cmd == SET_KEY ? key : NULL);
-+	else if (cmd == SET_KEY)
-+		mt76_wcid_key_link_setup(wcid, key);
+ /* The index of RF registers use the generic regidx, combined with two parts:
+- * WF selection [31:24] and offset [23:0].
++ * WF selection [31:24] and offset [11:0].
+  */
+ static int
+ mt7996_rf_regval_get(void *data, u64 *val)
+diff --git a/drivers/net/wireless/mediatek/mt76/mt7996/mcu.c b/drivers/net/wireless/mediatek/mt76/mt7996/mcu.c
+index 91129c1f5a5e..671bbb741a46 100644
+--- a/drivers/net/wireless/mediatek/mt76/mt7996/mcu.c
++++ b/drivers/net/wireless/mediatek/mt76/mt7996/mcu.c
+@@ -5702,12 +5702,15 @@ int mt7996_mcu_rf_regval(struct mt7996_dev *dev, u32 regidx, u32 *val, bool set)
+ 		.len = cpu_to_le16(sizeof(req) - 4),
  
- 	err = mt7925_mcu_add_key(&dev->mt76, vif, &mlink->bip,
- 				 key, MCU_UNI_CMD(STA_REC_UPDATE),
+ 		.idx = cpu_to_le16(u32_get_bits(regidx, GENMASK(31, 24))),
+-		.ofs = cpu_to_le32(u32_get_bits(regidx, GENMASK(23, 0))),
++		.ofs = cpu_to_le32(u32_get_bits(regidx, GENMASK(11, 0))),
+ 		.data = set ? cpu_to_le32(*val) : 0,
+ 	};
+ 	struct sk_buff *skb;
+ 	int ret;
+ 
++	if (regidx & GENMASK(23, 12))
++		return -EINVAL;
++
+ 	if (set)
+ 		return mt76_mcu_send_msg(&dev->mt76, MCU_WM_UNI_CMD(REG_ACCESS),
+ 					 &req, sizeof(req), true);
 -- 
 2.47.3
 
