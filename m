@@ -1,59 +1,59 @@
 Authentication-Results: smtp.subspace.kernel.org; arc=none smtp.remote-ip=46.4.11.11
 ARC-Seal: i=1; d=subspace.kernel.org; s=arc20261015; a=rsa-sha256; cv=none;
-	t=1795628190;
-	b=zYjb1qvIgypI9ib/LjrPaL0lkO/jh3mXSes4qcyjA73xC9CU75VDiX+wD1i5gPFKWdXK
-	 YkqdgZojZFlAi1MlgMHZ3JiGi1aUuO/0EtSrTWJ+eH6VWub8WSRolhHLM1yGZZY4hMPKw
-	 hl/+OzL2GjuxFpIiyfr8t34pNG7ESStANoNf8V6kIoH4PDJ9siS6gcNlqPUWwjYppMdTY
-	 gjhMdgz9YIWP5Qoai87BOQOCRq8qern1BBl3XbCNUj05CR7jDELITNYdNG6EVAPd+UW1x
-	 1edCvUTk8cv6W6Uvn1vG224R8OM/VDVUIRY+ORKMOxKkCQJgP2XCH8IZyMzWeaKLgnQ==
+	t=1795628187;
+	b=cu8v96ZlYfd000JiRTw0SEU80gtyQou0gZ73KR3XDFky+dXLoa9RWMapwldzOZKwNvaz
+	 BSxVAwgj4r6ZPwKluSFcmz5L45ginUNvuHQRlVxG3AnnaEYOm/EM41OZAosyQ+NzLjN32
+	 +CAysOvzUV3pm6ZYMNTWr4ik8BCF3GDUFC8D175junSLhS+zXEMeXmauY5OIW1cDhS/Xp
+	 +wfHYFyPh6Mu7718aSxjRLpUVfhyJYtBdX/lVqQsrtgKjK6melE2ie3mP7JgtEB9T3Msl
+	 SmcI2WhG1RBipFcPXfK1edfvUOZ2rC2lfltB5xHBunZt39YzmSi7hItR5ylx8rq8EUw==
 ARC-Message-Signature: i=1; d=subspace.kernel.org; s=arc20261015;
-	a=rsa-sha256; c=relaxed/relaxed; t=1795628190;
+	a=rsa-sha256; c=relaxed/relaxed; t=1795628187;
 	h=DMARC-Filter:DKIM-Signature:Received:From:To:Subject:Date:Message-ID:
 	 X-Mailer:In-Reply-To:References:MIME-Version:
 	 Content-Transfer-Encoding;
-	bh=0AP7J2EwnI0xLRAKSfhD9uhmBxeMqeT9p8bIYAga290=;
-	b=aN2cTlDfmYH6nHGx8+bhJbwBIiO5trKUNf7hi+aYaBxORe1GD/TZHF0YmTwYG6b4+Q17
-	 CRHEGYYVaz9eJlzVZzS8EVPAMsOE8O+49YTsYlAEiAgeyov98XtsGZuWvStS0sk0lkfQq
-	 6zsvjbasar+8EwgxecSr1yexERibKsT6HZ4Fgnb3KD5sr8jqCccVqvtG93FE4WVBAqBpp
-	 thWk4bS6xtrb3HjXKdwcUaY1DsmsFezk0Y1y+QK/XpA7FCxQKWWZeSSUk34TltBb9E+vD
-	 EQSmGRpJoS/YJlMRF6PltpkgpIboMVI8W/Bm4qca0WIfJtzrqf8J3j3QsdPEm2cuUPA==
+	bh=owdb37qeIY2RfuCQ4GfdGnL2yBpNzhtSicEvaX4/qqU=;
+	b=iFCe5BnJr3D0bXCbHMPeI763AhO99CvVPmt851LK5j/uP025D4AuDWDkcP+AthfA4wN+
+	 lAOuXaxfH/katHZFIBTexa5brJfaAT7vRlASoZd+N2jTdUIVmU0BGxu5arcmydrPs21mv
+	 Q/Q91esdwPsBAS8l+0X8lsW7mF+NBLtPeKu/k3HKQQX1j8TOVElk/OYtfP/p5N8Z9J/SA
+	 6wVcS0aOaoYw1iPk2iSKMcGFdIf5t5pnx7gNg5yiUx7YuyWHsTISvEz1OfRaiwnlgIE6k
+	 SBMrnXh9Eob3oKITH+tTNw38ddeVn4LC5X8NS6A6YlE7L72d4zqtRx+sDd2xMJUnxyA==
 ARC-Authentication-Results: i=1; smtp.subspace.kernel.org; 
 	dmarc=pass header.from=nbd.name;
 	spf=pass smtp.mailfrom=nbd.name;
-	dkim=pass header.d=nbd.name header.i=@nbd.name header.a=rsa-sha256 header.s=20160729 header.b=jCqTB9ET;
+	dkim=pass header.d=nbd.name header.i=@nbd.name header.a=rsa-sha256 header.s=20160729 header.b="PrRC5X1/";
 	arc=none smtp.remote-ip=46.4.11.11
 Received: from nbd.name (nbd.name [46.4.11.11])
 	(using TLSv1.3 with cipher TLS_AES_256_GCM_SHA384 (256/256 bits)
 	 key-exchange ECDHE (prime256v1) server-signature ECDSA (prime256v1) server-digest SHA256)
 	(No client certificate requested)
-	by smtp.subspace.kernel.org (Postfix) with ESMTPS id 680C1606A330
-	for <linux-wireless@vger.kernel.org>; Wed, 25 Nov 2026 17:36:29 +0000 (UTC)
-DMARC-Filter: OpenDMARC Filter v1.4.2 smtp.subspace.kernel.org 680C1606A330
+	by smtp.subspace.kernel.org (Postfix) with ESMTPS id 52FA7606A321
+	for <linux-wireless@vger.kernel.org>; Wed, 25 Nov 2026 17:36:27 +0000 (UTC)
+DMARC-Filter: OpenDMARC Filter v1.4.2 smtp.subspace.kernel.org 52FA7606A321
 Authentication-Results: smtp.subspace.kernel.org; dmarc=pass (p=none dis=none) header.from=nbd.name
 Authentication-Results: smtp.subspace.kernel.org; spf=pass smtp.mailfrom=nbd.name
 Authentication-Results: smtp.subspace.kernel.org;
-	dkim=pass (1024-bit key) header.d=nbd.name header.i=@nbd.name header.a=rsa-sha256 header.s=20160729 header.b=jCqTB9ET
+	dkim=pass (1024-bit key) header.d=nbd.name header.i=@nbd.name header.a=rsa-sha256 header.s=20160729 header.b=PrRC5X1/
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed; d=nbd.name;
 	s=20160729; h=Content-Transfer-Encoding:MIME-Version:References:In-Reply-To:
 	Message-ID:Date:Subject:To:From:Sender:Reply-To:Cc:Content-Type:Content-ID:
 	Content-Description:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc
 	:Resent-Message-ID:List-Id:List-Help:List-Unsubscribe:List-Subscribe:
 	List-Post:List-Owner:List-Archive;
-	bh=0AP7J2EwnI0xLRAKSfhD9uhmBxeMqeT9p8bIYAga290=; b=jCqTB9ETwJBJf6Z8Np3HMxdZ3J
-	NeQu6X9HAuPq5n4LNkJCphNgl5aOcmHJQecihUNP3B7MQExOva5t4MFsmN4Q7lp7Ej9UTsOAnNyY6
-	Di68mJqQj6ceT9AVTKnA7DkGX5hWEWTKKvkR4m5DMoENMz6K2ShxpbPhe67AWXRlKMRQ=;
+	bh=owdb37qeIY2RfuCQ4GfdGnL2yBpNzhtSicEvaX4/qqU=; b=PrRC5X1/UvWAv/6ShQ7ZYNPh+X
+	p709IiN/+m/QV8n5PJB8OW2PuMIYpX2hqq+w6BFSD2r9gC5W5uEIo81840LIprPlA+PKwvoKnKPmJ
+	G8NcJz910pjP2i1SRZ1mjY9a24UVN7MhxI4fEzhbzpSIxVnd0Ie/0CI/K22lVIB3YVuc=;
 Received: from p200300cadf00a300521515e4a5376631.dip0.t-ipconnect.de ([2003:ca:df00:a300:5215:15e4:a537:6631] helo=localhost.localdomain)
 	by ds12 with esmtpsa  (TLS1.3) tls TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384
 	(Exim 4.96)
 	(envelope-from <nbd@nbd.name>)
-	id 1xWGuy-008IWP-0D
+	id 1xWGuv-008IWP-36
 	for linux-wireless@vger.kernel.org;
-	Wed, 25 Nov 2026 18:36:28 +0100
+	Wed, 25 Nov 2026 18:36:26 +0100
 From: Felix Fietkau <nbd@nbd.name>
 To: linux-wireless@vger.kernel.org
-Subject: [PATCH mt76-next 17/18] wifi: mt76: mt7996: set the duplicate WTBL range again after a reset
-Date: Wed, 25 Nov 2026 18:36:15 +0100
-Message-ID: <20261125173616.3776951-17-nbd@nbd.name>
+Subject: [PATCH mt76-next 05/18] wifi: mt76: mt7996: report the tx power of the requested link
+Date: Wed, 25 Nov 2026 18:36:03 +0100
+Message-ID: <20261125173616.3776951-5-nbd@nbd.name>
 X-Mailer: git-send-email 2.47.3
 In-Reply-To: <20261125173616.3776951-1-nbd@nbd.name>
 References: <20261125173616.3776951-1-nbd@nbd.name>
@@ -68,66 +68,50 @@ Precedence: list
 MIME-Version: 1.0
 Content-Transfer-Encoding: 8bit
 
-The firmware holds the duplicate WTBL range in RAM. A firmware load
-starts the range with a count of 0, which turns the feature off.
-mt7996_init_work() sets the range once at probe. mt7996_mac_restart()
-loads the firmware again without it, so a full reset leaves the feature
-off until the next probe.
+mt7996_get_txpower() ignores its link_id and takes the phy of link 0.
+Every link of an MLD thus reports the tx power of the band of link 0.
+Where link 0 has no channel context, each link reports the power of the
+last radio of the interface. Reachable via the per-link tx power of
+NL80211_CMD_GET_INTERFACE.
 
-Set the range again in each round of the full reset. Send it after the
-beamforming init as at probe, before the replay of the stations. Like
-the probe, go on if the firmware refuses it.
+Take the phy of the requested link, like mt7996_sta_hw_queue_read()
+does. A link without a channel context keeps the fallback to a radio of
+the interface. That fallback serves an interface without a channel.
 
-Fixes: 7f3ec778593f ("wifi: mt76: mt7996: add duplicated WTBL command")
+Fixes: 86db2c5d4ed3 ("wifi: mt76: mt7996: implement driver specific get_txpower function")
+Fixes: a9eae65d97f3 ("wifi: mt76: mt7996: Export MLO AP capabilities to mac80211")
 Signed-off-by: Felix Fietkau <nbd@nbd.name>
 ---
- drivers/net/wireless/mediatek/mt76/mt7996/init.c | 4 +---
- drivers/net/wireless/mediatek/mt76/mt7996/mac.c  | 2 ++
- drivers/net/wireless/mediatek/mt76/mt7996/mcu.c  | 3 +++
- 3 files changed, 6 insertions(+), 3 deletions(-)
+ drivers/net/wireless/mediatek/mt76/mt7996/main.c | 12 +++++++++++-
+ 1 file changed, 11 insertions(+), 1 deletion(-)
 
-diff --git a/drivers/net/wireless/mediatek/mt76/mt7996/init.c b/drivers/net/wireless/mediatek/mt76/mt7996/init.c
-index f05231ce81ff..ec20fc8d823b 100644
---- a/drivers/net/wireless/mediatek/mt76/mt7996/init.c
-+++ b/drivers/net/wireless/mediatek/mt76/mt7996/init.c
-@@ -792,9 +792,7 @@ static void mt7996_init_work(struct work_struct *work)
- 	mt7996_mcu_set_eeprom(dev);
- 	mt7996_mac_init(dev);
- 	mt7996_txbf_init(dev);
--
--	if (!is_mt7990(&dev->mt76))
--		mt7996_mcu_set_dup_wtbl(dev);
-+	mt7996_mcu_set_dup_wtbl(dev);
- }
+diff --git a/drivers/net/wireless/mediatek/mt76/mt7996/main.c b/drivers/net/wireless/mediatek/mt76/mt7996/main.c
+index ac4f8b89bd90..bcae654a2b47 100644
+--- a/drivers/net/wireless/mediatek/mt76/mt7996/main.c
++++ b/drivers/net/wireless/mediatek/mt76/mt7996/main.c
+@@ -985,11 +985,21 @@ mt7996_get_txpower(struct ieee80211_hw *hw, struct ieee80211_vif *vif,
+ 		   unsigned int link_id, int *dbm)
+ {
+ 	struct mt7996_vif *mvif = (struct mt7996_vif *)vif->drv_priv;
+-	struct mt7996_phy *phy = mt7996_vif_link_phy(&mvif->deflink);
+ 	struct mt7996_dev *dev = mt7996_hw_dev(hw);
++	struct mt7996_phy *phy = NULL;
++	struct mt76_vif_link *mlink;
+ 	struct wireless_dev *wdev;
+ 	int n_chains, delta, i;
  
- void mt7996_wfsys_reset(struct mt7996_dev *dev)
-diff --git a/drivers/net/wireless/mediatek/mt76/mt7996/mac.c b/drivers/net/wireless/mediatek/mt76/mt7996/mac.c
-index 6d3061c64e30..62e16e3c989b 100644
---- a/drivers/net/wireless/mediatek/mt76/mt7996/mac.c
-+++ b/drivers/net/wireless/mediatek/mt76/mt7996/mac.c
-@@ -2460,6 +2460,8 @@ mt7996_mac_restart(struct mt7996_dev *dev)
- 	if (ret)
- 		goto out;
- 
-+	mt7996_mcu_set_dup_wtbl(dev);
++	rcu_read_lock();
++	mlink = link_id ? rcu_dereference(mvif->mt76.link[link_id]) :
++			  &mvif->deflink.mt76;
++	if (mlink)
++		phy = mt7996_vif_link_phy(container_of(mlink,
++						       struct mt7996_vif_link,
++						       mt76));
++	rcu_read_unlock();
 +
- 	mt7996_for_each_phy(dev, phy) {
- 		if (!test_bit(MT76_STATE_RUNNING, &phy->mt76->state))
- 			continue;
-diff --git a/drivers/net/wireless/mediatek/mt76/mt7996/mcu.c b/drivers/net/wireless/mediatek/mt76/mt7996/mcu.c
-index df08c4bba0e7..f7c08bc4a588 100644
---- a/drivers/net/wireless/mediatek/mt76/mt7996/mcu.c
-+++ b/drivers/net/wireless/mediatek/mt76/mt7996/mcu.c
-@@ -6024,6 +6024,9 @@ int mt7996_mcu_set_dup_wtbl(struct mt7996_dev *dev)
- 		.num = cpu_to_le16(DUP_WTBL_NUM),
- 	};
- 
-+	if (is_mt7990(&dev->mt76))
-+		return 0;
-+
- 	return mt76_mcu_send_msg(&dev->mt76, MCU_WM_UNI_CMD(CHIP_CONFIG), &req,
- 				 sizeof(req), true);
- }
+ 	if (!phy) {
+ 		wdev = ieee80211_vif_to_wdev(vif);
+ 		for (i = 0; i < hw->wiphy->n_radio; i++)
 -- 
 2.47.3
 
