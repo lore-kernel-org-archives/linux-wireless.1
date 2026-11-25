@@ -1,59 +1,59 @@
 Authentication-Results: smtp.subspace.kernel.org; arc=none smtp.remote-ip=46.4.11.11
 ARC-Seal: i=1; d=subspace.kernel.org; s=arc20261015; a=rsa-sha256; cv=none;
 	t=1795628188;
-	b=jcC8cJ97FQ5mhAlySQM2xoKRiE4tjWQo4t6uKQEC5BWHF3L0KCby6+mtUgP0cUcQJM0f
-	 y17ZuSV6NvOLWOdGa+jpYgmbVmsQP4R8rWC08Ev+sTxMep8hz1HvIFy5FfkXHCheDACgo
-	 avGcoV6z1Vjlx5E3ggtI0bKsc1QS01634j6BjlorXBn4c4ZkajDgQBIHQl1118k3ux8LH
-	 XdaJYdjjmP2p+2LuoRVQmnxQ1hvum+IGgkIwAVLx9ztiPqszxLbsMiHwKLmnBp+5ofoxz
-	 Eecq8F24VHpJicXUAXJ19r2WkGreUg3glVDPYZ+G8AWaNl+HvpZ29D7RvFoJs89za/g==
+	b=z7BsjmpVpNTfxSCoQjO5WsfByHFrjauvjhJVapFlF+6epC5fd21g5WgcF0Pi5pIydq1K
+	 dIYvmCvD47PXNnzhxa68Vi7hoNsa+5TsFN3qr5sAIIA+Cu5rfL96/oK6py6SI85JHssDZ
+	 23zAbU0FsjjkRJ6oXWttO4j5RZzLRdbdDPjt6N+TXxrn1ouRGtsvAg3qwFOWqCDzQKvqI
+	 HRVQD7LHo1B+DYtpNkiRzt78ENOpIYKL8cWy1uhlaXpPNlGJCtQEMjHhrXU4G4I6+8I4d
+	 f+LhiGOFge7eY2t3gqBTg/wKO8Y3+i60ydOwTMtbO0TAkD4i6VmKiRitV3dANcmEZvw==
 ARC-Message-Signature: i=1; d=subspace.kernel.org; s=arc20261015;
 	a=rsa-sha256; c=relaxed/relaxed; t=1795628188;
 	h=DMARC-Filter:DKIM-Signature:Received:From:To:Subject:Date:Message-ID:
 	 X-Mailer:In-Reply-To:References:MIME-Version:
 	 Content-Transfer-Encoding;
-	bh=6L1+x85qzB1+/ez5JhicVwg3gg0T1BwIIMLDUbffz+A=;
-	b=lzRoDRUNwa9/iLNWCg6yPR6UP+I35rZgZFk7/fu96NQNPQ2NbQhygKd8/1lzUUNTVpkS
-	 2LJiPX0GneMvwFVgcpS4iPZEMGInYxdsWHbe2viL89SIhM/KkGKPDNAkcu7fnx/nvFWkc
-	 6bcHVpSp7FGPNSInlnbfQu3qIrVvAdSsv3nB9haudXwO0QQAQ8PHqK1QKzcI9QI2Gp35V
-	 MMA14Vy4WG96KlDYgMM3qIuSPwU2/IQSs61iRl/xmI1UBZujw7Q1dH2frEYAdx0gnv9/c
-	 c4HiccAS4UkMNgDpMRahkM1OuJyFKJpy7zAa0rV/Fl2zZ7aBFS/2vsmv6lWyM4UWcGA==
+	bh=ZNYSuRDGVR1ZD3rUFYeuppotIhc4Wc3IrBn0LFO1kSo=;
+	b=kviIgo3G+N1qlCPs3viWTTeHXf1EEfCa/36vDH//iFPNXnhBpaMlx4G7Xfk2y9h/a3fU
+	 6gtG11DKZ4N+8nMd1PjrBojUP0ml4zDzHJOrw9qlFZZL6Bx+uvUHM4MhVozS9RS+/DMxo
+	 Ouk4vDwqR5nu2YHaJ0lo847/ZOl16qeFYJ7C6qjYgnE/QJohCE+500kRGMCwWBp0HcfEx
+	 DDWJ6rC4Ms9QcxqCGOed7gr4vytXL4YQqaTpyda3aO1IcvW7vZYy0gPyBcxaS9+zLc0xJ
+	 mEHDplkLeCRJK0AuwiptK/8f37OeAgEliFo624dxvWydQE/oHEI9cGZsMvfPzpi3FWw==
 ARC-Authentication-Results: i=1; smtp.subspace.kernel.org; 
 	dmarc=pass header.from=nbd.name;
 	spf=pass smtp.mailfrom=nbd.name;
-	dkim=pass header.d=nbd.name header.i=@nbd.name header.a=rsa-sha256 header.s=20160729 header.b="D/7P5pUg";
+	dkim=pass header.d=nbd.name header.i=@nbd.name header.a=rsa-sha256 header.s=20160729 header.b="SHYOwq/+";
 	arc=none smtp.remote-ip=46.4.11.11
 Received: from nbd.name (nbd.name [46.4.11.11])
 	(using TLSv1.3 with cipher TLS_AES_256_GCM_SHA384 (256/256 bits)
 	 key-exchange ECDHE (prime256v1) server-signature ECDSA (prime256v1) server-digest SHA256)
 	(No client certificate requested)
-	by smtp.subspace.kernel.org (Postfix) with ESMTPS id 477E7606A33E
+	by smtp.subspace.kernel.org (Postfix) with ESMTPS id 69CD2606A683
 	for <linux-wireless@vger.kernel.org>; Wed, 25 Nov 2026 17:36:28 +0000 (UTC)
-DMARC-Filter: OpenDMARC Filter v1.4.2 smtp.subspace.kernel.org 477E7606A33E
+DMARC-Filter: OpenDMARC Filter v1.4.2 smtp.subspace.kernel.org 69CD2606A683
 Authentication-Results: smtp.subspace.kernel.org; dmarc=pass (p=none dis=none) header.from=nbd.name
 Authentication-Results: smtp.subspace.kernel.org; spf=pass smtp.mailfrom=nbd.name
 Authentication-Results: smtp.subspace.kernel.org;
-	dkim=pass (1024-bit key) header.d=nbd.name header.i=@nbd.name header.a=rsa-sha256 header.s=20160729 header.b=D/7P5pUg
+	dkim=pass (1024-bit key) header.d=nbd.name header.i=@nbd.name header.a=rsa-sha256 header.s=20160729 header.b=SHYOwq/+
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed; d=nbd.name;
 	s=20160729; h=Content-Transfer-Encoding:MIME-Version:References:In-Reply-To:
 	Message-ID:Date:Subject:To:From:Sender:Reply-To:Cc:Content-Type:Content-ID:
 	Content-Description:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc
 	:Resent-Message-ID:List-Id:List-Help:List-Unsubscribe:List-Subscribe:
 	List-Post:List-Owner:List-Archive;
-	bh=6L1+x85qzB1+/ez5JhicVwg3gg0T1BwIIMLDUbffz+A=; b=D/7P5pUg24s4mUJ3pH+IwnYzB6
-	N3kMfGqfvzS9bZYb3JG5r1VvAf0BVlgrH3RBeMqTNGvGEVlW6gxc+xnzJJTNIhLX3186UzO1HwNU7
-	/v/aPOn6p82W7/AeRjSyIXullAtZbDQehlI7PUADuZPGLfVTfRr7awKAyHmR8cnJIaTI=;
+	bh=ZNYSuRDGVR1ZD3rUFYeuppotIhc4Wc3IrBn0LFO1kSo=; b=SHYOwq/+kMgEjSn5z/ONVEvxgc
+	L4Q5Ojoq9NjaQ1JsqF78PPHxebbGaNwApb+xp25nRHbDVcEYKwsS7EuKFePfgZ7ZZ636x0ZpRX0bI
+	iMgevcta9znIgD9jVuDgxYC6QfJCw2+LToMN6ycnmzZ6Cul0UyF6qt2wxGOE1Y2Ao7Ao=;
 Received: from p200300cadf00a300521515e4a5376631.dip0.t-ipconnect.de ([2003:ca:df00:a300:5215:15e4:a537:6631] helo=localhost.localdomain)
 	by ds12 with esmtpsa  (TLS1.3) tls TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384
 	(Exim 4.96)
 	(envelope-from <nbd@nbd.name>)
-	id 1xWGuw-008IWP-2q
+	id 1xWGux-008IWP-09
 	for linux-wireless@vger.kernel.org;
-	Wed, 25 Nov 2026 18:36:26 +0100
+	Wed, 25 Nov 2026 18:36:27 +0100
 From: Felix Fietkau <nbd@nbd.name>
 To: linux-wireless@vger.kernel.org
-Subject: [PATCH mt76-next 10/18] wifi: mt76: mt7996: bound the in-band discovery frame by its buffer
-Date: Wed, 25 Nov 2026 18:36:08 +0100
-Message-ID: <20261125173616.3776951-10-nbd@nbd.name>
+Subject: [PATCH mt76-next 11/18] wifi: mt76: mt7915: reset on an MCU timeout only once the hw is registered
+Date: Wed, 25 Nov 2026 18:36:09 +0100
+Message-ID: <20261125173616.3776951-11-nbd@nbd.name>
 X-Mailer: git-send-email 2.47.3
 In-Reply-To: <20261125173616.3776951-1-nbd@nbd.name>
 References: <20261125173616.3776951-1-nbd@nbd.name>
@@ -68,50 +68,43 @@ Precedence: list
 MIME-Version: 1.0
 Content-Transfer-Encoding: 8bit
 
-mt7996_mcu_beacon_inband_discov() limits a FILS Discovery or
-unsolicited Probe Response template to MT7996_MAX_BEACON_SIZE. The
-firmware copies the frame into a smaller buffer per band and does not
-check the length. Since commit 79e788fcb204 ("wifi: mt76: mt7996:
-change max beacon size") raised that limit above the buffer size, a
-longer template overwrites the discovery state of the band behind the
-buffer, up to the stored descriptor of the next band.
+mt7915_mcu_parse_response() queues reset_work on every MCU timeout, also
+while mt7915_register_device() has not registered the hw yet. The work
+runs in parallel with the probe. The probe fails on the timeout and
+frees the device.
 
-Refuse a template that does not fit the firmware buffer. The buffer
-size comes from the MT7996 firmware, and the driver uses it for MT7992
-and MT7990 as well.
+mt7915_mac_full_reset() ends with ieee80211_restart_hw() on a hw that
+was never registered. ieee80211_restart_work() then flushes a NULL
+local->workqueue or uses the local that ieee80211_free_hw() freed: an
+oops after the failed probe. Any command of mt7915_init_hardware()
+without an answer gets there, from the PCIe and the WMAC probe alike.
 
-Fixes: 79e788fcb204 ("wifi: mt76: mt7996: change max beacon size")
+Only start the reset once recovery.hw_init_done is set, as
+mt7915_reset() and mt792x_reset() do. Before that, leave MT76_MCU_RESET
+clear, so that a timeout fails its command like any other error. A
+device whose probe goes on after a failed command can then still be
+reset after its registration.
+
+Fixes: 10f73bb3938f ("wifi: mt76: mt7915: reset the device after MCU timeout")
 Signed-off-by: Felix Fietkau <nbd@nbd.name>
 ---
- drivers/net/wireless/mediatek/mt76/mt7996/mcu.c | 2 +-
- drivers/net/wireless/mediatek/mt76/mt7996/mcu.h | 1 +
- 2 files changed, 2 insertions(+), 1 deletion(-)
+ drivers/net/wireless/mediatek/mt76/mt7915/mcu.c | 3 ++-
+ 1 file changed, 2 insertions(+), 1 deletion(-)
 
-diff --git a/drivers/net/wireless/mediatek/mt76/mt7996/mcu.c b/drivers/net/wireless/mediatek/mt76/mt7996/mcu.c
-index c3a41935967e..4f0e59fc170e 100644
---- a/drivers/net/wireless/mediatek/mt76/mt7996/mcu.c
-+++ b/drivers/net/wireless/mediatek/mt76/mt7996/mcu.c
-@@ -3529,7 +3529,7 @@ int mt7996_mcu_beacon_inband_discov(struct mt7996_dev *dev,
- 		return -EINVAL;
- 	}
+diff --git a/drivers/net/wireless/mediatek/mt76/mt7915/mcu.c b/drivers/net/wireless/mediatek/mt76/mt7915/mcu.c
+index 73bbeb1b4a8e..8ac595779f88 100644
+--- a/drivers/net/wireless/mediatek/mt76/mt7915/mcu.c
++++ b/drivers/net/wireless/mediatek/mt76/mt7915/mcu.c
+@@ -181,7 +181,8 @@ mt7915_mcu_parse_response(struct mt76_dev *mdev, int cmd,
+ 			cmd, seq);
  
--	if (skb->len > MT7996_MAX_BEACON_SIZE) {
-+	if (skb->len > MT7996_MAX_INBAND_FRAME_SIZE) {
- 		dev_err(dev->mt76.dev, "inband discovery size limit exceed\n");
- 		dev_kfree_skb(rskb);
- 		dev_kfree_skb(skb);
-diff --git a/drivers/net/wireless/mediatek/mt76/mt7996/mcu.h b/drivers/net/wireless/mediatek/mt76/mt7996/mcu.h
-index a97fbcce1d47..a39ed2dc9e65 100644
---- a/drivers/net/wireless/mediatek/mt76/mt7996/mcu.h
-+++ b/drivers/net/wireless/mediatek/mt76/mt7996/mcu.h
-@@ -1026,6 +1026,7 @@ enum {
- #define MT7996_MAX_BSS_OFFLOAD_SIZE	2048
- #define MT7996_MAX_BEACON_SIZE		(MT7996_MAX_BSS_OFFLOAD_SIZE - \
- 					 MT7996_BEACON_UPDATE_SIZE)
-+#define MT7996_MAX_INBAND_FRAME_SIZE	1520
+ 		spin_lock_bh(&dev->mt76.lock);
+-		if (!test_and_set_bit(MT76_MCU_RESET, &dev->mphy.state))
++		if (dev->recovery.hw_init_done &&
++		    !test_and_set_bit(MT76_MCU_RESET, &dev->mphy.state))
+ 			mt7915_mac_full_reset_queue(dev);
+ 		spin_unlock_bh(&dev->mt76.lock);
  
- enum {
- 	UNI_BAND_CONFIG_RADIO_ENABLE,
 -- 
 2.47.3
 
