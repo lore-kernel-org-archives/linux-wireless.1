@@ -1,61 +1,89 @@
-Authentication-Results: smtp.subspace.kernel.org; arc=none smtp.remote-ip=178.21.23.139
+Authentication-Results: smtp.subspace.kernel.org; arc=none smtp.remote-ip=209.85.210.180
 ARC-Seal: i=1; d=subspace.kernel.org; s=arc20261015; a=rsa-sha256; cv=none;
-	t=1795597423;
-	b=gAKg6JJs0W/+QFPDRfxz5GvLiOOQPOkkxjwIe7zj2X7bsFTd77p3U1FO4WUpMAj2bAeM
-	 pBNeuF96EoVe5a3QpHlihHHukvE/tQzLasURkFDOu0KRBm/X5CwYQ4Qe9R4/9IP2EfKLC
-	 1I1eZYxg3RJIFrFDZs7seQt66+BGomC/uy29gZfd+S0sqtsTDOxoF8zPVmClQA/SLCRzH
-	 KduIg+a4Y4p9MoNWv7vNrvADzZH31dGNTL6FpkLPtJ40N2HxDUce2Rv89lqWx+KF4JY5C
-	 PXlr5bKWH/v1FMS3hJYG33obxhNmUjudQEfMuaSzFjfFXWza+myVVa4G0idTdqgjHtQ==
+	t=1795597585;
+	b=Ws67s8HlMoSrQLvRXJJnnMuAoCHhOhfIDXDqmMQ6GVIrw34nM3uvVcI7QQCXC5ttqLFD
+	 f8k4rJQ5/bWRscYa7qgXfJpGUAXkwm69uDTix7ukg5W1jo8ci/6gGTopNhT9k1oJuKvpe
+	 2iW/JZ1HenY9MvMxmMmRudKIT3SBm2WaTNgO/4lEtNMST4CC0YGmRroW7T35INdfT+55l
+	 uPQHO68FRsWILJjhb+p1R4B6U2Bgh/5sZ830QckC7Iv9LrvhI6NM7HeNnnY2lIT8zavJK
+	 pKbiqifN51g7QhPZQaWgbvZXTMNuMrCn+UXI5Ob0ABnYATklL9AxqxBs8O+PBAD7Kuw==
 ARC-Message-Signature: i=1; d=subspace.kernel.org; s=arc20261015;
-	a=rsa-sha256; c=relaxed/relaxed; t=1795597423;
-	h=DMARC-Filter:Received:X-Virus-Scanned:Received:DKIM-Signature:From:
-	 To:Cc:Subject:Date:Message-ID:MIME-Version:Content-Transfer-Encoding;
-	bh=3NO5y6ayBAJg4ntaAXlveYpYKcCNROKO20ivtZtEcH0=;
-	b=hT+/tLwxb5KU+MlCEo+PmEnmzTqQewdznZmiAJY5yp+MmpRCbJPXoALRC5waY982qldf
-	 e6MCW4Z78tQG90MMJhzVSBrAKsBNh8wb16L2IYZVgirgY0eww8spTaa6xwDTqcC0gsPq8
-	 oOqp9BETGWMbtGD3Y5XTWL9HS7Qk+4R8SVqYAYqREANV8+iG04qaMzpTjRCKUrD/44pUK
-	 8J845+DvFAa2kXXhzD9auPmAjQZTKVkdHU/vR2CEU8DMTIS9z2UuKuA8KaMuWiyT0Hqwr
-	 c2EHVr6ohMaPHywWSITDSWd3cO/h4IPCv8mi0L0cJrtRTJJQck1t3Z273r8x0Z/94eA==
+	a=rsa-sha256; c=relaxed/relaxed; t=1795597585;
+	h=DMARC-Filter:Received:DKIM-Signature:X-Google-DKIM-Signature:
+	 X-Gm-Message-State:X-Gm-Gg:X-Received:Received:From:To:Cc:Subject:
+	 Date:Message-ID:X-Mailer:MIME-Version:Content-Transfer-Encoding;
+	bh=4LMXwRmfFOK9uVD3FtaSaYbnUZEWWNH1s5i6mBQwiM8=;
+	b=uWHFKAHKetxI4Pa2mF/1TO7o75sckZU7aNfilE1MPNz/pH2bnZv203cc2PSfIYS8mMab
+	 qkn8xCq3lz58DHU7Qe6MuxM4nzvfP5OP0Kh7WSRz0qaXWqVOmWrZ8/M9TOmUzrmOU3C44
+	 ZO7+zDqzTqUAHSMP4+dhRT/Zm0qowY6Td54KtrqV82lfwXtSK5AjMrvw88fK3Yd0fSEbP
+	 fOFHA1STrt5j93YjNAVd5eE0hbaaDJbM655HqrJOxTvt7TpUMl+0DThgKN/e2Tv2qbXLq
+	 KlYWQHryBgXkrTubGO7RLtytIYrAHixwwNOlNsTd0XthckCC6YoiT1CPnz9RfBTyD8A==
 ARC-Authentication-Results: i=1; smtp.subspace.kernel.org; 
-	dmarc=pass header.from=disroot.org;
-	spf=pass smtp.mailfrom=disroot.org;
-	dkim=pass header.d=disroot.org header.i=@disroot.org header.a=rsa-sha256 header.s=mail header.b=Ds3KC7mw;
-	arc=none smtp.remote-ip=178.21.23.139
-Received: from layka.disroot.org (layka.disroot.org [178.21.23.139])
-	(using TLSv1.3 with cipher TLS_AES_256_GCM_SHA384 (256/256 bits)
+	dmarc=pass header.from=gmail.com;
+	spf=pass smtp.mailfrom=gmail.com;
+	dkim=pass header.d=gmail.com header.i=@gmail.com header.a=rsa-sha256 header.s=20260707 header.b=s6AHOlWg;
+	arc=none smtp.remote-ip=209.85.210.180
+Received: from mail-pf1-f180.google.com (mail-pf1-f180.google.com [209.85.210.180])
+	(using TLSv1.3 with cipher TLS_AES_128_GCM_SHA256 (128/128 bits)
 	 key-exchange X25519 server-signature ECDSA (prime256v1) server-digest SHA256)
 	(No client certificate requested)
-	by smtp.subspace.kernel.org (Postfix) with ESMTPS id 1D760606A321
-	for <linux-wireless@vger.kernel.org>; Wed, 25 Nov 2026 09:03:41 +0000 (UTC)
-DMARC-Filter: OpenDMARC Filter v1.4.2 smtp.subspace.kernel.org 1D760606A321
-Authentication-Results: smtp.subspace.kernel.org; dmarc=pass (p=reject dis=none) header.from=disroot.org
-Authentication-Results: smtp.subspace.kernel.org; spf=pass smtp.mailfrom=disroot.org
+	by smtp.subspace.kernel.org (Postfix) with ESMTPS id 08D55606A321
+	for <linux-wireless@vger.kernel.org>; Wed, 25 Nov 2026 09:06:24 +0000 (UTC)
+DMARC-Filter: OpenDMARC Filter v1.4.2 smtp.subspace.kernel.org 08D55606A321
+Authentication-Results: smtp.subspace.kernel.org; dmarc=pass (p=none dis=none) header.from=gmail.com
+Authentication-Results: smtp.subspace.kernel.org; spf=pass smtp.mailfrom=gmail.com
 Authentication-Results: smtp.subspace.kernel.org;
-	dkim=pass (2048-bit key, unprotected) header.d=disroot.org header.i=@disroot.org header.a=rsa-sha256 header.s=mail header.b=Ds3KC7mw
-Received: from mail01.layka.lan (localhost [127.0.0.1])
-	by disroot.org (Postfix) with ESMTP id 67B88801EC;
-	Wed, 25 Nov 2026 10:03:34 +0100 (CET)
-X-Virus-Scanned: SPAM Filter at disroot.org
-Received: from layka.disroot.org ([127.0.0.1])
- by localhost (disroot.org [127.0.0.1]) (amavis, port 10024) with ESMTP
- id mexDO8_o3FpM; Wed, 25 Nov 2026 10:03:33 +0100 (CET)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=disroot.org; s=mail;
-	t=1795597413; bh=LdIdjHEjBPym/Go2AUDixRle9Ee2BldDbNoa59zdqNs=;
-	h=From:To:Cc:Subject:Date;
-	b=Ds3KC7mwnAuzZAB5y2IW0QkqT0hT8ZrlPF9nW5L4rZNJ6EzpStfbQrm+6emmgsLaP
-	 a6I2GkpLEPr92ZUfv9q1Frk4aL89fu9OcsW83JkwvmEzcjVjMCrina2pkgZn6INlTa
-	 5wk2KhAq2IjcI1qvOX8f3sM1qtJspaNtR5sie/pmxydMRIyWtnX8vTdeLiRNrygvRu
-	 7NC8cD2Mk+SpfsIdYadDu/FlTMsqPb58QET/fhNx5EuTds37PIqFHMxZYGBeOBJFRa
-	 hFtkjE1u/ZU0trgcDkzaBelMUVXgjI2Ne0UcSRo9BPtdkK+nETg/xK+cwej4XrqXTG
-	 GEPkJacGrRcZw==
-From: Florian Maurer <fmaurer@disroot.org>
-To: Jeff Johnson <jjohnson@kernel.org>
-Cc: ath11k@lists.infradead.org,
-	linux-wireless@vger.kernel.org,
-	Florian Maurer <fmaurer@disroot.org>
-Subject: [PATCH ath-next] wifi: ath11k: invalidate the REO queue SSN when RX aggregation stops
-Date: Wed, 25 Nov 2026 09:03:20 +0000
-Message-ID: <20261125090320.3890628-1-fmaurer@disroot.org>
+	dkim=pass (2048-bit key) header.d=gmail.com header.i=@gmail.com header.a=rsa-sha256 header.s=20260707 header.b=s6AHOlWg
+Received: by mail-pf1-f180.google.com with SMTP id d2e1a72fcca58-8a4c72951b8so3538841b3a.3
+        for <linux-wireless@vger.kernel.org>; Wed, 25 Nov 2026 01:06:24 -0800 (PST)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+        d=gmail.com; s=20260707; t=1795597584; x=1796202384; darn=vger.kernel.org;
+        h=content-transfer-encoding:mime-version:message-id:date:subject:cc
+         :to:from:from:to:cc:subject:date:message-id:reply-to:content-type;
+        bh=4LMXwRmfFOK9uVD3FtaSaYbnUZEWWNH1s5i6mBQwiM8=;
+        b=s6AHOlWg2deWPUzAakdw2WBvpzEOnyC6kV1RVAXCpfRiplizozLW0AemyEbz2q87Px
+         K3ZJbR8X+UVugfncmx7+v3bQZb0458Ma0CokgggfClzEQdZ5F36+KZvnv6jO8RtLB79q
+         05EI6CvXj/KWNnYm7BbjriU7sbs/ebB9UglBFMBK9YNnjIzNFTsoHWfzDjQhcsEsOmiA
+         vZhBijjCrT/dNni8aHWh/9K1iZ2kIspcGPev+0yVLUd47Sw2kbP9ODjzTMvXqs0sMB9t
+         BxSsyJ5UHOgSrtcf4TnLbf/WGXOELhN7a42y7fVKfG2rQ2qHY7OfjPkH4E48lpkycLu8
+         rKPQ==
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+        d=1e100.net; s=20260707; t=1795597584; x=1796202384;
+        h=content-transfer-encoding:mime-version:message-id:date:subject:cc
+         :to:from:x-gm-gg:x-gm-message-state:from:to:cc:subject:date
+         :message-id:reply-to:content-type;
+        bh=4LMXwRmfFOK9uVD3FtaSaYbnUZEWWNH1s5i6mBQwiM8=;
+        b=BR0wE0ALfTgFcYgfxPmA5OYO7bveGSBfYB6annI/ASOdbILZ9m7/0g9uEHqp8LltVM
+         WhFKPuclumOSw+onrmQQcTMgHtBJNFtOXCpd3dKcUuEhDaVxWJ3i82hgOL4ZWAUqZbrj
+         EDB7LUJ9rj6uq3/9hGDq7D9T5CWUq4nwcQusx2qd+9TpLDR5ytyn2fIaFrn2n081FpKf
+         PRrmKxSJEkhjUdyo92InadTBqjphXNAHQs2Vyh9McnFxyrFZ7Xfa96B19+WfCd9n09gA
+         2fTW846RftCiMb/hbrqOeffY44d/2I9lw0oWmdIkINZUTmVZ23LT6LsOotlMkzdUvQZw
+         U01g==
+X-Gm-Message-State: APuU4Z9llBJj1wqcCSCXCHt3NugFuWCwbjFV/kns9c9iAClioPPL4Ea6
+	aOwqbW3LsUlZJ4QYO4Nn1OFXQOTa+HPCH2b5lyXnsQdSFxvA4SBETRKTxd2ppo0=
+X-Gm-Gg: AZFdTZeLu8Oe7v/gcFYOoXYm4I4NfqqXSuMJRbhRQ/vtc8EnOrLsS6K0B5kX1n7S+di
+	cZMnbWenwMEdGcZOSX8HNbcNY+Bs3vFllJAg3ee0f14TWCS3yLTqEnuByLGsxtSCNzpDaLTw+wU
+	Z4+aWvs1gqyL4x4luMtNnHXE9gunE/KChWZ2wR+LLn6C/HIH5adOskAi7AyBDwgOrkCCDFBIWqG
+	Urf2D1B5ZgFNiCWaRFslFcTRJsKowLexD5H8CrECkuyxAXnpaOgW8Ws4uDc8tRVG89lTD6bYik4
+	uIBxgZlZvfs9bRGWEW/pQjmi3ZhC9DDPNXgGYVmpGNr2O+Q77B1Okgww2Xr7ABPBZMQrEalo7+N
+	lf8gP5RSoZTa1PvC/NjzR9c2rvmPbD/Ub0lkbEvbrxx25eVHA8Gr1s/1FSg28DaLKEGul4ifBEp
+	6Rjdf4CGBTljy06nTLaMW76IHfn3cqdv3dczblRuUIHiWdJz2aOy6N79IP1Bz8s5R83pdCFpGOT
+	og/KCFJuT8TrdYmmCDinzDoo04N3EWl334C6RBhhxSqs2khDvWlcdP7GHCBOEiv+X5F5lVzDyIH
+	SEqxN8fSv+jNg3HflNOfuvFL6ry5KarzG2OHzZt90Yd046NUntTrpuzha76VJZPfhWZp
+X-Received: by 2002:a05:6a00:2295:b0:881:b7d0:8dd5 with SMTP id d2e1a72fcca58-8c87bfa5502mr14791566b3a.32.1795597584300;
+        Wed, 25 Nov 2026 01:06:24 -0800 (PST)
+Received: from localhost.localdomain ([2406:3003:2002:639c:44a2:4377:d176:9ad1])
+        by smtp.gmail.com with ESMTPSA id d2e1a72fcca58-8c87285c228sm8468090b3a.10.2026.11.25.01.06.22
+        (version=TLS1_3 cipher=TLS_CHACHA20_POLY1305_SHA256 bits=256/256);
+        Wed, 25 Nov 2026 01:06:23 -0800 (PST)
+From: Yige Jiang <yigejiang86@gmail.com>
+To: linux-wireless@vger.kernel.org
+Cc: Yige Jiang <yigejiang86@gmail.com>,
+	linux-kernel@vger.kernel.org,
+	stable@vger.kernel.org
+Subject: [PATCH] wifi: wil6210: fix BSS reference leak on unsupported EDMG config
+Date: Wed, 25 Nov 2026 17:06:18 +0800
+Message-ID: <rc-b1-20261110-vc-35-5e6ef2ea7917@gmail.com>
+X-Mailer: git-send-email 2.50.1
 X-Mailing-List: linux-wireless@vger.kernel.org
 List-Id: <linux-wireless.vger.kernel.org>
 List-Post: <mailto:linux-wireless@vger.kernel.org>
@@ -67,63 +95,47 @@ Precedence: list
 MIME-Version: 1.0
 Content-Transfer-Encoding: 8bit
 
-Since commit fe201947f8bd ("ath11k: update bawindow size in delba
-process"), stopping RX aggregation no longer deletes the REO queue of
-the TID, so that frames sent without a new ADDBA are not dropped as
-invalid. The queue is shrunk to a window of 1 but keeps its window head
-and its SSN-valid bit. If the peer then restarts its sequence numbers
-without a new ADDBA, REO drops its frames as old until they pass that
-head again, for up to 2047 frames.
+wil_cfg80211_connect() takes a reference on the target BSS with
+cfg80211_get_bss() and drops it with cfg80211_put_bss() at the out
+label. Every error path after the lookup jumps there, except the one
+for wil_get_wmi_edmg_channel(): when the requested EDMG bandwidth
+configuration or channel bitmap is not supported, the function returns
+directly and the BSS reference is never dropped.
 
-This happens in an 802.11s mesh when a peer restarts or rejoins without
-HT: mac80211 stops the RX sessions ("wifi: mac80211: mesh: tear down BA
-sessions when the peer link goes down"), and the peer starts again from
-sequence number 0. In AP/STA mode a restarted peer reassociates and gets
-a new queue.
+Each such connect request leaks one reference, so the BSS entry is
+never freed, even after it expires from the scan list.
 
-Clear the SSN-valid bit when stopping, so that the queue is in the same
-state as a newly set up one (ath11k_hal_reo_qdesc_setup()).
-ath11k_dp_peer_rx_pn_replay_config() already clears it on active queues
-when a pairwise key is installed.
+Jump to the out label instead, like the other error paths.
 
-Tested-on: IPQ8074 hw2.0 AHB WLAN.HK.2.9.0.1-02146-QCAHKSWPL_SILICONZ-1
-
-Fixes: fe201947f8bd ("ath11k: update bawindow size in delba process")
-Signed-off-by: Florian Maurer <fmaurer@disroot.org>
+Fixes: 9abe3e306ecc ("wil6210: Add EDMG channel support")
+Cc: stable@vger.kernel.org
+Signed-off-by: Yige Jiang <yigejiang86@gmail.com>
 ---
-Tested on a Xiaomi AX3600 (OpenWrt, 6.18 backports) as the node that
-keeps the station in an open 802.11s mesh, with the mac80211 patch [1]:
- - peer rejoins without HT: replies in the first 50 s 0/50 without this
-   patch, 48-49/50 with it (4/4 runs each); HT20 rejoins unchanged
- - an ath10k neighbour reboots: its frames were dropped for 4.5 min to
-   over 20 min without both patches (3/3), and got through right after
-   its boot with them (2/2)
-No firmware crash or REO command failure. Not tested: encrypted mesh
-(the key install already clears the bit), AP/STA, other ath11k chips.
-ath12k_dp_rx_ampdu_stop() has the same pattern; I have no ath12k
-hardware to test it.
+Based on linux-next next-20261109 (630059a5a632).
+Compile-tested: arm64, GCC 14.2.0, W=1, CONFIG_WIL6210=m, CONFIG_CFG80211=m, CONFIG_COMPILE_TEST=y; baseline and patched cfg80211.o, no new warnings.
+No hardware or runtime test was performed.
+AI assistance was used for analysis and patch preparation.
 
-[1] https://lore.kernel.org/r/20261120142515.463101-1-fmaurer@disroot.org/
+The path needs a connect request (CAP_NET_ADMIN) with an EDMG config the driver rejects, to a BSS already in the scan table.
 
- drivers/net/wireless/ath/ath11k/dp_rx.c | 3 +++
- 1 file changed, 3 insertions(+)
+ drivers/net/wireless/ath/wil6210/cfg80211.c | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
 
-diff --git a/drivers/net/wireless/ath/ath11k/dp_rx.c b/drivers/net/wireless/ath/ath11k/dp_rx.c
-index 6d95f7b343a5..f3108aa992bc 100644
---- a/drivers/net/wireless/ath/ath11k/dp_rx.c
-+++ b/drivers/net/wireless/ath/ath11k/dp_rx.c
-@@ -955,6 +955,9 @@ static int ath11k_peer_rx_tid_reo_update(struct ath11k *ar,
- 	if (update_ssn) {
- 		cmd.upd0 |= HAL_REO_CMD_UPD0_SSN;
- 		cmd.upd2 = FIELD_PREP(HAL_REO_CMD_UPD2_SSN, ssn);
-+	} else {
-+		/* drop the old window head, as for a newly set up queue */
-+		cmd.upd0 |= HAL_REO_CMD_UPD0_SVLD;
- 	}
+diff --git a/drivers/net/wireless/ath/wil6210/cfg80211.c b/drivers/net/wireless/ath/wil6210/cfg80211.c
+index bf060281c9a2..0d256f313511 100644
+--- a/drivers/net/wireless/ath/wil6210/cfg80211.c
++++ b/drivers/net/wireless/ath/wil6210/cfg80211.c
+@@ -1356,7 +1356,7 @@ static int wil_cfg80211_connect(struct wiphy *wiphy,
+ 	rc = wil_get_wmi_edmg_channel(wil, sme->edmg.bw_config,
+ 				      sme->edmg.channels, &conn.edmg_channel);
+ 	if (rc < 0)
+-		return rc;
++		goto out;
  
- 	ret = ath11k_dp_tx_send_reo_cmd(ar->ab, rx_tid,
+ 	ether_addr_copy(conn.bssid, bss->bssid);
+ 	ether_addr_copy(conn.dst_mac, bss->bssid);
 
-base-commit: 18d0bedbb5f0538396cb7f763ed9cd1dd69c5b23
+base-commit: 630059a5a632377b9b7b487baccde92b7ae1dd47
 -- 
-2.47.3
+2.50.1 (Apple Git-155)
 
