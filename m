@@ -1,73 +1,55 @@
-Authentication-Results: smtp.subspace.kernel.org; arc=none smtp.remote-ip=188.40.2.6
+Authentication-Results: smtp.subspace.kernel.org; arc=none smtp.remote-ip=46.4.11.11
 ARC-Seal: i=1; d=subspace.kernel.org; s=arc20261015; a=rsa-sha256; cv=none;
-	t=1795612169;
-	b=C+3eETgap9b1tbIYZcOpKzPatctx/aIkxtD6QQn9pvqAc9lKk/Gljpc+8vjfz6QkcQn6
-	 5C2P2+0GOnenl7EMqLS4yZ+43/DW9IsnN4qf90yg5+65MjReJEvUf7srOQEmL8CDpJZ+P
-	 a6JXpFBUH746y13IwjoElU4ozC7GMbUgb9QzbE9Ggg+2nufLQhOQriEUnJDpHAcKgtq9i
-	 Eq20uY3oJTRAq85zagR8jljsZTzeOVFTG5am4pvuOhDAb1GAXD9K/6d6aU8fGn0EM5sb7
-	 anZF1V5+gA1IqikJmbo4eWefzNakDzhPnCJJJJZfnQM2rgf3/7zl1S4WbMBu5roBBeg==
+	t=1795613101;
+	b=G5vTtxjlgQeLUrPAUisdeNwlXG7m3TPlLYJCc9qkbj7HRaEXstZJzyXm6P1gBR80i+mk
+	 014bAx3pCnbXevLj26HUax9OH+dAmeesHzBem/3Z4Ec6Gm1UYUT25bUgbgRbUlX2P1xaZ
+	 ujdVOZhjt+qTP5XP/hNg7x8fK/qfIGrtUpRLLrgzEW82FfB7vOs8xRmNiA3ZS0ACS2pG+
+	 jpB7jQPvgmhIdDWDwFCcdmSGkNrc/gjhaWov2fFwaZTgXxFd1TZpUHesM/gb2XuuNUlil
+	 AcM/+eM6EEAxzcMQjHnDjkTVrjbWrfHImoCQBVUDttjW27biu7dB3cncIQMD/lzkr/g==
 ARC-Message-Signature: i=1; d=subspace.kernel.org; s=arc20261015;
-	a=rsa-sha256; c=relaxed/relaxed; t=1795612169;
-	h=DMARC-Filter:DKIM-Signature:Received:Received:Message-ID:Subject:
-	 From:To:Cc:Date:In-Reply-To:References:Content-Type:User-Agent:
-	 MIME-Version:X-Virus-Scanned;
-	bh=YWhnRNwmxzfxYHj9pjoF1k2oRy/qJ4v+6ZXKaG0u3rE=;
-	b=yGlAcmtkyvMoHUq/eIwvtNEGgY49+7v/+aztDMgWc6Ow1/Waxa5/c7MYrtrMA7y795vt
-	 bslNriWmPwR2VCdBnZhBpkkd10vq3EFnEU6Tv03qKVUOXeCYbMLO23XhT5KMolznYYo/F
-	 v1TZuTmmcOE+5M1yrz1rmpkMtMqPgeWrq050IAMANdYrgu3jYIFFV9WrjG0bcZ0m56jfD
-	 4fT/SiF3pchLjpyR4r1xjNm12bT/dny2WSKk7v8V0s6VmSKSasZ1tw0gBzWMSf+t9fCYi
-	 qkTy1lQlyzz78iBoQ0jBDWgnKkpiBfALPBh7sLw9vmHZOJctS3+e+xKewJXUa6T2t9w==
+	a=rsa-sha256; c=relaxed/relaxed; t=1795613101;
+	h=DMARC-Filter:DKIM-Signature:Received:Message-ID:Date:MIME-Version:
+	 User-Agent:Subject:To:Cc:References:From:Content-Language:Autocrypt:
+	 In-Reply-To:Content-Type:Content-Transfer-Encoding;
+	bh=8GhEywsubufbkk+g2frlsncIbqrCxI1+Ey2LliPVLQk=;
+	b=qWJYUL9AUJ7eepfQ1KhiovNI9ETFXs2Cm/KLNV/Mpdu92V1HkNm8SHq20qH3v/exjg0v
+	 g+FHF26di/IgviihrtXRSqxx0hLnBwu35+K0HxlRUZMnIJjFCMvftMAzagyG1q6oa0EoY
+	 XN0+lJjQm8yvltxtYt9ItXC5EcuCrByLpDOL/VzMY431ef99/8JlZdXwchzjazEx6o47C
+	 xQ07aAMWpjsJX+4gF3OEI4qqLAx1RWP7HMJ+eNwxBeXCH7cetC0Cswn178MT+GHcCPmh7
+	 gX1GyiT6P+TVf8Ec26tnyauDWnKb2VQOdioEZbBzquC/DrZNnkdg8toj67yWQsCn+NQ==
 ARC-Authentication-Results: i=1; smtp.subspace.kernel.org; 
-	dmarc=pass header.from=jxself.org;
-	spf=pass smtp.mailfrom=jxself.org;
-	dkim=pass header.d=jxself.org header.i=@jxself.org header.a=rsa-sha256 header.s=default2501 header.b=JVKZZRZb;
-	arc=none smtp.remote-ip=188.40.2.6
-Received: from www186.your-server.de (www186.your-server.de [188.40.2.6])
+	dmarc=pass header.from=nbd.name;
+	spf=pass smtp.mailfrom=nbd.name;
+	dkim=pass header.d=nbd.name header.i=@nbd.name header.a=rsa-sha256 header.s=20160729 header.b=Bzwv3M0S;
+	arc=none smtp.remote-ip=46.4.11.11
+Received: from nbd.name (nbd.name [46.4.11.11])
 	(using TLSv1.3 with cipher TLS_AES_256_GCM_SHA384 (256/256 bits)
-	 key-exchange X25519 server-signature ECDSA (prime256v1) server-digest SHA256)
+	 key-exchange ECDHE (prime256v1) server-signature ECDSA (prime256v1) server-digest SHA256)
 	(No client certificate requested)
-	by smtp.subspace.kernel.org (Postfix) with ESMTPS id F0C76606A31E
-	for <linux-wireless@vger.kernel.org>; Wed, 25 Nov 2026 13:09:27 +0000 (UTC)
-DMARC-Filter: OpenDMARC Filter v1.4.2 smtp.subspace.kernel.org F0C76606A31E
-Authentication-Results: smtp.subspace.kernel.org; dmarc=pass (p=none dis=none) header.from=jxself.org
-Authentication-Results: smtp.subspace.kernel.org; spf=pass smtp.mailfrom=jxself.org
+	by smtp.subspace.kernel.org (Postfix) with ESMTPS id 47D14606A331
+	for <linux-wireless@vger.kernel.org>; Wed, 25 Nov 2026 13:25:01 +0000 (UTC)
+DMARC-Filter: OpenDMARC Filter v1.4.2 smtp.subspace.kernel.org 47D14606A331
+Authentication-Results: smtp.subspace.kernel.org; dmarc=pass (p=none dis=none) header.from=nbd.name
+Authentication-Results: smtp.subspace.kernel.org; spf=pass smtp.mailfrom=nbd.name
 Authentication-Results: smtp.subspace.kernel.org;
-	dkim=pass (2048-bit key, unprotected) header.d=jxself.org header.i=@jxself.org header.a=rsa-sha256 header.s=default2501 header.b=JVKZZRZb
-DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed; d=jxself.org;
-	s=default2501; h=MIME-Version:Content-Type:References:In-Reply-To:Date:Cc:To:
-	From:Subject:Message-ID:Sender:Reply-To:Content-Transfer-Encoding:Content-ID:
-	Content-Description:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc
-	:Resent-Message-ID; bh=YWhnRNwmxzfxYHj9pjoF1k2oRy/qJ4v+6ZXKaG0u3rE=; b=JVKZZR
-	ZbEj0Kc+7GhCrgBPXwRakZAg952a4K2inmkkMtbaslnkFHBU+SJvRtl7vMJjb/vuSAnXAYWxiLjXU
-	+43v0A1Lcf322irVkt/442j4WApM5knYEuMo99gYcFzsBw9E1b1ttLoiwF30enmSfjAvjbK0YAQPu
-	vBLFxTPSeHCYNMS2Vbe/2dtoyfupXb7KwmoilCfTWo8z5sUuQxldjVhUrmJi1NUQMghEWV2ii1XqI
-	krL2ZKQTEz2Mp3v85QhWkTS5VFNWgyfvV4X21KdfiYIud1zNOcJ7+6XUEbEyflMu5dhfrliwdrHEc
-	nbRoW1TD8OWxo9B4Adcw5wFON60w==;
-Received: from sslproxy07.your-server.de ([78.47.199.104])
-	by www186.your-server.de with esmtpsa  (TLS1.3) tls TLS_AES_256_GCM_SHA384
-	(Exim 4.96.2)
-	(envelope-from <j@jxself.org>)
-	id 1xWCkX-000BIo-0R;
-	Wed, 25 Nov 2026 14:09:25 +0100
-Received: from localhost ([127.0.0.1])
-	by sslproxy07.your-server.de with esmtpsa  (TLS1.3) tls TLS_AES_256_GCM_SHA384
+	dkim=pass (1024-bit key, unprotected) header.d=nbd.name header.i=@nbd.name header.a=rsa-sha256 header.s=20160729 header.b=Bzwv3M0S
+DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed; d=nbd.name;
+	s=20160729; h=Content-Transfer-Encoding:Content-Type:In-Reply-To:From:
+	References:Cc:To:Subject:MIME-Version:Date:Message-ID:Sender:Reply-To:
+	Content-ID:Content-Description:Resent-Date:Resent-From:Resent-Sender:
+	Resent-To:Resent-Cc:Resent-Message-ID:List-Id:List-Help:List-Unsubscribe:
+	List-Subscribe:List-Post:List-Owner:List-Archive;
+	bh=8GhEywsubufbkk+g2frlsncIbqrCxI1+Ey2LliPVLQk=; b=Bzwv3M0SLKpNf8QFPVchWFgJvC
+	ULBXXM4V9osb81Yxy7mMLXkhzonJ0B95yDBi9YQETkSJHm9t990MO5L3eDy9EsWov5yuNPipWRth7
+	R+pq0pleIMA2huLLRjLZ01ZW1P4ZtWAQXwvOl69/ACP745m1V0luUyTySzjFkFXhVDfM=;
+Received: from p5b015e92.dip0.t-ipconnect.de ([91.1.94.146] helo=nf.local)
+	by ds12 with esmtpsa  (TLS1.3) tls TLS_ECDHE_RSA_WITH_AES_128_GCM_SHA256
 	(Exim 4.96)
-	(envelope-from <j@jxself.org>)
-	id 1xWCkW-000D2a-1p;
-	Wed, 25 Nov 2026 14:09:24 +0100
-Message-ID: <90b7fcadc93f941bc529f4797c8b85a00de2cc7b.camel@jxself.org>
-Subject: Re: [PATCH wireless] wifi: mac80211: wake TXQs of all ACs with
- fewer HW queues than ACs
-From: Jason Self <j@jxself.org>
-To: Johannes Berg <johannes@sipsolutions.net>
-Cc: linux-wireless@vger.kernel.org
-Date: Wed, 25 Nov 2026 05:09:21 -0800
-In-Reply-To: <fb3146025af37481f714a0803708fa4eba90d6cc.camel@sipsolutions.net>
-References: <20261125023259.820308-1-j@jxself.org>
-	 <fb3146025af37481f714a0803708fa4eba90d6cc.camel@sipsolutions.net>
-Content-Type: multipart/signed; micalg="pgp-sha256";
-	protocol="application/pgp-signature"; boundary="=-nddmGWczpIb1Nm/L7sEf"
-User-Agent: Evolution 3.52.3-0ubuntu1.1 
+	(envelope-from <nbd@nbd.name>)
+	id 1xWCzZ-008Dhz-0g;
+	Wed, 25 Nov 2026 14:24:57 +0100
+Message-ID: <2ea4dc91-9235-4b54-ad7e-0fcefcb933e5@nbd.name>
+Date: Wed, 25 Nov 2026 14:24:56 +0100
 X-Mailing-List: linux-wireless@vger.kernel.org
 List-Id: <linux-wireless.vger.kernel.org>
 List-Post: <mailto:linux-wireless@vger.kernel.org>
@@ -77,40 +59,106 @@ List-Unsubscribe: <mailto:linux-wireless+unsubscribe@vger.kernel.org>
 List-Owner: <mailto:linux-wireless+owner@vger.kernel.org>
 Precedence: list
 MIME-Version: 1.0
-X-Virus-Scanned: Clear (ClamAV 1.4.6/28194/Wed Nov 25 07:26:59 2026)
+User-Agent: Mozilla Thunderbird
+Subject: Re: [PATCH v6 2/2] wifi: mt76: mt7925: support per-channel survey
+ dump during scan
+To: Michael Shih <michael.shih@mediatek.com>, lorenzo@kernel.org
+Cc: linux-wireless@vger.kernel.org, linux-mediatek@lists.infradead.org,
+ kun.wu@mediatek.com, deren.wu@mediatek.com, sean.wang@mediatek.com,
+ quan.zhou@mediatek.com, ryder.lee@mediatek.com, leon.yen@mediatek.com,
+ litien.chang@mediatek.com, jb.tsai@mediatek.com, eason.Lai@mediatek.com
+References: <20261112075558.1813785-2-michael.shih@mediatek.com>
+ <20261117032530.470475-1-michael.shih@mediatek.com>
+ <20261117032530.470475-3-michael.shih@mediatek.com>
+From: Felix Fietkau <nbd@nbd.name>
+Content-Language: en-US
+Autocrypt: addr=nbd@nbd.name; keydata=
+ xsDiBEah5CcRBADIY7pu4LIv3jBlyQ/2u87iIZGe6f0f8pyB4UjzfJNXhJb8JylYYRzIOSxh
+ ExKsdLCnJqsG1PY1mqTtoG8sONpwsHr2oJ4itjcGHfn5NJSUGTbtbbxLro13tHkGFCoCr4Z5
+ Pv+XRgiANSpYlIigiMbOkide6wbggQK32tC20QxUIwCg4k6dtV/4kwEeiOUfErq00TVqIiEE
+ AKcUi4taOuh/PQWx/Ujjl/P1LfJXqLKRPa8PwD4j2yjoc9l+7LptSxJThL9KSu6gtXQjcoR2
+ vCK0OeYJhgO4kYMI78h1TSaxmtImEAnjFPYJYVsxrhay92jisYc7z5R/76AaELfF6RCjjGeP
+ wdalulG+erWju710Bif7E1yjYVWeA/9Wd1lsOmx6uwwYgNqoFtcAunDaMKi9xVQW18FsUusM
+ TdRvTZLBpoUAy+MajAL+R73TwLq3LnKpIcCwftyQXK5pEDKq57OhxJVv1Q8XkA9Dn1SBOjNB
+ l25vJDFAT9ntp9THeDD2fv15yk4EKpWhu4H00/YX8KkhFsrtUs69+vZQwc0cRmVsaXggRmll
+ dGthdSA8bmJkQG5iZC5uYW1lPsJgBBMRAgAgBQJGoeQnAhsjBgsJCAcDAgQVAggDBBYCAwEC
+ HgECF4AACgkQ130UHQKnbvXsvgCgjsAIIOsY7xZ8VcSm7NABpi91yTMAniMMmH7FRenEAYMa
+ VrwYTIThkTlQzsFNBEah5FQQCACMIep/hTzgPZ9HbCTKm9xN4bZX0JjrqjFem1Nxf3MBM5vN
+ CYGBn8F4sGIzPmLhl4xFeq3k5irVg/YvxSDbQN6NJv8o+tP6zsMeWX2JjtV0P4aDIN1pK2/w
+ VxcicArw0VYdv2ZCarccFBgH2a6GjswqlCqVM3gNIMI8ikzenKcso8YErGGiKYeMEZLwHaxE
+ Y7mTPuOTrWL8uWWRL5mVjhZEVvDez6em/OYvzBwbkhImrryF29e3Po2cfY2n7EKjjr3/141K
+ DHBBdgXlPNfDwROnA5ugjjEBjwkwBQqPpDA7AYPvpHh5vLbZnVGu5CwG7NAsrb2isRmjYoqk
+ wu++3117AAMFB/9S0Sj7qFFQcD4laADVsabTpNNpaV4wAgVTRHKV/kC9luItzwDnUcsZUPdQ
+ f3MueRJ3jIHU0UmRBG3uQftqbZJj3ikhnfvyLmkCNe+/hXhPu9sGvXyi2D4vszICvc1KL4RD
+ aLSrOsROx22eZ26KqcW4ny7+va2FnvjsZgI8h4sDmaLzKczVRIiLITiMpLFEU/VoSv0m1F4B
+ FtRgoiyjFzigWG0MsTdAN6FJzGh4mWWGIlE7o5JraNhnTd+yTUIPtw3ym6l8P+gbvfoZida0
+ TspgwBWLnXQvP5EDvlZnNaKa/3oBes6z0QdaSOwZCRA3QSLHBwtgUsrT6RxRSweLrcabwkkE
+ GBECAAkFAkah5FQCGwwACgkQ130UHQKnbvW2GgCeMncXpbbWNT2AtoAYICrKyX5R3iMAoMhw
+ cL98efvrjdstUfTCP2pfetyN
+In-Reply-To: <20261117032530.470475-3-michael.shih@mediatek.com>
+Content-Type: text/plain; charset=UTF-8; format=flowed
+Content-Transfer-Encoding: 8bit
+
+Hi,
 
 
---=-nddmGWczpIb1Nm/L7sEf
-Content-Type: text/plain; charset="UTF-8"
-Content-Transfer-Encoding: quoted-printable
+On 17.11.26 04:25, Michael Shih wrote:
+> Report per-channel survey airtime (active/busy/rx/tx) so that
+> "iw <dev> survey dump" shows non-zero airtime not only for the
+> connected home channel, but also for every channel visited during
+> a firmware-offloaded scan.
+> 
+> Two accounting paths are wired up:
+> 
+> (1) Home/operating channel (periodic mac_work):
+>      mt7925 is firmware/chanctx managed and never goes through
+>      __mt76_set_channel(), so phy->chan_state used to stay pinned to
+>      its init default and the periodic survey was charged to the wrong
+>      channel. mt7925_survey_switch_channel() is added and called from
+>      assign_vif_chanctx() to settle the old channel, re-point
+>      chan_state/chandef to the operating channel, and re-base the
+>      firmware MIB snapshot so active/busy/rx/tx keep accumulating on
+>      the channel actually dwelt on.
+> 
+> (2) Scanned channels (scan-done event):
+>      The scan-done CHNLINFO event now carries per-channel airtime
+>      (firmware Ch-Survey extension). mt7925_scan_update_survey() parses
+>      the per-channel array and folds the airtime deltas into each
+>      channel's mt76_channel_state. The firmware 6G channel id is
+>      converted back to the real channel number before lookup.
+> 
+> mt76_channel_state() is exported so the mt7925 module can map a
+> band/channel pair to its channel state.
+> 
+> Usage:
+> (1) Connect STA to AP and generate traffic:
+>        dhclient ${WLAN_IF} -v
+>        ping 192.168.0.XXX -i0.1
+> 
+> (2) (Optional) Trigger a scan to collect other channels:
+>        iw ${WLAN_IF} scan
+>      or use wpa_supplicant / wpa_cli scan.
+> 
+> (3) Dump the survey:
+>        iw ${WLAN_IF} survey dump
+> 
+> (4) You will see per-channel airtime, e.g.:
+>        Survey data from wls1
+>            frequency:            5240 MHz
+>            channel active time:  163258 ms
+>            channel busy time:    34076 ms
+>            channel receive time: 32084 ms
+>            channel transmit time: 253 ms
+>      - The connected/dwelt channel keeps increasing over time.
+>      - Channels visited during scan accumulate airtime each scan.
+I've tested a rebased version of this patch with firmware 20260813 and 
+found a few discrepancies:
 
-vt6656 was removed from mainline after 6.12, but the same code path
-is also used by in-tree drivers with the same setup (one queue and the
-generic TXQ handler), such as zd1211rw and rtl8187. I reproduced this
-on wireless main by setting mac80211_hwsim to a single queue. A ping
-sent during a scan stays stuck in the best-effort TXQ, and the patch
-fixes it. I'll work on a v2.
+- the idle counter seems to count slots of about 8 us, not microseconds, 
+so busy + idle gives about 1/8 of real time.
+- the code always queries band 0. With MLO, the firmware puts the second 
+link on band 1, so that link's airtime is missed.
 
---=-nddmGWczpIb1Nm/L7sEf
-Content-Type: application/pgp-signature; name="signature.asc"
-Content-Description: This is a digitally signed message part
+Thanks,
 
------BEGIN PGP SIGNATURE-----
-
-iQJPBAABCAA5FiEE9hGpCP+hZcaZWE7UnQ2zG1RaMZgFAmsG3gEbFIAAAAAABAAO
-bWFudTIsMi41KzEuMTIsMiwyAAoJEJ0NsxtUWjGYpugP/iTaM3+O+iqXwA3i7KoG
-lnXc3Lz/r+49fVWjP9CDnV1eMu9jH3QHvPlbESRiPm5E2DICoL8ybDeBSLZTPXGU
-xrND0KuUPN6ADmdI08wnvUZIkxO/SJzQgebf/loyYJweeBCD+C7Yg4pIcZo7jE80
-5c5qms2dKL1fJdNSOk5Ug9+WgxVA/Py3LAg5QtguyqsetZz8k+BSj1PGgqhJ0PEy
-xrdKmNWEuWK0a4oj+ITScUlaPneCxhBmqr9I/r5D6wvjSk2R+umY+vVYMW/I5HsV
-kCXa8ZMU2jLTtKfflTCFGrk/k3ZcUlmWjjHRvBKq7WQoNyxkx56JGGE9fzYCgzUA
-VjvjW/nW7MOiw4OIudcUYsGicQbdsChtVN6HrDHD7e5DYHjhDgg5KUpfh3KdZyEK
-SADdvIo/zTKd4jXD0DT2zAgImtFAt5kBQ0uc4wZHGcRfSdme04H4/vHJElwxGciG
-rutAmdqO6nCNJVJYbycnZ+OIpZXKOivis6DoDFEP4ie0z3xKnnCkLv452D1joUNC
-DxIrJvmaum6+cJUoqti3j6q3sHaSflSnArDoaVm1XwwJC2aNuxlMtO0NvNRAfMvc
-64X4uRlBMwDeI5Mr15hXt1z92APcVtKPt6x0OnqM4Ilt67iiHFgasbAJqw0WvWmi
-Yhzc+1Z5/zB9Hxrc0yYXh66F
-=MjfR
------END PGP SIGNATURE-----
-
---=-nddmGWczpIb1Nm/L7sEf--
+- Felix
