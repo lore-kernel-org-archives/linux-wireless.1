@@ -1,60 +1,63 @@
-Authentication-Results: smtp.subspace.kernel.org; arc=none smtp.remote-ip=109.224.244.27
+Authentication-Results: smtp.subspace.kernel.org; arc=none smtp.remote-ip=95.215.58.184
 ARC-Seal: i=1; d=subspace.kernel.org; s=arc20261015; a=rsa-sha256; cv=none;
-	t=1795646337;
-	b=A3zwD5Uqv6TtQbRajqEvT9h90kcvRWLwwUI6u8NetNeRp6y3ywtlJqc66yeKLBI57e5o
-	 GeljXXRvDkIKGFZwyD1IXzsGL/Gh+LFyfGwoshqTQCuTVwqjt6fgIJwJpH6rd2g1D/WPY
-	 bOFD5F8YcYehlGMzNzh4KsUO3thwmScZ12UQtLcyPMpbr2EB1P4Ud8RJDjWsEV9Oe7lfz
-	 8RcxlQ37UcZ1LulI5v9WTGfFi7HIF63AJuDVEtkk/WsBm6zFR0CRH24l+4FyvtuRKqqx3
-	 2KlOrHB2xQ1V7d51ktpwenT+QgKbIe/iXGKL7HrG+CVfwljn2Q7qwMq0VHecLWkVN9w==
+	t=1795647335;
+	b=4pvdQkyd2vj9FMaFeaXmS901ORHhIz0lPtIDHoo88UIC/BYjf9+GnVrqHL7C8X4cLYzQ
+	 aFpOg3qJeUWUYyMZihpnuSRMSNmOhnt6IEO2MLx1t70trNUrO0K9RQGmqnWbmqJQA9prz
+	 IUxMeqCgRhLy+IRQLTd2+EW2WiAATxz/fQULb5O0BqikPHH09/0feSrR77QVhirRCc7vh
+	 wIku4NdNylaX8fSO2qZgK6a2tdVoM4s1GEebjzCYMV3LmE3aEvtqy0FeW0RU32XuyOTEB
+	 uFktOtCdsZC6iNnEsd9Nm2omnGUI4NpH0HDyrowuaMlKu7cZSfczzk93NG2RSjLcdXg==
 ARC-Message-Signature: i=1; d=subspace.kernel.org; s=arc20261015;
-	a=rsa-sha256; c=relaxed/relaxed; t=1795646337;
-	h=DMARC-Filter:DKIM-Signature:Date:To:From:Cc:Subject:Message-ID:
-	 In-Reply-To:References:Feedback-ID:X-Pm-Message-ID:MIME-Version:
-	 Content-Type:Content-Transfer-Encoding;
-	bh=yuesQr0hGH3vocSCjBCILwvIRFmh4lrrA65bcdf9LH8=;
-	b=E1eWlTprE3MgZDyQFnHh/iGSmf+GJ4u8d4umi4U/wixsb5JECdLD95VVIC3qa5B8A/Fa
-	 8gG8uMG27DW0KEvh2wXZcW1WxEhLobdQ9HAeRV8e1A0b7MhtspZDJJNp/As7hLliluNM2
-	 0CYAhKOAzkHp9JEClGPDOP971qJ8KE1/qGuMSXf97a6d0Ms0jC5IHnaFbH62ZDHNOLnG9
-	 biRDUMZ2+ttvcDxPRMF4LaeSH/fvmUWM5OBajQN+85ZbI4RehoZfOxL8kjB8vSHLT4y3F
-	 PbDsL8wvF6dIdsAGByXk3fKQnryBiSpul1mDDXcLVvSRm+yvo7SH+DHtTwR5DLsi0Yw==
+	a=rsa-sha256; c=relaxed/relaxed; t=1795647335;
+	h=DMARC-Filter:X-Envelope-To:DKIM-Signature:X-Envelope-To:Received:
+	 X-Mizu-Trace-ID:X-Migadu-Flow:Date:From:To:CC:Subject:In-Reply-To:
+	 References:Message-ID:MIME-Version:Content-Type:
+	 Content-Transfer-Encoding;
+	bh=cfXZ14QND3WjKYNC9UCJvXr/veM+vkfDQNZABOALCP4=;
+	b=vQ2M2WdQL/6WBOvHXQTINMN8of1zPs59Sbqis2ZJBonFq3SulSBLTHVOQfkG0XnSCEQx
+	 fQ6eHMZh3Doj4UuOhG8mr8bh0olY2a/qLw9d+RpzbN9rS0DA2dtZnj0xx1odo1X9V6fNd
+	 W6K90J3zdEoDuti4oL6OvHQwOhR9bS60OGkCcTIhou4h1UYMS+5vAaOdd8CrQAKUM218N
+	 /JBGNkUWYwKIgMX/lC9udpOc+14ThWILgzOkTSm+raPhLwEQkM5P35bIBX5CwG2v48leg
+	 BUdK0DcRO6ZX7DiXWuHoZ3/48NbOOAntiN2cgIzyk6KR81gkDz+Rrh+TPLtpJdreiCA==
 ARC-Authentication-Results: i=1; smtp.subspace.kernel.org; 
-	dmarc=pass header.from=proton.me;
-	spf=pass smtp.mailfrom=proton.me;
-	dkim=pass header.d=proton.me header.i=@proton.me header.a=rsa-sha256 header.s=protonmail2 header.b=ly9EbpnJ;
-	arc=none smtp.remote-ip=109.224.244.27
-Received: from mail-24427.protonmail.ch (mail-24427.protonmail.ch [109.224.244.27])
-	(using TLSv1.3 with cipher TLS_AES_256_GCM_SHA384 (256/256 bits)
+	dmarc=pass header.from=linux.dev;
+	spf=pass smtp.mailfrom=linux.dev;
+	dkim=pass header.d=linux.dev header.i=@linux.dev header.a=rsa-sha256 header.s=key1 header.b=OZewApkt;
+	arc=none smtp.remote-ip=95.215.58.184
+Received: from mta1.migadu.com (out-184.mta1.migadu.com [95.215.58.184])
+	(using TLSv1.3 with cipher TLS_AES_128_GCM_SHA256 (128/128 bits)
 	 key-exchange X25519 server-signature ECDSA (prime256v1) server-digest SHA256)
 	(No client certificate requested)
-	by smtp.subspace.kernel.org (Postfix) with ESMTPS id 31EBE606A31E;
-	Wed, 25 Nov 2026 22:38:57 +0000 (UTC)
-DMARC-Filter: OpenDMARC Filter v1.4.2 smtp.subspace.kernel.org 31EBE606A31E
-Authentication-Results: smtp.subspace.kernel.org; dmarc=pass (p=quarantine dis=none) header.from=proton.me
-Authentication-Results: smtp.subspace.kernel.org; spf=pass smtp.mailfrom=proton.me
+	by smtp.subspace.kernel.org (Postfix) with ESMTPS id AF455606A682
+	for <linux-wireless@vger.kernel.org>; Wed, 25 Nov 2026 22:55:33 +0000 (UTC)
+DMARC-Filter: OpenDMARC Filter v1.4.2 smtp.subspace.kernel.org AF455606A682
+Authentication-Results: smtp.subspace.kernel.org; dmarc=pass (p=none dis=none) header.from=linux.dev
+Authentication-Results: smtp.subspace.kernel.org; spf=pass smtp.mailfrom=linux.dev
 Authentication-Results: smtp.subspace.kernel.org;
-	dkim=pass (2048-bit key, unprotected) header.d=proton.me header.i=@proton.me header.a=rsa-sha256 header.s=protonmail2 header.b=ly9EbpnJ
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=proton.me;
-	s=protonmail2; t=1795646335; x=1795905535;
-	bh=yuesQr0hGH3vocSCjBCILwvIRFmh4lrrA65bcdf9LH8=;
-	h=Date:To:From:Cc:Subject:Message-ID:In-Reply-To:References:
-	 Feedback-ID:From:To:Cc:Date:Subject:Reply-To:Feedback-ID:
-	 Message-ID:BIMI-Selector;
-	b=ly9EbpnJx2Fvc9SXtP8580MW9zfBZP+T0p5NzdBCbmLm4A+67ESDRKDiIwJ9NkCDz
-	 Bl7RyfD8JTQLO9ZeUNX7bvABCh51CkTS+NLAdGv4f88kYNJc3PosvHD8FTHG181PMB
-	 0b9W/HPZXPQ44XM4Lb8EqJlX3r+nlyzPltSWfGZhiv8aCvEQrHN3xKULEMS5sy0mMr
-	 eCWfX8DsVZ/B/xDzZhObKA4Bmz+B+zTSpWN+U/muiYH4edq8wGeb5N+42N+oJwXBno
-	 rNntZ5fQ9F6V/ARSXktahh/uV4jwiwGmp240ed0jzHg+RAOEnz2/WruniOrWdaFyvM
-	 P9qkhUOHRWd9g==
-Date: Wed, 25 Nov 2026 22:38:51 +0000
-To: Luka Gejak <luka.gejak@linux.dev>
-From: Ahmet Zeren <niko3x@proton.me>
-Cc: Ahmet Zeren via B4 Relay <devnull+niko3x.proton.me@kernel.org>, Ping-Ke Shih <pkshih@realtek.com>, linux-wireless@vger.kernel.org, Bitterblue Smith <rtl8821cerfe2@gmail.com>, linux-kernel@vger.kernel.org, "owner@ph4ntom-rev.uz" <owner@ph4ntom-rev.uz>
-Subject: Re: [PATCH RFT rtw-next 2/2] wifi: rtw88: honour the retry count and NO_ACK of injected frames
-Message-ID: <Qmyu_zaapR7fisQhYB1W9CDM3OG849otNXR4xWRbIaRocvy40VyY4N2Jte4IHqD33nCI_txHle2bL5F7S0b6Bv_uXvCyk9MJ35CFHWzopyE=@proton.me>
-In-Reply-To: <7904907C-A864-4DE9-AE9B-65082A38B29B@linux.dev>
-References: <20261124-b4-rtw88-inject-v1-0-f7457e496924@proton.me> <20261124-b4-rtw88-inject-v1-2-f7457e496924@proton.me> <7904907C-A864-4DE9-AE9B-65082A38B29B@linux.dev>
-Feedback-ID: 201311995:user:proton
-X-Pm-Message-ID: a0fda5cb7a3c21538a50958e206eb1ca9bd17f2e
+	dkim=pass (1024-bit key, unprotected) header.d=linux.dev header.i=@linux.dev header.a=rsa-sha256 header.s=key1 header.b=OZewApkt
+X-Envelope-To: linux-wireless@vger.kernel.org
+DKIM-Signature: a=rsa-sha256; bh=cfXZ14QND3WjKYNC9UCJvXr/veM+vkfDQNZABOALCP4=;
+ c=simple/simple; d=linux.dev;
+ h=from:to:subject:date:message-id:mime-version:content-type; s=key1;
+ t=1795647331; v=1; x=1796252131;
+ b=OZewApktVGQUTwCdmYtwhiqHIQQxTPkeeLYEgkgzFF9WJ9RYbU1WWLgU4mxj8y5FVWTa0kjw
+ ZuRxDQKEtYteFYzGYkBqQ23tkApf+40A7FVPbtryjXo5a49UaH+U4tPInnNJ7tYFedwIX/jNzko
+ Hukq217Ch0r40wyeH6Lhnlpg=
+X-Envelope-To: linux-wireless@vger.kernel.org
+Received: by smtp.migadu.com with ESMTPS id 1b2ba880aa252d78;
+	Wed, 25 Nov 2026 22:55:25 +0000
+X-Mizu-Trace-ID: 1b2ba880aa252d78
+X-Migadu-Flow: FLOW_OUT
+Date: Wed, 25 Nov 2026 23:55:20 +0100
+From: Luka Gejak <luka.gejak@linux.dev>
+To: Ahmet Zeren <niko3x@proton.me>
+CC: Ahmet Zeren via B4 Relay <devnull+niko3x.proton.me@kernel.org>,
+ Ping-Ke Shih <pkshih@realtek.com>, linux-wireless@vger.kernel.org,
+ Bitterblue Smith <rtl8821cerfe2@gmail.com>, linux-kernel@vger.kernel.org
+Subject: =?US-ASCII?Q?Re=3A_=5BPATCH_RFT_rtw-next_1/2=5D_wifi=3A_rtw88=3A_use?=
+ =?US-ASCII?Q?_the_rate=2C_bandwidth_and_GI_of_injected_frames?=
+In-Reply-To: <ecNmU3PXiWoHo5Kp9n39tXmMq1iJCEzT2J_TrZH2xipIKP9jtEdDBIYUKdyBWvKCRLekdJgXgo50awp_oEjhE1KlfT6e1ELZT9abegQ85L0=@proton.me>
+References: <20261124-b4-rtw88-inject-v1-0-f7457e496924@proton.me> <20261124-b4-rtw88-inject-v1-1-f7457e496924@proton.me> <8E47D781-B1FF-4B2F-B0EA-AABA130E2778@linux.dev> <ecNmU3PXiWoHo5Kp9n39tXmMq1iJCEzT2J_TrZH2xipIKP9jtEdDBIYUKdyBWvKCRLekdJgXgo50awp_oEjhE1KlfT6e1ELZT9abegQ85L0=@proton.me>
+Message-ID: <28ED0B12-9712-45BA-BF90-8D7392C5D504@linux.dev>
 X-Mailing-List: linux-wireless@vger.kernel.org
 List-Id: <linux-wireless.vger.kernel.org>
 List-Post: <mailto:linux-wireless@vger.kernel.org>
@@ -64,37 +67,34 @@ List-Unsubscribe: <mailto:linux-wireless+unsubscribe@vger.kernel.org>
 List-Owner: <mailto:linux-wireless+owner@vger.kernel.org>
 Precedence: list
 MIME-Version: 1.0
-Content-Type: text/plain; charset=utf-8
-Content-Transfer-Encoding: quoted-printable
+Content-Type: text/plain;
+ charset=utf-8
+Content-Transfer-Encoding: 8bit
 
-Hi Luka,
+On November 25, 2026 11:34:49 PM GMT+01:00, Ahmet Zeren <niko3x@proton.me>
+wrote:
+>
+>Hi Luka,
+>
+>Thanks for looking at it.
+>
+>> Do we also need DATA_SC when the requested width is narrower than the
+>> channel?
+>
+>You may be right, I'm not sure. rtw_set_channel_mac() writes
+>REG_DATA_SC on every channel change, with the 20 MHz primary and on an
+>80 MHz channel, the 40 MHz half that contains the primary; and the
+>normal rtw88 TX paths leave DATA_SC at zero. My guess is that the MAC
+>uses that register then, but I can't tell whether that still holds
+>with USE_RATE set without hardware.
+>
+>If you can run that test (a 40 MHz frame on an 80 MHz channel, with the
+>primary channel in each half), that would settle it. If it goes out on
+>the wrong half I'll add DATA_SC to the descriptor.
+>
 
-You're right on both points, thanks. I'll fix them in v2: the retry
-count will only be used when IEEE80211_TX_CTRL_RATE_INJECT is set, and
-the TX report will set IEEE80211_TX_STAT_NOACK_TRANSMITTED instead of
-IEEE80211_TX_STAT_ACK for NO_ACK frames that were sent.
+I will test it in the morning and let you know the results. I would hold
+off v2 until then.
 
-Both came from following the rtw89 change, commit 92608bb5f14f ("wifi:
-rtw89: honor ASSIGN_SEQ, retries, and NO_ACK for injected frames"), so
-rtw89 has the same two issues:
-
-- rtw89_core_tx_update_injection() uses control.rates[0].count without
-  checking IEEE80211_TX_CTRL_RATE_INJECT
-- rtw89_tx_rpt_tx_status() sets IEEE80211_TX_STAT_NOACK_TRANSMITTED and
-  then also IEEE80211_TX_STAT_ACK when the frame was sent
-
-There is a third one there: max_rate_tries is set to
-RTW89_TX_DATA_CNT_LMT_MAX (63), but control.rates[].count is only 5 bits
-wide (IEEE80211_MAX_TX_RETRY is 31), so radiotap retry counts above 30
-wrap around. My rtl8xxxu patch has the same overflow, I'll send a fix
-for it.
-
-Enver, Cc'ing you since it's your patch. I can send fixes for rtw89 as
-well if you prefer, but I have no rtw89 hardware to test them.
-
-Thanks,
-Ahmet
-
-
-
-Sent with Proton Mail secure email.
+Best regards,
+Luka Gejak
