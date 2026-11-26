@@ -1,78 +1,64 @@
-Authentication-Results: smtp.subspace.kernel.org; arc=none smtp.remote-ip=60.244.123.138
-ARC-Seal: i=1; d=subspace.kernel.org; s=arc20261015; a=rsa-sha256; cv=none;
-	t=1795681417;
-	b=L0z0/8IVPDrFZLzi1y4uPHp+juDkEh7fnm5jScf9eRVMv3qQlRQ8aTYARjGLZLQ7GF+0
-	 Qss84GIz7wdcyv2qsLHhKJcCWsgR5W4XARgSko1K3hdOtorTR6xESxN3qZ0uvZG0E4Nnm
-	 6+Hg/hyoXzw9iLPfeJd5sYTv+AvMPC+BbVH3eiwUaPRbpjo0JG9UtDcjMYkEAFx7DrnZx
-	 NJ7oOg5+Pl/MlMUu3floIRffPhox+YbW/W81Iccgx0QaKuPPguHxTOokusWM6qawZsPDv
-	 dzhQkglEWpnT5eLc6BZLHIgG04AbSEBCLXVa4xtnC6deAtNhReTi9F13JjR0yKhYFDQ==
-ARC-Message-Signature: i=1; d=subspace.kernel.org; s=arc20261015;
-	a=rsa-sha256; c=relaxed/relaxed; t=1795681417;
-	h=DMARC-Filter:X-UUID:DKIM-Signature:X-CID-P-RULE:X-CID-O-INFO:
-	 X-CID-META:X-CID-BVR:X-CID-BAS:X-CID-FACTOR:X-CID-RHF:X-UUID:Received:
-	 Received:Received:From:To:CC:Subject:Date:Message-ID:X-Mailer:
-	 MIME-Version:Content-Transfer-Encoding:Content-Type;
-	bh=cAaY/L0jicDyYPc/8PaLpndAdaujM+s27PpGmxriTQs=;
-	b=V3semvPnkHWCjF817x1u305YhYNFYdDDB/82WiEkgkHZ1HjfVEOhyzdEE2VFMMyZbkLi
-	 IhDhMBd9BckRtl0nQFVuwHBjLVdRWbGeNIXKbCXi3QJ8Wlcgx2nvDGH9vWFMkX2lLdIzI
-	 eNjcIIg0njUFtPDZZjQXLa2IqS06FIrPJhv0lGVeYR/HlUsRKrbM3i8sxh7mW9u7EIn/f
-	 isjcWxAQ+C2Eck0MpgBLgbjMhoc0+YKVzYAIGSj6Y3FENhEwBzWYR03IBV5ysH6M3VQVR
-	 twLtLXBiLb5Jti0M+Bp2vp15KovqgtmV/NofmdG4ctdkSTjmVQGc3d5Y14FgOmX6m7A==
-ARC-Authentication-Results: i=1; smtp.subspace.kernel.org; 
-	dmarc=pass header.from=mediatek.com;
-	spf=pass smtp.mailfrom=mediatek.com;
-	dkim=pass header.d=mediatek.com header.i=@mediatek.com header.a=rsa-sha256 header.s=dk header.b=rjdavGw7;
-	arc=none smtp.remote-ip=60.244.123.138
-Received: from mailgw01.mediatek.com (unknown [60.244.123.138])
+Authentication-Results: smtp.subspace.kernel.org; arc=pass header.oldest-pass=0 smtp.remote-ip=165.173.182.54
+ARC-Seal: i=2; d=subspace.kernel.org; s=arc20261015; a=rsa-sha256; cv=pass;
+	t=1795681951;
+	b=RzFYuiO46x9tkTi6DBA5YqdEsUfG8vxUQ4AnvrRFbrMW1X4iMzoAfnVeKMQXq06zQnPo
+	 Npmcupqsc8JwpXa9vaK0LItkEoEZbwDMu5TQhXgCCB1/2JZQSITywD93+6fGf6IfWAhkW
+	 GUxX6hyt4PycSCeSszeWWj0uUYd6gGxrJ+igAnbF1hzyh4VdQ3raIhN2vfw2gjeRkWm2E
+	 k3wemIFSAV19ht6C/YHDbZrIuJj4bB5WUBaJ52qoyMYe/hBdg+umr6Wx+q7eGElCxNiG8
+	 iGpLST1RMQfavP8RPg7g036xGAatsPJJmdxMxCTVkqriHrnNnu6vDTm6MRqqsf7AUpQ==
+ARC-Message-Signature: i=2; d=subspace.kernel.org; s=arc20261015;
+	a=rsa-sha256; c=relaxed/relaxed; t=1795681951;
+	h=DMARC-Filter:DKIM-Signature:Received:From:To:Cc:Subject:Date:
+	 Message-ID:X-Mailer:MIME-Version:Content-Transfer-Encoding:
+	 X-ZohoMailClient;
+	bh=TaON/7ceRuHwzhJ+NepJEX25n+5RZ9JBg0bJv2TdRiA=;
+	b=GeMbwqvCZNbPNP/lkzXI79We1Bw7dG7AhzXeC6va5BgLSgQHjWHHrrjBweksTpaMuoLs
+	 o412NdvGgXmGlExfckM1gtWNhVl77JtzMwcwx9XgZ6ekDsYRRjvamZhbAhGLxJz78kB+q
+	 ASdQfNwq5MIHfNVaGDqZlXIfQlA6UVHkui+bOX2kVt4EmNruTcTVp1rLNcFc0PP8O8iqy
+	 vfbdde0O0SHyAcZjoMnvnXxhOm9rBvAvVgSHaUOp9B5UENQ5ofKuNkvrJYeCTcWnhSpu2
+	 dRwnpNsGhoV8C41KxlgFPHg6K031SV18UruHwKZVGxlqpJAw07UFT5QjRie3PyScD5Q==
+ARC-Authentication-Results: i=2; smtp.subspace.kernel.org; 
+	dmarc=pass header.from=ph4ntom-rev.uz;
+	spf=pass smtp.mailfrom=ph4ntom-rev.uz;
+	dkim=pass header.d=ph4ntom-rev.uz header.i=@ph4ntom-rev.uz header.a=rsa-sha256 header.s=zoho header.b=w6j9Y+ZS;
+	arc=pass header.oldest-pass=0 smtp.remote-ip=165.173.182.54
+Received: from sender5-of-o54.zoho.com (sender5-of-o54.zoho.com [165.173.182.54])
 	(using TLSv1.3 with cipher TLS_AES_256_GCM_SHA384 (256/256 bits)
 	 key-exchange X25519 server-signature ECDSA (prime256v1) server-digest SHA256)
 	(No client certificate requested)
-	by smtp.subspace.kernel.org (Postfix) with ESMTPS id 42769606A337
-	for <linux-wireless@vger.kernel.org>; Thu, 26 Nov 2026 08:23:35 +0000 (UTC)
-DMARC-Filter: OpenDMARC Filter v1.4.2 smtp.subspace.kernel.org 42769606A337
-Authentication-Results: smtp.subspace.kernel.org; dmarc=pass (p=quarantine dis=none) header.from=mediatek.com
-Authentication-Results: smtp.subspace.kernel.org; spf=pass smtp.mailfrom=mediatek.com
+	by smtp.subspace.kernel.org (Postfix) with ESMTPS id E6B06606A323;
+	Thu, 26 Nov 2026 08:32:28 +0000 (UTC)
+DMARC-Filter: OpenDMARC Filter v1.4.2 smtp.subspace.kernel.org E6B06606A323
+Authentication-Results: smtp.subspace.kernel.org; dmarc=pass (p=none dis=none) header.from=ph4ntom-rev.uz
+Authentication-Results: smtp.subspace.kernel.org; spf=pass smtp.mailfrom=ph4ntom-rev.uz
 Authentication-Results: smtp.subspace.kernel.org;
-	dkim=pass (1024-bit key, unprotected) header.d=mediatek.com header.i=@mediatek.com header.a=rsa-sha256 header.s=dk header.b=rjdavGw7
-X-UUID: a91f3864e97211f1b9cf3d4034dccee2-20261126
-DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed; d=mediatek.com; s=dk;
-	h=Content-Type:Content-Transfer-Encoding:MIME-Version:Message-ID:Date:Subject:CC:To:From; bh=cAaY/L0jicDyYPc/8PaLpndAdaujM+s27PpGmxriTQs=;
-	b=rjdavGw73GSoSUXqvghmlOgJF9mhsvPiMuSotGqdn5yJJx+82BvFlV3+fTrRIgDpL4bvoF5xXruxCakJYGbgQxfmSIyWMrsZnTVDxVjk3dJHIo15YRj5fnFocDyghNkc+tdrsFhht/UiUkWmrKAxrrw6KdOq9oyQgLbwmh3T1Fg=;
-X-CID-P-RULE: Release_Ham
-X-CID-O-INFO: VERSION:1.3.21,REQID:7d052faa-5c79-49df-828e-3a563e407b12,IP:0,U
-	RL:0,TC:0,Content:0,EDM:0,RT:0,SF:0,FILE:0,BULK:0,RULE:Release_Ham,ACTION:
-	release,TS:0
-X-CID-META: VersionHash:b0318ac,CLOUDID:53ebc7bf-1c10-4783-912c-2488aa105b1f,B
-	ulkID:nil,BulkQuantity:0,SF:102|836|865|888|898,TC:-5,Content:0|15|50|99,E
-	DM:-3,IP:nil,URL:0,File:130,RT:0,Bulk:nil,QS:nil,BEC:nil,COL:0,OSI:0,OSA:0
-	,AV:0,LES:1,SPR:NO,DKR:0,DKP:0,BRR:0,BRE:0,ARC:0
-X-CID-BVR: 2,SSN|SDN
-X-CID-BAS: 2,SSN|SDN,0,_
-X-CID-FACTOR: TF_CID_SPAM_SNR
-X-CID-RHF: D41D8CD98F00B204E9800998ECF8427E
-X-UUID: a91f3864e97211f1b9cf3d4034dccee2-20261126
-Received: from mtkmbs09n1.mediatek.inc [(172.21.101.35)] by mailgw01.mediatek.com
-	(envelope-from <eason.lai@mediatek.com>)
-	(Generic MTA with TLSv1.2 ECDHE-RSA-AES256-GCM-SHA384 256/256)
-	with ESMTP id 107302628; Thu, 26 Nov 2026 16:23:29 +0800
-Received: from mtkmbs11n2.mediatek.inc (172.21.101.187) by
- mtkmbs13n1.mediatek.inc (172.21.101.193) with Microsoft SMTP Server
- (version=TLS1_2, cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id
- 15.2.2562.56; Thu, 26 Nov 2026 16:23:28 +0800
-Received: from mtksitap99.mediatek.inc (10.233.130.16) by
- mtkmbs11n2.mediatek.inc (172.21.101.73) with Microsoft SMTP Server id
- 15.2.2562.56 via Frontend Transport; Thu, 26 Nov 2026 16:23:28 +0800
-From: Eason Lai <eason.lai@mediatek.com>
-To: <nbd@nbd.name>, <lorenzo@kernel.org>
-CC: <linux-wireless@vger.kernel.org>, <linux-mediatek@lists.infradead.org>,
-	<kun.wu@mediatek.com>, <deren.wu@mediatek.com>, <sean.wang@mediatek.com>,
-	<quan.zhou@mediatek.com>, <ryder.lee@mediatek.com>, <leon.yen@mediatek.com>,
-	<litien.chang@mediatek.com>, <jb.tsai@mediatek.com>,
-	<eason.lai@mediatek.com>, Anthony Liu <anthony.liu@mediatek.com>
-Subject: [PATCH v1] wifi: mt76: fix possible NULL access in mt76_tx
-Date: Thu, 26 Nov 2026 16:22:28 +0800
-Message-ID: <20261126082228.3226934-1-eason.lai@mediatek.com>
-X-Mailer: git-send-email 2.45.2
+	dkim=pass (2048-bit key, unprotected) header.d=ph4ntom-rev.uz header.i=@ph4ntom-rev.uz header.a=rsa-sha256 header.s=zoho header.b=w6j9Y+ZS
+ARC-Seal: i=1; a=rsa-sha256; t=1795681934; cv=none; 
+	d=zohomail.com; s=zohoarc; 
+	b=O1GA5YnG5DPJLCKeGk/wemwjdyJ0tN/9VIODMWDPsjtEYWS4A8NDdPOUbPFgtd73mgFJaUB/wNoP9M4JeFZ+LONN/NLBWDW2uweAM+gOgedR9QiWrllxuEaMMZ1lmG32sy2bdgiIkpBqKKr1A4fHy3U0m9V4Qca2v5gNoIKSKAs=
+ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=zohomail.com; s=zohoarc; 
+	t=1795681934; h=Content-Transfer-Encoding:Cc:Cc:Date:Date:From:From:MIME-Version:Message-ID:Subject:Subject:To:To:Message-Id:Reply-To; 
+	bh=TaON/7ceRuHwzhJ+NepJEX25n+5RZ9JBg0bJv2TdRiA=; 
+	b=eT1KwFih2eZ/1Kdp5sm6uv94ZQTVYR3gGNDPsRwtW5jFfXRbDsTnmP1QuIB2FVmr+LNqWlQF2v9SoyXfYOUWmrV6bOMjNBT2C7C8qGbsiOrCbSFVut+iYYcg0hHSZRjPM5GanDEoWrvYFJ7nKYyUL8iJI0TV/0Y/VgFv1q+wK20=
+ARC-Authentication-Results: i=1; mx.zohomail.com;
+	dkim=pass  header.i=ph4ntom-rev.uz;
+	spf=pass  smtp.mailfrom=owner@ph4ntom-rev.uz;
+	dmarc=pass header.from=<owner@ph4ntom-rev.uz>
+DKIM-Signature: a=rsa-sha256; b=w6j9Y+ZS5ysfu9gPZSOHN9dU/7SmXwubmo03hhmdUh138Cho2NyRqYQU+uE372JdsJHEZclkjVbQxLZfDKn2DT1P7p1XA1RGweu6LZj5QHANlNyKOfXTn+UkhhJx7qXw+ixJ5xzMdRLb+XxM5rA7/TpfDhxtT1VsahMwb+w4rt5VjiBrbtBNtRg9TwfyQuynMc4M7kTxuvTR+uV9ixP80S4QEWyMSqqgIzUthoaFct0JDvFYVJg+Vyl2i2zPgu+yHKQSFycmRRxcC51yAOtNNMgz7uuUlAtS3YvRljjewRlgzGFgKOVzGomKz6BuXrXMHFQGGn9byAt2iErITnHSvQ==; c=relaxed/relaxed; s=zoho; d=ph4ntom-rev.uz; v=1; bh=TaON/7ceRuHwzhJ+NepJEX25n+5RZ9JBg0bJv2TdRiA=; h=Content-Description:Content-ID:Content-Type:Content-Transfer-Encoding:Cc:Date:From:In-Reply-To:List-Subscribe:List-Post:List-Owner:List-Id:List-Archive:List-Help:List-Unsubscribe:MIME-Version:Message-ID:Resent-Sender:Resent-Cc:Resent-Date:Resent-To:Reply-To:Resent-Message-ID:Resent-From:Sender:Subject:To:Date:From:Message-Id:Reply-To:Subject:To:Cc;
+Received: by smtp.zohomail.com with SMTPS id 1795681932571455.8790720297171;
+	Thu, 26 Nov 2026 00:32:12 -0800 (PST)
+From: Enver Ikromov <owner@ph4ntom-rev.uz>
+To: Ping-Ke Shih <pkshih@realtek.com>
+Cc: linux-wireless@vger.kernel.org,
+	Ahmet Zeren <niko3x@proton.me>,
+	Luka Gejak <luka.gejak@linux.dev>,
+	Bitterblue Smith <rtl8821cerfe2@gmail.com>,
+	linux-kernel@vger.kernel.org,
+	Enver Ikromov <owner@ph4ntom-rev.uz>
+Subject: [PATCH rtw-next 0/2] wifi: rtw89: fix injected retry limit and NO_ACK TX status
+Date: Thu, 26 Nov 2026 13:31:39 +0500
+Message-ID: <20261126083141.1470-1-owner@ph4ntom-rev.uz>
+X-Mailer: git-send-email 2.56.0.windows.4
 X-Mailing-List: linux-wireless@vger.kernel.org
 List-Id: <linux-wireless.vger.kernel.org>
 List-Post: <mailto:linux-wireless@vger.kernel.org>
@@ -83,39 +69,44 @@ List-Owner: <mailto:linux-wireless+owner@vger.kernel.org>
 Precedence: list
 MIME-Version: 1.0
 Content-Transfer-Encoding: 8bit
-Content-Type: text/plain
+X-ZohoMailClient: External
 
-Add WARN_ON(!wcid) early return and drop redundant wcid NULL check
+This two-patch series fixes three follow-up issues in commit
+92608bb5f14f ("wifi: rtw89: honor ASSIGN_SEQ, retries, and NO_ACK for
+injected frames") reported by Luka Gejak and Ahmet Zeren during the
+rtw88 injection review, along with the matching pre-existing NO_ACK TX
+status issue on the PCIe completion path.
 
-Co-developed-by: Anthony Liu <anthony.liu@mediatek.com>
-Signed-off-by: Anthony Liu <anthony.liu@mediatek.com>
-Signed-off-by: Eason Lai <eason.lai@mediatek.com>
----
- drivers/net/wireless/mediatek/mt76/tx.c | 4 ++--
- 1 file changed, 2 insertions(+), 2 deletions(-)
+Patch 1 gates the per-packet retry override in
+rtw89_core_tx_update_injection() on IEEE80211_TX_CTRL_RATE_INJECT, caps
+hw->max_rate_tries at IEEE80211_MAX_TX_RETRY (31) so the 5-bit
+ieee80211_tx_rate::count field does not wrap around, and makes
+IEEE80211_TX_STAT_NOACK_TRANSMITTED and IEEE80211_TX_STAT_ACK mutually
+exclusive in rtw89_tx_rpt_tx_status() while accounting for Wi-Fi 6 AX
+unicast NO_ACK completions (RTW89_TX_RETRY_LIMIT with tx_cnt_lmt = 1)
+and excluding dropped frames (RTW89_TX_MACID_DROP / RTW89_TX_LIFE_TIME).
 
-diff --git a/drivers/net/wireless/mediatek/mt76/tx.c b/drivers/net/wireless/mediatek/mt76/tx.c
-index d8036466f495..2be43d05c9af 100644
---- a/drivers/net/wireless/mediatek/mt76/tx.c
-+++ b/drivers/net/wireless/mediatek/mt76/tx.c
-@@ -377,7 +377,7 @@ mt76_tx(struct mt76_phy *phy, struct ieee80211_sta *sta,
- 	struct mt76_dev *dev = phy->dev;
- 	struct sk_buff_head *head;
- 
--	if (mt76_testmode_enabled(phy)) {
-+	if (WARN_ON(!wcid) || mt76_testmode_enabled(phy)) {
- 		ieee80211_free_txskb(phy->hw, skb);
- 		return;
- 	}
-@@ -385,7 +385,7 @@ mt76_tx(struct mt76_phy *phy, struct ieee80211_sta *sta,
- 	if (WARN_ON(skb_get_queue_mapping(skb) >= MT_TXQ_PSD))
- 		skb_set_queue_mapping(skb, MT_TXQ_BE);
- 
--	if (wcid && !(wcid->tx_info & MT_WCID_TX_INFO_SET))
-+	if (!(wcid->tx_info & MT_WCID_TX_INFO_SET))
- 		ieee80211_get_tx_rates(info->control.vif, sta, skb,
- 				       info->control.rates, 1);
- 
+Patch 2 applies the same NO_ACK TX status and ring counter handling to
+rtw89_pci_tx_status() in pci.c, which handles TX completions on PCIe
+devices.
+
+Tested on RTL8852AE (10ec:8852, firmware 0.13.36.2) at 5 GHz using
+raw radiotap injection, tracefs kprobes, and hardware RPP completion
+telemetry across supported/unsupported radiotap rates, retry counts
+0..32, and broadcast, QoS No-Ack, and unicast NO_ACK frames.
+
+Enver Ikromov (2):
+  wifi: rtw89: fix retry limit and NO_ACK status for injected frames
+  wifi: rtw89: pci: fix TX status and counters for NO_ACK frames
+
+ drivers/net/wireless/realtek/rtw89/core.c |  5 +++--
+ drivers/net/wireless/realtek/rtw89/core.h |  1 -
+ drivers/net/wireless/realtek/rtw89/mac.h  | 13 ++++++++-----
+ drivers/net/wireless/realtek/rtw89/pci.c  |  7 +++++--
+ 4 files changed, 16 insertions(+), 10 deletions(-)
+
+
+base-commit: 18d0bedbb5f0538396cb7f763ed9cd1dd69c5b23
 -- 
-2.45.2
+2.53.0
 
