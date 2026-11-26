@@ -1,66 +1,77 @@
-Authentication-Results: smtp.subspace.kernel.org; arc=pass header.oldest-pass=0 smtp.remote-ip=165.173.182.54
-ARC-Seal: i=2; d=subspace.kernel.org; s=arc20261015; a=rsa-sha256; cv=pass;
-	t=1795682041;
-	b=x1F4iAYdPtwfziDjn9uvfDsXISEKPcDBFk/ARF3/PdISImI+fSnzNrpmujkb739aFxL5
-	 nzPrYRCk/ZPUw3flZShrBG1q1VntST6JSGm7TVyPEMFzKi8+laGNMbFg8/LeKeRZNLcvg
-	 KUF8qA/gujJF17g3j4GGq6cBkIo+fv38vLOGIsDoWzC+0L2EDOnJ3Iqk4xB5RBxuD41gT
-	 3vZwHPFur3AjpOUd/o9UzYOwtFTajzY3KnAZTs1xi4O0+ZSuzXVfPW4WYz4nlvu33KlP/
-	 jBHHcUoSJzg/NrJW4vc6WjO2rPN+Oh98MaowWqYFQzG9kVgCtCypz0BC1ywqpL4zbpg==
-ARC-Message-Signature: i=2; d=subspace.kernel.org; s=arc20261015;
-	a=rsa-sha256; c=relaxed/relaxed; t=1795682041;
-	h=DMARC-Filter:DKIM-Signature:Received:From:To:Cc:Subject:Date:
-	 Message-ID:X-Mailer:In-Reply-To:References:MIME-Version:
-	 Content-Transfer-Encoding:X-ZohoMailClient;
-	bh=pNBL3P/+inYfgJZvhOShryqL1GH9tWM7hk/gc88KJvU=;
-	b=0L6oG+9d7lORpVsGVJTRqYQADpAzVmpYEKyPqG+er7w6/SycwWrpGqxIa0B5P7IYbimV
-	 Bc77NkxgA5pvuzaDRLjxHzdJyxz71UfAmoYogzjSQ1gA3MoRmSSsU7CKVbRymJif85Y9H
-	 jpbpSACSK5Hrgo7Th5KIcaNzEhLq8+IEohmQdZvR2PJJAKeBM6zzGiR3P/IANV9LmQHXW
-	 ZNomZ+2WkygFieYbhYJRtJEu6mUNLIWgkVKf9xgmeTUYgkzu+3Q3z7gEG0kfqdrf3PWZc
-	 CWsrJTaNoT06LPHc69tC9fZZ0u1pu21f/EP5wD+yFvQbx/YhqaU10pTw4Jzu+meaSBw==
-ARC-Authentication-Results: i=2; smtp.subspace.kernel.org; 
-	dmarc=pass header.from=ph4ntom-rev.uz;
-	spf=pass smtp.mailfrom=ph4ntom-rev.uz;
-	dkim=pass header.d=ph4ntom-rev.uz header.i=@ph4ntom-rev.uz header.a=rsa-sha256 header.s=zoho header.b=LKdtJTqJ;
-	arc=pass header.oldest-pass=0 smtp.remote-ip=165.173.182.54
-Received: from sender5-of-o54.zoho.com (sender5-of-o54.zoho.com [165.173.182.54])
+Authentication-Results: smtp.subspace.kernel.org; arc=none smtp.remote-ip=210.61.82.184
+ARC-Seal: i=1; d=subspace.kernel.org; s=arc20261015; a=rsa-sha256; cv=none;
+	t=1795682241;
+	b=Mg/5d6SEsKJ24lz8kOzbPgQKP6kfHcjCR6gdyh4Y6KpAOboiSniUj8kOxIfXb+Dg9ABL
+	 0PWmr1D/nilgwqvR5028J8E5jLqggwCi+fExhrr1Raly0YfpTsuCDG2MV1R+94L2UYJqu
+	 6KP+0RloPtVGLKmGXo9y117XLVmqmmSKx1xSZXn+3w8tdeZtxLc5mdzRbBXAp1/MqFm92
+	 GTWABZG5AbV5NODoamFvMD/vcRHdQ1mH2sAFjUKkIui/g2Gt4ncIJrfkEGXXGkLe0wDbA
+	 WJ7VNF4cAw5xygpwnGUc/CiAI/gdgAnF/hzT6QrDg3YuTGv8CFpsywEKrZtHd8vAYpw==
+ARC-Message-Signature: i=1; d=subspace.kernel.org; s=arc20261015;
+	a=rsa-sha256; c=relaxed/relaxed; t=1795682241;
+	h=DMARC-Filter:X-UUID:DKIM-Signature:X-CID-P-RULE:X-CID-O-INFO:
+	 X-CID-META:X-CID-BVR:X-CID-BAS:X-CID-FACTOR:X-CID-RHF:X-UUID:Received:
+	 Received:Received:From:To:CC:Subject:Date:Message-ID:X-Mailer:
+	 MIME-Version:Content-Transfer-Encoding:Content-Type;
+	bh=Bit7+xI+ixQfSVMvEjBWwMfRYpy/Ac7be8rBx7t5aU4=;
+	b=hEkH6RavOHerpEpz/CICMgCCxlPVwqOrzm48KJyZl/FlmK3MPPFdrVWNCBoHimCgBZGT
+	 0LvEa0Fgl4GhNM35onQihm0DEhZbfXh7bb8Z6ojCYSwLc7HgWvGVFzGvbLffEVr76FM22
+	 oOfmEjjfrpWTJeiJgpnbrKY1DN2t5g1ITUNv2g0pcN+j4WM+YDVHF0cMOR5OjDlf6smob
+	 4ZuSwDdm+XtpzLasbHsBdEhQJ7fFgdmSSmnZn+YvIH3uYdwwxOYDS8SVR38lhe9DbJaJM
+	 tlYSzzAyCBkCuOivwLo2uqUZ/gMDTkqI2vrFGiLIGOgHRdNtpqvPX1FLgyTv6r3LN0g==
+ARC-Authentication-Results: i=1; smtp.subspace.kernel.org; 
+	dmarc=pass header.from=mediatek.com;
+	spf=pass smtp.mailfrom=mediatek.com;
+	dkim=pass header.d=mediatek.com header.i=@mediatek.com header.a=rsa-sha256 header.s=dk header.b=NMSXsWq5;
+	arc=none smtp.remote-ip=210.61.82.184
+Received: from mailgw02.mediatek.com (unknown [210.61.82.184])
 	(using TLSv1.3 with cipher TLS_AES_256_GCM_SHA384 (256/256 bits)
 	 key-exchange X25519 server-signature ECDSA (prime256v1) server-digest SHA256)
 	(No client certificate requested)
-	by smtp.subspace.kernel.org (Postfix) with ESMTPS id 4E875606A326;
-	Thu, 26 Nov 2026 08:34:00 +0000 (UTC)
-DMARC-Filter: OpenDMARC Filter v1.4.2 smtp.subspace.kernel.org 4E875606A326
-Authentication-Results: smtp.subspace.kernel.org; dmarc=pass (p=none dis=none) header.from=ph4ntom-rev.uz
-Authentication-Results: smtp.subspace.kernel.org; spf=pass smtp.mailfrom=ph4ntom-rev.uz
+	by smtp.subspace.kernel.org (Postfix) with ESMTPS id 432EF606A31C
+	for <linux-wireless@vger.kernel.org>; Thu, 26 Nov 2026 08:37:19 +0000 (UTC)
+DMARC-Filter: OpenDMARC Filter v1.4.2 smtp.subspace.kernel.org 432EF606A31C
+Authentication-Results: smtp.subspace.kernel.org; dmarc=pass (p=quarantine dis=none) header.from=mediatek.com
+Authentication-Results: smtp.subspace.kernel.org; spf=pass smtp.mailfrom=mediatek.com
 Authentication-Results: smtp.subspace.kernel.org;
-	dkim=pass (2048-bit key) header.d=ph4ntom-rev.uz header.i=@ph4ntom-rev.uz header.a=rsa-sha256 header.s=zoho header.b=LKdtJTqJ
-ARC-Seal: i=1; a=rsa-sha256; t=1795681940; cv=none; 
-	d=zohomail.com; s=zohoarc; 
-	b=epiFBxFEaGlDz5SbwPZR7exWMtQgTPR6iU7SpILrXW78z91kT2R4amns3/AfdoUSffZGPLnC1Q0YFq/srsO8oYX3eihUlGcxEKzBPOFUpyXL37G3YXiXf3ikhGc5u0Fej5vt1kGf9+V6K2vKKzJ0lkHZlgOweponU9xVpRZ5veo=
-ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=zohomail.com; s=zohoarc; 
-	t=1795681940; h=Content-Transfer-Encoding:Cc:Cc:Date:Date:From:From:In-Reply-To:MIME-Version:Message-ID:Subject:Subject:To:To:Message-Id:Reply-To; 
-	bh=pNBL3P/+inYfgJZvhOShryqL1GH9tWM7hk/gc88KJvU=; 
-	b=iP9ZAoxYmnOnscJbY0CSvUZ0lCiN4LXfT9R9NB09YF4nO8BNeKpjQjE5OKZgLvFLi4E1973krunyBEac6NZZj0DQWFY0qI4rjdc9k1n2iRx99ykt2jdogijLAIHdCN7Sm909Mo+4I3qjZqjQmnR2LG0NbjSHLgjrvBvkoCsDTUY=
-ARC-Authentication-Results: i=1; mx.zohomail.com;
-	dkim=pass  header.i=ph4ntom-rev.uz;
-	spf=pass  smtp.mailfrom=owner@ph4ntom-rev.uz;
-	dmarc=pass header.from=<owner@ph4ntom-rev.uz>
-DKIM-Signature: a=rsa-sha256; b=LKdtJTqJTYk4Zit5VPcdQ0enGQwlGHeMB3m8VnMwpO68JvhsTKD5+EdsDEPdwb2yF1LAZAJ+AzVgELLikZKA2aumQZBXITrQKDgRWoTBMEVHK4X3KlWKy9JyoxDuRKxTdFXmmZjPxV5C0ok+NMVc87S5T8ma6qq56nlQ0m+94kL0iw7XN4XdfAqBPEDqKlj1TkRCbKfU/e90jmV++S4f6yYTI2hlqRADN+amH3/jlyMNUETVJJ9DlptHK5uFhQ7yEMjn8++AWOvkMpA21PVYEBty+zj2fuW6KQiNhNGblIGEqBYCseC4CiaON/XrSkKiYubENN9xoqTzqxfRk1FRsw==; c=relaxed/relaxed; s=zoho; d=ph4ntom-rev.uz; v=1; bh=pNBL3P/+inYfgJZvhOShryqL1GH9tWM7hk/gc88KJvU=; h=Content-Description:Content-ID:Content-Type:Content-Transfer-Encoding:Cc:Date:From:In-Reply-To:List-Subscribe:List-Post:List-Owner:List-Id:List-Archive:List-Help:List-Unsubscribe:MIME-Version:Message-ID:Resent-Sender:Resent-Cc:Resent-Date:Resent-To:Reply-To:Resent-Message-ID:Resent-From:Sender:Subject:To:Date:From:Message-Id:Reply-To:Subject:To:Cc;
-Received: by smtp.zohomail.com with SMTPS id 1795681938821740.2867409957028;
-	Thu, 26 Nov 2026 00:32:18 -0800 (PST)
-From: Enver Ikromov <owner@ph4ntom-rev.uz>
-To: Ping-Ke Shih <pkshih@realtek.com>
-Cc: linux-wireless@vger.kernel.org,
-	Ahmet Zeren <niko3x@proton.me>,
-	Luka Gejak <luka.gejak@linux.dev>,
-	Bitterblue Smith <rtl8821cerfe2@gmail.com>,
-	linux-kernel@vger.kernel.org,
-	Enver Ikromov <owner@ph4ntom-rev.uz>
-Subject: [PATCH rtw-next 2/2] wifi: rtw89: pci: fix TX status and counters for NO_ACK frames
-Date: Thu, 26 Nov 2026 13:31:41 +0500
-Message-ID: <20261126083141.1470-3-owner@ph4ntom-rev.uz>
-X-Mailer: git-send-email 2.56.0.windows.4
-In-Reply-To: <20261126083141.1470-1-owner@ph4ntom-rev.uz>
-References: <20261126083141.1470-1-owner@ph4ntom-rev.uz>
+	dkim=pass (1024-bit key, unprotected) header.d=mediatek.com header.i=@mediatek.com header.a=rsa-sha256 header.s=dk header.b=NMSXsWq5
+X-UUID: 95c04996e97411f1a7aecdb2598be72c-20261126
+DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed; d=mediatek.com; s=dk;
+	h=Content-Type:Content-Transfer-Encoding:MIME-Version:Message-ID:Date:Subject:CC:To:From; bh=Bit7+xI+ixQfSVMvEjBWwMfRYpy/Ac7be8rBx7t5aU4=;
+	b=NMSXsWq58DjBv4yI1IhSJMNNkYX6IVgPI0WCFOCDICvEY/3oiUO7FBG8ULrgnh8D7SQP2UY/8KvIpBhIltJq6vBO/k3Gd9JVVDdKUMnMNC7l9cTF8JEQmgSu2SmvRxq50pP8qnkGWp6NLABaHpoMNjYuFu5sh4SYYeCEPw0Smy0=;
+X-CID-P-RULE: Release_Ham
+X-CID-O-INFO: VERSION:1.3.21,REQID:38da4c48-9743-4e42-a691-224ca7d18094,IP:0,U
+	RL:0,TC:0,Content:-5,EDM:0,RT:0,SF:0,FILE:0,BULK:0,RULE:Release_Ham,ACTION
+	:release,TS:-5
+X-CID-META: VersionHash:b0318ac,CLOUDID:ab025f31-f289-4656-bb36-27baf4489f11,B
+	ulkID:nil,BulkQuantity:0,SF:102|136|836|865|888|898,TC:-5,Content:0|15|50|
+	99,EDM:-3|-100,IP:nil,URL:0,File:130,RT:0,Bulk:nil,QS:nil,BEC:nil,COL:0,OS
+	I:0,OSA:0,AV:0,LES:1,SPR:NO,DKR:0,DKP:0,BRR:0,BRE:0,ARC:0
+X-CID-BVR: 2,SSN|SDN
+X-CID-BAS: 2,SSN|SDN,0,_
+X-CID-FACTOR: TF_CID_SPAM_SNR
+X-CID-RHF: D41D8CD98F00B204E9800998ECF8427E
+X-UUID: 95c04996e97411f1a7aecdb2598be72c-20261126
+Received: from mtkmbs13n1.mediatek.inc [(172.21.101.193)] by mailgw02.mediatek.com
+	(envelope-from <eason.lai@mediatek.com>)
+	(Generic MTA with TLSv1.2 ECDHE-RSA-AES256-GCM-SHA384 256/256)
+	with ESMTP id 62522172; Thu, 26 Nov 2026 16:37:16 +0800
+Received: from mtkmbs11n2.mediatek.inc (172.21.101.187) by
+ MTKMBS14N2.mediatek.inc (172.21.101.76) with Microsoft SMTP Server
+ (version=TLS1_2, cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id
+ 15.2.2562.56; Thu, 26 Nov 2026 16:37:14 +0800
+Received: from mtksitap99.mediatek.inc (10.233.130.16) by
+ mtkmbs11n2.mediatek.inc (172.21.101.73) with Microsoft SMTP Server id
+ 15.2.2562.56 via Frontend Transport; Thu, 26 Nov 2026 16:37:14 +0800
+From: Eason Lai <eason.lai@mediatek.com>
+To: <nbd@nbd.name>, <lorenzo@kernel.org>
+CC: <linux-wireless@vger.kernel.org>, <linux-mediatek@lists.infradead.org>,
+	<kun.wu@mediatek.com>, <deren.wu@mediatek.com>, <sean.wang@mediatek.com>,
+	<quan.zhou@mediatek.com>, <ryder.lee@mediatek.com>, <leon.yen@mediatek.com>,
+	<litien.chang@mediatek.com>, <jb.tsai@mediatek.com>, <eason.lai@mediatek.com>
+Subject: [PATCH v1] wifi: mt76: mt7928: fix uninitialized rate_info for CCK/OFDM tx status
+Date: Thu, 26 Nov 2026 16:37:12 +0800
+Message-ID: <20261126083712.3235059-1-eason.lai@mediatek.com>
+X-Mailer: git-send-email 2.45.2
 X-Mailing-List: linux-wireless@vger.kernel.org
 List-Id: <linux-wireless.vger.kernel.org>
 List-Post: <mailto:linux-wireless@vger.kernel.org>
@@ -71,50 +82,33 @@ List-Owner: <mailto:linux-wireless+owner@vger.kernel.org>
 Precedence: list
 MIME-Version: 1.0
 Content-Transfer-Encoding: 8bit
-X-ZohoMailClient: External
+Content-Type: text/plain
 
-In rtw89_pci_tx_status(), IEEE80211_TX_STAT_NOACK_TRANSMITTED is set
-unconditionally whenever IEEE80211_TX_CTL_NO_ACK is present, even when
-the frame was dropped (RTW89_TX_MACID_DROP or RTW89_TX_LIFE_TIME)
-without being transmitted. In addition, when a NO_ACK frame completes
-with RTW89_TX_DONE (broadcast, QoS No-Ack, or Wi-Fi 7 BE NO_ACK), the
-subsequent RTW89_TX_DONE branch also sets IEEE80211_TX_STAT_ACK and
-increments tx_ring->tx_acked, whereas unacknowledged Wi-Fi 6 AX unicast
-NO_ACK frames (tx_cnt_lmt = 1) complete with RTW89_TX_RETRY_LIMIT and
-fall into the failure path.
+The data rate variable is not initialized to zero, which can lead to
+reporting garbage/incorrect data rates to cfg80211 when handling
+CCK or OFDM rates.
 
-Clear stale TX status bits and set IEEE80211_TX_STAT_NOACK_TRANSMITTED
-exclusively when a NO_ACK frame completes with RTW89_TX_DONE or
-RTW89_TX_RETRY_LIMIT, reserving IEEE80211_TX_STAT_ACK and
-tx_ring->tx_acked for non-NO_ACK completions while still accounting
-RTW89_TX_LIFE_TIME and RTW89_TX_MACID_DROP as failures.
-
-Fixes: e3ec7017f6a2 ("rtw89: add Realtek 802.11ax driver")
-Cc: stable@vger.kernel.org
-Signed-off-by: Enver Ikromov <owner@ph4ntom-rev.uz>
+Fixes: 5e738c59e028 ("wifi: mt76: mt7925: add MT7928 TXD/TXS/TX_DONE support")
+Signed-off-by: Eason Lai <eason.lai@mediatek.com>
 ---
- drivers/net/wireless/realtek/rtw89/pci.c | 7 +++++--
- 1 file changed, 5 insertions(+), 2 deletions(-)
+ drivers/net/wireless/mediatek/mt76/mt7925/mac.c | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
 
-diff --git a/drivers/net/wireless/realtek/rtw89/pci.c b/drivers/net/wireless/realtek/rtw89/pci.c
-index 76523d057..2204ed8c5 100644
---- a/drivers/net/wireless/realtek/rtw89/pci.c
-+++ b/drivers/net/wireless/realtek/rtw89/pci.c
-@@ -470,9 +470,12 @@ static void rtw89_pci_tx_status(struct rtw89_dev *rtwdev,
- 	info = IEEE80211_SKB_CB(skb);
- 	ieee80211_tx_info_clear_status(info);
- 
--	if (info->flags & IEEE80211_TX_CTL_NO_ACK)
-+	info->flags &= ~(IEEE80211_TX_STAT_NOACK_TRANSMITTED |
-+			 IEEE80211_TX_STAT_ACK);
-+	if ((info->flags & IEEE80211_TX_CTL_NO_ACK) &&
-+	    (tx_status == RTW89_TX_DONE || tx_status == RTW89_TX_RETRY_LIMIT)) {
- 		info->flags |= IEEE80211_TX_STAT_NOACK_TRANSMITTED;
--	if (tx_status == RTW89_TX_DONE) {
-+	} else if (tx_status == RTW89_TX_DONE) {
- 		info->flags |= IEEE80211_TX_STAT_ACK;
- 		tx_ring->tx_acked++;
- 	} else {
+diff --git a/drivers/net/wireless/mediatek/mt76/mt7925/mac.c b/drivers/net/wireless/mediatek/mt76/mt7925/mac.c
+index 1adec01f6832..afddeecc3002 100644
+--- a/drivers/net/wireless/mediatek/mt76/mt7925/mac.c
++++ b/drivers/net/wireless/mediatek/mt76/mt7925/mac.c
+@@ -1137,9 +1137,9 @@ mt7928_mac_add_txs_skb_msg(struct mt792x_dev *dev, struct mt76_wcid *wcid,
+ 	struct ieee80211_supported_band *sband;
+ 	struct mt76_dev *mdev = &dev->mt76;
+ 	struct ieee80211_tx_info *info;
++	struct rate_info rate = {};
+ 	struct sk_buff_head list;
+ 	u32 txrate, mode, stbc;
+-	struct rate_info rate;
+ 	struct mt76_phy *mphy;
+ 	struct sk_buff *skb;
+ 	bool cck = false;
 -- 
-2.53.0
+2.45.2
 
