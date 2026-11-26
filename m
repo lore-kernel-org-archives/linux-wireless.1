@@ -1,96 +1,97 @@
-Authentication-Results: smtp.subspace.kernel.org; arc=none smtp.remote-ip=209.85.219.48
+Authentication-Results: smtp.subspace.kernel.org; arc=none smtp.remote-ip=209.85.221.43
 ARC-Seal: i=1; d=subspace.kernel.org; s=arc20261015; a=rsa-sha256; cv=none;
-	t=1795670517;
-	b=xvNA60sSrJ3TgVGL7OkbA5uQ2RsL3ZmhcW/kzvD5M6lyfiUC+x+DzyUkyHP4OCEWttLX
-	 e9m0vpxbTarSh3qUR1YDJ5npDE9QPKyN/4t2NfdrfJk3oV0KCq8mKd0GWB+vuDNkR7CNH
-	 YxBdrfRtq/oNg5wH40Tw25jGyvRgUHZtDvlkTyLFB5ZmtQ/+TIPk6LPvloBtxM1ucJztr
-	 TejzvcEa0RmdycuXK6r+WqvFmmE0Gl6q5PXpBSLv5UwWaK56XSdMmulUyhmcVITvBucys
-	 gmp2HBSA+QnZszOi53U3bAbn+2TNUDZXSV3pwsw1hXqkUgNj9jJudE7xCnciQp1HsNA==
+	t=1795671833;
+	b=vCltun1FCHXGsIWwlsiHd7OO4Bp/uQK0rl/6KtTPT4grivFUzegytb4Du41begOVj3Ok
+	 W3jBQbeDgHeIfRAaLS31Q5xl6Y5UzLrsAwIbz6mvDJSmlXF7RjdpWoillWf05TowHVmUD
+	 J+rn58sbnsqNBATjvsGfSg1DQdPof3hS8mjVrAvkWI+K/pEzacLbEUCMDggRf1jt9r10k
+	 mYrwNEZqXOrCNu7FTN2ctazesxkCjCBdltPQajaCrmY9pkh+Am+MVbQ2DAv/hGHgjmGCA
+	 0cSh8cBeyPhWY5psCmnGrwqEpE++KXi2WDSPUa/zPndcb4rp1Eao26HbOYNw6ZvvLoQ==
 ARC-Message-Signature: i=1; d=subspace.kernel.org; s=arc20261015;
-	a=rsa-sha256; c=relaxed/relaxed; t=1795670517;
+	a=rsa-sha256; c=relaxed/relaxed; t=1795671833;
 	h=DMARC-Filter:Received:DKIM-Signature:X-Google-DKIM-Signature:
 	 X-Forwarded-Encrypted:X-Gm-Message-State:X-Gm-Gg:X-Received:Received:
 	 From:To:Cc:Subject:Date:Message-ID:X-Mailer:In-Reply-To:References:
 	 MIME-Version:Content-Transfer-Encoding;
-	bh=jmEf0yH7FsMTPktYvAASxGJFnmS9uWTCWfNcUEtxpy8=;
-	b=hF0Go942CFUUVSjWoiIDXvK9tPOvS6zk+lqV0VKg+NWPKNM9LjTCiJTU2UpBREsu4A15
-	 LIywxmbjt/yRjp+R/wGKim5RdgaStYKVtXWEhQcGUCeviH18bmAoU/QUjAi79MovcbMd+
-	 PuALb4cCVvBgUtHomrFYNmFiGGaz/pvMjOAmldUYNWK37qeCeNQJ+WICQoB/sKLV/moST
-	 p5lz0XP5ueS0aAH5y+B7MvR/bOLj9vjgyyQAsM6AbXRRNwJJdFT41bCsJ50xkFefaE9/T
-	 jv1T881bvz2w3fc0CEpJ4GTfNXvJjZRQo/tdaI5qVAXVlP6GncwAWNKFopirLC4EArA==
+	bh=IjWEhqKblidu0NNXiwNq191cI1P0Mw4BZxYNdNdYS5Q=;
+	b=xECs2Y5UDeZTbPuNAncJUqClH4Z1LVJ/BVrnwz2zBOn+CZMGMj7mWJEY1ah7dwNCM7Xs
+	 ak5JeEjCwEy8h+rsykP5VOdBZTZTweo4vDoQpQqPWftZsyhTABn1PoLSRJHvQz+23C0t/
+	 ub+mvtag5/UQKJt3qm6cNQq/v8psWJ2sfYtXLEbnqhGLg2Ho433Y/SQfaiXXlodwn+bxR
+	 nyJSPyjmJSf+H8cisilWK3emXZHIf7328pdGVDCjExwV6fEqceRhJfzHsZjxqgXVSNaDb
+	 7PxOTKHOo9+3BA1gAkhYp4rv9LjBeFyUgVubJlYMhbHnk+dWSlP6W5aZ0SGBPzdHxSw==
 ARC-Authentication-Results: i=1; smtp.subspace.kernel.org; 
 	dmarc=pass header.from=gmail.com;
 	spf=pass smtp.mailfrom=gmail.com;
-	dkim=pass header.d=gmail.com header.i=@gmail.com header.a=rsa-sha256 header.s=20260707 header.b=i0PAkbFe;
-	arc=none smtp.remote-ip=209.85.219.48
-Received: from mail-qv1-f48.google.com (mail-qv1-f48.google.com [209.85.219.48])
+	dkim=pass header.d=gmail.com header.i=@gmail.com header.a=rsa-sha256 header.s=20260707 header.b=Ne3uzrdf;
+	arc=none smtp.remote-ip=209.85.221.43
+Received: from mail-wr1-f43.google.com (mail-wr1-f43.google.com [209.85.221.43])
 	(using TLSv1.3 with cipher TLS_AES_128_GCM_SHA256 (128/128 bits)
 	 key-exchange X25519 server-signature ECDSA (prime256v1) server-digest SHA256)
 	(No client certificate requested)
-	by smtp.subspace.kernel.org (Postfix) with ESMTPS id D9295606A31C
-	for <linux-wireless@vger.kernel.org>; Thu, 26 Nov 2026 05:21:56 +0000 (UTC)
-DMARC-Filter: OpenDMARC Filter v1.4.2 smtp.subspace.kernel.org D9295606A31C
+	by smtp.subspace.kernel.org (Postfix) with ESMTPS id 8E79E606A31E
+	for <linux-wireless@vger.kernel.org>; Thu, 26 Nov 2026 05:43:53 +0000 (UTC)
+DMARC-Filter: OpenDMARC Filter v1.4.2 smtp.subspace.kernel.org 8E79E606A31E
 Authentication-Results: smtp.subspace.kernel.org; dmarc=pass (p=none dis=none) header.from=gmail.com
 Authentication-Results: smtp.subspace.kernel.org; spf=pass smtp.mailfrom=gmail.com
 Authentication-Results: smtp.subspace.kernel.org;
-	dkim=pass (2048-bit key) header.d=gmail.com header.i=@gmail.com header.a=rsa-sha256 header.s=20260707 header.b=i0PAkbFe
-Received: by mail-qv1-f48.google.com with SMTP id 6a1803df08f44-92182125ec0so9034706d6.2
-        for <linux-wireless@vger.kernel.org>; Wed, 25 Nov 2026 21:21:56 -0800 (PST)
+	dkim=pass (2048-bit key) header.d=gmail.com header.i=@gmail.com header.a=rsa-sha256 header.s=20260707 header.b=Ne3uzrdf
+Received: by mail-wr1-f43.google.com with SMTP id ffacd0b85a97d-4a68190a2a7so5456747f8f.1
+        for <linux-wireless@vger.kernel.org>; Wed, 25 Nov 2026 21:43:53 -0800 (PST)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=gmail.com; s=20260707; t=1795670516; x=1796275316; darn=vger.kernel.org;
+        d=gmail.com; s=20260707; t=1795671832; x=1796276632; darn=vger.kernel.org;
         h=content-transfer-encoding:mime-version:references:in-reply-to
          :message-id:date:subject:cc:to:from:from:to:cc:subject:date
          :message-id:reply-to:content-type;
-        bh=jmEf0yH7FsMTPktYvAASxGJFnmS9uWTCWfNcUEtxpy8=;
-        b=i0PAkbFevbsFcvSvheGy2JFr1K/z0ppTvUQ0e0kfRYMpEDa6zgSsOjSAJ3v9x2z+jE
-         v4p9UhCeP9GtzonjeyGOhS1w8nq0IIvmN25w95Tx5hce3kbC9Am7I4hMC04EC5WnlGOt
-         KMRRYxfrpa84PJ9ImZqjde/CSOQXmXVh5vaObcz8reUUubAE1QW2T89HHtBLp+MwC9rB
-         m/f5dbuQ6gXAA2hCFxNSOtKWvwbCA7N0sf8DbSYqFAEr2gYomxNTUADDKWoraxPoQzLp
-         Cwr+b25u0h77ukhjDXoncMh6jy+fX5wS04UP4afvndfM2s344ihrH6GLCuQTPd/vttuq
-         kLkQ==
+        bh=IjWEhqKblidu0NNXiwNq191cI1P0Mw4BZxYNdNdYS5Q=;
+        b=Ne3uzrdf87dnpkAp3soaNtolLsKaWcbEirA3AeMcFFU0Ubn++8UUgemfvjN7MNVgb9
+         CgUdOlGvuATvWcm6aPL/7aJ6kaI+A+RkvcZtm6S7kAqMhu4ju/+bX51gryoMs9gCwSec
+         8SYvOV6pRpap2zoe2FeuereNjBGwsM1NSPOQRbUA+Dpc1fdICzIkqfFFloBgZRRNigIv
+         rOI6DmYxqoeFSbBOQVz7Jvu+3J4pC2fKs4Gn42gqQ+V8ZxqpInnyhQwduSn88eFR+lle
+         qcmP41QNReFe0pwRv7vJRow5a5yG7PRuK9A5GyO5KxHuvX4jXCVdGtxOrod6FzZRJ6WY
+         f4Pg==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=1e100.net; s=20260707; t=1795670516; x=1796275316;
+        d=1e100.net; s=20260707; t=1795671832; x=1796276632;
         h=content-transfer-encoding:mime-version:references:in-reply-to
          :message-id:date:subject:cc:to:from:x-gm-gg:x-gm-message-state:from
          :to:cc:subject:date:message-id:reply-to:content-type;
-        bh=jmEf0yH7FsMTPktYvAASxGJFnmS9uWTCWfNcUEtxpy8=;
-        b=zjZMQCpDhhTfnV7nopaN0xYjkR2v1R99atgbk4Bo9tfldPH4B619tV8nrrkGc27lw7
-         MJZu+e4rXjaYttpVzbtBRaV5E3FVHR0Dlnj5/Q1oYIoqlAxNajhCXShKtLKHl1YrS5y5
-         hv1RHW4Bck0PjudIBHwswS+RdWLsPzXqyrOOg2oPpZ+yPq4QQGrYLVtse0sAfYE8JRay
-         yrxgaJpgMqI1FkYGLSvl6AD4oRF2OAvreqNXNOKa3R0Ig+U0yMypdjxlLv1WSv/+Kkx3
-         wRVeMkI36G5lntLK0AlscH5PaK9hrQbxMDUY+nYpV6KekWUnJImIGi+bNM6ZlAZBaAPU
-         Z5Uw==
-X-Forwarded-Encrypted: i=1; AL+hErG8klNDf1rvvZNal4z6qqmlj34A1Cs4Ka84pYEXfWQ4uNNxRVlMpPIUs2OyE9FlguivuFCiGaY2NsWqzastWg==@vger.kernel.org
-X-Gm-Message-State: APuU4Z/JMEbkeRnG5OYS5G3HLZxpIdhYi0x3oDwJhyA8TqRw/BQ0nBBr
-	xejle2ELOIxfTAzZx1mRi5xJNpjEYVEZN5k24gBUvbmiMG4ZxrCZGUZQ
-X-Gm-Gg: AZFdTZcD9rmTzobDUxUwaOdA58VUXaQ9urusx8wtv//n5TarlhHcniC75pBBnvBVarO
-	4GeP03Ys3SV04kHQO4wBxGNcakJ4gC1eG0dbwDuqqFqId9th48cQlJF5DwQmce7OrXCfBGqM78z
-	eBUjOjnghUE9WNi7QZh4zIE7yvc+Z1LyK7PrC9rYRDk3OZX67Dx2PgtIyokBwO6I+QUc/v+UVc6
-	xoSDw2ScwE75CrvoPY8rheixC5+xUUE+n1XnofLDXg0/3LVFAIZahUX3KI1YUOR9SaZTjhmlHTN
-	cDh17VKQL1T5WK0n9g8zDZFW7ezXxaEpteeuoapdczQdbJBivm8L7xLkOaM5GW5oSSMv/C6HUTI
-	frLpIiUFVqz1aTdO/rDfBqhdz8Ej51H5xJ7tZXl9GloojH8CsD7OpRWroC2QUaxt4F4aHLMaKfo
-	/iu5Mxt2J06Xlzo51wxm8qfOKRe2sztB6xYrvXFz3+DFO5hU3a5r+M1ZYeaTJdptqK7fSdtoTCj
-	U7wimye3ubvw4veBot5u8zrFNvogW2nDmT0a9ERaqSlilPWrBuJlfqauJ6rXIzmzsRX7aI4KGGv
-	/4SVx66JB+fg4eczJZg9ifmc+1cb1gSjYYwpkPTWnGf7E3d1dJhDt6xU
-X-Received: by 2002:a05:6214:528a:b0:91c:72e2:3106 with SMTP id 6a1803df08f44-92134b8fcabmr356449596d6.49.1795670515638;
-        Wed, 25 Nov 2026 21:21:55 -0800 (PST)
+        bh=IjWEhqKblidu0NNXiwNq191cI1P0Mw4BZxYNdNdYS5Q=;
+        b=M35ylwhAFDfdpvOxBJlCRG8CfInU6NLmEx/Cx+xrr2XfuAwgl8KPMeczK1HYUvEICl
+         8ByG+c2E/M1YQr0GM0lObG3AWB+zoGPgHRrXBmgwVAMvx9Mw+f+eu05rbVw6ARszg7PP
+         MHVl7UPEfX256CRagwQt4RtnUBsECcmQz9H49TB4h6riPL0IgMrVBCPaORVyyt7by+WK
+         awNLeskl797CbjJ3qN2q+O5u+YEeDx2Sq6dRlNQ760mQTM+0wIWNCSj1AGEneZ0IPmu9
+         ZRaQL+F9l+xMpm6M9h8qYAupsJ3o9DF2ZCFcCLZdx727BOPE4knC3Q1StCtV1T2zKFE2
+         WkUg==
+X-Forwarded-Encrypted: i=1; AL+hErEerZhhhlTkTqGu9Iyp9qW58rFvRTVeqCPNlx+eoASBoTsLL6d2BlTu2PrHoo/LQLL7pytuRzG/+5nilVsZKg==@vger.kernel.org
+X-Gm-Message-State: APuU4Z++zM7aEr6HDd1ehx+/eZZgDrgdYdRPHIJUjYlFMgOrzRH8V0ht
+	tiEWsBkW11BP9siCBOThsdWEvLpFx8r242xs2cDo15AgGkF9jrmpG43vxhq/Mi5V
+X-Gm-Gg: AZFdTZd7VQLPUmE04uawAWdjNDaBmeZ7ssbJAZb5+r2qcICJAnrOBwpBUYJXg60sY3L
+	TBBZkbf7PpRFUh/cMFuItFpQrxfQeLo2qKrw5FUm6emoxm16RL7CSk+BLShFzFI4cCvJKwSvuVX
+	HXRJdwNapU/piCtSQTd1HK/XrI8YTsay7vDWScR+Df/mLydnqhgnBdwxSTBf47kQIsGHj1szw91
+	URWF+Rr5Bupr/oxwmNIIKhcQRKvaCsyslv3Pg0mynPtbgXd+ivMKFr0PDNyqH1Rzj0PUIJeGA0g
+	FkPF49OuZ1X/putPHf4sSbXNJ8KNcmSpBvNoDV4zodvtfDXc47r4P4t0tK9w66EuHjeaEV/J3Xc
+	P1DeU3vlXNdGqfwRTSojtwgZhISLpAuR5GaZNr3H9LcHNNCl0WvA2hPHPsfg91gHkbLR/o1S/BS
+	B0DfMFRXa+bLar7hc2vhJt+wdcIOZ+8NwNwRHmMLGuAFPbbNBTymk3vcRoIQY+h0oeRm5GGd+FD
+	mPQnth1R3ScI7hvFF0fBOoCnSvCxXfxck7gkWz5fBZf6whadeL7cc0L8vpsfK8EMKfk/Hw5ZbTN
+	tJapjXql77MuCCIdyQaafJla7IJ0c1TwADk=
+X-Received: by 2002:a05:6000:2913:b0:4a7:7bec:e16d with SMTP id ffacd0b85a97d-4abb0c5d670mr39494437f8f.20.1795671831732;
+        Wed, 25 Nov 2026 21:43:51 -0800 (PST)
 Received: from deb05.proceq.com ([213.160.61.66])
-        by smtp.gmail.com with ESMTPSA id 6a1803df08f44-9213514d20esm180847656d6.23.2026.11.25.21.21.54
+        by smtp.gmail.com with ESMTPSA id ffacd0b85a97d-4ab6c340df4sm43959416f8f.55.2026.11.25.21.43.50
         (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
-        Wed, 25 Nov 2026 21:21:55 -0800 (PST)
+        Wed, 25 Nov 2026 21:43:51 -0800 (PST)
 From: Mehmet Fide <mehmet.fide@gmail.com>
-To: Shreyansh Khajanchi <hi@shreyan.sh>
-Cc: Ping-Ke Shih <pkshih@realtek.com>,
+To: =?UTF-8?q?Georg=20M=C3=BCller?= <georgmueller@gmx.net>
+Cc: Bitterblue Smith <rtl8821cerfe2@gmail.com>,
 	Jes Sorensen <Jes.Sorensen@gmail.com>,
-	=?UTF-8?q?Georg=20M=C3=BCller?= <georgmueller@gmx.net>,
-	Bitterblue Smith <rtl8821cerfe2@gmail.com>,
+	Ping-Ke Shih <pkshih@realtek.com>,
+	Shreyansh Khajanchi <hi@shreyan.sh>,
 	linux-wireless@vger.kernel.org,
+	linux-kernel@vger.kernel.org,
 	mehmet.fide@screeningeagle.com
-Subject: Re: [PATCH] wifi: rtl8xxxu: Enable AP mode for RTL8188EU
-Date: Thu, 26 Nov 2026 06:21:52 +0100
-Message-ID: <20261126052152.2887192-1-mehmet.fide@gmail.com>
+Subject: Re: [RFC PATCH v3 0/4] wifi: rtl8xxxu: implement AP mode for 8188EU
+Date: Thu, 26 Nov 2026 06:43:50 +0100
+Message-ID: <20261126054350.2893087-1-mehmet.fide@gmail.com>
 X-Mailer: git-send-email 2.56.0
-In-Reply-To: <81c3d0056a0849078715e0f0be074d1e@realtek.com>
+In-Reply-To: <03be9df5-43e3-48f6-98bb-27d7d7ba2074@gmx.net>
 References: 
 X-Mailing-List: linux-wireless@vger.kernel.org
 List-Id: <linux-wireless.vger.kernel.org>
@@ -103,59 +104,27 @@ Precedence: list
 MIME-Version: 1.0
 Content-Transfer-Encoding: 8bit
 
-Hi Shreyansh, Ping-Ke,
+Hi Georg,
 
-Here are the air captures and TIM results Ping-Ke asked for. Georg's
-RFC [1] enables AP mode on the same chip; the beacon problem below is
-the same with both.
+Thanks. Please post the 5 patches as they are; untested is fine. I
+will test them on my setup and send the next version with your
+authorship kept and my changes noted in each patch.
 
-Setup: rtw-next 18d0bedbb5f0 plus this patch, Edimax EW-7811Un V2
-(RTL8188EUS) as AP, hostapd on channel 6, beacon_int 100,
-dtim_period 2, open and WPA2. The client is an RTL8822CE (rtw88) with
-power save on; it dozes (PM=1, and mac80211 on the AP marks it PS_STA
-and buffers frames for it). Two MT7921AU sniffers capture the air and
-agree on the beacon contents. Received packets are counted with
-tcpdump on the client. In each run the AP pings the client 20 times,
-then sends 20 UDP broadcasts, one per second. Reference AP with the
-same client: ath9k_htc.
+Shreyansh posted a patch that only enables AP mode for this chip [1],
+the same as your 4/5, and Ping-Ke has reviewed it. My test results
+for it are in [2]: without the beacon fix there are almost no beacons.
 
-Beacons, this patch alone (4 runs): 4 to 8 beacons in 20 s instead of
-about 195. The client never dozes, so TIM cannot be checked. Georg's
-RFC sends one beacon after hostapd starts and then none. With two
-changes from [1] (REG_MBID_NUM |= BIT(3) | BIT(4) in AP mode, as the
-vendor driver does, and the vendor TBTT hold time) there is a beacon
-at every TBTT. The TIM results below are with these two changes,
-16 runs.
+So I would build it like this: your 1-3 and 5,
+RTL8188E_MAX_MAC_ID_NUM 64 as Bitterblue said, the beacon queue and
+TBTT hold time fixes, and enabling AP mode last, so that it is never
+enabled without beacons.
 
-What works:
-- Association and traffic, open and WPA2.
-- Unicast TIM: the client's AID is set while mac80211 has frames
-  buffered for it.
+Ping-Ke, should the last patch be Shreyansh's, carried in the series
+with his authorship and your Reviewed-by, or will you take his patch
+now and I base the series on top of it?
 
-What does not work:
-- The DTIM count does not count down. mac80211 counts it down once per
-  ieee80211_beacon_get(), and the hardware repeats the uploaded
-  beacon, so the count stays at one value until the next upload.
-  ath9k_htc sends 1, 0, 1, 0.
-- The multicast bit is never set, and broadcast frames go out when
-  they are queued, not after a DTIM beacon. rtl8xxxu does not set
-  HOST_BROADCAST_PS_BUFFERING, so mac80211 does not buffer them.
-  ath9k_htc sets the bit in the DTIM beacons and sends the broadcasts
-  after them.
-
-What works with problems:
-- Unicast delivery to the dozing client depends on how many beacons
-  happen to carry DTIM count 0. In 3 runs only 2 of 200, 2 of 217 and
-  3 of 213 did, and none of the 20 pings reached the client although
-  its AID was set in almost every beacon. In runs with 40 % or more
-  such beacons, 12 to 20 pings arrived. With ath9k_htc every run
-  delivered 20 of 20.
-- "rtl8xxxu_send_beacon_frame: Failed to read beacon valid bit"
-  appeared in 11 of these 16 runs.
-- Frames sent to the 8188e are often not acked (62-73 % carry the
-  retry bit), in station mode as well. Details are in [1].
-
-[1] https://lore.kernel.org/linux-wireless/20261125160616.1201001-1-mehmet.fide@gmail.com/
+[1] https://lore.kernel.org/linux-wireless/1381CC32-E73C-483E-8F64-27EDE6AE8E6E@shreyan.sh/
+[2] https://lore.kernel.org/linux-wireless/20261126052152.2887192-1-mehmet.fide@gmail.com/
 
 Best regards,
 Mehmet
