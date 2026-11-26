@@ -1,62 +1,60 @@
-Authentication-Results: smtp.subspace.kernel.org; arc=none smtp.remote-ip=46.4.11.11
+Authentication-Results: smtp.subspace.kernel.org; arc=none smtp.remote-ip=95.143.172.20
 ARC-Seal: i=1; d=subspace.kernel.org; s=arc20261015; a=rsa-sha256; cv=none;
-	t=1795717410;
-	b=yzDUf2gvbQ/4LZ590zRSdEpbvOiUbX36QE8Qfgde2OkWKv6SO4SSajc7FIoL7/mcXO4P
-	 bXcRwbOSwPMy2hKjlMR7L9k+zSrGs7IMipjFjZCmYb4php3mOesV7T8hrj2lqlQPWoKtz
-	 F+gCOuKA9Rjz2GoEAxjiJwA6+Z1FTomxvEM5cNolU7Ol3amGyYpulLtBTnG00HATo2W+S
-	 2CLVlXzbkWmqgwNGZV1LVkDeBM+UmCw5pP9UpC5OQp4wfKoONuhx3Syj1zyi/whNlHaZs
-	 Jnq/2wytMLnnkjuc/vc9gNo0XfXtYW3q3zPvre6WY1AC3JR6UTHvI3RygsSS5cAbbcg==
+	t=1795719758;
+	b=OKCjGKHQTNSdYgxbx6Pnlvu9yL1tx5Xhq6sAbNkPlONymojI91bg5Fbd179NxI6ECPB3
+	 DKaSQ6OpEFM8DpY3laVvpdtlD0gWuA3wFriD3PD137YX56GYsm13QAfcrMZK05p2jHMJY
+	 9CF2mfuvKUB0TDv+/vyt6VN3oL88SjXPPjApVaT4W5q8c3i5NbRAYegcPirBxxbmIUk1L
+	 bvPnQGryEwMRxpkrqH/y8+ER+6mdj8DGRSeyqzw3gInFWnbwtsXeVD6AUIRwjZhDqRF3f
+	 pdzrUxexLF8qMUoXl3wcNkgjIhFonjBc0TTBejNU4EmUlcfjwJWREedThHhWSN3xivQ==
 ARC-Message-Signature: i=1; d=subspace.kernel.org; s=arc20261015;
-	a=rsa-sha256; c=relaxed/relaxed; t=1795717410;
-	h=DMARC-Filter:DKIM-Signature:Received:From:To:Subject:Date:Message-ID:
-	 X-Mailer:In-Reply-To:References:MIME-Version:
-	 Content-Transfer-Encoding;
-	bh=esAGyIzDV98A9f8bPHBuKzZwWSCOF/fHWLXec6xJ2vU=;
-	b=0INu9cthNRcumz/Kfu7INwpHC1gJ6wG2UvBcBVSBH9xBnR/ZOX189Sexatkqpq7vXr39
-	 pGAoOeP3fgVBlvV7rxWv02lLe+Fgnj0xNRsCIry6UYYwhqYdzDMPWf0snWGdEfSy1WWD/
-	 SwyFhw74Gsug8nB/EymMEXN5iyMKaRKcrNPOHoCsDCitgbG8/QymKy5LZR5pKeLFTpFq3
-	 htHu+XGwAlAvWjL94K7jXmDqPu7XgyNPwlona/T9YbE8Bj4o9fYvwb34dlh3uthvZPveJ
-	 BDCpW4EJUuiuK3zsCVe3kCUV3MXdko96k/NNmc8U/RqAE8tGYZ/evTzcIDg7tUlgORw==
+	a=rsa-sha256; c=relaxed/relaxed; t=1795719758;
+	h=DMARC-Filter:Received:Received:Received:From:To:Cc:Subject:Date:
+	 Message-ID:X-Mailer:MIME-Version:Content-Transfer-Encoding:
+	 X-Rspamd-Bar:X-Rspamd-Report:X-Rspamd-Score:DKIM-Signature;
+	bh=7G8VPKGbj3SVWed9rgrmiwZCexOnrdyvBRI2FSAwndk=;
+	b=smF/Z3Alnbd+iHNh4F+2o5yS6Sm88/ght8XIfDunn/WdPE7La+/gNTAMwLGkPPH5ANRR
+	 0zZqiNXT2wil6YYrHFQyXuuCrw+BglLD8laIxCKj1SlbVutwdXTd7wrO9FfrMryEX7DCK
+	 3FLTQsvX6w6FprLuMYsMgWz6E+64X8TRGJcXf/uZeBYc2166tZ3Fs++ko8cEP85vAVz6z
+	 zErh6EVCfAOuhoctFca/A+RgjstzCYiLzrELN6x4sMQEvcAa3bHE318lI2wRmuxpGSTCL
+	 sFNIgUy6wEmYSGYe1banWrOci+wZpeR6ojug7oQKfHldjTuIuACB/k599gwFrq0oRGQ==
 ARC-Authentication-Results: i=1; smtp.subspace.kernel.org; 
-	dmarc=pass header.from=nbd.name;
-	spf=pass smtp.mailfrom=nbd.name;
-	dkim=pass header.d=nbd.name header.i=@nbd.name header.a=rsa-sha256 header.s=20160729 header.b=tkuol0IJ;
-	arc=none smtp.remote-ip=46.4.11.11
-Received: from nbd.name (nbd.name [46.4.11.11])
+	dmarc=pass header.from=lausen.nl;
+	spf=pass smtp.mailfrom=lausen.nl;
+	dkim=pass header.d=lausen.nl header.i=@lausen.nl header.a=rsa-sha256 header.s=uberspace header.b=gqWtYW47;
+	arc=none smtp.remote-ip=95.143.172.20
+Received: from mailgate01.uberspace.is (mailgate01.uberspace.is [95.143.172.20])
 	(using TLSv1.3 with cipher TLS_AES_256_GCM_SHA384 (256/256 bits)
-	 key-exchange ECDHE (prime256v1) server-signature ECDSA (prime256v1) server-digest SHA256)
+	 key-exchange X25519 server-signature ECDSA (prime256v1) server-digest SHA256)
 	(No client certificate requested)
-	by smtp.subspace.kernel.org (Postfix) with ESMTPS id C95BD606A321
-	for <linux-wireless@vger.kernel.org>; Thu, 26 Nov 2026 18:23:29 +0000 (UTC)
-DMARC-Filter: OpenDMARC Filter v1.4.2 smtp.subspace.kernel.org C95BD606A321
-Authentication-Results: smtp.subspace.kernel.org; dmarc=pass (p=none dis=none) header.from=nbd.name
-Authentication-Results: smtp.subspace.kernel.org; spf=pass smtp.mailfrom=nbd.name
+	by smtp.subspace.kernel.org (Postfix) with ESMTPS id 256F1606A31E
+	for <linux-wireless@vger.kernel.org>; Thu, 26 Nov 2026 19:02:36 +0000 (UTC)
+DMARC-Filter: OpenDMARC Filter v1.4.2 smtp.subspace.kernel.org 256F1606A31E
+Authentication-Results: smtp.subspace.kernel.org; dmarc=pass (p=none dis=none) header.from=lausen.nl
+Authentication-Results: smtp.subspace.kernel.org; spf=pass smtp.mailfrom=lausen.nl
 Authentication-Results: smtp.subspace.kernel.org;
-	dkim=pass (1024-bit key) header.d=nbd.name header.i=@nbd.name header.a=rsa-sha256 header.s=20160729 header.b=tkuol0IJ
-DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed; d=nbd.name;
-	s=20160729; h=Content-Transfer-Encoding:MIME-Version:References:In-Reply-To:
-	Message-ID:Date:Subject:To:From:Sender:Reply-To:Cc:Content-Type:Content-ID:
-	Content-Description:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc
-	:Resent-Message-ID:List-Id:List-Help:List-Unsubscribe:List-Subscribe:
-	List-Post:List-Owner:List-Archive;
-	bh=esAGyIzDV98A9f8bPHBuKzZwWSCOF/fHWLXec6xJ2vU=; b=tkuol0IJ158FIwvHx4CTFPis91
-	UkHEnAmWsKHqgaXhocvU/TC/XImv3bmrfQ34OO17QnwXiCIntZfnntoVp5ARDjOA+qMoowe9XXQaR
-	6UfHyloVvDEl5I9jBg/p1Ro7Wae/f+1DcW9+S1U45Rj1ue2mB1EIA4ZWij9xQndEQz7U=;
-Received: from p200300cadf0358007454e6799d1561c3.dip0.t-ipconnect.de ([2003:ca:df03:5800:7454:e679:9d15:61c3] helo=localhost.localdomain)
-	by ds12 with esmtpsa  (TLS1.3) tls TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384
-	(Exim 4.96)
-	(envelope-from <nbd@nbd.name>)
-	id 1xWe80-008icn-1B
-	for linux-wireless@vger.kernel.org;
-	Thu, 26 Nov 2026 19:23:28 +0100
-From: Felix Fietkau <nbd@nbd.name>
-To: linux-wireless@vger.kernel.org
-Subject: [PATCH mt76-next 04/16] wifi: mt76: mt7996: take the HE caps of the band of each link
-Date: Thu, 26 Nov 2026 19:23:13 +0100
-Message-ID: <20261126182325.2516607-4-nbd@nbd.name>
+	dkim=pass (4096-bit key, unprotected) header.d=lausen.nl header.i=@lausen.nl header.a=rsa-sha256 header.s=uberspace header.b=gqWtYW47
+Received: from devico.uberspace.de (devico.uberspace.de [185.26.156.185])
+	by mailgate01.uberspace.is (Postfix) with ESMTPS id 84BD5616F3
+	for <linux-wireless@vger.kernel.org>; Thu, 26 Nov 2026 20:02:29 +0100 (CET)
+Received: (qmail 23903 invoked by uid 990); 26 Nov 2026 19:02:29 -0000
+Authentication-Results: devico.uberspace.de;
+	auth=pass (plain)
+Received: from unknown (HELO unknown) (::1)
+	by devico.uberspace.de (Haraka/3.1.1) with ESMTPSA; Thu, 26 Nov 2026 20:02:29 +0100
+From: Leonard Lausen <leonard@lausen.nl>
+To: Ping-Ke Shih <pkshih@realtek.com>
+Cc: leonard@lausen.nl,
+	Luka Gejak <luka.gejak@linux.dev>,
+	=?utf-8?q?David_H=C3=A4rdeman?= <david@hardeman.nu>,
+	Shawn Lin <shawn.lin@rock-chips.com>,
+	Heiko Stuebner <heiko@sntech.de>,
+	linux-wireless@vger.kernel.org,
+	linux-rockchip@lists.infradead.org,
+	linux-kernel@vger.kernel.org
+Subject: [PATCH rtw-next v4 0/2] wifi: rtw88: reduce RTL8822CS SDIO request overhead
+Date: Thu, 26 Nov 2026 19:02:13 +0000
+Message-ID: <20261126190217.1151186-2-leonard@lausen.nl>
 X-Mailer: git-send-email 2.47.3
-In-Reply-To: <20261126182325.2516607-1-nbd@nbd.name>
-References: <20261126182325.2516607-1-nbd@nbd.name>
 X-Mailing-List: linux-wireless@vger.kernel.org
 List-Id: <linux-wireless.vger.kernel.org>
 List-Post: <mailto:linux-wireless@vger.kernel.org>
@@ -67,65 +65,93 @@ List-Owner: <mailto:linux-wireless+owner@vger.kernel.org>
 Precedence: list
 MIME-Version: 1.0
 Content-Transfer-Encoding: 8bit
+X-Rspamd-Bar: -
+X-Rspamd-Report: MID_CONTAINS_FROM(1) BAYES_HAM(-2.999699) MIME_GOOD(-0.1) R_MISSING_CHARSET(0.5)
+X-Rspamd-Score: -1.599699
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple;
+	d=lausen.nl; s=uberspace;
+	h=from:to:cc:subject:date;
+	bh=j/ZX86lZZUp33NjxWpRwiiuZcmq3gSu/deMMo7y9vi8=;
+	b=gqWtYW475NXgvOzYRKKvYBmKSq4nqsIEdyGPrm6FZkE3HVOkw2ohNECRI47/2qdMeWbynJphQi
+	IHazYmcCyFGKH3bUumtTivGUmCDh8JXp4cnE8J8CczwoCNRgN2R+zepuIDKFN6aXfEEVyhLZdLCs
+	GB/cYNIE+ymRLe8powTZof40Sxjv20M8kMhIY7a1bLJswBjckRaQX2DaXxWJMue87fPnsTzBrHe9
+	nTAKlaModD5gYSTkrAGUFK9J3Vse3eSp8WQ6guhWVu+TkX9YTy/g92mzPrTib4ItOABsus0dqcgU
+	V3tmyRrFs6Y5DjAQjBuPsQgNTnIQGPy7FJAs9mZRqRs/XH/05BRlamRev/F/oPEL9TxpR3Ob8FTb
+	yfxAzCiNruu22oDc5NMgRKOJ7Ff9281nUWcm2AJEDyiOvZQ5tDCq/8vg3qRdAO/y/Qmpo5U729hW
+	+ymoyWSDva+7dBCi3+De+OqYgcna+1hoo+uPNcgEOduHhSpuOB6+CGYaxZuQH2XR+zi4oGQmdGTo
+	c94b9Q7lUkkdzlPWboC91orVUW35fHTqcRZg1qnlXeV3z3MGPahRcub6wQ+gyHrT04RQ/eSduPRd
+	c2VN/fm+hWGu2JlOTy5ZBOdKdZZqTbCipF0r/1JJtKFb9FFHpdWnzWBKfxgF04dT+ICrQdjFLshA
+	w=
 
-mt76_connac_get_he_phy_cap() reads the band from the deflink of
-vif->drv_priv, which on mt7996 is link 0. Every other link of an MLD
-thus gets the HE caps of the band of link 0. In
-mt7996_mcu_sta_bfer_he() these caps limit the sounding dimensions in
-STA_REC_BF. With link 0 on 2.4 GHz, a 5 GHz HE peer without EHT gets
-fewer, none above 80 MHz.
+Reduce RTL8822CS SDIO request overhead by filtering hardware-handled
+control frames and combining adjacent TX-capacity reads.
 
-Take the HE caps of the band of the phy of the link, like
-mt76_connac_get_eht_phy_cap() and mt7996_is_ebf_supported() do. Use
-them for UNI_BSS_INFO_HE_BASIC as well, whose MCS and NSS fields came
-from the same lookup.
+Changes in v4:
+- Add the requested blank line, order RXFLTMAP1 bits from high to low,
+  and describe the filter as not forwarding the selected control frames.
+- Quantify patch 2's request time and isolated throughput gain, and add
+  Ping-Ke Shih's Acked-by with that description.
 
-Fixes: a9eae65d97f3 ("wifi: mt76: mt7996: Export MLO AP capabilities to mac80211")
-Signed-off-by: Felix Fietkau <nbd@nbd.name>
----
- drivers/net/wireless/mediatek/mt76/mt7996/mcu.c | 15 +++++++++++++--
- 1 file changed, 13 insertions(+), 2 deletions(-)
+Full-series testing on RTL8822CS/NanoPi M5 on 16 November with v3
+measured these TCP medians in Mbit/s:
 
-diff --git a/drivers/net/wireless/mediatek/mt76/mt7996/mcu.c b/drivers/net/wireless/mediatek/mt76/mt7996/mcu.c
-index a3717dffe9ad..ba0e2a266d0a 100644
---- a/drivers/net/wireless/mediatek/mt76/mt7996/mcu.c
-+++ b/drivers/net/wireless/mediatek/mt76/mt7996/mcu.c
-@@ -123,6 +123,17 @@ mt7996_mcu_get_sta_nss(u16 mcs_map)
- 	return nss ? nss - 1 : 0;
- }
- 
-+static const struct ieee80211_sta_he_cap *
-+mt7996_mcu_get_he_phy_cap(struct mt7996_phy *phy, struct ieee80211_vif *vif)
-+{
-+	struct ieee80211_supported_band *sband;
-+	struct mt76_phy *mphy = phy->mt76;
-+
-+	sband = mphy->hw->wiphy->bands[mphy->chandef.chan->band];
-+
-+	return ieee80211_get_he_iftype_cap(sband, vif->type);
-+}
-+
- static void
- mt7996_mcu_set_sta_he_mcs(struct ieee80211_link_sta *link_sta,
- 			  struct mt7996_vif_link *link,
-@@ -1144,7 +1155,7 @@ mt7996_mcu_bss_he_tlv(struct sk_buff *skb, struct ieee80211_vif *vif,
- 	struct bss_info_uni_he *he;
- 	struct tlv *tlv;
- 
--	cap = mt76_connac_get_he_phy_cap(phy->mt76, vif);
-+	cap = mt7996_mcu_get_he_phy_cap(phy, vif);
- 	if (!cap)
- 		return;
- 
-@@ -2052,7 +2063,7 @@ mt7996_mcu_sta_bfer_he(struct ieee80211_link_sta *link_sta,
- 	const struct ieee80211_sta_he_cap *vc;
- 	u8 snd_dim, sts;
- 
--	vc = mt76_connac_get_he_phy_cap(phy->mt76, vif);
-+	vc = mt7996_mcu_get_he_phy_cap(phy, vif);
- 	if (!vc)
- 		return;
- 
--- 
-2.47.3
+                              Upload   Download
+  Neither patch (rtw-next)      163.4      247.5
+  Both patches                  285.4      277.0
 
+That comparison used three 20-second samples per direction and build:
+74.6% higher median upload and 11.9% higher median download.
+
+The follow-up v4 tests on 17 November isolate patch 2, with patch 1
+enabled in both builds. Median TCP throughput in Mbit/s:
+
+                              Upload   Download
+  Filtering only                254.4      275.4
+  Both patches                  284.7      285.5
+
+Upload increased by 11.9% and download by 3.7%. Each configuration used
+six 20-second samples per direction in F/FC/FC/F blocks, three samples
+per block. The two tables report separate test sessions on a shared
+Wi-Fi network; download samples overlap and throughput can vary.
+
+Separate MMC traces timed the reads of available transmit-buffer space.
+Without patch 2, the driver reads three registers using three 4-byte SDIO
+requests; patch 2 reads the same 12 bytes in one request. The median time
+from the first request start to the final completion fell from 51 to
+13 us (74.5%). This measures the SDIO request span, excluding waiting to
+acquire the host before the first request and processing results after
+the last completion.
+
+Two traces per build reproduced the same respective median during
+15-second UDP uploads. The sender's requested rate was 600 Mbit/s;
+achieved TCP throughput was measured separately above. No MMC errors
+or dropped trace events were observed.
+
+AI assistance: Codex developed the changes and messages and automated
+builds, hardware checks and measurements. Prompts requested the review
+corrections and an isolated, repeated benchmark of the register reads.
+
+Earlier discussion:
+https://lore.kernel.org/linux-wireless/20261116100804.425592-2-leonard@lausen.nl/T/#t
+
+Leonard Lausen (2):
+  wifi: rtw88: 8822c: filter hardware-handled control frames on SDIO
+  wifi: rtw88: sdio: combine free TX page register reads
+
+ drivers/net/wireless/realtek/rtw88/bf.c       |  4 +-
+ drivers/net/wireless/realtek/rtw88/mac80211.c | 10 ++-
+ drivers/net/wireless/realtek/rtw88/main.c     | 11 ++++
+ drivers/net/wireless/realtek/rtw88/main.h     |  2 +
+ drivers/net/wireless/realtek/rtw88/reg.h      |  4 ++
+ drivers/net/wireless/realtek/rtw88/rtw8723x.c |  2 +-
+ drivers/net/wireless/realtek/rtw88/rtw8814a.c |  2 +-
+ drivers/net/wireless/realtek/rtw88/rtw8821c.c |  2 +-
+ drivers/net/wireless/realtek/rtw88/rtw8822b.c |  2 +-
+ drivers/net/wireless/realtek/rtw88/rtw8822c.c | 12 +++-
+ drivers/net/wireless/realtek/rtw88/rtw88xxa.c |  2 +-
+ drivers/net/wireless/realtek/rtw88/sdio.c     | 64 +++++++++++++++++--
+ drivers/net/wireless/realtek/rtw88/sdio.h     |  1 +
+ 13 files changed, 100 insertions(+), 18 deletions(-)
+
+
+base-commit: 61a5eb87b2d9b4d5e353780b781cf691f39ba9e1
