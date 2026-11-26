@@ -1,11 +1,11 @@
-Authentication-Results: smtp.subspace.kernel.org; arc=none smtp.remote-ip=209.85.216.99
+Authentication-Results: smtp.subspace.kernel.org; arc=none smtp.remote-ip=209.85.215.228
 ARC-Seal: i=1; d=subspace.kernel.org; s=arc20261015; a=rsa-sha256; cv=none;
 	t=1795709702;
-	b=4lxcDJd8f74cCpld6olMtFtKjLx4splgLTQR9aTGlRqy0uO7+bruDII51yGbYojQyZWM
-	 b912DddISw/2OZJmsSJzczPr9fasmrtUaqNio56dr8fh/FL/rEPmbDmqBMDzaj1+s98L5
-	 ZUgqF7oKC4b0wvekUugAj4x8xWnkqrWnibS3dTO+hInngWDA+DI/6DtU/HIBNHXEHQw5h
-	 1zwKbkRO952YW07QbXO/W5OXQhfq3CjsftobE8bcmhJzpLvs++byog4U/5gSL6ihDUo6H
-	 Cn07hxgR/KV41h8ObuE4IdBeRpSl7lSiqcZlLrs6ykKNFjaAiYsoO9PesntrHMUaILw==
+	b=EM6BDhGp+stFi8XR3lgQxu6uaVRZ318U9VaQVsedv5WGmC8knLnBAh5958zIXQrc7xxi
+	 EJl6RQXxd9Ac77LDu2a4IbQanaHPGZuM2P7jNar72OgfPN1ZzMHY9/5SEH7nmHJxIzYp/
+	 wmSNVll+yM52xrU4Zlebxn3k8IEsN9CqFznUDT0BSar6YqvwIIu6Gygn6gnUwacgF3oAp
+	 +esIxrTy9zdLu7te8fhNThbj63lWP/KfQru11pt4d6HzyuNTUGXOLFDwqqKFQffTTyvCh
+	 khqt+9Mm5VM/Q8ft0ejn2XrwUrx/IxoZqIk9PpBYeWhV3wsVDzZY8fZyY5qtB2AhCPw==
 ARC-Message-Signature: i=1; d=subspace.kernel.org; s=arc20261015;
 	a=rsa-sha256; c=relaxed/relaxed; t=1795709702;
 	h=DMARC-Filter:Received:X-Google-DKIM-Signature:X-Forwarded-Encrypted:
@@ -14,85 +14,85 @@ ARC-Message-Signature: i=1; d=subspace.kernel.org; s=arc20261015;
 	 X-Received:X-Received:Received:From:To:Cc:Subject:Date:Message-ID:
 	 X-Mailer:In-Reply-To:References:MIME-Version:
 	 Content-Transfer-Encoding:X-DetectorID-Processed;
-	bh=H6EEcBx54YLs0UycGj9fOogpcYOKLpuI2YvcB3YnY9M=;
-	b=bvNP49Re7VCKhKgf1ZsaQNRvvcnhrRI60MGkmVOxhXUDvH+X5F5ugBE8+kX+jVEuG4kg
-	 24wCLTYczXLjAjxd4nOTquRX563vUe8+QO4nhUUMw69yD4RRaa3HCsOSBQpdIGCBvvTO4
-	 g1afa5n4ggd3s4EA1mgqvPkgB6RN1MEgO36QO4txTgXlfpB3EiuGiCTWqJ5Cpz+hCVCYV
-	 /ZxYm4Zwmr6jXEaOjBPwcFC70puO4XTkFtC/J6m1T/tVoYCKHcizpaWnNxqn9F/II83MN
-	 ycsQQdejum22QgagTwTlAnpIwbhE0eTz860RYuQiNHXLAaatbWsDula1jJ5J6h+SxnA==
+	bh=N7eaA+pAnwf/IqHnAWMBkaURdmeG2S8bgeOrBt9N6m4=;
+	b=gPRVT9dK+7/PL3MRJUxKq0HgmZSbjMhY9b5HqQ4+HRL9QrULd/yrynY8/DnD0UXeFmFO
+	 0TPIb+w4EEf/HBaohEBZoMGkz3Oq9FKmEUta+t8fPMVDmnI+SqYwCUZrxOxS/voXkfZPh
+	 L4wmcd8SwVGfPcuQ4aWPkAU9+AN9b6ECREt6eJGbl7stwi7FyOBPniqNtQqbgtEZdRz9/
+	 tl+gn0WR2FaOGl1JJSitxaYDJLjYE0uvlotYSrbmB3/Cs82AeETY9iig1oU3lVyGXAuJH
+	 RDY31GeNKSCYN4xxMsqQE9U4ip0UlBU+JNURxHjRjSOub0t5P8NAN2sQGnddRAVG0JA==
 ARC-Authentication-Results: i=1; smtp.subspace.kernel.org; 
 	dmarc=pass header.from=broadcom.com;
 	spf=fail smtp.mailfrom=broadcom.com;
-	dkim=pass header.d=broadcom.com header.i=@broadcom.com header.a=rsa-sha256 header.s=google header.b=K04GlxYw;
-	arc=none smtp.remote-ip=209.85.216.99
-Received: from mail-pj1-f99.google.com (mail-pj1-f99.google.com [209.85.216.99])
+	dkim=pass header.d=broadcom.com header.i=@broadcom.com header.a=rsa-sha256 header.s=google header.b=GbtOW6Sa;
+	arc=none smtp.remote-ip=209.85.215.228
+Received: from mail-pg1-f228.google.com (mail-pg1-f228.google.com [209.85.215.228])
 	(using TLSv1.3 with cipher TLS_AES_128_GCM_SHA256 (128/128 bits)
 	 key-exchange X25519 server-signature ECDSA (prime256v1) server-digest SHA256)
 	(No client certificate requested)
-	by smtp.subspace.kernel.org (Postfix) with ESMTPS id C5C4C606A68D
-	for <linux-wireless@vger.kernel.org>; Thu, 26 Nov 2026 16:14:59 +0000 (UTC)
-DMARC-Filter: OpenDMARC Filter v1.4.2 smtp.subspace.kernel.org C5C4C606A68D
+	by smtp.subspace.kernel.org (Postfix) with ESMTPS id EC016606A682
+	for <linux-wireless@vger.kernel.org>; Thu, 26 Nov 2026 16:15:01 +0000 (UTC)
+DMARC-Filter: OpenDMARC Filter v1.4.2 smtp.subspace.kernel.org EC016606A682
 Authentication-Results: smtp.subspace.kernel.org; dmarc=pass (p=reject dis=none) header.from=broadcom.com
 Authentication-Results: smtp.subspace.kernel.org; spf=fail smtp.mailfrom=broadcom.com
 Authentication-Results: smtp.subspace.kernel.org;
-	dkim=pass (1024-bit key) header.d=broadcom.com header.i=@broadcom.com header.a=rsa-sha256 header.s=google header.b=K04GlxYw
-Received: by mail-pj1-f99.google.com with SMTP id 98e67ed59e1d1-3b3a42a4bcdso3060028a91.0
-        for <linux-wireless@vger.kernel.org>; Thu, 26 Nov 2026 08:14:59 -0800 (PST)
+	dkim=pass (1024-bit key) header.d=broadcom.com header.i=@broadcom.com header.a=rsa-sha256 header.s=google header.b=GbtOW6Sa
+Received: by mail-pg1-f228.google.com with SMTP id 41be03b00d2f7-cde5a7d79b0so3679942a12.2
+        for <linux-wireless@vger.kernel.org>; Thu, 26 Nov 2026 08:15:01 -0800 (PST)
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=1e100.net; s=20260707; t=1795709699; x=1796314499;
+        d=1e100.net; s=20260707; t=1795709701; x=1796314501;
         h=content-transfer-encoding:mime-version:references:in-reply-to
          :message-id:date:subject:cc:to:from:dkim-signature:x-gm-gg
          :x-gm-message-state:from:to:cc:subject:date:message-id:reply-to
          :content-type;
-        bh=H6EEcBx54YLs0UycGj9fOogpcYOKLpuI2YvcB3YnY9M=;
-        b=yU+4PzaZXW5X3+9GWr9hExadwsVJz+z6iwmj6yc6RRPEt236JGMKaOG/BRYOGyA33H
-         FxJqXXZqPwN9ygf3qz287hcck55GPtQAXjKninNiLC9AXpyfTLJVYhISGL7CJ0OUltUh
-         iZUDmHPJU3/fMSCx6TW9Vn5u5581Z/X+O5KjkhWfHhEFMZRcFzM7d8CvcECjeHrZhahE
-         amREXauhLbPa3uLVnmEpXyrSrwVMg2lnAxytfqkaYqoTqddx1NrxfbzycCgGb36LfbKf
-         xTGgO6ydl9Hng98oOTSewSKga3VP7ZGRx0X8+etw48aObvdDKIfae+4vQawE9RIRKGRk
-         CyZQ==
-X-Forwarded-Encrypted: i=1; AL+hErF983kW7JUzzT6i1GvyD5bLwFUBQME2JX51d9uadgtBRpgeHQdWUMVpLhDurA5frn8ILsLTPFTTK5pe5vHdyw==@vger.kernel.org
-X-Gm-Message-State: APuU4Z8ybSLOF2XPHtGm+6MkRgHEQP0vjbH6HWWEv4fK3+mNxrbJQjN5
-	bwP9b/Sub97cJ6f7ujPrum+1njIIn9GZ+lonEsOQrgpP4kL//3/PU0ZaJj96RYCa1tY/nhN4D80
-	UMXya0+04IHlLapDro+di91U/x5pZMgOYqUC58880GGA2y24RymiTjbnzKcksGOUeKJwb/Fo6Qb
-	hup1pRBF1bo0/eeMy2FQ2yLrM6ww/7VG8eNynuoM2GtDg3F/MZ4hwAs29qnzbjd4iK+It5ZBAqp
-	YdHMkXvB63nysnE976iSY88fQ==
-X-Gm-Gg: AZFdTZcs4n4+1JaITsVOF45zeDA5+IUM6ERlY80JKHBOpeKFXHDRPEpXz91FhkJgrWW
-	occ76iUuBp6fblhl38tJoGE4qFCIfE1Rcj4GXKNLoqowfTBolPnGnC9TcN3oD0+PosOjgOQtiJm
-	gX69b6jLbO46DpljILeoDIesFMrPhqg+MYd0tSVZtwa8NWtmkRJQmZ6KP0dK8QFQ/vMS6PLsskX
-	LcFrsh7R+5hRJZBKOHwTN4dcurNNLUHL8U8uKc8Kb1310l0h8P9ietsbujOfhRdpY1503fB6HBS
-	MX0Bgh0A3ZUB8FvNn7whn7nRxb9uTjRN1Du708WO0bgg4pGfdzFgr1hIEAEvLvq5lW1MJAnWizJ
-	uisNHBGzvaygnvUzxGdJH+hRZiAdEkJF4qvGvHtrEE/myM1hdlmte08PSSbXILFrKKuVbwLY0mD
-	+rpp4l/0tSnqAaovtH20kEKwkt4Wk14lEFPKFUNKoywg==
-X-Received: by 2002:a17:90b:53ce:b0:3b4:6097:8e86 with SMTP id 98e67ed59e1d1-3b46097927emr15478292a91.44.1795709699059;
-        Thu, 26 Nov 2026 08:14:59 -0800 (PST)
-Received: from smtp-us-east1-p01-i01-si01.dlp.protect.broadcom.com (address-144-49-247-100.dlp.protect.broadcom.com. [144.49.247.100])
-        by smtp-relay.gmail.com with ESMTPS id 98e67ed59e1d1-3b41d23b49fsm6523233a91.1.2026.11.26.08.14.58
+        bh=N7eaA+pAnwf/IqHnAWMBkaURdmeG2S8bgeOrBt9N6m4=;
+        b=S+oBvWHfujUF8J/CpIB+b9iC/0tlkIAa7neWR82kD/57KCI6Tdv+n0qTZkPmBTHfVa
+         T/dpD3YflbM6JGdi7HcFAwsLLpHPGWquNN+Ur2eOE4vD3DFoBhZiRODZpGCYMBwrHWkZ
+         gayjgo6P39IgjTiXRhN1k0l9cFtjp+NX1B/Od+VrijPQ7JVqeu6LGGTBFNkwNhbGz30x
+         yScauleA52BPGBBwS2N4ijxtYnb0C9qn1GM+XhVbWAGeJ+yNYSPkrNlLQAsvUqRRzBCF
+         wYvSCkh2xveVX9hHd8dv3gXGHR9Hh6bGpyxczMP/W+oic/2iK7HgBUONYkywJ5DUHI20
+         7XuQ==
+X-Forwarded-Encrypted: i=1; AL+hErFiQzJqMCkuvQdZSv26AEPwNLz1uGQ2lgIT1yrSrlfNrkEnvGLF/pvowa1LD7vJJERi2kwlF9TMJo6E74VYIQ==@vger.kernel.org
+X-Gm-Message-State: APuU4Z/SuiSQxBjXKE+q5aDKc8M0ScLaBO0VEhCD/vXI34adgYU8PtTM
+	AyQxQQLTP7k4FTFn7+iBfvMXeOp+DJSie9aau1N5Gn+0sxML0iVLkoq8bsAwohzLUBhhF4a2A4P
+	JZ9Sgr5MHO/iGDVoDnhLmyGdgUyS/Pc6hKQ8/DLikFI7KTt+Dk+IaG2IQvq2Twt2zGAPoJXqVh/
+	VTUSogEIoZt863mwSpn4zu++aD4IeMy9R6/Ykn0H5dBKkNSCY/QLf2BGk5+Eqap5F4wxhIRE040
+	0ywvSci1rIzbgKEyy61LehGMai3
+X-Gm-Gg: AZFdTZcbAME1Xpn7Ph7kYrICyDPxZ8swrMaHZhdi51SlxzV7sIjdT1PkhC+/bTjYSqQ
+	jsa1aW6h8agmZuzHKIajvEqymq+7RFkwJP6PD1ymV2pB9Wftg+k8s6XNnhYn2L3pRd1EERIvMIC
+	2q8PhhuMLgnF4E15eSSeYNiX/qtkw+oCofAm+7VjqemhjvxphzytEPQ2hUOFgjd8hewiSQ6B7ji
+	fQ+O0TQNfhO0q2A3u/jAD51FxIf8ToCTFT4/ZCR/IGfjsMFiTrGBnhLjYOBTABRvc9gfYiBmtSm
+	7V9Evr0huHDgKVmpTrwaegUB360aVPFwjqAukdOFsZcO1jqrUlwLOpTdobOszNcmCljQWC02Kak
+	1AGC/7kdTzRTiljDu0PxB/6UA/7wdXKumKKjpatX2fH3tv+T1cKCc3Gm/7w5nwd/bMy+2C2H2/E
+	VaPQRqFqtp5FhiTmFXDbFbkqOETWe9T7Ca1KLLPfx4/w==
+X-Received: by 2002:a17:90b:4d10:b0:3ae:533e:7e40 with SMTP id 98e67ed59e1d1-3b41c8d9bedmr20508872a91.23.1795709701080;
+        Thu, 26 Nov 2026 08:15:01 -0800 (PST)
+Received: from smtp-us-east1-p01-i01-si01.dlp.protect.broadcom.com (address-144-49-247-123.dlp.protect.broadcom.com. [144.49.247.123])
+        by smtp-relay.gmail.com with ESMTPS id 98e67ed59e1d1-3b41ac86baasm14440084a91.1.2026.11.26.08.15.00
         for <linux-wireless@vger.kernel.org>
         (version=TLS1_2 cipher=ECDHE-ECDSA-AES128-GCM-SHA256 bits=128/128);
-        Thu, 26 Nov 2026 08:14:59 -0800 (PST)
+        Thu, 26 Nov 2026 08:15:01 -0800 (PST)
 X-Relaying-Domain: broadcom.com
 X-CFilter-Loop: Reflected
-Received: by mail-qk1-f198.google.com with SMTP id af79cd13be357-93f3969a2a7so1016441085a.2
-        for <linux-wireless@vger.kernel.org>; Thu, 26 Nov 2026 08:14:57 -0800 (PST)
+Received: by mail-qk1-f199.google.com with SMTP id af79cd13be357-9495a1f5e47so1084415285a.1
+        for <linux-wireless@vger.kernel.org>; Thu, 26 Nov 2026 08:15:00 -0800 (PST)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=broadcom.com; s=google; t=1795709697; x=1796314497; darn=vger.kernel.org;
+        d=broadcom.com; s=google; t=1795709700; x=1796314500; darn=vger.kernel.org;
         h=content-transfer-encoding:mime-version:references:in-reply-to
          :message-id:date:subject:cc:to:from:from:to:cc:subject:date
          :message-id:reply-to:content-type;
-        bh=H6EEcBx54YLs0UycGj9fOogpcYOKLpuI2YvcB3YnY9M=;
-        b=K04GlxYwKnqfDFqNa3CFtzIe0lo4570IqVtjPk23pAFcf6BkkmZ0YkJ1KBAKY3WEz/
-         +KFRqVemt9hKuSQB/ae/xoJi7uW7zFBBwzt6RpluThM3JyHyrfB5H0Xqx5Co4tPZpcgf
-         M6jmV5KCvb4QQGUMqOv1sS+cYpFhHIJ2Q2PF4=
-X-Forwarded-Encrypted: i=1; AL+hErFSE9eaoIkNSC7B1HxIia4uQcvery0RNy04zL1wwazaIQXPezYe/S5MlMrXIpagD4yUte+q+I8efxaeC9PBlA==@vger.kernel.org
-X-Received: by 2002:a05:620a:8389:b0:942:a42a:78a2 with SMTP id af79cd13be357-949ba9ffe27mr3853464385a.31.1795709697563;
-        Thu, 26 Nov 2026 08:14:57 -0800 (PST)
-X-Received: by 2002:a05:620a:8389:b0:942:a42a:78a2 with SMTP id af79cd13be357-949ba9ffe27mr3853459385a.31.1795709697120;
-        Thu, 26 Nov 2026 08:14:57 -0800 (PST)
+        bh=N7eaA+pAnwf/IqHnAWMBkaURdmeG2S8bgeOrBt9N6m4=;
+        b=GbtOW6Savwp3cwwmUI9xT4ybqKHdw0xxHBTN13THom7GUVdjaMyDcAIai7bKyWYO8M
+         PI985WronS0+aAx5/6hCFPOtsl+EhP4cF7uzUjQsHQm0m4YyiRWSj+heZPP3WEZKkrAB
+         1zaVNb8YdTrUbD6j8dG1DCyk0aa+ey9WcYXO4=
+X-Forwarded-Encrypted: i=1; AL+hErHD4KO+ftEsZ5vYutok19zNK/mhYne9ZM8jWoHunIsNDfXj90f/7peSTyvhLvketHj6wEbs+Bwi0rG36vFChg==@vger.kernel.org
+X-Received: by 2002:a05:620a:28c8:b0:949:7acc:1695 with SMTP id af79cd13be357-949ba6c5900mr3583053985a.0.1795709699846;
+        Thu, 26 Nov 2026 08:14:59 -0800 (PST)
+X-Received: by 2002:a05:620a:28c8:b0:949:7acc:1695 with SMTP id af79cd13be357-949ba6c5900mr3583049185a.0.1795709699285;
+        Thu, 26 Nov 2026 08:14:59 -0800 (PST)
 Received: from bld-bun-02.bun.broadcom.net ([192.19.176.227])
-        by smtp.gmail.com with ESMTPSA id af79cd13be357-949ca6a0693sm1377617285a.20.2026.11.26.08.14.55
+        by smtp.gmail.com with ESMTPSA id af79cd13be357-949ca6a0693sm1377617285a.20.2026.11.26.08.14.57
         (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
-        Thu, 26 Nov 2026 08:14:56 -0800 (PST)
+        Thu, 26 Nov 2026 08:14:58 -0800 (PST)
 From: Arend van Spriel <arend.vanspriel@broadcom.com>
 To: Andre Eikmeyer <dev@deq.rocks>
 Cc: arend.vanspriel@broadcom.com,
@@ -105,12 +105,12 @@ Cc: arend.vanspriel@broadcom.com,
 	Janne Grunau <j@jannau.net>,
 	Aditya Garg <aditya.garg@linux.dev>,
 	Yossef Osman <Yossef.Osman@proton.me>
-Subject: Re: [PATCH wireless-next v2 4/6] wifi: brcmfmac: add the AWDL data path
-Date: Thu, 26 Nov 2026 17:14:43 +0100
-Message-ID: <20261126161444.2484980-5-arend.vanspriel@broadcom.com>
+Subject: Re: [PATCH wireless-next v2 5/6] wifi: brcmfmac: add vendor commands for AWDL
+Date: Thu, 26 Nov 2026 17:14:44 +0100
+Message-ID: <20261126161444.2484980-6-arend.vanspriel@broadcom.com>
 X-Mailer: git-send-email 2.54.0
-In-Reply-To: <20261125190254.176055-5-dev@deq.rocks>
-References: <20261125190254.176055-5-dev@deq.rocks>
+In-Reply-To: <20261125190254.176055-6-dev@deq.rocks>
+References: <20261125190254.176055-6-dev@deq.rocks>
 X-Mailing-List: linux-wireless@vger.kernel.org
 List-Id: <linux-wireless.vger.kernel.org>
 List-Post: <mailto:linux-wireless@vger.kernel.org>
@@ -123,31 +123,98 @@ MIME-Version: 1.0
 Content-Transfer-Encoding: 8bit
 X-DetectorID-Processed: b00c1d49-9d2e-4205-b15f-d015386d3d5e
 
-On Wed, 25 Nov 2026 20:02:52 +0100, Andre Eikmeyer <dev@deq.rocks> wrote:
-> The firmware passes AWDL data frames as 802.3 frames. An LLC/SNAP
-> header with the Apple OUI (aa aa 03 00 17 f2 08 00) is followed by the
-> AWDL data header 03 04, a 16 bit sequence number, two reserved bytes
-> and the ethertype.
->
-> Let the AWDL network device send and receive plain Ethernet frames.
-> brcmf_netdev_start_xmit() adds the headers and brcmf_netif_rx() removes
-> them, so both count Ethernet frames. The addresses of received frames
-> are moved so that they form an Ethernet header with the ethertype
-> again, which keeps packet taps consistent.
->
+On Wed, 25 Nov 2026 20:02:53 +0100, Andre Eikmeyer <dev@deq.rocks> wrote:
+> AWDL election, peer discovery and services run in user space, the
+> firmware carries the AWDL frames and data. Add vendor commands of the
+> Broadcom OUI on the primary interface, described in vendor.h:
+
+[...]
+
 > Tested-by: Yossef Osman <Yossef.Osman@proton.me>
 > Tested-by: Aditya Garg <aditya.garg@linux.dev>
-> Acked-by: Arend van Spriel <arend.vanspriel@broadcom.com>
 > Signed-off-by: Andre Eikmeyer <dev@deq.rocks>
 > ---
->  .../broadcom/brcm80211/brcmfmac/awdl.c        | 87 +++++++++++++++++++
->  .../broadcom/brcm80211/brcmfmac/awdl.h        |  9 ++
->  .../broadcom/brcm80211/brcmfmac/core.c        | 17 ++++
->  3 files changed, 113 insertions(+)
+>  .../broadcom/brcm80211/brcmfmac/awdl.c        | 644 +++++++++++++++++-
+>  .../broadcom/brcm80211/brcmfmac/awdl.h        |  53 ++
+>  .../broadcom/brcm80211/brcmfmac/cfg80211.c    |   5 +-
+>  .../broadcom/brcm80211/brcmfmac/feature.c     |   6 +
+>  .../broadcom/brcm80211/brcmfmac/feature.h     |   5 +-
+>  .../broadcom/brcm80211/brcmfmac/vendor.c      |  82 +++
+>  .../broadcom/brcm80211/brcmfmac/vendor.h      |  92 +++
+>  7 files changed, 881 insertions(+), 6 deletions(-)
 
-You may add my acknowledgement in v3.
+[...]
 
-Acked-by: Arend van Spriel <arend.vanspriel@broadcom.com>
+> @@ -116,9 +238,12 @@ bool brcmf_awdl_if_removed(struct brcmf_pub *drvr, struct brcmf_if *ifp)
+>  			awdl->ifp = NULL;
+>  	}
+>  	spin_unlock(&awdl->lock);
+> -	if (!requested)
+> +	if (!requested) {
+>  		brcmf_proto_configure_addr_mode(drvr, ifp->ifidx,
+>  						ADDR_INDIRECT);
+> +		brcmf_awdl_send_result(drvr, BRCMF_VNDR_EVTS_AWDL_STOPPED,
+> +				       -ENOLINK, NULL);
+> +	}
+>  	return requested;
+>  }
+
+brcmf_awdl_if_removed() clears awdl->ifp in the firmware event worker
+without the wiphy mutex, and brcmf_fweh_handle_if_event() then
+unregisters the net_device and frees the ifp from there too. awdl.h
+says changes of @ifp hold RTNL and the wiphy mutex. The vendor commands
+(wiphy mutex only) and aftx_work/settle_work check awdl->ifp and then
+use it several times, so a firmware initiated removal in between gives a
+NULL pointer or a freed ifp in brcmf_fil_iovar_data_set().
+
+AWDL_STOPPED is also sent before the interface is gone on the host, so
+a START sent in reaction to it can still fail with -EBUSY from
+brcmf_awdl_ifidx_used().
+
+Handing the unsolicited removal over to a work item that runs with RTNL
+and the wiphy mutex, and sends AWDL_STOPPED when it is done, would fix
+both. The event worker itself cannot take the locks because
+brcmf_awdl_add() and brcmf_awdl_del() wait for its events with them held.
+
+[...]
+
+> +/*
+> + * Removes the AWDL interface before system sleep, with RTNL and the wiphy
+> + * mutex held, while the firmware still takes commands. A queued operation is
+> + * dropped.
+> + */
+> +void brcmf_awdl_suspend(struct brcmf_pub *drvr)
+> +{
+> +	struct brcmf_awdl *awdl = &drvr->awdl;
+> +	int err;
+> +
+> +	spin_lock(&awdl->lock);
+> +	awdl->op = BRCMF_AWDL_OP_NONE;
+> +	spin_unlock(&awdl->lock);
+> +	if (!awdl->ifp)
+> +		return;
+> +	err = brcmf_awdl_del(drvr);
+> +	brcmf_awdl_send_result(drvr, BRCMF_VNDR_EVTS_AWDL_STOPPED, err, NULL);
+> +}
+
+A queued AWDL_START is dropped here without an AWDL_STARTED event, user
+space waits for an answer that never comes. Answer a dropped START with
+AWDL_STARTED and an error (e.g. -ECANCELED).
+
+[...]
+
+> + * @BRCMF_VNDR_CMDS_AWDL_SET_SYNC: synchronize to the master of
+> + *	%BRCMF_AWDL_ATTR_MASTER, %BRCMF_AWDL_ATTR_MASTER_METRIC and
+> + *	%BRCMF_AWDL_ATTR_MASTER_DISTANCE. Without %BRCMF_AWDL_ATTR_MASTER the
+> + *	device is its own master.
+
+The commit message says awdl_opmode fails while the firmware does not
+know a new master yet, and SET_SYNC returns the first error of the
+refresh. So user space gets an error on a normal master change and only
+the next SET_FRAMES or SET_SYNC sends awdl_opmode again. As this is ABI
+it better be documented here, or do not return that error.
+
+[...]
 
 Regards,
 Arend
