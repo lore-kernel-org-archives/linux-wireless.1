@@ -1,95 +1,74 @@
-Authentication-Results: smtp.subspace.kernel.org; arc=pass header.oldest-pass=0 smtp.remote-ip=209.85.218.45
-ARC-Seal: i=2; d=subspace.kernel.org; s=arc20261015; a=rsa-sha256; cv=pass;
-	t=1795648519;
-	b=CqLIVMQAPUR42Nsp9TWgU2IcZ3COXPbo734dcBHV+jHeneUYHPph1Rvyo+T/pdoT07Tg
-	 grOxDNdUfMWutNs0EqhHPRKgAgwUhGYV9OlR0O7wvZpMw592VWbxPdc4J2ZSpQUwBIRq3
-	 3Fno0G0OAAYIPvOWCW8SstH1ZY+lDn6XlgyBFvF7daUizGDojvu7Hq0Sk3hqDRKEYDyqb
-	 iuFWYXGiskJuuUFAbLCv3gLLWrLp1LDbgAQtaMawxLlWB/4scYsMopxOA5NzdvtnhjRgp
-	 HlNdQuJEOeg2QVbkWaXgRP+Yl9Maj9dXcrx8GJ1Jm6jLaz0xogQwtLtOb4+KJMNp+DQ==
-ARC-Message-Signature: i=2; d=subspace.kernel.org; s=arc20261015;
-	a=rsa-sha256; c=relaxed/relaxed; t=1795648519;
-	h=DMARC-Filter:Received:DKIM-Signature:X-Google-DKIM-Signature:
-	 X-Gm-Message-State:X-Gm-Gg:X-Received:MIME-Version:From:Date:
-	 X-Gm-Features:Message-ID:Subject:To:Cc:Content-Type;
-	bh=0xBhUwb7nbQ/7XcZOsX2mzp8bxhNFDcd0Y3RTff2bRM=;
-	b=NMZDdRTm6eppX5ouEoT3RjDthdFOAiDBIfThSM9I6llMJFV6j06VkJjke14sK4sIGAP4
-	 KBYDxAeP7H1qinBVBc2k0iUBnaBBEROJt7ge3sZ8V4Lp3sp12idkOxlEW4fY1UZWb7jQZ
-	 4MUSuseaW9skaBdSQzkTL5LKD5Uma3cG+KowCqyEqdRSHzNO+BOeET6nsi4VN9rJaM9SJ
-	 RuXKPtjlh095lHNVM82jDuJNP7gj2qwLpALucm/EvN8oGHUeNe9lF2gqVOW+QVL8jZWpP
-	 xO61lgeCLZ7K5EDgV7+QsdgYx/7Jg6VBcNmezYwjR6qhgDkVg58ncD9ILQV6+gZDjNw==
-ARC-Authentication-Results: i=2; smtp.subspace.kernel.org; 
-	dmarc=pass header.from=gmail.com;
-	spf=pass smtp.mailfrom=gmail.com;
-	dkim=pass header.d=gmail.com header.i=@gmail.com header.a=rsa-sha256 header.s=20260707 header.b=cXFkGHDZ;
-	arc=pass header.oldest-pass=0 smtp.remote-ip=209.85.218.45
-Received: from mail-ej1-f45.google.com (mail-ej1-f45.google.com [209.85.218.45])
-	(using TLSv1.3 with cipher TLS_AES_128_GCM_SHA256 (128/128 bits)
-	 key-exchange X25519 server-signature ECDSA (prime256v1) server-digest SHA256)
+Authentication-Results: smtp.subspace.kernel.org; arc=none smtp.remote-ip=192.198.163.13
+ARC-Seal: i=1; d=subspace.kernel.org; s=arc20261015; a=rsa-sha256; cv=none;
+	t=1795654366;
+	b=zkxbBTFonU8kZi+RUc/Z16Ev/AXzgrfB5Obi0EKWdIXOpd+UL84+yMMUy5ym/4huB8hj
+	 Sbg0YKFHB0M8888nrmjdoc29jFCHnMuyk/0qA2Qf4wUh3ku1EeEnRVgMrMwDfM6wNVosV
+	 joJ8cpY7Ou+OKd8YMQ3gESdQscr3xrcP03WAaoFuajr3NVB773qfK1geke5P5Xz07dvAB
+	 HrVH1ENi0oy6CFLugs7iDrdt8diiz4QP83HUEvfjKwGrhLgmDhefysxm+tr+oZfjEI+ay
+	 mqrJnWotdchVMtOX5EjVOPrNp6YUlc1cO+qVENUUtkMJ6RoNI20wkV/yEIH9s3umuUQ==
+ARC-Message-Signature: i=1; d=subspace.kernel.org; s=arc20261015;
+	a=rsa-sha256; c=relaxed/relaxed; t=1795654366;
+	h=DMARC-Filter:DKIM-Signature:X-CSE-ConnectionGUID:X-CSE-MsgGUID:
+	 X-IronPort-AV:X-IronPort-AV:Received:X-CSE-ConnectionGUID:
+	 X-CSE-MsgGUID:X-ExtLoop1:X-IronPort-AV:Received:From:To:Cc:Subject:
+	 Date:Message-ID:X-Mailer:MIME-Version:Content-Transfer-Encoding;
+	bh=i6atbjI+tX1RclLrNiP3EwAuP1Mylg3I8yI+DwB8t3A=;
+	b=Sq16TE0nr1ATADqqyTOZ68JPoF1eetE7bCHGazm42IygzzteZ9ZS07nnZ7uJYODZqayK
+	 tanP3eDpXC2pSMZvocmf8Mwj+ATnExjuzcHI6DWfirqn9H/kHtREnQy1GDzAQ3cCX1TuN
+	 BLX/SOsv3Sd4H3D67tQUqvlQtUTLms/xnu744CcQ56/LqFQZNDr31bw10OyX0fhRt0wqf
+	 gASErULsEiM/ClKra841PX+ebPXfEd4JlbrKNprGzzZ/+q//pxQIbsmCd6f9+fA+gKNIB
+	 jSmPyb15XN8kFXyX+wXauOhWvy7lvagJUAelAHWZTdXKFRxSST31PdlqHhWSePHzIpQ==
+ARC-Authentication-Results: i=1; smtp.subspace.kernel.org; 
+	dmarc=pass header.from=linux.intel.com;
+	spf=pass smtp.mailfrom=linux.intel.com;
+	dkim=pass header.d=intel.com header.i=@intel.com header.a=rsa-sha256 header.s=Intel header.b=he4g1df1;
+	arc=none smtp.remote-ip=192.198.163.13
+Received: from mgamail.intel.com (mgamail.intel.com [192.198.163.13])
+	(using TLSv1.2 with cipher ECDHE-ECDSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.subspace.kernel.org (Postfix) with ESMTPS id 7534A606A32A
-	for <linux-wireless@vger.kernel.org>; Wed, 25 Nov 2026 23:15:19 +0000 (UTC)
-DMARC-Filter: OpenDMARC Filter v1.4.2 smtp.subspace.kernel.org 7534A606A32A
-Authentication-Results: smtp.subspace.kernel.org; dmarc=pass (p=none dis=none) header.from=gmail.com
-Authentication-Results: smtp.subspace.kernel.org; spf=pass smtp.mailfrom=gmail.com
+	by smtp.subspace.kernel.org (Postfix) with ESMTPS id 8C73F606A31E
+	for <linux-wireless@vger.kernel.org>; Thu, 26 Nov 2026 00:52:45 +0000 (UTC)
+DMARC-Filter: OpenDMARC Filter v1.4.2 smtp.subspace.kernel.org 8C73F606A31E
+Authentication-Results: smtp.subspace.kernel.org; dmarc=pass (p=none dis=none) header.from=linux.intel.com
+Authentication-Results: smtp.subspace.kernel.org; spf=pass smtp.mailfrom=linux.intel.com
 Authentication-Results: smtp.subspace.kernel.org;
-	dkim=pass (2048-bit key) header.d=gmail.com header.i=@gmail.com header.a=rsa-sha256 header.s=20260707 header.b=cXFkGHDZ
-Received: by mail-ej1-f45.google.com with SMTP id a640c23a62f3a-c516a192844so624109866b.1
-        for <linux-wireless@vger.kernel.org>; Wed, 25 Nov 2026 15:15:19 -0800 (PST)
-ARC-Seal: i=1; a=rsa-sha256; t=1795648518; cv=none;
-        d=google.com; s=arc-20260327;
-        b=HN3l50xmebGrHGLLeNVi+T1iDrbE2KfNsi84aeRDEytw6Oh9kqZYu7yiVS2ICX8Qsm
-         d/gMwiumOkguPjwGM4Vv3v1yq1UW2yP5i+iM/f/Ab6oksBH7WyPj+Gf9YeGCAp3v4Zd7
-         Je5AmKIYxEgZMhUpYJIQ5TeGquGkicoT9yrT+E3DKEYiXRmWlEbQVVQrWvXAygZPgP30
-         K9zSoiEAcgGiE8+aCR4sSg960JBPIAlAoy3eTn7r0VmRswQwjMdW/db2sHaIa5hCiibY
-         3/hcPEVw+I34JX2Ah6tlxWBMk/y289Jb4kDjF97OHMh/JreVYNsfQ8vey9NiInEp61tp
-         7vFw==
-ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=google.com; s=arc-20260327;
-        h=cc:to:subject:message-id:date:from:mime-version:dkim-signature;
-        bh=0xBhUwb7nbQ/7XcZOsX2mzp8bxhNFDcd0Y3RTff2bRM=;
-        fh=ED8XlvhV4agNRzuDusEVMPnyPjaRLPA+MHKLr6CYGfE=;
-        b=Dq4J3wg3OM9dvgn6+RZ+qjXL7A54aLEsvHsjLU9l2qPa12aSzDiJCUL34BOoyKsmb/
-         7ILbml+6jb1/40o7AMwJjagP5sGr3+wZDzoc1F1S7+3l0F3z3kNgt4VWfO0igQjZOAYx
-         LMmnsomNDVf8d+YQyLQ+xg9iq6ea2YXSJ3bwttM/Ei0t6iHuyOs7MlvP2eXIM3JzDbZs
-         +mPq+FlAPqsirnamEmIOZ7OfUIoqScL0lJF55B1csxHiBsDcchLmme/D0CbMYiZ7hKFs
-         z9qZ1gy7g91RReBUwoULNfCT8Lq79FG4wkdiADrrGbxQQ84WBBsGAirZ2muXuqfPj/Xl
-         mQJQ==;
-        darn=vger.kernel.org
-ARC-Authentication-Results: i=1; mx.google.com; arc=none
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=gmail.com; s=20260707; t=1795648518; x=1796253318; darn=vger.kernel.org;
-        h=content-type:cc:to:subject:message-id:date:from:mime-version:from
-         :to:cc:subject:date:message-id:reply-to:content-type;
-        bh=0xBhUwb7nbQ/7XcZOsX2mzp8bxhNFDcd0Y3RTff2bRM=;
-        b=cXFkGHDZ/hwHsgEyqwDnAI6Mn27iOdnz3ZZCfLniOXy6wRtje43QBJq4hvVkLkvGSY
-         jICu8uaeuZFMjDLExCufEMKmdpHGmhWRvgPGfiuWSVSbZR0WAcBol1UL/nPKj6A9nGff
-         qhDN0TKd/kSwUs090q+fQ6nXqYtNjmJmaBPMBcUqH9xOqZgTx6NMpNTvO1tyC+HZWYF+
-         q+tj7NQgbWS5qVG0SZZtqGbPnuFmq2pBHTy2j7to6UQYe/uMQfwMXLHoPAOIaleJy9sD
-         ZsHdOSoW11CFiW8FvCVW8oL2XOQL0+pnUoRUBq4keL8PTAxkqrR9ozaZINW2tlQ/A+jP
-         WlnQ==
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=1e100.net; s=20260707; t=1795648518; x=1796253318;
-        h=content-type:cc:to:subject:message-id:date:from:mime-version
-         :x-gm-gg:x-gm-message-state:from:to:cc:subject:date:message-id
-         :reply-to:content-type;
-        bh=0xBhUwb7nbQ/7XcZOsX2mzp8bxhNFDcd0Y3RTff2bRM=;
-        b=uH4kLj0q1845uHruE+uoS4NK9OxpFN8W1bfsxFTm/XDRuueyiBswsvhzscWIj7AGHj
-         JM7hTpDQU8mJWifNZv+hD9xuK4vJPPJsSXLI8QyTJPWFL9GxOjikzuVmXWXMxUVTl7/K
-         OeN9XalbwetuHwQkq79eF+7lzisoFyYuYe6v6G2usjIj/7HHP0mswq8beVcwTbde5Qud
-         EHYdbHYp6MvJepNyUyfdEJAifJ4UfB0B+Kvn2uP0zbjn6D4VF3OaGXpdHOkbt/ZzmE6K
-         N21ExEnC6/lIqYbacxekjJCEqA+AHAOzann+Qkkbw9HnL0Au/HMP4I3YUIOvC1uRq4C+
-         bDVw==
-X-Gm-Message-State: APuU4Z8p+OFAvpePmnqqv3djEDJhSMACcrKmoRnZOuuaRTWYFMHpcXs8
-	6PgnpjIb1w0miFnHZv/Wrz4OhzWxrjMWOHWfZAq3Tjdht4K3y98vNgOEhstUvQVBxqTlDuCRUok
-	hgO/+N7+syXsplepL3zWhLlAZeBrb3ZCz00pIkkQ=
-X-Gm-Gg: AZFdTZflAjht1kJIVnKn2igchEUOglKLPqPcc6ieFS6SWXlFj9zG94ZjjD5KyiARN08
-	PfhA6hkgJClXgzXclzoeqOzsoitIDJK9gPc0kvIrU+jkTD73XucEWloDuNcd3s5+mwZxqIP68Mp
-	CVJ8j/4EDjzhXvRaPzHIqzE8MHneJkclwsSp+uLhjx5/iybUqEIoIji+qXNABjElE2q0boyZd2D
-	BDnbkaxsCTyS1hndAwytAbEdpFjhD0XSH7unisOhca1Hbmr73BCToQJ5MqevyYO5IOLeipUCrI2
-	AH8yskMx5ib45CnXjOMkFAlEI9Zi1dqAl34Ov+ow6ZM3rB22Z+JRf3L08Sn/p6TQeZzTLzbpavW
-	sz+Z4dX5lKT5rfe9724+pxIlpM6Pid/Xiunzj
-X-Received: by 2002:a17:907:1b1d:b0:c51:982e:28be with SMTP id
- a640c23a62f3a-c51982e29c0mr546980266b.26.1795648517644; Wed, 25 Nov 2026
- 15:15:17 -0800 (PST)
+	dkim=pass (2048-bit key) header.d=intel.com header.i=@intel.com header.a=rsa-sha256 header.s=Intel header.b=he4g1df1
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple;
+  d=intel.com; i=@intel.com; q=dns/txt; s=Intel;
+  t=1795654365; x=1827190365;
+  h=from:to:cc:subject:date:message-id:mime-version:
+   content-transfer-encoding;
+  bh=TXGTcpwtR7pSf+J1721R0fuSx0LKPLJTOsBO/SLG2rw=;
+  b=he4g1df1YgZQy0Tq2N1jcy66vCt9mePeWV/PEu/ecGSY44skN45ttcd2
+   QGhl/iZKDkb8kYXFZ/LtYmNqmIdFeJ+e4g4Xd+0oatSZO5UK4YcPx6VHC
+   H8dSW5Nq2wpyfk/lgiOI9ekC6JyaSmp8idYAg30GmrdqRVYmBnFQogA+t
+   dKo0IgSxkOl9jx0nsND5kb5sN46tcFADhZcKxKXnJ9l9kK/qhIZj+0i6y
+   gto778M4SoJHlV2SjF7vV1QB/7iaNMu3vxIp2xQehVE+yZsZVi6T+9jQP
+   3SwzU88IsbBGSLinG/6YOudeLZ4W+GPr0gLr6bbLXzuhFAY2b7WJtvYK1
+   w==;
+X-CSE-ConnectionGUID: y4XrMyFZSlmppYZVzK+Cwg==
+X-CSE-MsgGUID: jNkk1FYLTxON6zDvkbS+Kw==
+X-IronPort-AV: E=McAfee;i="6800,10657,11977"; a="4522502"
+X-IronPort-AV: E=Sophos;i="6.27,233,1787036400"; 
+   d="scan'208";a="4522502"
+Received: from orviesa003.jf.intel.com ([10.64.159.143])
+  by fmvoesa107.fm.intel.com with ESMTP/TLS/ECDHE-RSA-AES256-GCM-SHA384; 25 Nov 2026 16:52:45 -0800
+X-CSE-ConnectionGUID: BPNUk/uNRqaJwX6sMCFK/g==
+X-CSE-MsgGUID: o3HPEoViQY2oPXOpE73+8g==
+X-ExtLoop1: 1
+X-IronPort-AV: E=Sophos;i="6.27,233,1787036400"; 
+   d="scan'208";a="11907096"
+Received: from emr-371.sh.intel.com ([10.112.106.129])
+  by smtpauth.intel.com with ESMTP/TLS/ECDHE-RSA-AES256-GCM-SHA384; 25 Nov 2026 16:52:43 -0800
+From: Baoli Zhang <baoli.zhang@linux.intel.com>
+To: Miri Korenblit <miriam.rachel.korenblit@intel.com>
+Cc: Johannes Berg <johannes.berg@intel.com>,
+	linux-wireless@vger.kernel.org,
+	Baoli Zhang <baoli.zhang@linux.intel.com>
+Subject: [PATCH] backports: look for kernel headers in source dir too
+Date: Thu, 26 Nov 2026 08:42:00 +0800
+Message-ID: <20261126004200.626863-1-baoli.zhang@linux.intel.com>
+X-Mailer: git-send-email 2.43.0
 X-Mailing-List: linux-wireless@vger.kernel.org
 List-Id: <linux-wireless.vger.kernel.org>
 List-Post: <mailto:linux-wireless@vger.kernel.org>
@@ -99,66 +78,83 @@ List-Unsubscribe: <mailto:linux-wireless+unsubscribe@vger.kernel.org>
 List-Owner: <mailto:linux-wireless+owner@vger.kernel.org>
 Precedence: list
 MIME-Version: 1.0
-From: fan ftdm700 <fantdm700@gmail.com>
-Date: Thu, 26 Nov 2026 00:15:06 +0100
-X-Gm-Features: Aa3M54qIyrwVgNwpYvwSoTvFdN9xXmbqIzctcYQBmuJIaJaJEBxZA7f_WVk8eEw
-Message-ID: <CAOL0-9i8wCt+AJru1zzae0ir+UKYU06kB+6P0VMzxrTZ8GHc4w@mail.gmail.com>
-Subject: [BUG] rtw88_8821au (TP-Link Archer T2U Plus 2357:0120): auth timeout
- on 5 GHz, scan returns nothing (6.18 LTS, 7.3.1)
-To: linux-wireless@vger.kernel.org
-Cc: pkshih@realtek.com, rtl8821cerfe2@gmail.com
-Content-Type: text/plain; charset="UTF-8"
+Content-Transfer-Encoding: 8bit
 
-Hello,
+Debian splits the kernel headers: /lib/modules/<ver>/build only has
+.config, Module.symvers and the generated headers, include/linux is
+under /lib/modules/<ver>/source. The grep checks in compat/Kconfig
+then can't find the headers and all evaluate to n, so on 7.3 we
+redefine the spinlock_bh guards and fail to build.
 
-The in-tree rtw88_8821au driver does not work on my TP-Link Archer T2U Plus
-(2357:0120, RTL8821AU):
+Add KLIB_SRC for these checks. Use the build dir if it has
+include/linux, otherwise its source symlink (O= builds), and only then
+$(KLIB)/source, so that a custom KLIB_BUILD doesn't pick up the headers
+of the running kernel. Warn if no headers are found at all, instead of
+silently disabling the checks.
 
-- Connecting to a 5 GHz AP (ch 36, 5180 MHz) fails with "authentication
-  timed out" after 3 auth tries.
-- Connecting to a 2.4 GHz AP (ch 1, 2412 MHz): the first auth try is sent,
-  then the attempt is aborted ("by local choice") and NetworkManager
-  reports ssid-not-found.
-- "iw dev wlan0 scan" returns empty output.
-- wpa_supplicant repeatedly logs "Reject scan trigger since one is
-  already pending" for minutes, so scans seem to never finish.
-- One "write register 0xa04 failed with -110" error was logged.
-- The adapter works on Windows.
-- It worked on Linux earlier (exact kernel unknown) and stopped working
-  around the time I moved to kernel 7.1. It also fails on 6.18 LTS on a
-  second machine.
+Fixes: e0449c805011 ("backports: auto-detect spinlock_bh guard()")
+Fixes: e9e903010322 ("[BUGFIX] backports: Auto detect genlmsg_multicast_allns()")
+Fixes: 6bd0558a1593 ("[FROMGIT] netfilter: flowtable: restore ieee80211 forward path")
+Signed-off-by: Baoli Zhang <baoli.zhang@linux.intel.com>
+---
+ Makefile       | 14 +++++++++++++-
+ compat/Kconfig |  6 +++---
+ 2 files changed, 16 insertions(+), 4 deletions(-)
 
-Kernel: 7.3.1-1-cachyos (CachyOS kernel; I have not tested a vanilla
-kernel). Also tested: 6.18 LTS. No out-of-tree driver, Secure Boot off,
-regulatory domain BA (country BA: DFS-ETSI). NetworkManager +
-wpa_supplicant.
+diff --git a/Makefile b/Makefile
+index 2b33a80c3..daba7181e 100644
+--- a/Makefile
++++ b/Makefile
+@@ -19,8 +19,13 @@ KLIB_BUILD ?= $(KLIB)/build/
+ KERNEL_CONFIG := $(KLIB_BUILD)/.config
+ KERNEL_MAKEFILE := $(KLIB_BUILD)/Makefile
+ CONFIG_MD5 := $(shell md5sum $(KERNEL_CONFIG) 2>/dev/null | sed 's/\s.*//')
++# Debian splits the headers, its build dir has no include/linux
++KLIB_SRC ?= $(patsubst %/include/linux,%,$(firstword $(wildcard	\
++	$(KLIB_BUILD)/include/linux					\
++	$(KLIB_BUILD)/source/include/linux				\
++	$(KLIB)/source/include/linux)))
+ 
+-export KLIB KLIB_BUILD BACKPORT_DIR KMODDIR KMODPATH_ARG
++export KLIB KLIB_BUILD KLIB_SRC BACKPORT_DIR KMODDIR KMODPATH_ARG
+ 
+ # disable built-in rules for this file
+ .SUFFIXES:
+@@ -60,6 +65,13 @@ mrproper:
+ 	echo "| (that isn't currently running.)"					;\
+ 	echo "\\--"									;\
+ 	false)
++	@test -n "$(KLIB_SRC)" || (							\
++	echo "/--------------"								;\
++	echo "| WARNING: kernel headers (include/linux) not found in"		;\
++	echo "| $(KLIB_BUILD) or its source dir, kernel feature"			;\
++	echo "| detection will not work. Set KLIB_SRC to the kernel"		;\
++	echo "| source tree to fix this."						;\
++	echo "\\--")
+ 	@set -e ; if [ "$$(cat .kernel_config_md5 2>/dev/null)" != "$(CONFIG_MD5)" ]	;\
+ 	then 										\
+ 		echo -n "Generating local configuration database from kernel ..."	;\
+diff --git a/compat/Kconfig b/compat/Kconfig
+index 09663a8bc..e1db4dd71 100644
+--- a/compat/Kconfig
++++ b/compat/Kconfig
+@@ -74,13 +74,13 @@ config BP_MODULES
+ 	for the "modules" directive to control the 'm' state.
+ 
+ config KERNEL_HAS_SPINLOCK_BH_GUARD
+-	def_bool $(success,grep -q DEFINE_LOCK_GUARD_1\$(left_paren)spinlock_bh$(comma) $(KLIB_BUILD)/include/linux/spinlock.h)
++	def_bool $(success,grep -q DEFINE_LOCK_GUARD_1\$(left_paren)spinlock_bh$(comma) $(KLIB_SRC)/include/linux/spinlock.h)
+ 
+ config KERNEL_HAS_GENLMSG_MULTICAST_ALLNS_GFP
+-	def_bool $(success,grep -A5 'int genlmsg_multicast_allns' $(KLIB_BUILD)/include/net/genetlink.h | grep -q gfp_t)
++	def_bool $(success,grep -A5 'int genlmsg_multicast_allns' $(KLIB_SRC)/include/net/genetlink.h | grep -q gfp_t)
+ 
+ config KERNEL_HAS_DEV_PATH_IEEE80211
+-	def_bool $(success,grep -q DEV_PATH_IEEE80211 $(KLIB_BUILD)/include/linux/netdevice.h)
++	def_bool $(success,grep -q DEV_PATH_IEEE80211 $(KLIB_SRC)/include/linux/netdevice.h)
+ 
+ config BPAUTO_BUILD_NLATTR
+ 	def_bool y
+-- 
+2.43.0
 
-Failed auth (kernel log, 5 GHz):
-wlan0: authenticate with xx:xx:xx:xx:xx:xx
-wlan0: send auth to xx:xx:xx:xx:xx:xx (try 1/3)
-wlan0: send auth to xx:xx:xx:xx:xx:xx (try 2/3)
-wlan0: send auth to xx:xx:xx:xx:xx:xx (try 3/3)
-wlan0: authentication with xx:xx:xx:xx:xx:xx timed out
-
-2.4 GHz attempt:
-wlan0: send auth to xx:xx:xx:xx:xx:xx (try 1/3)
-wlan0: aborting authentication with xx:xx:xx:xx:xx:xx by local choice
-(Reason: 3=DEAUTH_LEAVING)
-
-lsusb:
-Bus 001 Device 011: ID 2357:0120 TP-Link Archer T2U PLUS [RTL8821AU]
-
-rtw/firmware lines (journalctl -k -b | grep -iE 'rtw|8821'):
-rtw88_8821au 1-8:1.0: Firmware version 42.4.0, H2C version 0
-usbcore: registered new interface driver rtw88_8821au
-rtw88_8821au 1-8:1.0: write register 0xa04 failed with -110
-rtw88_8821au 1-9:1.0: Firmware version 42.4.0, H2C version 0
-(firmware loads fine on every plug-in, on several USB ports)
-
-sudo iw dev wlan0 scan | grep -E 'freq|SSID|signal':
-empty output
-
-I can test patches or collect more debug output if needed.
-
-Thanks,
-Sentinel
