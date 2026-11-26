@@ -1,59 +1,59 @@
 Authentication-Results: smtp.subspace.kernel.org; arc=none smtp.remote-ip=46.4.11.11
 ARC-Seal: i=1; d=subspace.kernel.org; s=arc20261015; a=rsa-sha256; cv=none;
 	t=1795717410;
-	b=k62irJj845thdPmY7KTs2+/mthr9Lr/dzcTNzE9B1CdeWDy+GCVP/Sfckozaq/9T7g0U
-	 xEPht/tLaiR/Jvv+dhW2+52XO07rrNsPsGAbZyFic89Hm0z6xC1m0AZbIv4gFra/jFm/b
-	 hjInC4T/YK66jc18zUXObd3pOTVD6e8ymxV0Q33fhRv6PT5NK0GvG4t4gzdC8pM+dwGlX
-	 31MP0y2W+dsMfKVdnX4oRw6QvUsbih1VaYoPSY3AcjEjQuWVpjrXoxk9+9LfCQ5SuecMn
-	 z7vlaK0hvP/Fq7tC0kloS8IRV8zuEiQ8y8ee8bJcuNTODGcvy8B+GxuXhQ9hfj12JRA==
+	b=3TSFhLCpW7Oz3/pDLcjbH5isPPh1bdP/NDroZ/UOUyAYsqQEBCc+sBzWKfgf6h+WSOAV
+	 O5aBRfqJjvW0DQ0ujUuljfyHZuRiLcKd12lMt/AWkg6OqRbRMUqJVCI8Eg7D+k4oEvGQo
+	 R1oX+jBu5RgD17UhkZ4KpvvPFqqewPHDlr/Uhxf4FOnjp60p1VNRCSfOuxi8ZK2JWfKpA
+	 rg54sj64Zqgcjak7E2QJRrFGpHL8YLNtjgwn6lPl+TZvp3k00hKtZlWtP0g36h8K/TrQ7
+	 pECmuRnxg0j898LEBE2wBwHBQbDViICNlNSNzQyZx/DCgDGJYSGtRGZZNeWdDolraUA==
 ARC-Message-Signature: i=1; d=subspace.kernel.org; s=arc20261015;
 	a=rsa-sha256; c=relaxed/relaxed; t=1795717410;
 	h=DMARC-Filter:DKIM-Signature:Received:From:To:Subject:Date:Message-ID:
 	 X-Mailer:In-Reply-To:References:MIME-Version:
 	 Content-Transfer-Encoding;
-	bh=RtpsKKkSA1llx+VeQ6cO79rCzBm46QiZ0W5c/XhRwaE=;
-	b=fPkCirjKr3f/M0VN1BakD9+nmA1so+JQsADMnh/qe2LsHuha2FFaoPwf14fILXv83dmP
-	 JtvG6sL2/BdhSHOVYIXlmLvEzbSOM8lhLmRh3NVIg45GFjok72Z7QysV49DAHwaAL3Wqt
-	 s3Fyxi5zeM7LfZex5/KbaJKTmLV2e4GbTnMcXRVGej/QEXv/f6r9cFuNH2I6/qm8ZmHSj
-	 QjATAkzsrWs16Bc+/vSlMdO2w2CRYBGpUtxadRdV93lOiuUI2T3YcwfVx/8iefc38aEYB
-	 K4Pz0JcV8lrvKvIuhMCbJPZZQDN5eiwI6SEDlie0m+gyftfFHmyXecUB9IMJlratV4A==
+	bh=JfCFYfgPd3cnQpBJDpsNuIIi+GvdwpjRQb3EYcyPrK0=;
+	b=i1vTMGzrz2JDFsjKgrYJz1qiuh/H3Pic8L0Z2FgCtJFBKltHo2dYrNA0fxSZx4D82IrB
+	 +06yHPLHKajQV80LA7sj8xXxcYR3NBBEDff889JAB1TimK464x4vunGvJ3+3lv1lRj18y
+	 hPtGZKwMlJqfwDc5RDBUGOD+jNozxdziDbhZ6WaeoAhg8DjRiU04IUETWV5JILRU2Mqvc
+	 8X1CS+dY8snprWdDR/ixdNbcP60O635+w/oOfgK+a3CqRJLZvTljZrfs51SkcrRdImLSK
+	 sRgTExuZILMJxOMZZlAV6bSyaCtevnlXJ3t4EMWkAW6BgQ256UdDPqdr+4p7CXfOS0Q==
 ARC-Authentication-Results: i=1; smtp.subspace.kernel.org; 
 	dmarc=pass header.from=nbd.name;
 	spf=pass smtp.mailfrom=nbd.name;
-	dkim=pass header.d=nbd.name header.i=@nbd.name header.a=rsa-sha256 header.s=20160729 header.b=QZnjVVE1;
+	dkim=pass header.d=nbd.name header.i=@nbd.name header.a=rsa-sha256 header.s=20160729 header.b=ndnCz7wN;
 	arc=none smtp.remote-ip=46.4.11.11
 Received: from nbd.name (nbd.name [46.4.11.11])
 	(using TLSv1.3 with cipher TLS_AES_256_GCM_SHA384 (256/256 bits)
 	 key-exchange ECDHE (prime256v1) server-signature ECDSA (prime256v1) server-digest SHA256)
 	(No client certificate requested)
-	by smtp.subspace.kernel.org (Postfix) with ESMTPS id 5583D606A329
+	by smtp.subspace.kernel.org (Postfix) with ESMTPS id 38097606A327
 	for <linux-wireless@vger.kernel.org>; Thu, 26 Nov 2026 18:23:30 +0000 (UTC)
-DMARC-Filter: OpenDMARC Filter v1.4.2 smtp.subspace.kernel.org 5583D606A329
+DMARC-Filter: OpenDMARC Filter v1.4.2 smtp.subspace.kernel.org 38097606A327
 Authentication-Results: smtp.subspace.kernel.org; dmarc=pass (p=none dis=none) header.from=nbd.name
 Authentication-Results: smtp.subspace.kernel.org; spf=pass smtp.mailfrom=nbd.name
 Authentication-Results: smtp.subspace.kernel.org;
-	dkim=pass (1024-bit key) header.d=nbd.name header.i=@nbd.name header.a=rsa-sha256 header.s=20160729 header.b=QZnjVVE1
+	dkim=pass (1024-bit key) header.d=nbd.name header.i=@nbd.name header.a=rsa-sha256 header.s=20160729 header.b=ndnCz7wN
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed; d=nbd.name;
 	s=20160729; h=Content-Transfer-Encoding:MIME-Version:References:In-Reply-To:
 	Message-ID:Date:Subject:To:From:Sender:Reply-To:Cc:Content-Type:Content-ID:
 	Content-Description:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc
 	:Resent-Message-ID:List-Id:List-Help:List-Unsubscribe:List-Subscribe:
 	List-Post:List-Owner:List-Archive;
-	bh=RtpsKKkSA1llx+VeQ6cO79rCzBm46QiZ0W5c/XhRwaE=; b=QZnjVVE13xNt+M02iX5yeQFbx6
-	jfuQOivhULZ3N6ESI1E/fHRZo1nhH0aDwSesA10uWrEhhNy7Md3tTq+Or0rGKM6mFFggi5VkZqucr
-	76ZLw1Rk1bEN+T9uxjyJBF03GXcDrwCCz7LZ8BpZFT7dDc0nYTQbhfjfA1ENjjE9Nq4M=;
+	bh=JfCFYfgPd3cnQpBJDpsNuIIi+GvdwpjRQb3EYcyPrK0=; b=ndnCz7wNjOlyzs9CxZN8jdo2Ke
+	OT90PwvDl3rjDhlGaTGeWrnehVh/5wCw3RrZLMV6DR7Zu2W+fnBzCyRiPKQb2An7tQV41CE+X/FB7
+	pN/hKtncG9MFCEelVPifgM979bO1R3yBaCqNvNb1m4/mbcllDXONSRFkI7RJlSsXHydE=;
 Received: from p200300cadf0358007454e6799d1561c3.dip0.t-ipconnect.de ([2003:ca:df03:5800:7454:e679:9d15:61c3] helo=localhost.localdomain)
 	by ds12 with esmtpsa  (TLS1.3) tls TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384
 	(Exim 4.96)
 	(envelope-from <nbd@nbd.name>)
-	id 1xWe80-008icn-2s
+	id 1xWe80-008icn-2J
 	for linux-wireless@vger.kernel.org;
 	Thu, 26 Nov 2026 19:23:28 +0100
 From: Felix Fietkau <nbd@nbd.name>
 To: linux-wireless@vger.kernel.org
-Subject: [PATCH mt76-next 07/16] wifi: mt76: mt7996: check the RX PN of group addressed frames
-Date: Thu, 26 Nov 2026 19:23:16 +0100
-Message-ID: <20261126182325.2516607-7-nbd@nbd.name>
+Subject: [PATCH mt76-next 06/16] wifi: mt76: keep an RX replay counter per group key id and TID
+Date: Thu, 26 Nov 2026 19:23:15 +0100
+Message-ID: <20261126182325.2516607-6-nbd@nbd.name>
 X-Mailer: git-send-email 2.47.3
 In-Reply-To: <20261126182325.2516607-1-nbd@nbd.name>
 References: <20261126182325.2516607-1-nbd@nbd.name>
@@ -68,70 +68,249 @@ Precedence: list
 MIME-Version: 1.0
 Content-Transfer-Encoding: 8bit
 
-The RX descriptor of a decrypted group addressed frame names the vif
-link wcid, which has no station, so mt7996_rx_get_wcid() gives the frame
-no wcid. With the IV stripped, the frame gets no replay check.
+Where mt76 strips the IV of a decrypted frame, mac80211 leaves its PN
+check to mt76_check_ccmp_pn(). That function uses per-TID counters that
+all keys of the wcid share. After a GTK rekey, frames of the new key
+thus read as replays until their PN passes that of the old key.
 
-Give such a frame the vif link wcid and check it against the counters of
-its key id. Seed the counters only when mac80211 sets the group key, not
-when the driver installs the key again at a link add, since mac80211
-does not advance the RSC of a frame with a stripped IV.
+Keep counters per group key id and TID in the vif link of a station
+interface, and check a group addressed frame that a driver marks with
+its key id against them. Other interface types need none: an AP receives
+nothing under its own group key, and each IBSS or mesh peer has a group
+key of its own. All other frames keep the per-TID counters of their
+wcid, so that each driver can move to the new counters on its own.
 
-Fixes: 98686cd21624 ("wifi: mt76: mt7996: add driver for MediaTek Wi-Fi 7 (802.11be) devices")
 Signed-off-by: Felix Fietkau <nbd@nbd.name>
 ---
- drivers/net/wireless/mediatek/mt76/mt7996/mac.c  | 5 +++++
- drivers/net/wireless/mediatek/mt76/mt7996/main.c | 7 +++++++
- 2 files changed, 12 insertions(+)
+ drivers/net/wireless/mediatek/mt76/mac80211.c | 95 ++++++++++++++-----
+ drivers/net/wireless/mediatek/mt76/mt76.h     | 26 ++++-
+ 2 files changed, 97 insertions(+), 24 deletions(-)
 
-diff --git a/drivers/net/wireless/mediatek/mt76/mt7996/mac.c b/drivers/net/wireless/mediatek/mt76/mt7996/mac.c
-index 62e16e3c989b..ec4c8118d679 100644
---- a/drivers/net/wireless/mediatek/mt76/mt7996/mac.c
-+++ b/drivers/net/wireless/mediatek/mt76/mt7996/mac.c
-@@ -478,6 +478,8 @@ mt7996_mac_fill_rx(struct mt7996_dev *dev, enum mt76_rxq_id q,
+diff --git a/drivers/net/wireless/mediatek/mt76/mac80211.c b/drivers/net/wireless/mediatek/mt76/mac80211.c
+index a42a950c20cb..33f2bd5a25f7 100644
+--- a/drivers/net/wireless/mediatek/mt76/mac80211.c
++++ b/drivers/net/wireless/mediatek/mt76/mac80211.c
+@@ -1292,33 +1292,58 @@ int mt76_get_survey(struct ieee80211_hw *hw, int idx,
+ }
+ EXPORT_SYMBOL_GPL(mt76_get_survey);
+ 
++static void
++mt76_key_rx_pn_get(struct ieee80211_key_conf *key, int tid, u8 *pn)
++{
++	struct ieee80211_key_seq seq;
++
++	ieee80211_get_key_rx_seq(key, tid, &seq);
++	if (key->cipher == WLAN_CIPHER_SUITE_GCMP ||
++	    key->cipher == WLAN_CIPHER_SUITE_GCMP_256)
++		memcpy(pn, seq.gcmp.pn, sizeof(seq.gcmp.pn));
++	else
++		memcpy(pn, seq.ccmp.pn, sizeof(seq.ccmp.pn));
++}
++
++static void
++mt76_wcid_group_key_setup(struct mt76_wcid *wcid,
++			  struct ieee80211_key_conf *key)
++{
++	struct mt76_rx_group_pn *group_pn = wcid->rx_group_pn;
++	int i;
++
++	if (!group_pn || key->keyidx >= ARRAY_SIZE(group_pn->pn))
++		return;
++
++	if (!mt76_key_has_rx_pn(key)) {
++		group_pn->key_mask &= ~BIT(key->keyidx);
++		return;
++	}
++
++	for (i = 0; i < IEEE80211_NUM_TIDS; i++)
++		mt76_key_rx_pn_get(key, i, group_pn->pn[key->keyidx][i]);
++
++	group_pn->key_mask |= BIT(key->keyidx);
++}
++
+ void mt76_wcid_key_setup(struct mt76_dev *dev, struct mt76_wcid *wcid,
+ 			 struct ieee80211_key_conf *key)
+ {
+-	struct ieee80211_key_seq seq;
+-	u8 *pn;
+ 	int i;
+ 
++	if (key && !(key->flags & IEEE80211_KEY_FLAG_PAIRWISE))
++		mt76_wcid_group_key_setup(wcid, key);
++
+ 	mt76_wcid_key_link_setup(wcid, key);
+ 	if (!key || !mt76_key_has_rx_pn(key))
+ 		return;
+ 
+-	if (key->cipher == WLAN_CIPHER_SUITE_GCMP ||
+-	    key->cipher == WLAN_CIPHER_SUITE_GCMP_256)
+-		pn = seq.gcmp.pn;
+-	else
+-		pn = seq.ccmp.pn;
+-
+ 	/* data frame */
+-	for (i = 0; i < IEEE80211_NUM_TIDS; i++) {
+-		ieee80211_get_key_rx_seq(key, i, &seq);
+-		memcpy(wcid->rx_key_pn[i], pn, sizeof(wcid->rx_key_pn[i]));
+-	}
++	for (i = 0; i < IEEE80211_NUM_TIDS; i++)
++		mt76_key_rx_pn_get(key, i, wcid->rx_key_pn[i]);
+ 
+ 	/* robust management frame */
+-	ieee80211_get_key_rx_seq(key, -1, &seq);
+-	memcpy(wcid->rx_key_pn[i], pn, sizeof(wcid->rx_key_pn[i]));
+-
++	mt76_key_rx_pn_get(key, -1, wcid->rx_key_pn[i]);
+ }
+ EXPORT_SYMBOL(mt76_wcid_key_setup);
+ 
+@@ -1411,13 +1436,25 @@ mt76_rx_convert(struct mt76_dev *dev, struct sk_buff *skb,
+ 	*hw = mt76_phy_hw(dev, mstat.phy_idx);
+ }
+ 
++static u8 *
++mt76_rx_group_pn(struct mt76_rx_status *status, int security_idx)
++{
++	struct mt76_rx_group_pn *group_pn = status->wcid->rx_group_pn;
++
++	if (!group_pn || !(group_pn->key_mask & BIT(status->key_id)))
++		return NULL;
++
++	return group_pn->pn[status->key_id][security_idx];
++}
++
+ void mt76_check_ccmp_pn(struct sk_buff *skb)
+ {
+ 	struct mt76_rx_status *status = (struct mt76_rx_status *)skb->cb;
+ 	struct mt76_wcid *wcid = status->wcid;
+ 	struct ieee80211_hdr *hdr;
+-	struct mt76_wcid *pn_wcid;
+ 	int security_idx;
++	bool group;
++	u8 *rx_pn;
+ 	int ret;
+ 
+ 	if (!(status->flag & RX_FLAG_DECRYPTED))
+@@ -1429,12 +1466,10 @@ void mt76_check_ccmp_pn(struct sk_buff *skb)
+ 	if (status->skip_pn_check)
+ 		return;
+ 
+-	if (!wcid || !wcid->rx_check_pn)
++	if (!wcid)
+ 		return;
+ 
+-	/* the links of an MLD peer share one PN space per key */
+-	pn_wcid = mt76_wcid_primary(wcid);
+-
++	group = status->group && wcid->rx_group_pn;
+ 	security_idx = status->qos_ctl & IEEE80211_QOS_CTL_TID_MASK;
+ 	if (status->flag & RX_FLAG_8023)
+ 		goto skip_hdr_check;
+@@ -1450,6 +1485,10 @@ void mt76_check_ccmp_pn(struct sk_buff *skb)
+ 			return;
+ 	}
+ 
++	/* group state has no counter for Management frames */
++	if (ieee80211_is_mgmt(hdr->frame_control))
++		group = false;
++
+ 	/* IEEE 802.11-2020, 12.5.3.4.4 "PN and replay detection" c):
+ 	 *
+ 	 * the recipient shall maintain a single replay counter for received
+@@ -1461,15 +1500,25 @@ void mt76_check_ccmp_pn(struct sk_buff *skb)
+ 		security_idx = IEEE80211_NUM_TIDS;
+ 
+ skip_hdr_check:
++	/* the links of an MLD peer share one PN space per pairwise key */
++	if (group)
++		rx_pn = mt76_rx_group_pn(status, security_idx);
++	else if (wcid->rx_check_pn)
++		rx_pn = mt76_wcid_primary(wcid)->rx_key_pn[security_idx];
++	else
++		return;
++	if (!rx_pn)
++		return;
++
+ 	BUILD_BUG_ON(sizeof(status->iv) != sizeof(wcid->rx_key_pn[0]));
+-	ret = memcmp(status->iv, pn_wcid->rx_key_pn[security_idx],
+-		     sizeof(status->iv));
++	BUILD_BUG_ON(sizeof(status->iv) != sizeof(wcid->rx_group_pn->pn[0][0]));
++	ret = memcmp(status->iv, rx_pn, sizeof(status->iv));
+ 	if (ret <= 0) {
  		status->flag |= RX_FLAG_ONLY_MONITOR;
- 
- 	unicast = FIELD_GET(MT_RXD3_NORMAL_ADDR_TYPE, rxd3) == MT_RXD3_NORMAL_U2M;
-+	status->group = !unicast;
-+	status->key_id = FIELD_GET(MT_RXD1_NORMAL_KEY_ID, rxd1);
- 	idx = FIELD_GET(MT_RXD1_NORMAL_WLAN_IDX, rxd1);
- 	status->wcid = mt7996_rx_get_wcid(dev, idx, band_idx);
- 
-@@ -519,6 +521,9 @@ mt7996_mac_fill_rx(struct mt7996_dev *dev, enum mt76_rxq_id q,
- 		status->flag |= RX_FLAG_MMIC_STRIPPED | RX_FLAG_MIC_STRIPPED;
+ 		return;
  	}
  
-+	if (!unicast && !status->wcid && (status->flag & RX_FLAG_DECRYPTED))
-+		status->wcid = mt76_rx_group_wcid(mt76_wcid_ptr(dev, idx));
-+
- 	remove_pad = FIELD_GET(MT_RXD2_NORMAL_HDR_OFFSET, rxd2);
+-	memcpy(pn_wcid->rx_key_pn[security_idx], status->iv, sizeof(status->iv));
++	memcpy(rx_pn, status->iv, sizeof(status->iv));
  
- 	if (rxd2 & MT_RXD2_NORMAL_MAX_LEN_ERROR)
-diff --git a/drivers/net/wireless/mediatek/mt76/mt7996/main.c b/drivers/net/wireless/mediatek/mt76/mt7996/main.c
-index bcecd6558fda..7e5bf40c257d 100644
---- a/drivers/net/wireless/mediatek/mt76/mt7996/main.c
-+++ b/drivers/net/wireless/mediatek/mt76/mt7996/main.c
-@@ -469,6 +469,7 @@ int mt7996_vif_link_add(struct mt76_phy *mphy, struct ieee80211_vif *vif,
- 	msta_link->wcid.link_valid = ieee80211_vif_is_mld(vif);
- 	msta_link->wcid.tx_info |= MT_WCID_TX_INFO_SET;
- 	mt76_wcid_init(&msta_link->wcid, band_idx);
-+	mt76_wcid_rx_group_pn_set(&msta_link->wcid, vif, &mlink->rx_group_pn);
+ 	if (status->flag & RX_FLAG_IV_STRIPPED)
+ 		status->flag |= RX_FLAG_PN_VALIDATED;
+diff --git a/drivers/net/wireless/mediatek/mt76/mt76.h b/drivers/net/wireless/mediatek/mt76/mt76.h
+index 688039f2d967..e2156d7c1108 100644
+--- a/drivers/net/wireless/mediatek/mt76/mt76.h
++++ b/drivers/net/wireless/mediatek/mt76/mt76.h
+@@ -383,6 +383,11 @@ DECLARE_EWMA(signal, 10, 8);
+ #define MT_WCID_TX_INFO_TXPWR_ADJ	GENMASK(25, 18)
+ #define MT_WCID_TX_INFO_SET		BIT(31)
  
- 	if (vif->type != NL80211_IFTYPE_AP &&
- 	    (!mlink->omac_idx || mlink->omac_idx > 3))
-@@ -900,6 +901,12 @@ static int mt7996_set_key(struct ieee80211_hw *hw, enum set_key_cmd cmd,
- 	}
++struct mt76_rx_group_pn {
++	u8 key_mask;
++	u8 pn[4][IEEE80211_NUM_TIDS][6];
++};
++
+ struct mt76_wcid {
+ 	struct mt76_rx_tid __rcu *aggr[IEEE80211_NUM_TIDS];
  
- 	for_each_set_bit(link_id, &links, IEEE80211_MLD_MAX_NUM_LINKS) {
-+		struct mt7996_vif_link *link = mt7996_vif_link(dev, vif, link_id);
+@@ -410,6 +415,7 @@ struct mt76_wcid {
+ 
+ 	u8 rx_check_pn;
+ 	u8 rx_key_pn[IEEE80211_NUM_TIDS + 1][6];
++	struct mt76_rx_group_pn *rx_group_pn;
+ 	u16 cipher;
+ 
+ 	u32 tx_info;
+@@ -782,7 +788,8 @@ struct mt76_rx_status {
+ 		} eht;
+ 	};
+ 
+-	u8 amsdu:1, first_amsdu:1, last_amsdu:1, skip_pn_check:1;
++	u8 amsdu:1, first_amsdu:1, last_amsdu:1, skip_pn_check:1, group:1,
++	   key_id:2;
+ 	u8 rate_idx;
+ 	u8 nss:5, band:3;
+ 	u8 chains;
+@@ -860,6 +867,7 @@ struct mt76_vif_link {
+ 	struct ieee80211_chanctx_conf *ctx;
+ 	struct mt76_wcid *wcid;
+ 	struct mt76_vif_data *mvif;
++	struct mt76_rx_group_pn rx_group_pn;
+ 	struct rcu_head rcu_head;
+ };
+ 
+@@ -1655,6 +1663,22 @@ mt76_wcid_key_link_setup(struct mt76_wcid *wcid,
+ 	wcid->rx_check_pn = key && mt76_key_has_rx_pn(key);
+ }
+ 
++static inline void
++mt76_wcid_rx_group_pn_set(struct mt76_wcid *wcid, struct ieee80211_vif *vif,
++			  struct mt76_rx_group_pn *group_pn)
++{
++	wcid->rx_group_pn = vif->type == NL80211_IFTYPE_STATION ? group_pn : NULL;
++}
 +
-+		/* a replay of the key at a link add must keep the counters */
-+		if (!sta && link && cmd == SET_KEY)
-+			mt76_wcid_key_setup(&dev->mt76, &link->msta_link.wcid, key);
++static inline struct mt76_wcid *
++mt76_rx_group_wcid(struct mt76_wcid *wcid)
++{
++	if (!wcid || wcid->sta || !wcid->rx_group_pn)
++		return NULL;
 +
- 		err = mt7996_set_hw_key(hw, cmd, vif, sta, link_id, key);
- 		if (err)
- 			break;
++	return wcid;
++}
++
+ void mt76_wcid_key_setup(struct mt76_dev *dev, struct mt76_wcid *wcid,
+ 			 struct ieee80211_key_conf *key);
+ 
 -- 
 2.47.3
 
