@@ -1,114 +1,114 @@
 Authentication-Results: smtp.subspace.kernel.org; arc=none smtp.remote-ip=205.220.168.131
 ARC-Seal: i=1; d=subspace.kernel.org; s=arc20261015; a=rsa-sha256; cv=none;
-	t=1795658859;
-	b=sIe23Ukw1chioXiMAXJN+f0tXvdoXxBtt8pfqXjiVghlJH0XKPJk8HllEGESKsZvtOfA
-	 B6XdboYxM8Uz/aIJYMtecHPxblVUHlc8P3Uvd4PBcD565XmHItVEU1VJrFHeWXhHzAQw+
-	 XZU25Iuwc3ghrXXhrotjh0iyxu7HDdjPAGEQx6XyDWszhCDOZtLLAoroKEsSCPqMePhZ1
-	 OUa3QrhUlAyFVYz8JiA/fPcqQ5yWr45vUXQ7wtEoG+vEXtpgmSwF5LNULYSneJWBwq4kv
-	 hdv9yNYOAYHE8L9RAnPhC9VLpDgtZnJKjp4DHyotmjuzc02hwBoPyTK8YJFgkAMWA8Q==
+	t=1795658863;
+	b=VY2FTREiZT7qHdAnCs2fFqTWX5XbtCv3S6vEfBYhEdAFs7Wx+disnA0VpOwHXsgIgxeG
+	 dT3qFtBkjPMp4dXdn3z3NNAyJCPi6HrVrb7OOa5torHC3/5JFMBRNGMdtwRB0JiWlJWSx
+	 4phHfP3zzTqkJSLvGeoCepgQXY79ptTEcCiZw0yHanSnJ/ljzQqE4JWMWvweC30kuvZyD
+	 80HwmLJjDGCrUm/Us05siEKF3nfAQxNT2P4VA6lDV+HctH4U5xE5Wq0lW3VSih8QWEmfg
+	 MP34RkbU67Oy3BLitLDNc5zRASKYBFeQbK+o4D26xnrV98lYwQosiOe3iT91Rnxepow==
 ARC-Message-Signature: i=1; d=subspace.kernel.org; s=arc20261015;
-	a=rsa-sha256; c=relaxed/relaxed; t=1795658859;
+	a=rsa-sha256; c=relaxed/relaxed; t=1795658863;
 	h=DMARC-Filter:Received:DKIM-Signature:Received:Received:
 	 DKIM-Signature:X-Google-DKIM-Signature:X-Forwarded-Encrypted:
 	 X-Gm-Message-State:X-Gm-Gg:X-Received:X-Received:Received:From:To:Cc:
 	 Subject:Date:Message-Id:X-Mailer:In-Reply-To:References:MIME-Version:
-	 Content-Transfer-Encoding:X-Proofpoint-Spam-Info:
-	 X-Proofpoint-ORIG-GUID:X-Proofpoint-GUID:X-Authority-Analysis:
-	 X-Proofpoint-Spam-Details-Enc:X-Proofpoint-Virus-Version:
+	 Content-Transfer-Encoding:X-Proofpoint-GUID:X-Proofpoint-ORIG-GUID:
+	 X-Authority-Analysis:X-Proofpoint-Spam-Details-Enc:
+	 X-Proofpoint-Spam-Info:X-Proofpoint-Virus-Version:
 	 X-Proofpoint-Spam-Details;
-	bh=0R6kz49hV3AZznu/COs3CzoBAvj0flKjT5W/5U4wY7U=;
-	b=awCMeaH5uBx19yhAfpbvKlMpw3O6lnXye87q30JpbA+UtMrOGaLFTEYapmRQR8/GhxN0
-	 cNmUdq6JHQ5y6xRZ+WCLf1Xn224irEx77M204T5pwB/dDLkNdjE1aMLUGq2s/9pZxDWhk
-	 3eyLHnacYxo3iwxixGLbGGJKcde3PwvVLncPGFMxoUABp1DbHrV6AdQ3lUHjfC2w4Umhe
-	 6Gl4Odl22rIKv7glSzemHLMT8CfXaSwuTf4lvSk/AYfOANY9qsA0HuLum859CMr7jVRPs
-	 2NeRDFRYTU9nAUFbzruyAphDaRZ2+yamHBkAXupeh69S3ZtDgNCfEL+gzRMW0xDe7IQ==
+	bh=Z2t65+X6bE5g+Fc6Tg7IbK2g1t2NNkQ7zYkTkIeL4DU=;
+	b=jNGbgya4Osdc7r7ZRjLRnl+DgWRRO8NXqTdUJAXEwUbwlsKqMqFkkWI+lE2QJLyagDEZ
+	 ycEMk+ICz+j0In3nNe20HCou8BSOv3TJpHSMXTsntPEKLMoEMiTJdfaRA0fxqMlfEwVTY
+	 1K6+PdRu552O1vRmY+mv7kE9iHq3XEhRyK/0AAC0547/cX/9ljQjJsYiDarUHKZr/9TGY
+	 3IePvogvzrQTcOSW1gyqQdIvRWlP+8IeS39lRB/oevKhYlVn981/udGwRVsmR0dORu1FX
+	 ygEFpOKDL2OyGbjljBWhTyxec7W36GnoDxs0D2gt13pHYVaPagryw6/AO3Cj5psQleQ==
 ARC-Authentication-Results: i=1; smtp.subspace.kernel.org; 
 	dmarc=pass header.from=oss.qualcomm.com;
 	spf=pass smtp.mailfrom=oss.qualcomm.com;
-	dkim=pass header.d=qualcomm.com header.i=@qualcomm.com header.a=rsa-sha256 header.s=qcppdkim1 header.b=augfP6Zw;
-	dkim=pass header.d=oss.qualcomm.com header.i=@oss.qualcomm.com header.a=rsa-sha256 header.s=google header.b=foOqpnS+;
+	dkim=pass header.d=qualcomm.com header.i=@qualcomm.com header.a=rsa-sha256 header.s=qcppdkim1 header.b=RvfnQzc5;
+	dkim=pass header.d=oss.qualcomm.com header.i=@oss.qualcomm.com header.a=rsa-sha256 header.s=google header.b=JjuOCdOM;
 	arc=none smtp.remote-ip=205.220.168.131
 Received: from mx0a-0031df01.pphosted.com (mx0a-0031df01.pphosted.com [205.220.168.131])
 	(using TLSv1.3 with cipher TLS_AES_256_GCM_SHA384 (256/256 bits)
 	 key-exchange X25519 server-signature ECDSA (prime256v1) server-digest SHA256)
 	(No client certificate requested)
-	by smtp.subspace.kernel.org (Postfix) with ESMTPS id 80B5C606A338
-	for <linux-wireless@vger.kernel.org>; Thu, 26 Nov 2026 02:07:39 +0000 (UTC)
-DMARC-Filter: OpenDMARC Filter v1.4.2 smtp.subspace.kernel.org 80B5C606A338
+	by smtp.subspace.kernel.org (Postfix) with ESMTPS id F078C606A680
+	for <linux-wireless@vger.kernel.org>; Thu, 26 Nov 2026 02:07:41 +0000 (UTC)
+DMARC-Filter: OpenDMARC Filter v1.4.2 smtp.subspace.kernel.org F078C606A680
 Authentication-Results: smtp.subspace.kernel.org; dmarc=pass (p=none dis=none) header.from=oss.qualcomm.com
 Authentication-Results: smtp.subspace.kernel.org; spf=pass smtp.mailfrom=oss.qualcomm.com
 Authentication-Results: smtp.subspace.kernel.org;
-	dkim=pass (2048-bit key) header.d=qualcomm.com header.i=@qualcomm.com header.a=rsa-sha256 header.s=qcppdkim1 header.b=augfP6Zw;
-	dkim=pass (2048-bit key) header.d=oss.qualcomm.com header.i=@oss.qualcomm.com header.a=rsa-sha256 header.s=google header.b=foOqpnS+
-Received: from pps.filterd (m0279867.ppops.net [127.0.0.1])
-	by mx0a-0031df01.pphosted.com (8.18.1.11/8.18.1.11) with ESMTP id 6APJAoog2028165
-	for <linux-wireless@vger.kernel.org>; Thu, 26 Nov 2026 02:07:39 GMT
+	dkim=pass (2048-bit key) header.d=qualcomm.com header.i=@qualcomm.com header.a=rsa-sha256 header.s=qcppdkim1 header.b=RvfnQzc5;
+	dkim=pass (2048-bit key) header.d=oss.qualcomm.com header.i=@oss.qualcomm.com header.a=rsa-sha256 header.s=google header.b=JjuOCdOM
+Received: from pps.filterd (m0279865.ppops.net [127.0.0.1])
+	by mx0a-0031df01.pphosted.com (8.18.1.11/8.18.1.11) with ESMTP id 6APJAntU1357571
+	for <linux-wireless@vger.kernel.org>; Thu, 26 Nov 2026 02:07:41 GMT
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=qualcomm.com; h=
 	cc:content-transfer-encoding:date:from:in-reply-to:message-id
-	:mime-version:references:subject:to; s=qcppdkim1; bh=0R6kz49hV3A
-	Zznu/COs3CzoBAvj0flKjT5W/5U4wY7U=; b=augfP6Zw91OUSzboB9QrvNdpqm0
-	m3I6YkxtsxmTZvi1qf/QzK+sevb250QZbdndMDGUm82CSvKGp8QAf+ZKQHp3ylJR
-	3dK/5qL1kh5sPosvak2mBAsorAmlBm6dKwqyk6cb9pbn1QH+PqdAp7wPBsnJ5BS7
-	71eGRs/2VxDo20HAoqat4acL+22lZONWv2V3LYJTS63E8dgnZeelW8ubg9pBkQRh
-	vjPCxklr+n085F1PZFS4TFGq1d/uhB9RzILC0rBD9EDqrTcfREFnVVkyvnEAPGDz
-	WugNz6cPbH/9RPNznHkxoNeIhNyBqyOBd9dn36OW5MP4kDIwRR8P/MhP7Ag==
+	:mime-version:references:subject:to; s=qcppdkim1; bh=Z2t65+X6bE5
+	g+Fc6Tg7IbK2g1t2NNkQ7zYkTkIeL4DU=; b=RvfnQzc5PTyXzRIxb60sbMdeVYx
+	vgOwpaaCkax6zHTH3+bth5WtsxaugXvhqyTom1/yX3jNBQzZK7NGCIVzmHKvgZE6
+	+2iqFDQm+u36/uhBTL/KcnCFVF4EOSMFkiDfOCrkXPXAvugrXb7qd2QFtblDtX57
+	TblLmrMF7pad/Q2Uazihfiob1iXZQtElPQpSp2Q2uZHVf5smxY8VdbeklS0/Il4m
+	ibAyJaffNQZ3ytC3cxr+qo8h4DwrvyLjgibsZXk0f3iCwH4lJed84KA3l2sYfwRk
+	ZEZpHdXd/POVjpX1j8vEQptAaJG7YycUc1WQgI0xkxXEpIwJ5JhXKr/5jMQ==
 Received: from mail-pj1-f72.google.com (mail-pj1-f72.google.com [209.85.216.72])
-	by mx0a-0031df01.pphosted.com (PPS) with ESMTPS id 4j62vasub0-1
+	by mx0a-0031df01.pphosted.com (PPS) with ESMTPS id 4j5yaxtshh-1
 	(version=TLSv1.3 cipher=TLS_AES_128_GCM_SHA256 bits=128 verify=NOT)
-	for <linux-wireless@vger.kernel.org>; Thu, 26 Nov 2026 02:07:38 +0000 (GMT)
-Received: by mail-pj1-f72.google.com with SMTP id 98e67ed59e1d1-3b3b4208826so4543184a91.1
-        for <linux-wireless@vger.kernel.org>; Wed, 25 Nov 2026 18:07:38 -0800 (PST)
+	for <linux-wireless@vger.kernel.org>; Thu, 26 Nov 2026 02:07:41 +0000 (GMT)
+Received: by mail-pj1-f72.google.com with SMTP id 98e67ed59e1d1-3aed37745bcso5787118a91.1
+        for <linux-wireless@vger.kernel.org>; Wed, 25 Nov 2026 18:07:41 -0800 (PST)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=oss.qualcomm.com; s=google; t=1795658858; x=1796263658; darn=vger.kernel.org;
+        d=oss.qualcomm.com; s=google; t=1795658861; x=1796263661; darn=vger.kernel.org;
         h=content-transfer-encoding:mime-version:references:in-reply-to
          :message-id:date:subject:cc:to:from:from:to:cc:subject:date
          :message-id:reply-to:content-type;
-        bh=0R6kz49hV3AZznu/COs3CzoBAvj0flKjT5W/5U4wY7U=;
-        b=foOqpnS+3n/cugr44g7OgR7+YG8MwZmo0ZfJUqpo65oFtc3NWg1W86ObdvgFKrXLzT
-         Mme5mYI3qfIA+ORCPsbxSKgt3UEfcl/xPh3mR8/zT7fe8rB+fkdC2ezlIl0naUbGQZVI
-         V755TQc84QWz2AWCEa+wP1577F0UvQiEIdPBH4+KAAbOskA1kr00vad/VC/Ft9tDVR8u
-         zb8wfBdTnox8ObYnukBt9z7vbCDbO8HI/XvVcO6fE/cLfSkQtktlwcvlKIFu8heq0oTh
-         jBV7Vle5Exw3UOotnimwdF4EruW3kaJp+Nq+akLm7p9yUQQxCEIjCT2188Wsxey1y2lD
-         eXOg==
+        bh=Z2t65+X6bE5g+Fc6Tg7IbK2g1t2NNkQ7zYkTkIeL4DU=;
+        b=JjuOCdOMSz8YnuZwa9ofDEHpnqve4fcOphYQBtR1oKuHDFxZiFrH5VPS6B8A43Row4
+         KBKmDLi5N8oqGYIHaeo13pzpXPnkbWIbGXtdQmClyhsYwTAadvDBE2rPbBRzm9K7gvyM
+         wL2RjvRKrBiiREiDDy4yrf3VdQSR60i/m5jzmdKsaV6oD0QVDfeBVl9sBbWDKCfduGgn
+         tF6Q8DLQJZjVc3qRmz7dIo5p3QIBEF0UCjnGVXxDuS2IHKgtT7GlLM1f7yEN/amzQCLs
+         yxmU33k984XVp0oROLDUaxV8n/I80BYPa2E0cMA1SaC92+adPk1iFXoAVfS642UsRzA9
+         PzHA==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=1e100.net; s=20260707; t=1795658858; x=1796263658;
+        d=1e100.net; s=20260707; t=1795658861; x=1796263661;
         h=content-transfer-encoding:mime-version:references:in-reply-to
          :message-id:date:subject:cc:to:from:x-gm-gg:x-gm-message-state:from
          :to:cc:subject:date:message-id:reply-to:content-type;
-        bh=0R6kz49hV3AZznu/COs3CzoBAvj0flKjT5W/5U4wY7U=;
-        b=kvanM/gutkS/+ka/aJMfI1uciPQjPQ3PJG/In0q2hAatrWu9G9WsNBgk10zU+xJmp7
-         h2OBoLQwqoP1+vzyB0SlZ0v2ajAU6sCUJhQlbRQnW2/aB15+E3tCQaWTC4n3WHKwlaPL
-         l5ldolYikQdMd5mLTg+JKuwuUsym7n2mo2Qw9dPUXuSadK+lJDT2vm/LNDpBAUqreWEX
-         M33pkDLssMf65L8W9PdaQyYqOeFECPrZyLYnP73hl72dVU6miv//sjKiISv7lPM6iSyX
-         FPvA32OzawuYHOLXAL8OXZhZq6r4s1MlZH6FBbs+9ofCBAxN32RtG5sSAUMR09Nrfvlr
-         h+PA==
-X-Forwarded-Encrypted: i=1; AL+hErHFcZD8sse6JQ/AHm0xMhgi5HMEhN4MGNaqbIw3iIDYuFvLqaY/G3v+ESI1B64R+f/So3KhOHd9fzVlGWbGFA==@vger.kernel.org
-X-Gm-Message-State: APuU4Z8eb4I9160Bn9zqtFA6kvnYh8EKBv1m3gofMs2ygrvIsveG09zK
-	lbjHQ0Ln8XqdqNOFtVX/KJpf/Qx1M9Iaw3gcDHqWzZo8Q3nYxzqWl4KW+RsnKXDCdWiYqIH8rkr
-	Uf1b+LpAkC4IUE4xgLz9Rxw82U1pLQbNIqrNVf3VoAxX1A3rULQH+2Jy9eIm/CpPV5JnS+w==
-X-Gm-Gg: AZFdTZdp8i8TFedQ2sjBxnFTsD1xulMHIn6IRsEYprJPF/SBstVP5VedzmHHf2GFfIn
-	nedD49FTjYGTIqvMhjij5F/nZf47T9aSS6IjvnfmrH+aoIhxCDvcX2fFv6ziJUkSqMTf3ndNBJ6
-	tMENPGOVGd0wFJm0ntxEiPkb8rFxUN5FO9YJ/O/44vRBq3QmNYTw/l+1+kVFceF3hFh4WR/uCEw
-	r9JJ3rM4aauv5Y/ksogPv+cc7LFwCmRSXZnqvYCTw2zEdOz4XKhlL6wLhGM7qVtKHApK8pLW2kS
-	ht75VeK0ajBvqTRZaMCEJ7syEh2WGDh2P5ROkF0R4MulsNSwQ4hix1ukF65tNu1jUgwHSwQV/Ll
-	UyKkyWHeUbIx3eikkiGBlquyrqLd+lHMryX9mIyaHzGKKlQhfU0MA6S04Q7rdcOGfhS9016UaI7
-	WNadVtygxmbuVvuqQd1JkqacovnSpa5N9xy5i8
-X-Received: by 2002:a17:90b:57c6:b0:3a8:786a:cfed with SMTP id 98e67ed59e1d1-3b41c9617ffmr13705215a91.37.1795658857904;
-        Wed, 25 Nov 2026 18:07:37 -0800 (PST)
-X-Received: by 2002:a17:90b:57c6:b0:3a8:786a:cfed with SMTP id 98e67ed59e1d1-3b41c9617ffmr13705190a91.37.1795658857147;
-        Wed, 25 Nov 2026 18:07:37 -0800 (PST)
+        bh=Z2t65+X6bE5g+Fc6Tg7IbK2g1t2NNkQ7zYkTkIeL4DU=;
+        b=krQi5Icbs8LBCcnJiG06T+6PE61XJAsSLeOS5yDah5GqsAcaLSjVWTu0bvYWVkGi8w
+         7X9wrvsde5jXglMrSGDxW18B7UyRvXsyGMZ9JyNWLNMVkAth2U6ididftTOWPk5YTX2s
+         kAZUbu0OkPev59FQVeKkBiXEMSEi4njdhOngNN5iwrbYJNLB3POqwWwKgqksv02SXCJ1
+         a25/LDxU1sMRcX0dboOhDPH9ML9WLpxop42hP8lt9aVO49WCNol8oWcoHGjH5Dho7elr
+         H+QEkT4nNP2RLAcU8BnFvu/bJ5Bxw3QJTD4hgE7IAKPMcex7GCzsZFDmTwnyn2UiW6tj
+         1TPA==
+X-Forwarded-Encrypted: i=1; AL+hErFcxtRYOeFo48+XaWtIXVjHPTQM8tJqgOGyDPuVbbgNxkRrO1qwHqdlfCM0JulVbKIujNb9xnuLewlHJqiXJw==@vger.kernel.org
+X-Gm-Message-State: APuU4Z/yijZSZfTq/GC3svOmYhTAkPVwwJMi67SiIMNKJDcAWJwkP8zU
+	pF6oSmpwrIflkHef3P1mQrgM7pM/DoqDM8zs83zr+bLT/bUoP0G8X98gJ5UR9t/5uo2TW5Via2I
+	9lR7/oEApUnB1JIqI5n+iKd/IM8SoVbwH7FQOR/1JxcOpa8wdYTknUBI/TLArgFIn6UtgMA==
+X-Gm-Gg: AZFdTZdONnYlh8nMO+wO6iEaicJZWuViFlmxSGfJlQhi4E7D4aONd67t6lb5yMaH3HL
+	SPOmzcjt01BqpBGktBSnYQ582VhXmUd7pJdy83r/gJjutP0oV0hO/Esy6T6+YqJsn5GFky5j/VD
+	fUXTvTHMN+b5HTkYkNyuH0bRSEMiOH+xY7nTHEGlWPmB6B/TMnR47Az5A9sNMSmxMvwo7EkOwwq
+	2EjXe/4RCSuAdtW1Hvaq9kdKk9L2paQ/efSg39JYaTHDaLOD3tIn6TE44iNUrnhUA7cSTgjHqiP
+	hsTBZVu8dnLqhujb8pmZANJAAB7b2RtyoGtXgix5EO0qIY2mZjpDr2Y0yXEjRqY/swSgRwwdlfB
+	Ily2IhpY6pEI/c74QxGEQhFW+CzDBo1M3zzeVOz2rDhyPDhGZPUx3beawV74YYPMsU8Me7aJ7Rp
+	TpGOsZ+6iiJHkRecxjvzvj/A01ZlfJfL+wW3e2
+X-Received: by 2002:a17:90b:442c:b0:3ab:8288:b8ce with SMTP id 98e67ed59e1d1-3b41c92c161mr13102295a91.24.1795658860368;
+        Wed, 25 Nov 2026 18:07:40 -0800 (PST)
+X-Received: by 2002:a17:90b:442c:b0:3ab:8288:b8ce with SMTP id 98e67ed59e1d1-3b41c92c161mr13102266a91.24.1795658859644;
+        Wed, 25 Nov 2026 18:07:39 -0800 (PST)
 Received: from hangtian-z2-2004.ap.qualcomm.com (i-global052.qualcomm.com. [199.106.103.52])
-        by smtp.gmail.com with ESMTPSA id 98e67ed59e1d1-3b41ad0a34asm29626356a91.3.2026.11.25.18.07.34
+        by smtp.gmail.com with ESMTPSA id 98e67ed59e1d1-3b41ad0a34asm29626356a91.3.2026.11.25.18.07.37
         (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
-        Wed, 25 Nov 2026 18:07:36 -0800 (PST)
+        Wed, 25 Nov 2026 18:07:39 -0800 (PST)
 From: Hangtian Zhu <hangtian.zhu@oss.qualcomm.com>
 To: jjohnson@kernel.org, baochen.qiang@oss.qualcomm.com,
         rameshkumar.sundaram@oss.qualcomm.com
 Cc: ath12k@lists.infradead.org, linux-kernel@vger.kernel.org,
         linux-wireless@vger.kernel.org
-Subject: [PATCH ath-next 2/6] wifi: ath12k: derive MLD max simultaneous links by hw policy
-Date: Thu, 26 Nov 2026 10:07:23 +0800
-Message-Id: <20261126020727.3273337-3-hangtian.zhu@oss.qualcomm.com>
+Subject: [PATCH ath-next 3/6] wifi: ath12k: initialize per-wiphy MLO iftype ext capabilities
+Date: Thu, 26 Nov 2026 10:07:24 +0800
+Message-Id: <20261126020727.3273337-4-hangtian.zhu@oss.qualcomm.com>
 X-Mailer: git-send-email 2.25.1
 In-Reply-To: <20261126020727.3273337-1-hangtian.zhu@oss.qualcomm.com>
 References: <20261126020727.3273337-1-hangtian.zhu@oss.qualcomm.com>
@@ -122,231 +122,142 @@ List-Owner: <mailto:linux-wireless+owner@vger.kernel.org>
 Precedence: list
 MIME-Version: 1.0
 Content-Transfer-Encoding: 8bit
-X-Proofpoint-Spam-Info: AW1haW4tMjYxMTI2MDAwNyBTYWx0ZWRfXyeuznxGEl1ta
- pcPhoTEsb1LKclyHLNulClERxnqIKmjiNo/2omrNsRmoteQZLJ5L92aEDU0L0LgIgPheT8+xepp
- EGMX1Fdz21cYK2GGqxwP97t1MtdMe/Y=
-X-Proofpoint-ORIG-GUID: 3mAhycymmH1xcIJsMfiB07xfeKfD3Ajf
-X-Proofpoint-GUID: 3mAhycymmH1xcIJsMfiB07xfeKfD3Ajf
-X-Authority-Analysis: v=2.4 cv=QZPzLcbv c=1 sm=1 tr=0 ts=6b07946a cx=c_pps
+X-Proofpoint-GUID: HZT7XLfqrdHrBiRX1M8qW20s-xiKz53m
+X-Proofpoint-ORIG-GUID: HZT7XLfqrdHrBiRX1M8qW20s-xiKz53m
+X-Authority-Analysis: v=2.4 cv=ULpIjyfy c=1 sm=1 tr=0 ts=6b07946d cx=c_pps
  a=RP+M6JBNLl+fLTcSJhASfg==:117 a=b9+bayejhc3NMeqCNyeLQQ==:17
  a=zJRp6_cAMcgA:10 a=s4-Qcg_JpJYA:10 a=VkNPw1HP01LnGYTKEx00:22
- a=u7WPNUs3qKkmUXheDGA7:22 a=eoimf2acIAo5FJnRuUoq:22 a=EUspDBNiAAAA:8
- a=HJkC1t53WzKw9mxX8OcA:9 a=iS9zxrgQBfv6-_F4QbHw:22
-X-Proofpoint-Spam-Details-Enc: AW1haW4tMjYxMTI2MDAwNyBTYWx0ZWRfX2vvHTM+xV1mO
- s1jy9VH9iAJDPKkq9HpJiXnzc347yQK1oWp1ArWrQ7NOsvIIAmTcEWbJH/i/8LgJanI+TzD2jWj
- n7872gtX4KPWTRQCz2myDwS29E98ToIuNiNNt6SS4h/zac5za4mnzFnGcK5TmIxhvxuhmiD/FqD
- QjzY6T+SkWweQJtT8Xf9bAhg4caQwv/VjPQscvAnGB8wYMh1dzYe9u9IjhdT6qPD3EOJGpgqy8a
- ILQ41h9tM5zdvOHl/My2MguHGjzQGiJXGJrCRpH2ORhrKWFJBk09yy28goSvLX3fHTwOdLQE5i2
- gLfq3wqC+8wb4hsuOSTKKOD6unCdUNoy0rXGF9G2UPnZfGNyUl6uHXKsuxDJe44NX0nCIwchXHC
- SfKeaGpC6kxEjbVKtId3uN9Z2GKjRzL+1y4utThTFWMOs9C6+DahK0ER09r/3zrUjYCutiwPKWm
- OdV2Exf2IW0rdpvnTRg==
+ a=u7WPNUs3qKkmUXheDGA7:22 a=Um2Pa8k9VHT-vaBCBUpS:22 a=EUspDBNiAAAA:8
+ a=PHNU0lTNFGNsHSJflXwA:9 a=iS9zxrgQBfv6-_F4QbHw:22
+X-Proofpoint-Spam-Details-Enc: AW1haW4tMjYxMTI2MDAwNyBTYWx0ZWRfX/ZKmxFs+R0HK
+ BVT+oNQ0bgaTuJQzcTFdLuaPWvfybQVuy23IQInUqm0q348ZIc9YUxMBCfXfhilF0WI68r0q/5d
+ 9/7urCOigPdmWZJGkCewj/+1zHZ2aa2q4C1Xauc6GWji1M2XkRSeq8XMQVs1WqE3+Pt6R/TKMmQ
+ 8VEgrOw5BDy0Z5j+TiRgUhhbwSF5M58fipztIyXVW8x4eglq4xIBay5TBfmmbGCCyPNCJ2NYt6G
+ aeTwzGqvJofxEPr5TIyVJqj22fEys3rF2vbtswmoZ/nZIzOzDxSXlSVydUm1ssNFaj90tlkEL5/
+ cwBI6RD4qvVMPhI0gm1Zd00xf0jgvXHhgWAWptDCtcJOy6hdyuAI/U8t7uQp+k3B2qHz6JwkaAX
+ OmD9AX32R9Put/3djV9tuxRuB6HThPYC9gvsQo27dBvpd3LrlGxzbPJIxhjzCocvbMVFZmjNY6D
+ kHezDpqzFxwZUtLg3ag==
+X-Proofpoint-Spam-Info: AW1haW4tMjYxMTI2MDAwNyBTYWx0ZWRfX/lDqjebH1T47
+ yXIZKliSTiBzWMldCvDNifKZNVZ2w31/sTcypWEbbt0xJjttxRMbZRnai6s3y+ANDsknr4bbS5h
+ gQb8g1UGEbwK/6DENOTblUoBlZmW1Sc=
 X-Proofpoint-Virus-Version: vendor=baseguard
  engine=ICAP:2.0.293,Aquarius:18.0.1176,Hydra:6.1.138,FMLib:17.12.100.49
  definitions=2026-11-25_05,2026-11-25_01,2025-10-01_01
 X-Proofpoint-Spam-Details: rule=outbound_notspam policy=outbound score=0
- clxscore=1011 priorityscore=1501 lowpriorityscore=0 bulkscore=0 phishscore=0
- adultscore=0 malwarescore=0 impostorscore=0 spamscore=0 suspectscore=0
+ phishscore=0 clxscore=1011 priorityscore=1501 malwarescore=0 impostorscore=0
+ bulkscore=0 spamscore=0 suspectscore=0 adultscore=0 lowpriorityscore=0
  classifier=typeunknown authscore=0 authtc= authcc= route=outbound adjust=0
  reason=mlx scancount=1 engine=8.22.0-2611040001 definitions=main-2611260007
 
-On infrastructure-focused chipsets, firmware may report a maximum
-simultaneous-link count that does not reflect the available radio
-combination. When the counts differ, converting the firmware value to
-N-1 still advertises an incorrect Max Number Of Simultaneous Links in
-the wiphy MLD capabilities exposed to userspace and in MLO association
-requests. Userspace and peers therefore see a simultaneous-link limit
-that does not describe the configured hardware.
+MLO iftype extended capabilities are currently stored in a single global
+array ath12k_iftypes_ext_capa, shared by all ath12k_hw instances.
+When more than one wiphy is registered, ath12k_mac_hw_register() on a
+later wiphy overwrites firmware-derived EML/MLD capability fields used by
+earlier wiphys, because mac80211 points all of them at the same storage.
 
-Add mlo_max_simul_links_by_num_radios in struct ath12k_hw_params and
-use it to select between firmware-field conversion and radio-count-based
-derivation of the encoded max simultaneous links value.
+Fix this by keeping iftype ext capability state per ath12k_hw/wiphy:
+copy a read-only template into ah->iftypes_ext_capa during registration
+and point mac80211 at the per-wiphy array.
 
-mlo_max_simul_links_by_num_radios is enabled for
-QCN9274/QCN6432/IPQ5332/IPQ5424 and disabled for WCN7850/QCC2072.
+Rename ath12k_iftypes_ext_capa to ath12k_iftypes_ext_capa_template to
+make the data flow explicit: the table is immutable source data, while
+ah->iftypes_ext_capa is per-wiphy capability storage.
+
+ATH12K_WIPHY_IFTYPE_EXT_CAPA_MAX is set to 3 to represent the per-wiphy
+entries ath12k publishes and updates: one generic entry
+(NL80211_IFTYPE_UNSPECIFIED / iftype 0) and two role-specific entries
+(STA and AP).
+
+For MLO-capable wiphys, initialize station and AP entries from the
+normalized firmware capabilities, preserving the existing capability
+source.
 
 Tested-on: WCN7850 hw2.0 PCI WLAN.HMT.1.1.c7-00108-QCAHMTSWPL_V1.0_V2.0_SILICONZ_UPSTREAM-3
 
+Fixes: d33bc467e832 ("wifi: ath12k: advertise MLO support and capabilities")
 Signed-off-by: Hangtian Zhu <hangtian.zhu@oss.qualcomm.com>
 ---
- drivers/net/wireless/ath/ath12k/hw.h       |  1 +
- drivers/net/wireless/ath/ath12k/wifi7/hw.c |  7 +++
- drivers/net/wireless/ath/ath12k/wmi.c      | 67 ++++++++++++++++++----
- 3 files changed, 63 insertions(+), 12 deletions(-)
+ drivers/net/wireless/ath/ath12k/core.h |  4 ++++
+ drivers/net/wireless/ath/ath12k/mac.c  | 28 +++++++++++++++++++-------
+ 2 files changed, 25 insertions(+), 7 deletions(-)
 
-diff --git a/drivers/net/wireless/ath/ath12k/hw.h b/drivers/net/wireless/ath/ath12k/hw.h
-index 138e556ac679..7cd357f9429b 100644
---- a/drivers/net/wireless/ath/ath12k/hw.h
-+++ b/drivers/net/wireless/ath/ath12k/hw.h
-@@ -218,6 +218,7 @@ struct ath12k_hw_params {
- 	u32 otp_board_id_register;
+diff --git a/drivers/net/wireless/ath/ath12k/core.h b/drivers/net/wireless/ath/ath12k/core.h
+index 3a92a4b03359..82aead52fcaf 100644
+--- a/drivers/net/wireless/ath/ath12k/core.h
++++ b/drivers/net/wireless/ath/ath12k/core.h
+@@ -42,6 +42,8 @@
+ #define ATH12K_TX_MGMT_NUM_PENDING_MAX	512
  
- 	bool supports_sta_ps;
-+	bool mlo_max_simul_links_by_num_radios;
+ #define ATH12K_TX_MGMT_TARGET_MAX_SUPPORT_WMI 64
++/* Generic, station, and AP entries in ath12k_iftypes_ext_capa_template. */
++#define ATH12K_WIPHY_IFTYPE_EXT_CAPA_MAX 3
  
- 	const guid_t *acpi_guid;
- 	bool supports_dynamic_smps_6ghz;
-diff --git a/drivers/net/wireless/ath/ath12k/wifi7/hw.c b/drivers/net/wireless/ath/ath12k/wifi7/hw.c
-index 48a2f6da16ef..eef99b664748 100644
---- a/drivers/net/wireless/ath/ath12k/wifi7/hw.c
-+++ b/drivers/net/wireless/ath/ath12k/wifi7/hw.c
-@@ -472,6 +472,7 @@ static const struct ath12k_hw_params ath12k_wifi7_hw_params[] = {
- 		.otp_board_id_register = QCN9274_QFPROM_RAW_RFA_PDET_ROW13_LSB,
+ /* Pending management packets threshold for dropping probe responses */
+ #define ATH12K_PRB_RSP_DROP_THRESHOLD ((ATH12K_TX_MGMT_TARGET_MAX_SUPPORT_WMI * 3) / 4)
+@@ -812,6 +814,8 @@ struct ath12k_hw {
+ 	struct completion peer_ml_id_done;
  
- 		.supports_sta_ps = false,
-+		.mlo_max_simul_links_by_num_radios = true,
+ 	u8 num_radio;
++	struct wiphy_iftype_ext_capab
++		iftypes_ext_capa[ATH12K_WIPHY_IFTYPE_EXT_CAPA_MAX];
  
- 		.acpi_guid = NULL,
- 		.supports_dynamic_smps_6ghz = true,
-@@ -571,6 +572,7 @@ static const struct ath12k_hw_params ath12k_wifi7_hw_params[] = {
- 		.otp_board_id_register = 0,
+ 	DECLARE_BITMAP(free_ml_peer_id_map, ATH12K_MAX_MLO_PEERS);
  
- 		.supports_sta_ps = true,
-+		.mlo_max_simul_links_by_num_radios = false,
+diff --git a/drivers/net/wireless/ath/ath12k/mac.c b/drivers/net/wireless/ath/ath12k/mac.c
+index 4cb41b8b1d3b..e78c711b7832 100644
+--- a/drivers/net/wireless/ath/ath12k/mac.c
++++ b/drivers/net/wireless/ath/ath12k/mac.c
+@@ -14758,7 +14758,8 @@ static const u8 ath12k_if_types_ext_capa_ap[] = {
+ 	[10] = WLAN_EXT_CAPA11_EMA_SUPPORT,
+ };
  
- 		.acpi_guid = &wcn7850_uuid,
- 		.supports_dynamic_smps_6ghz = false,
-@@ -666,6 +668,7 @@ static const struct ath12k_hw_params ath12k_wifi7_hw_params[] = {
- 		.otp_board_id_register = QCN9274_QFPROM_RAW_RFA_PDET_ROW13_LSB,
+-static struct wiphy_iftype_ext_capab ath12k_iftypes_ext_capa[] = {
++static const struct wiphy_iftype_ext_capab
++ath12k_iftypes_ext_capa_template[ATH12K_WIPHY_IFTYPE_EXT_CAPA_MAX] = {
+ 	{
+ 		.extended_capabilities = ath12k_if_types_ext_capa,
+ 		.extended_capabilities_mask = ath12k_if_types_ext_capa,
+@@ -15051,12 +15052,25 @@ static int ath12k_mac_hw_register(struct ath12k_hw *ah)
  
- 		.supports_sta_ps = false,
-+		.mlo_max_simul_links_by_num_radios = true,
+ 	wiphy->features |= NL80211_FEATURE_TX_POWER_INSERTION;
  
- 		.acpi_guid = NULL,
- 		.supports_dynamic_smps_6ghz = true,
-@@ -759,6 +762,7 @@ static const struct ath12k_hw_params ath12k_wifi7_hw_params[] = {
- 		.otp_board_id_register = 0,
- 
- 		.supports_sta_ps = false,
-+		.mlo_max_simul_links_by_num_radios = true,
- 
- 		.acpi_guid = NULL,
- 		.supports_dynamic_smps_6ghz = false,
-@@ -855,6 +859,7 @@ static const struct ath12k_hw_params ath12k_wifi7_hw_params[] = {
- 		.otp_board_id_register = 0,
- 
- 		.supports_sta_ps = true,
-+		.mlo_max_simul_links_by_num_radios = false,
- 
- 		.acpi_guid = &wcn7850_uuid,
- 		.supports_dynamic_smps_6ghz = false,
-@@ -949,6 +954,7 @@ static const struct ath12k_hw_params ath12k_wifi7_hw_params[] = {
- 		.otp_board_id_register = 0,
- 
- 		.supports_sta_ps = false,
-+		.mlo_max_simul_links_by_num_radios = true,
- 
- 		.acpi_guid = NULL,
- 		.supports_dynamic_smps_6ghz = false,
-@@ -1039,6 +1045,7 @@ static const struct ath12k_hw_params ath12k_wifi7_hw_params[] = {
- 		.otp_board_id_register = 0,
- 
- 		.supports_sta_ps = false,
-+		.mlo_max_simul_links_by_num_radios = true,
- 
- 		.acpi_guid = NULL,
- 		.supports_dynamic_smps_6ghz = false,
-diff --git a/drivers/net/wireless/ath/ath12k/wmi.c b/drivers/net/wireless/ath/ath12k/wmi.c
-index d1af43ede2ae..5cf104536dbf 100644
---- a/drivers/net/wireless/ath/ath12k/wmi.c
-+++ b/drivers/net/wireless/ath/ath12k/wmi.c
-@@ -5293,22 +5293,69 @@ static void ath12k_wmi_eht_caps_parse(struct ath12k_pdev *pdev, u32 band,
- 	cap_band->eht_cap_info_internal = le32_to_cpu(cap_info_internal);
- }
- 
--static u32 ath12k_wmi_get_spec_encoded_mld_cap(struct ath12k_base *ab, u32 mld_cap)
-+static u8 ath12k_wmi_get_max_simul_links_by_num_radios(struct ath12k_base *ab)
- {
- 	struct ath12k_hw_group *ag = ath12k_ab_to_ag(ab);
--	u8 max_simul_links;
-+	u8 max_simul_links = 0;
-+	int i;
- 
- 	/*
--	 * Firmware reports Max Number Of Simultaneous Links as raw N while
--	 * IEEE 802.11be MLD Capabilities and Operations encodes it as N-1.
-+	 * On infrastructure-focused chipsets, firmware may report max
-+	 * simultaneous links independent of active radio combination.
-+	 * Derive the encoded value from the number of available radios.
- 	 */
--	max_simul_links = u32_get_bits(mld_cap, IEEE80211_MLD_CAP_OP_MAX_SIMUL_LINKS);
-+	if (ag->mlo_capable) {
-+		for (i = 0; i < ag->num_devices; i++) {
-+			struct ath12k_base *partner_ab = ath12k_ag_to_ab(ag, i);
-+
-+			if (!partner_ab)
-+				continue;
-+
-+			max_simul_links += partner_ab->qmi.num_radios;
-+		}
-+	} else {
-+		max_simul_links = ab->num_radios;
-+	}
-+
-+	if (!max_simul_links)
-+		return 0;
-+
-+	return min_t(u8, max_simul_links - 1,
-+		     FIELD_MAX(IEEE80211_MLD_CAP_OP_MAX_SIMUL_LINKS));
-+}
-+
-+static u8 ath12k_wmi_get_max_simul_links_from_fw(struct ath12k_base *ab, u32 mld_cap)
-+{
-+	struct ath12k_hw_group *ag = ath12k_ab_to_ag(ab);
-+	u8 max_simul_links;
-+
-+	max_simul_links = u32_get_bits(mld_cap,
-+				       IEEE80211_MLD_CAP_OP_MAX_SIMUL_LINKS);
- 	if (max_simul_links)
--		max_simul_links--;
--	else if (ag && ag->mlo_capable)
-+		return max_simul_links - 1;
-+
-+	if (ag->mlo_capable)
- 		ath12k_warn(ab,
- 			    "firmware reported invalid max simul links value 0 in mld_cap 0x%x\n",
- 			    mld_cap);
-+	return 0;
-+}
-+
-+static u32
-+ath12k_wmi_get_spec_encoded_mld_cap(struct ath12k_base *ab,
-+				    const struct ath12k_wmi_caps_ext_params *caps)
-+{
-+	u32 mld_cap = le32_to_cpu(caps->mld_capability);
-+	u8 max_simul_links;
+-	/* Copy over MLO related capabilities received from
+-	 * WMI_SERVICE_READY_EXT2_EVENT if single_chip_mlo_supp is set.
++	memcpy(ah->iftypes_ext_capa, ath12k_iftypes_ext_capa_template,
++	       sizeof(ah->iftypes_ext_capa));
 +
 +	/*
-+	 * Firmware reports Max Number Of Simultaneous Links as raw N while
-+	 * IEEE 802.11be MLD Capabilities and Operations encodes it as N-1.
-+	 */
-+	if (ab->hw_params->mlo_max_simul_links_by_num_radios)
-+		max_simul_links = ath12k_wmi_get_max_simul_links_by_num_radios(ab);
-+	else
-+		max_simul_links = ath12k_wmi_get_max_simul_links_from_fw(ab, mld_cap);
++	 * Copy over MLO related capabilities received from
++	 * WMI_SERVICE_READY_EXT2_EVENT if mlo_capable is set.
+ 	 */
+ 	if (ab->ag->mlo_capable) {
+-		ath12k_iftypes_ext_capa[2].eml_capabilities = cap->eml_cap;
+-		ath12k_iftypes_ext_capa[2].mld_capa_and_ops = cap->mld_cap;
++		for (i = 0; i < ARRAY_SIZE(ah->iftypes_ext_capa); i++) {
++			enum nl80211_iftype iftype = ah->iftypes_ext_capa[i].iftype;
++
++			if (iftype != NL80211_IFTYPE_STATION &&
++			    iftype != NL80211_IFTYPE_AP)
++				continue;
++
++			ah->iftypes_ext_capa[i].eml_capabilities = cap->eml_cap;
++			ah->iftypes_ext_capa[i].mld_capa_and_ops = cap->mld_cap;
++		}
++
+ 		wiphy->flags |= WIPHY_FLAG_SUPPORTS_MLO;
  
- 	return u32_replace_bits(mld_cap, max_simul_links,
- 				IEEE80211_MLD_CAP_OP_MAX_SIMUL_LINKS);
-@@ -5319,7 +5366,6 @@ ath12k_wmi_tlv_mac_phy_caps_ext_parse(struct ath12k_base *ab,
- 				      const struct ath12k_wmi_caps_ext_params *caps,
- 				      struct ath12k_pdev *pdev)
- {
--	u32 mld_cap;
- 	u32 bands;
- 	int i;
+ 		ieee80211_hw_set(hw, MLO_MCAST_MULTI_LINK_TX);
+@@ -15083,8 +15097,8 @@ static int ath12k_mac_hw_register(struct ath12k_hw *ah)
+ 	wiphy->cipher_suites = cipher_suites;
+ 	wiphy->n_cipher_suites = ARRAY_SIZE(cipher_suites);
  
-@@ -5365,11 +5411,8 @@ ath12k_wmi_tlv_mac_phy_caps_ext_parse(struct ath12k_base *ab,
- 					  caps->eht_cap_info_internal);
- 	}
+-	wiphy->iftype_ext_capab = ath12k_iftypes_ext_capa;
+-	wiphy->num_iftype_ext_capab = ARRAY_SIZE(ath12k_iftypes_ext_capa);
++	wiphy->iftype_ext_capab = ah->iftypes_ext_capa;
++	wiphy->num_iftype_ext_capab = ARRAY_SIZE(ah->iftypes_ext_capa);
  
--	mld_cap = le32_to_cpu(caps->mld_capability);
--	mld_cap = ath12k_wmi_get_spec_encoded_mld_cap(ab, mld_cap);
--
- 	pdev->cap.eml_cap = le32_to_cpu(caps->eml_capability);
--	pdev->cap.mld_cap = mld_cap;
-+	pdev->cap.mld_cap = ath12k_wmi_get_spec_encoded_mld_cap(ab, caps);
- 
- 	return 0;
- }
+ 	wiphy->mbssid_max_interfaces = mbssid_max_interfaces;
+ 	wiphy->ema_max_profile_periodicity = TARGET_EMA_MAX_PROFILE_PERIOD;
 -- 
 2.25.1
 
