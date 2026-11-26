@@ -1,112 +1,112 @@
 Authentication-Results: smtp.subspace.kernel.org; arc=none smtp.remote-ip=205.220.180.131
 ARC-Seal: i=1; d=subspace.kernel.org; s=arc20261015; a=rsa-sha256; cv=none;
-	t=1795676724;
-	b=pEQlBJyqObMk1IPfWJyiAt5EN7YdEdhTZWcEP1Rt/JB0PJOkcNLc+Lguv7aDMu8PbpRU
-	 hx21fajkbk+vRo9Yh1icgO/qsrgb7DV5rnPahRWvpEMvTBoJQqWnLkNsU49gD2WWohXp+
-	 RJ8gcesma+I++Az2E7YMoQgfeCwr2o6HtxTmF+l/OND0+05ZTXL8pDxdije4LiP4uWD8c
-	 uI7NVvjlUK1+ycPZrq2gY4zhWdi5JYs4Yh9xsfLhtEHFLR6CDHU5RTetYT8S7Vx+mAmRF
-	 SRfhtcTVluN+HGn0bYArQsEvFwtvDW9Kq3HND646mY11TeXuHcFpne1pQwCwe3LjqPQ==
+	t=1795676848;
+	b=kcYMDb7mS74DrIJt/BdIu5EYlMr1RVpZMme9Xp5yU7xd15yy3aZN8LCEN+M6wPF+GNU2
+	 ACXS3+BNNF96qCObUaWADcP8gUcOdmK1ejS0Ah48ICsSGl1QK921KRXtt8qHTFKjobWBP
+	 cbzwhf7trEFoJnFLPG7nR2cZbZK6heTCA1wJk/BcGYtZDPkZgPh2GGpqH5QyJfG1fxcV+
+	 2Sls34HWfV5uHwZJBiHnk0Nhhx/m987Soq4hdRDFL5lptiNlf24xNjmstTWjrP7EwI/t4
+	 nvFQI9aeV36pF5BYy3sFuFxiOlVWRp8yXimmZ00Yvvdy4YQ4XTJtngepLdpN/8+ldhQ==
 ARC-Message-Signature: i=1; d=subspace.kernel.org; s=arc20261015;
-	a=rsa-sha256; c=relaxed/relaxed; t=1795676724;
+	a=rsa-sha256; c=relaxed/relaxed; t=1795676848;
 	h=DMARC-Filter:Received:DKIM-Signature:Received:Received:
 	 DKIM-Signature:X-Google-DKIM-Signature:X-Forwarded-Encrypted:
 	 X-Gm-Message-State:X-Gm-Gg:X-Received:X-Received:Received:Message-ID:
 	 Date:MIME-Version:User-Agent:Subject:To:Cc:References:
 	 Content-Language:From:In-Reply-To:Content-Type:
-	 Content-Transfer-Encoding:X-Proofpoint-Spam-Details-Enc:
-	 X-Proofpoint-ORIG-GUID:X-Proofpoint-GUID:X-Proofpoint-Spam-Info:
+	 Content-Transfer-Encoding:X-Proofpoint-ORIG-GUID:X-Proofpoint-GUID:
+	 X-Proofpoint-Spam-Info:X-Proofpoint-Spam-Details-Enc:
 	 X-Authority-Analysis:X-Proofpoint-Virus-Version:
 	 X-Proofpoint-Spam-Details;
-	bh=Bdx7UpabDWwudSHqUP7nL1DuePy6rsFlxcZipCI63Tw=;
-	b=PZGiuuYl4vbMYa8Al1V0LwsPFfT6JZivO7JlEap68V3urornfU/yv/zNDdMo/2bAkhoT
-	 zrU1722UiAwbNh0FHP0ARganx06XQlBWutdtEuF2QfZOIdS/Ck15c/mPKVDSM2qaMQLRh
-	 8oTMtqgb1OWkRjxVym5pPbt62LYRx+oj7UZDRTMGAeQgIGfCfa3m8pkudYj/cN4+dZdyA
-	 hSkHo+Cl+mQ0ORplTz85wBh9/TB5sSuKuji+nYaTiH1KPrboJi2x9sbI/8bf99GihjAtZ
-	 m/sHNo64yDFShRrxhYVcDjiQdIGl9fO6dSuKM4Hgv4ruuXYR3F8rvTOYg8RJd3pasaQ==
+	bh=TWtJ7O/weMJzv9paex9qV3Mx7PBaOy4zcuYq1hMdYAs=;
+	b=ACRQlepQfsObIQF1m1MP17/DH4w/I1ONStsseHBVekxiCLE1bkjYckVrZzGMBHYxpsmu
+	 6YHsMcNhjZiDjQBDwwmrXwMc6Y3bQ3s4cPcwcSnzwifEs3WT8sleXAj9kyaoHba5BDz/f
+	 OWvoLuYq0jdtcXoKkwc7xhbPQyFobJ+WfqyuxgXxWeYnQboXY8NHPC/J4VJ2p+0ZzE4uZ
+	 mEqdL5dqLWmTGEe4YLxSc7wG1e7KemFGqvlGCBiw9gKEvIVwTnnQOx/7h4gR7kV2xKD1j
+	 t8/MU4OahnaYRRu1Inv+dVzVD3ulAxy3/udOGEE6vjFuuddSnNKNtr2Hj+b8wbQ05vQ==
 ARC-Authentication-Results: i=1; smtp.subspace.kernel.org; 
 	dmarc=pass header.from=oss.qualcomm.com;
 	spf=pass smtp.mailfrom=oss.qualcomm.com;
-	dkim=pass header.d=qualcomm.com header.i=@qualcomm.com header.a=rsa-sha256 header.s=qcppdkim1 header.b=SfxZnJwX;
-	dkim=pass header.d=oss.qualcomm.com header.i=@oss.qualcomm.com header.a=rsa-sha256 header.s=google header.b=RxwxjM82;
+	dkim=pass header.d=qualcomm.com header.i=@qualcomm.com header.a=rsa-sha256 header.s=qcppdkim1 header.b=Jrfsm567;
+	dkim=pass header.d=oss.qualcomm.com header.i=@oss.qualcomm.com header.a=rsa-sha256 header.s=google header.b=HvF7LmQm;
 	arc=none smtp.remote-ip=205.220.180.131
 Received: from mx0b-0031df01.pphosted.com (mx0b-0031df01.pphosted.com [205.220.180.131])
 	(using TLSv1.3 with cipher TLS_AES_256_GCM_SHA384 (256/256 bits)
 	 key-exchange X25519 server-signature ECDSA (prime256v1) server-digest SHA256)
 	(No client certificate requested)
-	by smtp.subspace.kernel.org (Postfix) with ESMTPS id 30BD1606A31E
-	for <linux-wireless@vger.kernel.org>; Thu, 26 Nov 2026 07:05:23 +0000 (UTC)
-DMARC-Filter: OpenDMARC Filter v1.4.2 smtp.subspace.kernel.org 30BD1606A31E
+	by smtp.subspace.kernel.org (Postfix) with ESMTPS id DF5FF606A31E
+	for <linux-wireless@vger.kernel.org>; Thu, 26 Nov 2026 07:07:26 +0000 (UTC)
+DMARC-Filter: OpenDMARC Filter v1.4.2 smtp.subspace.kernel.org DF5FF606A31E
 Authentication-Results: smtp.subspace.kernel.org; dmarc=pass (p=none dis=none) header.from=oss.qualcomm.com
 Authentication-Results: smtp.subspace.kernel.org; spf=pass smtp.mailfrom=oss.qualcomm.com
 Authentication-Results: smtp.subspace.kernel.org;
-	dkim=pass (2048-bit key) header.d=qualcomm.com header.i=@qualcomm.com header.a=rsa-sha256 header.s=qcppdkim1 header.b=SfxZnJwX;
-	dkim=pass (2048-bit key) header.d=oss.qualcomm.com header.i=@oss.qualcomm.com header.a=rsa-sha256 header.s=google header.b=RxwxjM82
-Received: from pps.filterd (m0279869.ppops.net [127.0.0.1])
-	by mx0a-0031df01.pphosted.com (8.18.1.11/8.18.1.11) with ESMTP id 6AQ36YAP2791304
-	for <linux-wireless@vger.kernel.org>; Thu, 26 Nov 2026 07:05:22 GMT
+	dkim=pass (2048-bit key) header.d=qualcomm.com header.i=@qualcomm.com header.a=rsa-sha256 header.s=qcppdkim1 header.b=Jrfsm567;
+	dkim=pass (2048-bit key) header.d=oss.qualcomm.com header.i=@oss.qualcomm.com header.a=rsa-sha256 header.s=google header.b=HvF7LmQm
+Received: from pps.filterd (m0279872.ppops.net [127.0.0.1])
+	by mx0a-0031df01.pphosted.com (8.18.1.11/8.18.1.11) with ESMTP id 6AQ36RFV1686573
+	for <linux-wireless@vger.kernel.org>; Thu, 26 Nov 2026 07:07:25 GMT
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=qualcomm.com; h=
 	cc:content-transfer-encoding:content-type:date:from:in-reply-to
 	:message-id:mime-version:references:subject:to; s=qcppdkim1; bh=
-	Bdx7UpabDWwudSHqUP7nL1DuePy6rsFlxcZipCI63Tw=; b=SfxZnJwXGrwhNTWt
-	6E1PcOPbFWlJN5+VhVOtIC+U8qq3OtacG67E5sVGrFA0PCObYHOkoklBl0gIm5uk
-	kp7vWHCGRb5pXcQktvNG3g7oCugN4STy0GPSeRmz6z+Z9zR1pq47zrIXnVGuFWsa
-	/tumpI+/NfDlbmNQAT5JBYLTFpy0R3/xd4WEXkC7Eh9BJBR3386FvNi35DbAfjK6
-	E19PnmCndJEykOakP7c9rqtny7SkJa7vlYQIpsRzodrsFpQn3nNYm0wkIszzDmiN
-	f1T4JGUPkvEqdWD19Y299iIsaYCKaOtFuQdjZAzAzvaCXg/WWEzRAdvttVAemez9
-	qZVulg==
-Received: from mail-pl1-f198.google.com (mail-pl1-f198.google.com [209.85.214.198])
-	by mx0a-0031df01.pphosted.com (PPS) with ESMTPS id 4j5vvnvasx-1
+	TWtJ7O/weMJzv9paex9qV3Mx7PBaOy4zcuYq1hMdYAs=; b=Jrfsm567H+fdNQx/
+	lUrkwcVjzdUrijpNhqPBmsVygEcSaJbtAM8e17cIJ/6hbA5vxUDhBMOJicf71FKy
+	rx/ordM1e4mpsCuEKID5GZfvz2yxTLeC5FdQC2TtqHRbRhzSiKBasS3OtKBLgPUa
+	TC4wFCV32pawJDR4aUVKhhqZ9VvSbNY7glW4uUM3VL/ixMVVTFm9J3Hue+oyPcyL
+	tzFkxd1yULQnEp8klV/v0ldTDhSlSOzkLSoEB9kZjR9YLXPjZ7wweSyA1G4vpeAI
+	eODYU1JjGEhWpnHNYneeWogKZ3HPatKY0mpgm73BXznZw/z/0U8MLzoF/5vb+MQS
+	oyVMDA==
+Received: from mail-pf1-f197.google.com (mail-pf1-f197.google.com [209.85.210.197])
+	by mx0a-0031df01.pphosted.com (PPS) with ESMTPS id 4j66qf9qwh-1
 	(version=TLSv1.3 cipher=TLS_AES_128_GCM_SHA256 bits=128 verify=NOT)
-	for <linux-wireless@vger.kernel.org>; Thu, 26 Nov 2026 07:05:21 +0000 (GMT)
-Received: by mail-pl1-f198.google.com with SMTP id d9443c01a7336-2f0e3ffabe0so12060895ad.0
-        for <linux-wireless@vger.kernel.org>; Wed, 25 Nov 2026 23:05:21 -0800 (PST)
+	for <linux-wireless@vger.kernel.org>; Thu, 26 Nov 2026 07:07:25 +0000 (GMT)
+Received: by mail-pf1-f197.google.com with SMTP id d2e1a72fcca58-8a05a4396d2so5289710b3a.0
+        for <linux-wireless@vger.kernel.org>; Wed, 25 Nov 2026 23:07:25 -0800 (PST)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=oss.qualcomm.com; s=google; t=1795676721; x=1796281521; darn=vger.kernel.org;
+        d=oss.qualcomm.com; s=google; t=1795676845; x=1796281645; darn=vger.kernel.org;
         h=content-transfer-encoding:content-type:in-reply-to:from
          :content-language:references:cc:to:subject:user-agent:mime-version
          :date:message-id:from:to:cc:subject:date:message-id:reply-to
          :content-type;
-        bh=Bdx7UpabDWwudSHqUP7nL1DuePy6rsFlxcZipCI63Tw=;
-        b=RxwxjM82pYWqNPepd4n1TPnbOOabNzW9iJSq9hX5pJn7Q4ydojLGaRLl5MaYsLRovw
-         D8HrorbyVwna1GQusix9X8Ij/8nZXZKe7SqIVsyCdqBZsSOdNPNYqB7gyVOiStomVRXJ
-         WPfKX9FbhtvzxG5XIIEq+wEVzDLBSxSMxicmkpe6PEowcMNl5k0/VzUmEi74hbnXxWgl
-         mPPuT+dk7zrMudZwccBuN2UaZxaGYbERDWa/bpHzGZOM1fcl6rQ7fzCjk5w6vZHg/5pM
-         RlDQlHlqcYLOOKvQzxtB0JKO3Xe6w1rIDHiOSWZP884UITjHHBszx7RNJUkB6uMtoR1W
-         WcRA==
+        bh=TWtJ7O/weMJzv9paex9qV3Mx7PBaOy4zcuYq1hMdYAs=;
+        b=HvF7LmQmiFbM21vF6ldNAGPedf43Gjp/K0lv03VxeWYq8UN6VglxtvFzVPgWHPscS7
+         IFIG7cQpq6yfFydmAWaAfx5Oo7xuXFgMLeyuWNiuBAmiqrs9SZEDy4zNFgOmlOp3QAEk
+         sQS6pY5Y+wVUyla4E2/ICXDFzimyRNR5pW/KAo6A89IVpNUGHcL/UhuGz+W8JvcI9dvS
+         VhsT/EunCGFo95hayLcBa96HA9Fag/8SX8KtbWnPxYGVwK8oh4aoAmR2luv80WbpuWRf
+         SZ23AUkMc/615FqmXbFt68nYs6IhySxzOLX0gS/l2AaNPUPyJASnRzyhc2SlbcOwIhS6
+         kgxw==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=1e100.net; s=20260707; t=1795676721; x=1796281521;
+        d=1e100.net; s=20260707; t=1795676845; x=1796281645;
         h=content-transfer-encoding:content-type:in-reply-to:from
          :content-language:references:cc:to:subject:user-agent:mime-version
          :date:message-id:x-gm-gg:x-gm-message-state:from:to:cc:subject:date
          :message-id:reply-to:content-type;
-        bh=Bdx7UpabDWwudSHqUP7nL1DuePy6rsFlxcZipCI63Tw=;
-        b=wb1AwekDMMKQdH3i4VCIVHC6titkXqKk0SlsI4vf/Jro0ItUVPbkcXFhtfscRuYcRg
-         iY9tflwi8qcSFAfd0q156LegCWoQ0K3GxWevGSmG9mbJrfTozDUHMRnKw0pcfCV6/hHC
-         nasGKd55pxpaehnb+OqRoCmjibUnt34+eq8SidVfQ6JrrkJb+/A7329QNU6/sZYahNQv
-         w47wJ+KtdV1Qc+SKWiZyZHQrXk+nT6u0UQjAgmTHGJtD0hvHkpgyxlPQMcfW3oSUbBQn
-         SlERYIK4pejVe5mWj+Uabl1QpyfHGgiVEWO4/DcWa6ghyTwOUjGj+qvqV3FKNUT5iMFJ
-         y8Zg==
-X-Forwarded-Encrypted: i=1; AL+hErH7dL0Q6PqbMS+Cs5xJLSGtyfTJIB1BtGoPWmGDpUVxRFud2NDr3k3YYU8Fdm+SaBwwpeN1PEP71TTTPrFU2A==@vger.kernel.org
-X-Gm-Message-State: APuU4Z/NS+c7hOAfIosDy2QzJ8lQERnzlLNokl5OiXBJEhQVNTapXqA7
-	iFRK5RW1E7gpCfadPU9qLf82CBnddeDRCx7iEoJo3JDuR/1+pK3npJC7yxyhbQ4pARlAfitW+De
-	2bQsL0YLUqk3KdtE6rjp0Y2DWnyPpH3v4SwW2lYhRyoNHJiOsIpLE95UrT7ypOygcEdbPcg==
-X-Gm-Gg: AZFdTZdlol7UnLiLBy3xpp4uhNdIzmmxKTWohBPIeClebBn0m2KrAcFj/5zzz5JajFJ
-	jsIq9cGuGkx9zJotc241qbVvk04AJlEBoSs/6pneQWlsK3BWhb7atZcbZQfCjobzEf2mwIWAHyB
-	IJXireABXf9HwIPuDo5U6XJZQ/NhAuKROaE4nW025U60OUHYjPuwS1HrOpDzleKqEVMmgiZrN1S
-	url31C787nirx5mflLEp+JAabYrHS210+Zy8CIqQgS2uQLReC689dAruW4ha0Ojsm5OrwUYBSHh
-	1ObRk6NXzxJFsoFnmDlgoOOm3kvTnuwgp3M+4YikY70gvJr8PiiLRZVa/90mDfjPtPWBhGh1wb8
-	/RqHnpRkvIZ3E8HRBili5lK6bv3zMqMEy7FpA1HGFy+xxWUNcuyyHT/HjvoLGTt8UBiKpQAOcf3
-	hwAVsFlSGIWSOhndcziyXlQDqqk/HY2kxzhUmYUQFwbg==
-X-Received: by 2002:a17:903:2282:b0:2f0:82df:b8a6 with SMTP id d9443c01a7336-2f082dfbfa2mr135854165ad.59.1795676720766;
-        Wed, 25 Nov 2026 23:05:20 -0800 (PST)
-X-Received: by 2002:a17:903:2282:b0:2f0:82df:b8a6 with SMTP id d9443c01a7336-2f082dfbfa2mr135853805ad.59.1795676720167;
-        Wed, 25 Nov 2026 23:05:20 -0800 (PST)
+        bh=TWtJ7O/weMJzv9paex9qV3Mx7PBaOy4zcuYq1hMdYAs=;
+        b=y3H7p0xksAL2DUPCtvu5id5u4C5g/7Rawj9eK+qFpnEA/chz8UL51xwZjXSDoPYTs0
+         UIPLaBg81NJG6gYfMIOl8zvL2K8P4zOo3wHmSFL52k7bd9FLht8xL5pMg2DHwKmUT5au
+         s0EsBnyVsKuZdMDd3oW+nmYVGuBXEpksZ+Rmaciber8mJz77EnbtC8zh2nrvwUdeLUtl
+         /mGHBMP5CMMAwgz6is0lSuAz3KJ8+Y28EbM8NlBEKRjBAJ26tlbVTrEE6sh0cFqTzO0z
+         jxejJYmMghCW5bpMAG/aiYXAQ7qxj1fbZIV/wVxUahvqGfu+wuzFR+tQyNXZTHKEx+WC
+         ZqcA==
+X-Forwarded-Encrypted: i=1; AL+hErEhwYUWcVcAlGtLNhzFnFTs+fA+L5KZaZk8i0nSWCP6RJxNqaisfNgMe4Osuvfj2GNhI41+WXiDumk9kRLZXw==@vger.kernel.org
+X-Gm-Message-State: APuU4Z+Th2dZZ+zJOCQRAuuXhDJcT3H+vuks1J17ArpHdsXussADAoeE
+	syNE4fbRbd3p+FSvVux+RCyUJXONiHwkI2ePRns8rfwcg+u44Wd4OFMIcO3I6WMQeelhr74LZD6
+	hKQJOHiLnIW+F3TqfZXXVH9mVe910OGfJLpmp/DRBGhcP1GY8ZYts0EXmXf6gaoI/L7QoZA==
+X-Gm-Gg: AZFdTZcDjkGzdyKTeCKDuH+zkpRUH+1TdRkpj+O+d3ZBCkx1iWxNaRXks9ikUhL9FhC
+	Yyb0H3pxjxaFDiAZJvEvH741JoFLLHvAQjf7BKxmOEIZVTh/Cb0Ap8UkZQZOH2Fr9ke2IVvlsxP
+	bz9LhE+cAUsxxjHaoksdUxNumL7wn6IBsPKea0/INztJJ1Ts4afbQayA2P0yHmCQdxV4OBGJXfM
+	Dx6e4LT1J1SJAeuzyiGNjVeCJhwh6miv4eS09iMm1G19zJxpw20nOMJRiUBvnuGZK/vxVimPJWg
+	ok8ZkdyHbVmHgf1mrwhubqhygMiBQPYmTpngsG8KI3SLMNWMqC8L9YqYNiQscY3lX8XIW8QXdyq
+	sTowDC4hEn89/gkt0D+BHnJqgIBxUyG/cS9OmwEaqmTTirivhVQ1grZMZYEI6UMwZNV5gNTQq6K
+	Ozd5wGrBb5Ed0s2oudbv5Qs3hrlaoMFGSvOWpqIMFH
+X-Received: by 2002:a05:6a00:2d14:b0:8b6:400d:7cc9 with SMTP id d2e1a72fcca58-8c87c671eabmr19440909b3a.29.1795676844669;
+        Wed, 25 Nov 2026 23:07:24 -0800 (PST)
+X-Received: by 2002:a05:6a00:2d14:b0:8b6:400d:7cc9 with SMTP id d2e1a72fcca58-8c87c671eabmr19440878b3a.29.1795676844204;
+        Wed, 25 Nov 2026 23:07:24 -0800 (PST)
 Received: from [10.133.33.167] (tpe-colo-wan-fw-bordernet.qualcomm.com. [103.229.16.4])
-        by smtp.gmail.com with ESMTPSA id d9443c01a7336-2f0bc695f31sm41415355ad.49.2026.11.25.23.05.18
+        by smtp.gmail.com with ESMTPSA id d2e1a72fcca58-8c87285c05fsm10329081b3a.17.2026.11.25.23.07.22
         (version=TLS1_3 cipher=TLS_AES_128_GCM_SHA256 bits=128/128);
-        Wed, 25 Nov 2026 23:05:19 -0800 (PST)
-Message-ID: <7e396e37-d70b-4091-8764-f416b1ddc7aa@oss.qualcomm.com>
-Date: Thu, 26 Nov 2026 15:05:16 +0800
+        Wed, 25 Nov 2026 23:07:23 -0800 (PST)
+Message-ID: <0bf83f69-f069-444b-a45f-b4582b544405@oss.qualcomm.com>
+Date: Thu, 26 Nov 2026 15:07:20 +0800
 X-Mailing-List: linux-wireless@vger.kernel.org
 List-Id: <linux-wireless.vger.kernel.org>
 List-Post: <mailto:linux-wireless@vger.kernel.org>
@@ -117,8 +117,8 @@ List-Owner: <mailto:linux-wireless+owner@vger.kernel.org>
 Precedence: list
 MIME-Version: 1.0
 User-Agent: Mozilla Thunderbird
-Subject: Re: [PATCH ath-next v4 03/10] wifi: ath10k: wake blocked waiters when
- entering WEDGED state
+Subject: Re: [PATCH ath-next v4 04/10] wifi: ath10k: also wake remaining
+ blocked waiters
 To: Loic Poulain <loic.poulain@oss.qualcomm.com>
 Cc: Jeff Johnson <jjohnson@kernel.org>,
         Baochen Qiang <baochen.qiang@oss.qualcomm.com>,
@@ -126,184 +126,128 @@ Cc: Jeff Johnson <jjohnson@kernel.org>,
         linux-wireless@vger.kernel.org, ath10k@lists.infradead.org,
         linux-kernel@vger.kernel.org
 References: <20261120-recovery-v4-v4-0-53d6a04490e0@oss.qualcomm.com>
- <20261120-recovery-v4-v4-3-53d6a04490e0@oss.qualcomm.com>
- <CAFEp6-2pecH+PxiDv+VpCfUyQabGSDWitHPbxpAv57fWTiP=mA@mail.gmail.com>
+ <20261120-recovery-v4-v4-4-53d6a04490e0@oss.qualcomm.com>
+ <CAFEp6-3zK1=Fsrkmtmuq7Q3xnNMuCE1R0J8Pe-rAJun9igCcJg@mail.gmail.com>
 Content-Language: en-US
 From: Kang Yang <kang.yang@oss.qualcomm.com>
-In-Reply-To: <CAFEp6-2pecH+PxiDv+VpCfUyQabGSDWitHPbxpAv57fWTiP=mA@mail.gmail.com>
+In-Reply-To: <CAFEp6-3zK1=Fsrkmtmuq7Q3xnNMuCE1R0J8Pe-rAJun9igCcJg@mail.gmail.com>
 Content-Type: text/plain; charset=UTF-8; format=flowed
 Content-Transfer-Encoding: 8bit
-X-Proofpoint-Spam-Details-Enc: AW1haW4tMjYxMTI2MDAyNiBTYWx0ZWRfX6q0+3bQVwKjH
- JA8tUuzEgxUUd8NMS4q/1kK34aI5SwiI267mgo/65MQhcyP8MZhR/ree72M8ZAkAIGLvn5tqpjT
- 9W+q7rkr+EG0tr5EV6dcWkj2PtDUkIpRFYu2HVjsiAwYpytEMOwJY//ImJI7oraiaCIqCesNwdS
- /9svXjM5sKOObxoT2TL1nyxHSzoc777XQ8XvGnpw7Mfwfz7vb3x3aWe4IDyJFt+6CYhv7GE0PYn
- 5Rs1at2isMyQrrXwPEfr0ZFLSFHWmJ6FQ/AZ6Mk9iTQXMO0vhzbDT5TI66vpKoHbEZv38TM1Q/3
- CyvEt21P4aeBBWZmKXr9EGNg8hRJaa3jbzMhUUcBGt0pCA6bvNT+33+KIonrGkjzzGuIVL0GmoZ
- DPuFB626KCND7imHnSxav5b+G/N/AXF/SfYQqQyvNMRoauOtC8ymvdr1Id+HewDmDwbLN6mmHx8
- g+B2EjRDhjxsjl1GiHA==
-X-Proofpoint-ORIG-GUID: gkUP-fViLO8DipKBZpt0ivjv4dV6ev9M
-X-Proofpoint-GUID: gkUP-fViLO8DipKBZpt0ivjv4dV6ev9M
-X-Proofpoint-Spam-Info: AW1haW4tMjYxMTI2MDAyNiBTYWx0ZWRfX9n540TbK8TVr
- pqoScjcs7AyM8Jvw4Gkp++maKxN5qe0Cl7lwhD0Sh4NPTrtHUPvd1/i3vlBb2ClJGtJbWt8G3KP
- xI5lcshHw4S7A3HV2Pd7KYMYhDZtdHU=
-X-Authority-Analysis: v=2.4 cv=R4mWitRX c=1 sm=1 tr=0 ts=6b07da31 cx=c_pps
- a=MTSHoo12Qbhz2p7MsH1ifg==:117 a=nuhDOHQX5FNHPW3J6Bj6AA==:17
+X-Proofpoint-ORIG-GUID: m9HAiLQB3yQLaMgziac3j7JzR4R4LD1u
+X-Proofpoint-GUID: m9HAiLQB3yQLaMgziac3j7JzR4R4LD1u
+X-Proofpoint-Spam-Info: AW1haW4tMjYxMTI2MDAyNyBTYWx0ZWRfXwHHmNYdl81S7
+ PJZsnnIuDtPoN7VZSmX8sBmIFlSVxGY4mR4dznRFikBMTBoGgJWcbGPvoDaHjIhMUOFdgBOMjZf
+ GKQCzoZdsItiegrRf9o8F/BMTMcs1As=
+X-Proofpoint-Spam-Details-Enc: AW1haW4tMjYxMTI2MDAyNyBTYWx0ZWRfX860VxosAkZQu
+ HaxpVFJo+PhhCaCpaV/u3UIzdfydGgGRNTJv/o9h5TxOdlYOQWB7s08pTfLjBo9SUfzngf8c9nh
+ VYG7gTwhtv+K7q0ab6qeBWJWqkdW0pfwY56Bgj6hsHPLYMEdbIAgEKJAA7xR5JXbU9mn//yAykd
+ c5SCn1ABAo+oqkeJxBXgwRKXbhp1BXxjEkJKfI4daQSeetal6g8anS3jc9L7ROC3FpHg7izjg52
+ jbaB93+3n1Dw0Li/3EbX3IcAw4MHLS5rjPDcSnSHL2U6hLqkPLss6r6sk76grqTuOr/N9IJUm/m
+ HAroZLBTEoIbATQUn2viIQlJZOH+duqnsKVxjpQa1cdMIpqtW1QXza5KlBSsYq1lHOZe3gmOK1O
+ 4qasg/ki2SpRXPMGlTy1VI/aRx2yKFUAR7S8UQMiqcX7OfipfMf5R/sju52X+E141nAI0Z4AXaC
+ Ax6LaSCpoBv7EwU7j7A==
+X-Authority-Analysis: v=2.4 cv=Q5VHcI2a c=1 sm=1 tr=0 ts=6b07daad cx=c_pps
+ a=rEQLjTOiSrHUhVqRoksmgQ==:117 a=nuhDOHQX5FNHPW3J6Bj6AA==:17
  a=IkcTkHD0fZMA:10 a=zJRp6_cAMcgA:10 a=s4-Qcg_JpJYA:10
- a=VkNPw1HP01LnGYTKEx00:22 a=u7WPNUs3qKkmUXheDGA7:22 a=_glEPmIy2e8OvE2BGh3C:22
- a=EUspDBNiAAAA:8 a=4gwAILDwourXv-2xtFAA:9 a=3ZKOabzyN94A:10 a=QEXdDO2ut3YA:10
- a=GvdueXVYPmCkWapjIL-Q:22
+ a=VkNPw1HP01LnGYTKEx00:22 a=u7WPNUs3qKkmUXheDGA7:22 a=yx91gb_oNiZeI1HMLzn7:22
+ a=EUspDBNiAAAA:8 a=468j3veBC24j7YoULXoA:9 a=3ZKOabzyN94A:10 a=QEXdDO2ut3YA:10
+ a=2VI0MkxyNR6bbpdq8BZq:22
 X-Proofpoint-Virus-Version: vendor=baseguard
  engine=ICAP:2.0.293,Aquarius:18.0.1176,Hydra:6.1.138,FMLib:17.12.100.49
  definitions=2026-11-26_01,2026-11-25_01,2025-10-01_01
 X-Proofpoint-Spam-Details: rule=outbound_notspam policy=outbound score=0
- lowpriorityscore=0 suspectscore=0 bulkscore=0 adultscore=0 clxscore=1015
- impostorscore=0 spamscore=0 phishscore=0 priorityscore=1501 malwarescore=0
+ impostorscore=0 lowpriorityscore=0 spamscore=0 adultscore=0 bulkscore=0
+ priorityscore=1501 suspectscore=0 malwarescore=0 clxscore=1015 phishscore=0
  classifier=typeunknown authscore=0 authtc= authcc= route=outbound adjust=0
- reason=mlx scancount=1 engine=8.22.0-2611040001 definitions=main-2611260026
+ reason=mlx scancount=1 engine=8.22.0-2611040001 definitions=main-2611260027
 
 
 
-On 11/25/2026 6:29 PM, Loic Poulain wrote:
+On 11/25/2026 6:35 PM, Loic Poulain wrote:
 > On Fri, Nov 20, 2026 at 9:42 AM Kang Yang <kang.yang@oss.qualcomm.com> wrote:
 >>
->> Commit c256a94d1b1b ("wifi: ath10k: shutdown driver when
->> hardware is unreliable") added a fail-count based transition
->> to ATH10K_STATE_WEDGED after repeated recovery failures.
+>> ath10k_core_wake_all_waiters() still misses several completions,
+>> leaving their callers blocked after the driver has given up on the
+>> device.
 >>
->> When recovery starts, ath10k_core_restart() sets
->> ATH10K_FLAG_CRASH_FLUSH and wakes waiters already blocked at
->> the time the failure is detected. However, additional waits
->> may be created later while the recovery attempt is still in
->> progress.
+>> In particular, callers waiting on peer_delete_done, target_suspend,
+>> wow.wakeup_completed, peer_stats_info_complete or wmi.radar_confirm
+>> continue sleeping until their individual timeouts expire even though
+>> no further progress is possible. The WoW and suspend waits are on the
+>> suspend and resume paths, where these delays consume watchdog budget.
 >>
->> If recovery ultimately fails and the device transitions to
->> ATH10K_STATE_WEDGED, those later waiters continue sleeping
->> until their individual timeouts expire even though no further
->> progress is possible.
+>> Add the missing completions to ath10k_core_wake_all_waiters() so the
+>> callers are released immediately.
 >>
->> On suspend/resume, these extra wait timeouts consume watchdog
->> budget. Crash logs show cases where one or two such timeouts
->> are enough to cause the suspend watchdog to fire before the
->> driver finishes shutting down.
->>
->> Apply the same CRASH_FLUSH, queue-stop and waiter wakeup
->> handling when entering ATH10K_STATE_WEDGED so blocked callers
->> fail immediately once the driver gives up.
+>> peer_delete_done is not otherwise reinitialized before every wait.
+>> A completion left signaled by recovery would therefore make a later
+>> peer-delete wait return immediately. Reinitialize it before sending
+>> each peer-delete command.
 >>
 >> Tested-on: QCA6174 hw3.2 PCI WLAN.RM.4.4.1-00288-QCARMSWPZ-1
 >> Tested-on: QCA6174 hw3.2 SDIO WLAN.RMH.4.4.1-00189
 >>
->> Fixes: c256a94d1b1b ("wifi: ath10k: shutdown driver when hardware is unreliable")
 >> Signed-off-by: Kang Yang <kang.yang@oss.qualcomm.com>
 >> ---
->>   drivers/net/wireless/ath/ath10k/core.c | 43 +++++++++++++++++++++++-----------
->>   1 file changed, 29 insertions(+), 14 deletions(-)
+>>   drivers/net/wireless/ath/ath10k/core.c | 5 +++++
+>>   drivers/net/wireless/ath/ath10k/mac.c  | 3 +++
+>>   2 files changed, 8 insertions(+)
 >>
 >> diff --git a/drivers/net/wireless/ath/ath10k/core.c b/drivers/net/wireless/ath/ath10k/core.c
->> index b536c21630b1..3bb4d2742c30 100644
+>> index 3bb4d2742c30..99960f12dc66 100644
 >> --- a/drivers/net/wireless/ath/ath10k/core.c
 >> +++ b/drivers/net/wireless/ath/ath10k/core.c
->> @@ -2533,6 +2533,32 @@ static int ath10k_init_hw_params(struct ath10k *ar)
->>          return 0;
->>   }
+>> @@ -2542,7 +2542,12 @@ static void ath10k_core_wake_all_waiters(struct ath10k *ar)
+>>          complete(&ar->install_key_done);
+>>          complete(&ar->vdev_setup_done);
+>>          complete(&ar->vdev_delete_done);
+>> +       complete(&ar->peer_delete_done);
+>> +       complete(&ar->target_suspend);
+>> +       complete(&ar->wow.wakeup_completed);
+>> +       complete(&ar->peer_stats_info_complete);
+>>          complete(&ar->thermal.wmi_sync);
+>> +       complete(&ar->wmi.radar_confirm);
+>>          complete(&ar->bss_survey_done);
+>>          wake_up(&ar->htt.empty_tx_wq);
+>>          wake_up(&ar->wmi.tx_credits_wq);
+>> diff --git a/drivers/net/wireless/ath/ath10k/mac.c b/drivers/net/wireless/ath/ath10k/mac.c
+>> index 74aca0af11c8..695df1821e5c 100644
+>> --- a/drivers/net/wireless/ath/ath10k/mac.c
+>> +++ b/drivers/net/wireless/ath/ath10k/mac.c
+>> @@ -843,6 +843,7 @@ static int ath10k_peer_delete(struct ath10k *ar, u32 vdev_id, const u8 *addr)
 >>
->> +static void ath10k_core_wake_all_waiters(struct ath10k *ar)
->> +{
->> +       complete(&ar->scan.started);
->> +       complete(&ar->scan.completed);
->> +       complete(&ar->scan.on_channel);
->> +       complete(&ar->offchan_tx_completed);
->> +       complete(&ar->install_key_done);
->> +       complete(&ar->vdev_setup_done);
->> +       complete(&ar->vdev_delete_done);
->> +       complete(&ar->thermal.wmi_sync);
->> +       complete(&ar->bss_survey_done);
->> +       wake_up(&ar->htt.empty_tx_wq);
->> +       wake_up(&ar->wmi.tx_credits_wq);
->> +       wake_up(&ar->peer_mapping_wq);
->> +}
->> +
->> +static void ath10k_core_enter_wedged(struct ath10k *ar)
->> +{
->> +       ar->state = ATH10K_STATE_WEDGED;
->> +
->> +       set_bit(ATH10K_FLAG_CRASH_FLUSH, &ar->dev_flags);
->> +
->> +       ieee80211_stop_queues(ar->hw);
->> +       ath10k_core_wake_all_waiters(ar);
->> +}
->> +
->>   static void ath10k_core_recovery_check_work(struct work_struct *work)
->>   {
->>          struct ath10k *ar = container_of(work, struct ath10k,
->> @@ -2551,7 +2577,7 @@ static void ath10k_core_recovery_check_work(struct work_struct *work)
+>>          lockdep_assert_held(&ar->conf_mutex);
 >>
->>          ath10k_err(ar, "recovery did not complete in %u ms, will shutdown driver!\n",
->>                     jiffies_to_msecs(ATH10K_RECOVERY_TIMEOUT_HZ));
->> -       ar->state = ATH10K_STATE_WEDGED;
->> +       ath10k_core_enter_wedged(ar);
->>   }
+>> +       reinit_completion(&ar->peer_delete_done);
+>>          ret = ath10k_wmi_peer_delete(ar, vdev_id, addr);
+>>          if (ret)
+>>                  return ret;
+>> @@ -5897,6 +5898,7 @@ static int ath10k_add_interface(struct ieee80211_hw *hw,
+>>   err_peer_delete:
+>>          if (arvif->vdev_type == WMI_VDEV_TYPE_AP ||
+>>              arvif->vdev_type == WMI_VDEV_TYPE_IBSS) {
+>> +               reinit_completion(&ar->peer_delete_done);
+>>                  ath10k_wmi_peer_delete(ar, arvif->vdev_id, vif->addr);
+>>                  ath10k_wait_for_peer_delete_done(ar, arvif->vdev_id,
+>>                                                   vif->addr);
+>> @@ -5959,6 +5961,7 @@ static void ath10k_remove_interface(struct ieee80211_hw *hw,
 >>
->>   void ath10k_core_start_recovery(struct ath10k *ar)
->> @@ -2618,18 +2644,7 @@ static void ath10k_core_restart(struct work_struct *work)
->>
->>          ieee80211_stop_queues(ar->hw);
->>          ath10k_drain_tx(ar);
->> -       complete(&ar->scan.started);
->> -       complete(&ar->scan.completed);
->> -       complete(&ar->scan.on_channel);
->> -       complete(&ar->offchan_tx_completed);
->> -       complete(&ar->install_key_done);
->> -       complete(&ar->vdev_setup_done);
->> -       complete(&ar->vdev_delete_done);
->> -       complete(&ar->thermal.wmi_sync);
->> -       complete(&ar->bss_survey_done);
->> -       wake_up(&ar->htt.empty_tx_wq);
->> -       wake_up(&ar->wmi.tx_credits_wq);
->> -       wake_up(&ar->peer_mapping_wq);
->> +       ath10k_core_wake_all_waiters(ar);
->>
->>          /* TODO: We can have one instance of cancelling coverage_class_work by
->>           * moving it to ath10k_halt(), so that both stop() and restart() would
->> @@ -2664,7 +2679,7 @@ static void ath10k_core_restart(struct work_struct *work)
->>                  /* hw restart might be requested from multiple places */
->>                  break;
->>          case ATH10K_STATE_RESTARTED:
->> -               ar->state = ATH10K_STATE_WEDGED;
->> +               ath10k_core_enter_wedged(ar);
+>>          if (arvif->vdev_type == WMI_VDEV_TYPE_AP ||
+>>              arvif->vdev_type == WMI_VDEV_TYPE_IBSS) {
+>> +               reinit_completion(&ar->peer_delete_done);
+>>                  ret = ath10k_wmi_peer_delete(arvif->ar, arvif->vdev_id,
+>>                                               vif->addr);
 > 
-> ath10k_core_enter_wedged call ieee80211_stop_queues(), which is also
-> called earlier in this function, is it expected and harmless?
+> So it would probably be cleaner to have a helper such as
+> __ath10k_peer_delete() that performs both the reinit_completion() and
+> the ath10k_wmi_peer_delete() call. Avoiding duplication.
 
 
-mac80211 will make this harmless:
-static void __ieee80211_stop_queue(struct ieee80211_hw *hw, int queue,
-				   enum queue_stop_reason reason,
-				   bool refcounted)
-{
-	struct ieee80211_local *local = hw_to_local(hw);
-
-	if (WARN_ON(queue >= hw->queues))
-		return;
-
-	if (!refcounted)   // refcounted=false
-		local->q_stop_reasons[queue][reason] = 1;
-	else
-		local->q_stop_reasons[queue][reason]++;
-
-	trace_stop_queue(local, queue, reason,
-			 local->q_stop_reasons[queue][reason]);
-
-	set_bit(reason, &local->queue_stop_reasons[queue]);
-}
-
-
+Will change in next serion
 
 
 > 
->>                  fallthrough;
->>          case ATH10K_STATE_WEDGED:
->>                  ath10k_warn(ar, "device is wedged, will not restart\n");
+>>                  if (ret)
 >>
 >> --
 >> 2.34.1
