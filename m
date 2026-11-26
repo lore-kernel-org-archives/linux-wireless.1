@@ -1,107 +1,107 @@
-Authentication-Results: smtp.subspace.kernel.org; arc=none smtp.remote-ip=209.85.215.226
+Authentication-Results: smtp.subspace.kernel.org; arc=none smtp.remote-ip=209.85.216.98
 ARC-Seal: i=1; d=subspace.kernel.org; s=arc20261015; a=rsa-sha256; cv=none;
-	t=1795703383;
-	b=WfOow8lGttnk/RuazNoM3TwToMKnvMVAN9tLreOKd6eLgImGivJY4G1ZEHFJDoHVku4a
-	 X7jX2r8K2wsMprrskHiffrN7MEf4NtKLslD2lKO0CyzvYa5xCNsjB8GgqT052RyMlQKak
-	 lYfzvcSKqDW52td3u9RxodW4yhsp0LZSx6bfMHx2zCPKeBH0BlkKg0la0Zzs8wJhGe9/9
-	 M/1LC5+BT+O7LTqZKkuacJhWHwW4VFQwKglY8V89reAFMSxD4Zi2pozDmrabRGT/67/CR
-	 baYI/TdJhzrTOfhEUXi86VeKn6rCe4qQFwBM86+Xrw9apF/mmlelc9Dt1sFuZTKRkvg==
+	t=1795703384;
+	b=HgB5nKqE0YLlFPI8po7A7zKgJyUeNPi6HhprkhKoOZ1vO/BOJEphCqJieF5UJL12nM3K
+	 mb78IPi5sZnEEVLWgiXELU3Zx0Valjg55fxuN0ALZ8JoZgQmh4Jt1MTsZnDNU/HLu2sOU
+	 wrBQ2nUK80WtYRhmAlWON4Gk7oHefu1p28SkiQW5fEdg8gtDopQahE4aXA7YoRvOiTsWY
+	 uZ5yBjl23TijY1eu+LqKmwL/y5L+bEqOiiBN5JKQEzWwWKTWycDMIpfR+iX2b6Zxhu4m5
+	 otn99ohheGss76hle7JIPs96Yp0YnM2+LQznoT8uXOpzUiqQ/zRznIcMFvZ3+ziC4pA==
 ARC-Message-Signature: i=1; d=subspace.kernel.org; s=arc20261015;
-	a=rsa-sha256; c=relaxed/relaxed; t=1795703383;
+	a=rsa-sha256; c=relaxed/relaxed; t=1795703384;
 	h=DMARC-Filter:Received:X-Google-DKIM-Signature:X-Gm-Message-State:
 	 X-Gm-Gg:X-Received:Received:X-Relaying-Domain:X-CFilter-Loop:Received:
 	 DKIM-Signature:X-Received:X-Received:Received:From:To:Cc:Subject:Date:
 	 Message-ID:X-Mailer:In-Reply-To:References:MIME-Version:
 	 Content-Transfer-Encoding:X-DetectorID-Processed;
-	bh=bcS0zzYLj6amiNYIMyvpaEQtFvfGgBS7wxP5RJztEeI=;
-	b=SPmrUQ0MufKWItllSPt0HEqsHRuGZn/NEf/7Ul8FhSDVrrjspXFli4rVX1DuBrrtEBvR
-	 OwZJ+KaAYz7TPGp8+HLqBrWaT6lMHVWRP5sJiuJ6FttK0hJn2teqjxyL6PbAtweeE9KcC
-	 iS4gW35wSYPAmiaGpi5qvO+bVxzxtuD2Y96y53TmXLYosMT/7OHO484sZHbRNKsZHE/9C
-	 BmWWT4ot+qz6XNMv59ryqU22o+FBDZWgg+5LMnneHXM4OCCb7R6RojgKo4k2hCIteCqQl
-	 gIQNM1JEUCBL+H/fuKlGmD2vcMwsaszCTyfo6g9cPfZTThSdTsTFpyITUxUfGrCdsXg==
+	bh=NKlbjUGPKr++A1S37oUvVp/fVMTUi8hDoA/ZvgkjDcw=;
+	b=tc6aRNfKIDwZLtT+P2ldBbImvLHhyCoUWShAmFlIFeHABpYDn+6iunp9GX5+j/5vLdda
+	 SSPZPnXNy17U2mLMliFt5xSKrORHAxtiIpSuOz3iLbeQtIIhpb1wVOhZu4yTY7IRNeI1p
+	 0gtXP6N5V3tn0tDTkFHXJUkJefQZabRLRti8f09ATrvzP4PWqnoM+Pgsw7DD1nTRe5KE6
+	 +4oEuNXDJXZ+9iNvsXw08cdxqZArgdpQCJ5gXJPU0DoQBhpqFQFwYKuzAgg8GkWwZbHC/
+	 0KY0+230HAyS4ASPBRJEmHSuVPmmaF/6ntOfjt1Zrt/i4YpZ4eIaSLJCFdhSeiEep8w==
 ARC-Authentication-Results: i=1; smtp.subspace.kernel.org; 
 	dmarc=pass header.from=broadcom.com;
 	spf=fail smtp.mailfrom=broadcom.com;
-	dkim=pass header.d=broadcom.com header.i=@broadcom.com header.a=rsa-sha256 header.s=google header.b=YzOV7Y+I;
-	arc=none smtp.remote-ip=209.85.215.226
-Received: from mail-pg1-f226.google.com (mail-pg1-f226.google.com [209.85.215.226])
+	dkim=pass header.d=broadcom.com header.i=@broadcom.com header.a=rsa-sha256 header.s=google header.b=V9pkHPE2;
+	arc=none smtp.remote-ip=209.85.216.98
+Received: from mail-pj1-f98.google.com (mail-pj1-f98.google.com [209.85.216.98])
 	(using TLSv1.3 with cipher TLS_AES_128_GCM_SHA256 (128/128 bits)
 	 key-exchange X25519 server-signature ECDSA (prime256v1) server-digest SHA256)
 	(No client certificate requested)
-	by smtp.subspace.kernel.org (Postfix) with ESMTPS id F11DC606A31E
-	for <linux-wireless@vger.kernel.org>; Thu, 26 Nov 2026 14:29:42 +0000 (UTC)
-DMARC-Filter: OpenDMARC Filter v1.4.2 smtp.subspace.kernel.org F11DC606A31E
+	by smtp.subspace.kernel.org (Postfix) with ESMTPS id 56D49606A333
+	for <linux-wireless@vger.kernel.org>; Thu, 26 Nov 2026 14:29:44 +0000 (UTC)
+DMARC-Filter: OpenDMARC Filter v1.4.2 smtp.subspace.kernel.org 56D49606A333
 Authentication-Results: smtp.subspace.kernel.org; dmarc=pass (p=reject dis=none) header.from=broadcom.com
 Authentication-Results: smtp.subspace.kernel.org; spf=fail smtp.mailfrom=broadcom.com
 Authentication-Results: smtp.subspace.kernel.org;
-	dkim=pass (1024-bit key) header.d=broadcom.com header.i=@broadcom.com header.a=rsa-sha256 header.s=google header.b=YzOV7Y+I
-Received: by mail-pg1-f226.google.com with SMTP id 41be03b00d2f7-cde0daf3a2aso3092286a12.3
-        for <linux-wireless@vger.kernel.org>; Thu, 26 Nov 2026 06:29:42 -0800 (PST)
+	dkim=pass (1024-bit key) header.d=broadcom.com header.i=@broadcom.com header.a=rsa-sha256 header.s=google header.b=V9pkHPE2
+Received: by mail-pj1-f98.google.com with SMTP id 98e67ed59e1d1-3b49a6e8212so2792078a91.2
+        for <linux-wireless@vger.kernel.org>; Thu, 26 Nov 2026 06:29:44 -0800 (PST)
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=1e100.net; s=20260707; t=1795703382; x=1796308182;
+        d=1e100.net; s=20260707; t=1795703384; x=1796308184;
         h=content-transfer-encoding:mime-version:references:in-reply-to
          :message-id:date:subject:cc:to:from:dkim-signature:x-gm-gg
          :x-gm-message-state:from:to:cc:subject:date:message-id:reply-to
          :content-type;
-        bh=bcS0zzYLj6amiNYIMyvpaEQtFvfGgBS7wxP5RJztEeI=;
-        b=LypSXNd/LSUQz7uSo2VfUPv+4MGAnN+H073C9fr0oQj9hGj9xF81Ih/O31hKV3Q/XX
-         tkfSuw2hKTgITUYjdzOnBvSz5Pj3h9f3MVxEWt2itVCOk7eo+FqkHYadabd0iS9vnxiK
-         3jc833pSo0gWBmR/LlPtGPJ2An0SDZvLxQXa2IIydZ3YSEL2ERtsUVLBJW0rcXmuBwAJ
-         DXMr1xxCvXopIy0SAkcgLuUvselXPUuW1mwsboYHgJCFUVJka5M+efpKpKhEm8NYYl3n
-         HMtyEy9XJiuUi1a65RuNAJEuXHDIT/HQeIiRUb+LiYif/DzUlC6BwkrVVF9qiCOHXUoI
-         G+mg==
-X-Gm-Message-State: APuU4Z9rhdvyBThUQIh/HO45mXyPoC78EdWdAChjTZkZL1gmjdyYWFs0
-	//M9gOkrgiEb1fRS+fHV4cwbgJclKFUBc049hJhsgVDse8gU0j64JYQI2IcDZL4tmNfvJ54+SAl
-	58ipFXUl5WU57pAM6sFsFtPZC7c9bdoT+ZPTW/Ga1+xgwR+DP1xdl9Bt7KfnPWNU8iglMCKoUde
-	AI+vOkxoPlp/W4mT0da3AZSHnmstyHg61D0NJqT/Mf5aHyHSYbb+EheaHMfbueIycbCQmb50WC4
-	n7ceEYt1GSi+z4gUW2ZNFJP8ujp
-X-Gm-Gg: AZFdTZfMHCklZqFC0irp/zL8y5Kl9B8uW0/58gb2lLVbHt7NK7ysyG1dM/u+dM7fGbQ
-	RRQuWpV0us8Nsj7AjydRbm+/7/75090PdJrUWT9IXUgTY5YoZTReBPqp1MR3+GUFtyZabOtkY+M
-	grFwsQkxlWQZMFrN57je77mfSsBrvNcszv52j4xkooHlF557zFnrd1Ufqdhgqi294v4K/PeLQwj
-	Ezu8rDb9RM+D15pBfwqNk3mGhax76Ph31qq6n/xEZdrZ3OFdvEPMLsdrSBNIUFwWxmTFz1uT/tv
-	5D+rgmk8G+G9wSKLeR2GsTtmre1uBfmR12MKThtVs8QYgeZRpRrjA/T8TegEOLONoBbXp2l6vKa
-	bcMkEfPtzs6WO0Uuh9f2++uCMQA2Slev1X1TzyZODIC/MBcFtSZMOJ0NAgLfyGZf9ik1dRsiJ0M
-	8jRoeLuPje3WIUGtfMEY5MqTRRUZIXGSVm3A9BwVo=
-X-Received: by 2002:a17:90b:240f:b0:3b4:ab19:ae01 with SMTP id 98e67ed59e1d1-3b4ab19ae94mr7286765a91.21.1795703382155;
-        Thu, 26 Nov 2026 06:29:42 -0800 (PST)
-Received: from smtp-us-east1-p01-i01-si01.dlp.protect.broadcom.com (address-144-49-247-28.dlp.protect.broadcom.com. [144.49.247.28])
-        by smtp-relay.gmail.com with ESMTPS id 98e67ed59e1d1-3b41ffe5f2csm6436648a91.2.2026.11.26.06.29.41
+        bh=NKlbjUGPKr++A1S37oUvVp/fVMTUi8hDoA/ZvgkjDcw=;
+        b=kO7/9DkqsH8/8cz+Dp4ns7W2hQaYrgBSbZKM51kyWhSiNNkIwjRxCoAFMLr/Z7BPih
+         hlq1nyJDQPFP6728+706a58DhbkpY++XEiAVrNJtVPSe0LWoa9QipRkqQUnCfqSCzZcT
+         7jKv6G89ZLHmGhXMwqolSaMlgTQTS2AL/tXTyTxK6UgMgkTleg75aSR2tKI4VFVPJ1uq
+         dXkQQf0RQs3wsUnGt46NN45rWudWpVVm/gfXV1IyxIuyPoObEA5w1p5fIfgAMXfti/Pv
+         QheSdtQ38YzzCphHZRCzUyiqNdcAB/vLDNPCfdxPKusAoDt2p7g0gjPVeefrE3jKTlCc
+         dxGg==
+X-Gm-Message-State: APuU4Z9AKRZLVuyY70zTDM8hV7eBfmznPSxNGNFK+wwahKb51ij8it+I
+	l6Ky5ZDsw5XnA0uoD0+e9wTpkh29DS32/qtSzBwPcN+ikSCGMqf2ddwtKIQzFvj64uHyv2KILwV
+	8+PyHyyJBfVQCbo8d/gbTNCSOUTP8YBD6JZaMbgdwYdk4+M1KymLNq3YNt9nzzH5ap7P6qyYXVr
+	WSjG+5K5tJIfv4FfI+W5FiSk0+4bqayxrp5ZqZP05HWwldaiI84bnLA2YVqHRTV0gsPMTlRssyx
+	7v5apAomjBhlHglH4O2LZFPfQ==
+X-Gm-Gg: AZFdTZe9iZrLrtQGtlFXGBHB2nQFh2hidxCwEPQfwGeURZzULZbzAbLs1hYQXtWsAB3
+	3DZzD98KUBDSLSICUhibyhNFx64KYyRWpb+pOVFM8v51iHAvRzVOEcnoNfsKiAhIwFJOmKTEfs5
+	Kww0Sa0owgpVZj0/wH+9HIiAFNTCSIbYiqKWf1lAnzUK/P0IP652RPGmGa6ITUo1YlB99PDrnaL
+	PO5/EuF09X1WgwPh2H9aYsaixHRdgjcz7IKqxuoy90SaK6Hby9b+z1YuZ8LjyfOMdlBPw5gIMla
+	/fSQa1JQIZE95RWrmLvBPNxZT3zrcl/jaFIerSGjZmTqdYD8E11u+257qFSP/lpAkFeCYyUOqo0
+	z461ZlWKNo2fTjV9ScD+Z2QNiVWounXHVeLA3xad4+9HNPqtWl9P/9QZSOMF904E/aC1ngz2Dny
+	wR7e6RHsy6JkbbD+I0HLtEV0Csj4dq5+Qo80QQhI5AFg==
+X-Received: by 2002:a17:90b:388c:b0:3b3:c04e:4b74 with SMTP id 98e67ed59e1d1-3b41c9b2becmr21724610a91.15.1795703383641;
+        Thu, 26 Nov 2026 06:29:43 -0800 (PST)
+Received: from smtp-us-east1-p01-i01-si01.dlp.protect.broadcom.com (address-144-49-247-123.dlp.protect.broadcom.com. [144.49.247.123])
+        by smtp-relay.gmail.com with ESMTPS id 98e67ed59e1d1-3b4062e6c29sm15730004a91.7.2026.11.26.06.29.43
         for <linux-wireless@vger.kernel.org>
         (version=TLS1_2 cipher=ECDHE-ECDSA-AES128-GCM-SHA256 bits=128/128);
-        Thu, 26 Nov 2026 06:29:42 -0800 (PST)
+        Thu, 26 Nov 2026 06:29:43 -0800 (PST)
 X-Relaying-Domain: broadcom.com
 X-CFilter-Loop: Reflected
-Received: by mail-qv1-f72.google.com with SMTP id 6a1803df08f44-92111028a03so127098906d6.0
-        for <linux-wireless@vger.kernel.org>; Thu, 26 Nov 2026 06:29:40 -0800 (PST)
+Received: by mail-qv1-f70.google.com with SMTP id 6a1803df08f44-92104826f9bso129855886d6.1
+        for <linux-wireless@vger.kernel.org>; Thu, 26 Nov 2026 06:29:42 -0800 (PST)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=broadcom.com; s=google; t=1795703380; x=1796308180; darn=vger.kernel.org;
+        d=broadcom.com; s=google; t=1795703382; x=1796308182; darn=vger.kernel.org;
         h=content-transfer-encoding:mime-version:references:in-reply-to
          :message-id:date:subject:cc:to:from:from:to:cc:subject:date
          :message-id:reply-to:content-type;
-        bh=bcS0zzYLj6amiNYIMyvpaEQtFvfGgBS7wxP5RJztEeI=;
-        b=YzOV7Y+IA/EZRAcLGzePqDBGaMf+y/+W3TFAy3XeESl9DVmaqUHvv6YsPwKtSrCGUj
-         BZ2Mqud8MxmL/mv+zMGuJqysWQGP6rp9uqnp2j8hXBO/UGTB3ODwlU4Sc3h77HW730MI
-         T6c4vFePJyc9ZBz3+p4qHhbVJG62aRBP1NKFs=
-X-Received: by 2002:a05:6214:2487:b0:921:7305:47c with SMTP id 6a1803df08f44-92173050758mr132277816d6.52.1795703380557;
-        Thu, 26 Nov 2026 06:29:40 -0800 (PST)
-X-Received: by 2002:a05:6214:2487:b0:921:7305:47c with SMTP id 6a1803df08f44-92173050758mr132277336d6.52.1795703380030;
-        Thu, 26 Nov 2026 06:29:40 -0800 (PST)
+        bh=NKlbjUGPKr++A1S37oUvVp/fVMTUi8hDoA/ZvgkjDcw=;
+        b=V9pkHPE2jN6IYsjUTEJ3wdQQmYz/LaO55WZizyWC3tlpaiVuTqfoSc5ciFxSYKKcVe
+         BgGbevaE7WWYyA1FdF8psBTv4PpURp2zWUvDiUrd0AcPkc127552eKK2K96NHKmzgBCz
+         rgADPoIp7+gfJ0698y3XZPDeozUS8GIcFCOwM=
+X-Received: by 2002:a05:6214:1d07:b0:91f:3138:8a64 with SMTP id 6a1803df08f44-92134b49c51mr359611066d6.41.1795703382422;
+        Thu, 26 Nov 2026 06:29:42 -0800 (PST)
+X-Received: by 2002:a05:6214:1d07:b0:91f:3138:8a64 with SMTP id 6a1803df08f44-92134b49c51mr359610596d6.41.1795703381898;
+        Thu, 26 Nov 2026 06:29:41 -0800 (PST)
 Received: from bld-bun-02.bun.broadcom.net ([192.19.176.227])
-        by smtp.gmail.com with ESMTPSA id 6a1803df08f44-921347a0b6bsm187895256d6.1.2026.11.26.06.29.38
+        by smtp.gmail.com with ESMTPSA id 6a1803df08f44-921347a0b6bsm187895256d6.1.2026.11.26.06.29.40
         (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
-        Thu, 26 Nov 2026 06:29:39 -0800 (PST)
+        Thu, 26 Nov 2026 06:29:41 -0800 (PST)
 From: Arend van Spriel <arend.vanspriel@broadcom.com>
 To: Soeren Coremans <sorencoremans@gmail.com>
 Cc: linux-wireless@vger.kernel.org,
 	arend.vanspriel@broadcom.com,
 	brcm80211@lists.linux.dev,
 	brcm80211-dev-list.pdl@broadcom.com
-Subject: Re: [PATCH wireless-next 2/3] wifi: brcmfmac: pcie: bound memdump to the mapped TCM window
-Date: Thu, 26 Nov 2026 15:29:32 +0100
-Message-ID: <20261126142933.875175-3-arend.vanspriel@broadcom.com>
+Subject: Re: [PATCH wireless-next 3/3] wifi: brcmfmac: pcie: recover from fatal PCIe errors
+Date: Thu, 26 Nov 2026 15:29:33 +0100
+Message-ID: <20261126142933.875175-4-arend.vanspriel@broadcom.com>
 X-Mailer: git-send-email 2.54.0
-In-Reply-To: <20261105215954.184290-3-sorencoremans@gmail.com>
-References: <20261105215954.184290-3-sorencoremans@gmail.com>
+In-Reply-To: <20261105215954.184290-4-sorencoremans@gmail.com>
+References: <20261105215954.184290-4-sorencoremans@gmail.com>
 X-Mailing-List: linux-wireless@vger.kernel.org
 List-Id: <linux-wireless.vger.kernel.org>
 List-Post: <mailto:linux-wireless@vger.kernel.org>
@@ -114,48 +114,159 @@ MIME-Version: 1.0
 Content-Transfer-Encoding: 8bit
 X-DetectorID-Processed: b00c1d49-9d2e-4205-b15f-d015386d3d5e
 
-On Thu,  5 Nov 2026 22:59:53 +0100, Soeren Coremans <sorencoremans@gmail.com> wrote:
-> brcmf_chip_get_raminfo() reports "RAM size is incorrect" on a dead
-> device but leaves the bogus value in ci->ramsize. A following
-> brcmf_fw_crashed() then dumps that many bytes from the TCM mapping,
-> which is only as large as BAR2, and faults in ioread32():
+On Thu,  5 Nov 2026 22:59:54 +0100, Soeren Coremans <sorencoremans@gmail.com> wrote:
+> brcmfmac registers no pci_error_handlers, so a fatal AER error leaves
+> the device dead until reboot ("AER: can't recover (no error_detected
+> callback)"). On a BCM4366 this happens after some firmware traps: the
+> trap starts a driver reset, and about 0.7 s later the downstream port
+> reports an FCP error.
 >
->   memdump 0x00200000+15728640 exceeds TCM window 0x800000
+> Add error handlers:
 >
-> Remember the BAR2 size and refuse dumps that do not fit. Only builds
-> with CONFIG_BRCMDBG create the memdump, so only they are affected.
+> - error_detected: mark the bus down, block the driver's own reset work
+>   and request a link reset.
+> - slot_reset: restore the config space saved at probe, then check that
+>   the backplane answers; a wedged card would stall the CPU on every
+>   MMIO read during firmware download.
+> - resume: re-probe the device from a work item. The link reset returns
+>   the chip to its power-on state, which brcmf_pcie_reset() does not
+>   fully re-initialise: after it, association failed in 5 of 9 runs,
+>   while 16 of 16 re-probes recovered.
+>
+> A dongle setup that fails while recovery is in progress no longer
+> releases the driver, as that would race with the re-probe.
+>
+> Tested with aer_inject (FCP on the downstream port), alone and 0.3 s
+> after a debugfs-triggered reset: WiFi back within 6-12 s in 16 of 16
+> runs, on a BCM4366/4 (14e4:43c3) with a kernel built from the
+> Ubuntu 7.0.0-42 source, which is based on v7.0.14.
+>
+> Also tested against real FCP errors, without injection: resets under WiFi
+> traffic caused 3 in 47 runs, and all 3 recovered within 4-11 s.
+>
+> This relies on the console read fix earlier in this series: without it,
+> a reset that is already running on the dead device never finishes, and
+> error_detected() waits for it forever.
 >
 > Found and written with the help of an AI coding assistant (Claude Opus
 > 5.5); the cover letter describes how.
 >
-> Fixes: ff4445a8502c ("brcmfmac: expose device memory to devcoredump subsystem")
 > Signed-off-by: Soeren Coremans <sorencoremans@gmail.com>
 > ---
->  drivers/net/wireless/broadcom/brcm80211/brcmfmac/pcie.c | 8 ++++++++
->  1 file changed, 8 insertions(+)
+>  .../broadcom/brcm80211/brcmfmac/pcie.c        | 128 +++++++++++++++++-
+>  1 file changed, 127 insertions(+), 1 deletion(-)
 
 [...]
 
-> @@ -1669,6 +1670,12 @@ static int brcmf_pcie_get_memdump(struct device *dev, void *data, size_t len)
->  	struct brcmf_pciedev_info *devinfo = buspub->devinfo;
->  
->  	brcmf_dbg(PCIE, "dump at 0x%08X: len=%zu\n", devinfo->ci->rambase, len);
-> +	if (devinfo->ci->rambase > devinfo->tcm_size ||
-> +	    len > devinfo->tcm_size - devinfo->ci->rambase) {
-> +		brcmf_err(bus_if, "memdump 0x%08X+%zu exceeds TCM window %pa\n",
-> +			  devinfo->ci->rambase, len, &devinfo->tcm_size);
-> +		return -EINVAL;
-> +	}
->  	brcmf_pcie_copy_dev_tomem(devinfo, devinfo->ci->rambase, data, len);
->  	return 0;
->  }
+> @@ -3153,11 +3160,117 @@ static const struct pci_device_id brcmf_pcie_devid_table[] = {
+>  MODULE_DEVICE_TABLE(pci, brcmf_pcie_devid_table);
+>
+>
+> +static pci_ers_result_t brcmf_pcie_error_detected(struct pci_dev *pdev,
+> +						  pci_channel_state_t state)
+> +{
+> +	struct brcmf_bus *bus = dev_get_drvdata(&pdev->dev);
+> +	struct brcmf_pciedev_info *devinfo;
+> +
+> +	if (!bus)
+> +		return PCI_ERS_RESULT_DISCONNECT;
+> +	if (state == pci_channel_io_perm_failure)
+> +		return PCI_ERS_RESULT_DISCONNECT;
+> +	if (state == pci_channel_io_normal)
+> +		return PCI_ERS_RESULT_CAN_RECOVER;
+> +
+> +	devinfo = bus->bus_priv.pcie->devinfo;
+> +	brcmf_err(bus, "PCIe link frozen, resetting\n");
+> +	WRITE_ONCE(devinfo->in_pci_recovery, true);
+> +	devinfo->state = BRCMFMAC_PCIE_STATE_DOWN;
+> +	brcmf_bus_cancel_reset_work(bus);
+> +
+> +	return PCI_ERS_RESULT_NEED_RESET;
+> +}
 
-The bogus size is left in ci->ramsize because brcmf_chip_get_raminfo() does
-not clear it when it returns -EINVAL for "RAM size is incorrect". Clearing it
-there would fix the source for every get_ramsize() user. The check here is
-fine as a safeguard though. You may add my acknowledgement in v2.
+This only drains the bus reset work. The firmware callback brcmf_pcie_setup()
+queued by brcmf_pcie_reset() runs from the firmware loader and nothing here
+waits for it. It can be in flight, e.g. polling for firmware init in
+brcmf_pcie_download_fw_nvram(), or not have started yet. It then uses the
+BAR0 window concurrently with slot_reset(), and the re-probe can free devinfo
+and bus underneath it. Please make sure that callback has finished (or cannot
+start) before the link is reset and the device re-probed.
 
-Acked-by: Arend van Spriel <arend.vanspriel@broadcom.com>
+Also, the setup failure path only tests in_pci_recovery before calling
+device_release_driver(). If error_detected() runs after that test, the device
+gets released between error_detected() and slot_reset(), which then finds no
+drvdata and gives up.
+
+[...]
+
+> +static struct workqueue_struct *brcmf_pcie_err_wq;
+> +
+> +struct brcmf_pcie_reprobe {
+> +	struct work_struct work;
+> +	struct pci_dev *pdev;
+> +};
+> +
+> +static void brcmf_pcie_reprobe_worker(struct work_struct *work)
+> +{
+> +	struct brcmf_pcie_reprobe *rp =
+> +		container_of(work, struct brcmf_pcie_reprobe, work);
+> +	int err;
+> +
+> +	err = device_reprobe(&rp->pdev->dev);
+> +	if (err)
+> +		pci_err(rp->pdev, "re-probe after PCIe error failed: %d\n", err);
+> +	pci_dev_put(rp->pdev);
+> +	kfree(rp);
+> +}
+> +
+> +/* A link reset returns the chip to its power-on state, which only a full
+> + * probe initialises correctly. The re-probe frees all driver data, so it
+> + * runs from a work item that holds nothing but the PCI device.
+> + */
+> +static void brcmf_pcie_resume_from_error(struct pci_dev *pdev)
+> +{
+> +	struct brcmf_bus *bus = dev_get_drvdata(&pdev->dev);
+> +	struct brcmf_pcie_reprobe *rp;
+> +
+> +	if (!bus || !READ_ONCE(bus->bus_priv.pcie->devinfo->in_pci_recovery))
+> +		return;
+> +
+> +	rp = kzalloc_obj(*rp);
+> +	if (!rp)
+> +		return;
+> +	brcmf_err(bus, "PCIe link recovered, re-probing\n");
+> +	INIT_WORK(&rp->work, brcmf_pcie_reprobe_worker);
+> +	rp->pdev = pci_dev_get(pdev);
+> +	queue_work(brcmf_pcie_err_wq, &rp->work);
+> +}
+> +
+
+If recovery is abandoned (slot_reset() returns DISCONNECT, or the allocation
+above fails) in_pci_recovery stays set, so later dongle setup failures are
+ignored without releasing the driver, and the allocation failure is not even
+logged.
+
+brcmf_pcie_pm_leave_D3() already calls brcmf_pcie_remove() and
+brcmf_pcie_probe() directly from a callback that runs under the device lock.
+Is there a reason resume() cannot do the same instead of using a work item, a
+dedicated workqueue and device_reprobe()?
+
+The series "wifi: brcmfmac: pcie: S3 and deep sleep on the T2 Mac chips"
+(https://patchwork.kernel.org/series/1208304/) changes the same code. Its last
+patch adds deep sleep state handling to brcmf_pcie_remove() and hooks on the ring
+lock that wake the device. A re-probe after a link reset runs that remove path on a
+device that does not answer, and error_detected() only sets devinfo->state to DOWN
+and leaves the deep sleep state alone. The series also adds its own re-probe after
+a resume through platform firmware. Please check recovery with that series applied,
+and make sure an error during resume cannot start both re-probes. Whichever series
+is applied second will need a rebase.
+
+The commit message says brcmf_pcie_reset() is not enough after a link reset
+and the cover letter leaves the cause open. I would like to know which part of
+the probe-time setup is missing before settling on a full re-probe.
+
+The pci_err() line in brcmf_pcie_reprobe_worker() and the brcmf_err() line in
+brcmf_pcie_slot_reset() are 81 columns, see the checkpatch warning.
 
 Regards,
 Arend
