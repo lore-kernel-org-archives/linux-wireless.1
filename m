@@ -1,59 +1,59 @@
 Authentication-Results: smtp.subspace.kernel.org; arc=none smtp.remote-ip=46.4.11.11
 ARC-Seal: i=1; d=subspace.kernel.org; s=arc20261015; a=rsa-sha256; cv=none;
-	t=1795717411;
-	b=ButxK/MU/Ho8Ym4BCwRNh1LkOk1G/NNwCspaAhLBCQxVP8o1FGdA6lt5g41cwULpfaut
-	 zna4TDm0JHMpHNYNnHDUhbX7vpbDVYoh2a7fqHB5II+MX2llrWj0C9LTCdN9wPP3U5WEm
-	 L2sitZfvbjZr0rH6OVbBh6NT8S7HI+bY1lpn4PLdhzRZ4UN0Q9K1o18AQCHi+yBk+axI6
-	 upXFdLQzs1JYB28OHRjsgBvcyKLNvp0FeqUTQqqhxHMNz02LIhOJZhzHRf3s235f6weLU
-	 qp8+0F1nbuDXsLajDUzhrIjNicJqlaOHD1Ag79iAohhaGiQnkhxX7silE4h66uar7+A==
+	t=1795717412;
+	b=g65QJF2G5xj24mkhzBD53arA+r3Q/ehDRXxdxpb1s7knKFzwjnMJMIAfj1gFSbIZRt7N
+	 ScOuWZYNImylFliLriZl/uAiY4el4LUP9dPHtT4ZUd5/9AdZLzT7riKOprn6jYbf0vO5j
+	 HxrKbDzreEsHLgbf50tPv3fBHRuWUMqJ5rLhYNOGm7wVMe09MXJZdVMoCbCv65IPgZZDC
+	 +rqRoLfKHGBzfJ2hrkcHdG5KEvsCw6md0EDrsoLCOf6GCeY+8n8OAmAc8B3OI0qoXrrau
+	 h+Hs9VNBMUJEozFVTih2Mhc6OOdQ79IFxLpTTMQJZvnn2HSU+ZZ+Q1mGrviYASzd27Q==
 ARC-Message-Signature: i=1; d=subspace.kernel.org; s=arc20261015;
-	a=rsa-sha256; c=relaxed/relaxed; t=1795717411;
+	a=rsa-sha256; c=relaxed/relaxed; t=1795717412;
 	h=DMARC-Filter:DKIM-Signature:Received:From:To:Subject:Date:Message-ID:
 	 X-Mailer:In-Reply-To:References:MIME-Version:
 	 Content-Transfer-Encoding;
-	bh=cYXZxeXWM/CEiuQq/2FPP/kHzsghk6fyr7x+siANU/Y=;
-	b=HW55rZphQf+47Z9PmE+k4tY+mgEnR+1EfrE8iB1DAYFqqriOfuG0t7DYAGO541SOlQc5
-	 wSOnYtF8Ui6ESoSIh7YjoFPMS7ErHarrdoc2nEhgBFcB2sBcE3svmWp3oCX+eOoxu5GdX
-	 zVfTHOsMt91B5cksosouG5C8J8Ct0Ruu0P9NUlr/aBIffArXXKZiddE5Kot+sAd3mu7vs
-	 28y8m2xUf+FBB8dqV5luJQC4/d0J5gy43W8SCssIfCixOajRWrk/ZuRmjcha5klV7yR4n
-	 WKfU55MKasR9cKA6uSxPu9yGGn8NMp0YKOW4eZLRuMKarM7+o3Wqo2xISUki9XWKcEw==
+	bh=G8B8aYI1geQU5hQvWvCZIVWcZqHObxakfOydZ0K0nm8=;
+	b=JutadFvP/0XSYnaX8FX4UPR0CkdXZIXNp4VvZsOhZGqJfYvANDWuhOypYaRtcZoN6Vz3
+	 OSpWDM0EDnL60HkNAmaWTMIPmw8Gk/Wuf1OPpow1ijGxZfff4MoYgf9SQ3Plh4KZ19d4F
+	 nBJUDRtH9u2jkPVzhTiH/OLDRtknPm/rUqKcTOiPmCpqbrA5vZ01U6/GGk9lpx6Q5Liqn
+	 OHkGJPbMlWCp8uMeaxw4iunD5hOyK4uK2+zHvcR2pYQ1IcsxKrKg97+c+iiqN67ZDOflq
+	 IL8C4wpHlxDzzrIYHFS7wrvP7UHoKxJr24hDK+XiSuFdwYlCuzC4oWQQGjel2HPWhPA==
 ARC-Authentication-Results: i=1; smtp.subspace.kernel.org; 
 	dmarc=pass header.from=nbd.name;
 	spf=pass smtp.mailfrom=nbd.name;
-	dkim=pass header.d=nbd.name header.i=@nbd.name header.a=rsa-sha256 header.s=20160729 header.b="GBBJ0/IK";
+	dkim=pass header.d=nbd.name header.i=@nbd.name header.a=rsa-sha256 header.s=20160729 header.b=s5qMRMHZ;
 	arc=none smtp.remote-ip=46.4.11.11
 Received: from nbd.name (nbd.name [46.4.11.11])
 	(using TLSv1.3 with cipher TLS_AES_256_GCM_SHA384 (256/256 bits)
 	 key-exchange ECDHE (prime256v1) server-signature ECDSA (prime256v1) server-digest SHA256)
 	(No client certificate requested)
-	by smtp.subspace.kernel.org (Postfix) with ESMTPS id 5849B606A68B
+	by smtp.subspace.kernel.org (Postfix) with ESMTPS id E0089606A69A
 	for <linux-wireless@vger.kernel.org>; Thu, 26 Nov 2026 18:23:31 +0000 (UTC)
-DMARC-Filter: OpenDMARC Filter v1.4.2 smtp.subspace.kernel.org 5849B606A68B
+DMARC-Filter: OpenDMARC Filter v1.4.2 smtp.subspace.kernel.org E0089606A69A
 Authentication-Results: smtp.subspace.kernel.org; dmarc=pass (p=none dis=none) header.from=nbd.name
 Authentication-Results: smtp.subspace.kernel.org; spf=pass smtp.mailfrom=nbd.name
 Authentication-Results: smtp.subspace.kernel.org;
-	dkim=pass (1024-bit key) header.d=nbd.name header.i=@nbd.name header.a=rsa-sha256 header.s=20160729 header.b=GBBJ0/IK
+	dkim=pass (1024-bit key) header.d=nbd.name header.i=@nbd.name header.a=rsa-sha256 header.s=20160729 header.b=s5qMRMHZ
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed; d=nbd.name;
 	s=20160729; h=Content-Transfer-Encoding:MIME-Version:References:In-Reply-To:
 	Message-ID:Date:Subject:To:From:Sender:Reply-To:Cc:Content-Type:Content-ID:
 	Content-Description:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc
 	:Resent-Message-ID:List-Id:List-Help:List-Unsubscribe:List-Subscribe:
 	List-Post:List-Owner:List-Archive;
-	bh=cYXZxeXWM/CEiuQq/2FPP/kHzsghk6fyr7x+siANU/Y=; b=GBBJ0/IKfZJ46m1tRmbPiT1ou3
-	XNAjX/Dz0ya/nrRtGxoHXbaAbCwo5AIUdSxLLTJhKb75l0bJL5rHsUmvHmP9e6ZaNnjV1JGg3Kv4E
-	8/RkyzD+zG/mUdWS1vTQuZnSwd1viWuKIk+bZ86Gg6UImz0+NSBtyPQsnxM7ObJsCqrc=;
+	bh=G8B8aYI1geQU5hQvWvCZIVWcZqHObxakfOydZ0K0nm8=; b=s5qMRMHZC/TzrlWT1RFhwbCq4m
+	KQ63lkTgjb7pefzk+ukxuxQq1mt9ZEEId3wUlYFRnuiagLG8YPpoFUTWjbfoRjd8L+t/BYEkT/g8H
+	gBtK+VQv1ivDH3YRRiv5LIOHiT2YXDadk2wAk216t2mCKpIAjLzeBUHwFHuCzEpYekXY=;
 Received: from p200300cadf0358007454e6799d1561c3.dip0.t-ipconnect.de ([2003:ca:df03:5800:7454:e679:9d15:61c3] helo=localhost.localdomain)
 	by ds12 with esmtpsa  (TLS1.3) tls TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384
 	(Exim 4.96)
 	(envelope-from <nbd@nbd.name>)
-	id 1xWe81-008icn-2z
+	id 1xWe82-008icn-1P
 	for linux-wireless@vger.kernel.org;
-	Thu, 26 Nov 2026 19:23:29 +0100
+	Thu, 26 Nov 2026 19:23:30 +0100
 From: Felix Fietkau <nbd@nbd.name>
 To: linux-wireless@vger.kernel.org
-Subject: [PATCH mt76-next 13/16] wifi: mt76: mt7603: check the RX PN of group addressed frames
-Date: Thu, 26 Nov 2026 19:23:22 +0100
-Message-ID: <20261126182325.2516607-13-nbd@nbd.name>
+Subject: [PATCH mt76-next 16/16] wifi: mt76: mt7996: stop resets before the hw is unregistered
+Date: Thu, 26 Nov 2026 19:23:25 +0100
+Message-ID: <20261126182325.2516607-16-nbd@nbd.name>
 X-Mailer: git-send-email 2.47.3
 In-Reply-To: <20261126182325.2516607-1-nbd@nbd.name>
 References: <20261126182325.2516607-1-nbd@nbd.name>
@@ -68,69 +68,120 @@ Precedence: list
 MIME-Version: 1.0
 Content-Transfer-Encoding: 8bit
 
-For a group addressed frame whose WLAN_IDX names a peer,
-mt7603_rx_get_wcid() returns the vif wcid, whose per-TID counters all
-group keys of the vif share. After a GTK rekey, frames of the new key
-thus read as replays until their PN passes that of the old key. A frame
-whose WLAN_IDX names the vif wcid gets no wcid and no replay check.
+recovery.hw_init_done stays set while mt7996_unregister_device()
+unregisters the hw. The MCU timeout path, the interrupt tasklet and
+debugfs can thus queue reset_work or dump_work after the cancel, for
+example on an MCU timeout in ieee80211_unregister_hw(). The work then
+runs from destroy_workqueue() in mt76_free_device() and calls
+ieee80211_restart_hw() on the unregistered hw.
 
-Check a group addressed frame against the counters of its key id, also
-where WLAN_IDX names the vif wcid.
+Clear the flag before the hw is unregistered, as
+mt7925e_unregister_device() does. Test the flag and queue the work
+under dev->mt76.lock, and set and clear it under the same lock, so that
+the cancels after the clear catch every queued work.
 
-Fixes: c8846e101502 ("mt76: add driver for MT7603E and MT7628/7688")
+Also make the recovery flags plain bools, since the reset work writes
+them without a lock and a bitfield write can undo another.
+
+Fixes: 27015b6fbcca ("wifi: mt76: mt7996: enable full system reset support")
+Fixes: d2b860454ea2 ("wifi: mt76: mt7996: reset device after MCU message timeout")
 Signed-off-by: Felix Fietkau <nbd@nbd.name>
 ---
- drivers/net/wireless/mediatek/mt76/mt7603/mac.c    | 4 +++-
- drivers/net/wireless/mediatek/mt76/mt7603/main.c   | 1 +
- drivers/net/wireless/mediatek/mt76/mt7603/mt7603.h | 1 +
- 3 files changed, 5 insertions(+), 1 deletion(-)
+ drivers/net/wireless/mediatek/mt76/mt7996/init.c   | 10 +++++++++-
+ drivers/net/wireless/mediatek/mt76/mt7996/mac.c    | 10 +++++++---
+ drivers/net/wireless/mediatek/mt76/mt7996/mt7996.h |  6 +++---
+ 3 files changed, 19 insertions(+), 7 deletions(-)
 
-diff --git a/drivers/net/wireless/mediatek/mt76/mt7603/mac.c b/drivers/net/wireless/mediatek/mt76/mt7603/mac.c
-index 836ce7dfb551..5940306ed3ce 100644
---- a/drivers/net/wireless/mediatek/mt76/mt7603/mac.c
-+++ b/drivers/net/wireless/mediatek/mt76/mt7603/mac.c
-@@ -519,7 +519,7 @@ mt7603_rx_get_wcid(struct mt7603_dev *dev, u8 idx, bool unicast)
- 		return wcid;
+diff --git a/drivers/net/wireless/mediatek/mt76/mt7996/init.c b/drivers/net/wireless/mediatek/mt76/mt7996/init.c
+index 18eab0eaaaad..dd7755f3258b 100644
+--- a/drivers/net/wireless/mediatek/mt76/mt7996/init.c
++++ b/drivers/net/wireless/mediatek/mt76/mt7996/init.c
+@@ -1743,6 +1743,13 @@ void mt7996_set_stream_he_eht_caps(struct mt7996_phy *phy)
+ 						NL80211_BAND_6GHZ);
+ }
  
- 	if (!wcid->sta)
--		return NULL;
-+		return mt76_rx_group_wcid(wcid);
++static void mt7996_set_hw_init_done(struct mt7996_dev *dev, bool done)
++{
++	spin_lock_bh(&dev->mt76.lock);
++	dev->recovery.hw_init_done = done;
++	spin_unlock_bh(&dev->mt76.lock);
++}
++
+ int mt7996_register_device(struct mt7996_dev *dev)
+ {
+ 	struct ieee80211_hw *hw = mt76_hw(dev);
+@@ -1792,7 +1799,7 @@ int mt7996_register_device(struct mt7996_dev *dev)
  
- 	sta = container_of(wcid, struct mt7603_sta, wcid);
- 	if (!sta->vif)
-@@ -550,6 +550,8 @@ mt7603_mac_fill_rx(struct mt7603_dev *dev, struct sk_buff *skb)
- 	sband = (i & 1) ? &dev->mphy.sband_5g.sband : &dev->mphy.sband_2g.sband;
- 	i >>= 1;
+ 	ieee80211_queue_work(mt76_hw(dev), &dev->init_work);
  
-+	status->group = !unicast;
-+	status->key_id = FIELD_GET(MT_RXD1_NORMAL_KEY_ID, rxd1);
- 	idx = FIELD_GET(MT_RXD2_NORMAL_WLAN_IDX, rxd2);
- 	status->wcid = mt7603_rx_get_wcid(dev, idx, unicast);
+-	dev->recovery.hw_init_done = true;
++	mt7996_set_hw_init_done(dev, true);
  
-diff --git a/drivers/net/wireless/mediatek/mt76/mt7603/main.c b/drivers/net/wireless/mediatek/mt76/mt7603/main.c
-index 61f246193987..c8f77ace0eb1 100644
---- a/drivers/net/wireless/mediatek/mt76/mt7603/main.c
-+++ b/drivers/net/wireless/mediatek/mt76/mt7603/main.c
-@@ -69,6 +69,7 @@ mt7603_add_interface(struct ieee80211_hw *hw, struct ieee80211_vif *vif)
- 	mvif->sta.wcid.idx = idx;
- 	mvif->sta.vif = mvif;
- 	mt76_wcid_init(&mvif->sta.wcid, 0);
-+	mt76_wcid_rx_group_pn_set(&mvif->sta.wcid, vif, &mvif->rx_group_pn);
+ 	ret = mt7996_init_debugfs(dev);
+ 	if (ret)
+@@ -1814,6 +1821,7 @@ void mt7996_unregister_device(struct mt7996_dev *dev)
+ {
+ 	int i;
  
- 	eth_broadcast_addr(bc_addr);
- 	mt7603_wtbl_init(dev, idx, mvif->idx, bc_addr);
-diff --git a/drivers/net/wireless/mediatek/mt76/mt7603/mt7603.h b/drivers/net/wireless/mediatek/mt76/mt7603/mt7603.h
-index 47f5be44292d..6c89e087d57d 100644
---- a/drivers/net/wireless/mediatek/mt76/mt7603/mt7603.h
-+++ b/drivers/net/wireless/mediatek/mt76/mt7603/mt7603.h
-@@ -86,6 +86,7 @@ struct mt7603_sta {
- struct mt7603_vif {
- 	struct mt7603_sta sta; /* must be first */
++	mt7996_set_hw_init_done(dev, false);
+ 	cancel_work_sync(&dev->dump_work);
+ 	cancel_work_sync(&dev->wed_rro.work);
+ 	cancel_work_sync(&dev->reset_work);
+diff --git a/drivers/net/wireless/mediatek/mt76/mt7996/mac.c b/drivers/net/wireless/mediatek/mt76/mt7996/mac.c
+index ec4c8118d679..1a9e2a2db7a5 100644
+--- a/drivers/net/wireless/mediatek/mt76/mt7996/mac.c
++++ b/drivers/net/wireless/mediatek/mt76/mt7996/mac.c
+@@ -2889,11 +2889,13 @@ void mt7996_mac_dump_work(struct work_struct *work)
  
-+	struct mt76_rx_group_pn rx_group_pn;
- 	u8 idx;
- };
+ void mt7996_reset(struct mt7996_dev *dev)
+ {
++	spin_lock_bh(&dev->mt76.lock);
++
+ 	if (!dev->recovery.hw_init_done)
+-		return;
++		goto out;
  
+ 	if (dev->recovery.hw_full_reset)
+-		return;
++		goto out;
+ 
+ 	/* wm/wa exception: do full recovery */
+ 	if (READ_ONCE(dev->recovery.state) & MT_MCU_CMD_WDT_MASK) {
+@@ -2904,7 +2906,7 @@ void mt7996_reset(struct mt7996_dev *dev)
+ 
+ 		mt7996_irq_disable(dev, MT_INT_MCU_CMD);
+ 		queue_work(dev->mt76.wq, &dev->dump_work);
+-		return;
++		goto out;
+ 	}
+ 
+ 	if (READ_ONCE(dev->recovery.state) & MT_MCU_CMD_STOP_DMA) {
+@@ -2914,6 +2916,8 @@ void mt7996_reset(struct mt7996_dev *dev)
+ 
+ 	queue_work(dev->mt76.wq, &dev->reset_work);
+ 	wake_up(&dev->reset_wait);
++out:
++	spin_unlock_bh(&dev->mt76.lock);
+ }
+ 
+ void mt7996_mac_update_stats(struct mt7996_phy *phy)
+diff --git a/drivers/net/wireless/mediatek/mt76/mt7996/mt7996.h b/drivers/net/wireless/mediatek/mt76/mt7996/mt7996.h
+index 1354bd82808c..86c718d6ec82 100644
+--- a/drivers/net/wireless/mediatek/mt76/mt7996/mt7996.h
++++ b/drivers/net/wireless/mediatek/mt76/mt7996/mt7996.h
+@@ -468,9 +468,9 @@ struct mt7996_dev {
+ 		u32 state;
+ 		u32 wa_reset_count;
+ 		u32 wm_reset_count;
+-		bool hw_full_reset:1;
+-		bool hw_init_done:1;
+-		bool restart:1;
++		bool hw_full_reset;
++		bool hw_init_done;
++		bool restart;
+ 	} recovery;
+ 
+ 	/* protects coredump data */
 -- 
 2.47.3
 
