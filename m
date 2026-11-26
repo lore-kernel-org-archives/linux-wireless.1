@@ -1,59 +1,59 @@
 Authentication-Results: smtp.subspace.kernel.org; arc=none smtp.remote-ip=46.4.11.11
 ARC-Seal: i=1; d=subspace.kernel.org; s=arc20261015; a=rsa-sha256; cv=none;
 	t=1795717410;
-	b=ggvE7IHLehw4/3PxnXidh04TXBwaiysiGzUT3s0pMUaIGpaVeU7LLj7ihp2LiZbri7Vu
-	 EbJ1MVMMcez3ju1HBSP5rKTWGlTtDXvgHmi/YERwaNeJH35mWTb4AMmFeWpHpVJVIEVcp
-	 APp80cA7a30mw7CpYCKc6iq0hxQdho2FGCjDhZqHCZ/aXLTWDy+JrgBjVvjO5g++tZXyX
-	 zPRhUu3+Jhe+iu/g1g4RR7xCKj4RCEqlA9NeheMwSzt4UzIuQS1wQhd57ukv9mjj1seMC
-	 BHKh5IvqkKEq14Mu8Db6u9v87RaJUE1nqh/TWRCyjHPJESP9AO3ekwMQ/oLG7N98wrg==
+	b=k62irJj845thdPmY7KTs2+/mthr9Lr/dzcTNzE9B1CdeWDy+GCVP/Sfckozaq/9T7g0U
+	 xEPht/tLaiR/Jvv+dhW2+52XO07rrNsPsGAbZyFic89Hm0z6xC1m0AZbIv4gFra/jFm/b
+	 hjInC4T/YK66jc18zUXObd3pOTVD6e8ymxV0Q33fhRv6PT5NK0GvG4t4gzdC8pM+dwGlX
+	 31MP0y2W+dsMfKVdnX4oRw6QvUsbih1VaYoPSY3AcjEjQuWVpjrXoxk9+9LfCQ5SuecMn
+	 z7vlaK0hvP/Fq7tC0kloS8IRV8zuEiQ8y8ee8bJcuNTODGcvy8B+GxuXhQ9hfj12JRA==
 ARC-Message-Signature: i=1; d=subspace.kernel.org; s=arc20261015;
 	a=rsa-sha256; c=relaxed/relaxed; t=1795717410;
 	h=DMARC-Filter:DKIM-Signature:Received:From:To:Subject:Date:Message-ID:
 	 X-Mailer:In-Reply-To:References:MIME-Version:
 	 Content-Transfer-Encoding;
-	bh=CMxmvKiB2th5KaJzaWLU9ebeen/kEwvmCKdZUvtEyDI=;
-	b=chrwRtJ53kNTs/l9Z9wHBhWawJ2ipdUvs3FOy3h/UjAn36Kv0Y181taFFq8fIiS6Z+IO
-	 zCjYEMFW/hS53r5EEeKc6xejHiggoEzENNcpbA/l0zpSnUOboBEFCRPbOB7w99S5VQtpT
-	 nrfmWFitsd9AJau4o/uAO3ONcc3/VlNz1Iq3I//el92gEplCrsEpZhJH545AkMpngzNSp
-	 MXip2XJQEMXNXQpdY4bi0dlQAkDZpMlFHoQ6Vc8mVlzWXOtjUhfw1M0RJFPX8vd7q+Bm4
-	 J5GMJGKcFIt3FP97Nf8K0CI7mfx8z+JyPo/zJrOs/PkHDPABsm0bzpTWvfxrqjgJE6Q==
+	bh=RtpsKKkSA1llx+VeQ6cO79rCzBm46QiZ0W5c/XhRwaE=;
+	b=fPkCirjKr3f/M0VN1BakD9+nmA1so+JQsADMnh/qe2LsHuha2FFaoPwf14fILXv83dmP
+	 JtvG6sL2/BdhSHOVYIXlmLvEzbSOM8lhLmRh3NVIg45GFjok72Z7QysV49DAHwaAL3Wqt
+	 s3Fyxi5zeM7LfZex5/KbaJKTmLV2e4GbTnMcXRVGej/QEXv/f6r9cFuNH2I6/qm8ZmHSj
+	 QjATAkzsrWs16Bc+/vSlMdO2w2CRYBGpUtxadRdV93lOiuUI2T3YcwfVx/8iefc38aEYB
+	 K4Pz0JcV8lrvKvIuhMCbJPZZQDN5eiwI6SEDlie0m+gyftfFHmyXecUB9IMJlratV4A==
 ARC-Authentication-Results: i=1; smtp.subspace.kernel.org; 
 	dmarc=pass header.from=nbd.name;
 	spf=pass smtp.mailfrom=nbd.name;
-	dkim=pass header.d=nbd.name header.i=@nbd.name header.a=rsa-sha256 header.s=20160729 header.b=KEMjrvFT;
+	dkim=pass header.d=nbd.name header.i=@nbd.name header.a=rsa-sha256 header.s=20160729 header.b=QZnjVVE1;
 	arc=none smtp.remote-ip=46.4.11.11
 Received: from nbd.name (nbd.name [46.4.11.11])
 	(using TLSv1.3 with cipher TLS_AES_256_GCM_SHA384 (256/256 bits)
 	 key-exchange ECDHE (prime256v1) server-signature ECDSA (prime256v1) server-digest SHA256)
 	(No client certificate requested)
-	by smtp.subspace.kernel.org (Postfix) with ESMTPS id 0F129606A326
-	for <linux-wireless@vger.kernel.org>; Thu, 26 Nov 2026 18:23:29 +0000 (UTC)
-DMARC-Filter: OpenDMARC Filter v1.4.2 smtp.subspace.kernel.org 0F129606A326
+	by smtp.subspace.kernel.org (Postfix) with ESMTPS id 5583D606A329
+	for <linux-wireless@vger.kernel.org>; Thu, 26 Nov 2026 18:23:30 +0000 (UTC)
+DMARC-Filter: OpenDMARC Filter v1.4.2 smtp.subspace.kernel.org 5583D606A329
 Authentication-Results: smtp.subspace.kernel.org; dmarc=pass (p=none dis=none) header.from=nbd.name
 Authentication-Results: smtp.subspace.kernel.org; spf=pass smtp.mailfrom=nbd.name
 Authentication-Results: smtp.subspace.kernel.org;
-	dkim=pass (1024-bit key) header.d=nbd.name header.i=@nbd.name header.a=rsa-sha256 header.s=20160729 header.b=KEMjrvFT
+	dkim=pass (1024-bit key) header.d=nbd.name header.i=@nbd.name header.a=rsa-sha256 header.s=20160729 header.b=QZnjVVE1
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed; d=nbd.name;
 	s=20160729; h=Content-Transfer-Encoding:MIME-Version:References:In-Reply-To:
 	Message-ID:Date:Subject:To:From:Sender:Reply-To:Cc:Content-Type:Content-ID:
 	Content-Description:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc
 	:Resent-Message-ID:List-Id:List-Help:List-Unsubscribe:List-Subscribe:
 	List-Post:List-Owner:List-Archive;
-	bh=CMxmvKiB2th5KaJzaWLU9ebeen/kEwvmCKdZUvtEyDI=; b=KEMjrvFTPLkMH7Uojsk23rUPGr
-	N3f2dfCrqZFxmNw9Fn0sZ9S1KCXQTwXki8yfIdIJfDadxO8QwuMqEi/OrrdK358EnQFZ9YsTv44Us
-	oR6823sN7VmuPn1/17ZKVIzgVkDdx52hxTaz4xcs0M9AZN1+4RGxjZEVl+5iL4XiIsNc=;
+	bh=RtpsKKkSA1llx+VeQ6cO79rCzBm46QiZ0W5c/XhRwaE=; b=QZnjVVE13xNt+M02iX5yeQFbx6
+	jfuQOivhULZ3N6ESI1E/fHRZo1nhH0aDwSesA10uWrEhhNy7Md3tTq+Or0rGKM6mFFggi5VkZqucr
+	76ZLw1Rk1bEN+T9uxjyJBF03GXcDrwCCz7LZ8BpZFT7dDc0nYTQbhfjfA1ENjjE9Nq4M=;
 Received: from p200300cadf0358007454e6799d1561c3.dip0.t-ipconnect.de ([2003:ca:df03:5800:7454:e679:9d15:61c3] helo=localhost.localdomain)
 	by ds12 with esmtpsa  (TLS1.3) tls TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384
 	(Exim 4.96)
 	(envelope-from <nbd@nbd.name>)
-	id 1xWe80-008icn-1k
+	id 1xWe80-008icn-2s
 	for linux-wireless@vger.kernel.org;
 	Thu, 26 Nov 2026 19:23:28 +0100
 From: Felix Fietkau <nbd@nbd.name>
 To: linux-wireless@vger.kernel.org
-Subject: [PATCH mt76-next 05/16] wifi: mt76: mt7915: count the WA TX statistics from an unsolicited event
-Date: Thu, 26 Nov 2026 19:23:14 +0100
-Message-ID: <20261126182325.2516607-5-nbd@nbd.name>
+Subject: [PATCH mt76-next 07/16] wifi: mt76: mt7996: check the RX PN of group addressed frames
+Date: Thu, 26 Nov 2026 19:23:16 +0100
+Message-ID: <20261126182325.2516607-7-nbd@nbd.name>
 X-Mailer: git-send-email 2.47.3
 In-Reply-To: <20261126182325.2516607-1-nbd@nbd.name>
 References: <20261126182325.2516607-1-nbd@nbd.name>
@@ -68,186 +68,70 @@ Precedence: list
 MIME-Version: 1.0
 Content-Transfer-Encoding: 8bit
 
-The WA firmware answers the TX statistics query with seq 0, so
-mt7915_mcu_parse_response() takes a WA_TX_STAT event as the answer of
-any waited command. An answer that arrives after its own wait ended is
-taken by the next waited command, whose caller then reads the wrong
-payload. Reachable via a station dump with WED active, when the wait
-ends at a timeout or an MCU reset.
+The RX descriptor of a decrypted group addressed frame names the vif
+link wcid, which has no station, so mt7996_rx_get_wcid() gives the frame
+no wcid. With the IV stripped, the frame gets no replay check.
 
-Count the event as unsolicited and send the query without a wait.
-TX_PACKETS of a station dump thus lags by one query. Send no query for a
-station index above 255, since the event of the mt7915 chip names only
-its low byte.
+Give such a frame the vif link wcid and check it against the counters of
+its key id. Seed the counters only when mac80211 sets the group key, not
+when the driver installs the key again at a link add, since mac80211
+does not advance the RSC of a frame with a stripped IV.
 
-Fixes: 161a7528e407 ("wifi: mt76: mt7915: rework tx packets counting when WED is active")
+Fixes: 98686cd21624 ("wifi: mt76: mt7996: add driver for MediaTek Wi-Fi 7 (802.11be) devices")
 Signed-off-by: Felix Fietkau <nbd@nbd.name>
 ---
- .../net/wireless/mediatek/mt76/mt7915/mcu.c   | 114 ++++++++----------
- 1 file changed, 51 insertions(+), 63 deletions(-)
+ drivers/net/wireless/mediatek/mt76/mt7996/mac.c  | 5 +++++
+ drivers/net/wireless/mediatek/mt76/mt7996/main.c | 7 +++++++
+ 2 files changed, 12 insertions(+)
 
-diff --git a/drivers/net/wireless/mediatek/mt76/mt7915/mcu.c b/drivers/net/wireless/mediatek/mt76/mt7915/mcu.c
-index 6a19f52d9932..74c632a27c12 100644
---- a/drivers/net/wireless/mediatek/mt76/mt7915/mcu.c
-+++ b/drivers/net/wireless/mediatek/mt76/mt7915/mcu.c
-@@ -195,9 +195,7 @@ mt7915_mcu_parse_response(struct mt76_dev *mdev, int cmd,
- 		return -EINVAL;
+diff --git a/drivers/net/wireless/mediatek/mt76/mt7996/mac.c b/drivers/net/wireless/mediatek/mt76/mt7996/mac.c
+index 62e16e3c989b..ec4c8118d679 100644
+--- a/drivers/net/wireless/mediatek/mt76/mt7996/mac.c
++++ b/drivers/net/wireless/mediatek/mt76/mt7996/mac.c
+@@ -478,6 +478,8 @@ mt7996_mac_fill_rx(struct mt7996_dev *dev, enum mt76_rxq_id q,
+ 		status->flag |= RX_FLAG_ONLY_MONITOR;
  
- 	rxd = (struct mt76_connac2_mcu_rxd *)skb->data;
--	if (seq != rxd->seq &&
--	    !(rxd->eid == MCU_CMD_EXT_CID &&
--	      rxd->ext_eid == MCU_EXT_EVENT_WA_TX_STAT))
-+	if (seq != rxd->seq)
- 		return -EAGAIN;
+ 	unicast = FIELD_GET(MT_RXD3_NORMAL_ADDR_TYPE, rxd3) == MT_RXD3_NORMAL_U2M;
++	status->group = !unicast;
++	status->key_id = FIELD_GET(MT_RXD1_NORMAL_KEY_ID, rxd1);
+ 	idx = FIELD_GET(MT_RXD1_NORMAL_WLAN_IDX, rxd1);
+ 	status->wcid = mt7996_rx_get_wcid(dev, idx, band_idx);
  
- 	if (cmd == MCU_CMD(PATCH_SEM_CONTROL)) {
-@@ -464,6 +462,41 @@ mt7915_mcu_rx_ps_sync(struct mt7915_dev *dev, struct sk_buff *skb)
- 	mt7915_mac_sta_ps_transition(dev, wcid, ps);
- }
- 
-+static void
-+mt7915_mcu_rx_wa_tx_stat(struct mt7915_dev *dev, struct sk_buff *skb)
-+{
-+	struct mt7915_mcu_wa_tx_stat {
-+		__le16 wcid;
-+		u8 __rsv2[2];
-+
-+		/* tx_bytes is deprecated since WA byte counter uses u32,
-+		 * which easily leads to overflow.
-+		 */
-+		__le32 tx_bytes;
-+		__le32 tx_packets;
-+	} __packed *res;
-+	int offset = sizeof(struct mt76_connac2_mcu_rxd);
-+	struct mt76_wcid *wcid;
-+	u16 wlan_idx;
-+
-+	if (!is_mt7915(&dev->mt76))
-+		offset += 4;
-+
-+	if (skb->len < offset + sizeof(*res))
-+		return;
-+
-+	res = (struct mt7915_mcu_wa_tx_stat *)(skb->data + offset);
-+	wlan_idx = le16_to_cpu(res->wcid);
-+	if (is_mt7915(&dev->mt76))
-+		wlan_idx &= 0xff;
-+
-+	rcu_read_lock();
-+	wcid = mt76_wcid_ptr(dev, wlan_idx);
-+	if (wcid)
-+		wcid->stats.tx_packets += le32_to_cpu(res->tx_packets);
-+	rcu_read_unlock();
-+}
-+
- static void
- mt7915_mcu_rx_ext_event(struct mt7915_dev *dev, struct sk_buff *skb)
- {
-@@ -489,6 +522,9 @@ mt7915_mcu_rx_ext_event(struct mt7915_dev *dev, struct sk_buff *skb)
- 	case MCU_EXT_EVENT_PS_SYNC:
- 		mt7915_mcu_rx_ps_sync(dev, skb);
- 		break;
-+	case MCU_EXT_EVENT_WA_TX_STAT:
-+		mt7915_mcu_rx_wa_tx_stat(dev, skb);
-+		break;
- 	default:
- 		break;
- 	}
-@@ -515,14 +551,12 @@ void mt7915_mcu_rx_event(struct mt7915_dev *dev, struct sk_buff *skb)
- 	struct mt76_connac2_mcu_rxd *rxd;
- 
- 	rxd = (struct mt76_connac2_mcu_rxd *)skb->data;
--	if ((rxd->ext_eid == MCU_EXT_EVENT_THERMAL_PROTECT ||
--	     rxd->ext_eid == MCU_EXT_EVENT_FW_LOG_2_HOST ||
--	     rxd->ext_eid == MCU_EXT_EVENT_ASSERT_DUMP ||
--	     rxd->ext_eid == MCU_EXT_EVENT_PS_SYNC ||
--	     rxd->ext_eid == MCU_EXT_EVENT_BCC_NOTIFY ||
--	     !rxd->seq) &&
--	     !(rxd->eid == MCU_CMD_EXT_CID &&
--	       rxd->ext_eid == MCU_EXT_EVENT_WA_TX_STAT))
-+	if (rxd->ext_eid == MCU_EXT_EVENT_THERMAL_PROTECT ||
-+	    rxd->ext_eid == MCU_EXT_EVENT_FW_LOG_2_HOST ||
-+	    rxd->ext_eid == MCU_EXT_EVENT_ASSERT_DUMP ||
-+	    rxd->ext_eid == MCU_EXT_EVENT_PS_SYNC ||
-+	    rxd->ext_eid == MCU_EXT_EVENT_BCC_NOTIFY ||
-+	    !rxd->seq)
- 		mt7915_mcu_rx_unsolicited_event(dev, skb);
- 	else
- 		mt76_mcu_rx_event(&dev->mt76, skb);
-@@ -4309,22 +4343,12 @@ int mt7915_mcu_wed_wa_tx_stats(struct mt7915_dev *dev, u16 wlan_idx)
- 	} __packed req = {
- 		.cmd = cpu_to_le32(0x15),
- 	};
--	struct mt7915_mcu_wa_tx_stat {
--		__le16 wcid;
--		u8 __rsv2[2];
--
--		/* tx_bytes is deprecated since WA byte counter uses u32,
--		 * which easily leads to overflow.
--		 */
--		__le32 tx_bytes;
--		__le32 tx_packets;
--	} __packed *res;
--	struct mt76_wcid *wcid;
--	struct sk_buff *skb;
--	int ret, len, offset;
--	u16 ret_wcid;
-+	int len;
- 
- 	if (is_mt7915(&dev->mt76)) {
-+		if (wlan_idx > 0xff)
-+			return -EINVAL;
-+
- 		req.arg0 = cpu_to_le32(wlan_idx);
- 		len = sizeof(req) - sizeof(req.arg2);
- 	} else {
-@@ -4333,44 +4357,8 @@ int mt7915_mcu_wed_wa_tx_stats(struct mt7915_dev *dev, u16 wlan_idx)
- 		len = sizeof(req);
+@@ -519,6 +521,9 @@ mt7996_mac_fill_rx(struct mt7996_dev *dev, enum mt76_rxq_id q,
+ 		status->flag |= RX_FLAG_MMIC_STRIPPED | RX_FLAG_MIC_STRIPPED;
  	}
  
--	ret = mt76_mcu_send_and_get_msg(&dev->mt76, MCU_WA_PARAM_CMD(QUERY) |
--					MT76_MCU_CMD_READ,
--					&req, len, true, &skb);
--	if (ret)
--		return ret;
--
--	offset = is_mt7915(&dev->mt76) ? 0 : 4;
--	if (skb->len < offset + sizeof(*res)) {
--		dev_kfree_skb(skb);
--		return -EINVAL;
--	}
--
--	skb_pull(skb, offset);
--
--	res = (struct mt7915_mcu_wa_tx_stat *)skb->data;
--
--	ret_wcid = le16_to_cpu(res->wcid);
--	if (is_mt7915(&dev->mt76))
--		ret_wcid &= 0xff;
--
--	if (ret_wcid != wlan_idx) {
--		ret = -EINVAL;
--		goto out;
--	}
--
--	rcu_read_lock();
--
--	wcid = mt76_wcid_ptr(dev, wlan_idx);
--	if (wcid)
--		wcid->stats.tx_packets += le32_to_cpu(res->tx_packets);
--	else
--		ret = -EINVAL;
--
--	rcu_read_unlock();
--out:
--	dev_kfree_skb(skb);
--
--	return ret;
-+	return mt76_mcu_send_msg(&dev->mt76, MCU_WA_PARAM_CMD(QUERY) |
-+				 MT76_MCU_CMD_READ, &req, len, false);
- }
++	if (!unicast && !status->wcid && (status->flag & RX_FLAG_DECRYPTED))
++		status->wcid = mt76_rx_group_wcid(mt76_wcid_ptr(dev, idx));
++
+ 	remove_pad = FIELD_GET(MT_RXD2_NORMAL_HDR_OFFSET, rxd2);
  
- int mt7915_mcu_rf_regval(struct mt7915_dev *dev, u32 regidx, u32 *val, bool set)
+ 	if (rxd2 & MT_RXD2_NORMAL_MAX_LEN_ERROR)
+diff --git a/drivers/net/wireless/mediatek/mt76/mt7996/main.c b/drivers/net/wireless/mediatek/mt76/mt7996/main.c
+index bcecd6558fda..7e5bf40c257d 100644
+--- a/drivers/net/wireless/mediatek/mt76/mt7996/main.c
++++ b/drivers/net/wireless/mediatek/mt76/mt7996/main.c
+@@ -469,6 +469,7 @@ int mt7996_vif_link_add(struct mt76_phy *mphy, struct ieee80211_vif *vif,
+ 	msta_link->wcid.link_valid = ieee80211_vif_is_mld(vif);
+ 	msta_link->wcid.tx_info |= MT_WCID_TX_INFO_SET;
+ 	mt76_wcid_init(&msta_link->wcid, band_idx);
++	mt76_wcid_rx_group_pn_set(&msta_link->wcid, vif, &mlink->rx_group_pn);
+ 
+ 	if (vif->type != NL80211_IFTYPE_AP &&
+ 	    (!mlink->omac_idx || mlink->omac_idx > 3))
+@@ -900,6 +901,12 @@ static int mt7996_set_key(struct ieee80211_hw *hw, enum set_key_cmd cmd,
+ 	}
+ 
+ 	for_each_set_bit(link_id, &links, IEEE80211_MLD_MAX_NUM_LINKS) {
++		struct mt7996_vif_link *link = mt7996_vif_link(dev, vif, link_id);
++
++		/* a replay of the key at a link add must keep the counters */
++		if (!sta && link && cmd == SET_KEY)
++			mt76_wcid_key_setup(&dev->mt76, &link->msta_link.wcid, key);
++
+ 		err = mt7996_set_hw_key(hw, cmd, vif, sta, link_id, key);
+ 		if (err)
+ 			break;
 -- 
 2.47.3
 
