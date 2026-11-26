@@ -1,112 +1,89 @@
-Authentication-Results: smtp.subspace.kernel.org; arc=none smtp.remote-ip=205.220.180.131
+Authentication-Results: smtp.subspace.kernel.org; arc=none smtp.remote-ip=212.227.15.15
 ARC-Seal: i=1; d=subspace.kernel.org; s=arc20261015; a=rsa-sha256; cv=none;
-	t=1795687323;
-	b=e/J9qGMaJ12Sx9B5Gn3LTzifpYmiICNGt7SXMw2MmHfOqbjBxikXT4Yk6fCyd3wFpcMH
-	 iFL2zZeVlf+9pjKV4P0WaXvLBQBf8ZVvsk+lbwbNNFj1cGinRy/iXTGRP5M8S4SB5t6dF
-	 pXjmbp7wBTyORAOitfWuv5ldg3Rl3V5aBA1ZTGgcivYdIjhUCDokuPT9jSO4QKb73Obc2
-	 bPBpY4KFGts/N5cKbdVr+CaFkilib9Hfkw/kPMS52adcHvMF7ERN+SnMevCI5NLzXEXNt
-	 Y4RncI9HiVcstgQWNalY8XwJ81k2doO2daiGqgul098viQ3Nzqj1T+P/YhPwXN1Aa4w==
+	t=1795690690;
+	b=SX0Zg1tN3QIGdbrXSokiJyk90uhGkNMRHhVGiQlQez6nc7wUi0t9Wv9dy0wcqFbuQOlc
+	 4KNP7f4cFIuHlrpsxXpdpH6ilqq6nPjQatYCWocZjf7ClSeu4ugQ0nTHblRYHScVqx0fo
+	 x5JmciosYXce4VIEYtIcOpa57BeEAQvlwxi1JTdH1BjqlAr0qX7uD5ZUCBeTpVBiBTQyE
+	 eYSEx9uzYYqSdptWNH7NNq6jyAwvRR0nMRg6RZ/145oFSVJhWzskx3pGXxMg/YQqTdIgE
+	 WBKrye/RakQdyl2sM5aW64xc3/NEX98ANxiQ68e61WSBXvyJapZt1Vf03ZbveW7i3NQ==
 ARC-Message-Signature: i=1; d=subspace.kernel.org; s=arc20261015;
-	a=rsa-sha256; c=relaxed/relaxed; t=1795687323;
-	h=DMARC-Filter:Received:DKIM-Signature:Received:Received:
-	 DKIM-Signature:X-Google-DKIM-Signature:X-Forwarded-Encrypted:
-	 X-Gm-Message-State:X-Gm-Gg:X-Received:X-Received:Received:Message-ID:
-	 Date:MIME-Version:User-Agent:Subject:To:Cc:References:
-	 Content-Language:From:In-Reply-To:Content-Type:
-	 Content-Transfer-Encoding:X-Proofpoint-Spam-Info:X-Proofpoint-GUID:
-	 X-Proofpoint-Spam-Details-Enc:X-Proofpoint-ORIG-GUID:
-	 X-Authority-Analysis:X-Proofpoint-Virus-Version:
-	 X-Proofpoint-Spam-Details;
-	bh=qCeVeR1v3tRG+6HG8mO/Yh755lPb9lEu3E7k4tsScJU=;
-	b=uDypliA2Hiamw9DgRgoNLfyxFl9H/Cr4If+HVUAr14+YTgYXibMrOJmE0pJQIcIM/0ce
-	 ZcJjOgD+O6pNru8PPr6hiwGr+ErnbOoWgku5OJ0y9R+W4DQmKnmRIEx/FqHTwSM8Fqnbw
-	 az07LZuiOQz2TH319zjcPMMq/5FaIqvkUqd/1WurTP6XvAHYNWod43eEmQ6QIedhn7Tx2
-	 sgOQ6BGfYcmJ/c4nOyIPXe8K601GV7k1zMdWklXpH/7updmsSILVY8in9ZzBuPdifmSvv
-	 CfNVs/pCqjbjWzbSRuT/bBbPV28jiJqmRU7l5WH+2Jv5o9r6WFnl6rMErW375mSk6/A==
+	a=rsa-sha256; c=relaxed/relaxed; t=1795690690;
+	h=DMARC-Filter:DKIM2-Signature:Message-Instance:DKIM-Signature:
+	 X-UI-Sender-Class:Received:From:To:Cc:Subject:Date:Message-ID:
+	 X-Mailer:In-Reply-To:References:MIME-Version:Content-Type:
+	 Content-Transfer-Encoding:X-Provags-ID:X-Spam-Flag:UI-OutboundReport;
+	bh=1cQcKGmy5Z3zs09Pev822hrVLf/mcrwuq0GMb/ZzUmg=;
+	b=ChGmrPHlcv6h8BBskymwkYTTaDMppP17acBb8BUc/2XlB2ZaGYzBH9bI0nao3ptlG4dW
+	 +rnBTqKjoe6GprA8eG2pZtRV6JVdLzF2qXirQkY7IeyMNb+H+BHlo5Qza14MhBooCOYiz
+	 PZ5Hpfbp9/ejPRpwVZyhFX5a85C1ssb2OwqzBGxfJrRKMMH8BJ2e8dZY/91adyrpYtA04
+	 7ggmz978ZngS/UmR5m/jRyeUGXtT8zbqsDbTlfUfzoZCteI97lmioVC3+JtseQYrj7V31
+	 6kXxML+fmGXxULFe2TIYvz+jlcsXjsDZtfPMVA5Cawg39NuwcrYmWVXOyZD4YP/uRfw==
 ARC-Authentication-Results: i=1; smtp.subspace.kernel.org; 
-	dmarc=pass header.from=oss.qualcomm.com;
-	spf=pass smtp.mailfrom=oss.qualcomm.com;
-	dkim=pass header.d=qualcomm.com header.i=@qualcomm.com header.a=rsa-sha256 header.s=qcppdkim1 header.b=kIqrv1xi;
-	dkim=pass header.d=oss.qualcomm.com header.i=@oss.qualcomm.com header.a=rsa-sha256 header.s=google header.b=KMrKUgpV;
-	arc=none smtp.remote-ip=205.220.180.131
-Received: from mx0b-0031df01.pphosted.com (mx0b-0031df01.pphosted.com [205.220.180.131])
+	dmarc=pass header.from=gmx.net;
+	spf=pass smtp.mailfrom=gmx.net;
+	dkim=pass header.d=gmx.net header.i=georgmueller@gmx.net header.a=rsa-sha256 header.s=s31663417 header.b="q8/4gRiI";
+	arc=none smtp.remote-ip=212.227.15.15
+Received: from mout.gmx.net (mout.gmx.net [212.227.15.15])
 	(using TLSv1.3 with cipher TLS_AES_256_GCM_SHA384 (256/256 bits)
-	 key-exchange X25519 server-signature ECDSA (prime256v1) server-digest SHA256)
+	 key-exchange ECDHE (prime256v1) server-signature ECDSA (prime256v1) server-digest SHA256)
 	(No client certificate requested)
-	by smtp.subspace.kernel.org (Postfix) with ESMTPS id A7C42606A31E
-	for <linux-wireless@vger.kernel.org>; Thu, 26 Nov 2026 10:02:02 +0000 (UTC)
-DMARC-Filter: OpenDMARC Filter v1.4.2 smtp.subspace.kernel.org A7C42606A31E
-Authentication-Results: smtp.subspace.kernel.org; dmarc=pass (p=none dis=none) header.from=oss.qualcomm.com
-Authentication-Results: smtp.subspace.kernel.org; spf=pass smtp.mailfrom=oss.qualcomm.com
+	by smtp.subspace.kernel.org (Postfix) with ESMTPS id F19AB606A32E
+	for <linux-wireless@vger.kernel.org>; Thu, 26 Nov 2026 10:58:09 +0000 (UTC)
+DMARC-Filter: OpenDMARC Filter v1.4.2 smtp.subspace.kernel.org F19AB606A32E
+Authentication-Results: smtp.subspace.kernel.org; dmarc=pass (p=quarantine dis=none) header.from=gmx.net
+Authentication-Results: smtp.subspace.kernel.org; spf=pass smtp.mailfrom=gmx.net
 Authentication-Results: smtp.subspace.kernel.org;
-	dkim=pass (2048-bit key) header.d=qualcomm.com header.i=@qualcomm.com header.a=rsa-sha256 header.s=qcppdkim1 header.b=kIqrv1xi;
-	dkim=pass (2048-bit key) header.d=oss.qualcomm.com header.i=@oss.qualcomm.com header.a=rsa-sha256 header.s=google header.b=KMrKUgpV
-Received: from pps.filterd (m0279873.ppops.net [127.0.0.1])
-	by mx0a-0031df01.pphosted.com (8.18.1.11/8.18.1.11) with ESMTP id 6AQ8JvW7849322
-	for <linux-wireless@vger.kernel.org>; Thu, 26 Nov 2026 10:02:01 GMT
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=qualcomm.com; h=
-	cc:content-transfer-encoding:content-type:date:from:in-reply-to
-	:message-id:mime-version:references:subject:to; s=qcppdkim1; bh=
-	qCeVeR1v3tRG+6HG8mO/Yh755lPb9lEu3E7k4tsScJU=; b=kIqrv1xiKm1lATnb
-	V3fIs0LfKN1tWvpn+Rzju90yECmLYbecKJ2+6MwC6tPyzshP4iadV83QlBK3JWkA
-	PUYDegmrQaMzgaUGIvh0nUqpUT2RtUg3FuGgYKIMayuoRCNmhw7H8yarU1/TogEB
-	f5fSGSYPZhDS1NosH774tDGlEgAhFYTcd+01I1WGapWjETTrArTzy93VwqsrWYd+
-	HWfg9tItIPomUiOuIrS5ITSC4ZoRhi1CP1B3ecT87ie7OdeYw/xjcirAIJoFRzfa
-	e6ItWlW0vA90G89BgyIp/1Glhrq6mZNaPnL60mSyd68xgXw4/eHdGZsJem3DgXi8
-	HmuV/w==
-Received: from mail-pg1-f197.google.com (mail-pg1-f197.google.com [209.85.215.197])
-	by mx0a-0031df01.pphosted.com (PPS) with ESMTPS id 4j6fw7rr8g-1
-	(version=TLSv1.3 cipher=TLS_AES_128_GCM_SHA256 bits=128 verify=NOT)
-	for <linux-wireless@vger.kernel.org>; Thu, 26 Nov 2026 10:02:01 +0000 (GMT)
-Received: by mail-pg1-f197.google.com with SMTP id 41be03b00d2f7-cddf142187aso3437825a12.2
-        for <linux-wireless@vger.kernel.org>; Thu, 26 Nov 2026 02:02:01 -0800 (PST)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=oss.qualcomm.com; s=google; t=1795687320; x=1796292120; darn=vger.kernel.org;
-        h=content-transfer-encoding:content-type:in-reply-to:from
-         :content-language:references:cc:to:subject:user-agent:mime-version
-         :date:message-id:from:to:cc:subject:date:message-id:reply-to
-         :content-type;
-        bh=qCeVeR1v3tRG+6HG8mO/Yh755lPb9lEu3E7k4tsScJU=;
-        b=KMrKUgpVNSvKBZBU26KkXl1m73ufmqI2g8ILiOJ13u4eH/H6Jbq0f/6VurtoqYNFkS
-         lxT4FPDSb/sHKGgCeEr2xDPfKFmQwIZFQXkF6H+3y3wrYS9HDi6n6Dx5SxSJLzMF46+l
-         lLB2kJ/hETJkWUOaV3o/mjS0+wXUJ2+qAznd341XnxvGmq0bjguLPHL7CxPZ4GSuw5Q5
-         cipyv5WnIdePi35ZTtLQi+W7mB63zNRSWG9cIcdtD4AyrJITqqIScudI8IE8Q6Z/nq5x
-         NtcCygs2EXsmCoip6lqvuKGQqUwETP5HRcoQv2z0KhdxlcML5QnpjTCW1J5N1se/8nGO
-         pw0Q==
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=1e100.net; s=20260707; t=1795687320; x=1796292120;
-        h=content-transfer-encoding:content-type:in-reply-to:from
-         :content-language:references:cc:to:subject:user-agent:mime-version
-         :date:message-id:x-gm-gg:x-gm-message-state:from:to:cc:subject:date
-         :message-id:reply-to:content-type;
-        bh=qCeVeR1v3tRG+6HG8mO/Yh755lPb9lEu3E7k4tsScJU=;
-        b=ecsjLNoViLAKq3FS2Z2qVv+2+IXyACG7dAPtNdI2s3evkYWEORCHCkAKovGfqfKjm6
-         TwXG7Tc/X6scD9OO6pmNaZnSZDi1CKEMq4rUoJQndhLqCCoiUPFcCXyES7C5MERbgJLj
-         hwiFvEECbd1QXGiUQRUsV+O4FYlAz/NJuEBCqHDkPJiun+8HjX7OighzvEElFryQG5W1
-         gNjHHStTmJMv/+R4MS33cPz2XlVGm3s30ze+Fs9+jv7O+tit/qcVBfUiZLZ8C2UrRjg6
-         1HsU0jGsE6bqOYba62IzjmFTux/t92uZK3eov/90JLbo47t6BytH5AmwwcoGZUIM00eQ
-         gmVQ==
-X-Forwarded-Encrypted: i=1; AL+hErGhsxH0FRaaLJ3Msf9+avmI9Uz3SNpGTA0lNc11Q11eH/NdQZG4UekSHBqLspd3sHMy5OEtA1/Pyr0cBZl4KQ==@vger.kernel.org
-X-Gm-Message-State: APuU4Z/ugf2EaCgwg5Szs/gSj7m/g6fXqovlHiL5vaRBJfo+pWDkeEXe
-	UGgx77797qSLEQY6NqlSUr2YgzJvJv1zcBWA9NE9y1bAMrqKyZn0l6ERFBaI3kAVdoTXDTEYhjk
-	yh2kwLknRQkbwMGgoSuxmN9pSw7UiIx5Lqtu8FseLpGua9bTGiISrnPb5qPUTUtRelBhwRQ==
-X-Gm-Gg: AZFdTZdUemleHz5G/XZrUWvvVKM7XG7rMjjmCBTCow0dHcjLYfWI+3G8maf+loikeLO
-	fwD+Cr1M2uaY1gCrSuuGdimDOQRAeqnpqgeMlg9THPHIqE7u6t2zfBPiwTbLzCm7nrndAlBJrG6
-	rMBg/kj1+2oznH+Lk4u+e9xsrAHMi/PLWZttxkNW5pT+QQc6IwlRf8KSAKCpmOCGvJgGvkbCdKu
-	SB25zeRuRGRlWpj2QpnSPfLIMhpSaLBgcEcwIwLado4R1p7OD/1Cq2qLRiQK/Be6gV25J6Tq85e
-	DdcajmC5kHFwUHbz3wlxtSq/juWAQLgkRNiPosud7Gzc7egQvAUVhA+N/tKiSulRg9dcWn/U63v
-	EZVcl+LzaMh3uVMinsrIbw4Fo39NiaYIN6YZMwkRmZMu92PsL+GpvmpIrEH7t/LqNzW3WJfJH/m
-	tby6Y4Os9RkcwXBImRqQje/fgMfASCvBhHYUQeu100
-X-Received: by 2002:a17:90b:1dcd:b0:3b0:bd53:8e5d with SMTP id 98e67ed59e1d1-3b41cb3e4b9mr15845860a91.58.1795687320301;
-        Thu, 26 Nov 2026 02:02:00 -0800 (PST)
-X-Received: by 2002:a17:90b:1dcd:b0:3b0:bd53:8e5d with SMTP id 98e67ed59e1d1-3b41cb3e4b9mr15845831a91.58.1795687319727;
-        Thu, 26 Nov 2026 02:01:59 -0800 (PST)
-Received: from [10.133.33.167] (tpe-colo-wan-fw-bordernet.qualcomm.com. [103.229.16.4])
-        by smtp.gmail.com with ESMTPSA id 41be03b00d2f7-cde6d002a77sm10286301a12.16.2026.11.26.02.01.57
-        (version=TLS1_3 cipher=TLS_AES_128_GCM_SHA256 bits=128/128);
-        Thu, 26 Nov 2026 02:01:59 -0800 (PST)
-Message-ID: <5a38be6e-09a5-4955-bc96-190a9ae33c2a@oss.qualcomm.com>
-Date: Thu, 26 Nov 2026 18:01:56 +0800
+	dkim=pass (2048-bit key) header.d=gmx.net header.i=georgmueller@gmx.net header.a=rsa-sha256 header.s=s31663417 header.b=q8/4gRiI
+DKIM2-Signature:  i=1; m=1; t=1795690688;
+ mf=PGdlb3JnbXVlbGxlckBnbXgubmV0Pg==;
+ rt=PGxpbnV4LXdpcmVsZXNzQHZnZXIua2VybmVsLm9yZz4=;
+ d=gmx.net;
+ s=s31663417:rsa-sha256:B1X4W0fw83wfZ3+Hv9TJVKWhGwhg
+   LVEcqZu3ztNtH3XCYu5acnSBCVAy1lSn/0imLGehsmOPeWjI/IQ9i8J+tmNeimL4EC0KaWt3QpX
+   RcuWRy/y2J7lVRhjbdDsIwDAeTI/9CEw+xEyjPDy6oXFDQs4CNCXqC64XzKAbtjQ9RtQpxR0yTl
+   fRuzmlRv18JAr3tcxOE2G9twrIkihu11rOBd5bnjTDaP6Ruw8cAlnlkDKZwHqmbCfdMpNT86EnP
+   OqO8v1siL3UtfQo9xoZU27dlhjLvLfwXY+YRXvml0oUnAOsmaU3f8nd/vUz9a13ooyN5ZCAKzwV
+   SzDCVI14YpgkGQ==;
+Message-Instance:  m=1;
+ h=sha256:
+   P3CKw6oxebC8qT2MElfQtOyyPP6GAx/uDCbtTU4izeE=:
+   3SsFDzzPPym/iY8OEAWfpPzIrczPcZryuDi1qjZ4UZw=,
+  sha512:
+   zSIydhCvoPQQpsxWXicxw0s+wORN0CKM4OXcVBnT3PHeMyr2NHea54BgRiXWqUoqsWZ5HOTtbFTAbralhc8bLQ==:
+   ClIhKau9NNtXATAN++fVOCKCgJ7etaKM+zB9pjB0p606K+F+RxGZz5V51PAaXH/PU0ugMl11eVhuVk8UVlrQEg==;
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmx.net;
+	s=s31663417; t=1795690667; x=1796295467; i=georgmueller@gmx.net;
+	bh=1cQcKGmy5Z3zs09Pev822hrVLf/mcrwuq0GMb/ZzUmg=;
+	h=X-UI-Sender-Class:From:To:Cc:Subject:Date:Message-ID:In-Reply-To:
+	 References:MIME-Version:Content-Type:Content-Transfer-Encoding:cc:
+	 content-transfer-encoding:content-type:date:from:message-id:
+	 mime-version:reply-to:subject:to;
+	b=q8/4gRiIlGGoHap1oQyBmWSFcnRmelO5bBYci2jIYw2cL2lPXOi8LOJ7ctHfFgCx
+	 27sU+/mv+rtNOXZ0ByAOxrxiz7RvvfVI/sfIofr2NXfQJ8TTLjoHodYursIZ7erit
+	 04CJ0kFL4guYggQQ3AaLVO+9kvtlOzFjjb0mRlm0EU4ulKQ9Qc7S04QTEfLn4LvCl
+	 Ang91liPzySUbWmUVcUGwwqvRMyQUDO1aeYsNRDqe/ere7r0pIxEjdlzJqvTYY4PM
+	 EjRSMMXmjk1qzrM/CvPu7DK7clKd3ORMtEZ+aQ/dXAo7v9TXnZHTcxGE7kA8aoW7E
+	 yWevHaB56HwDOPk39A==
+X-UI-Sender-Class: 724b4f7f-cbec-4199-ad4e-598c01a50d3a
+Received: from client.hidden.invalid by mail.gmx.net (mrgmx004
+ [212.227.17.190]) with ESMTPSA (Nemesis) id 1Mg6Zw-1y9iTd25J0-00kTeU; Thu, 26
+ Nov 2026 11:57:47 +0100
+From: =?UTF-8?q?Georg=20M=C3=BCller?= <georgmueller@gmx.net>
+To: mehmet.fide@gmail.com,
+	Jes.Sorensen@gmail.com
+Cc: rtl8821cerfe2@gmail.com,
+	pkshih@realtek.com,
+	hi@shreyan.sh,
+	mehmet.fide@screeningeagle.com,
+	linux-wireless@vger.kernel.org,
+	linux-kernel@vger.kernel.org,
+	=?UTF-8?q?Georg=20M=C3=BCller?= <georgmueller@gmx.net>
+Subject: [RFC PATCH v4 0/5] wifi: rtl8xxxu: implement AP mode for 8188EU
+Date: Thu, 26 Nov 2026 11:57:37 +0100
+Message-ID: <20261126105742.1086282-1-georgmueller@gmx.net>
+X-Mailer: git-send-email 2.56.1
+In-Reply-To: <20261126054350.2893087-1-mehmet.fide@gmail.com>
+References: <20261126054350.2893087-1-mehmet.fide@gmail.com>
 X-Mailing-List: linux-wireless@vger.kernel.org
 List-Id: <linux-wireless.vger.kernel.org>
 List-Post: <mailto:linux-wireless@vger.kernel.org>
@@ -116,145 +93,170 @@ List-Unsubscribe: <mailto:linux-wireless+unsubscribe@vger.kernel.org>
 List-Owner: <mailto:linux-wireless+owner@vger.kernel.org>
 Precedence: list
 MIME-Version: 1.0
-User-Agent: Mozilla Thunderbird
-Subject: Re: [PATCH ath-next v4 10/10] wifi: ath10k: drop async writes and
- sleep timer across power cycles
-To: Baochen Qiang <baochen.qiang@oss.qualcomm.com>,
-        Jeff Johnson <jjohnson@kernel.org>,
-        Loic Poulain <loic.poulain@oss.qualcomm.com>
-Cc: Jeff Johnson <jeff.johnson@oss.qualcomm.com>,
-        linux-wireless@vger.kernel.org, ath10k@lists.infradead.org,
-        linux-kernel@vger.kernel.org
-References: <20261120-recovery-v4-v4-0-53d6a04490e0@oss.qualcomm.com>
- <20261120-recovery-v4-v4-10-53d6a04490e0@oss.qualcomm.com>
- <6dbec0cb-ac36-41b6-9a8b-12da800222ab@oss.qualcomm.com>
-Content-Language: en-US
-From: Kang Yang <kang.yang@oss.qualcomm.com>
-In-Reply-To: <6dbec0cb-ac36-41b6-9a8b-12da800222ab@oss.qualcomm.com>
-Content-Type: text/plain; charset=UTF-8; format=flowed
-Content-Transfer-Encoding: 7bit
-X-Proofpoint-Spam-Info: AW1haW4tMjYxMTI2MDAzOCBTYWx0ZWRfX8sqRm78zzqiX
- wXXJTaRg1j49N8dpmI9Xw0vIwucC5xsi9UVM3SyrG8IgUcI5S9TSutmJuOlM7iwwiw2ZXv6ptF/
- 9QcX6vwEZpuLYO59iGOi+S9icAM9nHQ=
-X-Proofpoint-GUID: pBCOsvAp8Ri0V9XFR3eEv-o5k3WL951W
-X-Proofpoint-Spam-Details-Enc: AW1haW4tMjYxMTI2MDAzOCBTYWx0ZWRfXzNAQfplNuE2r
- 2WDxCgJUo7A2yFLUtfXTgmW+IfV+XkgWVQyShXAU2OEnJAvJGeUNWCMZP6rqKRQATF20EMFZX5k
- ATuLqY+5dWGs4HrscRHzPy4pOfqsKESzEKxhFLIfMpIOuPqXXoIUX8qGg3R4aFMhVypIQXYqUaT
- 67+1fz4cQ8kFFkkrakO/yF75Ekli7naH/r/acJoex8OwsB+prUxu/xIXpR6rVAnw44xuKukAOpo
- I35/qtOKGljH3za+jN27HZOQwCHiams1Ze4SqTrMJh2KoGQUVAxiFFjcgasOpIVbt7slbJfAuKP
- x4abUAzSkmM7nrw8h4iledOPCot2Zhoo4aUQQvXV0ol0jt1rb4XQINTGtF+ELP5J9+K4nkeYZEf
- egf/o1KFlxjXcO9bGouCA67MTEBj+YQcZBAXxgO2CqXW78p4ShaiDkvvCIsKKqgTTx2ffHoYubf
- RWoerfjH7+nMZqVKaSQ==
-X-Proofpoint-ORIG-GUID: pBCOsvAp8Ri0V9XFR3eEv-o5k3WL951W
-X-Authority-Analysis: v=2.4 cv=ePeGH3p1 c=1 sm=1 tr=0 ts=6b080399 cx=c_pps
- a=rz3CxIlbcmazkYymdCej/Q==:117 a=nuhDOHQX5FNHPW3J6Bj6AA==:17
- a=IkcTkHD0fZMA:10 a=zJRp6_cAMcgA:10 a=s4-Qcg_JpJYA:10
- a=VkNPw1HP01LnGYTKEx00:22 a=u7WPNUs3qKkmUXheDGA7:22 a=rJkE3RaqiGZ5pbrm-msn:22
- a=EUspDBNiAAAA:8 a=2bedrVyz5QLRwlh5c10A:9 a=QEXdDO2ut3YA:10
- a=bFCP_H2QrGi7Okbo017w:22
-X-Proofpoint-Virus-Version: vendor=baseguard
- engine=ICAP:2.0.293,Aquarius:18.0.1176,Hydra:6.1.138,FMLib:17.12.100.49
- definitions=2026-11-26_02,2026-11-25_01,2025-10-01_01
-X-Proofpoint-Spam-Details: rule=outbound_notspam policy=outbound score=0
- priorityscore=1501 suspectscore=0 clxscore=1015 adultscore=0
- lowpriorityscore=0 bulkscore=0 phishscore=0 malwarescore=0 spamscore=0
- impostorscore=0 classifier=typeunknown authscore=0 authtc= authcc=
- route=outbound adjust=0 reason=mlx scancount=1 engine=8.22.0-2611040001
- definitions=main-2611260038
+Content-Type: text/plain; charset=UTF-8
+Content-Transfer-Encoding: quoted-printable
+X-Provags-ID: V03:K1:0FQZDNeVfCRW3y6sjl4O5ERxMfjwuvEdiTDd2R7jhdJhUs6pkdK
+ rcxazsPVnVwtvggUK0y5o4a/B/Na2hEK1HqRqi2PaP+9dlUgpD0Vjklp7xWmbE/1cdcN+Wn
+ 5r+EZekZxNXJb/hKynflcmMZ/27i/RCluLIprcKRjmVN098ICPN2+FxvZTssXLtqxZIEp5o
+ L7f0xbdBmujpajbnmmTfw==
+X-Spam-Flag: NO
+UI-OutboundReport: notjunk:1;M01:P0:T9FNlCsyysM=;kt6x1LBtlHNZRoArhTruWEmLY8L
+ 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
+ LC5/dGMleV7m8acSmjun8Hj+fogqBJo=
+
+This series tries to implement AP mode for Realtek RTL8188EU chips.
+
+As requested by Mehmet, this is my current state so he can continue
+with it. It builds, but I did not test it on hardware since v3.
+
+Still open, see the discussion in the v3 thread:
+- RTL8188E_MAX_MAC_ID_NUM is still 16; Bitterblue suggested 64.
+- Beacons: the hardware clears the beacon queue after the first
+  beacon (REG_MBID_NUM), and the TBTT hold time differs from the
+  vendor driver. Mehmet has fixes for both.
+- Enabling AP mode (patch 4) should move to the end of the series,
+  after the beacon fixes.
+- max_ap_assoc_sta is max_macid_num - 1, but mac ids 0 and 1 are
+  reserved, so the last allowed station is refused with -ENOSPC.
+
+=2D--
+Changes in v4:
+- add commit messages and missing Signed-off-by
+- allocate ra_info with devm_kcalloc() on the USB interface in probe
+- limit the TX report items to RTL8188E_MAX_MAC_ID_NUM
+- refuse stations whose mac id has no ra_info entry
+- add patch to set the macid in the TX descriptor; fall back to
+  ra_info[0] when macid is a security CAM index
+Changes in v3:
+- fix compile errors caused by testing on machine with older kernel
+Changes in v2:
+- add patch to move dynamic_tx_rpt_timing_counter from ra_info to priv
+- convert ra_info to a dynamic array
+- update max report mac id after station add/remove
+
+v3: https://lore.kernel.org/all/20260313135321.3196688-1-georgmueller@gmx.=
+net/
+
+Georg M=C3=BCller (5):
+  wifi: rtl8xxxu: move dynamic_tx_rpt_timing_counter from ra_info to
+    priv
+  wifi: rtl8xxxu: handle rate control per mac_id for 8188e
+  wifi: rtl8xxxu: update max report mac id on station add / remove for
+    8188e chips
+  wifi: rtl8xxxu: Enable AP mode for RTL8188EU
+  wifi: rtl8xxxu: set macid in TX descriptor for 8188e
+
+ drivers/net/wireless/realtek/rtl8xxxu/8188e.c | 28 +++++----
+ drivers/net/wireless/realtek/rtl8xxxu/core.c  | 57 +++++++++++++++++--
+ .../net/wireless/realtek/rtl8xxxu/rtl8xxxu.h  |  5 +-
+ 3 files changed, 72 insertions(+), 18 deletions(-)
 
 
-
-On 11/26/2026 4:37 PM, Baochen Qiang wrote:
-> 
-> 
-> On 11/20/2026 4:41 PM, Kang Yang wrote:
->> ath10k_sdio_hif_tx_sg() queues writes on ar_sdio->wr_asyncq and
->> schedules wr_async_work. The SDIO sleep timer also schedules this
->> work, and the work may re-arm the timer.
->>
->> The current shutdown sequence does not prevent this activity from
->> surviving an SDIO power cycle:
->>
->>    - ath10k_sdio_hif_stop() drains wr_asyncq once, but new writes may
->>      still be queued before the card is marked disabled.
->>
->>    - ath10k_sdio_hif_power_down() deletes the sleep timer but does not
->>      cancel wr_async_work.
->>
->>    - ath10k_sdio_hif_power_up() does not clear work or requests left
->>      from the previous power cycle.
->>
->> As a result, stale work may access the SDIO bus while the device is
->> being reinitialized in BMI mode, causing errors such as:
->>
->>        failed to read from address 0x868: -110
->>        failed to read fifo/chip control register: -110
->>        bmi communication timeout
->>        could not write board data (-110)
->>
->> Mark the card disabled before power-down begins so new asynchronous
->> transfers are rejected. Make wr_async_work drop requests that raced
->> with the state change instead of accessing the bus.
->>
->> Synchronize the sleep timer and wr_async_work, then drain wr_asyncq
->> during both power-down and power-up so no request from an earlier
->> power cycle can run during BMI initialization. Factor the queue
->> cleanup into a helper shared with ath10k_sdio_hif_stop().
->>
->> A dropped request is completed the same way as a written one, only
->> without the bus access. HTC messages go through
->> ath10k_htc_notify_tx_completion(), which lets the endpoint release the
->> skb. The IRQ disable request signals its completion and leaves the skb
->> to the waiter, which frees it. Every bus request is returned to the
->> free pool, so nothing is leaked.
->>
->> As a result, ath10k_sdio_hif_stop() no longer frees the skb of a
->> non-HTC request itself. The IRQ disable request is the only such
->> request, and its skb is owned by its waiter.
->>
->> Tested-on: QCA6174 hw3.2 PCI WLAN.RM.4.4.1-00288-QCARMSWPZ-1
->> Tested-on: QCA6174 hw3.2 SDIO WLAN.RMH.4.4.1-00189
->>
->> Signed-off-by: Kang Yang <kang.yang@oss.qualcomm.com>
->> ---
->>   drivers/net/wireless/ath/ath10k/sdio.c | 78 ++++++++++++++++++++++++----------
->>   1 file changed, 56 insertions(+), 22 deletions(-)
->>
->> diff --git a/drivers/net/wireless/ath/ath10k/sdio.c b/drivers/net/wireless/ath/ath10k/sdio.c
->> index fdf19ce4b55b..f0e1feacb629 100644
->> --- a/drivers/net/wireless/ath/ath10k/sdio.c
->> +++ b/drivers/net/wireless/ath/ath10k/sdio.c
->> @@ -1461,6 +1461,33 @@ static void ath10k_sdio_sleep_timer_handler(struct timer_list *t)
->>   	queue_work(ar_sdio->workqueue, &ar_sdio->wr_async_work);
->>   }
->>   
->> +/* Drop any requests still queued on wr_asyncq without touching the bus.
->> + * Caller must ensure wr_async_work is not running concurrently.
->> + */
->> +static void ath10k_sdio_drop_wr_async_reqs(struct ath10k *ar)
->> +{
->> +	struct ath10k_sdio *ar_sdio = ath10k_sdio_priv(ar);
->> +	struct ath10k_sdio_bus_request *req, *tmp_req;
->> +
->> +	spin_lock_bh(&ar_sdio->wr_async_lock);
->> +
->> +	list_for_each_entry_safe(req, tmp_req, &ar_sdio->wr_asyncq, list) {
->> +		struct ath10k_htc_ep *ep;
->> +
->> +		list_del(&req->list);
->> +
->> +		if (req->htc_msg) {
->> +			ep = &ar->htc.endpoint[req->eid];
->> +			ath10k_htc_notify_tx_completion(ep, req->skb);
->> +		} else if (req->comp) {
->> +			complete(req->comp);
-> 
-> In ath10k_sdio_irq_disable(), irqs_disabled_comp is on the stack. If
-> wait_for_completion_timeout() expires, the function frees the skb and returns while the
-> request may still be on wr_asyncq. ath10k_sdio_hif_stop() then reaches this branch and
-> calls complete() on a dead stack frame.
-
-This seems to be a pre-exist issue.
-Got it, will add a check/clean for this case.
-
+base-commit: 4dce97c6c265544342e716e62fd24bbb232590c5
+=2D-=20
+2.56.1
 
