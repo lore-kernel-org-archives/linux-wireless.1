@@ -1,98 +1,91 @@
-Authentication-Results: smtp.subspace.kernel.org; arc=none smtp.remote-ip=209.85.221.43
+Authentication-Results: smtp.subspace.kernel.org; arc=none smtp.remote-ip=209.85.216.52
 ARC-Seal: i=1; d=subspace.kernel.org; s=arc20261015; a=rsa-sha256; cv=none;
-	t=1795671833;
-	b=vCltun1FCHXGsIWwlsiHd7OO4Bp/uQK0rl/6KtTPT4grivFUzegytb4Du41begOVj3Ok
-	 W3jBQbeDgHeIfRAaLS31Q5xl6Y5UzLrsAwIbz6mvDJSmlXF7RjdpWoillWf05TowHVmUD
-	 J+rn58sbnsqNBATjvsGfSg1DQdPof3hS8mjVrAvkWI+K/pEzacLbEUCMDggRf1jt9r10k
-	 mYrwNEZqXOrCNu7FTN2ctazesxkCjCBdltPQajaCrmY9pkh+Am+MVbQ2DAv/hGHgjmGCA
-	 0cSh8cBeyPhWY5psCmnGrwqEpE++KXi2WDSPUa/zPndcb4rp1Eao26HbOYNw6ZvvLoQ==
+	t=1795675900;
+	b=B6w6SsWhdcFN663fMUUj5SsBGKlhE/xtwOtjdV6xj0tDrwUiwIDgQ5qupCQIHQx3z6iQ
+	 KQTRp+6sAkQgMZPzqWqw5SWbD0N7xJ0zsm3w+QNf+3QFbU8DAB+zkBwSjtlNpIk1igEt0
+	 K509TnZdW0ZoODvjTA0JfpSkMqV96fuRRDp2Wzs7v27rDUtOVSH0+KNq57lj8JH5eIFb+
+	 w9/iW6RzXXrnJCYfAY3MUgA6cybhEjUbpMXFRYu9zYuwzuZIXJNGB+MLmJxG+iHwMxN8V
+	 yKTw95gOgsu17m7N04/UpJOoKFrpMvq6dBLd5Vag+0nru+0+wxq+Omk9uHkAWdDBkeA==
 ARC-Message-Signature: i=1; d=subspace.kernel.org; s=arc20261015;
-	a=rsa-sha256; c=relaxed/relaxed; t=1795671833;
+	a=rsa-sha256; c=relaxed/relaxed; t=1795675900;
 	h=DMARC-Filter:Received:DKIM-Signature:X-Google-DKIM-Signature:
-	 X-Forwarded-Encrypted:X-Gm-Message-State:X-Gm-Gg:X-Received:Received:
-	 From:To:Cc:Subject:Date:Message-ID:X-Mailer:In-Reply-To:References:
-	 MIME-Version:Content-Transfer-Encoding;
-	bh=IjWEhqKblidu0NNXiwNq191cI1P0Mw4BZxYNdNdYS5Q=;
-	b=xECs2Y5UDeZTbPuNAncJUqClH4Z1LVJ/BVrnwz2zBOn+CZMGMj7mWJEY1ah7dwNCM7Xs
-	 ak5JeEjCwEy8h+rsykP5VOdBZTZTweo4vDoQpQqPWftZsyhTABn1PoLSRJHvQz+23C0t/
-	 ub+mvtag5/UQKJt3qm6cNQq/v8psWJ2sfYtXLEbnqhGLg2Ho433Y/SQfaiXXlodwn+bxR
-	 nyJSPyjmJSf+H8cisilWK3emXZHIf7328pdGVDCjExwV6fEqceRhJfzHsZjxqgXVSNaDb
-	 7PxOTKHOo9+3BA1gAkhYp4rv9LjBeFyUgVubJlYMhbHnk+dWSlP6W5aZ0SGBPzdHxSw==
+	 X-Gm-Message-State:X-Gm-Gg:X-Received:Received:From:To:Cc:Subject:
+	 Date:Message-ID:X-Mailer:MIME-Version:Content-Transfer-Encoding;
+	bh=ZYTbVZm8c9pPfQXQr0mcNexiI7K3UauJcjFD8QyNtGY=;
+	b=ZrOfzRVqY6nPaLjhD52VYcAYTcagE4V0bzL16l39fMACW9JUscvpCYsZ4uYmJ9lBEJnk
+	 th2frdLRnlq2w2sdy6lU7j6FgjwYBR0c+dsxRotqYqKOXSznGinO0nT0RpG0kc/oWIzst
+	 ZL1hegiXwjisTte0TuaAV4q7LPu8Zc1cVRTfkjn04TkQLdTTHCw/yIfLG6by5+EnY/xh+
+	 1fMbCehKTqS75LxOaYkHWp23QfnHQa0Ufc7CJ0FUha9EBHfcM14o8oRCW19Z12z1ZRXEU
+	 2DoAqj780BKCuy97LuDTwocIpigWWCOC+ytCFGcU2slTA8XdkPILIx0IhQ21HJjfZpQ==
 ARC-Authentication-Results: i=1; smtp.subspace.kernel.org; 
 	dmarc=pass header.from=gmail.com;
 	spf=pass smtp.mailfrom=gmail.com;
-	dkim=pass header.d=gmail.com header.i=@gmail.com header.a=rsa-sha256 header.s=20260707 header.b=Ne3uzrdf;
-	arc=none smtp.remote-ip=209.85.221.43
-Received: from mail-wr1-f43.google.com (mail-wr1-f43.google.com [209.85.221.43])
+	dkim=pass header.d=gmail.com header.i=@gmail.com header.a=rsa-sha256 header.s=20260707 header.b="GmtSUu//";
+	arc=none smtp.remote-ip=209.85.216.52
+Received: from mail-pj1-f52.google.com (mail-pj1-f52.google.com [209.85.216.52])
 	(using TLSv1.3 with cipher TLS_AES_128_GCM_SHA256 (128/128 bits)
 	 key-exchange X25519 server-signature ECDSA (prime256v1) server-digest SHA256)
 	(No client certificate requested)
-	by smtp.subspace.kernel.org (Postfix) with ESMTPS id 8E79E606A31E
-	for <linux-wireless@vger.kernel.org>; Thu, 26 Nov 2026 05:43:53 +0000 (UTC)
-DMARC-Filter: OpenDMARC Filter v1.4.2 smtp.subspace.kernel.org 8E79E606A31E
+	by smtp.subspace.kernel.org (Postfix) with ESMTPS id 50C37606A332
+	for <linux-wireless@vger.kernel.org>; Thu, 26 Nov 2026 06:51:40 +0000 (UTC)
+DMARC-Filter: OpenDMARC Filter v1.4.2 smtp.subspace.kernel.org 50C37606A332
 Authentication-Results: smtp.subspace.kernel.org; dmarc=pass (p=none dis=none) header.from=gmail.com
 Authentication-Results: smtp.subspace.kernel.org; spf=pass smtp.mailfrom=gmail.com
 Authentication-Results: smtp.subspace.kernel.org;
-	dkim=pass (2048-bit key) header.d=gmail.com header.i=@gmail.com header.a=rsa-sha256 header.s=20260707 header.b=Ne3uzrdf
-Received: by mail-wr1-f43.google.com with SMTP id ffacd0b85a97d-4a68190a2a7so5456747f8f.1
-        for <linux-wireless@vger.kernel.org>; Wed, 25 Nov 2026 21:43:53 -0800 (PST)
+	dkim=pass (2048-bit key) header.d=gmail.com header.i=@gmail.com header.a=rsa-sha256 header.s=20260707 header.b=GmtSUu//
+Received: by mail-pj1-f52.google.com with SMTP id 98e67ed59e1d1-3b3a42a4bcdso2860191a91.0
+        for <linux-wireless@vger.kernel.org>; Wed, 25 Nov 2026 22:51:40 -0800 (PST)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=gmail.com; s=20260707; t=1795671832; x=1796276632; darn=vger.kernel.org;
-        h=content-transfer-encoding:mime-version:references:in-reply-to
-         :message-id:date:subject:cc:to:from:from:to:cc:subject:date
-         :message-id:reply-to:content-type;
-        bh=IjWEhqKblidu0NNXiwNq191cI1P0Mw4BZxYNdNdYS5Q=;
-        b=Ne3uzrdf87dnpkAp3soaNtolLsKaWcbEirA3AeMcFFU0Ubn++8UUgemfvjN7MNVgb9
-         CgUdOlGvuATvWcm6aPL/7aJ6kaI+A+RkvcZtm6S7kAqMhu4ju/+bX51gryoMs9gCwSec
-         8SYvOV6pRpap2zoe2FeuereNjBGwsM1NSPOQRbUA+Dpc1fdICzIkqfFFloBgZRRNigIv
-         rOI6DmYxqoeFSbBOQVz7Jvu+3J4pC2fKs4Gn42gqQ+V8ZxqpInnyhQwduSn88eFR+lle
-         qcmP41QNReFe0pwRv7vJRow5a5yG7PRuK9A5GyO5KxHuvX4jXCVdGtxOrod6FzZRJ6WY
-         f4Pg==
+        d=gmail.com; s=20260707; t=1795675900; x=1796280700; darn=vger.kernel.org;
+        h=content-transfer-encoding:mime-version:message-id:date:subject:cc
+         :to:from:from:to:cc:subject:date:message-id:reply-to:content-type;
+        bh=ZYTbVZm8c9pPfQXQr0mcNexiI7K3UauJcjFD8QyNtGY=;
+        b=GmtSUu//MHseD16Q+WXmBG/a4G0emLEiXQJRuhGXOubj2mJQpur6EMboa5wXs6VOwg
+         bmFcTNb6kY8KNANP2I1ZrhttcUHQ7f/sP8dKDPDRowMcF+d3Ru+GKDoEhYp8S0JqEP1A
+         CPXV0UzLKiXHN9dTMg1MzzBE0Fdp8Yg4S4XmUQ+m4f3nqqY0imAKQZ4lT/PoYmrsOHpa
+         MBiVx65yJlqlGWUlhc8x0zUKjGksph0Nni9UfW1DgkLudyeb8tifRVGGej7wtIrEwowY
+         e3hZqLlej8XSB6tKwzmzPI355eDRcnWbxtwfEloy8tLx4WRhq9WqqIsqG9Vfu0Lp5Gn3
+         y5nA==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=1e100.net; s=20260707; t=1795671832; x=1796276632;
-        h=content-transfer-encoding:mime-version:references:in-reply-to
-         :message-id:date:subject:cc:to:from:x-gm-gg:x-gm-message-state:from
-         :to:cc:subject:date:message-id:reply-to:content-type;
-        bh=IjWEhqKblidu0NNXiwNq191cI1P0Mw4BZxYNdNdYS5Q=;
-        b=M35ylwhAFDfdpvOxBJlCRG8CfInU6NLmEx/Cx+xrr2XfuAwgl8KPMeczK1HYUvEICl
-         8ByG+c2E/M1YQr0GM0lObG3AWB+zoGPgHRrXBmgwVAMvx9Mw+f+eu05rbVw6ARszg7PP
-         MHVl7UPEfX256CRagwQt4RtnUBsECcmQz9H49TB4h6riPL0IgMrVBCPaORVyyt7by+WK
-         awNLeskl797CbjJ3qN2q+O5u+YEeDx2Sq6dRlNQ760mQTM+0wIWNCSj1AGEneZ0IPmu9
-         ZRaQL+F9l+xMpm6M9h8qYAupsJ3o9DF2ZCFcCLZdx727BOPE4knC3Q1StCtV1T2zKFE2
-         WkUg==
-X-Forwarded-Encrypted: i=1; AL+hErEerZhhhlTkTqGu9Iyp9qW58rFvRTVeqCPNlx+eoASBoTsLL6d2BlTu2PrHoo/LQLL7pytuRzG/+5nilVsZKg==@vger.kernel.org
-X-Gm-Message-State: APuU4Z++zM7aEr6HDd1ehx+/eZZgDrgdYdRPHIJUjYlFMgOrzRH8V0ht
-	tiEWsBkW11BP9siCBOThsdWEvLpFx8r242xs2cDo15AgGkF9jrmpG43vxhq/Mi5V
-X-Gm-Gg: AZFdTZd7VQLPUmE04uawAWdjNDaBmeZ7ssbJAZb5+r2qcICJAnrOBwpBUYJXg60sY3L
-	TBBZkbf7PpRFUh/cMFuItFpQrxfQeLo2qKrw5FUm6emoxm16RL7CSk+BLShFzFI4cCvJKwSvuVX
-	HXRJdwNapU/piCtSQTd1HK/XrI8YTsay7vDWScR+Df/mLydnqhgnBdwxSTBf47kQIsGHj1szw91
-	URWF+Rr5Bupr/oxwmNIIKhcQRKvaCsyslv3Pg0mynPtbgXd+ivMKFr0PDNyqH1Rzj0PUIJeGA0g
-	FkPF49OuZ1X/putPHf4sSbXNJ8KNcmSpBvNoDV4zodvtfDXc47r4P4t0tK9w66EuHjeaEV/J3Xc
-	P1DeU3vlXNdGqfwRTSojtwgZhISLpAuR5GaZNr3H9LcHNNCl0WvA2hPHPsfg91gHkbLR/o1S/BS
-	B0DfMFRXa+bLar7hc2vhJt+wdcIOZ+8NwNwRHmMLGuAFPbbNBTymk3vcRoIQY+h0oeRm5GGd+FD
-	mPQnth1R3ScI7hvFF0fBOoCnSvCxXfxck7gkWz5fBZf6whadeL7cc0L8vpsfK8EMKfk/Hw5ZbTN
-	tJapjXql77MuCCIdyQaafJla7IJ0c1TwADk=
-X-Received: by 2002:a05:6000:2913:b0:4a7:7bec:e16d with SMTP id ffacd0b85a97d-4abb0c5d670mr39494437f8f.20.1795671831732;
-        Wed, 25 Nov 2026 21:43:51 -0800 (PST)
-Received: from deb05.proceq.com ([213.160.61.66])
-        by smtp.gmail.com with ESMTPSA id ffacd0b85a97d-4ab6c340df4sm43959416f8f.55.2026.11.25.21.43.50
+        d=1e100.net; s=20260707; t=1795675900; x=1796280700;
+        h=content-transfer-encoding:mime-version:message-id:date:subject:cc
+         :to:from:x-gm-gg:x-gm-message-state:from:to:cc:subject:date
+         :message-id:reply-to:content-type;
+        bh=ZYTbVZm8c9pPfQXQr0mcNexiI7K3UauJcjFD8QyNtGY=;
+        b=LwTessGz8Xsw8V4CZrDC/p2Mp46n2DfQ9YVJ5XFaUk58VRUyawWHs3UL0G0PGY/4qf
+         4dLv3gVSdyOLOwLspyVwhGrp+NqFHut8cRypnF89TWHl4PST2yNFMFaCreBBI02GR+rL
+         JLi45+aVoZTnYkkBtDk/ERoOIZQ6GoxwncKzhfw2D31bHq33vkIFp3hr+qxp6xq+WoBY
+         mN8HBnysljIYq07fhVIw6lLCZqJ46TXgBZ1KoWNpRmePDLsxwrSOQGLHR3yolCHyWGpN
+         Hz+od3BZbe+SwEdK4Qj1PoNn73CFeXN7QFK22q20noDbHvScmpyfg+DNQxF2l/dIthmf
+         cjAg==
+X-Gm-Message-State: APuU4Z+goOhQVy1Ee5Eoa+Ie2d7ck9aCOQYLKjOH4s1IR1qabd71hzsH
+	UItU6ocE3uRZVjkvimrRi7OLnNqinoGEyhjJfUrGwAS3wV2dWUEI1NiT
+X-Gm-Gg: AZFdTZcVIUqkxb7KY4SSYsnF8wS+yuYAxb0/BhQog4e6L3AY9tJEjP57fR46ueqlYU0
+	AK9kEcy32FFzXDgzqsieiRIhjCCA11iLSZE3Op7kKOX4KBGxf0v3EyeUPrqcn4Yk/tn+GI31Zg5
+	srsU827P2pqM+ikUcuc4i5uxqm5Y+dM9ffpKw2bWGSVTLoxnEXlkbI2UcMwQeS+uyZCiFk9uZCv
+	As2fJACqiL3GLA/VoHhtuTq8EhYCJokhr094TGA1ZMXuuo53SU2843yJKAiGGoZ2y8M3jMERgWk
+	n14mgNBLzX5q55NfwBL0U3OWo3Jf4WVoPF8gB2nLFIj6tvPACdF3ZCDZhjOOZG7ZngULbc+qGHa
+	Mbpcm9ie3M5tJdGhRr0n+eKmNchPY/YzA4PIryYukJJK/3fvIjh37/f7ldk2vXYSbbGSaVDfVw+
+	dK7tZfcG0vd27HZRNit29ZZ4mkaNeTAX99nLPZ3qHo0kulbYRPZOoVR9u3G/PLSwyrY4mDtesNt
+	DgswEEw35UbP5Yu5sqYinq5IKOe+V8MPqmSsRj4V3puLaduU2xycvFSio38HPdn0JalO/VqZoCx
+	Fb4VqN89JRTFgCD1xNwdFxBnl8nbFW/60vevw2fnLNWvNUhX1ff+eGtcBZ23DVI/wXiDTQPR9mH
+	DL7vfncgEhxQonnbqlGZdmDNXXzHBryM1eBZNn0JUGsopOiTUuI5zm3MfcRzLTvdRLRf1RXclmL
+	i5jh+4Gv1Y9LnH0/9AbfCf0DV0XZqFMNHYzAognUmY
+X-Received: by 2002:a17:90b:390b:b0:3b4:1336:4f6c with SMTP id 98e67ed59e1d1-3b41c7b6994mr18471889a91.2.1795675899422;
+        Wed, 25 Nov 2026 22:51:39 -0800 (PST)
+Received: from LAPTOP-3B99V33A (ec2-3-38-183-164.ap-northeast-2.compute.amazonaws.com. [3.38.183.164])
+        by smtp.gmail.com with ESMTPSA id 98e67ed59e1d1-3b40578dca0sm34380982a91.2.2026.11.25.22.51.37
         (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
-        Wed, 25 Nov 2026 21:43:51 -0800 (PST)
-From: Mehmet Fide <mehmet.fide@gmail.com>
-To: =?UTF-8?q?Georg=20M=C3=BCller?= <georgmueller@gmx.net>
-Cc: Bitterblue Smith <rtl8821cerfe2@gmail.com>,
-	Jes Sorensen <Jes.Sorensen@gmail.com>,
-	Ping-Ke Shih <pkshih@realtek.com>,
-	Shreyansh Khajanchi <hi@shreyan.sh>,
-	linux-wireless@vger.kernel.org,
-	linux-kernel@vger.kernel.org,
-	mehmet.fide@screeningeagle.com
-Subject: Re: [RFC PATCH v3 0/4] wifi: rtl8xxxu: implement AP mode for 8188EU
-Date: Thu, 26 Nov 2026 06:43:50 +0100
-Message-ID: <20261126054350.2893087-1-mehmet.fide@gmail.com>
-X-Mailer: git-send-email 2.56.0
-In-Reply-To: <03be9df5-43e3-48f6-98bb-27d7d7ba2074@gmx.net>
-References: 
+        Wed, 25 Nov 2026 22:51:39 -0800 (PST)
+From: "Bin Luo (University of Electronic Science and Technology of China)" <luob87709@gmail.com>
+To: stf_xl@wp.pl,
+	johannes@sipsolutions.net
+Cc: linux-wireless@vger.kernel.org,
+	linux-kernel@vger.kernel.org
+Subject: [PATCH] wifi: rt2x00: prevent txstatus_timer rearm during USB uninitialize
+Date: Thu, 26 Nov 2026 14:51:32 +0800
+Message-ID: <20261126065132.971-1-luob87709@gmail.com>
+X-Mailer: git-send-email 2.51.0.windows.1
 X-Mailing-List: linux-wireless@vger.kernel.org
 List-Id: <linux-wireless.vger.kernel.org>
 List-Post: <mailto:linux-wireless@vger.kernel.org>
@@ -104,27 +97,79 @@ Precedence: list
 MIME-Version: 1.0
 Content-Transfer-Encoding: 8bit
 
-Hi Georg,
+rt2x00usb_uninitialize() cancels rt2x00dev->txstatus_timer before
+calling cancel_work_sync(&rt2x00dev->txdone_work). Because
+rt2800usb_work_txdone() calls rt2800usb_async_read_tx_status() and
+rearms txstatus_timer, the timer can remain armed after
+rt2x00usb_uninitialize() frees queue entries via
+rt2x00usb_free_entries(), allowing rt2800usb_tx_sta_fifo_timeout() to
+submit new async register-read URBs and queue txdone_work on torn-down
+queues.
 
-Thanks. Please post the 5 patches as they are; untested is fine. I
-will test them on my setup and send the next version with your
-authorship kept and my changes noted in each patch.
+Because rt2x00lib_uninitialize() clears DEVICE_STATE_INITIALIZED before
+calling rt2x00usb_uninitialize(), guard txstatus_timer rearming and
+timer-driven async register reads with DEVICE_STATE_INITIALIZED and
+cancel txstatus_timer after cancel_work_sync(&rt2x00dev->txdone_work).
 
-Shreyansh posted a patch that only enables AP mode for this chip [1],
-the same as your 4/5, and Ping-Ke has reviewed it. My test results
-for it are in [2]: without the beacon fix there are almost no beacons.
+Fixes: 6232c17438ed ("rt2x00: avoid introducing a USB dependency in the rt2x00lib module")
+Signed-off-by: Bin Luo (University of Electronic Science and Technology of China) <luob87709@gmail.com>
+---
+Found by code inspection. Compile-tested on x86_64 with W=1 and KASAN (drivers/net/wireless/ralink/rt2x00/rt2800usb.o and rt2x00usb.o); not runtime-tested on Ralink USB hardware.
 
-So I would build it like this: your 1-3 and 5,
-RTL8188E_MAX_MAC_ID_NUM 64 as Bitterblue said, the beacon queue and
-TBTT hold time fixes, and enabling AP mode last, so that it is never
-enabled without beacons.
+ drivers/net/wireless/ralink/rt2x00/rt2800usb.c | 10 +++++++++-
+ drivers/net/wireless/ralink/rt2x00/rt2x00usb.c |  2 +-
+ 2 files changed, 10 insertions(+), 2 deletions(-)
 
-Ping-Ke, should the last patch be Shreyansh's, carried in the series
-with his authorship and your Reviewed-by, or will you take his patch
-now and I base the series on top of it?
+diff --git a/drivers/net/wireless/ralink/rt2x00/rt2800usb.c b/drivers/net/wireless/ralink/rt2x00/rt2800usb.c
+index 15de3db..57e04c6 100644
+--- a/drivers/net/wireless/ralink/rt2x00/rt2800usb.c
++++ b/drivers/net/wireless/ralink/rt2x00/rt2800usb.c
+@@ -118,7 +118,8 @@ static bool rt2800usb_tx_sta_fifo_read_completed(struct rt2x00_dev *rt2x00dev,
+ 	if (rt2800_txstatus_timeout(rt2x00dev))
+ 		queue_work(rt2x00dev->workqueue, &rt2x00dev->txdone_work);
+ 
+-	if (rt2800_txstatus_pending(rt2x00dev)) {
++	if (rt2800_txstatus_pending(rt2x00dev) &&
++	    test_bit(DEVICE_STATE_INITIALIZED, &rt2x00dev->flags)) {
+ 		/* Read register after 1 ms */
+ 		hrtimer_start(&rt2x00dev->txstatus_timer,
+ 			      TXSTATUS_READ_INTERVAL,
+@@ -142,6 +143,8 @@ stop_reading:
+ 
+ static void rt2800usb_async_read_tx_status(struct rt2x00_dev *rt2x00dev)
+ {
++	if (!test_bit(DEVICE_STATE_INITIALIZED, &rt2x00dev->flags))
++		return;
+ 
+ 	if (test_and_set_bit(TX_STATUS_READING, &rt2x00dev->flags))
+ 		return;
+@@ -164,6 +167,11 @@ static enum hrtimer_restart rt2800usb_tx_sta_fifo_timeout(struct hrtimer *timer)
+ 	struct rt2x00_dev *rt2x00dev =
+ 	    container_of(timer, struct rt2x00_dev, txstatus_timer);
+ 
++	if (!test_bit(DEVICE_STATE_INITIALIZED, &rt2x00dev->flags)) {
++		clear_bit(TX_STATUS_READING, &rt2x00dev->flags);
++		return HRTIMER_NORESTART;
++	}
++
+ 	rt2x00usb_register_read_async(rt2x00dev, TX_STA_FIFO,
+ 				      rt2800usb_tx_sta_fifo_read_completed);
+ 
+diff --git a/drivers/net/wireless/ralink/rt2x00/rt2x00usb.c b/drivers/net/wireless/ralink/rt2x00/rt2x00usb.c
+index c9fbc37..bfd5a81 100644
+--- a/drivers/net/wireless/ralink/rt2x00/rt2x00usb.c
++++ b/drivers/net/wireless/ralink/rt2x00/rt2x00usb.c
+@@ -746,9 +746,9 @@ void rt2x00usb_uninitialize(struct rt2x00_dev *rt2x00dev)
+ 	struct data_queue *queue;
+ 
+ 	usb_kill_anchored_urbs(rt2x00dev->anchor);
+-	hrtimer_cancel(&rt2x00dev->txstatus_timer);
+ 	cancel_work_sync(&rt2x00dev->rxdone_work);
+ 	cancel_work_sync(&rt2x00dev->txdone_work);
++	hrtimer_cancel(&rt2x00dev->txstatus_timer);
+ 
+ 	queue_for_each(rt2x00dev, queue)
+ 		rt2x00usb_free_entries(queue);
+-- 
+2.43.0
 
-[1] https://lore.kernel.org/linux-wireless/1381CC32-E73C-483E-8F64-27EDE6AE8E6E@shreyan.sh/
-[2] https://lore.kernel.org/linux-wireless/20261126052152.2887192-1-mehmet.fide@gmail.com/
-
-Best regards,
-Mehmet
