@@ -1,79 +1,112 @@
-Authentication-Results: smtp.subspace.kernel.org; arc=pass header.oldest-pass=0 smtp.remote-ip=100.103.45.18
-ARC-Seal: i=2; d=subspace.kernel.org; s=arc20261015; a=rsa-sha256; cv=pass;
-	t=1795695977;
-	b=NRo/3AOXQUyiMmLvLbANF8wNpkMMyO84uZk94jGAtCBynd0G6i3euc5dNIko/lAHiVGx
-	 8iIYltQHzRsOyWBGG2BDMDzj2FpqbjLf9kJ/FANRMWgZhNDaizZIDpELDgdfPS4SHLXNw
-	 J3CeuLcz+JKAS7Do6niDMitANOJu7xZamGXzfshEwz9NnA8+TxUXQKB0OfdzzyVHDRbWH
-	 7MhYETHB5sdxhwXVNoAGUEeKb4PwNLdj7bhgU5k7/kt9mgoR88EqrWvFcnWKHQbifcbiZ
-	 F6gbHkHnLTtRUZijqNq+BwmL0lt3BbeWAJusSM9WPz9RKdMlIXJcQR1OfJvwNwGjC9Q==
-ARC-Message-Signature: i=2; d=subspace.kernel.org; s=arc20261015;
-	a=rsa-sha256; c=relaxed/relaxed; t=1795695977;
-	h=Received:DKIM-Signature:Received:From:Date:Subject:MIME-Version:
-	 Content-Type:Content-Transfer-Encoding:Message-Id:X-B4-Tracking:
-	 X-Change-ID:To:Cc:X-Mailer:X-Developer-Signature:X-Developer-Key:
-	 X-Endpoint-Received:X-Original-From:Reply-To;
-	bh=dvBrYsAGcqJ41oSp5NwAWPx5YIqYqwYWsABcr2HoDL0=;
-	b=WioBycir7poQvQEQLXU/+uab7nb1PYlxWWgixrWubA4XECWoh9Ve+2UdK0XTtEVPUNSs
-	 Op7roNAcTEm/Pz1fCf94zi37FR3luQFqWmZhrWRdBN/C5asajfu96mBe4BbKfom0htMeB
-	 zuVU2BRn1/Sbty8oFfsX3/RHvR1XSk5WGQxJIkRoGWv8QXTVIZxikU3iShbVymwx9vf7l
-	 FIx7SwzKTsrVXmK+qcPabtVfz5waJtrY4DxZ1QkmcgEYjvsWm79wW3s213sVRf6TaNcYX
-	 kTpBm7W/WGnbvZ9+Oj8NYkqwX1TKm7HT/CPbsVRS76g0EnZuaPLNhgEkADpgM2FJlhg==
-ARC-Authentication-Results: i=2; smtp.subspace.kernel.org; 
-	dkim=pass header.d=kernel.org header.i=@kernel.org header.a=rsa-sha256 header.s=k20260515 header.b=oyTdh4un;
-	arc=pass header.oldest-pass=0 smtp.remote-ip=100.103.45.18
-Received: from smtp.kernel.org (quasi.space.kernel.org [100.103.45.18])
-	(using TLSv1.3 with cipher TLS_AES_256_GCM_SHA384 (256/256 bits)
-	 key-exchange X25519 server-signature ECDSA (prime256v1))
-	(No client certificate requested)
-	by smtp.subspace.kernel.org (Postfix) with ESMTPS id 7CCE1606A31E;
-	Thu, 26 Nov 2026 12:26:17 +0000 (UTC)
-Authentication-Results: smtp.subspace.kernel.org;
-	dkim=pass (2048-bit key) header.d=kernel.org header.i=@kernel.org header.a=rsa-sha256 header.s=k20260515 header.b=oyTdh4un
-Authentication-Results: smtp.kernel.org; arc=none smtp.remote-ip=100.80.115.77
-ARC-Seal: i=1; d=kernel.org; s=arc20260519; a=rsa-sha256; cv=none;
-	t=1795695977;
-	b=NXeD5cLzVC9x7KukaCf2lbrgkrfs41saVrlwV47SztzDJMSkc+jaf487AbrhucqkaHkM
-	 Du3jgr055kw9sENzDBKqNlXWMlaW1Rqk10m9rnP7y0bu66ewDwmv+O02lmWQAd79Cc7p1
-	 33almJcFGAPZkkrRi9V2QD/sZQRxaSifdsisy9yMDvuJoy80lYwt0G5pVHXiHrAFbvgTP
-	 l4OfOQpJIiic61o3sqTET6v9dqvH7Q4x4SKRFWCIXFtlAI7MVQufBrH1hhgfH/OPTApQH
-	 OPlnr9F/s/c16LWAoMkiC0iDx1yXmd5fdRziLKzWoXhl3a3vmFQN3je67pES003gOZA==
-ARC-Message-Signature: i=1; d=kernel.org; s=arc20260519; a=rsa-sha256;
-	c=relaxed/relaxed; t=1795695977;
-	h=DKIM-Signature:Received:From:Date:Subject:MIME-Version:Content-Type:
-	 Content-Transfer-Encoding:Message-Id:X-B4-Tracking:X-Change-ID:To:Cc:
-	 X-Mailer:X-Developer-Signature:X-Developer-Key:X-Endpoint-Received:
-	 X-Original-From:Reply-To;
-	bh=dvBrYsAGcqJ41oSp5NwAWPx5YIqYqwYWsABcr2HoDL0=;
-	b=CLAXMBLFw9nrcEW2KPCl3p1wqR3BItwow2Bj9lEVZDRVRxc3F2tfTS8DR00kDCHPVLYd
-	 V62ruZwR/yDyZfe1kjbZGVFM0u0Sw9eKhAGSeUvP/t7z9imBi8Heo+gHbkCqMZOBm405K
-	 /zn+Xb0GHySrLWN7Mg2vUN8eUBSXzwGxgUeKJHEn+3F91mgmBilE+BagMUA6Nm3czxwUB
-	 RM31oTvJBoh4s/UdJxv3pirMUkV1hxi8i/7yrAfugucdzJ4Viyk1tD/qlajb3ikXNACKU
-	 B0knDOv148k1Y9J8UX8zO5MdAx/ne2cM7E6f+ozcZQLBEt+CX5EV0KhxSVM3VsewwRg==
-ARC-Authentication-Results: i=1; smtp.kernel.org; 
-	arc=none smtp.remote-ip=100.80.115.77
-Received: from lkml.kernel.org (nexus.subspace.kernel.org [100.80.115.77])
-	(using TLSv1.3 with cipher TLS_AES_256_GCM_SHA384 (256/256 bits)
+Authentication-Results: smtp.subspace.kernel.org; arc=none smtp.remote-ip=209.85.216.98
+ARC-Seal: i=1; d=subspace.kernel.org; s=arc20261015; a=rsa-sha256; cv=none;
+	t=1795697568;
+	b=F6o2pbQPgvKLeF8ZzB5eDc9wyxgJUWp41Uy32lRvnu3ofcJ00YwHKNomcgJ4e7PmINtm
+	 mzBuuQ7UZnBM7xcyq9IAkjVOGMxiWNz3n6CVS8yYWQgwNoyNqFmNjCqvhrnUDnUnvPKe9
+	 yU+elV0LoGzivkShx5HUx3qW71p8fsSTF9FzFaYM/YepKqDncyssK8eKe7PYiElNhA8Tl
+	 NT2BqleBi8jJrc15MpSc8c/KqbEACcKhBT5KQu+QaD+OKMuzpbfILHPAe6RTH6P5F1ACz
+	 rUhscUBbtVgadGtdNHXVBDXQlAKT6XpCdivtoFVIdgW1kd8JLsobMQlZVIB5XvEHu+w==
+ARC-Message-Signature: i=1; d=subspace.kernel.org; s=arc20261015;
+	a=rsa-sha256; c=relaxed/relaxed; t=1795697568;
+	h=DMARC-Filter:Received:X-Google-DKIM-Signature:X-Gm-Message-State:
+	 X-Gm-Gg:X-Received:Received:X-Relaying-Domain:X-CFilter-Loop:Received:
+	 DKIM-Signature:X-Received:X-Received:Received:From:To:Cc:Subject:Date:
+	 Message-ID:X-Mailer:In-Reply-To:References:MIME-Version:
+	 Content-Transfer-Encoding:X-DetectorID-Processed;
+	bh=PVa9ekImbNy0eUOCh+fU0MyKlDIldS/ykE7Tfd4W/ZI=;
+	b=Z9aIWiggQSVL8Fe4o+cr2p3RRyzfeuEHCtetkurxAB2fc5Ll8M8WnBKhUt/Uff+gxJqX
+	 ViYPAJaRv5n1Wmdlm7AIFcJXqjX88QP6LdHL6GbksmMuHir0uoMeJv4tAyDsNRkYSQnJt
+	 BI7oCyhqu6ozOd8p3F2+AdC1RiK/t3I3pB5JdpwxWVMc4pCUoKubZxs9yD/XazJSAGHTZ
+	 DK5Rv27iVRh5VHuXQmJuFXnej1OidZKg7FO1P3nJhVse60vm29fv8NbsecPUY8DWAD+m6
+	 8ei55uirM6o5KQQ33qlIXaOQh6C+JnR1zc8lv2NKnjgiBDa9n61DaOnYz/8xx+YGOpA==
+ARC-Authentication-Results: i=1; smtp.subspace.kernel.org; 
+	dmarc=pass header.from=broadcom.com;
+	spf=fail smtp.mailfrom=broadcom.com;
+	dkim=pass header.d=broadcom.com header.i=@broadcom.com header.a=rsa-sha256 header.s=google header.b=C43ld5DV;
+	arc=none smtp.remote-ip=209.85.216.98
+Received: from mail-pj1-f98.google.com (mail-pj1-f98.google.com [209.85.216.98])
+	(using TLSv1.3 with cipher TLS_AES_128_GCM_SHA256 (128/128 bits)
 	 key-exchange X25519 server-signature ECDSA (prime256v1) server-digest SHA256)
 	(No client certificate requested)
-	by smtp.kernel.org (Postfix) with ESMTPS id 726071F000CA;
-	Thu, 26 Nov 2026 12:26:16 +0000 (UTC)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=kernel.org;
-	s=k20260515; t=1795695977;
-	bh=dvBrYsAGcqJ41oSp5NwAWPx5YIqYqwYWsABcr2HoDL0=;
-	h=From:Date:Subject:To:Cc:Reply-To;
-	b=oyTdh4un3yBIF7v59UDBTfdQgbY5Zw1ZnahqLGZ0d5V9E01jb+eIy6VpJXIexjzZt
-	 0Cdnm63q64qwGhhkIsQcdRPZofHUIkPF9QLZFIeeXA79VLHqewda1sLZ6h1Y+AlEnp
-	 w0RKe/u2QMMAt8bTSdqMh72mLlCv759xGiK5NpH8yUBLhDJg75BpEq3i0Vk77AKfxG
-	 QNovTx/MalKN1M+9hjPi3gS8fSVA5EZ6t+ndPOzVvF8QnhxKOFSza0Iy7pTR0OAf1V
-	 JzTxdcNvMQnhBOGCbkfVU7E+TA8lkAuN0dcfJAlQEx0xswUpnKUpWI9at0bG9f2ZTA
-	 w6GkSsl+MvWBA==
-Received: from nexus.subspace.kernel.org (localhost [IPv6:::1])
-	by lkml.kernel.org (Postfix) with ESMTP id F303F4D406;
-	Thu, 26 Nov 2026 12:26:15 +0000 (UTC)
-From: Dickson Wu via B4 Relay <devnull+dickson.wu.certik.com@kernel.org>
-Date: Thu, 26 Nov 2026 12:24:11 +0000
-Subject: [PATCH 6.6.y] wifi: mt76: mt7915: clear wcid mask under mutex
- after RCU pointer clear
+	by smtp.subspace.kernel.org (Postfix) with ESMTPS id B5AFA606A326
+	for <linux-wireless@vger.kernel.org>; Thu, 26 Nov 2026 12:52:47 +0000 (UTC)
+DMARC-Filter: OpenDMARC Filter v1.4.2 smtp.subspace.kernel.org B5AFA606A326
+Authentication-Results: smtp.subspace.kernel.org; dmarc=pass (p=reject dis=none) header.from=broadcom.com
+Authentication-Results: smtp.subspace.kernel.org; spf=fail smtp.mailfrom=broadcom.com
+Authentication-Results: smtp.subspace.kernel.org;
+	dkim=pass (1024-bit key) header.d=broadcom.com header.i=@broadcom.com header.a=rsa-sha256 header.s=google header.b=C43ld5DV
+Received: by mail-pj1-f98.google.com with SMTP id 98e67ed59e1d1-3b40f4d4b5dso3110538a91.1
+        for <linux-wireless@vger.kernel.org>; Thu, 26 Nov 2026 04:52:47 -0800 (PST)
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+        d=1e100.net; s=20260707; t=1795697567; x=1796302367;
+        h=content-transfer-encoding:mime-version:references:in-reply-to
+         :message-id:date:subject:cc:to:from:dkim-signature:x-gm-gg
+         :x-gm-message-state:from:to:cc:subject:date:message-id:reply-to
+         :content-type;
+        bh=PVa9ekImbNy0eUOCh+fU0MyKlDIldS/ykE7Tfd4W/ZI=;
+        b=yKJHdilvXxtyBWTi+Xg+qSbU04CIpBaK3ANKnI6AcIiEwTiSmuCAe5Jvgdx10UjAV/
+         dBb6KYonxhRqu5215aTUuw+1ueI44ZOaBQL0FNkaBvRJclielhVMvhaKtMkd5G4OunYm
+         qxzBKZRJGZur0D7cnpEkEQEOnARCoPcTpSz6OzwYsC/jaKJ4axoG+NUvS+E5oSOpXcaW
+         g0MzKWONefrIsn7RAmQNwJYi9aZz6x2qYtRUxFul2w5g07QdwOMJ/JGNELbrJ1FI5qxo
+         paOKfcFq8Jubt7KHE9tAB8rVPGx39X9wlhLv6sd9uS/K6o7MYXmcqrVUgNvNE2kH//E3
+         OGkg==
+X-Gm-Message-State: APuU4Z8lbmrunoT5tldvSUZSiCRaAEZEDs2tsY7+AmdXIOeXEId712C8
+	KDykhF1vKy0A8XttSu2Q/IWPtf58Y4/9mryDshji17QjCueWm+UYooNpfjkGRWtqzFKlOxZB0J9
+	ClJc3eleBxT/TB1QrR4RePJ8gOiowmumSgbmybv+rdx6+1wsK7Owuai8NNGBiRJ139fSinC/TWd
+	oLiotceAWHSc8P+EcMPWwqZfkSHXLXgjPPA8jN1zsw7M8G4pw4c7y1ms/RTStG5oq1Xi3mbcHje
+	bq9wPq18LEoPSy4J+SIczcyKw==
+X-Gm-Gg: AZFdTZelRMfbx1SU7g8K3d/LulCMbAbTjhuEGNC06XpYBzSXQ83Wr1R67QqtMv37YZd
+	+WpSIS5HLHS62umAaKlh9yrsrU348GtMIw0yJZYTh6EibmIKW8++nzRfJIJ/q2Y67+zA/+bF5iL
+	mfWbIrSjgH+yIvySmsqixmM3vYBd1OUKPtvbr7qksfkKJLc6JN16MDsioWLPs/fihaVZlsG7M3v
+	zoHSDWY/CebkaZxYNKTP6h538Ssww0/eN8vAS2OCwV67nI188R0jK/Il9AuWZzxrv9FXAL1C+ux
+	Xq2UYKvJLzeES3I22VwzItZmv6wU0/f3kZDs8VpdSa+39Q2jF+/em1NBg+lzRls6T/NAagpB3Cv
+	lM/06IDe6HIVMQvrgoPk4qlbe2N49PVoqfzCECyTEj19g3Q2KVSyobDsZKMZjK9HY2sp3Yk2bj1
+	olWm/6wQHIrgXhd1meBBywiJghfrlnqDwwO7ot40Q=
+X-Received: by 2002:a17:90a:d2c7:b0:3b4:1a5f:8664 with SMTP id 98e67ed59e1d1-3b41c97aaa0mr18376289a91.65.1795697566964;
+        Thu, 26 Nov 2026 04:52:46 -0800 (PST)
+Received: from smtp-us-east1-p01-i01-si01.dlp.protect.broadcom.com (address-144-49-247-28.dlp.protect.broadcom.com. [144.49.247.28])
+        by smtp-relay.gmail.com with ESMTPS id 98e67ed59e1d1-3b4062e6c29sm15608702a91.7.2026.11.26.04.52.46
+        for <linux-wireless@vger.kernel.org>
+        (version=TLS1_2 cipher=ECDHE-ECDSA-AES128-GCM-SHA256 bits=128/128);
+        Thu, 26 Nov 2026 04:52:46 -0800 (PST)
+X-Relaying-Domain: broadcom.com
+X-CFilter-Loop: Reflected
+Received: by mail-qk1-f199.google.com with SMTP id af79cd13be357-948d83322f6so549497685a.1
+        for <linux-wireless@vger.kernel.org>; Thu, 26 Nov 2026 04:52:45 -0800 (PST)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+        d=broadcom.com; s=google; t=1795697565; x=1796302365; darn=vger.kernel.org;
+        h=content-transfer-encoding:mime-version:references:in-reply-to
+         :message-id:date:subject:cc:to:from:from:to:cc:subject:date
+         :message-id:reply-to:content-type;
+        bh=PVa9ekImbNy0eUOCh+fU0MyKlDIldS/ykE7Tfd4W/ZI=;
+        b=C43ld5DVjh0EFQDGc8CsBRsGWj+Xv+RtyfKrgD38ggGjJUJQDuXl3eMavsdm/O9LEU
+         KCZAmMAOjlwiwmqhVWf0H1BOsGl1ZLiDYU+mhidoHBOhFqB4Ry++iMir6ZQRXCjNhh10
+         bXi8aJYIOyBqHr4d7LZrEaYYI0yw0M14N1wSw=
+X-Received: by 2002:a05:620a:460d:b0:93f:4d4e:ff6b with SMTP id af79cd13be357-949ba81a543mr3602883885a.12.1795697565582;
+        Thu, 26 Nov 2026 04:52:45 -0800 (PST)
+X-Received: by 2002:a05:620a:460d:b0:93f:4d4e:ff6b with SMTP id af79cd13be357-949ba81a543mr3602878285a.12.1795697564924;
+        Thu, 26 Nov 2026 04:52:44 -0800 (PST)
+Received: from bld-bun-02.bun.broadcom.net ([192.19.176.227])
+        by smtp.gmail.com with ESMTPSA id af79cd13be357-94a0c18267esm311983385a.4.2026.11.26.04.52.43
+        (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
+        Thu, 26 Nov 2026 04:52:44 -0800 (PST)
+From: Arend van Spriel <arend.vanspriel@broadcom.com>
+To: Tristan Madani <tristmd@gmail.com>
+Cc: linux-wireless@vger.kernel.org,
+	fariyaf@gmail.com,
+	linville@tuxdriver.com,
+	kvalo@kernel.org,
+	brcm80211@lists.linux.dev,
+	brcm80211-dev-list.pdl@broadcom.com,
+	linux-kernel@vger.kernel.org,
+	Tristan Madani <tristan@talencesecurity.com>,
+	stable@vger.kernel.org
+Subject: Re: [PATCH wireless 1/2] wifi: brcmfmac: zero-pad SDIO write to 4-byte boundary
+Date: Thu, 26 Nov 2026 13:52:40 +0100
+Message-ID: <20261126125240.958940-1-arend.vanspriel@broadcom.com>
+X-Mailer: git-send-email 2.54.0
+In-Reply-To: <20261102122311.181075-2-tristmd@gmail.com>
+References: <20261102122311.181075-2-tristmd@gmail.com>
 X-Mailing-List: linux-wireless@vger.kernel.org
 List-Id: <linux-wireless.vger.kernel.org>
 List-Post: <mailto:linux-wireless@vger.kernel.org>
@@ -83,93 +116,50 @@ List-Unsubscribe: <mailto:linux-wireless+unsubscribe@vger.kernel.org>
 List-Owner: <mailto:linux-wireless+owner@vger.kernel.org>
 Precedence: list
 MIME-Version: 1.0
-Content-Type: text/plain; charset="utf-8"
-Content-Transfer-Encoding: 7bit
-Message-Id: <20261126-so1-mt-66-v1-1-429a17b69783@certik.com>
-X-B4-Tracking: v=1; b=H4sIAOokCGsC/z2MQQ7CIBAAv9Ls2a2CcaN+xXgAuliMQsOi0TT9u
- 6CJx5lMZgbhHFjg2M2Q+RkkpFhBrTpwo4kXxjBUBr3RpJQmlKTwXpAIjdodvN17q2gLtZ8y+/D
- 6vk5APfVvOP+0POyVXWmfFlojjDab6MamhONQUrph8+v/H5blA4kzXGmeAAAA
-X-Change-ID: 20261126-so1-mt-66-a159fb8fb163
-To: stable@vger.kernel.org
-Cc: Felix Fietkau <nbd@nbd.name>, Lorenzo Bianconi <lorenzo@kernel.org>, 
- linux-wireless@vger.kernel.org
-X-Mailer: b4 0.16.0
-X-Developer-Signature: v=1; a=ed25519-sha256; t=1795695850; l=2795;
- i=dickson.wu@certik.com; s=dickson-b4; h=from:subject:message-id;
- bh=2Yvt6AJuNvts0+ANo6CU0QtnmDtVLXdldOC/Am3e2gA=;
- b=w+O49ZjIy9egfIJbvByoykDXAcgK+TPmDWIgXps9KXkT+HQlgsgluVsBhtUMsjgUuGRE14I11
- s3n5Sy3qv3eApIubLJz/OVseZUi3g8Z6+GuM348Hf//IpAMb0gzWPZ2
-X-Developer-Key: i=dickson.wu@certik.com; a=ed25519;
- pk=fxH7FS4FdojeJSGLJzgKdfO51Rvr4EW30yinj2mc1vg=
-X-Endpoint-Received: by B4 Relay for dickson.wu@certik.com/dickson-b4 with
- auth_id=1647
-X-Original-From: Dickson Wu <dickson.wu@certik.com>
-Reply-To: dickson.wu@certik.com
+Content-Transfer-Encoding: 8bit
+X-DetectorID-Processed: b00c1d49-9d2e-4205-b15f-d015386d3d5e
 
-From: Felix Fietkau <nbd@nbd.name>
+On Mon, 2 Nov 2026 12:23:10 +0000, Tristan Madani <tristmd@gmail.com> wrote:
+> brcmf_sdiod_skbuff_write() rounds skb->len up to the next 4-byte
+> boundary and passes the larger size to sdio_memcpy_toio().  The 1-3
+> extra bytes come from heap memory past skb->data, leaking stale kernel
+> data to the wireless device.
+>
+> Zero-fill the padding before the SDIO write.
+>
+> Fixes: 8f13c87ccc49 ("brcmfmac: Split brcmf_sdiod_buffrw function up.")
 
-commit 6486e11a6e2f679597af2d5bb48c3b07a2b2a7ba upstream.
+[...]
 
-mt7915_remove_interface() cleared the wcid mask bit with no lock held and
-before clearing the RCU wcid pointer. The mask is a non-atomic RMW shared
-with the allocators, which all run under dev->mt76.mutex; on DBDC the two
-wiphys share one mt76_dev, so this raced add_interface/sta_add on the
-other band and could leak or double-hand-out a wcid. Clearing the bit
-before the RCU pointer also let a concurrent allocation reuse the index
-and publish its wcid, which the subsequent NULL assignment then wiped.
-Move the clear into the existing mutex section, after the RCU pointer is
-cleared.
+> ---
+>  drivers/net/wireless/broadcom/brcm80211/brcmfmac/bcmsdh.c | 3 +++
+>  1 file changed, 3 insertions(+)
 
-Fixes: f3049b88b2b3 ("wifi: mt76: mt7915: allocate vif wcid in the same range as stations")
-Link: https://patch.msgid.link/20260722082610.2699628-8-nbd@nbd.name
-Signed-off-by: Felix Fietkau <nbd@nbd.name>
-[ adapted to 6.6.y: context only, older mt7915_mcu_add_sta() call ]
-Signed-off-by: Dickson Wu <dickson.wu@certik.com>
----
-6.12.y and newer already have this fix. The moved line is the same as
-upstream; only the surrounding context differs on this branch.
+[...]
 
-Tested on v6.6.163:
-- x86_64 allmodconfig W=1 build of
-  drivers/net/wireless/mediatek/mt76/mt7915/main.o, base vs patched,
-  no new warnings
-- booted the patched kernel with CONFIG_MT7915E=y under QEMU/KVM. I
-  don't have mt7915 hardware, so the remove path wasn't run.
+> @@ -323,6 +323,9 @@ static int brcmf_sdiod_skbuff_write(struct brcmf_sdio_dev *sdiodev,
+>  	req_sz = skb->len + 3;
+>  	req_sz &= (uint)~3;
+>  
+> +	if (req_sz > skb->len)
+> +		memset(skb->data + skb->len, 0, req_sz - skb->len);
+> +
+>  	err = sdio_memcpy_toio(func, addr, ((u8 *)(skb->data)), req_sz);
+>  
+>  	if (err == -ENOMEDIUM)
 
-The backport and the test runs were prepared with AI coding tools
-(OpenAI Codex agents, with review by Claude). I went over the result
-before signing off.
----
- drivers/net/wireless/mediatek/mt76/mt7915/main.c | 2 +-
- 1 file changed, 1 insertion(+), 1 deletion(-)
+The padding lies beyond skb->len, so this memset is only safe when
+skb_tailroom(skb) >= req_sz - skb->len, and nothing guarantees that for
+the skbs reaching this function (e.g. a data skb in the non-glom path).
+If the tailroom is short the memset overwrites skb_shared_info. Please
+check the tailroom (brcmf_sdio_txpkt_prep_sg() does so before it adds
+tail padding) and handle the short case, e.g. by expanding the tail.
 
-diff --git a/drivers/net/wireless/mediatek/mt76/mt7915/main.c b/drivers/net/wireless/mediatek/mt76/mt7915/main.c
-index 864f636666e5..017181c1a2ea 100644
---- a/drivers/net/wireless/mediatek/mt76/mt7915/main.c
-+++ b/drivers/net/wireless/mediatek/mt76/mt7915/main.c
-@@ -306,7 +306,6 @@ static void mt7915_remove_interface(struct ieee80211_hw *hw,
- 
- 	mt7915_mcu_add_bss_info(phy, vif, false);
- 	mt7915_mcu_add_sta(dev, vif, NULL, false);
--	mt76_wcid_mask_clear(dev->mt76.wcid_mask, mvif->sta.wcid.idx);
- 
- 	mutex_lock(&dev->mt76.mutex);
- 	mt76_testmode_reset(phy->mt76, true);
-@@ -322,6 +321,7 @@ static void mt7915_remove_interface(struct ieee80211_hw *hw,
- 	mutex_lock(&dev->mt76.mutex);
- 	dev->mt76.vif_mask &= ~BIT_ULL(mvif->mt76.idx);
- 	phy->omac_mask &= ~BIT_ULL(mvif->mt76.omac_idx);
-+	mt76_wcid_mask_clear(dev->mt76.wcid_mask, mvif->sta.wcid.idx);
- 	mutex_unlock(&dev->mt76.mutex);
- 
- 	spin_lock_bh(&dev->mt76.sta_poll_lock);
+Also, the 4-byte rounding of the length predates the commit in the
+Fixes tag, which only split the function up. Please point the tag at
+the commit that introduced the rounding. The SDPCM header carries the
+unpadded frame length so the device should ignore the padding bytes; a
+word on the actual impact and how this was tested would be good.
 
----
-base-commit: e2bb30811e063ce0db964484357973b855b06572
-change-id: 20261126-so1-mt-66-a159fb8fb163
-
-Best regards,
---  
-Dickson Wu <dickson.wu@certik.com>
-
-
+Regards,
+Arend
