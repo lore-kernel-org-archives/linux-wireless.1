@@ -1,137 +1,112 @@
-Authentication-Results: smtp.subspace.kernel.org; arc=pass header.oldest-pass=0 smtp.remote-ip=40.107.130.24
-ARC-Seal: i=2; d=subspace.kernel.org; s=arc20261015; a=rsa-sha256; cv=pass;
-	t=1795687085;
-	b=PYAvaCwZPjX9lkaw8ONpPbrEgcNjj7sHgjJ2DcF3mR0cENzKjGc6wfDxk44fN2QFZCMz
-	 uy9q8qXoXDXvo18VCUOQvQ0HSlr44t0dyRoA0xmW00zljCIAeLluPiV9zfNOu9N0LFIyj
-	 fAGeJUtt1SNIQ2zEtcoNtjF5eDIXZNGq1KKXL5+svtWwHcngxtYnP8XRCpBmq8Kt5JuvG
-	 2QAuQTkVRMFSsXs/w8eUlOLqke5ST/YZy3yE5c0xLUwKT+TyREyk55lR51cO31oj7J5DH
-	 YIRfn6oVn9GD5UhynKD7UbBATbfEByFAEFOHRor+KoHVTdqWmbEVembCfJdoONOxSVQ==
-ARC-Message-Signature: i=2; d=subspace.kernel.org; s=arc20261015;
-	a=rsa-sha256; c=relaxed/relaxed; t=1795687085;
-	h=DMARC-Filter:DKIM-Signature:Received:Received:From:To:Subject:
-	 Thread-Topic:Thread-Index:Date:Message-ID:Accept-Language:
-	 Content-Language:X-MS-Has-Attach:X-MS-TNEF-Correlator:msip_labels:
-	 x-ms-publictraffictype:x-ms-traffictypediagnostic:
-	 x-ms-office365-filtering-correlation-id:x-ms-exchange-senderadcheck:
-	 x-ms-exchange-antispam-relay:x-microsoft-antispam:
-	 x-microsoft-antispam-message-info:x-forefront-antispam-report:
-	 x-ms-exchange-antispam-messagedata-chunkcount:
-	 x-ms-exchange-antispam-messagedata-0:Content-Type:
-	 Content-Transfer-Encoding:MIME-Version:X-OriginatorOrg:
-	 X-MS-Exchange-CrossTenant-AuthAs:X-MS-Exchange-CrossTenant-AuthSource:
-	 X-MS-Exchange-CrossTenant-Network-Message-Id:
-	 X-MS-Exchange-CrossTenant-originalarrivaltime:
-	 X-MS-Exchange-CrossTenant-fromentityheader:
-	 X-MS-Exchange-CrossTenant-id:X-MS-Exchange-CrossTenant-mailboxtype:
-	 X-MS-Exchange-CrossTenant-userprincipalname:
-	 X-MS-Exchange-Transport-CrossTenantHeadersStamped;
-	bh=dHXeh+M5xiCg18EKlVZSONcxHoO1AkX4tpOc5fJQLXE=;
-	b=DS7EHIuUFXUrsEJ9m2VDjNwn+iJaiokYFFZHVPFKUlE/gBZ96OlWXxbK1g8TF2RqIFfI
-	 s71SNlwrGlYdSaOiJy+FMYTcJ2ADPDG0Z+Ssx5h52xSX6nfSF9Lc0VVNbC22O+jw61PIM
-	 b+Dr8fDThS477Mi4Ic9+9u0hsab/TyD/BWsoRW3BWy5C4GZOGP4XsHaqFSaNRl8S6Ztgo
-	 S4Q4Jez0iFqi2V5B6yGkeJZZmc+3by4eWvkNgJx4S7xTINErD2M95SXjuF56gwSgXCLu9
-	 ykDHHPPjk98LTiJWdrHrq6kFPIvEbmSLfHMgc8c1wWA8wuGeoUtMe1ASWdhvVyUylfA==
-ARC-Authentication-Results: i=2; smtp.subspace.kernel.org; 
-	dmarc=pass header.from=philips.com;
-	spf=pass smtp.mailfrom=philips.com;
-	dkim=pass header.d=philips.com header.i=@philips.com header.a=rsa-sha256 header.s=selector1 header.b=tXbLTjwp;
-	arc=pass header.oldest-pass=0 smtp.remote-ip=40.107.130.24
-Received: from MRWPR03CU001.outbound.protection.outlook.com (mail-francesouthazon11011024.outbound.protection.outlook.com [40.107.130.24])
+Authentication-Results: smtp.subspace.kernel.org; arc=none smtp.remote-ip=205.220.180.131
+ARC-Seal: i=1; d=subspace.kernel.org; s=arc20261015; a=rsa-sha256; cv=none;
+	t=1795687323;
+	b=e/J9qGMaJ12Sx9B5Gn3LTzifpYmiICNGt7SXMw2MmHfOqbjBxikXT4Yk6fCyd3wFpcMH
+	 iFL2zZeVlf+9pjKV4P0WaXvLBQBf8ZVvsk+lbwbNNFj1cGinRy/iXTGRP5M8S4SB5t6dF
+	 pXjmbp7wBTyORAOitfWuv5ldg3Rl3V5aBA1ZTGgcivYdIjhUCDokuPT9jSO4QKb73Obc2
+	 bPBpY4KFGts/N5cKbdVr+CaFkilib9Hfkw/kPMS52adcHvMF7ERN+SnMevCI5NLzXEXNt
+	 Y4RncI9HiVcstgQWNalY8XwJ81k2doO2daiGqgul098viQ3Nzqj1T+P/YhPwXN1Aa4w==
+ARC-Message-Signature: i=1; d=subspace.kernel.org; s=arc20261015;
+	a=rsa-sha256; c=relaxed/relaxed; t=1795687323;
+	h=DMARC-Filter:Received:DKIM-Signature:Received:Received:
+	 DKIM-Signature:X-Google-DKIM-Signature:X-Forwarded-Encrypted:
+	 X-Gm-Message-State:X-Gm-Gg:X-Received:X-Received:Received:Message-ID:
+	 Date:MIME-Version:User-Agent:Subject:To:Cc:References:
+	 Content-Language:From:In-Reply-To:Content-Type:
+	 Content-Transfer-Encoding:X-Proofpoint-Spam-Info:X-Proofpoint-GUID:
+	 X-Proofpoint-Spam-Details-Enc:X-Proofpoint-ORIG-GUID:
+	 X-Authority-Analysis:X-Proofpoint-Virus-Version:
+	 X-Proofpoint-Spam-Details;
+	bh=qCeVeR1v3tRG+6HG8mO/Yh755lPb9lEu3E7k4tsScJU=;
+	b=uDypliA2Hiamw9DgRgoNLfyxFl9H/Cr4If+HVUAr14+YTgYXibMrOJmE0pJQIcIM/0ce
+	 ZcJjOgD+O6pNru8PPr6hiwGr+ErnbOoWgku5OJ0y9R+W4DQmKnmRIEx/FqHTwSM8Fqnbw
+	 az07LZuiOQz2TH319zjcPMMq/5FaIqvkUqd/1WurTP6XvAHYNWod43eEmQ6QIedhn7Tx2
+	 sgOQ6BGfYcmJ/c4nOyIPXe8K601GV7k1zMdWklXpH/7updmsSILVY8in9ZzBuPdifmSvv
+	 CfNVs/pCqjbjWzbSRuT/bBbPV28jiJqmRU7l5WH+2Jv5o9r6WFnl6rMErW375mSk6/A==
+ARC-Authentication-Results: i=1; smtp.subspace.kernel.org; 
+	dmarc=pass header.from=oss.qualcomm.com;
+	spf=pass smtp.mailfrom=oss.qualcomm.com;
+	dkim=pass header.d=qualcomm.com header.i=@qualcomm.com header.a=rsa-sha256 header.s=qcppdkim1 header.b=kIqrv1xi;
+	dkim=pass header.d=oss.qualcomm.com header.i=@oss.qualcomm.com header.a=rsa-sha256 header.s=google header.b=KMrKUgpV;
+	arc=none smtp.remote-ip=205.220.180.131
+Received: from mx0b-0031df01.pphosted.com (mx0b-0031df01.pphosted.com [205.220.180.131])
 	(using TLSv1.3 with cipher TLS_AES_256_GCM_SHA384 (256/256 bits)
-	 key-exchange ECDHE (secp384r1) server-signature ECDSA (prime256v1) server-digest SHA256)
+	 key-exchange X25519 server-signature ECDSA (prime256v1) server-digest SHA256)
 	(No client certificate requested)
-	by smtp.subspace.kernel.org (Postfix) with ESMTPS id 0CCCD606A31E
-	for <linux-wireless@vger.kernel.org>; Thu, 26 Nov 2026 09:58:04 +0000 (UTC)
-DMARC-Filter: OpenDMARC Filter v1.4.2 smtp.subspace.kernel.org 0CCCD606A31E
-Authentication-Results: smtp.subspace.kernel.org; dmarc=pass (p=reject dis=none) header.from=philips.com
-Authentication-Results: smtp.subspace.kernel.org; spf=pass smtp.mailfrom=philips.com
+	by smtp.subspace.kernel.org (Postfix) with ESMTPS id A7C42606A31E
+	for <linux-wireless@vger.kernel.org>; Thu, 26 Nov 2026 10:02:02 +0000 (UTC)
+DMARC-Filter: OpenDMARC Filter v1.4.2 smtp.subspace.kernel.org A7C42606A31E
+Authentication-Results: smtp.subspace.kernel.org; dmarc=pass (p=none dis=none) header.from=oss.qualcomm.com
+Authentication-Results: smtp.subspace.kernel.org; spf=pass smtp.mailfrom=oss.qualcomm.com
 Authentication-Results: smtp.subspace.kernel.org;
-	dkim=pass (1024-bit key, unprotected) header.d=philips.com header.i=@philips.com header.a=rsa-sha256 header.s=selector1 header.b=tXbLTjwp
-ARC-Seal: i=1; a=rsa-sha256; s=arcselector10001; d=microsoft.com; cv=none;
- b=LoSVjxdMUB93cpXifp8UToUnwxeK8/kjT7SrM+dmHTcFf1mZkZUSdVxYd9Owwinomzvy632pVb7uxO5OshCw5HQ1dvK1pPntrnNkJAYnJjmUqDobqSMoOz02OLFbBizAx2f846M80ePiC8A/kHVyL3dwC8DgejR3vgob5+zgy6h8b3W27wwdHThgzzAhgy9ExvbY8/0KUalxqZ26SqPPcnVdFso3FA7Qkb3r7e6s9K8danqHPGLpMFdOr4pu2XfDxni0QjrW4wK6HtLPznvB+ZI59SYAqLxic/uyNfoCx5y/HFTDrZZ7tptcmRgjIWV1rnAkSGWaMSi9UCy/JdHqAA==
-ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=microsoft.com;
- s=arcselector10001;
- h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-AntiSpam-MessageData-ChunkCount:X-MS-Exchange-AntiSpam-MessageData-0:X-MS-Exchange-AntiSpam-MessageData-1;
- bh=dHXeh+M5xiCg18EKlVZSONcxHoO1AkX4tpOc5fJQLXE=;
- b=NhxBzl3HqbimZUD8sb6VAW+cRm63xJqMo5rDxB9JbXliff24ypIVuSHUR172ScCiQ1J/5uWVRro5/Gm8cf9VTynL3wl/FHnDw7/ybYVp9J9ri5q3WIKRIq7JlUh5lbO0Xrit+ydFXe/BYWihHIyBzSm6EUrunGwvv5qK2NkC5LwaOlgTZMdQIHzF5n7p/t8cvECrMcOXvo8LVjI/KIg7xl36zayP0t7jL4jVaLMKxFh4Rgcp0/DaYkvgjj/hbktLh13HvBUzQ2cku7MLr34IRfSwG+l5eJ3mCwuauiQ/mRqMn0VsyUT7VqGMG8eel58mPzc599469NuJgs7FailSKw==
-ARC-Authentication-Results: i=1; mx.microsoft.com 1; spf=pass
- smtp.mailfrom=philips.com; dmarc=pass action=none header.from=philips.com;
- dkim=pass header.d=philips.com; arc=none
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=philips.com;
- s=selector1;
- h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
- bh=dHXeh+M5xiCg18EKlVZSONcxHoO1AkX4tpOc5fJQLXE=;
- b=tXbLTjwplVTP0fGfAjRpbLbRXDzszW+yGoTh/wj7pu3vy1fuqQTOLpSb5zNkQMsKae1jnm2C5uFLcOAJZhwcgwpg1ZAnDZvGHW0p5diFCDXevZTDASvjw36BXBC2wRfcTw4BKvaT67tP1Y8gA5o5Y4hJUUEPc9UnWENKgpnq58I=
-Received: from BESPR10MB992227.EURPRD10.PROD.OUTLOOK.COM
- (2603:10a6:b10:146::23) by AS2PR10MB6352.EURPRD10.PROD.OUTLOOK.COM
- (2603:10a6:20b:553::18) with Microsoft SMTP Server (version=TLS1_2,
- cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id 15.21.688.4; Thu, 26 Nov
- 2026 09:58:01 +0000
-Received: from BESPR10MB992227.EURPRD10.PROD.OUTLOOK.COM
- ([fe80::ceeb:beaf:7ed2:e241]) by BESPR10MB992227.EURPRD10.PROD.OUTLOOK.COM
- ([fe80::ceeb:beaf:7ed2:e241%5]) with mapi id 15.21.0662.004; Thu, 26 Nov 2026
- 09:58:01 +0000
-From: "Schnick, Uwe" <uwe.schnick@philips.com>
-To: "linux-wireless@vger.kernel.org" <linux-wireless@vger.kernel.org>
-Subject: subscribe
-Thread-Topic: subscribe
-Thread-Index: AQHdfYx6C8HfUAYDfUOshhKSZzzH1w==
-Date: Thu, 26 Nov 2026 09:58:00 +0000
-Message-ID:
- <BESPR10MB99222755B5887F9FBEE57EBF03FC422@BESPR10MB992227.EURPRD10.PROD.OUTLOOK.COM>
-Accept-Language: en-US
-Content-Language: en-US
-X-MS-Has-Attach:
-X-MS-TNEF-Correlator:
-msip_labels:
-authentication-results: mx.microsoft.com 1; dkim=none (message not signed)
- header.d=none;dmarc=none action=none header.from=philips.com;
-x-ms-publictraffictype: Email
-x-ms-traffictypediagnostic: BESPR10MB992227:EE_|AS2PR10MB6352:EE_
-x-ms-office365-filtering-correlation-id: 80f3b6bc-b83e-4735-aa73-08df4ba3c1a1
-x-ms-exchange-senderadcheck: 1
-x-ms-exchange-antispam-relay: 0
-x-microsoft-antispam:
- BCL:0;ARA:13230040|1800799024|23010399003|366016|376014|38070700021|261022105027099003|10067099003|56012099006|261026140227099003|261028144727099003|261022075727099003|261009223027099003|18002099003|11063799006;
-x-microsoft-antispam-message-info:
- DvZI88NyYVmzdPV/e2D+KGTVr9zECt+v/vvFdctu1jw5v6ZVPbmu5jFx8sQ8/yt8mmdfGCFI+vw6DxdaMWG+P5ng91V5KWm8F/hrEGtYqpQIQu2i9wWHHowWFiIb7+2S4LgbHa2OmmlIg7wjFjCleORB8e0Ku1vq636InUmZE1AOtBaCWXEmu7Hhw5tt2T7eS/s92sTbAxt/GYwIZPjq7mAd0TvCATeN6xnYTHXACqFtk7/mjjC67oFIjWwW8Q/j67wEzeP3F7yoO/luwpOyysWN0fCmkpnhVH5VnawWEIC+N6naKTxIzGt2a34vIAR4GdXd2QlNXC5HKAZiZwuv7hy0rRmfHhZf0IxakWAmxtZ825mtMyyeaq/7ux0W075S2cMDUhWNWy9b8FeifRs2mTAdJX+laoW0OjPyecoKRl6ODXNOSte7+H5liv426drwJSTATM+zJ8qqlaZG2ThLVQ==
-x-forefront-antispam-report:
- CIP:255.255.255.255;CTRY:;LANG:de;SCL:1;SRV:;IPV:NLI;SFV:NSPM;H:BESPR10MB992227.EURPRD10.PROD.OUTLOOK.COM;PTR:;CAT:NONE;SFS:(13230040)(1800799024)(23010399003)(366016)(376014)(38070700021)(261022105027099003)(10067099003)(56012099006)(261026140227099003)(261028144727099003)(261022075727099003)(261009223027099003)(18002099003)(11063799006);DIR:OUT;SFP:1101;
-x-ms-exchange-antispam-messagedata-chunkcount: 1
-x-ms-exchange-antispam-messagedata-0:
- =?iso-8859-1?Q?5Z5ZCwemRJIVSstAqV7C5/5fO+JnEqE/mgP2S9E03znkQYkikNGRizhaGi?=
- =?iso-8859-1?Q?7WsvbHGnvPAkQz49yupGooFrasKyuwdNj4zgKDvv9YzheEqO0iArkMzTP5?=
- =?iso-8859-1?Q?qsatFyLRRpP1YIxNWihWk/U+DmnMuqvg+PRePBgGxUaNHot/Cubjlw1+1/?=
- =?iso-8859-1?Q?7UHAy+m3JoGVCB/v9jpa0akO4anNUqgUfRVWGdpvt11fL8zj1K40swpIxW?=
- =?iso-8859-1?Q?o3FmHcgqmmRzm9WUyxBuukBsWKDmeaxXlIcznmEqfNvnlUlCbe/TmdeKVO?=
- =?iso-8859-1?Q?GqXp/8naxkd6zQI9F3PgsAwDmgxUdzpljydvgXlqyK7S/3IWOO0O2nZ9Ym?=
- =?iso-8859-1?Q?7DXbrpQvqs1PN3LcrWxMrVK6Z72xYn9ZNbL/+6/YjZCQTGr20nXOlbMwO4?=
- =?iso-8859-1?Q?2W9rQGY/TtJj5yOxjGRvd6xuY3MY00jHxRLyhG1sopfrvT/rwSCO7s3hVK?=
- =?iso-8859-1?Q?jbvy2PeZFPxTqLPt2u2xs7yrXFOOB9xvKiaKPdmiDNEN0vIBOr6JrGDyHQ?=
- =?iso-8859-1?Q?nJnRvBYvbQCpz/jcQHvdyiAOCrMJI4Gf6FQoN837nxwGnRsG0ANMoz5+IK?=
- =?iso-8859-1?Q?H8rlM9Y6qMvQKqgIL5ah0fcWmUULxvpMcdGZhIKKNI3iPAX3YJRsFb9DUC?=
- =?iso-8859-1?Q?tNEbEeKr4OQ08rRX24DI2YtiR3tOKTct2iJt7gbvlavimVa609qJlaxL86?=
- =?iso-8859-1?Q?KlY5+oKm3Re1O6pXICaXkxe6CbTkYEzc47M7tEtnJYw8yCBk9QrbyBHZ5l?=
- =?iso-8859-1?Q?c6wtgpWOnk3u0ISsivPZrWW/nBlOm/5ym2VJUqtEy8OOgy6HCjJds2rwhB?=
- =?iso-8859-1?Q?+Qk5x4NK2VcE/hJCXBI8Cpmw5WpAOmvENGeh+QH5bisq+hOGJgfDBQ43yE?=
- =?iso-8859-1?Q?ZRrj5P3ncdOaUVaU7rIqbkXZwTb1rm5/lTE9QSLYUFtNlZKOMlCHKaAZ8Q?=
- =?iso-8859-1?Q?lFgS+TxPfvwGmHUt1v256nsCNAotvb5nM4e1F2vflyVW3RVRzr/thCr3e/?=
- =?iso-8859-1?Q?XPZ8P86Us02++c00NUBg/5Adw+b7QGFzJGImlFnpKhhr4jsoXaepNtmsbP?=
- =?iso-8859-1?Q?suOz2NJIGRvuAk1+1DSgdvL71jQ285KP6DldsWFuRd3+bBlvIy0qpm1bcB?=
- =?iso-8859-1?Q?LjtS4Vb6iZE6kC4t+3JTiXq1f7AR+GQ2jJFsbJp0XN6jyh/iMX4pPy2UQV?=
- =?iso-8859-1?Q?/6Uifs7oL7shSXWrvPcoqnvS32uQWbr5yQcO/5XV/qG6A/ox3u13W0xvmI?=
- =?iso-8859-1?Q?o3PA1nz1pCWW7TPg3pT9abK5OR6XuX9a8bx2Kghr/Pj2w6P1g2TlxFqP5H?=
- =?iso-8859-1?Q?uEEe48LObMgUf6kukZt44Ty30TyC1tl9qaigSLxCEzY2Ac9U2HheQKWf77?=
- =?iso-8859-1?Q?Ax8fqfRAL6FtxfZhIc8BAmQwEAsBCXi35ZvgWBa4hepmzLF/3iI/FmHG3P?=
- =?iso-8859-1?Q?5rVTo5sKft/TpKN6Tzmc3zpGCCmSCjgUOkQ2oT3ho6yKPGlKi89j/aimzh?=
- =?iso-8859-1?Q?VXGt9rwJpRSWEtv3HvhGZcrnYhFkUd6qlQG9gJWVPGsWnTsTfItSHJI+52?=
- =?iso-8859-1?Q?UrdQMU106ybMQpjTNcMaijX8eDHKfOoOw2+mu6cAkDFr/+r/sH1s+MFGso?=
- =?iso-8859-1?Q?CKr0yZZt017tkk4ixBVeo5KsrqahdRcj5psAAtTMph+dJC6hR0EngQBayr?=
- =?iso-8859-1?Q?OuJK+JfGO+9Hy/xGa6G3QprJV3OSzlEur+ZWV0cSP4SxBS11JBF6yUUiwZ?=
- =?iso-8859-1?Q?cZnTckM8xWEjkHYrLpMMKRiv9mW5Q40uYipADyCsGRe+rQTTeszZkEZYc2?=
- =?iso-8859-1?Q?PpEPp0AhGQ=3D=3D?=
-Content-Type: text/plain; charset="iso-8859-1"
-Content-Transfer-Encoding: quoted-printable
+	dkim=pass (2048-bit key) header.d=qualcomm.com header.i=@qualcomm.com header.a=rsa-sha256 header.s=qcppdkim1 header.b=kIqrv1xi;
+	dkim=pass (2048-bit key) header.d=oss.qualcomm.com header.i=@oss.qualcomm.com header.a=rsa-sha256 header.s=google header.b=KMrKUgpV
+Received: from pps.filterd (m0279873.ppops.net [127.0.0.1])
+	by mx0a-0031df01.pphosted.com (8.18.1.11/8.18.1.11) with ESMTP id 6AQ8JvW7849322
+	for <linux-wireless@vger.kernel.org>; Thu, 26 Nov 2026 10:02:01 GMT
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=qualcomm.com; h=
+	cc:content-transfer-encoding:content-type:date:from:in-reply-to
+	:message-id:mime-version:references:subject:to; s=qcppdkim1; bh=
+	qCeVeR1v3tRG+6HG8mO/Yh755lPb9lEu3E7k4tsScJU=; b=kIqrv1xiKm1lATnb
+	V3fIs0LfKN1tWvpn+Rzju90yECmLYbecKJ2+6MwC6tPyzshP4iadV83QlBK3JWkA
+	PUYDegmrQaMzgaUGIvh0nUqpUT2RtUg3FuGgYKIMayuoRCNmhw7H8yarU1/TogEB
+	f5fSGSYPZhDS1NosH774tDGlEgAhFYTcd+01I1WGapWjETTrArTzy93VwqsrWYd+
+	HWfg9tItIPomUiOuIrS5ITSC4ZoRhi1CP1B3ecT87ie7OdeYw/xjcirAIJoFRzfa
+	e6ItWlW0vA90G89BgyIp/1Glhrq6mZNaPnL60mSyd68xgXw4/eHdGZsJem3DgXi8
+	HmuV/w==
+Received: from mail-pg1-f197.google.com (mail-pg1-f197.google.com [209.85.215.197])
+	by mx0a-0031df01.pphosted.com (PPS) with ESMTPS id 4j6fw7rr8g-1
+	(version=TLSv1.3 cipher=TLS_AES_128_GCM_SHA256 bits=128 verify=NOT)
+	for <linux-wireless@vger.kernel.org>; Thu, 26 Nov 2026 10:02:01 +0000 (GMT)
+Received: by mail-pg1-f197.google.com with SMTP id 41be03b00d2f7-cddf142187aso3437825a12.2
+        for <linux-wireless@vger.kernel.org>; Thu, 26 Nov 2026 02:02:01 -0800 (PST)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+        d=oss.qualcomm.com; s=google; t=1795687320; x=1796292120; darn=vger.kernel.org;
+        h=content-transfer-encoding:content-type:in-reply-to:from
+         :content-language:references:cc:to:subject:user-agent:mime-version
+         :date:message-id:from:to:cc:subject:date:message-id:reply-to
+         :content-type;
+        bh=qCeVeR1v3tRG+6HG8mO/Yh755lPb9lEu3E7k4tsScJU=;
+        b=KMrKUgpVNSvKBZBU26KkXl1m73ufmqI2g8ILiOJ13u4eH/H6Jbq0f/6VurtoqYNFkS
+         lxT4FPDSb/sHKGgCeEr2xDPfKFmQwIZFQXkF6H+3y3wrYS9HDi6n6Dx5SxSJLzMF46+l
+         lLB2kJ/hETJkWUOaV3o/mjS0+wXUJ2+qAznd341XnxvGmq0bjguLPHL7CxPZ4GSuw5Q5
+         cipyv5WnIdePi35ZTtLQi+W7mB63zNRSWG9cIcdtD4AyrJITqqIScudI8IE8Q6Z/nq5x
+         NtcCygs2EXsmCoip6lqvuKGQqUwETP5HRcoQv2z0KhdxlcML5QnpjTCW1J5N1se/8nGO
+         pw0Q==
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+        d=1e100.net; s=20260707; t=1795687320; x=1796292120;
+        h=content-transfer-encoding:content-type:in-reply-to:from
+         :content-language:references:cc:to:subject:user-agent:mime-version
+         :date:message-id:x-gm-gg:x-gm-message-state:from:to:cc:subject:date
+         :message-id:reply-to:content-type;
+        bh=qCeVeR1v3tRG+6HG8mO/Yh755lPb9lEu3E7k4tsScJU=;
+        b=ecsjLNoViLAKq3FS2Z2qVv+2+IXyACG7dAPtNdI2s3evkYWEORCHCkAKovGfqfKjm6
+         TwXG7Tc/X6scD9OO6pmNaZnSZDi1CKEMq4rUoJQndhLqCCoiUPFcCXyES7C5MERbgJLj
+         hwiFvEECbd1QXGiUQRUsV+O4FYlAz/NJuEBCqHDkPJiun+8HjX7OighzvEElFryQG5W1
+         gNjHHStTmJMv/+R4MS33cPz2XlVGm3s30ze+Fs9+jv7O+tit/qcVBfUiZLZ8C2UrRjg6
+         1HsU0jGsE6bqOYba62IzjmFTux/t92uZK3eov/90JLbo47t6BytH5AmwwcoGZUIM00eQ
+         gmVQ==
+X-Forwarded-Encrypted: i=1; AL+hErGhsxH0FRaaLJ3Msf9+avmI9Uz3SNpGTA0lNc11Q11eH/NdQZG4UekSHBqLspd3sHMy5OEtA1/Pyr0cBZl4KQ==@vger.kernel.org
+X-Gm-Message-State: APuU4Z/ugf2EaCgwg5Szs/gSj7m/g6fXqovlHiL5vaRBJfo+pWDkeEXe
+	UGgx77797qSLEQY6NqlSUr2YgzJvJv1zcBWA9NE9y1bAMrqKyZn0l6ERFBaI3kAVdoTXDTEYhjk
+	yh2kwLknRQkbwMGgoSuxmN9pSw7UiIx5Lqtu8FseLpGua9bTGiISrnPb5qPUTUtRelBhwRQ==
+X-Gm-Gg: AZFdTZdUemleHz5G/XZrUWvvVKM7XG7rMjjmCBTCow0dHcjLYfWI+3G8maf+loikeLO
+	fwD+Cr1M2uaY1gCrSuuGdimDOQRAeqnpqgeMlg9THPHIqE7u6t2zfBPiwTbLzCm7nrndAlBJrG6
+	rMBg/kj1+2oznH+Lk4u+e9xsrAHMi/PLWZttxkNW5pT+QQc6IwlRf8KSAKCpmOCGvJgGvkbCdKu
+	SB25zeRuRGRlWpj2QpnSPfLIMhpSaLBgcEcwIwLado4R1p7OD/1Cq2qLRiQK/Be6gV25J6Tq85e
+	DdcajmC5kHFwUHbz3wlxtSq/juWAQLgkRNiPosud7Gzc7egQvAUVhA+N/tKiSulRg9dcWn/U63v
+	EZVcl+LzaMh3uVMinsrIbw4Fo39NiaYIN6YZMwkRmZMu92PsL+GpvmpIrEH7t/LqNzW3WJfJH/m
+	tby6Y4Os9RkcwXBImRqQje/fgMfASCvBhHYUQeu100
+X-Received: by 2002:a17:90b:1dcd:b0:3b0:bd53:8e5d with SMTP id 98e67ed59e1d1-3b41cb3e4b9mr15845860a91.58.1795687320301;
+        Thu, 26 Nov 2026 02:02:00 -0800 (PST)
+X-Received: by 2002:a17:90b:1dcd:b0:3b0:bd53:8e5d with SMTP id 98e67ed59e1d1-3b41cb3e4b9mr15845831a91.58.1795687319727;
+        Thu, 26 Nov 2026 02:01:59 -0800 (PST)
+Received: from [10.133.33.167] (tpe-colo-wan-fw-bordernet.qualcomm.com. [103.229.16.4])
+        by smtp.gmail.com with ESMTPSA id 41be03b00d2f7-cde6d002a77sm10286301a12.16.2026.11.26.02.01.57
+        (version=TLS1_3 cipher=TLS_AES_128_GCM_SHA256 bits=128/128);
+        Thu, 26 Nov 2026 02:01:59 -0800 (PST)
+Message-ID: <5a38be6e-09a5-4955-bc96-190a9ae33c2a@oss.qualcomm.com>
+Date: Thu, 26 Nov 2026 18:01:56 +0800
 X-Mailing-List: linux-wireless@vger.kernel.org
 List-Id: <linux-wireless.vger.kernel.org>
 List-Post: <mailto:linux-wireless@vger.kernel.org>
@@ -141,24 +116,145 @@ List-Unsubscribe: <mailto:linux-wireless+unsubscribe@vger.kernel.org>
 List-Owner: <mailto:linux-wireless+owner@vger.kernel.org>
 Precedence: list
 MIME-Version: 1.0
-X-OriginatorOrg: philips.com
-X-MS-Exchange-CrossTenant-AuthAs: Internal
-X-MS-Exchange-CrossTenant-AuthSource: BESPR10MB992227.EURPRD10.PROD.OUTLOOK.COM
-X-MS-Exchange-CrossTenant-Network-Message-Id: 80f3b6bc-b83e-4735-aa73-08df4ba3c1a1
-X-MS-Exchange-CrossTenant-originalarrivaltime: 26 Nov 2026 09:58:00.9729
- (UTC)
-X-MS-Exchange-CrossTenant-fromentityheader: Hosted
-X-MS-Exchange-CrossTenant-id: 1a407a2d-7675-4d17-8692-b3ac285306e4
-X-MS-Exchange-CrossTenant-mailboxtype: HOSTED
-X-MS-Exchange-CrossTenant-userprincipalname: G7+x/yKIVgLraHRV8va44NqMKau4IHxsktyN/qRfv4D5GKOuCWYYY0n5KoNHm3CUXXt7sTBUDgTOs6cvnQDUjg==
-X-MS-Exchange-Transport-CrossTenantHeadersStamped: AS2PR10MB6352
+User-Agent: Mozilla Thunderbird
+Subject: Re: [PATCH ath-next v4 10/10] wifi: ath10k: drop async writes and
+ sleep timer across power cycles
+To: Baochen Qiang <baochen.qiang@oss.qualcomm.com>,
+        Jeff Johnson <jjohnson@kernel.org>,
+        Loic Poulain <loic.poulain@oss.qualcomm.com>
+Cc: Jeff Johnson <jeff.johnson@oss.qualcomm.com>,
+        linux-wireless@vger.kernel.org, ath10k@lists.infradead.org,
+        linux-kernel@vger.kernel.org
+References: <20261120-recovery-v4-v4-0-53d6a04490e0@oss.qualcomm.com>
+ <20261120-recovery-v4-v4-10-53d6a04490e0@oss.qualcomm.com>
+ <6dbec0cb-ac36-41b6-9a8b-12da800222ab@oss.qualcomm.com>
+Content-Language: en-US
+From: Kang Yang <kang.yang@oss.qualcomm.com>
+In-Reply-To: <6dbec0cb-ac36-41b6-9a8b-12da800222ab@oss.qualcomm.com>
+Content-Type: text/plain; charset=UTF-8; format=flowed
+Content-Transfer-Encoding: 7bit
+X-Proofpoint-Spam-Info: AW1haW4tMjYxMTI2MDAzOCBTYWx0ZWRfX8sqRm78zzqiX
+ wXXJTaRg1j49N8dpmI9Xw0vIwucC5xsi9UVM3SyrG8IgUcI5S9TSutmJuOlM7iwwiw2ZXv6ptF/
+ 9QcX6vwEZpuLYO59iGOi+S9icAM9nHQ=
+X-Proofpoint-GUID: pBCOsvAp8Ri0V9XFR3eEv-o5k3WL951W
+X-Proofpoint-Spam-Details-Enc: AW1haW4tMjYxMTI2MDAzOCBTYWx0ZWRfXzNAQfplNuE2r
+ 2WDxCgJUo7A2yFLUtfXTgmW+IfV+XkgWVQyShXAU2OEnJAvJGeUNWCMZP6rqKRQATF20EMFZX5k
+ ATuLqY+5dWGs4HrscRHzPy4pOfqsKESzEKxhFLIfMpIOuPqXXoIUX8qGg3R4aFMhVypIQXYqUaT
+ 67+1fz4cQ8kFFkkrakO/yF75Ekli7naH/r/acJoex8OwsB+prUxu/xIXpR6rVAnw44xuKukAOpo
+ I35/qtOKGljH3za+jN27HZOQwCHiams1Ze4SqTrMJh2KoGQUVAxiFFjcgasOpIVbt7slbJfAuKP
+ x4abUAzSkmM7nrw8h4iledOPCot2Zhoo4aUQQvXV0ol0jt1rb4XQINTGtF+ELP5J9+K4nkeYZEf
+ egf/o1KFlxjXcO9bGouCA67MTEBj+YQcZBAXxgO2CqXW78p4ShaiDkvvCIsKKqgTTx2ffHoYubf
+ RWoerfjH7+nMZqVKaSQ==
+X-Proofpoint-ORIG-GUID: pBCOsvAp8Ri0V9XFR3eEv-o5k3WL951W
+X-Authority-Analysis: v=2.4 cv=ePeGH3p1 c=1 sm=1 tr=0 ts=6b080399 cx=c_pps
+ a=rz3CxIlbcmazkYymdCej/Q==:117 a=nuhDOHQX5FNHPW3J6Bj6AA==:17
+ a=IkcTkHD0fZMA:10 a=zJRp6_cAMcgA:10 a=s4-Qcg_JpJYA:10
+ a=VkNPw1HP01LnGYTKEx00:22 a=u7WPNUs3qKkmUXheDGA7:22 a=rJkE3RaqiGZ5pbrm-msn:22
+ a=EUspDBNiAAAA:8 a=2bedrVyz5QLRwlh5c10A:9 a=QEXdDO2ut3YA:10
+ a=bFCP_H2QrGi7Okbo017w:22
+X-Proofpoint-Virus-Version: vendor=baseguard
+ engine=ICAP:2.0.293,Aquarius:18.0.1176,Hydra:6.1.138,FMLib:17.12.100.49
+ definitions=2026-11-26_02,2026-11-25_01,2025-10-01_01
+X-Proofpoint-Spam-Details: rule=outbound_notspam policy=outbound score=0
+ priorityscore=1501 suspectscore=0 clxscore=1015 adultscore=0
+ lowpriorityscore=0 bulkscore=0 phishscore=0 malwarescore=0 spamscore=0
+ impostorscore=0 classifier=typeunknown authscore=0 authtc= authcc=
+ route=outbound adjust=0 reason=mlx scancount=1 engine=8.22.0-2611040001
+ definitions=main-2611260038
 
 
-________________________________
-The information contained in this message may be confidential and legally p=
-rotected under applicable law. The message is intended solely for the addre=
-ssee(s). If you are not the intended recipient, you are hereby notified tha=
-t any use, forwarding, dissemination, or reproduction of this message is st=
-rictly prohibited and may be unlawful. If you are not the intended recipien=
-t, please contact the sender by return e-mail and destroy all copies of the=
- original message.
+
+On 11/26/2026 4:37 PM, Baochen Qiang wrote:
+> 
+> 
+> On 11/20/2026 4:41 PM, Kang Yang wrote:
+>> ath10k_sdio_hif_tx_sg() queues writes on ar_sdio->wr_asyncq and
+>> schedules wr_async_work. The SDIO sleep timer also schedules this
+>> work, and the work may re-arm the timer.
+>>
+>> The current shutdown sequence does not prevent this activity from
+>> surviving an SDIO power cycle:
+>>
+>>    - ath10k_sdio_hif_stop() drains wr_asyncq once, but new writes may
+>>      still be queued before the card is marked disabled.
+>>
+>>    - ath10k_sdio_hif_power_down() deletes the sleep timer but does not
+>>      cancel wr_async_work.
+>>
+>>    - ath10k_sdio_hif_power_up() does not clear work or requests left
+>>      from the previous power cycle.
+>>
+>> As a result, stale work may access the SDIO bus while the device is
+>> being reinitialized in BMI mode, causing errors such as:
+>>
+>>        failed to read from address 0x868: -110
+>>        failed to read fifo/chip control register: -110
+>>        bmi communication timeout
+>>        could not write board data (-110)
+>>
+>> Mark the card disabled before power-down begins so new asynchronous
+>> transfers are rejected. Make wr_async_work drop requests that raced
+>> with the state change instead of accessing the bus.
+>>
+>> Synchronize the sleep timer and wr_async_work, then drain wr_asyncq
+>> during both power-down and power-up so no request from an earlier
+>> power cycle can run during BMI initialization. Factor the queue
+>> cleanup into a helper shared with ath10k_sdio_hif_stop().
+>>
+>> A dropped request is completed the same way as a written one, only
+>> without the bus access. HTC messages go through
+>> ath10k_htc_notify_tx_completion(), which lets the endpoint release the
+>> skb. The IRQ disable request signals its completion and leaves the skb
+>> to the waiter, which frees it. Every bus request is returned to the
+>> free pool, so nothing is leaked.
+>>
+>> As a result, ath10k_sdio_hif_stop() no longer frees the skb of a
+>> non-HTC request itself. The IRQ disable request is the only such
+>> request, and its skb is owned by its waiter.
+>>
+>> Tested-on: QCA6174 hw3.2 PCI WLAN.RM.4.4.1-00288-QCARMSWPZ-1
+>> Tested-on: QCA6174 hw3.2 SDIO WLAN.RMH.4.4.1-00189
+>>
+>> Signed-off-by: Kang Yang <kang.yang@oss.qualcomm.com>
+>> ---
+>>   drivers/net/wireless/ath/ath10k/sdio.c | 78 ++++++++++++++++++++++++----------
+>>   1 file changed, 56 insertions(+), 22 deletions(-)
+>>
+>> diff --git a/drivers/net/wireless/ath/ath10k/sdio.c b/drivers/net/wireless/ath/ath10k/sdio.c
+>> index fdf19ce4b55b..f0e1feacb629 100644
+>> --- a/drivers/net/wireless/ath/ath10k/sdio.c
+>> +++ b/drivers/net/wireless/ath/ath10k/sdio.c
+>> @@ -1461,6 +1461,33 @@ static void ath10k_sdio_sleep_timer_handler(struct timer_list *t)
+>>   	queue_work(ar_sdio->workqueue, &ar_sdio->wr_async_work);
+>>   }
+>>   
+>> +/* Drop any requests still queued on wr_asyncq without touching the bus.
+>> + * Caller must ensure wr_async_work is not running concurrently.
+>> + */
+>> +static void ath10k_sdio_drop_wr_async_reqs(struct ath10k *ar)
+>> +{
+>> +	struct ath10k_sdio *ar_sdio = ath10k_sdio_priv(ar);
+>> +	struct ath10k_sdio_bus_request *req, *tmp_req;
+>> +
+>> +	spin_lock_bh(&ar_sdio->wr_async_lock);
+>> +
+>> +	list_for_each_entry_safe(req, tmp_req, &ar_sdio->wr_asyncq, list) {
+>> +		struct ath10k_htc_ep *ep;
+>> +
+>> +		list_del(&req->list);
+>> +
+>> +		if (req->htc_msg) {
+>> +			ep = &ar->htc.endpoint[req->eid];
+>> +			ath10k_htc_notify_tx_completion(ep, req->skb);
+>> +		} else if (req->comp) {
+>> +			complete(req->comp);
+> 
+> In ath10k_sdio_irq_disable(), irqs_disabled_comp is on the stack. If
+> wait_for_completion_timeout() expires, the function frees the skb and returns while the
+> request may still be on wr_asyncq. ath10k_sdio_hif_stop() then reaches this branch and
+> calls complete() on a dead stack frame.
+
+This seems to be a pre-exist issue.
+Got it, will add a check/clean for this case.
+
+
