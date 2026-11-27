@@ -1,73 +1,74 @@
-Authentication-Results: smtp.subspace.kernel.org; arc=none smtp.remote-ip=188.40.28.6
+Authentication-Results: smtp.subspace.kernel.org; arc=none smtp.remote-ip=185.171.202.116
 ARC-Seal: i=1; d=subspace.kernel.org; s=arc20261015; a=rsa-sha256; cv=none;
-	t=1795792788;
-	b=G28K/lin3VP3csDTfUVo6TgQ3aFvFaVqMDPSycZWLNYO3vpvT3ZNxe/AZjxty9jiYJFe
-	 GQ7ok2gDuLorcnyKckqhAwx7L+3wquKzQ5/LA/pPnDLvErnVbkG5xawZqYkVbE/roHLh3
-	 bo/665Q/GjR0JWeN1l9+Qd9LBn4KGYRaTfnfDhTguLb3DaUZ/RmUfIKt/eRP8Nk8gFj/N
-	 x6XlLKToirsFKtX0E849rE9UduGm35w/vMuodUlC0G7fc9prCJpYtDV1T+1Od05YJcmoH
-	 C+/0MX4JjbT/DfcQ3pHuyfNkLMgZtkdEEF40ejCdYDROP5peB5ZA0qx5w1ove4AQThA==
+	t=1795792875;
+	b=zmhtjW86FXzId50Xk2e8DBTx+wrJRbx0/3dvqHr6M2JWKNnObtcGD0L3RAYe3Lto53xx
+	 9Oek53zXQjBwIHpEDmiQ0d1HP4ealIlcfbm3d4xqnLoNenzJUAAraBUycUAbzssF+LeGb
+	 x4M5RXaYov67xrDf4IvcHGdBdGXFk9MwLvU4sLpRz3rYYQiqHDdU116RF5uktMSPDeuGe
+	 jvPxHtdUKQSA10lKw+OoKrd2kRdqt3wCaPEEjvQC4ZS96x0WvOJDjXwFYoaIYjwF+u7Hb
+	 B5xhz0khGbnlhbIS64Ych1HD4PXDdsL+94CtggIoeuM9qsT55w62nZCBi+nhswpdXvw==
 ARC-Message-Signature: i=1; d=subspace.kernel.org; s=arc20261015;
-	a=rsa-sha256; c=relaxed/relaxed; t=1795792788;
-	h=DMARC-Filter:DKIM-Signature:Received:Received:Date:Message-ID:From:
-	 To:Cc:Subject:In-Reply-To:User-Agent:Content-Type:MIME-Version:
-	 Content-Disposition:X-Virus-Scanned;
-	bh=dkcMOzJjPc57i8bWfDakpUbthvo68oprBqixehbv5jA=;
-	b=wKTIROkD+52T3SEgHDqw5rrclUx3ekvXLvbMNUODRNswGkfiURNAy7XSgIfoBh3vr8Yb
-	 ot9iLJsVhNBxfDm8pPAjvJpSMgkJwLJwV6dC9kCWwCUzWMa88FX/TEJlJTZCfmPalTLf4
-	 DquEuX3+eEB4wzH75kBP1dtGA/vbUtPAK7E74Rkm7XGwVS/s+xMTjthMUYPeP9olYADc6
-	 9AUTcbJE3+Pn7LTMZHYfJ1E2IPETZbncU1rVRGy0RaucsV5ZBhA4KORQIA2Xd1cGT6RdE
-	 DdwCikejjQC7dlTLzHXFKsK3BPhzLj6HfheBpte27UbfvsPbP3RwSBlqiiBgDpkI39A==
+	a=rsa-sha256; c=relaxed/relaxed; t=1795792875;
+	h=DMARC-Filter:Received:Received:Received:DKIM-Signature:From:To:Cc:
+	 Subject:In-Reply-To:References:Date:Message-ID:MIME-Version:
+	 Content-Type:Content-Transfer-Encoding:X-Last-TLS-Session-Version;
+	bh=i6mw9sdJNKc0bR6xeYzFhrtrP5H5/PZvSYQnf6nHX60=;
+	b=KPadZei+FDvlfx/FjAF6YQ4rtZ2BhzSy3/w6bE9nPMMzNL3MCF2cXsed19UK5UDJVnTG
+	 QxxnwjUSHZEO1luY0WZJ8p5zfP9IjB+n8WI8VfTgLDuTC4PGbrSVWq9A9C1tDo7U6jLg+
+	 iZqmV3gpkxdxAe21HuxDe0CdKoKmvSjdiCLU5X6ccDssQsJch5L4TxA6npfPOboTYJUuS
+	 kOtPvDGSLrh8SsF8oy8jhJkcwE4msVRevKWz3Xr+0b6gkzNQobsb2iayM6wY+wUq5GlVP
+	 c0DohsyiWAgP5OiYvtDK7YW8jZp9WhK1xL/TSW0Z6T31sHHo1MBDdHzHB0EjhXAKLbw==
 ARC-Authentication-Results: i=1; smtp.subspace.kernel.org; 
-	dmarc=none header.from=rfdeck.de;
-	spf=pass smtp.mailfrom=rfdeck.de;
-	dkim=pass header.d=rfdeck.de header.i=@rfdeck.de header.a=rsa-sha256 header.s=default2609 header.b=MQzEOjlv;
-	arc=none smtp.remote-ip=188.40.28.6
-Received: from www226.your-server.de (www226.your-server.de [188.40.28.6])
+	dmarc=pass header.from=bootlin.com;
+	spf=pass smtp.mailfrom=bootlin.com;
+	dkim=pass header.d=bootlin.com header.i=@bootlin.com header.a=rsa-sha256 header.s=dkim header.b=WgOMW7z6;
+	arc=none smtp.remote-ip=185.171.202.116
+Received: from smtpout-04.galae.net (smtpout-04.galae.net [185.171.202.116])
 	(using TLSv1.3 with cipher TLS_AES_256_GCM_SHA384 (256/256 bits)
 	 key-exchange X25519 server-signature ECDSA (prime256v1) server-digest SHA256)
 	(No client certificate requested)
-	by smtp.subspace.kernel.org (Postfix) with ESMTPS id 303F0606A321;
-	Fri, 27 Nov 2026 15:19:46 +0000 (UTC)
-DMARC-Filter: OpenDMARC Filter v1.4.2 smtp.subspace.kernel.org 303F0606A321
-Authentication-Results: smtp.subspace.kernel.org; dmarc=none (p=none dis=none) header.from=rfdeck.de
-Authentication-Results: smtp.subspace.kernel.org; spf=pass smtp.mailfrom=rfdeck.de
+	by smtp.subspace.kernel.org (Postfix) with ESMTPS id 8EF0A606A31C;
+	Fri, 27 Nov 2026 15:21:14 +0000 (UTC)
+DMARC-Filter: OpenDMARC Filter v1.4.2 smtp.subspace.kernel.org 8EF0A606A31C
+Authentication-Results: smtp.subspace.kernel.org; dmarc=pass (p=reject dis=none) header.from=bootlin.com
+Authentication-Results: smtp.subspace.kernel.org; spf=pass smtp.mailfrom=bootlin.com
 Authentication-Results: smtp.subspace.kernel.org;
-	dkim=pass (2048-bit key, unprotected) header.d=rfdeck.de header.i=@rfdeck.de header.a=rsa-sha256 header.s=default2609 header.b=MQzEOjlv
-DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed; d=rfdeck.de;
-	s=default2609; h=MIME-Version:Content-Type:In-Reply-To:Subject:Cc:To:From:
-	Message-ID:Date:Sender:Reply-To:Content-Transfer-Encoding:Content-ID:
-	Content-Description:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc
-	:Resent-Message-ID:References;
-	bh=dkcMOzJjPc57i8bWfDakpUbthvo68oprBqixehbv5jA=; b=MQzEOjlvOUzyVgXzXAeyjP9p1a
-	xQ9whmmhPeBOArGgBsozvlMNRrykCb4i3MJMQHdfff0wdfU5XnrdF0QBexKIYKUIUjOwjmFa16aCu
-	xlI7Hew4VqJ4JI/5w+IaUBAoSp/UZWWqEGnGC4nWe5mSCW9j56+opULXGrW+z6mlFldqoHpKbmQsU
-	hHWCjzzwNXwtzSW6tz10WRds2d0BFvXAFOZBo0av3puUwWx7Zy6sTwKc9eNwv1POx8mUvfYlCBkxS
-	cbHICFEhOY0aIwZN5AhsQWg9dMDStsagGpVvGeT3POCzMoeeAzoM5SIVF4RXP1UxVuKYqh8VL3c/E
-	vC1xXTeA==;
-Received: from sslproxy04.your-server.de ([78.46.152.42])
-	by www226.your-server.de with esmtpsa  (TLS1.3) tls TLS_AES_256_GCM_SHA384
-	(Exim 4.96.2)
-	(envelope-from <martin@rfdeck.de>)
-	id 1xWxjk-0003eS-19;
-	Fri, 27 Nov 2026 16:19:44 +0100
-Received: from [192.168.0.33] (helo=mail.your-server.de)
-	by sslproxy04.your-server.de with esmtpsa  (TLS1.3) tls TLS_AES_256_GCM_SHA384
-	(Exim 4.96)
-	(envelope-from <martin@rfdeck.de>)
-	id 1xWxjj-000HZD-36;
-	Fri, 27 Nov 2026 16:19:43 +0100
-Date: Fri, 27 Nov 2026 16:19:43 +0100
-Message-ID: <20261127161943.Horde.JkGhYA0aQ3kFZkRWztLNi5H@mail.your-server.de>
-From: martin@rfdeck.de
-To: niko3x@proton.me
-Cc: Ping-Ke Shih <pkshih@realtek.com>, linux-wireless@vger.kernel.org, Luka
- Gejak <luka.gejak@linux.dev>, Bitterblue Smith <rtl8821cerfe2@gmail.com>,
- linux-kernel@vger.kernel.org
-Subject: Re: [PATCH RFT rtw-next v2 0/2] wifi: rtw88: honour rate, retries
- and bandwidth of injected frames
-In-Reply-To: <20261127-b4-rtw88-inject-v2-0-f9701b9243a3@proton.me>
-User-Agent: Horde Application Framework 5
-Content-Type: text/plain; charset=utf-8; format=flowed; DelSp=Yes
+	dkim=pass (2048-bit key) header.d=bootlin.com header.i=@bootlin.com header.a=rsa-sha256 header.s=dkim header.b=WgOMW7z6
+Received: from smtpout-01.galae.net (smtpout-01.galae.net [212.83.139.233])
+	by smtpout-04.galae.net (Postfix) with ESMTPS id 2F3D4C6223E;
+	Fri, 27 Nov 2026 15:21:21 +0000 (UTC)
+Received: from mail.galae.net (mail.galae.net [212.83.136.155])
+	by smtpout-01.galae.net (Postfix) with ESMTPS id 59A9B6049C;
+	Fri, 27 Nov 2026 15:21:12 +0000 (UTC)
+Received: from [127.0.0.1] (localhost [127.0.0.1]) by localhost (Mailerdaemon) with ESMTPSA id A220111E90BF7;
+	Fri, 27 Nov 2026 16:21:02 +0100 (CET)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=bootlin.com; s=dkim;
+	t=1795792870; h=from:subject:date:message-id:to:cc:mime-version:content-type:
+	 content-transfer-encoding:in-reply-to:references;
+	bh=i6mw9sdJNKc0bR6xeYzFhrtrP5H5/PZvSYQnf6nHX60=;
+	b=WgOMW7z6/do/Zi5EXR/oDhIOSSEO+5LCxTfRQ3lwDO1YJaqa4aaS9ylzJVF42pURA4lJcC
+	WOKBUGefVLV/Dhnsaa6YT6koMcqYMlHLaJ/xNsO4SlDYbg8o15tfrnTa65pIn+dvmDpDy4
+	7wiM27MFSCZr3hrMTxGuaLZ7q0gOxCTt1Jb9TRHUnfIMjo5UobX6bm8uecdWps0W56Sv7Y
+	eeSxm6sFkOo1CmFfsiSvB0FDeoRa3Wf+L1fOcXEYu40SOgwhCclI98Usaz8djWUiz/Epj0
+	efiusozeU2fAGmI1E3F/9uShQJlVH9WlqnNwgMQbFd36HHOA6e6gPWtlpOgf2w==
+From: Gregory CLEMENT <gregory.clement@bootlin.com>
+To: Georgi Valkov <gvalkov@gmail.com>, briannorris@chromium.org,
+ johannes@sipsolutions.net, andrew@lunn.ch, krzk+dt@kernel.org
+Cc: francesco@dolcini.it, johannes.berg@intel.com, kees@kernel.org,
+ miriam.rachel.korenblit@intel.com, rongqianfeng@vivo.com,
+ wenst@chromium.org, rafael.beims@toradex.com, avraham.stern@intel.com,
+ error27@gmail.com, s.kerkmann@pengutronix.de,
+ sebastian.hesselbarth@gmail.com, robh@kernel.org, conor+dt@kernel.org,
+ Frank.Li@nxp.com, chunfan.chen@gmail.com, arend.vanspriel@broadcom.com,
+ peddolla.reddy@oss.qualcomm.com, linux-arm-kernel@lists.infradead.org,
+ linux-wireless@vger.kernel.org, linux-kernel@vger.kernel.org,
+ devicetree@vger.kernel.org, gvalkov@gmail.com
+Subject: Re: [PATCH v9 3/3] ARM: dts: armada: WRT3200ACM: add
+ marvell,invalid-reg-hint-in-rom
+In-Reply-To: <20260827175850.89395-3-gvalkov@gmail.com>
+References: <20260827175850.89395-1-gvalkov@gmail.com>
+ <20260827175850.89395-3-gvalkov@gmail.com>
+Date: Fri, 27 Nov 2026 16:21:01 +0100
+Message-ID: <87jyly1esi.fsf@BLaptop.bootlin.com>
 X-Mailing-List: linux-wireless@vger.kernel.org
 List-Id: <linux-wireless.vger.kernel.org>
 List-Post: <mailto:linux-wireless@vger.kernel.org>
@@ -77,44 +78,82 @@ List-Unsubscribe: <mailto:linux-wireless+unsubscribe@vger.kernel.org>
 List-Owner: <mailto:linux-wireless+owner@vger.kernel.org>
 Precedence: list
 MIME-Version: 1.0
-Content-Disposition: inline
-X-Virus-Scanned: Clear (ClamAV 1.4.6/28194/Wed Nov 25 07:26:59 2026)
+Content-Type: text/plain; charset=utf-8
+Content-Transfer-Encoding: quoted-printable
+X-Last-TLS-Session-Version: TLSv1.3
 
-Hi Ahmet,
+Hello Georgi,
 
-I tested v2 on an RTL8812AU (rtw88_8812au, USB, firmware 52.14.0),
-5 GHz channel 36 at 80 MHz (5180/5210), kernel 7.0.0-43 (Ubuntu), with
-both patches applied to the Ubuntu source (offsets only). Sniffer is an
-mt7921u on the same channel and width. Each case was run with an
-unpatched build from the same source and with v2.
+> WRT3200ACM and WRT32x routers always report a fixed US regulatory domain
+> from the mwifiex ROM, which conflicts with the platform regulatory
+> configuration on units sold outside the US market. For example:
+> - phy0 mwlwifi 5 GHz, hard-coded region 98 EU mapped to FR
+> - phy1 mwlwifi 2.4 GHz, hard-coded region 98 EU mapped to FR
+> - phy2 mwifiex 2.4 and 5 GHz, hard-coded region US
+>
+> When the system boots, it detects a conflict between the user selected
+> region and the radios, e.g. BG FR US, and applies extreme restrictions,
+> preventing phy0 from starting on any DFS channel. phy2 works.
+>
+> Add node wifi@1 with a flag marvell,invalid-reg-hint-in-rom to the
+> WRT3200ACM device-tree, which signals mwifiex that its regulatory
+> hint from ROM conflicts with the platform and should be ignored, so the
+> platform regulatory domain can be used. This does not allow the user to
+> change the regulatory config of any radio. It only allows phy0 to start
+> and operate according to its certified configuration. All radios in
+> WRT3200ACM/WRT32x are locked to the hard-coded configuration for which
+> they are certified.
+>
+> On WRT3200ACM, the platform configuration is stored on the devinfo mtd3
+> partition, which is read-only: cert_region=3DEU modelNumber=3DWRT3200ACM-=
+EU
+>
+> The Linux kernel sources do not have support for WRT32x. An equivalent
+> patch for these routers has to be sent to OpenWrt.
+>
+> [1] https://github.com/kaloz/mwlwifi/issues/173#issuecomment-307879699
+> [2] https://github.com/openwrt/openwrt/issues/9956
 
-Without the patches every injected frame went out at 6 Mbit/s and,
-to an absent station, about 49 times. With v2:
+the binding and the driver was merged, let's apply the dt now
 
-- rate: legacy 6/24/54, HT MCS0 and MCS7 (long and short GI) and
-   VHT MCS0 at 80 MHz arrived as requested, one copy each
-- bandwidth: HT MCS7 at 20/40 MHz and VHT MCS7 at 20/40/80 MHz on the
-   80 MHz channel arrived with the requested width; VHT 80 MHz with the
-   monitor on a 40 MHz channel was dropped (also without the patches)
-- retries, unicast to an absent station, 6 Mbit/s: retries 0, 6 and 40
-   gave 1, 7 and at most 31 copies; NO_ACK gave 1 copy; retries 6
-   without a rate kept the old behaviour (about 49); a rate without a
-   retries field gave 1 copy
-- station mode on an own test AP still works (ping 10/10)
-
-Three cases arrived with no frames at all at the sniffer: HT MCS15,
-VHT MCS9 at 80 MHz with short GI and VHT MCS7 NSS2 at 80 MHz. The two
-adapters were next to each other (about -15 dBm), so this may be the
-sniffer, not the sender; I'll repeat those with more distance.
-
-> Luka, could you check the TX status of injected NO_ACK frames to an
-> absent station?
-
-With your debug line (debug_mask=0x2), injected unicast frames to an
-absent station report CCX status 0x80, both with NO_ACK and with
-retries 0, with and without the patches. So such a NO_ACK frame comes
-back as not acked here as well.
+Applied on mvebu/dt
 
 Thanks,
-Martin
 
+Gregory
+
+>
+> Signed-off-by: Georgi Valkov <gvalkov@gmail.com>
+> ---
+>  arch/arm/boot/dts/marvell/armada-385-linksys-rango.dts | 9 +++++++++
+>  1 file changed, 9 insertions(+)
+>
+> diff --git a/arch/arm/boot/dts/marvell/armada-385-linksys-rango.dts b/arc=
+h/arm/boot/dts/marvell/armada-385-linksys-rango.dts
+> index 4ab45f294de2..2bf29981a031 100644
+> --- a/arch/arm/boot/dts/marvell/armada-385-linksys-rango.dts
+> +++ b/arch/arm/boot/dts/marvell/armada-385-linksys-rango.dts
+> @@ -165,6 +165,15 @@ &sdhci {
+>  	wp-inverted;
+>  	bus-width =3D <8>;
+>  	status =3D "okay";
+> +
+> +	#address-cells =3D <1>;
+> +	#size-cells =3D <0>;
+> +
+> +	wifi@1 {
+> +		compatible =3D "marvell,sd8897";
+> +		reg =3D <1>;
+> +		marvell,invalid-reg-hint-in-rom;
+> +	};
+>  };
+>=20=20
+>  &usb3_1_vbus {
+> --=20
+> 2.55.0
+>
+
+--=20
+Gr=C3=A9gory CLEMENT, Bootlin
+Embedded Linux and Kernel engineering
+https://bootlin.com
