@@ -1,86 +1,81 @@
-Authentication-Results: smtp.subspace.kernel.org; arc=none smtp.remote-ip=211.75.126.72
+Authentication-Results: smtp.subspace.kernel.org; arc=none smtp.remote-ip=125.209.209.39
 ARC-Seal: i=1; d=subspace.kernel.org; s=arc20261015; a=rsa-sha256; cv=none;
-	t=1795760610;
-	b=KSPif2InKS2eZzRgB2kIDEPQfa0IxSXMeqxzKqrQByIj5yGKUfKvMJ+agnWybuF3YZ64
-	 9m3/zjcLH+2B327Tb5IJuuSAj2apcj9wN6tpAMyWGoTlVISslBusjktSeUheYzlh3cJkI
-	 HkqfT5wjza2KfAh6rGXLTEKRiC9z92m1zlnsB7R1CiSiVYZFBfJxoayq/u+RQXAbJeYmD
-	 N4cQ7DFbtYUibEFcvC3Cms4KDl/eRnnwgaXRWWN+BcFA/m10tP9C982ZsU3HyRhHtiiv3
-	 gszYmRE48sLINaYxu8cfJK/7FOtxEmXM8BXAlHsqr5l56lUSjmGx8ybVzpMkJGsU8Dg==
+	t=1795760701;
+	b=UAw3uxgRv+aMxz/ymS5s33wCAykrLqbtyTbETO+Q9Ulw43eOAFm0M+h+ue2NUJkEFgVK
+	 2J2gToAcw09dM/m7zzwapvY0sw/SJJkhS1btSNPfnZ0D3xid8Tj5+741j0lEBbKywRHYg
+	 ML2/zdqDQP/ZszAyBsSRh4THzYOD+ZtiumKrzekJCp3dKDZPHtjlZUswNRXlbAH4tQujq
+	 Il3HMt9OLOkNHM68iULj/4lOho9AHQY3IzuNl2WMPmrz3+qsyzQL3tyAMbPvFwgHSI4oE
+	 svADSJrcSwBYxlHqVWhgFBHMTC+awV51MwoaS+BiBwmdZyPu942YloCJHL02lDIERTA==
 ARC-Message-Signature: i=1; d=subspace.kernel.org; s=arc20261015;
-	a=rsa-sha256; c=relaxed/relaxed; t=1795760610;
-	h=DMARC-Filter:X-SpamFilter-By:DKIM-Signature:Received:Received:
-	 Received:Received:From:To:CC:Subject:Thread-Topic:Thread-Index:Date:
-	 Message-ID:References:In-Reply-To:Accept-Language:Content-Language:
-	 x-originating-ip:Content-Type:Content-Transfer-Encoding:MIME-Version;
-	bh=VBIt+qdAst8yPVKvtQ+E8Xjhi1bgbwChpLbiiXzW4ME=;
-	b=PDsYrDhXTpuTL0wxtijW84Cy0Q+eGwjCVfQOAdpr81WEBgaRaLxZgkrhTUdPFZNlCmrj
-	 skidx/CUyoxgyWLu+Ef+H26oNsJNDbP6EZy+EYDlp3Pk1yUG85A2BhHT5qY/fC3YkSfJ7
-	 pL3aiDx79brfrS+jo5rrvOy+jyvLKQHJOJggC+4z1i4nImUfwM2bH9mfuAVuB9BWaAITc
-	 w46qQO4Vor85Bbt8mzO6/6bUFpfrvp9iChPCT3l9Iaut5NPeNqZUuNDmLSjfsRJUSvtYS
-	 Scbzyt4vsTSIINxC/gJTrKGq9aC0Jr7TTrFyjAAwalBQAjpDTjd0hjxGbu64KiaQI+w==
+	a=rsa-sha256; c=relaxed/relaxed; t=1795760701;
+	h=DMARC-Filter:DKIM-Signature:X-Originating-IP:Received:DKIM-Signature:
+	 X-Session-ID:X-Originating-IP:X-Works-Send-Opt:X-Works-Smtp-Source:
+	 Received:From:To:Cc:Subject:Date:Message-ID:MIME-Version:
+	 Content-Transfer-Encoding;
+	bh=/VL5LrZqDgkoP34bCauWfwlbzS110rLmFK1pvGJxQdU=;
+	b=Y4OW8Lo9wEmDGKq/RXFvILcx3+TeMAXRqT/qqEb8xbdz6OQOXw87bmTS2UFWhOLTW8lH
+	 RDEGmOuWXbQoXz/5Oyoq9AKICnbwtdufHb5m/UUHsfez8qqdpFzjS1YJIndg+pPjJjZ/0
+	 uy7Z8/Iy8TX/11Vvc3sW5UzyECdBce8328z16sFZGIebelXv/RLsdj1f6Iv/MuvabK7fA
+	 WzLEln+VD+Ye2T772BDsmAYrlkCxyMatE/10vp9Ds9H+y/I06RGkpG8bPtLiWAwnkVmug
+	 EAHq3Uc1iH1lncYLaML8ag1AZg7H6aOfBJGSudEPtbMmRvdcOedCCESvzKc4cbaqAug==
 ARC-Authentication-Results: i=1; smtp.subspace.kernel.org; 
-	dmarc=pass header.from=realtek.com;
-	spf=pass smtp.mailfrom=realtek.com;
-	dkim=pass header.d=realtek.com header.i=@realtek.com header.a=rsa-sha256 header.s=dkim header.b=iT3g5sWi;
-	arc=none smtp.remote-ip=211.75.126.72
-Received: from rtits2.realtek.com.tw (rtits2.realtek.com [211.75.126.72])
+	dmarc=pass header.from=skku.edu;
+	spf=pass smtp.mailfrom=skku.edu;
+	dkim=pass header.d=worksmobile.com header.i=@worksmobile.com header.a=rsa-sha256 header.s=s20171120 header.b="Sh/UYUD5";
+	dkim=pass header.d=skku.edu header.i=@skku.edu header.a=rsa-sha256 header.s=naverworks header.b=ln3LvFzR;
+	arc=none smtp.remote-ip=125.209.209.39
+Received: from cvsmtppost101.wmail.worksmobile.com (cvsmtppost101.wmail.worksmobile.com [125.209.209.39])
 	(using TLSv1.3 with cipher TLS_AES_256_GCM_SHA384 (256/256 bits)
 	 key-exchange X25519 server-signature ECDSA (prime256v1) server-digest SHA256)
 	(No client certificate requested)
-	by smtp.subspace.kernel.org (Postfix) with ESMTPS id 8C0EB606A337;
-	Fri, 27 Nov 2026 06:23:27 +0000 (UTC)
-DMARC-Filter: OpenDMARC Filter v1.4.2 smtp.subspace.kernel.org 8C0EB606A337
-Authentication-Results: smtp.subspace.kernel.org; dmarc=pass (p=none dis=none) header.from=realtek.com
-Authentication-Results: smtp.subspace.kernel.org; spf=pass smtp.mailfrom=realtek.com
+	by smtp.subspace.kernel.org (Postfix) with ESMTPS id 77865606A31E
+	for <linux-wireless@vger.kernel.org>; Fri, 27 Nov 2026 06:24:59 +0000 (UTC)
+DMARC-Filter: OpenDMARC Filter v1.4.2 smtp.subspace.kernel.org 77865606A31E
+Authentication-Results: smtp.subspace.kernel.org; dmarc=pass (p=none dis=none) header.from=skku.edu
+Authentication-Results: smtp.subspace.kernel.org; spf=pass smtp.mailfrom=skku.edu
 Authentication-Results: smtp.subspace.kernel.org;
-	dkim=pass (2048-bit key) header.d=realtek.com header.i=@realtek.com header.a=rsa-sha256 header.s=dkim header.b=iT3g5sWi
-X-SpamFilter-By: ArmorX SpamTrap 5.80 with qID 6AR6N9NY0730705, This message is accepted by code: ctloc85258
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=realtek.com; s=dkim;
-	t=1795760589; bh=VBIt+qdAst8yPVKvtQ+E8Xjhi1bgbwChpLbiiXzW4ME=;
-	h=From:To:CC:Subject:Date:Message-ID:References:In-Reply-To:
-	 Content-Type:Content-Transfer-Encoding:MIME-Version;
-	b=iT3g5sWiphHLMwLLLSxyart7ugUZ9bHBNmRdRwWTrSDAaT46JpfMGe3AXrvbfiynh
-	 ZXB5Hs9pK6Xk678GIst3Px5w0wSCX1HbuyZv/kAy8vuQos/UOfLdv7tLyMA2Z597Nh
-	 JpbAgTLThHDd8nbeRMYWe0cMBUF3gRdq/q1OXqKa+EIxKFJPlDA/mNE1KOecSxOrh/
-	 Lm5nTt5YOL+xaKimNB1pQU8gAyY+vPST8vsbkBwtzdklesyyGBg+UTHiXAhzdvscbm
-	 dzbIjz0sxgygvGSketkwwCN/bku8fF7eQNJVZ6XLWZNK4NhD+v6PIKZ2lu4T1Em5qD
-	 vtiXpprTdiehg==
-Received: from mail.realtek.com (rtkexhmbs04.realtek.com.tw[10.21.1.54])
-	by rtits2.realtek.com.tw (8.15.2/3.29/5.94) with ESMTPS id 6AR6N9NY0730705
-	(version=TLSv1.2 cipher=ECDHE-RSA-AES256-GCM-SHA384 bits=256 verify=FAIL);
-	Fri, 27 Nov 2026 14:23:09 +0800
-Received: from RTKEXHMBS01.realtek.com.tw (172.21.6.40) by
- RTKEXHMBS04.realtek.com.tw (10.21.1.54) with Microsoft SMTP Server
- (version=TLS1_2, cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id
- 15.2.2562.56; Fri, 27 Nov 2026 14:23:09 +0800
-Received: from RTKEXHMBS06.realtek.com.tw (10.21.1.56) by
- RTKEXHMBS01.realtek.com.tw (172.21.6.40) with Microsoft SMTP Server
- (version=TLS1_2, cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id
- 15.2.2562.56; Fri, 27 Nov 2026 14:23:09 +0800
-Received: from RTKEXHMBS06.realtek.com.tw ([fe80::eeeb:c765:ca73:5eef]) by
- RTKEXHMBS06.realtek.com.tw ([fe80::eeeb:c765:ca73:5eef%10]) with mapi id
- 15.02.2562.056; Fri, 27 Nov 2026 14:23:09 +0800
-From: Ping-Ke Shih <pkshih@realtek.com>
-To: Mehmet Fide <mehmet.fide@gmail.com>
-CC: Luka Gejak <luka.gejak@linux.dev>, Bitterblue Smith
-	<rtl8821cerfe2@gmail.com>, "linux-wireless@vger.kernel.org"
-	<linux-wireless@vger.kernel.org>, "linux-kernel@vger.kernel.org"
-	<linux-kernel@vger.kernel.org>, "mehmet.fide@screeningeagle.com"
-	<mehmet.fide@screeningeagle.com>
-Subject: RE: [PATCH rtw-next v14 2/3] wifi: rtw88: support channel switch in
- AP mode
-Thread-Topic: [PATCH rtw-next v14 2/3] wifi: rtw88: support channel switch in
- AP mode
-Thread-Index: AQHdee+p8j6aIxstNkarBQ/O0oJacrdBdPNg
-Date: Fri, 27 Nov 2026 06:23:09 +0000
-Message-ID: <84030084b4f24c4199a85cf05fae10b0@realtek.com>
-References: <20261121193644.603289-1-mehmet.fide@gmail.com>
- <20261121193644.603289-3-mehmet.fide@gmail.com>
-In-Reply-To: <20261121193644.603289-3-mehmet.fide@gmail.com>
-Accept-Language: en-US, zh-TW
-Content-Language: zh-TW
-Content-Type: text/plain; charset="us-ascii"
-Content-Transfer-Encoding: quoted-printable
+	dkim=pass (2048-bit key, unprotected) header.d=worksmobile.com header.i=@worksmobile.com header.a=rsa-sha256 header.s=s20171120 header.b=Sh/UYUD5;
+	dkim=pass (2048-bit key, unprotected) header.d=skku.edu header.i=@skku.edu header.a=rsa-sha256 header.s=naverworks header.b=ln3LvFzR
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=worksmobile.com;
+	s=s20171120; t=1795760691;
+	bh=JNNNSkeFJW6OxNUVkNfwiEMhxptL1YqOV/wD8XX8GnU=;
+	h=From:To:Subject:Date:Message-ID:From:Subject:Feedback-ID:
+	 X-Works-Security;
+	b=Sh/UYUD5tio6NPOMI7qiU3GQj2iX8vjpa51OmxPsnqLa+xGwKUdvNdoW0Mekh67bu
+	 ORrVrK5q034lsSE8NGb0BTlYfXyca0YIptagUQf/qdrpJVx8rVs4RzP6jyru9UaD45
+	 Z9rzJCO3cOW+opmkZGdfu77FbvpSfJTk4Iyw1pL3gvF7LLjots9sp4UCG2TetTk1d4
+	 huU6iOCm3XwSO1hjP6h9R5rOtU4tA/H1z4ZlvSWouzvjio4Gu4OWplIbTv/DnzAumC
+	 B5pdfkZQw4pxav3C8l+C08Wn3Bryn3kRbuN5AI5Dtpsq9phk69fnjcdVQ1awVIkUjw
+	 Vfl3i57IN1Esw==
+Received: from kr1-hmac-real-6 ([10.174.201.129])
+  by cvsmtppost101.wmail.worksmobile.com with ESMTP id EJm9sJ5IQ-CsI3u+TLZ4cQ
+  for <linux-wireless@vger.kernel.org>;
+  Fri, 27 Nov 2026 06:24:51 -0000
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=skku.edu; s=naverworks;
+	t=1795760691; bh=JNNNSkeFJW6OxNUVkNfwiEMhxptL1YqOV/wD8XX8GnU=;
+	h=From:To:Subject:Date:Message-ID:From:Subject:Feedback-ID:
+	 X-Works-Security;
+	b=ln3LvFzRq/KiVERmupQfNIdTOyme9AFQrESwLyJPpvxubsN/OgUskketq+73ADolb
+	 El6AeI7GMeBAFJaZmQKvDGodN2+IbzNUcbyXIzJU6BUldMO7lyuGXbxjKNy23vruD4
+	 KClu3yP/sTHBwzzFm0QjF3nliX7mA0XRfkz4WEcJi/Yh8JM3RBvDxjQ4Kt1xAAtIbF
+	 yVPiJVzCoFUkQJ0Wd9ENoDY8s1DB3hw/XhLxv2Sat9QG6mGV7W0QxLZa3HUloARnZi
+	 +7WPRI5lVyEqlMBAuHKoh1YJpca01FkxrtW4TImGuooPQ2aEiCZwX/rLy53J4O+GWf
+	 HauU0AS5L94Vg==
+X-Session-ID: lj2z8a81TmKP5CPvIvjBhQ
+X-Works-Send-Opt: w/KXFqgmKAKmKAFYKqMqKA2mFAurjAumKAgmKxEmKqK/aAtwaBmmjAFYKxM/axKmKo2rFBwYjAg=
+X-Works-Smtp-Source: fdKZFqElFqJZ+HmwaxU/+6E=
+Received: from d20be28ee783.tail196be.ts.net ([115.145.173.180])
+  by cvnsmtp104.wmail.worksmobile.com with ESMTP id lj2z8a81TmKP5CPvIvjBhQ
+  for <multiple recipients>
+  (version=TLSv1.3 cipher=TLS_AES_256_GCM_SHA384);
+  Fri, 27 Nov 2026 06:24:51 -0000
+From: Kyuwon Cho <kyuwon.cho@skku.edu>
+To: Johannes Berg <johannes@sipsolutions.net>
+Cc: Arik Nemtsov <arik@wizery.com>,
+	linux-wireless@vger.kernel.org
+Subject: [PATCH wireless] wifi: mac80211: delete only a TDLS peer when a TDLS setup times out
+Date: Fri, 27 Nov 2026 15:24:50 +0900
+Message-ID: <179575981569.1588942.5602808785682214558@skku.edu>
 X-Mailing-List: linux-wireless@vger.kernel.org
 List-Id: <linux-wireless.vger.kernel.org>
 List-Post: <mailto:linux-wireless@vger.kernel.org>
@@ -90,72 +85,73 @@ List-Unsubscribe: <mailto:linux-wireless+unsubscribe@vger.kernel.org>
 List-Owner: <mailto:linux-wireless+owner@vger.kernel.org>
 Precedence: list
 MIME-Version: 1.0
+Content-Transfer-Encoding: 8bit
 
-Mehmet Fide <mehmet.fide@gmail.com> wrote:
-> @@ -857,12 +878,16 @@ static int rtw_ops_suspend(struct ieee80211_hw *hw,
->                            struct cfg80211_wowlan *wowlan)
->  {
->         struct rtw_dev *rtwdev =3D hw->priv;
-> +       struct ieee80211_vif *csa_vif;
->         int ret;
->=20
->         mutex_lock(&rtwdev->mutex);
-> +       csa_vif =3D rtwdev->csa_vif;
-> +       rtw_fw_csa_stop(rtwdev, csa_vif);
->         ret =3D rtw_wow_suspend(rtwdev, wowlan);
->         if (ret)
->                 rtw_err(rtwdev, "failed to suspend for wow %d\n", ret);
-> +       rtwdev->csa_wow_vif =3D ret ? NULL : csa_vif;
+ieee80211_tdls_mgmt_setup() keeps the peer of a TDLS setup in
+sdata->u.mgd.tdls_peer and queues tdls_peer_del_work, which destroys
+the station with that address unless the setup completes within
+TDLS_PEER_SETUP_TIMEOUT. The address survives a disconnect and the work
+does not check that the station is a TDLS peer, so a setup sent to the
+address of another AP destroys that AP's station if the interface
+associates with it in the meantime. ieee80211_set_disassoc() then finds
+no AP station and returns early, and conn_mon_timer and bcn_mon_timer
+are still armed when the interface is freed:
 
-Have you actually tested WoWLAN with AP mode operating CSA?=20
-If not, I prefer not resuming CSA.=20
+  WARNING: net/mac80211/mlme.c:4531 at ieee80211_set_disassoc+0x15bb/0x1c50
+   ieee80211_mgd_deauth.cold (net/mac80211/mlme.c:10842)
+   cfg80211_mlme_deauth (net/wireless/rdev-ops.h:551 net/wireless/mlme.c:581)
+   cfg80211_disconnect (net/wireless/sme.c:666 net/wireless/sme.c:1582)
+  ...
+  BUG: KASAN: use-after-free in __run_timers (include/linux/list.h:1047 kernel/time/timer.c:892 kernel/time/timer.c:1783 kernel/time/timer.c:2375)
+  Write of size 8 at addr ff11000012d19b08 by task swapper/0/0
+   __run_timers (include/linux/list.h:1047 kernel/time/timer.c:892 kernel/time/timer.c:1783 kernel/time/timer.c:2375)
+   timer_expire_remote (kernel/time/timer.c:2387 kernel/time/timer.c:2379 kernel/time/timer.c:2137)
+   tmigr_handle_remote_up (kernel/time/timer_migration.c:985 kernel/time/timer_migration.c:1076)
+   run_timer_softirq (kernel/time/timer.c:2410)
+   handle_softirqs (kernel/softirq.c:669)
 
-As I know, we can only support STA mode WoWLAN under single one interface
-combination.
+Only destroy the station if it is a TDLS peer, as commit 6f0a100df853
+("wifi: mac80211: only operate on TDLS peers in the TDLS code") does in
+the other TDLS paths.
 
->         mutex_unlock(&rtwdev->mutex);
->=20
->         return ret ? 1 : 0;
-> @@ -871,12 +896,18 @@ static int rtw_ops_suspend(struct ieee80211_hw *hw,
->  static int rtw_ops_resume(struct ieee80211_hw *hw)
->  {
->         struct rtw_dev *rtwdev =3D hw->priv;
-> +       struct ieee80211_vif *csa_vif;
->         int ret;
->=20
->         mutex_lock(&rtwdev->mutex);
->         ret =3D rtw_wow_resume(rtwdev);
->         if (ret)
->                 rtw_err(rtwdev, "failed to resume for wow %d\n", ret);
-> +       csa_vif =3D rtwdev->csa_wow_vif;
-> +       rtwdev->csa_wow_vif =3D NULL;
-> +       if (!ret && csa_vif && csa_vif->bss_conf.csa_active &&
-> +           csa_vif->bss_conf.enable_beacon)
-> +               rtw_fw_csa_start(rtwdev, csa_vif, false);
->         mutex_unlock(&rtwdev->mutex);
->=20
->         return ret ? 1 : 0;
+Fixes: 17e6a59a365a ("mac80211: cleanup TDLS state during failed setup")
+Assisted-by: Claude:claude-opus-5-5
+Signed-off-by: Kyuwon Cho <kyuwon.cho@skku.edu>
+---
+The issue was found by an LLM-guided test generator that we are
+developing as a research prototype. We reproduce it with
+mac80211_hwsim radios in a user and network namespace: the station
+connects to AP A, sends a failing TDLS setup request to the address of
+AP B, and connects to B. Without the patch, B's station is gone 16
+seconds later, the next disconnect warns as above, and KASAN reports
+the use-after-free a few seconds after the station interface is
+deleted. With it, the AP station stays and neither shows up. The
+reproducer is available on request.
 
-[...]
+Found and tested on mainline 9437ee8b6cf6 (v7.4-rc4-571, with KASAN);
+the code is the same in wireless (35c42b20ac87), where the patch
+applies as is.
 
-> --- a/drivers/net/wireless/realtek/rtw88/main.h
-> +++ b/drivers/net/wireless/realtek/rtw88/main.h
-> @@ -2096,6 +2096,12 @@ struct rtw_dev {
->         struct work_struct ips_work;
->         struct work_struct fw_recovery_work;
->         struct work_struct update_beacon_work;
-> +       struct delayed_work csa_beacon_work;
-> +       struct ieee80211_vif *csa_vif;
-> +       struct ieee80211_vif *csa_wow_vif;
-> +       ktime_t csa_due;
-> +       u8 csa_count;
-> +       bool csa_retry;
+ net/mac80211/tdls.c | 5 ++++-
+ 1 file changed, 4 insertions(+), 1 deletion(-)
 
-Create a struct to hold these CSA data?
-
->=20
->         /* used to protect txqs list */
->         spinlock_t txq_lock;
-> --
-> 2.56.0
+diff --git a/net/mac80211/tdls.c b/net/mac80211/tdls.c
+index 8ae01c277fd2..b260513858a2 100644
+--- a/net/mac80211/tdls.c
++++ b/net/mac80211/tdls.c
+@@ -33,8 +33,11 @@ void ieee80211_tdls_peer_del_work(struct wiphy *wiphy, struct wiphy_work *wk)
+ 	lockdep_assert_wiphy(local->hw.wiphy);
+ 
+ 	if (!is_zero_ether_addr(sdata->u.mgd.tdls_peer)) {
++		struct sta_info *sta = sta_info_get(sdata, sdata->u.mgd.tdls_peer);
++
+ 		tdls_dbg(sdata, "TDLS del peer %pM\n", sdata->u.mgd.tdls_peer);
+-		sta_info_destroy_addr(sdata, sdata->u.mgd.tdls_peer);
++		if (sta && sta->sta.tdls)
++			sta_info_destroy_addr(sdata, sdata->u.mgd.tdls_peer);
+ 		eth_zero_addr(sdata->u.mgd.tdls_peer);
+ 	}
+ }
+-- 
+2.43.0
 
