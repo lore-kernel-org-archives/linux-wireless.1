@@ -1,81 +1,96 @@
-Authentication-Results: smtp.subspace.kernel.org; arc=none smtp.remote-ip=125.209.209.39
-ARC-Seal: i=1; d=subspace.kernel.org; s=arc20261015; a=rsa-sha256; cv=none;
-	t=1795792963;
-	b=KvmFUQ4sNYNMtUGZrm9+javP7T6fLacIxh/wbcisfbv1lokyezzbCg6OKfBcL9LVW4yO
-	 C4uaDriMNqsMHtadAEfd9oh+gUaEXfhCevzlsZbFfWHh7CY9i8sUQlYoWQIg7ZB77K8Gf
-	 nZ5RCZTNxGsrEPSxiQFgocnSccSmheZrEowN75OqtxRS6wc7pbjW91Ad0RElf2vtFdrqu
-	 OGoF6fFmA0kVA1UjyqMuUrNJ02tMJq83p5JYvi0+4xPfQmmSXHiYJCi6lVxasxLr9tUj4
-	 hs0JhDALAJojwkfqx7bWeoF/LSA9ayvMw9ne4u+i1WG/+wFMLRcQj6TkEWa3dHY4LJg==
-ARC-Message-Signature: i=1; d=subspace.kernel.org; s=arc20261015;
-	a=rsa-sha256; c=relaxed/relaxed; t=1795792963;
-	h=DMARC-Filter:DKIM-Signature:X-Originating-IP:Received:DKIM-Signature:
-	 X-Session-ID:X-Originating-IP:X-Works-Send-Opt:X-Works-Smtp-Source:
-	 Received:From:To:Cc:Subject:Date:Message-ID:MIME-Version:
-	 Content-Transfer-Encoding;
-	bh=HH9KwZ4xlVWu+DEU8vcIQXT4NkC3IO+FUYtAOZP9KTk=;
-	b=CoCOKehSS4urHeacR3jmt2VXelm5BUtBB4DFOSf+l73D7NbibXGse0VIFDDUNpZLa6W3
-	 KSWbLLJsczZeED8pnyxI/4434CKIhrpBe9Z/PHI2wLlDLO/uTlQmv6gE1eq/7I3k2r/+l
-	 c6qlD9YByscOzqCbNu2JBqfAykKBq45Sy50As/+nDhphCNjNdEwFv5crRObvEFUpwR0+R
-	 U48J65rQQwSDT9fcXLQrUSYOEKnFd6GPeZDEBs6fhBFN9JrBLv6N/NW+3FCgs7xoyG/Nl
-	 YeQqrlQ5ke/Qh0WX/211ASvAYFcZGXP4mCD9VylSo2omtLGbXYlmSpTD3gCp4RN5tCA==
-ARC-Authentication-Results: i=1; smtp.subspace.kernel.org; 
-	dmarc=pass header.from=skku.edu;
-	spf=pass smtp.mailfrom=skku.edu;
-	dkim=pass header.d=worksmobile.com header.i=@worksmobile.com header.a=rsa-sha256 header.s=s20171120 header.b=XwoF7FxH;
-	dkim=pass header.d=skku.edu header.i=@skku.edu header.a=rsa-sha256 header.s=naverworks header.b=EcY2Oopi;
-	arc=none smtp.remote-ip=125.209.209.39
-Received: from cvsmtppost101.wmail.worksmobile.com (cvsmtppost101.wmail.worksmobile.com [125.209.209.39])
-	(using TLSv1.3 with cipher TLS_AES_256_GCM_SHA384 (256/256 bits)
+Authentication-Results: smtp.subspace.kernel.org; arc=pass header.oldest-pass=0 smtp.remote-ip=209.85.128.171
+ARC-Seal: i=2; d=subspace.kernel.org; s=arc20261015; a=rsa-sha256; cv=pass;
+	t=1795793507;
+	b=XXsYNBeoKbXrs0ALPgoI4LrVWjUUAgeUI5M9qwVhgyBrK2nrk0D40oY5JP052oUrUeBC
+	 F8ESlc/3Osxqu//tPYHgMsNvyD2dqG877Ed1bGGdXoYjYHwn7tmtqopmftpATt4DrzWG/
+	 CRx3lN3v55wfKIcUrjxpw0AYhLz1VREb2qoVzYdBVzy74NvFIBwasXkFvrVgGm2wvKrbx
+	 8QsQUb/VZAsAo7LELC9Dk/GPwb55XNScywLocT8VbGn/KTNs3reVKahjGV8DEAxwr19M/
+	 TtGWRSIq9RhiIi5UUzZU6aUaUCVG/ASr81xE5twsMpx8boHyZ+lTWWTuaylOE7pamvw==
+ARC-Message-Signature: i=2; d=subspace.kernel.org; s=arc20261015;
+	a=rsa-sha256; c=relaxed/relaxed; t=1795793507;
+	h=DMARC-Filter:Received:DKIM-Signature:X-Google-DKIM-Signature:
+	 X-Gm-Message-State:X-Gm-Gg:X-Received:MIME-Version:From:Date:
+	 X-Gm-Features:Message-ID:Subject:To:Cc:Content-Type;
+	bh=B0qbJ8g2Vdj9HAdNnwCKwtoZV+3naWX33A2WnJvViLI=;
+	b=bQG++umqhBcMvkRi8D7Njj89J03BozUNvOToWAc/a0rhnK3q7feFKne2vTu2Y4B3zyIu
+	 RPNja6Fy4Yn0fbaumLp7irEeFksd0gcnFl6xSvIC/uCHtPdWNdp8gP7OfGlSxOYilbDaT
+	 iPtkCw4IEa/hSKU71Ti1F+w7owUm/JV+ebkS98O1fl7yDmUpnnQGzIgCr+HcH/rpfxR26
+	 VpFTgpurpDkb3YrNttxWSyL6C81QLo1CxUd0C7+tGDQ1mEx9lgvXo3OGnTCnuys/a/KO6
+	 bV/XD4dn9z/AZob1eKU375X5AjTUm60m3PMW+rK91xaEbS34UxeiFbPpL+KjQtnM2dw==
+ARC-Authentication-Results: i=2; smtp.subspace.kernel.org; 
+	dmarc=pass header.from=gmail.com;
+	spf=pass smtp.mailfrom=gmail.com;
+	dkim=pass header.d=gmail.com header.i=@gmail.com header.a=rsa-sha256 header.s=20260707 header.b=oFGyoydc;
+	arc=pass header.oldest-pass=0 smtp.remote-ip=209.85.128.171
+Received: from mail-yw1-f171.google.com (mail-yw1-f171.google.com [209.85.128.171])
+	(using TLSv1.3 with cipher TLS_AES_128_GCM_SHA256 (128/128 bits)
 	 key-exchange X25519 server-signature ECDSA (prime256v1) server-digest SHA256)
 	(No client certificate requested)
-	by smtp.subspace.kernel.org (Postfix) with ESMTPS id B7F42606A321
-	for <linux-wireless@vger.kernel.org>; Fri, 27 Nov 2026 15:22:38 +0000 (UTC)
-DMARC-Filter: OpenDMARC Filter v1.4.2 smtp.subspace.kernel.org B7F42606A321
-Authentication-Results: smtp.subspace.kernel.org; dmarc=pass (p=none dis=none) header.from=skku.edu
-Authentication-Results: smtp.subspace.kernel.org; spf=pass smtp.mailfrom=skku.edu
+	by smtp.subspace.kernel.org (Postfix) with ESMTPS id 63FAD606A31E
+	for <linux-wireless@vger.kernel.org>; Fri, 27 Nov 2026 15:31:46 +0000 (UTC)
+DMARC-Filter: OpenDMARC Filter v1.4.2 smtp.subspace.kernel.org 63FAD606A31E
+Authentication-Results: smtp.subspace.kernel.org; dmarc=pass (p=none dis=none) header.from=gmail.com
+Authentication-Results: smtp.subspace.kernel.org; spf=pass smtp.mailfrom=gmail.com
 Authentication-Results: smtp.subspace.kernel.org;
-	dkim=pass (2048-bit key) header.d=worksmobile.com header.i=@worksmobile.com header.a=rsa-sha256 header.s=s20171120 header.b=XwoF7FxH;
-	dkim=pass (2048-bit key) header.d=skku.edu header.i=@skku.edu header.a=rsa-sha256 header.s=naverworks header.b=EcY2Oopi
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=worksmobile.com;
-	s=s20171120; t=1795792956;
-	bh=5Luthm/fBMMXB7tO03FBc1jPioKY9O3w7Xr0tjAIirc=;
-	h=From:To:Subject:Date:Message-ID:From:Subject:Feedback-ID:
-	 X-Works-Security;
-	b=XwoF7FxHmpklhnFD5oDVHIVxbuLXsSXl1wTjwBaLfokMv7sNwyAoiepFBWRuna7mU
-	 SMkXNPcEdl/Gg4kFAGmd9cLaljLFSYg+3iMj1ZoOKQx7y/fFdOdNkiMJ1QymsITDLH
-	 /foMs07MpBZnZgFFbTXonvH90vrPB2+kO4s+4eJVa4pLhounbn3X90jDVzAcHd3Cjt
-	 wTEXGGtT9qI0m85VgXF5XlqulghX6YuHUhZwmBbvt7xQOl/XuDvGGWCQT7cyV8Ucn0
-	 syUxu1bTe9ePe332pBkm9T4XQS6ONtW1sekAM6XGQABtlX1K0JZG7zTIcPMi2LOT3T
-	 h244wv3kQPzQg==
-Received: from kr1-hmac-real-2 ([10.174.201.129])
-  by cvsmtppost101.wmail.worksmobile.com with ESMTP id NEwPXCclRo+O2nOGe6Zm2A
-  for <linux-wireless@vger.kernel.org>;
-  Fri, 27 Nov 2026 15:22:36 -0000
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=skku.edu; s=naverworks;
-	t=1795792956; bh=5Luthm/fBMMXB7tO03FBc1jPioKY9O3w7Xr0tjAIirc=;
-	h=From:To:Subject:Date:Message-ID:From:Subject:Feedback-ID:
-	 X-Works-Security;
-	b=EcY2OopiS9H32AFBvQyi0Pdp0KqRfZTvL/Zy+i74tg7ShI2wDQqCZrkZWpJ62B9pW
-	 xYSEOWyqGU+SkYZKxo/q6QDXRlKVQIqbuML4Jq2M83hW8dRSYGyGrjIVMKtq7muDMv
-	 XD5cBZ2JeRHJAf47+2Ipcpz3ii3RkD8Zwi+Wxe1Dww+hgpofGwX1C13s7oXLy+FV7L
-	 WL9oIvPLoU++6cMJd63prFNxG12Rez37g0q5YkA6Rb88jCycd/JmHY8s+m0q2xrC+F
-	 04elG8YlrOJ/Y+LmzMO0lIQtaMAfuKiTK4UJOsc1+0p5qJy4A3JPyTUqPpirC6KVB5
-	 kylF2jo0IP8jw==
-X-Session-ID: ZAYgYhUaSHKGm9JxiZuTgw
-X-Works-Send-Opt: w/KXFqgmKAKmKAFYKqMqKA2mFAurjAumKAgmKxEmKqK/aAtwaBmmjAFYKxM/axKmKo2rFBwYjAg=
-X-Works-Smtp-Source: AqKrFqElFqJZ+HmrFxEm+6E=
-Received: from d20be28ee783.tail196be.ts.net ([115.145.173.180])
-  by cvnsmtp104.wmail.worksmobile.com with ESMTP id ZAYgYhUaSHKGm9JxiZuTgw
-  for <multiple recipients>
-  (version=TLSv1.3 cipher=TLS_AES_256_GCM_SHA384);
-  Fri, 27 Nov 2026 15:22:36 -0000
-From: Kyuwon Cho <kyuwon.cho@skku.edu>
-To: Johannes Berg <johannes@sipsolutions.net>
-Cc: Muna Sinada <muna.sinada@oss.qualcomm.com>,
-	linux-wireless@vger.kernel.org
-Subject: [PATCH wireless] wifi: mac80211: remove an AP_VLAN's stations before its links
-Date: Sat, 28 Nov 2026 00:22:35 +0900
-Message-ID: <179579257178.2074758.15817445529933771357@skku.edu>
+	dkim=pass (2048-bit key) header.d=gmail.com header.i=@gmail.com header.a=rsa-sha256 header.s=20260707 header.b=oFGyoydc
+Received: by mail-yw1-f171.google.com with SMTP id 00721157ae682-8b4e246acc2so58867287b3.3
+        for <linux-wireless@vger.kernel.org>; Fri, 27 Nov 2026 07:31:46 -0800 (PST)
+ARC-Seal: i=1; a=rsa-sha256; t=1795793505; cv=none;
+        d=google.com; s=arc-20260327;
+        b=a9UtzHkdjscJJaf1T2GH60O10RPB/mVkP+aSSGgMqS5sHSw1V+AW8T1v1hIWQJm07+
+         D6lUGN42INdfxTvIOLsK8LaoKInTdlGwHL8iHw/zXOA9Ik4GsjJNoyCzuaFlKZjnVzW7
+         1HyNmrIfvpPotsapJaBSvCC5RHNSrNqq4YFrdVqRBIHCwayR413OQLA1EMVsy/7QdS8N
+         jd7HbhCuusyvV/1Lm9RbMPXdi6BUFZR2UJZJuKxibOj+PSYghneGa2eJ+BdjtvnOpigJ
+         wtt3bv5GQsnEq2L1MACFW4Xuq1q7/G7r0YkduLxv3Gk4HIraOoxB1YwKKkiZ13GKTYX3
+         1SPA==
+ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=google.com; s=arc-20260327;
+        h=cc:to:subject:message-id:date:from:mime-version:dkim-signature;
+        bh=B0qbJ8g2Vdj9HAdNnwCKwtoZV+3naWX33A2WnJvViLI=;
+        fh=A6Vivuh0th99pI8xmBv/sfZnnCXEKvaXEbIDLQ4Rrjo=;
+        b=oqKIFMQdC2W9NE+YjJrqZbkPSe5WhWsXz0VmNbM7RoSqA8dzVzHOA4vGBw4HDluz+L
+         XOU1dEhlzcrVT993IwURVQyDOjr+uZBryEaiP7JZX3tHurz9lu5ARYYoAeteeEqg8a9X
+         zwdvyIis+rmPUR+2hYbe0oPdiVDbbMzvHKvK/eDpvkIj4vGt14y+Ye+DseacvAp+RQBw
+         3zeUdr9l5qQBSJ/gCQzUCfKDzd+3AC2/xknrN8Y9Jxm90RxmXNq0DN4iejWNjn8RlG8v
+         My5X9Vv8u+LJWTv0gJqvQccm6yfNsQa/xCwIl4slI5QHg1C0vO1ofuuWAzz2vMnRIpbG
+         QbgQ==;
+        darn=vger.kernel.org
+ARC-Authentication-Results: i=1; mx.google.com; arc=none
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+        d=gmail.com; s=20260707; t=1795793505; x=1796398305; darn=vger.kernel.org;
+        h=content-type:cc:to:subject:message-id:date:from:mime-version:from
+         :to:cc:subject:date:message-id:reply-to:content-type;
+        bh=B0qbJ8g2Vdj9HAdNnwCKwtoZV+3naWX33A2WnJvViLI=;
+        b=oFGyoydcTM4xxsBrg6DiGiIo/VittTX4SQ3DgnEjqp962VrX52Af7bN3dxXmqy0jmo
+         4WWxEtA4mGeC/7vjRjq/Wj/3gJQjQsHenVtIKEur09QtcXJ7dbVTKa+IbXXvU1UZ2zNO
+         ZqFEUGoTHEbnEf/ZxvOKrUg9P4yExiFve8m9i+r7eIbbGpJ+dgZlzQ+m8UNA7qqDbCPK
+         Cgp7b1RSr6A4ocIf1aT9rAmGYBn3+GEmzJZXyvqHDSHj9Fjzxb7GGnyBkp+qVSBSzXaj
+         QWFyQTn6Ug4rMnQL35I53jRkJt/2/HxSkmRiR4WCklrtHwvwD71f3oIY4aYY6mdv2aG2
+         1MuQ==
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+        d=1e100.net; s=20260707; t=1795793505; x=1796398305;
+        h=content-type:cc:to:subject:message-id:date:from:mime-version
+         :x-gm-gg:x-gm-message-state:from:to:cc:subject:date:message-id
+         :reply-to:content-type;
+        bh=B0qbJ8g2Vdj9HAdNnwCKwtoZV+3naWX33A2WnJvViLI=;
+        b=mndzv31AEQu+k300OwZ7CWdwn/hrws7T+dWLswpFqz69kxc8oRK0dzjNXyD+MNhnXQ
+         2WPsu2dpbRPPKm3thU1PLSJl6WNaGBT9G4yJxclBm5+qEDH7lywSnK+mwE8af+D3g7yJ
+         C1IloEKdbwkXmpctwowAy9NDFaywASlNQd/6P1Url0KNbSRYBXdT8TXfPeVuYAt+N+iA
+         rTFuajV6OJnXOB5JPVCzuqnDNif0y4PbOI0ntZ3h6SHvI2dV9GbSzo0XFRHDEhY1+1O0
+         KMpkwFu6OS7ZDAZfph84mQlJueCgX5NV7PGLOjfM3A0mXdXIl5T423DByKGagjo7Nbbu
+         +vAA==
+X-Gm-Message-State: APuU4Z+wjmT/ntTNKljk/c/Obc86+Exh7Vkb8HrHRa/ypdTgYXC5PbVv
+	d6amcyeVW3e9K/cbfehFyT65Nbok63dZ4eW7Ix75qtprbU6Orgf3mwddHpSggdvpQ0p+9h22RZi
+	cQUNjOZwfBoqICcpSVdSGy/9OO4SP94U=
+X-Gm-Gg: AZFdTZfGzyV8+r3nibo/NSHzWRRl1AerisF/pNwqDmU1cfhUiNWf0Dq/VVbp1hUhWNu
+	h09vUogvHsWleFROKcOCSrekFxF+2sTp2Plp3ZUSCaQlyu7GLwZTSuu5MbyVxnlD0+3echHqu5p
+	LIMAiBbguvkIZ5A+UWClu4eKSuZjLH+3s8Mz+JbkTPf5h0qohr9GmD5v3RZysnvulOjz8WVnmM5
+	gdze6yM10zPqT85RzMWSrTs3Z4A1HHxxzaYBWqocAY8dqFwUSsRdAES2ZgrhQd90aX/zdVjpw0n
+	n+G2tiuTIrLVXVScLEY2Y/nAvcpoJKuCIqmoRdFAAFXHypRqhlCDc4FhMo2Ez6DVMskuEOo3UFg
+	CkNn+WsdUIy37b0/eTbGp3tNl62xdfU6hUN3XWA92ZAnrDKudZ4LQq1nQEC0xErkTzEUQC+UgiV
+	c50k1lvX8WwURupU3gJ/8hGRBIu5fZiqB77cFJpN0F
+X-Received: by 2002:a05:690c:6982:b0:8b3:bb2f:4101 with SMTP id
+ 00721157ae682-8b5204aa181mr108453437b3.34.1795793505179; Fri, 27 Nov 2026
+ 07:31:45 -0800 (PST)
 X-Mailing-List: linux-wireless@vger.kernel.org
 List-Id: <linux-wireless.vger.kernel.org>
 List-Post: <mailto:linux-wireless@vger.kernel.org>
@@ -85,238 +100,89 @@ List-Unsubscribe: <mailto:linux-wireless+unsubscribe@vger.kernel.org>
 List-Owner: <mailto:linux-wireless+owner@vger.kernel.org>
 Precedence: list
 MIME-Version: 1.0
-Content-Transfer-Encoding: 8bit
+From: Collin Rose <collinr@gmail.com>
+Date: Fri, 27 Nov 2026 10:31:34 -0500
+X-Gm-Features: Aa3M54p9EKYq_L9WbiXSSrQ1XaZaTTZu0S9JTeSvbioCYnR5ZVi5HGZBdKcjSO4
+Message-ID: <CA+d3OrdhgXy8Dhfi_V=9sEqU=FK4tDzt4HVgOz9Uqw7OTP+8Jg@mail.gmail.com>
+Subject: [PATCH wireless] wifi: brcmfmac: use legacy MBSS when
+ interface_create is unsupported
+To: arend.vanspriel@broadcom.com
+Cc: linux-wireless@vger.kernel.org, brcm80211@lists.linux.dev, 
+	brcm80211-dev-list.pdl@broadcom.com
+Content-Type: text/plain; charset="UTF-8"
 
-ieee80211_do_stop() clears the links of an AP_VLAN before it flushes
-the interface's stations. If a station of an AP MLD was moved to the
-AP_VLAN, ieee80211_vif_update_links() still finds it while turning the
-AP_VLAN into a non-MLD, removes it and warns:
+Firmware that predates the interface_create iovar, for example BCM43602
+firmware 7.35.177.56 found on bcm53xx routers, cannot answer the version
+query that brcmf_cfg80211_request_ap_if() sends after interface_create
+v1 and v2 have failed:
 
-  WARNING: net/mac80211/link.c:321 at ieee80211_vif_update_links+0x1915/0x2160
-   ieee80211_vif_set_links (net/mac80211/link.c:473)
-   ieee80211_do_stop (net/mac80211/iface.c:515)
-   ieee80211_stop (net/mac80211/iface.c:871)
-   __dev_close_many (net/core/dev.c:1838)
-   netif_close_many (net/core/dev.c:1864)
-   dev_close (net/core/dev_api.c:221)
-   nl80211_del_interface (net/wireless/nl80211.c:5411)
+  brcmfmac: failed to create interface(v1), err=-52
+  brcmfmac: failed to create interface(v2), err=-52
+  brcmfmac: fail to get supported version, err=-52
 
-Clear the AP_VLAN's links after its stations are gone.
+The function then returns -EOPNOTSUPP and never reaches the bsscfg:ssid
+code a few lines below, which is how this firmware creates an additional
+AP BSS. Before commit 1562bdef9251 that was the only method used, so
+adding a second AP worked. Now the add_virtual_intf call fails with -95,
+and because hostapd configures every BSS of a radio together, it
+disables the whole radio, including the primary AP. A guest or second
+SSID therefore takes the primary network down.
 
-Fixes: 90233b0ad215 ("wifi: mac80211: Create separate links for VLAN interfaces")
-Assisted-by: Claude:claude-opus-5-5
-Signed-off-by: Kyuwon Cho <kyuwon.cho@skku.edu>
+Treat a failed version query like an unsupported version. Set the
+version to 0 so the switch default reports interface_create as
+unsupported, which is what already selects the bsscfg:ssid path.
+Firmware that answers the query takes the same code path as before.
+
+Tested on a SmartRG SR400ac (two BCM43602/1 PCIe radios, firmware
+7.35.177.56) running OpenWrt 25.12.6, which builds this driver from
+backports 6.18.55 on a 6.12.112 kernel. Without the change the second
+AP fails as above and both radios are disabled. With it, the driver
+logs the unsupported version, creates the BSS through bsscfg:ssid, and
+a primary and a second AP stay up together on 2.4 GHz and on 5 GHz.
+
+Fixes: 1562bdef9251 ("brcmfmac: Fix AP interface delete issue")
+Cc: stable@vger.kernel.org
+Signed-off-by: Collin Rose <collinr@gmail.com>
 ---
-The issue was found by an LLM-guided test generator that we are
-developing as a research prototype. A reproducer, which runs as any
-user with mac80211_hwsim built in (an AP MLD on link 1, an AP_VLAN, a
-station on link 1 moved to the AP_VLAN, then the AP_VLAN deleted):
+Notes for reviewers, not for the commit message:
 
-#define _GNU_SOURCE
-#include <linux/genetlink.h>
-#include <linux/nl80211.h>
-#include <net/if.h>
-#include <sched.h>
-#include <stdint.h>
-#include <stdio.h>
-#include <string.h>
-#include <sys/ioctl.h>
-#include <sys/socket.h>
-#include <unistd.h>
+* brcmf_cfg80211_request_sta_if() has the same early return, but it has
+  no legacy fallback to reach, so I left it alone.
 
-static int nl;
-static char buf[8192];
-static const uint8_t sta[6] = { 0x02, 0x00, 0x00, 0x00, 0x99, 0x01 };
+* The run above was with the backports copy of the driver on a 6.12
+  kernel, not a mainline build. The changed hunk is identical to the
+  current wireless tree. I have not tested other firmware or chips.
 
-static void *put(char *msg, int type, const void *data, int len)
-{
-	struct nlmsghdr *h = (void *)msg;
-	struct nlattr *a = (void *)(msg + NLMSG_ALIGN(h->nlmsg_len));
+* A change of this shape was first published for a Netgear R8000, which
+  has the same chip and firmware, in patches/861 of
+  https://github.com/88plug/netgear-r8000-plus (GPL-2.0). This is an
+  independent port to the current tree and a re-test on different
+  hardware.
 
-	a->nla_type = type;
-	a->nla_len = NLA_HDRLEN + len;
-	memcpy(a + 1, data, len);
-	h->nlmsg_len = NLMSG_ALIGN(h->nlmsg_len) + NLA_ALIGN(a->nla_len);
-	return a;
-}
+* The downstream OpenWrt pull request carrying the same change is
+  https://github.com/openwrt/openwrt/pull/26697
 
-static void put32(char *msg, int type, uint32_t v) { put(msg, type, &v, 4); }
+* If you would rather not print "not support interface create(v0)" at
+  error level for old firmware, I can send a follow-up.
 
-static char *req(int fam, int cmd)
-{
-	struct nlmsghdr *h = (void *)buf;
-	struct genlmsghdr *g = NLMSG_DATA(h);
+ drivers/net/wireless/broadcom/brcm80211/brcmfmac/cfg80211.c | 3 ++-
+ 1 file changed, 2 insertions(+), 1 deletion(-)
 
-	memset(buf, 0, sizeof(buf));
-	h->nlmsg_len = NLMSG_LENGTH(GENL_HDRLEN);
-	h->nlmsg_type = fam;
-	h->nlmsg_flags = NLM_F_REQUEST | NLM_F_ACK;
-	g->cmd = cmd;
-	return buf;
-}
+diff --git a/drivers/net/wireless/broadcom/brcm80211/brcmfmac/cfg80211.c
+b/drivers/net/wireless/broadcom/brcm80211/brcmfmac/cfg80211.c
+index 46714d871..87aabb7cd 100644
+--- a/drivers/net/wireless/broadcom/brcm80211/brcmfmac/cfg80211.c
++++ b/drivers/net/wireless/broadcom/brcm80211/brcmfmac/cfg80211.c
+@@ -760,7 +760,8 @@ static int brcmf_cfg80211_request_ap_if(struct
+brcmf_if *ifp)
+  &iface_create_ver);
+  if (err) {
+  brcmf_err("fail to get supported version, err=%d\n", err);
+- return -EOPNOTSUPP;
++ /* Old firmware: use the legacy bsscfg:ssid path below. */
++ iface_create_ver = 0;
+  }
 
-/* send and return the error of the ACK */
-static int xact(char *msg)
-{
-	struct nlmsghdr *h = (void *)msg;
-	int n;
-
-	send(nl, msg, h->nlmsg_len, 0);
-	while ((n = recv(nl, buf, sizeof(buf), 0)) > 0)
-		for (h = (void *)buf; NLMSG_OK(h, n); h = NLMSG_NEXT(h, n))
-			if (h->nlmsg_type == NLMSG_ERROR)
-				return ((struct nlmsgerr *)NLMSG_DATA(h))->error;
-	return -1;
-}
-
-static int family(const char *name)
-{
-	char *m = req(GENL_ID_CTRL, CTRL_CMD_GETFAMILY), reply[8192];
-	struct nlmsghdr *h = (void *)buf;
-	struct nlattr *a;
-	int len;
-
-	h->nlmsg_flags = NLM_F_REQUEST;
-	put(m, CTRL_ATTR_FAMILY_NAME, name, strlen(name) + 1);
-	send(nl, m, h->nlmsg_len, 0);
-	len = recv(nl, reply, sizeof(reply), 0);
-	h = (void *)reply;
-	a = (void *)((char *)NLMSG_DATA(h) + GENL_HDRLEN);
-	for (len = h->nlmsg_len - NLMSG_LENGTH(GENL_HDRLEN); len > 0;
-	     len -= NLA_ALIGN(a->nla_len), a = (void *)((char *)a + NLA_ALIGN(a->nla_len)))
-		if (a->nla_type == CTRL_ATTR_FAMILY_ID)
-			return *(uint16_t *)(a + 1);
-	return 0;
-}
-
-static void up(const char *ifname)
-{
-	struct ifreq ifr = { .ifr_flags = IFF_UP };
-	int s = socket(AF_INET, SOCK_DGRAM, 0);
-
-	strcpy(ifr.ifr_name, ifname);
-	ioctl(s, SIOCSIFFLAGS, &ifr);
-	close(s);
-}
-
-static int new_vlan(int nlf, int wlan0, const char *name, const uint8_t *mac)
-{
-	char *m = req(nlf, NL80211_CMD_NEW_INTERFACE);
-
-	put32(m, NL80211_ATTR_IFINDEX, wlan0);
-	put32(m, NL80211_ATTR_IFTYPE, NL80211_IFTYPE_AP_VLAN);
-	put(m, NL80211_ATTR_IFNAME, name, strlen(name) + 1);
-	put(m, NL80211_ATTR_MAC, mac, 6);
-	return xact(m);
-}
-
-int main(void)
-{
-	const uint8_t l1[6] = { 0x02, 0xaa, 0, 0, 0, 0x01 };
-	uint8_t head[] = { 0x80, 0, 0, 0, 0xff, 0xff, 0xff, 0xff, 0xff, 0xff,
-			   [10 ... 31] = 0, 100, 0, 1, 0,
-			   0, 4, 'm', 'l', 'd', '1', 1, 1, 0x82, 3, 1, 6 };
-	uint32_t f = 1 << NL80211_STA_FLAG_AUTHORIZED | 1 << NL80211_STA_FLAG_AUTHENTICATED |
-		     1 << NL80211_STA_FLAG_ASSOCIATED;
-	struct { uint32_t mask, set; } flags = { f, f };
-	uint8_t rates[] = { 0x82, 0x84, 0x8b, 0x96 };
-	struct ifreq ifr = { .ifr_name = "wlan0" };
-	uint16_t v16 = 1, cap = 0x0401;
-	uint8_t id = 1;
-	int hw, nlf, wlan0, vl0, s;
-	char *m;
-
-	if (unshare(CLONE_NEWUSER | CLONE_NEWNET))
-		return perror("unshare"), 1;
-	nl = socket(AF_NETLINK, SOCK_RAW, NETLINK_GENERIC);
-	hw = family("MAC80211_HWSIM");
-	nlf = family("nl80211");
-	m = req(hw, 4 /* HWSIM_CMD_NEW_RADIO */);
-	put(m, 25 /* HWSIM_ATTR_MLO_SUPPORT */, NULL, 0);
-	printf("NEW_RADIO (MLO): %d\n", xact(m));
-	wlan0 = if_nametoindex("wlan0");
-	s = socket(AF_INET, SOCK_DGRAM, 0);
-	ioctl(s, SIOCGIFHWADDR, &ifr);
-	m = req(nlf, NL80211_CMD_SET_INTERFACE);
-	put32(m, NL80211_ATTR_IFINDEX, wlan0);
-	put32(m, NL80211_ATTR_IFTYPE, NL80211_IFTYPE_AP);
-	printf("wlan0 to AP: %d\n", xact(m));
-	/* an AP MLD: add link 1 first, then start the AP on it */
-	up("wlan0");
-	m = req(nlf, NL80211_CMD_ADD_LINK);
-	put32(m, NL80211_ATTR_IFINDEX, wlan0);
-	put(m, NL80211_ATTR_MLO_LINK_ID, &id, 1);
-	put(m, NL80211_ATTR_MAC, l1, 6);
-	printf("ADD_LINK 1: %d\n", xact(m));
-	memcpy(head + 10, l1, 6);
-	memcpy(head + 16, l1, 6);
-	m = req(nlf, NL80211_CMD_START_AP);
-	put32(m, NL80211_ATTR_IFINDEX, wlan0);
-	put(m, NL80211_ATTR_MLO_LINK_ID, &id, 1);
-	put32(m, NL80211_ATTR_BEACON_INTERVAL, 100);
-	put32(m, NL80211_ATTR_DTIM_PERIOD, 2);
-	put(m, NL80211_ATTR_BEACON_HEAD, head, sizeof(head));
-	put(m, NL80211_ATTR_SSID, "mld1", 4);
-	put32(m, NL80211_ATTR_WIPHY_FREQ, 2437);
-	printf("START_AP link 1: %d\n", xact(m));
-	printf("vl0: %d\n", new_vlan(nlf, wlan0, "vl0", (uint8_t *)ifr.ifr_hwaddr.sa_data));
-	up("vl0");
-	vl0 = if_nametoindex("vl0");
-
-	m = req(nlf, NL80211_CMD_NEW_STATION);
-	put32(m, NL80211_ATTR_IFINDEX, wlan0);
-	put(m, NL80211_ATTR_MAC, sta, 6);
-	put(m, NL80211_ATTR_MLO_LINK_ID, &id, 1);
-	put(m, NL80211_ATTR_STA_AID, &v16, 2);
-	put(m, NL80211_ATTR_STA_LISTEN_INTERVAL, &v16, 2);
-	put(m, NL80211_ATTR_STA_CAPABILITY, &cap, 2);
-	put(m, NL80211_ATTR_STA_SUPPORTED_RATES, rates, sizeof(rates));
-	put(m, NL80211_ATTR_STA_FLAGS2, &flags, sizeof(flags));
-	printf("NEW_STATION on link 1: %d\n", xact(m));
-	m = req(nlf, NL80211_CMD_SET_STATION);
-	put32(m, NL80211_ATTR_IFINDEX, wlan0);
-	put(m, NL80211_ATTR_MAC, sta, 6);
-	put32(m, NL80211_ATTR_STA_VLAN, vl0);
-	printf("SET_STATION to vl0: %d\n", xact(m));
-	m = req(nlf, NL80211_CMD_DEL_INTERFACE);
-	put32(m, NL80211_ATTR_IFINDEX, vl0);
-	printf("DEL_INTERFACE vl0: %d\n", xact(m));
-	return 0;
-}
-
-Without the patch, deleting the AP_VLAN warns as above; with it, it
-does not.
-
-Found and tested on mainline 9437ee8b6cf6 (v7.4-rc4-571); the patch is
-against wireless (35c42b20ac87).
-
- net/mac80211/iface.c | 6 +++---
- 1 file changed, 3 insertions(+), 3 deletions(-)
-
-diff --git a/net/mac80211/iface.c b/net/mac80211/iface.c
-index 588f26611a10..0e371f1908a3 100644
---- a/net/mac80211/iface.c
-+++ b/net/mac80211/iface.c
-@@ -543,9 +543,6 @@ static void ieee80211_do_stop(struct ieee80211_sub_if_data *sdata, bool going_do
- 	case NL80211_IFTYPE_MONITOR:
- 		list_del_rcu(&sdata->u.mntr.list);
- 		break;
--	case NL80211_IFTYPE_AP_VLAN:
--		ieee80211_apvlan_link_clear(sdata);
--		break;
- 	default:
- 		break;
- 	}
-@@ -569,6 +566,9 @@ static void ieee80211_do_stop(struct ieee80211_sub_if_data *sdata, bool going_do
- 		     sdata->vif.type != NL80211_IFTYPE_NAN &&
- 		     sdata->vif.type != NL80211_IFTYPE_NAN_DATA && flushed > 0);
- 
-+	if (sdata->vif.type == NL80211_IFTYPE_AP_VLAN)
-+		ieee80211_apvlan_link_clear(sdata);
-+
- 	/* don't count this interface for allmulti while it is down */
- 	if (sdata->flags & IEEE80211_SDATA_ALLMULTI)
- 		atomic_dec(&local->iff_allmultis);
+  switch (iface_create_ver) {
 -- 
-2.43.0
-
+2.48.1
