@@ -1,60 +1,62 @@
-Authentication-Results: smtp.subspace.kernel.org; arc=none smtp.remote-ip=79.135.106.102
+Authentication-Results: smtp.subspace.kernel.org; arc=none smtp.remote-ip=95.143.172.20
 ARC-Seal: i=1; d=subspace.kernel.org; s=arc20261015; a=rsa-sha256; cv=none;
-	t=1795805792;
-	b=Yv1DQg/CofnXgZxhmTb2UnaowVhG2dTlC+5pJu5xOjDhYvLavmj4clreaTmV1OKwESZh
-	 kT2DIDAi0haBJrLjM8ZTb/hO2WwlOT5UzPKtdn232ytb8LTe2F2Nl5roMnuyFM8kFPauP
-	 QiJ+SvbciXEwbYrP2/SPJDoUwugciD1rR3+G1D4+EdT9b3/zHf+LQnGHIKGQaRHfBHTjw
-	 +SGQb2L5vumHQyPp1clcODx8l/pVarFj3xTYXog9zrimZSmkTYfk7mZu4jySh9Vj5jVtg
-	 2OXJNQIEZVtIbj5NAr9XFzpfXR2R7dryO1Xu/h9V69P7O8dpoNl6D0d01TRIPI/35Mg==
+	t=1795805911;
+	b=kHyowfzYp76aQS9u53xQboYtulThcer9Bu60g9X4qnqh6mscTIvotSUJN0a72nFDroiT
+	 KfIXVMm9xO7g6CjIbRoqWcIcT4NvgRpq21d/xqdennA6BQzlG+WHiqPgc3upg7e5LZTMI
+	 wBdfCxKyp6aWTTsd8pSbCf1g/2OTLuynuw9tMdoVBhwnUR6a5N22KUiqMp81ZcLWaiHfP
+	 kxu1q4n2s1qjPVE23tuy2mooCE04Ah4ntHdibQTBzcBf3WAFjdMehKDB79Oxis5Ucs9Qm
+	 mcbY50gH4mnK+V0K+jxV9nTGp52koOvE7QCc18TJDZ+y9KFUa0p5qBKF47IpntUzxlg==
 ARC-Message-Signature: i=1; d=subspace.kernel.org; s=arc20261015;
-	a=rsa-sha256; c=relaxed/relaxed; t=1795805792;
-	h=DMARC-Filter:DKIM-Signature:Date:To:From:Cc:Subject:Message-ID:
-	 In-Reply-To:References:Feedback-ID:X-Pm-Message-ID:MIME-Version:
-	 Content-Type:Content-Transfer-Encoding;
-	bh=1I69IFd7Tmg3JJp7yrDb8UavXsvpmNBRcQJmMmp7oKY=;
-	b=lDQ2PyEVwu0KpU7XYGXjpRI10hrG52CbOxGFN86TIjNbOHKa6nA4ta9kDI6KuC71ZobC
-	 mc37v+In4z8bXznwv/VG+FvNv4usfxNwbU5mKpSuXhCP+oaPcEQxhOxK7lYJjj04zduFa
-	 Qlw+f0HECEQr/oZoeAf6e9H9WnlDz0DWaz/esU8bGbW5Ff76s05+CMXWjSv1S13CcJ06M
-	 ZOTZuZBz0DXV5Nh/3cIcoZqZmfnBMAQU10KPUcJGYpVROKcyFG6WpZ9oaOSgrL6gLiTjV
-	 TGt4xc4cievS5jkD8Jci+zQTkD60qgaGPkEtjd+wd48uGEifCOjyQOquzv5BNglCWcQ==
+	a=rsa-sha256; c=relaxed/relaxed; t=1795805911;
+	h=DMARC-Filter:Received:Received:Received:From:To:Cc:Subject:Date:
+	 Message-ID:X-Mailer:MIME-Version:Content-Transfer-Encoding:
+	 X-Rspamd-Bar:X-Rspamd-Report:X-Rspamd-Score:DKIM-Signature;
+	bh=13Im6NjMRVUnMmBZBKdEmfUNzbWwvMI0PbIOHyXXUHA=;
+	b=nQGjE92myM84xujT5eqp975yPB6OwDwNhtJeRYa6cie75HtxPbo1F89tIertM0LLKCyg
+	 hX2zXxMbUyo+9XbX1xwmfPW+x+dFCIJjBgmhbBlkVDczgMjHrJBL+BGphNNPKs0ah1DGp
+	 N3Vgvy6lDG1etpicf/Cn8VTBLW72mlEe5jNtVHkHP0gS7E+f43i5jqowvXkM8gOJHrUHn
+	 R+6dw0hM3CwRzsWLAtg01gsvmGftSlcLnDrvui1L3XLY9WdWoq1AsGmujqxa1BP2snUPp
+	 6imo7ErxiCvAXXeO2mruVSslieAZeR40TRfOPC2HXbM0ihIvlGnyk71fJ+8Wg1mj0QQ==
 ARC-Authentication-Results: i=1; smtp.subspace.kernel.org; 
-	dmarc=pass header.from=proton.me;
-	spf=pass smtp.mailfrom=proton.me;
-	dkim=pass header.d=proton.me header.i=@proton.me header.a=rsa-sha256 header.s=protonmail2 header.b=tt1abWDV;
-	arc=none smtp.remote-ip=79.135.106.102
-Received: from mail-106102.protonmail.ch (mail-106102.protonmail.ch [79.135.106.102])
+	dmarc=pass header.from=david-bauer.net;
+	spf=pass smtp.mailfrom=david-bauer.net;
+	dkim=pass header.d=david-bauer.net header.i=@david-bauer.net header.a=rsa-sha256 header.s=uberspace header.b=KA61qEUH;
+	arc=none smtp.remote-ip=95.143.172.20
+Received: from mailgate01.uberspace.is (mailgate01.uberspace.is [95.143.172.20])
 	(using TLSv1.3 with cipher TLS_AES_256_GCM_SHA384 (256/256 bits)
 	 key-exchange X25519 server-signature ECDSA (prime256v1) server-digest SHA256)
 	(No client certificate requested)
-	by smtp.subspace.kernel.org (Postfix) with ESMTPS id 0B20E606A337;
-	Fri, 27 Nov 2026 18:56:30 +0000 (UTC)
-DMARC-Filter: OpenDMARC Filter v1.4.2 smtp.subspace.kernel.org 0B20E606A337
-Authentication-Results: smtp.subspace.kernel.org; dmarc=pass (p=quarantine dis=none) header.from=proton.me
-Authentication-Results: smtp.subspace.kernel.org; spf=pass smtp.mailfrom=proton.me
+	by smtp.subspace.kernel.org (Postfix) with ESMTPS id A158860A3816
+	for <linux-wireless@vger.kernel.org>; Fri, 27 Nov 2026 18:58:29 +0000 (UTC)
+DMARC-Filter: OpenDMARC Filter v1.4.2 smtp.subspace.kernel.org A158860A3816
+Authentication-Results: smtp.subspace.kernel.org; dmarc=pass (p=none dis=none) header.from=david-bauer.net
+Authentication-Results: smtp.subspace.kernel.org; spf=pass smtp.mailfrom=david-bauer.net
 Authentication-Results: smtp.subspace.kernel.org;
-	dkim=pass (2048-bit key, unprotected) header.d=proton.me header.i=@proton.me header.a=rsa-sha256 header.s=protonmail2 header.b=tt1abWDV
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=proton.me;
-	s=protonmail2; t=1795805789; x=1796064989;
-	bh=1I69IFd7Tmg3JJp7yrDb8UavXsvpmNBRcQJmMmp7oKY=;
-	h=Date:To:From:Cc:Subject:Message-ID:In-Reply-To:References:
-	 Feedback-ID:From:To:Cc:Date:Subject:Reply-To:Feedback-ID:
-	 Message-ID:BIMI-Selector;
-	b=tt1abWDVcuelrzw0ckHimYagxmXUlWWuu9aRcBY6p8pEjOK+bpVH6pWym59j2Ro2b
-	 H0oWHWySXq0boFQiyomIRyeILhCKyiwlBciyPqa+zhAtIR/cII5bWtTnwL41f10QHe
-	 TRN7NdCeJN4HZ+dfwCgBk0LZzK4FqfkvZcMXjNnKmGafLlGA6RXl2bLQyEWPhCEm2+
-	 x++44z5XuUTUMKHSc7RNxxmavxqIndXf9fL6AWaGSkkJWgtPGpX1g5HsYEcJb06AEC
-	 nebfL2TV/WqV0B6rvMDzDpUqcbActC66hpuzu65cXvvA6pCf0Gzor8qVglx9BE6kfu
-	 KaLn0kOI3wbtQ==
-Date: Fri, 27 Nov 2026 18:56:22 +0000
-To: martin@rfdeck.de
-From: Ahmet Zeren <niko3x@proton.me>
-Cc: Ping-Ke Shih <pkshih@realtek.com>, linux-wireless@vger.kernel.org, Luka Gejak <luka.gejak@linux.dev>, Bitterblue Smith <rtl8821cerfe2@gmail.com>, linux-kernel@vger.kernel.org
-Subject: Re: [PATCH RFT rtw-next v2 0/2] wifi: rtw88: honour rate, retries and bandwidth of injected frames
-Message-ID: <semDCz-DacL4vKeB_8iKu6ZwI8pQDusEK2fvgerTJWRkQ1MAxvs0nX-lSJviX_LDplBuBKniLMaMy9FtGH2_EkckFD-LR2YY6pPSPwrTCk0=@proton.me>
-In-Reply-To: <20261127161943.Horde.JkGhYA0aQ3kFZkRWztLNi5H@mail.your-server.de>
-References: <20261127161943.Horde.JkGhYA0aQ3kFZkRWztLNi5H@mail.your-server.de>
-Feedback-ID: 201311995:user:proton
-X-Pm-Message-ID: 6a6e11b9b171aceab7b34dbddf497597b20bc7f4
+	dkim=pass (4096-bit key) header.d=david-bauer.net header.i=@david-bauer.net header.a=rsa-sha256 header.s=uberspace header.b=KA61qEUH
+Received: from perseus.uberspace.de (perseus.uberspace.de [95.143.172.134])
+	by mailgate01.uberspace.is (Postfix) with ESMTPS id 34CAE61AF5
+	for <linux-wireless@vger.kernel.org>; Fri, 27 Nov 2026 19:58:27 +0100 (CET)
+Received: (qmail 18833 invoked by uid 988); 27 Nov 2026 18:58:27 -0000
+Authentication-Results: perseus.uberspace.de;
+	auth=pass (plain)
+Received: from unknown (HELO unknown) (::1)
+	by perseus.uberspace.de (Haraka/3.1.1) with ESMTPSA; Fri, 27 Nov 2026 19:58:26 +0100
+From: David Bauer <mail@david-bauer.net>
+To: Felix Fietkau <nbd@nbd.name>,
+	Lorenzo Bianconi <lorenzo@kernel.org>,
+	Ryder Lee <ryder.lee@mediatek.com>,
+	Shayne Chen <shayne.chen@mediatek.com>,
+	Sean Wang <sean.wang@mediatek.com>,
+	Matthias Brugger <matthias.bgg@gmail.com>,
+	AngeloGioacchino Del Regno <angelogioacchino.delregno@collabora.com>
+Cc: linux-wireless@vger.kernel.org,
+	linux-kernel@vger.kernel.org,
+	linux-arm-kernel@lists.infradead.org,
+	linux-mediatek@lists.infradead.org
+Subject: [PATCH mt76 1/2] wifi: mt76: mt7603: provide timeout trigger to mt7603_watchdog_check
+Date: Fri, 27 Nov 2026 19:58:14 +0100
+Message-ID: <20261127185819.1340117-1-mail@david-bauer.net>
+X-Mailer: git-send-email 2.53.0
 X-Mailing-List: linux-wireless@vger.kernel.org
 List-Id: <linux-wireless.vger.kernel.org>
 List-Post: <mailto:linux-wireless@vger.kernel.org>
@@ -64,38 +66,93 @@ List-Unsubscribe: <mailto:linux-wireless+unsubscribe@vger.kernel.org>
 List-Owner: <mailto:linux-wireless+owner@vger.kernel.org>
 Precedence: list
 MIME-Version: 1.0
-Content-Type: text/plain; charset=utf-8
-Content-Transfer-Encoding: quoted-printable
+Content-Transfer-Encoding: 8bit
+X-Rspamd-Bar: /
+X-Rspamd-Report: SUSPICIOUS_RECIPS(1.5) BAYES_HAM(-2.999999) MID_CONTAINS_FROM(1) MIME_GOOD(-0.1) R_MISSING_CHARSET(0.5)
+X-Rspamd-Score: -0.099999
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple;
+	d=david-bauer.net; s=uberspace;
+	h=from:to:cc:subject:date;
+	bh=7bfiLualbveH/vmJMKNmgItfJglWVbEZKv1+aO2WROo=;
+	b=KA61qEUHitWr/v+uWQ6eotK/cLd+8/jwqFNuAn97PzcFfuXoGmU2u1jnQDcJ7sePhaNaLooEyr
+	CtcJLYyPxPXPDtQksJNmI1pbK90tZ+5gyOxdxu9Y15w3ivk/TmLFacwarM9uvOQjtk+n3Xasm09j
+	oj2awwLiu5iljvfhHUmOU00iCKGOjNV4lnN1ZsmIHckOOiWAlgyWSlz+UJMYJ3my74E+73E4APiG
+	I9Vl4li5+lLsqngBvYDKf4m1gj+dikP22dSRkn8ypX0cva2gVXiR0xmzho/pWXdEEFaznVN5aIvi
+	bNt9cpEO6KCuFt7fNX7UdsqRP0+TXQabsPtEOcO6c/QxTLpbgb7vaKqrJXpaP4bZTHX3aXPNYqWQ
+	HvMgxBru+tCSXMrRadFqxADB1XcfA/BEUbV/a5EM1RbzZB/+nBAzocFWvh/n6vtWu7GSVY/x9Bmi
+	OjFVaPEmbQEOG3wSVsFTvR1BT68dtn/hlQWi4eHCGJTgIdcMGl47RMM9o5AjqS2aAsj1znJjFatG
+	m46eSyU6FbTNNubLXNiW31Is0SuMaJ6FYXyR4rAd2IgxYsA3yT4AqWKteR5tTmh4L6Gq/pp4gHJh
+	86ByS/lEFqupKJxnrOwlugymZIo0VboDITtIXJyasfsB2FNfne+h+7zsP8vatQDiHbe3IC/XFZkS
+	8=
 
-Hi Martin,
+Supply the timeout trigger threshold value to mt7603_watchdog_check.
 
-Thanks a lot for testing, and for comparing against an unpatched build.
+This is required in order to define individual threshold values for
+reset types.
 
-> Three cases arrived with no frames at all at the sniffer: HT MCS15,
-> VHT MCS9 at 80 MHz with short GI and VHT MCS7 NSS2 at 80 MHz.
+Signed-off-by: David Bauer <mail@david-bauer.net>
+---
+ drivers/net/wireless/mediatek/mt76/mt7603/mac.c | 11 +++++++++--
+ 1 file changed, 9 insertions(+), 2 deletions(-)
 
-Thanks, let me know how the repeat goes. If the two-stream rates still
-don't show up with more distance, it's probably something in rtw88
-rather than the sniffer, and I'll look into it.
-
-> With your debug line (debug_mask=3D0x2), injected unicast frames to an
-> absent station report CCX status 0x80, both with NO_ACK and with
-> retries 0, with and without the patches.
-
-That answers the open question in the cover letter, so in v3 I'll
-report a NO_ACK frame with that status as
-IEEE80211_TX_STAT_NOACK_TRANSMITTED instead of failed.
-
-Ping-Ke, do you know what the two CCX status bits (0x40 and 0x80) mean
-on rtw88? I'd like to name the value properly instead of using 0x80.
-
-Martin, may I add your Tested-by to v3?
-
-Thanks,
-Ahmet
-
-
-
-
-Sent with Proton Mail secure email.
+diff --git a/drivers/net/wireless/mediatek/mt76/mt7603/mac.c b/drivers/net/wireless/mediatek/mt76/mt7603/mac.c
+index 5940306ed3ce2..634bb67b57d52 100644
+--- a/drivers/net/wireless/mediatek/mt76/mt7603/mac.c
++++ b/drivers/net/wireless/mediatek/mt76/mt7603/mac.c
+@@ -1602,6 +1602,7 @@ static bool mt7603_rx_pse_busy(struct mt7603_dev *dev)
+ static bool
+ mt7603_watchdog_check(struct mt7603_dev *dev, u8 *counter,
+ 		      enum mt7603_reset_cause cause,
++		      u8 counter_timeout,
+ 		      bool (*check)(struct mt7603_dev *dev))
+ {
+ 	if (dev->reset_test == cause + 1) {
+@@ -1610,7 +1611,7 @@ mt7603_watchdog_check(struct mt7603_dev *dev, u8 *counter,
+ 	}
+ 
+ 	if (check) {
+-		if (!check(dev) && *counter < MT7603_WATCHDOG_TIMEOUT) {
++		if (!check(dev) && *counter < counter_timeout) {
+ 			*counter = 0;
+ 			return false;
+ 		}
+@@ -1618,7 +1619,7 @@ mt7603_watchdog_check(struct mt7603_dev *dev, u8 *counter,
+ 		(*counter)++;
+ 	}
+ 
+-	if (*counter < MT7603_WATCHDOG_TIMEOUT)
++	if (*counter < counter_timeout)
+ 		return false;
+ trigger:
+ 	dev->cur_reset_cause = cause;
+@@ -1897,21 +1898,27 @@ void mt7603_mac_work(struct work_struct *work)
+ 
+ 	if (mt7603_watchdog_check(dev, &dev->rx_pse_check,
+ 				  RESET_CAUSE_RX_PSE_BUSY,
++				  MT7603_WATCHDOG_TIMEOUT,
+ 				  mt7603_rx_pse_busy) ||
+ 	    mt7603_watchdog_check(dev, &dev->beacon_check,
+ 				  RESET_CAUSE_BEACON_STUCK,
++				  MT7603_WATCHDOG_TIMEOUT,
+ 				  NULL) ||
+ 	    mt7603_watchdog_check(dev, &dev->tx_hang_check,
+ 				  RESET_CAUSE_TX_HANG,
++				  MT7603_WATCHDOG_TIMEOUT,
+ 				  mt7603_tx_hang) ||
+ 	    mt7603_watchdog_check(dev, &dev->tx_dma_check,
+ 				  RESET_CAUSE_TX_BUSY,
++				  MT7603_WATCHDOG_TIMEOUT,
+ 				  mt7603_tx_dma_busy) ||
+ 	    mt7603_watchdog_check(dev, &dev->rx_dma_check,
+ 				  RESET_CAUSE_RX_BUSY,
++				  MT7603_WATCHDOG_TIMEOUT,
+ 				  mt7603_rx_dma_busy) ||
+ 	    mt7603_watchdog_check(dev, &dev->mcu_hang,
+ 				  RESET_CAUSE_MCU_HANG,
++				  MT7603_WATCHDOG_TIMEOUT,
+ 				  NULL) ||
+ 	    dev->failed_pse_reset_attempts) {
+ 		dev->beacon_check = 0;
+-- 
+2.53.0
 
