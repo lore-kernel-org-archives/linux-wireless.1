@@ -1,96 +1,97 @@
-Authentication-Results: smtp.subspace.kernel.org; arc=pass header.oldest-pass=0 smtp.remote-ip=209.85.222.50
+Authentication-Results: smtp.subspace.kernel.org; arc=pass header.oldest-pass=0 smtp.remote-ip=209.85.219.46
 ARC-Seal: i=2; d=subspace.kernel.org; s=arc20261015; a=rsa-sha256; cv=pass;
-	t=1795795737;
-	b=y2DJ5khTlMFPVXeqrhsvEblt32GNNXQ/Yl1K/Sd0pKXVYW3XYaGxlm2zZjR43zTz8yYO
-	 iITicqnxMId84/lKKi+X7aaii8+R+CjybXMsVNjLctnNrBPy9Esef1HA+dnR8clN5q0ko
-	 cLGZ1+xYYLD8echtlioMlerMycsv8GSEE+oQU7aMQcYy6IAFLoT7WLtPYgx4csqnGoJ56
-	 3+4dL7S/3P25BG9qxYH5jSsDxeAWUXJ+lRqZIX4fctTs2KVymYUE4ebEZKJcWIKb1jKya
-	 5TmpV3cnCeStfGeZ2UDL4yv/UEH/YF2AtNnKIiFHIY/h5DdhO1KqKAfbdc74QcMfMPw==
+	t=1795795746;
+	b=Sf9mHLm82Ad94bWpJYslF9uxQP0dt+lWagV2V4sDNqqdenLPy2jK0Yp/PJNwxses7wQU
+	 DAXTyEUkYR/Rbxc8wlrtNLvLe/mAhCFd69pGZaUjeM9ih+j/lT4ZQrtZg1eilDXP/aLg2
+	 EGDx3k8TjMy8jADnxvylLxg+HEZJIOlcknC1a1bUqX7lpaRKIxA2IrzStfKJku+L5UHR8
+	 8u1D4vSNl+5H4sZZ9fqZwaguD9otxRRetZ8DuoRJ6iCFJGa9oFVa6zPgEyHiEUijg0KPk
+	 aqOQDzzpxHX/0v6j7yOzjsmCLCdpXGlufSgCsr/8srviaSvka7a4XnGFK7tggrwEqYw==
 ARC-Message-Signature: i=2; d=subspace.kernel.org; s=arc20261015;
-	a=rsa-sha256; c=relaxed/relaxed; t=1795795737;
+	a=rsa-sha256; c=relaxed/relaxed; t=1795795746;
 	h=DMARC-Filter:Received:DKIM-Signature:X-Google-DKIM-Signature:
 	 X-Gm-Message-State:X-Gm-Gg:X-Received:MIME-Version:From:Date:
 	 X-Gm-Features:Message-ID:Subject:To:Cc:Content-Type;
-	bh=rGjanWI+/NPRD05xibDNRNTywo7QqwnwFfPuRZby1+M=;
-	b=BKxxIsW2uwEimmUqu5MPuKV5ygJQmSfbYXXEi8C6Ewmakb1u3s/dpEWd6obj+cKPVEN7
-	 1RKjRxY13U2Pq9l/109QsgIjtE1MYgi78gfKd68ELkh/n5/DRmp4dpIiOD+8j6RF5vDQb
-	 wvy8DBFj9iJDyH+WeHmpR7wKmN600yM+CT+aXV8A51L+IMtlD8z6kH2HbIAQ//pPhsDVk
-	 sXckNjQUefy6/zaLKvVo3uaufNpu2illf78ymKZCwzpy0zLHrxnoNzT7B6cV/MQvLd0J7
-	 smz+KwWklcWWr75jwh3/2etoh0j1eyDowPtPBroIoYWDBkroYTfgD/U8mUNTBmDT9Bw==
+	bh=s2jiSbKwArmAI+haPiqL81oAn2gEmKlFsh+woXxKsJY=;
+	b=IUWs4VRlpZzdewGe9ptFNN9VZzSYgWiXi6BrTd+ARkfM76QhBOZWWkJm/P0ia/QV1t7d
+	 EqmQ2ad4DFEWbBF6oleFWwSEhUqqHJZHEPqv8cXG8XAK1P0vZkezEtSCtK/RLTvBrFSUN
+	 mB4fJ98wWmD7shzH39X0549uzj9UJ2akSNpncQO9Lg53+8jTLzetUceye69uCcsVFfubU
+	 HEWiRfeELUYnNoGwklKg8HEIHrGM2MmxjWiXhsYgye3QoDJZEx5TPuV0EA6KnqNkgzUB+
+	 QxGD0qRwcQM06i/IcCnGmwf1pUKfKTjzBk1T5UUGO97OpIeMhANHg2UGH8PbWqpedng==
 ARC-Authentication-Results: i=2; smtp.subspace.kernel.org; 
 	dmarc=pass header.from=gmail.com;
 	spf=pass smtp.mailfrom=gmail.com;
-	dkim=pass header.d=gmail.com header.i=@gmail.com header.a=rsa-sha256 header.s=20260707 header.b=uumXSACL;
-	arc=pass header.oldest-pass=0 smtp.remote-ip=209.85.222.50
-Received: from mail-ua1-f50.google.com (mail-ua1-f50.google.com [209.85.222.50])
+	dkim=pass header.d=gmail.com header.i=@gmail.com header.a=rsa-sha256 header.s=20260707 header.b="Bc/7N/8H";
+	arc=pass header.oldest-pass=0 smtp.remote-ip=209.85.219.46
+Received: from mail-qv1-f46.google.com (mail-qv1-f46.google.com [209.85.219.46])
 	(using TLSv1.3 with cipher TLS_AES_128_GCM_SHA256 (128/128 bits)
 	 key-exchange X25519 server-signature ECDSA (prime256v1) server-digest SHA256)
 	(No client certificate requested)
-	by smtp.subspace.kernel.org (Postfix) with ESMTPS id 9238E606A31C
-	for <linux-wireless@vger.kernel.org>; Fri, 27 Nov 2026 16:08:57 +0000 (UTC)
-DMARC-Filter: OpenDMARC Filter v1.4.2 smtp.subspace.kernel.org 9238E606A31C
+	by smtp.subspace.kernel.org (Postfix) with ESMTPS id 10DF0606A31C
+	for <linux-wireless@vger.kernel.org>; Fri, 27 Nov 2026 16:09:05 +0000 (UTC)
+DMARC-Filter: OpenDMARC Filter v1.4.2 smtp.subspace.kernel.org 10DF0606A31C
 Authentication-Results: smtp.subspace.kernel.org; dmarc=pass (p=none dis=none) header.from=gmail.com
 Authentication-Results: smtp.subspace.kernel.org; spf=pass smtp.mailfrom=gmail.com
 Authentication-Results: smtp.subspace.kernel.org;
-	dkim=pass (2048-bit key) header.d=gmail.com header.i=@gmail.com header.a=rsa-sha256 header.s=20260707 header.b=uumXSACL
-Received: by mail-ua1-f50.google.com with SMTP id a1e0cc1a2514c-99e1408dc59so3600424241.0
-        for <linux-wireless@vger.kernel.org>; Fri, 27 Nov 2026 08:08:57 -0800 (PST)
-ARC-Seal: i=1; a=rsa-sha256; t=1795795736; cv=none;
+	dkim=pass (2048-bit key) header.d=gmail.com header.i=@gmail.com header.a=rsa-sha256 header.s=20260707 header.b=Bc/7N/8H
+Received: by mail-qv1-f46.google.com with SMTP id 6a1803df08f44-9212dac247aso82572886d6.1
+        for <linux-wireless@vger.kernel.org>; Fri, 27 Nov 2026 08:09:05 -0800 (PST)
+ARC-Seal: i=1; a=rsa-sha256; t=1795795745; cv=none;
         d=google.com; s=arc-20260327;
-        b=fLPK9ol57BhKMPMQIZtq246i18Ua5ru5fzknHzVnrKsByRn296C+pPgFENys7CQvCu
-         7hFIg7RAeyFSMUpLze6UPmyU2E/6c002YxXhXbC77rMpe+oy2BYYgkcCfuyDpGk1j9ps
-         bXSH4N/hJ2/ewWDwzFtBBRi15HbyozGGQUw/tqzkrOY5poXSGDmwrf+35q3mG8SeuSsQ
-         PL1odDfZTrmukvAj+bpC8iX8O+LTmwKwB1z2YTYsx/20XgFG01MYtvtm+UoFO7KpJycm
-         vjKe5yaU3Pp6LPhboPEs5UWXqiL4b6nnFv7pwNN0Bq9/V2Ou2D7cW9j+ejeCk2Yy4T7p
-         OA5g==
+        b=qrOs4gztra2IDoC/bREpdxV+rBhJyDrMQAR1LNp49nAy8mrD74DBQGoKqfGrkKMVSX
+         q7VyISWekvm3T/Exh6OLfN5iqWrDW8IWzEZA9EUakERhsm7DPVKffuQ0RhiXh2FPgxkO
+         aPxZ0XkNoXzdq3aj6tQfA2UhmNqA8NKsQJK8ImdAVJJdJ3uxHeBv6gQ5NZoyWnTOU4GO
+         wK+9wgYMFXkIadkX9in4DyQSEI5iFp9cHNo/8G93qt073qBEnl9SAJFmKhA+9noqW4JQ
+         iOMnM0afbAo+jo+M5N4zn3fuWRcKy3C6A3ekQ5uVR9EHqOLGswqN/Q3cPf7n9iu+iCj7
+         boRQ==
 ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=google.com; s=arc-20260327;
         h=cc:to:subject:message-id:date:from:mime-version:dkim-signature;
-        bh=rGjanWI+/NPRD05xibDNRNTywo7QqwnwFfPuRZby1+M=;
+        bh=s2jiSbKwArmAI+haPiqL81oAn2gEmKlFsh+woXxKsJY=;
         fh=g4qIvl6/31HtnerxyVK37f4FNVcorEF6JuBH5wiMpis=;
-        b=I55OyjtLF50/sGjzZcO6pkMyv5N058+sG+YJV2qm5dNoz5739m8Y6iVkcW5fgDS/1D
-         cdX1kbuCkeV/WiuZ/9muN2ZFb2Wbz6KiRVmatcRw64X9xjNOkSWacxXDvnFwLs5BqqL5
-         XKxgeJSBVFGT+WGENiwMhENKhV7k2eVeeWcDjB3A1suJVA6FgF0NPCD9+NdYZ6V4JYMr
-         aNLq2SCged7yGCoxFCbu89aZ+kdAwJD5IH8FoYkFLWGxfv/19uDcwzwbL/WW7McHCmRd
-         yJK6oCNQZ53+jbQtktucV3nUg0XXDkfnqTxYyxrO0/XWg+QiH3XaC6KGhkYTIx0K6RJn
-         JAcg==;
+        b=oBCMQyPxlFwENflMJQPWTE6Tm++77odA/IV1QzxxXCMvye5c2DUvD6Sg6hjP1dNjqa
+         46JIAlRR/cCvt4lIJbUKMN3RaRORFYM1gLlIyiISyn+1BqE1yegmBm2+GrvwEAW7n29R
+         KOEAcJY/iuU97qpAoJADsK3YbUolAdFSTuMkqIEmLFaOyvRGhVykgZRnv9saBbdNO0QG
+         BYE8rnmxjGsSh876eQhGkgNMY/jq7F4xZgqnlHqnzaXuVlDx9PUvt9QsZDdjENA4WjiG
+         Cprg57iGKIv1gvj/erVOAc8qgRFp6j0xPdtOq3tVz71KWOvuwqlQ8akL8qMsZ6QRYk7i
+         aJAA==;
         darn=vger.kernel.org
 ARC-Authentication-Results: i=1; mx.google.com; arc=none
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=gmail.com; s=20260707; t=1795795736; x=1796400536; darn=vger.kernel.org;
+        d=gmail.com; s=20260707; t=1795795745; x=1796400545; darn=vger.kernel.org;
         h=content-type:cc:to:subject:message-id:date:from:mime-version:from
          :to:cc:subject:date:message-id:reply-to:content-type;
-        bh=rGjanWI+/NPRD05xibDNRNTywo7QqwnwFfPuRZby1+M=;
-        b=uumXSACLnOLqMh1bVCcjPAqGNETEnOX3QFhzd+B51eIO9YzoVK+FJZRXpURYEM7YlY
-         tZtA7ZtZFZMd4YV1GB50jW3WkRVAAcwiLj4q7NROEDX4UTNMHOkIfnxAir4C9iVi7cMz
-         bMUv1fI9WiIb20cTLfG2NSOx1zM+Dq8Suu9QGmNqT1rotFdkBDkDRSnQDejqca0HHE+a
-         DMJRf+yGXdXE9u5vq0vElvBP5J/etWzmcNDoHvFdoVf1NhQ7j660s4OFwjoMrzNvhbh3
-         cMHXsPUmai7pulnnGNm9fMSq79zXgbuqnIQegUpfb6/PuForw7d21TPyVfjZ4W7urLYG
-         vaPA==
+        bh=s2jiSbKwArmAI+haPiqL81oAn2gEmKlFsh+woXxKsJY=;
+        b=Bc/7N/8HhXaP2ofa4tKE7SjYoLnmCcDnXORZfpyYk+ZyC2b7lV+EVMIxbLrNei6HXu
+         um9sGLKTro3U/whOKxXWSkdyfNaGTwIOUfEKYMTiR5DmZK6hcOhMaUEpeq0UHorg50dT
+         I8nlCae7Nhaz0//qc2Xi6V2JUWKkTQnC6E+6tcF6leO20IHRb3hFr0vGOmF8kHfks2tn
+         R2ndd1qR45WmulzrKxr7MyP/mvbqUBiG+oorBJQm9RBzKa9bAAIAEZSJ6KFYinFypnpD
+         hQg90qZQx9HFgO8fKXg+fCl6me/Zf0662+n5QKoxv50gbuUc1k7nbSItxbPi1wXJ2HNs
+         VQFQ==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=1e100.net; s=20260707; t=1795795736; x=1796400536;
+        d=1e100.net; s=20260707; t=1795795745; x=1796400545;
         h=content-type:cc:to:subject:message-id:date:from:mime-version
          :x-gm-gg:x-gm-message-state:from:to:cc:subject:date:message-id
          :reply-to:content-type;
-        bh=rGjanWI+/NPRD05xibDNRNTywo7QqwnwFfPuRZby1+M=;
-        b=rQ4ZaJA6Obeq6SYqO+rVHeNZmVZhbzKSOfQNDsYsKorm1WlHDQWS9J4cO3u1Q3IzEW
-         +cCDLx0bOpb1MJZsq/ZpDDltzHRYNsstGIKUfcSTKKAA2VlhfQQi7tSJKLegUIHbrPjJ
-         LTZWATK8UeoGr0q0dP0O6XHu7kXMLuBDKT9+KpHzY+HETMfJlk7bDKgpCQjASxTQPmnl
-         UjXe8JGZFKGClqvtDenr4ouQYkEq3NsLIQhOX01k/o18yoy4dKJp+YuERdXJo9ymhsyg
-         Y9swVxYuD1Uzd3mMzjJB2jCuK5gk4Lq5vkMLmGly8p2v2MXi5FZTsWDSuBFvrsowkAvc
-         +uEw==
-X-Gm-Message-State: APuU4Z+0E2UOu5GbufnMfiFIeMpX2I7p7KiULx9kkaJqY8ArbZXEI9F1
-	lk9siQVR+SO3KSh5k45TJ3VCKkCO1I6hu9JIWmut4xqsaBG4BGwC8NqLC/Fk6Jo8HL/+tJ0LMPF
-	/HAoG2f8mgOHpZ/+/BOkOz/F+JvpLXY0=
-X-Gm-Gg: AZFdTZdTe18rqOGYAFgvEYMn019JrAKSim0t7mBwoImtHUz4YDMvs4bHpUKFyUbQUTD
-	pYuq6owza+SOaU5GNxH1AsinLNWYNV5xjsMd1PFP3M5P0ugWFkbkFpu3sE9Kva9eJB2RIceAqJe
-	qY5PF7PztTtn/PcBhuoZSTrwRdB5pl2GAMCFQt9h9+9MhGoQOdzOHdHHzBRhuPnsdMfLIlPylxE
-	MDwhJpB4HjW35A/1JMDmFgJGbr+wRI8Y6Bmsok2yg7zi3z2VaPXQy1PVCFcwRWpP7maOlDcx8JR
-	2I4Md1BXqnJ0zkKpzhCH+zwrNNQ/9sGOT67ooBDKgRqiHfwvjrqJuYL10mRuRaakGphQ93+v0bM
-	dRPkvJiITu39QgbDGJ6dHNB11OXnJbRGpZczlyT4h3t5EtcFwBtLScWw3bDQmHSCG0MJR53/8uv
-	tbeQ8MoSP0Ve2uhoT50+MkA5RzTNv/ZRN9+TeKHUWDlYtgNXbNmuK/
-X-Received: by 2002:a67:e706:0:b0:7cc:32ce:4c5e with SMTP id
- ada2fe7eead31-7d739424c09mr14630365137.16.1795795736346; Fri, 27 Nov 2026
- 08:08:56 -0800 (PST)
+        bh=s2jiSbKwArmAI+haPiqL81oAn2gEmKlFsh+woXxKsJY=;
+        b=mFwgJj9PlgoFzaUxqGGjXQQ7E3LBxuf01gWDWKlQQc7NEMjSGsKBGbXiF7pSnmbaQg
+         t1kv0lmI+GjuxsycCDUHY//R1aNlZThBQW6AFg1cYaWvamfB9NNKgTfxG/yacSDBUnkp
+         muAT5pAEhC+Z7+RJ+D+xEk6ZHJ++X7tN3Fdzw+EsmJtqs97tXLgMiswfARaSPFo9lIch
+         xAaM+LDTchk5Kos5AiwD5Z4cxESDzibdQObEWNpZeWGIkIxIpyXoDQMvyFD6NTEDJKU8
+         aWIYnljWJs92LJHFfjltCRxuyIWWT7ciKbi/FZnu/0UyUV/IqbT1CsxqWJHfvtrskj8z
+         xHtA==
+X-Gm-Message-State: APuU4Z8hQH757kckYbtoqtuYYEbRG86k+RFUTsdEL8XIkDUU5EBXiavS
+	PRmMKs3BL1tSOE5RdKiKMMFrYMnBvWvzSFmnwG+Exo+BmARZlOKXHmFJdrNzKdol20bqwltfwaX
+	54FdTm3lWOKuQa7gJMNIN8bwwcHIK9IE=
+X-Gm-Gg: AZFdTZdtU5nT96ytHmmA3Wn3RW5OS+JsrLAwg+I68tcGD1vj1FTezKIoOTQ2ayr3p+/
+	TIZwRB8m56o15UXboaFPrzgwgx7aaTTLZMH9Ap62H8bCplJv/cAYcg/PbD6RDy4fmJTLVV9Geej
+	UeT1ijwu/6rIDcH/uW7e4wzDDkbm5ChovHwSAjrDpTv8Ss5yiZUGFgBxhMrHIA4/mmdwE/6ZuBF
+	Skg7w/OtrF38zhfpYsWuksPcg1hp2kD4ExSCPNYqTTO3jEfvqTI64cGnlVA9PMbYlEYDCGqpAdD
+	r3cq7HpdAS8Gn2blkyKcUlrNy/Nr46sXy2z3ph9DkhWt94Q9jLJ3XI/9HR8SXYw013+TFI0+0Uw
+	9LrXpqs1DFyjssP0nsYXLIS6RsDIcvhQ29/kcKk4KSLKgFEQrx1V6Xwlr/UuM8x72ryM8tpuQvt
+	r4Uz3hBV+Whx/03TbdlKSIcKP7KmH7Tvpy2uUEVG6dDoFo770RlkvgKQfAP4MMnNHgqYqZcrnrt
+	w==
+X-Received: by 2002:a05:6214:5298:b0:921:2427:ac08 with SMTP id
+ 6a1803df08f44-92134a37147mr460963236d6.11.1795795744808; Fri, 27 Nov 2026
+ 08:09:04 -0800 (PST)
 X-Mailing-List: linux-wireless@vger.kernel.org
 List-Id: <linux-wireless.vger.kernel.org>
 List-Post: <mailto:linux-wireless@vger.kernel.org>
@@ -101,43 +102,39 @@ List-Owner: <mailto:linux-wireless+owner@vger.kernel.org>
 Precedence: list
 MIME-Version: 1.0
 From: Lucca Moura <luccazoppi@gmail.com>
-Date: Fri, 27 Nov 2026 17:08:19 +0100
-X-Gm-Features: Aa3M54qtbeDMzwxzI67ZSX4IbfCLw3sDucN1eNJSelcfiMFZw3nW0OtG1btVrHo
-Message-ID: <CAJC97KHAQ6dgm+n_2sF_ypwfe6HsYupd-BOtz9m=LFROg3sfYQ@mail.gmail.com>
-Subject: wifi: rtw89: beacon filter NOTIFY reported as CQM RSSI HIGH at -110 dBm
+Date: Fri, 27 Nov 2026 17:08:29 +0100
+X-Gm-Features: Aa3M54omrpYZzqx7HWu6Fl0tmhCU2ZWuVRbHcOHCxGtN5OKZWot-bjtjcvk_R_o
+Message-ID: <CAJC97KF1omvgtJ=jsQpauVhrTdpr_WgiVDxs5eRCby4fU415hA@mail.gmail.com>
+Subject: wifi: rtw89: 8852bt: "rf busy swsi" hang after AP channel switch
 To: pkshih@realtek.com
 Cc: linux-wireless@vger.kernel.org
 Content-Type: text/plain; charset="UTF-8"
 
 Hi Ping-Ke,
 
-On an RTL8852BE-VT, rtw89 sends CQM RSSI HIGH events with a level of
--110 dBm while the actual signal is about -60 dBm. iwd acts on the
-level and starts roaming.
+On an RTL8852BE-VT, unicast reception stopped right after the AP sent
+a channel switch announcement. It recovered only after a disconnect
+48 s later. This happened once.
 
 - RTL8852BE-VT [10ec:b520], driver rtw89_8852bte
-- Firmware 0.29.122.2, Linux 7.3.5 (Arch), iwd 3.12
+- Firmware 0.29.122.2, Linux 7.3.6 (Arch), iwd 3.12
+- Connected on 2.4 GHz, signal -58 dBm
 
-rtw89_mac_bcn_fltr_rpt() maps RTW89_BCN_FLTR_NOTIFY to
-NL80211_CQM_RSSI_THRESHOLD_EVENT_HIGH with sig = MA - MAX_RSSI. In
-NOTIFY reports from this firmware MA is 0, so the level is -110.
+Log (2026-11-26):
 
-Log with debug_mask=0x1000:
+01:02:28 wlan0: cannot understand ECSA IE operating class, 4, ignoring
+01:02:28 rtw89_8852bte 0000:2c:00.0: read rf busy swsi
+(217 such lines in one second), then:
+rtw89_8852bte 0000:2c:00.0: read swsi busy
+01:02:31 pings to the gateway start to fail
+01:03:15 rtw89_8852bte 0000:2c:00.0: timed out to flush queues
+01:03:16 local deauthentication, reason 4 (inactivity)
+01:03:17 associated again; traffic works
 
-00:10:47.241 iwd: Signal change event (above=1 signal=-110)
-00:10:47.242 kernel: C2H bcnfltr rpt macid: 0, type: 2, ma: -110, event: 0
-00:10:51.281 iwd: Signal change event (above=1 signal=-110)
-00:10:51.282 kernel: C2H bcnfltr rpt macid: 0, type: 2, ma: -110, event: 0
+During the hang, "inactive time" in the station dump rose from 4 s to
+44 s, while rx packets (beacons) and tx packets kept increasing.
 
-Each iwd event matches one NOTIFY report. The station signal at the
-time was -59..-67 dBm. On this network the resulting roams often fail
-and cause short outages.
-
-Perhaps NOTIFY reports should not be passed to
-ieee80211_cqm_rssi_notify(), but I do not know what NOTIFY means in
-the firmware.
-
-I can test patches.
+I can send the full log or test patches.
 
 Thanks,
 Lucca
