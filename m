@@ -1,95 +1,79 @@
-Authentication-Results: smtp.subspace.kernel.org; arc=none smtp.remote-ip=74.125.82.182
-ARC-Seal: i=1; d=subspace.kernel.org; s=arc20261015; a=rsa-sha256; cv=none;
-	t=1795802474;
-	b=TWvTDhTOgR+3wK9XlqQPUJMCrjYF99tsZLZssE1QD/uvRwTbUWCvmn4ZULpi52qIpBdn
-	 LH6NDAjB/4w2Qs0XKpTWwrzalRpR7bZnScFdLk9Ev5VQxHxZDT1FnV5kkt5zSldclxj1x
-	 smCkPCBsiewlM+DDH4HBcNFYMumFIO2RdDYGjIoHpWOG/QJUfzCbvJUwDbGCM0s7O11GL
-	 KwCRkZbtkLZN+O2n1BWqGWluwQNBuVTESW87If1oX4O46xguBKHnlWh0w3Hj+Nsn/xBqU
-	 27dT2TOFP0MsYi20PAa8MJgcmk4o5z7XApFykSExUMSVf9aEksN19kpy9DOxGDPw0Yg==
-ARC-Message-Signature: i=1; d=subspace.kernel.org; s=arc20261015;
-	a=rsa-sha256; c=relaxed/relaxed; t=1795802474;
-	h=DMARC-Filter:Received:DKIM-Signature:X-Google-DKIM-Signature:
-	 X-Gm-Message-State:X-Gm-Gg:X-Received:Received:From:To:Cc:Subject:
-	 Date:Message-ID:X-Mailer:In-Reply-To:References:MIME-Version:
-	 Content-Transfer-Encoding;
-	bh=RQl7usxNoXpg62krpdtYwmUisSfy7ujLO8fNklTaDb4=;
-	b=vCkD4f+qr6cnMrx8DUuREemmYA+5rJr5wqnprn+5m7LFRgYjhNwhjRpszPXNpynycqx8
-	 Dqaa0S/oD2DEoqW3+SIHXKchcMyBGPLhJrQPmtqmoWC8hB8BBpalJPmjrob82kGDNKCym
-	 pGnhNrTKBsQOx18Q+5J+wWD1cg1F92MZrWDi5yfkFf9s5qtPLs/pP7woYkVF5toO3Hf6F
-	 Qf6x96p9H4z1GP3TP45zCRlUtkLSiNiB+wmXZTD2BKcmG1w9g1vErKLsD4n7m4aJJF4TN
-	 3XhmlDuRRasbM7tWa+ciHG2kLQm6nEKSZmSGhbaV4O4ixKGq+Wse7Z0e+0Lv9jMnKrA==
-ARC-Authentication-Results: i=1; smtp.subspace.kernel.org; 
-	dmarc=pass header.from=gmail.com;
-	spf=pass smtp.mailfrom=gmail.com;
-	dkim=pass header.d=gmail.com header.i=@gmail.com header.a=rsa-sha256 header.s=20260707 header.b=b9Nm+ODD;
-	arc=none smtp.remote-ip=74.125.82.182
-Received: from mail-dy1-f182.google.com (mail-dy1-f182.google.com [74.125.82.182])
-	(using TLSv1.3 with cipher TLS_AES_128_GCM_SHA256 (128/128 bits)
+Authentication-Results: smtp.subspace.kernel.org; arc=pass header.oldest-pass=0 smtp.remote-ip=100.103.45.18
+ARC-Seal: i=2; d=subspace.kernel.org; s=arc20261015; a=rsa-sha256; cv=pass;
+	t=1795805603;
+	b=Xq4YqoC7/ihWTkk3uB8bzzHhZYuEI1NvufMnPXoV2+GUmkEwPCsJqWworzjvM8KO7qwU
+	 LKFOvbb0I69TqApqhV7X3iSOJ1s6yeu0pGK4ONXMOqmKnJw18xWOO3s8cF9yi479r5BGD
+	 vp7kbMfFc6P9Y6n/M9pjpwITfi1cFN2dHKXx6DawsVyU+F9NHigT2SljnJ8z68XPXDnxr
+	 FCYjY4XZyLE2RKm0hxd2lg9XHzsAzZxK2sqwxu7OcmcZzfSsKdXj0QQwgH5R35X3fK3DH
+	 YOGVuTGnAXkhdpOqcGNq2q5nxN4LeEtoVxj4zMFHzJ60gJCkGST7h4L0cOQ82SSMjhw==
+ARC-Message-Signature: i=2; d=subspace.kernel.org; s=arc20261015;
+	a=rsa-sha256; c=relaxed/relaxed; t=1795805603;
+	h=Received:DKIM-Signature:Received:From:Subject:Date:Message-Id:
+	 MIME-Version:Content-Type:Content-Transfer-Encoding:X-B4-Tracking:
+	 X-Change-ID:To:Cc:X-Mailer:X-Developer-Signature:X-Developer-Key:
+	 X-Endpoint-Received:X-Original-From:Reply-To;
+	bh=jOCLTniI505VyhSBbB/4/Efl/GkkBZPUcGuQyaB12HU=;
+	b=pf5AMOf6Uby08Ne/wq1hQufNu76MYjKuqJqCf2A8GKG+Hhlmufh+4CtcnkqHCU598nOk
+	 f7JeaL0ML2bElDUcUjXCvwKJE+rGqR9Hxq+AZRGRbcDH23k8Wyi4usz2rSfsCqZyN+9uR
+	 eeu3ubjmS402fatF4wrx/Ua9cURdb07C7z93pvxemgPELpDsmwWyPd6ps1kVxCzWthIWG
+	 er+JijT800n1spI4YFVUeoaiSBlC5ahqzxoqGimoxmGwfZqTJjqaSzTkmfjSG7EcFAuZ9
+	 hAhkINhnRIoo2+udJUfz3QR6bzZznQq2r4xvQuOPDZwF7DlswWbEm48bRD16HPiqIKA==
+ARC-Authentication-Results: i=2; smtp.subspace.kernel.org; 
+	dkim=pass header.d=kernel.org header.i=@kernel.org header.a=rsa-sha256 header.s=k20260515 header.b=lw4dfyCC;
+	arc=pass header.oldest-pass=0 smtp.remote-ip=100.103.45.18
+Received: from smtp.kernel.org (quasi.space.kernel.org [100.103.45.18])
+	(using TLSv1.3 with cipher TLS_AES_256_GCM_SHA384 (256/256 bits)
+	 key-exchange X25519 server-signature ECDSA (prime256v1))
+	(No client certificate requested)
+	by smtp.subspace.kernel.org (Postfix) with ESMTPS id 13188606A31C
+	for <linux-wireless@vger.kernel.org>; Fri, 27 Nov 2026 18:53:22 +0000 (UTC)
+Authentication-Results: smtp.subspace.kernel.org;
+	dkim=pass (2048-bit key) header.d=kernel.org header.i=@kernel.org header.a=rsa-sha256 header.s=k20260515 header.b=lw4dfyCC
+Authentication-Results: smtp.kernel.org; arc=none smtp.remote-ip=100.80.115.77
+ARC-Seal: i=1; d=kernel.org; s=arc20260519; a=rsa-sha256; cv=none;
+	t=1795805602;
+	b=MCrdH8xu8v2FAslqTAPdc50EpzI9U/XG8uyindsOWoNERNCbnlPzfv4KZ+SR6pdbT/gi
+	 jjxWguYSBCLL0BkCzKBM6Uh26+nHCDFbaH63Mg8Qm2rwj2CGikJXbyKdFVHfR7cyu2V/2
+	 8HDLZC6n+jsoi/IPPXBsR0qvh1JtyyzObAEuDRWmiOevF4iicl7/xN9zseHzXKEjHjC9W
+	 YFHfalJFWCWetDrvNSPNoZK7zvNXeutVihZvRQB5xfGaSy+goQlBamZ9wIhJmnxpRPy55
+	 L/MIXs/Xfo2z3YBOVbF9VtAM0+lpyK/0nL602W3wdpXdDHC9O9FqUbHMgE38H0ZLnEw==
+ARC-Message-Signature: i=1; d=kernel.org; s=arc20260519; a=rsa-sha256;
+	c=relaxed/relaxed; t=1795805602;
+	h=DKIM-Signature:Received:From:Subject:Date:Message-Id:MIME-Version:
+	 Content-Type:Content-Transfer-Encoding:X-B4-Tracking:X-Change-ID:To:
+	 Cc:X-Mailer:X-Developer-Signature:X-Developer-Key:X-Endpoint-Received:
+	 X-Original-From:Reply-To;
+	bh=jOCLTniI505VyhSBbB/4/Efl/GkkBZPUcGuQyaB12HU=;
+	b=r2QbCIbpWuleMXzy/a126UtA7Sv713RDnTXK5u350kOm691SKogn3O8c/ATbPSJ3yAmB
+	 bksbpg/p6/zYtA25R4BdcrPAVvl8EoCIwloUjXzhZmyskEY7TTu2u1El7F2cYAkfPfGZA
+	 OtH5MYPPw65nER7nkZEBD6VHIbVbs+fv8nRT6yWeU+F4tyQpL90c71rHJ6JhIDBrcjXKI
+	 GKjrMsBLGUwjWQKaYjAoAWxHviQK9388XSCljL6frHnovHDdeKp1vGvPf1oFHmPTNGSB8
+	 ZBov12nkQIYQavg+MXmCmX9XycX/lS7tLE7V7FwHLvid8y1MH1BpIovHcqxH1hkKd1A==
+ARC-Authentication-Results: i=1; smtp.kernel.org; 
+	arc=none smtp.remote-ip=100.80.115.77
+Received: from lkml.kernel.org (nexus.subspace.kernel.org [100.80.115.77])
+	(using TLSv1.3 with cipher TLS_AES_256_GCM_SHA384 (256/256 bits)
 	 key-exchange X25519 server-signature ECDSA (prime256v1) server-digest SHA256)
 	(No client certificate requested)
-	by smtp.subspace.kernel.org (Postfix) with ESMTPS id BF4F9606A324
-	for <linux-wireless@vger.kernel.org>; Fri, 27 Nov 2026 18:01:13 +0000 (UTC)
-DMARC-Filter: OpenDMARC Filter v1.4.2 smtp.subspace.kernel.org BF4F9606A324
-Authentication-Results: smtp.subspace.kernel.org; dmarc=pass (p=none dis=none) header.from=gmail.com
-Authentication-Results: smtp.subspace.kernel.org; spf=pass smtp.mailfrom=gmail.com
-Authentication-Results: smtp.subspace.kernel.org;
-	dkim=pass (2048-bit key) header.d=gmail.com header.i=@gmail.com header.a=rsa-sha256 header.s=20260707 header.b=b9Nm+ODD
-Received: by mail-dy1-f182.google.com with SMTP id 5a478bee46e88-386c4d2e2ccso6477464eec.0
-        for <linux-wireless@vger.kernel.org>; Fri, 27 Nov 2026 10:01:13 -0800 (PST)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=gmail.com; s=20260707; t=1795802473; x=1796407273; darn=vger.kernel.org;
-        h=content-transfer-encoding:mime-version:references:in-reply-to
-         :message-id:date:subject:cc:to:from:from:to:cc:subject:date
-         :message-id:reply-to:content-type;
-        bh=RQl7usxNoXpg62krpdtYwmUisSfy7ujLO8fNklTaDb4=;
-        b=b9Nm+ODDsN3LgiNRVNlsFyLp3iqL/Ycttq21GG0drFXaU/ORH8F5OAE/m0+EMzPOq5
-         km2Lf65allDC0Q46A9vLXM127PSKCJRp3EdvPQCnoY5TiAm8qtOX5/4SuSowWOWzmxKd
-         iC8UQzL255OTfZLo1qxxkk1mtKFBHfcW0IN+HKBjkDhuy3MlWrdluL0GV3ZcsKrB9G83
-         8cIUHekTuapb60uKw4O+wvmK2HFvQ8RP0imA9xyG7sOtq3eh8RIBvCZcP14jEdCKz7PC
-         Q1tqKf0bSnlL4FTIr9KdR8c2DJcFg8ztGuE34vBglzPq/E+tAd94/rqvl3WpZfv89ruU
-         UqJg==
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=1e100.net; s=20260707; t=1795802473; x=1796407273;
-        h=content-transfer-encoding:mime-version:references:in-reply-to
-         :message-id:date:subject:cc:to:from:x-gm-gg:x-gm-message-state:from
-         :to:cc:subject:date:message-id:reply-to:content-type;
-        bh=RQl7usxNoXpg62krpdtYwmUisSfy7ujLO8fNklTaDb4=;
-        b=cZVWHF8vlDJl+pGVSAs7KBZWmb+5SUif48YWEH8ZsipvkKDFno9LUul4yE2SSRkndv
-         jAB0zZCns132sG93rt+NI7xjHHvlo6fAjKoK0yaMjTqzlRF+kaUTN80tCKE2+UwISEKW
-         2/Ai6DmbNuDmEMevOGaPYhLVT7esdBvC0b9mXKQj4ojpC5UGWSppCr9Sumw8VukaPsZZ
-         cVJo7767UklV0Rb2n8435Q9arugquOrKdMQOyPI40ulJ34E7AxgLI0eh3zWoZqlV8VVk
-         PMXBdyo0xJJVlPFEuhexKY7u4UF9NUBtEKquh3GJzCjyXpg1xdTj7NBGh0IqbM/l47PN
-         4fVg==
-X-Gm-Message-State: APuU4Z/foGBf8PY/pJO7ujTif1zzSKe5XAOVuuqHqfRsMKV1NtLCzxRl
-	rCKLbtwC0mcpAgW+5stHO8K+gp+aLK476EpPK9+Fidkwj07ryNJDLtAQ
-X-Gm-Gg: AZFdTZd+4oHQxxdVfH2tfagAVsX9lJtct3AXCrAwkFpGZFKWNJOT85hG480HKXEkLNm
-	BJD4X2a8tmGwTN3zKrvqZQeaULGqqzdlD05+2y0IcpWlxzHD9oUW+X/KTrd2/orGFFl31vn/fnf
-	w4+8PW+reum7eS9TYCnM9d2tClRxc0uOBbSIyO0uWIjqZeFa6cq9u0MzKwX+xgew2BVBP7VrtX7
-	RsloRUND/xZuH1u8QopCcbZht7PrOBxVXMhwjndgw1HXatsxTWeMw2ASwwraZhokQoRnXtrhXhL
-	i2Yi5tcAU6Xtvk7LjxFes4odaCfhY7YVhrtsYSr2h1AfHYc41c0yR84ZFlMGGVMS9/pLAX3JSus
-	WJSl06QgotEUU9xfwBl3cWNjBX0iL40CaOs3LHaTMamf8+GB6ww3zy9nrpXqyUR6YUosf3iVlR/
-	etnG8Yar1nnf5rtUOz1bbCwEYcaMA7KZ+i6MLvQSBxLCDzbYPZHFgsI27By54SpFHP0VP8hYkT+
-	mgRb+zyTB95dvcT1scBZ9SOr63XHu+Fj0F4jLNirXlCWnCGYKj+WEblm3TF04lkfiQcAULWYf3Z
-	RQmKVwTz9/y48nOXU05kFyLkf+upN6GZSyN1Ab4UiinITlTphQGaTaBev8DR5M1azac2pJNdDEY
-	3eQPAUNBlPzG6ObYlAIM=
-X-Received: by 2002:a05:693c:880e:20b0:386:b54a:7f6e with SMTP id 5a478bee46e88-386b54a8032mr15389898eec.6.1795802472387;
-        Fri, 27 Nov 2026 10:01:12 -0800 (PST)
-Received: from acemagic-m1 ([2401:7400:c804:b668:65f1:53d:ffe:71c])
-        by smtp.gmail.com with ESMTPSA id 5a478bee46e88-38567daaf70sm76044620eec.28.2026.11.27.10.01.10
-        (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
-        Fri, 27 Nov 2026 10:01:12 -0800 (PST)
-From: Ho Jie Feng <hjf3108@gmail.com>
-To: Ping-Ke Shih <pkshih@realtek.com>
-Cc: linux-wireless@vger.kernel.org,
-	Bitterblue Smith <rtl8821cerfe2@gmail.com>,
-	Luka Gejak <luka.gejak@linux.dev>,
-	Ho Jie Feng <hjf3108@gmail.com>
-Subject: [PATCH rtw-next v5 7/7] wifi: rtw88: 8812a, 8821a: respect peer A-MPDU size limits
-Date: Sat, 28 Nov 2026 02:00:27 +0800
-Message-ID: <20261127180034.1058591-8-hjf3108@gmail.com>
-X-Mailer: git-send-email 2.53.0
-In-Reply-To: <20261127180034.1058591-1-hjf3108@gmail.com>
-References: <20261127180034.1058591-1-hjf3108@gmail.com>
+	by smtp.kernel.org (Postfix) with ESMTPS id E9FCF1F000C1;
+	Fri, 27 Nov 2026 18:53:18 +0000 (UTC)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=kernel.org;
+	s=k20260515; t=1795805602;
+	bh=jOCLTniI505VyhSBbB/4/Efl/GkkBZPUcGuQyaB12HU=;
+	h=From:Subject:Date:To:Cc:Reply-To;
+	b=lw4dfyCC0hlbSb8fkgTTkbArwhUf5ONqnELpaK7jRmqnZKXw+PyukqCQdjmquLUGK
+	 +8nXqyJJ2m3FhIudC5utdRhTzsg3cFN4JkaGdbEbX6M4DkZ8EbV1a5AcVBZG5EcgvY
+	 EiA+g+gDydqZoWqhplyd02YnK6sXmVcfb7G5k830MLvIebspQXbNPFmjSKVEm4LmYP
+	 IFgQTbaPj5RNG9wx5LtiqvsLkXj4nCyfgVNwvs+gGfB39ZP4PuZ1i+EIwu3b2CM4/S
+	 aKHapdwG9ig87MCXAGBuOjyogxD73DgzF9IV7W5ySE6DeCAMq/Av73KS7AL0T03MoO
+	 w0/6Mx25wFHmg==
+Received: from nexus.subspace.kernel.org (localhost [IPv6:::1])
+	by lkml.kernel.org (Postfix) with ESMTP id 792554DD62;
+	Fri, 27 Nov 2026 18:53:18 +0000 (UTC)
+From: Ahmet Zeren via B4 Relay <devnull+niko3x.proton.me@kernel.org>
+Subject: [PATCH rtw-next 0/2] wifi: rtl8xxxu: fix two retry count overflows
+Date: Fri, 27 Nov 2026 21:53:16 +0300
+Message-Id: <20261127-b4-rtl8xxxu-retry-v1-0-b263ab1e0d1b@proton.me>
 X-Mailing-List: linux-wireless@vger.kernel.org
 List-Id: <linux-wireless.vger.kernel.org>
 List-Post: <mailto:linux-wireless@vger.kernel.org>
@@ -99,78 +83,64 @@ List-Unsubscribe: <mailto:linux-wireless+unsubscribe@vger.kernel.org>
 List-Owner: <mailto:linux-wireless+owner@vger.kernel.org>
 Precedence: list
 MIME-Version: 1.0
-Content-Transfer-Encoding: 8bit
+Content-Type: text/plain; charset="utf-8"
+Content-Transfer-Encoding: 7bit
+X-B4-Tracking: v=1; b=H4sIAAAAAAAC/yWMwQrCMBAFf6Xs2QUTrVZ/RTwk7VNXJMpmq5HSf
+ zfqcRhmJspQQaZ9M5HiKVnuqYJbNNRfQjqDZahMfuk3zvktxzWr3bpSysgK0zfHXRewCi3aMFD
+ tHoqTlN/zQGovTihGx7/JY7yit++S5vkDn3gGVX8AAAA=
+X-Change-ID: 20261127-b4-rtl8xxxu-retry-b98ae3a5e5ad
+To: Ping-Ke Shih <pkshih@realtek.com>, 
+ Jes Sorensen <Jes.Sorensen@gmail.com>
+Cc: linux-wireless@vger.kernel.org, Luka Gejak <luka.gejak@linux.dev>, 
+ Ahmet Zeren <niko3x@proton.me>
+X-Mailer: b4 0.15.2
+X-Developer-Signature: v=1; a=ed25519-sha256; t=1795805597; l=1488;
+ i=niko3x@proton.me; s=20261119; h=from:subject:message-id;
+ bh=C+fmUZhSRYASAFwtdzlDoSA24tjcNh9wx+DlbYnJRAQ=;
+ b=N8E+2lRfJ/F7zWgcxQImZxhCDKs2NaCLgRYgpPmE3y+teyKgWuFlqpDQi5QsJZcDy+OkGqzJh
+ zssMs423QpIAZjmjeFod2kwjFTw6irCDDox1NuOmuShCH1MQpQNrABP
+X-Developer-Key: i=niko3x@proton.me; a=ed25519;
+ pk=J4zNm2pudzQ/wF+pQ8xO+wW6jpcNa9EJ2C1g4DUAjhM=
+X-Endpoint-Received: by B4 Relay for niko3x@proton.me/20261119 with
+ auth_id=1575
+X-Original-From: Ahmet Zeren <niko3x@proton.me>
+Reply-To: niko3x@proton.me
 
-Previously, these chips had no set_ampdu_factor callback, so
-rtw_set_ampdu_factor() returned before programming the peer's
-limit.
+The retry count in mac80211's struct ieee80211_tx_rate is only 5 bits
+wide, and rtl8xxxu overflows it in two places: max_rate_tries is set to
+64, and the TX report passes up to 64 tries. I found these while porting
+the injection changes to rtw88, as mentioned in the rtw88 thread.
 
-Honor the peer-advertised receive limit for transmitted A-MPDUs.
+Tested on RTL8192CU (0bda:8178) on 2.4 GHz, with injected frames to an
+absent station and the retry count from the TX report:
 
-Signed-off-by: Ho Jie Feng <hjf3108@gmail.com>
+                         before   after
+  31 requested retries     16       30
+  40 requested retries      8       30
+  default limit (48)       16       30
+
+(before, 31 retries fell back to the default limit, which the TX report
+showed as 16.) checkpatch --strict, W=1 and sparse are clean.
+
+AI tool use (Documentation/process/generated-content.rst): the patches
+were written with help from Claude Code (Claude Opus 5.5). It was asked
+to fix the overflow found in review and test the boundary values on
+the RTL8192CU; that test showed the second one. I have reviewed and
+tested the changes and take responsibility for them.
+
 ---
- drivers/net/wireless/realtek/rtw88/rtw8812a.c | 11 ++++++++++-
- drivers/net/wireless/realtek/rtw88/rtw8821a.c | 11 ++++++++++-
- 2 files changed, 20 insertions(+), 2 deletions(-)
+Ahmet Zeren (2):
+      wifi: rtl8xxxu: limit max_rate_tries to what mac80211 can pass
+      wifi: rtl8xxxu: limit the retry count in the TX report
 
-diff --git a/drivers/net/wireless/realtek/rtw88/rtw8812a.c b/drivers/net/wireless/realtek/rtw88/rtw8812a.c
-index c8008cf43d..7e3c86160f 100644
---- a/drivers/net/wireless/realtek/rtw88/rtw8812a.c
-+++ b/drivers/net/wireless/realtek/rtw88/rtw8812a.c
-@@ -78,6 +78,15 @@ static void rtw8812a_cfg_ldo25(struct rtw_dev *rtwdev, bool enable)
- {
- }
- 
-+static void rtw8812a_set_ampdu_factor(struct rtw_dev *rtwdev, u8 factor)
-+{
-+	factor = min_t(u8, factor, IEEE80211_VHT_MAX_AMPDU_128K);
-+
-+	/* the vendor driver sets the undocumented BIT(31) */
-+	rtw_write32(rtwdev, REG_AMPDU_MAX_LENGTH,
-+		    ((8192 << factor) - 1) | BIT(31));
-+}
-+
- static void rtw8812a_do_lck(struct rtw_dev *rtwdev)
- {
- 	u32 cont_tx, lc_cal, i;
-@@ -926,7 +935,7 @@ static const struct rtw_chip_ops rtw8812a_ops = {
- 	.set_tx_power_index	= rtw88xxa_set_tx_power_index,
- 	.cfg_ldo25		= rtw8812a_cfg_ldo25,
- 	.efuse_grant		= rtw88xxa_efuse_grant,
--	.set_ampdu_factor	= NULL,
-+	.set_ampdu_factor	= rtw8812a_set_ampdu_factor,
- 	.false_alarm_statistics	= rtw88xxa_false_alarm_statistics,
- 	.phy_calibration	= rtw8812a_phy_calibration,
- 	.cck_pd_set		= rtw_phy_cck_pd_set,
-diff --git a/drivers/net/wireless/realtek/rtw88/rtw8821a.c b/drivers/net/wireless/realtek/rtw88/rtw8821a.c
-index 17d3677ca4..408b5ecdc5 100644
---- a/drivers/net/wireless/realtek/rtw88/rtw8821a.c
-+++ b/drivers/net/wireless/realtek/rtw88/rtw8821a.c
-@@ -49,6 +49,15 @@ static void rtw8821a_cfg_ldo25(struct rtw_dev *rtwdev, bool enable)
- {
- }
- 
-+static void rtw8821a_set_ampdu_factor(struct rtw_dev *rtwdev, u8 factor)
-+{
-+	factor = min_t(u8, factor, IEEE80211_VHT_MAX_AMPDU_64K);
-+
-+	/* the vendor driver sets the undocumented BIT(31) */
-+	rtw_write32(rtwdev, REG_AMPDU_MAX_LENGTH,
-+		    ((8192 << factor) - 1) | BIT(31));
-+}
-+
- #define CAL_NUM_8821A 3
- #define MACBB_REG_NUM_8821A 8
- #define AFE_REG_NUM_8821A 4
-@@ -872,7 +881,7 @@ static const struct rtw_chip_ops rtw8821a_ops = {
- 	.set_tx_power_index	= rtw88xxa_set_tx_power_index,
- 	.cfg_ldo25		= rtw8821a_cfg_ldo25,
- 	.efuse_grant		= rtw88xxa_efuse_grant,
--	.set_ampdu_factor	= NULL,
-+	.set_ampdu_factor	= rtw8821a_set_ampdu_factor,
- 	.false_alarm_statistics	= rtw88xxa_false_alarm_statistics,
- 	.phy_calibration	= rtw8821a_phy_calibration,
- 	.cck_pd_set		= rtw_phy_cck_pd_set,
--- 
-2.53.0
+ drivers/net/wireless/realtek/rtl8xxxu/core.c | 5 +++--
+ 1 file changed, 3 insertions(+), 2 deletions(-)
+---
+base-commit: ae6b9e98b9045e47f609ec2a8197a3f3109627cb
+change-id: 20261127-b4-rtl8xxxu-retry-b98ae3a5e5ad
+
+Best regards,
+--  
+Ahmet Zeren <niko3x@proton.me>
+
 
