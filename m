@@ -1,96 +1,55 @@
-Authentication-Results: smtp.subspace.kernel.org; arc=pass header.oldest-pass=0 smtp.remote-ip=209.85.128.171
-ARC-Seal: i=2; d=subspace.kernel.org; s=arc20261015; a=rsa-sha256; cv=pass;
-	t=1795793507;
-	b=XXsYNBeoKbXrs0ALPgoI4LrVWjUUAgeUI5M9qwVhgyBrK2nrk0D40oY5JP052oUrUeBC
-	 F8ESlc/3Osxqu//tPYHgMsNvyD2dqG877Ed1bGGdXoYjYHwn7tmtqopmftpATt4DrzWG/
-	 CRx3lN3v55wfKIcUrjxpw0AYhLz1VREb2qoVzYdBVzy74NvFIBwasXkFvrVgGm2wvKrbx
-	 8QsQUb/VZAsAo7LELC9Dk/GPwb55XNScywLocT8VbGn/KTNs3reVKahjGV8DEAxwr19M/
-	 TtGWRSIq9RhiIi5UUzZU6aUaUCVG/ASr81xE5twsMpx8boHyZ+lTWWTuaylOE7pamvw==
-ARC-Message-Signature: i=2; d=subspace.kernel.org; s=arc20261015;
-	a=rsa-sha256; c=relaxed/relaxed; t=1795793507;
-	h=DMARC-Filter:Received:DKIM-Signature:X-Google-DKIM-Signature:
-	 X-Gm-Message-State:X-Gm-Gg:X-Received:MIME-Version:From:Date:
-	 X-Gm-Features:Message-ID:Subject:To:Cc:Content-Type;
-	bh=B0qbJ8g2Vdj9HAdNnwCKwtoZV+3naWX33A2WnJvViLI=;
-	b=bQG++umqhBcMvkRi8D7Njj89J03BozUNvOToWAc/a0rhnK3q7feFKne2vTu2Y4B3zyIu
-	 RPNja6Fy4Yn0fbaumLp7irEeFksd0gcnFl6xSvIC/uCHtPdWNdp8gP7OfGlSxOYilbDaT
-	 iPtkCw4IEa/hSKU71Ti1F+w7owUm/JV+ebkS98O1fl7yDmUpnnQGzIgCr+HcH/rpfxR26
-	 VpFTgpurpDkb3YrNttxWSyL6C81QLo1CxUd0C7+tGDQ1mEx9lgvXo3OGnTCnuys/a/KO6
-	 bV/XD4dn9z/AZob1eKU375X5AjTUm60m3PMW+rK91xaEbS34UxeiFbPpL+KjQtnM2dw==
-ARC-Authentication-Results: i=2; smtp.subspace.kernel.org; 
-	dmarc=pass header.from=gmail.com;
-	spf=pass smtp.mailfrom=gmail.com;
-	dkim=pass header.d=gmail.com header.i=@gmail.com header.a=rsa-sha256 header.s=20260707 header.b=oFGyoydc;
-	arc=pass header.oldest-pass=0 smtp.remote-ip=209.85.128.171
-Received: from mail-yw1-f171.google.com (mail-yw1-f171.google.com [209.85.128.171])
-	(using TLSv1.3 with cipher TLS_AES_128_GCM_SHA256 (128/128 bits)
-	 key-exchange X25519 server-signature ECDSA (prime256v1) server-digest SHA256)
+Authentication-Results: smtp.subspace.kernel.org; arc=none smtp.remote-ip=46.4.11.11
+ARC-Seal: i=1; d=subspace.kernel.org; s=arc20261015; a=rsa-sha256; cv=none;
+	t=1795794285;
+	b=M2jLjxbG8i26hClMzWE1dfpPCvmVns418/lO9BgvUcEbhInNBDs52RlQA9dMtjA1iz0P
+	 MVOzV2LbxPzyvxrPZIeLhCFrDlZSfVF30Z+JpoX6/K/UEnorEv2lm7yCM7RIWW1J9ohIX
+	 nII6Q3k5taeEC5gOhKDww49E1PgHVz2A46TQ4LGHnvnJ+5jGg1pVYHBVopc0S8j9R3+u7
+	 gdAV5pPbOn+6BatbivlzhjCIyA9nf406wJqq8Zcps6uQkZuSob5vCTg3iwMSiTHipJX+c
+	 bpom/4hJq6eR+Ypfb+e6xf/glrYJqPE2zIo82PckNpaFF72/oyS8h5RCcOuRPLxdHCA==
+ARC-Message-Signature: i=1; d=subspace.kernel.org; s=arc20261015;
+	a=rsa-sha256; c=relaxed/relaxed; t=1795794285;
+	h=DMARC-Filter:DKIM-Signature:Received:Message-ID:Date:MIME-Version:
+	 User-Agent:Subject:To:Cc:References:Content-Language:From:Autocrypt:
+	 In-Reply-To:Content-Type:Content-Transfer-Encoding;
+	bh=GLhy4K3WXdEuc7Y1GQAeKRwxsYwUKNxpVXU2auX8AUY=;
+	b=hDMkm2XFPQ+oGMHIGF7DKdmPLIkuqWOHcgdsteq4zZdxj0DDciBmxI36DgNdIOr+SaC9
+	 5jaR0wPqDd3sNFG769msImSHdnajKOfDXYROqByXozwUsfED0SmyHP21rCz2suJjhz7yu
+	 Sgmv3iRKH92QUJqXd9L5Vx6k+fw6qaEptGTWOtzsPN4DhycOXz1CJwCPiVrQZCi3nIS/2
+	 Q8W5e1L6OGY3iyhufTHn+z+nGC2OPA+k6oTPJtAklzQJU0A3hVcSPW8c+jT2kZmxTmYG6
+	 bY6P3tWCL+Pxwg6OUhTZ6iID8uMUU5R4XEue0flBsjHFX6j5QdmW51dvDqCEXnO72Bw==
+ARC-Authentication-Results: i=1; smtp.subspace.kernel.org; 
+	dmarc=pass header.from=nbd.name;
+	spf=pass smtp.mailfrom=nbd.name;
+	dkim=pass header.d=nbd.name header.i=@nbd.name header.a=rsa-sha256 header.s=20160729 header.b=syPbQvYg;
+	arc=none smtp.remote-ip=46.4.11.11
+Received: from nbd.name (nbd.name [46.4.11.11])
+	(using TLSv1.3 with cipher TLS_AES_256_GCM_SHA384 (256/256 bits)
+	 key-exchange ECDHE (prime256v1) server-signature ECDSA (prime256v1) server-digest SHA256)
 	(No client certificate requested)
-	by smtp.subspace.kernel.org (Postfix) with ESMTPS id 63FAD606A31E
-	for <linux-wireless@vger.kernel.org>; Fri, 27 Nov 2026 15:31:46 +0000 (UTC)
-DMARC-Filter: OpenDMARC Filter v1.4.2 smtp.subspace.kernel.org 63FAD606A31E
-Authentication-Results: smtp.subspace.kernel.org; dmarc=pass (p=none dis=none) header.from=gmail.com
-Authentication-Results: smtp.subspace.kernel.org; spf=pass smtp.mailfrom=gmail.com
+	by smtp.subspace.kernel.org (Postfix) with ESMTPS id 8BA48606A334
+	for <linux-wireless@vger.kernel.org>; Fri, 27 Nov 2026 15:44:44 +0000 (UTC)
+DMARC-Filter: OpenDMARC Filter v1.4.2 smtp.subspace.kernel.org 8BA48606A334
+Authentication-Results: smtp.subspace.kernel.org; dmarc=pass (p=none dis=none) header.from=nbd.name
+Authentication-Results: smtp.subspace.kernel.org; spf=pass smtp.mailfrom=nbd.name
 Authentication-Results: smtp.subspace.kernel.org;
-	dkim=pass (2048-bit key) header.d=gmail.com header.i=@gmail.com header.a=rsa-sha256 header.s=20260707 header.b=oFGyoydc
-Received: by mail-yw1-f171.google.com with SMTP id 00721157ae682-8b4e246acc2so58867287b3.3
-        for <linux-wireless@vger.kernel.org>; Fri, 27 Nov 2026 07:31:46 -0800 (PST)
-ARC-Seal: i=1; a=rsa-sha256; t=1795793505; cv=none;
-        d=google.com; s=arc-20260327;
-        b=a9UtzHkdjscJJaf1T2GH60O10RPB/mVkP+aSSGgMqS5sHSw1V+AW8T1v1hIWQJm07+
-         D6lUGN42INdfxTvIOLsK8LaoKInTdlGwHL8iHw/zXOA9Ik4GsjJNoyCzuaFlKZjnVzW7
-         1HyNmrIfvpPotsapJaBSvCC5RHNSrNqq4YFrdVqRBIHCwayR413OQLA1EMVsy/7QdS8N
-         jd7HbhCuusyvV/1Lm9RbMPXdi6BUFZR2UJZJuKxibOj+PSYghneGa2eJ+BdjtvnOpigJ
-         wtt3bv5GQsnEq2L1MACFW4Xuq1q7/G7r0YkduLxv3Gk4HIraOoxB1YwKKkiZ13GKTYX3
-         1SPA==
-ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=google.com; s=arc-20260327;
-        h=cc:to:subject:message-id:date:from:mime-version:dkim-signature;
-        bh=B0qbJ8g2Vdj9HAdNnwCKwtoZV+3naWX33A2WnJvViLI=;
-        fh=A6Vivuh0th99pI8xmBv/sfZnnCXEKvaXEbIDLQ4Rrjo=;
-        b=oqKIFMQdC2W9NE+YjJrqZbkPSe5WhWsXz0VmNbM7RoSqA8dzVzHOA4vGBw4HDluz+L
-         XOU1dEhlzcrVT993IwURVQyDOjr+uZBryEaiP7JZX3tHurz9lu5ARYYoAeteeEqg8a9X
-         zwdvyIis+rmPUR+2hYbe0oPdiVDbbMzvHKvK/eDpvkIj4vGt14y+Ye+DseacvAp+RQBw
-         3zeUdr9l5qQBSJ/gCQzUCfKDzd+3AC2/xknrN8Y9Jxm90RxmXNq0DN4iejWNjn8RlG8v
-         My5X9Vv8u+LJWTv0gJqvQccm6yfNsQa/xCwIl4slI5QHg1C0vO1ofuuWAzz2vMnRIpbG
-         QbgQ==;
-        darn=vger.kernel.org
-ARC-Authentication-Results: i=1; mx.google.com; arc=none
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=gmail.com; s=20260707; t=1795793505; x=1796398305; darn=vger.kernel.org;
-        h=content-type:cc:to:subject:message-id:date:from:mime-version:from
-         :to:cc:subject:date:message-id:reply-to:content-type;
-        bh=B0qbJ8g2Vdj9HAdNnwCKwtoZV+3naWX33A2WnJvViLI=;
-        b=oFGyoydcTM4xxsBrg6DiGiIo/VittTX4SQ3DgnEjqp962VrX52Af7bN3dxXmqy0jmo
-         4WWxEtA4mGeC/7vjRjq/Wj/3gJQjQsHenVtIKEur09QtcXJ7dbVTKa+IbXXvU1UZ2zNO
-         ZqFEUGoTHEbnEf/ZxvOKrUg9P4yExiFve8m9i+r7eIbbGpJ+dgZlzQ+m8UNA7qqDbCPK
-         Cgp7b1RSr6A4ocIf1aT9rAmGYBn3+GEmzJZXyvqHDSHj9Fjzxb7GGnyBkp+qVSBSzXaj
-         QWFyQTn6Ug4rMnQL35I53jRkJt/2/HxSkmRiR4WCklrtHwvwD71f3oIY4aYY6mdv2aG2
-         1MuQ==
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=1e100.net; s=20260707; t=1795793505; x=1796398305;
-        h=content-type:cc:to:subject:message-id:date:from:mime-version
-         :x-gm-gg:x-gm-message-state:from:to:cc:subject:date:message-id
-         :reply-to:content-type;
-        bh=B0qbJ8g2Vdj9HAdNnwCKwtoZV+3naWX33A2WnJvViLI=;
-        b=mndzv31AEQu+k300OwZ7CWdwn/hrws7T+dWLswpFqz69kxc8oRK0dzjNXyD+MNhnXQ
-         2WPsu2dpbRPPKm3thU1PLSJl6WNaGBT9G4yJxclBm5+qEDH7lywSnK+mwE8af+D3g7yJ
-         C1IloEKdbwkXmpctwowAy9NDFaywASlNQd/6P1Url0KNbSRYBXdT8TXfPeVuYAt+N+iA
-         rTFuajV6OJnXOB5JPVCzuqnDNif0y4PbOI0ntZ3h6SHvI2dV9GbSzo0XFRHDEhY1+1O0
-         KMpkwFu6OS7ZDAZfph84mQlJueCgX5NV7PGLOjfM3A0mXdXIl5T423DByKGagjo7Nbbu
-         +vAA==
-X-Gm-Message-State: APuU4Z+wjmT/ntTNKljk/c/Obc86+Exh7Vkb8HrHRa/ypdTgYXC5PbVv
-	d6amcyeVW3e9K/cbfehFyT65Nbok63dZ4eW7Ix75qtprbU6Orgf3mwddHpSggdvpQ0p+9h22RZi
-	cQUNjOZwfBoqICcpSVdSGy/9OO4SP94U=
-X-Gm-Gg: AZFdTZfGzyV8+r3nibo/NSHzWRRl1AerisF/pNwqDmU1cfhUiNWf0Dq/VVbp1hUhWNu
-	h09vUogvHsWleFROKcOCSrekFxF+2sTp2Plp3ZUSCaQlyu7GLwZTSuu5MbyVxnlD0+3echHqu5p
-	LIMAiBbguvkIZ5A+UWClu4eKSuZjLH+3s8Mz+JbkTPf5h0qohr9GmD5v3RZysnvulOjz8WVnmM5
-	gdze6yM10zPqT85RzMWSrTs3Z4A1HHxxzaYBWqocAY8dqFwUSsRdAES2ZgrhQd90aX/zdVjpw0n
-	n+G2tiuTIrLVXVScLEY2Y/nAvcpoJKuCIqmoRdFAAFXHypRqhlCDc4FhMo2Ez6DVMskuEOo3UFg
-	CkNn+WsdUIy37b0/eTbGp3tNl62xdfU6hUN3XWA92ZAnrDKudZ4LQq1nQEC0xErkTzEUQC+UgiV
-	c50k1lvX8WwURupU3gJ/8hGRBIu5fZiqB77cFJpN0F
-X-Received: by 2002:a05:690c:6982:b0:8b3:bb2f:4101 with SMTP id
- 00721157ae682-8b5204aa181mr108453437b3.34.1795793505179; Fri, 27 Nov 2026
- 07:31:45 -0800 (PST)
+	dkim=pass (1024-bit key, unprotected) header.d=nbd.name header.i=@nbd.name header.a=rsa-sha256 header.s=20160729 header.b=syPbQvYg
+DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed; d=nbd.name;
+	s=20160729; h=Content-Transfer-Encoding:Content-Type:In-Reply-To:From:
+	References:Cc:To:Subject:MIME-Version:Date:Message-ID:Sender:Reply-To:
+	Content-ID:Content-Description:Resent-Date:Resent-From:Resent-Sender:
+	Resent-To:Resent-Cc:Resent-Message-ID:List-Id:List-Help:List-Unsubscribe:
+	List-Subscribe:List-Post:List-Owner:List-Archive;
+	bh=GLhy4K3WXdEuc7Y1GQAeKRwxsYwUKNxpVXU2auX8AUY=; b=syPbQvYggm8pBQ99HrVnmrsN4f
+	7qNAXgVORKSkHNfW2cmFW921cnUAM7P1Ze7FjZtGYj2AEQcOObLsnmuV8DkefuLsVgpo99gtdAd5Y
+	vOSTxIiBWWcRG7d2AiHDkREqOSVTb084sRLoPxdHhQNCJNIlTEghSN8P0Wrx9RkYHmLg=;
+Received: from p5b0154ac.dip0.t-ipconnect.de ([91.1.84.172] helo=nf.local)
+	by ds12 with esmtpsa  (TLS1.3) tls TLS_ECDHE_RSA_WITH_AES_128_GCM_SHA256
+	(Exim 4.96)
+	(envelope-from <nbd@nbd.name>)
+	id 1xWy7s-0098rv-2g;
+	Fri, 27 Nov 2026 16:44:40 +0100
+Message-ID: <486b142c-b189-488b-b7f5-f0a06795dfee@nbd.name>
+Date: Fri, 27 Nov 2026 16:44:40 +0100
 X-Mailing-List: linux-wireless@vger.kernel.org
 List-Id: <linux-wireless.vger.kernel.org>
 List-Post: <mailto:linux-wireless@vger.kernel.org>
@@ -100,89 +59,73 @@ List-Unsubscribe: <mailto:linux-wireless+unsubscribe@vger.kernel.org>
 List-Owner: <mailto:linux-wireless+owner@vger.kernel.org>
 Precedence: list
 MIME-Version: 1.0
-From: Collin Rose <collinr@gmail.com>
-Date: Fri, 27 Nov 2026 10:31:34 -0500
-X-Gm-Features: Aa3M54p9EKYq_L9WbiXSSrQ1XaZaTTZu0S9JTeSvbioCYnR5ZVi5HGZBdKcjSO4
-Message-ID: <CA+d3OrdhgXy8Dhfi_V=9sEqU=FK4tDzt4HVgOz9Uqw7OTP+8Jg@mail.gmail.com>
-Subject: [PATCH wireless] wifi: brcmfmac: use legacy MBSS when
- interface_create is unsupported
-To: arend.vanspriel@broadcom.com
-Cc: linux-wireless@vger.kernel.org, brcm80211@lists.linux.dev, 
-	brcm80211-dev-list.pdl@broadcom.com
-Content-Type: text/plain; charset="UTF-8"
+User-Agent: Mozilla Thunderbird
+Subject: Re: [PATCH 1/2] wifi: mt76: mt792x: add ICS logging framework to the
+ shared library
+To: JB Tsai <jb.tsai@mediatek.com>, lorenzo@kernel.org
+Cc: linux-wireless@vger.kernel.org, linux-mediatek@lists.infradead.org,
+ Sean.Wang@mediatek.com, Shengwei.Lu@mediatek.com
+References: <20261111054811.845536-1-jb.tsai@mediatek.com>
+Content-Language: en-US
+From: Felix Fietkau <nbd@nbd.name>
+Autocrypt: addr=nbd@nbd.name; keydata=
+ xsDiBEah5CcRBADIY7pu4LIv3jBlyQ/2u87iIZGe6f0f8pyB4UjzfJNXhJb8JylYYRzIOSxh
+ ExKsdLCnJqsG1PY1mqTtoG8sONpwsHr2oJ4itjcGHfn5NJSUGTbtbbxLro13tHkGFCoCr4Z5
+ Pv+XRgiANSpYlIigiMbOkide6wbggQK32tC20QxUIwCg4k6dtV/4kwEeiOUfErq00TVqIiEE
+ AKcUi4taOuh/PQWx/Ujjl/P1LfJXqLKRPa8PwD4j2yjoc9l+7LptSxJThL9KSu6gtXQjcoR2
+ vCK0OeYJhgO4kYMI78h1TSaxmtImEAnjFPYJYVsxrhay92jisYc7z5R/76AaELfF6RCjjGeP
+ wdalulG+erWju710Bif7E1yjYVWeA/9Wd1lsOmx6uwwYgNqoFtcAunDaMKi9xVQW18FsUusM
+ TdRvTZLBpoUAy+MajAL+R73TwLq3LnKpIcCwftyQXK5pEDKq57OhxJVv1Q8XkA9Dn1SBOjNB
+ l25vJDFAT9ntp9THeDD2fv15yk4EKpWhu4H00/YX8KkhFsrtUs69+vZQwc0cRmVsaXggRmll
+ dGthdSA8bmJkQG5iZC5uYW1lPsJgBBMRAgAgBQJGoeQnAhsjBgsJCAcDAgQVAggDBBYCAwEC
+ HgECF4AACgkQ130UHQKnbvXsvgCgjsAIIOsY7xZ8VcSm7NABpi91yTMAniMMmH7FRenEAYMa
+ VrwYTIThkTlQzsFNBEah5FQQCACMIep/hTzgPZ9HbCTKm9xN4bZX0JjrqjFem1Nxf3MBM5vN
+ CYGBn8F4sGIzPmLhl4xFeq3k5irVg/YvxSDbQN6NJv8o+tP6zsMeWX2JjtV0P4aDIN1pK2/w
+ VxcicArw0VYdv2ZCarccFBgH2a6GjswqlCqVM3gNIMI8ikzenKcso8YErGGiKYeMEZLwHaxE
+ Y7mTPuOTrWL8uWWRL5mVjhZEVvDez6em/OYvzBwbkhImrryF29e3Po2cfY2n7EKjjr3/141K
+ DHBBdgXlPNfDwROnA5ugjjEBjwkwBQqPpDA7AYPvpHh5vLbZnVGu5CwG7NAsrb2isRmjYoqk
+ wu++3117AAMFB/9S0Sj7qFFQcD4laADVsabTpNNpaV4wAgVTRHKV/kC9luItzwDnUcsZUPdQ
+ f3MueRJ3jIHU0UmRBG3uQftqbZJj3ikhnfvyLmkCNe+/hXhPu9sGvXyi2D4vszICvc1KL4RD
+ aLSrOsROx22eZ26KqcW4ny7+va2FnvjsZgI8h4sDmaLzKczVRIiLITiMpLFEU/VoSv0m1F4B
+ FtRgoiyjFzigWG0MsTdAN6FJzGh4mWWGIlE7o5JraNhnTd+yTUIPtw3ym6l8P+gbvfoZida0
+ TspgwBWLnXQvP5EDvlZnNaKa/3oBes6z0QdaSOwZCRA3QSLHBwtgUsrT6RxRSweLrcabwkkE
+ GBECAAkFAkah5FQCGwwACgkQ130UHQKnbvW2GgCeMncXpbbWNT2AtoAYICrKyX5R3iMAoMhw
+ cL98efvrjdstUfTCP2pfetyN
+In-Reply-To: <20261111054811.845536-1-jb.tsai@mediatek.com>
+Content-Type: text/plain; charset=UTF-8; format=flowed
+Content-Transfer-Encoding: 7bit
 
-Firmware that predates the interface_create iovar, for example BCM43602
-firmware 7.35.177.56 found on bcm53xx routers, cannot answer the version
-query that brcmf_cfg80211_request_ap_if() sends after interface_create
-v1 and v2 have failed:
+On 11.11.26 06:48, JB Tsai wrote:
+> From: Shengwei Lu <shengwei.lu@mediatek.com>
+> 
+> Introduce the ICS logging framework in the shared mt792x library so
+> the mt792x driver family can reuse a single
+> implementation instead of carrying per-chip duplicates.
+> 
+> The shared pieces are:
+> 
+> - mt792x_ics.c: the ICS MCU enable command, selecting UNI
+>    (MT7925/MT7928) command path by chip; the RX
+>    log header/aggregation; the ics_worker that drains the queue to a
+>    file; and the enable/disable bookkeeping.
+> - mt792x.h: per-device ics_worker, ics_q, fwlog_seq, ics and path_str
+>    fields, the rx_ics ring on mt792x_dma_layout and the
+>    rx.wm4_complete_mask on mt792x_irq_map, plus the exported ICS helpers.
+> - mt792x_debugfs.c: mt792x_ics_get/set, exported so each driver only
+>    needs to define its own fops_ics.
+> - mt792x_dma.c: ICS RX ring allocation, the ICS napi schedule in the
+>    irq tasklet and rx-poll-complete mask, and the worker kick from
+>    mt792x_poll_rx.
+> - mt76_connac.h, mt76_connac_mcu.h, mt76.h: PKT_TYPE_ICS,
+>    MCU_UNI_CMD_ICS and MT_RXQ_ICS.
+> 
+> The ICS log file is created under /tmp with a timestamped name and
+> appended to by the worker; enabling purges stale skbs so a new session
+> never inherits old data.
+Do not create files from the driver code, especially not with hardcoded 
+path. Please take a look at the relayfs implementation that I made for 
+mt7915 years ago (fwlog_data).
 
-  brcmfmac: failed to create interface(v1), err=-52
-  brcmfmac: failed to create interface(v2), err=-52
-  brcmfmac: fail to get supported version, err=-52
+Thanks,
 
-The function then returns -EOPNOTSUPP and never reaches the bsscfg:ssid
-code a few lines below, which is how this firmware creates an additional
-AP BSS. Before commit 1562bdef9251 that was the only method used, so
-adding a second AP worked. Now the add_virtual_intf call fails with -95,
-and because hostapd configures every BSS of a radio together, it
-disables the whole radio, including the primary AP. A guest or second
-SSID therefore takes the primary network down.
-
-Treat a failed version query like an unsupported version. Set the
-version to 0 so the switch default reports interface_create as
-unsupported, which is what already selects the bsscfg:ssid path.
-Firmware that answers the query takes the same code path as before.
-
-Tested on a SmartRG SR400ac (two BCM43602/1 PCIe radios, firmware
-7.35.177.56) running OpenWrt 25.12.6, which builds this driver from
-backports 6.18.55 on a 6.12.112 kernel. Without the change the second
-AP fails as above and both radios are disabled. With it, the driver
-logs the unsupported version, creates the BSS through bsscfg:ssid, and
-a primary and a second AP stay up together on 2.4 GHz and on 5 GHz.
-
-Fixes: 1562bdef9251 ("brcmfmac: Fix AP interface delete issue")
-Cc: stable@vger.kernel.org
-Signed-off-by: Collin Rose <collinr@gmail.com>
----
-Notes for reviewers, not for the commit message:
-
-* brcmf_cfg80211_request_sta_if() has the same early return, but it has
-  no legacy fallback to reach, so I left it alone.
-
-* The run above was with the backports copy of the driver on a 6.12
-  kernel, not a mainline build. The changed hunk is identical to the
-  current wireless tree. I have not tested other firmware or chips.
-
-* A change of this shape was first published for a Netgear R8000, which
-  has the same chip and firmware, in patches/861 of
-  https://github.com/88plug/netgear-r8000-plus (GPL-2.0). This is an
-  independent port to the current tree and a re-test on different
-  hardware.
-
-* The downstream OpenWrt pull request carrying the same change is
-  https://github.com/openwrt/openwrt/pull/26697
-
-* If you would rather not print "not support interface create(v0)" at
-  error level for old firmware, I can send a follow-up.
-
- drivers/net/wireless/broadcom/brcm80211/brcmfmac/cfg80211.c | 3 ++-
- 1 file changed, 2 insertions(+), 1 deletion(-)
-
-diff --git a/drivers/net/wireless/broadcom/brcm80211/brcmfmac/cfg80211.c
-b/drivers/net/wireless/broadcom/brcm80211/brcmfmac/cfg80211.c
-index 46714d871..87aabb7cd 100644
---- a/drivers/net/wireless/broadcom/brcm80211/brcmfmac/cfg80211.c
-+++ b/drivers/net/wireless/broadcom/brcm80211/brcmfmac/cfg80211.c
-@@ -760,7 +760,8 @@ static int brcmf_cfg80211_request_ap_if(struct
-brcmf_if *ifp)
-  &iface_create_ver);
-  if (err) {
-  brcmf_err("fail to get supported version, err=%d\n", err);
-- return -EOPNOTSUPP;
-+ /* Old firmware: use the legacy bsscfg:ssid path below. */
-+ iface_create_ver = 0;
-  }
-
-  switch (iface_create_ver) {
--- 
-2.48.1
+- Felix
