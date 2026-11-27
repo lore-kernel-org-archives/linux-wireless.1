@@ -1,94 +1,77 @@
-Authentication-Results: smtp.subspace.kernel.org; arc=none smtp.remote-ip=74.125.82.51
+Authentication-Results: smtp.subspace.kernel.org; arc=none smtp.remote-ip=60.244.123.138
 ARC-Seal: i=1; d=subspace.kernel.org; s=arc20261015; a=rsa-sha256; cv=none;
-	t=1795768688;
-	b=bMIaQLn05T3x+VfbiGOR81sARftmhibUp2jF4mw2kwO1qIl/6BGn97qnQ/e08ZUOx76w
-	 6HMN09MK0FKXiEzoa2iEutZdqC3SgVBYdiWO24Cd2mTXJ1a+8Z/JDvYMCQ/XwPS28A2Ie
-	 rPsULV9iZsazhWt9buL9yauySQBU9DKyz1G7ps70fWRulm1ZPaozPZoHs1CpncR27vIla
-	 sVmMZy57kGDX6xcI5uFy8Y57iICLXIAWEAwCM5VY4WUUcoOvGG8MNoCsAl9hz+Jb5I1c3
-	 IvRdx0GqbA3OeDtrc301Qej+GifSpA7j2Of4z8SGPU2v9/3BmFbEVFO1fyEdWIDOYeA==
+	t=1795768876;
+	b=HVmMGd2FAU7tBaa1hQkTIe1Gt73Qp2ksesfPh6yClP5LtNKEGelf7ILgsZHI7ZGlXrv0
+	 5VMalI3I7Cl2mve0yxt7JeZ7GayziVOEKbBIafVLYx4qCCVoDWA+pmUc5X9nmjHYI788V
+	 URIQC5gJtadf05luv7XS5Nqhq/EnP84KQrjUOgEuSBS3qtsAo9VqBB1YeVsosQhUCahdC
+	 xDzacuuX6vHkfYSP+Hlc/wHgAqipB2PYLAP8DDsl/hWPE1rkXoCxejl5EZFnU4rHslrjt
+	 7qzlO+zJGYHxwiWaSaq7xcMx7EQ7fsIBO5/l4rhhSpXXBgfRvaW5dxGDO+LnuG2Fd6g==
 ARC-Message-Signature: i=1; d=subspace.kernel.org; s=arc20261015;
-	a=rsa-sha256; c=relaxed/relaxed; t=1795768688;
-	h=DMARC-Filter:Received:DKIM-Signature:X-Google-DKIM-Signature:
-	 X-Gm-Message-State:X-Gm-Gg:X-Received:Received:From:To:Cc:Subject:
-	 Date:Message-ID:X-Mailer:In-Reply-To:References:MIME-Version:
-	 Content-Transfer-Encoding;
-	bh=JpYk4m7u55uBxRHVd1S/r6n3Zj8g95nbpdebQK3UB/Y=;
-	b=m7by/CY6P3yPF/o/UiVYCPdxYRPmldEMNvqUKX0vvENZy8rnSGP+cgfr03Dwr8pah9+z
-	 hcOHYHI85UI3z+3c6CI5bxIKbXP/eYpZUdZ8k1jCspqdd3XHAqT2jlNktTsLViJ3dNc6H
-	 raDCAd2t615Gc3nmt2yHEW6SASogictF1gIqcx0b5CeMsGY8RRAFEq1s622VH4aKEj2z3
-	 bGpfWK5rd6N0D1UzmwOdiqjw6tFgNv75S9wwPcYqvGs1hgedgxpktC8L+wlRSSLzi9Z6L
-	 NmYFUhtiO7xPJzfQtZLHgl3axXbZkYNMPFdE2OiqfvvtkuAvd83fHxq89t7AuCQYz4A==
+	a=rsa-sha256; c=relaxed/relaxed; t=1795768876;
+	h=DMARC-Filter:X-UUID:DKIM-Signature:X-CID-P-RULE:X-CID-O-INFO:
+	 X-CID-META:X-CID-BVR:X-CID-BAS:X-CID-FACTOR:X-CID-RHF:X-UUID:Received:
+	 Received:Received:From:To:CC:Subject:Date:Message-ID:X-Mailer:
+	 MIME-Version:Content-Transfer-Encoding:Content-Type;
+	bh=icwSomd9/pkE77nvCjEhjHFfyn1xfdl4Oy+vj7qpDKA=;
+	b=oSTidQrYkKoe1JzxVKjxU40sfB/f2SkBS+Tvj9M27Dau5Q7KnZolCaAdFAiYZZZoTzzZ
+	 OWZUY8+ISHZht0edRNIwz2jN/oWxlixTKApxRet4nZeOGpCMnwEkk34tY2oRkVey6mRQF
+	 Z3+LmToD+CvGpvR571MNnwirXv+yeRd+1mH7T1o0RGfrBiq1M1fl8XnsBJxjCrBGguxiP
+	 wMtetc9K/JiuObALXYwwjjGGSysS4XdXO4ewlsbDRMdQmhm513kojDSt2plnO10IBL5PA
+	 /mM1aUlNQiLqQHOEnM3dmKjjEvucJeI+N9EcJCK1TJ2R+YhOz6ESYNWDlan1GQs/XxA==
 ARC-Authentication-Results: i=1; smtp.subspace.kernel.org; 
-	dmarc=pass header.from=gmail.com;
-	spf=pass smtp.mailfrom=gmail.com;
-	dkim=pass header.d=gmail.com header.i=@gmail.com header.a=rsa-sha256 header.s=20260707 header.b=tNRqIf1s;
-	arc=none smtp.remote-ip=74.125.82.51
-Received: from mail-dl1-f51.google.com (mail-dl1-f51.google.com [74.125.82.51])
-	(using TLSv1.3 with cipher TLS_AES_128_GCM_SHA256 (128/128 bits)
+	dmarc=pass header.from=mediatek.com;
+	spf=pass smtp.mailfrom=mediatek.com;
+	dkim=pass header.d=mediatek.com header.i=@mediatek.com header.a=rsa-sha256 header.s=dk header.b=Hly982mG;
+	arc=none smtp.remote-ip=60.244.123.138
+Received: from mailgw01.mediatek.com (unknown [60.244.123.138])
+	(using TLSv1.3 with cipher TLS_AES_256_GCM_SHA384 (256/256 bits)
 	 key-exchange X25519 server-signature ECDSA (prime256v1) server-digest SHA256)
 	(No client certificate requested)
-	by smtp.subspace.kernel.org (Postfix) with ESMTPS id 804E4606A324
-	for <linux-wireless@vger.kernel.org>; Fri, 27 Nov 2026 08:38:08 +0000 (UTC)
-DMARC-Filter: OpenDMARC Filter v1.4.2 smtp.subspace.kernel.org 804E4606A324
-Authentication-Results: smtp.subspace.kernel.org; dmarc=pass (p=none dis=none) header.from=gmail.com
-Authentication-Results: smtp.subspace.kernel.org; spf=pass smtp.mailfrom=gmail.com
+	by smtp.subspace.kernel.org (Postfix) with ESMTPS id 3427B606A31C
+	for <linux-wireless@vger.kernel.org>; Fri, 27 Nov 2026 08:41:15 +0000 (UTC)
+DMARC-Filter: OpenDMARC Filter v1.4.2 smtp.subspace.kernel.org 3427B606A31C
+Authentication-Results: smtp.subspace.kernel.org; dmarc=pass (p=quarantine dis=none) header.from=mediatek.com
+Authentication-Results: smtp.subspace.kernel.org; spf=pass smtp.mailfrom=mediatek.com
 Authentication-Results: smtp.subspace.kernel.org;
-	dkim=pass (2048-bit key) header.d=gmail.com header.i=@gmail.com header.a=rsa-sha256 header.s=20260707 header.b=tNRqIf1s
-Received: by mail-dl1-f51.google.com with SMTP id a92af1059eb24-1ae58d17cd9so8893499c88.1
-        for <linux-wireless@vger.kernel.org>; Fri, 27 Nov 2026 00:38:08 -0800 (PST)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=gmail.com; s=20260707; t=1795768687; x=1796373487; darn=vger.kernel.org;
-        h=content-transfer-encoding:mime-version:references:in-reply-to
-         :message-id:date:subject:cc:to:from:from:to:cc:subject:date
-         :message-id:reply-to:content-type;
-        bh=JpYk4m7u55uBxRHVd1S/r6n3Zj8g95nbpdebQK3UB/Y=;
-        b=tNRqIf1sjQlfAZe1ySVZiu1K2Y1XjHcGVQ3L8NG4R2HmlEkVnNJa2B7JUha285HPZg
-         /SvLgzNEKoDliF+GIyIPMZYQKFn1Ab63SOKtPYsYhQYhxlr0MKUB6DEXbwrp9BGOwQ/2
-         3k6spwYQGObRvGMERhqU2+uog9qLp2mgTIvSLawb97rIPr9IXihR0LqNq+Zp0vcEQmye
-         SEXARI6bK7lUJwgeb2bZ/OupJL47QzvM2UVcKe78b0Eggqma8QSWATmfOwQ63qXE7Y5o
-         n74ZPOruBU7ISpC+duzcP5Z+KF/865kkXgtbtpeDcjgqxzp5IN5rH3h1S4FB4RLgjsIg
-         TTcA==
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=1e100.net; s=20260707; t=1795768687; x=1796373487;
-        h=content-transfer-encoding:mime-version:references:in-reply-to
-         :message-id:date:subject:cc:to:from:x-gm-gg:x-gm-message-state:from
-         :to:cc:subject:date:message-id:reply-to:content-type;
-        bh=JpYk4m7u55uBxRHVd1S/r6n3Zj8g95nbpdebQK3UB/Y=;
-        b=AYqr3EqyfbS+DuVv3tZ3T5o0u2o5n27Ul/doZfnLHEbfOr0FOP7ynYiD60m//9Xz4n
-         4LGADiOlpS8mOuJUkA9jfrRhrilUBi03BHWQIj1uLyPmmih2jf85uw20NjYFms2aKMcs
-         5KOICV6+PFMfy1fjZsd57hcx83AUq+VtBcq+CvT7FjTiDhXadh4s/vzHqVpbBWMVDjWK
-         N43KNdShTuVMQOsCAFpjoFMf4xVULhQz3l8kpSt9NJrEuHSYH6NJkStkI28AF+zkdLxY
-         n9q+svOa3en2jelexv1VZvgesY46L6VqXHG4IUqoJ68VmeJDoIjPPaSgz6txhW0L5DAK
-         WjzA==
-X-Gm-Message-State: APuU4Z8QzT6NOguJiTcAI0tRYHTl6Z3d+DeHecXhvdkF/5lzstfPgX3h
-	/TvFob6fZMzS4uQf5dNwJkqo0QwhF0VKrOLaj/otmMNRlYbxFGpbnGGrOlKKfOhL
-X-Gm-Gg: AZFdTZfvW4S4VCsLZSvyhbMpP9et/KItT8QDkj1CegeKfnNvlPpmXwUlsJtcOtc3V/m
-	GtUTx2PcP0CuN/m+QG0HtkryIxTBK4i9x4ZzOJz4XefjPH1fFd80SUEYrTl3gAToVAE6eWqt0eu
-	JbxS0l6UWkJ6bH+Zm0ui6B0HrKXb5qWzmwBA0GXAjOk+ZGpr0xSVh66wXXdsKlGd8tMtEWg15wS
-	uuy6BeeRAvjDpHrga5YH519TgMqpDLG8gDZIzQRkl2BfPPO3xhMIvEqCXdcnMgL9ZqNx0u8sRb5
-	or4/wveJ6yTcGUmZKBnNPB8Fuff0ETUH43QZ9KvM+jBt/xAb9JPISZxhX7CI9USqxFPC5L86Uum
-	kXixuynQo9rilZDE00QkxtXt+jdMFZ5lhaW4WfUD1KNyjkRuefa6ftkoI0D9sz8HGeYu6ibGsmI
-	0JZ+peXgdu4/p4hTxIrAHc/FLvMaXUJImwV2ZsGb7brC0bIXC/Fj9V2tvjFrlusS/H3BY7yrMj2
-	n2/bZDw0Rdu/d3C9eBx5NPnUU8SxO0FvtZGJm5lgqxDPRDKNPxhk2fGfiMSJ/9ff8aslGkC8fXo
-	e1Pz/sv9SPk7hR12XsJ49Bm0Oez8tsU=
-X-Received: by 2002:a05:7301:160c:b0:382:c1cf:163b with SMTP id 5a478bee46e88-38571419d38mr22380158eec.32.1795768687424;
-        Fri, 27 Nov 2026 00:38:07 -0800 (PST)
-Received: from penguine ([157.15.89.58])
-        by smtp.gmail.com with ESMTPSA id 5a478bee46e88-385666e96bdsm65793244eec.7.2026.11.27.00.38.04
-        (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
-        Fri, 27 Nov 2026 00:38:06 -0800 (PST)
-From: Swapnil Shinde <shindeswapnil028@gmail.com>
-To: pkshih@realtek.com,
-	kvalo@kernel.org
-Cc: linux-wireless@vger.kernel.org,
-	linux-kernel@vger.kernel.org,
-	Swapnil Shinde <shindeswapnil028@gmail.com>
-Subject: [PATCH v2] wifi: rtw88: pci: Enter IPS before PCI_D3hot on shutdown
-Date: Fri, 27 Nov 2026 14:07:29 +0530
-Message-ID: <20261127083729.7030-1-shindeswapnil028@gmail.com>
-X-Mailer: git-send-email 2.56.0
-In-Reply-To: <20261127004822.8536-1-shindeswapnil028@gmail.com>
-References: <20261127004822.8536-1-shindeswapnil028@gmail.com>
+	dkim=pass (1024-bit key) header.d=mediatek.com header.i=@mediatek.com header.a=rsa-sha256 header.s=dk header.b=Hly982mG
+X-UUID: 4b432d1eea3e11f1b9cf3d4034dccee2-20261127
+DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed; d=mediatek.com; s=dk;
+	h=Content-Type:Content-Transfer-Encoding:MIME-Version:Message-ID:Date:Subject:CC:To:From; bh=icwSomd9/pkE77nvCjEhjHFfyn1xfdl4Oy+vj7qpDKA=;
+	b=Hly982mGyIl3T9T+VP8gTqum7Rxeol4PSaltdwPgVC4P08XTSemHkpYoB14OPsNugXIgoNq3hcqDIbMyS4lzpKPHMhjdSWdL+f0ZhLdovclTP6ASXtbVZOjkROmf4rX85yJXLA24GGfGwPJ26NLtylreWVtTN4iBKlorxLptjxQ=;
+X-CID-P-RULE: Release_Ham
+X-CID-O-INFO: VERSION:1.3.21,REQID:70f782a7-c112-4a24-bf18-74d13029e943,IP:0,U
+	RL:0,TC:0,Content:0,EDM:0,RT:0,SF:0,FILE:0,BULK:0,RULE:Release_Ham,ACTION:
+	release,TS:0
+X-CID-META: VersionHash:b0318ac,CLOUDID:b8686dd2-c16d-45a0-bf9a-a369dc5547b0,B
+	ulkID:nil,BulkQuantity:0,SF:102|836|865|888|898,TC:-5,Content:0|15|50|99,E
+	DM:-3,IP:nil,URL:0,File:130,RT:0,Bulk:nil,QS:nil,BEC:nil,COL:0,OSI:0,OSA:0
+	,AV:0,LES:1,SPR:NO,DKR:0,DKP:0,BRR:0,BRE:0,ARC:0
+X-CID-BVR: 2,SSN|SDN
+X-CID-BAS: 2,SSN|SDN,0,_
+X-CID-FACTOR: TF_CID_SPAM_SNR
+X-CID-RHF: D41D8CD98F00B204E9800998ECF8427E
+X-UUID: 4b432d1eea3e11f1b9cf3d4034dccee2-20261127
+Received: from mtkmbs13n2.mediatek.inc [(172.21.101.108)] by mailgw01.mediatek.com
+	(envelope-from <eason.lai@mediatek.com>)
+	(Generic MTA with TLSv1.2 ECDHE-RSA-AES256-GCM-SHA384 256/256)
+	with ESMTP id 160155230; Fri, 27 Nov 2026 16:41:09 +0800
+Received: from mtkmbs11n2.mediatek.inc (172.21.101.187) by
+ MTKMBS09N1.mediatek.inc (172.21.101.35) with Microsoft SMTP Server
+ (version=TLS1_2, cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id
+ 15.2.2562.56; Fri, 27 Nov 2026 16:41:08 +0800
+Received: from mtksitap99.mediatek.inc (10.233.130.16) by
+ mtkmbs11n2.mediatek.inc (172.21.101.73) with Microsoft SMTP Server id
+ 15.2.2562.56 via Frontend Transport; Fri, 27 Nov 2026 16:41:08 +0800
+From: Eason Lai <eason.lai@mediatek.com>
+To: <nbd@nbd.name>, <lorenzo@kernel.org>
+CC: <linux-wireless@vger.kernel.org>, <linux-mediatek@lists.infradead.org>,
+	<kun.wu@mediatek.com>, <deren.wu@mediatek.com>, <sean.wang@mediatek.com>,
+	<quan.zhou@mediatek.com>, <ryder.lee@mediatek.com>, <leon.yen@mediatek.com>,
+	<litien.chang@mediatek.com>, <jb.tsai@mediatek.com>, <eason.lai@mediatek.com>
+Subject: [PATCH v1] wifi: mt76: mt7925: drop RX frame with a header gap past its end
+Date: Fri, 27 Nov 2026 16:41:06 +0800
+Message-ID: <20261127084106.4094862-1-eason.lai@mediatek.com>
+X-Mailer: git-send-email 2.45.2
 X-Mailing-List: linux-wireless@vger.kernel.org
 List-Id: <linux-wireless.vger.kernel.org>
 List-Post: <mailto:linux-wireless@vger.kernel.org>
@@ -99,63 +82,35 @@ List-Owner: <mailto:linux-wireless+owner@vger.kernel.org>
 Precedence: list
 MIME-Version: 1.0
 Content-Transfer-Encoding: 8bit
+Content-Type: text/plain
 
-Currently rtw_pci_shutdown() invokes chip->ops->shutdown() and
-immediately transitions the device to PCI_D3hot without stopping the
-firmware/MAC or notifying Bluetooth coexistence when RTW_FLAG_POWERON
-is active.
+hdr_gap includes the header padding from the RXD, but is not checked
+against skb->len. If it is too large, skb_pull() fails and leaves no
+headroom, so the __skb_push() in mt76_insert_ccmp_hdr() writes before
+skb->head.
 
-On RTL8723DE combo cards, leaving the MAC active across a warm reset
-causes REG_APS_FSMCO polling (offset 0x5, mask 0x1) to time out with
--EBUSY (-16) on the next boot. Export rtw_enter_ips() and invoke it
-under rtwdev->mutex before entering PCI_D3hot so the driver notifies
-COEX_IPS_ENTER, stops the core/MAC, and enters PCIe link power save.
+Drop the frame if hdr_gap is not within the skb.
 
+Fixes: c948b5da6bbe ("wifi: mt76: mt7925: add Mediatek Wi-Fi7 driver for mt7925 chips")
+Signed-off-by: Eason Lai <eason.lai@mediatek.com>
 ---
-Changes in v2:
-- Call rtw_enter_ips() under rtwdev->mutex instead of manually clearing
-  internal flags and calling rtw_power_off() (suggested by Ping-Ke Shih).
-- Export rtw_enter_ips() in ps.c so rtw88_pci can invoke it.
-- Note on commits 05202746ed70 and 44492e70adc8: neither alone resolves
-  the warm-reboot failure on RTL8723DE because 05202746ed70 only sets
-  BIT_USB_SUS_DIS in REG_HCI_OPT_CTRL without powering down the Wi-Fi
-  MAC, and 44492e70adc8 puts PCI into PCI_D3hot while the MAC is still
-  powered on. Calling rtw_enter_ips() before PCI_D3hot fixes the MAC
-  shutdown cleanly while keeping both commits intact.
+ drivers/net/wireless/mediatek/mt76/mt7925/mac.c | 3 +++
+ 1 file changed, 3 insertions(+)
 
-Signed-off-by: Swapnil Shinde <shindeswapnil028@gmail.com>
----
- drivers/net/wireless/realtek/rtw88/pci.c | 4 ++++
- drivers/net/wireless/realtek/rtw88/ps.c  | 1 +
- 2 files changed, 5 insertions(+)
-
-diff --git a/drivers/net/wireless/realtek/rtw88/pci.c b/drivers/net/wireless/realtek/rtw88/pci.c
-index 66d2e5f..ecf954d 100644
---- a/drivers/net/wireless/realtek/rtw88/pci.c
-+++ b/drivers/net/wireless/realtek/rtw88/pci.c
-@@ -1960,6 +1960,10 @@ void rtw_pci_shutdown(struct pci_dev *pdev)
- 	if (chip->ops->shutdown)
- 		chip->ops->shutdown(rtwdev);
+diff --git a/drivers/net/wireless/mediatek/mt76/mt7925/mac.c b/drivers/net/wireless/mediatek/mt76/mt7925/mac.c
+index 3389a3236187..b5eae71c5285 100644
+--- a/drivers/net/wireless/mediatek/mt76/mt7925/mac.c
++++ b/drivers/net/wireless/mediatek/mt76/mt7925/mac.c
+@@ -599,6 +599,9 @@ mt7925_mac_fill_rx(struct mt792x_dev *dev, struct sk_buff *skb)
+ 	}
  
-+	mutex_lock(&rtwdev->mutex);
-+	rtw_enter_ips(rtwdev);
-+	mutex_unlock(&rtwdev->mutex);
+ 	hdr_gap = (u8 *)rxd - skb->data + 2 * remove_pad;
++	if (hdr_gap >= skb->len)
++		return -EINVAL;
 +
- 	pci_set_power_state(pdev, PCI_D3hot);
- }
- EXPORT_SYMBOL(rtw_pci_shutdown);
-diff --git a/drivers/net/wireless/realtek/rtw88/ps.c b/drivers/net/wireless/realtek/rtw88/ps.c
-index add5a20..41a13d9 100644
---- a/drivers/net/wireless/realtek/rtw88/ps.c
-+++ b/drivers/net/wireless/realtek/rtw88/ps.c
-@@ -36,6 +36,7 @@ int rtw_enter_ips(struct rtw_dev *rtwdev)
- 
- 	return 0;
- }
-+EXPORT_SYMBOL(rtw_enter_ips);
- 
- static void rtw_restore_port_cfg_iter(void *data, struct ieee80211_vif *vif)
- {
+ 	if (hdr_trans && ieee80211_has_morefrags(fc)) {
+ 		if (mt7925_reverse_frag0_hdr_trans(skb, hdr_gap))
+ 			return -EINVAL;
 -- 
-2.56.0
+2.45.2
 
