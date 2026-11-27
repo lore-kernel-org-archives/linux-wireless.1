@@ -1,71 +1,65 @@
-Authentication-Results: smtp.subspace.kernel.org; arc=none smtp.remote-ip=195.135.223.131
+Authentication-Results: smtp.subspace.kernel.org; arc=none smtp.remote-ip=91.216.248.212
 ARC-Seal: i=1; d=subspace.kernel.org; s=arc20261015; a=rsa-sha256; cv=none;
-	t=1795800037;
-	b=sjXCGVBzdcYXMbsH5So2hjDQpMYgTwB/Dth6VWrW30IJuPv7gOEyY23IHyZJiB9ma4Vc
-	 rEROGfkkd4TRaRvkqQFLIDyzIQLrJ5fjGxehzzQ3Fu8q0uzGNqPWuVfYJbZ6oQ9zu8GDW
-	 M33rKj/KLWAPXn0QELHFslqiNPEhqpDulEcujAHb2CZLgZbn+rPz7lRrqRK4QHoQ5fu93
-	 8UFI9XTh62ugFjj+0QepZKVVucKgoGR3bkKNWfhwwX9N9SwoiXVoxGUWjCrfV1S9OFFpz
-	 2r2tiwvvNfQX8zUBxpi0kLwsnzAxwq/aZXmeZimTbj8T/BoYE9YMcGTIel87n/2Os5Q==
+	t=1795800960;
+	b=NttpkG1PBdejHgPJi9N30SO1q/6P8LwejfsjXaOgie+MaipQPfJKiWJ009jSLlSp7Pph
+	 eDNu4By4+ZL0c4Nn4ChMsTPXliTFYrZa1ntc8P6LhMeuP2qu/K7TC+oY24RxqwtcVQMle
+	 WDNe/d5WDFQ868VUunz9EZ9rX6Jla6yAoQtlSKw0heLOJRfCKtUU0kb3LzI7q01dqxaJT
+	 wpUppIR3a3EQ7uHihej6HSVqjb2IpjvYkjWGV0FNk+EUi7ztznudPRBKUJLKRWCtwoy7h
+	 cS69bYx2oE4/2tfzUSW2k28FCAW8sxAy4RLeME54zXiu2FRWhIh/QR85JRO+wY7Xy/w==
 ARC-Message-Signature: i=1; d=subspace.kernel.org; s=arc20261015;
-	a=rsa-sha256; c=relaxed/relaxed; t=1795800037;
-	h=DMARC-Filter:Received:Received:Received:From:To:Cc:Subject:Date:
-	 Message-ID:X-Mailer:In-Reply-To:References:MIME-Version:
-	 Content-Transfer-Encoding:X-Rspamd-Pre-Result:X-Rspamd-Server:
-	 X-Spamd-Result:X-Spam-Flag:X-Spam-Score:X-Spam-Level:
-	 X-Rspamd-Queue-Id:X-Rspamd-Pre-Result:X-Rspamd-Action;
-	bh=4OguRMGdAm4Ve4RxSaUFRoN3pO2yCoU1/zlHX5Av2aM=;
-	b=T5eyEYTs6mCJQlPnlqrNsJtKJNOQwLAkscdCSA/81y9zyOOMBA14jpYeTQ1bhJxmknrx
-	 KeKFSCNAHqyHf8c+7ryVq99GUVqH2Re/sP27eWi8Q+1y/9ZRCicJ4xyGUAQSJG2oGAtA0
-	 VNw3z77gfq5UUVz1ORmYx4bpZWIdpQYW/PF706sVtjUIkra+8anOlbTjgqMkXvxGNXhqS
-	 3POj23IWJPtwoXWL/U7nEqx2JiF50YBR6GzBcOH1Lgjk0mniNNkoEsJoGjr5GtjRc9Htk
-	 ayb8M8fK7U9lJbE8Jia4X6dlXc8zwT+A3l5OA2P+LyXZ4DhrLXFT0SIw5EVvWxmv06g==
+	a=rsa-sha256; c=relaxed/relaxed; t=1795800960;
+	h=DMARC-Filter:From:X-Lima-ML-UUID:DKIM-Signature:To:Cc:Subject:Date:
+	 Message-ID:X-Mailer:MIME-Version:Content-Transfer-Encoding;
+	bh=duUjDN5fxT3uLbdNBTlIvjfudAaUyHlLBvOG4MbFSSY=;
+	b=1DZwsXOtik473t2uMGLn2jtoQ3OeuMF5eLxfUtlZ5/FPsCixMWpUUGb8hoktmbf5SrWs
+	 v4SIlBslDHX0kWOo/azdS10dNGLc/G3KxQ2qoj2qmm5yR+fhJB8PDchBJp0ogsS2CumXF
+	 4PuQ7NM7U97Zrb/CXPxro0s7if/ZR2j+bG2tzp8qmBW2u0kcoudtk4MemahYTLzoWCnrK
+	 gc7PtEfLjkH+EDa9a3DTy1lNKjxZXj3IK9GmEupnfzV630jiicuvPp259Rk49s+a9XRhF
+	 iA02Ty6HyCJh4tfyvgQp7Ggg3+0OgynGoPXj2JoMNkNxTwX/7xf8b3ddd/bABcLYlvA==
 ARC-Authentication-Results: i=1; smtp.subspace.kernel.org; 
-	dmarc=pass header.from=suse.de;
-	spf=pass smtp.mailfrom=suse.de;
-	arc=none smtp.remote-ip=195.135.223.131
-Received: from smtp-out2.suse.de (smtp-out2.suse.de [195.135.223.131])
+	dmarc=none header.from=deq.rocks;
+	spf=none smtp.mailfrom=deq.rocks;
+	dkim=pass header.d=deq.rocks header.i=@deq.rocks header.a=rsa-sha256 header.s=securedbylima-20251205 header.b=Xs8KuWlJ;
+	arc=none smtp.remote-ip=91.216.248.212
+Received: from bulk0.mail-out.lima-city.de (bulk0.mail-out.lima-city.de [91.216.248.212])
 	(using TLSv1.3 with cipher TLS_AES_256_GCM_SHA384 (256/256 bits)
 	 key-exchange X25519 server-signature ECDSA (prime256v1) server-digest SHA256)
 	(No client certificate requested)
-	by smtp.subspace.kernel.org (Postfix) with ESMTPS id 9A1AB606A327;
-	Fri, 27 Nov 2026 17:20:36 +0000 (UTC)
-DMARC-Filter: OpenDMARC Filter v1.4.2 smtp.subspace.kernel.org 9A1AB606A327
-Authentication-Results: smtp.subspace.kernel.org; dmarc=pass (p=none dis=none) header.from=suse.de
-Authentication-Results: smtp.subspace.kernel.org; spf=pass smtp.mailfrom=suse.de
-Received: from imap1.dmz-prg2.suse.org (imap1.dmz-prg2.suse.org [IPv6:2a07:de40:b281:104:10:150:64:97])
-	(using TLSv1.3 with cipher TLS_AES_256_GCM_SHA384 (256/256 bits)
-	 key-exchange X25519 server-signature RSA-PSS (4096 bits) server-digest SHA256)
-	(No client certificate requested)
-	by smtp-out2.suse.de (Postfix) with ESMTPS id DD8B21F7F2;
-	Fri, 27 Nov 2026 17:20:34 +0000 (UTC)
-Authentication-Results: smtp-out2.suse.de;
-	none
-Received: from imap1.dmz-prg2.suse.org (localhost [127.0.0.1])
-	(using TLSv1.3 with cipher TLS_AES_256_GCM_SHA384 (256/256 bits)
-	 key-exchange X25519 server-signature RSA-PSS (4096 bits) server-digest SHA256)
-	(No client certificate requested)
-	by imap1.dmz-prg2.suse.org (Postfix) with ESMTPS id 3E60013432;
-	Fri, 27 Nov 2026 17:20:34 +0000 (UTC)
-Received: from dovecot-director2.suse.de ([2a07:de40:b281:106:10:150:64:167])
-	by imap1.dmz-prg2.suse.org with ESMTPSA
-	id /Yb1MH67CWuMAwAAD6G6ig:T15
-	(envelope-from <fmancera@suse.de>); Fri, 27 Nov 2026 17:20:34 +0000
-From: Fernando Fernandez Mancera <fmancera@suse.de>
-To: netdev@vger.kernel.org
-Cc: davem@davemloft.net,
-	kuba@kernel.org,
-	edumazet@kernel.org,
-	pabeni@redhat.com,
-	horms@kernel.org,
-	Fernando Fernandez Mancera <fmancera@suse.de>,
-	Johannes Berg <johannes@sipsolutions.net>,
-	linux-wireless@vger.kernel.org
-Subject: [PATCH net-next v4 14/16] wifi: mac80211: replace CONFIG_INET with CONFIG_IPV4 guards
-Date: Fri, 27 Nov 2026 18:17:59 +0100
-Message-ID: <20261127171824.27362-15-fmancera@suse.de>
-X-Mailer: git-send-email 2.51.0
-In-Reply-To: <20261127171824.27362-1-fmancera@suse.de>
-References: <20261127171824.27362-1-fmancera@suse.de>
+	by smtp.subspace.kernel.org (Postfix) with ESMTPS id 0B180606A31E;
+	Fri, 27 Nov 2026 17:35:58 +0000 (UTC)
+DMARC-Filter: OpenDMARC Filter v1.4.2 smtp.subspace.kernel.org 0B180606A31E
+Authentication-Results: smtp.subspace.kernel.org; dmarc=none (p=none dis=none) header.from=deq.rocks
+Authentication-Results: smtp.subspace.kernel.org; spf=none smtp.mailfrom=deq.rocks
+Authentication-Results: smtp.subspace.kernel.org;
+	dkim=pass (2048-bit key) header.d=deq.rocks header.i=@deq.rocks header.a=rsa-sha256 header.s=securedbylima-20251205 header.b=Xs8KuWlJ
+From: Andre Eikmeyer <dev@deq.rocks>
+X-Lima-ML-UUID: 5d882cb8-b7e5-42b8-96d5-d8abe38b4ced
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=deq.rocks;
+	s=securedbylima-20251205; t=1795800956;
+	bh=Y5DFtHB7VMkbjfcMnVp9GefPuYs+p+pahTbIQITFBX0=;
+	h=From:To:Cc:Subject:Date:From;
+	b=Xs8KuWlJVaZxeyZ4c/vPKJ82j6q8N/7TpDrJ5ba6Dz4kHIWTFulqJtduS+mNHLPQ+
+	 YlosfwlGa4864kt2qE9NfO8/1SHYSfPY5bsrJAYjOlnl61Zt8m4R+ZMHEOGG22okgA
+	 mFTm63TNlfekpINZdRTBJudFX6ZlosOWGHt/aREsg66nPwyGWYVwbNBJA6GQn5ubrA
+	 rvi3ab6vlC+WwMxJGqIeuoHdEVhRK2EHh5OcWrXq+eWq0TAza6DAHeraZA8S3248bu
+	 gKNzvtkyYYzAmz/8zJlCCoqzbRl4ix1FnM+tJReJw2yNHONTgO2jHlHVh63NEHSFDb
+	 gD+kIP7A3t8GQ==
+To: arend.vanspriel@broadcom.com
+Cc: linux-wireless@vger.kernel.org,
+	brcm80211@lists.linux.dev,
+	brcm80211-dev-list.pdl@broadcom.com,
+	linux-kernel@vger.kernel.org,
+	michael.reeves077@gmail.com,
+	marcan@marcan.st,
+	j@jannau.net,
+	asahi@lists.linux.dev,
+	sebastian.reichel@collabora.com,
+	Soeren Coremans <sorencoremans@gmail.com>,
+	Andre Eikmeyer <dev@deq.rocks>
+Subject: [PATCH wireless-next v3 0/5] wifi: brcmfmac: pcie: S3 and deep sleep on the T2 Mac chips
+Date: Fri, 27 Nov 2026 18:35:44 +0100
+Message-ID: <20261127173549.29335-1-dev@deq.rocks>
+X-Mailer: git-send-email 2.56.0
 X-Mailing-List: linux-wireless@vger.kernel.org
 List-Id: <linux-wireless.vger.kernel.org>
 List-Post: <mailto:linux-wireless@vger.kernel.org>
@@ -76,82 +70,86 @@ List-Owner: <mailto:linux-wireless+owner@vger.kernel.org>
 Precedence: list
 MIME-Version: 1.0
 Content-Transfer-Encoding: 8bit
-X-Rspamd-Pre-Result: action=no action;
-	module=replies;
-	Message is reply to one we originated
-X-Rspamd-Server: rspamd1.dmz-prg2.suse.org
-X-Spamd-Result: default: False [-4.00 / 50.00];
-	REPLY(-4.00)[]
-X-Spam-Flag: NO
-X-Spam-Score: -4.00
-X-Spam-Level: 
-X-Rspamd-Queue-Id: DD8B21F7F2
-X-Rspamd-Pre-Result: action=no action;
-	module=replies;
-	Message is reply to one we originated
-X-Rspamd-Action: no action
 
-Historically, the mac80211 subsystem used CONFIG_INET to guard
-IPv4-specific address notifiers, assuming that if IP networking was
-enabled, IPv4 was guaranteed to be present. As part of the effort to
-make CONFIG_IPV4 optional, this assumption is no longer valid.
+These are follow-ups to Michael Reeves' BCM4388 series, which is now
+in wireless-next.
 
-Update the conditional compilation guards around the IPv4 address change
-notifier and its associated registration routines to explicitly check
-for IS_ENABLED(CONFIG_IPV4). This ensures the mac80211 subsystem
-compiles successfully without undefined references when building an
-IPv6-only kernel.
+- Patch 1: D0_INFORM on resume now goes through the control ring,
+  which refuses to write while the PCIe state is DOWN. Set the state
+  first.
+- Patch 2: The BCM4364 halts on the host ready doorbell at init. Skip
+  the doorbell there.
+- Patch 3: The BCM4364 and BCM4377 come back from S3 without firmware.
+  Probe them again.
+- Patch 4: The BCM4377 returns the tx status only once the flowring
+  delete is sent. Do not wait for it before.
+- Patch 5: Add deep sleep for the BCM4364 and BCM4377, so the package
+  reaches PC10.
 
-Signed-off-by: Fernando Fernandez Mancera <fmancera@suse.de>
----
- net/mac80211/main.c | 10 +++++-----
- 1 file changed, 5 insertions(+), 5 deletions(-)
+Patch 3 reuses the existing re-probe in brcmf_pcie_pm_leave_D3().
+"wifi: brcmfmac: pcie: recover from fatal PCIe errors" [3] adds a
+second re-probe after a PCIe error.
 
-diff --git a/net/mac80211/main.c b/net/mac80211/main.c
-index e03c2dbf4fb8..5e10ea3c7601 100644
---- a/net/mac80211/main.c
-+++ b/net/mac80211/main.c
-@@ -559,7 +559,7 @@ void ieee80211_restart_hw(struct ieee80211_hw *hw)
- }
- EXPORT_SYMBOL(ieee80211_restart_hw);
- 
--#ifdef CONFIG_INET
-+#if IS_ENABLED(CONFIG_IPV4)
- static int ieee80211_ifa_changed(struct notifier_block *nb,
- 				 unsigned long data, void *arg)
- {
-@@ -1660,7 +1660,7 @@ int ieee80211_register_hw(struct ieee80211_hw *hw)
- 	wiphy_unlock(hw->wiphy);
- 	rtnl_unlock();
- 
--#ifdef CONFIG_INET
-+#if IS_ENABLED(CONFIG_IPV4)
- 	local->ifa_notifier.notifier_call = ieee80211_ifa_changed;
- 	result = register_inetaddr_notifier(&local->ifa_notifier);
- 	if (result)
-@@ -1678,11 +1678,11 @@ int ieee80211_register_hw(struct ieee80211_hw *hw)
- 
- #if IS_ENABLED(CONFIG_IPV6)
-  fail_ifa6:
--#ifdef CONFIG_INET
-+#if IS_ENABLED(CONFIG_IPV4)
- 	unregister_inetaddr_notifier(&local->ifa_notifier);
- #endif
- #endif
--#if defined(CONFIG_INET) || defined(CONFIG_IPV6)
-+#if IS_ENABLED(CONFIG_IPV4)
-  fail_ifa:
- #endif
- 	rtnl_lock();
-@@ -1710,7 +1710,7 @@ void ieee80211_unregister_hw(struct ieee80211_hw *hw)
- 	tasklet_kill(&local->tx_pending_tasklet);
- 	tasklet_kill(&local->tasklet);
- 
--#ifdef CONFIG_INET
-+#if IS_ENABLED(CONFIG_IPV4)
- 	unregister_inetaddr_notifier(&local->ifa_notifier);
- #endif
- #if IS_ENABLED(CONFIG_IPV6)
+Both run under the device lock, but a PCIe error during resume can
+still start both. Whichever series lands second should skip the
+re-probe in brcmf_pcie_pm_leave_D3() while in_pci_recovery is set.
+
+Patch 5 does not wake a device that is down, so the remove after a
+link reset does not stall.
+
+The Bluetooth function of the BCM4377 gets the same resume handling in
+"Bluetooth: hci_bcm4377: resume after ACPI S3 and ASPM" on
+linux-bluetooth.
+
+Successfully tested with S3 and deep sleep on the BCM4364B2
+(MacBookPro15,1), the BCM4364B3 (MacBookPro16,1) and the BCM4377
+(MacBookAir9,1).
+
+The T2 Linux community runs v2 of this series.
+
+Changes in v3:
+- Rebased on wireless-next, which has Michael's series now
+- Patch 1: add the Fixes tag and Arend's Ack
+- Patch 2: limit it to the BCM4364, B2 and B3, reword the commit
+  message and add the Fixes tag
+- Patch 3: limit it to the BCM4364 and BCM4377
+- Patch 4: keep the wait on all chips but the BCM4377. On the BCM4364B3
+  a tx status came after the delete response once, so it keeps the
+  wait as well. Commit ae13aa2ec885 already resets the counter when a
+  flowring is created
+- Patch 5:
+  - limit it to the BCM4364 and BCM4377 with the mailbox on the
+    control ring
+  - check for the interrupt thread instead of in_irq
+  - handle a deep sleep message that fails to send
+  - wake the device in remove, disable deep sleep under ds_lock and
+    cancel the deassert work right after, before brcmf_detach() frees
+    the rings the work writes to
+  - give up waking a device that is not up
+  - clear ds_suspend when entering D3 fails
+  - DS_INBAND_DW comes on top of DS_NO_OOB_DW, as Broadcom's DHD driver
+    sets it
+
+[1] v2: https://lore.kernel.org/all/20261111120748.23795-1-dev@deq.rocks/
+[2] v1: https://lore.kernel.org/all/20261107154810.89780-1-dev@deq.rocks/
+[3] https://lore.kernel.org/all/20261105215954.184290-1-sorencoremans@gmail.com/
+
+Andre Eikmeyer (5):
+  wifi: brcmfmac: pcie: set the state before D0_INFORM on resume
+  wifi: brcmfmac: pcie: skip the host ready doorbell at init on the
+    BCM4364
+  wifi: brcmfmac: pcie: probe again after a resume through firmware
+  wifi: brcmfmac: msgbuf: do not wait for tx status on the BCM4377
+  wifi: brcmfmac: pcie: support inband device wake and deep sleep
+
+ .../broadcom/brcm80211/brcmfmac/commonring.c  |  14 +
+ .../broadcom/brcm80211/brcmfmac/commonring.h  |   5 +
+ .../broadcom/brcm80211/brcmfmac/msgbuf.c      |  10 +-
+ .../broadcom/brcm80211/brcmfmac/pcie.c        | 323 +++++++++++++++++-
+ 4 files changed, 344 insertions(+), 8 deletions(-)
+
+
+base-commit: 18d0bedbb5f0538396cb7f763ed9cd1dd69c5b23
 -- 
-2.56.1
+2.56.0
 
