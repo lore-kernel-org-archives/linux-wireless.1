@@ -1,64 +1,61 @@
-Authentication-Results: smtp.subspace.kernel.org; arc=none smtp.remote-ip=91.216.248.212
+Authentication-Results: smtp.subspace.kernel.org; arc=none smtp.remote-ip=91.218.175.63
 ARC-Seal: i=1; d=subspace.kernel.org; s=arc20261015; a=rsa-sha256; cv=none;
-	t=1795788138;
-	b=tqL/uE86943DsRMvKm7OpIHvmiyROmeUzl3nd4TZm4bp8it0WSCIkH2OMwJIBTeKgUMH
-	 UKRgy8ay72qwo3fxov7qC7PJq+Nbn8+igMqtKRKuj1lb1E52nbVFmIsIOWwPsO1onvX7V
-	 tn5dw6HcQ4DG/e1npku3PfTfKgbQpA3D4pG3Mh18PAKZ76YKkHU7KAClCgX3Pbxp1rYER
-	 uS696I1vFUhSPnPjQPPrvjZ+sLOvM9Bb3OPU5it+WxyngDy8iqz+1Hd3zR9giEIFP+cGl
-	 qHjXW/89+hQ3oGhQzpan2AJSRKaPvmdN3uqhTWHaRkDUz+TvtbrgyRnsQiGKmFrXcAg==
+	t=1795788451;
+	b=jptJ6yRxePtc7BnohQ1TjXY4ngdKF0n7SLjPIIPUIA/e01R6O66cqc4+LRsnIu4dQI6i
+	 i94/E68XoScqtHtwuKCRtR7KGINUBGGiyo3qvI6MIKmgM6FDhP9aWgzwuRPCe49o7Ojgk
+	 Xlq8zq9UhGajcoW0hQo8vRcrqD3BAz9KH37O1K7E3Rkg2JQUvx2SSMjDD9KMhd99FTN4k
+	 BfmZlkieaT4O87NltJzDil8jXni4w7erWA/YgwfiJXOgfrOTVpEOCS5CZFGx2OIgWyY2O
+	 s0W8hTJebDxJtKAl/AAKOv9qfamOduaIt5Ijai+ATxnHGHveIXrnaSqZbpFiNIM85Bg==
 ARC-Message-Signature: i=1; d=subspace.kernel.org; s=arc20261015;
-	a=rsa-sha256; c=relaxed/relaxed; t=1795788138;
-	h=DMARC-Filter:Date:X-Lima-ML-UUID:DKIM-Signature:From:To:Cc:Subject:
-	 Message-ID:In-Reply-To:References:Organization:X-Mailer:MIME-Version:
-	 Content-Type:Content-Transfer-Encoding;
-	bh=NJoIl4xSoNTiGvL1eSe44490aIZ7i1aHsEMzBMNT6I0=;
-	b=ZyJ/pQKK1n8fIW43WUWjEvQzyPm7Sto91g9Ay98rcjIPUvwQ7w+lUBHRgqOBIzUu8mvl
-	 ewpzPFZnN4I/C8FGmWY6Vkqh6344uSWNtQwQDiYugIaJIe6YSO9iS8suRhsYtzdh8+9JA
-	 kSn/fgQJMsw+z2/UjuybaDCLc2wgc/ajtVZ2eAxVa5uVNZKPimJ13Y81wV56rhkU6hZJd
-	 qbJ9kUhW9JXoVayLcT/Wy2E4Ed4OVVaGHF2vfOBfG1oP2pSrkJwWM/xAE9mP9QlfR8b20
-	 kDjpvn9da/MTjubBirmGPfssskd2WtlQxgU4MINBNxfTtaybfF9VcOHdJfqkEtisNMA==
+	a=rsa-sha256; c=relaxed/relaxed; t=1795788451;
+	h=DMARC-Filter:X-Envelope-To:DKIM-Signature:X-Envelope-To:Received:
+	 X-Mizu-Trace-ID:X-Migadu-Flow:Date:From:To:CC:Subject:In-Reply-To:
+	 References:Message-ID:MIME-Version:Content-Type:
+	 Content-Transfer-Encoding;
+	bh=BwakWbv3CQoSB57i9e20R7Q+MDjc6nBeyQbmEh+h4bk=;
+	b=ODRVeNpwIkn6ReFFOU4WHXjkhpvp9xjLD2tRKjPLBk2zfjf5e9vpBe9TdUEOOM1dZWSQ
+	 gBDAsvgNrH41k4HEU+E0i+AOkNcZAm3HnVxthbmm/S5zh5orysj1nM5nEpA6CivzsIHt1
+	 KfhPNtSAVI6GgB/7lp065ShhJnvH9Fi/1XpLJ4Dpz5RJlXQtcTX82LaPFL+s8ozlHZ8Lx
+	 NMbM2bXT45YI3HKKfZFPPIob9aEN0FhO1rJkHV6lFf7+lXGL5rIMo4w9WjXAuYtDQVrFt
+	 2kCYeDkhzEeIOAIU2Gra0INLm83TJCIu6BJtn4/EpifZRCIMcCd/u84n/U+I7XBNFhA==
 ARC-Authentication-Results: i=1; smtp.subspace.kernel.org; 
-	dmarc=none header.from=deq.rocks;
-	spf=none smtp.mailfrom=deq.rocks;
-	dkim=pass header.d=deq.rocks header.i=@deq.rocks header.a=rsa-sha256 header.s=securedbylima-20251205 header.b=sNhoetdQ;
-	arc=none smtp.remote-ip=91.216.248.212
-Received: from bulk0.mail-out.lima-city.de (bulk0.mail-out.lima-city.de [91.216.248.212])
-	(using TLSv1.3 with cipher TLS_AES_256_GCM_SHA384 (256/256 bits)
+	dmarc=pass header.from=linux.dev;
+	spf=pass smtp.mailfrom=linux.dev;
+	dkim=pass header.d=linux.dev header.i=@linux.dev header.a=rsa-sha256 header.s=key1 header.b=uJXcORnI;
+	arc=none smtp.remote-ip=91.218.175.63
+Received: from mta0.migadu.com (unknown [91.218.175.63])
+	(using TLSv1.3 with cipher TLS_AES_128_GCM_SHA256 (128/128 bits)
 	 key-exchange X25519 server-signature ECDSA (prime256v1) server-digest SHA256)
 	(No client certificate requested)
-	by smtp.subspace.kernel.org (Postfix) with ESMTPS id D4210606A327;
-	Fri, 27 Nov 2026 14:02:16 +0000 (UTC)
-DMARC-Filter: OpenDMARC Filter v1.4.2 smtp.subspace.kernel.org D4210606A327
-Authentication-Results: smtp.subspace.kernel.org; dmarc=none (p=none dis=none) header.from=deq.rocks
-Authentication-Results: smtp.subspace.kernel.org; spf=none smtp.mailfrom=deq.rocks
+	by smtp.subspace.kernel.org (Postfix) with ESMTPS id 09E6D606A339
+	for <linux-wireless@vger.kernel.org>; Fri, 27 Nov 2026 14:07:29 +0000 (UTC)
+DMARC-Filter: OpenDMARC Filter v1.4.2 smtp.subspace.kernel.org 09E6D606A339
+Authentication-Results: smtp.subspace.kernel.org; dmarc=pass (p=none dis=none) header.from=linux.dev
+Authentication-Results: smtp.subspace.kernel.org; spf=pass smtp.mailfrom=linux.dev
 Authentication-Results: smtp.subspace.kernel.org;
-	dkim=pass (2048-bit key, unprotected) header.d=deq.rocks header.i=@deq.rocks header.a=rsa-sha256 header.s=securedbylima-20251205 header.b=sNhoetdQ
-Date: Fri, 27 Nov 2026 15:02:08 +0100
-X-Lima-ML-UUID: a7fd1b90-4737-48d6-a7a4-a2a1d7a0f195
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=deq.rocks;
-	s=securedbylima-20251205; t=1795788133;
-	bh=NJoIl4xSoNTiGvL1eSe44490aIZ7i1aHsEMzBMNT6I0=;
-	h=Date:From:To:Cc:Subject:In-Reply-To:References:From;
-	b=sNhoetdQbdPAZI2AoAuOt8OXJX7HB+jrM23m9xHvOLiUhXzFdDIJfQWraGeIIJfhQ
-	 gaWe5DBhJzoAZeVtXSSqJoXiI5kIDwP1ABHeNCVpYoAg4o6DRG9Z6DyK0aJRWzV/Mi
-	 bwftL7pCUOTmAXnFHQmDzEKgf1EyiTLFoeePYjgORQgz7yV7+NWxhY1CiJpZotFrw3
-	 UnFl0wug+ymyE384bmrw9yMhMKjF2ZKZQ7fwNW58cAtDFYkI+/0J6J2eu3++NrGn3/
-	 BncY58cOlkAli9hLTCDTMN2WgLfz3dFr9S/MReuHDmkAqo2k1bUEE5C9CXtXm6u/KN
-	 GHzgIsw6ZmTnw==
-From: =?UTF-8?B?QW5kcsOp?= Eikmeyer <dev@deq.rocks>
-To: Arend van Spriel <arend.vanspriel@broadcom.com>
-Cc: linux-wireless@vger.kernel.org, brcm80211@lists.linux.dev,
- brcm80211-dev-list.pdl@broadcom.com, linux-kernel@vger.kernel.org,
- michael.reeves077@gmail.com, marcan@marcan.st, j@jannau.net,
- asahi@lists.linux.dev, sebastian.reichel@collabora.com
-Subject: Re: [PATCH v2 2/5] wifi: brcmfmac: pcie: skip the host ready
- doorbell at init once it is a capability
-Message-ID: <20261127150208.77dae9de@kait2en-mbp15-1>
-In-Reply-To: <20261126142942.881504-3-arend.vanspriel@broadcom.com>
-References: <20261111120748.23795-3-dev@deq.rocks>
-	<20261126142942.881504-3-arend.vanspriel@broadcom.com>
-Organization: KaiT2en
-X-Mailer: Claws Mail 4.4.0 (GTK 3.24.52; x86_64-redhat-linux-gnu)
+	dkim=pass (1024-bit key, unprotected) header.d=linux.dev header.i=@linux.dev header.a=rsa-sha256 header.s=key1 header.b=uJXcORnI
+X-Envelope-To: linux-wireless@vger.kernel.org
+DKIM-Signature: a=rsa-sha256; bh=BwakWbv3CQoSB57i9e20R7Q+MDjc6nBeyQbmEh+h4bk=;
+ c=simple/simple; d=linux.dev;
+ h=from:to:subject:date:message-id:mime-version:content-type; s=key1;
+ t=1795788447; v=1; x=1796393247;
+ b=uJXcORnIJP/jwbDqCF8Arlzu29l8oRMb7/t8hKngaUfP85jTndkYvWL52m9ck9daIuSTN2yx
+ oQnfVXbmSnBWPEID1xF+JOg/hKUbtxSugvhbPMCLbo6eZ+D59gvDHwFNqv5lsVOJLLd5RVe2rLC
+ gEffmPpdOeQ4pAyZc0QC/S/g=
+X-Envelope-To: linux-wireless@vger.kernel.org
+Received: by smtp.migadu.com with ESMTPS id b772f44a79624439;
+	Fri, 27 Nov 2026 14:07:27 +0000
+X-Mizu-Trace-ID: b772f44a79624439
+X-Migadu-Flow: FLOW_OUT
+Date: Fri, 27 Nov 2026 15:07:23 +0100
+From: Luka Gejak <luka.gejak@linux.dev>
+To: martin@rfdeck.de
+CC: linux-wireless@vger.kernel.org, Ping-Ke Shih <pkshih@realtek.com>
+Subject: =?US-ASCII?Q?Re=3A_wifi=3A_rtw88=3A_usb=3A_AP_sends_no_beaco?=
+ =?US-ASCII?Q?ns_after_monitor_capture_on_the_same_phy?=
+In-Reply-To: <20261127141540.Horde.j7w80xrIVq5DshPvlKMMIr2@mail.your-server.de>
+References: <20261124144427.Horde.qQ_UTCx-6LmjjeS1bojTj8-@mail.your-server.de> <D34D5E6B-B159-4F34-92D8-4264024D3319@linux.dev> <20261126081256.Horde.ilxldEFeRo6UQJajd_7Nd6S@mail.your-server.de> <a0827be820914280cca81b32b495cda655a87fb4@linux.dev> <20261126161801.Horde.EPNAvNvUumt6-YVgeu2ZpuH@mail.your-server.de> <41ae89e5a8328124062eea53eab2fc49d6114a56@linux.dev> <20261126221229.Horde.Dolx0es1tv-1dHtbdt7kG6e@mail.your-server.de> <ABB4AE9E-9CB7-459D-AAED-481703358D3B@linux.dev> <20261127141540.Horde.j7w80xrIVq5DshPvlKMMIr2@mail.your-server.de>
+Message-ID: <B49A19B4-9C95-49DA-8AC1-A6F4122AFDEF@linux.dev>
 X-Mailing-List: linux-wireless@vger.kernel.org
 List-Id: <linux-wireless.vger.kernel.org>
 List-Post: <mailto:linux-wireless@vger.kernel.org>
@@ -68,34 +65,32 @@ List-Unsubscribe: <mailto:linux-wireless+unsubscribe@vger.kernel.org>
 List-Owner: <mailto:linux-wireless+owner@vger.kernel.org>
 Precedence: list
 MIME-Version: 1.0
-Content-Type: text/plain; charset=US-ASCII
-Content-Transfer-Encoding: 7bit
+Content-Type: text/plain;
+ charset=utf-8
+Content-Transfer-Encoding: 8bit
 
-On Thu, 26 Nov 2026 15:29:40 +0100
-Arend van Spriel <arend.vanspriel@broadcom.com> wrote:
+On November 27, 2026 2:15:40 PM GMT+01:00, martin@rfdeck.de wrote:
+>Hi Luka,
+>
+>> When the low beacon count happens again with the patch, could you keep
+>> the same hostapd instance running and bring only the monitor down, then
+>> up again?
+>
+>I tried, but it didn't happen again: 15 more runs of the same fixed
+>channel test with the patched rtw88_core (monitor up on channel 6, AP1
+>and AP2 for 12 s each, no update_beacon), and all 30 APs sent 113 to
+>117 beacons, so the monitor down/up step never came up. 0x422 was 0x71
+>before every AP1, 0x31 before every AP2 and 0x71 during every AP.
+>
 
+Perhaps the environment is influencing it as well?
 
-> The sentence "The BCM4377 stays silent without the capability, so it
-> stays." is unclear. What stays, the capability or the doorbell? Also
-> please add a Fixes: tag for a83a99d063a0 ("wifi: brcmfmac: Negotiate
-> PCIe mailbox transport with firmware"), which introduced the host
-> ready capability.
+>So the low count is now 2 of 25 runs with the monitor up, both on the
+>day before, none today. If it turns up again I'll do the down/up
+>measurement on the running AP as you described.
+>
 
-Hi Arend,
+Ok, keep me updated.
 
-Well, sometimes my focus is a bit off since crossing the half-century
-mark... I meant the capability. Without host ready in the host
-capabilities the BCM4377 does not answer, so the capability has to
-stay. I will reword it and add the Fixes tag in v3.
-
-> The B2 only halting on some loads also suggests
-> the doorbell is rung too early rather than that it must not be rung.
-
-I measured on the BCM4364B3. With host capabilities 0x7 and 0x1007 it
-loads every time. With 0x407 and the doorbell at init it halts every
-time, with 0x407 and no doorbell at init it loads. The value written to
-the doorbell makes no difference. I will limit to the 4364B3 then. The
-BCM4377 runs with the capability and doorbell at init.
-
-Andre
-
+Best regards,
+Luka Gejak
