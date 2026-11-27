@@ -1,79 +1,79 @@
 Authentication-Results: smtp.subspace.kernel.org; arc=pass header.oldest-pass=0 smtp.remote-ip=100.103.45.18
 ARC-Seal: i=2; d=subspace.kernel.org; s=arc20261015; a=rsa-sha256; cv=pass;
-	t=1795768551;
-	b=1H62JMmvJN+s8SBnoGXev+ew5x7Mhf4BMpeVQ/sivP1a2g5fpfOR3bgCt2m3oL44Patm
-	 VB0twjwTbfgL94Z3j4G6UkK0ouMI9MHoNTiynkAgZwB/01wufjWv2UfKNc62h1B4hnvIk
-	 9ExpHcQfAPF3B138lt+IeCvTvfMF4rsboYP7zWWHVDVTIe4WJbfPe73bg5DLiHo29I4vn
-	 zwwOp9aRPooj7hrpMZ+ZXgfNbflMLstk0UBUSoVUn0rcFEEearLZYgM8e3/3QGwr49vYF
-	 LcCohObNbJlxv6NvUHGPAi07iGa0493h5nhuJGP3jNERo3spD9XbzVOoS0tcf9zKN7w==
+	t=1795768553;
+	b=D+O/ckuMQ2U2bv/bD78GFnEM+vS5/lacMmsuAHNL51ugo9THdPDwm2CiulsLj8dLg/O6
+	 /2GIUPoAeZHhGe2uUA+Ie8Bxo2bPU5CwCvS1FVV9FeAYU3mVj+8dxLpuhE+DoVOcX1KGT
+	 NwFHnKgKgeleJ4vfd+CMglU+o2ROCsAjJkicPkxTW2GD4LPMkLVGRnFK6I2sSo3uVyqWN
+	 FTiILMk/Vdf5kP2QXawkU+zJ1UHrngSy2/VCqYUpE2stvZAgSS+sWnEw3bE93ub8ApV6H
+	 UtYWg2cQdo5vtashEtWcCnpQC6ego2mvdQp0xImOd6CeUWz/AeM9fMYNvYMXYvDYa+Q==
 ARC-Message-Signature: i=2; d=subspace.kernel.org; s=arc20261015;
-	a=rsa-sha256; c=relaxed/relaxed; t=1795768551;
+	a=rsa-sha256; c=relaxed/relaxed; t=1795768553;
 	h=Received:DKIM-Signature:Received:From:Date:Subject:MIME-Version:
 	 Content-Type:Message-Id:References:In-Reply-To:To:Cc:X-Mailer:
 	 X-Developer-Signature:X-Developer-Key:X-Endpoint-Received:
 	 X-Original-From:Reply-To:Content-Transfer-Encoding;
-	bh=JGaD5PI/66uiCbIuMTU+Efr4PnsGJjUp9yJer0SVIlg=;
-	b=t7xixDpBhzzczVi1Kjk1Kmnf3KrGLW4ERvSMCIWz0xBFO8p8+HW9CoHWA+aziG09N+Te
-	 UPNNpgVTnVjp86qvmDkM2HDYC/I4Wli/ZDR25ObH3NJzsRe/EKI7On31SuTm3uLmRQlxD
-	 KuxmRZiVOYvbw5sPMl689y7VUxXOnf6iQGzycyz1n2KEdw2XZHzOycxb9gX1jzCZ0A3wm
-	 FYIbINCLwhWmmdXdZfcDgEkcYbox+ZIZ2PRmvIEfp3a57uqvP/veI9HCS+kLS1598UGCt
-	 vSm7oXBXV24rKUpRh50p0ud++mjPWi2IkHR8yrDCsJ4xv6qF+wgFKVwCEqTUWqS43XQ==
+	bh=fLqf6YfOCjBaG4a1Aer12vUFt+59JHEWFYJtZISecp8=;
+	b=P6fT8qkeKWro4t00W887osySW+VsIJqsMIJcBDHz41p3y/PRt0Wqn8rtOPG5G0+su6Kn
+	 wMTL8Fh0l6DuR1YD3ZIPEVLprYpXar9KiOe9jKr2q9mUsVOrdr2rhB4nRW9V15JmJY3VG
+	 p2NIf1YmKqkksI6qE/M7joSf5g2X/7UCYjWM6GYMdUacNPf0nC8DP5hR6I/IXX13JHR7n
+	 kFSo/XGga2z1v1XIbgCtSyjc8yqaJcotnQI0usvK2apdfQPnCDoDLf4pNMlWOQMv3BFCj
+	 fMdcXVZgQiQKJqCtwUQ/qVLosbHtaqIP9P/XvqYHP9UDDlD6t4+v+rLYW5t+2mfsXuA==
 ARC-Authentication-Results: i=2; smtp.subspace.kernel.org; 
-	dkim=pass header.d=kernel.org header.i=@kernel.org header.a=rsa-sha256 header.s=k20260515 header.b=AXXnunj5;
+	dkim=pass header.d=kernel.org header.i=@kernel.org header.a=rsa-sha256 header.s=k20260515 header.b=jOmI3KCJ;
 	arc=pass header.oldest-pass=0 smtp.remote-ip=100.103.45.18
 Received: from smtp.kernel.org (quasi.space.kernel.org [100.103.45.18])
 	(using TLSv1.3 with cipher TLS_AES_256_GCM_SHA384 (256/256 bits)
 	 key-exchange X25519 server-signature ECDSA (prime256v1))
 	(No client certificate requested)
-	by smtp.subspace.kernel.org (Postfix) with ESMTPS id CE037606A686;
-	Fri, 27 Nov 2026 08:35:51 +0000 (UTC)
+	by smtp.subspace.kernel.org (Postfix) with ESMTPS id 6A99E606A33B;
+	Fri, 27 Nov 2026 08:35:53 +0000 (UTC)
 Authentication-Results: smtp.subspace.kernel.org;
-	dkim=pass (2048-bit key) header.d=kernel.org header.i=@kernel.org header.a=rsa-sha256 header.s=k20260515 header.b=AXXnunj5
+	dkim=pass (2048-bit key) header.d=kernel.org header.i=@kernel.org header.a=rsa-sha256 header.s=k20260515 header.b=jOmI3KCJ
 Authentication-Results: smtp.kernel.org; arc=none smtp.remote-ip=100.80.115.77
 ARC-Seal: i=1; d=kernel.org; s=arc20260519; a=rsa-sha256; cv=none;
-	t=1795768551;
-	b=j9O6uFD4CGzK0jmuSQ9J1Tfr0TBcJdaF/6Q0Z5P7ohV2RDZACetWnboPeXLL9rOahJ2L
-	 kEK41fop4RgkDR6exX3wTq4sokG+eS8BeLZx5dywldIxnXx1bDFnm2oJxCSRSzB6q/Jby
-	 uPooQubXCZ4qWFXejM4TbheLabDpvAZ8XXx1FMsn+oC91O8dRbIXAv74DKsmW45f3orFd
-	 hnEbzrkI0eMs7NvLWMTgZclgD8SiT6HVxMV0V1zQJg9eWZbuvqd1I7/14/tt5f7UsUw2i
-	 YTU/ZfA+V4pVETe+fcXlyLrmfdFrgKoUAu4qYmGtGm6lEMC4n8u3cEH0jfOXvZaqHig==
+	t=1795768553;
+	b=pGAYvPnbM3BKUlAnjI0CZweyXK5w82Eo4+DKmKbEtuQBFk71pipxtVWuy7uzc0JI74j0
+	 S35lEYidXZl0mUbse5fWlYnhC554uWopa0Hlaau4Ssl5vl+Furib8M8bZQ5viel4FywY/
+	 aESgYWgvtyqBgivBR3YIiZ/iNbgIVlw8LA/PPC2rBZI4wEm1mcMYy3VWNdpOG5zkFNXal
+	 BBkxRrtYVsx10lQGsZ0n58sHhHGLhe4YG1gouc3B2j5h1VRWvtYDOFwZ2BhQ+AuCh/0ZG
+	 HyACZcV/oPBabVtgoR4BbkUZmm7toTxcJ4UVFFeJqHXEPQiB7AT6AtlW1L1FHKHkFjg==
 ARC-Message-Signature: i=1; d=kernel.org; s=arc20260519; a=rsa-sha256;
-	c=relaxed/relaxed; t=1795768551;
+	c=relaxed/relaxed; t=1795768553;
 	h=DKIM-Signature:Received:From:Date:Subject:MIME-Version:Content-Type:
 	 Message-Id:References:In-Reply-To:To:Cc:X-Mailer:
 	 X-Developer-Signature:X-Developer-Key:X-Endpoint-Received:
 	 X-Original-From:Reply-To:Content-Transfer-Encoding;
-	bh=JGaD5PI/66uiCbIuMTU+Efr4PnsGJjUp9yJer0SVIlg=;
-	b=qoQUzf4xtDDui0RJIb+kdiz9tvfsYrAo/avBn+QG5hMnjyowqTvHshk/4JJeNoDKZA/0
-	 cGUGJTkc8JVcEMTotGeqmgoxWLVa/cA10A0KBk2Ml8PWC2gRGvrZpzmzArOY2T/b7EVC/
-	 qdTIeIYN2x5oE+jS9RhtjCQBgNs1D38nwMkJXFr6bVFGCaEn78z3hm7FUCuzWk1V8yAoE
-	 QZ1sbh0PuGCMpTKejEj3zjAuir+GM9MPR2AUKKU6Avaf86XDnDEMq9hiquhB+8q9wdoQ1
-	 EgzwQnGdvmC6Climr28vrqCdJvlTcAHr6cbwg59pSiuWbhflA5S84YqDceja7Ce2hUA==
+	bh=fLqf6YfOCjBaG4a1Aer12vUFt+59JHEWFYJtZISecp8=;
+	b=Ae4RsgxWMgx/kMW0S0gpLqywrMTQ5PFuMaiw5LBM/RqVzYbWmVtHuOYC9YrA+n69YDIR
+	 bEmKFTxxwXCV9v3xqL6cpIcw2etuNsOD0xOfVXHouwK3X4CRgV8hA8rIaGkzAjPdI0bUE
+	 vcow1f3MprDTziIODR4ldHDfFPrn6Mxu5sgOpXP7ts4lAeON9HPmbF0VpkgqWvgJrZEOB
+	 TTwnfD0OUCwYDoepVgkhibrTFFLODnq5X4NAUN4B7Lne5RXqQfbm3G75VyKGY2EMZrKgu
+	 ez0KYfrt81SF7ymrmkisTi0atyL2ePgDHNmAuHTYaJNrP1RoZINYha9NShdT1D2lw+g==
 ARC-Authentication-Results: i=1; smtp.kernel.org; 
 	arc=none smtp.remote-ip=100.80.115.77
 Received: from lkml.kernel.org (nexus.subspace.kernel.org [100.80.115.77])
 	(using TLSv1.3 with cipher TLS_AES_256_GCM_SHA384 (256/256 bits)
 	 key-exchange X25519 server-signature ECDSA (prime256v1) server-digest SHA256)
 	(No client certificate requested)
-	by smtp.kernel.org (Postfix) with ESMTPS id 16E2D1F00898;
-	Fri, 27 Nov 2026 08:35:29 +0000 (UTC)
+	by smtp.kernel.org (Postfix) with ESMTPS id D11B61F0089F;
+	Fri, 27 Nov 2026 08:35:31 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=kernel.org;
-	s=k20260515; t=1795768551;
-	bh=JGaD5PI/66uiCbIuMTU+Efr4PnsGJjUp9yJer0SVIlg=;
+	s=k20260515; t=1795768553;
+	bh=fLqf6YfOCjBaG4a1Aer12vUFt+59JHEWFYJtZISecp8=;
 	h=From:Date:Subject:References:In-Reply-To:To:Cc:Reply-To;
-	b=AXXnunj54tXP2WApne5SjvZlQ0UZKZ5WgsgSt/stkn2jTOaFewSNybnJGsu1qDqS7
-	 nDZth4Z6QUvuqSpznBH8XTF/F39MQvYUz64dEYpTyFNAv2MwJGf006jQzruI6QtjpY
-	 Cxb13goe6P+sk+dwtPe7W5Hw3AhGTGi/gPCIGcVpxVRXTaQkaD+dCzEb36opDYYo3Q
-	 M8xa1zuUNLeae3UK8uhyj0BP7IUpN4PL6GDs9KsQZ4iZftAz4cScjNAQjkCqSl9zS9
-	 lxLluP73JsaznFvLfbVdmPXi/jJ+ekK13rqTl/JyouLEGXO4B5IVdfEiABvuHYLEah
-	 2/3byLMv77e2A==
+	b=jOmI3KCJvXtRyLKh4jgfswQexiSIK3nWkAMO61qAZIQMMrfJebWkTum4R9tU9GwMP
+	 ZUpBDZaItTDMs5onfynuU5OVYp3Un5/7jtdEPNOeRypFQPJ0y5iv27FgA7e1+ozf3l
+	 xvusN/hEshZ1Rz3RAABhoojlLiSP1prV4JLHm6VriaeizhG6MNGYPL14HzpxziJRq0
+	 LxbctX6HQFNhFyMBxCma35D0WPLJsvir0RZWCsOPPjiSVgQCkeHNWSv5HtlJECUdQY
+	 BVSDLgzGy7zqdnBFdQy4nTd5XZRsfB1pMAVe4mz8cK/mv6pfMiHPSJs9AJ58t+et4t
+	 GN8rmj4KXwXqA==
 Received: from nexus.subspace.kernel.org (localhost [IPv6:::1])
-	by lkml.kernel.org (Postfix) with ESMTP id 950C04B642;
+	by lkml.kernel.org (Postfix) with ESMTP id EFF3A4B64E;
 	Fri, 27 Nov 2026 08:35:28 +0000 (UTC)
 From: Murad Dadashev via B4 Relay <devnull+llamapersonaltv.gmail.com@kernel.org>
-Date: Fri, 27 Nov 2026 11:35:13 +0300
-Subject: [PATCH 02/10] wifi: mt76: mt7603: make mcu message helpers usable
- by other buses
+Date: Fri, 27 Nov 2026 11:35:16 +0300
+Subject: [PATCH 05/10] wifi: mt76: mt7603: allow configuring TX and RX
+ antennas separately
 X-Mailing-List: linux-wireless@vger.kernel.org
 List-Id: <linux-wireless.vger.kernel.org>
 List-Post: <mailto:linux-wireless@vger.kernel.org>
@@ -84,7 +84,7 @@ List-Owner: <mailto:linux-wireless+owner@vger.kernel.org>
 Precedence: list
 MIME-Version: 1.0
 Content-Type: text/plain; charset="utf-8"
-Message-Id: <20261127-mt7603u-v1-2-369bee9846f8@gmail.com>
+Message-Id: <20261127-mt7603u-v1-5-369bee9846f8@gmail.com>
 References: <20261127-mt7603u-v1-0-369bee9846f8@gmail.com>
 In-Reply-To: <20261127-mt7603u-v1-0-369bee9846f8@gmail.com>
 To: Felix Fietkau <nbd@nbd.name>, Lorenzo Bianconi <lorenzo@kernel.org>, 
@@ -96,11 +96,11 @@ Cc: linux-wireless@vger.kernel.org, linux-kernel@vger.kernel.org,
  linux-arm-kernel@lists.infradead.org, linux-mediatek@lists.infradead.org, 
  Murad Dadashev <llamapersonaltv@gmail.com>
 X-Mailer: b4 0.14.2
-X-Developer-Signature: v=1; a=ed25519-sha256; t=1795768526; l=3594;
+X-Developer-Signature: v=1; a=ed25519-sha256; t=1795768526; l=5149;
  i=llamapersonaltv@gmail.com; s=20261127; h=from:subject:message-id;
- bh=g4XUtnuymEQFvCt7ERD1/Ld0HSmrdfs2a5Zn8j72UIc=;
- b=7yGr8Rc1ykiw5mywD+Anw9WR0oSNt5gEclop42dkuG8NvN8OqjDkKfsLCic9jrFhIG4THeD/M
- BxV59VgExixBWtcXkOZ8a1WLfBNc0ohm+t8h+IgBfQXNHjD3++zhO4Z
+ bh=Y74MJP9ElQtXX28cMEHxNG9OMLyPAiUoKVMjMJdxzCY=;
+ b=i9ttqsa4JnW0uDjs5F5uSWJ3DoWL5r2Efwf/TaN8rHBKjs8BzVEGJMvorbrxrN7dUxeO2L9g7
+ ccunndeahLDDtGf2gSrrG4PoXEuNa7IUJVLCIfWIqUUGy5qKALg6fbn
 X-Developer-Key: i=llamapersonaltv@gmail.com; a=ed25519;
  pk=CeMIX207ioWRbMAA6A2GYgT+DpeVlKHVn7I0KjfHeCg=
 X-Endpoint-Received: by B4 Relay for llamapersonaltv@gmail.com/20261127
@@ -111,93 +111,142 @@ Content-Transfer-Encoding: 7bit
 
 From: Murad Dadashev <llamapersonaltv@gmail.com>
 
-Split filling in the MCU TXD out of mt7603_mcu_skb_send_msg() into
-mt7603_mcu_fill_msg(), and make mt7603_mcu_parse_response() and
-mt7603_load_firmware() non-static.
+Add set_antenna support with independent TX and RX chain masks. When
+fewer TX than RX chains are used, keep the RX MCS set and advertise the
+lower TX stream count through IEEE80211_HT_MCS_TX_RX_DIFF, so rate
+control does not pick rates the hardware cannot send.
 
-A USB driver needs to send the same MCU messages and download the same
-firmware, but over a bulk endpoint instead of the MCU DMA ring.
-
-No functional change.
+This is useful for devices where one TX chain is not usable, which
+otherwise lose a large share of two-stream frames.
 
 Signed-off-by: Murad Dadashev <llamapersonaltv@gmail.com>
 ---
- drivers/net/wireless/mediatek/mt76/mt7603/mcu.c    | 23 ++++++++++++++--------
- drivers/net/wireless/mediatek/mt76/mt7603/mt7603.h |  5 +++++
- 2 files changed, 20 insertions(+), 8 deletions(-)
+ drivers/net/wireless/mediatek/mt76/mt7603/eeprom.c |  1 +
+ drivers/net/wireless/mediatek/mt76/mt7603/main.c   | 56 +++++++++++++++++++++-
+ drivers/net/wireless/mediatek/mt76/mt7603/mcu.c    |  3 +-
+ drivers/net/wireless/mediatek/mt76/mt7603/mt7603.h |  2 +
+ 4 files changed, 60 insertions(+), 2 deletions(-)
 
-diff --git a/drivers/net/wireless/mediatek/mt76/mt7603/mcu.c b/drivers/net/wireless/mediatek/mt76/mt7603/mcu.c
-index e432cce97640d631d91a088ec5a5a07721b03a94..bbc8402fc98e3c99a9073cc70c3c492e21b761cd 100644
---- a/drivers/net/wireless/mediatek/mt76/mt7603/mcu.c
-+++ b/drivers/net/wireless/mediatek/mt76/mt7603/mcu.c
-@@ -13,9 +13,8 @@ struct mt7603_fw_trailer {
- 	__le32 dl_len;
- } __packed;
+diff --git a/drivers/net/wireless/mediatek/mt76/mt7603/eeprom.c b/drivers/net/wireless/mediatek/mt76/mt7603/eeprom.c
+index 05f7aaefaf89b455681bf9e7e9a2440864aff4b5..28fd818428e1ce6f69866e7e192f62a952c6a80d 100644
+--- a/drivers/net/wireless/mediatek/mt76/mt7603/eeprom.c
++++ b/drivers/net/wireless/mediatek/mt76/mt7603/eeprom.c
+@@ -183,6 +183,7 @@ int mt7603_eeprom_init(struct mt7603_dev *dev)
+ 		dev->mphy.antenna_mask = 1;
  
--static int
--mt7603_mcu_parse_response(struct mt76_dev *mdev, int cmd,
--			  struct sk_buff *skb, int seq)
-+int mt7603_mcu_parse_response(struct mt76_dev *mdev, int cmd,
-+			      struct sk_buff *skb, int seq)
- {
- 	struct mt7603_dev *dev = container_of(mdev, struct mt7603_dev, mt76);
- 	struct mt7603_mcu_rxd *rxd;
-@@ -34,11 +33,10 @@ mt7603_mcu_parse_response(struct mt76_dev *mdev, int cmd,
- 	return 0;
+ 	dev->mphy.chainmask = dev->mphy.antenna_mask;
++	dev->tx_ant = dev->mphy.antenna_mask;
+ 
+ 	return mt76_eeprom_override(&dev->mphy);
+ }
+diff --git a/drivers/net/wireless/mediatek/mt76/mt7603/main.c b/drivers/net/wireless/mediatek/mt76/mt7603/main.c
+index be4da5023e439a9e0f3386d1e2140464efad4e94..80dafe89e2c54c1148611b89c7cd65885214463c 100644
+--- a/drivers/net/wireless/mediatek/mt76/mt7603/main.c
++++ b/drivers/net/wireless/mediatek/mt76/mt7603/main.c
+@@ -719,6 +719,59 @@ mt7603_sta_rate_tbl_update(struct ieee80211_hw *hw, struct ieee80211_vif *vif,
+ 	spin_unlock_bh(&dev->mt76.lock);
  }
  
--static int
--mt7603_mcu_skb_send_msg(struct mt76_dev *mdev, struct sk_buff *skb,
--			int cmd, int *wait_seq)
-+void mt7603_mcu_fill_msg(struct mt7603_dev *dev, struct sk_buff *skb,
-+			 int cmd, int *wait_seq)
- {
--	struct mt7603_dev *dev = container_of(mdev, struct mt7603_dev, mt76);
-+	struct mt76_dev *mdev = &dev->mt76;
- 	int hdrlen = dev->mcu_running ? sizeof(struct mt7603_mcu_txd) : 12;
- 	struct mt7603_mcu_txd *txd;
- 	u8 seq;
-@@ -71,6 +69,15 @@ mt7603_mcu_skb_send_msg(struct mt76_dev *mdev, struct sk_buff *skb,
- 
- 	if (wait_seq)
- 		*wait_seq = seq;
++static int
++mt7603_set_antenna(struct ieee80211_hw *hw, int radio_idx, u32 tx_ant,
++		   u32 rx_ant)
++{
++	struct mt7603_dev *dev = hw->priv;
++	struct mt76_phy *mphy = &dev->mphy;
++	struct ieee80211_sta_ht_cap *ht_cap = &mphy->sband_2g.sband.ht_cap;
++	u32 avail = hw->wiphy->available_antennas_tx;
++	int n_tx = hweight8(tx_ant);
++
++	if (!tx_ant || !rx_ant || (tx_ant & ~rx_ant) || (rx_ant & ~avail))
++		return -EINVAL;
++
++	if (BIT(n_tx) - 1 != tx_ant || BIT(hweight8(rx_ant)) - 1 != rx_ant)
++		return -EINVAL;
++
++	mutex_lock(&dev->mt76.mutex);
++
++	mphy->antenna_mask = rx_ant;
++	mphy->chainmask = rx_ant;
++	dev->tx_ant = tx_ant;
++	mt76_set_stream_caps(mphy, false);
++
++	ht_cap->mcs.tx_params = IEEE80211_HT_MCS_TX_DEFINED;
++	if (tx_ant != rx_ant) {
++		ht_cap->cap &= ~IEEE80211_HT_CAP_TX_STBC;
++		ht_cap->mcs.tx_params |= IEEE80211_HT_MCS_TX_RX_DIFF |
++			FIELD_PREP(IEEE80211_HT_MCS_TX_MAX_STREAMS_MASK,
++				   n_tx - 1);
++	}
++
++	if (test_bit(MT76_STATE_RUNNING, &mphy->state))
++		mt7603_mcu_set_channel(dev);
++
++	mutex_unlock(&dev->mt76.mutex);
++
++	return 0;
 +}
 +
 +static int
-+mt7603_mcu_skb_send_msg(struct mt76_dev *mdev, struct sk_buff *skb,
-+			int cmd, int *wait_seq)
++mt7603_get_antenna(struct ieee80211_hw *hw, int radio_idx, u32 *tx_ant,
++		   u32 *rx_ant)
 +{
-+	struct mt7603_dev *dev = container_of(mdev, struct mt7603_dev, mt76);
++	struct mt7603_dev *dev = hw->priv;
 +
-+	mt7603_mcu_fill_msg(dev, skb, cmd, wait_seq);
- 
- 	return mt76_tx_queue_skb_raw(dev, mdev->q_mcu[MT_MCUQ_WM], skb, 0);
- }
-@@ -113,7 +120,7 @@ mt7603_mcu_restart(struct mt76_dev *dev)
- 	return mt76_mcu_send_msg(dev, -MCU_CMD_RESTART_DL_REQ, NULL, 0, true);
- }
- 
--static int mt7603_load_firmware(struct mt7603_dev *dev)
-+int mt7603_load_firmware(struct mt7603_dev *dev)
- {
- 	const struct firmware *fw;
- 	const struct mt7603_fw_trailer *hdr;
++	mutex_lock(&dev->mt76.mutex);
++	*tx_ant = dev->tx_ant;
++	*rx_ant = dev->mphy.antenna_mask;
++	mutex_unlock(&dev->mt76.mutex);
++
++	return 0;
++}
++
+ static void
+ mt7603_set_coverage_class(struct ieee80211_hw *hw, int radio_idx,
+ 			  s16 coverage_class)
+@@ -783,7 +836,8 @@ const struct ieee80211_ops mt7603_ops = {
+ 	.set_coverage_class = mt7603_set_coverage_class,
+ 	.set_tim = mt76_set_tim,
+ 	.get_survey = mt76_get_survey,
+-	.get_antenna = mt76_get_antenna,
++	.get_antenna = mt7603_get_antenna,
++	.set_antenna = mt7603_set_antenna,
+ 	.set_sar_specs = mt7603_set_sar_specs,
+ };
+ EXPORT_SYMBOL_GPL(mt7603_ops);
+diff --git a/drivers/net/wireless/mediatek/mt76/mt7603/mcu.c b/drivers/net/wireless/mediatek/mt76/mt7603/mcu.c
+index eb633f5d7171e99a0339a2f44fa0ab39379642f1..cf81fc2e252a37e1d40c1f297b1c9688c054ca40 100644
+--- a/drivers/net/wireless/mediatek/mt76/mt7603/mcu.c
++++ b/drivers/net/wireless/mediatek/mt76/mt7603/mcu.c
+@@ -397,6 +397,7 @@ int mt7603_mcu_set_channel(struct mt7603_dev *dev)
+ 	struct cfg80211_chan_def *chandef = &dev->mphy.chandef;
+ 	struct ieee80211_hw *hw = mt76_hw(dev);
+ 	int n_chains = hweight8(dev->mphy.antenna_mask);
++	int n_tx = hweight8(dev->tx_ant);
+ 	struct {
+ 		u8 control_chan;
+ 		u8 center_chan;
+@@ -410,7 +411,7 @@ int mt7603_mcu_set_channel(struct mt7603_dev *dev)
+ 		.control_chan = chandef->chan->hw_value,
+ 		.center_chan = chandef->chan->hw_value,
+ 		.bw = MT_BW_20,
+-		.tx_streams = n_chains,
++		.tx_streams = n_tx,
+ 		.rx_streams = n_chains,
+ 	};
+ 	s8 tx_power = hw->conf.power_level * 2;
 diff --git a/drivers/net/wireless/mediatek/mt76/mt7603/mt7603.h b/drivers/net/wireless/mediatek/mt76/mt7603/mt7603.h
-index 5b0ecd01aad95a11f641ca41f8a9206882c54c28..f91968a63b6497460a26fed7d775f3745269bfa7 100644
+index f91968a63b6497460a26fed7d775f3745269bfa7..8559a1ee06cd79a00ec4e382065f24f5180a8a21 100644
 --- a/drivers/net/wireless/mediatek/mt76/mt7603/mt7603.h
 +++ b/drivers/net/wireless/mediatek/mt76/mt7603/mt7603.h
-@@ -186,6 +186,11 @@ int mt7603_eeprom_init(struct mt7603_dev *dev);
- int mt7603_dma_init(struct mt7603_dev *dev);
- void mt7603_dma_cleanup(struct mt7603_dev *dev);
- int mt7603_mcu_init(struct mt7603_dev *dev);
-+int mt7603_load_firmware(struct mt7603_dev *dev);
-+void mt7603_mcu_fill_msg(struct mt7603_dev *dev, struct sk_buff *skb,
-+			 int cmd, int *wait_seq);
-+int mt7603_mcu_parse_response(struct mt76_dev *mdev, int cmd,
-+			      struct sk_buff *skb, int seq);
- void mt7603_init_debugfs(struct mt7603_dev *dev);
+@@ -108,6 +108,8 @@ struct mt7603_dev {
  
- static inline void mt7603_irq_enable(struct mt7603_dev *dev, u32 mask)
+ 	const struct mt76_bus_ops *bus_ops;
+ 
++	u8 tx_ant;
++
+ 	u32 rxfilter;
+ 
+ 	struct mt7603_sta global_sta;
 
 -- 
 2.47.3
