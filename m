@@ -1,81 +1,109 @@
-Authentication-Results: smtp.subspace.kernel.org; arc=none smtp.remote-ip=125.209.209.75
+Authentication-Results: smtp.subspace.kernel.org; arc=none smtp.remote-ip=205.220.168.131
 ARC-Seal: i=1; d=subspace.kernel.org; s=arc20261015; a=rsa-sha256; cv=none;
-	t=1795760701;
-	b=d2EQ8MDqVVJRDv0luhm2ghCRNbQ42i4OF5SI9sED723m/HP7Ip/xge13JnlTYmoscwve
-	 KPiROoil7xfSGd9QkH5T0xWioInJhUNhxUPLrhJLybXS/+P1OVZHJH5/vMW/vodpn8AVg
-	 ENPfPR8Wjx3wVn29zGSadWYBRNwggItmq4T7xM+veH8bP0MV4y6nn7YfAxCZdnzL/Ohv3
-	 nFAOODg7SymbtbJBrse0YnmVk9zExcIn5zzc3shtGgavPJ8KDo9iakMsT38rFDasOP8W0
-	 o/RNr58prPTlgqafM+Qe+iLZzli/zs1rhkUHO1ciXSkBjNSx+eo5GnmdI4aHz5d53zg==
+	t=1795760714;
+	b=Sn/9QXuSkZJOobROW5XD/i+clE3H5NzfLYT0cH2yp6m1EDpoACbvloZSUJ3xDN5V6OdD
+	 6nnhHEFOAEwoIWm+PQmWclpLOLjSCfzDET3YJEgFOe2SHYrFRjO5aGuR63zck7UAed16M
+	 E2om8B2usGjLKs/xBfZThhiqSdBb8l/UOYdeV+Sdg0soYwf4Qxqs5vNGXcuV4kio462Y4
+	 UuTv3GNN/7m16ubJwlmwUNo6BCeutvOQeBvy1xwtIvGUqmMhPeJNT3SGBjgwnpfIk9gxC
+	 fIJuAcYWrsMBOPRdXK6EOf4pKlUMgFyCwPMjWCfCJfVX/rj7ebTqHodvzCfSKg0iX8A==
 ARC-Message-Signature: i=1; d=subspace.kernel.org; s=arc20261015;
-	a=rsa-sha256; c=relaxed/relaxed; t=1795760701;
-	h=DMARC-Filter:DKIM-Signature:X-Originating-IP:Received:DKIM-Signature:
-	 X-Session-ID:X-Originating-IP:X-Works-Send-Opt:X-Works-Smtp-Source:
-	 Received:From:To:Cc:Subject:Date:Message-ID:MIME-Version:
-	 Content-Transfer-Encoding;
-	bh=Fj33dijwGstbYggkpkxycJ7TWs98Tw1LR49UjArPlqY=;
-	b=ZEQiiIPzOlxRtrEofmWbWgNoa0ljnTm6qil1uzYETpieKWoZnkUzfuleVlMAqfegHudE
-	 fLkL2qdcJOobYN2PtTUWPHAs3rnUp78FhwsxLTvcCRMkmCkHcjWgDfvRpYGDpcbg4rDnb
-	 52b2q80O1NncmlXaFud/+4g+5H0Tr8NdkYujEbevJ372RmYdfYMlvZ9Bij1lxTk2S0L0q
-	 1QRY2692sOahYUSZOrJyyrxRsKw1PVUBDTpTnHtvssP94vX57ubD64YBz68U5HODPwY9b
-	 fE+uzZR+vBpKcreSqO33y6eXbb05WIlRQQAtzHjqenB0wWHgGrTYbGaKyMz2aDK+ecA==
+	a=rsa-sha256; c=relaxed/relaxed; t=1795760714;
+	h=DMARC-Filter:Received:DKIM-Signature:Received:Received:
+	 DKIM-Signature:X-Google-DKIM-Signature:X-Gm-Message-State:X-Gm-Gg:
+	 X-Received:X-Received:Received:Message-ID:Date:MIME-Version:
+	 User-Agent:Subject:To:Cc:References:From:Content-Language:In-Reply-To:
+	 Content-Type:Content-Transfer-Encoding:X-Proofpoint-ORIG-GUID:
+	 X-Proofpoint-Spam-Details-Enc:X-Authority-Analysis:
+	 X-Proofpoint-Spam-Info:X-Proofpoint-GUID:X-Proofpoint-Virus-Version:
+	 X-Proofpoint-Spam-Details;
+	bh=jw473km3IIg3ZQzfWe+GdnDA5eOhHztmzJKSrUaZpuE=;
+	b=rnGyuChaGNQ+CfnJ8Fv5hW2B6UU2cj8aiCwLdFWrZqGBlJgtsOBxks19LZSrkyI/7Ho2
+	 y6AzDD26vstpdcINwm9+6D2lAQp/BglG+jCjMlTtK7EGFerjdtXVVXgKd/1l1dd35424m
+	 NKrFkW3Msw5ZZZL73IxtzwZo80ub84bnnL/FhsN1WV4Lnzp7EMdey3QiKLjVC81HcJio1
+	 JO/gj6h1rGIpDusHgCG+F3yGESc8xfDLrXrNGks2mYKuA52uWWZ8T/JjQnmwHGhC4+a4C
+	 6y3N6S6elTAKXnT/Es/Bqp3HLrtPpDL1yljnGZ5V7gfVHCpc1WESo1cO4Q+oSrAiuqQ==
 ARC-Authentication-Results: i=1; smtp.subspace.kernel.org; 
-	dmarc=pass header.from=skku.edu;
-	spf=pass smtp.mailfrom=skku.edu;
-	dkim=pass header.d=worksmobile.com header.i=@worksmobile.com header.a=rsa-sha256 header.s=s20171120 header.b=XvXLXHkI;
-	dkim=pass header.d=skku.edu header.i=@skku.edu header.a=rsa-sha256 header.s=naverworks header.b="uMf3/mrZ";
-	arc=none smtp.remote-ip=125.209.209.75
-Received: from cvsmtppost105.wmail.worksmobile.com (cvsmtppost105.wmail.worksmobile.com [125.209.209.75])
+	dmarc=pass header.from=oss.qualcomm.com;
+	spf=pass smtp.mailfrom=oss.qualcomm.com;
+	dkim=pass header.d=qualcomm.com header.i=@qualcomm.com header.a=rsa-sha256 header.s=qcppdkim1 header.b=jWJd4BIF;
+	dkim=pass header.d=oss.qualcomm.com header.i=@oss.qualcomm.com header.a=rsa-sha256 header.s=google header.b=WuOhQf0C;
+	arc=none smtp.remote-ip=205.220.168.131
+Received: from mx0a-0031df01.pphosted.com (mx0a-0031df01.pphosted.com [205.220.168.131])
 	(using TLSv1.3 with cipher TLS_AES_256_GCM_SHA384 (256/256 bits)
 	 key-exchange X25519 server-signature ECDSA (prime256v1) server-digest SHA256)
 	(No client certificate requested)
-	by smtp.subspace.kernel.org (Postfix) with ESMTPS id 63427606A31C
-	for <linux-wireless@vger.kernel.org>; Fri, 27 Nov 2026 06:25:00 +0000 (UTC)
-DMARC-Filter: OpenDMARC Filter v1.4.2 smtp.subspace.kernel.org 63427606A31C
-Authentication-Results: smtp.subspace.kernel.org; dmarc=pass (p=none dis=none) header.from=skku.edu
-Authentication-Results: smtp.subspace.kernel.org; spf=pass smtp.mailfrom=skku.edu
+	by smtp.subspace.kernel.org (Postfix) with ESMTPS id 8C721606A31C
+	for <linux-wireless@vger.kernel.org>; Fri, 27 Nov 2026 06:25:13 +0000 (UTC)
+DMARC-Filter: OpenDMARC Filter v1.4.2 smtp.subspace.kernel.org 8C721606A31C
+Authentication-Results: smtp.subspace.kernel.org; dmarc=pass (p=none dis=none) header.from=oss.qualcomm.com
+Authentication-Results: smtp.subspace.kernel.org; spf=pass smtp.mailfrom=oss.qualcomm.com
 Authentication-Results: smtp.subspace.kernel.org;
-	dkim=pass (2048-bit key) header.d=worksmobile.com header.i=@worksmobile.com header.a=rsa-sha256 header.s=s20171120 header.b=XvXLXHkI;
-	dkim=pass (2048-bit key) header.d=skku.edu header.i=@skku.edu header.a=rsa-sha256 header.s=naverworks header.b=uMf3/mrZ
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=worksmobile.com;
-	s=s20171120; t=1795760692;
-	bh=P2rbTox4GQi1dpRGzIN8Xt4AaPGy/zYBSaemJNQeQAs=;
-	h=From:To:Subject:Date:Message-ID:From:Subject:Feedback-ID:
-	 X-Works-Security;
-	b=XvXLXHkIkSb4MzvhFHpTeF0gr6zSa8+L0Y9i7yvdHPRZn7A+8w2k6mFpR5m1qrWjz
-	 kzhRw5EzcPr32AC5COwpOiJlQuMZoAXkwa1UK0p0sTZxuKQ8897ZPykpDrYM0dOINh
-	 z1G8v3yJaT0/8aqEIL+3ONP0VUAxOjW6KmJ8SOLmsXlbeKCx+AX1JvyXcP4QLipNKp
-	 xAI8fdxC21RkwmvxtYdQRgNh6b2N8fSiSoU1i9T6mhxcDugyUfu2MVB6/YCoY2kC7m
-	 MlQvkrDAe9L7OuSieNJQCO8eks+7pwe8u40UiWKFB8Ix4mv5/nTxk7o51hfy1+fpbJ
-	 4hOwjWvVVbtiQ==
-Received: from kr1-hmac-real-0 ([10.174.201.129])
-  by cvsmtppost105.wmail.worksmobile.com with ESMTP id 9zLek5noTWWWgfP9PDVxvQ
-  for <linux-wireless@vger.kernel.org>;
-  Fri, 27 Nov 2026 06:24:52 -0000
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=skku.edu; s=naverworks;
-	t=1795760692; bh=P2rbTox4GQi1dpRGzIN8Xt4AaPGy/zYBSaemJNQeQAs=;
-	h=From:To:Subject:Date:Message-ID:From:Subject:Feedback-ID:
-	 X-Works-Security;
-	b=uMf3/mrZXdX2c8NwHPITMj7+awYTmWYvshxU85KcJyst0Qg4o8Uds2zjk0YLFxjxX
-	 5vJpcx9CCOJabM9itCd39SXuEbdVAN1OSOkOg7qiBQ7VIz0jeW3DUEIjKsT7K+4PWF
-	 M1WhSqus6nt+8Z3Aik3/hZouTbRtZDLHO12B6ZgLVhxIUc5P7CDLUsVRNPv3nenJ1o
-	 wptcD4YEsSKuBSvzVhOKZVltMlqmcgEgbA/S5iLFyXssBEkWcs+uDTh2E1UYWG1gjI
-	 cs3FKD9uC1WugrSpTTQuif8OA020E+XwjSDANwGhMjv4xnDrFw2OZDq6UlUskuNneK
-	 +uvW+UUBJIBQg==
-X-Session-ID: GAF2BqrnTb+72BiZkq4Svg
-X-Works-Send-Opt: w/KXFqgmKAKmKAFYKqMqKA2mFAurjAumKAgmKxEmKqK/aAtwaBmmjAFYKxM/axKmKo2rFBwYjAg=
-X-Works-Smtp-Source: fdbZFqElFqJZ+HmZaxU/+6E=
-Received: from d20be28ee783.tail196be.ts.net ([115.145.173.180])
-  by cvnsmtp103.wmail.worksmobile.com with ESMTP id GAF2BqrnTb+72BiZkq4Svg
-  for <multiple recipients>
-  (version=TLSv1.3 cipher=TLS_AES_256_GCM_SHA384);
-  Fri, 27 Nov 2026 06:24:52 -0000
-From: Kyuwon Cho <kyuwon.cho@skku.edu>
-To: Johannes Berg <johannes@sipsolutions.net>
-Cc: Felix Fietkau <nbd@openwrt.org>,
-	linux-wireless@vger.kernel.org
-Subject: [PATCH wireless] wifi: mac80211: set up the TXQs of an AP_VLAN station with the AP's vif
-Date: Fri, 27 Nov 2026 15:24:51 +0900
-Message-ID: <179575981569.1588942.8945055698942160441@skku.edu>
+	dkim=pass (2048-bit key) header.d=qualcomm.com header.i=@qualcomm.com header.a=rsa-sha256 header.s=qcppdkim1 header.b=jWJd4BIF;
+	dkim=pass (2048-bit key) header.d=oss.qualcomm.com header.i=@oss.qualcomm.com header.a=rsa-sha256 header.s=google header.b=WuOhQf0C
+Received: from pps.filterd (m0279867.ppops.net [127.0.0.1])
+	by mx0a-0031df01.pphosted.com (8.18.1.11/8.18.1.11) with ESMTP id 6AR5hFc11012358
+	for <linux-wireless@vger.kernel.org>; Fri, 27 Nov 2026 06:25:12 GMT
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=qualcomm.com; h=
+	cc:content-transfer-encoding:content-type:date:from:in-reply-to
+	:message-id:mime-version:references:subject:to; s=qcppdkim1; bh=
+	jw473km3IIg3ZQzfWe+GdnDA5eOhHztmzJKSrUaZpuE=; b=jWJd4BIFD542LOMY
+	LJuxB3vC7aM/CYM1DbYrWPcz2KiimXWoQpji++7n15+vLf+N/htCrgy2DFqRdxhy
+	sBrXz70EnX5WmP7TNabFBO4QdhhmYwZbJUpYsy8gCvKToeaaTsCSR6/C1olYcZgZ
+	2nQSjbDE8uT4qRq8FNG5pugWwq3m7R96sigYy1D1VZKFylmd7hIUPXrWlzVgOfaL
+	r90GufLdy/HuIwjshShzx3HcvcWmpNJW4jWo7DlYzegXL0XzuWQzjgPZJ/jT930+
+	lactU2spTxXAvQP3v4JDooLRDlnlB2QSKRPLc13hc/wQkQfiJ1tC55cTI1HHfoVH
+	qZMP2g==
+Received: from mail-pj1-f69.google.com (mail-pj1-f69.google.com [209.85.216.69])
+	by mx0a-0031df01.pphosted.com (PPS) with ESMTPS id 4j6rf9239h-1
+	(version=TLSv1.3 cipher=TLS_AES_128_GCM_SHA256 bits=128 verify=NOT)
+	for <linux-wireless@vger.kernel.org>; Fri, 27 Nov 2026 06:25:12 +0000 (GMT)
+Received: by mail-pj1-f69.google.com with SMTP id 98e67ed59e1d1-3b41b099809so6580986a91.1
+        for <linux-wireless@vger.kernel.org>; Thu, 26 Nov 2026 22:25:12 -0800 (PST)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+        d=oss.qualcomm.com; s=google; t=1795760712; x=1796365512; darn=vger.kernel.org;
+        h=content-transfer-encoding:content-type:in-reply-to:content-language
+         :from:references:cc:to:subject:user-agent:mime-version:date
+         :message-id:from:to:cc:subject:date:message-id:reply-to:content-type;
+        bh=jw473km3IIg3ZQzfWe+GdnDA5eOhHztmzJKSrUaZpuE=;
+        b=WuOhQf0CnmzMGaZX+muvecaUCYwE2XrxIT4nl8A9ulDQ4KjzcL7N2bsGjeKDihshZ2
+         iKWwKpPNKDdjN64bmdFELcLF9tBON6Tbqo/kzQ9uLYywVoY0AtSfS7bQabyayW3HsKaP
+         lWmDBJ0XMdgo/aznjQ7Z85TPhiWrfssnw3Al89EC4SHBJMVHfKOwbVi8F9m9i9XajfUw
+         w9I4UId8QIXNdMv8F+THujLE8cuV/dsY6gU9LbJF/nNCiU3LEEziprGCww8RRZqK6piG
+         dBR50KEoaxuGUjflEc6+ddh51owHqvET50+OT+lsx8weyLpH5/XCX2FeZfPWMXV7gI7V
+         h/8g==
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+        d=1e100.net; s=20260707; t=1795760712; x=1796365512;
+        h=content-transfer-encoding:content-type:in-reply-to:content-language
+         :from:references:cc:to:subject:user-agent:mime-version:date
+         :message-id:x-gm-gg:x-gm-message-state:from:to:cc:subject:date
+         :message-id:reply-to:content-type;
+        bh=jw473km3IIg3ZQzfWe+GdnDA5eOhHztmzJKSrUaZpuE=;
+        b=nj1v65wlrp0VJtfZz7oG3hmn/pXFXxawvPSKNbWdx8DNCvGsw7N2vyfwQ0LR8EKVxE
+         KfpO3i56vvWqnEEVKM6j/UsoGnilhPAer9vDRx7619mx7RABjb2uZjlmjLMS6zOgfeSE
+         Rp9Ul19ZmcfUdzA29pYm0JOo5G/fWkGMdvpDADM0g3DKCapw+loQ+kHOzNcAALuUe/MX
+         4ZhT5nuFpSL6iATiLzfzumGw7zrPdq+IOPXMc/w/X00HNwG7fIYuBvGm+wRHi83zPl6Y
+         2mq4z+jBw5kBzoI9MfDhE5Mf3J0k/p87mUheG8pv6t5w5ikXklxxNJdJ1pOBTH8GGa8q
+         +tQA==
+X-Gm-Message-State: APuU4Z+Ir7NxqJYWD53sSWI+6ebNelkHdZWsN7SusJSqxAxeoDClUVro
+	tLpzeJj/WGNoI5M6bO31+At2RJvrmWcPzP29dRodTGSqPppiYJyWDIiP0JOG45pU9kkLGW82maK
+	cMLqrLMK+fo4DZbfqhB9U2ulKQzYauxsHxr6X1d87rs7bqJiWuw6ASmkuaI6rs5ZqNzXGwA==
+X-Gm-Gg: AZFdTZcT0A/fGMeeQHPdgVPZiJwXxwfBPT5VS7Ry4+Dq2t6asD8/HBcsvlLIdadtxbq
+	NpfEpeXb7zzT58nKNYUlZuXG/3H+Bhicvgnw0QeAMH0vrT3+WKgwtv6cRmaSSka0/Wvu0O7JSrC
+	/2Hdk6XCqGkbyzyLQ2DU4rDtEFAAbPd1kPlT9w17RrF0QxXpNBJILI8gy7EiMFaKysKPW5ARySJ
+	Ct71KeY6dbTp70lKcfWzkosHRmBzv7aPy09U+ciIbivT6GlzoNlBGoJibkqhlKfTcHdYUQB1NWt
+	AGXdpq3hJ21FG42Wne7VDHqP0pH0a5E17g88wYr7eeS3lMdGlwqyxHQemn0/Qqv8oOEC+KvRc6n
+	OneieTJjZyyoUPoulunynk/y5SrgYhmHRZwgerUjRkMOJR+/AkBPuW8YNdJFdccg5tpA57ciVH/
+	ogTuBuARzyKvBFYlzKppumDryAHjVNMPRK8NlcsK0QCkSjow==
+X-Received: by 2002:a17:90b:5109:b0:3ac:97bc:4c98 with SMTP id 98e67ed59e1d1-3b41c9bc501mr21090146a91.64.1795760711887;
+        Thu, 26 Nov 2026 22:25:11 -0800 (PST)
+X-Received: by 2002:a17:90b:5109:b0:3ac:97bc:4c98 with SMTP id 98e67ed59e1d1-3b41c9bc501mr21090125a91.64.1795760711366;
+        Thu, 26 Nov 2026 22:25:11 -0800 (PST)
+Received: from [10.133.33.180] (tpe-colo-wan-fw-bordernet.qualcomm.com. [103.229.16.4])
+        by smtp.gmail.com with ESMTPSA id 98e67ed59e1d1-3b41adcafe0sm39077410a91.16.2026.11.26.22.25.09
+        (version=TLS1_3 cipher=TLS_AES_128_GCM_SHA256 bits=128/128);
+        Thu, 26 Nov 2026 22:25:11 -0800 (PST)
+Message-ID: <7eae8786-75fb-44ea-8d69-6669470beed8@oss.qualcomm.com>
+Date: Fri, 27 Nov 2026 14:25:08 +0800
 X-Mailing-List: linux-wireless@vger.kernel.org
 List-Id: <linux-wireless.vger.kernel.org>
 List-Post: <mailto:linux-wireless@vger.kernel.org>
@@ -85,78 +113,101 @@ List-Unsubscribe: <mailto:linux-wireless+unsubscribe@vger.kernel.org>
 List-Owner: <mailto:linux-wireless+owner@vger.kernel.org>
 Precedence: list
 MIME-Version: 1.0
-Content-Transfer-Encoding: 8bit
+User-Agent: Mozilla Thunderbird
+Subject: Re: [PATCH ath-next] wifi: ath12k: Use bare functions for
+ ath12k_hw_params::wmi_init
+To: Jeff Johnson <jeff.johnson@oss.qualcomm.com>,
+        Jeff Johnson <jjohnson@kernel.org>
+Cc: linux-wireless@vger.kernel.org, ath12k@lists.infradead.org
+References: <20261124-ath12k-wmi_init_param-v1-1-56f9142cc262@oss.qualcomm.com>
+From: Baochen Qiang <baochen.qiang@oss.qualcomm.com>
+Content-Language: en-US
+In-Reply-To: <20261124-ath12k-wmi_init_param-v1-1-56f9142cc262@oss.qualcomm.com>
+Content-Type: text/plain; charset=UTF-8
+Content-Transfer-Encoding: 7bit
+X-Proofpoint-ORIG-GUID: DVpeamfjPDkDdvAzDRbJpj5zEtf-Bm2-
+X-Proofpoint-Spam-Details-Enc: AW1haW4tMjYxMTI3MDAyNSBTYWx0ZWRfX/wSytXPabWCa
+ 379OtsOTS0k1rBjPCs5qQorPA4OkedVlZ/nOk5tM2KLnPqUKN6RGzUmGi0276qINRbJ1sTFe5aA
+ 2tMMDEannc63qAmcowL5BLkuEH5/obtv3q3W0LBh/KB8O+4Caj5ZWx28XdYj/n2C68Oa8oNhMC9
+ W1xzzzw2tvk2Kl3OiMTY1sUDz2MB4DSGFwip2bgwp63XPShq8Sz+Ri6B4y6J5AfUuboaGj5O8JT
+ sUXQk/X65BtQYtyr0oE+aDOr22Ci69PCjKrREHfqkvpbNyztSwTJ7uUR/XSOJ3ZpV/7dlOI3iO0
+ qeQycTKx2Uxst17gDBIw0ecQ8Tt/RHrUmswfHpolTopbzNd2JL7vfsBeG3HhJwWLc0gheN7610h
+ 05+tj3TogKyasR/rSjfyTFcUchxKAW33xCnscs7foMyPqDUoiAbqwWaxvj9TLezV/g1PKPWvBZV
+ TZC4AHQx2JJmmVhZiVA==
+X-Authority-Analysis: v=2.4 cv=cpkOAF4i c=1 sm=1 tr=0 ts=6b092248 cx=c_pps
+ a=vVfyC5vLCtgYJKYeQD43oA==:117 a=nuhDOHQX5FNHPW3J6Bj6AA==:17
+ a=IkcTkHD0fZMA:10 a=zJRp6_cAMcgA:10 a=s4-Qcg_JpJYA:10
+ a=VkNPw1HP01LnGYTKEx00:22 a=u7WPNUs3qKkmUXheDGA7:22 a=eoimf2acIAo5FJnRuUoq:22
+ a=EUspDBNiAAAA:8 a=IXfxRFBqj_madRA9-PEA:9 a=QEXdDO2ut3YA:10
+ a=rl5im9kqc5Lf4LNbBjHf:22
+X-Proofpoint-Spam-Info: AW1haW4tMjYxMTI3MDAyNSBTYWx0ZWRfXwp7d9KMhbNCM
+ IGUgoDPE1wSfZSzD1YvHNYaHyORH54SyFKTpcbK4i7yx7inRLGLIcsdwrxe+ouQIFtRSXdMAmFT
+ 4qG67+/QTPfqoE9Xn18UAUWoVYU43zg=
+X-Proofpoint-GUID: DVpeamfjPDkDdvAzDRbJpj5zEtf-Bm2-
+X-Proofpoint-Virus-Version: vendor=baseguard
+ engine=ICAP:2.0.293,Aquarius:18.0.1176,Hydra:6.1.138,FMLib:17.12.100.49
+ definitions=2026-11-26_05,2026-11-26_02,2025-10-01_01
+X-Proofpoint-Spam-Details: rule=outbound_notspam policy=outbound score=0
+ clxscore=1015 adultscore=0 priorityscore=1501 spamscore=0 phishscore=0
+ suspectscore=0 malwarescore=0 lowpriorityscore=0 impostorscore=0 bulkscore=0
+ classifier=typeunknown authscore=0 authtc= authcc= route=outbound adjust=0
+ reason=mlx scancount=1 engine=8.22.0-2611040001 definitions=main-2611270025
 
-A station added on an AP_VLAN interface (NL80211_CMD_NEW_STATION with
-NL80211_ATTR_STA_VLAN) gets TXQs whose vif is the AP_VLAN's. The driver
-does not know that vif, so drv_wake_tx_queue() warns that it is not in
-the driver. If the station is then moved to another AP_VLAN and the
-first one is deleted, the TXQs still point to its freed sub_if_data,
-and the next frame to the station reads it:
 
-  BUG: KASAN: use-after-free in ieee80211_queue_skb (net/mac80211/driver-ops.h:1380 net/mac80211/driver-ops.h:1391 net/mac80211/tx.c:1731)
-  Read of size 8 at addr ff11000012995658 by task test/117
-   ieee80211_queue_skb (net/mac80211/driver-ops.h:1380 net/mac80211/driver-ops.h:1391 net/mac80211/tx.c:1731)
-   __ieee80211_xmit_fast (net/mac80211/tx.c:3870)
-   __ieee80211_subif_start_xmit (net/mac80211/tx.c:3938 net/mac80211/tx.c:4497)
-   ieee80211_subif_start_xmit (net/mac80211/tx.c:4734)
-   __dev_queue_xmit (net/core/dev.c:5102)
-   packet_sendmsg (net/packet/af_packet.c:3177 net/packet/af_packet.c:3209)
 
-Frames sent on an AP_VLAN have gone to the TXQs of its AP since commit
-531682159092 ("mac80211: fix VLAN handling with TXQs"). Give the
-station's TXQs the AP's vif as well, as a station added on the AP and
-moved to an AP_VLAN later already has.
+On 11/25/2026 9:44 AM, Jeff Johnson wrote:
+> Currently there is an inconsistency among ath12k_hw_params::wmi_init
+> initializers, with some using bare function pointers and some using the &
+> operator. Normalize them to use bare function pointer syntax without the &
+> operator, consistent with other function pointer assignments in the array.
+> 
+> Compile tested only.
+> 
+> Signed-off-by: Jeff Johnson <jeff.johnson@oss.qualcomm.com>
+> ---
+> Issue flagged by Claude Haiku 4.5 during code review, and fixed by the same
+> model. Fix reviewed and validated by me.
+> ---
+>  drivers/net/wireless/ath/ath12k/wifi7/hw.c | 6 +++---
+>  1 file changed, 3 insertions(+), 3 deletions(-)
+> 
+> diff --git a/drivers/net/wireless/ath/ath12k/wifi7/hw.c b/drivers/net/wireless/ath/ath12k/wifi7/hw.c
+> index 48a2f6da16ef..16896118d2f4 100644
+> --- a/drivers/net/wireless/ath/ath12k/wifi7/hw.c
+> +++ b/drivers/net/wireless/ath/ath12k/wifi7/hw.c
+> @@ -743,7 +743,7 @@ static const struct ath12k_hw_params ath12k_wifi7_hw_params[] = {
+>  		.num_tcl_banks = 48,
+>  		.max_tx_ring = 4,
+>  
+> -		.wmi_init = &ath12k_wifi7_wmi_init_qcn9274,
+> +		.wmi_init = ath12k_wifi7_wmi_init_qcn9274,
+>  
+>  		.qmi_cnss_feature_bitmap = BIT(CNSS_QDSS_CFG_MISS_V01),
+>  
+> @@ -933,7 +933,7 @@ static const struct ath12k_hw_params ath12k_wifi7_hw_params[] = {
+>  
+>  		.mhi_config = NULL,
+>  
+> -		.wmi_init = &ath12k_wifi7_wmi_init_qcn9274,
+> +		.wmi_init = ath12k_wifi7_wmi_init_qcn9274,
+>  
+>  		.qmi_cnss_feature_bitmap = BIT(CNSS_QDSS_CFG_MISS_V01),
+>  
+> @@ -1023,7 +1023,7 @@ static const struct ath12k_hw_params ath12k_wifi7_hw_params[] = {
+>  		.num_tcl_banks = 48,
+>  		.max_tx_ring = 4,
+>  		.mhi_config = NULL,
+> -		.wmi_init = &ath12k_wifi7_wmi_init_qcn9274,
+> +		.wmi_init = ath12k_wifi7_wmi_init_qcn9274,
+>  
+>  		.qmi_cnss_feature_bitmap = BIT(CNSS_QDSS_CFG_MISS_V01),
+>  
+> 
+> ---
+> base-commit: e2d74a4def28e220ad582d17c27e7597690e601e
+> change-id: 20261111-ath12k-wmi_init_param-6005e644793f
+> 
+> 
 
-Fixes: ba8c3d6f16a1 ("mac80211: add an intermediate software queue implementation")
-Assisted-by: Claude:claude-opus-5-5
-Signed-off-by: Kyuwon Cho <kyuwon.cho@skku.edu>
----
-The issue was found by an LLM-guided test generator that we are
-developing as a research prototype. We reproduce it with a
-mac80211_hwsim radio in a user and network namespace: an AP with two
-AP_VLANs, a station added on the first one, moved to the second, the
-first one deleted, and a frame sent to the station. Without the patch,
-the first frame warns in drv_wake_tx_queue() and the last one triggers
-the report above. With it, neither shows up. The reproducer is
-available on request.
-
-Found and tested on mainline 9437ee8b6cf6 (v7.4-rc4-571, with KASAN);
-the code is the same in wireless (35c42b20ac87), where the patch
-applies as is.
-
- net/mac80211/sta_info.c | 7 ++++++-
- 1 file changed, 6 insertions(+), 1 deletion(-)
-
-diff --git a/net/mac80211/sta_info.c b/net/mac80211/sta_info.c
-index 5c95ffee257d..6ef704402e5d 100644
---- a/net/mac80211/sta_info.c
-+++ b/net/mac80211/sta_info.c
-@@ -634,6 +634,7 @@ __sta_info_alloc(struct ieee80211_sub_if_data *sdata,
- 		 const u8 *addr, int link_id, const u8 *link_addr,
- 		 gfp_t gfp)
- {
-+	struct ieee80211_sub_if_data *txq_sdata = sdata;
- 	struct ieee80211_local *local = sdata->local;
- 	struct ieee80211_hw *hw = &local->hw;
- 	struct sta_info *sta;
-@@ -717,11 +718,15 @@ __sta_info_alloc(struct ieee80211_sub_if_data *sdata,
- 	if (!txq_data)
- 		goto free;
- 
-+	if (sdata->vif.type == NL80211_IFTYPE_AP_VLAN)
-+		txq_sdata = container_of(sdata->bss, struct ieee80211_sub_if_data,
-+					 u.ap);
-+
- 	for (i = 0; i < ARRAY_SIZE(sta->sta.txq); i++) {
- 		struct txq_info *txq = txq_data + i * size;
- 
- 		/* might not do anything for the (bufferable) MMPDU TXQ */
--		ieee80211_txq_init(sdata, sta, txq, i);
-+		ieee80211_txq_init(txq_sdata, sta, txq, i);
- 	}
- 
- 	if (sta_prepare_rate_control(local, sta, gfp))
--- 
-2.43.0
+Reviewed-by: Baochen Qiang <baochen.qiang@oss.qualcomm.com>
 
