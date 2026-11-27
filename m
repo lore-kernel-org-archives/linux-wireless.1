@@ -1,78 +1,72 @@
 Authentication-Results: smtp.subspace.kernel.org; arc=none smtp.remote-ip=188.40.28.6
 ARC-Seal: i=1; d=subspace.kernel.org; s=arc20261015; a=rsa-sha256; cv=none;
-	t=1795806847;
-	b=MsSTvv/WHuogvHYipbwEKDBif5A79e4/nIjyAFuSs5lJG2ngxXKwEbB5IiUsQ2fYVfHR
-	 t0NauAOdsBtn0B10gp/J1Is7RNy99esoB5ju3kiab6yh8Ug2n6nmi2fAyYqmMkerkRaJO
-	 dOrVyYh1SY6vx03qaRo1Q40RS0+GoNZc6WYsjzlkG0U9K1jCkpdgwWq4jm4fhaayzQRQ2
-	 5EnC4nrWMkcJeH3YvT2OQ3iithfpxkKiWWqGyvzXJ3i/FkzFsmPcfLYfaWEmGjbBqM16C
-	 vxf5sdvErYu/4cUoLx05h8XZQWrcRut9D7gvy8yqDCusITzgxRcuXSZRFa3D0QxBSPQ==
+	t=1795807093;
+	b=ygEnREUj9sAzcgm+SeKflEsruRpEIIKSG+Q1l3g3MIjgBJsl2p7LRoUJmmk+1Ipn7zOK
+	 SmdNMQkAV3O8tMZRmVsqdthwNd6ljUYrVuD8yEnQxLRCFuu3S30XeOQPix2KTjF8mgMYN
+	 gNlYAXQvXTaMn6sU7LygJnNvAsrvhiDYAU/aVvzEZ3Na22g7RI4NENheDLPTpOR3L3c7a
+	 EA+TkfKgXlZbr7dFP7KB3X6SMTz7+0JQF/wzyCEJqCWTfebRycm5xzgdzDEPCKALmFuqk
+	 NA+D94u5JR1dMMuLw0N19GxYEMwiSSMbtrIan7/euMHy9FMcK2KbBuFOwWX430+BULg==
 ARC-Message-Signature: i=1; d=subspace.kernel.org; s=arc20261015;
-	a=rsa-sha256; c=relaxed/relaxed; t=1795806847;
+	a=rsa-sha256; c=relaxed/relaxed; t=1795807093;
 	h=DMARC-Filter:DKIM-Signature:Received:Received:Date:Message-ID:From:
 	 To:Cc:Subject:References:In-Reply-To:User-Agent:Content-Type:
 	 MIME-Version:Content-Disposition:X-Virus-Scanned;
-	bh=fUCiod/Nx4ysiVHAW0v83yh8yjNeK9e+2y8PPBOQYjM=;
-	b=TJEXCZKpqTlhlH2hy4Lj7NUb+GMNbrUgoTE6jutZW8FH8zl/5MX8zCX7r7RLkEzEdUo3
-	 2+K0kQhzZy7IHE3c9g9GwWedXUFDWYKMu7IycpQzPGiiPPpsZljISUa/DfO+GO9QxOHkZ
-	 izA/djth0m8cWDPFq83D3fVApUEBTl23EzXhpyjtCqrz2bLbzJh2wbz1j2aKkBe+D7QAo
-	 m8sev5HcoCQucSsLgpIGrLEZ+zCQJ0BR78T8O+Wij6ZUlfTZ5m2lG2Yh6Eac+1OpLNKHy
-	 2i/5qgb05WMrZwXgpMnBxjqcHyiCQQGSsjTM/x3gmwK3yMPiGY6WQL95k6Lmu62cpQg==
+	bh=+FpDgb1KryYOlH1jyhluUPViEOyJr/jEGQY6u3mwUdY=;
+	b=k6Spo5Ofh9JTqVnjM3p2wXa3cVc1K4tdB8E5AIuMhiV30Rg3LoQ96Iko8Ggf/vY4pJxb
+	 0fMlu8k5pxrfxfMh57uXSlXELNm5ixDd4uOF7cBWhygGQT6MoU+SxpawjrRLo2mJ7OQ+A
+	 W5wMV7zgAncBkBT1o1y7Ju78lHpXn9L/DDxhKcTbdcZSApCG5FO+mgyBUhg8g/6CTEhd8
+	 NuOYQFl00Z1YT1VpGki4hBqNwpeAX4870AZkf4eJisi4e6aIsMZpS5Gwsr706WawIrDFH
+	 eQUDYb3trJtHpQzlWOrfFY8XuVjaMUMegNXPWTTkHX+IkmociMxIrrAYRktIl1BIqhg==
 ARC-Authentication-Results: i=1; smtp.subspace.kernel.org; 
 	dmarc=none header.from=rfdeck.de;
 	spf=pass smtp.mailfrom=rfdeck.de;
-	dkim=pass header.d=rfdeck.de header.i=@rfdeck.de header.a=rsa-sha256 header.s=default2609 header.b=dWtmCIst;
+	dkim=pass header.d=rfdeck.de header.i=@rfdeck.de header.a=rsa-sha256 header.s=default2609 header.b=NYXilNfp;
 	arc=none smtp.remote-ip=188.40.28.6
 Received: from www226.your-server.de (www226.your-server.de [188.40.28.6])
 	(using TLSv1.3 with cipher TLS_AES_256_GCM_SHA384 (256/256 bits)
 	 key-exchange X25519 server-signature ECDSA (prime256v1) server-digest SHA256)
 	(No client certificate requested)
-	by smtp.subspace.kernel.org (Postfix) with ESMTPS id 6C151606A31E
-	for <linux-wireless@vger.kernel.org>; Fri, 27 Nov 2026 19:14:06 +0000 (UTC)
-DMARC-Filter: OpenDMARC Filter v1.4.2 smtp.subspace.kernel.org 6C151606A31E
+	by smtp.subspace.kernel.org (Postfix) with ESMTPS id 9031E606A31F;
+	Fri, 27 Nov 2026 19:18:13 +0000 (UTC)
+DMARC-Filter: OpenDMARC Filter v1.4.2 smtp.subspace.kernel.org 9031E606A31F
 Authentication-Results: smtp.subspace.kernel.org; dmarc=none (p=none dis=none) header.from=rfdeck.de
 Authentication-Results: smtp.subspace.kernel.org; spf=pass smtp.mailfrom=rfdeck.de
 Authentication-Results: smtp.subspace.kernel.org;
-	dkim=pass (2048-bit key, unprotected) header.d=rfdeck.de header.i=@rfdeck.de header.a=rsa-sha256 header.s=default2609 header.b=dWtmCIst
+	dkim=pass (2048-bit key) header.d=rfdeck.de header.i=@rfdeck.de header.a=rsa-sha256 header.s=default2609 header.b=NYXilNfp
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed; d=rfdeck.de;
 	s=default2609; h=MIME-Version:Content-Type:In-Reply-To:References:Subject:Cc:
 	To:From:Message-ID:Date:Sender:Reply-To:Content-Transfer-Encoding:Content-ID:
 	Content-Description:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc
-	:Resent-Message-ID; bh=fUCiod/Nx4ysiVHAW0v83yh8yjNeK9e+2y8PPBOQYjM=; b=dWtmCI
-	stsnQ73OKEyfL9EBKMA2GOIJyZyzE/uu8TfdirFlBTj4R8kqYO0IAmze5lykcCGUgWYydQhVxOSUg
-	h9ftLnTxOq12BCyxYTiBQV69+88UjEmrQFLeQnt3z0TbLwXxhylmAiLR/EI90TycqqwguNjlGb3ga
-	2EPG38/Ul5xJxUhyXwNweIZfqwNPFjrTX27/aq+g9AVGcN6dATDsjsqcDULIYqqYhUAD5/Zu41g66
-	364KNvJpImOcml2sd2YIpuHvahqHw/4AD66Rdhe+Ng6fNKp8aMvHDFhn5vNx2F4gc/t5s21RKSJMW
-	2h0BpW0WCNt+ldSkKzA0x3fYO0tA==;
+	:Resent-Message-ID; bh=+FpDgb1KryYOlH1jyhluUPViEOyJr/jEGQY6u3mwUdY=; b=NYXilN
+	fp26NR/hB1k7cabtp+QLKjR4UzBEaOXFcRN5M78+ZpmJdWIwDX/P4uQT0pBeHa+Cyftn25bkGtXgh
+	r8VVwWxcnIAZpHKyMC+9c3snQqIaUOB1xCSEDwBodmEqqwb5mkvF/9mMEEBbPvezupXOk20gQe53/
+	dXK3ceqyGs1WD4oQJa6egm6Cv2XyopWnlWGHZfPai1ygVHz1Ug4DYvVYTpzKeazKC+RjOGA9RYR0B
+	Bep8igo9iXCnY8OH7kaCOtwQ2xouOV9wkcxy1xEBYQa9RWhehIOXDlFvOKuhFmeq70PB4NuRdwoBv
+	NIKOLbKYWsWGYAgixSOIaXLuV3yQ==;
 Received: from sslproxy04.your-server.de ([78.46.152.42])
 	by www226.your-server.de with esmtpsa  (TLS1.3) tls TLS_AES_256_GCM_SHA384
 	(Exim 4.96.2)
 	(envelope-from <martin@rfdeck.de>)
-	id 1xX1OV-00096g-1k;
-	Fri, 27 Nov 2026 20:14:03 +0100
+	id 1xX1SV-000A8a-2L;
+	Fri, 27 Nov 2026 20:18:11 +0100
 Received: from [192.168.0.33] (helo=mail.your-server.de)
 	by sslproxy04.your-server.de with esmtpsa  (TLS1.3) tls TLS_AES_256_GCM_SHA384
 	(Exim 4.96)
 	(envelope-from <martin@rfdeck.de>)
-	id 1xX1OV-000K9j-0y;
-	Fri, 27 Nov 2026 20:14:03 +0100
-Date: Fri, 27 Nov 2026 20:14:03 +0100
-Message-ID: <20261127201403.Horde.ivCdJn-MZnrp2I8iyRVNzlp@mail.your-server.de>
+	id 1xX1SV-0002dX-1M;
+	Fri, 27 Nov 2026 20:18:11 +0100
+Date: Fri, 27 Nov 2026 20:18:11 +0100
+Message-ID: <20261127201811.Horde.O_c8lgqdTdEePdnm3jYazp0@mail.your-server.de>
 From: martin@rfdeck.de
-To: Luka Gejak <luka.gejak@linux.dev>
-Cc: linux-wireless@vger.kernel.org, Ping-Ke Shih <pkshih@realtek.com>
-Subject: Re: wifi: rtw88: usb: AP sends no beacons after monitor capture on
- the same phy
-References: <20261124144427.Horde.qQ_UTCx-6LmjjeS1bojTj8-@mail.your-server.de>
- <D34D5E6B-B159-4F34-92D8-4264024D3319@linux.dev>
- <20261126081256.Horde.ilxldEFeRo6UQJajd_7Nd6S@mail.your-server.de>
- <a0827be820914280cca81b32b495cda655a87fb4@linux.dev>
- <20261126161801.Horde.EPNAvNvUumt6-YVgeu2ZpuH@mail.your-server.de>
- <41ae89e5a8328124062eea53eab2fc49d6114a56@linux.dev>
- <20261126221229.Horde.Dolx0es1tv-1dHtbdt7kG6e@mail.your-server.de>
- <ABB4AE9E-9CB7-459D-AAED-481703358D3B@linux.dev>
- <20261127141540.Horde.j7w80xrIVq5DshPvlKMMIr2@mail.your-server.de>
- <B49A19B4-9C95-49DA-8AC1-A6F4122AFDEF@linux.dev>
-In-Reply-To: <B49A19B4-9C95-49DA-8AC1-A6F4122AFDEF@linux.dev>
+To: Ahmet Zeren <niko3x@proton.me>
+Cc: Ping-Ke Shih <pkshih@realtek.com>, linux-wireless@vger.kernel.org, Luka
+ Gejak <luka.gejak@linux.dev>, Bitterblue Smith <rtl8821cerfe2@gmail.com>,
+ linux-kernel@vger.kernel.org
+Subject: Re: [PATCH RFT rtw-next v2 0/2] wifi: rtw88: honour rate, retries
+ and bandwidth of injected frames
+References: <20261127161943.Horde.JkGhYA0aQ3kFZkRWztLNi5H@mail.your-server.de>
+ <semDCz-DacL4vKeB_8iKu6ZwI8pQDusEK2fvgerTJWRkQ1MAxvs0nX-lSJviX_LDplBuBKniLMaMy9FtGH2_EkckFD-LR2YY6pPSPwrTCk0=@proton.me>
+In-Reply-To: <semDCz-DacL4vKeB_8iKu6ZwI8pQDusEK2fvgerTJWRkQ1MAxvs0nX-lSJviX_LDplBuBKniLMaMy9FtGH2_EkckFD-LR2YY6pPSPwrTCk0=@proton.me>
 User-Agent: Horde Application Framework 5
 Content-Type: text/plain; charset=utf-8; format=flowed; DelSp=Yes
 X-Mailing-List: linux-wireless@vger.kernel.org
@@ -87,25 +81,36 @@ MIME-Version: 1.0
 Content-Disposition: inline
 X-Virus-Scanned: Clear (ClamAV 1.4.6/28194/Wed Nov 25 07:26:59 2026)
 
-Hi Luka,
+Hi Ahmet,
 
-> Perhaps the environment is influencing it as well?
+> Thanks, let me know how the repeat goes.
 
-I went back over the sniffer captures of all 66 AP windows on channel
-6 (the earlier runs and today's). The low-count windows don't stand
-out: other APs' beacons, the number of other BSSIDs, the frame rate
-without our own beacons, the retry share and the signal levels are all
-within the range of the normal windows, and the busiest windows had
-full beacon counts. The few beacons the silent APs did send arrived at
-the usual level.
+I repeated them with the two adapters apart (sniffer levels about -40
+to -60 dBm) and three sniffers: mt7921u, RTL8814AU and RTL8822BU. The
+RTL8812AU has both antennas connected and reports VHT MCS 0-9 for 1
+and 2 streams.
 
-What stands out is the pattern: in the worst case the AP sent nothing
-for 9.2 s and 4.5 s, so it stops in blocks rather than sending weakly.
-In one run the second AP stayed that way after update_beacon too (2
-beacons in 23 s). The sniffer only sees 802.11 on channel 6, so non
-Wi-Fi interference or CCA on the 8812AU itself isn't covered.
+- HT MCS15 and VHT MCS7 NSS2 at 80 MHz do arrive with the requested
+   rate, but only at the RTL8814AU (17 and 18 of 50, one copy each, no
+   retry bit); the other two sniffers don't decode them. So the two
+   stream rates are sent, and last time it was the sniffer.
+- MCS8, MCS12 and VHT MCS0 NSS2 at 80 MHz arrive at all three.
+- VHT MCS8 and MCS9 at 80 MHz (short and long GI) arrived at none of
+   them, not even at -38 dBm on the RTL8822BU, which gets all VHT MCS7
+   80 MHz frames. I can't tell whether the RTL8812AU doesn't send them
+   or sends them so badly that nothing decodes them, and I have no other
+   VHT MCS9 transmitter to compare with. Without the patches they all
+   go out at 6 Mbit/s, so this is no regression.
 
-I'll keep an eye on it.
+> Martin, may I add your Tested-by to v3?
+
+Yes, for rate, bandwidth and GI up to VHT MCS7 (1 and 2 streams), the
+retry count and NO_ACK, on RTL8812AU, USB, 5 GHz:
+
+Tested-by: Martin <martin@rfdeck.de>
+
+Since v3 changes the NO_ACK status, I'm happy to run the NO_ACK and
+retries part again on v3.
 
 Thanks,
 Martin
