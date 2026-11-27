@@ -1,49 +1,49 @@
 Authentication-Results: smtp.subspace.kernel.org; arc=none smtp.remote-ip=91.216.248.212
 ARC-Seal: i=1; d=subspace.kernel.org; s=arc20261015; a=rsa-sha256; cv=none;
-	t=1795800966;
-	b=YS/2BllBtmGwNQNHcX2qNvChqIwBzwFJjhpgLOZwOD4UxrYaNuyMIena98JWTnNMm83h
-	 taisIq6qmtpfqVGeSYymJvirq4jiFSShYHUwH77/1rIHMmmABfloSfPoZauXwIT27GEbq
-	 BhzaMyvz9G4lIXgBTL5K/Yo/oBJjT+ADeEYXs+g9pHoyQnok37PGpBXqKEWMPO6UgFNjZ
-	 W+OKPsmqFqtqB8rgKW+tJYUBXf4bv6MIA8atp+jGGt5iqw9Q8HYWfLKNs/t2e/a2cxZzN
-	 25AI9yQY10sXoLVlpdgUEMhU5sW8TacHVh/Nf8h4tUiL+lxT2z7erLv4dtM6caAIDug==
+	t=1795800969;
+	b=FUT0fP47ZcmirAtcNSYnYLyGwFp8l1dompwIkUP/DbN5vmv90e+ZQeFIb9xlmEDLcf7b
+	 M+7LFKKgIc9UA6rgTvmnZvpN9IlQN4UjEN6PDFm6XiDknVfcVA8bmPMTYm2Zac9vxgOoA
+	 9kCL2JulqmeeHPOz30BArKoqdlUDPE+FDrGrTImWCayqUK6CmErvBqf2pgwT0TZ56epJM
+	 FK2FjFDPd9Svw4DUyPZg4BAcA+kj/wNpnuRoXyzciKgszydGEqauWCOMC/aO5O1pFFYaQ
+	 EqfGKmAiwvt/phAi4mzW1OuuZqehdCr7b2GYVd09nTFa7kwLpaaXhtAvNeG1pcmSF+w==
 ARC-Message-Signature: i=1; d=subspace.kernel.org; s=arc20261015;
-	a=rsa-sha256; c=relaxed/relaxed; t=1795800966;
+	a=rsa-sha256; c=relaxed/relaxed; t=1795800969;
 	h=DMARC-Filter:From:DKIM-Signature:To:Cc:Subject:Date:Message-ID:
 	 X-Mailer:In-Reply-To:References:MIME-Version:
 	 Content-Transfer-Encoding;
-	bh=GUySmqfMLE9wm4JUG4oeEO23d2umvrzqKPsHvu1jeWc=;
-	b=kqXxbGktnkaC1eK1TUag7fBWowYXSI+bseDX37VHLDLXYowbIme5EphZCf3uTW2mfXla
-	 ZexVvTmUwEGSrw6Io859cWwzDefnPmuCs7B2RgZMYYBYNyIOICPETIYxZvmMxsay0rvrd
-	 QCu33lFCsesZCyVDgSNCtCV2IHkj6OZvgBW1qdoXqsbTsc0tdE8uncA3tZOcGphyR0dEb
-	 ObsU+E/hTsIWZoU0z4KJzFoo9cRn3ucJB94YQcPP+dVXgqMpoKRBIvWDSFfRAFwbcoAhf
-	 bmyuvXAT1kOyyiW3QRctnenQ6/pXsKxZat2VHT8KqS7uGV71NV5bFv1dZ0vACaxSN5A==
+	bh=Mxq2ajFAdc7BHde2lquSmjBeWvjKHqLe2URNnjWYuSI=;
+	b=gajC0d9ZFN4DUcua+cjD0wZOOpuzacKQHV4rUmFT29+U9fWNtX69QP36cP6lGLlj2jes
+	 dOBqYceqe8XgjNubb/gbQ2hwIF1tDYAB/mzcOl1Vzk5m1TuxeQOFjjvdWtuU38NqrjTl6
+	 yPR3t2A1sN5fW6JonQJtT1KSts9y6GpGzf7UMBqKOpFISoBGYkNygeApJsCPi94ZVJT60
+	 NQBTyHXpyYhV6ixt/mbAoeYaG9MCC7PWeYR+esI4zdCI4KI1sbPwtNQCGuHhGZCnvz+2d
+	 E5cJlEKrEQkzDDFkCaxS1Lybf0GC66OzVByzhyRIZqyWtTfUNtzdtds3SkR3OcBnuaw==
 ARC-Authentication-Results: i=1; smtp.subspace.kernel.org; 
 	dmarc=none header.from=deq.rocks;
 	spf=none smtp.mailfrom=deq.rocks;
-	dkim=pass header.d=deq.rocks header.i=@deq.rocks header.a=rsa-sha256 header.s=securedbylima-20251205 header.b=IoN3ufBF;
+	dkim=pass header.d=deq.rocks header.i=@deq.rocks header.a=rsa-sha256 header.s=securedbylima-20251205 header.b=nB9AairJ;
 	arc=none smtp.remote-ip=91.216.248.212
 Received: from bulk0.mail-out.lima-city.de (bulk0.mail-out.lima-city.de [91.216.248.212])
 	(using TLSv1.3 with cipher TLS_AES_256_GCM_SHA384 (256/256 bits)
 	 key-exchange X25519 server-signature ECDSA (prime256v1))
 	(No client certificate requested)
-	by smtp.subspace.kernel.org (Postfix) with ESMTPS id 44DE5606A691;
-	Fri, 27 Nov 2026 17:36:06 +0000 (UTC)
-DMARC-Filter: OpenDMARC Filter v1.4.2 smtp.subspace.kernel.org 44DE5606A691
+	by smtp.subspace.kernel.org (Postfix) with ESMTPS id 947D0606A6A6;
+	Fri, 27 Nov 2026 17:36:08 +0000 (UTC)
+DMARC-Filter: OpenDMARC Filter v1.4.2 smtp.subspace.kernel.org 947D0606A6A6
 Authentication-Results: smtp.subspace.kernel.org; dmarc=none (p=none dis=none) header.from=deq.rocks
 Authentication-Results: smtp.subspace.kernel.org; spf=none smtp.mailfrom=deq.rocks
 Authentication-Results: smtp.subspace.kernel.org;
-	dkim=pass (2048-bit key) header.d=deq.rocks header.i=@deq.rocks header.a=rsa-sha256 header.s=securedbylima-20251205 header.b=IoN3ufBF
+	dkim=pass (2048-bit key) header.d=deq.rocks header.i=@deq.rocks header.a=rsa-sha256 header.s=securedbylima-20251205 header.b=nB9AairJ
 From: Andre Eikmeyer <dev@deq.rocks>
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=deq.rocks;
-	s=securedbylima-20251205; t=1795800964;
-	bh=xbFogpTo10Nxw4ZICdjJ5rlqffoyRrSmEJpftWjtOBM=;
+	s=securedbylima-20251205; t=1795800966;
+	bh=NwD2EqHuGoBkwsa+FPnF+xUDZsP/uuYBvzKeBFxFKtE=;
 	h=From:To:Cc:Subject:Date:In-Reply-To:References:From;
-	b=IoN3ufBFAv/wwY7d3gnBO+xdWQA6Cr4z1L7m599CJLe08qfmS42RDx5y9P0rkgj5w
-	 6eCcFOhm9aJ0bnsx2Tr6UMEQAcG37hE7LB3ratGWTDu1XxvJhvu9wHL6B6JZxPvkrP
-	 pz8MrzGHkvKADLO+xE9Eh45GbxPy2LZnB4mlTmZ8AfnhqlT6Nev2LN+kvmbbCpByBE
-	 Q6LGwyhNndBcO+5WnXN3EfeVpfDpNPCNylPDDqrhdKRkR8XnN/JQsReaAYwRo46+4E
-	 m57+TgmgOiQ3jDsojRg28BbGSDGG7x+gJDUtli0Mu3wcrpXS5yZcH1MwZu5Jv93SHr
-	 A6dOQl3Qi5URw==
+	b=nB9AairJm9DhieAOj/2R2KRDKnq7RoRBSG/NWp7v3RJWhIe9oJMCppt//HZLIGq0w
+	 CsGq68bGbDLfNWMk1UF/C3SQ+KcHgXbkPlE5LeWEeXA/XgBSTeV6li+Psq2SocCN3Y
+	 vHQ1h0oFvovuKi82taHc6AP3n9rifkttbkpLxDNZ/jDMA3s9RLnEEu/cf+ewdN8tUW
+	 7cYtJH88de7+f64iMn8oIKT7Kd+B39v0nasEoLa6fY0Yf0JeMqLjR35FNdO4qU3i49
+	 b1DX+hBCzq5M3euTyruVYeRzNlLAwqVlX7zKN57ryjNg+KA6mdrJ84jlMjbxdi87cC
+	 CUcwGczUIhTrA==
 To: arend.vanspriel@broadcom.com
 Cc: linux-wireless@vger.kernel.org,
 	brcm80211@lists.linux.dev,
@@ -57,9 +57,9 @@ Cc: linux-wireless@vger.kernel.org,
 	Soeren Coremans <sorencoremans@gmail.com>,
 	Andre Eikmeyer <dev@deq.rocks>,
 	Yossef Osman <Yossef.Osman@proton.me>
-Subject: [PATCH wireless-next v3 3/5] wifi: brcmfmac: pcie: probe again after a resume through firmware
-Date: Fri, 27 Nov 2026 18:35:47 +0100
-Message-ID: <20261127173549.29335-4-dev@deq.rocks>
+Subject: [PATCH wireless-next v3 4/5] wifi: brcmfmac: msgbuf: do not wait for tx status on the BCM4377
+Date: Fri, 27 Nov 2026 18:35:48 +0100
+Message-ID: <20261127173549.29335-5-dev@deq.rocks>
 X-Mailer: git-send-email 2.56.0
 In-Reply-To: <20261127173549.29335-1-dev@deq.rocks>
 References: <20261127173549.29335-1-dev@deq.rocks>
@@ -74,51 +74,49 @@ Precedence: list
 MIME-Version: 1.0
 Content-Transfer-Encoding: 8bit
 
-After ACPI S3 the BCM4364 and BCM4377 of the T2 Macs come back without
-their firmware, but the interrupt mask can read back nonzero, so
-brcmf_pcie_pm_leave_D3() takes the hot resume path and every command
-times out afterwards.
+The BCM4377 firmware returns the tx status of the queued packets only
+when it gets the flowring delete request, before the delete response.
+brcmf_msgbuf_delete_flowring() waits up to 100 ms for them before it
+sends the request, so every disconnect logs a timeout.
 
-On these chips, when the platform firmware handled the resume and WoWL
-is off, go straight to the existing remove and re-probe path. Other
-chips keep the hot resume path.
+Send the delete right away on the BCM4377. Its tx status still comes
+before the delete response, so pend_8021x_cnt drains as before. Other
+chips keep the wait.
 
 Tested-by: Yossef Osman <Yossef.Osman@proton.me>
 Signed-off-by: Andre Eikmeyer <dev@deq.rocks>
 ---
- .../net/wireless/broadcom/brcm80211/brcmfmac/pcie.c  | 12 ++++++++++++
- 1 file changed, 12 insertions(+)
+ .../net/wireless/broadcom/brcm80211/brcmfmac/msgbuf.c  | 10 ++++++++--
+ 1 file changed, 8 insertions(+), 2 deletions(-)
 
-diff --git a/drivers/net/wireless/broadcom/brcm80211/brcmfmac/pcie.c b/drivers/net/wireless/broadcom/brcm80211/brcmfmac/pcie.c
-index 4aed21061dd..ea51ef6189d 100644
---- a/drivers/net/wireless/broadcom/brcm80211/brcmfmac/pcie.c
-+++ b/drivers/net/wireless/broadcom/brcm80211/brcmfmac/pcie.c
-@@ -7,6 +7,7 @@
- #include <linux/module.h>
- #include <linux/firmware.h>
- #include <linux/pci.h>
-+#include <linux/suspend.h>
- #include <linux/vmalloc.h>
- #include <linux/delay.h>
- #include <linux/interrupt.h>
-@@ -3107,6 +3108,17 @@ static int brcmf_pcie_pm_leave_D3(struct device *dev)
- 	devinfo = bus->bus_priv.pcie->devinfo;
- 	brcmf_dbg(PCIE, "Enter, dev=%p, bus=%p\n", dev, bus);
+diff --git a/drivers/net/wireless/broadcom/brcm80211/brcmfmac/msgbuf.c b/drivers/net/wireless/broadcom/brcm80211/brcmfmac/msgbuf.c
+index 79c1891db59..195a1a362ba 100644
+--- a/drivers/net/wireless/broadcom/brcm80211/brcmfmac/msgbuf.c
++++ b/drivers/net/wireless/broadcom/brcm80211/brcmfmac/msgbuf.c
+@@ -14,6 +14,7 @@
  
+ #include <brcmu_utils.h>
+ #include <brcmu_wifi.h>
++#include <brcm_hw_ids.h>
+ 
+ #include "core.h"
+ #include "debug.h"
+@@ -1505,8 +1506,13 @@ void brcmf_msgbuf_delete_flowring(struct brcmf_pub *drvr, u16 flowid)
+ 	flow->rings[flowid]->status = RING_CLOSING;
+ 	brcmf_commonring_unlock(commonring_del);
+ 
+-	/* wait for commonring txflow finished */
+-	while (retry && atomic_read(&commonring_del->outstanding_tx)) {
 +	/*
-+	 * Without WoWL the BCM4364 and BCM4377 of the T2 Macs are powered off
-+	 * when the platform firmware handles the system sleep, as with ACPI
-+	 * S3, and come back without their firmware. Their registers can still
-+	 * read back nonzero, so probe them again.
++	 * Wait for commonring txflow finished. The BCM4377 firmware returns
++	 * the tx status of the posted packets only on the delete request,
++	 * before the delete response.
 +	 */
-+	if (pm_resume_via_firmware() && !devinfo->wowl_enabled &&
-+	    (devinfo->ci->chip == BRCM_CC_4364_CHIP_ID ||
-+	     devinfo->ci->chip == BRCM_CC_4377_CHIP_ID))
-+		goto cleanup;
-+
- 	/* Check if device is still up and running, if so we are ready */
- 	if (brcmf_pcie_read_pcie32(devinfo, devinfo->reginfo->intmask) != 0) {
- 		brcmf_dbg(PCIE, "Try to wakeup device....\n");
++	while (drvr->bus_if->chip != BRCM_CC_4377_CHIP_ID && retry &&
++	       atomic_read(&commonring_del->outstanding_tx)) {
+ 		usleep_range(5000, 10000);
+ 		retry--;
+ 	}
 -- 
 2.56.0
 
