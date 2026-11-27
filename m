@@ -1,78 +1,79 @@
-Authentication-Results: smtp.subspace.kernel.org; arc=none smtp.remote-ip=211.75.126.72
-ARC-Seal: i=1; d=subspace.kernel.org; s=arc20261015; a=rsa-sha256; cv=none;
-	t=1795767459;
-	b=QGF9Mj2uKZMKAF0wL9OVi7qhf53JSbMdIU6hGnEjyCjsIdXlaDh6LhH8TcFmOiJ80p76
-	 AZHhwGursFQw7sdC/Jti6IUgpb0OjGeDDoX5RZwoU/AA6JU+KErurGByhjjs4jmRWyMBZ
-	 7jB5TCmYfDuespdC/ZhbCLE1ZDppo0FrNnYJYtWPQzuJlU2UuEqG3DSOJeoDxiBFAinTo
-	 g2hkU1M8wX3wEC0G4YPbIsy6ITkAldD7Tu+NCcUgZcPOofPU7fk49gbzm3UNoJdGjEUvz
-	 Ri5Fu3DC1IgZUDx+XUM2uXSySyksNXlG99BbeXMICZd8hpS1mqXuN/+0m9v4LoY891g==
-ARC-Message-Signature: i=1; d=subspace.kernel.org; s=arc20261015;
-	a=rsa-sha256; c=relaxed/relaxed; t=1795767459;
-	h=DMARC-Filter:X-SpamFilter-By:DKIM-Signature:Received:Received:
-	 Received:From:To:CC:Subject:Thread-Topic:Thread-Index:Date:Message-ID:
-	 References:In-Reply-To:Accept-Language:Content-Language:
-	 x-originating-ip:Content-Type:Content-Transfer-Encoding:MIME-Version;
-	bh=KxJE34scYaOADRszM2PUcJDYlPn27+PoAweLzQDQ9Yw=;
-	b=J7wd4Y54mfji3oUxpofARiggP1QFwrlKdS8B2p5AghOYgFc/qu+9GNygWmafftkxhDAu
-	 91hMp1VD6c5Rkm5jUMzpF0qM/M8JcmqUcvDEQtYhOqCtWlVTX52poa10YvEweWO++b1Ft
-	 X9hzCmqDROX35w39D4EAhutGX9H5Z68lGQAQ4slY2im6xoSkdOZp8LvBAEX7n9kikdVhR
-	 pJI6W26qRR2yZGGjmwY/UJ4CsAId20EzfxbJTvRWsiz+4vIHtOb1vrHV30M00nGP4haSo
-	 BWETTxwR4csaAlmyliMGCwhUuEV23zvZc5f6UwndJtmpohnBiufrfXQ4kZtKIOKhblw==
-ARC-Authentication-Results: i=1; smtp.subspace.kernel.org; 
-	dmarc=pass header.from=realtek.com;
-	spf=pass smtp.mailfrom=realtek.com;
-	dkim=pass header.d=realtek.com header.i=@realtek.com header.a=rsa-sha256 header.s=dkim header.b="Wz6FV/Hs";
-	arc=none smtp.remote-ip=211.75.126.72
-Received: from rtits2.realtek.com.tw (rtits2.realtek.com [211.75.126.72])
+Authentication-Results: smtp.subspace.kernel.org; arc=pass header.oldest-pass=0 smtp.remote-ip=100.103.45.18
+ARC-Seal: i=2; d=subspace.kernel.org; s=arc20261015; a=rsa-sha256; cv=pass;
+	t=1795768531;
+	b=SD/SUVKv/AivC1nP1pXPdKGQ1SmOnlwqDkQFx/3G5i1nqo2VA8Gs35mCNWMnSsiv3T9e
+	 QfaSe+cfckFLPDJ73iRIluyQd17zgq/fXxPzsiSTSLAwRWXa4451K2Af3UZcS6s7Nw6uS
+	 fxuzD0kUadn9rmDyuOXtVkJKmziDFQV5DU7jH3tg0u6GvnYE5+Whgx2DB62TeYjxkWtVQ
+	 3qEIq8jPfzd1yadoJmJFZtZXeWm9TC3QBKv8hNs+0iXjWZtG8DPXsRWLUzj+uKossciSN
+	 wsfyi7uUAc/xTA+heHBqOeIxN3TZzNsdpVMrmNm6eC0qBbWid2MpImgN68yzczhNKrQ==
+ARC-Message-Signature: i=2; d=subspace.kernel.org; s=arc20261015;
+	a=rsa-sha256; c=relaxed/relaxed; t=1795768531;
+	h=Received:DKIM-Signature:Received:From:Subject:Date:Message-Id:
+	 MIME-Version:Content-Type:Content-Transfer-Encoding:X-B4-Tracking:
+	 X-Change-ID:To:Cc:X-Mailer:X-Developer-Signature:X-Developer-Key:
+	 X-Endpoint-Received:X-Original-From:Reply-To;
+	bh=y7mPTl/ddoDpH27Ms6SdLDucsZisBPKb6oAxlPTfUnM=;
+	b=VgwED/8VP51mzj55nYGGw+kMk80YZX572bKvvyA82cwDI+3yEN2B8B3XwxJHWUPASMUN
+	 Gu2LcN8V2N66NYDyVzxezTRI29XW/eBO4NFEPWY+OLpUOByM3GBU5/ey1RJ/EW0+z+JgB
+	 hQNGqpxiD8nXkRUFe2Qw89eVDxPTzU2VgoJla5jZqtkDt8M0aWgYN+YR+dOXU9SwRp2yO
+	 JkS4pCxDKdguNI2cuJdf1BrXnPhvGHasvsG/Du5OqdKNSGrOZKgGiWy0kZeugHxOKa0PP
+	 MjhEpkcR8ipaKnUGJe8Q8vllUejWM7qhIXdkebqPSE40SP4ho8BL4uNkX4WZeB6yWBw==
+ARC-Authentication-Results: i=2; smtp.subspace.kernel.org; 
+	dkim=pass header.d=kernel.org header.i=@kernel.org header.a=rsa-sha256 header.s=k20260515 header.b=hgLxHWyn;
+	arc=pass header.oldest-pass=0 smtp.remote-ip=100.103.45.18
+Received: from smtp.kernel.org (quasi.space.kernel.org [100.103.45.18])
+	(using TLSv1.3 with cipher TLS_AES_256_GCM_SHA384 (256/256 bits)
+	 key-exchange X25519 server-signature ECDSA (prime256v1))
+	(No client certificate requested)
+	by smtp.subspace.kernel.org (Postfix) with ESMTPS id 9996E606A323;
+	Fri, 27 Nov 2026 08:35:31 +0000 (UTC)
+Authentication-Results: smtp.subspace.kernel.org;
+	dkim=pass (2048-bit key) header.d=kernel.org header.i=@kernel.org header.a=rsa-sha256 header.s=k20260515 header.b=hgLxHWyn
+Authentication-Results: smtp.kernel.org; arc=none smtp.remote-ip=100.80.115.77
+ARC-Seal: i=1; d=kernel.org; s=arc20260519; a=rsa-sha256; cv=none;
+	t=1795768531;
+	b=2YzzzCUs1qs5kQ/BT5NY9TjGYzZibvbtgT6mRVs21xiuGwa2v5LJ/dvOTG2/oTM6xj9z
+	 /ZjcAAy0rBqG+0mK7KjcEkxm8TV4M3rDVC/zyjRLMegwDRpYqnhzCxTFmfsHOQVci1LRZ
+	 dji9ErcEesaVygyiu6YRf8P1zuz4UOR7YgmceKPgaEGwHqn3BgslPzGbk4nJjsKEUnQj/
+	 WufHRcwP9J+2/x2ME46cgdI1GKs6WBjsxCEh9gpmAIYuUTIrJy7t1ceoD1jHGhfjzyHYP
+	 cuw1ES+1dQC9A7/Xct9sP5eiW7NswRqUiLdYaHDxIU8BEeoZ7wJokdFLpUkrGxDpXTQ==
+ARC-Message-Signature: i=1; d=kernel.org; s=arc20260519; a=rsa-sha256;
+	c=relaxed/relaxed; t=1795768531;
+	h=DKIM-Signature:Received:From:Subject:Date:Message-Id:MIME-Version:
+	 Content-Type:Content-Transfer-Encoding:X-B4-Tracking:X-Change-ID:To:
+	 Cc:X-Mailer:X-Developer-Signature:X-Developer-Key:X-Endpoint-Received:
+	 X-Original-From:Reply-To;
+	bh=y7mPTl/ddoDpH27Ms6SdLDucsZisBPKb6oAxlPTfUnM=;
+	b=lyXw91PN4Vbrn8Pwv3hgXqzpal5GkMGG+qYywS0p8Vc8OT9wkT/BySpPo2jTcVzsuOPw
+	 b8i3JgnYiwVm16SaQjLRwrjN1+umtQyHqSUXWz5AYIny3rzzhP8caVR7C/vS7AX9jqx7K
+	 zB1nygMOOr+Cp+rTCgL+kuJMG+h2XLMj3qTULQdhRbbTeB/Pq+KNeI6MAUsK77e0Qvosj
+	 hpijVWf3r3VwEi7frrqlbq31OD+jWfYJvCvVtoJw91641vQiW5Xcys/G0Y/nBl3VCOoYj
+	 P1UthKPPmLSLxXcdOuXrsyfhziSv8uIk4cdAUOjZ0TPOJbn+unaursniE/7vBAkvWkA==
+ARC-Authentication-Results: i=1; smtp.kernel.org; 
+	arc=none smtp.remote-ip=100.80.115.77
+Received: from lkml.kernel.org (nexus.subspace.kernel.org [100.80.115.77])
 	(using TLSv1.3 with cipher TLS_AES_256_GCM_SHA384 (256/256 bits)
 	 key-exchange X25519 server-signature ECDSA (prime256v1) server-digest SHA256)
 	(No client certificate requested)
-	by smtp.subspace.kernel.org (Postfix) with ESMTPS id BCA1A606A31C
-	for <linux-wireless@vger.kernel.org>; Fri, 27 Nov 2026 08:17:38 +0000 (UTC)
-DMARC-Filter: OpenDMARC Filter v1.4.2 smtp.subspace.kernel.org BCA1A606A31C
-Authentication-Results: smtp.subspace.kernel.org; dmarc=pass (p=none dis=none) header.from=realtek.com
-Authentication-Results: smtp.subspace.kernel.org; spf=pass smtp.mailfrom=realtek.com
-Authentication-Results: smtp.subspace.kernel.org;
-	dkim=pass (2048-bit key, unprotected) header.d=realtek.com header.i=@realtek.com header.a=rsa-sha256 header.s=dkim header.b=Wz6FV/Hs
-X-SpamFilter-By: ArmorX SpamTrap 5.80 with qID 6AR8HY4X0775664, This message is accepted by code: ctloc85258
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=realtek.com; s=dkim;
-	t=1795767454; bh=KxJE34scYaOADRszM2PUcJDYlPn27+PoAweLzQDQ9Yw=;
-	h=From:To:CC:Subject:Date:Message-ID:References:In-Reply-To:
-	 Content-Type:Content-Transfer-Encoding:MIME-Version;
-	b=Wz6FV/Hsyj2i2yfc3Oa6XRbgJQWRGiH8K1y0abHQT5VHcqn3Fl/r/KemtFBlPDXz3
-	 d/b4JvQh1OoJ3vLj7W6TJ3zZCcUNkfe08Z7cWrfhJtIcIFdDjOeEWtmt3AEEm8cPCh
-	 AtM/wp+BUIYXsp/zhgRKjqqA7ZveVtlBcbxvTx304vkf6NdCqQQ6HfNOZNM5XG/ewj
-	 cIag+KqUCC7zan4S7cYfTbjf/B9jvYKwdZm6I/GNoM93/+MEfg/nhoR51IwmgV0oqx
-	 pHGNPcv9Sbie1F6jllI+7eH1RU5M5zC3IErZq49vQpKMHitFYdHhr/lNr5xdpw3aW3
-	 DsFcSbeX+obpQ==
-Received: from mail.realtek.com (rtkexhmbs04.realtek.com.tw[10.21.1.54])
-	by rtits2.realtek.com.tw (8.15.2/3.29/5.94) with ESMTPS id 6AR8HY4X0775664
-	(version=TLSv1.2 cipher=ECDHE-RSA-AES256-GCM-SHA384 bits=256 verify=FAIL);
-	Fri, 27 Nov 2026 16:17:34 +0800
-Received: from RTKEXHMBS06.realtek.com.tw (10.21.1.56) by
- RTKEXHMBS04.realtek.com.tw (10.21.1.54) with Microsoft SMTP Server
- (version=TLS1_2, cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id
- 15.2.2562.56; Fri, 27 Nov 2026 16:17:34 +0800
-Received: from RTKEXHMBS06.realtek.com.tw ([fe80::eeeb:c765:ca73:5eef]) by
- RTKEXHMBS06.realtek.com.tw ([fe80::eeeb:c765:ca73:5eef%10]) with mapi id
- 15.02.2562.056; Fri, 27 Nov 2026 16:17:34 +0800
-From: Ping-Ke Shih <pkshih@realtek.com>
-To: fan ftdm700 <fantdm700@gmail.com>, "linux-wireless@vger.kernel.org"
-	<linux-wireless@vger.kernel.org>
-CC: "rtl8821cerfe2@gmail.com" <rtl8821cerfe2@gmail.com>
-Subject: RE: [BUG] rtw88_8821au (TP-Link Archer T2U Plus 2357:0120): auth
- timeout on 5 GHz, scan returns nothing (6.18 LTS, 7.3.1)
-Thread-Topic: [BUG] rtw88_8821au (TP-Link Archer T2U Plus 2357:0120): auth
- timeout on 5 GHz, scan returns nothing (6.18 LTS, 7.3.1)
-Thread-Index: AQHdfTLYsyTlSrhBgUaZ9N+tSfLd7rdBlAIg
-Date: Fri, 27 Nov 2026 08:17:34 +0000
-Message-ID: <7517275a03084caf82fdc90dd05d161b@realtek.com>
-References: <CAOL0-9i8wCt+AJru1zzae0ir+UKYU06kB+6P0VMzxrTZ8GHc4w@mail.gmail.com>
-In-Reply-To: <CAOL0-9i8wCt+AJru1zzae0ir+UKYU06kB+6P0VMzxrTZ8GHc4w@mail.gmail.com>
-Accept-Language: en-US, zh-TW
-Content-Language: zh-TW
-Content-Type: text/plain; charset="utf-8"
-Content-Transfer-Encoding: base64
+	by smtp.kernel.org (Postfix) with ESMTPS id D77C51F00897;
+	Fri, 27 Nov 2026 08:35:28 +0000 (UTC)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=kernel.org;
+	s=k20260515; t=1795768531;
+	bh=y7mPTl/ddoDpH27Ms6SdLDucsZisBPKb6oAxlPTfUnM=;
+	h=From:Subject:Date:To:Cc:Reply-To;
+	b=hgLxHWynwiXRZV7BWNRx3E1sqJ52FHv/7IdZb8Hj6IAHi9/gPFf8Sf6lGaGUIomEh
+	 4sw6GfnLE8fApgHeQqRr1Ya+rYb78DmuA2BrFIwCsExSzhRemCI1O/5K+V4sSxj3dT
+	 34kbkys9b7IQTgPznzQxnxOoLy1Lu9R3TvfToARV3S5EWNOZN7dQvvhSxVjfpZeFLx
+	 x0/3Tl80Thx6XztAnB3q+q7715qz30/LQR8BwdiLIET0NKIFqo42MK9Y4N2HH1n+ek
+	 1adzbMiS3LFaBPbzml4sROg6bO9cDneKwpUbtA2E21vBbDBwAPoAADY5bV3guL9oc/
+	 3yvSbDVzHjYmA==
+Received: from nexus.subspace.kernel.org (localhost [IPv6:::1])
+	by lkml.kernel.org (Postfix) with ESMTP id 533444B63E;
+	Fri, 27 Nov 2026 08:35:28 +0000 (UTC)
+From: Murad Dadashev via B4 Relay <devnull+llamapersonaltv.gmail.com@kernel.org>
+Subject: [PATCH 00/10] wifi: mt76: mt7603: add MT7603U USB support
+Date: Fri, 27 Nov 2026 11:35:11 +0300
+Message-Id: <20261127-mt7603u-v1-0-369bee9846f8@gmail.com>
 X-Mailing-List: linux-wireless@vger.kernel.org
 List-Id: <linux-wireless.vger.kernel.org>
 List-Post: <mailto:linux-wireless@vger.kernel.org>
@@ -82,12 +83,110 @@ List-Unsubscribe: <mailto:linux-wireless+unsubscribe@vger.kernel.org>
 List-Owner: <mailto:linux-wireless+owner@vger.kernel.org>
 Precedence: list
 MIME-Version: 1.0
+Content-Type: text/plain; charset="utf-8"
+Content-Transfer-Encoding: 7bit
+X-B4-Tracking: v=1; b=H4sIAL9ACWsC/x3MQQ6DMAwEwK8gn2spCRBov4J6SKgBH0iRDRUS4
+ u+EHme1uwcoCZPCqzhA6MfK35RhHwX0U0gjIX+ywRnnrXUNzmvjTblhNZCPz9jW1tSQ24vQwPv
+ /qXtnx6CEUULqp3u/LboKhRnvHM7zAgQPgch5AAAA
+X-Change-ID: 20261127-mt7603u-4fe6b9b85105
+To: Felix Fietkau <nbd@nbd.name>, Lorenzo Bianconi <lorenzo@kernel.org>, 
+ Ryder Lee <ryder.lee@mediatek.com>, Shayne Chen <shayne.chen@mediatek.com>, 
+ Sean Wang <sean.wang@mediatek.com>, 
+ Matthias Brugger <matthias.bgg@gmail.com>, 
+ AngeloGioacchino Del Regno <angelogioacchino.delregno@collabora.com>
+Cc: linux-wireless@vger.kernel.org, linux-kernel@vger.kernel.org, 
+ linux-arm-kernel@lists.infradead.org, linux-mediatek@lists.infradead.org, 
+ Murad Dadashev <llamapersonaltv@gmail.com>
+X-Mailer: b4 0.14.2
+X-Developer-Signature: v=1; a=ed25519-sha256; t=1795768526; l=3763;
+ i=llamapersonaltv@gmail.com; s=20261127; h=from:subject:message-id;
+ bh=NxB3jZIIBFZlJM5Ywm3MKCBzXE8TLrTc5WJa1Gak8SU=;
+ b=Eh5i5pjPN5Tgt4edY2Bc7IKJnKGiTkgkT8NYznZPneV+eqV7WWrCGbYZPwLm5zyGFJOPfUFRs
+ cUEdjJ2nGBWAfaOHJ9zKHygrRJIO62TAR9QN4n9HKdolFO8tggR3+my
+X-Developer-Key: i=llamapersonaltv@gmail.com; a=ed25519;
+ pk=CeMIX207ioWRbMAA6A2GYgT+DpeVlKHVn7I0KjfHeCg=
+X-Endpoint-Received: by B4 Relay for llamapersonaltv@gmail.com/20261127
+ with auth_id=1664
+X-Original-From: Murad Dadashev <llamapersonaltv@gmail.com>
+Reply-To: llamapersonaltv@gmail.com
 
-ZmFuIGZ0ZG03MDAgPGZhbnRkbTcwMEBnbWFpbC5jb20+IHdyb3RlOg0KPiAtIEl0IHdvcmtlZCBv
-biBMaW51eCBlYXJsaWVyIChleGFjdCBrZXJuZWwgdW5rbm93bikgYW5kIHN0b3BwZWQgd29ya2lu
-Zw0KPiAgIGFyb3VuZCB0aGUgdGltZSBJIG1vdmVkIHRvIGtlcm5lbCA3LjEuIEl0IGFsc28gZmFp
-bHMgb24gNi4xOCBMVFMgb24gYQ0KPiAgIHNlY29uZCBtYWNoaW5lLg0KDQpJIGRvbid0IGhhdmUg
-YSBSVEw4ODIxQVUgYWRhcHRlciwgc28gSSB0aGluayB0aGUgZWFzaWVyIHdheSBpcyB0byBiaXNl
-Y3QNCmtlcm5lbC4gVWJ1bnR1IHByb3ZpZGUgcHJlLWJ1aWx0IGtlcm5lbCBbMV0uIFlvdSBjYW4g
-dXNlIHRoZW0gdG8gYWRkcmVzcw0KdGhlIGNhdXNlLiBUaGVuIEkgY2FuIGNoZWNrIGNvbW1pdHMu
-IA0KDQpbMV0gaHR0cHM6Ly9rZXJuZWwudWJ1bnR1LmNvbS9tYWlubGluZS8NCg0KDQo=
+This series adds support for MT7603U USB 2.0 dongles (0e8d:7603) to the
+mt7603 driver. It follows the layout of mt7615/mt7663u: the core code
+moves into a new mt7603-common module, and the PCIe/SoC glue and the
+new USB driver become separate modules on top of it.
+
+Patches 1-7 prepare the shared code. Apart from the module split, the
+changes that affect MT7603E and MT76x8 are:
+
+- patch 4 only passes the TSSI enable flag to the firmware when the
+  eFuse has a TSSI slope. The tested dongle sets the flag without any
+  TSSI calibration, and the firmware stops transmitting in AP mode
+  when TSSI is enabled.
+- patch 5 adds set_antenna with separate TX and RX masks. The tested
+  dongle loses about half of its two-stream frames on one TX chain;
+  "iw phy phyX set antenna 1 3" keeps both RX chains and uses one TX
+  stream.
+
+Everything else that touches shared code only changes behaviour on
+non-MMIO buses: register access over USB sleeps, so WTBL updates that
+run in atomic context are deferred to work items, and PCIe-only setup
+is skipped.
+
+Patch 8 adds the MT7603 queue mapping to mt76-usb, patch 9 adds the
+USB driver, and patch 10 adds AP mode, using an hrtimer computed from
+the TSF instead of the pre-TBTT interrupt to refill the hardware beacon
+and broadcast queues.
+
+The device works with the existing mt7603_e2.bin firmware.
+
+Tested on a 0e8d:7603 dongle on a Raspberry Pi 4, with the series
+backported to 6.18:
+- station mode with WPA2 on 2.4 GHz
+- AP mode with hostapd and WPA2, about 56 Mbit/s in each direction
+  with a single client at MCS 7
+
+MT7603E and MT76x8 are build tested only, as I do not have that
+hardware.
+
+Claude Code was used throughout development of this series, for parts
+of the code and changelogs, and for debugging. I reviewed the patches
+and tested them on real hardware as described above.
+
+---
+Murad Dadashev (10):
+      wifi: mt76: mt7603: split core code into mt7603-common
+      wifi: mt76: mt7603: make mcu message helpers usable by other buses
+      wifi: mt76: mt7603: set beacon and CAB queue index in the TXD directly
+      wifi: mt76: mt7603: only enable TSSI with valid calibration data
+      wifi: mt76: mt7603: allow configuring TX and RX antennas separately
+      wifi: mt76: mt7603: defer WTBL updates when register access can sleep
+      wifi: mt76: mt7603: skip PCIe specific setup on non-MMIO buses
+      wifi: mt76: usb: add MT7603 queue mapping
+      wifi: mt76: mt7603: add MT7603U USB support
+      wifi: mt76: mt7603: add AP mode support for USB devices
+
+ drivers/net/wireless/mediatek/mt76/mt7603/Kconfig  |  20 +-
+ drivers/net/wireless/mediatek/mt76/mt7603/Makefile |  12 +-
+ drivers/net/wireless/mediatek/mt76/mt7603/beacon.c | 217 +++++++++++--
+ drivers/net/wireless/mediatek/mt76/mt7603/core.c   |   4 +
+ drivers/net/wireless/mediatek/mt76/mt7603/dma.c    |   1 +
+ drivers/net/wireless/mediatek/mt76/mt7603/eeprom.c |   1 +
+ drivers/net/wireless/mediatek/mt76/mt7603/eeprom.h |   2 +
+ drivers/net/wireless/mediatek/mt76/mt7603/init.c   |  40 ++-
+ drivers/net/wireless/mediatek/mt76/mt7603/mac.c    | 154 ++++++++-
+ drivers/net/wireless/mediatek/mt76/mt7603/main.c   | 103 ++++--
+ drivers/net/wireless/mediatek/mt76/mt7603/mcu.c    |  37 ++-
+ drivers/net/wireless/mediatek/mt76/mt7603/mt7603.h |  33 +-
+ drivers/net/wireless/mediatek/mt76/mt7603/pci.c    |  28 ++
+ drivers/net/wireless/mediatek/mt76/mt7603/usb.c    | 350 +++++++++++++++++++++
+ drivers/net/wireless/mediatek/mt76/usb.c           |  17 +
+ 15 files changed, 929 insertions(+), 90 deletions(-)
+---
+base-commit: 18d0bedbb5f0538396cb7f763ed9cd1dd69c5b23
+change-id: 20261127-mt7603u-4fe6b9b85105
+
+Best regards,
+-- 
+Murad Dadashev <llamapersonaltv@gmail.com>
+
+
