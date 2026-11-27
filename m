@@ -1,65 +1,80 @@
-Authentication-Results: smtp.subspace.kernel.org; arc=none smtp.remote-ip=95.143.172.20
+Authentication-Results: smtp.subspace.kernel.org; arc=none smtp.remote-ip=188.40.28.6
 ARC-Seal: i=1; d=subspace.kernel.org; s=arc20261015; a=rsa-sha256; cv=none;
-	t=1795805912;
-	b=ZrgroQnQzzzH7zHtIRA9LTe2RoytLe5N8yGyPghI5HWobnUtASJAAO+jZbHUTcyOoezV
-	 bHPWlcuqNh6PwIJU7CkefjxSQ0MxHa3cewu4Z6uR6+ws8Q9duIAtk0kurISICjHLv5e6N
-	 t4oRvRjFyd0DIl7T5rgF5CZXmRehjG1gZVr5CVc6Ij5p/9bdmt583IK54fiKPK8vveUQ6
-	 v+c3N7g/sFxq0YRbQUrtvWyNOgEsXwq0S8vg9OsH3spIalhPABNjfZblXkBAdW7M1xfBt
-	 YXU9sK/6FQlclLfcbFLzjbzrruSBaX+0spxB+xv9mOcdjEygbvx0Kh+FXIG6UqKHdwg==
+	t=1795806847;
+	b=MsSTvv/WHuogvHYipbwEKDBif5A79e4/nIjyAFuSs5lJG2ngxXKwEbB5IiUsQ2fYVfHR
+	 t0NauAOdsBtn0B10gp/J1Is7RNy99esoB5ju3kiab6yh8Ug2n6nmi2fAyYqmMkerkRaJO
+	 dOrVyYh1SY6vx03qaRo1Q40RS0+GoNZc6WYsjzlkG0U9K1jCkpdgwWq4jm4fhaayzQRQ2
+	 5EnC4nrWMkcJeH3YvT2OQ3iithfpxkKiWWqGyvzXJ3i/FkzFsmPcfLYfaWEmGjbBqM16C
+	 vxf5sdvErYu/4cUoLx05h8XZQWrcRut9D7gvy8yqDCusITzgxRcuXSZRFa3D0QxBSPQ==
 ARC-Message-Signature: i=1; d=subspace.kernel.org; s=arc20261015;
-	a=rsa-sha256; c=relaxed/relaxed; t=1795805912;
-	h=DMARC-Filter:Received:Received:Received:From:To:Cc:Subject:Date:
-	 Message-ID:X-Mailer:In-Reply-To:References:MIME-Version:
-	 Content-Transfer-Encoding:X-Rspamd-Bar:X-Rspamd-Report:X-Rspamd-Score:
-	 DKIM-Signature;
-	bh=XN9AeoCHh5uDtg6xfkBM1ykJ3IHRWDKfUxRaydoLhys=;
-	b=H69kQr0Li/ydj3nkJLqpx2lYHIgXxCgmAc5DWrODk9Eqyrb2aLUG1a4khrWQWOpQ/rdi
-	 x+7eMIj9wO67zx8iKuz+4OLlh6csz0XguqRwj7HXklnzygD8ItR8mqy5uQ4UmsxGC5hpn
-	 E04ceiB8qX3pOUIniyP1X1MPwS6aiFAjWXTxTp8RU0ZJgXkvLYYWRJ+vfnm8jwuYfkN/7
-	 tHR/fo3DDVY4KbfeXJmUYPOucEesegG3T7XZRcqRwGCtdALaLMw3cCArfTLphH2/Pke/S
-	 OEeJRFOoXBKHlDX0ww53KaO5s9QG1y1LIENFfFCP+9KP51PMHSMndOsHsCnOZB98ogA==
+	a=rsa-sha256; c=relaxed/relaxed; t=1795806847;
+	h=DMARC-Filter:DKIM-Signature:Received:Received:Date:Message-ID:From:
+	 To:Cc:Subject:References:In-Reply-To:User-Agent:Content-Type:
+	 MIME-Version:Content-Disposition:X-Virus-Scanned;
+	bh=fUCiod/Nx4ysiVHAW0v83yh8yjNeK9e+2y8PPBOQYjM=;
+	b=TJEXCZKpqTlhlH2hy4Lj7NUb+GMNbrUgoTE6jutZW8FH8zl/5MX8zCX7r7RLkEzEdUo3
+	 2+K0kQhzZy7IHE3c9g9GwWedXUFDWYKMu7IycpQzPGiiPPpsZljISUa/DfO+GO9QxOHkZ
+	 izA/djth0m8cWDPFq83D3fVApUEBTl23EzXhpyjtCqrz2bLbzJh2wbz1j2aKkBe+D7QAo
+	 m8sev5HcoCQucSsLgpIGrLEZ+zCQJ0BR78T8O+Wij6ZUlfTZ5m2lG2Yh6Eac+1OpLNKHy
+	 2i/5qgb05WMrZwXgpMnBxjqcHyiCQQGSsjTM/x3gmwK3yMPiGY6WQL95k6Lmu62cpQg==
 ARC-Authentication-Results: i=1; smtp.subspace.kernel.org; 
-	dmarc=pass header.from=david-bauer.net;
-	spf=pass smtp.mailfrom=david-bauer.net;
-	dkim=pass header.d=david-bauer.net header.i=@david-bauer.net header.a=rsa-sha256 header.s=uberspace header.b=MAJUjlcc;
-	arc=none smtp.remote-ip=95.143.172.20
-Received: from mailgate01.uberspace.is (mailgate01.uberspace.is [95.143.172.20])
+	dmarc=none header.from=rfdeck.de;
+	spf=pass smtp.mailfrom=rfdeck.de;
+	dkim=pass header.d=rfdeck.de header.i=@rfdeck.de header.a=rsa-sha256 header.s=default2609 header.b=dWtmCIst;
+	arc=none smtp.remote-ip=188.40.28.6
+Received: from www226.your-server.de (www226.your-server.de [188.40.28.6])
 	(using TLSv1.3 with cipher TLS_AES_256_GCM_SHA384 (256/256 bits)
-	 key-exchange X25519 server-signature ECDSA (prime256v1))
+	 key-exchange X25519 server-signature ECDSA (prime256v1) server-digest SHA256)
 	(No client certificate requested)
-	by smtp.subspace.kernel.org (Postfix) with ESMTPS id 98AFA60A5BE7
-	for <linux-wireless@vger.kernel.org>; Fri, 27 Nov 2026 18:58:31 +0000 (UTC)
-DMARC-Filter: OpenDMARC Filter v1.4.2 smtp.subspace.kernel.org 98AFA60A5BE7
-Authentication-Results: smtp.subspace.kernel.org; dmarc=pass (p=none dis=none) header.from=david-bauer.net
-Authentication-Results: smtp.subspace.kernel.org; spf=pass smtp.mailfrom=david-bauer.net
+	by smtp.subspace.kernel.org (Postfix) with ESMTPS id 6C151606A31E
+	for <linux-wireless@vger.kernel.org>; Fri, 27 Nov 2026 19:14:06 +0000 (UTC)
+DMARC-Filter: OpenDMARC Filter v1.4.2 smtp.subspace.kernel.org 6C151606A31E
+Authentication-Results: smtp.subspace.kernel.org; dmarc=none (p=none dis=none) header.from=rfdeck.de
+Authentication-Results: smtp.subspace.kernel.org; spf=pass smtp.mailfrom=rfdeck.de
 Authentication-Results: smtp.subspace.kernel.org;
-	dkim=pass (4096-bit key) header.d=david-bauer.net header.i=@david-bauer.net header.a=rsa-sha256 header.s=uberspace header.b=MAJUjlcc
-Received: from perseus.uberspace.de (perseus.uberspace.de [95.143.172.134])
-	by mailgate01.uberspace.is (Postfix) with ESMTPS id C2FED61B1C
-	for <linux-wireless@vger.kernel.org>; Fri, 27 Nov 2026 19:58:29 +0100 (CET)
-Received: (qmail 18855 invoked by uid 988); 27 Nov 2026 18:58:29 -0000
-Authentication-Results: perseus.uberspace.de;
-	auth=pass (plain)
-Received: from unknown (HELO unknown) (::1)
-	by perseus.uberspace.de (Haraka/3.1.1) with ESMTPSA; Fri, 27 Nov 2026 19:58:29 +0100
-From: David Bauer <mail@david-bauer.net>
-To: Felix Fietkau <nbd@nbd.name>,
-	Lorenzo Bianconi <lorenzo@kernel.org>,
-	Ryder Lee <ryder.lee@mediatek.com>,
-	Shayne Chen <shayne.chen@mediatek.com>,
-	Sean Wang <sean.wang@mediatek.com>,
-	Matthias Brugger <matthias.bgg@gmail.com>,
-	AngeloGioacchino Del Regno <angelogioacchino.delregno@collabora.com>
-Cc: linux-wireless@vger.kernel.org,
-	linux-kernel@vger.kernel.org,
-	linux-arm-kernel@lists.infradead.org,
-	linux-mediatek@lists.infradead.org
-Subject: [PATCH mt76 2/2] wifi: mt76: mt7603: add dead broadcast recovery
-Date: Fri, 27 Nov 2026 19:58:15 +0100
-Message-ID: <20261127185819.1340117-2-mail@david-bauer.net>
-X-Mailer: git-send-email 2.53.0
-In-Reply-To: <20261127185819.1340117-1-mail@david-bauer.net>
-References: <20261127185819.1340117-1-mail@david-bauer.net>
+	dkim=pass (2048-bit key, unprotected) header.d=rfdeck.de header.i=@rfdeck.de header.a=rsa-sha256 header.s=default2609 header.b=dWtmCIst
+DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed; d=rfdeck.de;
+	s=default2609; h=MIME-Version:Content-Type:In-Reply-To:References:Subject:Cc:
+	To:From:Message-ID:Date:Sender:Reply-To:Content-Transfer-Encoding:Content-ID:
+	Content-Description:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc
+	:Resent-Message-ID; bh=fUCiod/Nx4ysiVHAW0v83yh8yjNeK9e+2y8PPBOQYjM=; b=dWtmCI
+	stsnQ73OKEyfL9EBKMA2GOIJyZyzE/uu8TfdirFlBTj4R8kqYO0IAmze5lykcCGUgWYydQhVxOSUg
+	h9ftLnTxOq12BCyxYTiBQV69+88UjEmrQFLeQnt3z0TbLwXxhylmAiLR/EI90TycqqwguNjlGb3ga
+	2EPG38/Ul5xJxUhyXwNweIZfqwNPFjrTX27/aq+g9AVGcN6dATDsjsqcDULIYqqYhUAD5/Zu41g66
+	364KNvJpImOcml2sd2YIpuHvahqHw/4AD66Rdhe+Ng6fNKp8aMvHDFhn5vNx2F4gc/t5s21RKSJMW
+	2h0BpW0WCNt+ldSkKzA0x3fYO0tA==;
+Received: from sslproxy04.your-server.de ([78.46.152.42])
+	by www226.your-server.de with esmtpsa  (TLS1.3) tls TLS_AES_256_GCM_SHA384
+	(Exim 4.96.2)
+	(envelope-from <martin@rfdeck.de>)
+	id 1xX1OV-00096g-1k;
+	Fri, 27 Nov 2026 20:14:03 +0100
+Received: from [192.168.0.33] (helo=mail.your-server.de)
+	by sslproxy04.your-server.de with esmtpsa  (TLS1.3) tls TLS_AES_256_GCM_SHA384
+	(Exim 4.96)
+	(envelope-from <martin@rfdeck.de>)
+	id 1xX1OV-000K9j-0y;
+	Fri, 27 Nov 2026 20:14:03 +0100
+Date: Fri, 27 Nov 2026 20:14:03 +0100
+Message-ID: <20261127201403.Horde.ivCdJn-MZnrp2I8iyRVNzlp@mail.your-server.de>
+From: martin@rfdeck.de
+To: Luka Gejak <luka.gejak@linux.dev>
+Cc: linux-wireless@vger.kernel.org, Ping-Ke Shih <pkshih@realtek.com>
+Subject: Re: wifi: rtw88: usb: AP sends no beacons after monitor capture on
+ the same phy
+References: <20261124144427.Horde.qQ_UTCx-6LmjjeS1bojTj8-@mail.your-server.de>
+ <D34D5E6B-B159-4F34-92D8-4264024D3319@linux.dev>
+ <20261126081256.Horde.ilxldEFeRo6UQJajd_7Nd6S@mail.your-server.de>
+ <a0827be820914280cca81b32b495cda655a87fb4@linux.dev>
+ <20261126161801.Horde.EPNAvNvUumt6-YVgeu2ZpuH@mail.your-server.de>
+ <41ae89e5a8328124062eea53eab2fc49d6114a56@linux.dev>
+ <20261126221229.Horde.Dolx0es1tv-1dHtbdt7kG6e@mail.your-server.de>
+ <ABB4AE9E-9CB7-459D-AAED-481703358D3B@linux.dev>
+ <20261127141540.Horde.j7w80xrIVq5DshPvlKMMIr2@mail.your-server.de>
+ <B49A19B4-9C95-49DA-8AC1-A6F4122AFDEF@linux.dev>
+In-Reply-To: <B49A19B4-9C95-49DA-8AC1-A6F4122AFDEF@linux.dev>
+User-Agent: Horde Application Framework 5
+Content-Type: text/plain; charset=utf-8; format=flowed; DelSp=Yes
 X-Mailing-List: linux-wireless@vger.kernel.org
 List-Id: <linux-wireless.vger.kernel.org>
 List-Post: <mailto:linux-wireless@vger.kernel.org>
@@ -69,215 +84,29 @@ List-Unsubscribe: <mailto:linux-wireless+unsubscribe@vger.kernel.org>
 List-Owner: <mailto:linux-wireless+owner@vger.kernel.org>
 Precedence: list
 MIME-Version: 1.0
-Content-Transfer-Encoding: 8bit
-X-Rspamd-Bar: /
-X-Rspamd-Report: SUSPICIOUS_RECIPS(1.5) BAYES_HAM(-3) MID_CONTAINS_FROM(1) MIME_GOOD(-0.1) R_MISSING_CHARSET(0.5)
-X-Rspamd-Score: -0.1
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple;
-	d=david-bauer.net; s=uberspace;
-	h=from:to:cc:subject:date;
-	bh=rEohxessK+hTiJzHLgry3tO0c6xfZFIQL6UX5Z9n1Xo=;
-	b=MAJUjlcchDE4fzL9hktCu8PgtQIERj1/ndImOiDz73TK5clEq6QDTvfSBtCibGBvXMf0sl8o1i
-	8D76xxSucfoWpXkLgewhpXMb7frEQZrbFVgQiAK/S8PeWqLtSwkGYyGzmO8hAXc6mQrwSJpNFewU
-	FdHYzyrzuQbkys0MTPB1QdznW1ASxmr0rwWHKA2RHUFMzqT931iWA1mjvsL3+3EZQEHoaeAXhfYr
-	5o7yWwSDFh3j/rgVcU9Y3qgYCCAG1Fyb8uvkBBVxONPstszwyQLTm1eUBzOKnSu6LDPR59mLz5Sd
-	nCj9u9phWeLjqSCE0dtwoFLoomSmwd4MAXZ8vm9K+eSur7nPsX8f5Pa5RUe9rzQp6IZ7y7sBI8Fc
-	3S/BQcI8r3vzz/Cwr0YT3smUIymTA2xaRVR36FMplVHskQYY+LBnL7ZQ1RZuQgqvejdYBG0AJGan
-	Ky9e+0tO687z/8+H2Sy0cSw3cRje/tXU6gCf1kVCWi5SZULDKFXpZE4n7bb+2u1RW2/+27RBwzRs
-	/Kp0MAcwNWsRm29pjAEg0OmxKmValudF0vIQXnoEri+ImQDqUlVnYB0Ax+4izl34befwY8desjZX
-	4c7rdVn01j2Um4l5UYVEOoLv6Mk7u7n/6NN3UZmupQZGIj4q19gG03esqF4X/mWkWEUuVwk0gCeU
-	4=
+Content-Disposition: inline
+X-Virus-Scanned: Clear (ClamAV 1.4.6/28194/Wed Nov 25 07:26:59 2026)
 
-With a Access Point located in a busy pub the associated client count on
-a mt7603 radio often declined to single-digits. In this case, IPv6
-connectivity also broke down.
+Hi Luka,
 
-Upon further investigation the issue was found in the AP not
-broadcasting any non-unicast traffic anymore. This includes data frames
-as well as beacon frames. The single-digit clients were clients which
-practiced active probing.
+> Perhaps the environment is influencing it as well?
 
-In case the radio enters this faulty state, TX status reports for
-broadcast traffic also stopped entirely. Applying a full reset procedure
-including the PSE returns the radio to full operation again.
+I went back over the sniffer captures of all 66 AP windows on channel
+6 (the earlier runs and today's). The low-count windows don't stand
+out: other APs' beacons, the number of other BSSIDs, the frame rate
+without our own beacons, the retry share and the signal levels are all
+within the range of the normal windows, and the busiest windows had
+full beacon counts. The few beacons the silent APs did send arrived at
+the usual level.
 
-Use the absence of TX status reports for broadcast frames as a indicator
-for a full reset. Introduce a new reset-cause for this error.
+What stands out is the pattern: in the worst case the AP sent nothing
+for 9.2 s and 4.5 s, so it stops in blocks rather than sending weakly.
+In one run the second AP stayed that way after update_beacon too (2
+beacons in 23 s). The sniffer only sees 802.11 on channel 6, so non
+Wi-Fi interference or CCA on the 8812AU itself isn't covered.
 
-The trigger after 100 failed TXS reports was determined by running the
-patch on a AP while observing client-count in a busy environment. The
-value of 100 results in permanently working WiFi for clients, resulting
-in 4 reset triggers over a timespan of 4 weeks.
+I'll keep an eye on it.
 
-Signed-off-by: David Bauer <mail@david-bauer.net>
----
- .../net/wireless/mediatek/mt76/mt7603/beacon.c    | 11 +++++++++--
- .../net/wireless/mediatek/mt76/mt7603/debugfs.c   |  3 ++-
- drivers/net/wireless/mediatek/mt76/mt7603/mac.c   | 15 ++++++++++++++-
- .../net/wireless/mediatek/mt76/mt7603/mt7603.h    |  9 +++++++--
- 4 files changed, 32 insertions(+), 6 deletions(-)
-
-diff --git a/drivers/net/wireless/mediatek/mt76/mt7603/beacon.c b/drivers/net/wireless/mediatek/mt76/mt7603/beacon.c
-index acca98139f92e..184d3b732e381 100644
---- a/drivers/net/wireless/mediatek/mt76/mt7603/beacon.c
-+++ b/drivers/net/wireless/mediatek/mt76/mt7603/beacon.c
-@@ -71,6 +71,8 @@ mt7603_update_beacon_iter(void *priv, u8 *mac, struct ieee80211_vif *vif)
- 	mt76_tx_queue_skb(dev, dev->mphy.q_tx[MT_TXQ_BEACON],
- 			  MT_TXQ_BEACON, skb, &mvif->sta.wcid, NULL);
- 
-+	dev->bcast_queued = true;
-+
- out:
- 	spin_unlock_bh(&dev->ps_lock);
- }
-@@ -127,6 +129,7 @@ void mt7603_pre_tbtt_tasklet(struct tasklet_struct *t)
- 		dev->beacon_check = 0;
- 	mt7603_mac_stuck_beacon_recovery(dev);
- 
-+	dev->bcast_queued = false;
- 	q = dev->mphy.q_tx[MT_TXQ_BEACON];
- 	spin_lock(&q->lock);
- 	ieee80211_iterate_active_interfaces_atomic(mt76_hw(dev),
-@@ -137,7 +140,7 @@ void mt7603_pre_tbtt_tasklet(struct tasklet_struct *t)
- 
- 	mt76_csa_check(mdev);
- 	if (mdev->csa_complete)
--		return;
-+		goto out;
- 
- 	q = dev->mphy.q_tx[MT_TXQ_CAB];
- 	do {
-@@ -149,7 +152,7 @@ void mt7603_pre_tbtt_tasklet(struct tasklet_struct *t)
- 		 skb_queue_len(&data.q) < 8);
- 
- 	if (skb_queue_empty(&data.q))
--		return;
-+		goto out;
- 
- 	for (i = 0; i < ARRAY_SIZE(data.tail); i++) {
- 		if (!data.tail[i])
-@@ -165,6 +168,7 @@ void mt7603_pre_tbtt_tasklet(struct tasklet_struct *t)
- 		struct mt7603_vif *mvif = (struct mt7603_vif *)vif->drv_priv;
- 
- 		mt76_tx_queue_skb(dev, q, MT_TXQ_CAB, skb, &mvif->sta.wcid, NULL);
-+		dev->bcast_queued = true;
- 	}
- 	mt76_queue_kick(dev, q);
- 	spin_unlock(&q->lock);
-@@ -177,6 +181,9 @@ void mt7603_pre_tbtt_tasklet(struct tasklet_struct *t)
- 		MT_WF_ARB_CAB_START_BSSn(0) |
- 		(MT_WF_ARB_CAB_START_BSS0n(1) *
- 		 ((1 << (MT7603_MAX_INTERFACES - 1)) - 1)));
-+out:
-+	if (dev->bcast_queued)
-+		dev->bcast_check++;
- }
- 
- void mt7603_beacon_set_timer(struct mt7603_dev *dev, int idx, int intval)
-diff --git a/drivers/net/wireless/mediatek/mt76/mt7603/debugfs.c b/drivers/net/wireless/mediatek/mt76/mt7603/debugfs.c
-index c891ad5498e61..7baabd09d57c4 100644
---- a/drivers/net/wireless/mediatek/mt76/mt7603/debugfs.c
-+++ b/drivers/net/wireless/mediatek/mt76/mt7603/debugfs.c
-@@ -14,6 +14,7 @@ mt7603_reset_read(struct seq_file *s, void *data)
- 		[RESET_CAUSE_BEACON_STUCK] = "Beacon stuck",
- 		[RESET_CAUSE_MCU_HANG] = "MCU hang",
- 		[RESET_CAUSE_RESET_FAILED] = "PSE reset failed",
-+		[RESET_CAUSE_BCAST_TXS_TIMEOUT] = "Broadcast TXS timeout",
- 	};
- 	int i;
- 
-@@ -21,7 +22,7 @@ mt7603_reset_read(struct seq_file *s, void *data)
- 		if (!reset_cause_str[i])
- 			continue;
- 
--		seq_printf(s, "%20s: %u\n", reset_cause_str[i],
-+		seq_printf(s, "%23s: %u\n", reset_cause_str[i],
- 			   dev->reset_cause[i]);
- 	}
- 
-diff --git a/drivers/net/wireless/mediatek/mt76/mt7603/mac.c b/drivers/net/wireless/mediatek/mt76/mt7603/mac.c
-index 634bb67b57d52..76ee5dc332709 100644
---- a/drivers/net/wireless/mediatek/mt76/mt7603/mac.c
-+++ b/drivers/net/wireless/mediatek/mt76/mt7603/mac.c
-@@ -1279,8 +1279,13 @@ void mt7603_mac_add_txs(struct mt7603_dev *dev, void *data)
- 	pid = le32_get_bits(txs_data[4], MT_TXS4_PID);
- 	wcidx = le32_get_bits(txs_data[3], MT_TXS3_WCID);
- 
--	if (pid == MT_PACKET_ID_NO_ACK)
-+	if (pid == MT_PACKET_ID_NO_ACK) {
-+		if (wcidx >= MT7603_WTBL_STA) {
-+			/* Reset broadcast check */
-+			dev->bcast_check = 0;
-+		}
- 		return;
-+	}
- 
- 	rcu_read_lock();
- 
-@@ -1340,6 +1345,9 @@ static void mt7603_pse_reset(struct mt7603_dev *dev)
- 	/* Reset PSE */
- 	mt76_set(dev, MT_MCU_DEBUG_RESET, MT_MCU_DEBUG_RESET_PSE);
- 
-+	/* Reset broadcast TXS loss trigger */
-+	dev->bcast_check = 0;
-+
- 	if (!mt76_poll_msec(dev, MT_MCU_DEBUG_RESET,
- 			    MT_MCU_DEBUG_RESET_PSE_S,
- 			    MT_MCU_DEBUG_RESET_PSE_S, 500)) {
-@@ -1475,6 +1483,7 @@ static void mt7603_mac_watchdog_reset(struct mt7603_dev *dev)
- 	}
- 
- 	if (dev->failed_pse_reset_attempts ||
-+	    dev->cur_reset_cause == RESET_CAUSE_BCAST_TXS_TIMEOUT ||
- 	    dev->cur_reset_cause == RESET_CAUSE_RX_PSE_BUSY)
- 		mt7603_pse_reset(dev);
- 
-@@ -1900,6 +1909,10 @@ void mt7603_mac_work(struct work_struct *work)
- 				  RESET_CAUSE_RX_PSE_BUSY,
- 				  MT7603_WATCHDOG_TIMEOUT,
- 				  mt7603_rx_pse_busy) ||
-+	    mt7603_watchdog_check(dev, &dev->bcast_check,
-+				  RESET_CAUSE_BCAST_TXS_TIMEOUT,
-+				  MT7603_WATCHDOG_BCAST_TIMEOUT,
-+				  NULL) ||
- 	    mt7603_watchdog_check(dev, &dev->beacon_check,
- 				  RESET_CAUSE_BEACON_STUCK,
- 				  MT7603_WATCHDOG_TIMEOUT,
-diff --git a/drivers/net/wireless/mediatek/mt76/mt7603/mt7603.h b/drivers/net/wireless/mediatek/mt76/mt7603/mt7603.h
-index 6c89e087d57d4..e40b887914ff4 100644
---- a/drivers/net/wireless/mediatek/mt76/mt7603/mt7603.h
-+++ b/drivers/net/wireless/mediatek/mt76/mt7603/mt7603.h
-@@ -31,8 +31,9 @@
- 
- #define MT7603_PRE_TBTT_TIME	5000 /* ms */
- 
--#define MT7603_WATCHDOG_TIME	100 /* ms */
--#define MT7603_WATCHDOG_TIMEOUT	10 /* number of checks */
-+#define MT7603_WATCHDOG_TIME		100 /* ms */
-+#define MT7603_WATCHDOG_TIMEOUT		10 /* number of checks */
-+#define MT7603_WATCHDOG_BCAST_TIMEOUT	100 /* number of checks */
- 
- #define MT7603_EDCCA_BLOCK_TH	10
- 
-@@ -98,6 +99,7 @@ enum mt7603_reset_cause {
- 	RESET_CAUSE_RX_PSE_BUSY,
- 	RESET_CAUSE_MCU_HANG,
- 	RESET_CAUSE_RESET_FAILED,
-+	RESET_CAUSE_BCAST_TXS_TIMEOUT,
- 	__RESET_CAUSE_MAX
- };
- 
-@@ -142,7 +144,10 @@ struct mt7603_dev {
- 	s8 sensitivity;
- 	u8 sensitivity_limit;
- 
-+	bool bcast_queued;
-+
- 	u8 beacon_check;
-+	u8 bcast_check;
- 	u8 tx_hang_check;
- 	u8 tx_dma_check;
- 	u8 rx_dma_check;
--- 
-2.53.0
+Thanks,
+Martin
 
