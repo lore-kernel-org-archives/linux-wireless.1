@@ -1,52 +1,52 @@
-Authentication-Results: smtp.subspace.kernel.org; arc=pass header.oldest-pass=0 smtp.remote-ip=165.173.182.55
+Authentication-Results: smtp.subspace.kernel.org; arc=pass header.oldest-pass=0 smtp.remote-ip=165.173.180.54
 ARC-Seal: i=2; d=subspace.kernel.org; s=arc20261015; a=rsa-sha256; cv=pass;
-	t=1795774397;
-	b=fCv/a/1qbO4JI+rLMf5iLO1j6DJZCvqawf0Mix2XnZ7DgNBjBFdyBvUC5dts8UzoCU5n
-	 5S0804OVm94SuCv6rmmD3G+ArPcyaEV7YAVfz0iy9emklXPDL2Pvl/7l89w7Q2RVaUwRm
-	 SP9ZlbZY9ekTfuml/Ahe5RX/SYL0te++Q5g4CS1k72sIZA/LKgO64JBVvK97OAciXyYoq
-	 afRN+z/ioZQJi8SRy2hZBuuKokfW5gRJutouTvNZU/XQItruT+/OV6+LvxhvmMvJwAACx
-	 a72ZVo+6l2AeV9C1gQS+lm57aH+hOIpbqxXjRnvW8VlH4sSAqq0AoI4U9ohgSCPTK3w==
+	t=1795774450;
+	b=tzIqyH/88oYzPMgV2T7h3FoIAXAZrVY6kFhDWz5qOmmRlTlApZhlqM2FENs0bNNRE8RH
+	 /NxqmKVHqDyKO5NRPSta5v7RbLC9FLXq1xnHWGbabHuhgwFD62hWlvevb2CA6GyQbfV4d
+	 8NjjZd42ANeIrk0UnoEj0Hrt/KY0UG2xiBKSUgH6abiIGEEurYJZlTkKZa3JP3/SP3UIr
+	 wjTW974oCZ3cEzj36FNuUkAR2KVJd7jfd9HjRaN0EE5MGDgzrZ84MC6s03xNzvn0I19Rm
+	 RIeG8o2iDxsk3esSd0Ct7z3ZuR++LXxbVCEIqPlRwHyj7pQeQRAsCevDbXFJkK5Dp4A==
 ARC-Message-Signature: i=2; d=subspace.kernel.org; s=arc20261015;
-	a=rsa-sha256; c=relaxed/relaxed; t=1795774397;
+	a=rsa-sha256; c=relaxed/relaxed; t=1795774450;
 	h=DMARC-Filter:DKIM-Signature:Received:From:To:Cc:Subject:Date:
 	 Message-ID:X-Mailer:In-Reply-To:References:MIME-Version:Content-Type:
 	 Content-Transfer-Encoding:X-ZohoMailClient;
-	bh=4g05Eg8/8DBF5Yv5mhJiXdrpwU99lSRQcS2V0UclwxI=;
-	b=k+kgFf0dL6nKuvfziX9osrPQurWZq9FYNMKEaoK8/vRV1gQlnKjY7iP1S9c9WemmWuCF
-	 zUoZSbr3t/Xe+UgKrWhD82yoLCM0kPacZq9r6fbKE7j70RckL3NcrQ51sp+3aL9P7MoF2
-	 N51KeVobhPdRqqp4Ki5PhUP5gGKhxhg4HdrF4IhF3udhaf702yTdT310WA0srD6wuChLE
-	 GRajElrecJR+3hAS9SWKiT+bo7TZO4n68fIolFrgzvv/uDc3rrMKLAB03h+te2HA2w11Y
-	 L3cbs4oGfWgI2VbtMbaOXFWkjbLKxOTks2udt5xcpgS5mnGbYYoLEse2KOw0oGii/xg==
+	bh=mFrz0tg1BYUUgnbknpOtDLj8CSqNemB5JAMMawMUfoY=;
+	b=OjlJXX/OcAg/V+fdlTDjf0CCR2YL8Ffr0iOmVZXwZ0KAXkA5lTgqroEJYh//BTbZrM5E
+	 NmhaRV2n5WWVg8hgjmiP+FJsWJXSfZLIdidREoXBTJdwuSt0+B8XCMqgU/OGGEnM629qS
+	 zs1QQ+sCHKBrVtVKozOaaSnKV0knFy2s4xqKy7SWcDiphwdN3PpGvBMv8drR53+GOqLKU
+	 AWR8VlrJzO4Uf9g7yJsUaWY2aw4oHq9wSyBSau32gNUz+k2qsGs5hUlJOFQicq1WG+u4w
+	 py2pG4wKlH1yIMW+6ow1/nmuTJ5n5Gju14rBxgUWf3t56FShcz9hKIrvAcO3hDU7XcQ==
 ARC-Authentication-Results: i=2; smtp.subspace.kernel.org; 
 	dmarc=pass header.from=ph4ntom-rev.uz;
 	spf=pass smtp.mailfrom=ph4ntom-rev.uz;
-	dkim=pass header.d=ph4ntom-rev.uz header.i=@ph4ntom-rev.uz header.a=rsa-sha256 header.s=zoho header.b=42vCCxK3;
-	arc=pass header.oldest-pass=0 smtp.remote-ip=165.173.182.55
-Received: from sender5-of-o55.zoho.com (sender5-of-o55.zoho.com [165.173.182.55])
+	dkim=pass header.d=ph4ntom-rev.uz header.i=@ph4ntom-rev.uz header.a=rsa-sha256 header.s=zoho header.b=A7yFdWkx;
+	arc=pass header.oldest-pass=0 smtp.remote-ip=165.173.180.54
+Received: from sender6-of-o54.zoho.com (sender6-of-o54.zoho.com [165.173.180.54])
 	(using TLSv1.3 with cipher TLS_AES_256_GCM_SHA384 (256/256 bits)
-	 key-exchange X25519 server-signature ECDSA (prime256v1) server-digest SHA256)
+	 key-exchange X25519 server-signature ECDSA (prime256v1))
 	(No client certificate requested)
-	by smtp.subspace.kernel.org (Postfix) with ESMTPS id EDF7B606A31C;
-	Fri, 27 Nov 2026 10:13:15 +0000 (UTC)
-DMARC-Filter: OpenDMARC Filter v1.4.2 smtp.subspace.kernel.org EDF7B606A31C
+	by smtp.subspace.kernel.org (Postfix) with ESMTPS id 8144D606A32F;
+	Fri, 27 Nov 2026 10:14:09 +0000 (UTC)
+DMARC-Filter: OpenDMARC Filter v1.4.2 smtp.subspace.kernel.org 8144D606A32F
 Authentication-Results: smtp.subspace.kernel.org; dmarc=pass (p=none dis=none) header.from=ph4ntom-rev.uz
 Authentication-Results: smtp.subspace.kernel.org; spf=pass smtp.mailfrom=ph4ntom-rev.uz
 Authentication-Results: smtp.subspace.kernel.org;
-	dkim=pass (2048-bit key, unprotected) header.d=ph4ntom-rev.uz header.i=@ph4ntom-rev.uz header.a=rsa-sha256 header.s=zoho header.b=42vCCxK3
-ARC-Seal: i=1; a=rsa-sha256; t=1795774380; cv=none; 
+	dkim=pass (2048-bit key) header.d=ph4ntom-rev.uz header.i=@ph4ntom-rev.uz header.a=rsa-sha256 header.s=zoho header.b=A7yFdWkx
+ARC-Seal: i=1; a=rsa-sha256; t=1795774388; cv=none; 
 	d=zohomail.com; s=zohoarc; 
-	b=ZYAng+MbJDIG/52rMyeVJlPWub65ehNcAlvHHTliWoeuyXMPsb2ydwTgYbiaGFC/zRZ9pbULi0lGVWfB9ba0BGwZNu9WfAtfEQrtsv01L+UWUZXu5SDBFeJQFf3Ov0JEg4XonIKQPwqBAuSdevS8HbBF7YNiri09nloqXPiHx6E=
+	b=E+nIdGxY8F9qO9biYcEA826RxaXPV2rWPVie3DRz3VVwGbB2yxx/o/9DTuWS7GD4IGUjwA55yPXv8qBNnBaFSq1NuUnDU0IZ3lHbFHoDoL6YxjbzTmIcmNO3WcuLdAIyItcLa++moyTq4cbuTdkLDk+FSfJFbiGXnXmm0yZTt3A=
 ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=zohomail.com; s=zohoarc; 
-	t=1795774380; h=Content-Type:Content-Transfer-Encoding:Cc:Cc:Date:Date:From:From:In-Reply-To:MIME-Version:Message-ID:Subject:Subject:To:To:Message-Id:Reply-To; 
-	bh=4g05Eg8/8DBF5Yv5mhJiXdrpwU99lSRQcS2V0UclwxI=; 
-	b=EdzbhJmqG3ondcdys9Kw0zNYKJPN0O5L6J/aGAXHUlCV/FGSL2T/4wb4igwpIX7fxqwWz44F2TKE0xijWXcWiU2Mgw3kcXQN/1BlzCIl/C8QwBRiWJKV5GxZKgQXMRmQx2P8O5XySkZmYhcxv1mBvUcseYXtkWybtDJBynZA7KA=
+	t=1795774388; h=Content-Type:Content-Transfer-Encoding:Cc:Cc:Date:Date:From:From:In-Reply-To:MIME-Version:Message-ID:Subject:Subject:To:To:Message-Id:Reply-To; 
+	bh=mFrz0tg1BYUUgnbknpOtDLj8CSqNemB5JAMMawMUfoY=; 
+	b=CP3JaINRUAv+LK3t2NpDLYJ4I7VLK5Hwgu4pQR32BCHOCbNDG/BxIx4/bK/vcSor/wG0mCBfKVCk8jROAX//2YD+L5fRtHWkndFSIAA7MC0N/y2i1/gwWV+JkYu3Wk4UB8h4pMK46CMiXekyEUQhNTRYwWydJfp5SvAakl2hQ8A=
 ARC-Authentication-Results: i=1; mx.zohomail.com;
 	dkim=pass  header.i=ph4ntom-rev.uz;
 	spf=pass  smtp.mailfrom=owner@ph4ntom-rev.uz;
 	dmarc=pass header.from=<owner@ph4ntom-rev.uz>
-DKIM-Signature: a=rsa-sha256; b=42vCCxK3xhOLaXZQ+8S+RAm+A6BY/ruqoP/KXZe/QzbG+/K2KI7MmDag1So0tTA2wiEB2qBhLdnPdgyKFX2yi24T0AwuLPGMeWnFdm0B0gX2ZLi7MVuMES3qGZz9oKL23hbQDHFz/kk4+wL+uBF3YC0tIBYfzFkqz7SAAVnxKhJrJ930qyXMFQjh0ByRCrxf0FdzXzhTyGPw84XbJec9fMuIaTpZO2qoNuoG/EFZVf9RRubMLCjLoo9eV0MXwb65vRo+i6O8n+za5AbCGROi9jEeF8WW0iOSR4f117PjEJ+hhLkp4iDsHRPdWT23YIdhBUydiDeAlxz74QOk9J0WjQ==; c=relaxed/relaxed; s=zoho; d=ph4ntom-rev.uz; v=1; bh=4g05Eg8/8DBF5Yv5mhJiXdrpwU99lSRQcS2V0UclwxI=; h=Content-Description:Content-ID:Content-Type:Content-Transfer-Encoding:Cc:Date:From:In-Reply-To:List-Subscribe:List-Post:List-Owner:List-Id:List-Archive:List-Help:List-Unsubscribe:MIME-Version:Message-ID:Resent-Sender:Resent-Cc:Resent-Date:Resent-To:Reply-To:Resent-Message-ID:Resent-From:Sender:Subject:To:Date:From:Message-Id:Reply-To:Subject:To:Cc;
-Received: by smtp.zohomail.com with SMTPS id 1795774377754223.66927596052744;
-	Fri, 27 Nov 2026 02:12:57 -0800 (PST)
+DKIM-Signature: a=rsa-sha256; b=A7yFdWkxY/6Y4cIbk1Q74sNWSsnwT855XWb9KkOw4cchutj0pC5gLeoTZyAVKodlT2uHJN2HkiHaEC3FEb4n4UKBH3UVKMIFtg01GKmSD47OhtsxacHklpmmyuSWldYWVqEkeusIMe8lbsBqyiW3VUJ7EcH2TDw87kxJVk/8+sWbCG78yvZn8ZYoVHHN9BVxOiJke0z0hfSHeNYfTraKc2XSQYhFMgs1rnQ0c5IgVGVAU++xUYOjCC3EAqq2mn7ZCoAPjsLh/h4PJb4ehNmk5bkiSRzhmYsnmOXE0PSvrH//IlPLn1y1hQxwEE5IKcSr5GaK79QMYU80uyZac9IXNw==; c=relaxed/relaxed; s=zoho; d=ph4ntom-rev.uz; v=1; bh=mFrz0tg1BYUUgnbknpOtDLj8CSqNemB5JAMMawMUfoY=; h=Content-Description:Content-ID:Content-Type:Content-Transfer-Encoding:Cc:Date:From:In-Reply-To:List-Subscribe:List-Post:List-Owner:List-Id:List-Archive:List-Help:List-Unsubscribe:MIME-Version:Message-ID:Resent-Sender:Resent-Cc:Resent-Date:Resent-To:Reply-To:Resent-Message-ID:Resent-From:Sender:Subject:To:Date:From:Message-Id:Reply-To:Subject:To:Cc;
+Received: by smtp.zohomail.com with SMTPS id 1795774385578453.0741621616363;
+	Fri, 27 Nov 2026 02:13:05 -0800 (PST)
 From: Enver Ikromov <owner@ph4ntom-rev.uz>
 To: Ping-Ke Shih <pkshih@realtek.com>
 Cc: Enver Ikromov <owner@ph4ntom-rev.uz>,
@@ -55,12 +55,12 @@ Cc: Enver Ikromov <owner@ph4ntom-rev.uz>,
 	Luka Gejak <luka.gejak@linux.dev>,
 	Bitterblue Smith <rtl8821cerfe2@gmail.com>,
 	linux-kernel@vger.kernel.org
-Subject: Re: [PATCH rtw-next 1/2] wifi: rtw89: fix retry limit and NO_ACK status for injected frames
-Date: Fri, 27 Nov 2026 15:12:51 +0500
-Message-ID: <20261127101251.1850-1-owner@ph4ntom-rev.uz>
+Subject: Re: [PATCH rtw-next 2/2] wifi: rtw89: pci: fix TX status and counters for NO_ACK frames
+Date: Fri, 27 Nov 2026 15:12:59 +0500
+Message-ID: <20261127101259.91-1-owner@ph4ntom-rev.uz>
 X-Mailer: git-send-email 2.56.0.windows.4
-In-Reply-To: <06298e2d51ca45e482165b9c7bdbfdf3@realtek.com>
-References: <20261126083141.1470-1-owner@ph4ntom-rev.uz> <20261126083141.1470-2-owner@ph4ntom-rev.uz> <06298e2d51ca45e482165b9c7bdbfdf3@realtek.com>
+In-Reply-To: <355183d7bab743e99e3d8bac03d80ed8@realtek.com>
+References: <20261126083141.1470-1-owner@ph4ntom-rev.uz> <20261126083141.1470-3-owner@ph4ntom-rev.uz> <355183d7bab743e99e3d8bac03d80ed8@realtek.com>
 X-Mailing-List: linux-wireless@vger.kernel.org
 List-Id: <linux-wireless.vger.kernel.org>
 List-Post: <mailto:linux-wireless@vger.kernel.org>
@@ -74,44 +74,45 @@ Content-Type: text/plain; charset=UTF-8
 Content-Transfer-Encoding: 8bit
 X-ZohoMailClient: External
 
-On Fri, Nov 27, 2026 at 07:27:12AM +0000, Ping-Ke Shih wrote:
-> > Commit 92608bb5f14f ("wifi: rtw89: honor ASSIGN_SEQ, retries, and
-> > NO_ACK for injected frames") has three issues:
+On Fri, Nov 27, 2026 at 07:32:13AM +0000, Ping-Ke Shih wrote:
+> > In rtw89_pci_tx_status(), IEEE80211_TX_STAT_NOACK_TRANSMITTED is set
+> > unconditionally whenever IEEE80211_TX_CTL_NO_ACK is present, even when
+> > the frame was dropped (RTW89_TX_MACID_DROP or RTW89_TX_LIFE_TIME)
+> > without being transmitted.
 >
-> Your Fixes tag has said this.
-[...]
-> > 3. rtw89_tx_rpt_tx_status() sets IEEE80211_TX_STAT_NOACK_TRANSMITTED
-> >    unconditionally for NO_ACK frames (including RTW89_TX_MACID_DROP and
-> >    RTW89_TX_LIFE_TIME)
+> What is the problem?
 >
-> I don't know why there is a problem?
+> Set it only if successfully transmit?
 
-In mac80211 (status.c), IEEE80211_TX_STAT_NOACK_TRANSMITTED sets
-noack_success = true, so a dropped skb gets counted in
-dot11TransmittedFrameCount (and skips retry_failed / lost_packet when
-sta is present) even though it was never sent.
+Yes, set it only when the frame was actually sent. PCIe chips like
+RTL8852AE don't enable tx_rpt, so injected NO_ACK frames report TX
+status through rtw89_pci_tx_status() rather than rtw89_tx_rpt_tx_status().
+Setting NOACK_TRANSMITTED on MACID_DROP or LIFE_TIME makes mac80211
+count dropped frames as transmitted, and setting STAT_ACK on TX_DONE
+reports NO_ACK frames as acked. On AX unicast NO_ACK with tx_cnt_lmt = 1,
+the single TX attempt finishes with RTW89_TX_RETRY_LIMIT, so both
+TX_DONE and TX_RETRY_LIMIT mean it went out on air.
 
 [...]
-> Generated by LLM? Can you reword commit message yourself?
-
-Yes, sorry for the noise. English isn't my first language so I used an
-LLM to polish the commit log and it came out way too verbose. I'll
-rewrite it plainly myself in v2 and drop the redundant Fixes sentence.
-
-> No need parenthesis for ( & )
-[...]
-> You need to consider min of driver and ieee80211, so maybe
->     min(0x3f, IEEE80211_MAX_TX_RETRY)
+> > Clear stale TX status bits and set IEEE80211_TX_STAT_NOACK_TRANSMITTED
+> > exclusively when a NO_ACK frame completes with RTW89_TX_DONE or
+> > RTW89_TX_RETRY_LIMIT, reserving IEEE80211_TX_STAT_ACK and
+> > tx_ring->tx_acked for non-NO_ACK completions while still accounting
+> > RTW89_TX_LIFE_TIME and RTW89_TX_MACID_DROP as failures.
 >
-> The logic is clearer.
+> I think no need this.
+>
+> > Fixes: e3ec7017f6a2 ("rtw89: add Realtek 802.11ax driver")
+> > Cc: stable@vger.kernel.org
+>
+> I don't think this a big deal. It looks like we have Fixes/Cc stable everywhere...
 [...]
-> Why do you need to clear these two bits ahead?
-[...]
-> I think the original ~IEEE80211_TX_STAT_ACK is not necessary.
+> Why should we clear these two bits?
 
-Agreed on all of these. The TX_STAT_* bits are already zero on a fresh
-skb, and min(RTW89_TX_DATA_CNT_LMT_MAX, IEEE80211_MAX_TX_RETRY) is much
-clearer. Will update in v2.
+Right, tx_ring->tx_acked and the other ring counters should stay as-is,
+and clearing those two bits ahead is unnecessary. In v2 I'll leave the
+tx_ring counters untouched, drop the flag clearing and Fixes/Cc: stable
+tags, and keep the commit message short.
 
 Thanks,
 Enver
