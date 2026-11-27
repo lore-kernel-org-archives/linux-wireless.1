@@ -1,100 +1,91 @@
-Authentication-Results: smtp.subspace.kernel.org; arc=pass header.oldest-pass=0 smtp.remote-ip=209.85.160.53
-ARC-Seal: i=2; d=subspace.kernel.org; s=arc20261015; a=rsa-sha256; cv=pass;
-	t=1795801110;
-	b=rOK+iEQvPOR2iJrjhmeCTe1WfA83kqPNysMBYTZCLtWckal0Vkj4O6U4n9tStewRPkNR
-	 PHJ+KCtIo96yJBsjB25p8mZiFRogciZlqirsdGFl76jttEUXIQ17R+bXFC4eYYMSeVTyW
-	 2P+GdCNISkewXrFi/IQHxtzT2BbYO23gwPPEmjCrYiCrJdWt7OrSjI4BMnaIx9LvK6kJN
-	 vnhw0209WOV6EOVMNbSQxarDOOSxDKD39UUXexII438PxyUlydWInLRIxAulgBl7crcmR
-	 64sOYBdeAonrJJrScAJ2rCDlYwPPleizJEp+iCFUKHpRyxKy0C29kfwia80S8n/hrqw==
-ARC-Message-Signature: i=2; d=subspace.kernel.org; s=arc20261015;
-	a=rsa-sha256; c=relaxed/relaxed; t=1795801110;
+Authentication-Results: smtp.subspace.kernel.org; arc=none smtp.remote-ip=74.125.82.172
+ARC-Seal: i=1; d=subspace.kernel.org; s=arc20261015; a=rsa-sha256; cv=none;
+	t=1795802450;
+	b=AQcxmh0KQ4yET+CZ8leD9wVF/dnVv+KJu8r9QS3oielzeN8yLoR0hIqWuonZMondcBPH
+	 WyFceWJku9Ge87EzRIU8WwDyIjHif7A79nVps7VNQeeiCrVgbKe+UVpIpkIiCEFFASCnG
+	 CcVCslo7TeibZqzI+W3/FYECys/SKQwgOVp/yWhj/ZFKTjLAX/I0dG3hUPZbDVaGOShRX
+	 qDn/eUjgJ8oW8xOxeR6z9Z4Ps6hWH4vGMPx+OA2WruJy7TP5eVr5bbwloPF1WgFyk4cul
+	 vLXIqH7ibaAPQOTU5EYjMxugrjz6kgUpOCFokD8sy8Icm8SO9caUfCFpJh1xz1QjJKA==
+ARC-Message-Signature: i=1; d=subspace.kernel.org; s=arc20261015;
+	a=rsa-sha256; c=relaxed/relaxed; t=1795802450;
 	h=DMARC-Filter:Received:DKIM-Signature:X-Google-DKIM-Signature:
-	 X-Forwarded-Encrypted:X-Gm-Message-State:X-Gm-Gg:X-Received:
-	 MIME-Version:References:In-Reply-To:From:Date:X-Gm-Features:
-	 Message-ID:Subject:To:Cc:Content-Type;
-	bh=64zv/nVdYPKcwMYeAyoabyqft6ijfCTeLTsGFNhJAOI=;
-	b=a4IRzQN8oUKDt6CRpn1thCOe2jv25SMDIoN3BA0b2AfeTu8xBl5l/3WSq7trJ7P6l5e7
-	 1MYy8x7J528TwWZg0L+/idRZ38nVc5v4kbfT6afrxkHY18QaqcTQ1AI5xoul4OOJyfhek
-	 n75mfcCi6ofZOk0SkNGBhp8W6h7uiF+hBWBt2h5YrP6D1FPzppyLpHXDOVfFMl4YgJ3dV
-	 +bEmux0ULMN59xPOW0vRnPcKq96IS9Z6yRq96CtRrO6LWHMWb86Pui6SFEXPPnM5GMg8h
-	 tgjxCtfP2r0GqaO5mKE796XySZko57Twa3ixWP/QzgKtEGOn6bT8WN3950VZrpMrFaw==
-ARC-Authentication-Results: i=2; smtp.subspace.kernel.org; 
+	 X-Gm-Message-State:X-Gm-Gg:X-Received:Received:From:To:Cc:Subject:
+	 Date:Message-ID:X-Mailer:MIME-Version:Content-Transfer-Encoding;
+	bh=XwKgANKcJWdfJEhncKT2P97cSAiG5m0jr07pBBalRlY=;
+	b=XVCFK0gbH2UztnQVjxuwzxYhAxroYhzmEUlXg4RlLehPF+W8AhmzrpoJ7H/2Qt4SWmgI
+	 7j8+YkpcuKDXH8xxt3BUKB4VUsFyesoYBWuXmQWp9JXNPDOSfsou/pq4NPvzIpS+2VRya
+	 gWVecsS2b60HiuzpRYTW7T1d5Xg6HcjoTWDPgSzcUSs4aS1TCKi40z9GiRyBOJ6d1PnXj
+	 zJGEWXRiN0McnmugeG5ytcaVOTzNTTU2jvigJw5ZIb37YrXzI3RuV1tcRGl4CQxI/lcxD
+	 GPtOHKQIzSCPGUxNJ+EiqnrCpENzEiIFoTRyLPT5jhiBy9HVoF2rzoME4o1hLus5EMw==
+ARC-Authentication-Results: i=1; smtp.subspace.kernel.org; 
 	dmarc=pass header.from=gmail.com;
 	spf=pass smtp.mailfrom=gmail.com;
-	dkim=pass header.d=gmail.com header.i=@gmail.com header.a=rsa-sha256 header.s=20260707 header.b=zqFMF5Nl;
-	arc=pass header.oldest-pass=0 smtp.remote-ip=209.85.160.53
-Received: from mail-oa1-f53.google.com (mail-oa1-f53.google.com [209.85.160.53])
+	dkim=pass header.d=gmail.com header.i=@gmail.com header.a=rsa-sha256 header.s=20260707 header.b=hL6tSOBX;
+	arc=none smtp.remote-ip=74.125.82.172
+Received: from mail-dy1-f172.google.com (mail-dy1-f172.google.com [74.125.82.172])
 	(using TLSv1.3 with cipher TLS_AES_128_GCM_SHA256 (128/128 bits)
 	 key-exchange X25519 server-signature ECDSA (prime256v1) server-digest SHA256)
 	(No client certificate requested)
-	by smtp.subspace.kernel.org (Postfix) with ESMTPS id 8DE4A606A689
-	for <linux-wireless@vger.kernel.org>; Fri, 27 Nov 2026 17:38:29 +0000 (UTC)
-DMARC-Filter: OpenDMARC Filter v1.4.2 smtp.subspace.kernel.org 8DE4A606A689
+	by smtp.subspace.kernel.org (Postfix) with ESMTPS id B6701606A324
+	for <linux-wireless@vger.kernel.org>; Fri, 27 Nov 2026 18:00:49 +0000 (UTC)
+DMARC-Filter: OpenDMARC Filter v1.4.2 smtp.subspace.kernel.org B6701606A324
 Authentication-Results: smtp.subspace.kernel.org; dmarc=pass (p=none dis=none) header.from=gmail.com
 Authentication-Results: smtp.subspace.kernel.org; spf=pass smtp.mailfrom=gmail.com
 Authentication-Results: smtp.subspace.kernel.org;
-	dkim=pass (2048-bit key) header.d=gmail.com header.i=@gmail.com header.a=rsa-sha256 header.s=20260707 header.b=zqFMF5Nl
-Received: by mail-oa1-f53.google.com with SMTP id 586e51a60fabf-4b8587b395aso4781004fac.3
-        for <linux-wireless@vger.kernel.org>; Fri, 27 Nov 2026 09:38:29 -0800 (PST)
-ARC-Seal: i=1; a=rsa-sha256; t=1795801108; cv=none;
-        d=google.com; s=arc-20260327;
-        b=lY8gQP0vJUN5I6xzUbOuAV0OeZE7/DwgdB8+++aGuBNBPPUldK9E2ah/6RYS6fxMdY
-         qN7WteaDcdQZcplUSun6/Qyayil1iswbKQN5VvZLsv1fl6kd0EHvu1eW3oaj0EW2ryWU
-         9zbAs1KOwfyob+9IghTUfbBr0pR5DGqn3m85kU/270WB49/LRrZ5Ui5Tx+HIixusIU+x
-         U3wWx07PhzZFc6zDJCvt5E3lwdKWNLgIoCPL9cs2OTYOwUbjoHS4VNPwhbNQcdXteHeG
-         xSSF0eOeh48lHnKWI80EzxTkq3oyInAmiv6jn4ti1vjWLtvG9hqCXhroUPv7f96qvspr
-         08Iw==
-ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=google.com; s=arc-20260327;
-        h=cc:to:subject:message-id:date:from:in-reply-to:references
-         :mime-version:dkim-signature;
-        bh=64zv/nVdYPKcwMYeAyoabyqft6ijfCTeLTsGFNhJAOI=;
-        fh=La0rxN81VAUOcpoTp2eEe/u4IufCCo9Oi8nSMv8clzs=;
-        b=mMQP4oGVmprepSNGgZTTt/38Vj1+M7/pXIl7C6cSFAFlWJqfGkwvKal7GGg/7QnENy
-         ato/rourIlXs0Szem92CyJCHsPhekkL0IISkaKPINRcU8daTkpVxK/TZTz2/yOg0TK0m
-         b+uU4pQOGq35PThrHkIjBaFqCJiRkADSYImteT4I+XqkbMDFdtxBRrsjbef6b/w9JgnG
-         znEF3i/luX5/G7RRqGSx2ocBYOHBHjbIi/S0CmAw6M/AHE1nDyb5Yp8+AVW3LmCu1B0v
-         XG4WALnYIbzmuzeggXJaQHuHoRDQfcnd/X4mVpWfPT9nFIzzEW0Emh72VPkt8Ph9is0x
-         SLmw==;
-        darn=vger.kernel.org
-ARC-Authentication-Results: i=1; mx.google.com; arc=none
+	dkim=pass (2048-bit key) header.d=gmail.com header.i=@gmail.com header.a=rsa-sha256 header.s=20260707 header.b=hL6tSOBX
+Received: by mail-dy1-f172.google.com with SMTP id 5a478bee46e88-386d1859e1cso2587249eec.0
+        for <linux-wireless@vger.kernel.org>; Fri, 27 Nov 2026 10:00:49 -0800 (PST)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=gmail.com; s=20260707; t=1795801108; x=1796405908; darn=vger.kernel.org;
-        h=content-type:cc:to:subject:message-id:date:from:in-reply-to
-         :references:mime-version:from:to:cc:subject:date:message-id:reply-to
-         :content-type;
-        bh=64zv/nVdYPKcwMYeAyoabyqft6ijfCTeLTsGFNhJAOI=;
-        b=zqFMF5Nl5otAa73WkVGb0V+EmsXwsrZEzr9DIG2swnQIVtcPaDfxdiM4r7bvY5f4cq
-         0uA2lc6mty1wrLtmg1minomAG25RmFtXDHEOw3o8POL3f9kNJsjy/9LZoXZmzteW8kz9
-         bzv3hdSPkSCx7NXpaYhfFMDFPDdB6RQKzAZfNLcKVs741O9NZLcWhtmgTZp8cTctY6pW
-         tGX0iVJPkckz/SIpTl282/3KlCUJ68iCAn9KtEJvsNZj6lAg5GfGCjcq2jrbiDOvrxp/
-         EKIbDCeuMn4O3KVO65VWTDw3wT+ApUDfqDziVBghoxT9u1dY4vCMx0D4IJtbYPcRjP7r
-         cbiA==
+        d=gmail.com; s=20260707; t=1795802449; x=1796407249; darn=vger.kernel.org;
+        h=content-transfer-encoding:mime-version:message-id:date:subject:cc
+         :to:from:from:to:cc:subject:date:message-id:reply-to:content-type;
+        bh=XwKgANKcJWdfJEhncKT2P97cSAiG5m0jr07pBBalRlY=;
+        b=hL6tSOBX2Sg/gw8c32IDOqUkHEV8i2ZMo8bqwlWXiK9rX88bYSzznQ12vDPGqEOZUA
+         HQpCnS9X9BFgQ1xeZIvsVIrO2WZrX7h34qKHk1aESCK8+lnWx6u09JNbQHghS4XCzLmB
+         XsL7EkFvUxvo002g67rDuM+oKF5oFVWiJYxKMIhLOnIBJtvItdL6Fu5RVwi4cHeYkLTb
+         0bgK3T0mis+PJuEAF14Cy6yM+1wGvEel5TOg9msKbUPK7KAklbi5sYm+aKl03QMzmbp8
+         u2aMG87mWTyRbetA2UZowuj0qcxfjWRdC431DpizTkTyOu5DvrODE7gleyxOtIFXOGLU
+         px4A==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=1e100.net; s=20260707; t=1795801108; x=1796405908;
-        h=content-type:cc:to:subject:message-id:date:from:in-reply-to
-         :references:mime-version:x-gm-gg:x-gm-message-state:from:to:cc
-         :subject:date:message-id:reply-to:content-type;
-        bh=64zv/nVdYPKcwMYeAyoabyqft6ijfCTeLTsGFNhJAOI=;
-        b=n7L68ly/uqswSejmpqEy/djjSAhLXhqJZMiC0AvDG/lWJU2qQ1xLDSBE4nn5GzMCNz
-         aZyABZJFUIZi60vvVz3mQFUbqPhERtOB7ypMkCWo8RYGhH3eU3id1X7juEbUZ2pN1UoD
-         2TKggKGoWS2vkSrsieiOsZx1XPgm3mwABFPjObjSyNLx/zir8wlBpm6As6S45cUkZX0d
-         UoWhVh5Gc3ll5tz/ZHxECzv0rQdaQIoireF7LHq9IXPEo9Lr59Q+p6tZb7bd+DT9R5mV
-         +/MxsOeYqz8waBsGTB6Xw2IiuCO9/vPCVJB2Q7qSvjCzNMWxTIaafqen5780vv3XvYR8
-         cttQ==
-X-Forwarded-Encrypted: i=1; AL+hErGdZlJbLeldvIRKMAeoeBesaKurS7tXmwBg6kLeNkLwqgMXHhrBbEJjUAdwT+FKj8ndfXb+wh6znKBouStz1Q==@vger.kernel.org
-X-Gm-Message-State: APuU4Z8OZbtXebAG/vr12YI3M4BBC3gwzUN+aNktKGVBEDtnSCvckzZd
-	SgR3CMZpisF1b2p5iKGBcV6+vsZr75Pz7w8gPM2QzxGmcRJ/1qLneNRcQZ3RTw1katip3V/VSpo
-	fZRQElc8Fzwr7pNWv12L4XRKGNXwWgY4=
-X-Gm-Gg: AZFdTZefa2ZJlgZrLv+a7T3YygAI78fZxpsHtmMqQIMfaId89I54tvnw9St9a+AhrEl
-	C4t4ZNZ9Ngp8U8dykjCegJbcJM6wI4fyhxNLajU+bqvjbWRntHI1rO2rX5MrPcS0r7dZP6mkWP7
-	AGx/sGUZcSYMqGglwT/eojFiBX1yRAljGOzHvTG6J+6VXNa3SfZrGJ+9j9EhGYEis/I4oS4F8pZ
-	83OhZuoVTQOIMOfso4vVC0bGLkyUQU54uL6L1CzG5A0uVg1OkZhXTlZvI7GU6brVpo22zPiMTbR
-	upN8LwLQtEwwlkC3IBI+Z49EQTPwqv11ed/fZpcrKB3MMk0Ajq9o+yo6lkUjFt8K6p+aPnhUAKT
-	XmH5okbysXueKHfdyHJw+XcnInBpd2z2AxKvb0bgoK7Rri/ZCbgdz1KRKgF8piwd908EgICPrY+
-	xvbJ9vRP+d2Szq2iVrKjCfH5d/bbxx0iU=
-X-Received: by 2002:a05:6808:151f:b0:576:b73b:f273 with SMTP id
- 5614622812f47-57a0a404fcfmr26333399b6e.21.1795801108384; Fri, 27 Nov 2026
- 09:38:28 -0800 (PST)
+        d=1e100.net; s=20260707; t=1795802449; x=1796407249;
+        h=content-transfer-encoding:mime-version:message-id:date:subject:cc
+         :to:from:x-gm-gg:x-gm-message-state:from:to:cc:subject:date
+         :message-id:reply-to:content-type;
+        bh=XwKgANKcJWdfJEhncKT2P97cSAiG5m0jr07pBBalRlY=;
+        b=gckT/KLMx9NRqEf6PhVuSKIwM6HkWdmE7K25xLIcoQGdgRnUQUp6Lt7gmIyANjVIbD
+         dfrfwNzaIgnlAA8WHhslAXkCX06MTt7hK2D7waY2XUvM1Y68kCzo5rzLq686ZjxYai7w
+         OEfJxnrojr7e6+pOGIkGNlsaNEmZLvVs/tnx/NJsYBEa/iNR8xFX3wFSV7rAogPzsita
+         Y4nDbO5NlrS5qAc2S7sAm/PBLJyQoFostYRu6gEKnWcGyHXE/GEXePi5ziFnGKrZOdYx
+         19kmlcac5UMpqPuwkXf5p9PPxxaaXIKZ5KB75AMo1MjLRH4kWuzQ3nVT8zqupOinHWLq
+         Pi5A==
+X-Gm-Message-State: APuU4Z+Rl7lMe3lTyIKbqvPyWw4uHlurV/Hoil2Wh2FWTBxILjQ0hlNj
+	cGHi59Qvp8NMeMVhg1MhReg6Kygfkq0HucsNb/BSuNTTsJi6WFmZNobJ6OOjbnQ8
+X-Gm-Gg: AZFdTZeLFZTDh8TWPw0mGh1ej/ZBXCeYrNoMlb198C03hOuWzumGhxm1gUFSbM5VNdF
+	1kyiadDNXQNhLp8MHxWf0g4c4Y6pFJ+IxRWXMQBRtSCXFAw8DTOsouFqycq7Na7cqpZTlNHfTAb
+	ufovfLL9JSWjO0SBUPBmohyYNCMtKSenyl0ljc50CNYe5x9UtZChPF3Ean+3q9Vxc27SS0Q2Epn
+	AoX+IYUt5ycZ4VbwHsNUXnTyKiuISPscOr+0mXMreGHQqa+laBtr91H+aCmWXMzkAW2z6BPrvJD
+	jckWPzsio4k8ba+OBXfZDSnuUdeZWSZKm26goPX62iYK/y1jRA9tVn07dkEeisfaAAI2EU+1Eph
+	gUuhuNOrRTglre27qIn4Zlrl3JFoaIMspwW9DlaV0nRRWA4OKSghBg8J2VE9ZTqs0lP1RrQiJvE
+	6p4Fo54JCp/rwWo/b9J5NsmMP8yU/Z6bxmZu1QQ04E4VCcE+H71etGoE2t6DdJEUkjCEtuVFIvS
+	WnuL/ze8GIWlHTyNrnf7OUOYHUlIakTuKhPDGLups8VVmPlwXZRSgSgJRJMx3qlgSkrGneoLeGy
+	Y2n79MnDpcf/4g8OK3y7AfT1QDvaLAckXbMcqoRWOWVPTKZskyeuvaJUUM+UA99RptRF46YJgTY
+	AWZiJuk3kyXbzh8pEFw==
+X-Received: by 2002:a05:7300:50fa:b0:383:9f52:e54d with SMTP id 5a478bee46e88-3856ff52e83mr26688344eec.8.1795802448498;
+        Fri, 27 Nov 2026 10:00:48 -0800 (PST)
+Received: from acemagic-m1 ([2401:7400:c804:b668:65f1:53d:ffe:71c])
+        by smtp.gmail.com with ESMTPSA id 5a478bee46e88-38567daaf70sm76044620eec.28.2026.11.27.10.00.46
+        (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
+        Fri, 27 Nov 2026 10:00:48 -0800 (PST)
+From: Ho Jie Feng <hjf3108@gmail.com>
+To: Ping-Ke Shih <pkshih@realtek.com>
+Cc: linux-wireless@vger.kernel.org,
+	Bitterblue Smith <rtl8821cerfe2@gmail.com>,
+	Luka Gejak <luka.gejak@linux.dev>,
+	Ho Jie Feng <hjf3108@gmail.com>
+Subject: [PATCH rtw-next v5 0/7] wifi: rtw88: extend 88xxA support
+Date: Sat, 28 Nov 2026 02:00:20 +0800
+Message-ID: <20261127180034.1058591-1-hjf3108@gmail.com>
+X-Mailer: git-send-email 2.53.0
 X-Mailing-List: linux-wireless@vger.kernel.org
 List-Id: <linux-wireless.vger.kernel.org>
 List-Post: <mailto:linux-wireless@vger.kernel.org>
@@ -104,84 +95,74 @@ List-Unsubscribe: <mailto:linux-wireless+unsubscribe@vger.kernel.org>
 List-Owner: <mailto:linux-wireless+owner@vger.kernel.org>
 Precedence: list
 MIME-Version: 1.0
-References: <20261115114336.1739863-1-hjf3108@gmail.com> <20261115114336.1739863-7-hjf3108@gmail.com>
- <8ADDD0B3-609F-4E66-925E-997B11112E4C@linux.dev>
-In-Reply-To: <8ADDD0B3-609F-4E66-925E-997B11112E4C@linux.dev>
-From: Jie Feng <hjf3108@gmail.com>
-Date: Sat, 28 Nov 2026 01:37:52 +0800
-X-Gm-Features: Aa3M54qzBjXgTSOBtq2I0sWZmCjRDhk1jQEg2oYZonA1g4Eptxdtvn7VaLjISfA
-Message-ID: <CABOQOSXgnFkSyL4hN9zDpq8iU24CFyS_yBS84Ts5QPzq9ntaxg@mail.gmail.com>
-Subject: Re: [PATCH rtw-next v4 6/7] wifi: rtw88: 88xxa: correct
- carrier-frequency offset
-To: Luka Gejak <luka.gejak@linux.dev>
-Cc: Ping-Ke Shih <pkshih@realtek.com>, linux-wireless@vger.kernel.org, 
-	linux-kernel@vger.kernel.org, Bitterblue Smith <rtl8821cerfe2@gmail.com>
-Content-Type: text/plain; charset="UTF-8"
+Content-Transfer-Encoding: 8bit
 
-Hi Luka,
+This series enables HT STBC transmission, VHT SU beamformed reception
+and carrier-frequency-offset correction on supported 88xxA devices.
 
-On Sun, 15 Nov 2026 at 21:20, Luka Gejak <luka.gejak@linux.dev> wrote:
->
-> Hi Jie Feng,
->
-> Thanks for the patch. One comment below.
->
-> On November 15, 2026 12:43:32 PM GMT+01:00, Ho Jie Feng <hjf3108@gmail.com>
-> wrote:
->
-> > diff --git a/drivers/net/wireless/realtek/rtw88/rtw88xxa.c b/drivers/net/wireless/realtek/rtw88/rtw88xxa.c
-> > --- a/drivers/net/wireless/realtek/rtw88/rtw88xxa.c
-> > +++ b/drivers/net/wireless/realtek/rtw88/rtw88xxa.c
->
-> [ ... ]
->
-> > @@ -1632,6 +1637,17 @@ void rtw88xxa_query_phy_status(struct rtw_dev *rtwdev, u8 *phy_status,
->
-> [ ... ]
->
-> > +             rtw_phy_parsing_cfo(rtwdev, pkt_stat);
->
-> [ ... ]
->
-> > @@ -2020,6 +2036,21 @@ void rtw88xxa_phy_pwrtrack(struct rtw_dev *rtwdev,
->
-> [ ... ]
->
-> > +     crystal_cap = rtw_phy_cfo_xcap_track(rtwdev, RTW_XCAP_MASK, bt_hold);
-> > +     if (crystal_cap == cfo->crystal_cap)
-> > +             return;
-> > +
-> > +     cfo->crystal_cap = crystal_cap;
-> > +     rtw88xxa_set_crystal_cap(rtwdev, crystal_cap);
->
-> Could the shared helper discard the samples while sta_cnt != 1? In AP
-> mode, frames from both clients match the interface BSSID, so these new
-> calls keep adding their CFO samples. But rtw_phy_cfo_xcap_track() returns
-> through rtw_phy_cfo_tracking_reset() before clearing the sums or counts.
-If there are multiple clients, an argument can be made that correcting
-the frequency so that it minimizes the frequency difference between
-the AP and the clients can improve performance. Taking the average of
-all the client offsets for the frames received might be good enough,
-since it gives an estimate of which client needs more attention and
-correct towards it. However, I feel like in this case, CFO tracking
-should be the responsibility of the client instead of the AP, since it
-can get all the devices to agree on the frequency.
+Tested on RTL8812AU:
+TX went from 136.0 to 144.2.
+RX went from 215.5 to 249.2.
 
-> So if I read it right, when one client leaves, the first adjustment still
-> includes samples from that client. For example, on each reporting path,
-> a +12 sample from the remaining client and a -48 sample from the other,
-> followed by another +12, give an average of -20 kHz. The remaining client
-> alone gives +30 kHz, so the first correction goes the wrong way.
-That does happen, although it might not be a big problem since as it
-gets more samples the CFO tracking should converge to the correct
-value.
+Changelog v5:
+- Rebase on latest rtw-next
+- Beamformee caps: drop the support_bf check, so support_bf can
+  still be enabled at runtime
+- Expand the commit messages
+- Link to v4: https://lore.kernel.org/linux-wireless/20261115114336.1739863-1-hjf3108@gmail.com/
 
-> This was already present on 8822c, and this patch makes it reachable on
-> 88xxa too. I think the fix belongs in rtw_phy_cfo_xcap_track(), before
-> these new callers start using it. Could the sums and counts be reset
-> there when there is no single peer to track?
-Since this bug is pre-existing and not specific to 88xxa, I think it
-should be sent in as a separate patch?
+Changelog v4:
+- Restore "wifi: rtw88: correctly expose beamformee capabilities"
+- Add a patch to skip the dynamic CSI rate on chips without a
+  cfg_csi_rate op.
+- Describe magic numbers
+- Link to v3: https://lore.kernel.org/linux-wireless/20261112173246.3201729-1-hjf3108@gmail.com/
 
-> Best regards,
-> Luka Gejak
+Changelog v3:
+- Remove EDCCA commits since it causes problems in some situations
+- Beamformee: gate on spatial streams instead of the RX antennas,
+  in case an antenna is disabled
+- Beamformee: writes RTL8814A use rtw_write32_mask() instead of
+  an unaligned 16-bit write
+- Beamformee: drop the chip ID from the debug message, style fixes
+- CFO: add RTW_XCAP_MASK to phy.h
+- CFO: use 0x20 as the RTL8814A crystal cap when the efuse is empty,
+  following the vendor driver
+- CFO: add comment on why min(...,2) is needed for rtl8814
+- A-MPDU: set BIT(31) of REG_AMPDU_MAX_LENGTH, like the vendor driver
+- A-MPDU: limit RTL8821A with IEEE80211_VHT_MAX_AMPDU_64K
+- Link to v2: https://lore.kernel.org/linux-wireless/20261031070950.425176-1-hjf3108@gmail.com/
+
+Changelog v2:
+- Split correcting beamform caps into its own commit
+- Adjust EDCCA threshold on scan to avoid high latency
+- Link to v1: https://lore.kernel.org/linux-wireless/20261029055212.84711-1-hjf3108@gmail.com/
+
+Ho Jie Feng (7):
+  wifi: rtw88: 8812a, 8814a: enable STBC for HT transmissions
+  wifi: rtw88: skip the dynamic CSI rate without a cfg_csi_rate op
+  wifi: rtw88: correctly expose beamformee capabilities
+  wifi: rtw88: 88xxa: receive VHT SU beamformed transmissions
+  wifi: rtw88: prepare frequency-offset correction for more chips
+  wifi: rtw88: 88xxa: correct carrier-frequency offset
+  wifi: rtw88: 8812a, 8821a: respect peer A-MPDU size limits
+
+ drivers/net/wireless/realtek/rtw88/bf.h       |   7 +
+ drivers/net/wireless/realtek/rtw88/main.c     |  17 ++-
+ drivers/net/wireless/realtek/rtw88/phy.c      | 109 +++++++++++++++-
+ drivers/net/wireless/realtek/rtw88/phy.h      |   8 ++
+ drivers/net/wireless/realtek/rtw88/reg.h      |   1 +
+ drivers/net/wireless/realtek/rtw88/rtw8812a.c |  17 ++-
+ drivers/net/wireless/realtek/rtw88/rtw8814a.c |  75 ++++++++++-
+ drivers/net/wireless/realtek/rtw88/rtw8821a.c |  16 ++-
+ drivers/net/wireless/realtek/rtw88/rtw8822c.c | 100 +--------------
+ drivers/net/wireless/realtek/rtw88/rtw8822c.h |   3 -
+ drivers/net/wireless/realtek/rtw88/rtw88xxa.c | 120 ++++++++++++++++--
+ drivers/net/wireless/realtek/rtw88/rtw88xxa.h |   3 +
+ 12 files changed, 353 insertions(+), 123 deletions(-)
+
+
+base-commit: ae6b9e98b9045e47f609ec2a8197a3f3109627cb
+-- 
+2.53.0
+
