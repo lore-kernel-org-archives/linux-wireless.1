@@ -1,71 +1,89 @@
 Authentication-Results: smtp.subspace.kernel.org; arc=none smtp.remote-ip=211.75.126.72
 ARC-Seal: i=1; d=subspace.kernel.org; s=arc20261015; a=rsa-sha256; cv=none;
-	t=1795753534;
-	b=GR/FAA4K1tuR3DVR73IZmbmCq3vIxhtZABkY2HaPJWn2CItwkuK0RTF56iP2PtdebUON
-	 apePcUp9MXmcZ7fKz7Susqs3wTm97Y8OaRjXflXLfRx4BNU/J7+NRmUvgHYvEc2le7ouE
-	 1WpTjrAwCY1UrRW8PBizh5zZZ4/mb2LIMw+AUGEmPDtLMYeaCjxBI05nFkV//zXaQgqcW
-	 27QT+BtNI/VlHrv101iEegkkalSn0fESg2sF6zl2tsFudM9LWgsHfHVuwC9tSa6lIGuvJ
-	 AjuhDZ3kc3sxVF0vd20RUl3PMqDebJv9lK2kW5zNstuirBjPbOh3QZpvkcJaLaA3LOQ==
+	t=1795757512;
+	b=iCQlRACAtukVAt4y9MnFegCMyOWB9RD7lknZVx9bGRw5kPSNjwlx5oP7frgjHPMp3ReI
+	 545nlCWqkGbW5hW2dzQkztVkUn6hnS7dwIYsJaD0cn0pOu3wAiqbIVT+leljj1FUPfFHZ
+	 X6VV05RlfzzbVYgs3l8FCVDNwwfUfRbc0fe6zPQHv1iRN9Fn1dXIavtavJ0tW7AYFlqR+
+	 ltQYMCsKA3shvzMTOTcz1yKNuatQjPquFzIjoSes60P2Kyez6MzdgUOAPaB3AWK+8sNna
+	 X06Ase74L9Ek6JEQ1Hshp9M/F1sC/t81DBN2tOXmL8cvRhlZIIZMvozrTYuUeIik+dg==
 ARC-Message-Signature: i=1; d=subspace.kernel.org; s=arc20261015;
-	a=rsa-sha256; c=relaxed/relaxed; t=1795753534;
+	a=rsa-sha256; c=relaxed/relaxed; t=1795757512;
 	h=DMARC-Filter:X-SpamFilter-By:DKIM-Signature:Received:Received:
-	 Received:From:To:CC:Subject:In-Reply-To:References:Message-ID:Date:
-	 MIME-Version:Content-Type;
-	bh=4d6ATEu2hv57oCjVrORMP9uM03XTOdvaTYDAQMhdMuM=;
-	b=dDF6rIyGcZoqJDBiJ8rSnkUAQp5Fl90g2tF6kRWweAUkKMk+byWVIwkEqe9xN1hZTBaI
-	 oZLNf8geUvVLnVMdUGxtZ9s9HQBVUCW8S1OSfBs95kG5rW9ZRiQP8xxdE+M0puPH2VCNR
-	 kctDH206agnqrCtS+Q5arIoAvgZ42jEpjRsgQjtEnnREQsKmuyuL/2sblDtwbbIkfLuO1
-	 Ghm/U5U2u9hSBSs1fEA3ou+ESWobnrsaizE651TvXUfc9GTjYQEVB5vtdIyvXlj9tTOFR
-	 wSv7ekUHoOUvX9e6JkjsS9DZ67uqPl9Om0CbcihUs152Lo2ejypsNenVU8KenyZ/a0Q==
+	 Received:Received:From:To:CC:Subject:Thread-Topic:Thread-Index:Date:
+	 Message-ID:References:In-Reply-To:Accept-Language:Content-Language:
+	 x-originating-ip:Content-Type:Content-Transfer-Encoding:MIME-Version;
+	bh=awgfQdrx3SqBYwG9uD9SmzAQ1+NjHmqwgyl3lIWiT7Y=;
+	b=sSEjKpk//3i2BfkSG4evILu3B+xuA274qidQDeKF/fgjPg64Pxvgm5aAyHHUnHiPfZO3
+	 wR+l7+2vOaJNN7OztNKARCARqvjlNlZ70zNWICY5KXEiBGHxBP26H6WflFpYIwugIpOu+
+	 g5oIPBecZuM1oq1N56/gQk5ptXQ3wszLH4BlTThbC+EVFc0f1oPsU1nmH/hkiAne2iZJA
+	 j9ZFz3zMk6mj11bOyU+PTH7sK5y7UVLZWLo+/j8LlsU2Q8u/chYCsK1jqyogtjMDvKVKV
+	 ruZj+TukhxbfQQhH4RMUg39930V3tesjI6bJ28KDhW6d7ozgQm4O3AyoP3cyXyxeQiw==
 ARC-Authentication-Results: i=1; smtp.subspace.kernel.org; 
 	dmarc=pass header.from=realtek.com;
 	spf=pass smtp.mailfrom=realtek.com;
-	dkim=pass header.d=realtek.com header.i=@realtek.com header.a=rsa-sha256 header.s=dkim header.b=clYquv0N;
+	dkim=pass header.d=realtek.com header.i=@realtek.com header.a=rsa-sha256 header.s=dkim header.b="cVsul8Y/";
 	arc=none smtp.remote-ip=211.75.126.72
 Received: from rtits2.realtek.com.tw (rtits2.realtek.com [211.75.126.72])
 	(using TLSv1.3 with cipher TLS_AES_256_GCM_SHA384 (256/256 bits)
 	 key-exchange X25519 server-signature ECDSA (prime256v1) server-digest SHA256)
 	(No client certificate requested)
-	by smtp.subspace.kernel.org (Postfix) with ESMTPS id 5E853606A31C;
-	Fri, 27 Nov 2026 04:25:32 +0000 (UTC)
-DMARC-Filter: OpenDMARC Filter v1.4.2 smtp.subspace.kernel.org 5E853606A31C
+	by smtp.subspace.kernel.org (Postfix) with ESMTPS id D68E1606A31C;
+	Fri, 27 Nov 2026 05:31:51 +0000 (UTC)
+DMARC-Filter: OpenDMARC Filter v1.4.2 smtp.subspace.kernel.org D68E1606A31C
 Authentication-Results: smtp.subspace.kernel.org; dmarc=pass (p=none dis=none) header.from=realtek.com
 Authentication-Results: smtp.subspace.kernel.org; spf=pass smtp.mailfrom=realtek.com
 Authentication-Results: smtp.subspace.kernel.org;
-	dkim=pass (2048-bit key) header.d=realtek.com header.i=@realtek.com header.a=rsa-sha256 header.s=dkim header.b=clYquv0N
-X-SpamFilter-By: ArmorX SpamTrap 5.80 with qID 6AR4P8Pj8632677, This message is accepted by code: ctloc85258
+	dkim=pass (2048-bit key, unprotected) header.d=realtek.com header.i=@realtek.com header.a=rsa-sha256 header.s=dkim header.b=cVsul8Y/
+X-SpamFilter-By: ArmorX SpamTrap 5.80 with qID 6AR5V7qM4658193, This message is accepted by code: ctloc85258
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=realtek.com; s=dkim;
-	t=1795753508; bh=4d6ATEu2hv57oCjVrORMP9uM03XTOdvaTYDAQMhdMuM=;
-	h=From:To:CC:Subject:In-Reply-To:References:Message-ID:Date:
-	 MIME-Version:Content-Type;
-	b=clYquv0Np/eHolALbiGvCZokwjbQfyecCXG6Q1I44ZyC6WIm+7PlDmjWAwgjYYM7k
-	 ySJfjuStW/tgp3TDqWXNmaNMWR3FfacpFS6PoTJPcTdRD81x83uqofa5syjKtT0hIZ
-	 JuhJgZY7OhHDJEOkTGqgreHMljAZqHcEyUzVwtKTcRVKy54FMOhbDjVDI/cCthIP0g
-	 odN7PcG1hao+8kQbXX8+MUF67TKLr9VRUj04dSm2s6qujR2Rl2VQcUZY4VSK90Gmiu
-	 7qsrJ5ZZE32jlBNR/umta9Fc2DVFVyzWfME1Kyk/TrpFELW1i86GEbo3+teyceN7Na
-	 X3b9oPJ+Ot6CA==
-Received: from mail.realtek.com (rtkexhmbs03.realtek.com.tw[10.21.1.53])
-	by rtits2.realtek.com.tw (8.15.2/3.29/5.94) with ESMTPS id 6AR4P8Pj8632677
+	t=1795757467; bh=awgfQdrx3SqBYwG9uD9SmzAQ1+NjHmqwgyl3lIWiT7Y=;
+	h=From:To:CC:Subject:Date:Message-ID:References:In-Reply-To:
+	 Content-Type:Content-Transfer-Encoding:MIME-Version;
+	b=cVsul8Y/zzdq9FT4Gk17zjDiMwDqN6P2+uSFtOfUaqthjF1T48AUuhEwcN5irgaEx
+	 MCzkp/I9cLCSEgfe8ZAz1SoOZnypETGNObeDMLRcRHuwkxHpQGYS1DVLs9XH8FvQkB
+	 dR2NaZQ4QS0Ggr70MnFZs4ogbMuFyMImP4R6kRTAdy3+IlOAaef+sA78CJ8etvuMvf
+	 f1o+ryIHmUed0c1f7WgyZndso7q/i0yFL12ZXDoA1W/1gfgq2tqJQAjlwV8K8X6xtc
+	 sFrla2VHPfJ86YpTS1Hn70mGBbd6SJkPy/XDJ9SrNMDf/Pgs9oBpmBMDVpnsiF6vlT
+	 jQFXaJnBunl/A==
+Received: from mail.realtek.com (rtkexhmbs02.realtek.com.tw[172.21.6.41])
+	by rtits2.realtek.com.tw (8.15.2/3.29/5.94) with ESMTPS id 6AR5V7qM4658193
 	(version=TLSv1.2 cipher=ECDHE-RSA-AES256-GCM-SHA384 bits=256 verify=FAIL);
-	Fri, 27 Nov 2026 12:25:08 +0800
-Received: from RTKEXHMBS05.realtek.com.tw (10.21.1.55) by
- RTKEXHMBS03.realtek.com.tw (10.21.1.53) with Microsoft SMTP Server
+	Fri, 27 Nov 2026 13:31:07 +0800
+Received: from RTKEXHMBS06.realtek.com.tw (10.21.1.56) by
+ RTKEXHMBS02.realtek.com.tw (172.21.6.41) with Microsoft SMTP Server
  (version=TLS1_2, cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id
- 15.2.2562.56; Fri, 27 Nov 2026 12:25:07 +0800
-Received: from [127.0.1.1] (172.21.40.75) by RTKEXHMBS05.realtek.com.tw
- (10.21.1.55) with Microsoft SMTP Server (version=TLS1_2,
- cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id 15.2.2562.56 via Frontend
- Transport; Fri, 27 Nov 2026 12:25:07 +0800
+ 15.2.2562.56; Fri, 27 Nov 2026 13:31:08 +0800
+Received: from RTKEXHMBS06.realtek.com.tw (10.21.1.56) by
+ RTKEXHMBS06.realtek.com.tw (10.21.1.56) with Microsoft SMTP Server
+ (version=TLS1_2, cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id
+ 15.2.2562.56; Fri, 27 Nov 2026 13:31:07 +0800
+Received: from RTKEXHMBS06.realtek.com.tw ([fe80::eeeb:c765:ca73:5eef]) by
+ RTKEXHMBS06.realtek.com.tw ([fe80::eeeb:c765:ca73:5eef%10]) with mapi id
+ 15.02.2562.056; Fri, 27 Nov 2026 13:31:07 +0800
 From: Ping-Ke Shih <pkshih@realtek.com>
-To: Zeshan Ahmed Nobin <zeshanahmednobin@gmail.com>,
-	<linux-wireless@vger.kernel.org>
-CC: Ping-Ke Shih <pkshih@realtek.com>, Luka Gejak <luka.gejak@linux.dev>,
-	Kalle Valo <kvalo@kernel.org>, <linux-kernel@vger.kernel.org>
-Subject: Re: [PATCH rtw-next v4] wifi: rtw88: 8822c: validate bw and nrx read from registers
-In-Reply-To: <20261125203753.428868-1-zeshanahmednobin@gmail.com>
-References: <20261125203753.428868-1-zeshanahmednobin@gmail.com>
-Message-ID: <4db47594-0493-42ed-a727-d34fab8ef90e@RTKEXHMBS05.realtek.com.tw>
-Date: Fri, 27 Nov 2026 12:25:07 +0800
+To: Mehmet Fide <mehmet.fide@gmail.com>
+CC: Luka Gejak <luka.gejak@linux.dev>, Sascha Hauer <s.hauer@pengutronix.de>,
+	Zong-Zhe Yang <kevin_yang@realtek.com>, Tzu-En Huang <tehuang@realtek.com>,
+	Yan-Hsuan Chuang <yhchuang@realtek.com>, Kalle Valo <kvalo@kernel.org>,
+	Stanislaw Gruszka <sgruszka@redhat.com>, Brian Norris
+	<briannorris@chromium.org>, "linux-wireless@vger.kernel.org"
+	<linux-wireless@vger.kernel.org>, "linux-kernel@vger.kernel.org"
+	<linux-kernel@vger.kernel.org>, "mehmet.fide@screeningeagle.com"
+	<mehmet.fide@screeningeagle.com>
+Subject: RE: [PATCH rtw-next v4 1/4] wifi: rtw88: free the reserved pages of
+ an interface on firmware recovery
+Thread-Topic: [PATCH rtw-next v4 1/4] wifi: rtw88: free the reserved pages of
+ an interface on firmware recovery
+Thread-Index: AQHdeeywzneCTeaBk0KoOS+FtDby37dBa+Jw
+Date: Fri, 27 Nov 2026 05:31:07 +0000
+Message-ID: <c7e381abd0d14e27b1d391926bebe7d4@realtek.com>
+References: <20261121191528.591334-1-mehmet.fide@gmail.com>
+ <20261121191528.591334-2-mehmet.fide@gmail.com>
+In-Reply-To: <20261121191528.591334-2-mehmet.fide@gmail.com>
+Accept-Language: en-US, zh-TW
+Content-Language: zh-TW
+Content-Type: text/plain; charset="us-ascii"
+Content-Transfer-Encoding: quoted-printable
 X-Mailing-List: linux-wireless@vger.kernel.org
 List-Id: <linux-wireless.vger.kernel.org>
 List-Post: <mailto:linux-wireless@vger.kernel.org>
@@ -75,49 +93,32 @@ List-Unsubscribe: <mailto:linux-wireless+unsubscribe@vger.kernel.org>
 List-Owner: <mailto:linux-wireless+owner@vger.kernel.org>
 Precedence: list
 MIME-Version: 1.0
-Content-Type: text/plain
 
-Zeshan Ahmed Nobin <zeshanahmednobin@gmail.com> wrote:
+Mehmet Fide <mehmet.fide@gmail.com> wrote:
+> From: Mehmet Fide <mehmet.fide@screeningeagle.com>
+>=20
+> After a firmware crash, mac80211 adds the interfaces again without
+> removing them first. rtw_ops_add_interface() then reinitializes the
+> reserved page list, and the pages allocated before the crash leak:
+>=20
+> unreferenced object 0xffff0000cbe22c60 (size 96):
+>   comm "hostapd", pid 25545, jiffies 4296463067
+>   backtrace (crc cbdc21c4):
+>     kmemleak_alloc+0xcc/0xe4
+>     __kmalloc_cache_noprof+0x234/0x3bc
+>     rtw_add_rsvd_page+0x38/0xa8 [rtw88_core]
+>     rtw_add_rsvd_page_bcn+0x30/0x58 [rtw88_core]
+>     rtw_ops_add_interface+0x144/0x2cc [rtw88_core]
+>=20
+> mac80211 zeroes the driver data of a new and of a removed interface, so
+> track in struct rtw_vif whether the list was initialized, and free the
+> old pages when the interface is added again. Until then the pages stay
+> on the list, so a download before the reconfiguration, from the beacon
+> update work or a WoWLAN suspend, still finds them.
+>=20
+> Fixes: 5c831644e1f4 ("rtw88: handle and recover when firmware crash")
+> Suggested-by: Zong-Zhe Yang <kevin_yang@realtek.com>
+> Signed-off-by: Mehmet Fide <mehmet.fide@screeningeagle.com>
 
-> rtw8822c_phy_cck_pd_set() reads nrx and bw from the chip with
-> rtw_read32_mask() and uses them as indexes into dm_info->cck_pd_lv[][]
-> and rtw8822c_cck_pd_reg[][].
-> 
-> When the chip stops responding on the PCIe bus, register reads return
-> all ones, so bw and nrx both become 3. bw = 3 is past the end of both
-> arrays.  When the chip stopped responding on Ubuntu's 7.0.0-43 kernel,
-> UBSAN reported:
-> 
->   UBSAN: array-index-out-of-bounds in .../rtw88/rtw8822c.c:4407:21
->   index 3 is out of range for type 'u8 [2][4]'
->   Workqueue: phy0 rtw_watch_dog_work [rtw88_core]
->   Call Trace:
->    rtw8822c_phy_cck_pd_set+0x33c/0x510 [rtw88_8822c]
->    rtw_phy_dynamic_mechanism+0x310/0x330 [rtw88_core]
->    rtw_watch_dog_work+0x217/0x330 [rtw88_core]
-> 
-> nrx = 3 fits in cck_pd_lv[][], but rtw8822c_cck_pd_reg[][] only has
-> registers for nrx 0 and 1. The entry for nrx 3 is empty: register 0,
-> mask 0. If bw is valid and the level changes, the driver uses that
-> empty entry. rtw_read32_mask() then shifts by __ffs(0), which is
-> undefined; in a test that faked only nrx 3, UBSAN reported "shift
-> exponent 64 is too large".
-> 
-> Return early if bw or nrx is out of range, before either is used as
-> an index.
-> 
-> Fixes: 479c4ee931a6 ("rtw88: add dynamic cck pd mechanism")
-> Reported-by: Luka Gejak <luka.gejak@linux.dev>
-> Closes: https://lore.kernel.org/linux-wireless/f6a7d3272fe7635c6a83698dfab5d85500437ca6@linux.dev/
-> Cc: stable@vger.kernel.org
-> Signed-off-by: Zeshan Ahmed Nobin <zeshanahmednobin@gmail.com>
-> Reviewed-by: Luka Gejak <luka.gejak@linux.dev>
-> Acked-by: Ping-Ke Shih <pkshih@realtek.com>
-
-1 patch(es) applied to rtw-next branch of rtw.git, thanks.
-
-ae6b9e98b904 wifi: rtw88: 8822c: validate bw and nrx read from registers
-
----
-https://github.com/pkshih/rtw.git
+Acked-by: Ping-Ke Shih <pkshih@realtek.com>
 
