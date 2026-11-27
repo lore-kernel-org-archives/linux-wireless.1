@@ -1,81 +1,80 @@
-Authentication-Results: smtp.subspace.kernel.org; arc=none smtp.remote-ip=125.209.209.39
+Authentication-Results: smtp.subspace.kernel.org; arc=none smtp.remote-ip=125.209.209.74
 ARC-Seal: i=1; d=subspace.kernel.org; s=arc20261015; a=rsa-sha256; cv=none;
-	t=1795791551;
-	b=N/+cyAn3M+hRGm1VjLEVKgVoXtyQjPtwgwvPnZypkq1AVyiy2JPWR56Ekk45ba+VifTa
-	 /0nD5GNXm2/KleeCVCExNNkegs9kkrmAIoDaKXRxXQNo6dJt3sDIcCZSFPgloDmdegJ70
-	 rLhbdJOPtJHqRDxCYJMwjdaNXgV2Okkr/M3nJ+WVmpXg8fBdelNkkUqRmItORd6C2xjcz
-	 SuDTQGBJHLC1hcKgAbqc+6bnuOl09GxRcFD1I7NdMDIlrNQRenbNVzaMyS3Vh2/AU9Qdr
-	 IYKqoIxpzoGXymBwMZzs0oUDgBdMA58ByLjnnFHwqVm587KgKPlVjTbWSWK7DnMGSVA==
+	t=1795791556;
+	b=g76e+kyD9bK/lcXsqV5s20ZJU/6PWeW/4JJyUNL20hhUGRjri+jft6ffs0qUUwxGtBLe
+	 2hh2FxdPXkcew5eBEeGhVUVVM9n7ZWuCRm0+tF8Y69ELk6YC+kqxD8e0DnTnSj1lPeCao
+	 QGKuSTJbSLJJYVuwVjlBSZBxN3fWKTP0aKk+q0S45FqWUldXSfUzSvPkPmyfNQY4wrhlz
+	 Zr9P9vopwb6zRxOSlJKj/tbAO4izqYwBDIB1Th7WezPtqKXSadwsjMISP013vgPTAuAWD
+	 iffsgkDrRABXou3cw6iw0l10foNDsbEUAWy1PutZYez0a615JqMqlNKeSwNYIO/jBng==
 ARC-Message-Signature: i=1; d=subspace.kernel.org; s=arc20261015;
-	a=rsa-sha256; c=relaxed/relaxed; t=1795791551;
+	a=rsa-sha256; c=relaxed/relaxed; t=1795791556;
 	h=DMARC-Filter:DKIM-Signature:X-Originating-IP:Received:DKIM-Signature:
 	 X-Session-ID:X-Originating-IP:X-Works-Send-Opt:X-Works-Smtp-Source:
 	 Received:From:To:Cc:Subject:Date:Message-ID:MIME-Version:
 	 Content-Transfer-Encoding;
-	bh=dvCZN//yTLLmg/PsIaHQS0jlrOAtQcUQpiWUT1I0tEg=;
-	b=o+YQ3j7yIB3toZEjnt8gjv4G7cpd0vSm1Dw1kBobVVf6nnsLZ28h7BkLOJY9pCTwXOpQ
-	 gFBrWgvKnHkbYcA/S0J29IZ5iKzrtgcOndGGZfhl1kDFo8rFYUjjudJsSuolMM8uzRafF
-	 PlNTMmnBvjwqGyyjyLOVFHTgfmsPOrG63EzBbqXcrnW7n3XXZ+G3Ckir84ezY7kPfuVT9
-	 twu7N9w81YeeJR4NZhGhLQAiIaySzHiIJ7mjME1Qq3Z3zU3tocCwwLYaJ4om5y40ZyrD3
-	 sqNi/2UGWQI6i96y+TSdbCYZI3Caz4dolTujxtqgys2CHpiwSQq8yHAEAlL2RWqMUug==
+	bh=YAqdGQW007/LIhedLhNZHlBV2fVA8j5odnvQXMl8c98=;
+	b=u8NE8tn6NWeScnz1DcNGc981liCEjcxrmqrAwFLl21qyJ8PBUUUE+UIElHN05/id1YT4
+	 Uem8G/5Kpt5e/CcoaYqoGtZVpD1YfXo3g0yyqfS7J/Q51WsSinMZGh41qHT+959jw8SaQ
+	 d0mPhx8/7RkhMX9qYYgqc8fdXtm06eiSwSi4aSBG+c+q7UCeU8rTEGpIWxNygNFRV5Bxw
+	 cn9wceQ7ckGIMumrB71V/OA+IngrdCZB3xwtniOP4qeDkZ1zd9agN31S1Ovh4JfzNcrKB
+	 hmFh3qaG8iPFtPsX/uCie8t0qlhPpOwiZ0TXT79yHjEwvmOUMi20hV+bOKIILRC/24A==
 ARC-Authentication-Results: i=1; smtp.subspace.kernel.org; 
 	dmarc=pass header.from=skku.edu;
 	spf=pass smtp.mailfrom=skku.edu;
-	dkim=pass header.d=worksmobile.com header.i=@worksmobile.com header.a=rsa-sha256 header.s=s20171120 header.b=B40r1NUl;
-	dkim=pass header.d=skku.edu header.i=@skku.edu header.a=rsa-sha256 header.s=naverworks header.b=XkZJIriY;
-	arc=none smtp.remote-ip=125.209.209.39
-Received: from cvsmtppost101.wmail.worksmobile.com (cvsmtppost101.wmail.worksmobile.com [125.209.209.39])
+	dkim=pass header.d=worksmobile.com header.i=@worksmobile.com header.a=rsa-sha256 header.s=s20171120 header.b=MitGCYa7;
+	dkim=pass header.d=skku.edu header.i=@skku.edu header.a=rsa-sha256 header.s=naverworks header.b=ASUpXHBi;
+	arc=none smtp.remote-ip=125.209.209.74
+Received: from cvsmtppost106.wmail.worksmobile.com (cvsmtppost106.wmail.worksmobile.com [125.209.209.74])
 	(using TLSv1.3 with cipher TLS_AES_256_GCM_SHA384 (256/256 bits)
 	 key-exchange X25519 server-signature ECDSA (prime256v1) server-digest SHA256)
 	(No client certificate requested)
-	by smtp.subspace.kernel.org (Postfix) with ESMTPS id D20BE606A31E
-	for <linux-wireless@vger.kernel.org>; Fri, 27 Nov 2026 14:59:10 +0000 (UTC)
-DMARC-Filter: OpenDMARC Filter v1.4.2 smtp.subspace.kernel.org D20BE606A31E
+	by smtp.subspace.kernel.org (Postfix) with ESMTPS id AFA15606A31C
+	for <linux-wireless@vger.kernel.org>; Fri, 27 Nov 2026 14:59:15 +0000 (UTC)
+DMARC-Filter: OpenDMARC Filter v1.4.2 smtp.subspace.kernel.org AFA15606A31C
 Authentication-Results: smtp.subspace.kernel.org; dmarc=pass (p=none dis=none) header.from=skku.edu
 Authentication-Results: smtp.subspace.kernel.org; spf=pass smtp.mailfrom=skku.edu
 Authentication-Results: smtp.subspace.kernel.org;
-	dkim=pass (2048-bit key) header.d=worksmobile.com header.i=@worksmobile.com header.a=rsa-sha256 header.s=s20171120 header.b=B40r1NUl;
-	dkim=pass (2048-bit key) header.d=skku.edu header.i=@skku.edu header.a=rsa-sha256 header.s=naverworks header.b=XkZJIriY
+	dkim=pass (2048-bit key) header.d=worksmobile.com header.i=@worksmobile.com header.a=rsa-sha256 header.s=s20171120 header.b=MitGCYa7;
+	dkim=pass (2048-bit key) header.d=skku.edu header.i=@skku.edu header.a=rsa-sha256 header.s=naverworks header.b=ASUpXHBi
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=worksmobile.com;
 	s=s20171120; t=1795791548;
-	bh=EFXoXcuk5YHr6ms9v9PVQeSoAar5ygtbVBxXI450pZ8=;
+	bh=Cf3ojejIQANA7l1156VtG0a17vepQd9QGtJ0WgyuLwY=;
 	h=From:To:Subject:Date:Message-ID:From:Subject:Feedback-ID:
 	 X-Works-Security;
-	b=B40r1NUlszEwTFSn2K3TnY4Y/OM5lwEE6nf7tflXnUDM7HmpizPtsEuioolIe0EQz
-	 lYQvGoG51JCIcUGt0kH8rrvZ9SMD0raYPHa0gVuivQTUS7CHPyW2l11+3zuEFVHfUA
-	 pOAlIO2huQoyb+uZVlpIIsumT8jGmx2mBV0yZgQUJOctYAG9UVtsAK6Dfmp7BfPPL7
-	 KyaHsjWg6BopkyzsIoSO3roSxykz2IkBLQwwyj/yooZowrz0DY1/5CuyhoPdpETqLB
-	 vsBviC81dCmeDsvf3XwOck35kSUqQPX1UKYw26wfFO2ttgIk19ZzrLoV1fOyqb7B2/
-	 hh9kUmFgOwWxw==
-Received: from kr1-hmac-real-3 ([10.174.201.129])
-  by cvsmtppost101.wmail.worksmobile.com with ESMTP id FDYPhEv2QsG240FxxIia-w
+	b=MitGCYa7R6LC/ORKCEKTgQjuEa8vRNy5Q6C/XlNXMTfqTJcgCwfvnm0a0dY7765D6
+	 hjsckp8sU7Ncy9jCw38AcPlg/M/icBr4vtIt7Q/ukgF69ZKoD9pw2yJS5WPjGVc/8r
+	 fso1TVGdRvmW5W4S6yCzldnrRfFt/Y3t0nVRDnI58GJUsvH56eA7wnsqxoUoe+pHVz
+	 O9BVkBbG+qiQpKexEYPVCzXjJsNCZZM5EHCHYTKZixZPR5hALSx/l9Cg96vo0or0kz
+	 ta4516jS61gGBhrmYyJgTVwHc6xC9QOkGb96v/w1pi3CvL9ORB4NRR1t/E0tlQ0921
+	 00a/ASQ2HcM5g==
+Received: from kr1-hmac-real-7 ([10.174.201.129])
+  by cvsmtppost106.wmail.worksmobile.com with ESMTP id LE45LFO7Seq14gNprdfjkg
   for <linux-wireless@vger.kernel.org>;
   Fri, 27 Nov 2026 14:59:08 -0000
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=skku.edu; s=naverworks;
-	t=1795791548; bh=EFXoXcuk5YHr6ms9v9PVQeSoAar5ygtbVBxXI450pZ8=;
+	t=1795791547; bh=Cf3ojejIQANA7l1156VtG0a17vepQd9QGtJ0WgyuLwY=;
 	h=From:To:Subject:Date:Message-ID:From:Subject:Feedback-ID:
 	 X-Works-Security;
-	b=XkZJIriYfQ6KmNU5VeIgXw8J+jwv7/trIJAMYie3Hqy6OfBLRXBeH29UsM+kP1GOx
-	 xA/P25ueke5EoPvXTXTHvS4HLWvFBWXEIUYqj+mAOYXR4Uu30+E8TCOZ/7c630pEUy
-	 v/zjxS+JfSEV9vVhVlC/jBvP5xx5nHwBQBS843za3oeITAo09SonZIBHb3yRPxktRV
-	 4GMVHTmrLvMD1hMeYeQIzByXGP5XJHCrixnp2dsbZjn0lLWykDmQ/jC6/zHC7TgzR3
-	 Fv9EHIelhViGFzN/7S1Q5gH5IYLSa39N092oydqsgDypQ8WLrajNp+3cMtotMNPDSJ
-	 nF0YJIMG4b75Q==
-X-Session-ID: S1x-N3lkTf23fhFEtfatRg
-X-Works-Send-Opt: w/KXFqgmKAKmKAFYKqMqKA2mFAurjAumKAgmKxEmKqK/aAtwaBmmjAFYKxM/axKmKo2rFBwYjAg=
-X-Works-Smtp-Source: Vdn9FqElFqJZ+Hm/FAul+6E=
+	b=ASUpXHBimnCthsqobKvVmFWr2KWb8JqyxAqut7dPFKo37/9BJPzabGWCEpuygIcib
+	 W9YyNQjz4v5SX4v2UaHI3PoQHfK4O5tGG8nOfJ94E1USJ3b4DUJOIqdaFy6yTdKaDy
+	 a5vFAXPijhECyjaJ5aFgP6HLXsBbgQEewFE1uG2ufzCscq2ByLNy6SNzqz1THa9WuP
+	 Y5lTC3y8nc+W4XHsOZriCof0uBKdWsmmLVr+TBh+sKDrehCgASODqytspEB9mkSEVW
+	 gLhSRrJp/3LDzvn0gFeRxEFiF6Nj9XPJ45htipD3FRqALj4YkkGuDFO7QRjUFX43lv
+	 qEePG7foH1wQg==
+X-Session-ID: hfNTN2MnSBGtxGFnpW+6vg
+X-Works-Send-Opt: wXYXFqgmKAKmKAFYKqMqKA2mFAurjAumKAgmKxEmKqK/aAtwaBmmjAiYKxM/axKmKo2rFBwYjAg=
+X-Works-Smtp-Source: Vdb9FqElFqJZ+HmXFAul+6E=
 Received: from d20be28ee783.tail196be.ts.net ([115.145.173.180])
-  by cvnsmtp103.wmail.worksmobile.com with ESMTP id S1x-N3lkTf23fhFEtfatRg
+  by cvnsmtp101.wmail.worksmobile.com with ESMTP id hfNTN2MnSBGtxGFnpW+6vg
   for <multiple recipients>
   (version=TLSv1.3 cipher=TLS_AES_256_GCM_SHA384);
-  Fri, 27 Nov 2026 14:59:08 -0000
+  Fri, 27 Nov 2026 14:59:07 -0000
 From: Kyuwon Cho <kyuwon.cho@skku.edu>
 To: Johannes Berg <johannes@sipsolutions.net>
-Cc: Luciano Coelho <luciano.coelho@intel.com>,
-	linux-wireless@vger.kernel.org
-Subject: [PATCH wireless] wifi: mac80211: don't keep the AP of an AP_VLAN that failed to open
-Date: Fri, 27 Nov 2026 23:59:08 +0900
-Message-ID: <179578858734.1979329.7455012088537258029@skku.edu>
+Cc: linux-wireless@vger.kernel.org
+Subject: [PATCH wireless] wifi: mac80211: drop a removed AP_VLAN's frames from the station TXQs too
+Date: Fri, 27 Nov 2026 23:59:07 +0900
+Message-ID: <179578858734.1979329.2169541291730255@skku.edu>
 X-Mailing-List: linux-wireless@vger.kernel.org
 List-Id: <linux-wireless.vger.kernel.org>
 List-Post: <mailto:linux-wireless@vger.kernel.org>
@@ -87,61 +86,94 @@ Precedence: list
 MIME-Version: 1.0
 Content-Transfer-Encoding: 8bit
 
-ieee80211_check_concurrent_iface() points sdata->bss of an AP_VLAN at
-the AP with the same address and then checks the interface
-combinations. If that check fails, for example with -EBUSY while
-another AP is switching channels, ieee80211_open() returns the error
-with sdata->bss still set; only ieee80211_do_stop() resets it, and it
-does not run for an interface that never came up. Once that AP is
-deleted, opening the AP_VLAN again finds no AP, but sdata->bss still
-points to the freed one, so ieee80211_do_open() succeeds and adds the
-AP_VLAN to the freed AP's list:
+Frames on a TXQ keep the AP_VLAN they were sent on in
+info->control.vif, which ieee80211_tx_dequeue() uses to find the sdata.
+When an AP_VLAN goes down, ieee80211_txq_remove_vlan() drops its frames
+from the AP's TXQ but not from the TXQs of stations. The frames of a
+station that was moved to another AP_VLAN (NL80211_CMD_SET_STATION with
+NL80211_ATTR_STA_VLAN) stay queued, for example while an aggregation
+session holds the TXQ, and are dequeued after the AP_VLAN's sub_if_data
+is freed:
 
-  BUG: KASAN: use-after-free in ieee80211_do_open (include/linux/list.h:192 net/mac80211/iface.c:1418)
-  Read of size 8 at addr ff11000012d51a60 by task test/118
-   ieee80211_do_open (include/linux/list.h:192 net/mac80211/iface.c:1418)
-   ieee80211_open (net/mac80211/iface.c:476)
-   __dev_open (net/core/dev.c:1764)
-   __dev_change_flags (net/core/dev.c:10028)
-   netif_change_flags (net/core/dev.c:10093)
-   dev_change_flags (net/core/dev_api.c:68)
-   devinet_ioctl (net/ipv4/devinet.c:1189)
+  BUG: KASAN: use-after-free in ieee80211_tx_h_select_key (net/mac80211/tx.c:635)
+  Read of size 8 at addr ff11000012725890 by task test/114
+   ieee80211_tx_h_select_key (net/mac80211/tx.c:635)
+   ieee80211_tx_dequeue (net/mac80211/tx.c:4056)
+   ieee80211_hwsim_wake_tx_queue (drivers/net/wireless/virtual/mac80211_hwsim_main.c:2318)
+   ieee80211_agg_start_txq (net/mac80211/driver-ops.h:1384 net/mac80211/driver-ops.h:1391 net/mac80211/agg-tx.c:220)
+   ieee80211_stop_tx_ba_cb (net/mac80211/agg-tx.c:942)
+   ieee80211_sta_tear_down_BA_sessions (net/mac80211/ht.c:318)
+   __sta_info_destroy_part1 (net/mac80211/sta_info.c:1348)
+   sta_info_destroy_addr_bss (net/mac80211/sta_info.c:1622 net/mac80211/sta_info.c:1652)
+   nl80211_del_station (net/wireless/rdev-ops.h:224 net/wireless/nl80211.c:10246)
 
-Clear sdata->bss before looking for the AP.
+Drop the AP_VLAN's frames from the TXQs of the AP's stations as well.
 
-Fixes: b6a550156bc0 ("cfg80211/mac80211: move more combination checks to mac80211")
+Fixes: 531682159092 ("mac80211: fix VLAN handling with TXQs")
 Assisted-by: Claude:claude-opus-5-5
 Signed-off-by: Kyuwon Cho <kyuwon.cho@skku.edu>
 ---
 The issue was found by an LLM-guided test generator that we are
 developing as a research prototype. We reproduce it with a
-mac80211_hwsim radio in a user and network namespace: two APs, the
-second one switching channels, and an AP_VLAN of the first one whose
-open fails with EBUSY. After both APs are deleted, the next open of the
-AP_VLAN succeeds and triggers the report above. With the patch, that
-open fails with ENOLINK and nothing shows up. The reproducer is
-available on request.
+mac80211_hwsim radio in a user and network namespace: an AP with two
+AP_VLANs, an HT station added on the AP and moved to the first AP_VLAN,
+a burst of frames to it while its first aggregation session is being
+set up, then the station moved to the second AP_VLAN, the first one
+deleted and the station deleted. Without the patch, deleting the
+station triggers the report above; with it, nothing shows up. The
+reproducer is available on request.
 
 Found and tested on mainline 9437ee8b6cf6 (v7.4-rc4-571, with KASAN);
 the patch applies to wireless (35c42b20ac87) as is.
 
- net/mac80211/iface.c | 3 +++
- 1 file changed, 3 insertions(+)
+ net/mac80211/tx.c | 26 ++++++++++++++++----------
+ 1 file changed, 16 insertions(+), 10 deletions(-)
 
-diff --git a/net/mac80211/iface.c b/net/mac80211/iface.c
-index 63a371c79183..cfeabf74451b 100644
---- a/net/mac80211/iface.c
-+++ b/net/mac80211/iface.c
-@@ -347,6 +347,9 @@ static int ieee80211_check_concurrent_iface(struct ieee80211_sub_if_data *sdata,
- 	ASSERT_RTNL();
- 	lockdep_assert_wiphy(local->hw.wiphy);
+diff --git a/net/mac80211/tx.c b/net/mac80211/tx.c
+index 6e70e2046d1a..cc3e6f425613 100644
+--- a/net/mac80211/tx.c
++++ b/net/mac80211/tx.c
+@@ -1541,24 +1541,30 @@ void ieee80211_txq_remove_vlan(struct ieee80211_local *local,
+ 			       struct ieee80211_sub_if_data *sdata)
+ {
+ 	struct fq *fq = &local->fq;
+-	struct txq_info *txqi;
+-	struct fq_tin *tin;
+ 	struct ieee80211_sub_if_data *ap;
++	struct sta_info *sta;
++	int i;
  
-+	if (iftype == NL80211_IFTYPE_AP_VLAN)
-+		sdata->bss = NULL;
+ 	if (WARN_ON(sdata->vif.type != NL80211_IFTYPE_AP_VLAN))
+ 		return;
+ 
+ 	ap = container_of(sdata->bss, struct ieee80211_sub_if_data, u.ap);
+ 
+-	if (!ap->vif.txq)
+-		return;
+-
+-	txqi = to_txq_info(ap->vif.txq);
+-	tin = &txqi->tin;
+-
+ 	spin_lock_bh(&fq->lock);
+-	fq_tin_filter(fq, tin, fq_vlan_filter_func, &sdata->vif,
+-		      fq_skb_free_func);
++	if (ap->vif.txq)
++		fq_tin_filter(fq, &to_txq_info(ap->vif.txq)->tin,
++			      fq_vlan_filter_func, &sdata->vif,
++			      fq_skb_free_func);
 +
- 	/* we hold the RTNL here so can safely walk the list */
- 	list_for_each_entry(nsdata, &local->interfaces, list) {
- 		if (nsdata != sdata && ieee80211_sdata_running(nsdata)) {
++	list_for_each_entry(sta, &local->sta_list, list) {
++		if (sta->sdata->bss != sdata->bss)
++			continue;
++		for (i = 0; i < ARRAY_SIZE(sta->sta.txq); i++)
++			if (sta->sta.txq[i])
++				fq_tin_filter(fq, &to_txq_info(sta->sta.txq[i])->tin,
++					      fq_vlan_filter_func, &sdata->vif,
++					      fq_skb_free_func);
++	}
+ 	spin_unlock_bh(&fq->lock);
+ }
+ 
 -- 
 2.43.0
 
