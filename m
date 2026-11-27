@@ -1,79 +1,80 @@
 Authentication-Results: smtp.subspace.kernel.org; arc=pass header.oldest-pass=0 smtp.remote-ip=100.103.45.18
 ARC-Seal: i=2; d=subspace.kernel.org; s=arc20261015; a=rsa-sha256; cv=pass;
-	t=1795770011;
-	b=5ewk9oCde4/J6/o27O6T8qsLFx4yotcg7EbBmUF39XYcbNQ1mgW1kLP0tKpBJf2qsMEV
-	 meFtj5XN7LZi2sZ1dRQ1BhK8myN0qMtXtoj9TsnKGoU8IMhmJWtYoe6Lzflu8emaGCQsB
-	 yOMlW5OzAUX1yzdFm37zNRyshvxKDJMvZE8OHz9VGbvbt7HI5VmWLfarYF4ExdOWwr0Po
-	 uawexNpk3ba/2mgQiy3H0siuGfkNeLEXiLonh8v2vXnmUmLVkT+EJhF+gBdJwgrYNLi6s
-	 Mqna3z9Bs4Ymw9QXFmeNrcXMxLWL9S8krfb2BiJMnTHTXUeW3gYHoKr1K8GlReame1Q==
+	t=1795770013;
+	b=4N9T6AwuupwyEQY/hoj/lR0u/zS/dzzuxiWaBcalqOsavZHSPQAf1iPJyIEPYhjP3BgT
+	 n+yBuX0BUcCTZqtyi2MUBAfAXHC2by4mXPXW/wumIl5RVhdychRF6OxVZj+vjPpe+8HhF
+	 hMzt9BXTD24bD0WniEWwyZckogPpdHdb56Hl9/wszuUTOL4NwMPvxzd6icEXgsUSZCIq1
+	 fiyD1ja2hUN1vRKk6v0tZ5556IlxtI6UK+TrhHvwhVIl+ezlUN7tZJSgLYfWCJ3PmwtEl
+	 uPYOV1mxXQd2Ll7Vx/A4r3s5oCxD9gLW43nwdxwbtFs6vzosaWN8+sk1wl+n3b7o1NQ==
 ARC-Message-Signature: i=2; d=subspace.kernel.org; s=arc20261015;
-	a=rsa-sha256; c=relaxed/relaxed; t=1795770011;
-	h=Received:DKIM-Signature:Received:From:Date:Subject:MIME-Version:
-	 Content-Type:Message-Id:References:In-Reply-To:To:Cc:X-Mailer:
-	 X-Developer-Signature:X-Developer-Key:X-Endpoint-Received:
-	 X-Original-From:Reply-To:Content-Transfer-Encoding;
-	bh=DLOycZyzH2L2826RB/0UJfb1FZL/VodXkNjbNsvKGdQ=;
-	b=1d07u2SE1U8lpSIuhT+r/FcvbW936f9ppvw+JPmTCj/6Mw+JHjmycs/ghNv8sJimPQfr
-	 t+TkzC4c3ElzeOvGb8ZvBKQSaFCbLTrfxl09y118cbjDRun2s6f0wWNZZZi/D4/yULrf3
-	 bqb8Sh04CTDlZwdVHZiSrHSXC6oO3AyIRKoUCoJnhtzKxDK75y48gWY+0bFT+QUSBOgeP
-	 gehkctjWxEzQrSlpn61RFsD6eHIWm8lp+xBbCPTPvomo1hJcRjudVO+m7vOZGGlGapA2q
-	 ZIVn13MCmOu4H2FZUP1IUTiAEz/UqwITGqEIowNrNyVrT16Es9Bt7qV1d38FCRUvyjw==
+	a=rsa-sha256; c=relaxed/relaxed; t=1795770013;
+	h=Received:DKIM-Signature:Received:From:Subject:Date:Message-Id:
+	 MIME-Version:Content-Type:Content-Transfer-Encoding:X-B4-Tracking:
+	 X-Change-ID:To:Cc:X-Mailer:X-Developer-Signature:X-Developer-Key:
+	 X-Endpoint-Received:X-Original-From:Reply-To;
+	bh=crs5NxiuEl6JqqNLSlZIJXzPfbatAMi6eHD6QnmkTU4=;
+	b=GR1Iofk096cC66/sojm0DcwYeDO21hRiMAQXKWuEKoizbV/sZXyXvSgXs2QZy2URhnc/
+	 o4WbdWflbi0pAhwgo4RPquy1gVdhhK16Hkun0VJmIa8tA6UGGRc5lWsSqutSyNcWYPv/+
+	 MITirv/w4zw+MIS8DAgEjSe5T/gEQ3Sq6nHGDbu8ci7/dTuwm0YNHfioIHKu/IY+P804k
+	 DpmE744lburT2Qvnzec/0nBQkGdZy/CBg7CHjIWDcoMOGNtQR8VYbkG3CodFVjLbnJwjT
+	 Sa0ULjqi+wgxeIaw32Krn+g175nVhEr3hMohAzOSBZrZ8I8qGkI+iilUDqKAADJ1pkQ==
 ARC-Authentication-Results: i=2; smtp.subspace.kernel.org; 
-	dkim=pass header.d=kernel.org header.i=@kernel.org header.a=rsa-sha256 header.s=k20260515 header.b="Z4YRU/p8";
+	dkim=pass header.d=kernel.org header.i=@kernel.org header.a=rsa-sha256 header.s=k20260515 header.b=VW09hzVB;
 	arc=pass header.oldest-pass=0 smtp.remote-ip=100.103.45.18
 Received: from smtp.kernel.org (quasi.space.kernel.org [100.103.45.18])
 	(using TLSv1.3 with cipher TLS_AES_256_GCM_SHA384 (256/256 bits)
 	 key-exchange X25519 server-signature ECDSA (prime256v1))
 	(No client certificate requested)
-	by smtp.subspace.kernel.org (Postfix) with ESMTPS id 4D6EF606A323;
-	Fri, 27 Nov 2026 09:00:11 +0000 (UTC)
+	by smtp.subspace.kernel.org (Postfix) with ESMTPS id 3F0E5606A324;
+	Fri, 27 Nov 2026 09:00:13 +0000 (UTC)
 Authentication-Results: smtp.subspace.kernel.org;
-	dkim=pass (2048-bit key) header.d=kernel.org header.i=@kernel.org header.a=rsa-sha256 header.s=k20260515 header.b=Z4YRU/p8
+	dkim=pass (2048-bit key) header.d=kernel.org header.i=@kernel.org header.a=rsa-sha256 header.s=k20260515 header.b=VW09hzVB
 Authentication-Results: smtp.kernel.org; arc=none smtp.remote-ip=100.80.115.77
 ARC-Seal: i=1; d=kernel.org; s=arc20260519; a=rsa-sha256; cv=none;
-	t=1795770010;
-	b=HD9myXSi1AlUtXcNAZuNfRKnQ/BfPglEG4JWi8YHwEjTcISnXzPfMRChCkqCG6m1UEpp
-	 jxLbfnhJlf6KHGU4857488UcMwEREo2fydsv4Oxh4MHW7aZPhTJBQ6KanRzNJ0uELsIMW
-	 jrkHj91i2owHH0UpCzhC5hV6h9RsC2Dx3e6tribJPbro3MTNTbeCy8ABAbjlEB3dNkjCE
-	 BhmP7jRhXEJFdqKptIuf4OLslXl5DM3pF2wOXH6vUt4IGrgZzB6mPZI/AWlnarYZoEY40
-	 1D4X8ojT+/Pzs5hdcVvUejeQju0j9GmbKCPjfATfWVLwxvcdaaSnuiRC83xAvQQTvoQ==
+	t=1795770013;
+	b=iKLtMkUvMc+0gO+OPTeA6U9bWYpd/v/cPeyRmtYdt/4ITRjN0XaLbyh0ZG+qCXeVH+I9
+	 +5X/zwXxJaoRbMiU1MfoLhVDbT2zmKi9OBhgWv/69qPb4VhTUk9qMBLgnDL2WB3IWhwBz
+	 DBFSv35swJ/R102GOPkvxaMUBbwe/h+yksb43jKkrlC+h7vlB/lQl6EQLg141+AdnISS2
+	 GZluDUH6q21VenlmHem9cjCH5/nc45bg2XwHMiQc38Kqrr4hYUU2Tau9PtWmrH16nUgLp
+	 6T0EwvjynMPLBoSiwr0cgZSRuPKart58QIliXPwPoor3TDichQufMeV9pA1+xu12/Lw==
 ARC-Message-Signature: i=1; d=kernel.org; s=arc20260519; a=rsa-sha256;
-	c=relaxed/relaxed; t=1795770010;
-	h=DKIM-Signature:Received:From:Date:Subject:MIME-Version:Content-Type:
-	 Message-Id:References:In-Reply-To:To:Cc:X-Mailer:
-	 X-Developer-Signature:X-Developer-Key:X-Endpoint-Received:
-	 X-Original-From:Reply-To:Content-Transfer-Encoding;
-	bh=DLOycZyzH2L2826RB/0UJfb1FZL/VodXkNjbNsvKGdQ=;
-	b=r8aMn7hD0ubjziel0U/2qOeRNWZm/M43g5groS/Zo2//FyjNqetj5/WwnEANZzTGXK7T
-	 o+cZeTS1YfJ+kdPMfYKyCISJqrYttFmXInYg9tq/ZsheIAVQw/XZZAea5upXP/QLlFJt2
-	 prUI56tYm+HyWqq62b5ByznUF7pATlXt1a/1mOXLkz7INor+XZUPbHsy1OwRrk7CAOk9k
-	 Ih0rdX4jAYdpnY+GboPcg2LgoI5AxVyWzLddbscKfzEOtp4Lvh186kqFh0mDUvoQUe2i9
-	 /PMka+A88D8Qnn/do3CSz8d/AO2/sStau5IsMbTkHhY5wv1hpzxyj1xjUV898CwdT4g==
+	c=relaxed/relaxed; t=1795770013;
+	h=DKIM-Signature:Received:From:Subject:Date:Message-Id:MIME-Version:
+	 Content-Type:Content-Transfer-Encoding:X-B4-Tracking:X-Change-ID:To:
+	 Cc:X-Mailer:X-Developer-Signature:X-Developer-Key:X-Endpoint-Received:
+	 X-Original-From:Reply-To;
+	bh=crs5NxiuEl6JqqNLSlZIJXzPfbatAMi6eHD6QnmkTU4=;
+	b=dS+Bn/+D7WAqlgL/DQy4EavH/q2PA7zITP0/UNRUQtEaiuCT0n5ZOIcrDwCZJ5uOoY9I
+	 OubxAwaiaec3o5KxJFIvrx/W3qICAO0elNVjx+lpoprWWkUJj4dD4pdfMnoZYlnOeOYO0
+	 sqJkE7Qoi9jAZ/yEKaNXpj8gdiv9oenEq+SZumsuQg3hmnxBPsAeIkNcKbdbXVsIIOcyQ
+	 U16K3/FYyv1gsM3wqnwZycAhyKFkxd43141Cs2POAgRKDJ3+16quVDMhTsBk1FevXQgAJ
+	 Lmmy7UeM0dUtt6VvyIv9SSef6u/9X8LYxawFnawDrnR1eAX8gnRMTkTqHB1k8xucaKg==
 ARC-Authentication-Results: i=1; smtp.kernel.org; 
 	arc=none smtp.remote-ip=100.80.115.77
 Received: from lkml.kernel.org (nexus.subspace.kernel.org [100.80.115.77])
 	(using TLSv1.3 with cipher TLS_AES_256_GCM_SHA384 (256/256 bits)
 	 key-exchange X25519 server-signature ECDSA (prime256v1) server-digest SHA256)
 	(No client certificate requested)
-	by smtp.kernel.org (Postfix) with ESMTPS id 9C5A11F0089F;
+	by smtp.kernel.org (Postfix) with ESMTPS id 6E2AB1F00898;
 	Fri, 27 Nov 2026 09:00:03 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=kernel.org;
-	s=k20260515; t=1795770010;
-	bh=DLOycZyzH2L2826RB/0UJfb1FZL/VodXkNjbNsvKGdQ=;
-	h=From:Date:Subject:References:In-Reply-To:To:Cc:Reply-To;
-	b=Z4YRU/p8lYaPNXcuTzdnMdboaInp3HrInXkzR1Oil+PbZ4v5o/ObhbmOvZ/iPOoFV
-	 PxcmGZQBFJ7zW17ZDOOxk0F65nq4ZecUud527rlUAOHSi8daICqmBw8m4Pr8BqPB1i
-	 AqRy/28KVajxvZj2B82Z8nxSMT0vio2dTB0IA4qfaOLIFj3g9D3PcPAU1wV2z1fdl7
-	 9+R2wmXDKeOr/ZDd/Peae0D2Ewg8VoF36Pg0FnUZZx+pS9N1MWzhXMnGmu67COC1rA
-	 6jpPCb+/dO4qeGKGvix84yKvEUZYwYJJrWIOvrT4xJzTA9qGC6lC3ewOfXJYiVEVAS
-	 8/iG9ptrkI/dg==
+	s=k20260515; t=1795770012;
+	bh=crs5NxiuEl6JqqNLSlZIJXzPfbatAMi6eHD6QnmkTU4=;
+	h=From:Subject:Date:To:Cc:Reply-To;
+	b=VW09hzVB5vBinTR9HuOIRHD60jJNJIkBZKc48TAmAVyS9mMovbcMXjsSx2c8dnhVK
+	 RMA/66QMngEk9CbYG3a+NID66XkjB6weIK7Ctvy1UvfJjmWlVCudZGUSvdnuqFThEb
+	 wCT5qzz/QidU0S5/0x6y/0FCK0aNmq8hD6UV4aEKfTbRgmfOiUP43zS1t0/M6mm9Wm
+	 SwbQI9kdCsljiPJFTepyrU/yHZv7uJnRfZ5DPVi05tAUbrvTQlej+YY66qxvab1WkD
+	 1LSUrtnbnlP/XX4PZu0/+QnHh0KKMVoDpoT8neUGR0o8QD0l/V6HelKWgx+QZ5Jao4
+	 eOzo1Qfhz70OA==
 Received: from nexus.subspace.kernel.org (localhost [IPv6:::1])
-	by lkml.kernel.org (Postfix) with ESMTP id 2AB7C4B681;
-	Fri, 27 Nov 2026 09:00:03 +0000 (UTC)
+	by lkml.kernel.org (Postfix) with ESMTP id E00B14B671;
+	Fri, 27 Nov 2026 09:00:02 +0000 (UTC)
 From: Ahmet Zeren via B4 Relay <devnull+niko3x.proton.me@kernel.org>
-Date: Fri, 27 Nov 2026 12:00:00 +0300
-Subject: [PATCH RFT rtw-next v2 2/2] wifi: rtw88: honour the retry count
- and NO_ACK of injected frames
+Subject: [PATCH RFT rtw-next v2 0/2] wifi: rtw88: honour rate, retries and
+ bandwidth of injected frames
+Date: Fri, 27 Nov 2026 11:59:58 +0300
+Message-Id: <20261127-b4-rtw88-inject-v2-0-f9701b9243a3@proton.me>
 X-Mailing-List: linux-wireless@vger.kernel.org
 List-Id: <linux-wireless.vger.kernel.org>
 List-Post: <mailto:linux-wireless@vger.kernel.org>
@@ -84,137 +85,113 @@ List-Owner: <mailto:linux-wireless+owner@vger.kernel.org>
 Precedence: list
 MIME-Version: 1.0
 Content-Type: text/plain; charset="utf-8"
-Message-Id: <20261127-b4-rtw88-inject-v2-2-f9701b9243a3@proton.me>
-References: <20261127-b4-rtw88-inject-v2-0-f9701b9243a3@proton.me>
-In-Reply-To: <20261127-b4-rtw88-inject-v2-0-f9701b9243a3@proton.me>
+Content-Transfer-Encoding: 7bit
+X-B4-Tracking: v=1; b=H4sIAAAAAAAC/3WOOw7CMBBErxJtzaLYmHyoqDgAokMp8lkTR8KOb
+ BOCotwdO9SUszNvdhZwZBU5OCULWJqUU0YHwXcJtH2tH4SqCxp4yjPGuMBGoPXvokClB2o9drI
+ 5yLTkXS0KCNRoSap5a7zD9XKLtwCgptlD9Qu4VxPZ2BvtXjlv7GfbMLEN/PtuYpiizMUxJ1FmJ
+ Rfn0Rpv9P5JUK3r+gVtCf1t0QAAAA==
+X-Change-ID: 20261124-b4-rtw88-inject-dfb3f092da48
 To: Ping-Ke Shih <pkshih@realtek.com>
 Cc: linux-wireless@vger.kernel.org, Luka Gejak <luka.gejak@linux.dev>, 
  Bitterblue Smith <rtl8821cerfe2@gmail.com>, linux-kernel@vger.kernel.org, 
  Ahmet Zeren <niko3x@proton.me>
 X-Mailer: b4 0.15.2
-X-Developer-Signature: v=1; a=ed25519-sha256; t=1795770000; l=4930;
+X-Developer-Signature: v=1; a=ed25519-sha256; t=1795770000; l=4068;
  i=niko3x@proton.me; s=20261119; h=from:subject:message-id;
- bh=POOXTH3H0L3oyee8z36H+ZnuQn4Fh7XcOGuPBQbULUU=;
- b=8qWHhhf9NWi8e6rK9TvWkG2sBZfZjETpMs+88M1I4qfGjeaqUl+8GsNroyaT56s5RBun8aB/3
- h6PyjGJFLr+Duhu7fqdFebQf+xo8LHoBzoVNKQh2I4i3sRKuF/3+//G
+ bh=XA6hvJ2ykDWPDMGyd8ghtclD+vX21M7Q2btfcMc/zWg=;
+ b=SkF+LZWw+oSKSekGmsnlkDyGmKfQDA0ML7ycv/c0Kq9vqS4C+ptc4NsnYk1xrdBSf2iFt/el/
+ HaHEbZcf9J2AT5ZXRE8FzzculImi5dK1tUNwKIxURvXbzPDS73wlUUF
 X-Developer-Key: i=niko3x@proton.me; a=ed25519;
  pk=J4zNm2pudzQ/wF+pQ8xO+wW6jpcNa9EJ2C1g4DUAjhM=
 X-Endpoint-Received: by B4 Relay for niko3x@proton.me/20261119 with
  auth_id=1575
 X-Original-From: Ahmet Zeren <niko3x@proton.me>
 Reply-To: niko3x@proton.me
-Content-Transfer-Encoding: 7bit
 
-From: Ahmet Zeren <niko3x@proton.me>
+rtw88 ignores most of the radiotap header of injected frames: the
+firmware rate adaptation picks the rate, the frames are sent at 20 MHz,
+and the radiotap retry count and NO_ACK have no effect. The same was
+recently fixed in rtw89, and Ping-Ke agreed to take similar patches for
+rtw88 in the thread "rtw88: injected frames ignore radiotap rate and
+retry count".
 
-max_rate_tries is not set, so mac80211 clamps the radiotap retry count
-of injected frames to zero, and the TX descriptor retry limit is never
-programmed. Injected unicast frames, even NO_ACK ones, are retried up to
-the default limit, so frames to an absent station stall injection. The
-TX report path also reports NO_ACK frames as not acked.
+Patch 1 uses the injected legacy, HT or VHT rate, bandwidth and guard
+interval, without rate fallback.
 
-Limit max_rate_tries by both the TX descriptor retry limit and
-IEEE80211_MAX_TX_RETRY, and program the descriptor retry limit for
-injected frames: no retries for NO_ACK frames, otherwise the radiotap
-retry count if the frame has a usable radiotap rate. In the TX report,
-report NO_ACK frames that were sent as IEEE80211_TX_STAT_NOACK_TRANSMITTED
-rather than acked; this includes group addressed frames.
+Patch 2 programs the TX descriptor retry limit for injected frames, sets
+max_rate_tries so the radiotap retry count is no longer clamped to zero,
+and reports NO_ACK frames as such.
 
-rtw89 got similar changes in commit 92608bb5f14f ("wifi: rtw89: honor
-ASSIGN_SEQ, retries, and NO_ACK for injected frames"). The retry limit
-fields are at the same place as TXDESC40_RETRY_LIMIT_* in the
-RTL8192EU/RTL8723BU TX descriptor of rtl8xxxu.
+Non-injected frames are not affected. Injected frames without a radiotap
+rate keep the current rate selection. Keeping the sequence number of
+injected management frames (IEEE80211_TX_CTL_ASSIGN_SEQ, also done in
+rtw89) is not covered here.
 
-Signed-off-by: Ahmet Zeren <niko3x@proton.me>
+These are compile tested only, I have no rtw88 hardware. Luka offered to
+test. A way to test, with the rtw88 device in monitor mode and a second
+radio sniffing the same channel:
+- inject data frames with a radiotap rate, HT MCS or VHT MCS, with and
+  without short GI, and check they arrive at that rate
+- set the monitor interface to a 40 or 80 MHz channel first (e.g.
+  "iw dev wlan0 set freq 5180 80 5210"; mac80211 drops frames asking for
+  more than the channel width), then inject frames asking for 40 or
+  80 MHz and check the bandwidth on the sniffer
+- inject unicast frames to an absent station with a radiotap rate and
+  retries 0 and 6: the sniffer should see 1 and 7 copies of each frame
+  (mac80211 ignores the retry count without a rate, and caps it at 30);
+  with the NO_ACK flag it should see 1 copy
+- a quick check that normal station mode still works
+Please mention the chip, the bus and the band you tested.
+
+One open question: Enver found that on rtw89 AX chips an unacked
+unicast NO_ACK frame completes with "retry limit" rather than "done".
+If rtw88 reports it the same way, such frames end up reported as failed
+instead of IEEE80211_TX_STAT_NOACK_TRANSMITTED. Luka, could you check
+the TX status of injected NO_ACK frames to an absent station? If they
+come back as failed, I'll also treat that report as sent.
+
+checkpatch --strict, W=1 and sparse are clean for each patch.
+
+AI tool use (Documentation/process/generated-content.rst): the patches
+were written with help from Claude Code (Claude Opus 5.5). It was asked
+to apply the rtl8xxxu injection fixes to rtw88, using the rtw89
+changes as a model, check the descriptor bits against rtl8xxxu, and
+review the result. I have reviewed the changes and take responsibility
+for them.
+
 ---
+Changes in v2:
+- Patch 2: program the radiotap retry count only when the frame has a
+  usable radiotap rate (Luka).
+- Patch 2: in the TX report, set IEEE80211_TX_STAT_NOACK_TRANSMITTED
+  instead of IEEE80211_TX_STAT_ACK for NO_ACK frames that were sent,
+  including group addressed frames (Luka).
+- Patch 2: limit max_rate_tries by both the descriptor retry limit and
+  IEEE80211_MAX_TX_RETRY.
+- Patch 1: no change; DATA_SC stays zero, Luka's hardware test supports
+  that REG_DATA_SC is used for frames narrower than the channel.
+- Link to v1: https://patch.msgid.link/20261124-b4-rtw88-inject-v1-0-f7457e496924@proton.me
+
+To: Ping-Ke Shih <pkshih@realtek.com>
+Cc: linux-wireless@vger.kernel.org
+Cc: linux-kernel@vger.kernel.org
+
+---
+Ahmet Zeren (2):
+      wifi: rtw88: use the rate, bandwidth and GI of injected frames
+      wifi: rtw88: honour the retry count and NO_ACK of injected frames
+
  drivers/net/wireless/realtek/rtw88/main.c |  1 +
- drivers/net/wireless/realtek/rtw88/main.h |  3 +++
- drivers/net/wireless/realtek/rtw88/tx.c   | 16 ++++++++++++++--
+ drivers/net/wireless/realtek/rtw88/main.h |  3 ++
+ drivers/net/wireless/realtek/rtw88/tx.c   | 51 +++++++++++++++++++++++++++++--
  drivers/net/wireless/realtek/rtw88/tx.h   |  2 ++
- 4 files changed, 20 insertions(+), 2 deletions(-)
+ 4 files changed, 55 insertions(+), 2 deletions(-)
+---
+base-commit: 8b29fd95e2d3cb80564eb7cb34248b844422ba1e
+change-id: 20261124-b4-rtw88-inject-dfb3f092da48
 
-diff --git a/drivers/net/wireless/realtek/rtw88/main.c b/drivers/net/wireless/realtek/rtw88/main.c
-index 826e1bc3724..c715a6e86a1 100644
---- a/drivers/net/wireless/realtek/rtw88/main.c
-+++ b/drivers/net/wireless/realtek/rtw88/main.c
-@@ -2273,6 +2273,7 @@ int rtw_register_hw(struct rtw_dev *rtwdev, struct ieee80211_hw *hw)
- 		max_tx_headroom += RTW_SDIO_DATA_PTR_ALIGN;
- 
- 	hw->extra_tx_headroom = max_tx_headroom;
-+	hw->max_rate_tries = min(RTW_TX_DATA_RTY_LMT_MAX + 1, IEEE80211_MAX_TX_RETRY);
- 	hw->queues = IEEE80211_NUM_ACS;
- 	hw->txq_data_size = sizeof(struct rtw_txq);
- 	hw->sta_data_size = sizeof(struct rtw_sta_info);
-diff --git a/drivers/net/wireless/realtek/rtw88/main.h b/drivers/net/wireless/realtek/rtw88/main.h
-index 525f17590ad..7888033376c 100644
---- a/drivers/net/wireless/realtek/rtw88/main.h
-+++ b/drivers/net/wireless/realtek/rtw88/main.h
-@@ -625,6 +625,9 @@ struct rtw_tx_pkt_info {
- 	bool stbc;
- 	bool ldpc;
- 	bool dis_rate_fallback;
-+	bool rty_lmt_en;
-+	u8 data_rty_lmt;
-+#define RTW_TX_DATA_RTY_LMT_MAX	0x3f
- 	bool bmc;
- 	bool use_rate;
- 	bool ls;
-diff --git a/drivers/net/wireless/realtek/rtw88/tx.c b/drivers/net/wireless/realtek/rtw88/tx.c
-index dd5537d0cf1..32621b5c4fa 100644
---- a/drivers/net/wireless/realtek/rtw88/tx.c
-+++ b/drivers/net/wireless/realtek/rtw88/tx.c
-@@ -66,7 +66,9 @@ void rtw_tx_fill_tx_desc(struct rtw_dev *rtwdev,
- 		      le32_encode_bits(pkt_info->nav_use_hdr, RTW_TX_DESC_W3_NAVUSEHDR) |
- 		      le32_encode_bits(pkt_info->ampdu_factor, RTW_TX_DESC_W3_MAX_AGG_NUM);
- 
--	tx_desc->w4 = le32_encode_bits(pkt_info->rate, RTW_TX_DESC_W4_DATARATE);
-+	tx_desc->w4 = le32_encode_bits(pkt_info->rate, RTW_TX_DESC_W4_DATARATE) |
-+		      le32_encode_bits(pkt_info->rty_lmt_en, RTW_TX_DESC_W4_RTY_LMT_EN) |
-+		      le32_encode_bits(pkt_info->data_rty_lmt, RTW_TX_DESC_W4_DATA_RTY_LMT);
- 
- 	if (rtwdev->chip->old_datarate_fb_limit)
- 		tx_desc->w4 |= le32_encode_bits(0x1f, RTW_TX_DESC_W4_DATARATE_FB_LIMIT);
-@@ -224,7 +226,9 @@ static void rtw_tx_report_tx_status(struct rtw_dev *rtwdev,
- 
- 	info = IEEE80211_SKB_CB(skb);
- 	ieee80211_tx_info_clear_status(info);
--	if (acked)
-+	if (acked && info->flags & IEEE80211_TX_CTL_NO_ACK)
-+		info->flags |= IEEE80211_TX_STAT_NOACK_TRANSMITTED;
-+	else if (acked)
- 		info->flags |= IEEE80211_TX_STAT_ACK;
- 	else
- 		info->flags &= ~IEEE80211_TX_STAT_ACK;
-@@ -412,6 +416,14 @@ static void rtw_tx_injected_pkt_info_update(struct rtw_dev *rtwdev,
- 	struct ieee80211_tx_rate *rate = &info->control.rates[0];
- 	u8 nss, mcs;
- 
-+	if (info->flags & IEEE80211_TX_CTL_NO_ACK) {
-+		pkt_info->rty_lmt_en = true;
-+		pkt_info->data_rty_lmt = 0;
-+	} else if (info->control.flags & IEEE80211_TX_CTRL_RATE_INJECT) {
-+		pkt_info->rty_lmt_en = true;
-+		pkt_info->data_rty_lmt = rate->count - 1;
-+	}
-+
- 	if (!(info->control.flags & IEEE80211_TX_CTRL_RATE_INJECT))
- 		return;
- 
-diff --git a/drivers/net/wireless/realtek/rtw88/tx.h b/drivers/net/wireless/realtek/rtw88/tx.h
-index 168f48e8785..b6c687d33db 100644
---- a/drivers/net/wireless/realtek/rtw88/tx.h
-+++ b/drivers/net/wireless/realtek/rtw88/tx.h
-@@ -46,6 +46,8 @@ struct rtw_tx_desc {
- #define RTW_TX_DESC_W3_MAX_AGG_NUM GENMASK(21, 17)
- #define RTW_TX_DESC_W4_DATARATE GENMASK(6, 0)
- #define RTW_TX_DESC_W4_DATARATE_FB_LIMIT GENMASK(12, 8)
-+#define RTW_TX_DESC_W4_RTY_LMT_EN BIT(17)
-+#define RTW_TX_DESC_W4_DATA_RTY_LMT GENMASK(23, 18)
- #define RTW_TX_DESC_W4_RTSRATE GENMASK(28, 24)
- #define RTW_TX_DESC_W5_DATA_SHORT BIT(4)
- #define RTW_TX_DESC_W5_DATA_BW GENMASK(6, 5)
-
--- 
-2.56.1
+Best regards,
+--  
+Ahmet Zeren <niko3x@proton.me>
 
 
