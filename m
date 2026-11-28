@@ -1,76 +1,64 @@
-Authentication-Results: smtp.subspace.kernel.org; arc=none smtp.remote-ip=188.40.28.6
+Authentication-Results: smtp.subspace.kernel.org; arc=none smtp.remote-ip=91.218.175.94
 ARC-Seal: i=1; d=subspace.kernel.org; s=arc20261015; a=rsa-sha256; cv=none;
-	t=1795871362;
-	b=wKnpo1S7Tn453I1ytcgiGGE1I51H2Z71NH4QTKLcIBEHTru4iG9T3uXoMH50urB7DniT
-	 mLewbcVxv+uKanTEURoJyllKqAiAueLzZqa5uECkKO+bPsFy72XOL3eqvdzZiJOqS4X/M
-	 KXybPiTaWFqhEsBh+fkP6pK7T2J8JIXIuUz089J/TBD2tCbrJdQUxEf/k4W4Y0Bz0m+3O
-	 gjGO56Zm1kjIkMUq/MaZkoPDvyfUaIpKgmYU65txnnhmWSe4i8mRZy85V+J64iy3mgD3D
-	 PNAeya2Tw0FwkDrbeIMuAsJbDZtTm+izU4NuADtn64vINK0qHYVhJSZaFE76at3UAVA==
+	t=1795872123;
+	b=ieAWsFqOtFN8tC7B4h77yZ4WBE23oTxO4PmslcR/NrNQJ6CizFE9EgIH+5yglu6z4zR/
+	 nInSO26u9b9d0jZ5TSBf10pLcEUmV6Rlg4171xPHksWd/tgrZUO+HkTF59k5i1pRddC2x
+	 u7MADUmSr0IYb+pl3ZJE27nJ9ys0kfPmvNfBy3l1XWD3/jDcALPoybpND2VAQtyC/c8hS
+	 6MK/uPwPRQV7c1QETdq3ubxoWcXNh59Qoni4rTYrC2x6yMb6/0TLnrfSfZslJ8G38J7KV
+	 kVtIpb3LLaH5G93lYgGwp3YO9Wgg4V3VszWDySR/YjEIjglnxkrdzQaAuZhYQ2yDy2A==
 ARC-Message-Signature: i=1; d=subspace.kernel.org; s=arc20261015;
-	a=rsa-sha256; c=relaxed/relaxed; t=1795871362;
-	h=DMARC-Filter:DKIM-Signature:Received:Received:Date:Message-ID:From:
-	 To:Cc:Subject:References:In-Reply-To:User-Agent:Content-Type:
-	 MIME-Version:Content-Disposition:X-Virus-Scanned;
-	bh=RkFBDftSWSeXoHyoMZO410zae8B87vQ2YQXaCOtoDUI=;
-	b=fGKS3/nCyxvSyLlzNIALc38ryXucXg/duBslzPFphFOi1ffNcuaMsMGwSQPAK1Xg5sGv
-	 2UPSDiomv+w8kwxFX6Pp/Z5VDBTlCwkQiL/lCFwHJGoFMYD38SkrT9C3OB0A2QheKEoPY
-	 MFZXNu+SQPeYAGbLwJWwaNrQvckTQJA/EzXzuSo9ecPordaMbtaEG7SM61jKBdAbcqFJP
-	 p8PumnVSj8ekpMMwlsC6TSQjPTSdVgC+RzF2R45JxXvUwU9sRjHgaQQppAfF2lzuG9q3N
-	 j0xWXIa4fafwybyW//lUwkek28Rxm0vGOFmNZWYJ1md9IGLmlkT11e3U3LBa7l6Uypg==
+	a=rsa-sha256; c=relaxed/relaxed; t=1795872123;
+	h=DMARC-Filter:X-Envelope-To:DKIM-Signature:X-Envelope-To:Received:
+	 X-Mizu-Trace-ID:X-Migadu-Flow:Date:From:To:CC:Subject:In-Reply-To:
+	 References:Message-ID:MIME-Version:Content-Type:
+	 Content-Transfer-Encoding;
+	bh=TIsNG9OO133XEXdDiYdaFsFjxWF8UJTk5xzajQneH7A=;
+	b=gYxXDnHIsT/EsdHV84mMEKZl+fL0nmDI3tsaR0wLWMMMzrVtdEXHTDIuZxum2ybMTkCw
+	 9ODfVAt1JQatUPmHwjqzBERQpXFEZ3Ycjr3JUJHfV4OUykIPEVBiaHigNaeo1BGY/xW5y
+	 JYhG4mrtxfXAYbR1iPeciteP6F51mLw109Utq8pt3BbWOlU8VdhV7R/5NdTcOFtftbqpL
+	 0rg8FvYKaiHNM6mgGItFfX+oNYjKpinzeYWbCfwN3jssh+HYKgMAFVfCoM9APdGF2dlU+
+	 yYBN0WhgpUeCu1kPaIr16zEQc6uY7kve1Kjc50aC9Ik3krxPVAQJHB9GuP1PYz/Mv2g==
 ARC-Authentication-Results: i=1; smtp.subspace.kernel.org; 
-	dmarc=none header.from=rfdeck.de;
-	spf=pass smtp.mailfrom=rfdeck.de;
-	dkim=pass header.d=rfdeck.de header.i=@rfdeck.de header.a=rsa-sha256 header.s=default2609 header.b=Fatk6iIR;
-	arc=none smtp.remote-ip=188.40.28.6
-Received: from www226.your-server.de (www226.your-server.de [188.40.28.6])
-	(using TLSv1.3 with cipher TLS_AES_256_GCM_SHA384 (256/256 bits)
+	dmarc=pass header.from=linux.dev;
+	spf=pass smtp.mailfrom=linux.dev;
+	dkim=pass header.d=linux.dev header.i=@linux.dev header.a=rsa-sha256 header.s=key1 header.b=ZWLsA5AA;
+	arc=none smtp.remote-ip=91.218.175.94
+Received: from mta0.migadu.com (out-94.mta0.migadu.com [91.218.175.94])
+	(using TLSv1.3 with cipher TLS_AES_128_GCM_SHA256 (128/128 bits)
 	 key-exchange X25519 server-signature ECDSA (prime256v1) server-digest SHA256)
 	(No client certificate requested)
-	by smtp.subspace.kernel.org (Postfix) with ESMTPS id 5820A606A31C;
-	Sat, 28 Nov 2026 13:09:21 +0000 (UTC)
-DMARC-Filter: OpenDMARC Filter v1.4.2 smtp.subspace.kernel.org 5820A606A31C
-Authentication-Results: smtp.subspace.kernel.org; dmarc=none (p=none dis=none) header.from=rfdeck.de
-Authentication-Results: smtp.subspace.kernel.org; spf=pass smtp.mailfrom=rfdeck.de
+	by smtp.subspace.kernel.org (Postfix) with ESMTPS id 85403606A32C
+	for <linux-wireless@vger.kernel.org>; Sat, 28 Nov 2026 13:22:02 +0000 (UTC)
+DMARC-Filter: OpenDMARC Filter v1.4.2 smtp.subspace.kernel.org 85403606A32C
+Authentication-Results: smtp.subspace.kernel.org; dmarc=pass (p=none dis=none) header.from=linux.dev
+Authentication-Results: smtp.subspace.kernel.org; spf=pass smtp.mailfrom=linux.dev
 Authentication-Results: smtp.subspace.kernel.org;
-	dkim=pass (2048-bit key, unprotected) header.d=rfdeck.de header.i=@rfdeck.de header.a=rsa-sha256 header.s=default2609 header.b=Fatk6iIR
-DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed; d=rfdeck.de;
-	s=default2609; h=MIME-Version:Content-Type:In-Reply-To:References:Subject:Cc:
-	To:From:Message-ID:Date:Sender:Reply-To:Content-Transfer-Encoding:Content-ID:
-	Content-Description:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc
-	:Resent-Message-ID; bh=RkFBDftSWSeXoHyoMZO410zae8B87vQ2YQXaCOtoDUI=; b=Fatk6i
-	IRt5ZP/RRqL++rlUwM2mE8QfroTW/Z/o+yif0GHwsy4eE8ETEe6B6lkzO+bWjFnAVsHrskk642ZY5
-	mVZmg3hgoJFofo2O+zBXIKvXajMwczggLdpxz8bM+iB6KacRtuc28HZiWij9Kvsi1ZZmZkuozJiSU
-	gc7r4sZbcECjrG/SG6wpBa8Z8tyZCi6nnClfYiIjJvBj0rdysRUITH8mXBVtYB5YopJv61Wn1b/2M
-	MUv7ClD6JJiGDoTMYMXOx/BC/FP9ZM9DaLL/ss4GkfHQcKMfpvpz4YZxMhYB55CCdPVBO1/yWhZ8q
-	qCbKtj4a0bm/3eDOWHeJ/gelvZ5Q==;
-Received: from sslproxy03.your-server.de ([88.198.220.132])
-	by www226.your-server.de with esmtpsa  (TLS1.3) tls TLS_AES_256_GCM_SHA384
-	(Exim 4.96.2)
-	(envelope-from <martin@rfdeck.de>)
-	id 1xXIB4-0002C3-2R;
-	Sat, 28 Nov 2026 14:09:18 +0100
-Received: from [192.168.0.32] (helo=mail.your-server.de)
-	by sslproxy03.your-server.de with esmtpsa  (TLS1.3) tls TLS_AES_256_GCM_SHA384
-	(Exim 4.96)
-	(envelope-from <martin@rfdeck.de>)
-	id 1xXIB4-0000mL-1A;
-	Sat, 28 Nov 2026 14:09:18 +0100
-Date: Sat, 28 Nov 2026 14:09:18 +0100
-Message-ID: <20261128140918.Horde.8QMYup08ZG5LMHxtcgKoZPf@mail.your-server.de>
-From: martin@rfdeck.de
-To: Ahmet Zeren <niko3x@proton.me>
-Cc: Ping-Ke Shih <pkshih@realtek.com>, linux-wireless@vger.kernel.org, Luka
- Gejak <luka.gejak@linux.dev>, Bitterblue Smith <rtl8821cerfe2@gmail.com>,
- linux-kernel@vger.kernel.org
-Subject: Re: [PATCH RFT rtw-next v2 0/2] wifi: rtw88: honour rate, retries
- and bandwidth of injected frames
-References: <20261127161943.Horde.JkGhYA0aQ3kFZkRWztLNi5H@mail.your-server.de>
- <semDCz-DacL4vKeB_8iKu6ZwI8pQDusEK2fvgerTJWRkQ1MAxvs0nX-lSJviX_LDplBuBKniLMaMy9FtGH2_EkckFD-LR2YY6pPSPwrTCk0=@proton.me>
- <20261128113304.Horde.AlVGhIssVk0T26G9XwXTpD-@mail.your-server.de>
- <VlXplLX5apZBM3LPGxqkM1o7u2AvhUYD8YHGKQVhZo2aZhE5oLqDDEAP1nheF3fmtNHE3TCLvFSMhnFddrGV7PBF2z9h_kXHMHxX0BlLyBA=@proton.me>
-In-Reply-To: <VlXplLX5apZBM3LPGxqkM1o7u2AvhUYD8YHGKQVhZo2aZhE5oLqDDEAP1nheF3fmtNHE3TCLvFSMhnFddrGV7PBF2z9h_kXHMHxX0BlLyBA=@proton.me>
-User-Agent: Horde Application Framework 5
-Content-Type: text/plain; charset=utf-8; format=flowed; DelSp=Yes
+	dkim=pass (1024-bit key, unprotected) header.d=linux.dev header.i=@linux.dev header.a=rsa-sha256 header.s=key1 header.b=ZWLsA5AA
+X-Envelope-To: linux-wireless@vger.kernel.org
+DKIM-Signature: a=rsa-sha256; bh=PUiqBKQ9Li6OSgDoww4zBGIeshAUKL+IEO4alP8ewXI=;
+ c=simple/simple; d=linux.dev;
+ h=from:to:subject:date:message-id:mime-version:content-type; s=key1;
+ t=1795872120; v=1; x=1796476920;
+ b=ZWLsA5AAaf2yDjrnYQ4pLTHKzwc//uT5wSJTVImnsuWYFiK3qOSEQJewRl/LAPlQHCuwkLfO
+ E7CQ4m12nn8kPaVt2x010maoPiP1OYflEOpGxX7Sr6loYKIDGH9+AqbWRijyUZmPLa3JnTY/Ufl
+ pOwtBltdpDhxc0MEb7agWtcY=
+X-Envelope-To: linux-wireless@vger.kernel.org
+Received: by smtp.migadu.com with ESMTPS id b74baa911e8f359f;
+	Sat, 28 Nov 2026 13:22:00 +0000
+X-Mizu-Trace-ID: b74baa911e8f359f
+X-Migadu-Flow: FLOW_OUT
+Date: Sat, 28 Nov 2026 14:21:58 +0100
+From: Luka Gejak <luka.gejak@linux.dev>
+To: niko3x@proton.me,
+ Ahmet Zeren via B4 Relay <devnull+niko3x.proton.me@kernel.org>,
+ Johannes Berg <johannes@sipsolutions.net>
+CC: linux-wireless@vger.kernel.org, Ahmet Zeren <niko3x@proton.me>
+Subject: =?US-ASCII?Q?Re=3A_=5BPATCH_wireless-next?=
+ =?US-ASCII?Q?=5D_wifi=3A_mac80211=3A_don=27t_m?=
+ =?US-ASCII?Q?ark_NO=5FACK_frames_as_failed_in_TX_status_radiotap?=
+In-Reply-To: <20261127-b4-mac80211-noack-v1-1-c7e6f7c56d3c@proton.me>
+References: <20261127-b4-mac80211-noack-v1-1-c7e6f7c56d3c@proton.me>
+Message-ID: <414C2697-5365-49ED-A766-98BEBEE37E76@linux.dev>
 X-Mailing-List: linux-wireless@vger.kernel.org
 List-Id: <linux-wireless.vger.kernel.org>
 List-Post: <mailto:linux-wireless@vger.kernel.org>
@@ -80,41 +68,47 @@ List-Unsubscribe: <mailto:linux-wireless+unsubscribe@vger.kernel.org>
 List-Owner: <mailto:linux-wireless+owner@vger.kernel.org>
 Precedence: list
 MIME-Version: 1.0
-Content-Disposition: inline
-X-Virus-Scanned: Clear (ClamAV 1.4.6/28194/Wed Nov 25 07:26:59 2026)
-
-Ahmet Zeren <niko3x@proton.me> wrote:
+Content-Type: text/plain;
+ charset=utf-8
+Content-Transfer-Encoding: 8bit
 
 Hi Ahmet,
 
-> Does your RTL8812AU ever reach VHT MCS8 or MCS9 in station mode, e.g.
-> in the tx bitrate of "iw dev <dev> station dump" with a VHT AP close
-> by?
+Thanks for picking this up. One comment below.
 
-No. Unpatched rtw88, the RTL8812AU (both antennas) as a station on a
-VHT80 test AP on channel 36, iperf3 TCP in both directions, with a
-sniffer and the AP side watched as well:
+On November 27, 2026 9:53:25 PM GMT+03:00, Ahmet Zeren
+<niko3x@proton.me> wrote:
 
-- uplink, at -54 to -63 dBm at the AP: at most VHT MCS7 NSS1, mostly
-   MCS3-6 with one or two streams, never MCS8/9 and never short GI,
-   although the AP offers SGI-80
-- uplink with the two right next to each other (-47 to -54 dBm at the
-   AP, -28 to -34 dBm at the station): still at most MCS7 NSS1, mostly
-   MCS6, 0 retransmits
-- downlink: the RTL8812AU receives up to MCS9 NSS2 at 80 MHz
-- with "iw dev <dev> set bitrates vht-mcs-5 1:9" the frames in the air
-   and at the AP stayed at MCS0-7 NSS1
+[ ... ]
 
-So it never sends VHT MCS8/9, not only when injecting. That points away
-from the rate ID of injected frames and more to the rate adaptation,
-the firmware or the TX side.
+> diff --git a/net/mac80211/status.c b/net/mac80211/status.c
+> index 5d1807ab46e..48db461d8da 100644
+> --- a/net/mac80211/status.c
+> +++ b/net/mac80211/status.c
+> @@ -315,7 +315,8 @@ ieee80211_add_tx_radiotap_header(struct ieee80211_local *local,
+>
+>       /* IEEE80211_RADIOTAP_TX_FLAGS */
+>       txflags = 0;
+> -     if (!(info->flags & IEEE80211_TX_STAT_ACK) &&
+> +     if (!(info->flags & (IEEE80211_TX_STAT_ACK |
+> +                          IEEE80211_TX_STAT_NOACK_TRANSMITTED)) &&
+>           !is_multicast_ether_addr(hdr->addr1))
+>               txflags |= IEEE80211_RADIOTAP_F_TX_FAIL;
 
-One more thing: the tx bitrate rtw88 reports for the station doesn't
-match the air. It showed MCS8/9 NSS2 at times (NSS2 even with the NSS1
-mask, and "VHT-MCS 9 80MHz VHT-NSS 1" with the mask), while neither
-the sniffer nor the AP ever saw MCS 8 or higher from the station. So I
-went by the sniffer and the AP side, not by iw.
+It looks like rtw89 sets IEEE80211_TX_STAT_NOACK_TRANSMITTED for
+NO_ACK frames even on RTW89_TX_MACID_DROP.
 
-Thanks,
-Martin
+For a unicast frame the monitor currently shows TX_FAIL because the
+ACK bit is clear. With this change it would look like the frame went
+out even though rtw89 reported a drop.
 
+Enver's v2 stops setting the bit for those drops in both paths, so we
+should probably wait for it to get merged before merging this patch.
+https://lore.kernel.org/r/20261127101307.15-1-owner@ph4ntom-rev.uz/
+
+Either way the change looks good to me.
+
+Reviewed-by: Luka Gejak <luka.gejak@linux.dev>
+
+Best regards,
+Luka Gejak
