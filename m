@@ -1,95 +1,70 @@
-Authentication-Results: smtp.subspace.kernel.org; arc=none smtp.remote-ip=209.85.128.52
+Authentication-Results: smtp.subspace.kernel.org; arc=none smtp.remote-ip=91.218.175.60
 ARC-Seal: i=1; d=subspace.kernel.org; s=arc20261015; a=rsa-sha256; cv=none;
-	t=1795882849;
-	b=p486uWf0H6/Pao9cPS1+gMRpYWoJU3bjFjrliXhPLCXFiGz5kP6mGUqNqBQWdx4O5cTr
-	 YAXge7bh+8riOI4wSL7Vx/kmYp0tXNCJRtBhlXXGITBIzZh/qwez2hyr5MKlLmY1fdFJv
-	 cU6f9wlqGRHS28+y2LKZUO3GD73Y5opcNOJCUVLWsgEzgjLcZAkrmPB6xt6+ai4Md7BCo
-	 gGhXsROP80FU7AIlKCVqdrfGnMAmIACGNrJGyt8/nLpNc6yKVr7wnivWnB4P6sRKpIwWA
-	 2hyHrh9bkLoxciYdOFn3xjrClfh56OWVkNbTBT+tzAMGprw3u74SY/+Uk2QGapgGIxw==
+	t=1795886148;
+	b=0RxgBjklwZQiMka3ecBuufl3pZn8YzxJLFAGEc4mLtb3sDSkl0nQcPxAc9eRb/V1l2FX
+	 vSE73qb4jT4ieEDM1yKGCTUWDgGWbax3AJnFK041L5QND88XSoBwktlY6kjcQrdSVBY7w
+	 3FC0uOJ48tMG6YzphK9yB6eAsfjNUklDMk3PUEAjofAKRm4AYz3TtanwXyoZ7Lo5Flaa2
+	 hJVS0mMm7VadkOuldo+tInZDEqz+hnxeHPvHpErgHavj4aeNDKUTU1tqvo3dFKOkCrVn3
+	 k7Z5WR1D4SJmLAfR9vQetsL8pl+xf5QQF4rppOpMU5EvVeDfAXl78NCup4ZaABSgXww==
 ARC-Message-Signature: i=1; d=subspace.kernel.org; s=arc20261015;
-	a=rsa-sha256; c=relaxed/relaxed; t=1795882849;
-	h=DMARC-Filter:Received:DKIM-Signature:X-Google-DKIM-Signature:
-	 X-Forwarded-Encrypted:X-Gm-Message-State:X-Gm-Gg:X-Received:Received:
-	 From:X-Google-Original-From:To:Cc:Subject:Date:Message-ID:X-Mailer:
-	 In-Reply-To:References:MIME-Version:Content-Transfer-Encoding;
-	bh=D+8QP49YMFroNM6RVv5M8lHNnUxyk0QDBwrPHQld9vQ=;
-	b=EsfYKO/nabaC9Ca17sKlWrWk86Fg0at1U6HwS1jx2mvH1LPBo6UEWiShSttdC+goSZzV
-	 jekPMa2CoXA3FiBtyeFIHvJWV9XfRTR+h3eziez2jFf2kO4bMikKiBTT6kE3dJTDL7HG9
-	 N43Q44KZrfPa0Avp9/E0N6bCq7Z+pvBokwJZGWbDSckMCe60uMWBuVOI6clINW3HnFnuL
-	 diD0OpPZSJhhe7IKf0WVb1mq2sHqrUjYKwsm3W8iYgNWsNd9DikcEpAYFV9rRo5D3cGho
-	 SEWI8Ldka8dPKvHTEC/1chAuAEblTEBwifm/OwjyaFIMjAGnCZRDUmKnE4lWduHh9Zw==
+	a=rsa-sha256; c=relaxed/relaxed; t=1795886148;
+	h=DMARC-Filter:X-Envelope-To:DKIM-Signature:X-Envelope-To:Received:
+	 X-Mizu-Trace-ID:X-Migadu-Flow:From:To:Cc:Subject:Date:Message-ID:
+	 X-Mailer:In-Reply-To:References:MIME-Version:Content-Type:
+	 Content-Transfer-Encoding;
+	bh=oqDemX6ZwjJ1i6EL+hJchHNeErURI1NTJiCawPmRbL4=;
+	b=maX+mCQQPgDeEO+z3wiIxY0oa7Jn8hwB3f263KDyBiH01RRptrOcDnGtngO/JnzlleTD
+	 CQVnU40ZD5RFYOAopvLiZ+S/recrOUwp5nx6xzVDCjIlhshYnIyXwowhxhFpJOKvgqrNV
+	 DGHTN1RRZ8/WO6bhpt/Q4vRdZaa7VDcf5Wl4Dzgk931EuTsv7IT+oFY32pRnxvTtc+MiZ
+	 06/1N/IBTLLaLeT4SdgqKqrFa3EOWj8tR5mXbQTJu8OKdIWdh518zNcE5YXztn7RrJiQF
+	 9O+X4QX62WWYp8DzpBXrmr8Cdj0hLeqC1KCB2lUoC1+B4nBSBOsG6dFKilvV/qz2bYQ==
 ARC-Authentication-Results: i=1; smtp.subspace.kernel.org; 
-	dmarc=pass header.from=gmail.com;
-	spf=pass smtp.mailfrom=gmail.com;
-	dkim=pass header.d=gmail.com header.i=@gmail.com header.a=rsa-sha256 header.s=20260707 header.b=v+5Glqm6;
-	arc=none smtp.remote-ip=209.85.128.52
-Received: from mail-wm1-f52.google.com (mail-wm1-f52.google.com [209.85.128.52])
+	dmarc=pass header.from=justthetip.ca;
+	spf=pass smtp.mailfrom=justthetip.ca;
+	dkim=pass header.d=justthetip.ca header.i=@justthetip.ca header.a=rsa-sha256 header.s=key1 header.b=Cs68EPJy;
+	arc=none smtp.remote-ip=91.218.175.60
+Received: from mta0.migadu.com (out-60.mta0.migadu.com [91.218.175.60])
 	(using TLSv1.3 with cipher TLS_AES_128_GCM_SHA256 (128/128 bits)
 	 key-exchange X25519 server-signature ECDSA (prime256v1) server-digest SHA256)
 	(No client certificate requested)
-	by smtp.subspace.kernel.org (Postfix) with ESMTPS id E07DD606A31C
-	for <linux-wireless@vger.kernel.org>; Sat, 28 Nov 2026 16:20:48 +0000 (UTC)
-DMARC-Filter: OpenDMARC Filter v1.4.2 smtp.subspace.kernel.org E07DD606A31C
-Authentication-Results: smtp.subspace.kernel.org; dmarc=pass (p=none dis=none) header.from=gmail.com
-Authentication-Results: smtp.subspace.kernel.org; spf=pass smtp.mailfrom=gmail.com
+	by smtp.subspace.kernel.org (Postfix) with ESMTPS id D0CB9606A324
+	for <linux-wireless@vger.kernel.org>; Sat, 28 Nov 2026 17:15:47 +0000 (UTC)
+DMARC-Filter: OpenDMARC Filter v1.4.2 smtp.subspace.kernel.org D0CB9606A324
+Authentication-Results: smtp.subspace.kernel.org; dmarc=pass (p=quarantine dis=none) header.from=justthetip.ca
+Authentication-Results: smtp.subspace.kernel.org; spf=pass smtp.mailfrom=justthetip.ca
 Authentication-Results: smtp.subspace.kernel.org;
-	dkim=pass (2048-bit key) header.d=gmail.com header.i=@gmail.com header.a=rsa-sha256 header.s=20260707 header.b=v+5Glqm6
-Received: by mail-wm1-f52.google.com with SMTP id 5b1f17b1804b1-4a5177d78c7so92397925e9.2
-        for <linux-wireless@vger.kernel.org>; Sat, 28 Nov 2026 08:20:48 -0800 (PST)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=gmail.com; s=20260707; t=1795882847; x=1796487647; darn=vger.kernel.org;
-        h=content-transfer-encoding:mime-version:references:in-reply-to
-         :message-id:date:subject:cc:to:from:from:to:cc:subject:date
-         :message-id:reply-to:content-type;
-        bh=D+8QP49YMFroNM6RVv5M8lHNnUxyk0QDBwrPHQld9vQ=;
-        b=v+5Glqm6ZsYwzQ0/ouE2LY47mqNdqgh45vrQJkjo8L9jooN385/oME2t1Vij+5rKgm
-         rLhB7al17jCgaNY3+BXrwCgMB3mbxhfYwQZGEQJCDe7y1ARUX470B7XmT1Q6BC4kJPtf
-         6/rKKA8n2iQm8NSoI0emRc7s6v1XO55sfpAAf4IHA2fdRLz8zrgNXu4fZ9bamyXAUMn1
-         BQrXZ4sLxJPw7xE7pkR2AkfVqfJNFrtSVDxOSYaBz9nxjNhtksILx0hs1UzIwK1iR1v4
-         qdXXj/rT0DaKs6tvoiSKuYPweU9QvrEV2h0s/kYrQOyZo+7796L+skd2tR4yNrbIW0/5
-         wPpw==
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=1e100.net; s=20260707; t=1795882847; x=1796487647;
-        h=content-transfer-encoding:mime-version:references:in-reply-to
-         :message-id:date:subject:cc:to:from:x-gm-gg:x-gm-message-state:from
-         :to:cc:subject:date:message-id:reply-to:content-type;
-        bh=D+8QP49YMFroNM6RVv5M8lHNnUxyk0QDBwrPHQld9vQ=;
-        b=0v0XEqIcINWZtZzyohWZC5xf49JWLmLxhUacs3TVTxT9de+zCJ/xMoVmqCQ1d8Zodf
-         dXxEWjnDJtATqd++dLC5ni6Iklrc8siRhDgLX1BUuYa7OFBpAU1e01Psvjgp7Xh/QEow
-         qqCgphNeHPQUOzG+UXdjEe3rnjAgmEIyGV0Y7ILEWjk2yhWiFVWoc+W897T7ODA+nzTY
-         DV6NJJmGDenoqukXNIB9JKhsuJAi1/a/adrs44SI3B55nYONNnj7X/iGlssJy1Sie9Fo
-         abtDdBY/kGRcWLuDstc9oSvdgtTKHjUUX5mpprAVlnlw42pWU57NyLVSdwYqPhOjwrXy
-         lJGA==
-X-Forwarded-Encrypted: i=1; AL+hErGwznTSmFUGKuAkYvS7aNnrmYYBHDHILHted3kyqMpIhaEeYIGSlELz3VrV9EyjJUyL5iMbdiPYKEa9Bbsh6w==@vger.kernel.org
-X-Gm-Message-State: APuU4Z8IyMihQW4Dn+ypVBk8XyvUYtM6ODH/bdAGUuKReQJoTkHPOIGD
-	dhw77nsgmS9+vR52fPDpSdl9cwDwBiXfJWs2Lr7UVA6T3CCm6musMm/Z
-X-Gm-Gg: AZFdTZezR6mgubGOvNSYV17nSAuy/lbu3caozo3d93bJEH5qB7v43ZCyI19ICm5jpZS
-	VoBpJf3BiCQUQygSnLM28jEFSLWTgemr45pUaUMNqAXSnWhbDDkxtfxEHsphHSLscTfvvfAfKs5
-	FRpkbdOOK2EiBDKf1/4sZi3Kt5Pb8zZse8gmadsCFL7ru7n7D/hDuKOcJx56Iv1HdAmuGPdTkD+
-	maO7mx4dr5dcEMByupgPQMK8iCoSdMNwLGN4nvwdgoEsnkYz/THH5QBiRUf6fN85ByXwulWtfHF
-	fSX6xwHXm67W8NLycmvEXVNysWAxgwIlyYqnf5O10mk87fuekdxUJreJo3w0vvyc663FqCJDbnh
-	RseIm3AtpMDb3iubzQhKQ4EAOttL9ay1jLCsOIVAX7nodSo3uGvpgaDR1V0jCJCE0VQpOkFuNK0
-	CuBnddb4/k2wS/qGVfnzHr4LYn9EoNYiUVuIr+T3qU9H5wgxYDe+2rtkVbhC3kAFBS5UdSs5Grb
-	yagAHCHrkEgy7DhNInSFGi22pUe/kYbyh5ZLkqht2c+dMgrF+xoFxoOxgVya7oDlbld9qxY95Br
-	TtGO94iCrwsVQKES4TkMpzclkDdJKzMWZ1NgW2k9Sts=
-X-Received: by 2002:a05:600c:6744:b0:4bb:afae:150d with SMTP id 5b1f17b1804b1-4bbafae24acmr162024675e9.33.1795882846959;
-        Sat, 28 Nov 2026 08:20:46 -0800 (PST)
-Received: from fedora.kevinsoyer.org ([2001:a61:25ca:5000:edf8:6430:c80d:924f])
-        by smtp.gmail.com with ESMTPSA id 5b1f17b1804b1-4bb884865a2sm819054785e9.3.2026.11.28.08.20.46
-        (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
-        Sat, 28 Nov 2026 08:20:46 -0800 (PST)
-From: Kevin Soyer <failforce@gmail.com>
-X-Google-Original-From: Kevin Soyer <Failforce@gmail.com>
-To: baochen.qiang@oss.qualcomm.com
-Cc: jjohnson@kernel.org,
-	ath12k@lists.infradead.org,
-	linux-wireless@vger.kernel.org
-Subject: Re: [PATCH ath-next v5 00/11] wifi: ath12k: resolve RX link id via logical link id on WCN7850/QCC2072
-Date: Sat, 28 Nov 2026 17:20:39 +0100
-Message-ID: <20261128162039.18561-1-Failforce@gmail.com>
+	dkim=pass (2048-bit key, unprotected) header.d=justthetip.ca header.i=@justthetip.ca header.a=rsa-sha256 header.s=key1 header.b=Cs68EPJy
+X-Envelope-To: linux-wireless@vger.kernel.org
+DKIM-Signature: a=rsa-sha256; bh=oqDemX6ZwjJ1i6EL+hJchHNeErURI1NTJiCawPmRbL4=;
+ c=simple/simple; d=justthetip.ca;
+ h=from:to:subject:date:message-id:mime-version:content-type; s=key1;
+ t=1795886145; v=1; x=1796490945;
+ b=Cs68EPJyuIZX9t3Dpp60ahWgHJL/k1hg6kT16PVxXMoRPYlbHYMWNXthlV0xukuicE+5VIp9
+ P3myz1ZdA2FEkyefQammwGg8ku7utM7ABqLC9B8EeL7AWRkix6ldY4m54IgcdkwpJcAPW3aCoyw
+ CWl/05tZBwFnFumv+AstjeegUpuCtXfn7Rg+ug2AoRETwtinNnvOZ5VvWevsONpqobovX0wpxnG
+ hnep951DAviroMEmH/sPzxUB+EyYe9mOArVz1IbDCfQa0vx/F3+3xeOatQlqChHL/mzxyod6lYm
+ 897QQrEcwkfQMbhW5qkpZgkjq2SfmkoM/rCCwk42Emk7A==
+X-Envelope-To: linux-wireless@vger.kernel.org
+Received: by smtp.migadu.com with ESMTPS id a2901eb0e4d21435;
+	Sat, 28 Nov 2026 17:15:45 +0000
+X-Mizu-Trace-ID: a2901eb0e4d21435
+X-Migadu-Flow: FLOW_OUT
+From: Devin Wittmayer <lucid_duck@justthetip.ca>
+To: martin@rfdeck.de
+Cc: Aaron Beckendorf <albecken@mtu.edu>,
+	Felix Fietkau <nbd@nbd.name>,
+	Lorenzo Bianconi <lorenzo@kernel.org>,
+	Ryder Lee <ryder.lee@mediatek.com>,
+	Shayne Chen <shayne.chen@mediatek.com>,
+	Sean Wang <sean.wang@mediatek.com>,
+	linux-wireless@vger.kernel.org,
+	linux-mediatek@lists.infradead.org
+Subject: Re: [PATCH v2] wifi: mt76: connac: honour injected HT/VHT rate and bandwidth
+Date: Sat, 28 Nov 2026 10:15:34 -0700
+Message-ID: <20261128171534.98125-1-lucid_duck@justthetip.ca>
 X-Mailer: git-send-email 2.56.1
-In-Reply-To: <20261110-ath12k-logical-link-id-v5-0-26a3ed38db09@oss.qualcomm.com>
-References: <20261110-ath12k-logical-link-id-v5-0-26a3ed38db09@oss.qualcomm.com>
+In-Reply-To: <20261128113158.Horde.SfK8gVRYJBkGjFr0f3N_Xrz@mail.your-server.de>
+References: <20261104142737.186484-1-albecken@mtu.edu> <20261128113158.Horde.SfK8gVRYJBkGjFr0f3N_Xrz@mail.your-server.de>
 X-Mailing-List: linux-wireless@vger.kernel.org
 List-Id: <linux-wireless.vger.kernel.org>
 List-Post: <mailto:linux-wireless@vger.kernel.org>
@@ -99,51 +74,21 @@ List-Unsubscribe: <mailto:linux-wireless+unsubscribe@vger.kernel.org>
 List-Owner: <mailto:linux-wireless+owner@vger.kernel.org>
 Precedence: list
 MIME-Version: 1.0
+Content-Type: text/plain; charset=UTF-8
 Content-Transfer-Encoding: 8bit
 
-Hi Baochen,
+On Sat, 28 Nov 2026 11:31:58 +0100, martin@rfdeck.de wrote:
+> Maybe set the fixed rate for all injected frames
+> (IEEE80211_TX_CTL_INJECTED), not only for mgmt and multicast, and take
+> the GI from IEEE80211_TX_RC_SHORT_GI?
 
-Tested the v5 series as merged in ath/ath-next (HEAD <COMMIT>) on a
-laptop with WCN7850 hw2.0 (Quectel module, subsystem 1eac:8000),
-Fedora Rawhide userspace (wpa_supplicant 2.11, NetworkManager 1.58).
+I have patches on top of v2 that do both, and they also cover legacy
+rates and LDPC/STBC. With them, injected unicast data goes out at the
+requested rate on 5 GHz too. Without them I see the same as you, on an
+MT7921AU and an MT7922.
 
-With the Fedora 7.4-rc4 kernel (Linus tree 4dce97c6c265), connecting
-to a Wi-Fi 7 MLO SSID (SAE + FT-SAE, PMF required, 2.4+5+6 GHz) fails
-every time: authentication and association succeed, then the 4-way
-handshake times out (reason=15).
+I've been working on this for a while. I'm doing the last tests now and
+will post the series with the results soon.
 
-With ath-next the connection comes up as MLO (valid links 0, 1, 2;
-links 1 and 2, 5 and 6 GHz, active). 5 of 5 connect/disconnect cycles
-succeeded with ping OK, and the link was back with ping OK after a
-40 minute s2idle suspend.
-
-With ATH12K_DEBUG (debug_mask DP_HTT|MAC) there is no PEER_EXTENDED
-event and no "failed to get peer extended event" timeout, neither on
-connect nor after module reload. So this firmware does not advertise
-WMI_TLV_SERVICE_PER_LINK_STATS_SUPPORT, and the host allocation path
-from 8/11 is what makes it work here.
-
-Unrelated to this series, and also present with 7.4-rc4: on every
-disconnect I get a warning from ath12k_peer_delete_resp_signal(). The
-HTT peer unmap for the partner link arrives before the WMI peer delete
-response, so the link peer is already gone. For vdev 0 the order is
-the other way round and there is no warning:
-
-  htt peer unmap vdev 1 peer d4:0d:ab:33:b4:64 id 7
-  failed to find link peer with vdev id 1 addr d4:0d:ab:33:b4:64
-  htt peer unmap vdev 0 peer d6:0d:ab:33:b4:65 id 4
-
-It looks cosmetic, connections are not affected.
-
-Since plain 7.4 can't connect to MLO WPA3 networks at all on WCN7850,
-would it be possible to route a minimal fix via ath-current/stable?
-
-Tested-on: WCN7850 hw2.0 PCI WLAN.HMT.1.1.c7-00108-QCAHMTSWPL_V1.0_V2.0_SILICONZ_UPSTREAM-3
-
-Tested-by: Kevin Soyer <Failforce@gmail.com>
-
-AI coding assistants helped with the debugging and drafting this
-reply; the results are from runs on my hardware.
-
-Thanks,
-Kevin
+Thanks for testing,
+Devin
