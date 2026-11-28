@@ -1,53 +1,53 @@
-Authentication-Results: smtp.subspace.kernel.org; arc=none smtp.remote-ip=95.215.58.87
+Authentication-Results: smtp.subspace.kernel.org; arc=none smtp.remote-ip=91.218.175.39
 ARC-Seal: i=1; d=subspace.kernel.org; s=arc20261015; a=rsa-sha256; cv=none;
-	t=1795894931;
-	b=WbA6GpfLFya2ZynM2CzZ+YIdQm6tW+hJHzu18kgPc7FgTM76Rgxvi5tlDYYK0j7r29TN
-	 ogHOS8le7iywhpk6w3YdUXfijB3QQMU7MekqiiYEpMkGM4rnwwNZkNgV6Stlt2d89BdEe
-	 jW0TD7yg1uYSzHXKWolbXGyI3+cjL/J8VpVTg31q9pc3/Fh26mXFNipy3VO/8xA2Bk8xa
-	 sPl2VL8nbSUeakYUmrANvH3Ku7MNnDBualaMNzr1pocgNWEKKXkV81uVBNCw7p/yEmKbU
-	 LXxdahO9+Jyrs5pGSUrrSJhde2KtazCz1SN27u8ZAFNJc+oEyp/IE8xRZmsXVWCGqwA==
+	t=1795894933;
+	b=rdcJ2hw03bdX1sbxYG3utUpbj/E3/+2TpmqttkioWT+G+NbpnoJ/jhiHVb2wf6P7MRpD
+	 kJbZcLrrtEn4GVij/cp59btpbIbRq74ZC4YvedKhaNUj5d4xSLCMmpy1VDm/845ofl1ld
+	 8j/XGs6NK02Tn9FSXlD07eH5DOTuq8V/OpEG1T+geDkZ5ou9cqjSTPYNbuZ8Z5a50VaHK
+	 /g/TIGfxPUwRLREW0gKsNAWjv8G2WmD2Ut/BCPTif7N+cYlMDyG4v9O4qxyvTR5m662Ol
+	 GB1kgCjW64SQucWqZ1bWuw1fayokUZ6aN0f7HxHA0MaoG7kw7ExqlIn/o6XHC/7HMag==
 ARC-Message-Signature: i=1; d=subspace.kernel.org; s=arc20261015;
-	a=rsa-sha256; c=relaxed/relaxed; t=1795894931;
+	a=rsa-sha256; c=relaxed/relaxed; t=1795894933;
 	h=DMARC-Filter:X-Envelope-To:DKIM-Signature:X-Envelope-To:Received:
 	 X-Mizu-Trace-ID:X-Migadu-Flow:From:To:Cc:Subject:Date:Message-ID:
 	 X-Mailer:In-Reply-To:References:MIME-Version:
 	 Content-Transfer-Encoding;
-	bh=t2jR6JHgK1WZ0y/FBfxCHPJnW3Yf0ivZTRRaWEhbcVY=;
-	b=d3DBMxwk1jyY2JcNnSuuUyIWUGTUzemiU8xm9PMTCKBVBqJLi7jf8m5XGk8gaTUoC7Fj
-	 BkrezfzU6cK/RZwPF956ZEscdUS0ZdGyzdfX6ehzIpvD0L3EX68AubWF0oCI7YZPfKxsH
-	 MA5Bd0LkhiuvoOwFEkboso9GwhdMs5QndMYCnfFXsanF57tKHpAQgLV2YLNUsM9ktT1mk
-	 rZZXNgkJ/S7e6ExX0vE5t+0NHniKZMrf6XkyjBX0CNJbqhZ0QPUA864kJ6nNKCgOesn1D
-	 8yT0fw6dKQKfNn3hcoVZpQOw+7upfDOdyUQXp24B8JDczr/zofPIh919Ni3Bxa48MIw==
+	bh=bkxCIZVOlGlH1oNVzUX629cNySCgjVZ4/vU/+YCnoqM=;
+	b=sIlkYUa2qxK12AspiVbfLHjjN9yk+H7MZR8NJev64vlhsmtnu6x55YTt+IUCAAEGhZkL
+	 QJb2jb0/ee3kVNQUJcCY89Ip/aC02y9fQZpufLMLYTVOGMnhAL2jx+9fLo+BD7dwJTp1s
+	 Zx2Rr0DzMFMri3mLFQ+Y00BCxWsz0l1pmgPb/xVowDPejdqhBZozNvdS9vJ0hvTWzKXYU
+	 LuYQuFM1efrMA48fgiWNE/m5LFUADC3F9IArS/ShnmoZDC1Mvr7DMoNRkNdY4fsTSA8gE
+	 1V1kJp5kTdZW/Ih9ARXyt68tac6fMDoJUEjW9znMGBvm5Ql8Y/cMn0TE7dqyaXIyp5g==
 ARC-Authentication-Results: i=1; smtp.subspace.kernel.org; 
 	dmarc=pass header.from=justthetip.ca;
 	spf=pass smtp.mailfrom=justthetip.ca;
-	dkim=pass header.d=justthetip.ca header.i=@justthetip.ca header.a=rsa-sha256 header.s=key1 header.b=sygYHDqS;
-	arc=none smtp.remote-ip=95.215.58.87
-Received: from mta1.migadu.com (out-87.mta1.migadu.com [95.215.58.87])
+	dkim=pass header.d=justthetip.ca header.i=@justthetip.ca header.a=rsa-sha256 header.s=key1 header.b=e7qCj0hJ;
+	arc=none smtp.remote-ip=91.218.175.39
+Received: from mta0.migadu.com (out-39.mta0.migadu.com [91.218.175.39])
 	(using TLSv1.3 with cipher TLS_AES_128_GCM_SHA256 (128/128 bits)
 	 key-exchange X25519 server-signature ECDSA (prime256v1) server-digest SHA256)
 	(No client certificate requested)
-	by smtp.subspace.kernel.org (Postfix) with ESMTPS id 00DDE606A31C
-	for <linux-wireless@vger.kernel.org>; Sat, 28 Nov 2026 19:42:09 +0000 (UTC)
-DMARC-Filter: OpenDMARC Filter v1.4.2 smtp.subspace.kernel.org 00DDE606A31C
+	by smtp.subspace.kernel.org (Postfix) with ESMTPS id 29944606A329
+	for <linux-wireless@vger.kernel.org>; Sat, 28 Nov 2026 19:42:11 +0000 (UTC)
+DMARC-Filter: OpenDMARC Filter v1.4.2 smtp.subspace.kernel.org 29944606A329
 Authentication-Results: smtp.subspace.kernel.org; dmarc=pass (p=quarantine dis=none) header.from=justthetip.ca
 Authentication-Results: smtp.subspace.kernel.org; spf=pass smtp.mailfrom=justthetip.ca
 Authentication-Results: smtp.subspace.kernel.org;
-	dkim=pass (2048-bit key, unprotected) header.d=justthetip.ca header.i=@justthetip.ca header.a=rsa-sha256 header.s=key1 header.b=sygYHDqS
+	dkim=pass (2048-bit key, unprotected) header.d=justthetip.ca header.i=@justthetip.ca header.a=rsa-sha256 header.s=key1 header.b=e7qCj0hJ
 X-Envelope-To: linux-wireless@vger.kernel.org
-DKIM-Signature: a=rsa-sha256; bh=+rK+Y0F429HEkcbGS6PvR5tqK+tF3MtdZxwAEVsgIjw=;
+DKIM-Signature: a=rsa-sha256; bh=o04tTOLnbPq4meHSZphWu667HlB3Vb4QOKsWShHrYkM=;
  c=simple/simple; d=justthetip.ca;
  h=from:to:subject:date:message-id:mime-version:content-type; s=key1;
- t=1795894928; v=1; x=1796499728;
- b=sygYHDqS93UOimLAWadmu+Vp/qqaQedyfmRe+LSav4NFL+Ptajb/W7xPFM2wU3Ej4yFLbbZG
- sJ/CrWrR3zS3qBaPPkV1NgkGdWTCquFUZMtMlui7KZwAYuIE+e0twl7+zrKFjWMwL9bv3Ey1s3t
- hLy1oJj/3uWXUOO+R9joySXgKZpYQ1JpSUN/TuK30zYvZM96LA5gmGE2wQtS7nKiz0jeXO+KzOI
- G7DHMNF3QgLGUvXwvxQQl1+aHsM9DdecR5Nt7o1xc2AyaW+GVYekXcOTzXyMafsnQ/qG+ntyjEC
- aXR0NiQR7En7zhq/STXb8VtuCT2vddUS+mXVMLgJP24qw==
+ t=1795894930; v=1; x=1796499730;
+ b=e7qCj0hJMIC8/AM90kZuT1VSXnyXstVcgLA7IZr3OXCmFcO9/0roBuh96C2dkIQucJlW0T1Z
+ 0yQitgVZC9LKGtWS6Q/T5Y1aFLxmGga94yfKKz9OrRbxAI4BtW5LeKpw0Yv7bjgnY2GPSUzFu6S
+ 5Xnc071o8xwzAirYGbhkgZ/67F6PlujygDAVWOPKQjprAguCKEtPZZwRGCT62zjIVrpTL8uxio2
+ fI/PtB6TOELMLqtKzoDHFf7KCradRflI6d381PXaNMzAisNPIjFZ2/RDmSz8hW2G6ZZtnIta4U5
+ j6GTI5FOb3KlCrDKoXbKWFz2S8KEaY6BaIrrUUjQaBmkw==
 X-Envelope-To: linux-wireless@vger.kernel.org
-Received: by smtp.migadu.com with ESMTPS id c5c5445795f35a85;
-	Sat, 28 Nov 2026 19:42:07 +0000
-X-Mizu-Trace-ID: c5c5445795f35a85
+Received: by smtp.migadu.com with ESMTPS id d45ae4c9c43b4525;
+	Sat, 28 Nov 2026 19:42:10 +0000
+X-Mizu-Trace-ID: d45ae4c9c43b4525
 X-Migadu-Flow: FLOW_OUT
 From: Devin Wittmayer <lucid_duck@justthetip.ca>
 To: Felix Fietkau <nbd@nbd.name>,
@@ -59,12 +59,13 @@ Cc: Shayne Chen <shayne.chen@mediatek.com>,
 	martin@rfdeck.de,
 	linux-wireless@vger.kernel.org,
 	linux-mediatek@lists.infradead.org
-Subject: [PATCH mt76-next 0/4] wifi: mt76: connac: honour more of radiotap for injected frames
-Date: Sat, 28 Nov 2026 12:41:52 -0700
-Message-ID: <20261128194156.112602-1-lucid_duck@justthetip.ca>
+Subject: [PATCH mt76-next 1/4] wifi: mt76: connac: honour an injected legacy rate
+Date: Sat, 28 Nov 2026 12:41:53 -0700
+Message-ID: <20261128194156.112602-2-lucid_duck@justthetip.ca>
 X-Mailer: git-send-email 2.56.1
-In-Reply-To: <20261104142737.186484-1-albecken@mtu.edu>
+In-Reply-To: <20261128194156.112602-1-lucid_duck@justthetip.ca>
 References: <20261104142737.186484-1-albecken@mtu.edu>
+ <20261128194156.112602-1-lucid_duck@justthetip.ca>
 X-Mailing-List: linux-wireless@vger.kernel.org
 List-Id: <linux-wireless.vger.kernel.org>
 List-Post: <mailto:linux-wireless@vger.kernel.org>
@@ -76,48 +77,52 @@ Precedence: list
 MIME-Version: 1.0
 Content-Transfer-Encoding: 8bit
 
-Aaron's v2 makes connac2 honour an injected HT or VHT rate. These four
-go on top of it.
+An injected frame that asks for a legacy rate still goes out at the
+basic rate, because only HT and VHT rates from radiotap are used.
 
-Patch 1 honours a legacy rate, and patch 2 short GI, LDPC and STBC.
-Patch 3 sends injected unicast data at its rate; today it never reaches
-the air on 5 GHz and goes out at 1 Mbit/s on 2.4 GHz. Patch 4 sends an
-injected no-ack unicast frame once, without the RTS that an MT7922 on a
-protected channel sends to an empty address.
+Look the rate up in the bitrate table of the frame's own band, the
+table mac80211 indexed when it parsed radiotap, so a legacy request is
+honoured on 2.4 GHz as well as 5 GHz.
 
-  tested on         MT7921AU over USB at both speeds, MT7922 over PCIe,
-                    on Felix's tree; not the MT7915 family, which shares
-                    this code, and not SDIO. Only injected frames change.
-  injected cells    78 of 79 per chip as asked, in each pass; VHT MCS 9
-                    at 20 MHz, which 802.11ac doesn't define for one
-                    stream, goes out as MCS 8
-  floods            every broadcast frame heard had short GI, LDPC and
-                    STBC; over 99.7% of unicast heard, none before
-  managed traffic   no change beyond run-to-run variation
-  active monitor    same results with my active monitor v2 [1] applied
+Key on the injected frame and its rate entry. mac80211's injected rate
+flag shares space with the tx status area, which is cleared before the
+descriptor is written.
 
-Not fixed here: on a protected channel, an MT7922 still sends that RTS
-before an injected unicast frame that wants an ack. Stock does the same
-for injected management frames.
+Signed-off-by: Devin Wittmayer <lucid_duck@justthetip.ca>
+---
+ .../wireless/mediatek/mt76/mt76_connac_mac.c  | 19 +++++++++++++++++++
+ 1 file changed, 19 insertions(+)
 
-Aaron's v2: https://lore.kernel.org/linux-wireless/20261104142737.186484-1-albecken@mtu.edu/
-[1] https://lore.kernel.org/linux-wireless/20261123152154.99634-1-lucid_duck@justthetip.ca/
-
-
-
-Devin Wittmayer (4):
-  wifi: mt76: connac: honour an injected legacy rate
-  wifi: mt76: connac: honour injected short GI, LDPC and STBC
-  wifi: mt76: connac: send an injected unicast frame at its injected
-    rate
-  wifi: mt76: connac: send an injected no-ack frame unprotected
-
- .../wireless/mediatek/mt76/mt76_connac_mac.c  | 52 ++++++++++++++++++-
- 1 file changed, 51 insertions(+), 1 deletion(-)
-
-
-base-commit: 87868333220b542ff6237c93abdca84c71337f59
-prerequisite-patch-id: a160a9f3f609e6118b1e2336b0faf074d186b036
+diff --git a/drivers/net/wireless/mediatek/mt76/mt76_connac_mac.c b/drivers/net/wireless/mediatek/mt76/mt76_connac_mac.c
+index 33c5fca45296..3d0596868f0d 100644
+--- a/drivers/net/wireless/mediatek/mt76/mt76_connac_mac.c
++++ b/drivers/net/wireless/mediatek/mt76/mt76_connac_mac.c
+@@ -636,6 +636,25 @@ void mt76_connac2_mac_write_txwi(struct mt76_dev *dev, __le32 *txwi,
+ 			       FIELD_PREP(MT_TX_RATE_IDX, mcs) |
+ 			       FIELD_PREP(MT_TX_RATE_NSS, nss);
+ 			val = MT_TXD6_FIXED_BW | FIELD_PREP(MT_TXD6_BW, bw);
++		} else if ((info->flags & IEEE80211_TX_CTL_INJECTED) &&
++			   info->control.rates[0].idx >= 0) {
++			/* An injected legacy rate indexes the bitrate table
++			 * of the band the frame goes out on; without one,
++			 * mac80211 has put its lowest rate here. The injected
++			 * rate flag cannot be used: it shares space with the
++			 * tx status area, which is cleared before this point.
++			 */
++			struct ieee80211_supported_band *sband;
++			int idx = info->control.rates[0].idx;
++
++			sband = mphy->hw->wiphy->bands[info->band];
++			if (sband && idx < sband->n_bitrates) {
++				u16 hw_value = sband->bitrates[idx].hw_value;
++
++				rate = FIELD_PREP(MT_TX_RATE_MODE, hw_value >> 8) |
++				       FIELD_PREP(MT_TX_RATE_IDX,
++						  hw_value & GENMASK(7, 0));
++			}
+ 		}
+ 
+ 		/* hardware won't add HTC for mgmt/ctrl frame */
 -- 
 2.56.1
 
