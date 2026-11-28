@@ -1,97 +1,88 @@
-Authentication-Results: smtp.subspace.kernel.org; arc=pass header.oldest-pass=0 smtp.remote-ip=74.125.82.176
-ARC-Seal: i=2; d=subspace.kernel.org; s=arc20261015; a=rsa-sha256; cv=pass;
-	t=1795842258;
-	b=rraPWdCuKXbGezlbjP7C5BihRWr3o/HdlupeKllYf0wrGOvvLhIMfUBAWG47ZS2AO6Tw
-	 vQ0qY+QFCXndYD2qh/AUDGQalX4R5BAOOpj/bS4LzMNv/xkEVebVmqTAIzxbwta8ZNaTV
-	 YAg+U3DurigGhv3O4sF46ugaFBoWlhS9WkKJJ5tYipveQWYmbaI8acgENyfVG+002zorW
-	 v2JXUgDaIRX9pzfzDe2WmbiD8B771FLVOeQROCxNDSW3VfTQ7CPLrebDBgREf+5VqaSVx
-	 3Oha80B2uuQaUO+bhF4Lz904ZGs7/a3WNfx87tFGhqgdd1umsFjYbhVWF15AYfc3Y/w==
-ARC-Message-Signature: i=2; d=subspace.kernel.org; s=arc20261015;
-	a=rsa-sha256; c=relaxed/relaxed; t=1795842258;
+Authentication-Results: smtp.subspace.kernel.org; arc=none smtp.remote-ip=74.125.82.170
+ARC-Seal: i=1; d=subspace.kernel.org; s=arc20261015; a=rsa-sha256; cv=none;
+	t=1795845301;
+	b=vQZ/RP/tU2mej22MbJnbglAYoLJHENAKGBdK0xBBoRlfJ2YLKX3EoDKyYB4UIoZDTRrK
+	 4/V1oxeX/7wpOOMdPBYiNLv4JQ0a0wjc6YwiXZS9wluliFX7CsDEa8Iidi2LDTUB+csVt
+	 kXZzBi5A8VMTjhV0vRdhzI0PuIKvpbRBIvMVrn2T5EOfGV+du7sGsm0AtjPBRMrL5cdAh
+	 OWXV61712V7qlIoGfgbIB051pL+/X6gB/C537RBU3pPJZAx1mQ7PMN+rG5P36tQyA9+Jb
+	 ne71YsfWZuBfpvHcOHFL/TNGxIEFkh+Ee/ptCQwD0G4fB2X6liJTD6kAwnP6Mk1FGnQ==
+ARC-Message-Signature: i=1; d=subspace.kernel.org; s=arc20261015;
+	a=rsa-sha256; c=relaxed/relaxed; t=1795845301;
 	h=DMARC-Filter:Received:DKIM-Signature:X-Google-DKIM-Signature:
-	 X-Forwarded-Encrypted:X-Gm-Message-State:X-Gm-Gg:X-Received:
-	 MIME-Version:From:Date:X-Gm-Features:Message-ID:Subject:To:Cc:
-	 Content-Type;
-	bh=IpDKMQHHhzieIgQFhuqIwkPdgGcBXizCVrKmKXueCuk=;
-	b=r5oDexSvanM0X06wjA8yi+6j93tutUBpnEKELogS97dQFVzVo/8yfqEPkFhDkTl/GZ62
-	 icXU924zR0shS5zW9u5wHli5vG8D8nnpigYXbnJQYzvCPfkBy26tC6OPFa231JiR1NuGl
-	 n1yt5xRe3f4GiBtl37VMIIF4ERWQQB/S2FTq3833YOPK1SJsVqfB4KQwW3P+wIFjzZH79
-	 1AllJLRZ/rB/NecAPiDcyROxjxyCOmW+irMsn+/TGXoR/uD7LWsXPSTtRb+XZL7++aerJ
-	 4sKoiUbLOPaqoT5MWmOyqHqG+4uUGe7JCtCdzEdVsfjyFPzsBY451DooNYeg4gcY/Ow==
-ARC-Authentication-Results: i=2; smtp.subspace.kernel.org; 
+	 X-Gm-Message-State:X-Gm-Gg:X-Received:Received:From:To:Cc:Subject:
+	 Date:Message-Id:X-Mailer:MIME-Version:Content-Transfer-Encoding;
+	bh=1EqExbrtxMsw/TI9K+fiwyYzoiBKNpjcgYWFgYIhL4A=;
+	b=TMrhqEoFtUBqMJLB4R0oEXk8CGbQCwIJ89uDD5lWVx7rtilQwTva1GeJH3rUvf0WmGsJ
+	 JnpCqWWs3ckW++sQMpV11Y6Jqq3B/mc44rfQ2WrVZUe8mkqx3DboVFPWlyiar60bxPSJJ
+	 9r/yHBKo5Big//wnmEZYKROd2KGnwbWbUiVOxNERRehdrZE7oyw27bLvoYGlypUrTBpmO
+	 AvhJk0ZKk8IPto2ygOMY4qy7IE9a3xxGdMHYcfFd0kuhye6CNQs7xZFtZqEvN4v6Y3vxv
+	 Suy6Gml8Rct/AXv8JJqiYwgZG3AOaC/OIFN75Tg9XLxw8UORW1UI2JNC3hdK4uGX1/A==
+ARC-Authentication-Results: i=1; smtp.subspace.kernel.org; 
 	dmarc=pass header.from=gmail.com;
 	spf=pass smtp.mailfrom=gmail.com;
-	dkim=pass header.d=gmail.com header.i=@gmail.com header.a=rsa-sha256 header.s=20260707 header.b=CHEjTKwF;
-	arc=pass header.oldest-pass=0 smtp.remote-ip=74.125.82.176
-Received: from mail-dy1-f176.google.com (mail-dy1-f176.google.com [74.125.82.176])
+	dkim=pass header.d=gmail.com header.i=@gmail.com header.a=rsa-sha256 header.s=20260707 header.b=jFACcSzY;
+	arc=none smtp.remote-ip=74.125.82.170
+Received: from mail-dy1-f170.google.com (mail-dy1-f170.google.com [74.125.82.170])
 	(using TLSv1.3 with cipher TLS_AES_128_GCM_SHA256 (128/128 bits)
 	 key-exchange X25519 server-signature ECDSA (prime256v1) server-digest SHA256)
 	(No client certificate requested)
-	by smtp.subspace.kernel.org (Postfix) with ESMTPS id 0148E606A31C
-	for <linux-wireless@vger.kernel.org>; Sat, 28 Nov 2026 05:04:17 +0000 (UTC)
-DMARC-Filter: OpenDMARC Filter v1.4.2 smtp.subspace.kernel.org 0148E606A31C
+	by smtp.subspace.kernel.org (Postfix) with ESMTPS id BD732606A31E
+	for <linux-wireless@vger.kernel.org>; Sat, 28 Nov 2026 05:55:00 +0000 (UTC)
+DMARC-Filter: OpenDMARC Filter v1.4.2 smtp.subspace.kernel.org BD732606A31E
 Authentication-Results: smtp.subspace.kernel.org; dmarc=pass (p=none dis=none) header.from=gmail.com
 Authentication-Results: smtp.subspace.kernel.org; spf=pass smtp.mailfrom=gmail.com
 Authentication-Results: smtp.subspace.kernel.org;
-	dkim=pass (2048-bit key, unprotected) header.d=gmail.com header.i=@gmail.com header.a=rsa-sha256 header.s=20260707 header.b=CHEjTKwF
-Received: by mail-dy1-f176.google.com with SMTP id 5a478bee46e88-386ab9ab619so12305799eec.1
-        for <linux-wireless@vger.kernel.org>; Fri, 27 Nov 2026 21:04:17 -0800 (PST)
-ARC-Seal: i=1; a=rsa-sha256; t=1795842257; cv=none;
-        d=google.com; s=arc-20260327;
-        b=VbYLyN8XAWJDLi6O+KN+p8A98MQnZGAOdYd+dXFJhexWeXVflqtx6NcHk4GTDqPejL
-         MD0zwJRLKyBlFYe30duwz8CqNrTJGKTJkOza1QjOo7U2xB8W9Wn/9SFokD74k5tHMfPs
-         Km3USUWZckTuBB35/g6rzZGfsvnhUI2FJ7uHL8NEC9x4emG2Owr2W0dl9xNLHof3+hLm
-         AP/njMBOIvSp7Ml/mWgam4WMF6NmbEyDQdvPhtHaSQpjeC63ypx3vhDNvUwN0VCTRiPY
-         ZoVoHmHt8lWvB9+m0ovikr4l9hAttwdvu2U19XFc9xedVJBxIjyFchdwDLHMEN4/715k
-         X6kA==
-ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=google.com; s=arc-20260327;
-        h=cc:to:subject:message-id:date:from:mime-version:dkim-signature;
-        bh=IpDKMQHHhzieIgQFhuqIwkPdgGcBXizCVrKmKXueCuk=;
-        fh=NTjVzDhIn6f5tSO7kdp2EktMf7zB3hAdElcR4426/bg=;
-        b=CZ+S8eBbuu2/QaV1HsJCkDLW9NdMZvyQoKIlLUL9JSAa5ZpwdUYpydIgIKEpBcrgXJ
-         gacTJ+7RvjGG5iOMDITKCBHZsevoXjl2C0xlRGbN926c6YxpUgK1mSce2v56dnkIV2oV
-         9p0QWwrCsfdguZYoYjCWmOTOua9p2ZSmEmxIa5AdQ43NEcBEXe2rAQQUWDIvGazmTbz4
-         AP9f9si6AhjUnf/sBvhJ/pDPB32PkmbsryXHaWHVbg8kwYZwTqjFCkY157PXd27Aavba
-         hRv1SlsLw5M9QkRQu+UoCo2NfWdr+KYhWrogdOksfzGnngclJv2DR1ikVCHFQgYXSgz2
-         Btiw==;
-        darn=vger.kernel.org
-ARC-Authentication-Results: i=1; mx.google.com; arc=none
+	dkim=pass (2048-bit key) header.d=gmail.com header.i=@gmail.com header.a=rsa-sha256 header.s=20260707 header.b=jFACcSzY
+Received: by mail-dy1-f170.google.com with SMTP id 5a478bee46e88-385d8a00598so13861815eec.1
+        for <linux-wireless@vger.kernel.org>; Fri, 27 Nov 2026 21:55:00 -0800 (PST)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=gmail.com; s=20260707; t=1795842257; x=1796447057; darn=vger.kernel.org;
-        h=content-type:cc:to:subject:message-id:date:from:mime-version:from
-         :to:cc:subject:date:message-id:reply-to:content-type;
-        bh=IpDKMQHHhzieIgQFhuqIwkPdgGcBXizCVrKmKXueCuk=;
-        b=CHEjTKwFdRP0JEoNMbyhYoqasgHdzWH4VDS9l0IPKKZUg6DhViC/MopbYXdJvQlloJ
-         7gl4zIfq7W5lpsAHxosVBGlgT4AyQBtj7gD839P7+3f03iG5fkbjUELr2h0uI4TSZOaA
-         6T4SwnOLuQZv+rUPthbixvaplL+Wt306Z/3cL5b5jF9cnvsft0skt0ZDKqX9sZk0G4pf
-         A0MF3XZfOw0xCJieWOm76xHEO20xSu437UdOhG6JcqR5pSBVpgG36ONBYtQKYxloJGW5
-         CFaad8jIozjWXkNuNGEEh1hiYUiJ/UzVYCPoy7Bas8fxijJALhxpxcF/2Ri3OYXi/R+M
-         kZsQ==
+        d=gmail.com; s=20260707; t=1795845300; x=1796450100; darn=vger.kernel.org;
+        h=content-transfer-encoding:mime-version:message-id:date:subject:cc
+         :to:from:from:to:cc:subject:date:message-id:reply-to:content-type;
+        bh=1EqExbrtxMsw/TI9K+fiwyYzoiBKNpjcgYWFgYIhL4A=;
+        b=jFACcSzYNAoXEP72noN2xPKpfBSEm7l62wVmFgVFxvdmPSJvVT1rv8uv95piW6k5fw
+         bBytlYwOJnd4X5hB2/pKpAFc9z7pBdjKpG3O/uwy0uQRmuUZOFzKxOHIDyk9L51TL/7/
+         kN8JovSbeNQskTUdExSDenUezHjjujoPyb00tt32PnHT5FmL7W4QKgfDRfFhvpEjy7j7
+         3Gqh0xwYf4GZltsis8jyLHOnRaBZTXcXqHak4QSUX0Rk5oRykPqLDqSgMVUvohjLcxv+
+         AhAEHsyChOFLMQNf3Gk90+f9CmRQGyt+e9E/kACh9qrBMGmSai0i0WxCNuK1VPb4yF8C
+         3/eA==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=1e100.net; s=20260707; t=1795842257; x=1796447057;
-        h=content-type:cc:to:subject:message-id:date:from:mime-version
-         :x-gm-gg:x-gm-message-state:from:to:cc:subject:date:message-id
-         :reply-to:content-type;
-        bh=IpDKMQHHhzieIgQFhuqIwkPdgGcBXizCVrKmKXueCuk=;
-        b=Cf08sG4xRo3xlkHIWLJSqafyG5ZaWXvS8hfND5SuBvSQCXh+3e96G+iXGjSKKIZpVk
-         eHwN+TcBhTVSqpcavViltHwvgKnNGWTD6/+kRa1499s2sBzZ8ZwgRZbrl793sA8jS0H1
-         30BXQBLDgGGEHvocb+U6oYXDDH46uLlQH9BKshVtTuAelQz4m5niEccPf7Bs1VlNvVgy
-         T57aZYnGXinOJ6lGKhy8rTHhitaJHA/bFINzww/N7gQgRU8SMl4ZwYSD6L/VeZV0x7HK
-         vjV4dzAaS7+lMnyTNDBIK8XE+j0aAL+5aTEiQQNegQYpPssQW+DFqfK/WkyL1aLzSL07
-         DCbQ==
-X-Forwarded-Encrypted: i=1; AL+hErFqHreiY4RDyFaZq+DHvCDQE3D1o2EEUUg5XbI7DBoNJHn/t6eANite6EVEGWx/BsaSlYAVvxI5mRczAHaMdA==@vger.kernel.org
-X-Gm-Message-State: APuU4Z8ERlrrTsGOBNWjzsFNyAFxOK1JwEui2bvD9AwM3N66NC/zVTht
-	xOSzUIHjiN+SK5nQ6JNPqOQYvOGHx+G8crr30yY8bn5BgAHANOeeOfqlLviGAP28yHSt/UYp/vM
-	DFL54lpV0J9wYw2cKegZ68T3ma6zqBo4=
-X-Gm-Gg: AZFdTZeqocYH/i3IHh0bdAdP79be/YPANXad8ZTs8EZ+o96Mm3AApGkBn5Ft7CHHcR1
-	Gt5dmn+72Y8kqa+vgkbn1WmZfcAm+gtlkiJQC7D9DdyAJw+gLv3AyZm4CrWHkc/H0BNsjAk9l65
-	3/XZhzrjzeAaOq6VPCYi/1fjrgyWPHcrOXBZUu8Nq5oESZIsJ0aNp6UCuFfdnxFxDC+6WcOJiu2
-	+RIxalRpsirSzeFWIx22lqeP/GzlidJDRgwMN+JNlQXgsb+Z6o6UAV2SNelhAlrkSTvH8aMNl1J
-	TVysZACXVFHKKlkMZW40ckwan7ElbQHTsXUxkvmETn0+yZ0i0h0b4BY+NZmnV4fjJ4jz6RibDXw
-	gfuDgHwkx1MLvMqkbreLAeLQIHaU4VqV/0kE=
-X-Received: by 2002:a05:693c:60d4:b0:369:fe81:a575 with SMTP id
- 5a478bee46e88-3857111f203mr32029115eec.35.1795842256924; Fri, 27 Nov 2026
- 21:04:16 -0800 (PST)
+        d=1e100.net; s=20260707; t=1795845300; x=1796450100;
+        h=content-transfer-encoding:mime-version:message-id:date:subject:cc
+         :to:from:x-gm-gg:x-gm-message-state:from:to:cc:subject:date
+         :message-id:reply-to:content-type;
+        bh=1EqExbrtxMsw/TI9K+fiwyYzoiBKNpjcgYWFgYIhL4A=;
+        b=mDEdO052wIATauQjItHPIKv1jLjJTrywlDhP4az1QO9ukt0P/E5ween8hWYtLm0MMc
+         cvEN02G1n+fui90Ktvk+JK+v2+IZ1fZiYDBtrwEaJMxWqB3z73sfeRxo0q/KExp1RkbC
+         AuKm+gi1hpfWAyjPrOxdTv4GR9re54Wd18ar41lmx7Drru77s7mLaibr3gXk0J1pzRh9
+         oJAGV3jpjcvokRxmFMRDBfXqsLWfv4AWTPpyJQIcBq6k/NO+HTMlExyvqUg7NNUBtrD3
+         MISViSzsmZGog8Js1DnME4oy3itu36q1YRgkZ6SXCBqjQBoSgY+Ax+gZWTIVSbvn76fl
+         1FVg==
+X-Gm-Message-State: APuU4Z++OV7tMeIJVkgH6XdZ+j0BdQd40fon4FaRFuNCwtAUdGHkTk5V
+	Zxf3vd4BzbvZrrrDqNhqq5sLUFZSlNG0vrEYGZLhlOmpxOdqMpgzrS2pulCUEA==
+X-Gm-Gg: AZFdTZfo6sQoRP1+98vBqirp0lCpLx/WGjdJnPIWQXtrPd8WtPnpRrGPK+YRk5Xqd09
+	6zy+vuXKtHzDAjb+3KSjtyY6gnoJj6xzmMWVqN9tVuulywIGKbUJcIuDMhPb7IsUb7qrDhkxGL2
+	LmepQ6LZfZbSNU6fF6gMtAtZPmdGaNwlFOOMsgPgEkndQgLRQSbi1i2csYyGc0+duiQpFehJqjp
+	0Ykxu6i84V4iZC7pqpX/Od0k5YMdDf0SYWL/Y6cSDwXpeWZZobfBDr7G39RYRtvwdTRiilXfTWj
+	Y/c3ROjpmgzXz4ivW2PKHWbkaafwCdEJc66uS/1dd3eaHfXLPKwQdPn+CW4oB0D79bEpOVO8CaV
+	TTDnNwsevqLMUf27eW/Eg7qchl4T+Wm1D58RLr5QDkbFA5eOXQotAEAXKv/Dey79p1fRapwJD5p
+	sM2JPONrbA3bGFzYc666fc+jswX97DuuHmJzSjlNawil2DlcdZW/dwzZQEdugi75t/HqFYhiV1B
+	wjsYe9OxTCzjARxhcwY/179AZ0p4jd4khZiUti7MnG95/dgSI5w4UaH/45bMBp7O5nJPiuP/v1T
+	8hD+PKt7Dr2z8y7I4MrMhvJojkD+Lowf/+tfrx9zzzajvBeVPloilQ==
+X-Received: by 2002:a05:701b:280c:b0:1b5:6441:a323 with SMTP id a92af1059eb24-1b56441a60fmr16972045c88.9.1795845299651;
+        Fri, 27 Nov 2026 21:54:59 -0800 (PST)
+Received: from csl-conti-dell7858.ntu.edu.sg ([155.69.195.57])
+        by smtp.gmail.com with ESMTPSA id a92af1059eb24-1b56ef9fd16sm54160301c88.4.2026.11.27.21.54.58
+        (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
+        Fri, 27 Nov 2026 21:54:59 -0800 (PST)
+From: Maoyi Xie <maoyixie.tju@gmail.com>
+To: Ping-Ke Shih <pkshih@realtek.com>
+Cc: linux-wireless@vger.kernel.org,
+	Bitterblue Smith <rtl8821cerfe2@gmail.com>
+Subject: [PATCH rtw-next] wifi: rtw88: usb: reject oversized RX packets
+Date: Sat, 28 Nov 2026 13:54:54 +0800
+Message-Id: <20261128055454.4121906-1-maoyixie.tju@gmail.com>
+X-Mailer: git-send-email 2.34.1
 X-Mailing-List: linux-wireless@vger.kernel.org
 List-Id: <linux-wireless.vger.kernel.org>
 List-Post: <mailto:linux-wireless@vger.kernel.org>
@@ -101,59 +92,49 @@ List-Unsubscribe: <mailto:linux-wireless+unsubscribe@vger.kernel.org>
 List-Owner: <mailto:linux-wireless+owner@vger.kernel.org>
 Precedence: list
 MIME-Version: 1.0
-From: Henry Zhang <henryzhang62@gmail.com>
-Date: Fri, 27 Nov 2026 21:04:06 -0800
-X-Gm-Features: Aa3M54pVvds-jmLO6mxXdGpcGHxdZ2l9Fkh6Dz6YWyJMQs1TTPKg3dgDtxduVG8
-Message-ID: <CANTW0ypcrw2+BAqVKWQ6BOY2eUDK+D47aXuO1zuwZ1VaYwyvVw@mail.gmail.com>
-Subject: [STABLE REQUEST] wifi: ath11k: signal strength fixes for 6.6.y and 6.1.y
-To: stable@vger.kernel.org
-Cc: jjohnson@kernel.org, quic_lingbok@quicinc.com, 
-	linux-wireless@vger.kernel.org, ath11k@lists.infradead.org
-Content-Type: text/plain; charset="UTF-8"
+Content-Transfer-Encoding: 8bit
 
-Hi,
+rtw_usb_rx_handler() checks pkt_len + pkt_offset of each aggregated RX
+packet only against max_skb_len. If a corrupted descriptor claims more
+than the bytes left in the URB, skb_put_data() reads up to about 11 KB
+past the received data.
 
-Please consider these two mainline commits for 6.6.y and 6.1.y:
+Stop the walk when a packet does not fit in the rest of the URB.
 
-  94f228ac4f5b ("wifi: ath11k: fix ack signal strength calculation")
-  aadeee47e9d7 ("wifi: ath11k: modify the calculation of the average
-                 signal strength in station mode")
+Found with a CodeQL-based static analysis tool that we are developing.
+Reproduced in a userspace harness under AddressSanitizer. Not tested on
+hardware.
 
-Both are in mainline since v6.11 and in 6.12.y, but not in 6.6.y or
-6.1.y, which still add ATH11K_DEFAULT_NOISE_FLOOR to the ack signal and
-to the average signal unconditionally.
+Fixes: e9048e2935f7 ("wifi: rtw88: usb: Copy instead of cloning the RX skb")
+Cc: stable@vger.kernel.org
+Signed-off-by: Maoyi Xie <maoyixie.tju@gmail.com>
+---
+I used an LLM to help write the harness and this patch.
 
-On firmware that reports the signal as a signed dBm byte
-(WMI_TLV_SERVICE_HW_DB2DBM_CONVERSION_SUPPORT), these paths treat that
-byte as unsigned and still add the -95 dB noise floor, so
-"iw dev <wlan> station dump" reports impossible positive values while
-"signal" itself is right. Seen on a QCA6390 (fw 0x101c06cc) with an
-Ubuntu 6.8 kernel, which has the same affected calculations as 6.6.y:
+Commit 83ca360e8528 ("wifi: rtw88: sdio: reject oversized RX packets")
+added the same check. The rtw89 USB RX handler also drops such a packet.
 
-    signal:          -47 [-50, -51] dBm
-    signal avg:      109 dBm
-    last ack signal: 103 dBm
-    avg ack signal:  47 dBm
+ drivers/net/wireless/realtek/rtw88/usb.c | 7 +++++++
+ 1 file changed, 7 insertions(+)
 
-109 is 204 - 95, where 204 (0xcc) is -52 dBm, and 103 is 198 - 95,
-where 198 (0xc6) is -58 dBm. Userspace that reads these values over
-nl80211 gets wrong numbers. No connectivity problem was seen.
+diff --git a/drivers/net/wireless/realtek/rtw88/usb.c b/drivers/net/wireless/realtek/rtw88/usb.c
+index 7b1fc7ef10a0..ef2a0686b7cf 100644
+--- a/drivers/net/wireless/realtek/rtw88/usb.c
++++ b/drivers/net/wireless/realtek/rtw88/usb.c
+@@ -718,6 +718,13 @@ static void rtw_usb_rx_handler(struct work_struct *work)
+ 				goto skip_packet;
+ 			}
+ 
++			if (unlikely(rx_desc + skb_len > rx_skb->data + rx_skb->len)) {
++				rtw_dbg(rtwdev, RTW_DBG_USB,
++					"oversized RX packet: %u, %td bytes left\n",
++					skb_len, rx_skb->data + rx_skb->len - rx_desc);
++				break;
++			}
++
+ 			skb = alloc_skb(skb_len, GFP_ATOMIC);
+ 			if (!skb) {
+ 				rtw_dbg(rtwdev, RTW_DBG_USB,
+-- 
+2.34.1
 
-The average signal code was added by b205ce4c266c ("ath11k: support
-avg signal in station dump"), so 5.15.y does not have that part; I
-have not checked 5.15.y for the ack signal part.
-
-- 6.6.y: both commits apply as-is.
-- 6.1.y: aadeee47e9d7 applies as-is. 94f228ac4f5b conflicts only in
-  the Copyright line of dp_tx.h; I can send a backport without that
-  line if that helps.
-
-Testing: upstream, 94f228ac4f5b was tested on WCN6855 and QCN9074, and
-aadeee47e9d7 on WCN6855. I applied both to the Ubuntu 6.8.0-138 ath11k
-sources and built the modules against the 6.8.0-138 headers without
-warnings (BTF generation was skipped, as vmlinux was not available).
-I have not run them on the QCA6390, and I have not built 6.6.y or
-6.1.y with them.
-
-Thanks,
-Henry Zhang
