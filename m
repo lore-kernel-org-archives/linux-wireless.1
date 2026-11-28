@@ -1,57 +1,96 @@
-Authentication-Results: smtp.subspace.kernel.org; arc=none smtp.remote-ip=79.135.106.99
+Authentication-Results: smtp.subspace.kernel.org; arc=none smtp.remote-ip=209.85.218.52
 ARC-Seal: i=1; d=subspace.kernel.org; s=arc20261015; a=rsa-sha256; cv=none;
-	t=1795886655;
-	b=Yw6ERq3mbHf3Z6cgqHCMOVyalj5kuNoUEutRlwA9pYZruYXSfnNrIZKm5bXY7G4wfYb3
-	 n7wze/YBBs577z7D8wxAcHw740aGBXCxFBOQ4/MK9HKU59dp2MwQCwL/4jYeyUAeYR6gy
-	 GxehC699C0wJNsRVAPo9G5w14sg8/M55tgM3qPGXnZq9ZDtp88xmaeOWtY08vbxqS6blQ
-	 OixfSCiTE16nkjEgUWlxPHU94EIZdUORrd277jSoP4phgfdmoDJvwRxzxtWTqE10qUFQn
-	 zXovmP2R6tZR6lPJCpSgrl2ELhSJOO0UOwF0w1hGk2qIIMiC61GTrjvAH4m0t068mXQ==
+	t=1795886907;
+	b=guaVW10rOdXbMo1q4QxJseJSwVnZ9ssmYbI7L2M+psPpPCj1y0zJlMe3YwiHBytEzikQ
+	 x8PURT9LXuvfmGo+XwIQgdXg1OPMb2mhXDKH2CKuN8md+yDKS8tLuQMH3ITEPMbSjIKVi
+	 S2k8sPVk00rk7lteFLk43iC4OzTDB+fl8gPWCmoS6QnQ3EKGlO84NLK71IhQt3nQWLn9E
+	 RdAIjrjdzzwi9ChXTe8pUV0ly6d0Q0TVd72cLEbER3tnVgl293FvlHUrQgzhlxhgU+8Ml
+	 Pnm+Px5TtsqmQE/IVaBSqdPZJc2WKM2hlFII0ba5lnmDZMdC5XN4nwNGyzoo46Xi7Rg==
 ARC-Message-Signature: i=1; d=subspace.kernel.org; s=arc20261015;
-	a=rsa-sha256; c=relaxed/relaxed; t=1795886655;
-	h=DMARC-Filter:DKIM-Signature:Date:To:From:Cc:Subject:Message-ID:
-	 Feedback-ID:X-Pm-Message-ID:MIME-Version:Content-Type:
+	a=rsa-sha256; c=relaxed/relaxed; t=1795886907;
+	h=DMARC-Filter:Received:DKIM-Signature:X-Google-DKIM-Signature:
+	 X-Forwarded-Encrypted:X-Gm-Message-State:X-Gm-Gg:X-Received:Received:
+	 From:To:Cc:Subject:Date:Message-ID:X-Mailer:MIME-Version:
 	 Content-Transfer-Encoding;
-	bh=4M4s9FaAHL9MRuVIk3QpPucCuF5Ws6xTP4IZaI5KZ+w=;
-	b=DT1gTdGMezN8NIWGDv44pw125FHaoe15NlkKDau2SrbLZ3endDp7ZYOUeU6xM8iVZMP+
-	 tocv5R0EwRybc4bMQ0DE73s7Tz0KNbKjWTbUrm4h23V9DH7hIghbQ1Aj8Zab7c84R8Nk7
-	 HuaopERDMHwO1XXv0zOoCJpkC+K2F5wJ+nT0oYmZ5wwzXMuGFgzwKXXVU0m431MjDu2GR
-	 Dwq521dAQ4nck/u8hYmtAOnGLpMUEq+xDYkZSLKDt3DgROHyAkiNV6QoEJIT3H9IhgSYj
-	 ipTbCImuzDRpaX0BMEH23w+opfbGuEXffj5rIrLsjncQtCEhGnMkZKquZFxhQQ3WDrQ==
+	bh=O080aChkvNamwQRpvXuVq5oFlnHhJNHxbRaLnIM0Xus=;
+	b=RkgsT/mkAOwWrvG0WXzJ8ib7WolKmm1PmO8aBTaW2SSiKoKxnYKIJzzyjBc5EBKd9AO9
+	 GUQSxap7AJntRsh99V201ydfTlc0BMc60RdhPGqZpaQMJneWGNI5VtbWiOmZIkvi8ylA+
+	 WCr5FK4NaOAwU3+2AHTeIl+pN8qKB+DqB/dsR/cF9cmzKhT7R5ahAtFZY9Waaz2LkH2fz
+	 dgMDeYpb2ccsvYFhPfgmIkCTx5DYO/Dy2AQVbGg2V9fuxwXTOdBVq8b/cnKWAWgrUFydk
+	 rHUOP8D8bdEYlFCCnTDLE1qGXl24PGCAJzl+sTJ8clAQfxqQvbxgsj2nOApDoUbzsig==
 ARC-Authentication-Results: i=1; smtp.subspace.kernel.org; 
-	dmarc=pass header.from=proton.me;
-	spf=pass smtp.mailfrom=proton.me;
-	dkim=pass header.d=proton.me header.i=@proton.me header.a=rsa-sha256 header.s=protonmail2 header.b=quWw3TBT;
-	arc=none smtp.remote-ip=79.135.106.99
-Received: from mail-10699.protonmail.ch (mail-10699.protonmail.ch [79.135.106.99])
-	(using TLSv1.3 with cipher TLS_AES_256_GCM_SHA384 (256/256 bits)
+	dmarc=pass header.from=bairaktaris.de;
+	spf=pass smtp.mailfrom=bairaktaris.de;
+	dkim=pass header.d=bairaktaris.de header.i=@bairaktaris.de header.a=rsa-sha256 header.s=google header.b=ylRIPEyH;
+	arc=none smtp.remote-ip=209.85.218.52
+Received: from mail-ej1-f52.google.com (mail-ej1-f52.google.com [209.85.218.52])
+	(using TLSv1.3 with cipher TLS_AES_128_GCM_SHA256 (128/128 bits)
 	 key-exchange X25519 server-signature ECDSA (prime256v1) server-digest SHA256)
 	(No client certificate requested)
-	by smtp.subspace.kernel.org (Postfix) with ESMTPS id DAC90606A31C
-	for <linux-wireless@vger.kernel.org>; Sat, 28 Nov 2026 17:24:14 +0000 (UTC)
-DMARC-Filter: OpenDMARC Filter v1.4.2 smtp.subspace.kernel.org DAC90606A31C
-Authentication-Results: smtp.subspace.kernel.org; dmarc=pass (p=quarantine dis=none) header.from=proton.me
-Authentication-Results: smtp.subspace.kernel.org; spf=pass smtp.mailfrom=proton.me
+	by smtp.subspace.kernel.org (Postfix) with ESMTPS id BB7BA606A323
+	for <linux-wireless@vger.kernel.org>; Sat, 28 Nov 2026 17:28:26 +0000 (UTC)
+DMARC-Filter: OpenDMARC Filter v1.4.2 smtp.subspace.kernel.org BB7BA606A323
+Authentication-Results: smtp.subspace.kernel.org; dmarc=pass (p=reject dis=none) header.from=bairaktaris.de
+Authentication-Results: smtp.subspace.kernel.org; spf=pass smtp.mailfrom=bairaktaris.de
 Authentication-Results: smtp.subspace.kernel.org;
-	dkim=pass (2048-bit key, unprotected) header.d=proton.me header.i=@proton.me header.a=rsa-sha256 header.s=protonmail2 header.b=quWw3TBT
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=proton.me;
-	s=protonmail2; t=1795886652; x=1796145852;
-	bh=4M4s9FaAHL9MRuVIk3QpPucCuF5Ws6xTP4IZaI5KZ+w=;
-	h=Date:To:From:Cc:Subject:Message-ID:Feedback-ID:From:To:Cc:Date:
-	 Subject:Reply-To:Feedback-ID:Message-ID:BIMI-Selector;
-	b=quWw3TBT8RLgdbZOOy8QIF/1iM0YPwuWwRMMQddMof0BcYEtexVc8vSc4GRL7DH9J
-	 wpFj94GPP5/Ga9JwumahJewsDWr/auXFWmqZX6QoP4xx8qWo5bcpWcUZ27UGJDbxzn
-	 TWfdx71lQYDbodbqkl3Nslwxalp2WdUvjR5JDWCQNBZkl1nM2cxoKMSkPugGEbPFnk
-	 l/fH7RFk+w2StAR14jbNPT3+o4nORgVw7Pgm9VufYAwCs9OKqV5wYkbZqBPZUKduwI
-	 U58Vi3dW2tSTFjJmFiBoEuw8/keSvJyhUhe7Cq9vaHadAICfa8GPRnWthrOa6jzbpY
-	 BcySfwU5TmcnQ==
-Date: Sat, 28 Nov 2026 17:24:09 +0000
-To: "linux-wireless@vger.kernel.org" <linux-wireless@vger.kernel.org>
-From: Janderland <janderland@proton.me>
-Cc: "pkshih@realtek.com" <pkshih@realtek.com>
-Subject: wifi: rtw89: 8852ce: firmware crash with v0.27.138.1
-Message-ID: <aMbkCjwx2a_a2S2WTeeGSBqtBdcoMBQllfpHQHMj8uNfjhmnLdZWoK8cNQqvMtoOLaUmMfpfa7-kRZmlX7-oE1gF93yUNDgs6-QKPE2AVqM=@proton.me>
-Feedback-ID: 103273240:user:proton
-X-Pm-Message-ID: da0149a5dd9aacdfbd9def58c597de2f7009c85c
+	dkim=pass (2048-bit key) header.d=bairaktaris.de header.i=@bairaktaris.de header.a=rsa-sha256 header.s=google header.b=ylRIPEyH
+Received: by mail-ej1-f52.google.com with SMTP id a640c23a62f3a-c4cac7a7d3cso1344685866b.3
+        for <linux-wireless@vger.kernel.org>; Sat, 28 Nov 2026 09:28:26 -0800 (PST)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+        d=bairaktaris.de; s=google; t=1795886905; x=1796491705; darn=vger.kernel.org;
+        h=content-transfer-encoding:mime-version:message-id:date:subject:cc
+         :to:from:from:to:cc:subject:date:message-id:reply-to:content-type;
+        bh=O080aChkvNamwQRpvXuVq5oFlnHhJNHxbRaLnIM0Xus=;
+        b=ylRIPEyHAyGcc8MbQPr3Qwm1eo4UzZNOYmxDQDQaTHmomhKp+T5wtwmAjvIgN9fzin
+         a4A3J/MnaUs5CC5rfc0bFMGo2e1P/67ETvrMhM6tk2QYyffSR20nA23TQUN2a2ZuOLYj
+         +kPWD7CM3o3OmneGaZSuz5Jjw31YXwsYKz9412HxxAvJzsbWMVxf7askXqt+hnEMfZ64
+         RuLmKe1hZc7LcsEUsk4y9J3I3ixMMOlXmt1FLUb2D8gXZRAgDWV6BmN1Ky6oGZv/0R+C
+         ubiMMGjol3s6AFxKOzh7yl5wZokKUq1HV1V6BECNE62QkjpQnizC2ZMun8xxkcMu3fVi
+         OICQ==
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+        d=1e100.net; s=20260707; t=1795886905; x=1796491705;
+        h=content-transfer-encoding:mime-version:message-id:date:subject:cc
+         :to:from:x-gm-gg:x-gm-message-state:from:to:cc:subject:date
+         :message-id:reply-to:content-type;
+        bh=O080aChkvNamwQRpvXuVq5oFlnHhJNHxbRaLnIM0Xus=;
+        b=2Eno0rmTt5aun5Oz1Sandes0yeY5PE7s7+g/6ge8FqY+2eYtavWBgsgEmkxAWumeto
+         CiQOJBh464oNOpXITLMjpB3whztVZp3okCls9UEx9pCrDnseTxQEJjkfN9u4o8tT/upL
+         ekqduCydC8PrDZHtCsZjMSkgt0ugSxZzQaBCrc5gQDyseztwx3Qr7+L0eYmcW3UE6tCL
+         XtFVlsDGJfhUB/Q3m6mBaH+oYI3vnFwS+z4gYjMuYO3mtEZneEFm11yb6UrsnIli0vQM
+         hGxNSvCNS02iuVxVafwklnPvSr+W3SAlVeknCI95sIha6m2goS0mAyQ2zTwo/MsrZRwu
+         CyIQ==
+X-Forwarded-Encrypted: i=1; AL+hErHQ10Co7IZ0LjpGhX3APpqGCrpiuy9EO6aFXqjebAE/0dC7tA8CdwgvQ2EqTfxNMHpMOgwkBgLrlPHfSskazQ==@vger.kernel.org
+X-Gm-Message-State: APuU4Z+xgZfnUQZ9kSb1le/iEA8ZzUcScz/6cDQRD1rSVnZzr3oJKzgS
+	6YtmiKbv2KAEaO4SFp4r5zJzhZDXRdXWM9kLdpVr+3xa+a82E6KNQ5VsLveAM+2iK1O5PK8UH3s
+	WaKE+rgnx
+X-Gm-Gg: AZFdTZcGZRd1qhM/X+9p90P5opTBtWSsnXn8pL1Qp+KRhzGtZsAh+H5Vn5P6++UyI2A
+	d4Xvn67RcPP+Ov5plAPgnSi1zWx8x4HREATGLiTXpm1pC26q7grtdN+FQQkkGCTIS0I50zzEuQZ
+	4BhzXsPrS2wVKFfUpiJWUh7DfU6++rR3kVNCiLoEfolKoryt7Izmf5pdHGPB4ugdJfkwIvSN413
+	1Eu33qVArpMmLr8rJujuSPSp9NDBIrVR1OQfT6xKTsiYt1rCLULUir68+AmAcq3glx0hLeeYcw2
+	0egpoEMYp23kJzgHbh9RfqPkQhlZBAFVCJxtCfGnO9SaTcwICydWtZnPqtUuojepnU/op494pY6
+	RRKlCXbyngYvoPvRxGOe81IjBZLbYfcBCmIEBT/jSyedhMWUKO+kUZKHtL3JEAy1BY3y3VLc8Eq
+	onjYrHfPnqusJyRlsc9aguRk5TEmWa3E4nA2czg1uqkh64+4zlYuDDkSlWjePadGTJMQ67j3ItY
+	af72JWTsDvNMFY5Jxp6MU8y3s649abep/YXHq3SVuu94RBeC8EzzaIhhGe1MJE0anxZjj4uAc0L
+	jbBlr2PzC03qX07m//6xTwmWmbdumKXtYwK/CEP2n012w5Nc0AxBVOtYwTibAVxBqtzqpGXefoR
+	yD1/Q6F1g/mhGehyoCMjnHlCthSnu1mmwOw8rz4WtM/+wxNQZDhr2P/yW05nZeku8kw5VbioOTX
+	7307wiN09XzdOzzjEcN2ThxBl7Ko5hI/dgf1eUG6fSCBkw7LmX1Pns84BmuYKi/fTaXG06GkBw6
+	QumtMpoScuH1PlNbP/aTt957CI5NDwVTe7/hbbM79k6v/yUrsNbC3klJz1q2Nh5YKzdlRYovVmK
+	KUIJ6wifrD9Ntw==
+X-Received: by 2002:a17:906:99cd:b0:c50:5005:8ecf with SMTP id a640c23a62f3a-c5158a29e82mr1859064466b.8.1795886905085;
+        Sat, 28 Nov 2026 09:28:25 -0800 (PST)
+Received: from Desktop.tail070c67.ts.net ([185.152.145.248])
+        by smtp.gmail.com with ESMTPSA id a640c23a62f3a-c513afed607sm976442266b.77.2026.11.28.09.28.23
+        (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
+        Sat, 28 Nov 2026 09:28:24 -0800 (PST)
+From: Julius Bairaktaris <julius@bairaktaris.de>
+To: Jeff Johnson <jjohnson@kernel.org>
+Cc: ath11k@lists.infradead.org,
+	linux-wireless@vger.kernel.org,
+	linux-kernel@vger.kernel.org
+Subject: [PATCH ath-next] wifi: ath11k: ignore the PPDU ID format indication
+Date: Sat, 28 Nov 2026 18:28:27 +0100
+Message-ID: <20261128172827.1168404-1-julius@bairaktaris.de>
+X-Mailer: git-send-email 2.53.0
 X-Mailing-List: linux-wireless@vger.kernel.org
 List-Id: <linux-wireless.vger.kernel.org>
 List-Post: <mailto:linux-wireless@vger.kernel.org>
@@ -61,86 +100,68 @@ List-Unsubscribe: <mailto:linux-wireless+unsubscribe@vger.kernel.org>
 List-Owner: <mailto:linux-wireless+owner@vger.kernel.org>
 Precedence: list
 MIME-Version: 1.0
-Content-Type: text/plain; charset=utf-8
-Content-Transfer-Encoding: quoted-printable
+Content-Transfer-Encoding: 8bit
 
+Firmware WLAN.HK.2.12-01460 on IPQ8074 sends HTT T2H message 0x30 each
+time it starts, at boot and after a firmware recovery. ath11k has no
+case for it and logs a warning every time:
 
-Hi,
-After upgrading linux-firmware-realtek from 20261019 to 20261124 on
-Arch Linux, my RTL8852CE (AzureWave subsystem) firmware crashes.
+  ath11k c000000.wifi: htt event 48 not handled
 
-Kernel: 7.3.6-arch1-1
-Bad firmware: v0.27.138.1
-Good firmware: 0.27.129.4
+The same line is in a user's boot log with WLAN.HK.2.9.0.1-02146, the
+firmware linux-firmware ships for IPQ8074.
 
-Downgrading to 20261019 restores WiFi. It seems stable for more than 24 hou=
-rs.
+The message is HTT_T2H_PPDU_ID_FMT_IND in Qualcomm's public fw-api
+(fw/htt.h). It tells the host which bits of a PPDU ID hold the hardware
+scheduler's command ID, ring, sequence index, link and MAC ID. ath11k
+only compares PPDU IDs as whole values and never splits one into these
+fields, so it has no use for the layout. Name the message and drop it
+without the warning.
 
-After the downgrade, the card was missing from the PCI bus until I fully re=
-moved AC power.
+Found on the bench, from the warning in the kernel log. No security
+impact.
 
-Relevant dmesg:
-[ =C2=A0903.528421] ieee80211 phy0: Hardware restart was requested
-[ =C2=A0905.806121] rtw89_8852ce 0000:08:00.0: FW status =3D 0xcb001228
-[ =C2=A0905.806131] rtw89_8852ce 0000:08:00.0: FW BADADDR =3D 0x0
-[ =C2=A0905.806135] rtw89_8852ce 0000:08:00.0: FW EPC/RA =3D 0x20148bb2
-[ =C2=A0905.806138] rtw89_8852ce 0000:08:00.0: FW MISC =3D 0x0
-[ =C2=A0905.806141] rtw89_8852ce 0000:08:00.0: R_AX_HALT_C2H =3D 0x30000036
-[ =C2=A0905.806144] rtw89_8852ce 0000:08:00.0: R_AX_HALT_C2H_CTRL =3D 0x0
-[ =C2=A0905.806147] rtw89_8852ce 0000:08:00.0: R_AX_HALT_H2C =3D 0x0
-[ =C2=A0905.806149] rtw89_8852ce 0000:08:00.0: R_AX_HALT_H2C_CTRL =3D 0x0
-[ =C2=A0905.806152] rtw89_8852ce 0000:08:00.0: R_AX_SER_DBG_INFO =3D 0x0
-[ =C2=A0905.806158] rtw89_8852ce 0000:08:00.0: [ERR]fw PC =3D 0x20150b6a
-[ =C2=A0905.806172] rtw89_8852ce 0000:08:00.0: [ERR]fw PC =3D 0x20150b6a
-[ =C2=A0905.806185] rtw89_8852ce 0000:08:00.0: [ERR]fw PC =3D 0x20150b6a
-[ =C2=A0905.806198] rtw89_8852ce 0000:08:00.0: [ERR]fw PC =3D 0x20150b6a
-[ =C2=A0905.806212] rtw89_8852ce 0000:08:00.0: [ERR]fw PC =3D 0x20150b6a
-[ =C2=A0905.806225] rtw89_8852ce 0000:08:00.0: [ERR]fw PC =3D 0x20150b6a
-[ =C2=A0905.806239] rtw89_8852ce 0000:08:00.0: [ERR]fw PC =3D 0x20150b6a
-[ =C2=A0905.806252] rtw89_8852ce 0000:08:00.0: [ERR]fw PC =3D 0x20150b6a
-[ =C2=A0905.806266] rtw89_8852ce 0000:08:00.0: [ERR]fw PC =3D 0x20150b6a
-[ =C2=A0905.806279] rtw89_8852ce 0000:08:00.0: [ERR]fw PC =3D 0x20150b6a
-[ =C2=A0905.806292] rtw89_8852ce 0000:08:00.0: [ERR]fw PC =3D 0x20150b6a
-[ =C2=A0905.806306] rtw89_8852ce 0000:08:00.0: [ERR]fw PC =3D 0x20150b6a
-[ =C2=A0905.806319] rtw89_8852ce 0000:08:00.0: [ERR]fw PC =3D 0x20150b6a
-[ =C2=A0905.806332] rtw89_8852ce 0000:08:00.0: [ERR]fw PC =3D 0x20150b6a
-[ =C2=A0905.806346] rtw89_8852ce 0000:08:00.0: [ERR]fw PC =3D 0x20150b6a
-[ =C2=A0905.806358] rtw89_8852ce 0000:08:00.0: SER catches error: 0x4000
-[ =C2=A0905.853285] rtw89_8852ce 0000:08:00.0: firmware failed to ack for l=
-eaving ps mode
-[ =C2=A0905.853288] rtw89_8852ce 0000:08:00.0: SER catches error: 0x4000
-[ =C2=A0905.868084] rtw89_8852ce 0000:08:00.0: c2h reg timeout
-[ =C2=A0905.918397] rtw89_8852ce 0000:08:00.0: rtw89: failed to leave lps s=
-tate
-[ =C2=A0905.968190] rtw89_8852ce 0000:08:00.0: firmware failed to ack for l=
-eaving ps mode
-[ =C2=A0905.968192] rtw89_8852ce 0000:08:00.0: SER catches error: 0x4000
-[ =C2=A0905.982965] rtw89_8852ce 0000:08:00.0: c2h reg timeout
-[ =C2=A0905.982966] rtw89_8852ce 0000:08:00.0: SER catches error: 0x4000
-[ =C2=A0906.033288] rtw89_8852ce 0000:08:00.0: rtw89: failed to leave lps s=
-tate
-[ =C2=A0906.033290] rtw89_8852ce 0000:08:00.0: SER catches error: 0x4000
+Tested-on: IPQ8074 hw2.0 AHB WLAN.HK.2.12-01460-QCAHKSWPL_SILICONZ-1
 
-Relevant lspci:
-08:00.0 Network controller: Realtek Semiconductor Co., Ltd. RTL8852CE PCIe =
-802.11ax Wireless Network Controller (rev 01)
-Subsystem: AzureWave Device 5600
-Flags: bus master, fast devsel, latency 0, IRQ 126, IOMMU group 19
-I/O ports at e000 [size=3D256]
-Memory at df500000 (64-bit, non-prefetchable) [size=3D1M]
-Capabilities: [40] Power Management version 3
-Capabilities: [50] MSI: Enable+ Count=3D1/1 Maskable- 64bit+
-Capabilities: [70] Express Endpoint, IntMsgNum 0
-Capabilities: [100] Advanced Error Reporting
-Capabilities: [148] Device Serial Number 00-e0-4c-ff-fe-c8-52-01
-Capabilities: [158] Latency Tolerance Reporting
-Capabilities: [160] L1 PM Substates
-Capabilities: [170] Vendor Specific Information: ID=3D0002 Rev=3D4 Len=3D10=
-0 <?>
-Kernel driver in use: rtw89_8852ce
-Kernel modules: rtw89_8852ce
+Signed-off-by: Julius Bairaktaris <julius@bairaktaris.de>
+---
+The warning shows once at every start of the firmware (boot, driver
+load, firmware recovery) on IPQ8074 with WLAN.HK.2.12-01460, seen on
+the bench, and with WLAN.HK.2.9.0.1-02146, seen in a user's boot log. No
+frame or user action is involved, and nothing else goes wrong; until
+this lands, the line can be ignored.
 
-If there is any other information I can provide, I'd be happy to help.
+I used Claude (Anthropic) to help write these patches.
 
-Thanks,
-Jose
+ drivers/net/wireless/ath/ath11k/dp.h    | 1 +
+ drivers/net/wireless/ath/ath11k/dp_rx.c | 3 +++
+ 2 files changed, 4 insertions(+)
+
+diff --git a/drivers/net/wireless/ath/ath11k/dp.h b/drivers/net/wireless/ath/ath11k/dp.h
+index 84f66839f0c6d..bace81c453e16 100644
+--- a/drivers/net/wireless/ath/ath11k/dp.h
++++ b/drivers/net/wireless/ath/ath11k/dp.h
+@@ -1033,6 +1033,7 @@ enum htt_t2h_msg_type {
+ 	HTT_T2H_MSG_TYPE_PPDU_STATS_IND = 0x1d,
+ 	HTT_T2H_MSG_TYPE_EXT_STATS_CONF = 0x1c,
+ 	HTT_T2H_MSG_TYPE_BKPRESSURE_EVENT_IND = 0x24,
++	HTT_T2H_MSG_TYPE_PPDU_ID_FMT_IND = 0x30,
+ };
+ 
+ #define HTT_TARGET_VERSION_MAJOR 3
+diff --git a/drivers/net/wireless/ath/ath11k/dp_rx.c b/drivers/net/wireless/ath/ath11k/dp_rx.c
+index 6d95f7b343a55..c65bbbdc267eb 100644
+--- a/drivers/net/wireless/ath/ath11k/dp_rx.c
++++ b/drivers/net/wireless/ath/ath11k/dp_rx.c
+@@ -1747,6 +1747,9 @@ void ath11k_dp_htt_htc_t2h_msg_handler(struct ath11k_base *ab,
+ 	case HTT_T2H_MSG_TYPE_BKPRESSURE_EVENT_IND:
+ 		ath11k_htt_backpressure_event_handler(ab, skb);
+ 		break;
++	case HTT_T2H_MSG_TYPE_PPDU_ID_FMT_IND:
++		/* ath11k uses PPDU IDs only as whole values */
++		break;
+ 	default:
+ 		ath11k_warn(ab, "htt event %d not handled\n", type);
+ 		break;
+
+base-commit: 18d0bedbb5f0538396cb7f763ed9cd1dd69c5b23
