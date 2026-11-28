@@ -1,60 +1,64 @@
-Authentication-Results: smtp.subspace.kernel.org; arc=none smtp.remote-ip=109.224.244.24
+Authentication-Results: smtp.subspace.kernel.org; arc=none smtp.remote-ip=95.215.58.201
 ARC-Seal: i=1; d=subspace.kernel.org; s=arc20261015; a=rsa-sha256; cv=none;
-	t=1795865222;
-	b=xIxadX02gTFSAqO8LUFDS7etO42aXvKXqWsUol/CBWL+p81lXeAM77ov0eDCNGCIk1Op
-	 p1vAcJYqpLIDC/RQ5+FLAsIJYF1xy2xfPlL0KYLg+dls8scDTCjAhY5nqK7Dht/A+ikr3
-	 tiN6Xq/2YfXARsASvjlhnMDTIk2EIvbZlMi4016pUsiklfLJ+7E6fIZhnXcjYWXBs3fRS
-	 ByIe8TWcCIA+dEn1YyKYZNFxFadpORQHVWGKXy1WoRuxWipn5g29FtRaikZ0THY635XQv
-	 uzfbgFS/6IO2C4mKC92SOaqP4OzQLQd1schrdpolWk9C1lkQNCksNGvd9TkkfM0SZZA==
+	t=1795865398;
+	b=erTP21HfkLod2teehLyZcYuJJv+z3cdUW9nvER57HTNmDpMdM31y+ctInjbGABrB5/em
+	 bvOS4k8UlWZvQd7KRiqQIp21l16fPyJVeTLYUAqpwIkUACRUFH+iyYCEsjmT7UMNq6nCL
+	 t8nc9xQaqVTdTgVFdiGGyATIUhf7/WMcuSwsMpaZEzXFofSbzwTSwzKv3+w3P7GEDRtlV
+	 yCMh7TKyS4S9IhkDBMIGALaHRj4z8n0goHNkHzMVjm69qjODwtCyK5tgL9VcRQF4GKZf3
+	 Kw4F7dBnNKJzVDY9+3vr4cjs1PRcjSXS1yJep/hyUJN7UUD8rgO43XcjZssQuAhuwaQ==
 ARC-Message-Signature: i=1; d=subspace.kernel.org; s=arc20261015;
-	a=rsa-sha256; c=relaxed/relaxed; t=1795865222;
-	h=DMARC-Filter:DKIM-Signature:Date:To:From:Cc:Subject:Message-ID:
-	 In-Reply-To:References:Feedback-ID:X-Pm-Message-ID:MIME-Version:
-	 Content-Type:Content-Transfer-Encoding;
-	bh=7fS8b+Eqb+oo234TWXOhDPoeXw32DMJjd+DlpYrhdR8=;
-	b=idX+KFQIrT8UqR9Rfl0MNpfCO4CoXnz6LRtQNgYCQE7sCPjf1CP1Opg5w/oUIZkiE+gU
-	 UDsJqW467KK3dkEWijv7wslj5bawKn3MFG3Y868Ml29Axmwbm+qxxz7SWhHFOQU8JOOfN
-	 A4qiwU5gXse4qcrcZLNhMaFRk/7xTOdyE5QKN9VemwZuhBofWS5rKTt2ZYCpdKH30YfKf
-	 3eCJBHO2DLIS1qEx4/LgE8L1gr7qdVLVD9K/mRM7UzSy04DUiv3ZPRW1QyS1xolLhNy4q
-	 0lJoCGa6ADAM4kt4u+aWOgrfaDjjpX9FMqn1EyVz7WyR8/3FaL04VArg3XNY/RpT1ZA==
+	a=rsa-sha256; c=relaxed/relaxed; t=1795865398;
+	h=DMARC-Filter:X-Envelope-To:DKIM-Signature:X-Envelope-To:Received:
+	 X-Mizu-Trace-ID:X-Migadu-Flow:From:To:Cc:Subject:Date:Message-ID:
+	 X-Mailer:In-Reply-To:References:MIME-Version:Content-Type:
+	 Content-Transfer-Encoding;
+	bh=Br+60WyY6NR3dzXOr0caHGzfgUSLm3hs8qRDSmm+z4A=;
+	b=iahZ85TQ/dabQ4a/EKYVIO+skCymVcfsRzHvmm3osbcA8fh0WtCvtgttyTyWYwHtWeSS
+	 kPbBYFDvnUccq7FG8RLEkI6RuMPDQDwUEVJpXEfxP4IxHm1jVMv37pLavo8AFlbG+6NjU
+	 uIvpgsRk3RFeHZLcIc/a8NAla6oLxCgMr4waF59JK5pTlBCI+G2hVumf5Wi6VT7iGCztf
+	 E/3Hcf26MTL6V/9tWLxIoGDLfBT/Mv5CXCeu4FN6Gvp2NqtUxaVncn3LXJ4rv6Hz+hTMU
+	 gawIzdPFLYYoE1ZE2kn7/tV6j+RlKub6LgafpOpoTptjI1sZ62b6+l59cAhTKo2EJHg==
 ARC-Authentication-Results: i=1; smtp.subspace.kernel.org; 
-	dmarc=pass header.from=proton.me;
-	spf=pass smtp.mailfrom=proton.me;
-	dkim=pass header.d=proton.me header.i=@proton.me header.a=rsa-sha256 header.s=protonmail2 header.b=xlxwWowv;
-	arc=none smtp.remote-ip=109.224.244.24
-Received: from mail-24424.protonmail.ch (mail-24424.protonmail.ch [109.224.244.24])
-	(using TLSv1.3 with cipher TLS_AES_256_GCM_SHA384 (256/256 bits)
+	dmarc=pass header.from=linux.dev;
+	spf=pass smtp.mailfrom=linux.dev;
+	dkim=pass header.d=linux.dev header.i=@linux.dev header.a=rsa-sha256 header.s=key1 header.b=o8BqW6X5;
+	arc=none smtp.remote-ip=95.215.58.201
+Received: from mta1.migadu.com (out-201.mta1.migadu.com [95.215.58.201])
+	(using TLSv1.3 with cipher TLS_AES_128_GCM_SHA256 (128/128 bits)
 	 key-exchange X25519 server-signature ECDSA (prime256v1) server-digest SHA256)
 	(No client certificate requested)
-	by smtp.subspace.kernel.org (Postfix) with ESMTPS id 6A5D3606A31F
-	for <linux-wireless@vger.kernel.org>; Sat, 28 Nov 2026 11:27:00 +0000 (UTC)
-DMARC-Filter: OpenDMARC Filter v1.4.2 smtp.subspace.kernel.org 6A5D3606A31F
-Authentication-Results: smtp.subspace.kernel.org; dmarc=pass (p=quarantine dis=none) header.from=proton.me
-Authentication-Results: smtp.subspace.kernel.org; spf=pass smtp.mailfrom=proton.me
+	by smtp.subspace.kernel.org (Postfix) with ESMTPS id 45145606A31C
+	for <linux-wireless@vger.kernel.org>; Sat, 28 Nov 2026 11:29:56 +0000 (UTC)
+DMARC-Filter: OpenDMARC Filter v1.4.2 smtp.subspace.kernel.org 45145606A31C
+Authentication-Results: smtp.subspace.kernel.org; dmarc=pass (p=none dis=none) header.from=linux.dev
+Authentication-Results: smtp.subspace.kernel.org; spf=pass smtp.mailfrom=linux.dev
 Authentication-Results: smtp.subspace.kernel.org;
-	dkim=pass (2048-bit key, unprotected) header.d=proton.me header.i=@proton.me header.a=rsa-sha256 header.s=protonmail2 header.b=xlxwWowv
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=proton.me;
-	s=protonmail2; t=1795865218; x=1796124418;
-	bh=7fS8b+Eqb+oo234TWXOhDPoeXw32DMJjd+DlpYrhdR8=;
-	h=Date:To:From:Cc:Subject:Message-ID:In-Reply-To:References:
-	 Feedback-ID:From:To:Cc:Date:Subject:Reply-To:Feedback-ID:
-	 Message-ID:BIMI-Selector;
-	b=xlxwWowvctaSX4Csz2SZDuKk3vLeeiIiTns1/4+CKCQK9o7EI34kUGUp1UQdxcsmT
-	 sFpO4wlZ4wZ8l4uqORzKIw2SpZr5vBBoEMr9WHTWbIeLoZF8v8qiX1NoyZ8Oj+LHl9
-	 4XueQ0gGT/xPOKBeCUyMzpss/7PI9qeT2USykl3qWVGWW+ohhG5xODTG7nzvDxIijK
-	 Nn7YU6OZEJYLkDjfd6AXIdgoQBxBv2uIcu2RO8JBIl7r5wzHRWGQRlEa2DJI1+71BO
-	 vDlLAWwomBwrzbj9ris+m/uyWQx2L5Pi1bvbM0XrDFaqID6ErvSUzf68Q1d3cpHKEA
-	 YFvkilseC8/rw==
-Date: Sat, 28 Nov 2026 11:26:54 +0000
-To: martin@rfdeck.de
-From: Ahmet Zeren <niko3x@proton.me>
-Cc: Ping-Ke Shih <pkshih@realtek.com>, linux-wireless@vger.kernel.org, Luka Gejak <luka.gejak@linux.dev>, Bitterblue Smith <rtl8821cerfe2@gmail.com>, linux-kernel@vger.kernel.org
-Subject: Re: [PATCH RFT rtw-next v2 0/2] wifi: rtw88: honour rate, retries and bandwidth of injected frames
-Message-ID: <VlXplLX5apZBM3LPGxqkM1o7u2AvhUYD8YHGKQVhZo2aZhE5oLqDDEAP1nheF3fmtNHE3TCLvFSMhnFddrGV7PBF2z9h_kXHMHxX0BlLyBA=@proton.me>
-In-Reply-To: <20261128113304.Horde.AlVGhIssVk0T26G9XwXTpD-@mail.your-server.de>
-References: <20261127161943.Horde.JkGhYA0aQ3kFZkRWztLNi5H@mail.your-server.de> <semDCz-DacL4vKeB_8iKu6ZwI8pQDusEK2fvgerTJWRkQ1MAxvs0nX-lSJviX_LDplBuBKniLMaMy9FtGH2_EkckFD-LR2YY6pPSPwrTCk0=@proton.me> <20261128113304.Horde.AlVGhIssVk0T26G9XwXTpD-@mail.your-server.de>
-Feedback-ID: 201311995:user:proton
-X-Pm-Message-ID: 1613c55b2053936d1257d52061e984f677cf6aa5
+	dkim=pass (1024-bit key, unprotected) header.d=linux.dev header.i=@linux.dev header.a=rsa-sha256 header.s=key1 header.b=o8BqW6X5
+X-Envelope-To: linux-wireless@vger.kernel.org
+DKIM-Signature: a=rsa-sha256; bh=5BGU4dffwsCQntkrU2zrHwagqeiQz8YYA2a3BmXfx84=;
+ c=simple/simple; d=linux.dev;
+ h=from:to:subject:date:message-id:mime-version:content-type; s=key1;
+ t=1795865395; v=1; x=1796470195;
+ b=o8BqW6X5ESXea3nJyeBxRrXBhJ0gpQRjliUAaFTrLO04Iv4F1HW5bUVwYXvgOP6uEE45ggVU
+ pAk5m58kQ/C3L0xv4nYuYxzGEVC6NWYQ8ZvvPFPJmvvtcpRTRASbMju9QHAR3KXNyV9YyHZcpUi
+ 12LImKM+o4KHfuc2dJ/Cloo8=
+X-Envelope-To: linux-wireless@vger.kernel.org
+Received: by smtp.migadu.com with ESMTPS id 1e1f7f0487722a26;
+	Sat, 28 Nov 2026 11:29:55 +0000
+X-Mizu-Trace-ID: 1e1f7f0487722a26
+X-Migadu-Flow: FLOW_OUT
+From: Luka Gejak <luka.gejak@linux.dev>
+To: Ping-Ke Shih <pkshih@realtek.com>
+Cc: linux-wireless@vger.kernel.org,
+	Bitterblue Smith <rtl8821cerfe2@gmail.com>,
+	Luka Gejak <luka.gejak@linux.dev>,
+	Ho Jie Feng <hjf3108@gmail.com>
+Subject: Re: [PATCH rtw-next v5 6/7] wifi: rtw88: 88xxa: correct carrier-frequency offset
+Date: Sat, 28 Nov 2026 12:29:53 +0100
+Message-ID: <179586537111.18963.10245502413702250015.rtw88-v5-reply@linux.dev>
+X-Mailer: git-send-email 2.56.1
+In-Reply-To: <20261127180034.1058591-7-hjf3108@gmail.com>
+References: <20261127180034.1058591-1-hjf3108@gmail.com> <20261127180034.1058591-7-hjf3108@gmail.com>
 X-Mailing-List: linux-wireless@vger.kernel.org
 List-Id: <linux-wireless.vger.kernel.org>
 List-Post: <mailto:linux-wireless@vger.kernel.org>
@@ -64,37 +68,48 @@ List-Unsubscribe: <mailto:linux-wireless+unsubscribe@vger.kernel.org>
 List-Owner: <mailto:linux-wireless+owner@vger.kernel.org>
 Precedence: list
 MIME-Version: 1.0
-Content-Type: text/plain; charset=utf-8
-Content-Transfer-Encoding: quoted-printable
+Content-Type: text/plain; charset=UTF-8
+Content-Transfer-Encoding: 8bit
 
-Hi Martin,
+Hi Jie Feng,
 
-Thanks for checking against a reference transmitter, and for the
-Tested-by.
+Thanks for the update. Two comments below.
 
-> So on the RTL8812AU, VHT MCS8/9 either aren't sent or can't be decoded.
+On November 28, 2026 2:00:26 AM GMT+08:00, Ho Jie Feng
+<hjf3108@gmail.com> wrote:
 
-Does your RTL8812AU ever reach VHT MCS8 or MCS9 in station mode, e.g.
-in the tx bitrate of "iw dev <dev> station dump" with a VHT AP close
-by? If it does, the hardware can send them and the difference is in the
-injected path. One thing that differs there is the rate ID: injected
-frames have no station, so they keep the default legacy rate ID. If it
-never does, it's more likely a hardware or TX power limit.
+> -	for (i = 0; i < rtwdev->hal.rf_path_num; i++) {
+> +	for (i = 0; i < path_num; i++) {
+>  		cfo->cfo_tail[i] += pkt_stat->cfo_tail[i];
+>  		cfo->cfo_cnt[i]++;
+>  	}
 
-Either way it's not a regression, so I'll mention it as a known limit
-in v3 rather than hold the series for it.
+As far as I can see, RX can update these fields while the watchdog is
+running rtw_phy_cfo_calc_avg(). It reads the sum and count separately,
+then clears them in a second loop. A packet that arrives in between can
+be counted against the wrong sum or cleared before it is used. That can
+change the crystal adjustment even with a single peer.
 
-Ping-Ke, do you know whether the 8812A needs a VHT rate ID to send VHT
-MCS8/9 when the rate is set with USE_RATE?
+I think the same race exists on RTL8822C. Could we take and clear the
+samples under the same lock as the RX updates before using the helper
+on these chips?
 
-> - broadcast data frames injected on the RTL8812AU don't go out at all
+[ ... ]
 
-Thanks, I'll look into that separately, as it happens without these
-patches too.
+> +	bool bt_hold = rtwdev->efuse.btcoex && !rtw_coex_disabled(rtwdev);
+> +	u8 crystal_cap;
+> +
+> +	crystal_cap = rtw_phy_cfo_xcap_track(rtwdev, RTW_XCAP_MASK, bt_hold);
 
-Thanks,
-Ahmet
+So if I read it right, the helper returns the current cap when no new
+CFO samples have arrived, before checking bt_hold. If the RTL8821AU
+already adjusted the cap, a firmware report that Bluetooth is active
+can set bt_hold while WiFi is idle. The cap then stays adjusted until
+another CFO sample arrives. On 2.4 GHz the AP may only be sending CCK
+beacons in the meantime, which this path doesn't sample.
 
+Could the Bluetooth check restore the efuse value even when the sample
+count has not changed?
 
-
-Sent with Proton Mail secure email.
+Best regards,
+Luka Gejak
