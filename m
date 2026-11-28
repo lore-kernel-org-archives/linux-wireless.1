@@ -1,100 +1,61 @@
-Authentication-Results: smtp.subspace.kernel.org; arc=none smtp.remote-ip=209.85.128.48
+Authentication-Results: smtp.subspace.kernel.org; arc=none smtp.remote-ip=91.218.175.139
 ARC-Seal: i=1; d=subspace.kernel.org; s=arc20261015; a=rsa-sha256; cv=none;
-	t=1795868773;
-	b=O4Fxld+ke5aUkZ/RqSn6V4XPAGwsfbiFNXl1l1WqpYYdEyfB/EGKclP0JS+pJ9M76Ceg
-	 jgtlZEirJixmOHFsICom3ODFB1kZqomYZJRtu1FJBX7nO199hz2+ane9l0GD3Jbj61UbQ
-	 OuowgAMHYeo1biDrYk6Ly+OXGPp3W1BUHTT49p9tMKnSnhaEjoysCjiUqqnyXzch/Xl+W
-	 9DYgE3YJ0HlcynbzoLc6qCS+uXvonJJFJyx22scF45v4zCRYtfvDZN/DpIn7ePn2qrMFY
-	 G9if8b9XUl6JFbEukMCLLHEy1LKpqrb+VDx+avXsL5tKOllkkEoP1ibOS+R8i4me73g==
+	t=1795870074;
+	b=l6yQUK5XR06M+knRXRL22rsoRz2rvMMSqs0TJefYgSCrhNiSrht9gJk0mbXvDyuv6u2e
+	 Vd7HtGf2Re3A/4qI6wVcSrIwjrIArnAM5rFJhkL0myceTHrrTc4aOM3aL8fN3hnCfNuYa
+	 0lvol66NEolRSk2+wy0ZO4Ex6nhooAgASNvWPeVn8dQ/HAr0OoDYpR95RbZ5Thu1s5gk6
+	 xxgLeCMszcfCzvjjT6tTxHQwkCqlVfYn3jkXpkYB6XmhSeIWhnz5x0h6E5fBErswiSOmn
+	 NDYhmWfgAI8X7aXIaoRlm4TvzrbNokaT6Go0vWhU24YHWkl3pWDYTAES2qWO1hM+Ybw==
 ARC-Message-Signature: i=1; d=subspace.kernel.org; s=arc20261015;
-	a=rsa-sha256; c=relaxed/relaxed; t=1795868773;
-	h=DMARC-Filter:Received:DKIM-Signature:X-Google-DKIM-Signature:
-	 X-Forwarded-Encrypted:X-Gm-Message-State:X-Gm-Gg:X-Received:Received:
-	 From:To:Cc:Subject:Date:Message-ID:X-Mailer:MIME-Version:
+	a=rsa-sha256; c=relaxed/relaxed; t=1795870074;
+	h=DMARC-Filter:X-Envelope-To:DKIM-Signature:X-Envelope-To:Received:
+	 X-Mizu-Trace-ID:X-Migadu-Flow:Date:From:To:CC:Subject:In-Reply-To:
+	 References:Message-ID:MIME-Version:Content-Type:
 	 Content-Transfer-Encoding;
-	bh=yom6P11rX/hdhy2NNJS3Jns2I9Z56P2y3ixdK/nEUpo=;
-	b=BA7O6n4SdUwWTkQ2J0zdy0tvE+4FDT0rTtvV2/dYtUgLJZeOvNFb0dref+L8D8w3qgQn
-	 HwpB/ygSIufZTiLFkaBYZQ2WI7ly1d/yCAhxABGtaTThMSqZM34La3OLJSlt0cavhBn/K
-	 1tXgQ9gXyr80xG8c6zbQ3e2EfBtB4Wc2/J+GKWRifiupJFkaasy06ripoMngQrpni3XMi
-	 V9wTx1nphcQ/M4K1tTsQV1Q++sXzLyzNtqQAotR6LWByTlrhG/DI46XU4YecUSZrllBzc
-	 MDkKT4/5v11sRFQSRFV+1iuuN8Im/ntDYeXb1RO3mNLi6UzFYuuxKe6hDF8qBD48d5A==
+	bh=Rp5MtDQkAsdatvZfkWSUAzwcKA3qlYc99ejqePYxZdc=;
+	b=M3o7u2kvLAu0i2bopqXbEIWFg1T+uks+qXqhOzwXKiT6Aa66cvVo3HxGotKceC8uqFck
+	 cnPCZSyj3tKxIvVMugMn+ASh2eXtGUtmPU3EMZ7uyZBM51dC1UPFJnsQ+9CbnI5CAWw3i
+	 JVknYu8MPrgohRplfkLl3gbCm/vNGiF47u6XaQhQz/atHUpwt0ErXT1eBrWm7Qjxc/B5f
+	 EqHNBUPrScOE4w60MVrZPxpC+v6a78aKxijlnTtQzW8pl1zYMeISG0ssKTlX/o/rGDLwU
+	 y14xvzffdcorPZVOMFNMYRtgJBKV1OkVm7PUyzVvNmEaDQ6TzM0Jcl2ZIW/wblJDTlw==
 ARC-Authentication-Results: i=1; smtp.subspace.kernel.org; 
-	dmarc=pass header.from=gmail.com;
-	spf=pass smtp.mailfrom=gmail.com;
-	dkim=pass header.d=gmail.com header.i=@gmail.com header.a=rsa-sha256 header.s=20260707 header.b=kPyhgWPk;
-	arc=none smtp.remote-ip=209.85.128.48
-Received: from mail-wm1-f48.google.com (mail-wm1-f48.google.com [209.85.128.48])
+	dmarc=pass header.from=linux.dev;
+	spf=pass smtp.mailfrom=linux.dev;
+	dkim=pass header.d=linux.dev header.i=@linux.dev header.a=rsa-sha256 header.s=key1 header.b=h7oNLxko;
+	arc=none smtp.remote-ip=91.218.175.139
+Received: from mta0.migadu.com (out-139.mta0.migadu.com [91.218.175.139])
 	(using TLSv1.3 with cipher TLS_AES_128_GCM_SHA256 (128/128 bits)
 	 key-exchange X25519 server-signature ECDSA (prime256v1) server-digest SHA256)
 	(No client certificate requested)
-	by smtp.subspace.kernel.org (Postfix) with ESMTPS id C5137606A321
-	for <linux-wireless@vger.kernel.org>; Sat, 28 Nov 2026 12:26:12 +0000 (UTC)
-DMARC-Filter: OpenDMARC Filter v1.4.2 smtp.subspace.kernel.org C5137606A321
-Authentication-Results: smtp.subspace.kernel.org; dmarc=pass (p=none dis=none) header.from=gmail.com
-Authentication-Results: smtp.subspace.kernel.org; spf=pass smtp.mailfrom=gmail.com
+	by smtp.subspace.kernel.org (Postfix) with ESMTPS id 57360606A31C
+	for <linux-wireless@vger.kernel.org>; Sat, 28 Nov 2026 12:47:52 +0000 (UTC)
+DMARC-Filter: OpenDMARC Filter v1.4.2 smtp.subspace.kernel.org 57360606A31C
+Authentication-Results: smtp.subspace.kernel.org; dmarc=pass (p=none dis=none) header.from=linux.dev
+Authentication-Results: smtp.subspace.kernel.org; spf=pass smtp.mailfrom=linux.dev
 Authentication-Results: smtp.subspace.kernel.org;
-	dkim=pass (2048-bit key) header.d=gmail.com header.i=@gmail.com header.a=rsa-sha256 header.s=20260707 header.b=kPyhgWPk
-Received: by mail-wm1-f48.google.com with SMTP id 5b1f17b1804b1-4bb6c7b6dbdso82741855e9.0
-        for <linux-wireless@vger.kernel.org>; Sat, 28 Nov 2026 04:26:12 -0800 (PST)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=gmail.com; s=20260707; t=1795868771; x=1796473571; darn=vger.kernel.org;
-        h=content-transfer-encoding:mime-version:message-id:date:subject:cc
-         :to:from:from:to:cc:subject:date:message-id:reply-to:content-type;
-        bh=yom6P11rX/hdhy2NNJS3Jns2I9Z56P2y3ixdK/nEUpo=;
-        b=kPyhgWPkQ9sTZ0JH8L52QCk3CAnZz5sDwQCkRQfALxoNdwNlp/gsg4yFcghQbnkUbK
-         88T1vD6mrTf9EbBwnFYG09Bmd1OQPCulXwk21zxxgdmVN/xdOhWGAFWOkj0s3xw4IHYQ
-         2vgQITeMx8AVuK2aK5W631ktNZ4vplqZGJCCNq+eHYnv62/gNRmy0bqOISUuPaeBg7Qq
-         e5s3kHdD/oghWLYBddYpgplHkr9hIJT6wgZtOvQNx8BtxduMpIxXJn/tlJ9LowSVVAKd
-         uRQAGU3vie2nKgdSOo9LGD1oRPSD1keHg4P48hJ7NWQ7K096n0h9ah+EMGmosG4MKOlL
-         mURg==
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=1e100.net; s=20260707; t=1795868771; x=1796473571;
-        h=content-transfer-encoding:mime-version:message-id:date:subject:cc
-         :to:from:x-gm-gg:x-gm-message-state:from:to:cc:subject:date
-         :message-id:reply-to:content-type;
-        bh=yom6P11rX/hdhy2NNJS3Jns2I9Z56P2y3ixdK/nEUpo=;
-        b=wxwSq88Vv0GSH8/UvXRGK7QO8YQ87LkrcG6Zapar92mTH9GcF1xkjyEA9gnS3x8ruY
-         9GqY7ZHKOGnmpoJ+NCzQsQ4BDhmHOSEjyRnkB9jw8hap+8I54CPDzoWR4QiufdbCnow4
-         CL9NsX1A8gv58iuoxDfvRqyMCq9gpm68VPV44ZetTuduGvLO37fQFsorZ2kK4zwkhNOc
-         ZoCyApUwf1L2p3yNqsKEfMF42TTGUA8O2r2Y43MibyqG1qnqkmy8HglsMX63vpkPNsA9
-         bBEkHIqeXN1yGSCLWU/isW5SGlyBthnmGm5xRUoXIHIBjy37QPYqFjoy+NlZ001mC6JX
-         8pCA==
-X-Forwarded-Encrypted: i=1; AL+hErGpfpgjw9Paj0uRJnZkBVhM9BRs9/+Q7Ar9U/qj5SqLvPzzP1ZvyfzTrMFa1Jgc4M8BC8CRv6uvyMfb648IkQ==@vger.kernel.org
-X-Gm-Message-State: APuU4Z9UYUJv06HQF7KOVun3kYRescqCl7ZBUa6KAgaQqwtwMeG+r/9W
-	oQYi3b2M2jOMR1dMf6YUjXnP8liEg+hbjzXSBcJS7hTfdwx512z68gDb
-X-Gm-Gg: AZFdTZfz040itMAVFr6IL5KBs7jwOuBYwUGYf4T+zLvTUKcvCB4iwhy0K8EYZRpY38k
-	O9ctC2D0Bimwo+gxi5o1tJQjW+37IdJV3yDh6ruY76qKYvl2mrrLPo5TWS+wmzSNw2JXfxtLHQ/
-	Q8G2S+v4mq7/OwDLoeba+YUZr2If4BotM+Ri+jeHSE++UR2FLQJybCQ/xEzgWRuL+9ZYvpE5MPv
-	Rzb08kUSgnJnI43xvesOprlJ4JtrgpZpbaLABZomimUKuWFLm6NKoLy2nPfeX4IyWtOaZFPAT14
-	B0WlmqyC+JVIMdfC2nN516u8Q6jhpxKLnZJoWxT3NSqCaGHq1LwMU5CLKPVUGIvFBJv1lpgCszG
-	P7b/w4RTQdKjIbgXMMqovD2cRER+w8FXdTrQEtjPGZiu3vuwuIWsYcr2X6x9Ng7KJMlb+EWbUDu
-	XS8jyyuqmBum4SzHuGdNYLngC0lNNeB4uGOe4G4ngCKIcpnesQcRFw81gIogrON/9cdBwfSmjBZ
-	PI3sjuDmBSt+puukNZYw0prU6wnOgRM6h99rbOkQUHoLw4r15sqOa3KI1YfwC4m1XP217c2t/r0
-	il3tZHkR+T3AqtCRlTunapbP6LmQUf+xSc/mvRUQHNNHtiQnWmXI+8ZYqK9WwCoKNiQ+bWKG+Q=
-	=
-X-Received: by 2002:a05:600c:8210:b0:4bb:6a2d:b438 with SMTP id 5b1f17b1804b1-4bb88786c81mr553027325e9.0.1795868770988;
-        Sat, 28 Nov 2026 04:26:10 -0800 (PST)
-Received: from kidala-computer.. (ip-109-41-112-86.web.vodafone.de. [109.41.112.86])
-        by smtp.gmail.com with ESMTPSA id 5b1f17b1804b1-4bb906635c7sm502815995e9.2.2026.11.28.04.26.08
-        (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
-        Sat, 28 Nov 2026 04:26:09 -0800 (PST)
-From: Oleh Shcherba <scherbaoleg4@gmail.com>
-To: Felix Fietkau <nbd@nbd.name>,
-	Lorenzo Bianconi <lorenzo@kernel.org>,
-	Ryder Lee <ryder.lee@mediatek.com>
-Cc: Shayne Chen <shayne.chen@mediatek.com>,
-	Sean Wang <sean.wang@mediatek.com>,
-	Matthias Brugger <matthias.bgg@gmail.com>,
-	AngeloGioacchino Del Regno <angelogioacchino.delregno@collabora.com>,
-	linux-wireless@vger.kernel.org,
-	linux-kernel@vger.kernel.org,
-	linux-arm-kernel@lists.infradead.org,
-	linux-mediatek@lists.infradead.org,
-	Oleh Shcherba <scherbaoleg4@gmail.com>
-Subject: [PATCH] wifi: mt76: do not mask negative MCU command ids
-Date: Sat, 28 Nov 2026 13:25:41 +0100
-Message-ID: <20261128122541.6670-1-scherbaoleg4@gmail.com>
-X-Mailer: git-send-email 2.43.0
+	dkim=pass (1024-bit key, unprotected) header.d=linux.dev header.i=@linux.dev header.a=rsa-sha256 header.s=key1 header.b=h7oNLxko
+X-Envelope-To: linux-wireless@vger.kernel.org
+DKIM-Signature: a=rsa-sha256; bh=Rp5MtDQkAsdatvZfkWSUAzwcKA3qlYc99ejqePYxZdc=;
+ c=simple/simple; d=linux.dev;
+ h=from:to:subject:date:message-id:mime-version:content-type; s=key1;
+ t=1795870071; v=1; x=1796474871;
+ b=h7oNLxkoq2AB3OA42YI8b8oS5sRNtB7S6ANthANmbeGvH2+0z38Ywytrb3L3WkwPkKpDW2Bl
+ iAXtLsnZcdweLgd3QeSxYQmfHn90MBxkAnAHuFgRJREmGOAr9WlkbCLT++deAIl7JrssKTJzrqs
+ XpPuZeCAEZy+d9UW12pmlbEY=
+X-Envelope-To: linux-wireless@vger.kernel.org
+Received: by smtp.migadu.com with ESMTPS id 8a15a7addf0248d9;
+	Sat, 28 Nov 2026 12:47:51 +0000
+X-Mizu-Trace-ID: 8a15a7addf0248d9
+X-Migadu-Flow: FLOW_OUT
+Date: Sat, 28 Nov 2026 13:47:46 +0100
+From: Luka Gejak <luka.gejak@linux.dev>
+To: linux-wireless@vger.kernel.org, Maoyi Xie <maoyixie.tju@gmail.com>,
+ Ping-Ke Shih <pkshih@realtek.com>
+CC: Bitterblue Smith <rtl8821cerfe2@gmail.com>
+Subject: Re: [PATCH rtw-next] wifi: rtw88: usb: reject oversized RX packets
+In-Reply-To: <20261128055454.4121906-1-maoyixie.tju@gmail.com>
+References: <20261128055454.4121906-1-maoyixie.tju@gmail.com>
+Message-ID: <474D19D7-8A37-4F68-B13E-302F2F5CFEA7@linux.dev>
 X-Mailing-List: linux-wireless@vger.kernel.org
 List-Id: <linux-wireless.vger.kernel.org>
 List-Post: <mailto:linux-wireless@vger.kernel.org>
@@ -104,75 +65,31 @@ List-Unsubscribe: <mailto:linux-wireless+unsubscribe@vger.kernel.org>
 List-Owner: <mailto:linux-wireless+owner@vger.kernel.org>
 Precedence: list
 MIME-Version: 1.0
+Content-Type: text/plain;
+ charset=utf-8
 Content-Transfer-Encoding: 8bit
 
-Commit 1ffc90633ad6 ("wifi: mt76: mark an MCU command that only reads")
-clears BIT(30) of every command id before it reaches the driver. mt7603
-sends its legacy commands as negative ids, and a small negative int has
-bit 30 set by its sign. Clearing it turns -MCU_CMD_FW_SCATTER (0xffffff12)
-into 0xbfffff12, so mt7603_mcu_skb_send_msg() no longer matches it and
-queues the firmware image to MCU_PORT_QUEUE instead of MCU_PORT_QUEUE_FW.
-The firmware never starts and probe fails:
+On November 28, 2026 6:54:54 AM GMT+01:00, Maoyi Xie
+<maoyixie.tju@gmail.com> wrote:
+>rtw_usb_rx_handler() checks pkt_len + pkt_offset of each aggregated RX
+>packet only against max_skb_len. If a corrupted descriptor claims more
+>than the bytes left in the URB, skb_put_data() reads up to about 11 KB
+>past the received data.
+>
+>Stop the walk when a packet does not fit in the rest of the URB.
+>
+>Found with a CodeQL-based static analysis tool that we are developing.
+>Reproduced in a userspace harness under AddressSanitizer. Not tested on
+>hardware.
+>
+>Fixes: e9048e2935f7 ("wifi: rtw88: usb: Copy instead of cloning the RX skb")
+>Cc: stable@vger.kernel.org
+>Signed-off-by: Maoyi Xie <maoyixie.tju@gmail.com>
+>---
 
-  mt76_wmac 10300000.wmac: Timeout waiting for firmware to initialize
-  mt76_wmac 10300000.wmac: probe with driver mt76_wmac failed with error -5
+Looks good to me,
 
-Only handle the READ flag of non-negative command ids.
+Reviewed-by: Luka Gejak <luka.gejak@linux.dev>
 
-Fixes: 1ffc90633ad6 ("wifi: mt76: mark an MCU command that only reads")
-Signed-off-by: Oleh Shcherba <scherbaoleg4@gmail.com>
----
- drivers/net/wireless/mediatek/mt76/mcu.c  | 6 +++---
- drivers/net/wireless/mediatek/mt76/mt76.h | 6 ++++++
- 2 files changed, 9 insertions(+), 3 deletions(-)
-
-diff --git a/drivers/net/wireless/mediatek/mt76/mcu.c b/drivers/net/wireless/mediatek/mt76/mcu.c
-index 4f3471b..4dc287e 100644
---- a/drivers/net/wireless/mediatek/mt76/mcu.c
-+++ b/drivers/net/wireless/mediatek/mt76/mcu.c
-@@ -59,7 +59,7 @@ int mt76_mcu_send_and_get_msg(struct mt76_dev *dev, int cmd, const void *data,
- 	struct sk_buff *skb;
- 
- 	if (dev->mcu_ops->mcu_send_msg)
--		return dev->mcu_ops->mcu_send_msg(dev, cmd & ~MT76_MCU_CMD_READ,
-+		return dev->mcu_ops->mcu_send_msg(dev, mt76_mcu_cmd_strip(cmd),
- 						  data, len, wait_resp);
- 
- 	skb = mt76_mcu_msg_alloc(dev, data, len);
-@@ -74,14 +74,14 @@ int mt76_mcu_skb_send_and_get_msg(struct mt76_dev *dev, struct sk_buff *skb,
- 				  int cmd, bool wait_resp,
- 				  struct sk_buff **ret_skb)
- {
--	bool read = cmd & MT76_MCU_CMD_READ;
-+	bool read = cmd >= 0 && (cmd & MT76_MCU_CMD_READ);
- 	unsigned int retry = 0;
- 	struct sk_buff *orig_skb = NULL;
- 	unsigned long expires;
- 	bool lost = false;
- 	int ret, seq;
- 
--	cmd &= ~MT76_MCU_CMD_READ;
-+	cmd = mt76_mcu_cmd_strip(cmd);
- 
- 	if (ret_skb)
- 		*ret_skb = NULL;
-diff --git a/drivers/net/wireless/mediatek/mt76/mt76.h b/drivers/net/wireless/mediatek/mt76/mt76.h
-index d635df2..237057c 100644
---- a/drivers/net/wireless/mediatek/mt76/mt76.h
-+++ b/drivers/net/wireless/mediatek/mt76/mt76.h
-@@ -272,6 +272,12 @@ struct mt76_queue {
-  */
- #define MT76_MCU_CMD_READ	BIT(30)
- 
-+/* mt7603 uses negative command ids, do not mask them */
-+static inline int mt76_mcu_cmd_strip(int cmd)
-+{
-+	return cmd < 0 ? cmd : cmd & ~MT76_MCU_CMD_READ;
-+}
-+
- struct mt76_mcu_ops {
- 	unsigned int max_retry;
- 	u32 headroom;
--- 
-2.43.0
-
+Best regards,
+Luka Gejak
