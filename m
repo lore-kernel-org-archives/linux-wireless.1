@@ -1,51 +1,51 @@
-Authentication-Results: smtp.subspace.kernel.org; arc=none smtp.remote-ip=95.215.58.201
+Authentication-Results: smtp.subspace.kernel.org; arc=none smtp.remote-ip=91.218.175.93
 ARC-Seal: i=1; d=subspace.kernel.org; s=arc20261015; a=rsa-sha256; cv=none;
-	t=1795865398;
-	b=erTP21HfkLod2teehLyZcYuJJv+z3cdUW9nvER57HTNmDpMdM31y+ctInjbGABrB5/em
-	 bvOS4k8UlWZvQd7KRiqQIp21l16fPyJVeTLYUAqpwIkUACRUFH+iyYCEsjmT7UMNq6nCL
-	 t8nc9xQaqVTdTgVFdiGGyATIUhf7/WMcuSwsMpaZEzXFofSbzwTSwzKv3+w3P7GEDRtlV
-	 yCMh7TKyS4S9IhkDBMIGALaHRj4z8n0goHNkHzMVjm69qjODwtCyK5tgL9VcRQF4GKZf3
-	 Kw4F7dBnNKJzVDY9+3vr4cjs1PRcjSXS1yJep/hyUJN7UUD8rgO43XcjZssQuAhuwaQ==
+	t=1795865402;
+	b=rAftRHWO86whTow3c4aQo3hxaFQymPxORzFpY6zXLvl40p5L+C6sw3NiqY3xJJYY5Ja4
+	 3QXK1coGGoyASWu9iwLUN8muJ20t04+V3RD13147wWWhzwATDDhaVQtlmUw6ue369szCT
+	 +h9uljadM8idV8CRCRf2ca/8iIUruW8bAEr4yic55Jm/D+tsSrbF/mixQmme45mBHFniu
+	 LQiqRyN6NBH3+QwW7NQprGgwHzSDEzDE5NcYjiaTj6Cp2Dpu+0FLiZnBGgAy/GR7W+EN3
+	 OcCir9RJOpCsCvOVeaW8WUKTEQNhkcaFonKUsM5zxX6vAI79kQ8D5OnYnBz+gTP6xtA==
 ARC-Message-Signature: i=1; d=subspace.kernel.org; s=arc20261015;
-	a=rsa-sha256; c=relaxed/relaxed; t=1795865398;
+	a=rsa-sha256; c=relaxed/relaxed; t=1795865402;
 	h=DMARC-Filter:X-Envelope-To:DKIM-Signature:X-Envelope-To:Received:
 	 X-Mizu-Trace-ID:X-Migadu-Flow:From:To:Cc:Subject:Date:Message-ID:
 	 X-Mailer:In-Reply-To:References:MIME-Version:Content-Type:
 	 Content-Transfer-Encoding;
-	bh=Br+60WyY6NR3dzXOr0caHGzfgUSLm3hs8qRDSmm+z4A=;
-	b=iahZ85TQ/dabQ4a/EKYVIO+skCymVcfsRzHvmm3osbcA8fh0WtCvtgttyTyWYwHtWeSS
-	 kPbBYFDvnUccq7FG8RLEkI6RuMPDQDwUEVJpXEfxP4IxHm1jVMv37pLavo8AFlbG+6NjU
-	 uIvpgsRk3RFeHZLcIc/a8NAla6oLxCgMr4waF59JK5pTlBCI+G2hVumf5Wi6VT7iGCztf
-	 E/3Hcf26MTL6V/9tWLxIoGDLfBT/Mv5CXCeu4FN6Gvp2NqtUxaVncn3LXJ4rv6Hz+hTMU
-	 gawIzdPFLYYoE1ZE2kn7/tV6j+RlKub6LgafpOpoTptjI1sZ62b6+l59cAhTKo2EJHg==
+	bh=54o8OQ7UAsWgXirD5/FfrEDnJE17UGCWdqGGdVByD1Q=;
+	b=wF/88lHhigdb9WDvUSTuLrcK47Np4QK41e/qg2osNjPp3dhoYif7ssbY/RnaJIfkKD63
+	 itZlekoVAEv0QTzeRlF1lbDVnVAN/R0HdVe4qTc8ftnOvuCb+iR7ETGljTFJduB/Jez+J
+	 eDakTl3VLqtHI75bi6MNRnr7wbwiJ7F2UeB4Yk0ZzVjUyyOwrZw3VynSPhRZXnVC1v9pQ
+	 43UpyDBNUIvBv/6s6bEcBuRZULPN0f7+yzsOO9VQhFpfB+eM6ItQIZUmavYHjOsshGpxO
+	 eNOG1wEuTrOpgITzJfERBByG2AbmUcPQ8DiSlyAUK8trudfKUK++D1EciJOfxqswMvg==
 ARC-Authentication-Results: i=1; smtp.subspace.kernel.org; 
 	dmarc=pass header.from=linux.dev;
 	spf=pass smtp.mailfrom=linux.dev;
-	dkim=pass header.d=linux.dev header.i=@linux.dev header.a=rsa-sha256 header.s=key1 header.b=o8BqW6X5;
-	arc=none smtp.remote-ip=95.215.58.201
-Received: from mta1.migadu.com (out-201.mta1.migadu.com [95.215.58.201])
+	dkim=pass header.d=linux.dev header.i=@linux.dev header.a=rsa-sha256 header.s=key1 header.b=CsdyQIWx;
+	arc=none smtp.remote-ip=91.218.175.93
+Received: from mta0.migadu.com (out-93.mta0.migadu.com [91.218.175.93])
 	(using TLSv1.3 with cipher TLS_AES_128_GCM_SHA256 (128/128 bits)
 	 key-exchange X25519 server-signature ECDSA (prime256v1) server-digest SHA256)
 	(No client certificate requested)
-	by smtp.subspace.kernel.org (Postfix) with ESMTPS id 45145606A31C
-	for <linux-wireless@vger.kernel.org>; Sat, 28 Nov 2026 11:29:56 +0000 (UTC)
-DMARC-Filter: OpenDMARC Filter v1.4.2 smtp.subspace.kernel.org 45145606A31C
+	by smtp.subspace.kernel.org (Postfix) with ESMTPS id 11D60606A323
+	for <linux-wireless@vger.kernel.org>; Sat, 28 Nov 2026 11:30:01 +0000 (UTC)
+DMARC-Filter: OpenDMARC Filter v1.4.2 smtp.subspace.kernel.org 11D60606A323
 Authentication-Results: smtp.subspace.kernel.org; dmarc=pass (p=none dis=none) header.from=linux.dev
 Authentication-Results: smtp.subspace.kernel.org; spf=pass smtp.mailfrom=linux.dev
 Authentication-Results: smtp.subspace.kernel.org;
-	dkim=pass (1024-bit key, unprotected) header.d=linux.dev header.i=@linux.dev header.a=rsa-sha256 header.s=key1 header.b=o8BqW6X5
+	dkim=pass (1024-bit key, unprotected) header.d=linux.dev header.i=@linux.dev header.a=rsa-sha256 header.s=key1 header.b=CsdyQIWx
 X-Envelope-To: linux-wireless@vger.kernel.org
-DKIM-Signature: a=rsa-sha256; bh=5BGU4dffwsCQntkrU2zrHwagqeiQz8YYA2a3BmXfx84=;
+DKIM-Signature: a=rsa-sha256; bh=fX9YjZlhFzjgQwAYsFF5NbPdefDEJIBnaNMJ6ZiqO6k=;
  c=simple/simple; d=linux.dev;
  h=from:to:subject:date:message-id:mime-version:content-type; s=key1;
- t=1795865395; v=1; x=1796470195;
- b=o8BqW6X5ESXea3nJyeBxRrXBhJ0gpQRjliUAaFTrLO04Iv4F1HW5bUVwYXvgOP6uEE45ggVU
- pAk5m58kQ/C3L0xv4nYuYxzGEVC6NWYQ8ZvvPFPJmvvtcpRTRASbMju9QHAR3KXNyV9YyHZcpUi
- 12LImKM+o4KHfuc2dJ/Cloo8=
+ t=1795865399; v=1; x=1796470199;
+ b=CsdyQIWx4V50LWg3DVqRwCy3SIy3UwNnQQLHIaOpvGP1j6he/mp4ZYXgCNeZXdxECc93Zv9g
+ j1RclV5m+ebU2f1i+s4L0AwJztv2k7ln4SLals3uKtuKGiIEIFy+xipDzX9WNOGpmELqiPzcrgQ
+ K0EJPDpoB9N+lGEhC7Wvj3KE=
 X-Envelope-To: linux-wireless@vger.kernel.org
-Received: by smtp.migadu.com with ESMTPS id 1e1f7f0487722a26;
-	Sat, 28 Nov 2026 11:29:55 +0000
-X-Mizu-Trace-ID: 1e1f7f0487722a26
+Received: by smtp.migadu.com with ESMTPS id bfd319335999c8e9;
+	Sat, 28 Nov 2026 11:29:59 +0000
+X-Mizu-Trace-ID: bfd319335999c8e9
 X-Migadu-Flow: FLOW_OUT
 From: Luka Gejak <luka.gejak@linux.dev>
 To: Ping-Ke Shih <pkshih@realtek.com>
@@ -53,12 +53,12 @@ Cc: linux-wireless@vger.kernel.org,
 	Bitterblue Smith <rtl8821cerfe2@gmail.com>,
 	Luka Gejak <luka.gejak@linux.dev>,
 	Ho Jie Feng <hjf3108@gmail.com>
-Subject: Re: [PATCH rtw-next v5 6/7] wifi: rtw88: 88xxa: correct carrier-frequency offset
-Date: Sat, 28 Nov 2026 12:29:53 +0100
-Message-ID: <179586537111.18963.10245502413702250015.rtw88-v5-reply@linux.dev>
+Subject: Re: [PATCH rtw-next v5 7/7] wifi: rtw88: 8812a, 8821a: respect peer A-MPDU size limits
+Date: Sat, 28 Nov 2026 12:29:54 +0100
+Message-ID: <179586537111.18963.13237902807035765522.rtw88-v5-reply@linux.dev>
 X-Mailer: git-send-email 2.56.1
-In-Reply-To: <20261127180034.1058591-7-hjf3108@gmail.com>
-References: <20261127180034.1058591-1-hjf3108@gmail.com> <20261127180034.1058591-7-hjf3108@gmail.com>
+In-Reply-To: <20261127180034.1058591-8-hjf3108@gmail.com>
+References: <20261127180034.1058591-1-hjf3108@gmail.com> <20261127180034.1058591-8-hjf3108@gmail.com>
 X-Mailing-List: linux-wireless@vger.kernel.org
 List-Id: <linux-wireless.vger.kernel.org>
 List-Post: <mailto:linux-wireless@vger.kernel.org>
@@ -73,43 +73,23 @@ Content-Transfer-Encoding: 8bit
 
 Hi Jie Feng,
 
-Thanks for the update. Two comments below.
+Thanks for the patch. One comment below.
 
-On November 28, 2026 2:00:26 AM GMT+08:00, Ho Jie Feng
+On November 28, 2026 2:00:27 AM GMT+08:00, Ho Jie Feng
 <hjf3108@gmail.com> wrote:
 
-> -	for (i = 0; i < rtwdev->hal.rf_path_num; i++) {
-> +	for (i = 0; i < path_num; i++) {
->  		cfo->cfo_tail[i] += pkt_stat->cfo_tail[i];
->  		cfo->cfo_cnt[i]++;
->  	}
+> -	.set_ampdu_factor	= NULL,
+> +	.set_ampdu_factor	= rtw8812a_set_ampdu_factor,
 
-As far as I can see, RX can update these fields while the watchdog is
-running rtw_phy_cfo_calc_avg(). It reads the sum and count separately,
-then clears them in a second loop. A packet that arrives in between can
-be counted against the wrong sum or cleared before it is used. That can
-change the crystal adjustment even with a single peer.
+I think this only programs the byte limit when the adapter joins an AP.
+The only caller of rtw_set_ampdu_factor() is the BSS_CHANGED_ASSOC
+handler. An AP client goes through rtw_ops_sta_add() and
+rtw_ops_ampdu_action(). Those paths leave the byte limit alone, even
+with a single client. On a fresh AP start that leaves the value from
+MAC initialization. The aggregate limit in the TX descriptor is an
+MPDU count. The same applies to RTL8821A.
 
-I think the same race exists on RTL8822C. Could we take and clear the
-samples under the same lock as the RX updates before using the helper
-on these chips?
-
-[ ... ]
-
-> +	bool bt_hold = rtwdev->efuse.btcoex && !rtw_coex_disabled(rtwdev);
-> +	u8 crystal_cap;
-> +
-> +	crystal_cap = rtw_phy_cfo_xcap_track(rtwdev, RTW_XCAP_MASK, bt_hold);
-
-So if I read it right, the helper returns the current cap when no new
-CFO samples have arrived, before checking bt_hold. If the RTL8821AU
-already adjusted the cap, a firmware report that Bluetooth is active
-can set bt_hold while WiFi is idle. The cap then stays adjusted until
-another CFO sample arrives. On 2.4 GHz the AP may only be sending CCK
-beacons in the meantime, which this path doesn't sample.
-
-Could the Bluetooth check restore the efuse value even when the sample
-count has not changed?
+Is managed mode the intended scope here?
 
 Best regards,
 Luka Gejak
