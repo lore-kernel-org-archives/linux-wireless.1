@@ -1,84 +1,84 @@
 Authentication-Results: smtp.subspace.kernel.org; arc=none smtp.remote-ip=209.85.218.41
 ARC-Seal: i=1; d=subspace.kernel.org; s=arc20261015; a=rsa-sha256; cv=none;
-	t=1795881818;
-	b=QLYaiMbei8drvD94TIMNJUIhcCYzFXley/4VOlknDvJNMC87HiTX6/XnoEaVIJQtDomV
-	 s4hg4ONxeKM/Jr92tpj+h96TkBbuqPDK0OWcU/umEm2vTvL0AR8NNdxXFS9D2zdvw8goP
-	 3YQk1ZEf7MpC05DxgSV3TY3FcFWfhR/VWCifr+CYMM5E9GuIOtaRK1DpVHopptzeJEEmX
-	 4KoPWQ2JeadtwjG/5mNqG9q2dhfBOkooGz7zK6aS3TVkvNevSAinft9f5c3ABi/0Kwx6o
-	 IEMaJjCXKCFns3r1wK6eqtjLG55U7dQMc+Q/SOtxv5H0ePRQmXtKtrrmyCRFYAVkwdQ==
+	t=1795881819;
+	b=WM8XwKaKTiG/pRtb3eTYLQOekwQmiDqtz69mY1ULhPlYZkVpmQL/iuDNGOVVd6ObicYz
+	 OqC83eFO2x7LB6p3ojNQDpTT1rC81HcJO4F9AxcZzIpC8mC2gKdoK7ThSe2voHizgXerL
+	 Y20lb3+SlFJL5wUs7zlcaI1F0SymVVp1CWJqeqnnIEemybFHskz9MHRq7DhpoyLP1OyO/
+	 vRU6vUEH7n6VuNpi6L1pmkcILlzO6n6wRwHgWart0aRPZp6DKgPgbo2f68sl8ho6qz8or
+	 tuuej6IrbeAd7LqxFnBPDY5pvbOmQ0II7kiJAuaxyzxniclmFicIVGJHjIXCR28VP7w==
 ARC-Message-Signature: i=1; d=subspace.kernel.org; s=arc20261015;
-	a=rsa-sha256; c=relaxed/relaxed; t=1795881818;
+	a=rsa-sha256; c=relaxed/relaxed; t=1795881819;
 	h=DMARC-Filter:Received:DKIM-Signature:X-Google-DKIM-Signature:
 	 X-Gm-Message-State:X-Gm-Gg:X-Received:Received:From:To:Cc:Subject:
 	 Date:Message-ID:X-Mailer:In-Reply-To:References:MIME-Version:
 	 Content-Transfer-Encoding;
-	bh=4ZlGoxzkJ56obQ814E/Ir1w79qAWdvvGnANYyfIPvJU=;
-	b=5CsL1X9E8hJ2qkAlTqEy+nRSAlNyPR5F57x06CJ4eNRHtdPFVGIkR/3xLka1s55wwkU5
-	 Iybfh2AwXsniPZKVOWxTaSrD225LIJ3kf9kbvD2f5pUEPcltmoXbTlY9xWCwOiNsbr0ml
-	 B4PT49YLIq29u4hA3pwvvyrBFuAryESWmEG4gdhVUfcy4wUGZQNKg28Ui3MizZ8r7zjLx
-	 s4f73pq/wFjk1/L2E/87637UOu/ut4dt6S1ErfyL/lnOBwJgR4ls/UY0CQE8aQRoafOjG
-	 CAnxQ18kHm+7Tg830mVjFOM3/4NwVnUGuGOKGXftl2SmSsNo2LBHy/KoQYtF4rvDykw==
+	bh=WDnHtIqvlcKh+KT2fInLEGWX50aw9RAoLdBVSUbUWiE=;
+	b=muFAHxNg+Lq9d7zF6UxZ1UoN2sdg8xKZIGXP0S+hUzYCSc41cDvBx1niLwUTJ8a+x+x9
+	 OrFwLl7AM2XyFUYLiH2A9kAIHfunkSsFQiV9+AvmYfSruDmrgluAQxKZokQk2Bj3i0pT2
+	 bi+IjPCgAl2a5+NVBYuoVESPCsXMAczwgeSya6o7I7/b/xCyBixVeqZbI91i0lVTO2VnS
+	 rkdf7SiTtCKs6ddeLRrhjpQofNMGFY/igN0Bc1txjTLZ6Cx1rduq9NzCg3pLp4b3gpAjQ
+	 GglQR8vJI46u81B7njjXR53a8KpDdTef5zwo8gYphGIoklzfX9t0/o+gHWkr8i55lJQ==
 ARC-Authentication-Results: i=1; smtp.subspace.kernel.org; 
 	dmarc=pass header.from=bairaktaris.de;
 	spf=pass smtp.mailfrom=bairaktaris.de;
-	dkim=pass header.d=bairaktaris.de header.i=@bairaktaris.de header.a=rsa-sha256 header.s=google header.b=rnt85EsU;
+	dkim=pass header.d=bairaktaris.de header.i=@bairaktaris.de header.a=rsa-sha256 header.s=google header.b=F3Jmn6+I;
 	arc=none smtp.remote-ip=209.85.218.41
 Received: from mail-ej1-f41.google.com (mail-ej1-f41.google.com [209.85.218.41])
 	(using TLSv1.3 with cipher TLS_AES_128_GCM_SHA256 (128/128 bits)
 	 key-exchange X25519 server-signature ECDSA (prime256v1) server-digest SHA256)
 	(No client certificate requested)
-	by smtp.subspace.kernel.org (Postfix) with ESMTPS id 12A8E606A6AF
-	for <linux-wireless@vger.kernel.org>; Sat, 28 Nov 2026 16:03:37 +0000 (UTC)
-DMARC-Filter: OpenDMARC Filter v1.4.2 smtp.subspace.kernel.org 12A8E606A6AF
+	by smtp.subspace.kernel.org (Postfix) with ESMTPS id B0999606A6BE
+	for <linux-wireless@vger.kernel.org>; Sat, 28 Nov 2026 16:03:38 +0000 (UTC)
+DMARC-Filter: OpenDMARC Filter v1.4.2 smtp.subspace.kernel.org B0999606A6BE
 Authentication-Results: smtp.subspace.kernel.org; dmarc=pass (p=reject dis=none) header.from=bairaktaris.de
 Authentication-Results: smtp.subspace.kernel.org; spf=pass smtp.mailfrom=bairaktaris.de
 Authentication-Results: smtp.subspace.kernel.org;
-	dkim=pass (2048-bit key) header.d=bairaktaris.de header.i=@bairaktaris.de header.a=rsa-sha256 header.s=google header.b=rnt85EsU
-Received: by mail-ej1-f41.google.com with SMTP id a640c23a62f3a-c506a231b88so1198075766b.3
-        for <linux-wireless@vger.kernel.org>; Sat, 28 Nov 2026 08:03:37 -0800 (PST)
+	dkim=pass (2048-bit key) header.d=bairaktaris.de header.i=@bairaktaris.de header.a=rsa-sha256 header.s=google header.b=F3Jmn6+I
+Received: by mail-ej1-f41.google.com with SMTP id a640c23a62f3a-c5118deebcfso1351418666b.1
+        for <linux-wireless@vger.kernel.org>; Sat, 28 Nov 2026 08:03:38 -0800 (PST)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=bairaktaris.de; s=google; t=1795881816; x=1796486616; darn=vger.kernel.org;
+        d=bairaktaris.de; s=google; t=1795881817; x=1796486617; darn=vger.kernel.org;
         h=content-transfer-encoding:mime-version:references:in-reply-to
          :message-id:date:subject:cc:to:from:from:to:cc:subject:date
          :message-id:reply-to:content-type;
-        bh=4ZlGoxzkJ56obQ814E/Ir1w79qAWdvvGnANYyfIPvJU=;
-        b=rnt85EsUZ8LvFa3Y7C4h9LLqUkXjoO4VwgOxQ4efPVrq+BIpSHO1rRfc8KO4b4PQN+
-         fU6EckdhWK4HyBJ41CrXoLDoEvbapu6rf1xhSxUXenUM9NaDwLATXls3Gn+zaAYWP5KV
-         u2S6pGz3ri5X4D+fTwDJoD1iN7Ndf7EX2XckV8fHK2qrt5sTNtj7YkmwibCgaweU2Oa2
-         6+fbmXVFMbfmMADxmToXZFAST5ox79Jth7UG+za1hznY9bA8AUL9iKx6Ay5waXXweoWE
-         AAyAAj0KI4cTFL6GtLEAupEoL2Bt/WljJcFg6Y0WfiLFtbbSJ0idbCPGfWunxWIf8jBm
-         etqg==
+        bh=WDnHtIqvlcKh+KT2fInLEGWX50aw9RAoLdBVSUbUWiE=;
+        b=F3Jmn6+IP84x1zhxgZogKB5f7so+jHX2SIy/B6Z5JuVC3jgHuUFgoxceGJF72dH3fY
+         QblGIBbfQkfU8iSleTivQGsJ+wkRxXGGn9P1LpZYQ7/IQ3uDqZbncApBJUskHg6kQvm1
+         8lbCP0gna1W2Gg7NM0CT4Puigm3zfT9g6hmou8IdvtTJ6n1vwacXvYGWAIuhoTCrCvMU
+         Afoeq/pcQ5je87sKoLum7ndpII8qU3L6rDfncTwlVafmO1fUhFlq8U5YvS6Ea8I9amAa
+         8Q6Ui+I3fwQE9VMyfiFFITEeagGOKHpXytMyLNyKJeSZcEKH9G4gHst5U3pqb4eHsx2C
+         +cOQ==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=1e100.net; s=20260707; t=1795881816; x=1796486616;
+        d=1e100.net; s=20260707; t=1795881817; x=1796486617;
         h=content-transfer-encoding:mime-version:references:in-reply-to
          :message-id:date:subject:cc:to:from:x-gm-gg:x-gm-message-state:from
          :to:cc:subject:date:message-id:reply-to:content-type;
-        bh=4ZlGoxzkJ56obQ814E/Ir1w79qAWdvvGnANYyfIPvJU=;
-        b=ALJvcSYGugxBXKgcA3oZcbN4LHD7c6L2XROZPIzH+oFynX6X/QBod22eX4a4AFdnfD
-         NXpYEloQBXYljwDAs0N8sbXetkIk9mdwzN9DruqU+tl/Y7Qcij3VKx3GlSfY7fOm6gFD
-         zOdAIPoISKRMJaWZ/Tp4jn+nRoNK2x3t8Vcdy4db6MMv+suhBRTZHPRgZN5jx2Ya9Z1j
-         yLCvKJoGxV4iMzxclDEBCt+syrzrs7jsUy/bm5RGH3DZucfd1zTaJLcGjJF7zC+XcCwC
-         d/5s+QVKU0TByrXgZXZes6/JK9osPrpvGunEpVixrkvlYnFXCFidu5xZ9QfCjIxb+oLW
-         uNuQ==
-X-Gm-Message-State: APuU4Z/kejw5+JXG3s1YObRlKDKnQc1vCU3b6f0HikV2i+NFg+WXUJe6
-	972gZdBkwp2ZFYItWw9buZO3DWn3vVWMLGk5z5AA6fWbIgP1jFwPh1Rc6ucFiOU0cQ==
-X-Gm-Gg: AZFdTZcBky1pQviAqv4RNp3fcKPa+AuBqK48Rt8V5fNAkyvae5alDtV4Z+9MFGIVVpL
-	OsSjn9tgwTwZmVMG7/gU+PBVUsbJnn+njqSuyEb0fkLqTHKTGAbhZk1oZLPWTI5BsEdsHAJ0PL4
-	pUGWCuyovBn8pNCqMpsafoo5oLoZugB5A97IWd+exeuWP1kzgXJ2JKjLTg2YwXUUhBq4sUGf/tg
-	GdxPyllCEEdZIwDKWz1MsJjlRxTXGyjkFh2McwJUCHPFWf2wFI/oKHxgQ7Z7Q+VvhFWiUzd+Jkk
-	HrgzztOD/FnFU1NeHJCmqfZLkVZDFo1odEWD3FiqP1zjS1R9pmcEneLMBFY8We/ZaSd+pGaptgw
-	a6UDLqrHBB93mhU62vA2TcUOl4P1bHzdOIzvFasfukn/yhkt7l7JTtsOMYnsNcb420rxKKs/x4K
-	QGoJo8ARhSzVPJryFL4A+A6RUm9vAQk3vafMAZvQF1h2qbGniGQnGwAbRkIKgefOzrnUZEc6oXp
-	tQjiYEuEbTwi/upLT47fpGGa8Zex9VX6lHzhDvcziOiXJrPkgV5FXmcRxQIO8d1lo5eKGic0Tx/
-	zFRholAUGsn5I1edsBPY07kEMdpqa8F7VXTGFEMnFjWUOHKRjoKpcBqrsA9M/0OjFABDzk3wwXP
-	kdwMImjj9xRjKavlg+STOkiDfT0slb2ZIe5gc5Unc7SSRdDk3oJ5xs1UiMmAuA5KLxWINNdSsId
-	YoXITfrd9Quy85B6mhHFUIq66Puzm0XesFY8OAjeDiQQDCZB0kmsb8h0fiWbtTAfag14525bpZs
-	YIsCeGZllHOQgx44QPtr5phCbFZvNYLL/CYdLkVE8PcAHTiMsk8q2iPZrRcAevB1krgnrBkqG6S
-	QCMPrjTe4uIG2A==
-X-Received: by 2002:a17:907:3f1b:b0:c51:5547:1771 with SMTP id a640c23a62f3a-c5155471892mr2060807566b.13.1795881816381;
-        Sat, 28 Nov 2026 08:03:36 -0800 (PST)
+        bh=WDnHtIqvlcKh+KT2fInLEGWX50aw9RAoLdBVSUbUWiE=;
+        b=ZoAMTeq2C6HjMEFAyy9xN2Adf7Aq9qEjpglQ/waLYzW9hCPA3JJMnvSWm80h9baGOv
+         W4kAbRkqJbw+t0ENqxSjWABTUIN63DfJvB0Zwle+Vs8P6nctPL+oZCoK0q5OcsAIRCst
+         lqTLgeZW3bNQDSEZEX+QVz4EUbdf6JtaVRU1B5JA53eiVfM1d2GywIMAVUYIylN538NF
+         nGnwcrUOMhBIKPH6BUm7bt2zMPF6AMYV0npVuFHXeJDI2mwrDZtizWNXPIVOWz0Zi+lq
+         nWeM70gjeorIR4r+i/vWROtqHhGuh02ViIwr36k/Oy5vlxN1ksLCELJAtsmJ/dVbswKk
+         TlZg==
+X-Gm-Message-State: APuU4Z8U0rVs6b/fjOongNnTr+kIL/bOo7Sl9F82fM1vCzqAAjbK8i8p
+	DaNeyCd591LS0rSeYKx36bNhXjJ7GlOpoNv+D9D6uzkPfXpcChvScPSTG3s1BHbUzg==
+X-Gm-Gg: AZFdTZcY48NPM+79vj5FtznAodlxJ3t/ULSo7QSfnFKJHdgV7hu5yG6xYW2NKGIhB99
+	3nv2f3qBWkBFhz2KQw93PL/YwF6b+YhnjoOFqB9tLOR3BX+sKHTxf0DWNQsQzAyFD/vfV7lq9wi
+	Pa2EbbVziFsqjdNnJHwXcXwjggiA/hINLZ3AVvc+0hSMOvQwZRZXst6ojOmN4wNJD1VDj/5Aldj
+	CggnDNx2Jyyzl6B6OHqiFzwEOitlloH6sykbJ2jN2qG/n7UbkHGOsbCx/P9GBTn1AqmGJwQfCOF
+	acKCyKfPG0ctq1hy6mBcv4tYpM2FiUjJj/xDp1SZm25wenJc1xBYbwt8nobh3RIUKFXTS2cclem
+	nhRiZ/7sSbbJY8C0IMB9QrF+W9VTwcwNgaDT2y14251wqsbKbmt0GxBDSUJ64HFkT0lqEwGB4UP
+	Is9DKGrJWeRkqXhedaH0rCkmmC9bEftQs2GVkX9RjrOaQGP1rmfILNu6wl/QcLV83ymipoOcfyd
+	Pr3+WpHgm6Pk8UJ+aUvj3NzJB/9lgiV6knA6gYM+QLJw+x2ALOcvLg290dVFvESIOY3uux9tX1v
+	mk9JUdc70Dou4UcsJZT09GWRytx70dFctvdQKb+ct0j0q3n+devwdeijmYlSUkbbPtLIScpzkkA
+	i2Xw09g8HEQ7zUXugs+3UNZ53EqpmvDbUpvA6G9klHVUu8mzZw/PBI/wNtNTSDbr3dYbVWfYphg
+	P6EpygCYLaRrY8GTyJExLeEhJWAiDd7c0UXt/GEtRu7zQA1hMOaKElMX9WPQKJT1QJMKutF6loz
+	DdFkEOdth+0UQ57Mknuh5pdsixk+Qa4qfMn/vcODl4DYSolKKpq2jNob5IV0eNZ449+BQOwzxW5
+	wVL5PM9y418AaUw=
+X-Received: by 2002:a17:906:1255:b0:c2e:378c:8ceb with SMTP id a640c23a62f3a-c513ab2f292mr1758991266b.36.1795881817055;
+        Sat, 28 Nov 2026 08:03:37 -0800 (PST)
 Received: from Desktop.tail070c67.ts.net ([185.152.145.248])
-        by smtp.gmail.com with ESMTPSA id a640c23a62f3a-c513b022e84sm990389566b.84.2026.11.28.08.03.35
+        by smtp.gmail.com with ESMTPSA id a640c23a62f3a-c513b022e84sm990389566b.84.2026.11.28.08.03.36
         (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
         Sat, 28 Nov 2026 08:03:36 -0800 (PST)
 From: Julius Bairaktaris <julius@bairaktaris.de>
@@ -92,9 +92,9 @@ Cc: linux-wireless@vger.kernel.org,
 	ath11k@lists.infradead.org,
 	ath12k@lists.infradead.org,
 	linux-kernel@vger.kernel.org
-Subject: [PATCH wireless-next v2 4/7] wifi: mac80211: advertise TSO and SG for encap offloaded frames
-Date: Sat, 28 Nov 2026 17:03:32 +0100
-Message-ID: <20261128160335.1815537-5-julius@bairaktaris.de>
+Subject: [PATCH wireless-next v2 5/7] wifi: mac80211: take the TID of an 802.3 frame from the driver
+Date: Sat, 28 Nov 2026 17:03:33 +0100
+Message-ID: <20261128160335.1815537-6-julius@bairaktaris.de>
 X-Mailer: git-send-email 2.53.0
 In-Reply-To: <20261128160335.1815537-1-julius@bairaktaris.de>
 References: <20261128160335.1815537-1-julius@bairaktaris.de>
@@ -109,270 +109,68 @@ Precedence: list
 MIME-Version: 1.0
 Content-Transfer-Encoding: 8bit
 
-A driver whose hardware segments TCP frames and takes frames with
-fragments on its 802.3 encap path cannot say so. hw->netdev_features
-applies to every netdev of the hw, so a feature set there also reaches
-the frames that go out through the 802.11 path.
+__ieee80211_rx_handle_8023() clears struct ieee80211_rx_data and never
+sets seqno_idx, so ieee80211_rx_8023() counts every frame received with
+RX_FLAG_8023 in rx_stats.msdu[0], whatever its TID. The native path
+takes the TID from the QoS header, which an 802.3 frame no longer has.
 
-Add hw->encap_netdev_features and hw->encap_gso_max_segs. When the hw
-supports encap offload, mac80211 sets the features on each netdev it
-creates, and ieee80211_8023_xmit() passes them to
-ieee80211_tx_skb_fixup(), so a GSO frame reaches the driver whole.
+Add a tid field to struct ieee80211_rx_status for the driver to fill,
+and use it as seqno_idx on the 802.3 path. A driver that does not set it
+leaves it 0, which counts the frame on TID 0 as before.
 
-Whether a netdev sends with encap offload changes with its type, 4addr
-mode, fragmentation threshold and monitor interfaces, and mac80211
-switches its netdev ops when it does. The ops of the 802.11 and monitor
-paths get an ndo_features_check that drops the encap features, so the
-stack segments, linearizes and resolves the checksum first.
-
-AQL charges a frame by tx_time_est, which ieee80211_info_set_tx_time_est()
-caps at 4095 us. A whole GSO frame to a slow station, or to one whose
-rate mac80211 does not know yet, would be charged less than its
-airtime. Segment such a frame in software instead; the segments keep
-scatter-gather. The check uses the rate of the station when the frame
-is queued.
-
-The tx statistics count a TCP GSO frame as gso_segs packets, with the
-headers of every segment in its length.
-
+Fixes: 80a915ec4427 ("mac80211: add rx decapsulation offload support")
 Signed-off-by: Julius Bairaktaris <julius@bairaktaris.de>
 ---
 v2:
-- Take the encap features away per frame in ndo_features_check of the
-  non-encap ops, instead of setting them by interface type when the
-  netdev is created. v1 left them on a netdev changed to mesh point,
-  whose fast path then warned in skb_checksum_help(), and never set
-  them on P2P netdevs. Found by the hosted Sashiko review of v1.
-- The AQL fallback clears only the GSO bits and keeps SG. Found by the
-  hosted Sashiko review of v1.
-- Segment a GSO frame for a station with no usable rate, which AQL
-  charges as 4 us. Found by an LLM review (Claude).
-- Say in the kernel-doc that an encap_gso_max_segs of 0 keeps the
-  default of the netdev. Found by an LLM review (Claude).
+- No change.
 
- include/net/mac80211.h | 15 ++++++++++
- net/mac80211/iface.c   | 28 ++++++++++++++++++
- net/mac80211/main.c    |  3 +-
- net/mac80211/tx.c      | 65 ++++++++++++++++++++++++++++++++++++++++--
- 4 files changed, 108 insertions(+), 3 deletions(-)
+ include/net/mac80211.h | 4 ++++
+ net/mac80211/rx.c      | 3 +++
+ 2 files changed, 7 insertions(+)
 
 diff --git a/include/net/mac80211.h b/include/net/mac80211.h
-index ba16096fea3a..58a0a387d86c 100644
+index 58a0a387d86c..0d0aa613c280 100644
 --- a/include/net/mac80211.h
 +++ b/include/net/mac80211.h
-@@ -3271,6 +3271,19 @@ enum ieee80211_hw_flags {
-  * @netdev_features: netdev features to be set in each netdev created
-  *	from this HW. Note that not all features are usable with mac80211,
-  *	other features will be rejected during HW registration.
-+ * @encap_netdev_features: netdev features, in addition to @netdev_features,
-+ *	set in each netdev created from this HW when it supports 802.3
-+ *	encapsulation offload, for the frames that are sent with it (see
-+ *	%IEEE80211_OFFLOAD_ENCAP_ENABLED). A driver sets scatter-gather and
-+ *	segmentation offload here when the hardware takes such frames whole.
-+ *	mac80211 hands a driver a frame with these features only with
-+ *	%IEEE80211_TX_CTL_HW_80211_ENCAP, and segments or linearizes it in
-+ *	software on every other path, and for a station when the airtime
-+ *	estimate of the whole frame is more than AQL can account to one frame.
-+ *	Such a frame starts with its 802.3 header.
-+ * @encap_gso_max_segs: the most segments of a GSO frame the driver takes
-+ *	whole, when @encap_netdev_features has a segmentation offload; 0
-+ *	keeps the default limit of the netdev.
-  *
-  * @uapsd_queues: This bitmap is included in (re)association frame to indicate
-  *	for each access category if it is uAPSD trigger-enabled and delivery-
-@@ -3330,6 +3343,8 @@ struct ieee80211_hw {
- 		s16 accuracy;
- 	} radiotap_timestamp;
- 	netdev_features_t netdev_features;
-+	netdev_features_t encap_netdev_features;
-+	u16 encap_gso_max_segs;
- 	u8 uapsd_queues;
- 	u8 uapsd_max_sp_len;
- 	u8 max_nan_de_entries;
-diff --git a/net/mac80211/iface.c b/net/mac80211/iface.c
-index b6ed6541bc42..85c96da3391c 100644
---- a/net/mac80211/iface.c
-+++ b/net/mac80211/iface.c
-@@ -13,6 +13,7 @@
- #include <linux/slab.h>
- #include <linux/kernel.h>
- #include <linux/if_arp.h>
-+#include <linux/if_vlan.h>
- #include <linux/netdevice.h>
- #include <linux/rtnetlink.h>
- #include <linux/kcov.h>
-@@ -960,11 +961,28 @@ static int ieee80211_netdev_setup_tc(struct net_device *dev,
- 	return drv_net_setup_tc(local, sdata, dev, type, type_data);
- }
+@@ -1770,6 +1770,9 @@ enum mac80211_rx_encoding {
+  * @ampdu_reference: A-MPDU reference number, must be a different value for
+  *	each A-MPDU but the same for each subframe within one A-MPDU
+  * @zero_length_psdu_type: radiotap type of the 0-length PSDU
++ * @tid: the TID of a frame received in 802.3 format (%RX_FLAG_8023), or
++ *	%IEEE80211_NUM_TIDS if it has none; counts the frame in the per-TID
++ *	statistics of its station. Not read for other frames.
+  * @link_id: id of the link used to receive the packet. Set and used by
+  *	mac80211 internally, it uses @freq set by the driver to identify the
+  *	correct link per vif. Set to %IEEE80211_LINK_UNSPECIFIED for non-MLD
+@@ -1813,6 +1816,7 @@ struct ieee80211_rx_status {
+ 	u8 chains;
+ 	s8 chain_signal[IEEE80211_MAX_CHAINS];
+ 	u8 zero_length_psdu_type;
++	u8 tid;
+ 	u8 link_id:4;
+ };
  
-+/* For the netdev ops that send without the 802.3 encap offload: the frame
-+ * is built into an 802.11 frame here, which cannot take what only the encap
-+ * offload path takes, so the stack segments or linearizes it first.
-+ */
-+static netdev_features_t
-+ieee80211_netdev_features_check(struct sk_buff *skb, struct net_device *dev,
-+				netdev_features_t features)
-+{
-+	struct ieee80211_sub_if_data *sdata = IEEE80211_DEV_TO_SUB_IF(dev);
-+	struct ieee80211_hw *hw = &sdata->local->hw;
-+
-+	features &= ~(hw->encap_netdev_features & ~hw->netdev_features);
-+
-+	return vlan_features_check(skb, features);
-+}
-+
- static const struct net_device_ops ieee80211_dataif_ops = {
- 	.ndo_open		= ieee80211_open,
- 	.ndo_stop		= ieee80211_stop,
- 	.ndo_uninit		= ieee80211_uninit,
- 	.ndo_start_xmit		= ieee80211_subif_start_xmit,
-+	.ndo_features_check	= ieee80211_netdev_features_check,
- 	.ndo_set_rx_mode	= ieee80211_set_multicast_list,
- 	.ndo_set_mac_address 	= ieee80211_change_mac,
- 	.ndo_setup_tc		= ieee80211_netdev_setup_tc,
-@@ -1003,6 +1021,7 @@ static const struct net_device_ops ieee80211_monitorif_ops = {
- 	.ndo_stop		= ieee80211_stop,
- 	.ndo_uninit		= ieee80211_uninit,
- 	.ndo_start_xmit		= ieee80211_monitor_start_xmit,
-+	.ndo_features_check	= ieee80211_netdev_features_check,
- 	.ndo_set_rx_mode	= ieee80211_set_multicast_list,
- 	.ndo_set_mac_address 	= ieee80211_change_mac,
- 	.ndo_select_queue	= ieee80211_monitor_select_queue,
-@@ -2407,6 +2426,15 @@ int ieee80211_if_add(struct ieee80211_local *local, const char *name,
- 			sdata->u.mgd.use_4addr = params->use_4addr;
+diff --git a/net/mac80211/rx.c b/net/mac80211/rx.c
+index a2356cd17691..9fabc9b5a976 100644
+--- a/net/mac80211/rx.c
++++ b/net/mac80211/rx.c
+@@ -5303,6 +5303,7 @@ static void __ieee80211_rx_handle_8023(struct ieee80211_hw *hw,
+ 				       struct sk_buff *skb,
+ 				       struct list_head *list)
+ {
++	struct ieee80211_rx_status *status = IEEE80211_SKB_RXCB(skb);
+ 	struct ieee80211_local *local = hw_to_local(hw);
+ 	struct ieee80211_fast_rx *fast_rx;
+ 	struct ieee80211_rx_data rx;
+@@ -5313,6 +5314,8 @@ static void __ieee80211_rx_handle_8023(struct ieee80211_hw *hw,
+ 	rx.skb = skb;
+ 	rx.local = local;
+ 	rx.list = list;
++	/* the MSDU count of the station is kept per TID */
++	rx.seqno_idx = min_t(u8, status->tid, IEEE80211_NUM_TIDS);
  
- 		ndev->features |= local->hw.netdev_features;
-+		/* ieee80211_netdev_features_check() takes the encap features
-+		 * away from every frame sent without the encap offload
-+		 */
-+		if (ieee80211_hw_check(&local->hw, SUPPORTS_TX_ENCAP_OFFLOAD)) {
-+			ndev->features |= local->hw.encap_netdev_features;
-+			if (local->hw.encap_gso_max_segs)
-+				netif_set_tso_max_segs(ndev,
-+						       local->hw.encap_gso_max_segs);
-+		}
- 		ndev->priv_flags |= IFF_LIVE_ADDR_CHANGE;
- 		ndev->hw_features |= ndev->features &
- 					MAC80211_SUPPORTED_FEATURES_TX;
-diff --git a/net/mac80211/main.c b/net/mac80211/main.c
-index e03c2dbf4fb8..2a49fe7ed367 100644
---- a/net/mac80211/main.c
-+++ b/net/mac80211/main.c
-@@ -1243,7 +1243,8 @@ int ieee80211_register_hw(struct ieee80211_hw *hw)
- 	}
+ 	I802_DEBUG_INC(local->dot11ReceivedFragmentCount);
  
- 	/* Only HW csum features are currently compatible with mac80211 */
--	if (WARN_ON(hw->netdev_features & ~MAC80211_SUPPORTED_FEATURES))
-+	if (WARN_ON((hw->netdev_features | hw->encap_netdev_features) &
-+		    ~MAC80211_SUPPORTED_FEATURES))
- 		return -EINVAL;
- 
- 	if (hw->max_report_rates == 0)
-diff --git a/net/mac80211/tx.c b/net/mac80211/tx.c
-index cb9ecac25a9c..91ddd282f08d 100644
---- a/net/mac80211/tx.c
-+++ b/net/mac80211/tx.c
-@@ -14,6 +14,7 @@
- #include <linux/slab.h>
- #include <linux/skbuff.h>
- #include <linux/if_vlan.h>
-+#include <linux/tcp.h>
- #include <linux/etherdevice.h>
- #include <linux/bitmap.h>
- #include <linux/rcupdate.h>
-@@ -4797,6 +4798,47 @@ static bool ieee80211_tx_8023(struct ieee80211_sub_if_data *sdata,
- 	return ret;
- }
- 
-+/* A frame's airtime estimate has 10 bits, in units of 4 us. A GSO frame whose
-+ * estimate would not fit, or that has no estimate because the rate of the
-+ * station is not known, is charged less than it takes, so it is segmented in
-+ * software instead.
-+ */
-+#define IEEE80211_TX_GSO_AIRTIME_MAX	4092
-+
-+static bool ieee80211_8023_gso_fits(struct ieee80211_sub_if_data *sdata,
-+				    struct sta_info *sta, struct sk_buff *skb,
-+				    u16 queue)
-+{
-+	struct ieee80211_local *local = sdata->local;
-+	struct ieee80211_chanctx_conf *conf;
-+	u32 airtime;
-+	u8 band = 0;
-+
-+	if (!sta || !wiphy_ext_feature_isset(local->hw.wiphy,
-+					     NL80211_EXT_FEATURE_AQL))
-+		return true;
-+
-+	/* AQL charges the vif of the AP, as ieee80211_tx_dequeue() does */
-+	if (sdata->vif.type == NL80211_IFTYPE_AP_VLAN)
-+		sdata = container_of(sdata->bss, struct ieee80211_sub_if_data,
-+				     u.ap);
-+
-+	/* the estimate of ieee80211_calc_expected_tx_airtime(), which charges
-+	 * 4 us when it has no rate to estimate with
-+	 */
-+	conf = rcu_dereference(sdata->vif.bss_conf.chanctx_conf);
-+	if (conf)
-+		band = conf->def.chan->band;
-+
-+	airtime = ieee80211_rate_expected_tx_airtime(&local->hw,
-+						     &sta->deflink.tx_stats.last_rate,
-+						     &sta->deflink.tx_stats.last_rate_info,
-+						     band, queue != IEEE80211_AC_VO,
-+						     skb->len + 38);
-+
-+	return airtime && airtime / 1024 <= IEEE80211_TX_GSO_AIRTIME_MAX;
-+}
-+
- static void ieee80211_8023_xmit(struct ieee80211_sub_if_data *sdata,
- 				struct net_device *dev, struct sta_info *sta,
- 				struct ieee80211_key *key, struct sk_buff *skb)
-@@ -4807,6 +4849,7 @@ static void ieee80211_8023_xmit(struct ieee80211_sub_if_data *sdata,
- 	struct tid_ampdu_tx *tid_tx = NULL;
- 	struct sk_buff *seg, *next;
- 	unsigned int skbs = 0, len = 0;
-+	netdev_features_t features;
- 	u16 queue;
- 	u8 tid;
- 
-@@ -4835,7 +4878,12 @@ static void ieee80211_8023_xmit(struct ieee80211_sub_if_data *sdata,
- 			tid_tx->last_tx = jiffies;
- 	}
- 
--	skb = ieee80211_tx_skb_fixup(skb, ieee80211_sdata_netdev_features(sdata));
-+	features = ieee80211_sdata_netdev_features(sdata) |
-+		   local->hw.encap_netdev_features;
-+	if (skb_is_gso(skb) && !ieee80211_8023_gso_fits(sdata, sta, skb, queue))
-+		features &= ~NETIF_F_GSO_MASK;
-+
-+	skb = ieee80211_tx_skb_fixup(skb, features);
- 	if (!skb)
- 		return;
- 
-@@ -4865,8 +4913,21 @@ static void ieee80211_8023_xmit(struct ieee80211_sub_if_data *sdata,
- 		info->control.hw_key = &key->conf;
- 
- 	skb_list_walk_safe(skb, seg, next) {
--		skbs++;
-+		unsigned int segs = 1;
-+
- 		len += seg->len;
-+		/* a GSO frame is one frame of the queues and of the airtime
-+		 * estimate, and as many packets of the counters as it has
-+		 * segments
-+		 */
-+		if (skb_is_gso(seg) &&
-+		    (skb_shinfo(seg)->gso_type &
-+		     (SKB_GSO_TCPV4 | SKB_GSO_TCPV6))) {
-+			segs = max_t(unsigned int, skb_shinfo(seg)->gso_segs, 1);
-+			len += (segs - 1) * (skb_transport_offset(seg) +
-+					     tcp_hdrlen(seg));
-+		}
-+		skbs += segs;
- 		if (seg != skb)
- 			memcpy(IEEE80211_SKB_CB(seg), info, sizeof(*info));
- 	}
 -- 
 2.53.0
 
