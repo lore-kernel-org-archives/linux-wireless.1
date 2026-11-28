@@ -1,86 +1,86 @@
-Authentication-Results: smtp.subspace.kernel.org; arc=none smtp.remote-ip=209.85.218.49
+Authentication-Results: smtp.subspace.kernel.org; arc=none smtp.remote-ip=209.85.218.42
 ARC-Seal: i=1; d=subspace.kernel.org; s=arc20261015; a=rsa-sha256; cv=none;
-	t=1795881820;
-	b=ji/M2/6uUfY1b00l/tOKPv4mwM3P8M7faGPrZV1jZbhF41GRGM9Zqiv2T7UHHJ4U0WLR
-	 9ly4tUE27+PpayOoZPreCvG7PGFeYK+D2c4fZn/jGyPjsxx6dNtEj8EIynW4PsyZM2gM1
-	 pSM4fq5GH81WUrsQFq4vhgq4xgEGAW7uQ5P2En9t91kNRUtKgmsbgmu4NHHUbYjgo7sSi
-	 9JO7Ne8IhVWJnWpC/Fu9UukK2XiysA0P5s5oMC91SQL3lzq/a7QEZLi2D6430CWjGPCjw
-	 hGEFnTGm+dqSt4uZwPiAvlpv9e7Ztw0R6xfbzII7NQGWONyy1drRZj3WEn43Snpjlqg==
+	t=1795881821;
+	b=d9kHd4E/8W46JRt0n6Fg/OjGezYTCBdslIuOzXY/oDHd2MiDT404/g6cIeyR8uBUjMVx
+	 Zz20Whg7FQJuQ85Yk3o7mbg7xaBUWq08QkKzbCAVk+GIxPtkxaZpPQRoiIOnvycxJKyr8
+	 91QjSg1rK9aW+Amuwy38po1vOG3kMeuPgI3DyGcU0H1GZj1Dim2elcWRCWUc3DCLQuhiG
+	 dszsZRI9DsJ4OxmTsJ6hlC/fJbLcQWhdmX17RIbp/QEyg//4U+QEI1lylRUjj0qw2sqEQ
+	 PR5wxN9URCmJsdS392FPUxmDHKUbezc7H/6cZBHNyR3+ZRWv00bb33oTTRkH0safw5w==
 ARC-Message-Signature: i=1; d=subspace.kernel.org; s=arc20261015;
-	a=rsa-sha256; c=relaxed/relaxed; t=1795881820;
+	a=rsa-sha256; c=relaxed/relaxed; t=1795881821;
 	h=DMARC-Filter:Received:DKIM-Signature:X-Google-DKIM-Signature:
 	 X-Gm-Message-State:X-Gm-Gg:X-Received:Received:From:To:Cc:Subject:
 	 Date:Message-ID:X-Mailer:In-Reply-To:References:MIME-Version:
 	 Content-Transfer-Encoding;
-	bh=868a/UVmwsNaRJvxrCK8lfineTN1iwqIJ4228Iylmqk=;
-	b=R3Q2t5wnh4m4oq4EhIOt+4/1CfBuaFo/rjNziZ54My7NdTigAsrzQ2E3hXraudpSX77L
-	 i3G0Obfh7wsDu/35HxWaJlMjMbg02kEg4wz+GzNGBrTuuohf90WAvmB8HoQGZW95HuJXJ
-	 OAzLwD2wMFbdcAhgjOjlEY0SZiOZRhyWg4DjXkUO++1jkaaqLp94Qofn/oSMeOlEbjjaW
-	 oVJfJMLl2ZID6i29J4XyhSy/ugIwXkOW802BVKInxfDm+gxL7adoW1w1/rWlfr94Zluj5
-	 TzXNuLcPkJpZ84ifXiGMXZ5z3GNlNgPwiiQtaVUdPqyWHQetK99n8giP8GW7m6HCk+Q==
+	bh=l0KqIf20BL/9VhpTuh3BbPHRdDbiuv9sbaK8NTXw8wk=;
+	b=nEL01OnSLhjSadFv2Imt8EI+w1p7V1oxFzptd+IODsMmP8muf6u1g+r8L3jWDX/dsEMq
+	 EVnauznbP5Ku2gIs2f0cLI5lCsp/4RnFp5Ywf1/lKWnzws/jSrb/PMrVV2e4Az8J080XK
+	 SYcN/Nneg1SD+NtACsHySsniZgJaVL6dxYPh+dpYr4rZVjutx/XZUc18Zk0DvLSngYFed
+	 5atn6LDq1PIAB54ReP07CkGyPhe5PQ56N3n7qMBXRZ4436AkvfuxbWfkzSBVjtLCU7GBd
+	 7M4L7Ci3RSzSeqmPvc9c2xlVIxJRXMoqGv3IMwL4Mw4G2RAdwfv+bWdai/Vv7twD97Q==
 ARC-Authentication-Results: i=1; smtp.subspace.kernel.org; 
 	dmarc=pass header.from=bairaktaris.de;
 	spf=pass smtp.mailfrom=bairaktaris.de;
-	dkim=pass header.d=bairaktaris.de header.i=@bairaktaris.de header.a=rsa-sha256 header.s=google header.b=oGWUPouh;
-	arc=none smtp.remote-ip=209.85.218.49
-Received: from mail-ej1-f49.google.com (mail-ej1-f49.google.com [209.85.218.49])
+	dkim=pass header.d=bairaktaris.de header.i=@bairaktaris.de header.a=rsa-sha256 header.s=google header.b=Qgm7SOBn;
+	arc=none smtp.remote-ip=209.85.218.42
+Received: from mail-ej1-f42.google.com (mail-ej1-f42.google.com [209.85.218.42])
 	(using TLSv1.3 with cipher TLS_AES_128_GCM_SHA256 (128/128 bits)
 	 key-exchange X25519 server-signature ECDSA (prime256v1) server-digest SHA256)
 	(No client certificate requested)
-	by smtp.subspace.kernel.org (Postfix) with ESMTPS id 9F21660A260C
-	for <linux-wireless@vger.kernel.org>; Sat, 28 Nov 2026 16:03:39 +0000 (UTC)
-DMARC-Filter: OpenDMARC Filter v1.4.2 smtp.subspace.kernel.org 9F21660A260C
+	by smtp.subspace.kernel.org (Postfix) with ESMTPS id 59D6E60A2617
+	for <linux-wireless@vger.kernel.org>; Sat, 28 Nov 2026 16:03:40 +0000 (UTC)
+DMARC-Filter: OpenDMARC Filter v1.4.2 smtp.subspace.kernel.org 59D6E60A2617
 Authentication-Results: smtp.subspace.kernel.org; dmarc=pass (p=reject dis=none) header.from=bairaktaris.de
 Authentication-Results: smtp.subspace.kernel.org; spf=pass smtp.mailfrom=bairaktaris.de
 Authentication-Results: smtp.subspace.kernel.org;
-	dkim=pass (2048-bit key) header.d=bairaktaris.de header.i=@bairaktaris.de header.a=rsa-sha256 header.s=google header.b=oGWUPouh
-Received: by mail-ej1-f49.google.com with SMTP id a640c23a62f3a-c516a194350so430353566b.3
-        for <linux-wireless@vger.kernel.org>; Sat, 28 Nov 2026 08:03:39 -0800 (PST)
+	dkim=pass (2048-bit key) header.d=bairaktaris.de header.i=@bairaktaris.de header.a=rsa-sha256 header.s=google header.b=Qgm7SOBn
+Received: by mail-ej1-f42.google.com with SMTP id a640c23a62f3a-c50aaad19fbso969242266b.0
+        for <linux-wireless@vger.kernel.org>; Sat, 28 Nov 2026 08:03:40 -0800 (PST)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=bairaktaris.de; s=google; t=1795881818; x=1796486618; darn=vger.kernel.org;
+        d=bairaktaris.de; s=google; t=1795881819; x=1796486619; darn=vger.kernel.org;
         h=content-transfer-encoding:mime-version:references:in-reply-to
          :message-id:date:subject:cc:to:from:from:to:cc:subject:date
          :message-id:reply-to:content-type;
-        bh=868a/UVmwsNaRJvxrCK8lfineTN1iwqIJ4228Iylmqk=;
-        b=oGWUPouhJy/5YFVTzJeFZ05KU4Fi/XR8EXucS8twOsFUJeLltXS0/cqFUUYFV7yTK2
-         r9uKWN4Xd6eZC4HV7l41qRe2jenzBaoVnY/1OZdnXDf7it5LkEsRvLLmpLOPG7t5F8/L
-         1434E6DMkQnnCjDkhyGFZK0ohI8J0Gowpq8+SkzQFJb7jvrSth0VyOOPr3RrLYMeOFAp
-         IpMh7wFteeqz/CaNn2Ybh0qHPIkVTufCmwLYV0jpR8thVST2pNn2aME3gTsTB0oZB/e0
-         eekjD6kT6DFM4OM5IC9o/RZD3fOWOQ2mlkufTWFZEvBF8zGmNIbRcailTZMrhUSh3s3q
-         v65Q==
+        bh=l0KqIf20BL/9VhpTuh3BbPHRdDbiuv9sbaK8NTXw8wk=;
+        b=Qgm7SOBnHDIlVGZ2jtx4jCHe2Dvk3oSBqaICJnG+Dpix04tOhV9sBvV49UZJZ36AGv
+         vRnELRhosvt0oCFWN0hCEhpPAfPJPS0Z7j96KJ5Lgk0FyfRnxIyMmyKb5T/NfSIrlaVN
+         0mdFhmdrvrlMXpRc25KHGrMdMJPdZA/Y9NNCEDbUvk3VF7fhy7C4Itee7Dtd3sCxf58l
+         w9IpL22rlLGKfBLPVyNgvnXNWuh/10jHi6ssTBFNv+t7gEU6Olf/TImxJrnTJtELuza6
+         CJ6lBYwrSR1fZ9p1h80tgJ7fltQcfhmcEBF1BY9aKK9RaXyTBgo1OuBLqIAe9pzeD6VM
+         K/8g==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=1e100.net; s=20260707; t=1795881818; x=1796486618;
+        d=1e100.net; s=20260707; t=1795881819; x=1796486619;
         h=content-transfer-encoding:mime-version:references:in-reply-to
          :message-id:date:subject:cc:to:from:x-gm-gg:x-gm-message-state:from
          :to:cc:subject:date:message-id:reply-to:content-type;
-        bh=868a/UVmwsNaRJvxrCK8lfineTN1iwqIJ4228Iylmqk=;
-        b=Jf2QhDsTGlzMdqBP8l5M7rBivWeMwcZPMaM+v/hvySw3e/jhlfL0v/Len/+P593h/r
-         eLmHdtVCviTR+2wA3srQKwjZw0PHATecxptAHT0lojDzZiU7W++BSkiL/LaCCKpa+CHx
-         4+ITedfzPJTIncF74x9Nypf+2yrBkRPwonKSuzPHAxD3T5/lkAcOTYioLeCV3HUMpKKT
-         VIyCVu139gN6U52Yd3/rPeNc05ImxnYlaKsjxAvDUqyoL8iStn5csg8Yz3BNvPW+ATmC
-         YgAKL6ed7aMtu8hKSwZ0FpKCF4ylVyBJKigCXuJXRJPL3vevWmV0831Dj6gGlw3v1MRx
-         YLAQ==
-X-Gm-Message-State: APuU4Z8kZQ4zmGkU969q8j12dH1SWYSJwHy7f+70pblAj/30puQfA+Hc
-	iBqczHhd2F9gsYn7Pe45CDr4iMvDY99RsMwWOOiQNysjHoDKXCkAa0Prz6KqRBJQCg==
-X-Gm-Gg: AZFdTZf3Ag0H2alyYEFX8tLqY9v9APW3gkFAAoQ7Wl76xwZs1InDqE9jr0YEoew/31c
-	oOZYeLM1mm6FWORvNettGOjtRxPb9L6JB7JOqKmlEbeAd4Fo4ujARQlseCSPl55cVIIo38l46xZ
-	XckiLM4fGmCvZNIh1cBNG79YuNU2rAacSfM24zthFo3DBrHssmWlVlAgp3qt5WYUWvW2tWSF66C
-	asPLu6Wh78xSVrPYyZy+HUz6nqtEQYbbWPhWgvbaCAX7/rug2YoE5F8Aq1uUzjDj9r1xjFHFsJR
-	cXLPkaoEgrCowu4xItwY4rG3r81m85ZovQdAtSJKHSuebyj22U3RGp2m/QY+Bz/w7Q49OPZohsm
-	nQshDd5Wn5it5Qt3EXkwu6TUmLuLhOhkEfIxrjAt/7xahHhAc3GG9kVfcyFdP30L+DbIw28NRkJ
-	amjkQMa+ZatzPcQEF/6c+BoZI8kIQ2t3vOw9MrB9Tp6y1+fkxkypaNqvFypd56jYSZwGqT7qz7n
-	rJbgAMtxFebX1bpPmuM9EVZwnJ37NumJefJUVSzSNI4EeJvAGXUAifx9aSBzgBaE4RVZh4TXoyQ
-	6t0ODqtzdEK4LOEIuwhTA6qaDMkRl1MQyWmw/rqMHYSHcna/cGjzPfvZoc5FrdpMPNdHbzut8GP
-	8RqqkYq7aFNZuoBgLz/luacy2KARfkY58sWhCdnSZuTOaSlFKrW+4qbCCgnxwcA9+dHX2g+bPTb
-	hJnzfBe7CVtLR4Nc4MAMAdGjtiyxQMFoaaK4nzXguHcLT1lKErVy28YOUnOTx1a4K8bgfLw0K7v
-	i+i8nzgF32lVtn2v50yVP3s7pBGrvxdR42UKqZAezljSGOEKhm5jaTxXJN5Nrf1FEiwJXgomf8K
-	zYpEkL+qMfWqlA==
-X-Received: by 2002:a17:906:5d9:b0:c41:4964:90b6 with SMTP id a640c23a62f3a-c513aab025emr1766181066b.36.1795881817868;
-        Sat, 28 Nov 2026 08:03:37 -0800 (PST)
+        bh=l0KqIf20BL/9VhpTuh3BbPHRdDbiuv9sbaK8NTXw8wk=;
+        b=JsaXXBVEyWhwpGOX7llQDkHfBjq3XJyCVWnFAChBejEcUyBEbSXRrCMP6kPKI2ZKwA
+         zr5XjOfJiYNvFFREb/ED4tlj5nuLcXXf254Lnrl83sTfjXn+nQx7wvLiFZx+goJ2sK4/
+         GF6swR/smHBLb2QHTR2urrgujr1saoNlIOrhbFlF2LDxNZIrrfnNgA0OGcsPGz2ezFg3
+         JLsL/LGQlZenpvl6IFgIvdxVCewf4zgKI2pbWFm+ajuOg8P7MzGmRtToxbOW6at45jf9
+         A+gugP5qtuXYX8RzqCIvd2fsjRhruEbdEu8SU8/AZuEaW9WUTVcTjkfKevF/OE1kfRDN
+         Rf8g==
+X-Gm-Message-State: APuU4Z+yu7Y4bujxaoy1tm6A7I+GdTJElIM0QUxmNZDr/lHBNguR8BnT
+	1aFzoGxtnlVK7FnlsYAvWJ3bumxYy8QR7q4zIekprjdPdo38lwTZVkIcaRhTGcjLiQ==
+X-Gm-Gg: AZFdTZc8YwxIKlaMPeEMaW5PAXKqgWDhksSJkT/8x0LjAyJUn8fsvvr1zaLoCyR9lCD
+	/l5J+Qu5pKoseYGMDTL21awcn2P1lZcVXJm7tjfT3p7uz4iPu6EUe156hMm4TqaUJ5aaUyc4/HU
+	pbl3QR/guyfAteYo4H4orBlJlZfZ1NvY3upVqAdZVLKVRZsThZaCy3vJg4oQU3xV+TUFBfmxS+O
+	4d7dLRloi/zACv5Tg+dSXIZg1QDff7XxJA1wv0P98beYrC+n6VoTrVDX/flzAnTaftrcm8n+AQq
+	aWgedm8jA6aBEFBDsxM37iANLSoef3CxRzByxhz9VrqVn9yutus+BqX0oIVrBXtlTgsRrPu6Kuk
+	0bUSPU3B1J9PAc1iaUmL8OjZFSK/ZV1Ma0owVEgiRletMNZFfXqpSSr7ZheU6aVSImfDHO38svP
+	AF/sSxEbfU+b483o5D69DOqNCDhn918hbg8PtRMRN10mBBtdVcrKNWwmNFIyBSc5Zw45l0GZpPc
+	jkdnLC1Kkhl56knndiGYAnuwIRdx4TptGL7BEpqnyTvTvuSZeX5+r2e45w1iiHgbapgKtevBhCg
+	CrD+WvzMbFkGRLARkQhMRwkQ7bQ2JBUI3RTFx/V8TeZLDgpPb+BsSJWZOcpVNO/5imhlY19kWqA
+	DJgiIWe9vHde4T79hLZz0OZ1yl9aceIvlbcFGZ0wQFWxURVI1+6EeuzKh+eylkaTbGDc5sln+c2
+	ILUHzlzAM6gyk4IYV2CuXyGlOAvFbA7id7w35HrmsSzP3hsYLIMsdJ4HcCP1YRKNnYBdHf4ACai
+	/Uquj9h79OlCq2WmgG7z8vyRaZBtEXaHKz/umCkBfRNDb3XQLJCTlkpzkKfZP4dp7U8xUk9cvhM
+	5e426NU5nJtcnQ==
+X-Received: by 2002:a17:907:fd15:b0:c40:33d:f06f with SMTP id a640c23a62f3a-c513aaad90bmr2317289066b.39.1795881818727;
+        Sat, 28 Nov 2026 08:03:38 -0800 (PST)
 Received: from Desktop.tail070c67.ts.net ([185.152.145.248])
-        by smtp.gmail.com with ESMTPSA id a640c23a62f3a-c513b022e84sm990389566b.84.2026.11.28.08.03.37
+        by smtp.gmail.com with ESMTPSA id a640c23a62f3a-c513b022e84sm990389566b.84.2026.11.28.08.03.38
         (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
-        Sat, 28 Nov 2026 08:03:37 -0800 (PST)
+        Sat, 28 Nov 2026 08:03:38 -0800 (PST)
 From: Julius Bairaktaris <julius@bairaktaris.de>
 To: Johannes Berg <johannes@sipsolutions.net>
 Cc: linux-wireless@vger.kernel.org,
@@ -92,9 +92,9 @@ Cc: linux-wireless@vger.kernel.org,
 	ath11k@lists.infradead.org,
 	ath12k@lists.infradead.org,
 	linux-kernel@vger.kernel.org
-Subject: [PATCH wireless-next v2 6/7] wifi: ath11k: pass the TID of a received 802.3 frame to mac80211
-Date: Sat, 28 Nov 2026 17:03:34 +0100
-Message-ID: <20261128160335.1815537-7-julius@bairaktaris.de>
+Subject: [PATCH wireless-next v2 7/7] wifi: ath12k: pass the TID of a received 802.3 frame to mac80211
+Date: Sat, 28 Nov 2026 17:03:35 +0100
+Message-ID: <20261128160335.1815537-8-julius@bairaktaris.de>
 X-Mailer: git-send-email 2.53.0
 In-Reply-To: <20261128160335.1815537-1-julius@bairaktaris.de>
 References: <20261128160335.1815537-1-julius@bairaktaris.de>
@@ -109,187 +109,133 @@ Precedence: list
 MIME-Version: 1.0
 Content-Transfer-Encoding: 8bit
 
-ath11k_dp_rx_deliver_msdu() delivers frames with Ethernet decap as
+ath12k_dp_rx_deliver_msdu() delivers frames with Ethernet decap as
 RX_FLAG_8023, and mac80211 counted all of them on TID 0. Pass the TID
-the driver keeps in rxcb->tid. Copying the rx status into skb->cb
-overwrites rxcb, so read it before that.
-
-On the REO path rxcb->tid is the REO queue number, which is
-HAL_DESC_REO_NON_QOS_TID for a frame without QoS control. The null
-queue descriptor path takes it from the 4-bit TID field of MPDU_START;
-set HAL_DESC_REO_NON_QOS_TID there as well when the MPDU has no QoS
-control, so mac80211 counts such a frame as non-QoS on both paths.
+from the rx descriptor data of the MSDU, or IEEE80211_NUM_TIDS when the
+MPDU has no QoS control. The TID field has 4 bits, so add the QoS
+control valid bit of MPDU_START to struct hal_rx_desc_data.
 
 Signed-off-by: Julius Bairaktaris <julius@bairaktaris.de>
 ---
 v2:
-- Read rxcb->tid before *rx_status = *status overwrites it. Found by
-  the hosted Sashiko review of v1.
-- Report a frame without QoS control on the null queue descriptor path
-  as HAL_DESC_REO_NON_QOS_TID. Found by an LLM review (Claude).
+- Take the TID from rx_info instead of rxcb->tid, which
+  *rx_status = *status overwrote before v1 read it. Found by the
+  hosted Sashiko review of v1.
+- Pass IEEE80211_NUM_TIDS for a frame without QoS control. Found by an
+  LLM review (Claude).
 
- drivers/net/wireless/ath/ath11k/dp_rx.c | 14 +++++++++++++-
- drivers/net/wireless/ath/ath11k/hw.c    | 25 +++++++++++++++++++++++++
- drivers/net/wireless/ath/ath11k/hw.h    |  1 +
- 3 files changed, 39 insertions(+), 1 deletion(-)
+ drivers/net/wireless/ath/ath12k/dp_rx.c             | 2 ++
+ drivers/net/wireless/ath/ath12k/hal.h               | 1 +
+ drivers/net/wireless/ath/ath12k/wifi7/hal_qcc2072.c | 8 ++++++++
+ drivers/net/wireless/ath/ath12k/wifi7/hal_qcn9274.c | 9 +++++++++
+ drivers/net/wireless/ath/ath12k/wifi7/hal_wcn7850.c | 9 +++++++++
+ 5 files changed, 29 insertions(+)
 
-diff --git a/drivers/net/wireless/ath/ath11k/dp_rx.c b/drivers/net/wireless/ath/ath11k/dp_rx.c
-index 6d95f7b343a5..6d09b4c10b6d 100644
---- a/drivers/net/wireless/ath/ath11k/dp_rx.c
-+++ b/drivers/net/wireless/ath/ath11k/dp_rx.c
-@@ -70,6 +70,12 @@ static inline bool ath11k_dp_rx_h_mpdu_start_fc_valid(struct ath11k_base *ab,
- 	return ab->hw_params.hw_ops->rx_desc_get_mpdu_fc_valid(desc);
- }
- 
-+static inline bool ath11k_dp_rx_h_mpdu_start_qos_ctrl_valid(struct ath11k_base *ab,
-+							    struct hal_rx_desc *desc)
-+{
-+	return ab->hw_params.hw_ops->rx_desc_get_mpdu_qos_ctrl_valid(desc);
-+}
-+
- static inline bool ath11k_dp_rx_h_mpdu_start_more_frags(struct ath11k_base *ab,
- 							struct sk_buff *skb)
- {
-@@ -2446,6 +2452,7 @@ static void ath11k_dp_rx_deliver_msdu(struct ath11k *ar, struct napi_struct *nap
- 	u8 decap = DP_RX_DECAP_TYPE_RAW;
- 	bool is_mcbc = rxcb->is_mcbc;
- 	bool is_eapol = rxcb->is_eapol;
-+	u8 tid = rxcb->tid;
- 
- 	if (status->encoding == RX_ENC_HE &&
- 	    !(status->flag & RX_FLAG_RADIOTAP_HE) &&
-@@ -2493,6 +2500,7 @@ static void ath11k_dp_rx_deliver_msdu(struct ath11k *ar, struct napi_struct *nap
+diff --git a/drivers/net/wireless/ath/ath12k/dp_rx.c b/drivers/net/wireless/ath/ath12k/dp_rx.c
+index 52838ade1b1d..cfa539df09d2 100644
+--- a/drivers/net/wireless/ath/ath12k/dp_rx.c
++++ b/drivers/net/wireless/ath/ath12k/dp_rx.c
+@@ -1409,6 +1409,8 @@ void ath12k_dp_rx_deliver_msdu(struct ath12k_pdev_dp *dp_pdev, struct napi_struc
  
  	rx_status = IEEE80211_SKB_RXCB(msdu);
  	*rx_status = *status;
-+	rx_status->tid = min_t(u8, tid, IEEE80211_NUM_TIDS);
++	rx_status->tid = rx_info->qos_ctrl_valid ? rx_info->tid :
++						    IEEE80211_NUM_TIDS;
  
  	/* TODO: trace rx packet */
  
-@@ -4001,7 +4009,11 @@ static int ath11k_dp_rx_h_null_q_desc(struct ath11k *ar, struct sk_buff *msdu,
- 
- 	ath11k_dp_rx_h_mpdu(ar, msdu, desc, status);
- 
--	rxcb->tid = ath11k_dp_rx_h_mpdu_start_tid(ar->ab, desc);
-+	/* the REO queue number, as on the REO path */
-+	if (ath11k_dp_rx_h_mpdu_start_qos_ctrl_valid(ar->ab, desc))
-+		rxcb->tid = ath11k_dp_rx_h_mpdu_start_tid(ar->ab, desc);
-+	else
-+		rxcb->tid = HAL_DESC_REO_NON_QOS_TID;
- 
- 	/* Please note that caller will having the access to msdu and completing
- 	 * rx with mac80211. Need not worry about cleaning up amsdu_list.
-diff --git a/drivers/net/wireless/ath/ath11k/hw.c b/drivers/net/wireless/ath/ath11k/hw.c
-index 93f9a03c48dc..20d0cd9687bc 100644
---- a/drivers/net/wireless/ath/ath11k/hw.c
-+++ b/drivers/net/wireless/ath/ath11k/hw.c
-@@ -296,6 +296,12 @@ static bool ath11k_hw_ipq8074_rx_desc_get_mpdu_fc_valid(struct hal_rx_desc *desc
- 			   __le32_to_cpu(desc->u.ipq8074.mpdu_start.info1));
+diff --git a/drivers/net/wireless/ath/ath12k/hal.h b/drivers/net/wireless/ath/ath12k/hal.h
+index 343e1636b4cc..0c61a08f4374 100644
+--- a/drivers/net/wireless/ath/ath12k/hal.h
++++ b/drivers/net/wireless/ath/ath12k/hal.h
+@@ -739,6 +739,7 @@ struct hal_rx_desc_data {
+ 	    is_mcbc:1,
+ 	    seq_ctl_valid:1,
+ 	    fc_valid:1,
++	    qos_ctrl_valid:1,
+ 	    is_to_ds:1,
+ 	    is_from_ds:1;
+ 	u16 msdu_len;
+diff --git a/drivers/net/wireless/ath/ath12k/wifi7/hal_qcc2072.c b/drivers/net/wireless/ath/ath12k/wifi7/hal_qcc2072.c
+index bad2b60409d9..3f0dfeedcb31 100644
+--- a/drivers/net/wireless/ath/ath12k/wifi7/hal_qcc2072.c
++++ b/drivers/net/wireless/ath/ath12k/wifi7/hal_qcc2072.c
+@@ -260,6 +260,12 @@ static bool ath12k_hal_rx_desc_get_mpdu_fc_valid_qcc2072(struct hal_rx_desc *des
+ 			       RX_MPDU_START_INFO4_MPDU_FCTRL_VALID);
  }
  
-+static bool ath11k_hw_ipq8074_rx_desc_get_mpdu_qos_ctrl_valid(struct hal_rx_desc *desc)
++static bool ath12k_hal_rx_desc_get_mpdu_qos_ctrl_valid_qcc2072(struct hal_rx_desc *desc)
 +{
-+	return !!FIELD_GET(RX_MPDU_START_INFO1_MPDU_QOS_CTRL_VALID,
-+			   __le32_to_cpu(desc->u.ipq8074.mpdu_start.info1));
++	return !!le32_get_bits(desc->u.qcc2072.mpdu_start.info4,
++			       RX_MPDU_START_INFO4_MPDU_QOS_CTRL_VALID);
 +}
 +
- static u16 ath11k_hw_ipq8074_rx_desc_get_mpdu_start_seq_no(struct hal_rx_desc *desc)
+ static u16 ath12k_hal_rx_desc_get_mpdu_start_seq_no_qcc2072(struct hal_rx_desc *desc)
  {
- 	return FIELD_GET(RX_MPDU_START_INFO1_MPDU_SEQ_NUM,
-@@ -473,6 +479,12 @@ static bool ath11k_hw_qcn9074_rx_desc_get_mpdu_fc_valid(struct hal_rx_desc *desc
- 			   __le32_to_cpu(desc->u.qcn9074.mpdu_start.info11));
+ 	return le32_get_bits(desc->u.qcc2072.mpdu_start.info4,
+@@ -403,6 +409,8 @@ static void ath12k_hal_extract_rx_desc_data_qcc2072(struct hal_rx_desc_data *rx_
+ 	rx_desc_data->seq_ctl_valid =
+ 				ath12k_hal_rx_desc_get_mpdu_seq_ctl_vld_qcc2072(rx_desc);
+ 	rx_desc_data->fc_valid = ath12k_hal_rx_desc_get_mpdu_fc_valid_qcc2072(rx_desc);
++	rx_desc_data->qos_ctrl_valid =
++		ath12k_hal_rx_desc_get_mpdu_qos_ctrl_valid_qcc2072(rx_desc);
+ 	rx_desc_data->seq_no = ath12k_hal_rx_desc_get_mpdu_start_seq_no_qcc2072(rx_desc);
+ 	rx_desc_data->msdu_len = ath12k_hal_rx_desc_get_msdu_len_qcc2072(ldesc);
+ 	rx_desc_data->sgi = ath12k_hal_rx_desc_get_msdu_sgi_qcc2072(ldesc);
+diff --git a/drivers/net/wireless/ath/ath12k/wifi7/hal_qcn9274.c b/drivers/net/wireless/ath/ath12k/wifi7/hal_qcn9274.c
+index 0f85ae69b5e0..060e5ea1f7fd 100644
+--- a/drivers/net/wireless/ath/ath12k/wifi7/hal_qcn9274.c
++++ b/drivers/net/wireless/ath/ath12k/wifi7/hal_qcn9274.c
+@@ -722,6 +722,13 @@ bool ath12k_hal_rx_desc_get_mpdu_fc_valid_qcn9274(struct hal_rx_desc *desc)
+ 			       RX_MPDU_START_INFO4_MPDU_FCTRL_VALID);
  }
  
-+static bool ath11k_hw_qcn9074_rx_desc_get_mpdu_qos_ctrl_valid(struct hal_rx_desc *desc)
++static inline
++bool ath12k_hal_rx_desc_get_mpdu_qos_ctrl_valid_qcn9274(struct hal_rx_desc *desc)
 +{
-+	return !!FIELD_GET(RX_MPDU_START_INFO11_MPDU_QOS_CTRL_VALID,
-+			   __le32_to_cpu(desc->u.qcn9074.mpdu_start.info11));
++	return !!le32_get_bits(desc->u.qcn9274_compact.mpdu_start.info4,
++			       RX_MPDU_START_INFO4_MPDU_QOS_CTRL_VALID);
 +}
 +
- static u16 ath11k_hw_qcn9074_rx_desc_get_mpdu_start_seq_no(struct hal_rx_desc *desc)
+ static inline
+ u16 ath12k_hal_rx_desc_get_mpdu_start_seq_no_qcn9274(struct hal_rx_desc *desc)
  {
- 	return FIELD_GET(RX_MPDU_START_INFO11_MPDU_SEQ_NUM,
-@@ -644,6 +656,12 @@ static bool ath11k_hw_wcn6855_rx_desc_get_mpdu_fc_valid(struct hal_rx_desc *desc
- 			   __le32_to_cpu(desc->u.wcn6855.mpdu_start.info1));
+@@ -1024,6 +1031,8 @@ void ath12k_hal_extract_rx_desc_data_qcn9274(struct hal_rx_desc_data *rx_desc_da
+ 	rx_desc_data->seq_ctl_valid =
+ 		ath12k_hal_rx_desc_get_mpdu_seq_ctl_vld_qcn9274(rx_desc);
+ 	rx_desc_data->fc_valid = ath12k_hal_rx_desc_get_mpdu_fc_valid_qcn9274(rx_desc);
++	rx_desc_data->qos_ctrl_valid =
++		ath12k_hal_rx_desc_get_mpdu_qos_ctrl_valid_qcn9274(rx_desc);
+ 	rx_desc_data->is_from_ds = ath12k_wifi7_hal_rx_h_from_ds_qcn9274(ldesc);
+ 	rx_desc_data->is_to_ds = ath12k_wifi7_hal_rx_h_to_ds_qcn9274(ldesc);
+ 	rx_desc_data->seq_no = ath12k_hal_rx_desc_get_mpdu_start_seq_no_qcn9274(rx_desc);
+diff --git a/drivers/net/wireless/ath/ath12k/wifi7/hal_wcn7850.c b/drivers/net/wireless/ath/ath12k/wifi7/hal_wcn7850.c
+index 2d66d71d1b9b..3751bf8589ba 100644
+--- a/drivers/net/wireless/ath/ath12k/wifi7/hal_wcn7850.c
++++ b/drivers/net/wireless/ath/ath12k/wifi7/hal_wcn7850.c
+@@ -340,6 +340,13 @@ bool ath12k_hal_rx_desc_get_mpdu_fc_valid_wcn7850(struct hal_rx_desc *desc)
+ 			       RX_MPDU_START_INFO4_MPDU_FCTRL_VALID);
  }
  
-+static bool ath11k_hw_wcn6855_rx_desc_get_mpdu_qos_ctrl_valid(struct hal_rx_desc *desc)
++static inline
++bool ath12k_hal_rx_desc_get_mpdu_qos_ctrl_valid_wcn7850(struct hal_rx_desc *desc)
 +{
-+	return !!FIELD_GET(RX_MPDU_START_INFO1_MPDU_QOS_CTRL_VALID,
-+			   __le32_to_cpu(desc->u.wcn6855.mpdu_start.info1));
++	return !!le32_get_bits(desc->u.wcn7850.mpdu_start.info4,
++			       RX_MPDU_START_INFO4_MPDU_QOS_CTRL_VALID);
 +}
 +
- static u16 ath11k_hw_wcn6855_rx_desc_get_mpdu_start_seq_no(struct hal_rx_desc *desc)
+ static inline
+ u16 ath12k_hal_rx_desc_get_mpdu_start_seq_no_wcn7850(struct hal_rx_desc *desc)
  {
- 	return FIELD_GET(RX_MPDU_START_INFO1_MPDU_SEQ_NUM,
-@@ -917,6 +935,7 @@ const struct ath11k_hw_ops ipq8074_ops = {
- 	.rx_desc_get_ldpc_support = ath11k_hw_ipq8074_rx_desc_get_ldpc_support,
- 	.rx_desc_get_mpdu_seq_ctl_vld = ath11k_hw_ipq8074_rx_desc_get_mpdu_seq_ctl_vld,
- 	.rx_desc_get_mpdu_fc_valid = ath11k_hw_ipq8074_rx_desc_get_mpdu_fc_valid,
-+	.rx_desc_get_mpdu_qos_ctrl_valid = ath11k_hw_ipq8074_rx_desc_get_mpdu_qos_ctrl_valid,
- 	.rx_desc_get_mpdu_start_seq_no = ath11k_hw_ipq8074_rx_desc_get_mpdu_start_seq_no,
- 	.rx_desc_get_msdu_len = ath11k_hw_ipq8074_rx_desc_get_msdu_len,
- 	.rx_desc_get_msdu_sgi = ath11k_hw_ipq8074_rx_desc_get_msdu_sgi,
-@@ -957,6 +976,7 @@ const struct ath11k_hw_ops ipq6018_ops = {
- 	.rx_desc_get_ldpc_support = ath11k_hw_ipq8074_rx_desc_get_ldpc_support,
- 	.rx_desc_get_mpdu_seq_ctl_vld = ath11k_hw_ipq8074_rx_desc_get_mpdu_seq_ctl_vld,
- 	.rx_desc_get_mpdu_fc_valid = ath11k_hw_ipq8074_rx_desc_get_mpdu_fc_valid,
-+	.rx_desc_get_mpdu_qos_ctrl_valid = ath11k_hw_ipq8074_rx_desc_get_mpdu_qos_ctrl_valid,
- 	.rx_desc_get_mpdu_start_seq_no = ath11k_hw_ipq8074_rx_desc_get_mpdu_start_seq_no,
- 	.rx_desc_get_msdu_len = ath11k_hw_ipq8074_rx_desc_get_msdu_len,
- 	.rx_desc_get_msdu_sgi = ath11k_hw_ipq8074_rx_desc_get_msdu_sgi,
-@@ -997,6 +1017,7 @@ const struct ath11k_hw_ops qca6390_ops = {
- 	.rx_desc_get_ldpc_support = ath11k_hw_ipq8074_rx_desc_get_ldpc_support,
- 	.rx_desc_get_mpdu_seq_ctl_vld = ath11k_hw_ipq8074_rx_desc_get_mpdu_seq_ctl_vld,
- 	.rx_desc_get_mpdu_fc_valid = ath11k_hw_ipq8074_rx_desc_get_mpdu_fc_valid,
-+	.rx_desc_get_mpdu_qos_ctrl_valid = ath11k_hw_ipq8074_rx_desc_get_mpdu_qos_ctrl_valid,
- 	.rx_desc_get_mpdu_start_seq_no = ath11k_hw_ipq8074_rx_desc_get_mpdu_start_seq_no,
- 	.rx_desc_get_msdu_len = ath11k_hw_ipq8074_rx_desc_get_msdu_len,
- 	.rx_desc_get_msdu_sgi = ath11k_hw_ipq8074_rx_desc_get_msdu_sgi,
-@@ -1037,6 +1058,7 @@ const struct ath11k_hw_ops qcn9074_ops = {
- 	.rx_desc_get_ldpc_support = ath11k_hw_qcn9074_rx_desc_get_ldpc_support,
- 	.rx_desc_get_mpdu_seq_ctl_vld = ath11k_hw_qcn9074_rx_desc_get_mpdu_seq_ctl_vld,
- 	.rx_desc_get_mpdu_fc_valid = ath11k_hw_qcn9074_rx_desc_get_mpdu_fc_valid,
-+	.rx_desc_get_mpdu_qos_ctrl_valid = ath11k_hw_qcn9074_rx_desc_get_mpdu_qos_ctrl_valid,
- 	.rx_desc_get_mpdu_start_seq_no = ath11k_hw_qcn9074_rx_desc_get_mpdu_start_seq_no,
- 	.rx_desc_get_msdu_len = ath11k_hw_qcn9074_rx_desc_get_msdu_len,
- 	.rx_desc_get_msdu_sgi = ath11k_hw_qcn9074_rx_desc_get_msdu_sgi,
-@@ -1077,6 +1099,7 @@ const struct ath11k_hw_ops wcn6855_ops = {
- 	.rx_desc_get_ldpc_support = ath11k_hw_wcn6855_rx_desc_get_ldpc_support,
- 	.rx_desc_get_mpdu_seq_ctl_vld = ath11k_hw_wcn6855_rx_desc_get_mpdu_seq_ctl_vld,
- 	.rx_desc_get_mpdu_fc_valid = ath11k_hw_wcn6855_rx_desc_get_mpdu_fc_valid,
-+	.rx_desc_get_mpdu_qos_ctrl_valid = ath11k_hw_wcn6855_rx_desc_get_mpdu_qos_ctrl_valid,
- 	.rx_desc_get_mpdu_start_seq_no = ath11k_hw_wcn6855_rx_desc_get_mpdu_start_seq_no,
- 	.rx_desc_get_msdu_len = ath11k_hw_wcn6855_rx_desc_get_msdu_len,
- 	.rx_desc_get_msdu_sgi = ath11k_hw_wcn6855_rx_desc_get_msdu_sgi,
-@@ -1117,6 +1140,7 @@ const struct ath11k_hw_ops wcn6750_ops = {
- 	.rx_desc_get_ldpc_support = ath11k_hw_qcn9074_rx_desc_get_ldpc_support,
- 	.rx_desc_get_mpdu_seq_ctl_vld = ath11k_hw_qcn9074_rx_desc_get_mpdu_seq_ctl_vld,
- 	.rx_desc_get_mpdu_fc_valid = ath11k_hw_qcn9074_rx_desc_get_mpdu_fc_valid,
-+	.rx_desc_get_mpdu_qos_ctrl_valid = ath11k_hw_qcn9074_rx_desc_get_mpdu_qos_ctrl_valid,
- 	.rx_desc_get_mpdu_start_seq_no = ath11k_hw_qcn9074_rx_desc_get_mpdu_start_seq_no,
- 	.rx_desc_get_msdu_len = ath11k_hw_qcn9074_rx_desc_get_msdu_len,
- 	.rx_desc_get_msdu_sgi = ath11k_hw_qcn9074_rx_desc_get_msdu_sgi,
-@@ -1158,6 +1182,7 @@ const struct ath11k_hw_ops ipq5018_ops = {
- 	.rx_desc_get_ldpc_support = ath11k_hw_qcn9074_rx_desc_get_ldpc_support,
- 	.rx_desc_get_mpdu_seq_ctl_vld = ath11k_hw_qcn9074_rx_desc_get_mpdu_seq_ctl_vld,
- 	.rx_desc_get_mpdu_fc_valid = ath11k_hw_qcn9074_rx_desc_get_mpdu_fc_valid,
-+	.rx_desc_get_mpdu_qos_ctrl_valid = ath11k_hw_qcn9074_rx_desc_get_mpdu_qos_ctrl_valid,
- 	.rx_desc_get_mpdu_start_seq_no = ath11k_hw_qcn9074_rx_desc_get_mpdu_start_seq_no,
- 	.rx_desc_get_msdu_len = ath11k_hw_qcn9074_rx_desc_get_msdu_len,
- 	.rx_desc_get_msdu_sgi = ath11k_hw_qcn9074_rx_desc_get_msdu_sgi,
-diff --git a/drivers/net/wireless/ath/ath11k/hw.h b/drivers/net/wireless/ath/ath11k/hw.h
-index 4996536fbd14..3bd99d347fba 100644
---- a/drivers/net/wireless/ath/ath11k/hw.h
-+++ b/drivers/net/wireless/ath/ath11k/hw.h
-@@ -252,6 +252,7 @@ struct ath11k_hw_ops {
- 	bool (*rx_desc_get_ldpc_support)(struct hal_rx_desc *desc);
- 	bool (*rx_desc_get_mpdu_seq_ctl_vld)(struct hal_rx_desc *desc);
- 	bool (*rx_desc_get_mpdu_fc_valid)(struct hal_rx_desc *desc);
-+	bool (*rx_desc_get_mpdu_qos_ctrl_valid)(struct hal_rx_desc *desc);
- 	u16 (*rx_desc_get_mpdu_start_seq_no)(struct hal_rx_desc *desc);
- 	u16 (*rx_desc_get_msdu_len)(struct hal_rx_desc *desc);
- 	u8 (*rx_desc_get_msdu_sgi)(struct hal_rx_desc *desc);
+@@ -620,6 +627,8 @@ void ath12k_hal_extract_rx_desc_data_wcn7850(struct hal_rx_desc_data *rx_desc_da
+ 	rx_desc_data->seq_ctl_valid =
+ 		ath12k_hal_rx_desc_get_mpdu_seq_ctl_vld_wcn7850(rx_desc);
+ 	rx_desc_data->fc_valid = ath12k_hal_rx_desc_get_mpdu_fc_valid_wcn7850(rx_desc);
++	rx_desc_data->qos_ctrl_valid =
++		ath12k_hal_rx_desc_get_mpdu_qos_ctrl_valid_wcn7850(rx_desc);
+ 	rx_desc_data->seq_no = ath12k_hal_rx_desc_get_mpdu_start_seq_no_wcn7850(rx_desc);
+ 	rx_desc_data->msdu_len = ath12k_hal_rx_desc_get_msdu_len_wcn7850(ldesc);
+ 	rx_desc_data->sgi = ath12k_hal_rx_desc_get_msdu_sgi_wcn7850(ldesc);
 -- 
 2.53.0
 
