@@ -1,61 +1,61 @@
-Authentication-Results: smtp.subspace.kernel.org; arc=none smtp.remote-ip=95.215.58.160
+Authentication-Results: smtp.subspace.kernel.org; arc=none smtp.remote-ip=95.215.58.161
 ARC-Seal: i=1; d=subspace.kernel.org; s=arc20261015; a=rsa-sha256; cv=none;
-	t=1795880673;
-	b=fGzIzIuXfnBjCGyPing5jO+Lu8JUGSqXSBFmFkd4TE/Frsl+ob1Gfc/l2G6xAmFmfCaE
-	 d4Kf7QZT9Kun18FuniVs8FD+KflwZJ+lDO263Gx71QJV/wpWGZ2nCNt1Xsuj1wXNqCaDa
-	 VHTXTwhuAZ6kG/APNfOmauwpJ0Oeo6uUxrqtxPEiUWc6sO6JsS/bZIVAOcKLXeh5BdH/O
-	 D0q2TfDbXevuQgiNecEPzJmOL7dqEbnZgdBkJ1mkzEH1nOj+fjCWbpmTRXa6HYBvJ7KSR
-	 gTb8WaguYafmFWHtz8Q3EHjAdiGZvHBNFeVaJLFKTVzXcDI8c7IdooBTHpbgu4cOQkQ==
+	t=1795880682;
+	b=fFw2HCNVXqKuRx3Me7cVqt5RItcd08XFWNVZ9UKPyi4dAeYa+TmfWn8KmR6WnW4NNn0a
+	 ZhgdpRxFZ/QaXJ2kRs0R79Sttgji06bTOvivOtRFNeSuuFleAKAQehWykCgl7/7WcrpkP
+	 PrPwS5L8KiCVhKAX9D4xIACMDHe6XSgkEeTKvcKFg2MXtI71GhIC0L4F0UO80a5/jRv2Z
+	 pR882074IOW6bu3dR5w1XwpYUejjFzh6sAfiEPYVlKAR+wbp5XdY+rE6gDyqpvM6AVQke
+	 cGIrSlW5un893MolnHYyFLII0Uu3qndXX3Kfx8vhqjgzvlMZ+nvQK9UNf4D3TmKI+yA==
 ARC-Message-Signature: i=1; d=subspace.kernel.org; s=arc20261015;
-	a=rsa-sha256; c=relaxed/relaxed; t=1795880673;
+	a=rsa-sha256; c=relaxed/relaxed; t=1795880682;
 	h=DMARC-Filter:X-Envelope-To:DKIM-Signature:X-Envelope-To:Received:
 	 X-Mizu-Trace-ID:X-Migadu-Flow:Date:From:To:CC:Subject:In-Reply-To:
 	 References:Message-ID:MIME-Version:Content-Type:
 	 Content-Transfer-Encoding;
-	bh=2f/ktswXZdv5qR8Igr+ohq/Et7cR/a3qMCjFZSBzBxk=;
-	b=xGbRb0MQyXRto1dQM4PXgf0goJQS/NxQGWgs8jrBux3YhUk56bP/ZqPdILyIQS9RIWff
-	 qY8WJ7Gx+KMB2q0ICdTf5WBt24FmAU0uQd5k8/iPfehxPSZ7K5h18arfIgY0t9hWGrYuq
-	 TY64Eqewx4cYZrGiOOe1chLBj2iGFWn5OViWlDqb/ZSXCYqWXcbR0UBj4sw7i1egAmwPc
-	 zxNYQmPl7XonwdRO33TTp1u71dQeM6ADYpvwyFxIVUjN4RHv06Zmg4kgMF06tLbsh2iVR
-	 G6vjTidK7dXDLUs+vPS23Igo4LkYu0YACeM9z7zQrXxKo2JyCGBeIP6z5v9rAkJ6beg==
+	bh=avFvvrtWpqsmH3ml4j2leBd0C6Wf3+uY+Jh1jw5x3bw=;
+	b=xFypv9CshZJPpGfyY4P7n63tAKCqF1Dh/IsF0HroboMXFo5xo5wqHCyPXCw7aAkktYN2
+	 0mWztuhQD3dXnozSrwdKIBdQwe94zwaQduT2ikvACuMg26ctP5hYwhGMIUS7XqqyZ7956
+	 P2znWd2MAVq4AYpOsHHS5yFgovRbEzxI/0ZT/SChKiu+EXsy8qTlJTASv9tUV7X81G/XD
+	 LOri+5DAFmayJkdOjFUUFhlpXurX4ReUeMVawHY+Zsvg3EbSKsj5R0d6du2yLbB9auzDJ
+	 g4DxA8loH9piTDugGaZ/WIbjtJm2GAli0oKgqS2T756cGYnZcWDMv3f8n/VGRMWULoA==
 ARC-Authentication-Results: i=1; smtp.subspace.kernel.org; 
 	dmarc=pass header.from=linux.dev;
 	spf=pass smtp.mailfrom=linux.dev;
-	dkim=pass header.d=linux.dev header.i=@linux.dev header.a=rsa-sha256 header.s=key1 header.b=kjnS9tPN;
-	arc=none smtp.remote-ip=95.215.58.160
-Received: from mta1.migadu.com (out-160.mta1.migadu.com [95.215.58.160])
+	dkim=pass header.d=linux.dev header.i=@linux.dev header.a=rsa-sha256 header.s=key1 header.b=PkOADC8u;
+	arc=none smtp.remote-ip=95.215.58.161
+Received: from mta1.migadu.com (out-161.mta1.migadu.com [95.215.58.161])
 	(using TLSv1.3 with cipher TLS_AES_128_GCM_SHA256 (128/128 bits)
 	 key-exchange X25519 server-signature ECDSA (prime256v1) server-digest SHA256)
 	(No client certificate requested)
-	by smtp.subspace.kernel.org (Postfix) with ESMTPS id 9C48A606A31C
-	for <linux-wireless@vger.kernel.org>; Sat, 28 Nov 2026 15:44:32 +0000 (UTC)
-DMARC-Filter: OpenDMARC Filter v1.4.2 smtp.subspace.kernel.org 9C48A606A31C
+	by smtp.subspace.kernel.org (Postfix) with ESMTPS id 7ACA4606A325
+	for <linux-wireless@vger.kernel.org>; Sat, 28 Nov 2026 15:44:41 +0000 (UTC)
+DMARC-Filter: OpenDMARC Filter v1.4.2 smtp.subspace.kernel.org 7ACA4606A325
 Authentication-Results: smtp.subspace.kernel.org; dmarc=pass (p=none dis=none) header.from=linux.dev
 Authentication-Results: smtp.subspace.kernel.org; spf=pass smtp.mailfrom=linux.dev
 Authentication-Results: smtp.subspace.kernel.org;
-	dkim=pass (1024-bit key, unprotected) header.d=linux.dev header.i=@linux.dev header.a=rsa-sha256 header.s=key1 header.b=kjnS9tPN
+	dkim=pass (1024-bit key, unprotected) header.d=linux.dev header.i=@linux.dev header.a=rsa-sha256 header.s=key1 header.b=PkOADC8u
 X-Envelope-To: linux-wireless@vger.kernel.org
-DKIM-Signature: a=rsa-sha256; bh=2f/ktswXZdv5qR8Igr+ohq/Et7cR/a3qMCjFZSBzBxk=;
+DKIM-Signature: a=rsa-sha256; bh=avFvvrtWpqsmH3ml4j2leBd0C6Wf3+uY+Jh1jw5x3bw=;
  c=simple/simple; d=linux.dev;
  h=from:to:subject:date:message-id:mime-version:content-type; s=key1;
- t=1795880670; v=1; x=1796485470;
- b=kjnS9tPNDvPYcHNc0QXeKpymtyfOxGsktK3mDyJxsStlSxrfTehGiB3ICHr/nasXg0i7jTTw
- ijn9Y494sL9Rqk3Vh89bTPnLyTKUelS+1CZPIU6wsovpA7ZQy3Khj2FJrFk++E7dIBTpqxwQ4Zt
- 0cnURZnyOw0uv4mysdb30mDI=
+ t=1795880679; v=1; x=1796485479;
+ b=PkOADC8uodWfguHEWhYTofM/YKG7KpdAKMLPrugigfq1wmcjlpbvj4bbG/5XJ+Fwhzc8rGc7
+ JObrL4hp0eeMmtyB9uWj0B2NLUbKUZ9jMw3gKuRMln5JKzcdJmujO1hvnu76fJ8ynDL9ao2RWkd
+ ZUspib9CaEley3VOGE7dpemU=
 X-Envelope-To: linux-wireless@vger.kernel.org
-Received: by smtp.migadu.com with ESMTPS id d0f808bef8068c96;
-	Sat, 28 Nov 2026 15:44:30 +0000
-X-Mizu-Trace-ID: d0f808bef8068c96
+Received: by smtp.migadu.com with ESMTPS id de875a6b0342181e;
+	Sat, 28 Nov 2026 15:44:39 +0000
+X-Mizu-Trace-ID: de875a6b0342181e
 X-Migadu-Flow: FLOW_OUT
-Date: Sat, 28 Nov 2026 16:44:28 +0100
+Date: Sat, 28 Nov 2026 16:44:37 +0100
 From: Luka Gejak <luka.gejak@linux.dev>
 To: Ho Jie Feng <hjf3108@gmail.com>, Ping-Ke Shih <pkshih@realtek.com>
 CC: linux-wireless@vger.kernel.org, Bitterblue Smith <rtl8821cerfe2@gmail.com>
-Subject: =?US-ASCII?Q?Re=3A_=5BPATCH_rtw-next_v5_6/7=5D_wifi=3A_rtw88=3A?=
- =?US-ASCII?Q?_88xxa=3A_correct_carrier-frequency_offset?=
-In-Reply-To: <20261127180034.1058591-7-hjf3108@gmail.com>
-References: <20261127180034.1058591-1-hjf3108@gmail.com> <20261127180034.1058591-7-hjf3108@gmail.com>
-Message-ID: <5E82B54A-7A38-45F9-A088-3733079219F1@linux.dev>
+Subject: =?US-ASCII?Q?Re=3A_=5BPATCH_rtw-next_v5_7/7=5D_wifi=3A_rtw88=3A_88?=
+ =?US-ASCII?Q?12a=2C_8821a=3A_respect_peer_A-MPDU_size_limits?=
+In-Reply-To: <20261127180034.1058591-8-hjf3108@gmail.com>
+References: <20261127180034.1058591-1-hjf3108@gmail.com> <20261127180034.1058591-8-hjf3108@gmail.com>
+Message-ID: <8C60F8E1-BA73-44C7-B837-9FF401391234@linux.dev>
 X-Mailing-List: linux-wireless@vger.kernel.org
 List-Id: <linux-wireless.vger.kernel.org>
 List-Post: <mailto:linux-wireless@vger.kernel.org>
@@ -69,20 +69,13 @@ Content-Type: text/plain;
  charset=utf-8
 Content-Transfer-Encoding: 8bit
 
-On November 27, 2026 7:00:26 PM GMT+01:00, Ho Jie Feng <hjf3108@gmail.com>
+On November 27, 2026 7:00:27 PM GMT+01:00, Ho Jie Feng <hjf3108@gmail.com>
 wrote:
->Use the newly promoted helpers to implement CFO tracking for 88xxa.
+>Previously, these chips had no set_ampdu_factor callback, so
+>rtw_set_ampdu_factor() returned before programming the peer's
+>limit.
 >
->The PHY status of each received frame reports a CFO tail per RF path.
->The CFO tracking code averages them and corrects the offset if the
->offset is too large.
->
->RTL8814A has four RF paths, but reports a CFO tail only for paths A
->and B, so we only take the CFO tail of 2 paths.
->
->The crystal cap is 6 bits wide on all chips except RTL8822C. Obtain
->the correct value by masking it. For RTL8814A, use 0x20 if the
->the efuse is empty, like the vendor driver.
+>Honor the peer-advertised receive limit for transmitted A-MPDUs.
 >
 >Signed-off-by: Ho Jie Feng <hjf3108@gmail.com>
 >---
