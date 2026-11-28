@@ -1,68 +1,70 @@
-Authentication-Results: smtp.subspace.kernel.org; arc=none smtp.remote-ip=91.216.248.207
+Authentication-Results: smtp.subspace.kernel.org; arc=none smtp.remote-ip=95.215.58.87
 ARC-Seal: i=1; d=subspace.kernel.org; s=arc20261015; a=rsa-sha256; cv=none;
-	t=1795893562;
-	b=jSXC71j+jVBYCR0x4JgKdJhjlXHzBT7Gz3ra+XhztO1FIjLQhD+WCyJBigc8WiOhx091
-	 mtUbKLn1pHTlv1aX/TkLuU6gj3HL2ZBI9vhl+HUicwj3y2FhJdxsfoGUOJyVGH37iQvdj
-	 5KFk8fgzMVRIkgzPSX1tWgaq/LeIHVJiRDdFg0WczA19t1MzAl4DeVkOshTxGfrNt80nw
-	 6Bamax62udX5w/sKftDe2PAP6/D52+5PrrjuzYH/Pj35Xs6eFaLV/mhMOFmOr3wpPq0Mr
-	 8VZevu+BLmlJup0z3z7YcSIsRAM5jA6/RKCOuG/06nDQpUtbPB9btucpHIO0Bc2WJBg==
+	t=1795894931;
+	b=WbA6GpfLFya2ZynM2CzZ+YIdQm6tW+hJHzu18kgPc7FgTM76Rgxvi5tlDYYK0j7r29TN
+	 ogHOS8le7iywhpk6w3YdUXfijB3QQMU7MekqiiYEpMkGM4rnwwNZkNgV6Stlt2d89BdEe
+	 jW0TD7yg1uYSzHXKWolbXGyI3+cjL/J8VpVTg31q9pc3/Fh26mXFNipy3VO/8xA2Bk8xa
+	 sPl2VL8nbSUeakYUmrANvH3Ku7MNnDBualaMNzr1pocgNWEKKXkV81uVBNCw7p/yEmKbU
+	 LXxdahO9+Jyrs5pGSUrrSJhde2KtazCz1SN27u8ZAFNJc+oEyp/IE8xRZmsXVWCGqwA==
 ARC-Message-Signature: i=1; d=subspace.kernel.org; s=arc20261015;
-	a=rsa-sha256; c=relaxed/relaxed; t=1795893562;
-	h=DMARC-Filter:From:X-Lima-ML-UUID:DKIM-Signature:To:Cc:Subject:Date:
-	 Message-ID:X-Mailer:In-Reply-To:References:MIME-Version:
+	a=rsa-sha256; c=relaxed/relaxed; t=1795894931;
+	h=DMARC-Filter:X-Envelope-To:DKIM-Signature:X-Envelope-To:Received:
+	 X-Mizu-Trace-ID:X-Migadu-Flow:From:To:Cc:Subject:Date:Message-ID:
+	 X-Mailer:In-Reply-To:References:MIME-Version:
 	 Content-Transfer-Encoding;
-	bh=PIzyMX6aMrQdx67DAHkxTf1fE4iVqkfCvEeCSF97RmM=;
-	b=Hp090pe9/oj4iOkhEVtcehyPchM45T8mE6IZCELSbgLtMBR+RdcVaDmwjRM/0IdoGZUk
-	 gdV466IE39yt6dGSmKQjYFAueU2nPZqZ1IxnrrB677tCB7Aq7jfFeg1rOvQOq/ukZNLJw
-	 H73ihFfgzARKp4Lx3o7327BD9kQGZituvJa+owQQJytrahhgzbilwGTM2Juo9TgmeseDC
-	 /YR6YusaymufXvZ84iIneu5jq1m8PVjmg172jog7lX1fbJbJHXg5Nu5izUv5o4slT1kCb
-	 +8Uw+HZvQ069o1G4/1pads094VSnxfbrit2zLCcOYfLplkRBROeMneOc4g4z43Nvdhg==
+	bh=t2jR6JHgK1WZ0y/FBfxCHPJnW3Yf0ivZTRRaWEhbcVY=;
+	b=d3DBMxwk1jyY2JcNnSuuUyIWUGTUzemiU8xm9PMTCKBVBqJLi7jf8m5XGk8gaTUoC7Fj
+	 BkrezfzU6cK/RZwPF956ZEscdUS0ZdGyzdfX6ehzIpvD0L3EX68AubWF0oCI7YZPfKxsH
+	 MA5Bd0LkhiuvoOwFEkboso9GwhdMs5QndMYCnfFXsanF57tKHpAQgLV2YLNUsM9ktT1mk
+	 rZZXNgkJ/S7e6ExX0vE5t+0NHniKZMrf6XkyjBX0CNJbqhZ0QPUA864kJ6nNKCgOesn1D
+	 8yT0fw6dKQKfNn3hcoVZpQOw+7upfDOdyUQXp24B8JDczr/zofPIh919Ni3Bxa48MIw==
 ARC-Authentication-Results: i=1; smtp.subspace.kernel.org; 
-	dmarc=none header.from=deq.rocks;
-	spf=none smtp.mailfrom=deq.rocks;
-	dkim=pass header.d=deq.rocks header.i=@deq.rocks header.a=rsa-sha256 header.s=securedbylima-20251205 header.b=U0TbTFK6;
-	arc=none smtp.remote-ip=91.216.248.207
-Received: from mx5.mail-out.lima-city.de (mx5.mail-out.lima-city.de [91.216.248.207])
-	(using TLSv1.3 with cipher TLS_AES_256_GCM_SHA384 (256/256 bits)
+	dmarc=pass header.from=justthetip.ca;
+	spf=pass smtp.mailfrom=justthetip.ca;
+	dkim=pass header.d=justthetip.ca header.i=@justthetip.ca header.a=rsa-sha256 header.s=key1 header.b=sygYHDqS;
+	arc=none smtp.remote-ip=95.215.58.87
+Received: from mta1.migadu.com (out-87.mta1.migadu.com [95.215.58.87])
+	(using TLSv1.3 with cipher TLS_AES_128_GCM_SHA256 (128/128 bits)
 	 key-exchange X25519 server-signature ECDSA (prime256v1) server-digest SHA256)
 	(No client certificate requested)
-	by smtp.subspace.kernel.org (Postfix) with ESMTPS id 37E53606A321;
-	Sat, 28 Nov 2026 19:19:20 +0000 (UTC)
-DMARC-Filter: OpenDMARC Filter v1.4.2 smtp.subspace.kernel.org 37E53606A321
-Authentication-Results: smtp.subspace.kernel.org; dmarc=none (p=none dis=none) header.from=deq.rocks
-Authentication-Results: smtp.subspace.kernel.org; spf=none smtp.mailfrom=deq.rocks
+	by smtp.subspace.kernel.org (Postfix) with ESMTPS id 00DDE606A31C
+	for <linux-wireless@vger.kernel.org>; Sat, 28 Nov 2026 19:42:09 +0000 (UTC)
+DMARC-Filter: OpenDMARC Filter v1.4.2 smtp.subspace.kernel.org 00DDE606A31C
+Authentication-Results: smtp.subspace.kernel.org; dmarc=pass (p=quarantine dis=none) header.from=justthetip.ca
+Authentication-Results: smtp.subspace.kernel.org; spf=pass smtp.mailfrom=justthetip.ca
 Authentication-Results: smtp.subspace.kernel.org;
-	dkim=pass (2048-bit key, unprotected) header.d=deq.rocks header.i=@deq.rocks header.a=rsa-sha256 header.s=securedbylima-20251205 header.b=U0TbTFK6
-From: Andre Eikmeyer <dev@deq.rocks>
-X-Lima-ML-UUID: 04d41477-864c-4c31-b276-cb910cd9c497
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=deq.rocks;
-	s=securedbylima-20251205; t=1795893552;
-	bh=PIzyMX6aMrQdx67DAHkxTf1fE4iVqkfCvEeCSF97RmM=;
-	h=From:To:Cc:Subject:Date:In-Reply-To:References:From;
-	b=U0TbTFK6Bfd2HkDJ5AJ0t15GDfe5IaTL0gpw8I3nLDNWkAb9LCT8KCte43eDz1WB1
-	 PrPUW7RgoMV++NzMaK4uV+faEgmCbKZ6cjodnxE5SUYMSfXu9Lnl/gU4qmPYmb+itS
-	 8vXDyHqN9SwxV5wsGaNEnj11Esrj/33exjvIWeU5PLL0somklmdBYQ222mGAKmV1WS
-	 kbVoQa4Qze0rjfDLsoZPvIfsgL5N3ssLvR/OniOZu9NywO8nhvNjaSqPPAyJR5TtbV
-	 0TXEF4yonU3mq7ztEZLtFiqIW9FGA1iPeTIwckBzW6TFwcqTMOpauxpHA199ruRHlh
-	 UbRjokK2qNyeA==
-To: arend.vanspriel@broadcom.com
-Cc: linux-wireless@vger.kernel.org,
-	brcm80211@lists.linux.dev,
-	brcm80211-dev-list.pdl@broadcom.com,
-	linux-kernel@vger.kernel.org,
-	michael.reeves077@gmail.com,
-	marcan@marcan.st,
-	j@jannau.net,
-	asahi@lists.linux.dev,
-	sebastian.reichel@collabora.com,
-	Soeren Coremans <sorencoremans@gmail.com>,
-	Yossef Osman <Yossef.Osman@proton.me>
-Subject: Re: [PATCH wireless-next v3 2/5] wifi: brcmfmac: pcie: skip the host ready doorbell at init on the BCM4364
-Date: Sat, 28 Nov 2026 20:19:06 +0100
-Message-ID: <20261128191906.37151-1-dev@deq.rocks>
+	dkim=pass (2048-bit key, unprotected) header.d=justthetip.ca header.i=@justthetip.ca header.a=rsa-sha256 header.s=key1 header.b=sygYHDqS
+X-Envelope-To: linux-wireless@vger.kernel.org
+DKIM-Signature: a=rsa-sha256; bh=+rK+Y0F429HEkcbGS6PvR5tqK+tF3MtdZxwAEVsgIjw=;
+ c=simple/simple; d=justthetip.ca;
+ h=from:to:subject:date:message-id:mime-version:content-type; s=key1;
+ t=1795894928; v=1; x=1796499728;
+ b=sygYHDqS93UOimLAWadmu+Vp/qqaQedyfmRe+LSav4NFL+Ptajb/W7xPFM2wU3Ej4yFLbbZG
+ sJ/CrWrR3zS3qBaPPkV1NgkGdWTCquFUZMtMlui7KZwAYuIE+e0twl7+zrKFjWMwL9bv3Ey1s3t
+ hLy1oJj/3uWXUOO+R9joySXgKZpYQ1JpSUN/TuK30zYvZM96LA5gmGE2wQtS7nKiz0jeXO+KzOI
+ G7DHMNF3QgLGUvXwvxQQl1+aHsM9DdecR5Nt7o1xc2AyaW+GVYekXcOTzXyMafsnQ/qG+ntyjEC
+ aXR0NiQR7En7zhq/STXb8VtuCT2vddUS+mXVMLgJP24qw==
+X-Envelope-To: linux-wireless@vger.kernel.org
+Received: by smtp.migadu.com with ESMTPS id c5c5445795f35a85;
+	Sat, 28 Nov 2026 19:42:07 +0000
+X-Mizu-Trace-ID: c5c5445795f35a85
+X-Migadu-Flow: FLOW_OUT
+From: Devin Wittmayer <lucid_duck@justthetip.ca>
+To: Felix Fietkau <nbd@nbd.name>,
+	Lorenzo Bianconi <lorenzo@kernel.org>,
+	Ryder Lee <ryder.lee@mediatek.com>
+Cc: Shayne Chen <shayne.chen@mediatek.com>,
+	Sean Wang <sean.wang@mediatek.com>,
+	Aaron Beckendorf <albecken@mtu.edu>,
+	martin@rfdeck.de,
+	linux-wireless@vger.kernel.org,
+	linux-mediatek@lists.infradead.org
+Subject: [PATCH mt76-next 0/4] wifi: mt76: connac: honour more of radiotap for injected frames
+Date: Sat, 28 Nov 2026 12:41:52 -0700
+Message-ID: <20261128194156.112602-1-lucid_duck@justthetip.ca>
 X-Mailer: git-send-email 2.56.1
-In-Reply-To: <20261127173549.29335-3-dev@deq.rocks>
-References: <20261127173549.29335-1-dev@deq.rocks> <20261127173549.29335-3-dev@deq.rocks>
+In-Reply-To: <20261104142737.186484-1-albecken@mtu.edu>
+References: <20261104142737.186484-1-albecken@mtu.edu>
 X-Mailing-List: linux-wireless@vger.kernel.org
 List-Id: <linux-wireless.vger.kernel.org>
 List-Post: <mailto:linux-wireless@vger.kernel.org>
@@ -74,10 +76,48 @@ Precedence: list
 MIME-Version: 1.0
 Content-Transfer-Encoding: 8bit
 
-Hi Arend,
+Aaron's v2 makes connac2 honour an injected HT or VHT rate. These four
+go on top of it.
 
-Turns out I made a mistake here and the BCM4355 backfired at me with a
-halted firmware. Let's invert the logic and only ring the doorbell at
-init on the BCM4377. Will send it with v4 after review of v3.
+Patch 1 honours a legacy rate, and patch 2 short GI, LDPC and STBC.
+Patch 3 sends injected unicast data at its rate; today it never reaches
+the air on 5 GHz and goes out at 1 Mbit/s on 2.4 GHz. Patch 4 sends an
+injected no-ack unicast frame once, without the RTS that an MT7922 on a
+protected channel sends to an empty address.
 
-Andre
+  tested on         MT7921AU over USB at both speeds, MT7922 over PCIe,
+                    on Felix's tree; not the MT7915 family, which shares
+                    this code, and not SDIO. Only injected frames change.
+  injected cells    78 of 79 per chip as asked, in each pass; VHT MCS 9
+                    at 20 MHz, which 802.11ac doesn't define for one
+                    stream, goes out as MCS 8
+  floods            every broadcast frame heard had short GI, LDPC and
+                    STBC; over 99.7% of unicast heard, none before
+  managed traffic   no change beyond run-to-run variation
+  active monitor    same results with my active monitor v2 [1] applied
+
+Not fixed here: on a protected channel, an MT7922 still sends that RTS
+before an injected unicast frame that wants an ack. Stock does the same
+for injected management frames.
+
+Aaron's v2: https://lore.kernel.org/linux-wireless/20261104142737.186484-1-albecken@mtu.edu/
+[1] https://lore.kernel.org/linux-wireless/20261123152154.99634-1-lucid_duck@justthetip.ca/
+
+
+
+Devin Wittmayer (4):
+  wifi: mt76: connac: honour an injected legacy rate
+  wifi: mt76: connac: honour injected short GI, LDPC and STBC
+  wifi: mt76: connac: send an injected unicast frame at its injected
+    rate
+  wifi: mt76: connac: send an injected no-ack frame unprotected
+
+ .../wireless/mediatek/mt76/mt76_connac_mac.c  | 52 ++++++++++++++++++-
+ 1 file changed, 51 insertions(+), 1 deletion(-)
+
+
+base-commit: 87868333220b542ff6237c93abdca84c71337f59
+prerequisite-patch-id: a160a9f3f609e6118b1e2336b0faf074d186b036
+-- 
+2.56.1
+
