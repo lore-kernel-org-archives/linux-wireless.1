@@ -1,118 +1,74 @@
-Authentication-Results: smtp.subspace.kernel.org; arc=none smtp.remote-ip=103.168.172.153
+Authentication-Results: smtp.subspace.kernel.org; arc=none smtp.remote-ip=188.40.28.6
 ARC-Seal: i=1; d=subspace.kernel.org; s=arc20261015; a=rsa-sha256; cv=none;
-	t=1795851041;
-	b=ZCOqU53LlrvO7Tx0dODviSOHF2XDvqkBRL2CagaKmGJk8Et+P5JEWwmPArxgKZNHYSMX
-	 kXlLns+RKNZCEjnxQHkjQWK3WIn5IkXZJA6z26pVTSghLTSOI4rO+aiW1Bb7gqBILdSsZ
-	 C17RukIvFq9YQ9hvPSKi3VA9AFma7zkiOSCsS9U80vy83eQ02UVS0AJn0zFYOJD6VaqO8
-	 hlxUuOqgJRfomg2qQrHq51cJBBDVIJiMRh5qaknycnfLpeEI3gyg4DTTJOBmHT2ZJrMOF
-	 hWfB8xdFkOs8jzeTwEfNF8laXJvKEQmw+xbW37BKKiPqMZSy1fBPZUx04+vAVYWqB/g==
+	t=1795861927;
+	b=BfjcPDGeaN1WXyWT/gUs29gXoLkG8euzkq9c4xChuij8fmb9SHRdrhSmbQHqwXPS0Olc
+	 hO3VJKNXA5hupkyZjgR+DttRzOQTiHgxiONKX5PK3nsXty9Bslf+IOj1IorlGXrkjhXi6
+	 eABcJC86S1eFxtz+ftyatlXuo9jnDcW3fBwwJ6g9i2QAZB+CfW/68OumEaYJNhbN2ECuE
+	 n0xdHdQtGQ2uJk+iBfoQBlqhzVIMwv/473EQ/MyyU/T7auRb6lTyrFxqvA9Aem7AQSyKS
+	 m/k444n2qpkPc/N6OI7c/5N6mpVVJ2T/fJUNlCrYodbf2KcCEstoZMHrBYnLXkJiFbw==
 ARC-Message-Signature: i=1; d=subspace.kernel.org; s=arc20261015;
-	a=rsa-sha256; c=relaxed/relaxed; t=1795851041;
-	h=DMARC-Filter:Received:Received:DKIM-Signature:DKIM-Signature:
-	 X-DKIM2-Info:DKIM2-Signature:X-DKIM2-Info:Message-Instance:
-	 X-ME-Sender:X-ME-Received:X-ME-Proxy-Cause:X-ME-Proxy:Feedback-ID:
-	 Received:Date:From:To:Cc:Subject:Message-ID:References:MIME-Version:
-	 Content-Type:Content-Disposition:In-Reply-To;
-	bh=ucXfR3cSDYhBuxi+l0VEG7NklGFt07n/EYwZpJ+2jUs=;
-	b=onflU3+JdXgmVT+jNzAqTHlOc+4X5Xeg1xDhLws0SmHw/2FVqvSBdhoEkDOWITL19KNI
-	 NFSVTlOH7vJ7DI3KuKBS7Pk0qJtdZ4lIoPjObcZpwedTS8y8Hn5qXrL6fAq/07XVYFpPa
-	 JtGzW11Aw5Aq7QoIKd8YqBw7FvE/0HE5Z7VzCQ0Z75fwFvX0dLQigFZs0RUyixs/5p5hA
-	 jxWUtb8JubOy2GYOU4Vu5TuI2ZzFZFbzRjpBs4iq7EjhIJP0wdAPZyeFHS7ZulBpNG1J6
-	 B78DO5l6IpdZ78+EpPaKRyUB03lmrrXuGUuEQlshgVn5xGrTGngtEqCDvZcFEBKxpeQ==
+	a=rsa-sha256; c=relaxed/relaxed; t=1795861927;
+	h=DMARC-Filter:DKIM-Signature:Received:Received:Date:Message-ID:From:
+	 To:Cc:Subject:In-Reply-To:User-Agent:Content-Type:MIME-Version:
+	 Content-Disposition:X-Virus-Scanned;
+	bh=nFXX5mNRFkmb5k9RBpmMdByunIg+0A7DAISfvNo8x9s=;
+	b=LpZRsxSCdxncyX7GVCYTqmBVThdxZXOS75eaKtiWy8GjM3meQQ2Sl48lEQIO0FoeiMYp
+	 NtNI2s6oLPXHTigTMNCDMnsLpm+x0ybZwMSQ7WYTLiWyEU8qu4scc9nSycio+ttsqnHBv
+	 3K0ikdB4O4Fn5BE8z8uZcdGi98l50IJuHXOoJWmnrSyu3SRZxOk2jX1HobA2GDOpPc1ad
+	 +9aqeyNq533nIjEL8wKYeaTArL2PGd2QzfMlweL6tsP6qsJIRTkUTQ79D0IyCmKwcFVbV
+	 EQ9jW9zLujdbdIksHx0hfwxwDSG/LQbPQNIxgUr8Zw8BQ1oAGiXU61tvSc5C5Q1eQgA==
 ARC-Authentication-Results: i=1; smtp.subspace.kernel.org; 
-	dmarc=pass header.from=kroah.com;
-	spf=pass smtp.mailfrom=kroah.com;
-	dkim=temperror header.d=kroah.com header.i=@kroah.com header.a=rsa-sha256 header.s=fm3 header.b=BqOIyXzS;
-	dkim=pass header.d=messagingengine.com header.i=@messagingengine.com header.a=rsa-sha256 header.s=fm3 header.b=mMSwV3eD;
-	arc=none smtp.remote-ip=103.168.172.153
-Received: from fhigh-a2-smtp.messagingengine.com (fhigh-a2-smtp.messagingengine.com [103.168.172.153])
+	dmarc=none header.from=rfdeck.de;
+	spf=pass smtp.mailfrom=rfdeck.de;
+	dkim=pass header.d=rfdeck.de header.i=@rfdeck.de header.a=rsa-sha256 header.s=default2609 header.b=C67inh28;
+	arc=none smtp.remote-ip=188.40.28.6
+Received: from www226.your-server.de (www226.your-server.de [188.40.28.6])
 	(using TLSv1.3 with cipher TLS_AES_256_GCM_SHA384 (256/256 bits)
-	 key-exchange X25519 server-signature ECDSA (prime256v1))
+	 key-exchange X25519 server-signature ECDSA (prime256v1) server-digest SHA256)
 	(No client certificate requested)
-	by smtp.subspace.kernel.org (Postfix) with ESMTPS id D6678606A31F
-	for <linux-wireless@vger.kernel.org>; Sat, 28 Nov 2026 07:30:35 +0000 (UTC)
-DMARC-Filter: OpenDMARC Filter v1.4.2 smtp.subspace.kernel.org D6678606A31F
-Authentication-Results: smtp.subspace.kernel.org; dmarc=pass (p=none dis=none) header.from=kroah.com
-Authentication-Results: smtp.subspace.kernel.org; spf=pass smtp.mailfrom=kroah.com
+	by smtp.subspace.kernel.org (Postfix) with ESMTPS id 05B06606A31C
+	for <linux-wireless@vger.kernel.org>; Sat, 28 Nov 2026 10:32:05 +0000 (UTC)
+DMARC-Filter: OpenDMARC Filter v1.4.2 smtp.subspace.kernel.org 05B06606A31C
+Authentication-Results: smtp.subspace.kernel.org; dmarc=none (p=none dis=none) header.from=rfdeck.de
+Authentication-Results: smtp.subspace.kernel.org; spf=pass smtp.mailfrom=rfdeck.de
 Authentication-Results: smtp.subspace.kernel.org;
-	dkim=temperror header.d=kroah.com header.i=@kroah.com header.a=rsa-sha256 header.s=fm3 header.b=BqOIyXzS;
-	dkim=pass (2048-bit key, unprotected) header.d=messagingengine.com header.i=@messagingengine.com header.a=rsa-sha256 header.s=fm3 header.b=mMSwV3eD
-Received: from phl-compute-02.internal (phl-compute-02.internal [10.202.2.42])
-	by mailfhigh.phl.internal (Postfix) with ESMTP id E6A081400326
-	for <linux-wireless@vger.kernel.org>; Sat, 28 Nov 2026 02:30:34 -0500 (EST)
-Received: from phl-frontend-04 ([10.202.2.163])
-  by phl-compute-02.internal (MEProxy); Sat, 28 Nov 2026 02:30:34 -0500
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=kroah.com; h=cc
-	:cc:content-type:content-type:date:date:from:from:in-reply-to
-	:in-reply-to:message-id:mime-version:references:reply-to:subject
-	:subject:to:to; s=fm3; t=1795851034; x=1795937434; bh=ucXfR3cSDY
-	hBuxi+l0VEG7NklGFt07n/EYwZpJ+2jUs=; b=BqOIyXzSa5f79sssz4nV58fyq4
-	BbKmIZXPXfikTK2q/bYCP3EwF4hDlgbxiUeK+4/5pA6iD5/KcEpdcSCeXzudPMcf
-	6ERnClR/pha+ADKLcyG7CyQ7hagp2lcjPWqksQTPktKP/wRZBugWhrv+l70ps7gd
-	qDEIzdVS8VQsahsLwbU+2suvRM/ER4NvZ9+AgXlfpJpV4ZisMGEelFJi+fEkm1mS
-	wDakYz1w52mbqxKGI3LCnjASZXYIItj8fxG6hnhWYhIut7rEGHDSMa8q8jkwf34f
-	L5eG1wf4JwV/Gyvl6pvnbVVRbSHxKL1ygMAxrj997/ZAIWkmur4sDSmRUYzw==
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=
-	messagingengine.com; h=cc:cc:content-type:content-type:date:date
-	:feedback-id:feedback-id:from:from:in-reply-to:in-reply-to
-	:message-id:mime-version:references:reply-to:subject:subject:to
-	:to:x-me-proxy:x-me-sender:x-me-sender:x-sasl-enc; s=fm3; t=
-	1795851034; x=1795937434; bh=ucXfR3cSDYhBuxi+l0VEG7NklGFt07n/EYw
-	ZpJ+2jUs=; b=mMSwV3eDRWplMI/BR4NlyWbz2a3C9OYRhRUAl53gWn7qBFbxjDY
-	WhRi7i9KQQql8u6sPyvL2W+2e/LHxc6mfxbcIcqfWhm+6RO+GZhX8MQEnpNO/lzw
-	7un85R6z5SjXM40YN/rYJNe/YEZYqdlZpUTWYN5QDZ7iqqUXpHYwgfYZlIINeb5q
-	U2Lj6LhHlR6/Nw7RoMYgW+qwp4R8r34f8F45eh9jJqQDHKmyz2vZIhg4qUUgY2iQ
-	zEMoE0WqLsqey+sjtmZ8cdgmMvFEgRZ25PQ/SZbHVXxVi9Z/k+if5gkrmAfmDIQf
-	UsvNMCjNfVT/egXVfGHsWCIwnbihzJxFWTA==
-X-DKIM2-Info: draft=ietf-dkim-dkim2-spec-09;
-	repo=github.com/dkim2wg/interop; date=2026-11-03; sw=lmtpprox;
-	action=sign d=kroah.com a=rsa-sha256;
-DKIM2-Signature: i=1; m=1; t=1795851034; d=kroah.com;
-	mf=PGdyZWdAa3JvYWguY29tPg==;
-	rt=PGxpbnV4LXdpcmVsZXNzQHZnZXIua2VybmVsLm9yZz4=;
-	s=fm3:rsa-sha256:B6nxdKVLToTXHDt+x8QDVazHU08WoOALUb6ZpTqxH+ikRXV
-	kHY0uVil9t8JPp5gbcBEMeoxRoMHBiQ8Aqbl7+fGdVJZcgz/52EuM5fbts3icl4l
-	Zl0LBWSwRsTDXZrCYqBtV1Xo4dYrzVWtnPNLLrXYqfnjm3SmsFuiTzfNJ+MXg12X
-	7+xaqQtA5M8DpZmnEY64xTei+2uLhWtgKjI6WRKGbhdANd0HxZ1krOWJE6K0vx5k
-	ZOGQ/wnKCVtTKtL3eIyxAoyIR4AZnSmz6BlK+X08x3lkfiH0ii/JXqjh7AbciKNX
-	uCl+diiUClDPy1JmH3jjCQvxZjD6tS/qH9cO81A==;
-X-DKIM2-Info: draft=ietf-dkim-dkim2-spec-09;
-	repo=github.com/dkim2wg/interop; date=2026-11-03; sw=lmtpprox;
-	action=mi-m=1; hc=12;
-	hn=cc,content-disposition,content-type,date,feedback-id,from,
-	in-reply-to,message-id,mime-version,references,subject,to;
-Message-Instance: m=1; h=sha256:t1xG/vO4VxUjcO8/e1m8t8+8oQnLwwPc4XSyq8TX5Fs=:WA8Z95GQHdnl0MllBz4e2MznzTsj7UYxkpGkxvpSspI=;
-X-ME-Sender: <xms:GoMKa92wAytwLI-lDlJfnE0KP9hgdVj7UyFQE3QgtLO_LUQpsp0MPQ>
-    <xme:GoMKaxm_Is1y8J3ja5dmUXe9GiK10XIueKEMP0JJbGZb-pTsJi1MMIrjtSI0tCldJ
-    4Wns_hEQiU6SfA5wEQpND7Me3RDvqc5io-SsVYjaVUARzSPDQ>
-X-ME-Received: <xmr:GoMKawjHTQZpn4_jWoogdYPDKw8d7Qt5jR1QoMtxLsDbvHTm_OM0MjBiE1PkHT1xa2wvfX2r5OHqHWV4nWYDvTv3TcI0yYw>
-X-ME-Proxy-Cause: dmFkZTFUzIRWWZC+1BU+ZkZPhw2fte17lLuJPHFZV4uMVtmN4au8GicGuZNVfy9wdPQDkT
-    ghL13mdoiVeFEHULpbXPdDxZMcCAAlSj9di5mXLv+VuiA/k5Auq17zVJCZK7xCqtOMJ6Mk
-    TsKigzs+W7CiX8TsD+34kDRUdeL4o/9rIyEWpQmFxgAhWyqH+gL1nJz1We1TV1zb3eSAnc
-    RuA/9YXg1DmGPxVBfHmq9I3i8QWTPd7b3aEZNwW6DaNhi9y/AjpKFGBqpmJGAAjPTbGS1o
-    tgSnoX+NsVTnSAM6wT8qBMSLEgQGJnUkT/uMq/g21bo4IzbhX5yPZ28G/Xb0Aw52nDx6Jb
-    61yR4L6omwARQLHc2hHut105vlYIW+mzDKDfsD7ipcirmMY0iGi/NIbfQxkbBbFSd7Awl7
-    EBSsDyBOTFimnvYLbMMOuW/cJFfOI/BXrKtXgBmZqjF3DtqROtCek6cQDNGbnH/0pD6fXq
-    B+IK8NvDjP1GfRmgHsDEKsnrjbcnONEgX9E74EWebvNMnHxbmHI1XkCqdHtSdjfLHxjNsd
-    CKWYh4Y/02wWjazF/xQLnZTJjwt13sTQ35hHDCaqQg+Lx2eBraX4poDN4yXYrTNKb1waxo
-    WFns2aytOWDKk0Q2iTiIdiT48ymZzQk+oNEcvpozun3IFsZh22YUqyet+0RA
-X-ME-Proxy: <xmx:GoMKawQ8xsJh2LMDw3PKWrQPJaHrX8X7hK_fZ4N3IsGZOg_bywkolA>
-    <xmx:GoMKay9tgwT74zI0fATYuz010ynRg_TK6dlsu193HZnCSTay7cufzg>
-    <xmx:GoMKaxM_zIi-P7da1Se1zrCO9sGo_qHYugwNNFsSxI0g_e2QAh7Ujw>
-    <xmx:GoMKazgsRP1hjbHWcti3OqgN58SnMzyxQtGBpVbotjTEdi8l06WtsA>
-    <xmx:GoMKa8MqJklW_rLW3aAR9xkRYmoHh_kt7flQeYrq01Im766yRJHC0Lf3>
-Feedback-ID: i787e41f1:Fastmail
-Received: by mail.messagingengine.com (Postfix) with ESMTPA; Sat,
- 28 Nov 2026 02:30:34 -0500 (EST)
-Date: Sat, 28 Nov 2026 08:30:30 +0100
-From: Greg KH <greg@kroah.com>
-To: Henry Zhang <henryzhang62@gmail.com>
-Cc: stable@vger.kernel.org, jjohnson@kernel.org, quic_lingbok@quicinc.com,
-	linux-wireless@vger.kernel.org, ath11k@lists.infradead.org
-Subject: Re: [STABLE REQUEST] wifi: ath11k: signal strength fixes for 6.6.y
- and 6.1.y
-Message-ID: <2026112814-habitable-falsify-b2ab@gregkh>
-References: <CANTW0ypcrw2+BAqVKWQ6BOY2eUDK+D47aXuO1zuwZ1VaYwyvVw@mail.gmail.com>
+	dkim=pass (2048-bit key, unprotected) header.d=rfdeck.de header.i=@rfdeck.de header.a=rsa-sha256 header.s=default2609 header.b=C67inh28
+DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed; d=rfdeck.de;
+	s=default2609; h=MIME-Version:Content-Type:In-Reply-To:Subject:Cc:To:From:
+	Message-ID:Date:Sender:Reply-To:Content-Transfer-Encoding:Content-ID:
+	Content-Description:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc
+	:Resent-Message-ID:References;
+	bh=nFXX5mNRFkmb5k9RBpmMdByunIg+0A7DAISfvNo8x9s=; b=C67inh288EuOyjlHLTbd16tnrw
+	LEfNVKocz91cWEjL58x8OGcBRclAyvMt7rE5ABo2qCfTAbOpFKD3sBfynLqTao1gtU5yFr6PZjP4E
+	Z6pKCl/bwRUlHzZTAiz0gF+P2CXGQGvp2/2tKme7HrOc9RMk0EQ+mTf1Vu+r1AIbcWjFM8HVJ/qqj
+	4sk8MjYybt4PITHredoloTmGkZLz8JPAwKY9Mz/IqByoFKdWB1kjiW68EAsxkKLEYLw8m1IsQkmrv
+	MZjYa16HBID07uMkyCE54VjpcxyWfanyxsJ5KPcA2lmjo5i9RBT1C/YTAtzZfVU1da0uYiWfR0xZp
+	nMYRlleg==;
+Received: from sslproxy03.your-server.de ([88.198.220.132])
+	by www226.your-server.de with esmtpsa  (TLS1.3) tls TLS_AES_256_GCM_SHA384
+	(Exim 4.96.2)
+	(envelope-from <martin@rfdeck.de>)
+	id 1xXFip-0006Ak-1g;
+	Sat, 28 Nov 2026 11:31:59 +0100
+Received: from [192.168.0.32] (helo=mail.your-server.de)
+	by sslproxy03.your-server.de with esmtpsa  (TLS1.3) tls TLS_AES_256_GCM_SHA384
+	(Exim 4.96)
+	(envelope-from <martin@rfdeck.de>)
+	id 1xXFip-0006Tr-0A;
+	Sat, 28 Nov 2026 11:31:59 +0100
+Date: Sat, 28 Nov 2026 11:31:58 +0100
+Message-ID: <20261128113158.Horde.SfK8gVRYJBkGjFr0f3N_Xrz@mail.your-server.de>
+From: martin@rfdeck.de
+To: Aaron Beckendorf <albecken@mtu.edu>
+Cc: Felix Fietkau <nbd@nbd.name>, Lorenzo Bianconi <lorenzo@kernel.org>,
+ Ryder Lee <ryder.lee@mediatek.com>, Shayne Chen <shayne.chen@mediatek.com>,
+ Sean Wang <sean.wang@mediatek.com>, Devin <lucid_duck@justthetip.ca>,
+ linux-wireless@vger.kernel.org, linux-mediatek@lists.infradead.org
+Subject: Re: [PATCH v2] wifi: mt76: connac: honour injected HT/VHT rate and
+ bandwidth
+In-Reply-To: <20261104142737.186484-1-albecken@mtu.edu>
+User-Agent: Horde Application Framework 5
+Content-Type: text/plain; charset=utf-8; format=flowed; DelSp=Yes
 X-Mailing-List: linux-wireless@vger.kernel.org
 List-Id: <linux-wireless.vger.kernel.org>
 List-Post: <mailto:linux-wireless@vger.kernel.org>
@@ -122,50 +78,47 @@ List-Unsubscribe: <mailto:linux-wireless+unsubscribe@vger.kernel.org>
 List-Owner: <mailto:linux-wireless+owner@vger.kernel.org>
 Precedence: list
 MIME-Version: 1.0
-Content-Type: text/plain; charset=us-ascii
 Content-Disposition: inline
-In-Reply-To: <CANTW0ypcrw2+BAqVKWQ6BOY2eUDK+D47aXuO1zuwZ1VaYwyvVw@mail.gmail.com>
+X-Virus-Scanned: Clear (ClamAV 1.4.6/28194/Wed Nov 25 07:26:59 2026)
 
-On Fri, Nov 27, 2026 at 09:04:06PM -0800, Henry Zhang wrote:
-> Hi,
-> 
-> Please consider these two mainline commits for 6.6.y and 6.1.y:
-> 
->   94f228ac4f5b ("wifi: ath11k: fix ack signal strength calculation")
->   aadeee47e9d7 ("wifi: ath11k: modify the calculation of the average
->                  signal strength in station mode")
-> 
-> Both are in mainline since v6.11 and in 6.12.y, but not in 6.6.y or
-> 6.1.y, which still add ATH11K_DEFAULT_NOISE_FLOOR to the ack signal and
-> to the average signal unconditionally.
-> 
-> On firmware that reports the signal as a signed dBm byte
-> (WMI_TLV_SERVICE_HW_DB2DBM_CONVERSION_SUPPORT), these paths treat that
-> byte as unsigned and still add the -95 dB noise floor, so
-> "iw dev <wlan> station dump" reports impossible positive values while
-> "signal" itself is right. Seen on a QCA6390 (fw 0x101c06cc) with an
-> Ubuntu 6.8 kernel, which has the same affected calculations as 6.6.y:
-> 
->     signal:          -47 [-50, -51] dBm
->     signal avg:      109 dBm
->     last ack signal: 103 dBm
->     avg ack signal:  47 dBm
-> 
-> 109 is 204 - 95, where 204 (0xcc) is -52 dBm, and 103 is 198 - 95,
-> where 198 (0xc6) is -58 dBm. Userspace that reads these values over
-> nl80211 gets wrong numbers. No connectivity problem was seen.
-> 
-> The average signal code was added by b205ce4c266c ("ath11k: support
-> avg signal in station dump"), so 5.15.y does not have that part; I
-> have not checked 5.15.y for the ack signal part.
-> 
-> - 6.6.y: both commits apply as-is.
-> - 6.1.y: aadeee47e9d7 applies as-is. 94f228ac4f5b conflicts only in
->   the Copyright line of dp_tx.h; I can send a backport without that
->   line if that helps.
+Aaron Beckendorf <albecken@mtu.edu> wrote:
 
-Please send tested backport series for all of these.
+Hi Aaron,
 
-thanks,
+I tried v2 on an MT7921AU (Ubuntu kernel 7.0.0-43, firmware 20240219;
+the hunk applies to the 7.0 file after moving the context, only
+mt76-connac-lib rebuilt), injecting on 5 GHz channel 36 at 80 MHz,
+with three rtw88 sniffers:
 
-greg k-h
+- broadcast data frames go out with the injected rate: HT MCS7, VHT
+   MCS7/8/9 at 80 MHz, VHT MCS9 at 40 MHz and VHT MCS7/9 NSS2 at 80 MHz
+   were received as requested, one copy each
+- short GI is not taken over: VHT MCS9 with the radiotap SGI flag
+   arrives with long GI (the patch doesn't set the GI bit)
+
+> Legacy injection and the normal (non-fixed-rate) data path are
+> unchanged.
+
+That path keeps injected unicast data frames off the air on 5 GHz,
+with and without the patch: no frame at any of the sniffers, at any
+requested rate, also at 6 Mbit/s, while broadcast frames on the same
+channel go out. With kprobes: mt76_connac2_mac_write_txwi_80211() sets
+MT_TXD2_FIX_RATE only for non-data and multicast frames, so a unicast
+data frame never reaches mt76_connac2_mac_tx_rate_val() and takes the
+rate from the global wcid's WTBL entry, CCK 1 Mbit/s. On 2.4 GHz such
+frames go out at 1 Mbit/s with retries whatever the radiotap header
+asks for; on 5 GHz there is no CCK and the firmware drops them without
+a status.
+
+Maybe set the fixed rate for all injected frames
+(IEEE80211_TX_CTL_INJECTED), not only for mgmt and multicast, and take
+the GI from IEEE80211_TX_RC_SHORT_GI?
+
+For the broadcast HT/VHT rate and bandwidth part, on MT7921AU, USB,
+5 GHz:
+
+Tested-by: Martin <martin@rfdeck.de>
+
+Thanks,
+Martin
+
